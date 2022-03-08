@@ -1,0 +1,22 @@
+
+
+  #L Sensitive   -- to open Taxes folder
+### --- ANNUAL ACCOUNTS ---
+
+QL 
+- Google -- QL income & Health benefits
+- Vanguard -- QL investments
+- Schwab -- QL 
+Dan
+- Vanguard -- Dan
+- Schwab -- Dan (x1905 investment; x9506 checking)
+Joint
+- Schwab -- Joint Schwab
+- Schwab -- Grand Central
+- Morgage -- Wells Fargo
+- Property Taxes -- Gov portal (house)
+- Charity
+- DMV fees -- 
+
+### --- HOME IMPROVEMENTS ---
+2020.01  $770  Garage Door Opener -- paid in cash

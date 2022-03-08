@@ -1,0 +1,1 @@
+the goal of government:  to managed the shared interests of its citizens according to the (1) average citizen's (2) informed (3) disinterested opinion.
