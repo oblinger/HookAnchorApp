@@ -8,11 +8,11 @@
 ## Dans Data Org Summary
 ### FLOW Summary 2018.08.07
 
-**=== DATA FLOW ===**
+**= DATA FLOW =**
 -- WATCH    Quick Lists  (aObot to see lists)
 -- ASANA    Todo lists
 -- EVERNOTE Projects Notebooks
--- FOLDERS  
+-- FOLDERS  ˚j
 
 **=== EVERNOTE FLOW ===**
 --> Direct to Notebook:  Ptrs, Snip, Watch, zArchive

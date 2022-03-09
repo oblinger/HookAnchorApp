@@ -1,114 +1,82 @@
 
+# NOTES
+TRAVEL DETAILS
+	R10 12:55p-5p 
+	    Alaska 139  #MKVKUK
+	    Marriott Ct downtown  541-753-0199  $195.  #83371308
+	    400 South west First street, Corvallis, OR  
+	F11 6:47p-8:25p United 4706
 
-
-# ### NOTES ###
-
-- Oricks - went with 
-
-
-R10 12:55p-5p 
-    Alaska 139  #MKVKUK
-    Marriott Ct downtown  541-753-0199  $195.  #83371308
-    400 South west First street, Corvallis, OR  
-F11 6:47p-8:25p United 4706
-
-
-- EUG airport 21min to Marriott
-- Talk Friday March 11th 10a - 11:30a
-- 3443 Hutton St, Springfield, OR 97477 -- Phone: (541) 726-2121
-
-
-
-Hey Ross,
-
-I am still thinking of this as a kind of fireside chat as we talked about before.
-
-I am a ML-reseracher-entreprenure talking to a bunch of Roboticsts about Robotics.
-My thinking is to lean most heavily into a narrative style focused mostly on the story of martian robotics and Aeolus robotics, but also driving through Analytics Fire and my current acquisition into a Covid disinfecting HW company. And touching on Dusty robotics and maybe even DARPA funded Robotics research if that would be interesting.
-
+		
+		- EUG airport 21min to Marriott
+		- Talk Friday March 11th 10a - 11:30a
+		- 3443 Hutton St, Springfield, OR 97477 -- Phone: (541) 726-2121
 THOUGHTS / LESSONS LEARNED
-- Robotics company formation
-- Common startup failures patterns; Key
-- Gaining product/market fit
-- Getting funded (both as a researcher and as entrepreneur)
-- Remote robotics
-- Growing a robotics organization (from builder and applicant perspective)
-- My observations on the state of the jobs market
-- applied wiping
-
-Martian->Aeolus CleanTech->Covid-disinfecting-technology Dusty/Peanut Robotics
-
-Narrative of Bizzy->Martian->Aeolus->Peanut
-Founding/Funding/Scaling
-Remote robotics
-Jobs in 2022
-
-Jonathan Heurst
-Ravi Subermanian - tendon reconstruction
-
-4-min  Marriott Ct downtown; hilton garden;  
-10am-11:30am
-
-
-To keep myself organized I am producing several topic slides that I can flash at appropriate points in the narrative.  I plan to let the audience see an overview slide at the front of the talk so they can pull me to that spot if it looks like we are going to run out of time.
-
-And I am scowering my old emails and hard drive for slides of the robots in progress, but I don't really own that IP any longer, so the pickings will be slim.  All of the video from CES is in the public domain, so for that part I will have good video coverage.  It would be great if I am set up where I can easily manipulate audio-video output from a laptop, which I leave blank until needed.
-
-I have still not bought my plane tickets.  (Kayak says tickets are projected to get cheaper over the next days.)  I am 70% sure I am going to be there in person, but I am still working out if it will conflict with company sale actions that I cannot move.
-
-I will confirm the in-person/remote aspect in the next days.  And would like to show you a draft of the slides a few days in advance, just so you can make some last minute suggestions.
-
-Looking forward,
-Dan
-
-existing product; science early prod validation; new product
-  - AS science role (code but not production; )
-    strategies around stuff algo the read
-    - essence level of scope in company.  
-	    - L5 own a feature, not strategy
-	    - L6 influence across multiple groups; front line interacting w other groups
-		    - strategy with their group; mentoring; hiring; growth members and team
-		    - scope: influence multiple grups within a product
-	- L7 influence across multiple products.  over whole product and some others
-		- 40-60 under them.   (
-		- principle engineer  (hard part of code, or sys architech; )
-			- large strategic impact; referees in org
-		- need to align w/ corp culture from day one.
-
-THEO:  L6 IC->SDM (Software development manager)
-   very productive team. low headcount. 
-
-INTERVIEW:
-- accomolish lately; break down problem; weeds & stategic; 
-- amazon corp values;
-
-
-  - Staff scientists (publishing)
-
-FROM THEO
-- wiping research - severin, Brandon
-	- Triangular mesh.  
-		- Marching squares
-		- Flat panes
-- What algos did we use?  
-	- SIFT/SURF - tracking
-	- skeletal tracking
-	- base motion - recurring tree search  RTT*.  A
-	- grasping  HAF. (prof name & )
-
-Triangule -- Marching squares.  
-- flat region (largest planes, fill with lesser planes)
-	- greedy grid growth (continuity -gap -angle; curvature; )
-		- first / second order discontinuities
-	- flood fill (based on normal vector similarity, and physical separation and gaps)
-		- -> 3D least squares plane fitting
-
-Academic Algs impractical / 70% cheats
-
-Entirety of use-cases.  least rescources to solve the problem.
-
-
-- haptic edge wiping algorithms
+	- Robotics company formation
+	- Common startup failures patterns; Key
+	- Gaining product/market fit
+	- Getting funded (both as a researcher and as entrepreneur)
+	- Remote robotics
+	- Growing a robotics organization (from builder and applicant perspective)
+	- My observations on the state of the jobs market
+	- applied wiping
+	
+	Martian->Aeolus CleanTech->Covid-disinfecting-technology Dusty/Peanut Robotics
+	
+	Narrative of Bizzy->Martian->Aeolus->Peanut
+	Founding/Funding/Scaling
+	Remote robotics
+	Jobs in 2022
+	
+	Jonathan Heurst
+	Ravi Subermanian - tendon reconstruction
+	
+	4-min  Marriott Ct downtown; hilton garden;  
+	10am-11:30am
+ROSS EMAIL
+	
+	Ross Email
+	Hey Ross,
+	
+	I am still thinking of this as a kind of fireside chat as we talked about before.
+	
+	I am a ML-reseracher-entreprenure talking to a bunch of Roboticsts about Robotics.
+	My thinking is to lean most heavily into a narrative style focused mostly on the story of martian robotics and Aeolus robotics, but also driving through Analytics Fire and my current acquisition into a Covid disinfecting HW company. And touching on Dusty robotics and maybe even DARPA funded Robotics research if that would be interesting.
+	
+	THOUGHTS / LESSONS LEARNED
+	- Robotics company formation
+	- Common startup failures patterns; Key
+	- Gaining product/market fit
+	- Getting funded (both as a researcher and as entrepreneur)
+	- Remote robotics
+	- Growing a robotics organization (from builder and applicant perspective)
+	- My observations on the state of the jobs market
+	- applied wiping
+	
+	Martian->Aeolus CleanTech->Covid-disinfecting-technology Dusty/Peanut Robotics
+	
+	Narrative of Bizzy->Martian->Aeolus->Peanut
+	Founding/Funding/Scaling
+	Remote robotics
+	Jobs in 2022
+	
+	Jonathan Heurst
+	Ravi Subermanian - tendon reconstruction
+	
+	4-min  Marriott Ct downtown; hilton garden;  
+	10am-11:30am
+	
+	
+	To keep myself organized I am producing several topic slides that I can flash at appropriate points in the narrative.  I plan to let the audience see an overview slide at the front of the talk so they can pull me to that spot if it looks like we are going to run out of time.
+	
+	And I am scowering my old emails and hard drive for slides of the robots in progress, but I don't really own that IP any longer, so the pickings will be slim.  All of the video from CES is in the public domain, so for that part I will have good video coverage.  It would be great if I am set up where I can easily manipulate audio-video output from a laptop, which I leave blank until needed.
+	
+	I have still not bought my plane tickets.  (Kayak says tickets are projected to get cheaper over the next days.)  I am 70% sure I am going to be there in person, but I am still working out if it will conflict with company sale actions that I cannot move.
+	
+	I will confirm the in-person/remote aspect in the next days.  And would like to show you a draft of the slides a few days in advance, just so you can make some last minute suggestions.
+	
+	Looking forward,
+	Dan
 
 
 

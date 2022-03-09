@@ -1,6 +1,6 @@
 most medical is still in Notester
 
-- # Medical TODO
+# Medical TODO
 	- Garlic power daily
 # TODO
 	- Simvastatin level  chol 240/ LDL 190
