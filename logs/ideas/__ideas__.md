@@ -1,4 +1,4 @@
-(See [startup/index](./__stindex__.md) for list)
+(See [startup/index](__stindex__.md) for list)
 
 # ### QUICK THOUGHTS ###
 ### --- AREAS ---

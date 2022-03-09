@@ -1,2 +1,2 @@
-[Medical](./__medical__.md)
-[Heart](./__heart__.md)
+[Medical](__medical__.md)
+[Heart](__Heart__.md)

@@ -11,28 +11,6 @@ TRAVEL DETAILS
 		- EUG airport 21min to Marriott
 		- Talk Friday March 11th 10a - 11:30a
 		- 3443 Hutton St, Springfield, OR 97477 -- Phone: (541) 726-2121
-THOUGHTS / LESSONS LEARNED
-	- Robotics company formation
-	- Common startup failures patterns; Key
-	- Gaining product/market fit
-	- Getting funded (both as a researcher and as entrepreneur)
-	- Remote robotics
-	- Growing a robotics organization (from builder and applicant perspective)
-	- My observations on the state of the jobs market
-	- applied wiping
-	
-	Martian->Aeolus CleanTech->Covid-disinfecting-technology Dusty/Peanut Robotics
-	
-	Narrative of Bizzy->Martian->Aeolus->Peanut
-	Founding/Funding/Scaling
-	Remote robotics
-	Jobs in 2022
-	
-	Jonathan Heurst
-	Ravi Subermanian - tendon reconstruction
-	
-	4-min  Marriott Ct downtown; hilton garden;  
-	10am-11:30am
 ROSS EMAIL
 	
 	Ross Email
@@ -77,10 +55,33 @@ ROSS EMAIL
 	
 	Looking forward,
 	Dan
+THOUGHTS / LESSONS LEARNED
+	- Robotics company formation
+	- Common startup failures patterns; Key
+	- Gaining product/market fit
+	- Getting funded (both as a researcher and as entrepreneur)
+	- Remote robotics
+	- Growing a robotics organization (from builder and applicant perspective)
+	- My observations on the state of the jobs market
+	- applied wiping
+	
+	Martian->Aeolus CleanTech->Covid-disinfecting-technology Dusty/Peanut Robotics
+	
+	Narrative of Bizzy->Martian->Aeolus->Peanut
+	Founding/Funding/Scaling
+	Remote robotics
+	Jobs in 2022
+	
+	Jonathan Heurst
+	Ravi Subermanian - tendon reconstruction
+	
+	4-min  Marriott Ct downtown; hilton garden;  
+	10am-11:30am
 
 
-
-# ### TALK ###
+[Slides](Robotics%20Fireside.pptx)
+__
+# TALK
 
 Stories Martian/Aeolus
 
@@ -101,13 +102,28 @@ THOUGHTS / LESSONS LEARNED
 
 
 
-# ### SLIDES ###
+# SLIDES
+## Topics
+- Examples:  Bizzy -> Martian -> Aeolus   AnalyticsFire -> Covid Disinfection   
+			Dusty Robots.     DARPA  R&D.  
+- **Innovation**: In-Lab; GovFunded; BigCorp; InStartup
+- **Startups**: Formation, Fit, Funding, Hiring, Growth
+- **Applied Research**: Wiping
+- Getting Jobs / Funding
 
-### Two robotic company trajectory
 
+## Bizzy
 - Pre-money prototype, manually coded inverse kinematics on an arduino
-	- DREAM: super low cost haptic bot ()
+	- DREAM: super low cost haptic cleaner bot ()
+
+## Martian
 - $1M -- bath cleaning robotic prototype
+
+## Aeolus
+- xxx
+
+## Jobs and Funding
+- Very hot job market in 2021.  Its a bit cooler now, but still hot.
 
 
 
@@ -124,7 +140,6 @@ THOUGHTS / LESSONS LEARNED
 
 ### Job Market
 
-- Very hot job market in 2021.  Seems a bit cooler now, but still hot.
 
 ### 
 
