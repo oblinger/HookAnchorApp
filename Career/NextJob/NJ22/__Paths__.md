@@ -1,5 +1,176 @@
 
-# === PATHS ===
+# ### BIG ### 
+## 2021.10.24 - Dan Fine KM Summary
+
+BIG TRUTHS
+- PRETTY STUCK -
+- DREAD OF WORK -
+- FEAR I CANT -- Just a bit, but not very rational
+- FEAR I WILL HATE IT --
+- VIEW IT AS 'DEATH' --
+- DAN WORK - I am mostly driven to execute Dan work, not really to
+- WHY DO IT?
+- DRIVEN - Driven towards Dan Work - intrinsically motivating
+- TO PROVE I AM RIGHT - To myself, to everyone, to see if I am right.
+- DO WHAT I AM BUILT TO DO
+- DO WHAT I AM CAPABLE OF
+- NOT (very much) for its outcome
+- NOT for money or such
+- NOT (exactly) for fame
+- TO AVOID DRUDGERY
+- LIGHT SWITCH - My interest in dan work can be very intense.
+	But it can rotate among several.  (will come back)
+- LOST COLOR -
+- ESCAPE&CONTROL - I am driven to work, but will feel strong need to swap sometimes
+  
+  
+  
+  _
+## 2021.09.14 - DAN-WORK - The kind of conceptual work that drives me
+### _
+
+There is a certain kind of work (lets call in DAN-WORK) and this kind of work is so compelling I tend to work on it even when it is not rational to do so; in to the night; sometimes at expense of nearly anything else.
+
+DAN-WORK = TRANSFORMATIVE, CLEVER/HARD, INTERNALIZED, CONCEPTUAL PROBLEM-SOLVING and MENTORING
+
+
+CLEVER/HARD
+- HARD WORK CAN BE BORING -- work that is just hard, like solving some huge calculus problem is just drudgery.  There are no insights to be found or tricks to play then it is exhausting and not very rewarding
+- CLEVER WORK IS TOO RANDOM/QUICK -- work that is just one clever trick has no staying power, in one flash it is over, or you have no ideas and make no progress forever.
+- CLEVER + HARD -- now we are TALKING.  I can play with the right kind of mathematical puzzle for weeks if it is the right shape.
+  
+  
+  TRANSFORMATIVE
+- LIFE MISSION NEEDS CONSEQUENCE -- even if I can play with a hard+clever problem for a long time, it feels hollow.  like binge-watching six seasons of game of thrones in one weekend... it was kinda fun a the time, but also anxiety provoking because you are say...  why the fuck am I doing this?
+- A TRANSFORMATION STORY PROVIDES THE ANSWER -- when I can construct a story about how solving this problem will somehow transform things for some group for the better in a significant way, then have no such hollow feeling... it it jet-fuel to work even later into the night!
+- SOCIAL -- One common and very satifying way for work to be transformative is for the work to be social in nature, figuring out how society can work better is inherently transformative and hard (if it were easy it would already be done!)
+  
+  
+  INTERNALIZED
+- NO PAPER NEEDED -- the very best problems are ones that can be considered for days or weeks without even needing a piece of paper -- just pure thinking.
+- LESS LIBRARY RESEARCH -- I am ok needing to do some background learning in order to attack a problem.  Still this learning, unless it involves learning clever insights is a bit of needed drudgery work, it is not the main course.
+- LESS COLLABORATIVE -- I am ok problem solving as part of a team, but I like moving fast, and I like the thrill of the solving itself, thus collaboration can be a bit of a speed bump for all of that.  It is ok, and can even be energizing when my partner is complementary and sharp/fast.
+  
+  
+  CONCEPTUAL PROBLEM SOLVING
+- PROBLEM FRAMING -- Often the most unconstrained (and thus hardest/cleverest) part of solving a problem is properly framing it in a way that it CAN be solved in a good way.  This is very satisfying work.
+- EDGE OF FORMAL AND INFORMAL -- Often the at the fringes of what is known and what is properly framed is where the exciting action is at.  It is close enough in that one might make the transformative difference by properly framing the work, but it is not so far in that the proper framing is easily obtained.  Often this work is called "conceptualizing" a problem.  I freaking love it!
+  
+  
+  MENTORING
+- Advising
+- Vision --
+- Details & Tracking & Plodding -- not so much
+  
+  
+  EXAMPLES OF DAN-WORK:
+- BLOCKCHAIN - Building a POS block chain as robust as today's POW chains are
+- ELDERBOT - Building an automated human-transport robot for the elderly
+- TEAMSAVER - Identifying and overcoming limitations that make remote work less effective than in-person work
+- ENGINES-OF-CONTROL - Building a conscious computer
+- NANO-SCALE-PROGRAMMABLE-MATTER - How to build programmed 3D-nano structures
+- AEOLUS-ROBOT-ARCHITECTURE - Designing the high-level APIs and architecture
+  
+  
+  
+  NEGATIVE EXAMPLES
+- BORING DETAILS - I desperately want to hand off
+- POLISHING - Polishing text describing an idea
+- MEETINGS - Being in meetings once all the hard stuff is resolved
+- TRACKING - Tracking work being done
+  
+  
+  
+  WHAT MIGHT FIT ME?
+- BUSY BEE - helping with the framing & large scale solutioning across many hard tasks.
+  
+  
+  _
+### 2021.11.21 - NINA WORK
+
+HARD - Trying to prove theorems about privacy is very hard.
+DELEGATE - Working with student means they do bulk of the tedious writeup.
+EXPERT - Working near experts means that my work is efficient
+
+_
+### - Conceptual Work
+
+I am positively driven to think about
+- the detailed conceptualization of a clever solution to a big-impact problem.
+- Love just thinking, 
+  
+  
+  DONT LOVE
+- Don't love doing the library research
+- I dread coordinating it.
+- I resist doing it on a schedule, or for many hours at a time.
+- I dread working on more boring parts.
+- I dread working on parts where cleverness is not needed.
+  
+  _
+### - Technical center
+Clear that my work must have a strongly technical center.
+Possible centers:
+- Applied ML reseracher
+- Robotics project lead
+- SOLVE -- dig into range of disparate problems and apply deep tech to them
+- MENTOR -- Work as mentor to direct technical work to be done
+  _
+### - Procrastination
+- As soon as I work, I resort to procrastination by 
+	organizing / processing easy stuff
+- Emails, Medium/Blogs
+- Take Nap (I physically feel sleepy in a quick way)
+  _
+### - Uniform/Marcel
+- IMPORTANCE -- feeling that the idea has potential for large impact
+- UNIQUE -- feeling that idea that is not generally known, or solved
+- PURE THOUGHT -- Struggling to understand/solve using pure thought
+-
+- CLEVER SOLUTION --
+- EFFICIENT SYSTEM -- love thinking about how to make systems efficient
+  
+  _
+## 2021.07.31 - The Past and The Future - Summary for Nick
+
+THE PAST
+- MISSION #1 -- Achieve some larger-than-self impact from one of my many ideas
+- MISSION #2 -- Spend my time working on diversity of challenging/fun ideas
+- SUBGOAL -- Create lifestyle biz needing few hours to support mission 1 & 2
+- DIAGNOSIS -- My execution was split & not well informed. Better: do #1 alone
+- OUTCOME -- Only some success on #2.  Bit of money & experience too.
+  
+  THE FUTURE    (analysis of long terms options)
+- CONSULTING -- Probably not enough money for long term 
+	(maybe on-par w/ google if fulltime, but that would suck more long term)
+	(could be used to stretch a medium term situation longer)
+- AI SAFETY -- Not enough money for long term; and not a forever mission
+- STARTUP -- Too risky to consider now unless I am dying to do it
+- LIFESTYLE BIZ -- Too slow & too risky now.  
+	Jason's gig is best bet in that direction, but still risky & slow.
+- BIG CO -- Likely this is the only real option for long term
+  
+  THE PRESENT   (medium term window 1-2 years)
+- TOP COVER -- Use AF payout as 'top cover' to wife for gap before big co
+- TOP COVER -- Get some affiliation as 'top cover' for future employer
+- GOAL:
+- ACTUALIZE -- Get stuff 'out of my system' before big co jail
+ 		==> into form where I can claim it as protected IP
+- MOON SHOT -- Take long shot on 
+	  
+	  
+  SATISFYING WORK (more items below are better, but not all are required)
+- HARD THINKING - Not just execution, solve hard-to-think-thru technical tasks
+- CLEVER DETAILS --
+- HELPS THE WORLD (NOT MOSTLY JUST BIG CO)
+  
+  
+  EXAMPLE AWESOME TASKS
+- TECHNICAL PROBLEM FRAMING -- Hearing about a novel technical challenge, and thinking thru how one might address it at a detailed technical level.
+- e.g. how to model task in order successfully apply ML.
+- e.g. how to architect an approach
+	  
+  _
 ## 2022.02.15 Choice Space
 FORK: Startup, AI-guy
 
@@ -35,6 +206,10 @@ KEY VALUES PROVIDED:
 
 
 _
+
+
+# ### PATHS ### 
+## alternatives
 ### TECH LEAD
 - Lead small team or moderate org in product creation
 - Lead strategic vision and technical decison making
@@ -98,9 +273,49 @@ _
 - 
 
 
-# LOG
-### 2022-03-09 - Post Amy Kruse Thinking
 
+
+# ### LOG ### 
+### 2022-03-13 - inside google
+
+**INSIDE GOOGLE**
+- **TECHNICAL WORK** -- Happiest if I would describe my work as TECHNICAL.
+	- **SOLUTION FRAMING** - working with stakeholders, engineers, etc. to help frame basic approach, outcomes, paths, etc.
+	- **ARCHITECT** - working at the next level in leading API/architecture etc
+	- **APPLIED RESEARCH** - working AS an applied researcher trying to develop new ways to solve important problems.  (programming & experimentation)
+- **AREA** -- ML and (AI + Robotics)
+	- ML CENTERED DEPTH -- PhD-IC-level abilities only in this area.
+	- ROBOTICS / AI BREADTH -- Ability to ideate and manage across wide range
+- **PRODUCT/INNOVATION ORIENTED JOB** --
+	- +++ Love to be an ML expert framing and mentoring multiple projects
+	- Happy to manage portfolio only if it involves significant tech thinking
+	- Could be tech lead for a single project too.
+- **VALUE-ADD**:  TECHNICAL LEADERSHIP  using  ML 
+  
+  
+  **KEY ACTIVITIES**
+- Refreshing ML skills
+- Calls (Ben CEO-leaving Amazon; Nina Researcher @ Amazon; Praveen @ Google)
+	- Exploring ML-Research roles.
+- talk w. some recruiters
+  
+  **NARROWING THE APERTURE**
+- My center is ML (with spokes out to: AI, Robotics, Leadership+, Research++)
+  
+### 2022-03-13 - zzzz
+PATHS
+	+++ MEGA CORP (IC Specialist, Technicalish-Manager, Researchy-Group)
+	.5y to 1.5y before starting.  (preserve soul, retraining, raise Eli)
+	++. FUNDED STARTUP (R-ZERO)
+	heads down 100% focus for several years  (not Aeolus level insanity)
+	-- synergistic w mega-corp path, good pay, synergistic w/ AF, ML
+	x.. MY OWN STARTUP (KM-CO, Teamsaver, Marketplace)  customer+funding+partner
+	xxx CONSULTING
+	xxx AI SAFETY
+
+
+
+### 2022-03-09 - Post Amy Kruse Thinking
 #### ROCKS
 ##### THINKING FAIL
 - My love of thinking deeply about problems is NOT a good path for founding a startup.
@@ -111,7 +326,7 @@ _
 - Like to read/learn
 - Like to brainstorm how to solve something
 - Like to advise / mentors others around such ideas
-### 2022.02.22 - Latest Thinking
+### 2022-02-22 - Latest Thinking
 
 **PARTIAL BREATHER?** -- Consider breather.  Already have good retirement position.  Significant lift to get to GREAT position.  Thus consider lower income paths now, if strongly preferred.
 
@@ -135,7 +350,7 @@ LIGHT HEARTBEAT / HEAVY TACTICAL
 
 
 _
-### 2022.01.04 - My purpose
+### 2022-01-04 - My purpose
 
 - NOT MONEY -- It is now too late to start a business in order to make FU-money.  But will have enough to retire on in a few years if RZ does well.
 - MIDWIFE -- Bring an important idea into existence... this is my purpose.
@@ -143,7 +358,7 @@ _
 - THINK HARD -- I love to think hard about a valuable thing.  
 	This is my passion that can drive effortless action, but it needs to somehow tie to something of import
 _
-### 2021.11.14 - Ikigai - my "passion" - IDEAS
+### 2021-11-14 - Ikigai - my "passion" - IDEAS
 
 - LOVE - Technical Creation
 - NEED - tech-jobs
@@ -183,7 +398,7 @@ Work Env:
 _
 
 _
-### 2022.01.20 - PATHS, spiritual dimension
+### 2022-01-20 - PATHS, spiritual dimension
 
 - BOTH - What ever path I take, I need to satisfy two key needs:
 	TECH - Need to be creating something hard w/ my mind.
@@ -201,8 +416,7 @@ MIRI --> FAANG
 
 
 _
-### 2021.11.25 - PATHS TABLE SUMMARY
-#### _
+### 2021-11-25 - PATHS TABLE SUMMARY
 			Joy		Tech	Mean	Pay		Diff	Skill	Idea
 GAI			++		+++		+++		>6		2y		++		++
 KMCO		+++		++		++		?		10%		++		++
@@ -222,9 +436,6 @@ Forum		++
 EduCorp		+
 
 
-
-
-_
 ##### - terms -
 
 SCALE:	+++ ++ + ^ o v - -- --- 

@@ -8,7 +8,7 @@
 
 - DOWNLOAD IDE:  https://www.arduino.cc/en/Main/Software
   - #, Sketchbook location:  /ob/proj/robo_demo1/arduino/Arduino
-    {{ Shield libraries go in this folder }}
+    {[ Shield libraries go in this folder ]}
 
   - ArduinoIDE -> Tools ->
     - Board  !Arduino Mega
@@ -16,7 +16,7 @@
   
 
   - cd /dev ; ls tty.*
-    {{add serial port to source code???}}
+    {[add serial port to source code???]}
    
 
 

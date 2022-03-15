@@ -1,0 +1,1 @@
+<% await tp.file.move("/MEET/" + tp.date.now("YYYY-MM-DD") ) %>

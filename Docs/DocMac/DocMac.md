@@ -508,7 +508,7 @@ Bill to  Dan Oblinger
         703-623-2486
 E-Mail   wef234@gmail.com (emailed)
 Via      Free Ground
-Payment  PayPal
+Payment  Pay]}l
 
 
 
@@ -2362,12 +2362,12 @@ Next to the Ask before sending (recommended) text, click the toggle button. It s
   export VISUAL=nano
   sudo visudo     # MUST USE VISUDO (no other editor)
 
-  {{ CHANGE THIS }}
+  {[ CHANGE THIS ]}
   # User privilege specification
   root    ALL=(ALL) ALL 
   %admin  ALL=(ALL) ALL
 
-  {{ TO THIS }}
+  {[ TO THIS ]}
   # User privilege specification
   root    ALL=(ALL) ALL
   %admin  ALL=(ALL) NOPASSWD:ALL
@@ -2493,7 +2493,7 @@ NO INSTALLER, just app file.
     !rt click OPEN  (this is different than double click and will give option to open
 
 JUST DO IT ONCE  (holding the control key)
- ! (on .dmg file)  -->  ^rt! INSTALL.mpkg  -->   {{in installer now there will be an option to install anyway}}
+ ! (on .dmg file)  -->  ^rt! INSTALL.mpkg  -->   {[in installer now there will be an option to install anyway]}
 
 DONE ONCE FOR ALL TIME (I don't do this)
  #space "prefs" -> !SecurityPrivacy -> !General -> !AllowDownloadFromAnywhere

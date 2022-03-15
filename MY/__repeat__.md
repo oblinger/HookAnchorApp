@@ -1,11 +1,13 @@
 
-### === WEEKLY ===
-- **HOT LISTS** | [SimpleNote](https://app.simplenote.com/) [Rmndrs](https://www.icloud.com/#reminders) AudioMemos #FileThis bk 
-			  | Nails Nose Slack Groc Plant Friday
-- **TODO**	   | Clean todo list for this week
-- **PLAN**      | Week plan in Top
-- **HOUSE**     | Room: [My-]Desks/Bin/Shelf  House: Pass
-- **IN2**       | Quick scrub
+
+|  WEEKLY    |                                                |
+| ---------- | -----------------------------------------------|
+| **HOT LISTS**  | [SimpleNote](https://app.simplenote.com/) [Reminders](https://www.icloud.com/#reminders) AudioMemos # FileThis |
+|            | Bk  Nails  Nose  Slack  Groc  Plant  Friday    |
+| **TODO**       | Clean todo list for this week                  |
+| **PLAN**       | Week plan in Top                               |
+| **HOUSE**      | Room: [My-]Desks/Bin/Shelf  House: Pass.       |
+| **IN2**        | Quick scrub                                    |
 
 
 ### === MONTHLY ===

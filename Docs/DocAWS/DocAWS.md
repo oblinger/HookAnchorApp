@@ -5,7 +5,7 @@
      $ sudo pip install awscli
 ## Setup Jotter backend on AWS
    LOGON  https://438223740058.signin.aws.amazon.com/console   1pass
-      ??? does this find the right one???  - !EC2  !LaunchInstance  !AWS Marketplace   "centos 6.5"  {{must be EBS to boot}}
+      ??? does this find the right one???  - !EC2  !LaunchInstance  !AWS Marketplace   "centos 6.5"  {[must be EBS to boot]}
    - https://aws.amazon.com/marketplace/pp/B00IOYDTV6/ref=mkt_wir_centos65
      !continue   EC2instance = !M3-large
 

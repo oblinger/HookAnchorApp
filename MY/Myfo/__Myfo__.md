@@ -40,6 +40,7 @@ _
 _
 ## HOME
 ### KITCHEN
+### [GE Profile 2.1 cu. ft. Over the Range Microwave in Stainless Steel with Sensor Cooking](https://www.homedepot.com/p/GE-Profile-2-1-cu-ft-Over-the-Range-Microwave-in-Stainless-Steel-with-Sensor-Cooking-PVM9005SJSS/206214752) 
 ### Dishwasher - Bosch 300
 
 Home Depot - April 2, 2020 - #W949383265
@@ -58,7 +59,10 @@ Model:  LSXC22396S  (I think).   or home depot: Internet #301459556  Model #LSXC
 
 The filter warning light can be reset by pressing, and holding, the LIGHT/FILTER button for at least 3 seconds.
 _
+### Smaller Freezer - Frigidaire 5.8 cu. ft. Upright Freezer
 ### BATH
+### Toilet
+STEALTH 0.8GPF EL UHET AIO TOILET WH  (Dan home depot Dec 2018)
 #### -- Tooth Brush --
 30-second smile.   30secondsmile.com   info@30secondsmile.com  888-813-6631
 #### Dad installed fan

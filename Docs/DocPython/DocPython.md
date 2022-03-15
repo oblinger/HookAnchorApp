@@ -57,12 +57,12 @@ class DisplayName:
 #### Configuring paths 2014/7/16
 
      Pycharm -> #, -> Project Structure
-       {{Select folder then click "Mark As [!Sources]"}}
+       {[Select folder then click "Mark As [!Sources]"]}
        # this will add that folder to the PYTHON PATH
 
 #### Configuring paths
   #, -> Project Interpreters -> !ConfigureInterpter -> Paths
-     !'+'   {{Add folder that you want as roots added to PYTHONPATH
+     !'+'   {[Add folder that you want as roots added to PYTHONPATH
 
 
 

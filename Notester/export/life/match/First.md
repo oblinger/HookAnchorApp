@@ -1,0 +1,52 @@
+# life.match.First --
+
+    Testin_The_Water 
+    Relax! If you're not having fun, you're trying too hard... 
+     
+    Hey I'm new to the NYC area and I already love it. I've been hiking in 
+    the Hudson valley, catching many shows, rollerblading all over the 
+    city, jumping around to the music at several of the clubs here, and 
+    doing more museums than my poor feet can stand. I am definitely still 
+    a newbie here though---real New Yorkers love the city too, but they 
+    try not to let it show on their faces. :) < > < > < > < > < > < > < > 
+    < > < > < > < > < > < > < > < > < > < > < > < > < > < > < > < > < > < 
+    > < > < > < > < > < > < > < > I still have 1376 characters 
+    left... Hmmm, let's talk about me some more. THE BASICS: I just 
+    finished up my Ph.D. and now work at IBM doing research on how 
+    technology can reach those missed by today's classrooms. I'm 5'10", 
+    165lbs, physically fit, clean cut. I like to play dress up, but in 
+    that not-trying-too-hard sort of way. ADJECTIVES THAT BEST DESCRIBE 
+    ME: Positive/Energetic -- The first to want to go out and the last to 
+    want to leave. Optimistic/Trusting -- The one people seem to tell 
+    those secrets that they have "never told anyone before." Ambitious -- 
+    Enjoy pushing myself, and get a bit restless when life's groove gets a 
+    little too deep. Thinking -- if I know about it, I have an opinion, 
+    and if don't know about it, I want to. < > < > < > < > < > < > < > < > 
+    < > < > < > < > < > < > < > < > < > < > < > < > < > < > < > < > < > < 
+    > < > < > < > < > < > < > Wow your still reading, please someone give 
+    her a shiny gold star for perseverance. I really tried to put is much 
+    of me a possible into these lines, but the truth is, once you've read 
+    ten of these blurbs they all start sounding alike. So make your best 
+    guess, if you see common ground here drop me a note. If we do find 
+    common ground perhaps we will meet for a quick coffee, go 
+    rollerblading, or see an exhibit. I find my day-to-day activities are 
+    so much more interesting when they are peppered with the occasional 
+    new acquaintance, and well, you just never know... right? 
+     
+    Profile: 
+    Ethnicity:  Caucasian[NL] 
+    Religion:   Catholic (spiritual; not really religious)[NL] 
+    Body Type:  Average (fit; health conscious)[NL] 
+    Height: 5 ft., 10 in. (178 cm)[NL] 
+    Smoking:    Don't smoke[NL] 
+    Drinking:   Drink socially/occasionally[NL] 
+    Children:   Don't have children[NL] 
+    Plans for Children: Undecided[NL] 
+    Profile of Desired Match: 
+    Body Type:  Athletic; Average; or Slim/slender[NL] 
+    Children:   Doesn't have children[NL] 
+     
+     
+     
+     
+     

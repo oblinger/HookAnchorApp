@@ -28,7 +28,7 @@ GIT MAGIC http://www-cs-students.stanford.edu/~blynn/gitmagic/
  git clone git@github.com:oblinger/Cmd-Alfred-Extension
 ### Create cloud remote for existing repo
     $ open http://bitbucket.com
-      {{create repo w. same name, as existing $PROJ_NAME, and copy repo URL}}
+      {[create repo w. same name, as existing $PROJ_NAME, and copy repo URL]}
     $ cd /ob/proj/PROJ_NAME
     $ git remote remove origin
     $ git remote add origin git@bitbucket.org:oblinger/PROJ_NAME.git

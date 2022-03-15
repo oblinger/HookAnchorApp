@@ -2396,7 +2396,7 @@ Nick here is my starter lists for team and for business model. I also included t
 Quick question: should I list NLP under AI.  really we have no one to cover this.  we can fake it a bit w. MIT, but it is definitely not their strength nor ours.  still it is a notable gap if I omit it.
 
 
-~~~~~{{team summary}}
+~~~~~{[team summary]}
 
 We are 60+ Senior Engineers and Data Scientists:
 
@@ -2411,7 +2411,7 @@ We are 60+ Senior Engineers and Data Scientists:
 - Dedicated QA team
 
 
-~~~~~{{Engagement model points}}
+~~~~~{[Engagement model points]}
 
 - Teams are organized into "Pods" where each pod has: data science, engineering, PM leadership, and QA.
 
@@ -2469,8 +2469,8 @@ SLIDE SIX
 Title:  Enabling Your Business Outcomes
 SubTitleText:  (leveraging your data as it exists now)
 
-   {{DIRECTIONS:
-	- subtitle text in notably smaller font}}
+   {[DIRECTIONS:
+	- subtitle text in notably smaller font]}]
 	- content for this slide is taken from the bottom half of the first portrait page from the first deck:
 		"Leverage your data as it is ...."
 	- Still have icons above and below 
@@ -2491,7 +2491,7 @@ Right side:
 - right side title:  Engagement Model
 - Engagement Model bullet points as listed below
 
-~~~~~{{team summary}}
+~~~~~{[team summary]}
 
 We are 60+ Senior Engineers and Data Scientists:
 
@@ -2506,7 +2506,7 @@ We are 60+ Senior Engineers and Data Scientists:
 - Dedicated QA team
 
 
-~~~~~{{Engagement model points}}
+~~~~~{[Engagement model points]}
 
 - Teams are organized into "Pods" where each pod has: data science, engineering, PM leadership, and QA.
 

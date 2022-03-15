@@ -2149,7 +2149,7 @@ Here are details of the desired solution:
 - **AWS PIN POINT** - I am told that AWS PinPoint can be used in building your solution.  If so that is great, but it is not required.
 - **CONTENT** - I will manage the creation and storage of the content itself.  Your system will be supplied text and email messages that will have links to this content, but otherwise you need not worry about the content.
 - **CONTENT SEND** - The core capability of your system is to allow me to specify a message a contact list, and your system will immediately send this message to all contacts.
-- **MESSAGE CHANNELS** - Recipients will be able to specify a phone number for text messages, or email address to recieve content.  {{LEILA Do you want any other channels?  Add them here if important.}}
+- **MESSAGE CHANNELS** - Recipients will be able to specify a phone number for text messages, or email address to recieve content.  {[LEILA Do you want any other channels?  Add them here if important.]}
 - **MESSAGE FORMAT** - The messages send should be rich text or appropriate for email and text.  The messages must be able to have URL links in them to my content.  Ideally they may also accept images, and/or videos directly in the messages as well.
 - **RECIPIENT LIST** - You system has one or more recipient lists.  When I trigger a send, I will specify which list is being sent to.
 - **[OPTIONAL] RECIPIENT SELF SIGNUP** - If it does not significantly increase the cost of the job I would like to have a landing page where employees and vendors may sign themselves up, or remove themselves from these recipient lists.

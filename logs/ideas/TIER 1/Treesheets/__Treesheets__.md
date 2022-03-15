@@ -1,5 +1,9 @@
-
-# ### SYSTEM DESIGN ###
+# ### INFO ### 
+## === REF ===
+### --- Pointers ---
+https://arieluna.notion.site/Apps-29ffc475bd3a4539b48eeb5bb551d713
+[[Screen Shot 2022-03-15 at 8.10.10 AM.png]] 
+# ### SYSTEM DESIGN ### 
 ## === 2021 Design ===
 ### --- Paid name launcher ---
 
@@ -256,7 +260,7 @@ Part Numbering
 - Mapping tables between schemes
 
 _
-# ### LOG ###
+# ### LOG ### 
 ### --- 2021.11.26 - Testing the market ---
 
 VALUE PROPS:

@@ -1,0 +1,135 @@
+# 999humor -- Quotes
+
+     <<>>   Jokes 
+     <<>>   Quotes 
+     <<>>     
+     
+     
+     
+    >Subject: Things to keep in mind 
+    > 
+    >Before criticizing someone, walk a mile in their shoes.  
+    >Then when you do criticize them, you will be a mile away and  
+    >have their shoes. 
+    >======== 
+    >If you ever drop your keys into a river of molten lava,  
+    >let'em go, because, man, they're gone. 
+    >======== 
+    >If trees could scream, would we be so cavalier about cutting  
+    >them down? We might, if they screamed all the time, for no  
+    >good reason. 
+    >======== 
+    >To me, it's a good idea to always carry two sacks of something  
+    >when you walk around. That way, if anybody says, "Hey, can you 
+    >give me a hand?", you can say, "Sorry, got these sacks." 
+    >======== 
+    >The face of a child can say it all, especially the mouth  
+    >part of the face. 
+    >======== 
+    >If a kid asks where rain comes from, I think a cute thing to  
+    >tell him is "God is crying."  And if he asks why God is crying, 
+    >another cute thing to tell him is "Probably because of something  
+    >you did." 
+    >======== 
+    >I hope if dogs ever take over the world and they choose a  
+    >king, they don't just go by size, because I bet there are  
+    >some Chihuahuas with some good ideas. 
+    >======== 
+    >Maybe in order to understand mankind we have to look at that  
+    >word itself. MANKIND. Basically, it's made up of two separate  
+    >words: "mank" and "ind."  What do these words mean?  It's a  
+    >mystery and so is mankind. 
+    >======== 
+    >It's easy to sit there and say you'd like to have more money.  
+    >And I guess that's what I like about it. It's easy. Just  
+    >sitting there, rocking back and forth, wanting that money. 
+    >======== 
+    >As the light changed from red to green to yellow and back  
+    >to red again, I sat there thinking about life. Was it nothing  
+    >more than a bunch of honking and yelling? Sometimes it seemed  
+    >that way. 
+    >======== 
+    >I can picture in my mind a world without war, a world without  
+    >hate. And I can picture us attacking that world, because they'd 
+    >never expect it. 
+    >======== 
+    >During the Middle Ages, probably one of the biggest mistakes  
+    >was not putting on your armor because you were "just going 
+    >down to the corner." 
+    >======== 
+    >When I found the skull in the woods, the first thing I did was  
+    >call the police.  But then I got curious about it.  I picked  
+    >it up and started wondering who this person was and why he had  
+    >deer horns. 
+    >======== 
+    >If you're a cowboy and you're dragging a guy behind your  
+    >horse, I bet it would really make you mad if you looked back  
+    >and the guy was reading a magazine. 
+    >======== 
+    >Broken promises don't upset me. I just think, why did they  
+    >believe me? 
+    >======== 
+    >Consider the daffodil. And while you're doing that, I'll be  
+    >over here, looking through your stuff. 
+    >======== 
+    >I hope that after I die, people will say of me, "That guy  
+    >sure owed me a lot of money." 
+    > 
+     
+     
+    >Subject: Smartass Comments 
+    > 
+    >1)Ahhh...I see the fuck-up fairy has visited us again... 
+    > 
+    >2)The fact that no one understands you doesn't mean you're an artist. 
+    > 
+    >3)I don't know what your problem is, but I'll bet it's hard to pronounce. 
+    > 
+    >4)Any connection between your reality and mine is purely coincidental. 
+    > 
+    >5)I have plenty of talent and vision. I just don't give a damn. 
+    > 
+    >6)I like you. You remind me of when I was young and stupid. 
+    > 
+    >7)What am I? Flypaper for freaks!? 
+    > 
+    >8)I'm not being rude. You're just insignificant. 
+    > 
+    >9)I'm already visualizing the duct tape over your mouth. 
+    > 
+    >10)Thank you. We're all refreshed and challenged by your unique point of view. 
+    > 
+    >11)I will always cherish the initial misconceptions I had about you. 
+    > 
+    >12)It's a thankless job, but I've got a lot of Karma to burn off. 
+    > 
+    >13)No, my powers can only be used for good. 
+    > 
+    >14)How about never? Is never good for you? 
+    > 
+    >15)I'm really easy to get along with once you people learn to worship me. 
+    > 
+    >16)You sound reasonable...Time to up my medication. 
+    > 
+    >17)I'll try being nicer if you'll try being smarter. 
+    > 
+    >18)I'm out of my mind, but feel free to leave a message... 
+    > 
+    >19)I don't work here. I'm a consultant. 
+    > 
+    >20)Who me? I just wander from room to room. 
+    > 
+    >21)My toys! My toys! I can't do this job without my toys! 
+    > 
+    >22)It might look like I'm doing nothing, but at the cellular level I'm really quite busy. 
+    > 
+    >23)At least I have a positive attitude about my destructive habits. 
+    > 
+    >24)You are validating my inherent mistrust of strangers. 
+    > 
+    >25)I see you've set aside this special time to humiliate yourself in public. 
+    > 
+    >26)Someday, we'll look back on this, laugh nervously, and change the subject. 
+    > 
+     
+     

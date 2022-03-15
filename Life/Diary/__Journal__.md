@@ -1,3 +1,19 @@
+
+### 2022-03-14 - Work Reboot
+I need to reboot the way I work, my motivations, my output, my processes
+
+NOW
+- To start with I will do weekly check-ins for how I am doing.
+- Progressively expand the planning I am doing & effective hours per day
+
+KEY CHANGES FOR A GOOD WORKDAY
+- Practice goal setting at all levels: day, week, month, quarter, task
+- Focus on each day being a good work day
+- Before starting, spend bit of time planning
+- After finishing, reflect on outcomes
+
+
+### 2022.03.00 - QJ note
 As I understand it, there are 1000+ biological-men who can run faster than the fastest biological-woman, so was imagining a future where it becomes normal for a tiny fraction (0.1% to 1%) of non-trans elite athletes to adjust their self determination specifically to BECOME a world champion.  It would not take many folks to decided they had a bit of room in their life for a bit of ambiguity.  The stakes would be high...  millions in advertising etc. and the gold medal title.  And just 0.1% would be enough....
 
 I think both this generation and next generation know what a biological-women and self-declared-women are.  The difference is which of these definitions is given primacy when one simply uses the term "woman."  
@@ -55,13 +71,13 @@ C
 
 
 
-== Interesting conversations:
+Interesting conversations:
 - VCs
 - Relevant series A thru C companies
 - Matching job titles.
 - Good groups to connect with.
 
-== Tactical advice (framing self; linked-in; outreach emails)
+Tactical advice (framing self; linked-in; outreach emails)
 
 
 > It just depends, what you would like to create next in your career and what ypur timeline would be.
@@ -101,7 +117,7 @@ WHAT:
 	(4) lead and monitor the prototyping activities.
 
 
-~~~
+~
 I have a couple of direct connections that are in the venture world, I think my first step is to just talk with them about this idea.  And I have an exploration thread that are not even listed above, so it is going to be some time before my new path becomes clear.
 
 Thanks for the help so far, and looking forward to our next chat!
@@ -124,7 +140,7 @@ _
 - MEANING -- do need to be striving for meaningful outcomes.  
 	wont be happy just making google richer
 
-~~~~  01.17
+~-~~  01.17
 
 - WANTS: Thinking, Diversity, Ease
 - PURPOSE: Push an idea into reality???
@@ -283,7 +299,7 @@ QUESTIONS FOR DOUG:
 -- side projects; 
 
 
-~~~~~
+~-~~~
 
 
 _
@@ -352,7 +368,7 @@ Terms:
 
 
 
-~~~~
+~-~~
 $10M max after tax into Dan's pocket, additional monies must go to a charitable trust or in some way go to charity.  
 -- This should be a legal agreement between Dan and Jason, and not tied to Dan's equity, so Dan can exercise the equity as needed before a full exit.
 (I don't expect this to be large money, but rather a stipend if I am trying to do something after Visio, but before visio exits.)
@@ -406,8 +422,8 @@ Some bullet point thoughts:
 
 **PERSUING MY INTESETS IN A DIRECT WAY**
 - PAST ACTION -- I don't think I have been very strategic in persuit of my interests.  Rather I am always looking for interesting problems to consider, and I consider them at two levels:  (1) pencil paper design.  (2) ground up implementation.
-- 
-_
+
+
 ### 2021.05.26 - Quick Plan before Michael/Nick call
 
 DEMORALIZED
@@ -482,7 +498,7 @@ BIG BACKGROUND IDEA: COLLECTIVE QUALITY -- First here is a big idea (I think).  
 
 The basic idea underlying this is that the holder of the original NFT burns that NFT in a way that can be uniquely linked to a new transfer NFT.  I think this mechanism retains the identity guarantees across chains!
 
-~~~~~~
+~-~~-~
 Here is my "transfer of NFT" approach:
 
 CREATION -- First the new NFT universe born, and a community of users form using NFTs created in this universe. 
@@ -802,7 +818,7 @@ _
 	And by the way we want to add other sports in, like soccer which is 7x more popular than hoops globally! I got an interesting data point that UCLA is paying $1400/month to a kid who just sits there and types in stats for volleyball games and they'd LOVE to have an app that does that for them. I can't imagine volleyball stats would be more difficult than hoops, seems way easier given the smaller size and lack of horizontal movement between players (I guess ball tracking might be a minor issue?) Market has to be WAY smaller (IMO) but if there isn't an option at the D1 college level like UCLA is, then there is a chance to enter higher up in the market and maybe make our investment back quickly. 54 men's teams, 330 women's... at over 4 months long and $500/month, that's $2k a team... assume something optimistic like 50% penetration/200 teams (some other D3 or whatever) and you'd have $400k a year. Not exciting. There are 500,000 players in HS though. There are 11 on a typical varsity team, so that's about 50,000 HS teams. At $250/team/season (pretty conservative, they play like 25 matches so that's only $10/match for 60-90 minutes, that's $2.5M if 20% use it. Gets more interesting. Add in some pro leagues and you could probably get to $3M+ a year in the US, maybe $9-10M globally if the same ratio applies as hoops. Not as exciting by a long shot IMHO, but interesting exercise for a niche sport I suppose. 
 
 
-	~~~~
+	~-~~
 
 	Yeah, there are alot of other sports out there.  If you go for the gym market, two different gyms mentioned flag football as their runner up sport they would love to have covered, and volleyball was mentioned as well. 
 
@@ -885,7 +901,7 @@ _
 	-- 60% founder situation is good
 	-- 60% tech works
 	-- 60% market works
-	   ~~~
+	   ~-~
 		22% success.
 		35%	= 70% founder * 70% tech works * 70% market
 		34%	= 70% founder * 80% tech works * 60%
@@ -965,7 +981,7 @@ _
 	~ $8M	Annual revenue with crazy optomistic per person pentration rate (I think it is not reasonable, but I just tried it out.). And I also double the per person rate to equal our original per team rate.  This also seems unlikely, but I am not a clear about that.  If we add lots of vanity video and such, then while it wont increase the penetration rate, it does seem for those that care, it can increase the rate they will pay.)
 
 
-	~~~~~
+	~-~~~
 	CALL DETAILS
 
 	Based on my early calls to gyms I *DO* see the same gap in the market gym market.  Their response to the technology is quite different than at the highschool level.  (Hooray!)  They just do not have any technology like this, and HUDL is way too expensive.
@@ -976,7 +992,7 @@ _
 
 	Also it seems to me that getting this service installed INTO the gym is pretty key.  that way no one needs to do anything, and the game is recorded by default.  I think this will be huge in converting new customers.  I suspect this is the main way to go.  But notice it does mean that we are either developing our own HW.. or there is a solution that we can access that is not part of a competitor's bundle (like HUDL focus).
 
-	~~~~
+	~-~~
 
 	In the end I am doubtful that leagues will pay very much per team in order for the whole league to have this service.  I am not sure, but it seems this would happen in the case that a league is competing on tech features against another league for some coveted players.. but is this really the circumstance?
 
@@ -985,7 +1001,7 @@ _
 	I am not at all clear that one can parlay ones wins in the gym market into other market.  I do see evidence that once one in a single gym, they will want us to provide stats for other sports.  (several have mentioned flag football)  but I am not clear that this will translate into much larger figure per gym.
 
 
-	~~~~
+	~-~~
 
 	So this is an update from the last time we talked.  For the first time I am hitting folks that clearly see the value of this service, and do not already have access to the service.  COOL!
 
@@ -1012,7 +1028,7 @@ _
 
 
 
-	~~~~~~~
+	~-~~-~~
 	MY THINKING
 
 
@@ -1032,7 +1048,7 @@ _
 
 	Jason
 
-	~~~~~~~
+	~-~~-~~
 
 
 	Jason, 
@@ -1059,7 +1075,7 @@ _
 
 
 
-	~~~~~~~
+	~-~~-~~
 	Quick Analysis on the AAU market
 
 	This is a quick and very dirty analysis.  I would not trust it as definitive, just a quick sniff test really.  I only managed to connect with a handful of coaches.  This is what I found.
@@ -1097,7 +1113,7 @@ _
 
 	He did not seem to think anyone would really care about stats.
 
-	~~~~
+	~-~~
 
 	``A team mom takes stats.''
 
@@ -1374,7 +1390,7 @@ _
 	    43M * 15% = 6.5M to me...   Discounted by chance of failure 3x == 2M
 	-- Could not ferris the situation at all, since I do not control it.
 	-- Psychologically I dont own the idea
-	~~~~
+	~-~~
 
 
 
@@ -1764,7 +1780,7 @@ There is much less time, than I am pretending there is.  But less that needs doi
 - Days must have space & periods of fast activity.
 
 - Should have few activities in each bucket, then keep coming back, so each activity is pushed to a place of value.
-- 
+
 
 
 
@@ -1803,7 +1819,7 @@ RETREAT
   * souls connected 
   * loving presence (beyond the psy effect)
 
-=============================================================
+
 
 Pat,
 

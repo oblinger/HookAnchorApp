@@ -1,0 +1,6 @@
+# Bash --
+
+
+
+
+    source .bashrc

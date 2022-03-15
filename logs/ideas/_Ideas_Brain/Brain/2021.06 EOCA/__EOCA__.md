@@ -72,7 +72,7 @@ Providing information to an external entity in order to drive behavior supportin
 
 
 
-{{Need to formalize intention}}
+{[Need to formalize intention]}
 
 
 System, S, is said to have an tendency towards X if it acheives X over many futures.
@@ -111,7 +111,7 @@ One needs to PERFECT control over a scope if one hopes to maintain ANY control o
 This is why we are focused on proofs of complete and perfect control. Likely anything less is equivelant to having NO control over that scope.
 
 
-{{Useful to formalize this notion of scope of control}}
+{[Useful to formalize this notion of scope of control]}
 
 
 
@@ -775,7 +775,7 @@ Layered on top of this 4 part decompositon we build our framework for talking ab
 Notice the notation above provides a fairly low-commitment framework for discussing the nature and possible of contaiment proofs as well as the development of a taxonomy of escape trajectory attacks against them.
 
 
-{{COMMENT:  this notataion is not quite right yet.  it focuses on actions of the AGI rather than the states achieved by those actions it might not be well defined which actions are the bad ones in the framing.  Also what about actions that 'copy' computation to another place as a way of causing indirect actions?  Seems we need to tweak the formalism to cover these.}}
+{[COMMENT:  this notataion is not quite right yet.  it focuses on actions of the AGI rather than the states achieved by those actions it might not be well defined which actions are the bad ones in the framing.  Also what about actions that 'copy' computation to another place as a way of causing indirect actions?  Seems we need to tweak the formalism to cover these.]}
 
 
 _
@@ -785,7 +785,7 @@ In a full treatment of this subject one would use the framework to characterize 
 
 Just to give a flavor of these categories of ACP safety protocols we briefly list an incomplete collection of them here.  The intent of this framework is to be able to analyze failure modes that span all of these safety categories.
 
-{{Notice:  There is no claim that this taxonomy is the best/only taxonomy one might use.  This taxonomy is really aimed at how these systems interact with various End Run escape possibilities, no claim is being made beyond this.}}
+{[Notice:  There is no claim that this taxonomy is the best/only taxonomy one might use.  This taxonomy is really aimed at how these systems interact with various End Run escape possibilities, no claim is being made beyond this.]}
 
 
 **ACTION RESTRICTION SAFETY**
@@ -809,7 +809,7 @@ Just to give a flavor of these categories of ACP safety protocols we briefly lis
 For now instead of digging into this rich space of ideas -- a space where most or perhaps all of the current ideas regarding safe AI live, we jump over that toward a class of particularly pernicious escape strategies (collectively called end runs).  These escape strategies seem to be capable of circumventing all of these safety mechanisms.  We then consider the space of counter measures that might be capable of dealing with this most pernicious class of attacks.
 
 
-{{Evan, good scholarship here would be to take the space of proposed safety mechanism and place them into this taxonomy.  That has the second benefit of reinforcing the idea that the challenges I will list below, will cover ALL of these defense approaches.}}
+{[Evan, good scholarship here would be to take the space of proposed safety mechanism and place them into this taxonomy.  That has the second benefit of reinforcing the idea that the challenges I will list below, will cover ALL of these defense approaches.]}
 
 _
 ### --- END RUN --- 
@@ -892,7 +892,7 @@ INFORMATIONAL ESCAPE
 
 
 
-{{Need to formalize intention????}}
+{[Need to formalize intention????]}
 
 
 System, S, is said to have an tendency towards X if it acheives X over many futures.
@@ -990,7 +990,7 @@ _
 This is why we are focused on proofs of complete and perfect control. Likely anything less is equivelant to having NO control over that scope at all.
 
 
-{{Useful to formalize this notion of scope of control}}
+{[Useful to formalize this notion of scope of control]}
 
 
 _

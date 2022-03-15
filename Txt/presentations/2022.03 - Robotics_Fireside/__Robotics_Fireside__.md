@@ -1,4 +1,20 @@
 
+octomore 11.1 (peat scale)
+
+____
+Brown CS graphics -
+3d modeling - surface modelling
+medical modeling
+-- signed distance functions
+-- near range radar. time of flight.  (Matt johnson)
+-- gel sight
+-- IMU based 
+-- joe Davidson (apple picking)
+
+------
+Ravi -
+
+
 # NOTES
 TRAVEL DETAILS
 	R10 12:55p-5p 
@@ -11,7 +27,32 @@ TRAVEL DETAILS
 		- EUG airport 21min to Marriott
 		- Talk Friday March 11th 10a - 11:30a
 		- 3443 Hutton St, Springfield, OR 97477 -- Phone: (541) 726-2121
-ROSS EMAIL
+### TALK ANNOUNCEMENT
+
+Robotics Innovation In The Lab, Gov, Corp, and Startups
+
+We use the narrative stories of Bizzy, Martian, Aeolus Robotics, touch upon Dusty Robotics, Amazon's Astro and DARPA funded work, in order to talk about robotic innovation from several vantage points.
+
+BEST PRACTICES AND ANTI-PATTERNS -- We use these examples to discuss:
+- Founding companies, gaining product market fit
+- Getting funded (both governmental and investor funding)
+- Growing and running larger (40 PhD) R&D robotics teams. 
+
+EXAMPLES OF APPLIED RESEARCH
+- Low cost robotics -- approaches for reducing 2 orders of magnitude in cost
+- Wiping Research -- Bizzy was a bathroom cleaning robot.  This involved novel on robotic path planning for surface wiping.
+- Unconstrained Grasping -- Aeolus was a 'helper' bot, and is required to be able to manipulate found objects in an uncontrolled setting.
+
+ROBOTICS IN THIS NEW REMOTE WORLD — Not just because of covid, technical work is moving towards a planetary teams rather than co-located teams.  As you can imagine this has dramatic consequences for a robotics team.  I setup a 24/7 follow the sun hardware innovation lab.   It kinda worked ;-). Lessons learned and thoughts for the future of robotics.
+
+
+DAN OBLINGER
+The first third of Dan's career was focused on academic research in ML and Programming By Demonstration while at IBM research and teaching in EE at Columbia University.  He then served as a DARPA Program Manager funding over $200M in R&D focused on Human like learning from instruction and Language Understanding, including the work that led to the IBM Watson system beating the Jeopardy-TV-show world champion.  Recently Dan has founded and exited several companies in AI, Robotics and Clean Energy.
+
+
+
+
+### ROSS EMAIL
 	
 	Ross Email
 	Hey Ross,
@@ -55,6 +96,22 @@ ROSS EMAIL
 	
 	Looking forward,
 	Dan
+
+### ROSS EMAIL 1
+  
+Across two companies, I worked on several versions of this robot with a 40+ PhD team of roboticists.  And my current company is in the process of getting acquired by a hardware company too.  Off of the top of my head, here are some topics that might be of interest:  
+  
+  
+WIPING RESEARCH — The first company was a bathroom cleaning robot. Novel work on surface wiping that I was involved in at a technical level. translating arbitrary 3D surfaces into 2D developing wiping plans then translating back to 3D for execution.  
+  
+LOW COST ROBOTICS — The "rosy the robot" dream of personal general purpose home robots can only be realized by a two order magnitude drop in the cost of robotic system. We had ideas about how do to this, and I talk at a general level about these ideas, and provides some "war stories" from those attempts.  
+  
+BUILDING A 40-PHD ROBOT OS — The second company in particular was a pretty big effort — and done on a dramatically shortened timeframe.  Perhaps talking at both a social and technical level about that effort.  
+  
+  
+ROBOTICS IN THIS NEW REMOTE WORLD — Not just because of covid, technical work is moving towards a planetary teams rather than co-located teams.  As you can imagine this has dramatic consequences for a robotics team.  I setup a 24/7 follow the sun hardware innovation lab.   It kinda worked ;-). I think that might be of interest to the audience as I think these kinds of hybrid approaches are the wave of the future.  
+  
+STARTUPS — As a serial technical founder I have thoughts about how one needs to think about oneself in order to play that game.
 THOUGHTS / LESSONS LEARNED
 	- Robotics company formation
 	- Common startup failures patterns; Key
@@ -120,8 +177,23 @@ THOUGHTS / LESSONS LEARNED
 - $1M -- bath cleaning robotic prototype
 
 ## Aeolus
-- xxx
 
+AEOLUS RESEARCH
+- Markus Vincze lab @ TU WIEN (U of Vienna)
+  V4R (Vision for robotics)
+- David Fischinger (Grasping Research)
+  [Height Accumulated Features (HAF) grasping](https://www.acin.tuwien.ac.at/fileadmin/acin/v4r/v4r/IROS2012_Draft.pdf) 
+  Parametric Object Grasping
+- George Todoran. (Base Motion Planning)
+  Optimal Local Path-Planning  (using an ODE solver)
+  Moving Horizon Trajectory Planner (MHTP) with an update rate of 10Hz
+  Randomly-exploring random tree search  (RTT*).  
+  A* over heuristically generated way-points graph
+
+Videos
+[Live](https://www.youtube.com/watch?v=1vIIBoqj74Q)  (sweeping :50)
+[Live Video 5:36](https://www.youtube.com/watch?v=VbIWDGcPNBQ)  (place remote 2:08;  4:10 grasp it;  4:50 drop it)
+[disinfecting bot](https://www.youtube.com/watch?v=LmkHKTxyOqU)  
 ## Jobs and Funding
 - Very hot job market in 2021.  Its a bit cooler now, but still hot.
 

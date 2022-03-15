@@ -1,8 +1,7 @@
 
-Travel   http://gocalifornia.about.com/od/casfmenu/San_Francisco.htm
-
-[[https://couples.howaboutwe.com/users/sign_in#filter/filter%5Bcategory][HowBoutWe]]      Paid Date stuff
-[[http://sf.funcheap.com/][FUN&CHEAP]]      Current  (Free museum days, street festivals, local top music)
+- [Travel](http://gocalifornia.about.com/od/casfmenu/San_Francisco.htm) 
+- [HowBoutWe](https://couples.howaboutwe.com/users/sign_in#filter/filter%5Bcategory)      Paid Date stuff
+- [FUN&CHEAP](http://sf.funcheap.com/)    Current  (Free museum days, street festivals, local top music)
 [[http://www.sfarts.org/#][SF ARTS]]        Select Date Range (huge list)
 [[http://flavorpill.com/sanfrancisco/editor_picks][Flavor Pill]]    Cultural (Theater, Film, Galleries)
 [[http://squidlist.com/events/index.php][Squid List]]     Smaller Quirkier (meetups, commedy, one-off community events)
