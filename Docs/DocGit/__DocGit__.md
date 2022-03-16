@@ -10,7 +10,6 @@ git push origin
 Web->Github -> ![my account picture] -> Settings -> Developer Settings -> 
     Personal Access Tokens -> ![Generate New Token]
 
-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
 
 ## QUICK REF
   $ git init                     # creates .git
