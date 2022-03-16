@@ -61,6 +61,7 @@ CMD OPT
 F REPLACE
 
 OPT
+^ / v  swap line up/down
 enter follow link
 tab tgl FOLD
 
