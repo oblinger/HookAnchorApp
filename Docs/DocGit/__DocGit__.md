@@ -1,3 +1,16 @@
+git config --global --unset credential.helper   # only if credential exists
+git config --global user.name "Dan Oblinger"
+git config --global user.email "code@oblinger.us"
+git config --global credential.helper cache
+git remote add origin https://github.com/oblinger/kmr.git
+git push origin master
+git push --set-upstream origin master
+git push origin
+
+Web->Github -> ![my account picture] -> Settings -> Developer Settings -> 
+    Personal Access Tokens -> ![Generate New Token]
+
+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
 
 ## QUICK REF
   $ git init                     # creates .git
