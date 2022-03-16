@@ -2,7 +2,7 @@
 ### 2022-03-15 
 - [ ] Get response to Amy Kruse
 - [ ] Schedule calls for FAANG Engineer
-- [ ] [Yearbook](__yearbook__) minimally current
+- [ ] [Yearbook](__Yearbook__.md) minimally current
 - [ ] Get all time critical tasks completed
 	- [ ] Blood, Taxes out, Eli's doctor's note
 	- [ ] Mom's visit

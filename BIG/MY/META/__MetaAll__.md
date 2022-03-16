@@ -1,23 +1,19 @@
 
 
-
 | TOPLEVEL  |                                                                 |
 |-----------|-----------------------------------------------------------------|
 | [BIG](__BIG__)       |                                                                 |
 | [LISTS](__LISTS__.md)     | Undated collections of information of a single type             |
-|           | [Books](__Books__)  [Buy](__Buy__)  [Humor](__Humor__)  [Movies](__Movies)  [Quotes](__Quotes__)  [Recipes](__Recipies__)  [ToRead](__ToRead__)              |
 | [LOGS](__LOGS__)      |                                                                 |
 | [MISC](__MISC__)      |                                                                 |
-| [REF](__REF__)       | Reference materials of any kind                                 |
-
 
 
 | LOGS      | Dated, temporally sequenced lists                               |
 |-----------|-----------------------------------------------------------------|
 | [DAILY](__Daily__)     |                                                                 |
 | [MEET](__MEET__)      | Meeting notes                                                   |
-| [WP](__WP__)        | Smaller single documents I produced                             |
-| [ROCKS](__Rocks__)     | Medium sized projects expected completion within a quarter      |
+| [WP](__WP__.md)        | Work-Product -- Smaller single documents I produced             |
+| [ROCKS](__ROCKS__.md)     | Medium sized projects expected completion within a quarter      |
 | [PRJ](__Prj__)       | Larger / Longer or indefinite running projects                  |
 |           |                                                                 |                     
 | [Ideas](__Ideas__)     |                                                                 |
@@ -25,22 +21,27 @@
 | [Letters](__Letters__)   |                                                                 |
 
 
+| LISTS     | Undated collections of information of a single type             |
+|-----------|-----------------------------------------------------------------|
+| Small Item| [Books](__Books__)  [Buy](__Buy__)  [Humor](__Humor__)  [Movies](__Movies)  [Quotes](__Quotes__)  [Recipes](__Recipies__)  [ToRead](__ToRead__)              |
+| [APP](__APPS__)       |                                                                 |
+| [CORP](__CORP__.md)      |                                                                 |
+| [LANG](__LANG__.md)      |                                                                 |
+| [PEOPLE](__PEOPLE__.md)    |                                                                 |
+
+
 | BIG AREAS |                                                                 |
 |-----------|-----------------------------------------------------------------|
-| [APPS](__APPS__)      |                                                                 |
-| [CORP](__CORP__.md)      |                                                                 |
-| [FIN](__FIN__)       | <                                                                |
-| [LANG](__LANG__)      |                                                                 |
-| [MED](__MED__)       | <                                                               |
-| [MY](__MY__)        |                                                                 |
-| [PEOPLE](__PEOPLE__)    |                                                                 |
-|           |                                                                 |
 | [Career](__Career__.md)    |                                                                 |
 | [Docs](__docs__.md)      |                                                                 |
+| [FIN](__FIN__)       | <                                                                |
 | [Food](__FOOD__)      |                                                                 |
 | [Legal](__Legal__)     |                                                                 |
 | [Life](__Life__)      |                                                                 |
+| [MED](__MED__)       | <                                                               |
+| [MY](__MY__)        |                                                                 |
 | [Notester](__Notester__)  |                                                                 |
+| [REF](__Ref__.md)       | Reference materials of any kind                                 |
 
 
 
