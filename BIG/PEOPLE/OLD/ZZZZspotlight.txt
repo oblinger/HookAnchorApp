@@ -1,0 +1,2 @@
+jcrm folder /Users/oblinger/ob/topics/Career/CRM
+crm doc /Users/oblinger/ob/topics/Career/CRM/__CRM__.xlsx
