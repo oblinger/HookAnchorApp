@@ -1,7 +1,14 @@
 
-[Kbd-Shortcuts](__KBD_Shortcuts__.md)
-[Forum](https://forum.obsidian.md) 
-[Discord](http://app/discord)
+ [Kbd-Shortcuts](__KBD_Shortcuts__.md)  [Forum](https://forum.obsidian.md)   [Discord](http://app/discord)  
+
+# ### TODO ### 
+- [ ] Add template for rocks (name & description inputs; sub-folder, with link)
+- [ ] update kmt so .md will match without num prefix and with/without dunder
+- [ ] Get GIT sync to the cloud
+- [ ] Get Kbd Maestro sync working
+
+
+# ### NOTES ### 
 
 Shortcut Docs
 	[Complete-ish](https://santiyounger.com/obsidian-shortcuts)

@@ -1,12 +1,9 @@
-LG SIGNATURE 7.3CuFt Dual Fuel Slide-in Gas Convection Range with Infrared Heating in Textured Steel 
-Item # ‌1095743‌
-$ 2,999.99
-bootstrap guy's.  insurance setup:  https://medium.com/@dvassallo/from-employee-to-bootstrapper-941f061f207f
-
-
-# TODO
+# ### TODO ### 
+- [ ] Freeze Eli's Credit
 -- Rebuild portfolio
 -- IDEA:  Use https://whalewisdom.com/ For investment ideas.
+
+# ### UNSORTED ###
 ### OLD ITEMS
 -- Solve 83b issue  (Add activities to this list)
 -- Consider additions to portfolio

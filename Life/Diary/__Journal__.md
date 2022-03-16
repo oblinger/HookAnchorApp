@@ -1,17 +1,4 @@
 
-### 2022-03-14 - Work Reboot
-I need to reboot the way I work, my motivations, my output, my processes
-
-NOW
-- To start with I will do weekly check-ins for how I am doing.
-- Progressively expand the planning I am doing & effective hours per day
-
-KEY CHANGES FOR A GOOD WORKDAY
-- Practice goal setting at all levels: day, week, month, quarter, task
-- Focus on each day being a good work day
-- Before starting, spend bit of time planning
-- After finishing, reflect on outcomes
-
 
 ### 2022.03.00 - QJ note
 As I understand it, there are 1000+ biological-men who can run faster than the fastest biological-woman, so was imagining a future where it becomes normal for a tiny fraction (0.1% to 1%) of non-trans elite athletes to adjust their self determination specifically to BECOME a world champion.  It would not take many folks to decided they had a bit of room in their life for a bit of ambiguity.  The stakes would be high...  millions in advertising etc. and the gold medal title.  And just 0.1% would be enough....

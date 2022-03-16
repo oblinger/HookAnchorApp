@@ -1,8 +1,19 @@
 
+### 2022-03-15 Qingling's income and taxes
 
---- starting to use Evernote -- 2018.08.07 ---
+$458K
+$190K = $7,308 * 26  gross
+ ~ ~ ~
+$268K
+
+$133,276 = $5,126 * 26 net pay
+
+### 2022-03-15 - #### STARTED USING THIS AGAIN #### 
+
+### 2018-08-07 - #### starting to use Evernote #### 
 
 
+### 2016-00-00 - Aeolus notes
 
 picker/sweeper
  close doors
@@ -37,7 +48,6 @@ Milutin
 -- what will be deliver by end of month.
 -- how will we avoid having this kind of gap in the future.
 
---------
 
 
 fix phone calendar to include aeolus events
@@ -46,13 +56,13 @@ gold owner
 git owner
 place where the test is run. where are the camera.
 
-## Hiring
+Hiring
 -- ONE OF A KIND:  Security, SafetyTeam, Mgt guys.  in Europe.
 -- Q/A, sys eng, integration team
 -- Roboticsts
 -- Vision guys
 -- Hiring team.
-## Notes
+Notes
 Less 
 
 Rough guess new job 25% less.
@@ -67,12 +77,13 @@ Benefits that more than make up for this:
 
 Not so easy to find companies that pay full benefits -- with a reasonable pay.
 
-==============
+.....
 was Thinking about the future.
 did not seem so worried about us being a startup
 did want to work as a C++ but that is not the primary.
 was frustraed with himself that he couldn't get others to support him as he needed to get work done fast
-==============
+......
+
 
 
 
@@ -106,7 +117,7 @@ OBJECT RECO IDEAS
 
 
 
-## Todos
+#### Todos
 -- Tell Rafael to call Alex.  resign
 -- DECIDE:  w. Brandon are they sending the correct 
 -- DECIDE:  Rogerio to Taiwan?
@@ -125,13 +136,13 @@ CTO
 -- shooting the moon.
    build robot medical system.... whole system is robotic... and see the way.
 
-## After Action
+#### After Action
 -- Need reliable way to contact people.  Brandon while walking around.
 
 -- VPN -- one person being the gateway & need second person access -- temporary access
 
 
-## Jeff Roles
+#### Jeff Roles
 
 -- Organizational/cleanliness tracking (JIRA, swim lane plans, repo, )
 -- Rescource planning  #people, #months, across tasks.
@@ -139,7 +150,7 @@ CTO
 -- Performance reviews
 -- Scheduling meetings, 
 
-## After Action
+#### After Action
 
 EFFECTIVE CONNECTIVITY TO TAIWAN
 -- Certain time we are not getting responsivness.
@@ -151,10 +162,8 @@ EFFECTIVE CONNECTIVITY TO TAIWAN
 -- More Testing should be driven from Taiwan
 
 
-
-## Phone Log
  
--- 17.11.14 Prenup info  -- info moved to evernote
+### 17-11-14 Prenup info  -- info moved to evernote
 
 Edna Avraham, LMFT; 205 East 3rd Avenue, Suite 308; San Mateo CA 94401; 650-579-7153
 Neil Liebert, MA, LMFT; 555 Middlefield Road, Suite 106-B; Palo Alto, CA 94301; 650-906-5000
@@ -170,14 +179,14 @@ George Richardson
 
 
 
---- 17.08.01 Sutter health
+### 17-08-01 Sutter health
 
 acct  402972202  Sutter Health
 
 march charge for $1,7xx.xx was correct for HR visit
 
 
---- 17.05  Experian
+### 17-05-00  Experian
 logged in and changed email to my wef account.
 
 
@@ -212,13 +221,13 @@ Mon - Fri: 6 am - 6 pm PT
 Sat - Sun: 8 am - 5 pm PT
 
 
-=== Bought glasses
+### 2017.00.00 - Bought glasses
 
 o656778528. Y
 
 https://www.zennioptical.com/orderConfirm?_requestid=260906
 
-=== CREDIT CARDS
+### 2017.00.00 CREDIT CARDS
 
 CREDIT CARD
 
@@ -234,7 +243,7 @@ CREDIT CARD
 
 
 
-=== 09.29 Double Cash Back
+### 2017-09-29 Double Cash Back
 
   51814  
 
@@ -251,7 +260,7 @@ Credit Analyst Dept
 Applied and got Citi Card Double Cash Back
 
 
-=== 9/29 SLING.com fraudulent charges
+### 2017-9-29 SLING.com fraudulent charges
 SLING  Sept-1
 
 - 800-887-8643
@@ -264,7 +273,7 @@ all charges reversed.  alfred from capital 1  cleaned this up nicely
                                                                       ===   2 0 1 6   ===
                                                                       ===================
 
-=== 11/06 changed address ===
+### 2016-11-06 changed address
 
 Billing at *Schwab / *Vangard / *Penfed / *Capital One
 
@@ -275,18 +284,16 @@ Closed 11/06
 800.288.2020 
 
 
-=====
+### 2016-11-04 - Recology Sunset Scavenger
+
 Closed 11/04 -- by Juan
-Recology Sunset Scavenger
 250 Executive Park Blvd. Ste 2100
 San Francisco, CA 94134
 (415) 330-1300 
 8AM - 5PM
 
-
-===
+### 2016-11-04 - water power sewer
 Closed 11/04 -- Susan
-water power sewer
 Send the bottom portion of the bill with check or money order payable to San Francisco Water to P.O. Box 7369, San Francisco, CA 94120-7369. (DO NOT MAIL CASH).
 
 San Francisco, CA 94120-7369
@@ -294,12 +301,12 @@ Sign up for automatic payment service. For an authorization form or
  additional information please call (415) 551-3000. Y
 Call (415) 551-3000 and follow the recorded instructions or contact the credit card payment service provider directly at 1-877-477-8290.
 
-====
+
+2016-11-04 - Pacific Gas & El PAYMENT 
 Closed 11/04 -- Will 
 Residential Customer Service: 1-800-743-5000
-Pacific Gas & El PAYMENT 
 
-====
+2016-03-16 - CHINA EASTE
 03/16 03/14 24717052ATAY4WBW8 CHINA EASTE 7817615405119 BELLEVUE WA
 
 

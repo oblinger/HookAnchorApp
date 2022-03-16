@@ -7,7 +7,7 @@
 | A   |                     |                          |
 | B   | BOLD                |                          |
 | C   |                     | COLAPSE all / UNCOLLAPSE |    
-| D   | DEL paragraph       |                          |
+| D   | DEL paragraph       |             / DATED tmplt|
 | E   |                     |                          |
 | F   | FILE search / ALL   | open FILE in FINDER      |      
 | H   |                     |                          |
