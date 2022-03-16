@@ -1,0 +1,45 @@
+
+          =====================================
+          === BACKING UP CONTACTS TO A FILE ===
+          =====================================
+
+=== EXPORT CONTACTS TO A BACKUP FILE ===
+    (do this every few months)
+- Run Outlook
+- Click "Contacts"  (in lower left)
+- Menu -> File -> "Import and Export ..."
+  - Click "Export to a file"
+  - Click "Next"
+  - Click "Tab Separated Values (Windows)"
+  - Click "Personal Folder File (.pst)"
+  - Click "Next"
+  - Select Database to export  (probably called "Contacts")
+  - Click "Next"
+
+  - Click "Browse" -> Click "My Computer" (on left) 
+    -> Double Click "E:" -> Double Click "Outlook Contacts" 
+       (or click your way to where ever a datefile is)
+
+    -> (In "file name" box at bottom) 
+       Type "YYYY-MM-DD-Contacts"
+          NOTE: YYYY=2011  MM=the month  DD=today's date
+    -> Click "Ok"  
+  -> Click "Finish" -> Click "Ok"
+
+=== TO SEE FILE YOU JUST EXPORTED (OR ANY BACKED UP DATA) ===
+  - Run Outlook -> Click File -> Open -> Outlook Datafile...
+    -> Double Click MyComputer -> C: -> _Backups -> Outlook
+    -> Double Click (pick backup to view)
+  -> (at top Menu) "Go"  -> Folder List
+     -> Scroll down to "Personal Folders" or a new "Archive Folders"
+     -> Click to open contacts
+        (You can copy / paste these to current contacts 
+         if you lost something, etc.)
+
+  !!! IMPORTANT !!!   When done. CLOSE THIS BACKUP FILE!
+  -> (On top menu) Click "Go" -> Folder List 
+     -> Scroll down to "Personal Folders"  (or whatever database you want to close)
+     -> Right Click on "Personal Folders"
+        -> Click "Close Personal Folders"
+
+

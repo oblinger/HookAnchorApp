@@ -1,0 +1,24 @@
+
+Constructed a model of the ambiguities inherent in world knowledge, and developed an inductive learning technique that compensates for these ambiguities.  The technique generates a small set of alternatives from the ambiguous knowledge and uses observations to rule out the incorrect alternatives.  
+
+We argue that permitting ambiguity in the domain theory greatly simplifies the task of encoding world knowledge.  We have shown on several examples that simple and intuitive domain theories can be used to generate a small set of alternatives which a learner can use to quickly converge on a predictive model of a moderately complex domain.
+
+In the coming year we will examine this technique both theoretically and empirically.  We will search for a set of weakest preconditions that ensure tractable learning (a small enough space of alternatives hypotheses).  On the empirical side we plan to apply this technique to the protein structure prediction problem from the field of computational biology.  This problem provides a challenging and realistic test of our techniques ability to simplify the knowledge encoding task.
+
+------------
+
+
+
+
+For Nsf:
+
+We have developed a alternative to standard EBL which can generate potentially useful, but logically incorrect hypotheses for induction.  In the comming year we will examine this technique both theoretically and emperically.  We plan to apply this technique to the protein structure prediction problem from the field of computational biology.  This problem provides a challenging and realisitic test of our techniques ability to generate hypotheses that are useful but not necessarily logically correct.
+
+
+
+
+
+Accomplishments:
+
+Future Plans:
+Apply a knowledge-based induction technique we developed under this grant to the protein structure prediction problem from the field of computational biology.

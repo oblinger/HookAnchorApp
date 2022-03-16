@@ -1,0 +1,44 @@
+
+
+Some alternatives to Naive Bayes for the finger print identification:
+
+For the clustering part:
+     K-means, spectral clustering, hierarchical agglomerative clustering, etc.
+For the computing posterori probablities from each cluster:
+     Naive Bayes,  Kernel Density Estimation, Logistic Regression, Direchlet distributions, 
+	 Mixture of Gaussians,
+	 Applying EM (expectation-maximization) to feature-specfic probability models
+
+Short list for this problem:  Logistic Regression, Kernel Density Estimation, E-M over hand-coded feature models
+
+
+But just between you and me, I dont want to oversell here:  What we are proposing is cogent,
+and I bet it would work well in practice.  Still I am not a Baysian Inference guy, and much
+like you saw me quickly ramp up, I have ramped up dozens of times on differnt little areas of AI-stats 
+as I needed them.  Its great in that it gives many ways to think about a new problem, BUT everytime
+I attack one I have to do a bit of learning and re-remembering, Baysian Inference is not my native tongue.
+
+That said, I do think we have lots of cool ideas to bring to this problem, but the ideas are not at the level of
+the statistical algs we use.  In this case, the ideas would involve leaving the land of simple equations, and directly modeling
+what we know about the relation between the reporting features, and the nature of net attacks.
+(then over top such a model you do somthing like an EM algorithm to tune that model to the observed data.)
+
+This has been my personal MO when modeling stuff: protein structures, children speaking impediments, email traffic, Win32 process modeling etc.  Every case involved statistics, but the excitement was never at the statistical level
+
+enough said.
+
+
+-----------------------
+
+For completeness, I finished out the Formalization section.  There just are no good equations to add here.
+We can add the equations describing the coefficients for the logit in the proposed logistic regression for example, but it will just look lame, and even then it will seem incomplete as the math for setting those coefficients is not a short equation.
+
+
+I also did to slides, the first gives an overview, and the second shows the steps with a bit of graphics depicting the key data-structure involved there.  See the notes section on the first slide for text to go with it...
+
+
+Cheers, 
+Dan
+
+
+

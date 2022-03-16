@@ -1,0 +1,50 @@
+SEE VITA.DOC
+Minton WS - Book chapter
+CS91          - Poster
+ML92         - ?
+MLJ           - XXXXX
+ML94         - TR
+Fall Symp  -
+IJCAI95     - TR
+ML95         - 
+
+%T An Alternative to Deduction
+%A D. Oblinger
+%A G. DeJong
+%J The Thirteenth Annual Conference of the Cognitive Science Society
+%D 1991
+%C Cambridge, Mass.
+%K MY
+
+%T Dynamic Bias Induction
+%A Daniel Oblinger
+%A Gerald DeJong
+%R UIUC-AI-BI-9403
+%D 1994
+%I Beckman Institute
+%C University of Illinois
+
+%T Towards an Inductive Model of Defeasible Inference
+%A Daniel Oblinger
+%A Gerald DeJong
+%R UIUC-AI-BI-95-01
+%D 1995
+%I Beckman Institute
+%C University of Illinois
+
+%T Making SME Greedy and Pragmatic
+%A Kenneth D. Forbus
+%A Daniel Oblinger
+%J The Twelfth Annual Conference of the Cognitive Science Society
+%D 1990
+%P 61-68
+
+%T A First Theory of Plausible Inference and Its Use in Continuous Domain Planning
+%A Gerald DeJong
+%A Dan Oblinger
+%B Machine Learning Methods for Planning
+%E Steven Minton
+%I Morgan Kaufmann
+%k book-form
+%D 1993
+

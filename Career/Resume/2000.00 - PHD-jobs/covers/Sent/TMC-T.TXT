@@ -1,0 +1,66 @@
+
+
+Dr. Pablo Tamayo
+Thinking Machines
+14 Crosby Dr.
+Bedford, MA 01730
+April 29, 1997
+
+Dear Dr. Pablo Tamayo
+
+I will be graduating in October 1997 with a Ph.D. in Computer Science
+(Artificial Intelligence) from the University of Illinois at Urbana-Champaign.
+I am interested in employment at Thinking Machines, and will available for
+full-time work immediately after graduation.  I anticipate making an
+employment decision before July 15.
+
+Through my graduate studies I have gained considerable experience in data
+mining and its application to important practical learning tasks.  My
+dissertation, "Plausible Inference: A knowledge-intensive, inductive approach
+to domain modeling," was carried out under the direction of Gerald DeJong.
+Plausible Inference (PI) is an inductive learning framework that relies on
+several forms of structured knowledge.  PI employs this domain expertise as a
+strong, problem-specific bias through which it induces predictive models of
+complex domains.  In my research, I applied PI to a difficult biological
+task--protein structure prediction--by implementing a parallel version of PI
+in a combination of C and LISP, which ran on a CM5 supercomputer.  My
+dissertation serves as a strong foundation for further work bridging research
+and development, particularly in the application of learning/mining techniques
+to other areas.
+
+In additional to the technical positions I have held, I have fulfilled a
+variety of roles in both academic and professional settings.  Most recently I
+served as an AI consultant to a biologists' research group.  Together we
+encoded their intuitions as testable, computational models of protein folding.
+Also, while at the University of Illinois, I collaborated with a number of
+faculty on various publications and successful grant proposals.  At IBM
+T.J. Watson Research Center, I worked with a second-line manager on the design
+of an expert system shell; part of my duties included presentations of initial
+versions of this design to the managers in charge of its implementation.  At
+Ohio State University I enjoyed teaching several university-level courses, one
+of which I designed, and was subsequently invited by the chair of the
+department to teach an accredited off-campus programming course.  The body of
+experience I have accumulated affords me the written, oral, interpersonal, and
+organizational skills essential for continued personal growth and far-reaching
+contributions at Thinking Machines.
+
+My career objective has long been to work in AI research and development.
+Through the experiences outlined above, I have determined that my enthusiasm
+and ability also lie in (1) working as a specialist within a larger group, and
+(2) designing and coding elegant, practical interfaces and organizations for
+large software systems.  Thus, my ideal position involves both research and
+development on concrete data-mining/machine learning applications.  It also
+involves close collaboration with professional in other fields and companies.
+Additionally, this position provides the opportunity to publish, and has the
+potential for continued professional growth, perhaps culminating in a
+technical management/software architect role.  A position with Thinking
+Machines affords many of these opportunities and matches my technical
+qualifications.  Your work on data mining tools and your role as consultant
+for other companies closely match my skills and interests.
+
+Thank you for your time and consideration.  Please do not hesitate to contact
+me for references or for any additional information.
+
+
+Sincerely,
+Daniel A. Oblinger

@@ -1,0 +1,183 @@
+
+                            DANIEL ANTHONY OBLINGER
+_______________________________________________________________________________
+
+
+Beckman Institute,   University of Illinois        Citizenship:  United States
+405 N. Mathews,   Urbana, IL 61801                 Home:         (217) 359-5585
+E-mail:   oblinger@uiuc.edu                        Office:       (217) 244-1503
+Web Site: http://www.uiuc.edu/ph/www/oblinger      Fax:          (217) 244-8371
+
+
+EDUCATION
+  Ph.D. in Computer Science from University of Illinois (expected October 1997)
+  M.S.  in Computer Science from Ohio State University, GPA 4.0
+  B.S.  in Mathematics and Computer Science from Northern Kentucky University
+           Summa Cum Laude  *  GPA 3.92 overall  *  GPA 4.0 in both majors
+
+Thesis: "Plausible Inference: A knowledge-intensive, inductive 
+         approach to domain modeling"
+Doctoral Committee: Gerald DeJong (chair), Shankar Subramaniam, 
+                    Larry Rendell, and Caroline Hayes
+
+RESEARCH INTEREST AND CAREER OBJECTIVES
+  Areas: Data Mining, Machine Learning, Artificial Intelligence, and 
+         Computational Biology.
+
+  Objective:  A full-time position that bridges research and product
+              development.  Ideally this position requires significant
+              interpersonal interaction.
+
+PROGRAMMING SKILLS
+  C, LISP, object-oriented languages (C++, Java, Smalltalk, CLOS),
+  programming interfaces (X-windows, UNIX, DOS), UNIX system administration,
+  Pascal, BASIC, and many assemblers.
+
+PROFESSIONAL EXPERIENCE
+Research Assistant.  University of Illinois.  (6/95 to present)
+* Encoded expert's knowledge of biophysics.
+* Implemented an inductive learning algorithm that used this encoded
+  knowledge to mine rules from 4 Gigs. of data on protein structures.
+  This algorithm is implemented in a massively parallel fashion on a 
+  512 node CM5 supercomputer.
+
+Research Assistant with Gerald DeJong.  University of Illinois.  (8/89 to 6/95)
+* Developed formal and computational models of plausible inference.  This
+  technique combines general but inaccurate expert models with specific and 
+  accurate entries from a database to learn accurate and general rules
+  describing the data. 
+* System Administrator for the AI group's file/mail/web/printer/xdm services.
+  Designed and maintained a three-level backup scheme for this 50-seat network.
+
+Software Engineer.  IBM T.J. Watson Research Center.  (5/89 to 8/89; full time)
+* Collaborated on the initial design of an expert system that automatically
+  generates configurations for IBM mainframe computers.
+* Represented the T.J. Watson research group at several planning sessions
+  involving managers from five divisions across the U.S. and Europe.  At
+  these meetings I presented the group's initial design.
+
+Teaching Associate.  Ohio State University.  (9/87 to 5/89)
+* Designed and taught a course new to OSU's curriculum: LISP (CIS 459).
+* Instructor: Pascal for Engineers (CIS 221; four courses).
+* Invited to teach  an OSU-accredited, off-campus version of Pascal (CIS 221)
+  at Bell Core Corp.  I was selected for this position by the chair of the
+  CS department from over 60 candidates.
+
+Research Associate.  Ohio State University. (3/88 to 5/88)
+* Developed the semantics, designed, and implemented a data-directed control
+  flow mechanism used to drive part of the AI Tool Set.
+
+Software Engineer.  IBM.  San Jose, CA. (6/88 to 9/88; full time)
+* Designed and implemented task synchronization primitives used in a 
+  run-time library that supports more than five languages on the IBM 370.
+* Composed user's manual and document justifying the correctness and
+  efficiency of the implementation on a multiprocessor system.
+
+Mathematics Tutor.  Northern Kentucky University. (1/84 to 6/85)
+* Tutored Calculus, Fortran, and Pascal.
+
+Software Engineer.  Doug Ragland.  Lexington, KY.  (12/84 to 8/86)
+* Designed and implemented a text processing and programming environment for
+  quadriplegics.  This environment included an extensible programmable editor,
+  hierarchical note retrieval facility, and an auto-word-completion
+  dictionary; system was designed to minimize keystrokes.
+
+Physical Attendant.  Northern Kentucky University.  (5/84 to 8/84; full time)
+* Attendant for a mute quadriplegic.  I assisted him in all functions, 
+  including:  dressing, eating, swimming, taking class notes, etc.
+
+OTHER EXPERIENCE
+* Designed and implemented a full-screen, source-level LISP tracer.
+  (See my web site to download this and other utilities I have developed.)
+* Developed and used PAL, a language for writing object-oriented, personal
+  information management tools (28,000 lines).
+* Implemented an efficient LISP interpreter in assembly for a 6809 processor.
+* Wrote a native code compiler for a statically-scoped, procedural language.
+* Implemented a simple UNIX-like multiprocessing operating system for the 8086.
+
+PROFESSIONAL ACTIVITIES
+  Primary Organizer: The Joint Beckman Institute / Hitachi Advanced Research
+                     Laboratory's Symposium on Artificial Intelligence
+  Reviewer:          European Conference on Artificial Intelligence (1994)
+                     National Conference on Artificial Intelligence
+                        Student Program (1993)
+  Affiliations:      American Association for Artificial Intelligence (1991-97)
+                     Phi Beta Kappa Honor Society (1995-97)
+                     Association for Computing Machinery (1986-89)
+
+HONORS AND AWARDS
+* Cognitive Science / Artificial Intelligence Fellowship  (UIUC 1994)
+* ACM Regional Programming Contest in Kalamazoo (1986) and Pittsburgh (1988)
+  Participated on OSU's team (6th place out of over 50 schools) and
+  NKU's team (7th place)
+* Student of the year in both mathematics and computer science at NKU (1987)
+* NKU Dean's Scholarship junior and senior years  (1985-87)
+* Placed in the top third in the annual Putnam Mathematics Competition (1985)
+* AHP Mathematics Competition: second place as freshman (1984) and first
+  place as sophomore (1984)
+* NKU Mathematics Departmental Scholarship  (1984-87)
+* Kentucky State Science Fair: second in physics and fourth overall (1982)
+
+OTHER ACTIVITIES
+* Volunteer at the McKinley Emergency Men's Shelter of Champaign (1995-96)
+* President of the NKU Computer Science Club (1987)
+* Captain for a team in the NKU intramural volleyball league (1986)
+
+
+CONFERENCE PAPERS
+Daniel Oblinger and Gerald DeJong, "An Alternative to Deduction."  Proceedings
+  of the Thirteenth Annual Conference of the Cognitive Science Society.
+  Chicago, IL.  1991.  pp. 837-841.
+
+Kenneth Forbus and Daniel Oblinger, "Making SME Greedy and Pragmatic."
+  Proceedings of the Twelfth Annual Conference of the Cognitive Science
+  Society.   Cambridge, MA.  1990.  pp. 61-68.
+
+BOOK CHAPTER
+Gerald DeJong and Daniel Oblinger, "A First Theory of Plausible Inference
+  and Its Use in Continuous Domain Planning."  Machine Learning Methods for
+  Planning, Steven Minton (ed.).  San Mateo, CA:  Morgan Kaufmann.  1993.
+  pp. 93-124.  (Selected from the Symposium on Learning Methods for Planning
+  and Scheduling for publication in extended book form.)
+
+WORKSHOPS AND SYMPOSIA
+Daniel Oblinger and Gerald DeJong, "Dynamic-Bias Induction."  American
+  Association for Artificial Intelligence Fall Symposium Series on Relevance
+  (AAAI-94).  New Orleans, LA.  1994.  pp. 164-67.
+
+Gerald DeJong and Dan Oblinger, "A First Theory of Plausible Inference and
+  Its Use in Continuous Domain Planning."  Symposium on Learning Methods
+  for Planning and Scheduling.  1991.
+
+INVITED TALKS AND SEMINARS
+"Knowledge-Based Induction of Protein Tertiary Structure."  The Joint
+   Beckman Institute / Hitachi Advanced Research Laboratory's Symposium
+   on Artificial Intelligence.  Beckman Institute.  August 1995.
+
+"Minimum Description Length Principle."  The Machine Learning Seminar Series.
+   Beckman Institute.  April 1994.
+
+TECHNICAL REPORTS AND WORKING PAPERS
+Daniel Oblinger, "Plausible Inference: A Knowledge-Intensive, Inductive
+  Approach to Domain Modeling."  University of Illinois:  Technical
+  Report UIUC-DCS-R-97-2004.  Urbana, IL.  1997.
+
+Daniel Oblinger and Gerald DeJong, "Towards an Inductive Model of Defeasible
+  Inference."  Beckman Institute, University of Illinois:  Technical
+  Report UIUC-AI-BI-95-01.  Urbana, IL.  1995.
+
+Daniel Oblinger and Gerald DeJong, "Dynamic Bias Induction."  Beckman
+  Institute, University of Illinois:  Technical Report UIUC-AI-BI-9403.
+  Urbana, IL.  1994.  (Extended version)
+
+Daniel Oblinger and Gerald DeJong, "An Alternative to Deduction."  Department
+  of Computer Science, University of Illinois:  Technical Report
+  UIUC-DCS-R-91-1688.  Urbana, IL.  1991.  (Extended version)
+
+John Josephson, Diana Smetters, Richard Fox, Daniel Oblinger, Arun Welch, and
+  Gayle Northrup, "The Integrated Generic Task Toolset--Fafter release 1.0--
+  Introduction and User's Guide."  The Ohio State University Laboratory for
+  Artificial Intelligence Research: Technical Report 89-JJ-FAFNER. 
+  Columbus, OH.  1992.
+
+REFERENCES AVAILABLE UPON REQUEST

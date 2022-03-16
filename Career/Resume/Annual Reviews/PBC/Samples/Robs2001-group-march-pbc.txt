@@ -1,0 +1,159 @@
+Distance Learning 
+
+ The distance learning research program focuses on tools and methodology 
+for tracking, 
+ facilitating, and directing group problem-solving in distance learning 
+classes. Synchronize the 
+strategy with Peter Fairweather, Colin Harrison and Tom Confio (Research), 
+James Sharpe (VP, Learning Services) , 
+Dick Vigilante (JNET), Robert Weintraub (Global Services Institute), 
+MindSpan business unit, and 
+LearningSpace product area. 
+
+ 
+ Applied Cognitive Learning Theory: Develop methodologies for applying 
+cognitive theories
+       of learning, such as cognitive apprenticeship and collaborative 
+learning,  
+       to the workplace (Project Executives in IGS), distance learning 
+       in the university (JNET curriculum), and mathematics instruction 
+(algebra). Perform
+       observations and experiments. Anticipated 2001 Impact: 3 
+publications, influence on 
+       Global Services, influence on JNET course design, requirements  for 
+future tools. 
+ 
+   Discussion Management: Improve ability of people (teachers/students, 
+trainers/trainees,
+    managers/workers) to understand, participate, and learn from postings 
+of others in 
+    large, active discussion databases by developing discussion management 
+tools. 
+    Anticipated Impact: 2 publications, 1 patent, software asset, 
+potential product 
+        w/Blackboard/Lotus/others, use in JNET classes, potential use in 
+Global Services. 
+       
+   Embedded Application Assesment: Improve ability of people 
+(teachers,trainers,managers) 
+     to understand the usage of desktop computer applications by (remote) 
+users (students, 
+     trainees, workers) to inform assessment of skills and problem-solving 
+strategies by
+     developing embedded application assessment tools. Anticipated 2001 
+Impact: 
+     1 publication, 1 patent, software asset. 
+
+   Synchronous Collaboration: Improve ability of groups of students to 
+collaborate synchronously
+    and remotely together by developing the Jam toolkit and collaborative 
+application 
+    prototypes. Anticipated 2001 Impact: 1 patent, 1 publication, 
+prototypes. 
+
+Organizational Learning 
+
+   The organizational learning research program focuses on tools for 
+understanding 
+dynamic and often implicit aspects of organizations. Synchronize the 
+strategy with Peter Fairweather, 
+Alan Marwick, Colin Harrison, Bill Cody , Bob Mack (Research), 
+IBM Human Resources, Dave Neubold (Lotus),  Rod Cowan, Bart Emmanuel, and 
+Eric Vaaj (Global Services, KM)
+
+  Visualization: Develop new visualizations of actor networks relating 
+people and 
+     artifacts (e.g., intellectual capital such as documents, software, or 
+ideas they  
+     create.) Visual properties of these graphs make underlying global 
+analyses explicit. 
+     Analysis will uncover key knowledge producers, consumers, and 
+"brokers", important 
+     collaborations between individuals and groups, and influential 
+artifacts. 
+     Visualization tool for Intellectual Capital (e.g., patents) in 
+Research. Antcipated
+     2001 Impact:  2 publications, software asset, limited use in 
+Research. 
+
+   Machine Learning: Develop new algorithms for classifying text from 
+publicly-available
+     elecronic sources, such as Usenet newsgroups. Test ability to 
+transfer of the 
+     inferred classification rules to other domains, such as e-mail. 
+Expertise location 
+      system for Global Services developers. 
+      Anticipated 2001 Impact: 2 patents, 2 publications, software asset. 
+limited use in 
+      Global Services. 
+ 
+Execute 
+ 
+   Distance Learning
+ 
+      Discussion Management:    
+
+	Further develop discussion summarization tool (benchmarking with 
+humans, 
+        discourse model, hierarchical searching/highlighting). Generalize 
+GUI using 
+        Java Server Pages. Generalize data access with API and integrate 
+with 
+        Blackboard.com. Deploy to JNET schools for Fall 2001 courses. 
+
+    Embedded Application Assessment: 
+
+	Develop general purpose event capture and analysis tool. Apply to 
+the 
+        software used in at least one Distance Learning class. Develop 
+algorithms 
+        for event analysis. Provide statistics and reports. 
+
+   Orgnizational Learning: 
+
+        Visualization: Develop prototype for one database, including data 
+access, analysis, 
+        and visualization. Test with target users. Refine analysis and 
+        visualization environment into reuseable tool. 
+ 
+        Machine Learning: Develop scanner and feature extraction. Apply 
+and refine 
+         text classification algorithms for labelled data (e.g., support 
+vector machines) 
+         to sparse features. Test use of various contextual features. 
+Create reuseable 
+         machine learning tool.  Investigate cross-learning to e-mail. 
+Investigate learning 
+         of expertise categories (e.g., java expert/novice). Based on 
+results, build 
+         expertise location system. Test with users in Global Services who 
+are developers 
+         needing narrow technical expertise. 
+
+Team 
+
+   Distance Learning: 
+
+   Work closely with Blackboard.com and JNET clients on requirements. 
+   Field test with JNET university professors. Deploy Discussion 
+Summarizer to 
+   Georgetown University server. Provide demonstrations of Learning Trail 
+working 
+   on software for university-level database course. Presentation to 
+WiscNet. 
+   Hire a summer student in interactive Web technologies and 
+collaboration. Continued 
+   remote mentoring and collaboration with Amy Wu at Michigan U. 
+Participation in 
+   Web PIC. Participated in NextWeb Transformation Group. 
+
+   Organizational Learning: 
+
+       Meetings with Lotus and IGS/KM team. Presentations to intellectual 
+Capital 
+    Managment executives in Global Services. Presentations to IBM lawyers. 
+    University and professional recruiting for machine learning and 
+visualization people. 
+    Hiring Mark Reid. 
+
+
