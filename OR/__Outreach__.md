@@ -1,3 +1,6 @@
+[[OR/Messages]] 
+
+
 # ACTIVE
 
 ## [R]   John Doe, Acme Inc
@@ -72,6 +75,11 @@ _
 - [Balterton Capital](https://www.balderton.com) - Balderton Capital
 - [Benchmark Captial](https://www.linkedin.com/in/jessoynick/) - https://www.linkedin.com/in/jessoynick/
 - [Cowboy Ventures](https://www.cowboy.vc/team.html) - Cowboy Ventures [Avaisio AI, Branch]
+
+[[OR/Messages]]  
+
+
+
 - [First Round Capital](https://firstround.com) - Tammy Han - First Round Capital
 - [Forward Partners](https://forwardpartners.com/team/) - Forward Partners - Your unfair advantage
 - [Homebrew](https://homebrewvc.tumblr.com/post/121650286508/welcoming-beth-scheer-head-of-talent-to-the) - Welcoming Beth Scheer, Head of Talent, to the Homebrew Team
@@ -89,13 +97,7 @@ _
 [L1+VC](https://www.linkedin.com/search/results/people/?industry=%5B%22106%22%5D&network=%5B%22F%22%5D&origin=FACETED_SEARCH&sid=qN%40) 
 [Aki](https://www.linkedin.com/in/kotokoto/)  [John Abrams](https://www.linkedin.com/in/jonathanabrams/) 
 
-++ Tessa's friend and investor
 
-https://www.linkedin.com/in/avidanross/
-Send me an email with a brief description of you and what you're interested in, and I can forward it to him and see if he's willing to chat with you.
-
-Advian,
-I am selling my company and quietly look for my next thing--perhaps another startup, or perhaps advising across a range of startups.  I told Tessa that my sweetspot is leading teams in stages where significant technical risk exists.  She mentioned that this seemed to align really well with the kinds of investing that you do, and that perhaps we should talk.  
 
 
 ;

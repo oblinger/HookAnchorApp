@@ -1,6 +1,4 @@
 
-- [ ] Build List Of Dream Companies
-
 
 
 ## Companies
@@ -12,8 +10,8 @@
 ### [Wayve](https://www.crunchbase.com/organization/wayve-9739) -- DeepLearning Driving
 ### [NanoNets](https://www.crunchbase.com/organization/nanonets) -- ML Training
 ### [RIOS](https://www.crunchbase.com/organization/rios) -- AI for dexterious robots
-
 ### [AiFi](https://www.crunchbase.com/organization/aifi-c8f8) -- Automated Checkout / Comp Vision
+
 
 
 # VC; Bay Area; Rank5K
@@ -22,6 +20,7 @@
 
 
 ### [SMARTIFICIAL](https://www.crunchbase.com/organization/smartificial-research-technology-inc) -- Virtual incubator for AI
+### ---
 ### [Citizen VC](https://www.crunchbase.com/organization/citizen-vc-2) --  FinTech, AI analytics and health tech.
 ### [Fin](https://www.crunchbase.com/organization/bee-partners) -- Bee Partners is a pre-seed ... forefront of human-machine convergence.
 ### [Streamlined Ventures](https://www.crunchbase.com/organization/streamlined-ventures) -- 

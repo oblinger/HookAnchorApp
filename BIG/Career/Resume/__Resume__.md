@@ -1,15 +1,5 @@
 
-### --- resume TODO:
-- 13-step hiring process.
-- Number of presentations.  Keynote (invited once, though it was almost key)
-- Num orgs built. 4->3
-- AF Software projects: 45+???
-- watchme read number
-- Residential Solar 10-personyear???
-- Scaled IoT 15-personyear???
-- List of Langs in ADDENDUM
 
-_
 # ### RESUME SOURCE INFO ###
 ## === ADDRESES ===
 
@@ -310,16 +300,9 @@ Bergman, Lawrence, Castelli, Vittorio, Lau, Tessa and Oblinger, Daniel (2005): D
 
 Lau, Tessa, Bergman, Lawrence, Castelli, Vittorio and Oblinger, Daniel (2004): Sheepdog: learning procedures for technical support. In: Nunes, Nuno Jardim and Rich, Charles (eds.) International Conference on Intelligent User Interfaces 2004 January 13-16, 2004, Funchal, Madeira, Portugal. pp. 109-116. 
 ### --- Messy and Unsorted ---
-
 _Pub_Flow_   V+vita   P+Pubs DB 
-
-
-
- 
 - BL RFI.  MR RFI.  
-
-
-~~~~
+~
 Article: Integrated Generic Task Toolset - Fafner Release 1
 J. Josephson, D. Smetters, R. Fox, D. Oblinger, A. Welch, G. Northrup
 
@@ -327,29 +310,29 @@ Not me???
 Article: Computers for all students: a strategy for universal access to information resources
 M. Resmer, D. Oblinger, J. R. Mingle
 
-
+#### 
 
 I was organizer for what conferences
 get onto resume
-~~~~
+~
 http://arnetminer.org/publication/the-darpa-machine-reading-program-encouraging-linguistic-and-reasoning-research-with-a-series-of-reading-tasks-2840249.html;jsessionid=F8ABAA80661E1DFA3EF12E5EA7C5921E.tt
-~~~~
+~
 2010 AI MAG -- TL paper
 Toward a computational model of transfer.: An article from: AI Magazine [HTML] [Digital]
-~~~~
+~
 2010 NAACL HLT 2010
 First International Workshop on Formalisms and Methodology for Learning by Reading (FAM-LbR)
 Program Committee member
 June 6, 2010    Los Angeles, California
 
-~~~~
+~
 2010 pietro pub cumulative learning
 
-~~~~
+~
 2004??   The Workshop Program at the Twentieth National Conference on Artificial Intelligence
  Human Comprehensible Machine Learning (held Saturday, July 9; Dan Oblinger, chair)
 
-~~~~
+~
 NYU CS colloquium
 Computer Science Colloquium
 Learning System Management Procedures By Demonstration
@@ -358,28 +341,28 @@ IBM T.J. Watson Research Center
 
 Friday, November 21, 2003
 
-~~~
+~
 IJCNN 07 -- Meta Learning Workshop
 Orlando FL, august 2007
 Deliberative Meta Learning
 
 presentation @ meta learning WS
-~~~~
+~
 DARPA award
-~~~~
+~
 Article with pietro for encylopedia
-~~~~
+~
 AAAI nectar paper
 
-~~~~
+~
 Sheepdog Jounal article
 
-~~~~
+~
 Nectar paper
 
 "Learning by Combining Observations and User Edits"
 Vittorio Castelli, Daniel Oblinger, Lawrence Bergman
-~~~~
+~
 
 
 BOOK Chapter submitted based on IUI article
@@ -394,7 +377,7 @@ L. Bergman, T. Lau, V. Castelli and D.Oblinger,  "Personal Wizards: collaborativ
 
 
 
-~~~ IN VITA AUG 2006 ~~~
+####  IN VITA AUG 2006 ~~~
 
 TOO SMALL
 V-  Internal whitepapers: 
@@ -411,7 +394,7 @@ V- Any thing at ECML 2001?  reviewer?
 V+ DocWizards: A System for Authoring Follow-me Documentation Wizards
 
 
-~~~~~~~~ IN VITA APRIL 2005 ~~~~~~~~~~~
+#### ~ IN VITA APRIL 2005 ~~~~~~~~~~~
 V- not accepted 
 Dan Oblinger, Vittorio Castelli, Tessa Lau, and Larry Bergman.
 "Simultaneous Alignment and Generalization:  A New Paradigm for Programming By Demonstration"
@@ -481,7 +464,7 @@ Peter Fairweather, Don Nix, Daniel Oblinger, Bill Adams, Carla Laffra,
 "Overcoming Technical Barriers to a Speech-Enabled Children's Reading Tutor" 
 ?????? 
  
-~~~~~~~~~~~   IN RESUME.DOC  ?/2002   ~~~~~~~~~~~~ 
+~   IN RESUME.DOC  ?/2002   ~~~~~~~~~~~~ 
 2001 AI-ED (REVIEWER) 
 International Conference on Artificial Intelligence in Education 
 
@@ -526,6 +509,7 @@ Proceedings of the Thirteenth Annual Conference of the Cognitive Science Society
 Proceedings of the Twelfth Annual Conference of the Cognitive Science Society. 
 Cambridge, MA. 1990. pp. 61-68. 
 _
+
 ## === PATENTS ===
 ### --- 2021.10 - from USPTO ---
 
@@ -836,7 +820,7 @@ Ph.D. in Computer Science       Records:  217 333-0210
 FROM MEMORY:
   ACT 27??
   GRE (Best scores:  800, 790, 730   =2320
-## === RESUME "AT A GLANCE" ===
+## === FACT CHECK - "AT A GLANCE" ===
 ### --- Technology & Product Development ---
 
 **AI AREAS** ---
@@ -954,7 +938,7 @@ PRESENTATIONS.   Keynote???
 - 2 LONG, CogSci1991, CogSci1990
 - 4 SYMPOSIA BICA2008, AAAI-fall1994, Plan1991
 - 4 INVITED TALKS (Addendum)
-~~~~
+~
 36   There should be more.  could think about other non-job, non-pub ones.
 
 PUB PRESENTATIONS
@@ -1002,7 +986,7 @@ _
 	- President of Math club?  & volleyball team
 
 	_
-## === JOB EXPERIENCE ===
+## === FACT CHECK - JOB EXPERIENCE ===
 ### --- 2013.07 - ANALYTICS FIRE -- Founder/CTO Analytics Fire
 #### -- AF Numbers --
 
@@ -1352,12 +1336,10 @@ _
 Driven entrepreneur-leader with 20+ years of proven results in AI-ML-Robotics seeing a technical leadership role built around this experience.
 
 
-~~~~
+~
 
 A driven technical leader seeking his next mission, one that strongly utilizes from his 20+ years of proven results in AI-ML-Robotics.
 
-
-_
 ### 2021.09.23 -- Resume Experience
 
 **Founder/CTO at Analytics Fire (7/2013-)**
@@ -1397,9 +1379,7 @@ DETAILS: Assembled world-class team with very latest expertise in multi-finger r
 
 Awards
 - DARPA 
-- 
-_
-### === ORIGINAL SUPPORT MATERIALS ===
+### 1998.00.00 -- ORIGINAL SUPPORT MATERIALS
 #### SECTIONS
 	* 
 	*    Drop (unsorted list of stuff to add to resume)

@@ -24,7 +24,7 @@
 | LISTS     | Undated collections of information of a single type             |
 |-----------|-----------------------------------------------------------------|
 | Small Item| [Books](__Books__)  [Buy](__Buy__)  [Humor](__Humor__)  [Movies](__Movies)  [Quotes](__Quotes__)  [Recipes](__Recipies__)  [ToRead](__ToRead__)              |
-| [APP](__APPS__)       |                                                                 |
+| [APP](__APPS__.md)       |                                                                 |
 | [CORP](__CORP__.md)      |                                                                 |
 | [LANG](__LANG__.md)      |                                                                 |
 | [PEOPLE](__PEOPLE__.md)    |                                                                 |
@@ -34,12 +34,12 @@
 |-----------|-----------------------------------------------------------------|
 | [Career](__Career__.md)    |                                                                 |
 | [Docs](__docs__.md)      |                                                                 |
-| [FIN](__FIN__)       | <                                                                |
+| [FIN](__FIN__)       |                                                                 |
 | [Food](__FOOD__)      |                                                                 |
 | [Legal](__Legal__)     |                                                                 |
 | [Life](__Life__)      |                                                                 |
-| [MED](__MED__)       | <                                                               |
-| [MY](__MY__)        |                                                                 |
+| [MED](__MED__.md)       |                                                                 |
+| [MY](__MY__.md)        |                                                                 |
 | [Notester](__Notester__)  |                                                                 |
 | [REF](__Ref__.md)       | Reference materials of any kind                                 |
 
@@ -48,7 +48,7 @@
 ### 2010 -- Notester MetaAll
 						**=== META DESCRIPTION OF ALL DAN'S INFO ===**
 
-# TREE TOPS
+# TREETOPS
 - AREAS:  	proj, topics, AFALL
 - TASKS:		tasks
 - STREAMS:	logs, ideas, 

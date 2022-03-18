@@ -1,4 +1,7 @@
 
+[[ROCKS/2022-03 BeVC/Searches]]
+
+
 Objective:
 - Decide if I want to be a VC, or support a VC as an advisor.
 - If I might, then progress down that path
@@ -13,4 +16,6 @@ PLAN
 - Amy Kruse
 	- Get list of firms for me to target
 	- Get warm intros and talk with relevant VCs
-	- 
+
+
+

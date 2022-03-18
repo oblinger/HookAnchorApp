@@ -8,14 +8,16 @@
 - [ ] Get Kbd Maestro sync working
 
 
-# ### NOTES ### 
-
-Shortcut Docs
-	[Complete-ish](https://santiyounger.com/obsidian-shortcuts)
-	[Keyboard Shortcuts](https://forum.obsidian.md/t/obsidian-hotkeys-favorites-and-best-practices/12125) 
-
-
-
-[cmd-org](http://cmd/org)  
-[cmd-job](http://cmd/job)  
-[cmd-discord](http://cmd/discord)  
+# ### REF ### 
+## === IDEAS ===
+[Forum Share&Showcase](https://forum.obsidian.md/c/share-showcase/9)  
+## === BY PLUGIN ===
+### CSS
+[meta post](https://forum.obsidian.md/t/meta-post-common-css-hacks/1978)
+### Templater
+[Docs](https://silentvoid13.github.io/Templater/)  
+### DataView
+[Snippets](https://forum.obsidian.md/t/dataview-plugin-snippet-showcase/13673)
+[showcase](https://forum.obsidian.md/t/dataviewjs-snippet-showcase/17847)
+## Workspaces
+[video](https://www.youtube.com/watch?v=eOcumDChzEQ)

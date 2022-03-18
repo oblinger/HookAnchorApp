@@ -1,3 +1,4 @@
-status: 
+[General Partner](https://www.linkedin.com/company/prime-movers-lab/) AT [Prime Movers Lab](https://www.linkedin.com/company/prime-movers-lab/)   ($350M under investment; <10 employees)
 
-suggested that I [[2022-03 LG VC Outreach]]
+
+suggested warm intro outreach
