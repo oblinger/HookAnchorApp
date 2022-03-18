@@ -1,4 +1,8 @@
 
-  [Dated-H3](Dated-H3.md)  [Person](Person.md)  [CTC](CTC.md)  [MEET](MEET.md)
+- [Z JOURNAL header](Z%20JOURNAL%20header.md) 
+- [[LOGGED sub note]]
+- [[NAMED sub note]]
+- [PERSON PAGE](PERSON%20PAGE.md) 
+- [[Z TEST TEMPLATE]]
 
 

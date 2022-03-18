@@ -24,5 +24,5 @@ folder full relative <% tp.file.folder(true) %>
 folder path <% tp.file.path() %>
 folder relative path <% tp.file.path(true) %>
 
-include section < tp.file.include("[[Example Template#Tiny]]") >
+include section < tp.file.include("[[Z Example Template#Tiny]]") >
 

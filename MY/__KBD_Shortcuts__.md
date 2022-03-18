@@ -82,20 +82,20 @@
 | A    |                     |                           |
 | B    | BOLD                |                           |
 | C    |                     | COLAPSE all / UNCOLLAPSE  |
-| D    | DEL paragraph       | / DELETE file             |
+| D    | DELETE paragraph    | / DELETE file             |
 | E    |                     |                           |
 | F    | FILE search / ALL   | FILE in explorer / finder |
 | H    |                     |                           |
 | I    | tgl ITALIC          |                           |
-| J    |                     |                           |
+| J    |                     | / JOURNAL header          |
 | K    | insert LINK         |                           |
-| L    |                     |                           |
+| L    |                     | / LOGGED sub note         |
 | M    |                     |                           |
-| N    | NEW note / New PANE |                           |
+| N    | NEW note / New PANE | / NAMED sub note          |
 | O    | OPEN switcher       | OPEN in default app       |
-| P    | cmd PALETTE         |                           |
+| P    | cmd PALETTE         | / PERSON PAGE             |
 | Q    |                     |                           |
-| R    |                     |                           |
+| R    | search REPLACE      |                           |
 | S    | SAVE file           |                           |
 | T    | / undo CLOSE        | new TEMPLATE/insert only  |
 | U    |                     |                           |

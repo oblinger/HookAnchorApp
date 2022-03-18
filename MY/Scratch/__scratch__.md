@@ -1,4 +1,14 @@
 
+==>  Waymo reduced maint turn around by 23% in 2021.  In support of it:
+- Created metric this turn around was based upon
+- Designed and implemented comprehensive dashbord for analyzing maint delays.
+	(this was the primary information soruce used by team to affect this turn around)
+- Worked directly with data to identify 5-6 specific recommendations presented to and adopted by the team to reduce turn around.
+
+
+exclusively used in order for the team to idenfify the changes needed for the turn around
+
+~~
 
 
 

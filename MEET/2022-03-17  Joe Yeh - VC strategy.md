@@ -19,7 +19,7 @@ My Strategy
 - Do anything for a VC
 
 
-[[Messages]]  
+[[__MSG__]]  
 
 Strengths
 - **Robotics**, strong generalist knowledge, good reputation, NO research depth.
