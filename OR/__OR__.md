@@ -1,8 +1,15 @@
- [G-sheet CRM](https://docs.google.com/spreadsheets/d/166xqGspRbmUjKoRYcgGvAu-GIRsKQrKBH_GYiJAMaSs/edit#gid=361746386)
-  [[__MSG__|Messages]] 
+
+  [[__MSG__|MSG]] 
   [[__FirstTouch__|First Touch]]
   [[__FailedMessages__|Failed Messages]]
-
+  [G-sheet CRM](https://docs.google.com/spreadsheets/d/166xqGspRbmUjKoRYcgGvAu-GIRsKQrKBH_GYiJAMaSs/edit#gid=361746386)
+ 
+### 2022-03-18  Aniket Recruiters
+- [[@Liane Capiral]]
+- [[@Mary Tran]]
+- [[@Melissa Cote]] 
+- [[@Vince Colangelo]]
+- [[@Emily Wallach]]
 
 ### 2022-02-08  Meetups to consider
 

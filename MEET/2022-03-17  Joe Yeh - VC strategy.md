@@ -2,7 +2,7 @@
 - Background: RoboticsTalk=Great; AI-safety=No
 - Current path:  VC/FAANG
 
-- [[PP Amy Kruse]] 
+- [[@Amy Kruse]] 
 	- Bullish in me;  On PM -> VC;  But need to fills gaps
 	- Saw advisor role as stepping stone, pushed for partner
 	- "Landscaping"  

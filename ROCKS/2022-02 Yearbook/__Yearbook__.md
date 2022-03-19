@@ -1,6 +1,8 @@
 # TODO
 
 - [ ] Get data into this note
+- [ ] Talk with Rashi about Yearbook    rashi741@gmail.com
+
 
 [Folder](https://drive.google.com/drive/u/1/folders/1C-Uvjho9JmO8WPHbKGsK5Fiwr0VrIK7G)
 - [Online Plan](https://docs.google.com/document/d/1UgT3RLfLRh_GmbC4qltnKDFVi_vCVnvccVGRitrk1uM/edit#heading=h.i7qcdkrkeflz) 
