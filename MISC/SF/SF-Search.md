@@ -2,33 +2,33 @@
 - [Travel](http://gocalifornia.about.com/od/casfmenu/San_Francisco.htm) 
 - [HowBoutWe](https://couples.howaboutwe.com/users/sign_in#filter/filter%5Bcategory)      Paid Date stuff
 - [FUN&CHEAP](http://sf.funcheap.com/)    Current  (Free museum days, street festivals, local top music)
-[[http://www.sfarts.org/#][SF ARTS]]        Select Date Range (huge list)
-[[http://flavorpill.com/sanfrancisco/editor_picks][Flavor Pill]]    Cultural (Theater, Film, Galleries)
-[[http://squidlist.com/events/index.php][Squid List]]     Smaller Quirkier (meetups, commedy, one-off community events)
-[[https://deyoung.famsf.org/][deYong]]         Museum
-[[http://www.asianart.org/exhibitions_index/exhibitions][Asian Art SF]]   Museum
-[[http://www.asianart.org/events/search][Asian Art SF]]   Museum
-Speed Dating   [[http://www.dateswitch.com/city/san-francisco-speed-dating.html][DateSwitch]]  [[http://www.hurrydate.com/events/san-francisco][HurryDate]]  [[http://8minutedating.com/signup/eventList.cgi][8min-dating]]  [[http://www.eventbrite.com/directory?q=speed+dating+events&loc=San+Francisco%2C+CA][SpeedSanFran]]
-               [[http://www.speedsanfrandating.com/][SpeedSanFran]]
+[[http://www.sfarts.org/#|SF ARTS]]        Select Date Range (huge list)
+[[http://flavorpill.com/sanfrancisco/editor_picks|Flavor Pill]]    Cultural (Theater, Film, Galleries)
+[[http://squidlist.com/events/index.php|Squid List]]     Smaller Quirkier (meetups, commedy, one-off community events)
+[[https://deyoung.famsf.org/|deYong]]         Museum
+[[http://www.asianart.org/exhibitions_index/exhibitions|Asian Art SF]]   Museum
+[[http://www.asianart.org/events/search|Asian Art SF]]   Museum
+Speed Dating   [[http://www.dateswitch.com/city/san-francisco-speed-dating.html|DateSwitch]]  [[http://www.hurrydate.com/events/san-francisco|HurryDate]]  [[http://8minutedating.com/signup/eventList.cgi|8min-dating]]  [[http://www.eventbrite.com/directory?q=speed+dating+events&loc=San+Francisco%2C+CA|SpeedSanFran]]
+               [[http://www.speedsanfrandating.com/|SpeedSanFran]]
   HD 35-45 Jun-19    SSF 5-20
   5-24 ES 30-45
 
 
 
 
-[[http://www.goldstar.com/san-francisco/events][Goldstar]]       .
-[[http://sfartnews.wordpress.com/][SF arts]]        yyyy
-[[http://www.sanfrancisco.travel][SF-Travel]]      
+[[http://www.goldstar.com/san-francisco/events|Goldstar]]       .
+[[http://sfartnews.wordpress.com/|SF arts]]        yyyy
+[[http://www.sanfrancisco.travel|SF-Travel]]      
    
-[[http://www.nitevibe.com/][House Music]]    .
-[[http://www.tranceaddict.com/forums/showthread.php?threadid=391752#.UGYO2_l25NU][Trance Music]]   . [[http://www.blipswitch.net/forum/sf-bay-area-events][also blipswitch]]
-[[http://www.sfstation.com/][SF Station]]     Community curated, thus noisy
-[[http://www.pollstar.com/resultsCity.aspx?ID=49955&SortBy=Date&SearchBy=San%20Francisco,%20CA][Concerts]]       ,
-[[http://calendar.insidebayarea.com/oakland-ca/events/time+out+san+francisco][Inside Bay]]
-[[http://415shows.com/][415 Shows]]      Big list of shows (concerts?) in area
+[[http://www.nitevibe.com/|House Music]]    .
+[[http://www.tranceaddict.com/forums/showthread.php?threadid=391752#.UGYO2_l25NU|Trance Music]]   . [[http://www.blipswitch.net/forum/sf-bay-area-events|also blipswitch]]
+[[http://www.sfstation.com/|SF Station]]     Community curated, thus noisy
+[[http://www.pollstar.com/resultsCity.aspx?ID=49955&SortBy=Date&SearchBy=San%20Francisco,%20CA|Concerts]]       ,
+[[http://calendar.insidebayarea.com/oakland-ca/events/time+out+san+francisco|Inside Bay]]
+[[http://415shows.com/|415 Shows]]      Big list of shows (concerts?) in area
 
 TOURIST
-[[http://www.timeout.com/san-francisco/][Timeout]]        
+[[http://www.timeout.com/san-francisco/|Timeout]]        
 http://sosh.com/
 
 
@@ -36,10 +36,10 @@ ELECTRONIC DANCE
 
 
 OTHERS
-[[http://sosh.com/][Sosh]]           .
+[[http://sosh.com/|Sosh]]           .
 
 FIND MORE      
-[[http://www.quora.com/What-are-the-best-event-sites-listings-for-San-Francisco][Quora find more]]
+[[http://www.quora.com/What-are-the-best-event-sites-listings-for-San-Francisco|Quora find more]]
 
 
 # Meetups

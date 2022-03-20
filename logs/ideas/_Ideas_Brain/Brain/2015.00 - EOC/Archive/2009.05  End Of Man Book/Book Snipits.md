@@ -43,7 +43,7 @@ System cannot directly model or understand those things.
 
 The moment of consciousness
 
-[[[ Earlier the system needs to instinctively learn that drives the the unit’s thinker has should be met, because this satisfies drives. ]]]
+{[[ Earlier the system needs to instinctively learn that drives the the unit’s thinker has should be met, because this satisfies drives. ]}]
 
 Things are falling into place quickly now, the aha-sense is very high, attention to physical environment is diminishey; only consequences of internal thoughts  are receiving priority.  Propensity to remember is heightened…
 
@@ -70,10 +70,10 @@ Perhaps other unit’s mind process also is a similar node, but if so those node
 
 
 
-[[[ the story needs to have names for:  asserted things,  and  the facts in the mind of 
+{[[ the story needs to have names for:  asserted things,  and  the facts in the mind of 
 Then there is a concrete asserted thing, which it can separately reason has analog as fact that would be in the mind of the unit.  It proposes that all asserted things are facts in the mind.
 All drives are drives of the mind, all emotional states are states of that mind, all goals are goals of that mind.
-]]]
+]}]
  
 Perhaps other units have nodes to go with their mind, but it so, those nodes do not affect asserted things, drives and emotions.  
 But those units behave if they do, so perhaps they do, but they are not observed, but it not observed, then how do they affect actions taken by those units.  
@@ -172,7 +172,7 @@ So if that is not conscious, why would a system that learned this model be any d
 The two problems here is that the intention originates elsewhere, and that the behavior is trivally modelable.  Both are fixed through learning.
 DEFINE:  Interestingly Self Aware: (internally)  Intention generating.  Not modelable.  Self rewriting in neutral environment.  
 
-[[This said, I am not claiming that it is intrinsically impossible to hand code an interestingly self aware system.
+{[This said, I am not claiming that it is intrinsically impossible to hand code an interestingly self aware system.
 
 Example of learning
 
@@ -201,7 +201,7 @@ A THIRD, response that I commonly receive many of the principles I espouse are w
 4.	Central focus on embodied AI embedded social context with other intelligent agents.
 Very little AI today simultaneously satisfies all four of those criteria, and that is where I am arguing the greatest density of “pay dirt” exists.  There are many good reasons to violate one or more of those criteria, yet I believe on balance that more is achieve by staying in those bound rather than straying from them. 
 Importantly, I am not claiming that work not matching the criteria I above is not uncovering inherent truths about intelligence, I believe it is.  Nor do I want to claim that the only efficient path is the one I am proposing.
-But in this section I ague for the following two bold claims:  #1 Today we are in a position to make efficient progress along the path outlined here (but we do need to update our measure of progress).  And #2, in X years once the science of building intelligent machines is well understood and the definitve text written on the subject, we will look back and see a higher density of “as yet unknown principles” …. [[broken sentence]] of intelligence are well understood, and the parsimonious descriptions of  machines with emergenent intelligence are written down, the majority of the principles we do not understand today found in those books are more densely scattered among the the path outlined here, than they are along the paths being taken by much of the research on intelligence today.
+But in this section I ague for the following two bold claims:  #1 Today we are in a position to make efficient progress along the path outlined here (but we do need to update our measure of progress).  And #2, in X years once the science of building intelligent machines is well understood and the definitve text written on the subject, we will look back and see a higher density of “as yet unknown principles” …. {[broken sentence]} of intelligence are well understood, and the parsimonious descriptions of  machines with emergenent intelligence are written down, the majority of the principles we do not understand today found in those books are more densely scattered among the the path outlined here, than they are along the paths being taken by much of the research on intelligence today.
 We wont be certain of this assertion until we are indeed looking back, yet I here I argue why it is the most auspicious of avenues based on the evidence we have today.
 
 

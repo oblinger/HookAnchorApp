@@ -162,9 +162,9 @@ COMMENT:
 
 
 
-[[	WET INK
+{[	WET INK
 	PAT, this notion of control might not be quite strong enough yet.  
-	I am trying to capture the minimal assumption required for data that can be "handled" see the handle discussion towards end.  It feels more natural to have some kind of DAG of owndership containders, but each encoding I consider seems overly restrictive.  The notion of "control" is certainly necessary for well "handled" data, but it is not sufficient, and perhaps there is some other more restrictive definition that is both necessary and sufficient.  the whole idea is a bit fuzzy for me.]]
+	I am trying to capture the minimal assumption required for data that can be "handled" see the handle discussion towards end.  It feels more natural to have some kind of DAG of owndership containders, but each encoding I consider seems overly restrictive.  The notion of "control" is certainly necessary for well "handled" data, but it is not sufficient, and perhaps there is some other more restrictive definition that is both necessary and sufficient.  the whole idea is a bit fuzzy for me.]}
 
 
 {[NOTES FOR DAN (feel free to ignore)
@@ -174,7 +174,7 @@ COMMENT:
 _
 ### --- Semantic Grounding ---
 
-[[WET INK:  Pat, URF is really the data-structure part of Uniform which
+{[WET INK:  Pat, URF is really the data-structure part of Uniform which
 	constructs it own semantics directly on top of URF, so:
 	URF
 	TRS (term rewriting with rules and atoms expressed in URH)
@@ -204,7 +204,7 @@ _
 ### --- UFORM - UNIT FORM ---
 #### _
 
-[[Pat, this is an optional section... it is just about having a print format and a transport format for URH]]
+{[Pat, this is an optional section... it is just about having a print format and a transport format for URH]}
 
 
 There are data formats defined for URH.  The first expresses bounded, tree-structured URH as nested text structures, and the second expresses the all-blank-node structure of a URH graph as sequence of integers.
@@ -220,7 +220,7 @@ Unit Form Examples
 	person(dan, age:54, address: address("101 bache", zip))
 
 
-[[Pat, there is a full "code" markdown, which maps expected source code structures (like blocks, and '.' notation onto URH) but I am going to keep that out of this URH document... for for here just know there is a nice way to map pretty natural looking code structures onto URH in a semantics free way (like the LISP reader is sematantics free).  But this markdown looks much nicer than lisp, basically it looks like python.]]
+{[Pat, there is a full "code" markdown, which maps expected source code structures (like blocks, and '.' notation onto URH) but I am going to keep that out of this URH document... for for here just know there is a nice way to map pretty natural looking code structures onto URH in a semantics free way (like the LISP reader is sematantics free).  But this markdown looks much nicer than lisp, basically it looks like python.]}
 
 
 _
@@ -557,7 +557,7 @@ M is the _**URF graph merge**_ of graphs G and H iff
 _
 #### -- Properties of the GLU graph and graph alignment --
 
-[[If it ever became worth doing I think can prove all of this stuff]]
+{[If it ever became worth doing I think can prove all of this stuff]}
 
 Here are some important properties of the GLU graph above:
 
@@ -583,9 +583,9 @@ _
 ## === ONTOLOGICAL ISSUES ===
 ### _
 
- [[PAT, I was confused for a long time about the relationship between URF and RDF, so I wrote alot about this to help me clarify it to myself... Thus things got a bit wordy in here. feel free to skim...
+ {[PAT, I was confused for a long time about the relationship between URF and RDF, so I wrote alot about this to help me clarify it to myself... Thus things got a bit wordy in here. feel free to skim...
 
-Also re-reading these, I see they are said more arrogantly and more conviction than I have when re-reading them.  Still they do indicate the different kind of thinking that caused me to end up pushing away from RDF... (I tried for along time to just use RDF, and these sections to capture some of the failures I was finding.) ]]
+Also re-reading these, I see they are said more arrogantly and more conviction than I have when re-reading them.  Still they do indicate the different kind of thinking that caused me to end up pushing away from RDF... (I tried for along time to just use RDF, and these sections to capture some of the failures I was finding.) ]}
 
 _
 ### -- THE RDF DENOTATION FANTASY --
@@ -780,7 +780,7 @@ URF & RDF have 3 large differences, many smaller differences follow from these:
 
 3. URF graphs are controlled while RDF graphs are uncontrolled.
 
-	[[PAT, I thought I understood this notion, but I don't.  "Controlled" means I have a handle to it, a way to unambiguously referencing the needed portions of the data graph for each processing task.  with more work I think I can formalize this notion... but the one in my head was broken!]]
+	{[PAT, I thought I understood this notion, but I don't.  "Controlled" means I have a handle to it, a way to unambiguously referencing the needed portions of the data graph for each processing task.  with more work I think I can formalize this notion... but the one in my head was broken!]}
 
 
 MORE SPECIFIC DIFFERENCES TO RDF
@@ -798,7 +798,7 @@ MORE SPECIFIC DIFFERENCES TO RDF
 - **UNIT BACKING** is an interface for accessing & manipulating URF data.   This is outside the scope of this doc, but the structure of a URF graph is actually defined by its grounding, so URF graphs a often not static structures, but rather programs that generate such structures.
 ### --- RDF TO URF CONVERSION OVERVIEW ---
 
-[[Pat, this conversion process is both out of date, and it is incorrect in several places.  I left it in, since it does still indicate spiritually how RDF and URF relate.]]
+{[Pat, this conversion process is both out of date, and it is incorrect in several places.  I left it in, since it does still indicate spiritually how RDF and URF relate.]}
 
 We think if URF as the more parsimonious/uniform notation not as a conversion of  underlying RDF.  Still since the whole semanatic web world is built upon RDF it is helpful to describe it as a step by step transformation of RFD into what we call "pure RDF" which has a direct correspondance with URF. 
 

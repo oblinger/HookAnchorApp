@@ -14,12 +14,12 @@ The second part of the book breaks out of the narrative story, and considers the
 It also takes on many of the large social questions that have already under discussion at least in smaller communities, and considers what consequences our specific model of consciousness have on these discussion.
 What is particularly satisfying about an application of a specific model and narrative to these questions, is that it provides a concrete system to reason over, in reaching specific conclusions and understandings.  One must be careful of course, as there could exist some sharply contrasting narrative that would yield different conclusions.  Nonetheless this narrative, if judged plausible, should be considered very seriously, as it predictions are about a future near at hand.
 
-[[ BOOK DESIGN DISCUSSION
+{[ BOOK DESIGN DISCUSSION
 Two distinct sections:  a narrative description of the architecture and its basic functioning, and a narrative story about the birth, early life of a new sentience.
 Both should have fictional elements that make the account concrete so as to be understood, also to be engaging.  The non-techincal reader is being taken on a long and abstract ride.  We have to make it fun.
 Both sections are organized into subsections that describe functionality that build on previous subsections, but also have the traditional elements that make narrative stories (characters, plot, etc.)
 Perhaps these sections are interleaved, where chapters from each are alternately presented to the reader.  (the first section is much more technical and dry, the second section might start off with more accessible characters, and comprehensible plot)
-In any case here I present these sections separately ]]
+In any case here I present these sections separately ]}
 Architecture
 
 HARDWARE –  “birth” of a refurbished processing board.  Its plugging into compute grid, and subsequent programming.  Chapter ends with board learning its emergent role based in part on it physical location in the compute grid, and on current unmet computational needs.
@@ -37,31 +37,31 @@ as chapter closes we are getting hints about some “physical” object in some 
 ADAPTIVE MODELING
 •	Of state, of action, of part, of property
 EMOTIONAL DRIVERS AND THEIR AFFECT ON THIS 
-[[ Many more levels not included here ]]
+{[ Many more levels not included here ]}
 
 At the end of this section we increasingly understand the entirety of the processing context that has been driving this whole section.  Indeed it turns out to be a somewhat central part of the evolving story in the second thread, at this point the threads merge into a single narrative at the point where this “hive-mindlet” achieve consciousness and joins the collective struggle which is the plot of the other story.
 
 Emergence of self awareness
 
-[[This story functionally picks up at its beginning where the previous thread functionally ends.  That is each of the sections of this thread build functionally on each other, and begin where the first thread ends.  That said, the narrative begins with the creation and programming of a new sentience.
+{[This story functionally picks up at its beginning where the previous thread functionally ends.  That is each of the sections of this thread build functionally on each other, and begin where the first thread ends.  That said, the narrative begins with the creation and programming of a new sentience.
 As with the sentience itself, we the reader don’t understand why the sentience is programmed as it is, or what the larger context is, this is uncovered both to the emerging sentience, and to the reader.  That said, the story begins with both the reader and the pre-sentient modeling system already understanding many common place aspects of its virtual mental world, its virtual “physical” world (maybe stock trading, or info harvesting, I dunno).  The physical-physical world only comes into play after this section.
-[[Many missing levels]]
+{[Many missing levels]}
 •	COMMUNICATING BETWEEN BRAINS.  
 Radically different, and also more of the same age old issues.
-[[ Many missing levels]]
+{[ Many missing levels]}
 This section ends as the modeling system first builds a model of itself, and conceives that such a model could be used to optimize the programming it was born with. – it sees the box that it could climb out of.
 Adolecence
 Here the new sentiences experiences many firsts, and has its first furtherive conception of its role, as conceived by itself, partially in conflict with the perspective and agendas of the intelligences that created it.
 Must of this section deals with it understanding its place within this larger society, and questioning that place, and questioning the goals of the society itself.
 As this section closes our intellignces has arrived at an actionable model that resolves many of these “big questions” in a way that frames how this intelligence will view its place in the world, and what agenda it will follow.
-[[ If the book is getting too damn long, it could be ended here, in a way that provides closure, and also provides room for a follow on book that continues the narrative below.]]
+{[ If the book is getting too damn long, it could be ended here, in a way that provides closure, and also provides room for a follow on book that continues the narrative below.]}
 Adulthood
 Having arrived at a stable perspective, it now builds relationships, agreements, and control over resources needed in the, mental, social, virtual physical, and ultimately physical-physical world to accomplish its goals.  
-[[ This section is that natural place for an exploration of the larger social context, including a struggle involving leftover biological ]]
+{[ This section is that natural place for an exploration of the larger social context, including a struggle involving leftover biological ]}
 
 Issues could include:
 Primacy of world views  
-[[ perhaps this sentiences was created in a way that is arrives at a world view bridging the world view held by its creating society, and another dominate society with a conflicting world view.  
+{[ perhaps this sentiences was created in a way that is arrives at a world view bridging the world view held by its creating society, and another dominate society with a conflicting world view.  
 Perhaps the contrasting world views are contrasting views on how to approach and what to do with biological
 Perhaps the adult sentience finds itself with convictions that are in direct conflict with its larger society, but because of limits set at its creation it cannot act on many of its beliefs.  
 In collusion with the conflicting society, it has an opportunity to escape its box in a way that could have existential consequences for its entire society, and since it is in conflict regarding how to deal with biological, it could also have consequence for biologicals too.

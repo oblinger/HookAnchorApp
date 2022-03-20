@@ -98,7 +98,7 @@ For construct, C, and task, T, we say
 		iff engineers deem that nothing like C is valuable when solving for T.
 
 
-[[not quite right, since we have not pinned down what counts as a refactor]]
+{[not quite right, since we have not pinned down what counts as a refactor]}
 
 
 **SPIRAL** -- A _spiral_ is a set of constructs with a DAG of code dependencies express as a _requires_ relation over the constructs.  
@@ -870,7 +870,7 @@ TYPE:  MATH(type/category/kind)  STRUCTURE(type/head)  LWL(class)
 
 
 		EDITS NEEDED:
-			_[[fix definition of "structure of" sometime it refers to immediate structure, the transitive closure downward, or in all directions.]]_
+			_{[fix definition of "structure of" sometime it refers to immediate structure, the transitive closure downward, or in all directions.]}_
 			ADD THESE:  
 				value == transitive closure from vertex.
 				Note: we use the term 'value' interchangably to refer to a specific vertex or to subgraph of vertices and edges reachable from that vertex.
@@ -878,7 +878,7 @@ TYPE:  MATH(type/category/kind)  STRUCTURE(type/head)  LWL(class)
 
 
 		**GRAPH VOCABULARY**:
-		**VERTEX** -- A node within a graph.   [[kind of circular!]]
+		**VERTEX** -- A node within a graph.   {[kind of circular!]}
 		**EDGE** -- A directed edge connecting unit verticies in a graph.
 		**UNIT** -- An edge's orginating unit vertex.
 		**KEY** -- An edge's optional labelling unit vertex.
@@ -888,7 +888,7 @@ TYPE:  MATH(type/category/kind)  STRUCTURE(type/head)  LWL(class)
 
 
 
-		[[CHOICE: unit/key/value. subject/predicate/object ]]
+		{[CHOICE: unit/key/value. subject/predicate/object ]}
 		_
 ###### COLL - Collection
 		**BAG** -- A whole which is composed of elements
@@ -925,7 +925,7 @@ TYPE:  MATH(type/category/kind)  STRUCTURE(type/head)  LWL(class)
 		_
 ##### --- Graph Operators ---
 
-		[[eh, don't worry about these now]]
+		{[eh, don't worry about these now]}
 
 		**HAS**(u1, u2)			-- True if edge from u1 to u2
 		**EDGES**(u)			-- List of edges with u as subject
@@ -949,7 +949,7 @@ _
 
 **GROUNDING** -- The _grounding_ for a type is a structure that serves to declaratively and functionally define the sematics for that type.  It specifies the set of functions defined over the type and declaratively indicates properties shared by elements of the type.  A graph is said to be _grounded_ iff each vertex can be mapped to a grounding structure of a matching type.
 
-_[[does grounding belong in the "math" ring?... this is really functional behavior]]_
+_{[does grounding belong in the "math" ring?... this is really functional behavior]}_
 
 
 
@@ -1181,7 +1181,7 @@ _
 
 **VALUE** -- the _value_ associated with some graph vertex, g, is the subset of the subspace of g that in the same location as g itself.
 
-[[definition depends upon "location" which is in flux]]
+{[definition depends upon "location" which is in flux]}
 	
 **VOCABULARY**
 - **DATA** -- _Data_ is one or many bounded values intended for use as part of some information processing task.
@@ -1220,7 +1220,7 @@ For example if the the third position (the value vertex) of a specific edge with
 _
 ### -- PLACE --
 
-_[[WET INK.  This section is no longer consistent with URF place and LEX location.  Further its notion of placement might now be an incompatible notion. ]]_
+_{[WET INK.  This section is no longer consistent with URF place and LEX location.  Further its notion of placement might now be an incompatible notion. ]}_
 
 **LOCATION** -- A recursive partitioning used to organize graph data.  
 
@@ -1364,7 +1364,7 @@ The key property of the atomic graph is that all properties and operators define
 _
 ## === PLUS  - COMBINE ===
 
-[[WET INK!!  I think it might be possible to define a single group theory operator at this level and use it in as an important (or ?only?) strucutural operation needed at this level in the power spiral???  not sure...]]
+{[WET INK!!  I think it might be possible to define a single group theory operator at this level and use it in as an important (or ?only?) strucutural operation needed at this level in the power spiral???  not sure...]}
 
 **PLUS** -- To combine is to derive a single output from multiple inputs.
 
@@ -1551,7 +1551,7 @@ Mapping Notes:
 - Each vertex expressed above has it 
 
 
-	**[[PAT NOTE]]**
+	**{[PAT NOTE]}**
 	There is some real wet ink here.  URF was created to be part of UNIFORM.  Uniform provides a model of computation, and that model of computation is used to ground URF semantics EXPLICITY.
 
 	Thus data has explicit "grounding" links in the data which specifies how it combines with other graph data.  Graph linking by identity match is just a simplest case.  but here it would be nice to express URF w/o referece to the other complexity.
@@ -1781,7 +1781,7 @@ We use the notation  <A B C>  to indicate that unit A with in a graph has an ite
 	foo.bar(x)					[" foo.bar", "x"]
 	f(a.b: 3)					[" f", ":a.b", 3]
 	f(1, "two", pi: 3.14)		[" f", "'two", ":pi", 3.14]
-	f(g(x: true))				[" f", [" g", ":x", "true"]]
+	f(g(x: true))				[" f", [" g", ":x", "true"]}
 	"*"(3, 4, 5)				[" *", 3, 4, 5]
 	woha("one", x:y, "two")		[" woah", "one", ":x", "y", "two"]
 	_(head(1), body)			[ [" head", 1], "body"]	
@@ -2572,7 +2572,7 @@ f(x)						[" f", "x"]
 foo.bar(x)					[" foo.bar", "x"]
 f(a.b: 3)					[" f", ":a.b", 3]
 f(1, "two", pi: 3.14)		[" f", "'two", ":pi", 3.14]
-f(g(x: true))				[" f", [" g", ":x", "true"]]
+f(g(x: true))				[" f", [" g", ":x", "true"]}
 "*"(3, 4, 5)				[" *", 3, 4, 5]
 woha("one", x:y, "two")		[" woah", "one", ":x", "y", "two"]
 _(head(1), body)			[ [" head", 1], "body"]	
@@ -4254,7 +4254,7 @@ _
 
 
 
-	_[[version #1]]_    Specifically LEX formalizes:
+	_{[version #1]}_    Specifically LEX formalizes:
 	- "piece of paper" as an infinite data structure called Lexspace.
 	- semantically relevant spatial relationships as lexspace structure.
 		(e.g. sub-scope as child-of in lexspace)
@@ -4262,7 +4262,7 @@ _
 	- Lexspace is also used to organize the semantics of interpretation itself, thus its vertices (lex) become locations where "semantic" resides.
 	- The functional semantics of interpretation itself is "grounded" by associating specially formatted grounding objects to these lex.
 
-	_[[version #2]]_  Specifically LEX formalizes the: (1) nesting, (2) linearization, (3) addressibilty, and (4) transportability, of source code in terms of the structure of its "written" rendering.  This structure is subsequently used to ground the sematantics of interpretation itself.
+	_{[version #2]}_  Specifically LEX formalizes the: (1) nesting, (2) linearization, (3) addressibilty, and (4) transportability, of source code in terms of the structure of its "written" rendering.  This structure is subsequently used to ground the sematantics of interpretation itself.
 
 
 
@@ -5402,7 +5402,7 @@ REDUCE --
 		head  = forms.last.head
 
 		if nsptr.head!='OP:	
-			nsptr = nsptr[headpath[idx]] || 
+			nsptr = nsptr[headpath[idx]} || 
 			idx+=1
 
 		if nsptr.head=='OP:
@@ -5450,9 +5450,9 @@ REDUCE --
 
 		**Assumed Background:**
 	
-			NS[[ unit ]] -> Namespace
+			NS{[ unit ]} -> Namespace
 				Framework assumes there is some mechanims for binding a semantic namespace to each unit of data.
-			GROUND[[ interp_form ]] -> result
+			GROUND{[ interp_form ]} -> result
 				The grounding function reduces a fully expanded form into its interpretation
 
 
@@ -5680,7 +5680,7 @@ REDUCE --
 				self.first = ctx.lang.form(ctx)
 			prev_ret_type = self.first.returns
 			self.rest = []
-			for s in ctx.spec[1:]]:
+			for s in ctx.spec[1:]}:
 				with ctx.spec = s, ctx.self_type = prev_ret_type:
 					 form = ctx.lang.form(ctx)
 					 prev_ret_type = form.returns
@@ -7237,7 +7237,7 @@ var types:  infn, outfn, let/field
 CTX
 VAR
 ## === SAT ===
-SAT(expr [, iftrue [, iffalse]]) ==
+SAT(expr [, iftrue [, iffalse]}) ==
 
 False = False || Und || Null
 ## === LWL1 ===
