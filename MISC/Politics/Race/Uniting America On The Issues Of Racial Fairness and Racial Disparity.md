@@ -1,4 +1,74 @@
 
+### 2022-03-19  
+
+  
+Steve:
+
+Here is a thought that has been rolling around in my head… but I cannot say it in a compelling, concise, and persuasive way.  I think it is a critical thought for this moment in the US, and I have heard many echos of this thought in your writings.
+
+  
+
+If only it could be pulled together into an agenda for America…
+
+  
+
+  
+
+Let me grope in the dark a bit to see if I can provide the gist of the it.
+
+  
+
+  
+
+The left and right agree that racial disparity exists, but disagree on its core causes, and they understand that this disagreement is very destructive.
+
+  
+
+I believe there is a common set of assumptions which you could argue in a way that brings both the left and the right onto a common page.  You would be saying things that offend BOTH the left and the right in explaining these causes, but if done in Steve QJ style, you manage to pull your reader along since you are ALSO offending the other side too.
+
+In the end, you have a framework that is not detailed enough to say which policies are good or bad.  But it is enough of a framework for both the left and the right to acknowledge core claims of the other side, and to agree its all of our problem to solve.
+
+  
+
+I could write alot more, but let me just say the core claims (I am pretty sure they are QJ aligned):
+
+  
+
+  
+
+-1-  Racial disparity exists, and is causes by significant demographic factors (like income etc.), as well as cultural factors both extrinsic (outside the affected group) and intrinsic (inside the group).  Both side agree with much of this claim but will shriek in horror at one or the other of the phrases in the last part of that sentence.  Yet:
+
+  
+
+— many well run studies show that extrinsic factors a pervasive for Blacks in America.  Resumes get follow up less often when they contain a black sounding name. etc.
+
+  
+
+— on the other side strong studies show that children raised out of wedlock have worse outcomes, and Blacks raise children out of wedlock more often their non-blacks.  This has also got to be a factor.
+
+  
+
+Better arguments can be made here… but the aim is to get everybody on board with the idea that both kinds of factors are SIGNIFICANT … no attempt to decide which has greater effect.  We don’t need that, once we see that both are significant, then we all agree that both should be addressed.
+
+  
+
+  
+
+~~~
+
+  
+
+Second core idea:
+
+  
+
+Regardless of which kinds of factors you personally think the biggest cases for racial disparity you must accept that is the responsibility of America as a Nation.  After all the slaves of the past were stripped of any culture they might have inherited from their past.  Their language, culture, traditions, religions, etc. are all 100% American instilled.  So even if you believe it is all “Black cultures” fault.  That culture exists and was created by your nation.  So you nation bears responsibility.  (Notice: I am not arguing for reparations or that any individual today bears responsibility, but I am saying that America AS A NATION created this problem, and so it is up to america AS A NATION to address it.
+
+  
+
+At the same time, if one believes in the freedom of the individual, then we must leave ultimate
+### 2022-03-18  letter to steve
+
 
 Steve, 
 This is not exactly a topic... its more of an agenda, but I think it is very close to the way that you view the world, and I think the direction in which you hope it will proceed.

@@ -87,15 +87,15 @@
 | F    | FILE search / ALL   | FILE in explorer / finder |
 | H    |                     |                           |
 | I    | tgl ITALIC          |                           |
-| J    |                     | / JOURNAL header          |
+| J    |                     | / insert JOURNAL header   |
 | K    | insert LINK         |                           |
-| L    |                     | / LOGGED sub note         |
-| M    |                     |                           |
-| N    | NEW note / New PANE | / NAMED sub note          |
+| L    |                     | /                         |
+| M    |                     | MISC note                  |
+| N    | NEW note / New PANE | /                         |
 | O    | OPEN switcher       | OPEN in default app       |
-| P    | cmd PALETTE         | / PERSON PAGE             |
+| P    | cmd PALETTE         | PLAN note /               |
 | Q    |                     |                           |
-| R    | search REPLACE      |                           |
+| R    | search REPLACE      | SCRATCH note /            |
 | S    | SAVE file           |                           |
 | T    | / undo CLOSE        | new TEMPLATE/insert only  |
 | U    |                     |                           |

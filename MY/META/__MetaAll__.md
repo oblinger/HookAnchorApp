@@ -3,7 +3,7 @@
 | TOPLEVEL  |                                                                 |
 |-----------|-----------------------------------------------------------------|
 | [BIG](__BIG__)       |                                                                 |
-| [LISTS](__LISTS__.md)     | Undated collections of information of a single type             |
+| [LISTS](__SETS__.md)     | Undated collections of information of a single type             |
 | [LOGS](__LOGS__)      |                                                                 |
 | [MISC](__MISC__)      |                                                                 |
 
@@ -97,7 +97,7 @@ EVERYTHING -- **ALL** of Dan's Digital info fits into exactly one of these three
 - IN STREAM    -- Info not above is captured in exactly ONE stream
   ARCHIVES     -- (bin,proj,ref,WP) are archives of corrsponding folders.
   EVERNOTE
-    -- PHONE   -- Short, Transactional, Buisness Related, While On Phone.
+    -- PHONE   -- Short, Transactional, Business Related, While On Phone.
     -- SNIP    -- 'Snipits' written by me, but not yet in document/email/etc.
                   Offloaded notester notes etc. are tagged archived in this notebook
     -- REFS    -- Ref material for posterity:  snipit not by me, web searches, docs, etc.

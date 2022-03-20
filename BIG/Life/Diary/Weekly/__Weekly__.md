@@ -1,14 +1,4 @@
 
-### 2022-03-15 
-- [ ] Get response to Amy Kruse
-- [ ] Schedule calls for FAANG Engineer
-- [ ] [Yearbook](__Yearbook__.md) minimally current
-- [ ] Get all time critical tasks completed
-	- [ ] Blood, Taxes out, Eli's doctor's note
-	- [ ] Mom's visit
-	- [ ] Buy flight tix to FLA
-	- [ ] Call sahil
-	- [ ] try to do others
 
 ### 2022-03-14 - Q2 GOALS
 

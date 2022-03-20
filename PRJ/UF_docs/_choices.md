@@ -1722,9 +1722,9 @@ NEEDS
 
 2020.10.15 RESOLVE.  (No longer accepted)
 - Parser operates in four modes in_ws [T/F], in_code [T/F]
-- '{{{{' begins JSONIC parsing	in_sw_False	in_code=False
+- '{[{[' begins JSONIC parsing	in_sw_False	in_code=False
 - '----'	begins YAMAIC parsing	in_ws=True	in_code=False
-- '{{'	begins JAVIAC parsing	in_ws=False	in_code=True
+- '{['	begins JAVIAC parsing	in_ws=False	in_code=True
 - '::'	begins PYTHONIC parsing	in_ws=True	in_code=True
 - '{'	begins JSONIC parsing 	from all modes except JAVAIC
 
@@ -1738,7 +1738,7 @@ DISCUSSION
 2020.10.15
 - JSON -- JSON constants perfectly match UnitForm constants in both withspace sensitive and free modes.  JSON structure must begin with '[' or '{' and either one will flip parser into non-WS parsing.  Since parser begins in non-code mode, it ensure that these structures are parsed as JASONIC code which is a super set of JSON.
 - YAMAIC -- It parses yamiac w/o prefix since it begins in YAMAIC mode.  
-- RARELY NEED '----' or '{{{{'
+- RARELY NEED '----' or '{[{['
 	The former is only needed when embedding YAML into another format,
 		but commonly YAML is used at top level within source files.
 	The latter is only needed to transition from JAVAIC to JSONIC
@@ -1746,8 +1746,8 @@ DISCUSSION
 
 2020.10.23
 - NUM ONE ISSUE:  stmt form is currently applied too promiscuously see below
-- Cant use '{{' for JAVAIC, since:  {if True{do}}  conficts w its close brace
-- Same for '{{{{' for JSONIC
+- Cant use '{[' for JAVAIC, since:  {if True{do}}  conficts w its close brace
+- Same for '{[{[' for JSONIC
 
 THE STMT FORM PROBLEM
 - x + y  		is a very natural expression required to be supported, and 
