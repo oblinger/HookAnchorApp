@@ -813,7 +813,7 @@ CONSEQUENCE -- if we hope for fairness in consideration, it MUST be done in ways
 	GB -- Group Bias -- 
 
 
-	~~~~~~~
+	~-~~-~~
 
 	Proposed DOD --  (is this a valid DOD?)
 	   "What are the ultimate causes for systematic differences 

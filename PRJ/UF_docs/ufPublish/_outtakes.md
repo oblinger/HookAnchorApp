@@ -466,7 +466,7 @@ The ordering of the edges may or may not have meaning, the edges may only be an 
 The third insight is the great range of specializations interpretations and usages of graph data can all fit on top of these eight vertex archetypes.  One class of specialization are simply restrictions on existing graph structure:  Tree, DAGS, undirected graphs, queues etc. are supported as simple restrictions on eight basic graph patterns.  The second class of specializations modify how the graph data functions.  Mutability, Versioning/History, Live embedding of external data, etc. are all supported as specially functioning verticies, but again all expressed within the structures supported by these eight graph structuring patterns.
 
 
-~~~~~~~~~
+~-~~-~~-~
 
 
 Uniform graph defines EDGE-LIST as a single unform way to operate on these eight architypes.  
@@ -493,7 +493,7 @@ def can_speak(lang_data, country, language):
 		else:
 			return False
 
-~~~~~
+~-~-~
 
 The many definitions provided here are mostly as one would expect given conventional usage of graphical models.  
 There are a few subtle fiddly bits regarding how 'get' interacts with expected data structures, and how notions of place fit into the graph model, otherwise these are pretty standard defintions.

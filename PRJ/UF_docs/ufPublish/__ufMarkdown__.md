@@ -14,13 +14,13 @@ aspires towards a collection of elements to good they cannot be made better for 
 2. BEAUTIFUL -- Is as apt, and looks as beautiful as any other syntax developed for any  DSLs developed for any targeted software activity.
 3. COMPONENTIAL -- Facilitates seemlessly interspersing logically meaningful fragments of independently developed languages into new synthesis languages without changing the original languages or writing a new parser for the new language.
 
-~~~~
+~-~~
 As a motivating example imagine: one person developed a jQuery-like micro language (paradigm) for sub-tree selection, independently a second another person developed a PHP-like template-structure-filling paradigm, and a third
 
 .  Later it should be possible for a third person to easily combine these paradigms to produce a DSL for specifying dynamic structures  might easily construct 
 
 a parallel flow language designed to efficiently transpile onto Google's Tensor Processor it would be easy for a forth person to the source-code syntax of each of these langauges 
-~~~~
+~-~~
 
 To even attempt such a crazy thing, one needs to identify key elements of software which can be repeatedly recombined in order to admit a close proxy for all existing (and future) software languages.  So for SW langauge parsing what are these conserved elements?
 
@@ -80,7 +80,7 @@ Ok, but what is the for??  It allows us to treat source code as easily manipulat
 - A very powerful approach is to develop a DSL specific to the application, but can be heavy
 
 
-~~~
+~-~
  
 Eric Horowitz said that all the cool ideas from LISP have made it into modern languages except its macro system.  He is right.  The problem is that the macro system relies on the fact that LISP uses a semantics-free "reader" that maps from text onto the list-of-lists which is used as the AST for the program structure.  This is amazingly powerful since you can invent any new behavior for your language using macros, and then parser (which is sematantics-free will work perfectly).  BUT visually LISP sucks eggs.  Modern languages (except clojure) have not gone down the parenteses path, even knowing that they were going to loose all that macro goodness.
 
@@ -122,7 +122,7 @@ Ok enough theory... SHOW ME SOME CODE!
 
 
 
-~~~
+~-~
 POST PROCESSING
 Ok so we did not do away with language semantics; admittedly we just pushed that bubble around under the carpet.  But we pushed it to a place that allows language-independent 
 

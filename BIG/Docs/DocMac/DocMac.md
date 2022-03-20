@@ -328,7 +328,7 @@ cat >/Users/oblinger/.emacs
 ##### xx Firefox
 - 1password, AdBlocker Ultimate, Session Sync, Tree Style Tabs
 
-~~~~
+~-~~
 URL:  about:config
 
 # LOAD IN BACKGROUND:
@@ -468,14 +468,14 @@ Serial: D4GU34F0FY6W23CHAG
 ##### xx Micrsoft xx Office
 -- 1 password login to Microsoft wef234@gmai.com.  click 'install office'
 
-~~~~~~~~
+~-~~-~-~
 Microsoft office 365 personal edition 6/26/2018 purchased (auto paypal billing each year)
 
 Your order number: 3203845939 
 Once your order is processed, we'll send a receipt and any related instructions to: wef234@gmail.com. 
 
 
-~~~~~~~~
+~-~~-~-~
 
 STATUS:  2016.10.09 -- this is the activate version 
 
@@ -547,7 +547,7 @@ PyCharm -> menu -> help -> EditCustomProperty  (then add line below)
 idea.case.sensitive.fs=true
 ________
 
-~~~~
+~-~~
 eStore Order Confirmation
 Order Number: A1251610
 
@@ -555,7 +555,7 @@ one-year 2018.3 'till 12/2/2019
 
 
 
-~~~~
+~-~~
 
 11/01/2016  2-year licence   thru -- November 13, 2017
 
@@ -659,7 +659,7 @@ REF# 461655345. You will receive a separate order confirmation by e-mail.
 ##### xx QuickRes
       -- MacUpdate  
 
-~~~~~
+~-~-~
  bought on 9/21/2017
  no registration id shown
 
@@ -719,7 +719,7 @@ B9EDA2B9 E0DDCDDD E1FB07FD 9631883F
 ------ END LICENSE ------
 
 
-~~~~
+~-~~
 DOCS
 -  http://www.rockettheme.com/magazine/1319-using-sublime-text-2-for-development <--- IMPT
 -  http://steverandytantra.com/thoughts/three-months-with-sublime-text-2

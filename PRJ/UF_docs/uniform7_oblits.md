@@ -232,7 +232,7 @@ Mutable structures are used in cases where immutable structures would suffice.
 
 OBLIT!  Uniform does not force all to be immutable strcuture, but it does favor immutable over mutable, and structure over function.
 
-~~~~
+~-~~
 Better said:
 
 OO-procedural attachment is kind of like infinite lazily constructed structure.  OBLIT!  All procedural attachment is infinite lazily constructed structure.

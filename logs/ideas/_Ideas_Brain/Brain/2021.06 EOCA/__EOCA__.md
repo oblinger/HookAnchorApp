@@ -434,7 +434,7 @@ It is clear from human history in computation that there is significant substrat
 - Humanity will likely construct its first AGI within decades 
 	(and probably cannot stop itself from doing this)
 - Alignment is our only hope
-~~~
+~-~
 - In complex spaces understanding the interaction between any optimation criterion and that space becomes impossible as complexity increases.
 
 
@@ -465,7 +465,7 @@ Even for me I confess that emotionally I find it hard to believe, what intellect
 This is a funny admission from Mr. doom and gloom.  But it is accurate, and further I think gut reactions are an important way to think about those areas where science cannot operate well.  We should pay attention to our gut in assessing such things.  Still we should ALSO be thinking at a meta-level about where such gut reactions are coming from.  Many books are written on the ways in which our gut reactions can systematically lead us astray.
 
 
-~~~~
+~-~~
 
 Ok I hope I have throughly trounced all "that just cant happen soon" kinds of objections.  We really DONT have evidence that it cannot and will not happen 
 ## === THE ENVISIONMENT AGENDA ===
@@ -864,7 +864,7 @@ FORMULATION ESCAPE -- A formulation escape is not even an escape in the formal s
 
 VALIDITY ESCAPE -- A validity escape is an escape based on a flaw in the validity proof itself.  
 
-~~~
+~-~
 
 ADAPTIVE ESCAPE -- An adaptive escape is one that somehow escapes the intended range of the AGI agent
 
@@ -1114,11 +1114,11 @@ Is this a crux for you?
 (obviously "agentic" is quite underspecified here, so maybe it'd be useful to dig into that first)
 
 
-~~~~~~~
+~-~~-~~
 [Instrumental Convergence](https://www.alignmentforum.org/posts/L9HcyaiWBLYe7vXid/distinguishing-claims-about-training-vs-deployment#Instrumental_convergence) Ngo.
 Drive towards Power and Money will become terminal goals
 
-~~~~~~~
+~-~~-~~
 
 
 
@@ -1223,7 +1223,7 @@ one idea that comes to mind is a kind of platonic view of knowledge, where just 
 Of course this is really just a measure of the value for a given piece of knowledge, I am not sure it is really saying anything about the intrinsic value of knowledge as a category.
 But one day, when an AI is asking this question in our place, I expect their thinking will travel to places like this, simply because for them, they are natively and more transparently constructed from from information whose nature so very clearly IS equivalent to the interconnections made in and by it.
 
-~~~~ 
+~-~~ 
 Clarification of the context here: For most humans, we are not entirely sure… maybe ``the meaning is in the meat.'' If I had a machine that would chew ones body up, but then simulate the result, many would be squeamish about pulling the trigger. But an AI would not be. They are already clear that their meaning is not housed in anything other than the structure of the information that makes them up. Thus I suspect they more than us would see the structural aspects of the information to BE the only thing that is of intrinsic value, all else is an irrelevant implementation detail. Thus they will probably accept some kind of model like this one as their framework of value… And this model incidentally provides a very strong answer to the question you posed.
 huh… that was a surprisingly satisfying shoot-from-the-hip rumination ;-)
 
@@ -1369,7 +1369,7 @@ My view is that the existential risks from Sentient AI is very real is far close
 Paradoxically I believe the least perilous route for humanity is to ACCELERATE the construction of such an AI.
 This site is dedicated to discussion and advancement in our understanding of these issues, as well as a discussion regarding a practical agenda for action.
 
-~~~~~
+~-~-~
 My personal prognosis for humanity is not so great, at least not for the biological/social organisms which inhabit the earth today.  I do think the thinking of the beings of the future be built around much of the thinking that humanity has discovered/created over these first millenia of thought, but 
 
 

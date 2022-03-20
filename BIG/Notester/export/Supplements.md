@@ -14,7 +14,7 @@
     proprotein@aol.com 
     Judd 
 
-    ~~~
+    ~-~
     From Dr. Hassler:
     Nature's plus 
      

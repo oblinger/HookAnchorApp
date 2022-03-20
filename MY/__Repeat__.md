@@ -67,7 +67,7 @@ THEORY OF TUNABLE KNOBS WITHIN THE MIND
 
 THEORY OF INDIRECT MANIPULATION OF SELF BY CONTEXT SETTING OF SELF
 
-~~~~
+~-~~
 THE GOAL
 - HARDER -
 	- - Not trying to build system that can perform a task
@@ -78,7 +78,7 @@ THE GOAL
 	- Not all things need to be learnable in all ways, but rather for key capabilities there is a way to laern it.
 	- Allowed to rely on a strategic teacher that already knows the concept to be learned.
 
-~~~~~
+~-~-~
 Trigger 
 Trigger right thing
 

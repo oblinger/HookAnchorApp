@@ -26,7 +26,7 @@ T14	190.5	Tofu++, Veg, 4apples, stuffed before dinner,
 // - EXERCISE - 7min most days
 
 
-~~~~~~~~
+~-~~-~-~
 
 LOOSE -- Uygher Food - RedChili, MSG, Lamb, Chicken, 
 
@@ -37,7 +37,7 @@ R11	191.8	B:2qinoa
 // 2020.06 RESTART
 // -- Waking @ 5am, eating early, stopping early, few snacks, little sugar
 
-~~~~~~
+~-~~-~
 yesdertay 	Salmon, choc, coffee
 Lunch:		Gbeans-Chick  15m[h1]
 
@@ -47,10 +47,10 @@ T15	197.2	3coff  L: cabbageEgg, pea sprouts, soupPork
 F04			3-coffee/apple/almonds  L: Shrimp/Edamame, PepperBeef, 
 			Soup, Egg&Cabbage (shrimp is not fresh) 15m[h3;10m h2]
 
-~~~~~~ OCT 2019
+~-~~-~ OCT 2019
 M30			L:  >>>Gpepper<<<,Lotus,Pork. Egg  Spinach/rBean Bun, 
 				>>>Old<<< Chicken. 5m[h4+1->h1]
-~~~~~~
+~-~~-~
 T10			L:  Soup(Ginger/Carp), FlatGreenBean/Shrimp, Pork, 
                 >>CeleryTofu<< >>NapaCabbage<<  15m[h5+1]
 F06 196.2	L:  >> Onions << 1h[h3]
@@ -71,7 +71,7 @@ W28 196		L: ProteinMixChick, WhiteFish, Rice, TofuPepperPork
 T27
 
 Eating the 1 month nanny's food
-~~~~~
+~-~-~
 
 
 2019.05.20	L:LambShank,gnochi L2: Noodles(LotsRedPepperOil) +1h H2
@@ -963,7 +963,7 @@ M24
 4  Tryst:Coffee + Helene
 
 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~-~~-~~-~~-~~-~~-~~-~~-~~-~~-~~-~~-~~-~~-~~-~~-~~-~~-~~-~~-~~-~~-~~-~~-~~-~~-~~-~~-~~-~~-~-~
 
 
 

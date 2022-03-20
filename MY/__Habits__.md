@@ -677,7 +677,7 @@ Now any day that you fail to execute, you take the envelop and drop it outside s
 You can update the sticky note as your goals shift.
 
 
-~~~~
+~-~~
 2022.01.27 - 30&30 - Morning Effiency & Focus on tough task
 - HARD READY: after weekday meditation&bath set 30 min timer. 
 		  then start MIT immediately after (within minutes)

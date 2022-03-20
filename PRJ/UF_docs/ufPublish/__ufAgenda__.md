@@ -57,10 +57,10 @@ BUT
 -2- simultaenously satisfying all three principles is exceedingly difficult, and there is no guarantee it is even possible in all cases.  Still early progress is encouraging, and humanity only need succeed at this task once for all time.
 
 
-~~~~~
+~-~-~
 Software systems inherit the needless complexity in each of their components as well as any introduced in their combination.  As systems grow this compounding becomes overwhelming.
 
-~~~~~
+~-~-~
 
 
 _
@@ -444,7 +444,7 @@ This notion of orthogonality is
 
 
 
-~~~~
+~-~~
 The notion of essential capture from the previous section does seem to tell us something interesting about the problem class being addressed, but it does not seem to constrain the pieces one might want to use, since there can be as many "essential captures" as there are problem classes.  But it seem there can be an infinite number of yet more and more problem classes, so this, in the end, provides no real constraint.
 
 Enter the orthogonality constraint.
@@ -495,7 +495,7 @@ Claim: Any granular, orthogonal extension of the uniform hierarchy is _universal
 
 Universally reusable code can be spliced into 
 
-~~~~
+~-~~
 
 CLAIM:  A code written using nothing more than some given set of uniform elements can be natively reused in any language context that is orthogonal to those elements.
 
@@ -705,7 +705,7 @@ OUT TAKES
 
 **COMPATIBILITY** -- An interpretation environment, E1, is _**compatible with**_ another environment E2 if and only if there is a functional (injective) mapping of elements of E1 onto E2 such that the set of requirements that hold for enviornment E1 are a subset of the mapped requirements that hold for E2.
 
-~~~~
+~-~~
 
 Just as a trivial example consider the max function:
 
@@ -717,14 +717,14 @@ def max(list):
 	return result
 
 
-~~~~~
+~-~-~
 say that essence is fragile in the sense that, it is easy to "break" an implementation by introducing a superfolous requirement, and once this is done, it often cannot be recovered.  Any implementations that built using this implementation will inherit the superflous requirement and thus also not be an essential capture of the capability that it implements.  We can see this effect at all levels in the software stack, consider an the "integer add" operation.  Most implemetations of this function will depend upon the byte-level representation of an integer (perhaps it is 'big-indian' or 'little-indian').  Whatever requirement is made by the add operator, that requirement will end up being inherited by any code that enbeds this add operation within some larger computation.  This inheritance of superfolous requreiments applies at all levels within the software stack, and its disasterous effects on code generality is CUMULATIVE.  The primary way to implement an essential capture of some capability is to construct it from some more primative essential capture implementation, and to do this recursively all the way down.
 
 Such a function depends upon it invocation environment in dozens of ways that are not essential for the max computation.  It depends upon the way that functions are invoked, they details of the loop iterator, the short circuit nature of the 'and' function, etc.
 
 and implementation that is broken once a superfolous requrirement is adopted by some implementation, it can n, all code built using that implementation will inherit this 'sticky' superfolous requirement.  For example, if one links against a particular math library, then that library becomes an assumption of that implementation---it is now "baked in" in the sense any larger software built using this library will inherit this requirement, even when many other math libraries might have been used it its stead.  Thus because of stickiness, one must build the essential capture of some capability only using subcomponents which are themselves essential captures of the capabilities we are gaining from them.  This is a harsh requirement, it means the essential capture implementation must be built exclusively from sub component implementations that are essential captures of the needed sub-capability.  This requirement applies recursively all the way down the component tree to its roots.
 
-~~~~~~
+~-~~-~
 
 directly build use the existing stack 
 
@@ -737,7 +737,7 @@ The modern sofware stack of libraries, frameworks, and languages is constructed 
 ???
 Of course her aim is to streamline her library so she can shrink the list of requirements as low as possible, but there is only so far that she can take this streamlining.  The build environment cannot build from fewer assertions than are required by the regression algorithm itself--at some point in the refactoring, she reaches a minimal set of requirements.  
 
-~~~~
+~-~~
 
 We say it is pragmatically unobtainable since the modern software stack is structured in a way that does not allow one to implement an essence of some capability.
 
@@ -745,7 +745,7 @@ express the essense of a capability.
 
 in practice we cannot express the essence of most capabilities using the modern software stack.  The libraries, frameworks, and programming languages we might use to implement any algorithm we write down, ends up inheriting many thousands of assumptions made by those libraries and languages that have nothing to do with the algorithm we are writing.  The result is needlessly specialized software that requires special bridging code for each application in order to be used in contexts that ARE compible with the underlying capability, but are NOT compatible with the random assumptions that were forced upon its implementation.
 
-~~~~~
+~-~-~
 
 
  that assumption gets "baked into" our code in a way that 
@@ -772,7 +772,7 @@ I think I need to take a very different tact here.  Somehow I have taken a relat
 Lets see if this is closer to the mark:
  
 
-~~~~~~
+~-~~-~
 
 **ESSENCE**
 
@@ -808,7 +808,7 @@ Given the framing above, it might seem we are aiming for some proof theoretic ni
 
 {[ I have a section that connects these ideas back to JSON... but for the moment I omitted it. I want to see if I can at least nail this idea of compatible with and essence.  (even if you have no idea why this idea might be important).  let me know how I did.]}
 
-~~~~~~
+~-~~-~
 
 EXAMPLE OF AN ESSENTIAL IMPLEMENTATION
 
@@ -858,7 +858,7 @@ To answer this, lets consider a capability that is quite central for web dev:  d
 
 
 
-~~~~~~
+~-~~-~
 
 There are a some cases in practical programming, where the essense of an important capability has been captured and used in practice.  In those cases we observe surprisingly strong adoption, we believe it is BECAUSE it is an essential capture of an important capability.
 
@@ -887,14 +887,14 @@ Given the semantics of plutil it appears
 
 
 
-~~~~~~
+~-~~-~
 
 
 Lets consider a range of different XML schemas that one might select if one wanted to provide guidance to an ontologist that is going to encode 1000 different domains.
 
 It turns out we happen to know that these 1000 domains are going to be processed as POD data in Python.  Which XML language should we select?
 
-~~~~~~
+~-~~-~
 
 _
 ### --- 2021.07.21 - Marcel response using the 'plutil' converter
@@ -1007,7 +1007,7 @@ JSON crushes XML for dumping into Python POD data precisely because JSON embeds 
 
 
 
-~~~~~~
+~-~~-~
 INSIGHT ALERT -- Beep beep beep.
 
 If you notice, in my original rendition of embeddability, I defined embed as a "you know it if you see it" kind of definition, and then gave my thought experiment to clarify.  Even then I was using the phrasing to say one languge "fits into" another, but I was not really clear in what sense does it 'fit it'
@@ -1059,7 +1059,7 @@ Yeah, just waiting for that!  Really I should never have allowed myself to think
 Here is responses to your comments, and a rewrite of the embedding idea.  This time I just stuck only to the notion of embedding, and tried to tie it to concrete XML / JSON structures:
 
 
-~~~~~~~~~~ 
+~-~~-~~-~~ 
 
 
 
@@ -1077,7 +1077,7 @@ EINSTEIN:  “If you can't explain it to a six year old, you don't understand it
 I very much agree.  Therefore I dont yet understand this yet!  But maybe I am close?  I continue to believe there is a well-formed and important notion of embedding in here.  It is just one piece of Uniform, but I have thus far failed to articulate it!  I am going to try to at least show the difference between XML and JSON using a most narrow formulation of embedding that only speaks about representational embedding:
 
 
-~~~~~~~~~
+~-~~-~~-~
 
 **Representation R1 _embeds_ into another representation R2 if there is an "obvious, simple, lossless (injective) mapping" from R1 onto R2.**
 
@@ -1127,7 +1127,7 @@ So what are the practical consequence of this mismatch?  Well in many cases Bob 
 
 
 
-~~~~~~~
+~-~~-~~
 
  
 
@@ -1289,7 +1289,7 @@ Still I am not trying to claim that JSON is perfect, or that many other alternta
 Does that narrow claim feel well supported?  (even if it does, I now need to figure out how to say it clearly on first pass!!)
 
 
-~~~~~~~~~
+~-~~-~~-~
 
 You wrote alot about message based APIs vs.  representation based APIs.
 
@@ -1310,7 +1310,7 @@ The parts of Uniform that deal with 'live' data allow us to decomplect how we wi
 I get a big warm-fuzzy idea when I hear 'tyrany of call-return'.  I think it connects in a deep way with this idea of separating the decision about what that data is, from the decision about how to best access that data.  But as I said, I think it is a deep deep hole, and I don't understand it well. (and I am even having great difficulty expressing ideas that I though I DID understand well).  (again we have a post-hoc pun :-)
 
 
-~~~~~~~~
+~-~~-~-~
 
 I started out with the idea 'essense' but in retrospect I think the idea of 'orthogonality' might be the better starting point for what is different about the Uniform agenda.  I have been struggling to express this idea in a pity and clear way...  I will send you what I end up with once I am not embarrassed by it.
 

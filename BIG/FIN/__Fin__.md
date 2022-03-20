@@ -284,7 +284,7 @@ I think my aim in this year is to maximize my deferred income.
 What should be my plan going forward?
 (Answering this probably requires a phone call)
 
-~~~~
+~-~~
 
 Also I have some questions about the year end Data Collect:
 
@@ -306,7 +306,7 @@ Dan
 
 $340,000.00		Downpayment
 $  63,294.89 	Overpayment to given back
- ~~~~~~~~~~~
+ ~-~~-~~-~-~
 $276,705.11  /2 Total to be split
 $138,352.55 	Amount each should pay
 
@@ -314,7 +314,7 @@ $138,352.55 	Amount each should pay
 TAX PAYMENTS
 $1,550,000  Tax base
  1.1630%    Tax rate     (??? Rate Factor 75% ????)
- ~~~~~~~~~
+ ~-~~-~~-~
  $18,027 /2
   $9,013    Every 6mo
 
@@ -665,7 +665,7 @@ planning meeting.  Let me know if you have follow up questions or would like
 to have a personal planning session.  Thanks,
 
 John
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~-~~-~~-~~-~~-~~-~~-~~-~~-~~-~~
 John C. Graham, CPA, PFS
 Graham & Company P.C. CPAs
 1295 South Broadway, Suite B

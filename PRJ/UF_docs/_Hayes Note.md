@@ -35,7 +35,7 @@ Still you put a bee in my bonnet, so I spent the last days going back and fillin
 
 
 
-~~~~~~~~~~~
+~-~~-~~-~-~
 
 SO WHY DOES URF EVEN EXIST?
 
@@ -51,11 +51,11 @@ But RDF broke this.  Try an I might, I could (parsimonously) express these struc
 It was only later that I understood the central failure of RDF as being the lack of handles.  And realized that URF needed to be organized so that handles FOR data are expressible naturally as part OF the data.
 
 
-~~~~~
+~-~-~
 Finally I was proud of URF and wanted to claim that it embedded ALL data in the graph, but vexingly graph literals still seemed like a way that one could sneak latent semantics into non graphical forms.  Hence the GLU graph reduction was constrcucted as a kind of proof that, in principle, URF is a pure graph form, while also retaining all the practicality and performance benefits of having URI.  (basically GLU literals can be treated as opaque string handles when you want, and you can parse their structure as a graph when you want.)
 
 
-~~~~~~
+~-~~-~
 [Figure #1]
 
 **UNICORE STRUCTURAL TYPES**

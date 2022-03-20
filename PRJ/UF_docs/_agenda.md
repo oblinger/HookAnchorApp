@@ -2,7 +2,7 @@ https://www.hillelwayne.com/post/spec-composition/
 
 ## to place
 
-~~~~
+~-~~
 HANDLE EVERY THING
 
 If **it** is a **thing**, **handled** it.
@@ -10,14 +10,14 @@ If **it** is a **thing**, **handled** it.
 
 
 
-~~~~
+~-~~
 META FORK
 
 non-meta-forking — 
 — Symbols are meta-forking
 — OO-Object constructors are meta-forking
 
-~~~~~
+~-~-~
 vanilla OO-Object creation is a second-degree meta fork
 — It is not itself a fork.  e.g. all objects are created in a singular way
 — But as soon as someone needs a DIFFERENT constructor for the same underlying class, there needs to be a way to circumvent the standard constructor...  this can be and sometimes is done via a pair-down operator lower than standard init, but use by init.
@@ -43,10 +43,10 @@ Where did we go wrong?
 How can this whole multiplicative-cluster-fork be avoided?
 
 
-~~~
+~-~
 One is a very special number — unitary
 
-~~~
+~-~
 MARKET PLACE
 
 Objective:  The objective of the market place as a whole is to maximize value transferred within the marketplace (as measured by the recipeint) 
@@ -64,7 +64,7 @@ Notice:
 -- no advantage for limiting author's 
 -- Creation is of net benefit to the creator (conventional mkt treats as a cost)
 
-~~~~
+~-~~
 
 DYNAMIC LANG SEMANTICS  vs  STATIC LANG RIGIDITY
 -- lisp, python, ruby monkey patching BAD!
@@ -87,35 +87,35 @@ result is a more complex structuring, but it is still a STATICALLY understood de
 
 
 
-~~~~
+~-~~
 
 FORWARD -- User always understands how to move 'forward' from any confusion/failure.
 
-~~~~
+~-~~
 EMBEDDABLE -- parametric restrictions
 
 JSON is not embeddable in any language since it has no limits at all on the size of its integers.  This is generally not tennable for concrete languages.
 
 but appropriate parametric restriction will allow it to embed.
 
-~~~~
+~-~~
 CROWD EXTENSIBLE -- A framework is crowd extensible if multiple parties can work extend the framework with orthogonal capabilities without any coordination, then merge results into a new framework with all capabilities.
 ==> Merge step should proceed with no/minimal refactoring except in cases where the frameworks themselves are adding capabilities which themselves conflict (e.g. adding operators/tokens with conflicting meaning)
 
-~~~~
+~-~~
 ESSENTIAL COVERING -- A spiralled rung that:
 - where each part is necessary.
 - where the rung is sufficient, 
 - well spaced -- no part defined above is better placed in rung; no part of rung better placed above
 
-~~~~
+~-~~
 PKG -- Declarish source-code componentiation
 	NS -- Scoping -- Static Scoping
 VAR -- Object-slot assignment semantics
 	Templated slot access
 CTX -- Environment contextualization -- definining inside as function of outside
 
-~~~~ 
+~-~~ 
 SINGLE ENCLOSING FRAMING --
 
 when possible one should always define a single enclosing frame for incompatible  formalisms.  
@@ -129,7 +129,7 @@ Further, even if most value is in each area, still getting extra compatible valu
 closure vars.  dynamic shallow binding vars.  ==> dyn closure vars
 list groups. map groups.  ==> map/list groups
 
-~~~~
+~-~~
 FLOATING -- An framework is floating if it is defined in relative isolation.
 
 That is it is defined in terms of some low-level background vocabulary but without reference to any of the higher-level vocabulary used to implement it.  Except for it reliance on the low-level vocabulary its definition is completely unconstrained by other high-level vocabulary, even those used to implement it.
@@ -148,11 +148,11 @@ For example "the current state of execution" is a kind of collection -- Uniform 
 "that data accessible by function z in context y"
 
 _
-~~~~ to place2
+~-~~ to place2
 Reasons:  Cake.  White space.  Upstream  CTx  pay. Form  micro. Tyranny of authorship.  Roll own plus done for u
-~~~~
+~-~~
 What - Who - Why
-~~~~
+~-~~
 - Sharing happens when it does not need to be translated.
 - The Densest Form of information for human comprehension is textual.
 - The kernel of value creation work relative to the social boilerplate is typically quite small.
@@ -161,9 +161,9 @@ What - Who - Why
 - building in mid-air make all the difference, you can build on the exact required
 - foundation, no more, no less.
 - pro. on time. 
-~~~
+~-~
 CONSTRUCT -- A construct is some semantically cohesive, functionally defined computational behaviors.
-~~~~
+~-~~
 Techniques
 - TELESCOPING -- Defining increasingly complex versions of a paradigm "ontop" of itself.  So one can choose 
 - IMPORT-BASED-REUSE
@@ -174,7 +174,7 @@ DELAYED DIVISION
 	- unified structure placement, unified structure representation
 
 _
-~~~
+~-~
 META FORK -- A meta fork is itself not a fork, but it is a design decision that creates a downstream component ecosystem that will FORCE subsequent designers to create forks in covering the full range of computing tasks.
 
 SPURRIOUS SPECIALIZATION META FORK -- A SSMF (spurrious specialization meta fork) is paradigm that is unnecessarily restricted in some way.
@@ -193,7 +193,7 @@ The unneccearry complexity from a SSMF will perpetuate within the ecosystem out 
 
 This spurrious restriction is a meta fork since others will need to
 
-~~~
+~-~
 FORK -- A fork is a split w/o benefit
 FORK -- A fork in a language is the imposition of an unneccesary choice when coding in this language.
 
@@ -248,7 +248,7 @@ _
 
 The UNIFORM THESIS is that all existing procedural programming langauges can be merged into a single uniform paradigm without suffering significant loss from tradeoffs when considering, simplicity, performance, expressive power, and a host of other considerations.
 
-~~~~
+~-~~
 **SEMANTICS** -- The _**semantics**_ for a thing the meaning of that thing.  Within Uniform, all meaning is ultimately expressed functionally.  
 
 So, as an example, the persistence provided by a hashtable would be encoded by its semantics, by its implementation, but it is implicit within those semantics.  Even a deductive reasoning system, would be captured by providing an implementation of its entailment operator.  Again its multi-world semantic would be an implicit aspect of its semantics.  Uniform uses functional implementation as a least common denominator, uniting all things that have a semantic specification.  In many cases (just as with denotational semantics) there may be a second equivelant kind of semantics for a construct.
@@ -264,7 +264,7 @@ _
 So "hashtable" expressed as the in-memory representation of a hashtable along with an encoding of its insert and lookup operators is an example of a construct, or 32-bit int along with expected math operators would also be a construct.
 
 
-~~~~
+~-~~
 
 **TASK** -- A task is the natural language specification of some programming task.  In the simplest case it specifies available data, the desired resulting data along with usage/performance requirements.
 
@@ -571,7 +571,7 @@ _
 #### removed from fork intro
 
 
-~~~~
+~-~~
 
 For example the notion of an bounded integer is _intrinsically_ distinct from that of a finite set.  They both likely belong to common parent categories (for example, both are a kind of transmittable data and might share common operators like "print" associated with data transmission). But at the level of integer itself, the natural operators (e.g. increment, decrement, etc.) are different from those for a set (e.g. membership, etc.), and most procedures written based on integers (like fibonnaci) don't have natural parallels for programs that compute the same things using sets instead.  Each of these concepts have a collection of interlocking properties that do not translate well or at all to the other.  (e.g. increment, addition, etc.)  So we say that bounded integer is intrinsically split from finite set, though both are a kind of data structure.
 
@@ -597,7 +597,7 @@ COMPONENTIAL
 - MINIMAL --> ADD_NO_EVIL -- complexity forced into use cases where it add no value
 	- Extraneous value-free included       (complexity, cases)
 
-~~~~~~~~
+~-~~-~-~
  
 
 Aggregative
@@ -606,12 +606,12 @@ Should be able to ADD capability w/o breaking existing capability.
 - so YACC rules are not componential, adding a rule easily breaks existing behaviors
 
 
-~~~~~~~~
+~-~~-~-~
 ADDRESSING 
 
 
 
-~~~~~~~~
+~-~~-~-~
 
 MY DSL
 
@@ -622,7 +622,7 @@ MY DSL
 - PROCEDURAL
 
 
-~~~~~
+~-~-~
 COMPENENTIAL
 
 A collection of paradigms, CP, is _**compentential**_ iff
@@ -630,7 +630,7 @@ A collection of paradigms, CP, is _**compentential**_ iff
    UP is effectively built upon the subset of CP which it semantically utilizes
 
 
-~~~~~
+~-~-~
 PARADIGM -- A _**paradigm**_ is a systematic way of approaching some class of software tasks.
 
 UNIFORM PARADIGM -- A _**uniform paradigm**_ is express as:
@@ -640,14 +640,14 @@ UNIFORM PARADIGM -- A _**uniform paradigm**_ is express as:
 
 A uniform paradigm might also include a description of the classes of software tasks to which it applies, description of tradeoffs between its implementations, and specifications of these things in formal langauges as well.
 
-~~~~~
+~-~-~
 EFFECTIVELY BUILT UPON --
 
 We say a target paradigm, TP, is _**effectively built upon**_ another substrate paradigm, SP, if there exists implementations, impl(TP), impl(SP) where the implementation of TP utilizes the implemention of SP, and given time an resources engineers would generally not refactor SP out of TP, for significant gains in speed, simplicity, generality, etc.
 
 Notice effectively built upon is really a statement about expressed at the semantic level since its truth does not depend upon details about how any particular pair of implementation might interact negatively.  
 
-~~~~~~~
+~-~~-~~
 SEMANTICALLY UTILIZES --
 
 A solution sketch, SS, written in natural language semantically utilizes a paradigm, P, also expressed in natural language 
@@ -655,7 +655,7 @@ A solution sketch, SS, written in natural language semantically utilizes a parad
 
 
 
-~~~~~~~
+~-~~-~~
 Elemental
 - unitary
 - dominating   (includes "best" for all contexts which includes minimality)
@@ -663,7 +663,7 @@ Elemental
 Componential
 - shimless
 
-~~~~~
+~-~-~
 
 Capability -- A capability is some "ability" as described by some specified criteria for assessing the correctness of the I/O behavior of SW component that implements this ability. (e.g.  a sorter, or an accumulator).  A capability may be expressed in natural language or in some formal spec language.
 
@@ -684,7 +684,7 @@ Componential -- A collection of paradigms are componential iff
 Elemental -- A paradigm is elemental iff implementations of supported capabilities are efficatiously implemented using it.
 
 
-~~~~~
+~-~-~
 
 may not use this to circumvent or help others to circumvent terms associated with data.
 
@@ -693,9 +693,9 @@ KK
 bazaar
 	
 
-~~~~~
+~-~-~
   # lang-combinability of lisp w.  the beauty of python
-~~~
+~-~
 
 Turns out the tradeoff myth was mostly just shortsighted laziness on our part.
 You mostly can have it all, all at once, and giving it all to your users changes the very nature of collaborative SW development.
@@ -974,12 +974,12 @@ A set of constructs {C_i} are said to be _**dominating**_ iff
 componential:  powerset elements are dominating?
 
 
-~~~~~
+~-~-~
 a measure, M, of component quality is some partial order, M(C1, C2, T_i), defined over software components given some targeted programming tasks, T_i.  The partial ordering might be expressed more broadly as M(C1, C2) meaning that this property holds generally over 
 
 So we might say C1 is more memory efficient than C2, or C1
 
-~~~OLD~~~
+~-~OLD~-~
 We say C is dominating if there does not exist C' and m where
 	U(C', m) > U(C, m) + e   and for all n<>m   U(C', n) >= U(C, n) - e
 In english, this says that a construct C is dominating if there is no replacement construct C' that is significantly better than C in some way while also not being significantly worse in any other ways.
@@ -1010,7 +1010,7 @@ But one cannot "Bolt" our desired simplicity onto an existing complex ediface.  
 
 The practical consequences of these two types of splits could not be more stark.  A forking split exponentially diminishes the value of subsequent programming efforts while intrinsic splits are non-diminishing.  This means extra programming effort required to cover some class of targeted tasks grows exponentially in the number of orthogonal forking splits, but does not grow at all given pure intrinsic splits.
 
-~~~
+~-~
 A purely intrinsic split provides a specific additional constraint and then leverages this additional constraint in order to provide some additional capability.  The beauty of this split is that any additional capabilities (splits or programs) built on top of this split must specifically depend upon this additional capabilty, otherwise these operators would be defined at the level above since they do not need the constraint provided.  So 
 
 _
@@ -1069,7 +1069,7 @@ So then what kinds of constraints do cause these incompatibilities?  We call the
 
 In our context an unforced error occurs anytime one builds in a way that unnecessarily constrains the users of the component.  For example, 
 
-~~~~~
+~-~-~
 
 
 , and we might define the relation connected_to by recursive traversal of that tree
@@ -1398,7 +1398,7 @@ X=persistence.  Y=access.
 
 	The mathematician needs to preserve this generality so that when a contradiction is found she can be sure the original negated conclusion is what must be inconsistent, the contradiction is not coming from some reduction in generality.  In our case we preserve this generality so that all downstream extensions of our work will continue to apply in all cases they could apply to.  
 
-~~~~~~
+~-~~-~
 
 	never make an assumption which is 
 
@@ -1537,7 +1537,7 @@ Key Idea: sharp spiraled factoring
 
 Agenda: iteratively develop a "best" set of computational constructs that can be used to cover (implement solutions for) some universe of targeted tasks. 
 
-~~~~
+~-~~
 Key Idea:  Express the "best" LWL as a 
 Agenda: Iteratively develop "best"     set of constructs that form a sharp, spiraled, factoring of some universe of targeted tasks.
 
@@ -2395,7 +2395,7 @@ Embeddable -- Unicore code-constructs can be mapped directly one-for-one into pa
 	These strings would all be parallel to some hypothetical "crap-lang" that natively encoded its numbers internally in this form.  But we would never want to say that crap-lang is embeddable into Java ... it is not embeddable, since even though one could encode integers in Java in a form parallel to crap-lang, they would not be **_natively encoded_** integers in the java context.
 
 
-~~~~~ OLDER FORMS ~~~~~
+~-~-~ OLDER FORMS ~-~-~
 	Language A is _embeddable_ in language B iff for all forms a in A there exists b in B where 
 		a is parallel to b, and 
 		a being natively encoded in A implies b is natively encoded in B.  
@@ -3058,7 +3058,7 @@ Each construct is "sharp" - it simultaneously achieve maximal advantage across t
 -- In any case, one cannot make effective progress towards any goal without first clearly defining the objective.  That is what we do here. 
 
 
-~~~~~~~~
+~-~~-~-~
 Relevant Dimensions
 (We try to acrue advantage with little or no disadvantage along other dimensions)
 A strong bias towards simplicity strongly constrains this process -- its 
@@ -3083,7 +3083,7 @@ CONSTRUCTS LIBRARY — Suggests a library of a-la-carte constructs which might b
 
 
 
-~~~~~~~
+~-~~-~~
 
 My take, if I am channeling my internal ``Gilbert Model’’ is that you would agree in principle with the agenda, but then in practice be skeptical that these constructs would be meaningfully interoperable, and whether they would provide much support in building the DSLs.  In the degenerate case they only cover 10% of the DSL, but 90% is idiosyncratic semantics that does not map well into any other worlds.
 
@@ -3122,10 +3122,10 @@ Immoral companies driven by immoral leaders -- given the winner take all nature 
 Moral companies driven by moral leaders -- would be lucky to get the scraps left over.  Most would actually just fail.  They would spiral downward (as we see that even modestly badly run companies today do) having less work, and thus less network, less products better than all others of the same time.  DEATH.
 
 
-~~~
+~-~
 I grew a team of 60 at Aeolus... in the beginning I was able to keep a firm hand on the hiring, and I got the very best I could find across two continents.  Later in I delegated hiring off, and also allowed some growth when the candidates were good, but not the best of the best.  The results were profound.  Even that small shift attention to excellece had a huge effect -- the teams just could not deliver.  And even then we were NOT hiring people just to "do our part"  oh my god, if we did that......   it would be just DEATH.
 
-~~~
+~-~
 Right now we have a team of about 70 at my consulting company.  We have grown 30% year over year.  This is because we are freaking amazing (honest).  We just walk on water relative to our peers in contract work.  That said, there is a very real chance that markets/customers shift and we die.  It is a winner take all world, and we are still small enough that one good wave could pull us under.  The the plateau of explosive growth/riches is tiny and surrounded by vast canyons of mediocraty its edges are curvy and very steep.  Those on top are running fast, but doing everything humanly possible to not fall off.
 
 

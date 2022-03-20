@@ -69,7 +69,7 @@ SECONDARY CLAIM:
 
 _{[following text needs to be refactored]}_
 
-~~~~~~~~~
+~-~~-~~-~
 REIFICATION BIAS
 Uniform biases towards explicit reification of all "things". If an engineer might systematically consider a specific group of values (verticies) as a single "thing" while they are programming, then we bias in favor of providing the synthetic view (graph) whose nodes represent these groupings.
 
@@ -153,7 +153,7 @@ _
 
 ##### - more overview or discussion texts -
 
-	~~~ LEX.LEXSPACE ~~~
+	~-~ LEX.LEXSPACE ~-~
 
 
 	**LEXSPACE** -- _**Lexspace**_ is a static, infinite mathematical object -- a particular graph structure.  It represents the set of all possible "locations" structured into the graph that captures the "spatial" relationships that exist between those locations.
@@ -166,7 +166,7 @@ _
 
 	**ZIPPER** -- The "_**zipper**_" of lexspace sequence of lex elements, zip0, zip1, ...  that form a kind of "backbone" for the structure of lexspace.  See "construction of lexspace" for details about this zipper.
 
-	~~~ 
+	~-~ 
 
 	**PATH** -- A _**path**_ is a finite list of lexspace edge traversals.  Each edge traversal is either the edge label unit used to 'GET' a sublex location from its parent lex, or it is the special 'UP' unit used to traverse from a lex to its parent lex within lexspace
 
@@ -278,7 +278,7 @@ _
 
 
 
-~~~
+~-~
 
 **HOMOICONIC** -- A language spec is called _**homiconic**_ if it exists in two isomorphic forms -- one textual form and one structural form, along with a, semantics-free (language independent), lossless, bidirectional mapping between them.
 
@@ -290,11 +290,11 @@ _
 
 
 
-~~~
+~-~
 
 
 
-~~~
+~-~
 
 AERAS:
 - template	spec 	fill/    /match		???

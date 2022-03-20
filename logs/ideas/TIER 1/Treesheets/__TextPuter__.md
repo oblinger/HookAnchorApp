@@ -175,7 +175,7 @@ Authorities above them can decide on a post-hoc basis to "annoint" certain organ
 Importantly, just as with git.  There is not delegation of specific parts to specific people.  Any fork can can change any knowlege is any way it wants.  it fully owns its view of the universe.  and then pieces may be cherry picked or accepted enmass as needed.
 
 
-~~~~~
+~-~-~
 Difference from Git.
 
 AUTO PROPAGATION -- code is very precise and all parts of a complex app
@@ -504,7 +504,7 @@ JUSTIFICATION
 - Hence MRCs.  Each MRC is a referenceable thing with some visually clear boundary.
 - This allows future edits to be aware of this boundary and to implicitly include or exclude info by putting it inside or outside this boundary.
 - SIMPLE -- hyper attention to the complexity of MRC management could become quite laborious and not worth the effort to get it 100% accurate.  So mostly getting linking mostly close the the correct target is the goal.
-	- MRC segmenting is a very implict part of editing (e.g. just using a blank like or '~~~')
+	- MRC segmenting is a very implict part of editing (e.g. just using a blank like or '~-~')
 	- MRC maintaince is also implicit.  system tracks MRC regions during editing, but performs 'best effort' matching accross edits.  In some cases it will loose the exact MRC targets.
 	- MRC merging and splitting will happen all the time, again system does best effort to keep links correct, but does not bother user to ensure they are correct.
 	- MOVING MRCs is one counter example.  In some cases this system may prompt user if it is not sure about non-local movments since these links really can end up very far from their correct targets.

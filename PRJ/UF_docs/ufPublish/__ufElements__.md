@@ -6,7 +6,7 @@
 
 interfaces/frameworks and languages built from these nine Unicore elements are automatically interoperable with each other, and with all over all concepts covered by Unicore.
 
-~~~~
+~-~~
 
 Muddled -> Knew Place (didn’t fit) -> Below VonNeumann Machine below all computation.
    Flip it!  Define mutable-place as extension of immutable-place
@@ -14,7 +14,7 @@ Muddled -> Knew Place (didn’t fit) -> Below VonNeumann Machine below all compu
 
 
 
-~~~~~~
+~-~~-~
 **Mutation was MUDDLED!**
 This “bad smell” persisted for several years; it was like pushing a bubble under the carpet, could not get all mutation elegant unified and elegant.
 
@@ -678,7 +678,7 @@ TODO:
 - CHOICE: should Idents have a get method?  a follow method??   (maybe on the lexspace?)
 
 
-~~~~
+~-~~
 origin.path_to(x)    as_path(x),   pathify
 origin.str_to(x)     as_string(x), stringify, str
 origin.follow(x)
@@ -686,12 +686,12 @@ lex.str()
 lex.path()
 
 
-~~~~
+~-~~
 I(_anything_) = ident    #  I.as_lex  I.follow
 I.as_path(_anything_) = path
 I.as_str(_anything_) = path
 
-~~~~
+~-~~
  ‘str’ vs ’repr’
 MOVE pathify/str into Lex.  (inherently treats current lex as origin)
 need to move UP, LEX, KEY, PREFIX
@@ -1294,7 +1294,7 @@ _
 	Bang:
 		**template**: AlphaNum => Gnd || Bang
 
-	~~~~~~~ confused ~~~~~~
+	~-~~-~~ confused ~-~~-~
 		  extends: Tree(Inst)	 		  // ???? CHOICE -- which one?  CHOICE
 
 	Env:
@@ -1694,14 +1694,14 @@ Notice:  This definition of Env is consistent with, but is an extension of the m
 
 A simple way to think about Env is to think of it as an element of the executing stack frame, but implementationally parts of it may be embedded as constants within compbiled code, in thread-local storage, or global state as well.  It is a semantic handle potentially containing any info that could be derived and used during computation.
 
-~~~
+~-~
 
 
 
 The interpretation behavior referred to as a "function call" is produced from (1) a base env, (2) an actual arg list, and (3) a fn instance.  The call behavior is to use the fn-args to instantiate the actual args as a sub env and then execute the function body in that sub environment and return the results of that execution as the result of the function call execution.
 
 
-~~~~
+~-~~
 
 **SELF-CONTAINED UNIVERSE** -- A universe is _**self-contained universe**_ if all instances of of the universe are grounded by the groundings in the universe's place space.  (This requires that even the instance entities that serve as grounding entities in the universe's place-space must recursively instantiated from other entries in that same space.  
 
@@ -2035,7 +2035,7 @@ When a package code form, p, is loaded into a computational environment, each of
 
 **PACKAGE SCOPE** -- Each package defines a _**scope**_ which maps identifiers onto the source form denoted by that identifier within that scope.  These scopes are encoded as a PlaceSpace containing package statements derived from the original source code.
 
-~~~~~ 
+~-~-~ 
 
 
 
@@ -2376,7 +2376,7 @@ def pkg .ENGINE.CFG_GRAMMAR:
 	executable = load(program_spec)
 	**return** EXE(executable)
 
-~~~~
+~-~~
 e0 = Env()
 e1 = e0.boot(e1_src)
 e2 = 

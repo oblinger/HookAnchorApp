@@ -33,7 +33,7 @@ For greater depth, please see my attached resume and addendum.
 
 I am looking for a technology centered leadership role where my experience and skill can drive success.
 
-~ ~~~
+~ ~-~
 
 
 Ted:

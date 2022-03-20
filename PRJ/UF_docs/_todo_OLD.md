@@ -525,7 +525,7 @@ UNIFORM
 -- '::'    with no-whitespace suffix should add
 
 
-~~~~~
+~-~-~
 ISSUES: <br>
 
 -- fixed_children, kw_children, meta_children

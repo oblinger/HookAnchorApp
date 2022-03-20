@@ -185,7 +185,7 @@ _
 - record entries for prior days
 - show reports (just try it)
 
-~~~ OLDER ~~~
+~-~ OLDER ~-~
 - summary groups
 - life paper house
 --  notice idle time

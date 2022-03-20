@@ -32,6 +32,6 @@ Rancho Cordova, CA 95670
 (916) 638-5700 | Fax (916) 638-5704
 www.nicholaspension.com | lynne.salas@nicholaspension.com
 
-~~~~~
+~-~-~
 RMD Waiver for 2020
 Corona-related distributions

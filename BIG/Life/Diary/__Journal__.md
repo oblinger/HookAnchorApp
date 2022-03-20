@@ -286,7 +286,7 @@ QUESTIONS FOR DOUG:
 -- side projects; 
 
 
-~-~~~
+~-~-~
 
 
 _
@@ -968,7 +968,7 @@ _
 	~ $8M	Annual revenue with crazy optomistic per person pentration rate (I think it is not reasonable, but I just tried it out.). And I also double the per person rate to equal our original per team rate.  This also seems unlikely, but I am not a clear about that.  If we add lots of vanity video and such, then while it wont increase the penetration rate, it does seem for those that care, it can increase the rate they will pay.)
 
 
-	~-~~~
+	~-~-~
 	CALL DETAILS
 
 	Based on my early calls to gyms I *DO* see the same gap in the market gym market.  Their response to the technology is quite different than at the highschool level.  (Hooray!)  They just do not have any technology like this, and HUDL is way too expensive.

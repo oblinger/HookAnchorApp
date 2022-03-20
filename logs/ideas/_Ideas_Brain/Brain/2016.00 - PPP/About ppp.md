@@ -503,7 +503,7 @@ ENSEMBLATION DRIVE -- the drive to represent each snapshot, snipit, or slice wit
 RELATIONALIZER -- 
 prototyper
 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~-~~-~~-~~-~~-~~-~~-~~-~~-~~-~
 
 
 

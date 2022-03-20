@@ -101,7 +101,7 @@ DAG Selector
 Proj > Proposal Work > Bayer Proposal
 - bacground materials
 - related work
-~~~~~~
+~-~~-~
 CNN Report
 Bayer Proposal
 

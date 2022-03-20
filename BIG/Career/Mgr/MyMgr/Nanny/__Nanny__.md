@@ -48,7 +48,7 @@ _
 
 Are you available for recurring part time work now?
 
-~~~~
+~-~~
 
 Tell me a little about what you are looking for:  What days and times are you wanting to work?  And for how long?  (weeks/months/years?)
 You listed cooking in your profile, what kinds of cooking do you do now, and how  often?
@@ -84,7 +84,7 @@ Experience
 Number of ours desired:  
 - not on the weekend.  3-hours.  4:30-7:30 on days with.  
 
-~~~
+~-~
 Kelly:  trusted immediately, 
 
 
@@ -106,7 +106,7 @@ OTHER:	Salary; Cooking&tasks; Long Days
 
 
 
-~~~~~~~~~~~~~~
+~-~~-~~-~~-~-~
 
 - NOT WELCOMING in hawaiing.
 - RUNNER 
@@ -148,7 +148,7 @@ We still keep in touch and they were going to move back to US by the end of summ
 
 
 
-~~~~~~~~~~~~~
+~-~~-~~-~~-~~
 3 classes per semester.
 1.5 graduates
 
@@ -197,7 +197,7 @@ Everything I know
    we can make "work" for her.
 
 
-~~~
+~-~
 -- study while taking care of Eli.
 -- attentive to Eli
 
@@ -351,7 +351,7 @@ PRIORITIES
 ISSUES
 - Not testing many while mom is here.
 
-~~~
+~-~
 
 _
 ## People
@@ -485,7 +485,7 @@ Want to work w. one family.  want live in.  miss my grandson.
 up to 5 children for 2 weeks.  (can get ref)
 
 heavier so walking up.  (babies carrying up and down stairs)
-~~~
+~-~
 ### Yu
 
 -- hours she was working; days/hours she wants to work; where she lives
@@ -656,7 +656,7 @@ fulltime 2001 (turned 4 years old)
 jake grandparents mis-trained him.  I 
 
 
-~~ ~~~~~~~~
+~~ ~-~~-~-~
 -- fulltime liveout 8a-7p 1/2002 2.5 years live out Alex4 and Brady1
 -- livin july99-june2000 1year Jackson (needs changed)
    Mom wanted to party.  wanted someone who would party.
@@ -668,7 +668,7 @@ jake grandparents mis-trained him.  I
 -- Since then working temp jobs.
 -- Teaching English a
 
-~~~~~~~~~
+~-~~-~~-~
 
 Sheldon 
 -- experiences with her
@@ -687,7 +687,7 @@ Sheldon
 - was not a deep relation with her kids
 - she was the outliner
 
-~~~~~~~
+~-~~-~~
 
 -- blessed to have three families. 
 -- they don't need a living, they need a baby sitter.
@@ -721,7 +721,7 @@ _
 	_
 ### NO Carolina
 	-- ok for work with a single kid.  Not with multiple.
-	~~~~~
+	~-~-~
 	-- 1 year and a few months.
 	-- he really enjoys his time w. her
 	-- house keeper ; shoffer
@@ -825,7 +825,7 @@ AYI
 -- Get payroll service 
 -- six days week
 -- Big issue.  Eli in control
-~~~~~~
+~-~~-~
 - ALREADY better than me in quieting baby.
 - One BIG ISSUE
    -  High energy, driving nature.
@@ -904,7 +904,7 @@ Utilities
 - 200 - gas/electric
 - 150 - water
 - 100 - garbage
-~~~~
+~-~~
 600 / 3 = $200
 food.     $200
 

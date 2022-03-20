@@ -638,11 +638,11 @@ Sales Methodology
 Feedback on actual sales
 Consistent Practice Of the craft - Accountable 
 
-~~~
+~-~
 $1000/mo.  2hr per month.  1hr bi-weekly.  1/2hr    30min 
-~~~
+~-~
 $2000/mo.  he could be on sales calls
-~~~
+~-~
 Translyvania. $20M
 
 
@@ -739,7 +739,7 @@ but once we start believing that the only way to create a NEW chain is to burn c
 I am only mildly long in BTC now, but maybe I should change that.
 
 
-~~~~
+~-~~
 IDEA:   BRIDGE BOND CONTRACTS
 
 I know there are theoretical secure ways to transfer coins between chains.  Nobody has implemented them yet.  Maybe they will work well.  Maybe they will be compatible with the flexibility offered by all of these smart contract types.  I cannot tell.
@@ -944,7 +944,7 @@ Kerry,
 Thanks for taking the time at GDS.  We are sceduled for a 9am
 call on Nov 20th and I was wondering if that was a good meeting for (ask about EIP??).....
 
-~~~~~~
+~-~~-~
 Mr Tuscon Electric.
 
 We did some work modelling earlier this year disaggregating power usage of individual devices in the home, based on very rough instrumentation at the fusebox.  And last year we worked with MICROSYNCOGUYS who have an extremely high resolution power monitoring sensor.  Depending on the data being collected it seem possible one could produce hyper-fine grained power usage models.  It would be interesting to estimate the costs savings that could be obtained if such modelling were used in planning and decision may co-founder to bring in an idea for your engineering team?
@@ -1011,7 +1011,7 @@ They are typically brought in by intermediaries for the fancy work
 
 
 Subject: Value add analytics for your clients
-~~~
+~-~
 Kerry,
 
 It was great to connect at GDS.  I really did hope to connect with you more, but didn't get the chance to make it happen!
@@ -1051,7 +1051,7 @@ Let me know,
 --Dan
 
 
-~~~~~~
+~-~~-~
 2a STRATOSCALE
 $$ [sent] 
 
@@ -1132,7 +1132,7 @@ Dan
 
 
 
-~~~~~~
+~-~~-~
 4a CRH --    (4-sales partner)
 $$ [sent]. Dec-3 call 1pm EST
 
@@ -1160,7 +1160,7 @@ Looking forward to the call,
 
 
 
-~~~~~~~
+~-~~-~~
 4b UPS      (5)
 $$ [sent]
 
@@ -1199,7 +1199,7 @@ We talked a bunch
 
 
 
-~~~~~~
+~-~~-~
 4c IPSOS
 $$ [sent]
 Send info before about our projects to remind her.
@@ -1244,7 +1244,7 @@ Joseph innovation leader for US.
 she is more tech, methodology expert
 
 
-~~~~
+~-~~
 Nicole,
 
 I am really glad that you found the time to meet with me, after your original slot was missed.  
@@ -1258,7 +1258,7 @@ Have a great weekend,
 
 
 
-~~~~~~~
+~-~~-~~
 4d ELC     (6)
 $$ [!!!]  Call on Nov 20 9PST
 
@@ -1284,7 +1284,7 @@ call on Nov 20th and I was wondering if that was a good meeting for my co-founde
 
 
 
-~~~~~~~
+~-~~-~~
 5 SAMS CLUB
 $$ ---  no action
 
@@ -1296,14 +1296,14 @@ huaxin.gong@samsclub.com	+1-312-725-8296
 Not a great connection.  They are a Microsoft shop.
 
 
-~~~~~~~
+~-~~-~~
 6 OLIVER GDS
 $$ ---  no action
 
 No action.  see how we do at closing.
 
 
-~~~~~~
+~-~~-~
 7 SYNCHRONY FINANCIAL
 $$ [sent] schedule DEC chat
 
@@ -1334,7 +1334,7 @@ Dan
 
 
 
-~~~~~~
+~-~~-~
 8a CEMEX
 $$ [sent] Visit Prague
 
@@ -1364,7 +1364,7 @@ Great to connect at GDS.  Great that I am meeting you right before my trip to Pr
 Looking forward to it!
 --dan
 
-~~~~~
+~-~-~
 
 JUST NICK
 Nick,
@@ -1376,7 +1376,7 @@ T / R
 
 
 
-~~~~~~
+~-~~-~
 8b UTZ
 $$ [sent] DEC - Trip to Fresno
 - Send general areas for consideration before trip
@@ -1473,7 +1473,7 @@ Dan
 
 
 
-~~~~~~
+~-~~-~
 
 8c OLAM
 $$ [sent]
@@ -1521,7 +1521,7 @@ Really looking forward!
 
 
 
-~~~~~~
+~-~~-~
 9 INTEL 
 $$ [READY.] join AI partner program
 
@@ -1557,7 +1557,7 @@ Great to get to know you a bit too.
 
 
 
-~~~~~~
+~-~~-~
 STATE STREET
 $$ [READY.]
 
@@ -1594,7 +1594,7 @@ king.
 
 
 
-~~~~~~
+~-~~-~
 
 SMILE DIRECT CLUB
 	Ryan Jackson	Global VP IT`	SmileDirectClub	ryan.jackson@smiledirectclub.com	+1 800 848 756
@@ -1630,7 +1630,7 @@ Nick
 
 NICK: [x] [ ] Technology Credit Union
 Side thing: https://elevoro.com/
-~~~
+~-~
 
 Subject: GDS / Smart Cities
 
@@ -1694,7 +1694,7 @@ I talked with him about scheduling a quarterly “catch up call” to stay in to
 ⇒ You should get that call locked down on the books NOW.
 
 
-~~~~~~~
+~-~~-~~
 
 Nick: [ ] [ ] Tuscon Electric
 Redis Labs?
@@ -1780,7 +1780,7 @@ areas that we do, then examples.
 baseball player opto parts
 ### GDS backups
 
-~~~~~~
+~-~~-~
 1 RESERVOIR GROUP  (1)
 $$ Followup create DS team connecting with geologists.
 
@@ -1804,7 +1804,7 @@ My November is pretty much spoken for, but if you have interest in thinking thro
 Let me know,
 Dan
 
-~~~~~~
+~-~~-~
 2a STRATOSCALE
 $$ Send email.
 
@@ -1829,7 +1829,7 @@ Dan
 
 
 
-~~~~~~
+~-~~-~
 2b SCOTTS MIRACLE-GRO  (2)
 
 Eric Sullivan
@@ -1845,7 +1845,7 @@ Keith is doing some supply chain optomization.
 
 
 
-~~~~~~
+~-~~-~
 3 STEWARD HEALTH CARE SYSTEMS  (3)
 $$ ????
 
@@ -1861,7 +1861,7 @@ WILL WRITE THIS TOMORROW
 
 
 
-~~~~~~
+~-~~-~
 4a CRH --    (4-sales partner)
 $$ Dec-3 call 1pm EST
 
@@ -1888,7 +1888,7 @@ Looking forward to the call,
 
 
 
-~~~~~~~
+~-~~-~~
 4b UPS      (5)
 $$
 	
@@ -1901,7 +1901,7 @@ ebbarayuga@ups.com	+1 201.828.7890
 WILL RESEARCH THIS TOMORROW
 
 
-~~~~~~~
+~-~~-~~
 4c ELC     (6)
 $$ Call on Nov 20 9PST
 
@@ -1916,7 +1916,7 @@ kodonnel@estee.com	646-338-9108
 WILL WRITE THIS TOMORROW
 
 
-~~~~~~
+~-~~-~
 Send info before about our projects to remind her.
 nicole.alexander@ipsos.com.  
     Wednesday  2pm  Nov 20th  Meet in SF.
@@ -1951,7 +1951,7 @@ Joseph innovation leader for US.
 she is more tech, methodology expert
 
 
-~~~~
+~-~~
 Nicole,
 
 I am really glad that you found the time to meet with me, after your original slot was missed.  
@@ -1968,7 +1968,7 @@ Have a great weekend,
 
 
 
-~~~~~~~
+~-~~-~~
 5 SAMS CLUB
 $$ 
 
@@ -1980,14 +1980,14 @@ huaxin.gong@samsclub.com	+1-312-725-8296
 ?????
 
 
-~~~~~~~
+~-~~-~~
 6 OLIVER GDS
 $$ ---
 
 No action.  see how we do at closing.
 
 
-~~~~~~
+~-~~-~
 7 SYNCHRONY FINANCIAL
 $$ schedule DEC chat
 
@@ -2017,7 +2017,7 @@ Dan
 
 
 
-~~~~~~
+~-~~-~
 8a CEMEX
 $$ Visit Prague
 
@@ -2046,7 +2046,7 @@ Great to connect at GDS.  Great that I am meeting you right before my trip to Pr
 Looking forward to it!
 --dan
 
-~~~~~
+~-~-~
 
 JUST NICK
 Nick,
@@ -2058,7 +2058,7 @@ Thoughts,
 
 
 
-~~~~~~
+~-~~-~
 8b OLAM
 $$ DEC - Trip to Fresno
 - Send general areas for consideration before trip
@@ -2076,7 +2076,7 @@ WILL WRITE TOMORROW
 
 
 
-~~~~~~
+~-~~-~
 9 INTEL 
 $$ join AI partner program
 
@@ -2094,7 +2094,7 @@ WRITE THIS FOLLOWUP LATER -- is loose connection
 
 
 
-~~~~~~
+~-~~-~
 10 MEREK & CO
 $$ ???
 
@@ -2107,7 +2107,7 @@ Nick & I together
 
 
 
-~~~~~~
+~-~~-~
 11 CLOUD GENERA
 $$ DEC - Call to pitch us & 
 Bobby Allen, PMP |  CTO & Chief Evangelist
@@ -2126,7 +2126,7 @@ Great to get to know you a bit too.
 
 
 
-~~~~~~
+~-~~-~
 STATE STREET
 $$
 
@@ -2162,12 +2162,12 @@ Dan
 
 
 
-~~~~~~
+~-~~-~
 10 STITCH FIX     	-- Nick what do we do here?
 U South Carolina  	-- Nick what do we do here?  Anything?
 
 
-~~~~~~~
+~-~~-~~
 SMILE DIRECT CLUB
 	Ryan Jackson	Global VP IT`	SmileDirectClub	ryan.jackson@smiledirectclub.com	+1 800 848 7566
 # Enphase discussions 2019.10.18 - Shane & Ilan
@@ -2389,14 +2389,14 @@ Actually do you mind if I CC you on an email to Josh just to get his thinking ab
 ### James Note
 
 
-~~~~~~
+~-~~-~
 
 Nick here is my starter lists for team and for business model. I also included the direction I am giving James, just so you see where the deck is going....
 
 Quick question: should I list NLP under AI.  really we have no one to cover this.  we can fake it a bit w. MIT, but it is definitely not their strength nor ours.  still it is a notable gap if I omit it.
 
 
-~~~~~{[team summary]}
+~-~-~{[team summary]}
 
 We are 60+ Senior Engineers and Data Scientists:
 
@@ -2411,7 +2411,7 @@ We are 60+ Senior Engineers and Data Scientists:
 - Dedicated QA team
 
 
-~~~~~{[Engagement model points]}
+~-~-~{[Engagement model points]}
 
 - Teams are organized into "Pods" where each pod has: data science, engineering, PM leadership, and QA.
 
@@ -2424,7 +2424,7 @@ We are 60+ Senior Engineers and Data Scientists:
 
 
 
-~~~~~~~
+~-~~-~~
 
 James, 
 I sent this to Nick and you at the same time, tomorrow he will work on this, so you can check in with him before you start, or you can just begin and then make his edits to both the old and new  versions.  (long term we will keep both portrait and landscape versions)
@@ -2491,7 +2491,7 @@ Right side:
 - right side title:  Engagement Model
 - Engagement Model bullet points as listed below
 
-~~~~~{[team summary]}
+~-~-~{[team summary]}
 
 We are 60+ Senior Engineers and Data Scientists:
 
@@ -2506,7 +2506,7 @@ We are 60+ Senior Engineers and Data Scientists:
 - Dedicated QA team
 
 
-~~~~~{[Engagement model points]}
+~-~-~{[Engagement model points]}
 
 - Teams are organized into "Pods" where each pod has: data science, engineering, PM leadership, and QA.
 

@@ -179,7 +179,7 @@ thanks!
 --Dan
 
 
-~~~~~~
+~-~~-~
 Irving,
 
 Hello I am a newbie on the board, and indeed joined the board in order to learn a bit about the challenges and opportunities in building assistive devices.  I am a serial entrepreneur, but this particular idea is taking pretty far from home base.  (I have a PhD in AI).  I had some pretty basic questions about the road to FDA approval, and noticed that you had written once or twice about this topic.  Mind if I ask a few basic questions, both about FDA, but also generally about how to understand a community that I am pretty far from.

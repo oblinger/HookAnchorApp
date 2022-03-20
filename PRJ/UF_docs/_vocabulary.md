@@ -81,7 +81,7 @@ COMMAND -- An engine command is any data item that can be
 
 ORDERING -- Determines the order of interpretation of the accepted but not yet executed commands
 
-~~~~
+~-~~
 
 **RULE ENGINE** -- A _**rule engine**_ is a form of interpretation that is comprised of rules that specify some procedural action to be performed upon satisfaction of some trigger condition that typically occurs when some underlying data (the knowlege base) changes.
 
@@ -90,7 +90,7 @@ ORDERING -- Determines the order of interpretation of the accepted but not yet e
 **RULE / TRIGGER / ACTION** -- A _**rule**_ is the combination of a _**trigger condition**_ and a _**procedural action**_.
 
 
-~~~~
+~-~~
 
 TREE ENGINE -- A tree engine 
 

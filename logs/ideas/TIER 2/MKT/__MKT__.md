@@ -97,7 +97,7 @@ ADOPTION TRAJECTORY
 
 
 
-~~~~~~~~
+~-~~-~-~
 
 
 - ADOPTION - Each part can potentially drive adoption for all of its counter parts.  The lifetime value of these adoptions is part of the value it brings to its counter parts.
@@ -111,7 +111,7 @@ ADOPTION TRAJECTORY
 	- PROJECTED SALES
 	- 
 
-~~~~~~~
+~-~~-~~
 
 How do taxonomies work?
 
@@ -234,11 +234,11 @@ FORK RATIONALE --
 FRIENDLY FORK -- A friendly fork occurs with the existing an existing maintainer of the original component indicates approval of the new fork.  Typically the fork rationale and will be agree upon by both the original maintainer, and they see value to the overall marketplace by having the fork
 
 
-~~~
+~-~
 
 SIMPLE FORK ACCOUNTING -- Do nothing special.  Allow voting with feet determine the value of each fork...  Assuming the forks really are duplicative, this will naturally drive contributors to focus on the dominant fork in a virtuous cycle that will over time leave the other fork with little support and thus little improvement.
 
-~~~
+~-~
 
 ADVANCED FORK ACCOUNTING -- Simple fork accounting 
 

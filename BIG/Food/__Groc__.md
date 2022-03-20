@@ -164,13 +164,13 @@ Fresh MEAT	GroundBeef  Chicken
 Fresh FRZ	STEM_FRESH  Edamame  Brussels  Carrots   MIX Corn/Carrot/Asp  Salmon  ItalSausage
 Fresh DRY	Cranberries  Soup  Popcorn
 Fresh MISC	Milk  Sabra  Eggs  ChickBroth
-~~~~~
+~-~-~
 Fresh VEG2	BellPepper  GrapeTomatos  Onions  Mushrooms
 Fresh DRY2	Barbanzo  PeanutButter  TomatoSauce  Barley
 Fresh FRZ2	Burger  Broccoli  Pepper&Onion  Okra  BlackBeans
 Fresh MISC2	Butter  CrushedGarlic  Parmesan
 Fresh RARE	Ham  Salami  Mustard  LemonJuice  Lenti/Rice_Pouch  Salsa
-~~~~~
+~-~-~
 Weee  VEG	Wosun  PeaSprouts  Daicon  Lotus  Mushroom  PurpleYam  EggPlant  CrownDaisy  BocChoi  Napa
 Weee  BREAD	Pancake(Chive)  RiceCake
 Weee  FRUIT	Papaya  Pairs
@@ -180,7 +180,7 @@ Weee  FRZ
 Weee  DRY	
 Weee  MISC	Tufu  SesameOil  FermentedRiceWine
 Weee  RARE	Rice  DumplinSkin  SoySauce  GreenOnions  JapanPumpkin
-~~~~~
+~-~-~
 Whole MISC	Chicken  Pork?  Bread
 Whole DRY	Barley&Lentils  SOUP  Sabra  Oatmeal  Quinoa  JellyBean  
 Whole FRZ 	Peas  Corn  Okra?  
@@ -189,13 +189,13 @@ Prime RARE	Sardines
 Prime OTHER SimpleHuman(Q&R)  UNNI_D6400  SOAP  SPONGE  Cleaner(Glass,Surface,Scrub)  WaterFilter Napkin
 Prime OTHER ToothPaste  Razor  Cremo  BodyWash
 Prime OTHER Benefiber  NaturesPlus/Omega3/Calsium  Asparin
-~~~~~
+~-~-~
 Costco FRUIT	Fuji  
 Costco VEG	Celery  GreenBeans   Peppers  Kale  Zuchini
 Costco MEAT	Beef  Chick   
 Costco FROZ	Salmon, fruit/berries
 Costco DRY	Seaweed  Almonds
-~~~~~~
+~-~~-~
 Walmrt DRY	Nescafe/Truvia, 
 
 BellPeppers, Kale, 
@@ -221,7 +221,7 @@ TRY			CrocBeefStew
 
 dimSum
 123456789 123456789 123456789 123456789 123456789 123456789 123456789 123456789 123456789 123456789 
-~~~~~
+~-~-~
 
 
 Dan No:  Bok Choi, Crown Daisy, Sweet Potato Leaves, Yo-Mai-Tscai, EggPlant, Shen Tasi, 

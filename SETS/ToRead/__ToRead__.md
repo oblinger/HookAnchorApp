@@ -66,9 +66,9 @@ _
 [Hinton Modules](https://medium.com/syncedreview/better-than-capsules-a0429d7170e2) 
 https://medium.com/syncedreview/yoshua-bengio-team-leverages-dl-to-rejuvenate-symbolic-ai-neural-production-systems-reveal-latent-18a41a718bd7
 [Google's latest deep learning](https://arxiv.org/abs/2101.03961) [Math of DL](https://arxiv.org/abs/2105.04026) 
-~~~~
+~-~~
 [Notes on Coursara DL speclizations](https://towardsdatascience.com/the-deep-learning-specialization-2503b9ee7ff6) [course #1 login](https://www.coursera.org/learn/neural-networks-deep-learning/home/welcome) 
-~~~~
+~-~~
 Transformers:  [Attention is all you need](https://papers.nips.cc/paper/2017/file/3f5ee243547dee91fbd053c1c4a845aa-Paper.pdf) [video overview](https://www.youtube.com/watch?v=lQYkLJf4blg) [overview](https://towardsdatascience.com/attention-is-all-you-need-discovering-the-transformer-paper-73e5ff5e0634)  
 
 Mail-Reading ->  #L toReadURLs ->  #L RIL ->

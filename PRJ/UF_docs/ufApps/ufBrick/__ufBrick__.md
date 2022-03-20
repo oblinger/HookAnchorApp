@@ -25,7 +25,7 @@ ISSUE
 - RELIABILITY -- Enterprise wants strong robustness guarantees for SW it uses
 
 
-~~~~
+~-~~
 Spark + Jupiter
 
 

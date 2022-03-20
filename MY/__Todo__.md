@@ -19,7 +19,7 @@ chown -R user:group file
 symbolize_keys!
   # ANDY says use this to do upgrades of NGINX   
   $ sudo wget http://nginx.org/download/nginx-1.0.11.tar.gz
-~~~ 37signals.com/rm
+~-~ 37signals.com/rm
 number_to_currency  (in rDocs)   number_to_human  time_ago_in_words
 app/login
   auto_login()  # log

@@ -43,11 +43,11 @@ Hey you wanna Libertarian wet dream:   Cool, here it is, just sign this paper!  
 What I like most, is that this system is not one size fits all, and it does not try to make a single moral choice for all citizens.  Each citizen chooses for themselves the kind of world the want to live in.
 
 
-~~~~
+~-~~
 One challenge to my thinking is this would provide a safe haven for the very rich to just get richer.
 But richer off of whom?
 
-~~~~
+~-~~
 
 A big challenge is that folks that live hand to mouth might feel pressure join the Wild West so they could keep more of their pay, but then they really get screwed later when they need services.
 

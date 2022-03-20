@@ -198,7 +198,7 @@ Left AirB&B:  https://www.linkedin.com/in/ronnyk/
 sup now?
 
 
-~ ~~~
+~ ~-~
 Augenbran, Tessa, +++ https://www.linkedin.com/in/reesejones1/  robotics and agg VC
 
 
@@ -262,7 +262,7 @@ I am an AI/ML/Robotics PhD-3exit-CTO; Lead $200+M in R&D as PM at DARPA; Built t
 Looking for an Advisor or Leadership role in company centered on novel AI-tech.
 
 
-~ ~~~
+~ ~-~
 Joe, in a Quora post you argued connecting with the right recruiter is key.  Do you have a suggestion for me?
 
 I am an AI/ML/Robotics PhD-3exit-CTO; I lead $200+M in R&D as PM at DARPA, and built three 50+ engineer orgs in SF.  I am Looking for an Advisor or Leadership role in a company centered on novel AI-tech.
@@ -278,7 +278,7 @@ I am an AI/ML/Robotics PhD-3exit-CTO; I lead $200+M in R&D as PM at DARPA, and b
 Thanks in advance for any pointers
 --Dan
 
-~ ~~~
+~ ~-~
 [Hermit Chawla](https://www.linkedin.com/in/hermit-chawla-lion-82b6513b/)
 
 Hermit, You were a recruiter for many years.  I am hoping you might have a recruiter recommendation for me:
@@ -290,7 +290,7 @@ Thanks in advance for any pointers
 
 p.s. happy to send my resume if you want to see it before recommending
 
-~ ~~~
+~ ~-~
 Looks good
 
 My feedback:

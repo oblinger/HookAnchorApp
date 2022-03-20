@@ -121,7 +121,7 @@ not deep any all a include ok true false exist exists empty blank args eq eql eq
 satisfy sat change
 
 
-~~~~~~~~~~~~
+~-~~-~~-~~-~
 ### SHADOW VALUES ===
 ### STATEMENT FORM  ===
 

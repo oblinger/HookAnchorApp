@@ -1,8 +1,8 @@
 # _
-~~~~
+~-~~
 tree-sitter (incremental parser)
 https://github.com/tree-sitter/tree-sitter-c
-~~~~
+~-~~
 
 GUI
 - WIDGET: tree
@@ -12,10 +12,10 @@ GUI
 - WIDGET: draggable
 - FLOW
 
-~~~ 
+~-~ 
 COMPONENTIAL:  Semantically Complete
 
-~~~
+~-~
 REMANING MERGES:  
 - seems declaring a slot on an object is a bit like creating a grounding that links two worlds... the world of instances of that object, and the world of return values for that operator on those instances
 # !!!
@@ -26,7 +26,7 @@ _
 
 ## the rest 
 
-~~~~
+~-~~
 **IDENTIFIER CASE RULES**
 Each code identifier refers to some grounding, its case is a function of the the grounding it is associated with.  If its gnd is XXXX then its case is YYYY: 
 - VARIABLE ==> snake_case	gnd is a slot and slot is not fixed
@@ -38,7 +38,7 @@ Each code identifier refers to some grounding, its case is a function of the the
 Confusing cases of case
 - what about constructs?
 
-~~~~
+~-~~
 
 The false-forking of RDF resulted from its committing to more than was essential, and also committing to less than was needed:
 
@@ -158,7 +158,7 @@ _
 # ### TOP ###
 ## === tosort ===
 
-~~~~
+~-~~
 rename ddd -> recipe
 
 RECIPE -- An executable description of how a thing is constructed.
@@ -167,7 +167,7 @@ the recipe presupposes some language of construction operators and language of l
 
 
 
-~~~
+~-~
 embed transpilation in python file
 
     foo.bar		->	foo_bar
@@ -181,49 +181,49 @@ embed transpilation in python file
     ..._0		Null environment only uses the '_0' suffix when name ends in '_nnn'
     ..._1		First env uses '_1' if needs distinguishing or ends in '_nnn'
 
-~~~
+~-~
 oblit -- class variables and instance variables and class functions and instance methods -- oblit into slot.
 sets - soa
 703 738 6906
 
-~~~
+~-~
 gnd spec back
 
 need to say that a construct is a kind of package where 'load' is defined in a certain way, etc.
-~~~
+~-~
 compact schemaless list notation
-~~~
+~-~
 
 
 
 ### _
 	everything in all ways ; the mostest at the lowest ; cost with lowest loss, ; more for less 
-	~~~~~
+	~-~-~
 	exactly how does "+" merge work for listy and non-listy
 unitary:  one handle,  no fork,   essential(k delta). interop(pwr spiral),
 Unitary  Reified  
 noshadowing (prop of pkg)
 should a lang be a type (the type of its spec)
 predicate uses self?
-	~~~
+	~-~
 
 	@gnd("lang.uf.Pkg.stmt.pkg")
 	def lang_uf_
 
-	~~~
+	~-~
 	-- -ER nominializing suffix.  An instance providing the specified operator behavior.
 	-- -SPEC nominializing suffix.
 	-- add agenda ufAgenda
 	-- resist choosing -- Struggle mightily and without end to find the best ways to have both.  There can be no proof that you cannot have both, for since redefining the meanings of any and all parts of the conflict is often the path forward.  But finding the redefinitions that still connect in needed ways to a newly repaired ecosystem... that is the trick.
 	-- unicore is the cueball of programming paradigms -- 
 		a unity that is all case with no corners to case upon
-	~~~
+	~-~
 	MIN DELTA INFO
 	ALREADY KNOW -- Arrange so user already knows the answer to their own question                                                                                                                                   
-	~~~
+	~-~
 	file 
 	.contents .nub .parts .fill .guts .wad .kernel .bulk .pith 
-	~~~
+	~-~
 	Right spiral
 	- significant cluster of programming should not be done at the wrong spiral of abstraction when different one would serve better.
 	- both too low or too high are wrong
@@ -231,7 +231,7 @@ predicate uses self?
 
 	Never dynamically catch errors that could be caught statically
 
-	~~~
+	~-~
 	Lexical doc extension.
 
 	it is valuable to allow the lexical context for a uf file to extend to text that is outside a single doc within a filesystem.
@@ -241,27 +241,27 @@ predicate uses self?
 	- CANT BE TOO AGGRESIVE -- can be confusing and not performant to have a complex lexical scope.  need to limit this feature.
 
 
-	~~~
+	~-~
 	Essences never fork
 	The essence of a never fork
-	~~~
+	~-~
 	INCREMENTAL COMPLEXITY -- A measure of the time-effort required understand and use some element, given full understanding and proficiency with all other elements.
 
 	measured in tasks/human_second
 
-	~~~
+	~-~
 	OBJ -- a unit with its specialized semantics attached
 
-	~~~
+	~-~
 	ALWAYS REUSE and CHOOSE SIMPLEST --
 	When possible express a new thing as the smallest delta from some exist construct.  All things equal choose the simplest construct to build from.
 
-	~~~~
+	~-~~
 	LESS IS MORE -- Never use more when less will suffice.
 
 	Note Structure is simpler than function.
 
-	~~~~ 
+	~-~~ 
 	Nominalization -- the art of naming things.
 	RETRO-REIFY
 	Breakthings down and name them.
@@ -272,7 +272,7 @@ predicate uses self?
 	- Combinophilic -- the aim is that constructs are created and defined in ways that all reasonable (ideally all possible) combinations of the terms are meaningful, useful and mean what they say.  (e.g. ideally if there is a concept C which is kind of like X + Y + Z, then we can define X,Y,Z,C such that C=X+Y+Z precisely)
 	- Main word should connote reification and fine layering
 		phyllo-  filo-  Nominial
-	~~~~
+	~-~~
 	UNIFORM UNDERSTANDING --
 	A uniform understanding combines a framing sentence expressing the essence of a thing with a formalization minimally encoding the thing.
 
@@ -280,11 +280,11 @@ predicate uses self?
 	A construct is not uniformly undertood until it essence is expressed in a single sentences, and formally expressed:
 	Named an
 
-	~~~~
+	~-~~
 	FILE -- A Pathy, Archival, String, Place.
-	~~~~
+	~-~~
 	PAVING -- Providing an interface as it would exist if it were not constrained by any of the classes that it is constructed.
-	~~~
+	~-~
 	REDRY -- Radically Enhanced Don't Repeat Yourself
 
 
@@ -299,7 +299,7 @@ predicate uses self?
 
 	See NeverFork, Oblituaries, 
 
-	~~~
+	~-~
 
 	no API; prior knowlege -- you know how to operate on structures
 	you already know the logical structure of a file system; a web page; a database; a document; a shopping cart; 
@@ -1069,7 +1069,7 @@ ASSIGN --
 - PLACE - a smallest referenceable possibly modifiable part of a  data graph.  (the value of one pair in one units items)
 - Each unit is in exactly one place at any one time.
 
-~~~~~~ TRY #2
+~-~~-~ TRY #2
 PLACE - A unit, key pair where the key is a functional on u.
 ACCESS - 
 ASSIGN -
@@ -1245,7 +1245,7 @@ In that case the place vertex, p is called the _location_, _place_, or _placemen
 
 <<<<<<<<< PLACEMENT OF NON-MAPY, UNORDERED EDGES
 
-~~~~~
+~-~-~
 
 **PLACE SPACE** -- is a static, ordered, mapy structure of places.  
 - **SINGULAR** -- There is only one Place Space and with out loss of generality we can arrage that all location trees occur somewhere within this single static structure.
@@ -1455,7 +1455,7 @@ e.g. For example, what is the set of all triples that contain   <http://cnn.com>
 This is a subtle and as yet a muddled concept in my mind.
 Still I think it is important in fully expressing computation.
 
-~~~~~
+~-~-~
 
 A FEW MESSY DETAILS ABOUT URF.  
 URF graphs are much more permissive than RDF graphs.
@@ -1840,7 +1840,7 @@ Problems with RDF that are improved using the URF encoding.
 _
 #### -- 
 
-~~~~
+~-~~
 
 PRETENSE OF DENOTATION, GONE! -- ``Data is what data does.''  With traditional RDF and traditional URIs there is a notion that triples intrinsically "denote" things.  With URF the meaning of triple data is tied ONLY to how it is obtained for data processing and how it is used in data processing.     The new functional meaning of data is both better defined and more usable.  (See )
 ## === NODE - NODE CENTRIC GRAPH ACCESS ===
@@ -2631,7 +2631,7 @@ _
 The **_purpose_** of UCOMP is to provide a least-commit model of computation.
 
 
-~~~
+~-~
 **REWRITE** -- A _rewrite system (REWRITE)_ is a formalism where rewriting rules are used to iteratively transform ("rewrite") objects into other objects.
 
 **TRS** -- A _term rewriting system (TRS)_ is a rewriting system whose objects are terms (expressions with nested sub-expressions) are rewritten by a kind of template match and replace rules.
@@ -3316,7 +3316,7 @@ A construct usually involves types and operators which perform in concert in ord
 - **normalizer** -- 
 - **expander** -- 
 
-~~~
+~-~
 
 **CONTRUCT** -- A _Construct_ is a group of structural data types and functional operators that work in concert to implement some cohesive software notion.  (The tree data structure, a rewrite grammar system, and the looping control flow primative are all examples of such software constructs.)
 
@@ -3660,7 +3660,7 @@ EXEC_GND
 	.reduce(self Exec, env Env):	// Just reduces its own action
 		return self.action.reduce(env)
 
-~~~~~~~~
+~-~~-~-~
 	**2 * _x_**
 
 DOUBLING_X_EXPR
@@ -3669,7 +3669,7 @@ gnd:	TIMES_GND
 1:		var(n:I.x, t:Int)
 
 
-~~~~~~~~
+~-~~-~-~
 	y = double(x)
 
 	def fn double(_x_):
@@ -3716,7 +3716,7 @@ DEF_GND
 
 
 
-~~~~~~~~
+~-~~-~-~
 
 
 _
@@ -5201,7 +5201,7 @@ REDUCE --
 		**return** [exe(env, arg, ns) for arg in body]
 
 
-	~~~~~
+	~-~-~
 	**def fn** _invoke_(gnd Grounding, expr Unit, env Env, _ns_ NS, ->Unit):
 		env2 = copy(env)
 		for i, arg in enumerate(template):
@@ -5775,7 +5775,7 @@ REDUCE --
 
 
 
-	~~~~~
+	~-~-~
 	**def type** _Class_:
 		**extends**: Gnd
 
@@ -5869,7 +5869,7 @@ REDUCE --
 		- that is EQUAL to the supplied base structure, and whose grounding IS the 
 
 
-	~~~~
+	~-~~
 	- DATA IS MEMORY -- The von Neumann Architecture uses a dense array of memory locations to store with fixed integer
 
 	_
@@ -6462,12 +6462,12 @@ kinds of VARS
  that persists 
 
 
-~~~~
+~-~~
 A 'variable' is a possibly named, typed place whose 'assigned' value may _vary_ over time according to assignment semantics.
-~~~~
-~~~~
+~-~~
+~-~~
 Highlight -- A hook is a mechanism for registering actions to be executed when some underlying action has occurred.
-~~~~~
+~-~-~
 
 VAR
 n:Str		name -- 
@@ -7024,7 +7024,7 @@ there exists f:A->B such that
 
 canon(A) maps to canon(B)
 
-~~~~~ 
+~-~-~ 
 Options:
 - inherit_closure_vars false, direct, true
 #### examples
@@ -7200,7 +7200,7 @@ Given a set of contexts that share a common parent
 - POWERSET CONTEXTS 
 Given a set of 
 
-~~~~
+~-~~
 IMPLEMENTATION
 #### The Null Environment
 - EnvNull
@@ -7291,7 +7291,7 @@ _
 		_form_ = gnd.form.form(code)
 		**return** _form_.reduce(_env_)
 		
-~~~~
+~-~~
 	
 **def class** _Gnd_:
 	**def op** _ns_(self, Gnd, ->NS)				// 
@@ -9525,7 +9525,7 @@ mapping of each vertex in the graph onto exactly one place vertex in place space
 **XXX CONTAINS** -- The containement vocabulary for place trees is extended to include these placements.  So a place, p, contains a graph vertex, g, iff p is the placement of g, or there exists some descendent of p is the placement of g.
 
 
-~~~~~
+~-~-~
 		
 		origin.path_get
 1. There exists a total ordering, T={A1, ..., An}, of all access and assignment calls in all of its place timelines such that the relative ordering of those access and assignment calls are consistent with each of the individual place timelines.
@@ -9571,7 +9571,7 @@ PARENT -- SUBJECT   -- The 1st position for this place's triple.
 KEY	   -- PREDICATE -- The 2nd position for this place's triple.
 VALUE  -- OBJECT    -- The 3rd position for this place's triple.
 
-~~~~~~
+~-~~-~
 Placement -- Creating structures of place ???
 
 place -- Returns the place where this unit is.

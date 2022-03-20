@@ -27,11 +27,11 @@ The point of this book is to convince the broadest audience that there is a thre
 Therefore, in this book we argue that we should build such a seed AI, and build it sooner rather than later.  Specifically we should construct it before the computational resources will be available to this AI that it would immediately be in a position of dominance.
 ### WHY ASSURANCES SHOULD NOT ASSURE US
 
-~~~~rewrite intro
+~-~~rewrite intro
 Many AI researchers today view the prospect of a "killer AI" to be  almost comically improbable.  We believe much of this skepticism stems from the paltry performance of today's AI system (as measured against the performance persumably needed for a killer AI).  Also this skepticism stems from the large array of things we know humans can do, yet we as reseracher's don't know how to construct systems that can perform these many feats.
 
 **WHY ASSURANCES SHOULD NOT ASSURE** -- For each voice that has sounded the cry of alarm, there have been multiple who have voiced either skepticism at the alarm, or assurance that there is no immediate danger.  Here are the reasons why I believe many of these assurances are misplaced:
-~~~~
+~-~~
 
 
 
@@ -225,7 +225,7 @@ NOTE this is not simply a matter of not knowing certain definitions -- even if t
 
 It is a tautology, but the entire range of human learnable knowledge can be learned by human learning that itself has been specialized by a sequence of 
 
-~~~~~
+~-~-~
 HUMAN ACCESSIBLE KNOWLEDGE -- Knowlege that can be acquired by humans by sequence of learning experiences, and we know what the sequence is...
 
 

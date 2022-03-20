@@ -1,12 +1,12 @@
 # _
-~~~~
+~-~~
 Here's a guy from the right who might see value in the modified discussion thread project: 
 
 https://time.com/6087577/michael-fanone-january-6-interview/
 
 -- 
 ysl
-~~~~~~~
+~-~~-~~
 
 Al:
 
@@ -25,7 +25,7 @@ At the ends of the list would be statements broadly agreed, with hotly contested
 
 Such a summary could really advance the societal discussion, since it could show everyone which statements are not really even supported by their own clan when their members look deeply at the topic.
 
-~~~~
+~-~~
 
 But that only works if one can trust the analysis system itself, and only if the system can good judges from all political sides of an issue.
 
@@ -54,7 +54,7 @@ Lean Canvas Order of Exploration
 Layout:  1 4/8  3  5/9 2  lower: 7  6
 
 
-~~~~~  [10-20-30](https://entrepreneurshandbook.co/guy-kawasakis-10-20-30-rule-for-perfect-presentations-129ba78d2fc1) 
+~-~-~  [10-20-30](https://entrepreneurshandbook.co/guy-kawasakis-10-20-30-rule-for-perfect-presentations-129ba78d2fc1) 
     Title
     Problem/Opportunity
     Value Proposition
@@ -243,10 +243,10 @@ The degree to which an author's adjudications are DECORRELATED with their person
 The degree to which they adjudications match consensus adjudications overall is a measure of their ACCURACY.
 
 
-~~~~~~~
+~-~~-~~
 _NOTE about unbiasedness & accuracy:  One may have a strongly biased opinion over some area (e.g. be strongly biased towards liberal or conservative stances) and yet be an accurate and unbiased adjudicator over those same issues.  Such an unbiased accurate adjudicator will judge AGAINST content whose conclusions match stances that they support in cases when the content is not logical, not supported by evidence, etc.  So we seek to measure adjudication bias and adjudication accuracy independent of personal bias towards/against particular placement positions._
 
-~~~~~~ 
+~-~~-~ 
 **How this works in detail**
 
 1. Content is continously adjudicated as it is read.  Any reader is invited to offer constructive feedback on the content they read.  Feedback should be written in a constructive, positive, and as narrow a way as possible even when one is commenting on stances that one strongly disagrees with.
@@ -264,7 +264,7 @@ These triangulation scores provide mechanical feedback on the biases of the spec
 
 This process DOES require strongly impartial folks at the top of the pyramid.  That is ensured via other means.  Triangulation itself is a mechanism that amplifies the scope of impact of those smaller number of impartial judges to have a ripple effect over the entire population of adjudicators.
 
-~~~
+~-~
 
 
 
@@ -282,12 +282,12 @@ Not only do we provide a bias/accuracy score for each user, we also can provide 
 we can show a piece that you scored as logical and empirically justified right along side consensus views that agreed with you when they did, AND show the consensus comments that disgreed with your assessment along with human written justifications.
 
 
-~~~~~~~~~~~
+~-~~-~~-~-~
 OUTCOME: My thinking is that one would not need to frequently adjudicate-the-adjudications in order to really change the dynamic of providing feedback in this system.
 
 I think many folks pride themselves on being UNBIASED and ACCURATE, and they are going to COMPETE to get good scores on these measures.  But in order to get a good score, they are going to have to NOT overshoot or undershoot when giving feedback.
 
-~~~~~~~~~~~~~~
+~-~~-~~-~~-~-~
 OUTCOME OF THE OUTCOME:  Once I have have a subset of users that are biased liberals and strongly biased conservatives who are nonetheless UNBIASED and ACCURATE adjudicators we are in good position to generate quality outputs.
 
 Now among strongly supported liberal content and strongly supported conserviative content we and let the CONSERVATIVE users select the most accurate, empirically supported, etc. stances FOR their conservative position, and those same users can provide the most accurate commentary on the accuracy and empirical support for liberal stances which they may disagree with.
@@ -303,7 +303,7 @@ And I think there voices can best be HEARD by all users.
 Afterall if I know deep deep deep in your heart you are a trump supporter, but still you are calling bullshit on some argument... well now I have to pause... maybe it IS bullshit.
 
 
-~~~~~~~
+~-~~-~~
 
 
 
@@ -1017,7 +1017,7 @@ _
 
 _**SimpleInterest(users, subtree)**_ -- Fraction of users within the group that have cast any vote within a scope.   (This score would be trimmed or ignored for very small group sizes)
 
-~~~~
+~-~~
 
 _**PostingVolume(entity, subtree)**_ -- The number of posts that user or group of users have posted within a subtree of the discourse tree.
 
@@ -1184,20 +1184,20 @@ Suppose a reader were reading a note/post about police violence against Blacks, 
 
 Now the reader remembers reading an article where someone listed many cases where “the Black did nothing wrong”.  So they create a post for the news feed talking about this, and they highlight the sentence in the original posting and create a “-1” link to their new post.
 
-~~~~
+~-~~
 
 Later others plus +1 and -1 his original counter argument, each one adding evidence in one direction or another, and most people are creating a blog entry that they intend to read like a normal threaded conversation.
 
-~~~~
+~-~~
 
 After ten of these someone in the same user group as she is in edits her post/note to have the name:  "police abuse of compliant Blacks” 
 And quickly cuts and pastes content from 10 messages into a nice list of evidence with phrase summaries for each and a link to original sources if those posts included them.  This person was a bit biased however and did not address the many counter evidence to this counter evidence.
 
-~~~~
+~-~~
 
 The original author sees this consensus stance against his original stance is ignoring all of these other posts (which he can easily see), so he summarizes them and creates the counter summary and ties them together as a different stance on the same note “police abuse ….”
 
-~~~~
+~-~~
 
 After after many edits and time original posting bubbles up as a key “pro-police” stances… so it gets more scrutiny … and cooler heads prevail over this little sub argument about "police abuse of compliant blacks”
 
@@ -1207,7 +1207,7 @@ This cooler head is able to do justice to both evidence in favor and against thi
 Their summary does a good job of weeding thru the best evidence in both directions at the top, and left the rest in a sub note for reference.
 Their note did not get as much support as either of the other two stances, but the forum algorithms recognized it as less biased, as so put it at the top with is summary text fully expanded, and left all others posts with just their one-line link listed below it.
 
-~~~~
+~-~~
 
 I am trying to make it so that people can engage in tiny ways that move the final argument structure forward.
 

@@ -15,7 +15,7 @@ Lean Canvas Order of Exploration
 Layout:  1 4/8  3  5/9 2  lower: 7  6
 
 
-~~~~~  [10-20-30](https://entrepreneurshandbook.co/guy-kawasakis-10-20-30-rule-for-perfect-presentations-129ba78d2fc1) 
+~-~-~  [10-20-30](https://entrepreneurshandbook.co/guy-kawasakis-10-20-30-rule-for-perfect-presentations-129ba78d2fc1) 
     Title
     Problem/Opportunity
     Value Proposition

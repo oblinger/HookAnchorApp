@@ -48,7 +48,7 @@ ln(B) = s * (Dt+1-Dt)
 ln(B) = s
 B = e^s
 
-~~~~~~~~
+~-~~-~-~
 C(d) = e^(s * d)
 C(d) = e^(ln(B) * d)
 C(Mt) = e^(ln(B) * ln(Mt) / ln(2))
@@ -62,7 +62,7 @@ Q=1      B=2     +100% per doubling
 Q=.3219  B=1.25  +25%  per doubling
 
 
-~~~~~~
+~-~~-~
 C(d) = e^(s * d)
 ln(C(d)) = s + ln(d)
 ln(C(d)) = ln(B) + ln(d)

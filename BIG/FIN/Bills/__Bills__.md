@@ -59,7 +59,7 @@ _
     $4494    18th  QL income
     $4494    25th  QL income
     $        ???   QL stocks
-    ~~~~~
+    ~-~-~
 
 **Grand Central Outflow**
 - 15,000	Joint spending		;; 12->15K in 2021
@@ -76,7 +76,7 @@ _
   250	PG&E
   150   SF PUC
   130	Sunset Scavenger 		(/3mo)
-~~~~~
+~-~-~
 15K / month
 
 12,000	Monthly Projected Spending
@@ -263,10 +263,10 @@ As of 2021.12.02
   662	Merrill
   462	Bitcoin
   600	AF $333 + $500 = 733 - taxes
-~~~~~
+~-~-~
 3,308
 x .45%
-~~~~~
+~-~-~
 149K  12.5K month after taxes
  ~250K salary
 
@@ -570,7 +570,7 @@ $37,500   May-09  Period 2/1  - 3/1 - 4/1
 $37,500   Jun-04  Period 3/1  - 4/1 - 5/1
                   Period 4/1  - 5/1 - 6/1
                   Period        6/1 - 7/1
-~~~~~~~=======
+~-~~-~~=======
 ## Mom Phone
 - Mom and Dad pay Danny $210/mo  /2 
   $105/mo  $1,260/yr
@@ -579,7 +579,7 @@ PAYMENTS FROM:  11-1-2012 - 11/1/2015
 $3,780 = $1260/yr * 3years  Amt Due
 $1,800   paid  10/22/2014
 $1,000   paid  11/01/2013
-~~~~~~
+~-~~-~
 $980
 
 Running Balance:
@@ -627,7 +627,7 @@ $1,680  July Rent
 $1,680  August Rent
 $1,100  1/2 Security Deposit
 $375    ($1,500 / 4)  The amount that we verbally agreed to in order for you to gain 100% of proceeds from the house and be responsible for renting beyond 8/24
- ~~~~~
+ ~-~-~
 $6,515
 
 The only other rentals of the larger room come from some guys that were off the books.  I think you were paid directly.  correct?

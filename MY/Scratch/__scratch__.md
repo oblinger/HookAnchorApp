@@ -70,7 +70,7 @@ Panicked thread: 0xffffffe3e66d70c8, backtrace: 0xffffffeb03e5b780, tid: 284
 		  lr: 0xfffffff01f0a85a0  fp: 0x0000000000000000
 
 
-~~~~
+~-~~
 For those interested in seeing the details regarding this pretty egregious case you can see the original video from Fox News on the wayback machine here:
 
 https://archive.org/details/FOXNEWSW_20220206_020000_Unfiltered_With_Dan_Bongino/start/1740/end/1800
@@ -87,7 +87,7 @@ This definitely does show Dan on Fox as not caring what the facts really are, he
 
 
 
-~~~~~
+~-~-~
 Observation:  
 
 When one makes a mathematical contribution (a new theorem or defintion) one uses terms that are "universal"
@@ -113,7 +113,7 @@ Could one formulate
 
 you "say" something in mathematics (e.g. write down a theorem) you use terms
 
-~~~~~
+~-~-~
 
 Deep:
 I appreciate the level of commitment/time that you require from those you work with.  With the winding down of my business, I simple am not in that spot today, and I cannot be sure that I can be there in a month. Reluctantly I must pass on this chance. As I said in my email, I do expect to transition before Q3 towards a much larger fraction of my time, but I just don't know the exact timing given the workload of winding down my company. 
@@ -177,7 +177,7 @@ having experience shipp
 80/20 seriesA seriesB
 
 
-~~~~~
+~-~-~
 
 
 
@@ -249,7 +249,7 @@ Dan valientine. adam draper
 
 - 
 
-~~~
+~-~
 
 - Contingency search firm
 - top ten serach firms:  cornferry, 
@@ -260,18 +260,18 @@ Dan valientine. adam draper
 	- Making a career move, wanted to be connected on linked in because of your specialization in XXX.
 	- Quietly looking like 
 
-~~~~~~~~~~~~~~~~~
+~-~~-~~-~~-~~-~-~
 
 red-bean, fava, kidney-like beans, peas
 
 Tarik, it has been years since I have had occasion to write.  hope all is well.  I am locked down under covid, but have gotten married and have a kid now... so progress, I guess.  I expect you are full up with consulting work, or professorial work either way, and so not looking for fun side projects....  it just occurred for me to ask 
-~~~
+~-~
 
 Frank Questions: 
 - what happened, after the roof party I attended?
 - how can I talk about PBG?   FEVO? 
 - Did PBG sell any assets or clients or anything that I can reference?
-~~~~
+~-~~
 home away to expedia; key travel; airline volatea
 Brian Bradford - fin tech deals
 - rec sport league; camp site bookings
@@ -290,7 +290,7 @@ Lesson: They skipped the middle market; needed to land some 50-150M business
 
 
 
-~~~~~~
+~-~~-~
 Clerky:
 
 Email:
@@ -300,7 +300,7 @@ Email:
 
 
 
-~~~~~~
+~-~~-~
 ⇒ Maintenance turnaround time improved by 23%
 Created the metric used to drive this improvement
 Created comprehensive dashboard allowing team to understand blockage
@@ -331,7 +331,7 @@ Here is the key thing:
 		- Which one(s) would you pick?  and why?
 		- Of all the info captured which 2-3 points are the ones key ones for deciding?
 
-~~~
+~-~
 
 FEVO
 - I am hoping I can claim PBG was acquired.  But I don't want to be stretching the truth too much.
@@ -340,7 +340,7 @@ FEVO
 - Did any early investors like 500 get anything?  or were did the preferences push it all to the later investors?
 - Was Covid the nail in the coffin?  Tilt selling to AirBnB was kind of a killer too
 
-~~~
+~-~
 
 funding:  500 Global, Amino Capital, Bryan Bradford, Deb Lui, Great Oaks Venture Capital, Greg Kidd, Kima Ventures, Payment Ventures, Russ Fradin, SparkLabs Global Ventures, and Thomas Lehrman.
 
@@ -356,7 +356,7 @@ Very good hearing from you.  It has been a couple of years since I have looked i
 
 I would love to get the documentation to see what happened in the end with PayByGroup.  I have seen a couple of place online mention of its acquisition, but nothing very visible.  Was is just an acquistion of our customers, or did it include our software?  In any case perhaps the final cap table, and the minutes from our board meeting over time 
 
-~~~~~~~~~~~
+~-~~-~~-~-~
 
 
 
@@ -380,7 +380,7 @@ Thanks,
 Dan
 
 
-~~~~~~~
+~-~~-~~
 I got too close to Christmas for it to make sense to send any out reach emails before the break.
 But I have places lined up now to send to.  Here is a first draft of a note I could send to Cowboy Ventures.
 Amanda is a principle that lists AI as one of her area.  Please give your thoughts on this, this one is worth a bit of polish or thinking, as I plan to use it as a template for others.
@@ -413,7 +413,7 @@ Co-Founder/CTO Analytics Fire
 
 
 
-~~~~~
+~-~-~
 
 
 Your attempts a brevity are pretty humorous... I guess you have lot to say.  you know much more than I do about the USSR, so I have nothing to add in that area.
@@ -453,7 +453,7 @@ I think most everything else can be done without an equation:
 - Selling AF I get 1/3 of the shares and given by R-zero.
 -- My plan is to
 
-~~~~~
+~-~-~
 
 Most recently I have focused on productization and commercialization.
 I am perhaps most proud of my earlier stage commercialization work
@@ -462,14 +462,14 @@ Late stage commercialization includes
 
 Before that I spent six years as a program manager at DARPA winning and leading 
 
-~~~~~
+~-~-~
 
 Notable examples include leading a 40 PhD team's development of a dexterous home robot capable of complex, open-end 
 
 
 
 
-~~~~~
+~-~-~
 There are two different elements that both provide a kind of sorting behavior, but they do not derive from a common element.  [orthogonality failure]
 
 When describing part PPP of element E1 Alice could say, ``it is kind of like QQQ of E2 except …’’  Yet PPP & QQQ are not derived from a common source
@@ -485,7 +485,7 @@ MISSION:  What do I want my life to be about?
 - LAUNCH - Launch one or more new ideas that benefit/change the world.
 
 
-~~~~~
+~-~-~
 
 
 
@@ -547,13 +547,13 @@ best luck,
 
 
 
-~~~~
+~-~~
 
 
 
 
 
-~~~
+~-~
 - moths, 
 - mealy bugs - alchol soap mix.  tried neem oil mix
 - silver fish
@@ -561,13 +561,13 @@ best luck,
 
 JCB35N-110
 
-~~~
+~-~
 Ah, now I understand!  Yes ETH is way ahead, yet many a slip a twix the cup and the lip.
 
 My guess is that for financial transactions we will eventually develop a scaled L1.5 solution (which could still piggy back on second L1 like BTC in order to avoid 51% attacks).  And I think projects like SOL also have a future, since for non-financial blockchains one will need collosal scale that will never be consistent with 
 
 
-~~~
+~-~
 
 833-922-0844
 - Hub;   14-piece (8contact, 2motion)
@@ -644,14 +644,14 @@ REBATCHING -- We want to recompute a new batch frequently, long before we have e
 
 GENETIC ALGORITHM -- The system could perform both plan creation and plan mixing as a means of generating new plans for consideration, and simply pick the best scoring plan after some fix number of plans had been considered.
 
-~~~~
+~-~~
 
 Of course you guys can better pick the details  than I can, I just wondered if simulating the picking process over time might be a good way to take into account the emergent bottlenecks that are latent in the current task backlog.  Because the simulation is operating over the actual tasks in the backlog, and actual list of workers, it can "see" where one task has more dependents that might cause future blockage, while another with fewer dependents or that is saturated with more compatible workers might be less important to prioritize.  It can also "see" that working on certain tasks now,  in many cases will avoid idle workers much later in the task queue.
 
 Second idea was to use randomness to compute over long running timelines involving thousands or tens of thousands of tasks.  My thinking is if a task is involved in a bottleneck it will cause that bottleneck in many simulations, thus even very light sampling will show a difference in performance.
 
 
-~~~~~~~
+~-~~-~~
 
 MODES OF OPERATION
 
@@ -660,7 +660,7 @@ PLAN CREATION		STOCASTIC TASK PICKER		Simulated completion times			Creates a new
 PLAN SCORING		DISPATCHING TASK PICKER		Simulated completion times			Computes a score for existing plan
 LIVE DISPATCHING	DISPATCHING TASK PICKER		Live updates from the the workers	Run a plan live in real world
 
-~~~~~~
+~-~~-~
 
 
 
@@ -746,7 +746,7 @@ Long term teachers.  50% hispanic.  ~20% lots of asian too
 1x week art enrichment
 
 
-~~~~~
+~-~-~
 ### SHANE
 - New Monitoring-Testing Methodology based on dynmaic injection
 - As prototyped on HSM module
@@ -790,16 +790,16 @@ Leave behind
 
 _
 
-~~~~
+~-~~
 8.333.  8y 4m
 3.5.    3y 6m
  
 
-~~~~
+~-~~
 
 Recruited from grad school to apply ML and analytics to K-12 developmental reading comprehension—collaboratively developing 6 products and securing 12 patent filings / publications.
 
-~~~~
+~-~~
 
 
 Statistics population dynamics (size & how it circulates)
@@ -811,7 +811,7 @@ co-worker and pixelated model picture model.  geo-temoporal-data
 occupancy sensors
 
 
-~~~~~
+~-~-~
 
 
 Mary, 
@@ -843,7 +843,7 @@ our shares will full vest at that time
 
 
 
-~~~~
+~-~~
 it is the latest in a line of global science agencies now being modelled on the renowned US Defense Advanced Research Projects Agency (DARPA), whose work a generation ago laid the foundation for the modern Internet.
 
 Quote said laid foundations of internet
@@ -858,7 +858,7 @@ https://www.nature.com/articles/d41586-021-01878-z
 
 
 Rudy in victorian house.
-~~~
+~-~
 Sadly you *do* likely know the field of KM as well as I do!  
 
 And I took your comments with appropriate salt.  And mostly I took your comments with the appropriate stance.
@@ -953,7 +953,7 @@ Every day you spend in a silo of one, the less relevant you have been becoming t
 If you MUST organize your life pursing KM projects, I propose that you double down on failing fast. REALLY FAST. Be disciplined. Be prepared to kill a lot of your darling ideas and make a lot of messy tradeoff decisions to quickly find/achieve product/market fit. Give yourself an uncomfortably aggressive timeline. If it doesn't hit during that timeline, hit stop with prejudice, go to FAANG and come back to it as a weekend project or retirement project.
 
 
-~~~
+~-~
 
 Evening Number #1:
 - I already feel very at home with flipping the legs of the chair up and down.  it is pretty second nature to pull up to drop a leg, and to smack the touch sensor to bring it back up.  (I find pulling the leg up w/o the sensor to be a big of a pain)
@@ -986,7 +986,7 @@ For the moment I am keeping it in manual mode, but I am excited to try the autom
 
 I have the idea that I want it to stay in flamingo mode (left side down) when I leave the desk for fastest re-entry... we will see if that is right.
 
-~~~~
+~-~~
 
 No the chair was a second skin after just minutes of using it.
 
@@ -1014,30 +1014,30 @@ This does naturally increase my standing time.
     ==> I wonder if the metal of the latch could be shaped with two points on each side of the latch so as weight is put on it, those points will slide in one direction firmly catch the latch, or slide the other direction with little force causing the latch to open….  This would eliminate the possibility that static friction could hold that latch in an ALMOST closed position.   (But hey I am a PhD in AI, *not* mech-E… so, you will know better than me!)
 
 
-~~~~~~
+~-~~-~
 
 
 
 
 
 
-~~~~
+~-~~
 100watt 
 .12d/kwh * .1kwh/h = .012d/h * 8 * 5 * 50 = 024.
-~~~~
+~-~~
 - Screen shot.  what is my title-line?
 - Number of nations at aeolus.
 - PhD after my name?
 
 
-~~~~
+~-~~
 2017 Q3 - Biggest source of new revenue for the company (eddie)
 IT automation at multi-gigawatt scale
 
 growth executive; pioneer
 
 
-~~~~
+~-~~
 Sources of Anxiety:
 -- HIDING THE WORK:  Many folk have a overblown sense of self-importance.
 					 I could be in that crew, and that is ok.  
@@ -1058,7 +1058,7 @@ Sources of Anxiety:
 
 
 
-~~~~
+~-~~
 
 Shame - 
 
@@ -1130,7 +1130,7 @@ very stream of consciousness reaction to the first video!
 
 
 
-~~~~
+~-~~
 Low road and High road compatibility:
 - LOW ROAD COMPATIBILITY -- Two efforts can be mapped to a bridging language where they become compatible
 	(but each continues to run in/on incompatible substrates)
@@ -1150,7 +1150,7 @@ Formal approaches
 
 
 
-~~~~~
+~-~-~
 Turmeric definitely has a bio-availabilty problem.  Still as show in the study below it really can be absorbed into the blood at meaningful levels when eaten in its natural form:
 
 https://pubmed.ncbi.nlm.nih.gov/23378457/
@@ -1173,7 +1173,7 @@ So one could add Pepper for a 20x boost, or Meriva for a 29x boost.  And as you 
 NOTE:  My original take was quite the opposite.  I misread this article to indicate that dietary Turmeric does not work, but this was just my mis-read of the article.  Thanks for the post!
 
 
-~~~~
+~-~~
 
 Avraam:
 Agreed, merely adding frictions usually does diminish an effect.  In this case I just worry we are too far from the root cause.  Consider the case of an old school business that needs a cash injection to modernize.  Investors project a 20% bump in productivity, easily doubling orders (and almost doubling staff too); they estimate payback in 6 months, and 2x profits over 3 years!  Hooray!  It's a win-win-win!
@@ -1330,7 +1330,7 @@ Looking forward to hearing more!
 
 
 
-~~~~~~~
+~-~~-~~
 
 Scott,
 
@@ -1376,7 +1376,7 @@ This second activity will be
 
 
 
-~~~~~~~
+~-~~-~~
 
 STELAR SLOW DOWN
 
@@ -1389,7 +1389,7 @@ Scott,
 - 
 - Gibson:  Gjengo, Celery, UX
 		SW engineering, C++
-~~~~
+~-~~
 
 
 
@@ -1401,7 +1401,7 @@ Scott,
 
 
 
-~~~~
+~-~~
 
 ND2-inc.  dev tools (SW & employee)
 
@@ -1428,11 +1428,11 @@ PLACEHOLDER=provider of persistence   ACCESS/ASSIGN=Place operators
 5:31 PST.  August 03rd.
 
 
-~~~~
+~-~~
 XXXX,
 I am a founder at Analytics Fire, a boutique consulting company
 
-~~~~
+~-~~
 3PL -- intermodal.org 
 - Givens Transportation (3rd party, chesapeak)
 	- President of the company
@@ -1448,7 +1448,7 @@ fleets of devices.  where extreme concern when
 
 Angel investing:  https://blog.usejournal.com/real-life-angel-investing-returns-2012-2016-b33425fcb816
 
-~~~~~
+~-~-~
 build framework (needs work)
 testing methodology for injections (w/ affecting performance)
 rx-tri-core. full HSM functionality on them
@@ -1463,18 +1463,18 @@ Version two of their OS -- NV OS
 -- 
 
 
-~~~~~
+~-~-~
 27.7  Eli weight
 
 REFI Order Number:  1715682
 855-236-1499  Shanda
 
 
-~~~~~
+~-~-~
 10K / 42 * 3 = $714
 10K / 37 * 3 = $811
 10K / 32 * 3 = $937
-~~~~~
+~-~-~
 Architects have become developers; becomes
 -- putting out fires; particularly around test;
 
@@ -1489,7 +1489,7 @@ MCUs now; multi-processor SOCs are in the future
 trying to push team towards injected tests
 existing OSS stuff that they might adopt
 
-~~~
+~-~
 we come in and propose OSS testing stuff that could be added 
 -- money is not the issue; just want stuff to get done on time
 -- harmonously together
@@ -1506,13 +1506,13 @@ imx8 - S32G
 infineon 
 focus on virtualization; microvisors
 
-~~~
+~-~
 - CI/CD directly onto hardware right
 - abilty to run testing w/o changing production behavior (space & time)
 - over jtag, eth, canbus, using scratch ram space 4k or 8k
 - run one tiny test, then the next one later.
 
-~~~
+~-~
 
 yaroslavvb@gmail.com
 
@@ -1525,7 +1525,7 @@ yaroslavvb@gmail.com
 - Tribe.  Drinks with Tribe.  
 - Google AI.  levels FYI.  
 
-~~~~
+~-~~
 
 Evan Hubinger @ MIRI
 
@@ -1542,7 +1542,7 @@ Aja Contra -- report on AGI timelines
 FHI; Chai; 
 
 
-~~~~
+~-~~
 
 
 
@@ -1552,9 +1552,9 @@ Allocation GIGA 0.14.  price $445.  6% mgt fee.  1% annual.  20% carry.
 140M
 
 Grace Chen MX finance
-~~~~
+~-~~
 marcel (at) metaobject.com
-~~~
+~-~
 TODOS
 -- deep learning reading
 -- meetups; meetings
@@ -1566,7 +1566,7 @@ TODOS
 -- info management
 	one-on-ones
 
-~~~
+~-~
 if x > sla * fooby:
 
 if x > (sla or sys.maxint) * fooby:
@@ -1580,7 +1580,7 @@ VegBroth: Cover hard veggies
 
 Italian seasoning, garlic, bay leaf
 
-~~~~
+~-~~
 - Go the manager route.  ic-manager 
 - Compensations really start going up when you get to the product
 	
@@ -1603,7 +1603,7 @@ learn and be curious
 	
 
 
-~~~~
+~-~~
 
 -- explortative
 - early leaving
@@ -1619,9 +1619,9 @@ learn and be curious
 
 
 https://upload.wikimedia.org/wikipedia/commons/1/18/Ikigai-EN.svg
-~~~
+~-~
 why are messages not comming from mom
-~~~
+~-~
 
 
 
@@ -1633,7 +1633,7 @@ Alibaba
 $9.05 (today $215) $255 call for jan-21 2022
 
 
-~~~~~~
+~-~~-~
 Rate = USD
 
 
@@ -1663,7 +1663,7 @@ Thus the BLM statement is NOT ok.
 And Cruz’s statement is NOT ok (IF she is not supporting
 
 
-~~~~~
+~-~-~
 
 
 CREATE STRUCTURE THEN LIVE IN IT:  Example:
@@ -1673,7 +1673,7 @@ CREATE STRUCTURE THEN LIVE IN IT:  Example:
 		- Major rewrites of this. 
 			- Minor versioning of this.
 
-~~~~
+~-~~
 
 Thomas, 
 Let me take a swing at it.  Since this is medium, you need each post to be independently compelling:  
@@ -1723,7 +1723,7 @@ IDEA:
 - Specific users might have used multiple products and thus can directly compare them
 - 
 
-~~~~
+~-~~
 yeah... you did have me for about a paragraph, I was even gettin' a big torqued in paragraph two... but it was just too over the top.... and they I remembered...  this is Mx. Penguin, and realized it was a con job!  (I am not sure if I fully realized it was a flip, but I knew it was not legit.)   
 
 
@@ -1741,9 +1741,9 @@ ARE YOU HAPPY WITH YOU
 3. CHARACTERISTICS - Efficient w time, Planner, Accomplishes, 
 4. CHANGE TODAY - Plan & Execute Days
 
-~~~~~~
+~-~~-~
 .45 USD/Thash/Day * 838K Thash/Day = 400K
-~~~~~~
+~-~~-~
 Covid has accelerated a shift that has been underway
 ==> Project-based work is rarer, and staff aug is increasing
 ==> Specialty work continues on driven by lang/framework skills
@@ -1752,7 +1752,7 @@ The whole point of AF is a place where awesome talent works alongside awesome ta
 ==> We loose all of that if our guys start working inside of random teams with random (and often low) quality levels.
 ==> So we vote to stay smaller.  To service our long time clients, and grow in speciality skills as each person wants to develop them, and grow only as we find new interesting project work.
 
-~~~~~~
+~-~~-~
 Problem: 
 - Should Provide insights to improve bus ops
 - Stuck: dashboarding, building data tables
@@ -1801,7 +1801,7 @@ Main goal this year is to Implement new technology.
 -- Can go to the why Y and get more 
 
 
-~~~~~
+~-~-~
 
 Adam,
 Well that was an unceremoneous end to a good phone call!  But the cause was appropriate to the topic of the call:  Grid Stabilty.  (the power company cut my power in order to replace an electrical pole!)
@@ -1819,7 +1819,7 @@ It
 
 I am working from home (as we all are) and our  
 
-~~~~~
+~-~-~
 
 
 
@@ -1856,7 +1856,7 @@ So ironically enough the AI researcher who believe is dooms day is still arguing
 
 
 
-~~~~~
+~-~-~
 
 
 -- building a team; building a sales channel
@@ -1878,7 +1878,7 @@ LOCAL FIRST -- CRTD -- distributed consensus data structures
 https://martin.kleppmann.com/papers/local-first.pdf
 
 
-~~~~~
+~-~-~
 
 Hopefully you saw my follow up email with the stats page, my goal would be to do something similar to that that refreshed every minute or so, with something that says "draft" on top and then "final" some number of minutes/hours after the game concludes that gives us time to post process data. But it would be in an app as well as the website. 
 
@@ -1941,7 +1941,7 @@ But as one who is probably just as clueless as our algorithms, anytime a foul wa
 Might be easiest if we have a very good mic setup to LISTEN to the coach call out who the foul was against.
 
 
-~~~~
+~-~~
 Anyway, I have been assuming we would give the stats you showed, but I had imagined going beyond that to really try to stats-out the CONTEXT of the key actions.
 
 e.g. after looking at ten games we see Jerry as a much lower shot percentage whenever he is guarded from the 9 o-clock to 11 o-clock position just prior to the shot.
@@ -1957,13 +1957,13 @@ Simple per-player  “instant choice rules”.  e.g. Jerry when guarded on the l
 BUT since the customer is not expecting that, it can’t be part of the MVP
 
 
-~~~~~
+~-~-~
 Final comment:  since the customer is expecting the stats in the form you show, that is what must be done.  Still it is going to be harder to get those stats accurate.  As I was imagining it, as long as my errors tended to cancel out, I could still get good stats out.  e.g.  shot percentage could be made quite good.
 
 But the way these stats list, if you miss a single play, then the stats are just WRONG.  Now I see why you are saying things like 98% accuracy.  But that IS going to be hard to achieve.
 Course I bet a human had difficulty getting unto that 98% level
 
-~~~~~
+~-~-~
 
 Send me stuff on Monday…. Thanks!
 —dan
@@ -2025,7 +2025,7 @@ Dan
 <Basketball Stats.pptx>
 
 
-~~~~~
+~-~-~
 Jason, 
 I am going to pass on this opportunity for a second time.
 
@@ -2043,7 +2043,7 @@ Further, given the shoot the moon, max return for charity mission for Visio, I d
 
 
 
-~~~~~~~~~~~~~
+~-~~-~~-~~-~~
 Shane,
 
 I was shocked by your idea of an unpickable lock, but then I was the insight, and it is brilliant!
@@ -2053,7 +2053,7 @@ It is clear
 
 
 
-~~~~~~~~~~~~
+~-~~-~~-~~-~
 
 About Dan
 
@@ -2065,7 +2065,7 @@ STRENGTHS / WEAKNESSES
 
 
 
-~~~~~
+~-~-~
 
 -- Find other businesses using Standards as their business
 -- Indentify specific standards-related capability that are indicated at searchable/driving capabilities
@@ -2095,7 +2095,7 @@ Our Offering
 
 
 
-~~~~~
+~-~-~
 
 Social Cost of Carbon
 
@@ -2103,7 +2103,7 @@ A central estimate of the social cost of carbon (in 2018 dollars) is $51 per ton
 
 [fact sheet](https://www.epa.gov/sites/production/files/2016-12/documents/social_cost_of_carbon_fact_sheet.pdf) 
 
-~~~~~
+~-~-~
 
 Leila,
 
@@ -2177,9 +2177,9 @@ Here are details of the desired solution:
 ... dissemination of such material evinces an invidious intent to create division within American society.
 
 
-~~~~
+~-~~
  they tried hard to limit the applicability of impeachment because they knew it could become a political football.  But at the same time they also knew they could not enumerate all the truly heneious things a president might do, so they listed a few very serious and clear cut ones, and then added the words “high crimes” to try to limit the use of this feature to only the most egregious and clear cut bad actions.   That is my interpretation, 
-~~~~~
+~-~-~
 Ajeet:
 
 Here are a couple of ideas that could be built into a blog post
@@ -2219,7 +2219,7 @@ ASDVANCED ANALYTICS -- In addition to supporting the basic infrastrcutre require
 
 
 
-~~~~~~
+~-~~-~
 
 I have a thought I have been chewing on thought for a bit.   See what you think...
 
@@ -2255,7 +2255,7 @@ What ya think?  You buy it?
 
 
 
-~~~~~~
+~-~~-~
 
 I thought this was a nice website showing both left/right spin of each news source as well as the accuracy of each site.
 
@@ -2271,11 +2271,11 @@ e.g. They say New York Times is less factually accurate than WSJ, and MSNBC is m
       https://www.adfontesmedia.com/
 
 
-~~~~~
+~-~-~
 - Rice: Plain, w meat, 
 - Wusun, Gbeans, Peas, Egg Plant, Cauliflower
 - FRUIT:  all
-~~~~~
+~-~-~
 
 ????
 - lentils, barley
@@ -2298,7 +2298,7 @@ It is what is Expected
 Pure Aims can be twisted  
 
 
-~~~
+~-~
 I am the CTO at Analytics Fire and have been thinking a bit about Open ADR
 
 
@@ -2311,7 +2311,7 @@ I am the CTO for Analytics Fire and have been thinking a bit about Open ADR.  If
 
 
 
-~~~~~
+~-~-~
 dyslexic example.... even after looking directly at correct and incorrect words I could not see what was wrong.
 even after looking for better part of a minute.
 once I vertically aligned the correct and incorrect versions I could run down the letters to see where they mismatched:
@@ -2320,21 +2320,21 @@ once I vertically aligned the correct and incorrect versions I could run down th
                  # reference
 
 
-~~~~~~
+~-~~-~
 - possible client companies: MfgOfADRables; Strategy Orgs (Energy Sol); NC clean energy; Epri  
 - AF Radio
 - Podcast; Redis; 
 - - video2Krz. AF-slides2Ajeet
 
 
-~~~~
+~-~~
 acid reflux
 proton pump inhibitor for a month; prilosec
 neurgenic -- relaxing medicine
 reactive airway disease -- asma ; pulminary function ; 
 alergy medicine ; claritin.; 
 
-~~~~
+~-~~
 Enterprise: web-mobile:  talk-to-10-other-dev-shops
 Embedded:
 Standards business OpenADR:
@@ -2391,7 +2391,7 @@ not such a popular view as you can imagine.
 
 
 
-~~~~~~
+~-~~-~
 
 there are numbers that are certified, will be certified, that are ceritified.
 
@@ -2405,7 +2405,7 @@ Trump asks his collegue to respond, and she says well we just used birth year an
 
 So it really does show the fishing trip here...  They their goal was to turn up some kind of argument that somehting happened.  No need to really verify if it DID happen, just assert it as fact: 5000 dead people voted in Georgia.
 
-~~~~
+~-~~
 Looking at my rallies there is no way I lost the state.
 
 
@@ -2427,13 +2427,13 @@ why else, all of the sudden, are these favored poeple "dumb" and such?
 
 
 
-~~~~~
+~-~-~
 -- IP-based consulting sales:
 -- Transcend
 -- new consulting sales approch
 
 
-~~~~~
+~-~-~
 Landfill:
 - 2.01B tons annually. The world generates 2.01 billion tonnes of municipal solid waste annually, with at least 33 percent of that—extremely conservatively—not managed in an environmentally safe manner.
 - CELL: 2,500 tons. 50x50x14
@@ -2443,7 +2443,7 @@ Landfill:
 
 
 ### 2020.12.23 - XMAS FAMILY ZOOM
-~~~~~~
+~-~~-~
 Adam Brown <Brownadam50@gmail.com>,
 Monica Brown <Cruzbugs1@gmail.com>,
 Ron Hall <hall.ron121@gmail.com>,
@@ -2489,7 +2489,7 @@ https://www.youtube.com/watch?v=9isp3qPeQ0E
 
 
 
-~~~~~~
+~-~~-~
 ### 2020.12.23 - SHANE RESUME
 - Should have a stmt about what you WANT that possibly ties in with your experience statement. When hiring you I want to know that you want to do what I am looking for, so try to frame your aim.  (I would edit this objective when applying to different kinds of companies too.)
 - without even a single bullet item on the the new dawn job, that section looks suspicious.  (they might learn just how, uh light that job was!  I think you advised us on the development of a trusted hardware IOT platform...   you need to vet this with Nick, but I think that is totally legit, since you did, and if a prospective employer were to question you on this, you could talk at length about the idea, so it would be fine.)
@@ -2503,7 +2503,7 @@ https://www.youtube.com/watch?v=9isp3qPeQ0E
 	- same comment.  you engaged in BD.  so what?  what happen based on your amazingness?
 
 
-~~~~
+~-~~
 you almost have a 2 page resume.  if you can make it 2, that is nice.  but if we end up adding too much, then dont worry.
 
 the big comment is this is just a wall of details... because they might do text search on these there is virtue in putting details with each entry.  BUT it is really hard to look at this and get a sense of who shane is without REALLY putting in many minutes of focused attention. (which they never will)
@@ -2516,7 +2516,7 @@ This narrative is all about the amazing shane dropping into situation after situ
 
 this narrative story is in the top sections of the experience, then the bullet details are listed below (with those bullets with outcome assertions in them towards the top of each section.)
 
-~~~~~
+~-~-~
 this is just one way to slice the resume...  happy to chat about this tomorrow too.
 
 
@@ -2647,7 +2647,7 @@ rewrite_stmt
 -- Name actions he is doing, dog is doing, adult is doing, water is doing
 -- Ask things/actions
 _
-### HVAC Email ~~~~~~
+### HVAC Email ~-~~-~
 
 CONTEXT:
 - Cold email sent to Grid Storage MFG
@@ -2693,7 +2693,7 @@ HVAC email
 in both the implementation and 
 
 
-~~~~~~
+~-~~-~
 ### !Tucker trump-email
 
 I am a Kentucky boy who got a PhD in AI and worked for DARPA giving away couple hundred million of your tax payer dollars for advanced AI reaserach -- this gives me some kind of combo left/right view of things.  
@@ -2725,7 +2725,7 @@ Those on the right are fine with my first two points, but the third point it is 
 In the past 
 
 
-~~~~~~
+~-~~-~
 ### Larry Calling bullshit
 
 
@@ -2754,7 +2754,7 @@ ttp
 
 x-webdoc://C8D7ACFB-F698-4387-A899-D5119B17835A/I%20finally%20have%20a%20nanny%20that%20I%20can%20might%20be%20able%20to%20work%20with.%20%20I%20found%20this%20old%20email%20from%20My%20Payroll.%20%20It%20seems%20to%20me%20that%20the%20last%20phone%20call%20I%20receive%20from%20your%20org%20was%20from%20another%20person,%20but%20I%20cannot%20find%20any%20info%20on%20that.%20%20Either%20way%20I%20would%20like%20to%20get%20an%20estimate%20on%20the%20total%20taxes%20that%20will%20need%20to%20be%20paid%20if%20possible.%20%20%20%20Are%20you%20the%20person%20I%20should%20connect%20with%20in%20order%20to%20get%20this%20estimate?
 
-~~~~~
+~-~-~
 
 				Waymo 	Merch Analytics	
 Technically				X
@@ -2792,7 +2792,7 @@ Dan
 
 angel past, boscaiola, carbonara,   roasted beets, musth garlic
 ### Kernel Dump (osx)
-2020.08.21 ~~~~~~~~~~~~~~~~~
+2020.08.21 ~-~~-~~-~~-~~-~-~
 
 panic(cpu 2 caller 0xffffff7f9a262a8d): watchdog timeout: no checkins from watchdogd in 96 seconds (8446 total checkins since monitoring last enabled)
 Backtrace (CPU 2), Frame : Return Address
@@ -3002,7 +3002,7 @@ $sandbox	300.0
 
 
 
-~~~~~~~~~~~~~~~
+~-~~-~~-~~-~~-~
 
 panic(cpu 2 caller 0xffffff7f84c62a8d): watchdog timeout: no checkins from watchdogd in 96 seconds (3495 total checkins since monitoring last enabled)
 Backtrace (CPU 2), Frame : Return Address
@@ -3216,10 +3216,10 @@ $sandbox	300.0
 
 
 
-~~~~~~
+~-~~-~
 ### Richard Feynman Quote
 Richard Feynman said something about scientific integrity that would echo through generations: “The first principle is that you must not fool yourself—and you are the easiest person to fool.” 
-~~~~~~
+~-~~-~
 ### Signup flow.
 
 - Download; launch; position camera
@@ -3228,13 +3228,13 @@ Richard Feynman said something about scientific integrity that would echo throug
 - >> https://blog.zoom.us/cloud-based-and-peer-peer-meetings/
 https://www.theverge.com/2020/7/15/21325542/zoom-dten-me-tablet-video-calls-webcam-home-remote-work
 
-~~~~~
+~-~-~
 ### QL notes
 - not sure if I am on the right track or not
 - voice wavering.  too many 'ums'
 - trying to remember my stats.
 
-~~~~
+~-~~
 ### Parents OWE me
   $140 = 1/2 of $280 for bed.
   $30  pill cutter
@@ -3248,7 +3248,7 @@ https://www.theverge.com/2020/7/15/21325542/zoom-dten-me-tablet-video-calls-webc
   
 
 
-~~~
+~-~
 ### Brodie discussions
 BEDROCK == assertions broadly accepted by the nearly the entire population.
 
@@ -3260,7 +3260,7 @@ I have two claims:
 A well functioning democracy needs bedrock.  
 America no longer has the bedrock it needs.  
 
-~~~~
+~-~~
 
 
 There are two distinct ideas:
@@ -3270,7 +3270,7 @@ There are two distinct ideas:
 — we could improve partisan discourse by automatically elevating well argued well defended versions of positions, and 
      Place these positions within the web of assumptions and counter positions that exist around then so as to let anyone quickly get an unbiased summary of best citizen thinking on a topic.
 
-~~~~
+~-~~
 
 
 
@@ -3307,7 +3307,7 @@ Bruce, Sandy, Mike, and Michelle,
 Thanks for taking the time for our Thursday call.  There were some exciting ideas that came out of it.  I am especially pleased that we had ideas coming from all different directions.  I think this is best way to find the ones most pressing for action now.  Here are the ideas as we understood them, as well as a few thoughts about what the next steps might be on each idea for your consideration in your subsequent team meeting.
 
 
-~~~~~~
+~-~~-~
 **REMOTE DEVICE DIAGNOSTICS AND FORWARD-LOOKING FAILURE PREDICTION**
 - PRO:  We love this problem, it marries our strength in Machine Learning, IOT, device integration.  
 - We could take on any/all of these pieces and also could build on top of a device connectivity solution that you are considering for licenceing.
@@ -3317,7 +3317,7 @@ Key to success here will be building a cost effective method to onboard a huge n
 TYPICAL BLOCKER:  Often getting raw dumps of data can be done with relative ease, but then getting data prior to failure with the failure indicated in the history is harder.  (we can work with your IT team to see what exists today, and if we can make an assessment with exsiting data.)
 
 
-~~~~~~~
+~-~~-~~
 **PASSIVE STOCK MONITORING AND AUTO RESUPPLY**
 - As a DARPA program manager, I just *love* this problem.  It is aiming at the tough stuff that one really can move the needle on results doing what others have yet to do.  AND you told us that it had huge potential to improve revenue!
 
@@ -3335,7 +3335,7 @@ No matter which of the other ideas we chase, I would love to chew on this one in
 
 
 
-~~~~~~~~
+~-~~-~-~
 **CHAT BOT APPLICATIONS**
 PRO:  Lots of industries are finding value in the always-available, natural text chat interface.
 CON:  But the devil is in the details.  Unlike a traditional interface with fields and strcuture that allows a user to know if its context is correct, a chat bot just has an empty box where the user can type ANYTHING.  without proper framing as to its usage, the user will be frustrated that what they wanted was not properly covered, and they dont' know what IS covered.
@@ -3345,7 +3345,7 @@ ASSESSMENT STEP:  One or more conversations about specific targets use cases wou
 For example, I can imagine a chat bot that has access to prior purchases and the vendor ID for an incoming chat, then it has a back and forth coversation about resupply.  Perhaps at the end of this there is a human validator that sees the entire back and forth as well as the proposed order before proceeding in cases where the chat bot had texts it did not understand.  This hybrid might allow one worker to hundreds of orders per hour at a very very high level of reliability on order correctness.
 
 
-~~~~~~~~~~~~~~
+~-~~-~~-~~-~-~
 WAR ROOM "NOC"
 
 The military organizes its operations into Network Operation Centers similar to the one you described on the call.  These man-machine hybrids are very good at taking into account and enormous amount of fast moving data and taking optimal course of action.  
@@ -3409,7 +3409,7 @@ Expected Scope:
 	- The lowest friction possible separating a potential user from recording, editing, publishing, and sharing a testimonial story.
 	- A solution designed to operate wide range of less tech savvy users including older users without confusing them.
 
-~~~ ~~~
+~-~ ~-~
 Proposal should layout scope/timeline/budget for these pieces and addons.
 We should do some good thinking about the right way to maximized diversity of platforms with minimum of alternate implementations, and with pretty deep consideration for the frictions involved with each choice.
 
@@ -3737,7 +3737,7 @@ Founder/CTO
 Analytics Fire
 
 
-~~~~~
+~-~-~
 http://ironmountain.com 
 
 Anke,
@@ -3754,7 +3754,7 @@ Founder/CTO
 Analytics Fire
 
 
-~~~~~~~
+~-~~-~~
 
 http://google.com
 
@@ -3770,7 +3770,7 @@ Analytics Fire
 
 
 
-~~~~~~~
+~-~~-~~
 http://hcltech.com 
 
 Sarat,

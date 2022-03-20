@@ -1,5 +1,5 @@
 
-~~~~~~
+~-~~-~
 THE GLUE GRAPH, GLU, HAS THESE PROPERTIES
 - Begins from one specially designated vertex called ZERO.
 - GLU is the smallest graph that guarantees that:
@@ -55,13 +55,13 @@ It turns out that HUGE amounts of RDF was still in my head, and not on paper!  B
 
 URF is really just one piece of larger thing I call UNIFORM.  So my focus has never been to try to get this one URF piece correct.  Still it is pretty well understood, and perhaps it is a nice little nuggest all by itself?
 
-~~~~
+~-~~
 
 A bit of context:  I have no beef with RDF as a DATASTRUCTURE---it is quite beautiful.  But RDF attempts to treat the triple as something more, it tries to treat it as the UNIVERSAL ASSERTION---as a smallest isolatable statement with an isolatable independent semantics over which one may perform processing and inference.
 
 This is where I think the train jumped the tracks:  A key requirement for an inferential framework is that its statements are first class objects which can be referenced themselves --- otherwise one cannot fully specify the inference system.  Even if we define a container object in RDF, there is no way to put the triples INTO that container since we cannot reference them!  So triples beautiful as they are, do not serve well as assertion form since they have no referenceable handle.
 
-~~~~
+~-~~
 
 I think my goals for URF are different from my understanding of goals of RDF.
 My aim is a uniform encoding of computation.  
@@ -605,7 +605,7 @@ URF, on the other hand, is unapologetically just a DATA STRUCTURE and nothing bu
 - In the deep end of the pool we require the specification of a large static structure (like the GLU) which encodes the multiple levels of languages needed in order to specify the semantics themselves.  This tour-de-force activity is mostly academic, but it does serve to ensure common understanding of the semantics, and it forces the semantics to be a simple as possible, in order to keep its dependencies from exploding the size of the required structure.
 
 
-~~~~~
+~-~-~
 
 
 SOCIETAL CURATATION OF URIS IS GOOD BUT IS NOT A DENOTATION FOR TRIPLES 

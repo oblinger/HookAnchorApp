@@ -40,17 +40,17 @@ _
 
 https://apnews.com/article/donald-trump-courts-election-results-e1297d874f45d2b14bc99c403abd0457
 
-~~~~~
+~-~-~
 And they were upholding the decision of a fourth Republican, U.S. District Judge Matthew Brann, a conservative jurist and Federalist Society member. Brann had called the campaign’s legal case, which was argued in court by Rudy Giuliani, a “haphazard” jumble that resembled “Frankenstein’s monster.” 
   [court opinion](https://www.courtlistener.com/recap/gov.uscourts.pamd.127057/gov.uscourts.pamd.127057.202.0_1.pdf) 
 
-~~~~~
+~-~-~
 In Nevada on Friday, Judge James Todd Russell in Carson City ruled that attorneys for Republican electors failed to provide clear or convincing evidence of fraud or illegality.
 
 Nevada judges are nonpartisan. But Russell’s father was a Republican governor of the state from 1951-59.
 
-~~~~~
+~-~-~
 — U.S. District Judge Timothy Batten in Georgia, an appointee of President George W. Bush, rejected a lawsuit alleging votes were manipulated in favor of Biden, saying “they want this court to substitute its judgment for that of two-and-a-half million Georgia voters who voted for Joe Biden and this I am unwilling to do.”
 
-~~~~~~
+~-~~-~
 — U.S. Circuit Judge Stephanos Bibas, a former law professor appointed by Trump, wrote, “voters, not lawyers, choose the president. Ballots, not briefs, decide elections,” as his panel refused to grant a request to stop Pennsylvania from certifying its results. 

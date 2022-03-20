@@ -4,18 +4,18 @@ But Jobs?!?!    America has lost more jobs during Covid than most any other nati
 And for his first three years of his presidency he massively increase our deficit during a period when the country was already booming.
 Sure.  Just spend spend spend…. Things will be great…  until they are not.
 
-~~~~~
+~-~-~
 
 Of course you agree with Putin…. He was talking to you.
 You say    ``trump is helping the situation’’ 
 
 This is a much longer conversation.  But I think trump is not a good negotiator for America, his aims are small and short term at come at great cost to the long term.  Twenty years from now I think historians will look back on the Trump presidency as a pivotal time in the loss of the USD as a reserve currency,  that is worth tens of TRILLIONS of dollars to the USA.
 
-~~~~~
+~-~-~
 
 But look at the number of his own appointees that after working with him have said negative things about his ability to lead.
 Those are the people he chose!
-~~~~~
+~-~-~
 
 ### ---
 https://www.defendingdemocracytogether.org/national-security/
@@ -60,7 +60,7 @@ Russia has never tried to use leverage over me. I HAVE NOTHING TO DO WITH RUSSIA
 81.6K
 4:31 AM - Jan 11, 2017
 
-~~~~
+~-~~
 
 Donald J. Trump
 @realDonaldTrump

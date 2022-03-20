@@ -377,7 +377,7 @@ L. Bergman, T. Lau, V. Castelli and D.Oblinger,  "Personal Wizards: collaborativ
 
 
 
-####  IN VITA AUG 2006 ~~~
+####  IN VITA AUG 2006 ~-~
 
 TOO SMALL
 V-  Internal whitepapers: 
@@ -394,7 +394,7 @@ V- Any thing at ECML 2001?  reviewer?
 V+ DocWizards: A System for Authoring Follow-me Documentation Wizards
 
 
-#### ~ IN VITA APRIL 2005 ~~~~~~~~~~~
+#### ~ IN VITA APRIL 2005 ~-~~-~~-~-~
 V- not accepted 
 Dan Oblinger, Vittorio Castelli, Tessa Lau, and Larry Bergman.
 "Simultaneous Alignment and Generalization:  A New Paradigm for Programming By Demonstration"
@@ -464,7 +464,7 @@ Peter Fairweather, Don Nix, Daniel Oblinger, Bill Adams, Carla Laffra,
 "Overcoming Technical Barriers to a Speech-Enabled Children's Reading Tutor" 
 ?????? 
  
-~   IN RESUME.DOC  ?/2002   ~~~~~~~~~~~~ 
+~   IN RESUME.DOC  ?/2002   ~-~~-~~-~~-~ 
 2001 AI-ED (REVIEWER) 
 International Conference on Artificial Intelligence in Education 
 
@@ -1232,10 +1232,10 @@ _
 	Innovate | Prototype | Commercialize
 	Researcher | Entrepreneur | Leader
 
-	~~~~
+	~-~~
 	I have had the privilege of working shoulder-to-shoulder with some of the worlds strongest Machine Learning/AI/Robotics researchers as my career has arcked from individual contributor, through scaled-science leader, into a commercialization-focued Silicon Valley entrepreneur.
 
-	~~~~
+	~-~~
 	Machine Learning/AI/Robotics researcher turned Silicon Valley technology leader---sheparding latest technologies from the ivory tower into your living room.
 
 	I have had the priveledge of working with and leading world class scientists and entreprenures on each stage of the technological journey from ivory tower to your living room.
@@ -1250,7 +1250,7 @@ _
 
 
 
-	~~~
+	~-~
 	- I've been priveledged to work shoulder-to-shoulder with some of the worlds top scientists in 
 	- Dan has spent his career ...
 	- Dan has built a career around ...
@@ -1311,19 +1311,19 @@ _
 I SPENT CAREER
 I have spent my career sheparding AI innovation from the very edges of what we understand today all the way into the productization and operational deployment of billions in assets.
 
-~~~~~
+~-~-~
 PROUDEST
 As an individual contributor I am proudest of my theoretical ML work as published in SODA, my algorithic work where we developed a new framework for Programming By Demonstration that interleves user script editing with user demonstrations.
 In scaling the field itself I am proudest of the Machine Reading program at DARPA with the legacy impact of statistical learning and NLP that we see today.
 In productization I am proudest of the dexterous robotic work at Aeolus, and the innovative new sales channel we developed for auto-designing solar installations propelling that customer to the leader in their industry.
 
-~~~~
+~-~~
 QUOTE
 Those who see most clearly into the foggy edge of human knowlege will be the titans of tomorrow.    (see most clearly; see most deeply; peer most deeply)
 
 The titans of tomorrow are those who can peer most deeply into fog at the edge of human understand today.
 
-~~~~~
+~-~-~
 I AM MOST AT HOME
 In highly technical roles that leverge and extend my knowlege in AI while also leverage and extend my ability to have impact through leadership
 
