@@ -731,7 +731,7 @@ _
 
 ### ,
 EDITS NEEDED:
-	_[[fix definition of "structure of" sometime it refers to immediate structure, the transitive closure downward, or in all directions.]]_
+	_{[fix definition of "structure of" sometime it refers to immediate structure, the transitive closure downward, or in all directions.]}_
 	ADD THESE:  
 		value == transitive closure from vertex.
 		Note: we use the term 'value' interchangably to refer to a specific vertex or to subgraph of vertices and edges reachable from that vertex.

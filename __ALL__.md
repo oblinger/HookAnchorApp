@@ -1,9 +1,6 @@
 ALL TOPIC ROOTS
 
-  [MISC](__MISC__),   [SF](__SF__),   [NJ22](__NJ22__.md),   [ML](__ML__.md),   [MEET](__MEET__),   [DAILY](__DAILY__),   
-  [LANG](__LANG__.md),   [LOGS](__LOGS__),   [WP](__WP__.md),   [ROCKS](__ROCKS__.md),   [MKT](__MKT__.md),   [NOW](__NOW__),   
-  [MY](__MY__.md),   [PLAN](__PLAN__.md),   [META](__META__.md),   [MYFO](__Myfo__.md),   [TEMPLATER](__TEMPLATER__.md),   
-  [PEOPLE](__PEOPLE__.md),   [PP](__PP__.md),   [PRJ](__PRJ__),   [LG](__LG__),   [MED](__MED__.md)
-
-
-
+  [MISC](__MISC__),   [SF](__SF__),   [PP](__PP__),   [ML](__ML__),   [NJ22](__NJ22__),   [BCMS](__BCMS__),   
+  [PAST](__PAST__),   [MEET](__MEET__),   [ORG](__ORG__),   [DAILY](__DAILY__),   [TAGS](__TAGS__),   [LOGS](__LOGS__),
+     [MKT](__MKT__),   [SETS](__SETS__),   [MY](__MY__),   [META](__META__),   [TEMPLATER](__TEMPLATER__),   
+  [PRJ](__PRJ__),   [VC](__VC__),   [ROCKS](__ROCKS__),   [OR](__OR__),   [MED](__MED__)

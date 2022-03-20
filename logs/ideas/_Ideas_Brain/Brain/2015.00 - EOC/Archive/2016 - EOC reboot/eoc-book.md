@@ -377,15 +377,15 @@ THE LOOP CLOSING CONJECTURE  --- ((see notes in the atlas))
 
 REWRITE -- what others say about this threat.
 
-[[EXPAND --
+{[EXPAND --
 First, as measured against the killer AI we agree todays ai is paltry, but this we argue in section XXXX that a seed AI won't be constructed as today AI, so its performance will not follow todays. indeed we argue that todays performance is expected to be a dramatic under estiamte of that other performanc
 
 It is difficult to quantify capacities of humans and machines in a way that allows us to plot machine progress against its human target, but if we could make such a plot, there would be no disagreement that machine progress is slow, and quite far from human capacity.
 
 
-]]
+]}
 
-[[EXPAND --
+{[EXPAND --
 It is also true that a great many things that people can do effortlessly are well beyond what we understand how to encode into machines today.  
 
 Encoding even the simplest domains of human expertise in computable form, requires enormous effort.  Even encoding the starting points for Machine Learning to adaptively home in on human performance is quite costly and challenging for even the simplest task domains, and it is simply beyond current capactiy to  encode knowlege appropriately for more complex, more open ended task domains.
@@ -394,7 +394,7 @@ As XXXX at Google eloquently summarized what many feel this says about the state
 
 but this large gap in capabilties does not imply a commesurate gap in time before we have a dominating AI.
 
-]]
+]}
 
 
 
@@ -491,9 +491,9 @@ AN AGENDA FOR HUMAN-SCOPED, CLOSED-LOOP, EMULATIVE LEARNING
 
 Informally we can kind of view this as the 'rock climbing' model of learning.  According to this model learning is a sequence of moves where each learned capacity may depend upon prior learned capacities--and just as with rock climbing methphor the difficulty of a given route is roughly measured by the difficulty of its single most difficult move.
 
-In both cases this assessment of complexity makes sense .... [[it comes down to difficulty of single step, too hard and the whole route becomes impossible]]
+In both cases this assessment of complexity makes sense .... {[it comes down to difficulty of single step, too hard and the whole route becomes impossible]}
 
-Also just as w. rock climbing the difficulty of achieving any given point is not fixed.  It all depends upon the specific route chosen.  they same target might be easy via one path, and quite challengine via another.  [[indeed climbing gyms typically layout 6 or 8 dramatically different levels of difficulty aiming to a single topping point.]]
+Also just as w. rock climbing the difficulty of achieving any given point is not fixed.  It all depends upon the specific route chosen.  they same target might be easy via one path, and quite challengine via another.  {[indeed climbing gyms typically layout 6 or 8 dramatically different levels of difficulty aiming to a single topping point.]}
 
 LEARNABILITY IS FUNCTION OF ENSEMBLE NOT INDIVIDUAL
 * Seems at odds with existing ML -- learnability is function of the learning alg.
