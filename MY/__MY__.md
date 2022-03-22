@@ -1,3 +1,4 @@
+  [Apps](Apps.md)
 [Plan](Plan/__Plan__.md)  [META](META/__META__.md)  [Myfo](Myfo/__Myfo__.md)  [Obsidian](Obsidian.md)  [Scratch](__scratch__.md)  [TEMPLATER](TEMPLATER/__TEMPLATER__.md)  [X](__X__.md)  [MyNow](MyNow/__MyNow__.md)
 
   [Fried](__Fried__.md)  [repeat](__Repeat__.md)  [Kbd-Shortcuts](__KBD_Shortcuts__.md)  [Ping](Ping.md)  [Habits](__Habits__.md)  [All](__META__.md)  [Myfo](__Myfo__.md)  [Todo](__Todo__.md)  [Scratch](__scratch__.md)  [Forward](__Forward__.md)  [Q2](__Q2__.md)  [MyNow](__MyNow__.md)
