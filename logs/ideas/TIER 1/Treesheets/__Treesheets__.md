@@ -1,6 +1,8 @@
+  [KMco](__KMco__.md)  [MyOrgStartup](MyOrgStartup/__MyOrgStartup__.md)  [TextPuter](__TextPuter__.md)
 # ### INFO ### 
 ## === REF ===
 ### --- Pointers ---
+#### all the KM apps out there
 https://arieluna.notion.site/Apps-29ffc475bd3a4539b48eeb5bb551d713
 [[Screen Shot 2022-03-15 at 8.10.10 AM.png]] 
 # ### SYSTEM DESIGN ### 

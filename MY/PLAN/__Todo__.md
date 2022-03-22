@@ -1,3 +1,39 @@
+
+- [ ] fix microwave [[__Phone__#2022-03-21 replace new GE microwave|ph]]
+- [ ] mom's visit
+- [ ] Buy flight tickets
+- [ ] call sahil
+
+  
+
+- [ ] Reddick Linked-in updates
+- [ ] designing life - VC story
+
+
+
+
+
+
+
+- [x] Talk with Phil about Ross Hatton
+
+- [x] Get meeting with Brian.
+
+
+
+- [ ] .
+- [ ] .
+- [ ] .
+- [ ] .
+- [ ] Dan Fine
+- [ ] look at drive - get hiring tests!
+- [ ] passport
+- [ ] Rocket Lawyer
+- [ ] Get AF accounts cleaned
+- [ ] CALLS: call Facebook AI guy; QL BF; l
+- [ ] 
+
+
 ## Followups
 
 Missy @ Morgen Thalen  (same place as Mark goins)
@@ -10,7 +46,7 @@ Laurence Marks -- ChoozOn
 - invests in 
 
 
-
+............................................................................................
 
 ## jots
    git remote rm origin

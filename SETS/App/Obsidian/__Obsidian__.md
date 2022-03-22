@@ -7,6 +7,9 @@
 - [ ] Get GIT sync to the cloud
 - [ ] Get Kbd Maestro sync working
 
+# # TO FIGURE OUT # 
+- [ ] Search by recency of edit
+
 
 # ### REF ### 
 ## === MY HACKS ===

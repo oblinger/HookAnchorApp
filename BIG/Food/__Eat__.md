@@ -1,4 +1,3 @@
-previous iPad-pro will auto connect to bluetooth when not logged in.  But this newer iPad will not.
 
 W12 190.0	4apples 10:17ozNoodleTofuVeg  3:10ozPasta  
 R06 190.6	9:3ozHummus,Lentils  

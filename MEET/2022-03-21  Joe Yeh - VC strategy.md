@@ -1,3 +1,9 @@
+
+### - 2022-03-21 
+
+
+
+### - 2022-03-17
 [[__BeVC__]] 
 - Background: RoboticsTalk=Great; AI-safety=No
 - Current path:  VC/FAANG

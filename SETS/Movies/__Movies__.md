@@ -1,3 +1,4 @@
+  [movienotes](__movienotes__.md)  [Flix](Flix/__Flix__.md)
 ### RT Searches (rotten tomato searches)
 
 [RT Best Flix Movies Now](https://editorial.rottentomatoes.com/guide/best-netflix-movies-to-watch-right-now/) 

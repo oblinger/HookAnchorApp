@@ -1,6 +1,6 @@
-https://www.amazon.com/Power-Full-Engagement-Managing-Performance-ebook/dp/B000FC0SWS/ref=tmm_kin_title_0?_encoding=UTF8&qid=1644162775&sr=8-1
-
-## === REPEAT ===
+  [ToResearch](__ToResearch__.md)
+  
+## = REPEAT =
                         _Read_Regularly_  _RIL_
 - WEB                   o:/a/u/tree/favorites/Daily/ToRead
 - BBC                   http://news.bbc.co.uk/
@@ -10,8 +10,55 @@ https://www.amazon.com/Power-Full-Engagement-Managing-Performance-ebook/dp/B000F
   Google answers
   _To_Read_
   _Reading_Log_
+[Future Of Coding](https://futureofcoding.org/community)
 
-# ### MISC ###
+## = ADDED =
+- [ ] Read study  [IF](https://jamanetwork.com/journals/jamainternalmedicine/fullarticle/2771095?guestAccessKey=444bbcb2-7e13-4dc6-998f-5de5e27aa19e&amp;utm_source=For_The_Media&amp;utm_medium=referral&amp;utm_campaign=ftm_links&amp;utm_content=tfl&amp;utm_term=092820) 
+- [ ] [Mental Models List](https://medium.com/@yegg/mental-models-i-find-repeatedly-useful-936f1cc405d)    
+- [ ] [amz](https://www.amazon.com/Power-Full-Engagement-Managing-Performance-ebook/dp/B000FC0SWS/ref=tmm_kin_title_0?_encoding=UTF8&qid=1644162775&sr=8-1) 
+
+## - blah
+### QL John
+nt to chat with our neighbor John to get interview tips since he hired thousands of them. Man, did I learn so much from him! We should hangout with them more often! He actually successfully exited few companies. He sent this link to me since this girl is one of the investors of the company I am going to interview with, and I like her summary about machine intelligence:
+
+http://www.shivonzilis.com/machineintelligence
+### Long shannon lessions learned
+long article on lessons learned from writing a biog of claude shannon. some gems here: 
+
+> https://medium.com/the-mission/10-000-hours-with-claude-shannon-12-lessons-on-life-and-learning-from-a-genius-e8b9297bee8f 
+### haddick
+DanO, this is a long essay that I think I will summarize and modify to meet our needs. Don't spend the time on it unless you are really curious ;-)
+The article is a pretty close description of the problem we had scaling at Sierra Nevada Corporation and the function that I turned the VP of Technology role into: Product Management. This is what I was trying to describe in our early conversations. It also explains why it is hard for a startup to see the value because the function is distributed around a tight knit team in a typical startup. We are not a typical startup and my intention is to better define the Program Management need and fill it. 
+
+http://organizationalphysics.com/2015/10/15/rethinking-product-management-how-to-get-from-start-up-to-scale-up/
+
+_
+### Books
+-- [happiest baby on block](https://www.amazon.com/Happiest-Block-Revised-Updated-Second-ebook/dp/B00TCI48AE/ref=pd_sim_351_4/131-5534497-5703418?_encoding=UTF8&pd_rd_i=B00TCI48AE&pd_rd_r=c4d50b43-6ef5-11e9-a963-6f3949decc2c&pd_rd_w=oWByc&pd_rd_wg=aiRQV&pf_rd_p=90485860-83e9-4fd9-b838-b28a9b7fda30&pf_rd_r=NM2GPAV2AJC9DC7D5EPB&psc=1&refRID=NM2GPAV2AJC9DC7D5EPB)    (Harvey Karp 5S DVD)   The Happiest Baby On The Block video
+-- Brain Rules for Baby by John Medina
+-- How to Talk So Kids Will Listen and Listen So Kids Will Talk  by Adele Faber and Elaine Mazlish
+### Logic puzzles:
+https://www.folj.com/puzzles/#three
+
+[Scott Hoffman video](https://vimeo.com/291423665) 
+
+### two books nick gave me
+Designing Your Life
+Relevant to: The "what opportunities should I say no to?" thinking you have been doing
+Quote:"Designers imagine things that don’t yet exist, and then they build them, and then the world changes. You can do this in your own life. You can imagine a career and a life that don’t exist; you can build that future you, and as a result your life will change. If your life is pretty perfect as is, life design can still help you make it an even better version of the life you currently love living."
+Competing Against Luck
+Relevant to: Your search for a problem for Configurator to solve.
+It's basically an ode to concentrating on the problem, not the solution. I think having a framework might help separating the configurator you want from the search for the real market place problem Configurator can solve. If not, it's still a good book ;-)
+#### blog of language guy
+https://marijnhaverbeke.nl/blog/  
+https://www.python.org/dev/peps/pep-3118/
+
+### --- RE-READ LIST ---
+- [coach](https://betterhumans.coach.me/the-ultimate-model-for-successful-and-long-lasting-behavior-change-221e678c642b) 
+- [Occasionally Ask](https://medium.com/mind-cafe/8-great-questions-you-should-occasionally-ask-yourself-ebc929094777) 
+- [Markus Aurelius 10 rules](https://medium.com/swlh/marcus-aurelius-10-rules-for-life-dfbdc9869e68) 
+
+# # MISC # 
 ## === SCIFI ===
 
 * LYRIS
@@ -54,7 +101,7 @@ http://www.nytimes.com/2003/11/11/science/11ESSA.html
 - Prayer experiment
 
 _
-# ### PROFESSIONAL ###
+# # OLD PROFESSIONAL #
 ## === JOB NEXT ===
 ## === PROFESSIONAL ===
 blank class:

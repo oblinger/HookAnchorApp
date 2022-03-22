@@ -1,3 +1,4 @@
+  [TIER Z](TIER Z/__TIER Z__.md)  [TIER 1](TIER 1/__TIER 1__.md)  [TIER 4](TIER 4/__TIER 4__.md)  [TIER 3](TIER 3/__TIER 3__.md)  [TIER 2](TIER 2/__TIER 2__.md)
 (See [startup/index](__stindex__.md) for list)
 
 # ### QUICK THOUGHTS ###

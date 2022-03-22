@@ -1,3 +1,4 @@
+  [NextJob](NextJob/__NextJob__.md)  [foo](foo.md)  [Resume](Resume/__Resume__.md)  [Mgr](Mgr/__Mgr__.md)  [leadership](leadership/__leadership__.md)
 
 ### --- Customer Acquisition (from nick) ---
 

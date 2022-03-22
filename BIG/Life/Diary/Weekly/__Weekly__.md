@@ -1,5 +1,19 @@
 
 
+### 2022-03-15 
+- [ ] Get response to Amy Kruse
+- [ ] Schedule calls for FAANG Engineer
+- [x] [Yearbook](__Yearbook__.md) minimally current
+- [ ] Get all time critical tasks completed
+	- [ ] Blood, Taxes out, Eli's doctor's note
+	- [ ] Mom's visit
+	- [ ] Buy flight tix to FLA
+	- [ ] Call sahil
+	- [ ] try to do others
+
+Spent SECOND week setting up obsidian, and just not being very productive.  Really the goals for next week will not have changed much... hopefully my velocity will!
+
+
 ### 2022-03-14 - Q2 GOALS
 
 I need to reboot the way I work, my motivations, my output, my processes.

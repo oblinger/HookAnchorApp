@@ -1,4 +1,7 @@
+### 2022-03-21  replace new GE microwave
 
+      **WD95991116**  I purchased a GE microwave less than 30 days ago.  It was installed by Home Depot's 3rd party vendors, and it mostly works.  But every 4-5 days all of its LEDs will light up briefly, and then it resets itself, and needs the clock reset as if it is the first time it is powered up.  No other appliance in the house is having power issues.  I would like to have the microwave replaced with a fully functioning one.  Thanks.
+  
 ### 2022-03-15 Qingling's income and taxes
 
 $458K

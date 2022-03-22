@@ -1,8 +1,14 @@
+  [Repeat](__Repeat__.md)  [Habits](__Habits__.md)  [Fried](__Fried__.md)  [Calls](__Calls__.md)  [Later](__Later__.md)  [Q2](__Q2__.md)
 
-### 2022-03-15 
+
+### 2022-03-21  
 - [ ] Get response to Amy Kruse
-- [ ] Schedule calls for FAANG Engineer
-- [ ] [Yearbook](__Yearbook__.md) minimally current
+- [ ] Plan calling ...  maybe Schedule FAANG Engineer
+- [ ] Run code for coursera... maybe do a few hrs
+- [ ] [Yearbook](__Yearbook__.md) 
+	- [ ] G-drive setup
+	- [ ] ask XXXX about fonts
+	- [ ] Write announcement email (maybe more)
 - [ ] Get all time critical tasks completed
 	- [ ] Blood, Taxes out, Eli's doctor's note
 	- [ ] Mom's visit
@@ -19,9 +25,11 @@
 	- [ ] Schedule calls
 - [ ] Reach out to [[@Alia Alaoui]]
 	Inbound on linked in... should write to her
- 
-## = Misc =
-- [Learning](__PL_Learning__.md)
-- [Calls](__Calls__.md)
-- 
-  [PL_Learning](__PL_Learning__.md)  [Calls](__Calls__.md)
+
+## = [[__Learning__|Learning]] =
+- [ ] Complete Coursera Deep Learning Course
+
+
+## = [[__Framing__|Framing]] =
+- is my resume good?  how to know?
+

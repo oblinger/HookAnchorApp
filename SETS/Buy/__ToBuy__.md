@@ -1,5 +1,41 @@
 (See [ReBuy](__ReBuy__.md))
 
+- [ ] Light for Eli's room
+-- oximetry
+-- circuit breakers for house
+-- buy dirt
+
+### --- NEEDS RESEARCH ---
+-- Some kind of blocking screen for bedroom
+-- black out blinds - electric blinds
+-- headset that does not require power-cycle
+-- Shoe rack for hallway
+-- [digital scale](https://www.amazon.com/Etekcity-ESN00-Nutrition-Counting-Bluetooth/dp/B07FCZSC41/ref=sr_1_4?dchild=1&keywords=wifi+kitchen+scale&qid=1595817273&s=home-garden&sr=1-4) 
+-- safe for valuables
+-- cameras for in house / surveillance for outside house
+
+
+- weighted blanket
+-- bedroom alarm clock
+-- Survellance camera
+-- IOT light switches
+-- drawers for office
+Living room cabinets (paperwork in cave)
+- Bedsheets matress cover for closet bed
+
+
+
+_
+### --- BABY BOOKS ---
+https://www.the-best-childrens-books.org/8E.html
+https://reedsy.com/discovery/blog/best-childrens-books
+
+https://www.npr.org/2020/08/31/905804301/welcome-to-story-hour-100-favorite-books-for-young-readers
+
+
+
+
+# # MISC # 
 ### Digital painting
 
 - Meural $450+50/yr  1080p. 27"
@@ -8,7 +44,7 @@
 - Samsung $2000. 65" ()
 - 
 
-# ### ToBuy Later ###
+# # ToBuy Later # 
 -- Sox.  more undies
 Awesome Tea
 -- bag for trunk
@@ -26,6 +62,8 @@ _
 - fredi -- minispy cam; motion sensing; battery
 - hidden RF/camera detector --
 ## === NOT PLANNED TO BUY ===
+
+- [blinds](https://www.theverge.com/2019/1/9/18175640/ikea-smart-blinds-blackout-us-store-availability) 
 ### Fancy Super Auto expresso machine
 
 https://www.amazon.com/DeLonghi-ESAM3300-Magnifica-Super-Automatic-Espresso/product-reviews/B000N2YKQ0/ref=cm_cr_getr_d_paging_btm_next_5?ie=UTF8&reviewerType=avp_only_reviews&sortBy=recent&pageNumber=5

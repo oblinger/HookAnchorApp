@@ -90,7 +90,7 @@
 | J    |                     | / insert JOURNAL header   |
 | K    | insert LINK         |                           |
 | L    |                     | /                         |
-| M    |                     | MISC note                  |
+| M    |                     | MISC note                 |
 | N    | NEW note / New PANE | /                         |
 | O    | OPEN switcher       | OPEN in default app       |
 | P    | cmd PALETTE         | PLAN note /               |
@@ -100,10 +100,10 @@
 | T    | / undo CLOSE        | new TEMPLATE/insert only  |
 | U    |                     |                           |
 | V    |                     |                           |
-| W    | CLOSE pane          |                           |
+| W    | CLOSE pane          | Load WORKSPACE            |
 | X    |                     |                           |
 | Y    |                     |                           |
-| Z    |                     |                           |
+| Z    |                     | ZOOM mode                 |
 | -    |                     | tgl LEFT pane             |
 | +    |                     | tgl RIGHT pane            |
 | {    |                     | nav BACK                  |
