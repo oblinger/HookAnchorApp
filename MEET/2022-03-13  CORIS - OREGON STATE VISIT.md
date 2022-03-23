@@ -1,5 +1,7 @@
 ![](2022-03-13%20-%20Schedule.png)
 
+### m2022-03-13 - TRIP CORIS Robotics Institute
+
 ## [[PP Ross Hatton]]
 https://mime.oregonstate.edu/people/hatton
 

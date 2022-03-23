@@ -4,6 +4,8 @@
 [[AF]]
 - [ ] this is a todo
 
+# INFO
+## = Online Videos =
 [2018 V2](https://www.youtube.com/watch?v=H4-wtJz4IEg) 
 [Mashable Pump Piece](https://www.youtube.com/watch?v=B8yQmPhQPBs)
 
@@ -13,3 +15,7 @@
 [2:35](https://www.youtube.com/watch?v=1vIIBoqj74Q)  
 
 [Facebook](https://www.facebook.com/AeolusRobotics/) 
+
+# MEETINGS
+### [[@Theo Enns#m2022-03-03 - Aeolus research summary from Theos perspective]]
+

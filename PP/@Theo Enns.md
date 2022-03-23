@@ -1,10 +1,14 @@
 
+# MEETINGS
+### m2022-03-08 Astro. FAANG. ML new ideas.
 existing product; science early prod validation; new product
 
 [[FAANG]].   
 
 
-### [[Amazon]] 
+
+
+### m2022-03-08 Ideas About Amazon Levels
 #### Dan's Role:   
 - AS (Associate Scientist)
 	- Pubs do matter, but so does doing research in applied setting.
@@ -30,12 +34,12 @@ The "essence" of a level is the amount of scope afforded company.
 L6 IC->SDM (Software development manager)
    very productive team. low headcount. 
 
-### INTERVIEWING
+INTERVIEWING PREP
 - What have you accomplished lately
 - Break down problem; both in the weeds & strategic; 
 - amazon corp values;
 
-
+### m2022-03-03 - Aeolus research summary from Theos perspective
 
 AEOLUS RESEARCH
 - Markus Vincze lab @ TU WIEN (U of Vienna)
