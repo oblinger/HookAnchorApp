@@ -1,6 +1,10 @@
+---
+alias: __DYL__
+---
+
 
 # >>> BOOK  -- DESIGNING YOUR LIFE <<<
-### 2021.04.27 - INDEX CARD SUMMARY
+## = INDEX CARD SUMMARY =
 
 See Job Matrix in Evernote Journal
 
@@ -66,9 +70,9 @@ KEY CONSIDERATIONS
 - Want to work on technical & important stuff
   _
   _
-### 2021.08.26 - BOOK ACTIVITIES
-##### - ODDESSY Plans - Three Near Futures
-###### DASHBOARD
+## = BOOK ACTIVITIES =
+### - ODYSSEY PLANS - Three Near Futures
+#### DASHBOARD
 
 Job		Resources	Likability	Coherence	Considerations
 MGR		++
@@ -78,7 +82,15 @@ CTO		+++
 
 
 Considerations: Geography, Learning, Impacts,
-###### GOOGLE MGR/IC - ML/AI MATRIXED-RESEARCHER GUY
+#### VC
+- High energy @ many meeting about tech
+- Selling founders and investors on shared vision of the future
+
+2022 Become an Advisor
+2023 Work nearly full time doing advising work
+2024 Become a principle / partner at a VC firm
+
+#### GOOGLE MGR/IC - ML/AI MATRIXED-RESEARCHER GUY
 MGR: Same as IC, but less training, less uniform, and more money
 
 TIMELINE YEAR 1
@@ -96,7 +108,7 @@ TIMELINE YEAR 1
   
   
   _
-###### KMCO - Marketplace - UNIFORM - Guy
+#### KMCO - Marketplace - UNIFORM - Guy
 QUESTIONS:
 - Who is my 'customer'? what will they pay for?  ML-wizard
   

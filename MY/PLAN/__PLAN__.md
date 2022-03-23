@@ -3,7 +3,7 @@
 
 
 ### 2022-03-21  
-- [ ] Get response to Amy Kruse
+- [ ] Get response to Amy Kruse   [[__Crunchbase__|CB]] 
 - [ ] Plan calling ...  maybe Schedule FAANG Engineer
 - [ ] Run code for coursera... maybe do a few hrs
 - [ ] [Yearbook](__Yearbook__.md) 

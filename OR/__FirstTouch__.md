@@ -1,6 +1,5 @@
 ## === Recruiter ===
-### Refer Anyone
-LOW HIT RATE
+### Refer Anyone -- LOW HIT RATE
 
 Recruiter
 

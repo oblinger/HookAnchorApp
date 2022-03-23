@@ -38,7 +38,7 @@ Team Saver; Smart Scale; Handheld Sizer
 - AI Generalist
 - ML Generalist
 - Deep Learning (Vision-space, NLP-text, Audio-time)
-### 2021.09.22 - >>> WP    -- NEXT JOB ACTIVITIES <<<
+### 2021.09.22 - >>> WP    --  ACTIVITIES <<<
 #### 2021.10.01 - -- SITUATION SUMMARY --
 
 The business I own is going to transition (in a good way) soon, so I need to select my next adventure.

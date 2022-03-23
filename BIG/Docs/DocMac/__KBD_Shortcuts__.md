@@ -161,7 +161,10 @@ HYPER
 F9    Open DAILY
 PGUP  in FINDER
 
-| F1  show HELP
+SHIFT HYPER
+4 arrows move panes
+
+| F1  | Daily Dash
 | F2  edit TITLE
 | F3  
 | F4  

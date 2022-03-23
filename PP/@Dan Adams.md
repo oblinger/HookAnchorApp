@@ -1,4 +1,5 @@
-### 11.10.11 -- email
+
+### m2011-10-11 -- email
 In fact, it probably wasnt even worth the effort to make fun of me while I was not around.
 
 Adam's especially seem to relish the in your face part of it.... and he had so much good material.

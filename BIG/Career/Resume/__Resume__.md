@@ -1,7 +1,8 @@
   [Bio](Bio/__Bio__.md)
 
+ [[Dan Oblinger Resume.docx|Current Resume]] 
 
-# ### RESUME SOURCE INFO ###
+# # RESUME SOURCE INFO # 
 ## === ADDRESES ===
 
 ________ 
@@ -1223,7 +1224,7 @@ _
 
 
 _
-# ### LOG ###
+# # LOG # 
 ### 2021.12.00 -- Jared Resume writing notes ===
 #### --- 2021.10.25 - ABOUT (FIRST LINES) ---
 	- 200 cars

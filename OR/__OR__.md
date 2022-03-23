@@ -10,7 +10,7 @@
 - [[@Mary Tran]]
 - [[@Melissa Cote]] 
 - [[@Vince Colangelo]]
-- [[@Emily Wallach]]
+- [[@Emily Wallach]] 
 
 ### 2022-02-08  Meetups to consider
 

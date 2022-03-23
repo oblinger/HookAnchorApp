@@ -4,9 +4,37 @@
 [[2022-03 LG VC Outreach]]
 
 
+
 - Attilla
 
 
+## 2021-09-23 - WHOM IN MY NETWORK TO ASK
+
+To CALL:	 [Juan Huerta](https://www.linkedin.com/in/juanmhuerta/), [Rafah Hosn](https://www.linkedin.com/in/rafahhosn/), [Ron Brachman](https://www.linkedin.com/in/ron-brachman-9195764/), 
+Later:      Melanie Dumas, Theo Enns, [Doug Gordin](https://www.linkedin.com/in/douglas-gordin-69848/),
+To Call:  	Dennis DeCoste, Foster Provost, Chris Ramming, Ronny Kohavi, 
+Maybe:		Joe hellerstein, John Turek, Steve Chien, Daniel Haddick?, Drew Dean
+	Herb Derby, ?Manish Gupta
+
+#### 2021.09.21 - QUESTIONS TO ASK
+**QUESTIONS**
+- **VP-FIRST** -- VP verses FAANG	(VP at 200M series-B).
+- **GAP-OK** -- Gap w. consulting
+- **DESIRED ACTIVITIES** --
+	-
+- **SELF FRAMING** -- Framing of self
+	- Applied-ML-Robotics guy
+	- Objective Statement
+- **DESIRED ROLE**
+	- Job titles sought
+- **KEY KNOWLEDGE** -- Key knowlege to have
+	- Jupiter(ML-data-algo-slinging); ML-alg verbal; Management info
+	  
+	  PATH: 		Series-B VP;  Directly to Google;  1-year gap w. consulting
+	  Framing:  	Applied-ML guy, Project Leader(Robotics/ML)
+	  Job Title:	Tech-PM, DataScientist, TechLead/Manager
+	  
+	  _
 
 -Christina Fonseca
 Aniket

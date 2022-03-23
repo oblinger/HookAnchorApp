@@ -1,3 +1,9 @@
+### 2022-03-22   
+
+What does the warm intro email look like?
+
+
+
 ### 2022-03-17 Amy Kruse Warm Intro
 
 - I am selling my company and quietly look for my next thing

@@ -1,7 +1,22 @@
 ### 2022-03-21  replace new GE microwave
+Home Depot 800 553-3199
+
+833-763-0688 - Appliance Claims Department
+
+- Five year warrantee department.  (needed to return in 48 hours for replace)
+
 
       **WD95991116**  I purchased a GE microwave less than 30 days ago.  It was installed by Home Depot's 3rd party vendors, and it mostly works.  But every 4-5 days all of its LEDs will light up briefly, and then it resets itself, and needs the clock reset as if it is the first time it is powered up.  No other appliance in the house is having power issues.  I would like to have the microwave replaced with a fully functioning one.  Thanks.
-  
+
+
+800-466-3337 - Home Depot Customer Service #7 #2
+
+GE will have technician come out
+
+Thurs 1-5
+
+  case number - 07600535      800-386-1215 
+
 ### 2022-03-15 Qingling's income and taxes
 
 $458K
