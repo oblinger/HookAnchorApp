@@ -4,6 +4,7 @@
 | ----------- | ---------------- | -------------------------------------- |
 | m2022-03-21 | [[@Joseph Yeh]]      | List of VC firms                       |
 | m2022-03-17 | [[@Joseph Yeh]]      | foo                                    |
+| m2022-03-09 | [[@Amy Kruse]]       | Amy Kruse - VC advisor advice          |
 | m2022-02-14 | [[@Aniket Kumar]]    | Aniket                                 |
 | m2021-11-07 | [[@Dan Fine]]        | FINE - Truths                          |
 | m2021-11-04 | [[m2022]]            | NEATO CTO feedback                     |
