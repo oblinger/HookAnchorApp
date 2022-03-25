@@ -1,4 +1,4 @@
- [[Recruiter]]  [Director](https://www.linkedin.com/in/emilywallach/) [[@SPMB Executive Search]] 
+ [[RECRUITER]]  [Director](https://www.linkedin.com/in/emilywallach/) [[@SPMB Executive Search]] 
 
 Director, Investment Practice at SPMB Executive Search
 e: [ewallach@spmb.com](mailto:ewallach@spmb.com)

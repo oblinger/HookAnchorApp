@@ -2,7 +2,7 @@ ALL TOPIC ROOTS
 
   [MISC](__MISC__),   [Spirit](__Spirit__),   [Karaoke](__Karaoke__),   [tickets](__tickets__),   
   [meditation](__meditation__),   [Rental](__Rental__),   [Hotels](__Hotels__),   [Shop](__Shop__),   
-  [Hackers](__Hackers__),   [Tags](__Tags__),   [Search](__Search__),   [politics](__politics__),   [race](__race__),   
+  [Hackers](__Hackers__),   [Search](__Search__),   [politics](__politics__),   [race](__race__),   
   [Blockchain](__Blockchain__),   [SF](__SF__),   [courses](__courses__),   [Nomad](__Nomad__),   [Gifts](__Gifts__),   
   [Trip](__Trip__),   [House](__House__),   [Biking](__Biking__),   [Glossary](__Glossary__),   [Gym](__Gym__),   
   [Games](__Games__),   [napa](__napa__),   [hiking](__hiking__),   [PP](__PP__),   [Test88](__Test88__),   

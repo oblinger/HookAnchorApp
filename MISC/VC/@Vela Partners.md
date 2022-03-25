@@ -1,4 +1,4 @@
-[[VC Org]]  [Vela Partners](https://www.crunchbase.com/organization/vela-partners)   CB: 4315 
+[[VC CORP]]  [Vela Partners](https://www.crunchbase.com/organization/vela-partners)   CB: 4315 
  ML driven investments; best tech startups
 ~ They USE AI to identify companies
 

@@ -1,4 +1,8 @@
-  [ToResearch](__ToResearch__.md)
+---
+alias: __RIL__
+---
+
+[ToResearch](__ToResearch__.md)
   
 ## = REPEAT =
                         _Read_Regularly_  _RIL_
@@ -101,6 +105,21 @@ http://www.nytimes.com/2003/11/11/science/11ESSA.html
 - Prayer experiment
 
 _
+# # UNSORTED # 
+## = tags
+
+
+KIDS MAKE YOU HAPPIER?
+http://nymag.com/news/features/67024/index1.html
+http://www.cnn.com/2012/07/30/opinion/etzioni-children
+http://parenting.blogs.nytimes.com/2012/05/17/having-children-makes-you-relatively-happier/
+
+
+
+# Tags for Log of Reference material
+
+
+
 # # OLD PROFESSIONAL #
 ## === JOB NEXT ===
 ## === PROFESSIONAL ===

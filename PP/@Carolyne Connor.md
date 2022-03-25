@@ -1,4 +1,4 @@
-[[Recruiter]]
+[[RECRUITER]]
 
 # MEETINGS
 ### m2021-07-29 - "New Programming Language" CTO

@@ -1,4 +1,4 @@
- [[Coach]]  [Exec Coach](https://www.linkedin.com/in/deepsahni/)  [[@Global Now]] 
+ [[COACH]]  [Exec Coach](https://www.linkedin.com/in/deepsahni/)  [[@Global Now]] 
  
  
  Career Coach.

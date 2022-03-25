@@ -1,4 +1,6 @@
-[[PP]] 
+ [[FAANG]]    [Principal Scientist](https://www.linkedin.com/in/nina-mishra-90057a48/)  [[@Amazon]]  
+
+ 
 
 
 

@@ -77,77 +77,79 @@
 
 
 ## === [[__Obsidian__|Obsidian]]
-| CH   | COMMAND / [SHIFTED] | CTRL-ALT  / [SHIFTED]     |
-| ---- | ------------------- | ------------------------- |
-| A    |                     |                           |
-| B    | BOLD                |                           |
-| C    |                     | COLAPSE all / UNCOLLAPSE  |
-| D    | DELETE paragraph    | / DELETE file             |
-| E    |                     |                           |
-| F    | FILE search / ALL   | FILE in explorer / finder |
-| H    |                     |                           |
-| I    | tgl ITALIC          |                           |
-| J    |                     | / insert JOURNAL header   |
-| K    | insert LINK         |                           |
-| L    |                     | /                         |
-| M    |                     | MISC note                 |
-| N    | NEW note / New PANE | /                         |
-| O    | OPEN switcher       | OPEN in default app       |
-| P    | cmd PALETTE         | PLAN note /               |
-| Q    |                     |                           |
-| R    | search REPLACE      | SCRATCH note /            |
-| S    | SAVE file           |                           |
-| T    | / undo CLOSE        | new TEMPLATE/insert only  |
-| U    |                     |                           |
-| V    |                     |                           |
-| W    | CLOSE pane          | Load WORKSPACE            |
-| X    |                     |                           |
-| Y    |                     |                           |
-| Z    |                     | ZOOM mode                 |
-| -    |                     | tgl LEFT pane             |
-| +    |                     | tgl RIGHT pane            |
-| {    |                     | nav BACK                  |
-| }    |                     | nav FORWARD               |
-| \    |                     |                           |
-| ;    |                     | DARK mode                 |
-| '    |                     | LIGHT mode                |
-| ,    | SETTINGS            |                           |
-| .    |                     |                           |
-| /    | tgl COMMENT         |                           |
-| ~    |                     |                           |
-| LT   |                     |                           |
-| RT   |                     |                           |
-| UP   |                     |                           |
-| DN   |                     |                           |
-| ENTR | tgl CHECKBOX        | show LINK in pane         |
-| INS  |                     |                           |
-| DEL  |                     |                           |
-| HOME |                     |                           |
-| END  |                     |                           |
-| PgUp |                     |                           |
-| PgDn |                     |                           |
-| 1    | xxxx                | MERGE one window          |
-| 2    |                     | SPLIT vertically into 2   |
-| 3    |                     | SPLIT horizontally        |
-| 4    |                     |                           |
-| 5    |                     |                           |
-| 6    |                     |                           |
-| 7    |                     |                           |
-| 8    |                     |                           |
-| 9    |                     |                           |
-| 0    |                     |                           |
-| F1   |                     |                           |
-| F2   |                     |                           |
-| F3   |                     |                           |
-| F4   |                     |                           |
-| F5   |                     | PREV daily note           |
-| F6   |                     | TODAY'S daily note        |
-| F7   |                     | NEXT daily note           |
-| F8   |                     |                           |
-| F9   |                     |                           |
-| F10  |                     |                           |
-| F11  |                     |                           |
-| F12  |                     |                           |
+| CH   | COMMAND / [SHIFTED] | OPTION [SHIFTED] | CTRL-ALT  / [SHIFTED]       |
+| ---- | ------------------- | ---------------- | --------------------------- |
+|      | Standard Editing    |                  | Global Go/Create            |
+| A    |                     |                  |                             |
+| B    | toggle BOLD         |                  |                             |
+| C    | COPY to clip        |                  | COLAPSE all / UNCOLLAPSE    |
+| D    | DELETE paragraph    |                  | / DELETE file               |
+| E    |                     |                  |                             |
+| F    | FILE search / ALL   |                  | FILE in explorer / finder   |
+| G    | GRAPH view          |                  |                             |
+| H    |                     |                  |                             |
+| I    | tgl ITALIC          |                  |                             |
+| J    |                     |                  | / insert JOURNAL header     |
+| K    | insert LINK         |                  |                             |
+| L    |                     |                  | / LINKS pane                |
+| M    |                     |                  | MISC note                   |
+| N    | NEW note / New PANE |                  | /                           |
+| O    | OPEN switcher       |                  | OPEN in default app         |
+| P    | cmd PALETTE         |                  | PLAN note /                 |
+| Q    |                     |                  |                             |
+| R    | search REPLACE      |                  | RECENT notes pane           |
+| S    | SAVE file           |                  | SCRATCH note / STARRED pane |
+| T    | / undo CLOSE        |                  | new TEMPLATE/insert only    |
+| U    |                     |                  |                             |
+| V    | PASTE from clip     |                  |                             |
+| W    | CLOSE pane          |                  | Load WORKSPACE              |
+| X    | CUT to clip         |                  |                             |
+| Y    |                     |                  |                             |
+| Z    | UNDO / REDO         |                  | ZOOM mode                   |
+| -    |                     |                  | tgl LEFT pane               |
+| +    |                     |                  | tgl RIGHT pane              |
+| {    |                     | nav BACK         | nav BACK                    |
+| }    |                     | nav FORWARD      | nav FORWARD                 |
+| \    |                     |                  |                             |
+| ;    |                     |                  | DARK mode                   |
+| '    |                     |                  | LIGHT mode                  |
+| ,    | SETTINGS            |                  |                             |
+| .    |                     |                  |                             |
+| /    | tgl COMMENT         |                  |                             |
+| ~    |                     |                  |                             |
+| LT   |                     |                  |                             |
+| RT   |                     |                  |                             |
+| UP   | mv line UP          |                  |                             |
+| DN   | mv line DOWN        |                  |                             |
+| ENTR | tgl CHECKBOX        | follow LINK      | show LINK in pane           |
+| INS  |                     |                  |                             |
+| DEL  |                     |                  |                             |
+| HOME |                     |                  |                             |
+| END  |                     |                  |                             |
+| PgUp |                     |                  |                             |
+| PgDn |                     |                  |                             |
+| 1    | xxxx                |                  | MERGE one window            |
+| 2    |                     |                  | SPLIT vertically into 2     |
+| 3    |                     |                  | SPLIT horizontally          |
+| 4    |                     |                  |                             |
+| 5    |                     |                  |                             |
+| 6    |                     |                  |                             |
+| 7    |                     |                  |                             |
+| 8    |                     |                  |                             |
+| 9    |                     |                  |                             |
+| 0    |                     |                  |                             |
+| F1   |                     |                  |                             |
+| F2   |                     |                  |                             |
+| F3   |                     |                  |                             |
+| F4   |                     |                  |                             |
+| F5   |                     |                  | PREV daily note             |
+| F6   |                     |                  | TODAY'S daily note          |
+| F7   |                     |                  | NEXT daily note             |
+| F8   |                     |                  |                             |
+| F9   |                     |                  |                             |
+| F10  |                     |                  |                             |
+| F11  |                     |                  |                             |
+| F12  |                     |                  |                             |
 
 CMD OPT
 F REPLACE
@@ -182,6 +184,12 @@ SHIFT HYPER
 | DN  
 
 
+
+CAPS = All Apps
+CMD = Standard Page Edit
+ =  Page Nav
+ =  Obsidian Global
+ =  Insert
 
 
 ## === MY STUFF (OUT OF DATE) ===

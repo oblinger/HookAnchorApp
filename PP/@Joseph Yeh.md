@@ -1,7 +1,8 @@
- [[Coach]], [[Recruiter]]  [Career Coach](https://www.linkedin.com/in/josephsyeh/) [[@DotConnect]]   
- 
+ [[COACH]], [[RECRUITER]]  [Career Coach](https://www.linkedin.com/in/josephsyeh/) [[@DotConnect]]  
+
  Career Coach -- Specializing in DeepLearning, Vision
-- Introduced me to [[@Deep Sahini]]
+  - [Hours](https://docs.google.com/spreadsheets/d/1MkWide1VMd0Jez3Z_Z2WIJfZdHKP7Gg2KmS0yodrZWY/edit#gid=0) -- 
+  - Introduced me to [[@Deep Sahini]]
 
 
 

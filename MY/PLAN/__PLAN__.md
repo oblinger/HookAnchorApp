@@ -1,6 +1,4 @@
-  [Todo](__Todo__.md)  [Watching](__Watching__.md)  [Links](__Links__.md)  [Scratch](Scratch/__Scratch__.md)  [Ping](__Ping__.md)
-  [Repeat](__Repeat__.md)  [Habits](__Habits__.md)  [Fried](__Fried__.md)  [Calls](__Calls__.md)  [Later](__Later__.md)  [Q2](__Q2__.md)
-
+  [Todo](__Todo__.md)  [Repeat](__Repeat__.md)  [Calls](__Calls__.md)  [Later](__Later__.md)  [Watching](__Watching__.md)  [Habits](__Habits__.md)  [Links](__Links__.md)  [Scratch](Scratch/__Scratch__.md)  [Q2](__Q2__.md)  [Hack](__Hack__.md)  [Ping](__Ping__.md)  [Fried](__Fried__.md)
 
 ### 2022-03-21  
 - [ ] Get response to Amy Kruse   [[__Crunchbase__|CB]] 
@@ -27,10 +25,16 @@
 - [ ] Reach out to [[@Alia Alaoui]]
 	Inbound on linked in... should write to her
 
+## = [[__BeFAANG__|BeFAANG]] =
+- [ ] Speak with as many FAANG research light as I can 
+
 ## = [[__Learning__|Learning]] =
 - [ ] Complete Coursera Deep Learning Course
 
 
 ## = [[__Framing__|Framing]] =
 - is my resume good?  how to know?
+
+  [Todo](__Todo__.md)  [Watching](__Watching__.md)  [Links](__Links__.md)  [Scratch](Scratch/__Scratch__.md)  [Ping](__Ping__.md)
+  [Repeat](__Repeat__.md)  [Habits](__Habits__.md)  [Fried](__Fried__.md)  [Calls](__Calls__.md)  [Later](__Later__.md)  [Q2](__Q2__.md)
 

@@ -1,4 +1,4 @@
-[[VC Org]]  [Fin](https://www.crunchbase.com/organization/fin-venture-capital)   CB: 1634 55/1 p11+
+[[VC CORP]]  [Fin](https://www.crunchbase.com/organization/fin-venture-capital)   CB: 1634 55/1 p11+
  ML driven investments in Fin
 
   We are FinTech nerds with capital, based in SF/NYC/LA/London and focus on FinTech SaaS. We manage over $1B in AUM and deploy full stack out of 4 strategies: Regatta (pre-seed, checks of $100K-$1M), Flagship (Early Stage - Seed->B, checks of $1-10M), Horizons (Growth - C+, checks of $25-50M+, primary/secondary), and Constellation (Publics – SPAC sponsor). We bring a scalable operating value playbook focused on global BD, corporate dev, capital formation, product/GTM, key talent sourcing, and board leadership – leveraging our proprietary AI/ML platform, Lighthouse, which our Founders access.

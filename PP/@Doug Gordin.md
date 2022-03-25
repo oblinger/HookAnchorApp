@@ -1,4 +1,6 @@
-[[PP]]  
+[[FAANG]]    [Software Engineer](https://www.linkedin.com/in/douglas-gordin-69848/)  [[@Google]]
+
+
 
 
 ### m2021-07-04 - Doug conversation

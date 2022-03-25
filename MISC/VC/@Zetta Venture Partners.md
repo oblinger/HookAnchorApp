@@ -1,4 +1,4 @@
-[[VC Org]]   [Zetta Venture Partners](https://www.crunchbase.com/organization/zetta-venture-partners)  CB: 4793 70/6 p1+   [Web](https://www.zettavp.com)    
+[[VC CORP]]   [Zetta Venture Partners](https://www.crunchbase.com/organization/zetta-venture-partners)  CB: 4793 70/6 p1+   [Web](https://www.zettavp.com)    
     Zetta Venture Partners is the first fund focused on intelligent software.
     ~ Intelligent software
     Early & Seed.

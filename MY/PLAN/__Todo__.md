@@ -1,14 +1,14 @@
 
-- [ ] intro hatton
-- [ ] fix microwave [[__Phone__#2022-03-21 replace new GE microwave|ph]]
-- [ ] mom's visit
 - [ ] Buy flight tickets
-- [ ] call sahil
+- [ ] get codility stuff out
 
-  
+
+
+
+
 
 - [ ] Reddick Linked-in updates
-- [ ] designing life - VC story
+- [ ] - [ ] designing life - VC story
 
 
 
@@ -17,6 +17,7 @@
 
 
 - [x] Talk with Phil about Ross Hatton
+- [x] intro hatton
 
 - [x] Get meeting with Brian.
 
