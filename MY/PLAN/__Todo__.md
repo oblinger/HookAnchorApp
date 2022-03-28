@@ -1,6 +1,14 @@
 
-- [ ] Buy flight tickets
+- [ ] Figure Trip - Buy flight tickets
 - [ ] get codility stuff out
+
+
+
+
+
+
+
+
 
 
 

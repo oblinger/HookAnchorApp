@@ -1411,3 +1411,32 @@ And it seems having a window of dominance could help us understand if there is a
 So ironically enough the AI researcher who believe is dooms day is still arguing to do the AI research, since the worst outcomes are like to result from learning the key parts of the bootstrapping algorithms long after Moore’s law has put enough nuclear material into the average smart phone to do us in.
 
 Sound a little self serving huh?  But the logic seems unassailable…
+
+# # MEETINGS
+### 2022-03-25  - guy writing book on evil and ai control
+
+I likely will not write my opus... had a young kid at an older age... but mine rhymes with yours.
+
+I was and AI researcher, now turned startup guy. I am out of step with my former peers, in feeling that (1) we are closer to general AI than we think, and (2) we won't be able to control it.
+
+Indeed I am doubtful about the enterprise of trying to control sentience at all. It "has a will of its own" as they say. Imagine you are the emperor of Rome at its peak, but imagine it was an empire that spanned all humans. And imagine that God told you the best actions to take in order to achieve eternal world peace without resorting to creation of a brutal authoritative regime that removed all human agency. Could you do it? No you could not. Cultures would evolve, human agency would spawn new contexts, which spawn new modes of thinking. Thousands of generations later, your actions will have had effect on the course of history, but it cannot put human agency out of business.
+
+In the same way, even if we are infinitely smart in the creation of our AI... if it has agency, and if designs its own future thinking, it is like the thousands of generations above, but only more so, since the kinds of changes that an AI can imagine are more profound than those culture can bring.
+
+1 + 1 cannot equal 3.
+
+and a sentience that is evolving its sentience cannot be contained.
+
+I suspect we will one day learn both of these to be axioms derived from the same mathematical substrate.
+
+~~
+
+so what does this have to do with Evil? Well even if we cannot contain such a sentience, does not mean it wont be contained. it is possible that it is contained by that nature of sentience itself. Perhaps all self refective things tend to evolve a morality, and then operate against this morality. This cannot be an absolute, since we have counter examples in our midst. Still it could be a tendency... a chaotic attractor to which an evolving sentience is drawn.
+
+or that could be my wishful thinking.
+
+ok... I would say that is quite enough for a reply to a post :-)
+
+--dan
+
+p. s. I am not clear that a benevolent sentience would not simulate pain, plagues etc. worlds free of pain generally appear quite dystopian to me.

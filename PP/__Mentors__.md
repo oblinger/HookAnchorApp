@@ -1,15 +1,26 @@
-
+ [[FAANG]]
 ## MENTORS
-CORE		  [[@Tessa Lau]],  [[@Ben Wild]],  [[@Jack Porter]],  [[@Dennis DeCoste]],
-			 [[@Mark Drummond]],  [[@Christina Fonseca]],  [[@Michael Freed]],
-STARTUPS	  [[@Daniel Haddick]],  [[@Gaurav Rekhi]],  [Wiktor Schmidt](https://www.linkedin.com/in/wiktorschmidt/),  [Szymon Stoma](https://www.linkedin.com/in/sstoma/),  
-			 [[@Jason Syversen]],  [Ric Szopa](https://www.linkedin.com/in/szopa/),  
-			 [Mark Urdahl](https://www.linkedin.com/in/mark-urdahl-42018/),  [Ruwan Welaratna](https://www.linkedin.com/in/ruwanwelaratna/),  [Jean Yang](https://www.linkedin.com/in/jean-yang-96575030/),  [Peter Berger](https://www.linkedin.com/in/peter-berger-5536b92/),  
-			 [Sam Corbitt](https://www.linkedin.com/in/samcorbitt/),  
-START HEAVY	 [Eyal Amir](https://www.linkedin.com/in/eyalamir1/),  [Peter Ashley](https://www.linkedin.com/in/peterashley/),  [Dileep George](https://www.linkedin.com/in/dileep-george?miniProfileUrn=urn%3Ali%3Afs_miniProfile%3AACoAAAAzIv8BwpTvXVaGH66SjJnK9LARUIFYcEM&lipi=urn%3Ali%3Apage%3Ad_flagship3_search_srp_people%3BBYBweJ%2BzSRSV8FeL5Rs6xw%3D%3D),
-STARTUP 2	  [Joe Augenbraun](https://www.linkedin.com/in/jaugenbraun/),  
-COACH		  [David Whittemore](https://www.linkedin.com/in/davewhittemore/),  [Jim Tye](https://www.linkedin.com/in/jim-tye-2ba0514/),  
-FAANG             
+
+ VC        | 
+ --------- | ----------------
+ Solid     | [[@Christina Fonseca]],  [[@Amy Kruse]],  
+
+
+ STARTUP   | 
+ --------- | -------------------
+ Core      | [[@Tessa Lau]],  [[@Ben Wild]],  [[@Jason Syversen]], 
+ Solid     | [[@Daniel Haddick]],  [[@Gaurav Rekhi]],  [[@Jack Porter]],  [[@Mark Drummond]]
+ Good      | [Wiktor Schmidt](https://www.linkedin.com/in/wiktorschmidt/),  [Szymon Stoma](https://www.linkedin.com/in/sstoma/),  
+ x         | [Ric Szopa](https://www.linkedin.com/in/szopa/), [Mark Urdahl](https://www.linkedin.com/in/mark-urdahl-42018/),  [Ruwan Welaratna](https://www.linkedin.com/in/ruwanwelaratna/),  [Jean Yang](https://www.linkedin.com/in/jean-yang-96575030/),  [Peter Berger](https://www.linkedin.com/in/peter-berger-5536b92/), [Sam Corbitt](https://www.linkedin.com/in/samcorbitt/),    [Joe Augenbraun](https://www.linkedin.com/in/jaugenbraun/),  
+ HEAVY     | [Eyal Amir](https://www.linkedin.com/in/eyalamir1/),  [Peter Ashley](https://www.linkedin.com/in/peterashley/),  [Dileep George](https://www.linkedin.com/in/dileep-george?miniProfileUrn=urn%3Ali%3Afs_miniProfile%3AACoAAAAzIv8BwpTvXVaGH66SjJnK9LARUIFYcEM&lipi=urn%3Ali%3Apage%3Ad_flagship3_search_srp_people%3BBYBweJ%2BzSRSV8FeL5Rs6xw%3D%3D),
+ COACH     |	  [David Whittemore](https://www.linkedin.com/in/davewhittemore/),  [Jim Tye](https://www.linkedin.com/in/jim-tye-2ba0514/),  
+
+
+
+
+
+### AI & OTHERS
+
 AI			  [Steve Chien](https://www.linkedin.com/in/chien/),  [Michael Witbrock](https://www.linkedin.com/in/witbrock/),  [David Israel](https://www.linkedin.com/in/david-israel-264134/),  [Tom Mitchell](https://www.linkedin.com/in/tom-mitchell-98a91b3/),
 			 [Praveen Paritosh](https://www.linkedin.com/in/pkparitosh/),
 			 [Dean Allemang](https://www.linkedin.com/in/dean-allemang-96218/),  > [Barney Pell](https://www.linkedin.com/in/barneypell/),  [Foster Provost](https://www.linkedin.com/in/foster-provost/),  [Rich Caruana](https://www.linkedin.com/in/rich-caruana-a4235a91/),  
@@ -34,16 +45,9 @@ FRIEND		  [Theodore Enns](https://www.linkedin.com/in/theodore-enns-1329633a/), 
 PING		  [Anand Raghunathan](https://www.linkedin.com/in/araghunathan/),  
 ???			  [Chris Langdon](https://www.linkedin.com/in/chris-s-langdon/),
 			 [Peter Berger](https://www.linkedin.com/in/peter-berger-5536b92/),  [Derrick Boudwin](https://www.linkedin.com/in/dboudwin/),  
-
 OTHERS:	 [Tarik Zarkaria Benmerar](https://www.linkedin.com/in/tarikbenmerar/) 
+FRIENDS:        Phil Herget,  Yannick, Dan Shapiro
 
-### MENTORS / FRIENDS
-CORE MENTORS: 	Nick Allen,  Luis,  Tessa Lau,  Michael Freed
-OTHER MENTORS:	Jason Syversen,  
-
-FRIENDS: Phil Herget,  Yannick,
-		 Dan Shapiro
-_
 
 
 

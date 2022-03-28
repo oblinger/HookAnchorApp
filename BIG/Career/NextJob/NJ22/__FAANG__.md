@@ -1,4 +1,0 @@
-Info about FAANGS...
-
-
-### [[Amazon]]

@@ -1,6 +1,22 @@
 
 [[__Obsidian__]]     [[__Fin__]]    [[__ToBuy__]]    [[__ToRead__]]  [[__Hack__]]  
 
+## = QUICKIES = 
+- [ ] OBS - have side panels remember state
+- [ ] KMT - scan whole note not just prefix
+- [ ] One button night noise / Biurnal beats / Use shortcut  (add apps to home screen)
+- [ ] Org these lists & obsidian
+- [ ] Reset door codes. (info in myfo->mystuff)
+- [ ] Take notes on using the call recorder [[Record]]
+- [ ] Use WhatSize to clean disk
+- [ ] Estimate Water Usage
+- [ ] get list of hikes figured out
+- [ ] Figure out: reset mac for headset bluetooth connect
+- [ ]  [Udemy - Tara - Sleep](https://www.udemy.com/heal-anxiety-sleep-easily-tara-brach/learn/lecture/14770060#overview) 
+- [ ] Verify which emails and drafts are being saved/missing?  which accounts?  hard core backup of all emails . (all funnel in, then all get recorded?) 
+- [ ] email drafts:  loosing them; many copies
+- [ ] ?? Have you seen Calendly?
+
 ## = REPEAT = 
 - [ ] CLEAN: 	In2 * House * Basement * Scratch * ToRead
 - [ ] WEEKLY: 	FILE THIS * TO_BUY * TIDY * EMAIL JOY *
@@ -26,20 +42,6 @@
 - [ ] Glucose monitor (buy it)
 - [ ] Jared:  Facial counter strain, glocose Libre (Zoe projec
 - [ ] Wider laptop desk
-
-## = QUICKIES = 
-- [ ] One button night noise / Biurnal beats / Use shortcut  (add apps to home screen)
-- [ ] Org these lists & obsidian
-- [ ] Reset door codes. (info in myfo->mystuff)
-- [ ] Take notes on using the call recorder [[Record]]
-- [ ] Use WhatSize to clean disk
-- [ ] Estimate Water Usage
-- [ ] get list of hikes figured out
-- [ ] Figure out: reset mac for headset bluetooth connect
-- [ ]  [Udemy - Tara - Sleep](https://www.udemy.com/heal-anxiety-sleep-easily-tara-brach/learn/lecture/14770060#overview) 
-- [ ] Verify which emails and drafts are being saved/missing?  which accounts?  hard core backup of all emails . (all funnel in, then all get recorded?) 
-- [ ] email drafts:  loosing them; many copies
-- [ ] ?? Have you seen Calendly?
 
 ## = OTHERS =
 - [ ] [[__Photos__]] 

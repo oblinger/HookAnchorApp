@@ -24,3 +24,9 @@ Questions
 
 
 
+
+## = REF
+- [How much does a VC partner earn?](https://www.quora.com/How-much-does-a-VC-partner-earn)  
+- 
+ 
+ 
