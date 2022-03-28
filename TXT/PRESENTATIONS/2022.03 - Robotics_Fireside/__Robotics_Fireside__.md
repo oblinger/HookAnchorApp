@@ -1,5 +1,4 @@
 
-octomore 11.1 (peat scale)
 
 ____
 Brown CS graphics -
