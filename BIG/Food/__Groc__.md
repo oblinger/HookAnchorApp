@@ -1,6 +1,197 @@
-# ### SHOP ###
+# # Shopping ALL  (Master Here) # 
 
-## Foods & Recipes To Eat
+Fresh VEG	Radish  Celery  Carrots  Cabbage  Cauliflower  Asparagus  Cucumber  Spinach 
+Fresh VEG	Avacado  Beets  Yam
+Fresh FRUIT	Bananna  Fuji  Oranges  Strawberries
+Fresh MEAT	GroundBeef  Chicken
+Fresh FRZ	STEM_FRESH  Edamame  Brussels  Carrots   MIX Corn/Carrot/Asp  Salmon  ItalSausage
+Fresh DRY	Cranberries  Soup  Popcorn
+Fresh MISC	Milk  Sabra  Eggs  ChickBroth
+~-~-~
+Fresh VEG2	BellPepper  GrapeTomatos  Onions  Mushrooms
+Fresh DRY2	Barbanzo  PeanutButter  TomatoSauce  Barley
+Fresh FRZ2	Burger  Broccoli  Pepper&Onion  Okra  BlackBeans
+Fresh MISC2	Butter  CrushedGarlic  Parmesan
+Fresh RARE	Ham  Salami  Mustard  LemonJuice  Lenti/Rice_Pouch  Salsa
+~-~-~
+Weee  VEG	Wosun  PeaSprouts  Daicon  Lotus  Mushroom  PurpleYam  EggPlant  CrownDaisy  BocChoi  Napa
+Weee  BREAD	Pancake(Chive)  RiceCake
+Weee  FRUIT	Papaya  Pairs
+Weee  MEAT	Fish  SpareRibs  GroundPork  Shrimp  SushiFish
+Weee  DONE	ShrededChicken  MeatPankake  SesameBall  DanTat  StickyRice
+Weee  FRZ	
+Weee  DRY	
+Weee  MISC	Tufu  SesameOil  FermentedRiceWine
+Weee  RARE	Rice  DumplinSkin  SoySauce  GreenOnions  JapanPumpkin
+~-~-~
+Whole MISC	Chicken  Pork?  Bread
+Whole DRY	Barley&Lentils  SOUP  Sabra  Oatmeal  Quinoa  JellyBean  
+Whole FRZ 	Peas  Corn  Okra?  
+Prime DRY	Coffee  Tea
+Prime RARE	Sardines  
+Prime OTHER SimpleHuman(Q&R)  UNNI_D6400  SOAP  SPONGE  Cleaner(Glass,Surface,Scrub)  WaterFilter Napkin
+Prime OTHER ToothPaste  Razor  Cremo  BodyWash
+Prime OTHER Benefiber  NaturesPlus/Omega3/Calsium  Asparin
+~-~-~
+Costco FRUIT	Fuji  
+Costco VEG	Celery  GreenBeans   Peppers  Kale  Zuchini
+Costco MEAT	Beef  Chick   
+Costco FROZ	Salmon, fruit/berries
+Costco DRY	Seaweed  Almonds
+~-~~-~
+Walmrt DRY	Nescafe/Truvia, 
+
+BellPeppers, Kale, 
+
+
+CATEGORY	StirFry  Soup  Salad  Pasta
+DAILY		StirFryVeg  
+BAKE		Veg  
+Stir  VEG	
+Chick
+Beef		Steak  Meatloaf  |  Hamburger
+Pork
+Fish		
+Soup
+Pasta		GarlicShrimp  Prego  ItalSausage  
+Salad		Coleslaw  Chicken  |  Nicoise  
+Batch 		
+Other 		Egg
+HotPot		GlassNoodles.  X
+CASEROLE	TunaCaserole  
+TRY			CrocBeefStew
+
+
+dimSum
+123456789 123456789 123456789 123456789 123456789 123456789 123456789 123456789 123456789 123456789 
+~-~-~
+
+
+Dan No:  Bok Choi, Crown Daisy, Sweet Potato Leaves, Yo-Mai-Tscai, EggPlant, Shen Tasi, 
+Eh: Spinach, Napa , Zuchini 
+
+_
+# # SHOPPING LISTS # 
+## Shopping Weee
+
+VEG PeaSprouts  YellowChive  ChineseCelery 	
+	Celery  Asparagus  Lettuce  Potato 
+-- Lotus Root  Mushrooms (Many) 
+Meat: Ribs
+Ready:
+_
+## Shopping Ranch99
+master in GROC
+[Veg] Squash, Bamboo, Daikon, LotusRoot, 
+[VegLeaf] PeaSprouts, ChineseBrok
+[HotP] Seasoning
+## Shopping Costco 
+master in GROC
+FREQ	 Paper(toilet&towels) VegBroth
+MEAT   - SpareRibs, Cthigh, PorkChop 
+FRUIT  - WaterMellon, Fuji, Orange  | Berry, Strawberry, Bananna, Grape,  
+VEG    - Celery, G-beans |  Zuchini,  
+         some  Mushroom, B-Sprout, Beet, Carrot, Onion, Turnip, 		 
+DRIED  - GoneCracker, NUTS(Pistacio,Almonds,Cashews), Seaweed, 
+
+CAN    - Chicken, PastaSauce, Barley/LentilBags, TomatoSauce, DicedTomatos, TomatoPaste
+OTHER  - ToiletP, Ptowels, Shampoo++
+FROZEN - Shrimp, Salmon
+
+
+---- Instacart Price Bump ----
+Fuji . 8.99 . 10.99 .     22%
+Squash .   6.49 . 7.99 . 23%
+Banana  1.49 . 1.89 .  26%
+G.bean . 6.49 7.99 . 23%
+Scotch 35.99  42.59 . 18%
+## Shopping Amazon (Fresh)
+## Shopping Amazon (Whole Food)
+FRESH  - Barley&Lentils
+### DanO Weekly (SEE BOOKMARKS IN OPERA)
+- Radish, Celery
+- Hummus
+- Fuji, Berries
+- Sushi
+
+#### _
+ 
+ [Radish](https://primenow.amazon.com/dp/B0050PRLE8?qid=1612471905&m=A2OX6AK59XDRL3&sr=1-4&ref_=pn_sr_sg_4_img_A2OX6AK59XDRL3)    	PN Organic Mixed Variety Radishes, 1 Bunch
+ [Celery](https://primenow.amazon.com/dp/B004V9AY48?qid=1612472228&m=A1UURZ0SEW4JD3&sr=1-4&ref_=pn_sr_sg_4_img_A1UURZ0SEW4JD3) 		PN Organic Celery Hearts, 16 Ounce
+ [Hummus](https://primenow.amazon.com/dp/B001HK23B6?qid=1612472026&m=A2OX6AK59XDRL3&sr=1-13&ref_=pn_sr_sg_13_img_A2OX6AK59XDRL3)	  PN Sabra Supremely Spicy Hummus 10 Oz
+ [Fuji](https://primenow.amazon.com/dp/B07Q2PYR5Q?qid=1612472434&m=A1UURZ0SEW4JD3&sr=1-3&ref_=pn_sr_sg_3_img_A1UURZ0SEW4JD3)		PN Apple Fuji Bag Organic, 48 Ounce
+ [Orange](https://primenow.amazon.com/dp/B00HT7U55W?qid=1612472737&m=A2OX6AK59XDRL3&sr=1-4&ref_=pn_sr_sg_4_img_A2OX6AK59XDRL3)		PN Wonderful Halos Mandarins, 3lb Bag
+ [BlackBerry](https://primenow.amazon.com/dp/B00E3JM7UU?qid=1612472618&m=A2OX6AK59XDRL3&sr=1-6&ref_=pn_sr_sg_6_img_A2OX6AK59XDRL3)	PN Blackberries Organic, 6 Ounce
+ [RasBerry](https://primenow.amazon.com/dp/B0031Q80UM/ref=pd_sim_541_10?_encoding=UTF8&m=A2OX6AK59XDRL3&pd_rd_i=B0031Q80UM&pd_rd_r=2a3fe7c0-2c39-4449-a072-de4ff2d090b9&pd_rd_w=t0een&pd_rd_wg=LGJT2&pf_rd_p=6cc3626d-4f2d-4100-ba3f-9fe6f004755a&pf_rd_r=Y9K7G9AV6NDBXDM7G6WN&psc=1&refRID=Y9K7G9AV6NDBXDM7G6WN)	 PN Berry Raspberry Red Organic, 6 Ounce
+ [Sushi](https://primenow.amazon.com/dp/B07NRFFD81?qid=1612472843&m=A1UURZ0SEW4JD3&sr=1-6&ref_=pn_sr_sg_6_img_A1UURZ0SEW4JD3) 		PN Genji Sushi, Tuna & Salmon Nigiri/roll Combo, 8.32 Ounce
+
+egg bite
+ _
+## Shopping Amazon (Non-fresh non-whole)
+VEG    	- Spinach (bag), Kale, Radish, Cabbage, Cauliflower, 
+VEG		- Asaragus, 
+FROZEN 	- SteamFresh, Shrimp, Salmon
+F VEG  	- Edamae, R-CFlower, Corn, Peas, Asparagus
+
+to add: Soups, Chili, 
+
+### ROAST VEG -- 
+Foil, Water/Oil, Rinsed-Chopped-Veg, Meats, Spices
+
+SPICES: Parmesan, Garlic, Salt, Lemon Pepper, Smoked Paprika
+VEG1:	Cflower, Carrots, 
+VEG2: 	Asparagus, Potatos, Broccoli, Beets, Parsnips, Leeks, Turnip
+MEATS:	Thigh, Pork
+
+### CANNED
+CANNED:	Corn, 
+
+
+
+### OTHERS
+
+
+### Croc 
+-- Croc-chicken
+— Croc-beef
+— Croc-veg
+— Croc-chili
+## Shopping Safeway
+_
+## Shopping Misc Online
+### --- DRY GOODS ---
+#### Jerky
+https://www.bulkbeefjerky.com/collections/shop/Style:Brisket
+https://www.webstaurantstore.com/54881/jerky.html?order=price_asc
+
+
+
+
+
+_
+## Shopping Specialty
+
+### Shop Speciality Dry
+#### Teas
+Twinings: Lemon Ginger
+## Low Sodium
+### Types
+DRY - Soups, Corn, Sardine
+### Articles
+https://www.mensjournal.com/food-drink/easy-healthy-meals-7-best-canned-soups/6-tabatchnicks-low-sodium-split-pea-soup/
+
+_
+# # TOPICS # 
+## = Travel =
+UTIL: Utensils, Napkins, Sunscreen, 
+DRY: Pistachios, Mangos, PB-crackers, 
+FRUIT: Fuji, Orange, Banana, 
+DRINK: Water, Juice
+
+
+MORE: Golgi
+IDEAS: Pasta
+## = Foods & Recipes To Eat =
 ### TRY
 #### recipes to adapt
 https://www.tasteofhome.com/recipes/slow-cooker-lasagna/
@@ -128,13 +319,13 @@ SAVORY:	popcorn
 SWEET:	banana bread, brownie, crembrule, pie
 
 _
-## Strategies / Foods
-### High Satiety Foods
+## = Strategies / Foods =
+### - High Satiety Foods -
 Potatos, Pulses(beans,peas,chickpeas,lentils)
 Fiber(Barley, Oats, Rye, Whole Wheat Bread, Legumes, Vegetables, Fruits)
 LowFatDairy, Eggs, Nuts, Lean meat/fish
 _
-### EVERY DAY STRATEGIES
+### - EVERY DAY STRATEGIES -
 - WATER / FRUIT -- Always on hand; set at beginning of day.
 - GRAIN @ DINNER -- Always have a grain on the table for dinner.
 - VEG -- Low oil & sodium
@@ -145,7 +336,7 @@ M: SweetPotatos  T:
 Hibiscus Tea 
 
 _
-### HEART HEALTY FOODS
+### - HEART HEALTY FOODS -
 GRAINS:	Barley, 
 LEGUME:	Lentil(black), Peas, Chickpeas, Soybeans, 
 		Beans(StringBeans, FavaBeans), 
@@ -155,188 +346,7 @@ VEG:	Kale, SwissChard, Arugula, BeetGreens, Spinach,
 		Bok, SC, Kale, Collards, CollardGreens, BeetGreens, MustardGreens, TurnipGreens, NapaCabage,  
 FRUIT:	Apple, Orange, Berries,  
 SOY:	
-## Shopping ALL  (Master Here)
-
-Fresh VEG	Radish  Celery  Carrots  Cabbage  Cauliflower  Asparagus  Cucumber  Spinach 
-Fresh VEG	Avacado  Beets  Yam
-Fresh FRUIT	Bananna  Fuji  Oranges  Strawberries
-Fresh MEAT	GroundBeef  Chicken
-Fresh FRZ	STEM_FRESH  Edamame  Brussels  Carrots   MIX Corn/Carrot/Asp  Salmon  ItalSausage
-Fresh DRY	Cranberries  Soup  Popcorn
-Fresh MISC	Milk  Sabra  Eggs  ChickBroth
-~-~-~
-Fresh VEG2	BellPepper  GrapeTomatos  Onions  Mushrooms
-Fresh DRY2	Barbanzo  PeanutButter  TomatoSauce  Barley
-Fresh FRZ2	Burger  Broccoli  Pepper&Onion  Okra  BlackBeans
-Fresh MISC2	Butter  CrushedGarlic  Parmesan
-Fresh RARE	Ham  Salami  Mustard  LemonJuice  Lenti/Rice_Pouch  Salsa
-~-~-~
-Weee  VEG	Wosun  PeaSprouts  Daicon  Lotus  Mushroom  PurpleYam  EggPlant  CrownDaisy  BocChoi  Napa
-Weee  BREAD	Pancake(Chive)  RiceCake
-Weee  FRUIT	Papaya  Pairs
-Weee  MEAT	Fish  SpareRibs  GroundPork  Shrimp  SushiFish
-Weee  DONE	ShrededChicken  MeatPankake  SesameBall  DanTat  StickyRice
-Weee  FRZ	
-Weee  DRY	
-Weee  MISC	Tufu  SesameOil  FermentedRiceWine
-Weee  RARE	Rice  DumplinSkin  SoySauce  GreenOnions  JapanPumpkin
-~-~-~
-Whole MISC	Chicken  Pork?  Bread
-Whole DRY	Barley&Lentils  SOUP  Sabra  Oatmeal  Quinoa  JellyBean  
-Whole FRZ 	Peas  Corn  Okra?  
-Prime DRY	Coffee  Tea
-Prime RARE	Sardines  
-Prime OTHER SimpleHuman(Q&R)  UNNI_D6400  SOAP  SPONGE  Cleaner(Glass,Surface,Scrub)  WaterFilter Napkin
-Prime OTHER ToothPaste  Razor  Cremo  BodyWash
-Prime OTHER Benefiber  NaturesPlus/Omega3/Calsium  Asparin
-~-~-~
-Costco FRUIT	Fuji  
-Costco VEG	Celery  GreenBeans   Peppers  Kale  Zuchini
-Costco MEAT	Beef  Chick   
-Costco FROZ	Salmon, fruit/berries
-Costco DRY	Seaweed  Almonds
-~-~~-~
-Walmrt DRY	Nescafe/Truvia, 
-
-BellPeppers, Kale, 
-
-
-CATEGORY	StirFry  Soup  Salad  Pasta
-DAILY		StirFryVeg  
-BAKE		Veg  
-Stir  VEG	
-Chick
-Beef		Steak  Meatloaf  |  Hamburger
-Pork
-Fish		
-Soup
-Pasta		GarlicShrimp  Prego  ItalSausage  
-Salad		Coleslaw  Chicken  |  Nicoise  
-Batch 		
-Other 		Egg
-HotPot		GlassNoodles.  X
-CASEROLE	TunaCaserole  
-TRY			CrocBeefStew
-
-
-dimSum
-123456789 123456789 123456789 123456789 123456789 123456789 123456789 123456789 123456789 123456789 
-~-~-~
-
-
-Dan No:  Bok Choi, Crown Daisy, Sweet Potato Leaves, Yo-Mai-Tscai, EggPlant, Shen Tasi, 
-Eh: Spinach, Napa , Zuchini 
-
-_
-## Shopping Weee
-
-VEG PeaSprouts  YellowChive  ChineseCelery 	
-	Celery  Asparagus  Lettuce  Potato 
--- Lotus Root  Mushrooms (Many) 
-Meat: Ribs
-Ready:
-_
-## Shopping Ranch99
-master in GROC
-[Veg] Squash, Bamboo, Daikon, LotusRoot, 
-[VegLeaf] PeaSprouts, ChineseBrok
-[HotP] Seasoning
-## Shopping Costco 
-master in GROC
-FREQ	 Paper(toilet&towels) VegBroth
-MEAT   - SpareRibs, Cthigh, PorkChop 
-FRUIT  - WaterMellon, Fuji, Orange  | Berry, Strawberry, Bananna, Grape,  
-VEG    - Celery, G-beans |  Zuchini,  
-         some  Mushroom, B-Sprout, Beet, Carrot, Onion, Turnip, 		 
-DRIED  - GoneCracker, NUTS(Pistacio,Almonds,Cashews), Seaweed, 
-
-CAN    - Chicken, PastaSauce, Barley/LentilBags, TomatoSauce, DicedTomatos, TomatoPaste
-OTHER  - ToiletP, Ptowels, Shampoo++
-FROZEN - Shrimp, Salmon
-
-
----- Instacart Price Bump ----
-Fuji . 8.99 . 10.99 .     22%
-Squash .   6.49 . 7.99 . 23%
-Banana  1.49 . 1.89 .  26%
-G.bean . 6.49 7.99 . 23%
-Scotch 35.99  42.59 . 18%
-## Shopping Amazon (Fresh)
-## Shopping Amazon (Whole Food)
-FRESH  - Barley&Lentils
-### DanO Weekly (SEE BOOKMARKS IN OPERA)
-- Radish, Celery
-- Hummus
-- Fuji, Berries
-- Sushi
-
-#### _
- 
- [Radish](https://primenow.amazon.com/dp/B0050PRLE8?qid=1612471905&m=A2OX6AK59XDRL3&sr=1-4&ref_=pn_sr_sg_4_img_A2OX6AK59XDRL3)    	PN Organic Mixed Variety Radishes, 1 Bunch
- [Celery](https://primenow.amazon.com/dp/B004V9AY48?qid=1612472228&m=A1UURZ0SEW4JD3&sr=1-4&ref_=pn_sr_sg_4_img_A1UURZ0SEW4JD3) 		PN Organic Celery Hearts, 16 Ounce
- [Hummus](https://primenow.amazon.com/dp/B001HK23B6?qid=1612472026&m=A2OX6AK59XDRL3&sr=1-13&ref_=pn_sr_sg_13_img_A2OX6AK59XDRL3)	  PN Sabra Supremely Spicy Hummus 10 Oz
- [Fuji](https://primenow.amazon.com/dp/B07Q2PYR5Q?qid=1612472434&m=A1UURZ0SEW4JD3&sr=1-3&ref_=pn_sr_sg_3_img_A1UURZ0SEW4JD3)		PN Apple Fuji Bag Organic, 48 Ounce
- [Orange](https://primenow.amazon.com/dp/B00HT7U55W?qid=1612472737&m=A2OX6AK59XDRL3&sr=1-4&ref_=pn_sr_sg_4_img_A2OX6AK59XDRL3)		PN Wonderful Halos Mandarins, 3lb Bag
- [BlackBerry](https://primenow.amazon.com/dp/B00E3JM7UU?qid=1612472618&m=A2OX6AK59XDRL3&sr=1-6&ref_=pn_sr_sg_6_img_A2OX6AK59XDRL3)	PN Blackberries Organic, 6 Ounce
- [RasBerry](https://primenow.amazon.com/dp/B0031Q80UM/ref=pd_sim_541_10?_encoding=UTF8&m=A2OX6AK59XDRL3&pd_rd_i=B0031Q80UM&pd_rd_r=2a3fe7c0-2c39-4449-a072-de4ff2d090b9&pd_rd_w=t0een&pd_rd_wg=LGJT2&pf_rd_p=6cc3626d-4f2d-4100-ba3f-9fe6f004755a&pf_rd_r=Y9K7G9AV6NDBXDM7G6WN&psc=1&refRID=Y9K7G9AV6NDBXDM7G6WN)	 PN Berry Raspberry Red Organic, 6 Ounce
- [Sushi](https://primenow.amazon.com/dp/B07NRFFD81?qid=1612472843&m=A1UURZ0SEW4JD3&sr=1-6&ref_=pn_sr_sg_6_img_A1UURZ0SEW4JD3) 		PN Genji Sushi, Tuna & Salmon Nigiri/roll Combo, 8.32 Ounce
-
-egg bite
- _
-## Shopping Amazon (Non-fresh non-whole)
-VEG    	- Spinach (bag), Kale, Radish, Cabbage, Cauliflower, 
-VEG		- Asaragus, 
-FROZEN 	- SteamFresh, Shrimp, Salmon
-F VEG  	- Edamae, R-CFlower, Corn, Peas, Asparagus
-
-to add: Soups, Chili, 
-
-### ROAST VEG -- 
-Foil, Water/Oil, Rinsed-Chopped-Veg, Meats, Spices
-
-SPICES: Parmesan, Garlic, Salt, Lemon Pepper, Smoked Paprika
-VEG1:	Cflower, Carrots, 
-VEG2: 	Asparagus, Potatos, Broccoli, Beets, Parsnips, Leeks, Turnip
-MEATS:	Thigh, Pork
-
-### CANNED
-CANNED:	Corn, 
-
-
-
-### OTHERS
-
-
-### Croc 
--- Croc-chicken
-— Croc-beef
-— Croc-veg
-— Croc-chili
-## Shopping Safeway
-_
-## Shopping Misc Online
-### --- DRY GOODS ---
-#### Jerky
-https://www.bulkbeefjerky.com/collections/shop/Style:Brisket
-https://www.webstaurantstore.com/54881/jerky.html?order=price_asc
-
-
-
-
-
-_
-## Shopping Specialty
-### Shop Speciality Dry
-#### Teas
-Twinings: Lemon Ginger
-## Low Sodium
-### Types
-DRY - Soups, Corn, Sardine
-### Articles
-https://www.mensjournal.com/food-drink/easy-healthy-meals-7-best-canned-soups/6-tabatchnicks-low-sodium-split-pea-soup/
-
-_
-# ### APPETITE SUPPRESSING ###
+### - APPETITE SUPPRESSING -  
 
 [Saiety Study](http://ernaehrungsdenkwerkstatt.de/fileadmin/user_upload/EDWText/TextElemente/Ernaehrungswissenschaft/Naehrstoffe/Saettigung_Lebensmittel_Satiety_Index.pdf) 
 https://www.eatthis.com/how-to-feel-full/
@@ -363,8 +373,8 @@ Honey ==> Reduce Geherlin
 [Pulses](https://www.sciencedirect.com/science/article/abs/pii/S1756464617301615) ==> Reduce total calorie in
 
 Not proven:  jinger,
-# ### MEALS ###
-## === OUTTAKES ===
+# # MEALS # 
+## = OUTTAKES = 
 
 ===PORRAIGE===
 -- PurpleRice
@@ -423,7 +433,7 @@ _
 
 _
 _
-# ### MISC / OLDER ###
+# # MISC / OLDER # 
 ## Ideas
 https://www.healthline.com/health/food-nutrition/paleo-work-friendly-lunch-recipes#3
 Soup Preload -- https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2128765/

@@ -1,3 +1,5 @@
+(See [[__Food__|Food]] for most info about diet & food)
+
 # Medical.Diarrhea --
 
     The strains that appear to be most effective in treating infectious diarrhea, for instance,

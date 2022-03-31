@@ -1483,7 +1483,14 @@ Removed /System/Library/Frameworks/AddressBook.framework/Versions/A/Helpers/Addr
 ### GOOGLE DRIVE -- google drive cannot continue syncing because your google drive folder is missing
 ~-- Select google drive icon.  select error message.  click locate.  find folder.
 ## = HOW-TO =
-### xx MESSAGES not always being received
+### - BLUETOOTH - Prevent auto device switching to MacOS
+
+   $ sudo defaults write /Library/Preferences/com.apple.Bluetooth.plist DontPageAudioDevices 1 
+
+other ideas in this thread:
+ [https://apple.stackexchange.com/questions/159548/prevent-auto-pairing-for-certain-devices-bluetooth](https://apple.stackexchange.com/questions/159548/prevent-auto-pairing-for-certain-devices-bluetooth)  
+ 
+### - MESSAGES not always being received
 
 Fixes messages so that all sent messages are recieved on Laptop iMessages
 
@@ -1492,9 +1499,9 @@ Fixes messages so that all sent messages are recieved on Laptop iMessages
   messages -> preferences -> iMessages -> ! Enable Messages in iCloud
 
 
-### AWESOME COMMAND LINES  https://github.com/herrbischoff/awesome-osx-command-line
+### - [AWESOME COMMAND LINES](https://github.com/herrbischoff/awesome-osx-command-line)
 .
-### CHROME (block prompt for notifications and location)
+### - CHROME (block prompt for notifications and location)
 chrome://settings/content/notifications 
 
 Here’s a quick guide to taking back control of Chrome.
@@ -1504,7 +1511,7 @@ Scroll down and click Advanced
 Click content settings
 Click Notifications
 Next to the Ask before sending (recommended) text, click the toggle button. It should now say Blocked.
-### SUDO w/o PASSWORD (xx sudoers)
+### - SUDO w/o PASSWORD (xx sudoers)
   export VISUAL=nano
   sudo visudo     # MUST USE VISUDO (no other editor)
 
@@ -1518,7 +1525,7 @@ Next to the Ask before sending (recommended) text, click the toggle button. It s
   root    ALL=(ALL) ALL
   %admin  ALL=(ALL) NOPASSWD:ALL
 
-### Setup "fast wake" on osx
+### - Setup "fast wake" on osx
   pmset -g   # To see original settings
   sudo pmset -b standbydelay 43200        # how long sleeping before switching memory to disk
   sudo pmset -c standby 0
@@ -1565,23 +1572,24 @@ Currently in use:
  displaysleep         5
  acwake               0
  lidwake              1
-### Create standalong web-page apps -- create Sandboxed Chrome Apps -- create app
+### - Create standalone web-page apps 
+     create Sandboxed Chrome Apps -- create app
      Like FluidApp but for Chrome.  See  https://gist.github.com/demonbane/1065791
      INSTALL:  cut/paste gist; chmod a+x /ob/bin/makeapp
 
   > feedly notes right below <
 
-  # FIND AND CONVERT .png or .icns FOR .png ICON FILE
+  ~# FIND AND CONVERT .png or .icns FOR .png ICON FILE
   $ chrome image.google.com  ((search for .png file for icon))  
     ! --> (copy to /ob/bin2)
-  # CONVERT
+  ~# CONVERT
   $ sips -s format png icon_file.icns --out png_file.png      # Read more at http://www.simplehelp.net/2010/10/08/how-to-convert-icns-files-to-png-files-in-os-x/#o5BJwxJIVWO16hl1.99
   
-  # READY CHROME -- close all Chrome browsers
+  ~# READY CHROME -- close all Chrome browsers
   $ open http://cnn.com   http://gmail.com  about://
     ! --> log BROWSER into wef234@gmail.com
 
-  # CREATE
+  ~# CREATE
   $ /ob/proj/bin2/makeapp  
      # Use lowercase w/o spaces in name
      # saves to /Application 
@@ -1631,7 +1639,7 @@ CREATING FEEDLY.APP
 - install  FORCE BACKGROUND TAB   (add this extension to only the Feedly app.
 -  log into feedly as oblinger@gmail.com
 
-### Install unsigned app
+### - Install unsigned app
     can't be opened because it is from an unidentified developer
     unknown developer
 
@@ -1644,26 +1652,26 @@ JUST DO IT ONCE  (holding the control key)
 DONE ONCE FOR ALL TIME (I don't do this)
  #space "prefs" -> !SecurityPrivacy -> !General -> !AllowDownloadFromAnywhere
 
-### PREVENT SLEEP ON LID CLOSE
+### - PREVENT SLEEP ON LID CLOSE
   ---->  Just Use NoSleep
   $ pmset noidle
 Preventing idle sleep (^C to exit)...
 
-### Prevent Apps From Restarting After Reboot
+### - Prevent Apps From Restarting After Reboot
 
 http://www.mikeindustries.com/blog/archive/2012/03/how-to-permanently-prevent-os-x-10.7-lion-from-ever-re-opening-apps-after-a-restart
 Quit all of your apps.
 Navigate to here: ~/Library/Preferences/ByHost/com.apple.loginwindow.*.plist (whereby * is a bunch of characters)
 Click the file, do a File > Get Info (or command-I if you’re a pro), and lock it using the Locked checkbox.
 
-### Make app have no ALT-TAB presence
+### - Make app have no ALT-TAB presence
 http://limitlesschannels.com/code/2013/06/29/how-to-force-osx-app-to-run-as-background-process.html
 
 Add this to its plist:
     <key>LSUIElement</key>
     <true/>
 
-### Boot into special modes
+### - Boot into special modes
 
 -- Pwr -> hold # r           ---  REOVERY MODE: restore from timemachine, reinstall os, ...
 -- Pwr -> hold # _/ r        ---  REOVERY MODE: restore LATEST os
@@ -1678,7 +1686,7 @@ Add this to its plist:
 
 Reset PRAM/SMC:  https://www.avast.com/c-reset-mac-pram-smc#gref
 
-### Change HomeName
+### - Change HomeName
   
 
 Instead use:  pref > sharing >
@@ -1688,7 +1696,7 @@ https://9to5mac.com/2018/06/20/mac-how-to-change-your-computer-name/
    sudo scutil --set HostName NEW_HOSTNAME_HERE.local  # Network name
    sudo scutil --set HostName simple.local  # ????reset network name back to computer name
 
-### IPHONE
+### - IPHONE
 #### HOW TO HIDE PURCHASED IPHONE APPS
 
 OSX -> iTunes -> 
@@ -1696,7 +1704,7 @@ OSX -> iTunes ->
   (On left menu in frame)  -> Purchased -> !Apps (button) -> ! NotInMyLibrary
   ! "x" on apps to hide them
 
-### CLONE 
+### - CLONE 
 
 
 
@@ -1710,7 +1718,7 @@ computer
 -- Boot (press T) on 'target' machine to copy there, or insert drive.
 -- Will automatically reused unchanged files.
 
-### RE-INSTALL OS
+### - RE-INSTALL OS
 
 - Reboot & hold  CMD-R    -- installs OS shipped with the machine
 - Reboot & hold  OPT-CMD-R  -- install latest OS
