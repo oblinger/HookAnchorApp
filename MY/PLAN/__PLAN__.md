@@ -1,3 +1,4 @@
+  [Todo](__Todo__.md)  [Repeat](__Repeat__.md)  [Calls](__Calls__.md)  [Later](__Later__.md)  [Watching](__Watching__.md)  [Habits](__Habits__.md)  [Links](__Links__.md)  [Scratch](Scratch/__Scratch__.md)  [Full](__Full__.md)  [Self](__Self__.md)  [Q2](__Q2__.md)  [Hack](__Hack__.md)  [Ping](__Ping__.md)  [Social](__Social__.md)  [Fried](__Fried__.md)
 
 ### 2022-03-21  
 - [ ] Get response to Amy Kruse   [[__Crunchbase__|CB]] 
@@ -37,9 +38,4 @@
 ## = [[__Framing__|Framing]] =
 - is my resume good?  how to know?
 
-  [Todo](__Todo__.md)  [Watching](__Watching__.md)  [Links](__Links__.md)  [Scratch](Scratch/__Scratch__.md)  [Ping](__Ping__.md)
-  [Repeat](__Repeat__.md)  [Habits](__Habits__.md)  [Fried](__Fried__.md)  [Calls](__Calls__.md)  [Later](__Later__.md)  [Q2](__Q2__.md)
 
-  [Todo](__Todo__.md)  [Repeat](__Repeat__.md)  [Calls](__Calls__.md)  [Later](__Later__.md)  [Watching](__Watching__.md)  [Habits](__Habits__.md)  [Links](__Links__.md)  [Scratch](Scratch/__Scratch__.md)  [Q2](__Q2__.md)  [Hack](__Hack__.md)  [Ping](__Ping__.md)  [Fried](__Fried__.md)
-  [Todo](__Todo__.md)  [Repeat](__Repeat__.md)  [Calls](__Calls__.md)  [Later](__Later__.md)  [Watching](__Watching__.md)  [Habits](__Habits__.md)  [Links](__Links__.md)  [Scratch](Scratch/__Scratch__.md)  [Q2](__Q2__.md)  [Hack](__Hack__.md)  [Ping](__Ping__.md)  [Fried](__Fried__.md)
-  [Full](__Full__.md)  [Self](__Self__.md)  [Social](__Social__.md)
