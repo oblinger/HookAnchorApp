@@ -1,5 +1,6 @@
   [Full](__Full__.md)  [Self](__Self__.md)  [Social](__Social__.md)
 
+
 ### 2022-03-21  
 - [ ] Get response to Amy Kruse   [[__Crunchbase__|CB]] 
 - [ ] Plan calling ...  maybe Schedule FAANG Engineer
