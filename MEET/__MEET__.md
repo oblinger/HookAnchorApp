@@ -11,8 +11,8 @@
 | m2022-03-03 | [[@Theo Enns]]       | Aeolus research summary from Theos perspective    |
 | m2022-02-14 | [[@Aniket Kumar]]    | Aniket                                            |
 | m2021-11-07 | [[@Dan Fine]]        | FINE - Truths                                     |
-| m2021-11-04 | [[Year2022]]         | NEATO CTO feedback                                |
 | m2021-11-04 | [[@Dan Fine]]        | FINE - Dreaming big with Google                   |
+| m2021-11-04 | [[Year2022]]         | NEATO CTO feedback                                |
 | m2021-11-01 | [[@Dan Fine]]        | FINE journal -                                    |
 | m2021-10-27 | [[@Dan Fine]]        | FINE journal                                      |
 | m2021-10-27 | [[@Dan Fine]]        | FINE passion questions / KM trajectory            |
