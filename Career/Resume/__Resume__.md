@@ -1,4 +1,5 @@
   [Bio](Bio/__Bio__.md)
+  [Bio](__bio__.md)
 
  [[Dan Oblinger Resume.docx|Current Resume]] 
 

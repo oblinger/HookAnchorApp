@@ -6,7 +6,7 @@
  [[MEETING Entry]]    |
  [[NOTE entry]]       |
  [PERSON PAGE](PERSON%20PAGE.md)      |
- [[SUBNOTE]]          |
+ [[subnote]]          |
  .                | 
  [Z JOURNAL header](Z%20JOURNAL%20header.md) |
  [[Z TEST TEMPLATE]]  | 

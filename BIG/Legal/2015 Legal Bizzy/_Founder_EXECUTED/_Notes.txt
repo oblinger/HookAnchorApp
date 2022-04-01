@@ -1,189 +1,0 @@
-
-
-=== Total Shares ===
-
- Joe               Dan
-10,000,000        7,500,000        
-7,500,000 * 75% = 5,625,000 * .0001 $  562.5  Common
-2,500,000 * 75% = 1,875,000 * .001  $1,875    F-shares
-                                    $2,437.5  (Pay to Bizzy)
-
-Verifications
-18750000 = +5,625,000  + 5,625,000 + 7,500,000  Common Share Total
-5,625,000 / 18750000 = 0.3 Dan’s portion
-0.3 = 7,500,000  / (10,000,000 + 7,500,000 +  7,500,000)
-
-
-VESTING
-16mo = Pre-vesting =                 March 1, 2015 - June 30, 2016
-32mo = 48 - 15 = remaining vesting   July  1, 2016 - Feb 28, 2019
-
-
-                    Now                      Over next 33 Mo
-5,625,000 * 16/48 = 1,875,000  5,625,000 * 32/48 = 3,750,000  Common
-1,875,000 * 16/48 =   625,000  1,875,000 * 32/48 = 1,250,000  F-shares
-7,500,000         = 2,500,000                    + 5,000,000                    
-
-
-
-
-
-Medical $439.62/mo +  = $3,517  (ignoring couple hundred for vision & co-pays)
-Lawyer  $910 5/23  $455  $910  $455  + $1-1.5K est = $3730-4230K
-
-LEGAL
-6/03  6/28   7/6  $2,135
-5/06  5/26   6/6  $840
-4/15  4/25   5/4  $455
-3/11  3/30   4/7  $910
-9/14  9/23  10/7  $455
-                  - - - 
-                  $4,795
-
-MEDICAL
-$439.62 * 6mos + $392.94 * 2mo = $3,423.60
-
-$4,795
-$3,423.60
-=========
-$8,218.60
-
-$2,437.50  for shares
-
-
-
-NOMINAL MEDICAL
-$1000 * 8mo = $8,000
-
-                
-MONEY  (Assuming a July-1 Start)
-$80K = 8mos * @ $10K/mo 
-$8K  = 8mos * @ $1K/mo
-- - 
-$88K
-  
-
-=======
-
-88,218 - $4795 - $80K =  3,423
-
-
-
-Consulting
- $4,795    Oct 21,2015 - Jun 30, 2016   Expenses
- $3,636    Oct 21 - Oct 30              8 days @ $10,000/mo
-$80,000    Nov 1, 2015 - Jun 30, 2016   8 months @ $10,000/mo
-$88,431
-
-
-
-=======
-OLD VESTING MATH
-
-VESTING
-15mo = Pre-vesting =                 March 1, 2015 - May 31, 2016
-33mo = 48 - 15 = remaining vesting   June  1, 2016 - Feb 28, 2019
-
-                    Now                      Over next 33 Mo
-5,625,000 * 15/48 = 1,757,812.5    * 33/48 = 3,867,187.5  Common
-1,875,000 * 15/48 =   585,937.5    * 33/48 = 1,289,062.5  F-shares
-7,500,000         = 2,343,750              + 5,156,250                    
-
-
-=======
-
-TAA LANGAUGE
-
-TAA made to only assign stuff in A (instead of assigning EVERYTHING EXCEPT A)
-
-Developer hereby assigns to the Company exclusively throughout the world all right, title and interest in the Technology (as defined below) described in Exhibit A existing as of the date hereof and all Technology related thereto or to the development, production, use, support or maintenance thereof
-
-EXHIBIT A
-Assigned TechnologyAll Technology created or developed, in whole or in part, by the Developer for or relating to the Company’s current and future business.the Company related to the Bizzy Robots platform. For the avoidance of doubt no part of the Uniform or Lex languages are included in this assignment.                                      
-
-
-
-=======
-
-PIIA KEY LANGUAGE
-
-3(b)  which I may solely or jointly conceive or develop or reduce to practice, or cause to be conceived or developed or reduced to practice, and which (i) RELATE AT TIME of conception or reduction to practice of the invention to the Company’s business, or actual or demonstrably anticipated research or development of the Company; or (ii) RESULT FROM any work performed by me for the Company;
-
---------
-
-3(F)   In addition, any new, existing or ONGOING WORK or development related to the items listed on Exhibit A shall not constitute Inventions and shall not be assigned to the Company hereunder.
-
-
-
-===============================
-PIIA
-
-Services for clients of New Dawn Analytics, Inc	Ongoing	Consulting services for clients. Clients include but are not limited to:  Backend services for solar power company (Sun Power), data and software development services for health care company (Basil Health), and contracting services through a dev-ops consulting company (Pythian).The Lex and Uniform languages	Ongoing	A syntax, semantics, and implementation of languages optimized for code/data interchange and for meta-programming.  Lex & Uniform languages take a least-commitment approach in order to maximize ease of translating code and data across disparate programming contexts.  Lex and Uniform are designed to facilitate "LISP-like" homo-iconic programming style within the modern programming stack.Programmable Population Processor	Ongoing	A Learning/Inference framework built upon Lex/Uniform.  Framework provides a meta programming language for constructing networks of learning algorithm instances.  Framework provides a form of programmable deep learning that can be optimized for use on parallel hardware architectures.				No inventions or improvements	X___	Additional Sheets AttachedTITLE	DATE	BRIEF DESCRIPTIONBootstrapped Cognition	Ongoing	An approach for learning generalized cognitive structures by repeated bootstrapping using structures created during earlier learning.  General-purpose (broadly applicable) learning algorithms yield very targeted (high) learning performance by leveraging context afforded by prior structures, along with behaviors and learning heuristics specifically designed to match the physical and social learning context.  One target for this work is a sufficient model for generalized intelligence -- at the very top rests as a computational model of conscientiousness.Cloud Config	Ongoing	The use of Lex/Uniform as a software interoperability framework.  Framework allows for the creation and wrapping of software components with meta data required for low friction application and re-use.  Applications include:  Marketplace where compostable software is bought and sold, third-party contributable software suits where solutions are constructed from plug and play components.My Org	Ongoing	Model for Visual Information Organization -- A graphical interface for (re-) representing underlying semi-structured information in new organizations based on previous visualizations of the underlying information.  Model affords structure for facilitating/automating human/group work flows. This effort includes a current implementation (Notester) as well as designs for subsequent implementation.Engines Of Control	Ongoing	A book that considers the technical and social consequences of an artificial bootstrapping intelligence.Remote Presence	Ongoing	Software (and some hardware) for remote collaboration of knowledge workers.  The aim is to replicate as many communication modalities with sufficient remote alternatives to allow effective work at a distance.O-grid	Ongoing	A data analytics / device registration platform and meta-data protocol for Energy and IOT networks.SCADA Security	Ongoing	A plug-and-play security solution for securing existing SCADA networks without replacing underlying network, hardware controllers, software, or interfaces.
-
-=======
-older????
-
-
-Technology includes all business plans, technical information, inventions, software, algorithms, processes
-and technology created or developed, in whole or in part, by the Developer for the 
-Company's current business. Technology also includes all rights the Developer may have 
-in trademarks, trade names and internet domains used by the Company.
-
-Without expanding the scope of assigned Technology, the Developer and Company agree that the following 
-are not developed for the Company's business:  Work done for or relating to New Dawn Analytics Inc., 
-the Uniform and Lex languages, and Marketplace based on those languages, the book ``Engines of Control,'' 
-and Notester.
-
-
-=====
-PIIA
-
-..., and which materially relate to the Company’s business at the time of such conception, development or reduction to practice, ...
-
-
-
-... In addition, any new, existing or ongoing work or development related to the items listed on Exhibit A shall not constitute Inventions and shall not be assigned to the Company hereunder. ...
-
-
-
-
-COMPANY VALUATION IDEAS
-=======================
-
-Jan-Apr 2015   $100K  (wrote off)
-Nov            $1M @ 7
-May            750 @ 7  
-We spent 500K
-
-- 7M / 10 = 700K   (common is 1/10 of preferred)
-- $200K  = 700K * 28%  (my share)
-- 78.4K = 200K * 40%  (my taxes)
-
-.00001
-.0001
-
-.0001 x10   Increased valuation by 10x
-.001
-
-29.57%  = 7241379 / (10000000 +  2 * 7241379)
-40.84%
-
-
-As a board member I need to figure out how much to value our company.  Here are objective facts and conclusions for me:
- 
-1.  The original money put $1M in the bank and created a $1M liability.  The moment after depositing the $1M we had the same net value as before.  (This is basic pre-money / post-money math).
-2.  For the last 6 months we have used the money to do development that we intended to increase our value.
-3.  We are about to accept new money from WI Harper at exactly the same terms as the original $1M.  This is objective evidence that we have not created new net value.
-4.  The $5M note has different terms all around than the $1M original money, but it also creates $5M liability after it is deposited, so itself it creates no value either.
- 
-This would mean that the entire difference in valuation is the difference between value when founded and when the $1M went in.  The $1M was capped at $7M pre-money, but it absolutely can convert at lower pre-money. 
- 
-I think it is reasonable to take the position that the company was worth far less than $7M when the $1M went in.  But what valuation?  It would be nice to say $250K.  Maybe that's a reasonable number since at the time about $100K went into the company and it's unreasonable to think that the value did more than 2.5x in that short time.
- 
-If we assume $250K, then common would be worth $25K, and your portion would be approximately $8K.  That's still higher than I like.
- 
-We could argue that $100K went into the company, so common is worth $10K and your portion would be about $3K.  That's about where I want to land.  I could look up the actual amount that went in and we can set share price accordingly. 
- 
-How do you like that approach?
- 
-- Joe

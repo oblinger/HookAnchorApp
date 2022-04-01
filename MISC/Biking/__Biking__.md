@@ -1,2 +1,3 @@
-  [Biking](Biking.md)  [Notes](Notes.md)
+  [Notes](Notes.md)
+  [Biking](Biking.md)  [Notes](MISC/Biking/Notes.md)
 [Map](./BikeMap.pdf) 

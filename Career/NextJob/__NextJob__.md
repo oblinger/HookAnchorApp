@@ -1,4 +1,5 @@
   [NJ22](NJ22/__NJ22__.md)
+  [NJ22](__NJ22__.md)
 
 [NextJob 2022](n:/Users/oblinger/ob/topics/Career/NextJob/NJ22/__NJ22__.md) 
 # ### LOG ###

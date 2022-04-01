@@ -63,7 +63,7 @@ zzz
 
 
                [[forward]]
- [[Social]]    [[BIG/Notester/export/Self]]    [[Work]]
+ [[Social]]    [[NSTR/Self]]    [[Work]]
              [[Execution]]  		 
 
 
