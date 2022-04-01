@@ -1,6 +1,17 @@
 
-# === CURRENT FOCUS ===
-## --- AD - Anchored Day ---
+## = CURRENT FOCUS
+
+### - 7min Exercise
+- Alarm is set for 4:30.  
+- Stop & Exercise
+- Go get Eli
+- Show when I return
+
+FEATURES
+- Need to push myself to be _uncomfortable_ during exercise
+
+
+### - AD - Anchored Day
 
 Idea: Define specific activities associated with three daily hooks
 
@@ -20,7 +31,9 @@ EVENING ANCHOR -- immediately after Eli is in bed.
 
 
 _
-## --- MLC - MULTI LAYER CAKE ---
+
+## = PRIOR FOCUS
+### - MLC - MULTI LAYER CAKE
 
 Idea: Manage level of work effort in defined layers
 
@@ -37,7 +50,7 @@ TARGETS
 - 2022.03.01 - 3/1/2/1
 
 _
-## --- PDP - Procrastination Defense Protocol ---
+### - PDP - Procrastination Defense Protocol
 
 **HARD RULES**
 - 30 min eat & email ???
@@ -88,7 +101,8 @@ You can update the sticky note as your goals shift.
 
 
 _
-### --- Block Scheduled Day - July 2021 ---
+
+### - Block Scheduled Day - July 2021
 
 <9	Uniform, Wake/Meditate/Walk
 9	BLOCK #1 - MIT
@@ -110,7 +124,7 @@ Lets give it a shot.  Many say having a schedule makes a big difference in the d
 
 
 _
-### --- HEALTHY DAY ---
+### - HEALTHY DAY
 WAKE
 - FRUIT -- Cut up fruit basket
 - VITAMINS -- Take your vitamins
@@ -122,7 +136,7 @@ EVENING
 - YEAST -- Eat a bit of yeast
 
 _
-### --- Loosely Scheduled Day - June 2021 ---
+### - Loosely Scheduled Day - June 2021
 
 
 06a	Wake
@@ -141,7 +155,7 @@ IDEA:
 
 
 _
-### --- Atomic Morning
+### - Atomic Morning
 
 CORE IDEA:  Regular wake, Spring loaded start, afternoon exercise each day
 
@@ -202,7 +216,7 @@ MTW - Afternoon Chew. (or Thursday morning focused chew)
 _
 
 
-## === OLDER ===
+## = OLDER
 ### --- SCHEDULE: Eli centered Days ---
 
  5:00	Ready
@@ -308,7 +322,6 @@ _
 _
 _
 
-## === ACTIVE HABITS ===
 ### --- Path Visualization ---
 -- Visualize correct actions:  Traction/Distraction
 ### --- The NOT todo list 
@@ -316,8 +329,7 @@ _
 - Skip morning MIT
 - Spend >30m eating  
 _
-## === RECENT HABITS ===
-### HOOK HONING
+### - HOOK HONING
 
 Define:
 - Hook name and letter prefix
@@ -330,7 +342,7 @@ Identify a hook, the rules, and metrics around the hook.
 Idea: Have a set of strategies and triggers that best leverage my motivation and energy.
 
 _
-### HOOK-HONING - Daily Triggers
+### - HOOK-HONING - Daily Triggers
 Hooks:  W,M,L,A,F
 
 **WAKE**:  	<5 resleep.  <30m get up.  >6 quickwake.  7 Alarm 
@@ -345,7 +357,7 @@ Hooks:  W,M,L,A,F
 		F:  Make good use of fried time, however its done.
 		
 _
-### HDA - high density action
+### - HDA - high density action
 
 Key idea: Do M/S/C and Recharge
 
@@ -359,7 +371,7 @@ REST	--
 QUIT    --  
 
 _
-### SALES FIRST
+### - SALES FIRST
 
 APPROACH
 - FIRST -- Create a section called "first" in my todo.
@@ -370,7 +382,7 @@ Background:
 - I hate the tracking of sales.  hate it.
 - But I am not being insta-responsive in a way that I must.
 _
-## === OLDER STUFF ===
+### === OLDER STUFF ===
 ### EFFICIENT DAY -- 2019.10.15 - thinking about WHY -- 
 
 RULES
@@ -413,9 +425,9 @@ _
 -- Schedule
 -- 50min Admin
 -- 100min task
-## === LONG TERM CHANGES ===
+### === LONG TERM CHANGES ===
 [Long Term Change](https://medium.com/better-humans/the-ultimate-model-for-successful-and-long-lasting-behavior-change-221e678c642b) 
-## === OLDER ===
+### === OLDER ===
 ### MOTIVATION
 rewards, consequences, and commitment devices
 https://medium.com/better-humans/the-best-last-motivation-article-youll-ever-read-4-tactical-tips-to-turn-self-motivation-into-2337259472ed
@@ -509,7 +521,7 @@ Background:
 	* Just look at MIT & work on for 2 min each day
 	* Look at habits list daily too
 ### Mission Orientation
-## Other stuff
+### === Other stuff
 ### HOURS
 
 Hours Available:
@@ -553,11 +565,11 @@ Hours
  7 Sleep
 ### Articles
 GRIT habit -- https://medium.com/the-mission/willpower-doesnt-work-here-s-the-key-to-being-more-productive-according-to-neuroscience-f6c4257eb6b9 
-## === OLDER HABITS ===
+### === OLDER HABITS ===
 ### HEATHY MEALS
 -- make a few healthy meals.
 -- mess around with meal timings and amounts to manipulate hunger (get scale out)
-# HABIT THINKING
+## = HABIT THINKING
 ### --- HIGH DENSITY ACTION
 
 **GOAL:**  Spend my time (1) effectively and (2) in right areas
@@ -609,8 +621,9 @@ GRIT habit -- https://medium.com/the-mission/willpower-doesnt-work-here-s-the-ke
 		
 
 
-# >>> LONG TERM HABITS <<<
-### --- THE ENVELOPE - Brutally effective self accountability ---
+### >>> LONG TERM HABITS <<<
+
+### - THE ENVELOPE - Brutally effective self accountability ---
 
 
 2022.01.27 - 30/30/30 - Morning Effiency & Focus on tough task

@@ -1,5 +1,6 @@
 
-[[__Obsidian__]]     [[__Fin__]]    [[__ToBuy__]]    [[__ToRead__]]  [[__Hack__]]  
+- [ ] [[__MED__|MED]] Nutritionist - Choose one #todo 
+
 
 ## = QUICKIES = 
 - [ ] OBS - have side panels remember state
@@ -25,9 +26,12 @@
 - [ ] THINK:  [[__Habits__|Habits]]   [[__Current__|Plan]]  
 
 
+[[__Obsidian__]]     [[__Fin__]]    [[__ToBuy__]]    [[__ToRead__]]  [[__Hack__]]  
+
+
 ## = STUFF = 
-- [ ] [[__FIN__|FIN]] >>>Find value investments
-- [ ] [[__FIN__|FIN]] Roth Conversion Consideration
+- [ ] [[__Fin__|FIN]] >>>Find value investments
+- [ ] [[__Fin__|FIN]] Roth Conversion Consideration
 - [ ] [[__MED__|MED]] Heart health institute
 - [ ] [[__MED__|MED]] Nutritionist - Decide who to work with 
 - [ ] Fix archiving of email

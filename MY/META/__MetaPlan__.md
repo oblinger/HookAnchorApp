@@ -9,11 +9,12 @@
 
 | ------    | ---                           |
 | --------- | ----------------------------- |
-| Plan      | Currently week plan           |
+| Current   | Currently week plan           |
 | Weekly    | History of weekly plans       |
 |           |                               |
 | Full      | Summary of                    |
-| Self      |                               |
+| - Self    | Med, Fin, Life                |
+| - xxx     | xxx                           |
 |           |                               |
 | Later     |                               |
 | Quarterly |                               |

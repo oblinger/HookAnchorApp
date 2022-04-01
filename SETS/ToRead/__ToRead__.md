@@ -2,6 +2,7 @@
 alias: __RIL__
 ---
 
+-  [Power of Full Engagement](https://www.amazon.com/Power-Full-Engagement-Managing-Performance-ebook/dp/B000FC0SWS/ref=tmm_kin_title_0?_encoding=UTF8&qid=1644162775&sr=8-1)  
 
 - 
 	- [ ] Read study  [IF](https://jamanetwork.com/journals/jamainternalmedicine/fullarticle/2771095?guestAccessKey=444bbcb2-7e13-4dc6-998f-5de5e27aa19e&amp;utm_source=For_The_Media&amp;utm_medium=referral&amp;utm_campaign=ftm_links&amp;utm_content=tfl&amp;utm_term=092820) 

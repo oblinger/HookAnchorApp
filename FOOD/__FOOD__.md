@@ -3,10 +3,10 @@
 [Delivery](__Delivery__.md) 
 [Diet](__Diet__.md) 
 [Eat](__Eat__.md) Food Log
-[Groc](__Groc__.md)  [word](BIG/Food/groc.docx)		-- Shopping list
+[Groc](__Groc__.md)  [word](groc.docx)		-- Shopping list
 [Resturants](__Resturants__.md) 
 
-[FastingDiet](BIG/Food/FastingDiet.md)
+[FastingDiet](FastingDiet.md)
 
 #### Kinds of Resturants
 Asian 	Chinese, Japanese/Sushi/Raman, 		Korean, Thai, Viet/Pho, Burmese

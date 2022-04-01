@@ -1,20 +1,22 @@
 
-|  WEEKLY    |                                                |
-| ---------- | -----------------------------------------------|
-| **HOT LISTS**  | [SimpleNote](https://app.simplenote.com/) [Reminders](https://www.icloud.com/#reminders) AudioMemos # FileThis |
-|            | Bk  Nails  Nose  Slack  Groc  Plant  Friday    |
-| **TODO**       | Clean todo list for this week                  |
-| **PLAN**       | Week plan in Top                               |
-| **HOUSE**      | Room: [My-]Desks/Bin/Shelf  House: Pass.       |
-| **IN2**        | Quick scrub                                    |
+| WEEKLY        |                                                                                                                |
+| ------------- | -------------------------------------------------------------------------------------------------------------- |
+| **HOT LISTS** | [SimpleNote](https://app.simplenote.com/) [Reminders](https://www.icloud.com/#reminders) AudioMemos # FileThis |
+|               | Bk  Nails  Nose  Groc  Plant  Friday                                                                           |
+| **TODO**      | Clean todo list for this week                                                                                  |
+| **PLAN**      | Week plan in Top                                                                                               |
+| **HOUSE**     | Room: [My-]Desks/Bin/Shelf  House: Pass.                                                                       |
+| **IN2**       | Quick scrub                                                                                                    |
 
 
-### === MONTHLY ===
-- **HOUSE**     | Deebot cleaning
-- **BACK-9**    | Asana Proj ... Q2. Uniform.  Scan slower moving list
-- **MYDESK**    | MyDesk
-- **IN2**       | In2 deeper scrub
-- **MONTHLY**   | Scan Monthly List  ????
+| MONTHLY     |                                                      |
+| ----------- | ---------------------------------------------------- |
+| **HOUSE**   | Deebot cleaning                                      |
+| **BACK-9**  | Asana Proj ... Q2. Uniform.  Scan slower moving list |
+| **MYDESK**  | MyDesk                                               |
+| **IN2**     | In2 deeper scrub                                     |
+| **MONTHLY** | Scan Monthly List  ????                              |
+
 
 ### === QUARTERLY ===
 -- ToFile
