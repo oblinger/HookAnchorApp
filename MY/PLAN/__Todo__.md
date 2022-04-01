@@ -1,5 +1,5 @@
 
-- [ ] Figure Trip - Buy flight tickets
+- [x] Figure Trip - Buy flight tickets
 - [ ] get codility stuff out
 
 

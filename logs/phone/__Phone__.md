@@ -1,3 +1,19 @@
+### 2021-00-00  Eli's Birth Certificate
+  
+
+  
+
+-- $25 Money Order only (made payable to SFDPH/OVR)
+
+In Person: Cash, Credit Cards (Visa and MasterCard only), or Money Order (made payable to SFDPH/OVR)
+
+By Mail: Money Order only (made payable to SFDPH/OVR)
+
+[https://www.sfdph.org/dph/comupg/records/vitalRec/default.asp](https://www.sfdph.org/dph/comupg/records/vitalRec/default.asp)
+
+[https://www.sfdph.org/dph/comupg/records/vitalRec/mailOrder.asp](https://www.sfdph.org/dph/comupg/records/vitalRec/mailOrder.asp)
+
+
 ### 2022-03-21  Home Depot - replace new GE microwave
 
 Feb-24 purchase
@@ -36,6 +52,31 @@ Shay (Factory Service)
 
 Melissa (cust care)  
 tech will call about sat visit
+
+~
+
+Call:  800-386-1215  #4
+Case:  067657479
+
+Subject: Poor warrantee service by Nana Home Services
+
+I expect more from GE.  You should reconsider your relationship with Nana Home Services.
+I am having an issue with my new GE microwave, and you dispatched Nana to take a look, after some initial confusion (that I think was GE's fault)  the technician had a valid work order.  They use a web app and text messages to coordinate the worker's visit.  But something is very broken with their work flow.  Twice I received *confirmation* text messages asserting that my visit was scheduled, and thus I rearranged schedules in order to be available for the window in which the work is occurring.  TWICE I simply received a message requesting confirmation of a different time.  No explanation of what has happened, no phone call.  Just a new scheduling.
+
+On the third time I was getting this scheduled, I grew frustrated and requested to talk with someone at Nana.  It seems they are too busy for this.  Carmela "thanked me for reaching out" and just told me "be a good little boy and please respond to the third scheduling by their Technician Edmar Michael"
+
+Wow!  I don't allow others to treat my time as so irrelevant.  For me it is precious.
+
+I will think twice or thrice before purchasing another GE appliance.  You should think twice about Nana.
+
+Regards, 
+Dan Oblinger
+
+101 Bache Street, San Francisco, CA 94110
+GE Case Number 07600535
+
+
+
 
 ### 2022-03-15 Qingling's income and taxes
 

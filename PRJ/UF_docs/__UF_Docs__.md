@@ -18,3 +18,9 @@ https://github.com/spaceuptech/space-cloud
 a B c d e F G H i J K L m N O p Q r s t u V W X Y Z
 
 https://repository.upenn.edu/cgi/viewcontent.cgi?referer=&httpsredir=1&article=1074&context=library_papers
+
+# # REF # 
+## = PEOPLE
+### - UF Dude
+[https://buttondown.email/hillelwayne/](https://buttondown.email/hillelwayne/)
+

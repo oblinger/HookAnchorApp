@@ -7,7 +7,48 @@
 
 # # TODO # 
 - [ ] [[__MED__|MED]] Find Heart health institute
-- [ ] [[__MED__|MED]] Nutritionist - Decide who to work with 
+- [ ] [[__MED__|MED]] Nutritionist - Decide who to work with #todo
+- [ ] [[__MED__|MED]] Diet & Exercise
+- [ ] Get measurements (salt, BP-base, HR-watch tracking)
+- [ ] Pulmonologist #todo 
+
+
+
+
+#### Diet & Exercise notes
+	      
+		
+		— Run 3 times this week
+		— Loose .25 per week. 188 Nov 23
+	
+		— Add barley;
+		
+		  
+		
+		S: Add Veggies ; Add Walking; 5-min workout
+		
+		-- Figure out why system is crazy
+		
+		  
+		
+		S: Get foods set; get quick exercise set; get jogging set
+		
+		  
+		
+		-- Pills: Prebiotic, MCT, Probiotic
+		
+		-- 7-min workout . put it under "7min"
+		
+		  
+		
+		-- Loose 10 lbs (under 185)
+		
+		-- Exercise everyday
+		
+		-- Eat healthy
+
+
+
 
 
 

@@ -2,26 +2,12 @@
 alias: __RIL__
 ---
 
-[ToResearch](__ToResearch__.md)
-  
-## = REPEAT =
-                        _Read_Regularly_  _RIL_
-- WEB                   o:/a/u/tree/favorites/Daily/ToRead
-- BBC                   http://news.bbc.co.uk/
-- NY Times              http://www.nytimes.com/
-- CNN                   http://edition.cnn.com/
-- GOOGLE                http://google.com         http://google.com/options  http://www.google.com/options/
-  Google answers
-  _To_Read_
-  _Reading_Log_
-[Future Of Coding](https://futureofcoding.org/community)
 
-## = ADDED =
-- [ ] Read study  [IF](https://jamanetwork.com/journals/jamainternalmedicine/fullarticle/2771095?guestAccessKey=444bbcb2-7e13-4dc6-998f-5de5e27aa19e&amp;utm_source=For_The_Media&amp;utm_medium=referral&amp;utm_campaign=ftm_links&amp;utm_content=tfl&amp;utm_term=092820) 
-- [ ] [Mental Models List](https://medium.com/@yegg/mental-models-i-find-repeatedly-useful-936f1cc405d)    
-- [ ] [amz](https://www.amazon.com/Power-Full-Engagement-Managing-Performance-ebook/dp/B000FC0SWS/ref=tmm_kin_title_0?_encoding=UTF8&qid=1644162775&sr=8-1) 
-
-## - blah
+- 
+	- [ ] Read study  [IF](https://jamanetwork.com/journals/jamainternalmedicine/fullarticle/2771095?guestAccessKey=444bbcb2-7e13-4dc6-998f-5de5e27aa19e&amp;utm_source=For_The_Media&amp;utm_medium=referral&amp;utm_campaign=ftm_links&amp;utm_content=tfl&amp;utm_term=092820) 
+	- [ ] [Mental Models List](https://medium.com/@yegg/mental-models-i-find-repeatedly-useful-936f1cc405d)    
+	- [ ] [amz](https://www.amazon.com/Power-Full-Engagement-Managing-Performance-ebook/dp/B000FC0SWS/ref=tmm_kin_title_0?_encoding=UTF8&qid=1644162775&sr=8-1) 
+# # UNSORTED # 
 ### QL John
 nt to chat with our neighbor John to get interview tips since he hired thousands of them. Man, did I learn so much from him! We should hangout with them more often! He actually successfully exited few companies. He sent this link to me since this girl is one of the investors of the company I am going to interview with, and I like her summary about machine intelligence:
 
@@ -57,71 +43,53 @@ It's basically an ode to concentrating on the problem, not the solution. I think
 https://marijnhaverbeke.nl/blog/  
 https://www.python.org/dev/peps/pep-3118/
 
-### --- RE-READ LIST ---
+
+# # TOP # 
+## = REPEAT =
+- >>>>>        Clean-Unsorted * Scan thru them * Do Repeats or Ref Pages
+-  MAIN:        [WSJ](https://wsj.com),  [Seeking Alpha](https://seekingalpha.com),   [Feedly](https://feedly.com),  
+- BLOGS:      [Future Of Coding](https://futureofcoding.org/community),  
+- OTHERS:    [BBC](https://news.bbc.co.uk/),  [NY Times](https://www.nytimes.com/),  [CNN](https://edition.cnn.com/),  
+
+
+# # REF # 
+## = SUB-PAGES
+- [ToResearch](__ToResearch__.md)
+
+## = OCCASIONAL ROTATION 
+### - SCIFI
+
+* [LYRIS](http://lyris.org/fiction/) 
+- [VINGE-innovation](http://www-rohan.sdsu.edu/faculty/vinge/misc/IBM/innovation.htm)   Singularity, EarthWeb, Marc Steigler (vernor vinge)
+
+### - MISC 
+- [Tell Me What You Did Today](https://medium.com/age-of-awareness/tell-me-what-you-did-today-and-ill-tell-you-where-you-ll-be-in-10-years-8921face679d)
+- LIT:  Search Targets  Like Melville’s discourse on the whiteness of the whale, it’s worth a read.
+- LIT:  Nero Wolfe -- detective stories written by Rex Stout
+
+### - RE-READ LIST
 - [coach](https://betterhumans.coach.me/the-ultimate-model-for-successful-and-long-lasting-behavior-change-221e678c642b) 
 - [Occasionally Ask](https://medium.com/mind-cafe/8-great-questions-you-should-occasionally-ask-yourself-ebc929094777) 
 - [Markus Aurelius 10 rules](https://medium.com/swlh/marcus-aurelius-10-rules-for-life-dfbdc9869e68) 
 
-# # MISC # 
-## === SCIFI ===
 
-* LYRIS
-http://lyris.org/fiction/
+### - VERY OLD
 
-
-- VINGE - maybe sci fact?
- http://www-rohan.sdsu.edu/faculty/vinge/misc/IBM/innovation.htm
- Singularity, EarthWeb, Marc Steigler (vernor vinge)
- google.com/options
-
-
-
-## === LIT INTEREST ===
-- ; Search Targets  Like Melville’s discourse on the whiteness of the whale, it’s worth a read.
-- Nero Wolfe -- detective stories written by Rex Stout
-
-_
-## === EVERY SO OFTEN ###
-### --- Tell me what you did today ---
-
-https://medium.com/age-of-awareness/tell-me-what-you-did-today-and-ill-tell-you-where-you-ll-be-in-10-years-8921face679d
-
-_
-## === VERY OLD ===
-
-http://www.martynemko.com/home.htm
-- IBM Monthly Reports   http://reswat5.research.ibm.com/w3research/research_highlights.nsf/pages/mmr.html  (Click link on page)
-
-http://www.nytimes.com/2003/11/11/science/11ESSA.html
-
-- Figure which vitamins are most impt. & where to buy
-- Calories for olives; salad; 
-
-
-  Http://edge.org/    
-
-
+- [Coach Marty Nemko](http://www.martynemko.com/home.htm) 
+- http://www.nytimes.com/2003/11/11/science/11ESSA.html
+- Http://edge.org/    
 - Religion note in notester
 - Prayer experiment
 
-_
-# # UNSORTED # 
-## = tags
 
 
-KIDS MAKE YOU HAPPIER?
+  
+# OLD UNSORTED # 
+### - KIDS MAKE YOU HAPPIER?
 http://nymag.com/news/features/67024/index1.html
 http://www.cnn.com/2012/07/30/opinion/etzioni-children
 http://parenting.blogs.nytimes.com/2012/05/17/having-children-makes-you-relatively-happier/
 
-
-
-# Tags for Log of Reference material
-
-
-
-# # OLD PROFESSIONAL #
-## === JOB NEXT ===
 ## === PROFESSIONAL ===
 blank class:
 - https://www.slideshare.net/sblank/hacking-for-recovery-syllabus

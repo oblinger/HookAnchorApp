@@ -1,11 +1,17 @@
 
  [FOLDER](/Users/oblinger/ob/topics/CRM/__CRM__.md)  [Mentors](n:/Users/oblinger/ob/topics/CRM/__Mentors__.md)  
-
 [[2022-03 LG VC Outreach]]
 
 
 
-- Attilla
+Attilla
+1.  Greg Hornby
+2.  Gemma from OSARO (thru Hong)
+3.  Yearbook
+4.  Frank change Crunch Base
+  
+
+buy masks, cake flour
 
 
 ## 2021-09-23 - WHOM IN MY NETWORK TO ASK

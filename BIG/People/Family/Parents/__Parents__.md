@@ -1,17 +1,11 @@
+  [Mom](__Mom__.md)
+[[__Mom__|Mom]]  [[__Dad__|Dad]] 
+
 ### --- 2019.11 tasks ---
 - Fix something on moms phone
 - Show pictures from dads laptop to the TV
 
-### --- Food When They Visit ---
-- Grape crystal light packets
-- Peanut Butter; Bread; Cheese
-- Sugar Free Coffee Creamer -Vanilla
-	(CoffeeMate Italian)
 
-### --- MOM GAMES ---
-- App store: daily soduku
-- Microsoft free jewel
-- spider online
 
 # OLDER
 Angels Landing

@@ -1,3 +1,16 @@
+### 2022-03-21  
+- [ ] Get response to Amy Kruse   [[__Crunchbase__|CB]] 
+- [x] Plan calling ...  maybe Schedule FAANG Engineer
+- [ ] Run code for coursera... maybe do a few hrs
+- [ ] [Yearbook](__Yearbook__.md) 
+	- [ ] G-drive setup
+	- [ ] ask XXXX about fonts
+	- [ ] Write announcement email (maybe more)
+- [ ] Get all time critical tasks completed
+	- [ ] Blood, Taxes out
+	- [ ] Buy flight tix to FLA
+	- [ ] try to do others
+
 
 
 ### 2022-03-15 
@@ -29,3 +42,898 @@ KEY CHANGES FOR A GOOD WORKDAY
 - Before starting, spend bit of time planning
 - After finishing, reflect on outcomes
 
+
+### 2022-Feb-22
+
+1.  Calls current
+    
+2.  Robot deck presentable!
+    
+3.  EOCA ready for discussion
+    
+4.  Learning
+    
+
+  
+
+  
+
+Feb-14
+
+1.  Email to Evan; Second one ready
+    
+2.  Outbound CRM listed with todo doc too.
+    
+3.  PATHS doc
+    
+
+  
+
+1.  New list of nexts
+    
+2.  Focused Days; Queues Filled
+    
+3.  Meetings Planned
+    
+4.  Yearbook timeline
+    
+
+  
+
+Feb-07
+
+1.  — Email to Evan; Second one ready
+    
+2.  — Outbound CRM with 5-10 out
+    
+3.  + New list of nexts
+    
+4.  — Focused Days; Queues Filled
+    
+5.  — Meetings Planned
+    
+6.  — Yearbook timeline
+    
+
+  
+
+Jan-24
+
+1.  Evan Response
+    
+2.  Scaled outbound
+    
+3.  Decision Tree; Learning plans
+    
+4.  Deep learning course work
+    
+
+  
+
+M24 EOCA argument, Evan #1&2, Plan(ML), Week
+
+W26 EOW. Evan #1&#2. Big outreach end of week
+
+R03
+
+  
+
+Jan-17
+
+1.  EVAN — Send response
+    
+2.  HEADHUNTERS — 10-20 sent. 3 conversations
+    
+
+  
+
+Jan-10
+
+1.  JARED — response
+    
+2.  EVAN — partial draft of response
+    
+3.  HEAD HUTERS — spreadsheet;
+    
+
+W05 HeadHSheet&Reach, Calls, JaredResponse, chew, EOCA, plan???
+
+  
+
+M10: partMiriResponse, callsOrged+2done, LRsetup(headhunters)
+
+W05 10CTO, JaredResponse, plan???
+
+T04: Raynor, CTO-3, DL-clean, b-think
+
+===2022===
+
+  
+
+R16: Call Queue
+
+W15: Res Done. OutreachPlan PathNote. Chew. NinaReady
+
+  
+
+T14: QL notes! Res done++ paths note== think==.
+
+hunter outreach. [booster]
+
+M06: repeat. resume. 2plan. admin
+
+### 2021-DEC
+
+  
+
+R18: 4admin. 6resume. 2uf. 3next
+
+W17: 4admin(4), 4resume(4), 3uf, 3next-job, 3calls(3)
+
+  
+
+T16: 4admin(6) 4resume(3), 3next-job summary(0)
+
+  
+
+W10 C1 Resume3 Think2
+
+  
+
+### 2020-OCT-18
+
+— Resume plan & materials
+
+— Calls
+
+— ???
+
+  
+
+### 2020-SEP-20
+
+— Full set of calls. Call Headhunter
+
+— full Resume Update
+
+— DesignLife: oddesy plans
+
+  
+
+### 2020-AUG-30
+
+— Three lives; three roles designed
+
+— Some ML
+
+— UF ready for; Kartick meeting
+
+— Calls
+
+— What am I going to do
+
+  
+
+  
+
+  
+
+  
+
+### 2020-AUG-23
+
+— Calls. Ben; Jason; ?
+
+— DesignLife 15 hours
+
+—
+
+  
+
+### 2020-AUG-16
+
++++ Four more UF slides
+
+xxx DesignLife
+
+  
+
+  
+
+  
+
+### 2020-JULY-07
+
+— Talk 2 recruiters
+
+— Nicks list
+
+— Daycares
+
+  
+
+  
+
+### 2020-JUNE-14
+
+— Get full draft of EOCA agenda (light pass) done
+
+— Read 15 hours this week
+
+— Get schedule of meetings in place
+
+— look for daycare
+
+  
+
+### 2020-MAY-10
+
+— Finish full draft of Founder Summary.
+
+— Full draft of paths tree.
+
+— Read Design your life (5 hrs)
+
+— Get list of people to call and places to look
+
+— AI direction
+
+— Really get effective with time.
+
+— Each day look at habits
+
+  
+
+  
+
+### 2020-MAY-03
+
+— Founder slide
+
+— Design Ur Life
+
+— 3 Calls;
+
+— Book Plan Start
+
+— Start Dieting / Read 10hrs how-not-to-diet
+
+  
+
+— MKT story???
+
+  
+
+  
+
+### 2020-APR-19
+
+— Refi Done (money not moved)
+
+— BBall choice made
+
+— List of options enumerated
+
+— 3 Mentor Discussions
+
+— Reading list started
+
+  
+
+### 2020-APR-05
+
+— BBall done;
+
+— Mkt Slides
+
+— Next? Uf?
+
+  
+
+### 2020-MAR-16
+
+— Advance: TeamSaver, Mkt,
+
+— UF
+
+  
+
+### 2020-FEB-08
+
+— ADR outbound.
+
+— Good prep for coach
+
+  
+
+  
+
+### 2020-JAN-15
+
+— ADR calls: multiple calls
+
+— EMAILS: two more rounds
+
+— AF_LDR: 1pg (do some prep w/ K)
+
+— REDIS push
+
+— UF eval
+
+  
+
+### 2020-DEC-21
+
+— Clear urgent todo tasks
+
+— Get OpenADR tasks in motion
+
+— Pound on Unicore!
+
+  
+
+  
+
+### 2020-NOV-23
+
+— Start work on ADR_IP
+
+— Respond to EPRI
+
+— push RACE, and KRZ, LDR along
+
+— Get UC consistent; Lex & Place working; UCM ???
+
+  
+
+  
+
+### 2020-NOV-9
+
+- loan w. all lenders
+
+- day-care
+
+- UF ucm showable to kry?
+
+- Storage campaign; running
+
+- AF_LDR: meeting had
+
+- REMP deck done; 2 more calls
+
+  
+
+. Allison: in her hands
+
+  
+
+  
+
+### 2020-NOV-2
+
+x UF ucm showable to kry?
+
+x Storage campaign; running
+
++ Allison: in her hands
+
+x AF_LDR: meeting had
+
+x REMP deck done; 2 more calls
+
+  
+
+### 2020-OCT-19
+
+- UF parser / printer matching
+
+- EPRI task outbound in motion, conf attendance, Kyr in motion
+
+- REMP deck done; 2 more calls
+
+  
+
+### 2020-OCT-6
+
+— REMP: deck done ; list started
+
+— FORUM: fact-check canvas
+
+— EPRI: First campaign started
+
++++
+
+- UF: seq-bug, examples, 2unit, printer?
+
+  
+
+### 2020-SEP-29
+
+-- REMP: deck done for present; list started
+
+-- FORUM: one day
+
+-- EPRI: planning session
+
++++ UF: Markdown work
+
+  
+
+### 2020-SEP21
+
++ REMP:
+
++ EPRI: plan to feedback
+
+- FORUM: FactChecker Canvas ; Adjudication text
+
+/ RUN: twice + exercise at home
+
+  
+
+? PYTORCH: 2h
+
+  
+
+### 2020-SEP-15
+
+(+) FORUM: fleshed out idea. 30 hours
+
+-- EPRI: build todo list. look @ materials. talk w. K next week
+
+-- REMP: Ready to present, >2h on list
+
+-- NEXT: PyTorch
+
+  
+
+M: Claims
+
+T: Forum
+
+W: RemP notes [weekly] Run ; Nick
+
+R: RemP ; Epri
+
+F: PyTorch ; RemP coding
+
+  
+
+### 2020-SEP-08
+
+M: Monthly; RemP slides []
+
+  
+
++ Claims - fully written up
+
+- EPRI on track
+
+- RemP deck ready ; calls lined up
+
+- PyTorch hacking
+
+- Thinking:
+
+  
+
+### 2020-AUG-31
+
+M: Weekly ; RemP slides [] plan
+
+T: AF ... ; [c1] RemP slides ; RemP demo
+
+W: RemP [c2]
+
+F: RemP
+
+  
+
+- Org Epri outputs
+
+- RemP ready to show ; demo v0 running?
+
+- Ayi Pay
+
+- Biggest Lingering things: house repair, birth C...
+
+- Focused thinking period
+
+- Exercise two-three times
+
+  
+
+- calls organized
+
+  
+
+  
+
+### 2020-AUG-24 (didn't plan)
+
+R: EpriPlan ; RemP [++] Run > RemP-Hack
+
+  
+
+  
+
+### 2020-AUG-17
+
+REMP: Bow Demo basic zoom ;
+
+Clean Slides -- flow, abilities, MVP, plan
+
+EPRI: Kry going, blueprint
+
+AUTONOMY:
+
+  
+
+M Repeat, Chew
+
+T RemP -Demo+Slides ; -Epri outline [] -Run
+
+W RemP, Hiba [] Sales
+
+F. RemP [] Epri, Think
+
+  
+
+  
+
+### 2020-AUG-10
+
+-GENDER: running on my machine, first result
+
+*REMP: Demo, then?
+
+-EPRI: Landscape document; Kryshek working
+
++THINK: plan thinking
+
+  
+
+  
+
+M: RemP demo ; [repeat] ; EPRI-plan+
+
+R: +Think ; +RacePitch ; [+chew] -Epri; -Run // -RemP +++AppleStore +Autonomy
+
+F: +Think ; (Epri,Autonomy, GrantPitch) [] RemP
+
+  
+
+  
+
+### 2020-AUG-3
+
++CHEW: Really clear to zero on todo & do monthly check
+
+-GENDER: running on my machine, first result
+
++REMP: Demo, then
+
+-EPRI: Landscape document
+
+-THINK: Get a plan
+
+  
+
+R +RemP,-Gen ; +Chew ; Epri? ; Run ; ???
+
+F RemP,
+
+  
+
+  
+
+  
+
+### 2020-July-27
+
+M12 chew-sweep M3 weekly, M5 RemP demo
+
+T12 SpotMkt; T3 Chew-sweep T5 Remp demo
+
+  
+
+.CHEW: Strong sweep of lingering shit!
+
+-GENDER - First results on my machine
+
+-REMP - Demo, Then?
+
++ADVANCE: SpotMkt, +Epri, +HumanTrans
+
+-THINK: How should I be spending these months
+
+write down goals; get mentor
+
+?? UF:
+
+??
+
+  
+
+~~ ~~ ~~
+
+  
+
+### 2020-July-21
+
+M12 HumanTrans, M3-5 RemP code
+
+T1 LeanXXX
+
+R12 RemP demo, R3 Gender/Chew R4 Run R5 RemP
+
+F24 RemP demo, Chew
+
+  
+
+July-14
+
+T14. T2 EPRI, T3 chew/GB, T5 fix-links
+
+W15. 1 +RemP, 2 +dans-TNEXT, 3 Chew, 5 +spot
+
+R16. 1 Epri/Gndr/SpotMkt, 2 RemP 3 Tnext/Chw 4 run. 5 UF
+
+  
+
+F17. 12 Epri/Spot 3 Chew 4 run 5 UF
+
+  
+
+  
+
+F17. 1 RemP/Tnext. 2 Gndr/SpotMkt,
+
+  
+
+  
+
+Success: Epri sent; BG plan; Dans-Tnext; 6h chew fully org; UF load?;
+
+RemPre deck ready, planned 4h
+
+  
+
+  
+
+  
+
+  
+
+  
+
+July-7
+
+4 EPRI - Deck iterated ; email sent
+
+3 Centennial - first meeting readied / done?
+
+4 TNEXT - phase I complete
+
+6 REMOTE - plan done; deck ready; multiple outreach
+
+6 UF - load and call???
+
+  
+
+Success: -Epri sent! +Centennial moving; +Tnext phase I delivering;
+
++Remote plan done; *deck presentable; +multiple outreach
+
+  
+
+  
+
+  
+
+-10 REMOTE Call Researchers ; Finish basic pitch ; 
+
++1 TNEXT Get a defined output & direction
+
+-4 EPRI Finish materials and schedule call
+
+-10 UF Print tasking ; UF-call & classes
+
++8 CHEW Rack and stack, key things org; few key things done
+
+  
+
+? CHIP Chipstack; 
+
+  
+
+Success:  Remote, Tnext, EPRI, somegood stuff on UF
+
+  
+
+  
+
+  
+
+TNEXT -- Determine how we will use this. have plan.
+
+EPRI -- get deck to write him
+
+UF -PRINT ready
+
+ML reading list ; ML plan 1hr ; 2h nina paper
+
+PRESENCE -- Remote Presence -- write the guy.
+
+  
+
+~~~
+
+  
+
+TNEXT - Get results; finish process
+
+UF exe uf-op, py-op; print. todos
+
+ML reading list ; ML plan 1hr ; 2h nina paper
+
+Nanny scower
+
+  
+
+  
+
+3 TNEXT Initial list; initial pipe
+
+6  UF UC docs (-CTX) ; access slot; mkdown read for G
+
+3 Nanny interviews
+
+1  UMON Simple info list ready, outreach done
+
+1 UMON 1pg;
+
+1 Think
+
+  
+
+1 EPRI Quick Slide done. schedule call
+
+1  ML Build simple list.  Load paper onto ipad
+
+1 CHIP Push to get call
+
+1 CHEW Scan thru lists to clean them up
+
+  
+
+~~~~
+
+  
+
+3 TNEXT Initial list; initial pipe
+
+2 EPRI Slide done. schedule call
+
+1  UMON Simple info list ready, outreach done
+
+1  ML Build simple list.  Load paper onto ipad
+
+1 CHIP Push to get call
+
+4  UF UC docs (-CTX) ; start:  MD task ; todo
+
+2 CHEW Scan thru lists to clean them up
+
+  
+
+  
+
+  
+
+1- DS - Redis Conf
+
+2- SCAN - Get plan in place
+
+1- EPRI - Slide done. schedule call
+
+2-  CARE - Get care ad back up
+
+1- CHIP - Really push to get conversation
+
+3- UMON - Deck ready, really try to get conversation
+
+1- ML - Build simple list.  Load paper onto ipad
+
+?- UF - ??? Load module & call method via EXE
+
+  
+
+  
+
+  
+
+  
+
+1- CHIP - Really push to get conversation
+
+2- UMON - Deck ready, really try to get conversation
+
+1- EPRI - Slide done. schedule call
+
+1- ML - Build simple list.  Load paper onto ipad
+
+6- UF - Pat response; Load mod& call meth EXE
+
+2-3 CARE - Get care ad back up
+
+  
+
+  
+
+- 5AM WAKE ; DAILY ORIENT ;
+
+GET SLOTS INTO DAYS
+
+  
+
+  
+
+  
+
+  
+
+-- CHIP - Really push to get conversation
+
+-- UMON - Deck ready, really try to get conversation
+
+-- EPRI - Slide done. schedule call
+
+-- ML - Build simple list.  Load paper onto ipad
+
+-- UF - Load module & call method via EXE
+
+-- CARE - Get care ad back up
+
+  
+
+  
+
+2-3 UF-URF sent to pat
+
+4-6 UF-LEX-PKG0-EXE
+
+3 Chew
+
+3 Redis ready
+
+2. UMON
+
+2. Chipstack spike (sent)
+
+1. AI stuff to read
+
+  
+
+  
+
+  
+
+2-3 UF-URF sent to pat
+
+6-9 UF-APIS (apis in code form lex/exe/pkg/var; exe-part-var tested)
+
+2-4 Hiba response ; Credit Union Spike
+
+4 Chew
+
+3 ChipStackSpike; RedisPlan
+
+  
+
+- ben plan for demo
+
+- demo running locally
+
+- read high-performing; list of AI to read;

@@ -22,7 +22,7 @@
 - [ ] WEEKLY: 	FILE THIS * TO_BUY * TIDY * EMAIL JOY *
 - [ ] QUARTERLY:	Mint * 
 - [ ] CALLS:		Mom&Dad * Repeat * Habits
-- [ ] THINK:  [[__Habits__|Habits]]   [[__Plan__|Plan]]  
+- [ ] THINK:  [[__Habits__|Habits]]   [[__Current__|Plan]]  
 
 
 ## = STUFF = 
