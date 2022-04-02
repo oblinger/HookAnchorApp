@@ -34,6 +34,13 @@ https://www.npr.org/2020/08/31/905804301/welcome-to-story-hour-100-favorite-book
 
 
 
+# # BUYING RESEARCH # 
+### 2022-04-02  Food Scale
+-  [FITINDEX](https://www.amazon.com/FITINDEX-Nutritional-Calculator-Multifunction-Smartphone/dp/B081BTKHFW/ref=sr_1_4?crid=GD7V3QKT8TIG&keywords=bluetooth+food+scale&qid=1648916734&sprefix=bluetooth+food+scale%2Caps%2C138&sr=8-4)  AppleHealth
+-  [Etekcity](https://www.amazon.com/Etekcity-ESN00-Nutrition-Counting-Bluetooth/dp/B07FCZSC41/ref=sr_1_3?crid=GD7V3QKT8TIG&keywords=bluetooth%2Bfood%2Bscale&qid=1648916734&sprefix=bluetooth%2Bfood%2Bscale%2Caps%2C138&sr=8-3&th=1)  
+-  [Etekcity](https://www.amazon.com/dp/B09HM2TN5Z?pd_rd_i=B09HM2TN5Z&pd_rd_w=YiwuB&pf_rd_p=7672bfb7-93b0-4322-b745-2104db09c4df&pd_rd_wg=UZpuE&pf_rd_r=C0MRVVPMEFZH6DRFT360&pd_rd_r=4d3224a6-5325-4f61-a47d-9182a983dffe&th=1)  
+- 
+
 
 # # MISC # 
 ### Digital painting

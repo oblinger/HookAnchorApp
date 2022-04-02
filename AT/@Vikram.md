@@ -1,3 +1,6 @@
+ [[PP]]   [Psychotherapist, Founder, and CEO](https://www.linkedin.com/in/vikramsurya/)  [[@Technotherapy]] 
+
+
 
 ### 15.00.00 Vik outline of component
 

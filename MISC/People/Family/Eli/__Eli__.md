@@ -49,7 +49,7 @@ _
 _
 # INFO
 ## === DATES ===
-
+- 2022-04-02 - First full poop in his living room toilet.  (after restarting his training; Grandma got it partly on many months before)
 
 Jul 05 2021 Eli peed in the toilet for mom (around this date)
 Dec 30 2020 Eli can say: Baba, mama, mama(for horse), nainai(for grandma), 	
@@ -146,8 +146,9 @@ Jason   92
 Blake
 
 
-BabyNameWizard
+BabyNameWizard  (now dead)
 
+[Baby Name Grapher](https://namerology.com/baby-name-grapher/)  
 _
 ### Stuff to buy
 

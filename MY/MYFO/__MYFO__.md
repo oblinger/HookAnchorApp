@@ -73,12 +73,18 @@ Model:  LSXC22396S  (I think).   or home depot: Internet #301459556  Model # LSX
 
 The filter warning light can be reset by pressing, and holding, the LIGHT/FILTER button for at least 3 seconds.
 
-### Smaller Freezer - Frigidaire 5.8 cu. ft. Upright Freezer
+### - Smaller Freezer - Frigidaire 5.8 cu. ft. Upright Freezer
 
 ## = BATH 
-### Toilet
+### - Toilet
 STEALTH 0.8GPF EL UHET AIO TOILET WH  (Dan home depot Dec 2018)
-### Tooth Brush
+### - Tooth Brush
 30-second smile.   30secondsmile.com   info@30secondsmile.com  888-813-6631
-### Dad installed fan
+### - Dad installed fan
 BULB - Original florecent - Maxlite MLS31GU35 - 3500K 1040Lm 13W 
+
+## = HEALTH
+### - Blood Pressure Cuff - GreaterGoods/0636
+- [docs](https://greatergoods.com/0636), 
+	- Force Unsynced Entries to sync:
+	  Open App, on Cuff press MEM, select A; press SET; wait for sync to happen
