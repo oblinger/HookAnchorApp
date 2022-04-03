@@ -1,0 +1,19 @@
+
+
+Very happy to have you try out the spreadsheet.
+
+Some people are reporting a problem, but I have yet to be able to
+reproduce it on my data.
+When you run the sheet, it will prompt to import your CSV file from mint.
+when you look at the second sheet (DATA) you should see your data, and
+you should see extra columns automatically created off to the right.
+
+some peoples data file does not seem to cause those extra columns to appear.
+
+If that happens to you.  please, please send me the details, so I can
+diagnose the problem.
+(The sheet is simple, so you can make it do what you want)
+
+
+cheers,
+-dan
