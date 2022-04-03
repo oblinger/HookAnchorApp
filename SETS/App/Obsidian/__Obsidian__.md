@@ -1,3 +1,6 @@
+
+
+# # LINKS 
   [mdfind](__mdfind__.md)  [Dataview](__Dataview__.md)
 
  [Kbd-Shortcuts](__KBD_Shortcuts__.md)  [Forum](https://forum.obsidian.md)   [Discord](http://app/discord)  [Oblio](https://publish.obsidian.md/oblio)  (letmein)  [Website](https://obsidian.md)   [support@obsidian.md](mailto:support@obsidian.md) 
@@ -5,11 +8,12 @@
  - [[__Dataview__]], 
 
 # # TODO
-- [ ] Add template for rocks (name & description inputs; sub-folder, with link)
-- [ ] update kmt so .md will match without num prefix and with/without dunder
-- [ ] Get GIT sync to the cloud
-- [ ] Get Kbd Maestro sync working
 
+## = BIG HACKS
+- Add 'throw' commands
+## = TODO LATER
+- [ ] Update kmt so .md will match without num prefix and with/without dunder
+- [ ] Add template for rocks (name & description inputs; sub-folder, with link)
 
 
 # # REF # 

@@ -184,7 +184,91 @@
 |      |                     |                         |
 
 
+## = Obsidian Builtins = 
+
+
+| CH    | CTRL                |  |
+| ----- | ------------------- | ---------------- |
+|       |                     |                  |
+| A     | AT start of line    |                  |
+| B     | Char BACK           |                  |
+| C     | COPY to clipboard   |                  |
+| D     | DELETE char         |                  |
+| E     | END of line         |                  |
+| F     | FORWARD char        |                  |
+| G     |                     |                  |
+| H     | CHAR backspace      |                  |
+| I     |                     |                  |
+| J     |                     |                  |
+| K     | KILL to end of line |                  |
+| L     |                     |                  |
+| M     |                     |                  |
+| N     | NEXT line           |                  |
+| O     | OPEN newline        |                  |
+| P     | PREVIOUS line       |                  |
+| Q     |                     |                  |
+| R     |                     |                  |
+| S     | SAVE note           |                  |
+| T     | TRANSPOSE chars     |                  |
+| U     |                     |                  |
+| V     | PAGE down           |                  |
+| W     |                     |                  |
+| X     |                     |                  |
+| Y     |                     |                  |
+| Z     |                     |                  |
+| -     |                     |                  |
+| +     |                     |                  |
+| {     | nav BACK            |                  |
+| }     | nav FORWARD         |                  |
+| \     |                     |                  |
+| ;     |                     |                  |
+| '     |                     |                  |
+| ,     |                     |                  |
+| .     |                     |                  |
+| /     |                     |                  |
+| ~     |                     |                  |
+| LT    |                     |                  |
+| RT    |                     |                  |
+| UP    |                     |                  |
+| DN    |                     |                  |
+| SPACE |                     |                  |
+| ENTR  |                     | follow LINK      |
+| INS   |                     |                  |
+| DEL   |                     |                  |
+| HOME  |                     |                  |
+| END   |                     |                  |
+| PgUp  |                     |                  |
+| PgDn  |                     |                  |
+| 1     | ONE pane            |                  |
+| 2     | TWO vert panes      |                  |
+| 3     | split pane hor      |                  |
+| 4     |                     |                  |
+| 5     |                     |                  |
+| 6     |                     |                  |
+| 7     |                     |                  |
+| 8     |                     |                  |
+| 9     |                     |                  |
+| 0     |                     |                  |
+| F1    |                     |                  |
+| F2    |                     |                  |
+| F3    |                     |                  |
+| F4    |                     |                  |
+| F5    |                     |                  |
+| F6    |                     |                  |
+| F7    |                     |                  |
+| F8    |                     |                  |
+| F9    |                     |                  |
+| F10   |                     |                  |
+| F11   |                     |                  |
+| F12   |                     |                  |
+
+
+
 ## = [[__Obsidian__|Obsidian]] = 
+
+first line
+here is a test line
+next line
 
 | CH    | CAPS           | COMMAND / [SHIFTED] | OPTION [SHIFTED] | LT PAIR: CTRL-ALT  / [SHIFTED] |
 | ----- | -------------- | ------------------- | ---------------- | ------------------------------ |
@@ -194,19 +278,19 @@
 | C     |                | COPY to clip        |                  | COLAPSE all / UNCOLLAPSE       |
 | D     |                | DELETE paragraph    |                  | / DELETE file                  |
 | E     |                |                     |                  |                                |
-| F     |                | FILE search / ALL   |                  | FILE in explorer / finder      |
+| F     |                | FILE search / ALL   | FIND ALL         | FILE in explorer / finder      |
 | G     |                | GRAPH view          |                  |                                |
-| H     |                |                     |                  |                                |
+| H     | >HIDE<         |                     |                  |                                |
 | I     |                | tgl ITALIC          |                  |                                |
 | J     |                |                     |                  | / insert JOURNAL header        |
-| K     |                | insert LINK         |                  |                                |
-| L     |                |                     |                  | / LINKS pane                   |
+| K     | >KICK<         | insert LINK         |                  |                                |
+| L     | >LAUNCH<       |                     |                  | / LINKS pane                   |
 | M     |                |                     |                  | MISC note                      |
 | N     |                | NEW note / New PANE |                  | /                              |
 | O     |                | OPEN switcher       |                  | OPEN in default app            |
 | P     |                | cmd PALETTE         |                  | PLAN note /                    |
 | Q     |                |                     |                  |                                |
-| R     |                | search REPLACE      |                  | RECENT notes pane              |
+| R     |                |                     | search REPLACE   | RECENT notes pane              |
 | S     |                | SAVE file           |                  | SCRATCH note / STARRED pane    |
 | T     |                | / undo CLOSE        |                  | new TEMPLATE/insert only       |
 | U     |                |                     |                  |                                |
@@ -302,6 +386,7 @@ CMD = Standard Page Edit
  =  Insert
 
 
+# # OTHER INFO # 
 ## === MY STUFF (OUT OF DATE) ===
 	   !=shift, ^=control, _/=alt, #=command    a/b ... x/y multiple commands a with y and b with y
 ### My KEYS
