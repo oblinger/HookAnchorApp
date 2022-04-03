@@ -1,7 +1,8 @@
-- [x] Figure Trip - Buy flight tickets
+- [ ] BoA overpay; 800-669-6607
 - [ ] get codility stuff out
 - [ ] fix disposal
 - [ ] fix microwave
+- [ ] high output management summary
 
 
 

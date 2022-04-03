@@ -3,6 +3,7 @@
 
 
 ## = QUICKIES = 
+- [ ] MED:  Research best vitamins
 - [ ] OBS - have side panels remember state
 - [ ] KMT - scan whole note not just prefix
 - [ ] One button night noise / Biurnal beats / Use shortcut  (add apps to home screen)

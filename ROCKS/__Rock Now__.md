@@ -17,8 +17,12 @@
 - [ ] Complete Coursera Deep Learning Course
 
 ## = [[__Framing__|Framing]] =
-- is my resume good?  how to know?
+- [ ] is my resume good?  how to know?
 
+## = [[__Yearbook__|Yearbook]] =
+- [ ] Ask QL for her UX person
+- [ ] ask XXXX about fonts
+- [ ] Write announcement email (maybe more)
 
 
 

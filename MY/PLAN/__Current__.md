@@ -2,14 +2,13 @@
 ### 2022-03-31 (short week)
 
 - [ ] Plan calling ...  maybe Schedule FAANG Engineer
-- [ ] Run code for coursera... maybe do a few hrs
+- [ ] Run code for Coursera... maybe do a few hrs
 - [ ] Get all time critical tasks completed
 	- [ ] Blood, lung call
 	- [ ] try to do others
 
 - [ ] [Yearbook](__Yearbook__.md) 
-	- [ ] G-drive setup
-	- [ ] ask XXXX about fonts
-	- [ ] Write announcement email (maybe more)
+	
+	
 
 

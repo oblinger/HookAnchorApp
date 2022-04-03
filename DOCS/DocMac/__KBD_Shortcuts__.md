@@ -1,32 +1,5 @@
 
-## = TOPICS =
-### - Modifier Combos
 
-| Combo              | Key    | Explanation                | Notes                            |
-| ------------------ | ------ | -------------------------- | -------------------------------- |
-| Ctrl               | CTRL   | App "cursor" control       |                                  |
-| Opt                | OPT    | App "user defined" control |                                  |
-| Cmd                | CMD    | App "global" commands      |                                  |
-| Ctrl-Opt           | LEFT2  | LEFT PAIR -                |                                  |
-| Ctrl-Cmd           | TAB    | Dan "Global" commands      | Dan's Global "GOTO" Destinations |
-| Opt-Cmd            | RIGHT2 | RIGHT PAIR -               |                                  |
-| Ctrl-Opt-Cmd       | SLAM   | Ctrl-Opt-Cmd -             | Dan's Global Commands            |
-| Ctrl-Opt-Cmd-Shift | HYPER  | Dan "Cursor" commands      | Dan's Fastest Bindings           |
-|                    |        |                            |                                  |
-
-
-### - Karabiner
-- [Online Macros](https://ke-complex-modifications.pqrs.org/?q=tab),  
-#### . Complex Modification 
-- to_if_alone_timeout_milliseconds = 1000                // Needs to be long so single tap will register as a TAB
-- to_if_held_down_threshold_milliseconds = 50       // Needs to be short so fast-tab chording will register as chorded key
-
-#### . Usage
-- If you have a properly formatted JSON file (`pip3 install demjson; jsonlist file.json`) matching the format, you can put it in `~/.config/karabiner/assets/complex_modifications`
-
-#### . Tab key Remap
-{ "title": "Tab to Hyper When Held", "rules": [ { "description": "Map Tab to Hyper when held", "manipulators": [ { "type": "basic", "from": { "key_code": "tab", "modifiers": { "optional": [ "any" ] } }, "to_if_alone": [ { "key_code": "tab" } ], "to_if_held_down": [ { "key_code": "left_control", "modifiers": [ "left_command"] } ] } ] } ] }
-#### . XXXX
 ## = NEW GLOBAL =
 
 
@@ -107,6 +80,152 @@
 |       |                     |                    |                   |
 
 
+## = [[__Obsidian__|Obsidian]] = 
+
+| CH    | CAPS           | COMMAND / [SHIFTED] | OPTION [SHIFTED] | LT PAIR: CTRL-ALT  / [SHIFTED] |
+| ----- | -------------- | ------------------- | ---------------- | ------------------------------ |
+|       |                | Standard Editing    |                  | Global Go/Create               |
+| A     |                |                     |                  |                                |
+| B     |                | toggle BOLD         |                  |                                |
+| C     |                | COPY to clip        |                  | COLAPSE all / UNCOLLAPSE       |
+| D     |                | DELETE paragraph    |                  | / DELETE file                  |
+| E     |                |                     |                  |                                |
+| F     |                | FILE search / ALL   | FIND ALL         | FILE in explorer / finder      |
+| G     |                | GRAPH view          |                  |                                |
+| H     | >HIDE<         |                     |                  |                                |
+| I     |                | tgl ITALIC          |                  |                                |
+| J     |                |                     |                  | / insert JOURNAL header        |
+| K     | >KICK<         | insert LINK         |                  |                                |
+| L     | >LAUNCH<       |                     |                  | / LINKS pane                   |
+| M     |                |                     |                  | MISC note                      |
+| N     |                | NEW note / New PANE |                  | /                              |
+| O     |                | OPEN switcher       |                  | OPEN in default app            |
+| P     |                | cmd PALETTE         |                  | PLAN note /                    |
+| Q     |                |                     |                  |                                |
+| R     |                |                     | search REPLACE   | RECENT notes pane              |
+| S     |                | SAVE file           |                  | SCRATCH note / STARRED pane    |
+| T     |                | / undo CLOSE        |                  | new TEMPLATE/insert only       |
+| U     |                |                     |                  |                                |
+| V     |                | PASTE from clip     |                  |                                |
+| W     |                | CLOSE pane          |                  | Load WORKSPACE / & save cur    |
+| X     |                | CUT to clip         |                  |                                |
+| Y     |                |                     |                  |                                |
+| Z     |                | UNDO / REDO         |                  | ZOOM mode                      |
+| -     |                |                     |                  | tgl LEFT pane                  |
+| +     |                |                     |                  | tgl RIGHT pane                 |
+| {     | nav BACK       |                     |                  | nav BACK                       |
+| }     | nav FORWARD    |                     |                  | nav FORWARD                    |
+| \     |                |                     |                  |                                |
+| ;     |                |                     |                  | DARK mode                      |
+| '     |                |                     |                  | LIGHT mode                     |
+| ,     |                | SETTINGS            |                  |                                |
+| .     |                |                     |                  |                                |
+| /     |                | tgl COMMENT         |                  |                                |
+| ~     |                |                     |                  |                                |
+| LT    |                |                     |                  |                                |
+| RT    |                |                     |                  |                                |
+| UP    |                | mv line UP          |                  |                                |
+| DN    |                | mv line DOWN        |                  |                                |
+| SPACE |                | Obsidian Anchor     |                  |                                |
+| ENTR  |                | tgl BOX / tgl CHECK | follow LINK      | show LINK in pane              |
+| INS   |                |                     |                  |                                |
+| DEL   |                |                     |                  |                                |
+| HOME  |                |                     |                  |                                |
+| END   |                |                     |                  |                                |
+| PgUp  |                |                     |                  |                                |
+| PgDn  |                |                     |                  |                                |
+| 1     | ONE pane       | xxxx                |                  | MERGE one window               |
+| 2     | TWO vert panes |                     |                  | SPLIT vertically into 2        |
+| 3     | split pane hor |                     |                  | SPLIT horizontally             |
+| 4     |                |                     |                  |                                |
+| 5     |                |                     |                  |                                |
+| 6     |                |                     |                  |                                |
+| 7     |                |                     |                  |                                |
+| 8     |                |                     |                  |                                |
+| 9     |                |                     |                  |                                |
+| 0     |                |                     |                  |                                |
+| F1    |                |                     |                  |                                |
+| F2    |                |                     |                  |                                |
+| F3    |                |                     |                  |                                |
+| F4    |                |                     |                  |                                |
+| F5    |                |                     |                  | PREV daily note                |
+| F6    |                |                     |                  | TODAY'S daily note             |
+| F7    |                |                     |                  | NEXT daily note                |
+| F8    |                |                     |                  |                                |
+| F9    |                |                     |                  |                                |
+| F10   |                |                     |                  |                                |
+| F11   |                |                     |                  |                                |
+| F12   |                |                     |                  |                                |
+
+CMD OPT
+F REPLACE
+
+OPT
+^ / v  swap line up/down
+enter follow link
+tab tgl FOLD
+
+HYPER
+F9    Open DAILY
+PGUP  in FINDER
+
+SHIFT HYPER
+4 arrows move panes
+
+| F1  | Daily Dash
+| F2  edit TITLE
+| F3  
+| F4  
+| F5  
+| F6  
+| F7  
+| F8  
+| F9  
+| F10  
+| F11  
+| F12  
+| LT  
+| RT  
+| UP  
+| DN  
+
+
+
+CAPS = All Apps
+CMD = Standard Page Edit
+ =  Page Nav
+ =  Obsidian Global
+ =  Insert
+
+
+## = TOPICS =
+### - Modifier Combos
+
+| Combo              | Key    | Explanation                | Notes                            |
+| ------------------ | ------ | -------------------------- | -------------------------------- |
+| Ctrl               | CTRL   | App "cursor" control       |                                  |
+| Opt                | OPT    | App "user defined" control |                                  |
+| Cmd                | CMD    | App "global" commands      |                                  |
+| Ctrl-Opt           | LEFT2  | LEFT PAIR -                |                                  |
+| Ctrl-Cmd           | TAB    | Dan "Global" commands      | Dan's Global "GOTO" Destinations |
+| Opt-Cmd            | RIGHT2 | RIGHT PAIR -               |                                  |
+| Ctrl-Opt-Cmd       | SLAM   | Ctrl-Opt-Cmd -             | Dan's Global Commands            |
+| Ctrl-Opt-Cmd-Shift | HYPER  | Dan "Cursor" commands      | Dan's Fastest Bindings           |
+|                    |        |                            |                                  |
+
+
+### - Karabiner
+- [Online Macros](https://ke-complex-modifications.pqrs.org/?q=tab),  
+#### . Complex Modification 
+- to_if_alone_timeout_milliseconds = 1000                // Needs to be long so single tap will register as a TAB
+- to_if_held_down_threshold_milliseconds = 50       // Needs to be short so fast-tab chording will register as chorded key
+
+#### . Usage
+- If you have a properly formatted JSON file (`pip3 install demjson; jsonlist file.json`) matching the format, you can put it in `~/.config/karabiner/assets/complex_modifications`
+
+#### . Tab key Remap
+{ "title": "Tab to Hyper When Held", "rules": [ { "description": "Map Tab to Hyper when held", "manipulators": [ { "type": "basic", "from": { "key_code": "tab", "modifiers": { "optional": [ "any" ] } }, "to_if_alone": [ { "key_code": "tab" } ], "to_if_held_down": [ { "key_code": "left_control", "modifiers": [ "left_command"] } ] } ] } ] }
+#### . XXXX
 ## = GLOBAL =
 
 | CH   | COMMAND / [SHIFTED] | ALT  / [SHIFTED]        |
@@ -262,128 +381,6 @@
 | F11   |                     |                  |
 | F12   |                     |                  |
 
-
-
-## = [[__Obsidian__|Obsidian]] = 
-
-first line
-here is a test line
-next line
-
-| CH    | CAPS           | COMMAND / [SHIFTED] | OPTION [SHIFTED] | LT PAIR: CTRL-ALT  / [SHIFTED] |
-| ----- | -------------- | ------------------- | ---------------- | ------------------------------ |
-|       |                | Standard Editing    |                  | Global Go/Create               |
-| A     |                |                     |                  |                                |
-| B     |                | toggle BOLD         |                  |                                |
-| C     |                | COPY to clip        |                  | COLAPSE all / UNCOLLAPSE       |
-| D     |                | DELETE paragraph    |                  | / DELETE file                  |
-| E     |                |                     |                  |                                |
-| F     |                | FILE search / ALL   | FIND ALL         | FILE in explorer / finder      |
-| G     |                | GRAPH view          |                  |                                |
-| H     | >HIDE<         |                     |                  |                                |
-| I     |                | tgl ITALIC          |                  |                                |
-| J     |                |                     |                  | / insert JOURNAL header        |
-| K     | >KICK<         | insert LINK         |                  |                                |
-| L     | >LAUNCH<       |                     |                  | / LINKS pane                   |
-| M     |                |                     |                  | MISC note                      |
-| N     |                | NEW note / New PANE |                  | /                              |
-| O     |                | OPEN switcher       |                  | OPEN in default app            |
-| P     |                | cmd PALETTE         |                  | PLAN note /                    |
-| Q     |                |                     |                  |                                |
-| R     |                |                     | search REPLACE   | RECENT notes pane              |
-| S     |                | SAVE file           |                  | SCRATCH note / STARRED pane    |
-| T     |                | / undo CLOSE        |                  | new TEMPLATE/insert only       |
-| U     |                |                     |                  |                                |
-| V     |                | PASTE from clip     |                  |                                |
-| W     |                | CLOSE pane          |                  | Load WORKSPACE / & save cur    |
-| X     |                | CUT to clip         |                  |                                |
-| Y     |                |                     |                  |                                |
-| Z     |                | UNDO / REDO         |                  | ZOOM mode                      |
-| -     |                |                     |                  | tgl LEFT pane                  |
-| +     |                |                     |                  | tgl RIGHT pane                 |
-| {     | nav BACK       |                     |                  | nav BACK                       |
-| }     | nav FORWARD    |                     |                  | nav FORWARD                    |
-| \     |                |                     |                  |                                |
-| ;     |                |                     |                  | DARK mode                      |
-| '     |                |                     |                  | LIGHT mode                     |
-| ,     |                | SETTINGS            |                  |                                |
-| .     |                |                     |                  |                                |
-| /     |                | tgl COMMENT         |                  |                                |
-| ~     |                |                     |                  |                                |
-| LT    |                |                     |                  |                                |
-| RT    |                |                     |                  |                                |
-| UP    |                | mv line UP          |                  |                                |
-| DN    |                | mv line DOWN        |                  |                                |
-| SPACE |                | Obsidian Anchor     |                  |                                |
-| ENTR  |                | tgl BOX / tgl CHECK | follow LINK      | show LINK in pane              |
-| INS   |                |                     |                  |                                |
-| DEL   |                |                     |                  |                                |
-| HOME  |                |                     |                  |                                |
-| END   |                |                     |                  |                                |
-| PgUp  |                |                     |                  |                                |
-| PgDn  |                |                     |                  |                                |
-| 1     | ONE pane       | xxxx                |                  | MERGE one window               |
-| 2     | TWO vert panes |                     |                  | SPLIT vertically into 2        |
-| 3     | split pane hor |                     |                  | SPLIT horizontally             |
-| 4     |                |                     |                  |                                |
-| 5     |                |                     |                  |                                |
-| 6     |                |                     |                  |                                |
-| 7     |                |                     |                  |                                |
-| 8     |                |                     |                  |                                |
-| 9     |                |                     |                  |                                |
-| 0     |                |                     |                  |                                |
-| F1    |                |                     |                  |                                |
-| F2    |                |                     |                  |                                |
-| F3    |                |                     |                  |                                |
-| F4    |                |                     |                  |                                |
-| F5    |                |                     |                  | PREV daily note                |
-| F6    |                |                     |                  | TODAY'S daily note             |
-| F7    |                |                     |                  | NEXT daily note                |
-| F8    |                |                     |                  |                                |
-| F9    |                |                     |                  |                                |
-| F10   |                |                     |                  |                                |
-| F11   |                |                     |                  |                                |
-| F12   |                |                     |                  |                                |
-
-CMD OPT
-F REPLACE
-
-OPT
-^ / v  swap line up/down
-enter follow link
-tab tgl FOLD
-
-HYPER
-F9    Open DAILY
-PGUP  in FINDER
-
-SHIFT HYPER
-4 arrows move panes
-
-| F1  | Daily Dash
-| F2  edit TITLE
-| F3  
-| F4  
-| F5  
-| F6  
-| F7  
-| F8  
-| F9  
-| F10  
-| F11  
-| F12  
-| LT  
-| RT  
-| UP  
-| DN  
-
-
-
-CAPS = All Apps
-CMD = Standard Page Edit
- =  Page Nav
- =  Obsidian Global
- =  Insert
 
 
 # # OTHER INFO # 
