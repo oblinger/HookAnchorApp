@@ -1,3 +1,4 @@
+  [Dad](__Dad__.md)
   [Mom](__Mom__.md)
 [[__Mom__|Mom]]  [[__Dad__|Dad]] 
 

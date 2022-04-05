@@ -1,3 +1,18 @@
+
+### 2022-03-31 (short week)
+
+- [ ] Plan calling ...  maybe Schedule FAANG Engineer
+- [ ] Run code for Coursera... maybe do a few hrs
+- [ ] Get all time critical tasks completed
+	- [ ] Blood, lung call
+	- [ ] try to do others
+
+- [x] [Yearbook](__Yearbook__.md) 
+	- [x] Get printer ready
+	- [x] ask XXXX about fonts
+	- [x] other stuff
+	
+
 ### 2022-03-21  
 - [ ] Get response to Amy Kruse   [[__Crunchbase__|CB]] 
 - [x] Plan calling ...  maybe Schedule FAANG Engineer

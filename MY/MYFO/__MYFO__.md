@@ -43,6 +43,9 @@ Item # ‌1095743‌
 $ 2,999.99
 bootstrap guy's.  insurance setup:  https://medium.com/@dvassallo/from-employee-to-bootstrapper-941f061f207f
 
+Inside: 24" wide x 20" deep.        9" high (bottom)  5" high (top)  (giving about 1" clearance)
+
+
 ### - GE Microwave
 
 [GE Profile 2.1 cu. ft. Over the Range Microwave in Stainless Steel with Sensor Cooking](https://www.homedepot.com/p/GE-Profile-2-1-cu-ft-Over-the-Range-Microwave-in-Stainless-Steel-with-Sensor-Cooking-PVM9005SJSS/206214752) 

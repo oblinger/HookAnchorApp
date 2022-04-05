@@ -1,17 +1,26 @@
  # TODO
+- [ ] Get QL UX person ASAP
+- [ ] Writeup announcement email
+- [ ] Get first draft of materials to provide parents
 
-- [ ] Get data into this note
-- [ ] Talk with Rashi about Yearbook    rashi741@gmail.com
-- [ ] get Gdrive set
 
-### - Gdrive [Folder](https://drive.google.com/drive/u/0/folders/1CsseZ-j86tl9EBtL8muzTwzKd97GA5Hf)
-- [Samples Sheet](https://docs.google.com/presentation/d/1DrSX9Yp6Gth8V7JM7RY3AyMb05xefyTqXbDGme_WyBI/edit?usp=sharing),   [MCC](https://docs.google.com/presentation/d/1eqF6iduxWytohTrURN22F1zB-B9CDvgRimbkBbKXAss/edit#slide=id.p),  
 
+### - Gdrive Info  [Online Plan](https://docs.google.com/document/d/1UgT3RLfLRh_GmbC4qltnKDFVi_vCVnvccVGRitrk1uM/edit#heading=h.i7qcdkrkeflz), [Folder](https://drive.google.com/drive/u/0/folders/1CsseZ-j86tl9EBtL8muzTwzKd97GA5Hf),   [Samples Sheet](https://docs.google.com/presentation/d/1DrSX9Yp6Gth8V7JM7RY3AyMb05xefyTqXbDGme_WyBI/edit?usp=sharing),   [MCC](https://docs.google.com/presentation/d/1eqF6iduxWytohTrURN22F1zB-B9CDvgRimbkBbKXAss/edit#slide=id.p),  
+[Folder](https://drive.google.com/drive/u/1/folders/1C-Uvjho9JmO8WPHbKGsK5Fiwr0VrIK7G)
+- [Coorespondance](https://docs.google.com/document/d/1WPniOcLrTDTgM0jpRvde7cPdLjJ6XZRZG-dwMIjAomo/edit#)  
+- [Printers](https://docs.google.com/spreadsheets/d/139pv3_ZB9gkoe-M8S5X6tJ6NFRHHnsRhH5Vr7tXDBvQ/edit#gid=1552543262)
+
+
+## = Ref
+- [[https://slidesgo.com/?noremember=P7M575Ogykt1qKQX]] 
+- Talk with Rashi about Yearbook    rashi741@gmail.com
+
+## = MISC INFO
+### - Contacts
 ### - Printer Details
 CHOICES:
 - **Printer**:  [PrintingCenterUSA](https://www.printingcenterusa.com/year-book-printing)  800-955-1555
-- **Binding**:   Saddle Stitch Binding.  (lays flat, lasts longer with wear.
-  "Perfect bound" and "hard bound" both look better, but are not as practical)
+- **Binding**:   Saddle Stitch Binding.  (this lays flat when looking at each family's two pages. and it lasts longer with wear and tear.  On the other hand "Perfect bound" and "hard bound" both look better, but are not as practical)
 - **Paper weight**: 100 Lb. paper for the text pages.  
   (This is their highest weight, it is like a nice magazine paper.)
 - **Paper finish**:  Glossy finish for the text pages.   (this looks better for photos, and is a bit more durable.  Downside is it is harder to write on it, but I think we will not be signing our yearbooks.  right???  Matt finish is the alternative.
@@ -23,13 +32,6 @@ CHOICES:
     Pages:  cover page, cover inside, title page, Start on an even page
 
 
-
-### - MISC INFO - 
-
-[Folder](https://drive.google.com/drive/u/1/folders/1C-Uvjho9JmO8WPHbKGsK5Fiwr0VrIK7G)
-- [Online Plan](https://docs.google.com/document/d/1UgT3RLfLRh_GmbC4qltnKDFVi_vCVnvccVGRitrk1uM/edit#heading=h.i7qcdkrkeflz) 
-- [Coorespondance](https://docs.google.com/document/d/1WPniOcLrTDTgM0jpRvde7cPdLjJ6XZRZG-dwMIjAomo/edit#)  
-- [Printers](https://docs.google.com/spreadsheets/d/139pv3_ZB9gkoe-M8S5X6tJ6NFRHHnsRhH5Vr7tXDBvQ/edit#gid=1552543262)
 
 
 ~~

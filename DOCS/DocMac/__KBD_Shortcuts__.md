@@ -28,7 +28,7 @@
 | T     |                     | go TUNES           |                   |
 | U     |                     |                    |                   |
 | V     | ?? V PASTE          |                    | plain PASTE       |
-| W     |                     | go WEB             |                   |
+| W     |                     | go WEB             | reset all WINDOWS |
 | X     | ?? X CUT            |                    |                   |
 | Y     |                     |                    |                   |
 | Z     |                     |                    |                   |

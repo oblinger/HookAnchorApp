@@ -1,4 +1,4 @@
-### 2021.06.06 - 
+### 2021.06.06 - summary
 GRATITUDE
 - Eli's happiness
 - The options I have in life
@@ -14,7 +14,6 @@ DIDN'T WORK
 - Didn't engage in my work for the WHOLE day!
 - didn't exercise.
 
-### 
 ### 2021.06.04 - 
 Technical Design
 Puzzle -- 

@@ -19,6 +19,7 @@
 ## = [[__Framing__|Framing]] =
 - [ ] is my resume good?  how to know?
 
+= Designing Your Life = 
 ## = [[__Yearbook__|Yearbook]] =
 - [ ] Ask QL for her UX person
 - [ ] ask XXXX about fonts

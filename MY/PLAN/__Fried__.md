@@ -1,5 +1,10 @@
-
+- shudwon script
+- - put attachments into sub-folders automatically   (.attach)
+- Fling that uses direct file writes
+- IFTTT output of Apple Health data (or any kind of export)
+ - [ ] buy food scale
 - [ ] [[__MED__|MED]] Nutritionist - Choose one #todo 
+
 
 
 ## = QUICKIES = 

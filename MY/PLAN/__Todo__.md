@@ -1,8 +1,17 @@
-- [ ] BoA overpay; 800-669-6607
+THIS WEEK'S TODOS
+- [x] Order Groc
+- [ ] Vijaya Response
+- [ ] Clean in2
+- [x] Schedule stamper  VSP
+- [x] Get QL UX person ASAP
+- [x] BoA overpay; 800-669-6607
 - [ ] get codility stuff out
 - [ ] fix disposal
 - [ ] fix microwave
 - [ ] high output management summary
+- [ ] BoA overpay; 800-669-6607
+- [ ] get codility stuff out
+
 
 
 
