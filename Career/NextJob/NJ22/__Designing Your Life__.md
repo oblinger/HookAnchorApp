@@ -139,12 +139,13 @@ PAGE 27
 	Health: 1.5 -> 3.5
 
 - WORK - 
-	- 
+	- CONTRIBUTE - Not leveraging my capabilities 
 	- TIME - presently afford me free time, but no goal
 	- STATUS/VALUE/
 	- MONEY - need to earn a reasonable amount
 - PLAY - 
-	- FAMILY - hitting my groove w/ family.  But get bored w/ too much time there.
+	- FAMILY - hitting my groove w/ family.  
+	  Will get bored w/ too much time there.
 	- PROJECTS - Fun for me is building something technical of value.
 	- SOCIAL - want to expand my social play
 - LOVE 
@@ -161,6 +162,26 @@ PAGE 27
  Where do your views on work and life complement one another? b. Where do they clash? c. Does one drive the other? How?
 
 Burnett, Bill; Evans, Dave. Designing Your Life (p. 40). Knopf Doubleday Publishing Group. Kindle Edition. 
+
+### - WORK VIEW
+- PRIMARY VALUE -- Why do I work?  To:
+	- earn good money,
+	- by leveraging my differentiated skills
+	- to provide value for society
+	- in a way that also affords me reasonable status
+- Worthwhile work: provides a net benefit to society as a whole & to specific individuals.
+- Money?  I need sufficient cash to minimally justify myself to QL, 
+  or to drive rapid readiness for retirement.  (e.g. >500K/yr)
+ - Experience/Growth/Fulfillment?  At this stage I am mostly focused on fulfillment.  I am happy for growth and experience, but feeling my work is enjoyable and worthwhile are the dominant factors.
+ - How does it relate to the individual/others/society?  
+	 - NET GOOD: It should provide value for others in the abstract... it should be a net positive for society.  
+	 - SMART PEOPLE:  It should provide daily interactions with smart folks.
+
+### - LIFE VIEW
+
+  
+
+
 
 ## = (4) MINDMAPS = 
 

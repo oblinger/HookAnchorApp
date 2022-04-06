@@ -1,5 +1,14 @@
 (See [ReBuy](__ReBuy__.md))
 
+### 2022-04-04  Crisper
+- https://www.google.com/shopping/product/6650619068781724208?client=safari&q=huge+steel+crisper&prds=eto:11839512918393164080_0,rsk:PC_1582192993424458004
+- [home depot](https://www.homedepot.com/pep/Nordic-Ware-Large-Oven-Bacon-Pan-35702M/312440701?g_store=&source=shoppingads&locale=en-US&&mtc=Shopping-BF-F_HDH-G-D59H-029_029_HOUSEWARES-Multi-NA-NA-SMART-NA-NA-bakeware_smart_pla_test&cm_mmc=Shopping-BF-F_HDH-G-D59H-029_029_HOUSEWARES-Multi-NA-NA-SMART-NA-NA-bakeware_smart_pla_test-71700000087623971-58700007447146482-92700068477512700&gclid=CjwKCAjwrqqSBhBbEiwAlQeqGmuunuBfdSkPsFyfRl7vf2MFdvqDnwD2E0ZYiTHa70D_c4TBLhs9fBoC-vsQAvD_BwE&gclsrc=aw.ds) 
+- [Gotham](https://www.macys.com/shop/product/gotham-steel-14-x-12-non-stick-ti-ceramic-heat-circulating-crisper-tray?ID=6684418&pla_country=US&CAGPSPN=pla&cm_mmc=Google_SH_PLA_Cookware-_-GS_Cookware_PLA_Restructure_Gotham_Steel-_-511057975604-_-pg1052139088_c_kclickid_7557f1d9-6f7c-4a47-857b-11ba14f22d4c_KID_EMPTY_12650493745_121468330978_511057975604_pla-1212295922393_80313014635USA__c_KID_&trackingid=509x1052139088&m_sc=sem&m_sb=Google&m_tp=PLA&m_ac=Google_SH_PLA_Cookware&m_ag=GothamSteel&m_cn=GS_Cookware_PLA_Restructure&m_pi=go_cmp-12650493745_adg-121468330978_ad-511057975604_pla-1212295922393_dev-c_ext-_prd-80313014635USAgo_cmp-12650493745_adg-121468330978_ad-_pla-1212295922393_dev-c_ext-&gclid=CjwKCAjwrqqSBhBbEiwAlQeqGgjJeVL3Ta9BMx7HnuQPYF6MlGRn13C0NiewiJcj7RjjNSysj7F7_hoC5X0QAvD_BwE) 
+- [reddit](https://www.google.com/imgres?imgurl=https%3A%2F%2Fm.media-amazon.com%2Fimages%2FI%2F61zSjNXM28L.jpg&imgrefurl=https%3A%2F%2Fredditfavorites.com%2Fproducts%2Ftoastabags-crispease-oven-crisper-tray-reinforced-ptfe-red-34-x-29-x-2-5-cm&tbnid=6nKBS8mbilsp-M&vet=10CIwBEDMoogFqFwoTCPCe6Kn4-_YCFQAAAAAdAAAAABAL..i&docid=yv-YgpelMPn0IM&w=394&h=500&itg=1&q=crisper%20tray&client=safari&ved=0CIwBEDMoogFqFwoTCPCe6Kn4-_YCFQAAAAAdAAAAABAL) 
+- 
+
+# OLDER
+
 - [ ] Light for Eli's room
 -- oximetry
 -- circuit breakers for house

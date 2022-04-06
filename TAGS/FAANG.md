@@ -1,6 +1,7 @@
- [[__TAGS__]]  
+ [[TAG]]
 
-Includes  [[@Meta]],  [[@Facebook]],  [[@Amazon]],  [[@Apple]],  [[@Netflix]],  [[@Google]]    PLUS:  [[@Microsoft]],  [[@LinkedIn]]   PLUS:  [[@VMware]],  [[@PARC]],  
+Includes  [[@Meta]],  [[@Facebook]],  [[@Amazon]],  [[@Apple]],  [[@Netflix]],  [[@Google]]    
+PLUS:  [[@Microsoft]],  [[@LinkedIn]]   PLUS:  [[@Vmware]],  [[@PARC]],  
  [LinkedIn Search](https://www.linkedin.com/search/results/people/?currentCompany=%5B%226442186%22%2C%2229028525%22%2C%2234924%22%2C%222382910%22%2C%22208137%22%2C%221441%22%2C%221586%22%2C%221035%22%2C%2276987811%22%2C%2210667%22%2C%22162479%22%2C%221009%22%2C%221337%22%2C%22165158%22%5D&network=%5B%22F%22%5D&origin=FACETED_SEARCH&page=4&pastCompany=%5B%221586%22%2C%221009%22%2C%221441%22%2C%221035%22%2C%2276987811%22%2C%22162479%22%2C%2210667%22%2C%221337%22%2C%22165158%22%5D&sid=vX0)
 
  Ask|  about FAANG ML: 
@@ -19,8 +20,7 @@ Includes  [[@Meta]],  [[@Facebook]],  [[@Amazon]],  [[@Apple]],  [[@Netflix]],  
  Solid     | [[@James Miller]],  [[@Sara Basson]],   [[@Herb Derby]],  [[@Arkady Epshteyn]],  [[@Acorn Pooley]],  [[@Qingling Oblinger]],  [[@Greg Hornby]],          
  Heavy     | [[@Praveen Paritosh]],  [[@Dan Kaufman]],  [[@Manish Gupta]],  [[@Ming-Hsuan Yang]],  [[@William Cohen]],                                                         
  AI        | [[@Andrew Tomkins]],  [[@Eugene Agichtein]],  [[@Shalini Ghosh]],  [[@Ian Simon]],  [[@Mariusz Pasek]],  [[@Alexander Toshev]],                                              
- Goog Otr  | [[@Preston Marshall]],  [[@Josh Yelon]],  || [[@Abhishek Verma]],  [[@Tony DiLoreto]],  [[@Dav Zimak]],  [[@Ernest Galbrun]],   
-           | [[@Ehsan Saeedi]],  [[@Jared DeMott]],  [[@Raghu Mann]],  [[@Kyle Seaman]],  [[@Bobby Allen]], 
+ Goog Otr  | [[@Preston Marshall]],  [[@Josh Yelon]],  [[@Abhishek Verma]],  [[@Tony DiLoreto]],  [[@Dav Zimak]],  [[@Ernest Galbrun]],  [[@Ehsan Saeedi]],  [[@Jared DeMott]],  [[@Raghu Mann]],  [[@Kyle Seaman]],  [[@Bobby Allen]], 
 
  AMAZON    | [[@Amazon]] 
  --------- | --------------------------------------------------------------------------------------
@@ -29,7 +29,7 @@ Includes  [[@Meta]],  [[@Facebook]],  [[@Amazon]],  [[@Apple]],  [[@Netflix]],  
  Heavy     | [[@Ashwin Ram]],  [[@Tomas Singliar]],  [[@Rohit Prasad]],  [[@Prem Natarajan]],  [[@Siddhartha Srinivasa]],  AI [[@Drew Dean]],   
  Amz Otr   | [[@Leila Brown]],  [[@James Fang]],  [[@Jessie Bones]],  [[@Sharif Khan]],  
 
- **META**      | [[@Meta]] 
+ FACEBOOK  | [[@Meta]] 
  --------- | ---------------------------------------------------------------------------------------
  Heavy     | [[@Yann LeCun]],  [[@Patrick Pantel]], 
  Solid     | [[@Rodrigo Braz]], [[@Camilo Acosta]],  
@@ -46,7 +46,7 @@ Includes  [[@Meta]],  [[@Facebook]],  [[@Amazon]],  [[@Apple]],  [[@Netflix]],  
  Heavy     | [[@Peter Lee]],  [[@Eric Horvitz]],  [[@Ben Cutler]],  
  Msft Otr  | [[@Colby Raley]],   [[@Christopher White]],  [[@Harpreet Sawhney]],  [[@Silvio Sangineto]],  
 
- FAANG-ish | [[@LinkedIn]],  [[@Netflix]],  [[@Vmware]],  [[@PARC]],  [[ROBOTICS]],  
+ FAANG-ish | [[@LinkedIn]],  [[@Netflix]],  [[@Vmware]],  [[@PARC]], 
  --------- | ---------------------------------------------------------------------------------------
  Linked-In | Solid/AI  [[@Sofus Macskassy]],  Otr [[@Justin Peterman]],  
  NetFlix   | [[@Kalina Panayotova]],  [[@Abhishek Kapatkar]],  
@@ -57,3 +57,13 @@ Includes  [[@Meta]],  [[@Facebook]],  [[@Amazon]],  [[@Apple]],  [[@Netflix]],  
  --------- | ----------------------------------------------------------------------------------------
  Robotics  | [[@Alex Cutting]],   
  Consultant| [[@Dean Allen]],  [[@Paul ORorke]],  [[@Byron Dom]],  [[@Kamal Ali]], 
+
+
+# # MEETINGS
+### 2022-04-05  - Ask FAANG folks about hiring
+
+- Getting hired as an associate scientist: Difficulty, Study materials
+- Example problems I might be working on
+- Best study materials
+
+

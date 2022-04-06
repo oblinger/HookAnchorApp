@@ -1,4 +1,6 @@
- [[FAANG]]
+ MENTORS:  [[FAANG]],  [[VC]],  
+
+
 ## MENTORS
 
  VC        | 

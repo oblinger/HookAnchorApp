@@ -76,7 +76,17 @@ Dan Oblinger
 GE Case Number 07600535
 
 
+~
+2022-04-05  GE-cust serv
+Call:  800-386-1215  #4
+GE Case Number 07600535
 
+
+~
+NEW CASE 07657479 (case number with consumer relations)
+800-386-1215
+
+At Bay Appliances 
 
 ### 2022-03-15 Qingling's income and taxes
 

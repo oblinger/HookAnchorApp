@@ -9,6 +9,14 @@
 
 
 # MEETINGS
+### m2022-04-05  - Resume; 
+
+- Dig into resume
+- Linked-in title; quick look; 
+	- Should I add patents?; 
+- Github:  follow a few others, start posting something public, few Kaggle compititions, 
+	Pin some repos; should I add some more?;  Maybe some activity?; update photo
+
 ### m2022-03-21 - List of VC firms
 60m Topics: Deep  [[__Crunchbase__|VCs]]   [[__Resume__|Resume]]   [[__MSG__]] 
 

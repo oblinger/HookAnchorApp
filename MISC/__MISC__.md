@@ -1,6 +1,7 @@
+  [Publications](__Publications__.md)
   [Old](Old/__Old__.md)  [Presentations](Presentations/__Presentations__.md)
   [People](People/__People__.md)
-  [VC](VC/__VC__.md)  [Gifts](Gifts/__Gifts__.md)
+  [VC](__VC__.md)  [Gifts](Gifts/__Gifts__.md)
   [Spirit](Spirit/__Spirit__.md)  [Highbrow](__Highbrow__.md)
   [Shop](Shop/__Shop__.md)  [Tags](Tags/__Tags__.md)  [Blockchain](Blockchain/__Blockchain__.md)  [Courses](Courses/__Courses__.md)  [Crunchbase](__Crunchbase__.md)
 

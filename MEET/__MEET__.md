@@ -2,6 +2,8 @@
 
 | Date        | Person           | Notes                                             |
 | ----------- | ---------------- | ------------------------------------------------- |
+| m2022-04-05 | [[@Aniket Kumar]]    | topics for headhunter discussions                 |
+| m2022-04-05 | [[@Joseph Yeh]]      | Resume;                                           |
 | m2022-03-21 | [[@Joseph Yeh]]      | List of VC firms                                  |
 | m2022-03-17 | [[@Joseph Yeh]]      | foo                                               |
 | m2022-03-13 | [[2022 CORIS]]       | TRIP CORIS Robotics Institute (OREGON STATE UNIV) |

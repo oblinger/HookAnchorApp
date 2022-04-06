@@ -1,3 +1,7 @@
+
+[MyMgrTasks](https://drive.google.com/drive/u/1/folders/1MFcofI_FqSGdd3ETynAIAE3Jromcyk-m)   [MyMgrDocs](https://drive.google.com/drive/u/1/folders/1lJlBx076mgDQjsNPhYUts-bC2ewH_rL8) 
+
+### Old info before 2022
   [Nanny](Nanny/__Nanny__.md)
   [Nanny](__Nanny__.md)
 Todo
@@ -5,8 +9,6 @@ Todo
 -- is my ATT service the best it can be?
 
 https://docs.google.com/document/d/1iwD-2FUnGYWab3_iMwWzxFfgge81Owp2clInyvjkDbc/edit
-
-[MyMgrTasks](https://drive.google.com/drive/u/1/folders/1MFcofI_FqSGdd3ETynAIAE3Jromcyk-m)   [MyMgrDocs](https://drive.google.com/drive/u/1/folders/1lJlBx076mgDQjsNPhYUts-bC2ewH_rL8) 
 
 ### Christina INFO
 

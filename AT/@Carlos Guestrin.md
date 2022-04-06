@@ -1,2 +1,2 @@
  [[FAANG]]    [Senior Director of AI and Machine Learning ](https://www.linkedin.com/in/carlos-guestrin-5352a869/)   [[@Apple]]   
- Also Prof [[@University of Washington]], 
+ Also Prof [[@University of Washington]],   [pubs](https://scholar.google.com/citations?user=DpLFv4gAAAAJ&hl=en)  

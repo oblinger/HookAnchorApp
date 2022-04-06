@@ -6,6 +6,9 @@ My Neighbor; Petroleum Engineer turned VC; went to lunch
 
 
 # # MEETINGS # 
+### m2022-04-05  -  topics for headhunter discussions
+- zzz
+
 ### m2022-02-14 - Aniket
 
 
@@ -24,5 +27,3 @@ LEARN ABOUT
 PATHS 
 - Look at orgs one level below FAANG.  Still have opportunity to build something.
 
-
-_

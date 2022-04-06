@@ -1483,7 +1483,7 @@ Removed /System/Library/Frameworks/AddressBook.framework/Versions/A/Helpers/Addr
 (see Brew section)
 ### GOOGLE DRIVE -- google drive cannot continue syncing because your google drive folder is missing
 ~-- Select google drive icon.  select error message.  click locate.  find folder.
-## = HOW-TO =
+## = xx HOW-TO   xx how to   xx howto =
 ### - BLUETOOTH - Prevent auto device switching to MacOS
 
    $ sudo defaults write /Library/Preferences/com.apple.Bluetooth.plist DontPageAudioDevices 1 

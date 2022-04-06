@@ -18,7 +18,7 @@ Ron Hall <1rhall@fuse.net>
 The Girls
 Gina Huffman <gina_huffman@yahoo.com>
 Michelle Marie <rrhairs@yahoo.com>
-  [Mentors](__Mentors__.md)  [Calls](PEOPLE/__Calls__.md)  [CRM](__Crm__.md)  [Family](__family__.md)  [Outreach](__OR__.md)
+  [Mentors](__Mentors__.md) [[__Calls__|Calls]]  [CRM](__Crm__.md)  [Family](__family__.md)  [Outreach](__OR__.md)
   [PP](__AT__.md)
 
 

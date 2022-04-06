@@ -1,3 +1,4 @@
+buy air purifier
 - shudwon script
 - - put attachments into sub-folders automatically   (.attach)
 - Fling that uses direct file writes
