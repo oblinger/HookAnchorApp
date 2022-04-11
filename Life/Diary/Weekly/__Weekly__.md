@@ -1,3 +1,28 @@
+### 2022-04-03
+- [x] [[DYL]] - try to do a chapter per day
+- [ ] Plan calling & FAANG investigations
+- [ ] Schedule FAANG Engineer calls
+- [ ] Plan VC search;  email Anket guys
+- [x] Ready for Joe? (Work on Aniket & Tessa outreach)
+- [ ] Errands
+	- [ ] Blood Work, 
+	- [x] Pulmonologist
+- [ ] [Yearbook](__Yearbook__.md) 
+	- [ ] Get QL UX person ASAP
+	- [ ] Writeup announcement email
+	- [ ] Get first draft of materials to provide parents
+
+~
+- [x] fix microwave
+- [x] pay ticket
+- [x] Order Groc
+- [x] Schedule stamper  VSP
+- [x] Get QL UX person ASAP
+- [x] BoA overpay; 800-669-6607
+- [x] get codility stuff out
+- [x] BoA overpay; 800-669-6607
+
+
 
 ### 2022-03-31 (short week)
 

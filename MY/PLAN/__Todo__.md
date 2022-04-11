@@ -1,19 +1,9 @@
-- [ ] Dave, Dad, Sammie gifts
+
 
 THIS WEEK'S TODOS
 - [ ] High output management summary
-- [ ] Vijaya Response
-- [ ] yearbook
-- [ ] 
-- [ ] fix microwave
-- [x] pay ticket
-- [x] Order Groc
-- [x] Schedule stamper  VSP
-- [x] Get QL UX person ASAP
-- [x] BoA overpay; 800-669-6607
-- [x] get codility stuff out
-- [x] BoA overpay; 800-669-6607
-
+- [ ] Taxes Delayed
+- [ ] Dave, Dad, Sammie gifts
 
 
 

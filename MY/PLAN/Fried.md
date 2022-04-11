@@ -1,12 +1,13 @@
 
+- [ ] turn delivery list into a table, with links, maybe multiple per row
 - [ ] [[@Maria Cross]]
 - [ ] get outliner to work; get wheel click toggle folding
-- [ ] embed shell script so it executes on page load
 - [ ] refactor km so it tracks MEET as well as TXT
 - [ ] refactor km into separate scripts
 - [ ] Write table extractor for calls
 - [ ] [btt](https://folivora.ai/buy)
 
+- [ ] scan all CMD and create huge spottext.txt sorted by type, then by path.  manually trim to keeper list, then delete and rebuild cmd folder
 - [ ] IFTTT output of Apple Health data (or any kind of export
 - [ ] buy food scale
 - [ ] [[__MED__|MED]] Nutritionist - Choose one #todo 
@@ -15,8 +16,6 @@
 - [ ] shutdown script
 - [ ] - Fling that uses direct file writes
 
-zzzzzz
-rrrrr
 
 
 ## = QUICKIES = 

@@ -1,18 +1,17 @@
 
 
-### 2022-04-03
-- [ ] [[DYL]] - try to do a chapter per day
+### 2022-04-11
+- [ ] [[DYL]] -Finish Odessy plans  - Finish that chapter; - and next
 - [ ] Plan calling & FAANG investigations
 - [ ] Schedule FAANG Engineer calls
 - [ ] Plan VC search;  email Anket guys
-- [ ] Ready for Joe? (Work on Aniket & Tessa outreach)
-- [ ] Errands
-	- [ ] Blood Work, 
-	- [ ] Pulmonologist
+- [ ] Errands:  Blood Work
 - [ ] [Yearbook](__Yearbook__.md) 
 	- [ ] Get QL UX person ASAP
 	- [ ] Writeup announcement email
 	- [ ] Get first draft of materials to provide parents
+
+
 
 
 

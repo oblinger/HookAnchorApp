@@ -85,8 +85,20 @@
   if framingham calculator.  is above 10% in next ten years
   Good quality vitamin
 - vitamin D.
-# ### LOG ### 
-### 2020.04.27  Notes for doc meeting
+# # LOG 
+### 2022-04-11  - Pulmonologist visit
+
+Three likely causes for my cough:
+1. non-allergic rhinitis -- might need to freeze nerve ending in nose
+2. allergy driven nasal drip
+3. heart burn driven cough
+
+Plan:  Use flonase x2 day & prolosec daily to remove #2 and #3
+
+Met with EMT doctor, he said my sinuses are inflamed.   (he did not see polyps)
+- Wants to do an x-ray
+
+### 2020-04-27  Notes for doc meeting
 -- diet
 -- salt
 -- exercise max 
@@ -118,7 +130,7 @@ TODO
 
 
 _
-### 2020.04.14  Stress test results
+### 2020-04-14  Stress test results
 
 
 Interpretation Summary
@@ -163,7 +175,7 @@ TR max vel: 241.6 cm/sec
 
 
 _
-### 2020.04.00  Heart Disease Questions
+### 2020-04-00  Heart Disease Questions
 
 --  Do I have it.
 --  Limits on exercise.  Like Intervals.  Like runnings.
@@ -171,7 +183,7 @@ _
 --  Clubbing -- 
 --  Diet:  Salt, weight
 
-### 2019.00.00  Ideas for QL Pregnancy Heroids
+### 2019-00-00  Ideas for QL Pregnancy Heroids
 Preparation H
 Which hasel pads  tux pads
 Miralax 
