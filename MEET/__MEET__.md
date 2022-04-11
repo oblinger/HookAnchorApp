@@ -2,16 +2,16 @@
 
 | Date        | Person           | Notes                                             |
 | ----------- | ---------------- | ------------------------------------------------- |
-| m2022-04-05 | [[@Aniket Kumar]]    | topics for headhunter discussions                 |
-| m2022-04-05 | [[@Joseph Yeh]]      | Resume;                                           |
+| m2022-04-06 | [[@Joseph Yeh]]      | Resume;                                           |
+| m2022-04-06 | [[__BeVC__]]         | Recruiter topics                                  |
 | m2022-03-21 | [[@Joseph Yeh]]      | List of VC firms                                  |
 | m2022-03-17 | [[@Joseph Yeh]]      | foo                                               |
 | m2022-03-13 | [[2022 CORIS]]       | TRIP CORIS Robotics Institute (OREGON STATE UNIV) |
 | m2022-03-09 | [[@Amy Kruse]]       | Amy Kruse - VC advisor advice                     |
 | m2022-03-08 | [[@Theo Enns]]       | Astro. FAANG. ML new ideas.                       |
 | m2022-03-08 | [[@Theo Enns]]       | Ideas About Amazon Levels                         |
-| m2022-03-03 | [[@Theo Enns]]       | Aeolus research summary from Theos perspective    |
-| m2022-02-14 | [[@Aniket Kumar]]    | Aniket                                            |
+| m2022-03-03 | [[@Theo Enns]]       | AEOLUS research summary from Theo's perspective   |
+| m2022-02-14 | [[@Aniket Kumar]]    | Aniket  [[__BeVC__|BeVC]]                         |
 | m2021-11-07 | [[@Dan Fine]]        | FINE - Truths                                     |
 | m2021-11-04 | [[@Dan Fine]]        | FINE - Dreaming big with Google                   |
 | m2021-11-04 | [[Year2022]]         | NEATO CTO feedback                                |

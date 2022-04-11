@@ -4,7 +4,7 @@
 - [ ] Warm intros from [[@Amy Kruse]] 
 	- [ ] Get list of target firms to present to Amy
 	- [ ] Get intro version of email written
-- [ ] Reach out to [[@Aniket Kumar]] Recruiters [[__OR__#2022-03-18 Aniket Recruiters|lst]]  
+- [ ] Reach out to [[@Aniket Kumar]] Recruiters [[__TXT__#2022-03-18 Aniket Recruiters|lst]]  
 	- [ ] Draft outreach
 	- [ ] Schedule calls
 - [ ] Reach out to [[@Alia Alaoui]]

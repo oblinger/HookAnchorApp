@@ -9,12 +9,15 @@
 
 
 # MEETINGS
-### m2022-04-05  - Resume; 
-
-- Dig into resume
-- Linked-in title; quick look; 
-	- Should I add patents?; 
-- Github:  follow a few others, start posting something public, few Kaggle compititions, 
+### m2022-04-06  - Resume; 
+- What am I up to:
+	- [[FAANG]] - My FAANG contacts.
+	- [[__Calls__|Calls]] - My list of planned calls.
+	- [[__Designing Your Life__|DYL]] - Notes on my "homework" for Design Your Life.
+	-  [Oblio](https://publish.obsidian.md/oblio) - External site  [Joes page](https://publish.obsidian.md/oblio/AT/%40Joseph+Yeh) 
+- Linked In updates [[z2 - Linked In Module|here]].
+- Dig into [[__ResumeMaster__|resume]]. 
+- Github:  follow a few others, start posting something public, few Kaggle competitions, 
 	Pin some repos; should I add some more?;  Maybe some activity?; update photo
 
 ### m2022-03-21 - List of VC firms

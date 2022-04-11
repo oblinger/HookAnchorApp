@@ -1,34 +1,8 @@
+ [[__NJ22__|NJ22]]  
 
 
-
-# ### BIG ### 
-## 2021.10.24 - Dan Fine KM Summary
-
-BIG TRUTHS
-- PRETTY STUCK -
-- DREAD OF WORK -
-- FEAR I CANT -- Just a bit, but not very rational
-- FEAR I WILL HATE IT --
-- VIEW IT AS 'DEATH' --
-- DAN WORK - I am mostly driven to execute Dan work, not really to
-- WHY DO IT?
-- DRIVEN - Driven towards Dan Work - intrinsically motivating
-- TO PROVE I AM RIGHT - To myself, to everyone, to see if I am right.
-- DO WHAT I AM BUILT TO DO
-- DO WHAT I AM CAPABLE OF
-- NOT (very much) for its outcome
-- NOT for money or such
-- NOT (exactly) for fame
-- TO AVOID DRUDGERY
-- LIGHT SWITCH - My interest in dan work can be very intense.
-	But it can rotate among several.  (will come back)
-- LOST COLOR -
-- ESCAPE&CONTROL - I am driven to work, but will feel strong need to swap sometimes
-  
-  
-  
-  _
-## 2021.09.14 - DAN-WORK - The kind of conceptual work that drives me
+# # BIG 
+## = DAN-WORK - The kind of conceptual work that drives me
 ### _
 
 There is a certain kind of work (lets call in DAN-WORK) and this kind of work is so compelling I tend to work on it even when it is not rational to do so; in to the night; sometimes at expense of nearly anything else.
@@ -128,89 +102,13 @@ Possible centers:
 - IMPORTANCE -- feeling that the idea has potential for large impact
 - UNIQUE -- feeling that idea that is not generally known, or solved
 - PURE THOUGHT -- Struggling to understand/solve using pure thought
--
+- 
 - CLEVER SOLUTION --
 - EFFICIENT SYSTEM -- love thinking about how to make systems efficient
   
   _
-## 2021.07.31 - The Past and The Future - Summary for Nick
 
-THE PAST
-- MISSION #1 -- Achieve some larger-than-self impact from one of my many ideas
-- MISSION #2 -- Spend my time working on diversity of challenging/fun ideas
-- SUBGOAL -- Create lifestyle biz needing few hours to support mission 1 & 2
-- DIAGNOSIS -- My execution was split & not well informed. Better: do #1 alone
-- OUTCOME -- Only some success on #2.  Bit of money & experience too.
-  
-  THE FUTURE    (analysis of long terms options)
-- CONSULTING -- Probably not enough money for long term 
-	(maybe on-par w/ google if fulltime, but that would suck more long term)
-	(could be used to stretch a medium term situation longer)
-- AI SAFETY -- Not enough money for long term; and not a forever mission
-- STARTUP -- Too risky to consider now unless I am dying to do it
-- LIFESTYLE BIZ -- Too slow & too risky now.  
-	Jason's gig is best bet in that direction, but still risky & slow.
-- BIG CO -- Likely this is the only real option for long term
-  
-  THE PRESENT   (medium term window 1-2 years)
-- TOP COVER -- Use AF payout as 'top cover' to wife for gap before big co
-- TOP COVER -- Get some affiliation as 'top cover' for future employer
-- GOAL:
-- ACTUALIZE -- Get stuff 'out of my system' before big co jail
- 		==> into form where I can claim it as protected IP
-- MOON SHOT -- Take long shot on 
-	  
-	  
-  SATISFYING WORK (more items below are better, but not all are required)
-- HARD THINKING - Not just execution, solve hard-to-think-thru technical tasks
-- CLEVER DETAILS --
-- HELPS THE WORLD (NOT MOSTLY JUST BIG CO)
-  
-  
-  EXAMPLE AWESOME TASKS
-- TECHNICAL PROBLEM FRAMING -- Hearing about a novel technical challenge, and thinking thru how one might address it at a detailed technical level.
-- e.g. how to model task in order successfully apply ML.
-- e.g. how to architect an approach
-	  
-  _
-## 2022.02.15 Choice Space
-FORK: Startup, AI-guy
-
-CHOOSE: PAY, AREA, VALUE/ROLE, ORG
-
-PAY
-- >200K 
-  .
-  - Startup
- 
-
-POSSIBLE AREAS:
-- Applied AI
-- Deep Learning
-- Robotics
-  . 
-  - Knowlege Management
-  - Blockchain	
-
-ROLES:
-- TL - Team leads
-
-ORG:
-- MY STARTUP
-- FAANG
-- MID/LATE STARTUP
-- RESEARCH INSTITUTE / UNIVERSITY
-
-
-KEY VALUES PROVIDED:
-- Lead technical team's choices in delivering a vision
-- Reducing Technical Risk
-
-
-_
-
-
-# ### PATHS ### 
+# # PATHS  
 ## alternatives
 ### TECH LEAD
 - Lead small team or moderate org in product creation
@@ -277,7 +175,110 @@ _
 
 
 
-# ### LOG ### F
+# # LOG
+### 2021-10-24 - BIGGER Dan Fine KM Summary
+
+BIG TRUTHS
+- PRETTY STUCK -
+- DREAD OF WORK -
+- FEAR I CANT -- Just a bit, but not very rational
+- FEAR I WILL HATE IT --
+- VIEW IT AS 'DEATH' --
+- DAN WORK - I am mostly driven to execute Dan work, not really to
+- WHY DO IT?
+- DRIVEN - Driven towards Dan Work - intrinsically motivating
+- TO PROVE I AM RIGHT - To myself, to everyone, to see if I am right.
+- DO WHAT I AM BUILT TO DO
+- DO WHAT I AM CAPABLE OF
+- NOT (very much) for its outcome
+- NOT for money or such
+- NOT (exactly) for fame
+- TO AVOID DRUDGERY
+- LIGHT SWITCH - My interest in dan work can be very intense.
+	But it can rotate among several.  (will come back)
+- LOST COLOR -
+- ESCAPE&CONTROL - I am driven to work, but will feel strong need to swap sometimes
+  
+  
+  
+  _
+### 2021-07-31 - The Past and The Future - Summary for Nick
+
+THE PAST
+- MISSION #1 -- Achieve some larger-than-self impact from one of my many ideas
+- MISSION #2 -- Spend my time working on diversity of challenging/fun ideas
+- SUBGOAL -- Create lifestyle biz needing few hours to support mission 1 & 2
+- DIAGNOSIS -- My execution was split & not well informed. Better: do #1 alone
+- OUTCOME -- Only some success on #2.  Bit of money & experience too.
+  
+  THE FUTURE    (analysis of long terms options)
+- CONSULTING -- Probably not enough money for long term 
+	(maybe on-par w/ google if fulltime, but that would suck more long term)
+	(could be used to stretch a medium term situation longer)
+- AI SAFETY -- Not enough money for long term; and not a forever mission
+- STARTUP -- Too risky to consider now unless I am dying to do it
+- LIFESTYLE BIZ -- Too slow & too risky now.  
+	Jason's gig is best bet in that direction, but still risky & slow.
+- BIG CO -- Likely this is the only real option for long term
+  
+  THE PRESENT   (medium term window 1-2 years)
+- TOP COVER -- Use AF payout as 'top cover' to wife for gap before big co
+- TOP COVER -- Get some affiliation as 'top cover' for future employer
+- GOAL:
+- ACTUALIZE -- Get stuff 'out of my system' before big co jail
+ 		==> into form where I can claim it as protected IP
+- MOON SHOT -- Take long shot on 
+	  
+	  
+  SATISFYING WORK (more items below are better, but not all are required)
+- HARD THINKING - Not just execution, solve hard-to-think-thru technical tasks
+- CLEVER DETAILS --
+- HELPS THE WORLD (NOT MOSTLY JUST BIG CO)
+  
+  
+  EXAMPLE AWESOME TASKS
+- TECHNICAL PROBLEM FRAMING -- Hearing about a novel technical challenge, and thinking thru how one might address it at a detailed technical level.
+- e.g. how to model task in order successfully apply ML.
+- e.g. how to architect an approach
+	  
+  _
+### 2022-02-15 Choice Space
+FORK: Startup, AI-guy
+
+CHOOSE: PAY, AREA, VALUE/ROLE, ORG
+
+PAY
+- >200K 
+  .
+  - Startup
+ 
+
+POSSIBLE AREAS:
+- Applied AI
+- Deep Learning
+- Robotics
+  . 
+  - Knowlege Management
+  - Blockchain	
+
+ROLES:
+- TL - Team leads
+
+ORG:
+- MY STARTUP
+- FAANG
+- MID/LATE STARTUP
+- RESEARCH INSTITUTE / UNIVERSITY
+
+
+KEY VALUES PROVIDED:
+- Lead technical team's choices in delivering a vision
+- Reducing Technical Risk
+
+
+_
+
+
 ### 2022-03-13 - inside google
 
 **INSIDE GOOGLE**
@@ -897,3 +898,20 @@ IFFY PRODUCT:
 _
 
 F
+### 2021-07-28 - DECISION PATH
+- GOOGLE et al is the back stop -- this what I do when all else fails
+- Specialties:  AI/ML, Management, Robotics/Vision, NLP
+- INTERLUDE -- likely I have an interlude of 6mo to 2yr before.  what do I do?
+- PREP for GOOGLE
+- Stage side project for some activity over next decade
+- MAYBE
+- VISIO --
+- CONSULTING --
+- NoCode, 
+  _
+### 2021-05-10 - PATHS
+DEEP-AI: Pundit -> Google
+CORP-KM:
+SUSTAIN: Jason, TeamSaver, 
+
+MISSION?

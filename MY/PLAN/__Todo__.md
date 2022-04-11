@@ -1,9 +1,10 @@
+- [ ] Dave, Dad, Sammie gifts
+
 THIS WEEK'S TODOS
-- [ ] high output management summary
-- [ ] - [ ] Vijaya Response
+- [ ] High output management summary
+- [ ] Vijaya Response
 - [ ] yearbook
 - [ ] 
-- [ ] fix disposal
 - [ ] fix microwave
 - [x] pay ticket
 - [x] Order Groc

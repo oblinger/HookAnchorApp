@@ -1,8 +1,0 @@
-
-Hello David!
-
-Are are you?  Your work?  Your family?
-Things are good here.  I am going to be going to Machine Learning, but
-I wont be going to IJCAI.  Will you be going to any conferences this year?
-It would be nice to see you, but some how I doubt that you will be attending
-ML.

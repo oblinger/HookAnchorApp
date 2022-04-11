@@ -14,8 +14,8 @@ mdf
 	$ mdfind 'kMDItemFSCreationDate >= $time.today(-3)'       # Created last n days
 	$ mdfind -onlyin /User/oblinger/ob/data                   # Under folder
 	$ mdfind 'kMDItemFSContentChangeDate >= $time.today(-3)'  # Modified last n days
-	$ mdfind 'kMDItemFSName = "*.md"'                        # Name matches
-	$ mdfind 'kMDItemFSName = "*.md"c'                     # Name match (case insensitive)
+	$ mdfind 'kMDItemFSName = "*.md"'                         # Name matches
+	$ mdfind 'kMDItemFSName = "*.md"c'                        # Name match (case insensitive)
 	$ mdfind "kMDItemFSName = '*.md' && kMDItemFSContentChangeDate >= $time.today(-3)"
 
 

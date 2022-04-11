@@ -1,11 +1,29 @@
 
 ## = CURRENT FOCUS
+### - MLC - MULTI LAYER CAKE
+
+Idea: Manage level of work effort in defined layers
+
+Details:
+- MULTIPLE LAYERS OF TASKING
+	- **Level 1:       MIT** -- _**Hardest to motivate**_, most important, requiring great focus
+	- **Level 2:      CHEW** -- _**Repeated**_, easy, quick tasks, OR 
+				**FLOW** Timely, easily motivated, impt, timely tasks
+	- **Level 3:       FRIED** -- _**Not timely**_, easy/fun tasks, (maybe impt, focused, longer)
+				**REST** -- Most _**rewarding**_, fun, recharging motivating activities
+- TARGETS - Maintain target layering; try to hit targets each day
+
+| Date       | TARGETS | NOTES                                                           |
+| ---------- | ------- | --------------------------------------------------------------- |
+| 2022-04-07 | 2/3/2   | Should be able to increase these, but lets crawl before walking |
+| 2022-03-01 | 3/1/3   |                                                                 |
+
 
 ### - 7min Exercise
 - Alarm is set for 4:30.  
 - Stop & Exercise
 - Go get Eli
-- Show when I return
+- Shower when I return
 
 FEATURES
 - Need to push myself to be _uncomfortable_ during exercise
@@ -29,79 +47,7 @@ EVENING ANCHOR -- immediately after Eli is in bed.
 - Scan todo list
 
 
-
-_
-
 ## = PRIOR FOCUS
-### - MLC - MULTI LAYER CAKE
-
-Idea: Manage level of work effort in defined layers
-
-Details:
-- TARGETS - Maintain target layering; try to hit targets each day
-- MULTIPLE LAYERS OF TASKING
-	- **MIT** -- _**Hardest to motivate**_, most important, requiring great focus
-	- **CHEW** -- _**Repeated**_, easy, quick tasks
-	- **FLOW** -- _**Timely**_ impt tasks, easy to motivate, less focus, quick tasks
-	- **FUN** -- _**Not timely**_, easy/fun tasks, (maybe impt, focused, longer)
-	- **REST** -- Most _**rewarding**_, fun, recharging motivating activities
-
-TARGETS
-- 2022.03.01 - 3/1/2/1
-
-_
-### - PDP - Procrastination Defense Protocol
-
-**HARD RULES**
-- 30 min eat & email ???
-- 30 min uninterrupted work
-
-
-**RULES**
-- **ALARM** -- Set alarm for 7 or 7:30 hours of sleep.  
-	(can cancel/update anytime as needed)
-- **ANCHOR** -- It is critical to execute the morning anchor each weekday.
-	- **NO EMAIL** -- Don't read email or RSS until complete
-	- **REAL 30 MIN** -- Don't count time that is not really executing well
-	- **THOUGHTS** -- Can only transcribe thoughts into bullets into scratch
-	- **EXCEPTIONS** -- Waking after 10; External interruption; scheduled task
-- **PENALTY** -- Must drop cash card that day for ANY violation of anchor rules.
-
-
-
--1- Put an amount of cash in an envelope that is personally noticable, but also not so large that you couldn't afford to loose it a couple of time in a year.
-
-
-
-
--2- write a short note.  My loss is your gain, use this cash for some kind of good, for someone (perhaps even yourself.)  Seal the envelope.
-
-
-
-
--3- On a sticky note on the outside, or somewhere safe write down your commitment.  e.g. I will exercise first thing on all weekdays unless I have a morning meeting.  think hard to figure how to exclude all legitimate exception cases.
-
-
-
-
--4- Place the envelop in a specific visible place.  that means it is active.  (you can 'pause' it by putting it in a drawer the night before.)
-
-
-
-
-
-
-
-Now any day that you fail to execute, you take the envelop and drop it outside somewhere.  KEY:  You really need to actually DO it.  After dropping it once or twice it becomes a MASSIVE motivator.  (but it is important to have a way to 'pause'.... e.g. you are very sick, or you were up all night.)  I find that I rarely pause for dumb reasons, and it really does push oneself.
-
-
-
-
-You can update the sticky note as your goals shift.
-
-
-_
-
 ### - Block Scheduled Day - July 2021
 
 <9	Uniform, Wake/Meditate/Walk
@@ -121,37 +67,6 @@ _
 
 SUMMARY:
 Lets give it a shot.  Many say having a schedule makes a big difference in the day, so lets try it.  The biggest idea is to simply have an alarm set
-
-
-_
-### - HEALTHY DAY
-WAKE
-- FRUIT -- Cut up fruit basket
-- VITAMINS -- Take your vitamins
-- FLACKS -- Get out flackseeds
-- FRIDGE -- Ensure foods in fridge (from freezer)
-
-EVENING
-- TEA -- Make teapot; Add tumeric & ginger spices (?soy ?honey)
-- YEAST -- Eat a bit of yeast
-
-_
-### - Loosely Scheduled Day - June 2021
-
-
-06a	Wake
-07a	Slot #1 -- Core work
-10a	Food
-11a	Slot #2 -- Core work
-01p	Admin
-03p	Exercise
-04p	Slice #3 -- Secondary projects (only if 3hrs of core)
-09p	Slot #4  -- Ranging activites
-
-
-IDEA:
--- I rapidly move towards this loosely structured day
--- It gets efficiency by maximizing effective hours
 
 
 _
@@ -216,7 +131,92 @@ MTW - Afternoon Chew. (or Thursday morning focused chew)
 _
 
 
+## = BEST HABITS
+### - PDP - Procrastination Defense Protocol
+
+**HARD RULES**
+- 30 min eat & email ???
+- 30 min uninterrupted work
+
+
+**RULES**
+- **ALARM** -- Set alarm for 7 or 7:30 hours of sleep.  
+	(can cancel/update anytime as needed)
+- **ANCHOR** -- It is critical to execute the morning anchor each weekday.
+	- **NO EMAIL** -- Don't read email or RSS until complete
+	- **REAL 30 MIN** -- Don't count time that is not really executing well
+	- **THOUGHTS** -- Can only transcribe thoughts into bullets into scratch
+	- **EXCEPTIONS** -- Waking after 10; External interruption; scheduled task
+- **PENALTY** -- Must drop cash card that day for ANY violation of anchor rules.
+
+
+
+-1- Put an amount of cash in an envelope that is personally noticable, but also not so large that you couldn't afford to loose it a couple of time in a year.
+
+
+
+
+-2- write a short note.  My loss is your gain, use this cash for some kind of good, for someone (perhaps even yourself.)  Seal the envelope.
+
+
+
+
+-3- On a sticky note on the outside, or somewhere safe write down your commitment.  e.g. I will exercise first thing on all weekdays unless I have a morning meeting.  think hard to figure how to exclude all legitimate exception cases.
+
+
+
+
+-4- Place the envelop in a specific visible place.  that means it is active.  (you can 'pause' it by putting it in a drawer the night before.)
+
+
+
+
+
+
+
+Now any day that you fail to execute, you take the envelop and drop it outside somewhere.  KEY:  You really need to actually DO it.  After dropping it once or twice it becomes a MASSIVE motivator.  (but it is important to have a way to 'pause'.... e.g. you are very sick, or you were up all night.)  I find that I rarely pause for dumb reasons, and it really does push oneself.
+
+
+
+
+You can update the sticky note as your goals shift.
+
+
+_
+
+
 ## = OLDER
+### - HEALTHY DAY
+WAKE
+- FRUIT -- Cut up fruit basket
+- VITAMINS -- Take your vitamins
+- FLACKS -- Get out flackseeds
+- FRIDGE -- Ensure foods in fridge (from freezer)
+
+EVENING
+- TEA -- Make teapot; Add tumeric & ginger spices (?soy ?honey)
+- YEAST -- Eat a bit of yeast
+
+_
+### - Loosely Scheduled Day - June 2021
+
+
+06a	Wake
+07a	Slot #1 -- Core work
+10a	Food
+11a	Slot #2 -- Core work
+01p	Admin
+03p	Exercise
+04p	Slice #3 -- Secondary projects (only if 3hrs of core)
+09p	Slot #4  -- Ranging activites
+
+
+IDEA:
+-- I rapidly move towards this loosely structured day
+-- It gets efficiency by maximizing effective hours
+
+
+_
 ### --- SCHEDULE: Eli centered Days ---
 
  5:00	Ready

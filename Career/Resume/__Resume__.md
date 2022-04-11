@@ -14,7 +14,7 @@ L. Phone:
 ________ 
 Address :  101 Bache, San Francisco, CA 94110
 Dates   :  9/22/2018 - present
-Landlord:  Wells Fargo
+Landlord:  Wells Fargo / Bank of America
 L. Phone:  
  
 ________ 

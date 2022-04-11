@@ -1,4 +1,9 @@
 
+| STREAMS       | Time-indexed recurring activities                                                                       |
+| ------------- | ------------------------------------------------------------------------------------------------------- |
+| H3 Entries    | m (person2person meeting)   t (textual message)   n (notes created by me)   r (reference material/links) |
+| Named Entries | Wp (small one-off work product)   Prj (non-coding projects)                                                                                                          |
+|               |                                                                                                         |
 
 | TOPLEVEL  |                                                                 |
 |-----------|-----------------------------------------------------------------|
@@ -18,7 +23,7 @@
 |           |                                                                 |                     
 | [Ideas](__Ideas__)     |                                                                 |
 | [Phone](__Phone__)     | Administrative actions associated with accounts or such         |
-| [Letters](__Letters__)   |                                                                 |
+| [Letters](__Letters__.md)   |                                                                 |
 
 
 | LISTS     | Undated collections of information of a single type             |

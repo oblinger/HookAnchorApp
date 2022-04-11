@@ -2,8 +2,6 @@
 
 ## = NEW GLOBAL =
 
-
-
 | CH    | CAPS                | TAB  / [SHIFTED]   | SLAM global cmds  |
 | ----- | ------------------- | ------------------ | ----------------- |
 | A     | NO. select ALL      | go AT page         |                   |
@@ -19,7 +17,7 @@
 | K     | >KICK window around |                    |                   |
 | L     | >LAUNCH command     |                    | link2obsidian     |
 | M     |                     | go MAIL            |                   |
-| N     | NO. NEW             |                    |                   |
+| N     | NO. NEW             | go NEXT tunes song |                   |
 | O     |                     |                    |                   |
 | P     |                     |                    |                   |
 | Q     |                     | go QUIT to login   |                   |
@@ -72,7 +70,7 @@
 | F5    |                     |                    |                   |
 | F6    |                     |                    |                   |
 | F7    |                     |                    |                   |
-| F8    |                     |                    |                   |
+| F8    |                     |                    | Obsidian URL      |
 | F9    |                     |                    |                   |
 | F10   |                     |                    |                   |
 | F11   |                     |                    |                   |
@@ -97,7 +95,7 @@
 | J     |                |                     |                  | / insert JOURNAL header        |
 | K     | >KICK<         | insert LINK         |                  |                                |
 | L     | >LAUNCH<       |                     |                  | / LINKS pane                   |
-| M     |                |                     |                  | MISC note                      |
+| M     | / MOVE note    |                     |                  | MISC note                      |
 | N     |                | NEW note / New PANE |                  | /                              |
 | O     |                | OPEN switcher       |                  | OPEN in default app            |
 | P     |                | cmd PALETTE         |                  | PLAN note /                    |
@@ -128,8 +126,8 @@
 | DN    |                | mv line DOWN        |                  |                                |
 | SPACE |                | Obsidian Anchor     |                  |                                |
 | ENTR  |                | tgl BOX / tgl CHECK | follow LINK      | show LINK in pane              |
-| INS   |                |                     |                  |                                |
-| DEL   |                |                     |                  |                                |
+| INS   | INS line       |                     |                  |                                |
+| DEL   | DEL line       |                     |                  |                                |
 | HOME  |                |                     |                  |                                |
 | END   |                |                     |                  |                                |
 | PgUp  |                |                     |                  |                                |
@@ -201,17 +199,17 @@ CMD = Standard Page Edit
 ## = TOPICS =
 ### - Modifier Combos
 
-| Combo              | Key    | Explanation                | Notes                            |
-| ------------------ | ------ | -------------------------- | -------------------------------- |
-| Ctrl               | CTRL   | App "cursor" control       |                                  |
-| Opt                | OPT    | App "user defined" control |                                  |
-| Cmd                | CMD    | App "global" commands      |                                  |
-| Ctrl-Opt           | LEFT2  | LEFT PAIR -                |                                  |
-| Ctrl-Cmd           | TAB    | Dan "Global" commands      | Dan's Global "GOTO" Destinations |
-| Opt-Cmd            | RIGHT2 | RIGHT PAIR -               |                                  |
-| Ctrl-Opt-Cmd       | SLAM   | Ctrl-Opt-Cmd -             | Dan's Global Commands            |
-| Ctrl-Opt-Cmd-Shift | HYPER  | Dan "Cursor" commands      | Dan's Fastest Bindings           |
-|                    |        |                            |                                  |
+| Combo              | Key    | Meaning     | Explanation                | Notes                            |
+| ------------------ | ------ | ----------- | -------------------------- | -------------------------------- |
+| Ctrl               | CTRL   | "CONTROL"   | App "cursor" control       |                                  |
+| Opt                | OPT    |             | App "user defined" control |                                  |
+| Cmd                | CMD    | "MODIFY"    | App "global" commands      |                                  |
+| Ctrl-Opt           | LEFT2  |             | LEFT PAIR -                |                                  |
+| Ctrl-Cmd           | TAB    | global "GO" | Dan "Global" commands      | Dan's Global "GOTO" Destinations |
+| Opt-Cmd            | RIGHT2 |             | RIGHT PAIR -               |                                  |
+| Ctrl-Opt-Cmd       | SLAM   | global "DO" | Ctrl-Opt-Cmd -             | Dan's Global Commands            |
+| Ctrl-Opt-Cmd-Shift | HYPER  | app "NAV"   | Dan "Cursor" commands      | Dan's Fastest Bindings           |
+|                    |        |             |                            |                                  |
 
 
 ### - Karabiner

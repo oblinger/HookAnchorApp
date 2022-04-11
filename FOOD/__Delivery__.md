@@ -25,6 +25,7 @@ u-  RAMAN    --  Raman Izakaya Goku (tapas)
 
 u*? KOREAN   --  Stone Bowl Plus
 u*? KOREAN   --  Barnzu (expensive)
+d+  THAI -- Farm House Kitchen
 u+  THAI	 --  Osha Thai 
 u-- THAI     --  One Wan (4.5) little expensive
 u-  THAI     --  Tuk Tuk Thai (3.5 stars)

@@ -1,7 +1,24 @@
 https://www.indeed.com/career-advice/interviewing/most-common-behavioral-interview-questions-and-answers
 
+-  [AMAZON Interview TIPS](https://www.youtube.com/watch?v=0jFjGkjdHl8)  
+- 
 
-# ### QUESTIONS BY TOPIC ===
+# # QUESTIONS BY TOPIC ===
+## = META DISCUSSION:
+STAR: Situation, Task -> Action -> Result
+## = KEY ONE-OFF QUESTIONS
+### - TELL ME ABOUT YOURSELF
+1. Highlight skills, qualities, and attributes that match role
+2. One example where you have succeeded in previous job
+3. Explain how you understand your perf links to AMZ success
+### - WHY AMAZON
+1. talk about the research you carried out
+2. leadership principles
+3. Amz products
+4. A place I can grow and develop
+### - YOUR STRENGTHS AND WEAKNESSES
+### - 
+
 ## >>> UNSORTED QUESTIONS
 
 When have you had a conflict with a coworker and worked through it?
@@ -135,6 +152,14 @@ _
 ==> Needed to carefully construct test, that would really show it.	
 ==> Cell phone video	
 _
+## = CUSTOMER
+- State with controller @ sun power
+- Arthrex agree on timeline; but then did not deliver inputs; we had to scramble including unpaid work to keep timeline
+- Enphase 
+## = OWNERSHIP
+## = FAILURE 
+## = GONE ABOVE & BEYOND 
+
 ## >>> MY WORKING STYLE <<<
 - Do you describe yourself as an organized person?
 - When is the last time you missed a deadline? Why did this happen?

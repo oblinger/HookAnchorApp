@@ -4,18 +4,19 @@ alias: __DYL__
 
 **>>> BOOK  -- DESIGNING YOUR LIFE <<<** 
 ## = SUMMARY
-### - MATRIX
+### - MATRIX  ^matrix
 
-| TOP JOB CHOICES  | Freedom    | Pay       | Risk | Joy | Engage | NOTES                         |
-| ---------------- | ---------- | --------- | ---- | --- | ------ | ----------------------------- |
-| GOOGLE IC  ->MGR | -  / o / + | >500K     | <20  |     | +      | Corp freedom, but less impact |
-| CTO              | -          | 300K + Eq |      |     | ++     |                               |
-| SELF-CO          |            |           | >80% |     |        |                               |
-| Interlude        |            |           |      |     |        |                               |
-|                  |            |           |      |     |        |                               |
+| TOP JOB CHOICES | Freedom    | Pay       | Risk | Joy | Engage | NOTES                         |
+| --------------- | ---------- | --------- | ---- | --- | ------ | ----------------------------- |
+| FAANG           | -  / o / + | >500K     | <20  |     | +      | Corp freedom, but less impact |
+| MY-CO           | ++         | $0 >> >1M | >50% |     |        |                               |
+| VC              | -          | 200K-1M   | >30% |     | ++     |                               |
+|                 |            |           |      |     |        |                               |
+
 
 | OTHER CHOICES  | Freedom  | Pay          | Risk |     | Engagement | NOTES                                             |
 | -------------- | -------- | ------------ | ---- | --- | ---------- | ------------------------------------------------- |
+| CTO            | -        | 300K + Eq    |      |     | ++         |                                                   |
 | 20H CONSULTANT | ++       | o then +     | ~30% |     | +**        | Repetitive work; Hustle to get work; Others leave |
 | VISIO          | +  or ++ | ---  then  ? | >50% |     | ++         |                                                   |
 | GOOGLE MGR     | v / -    | +++          | ~30  |     | ++         | Corp freedom, but less impact                     |
@@ -38,21 +39,12 @@ alias: __DYL__
 |         |       |         |        |     |      |                           |                                                  |     |
 
 **PATHS**
--   **GOOGLE** -- Spend 6 months training & land best corp job.
+-   **GOOGLE** -- Spend 6 months training & land best corp job
     ==>  angle in on alignment:  Technical Ideation,  Leadership
     ==> time for Mu
-    
-
-  
-
--   **1/2 CONSULTANT** -- Seems few stay in the job for long.  Maybe upgrade can earn more.
-    
+-   **1/2 CONSULTANT** -- Seems few stay in the job for long.  Maybe upgrade can earn more
     ==> if search hassle is minimized could be fun for a while.
-    
     ==> likely not "good enough" forever for family.
-    
-      
-    
 -   **KM RELEVANT** --
     
     ==> Is about ideation.
@@ -186,25 +178,46 @@ Burnett, Bill; Evans, Dave. Designing Your Life (p. 40). Knopf Doubleday Publish
 ## = (4) MINDMAPS = 
 
 ## = (5) ODYSSEY PLANS = Three Near Futures
-### - DASHBOARD
+### --DASHBOARD--
 
-Job		Resources	Likability	Coherence	Considerations
-MGR		++
-ML		+++
-KmCo	-
-CTO		+++
+| Odyssey | Resources Needed | Likability | Confidence | Coherence | Considerations |
+| ------- | ---------------- | ---------- | ---------- | --------- | -------------- |
+| FAANG   |                  |            |            |           |                |
+| VC GUY  |                  |            |            |           |                |
+| MY CO   |                  |            |            |           |                |
 
 
-Considerations: Geography, Learning, Impacts,
-### - VC
+-  6 Word Title; Graphical timeline; Questions option is asking; 
+### - FAANG GUY - BigCo Project Leader & Technologist Driver
+| Time   | Activity         | Notes                            |
+| ------ | ---------------- | -------------------------------- |
+| Year 1 | Interviewing     | Learning Mgt, ML, interview prep |
+|        | Intense Learning | Slammed at work                  |
+| Year 2 | Groove           | Getting my groove                |
+| Year 3 | SIDE GIG         | Just starting my side gig        |
+| Year 4 |                  |                                  |
+| Year 5 |                  |                                  |
+
+### - VC GUY - Vision spouting, Meeting man, Deal closer
+| Time   | Activity                        | Notes                                |
+| ------ | ------------------------------- | ------------------------------------ |
+| Year 1 | Ad hoc advising                 | Providing small value to multiple VC |
+| Year 2 | Committing to a VC, FT advising |                   |
+| Year 3 | Going deep with them            |             |
+| Year 4 | Making Partner                  |                                      |
+| Year 5 | -spending-5-years-              |                                      |
+|        |                                 |                                      |
+
+
 - High energy @ many meeting about tech
 - Selling founders and investors on shared vision of the future
 
-2022 Become an Advisor
-2023 Work nearly full time doing advising work
-2024 Become a principle / partner at a VC firm
 
-### - GOOGLE MGR/IC - ML/AI MATRIXED-RESEARCHER GUY
+
+### - MY CO - 
+
+
+### - FAANG research guy
 MGR: Same as IC, but less training, less uniform, and more money
 
 TIMELINE YEAR 1
@@ -234,7 +247,8 @@ QUESTIONS:
   
   NARRATIVE:
 - PACE:  Working 60h/w = 10h/day + 10h weekends
--
+	- fooo
+		- bar
 - VALUE? Live, Bi-Scriptable, Extensible, TightFormatControl, Hetro Connect
 - CODE: I spend $50K to develop: Parser, Unicore, Browser, and info app
 - DISCORD: I build community of power users and hackers
@@ -539,102 +553,4 @@ I receieved his response email, and I immediately wanted to think thru my respon
 _
 ### 2021.07.19 -- Thinking while walking
 When walking my mind repeatedly returns to details of Uniform, and how I might frame and say part of it.  Or less so, how I might resolve this or that techical detail
-_
-## = LOG = 
-### 2021.07.28 - DECISION PATH
-- GOOGLE et al is the back stop -- this what I do when all else fails
-- Specialties:  AI/ML, Management, Robotics/Vision, NLP
-- INTERLUDE -- likely I have an interlude of 6mo to 2yr before.  what do I do?
-- PREP for GOOGLE
-- Stage side project for some activity over next decade
-- MAYBE
-- VISIO --
-- CONSULTING --
-- NoCode, 
-  _
-### 2021.05.10 - PATHS
-DEEP-AI: Pundit -> Google
-CORP-KM:
-SUSTAIN: Jason, TeamSaver, 
-
-MISSION?
-### 2021.04.14 - Dan O Drivers & Futures
-#### Interests
-KNOWLEDGE SYSTEMS
-SELF WORKING SYSTEMS
-MACHINE LEARNING
-_
-#### Problem Solving 
-THE FUN PART -- 
-Find most interesting is the "how is it going to work" part.
-Love taking it from the most general to most detailed, as long as not obvious
-_
-#### Make a difference
-I want to do something that matters.  to society.  to science
-To a ?smaller? degree, something that is recognized.
-_
-#### Diversity / Direction
-Many things interest me.  I hate the idea of getting trapped thinking about one
-I tend to get "caught"
-
-_
-#### FUTURES
-##### MyCo - KM|SMB|BRICK|RECO
-##### Corp
-_
-#### CORP FUTURES
-- ML Research --
-- Manager
-- Easy IC -- 
-  _
-#### DO SOMETHING THAT MATTERS
-
-_
-#### >>> WEAKNESSES / ISSUES <<<
-#### COMPLETION
-I have trouble completing a thing, it grows larger until too large to complete
-_
-#### FOCUS
-I can focus on a thing when it 
-
-_
-### 2020.10.02 - An assessment of me
-
-
-Quick Observations:
-- IDEAS -- I focus on the technical: the big idea, and technical details
-- COMMITMENT -- I systematically dodge certain commitment steps
-- CAT -- I jump from idea to idea
-- VARIABLE -- impt stuff per day, can vary from near zero to good
-- BURSTY -- I can execute well as a burst, but not continuous
- 	(except SW or idea coding)
-- LIMIT -- seem to have daily limit (3h), not effective after
-- WORKY -- I am always "working" its my mental mode
-- SWEET SPOT
-  
-  
-  SWEET SPOT -- I dive to this place often
-- technical idea
-- "of the mind" -- just pencil and paper, no research, etc.
-- MINE -- I feel the idea is one other's don't see
-- SYSTEMATIC -- idea is a systems idea relating to how things work
-- BULLET -- idea is single "silver bullet" for some acknowledged problem
-  
-  AVERSION
-- HOP -- Love pushing deep into an idea, but after certain
-- Research
-- Execution
-- Commitment
-- PRAGMATIC SHORT TERM
-- RISK AVERSE at commitment stage
-  
-  
-  PRETENDING -- pretending I might do a thing, but knowing in heart I wont
-  With JASON flirted, but was never going to say yes, but spent time pretending
-  
-  
-  
-  _
-  
-  
-  _
+	_

@@ -1,5 +1,5 @@
  [[__Crunchbase__|Crunchbase]] 
- [[ROCKS/2022-03 BeVC/Searches|Searches]]  [[__OR__|OR]] 
+ [[ROCKS/2022-03 BeVC/Searches|Searches]]  [[__TXT__|OR]] 
 
 ### ### TODO ### 
 
@@ -27,6 +27,15 @@ Questions
 
 ## = REF
 - [How much does a VC partner earn?](https://www.quora.com/How-much-does-a-VC-partner-earn)  
-- 
+
+# # MEETINGS
+### m2022-04-06  Recruiter topics
+
+Primary Objective
+1. My primary value proposition.
+	- Domain Expertise, Carrying a domain vision, rolodex/investors
+2. What is a plausible trajectory for me entering into this new space.
+
+
  
  

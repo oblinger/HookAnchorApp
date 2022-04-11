@@ -1,145 +1,12 @@
-pastor christian
-ad reviews
-ellie salvaje
-ashley richmond
-fatim hemraj
-daniel Jennings
-
-
-2100 Webster street suite 202
-
-11am
-  
-  [_Scratch](_Scratch.md)  [SNIP](__SNIP__.md)
-
-==>  Waymo reduced maint turn around by 23% in 2021.  In support of it:
-- Created metric this turn around was based upon
-- Designed and implemented comprehensive dashbord for analyzing maint delays.
-	(this was the primary information soruce used by team to affect this turn around)
-- Worked directly with data to identify 5-6 specific recommendations presented to and adopted by the team to reduce turn around.
-
-
-exclusively used in order for the team to idenfify the changes needed for the turn around
-
-~~
-
-
-
-THOUGHTS / LESSONS LEARNED
-- Robotics company formation
-- Common startup failures patterns; Key
-- Gaining product/market fit
-- Getting funded (both as a researcher and as entrepreneur)
-- Remote robotics
-- Growing a robotics organization (from builder and applicant perspective)
-- My observations on the state of the jobs market
-- Applied wiping
-
-
-
-
-Kernel UUID: 5C49B2CB-9833-3D8A-8E98-E628559A4D1E
-iBoot version: iBoot-7429.81.3
-secure boot?: YES
-x86 EFI Boot State: 0x16
-x86 System State: 0x0
-x86 Power State: 0x0
-x86 Shutdown Cause: 0x3
-x86 Previous Power Transitions: 0x10001000100
-PCIeUp link state: 0x89473611
-Paniclog version: 13
-Kernel slide:      0x0000000017240000
-Kernel text base:  0xfffffff01e244000
-mach_absolute_time: 0x8d4e1340b42
-Epoch Time:        sec       usec
-  Boot    : 0x6216af9f 0x00036b3b
-  Sleep   : 0x621bc071 0x0001fe1d
-  Wake    : 0x621bc095 0x000ad189
-  Calendar: 0x621d26d5 0x000b5533
-
-Zone info:
-Foreign   : 0xfffffff0701b0000 - 0xfffffff0701c0000
-Native    : 0xffffffe0001fc000 - 0xffffffe6001fc000
-Readonly  : 0xffffffe0e6860000 - 0xffffffe133524000
-Metadata  : 0xffffffeb0090c000 - 0xffffffeb04acc000
-Bitmaps   : 0xffffffeb0210c000 - 0xffffffeb02378000
-CORE 0 is the one that panicked. Check the full backtrace for details.
-CORE 1: PC=0xfffffff01ea69b84, LR=0xfffffff01ea69b84, FP=0xffffffeb03e3bef0
-Panicked task 0xffffffe3001a4628: 0 pages, 231 threads: pid 0: kernel_task
-Panicked thread: 0xffffffe3e66d70c8, backtrace: 0xffffffeb03e5b780, tid: 284
-		  lr: 0xfffffff01ea376bc  fp: 0xffffffeb03e5b7c0
-		  lr: 0xfffffff01ea3744c  fp: 0xffffffeb03e5b830
-		  lr: 0xfffffff01eb73008  fp: 0xffffffeb03e5b8b0
-		  lr: 0xfffffff01eb721d0  fp: 0xffffffeb03e5b960
-		  lr: 0xfffffff01f09d5fc  fp: 0xffffffeb03e5b970
-		  lr: 0xfffffff01ea37160  fp: 0xffffffeb03e5bd00
-		  lr: 0xfffffff01ea37160  fp: 0xffffffeb03e5bd60
-		  lr: 0xfffffff01fb9742c  fp: 0xffffffeb03e5bd80
-		  lr: 0xfffffff01f2f293c  fp: 0xffffffeb03e5bdc0
-		  lr: 0xfffffff01f2ecf48  fp: 0xffffffeb03e5be50
-		  lr: 0xfffffff01efe70a0  fp: 0xffffffeb03e5bea0
-		  lr: 0xfffffff01efe5d58  fp: 0xffffffeb03e5bee0
-		  lr: 0xfffffff01efe557c  fp: 0xffffffeb03e5bf20
-		  lr: 0xfffffff01f0a85a0  fp: 0x0000000000000000
-
-
-~-~~
-For those interested in seeing the details regarding this pretty egregious case you can see the original video from Fox News on the wayback machine here:
-
-https://archive.org/details/FOXNEWSW_20220206_020000_Unfiltered_With_Dan_Bongino/start/1740/end/1800
-
-Evidently, Fox edited this clip mere hours later when the error was pointed out.  And Dan Bongino acknowleged the error in a subseqent show on air.  Still he claimed that the error did not affect or related to the content of his message.  Pretty silly since it directly contradicted it.
-
-Here is the corresponding WalletHub article listing the HEALTIEST cities:
-https://web.archive.org/web/20220208164109/https://wallethub.com/edu/healthiest-cities/31072
-
-
-This definitely does show Dan on Fox as not caring what the facts really are, he want to show Democrats are bad.  Indeed it shows he is very willing to ignore dramatically contrary evidence in order to make this case.
+  [SNIP](__SNIP__.md)
+ [G-doc Scratch](https://docs.google.com/document/d/19rapJqTzTSeLPrQPIRligaFna5yc44p-gDhdhlOJLdI/edit),  [[__SNIP__|Snip]],  
 
 
 
 
 
-~-~-~
-Observation:  
 
-When one makes a mathematical contribution (a new theorem or defintion) one uses terms that are "universal"
--- The term have consistent usage across all mathmatics:
-- Its meaning is precise and consistent across all of mathematics, and 
-- there are few alternate formulations of the same or nearly same idea
-
-When one makes a computer science contribution (write code) one uses terms that are NOT universal.
--- The terms do not have consistent usage across all of computer science
-- their meanings are not conserved
-- there are many alternate formulation of the same or nearly the same idea.
-
-One cannot combine knowlege based on incompatible terms.  Thus math knowlege (theorems) are combinable while computer science knowlege (code) is not.
-
-The result is that mathematics is cumulative in a way that computer science is not.  For example (math example & CS example)
-
-Could one formulate 
-
-
-
- a meaning which is consistently used across all of mathematics
-
-
-you "say" something in mathematics (e.g. write down a theorem) you use terms
-
-~-~-~
-
-Deep:
-I appreciate the level of commitment/time that you require from those you work with.  With the winding down of my business, I simple am not in that spot today, and I cannot be sure that I can be there in a month. Reluctantly I must pass on this chance. As I said in my email, I do expect to transition before Q3 towards a much larger fraction of my time, but I just don't know the exact timing given the workload of winding down my company. 
-
-Joe:
-I would love to connect this week, as I should aggressively be engaging in my job search, even if not at the level required by Deep.  Let me know your schedule.
-
-Thanks much to both of you for taking time on my case,
---Dan
-
-
-
-
+# # OLD UNSORTED
 
 
 Objective: Supporting subsequent knoweledge work
@@ -2336,7 +2203,7 @@ even after looking for better part of a minute.
 once I vertically aligned the correct and incorrect versions I could run down the letters to see where they mismatched:
 
         in_bar_var_referenece = 
-                 # reference
+                 ~# reference
 
 
 ~-~~-~
@@ -2629,29 +2496,7 @@ Convert inline key/value pairs into pair form
             body = new_body
 
 
-        # Convert inline key/value pairs into pair form
-        if False and len(body) > 1:
-            i, new_body = 1, body[:1]
-            while i < len(body):
-                key = body[i]
-                if not isinstance(key, Op):
-                    new_body.append(self.parser.parse_error(f"Illegal statement key {key}"))
-                    break
-                elif isinstance(key.head, str) and re.match(_identifier_re, key.head):
-                    if i+1 >= len(body):
-                        new_body.append(self.parser.parse_error(f"Illegal statement odd number of args", op))
-                        break
-                    value = body[i+1]
-                    new_body.append(Op(self.COLON, -1, children=[self.parser.into_ident(key.head), value]))              # should be parse expr for complex expr
-                    i += 2
-                elif key_head := self.pull_head_from_expr(key):
-                    new_body.append(Op(self.COLON, -1, children=[key_head, key]))
-                    i += 1
-                else:
-                    new_body.append(self.parser.parse_error(f"Illegal Statement Key {key}"))
-                    break
-            body = new_body
-
+	
 
 rewrite_block_body
 - loop body calling rewrite stmt

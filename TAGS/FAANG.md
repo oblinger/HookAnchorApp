@@ -60,7 +60,13 @@ PLUS:  [[@Microsoft]],  [[@LinkedIn]]   PLUS:  [[@Vmware]],  [[@PARC]],
 
 
 # # MEETINGS
-### 2022-04-05  - Ask FAANG folks about hiring
+### 2022-04-05  - topics - Ask FAANG folks about hiring
+
+Primary Objectives
+1. What position/trajectory can I expect (ML engineer? Leader?)
+2. What day to day activities will I have
+3. What does ideal preparation look like?
+
 
 - Getting hired as an associate scientist: Difficulty, Study materials
 - Example problems I might be working on

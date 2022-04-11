@@ -53,3 +53,13 @@ Getting on Angel list
 Mark 
 - 
 
+
+### t2022-03-17 ADVICE - Amy Kruse Warm Intro
+
+- I am selling my company and quietly look for my next thing
+- asking for advice not a job
+- my value-add is understanding and driving technical innovation
+- in areas XXX
+- within my specialty I am interested in advising, joining, leading at both company & venture levels
+- ASK: to have a call
+- THEY GET: ????

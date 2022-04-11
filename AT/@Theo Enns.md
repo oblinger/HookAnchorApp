@@ -22,12 +22,12 @@ The "essence" of a level is the amount of scope afforded company.
 - L5 own a feature, not strategy
 - L6 influence across multiple groups; front line interacting w other groups
 		    - strategy with their group; mentoring; hiring; growth members and team
-		    - scope: influence multiple grups within a product
-- L7 influence across multiple products.  over whole product and some others
-		- 40-60 under them.   (
-		- principle engineer  (hard part of code, or sys architech; )
+		    - scope: influence multiple groups within a product
+- L7 influence across multiple products.  over a whole product and some others
+		- 40-60 under them.
+		- principle engineer  (hard part of code, or sys architect)
 			- large strategic impact; referees in org
-		- need to align w/ corp culture from day one.
+		- need to align w/ corp culture from day one
 
 
 #### THEO:
@@ -36,10 +36,10 @@ L6 IC->SDM (Software development manager)
 
 INTERVIEWING PREP
 - What have you accomplished lately
-- Break down problem; both in the weeds & strategic; 
-- amazon corp values;
+- Break down problem; both in the weeds & strategic
+- Amazon corp values
 
-### m2022-03-03 - Aeolus research summary from Theos perspective
+### m2022-03-03 - AEOLUS research summary from Theo's perspective
 
 AEOLUS RESEARCH
 - Markus Vincze lab @ TU WIEN (U of Vienna)

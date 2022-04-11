@@ -8,6 +8,8 @@ alias: __RIL__
 	- [ ] Read study  [IF](https://jamanetwork.com/journals/jamainternalmedicine/fullarticle/2771095?guestAccessKey=444bbcb2-7e13-4dc6-998f-5de5e27aa19e&amp;utm_source=For_The_Media&amp;utm_medium=referral&amp;utm_campaign=ftm_links&amp;utm_content=tfl&amp;utm_term=092820) 
 	- [ ] [Mental Models List](https://medium.com/@yegg/mental-models-i-find-repeatedly-useful-936f1cc405d)    
 	- [ ] [amz](https://www.amazon.com/Power-Full-Engagement-Managing-Performance-ebook/dp/B000FC0SWS/ref=tmm_kin_title_0?_encoding=UTF8&qid=1644162775&sr=8-1) 
+- [ ] https://www.zsolt.blog/2021/04/exploring-obsidian.html
+- [ ] 
 # # UNSORTED # 
 ### QL John
 nt to chat with our neighbor John to get interview tips since he hired thousands of them. Man, did I learn so much from him! We should hangout with them more often! He actually successfully exited few companies. He sent this link to me since this girl is one of the investors of the company I am going to interview with, and I like her summary about machine intelligence:

@@ -6,11 +6,7 @@ My Neighbor; Petroleum Engineer turned VC; went to lunch
 
 
 # # MEETINGS # 
-### m2022-04-05  -  topics for headhunter discussions
-- zzz
-
-### m2022-02-14 - Aniket
-
+### m2022-02-14 - Aniket  [[__BeVC__|BeVC]]
 
 Recommended these VC-focused recruiters:
   [[@Emily Wallach]],  [[@Liane Capiral]],  [[@Mary Tran]],  [[@Melissa Cote]],

@@ -1,49 +1,11 @@
 
- [FOLDER](/Users/oblinger/ob/topics/CRM/__CRM__.md)   [[__Mentors__|Mentors]]  
-
-
-### 2022-04-05  -  FAANG ML
-| Status | Name                   | Ask [[FAANG]] about associate scientist positions  [[FAANG#2022-04-05 - Ask FAANG folks about hiring\|topics]] |     |     |
-| ------ | ---------------------- | -------------------------------------------------------------------------------------------------------------- | --- | --- |
-|        | [[@Vittorio Castelli]] | Update about his new position, best training, min requirements                                                 |     |     |
-|        | [[@Rafah Hosn]]        |                                                                                                                |     |     |
-|        | [[@John Davis]]        |                                                                                                                |     |     |
-|        | [[@Mark Drummond]]     |                                                                                                                |     |     |
-|        | [[@Joe Hellerstein]]   |                                                                                                                |     |     |
-|        | [[@Michael Freed]]     |                                                                                                                |     |     |
-|        | [[@Juan Huerta]]       |                                                                                                                |     |     |
-|        |                        |                                                                                                                |     |     |
-
-
-
-
-#### _ 
-
-LARGER LIST
- Ask|  about FAANG ML: 
- ---|------------------------------------
-  F | [[@Rodrigo Braz]], 
-  A | [[@Michael Freed]], [[@Juan Huerta]],  [[@Nina Mishra]],  [[@Felipe Lavratti]],  [[@Vittorio Castelli]], 
-  A | [[@Mark Drummond]],  [[@Carlos Guestrin]],  [[@Jeff Provost]],  [[@Mark Reid]],
-  G | [[@Melanie Dumas]],  [[@John Davis]],  [[@Doug Gordin]],  [[@Arkady Epshteyn]],  
-  M | [[@Rafah Hosn]],  [[@Luiz Pires]], ...more
-  O | [[@Sofus Macskassy]],  [[@Chris Ramming]],  
-  
-
-
-### 2022-04-05  -  Headhunter List
-| Status | Name                 | Ask [[@Aniket Kumar]]'s head hunters?  [[@Aniket Kumar#m2022-04-05 - topics for headhunter discussions\|topics]] |
-| ------ | -------------------- | ---------------------------------------------------------------------------------------------------------------- |
-|        | [[@Emily Wallach]]   |                                                                                                                  |
-|        | [[@Liane Capiral]]   |                                                                                                                  |
-|        | [[@Mary Tran]]       |                                                                                                                  |
-|        | [[@Melissa Cote]],   |                                                                                                                  |
-|        | [[@Vince Colangelo]] |                                                                                                                  |
-
-
-
-
+ [FOLDER](/Users/oblinger/ob/topics/CRM/__CRM__.md)   [[__Mentors__|Mentors]]  [[__Campaigns__|Campaigns]] 
 ### 2022-04-05  -  VC List
+
+
+
+
+
 
 
 

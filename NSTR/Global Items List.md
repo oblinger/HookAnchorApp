@@ -1,7 +1,0 @@
-# Global Items List --
-
-
-
-
-    dd
-

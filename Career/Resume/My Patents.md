@@ -1,4 +1,5 @@
-
+ [Patent Search](https://patents.justia.com/)
+ 
 ## = PATENTS
 ### - 2021-10  -  from USPTO ---
 
