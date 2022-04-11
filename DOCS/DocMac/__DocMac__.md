@@ -1,5 +1,5 @@
 # ORIG
-  [KBD_Shortcuts](__KBD_Shortcuts__.md)
+  [KBD_Shortcuts](__KBD%20Shortcuts__.md)
   [__DocMac__](__DocMac__.md)
 
 # APPS
