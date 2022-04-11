@@ -1,6 +1,5 @@
-
-
-THIS WEEK'S TODOS
+- [ ] Daily 7-min exercise
+- [ ] Errands:  Blood Work
 - [ ] High output management summary
 - [ ] Taxes Delayed
 - [ ] Dave, Dad, Sammie gifts

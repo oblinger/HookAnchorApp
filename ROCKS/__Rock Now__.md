@@ -1,4 +1,9 @@
 
+
+## = [[__NJ22__|NJ22]] =
+
+
+
 ## = [[__BeVC__|BeVC]] =
 - [ ] Get response to Amy Kruse   [[__Crunchbase__|CB]] 
 - [ ] Warm intros from [[@Amy Kruse]] 
@@ -16,10 +21,6 @@
 ## = [[__Learning__|Learning]] =
 - [ ] Complete Coursera Deep Learning Course
 
-## = [[__Framing__|Framing]] =
-- [ ] is my resume good?  how to know?
-
-= Designing Your Life = 
 ## = [[__Yearbook__|Yearbook]] =
 - [ ] Ask QL for her UX person
 - [ ] ask XXXX about fonts

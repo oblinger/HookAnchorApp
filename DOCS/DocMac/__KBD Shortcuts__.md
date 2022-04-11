@@ -1,84 +1,85 @@
 
 
-## = NEW GLOBAL =
+## = GLOBALS =
 
-| CH    | CAPS                | TAB  / [SHIFTED]   | SLAM global cmds  |
-| ----- | ------------------- | ------------------ | ----------------- |
-| A     | NO. select ALL      | go AT page         |                   |
-| B     |                     | go BUBBLES         |                   |
-| C     | ?? COPY to clip     | go CALENDAR        | ?? Super copy     |
-| D     |                     | go DEV terminal    | tgl DARK mode     |
-| E     |                     | go EMAIL message   |                   |
-| F     |                     | go FINDER          |                   |
-| G     |                     |                    |                   |
-| H     | >HIDE window        |                    |                   |
-| I     |                     | go INFO (obsidian) |                   |
-| J     |                     | go JUMP to folder  |                   |
-| K     | >KICK window around |                    |                   |
-| L     | >LAUNCH command     |                    | link2obsidian     |
-| M     |                     | go MAIL            |                   |
-| N     | NO. NEW             | go NEXT tunes song |                   |
-| O     |                     |                    |                   |
-| P     |                     |                    |                   |
-| Q     |                     | go QUIT to login   |                   |
-| R     |                     | go READER (Feedly) | RESOLUTION change |
-| S     | NO. SAVE file       | go STUFF (Asana)   | SHOW current app  |
-| T     |                     | go TUNES           |                   |
-| U     |                     |                    |                   |
-| V     | ?? V PASTE          |                    | plain PASTE       |
-| W     |                     | go WEB             | reset all WINDOWS |
-| X     | ?? X CUT            |                    |                   |
-| Y     |                     |                    |                   |
-| Z     |                     |                    |                   |
-| -     |                     |                    |                   |
-| +     |                     |                    |                   |
-| {     |                     |                    |                   |
-| }     |                     |                    |                   |
-| \     |                     |                    |                   |
-| ;     |                     |                    |                   |
-| '     |                     |                    |                   |
-| ,     |                     |                    |                   |
-| .     |                     |                    |                   |
-| /     |                     |                    | 1 Password        |
-| ~     |                     |                    |                   |
-| LT    |                     |                    |                   |
-| RT    |                     |                    |                   |
-| UP    |                     |                    |                   |
-| DN    |                     |                    |                   |
-| SPACE | Obsidian Anchor     |                    |                   |
-| ENTR  | Obsidian Anchor     |                    |                   |
-| INS   |                     |                    |                   |
-| DEL   |                     |                    |                   |
-| HOME  |                     |                    |                   |
-| END   |                     |                    |                   |
-| PgUp  |                     |                    |                   |
-| PgDn  |                     |                    |                   |
-| 1     |                     |                    |                   |
-| 2     |                     |                    |                   |
-| 3     |                     |                    |                   |
-| 4     |                     |                    |                   |
-| 5     |                     |                    |                   |
-| 6     |                     |                    |                   |
-| 7     |                     |                    |                   |
-| 8     |                     |                    |                   |
-| 9     |                     |                    |                   |
-| 0     |                     |                    | link->FireFox     |
-| F1    | tgl DAILY view      |                    |                   |
-| F2    | tgl PLANNING view   |                    |                   |
-| F3    |                     |                    |                   |
-| F4    |                     |                    |                   |
-| F5    |                     |                    |                   |
-| F6    |                     |                    |                   |
-| F7    |                     |                    |                   |
-| F8    |                     |                    | Obsidian URL      |
-| F9    |                     |                    |                   |
-| F10   |                     |                    |                   |
-| F11   |                     |                    |                   |
-| F12   |                     |                    |                   |
-|       |                     |                    |                   |
+| CH    | CAPS - App NAV      | TAB - Global "GO"  | SLAM - Global "DO" |
+| ----- | ------------------- | ------------------ | ------------------ |
+| A     | NO. select ALL      |                    |                    |
+| B     |                     | go BUBBLES         |                    |
+| C     | ?? COPY to clip     | go CALENDAR        | ?? Super copy      |
+| D     |                     | go DEV terminal    | tgl DARK mode      |
+| E     |                     | go EMAIL message   |                    |
+| F     |                     | go FINDER / FRIED  |                    |
+| G     |                     |                    |                    |
+| H     | >HIDE window        |                    |                    |
+| I     |                     |                    |                    |
+| J     |                     | go JUMP to folder  |                    |
+| K     | >KICK window around |                    |                    |
+| L     | >LAUNCH command     |                    | link2obsidian      |
+| M     |                     | go MAIL            |                    |
+| N     | NO. NEW             | go NEXT tunes song |                    |
+| O     |                     | go OBSIDIAN        |                    |
+| P     |                     |                    |                    |
+| Q     |                     | go QUIT to login   |                    |
+| R     |                     | go READER (Feedly) | RESOLUTION change  |
+| S     | NO. SAVE file       | go STUFF (Asana)   | SHOW current app   |
+| T     |                     | go TUNES           |                    |
+| U     |                     |                    |                    |
+| V     | ?? V PASTE          |                    | plain PASTE        |
+| W     |                     | go WEB             | reset all WINDOWS  |
+| X     | ?? X CUT            |                    |                    |
+| Y     |                     |                    |                    |
+| Z     |                     |                    |                    |
+| -     |                     |                    |                    |
+| +     |                     |                    |                    |
+| {     |                     |                    |                    |
+| }     |                     |                    |                    |
+| \     |                     |                    |                    |
+| ;     |                     |                    |                    |
+| '     |                     |                    |                    |
+| ,     |                     |                    |                    |
+| .     |                     |                    |                    |
+| /     |                     |                    | 1 Password         |
+| ~     |                     |                    |                    |
+| LT    |                     |                    |                    |
+| RT    |                     |                    |                    |
+| UP    |                     |                    |                    |
+| DN    |                     |                    |                    |
+| SPACE | Contextual DOIT     |                    |                    |
+| ENTR  | OBSIDIAN Anchor     |                    |                    |
+| INS   |                     |                    |                    |
+| DEL   |                     |                    |                    |
+| HOME  |                     |                    |                    |
+| END   |                     |                    |                    |
+| PgUp  |                     |                    |                    |
+| PgDn  |                     |                    |                    |
+| 1     |                     |                    |                    |
+| 2     |                     |                    |                    |
+| 3     |                     |                    |                    |
+| 4     |                     |                    |                    |
+| 5     |                     |                    |                    |
+| 6     |                     |                    |                    |
+| 7     |                     |                    |                    |
+| 8     |                     |                    |                    |
+| 9     |                     |                    |                    |
+| 0     |                     |                    | link->FireFox      |
+| F1    | tgl DAILY view      |                    |                    |
+| F2    | tgl PLANNING view   |                    |                    |
+| F3    |                     |                    |                    |
+| F4    |                     |                    |                    |
+| F5    |                     |                    |                    |
+| F6    |                     |                    |                    |
+| F7    |                     |                    |                    |
+| F8    |                     |                    | Obsidian URL       |
+| F9    |                     |                    |                    |
+| F10   |                     |                    |                    |
+| F11   |                     |                    |                    |
+| F12   |                     |                    |                    |
+|       |                     |                    |                    |
 
 
-## = [[__Obsidian__|Obsidian]] = 
+
+## = OBSIDIAN = 
 
 | CH    | CAPS           | COMMAND / [SHIFTED] | OPTION [SHIFTED] | LT PAIR: CTRL-ALT  / [SHIFTED] |
 | ----- | -------------- | ------------------- | ---------------- | ------------------------------ |
@@ -224,7 +225,7 @@ CMD = Standard Page Edit
 #### . Tab key Remap
 { "title": "Tab to Hyper When Held", "rules": [ { "description": "Map Tab to Hyper when held", "manipulators": [ { "type": "basic", "from": { "key_code": "tab", "modifiers": { "optional": [ "any" ] } }, "to_if_alone": [ { "key_code": "tab" } ], "to_if_held_down": [ { "key_code": "left_control", "modifiers": [ "left_command"] } ] } ] } ] }
 #### . XXXX
-## = GLOBAL =
+## = OLD GLOBAL =
 
 | CH   | COMMAND / [SHIFTED] | ALT  / [SHIFTED]        |
 | ---- | ------------------- | ----------------------- |

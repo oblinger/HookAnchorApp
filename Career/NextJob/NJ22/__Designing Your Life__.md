@@ -1,5 +1,5 @@
 ---
-alias: __DYL__
+alias: DYL
 ---
 
 **>>> BOOK  -- DESIGNING YOUR LIFE <<<** 
