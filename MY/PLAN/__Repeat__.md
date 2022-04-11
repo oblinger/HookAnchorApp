@@ -39,7 +39,7 @@
 
 
 
--- All the right knowlege in all the wrong ways
+-- All the right knowledge in all the wrong ways
 -- N^2 successive learning jumps
 ==> Small number of mental interlingua
 

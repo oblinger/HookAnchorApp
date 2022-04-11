@@ -1,6 +1,3 @@
----
-alias: DYL
----
 
 **>>> BOOK  -- DESIGNING YOUR LIFE <<<** 
 ## = SUMMARY

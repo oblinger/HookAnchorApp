@@ -1,6 +1,6 @@
-  [Vitamins](__Vitamins__.md)
+  [Vitamins](__Vitamins__.md) 
 
-# # TODO # 
+# TODO 
 - [ ] Daily 7-min exercise
 - [ ] LAB-CORP - 2622 Ocean Ave 416-469-9710  (Fasted in morning before 10am)
 - [ ] [[__MED__|MED]] Nutritionist - Decide who to work with #todo
@@ -52,10 +52,10 @@
 
 
 
-# # TOPICS # 
+# TOPICS 
 ## = SUB NOTES =
 
-  [MED_Heart](MED_Heart.md)  [MED_Food](MED_Food.md)  [MED_Psoriasis](MED_Psoriasis.md)  [MED_Vaccinations](MED_Vaccinations.md)  [MED_General](MED_General.md)  [MED_History](MED_History.md)  [MED_Doctors](MED_Doctors.md)  [MED_Checkups](MED_Checkups.md)  [Medifast](Medifast.md)  [MED_Journal](MED_Journal.md)  [MED_Sleep](MED_Sleep.md)  [MED_Weight](MED_Weight.md)  [MED_Log](MED_Log.md)  [MED_Tests](MED_Tests.md)  [MED_Insurance](MED_Insurance.md)  [MED_Pills](MED_Pills.md)
+  [MED_Heart](MED_Heart.md)  [MED_Food](MED_Food.md)  [MED_Psoriasis](MED_Psoriasis.md)  [MED_Vaccinations](MED_Vaccinations.md)  [MED_General](MED_General.md)  [MED_History](MED_History.md)  [MED_Doctors](MED_Doctors.md)  [MED_Checkups](MED_Checkups.md)  [Medifast](Medifast.md)  [MED_Journal](MED_Journal.md)  [MED_Sleep](MED_Sleep.md)  [MED_Weight](MED_Weight.md)   [MED_Tests](MED_Tests.md)  [MED_Insurance](MED_Insurance.md)  [MED_Pills](MED_Pills.md)
   [MED_Vision](MED_Vision.md)
 
 ## = HEART =
@@ -85,7 +85,7 @@
   if framingham calculator.  is above 10% in next ten years
   Good quality vitamin
 - vitamin D.
-# # LOG 
+# LOG 
 ### 2022-04-11  - Pulmonologist visit
 
 Three likely causes for my cough:
@@ -192,3 +192,65 @@ Colace.
 Ted hose
 
 97.4 - 100.4. Good temp
+
+### 2000-00-00  Medical.InsuranceAnalysis --
+
+    (800) 441-5741 
+     
+     
+    Am I covered under for all possible medical problems?  Taxonomy of Coverage: 
+    1) Wages 
+    2) Death 
+    3) What is the max payment?  Then what happens? 
+    4) After Phs after IBM (can I be cut off; or forced out; remaining support) 
+    5) Services/Illnesses not not covered? 
+       - Deemed medically necessary 
+    6) Long term usage of specialists out of program? 
+    7) When do other programs kick in? Medicaid 
+    8) Fraction covered? 
+     
+     
+    #1 Covered by IBM.  Under 2yrs pay is continued.  After that 
+       special program can be applied for and is typically obtained 
+       for indefinite reduced salary. 
+     
+    #2 Dunno.  dont care. 
+     
+     
+     
+    --- I don't really trust these answers --- 
+     
+    #3 No Max. 
+     
+     
+    #4 Cannot be cut off. 
+     
+     
+    #7  
+     
+     
+    #8 Fraction covered 
+       - Gastric bypass 
+       - In patient hostpital 
+       Always $10 per visit 
+     
+        
+     
+    - Zero out of network payments (unless they give special auth) 
+      Most are granted (???) 
+     
+     
+     
+     
+
+### 2000-00-00  Medical Questions --
+
+
+    Get Glucose Tolerance Test
+     *  I go from feeling normal, relatively mild hunger to quite shaky/dizzy within 15-30min.  (It hits very fast)
+     *  It is often about 3 hours (or more) after eating.
+     *  It can be after moderate excercise
+     *  It may be more often after more sugary meals.
+     *  Mother, Grandmother, and 3 others in extended family have diabeties
+
+

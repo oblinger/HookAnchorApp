@@ -1,8 +1,9 @@
 
 
 ## = [[__NJ22__|NJ22]] =
-
-
+- [ ] [[DYL]] Dan one-pager (from quick pass on earlier chapters)
+- [ ] [[DYL]] Build 3 Odyssey plans.
+- [ ] [[DYL]] Pick leading odyssey one
 
 ## = [[__BeVC__|BeVC]] =
 - [ ] Get response to Amy Kruse   [[__Crunchbase__|CB]] 

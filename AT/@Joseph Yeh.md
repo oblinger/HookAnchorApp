@@ -13,7 +13,7 @@
 - What am I up to:
 	- [[FAANG]] - My FAANG contacts.
 	- [[__Calls__|Calls]] - My list of planned calls.
-	- [[__Designing Your Life__|DYL]] - Notes on my "homework" for Design Your Life.
+	- [[DYL|DYL]] - Notes on my "homework" for Design Your Life.
 	-  [Oblio](https://publish.obsidian.md/oblio) - External site  [Joes page](https://publish.obsidian.md/oblio/AT/%40Joseph+Yeh) 
 - Linked In updates [[z2 - Linked In Module|here]].
 - Dig into [[__ResumeMaster__|resume]]. 

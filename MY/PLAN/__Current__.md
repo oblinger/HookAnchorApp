@@ -1,14 +1,19 @@
 
 
 ### 2022-04-11
-- [ ] [[DYL]] -Finish Odessy plans  - Finish that chapter; - and next
-- [ ] Plan calling & FAANG investigations
-- [ ] Schedule FAANG Engineer calls
-- [ ] Plan VC search;  email Anket guys
+- [ ] [[DYL]] Dan one-pager (from quick pass on earlier chapters)
+- [ ] [[DYL]] Build 3 Odyssey plans.
+- [ ] [[DYL]] Pick leading odyssey one
+- [ ] Schedule FAANG Engineer calls  (bit 'o FAANG planning)
+- [ ] Email Anket guys
 - [ ] [Yearbook](__Yearbook__.md) 
 	- [ ] Get QL UX person ASAP
 	- [ ] Writeup announcement email
 	- [ ] Get first draft of materials to provide parents
+
+
+
+
 
 
 - [ ] Run code for Coursera... maybe do a few hrs
