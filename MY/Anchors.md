@@ -1,4 +1,4 @@
-[[Anchors]], [[DYL|DYL]], 
+[[Anchors]],  [[DYL]], 
 
 [[__Delivery__]]   [[AT/Foob]]  
 [[Fried]] 
