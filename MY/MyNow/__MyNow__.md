@@ -2170,7 +2170,7 @@ U South Carolina  	-- Nick what do we do here?  Anything?
 ~-~~-~~
 SMILE DIRECT CLUB
 	Ryan Jackson	Global VP IT`	SmileDirectClub	ryan.jackson@smiledirectclub.com	+1 800 848 7566
-# Enphase discussions 2019.10.18 - Shane & Ilan
+# Enphase discussions 2019-10-18 - Shane & Ilan
 
 
 - SW validation

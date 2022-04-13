@@ -1170,13 +1170,13 @@ Reuters joins the list of US fact-checking partners that include The Associated 
 
 _
 # ### LOG ###
-### 2022.02.16 -- Email based first system.
+### 2022-02-16 -- Email based first system.
 
 - Use scripted email or forms based system to select topics for analysis.
 - Use script to select author pairs
 
 
-### 2020.09.17 -- Police violence
+### 2020-09-17 -- Police violence
 
 An example:
 
@@ -1216,7 +1216,7 @@ The HARD part is ensuring that folks with really competing views aren’t just d
 —dan
 
 _
-### 2020.09.07 -- Shinster email
+### 2020-09-07 -- Shinster email
 
 I will have failed if I get all the right “experts” to contribute but then they are not believed.
 Instead I would hope to get leading anti-vaccers on the same site with immunologists, and let them each present their perspective, but they cannot avoid having the best critique of their perspective posted right along side their position.

@@ -6,19 +6,19 @@ vorwerk $40/yr
 
 OWED TO QINGLING
   $5,920  2020.07.??	-- QL cash stash paying for Mary and Ayi#1
-  $8,000  2020.09.01 	-- got out to pay Ayi
-  $9,000  2020.10.30	-- plan to take out cash
- -$9,500  2020.11.02  	-- Paid QL from Grand central
- -$8,000  2021.01.05  	-- Pay QL from Grand Central
-  $8,500  2021.01.15  	-- Taken out by QL as cash
--$13,920  2021.01.18	-- I transferred $13,920 to my own account, 
+  $8,000  2020-09-01 	-- got out to pay Ayi
+  $9,000  2020-10-30	-- plan to take out cash
+ -$9,500  2020-11-02  	-- Paid QL from Grand central
+ -$8,000  2021-01-05  	-- Pay QL from Grand Central
+  $8,500  2021-01-15  	-- Taken out by QL as cash
+-$13,920  2021-01-18	-- I transferred $13,920 to my own account, 
 	                       so the balance should be 0 now.
 
-  $9,000  2021.04.23    -- QL got from personal citi card
- -$9,000  2021.04.23	-- QL transferred to herself from grandcntrl (ZERO BAL) 
+  $9,000  2021-04-23    -- QL got from personal citi card
+ -$9,000  2021-04-23	-- QL transferred to herself from grandcntrl (ZERO BAL) 
 
-  $9,000  2021.11.01	-- QL got from personal citi bank (west portal)
- -$9,000  2021.11.08	-- QL transferred to herself from grandcntrl (ZERO BAL)
+  $9,000  2021-11-01	-- QL got from personal citi bank (west portal)
+ -$9,000  2021-11-08	-- QL transferred to herself from grandcntrl (ZERO BAL)
 
  
  
@@ -92,8 +92,8 @@ _
 
 - APPLE:  Mac->AppStore->MyPicture->ViewInfo->Manage
 
-2020.04.06 -- last cleaned
-2016.06.16 -- last checked
+2020-04-06 -- last cleaned
+2016-06-16 -- last checked
 
 _
 ### recurring
@@ -177,7 +177,7 @@ _
 Cards: Sapphire, Freedom, CapOne, CitiDouble, Amazon(Dan&QL)  PenFed
 
 VANGUARD 				TOTAL $1.38M 10/6/2017
-SCHWAB					Dan: 100K   Joint: 27K  Grand: 57K  2020.04.21
+SCHWAB					Dan: 100K   Joint: 27K  Grand: 57K  2020-04-21
 
 MINT	Overview (clear red dots)
 MINT	Transactions (Scan accounts to see if they look good)
@@ -258,7 +258,7 @@ SCHWAB x9506
 -- Allstate, 
 ## === NET WORTH ===
 
-As of 2021.12.02
+As of 2021-12-02
 1,584	Vanguard Total
   662	Merrill
   462	Bitcoin
@@ -280,7 +280,7 @@ _
 # LOG
 ## QL - AYI payments
 
-2020.08.17 Cash from Qingling
+2020-08-17 Cash from Qingling
 	Mary: $1200
 	Ayi: $1440*3 = $4320
 	Total: $5520
@@ -315,14 +315,14 @@ P spotify
 x  Geico
 ## Kadosh Bills
 
-2019.05.29
+2019-05-29
 An invoice for $3000 for four coaching/consulting sessions of approximately one hour each is attached.  It is understood that you will email me in advance of each session with an overview summary of the issue; in preparation I will review the summary, your assessment data and possibly some or all of my past notes/our past correspondence.  These sessions will not expire, however it is 
 understood that if my rates have increased I will let you know at the time of the request and you will have the option to either pay the delta or receive a refund of the unused sessions.  
 
 I look forward to our ongoing work together!
 ## Raynor Bills
 840      16.06.13   Raynor-010  MC-1028  (from email)
-455      16.06.13   Raynor-009  MC-1028  (from email)     (Issued on 2016.05.04)
+455      16.06.13   Raynor-009  MC-1028  (from email)     (Issued on 2016-05-04)
 910      16.06.13   Raynor-008  MC-1028  (from email)
 
 455      16.06.03   Raynor      (mint penFed)    <-- no Receipt found in email
@@ -481,8 +481,8 @@ $  63,294.89.  Amount refunded.
 $276,705.11  /2. Difference
 $138,352.55.    One Half Amount
 
-$60,000   Paid to DanO brokerage on 2018.10.31
-$50,000   Paid to DanO brokerage on 2018.12.04 from Citi
+$60,000   Paid to DanO brokerage on 2018-10-31
+$50,000   Paid to DanO brokerage on 2018-12-04 from Citi
 
 
 ~---- 8/7 paid
@@ -495,7 +495,7 @@ Total bill: $4550
 ## Madrone / Ben
 3077    =  $1800/31*22 = $1277. (Deposit + Dec rent)   Dec has 31 days, he is here for 22 days starting December 10th.
 
-2016.12.10 -- Ben's Rent $1800/mo for six months.  Ben's deposit = one month's rent
+2016-12-10 -- Ben's Rent $1800/mo for six months.  Ben's deposit = one month's rent
 Security deposit is $1800, so the total is $3077.
 ## NDA / AF stuff
 ???      
@@ -604,9 +604,9 @@ $340.86  on 12/10/2013
 ## Rent from Peter Berger
 
 Total as of 
-2014.03.01   $10,190   =    1495 + 4*1400 + 3*1530   Total as of 3.1.14
-2013.12.06   -$2,870   Wire
-2014.03.31   -$8,616   Wire
+2014-03-01   $10,190   =    1495 + 4*1400 + 3*1530   Total as of 3.1.14
+2013-12-06   -$2,870   Wire
+2014-03-31   -$8,616   Wire
              -------
              ($1,296)       I think you over paid by this amout back then.
 	      $1,605   March Rent = ( $1,680 + $1,530 ) / 2 
@@ -615,7 +615,7 @@ Total as of
              -------
               $3,669   (Current amount you owe to pay thru end of may)
 
-2014.03.31   -$3,669   Wire  (paid thru end of may)
+2014-03-31   -$3,669   Wire  (paid thru end of may)
              ZERO BALANCE
 
               $5,040    $1,680 * 3  June / July / August rent

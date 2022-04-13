@@ -12,7 +12,7 @@ _
 
 
 # LOG
-## 2021.03.15 - Doctor's Appt
+## 2021-03-15 - Doctor's Appt
 
 Questions
 

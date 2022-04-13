@@ -10,7 +10,7 @@
 ## = COMPUTERS =
 ### Mac Pro 16" - 2021
 
-Final One 2020.12.18 
+Final One 2020-12-18 
 C02DP1LYMD6R
 
 Product	MBP 16.0 SPACE GRAY CTO

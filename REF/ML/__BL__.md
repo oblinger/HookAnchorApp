@@ -2,7 +2,7 @@
 
 
 # ### LOG ###
-### 2021.04.21 - Conscious computing agenda
+### 2021-04-21 - Conscious computing agenda
 
 Key Ideas:
 - Bootstrap deep-structure from exposure to:

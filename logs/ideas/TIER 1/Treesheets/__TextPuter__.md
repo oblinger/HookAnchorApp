@@ -942,7 +942,7 @@ _
 needed later....
 
 _
-## === 2021.09.20 - WYSIWYG programmable data view
+## === 2021-09-20 - WYSIWYG programmable data view
 How hard would it be, to create a WYSIWYG-programmable, JS based, info.
 
 _
@@ -967,7 +967,7 @@ PALETTE -- list of drag-dropable template schemas
 DETAILS -- details pane showing lots about current cursor location
 ### --- TP - Status Line ---
 # ### IMPL LOG ###
-## === 2021.09.29 - Browser-based programmable info view ===
+## === 2021-09-29 - Browser-based programmable info view ===
 
 - MULTI-SOURCE: Google, Dropbox, Localfiles, Github
 - MULTI-FORMAT: Text(Programmed Markdown), Doc(Google, Micrsoft), Sheets(Google, excel), SQL
@@ -1001,20 +1001,20 @@ DETAILS
 	- VARIABLES - added to interface w/ control (and maybe a derivation expression)
 
 
-## === 2021.03.16 - Text only
+## === 2021-03-16 - Text only
 ### _
 - REPO/FOLDER BASED -- Uf+Python code stored in folder defines system behavior
 - LIVE -- 
 
 _
-## --- 2021.01.26 - Implement a quick starter system ---
+## --- 2021-01-26 - Implement a quick starter system ---
 - LEXSPACE -- map: text files and at least URLS into a single lexspace
 - PREFIX TREES -- implement menu-ing and merging
 - URL LAUNCHER -- Browser, 
-## --- 2020.12.22 - Pieces ---
+## --- 2020-12-22 - Pieces ---
 - UNICORE & PYBRIDGE
 - 
-## --- Quick sketch - 2020.12.17 ---
+## --- Quick sketch - 2020-12-17 ---
 
 EXAMPLES
 
@@ -1209,7 +1209,7 @@ AliasSpace		// All entries are an aliased from somewhere according
 ### --- aim2 ---
 Aim: Present underlying text in all the right ways for task of the moment
 _
-### --- 2020.12.18 - INTRO ---
+### --- 2020-12-18 - INTRO ---
 
 **KNOWLEDGE MANAGEMENT** -- The purpose of _**knowledge management (KM)**_ is to _PRESENT_ the most relevant information, organized and visualized in the best ways to enable the understanding and reasoning required for action.
 

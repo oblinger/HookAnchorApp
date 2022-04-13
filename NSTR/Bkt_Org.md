@@ -6,7 +6,7 @@
     ===  <<>> -- CROSSCUTTING PARTITIONING OF <<>> FOR PRIOITIZATION & TIME TRACKING  ===
     ========================================================================================
 
-    PARTITIONS:  2011.06.30
+    PARTITIONS:  2011-06-30
     * ADMIN  : Work <<>> Personal <<>> Daily
     * REQ    : Tcons, Meetings, 
     * WORK   : 

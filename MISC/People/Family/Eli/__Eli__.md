@@ -62,8 +62,8 @@ _
 ## Notes
 ### --- Sleep Notes ---
 
-2022.02.00 -- 7pm woke at 12.  laid down 1-2a; awake till 5:15am
-2022.02.25 -- woke early 1hr nap.  7:30bath 8:45bed(dan said not sleepy) 
+2022-02-00 -- 7pm woke at 12.  laid down 1-2a; awake till 5:15am
+2022-02-25 -- woke early 1hr nap.  7:30bath 8:45bed(dan said not sleepy) 
 			up@9:30  (we did not let him cry long. slept @ 10:25)
 
 - NAP - look at app; approx 2 hours after waking 
@@ -88,24 +88,24 @@ _
 	- 
 ## === MED STATS ===
 ### --- Height / Weight ---
-2021.08.13	12.8kg	84.4cm
-2021.02.24	12.5kg	81cm	
-2020.11.13	11.4kg	76.2cm
-2020.08.11	10.6kg	73cm
-2020.05.04  9.97kg	68.5cm	15g/d @122d  68.5cm    5g/d @46d
-2020.03.19  9.72kg			20.7g/d. 		skip (with clothes and diapers) 76d
-2020.01.03  8.15kg			17g/d	43/28
-2019.12.11  7.72kg	62.4cm	8g/d	skip           62.4cm  39.5cm
-2019.12.06  7.68kg			19g/d
-2019.11.22  7.42kg			23g/d
-2019.11.09  7.12kg	60cm	40g/d 60cm  600/15 
-2019.10.25  6.52kg			45g/d
-2019.10.21  6.34kg			55g/d        tgt: 6oz/wk @2m to 4oz/wk @3m 16g/day
-2019.10.15  6.01kg    		40g/d        tgt: 02-30g/d .11-.17/wk  .14-.2QL)
-2019.10.08  5.73kg  57cm 				(at doctors office)
-2019.10.06  5.86kg               		(w diaper&clothes)
-2019.09.08  5.04kg	51cm
-2019.08.08	3.09kg	48cm?
+2021-08-13	12.8kg	84.4cm
+2021-02-24	12.5kg	81cm	
+2020-11-13	11.4kg	76.2cm
+2020-08-11	10.6kg	73cm
+2020-05-04  9.97kg	68.5cm	15g/d @122d  68.5cm    5g/d @46d
+2020-03-19  9.72kg			20.7g/d. 		skip (with clothes and diapers) 76d
+2020-01-03  8.15kg			17g/d	43/28
+2019-12-11  7.72kg	62.4cm	8g/d	skip           62.4cm  39.5cm
+2019-12-06  7.68kg			19g/d
+2019-11-22  7.42kg			23g/d
+2019-11-09  7.12kg	60cm	40g/d 60cm  600/15 
+2019-10-25  6.52kg			45g/d
+2019-10-21  6.34kg			55g/d        tgt: 6oz/wk @2m to 4oz/wk @3m 16g/day
+2019-10-15  6.01kg    		40g/d        tgt: 02-30g/d .11-.17/wk  .14-.2QL)
+2019-10-08  5.73kg  57cm 				(at doctors office)
+2019-10-06  5.86kg               		(w diaper&clothes)
+2019-09-08  5.04kg	51cm
+2019-08-08	3.09kg	48cm?
 
 [Mayo](https://www.mayoclinic.org/healthy-lifestyle/infant-and-toddler-health/expert-answers/infant-growth/faq-20058037) 140-200g/wk = 20-29g/d  <6m
 

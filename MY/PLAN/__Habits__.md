@@ -127,7 +127,7 @@ SUN - Family Day
 MTW - Afternoon Chew. (or Thursday morning focused chew)
 
 
-2021.01.11 - Created
+2021-01-11 - Created
 _
 
 
@@ -383,7 +383,7 @@ Background:
 - But I am not being insta-responsive in a way that I must.
 _
 ### === OLDER STUFF ===
-### EFFICIENT DAY -- 2019.10.15 - thinking about WHY -- 
+### EFFICIENT DAY -- 2019-10-15 - thinking about WHY -- 
 
 RULES
 - BED -- In bed by 11:00p -- maybe reading a bit
@@ -626,7 +626,7 @@ GRIT habit -- https://medium.com/the-mission/willpower-doesnt-work-here-s-the-ke
 ### - THE ENVELOPE - Brutally effective self accountability ---
 
 
-2022.01.27 - 30/30/30 - Morning Effiency & Focus on tough task
+2022-01-27 - 30/30/30 - Morning Effiency & Focus on tough task
 - HARD READY: after weekday meditation&bath set 30 min timer. 
 		  then start MIT immediately after (within 30 minutes)
 - HARD MIT: set 30 min timer & work in focused way; reset timer if distracted.
@@ -691,7 +691,7 @@ You can update the sticky note as your goals shift.
 
 
 ~-~~
-2022.01.27 - 30&30 - Morning Effiency & Focus on tough task
+2022-01-27 - 30&30 - Morning Effiency & Focus on tough task
 - HARD READY: after weekday meditation&bath set 30 min timer. 
 		  then start MIT immediately after (within minutes)
 - HARD MIT: set 30 min timer & work in focused way; reset timer if distracted.

@@ -2,7 +2,7 @@
 
 
 # ### LOG ###
-### 2021.09.10 - Problem sketch
+### 2021-09-10 - Problem sketch
 
 Help clients build complex, self-managed, ML environments 
 
@@ -15,7 +15,7 @@ YOUR SYSTEM
 
 
 
-### 2021.02.15 - thinking
+### 2021-02-15 - thinking
 
 VALUE
 - COMMUNITY -- Significant community knowledge about configuration of complex software system
@@ -29,7 +29,7 @@ ISSUE
 Spark + Jupiter
 
 
-### 2021.02.15 - lean canvas
+### 2021-02-15 - lean canvas
 Lean Canvas Order of Exploration
 1 PROBLEM		Top 3 Problems
 2 SEGMENTS		Target Customer Segments

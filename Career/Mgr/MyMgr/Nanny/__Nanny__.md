@@ -71,7 +71,7 @@ _
 ## OTHER INFO
 ### AMAZON ACCOUNT
 
-Riley@oblinger.us  2007.07.21
+Riley@oblinger.us  2007-07-21
 ## INTERVIEWS
 ### Adrianne
 

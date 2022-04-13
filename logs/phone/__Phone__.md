@@ -310,13 +310,13 @@ Mon - Fri: 6 am - 6 pm PT
 Sat - Sun: 8 am - 5 pm PT
 
 
-### 2017.00.00 - Bought glasses
+### 2017-00-00 - Bought glasses
 
 o656778528. Y
 
 https://www.zennioptical.com/orderConfirm?_requestid=260906
 
-### 2017.00.00 CREDIT CARDS
+### 2017-00-00 CREDIT CARDS
 
 CREDIT CARD
 

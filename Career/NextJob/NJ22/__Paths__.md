@@ -62,7 +62,7 @@ CLEVER/HARD
   
   
   _
-### 2021.11.21 - NINA WORK
+### 2021-11-21 - NINA WORK
 
 HARD - Trying to prove theorems about privacy is very hard.
 DELEGATE - Working with student means they do bulk of the tedious writeup.
@@ -509,7 +509,7 @@ _
 - 
 
 _
-### 2021.11.25 - PATHS MISSION
+### 2021-11-25 - PATHS MISSION
 
 MISSION:  What do I want my life to be about?
 - ROOM - To explore technically hard/interesting ideas & live life w family.
@@ -521,7 +521,7 @@ LAUNCH TARGETS
 - EDUCORP:	X
 
 _
-### 2021.12.01 - PATHS cash
+### 2021-12-01 - PATHS cash
 
 1/4.5% * 12mo = 266 multiplier
 
@@ -545,7 +545,7 @@ RZERO VALUE
 8x	$10M	$6.8M	$2M		$12.5M
 
 _
-### 2021.11.30 - PATHS GOOGLE vs R-ZERO vs UF-now
+### 2021-11-30 - PATHS GOOGLE vs R-ZERO vs UF-now
 
 			Google	Rzero	UF
 Pay				  	  X		--			500+?200  vs  300+($2M)    250K-bseries
@@ -556,7 +556,7 @@ Room		  X				+++
 
 80K shared @ $13 = $1,040 /4y = 255K/y * 8 = $2M/year (assuming B * 4 * 2)
 _
-### 2021.11.09 - PATHS (Luis note)
+### 2021-11-09 - PATHS (Luis note)
 
 LATEST THINKING
 - FLOAT -- Crypto
@@ -571,7 +571,7 @@ You got me thinking about how to validate my treesheets KM idea before prototypi
 
 I pick several specific info management 
 _
-### 2021.04.19 - DANO PATHS
+### 2021-04-19 - DANO PATHS
 #### _
 
 - MKT - If it could work
@@ -650,7 +650,7 @@ MKT --
 
 
 _
-#### 2021.03.28 - Big picture next step ideas / pulls
+#### 2021-03-28 - Big picture next step ideas / pulls
 
 > >> IDEAS WITH HIGH PULL <<
 
@@ -667,7 +667,7 @@ _
 
 
 	_
-#### 2021.04.14 - Compass
+#### 2021-04-14 - Compass
 
 N	--  SPIRIT		--	My spiritual life
 NNW	--	FAMILY		--	My family life
@@ -684,7 +684,7 @@ SSW	--	HEALTH
 SSE	--	
 
 _
-#### 2021.03.03 - Dan's North Star
+#### 2021-03-03 - Dan's North Star
 
 BUILD FROM STRENGTH - None are mandatory, but more are better
 - AI/ML/DeepLearning
@@ -698,7 +698,7 @@ SMALLER
 - WRENCH -- Target solutions that may be adopted "a la carte" within larger value chains
 
 _
-#### 2021.02.24 - Dan's Futures Ranked
+#### 2021-02-24 - Dan's Futures Ranked
 	- CONFIGURATOR PRODUCT -- 
 	- AF PRODUCT -- 
 	- GOOD JASON SITUATION -- >$150K
@@ -723,7 +723,7 @@ _
 	- 30K teams.  10% penetration.  $100/mo profit  =  3.6M per year  For schools
 
 
-### 2021.02.17 - Dan's Mind & North Star
+### 2021-02-17 - Dan's Mind & North Star
 #### VALUES
 - **AUTONOMY** - Freedom to contribute w/o concern for cash
 	- FRANKLIN - Accomplished much because he didn't need to chase $.  99% do

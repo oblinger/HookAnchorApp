@@ -2,7 +2,7 @@
 ## === LAL.PKG ===
 
 #### notes
-#### -- 2021.07.13
+#### -- 2021-07-13
 
 - Pkg instructions are executed in order
 - pkg instructions 'follow' specified place to determine where to operate

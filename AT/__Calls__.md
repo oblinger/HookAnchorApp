@@ -30,7 +30,7 @@ To Call:  	Dennis DeCoste, Foster Provost, Chris Ramming, Ronny Kohavi,
 Maybe:		Joe hellerstein, John Turek, Steve Chien, Daniel Haddick?, Drew Dean
 	Herb Derby, ?Manish Gupta
 
-#### 2021.09.21 - QUESTIONS TO ASK
+#### 2021-09-21 - QUESTIONS TO ASK
 **QUESTIONS**
 - **VP-FIRST** -- VP verses FAANG	(VP at 200M series-B).
 - **GAP-OK** -- Gap w. consulting

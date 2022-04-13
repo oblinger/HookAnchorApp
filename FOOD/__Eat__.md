@@ -15,7 +15,7 @@ T14	190.5	Tofu++, Veg, 4apples, stuffed before dinner,
 			ate little.  4/
 
 // ######
-// 2021.12.06 - Restart after gaining back from 185 to 190.  Waist 41" 3/16th
+// 2021-12-06 - Restart after gaining back from 185 to 190.  Waist 41" 3/16th
 //
 //
 // - HUNGRY - Get use to being mildly hungry at points during the day
@@ -73,10 +73,10 @@ Eating the 1 month nanny's food
 ~-~-~
 
 
-2019.05.20	L:LambShank,gnochi L2: Noodles(LotsRedPepperOil) +1h H2
+2019-05-20	L:LambShank,gnochi L2: Noodles(LotsRedPepperOil) +1h H2
 F19 197.0.  L:Celery,Chicken  D:barzolotte: spagatti&ball, beets, egg&c-veg [h2]
 
-=== 2019.04.19 === what is causing distress
+=== 2019-04-19 === what is causing distress
 
 foT11 191.    [k2]  
 M10 193.5.  [k1]  3:salmon,cauliflower. 8:hotpot. (woke w. tiny ketosis)
@@ -93,7 +93,7 @@ F30 192.5   --first-days-on-low-carb
 
 T27	196.5	9:salmon 2salmon,nuts,1.5Corn
 
-=== 2018.11.27 === starting low carb/exercise "kitchen-sink" diet ===
+=== 2018-11-27 === starting low carb/exercise "kitchen-sink" diet ===
 
 
 

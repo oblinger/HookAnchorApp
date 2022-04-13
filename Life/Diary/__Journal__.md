@@ -1,6 +1,6 @@
 
 
-### 2022.03.00 - QJ note
+### 2022-03-00 - QJ note
 As I understand it, there are 1000+ biological-men who can run faster than the fastest biological-woman, so was imagining a future where it becomes normal for a tiny fraction (0.1% to 1%) of non-trans elite athletes to adjust their self determination specifically to BECOME a world champion.  It would not take many folks to decided they had a bit of room in their life for a bit of ambiguity.  The stakes would be high...  millions in advertising etc. and the gold medal title.  And just 0.1% would be enough....
 
 I think both this generation and next generation know what a biological-women and self-declared-women are.  The difference is which of these definitions is given primacy when one simply uses the term "woman."  
@@ -13,7 +13,7 @@ We are just in this weird present state where we have rules tied to "woman" whic
 
 
 
-### 2022.03.03 - A FULL LIFE
+### 2022-03-03 - A FULL LIFE
 
 My full life is built from several key pieces:
 
@@ -36,7 +36,7 @@ HEAVY HOBBY
 
 
 
-### 2022.02.07 - Growing my Circles
+### 2022-02-07 - Growing my Circles
 
 FAMILY
 - CORE: Dean/Jane; Frank/Sue; Janick/Jessie; 
@@ -48,7 +48,7 @@ FRIENDS
 
 
 _
-### 2022.01.28 - Joe/Deep Advisor
+### 2022-01-28 - Joe/Deep Advisor
 
 
 P
@@ -115,7 +115,7 @@ Thanks for the help so far, and looking forward to our next chat!
 
 
 _
-### 2022.01.14 - Morning thoughts
+### 2022-01-14 - Morning thoughts
 
 - NOT SO EFFECTIVE -- The last decade has not been so effective career wise.
 - FEAR: WASHED UP -- Fear that I am not no longer at cutting edge of my field.
@@ -133,7 +133,7 @@ _
 - PURPOSE: Push an idea into reality???
 
 _
-### 2021.12.25 - Friends Audit
+### 2021-12-25 - Friends Audit
 
 Nina, Kartik, Nick, 
 
@@ -141,7 +141,7 @@ John Davis,
 
 Elevate: bi-weekly meetup 
 _
-### 2021.11.29 - Talk w QL
+### 2021-11-29 - Talk w QL
 
 - ABOUT KY trip:	 felt stubborn once make up mind - several K to avoid O'hare 
 					does not feel rational to me.  
@@ -156,7 +156,7 @@ _
 - Talk for a minute about AF split in the marriage.
 					
 _
-### 2021.09.07 - Daily Schedule Ideas
+### 2021-09-07 - Daily Schedule Ideas
 #### BASIC TEMPLATE
 
   5:00	Meditate & Ready	L 1h
@@ -206,7 +206,7 @@ _
 					L 7.5h	W 8h	A 2h	S 6.5
  
 _
-### 2021.07.01 - Design your life thinking
+### 2021-07-01 - Design your life thinking
 
 Build it:  building it; Concrete projects; concrete customers; concrete value
 
@@ -220,7 +220,7 @@ Big problems:
 
 
 _
-### 2021.07.06 - Visio Terms
+### 2021-07-06 - Visio Terms
 
 Comp Cap -- 
 - $10M max on non-salary cash going into Dan's pocket unencumbered
@@ -248,7 +248,7 @@ $1 for 1000 impressions (flashes on screen)
 ely.ai
 
 _
-### 2021.07.01 - notes
+### 2021-07-01 - notes
 
 WANT FREEDOM -- I to get wrapped up in a Dan project from time to time, and feel I have time to really drive it somewhere.  For the moment, that is Uniform, but later it will be something else.
 
@@ -290,7 +290,7 @@ QUESTIONS FOR DOUG:
 
 
 _
-### 2021.06.30 - Alternatives
+### 2021-06-30 - Alternatives
 
 Most Likely:  
 -- 1.5y Fiddle --> Google   (-->BatCo, -->DanCo)
@@ -342,7 +342,7 @@ KEY
 - BATCO -- My company built around customer driven problem
 
 _
-### 2021.06.29 - Jason Redux
+### 2021-06-29 - Jason Redux
 
 
 Terms:
@@ -367,7 +367,7 @@ The aim here is to ensure that if Visio hits big, that the lion's share of Dan's
 
 
 _
-### 2021.06.20 - FUTURES
+### 2021-06-20 - FUTURES
 
 RANKED
 - AI CONSULTANT -- $250K/yr; 1/2 Time Working; 1/2 Time side stuff
@@ -389,7 +389,7 @@ DRIVES
 - ROOM -- Room to persue projects of my choosing
 
 _
-### 2021.05.31 - Nick Text Response
+### 2021-05-31 - Nick Text Response
 Some bullet point thoughts:
 
 **DIFFERENT SITUATION** -- Before marriage I had 'infinite' time with a growing net worth each month.  After marriage in 2018, I told my brother I was "retired-ish".  With 2.5M in the bank earning the equivelant of a $150K/yr interest salary, and my aim to get AF salary over $100K I figured that would cover things, so any additional cash from other adventures would just sweeten the pot.
@@ -411,7 +411,7 @@ Some bullet point thoughts:
 - PAST ACTION -- I don't think I have been very strategic in persuit of my interests.  Rather I am always looking for interesting problems to consider, and I consider them at two levels:  (1) pencil paper design.  (2) ground up implementation.
 
 
-### 2021.05.26 - Quick Plan before Michael/Nick call
+### 2021-05-26 - Quick Plan before Michael/Nick call
 
 DEMORALIZED
 - COMPASS - 
@@ -437,7 +437,7 @@ NEXT
 - Short Pitch - Health monitor
 - Designing Your Life
 _
-### 2021.05.17 - LOG JAM
+### 2021-05-17 - LOG JAM
 
 DROWNING -- I am 'drowning' in my present state of indecision.
 VELOCITY -- My current velocity is low
@@ -475,7 +475,7 @@ Finally I am rejecting the Jason possibility in my mind.  Why?
 -- EQUIV TECH TO GOOGLE - I want to work heads down on some technical mission.  Likely I could do this better inside a tech company like Google.  I likely could jump between different ML tasks providing value to them, maybe in a way that would at least rival the diversity I would find at Visio.
 
 -- WATER UNDER BRIDGE - Well partly because it is now water under the bridge, I likely cannot pull out a good working relationship given that things have progressed timewise so far.
-### 2021.04.11 - NFT transfer - Atilla discussion
+### 2021-04-11 - NFT transfer - Atilla discussion
 Atilla,
 Please treat this idea with care... since it could have value. 
 Not sure why I kept thinking about this, but I think I have an approach where NFTs from multiple chains could be merged into a new NFT univers on some different chain:
@@ -565,9 +565,9 @@ talk more soon!
 
 
 _
-### 2021.05.05 - DECISION - NO TO JASON
-### 2021.03.00 - JASON BASKETBALL
-#### 2021.04.29 - Thumbnail Math
+### 2021-05-05 - DECISION - NO TO JASON
+### 2021-03-00 - JASON BASKETBALL
+#### 2021-04-29 - Thumbnail Math
 - 500 	gyms
 - 30 	= 30 team/gym * 10 players/team * 10% penetration
 - $150	USD/person/year
@@ -575,7 +575,7 @@ _
 - $2.5M	/yr
 - $7.5M	Sale price
 - $1.2M	= 7.5 * 15% Dan's take (for the market; double that for the tech too)
-#### 2021.03.04 - The Nick and Dan LLC Model
+#### 2021-03-04 - The Nick and Dan LLC Model
 
 	- WILDERNESS -- We venture forth into the wilderness of OPP (other people's problems)
 		- IDEA FUNNEL -- Each sees many a wild and weird thing, most are of no use
@@ -601,7 +601,7 @@ _
 
 
 	_
-#### 2021.04.07 - Jason #5
+#### 2021-04-07 - Jason #5
 
 	2,000	for profit gyms in the USA
 	500		gyms @ 25% penetration
@@ -865,7 +865,7 @@ _
 
 
 	_
-#### 2021.04.01 - Jason #5
+#### 2021-04-01 - Jason #5
 
 	Jason,
 
@@ -883,7 +883,7 @@ _
 
 
 	_
-#### 2021.03.30 - Jason Summary
+#### 2021-03-30 - Jason Summary
 
 	-- 60% founder situation is good
 	-- 60% tech works
@@ -904,7 +904,7 @@ _
 
 
 	_
-#### 2021.03.27 - Jason analysis #4
+#### 2021-03-27 - Jason analysis #4
 
 	Jason, 
 	The analysis continues!  Getting people on the phone is quite a SLOG, but I have had some luck.  Including two managers of a local YMCA.  Both were generally positive on the idea, one even said he wanted to find a solution by this fall! (Details at bottom)
@@ -1026,7 +1026,7 @@ _
 
 
 	_
-#### 2021.03.20 - Jason response #3
+#### 2021-03-20 - Jason response #3
 
 
 	Your research is making me to want try to exhaustively describe the market in NH. I'm going to try to find EVERY AAU team/program, gym with leagues, and nail down the number of private High schools. All of those are sweet pickings for us, I agree the public HS market will be tougher. I also suspect we can pick up JV programs and/or middle school teams too as I doubt many of them use HUDL. I've got some marketing intern candidates lined up, was hoping to do that. 
@@ -1133,7 +1133,7 @@ _
 
 
 	_
-#### 2021.03.17 - Jason response #2
+#### 2021-03-17 - Jason response #2
 
 
 	Jason,
@@ -1216,7 +1216,7 @@ _
 
 
 	_
-#### 2021.03.17 - Jason response #1
+#### 2021-03-17 - Jason response #1
 
 
 
@@ -1341,7 +1341,7 @@ _
 
 
 	_
-#### 2021.02.21 - Jason's Basketball Thing
+#### 2021-02-21 - Jason's Basketball Thing
 
 
 	- With multiple cameras placed high it seems with work we can approach human performance at labelling shot
@@ -1464,7 +1464,7 @@ _
 
 
 	_
-### 2021.01.31 - So what the fuck am I doing? What's my goal here?
+### 2021-01-31 - So what the fuck am I doing? What's my goal here?
 
 
 What is my end-game in my career?  I have held out for a decade not working for the big boys, but what is my plan here what are my objectives?
@@ -1501,7 +1501,7 @@ MARKET BAT SWING
 
 
 _
-### 2021.02.28 - Uniform - What could be pitched now
+### 2021-02-28 - Uniform - What could be pitched now
 
 CORP KM -- Build out a live Google Doc/Sheet centric system
 - Key Ideas: AppLocalData, LiveConnections(DeltaPushing), ScriptedConnect
@@ -1511,7 +1511,7 @@ LOCAL DATA BRICKS / SETUP WIZARDS
 
 VALUE MARKET -- Publish Idea; Build payments platform
 _
-### 2020.11.25 - Unicore Implementation Days
+### 2020-11-25 - Unicore Implementation Days
 
 Here is my schedule:
 
@@ -1538,7 +1538,7 @@ AN AWESOME DAY
  1 hour Exercising
 
 _
-### 2020.11.19 - AF Strategy
+### 2020-11-19 - AF Strategy
 
 _**Double down on 1/2 as much in area of Energy-Related Standards**_
 
@@ -1549,7 +1549,7 @@ _**Double down on 1/2 as much in area of Energy-Related Standards**_
 - CALL -- Ideas should move from thought to phone call w/ team effort
 
 _
-### 2020.08.15 - My Futures
+### 2020-08-15 - My Futures
 
 
 Hard Realities:
@@ -1571,7 +1571,7 @@ Hard Realities:
 	- Selling an idea, Instilling confidence
 
 _
-### 2020.08.23 - Lost at Sea but with good provisions
+### 2020-08-23 - Lost at Sea but with good provisions
 
 My Situation
 - DEMORALIZED - Not really excited about any of the directions I can push lif
@@ -1598,7 +1598,7 @@ SIDE THINGS:
 
 
 _
-### 2020.02.19 - DECADE TIMELINE
+### 2020-02-19 - DECADE TIMELINE
 
 2020   Lost at sea
 2019   Pregnant.  Getting Serious about AF.  Eli.
@@ -1614,7 +1614,7 @@ _
 2011   7Final DARPA.  Zanzors.  500-startups
 2010   Final year Elaine.  MaybeSeige.  
 _
-### 2016.05.25 – Lex Ownership
+### 2016-05-25 – Lex Ownership
 
 My goals:
 l-- GROW – Able to safely work at Martian, Google, etc.  and retain ownership of newly grown Lex stuff
@@ -1641,7 +1641,7 @@ Oblio Labs
 Oblinger LLC
 
 _
-### 2011.04.10 – Not Energized
+### 2011-04-10 – Not Energized
 
 9 – woke
 10 – out of bed
@@ -1663,7 +1663,7 @@ Yesterday was just as ineffective.
 
 
 _
-### 2010.12.17 – LESSONS FROM DATING ELAINE
+### 2010-12-17 – LESSONS FROM DATING ELAINE
 
 lesson
 
@@ -1675,7 +1675,7 @@ lesson
 
 
 _
-### 2010.11.18 – A day laid waste
+### 2010-11-18 – A day laid waste
 
 I am trying to figure out things with Elaine, and manage to completely kill a day, in prep for thinking about that.
 I want to understand this day.
@@ -1706,7 +1706,7 @@ I want to understand this day.
 Web  STACY 781-496-2437 
 
 _
-### 2010.10.00 – Gave up on Siege
+### 2010-10-00 – Gave up on Siege
 
 It occurred to me after our phone call yesterday, that ours was one of the best business relationships that I never had.  I was worried early on, based on the comments coming from STO, but I have found them to be quite groundless.  There have been several times when it was clearly in your best interest to simply let things ride along w/o comment—after all you were getting effort for free.  But you (or at least your wife) took it upon yourself to be explicit about assumptions being made.
 
@@ -1729,7 +1729,7 @@ Best luck with Siege!
 
 
 _
-### 2010.10.09 – Organizing Self
+### 2010-10-09 – Organizing Self
 
 FOCUS – I can do many different things, but I jump from idea to idea way too quickly.  
 - At DARPA there are so many efforts that have never gone anywhere, but I never ran into a wall, I just got working on something else.
@@ -1753,7 +1753,7 @@ This is consistent w. my work from: IBM, from BL, and Cyber or ISR.
 
 
 _
-### 2010.04.01 – Life is moving faster
+### 2010-04-01 – Life is moving faster
 
 There is much less time, than I am pretending there is.  But less that needs doing as well.
 - Need to ensure that the important stuff is getting done.
@@ -1792,7 +1792,7 @@ SELF:  Pretty on track.  Focused hours
 
 
 _
-### 2010.01.02 – From last year’s retreat  (12/2008)
+### 2010-01-02 – From last year’s retreat  (12/2008)
 
 RETREAT
 
@@ -1822,7 +1822,7 @@ intense study.
 
 I wanted to thank you for the retreat.  
 _
-### 2009.12.29 - Elasticity of Time
+### 2009-12-29 - Elasticity of Time
 This morning
 1.5h	bed	0
 1h	ready	.5
@@ -1835,7 +1835,7 @@ Lesson learned.  In all cases I need to get to my focused hour *immediately*
 That focused hour must be fun too so I want to do it
 
 _
-### 2009.12.19 - personal update
+### 2009-12-19 - personal update
 Things are not great.  I am at a place of very low motivation.  
 My current situation is reinforcing some habits that are not great:
 No movement with elaine… by having big ideas, but no progress (just putting stuff onto lists), 
@@ -1847,7 +1847,7 @@ Will attempt new habit:  Morning Default
 
 
 _
-### 2009.11.22 – Joe Laconti
+### 2009-11-22 – Joe Laconti
 
 
 * Idea of a building up model spirituality from observations from stmts scientist would accept about world (social world)
@@ -1857,7 +1857,7 @@ _
 * your spiritual drivers / goals / life goals 
 
 _
-### 2009.11.19 – Progress
+### 2009-11-19 – Progress
 
 TIME & PROGRESS
 •	Life is structured so I often don’t get time for the most important personal things

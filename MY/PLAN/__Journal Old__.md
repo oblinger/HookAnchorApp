@@ -1,5 +1,5 @@
 
-### 2022.01.28 - Joe/Deep Advisor
+### 2022-01-28 - Joe/Deep Advisor
 
 
 > It just depends, what you would like to create next in your career and what ypur timeline would be.
@@ -50,7 +50,7 @@ Thanks for the help so far, and looking forward to our next chat!
 
 
 _
-### 2022.01.20 - PATHS, spiritual dimension
+### 2022-01-20 - PATHS, spiritual dimension
 
 - BOTH - What ever path I take, I need to satisfy two key needs:
 	TECH - Need to be creating something hard w/ my mind.
@@ -68,7 +68,7 @@ MIRI --> FAANG
 
 
 _
-### 2022.01.14 - morning thoughts
+### 2022-01-14 - morning thoughts
 
 - NOT SO EFFECTIVE -- The last decade has not been so effective career wise.
 - FEAR: WASHED UP -- Fear that I am not no longer at cutting edge of my field.
@@ -85,7 +85,7 @@ _
 - WANTS: Thinking, Diversity, Ease
 - PURPOSE: Push an idea into reality???
 
-### 2022.01.04 - My purpose
+### 2022-01-04 - My purpose
 
 - NOT MONEY -- It is now too late to start a business in order to make FU-money.  But will have enough to retire on in a few years if RZ does well.
 - MIDWIFE -- Bring an important idea into existence... this is my purpose.
@@ -93,7 +93,7 @@ _
 - THINK HARD -- I love to think hard about a valuable thing.  
 	This is my passion that can drive effortless action, but it needs to somehow tie to something of import
 _
-### 2021.12.25 - Friends Audit
+### 2021-12-25 - Friends Audit
 
 Nina, Kartik, Nick, 
 
@@ -101,7 +101,7 @@ John Davis,
 
 Elevate: bi-weekly meetup 
 _
-### 2021.11.25 - PATHS TABLE SUMMARY
+### 2021-11-25 - PATHS TABLE SUMMARY
 #### _
 			Joy		Tech	Mean	Pay		Diff	Skill	Idea
 GAI			++		+++		+++		>6		2y		++		++
@@ -195,7 +195,7 @@ _
 - 
 
 _
-### 2021.11.25 - PATHS MISSION
+### 2021-11-25 - PATHS MISSION
 
 MISSION:  What do I want my life to be about?
 - ROOM - To explore technically hard/interesting ideas & live life w family.
@@ -207,7 +207,7 @@ LAUNCH TARGETS
 - EDUCORP:	X
 
 _
-### 2021.12.01 - PATHS cash
+### 2021-12-01 - PATHS cash
 
 1/4.5% * 12mo = 266 multiplier
 
@@ -231,7 +231,7 @@ RZERO VALUE
 8x	$10M	$6.8M	$2M		$12.5M
 
 _
-### 2021.11.30 - PATHS GOOGLE vs R-ZERO vs UF-now
+### 2021-11-30 - PATHS GOOGLE vs R-ZERO vs UF-now
 
 			Google	Rzero	UF
 Pay				  	  X		--			500+?200  vs  300+($2M)    250K-bseries
@@ -242,7 +242,7 @@ Room		  X				+++
 
 80K shared @ $13 = $1,040 /4y = 255K/y * 8 = $2M/year (assuming B * 4 * 2)
 _
-### 2021.11.14 - Ikigai - my "passion" - IDEAS
+### 2021-11-14 - Ikigai - my "passion" - IDEAS
 
 - LOVE - Technical Creation
 - NEED - tech-jobs
@@ -280,7 +280,7 @@ Work Env:
 - TEAMSAVER
 
 _
-### 2021.11.09 - PATHS (Luis note)
+### 2021-11-09 - PATHS (Luis note)
 
 LATEST THINKING
 - FLOAT -- Crypto
@@ -295,7 +295,7 @@ You got me thinking about how to validate my treesheets KM idea before prototypi
 
 I pick several specific info management 
 _
-### 2021.11.29 - Talk w QL
+### 2021-11-29 - Talk w QL
 
 - ABOUT KY trip:	 felt stubborn once make up mind - several K to avoid O'hare 
 					does not feel rational to me.  
@@ -310,7 +310,7 @@ _
 - Talk for a minute about AF split in the marriage.
 					
 _
-### 2021.11.07 - FINE - Truths 
+### 2021-11-07 - FINE - Truths 
 
 MARRIAGE
 - FEEL SOMEWHAT TRICKED - About sex, about Eli, about Cash
@@ -341,7 +341,7 @@ ROOM FOR
 - LIFE - There are so many things that are not happening in life
 
 _
-### 2021.11.04 - FINE - Dreaming big with Google
+### 2021-11-04 - FINE - Dreaming big with Google
 
 
 SUMMARY of KM + GOOGLE
@@ -384,7 +384,7 @@ Before (or after?) joining google I have developed this technology to a point wh
 
 
 _
-### 2021.11.01 - FINE journal -
+### 2021-11-01 - FINE journal -
 
 
 
@@ -421,7 +421,7 @@ VALIDATION - It is possible that I will have time to validate aspects of the tre
 
 
 _
-### 2021.10.27 - FINE journal
+### 2021-10-27 - FINE journal
 
 Dan, I am really in a dark place.  Woke at 4am and could not sleep.  Just gripped by fear and dread.  Without discussing it here, lets just say that the KM idea seems it wont be a workable path.
 
@@ -475,7 +475,7 @@ but after the robotics company (for a solid year) I really did run from sensible
 
 
 _
-### 2021.10.27 - FINE passion questions / KM trajectory
+### 2021-10-27 - FINE passion questions / KM trajectory
 No matter what work I do I will want to have a dan-project, either as my main project or a side project.
 
 
@@ -580,7 +580,7 @@ Frumet barns -
 Jack - Finance guy - Coach
 
 _
-### 2021.09.07 - Daily Schedule Ideas
+### 2021-09-07 - Daily Schedule Ideas
 #### BASIC TEMPLATE
 
   5:00	Meditate & Ready	L 1h
@@ -630,7 +630,7 @@ _
 					L 7.5h	W 8h	A 2h	S 6.5
  
 _
-### 2021.07.01 - Design your life thinking
+### 2021-07-01 - Design your life thinking
 
 Build it:  building it; Concrete projects; concrete customers; concrete value
 
@@ -644,7 +644,7 @@ Big problems:
 
 
 _
-### 2021.07.06 - Visio Terms
+### 2021-07-06 - Visio Terms
 
 Comp Cap -- 
 - $10M max on non-salary cash going into Dan's pocket unencumbered
@@ -672,7 +672,7 @@ $1 for 1000 impressions (flashes on screen)
 ely.ai
 
 _
-### 2021.07.04 - Doug conversation
+### 2021-07-04 - Doug conversation
 
 BIG Q:
 - Is KMCO real?
@@ -768,7 +768,7 @@ RISKS
 
 
 _
-### 2021.07.01 - notes
+### 2021-07-01 - notes
 
 WANT FREEDOM -- I to get wrapped up in a Dan project from time to time, and feel I have time to really drive it somewhere.  For the moment, that is Uniform, but later it will be something else.
 
@@ -810,7 +810,7 @@ QUESTIONS FOR DOUG:
 
 
 _
-### 2021.06.30 - Alternatives
+### 2021-06-30 - Alternatives
 
 Most Likely:  
 -- 1.5y Fiddle --> Google   (-->BatCo, -->DanCo)
@@ -862,7 +862,7 @@ KEY
 - BATCO -- My company built around customer driven problem
 
 _
-### 2021.06.29 - Jason Redux
+### 2021-06-29 - Jason Redux
 
 
 Terms:
@@ -887,7 +887,7 @@ The aim here is to ensure that if Visio hits big, that the lion's share of Dan's
 
 
 _
-### 2021.06.20 - FUTURES
+### 2021-06-20 - FUTURES
 
 RANKED
 - AI CONSULTANT -- $250K/yr; 1/2 Time Working; 1/2 Time side stuff
@@ -909,7 +909,7 @@ DRIVES
 - ROOM -- Room to persue projects of my choosing
 
 _
-### 2021.05.31 - Nick Text Response
+### 2021-05-31 - Nick Text Response
 Some bullet point thoughts:
 
 **DIFFERENT SITUATION** -- Before marriage I had 'infinite' time with a growing net worth each month.  After marriage in 2018, I told my brother I was "retired-ish".  With 2.5M in the bank earning the equivelant of a $150K/yr interest salary, and my aim to get AF salary over $100K I figured that would cover things, so any additional cash from other adventures would just sweeten the pot.
@@ -931,7 +931,7 @@ Some bullet point thoughts:
 - PAST ACTION -- I don't think I have been very strategic in persuit of my interests.  Rather I am always looking for interesting problems to consider, and I consider them at two levels:  (1) pencil paper design.  (2) ground up implementation.
 - 
 _
-### 2021.05.26 - Quick Plan before Michael/Nick call
+### 2021-05-26 - Quick Plan before Michael/Nick call
 
 DEMORALIZED
 - COMPASS - 
@@ -957,7 +957,7 @@ NEXT
 - Short Pitch - Health monitor
 - Designing Your Life
 _
-### 2021.05.17 - LOG JAM
+### 2021-05-17 - LOG JAM
 
 DROWNING -- I am 'drowning' in my present state of indecision.
 VELOCITY -- My current velocity is low
@@ -995,8 +995,8 @@ Finally I am rejecting the Jason possibility in my mind.  Why?
 -- EQUIV TECH TO GOOGLE - I want to work heads down on some technical mission.  Likely I could do this better inside a tech company like Google.  I likely could jump between different ML tasks providing value to them, maybe in a way that would at least rival the diversity I would find at Visio.
 
 -- WATER UNDER BRIDGE - Well partly because it is now water under the bridge, I likely cannot pull out a good working relationship given that things have progressed timewise so far.
-### 2021.08.03 - >>> -AF-  -- NEXT JOB -- AF Sale <<<
-#### 2021.10.07 - Jon discussion about Taxes
+### 2021-08-03 - >>> -AF-  -- NEXT JOB -- AF Sale <<<
+#### 2021-10-07 - Jon discussion about Taxes
 - Share price.  Tax free reorg.  
 - QSBS big thing: depends on laws.  80%-test
 - Choice points?
@@ -1041,7 +1041,7 @@ _
 - Jake connection
 
 _
-#### 2021.08.07 - 
+#### 2021-08-07 - 
 
 
 - strat
@@ -1053,8 +1053,8 @@ $1M
   $300K/yr
 
 _
-### 2021.10.24 - >>> BIG   -- NEXT JOB --
-#### 2021.10.24 - Dan Fine KM Summary
+### 2021-10-24 - >>> BIG   -- NEXT JOB --
+#### 2021-10-24 - Dan Fine KM Summary
 
 BIG TRUTHS
 - PRETTY STUCK - 
@@ -1080,7 +1080,7 @@ BIG TRUTHS
 
 
 _
-#### 2021.09.14 - DAN-WORK - The kind of conceptual work that drives me
+#### 2021-09-14 - DAN-WORK - The kind of conceptual work that drives me
 ##### _
 
 There is a certain kind of work (lets call in DAN-WORK) and this kind of work is so compelling I tend to work on it even when it is not rational to do so; in to the night; sometimes at expense of nearly anything else.
@@ -1140,7 +1140,7 @@ WHAT MIGHT FIT ME?
 
 
 _
-##### 2021.11.21 - NINA WORK
+##### 2021-11-21 - NINA WORK
 
 HARD - Trying to prove theorems about privacy is very hard.
 DELEGATE - Working with student means they do bulk of the tedious writeup.
@@ -1191,7 +1191,7 @@ _
 - EFFICIENT SYSTEM -- love thinking about how to make systems efficient
 
 _
-#### 2021.07.31 - The Past and The Future - Summary for Nick
+#### 2021-07-31 - The Past and The Future - Summary for Nick
 
 THE PAST
 - MISSION #1 -- Achieve some larger-than-self impact from one of my many ideas 
@@ -1231,8 +1231,8 @@ EXAMPLE AWESOME TASKS
 	- e.g. how to architect an approach
 
 _
-### 2021.07.29 - >>> CALLS -- NEXT JOB <<<
-#### 2021.10.07 - NINA
+### 2021-07-29 - >>> CALLS -- NEXT JOB <<<
+#### 2021-10-07 - NINA
 
 - Context & Dan summary
 - Kinds of work
@@ -1257,13 +1257,13 @@ AWS Robotics -
 
 
 _
-#### 2021.10.06 - BAJI
+#### 2021-10-06 - BAJI
 - Vishal Kumar 	https://www.linkedin.com/in/vvk1978/
 - Dennis Deane 	https://www.linkedin.com/in/dennisdeane/
 - Kwesi Edwards	https://www.linkedin.com/in/kwesie/
 - https://www.linkedin.com/in/michael-luciano-715225/
 _
-#### 2021.09.23 - WHOM IN MY NETWORK TO ASK
+#### 2021-09-23 - WHOM IN MY NETWORK TO ASK
 
 To CALL:	 [Juan Huerta](https://www.linkedin.com/in/juanmhuerta/), [Rafah Hosn](https://www.linkedin.com/in/rafahhosn/), [Ron Brachman](https://www.linkedin.com/in/ron-brachman-9195764/), 
 Later:      Melanie Dumas, Theo Enns, [Doug Gordin](https://www.linkedin.com/in/douglas-gordin-69848/),
@@ -1271,7 +1271,7 @@ To Call:  	Dennis DeCoste, Foster Provost, Chris Ramming, Ronny Kohavi,
 Maybe:		Joe hellerstein, John Turek, Steve Chien, Daniel Haddick?, Drew Dean
 			Herb Derby, ?Manish Gupta
 _
-#### 2021.09.21 - QUESTIONS TO ASK
+#### 2021-09-21 - QUESTIONS TO ASK
 **QUESTIONS**
 - **VP-FIRST** -- VP verses FAANG	(VP at 200M series-B). 
 - **GAP-OK** -- Gap w. consulting
@@ -1290,7 +1290,7 @@ Framing:  	Applied-ML guy, Project Leader(Robotics/ML)
 Job Title:	Tech-PM, DataScientist, TechLead/Manager
 
 _
-#### 2021.07.29 - "New Programming Language" CTO
+#### 2021-07-29 - "New Programming Language" CTO
 
 - Connor@matchstar.com   recruiter  949-689-5969  Carolyne Connor
 - Michael Antonov  (former head architect for Occulus)
@@ -1347,7 +1347,7 @@ I have strengths fomenting consensus around deep architectural choices, and desi
 
 
 _
-#### 2021.07.28 - Meeting with Nick and Michael
+#### 2021-07-28 - Meeting with Nick and Michael
 
 -- Need for money fucks things up
 	-- I SHOULD be accountable to my 'users'
@@ -1380,14 +1380,14 @@ Ready to sacrifice all
 	Enjoy super deep, on multiple.  Thinking time exists. flexibilty which first
 
 _
-#### 2021.07.21 - Pre Google Interlude.  Why?
+#### 2021-07-21 - Pre Google Interlude.  Why?
 
 - UNIFORM -- Build stuff before the long winter
 - BATSWING -- 
 - VISIO -- 
 
 _
-#### 2021.07.27 - Nick's request info
+#### 2021-07-27 - Nick's request info
 
 1. Make a decision tree of the choices you are evaluating & probably outcomes
 2. Score the outcomes based on 3-5 metrics you care about
@@ -1395,7 +1395,7 @@ _
 4. Talk to like 5 people in the know & ask them for feedback. They will probably give you feedback that updates the tree, especially around probability, but maybe also sanity checks about what it’s like
 
 _
-#### 2021.08.25 - Next Job Framework
+#### 2021-08-25 - Next Job Framework
 
 **PATHS**
 	+++ MEGA CORP (IC Specialist, Technicalish-Manager, Researchy-Group)
@@ -1444,7 +1444,7 @@ _
 
 
 _
-### 2021.04.00 - >>> TOP   -- NEXT JOB <<<
+### 2021-04-00 - >>> TOP   -- NEXT JOB <<<
 #### SUMMARY
 
 PATHS
@@ -1482,8 +1482,8 @@ Team Saver; Smart Scale; Handheld Sizer
 - AI Generalist
 - ML Generalist
 - Deep Learning (Vision-space, NLP-text, Audio-time)
-### 2021.09.22 - >>> WP    -- NEXT JOB ACTIVITIES <<<
-#### 2021.10.01 - -- SITUATION SUMMARY --
+### 2021-09-22 - >>> WP    -- NEXT JOB ACTIVITIES <<<
+#### 2021-10-01 - -- SITUATION SUMMARY --
 
 The business I own is going to transition (in a good way) soon, so I need to select my next adventure.
 
@@ -1543,8 +1543,8 @@ My enthusiasm for a job can be quite hot or cold based on details of that job, s
 
 
 _
-### 2021.05.06 - >>> BOOK  -- DESIGNING YOUR LIFE <<<
-#### 2021.04.27 - INDEX CARD SUMMARY
+### 2021-05-06 - >>> BOOK  -- DESIGNING YOUR LIFE <<<
+#### 2021-04-27 - INDEX CARD SUMMARY
 ##### _
 
 See Job Matrix in Evernote Journal
@@ -1614,7 +1614,7 @@ Thinking
 - Want to work on technical & important stuff
 _
 _
-#### 2021.08.26 - BOOK ACTIVITIES
+#### 2021-08-26 - BOOK ACTIVITIES
 ##### - ODDESSY Plans - Three Near Futures
 ###### DASHBOARD
 
@@ -1760,7 +1760,7 @@ Writing the associated texts or APIs
 _
 ##### - Mindmap for IN FLOW
 _
-##### 2021.05.06 - WORK VIEW
+##### 2021-05-06 - WORK VIEW
 
 	Work is the technical building of value:
 
@@ -1799,7 +1799,7 @@ _
 	- DETAILED DESIGN -- I am driven to think about the biggest of pictures, but then like to try to THINK THRU solutions down to pretty detailed levels.
 
 	_
-##### 2021.05.10 - LIFE VIEW
+##### 2021-05-10 - LIFE VIEW
 
 	Why Are we here?
 	- **EXPERIENCES** -- _For the experiences we have_
@@ -1830,8 +1830,8 @@ _
 
 	_
 ##### energized, engaged, in flow
-#### 2021.07.21 - INSIGHTS LOG
-##### 2021.09.21 - SUMMARY OF WORK THAT FITS
+#### 2021-07-21 - INSIGHTS LOG
+##### 2021-09-21 - SUMMARY OF WORK THAT FITS
 
 Leadership over deeply-technical projects involving AI, ML, or Robotics
 
@@ -1872,8 +1872,8 @@ Which Job Title Best Fit?
 
 
 _
-#### 2021.07.20 - ACTIVITY LOG
-##### 2021.09.13 -- Writing up yet another idea (Alloy/crypto ownership)
+#### 2021-07-20 - ACTIVITY LOG
+##### 2021-09-13 -- Writing up yet another idea (Alloy/crypto ownership)
 
 Even as I am trying to really converge on which paths I will take, somehow I find myself thinking thru the details of yet another big idea.
 
@@ -1888,7 +1888,7 @@ This is really my M-O.  I am positively DRIVEN to think about:
 
 
 _
-##### 2021.09.03 -- WORK: happy to chat fast; but then hand details off to others
+##### 2021-09-03 -- WORK: happy to chat fast; but then hand details off to others
 
 - I enjoyed figure out how to address NIO and Dropwater
 - But got ansy after even just 30 min of writing it up.  
@@ -1896,20 +1896,20 @@ _
 
 
 _
-##### 2021.08.30 -- Inbox zero
+##### 2021-08-30 -- Inbox zero
 - a goto activity for me is to read and process EASY emails
 - want to switch away from any task when it gets harder except Uniform.
 - like to execute easy quick tempo tasks for longer (emails, blogs, recipes)
 - tend to want to swap tasks after 15min or so.  even doing this list was a bounce away from doing my three energy giving word maps.
 
 _
-##### 2021.08.30 -- Waste Time - Blog reading/responding - emails and tasks.
+##### 2021-08-30 -- Waste Time - Blog reading/responding - emails and tasks.
 - These days I spend way too much time reading blogs.
 - I spent hours giving my feedback to others that I read.
 - I don't want huge followers, I am just compelled to engage once I have thought and have come to a conclusion about a subject.
 
 _
-##### 2021.08.26 -- Procrastinate
+##### 2021-08-26 -- Procrastinate
 - When I get ready to work, I will procrastinate by doing many organizational tasks first:
 	- read emails
 	- read medium/blogs
@@ -1918,27 +1918,27 @@ _
 	- 
 
 _
-##### 2021.08.26 -- Shelving / recipes
+##### 2021-08-26 -- Shelving / recipes
 - I really like to organize things, spent hours designing and building shelving for ingredients, getting labels & containers.
 - Spent many hours optomizing recipes so they would be time efficient to make.
 - So time spent cooking is not valued by me, but time spent ORGANIZING to cook is compelling (even if not really so very fun)
 
 _
-##### 2021.06.00 -- QL modelling
+##### 2021-06-00 -- QL modelling
 - When QL came to me with several problems about how to model some aspect of self driving, I really found it fun to brainstorm how to attack the problem.
 - I think for me the most fun part, is struggling to see the best way to attach the problem.  
 - I also like helping others to attack the problem, then not having to screw around with the details involved in actually implementing it.
 
 _
-##### 2021.06.00 -- QL Hacking
+##### 2021-06-00 -- QL Hacking
 I also then helped out by coding several parts of the data analytics process in python.  This was also fun.  I think doing it all day would get tedious, but if that were <=25% of my time it would be ideal.
 
 _
-##### 2021.07.25 -- Flighty Freddie
+##### 2021-07-25 -- Flighty Freddie
 - While working on this activity log, I so badly want to jump to another activity.  (even a valuable one)  but the impulse is so fast that if I followed it, I would be jumping from one thing to the next is a very inefficient way.
 
 _
-##### 2016.00.00 -- Bizzy Robotics - Early days
+##### 2016-00-00 -- Bizzy Robotics - Early days
 I was naturally pulled into my work at Bizzy.  I was happy that in the evening I still was working on Uniform, but with Joe at the office, and with the CTO leadership role, I naturally fell into a pretty driven tempo.
 - Worked on my "architecture" stuff too much.
 - Didn't attend to impt aspects of leadership (lack of proclivity and skill)
@@ -1948,33 +1948,33 @@ I was naturally pulled into my work at Bizzy.  I was happy that in the evening I
 	- did not build regular handoff & check in processes
 
 _
-##### 2021.07.22 -- Foxglove robotics development platform
+##### 2021-07-22 -- Foxglove robotics development platform
 Got excited thinking about the idea of making a robotics-dev-studio that is efficient for doing robotics development work.  In general I think I am really motivated and excited to think about making efficient-to-use tools and processes.
 
 
 _
-##### 2021.07.21 -- Marcel response (flow)
+##### 2021-07-21 -- Marcel response (flow)
 When I saw marcel's note, I just could not help but to write my response.  Totally threw off my whole morning.  Immediately fought to load some needed open source (which I normally hate).  Each time I tried to work on something else, my brain kept going back to details about it.  really extremely hard for it to not just spontaneously break back into my thinking while on other topics.  Just gave up and wrote the reponse.
 
 _
-##### 2019.00.00 -- Block Chain
+##### 2019-00-00 -- Block Chain
 Operated in flow for months trying to build a new block chain.
 - The ideas seemed very big.  I imagine large impact.
 - Lots of creativity borne from just thinking hard for hours solving hard technical sub-problems.
 
 _
-##### 2021.07.20 -- Jump jump jump**
+##### 2021-07-20 -- Jump jump jump**
 When I am working on a thing that I am drawn to, I will push to work more and more hours.  Easily dropping other things I want/need to do.  When it is an activity that I resist, then I find it overwhelming to want to switch away from this thing.  Right now I am trying to do my Job matrix, and I want to switch away.  It stresses me to think about it.  and I am not quite sure what I should put down on it.
 
 _
-##### 2021.07.19 -- Marcel response  -- couldn't stop writing it!**
+##### 2021-07-19 -- Marcel response  -- couldn't stop writing it!**
 I receieved his response email, and I immediately wanted to think thru my response.  Couldn't stop writing it up, until it was done.  Was willing to re-read and correct it -- even as I kinda hate doing that.
 
 _
-##### 2021.07.19 -- Thinking while walking
+##### 2021-07-19 -- Thinking while walking
 When walking my mind repeatedly returns to details of Uniform, and how I might frame and say part of it.  Or less so, how I might resolve this or that techical detail
 _
-#### 2021.07.28 - DECISION PATH
+#### 2021-07-28 - DECISION PATH
 
 - GOOGLE et al is the back stop -- this what I do when all else fails
 	- Specialties:  AI/ML, Management, Robotics/Vision, NLP
@@ -1986,13 +1986,13 @@ _
 	- CONSULTING -- 
 	- NoCode, 
 _
-#### 2021.05.10 - PATHS
+#### 2021-05-10 - PATHS
 DEEP-AI: Pundit -> Google
 CORP-KM:
 SUSTAIN: Jason, TeamSaver, 
 
 MISSION? 
-#### 2021.04.14 - Dan O Drivers & Futures
+#### 2021-04-14 - Dan O Drivers & Futures
 ##### Interests
 KNOWLEDGE SYSTEMS
 SELF WORKING SYSTEMS
@@ -2032,7 +2032,7 @@ _
 I can focus on a thing when it 
 
 _
-#### 2020.10.02 - An assessment of me
+#### 2020-10-02 - An assessment of me
 
 
 Quick Observations:
@@ -2069,7 +2069,7 @@ With JASON flirted, but was never going to say yes, but spent time pretending
 
 
 _
-### 2021.04.19 - DANO PATHS
+### 2021-04-19 - DANO PATHS
 #### _
 
 - MKT - If it could work
@@ -2148,7 +2148,7 @@ MKT --
 
 
 _
-#### 2021.03.28 - Big picture next step ideas / pulls
+#### 2021-03-28 - Big picture next step ideas / pulls
 
 > >> IDEAS WITH HIGH PULL <<
 
@@ -2165,7 +2165,7 @@ _
 
 
 	_
-#### 2021.04.14 - Compass
+#### 2021-04-14 - Compass
 
 N	--  SPIRIT		--	My spiritual life
 NNW	--	FAMILY		--	My family life
@@ -2182,7 +2182,7 @@ SSW	--	HEALTH
 SSE	--	
 
 _
-#### 2021.03.03 - Dan's North Star
+#### 2021-03-03 - Dan's North Star
 
 BUILD FROM STRENGTH - None are mandatory, but more are better
 - AI/ML/DeepLearning
@@ -2196,7 +2196,7 @@ SMALLER
 - WRENCH -- Target solutions that may be adopted "a la carte" within larger value chains
 
 _
-#### 2021.02.24 - Dan's Futures Ranked
+#### 2021-02-24 - Dan's Futures Ranked
 	- CONFIGURATOR PRODUCT -- 
 	- AF PRODUCT -- 
 	- GOOD JASON SITUATION -- >$150K
@@ -2225,7 +2225,7 @@ _
 
 
 	_
-### 2021.04.11 - NFT transfer
+### 2021-04-11 - NFT transfer
 #### _
 Atilla,
 Please treat this idea with care... since it could have value. 
@@ -2316,9 +2316,9 @@ talk more soon!
 
 
 _
-### 2021.05.05 - DECISION - NO TO JASON
-### 2021.03.00 - JASON BASKETBALL
-#### 2021.04.29 - Thumbnail Math
+### 2021-05-05 - DECISION - NO TO JASON
+### 2021-03-00 - JASON BASKETBALL
+#### 2021-04-29 - Thumbnail Math
 - 500 	gyms
 - 30 	= 30 team/gym * 10 players/team * 10% penetration
 - $150	USD/person/year
@@ -2326,7 +2326,7 @@ _
 - $2.5M	/yr
 - $7.5M	Sale price
 - $1.2M	= 7.5 * 15% Dan's take (for the market; double that for the tech too)
-#### 2021.03.04 - The Nick and Dan LLC Model
+#### 2021-03-04 - The Nick and Dan LLC Model
 
 	- WILDERNESS -- We venture forth into the wilderness of OPP (other people's problems)
 		- IDEA FUNNEL -- Each sees many a wild and weird thing, most are of no use
@@ -2352,7 +2352,7 @@ _
 
 
 	_
-#### 2021.04.07 - Jason #5
+#### 2021-04-07 - Jason #5
 
 	2,000	for profit gyms in the USA
 	500		gyms @ 25% penetration
@@ -2616,7 +2616,7 @@ _
 
 
 	_
-#### 2021.04.01 - Jason #5
+#### 2021-04-01 - Jason #5
 
 	Jason,
 
@@ -2634,7 +2634,7 @@ _
 
 
 	_
-#### 2021.03.30 - Jason Summary
+#### 2021-03-30 - Jason Summary
 
 	-- 60% founder situation is good
 	-- 60% tech works
@@ -2655,7 +2655,7 @@ _
 
 
 	_
-#### 2021.03.27 - Jason analysis #4
+#### 2021-03-27 - Jason analysis #4
 
 	Jason, 
 	The analysis continues!  Getting people on the phone is quite a SLOG, but I have had some luck.  Including two managers of a local YMCA.  Both were generally positive on the idea, one even said he wanted to find a solution by this fall! (Details at bottom)
@@ -2777,7 +2777,7 @@ _
 
 
 	_
-#### 2021.03.20 - Jason response #3
+#### 2021-03-20 - Jason response #3
 
 
 	Your research is making me to want try to exhaustively describe the market in NH. I'm going to try to find EVERY AAU team/program, gym with leagues, and nail down the number of private High schools. All of those are sweet pickings for us, I agree the public HS market will be tougher. I also suspect we can pick up JV programs and/or middle school teams too as I doubt many of them use HUDL. I've got some marketing intern candidates lined up, was hoping to do that. 
@@ -2884,7 +2884,7 @@ _
 
 
 	_
-#### 2021.03.17 - Jason response #2
+#### 2021-03-17 - Jason response #2
 
 
 	Jason,
@@ -2967,7 +2967,7 @@ _
 
 
 	_
-#### 2021.03.17 - Jason response #1
+#### 2021-03-17 - Jason response #1
 
 
 
@@ -3092,7 +3092,7 @@ _
 
 
 	_
-#### 2021.02.21 - Jason's Basketball Thing
+#### 2021-02-21 - Jason's Basketball Thing
 
 
 	- With multiple cameras placed high it seems with work we can approach human performance at labelling shot
@@ -3215,7 +3215,7 @@ _
 
 
 	_
-### 2021.02.17 - Dan's Mind & North Star
+### 2021-02-17 - Dan's Mind & North Star
 #### VALUES
 - **AUTNOMY** - Freedom to contribute w/o concern for cash
 	- FRANKLIN - Accomplished much because he didn't need to chase $$.  99% do
@@ -3391,7 +3391,7 @@ IFFY PRODUCT:
 -- Better to go with Jason, at least I am focused on tech & cool tech
 
 _
-### 2021.01.31 - So what the fuck am I doing? What's my goal here?
+### 2021-01-31 - So what the fuck am I doing? What's my goal here?
 
 
 What is my end-game in my career?  I have held out for a decade not working for the big boys, but what is my plan here what are my objectives?
@@ -3428,7 +3428,7 @@ MARKET BAT SWING
 
 
 _
-### 2021.02.28 - Uniform - What could be pitched now
+### 2021-02-28 - Uniform - What could be pitched now
 
 CORP KM -- Build out a live Google Doc/Sheet centric system
 - Key Ideas: AppLocalData, LiveConnections(DeltaPushing), ScriptedConnect
@@ -3438,7 +3438,7 @@ LOCAL DATA BRICKS / SETUP WIZARDS
 
 VALUE MARKET -- Publish Idea; Build payments platform
 _
-### 2020.11.25 - Unicore Implementation Days
+### 2020-11-25 - Unicore Implementation Days
 
 Here is my schedule:
 
@@ -3465,7 +3465,7 @@ AN AWESOME DAY
  1 hour Exercising
 
 _
-### 2020.11.19 - AF Strategy
+### 2020-11-19 - AF Strategy
 
 _**Double down on 1/2 as much in area of Energy-Related Standards**_
 
@@ -3476,7 +3476,7 @@ _**Double down on 1/2 as much in area of Energy-Related Standards**_
 - CALL -- Ideas should move from thought to phone call w/ team effort
 
 _
-### 2020.08.15 - My Futures
+### 2020-08-15 - My Futures
 
 
 Hard Realities:
@@ -3498,7 +3498,7 @@ Hard Realities:
 	- Selling an idea, Instilling confidence
 
 _
-### 2020.08.23 - Lost at Sea but with good provisions
+### 2020-08-23 - Lost at Sea but with good provisions
 
 My Situation
 - DEMORALIZED - Not really excited about any of the directions I can push lif
@@ -3525,7 +3525,7 @@ SIDE THINGS:
 
 
 _
-### 2020.02.19 - DECADE TIMELINE
+### 2020-02-19 - DECADE TIMELINE
 
 2020   Lost at sea
 2019   Pregnant.  Getting Serious about AF.  Eli.
@@ -3541,7 +3541,7 @@ _
 2011   7Final DARPA.  Zanzors.  500-startups
 2010   Final year Elaine.  MaybeSeige.  
 _
-### 2016.05.25 – Lex Ownership
+### 2016-05-25 – Lex Ownership
 
 My goals:
 l-- GROW – Able to safely work at Martian, Google, etc.  and retain ownership of newly grown Lex stuff
@@ -3568,7 +3568,7 @@ Oblio Labs
 Oblinger LLC
 
 _
-### 2011.04.10 – Not Energized
+### 2011-04-10 – Not Energized
 
 9 – woke
 10 – out of bed
@@ -3590,7 +3590,7 @@ Yesterday was just as ineffective.
 
 
 _
-### 2010.12.17 – LESSONS FROM DATING ELAINE
+### 2010-12-17 – LESSONS FROM DATING ELAINE
 
 lesson
 
@@ -3602,7 +3602,7 @@ lesson
 
 
 _
-### 2010.11.18 – A day laid waste
+### 2010-11-18 – A day laid waste
 
 I am trying to figure out things with Elaine, and manage to completely kill a day, in prep for thinking about that.
 I want to understand this day.
@@ -3633,7 +3633,7 @@ I want to understand this day.
 Web  STACY 781-496-2437 
 
 _
-### 2010.10.00 – Gave up on Siege
+### 2010-10-00 – Gave up on Siege
 
 It occurred to me after our phone call yesterday, that ours was one of the best business relationships that I never had.  I was worried early on, based on the comments coming from STO, but I have found them to be quite groundless.  There have been several times when it was clearly in your best interest to simply let things ride along w/o comment—after all you were getting effort for free.  But you (or at least your wife) took it upon yourself to be explicit about assumptions being made.
 
@@ -3656,7 +3656,7 @@ Best luck with Siege!
 
 
 _
-### 2010.10.09 – Organizing Self
+### 2010-10-09 – Organizing Self
 
 FOCUS – I can do many different things, but I jump from idea to idea way too quickly.  
 - At DARPA there are so many efforts that have never gone anywhere, but I never ran into a wall, I just got working on something else.
@@ -3680,7 +3680,7 @@ This is consistent w. my work from: IBM, from BL, and Cyber or ISR.
 
 
 _
-### 2010.04.01 – Life is moving faster
+### 2010-04-01 – Life is moving faster
 
 There is much less time, than I am pretending there is.  But less that needs doing as well.
 - Need to ensure that the important stuff is getting done.
@@ -3719,7 +3719,7 @@ SELF:  Pretty on track.  Focused hours
 
 
 _
-### 2010.01.02 – From last year’s retreat  (12/2008)
+### 2010-01-02 – From last year’s retreat  (12/2008)
 
 RETREAT
 
@@ -3749,7 +3749,7 @@ intense study.
 
 I wanted to thank you for the retreat.  
 _
-### 2009.12.29 - Elasticity of Time
+### 2009-12-29 - Elasticity of Time
 This morning
 1.5h	bed	0
 1h	ready	.5
@@ -3762,7 +3762,7 @@ Lesson learned.  In all cases I need to get to my focused hour *immediately*
 That focused hour must be fun too so I want to do it
 
 _
-### 2009.12.19 - personal update
+### 2009-12-19 - personal update
 Things are not great.  I am at a place of very low motivation.  
 My current situation is reinforcing some habits that are not great:
 No movement with elaine… by having big ideas, but no progress (just putting stuff onto lists), 
@@ -3774,7 +3774,7 @@ Will attempt new habit:  Morning Default
 
 
 _
-### 2009.11.22 – Joe Laconti
+### 2009-11-22 – Joe Laconti
 
 
 * Idea of a building up model spirituality from observations from stmts scientist would accept about world (social world)
@@ -3784,7 +3784,7 @@ _
 * your spiritual drivers / goals / life goals 
 
 _
-### 2009.11.19 – Progress
+### 2009-11-19 – Progress
 
 TIME & PROGRESS
 •	Life is structured so I often don’t get time for the most important personal things

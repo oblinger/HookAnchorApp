@@ -1830,7 +1830,7 @@ _
 #### -- BANG must create an env -- 
 #### -- Can Universes share heap? --
 ### --- LOG ---
-#### -- 2021.11.08 - rejigger global handles for universe --
+#### -- 2021-11-08 - rejigger global handles for universe --
 
 Spec	Static	CanCompile	Heap	SubThread	Env
 
@@ -1852,7 +1852,7 @@ FullEnv:					.self  .scope
 Hidden Globals:  ENV, EXTENT/GLOBALS/CLOSURE/CONTEXT
 
 _
-#### -- 2021.11.09 - Env handling --
+#### -- 2021-11-09 - Env handling --
 
 CONSTRAINTS
 - SIMPLE STACK:	Efficient single threaded stack implementation
@@ -2494,7 +2494,7 @@ _
 
 	 which itself is defined in terms of graph models and the apply/reduce operators of unit calculus.
 ### --- LOG ---
-#### 2021.07.14 - LANG.LAL.BOOT.LOAD -- run/boot/load steps
+#### 2021-07-14 - LANG.LAL.BOOT.LOAD -- run/boot/load steps
 
 LOAD -- The creation of a new computational universe from a prior one along with a number of extensions to "load" into that universe.
 

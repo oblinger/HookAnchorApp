@@ -663,7 +663,7 @@ NOTE: In the texts below we sometimes talk make claims about the "coverage" of a
 _
 _
 # ### LOG ###
-### --- 2021.08.04 - A Stay-at-home-dad plan
+### --- 2021-08-04 - A Stay-at-home-dad plan
 
 **UNIFORM PARTS** (timings @ 50 hr/wk)
 - 2 weeks	-- Unicore Slides
@@ -687,7 +687,7 @@ SW MARKETPLACE
 	- Finances - Multi-sig wallet; Publish-wait-execute-if-clear
 
 _
-### --- 2021.07.27 - Marcel, getting my terms right
+### --- 2021-07-27 - Marcel, getting my terms right
 
 - REQUIREMENTS -- A list of assertions about some applicative context -- the context where a software artefact is employed -- that are require for the proper functioning of some element within a software system.
 
@@ -758,7 +758,7 @@ Two important things to notice about essential capture.
 
 
 _
-### --- 2021.07.21 - 
+### --- 2021-07-21 - 
 
 Marcin,
 
@@ -897,7 +897,7 @@ It turns out we happen to know that these 1000 domains are going to be processed
 ~-~~-~
 
 _
-### --- 2021.07.21 - Marcel response using the 'plutil' converter
+### --- 2021-07-21 - Marcel response using the 'plutil' converter
 
 Marcel,
 
@@ -1030,7 +1030,7 @@ This is an idea that I did not have prior to our discussions!
 
 
 _
-### --- 2021.07.14 - Marcel response.  Embedding Rewrite
+### --- 2021-07-14 - Marcel response.  Embedding Rewrite
 
 
 
@@ -1219,7 +1219,7 @@ For simplicity, Bob has written some code that maps the trasmit data into progra
 
 
 _
-### --- 2021.07.01 - WODAT
+### --- 2021-07-01 - WODAT
 WODAT = Way of Doing a Thing
 BU = Built Using
 DEP = Depends upon
@@ -1240,7 +1240,7 @@ _
 
 
 _
-### --- 2021.07.14 - Marcel response on Essence
+### --- 2021-07-14 - Marcel response on Essence
 
 > I also don’t see the fact that there are single methods to do the conversion as demonstrating that plists/json captured some “essence", but simply as a convenience.  Convenience is an important factor in adoption, but again, very distinct from anything I can identify as an essence.
 

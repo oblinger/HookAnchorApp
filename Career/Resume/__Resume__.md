@@ -944,7 +944,7 @@ _
 
 # # LOG
 ### 2021-12-00  Jared Resume writing notes
-#### --- 2021.10.25 - ABOUT (FIRST LINES) ---
+#### --- 2021-10-25 - ABOUT (FIRST LINES) ---
 	- 200 cars
 	- fun facts.
 
@@ -986,7 +986,7 @@ _
 
 	With one foot planted in the science of ML/Robotics/AI, and the other foot in scaled execution I am a proven expert in sheparded technologies from the lab into our living room.
 	_
-#### --- 2021.10.25 - Example Abouts ---
+#### --- 2021-10-25 - Example Abouts ---
 	ABOUT SECTIONS
 	- [Josef Coetsee](https://www.linkedin.com/in/josefcoetsee/) 
 	- [Lane Major](https://www.linkedin.com/in/lane-major/) 

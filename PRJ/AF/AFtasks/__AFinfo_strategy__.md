@@ -2,7 +2,7 @@
 
 ### 2021.01 - CO-FOUNDER STARTUP COMPENSATION
 
-2021.02.03 -- Spinout business models
+2021-02-03 -- Spinout business models
 
 OUTSIDE THE TENT
 Not yet shared IP.

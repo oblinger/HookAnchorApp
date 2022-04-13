@@ -1,4 +1,4 @@
-### 2021.06.06 - summary
+### 2021-06-06 - summary
 GRATITUDE
 - Eli's happiness
 - The options I have in life
@@ -14,13 +14,13 @@ DIDN'T WORK
 - Didn't engage in my work for the WHOLE day!
 - didn't exercise.
 
-### 2021.06.04 - 
+### 2021-06-04 - 
 Technical Design
 Puzzle -- 
 Efficiency / Effectiveness -- How to make something work better in a key way, at a detailed level
 
 
-### 2021.06.04 - LIKE - Autonomy - Designing Human Mobility Solution 
+### 2021-06-04 - LIKE - Autonomy - Designing Human Mobility Solution 
 - Loved thinking about approaches for addressing this problem.
 - Wanted to think them thru far enough to see if they could work or not.
 - Nights and weekends I spent thinking thru a crypto currency algorithm
@@ -31,9 +31,9 @@ Efficiency / Effectiveness -- How to make something work better in a key way, at
 
 
 
-### 2021.05.00 - Recent stuff
+### 2021-05-00 - Recent stuff
 
-### 2021.05.19 - Gaining Emotional Stability
+### 2021-05-19 - Gaining Emotional Stability
 
 Wow, I am so ineffective and demoralized these days.  A key activity is to get this back into good shape.  Too many hours on too many days are just wasted.  I am not 
 
@@ -46,7 +46,7 @@ ACTIONS
 
 
 _
-### 2021.05.17 - HALF ASS IDEA TO JOURNAL
+### 2021-05-17 - HALF ASS IDEA TO JOURNAL
 
 - QUICK THOUGHT -- have the quick thought to journal.  To try to help break the log jam.
 - 
@@ -94,7 +94,7 @@ INTENTIONS:
 YEARS AGO:
 	
 _
-### 2020.06.29 MON
+### 2020-06-29 MON
 DREAMS:	
 	Did not get on train in time.  Road on outside on flat platform
 TODAY:
@@ -108,7 +108,7 @@ INTENTIONS:
 YEARS AGO:
 	
 _
-### 2020.06.08 MON
+### 2020-06-08 MON
 DREAMS:	
 	
 TODAY:
@@ -122,7 +122,7 @@ INTENTIONS:
 YEARS AGO:
 	
 _
-### 2020.05.29 FRI
+### 2020-05-29 FRI
 DREAMS:	
 	hanging out w. "Indian" workers from Aeolus, after job ended.  Running around town w. them.  was out of place.
 TODAY:
@@ -137,7 +137,7 @@ INTENTIONS:
 YEARS AGO:
 	
 _
-### 2020.05.26 TUE/THR
+### 2020-05-26 TUE/THR
 DREAMS:	
 	
 TODAY:
@@ -164,7 +164,7 @@ Order/Confirmation Number:
 Your Message: Is this device compatible with i-phone headset phono jack? I would like connect this device to the i-phone 4-connector 3.5mm phono jack and have it pass thru to a 4-connetor headset jack. the device does not list what it is compatible with. Do you sell any device designed to record from an iphone? thanks!! --dan
 
 _
-### 2020.05.25  MON
+### 2020-05-25  MON
 DREAMS:	
 	
 TODAY:
@@ -179,7 +179,7 @@ INTENTIONS:
 YEARS AGO:
 	
 _
-### 2020.05.22 FRI
+### 2020-05-22 FRI
 TODAY:
 	3H  UF obj-docs-done ; AF-tasks sync (chip, umon, epri,  other)
 GRATEFUL:
@@ -191,7 +191,7 @@ INTENTIONS:
 YEARS AGO:
 	
 _
-### 2020.05.21 THR
+### 2020-05-21 THR
 DREAMS:	
 	
 TODAY:
@@ -206,7 +206,7 @@ INTENTIONS:
 YEARS AGO:
 	
 _
-### 2020.05.20 WED
+### 2020-05-20 WED
 DREAMS:	
 	
 TODAY:
@@ -220,7 +220,7 @@ INTENTIONS:
 YEARS AGO:
 	
 _
-### 2020.05.19 TUE
+### 2020-05-19 TUE
 DREAMS:	
 	Driving on the HW in the wrong direction w. QL driving.
 	Finally we realize it, and I help her to cross all lanes of traffic
@@ -237,7 +237,7 @@ INTENTIONS:
 YEARS AGO:
 	
 _
-### 2020.05.18 MON
+### 2020-05-18 MON
 DREAMS:	
 	Grateful:  Epsilon wiggle hello ; Easy wake, quick dress, walk
 TODAY:
@@ -252,7 +252,7 @@ INTENTIONS:
 YEARS AGO:
 	
 _
-### 2020.05.17 SUN
+### 2020-05-17 SUN
 DREAMS:	
 	Josh PhD     Grateful: Epsilon Play, Fast Start, Happy
 TODAY:
@@ -275,7 +275,7 @@ you know, on the bright side, I shaved a few years off your current age.
 but I dunno.... ready to go back for a 20-year PhD in graphics?
 	
 _
-### 2020.04.12
+### 2020-04-12
 DREAMS:	
 	
 TODAY:
@@ -289,7 +289,7 @@ INTENTIONS:
 YEARS AGO:
 	
 _
-### 2020.05.06 WED
+### 2020-05-06 WED
 DREAMS:	
 	
 TODAY:
@@ -303,7 +303,7 @@ INTENTIONS:
 YEARS AGO:
 	
 _
-### 2020.05.02 -
+### 2020-05-02 -
 DREAMS:	
 	
 TODAY:
@@ -317,7 +317,7 @@ INTENTIONS:
 YEARS AGO:
 	
 _
-### 2020.04.16 thr
+### 2020-04-16 thr
 DREAMS:	
 	
 TODAY:
@@ -345,7 +345,7 @@ INTENTIONS:
 YEARS AGO:
 	
 _
-### 2020.04.01 Wed
+### 2020-04-01 Wed
 DREAMS:	
 	
 TODAY:
@@ -360,7 +360,7 @@ INTENTIONS:
 YEARS AGO:
 	
 _
-### 2020.03.31 Tue
+### 2020-03-31 Tue
 DREAMS:	
 	
 TODAY:
@@ -374,7 +374,7 @@ INTENTIONS:
 YEARS AGO:
 	
 _
-### 2020.03.12 Thr
+### 2020-03-12 Thr
 DREAMS:	
 	
 TODAY:
@@ -388,7 +388,7 @@ INTENTIONS:
 YEARS AGO:
 	
 _
-### 2020.03.11 Wed
+### 2020-03-11 Wed
 DREAMS:	
 	
 TODAY:
@@ -402,7 +402,7 @@ INTENTIONS:
 YEARS AGO:
 	
 _
-### 2020.03.09 Mon
+### 2020-03-09 Mon
 DREAMS:	
 	
 TODAY:
@@ -416,7 +416,7 @@ INTENTIONS:
 YEARS AGO:
 	
 _
-### 2020.03.07 Sat
+### 2020-03-07 Sat
 DREAMS:	
 	
 TODAY:
@@ -430,7 +430,7 @@ INTENTIONS:
 YEARS AGO:
 	
 _
-### 2020.03.06 Fri
+### 2020-03-06 Fri
 DREAMS:	
 	In church w candace
 TODAY:
@@ -445,7 +445,7 @@ INTENTIONS:
 YEARS AGO:
 	
 _
-### 2020.03.04 Wed
+### 2020-03-04 Wed
 DREAMS:	
 	Friend Candace told her about heart condition
 
@@ -460,7 +460,7 @@ INTENTIONS:
 	
 YEARS AGO:
 _
-### 2020.02.29 Sat
+### 2020-02-29 Sat
 DREAMS:	
 	hugging a pillow, looking out, leaning to the side in a boat or train car
 	with girl sitting opposite to me, I say for most people just telling them 
@@ -480,7 +480,7 @@ YEARS AGO:
 	
 
 _
-### 2020.02.28 Fri
+### 2020-02-28 Fri
 DREAMS:	
 	woke fearing health ; 
 TODAY:
@@ -494,7 +494,7 @@ INTENTIONS:
 YEARS AGO:
 	
 _
-### 2020.02.27 Thr
+### 2020-02-27 Thr
 DREAMS:	
 	 
 TODAY:
@@ -508,7 +508,7 @@ INTENTIONS:
 YEARS AGO:
 	
 _
-### 2020.02.25 Tuesday
+### 2020-02-25 Tuesday
 DREAMS:	
 	 
 TODAY:
@@ -523,7 +523,7 @@ INTENTIONS:
 YEARS AGO:
 	
 _
-### 2020.02.23 Sunday
+### 2020-02-23 Sunday
 DREAMS:	
 	QL & I at party.  We had guns made of confection.  
 	We went into hallway and left them behind for safety.
@@ -539,7 +539,7 @@ INTENTIONS:
 YEARS AGO:
 	
 _
-### 2020.02.21 Friday
+### 2020-02-21 Friday
 DREAMS:	
 	 
 TODAY:
@@ -555,7 +555,7 @@ INTENTIONS:
 YEARS AGO:
 	
 _
-### 2020.02.20 Thursday
+### 2020-02-20 Thursday
 DREAMS:	
 	 
 TODAY:
@@ -571,7 +571,7 @@ INTENTIONS:
 YEARS AGO:
 	
 _
-### 2020.02.16 Monday
+### 2020-02-16 Monday
 DREAMS:	
 	-- I found a storage device, and wanted to put it in the lost and found.
 	-- Met young woman office working at school is at "desk" on elevator.
@@ -593,7 +593,7 @@ INTENTIONS:
 YEARS AGO:
 	
 _
-### 2020.02.14 Friday
+### 2020-02-14 Friday
 DREAMS:	
 	 
 TODAY:
@@ -607,7 +607,7 @@ INTENTIONS:
 YEARS AGO:
 	
 _
-### 2020.02.11 Tue
+### 2020-02-11 Tue
 DREAMS:	
 	 
 TODAY:
@@ -635,7 +635,7 @@ STRUGGLES:
 INTENTIONS:
 	 
 YEARS AGO:
-### 2020.02.06 Thr
+### 2020-02-06 Thr
 DREAMS:	
 	 
 TODAY:
@@ -649,7 +649,7 @@ INTENTIONS:
 YEARS AGO:
 	
 _
-### 2020.02.05 Wed
+### 2020-02-05 Wed
 DREAMS:	
 	 
 TODAY:
@@ -663,7 +663,7 @@ INTENTIONS:
 YEARS AGO:
 	
 _
-### 2020.01.31
+### 2020-01-31
 DREAMS:	
 	 
 TODAY:
@@ -678,7 +678,7 @@ INTENTIONS:
 YEARS AGO:
 	
 _
-### 2020.01.30 Thr
+### 2020-01-30 Thr
 DREAMS:	
 	woke w. some angst; slept quick
 TODAY:
@@ -693,7 +693,7 @@ INTENTIONS:
 YEARS AGO:
 	1/2013 moved to SF ; burning out on PBG
 _
-### 2020.01.29 Wed
+### 2020-01-29 Wed
 DREAMS:	
 	 
 TODAY:
@@ -707,7 +707,7 @@ INTENTIONS:
 YEARS AGO:
 	
 _
-### 2020.01.28 Tue
+### 2020-01-28 Tue
 DREAMS:	
 	 
 TODAY:
@@ -721,7 +721,7 @@ INTENTIONS:
 YEARS AGO:
 	
 _
-### 2020.01.27 Mon
+### 2020-01-27 Mon
 DREAMS:	
 	talking to thin natural-healthy asian about dating ; 
 TODAY:
@@ -736,7 +736,7 @@ INTENTIONS:
 YEARS AGO:
 	1/2014 Back from PH; Dating Tanya
 _
-### 2020.01.26 Sun
+### 2020-01-26 Sun
 DREAMS:	
 	Woke really worried about Candace ; and just worrying about all the things I need to manage.
 TODAY:
@@ -750,7 +750,7 @@ INTENTIONS:
 YEARS AGO:
 	1/2015 Was post jotter thinkin' project-X, rando AF stuff, early QL
 _
-### 2020.01.25 Sat
+### 2020-01-25 Sat
 DREAMS:	
 	
 TODAY:
@@ -764,7 +764,7 @@ INTENTIONS:
 YEARS AGO:
 	1/2015
 _
-### 2020.01.24 Fri
+### 2020-01-24 Fri
 DREAMS:	
 	had them cannot remember
 TODAY:
@@ -778,7 +778,7 @@ INTENTIONS:
 YEARS AGO:
 	1/2016Was just ramping up Bizzy robots
 _
-### 2020.01.23 Thr
+### 2020-01-23 Thr
 DREAMS:	
 	Slept thru night
 TODAY:
@@ -792,7 +792,7 @@ INTENTIONS:
 YEARS AGO:
 	1/2017 Real questions if QL and I would make it
 _
-### 2020.01.22 Wed
+### 2020-01-22 Wed
 
 DREAMS:	
 	Explaining VT100 attack to someone who LEFT
@@ -809,7 +809,7 @@ INTENTIONS:
 YEARS AGO:
 	1/2018 Had just gotten engaged ; Just back from vegas
 _
-### 2020.01.21 Tue
+### 2020-01-21 Tue
 DREAMS:	
 	had them, cant remember.  Neutral.
 TODAY:

@@ -368,7 +368,7 @@ cheers,
 --dan
 
 
-### 2020.01.06 - WEEK
+### 2020-01-06 - WEEK
 
 M1 weekly  M2   M3 UF
 T1 AF/Sales T2 ... T3 UF/basement
@@ -385,7 +385,7 @@ F1 AI-deck F2 Founders
 - Think about ML column for spreadsheet
 - Sync Sales sheet
 - 2 blocks of todo list stuff
-### 2020.01.05 - GOALS FOR THE YEAR
+### 2020-01-05 - GOALS FOR THE YEAR
 
 Leverage it like it is the magic year it is.
 I may not get such flexibility again.

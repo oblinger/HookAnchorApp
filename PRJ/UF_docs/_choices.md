@@ -1698,7 +1698,7 @@ _
 maybe we can begin pythonic if we can unify yamaic and pythonic parsing
 
 
-2020.10.27 RESOLVE:
+2020-10-27 RESOLVE:
 - Parser operates in four modes in_ws [T/F], in_code [T/F]
 - ???	begins JSONIC parsing	in_sw_False	in_code=False
 - '----'	begins YAMAIC parsing	in_ws=True	in_code=False
@@ -1707,7 +1707,7 @@ maybe we can begin pythonic if we can unify yamaic and pythonic parsing
 - '{'	begins JSONIC parsing 	from all modes except JAVAIC
 
 
-2020.10.27 JSON inside JAVAIC
+2020-10-27 JSON inside JAVAIC
 
 NEEDS
     PUNCTUATION HEAD:		`+(4, 4)
@@ -1720,7 +1720,7 @@ NEEDS
 	if x<10 {y = /{"foo": 777}/j}
 
 
-2020.10.15 RESOLVE.  (No longer accepted)
+2020-10-15 RESOLVE.  (No longer accepted)
 - Parser operates in four modes in_ws [T/F], in_code [T/F]
 - '{[{[' begins JSONIC parsing	in_sw_False	in_code=False
 - '----'	begins YAMAIC parsing	in_ws=True	in_code=False
@@ -1735,7 +1735,7 @@ TRADEOFFS
 
 
 DISCUSSION
-2020.10.15
+2020-10-15
 - JSON -- JSON constants perfectly match UnitForm constants in both withspace sensitive and free modes.  JSON structure must begin with '[' or '{' and either one will flip parser into non-WS parsing.  Since parser begins in non-code mode, it ensure that these structures are parsed as JASONIC code which is a super set of JSON.
 - YAMAIC -- It parses yamiac w/o prefix since it begins in YAMAIC mode.  
 - RARELY NEED '----' or '{[{['
@@ -1744,7 +1744,7 @@ DISCUSSION
 	The latter is only needed to transition from JAVAIC to JSONIC
 		but little need, since JAVAIC is a superset of JSONIC
 
-2020.10.23
+2020-10-23
 - NUM ONE ISSUE:  stmt form is currently applied too promiscuously see below
 - Cant use '{[' for JAVAIC, since:  {if True{do}}  conficts w its close brace
 - Same for '{[{[' for JSONIC

@@ -1,5 +1,5 @@
 ec
-### 2021.09.25 - GOV wild west + serviceland
+### 2021-09-25 - GOV wild west + serviceland
 
 
 Against my better judgement, here let me write up the gov taxation scheme I (might) favor:

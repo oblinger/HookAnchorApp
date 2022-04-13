@@ -1939,7 +1939,7 @@ _
 	**def op** _new_(gnd, args..., keys:...) -> Unit
 
 	Env.exe(SEED)
-	CODE()   # 2020.02.01 -- this works, but it is not correct???
+	CODE()   # 2020-02-01 -- this works, but it is not correct???
 
 	Details:
 	- Factory itself controls the persistence of the created unit.
@@ -2218,7 +2218,7 @@ Iterates over
 
 """
 
-=== METHODS 2020.01.24 ===
+=== METHODS 2020-01-24 ===
 - Unit  Always(DEL,MET)  Factory(NEW), Iterable(ITR,LEN), Mappy(GET), Mutable(SET), Invertible(INV)
   - UnitCollection
 
@@ -3399,7 +3399,7 @@ _
 
 _
 ### --- Discussion ---
-#### -- 2020.04.04 -- Memory Structures
+#### -- 2020-04-04 -- Memory Structures
 
 IDENT TREE -- Each just has pointer to parent upto null.
 
@@ -3422,7 +3422,7 @@ GND -- A semantics grounding structure
 
 
 _
-#### -- 2020.02.15 -- Memory Structures
+#### -- 2020-02-15 -- Memory Structures
 
 a_unit:
 	gnd:		GND_A_UNIT
@@ -3444,7 +3444,7 @@ STD_META_CLASS
 	
 
 _
-#### -- 2020.02.09 -- Memory Structures & APIs --
+#### -- 2020-02-09 -- Memory Structures & APIs --
 
 Pkg:
 	0:		GND_ROOT
@@ -3463,7 +3463,7 @@ lang = bang()
 lang.load(spec)
 
 load(spec, parent, ctx)
-#### -- 2020.02.06 -- Gordian Knot Cutting --
+#### -- 2020-02-06 -- Gordian Knot Cutting --
 
 Gnd Spec:   Gnd([...], k1: Gnd(...), k2: Gnd(...), ...)
 Patch form: GndPatch(Ident1->Gnd(...), ...)
@@ -4190,7 +4190,7 @@ must be some 'base grounding', some way to
 - e root grounding is used 
 
 -  referent Within the lexspace providing semantics (meaning and operators) over that has some 
-#### - 2021.07.09 - latest thinking
+#### - 2021-07-09 - latest thinking
 
 
 EXECUTABLE -- A value that 'executes' when composed with an env
@@ -6913,7 +6913,7 @@ example = example(a=4, 555=555, last_one=last_one, d=555, e=777)
 
 _
 #### API
-provide full.logical.path(date=2015.04.12.06.20, version=v.9.2)
+provide full.logical.path(date=2015-04-12.06.20, version=v.9.2)
 require full.logical.path(date>2018.12, )
 when full.logical.path {...}
 ### --- EXAMPLES ---
@@ -7673,7 +7673,7 @@ RETENTION POLICY
 _
 #### -- Examples --
 example patch
-2019.05.18.003.lang.python3.7..types.builtin ->
+2019-05-18.003.lang.python3.7..types.builtin ->
 pkg lang.types.builtin::
 
 
@@ -7690,7 +7690,7 @@ std.uf.2017			#  	The most recent uf lang within 2017
 
 eth.uf.2019.10		#  	Uses the most recent (eth.2017) to map the
 					#	eth chain, and retrieves the last october
-					#	version of uf (uf.2019.10.23.9426)
+					#	version of uf (uf.2019-10-23.9426)
 
 btc.uf.date(2019.05)
 
@@ -8945,7 +8945,7 @@ Desirable properties for packages names:
 ISSUE unicore semantics MAY differ from upper langauge semantics & 
 names will conflict with upper language operators (e.g. 'get')
 ## === LOG ===
-### --- 2021.07.14 - Loading --- 
+### --- 2021-07-14 - Loading --- 
 # ### MENAGERIE ###
 ## === MARKDOWN ===
 See [markdown](./_markdown.md)

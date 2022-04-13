@@ -308,7 +308,7 @@ Given an info heap IORG is the process of organizing it.
 
 _
 # ### LOG ###
-### --- 2021.03.16 - TREE GUI ---
+### --- 2021-03-16 - TREE GUI ---
 #### -- Capabilities --
 GUI ELEMENTS:	Row, Col, TextTree, Text
 _

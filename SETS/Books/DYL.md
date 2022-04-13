@@ -240,7 +240,7 @@ Users:
 
 ### 2022-04-03  Organizational Systems - Tirelessly setup Obsidian & cleaned texts
 
-### 2021.09.13 -- Writing up yet another idea (Alloy/crypto ownership)
+### 2021-09-13 -- Writing up yet another idea (Alloy/crypto ownership)
 
 Even as I am trying to really converge on which paths I will take, somehow I find myself thinking thru the details of yet another big idea.
 
@@ -255,7 +255,7 @@ This is really my M-O.  I am positively DRIVEN to think about:
   
   
   _
-### 2021.09.03 -- WORK: happy to chat fast; but then hand details off to others
+### 2021-09-03 -- WORK: happy to chat fast; but then hand details off to others
 - I enjoyed figure out how to address NIO and Dropwater
 - But got ansy after even just 30 min of writing it up.  
  	happier to hand off details
@@ -269,40 +269,40 @@ This is really my M-O.  I am positively DRIVEN to think about:
 - tend to want to swap tasks after 15min or so.  even doing this list was a bounce away from doing my three energy giving word maps.
   
   _
-### 2021.08.30 -- Waste Time - Blog reading/responding - emails and tasks.
+### 2021-08-30 -- Waste Time - Blog reading/responding - emails and tasks.
 - These days I spend way too much time reading blogs.
 - I spent hours giving my feedback to others that I read.
 - I don't want huge followers, I am just compelled to engage once I have thought and have come to a conclusion about a subject.
   
   _
-### 2021.08.26 -- Procrastinate
+### 2021-08-26 -- Procrastinate
 - When I get ready to work, I will procrastinate by doing many organizational tasks first:
 - read emails
 - read medium/blogs
 - organize todo lists, do quick items
 - do weekly tasks
 - _
-### 2021.08.26 -- Shelving / recipes
+### 2021-08-26 -- Shelving / recipes
 - I really like to organize things, spent hours designing and building shelving for ingredients, getting labels & containers.
 - Spent many hours optomizing recipes so they would be time efficient to make.
 - So time spent cooking is not valued by me, but time spent ORGANIZING to cook is compelling (even if not really so very fun)
   
   _
-### 2021.06.00 -- QL modelling
+### 2021-06-00 -- QL modelling
 - When QL came to me with several problems about how to model some aspect of self driving, I really found it fun to brainstorm how to attack the problem.
 - I think for me the most fun part, is struggling to see the best way to attach the problem.
 - I also like helping others to attack the problem, then not having to screw around with the details involved in actually implementing it.
   
   _
-### 2021.06.00 -- QL Hacking
+### 2021-06-00 -- QL Hacking
 I also then helped out by coding several parts of the data analytics process in python.  This was also fun.  I think doing it all day would get tedious, but if that were <=25% of my time it would be ideal.
 
 _
-### 2021.07.25 -- Flighty Freddie
+### 2021-07-25 -- Flighty Freddie
 - While working on this activity log, I so badly want to jump to another activity.  (even a valuable one)  but the impulse is so fast that if I followed it, I would be jumping from one thing to the next is a very inefficient way.
   
   _
-### 2016.00.00 -- Bizzy Robotics - Early days
+### 2016-00-00 -- Bizzy Robotics - Early days
 I was naturally pulled into my work at Bizzy.  I was happy that in the evening I still was working on Uniform, but with Joe at the office, and with the CTO leadership role, I naturally fell into a pretty driven tempo.
 - Worked on my "architecture" stuff too much.
 - Didn't attend to impt aspects of leadership (lack of proclivity and skill)
@@ -312,30 +312,30 @@ I was naturally pulled into my work at Bizzy.  I was happy that in the evening I
 - did not build regular handoff & check in processes
 	  
   _
-### 2021.07.22 -- Foxglove robotics development platform
+### 2021-07-22 -- Foxglove robotics development platform
 Got excited thinking about the idea of making a robotics-dev-studio that is efficient for doing robotics development work.  In general I think I am really motivated and excited to think about making efficient-to-use tools and processes.
 
 
 _
-### 2021.07.21 -- Marcel response (flow)
+### 2021-07-21 -- Marcel response (flow)
 When I saw marcel's note, I just could not help but to write my response.  Totally threw off my whole morning.  Immediately fought to load some needed open source (which I normally hate).  Each time I tried to work on something else, my brain kept going back to details about it.  really extremely hard for it to not just spontaneously break back into my thinking while on other topics.  Just gave up and wrote the reponse.
 
 _
-### 2019.00.00 -- Block Chain
+### 2019-00-00 -- Block Chain
 Operated in flow for months trying to build a new block chain.
 - The ideas seemed very big.  I imagine large impact.
 - Lots of creativity borne from just thinking hard for hours solving hard technical sub-problems.
   
   _
-### 2021.07.20 -- Jump jump jump**
+### 2021-07-20 -- Jump jump jump**
 When I am working on a thing that I am drawn to, I will push to work more and more hours.  Easily dropping other things I want/need to do.  When it is an activity that I resist, then I find it overwhelming to want to switch away from this thing.  Right now I am trying to do my Job matrix, and I want to switch away.  It stresses me to think about it.  and I am not quite sure what I should put down on it.
 
 _
-### 2021.07.19 -- Marcel response  -- couldn't stop writing it!**
+### 2021-07-19 -- Marcel response  -- couldn't stop writing it!**
 I receieved his response email, and I immediately wanted to think thru my response.  Couldn't stop writing it up, until it was done.  Was willing to re-read and correct it -- even as I kinda hate doing that.
 
 _
-### 2021.07.19 -- Thinking while walking
+### 2021-07-19 -- Thinking while walking
 When walking my mind repeatedly returns to details of Uniform, and how I might frame and say part of it.  Or less so, how I might resolve this or that techical detail
 _
 ### 1980-2020 -- Main projects over the years
@@ -581,7 +581,7 @@ Writing the associated texts or APIs
   _
 #### - Mindmap for IN FLOW
 _
-#### 2021.05.06 - WORK VIEW
+#### 2021-05-06 - WORK VIEW
 
 Work is the technical building of value:
 - OWNERSHIP --
@@ -612,7 +612,7 @@ Work is the technical building of value:
 - DETAILED DESIGN -- I am driven to think about the biggest of pictures, but then like to try to THINK THRU solutions down to pretty detailed levels.
 	  
   	_
-#### 2021.05.10 - LIFE VIEW
+#### 2021-05-10 - LIFE VIEW
 
 Why Are we here?
 - **EXPERIENCES** -- _For the experiences we have_

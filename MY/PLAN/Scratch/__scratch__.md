@@ -2378,7 +2378,7 @@ Landfill:
 
 
 
-### 2020.12.23 - XMAS FAMILY ZOOM
+### 2020-12-23 - XMAS FAMILY ZOOM
 ~-~~-~
 Adam Brown <Brownadam50@gmail.com>,
 Monica Brown <Cruzbugs1@gmail.com>,
@@ -2426,7 +2426,7 @@ https://www.youtube.com/watch?v=9isp3qPeQ0E
 
 
 ~-~~-~
-### 2020.12.23 - SHANE RESUME
+### 2020-12-23 - SHANE RESUME
 - Should have a stmt about what you WANT that possibly ties in with your experience statement. When hiring you I want to know that you want to do what I am looking for, so try to frame your aim.  (I would edit this objective when applying to different kinds of companies too.)
 - without even a single bullet item on the the new dawn job, that section looks suspicious.  (they might learn just how, uh light that job was!  I think you advised us on the development of a trusted hardware IOT platform...   you need to vet this with Nick, but I think that is totally legit, since you did, and if a prospective employer were to question you on this, you could talk at length about the idea, so it would be fine.)
 - ENPHASE -- I want to focus on tangable outcomes here.  
@@ -2706,7 +2706,7 @@ Dan
 
 angel past, boscaiola, carbonara,   roasted beets, musth garlic
 ### Kernel Dump (osx)
-2020.08.21 ~-~~-~~-~~-~~-~-~
+2020-08-21 ~-~~-~~-~~-~~-~-~
 
 panic(cpu 2 caller 0xffffff7f9a262a8d): watchdog timeout: no checkins from watchdogd in 96 seconds (8446 total checkins since monitoring last enabled)
 Backtrace (CPU 2), Frame : Return Address

@@ -4,7 +4,7 @@ NOTES
   "one" person buisness -- e.g. selling solar power for lighting.  or phone service. etc.
 
 
-- idea from Stephanie (german) 2014.06.02 play game w. 15 different types of people to
+- idea from Stephanie (german) 2014-06-02 play game w. 15 different types of people to
   see how it works.
   - each human plays ten people, each in a distinct starting position (e.g. has working business)
 

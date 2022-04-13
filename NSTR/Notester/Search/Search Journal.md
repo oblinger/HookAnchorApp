@@ -1,7 +1,7 @@
 # Notester.Search.Search Journal --
 
 
-    <<>>   2006.04.11
+    <<>>   2006-04-11
 
 
 

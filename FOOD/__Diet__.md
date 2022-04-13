@@ -134,7 +134,7 @@ FISH:   Fish,
 VEG:    Watercress, Radish, Celery, Broccoli
 SOUP:   Medifast
 
-#### Approach 2018.11.27
+#### Approach 2018-11-27
 -- Time restricted feeding   11-1 thru 5-8
 -- Replace all foods with lowest carbs
 -- Nearly zero sweets

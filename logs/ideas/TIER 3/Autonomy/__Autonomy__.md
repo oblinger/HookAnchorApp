@@ -140,7 +140,7 @@ Robotics Entreprenur
 
 
 _
-### 2021.01.21 - Irving on wheelchair.com
+### 2021-01-21 - Irving on wheelchair.com
 
 
 
@@ -188,7 +188,7 @@ thanks in advance for any help,
 --dan
 
 _
-### 2021.01.20 - ALS forum Query
+### 2021-01-20 - ALS forum Query
 
 
 Susan,
@@ -205,7 +205,7 @@ Thanks in advance for any help you can provide,
 Dan
 
 _
-### 2020.10.08 - Out Reach to Yoon
+### 2020-10-08 - Out Reach to Yoon
 
 Yoon,
 

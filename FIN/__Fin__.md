@@ -130,7 +130,7 @@ http://www.morningstar.com/funds/XNAS/DDDIX/quote.html  should be doing 13F stuf
 - open iternative brokers account 
 # FIN TOPICS
 ## DEFERRED COMP
-#### 2019.06.13 -- Can go to 0-300K each year
+#### 2019-06-13 -- Can go to 0-300K each year
 Hi Dan,
  
 Here’s what the Actuary said,
@@ -241,7 +241,7 @@ Let me know what we need to do.
  
  
 Cheers, dan
-#### 2019.04.12 -- Ev Notes
+#### 2019-04-12 -- Ev Notes
 
 Updated plan after discussion with Josh:
 
@@ -264,7 +264,7 @@ $0 K
 
 — Adjustment before 1000 hours (by may June is standard)
 — Will give 
-#### 2019.02.08 EV Notes
+#### 2019-02-08 EV Notes
 
 Shutdown — (earliest date to exit is 2020)
 Cash — pay taxes as income  20% federal 10% state in CA, and a 10% excise penalty
@@ -313,7 +313,7 @@ Thanks,
 Dan
 ## HOUSE PAYMENTS
 
-(2019.05.13 -- There should be a master record somwhere.  this from asana)
+(2019-05-13 -- There should be a master record somwhere.  this from asana)
 
 $340,000.00		Downpayment
 $  63,294.89 	Overpayment to given back
@@ -833,7 +833,7 @@ Authoriztion plan
 SCHWAB
 -- Set Schwab daily limit at 20K.  (ensure I can change it)
 -- ask: will I get a margin loan if I have no money in brokerage, and write check, and xfr from either?
-## 2016.00.00 -- Idea for adelec analysis
+## 2016-00-00 -- Idea for adelec analysis
 
 NOTES
 -- how think
@@ -853,7 +853,7 @@ RAW DATA
 -- Strategy         Buy/Sell from bin scrs -- given set of bin scores.  output Buy or Sell or No action signal
 -- End result       compute strat result   -- given timeline of bins compute total profit, and varience
 -- Graphs           vary parameter and re-run whole timeline
-## 2015.07.11 -- Tax consequences
+## 2015-07-11 -- Tax consequences
 
 
 but consider, after 10 years at 8% your money has almost exactly doubled in value.  so in the pre-tax case this would be   $100 # 2 then taxed at .15 = $200 # (1 - .15) = $170 
@@ -869,7 +869,7 @@ In the post tax case we take $100 and tax at .15 to get $85.
 PRETAX INVESTMENT     $100 # 2 # .75  =  $150
 POST TAX INVESTMENT   $100 * .75 * 2  =  $150
   CAP GAINS           $150 - $100 * . 15 = $50 * .15 = 7.50   
-## 2015.04.06 -- Ben Ng -- Indexed Universal Life -- IRS sec 7702 section 79
+## 2015-04-06 -- Ben Ng -- Indexed Universal Life -- IRS sec 7702 section 79
 
 -- monies can go into a Indexed Universal Life program
    w/o paying payroll taxes, and are taxed as income at a rate of 60-65 cents on the dollar.
@@ -937,14 +937,14 @@ MY CONCLUSIONS:
   -- It does give me a different risk profile on my money -- this is valuable to me.
   -- It gave me some insurance as a side benefit -- this has marginal value to me.
         (looks like about $2K / year for equivelant term life at my age,  is that about right???)
-## 2015.03.30 -- Setup SEP.  Planned 2015
+## 2015-03-30 -- Setup SEP.  Planned 2015
 
 Setup SEP.  moved 28,215 into it.
 
 Plan for 2015
 - move $$ into Roth.
 - invest into tradional IRA.  plus SEP.
-## 2015.02.05 -- Mike's options trading strategy
+## 2015-02-05 -- Mike's options trading strategy
 
   1 point movement on the SP500 == $250 loss
   VIC at 80 

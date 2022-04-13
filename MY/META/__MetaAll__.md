@@ -241,7 +241,7 @@ RIL -- Read It later for log of content on web
 
 ### Discussions
 
-#### 2012.09.19 -- Highlevel organization of Roles/Goals
+#### 2012-09-19 -- Highlevel organization of Roles/Goals
 
 
 	Idea for my top level organization of personal professional planning.

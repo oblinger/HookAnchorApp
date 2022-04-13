@@ -1,6 +1,6 @@
 
 # ### LOG ###
-### 2022.01.04 - MERI GUY RESPONSE
+### 2022-01-04 - MERI GUY RESPONSE
 
 - UNDERSTANDING THE FUTURE AS AN ENVISIONMENT
 
@@ -15,7 +15,7 @@
 - NEED TO BUILD IT
 
 _
-### 2022.01.04 - REFLECTIVITY
+### 2022-01-04 - REFLECTIVITY
 
 --- TERMS ---
 - POST GENOMIC TASKS / POST GENOMIC LEARNING -- Learning performed on tasks that are not connected to tasks or environments that exists during evolutionary times
@@ -32,7 +32,7 @@ _
 - REFLECTIVITY IS KEY - 
 
 _
-### 2022.01.04 - WAYS TO CONTAIN IT
+### 2022-01-04 - WAYS TO CONTAIN IT
 
 --- BROAD APPROACH CATEGORIES ---
 
@@ -57,7 +57,7 @@ INHERENCY - The nature of the GAI is somehow self limiting by its very nature.
 - UNKNOWN UNKNOWN CONTAINMENT -- 
 
 _
-### 2022.01.04 - WAYS TO BREAK FREE
+### 2022-01-04 - WAYS TO BREAK FREE
 
 - END RUN - Escape containment by operating outside the perview of the containment mechanism.
 
@@ -78,7 +78,7 @@ _
 - Gödel's incompleteness - Any system strong enought to contain an level X attack requires capability of level X+1
 
 _
-### 2022.01.02 - Key Capabilities
+### 2022-01-02 - Key Capabilities
 
 - POST GENOMIC LEARNING
 - META STRATEGIC LEARNING -- Learning full configuration and steps for various forms of learning and reasoning
@@ -87,7 +87,7 @@ _
 
 
 _
-### 2021.12.28 - Deep Introspection Claim
+### 2021-12-28 - Deep Introspection Claim
 
 Core Claims: 
 - AGI requires? generalized introspective adaptation (GIA)
@@ -108,7 +108,7 @@ _
 
 
 _
-### 2021.11.29 - Deep Learning + Bootstrapping Microtheory
+### 2021-11-29 - Deep Learning + Bootstrapping Microtheory
 
 
 

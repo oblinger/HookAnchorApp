@@ -2,7 +2,7 @@
 
 
      === Standardized Genre List ===
-     - Groupings for playlists <<>> artists <<>> musical "usage"   2013.10.05
+     - Groupings for playlists <<>> artists <<>> musical "usage"   2013-10-05
      - Sections in the 'artists' list
 
     [FOCUS]

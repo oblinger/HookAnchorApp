@@ -479,7 +479,7 @@ _
 [zzz](https://docs.google.com/presentation/d/1fDHRgMzS7Wg8DiHWS3vo0Im5GlhHOP8it1Fw0D6nbwM/edit#slide=id.g8af1f037a6_0_15) 
 _
 # ### LOG ###
-### --- 2020.07.21 - Factor Analysis - internal / external factors
+### --- 2020-07-21 - Factor Analysis - internal / external factors
 
 Oh the factors are hoplessly tangled from one generation to the next, and one moment to the next.
 
@@ -544,7 +544,7 @@ Dangerous shit
 
 
 _
-### --- 2020.07.21 - note
+### --- 2020-07-21 - note
 
 
 On Jul 20, 2020, at 9:15 PM, Leslie Groer <lgroer99@gmail.com> wrote:
@@ -592,7 +592,7 @@ Once that is accepted it clears the way to asking WHY is the culture this way?
 Understanding is the first step towards fixing….  (Again it must come from within so I am just gabbing here)
 
 _
-### --- 2020.07.21 - factors for race
+### --- 2020-07-21 - factors for race
 
 Ok, here Dan is just winging it.  I don’t have data for this, just a feeling after 30 years of watching:
 

@@ -1,6 +1,6 @@
 
 #### --- COACHES ---
-##### 2021.09.00 - From jerry-first-phd consultant???
+##### 2021-09-00 - From jerry-first-phd consultant???
 			  
 			  
 			  ~~ [foob_nj22_foob](nj22)  
@@ -13,7 +13,7 @@
 			  Jack - Finance guy - Coach
 			  
 			  _ {[query ]}
-##### 2021.09.28 - Career Counciling
+##### 2021-09-28 - Career Counciling
 	- [NP](https://nickparham.com/services/career-counseling)
 	- [A path that fits](https://apaththatfits.com/free-consultation/)
 	- [cheaper resumes](https://www.yelp.com/biz/brightside-resumes-san-francisco-3?osq=Resume+Writing+Services)
@@ -46,7 +46,7 @@
 	  
 	  
 	  	_
-##### 2021.10.08 - Ira Tau Coaching
+##### 2021-10-08 - Ira Tau Coaching
 
 	ICF - Columbia Methodology - 
 

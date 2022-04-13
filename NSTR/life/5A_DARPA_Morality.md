@@ -105,7 +105,7 @@
      
 
     --------------------------------------------------------------
-    2006.07.19
+    2006-07-19
 
     - My largest fear is #2 above.  (Dividing rich and poor)
     - I still recognize in a long term sense my actions even with the magnification of DARPA 
@@ -164,7 +164,7 @@
     increases the throughtput of humanity as a whole, should I not work on it?
 
     -------
-    2007.03.01 -- 
+    2007-03-01 -- 
 
     * BL simplifies user interfaces, thus is may allow non-programmers to interact with computing systems.
       (But it also may increase complexity of info handled by a given job?)

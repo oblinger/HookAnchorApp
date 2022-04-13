@@ -1,7 +1,7 @@
 
 
 # ### LOG ###
-### 2022.01.16 - Using GANs
+### 2022-01-16 - Using GANs
 
 INPUTS -- Raw experiential input nodes
 DNET -- Deep Net of CNN/RNN abstraction layers with no or limited supervisory signal
@@ -12,7 +12,7 @@ FWD -- Forward propagation network -- Forward propagation network
 CTX -- Context Hiearchy -- 
 INTENT -- Intention DAG -- 
 
-### 2022.01.11 - combining DL and logic
+### 2022-01-11 - combining DL and logic
 
 https://medium.com/ontologik/ai-cannot-ignore-symbolic-logic-and-heres-why-1f896713525b
 
@@ -64,7 +64,7 @@ how do babies do it?  Do you think humans ruminate enough that their children ca
 
 
 _
-### 2021.06.18 - AML - Artifical Machine Learning   (formalization & claim)
+### 2021-06-18 - AML - Artifical Machine Learning   (formalization & claim)
 
 
 CLAIMS
@@ -133,7 +133,7 @@ THE CURRICULUM
 
 
 _
-### 2021.06.18 - AGI Agenda intro text
+### 2021-06-18 - AGI Agenda intro text
 
 GAI built from Real Machine Learning not Machine Discovery
 
@@ -161,13 +161,13 @@ want to know if a particular person is likely to be able to understand Calculus 
 
 
 _
-### 2021.06.06 - Inputs to ML
+### 2021-06-06 - Inputs to ML
 
 - FPN -- FORWARD PROPAGATION NET
 - A/V -- CONVOLUTED AUDIO/VIDEO/SENSOR INPUTS
 
 _
-### 2021.04.30 
+### 2021-04-30 
 
 * INTELLIGENT AGENT / KNOWN CAPABILITY
 * COOPERATIVE PARTNER

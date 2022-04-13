@@ -20,7 +20,7 @@ _
 - House - org basement
 _
 # ### LOG ###
-## 2021.04.00 - Summary at that time
+## 2021-04-00 - Summary at that time
 ### === UP ===
 #### HEALTH - Insta, Lunches, Diet, Jog, 7min
 ##### Insta: Learn 2 instapot soups, and one grain

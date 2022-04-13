@@ -1,7 +1,7 @@
 # Medical Sleeping Meds --
 
 
-### 2022.03.13 - Frequent Sleeping Pills
+### 2022-03-13 - Frequent Sleeping Pills
 
 - Temazepam 15mg (from Dr. Hassler)
 - Doxylamine Succinate 25mg (Kirkland)
@@ -9,10 +9,10 @@
 (Rarely use either for last 2 years)
 
 
-### 2000.00.00 - Sleep meds
+### 2000-00-00 - Sleep meds
 Sedative hypnotics: temazepam (Restoril), triazolam (Halcion), zolpidem (Ambien, Ambien CR), and Lunesta (eszopiclone). Antihistamines: doxylamine (Unisom), diphenhydramine (Benadryl) Antipsychotics and antidepressants: trazodone (Desyrel), nortriptyline (Pamelor), and thioridazine (Mellaril)
 
-### 2015.00.00 - Pill exploration
+### 2015-00-00 - Pill exploration
 
 	TRIED
     - Ambien       - did not put me to sleep, but was WEIRD

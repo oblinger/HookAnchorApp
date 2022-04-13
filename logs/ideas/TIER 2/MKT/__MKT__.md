@@ -32,7 +32,7 @@ _
 - [Why Sears and Kmart failed](https://dennissanders.medium.com/what-really-happened-to-sears-ec848273614f) 
 _
 ## === MISSION / SUMMARY ===
-### 2022.03.04 - From the top
+### 2022-03-04 - From the top
 
 SOCIETY - A whole that is greater than the sum of its parts.  Key parts
 - VOLUNTARY - Participation is freely given
@@ -45,7 +45,7 @@ SOCIETY - A whole that is greater than the sum of its parts.  Key parts
 - FRACTIAL - Recurse composed of interrelating, distinct, semi-compatible counter parts
 	- BALANCE - Must balance benefits of cohesion against the benefits of diversity.
 _
-### 2021.12.00 -
+### 2021-12-00 -
 
 
 Capital in service of people, NOT people in service of capital.
@@ -1484,9 +1484,9 @@ These four genearlized precepts underly the notion of value-market itself.  In o
 PRINCIPLES
 
 # ### LOG ###
-### --- 2021.07.20 - Simple Post-Hoc Compensation Model  (7/31)
+### --- 2021-07-20 - Simple Post-Hoc Compensation Model  (7/31)
 
-2021.07.31 - why?
+2021-07-31 - why?
 Present system is very very broken
 - WASTEFUL:  >80% of human effort is wasted in trying to BLOCK the other guy
 - WASTEFUL:  Created value is abandoned to wither in a silo, even when it has use elsewhere
@@ -1496,7 +1496,7 @@ Present system is very very broken
 
 Better
 
-**2021.07.31 - parts**
+**2021-07-31 - parts**
 - **EXTERNAL FRONT** -- For profit business outside system that operations within vertical.
 - **SERVICE REQUEST** -- Front will make a one-time service request.
 - **BID** -- Lead participants will bid on open requests.  Parts:
@@ -1539,7 +1539,7 @@ Better
 	- APPEAL -- Participant unhappy with a decision, can pay for consideration in a 'higher court'
 	- MONITORING -- Higher courts view, comment on, issue policies on, and may reverse lower board decisions.  (mostly they are looking for systematic issues at a lower level)
 
-**2021.07.20**
+**2021-07-20**
 KEY POINTS
 - Mkt Objective: Support flourishing by Maximizing Token Flow from retailers to producers
 	- Not a chairity; No Entitlements; Not a government; max cohesion; max diversity.
@@ -1558,7 +1558,7 @@ KEY POINTS
 	- Extra Rules -- Participants add area specific constraints to limit gaming & other damaging behaviors.
 	- Punishments -- Courts will mete out specific punishments when generalized
 - 
-### --- 2021.04.18 - First Application Areas
+### --- 2021-04-18 - First Application Areas
 - PAY BLOGGERS
 - REMOTE EXERCISE TRAINERS -- 
 - PRODUCT REVIEWING -- 
@@ -1580,7 +1580,7 @@ _
 ##### FACEBOOK-LIKE SERVICE
 ##### INSTAGRAM-LIKE SERVICE
 _
-### --- 2021.04.18 - Cash investments
+### --- 2021-04-18 - Cash investments
 - EII -- Earned Income Investments -- investment made using market derived income
 - PBI -- Participation Based Investments -- earned from participation
 - PMI -- Participation Matched Investments -- contributions matching participation
@@ -1593,7 +1593,7 @@ _
 
 
 _
-### --- 2021.04.18 - Subscription and Area-based compensation
+### --- 2021-04-18 - Subscription and Area-based compensation
 
 TOP - TREE OF PRODUCTS -- Products are orgnaized into a tree based on equivelancy
 UBP - USAGE BASED PRICING -- The more consumers use a particular product the more paid to it
@@ -1611,7 +1611,7 @@ USR - UP SELL RATE -- Cust/Mo that pay for product upgrade (x upgrades == new su
 
 
 _
-### --- 2021.04.16 - Content Creators
+### --- 2021-04-16 - Content Creators
 - TIERS -- Based on external signups
 - INFRASTRUCTURE
 
@@ -1624,14 +1624,14 @@ PricingTier = The "do without" rate
 
 Equivelancy Buckets --
 _
-### --- 2021.04.15 - Selling to SMB
+### --- 2021-04-15 - Selling to SMB
 - PROFIT MOTIVE -- Those with the hustle needed to sell to customers will want to retain a notable profit margin for themselves
 - COMMITTEE -- Franchise owners within a vertical contribute ideas, and decide bounties for work, all share in the results.
 - GRANDFATHERED IP -- Any IP sold to the SMB is granted indefinitely, but has an evergreen contract in order to gain updates.
 _
 #### -- FRANCHISE TYPES --
 Resturants * Fin Services * Online
-### --- 2021.02.22 - HOSTED CONTRACTS -
+### --- 2021-02-22 - HOSTED CONTRACTS -
 
 PARTS
 - **JURSIDICTION** -- a _**jursidiction**_ is a collection of interpretable terms, it is an Env that may include terms interpretable in some natural language as well as some formally computed terms along with their specified lang.
@@ -1646,13 +1646,13 @@ CONTRACT -- A contract is an interpretable expression specifying some constraint
 HOSTED CONTRACT -- A hosted contract is an agent.
 
 _
-### --- 2021.02.09 - FOR-PROIT-COUPINGS - Interacting w for-profit & other value markets ---
+### --- 2021-02-09 - FOR-PROIT-COUPINGS - Interacting w for-profit & other value markets ---
 
 HOMOPHILIC -- A homophilic organization is one whose operations support smooth interactions with organizations with similar principles.
 
 
 _
-### --- 2021.02.08 - Can this work?  What is the big value?  How would it start? ---
+### --- 2021-02-08 - Can this work?  What is the big value?  How would it start? ---
 
 VALUE:
 - VISION -- I think some will "get behind vision" ... can have good PR.

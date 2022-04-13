@@ -17,7 +17,7 @@ Virtual Box
 
 
 
-### 2021.00.00 - apple support chat 
+### 2021-00-00 - apple support chat 
 You're now chatting with Andy.
 
 AndyThanks for contacting Apple Support. My name is Andy. Please give me a moment to look over your information.
@@ -198,7 +198,7 @@ Andyaww, thanks! I’m glad we’ve been able to come through for you :)
 
 Me:cheers!
 ## = APPS =
-### 2020.07.23 - Applications folder
+### 2020-07-23 - Applications folder
 
 - 1password
 - Antivirus for Mac   (BitDefender)
@@ -401,7 +401,7 @@ See 1pass
 ### xx FoldingText
 
 Download:  from Hogs Bay, then try to "BUY" enter wef234@gmail.com 94110 (already paid)
-Date:   2015.02.11
+Date:   2015-02-11
 Email:  wef234@gmail.com
 Paypal
 
@@ -438,7 +438,7 @@ Setup:  !file>StartSyncingMacros     /ob/topics/Config/KeyboardMaestro-master
 
 https://sites.fastspring.com/stairways/order/complete;jsessionid=F4452DB320FCF3523BD735502721EFA8?csid=1345138
 
-2019.11.03
+2019-11-03
 License: Keyboard Maestro Version 9 for 1 user(s)
 Username: wef234@gmail.com
 Serial: J66TWFJX75P5B5GQLW
@@ -477,13 +477,13 @@ Once your order is processed, we'll send a receipt and any related instructions 
 
 ~-~~-~-~
 
-STATUS:  2016.10.09 -- this is the activate version 
+STATUS:  2016-10-09 -- this is the activate version 
 
       Link:  http://www.microsoft.com/mac/trial
  
 Product Key: P3QV7-GQC7D-KFW2T-R4FB7-V3CVH   <-- used on 2016.10
 Product ID:  03314-041-1788576-02207       
-             03314-041-1788576-02636 (shown as product id on 2016.10.09 activation)
+             03314-041-1788576-02636 (shown as product id on 2016-10-09 activation)
 
 ???   Microsoft Office 2011 for Mac Home and Student OEM - Activates on 1 Computer
 Web:  https://us-dc2-order.store.yahoo.net/yhst-29435688063266/ymix/MetaController.html?ysco_key_order_id=yhst-29435688063266-109137&ysco_key_event_id=1&ysco_key_store_id=yhst-29435688063266&ysco_key_oidc=ab2021cd96b3feff5f00&sectionId=ysco.confirm
@@ -589,7 +589,7 @@ W96Jj1cn4IriOzITDx5XtZG4HZx6Bc
 
 
 ~
-PAID UPDATE 2015.07.21 -- Order Number: A227077 
+PAID UPDATE 2015-07-21 -- Order Number: A227077 
    === Upgrades subscription expires November 13, 2015
 
 Reference number: INVCZ239143
@@ -1121,7 +1121,7 @@ AA1B000001-36EY-5JWR-1DDJ-10J4-BGB5
 
 ### xx Intelli J     (was JS IDE ???)
 ### xx Kalidascope
-      (Now prefer beyond compare 2019.08.14)
+      (Now prefer beyond compare 2019-08-14)
       File comparison / merging tool
 
       https://sites.fastspring.com/blackpixel/order/invoice/BPXL150512-2167-12173
@@ -1383,7 +1383,7 @@ $ wget http://python-distribute.org/distribute_setup.py
 $ sudo python distribute_setup.py
 $ sudo easy_install pip
 
-### 2014.12.10 -- WIFI CONNECTIVITY ISSIE
+### 2014-12-10 -- WIFI CONNECTIVITY ISSIE
 
 NOTES ABOUT MAC CONNECTIVITY FAILURE
 
@@ -2329,7 +2329,7 @@ FIXES
   Check:  Reminders & Safari & FindMyI_phone
   UNCHECK: ALL ELSE
 
-#### MAIL -- ACCOUNTS  as of 2017.02.05
+#### MAIL -- ACCOUNTS  as of 2017-02-05
 
 === icloud === oblinger@gmail.com            
     Checked: icloud-drive(all checked)   Photos (unchecked icloud photo library)  
@@ -2607,11 +2607,11 @@ $ brew install Qt
      Download  OSXFUSE & SSHFS  from http://osxfuse.github.io/
 
 ## xx PYTHON
-#### PYTHON SETUP 2019.07.21 - 15" rebuild
+#### PYTHON SETUP 2019-07-21 - 15" rebuild
 xcode-select --install
 brew install python3
 ~# in pycharm setting up new interpreter used venv under /uf by default
-#### PYTHON SETUP 2018.10.27
+#### PYTHON SETUP 2018-10-27
       # Add required folders (owned by oblinger)
       sudo su
          cd /usr/local
@@ -2741,7 +2741,7 @@ ipython-launcher     # this will launch the ipython-launcher app
 
 ## xx RUBY + RVM + xx SINATRA
 
-2015.09.09 -- install RVM  (from http://usabilityetc.com/articles/ruby-on-mac-os-x-with-rvm/)
+2015-09-09 -- install RVM  (from http://usabilityetc.com/articles/ruby-on-mac-os-x-with-rvm/)
 
   # INSTALL RUBY INSIDE RVM INSIDE $HOME/.rvm
   brew install gnupg

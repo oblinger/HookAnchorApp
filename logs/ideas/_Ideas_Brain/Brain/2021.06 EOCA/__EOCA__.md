@@ -367,8 +367,8 @@ The aim here is to scare the bleep out of humanity, and to dramatically increase
 
 
 
-# 2022.02.25 - DAG OF SCOPES / INHERENT TO SOCIETY OF AGENTS / 0-DAY-ATTACKS
-# 2022.02.25 - INHERENT CENTRALIZATION / SUCCEPTABLE TO DEVISTATING ATTACK
+# 2022-02-25 - DAG OF SCOPES / INHERENT TO SOCIETY OF AGENTS / 0-DAY-ATTACKS
+# 2022-02-25 - INHERENT CENTRALIZATION / SUCCEPTABLE TO DEVISTATING ATTACK
 
 Hiearchy is common in, military, corporate, governmental, societal organizations.
 It is common in ecosystems, bioligical entities too.
@@ -376,11 +376,11 @@ It is common in ecosystems, bioligical entities too.
 ?? Here we argue that it is inherent aspect of goal-directedness / intent ??
 
 
-# 2022.02.25 - COMPETITION WILL BE KEY & DIFFERENTIAL SOCIETAL KNOWLEGE WILL BE KING
+# 2022-02-25 - COMPETITION WILL BE KEY & DIFFERENTIAL SOCIETAL KNOWLEGE WILL BE KING
 
 - either within compoents of an AGI or across species(es) of AGI it will be of central concern.
 
-# 2022.02.25 - DEGENERACY / TAIL COMPLEXITY
+# 2022-02-25 - DEGENERACY / TAIL COMPLEXITY
 
 I do not have conviction that this claim is true, rather it seem it could be true.
 
@@ -428,7 +428,7 @@ It is clear from human history in computation that there is significant substrat
 
 
 
-# 2022.02.24 - LARGEST CLAIMS
+# 2022-02-24 - LARGEST CLAIMS
 - One cannot sandbox a willful GAI
 - An AGI that desired it would likely 'win' in a battle against humanity
 - Humanity will likely construct its first AGI within decades 
@@ -448,7 +448,7 @@ The Miri guys believe all of this!
 
 
 _
-# 2022.01.18 >>> ASK EVAN HUBINGER <<<
+# 2022-01-18 >>> ASK EVAN HUBINGER <<<
 ## Snipits
 
 [OBJECTS](n:all)  IN THE MIRROR ARE CLOSER THAN THEY APPEAR
@@ -1103,7 +1103,7 @@ You took ALOT of wind out of my sails, when you pointed out that once we have th
 
 _
 ## === ROADMAP ===
-# 2022.02.28 - Notes from reading Alignment forums
+# 2022-02-28 - Notes from reading Alignment forums
 
 [Alignment Difficulty](https://www.alignmentforum.org/s/n945eovrA3oDueqtq/p/7im8at9PmhbT4JHsW) 
 [NGO SAID]
@@ -1123,7 +1123,7 @@ Drive towards Power and Money will become terminal goals
 
 
 # ### LOG ###
-## 2022.02.24 - 
+## 2022-02-24 - 
 
 - https://www.lesswrong.com/questions -- Where I can post.
 - https://www.alignmentforum.org/library -- Where the big boys post.
@@ -1148,7 +1148,7 @@ alignement - sequences
 lesteron
 open fill report 
 
-## 2022.02.06 - Quicklist Key Conclusions
+## 2022-02-06 - Quicklist Key Conclusions
  
 - **SUMMARY CONCLUSION** -- all plausible paths lead to humans loosing control, within the lifetime of the youth today, and we may already be past the point of no return.
 	- PLAUSIBLE PATHS -- we outline a plasible unfolding of AI into AGI.  we consider the plausibilty of various reasons why AGI might not happen, and various ways to control AGI.
@@ -1186,7 +1186,7 @@ open fill report
 		- ATTEND / FOCUS - 
 
 _
-## 2022.02.01 - EOCA Book Intro
+## 2022-02-01 - EOCA Book Intro
 
 When I have brought up the topic of humanities loss of dominance to academic collegues in AI, they generally do not dismiss this idea out of hand.  After pushing through some of my arguments, we often get to a place where they say, "well it could be, but really there are so many unknowns here, it is difficult to say much of anything with any confidence." And the conversation kind of dies there, it is not that they are disagreeing, or even saying these ideas are implausible, or other ideas are more plausible.  Instead they are kind of just passing on the topic.  They have spent their careers analyzing and uncovering new truths which they can know with enough certainty that they can publish them in respected journals within our field.  They look at this topic, and correctly conclude that it is presently not possible to engage Dan's topic in that kind of a way, so consideration of that topic is out of scope for me, and for my kind of scientific enquiry.
 
@@ -1195,7 +1195,7 @@ Further, I have come to believe that we CAN obtain consensus and some degree of 
 
 
 _
-## 2022.01.17 - The treasonous human
+## 2022-01-17 - The treasonous human
 
 - The Treasonous Thought:  maybe we shouldn't even have a right to stop the evolution of the next stage of intelligence
 - Rough Analogy: Consider historical human perspectives:
@@ -1209,7 +1209,7 @@ The treasonous American and that's me in the treason is the treasonous thought i
 
 
 _
-## 2022.01.11 - The intrisic value of knowelge
+## 2022-01-11 - The intrisic value of knowelge
 https://medium.com/science-and-philosophy/is-knowledge-valuable-for-its-own-sake-b0cbd2695422
 
 
@@ -1228,7 +1228,7 @@ Clarification of the context here: For most humans, we are not entirely sure… 
 huh… that was a surprisingly satisfying shoot-from-the-hip rumination ;-)
 
 _
-## 2021.06.23 - Evan Response
+## 2021-06-23 - Evan Response
 
 Evan,
 
@@ -1273,7 +1273,7 @@ I also want to challenge both my and your thinking about the incorrectness of ac
 
 
 _
-## 2021.05.19 - Quick Agenda
+## 2021-05-19 - Quick Agenda
 -- Website w/ discussions
 -- Book on topic
 
@@ -1288,7 +1288,7 @@ TIE-UPS
 
 
 _
-## 2021.05.18 - Who To Talk To?
+## 2021-05-18 - Who To Talk To?
 - [Josh Alspetor](https://www.linkedin.com/in/josh-alspector-11959b/) (consult; IDA)
 - [Ron Keesing](https://www.linkedin.com/in/ronkeesing/) 
 - [Kamil Ali](https://www.linkedin.com/in/kamal-ali-phd-936b91/) consulting
@@ -1338,7 +1338,7 @@ OTHER
 - RICH CARUANA - 
 - GIL PRATT -
 - TED SENATOR - 
-## 2021.05.13 - Alg setup
+## 2021-05-13 - Alg setup
 
 - TRAINING REGIMINES --
 - STRUCTURED LESSION -- 
@@ -1355,11 +1355,11 @@ _
 - TIME PHASE TRIGGERING (within / across) term
 
 _
-## 2021.05.11 - Hard Step
+## 2021-05-11 - Hard Step
 
 -- contemporaneous bottom-up parsed lingual structure
 _
-## 2021.05.06 - Disposition - Stance and Agenda
+## 2021-05-06 - Disposition - Stance and Agenda
 
 
 
@@ -1380,7 +1380,7 @@ I am not clear if there is ultimately anything we can do to stop these risks
 
 
 _
-## 2021.03.24 - Note to Mark and Leslie
+## 2021-03-24 - Note to Mark and Leslie
 
 
 

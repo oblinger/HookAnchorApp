@@ -247,7 +247,7 @@ Derived list -- computed by filtering tree nodes
 
 
 _
-### --- 2021.10.07 --- Dusty Robotics ---
+### --- 2021-10-07 --- Dusty Robotics ---
 
 BOM -- Bill of Materials
 - Multiple overlapping ones.  (bare robot, full package w/ measuring tape, components at risk)
@@ -263,12 +263,12 @@ Part Numbering
 
 _
 # ### LOG ### 
-### --- 2021.11.26 - Testing the market ---
+### --- 2021-11-26 - Testing the market ---
 
 VALUE PROPS:
 - YOUR TOOL - Your data in the tool you want
 - MANY VIEWS - Same data synchronized between many views
-### --- 2021.10.04 - Slide deck notes ---
+### --- 2021-10-04 - Slide deck notes ---
 
 #### -- Spreadsheet analogy --
 

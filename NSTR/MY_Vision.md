@@ -1,11 +1,11 @@
 # MY\_Vision --
 
-    2019.06.05 Costco
+    2019-06-05 Costco
           Sph    Cyl   Axis    Add    SegHgt  Dist P.D.                |   Add    Dist P.D
     OD  +1.25  -0.50    115    +2.25  23.0    31.0        Progressives |   +1.50  29.0  Computer Reading Glasses
     OS  +1.00  -0.50     70    +2.25  23.0    32.0                     |   +1.50  30.0
 
-    2017.10.06 Costco
+    2017-10-06 Costco
           Sph    Cyl   Axis    Add
     OD  +1.25  -0.50    115   +225
     OS  +1.00  -0.50     75   +225

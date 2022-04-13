@@ -1,6 +1,6 @@
 
-### 2021.08.03 - >>> -AF-  -- NEXT JOB -- AF Sale <<<
-#### 2021.10.07 - Jon discussion about Taxes
+### 2021-08-03 - >>> -AF-  -- NEXT JOB -- AF Sale <<<
+#### 2021-10-07 - Jon discussion about Taxes
 - Share price.  Tax free reorg.
 - QSBS big thing: depends on laws.  80%-test
 - Choice points?
@@ -43,7 +43,7 @@ TODO:
 - Jake connection
   
   _
-#### 2021.08.07 -
+#### 2021-08-07 -
 - strat
 - the document.
 - jake

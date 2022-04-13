@@ -674,7 +674,7 @@ TO ADD
 - [Body Wash](https://www.amazon.com/NIVEA-Men-DEEP-Active-Clean/dp/B01329XE2Q/ref=sr_1_3?keywords=body+wash&qid=1570642854&refinements=p_n_is_sns_available%3A2617006011&rnid=2617005011&sr=8-3) 
 - Simple Human Trashbags (Q) for kitchen, (r) for sm square
 # ### Log ###
-### 2019.00.00 Office Drawers  (bought)
+### 2019-00-00 Office Drawers  (bought)
 30"w 30-36"H 20"D
 #### Tall Thin
 [Tall Thin](https://www.amazon.com/Home-Styles-5520-75-Drawer-Storage/dp/B07KG5LDMG/ref=pd_sbs_196_16?_encoding=UTF8&pd_rd_i=B07KG5LDMG&pd_rd_r=3023ad05-a274-46f3-8f11-09fe9904870d&pd_rd_w=PIFyT&pd_rd_wg=1PeNe&pf_rd_p=d66372fe-68a6-48a3-90ec-41d7f64212be&pf_rd_r=BV9C3DWYK3CNCNBWZ8HQ&psc=1&refRID=BV9C3DWYK3CNCNBWZ8HQ) 
@@ -682,7 +682,7 @@ TO ADD
 [Big 5 Drawer](https://www.amazon.com/South-Shore-9025035-5-Drawer-Dresser/dp/B010S8ZOJU/ref=pd_bxgy_196_img_3/131-9644154-3359944?_encoding=UTF8&pd_rd_i=B010S8ZOJU&pd_rd_r=e09cf43a-d719-4250-a286-b5346ea9e574&pd_rd_w=5jTex&pd_rd_wg=eiRA2&pf_rd_p=a2006322-0bc0-4db9-a08e-d168c18ce6f0&pf_rd_r=07NA3DKT8KYM8RE29EMT&psc=1&refRID=07NA3DKT8KYM8RE29EMT#customerReviews) [Little Smaller](https://www.amazon.com/Scottsdale-5-Drawer-Chest-Dresser-Black/dp/B07VR3MSJQ/ref=pd_sbs_196_2/131-9644154-3359944?_encoding=UTF8&pd_rd_i=B07VR3MSJQ&pd_rd_r=cacbaa6e-2547-481f-a283-165681df8636&pd_rd_w=vEZKh&pd_rd_wg=yk2nk&pf_rd_p=d66372fe-68a6-48a3-90ec-41d7f64212be&pf_rd_r=S7ZNYJVX7K6GHS68MA15&psc=1&refRID=S7ZNYJVX7K6GHS68MA15) [BigCheap](https://www.amazon.com/South-Shore-Collection-5-Drawer-Chest/dp/B008CDVXPI/ref=pd_sbs_196_4/131-9644154-3359944?_encoding=UTF8&pd_rd_i=B008CDVXPI&pd_rd_r=cacbaa6e-2547-481f-a283-165681df8636&pd_rd_w=vEZKh&pd_rd_wg=yk2nk&pf_rd_p=d66372fe-68a6-48a3-90ec-41d7f64212be&pf_rd_r=S7ZNYJVX7K6GHS68MA15&psc=1&refRID=S7ZNYJVX7K6GHS68MA15) 
 #### SHORTER
 [Media Chest](https://www.amazon.com/dp/B078T9W9YD/ref=sbl_dpx_B07WTRQHNT_0?th=1)   ED-10. 30-40
-### 2019.00.00 Front Door Lock
+### 2019-00-00 Front Door Lock
 
 - Schlage BE365 CAM 		physical buttons
 - [Silage Camelot BE469ZP](https://www.amazon.com/Schlage-BE469ZP-CAM-619-Deadbolt/dp/B07KQPQMXS/ref=dp_ob_title_hi)  [older](https://www.amazon.com/Schlage-Connect-Touchscreen-Deadbolt-SmartThings/dp/B00AGK9KOG?imprToken=eRuLgMmJg2CR2FX8D7awTQ&slotNum=1&SubscriptionId=AKIAIOCEBIGP6NUBL47A&tag=thearcsgui07-20&linkCode=xm2&camp=2025&creative=165953&creativeASIN=B00AGK9KOG&th=1) Z				Alexa/     -Phone
@@ -714,7 +714,7 @@ Sense - Be479 - zWave (needs adapter)
 
 -- has a app. 
 -- controllable by google home?  no 
-### 2019.05.07 Living room cabinets
+### 2019-05-07 Living room cabinets
 
 https://www.ikea.com/ms/en_US/img/buying_guides/fy19/PAX_bg_APR2019n2.pdf
 
@@ -741,7 +741,7 @@ $200  	2x 901.215.83    PAX Frame  39 3/8 x 22 7/8 x 92 7/8
 
 
 _
-### 2016.00.00 STANDING DESK
+### 2016-00-00 STANDING DESK
 
 --- 569
 
@@ -782,9 +782,9 @@ UpLift   $600 (claimed cheaper                              http://www.workwhile
 consat???
 WithinReach                                 http://www.ergoexperts.com/WithinReach-Electric-Desk-p/6000.htm?gclid=Cj0KEQjw75yxBRD78uqEnuG-5vcBEiQAQbaxSKO5E4jgF-sihUveRPDVq3wpWjnJHBi651z3Qeo5SxYaAk1D8P8HAQ
 Ergo $400                                http://www.amazon.com/Ergo-Elements-Adjustable-Standing-Electric/dp/B00YDQ7GZO/ref=pd_sim_sbs_196_18?ie=UTF8&refRID=08GMNZ67BNZVDNGKAJ99
-### 2013.00.00 Scotch  
+### 2013-00-00 Scotch  
 http://www.bevmo.com
-### 2011.00.00 Wireless data
+### 2011-00-00 Wireless data
 Wireless Data
 
 - I-PHONE $30/2-Gigs Verizon Tethering + 2-Gigs phone data
@@ -803,8 +803,8 @@ MOBILE HOTSPOT $50/5-gigs AT&T / VERIZON  $35/3-Gigs Sprint w. massiver overage
 
 
 
-### 2013.03.03 -- Standing mat
-### 2000.00.00 Tofurky
+### 2013-03-03 -- Standing mat
+### 2000-00-00 Tofurky
 
 
 https://www.healthy-eating.com/cgi-bin/shopper.cgi

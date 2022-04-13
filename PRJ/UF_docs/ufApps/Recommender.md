@@ -3,7 +3,7 @@ Marketplace of recommendations -- you get paid for steering folks right.
 
 # ### LOG ###
 
-### --- 2020.12.21 ---
+### --- 2020-12-21 ---
 
 - put your money where your mouth is
 	- You stake money on being able to steer folks right.

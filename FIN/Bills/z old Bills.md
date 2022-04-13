@@ -149,7 +149,7 @@ x  Geico
 # LOG
 ## Raynor Bills
 840      16.06.13   Raynor-010  MC-1028  (from email)
-455      16.06.13   Raynor-009  MC-1028  (from email)     (Issued on 2016.05.04)
+455      16.06.13   Raynor-009  MC-1028  (from email)     (Issued on 2016-05-04)
 910      16.06.13   Raynor-008  MC-1028  (from email)
 
 455      16.06.03   Raynor      (mint penFed)    <-- no Receipt found in email
@@ -321,8 +321,8 @@ $  63,294.89.  Amount refunded.
 $276,705.11  /2. Difference
 $138,352.55.    One Half Amount
 
-$60,000   Paid to DanO brokerage on 2018.10.31
-$50,000   Paid to DanO brokerage on 2018.12.04 from Citi
+$60,000   Paid to DanO brokerage on 2018-10-31
+$50,000   Paid to DanO brokerage on 2018-12-04 from Citi
 
 
 ---- 8/7 paid
@@ -339,7 +339,7 @@ Total bill: $4550
 
 3077    =  $1800/31*22 = $1277. (Deposit + Dec rent)   Dec has 31 days, he is here for 22 days starting December 10th.
 
-2016.12.10 -- Ben's Rent $1800/mo for six months.  Ben's deposit = one month's rent
+2016-12-10 -- Ben's Rent $1800/mo for six months.  Ben's deposit = one month's rent
 
 
 
@@ -463,9 +463,9 @@ $340.86  on 12/10/2013
 ## Rent from Peter Berger
 
 Total as of 
-2014.03.01   $10,190   =    1495 + 4*1400 + 3*1530   Total as of 3.1.14
-2013.12.06   -$2,870   Wire
-2014.03.31   -$8,616   Wire
+2014-03-01   $10,190   =    1495 + 4*1400 + 3*1530   Total as of 3.1.14
+2013-12-06   -$2,870   Wire
+2014-03-31   -$8,616   Wire
              -------
              ($1,296)       I think you over paid by this amout back then.
 	      $1,605   March Rent = ( $1,680 + $1,530 ) / 2 
@@ -474,7 +474,7 @@ Total as of
              -------
               $3,669   (Current amount you owe to pay thru end of may)
 
-2014.03.31   -$3,669   Wire  (paid thru end of may)
+2014-03-31   -$3,669   Wire  (paid thru end of may)
              ZERO BALANCE
 
               $5,040    $1,680 * 3  June / July / August rent

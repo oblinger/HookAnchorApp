@@ -34,7 +34,7 @@ https://getpocket.com/a/read/788333660
 
 ## Log
 
-### 2020.11.30 -- GOD THOUGHTS
+### 2020-11-30 -- GOD THOUGHTS
 — if a a cash register contains five five-dollar bills in , and I ask for change for a twenty.
      After you remove four fives and replace them with the twenty, we all agree the cash register no longer contains five five dollar bills.  This is how the physical world, there is nothing more do say about the change in state for the cash register.
 — {[Could use example of juke box to make change to world, or contract cash swap that is theft vs one that is not; is served food or not served food 
