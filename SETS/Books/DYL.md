@@ -1,4 +1,5 @@
-
+ [[NJ22]] 
+ 
 **>>> BOOK  -- DESIGNING YOUR LIFE <<<** 
 ## = SUMMARY
 ### - MATRIX  ^matrix
@@ -168,24 +169,249 @@ Burnett, Bill; Evans, Dave. Designing Your Life (p. 40). Knopf Doubleday Publish
 
 ### - LIFE VIEW
 
-  
+## = (3) INSIGHTS LOG =
+AEIOU: Activities; Environments; Interactions; Objects; Users
+### 2021-09-21 - SUMMARY OF WORK THAT FITS
 
+Leadership over deeply-technical projects involving AI, ML, or Robotics
+
+ELEGANCE -- Love to think about and create things requiring extreme elegance
+- ARCHITECTURES / APIS / DESIGNS
+  
+HARD-TECHNICAL / HIGH-ABSTRACTION / IN-MY-HEAD
+- PROBLEM FRAMING / PROBLEM APPROACH / ALGORITHM DEVELOPMENT
+  
+STRATEGIC
+- FRAMING, VISION, HIRING, PERSUASION, PITCHING, 
+  
+LEADING / MENTORING
+- JUMPING IN; PROPOSING/FEEDBACKING
+  
+PROBLEM SOLVING -- HOW TO MODEL / APPROACH PROBLEM --
+- Selecting HW platform for visio
+- Designing algs to track basketball
+  
+MANAGEMENT (Project lead, Manage)
+- Guiding / Tracking
+  
+REACTIVE
+- Naturally jump into things presented.  Fast to understand and act.
+- Focused on what is in front of me.
+- Need reminders to check things NOT in front of me.
+  
+RESEARCH IN DL
+  
+  
+NEAR MISS -- Can perform well, but not my passion, nor place of excellence
+- Project Scope, Schedule Management, Execution Tracking -
+- Management of People -
+- Ownership of project - is a passion, but working many is more natural
+  
+  
+  _
+## = (3) ACTIVITY LOG = 
+>> How: Engaged; Energized
+### 2022-04-11  - Big city birthday party 
+
+Hung out with parents at Big City birthday party.  Loved chatting tech, and just getting deep on topics.
+
+- LOVE TALKING, ESPECIALLY IDEAS - I am often the last to go from these parties
+- DIVE DEEP - Once I hit a topic of interest I will go deeper and longer than most anyone
+
+### 2022-04-11  Scripting/configuring/tweaking my obsidian setup
+
+LOVE
+- GETTING K ORG JUST RIGHT - Love sweat the tiny details, and to think thru
+- COMPLEXITY - Love to think thru the complex interactions to find an optimal set of choices.
+
+
+- GRAVITATE -- When procrastinating on my projects I would dive headlong into fixing obsidian up
+- COMPLETIST -- I feel great satisfaction when I get some feature fully working
+- PROCESS EFFICIENCY -- I am very motivated to get details worked out in a way that simplifies / streamlines my own life
+- 
+
+
+Activity:  Hacking, Tweaking, Scripting, Configuring whatever it takes to 
+Environment:  Working by myself, on my own time table
+Interactions:  Working alone, not working with others
+Objects:  
+Users:  
+
+
+### 2022-04-03  Organizational Systems - Tirelessly setup Obsidian & cleaned texts
+
+### 2021.09.13 -- Writing up yet another idea (Alloy/crypto ownership)
+
+Even as I am trying to really converge on which paths I will take, somehow I find myself thinking thru the details of yet another big idea.
+
+This is really my M-O.  I am positively DRIVEN to think about:
+
+-- yet another idea often focused on:
+- Some big impact
+- Solving some social-interactions problem
+- A technically complex "clever" approach 
+  -- My M-O is to simply think hard and at a detailed level about how one would approach all the various aspects of the problem in question.
+  
+  
+  
+  _
+### 2021.09.03 -- WORK: happy to chat fast; but then hand details off to others
+- I enjoyed figure out how to address NIO and Dropwater
+- But got ansy after even just 30 min of writing it up.  
+ 	happier to hand off details
+  
+  
+  _
+### 2021-08-30 -- Inbox zero
+- a goto activity for me is to read and process EASY emails
+- want to switch away from any task when it gets harder except Uniform.
+- like to execute easy quick tempo tasks for longer (emails, blogs, recipes)
+- tend to want to swap tasks after 15min or so.  even doing this list was a bounce away from doing my three energy giving word maps.
+  
+  _
+### 2021.08.30 -- Waste Time - Blog reading/responding - emails and tasks.
+- These days I spend way too much time reading blogs.
+- I spent hours giving my feedback to others that I read.
+- I don't want huge followers, I am just compelled to engage once I have thought and have come to a conclusion about a subject.
+  
+  _
+### 2021.08.26 -- Procrastinate
+- When I get ready to work, I will procrastinate by doing many organizational tasks first:
+- read emails
+- read medium/blogs
+- organize todo lists, do quick items
+- do weekly tasks
+- _
+### 2021.08.26 -- Shelving / recipes
+- I really like to organize things, spent hours designing and building shelving for ingredients, getting labels & containers.
+- Spent many hours optomizing recipes so they would be time efficient to make.
+- So time spent cooking is not valued by me, but time spent ORGANIZING to cook is compelling (even if not really so very fun)
+  
+  _
+### 2021.06.00 -- QL modelling
+- When QL came to me with several problems about how to model some aspect of self driving, I really found it fun to brainstorm how to attack the problem.
+- I think for me the most fun part, is struggling to see the best way to attach the problem.
+- I also like helping others to attack the problem, then not having to screw around with the details involved in actually implementing it.
+  
+  _
+### 2021.06.00 -- QL Hacking
+I also then helped out by coding several parts of the data analytics process in python.  This was also fun.  I think doing it all day would get tedious, but if that were <=25% of my time it would be ideal.
+
+_
+### 2021.07.25 -- Flighty Freddie
+- While working on this activity log, I so badly want to jump to another activity.  (even a valuable one)  but the impulse is so fast that if I followed it, I would be jumping from one thing to the next is a very inefficient way.
+  
+  _
+### 2016.00.00 -- Bizzy Robotics - Early days
+I was naturally pulled into my work at Bizzy.  I was happy that in the evening I still was working on Uniform, but with Joe at the office, and with the CTO leadership role, I naturally fell into a pretty driven tempo.
+- Worked on my "architecture" stuff too much.
+- Didn't attend to impt aspects of leadership (lack of proclivity and skill)
+- Gain value from being leader.
+- GOOD: at relationship aspect of job.  good at vision and leadership.
+- CORRECTABLE:  was too 'hot headed'.
+- did not build regular handoff & check in processes
+	  
+  _
+### 2021.07.22 -- Foxglove robotics development platform
+Got excited thinking about the idea of making a robotics-dev-studio that is efficient for doing robotics development work.  In general I think I am really motivated and excited to think about making efficient-to-use tools and processes.
+
+
+_
+### 2021.07.21 -- Marcel response (flow)
+When I saw marcel's note, I just could not help but to write my response.  Totally threw off my whole morning.  Immediately fought to load some needed open source (which I normally hate).  Each time I tried to work on something else, my brain kept going back to details about it.  really extremely hard for it to not just spontaneously break back into my thinking while on other topics.  Just gave up and wrote the reponse.
+
+_
+### 2019.00.00 -- Block Chain
+Operated in flow for months trying to build a new block chain.
+- The ideas seemed very big.  I imagine large impact.
+- Lots of creativity borne from just thinking hard for hours solving hard technical sub-problems.
+  
+  _
+### 2021.07.20 -- Jump jump jump**
+When I am working on a thing that I am drawn to, I will push to work more and more hours.  Easily dropping other things I want/need to do.  When it is an activity that I resist, then I find it overwhelming to want to switch away from this thing.  Right now I am trying to do my Job matrix, and I want to switch away.  It stresses me to think about it.  and I am not quite sure what I should put down on it.
+
+_
+### 2021.07.19 -- Marcel response  -- couldn't stop writing it!**
+I receieved his response email, and I immediately wanted to think thru my response.  Couldn't stop writing it up, until it was done.  Was willing to re-read and correct it -- even as I kinda hate doing that.
+
+_
+### 2021.07.19 -- Thinking while walking
+When walking my mind repeatedly returns to details of Uniform, and how I might frame and say part of it.  Or less so, how I might resolve this or that techical detail
+_
+### 1980-2020 -- Main projects over the years
+
+| Dates       | Name                   | Notes                                                                        |
+| ----------- | ---------------------- | ---------------------------------------------------------------------------- |
+| 01/2021     | Selling Company        |                                                                              |
+| 07/2018 2.5 | Analytics Fire         | Selling, OilDrilling,                                                        |
+| 11/2016 1.7 | +Aeolus                | Excited about architecture, but not about managing larger group, but was ok. |
+| 11/2015 1.0 | +Bizzy                 | Compelling. didn't have time for Uniform, but wanted to.                     |
+| 09/2014 1.2 | WordWar / WebChan      |                                                                              |
+| 12/2013  .7 | Jotter                 | Worked hard, but project was sideways                                        |
+| 10/2011 1.8 | PayByGroup             | Underwater, so hacking furiously, had infinite ambition then                 |
+| ...2008 2.0 | +Machine Reading       | Interested (less my baby), weekend hacking on Java info mgr & Autohotkey     |
+| 08/2005 3.0 | +Bootstrapped Learning | Very engaged. No time for Notester.                                          |
+| ...2002 2.5 | +Sheepdog/ABL          | Liked thinking about it, but rather hack on Notester than work on it         |
+| ...2000 1   | Email Mining           | Was fun hacking it, but did not know where it was going                      |
+| 03/1998 1.5 | +Watch Me Read         | Built super general analytics generator dashboard                            |
+
+
+### 1980-2020  -- Side Projects Over the Years
+
+| Dates   | Name                      | Notes                                    |
+| ------- | ------------------------- | ---------------------------------------- |
+| 2022    | OBSIDIAN SETUP            |                                          |
+| 2020    | TEAM SAVER                |                                          |
+| 2019    | TREESHEETS                |                                          |
+| 2015 6  | UNIFORM                   | 7/2015-1/2022 - Parser - URF - Unicore - |
+| 2014    | CRYPTO TRADER             |                                          |
+| 2014 1  | SPOTLIGHT COMMANDER       | Back from Thailand? before that?         |
+| 10/2011 | -- PayByGroup --          |                                          |
+| 2010 1  | AUTO-HOTKEY               |                                          |
+| 2001 4  | NOTESTER                  |                                          |
+| 3/1998  | -- IBM Research --        |                                          |
+| 1995    | WORD DOC WEB              |                                          |
+| 1993 4  | LISP SHELL                |                                          |
+| 1991    | EMACS INFO MODE           |                                          |
+| 1991 1  | LISP TRACER               |                                          |
+| 8/1989  | -- U Illinois --          |                                          |
+| 1988    | SANTA THERESA Info screen |                                          |
+| 1986    | Phone Robot Controller    |                                          |
+| 1985 2  | Night Job Automator       |                                          |
+|         | / ZORK CRACK              |                                          |
+|         | HUNDEMER ATTACK           |                                          |
+| 1984 1  | Ragland Editor            |                                          |
+| 8/1983  | -- NKU --                 |                                          |
+|         | COCO ASSEMBLER            |                                          |
+| 1981    | DEFENDER VIDEO GAME       |                                          |
+|         | EFFICIENCY HACKS -- ,     |                                          |
+|         | FileThis                  |                                          |
+|         | Spellchecker              |                                          |
+|         | ShellStep                 |                                          |
+
+
+- INFO ORGANIZERS 
+- EFFIENCY HACKS FOR SELF
 
 
 ## = (4) MINDMAPS = 
 
 ## = (5) ODYSSEY PLANS = Three Near Futures
-### --DASHBOARD--
+### -- DASHBOARD --
 
-| Odyssey | Resources Needed | Likability | Confidence | Coherence | Considerations |
-| ------- | ---------------- | ---------- | ---------- | --------- | -------------- |
-| FAANG   |                  |            |            |           |                |
-| VC GUY  |                  |            |            |           |                |
-| MY CO   |                  |            |            |           |                |
+| Odyssey | Resources Needed | Likability              | Confidence | Coherence | Considerations |
+| ------- | ---------------- | ----------------------- | ---------- | --------- | -------------- |
+| FAANG   | Yes              | 70-80% Ok - pretty good | 70%        |           | Mgr, Sci       |
+| VC GUY  | Need 5y          |                         | 50%        |           |                |
+| MY CO   | Probably         |                         | 20%        |           |                |
+|         |                  |                         |            |           |                |
 
 
 -  6 Word Title; Graphical timeline; Questions option is asking; 
-### - FAANG GUY - BigCo Project Leader & Technologist Driver
+
+Considerations: Geography, Learning, Impacts/Results, Role
+
+### - FAANG GUY - BigCo Project Leader & Technology Driver
 | Time   | Activity         | Notes                            |
 | ------ | ---------------- | -------------------------------- |
 | Year 1 | Interviewing     | Learning Mgt, ML, interview prep |
@@ -194,6 +420,17 @@ Burnett, Bill; Evans, Dave. Designing Your Life (p. 40). Knopf Doubleday Publish
 | Year 3 | SIDE GIG         | Just starting my side gig        |
 | Year 4 |                  |                                  |
 | Year 5 |                  |                                  |
+
+QUESTIONS:
+1.  APPLIED SCIENTIST  --  Am I in range to be an applied scientist?  Would I want that?
+2.  
+
+ATTRIBUTES:
+- Bit of free time.
+- Lower risk.
+- Making rich company richer.  eh, ok.  need a side thing in all cases to make a difference
+- 
+
 
 ### - VC GUY - Vision spouting, Meeting man, Deal closer
 | Time   | Activity                        | Notes                                |
@@ -408,146 +645,3 @@ Why Are we here?
 #### energized, engaged, in flow
 
 
-## = (3) INSIGHTS LOG =
-AEIOU: Activities; Environments; Interactions; Objects; Users
-
-### 2021-09-21 - SUMMARY OF WORK THAT FITS
-
-Leadership over deeply-technical projects involving AI, ML, or Robotics
-
-ELEGANCE -- Love to think about and create things requiring extreme elegance
-- ARCHITECTURES / APIS / DESIGNS
-  
-HARD-TECHNICAL / HIGH-ABSTRACTION / IN-MY-HEAD
-- PROBLEM FRAMING / PROBLEM APPROACH / ALGORITHM DEVELOPMENT
-  
-STRATEGIC
-- FRAMING, VISION, HIRING, PERSUASION, PITCHING, 
-  
-LEADING / MENTORING
-- JUMPING IN; PROPOSING/FEEDBACKING
-  
-PROBLEM SOLVING -- HOW TO MODEL / APPROACH PROBLEM --
-- Selecting HW platform for visio
-- Designing algs to track basketball
-  
-MANAGEMENT (Project lead, Manage)
-- Guiding / Tracking
-  
-REACTIVE
-- Naturally jump into things presented.  Fast to understand and act.
-- Focused on what is in front of me.
-- Need reminders to check things NOT in front of me.
-  
-RESEARCH IN DL
-  
-  
-NEAR MISS -- Can perform well, but not my passion, nor place of excellence
-- Project Scope, Schedule Management, Execution Tracking -
-- Management of People -
-- Ownership of project - is a passion, but working many is more natural
-  
-  
-  _
-## = (3) ACTIVITY LOG = 
->> How: Engaged; Energized
-### 2022-04-03  Organizational Systems - Tirelessly setup Obsidian & cleaned texts
-
-### 2021.09.13 -- Writing up yet another idea (Alloy/crypto ownership)
-
-Even as I am trying to really converge on which paths I will take, somehow I find myself thinking thru the details of yet another big idea.
-
-This is really my M-O.  I am positively DRIVEN to think about:
-
--- yet another idea often focused on:
-- Some big impact
-- Solving some social-interactions problem
-- A technically complex "clever" approach 
-  -- My M-O is to simply think hard and at a detailed level about how one would approach all the various aspects of the problem in question.
-  
-  
-  
-  _
-### 2021.09.03 -- WORK: happy to chat fast; but then hand details off to others
-- I enjoyed figure out how to address NIO and Dropwater
-- But got ansy after even just 30 min of writing it up.  
- 	happier to hand off details
-  
-  
-  _
-### 2021-08-30 -- Inbox zero
-- a goto activity for me is to read and process EASY emails
-- want to switch away from any task when it gets harder except Uniform.
-- like to execute easy quick tempo tasks for longer (emails, blogs, recipes)
-- tend to want to swap tasks after 15min or so.  even doing this list was a bounce away from doing my three energy giving word maps.
-  
-  _
-### 2021.08.30 -- Waste Time - Blog reading/responding - emails and tasks.
-- These days I spend way too much time reading blogs.
-- I spent hours giving my feedback to others that I read.
-- I don't want huge followers, I am just compelled to engage once I have thought and have come to a conclusion about a subject.
-  
-  _
-### 2021.08.26 -- Procrastinate
-- When I get ready to work, I will procrastinate by doing many organizational tasks first:
-- read emails
-- read medium/blogs
-- organize todo lists, do quick items
-- do weekly tasks
-- _
-### 2021.08.26 -- Shelving / recipes
-- I really like to organize things, spent hours designing and building shelving for ingredients, getting labels & containers.
-- Spent many hours optomizing recipes so they would be time efficient to make.
-- So time spent cooking is not valued by me, but time spent ORGANIZING to cook is compelling (even if not really so very fun)
-  
-  _
-### 2021.06.00 -- QL modelling
-- When QL came to me with several problems about how to model some aspect of self driving, I really found it fun to brainstorm how to attack the problem.
-- I think for me the most fun part, is struggling to see the best way to attach the problem.
-- I also like helping others to attack the problem, then not having to screw around with the details involved in actually implementing it.
-  
-  _
-### 2021.06.00 -- QL Hacking
-I also then helped out by coding several parts of the data analytics process in python.  This was also fun.  I think doing it all day would get tedious, but if that were <=25% of my time it would be ideal.
-
-_
-### 2021.07.25 -- Flighty Freddie
-- While working on this activity log, I so badly want to jump to another activity.  (even a valuable one)  but the impulse is so fast that if I followed it, I would be jumping from one thing to the next is a very inefficient way.
-  
-  _
-### 2016.00.00 -- Bizzy Robotics - Early days
-I was naturally pulled into my work at Bizzy.  I was happy that in the evening I still was working on Uniform, but with Joe at the office, and with the CTO leadership role, I naturally fell into a pretty driven tempo.
-- Worked on my "architecture" stuff too much.
-- Didn't attend to impt aspects of leadership (lack of proclivity and skill)
-- Gain value from being leader.
-- GOOD: at relationship aspect of job.  good at vision and leadership.
-- CORRECTABLE:  was too 'hot headed'.
-- did not build regular handoff & check in processes
-	  
-  _
-### 2021.07.22 -- Foxglove robotics development platform
-Got excited thinking about the idea of making a robotics-dev-studio that is efficient for doing robotics development work.  In general I think I am really motivated and excited to think about making efficient-to-use tools and processes.
-
-
-_
-### 2021.07.21 -- Marcel response (flow)
-When I saw marcel's note, I just could not help but to write my response.  Totally threw off my whole morning.  Immediately fought to load some needed open source (which I normally hate).  Each time I tried to work on something else, my brain kept going back to details about it.  really extremely hard for it to not just spontaneously break back into my thinking while on other topics.  Just gave up and wrote the reponse.
-
-_
-### 2019.00.00 -- Block Chain
-Operated in flow for months trying to build a new block chain.
-- The ideas seemed very big.  I imagine large impact.
-- Lots of creativity borne from just thinking hard for hours solving hard technical sub-problems.
-  
-  _
-### 2021.07.20 -- Jump jump jump**
-When I am working on a thing that I am drawn to, I will push to work more and more hours.  Easily dropping other things I want/need to do.  When it is an activity that I resist, then I find it overwhelming to want to switch away from this thing.  Right now I am trying to do my Job matrix, and I want to switch away.  It stresses me to think about it.  and I am not quite sure what I should put down on it.
-
-_
-### 2021.07.19 -- Marcel response  -- couldn't stop writing it!**
-I receieved his response email, and I immediately wanted to think thru my response.  Couldn't stop writing it up, until it was done.  Was willing to re-read and correct it -- even as I kinda hate doing that.
-
-_
-### 2021.07.19 -- Thinking while walking
-When walking my mind repeatedly returns to details of Uniform, and how I might frame and say part of it.  Or less so, how I might resolve this or that techical detail
-	_

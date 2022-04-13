@@ -18,7 +18,7 @@ PLUS:  [[@Microsoft]],  [[@LinkedIn]]   PLUS:  [[@Vmware]],  [[@PARC]],
  --------- | -------------------------------------------------------------------------------------
  Core      | [[@Melanie Dumas]],  [[@John Davis]],  [[@Doug Gordin]],  [[@Luis Arrellano]],                                    
  Solid     | [[@James Miller]],  [[@Sara Basson]],   [[@Herb Derby]],  [[@Arkady Epshteyn]],  [[@Acorn Pooley]],  [[@Qingling Oblinger]],  [[@Greg Hornby]],          
- Heavy     | [[@Praveen Paritosh]],  [[@Dan Kaufman]],  [[@Manish Gupta]],  [[@Ming-Hsuan Yang]],  [[@William Cohen]],                                                         
+ Heavy     | [[@Praveen Paritosh]],  [[@Dan Kaufman]], [[@Chris Welty]], [[@Manish Gupta]],  [[@Ming-Hsuan Yang]],  [[@William Cohen]],                                                         
  AI        | [[@Andrew Tomkins]],  [[@Eugene Agichtein]],  [[@Shalini Ghosh]],  [[@Ian Simon]],  [[@Mariusz Pasek]],  [[@Alexander Toshev]],                                              
  Goog Otr  | [[@Preston Marshall]],  [[@Josh Yelon]],  [[@Abhishek Verma]],  [[@Tony DiLoreto]],  [[@Dav Zimak]],  [[@Ernest Galbrun]],  [[@Ehsan Saeedi]],  [[@Jared DeMott]],  [[@Raghu Mann]],  [[@Kyle Seaman]],  [[@Bobby Allen]], 
 

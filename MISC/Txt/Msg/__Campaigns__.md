@@ -21,9 +21,9 @@
 |        | [[@Avidan Ross]]     | Tessa's investor                         |
 |        | [[@Brain Yormak]]    | Potential investor for [[@Sports Visio]] |
 |        | [[__]]               |                                          |
-|        | [[@Emily Wallach]]   |                                          |
+|        | [[@Emily Wallach]]   | <<                                         |
 |        | [[@Liane Capiral]]   | -SKIP-                                   |
-|        | [[@Mary Tran]]       | More senior & focused on PE recruiting.  |
+|        | [[@Mary Tran]]       | << More senior & focused on PE recruiting.  |
 |        | [[@Melissa Cote]],   |                                          |
 |        | [[@Vince Colangelo]] | -SKIP- Recruit Fin                       |
 

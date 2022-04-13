@@ -128,7 +128,7 @@ Employer:  Aeolus Robotics Inc.
 Address :  100 Produce Ave Suite F   South San Francisco, CA 94
 Title   :  CTO / Head of US operations
 Contact :  Patrick Tien / Alex Huang
-C-phone :  ‭(425) 442-8508‬
+C-phone :  (425) 442-8508‬
 Dates   :  10/26/2016 - 06/30/2018
 Salaries:  $83.3K/mo   $1M/yr   (one month of $41.6K/mo)
 Duties  :  
@@ -146,7 +146,7 @@ Employer:  Jotter   (GENERALLY DONT SHOW)
 Address :  111 Independence Dr, Menlo Park, CA 94025
 Title   :  Consultant / Chief Science Officer
 Contact :  Sateez Kadivar
-C-phone : ‭(650) 906-0448‬
+C-phone : (650) 906-0448‬
 Dates   :  12/1/2013 - 9/1/2014  (9/mo) 
 Salaries:  $37.5K/mo  for 6mo ($450K/yr) $250K/yr+50K signing
 Duties  :  

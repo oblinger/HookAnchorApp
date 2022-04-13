@@ -7,18 +7,29 @@
 
 ### t2022-04-07  -  Aniket intro
 
-[[@Attila Aros]] 
+Hi Emily,
+- CONTEXT:  I am a serial entrepreneur in the midst of selling my current company and quietly exploring what might come next.
+- STRENGTH:  I recently have spoken with Prime Move Labs and other VCs about how I might take my experience founding/exiting companies, leading.
+- STRENGTH:  I recently spoke with Prime Movers Labs and other VCs about how my experience might provide value directly for VC firms or their portfolio companies.
+- STRENGTH:  (I have a PhD in Computer Science (Machine Learning); found/exit 3 companies and secured and managed over $200M in R&D as a PM at DARPA.)
+- PATH: Aniket Kumar at Software Growth Partners spoke highly of you and your focus on placement within technology focused firms.
+- ASK:  I believe a 10-15 minute chat could help me better understand the industry as well as provide guidance towards most relevant people and areas given my background.  Let me know your interest and availability.
+- Best, Dan Oblinger, Founder/CTO Analytics Fire
+- P.S.  Through a collaboration I have an interest & understanding in blockchain, perhaps in a later conversation we might talk about directions for Web3
+
+
 
 Subj: Technology Focused Venture Capital
 
 Hi Emily,
-- CONTEXT:  I am a serial entrepreneur in the midst of selling my current company and quietly exploring what might be next for me.
-- STRENGTH:  I have used my PhD in Computer Science (Machine Learning) to found/exit 3 companies and fund/lead over $200M in R&D while at DARPA.
-- STRENGTH:  I recently spoke with Prime Movers Labs and others about how this experience might provide value to VC firms or their portfolio companies.
-- PATH: Aniket Kumar at Software Growth Partners spoke highly of you and your focus on placement within technology focused firms.
-- ASK:  I believe a 10-15 minute chat could help me better understand the industry as well as provide guidance towards most relevant people and areas given my background.  Let me know your interest and availability.
-- Best, Dan Oblinger, Founder/CTO Analytics Fire
-- P.S.  Through a collaboration I have an interest/understanding in blockchain, perhaps in a later conversation we might talk about directions for Web3
+I am a serial entrepreneur in the midst of selling my current company and quietly exploring what might come next.  I recently have spoken with Prime Move Labs and other VCs about how I might take my experience founding/exiting companies, leading.  I recently spoke with Prime Movers Labs and other VCs about how my experience might provide value directly for VC firms or their portfolio companies.  (I have a PhD in Computer Science (Machine Learning); found/exit 3 companies and secured and managed over $200M in R&D as a PM at DARPA.)
+
+Aniket Kumar at Software Growth Partners spoke highly of you and your focus on placement within technology focused firms.  I believe a 10-15 minute chat could help me better understand the industry as well as provide guidance towards most relevant people and areas given my background.  Let me know your interest and availability.
+
+Best, 
+Dan
+
+P.S.  Through a collaboration I have an interest & understanding in blockchain, perhaps in a later conversation we might talk about directions for Web3
 
 
 

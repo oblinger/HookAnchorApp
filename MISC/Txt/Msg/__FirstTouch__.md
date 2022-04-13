@@ -1,12 +1,14 @@
 ### 2022-04-07  Joe Yeh Recruiter Outline
 
 Include as many of these as you can:
-- PATH: How did I learn about them
+- PATH: What was the path that led me to them
 - FLATTERY: Something great about them
-- MY CONTEXT: Who am I, and what my goal is here
-- NEED:  
-- STRENGTH:  I recently spoke with Prime Movers Labs (hyperlink) and other VC firms.
-- ASK: Do you have 5-10 min to get connected and to get your advice about the VC market? 
+- MY CONTEXT: Who am I, and what my high level objective
+- NEED:  What is my specific need.
+- STRENGTH:  Provide some indication of my strength and relevance for them.
+  ==> I recently spoke with Prime Movers Labs (hyperlink) and other VC firms.
+- ASK: End note with a "call to action"
+  ==> Do you have 10-15 min to get connected and to get your advice about the VC market? 
 
 
 

@@ -1,4 +1,5 @@
 
+- [ ] km - upgrade strip_name or whatever in order to correctly link folder with dates in them.
 - [ ] turn delivery list into a table, with links, maybe multiple per row
 - [ ] [[@Maria Cross]]
 - [ ] get outliner to work; get wheel click toggle folding

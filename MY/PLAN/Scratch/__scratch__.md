@@ -1,3 +1,53 @@
+
+I love the drive-by constructive feedback that is possible on Medium.  Unvarnished and to the point, Thanks!!  I do have an ax to grind in the health & medicine space.  On nearly every topic I can find 'keto kills' or 'keto will save you', BOTH with arguments backed by an argument derived from at some level by legitimate science.  This misinformation KILLS people, so I am a bit of Dan Quixote for health claims.
+
+Still if I am honest with myself, as you suspected, this predilection runs deeper than that.  I am always wanting to look at things the "wrong" way to see if I can see something that others don't.  (hmmm, if I dig deep, then post it as a reply to a reply PUBLICLY,  one part of my personal identity is thinking I am good at stepping outside the expected framings of things.)  Interesting.
+
+But I wonder what you meant by "spill over"?  You could mean I should take care since folks at work or play could read my online posts, so be careful.  Or you could mean, if this is your personality online, then likely it is also you personality in life too.  I think that second interpretation has some truth.  In 'selling' calls or meetings I find it extremely difficulty to not provide the counterpoints to my own points.  my co-founder has worked with me on this.  Socially I have pretty good EQ so I usually avoid being a debbie downer when it would not be constructive, and I have a stronger-than-usual need to be liked, so when delivering edgy opinions (which I do) I am angling hard to not loose my audience.  In the work/teaching settings I think my fault is simply allowing things to become too complex (... and on the other hand, blah, blah, blah ... etc.)
+
+Dan, ``you should just talk more'', said no one ever.
+
+:-)
+
+
+p.s. so who is the Brian Magnus guy?  I got nothing, not even a picture!
+
+
+
+https://docs.google.com/presentation/d/1DrSX9Yp6Gth8V7JM7RY3AyMb05xefyTqXbDGme_WyBI/edit#slide=id.g11b0bc3c7fc_0_1337
+
+Amanda, Jill, and Qingling, I am mercifully moving you guys to BCC for the designing part of the Yearbook, but will keep you in the loop as we actually start executing things.
+
+  
+
+Siobhan:
+
+  
+
+I register on a site called [slidego.com](http://slidego.com/)  they have some templates we might consider.  For a nominal fee, I can register there if we choose one of their templates just so we dont have to have a credit to slidego in our yearbook.  Here is one possible template.  It has fun kid colors, thought is it crazy saturated!  They have others:
+
+  
+
+[https://docs.google.com/presentation/d/19WZ8XHd2cdGCpa34FAct7TROEV4M_IqnFTBZeq7UpLc/edit#slide=id.ge8b16a7d74_1_0](https://docs.google.com/presentation/d/19WZ8XHd2cdGCpa34FAct7TROEV4M_IqnFTBZeq7UpLc/edit#slide=id.ge8b16a7d74_1_0)
+
+  
+
+My idea is we would strip most of this away, and just provide 
+
+- the head portion where we had a few pics of the teachers, school, and classroom, 
+
+- followed by the picture of my family as an example.
+
+- at the end we would have a couple of pages of clip art (like the squares and diamonds from this template or others.)
+
+   And some nifty fonts too.  (I am still hoping we can find some unique fonts, since the same old fonts are often seen)
+
+  
+
+Let me know your thoughts, and feel very free to just start editing on this starter doc:
+  
+  
+  
   [SNIP](__SNIP__.md)
  [G-doc Scratch](https://docs.google.com/document/d/19rapJqTzTSeLPrQPIRligaFna5yc44p-gDhdhlOJLdI/edit),  [[__SNIP__|Snip]],  
 
