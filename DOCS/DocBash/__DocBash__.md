@@ -1,5 +1,5 @@
   [DocSED](DocSED.md)
- [[Unix Command line]] 
+ [[Unix Command Line]] 
 
 
 BASH SPECIFIC
