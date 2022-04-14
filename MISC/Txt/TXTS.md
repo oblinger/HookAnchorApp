@@ -1,7 +1,7 @@
 
 
-| a           | i          | o                             |
-| -           | -          | -                             |
+| a           | i              | o                             |
+| -           | -              | -                             |
 | [t2022-04-11](AT/@Melissa%20Cote.md#t2022-04-11  1st touch) | [[@Melissa Cote]] | 1st touch                     |
 | [t2022-04-07](AT/@Mary%20Tran.md#t2022-04-07) | [[@Mary Tran]] |                               |
 | [t2022-04-07](AT/@Emily%20Wallach.md#t2022-04-07  -  Aniket intro) | [[@Emily Wallach]] | Aniket intro                  |
