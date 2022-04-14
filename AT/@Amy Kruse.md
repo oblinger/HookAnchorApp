@@ -5,7 +5,6 @@
 
 suggested warm intro outreach
 
-
 ### m2022-03-09 Amy Kruse - VC advisor advice
 
 - VC EIR/Advisor/Consultant
