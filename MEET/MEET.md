@@ -3,7 +3,7 @@
 | Date        | Person           | Notes                                             |
 | ----------- | ---------------- | ------------------------------------------------- |
 | m2022-04-06 | [[@Joseph Yeh]]      | Resume;                                           |
-| m2022-04-06 | [[BeVC]]             | Recruiter topics                                  |
+| m2022-04-06 | [[__BeVC__]]         | Recruiter topics                                  |
 | m2022-03-21 | [[@Joseph Yeh]]      | List of VC firms                                  |
 | m2022-03-17 | [[@Joseph Yeh]]      | foo                                               |
 | m2022-03-13 | [[2022 CORIS]]       | TRIP CORIS Robotics Institute (OREGON STATE UNIV) |
