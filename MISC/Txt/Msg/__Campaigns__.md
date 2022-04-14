@@ -23,8 +23,8 @@
 |        | [[__]]               |                                          |
 |        | [[@Emily Wallach]]   | <<                                         |
 |        | [[@Liane Capiral]]   | -SKIP-                                   |
-|        | [[@Mary Tran]]       | << More senior & focused on PE recruiting.  |
-|        | [[@Melissa Cote]],   |                                          |
+|        | [[@Mary Tran]]       | More senior & focused on PE recruiting.  |
+|        | [[@Melissa Cote]],   | <<                                         |
 |        | [[@Vince Colangelo]] | -SKIP- Recruit Fin                       |
 
 
