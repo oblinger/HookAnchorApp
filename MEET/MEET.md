@@ -1,7 +1,7 @@
 
 
 |Date        |File             |Notes                                             |
-|-----------            |----------------                |-------------------------------------------------                                                |
+|----------- |---------------- |------------------------------------------------- |
 |[m2022-04-06](ROCKS/2022-03%20BeVC/BeVC.md#m2022-04-06  Recruiter topics) |[[BeVC]]             |Recruiter topics                                  |
 |[m2022-04-06](AT/@Joseph%20Yeh.md#m2022-04-06  - Resume;) |[[@Joseph Yeh]]      |Resume;                                           |
 |[m2022-03-21](AT/@Joseph%20Yeh.md#m2022-03-21 - List of VC firms) |[[@Joseph Yeh]]      |List of VC firms                                  |
