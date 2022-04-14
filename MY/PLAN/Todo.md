@@ -1,8 +1,8 @@
 - [ ] Daily 7-min exercise
-- [x] Errands:  Blood Work
 - [ ] High output management summary
 - [ ] Taxes Delayed
 - [ ] Dave, Dad, Sammie gifts
+- [x] Errands:  Blood Work
 
 
 
