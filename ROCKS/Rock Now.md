@@ -5,8 +5,8 @@
 - [ ] [[DYL]] Build 3 Odyssey plans.
 - [ ] [[DYL]] Pick leading odyssey one
 
-## = [[__BeVC__|BeVC]] =
-- [ ] Get response to Amy Kruse   [[__Crunchbase__|CB]] 
+## = [[BeVC|BeVC]] =
+- [ ] Get response to Amy Kruse   [[Crunchbase|CB]] 
 - [ ] Warm intros from [[@Amy Kruse]] 
 	- [ ] Get list of target firms to present to Amy
 	- [ ] Get intro version of email written
@@ -16,13 +16,13 @@
 - [ ] Reach out to [[@Alia Alaoui]]
 	Inbound on linked in... should write to her
 
-## = [[__BeFAANG__|BeFAANG]] =
+## = [[BeFAANG|BeFAANG]] =
 - [ ] Speak with as many FAANG research light as I can 
 
-## = [[__Learning__|Learning]] =
+## = [[Learning|Learning]] =
 - [ ] Complete Coursera Deep Learning Course
 
-## = [[__Yearbook__|Yearbook]] =
+## = [[Yearbook|Yearbook]] =
 - [ ] Ask QL for her UX person
 - [ ] ask XXXX about fonts
 - [ ] Write announcement email (maybe more)

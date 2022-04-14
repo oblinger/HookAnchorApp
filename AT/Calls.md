@@ -1,5 +1,5 @@
 
- [FOLDER](/Users/oblinger/ob/topics/CRM/__CRM__.md)   [[__Mentors__|Mentors]]  [[__Campaigns__|Campaigns]] 
+ [FOLDER](/Users/oblinger/ob/topics/CRM/__CRM__.md)   [[Mentors|Mentors]]  [[Campaigns|Campaigns]] 
 ### 2022-04-05  -  VC List
 
 

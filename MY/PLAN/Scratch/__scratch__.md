@@ -49,7 +49,7 @@ Let me know your thoughts, and feel very free to just start editing on this star
   
   
   [SNIP](__SNIP__.md)
- [G-doc Scratch](https://docs.google.com/document/d/19rapJqTzTSeLPrQPIRligaFna5yc44p-gDhdhlOJLdI/edit),  [[__SNIP__|Snip]],  
+ [G-doc Scratch](https://docs.google.com/document/d/19rapJqTzTSeLPrQPIRligaFna5yc44p-gDhdhlOJLdI/edit),  [[SNIP|Snip]],  
 
 
 

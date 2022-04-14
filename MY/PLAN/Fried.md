@@ -11,7 +11,7 @@
 - [ ] scan all CMD and create huge spottext.txt sorted by type, then by path.  manually trim to keeper list, then delete and rebuild cmd folder
 - [ ] IFTTT output of Apple Health data (or any kind of export
 - [ ] buy food scale
-- [ ] [[__MED__|MED]] Nutritionist - Choose one #todo 
+- [ ] [[MED|MED]] Nutritionist - Choose one #todo 
 - [ ] - buy air purifier
 
 - [ ] shutdown script
@@ -41,17 +41,17 @@
 - [ ] WEEKLY: 	FILE THIS * TO_BUY * TIDY * EMAIL JOY *
 - [ ] QUARTERLY:	Mint * 
 - [ ] CALLS:		Mom&Dad * Repeat * Habits
-- [ ] THINK:  [[__Habits__|Habits]]   [[__Current__|Plan]]  
+- [ ] THINK:  [[Habits|Habits]]   [[Current|Plan]]  
 
 
 [[Obsidian]]     [[Fin]]    [[ToBuy]]    [[ToRead]]  [[Hack]]  
 
 
 ## = STUFF = 
-- [ ] [[__Fin__|FIN]] >>>Find value investments
-- [ ] [[__Fin__|FIN]] Roth Conversion Consideration
-- [ ] [[__MED__|MED]] Heart health institute
-- [ ] [[__MED__|MED]] Nutritionist - Decide who to work with 
+- [ ] [[Fin|FIN]] >>>Find value investments
+- [ ] [[Fin|FIN]] Roth Conversion Consideration
+- [ ] [[MED|MED]] Heart health institute
+- [ ] [[MED|MED]] Nutritionist - Decide who to work with 
 - [ ] Fix archiving of email
 
 - [ ] Nick meeting days (pick them with him)

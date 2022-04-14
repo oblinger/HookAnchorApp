@@ -11,7 +11,7 @@
 | m2022-03-08 | [[@Theo Enns]]       | Astro. FAANG. ML new ideas.                       |
 | m2022-03-08 | [[@Theo Enns]]       | Ideas About Amazon Levels                         |
 | m2022-03-03 | [[@Theo Enns]]       | AEOLUS research summary from Theo's perspective   |
-| m2022-02-14 | [[@Aniket Kumar]]    | Aniket  [[__BeVC__|BeVC]]                         |
+| m2022-02-14 | [[@Aniket Kumar]]    | Aniket  [[BeVC|BeVC]]                         |
 | m2021-11-07 | [[@Dan Fine]]        | FINE - Truths                                     |
 | m2021-11-04 | [[@Dan Fine]]        | FINE - Dreaming big with Google                   |
 | m2021-11-04 | [[Year2022]]         | NEATO CTO feedback                                |

@@ -3,7 +3,7 @@
   [Expenses](__Expenses__.md)  [Bills](__Bills__.md)  [Taxes](__Taxes__.md)  [Vanguard](FIN/Vanguard.md)
 
 # # TODO #  
-- [ ] [[__Fin__|FIN]] >>>Find value investments
+- [ ] [[Fin|FIN]] >>>Find value investments
 
 - [ ] Mint budget (run it)
 - [ ] Freeze Eli's Credit

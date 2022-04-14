@@ -1,6 +1,6 @@
   [DYL](DYL.md)
   [Getting_Things_Done](Getting_Things_Done.md)  [GetTheEdge_Worksheet](GetTheEdge_Worksheet.md)  [AnthonyRobins_GetTheEdge](AnthonyRobins_GetTheEdge.md)  [Fundamentals_of_Workability_Workshop](Fundamentals_of_Workability_Workshop.md)
-[[__High Output Management__|High Output Management]] 
+[[High Output Management|High Output Management]] 
 
 
 Jim Collins.  Good to great.  

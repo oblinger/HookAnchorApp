@@ -1,5 +1,5 @@
   [Bio](Bio/__Bio__.md)
-   [[__Bio__|Bio]]    [[Dan Oblinger Resume.docx|Current Resume]]    [[My Patents]] 
+   [[Bio|Bio]]    [[Dan Oblinger Resume.docx|Current Resume]]    [[My Patents]] 
 __
 
 # # RESUME SOURCE INFO # 

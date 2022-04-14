@@ -1,6 +1,6 @@
   [Dad](__Dad__.md)
   [Mom](__Mom__.md)
-[[__Mom__|Mom]]  [[__Dad__|Dad]] 
+[[Mom|Mom]]  [[Dad|Dad]] 
 
 ### --- 2019.11 tasks ---
 - Fix something on moms phone

@@ -1,1 +1,1 @@
-[[__Full__|Full]]
+[[Full|Full]]

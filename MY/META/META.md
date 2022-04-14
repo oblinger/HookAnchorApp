@@ -1,8 +1,8 @@
 
-   [[__MetaAll__|MetaAll]]   [MetaPlan](__MetaPlan__.md) 
+   [[MetaAll|MetaAll]]   [MetaPlan](__MetaPlan__.md) 
    
    [Empty](__Empty__.md)
-- [[__MetaPlan__|MetaPlan]]  
+- [[MetaPlan|MetaPlan]]  
  [Org](__Meta_Org__.md)  [APPS](__APPS__.md)
 
   [org](__Meta_Org__.md)

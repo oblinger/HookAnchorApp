@@ -1,5 +1,5 @@
- [[__Crunchbase__|Crunchbase]] 
- [[ROCKS/2022-03 BeVC/Searches|Searches]]  [[__TXT__|OR]] 
+ [[Crunchbase|Crunchbase]] 
+ [[ROCKS/2022-03 BeVC/Searches|Searches]]  [[TXT|OR]] 
 
 ### ### TODO ### 
 

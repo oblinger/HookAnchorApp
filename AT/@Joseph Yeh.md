@@ -12,16 +12,16 @@
 ### m2022-04-06  - Resume; 
 - What am I up to:
 	- [[FAANG]] - My FAANG contacts.
-	- [[__Calls__|Calls]] - My list of planned calls.
+	- [[Calls|Calls]] - My list of planned calls.
 	- [[DYL|DYL]] - Notes on my "homework" for Design Your Life.
 	-  [Oblio](https://publish.obsidian.md/oblio) - External site  [Joes page](https://publish.obsidian.md/oblio/AT/%40Joseph+Yeh) 
 - Linked In updates [[z2 - Linked In Module|here]].
-- Dig into [[__ResumeMaster__|resume]]. 
+- Dig into [[ResumeMaster|resume]]. 
 - Github:  follow a few others, start posting something public, few Kaggle competitions, 
 	Pin some repos; should I add some more?;  Maybe some activity?; update photo
 
 ### m2022-03-21 - List of VC firms
-60m Topics: Deep  [[__Crunchbase__|VCs]]   [[__Resume__|Resume]]   [[MSG]] 
+60m Topics: Deep  [[Crunchbase|VCs]]   [[Resume|Resume]]   [[MSG]] 
 
 Jennifer Chan
 

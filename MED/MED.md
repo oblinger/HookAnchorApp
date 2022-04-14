@@ -3,13 +3,13 @@
 # TODO 
 - [ ] Daily 7-min exercise
 - [ ] LAB-CORP - 2622 Ocean Ave 416-469-9710  (Fasted in morning before 10am)
-- [ ] [[__MED__|MED]] Nutritionist - Decide who to work with #todo
+- [ ] [[MED|MED]] Nutritionist - Decide who to work with #todo
 - [ ] PULMONOLOGIST - Charles McDonald  2100 Webster Street  415-749-5779
 - [ ] [Thyroid](https://allyoucaneat.org.uk/wp/weight-tired-underactive-thyroid-tests/) 
 
 - [ ] DERMATOLOGIST - David J MacGregor 450 Sutter Rm 1824  415-989-9400
-- [ ] [[__MED__|MED]] Find Heart health institute
-- [ ] [[__MED__|MED]] Diet & Exercise
+- [ ] [[MED|MED]] Find Heart health institute
+- [ ] [[MED|MED]] Diet & Exercise
 - [ ] Get measurements (salt, BP-base, HR-watch tracking)
 - [ ] Get Therapist
 
