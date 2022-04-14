@@ -1,6 +1,6 @@
  [[Msg]],  [[Anchors]],  [[DYL]], 
 
-[[__Delivery__]]   [[AT/Foob]]  
+[[Delivery]]   [[AT/Foob]]  
 [[Fried]] 
 
 

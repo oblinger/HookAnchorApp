@@ -431,7 +431,7 @@ United States
 
 ### xx Keyboard Maestro
   
-[[__Keyboard Maestro__]] 
+[[Keyboard Maestro]] 
 
 
 Setup:  !file>StartSyncingMacros     /ob/topics/Config/KeyboardMaestro-master

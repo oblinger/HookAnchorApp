@@ -1,1 +1,1 @@
- [[__TAGS__]]  #Recruiter 
+ [[TAGS]]  #Recruiter 

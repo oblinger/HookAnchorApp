@@ -21,7 +21,7 @@
 	Pin some repos; should I add some more?;  Maybe some activity?; update photo
 
 ### m2022-03-21 - List of VC firms
-60m Topics: Deep  [[__Crunchbase__|VCs]]   [[__Resume__|Resume]]   [[__MSG__]] 
+60m Topics: Deep  [[__Crunchbase__|VCs]]   [[__Resume__|Resume]]   [[MSG]] 
 
 Jennifer Chan
 
@@ -44,7 +44,7 @@ go to events
 
 
 ### m2022-03-17 - foo
-[[__BeVC__]] 
+[[BeVC]] 
 - Background: RoboticsTalk=Great; AI-safety=No
 - Current path:  VC/FAANG
 
@@ -65,7 +65,7 @@ My Strategy
 - Do anything for a VC
 
 
-[[__MSG__]]  
+[[MSG]]  
 
 Strengths
 - **Robotics**, strong generalist knowledge, good reputation, NO research depth.

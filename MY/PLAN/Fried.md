@@ -44,7 +44,7 @@
 - [ ] THINK:  [[__Habits__|Habits]]   [[__Current__|Plan]]  
 
 
-[[__Obsidian__]]     [[__Fin__]]    [[__ToBuy__]]    [[__ToRead__]]  [[__Hack__]]  
+[[Obsidian]]     [[Fin]]    [[ToBuy]]    [[ToRead]]  [[Hack]]  
 
 
 ## = STUFF = 
@@ -66,7 +66,7 @@
 - [ ] Wider laptop desk
 
 ## = OTHERS =
-- [ ] [[__Photos__]] 
+- [ ] [[Photos]] 
 - [ ] Create Small album of wedding photos
 ### .
 
@@ -84,7 +84,7 @@
 ## = THINK =
 - [ ] THINK!  write goals, and options
 - [ ] Personal CRM to track my own contacts?
-- [ ] [[__PHOTOS__]] 
+- [ ] [[PHOTOS]] 
 
 ## = TO_HACK =
 ### - to consider - 
