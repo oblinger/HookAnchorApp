@@ -2,7 +2,7 @@
 	### 2022-03-11  
 
 
-some stuff [[wp2|wp3]] mid    [[bl|blbl]]  end  
+some stuff [[wp3|wp3]] mid    [[BL|BL]]  end  
 
 2020-18-11
 2021-00-00 
