@@ -1,6 +1,6 @@
 
 
-| Date        | Person           | Notes                                             |
+| Date        | File             | Notes                                             |
 | ----------- | ---------------- | ------------------------------------------------- |
 | m2022-04-06 | [[@Joseph Yeh]]      | Resume;                                           |
 | m2022-04-06 | [[BeVC]]             | Recruiter topics                                  |
