@@ -1,7 +1,6 @@
-  [TIER](TIER.md)  [TIER Z](TIER%20Z/TIER%20Z.md)  [TIER 4](TIER%204/TIER%204.md)  [TIER 3](TIER%203/TIER%203.md)  [TIER 2](TIER%202/TIER%202.md)
-  [TIER Z](./TIER Z/TIER Z.md)  [TIER 1](TIER-1/Tier-1.md)  [TIER 4](TIER 4/TIER 4.md)  [TIER 3](TIER 3/TIER 3.md)  [TIER 2](TIER 2/TIER 2.md)  [stindex](stindex.md)
-  [GHOST-Seed](GHOST-Seed.md)
-  [TIER Z](TIER Z/__TIER Z__.md)  [TIER 1](TIER 1/__TIER 1__.md)  [TIER 4](TIER 4/__TIER 4__.md)  [TIER 3](TIER 3/__TIER 3__.md)  [TIER 2](TIER 2/__TIER 2__.md)
+  [TIER Z](TIER%20Z/TIER%20Z.md)  [GHOST-Seed](GHOST-Seed.md)  [TIER-1](TIER-1/TIER-1.md)  [TIER 4](TIER%204/TIER%204.md)  [TIER 3](TIER%203/TIER%203.md)  [TIER 2](TIER%202/TIER%202.md)  [stindex](stindex.md)
+
+
 (See [startup/index](__stindex__.md) for list)
 
 # ### QUICK THOUGHTS ###
