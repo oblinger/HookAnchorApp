@@ -12,3 +12,4 @@ $5   One Password for iPhone
 # Self Buis Exp
 ?  PyCharm
    O-desk
+  [Expenses](Expenses.md)

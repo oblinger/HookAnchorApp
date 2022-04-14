@@ -1,1 +1,0 @@
-  [Hotels](Hotels.md)

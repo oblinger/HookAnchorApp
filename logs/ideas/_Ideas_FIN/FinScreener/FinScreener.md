@@ -44,3 +44,4 @@ SOCIAL MECHANISM
     you get to see (and maybe act upon) the ideas of other people 12 hours earlier than most.
 
 
+  [FinScreener](FinScreener.md)

@@ -294,3 +294,4 @@ She's all alone, all alone in her time of need.
 Because he's racing and pacing and plotting the course,
 He's fighting and biting and riding on his horse.
 He's going the distance.
+  [Karaoke](Karaoke.md)

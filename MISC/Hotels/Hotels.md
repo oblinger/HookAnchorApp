@@ -24,3 +24,4 @@ http://www.priceline.com/promo/expressdeals.do   Opaque until booked
 - Search serach sites
 - Check hotel's site directly
 
+  [Hotels](Hotels.md)

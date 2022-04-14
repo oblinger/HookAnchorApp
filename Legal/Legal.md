@@ -300,3 +300,5 @@ As far as reviewing an NDA goes, best practice is to send them to me. There is n
 Hope that helps, Dave
 
 -----------
+  [Legal](Legal.md)
+  [Legal Uniform](Legal Uniform/__Legal Uniform__.md)  [Legal](Legal/Legal.md)
