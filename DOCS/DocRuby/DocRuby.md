@@ -1,3 +1,4 @@
+  [koans](koans/koans.md)
 
 # === RUBY SCRIPTING ===
 
