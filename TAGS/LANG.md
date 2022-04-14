@@ -1,3 +1,5 @@
+ [[NSTR/COMP]]
+
 # Lang --
 
      <<>>

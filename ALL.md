@@ -2,7 +2,7 @@ ALL TOPIC ROOTS
 
   [[MISC]],   [[Spirit]],   [[Karaoke]],   [[tickets]],   [[meditation]],   [[Rental]],   [[Info Startups]],   
   [[Startups]],   [[TXT]],   [[Letters]],   [[IBM-years]],   [[Msg]],   [[Hotels]],   [[Shop]],   [[Craps]],   [[Old]],
-     [[Hackers]],   [[Search]],   [[politics]],   [[race]],   [[Blockchain]],   [[SF]],   [[courses]],   [[UX Course at 
+     [[Hackers]],   [[Search]],   [[Politics]],   [[race]],   [[Blockchain]],   [[SF]],   [[courses]],   [[UX Course at 
   500]],   [[Presentations]],   [[Robotics_Fireside]],   [[Jeopardy Machine Reading]],   [[Nomad]],   [[Gifts]],   
   [[Trip]],   [[Thailand]],   [[PEOPLE]],   [[family]],   [[Parents]],   [[Epsilon]],   [[Qingling]],   [[Eli]],   
   [[BCMS]],   [[jason]],   [[House]],   [[Biking]],   [[Glossary]],   [[Gym]],   [[Games]],   [[napa]],   [[hiking]],   
