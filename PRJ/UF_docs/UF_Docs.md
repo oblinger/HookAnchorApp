@@ -1,3 +1,4 @@
+  [ufPublish](ufPublish/ufPublish.md)  [ufApps](ufApps/ufApps.md)
   [_code_core](_code_core.md)  [_society](_society.md)  [_vocabulary](_vocabulary.md)  [_todo_OLD](_todo_OLD.md)  [ufPublish](ufPublish/__ufPublish__.md)  [uniform1_vocabulary](uniform1_vocabulary.md)  [uniform7_oblits](uniform7_oblits.md)  [uniform7_sentences](uniform7_sentences.md)  [_ideas_OLD](_ideas_OLD.md)  [ufApps](ufApps/__ufApps__.md)  [_info](_info.md)  [_URF](_URF.md)  [_code_uniform](_code_uniform.md)
 
 [UF-code](Users/oblinger/ob/proj/uf/__uf_code__.md)

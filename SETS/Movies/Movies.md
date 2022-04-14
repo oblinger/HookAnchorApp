@@ -1,3 +1,4 @@
+  [movienotes](movienotes.md)  [Flix](Flix/Flix.md)
   [movienotes](__movienotes__.md)  [Flix](Flix/__Flix__.md)
 ### RT Searches (rotten tomato searches)
 

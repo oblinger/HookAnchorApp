@@ -1,3 +1,4 @@
+  [SandboxFutility](SandboxFutility.md)  [Argument](Argument.md)  [ProblemOfQualia](ProblemOfQualia.md)
 
 ### _
 intros; AI-conslutant - agen

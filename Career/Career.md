@@ -1,3 +1,4 @@
+  [NextJob](NextJob/NextJob.md)  [Resume](Resume/Resume.md)  [Mgr](Mgr/Mgr.md)  [leadership](leadership/leadership.md)
 diff
 
   [NextJob](NextJob/__NextJob__.md)  [Resume](Resume/__Resume__.md)  [Mgr](Mgr/__Mgr__.md)  [leadership](leadership/__leadership__.md)

@@ -1,3 +1,4 @@
+  [STATS](STATS.md)  [Neural](Neural.md)  [BL](BL.md)
   [STATS](__STATS__.md)
 
 Paper Summaries

@@ -1,3 +1,4 @@
+  [SNIP](SNIP.md)
 
 I love the drive-by constructive feedback that is possible on Medium.  Unvarnished and to the point, Thanks!!  I do have an ax to grind in the health & medicine space.  On nearly every topic I can find 'keto kills' or 'keto will save you', BOTH with arguments backed by an argument derived from at some level by legitimate science.  This misinformation KILLS people, so I am a bit of Dan Quixote for health claims.
 

@@ -1,3 +1,4 @@
+  [mdfind](mdfind.md)  [Dataview](Dataview.md)
 
 
 # # LINKS 
