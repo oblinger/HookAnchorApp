@@ -1,15 +1,36 @@
  # TODO
-- [ ] Get QL UX person ASAP
 - [ ] Writeup announcement email
 - [ ] Get first draft of materials to provide parents
 
 
 
-### - Gdrive Info  [Online Plan](https://docs.google.com/document/d/1UgT3RLfLRh_GmbC4qltnKDFVi_vCVnvccVGRitrk1uM/edit#heading=h.i7qcdkrkeflz), [Folder](https://drive.google.com/drive/u/0/folders/1CsseZ-j86tl9EBtL8muzTwzKd97GA5Hf),   [Samples Sheet](https://docs.google.com/presentation/d/1DrSX9Yp6Gth8V7JM7RY3AyMb05xefyTqXbDGme_WyBI/edit?usp=sharing),   [MCC](https://docs.google.com/presentation/d/1eqF6iduxWytohTrURN22F1zB-B9CDvgRimbkBbKXAss/edit#slide=id.p),  
+### - INFO  
+
+ [Draft 1](https://docs.google.com/presentation/d/1bUceBWjpIdifjpVZpjLr0Xl-E9C6R6cvxEfYLT5aslU/edit?usp=sharing)
+ 
+  [Folder](https://drive.google.com/drive/u/0/folders/1CsseZ-j86tl9EBtL8muzTwzKd97GA5Hf),  [Online Plan](https://docs.google.com/document/d/1UgT3RLfLRh_GmbC4qltnKDFVi_vCVnvccVGRitrk1uM/edit#heading=h.i7qcdkrkeflz),    [Samples Sheet](https://docs.google.com/presentation/d/1DrSX9Yp6Gth8V7JM7RY3AyMb05xefyTqXbDGme_WyBI/edit?usp=sharing),   [MCC](https://docs.google.com/presentation/d/1eqF6iduxWytohTrURN22F1zB-B9CDvgRimbkBbKXAss/edit#slide=id.p),  
 [Folder](https://drive.google.com/drive/u/1/folders/1C-Uvjho9JmO8WPHbKGsK5Fiwr0VrIK7G)
 - [Coorespondance](https://docs.google.com/document/d/1WPniOcLrTDTgM0jpRvde7cPdLjJ6XZRZG-dwMIjAomo/edit#)  
 - [Printers](https://docs.google.com/spreadsheets/d/139pv3_ZB9gkoe-M8S5X6tJ6NFRHHnsRhH5Vr7tXDBvQ/edit#gid=1552543262)
 
+
+## = Correspondance
+### - Announcement
+
+Parents,
+
+We are putting together a yearbook for each classroom at Big City this year!  It will feature two pages for each family within the class as well as photos of the teachers and the school too.   This will be a great way to remember your little one's year at Big City, a great way to see many of the names and faces of the children and parents within in your child's class, AND 100% of the proceeds for this will go to the BCPO scholarship fund.  Its a three-way-win!
+
+Participation is entirely voluntary.  Included below are links to an online yearbookT where each family can add two pages of photos.  These can be taken from family photos and can also be taken from favorite photos of your child at school as seen in our weekly newsletter.  (My favorite is a deer-in-the-headlights, wide-eyed Eli looking into the camera, right after Anaya put her arm around his shoulder)  Please do add photos to the yearbook regardless of whether you plan to buy one, and please buy one regardless of whether you chose to put family photos into it.
+
+We hope to showcase these yearbook pages at the upcoming gala, so please put your first draft photos in now.  But edits will remain open until just before we print the yearbook later this summer.  Please join us in this fun celebration of the communities we have all help build here at Big City.
+
+Cheers!
+
+
+
+EDITING INSTRUCTIONS
+... { to be added }
 
 ## = Ref
 - [[https://slidesgo.com/?noremember=P7M575Ogykt1qKQX]] 

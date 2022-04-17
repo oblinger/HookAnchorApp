@@ -6,7 +6,7 @@
 | S      | [[@Rafah Hosn]]        | Dig deep on required training                                                                                  |     |     |
 | S      | [[@John Davis]]        | his experience at google                                                                                       |     |     |
 | W      | [[@Joe Hellerstein]]   |                                                                                                                |     |     |
-|        |                        |                                                                                                                |     |     |
+| -      | [[__]]                 |                                                                                                                |     |     |
 |        | [[@Juan Huerta]]       | Life update & dig deep on required training                                                                    |     |     |
 |        | [[@Michael Freed]]     |                                                                                                                |     |     |
 |        | [[@Mark Drummond]]     |                                                                                                                |     |     |
@@ -16,16 +16,16 @@
 
 ### 2022-04-05  -  VC recruiters / Headhunter List   [[__BeVC__#m2022-04-06 Recruiter topics|TOPICS]] 
 
-| Status | Name                 | Ask [[@Aniket Kumar]]'s head hunters?    |
-| ------ | -------------------- | ---------------------------------------- |
-|        | [[@Avidan Ross]]     | Tessa's investor                         |
-|        | [[@Brain Yormak]]    | Potential investor for [[@Sports Visio]] |
-|        | [[__]]               |                                          |
+| Status | Name                 | Ask [[@Aniket Kumar]]'s head hunters?      |
+| ------ | -------------------- | ------------------------------------------ |
+|        | [[@Avidan Ross]]     | Tessa's investor                           |
+|        | [[@Brain Yormak]]    | Potential investor for [[@Sports Visio]]   |
+|        | [[__]]               |                                            |
 |        | [[@Emily Wallach]]   | <<                                         |
-|        | [[@Liane Capiral]]   | -SKIP-                                   |
-|        | [[@Mary Tran]]       | More senior & focused on PE recruiting.  |
 |        | [[@Melissa Cote]],   | <<                                         |
-|        | [[@Vince Colangelo]] | -SKIP- Recruit Fin                       |
+|        | [[@Mary Tran]]       | -SKIP- focused on PE and on south east USA |
+|        | [[@Liane Capiral]]   | -SKIP-                                     |
+|        | [[@Vince Colangelo]] | -SKIP- Recruit Fin                         |
 
 
 

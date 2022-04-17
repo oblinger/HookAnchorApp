@@ -29,6 +29,21 @@ _
 
 	
 
+### - 2020-03-10 - Exercise Stress Echocardiogram Report
+ 
+Reason For Study: SOB, CAD HR: 75    
+  
+Interpretation Summary  
+  
+#1 technique suboptimal images  
+#2 hypertensive blood pressure response to exercise  
+#3 the patient developed a supraventricular tachycardia which appears to be AV node reentry during exercise  
+#4 abnormal exercise EKG with EKG evidence of ischemia at maximal exercise  
+#4 normal resting left ventricular size and systolic function, left ventricular hypertrophy  
+#5 no exercise echo evidence of ischemia at a maximal exercise level
+
+
+
 ## Arteriosclerosis
 
 ### --- TODO ---

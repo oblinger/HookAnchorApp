@@ -1,5 +1,3 @@
-
-
 ## = [[NJ22|NJ22]] =
 - [ ] [[DYL]] Dan one-pager (from quick pass on earlier chapters)
 - [ ] [[DYL]] Build 3 Odyssey plans.

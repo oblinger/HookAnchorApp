@@ -1,19 +1,27 @@
- [[MetaSetup]], 
 
-| STREAMS       | Time-indexed recurring activities                                                                       |
-| ------------- | ------------------------------------------------------------------------------------------------------- |
-| H3 Entries    | m (person2person meeting)   t (textual message)   n (notes created by me)   r (reference material/links) |
-| Named Entries | Wp (small one-off work product)   Prj (non-coding projects)                                                                                                          |
-|               |                                                                                                         |
+| Name    | Ordered    | Dated    | Typed | Notes                |
+| ------- | ---------- | -------- | ----- | -------------------- |
+| STREAMS | Ordered    | Dated    | Typed | H3 Entries on a page |
+| LOGS    | Ordered    | UN-dated | Typed |                      |
+| SETS    | UN-ordered | UN-dated | Type  | Separated pages      |
+|         |            |          |       |                      |
+-: UN-dated, Chronologically Organiz
 
-| TOPLEVEL  |                                                                 |
-|-----------|-----------------------------------------------------------------|
-| [BIG](__BIG__)       |                                                                 |
-| [LISTS](__SETS__.md)     | Undated collections of information of a single type             |
-| [LOGS](__LOGS__)      |                                                                 |
-| [MISC](__MISC__)      |                                                                 |
+### - STREAMS -- Dated, Typed, H3 Entries
+| STREAMS           | Time-indexed recurring activities                           |
+| ----------------- | ----------------------------------------------------------- |
+| H3 Entries        | t ()   n ()   r ()                                          |
+| DAILY             |              Daily planning pages                                               |
+| E - EMAILS        | textual message                                             |
+| M - MEETINGS      | Any kind of person to person interactionF                   |
+| N - NOTES         | Notes created by me                                         |
+| PRJ - PROJECTS    |                                                             |
+| R - REF MATERIALS | Reference material/links                                    |
+| WP - WORK PRODUCT | Wp (small one-off work product)   Prj (non-coding projects) |
+|                   |                                                             |
 
 
+### - LOGS --
 | LOGS      | Dated, temporally sequenced lists                               |
 |-----------|-----------------------------------------------------------------|
 | [DAILY](__Daily__)     |                                                                 |
@@ -34,6 +42,15 @@
 | [CORP](__CORP__.md)      |                                                                 |
 | [LANG](__LANG__.md)      |                                                                 |
 | [PEOPLE](__PEOPLE__.md)    |                                                                 |
+
+
+### - TOPLEVEL -- 
+| TOPLEVEL  |                                                                 |
+|-----------|-----------------------------------------------------------------|
+| [BIG](__BIG__)       |                                                                 |
+| [LISTS](__SETS__.md)     | Undated collections of information of a single type             |
+| [LOGS](__LOGS__)      |                                                                 |
+| [MISC](__MISC__)      |                                                                 |
 
 
 | BIG AREAS |                                                                 |

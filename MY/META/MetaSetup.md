@@ -21,3 +21,10 @@ PLANNING VIEW
 |    "    |    "     |     "     |   "   |     |
 |  Full   |    "     | Quarterly | Todo  |     |
 |   ---   |    Q2    |    ""     |  ---  |     |
+
+
+THREE MONITOR SETUP
+
+	Tall  1692x3008
+	Mid   2560x1440
+	Lap   2560x1440

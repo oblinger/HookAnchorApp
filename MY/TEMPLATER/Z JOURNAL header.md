@@ -1,1 +1,1 @@
-<% "### " + tp.date.now("YYYY-MM-DD") + "  \n\n" %>
+<% "### " + tp.date.now("YYYY-MM-DD") + "  " %>

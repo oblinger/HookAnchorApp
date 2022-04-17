@@ -1,5 +1,21 @@
 
-# Executive Summary
+BIG IDEAS
+- THREE OBJECTIVES:  NAV, GROC, SCAN 
+- LOCAL-GLOBAL-ANCHORING
+	- UNIFIED-NAMESPACE
+	- PROGRESSIVE-BUCKET-FORMATION
+	- MUSCLE-MEMORY
+	- HUFF-CODED-NEUMONIC-NAMING
+	- 
+- STREAMS - 
+- LOW-LEVEL EFFICIENCIES
+	- OPEN LOOP NAV -- 
+	- FLN - First Letter Naming
+	- CHORD GROUP SEMANTICS 
+
+
+
+## = Executive Summary
 After 2+ decades and building dozens of large PKMs these principles have yielded the absolute fastest PKM navigation.
 
 GLOBAL 2 LOCAL -- Remember dozens or hundreds of special global "G" pages that serve as the starting point for navigation, then use the emergent LOCAL structure found at that G page in order to complete the search.
@@ -8,7 +24,7 @@ GLOBAL 2 LOCAL -- Remember dozens or hundreds of special global "G" pages that s
 - OPPORTUNISTIC G-ROUTING --  
 -  and user should not need to think about storage location/kind, app-type, etc.  just the G-name in their brain
 
-# Key Ideas
+## = Key Ideas
 
 ## Global 2 Local Navigation
 A (*the*?) most important aspect of any PKM is the amount of volume and density of relevant information one can access per minute.  Thus shaving even small percentages off the mental, temporal, and physical ease of navigating to some desired piece of knowledge GREATLY boosts the value of the PKM.  After 3 decades of organizing dozens of PKMs here is what I believe to be a set of best practices for achieving the highest levels of PKM nav efficiency, and how I have implemented them in Obsidian.
@@ -16,7 +32,9 @@ A (*the*?) most important aspect of any PKM is the amount of volume and density 
 ### GLOBAL 2 LOCAL 
 To keep things separated in our own minds we remember or invent names to 'hook' onto.  So when you have the idea to get some bit of info, you already have some names in your mind, the global 2 local strategy begins from those names
 
-#### ONE GLOBAL NAMESPACE 
+#### UNIFIED GLOBAL NAMESPACE
+- All things that are named thing 
+
 Significant cognitive 
 
 LOCAL FOLDER STRUCTURE

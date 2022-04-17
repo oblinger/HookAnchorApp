@@ -1,4 +1,6 @@
-- [x] embed shell script so it executes on page load
+
+
+- [ ] embed shell script so it executes on page load
 
 notability, magic keyboard
 

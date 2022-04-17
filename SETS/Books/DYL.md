@@ -211,6 +211,15 @@ NEAR MISS -- Can perform well, but not my passion, nor place of excellence
   _
 ## = (3) ACTIVITY LOG = 
 >> How: Engaged; Energized
+
+### 2022-04-14  OBSIDIAN COMPLETIST 9&6
+
+
+While feeling a bit lost & unmotivated with my outreach and DYL tasks, I feverishly completed multiple harder obsidian customzations and scripting:
+
+- Did not want to quit while unexpectedly hard task was not working.
+- Wanted to begin these tasks as soon as I understood what needed to be done.
+
 ### 2022-04-11  - Big city birthday party 
 
 Hung out with parents at Big City birthday party.  Loved chatting tech, and just getting deep on topics.

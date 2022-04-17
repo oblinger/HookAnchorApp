@@ -16,4 +16,15 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+
 - [ ] Run code for Coursera... maybe do a few hrs

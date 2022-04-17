@@ -1,5 +1,5 @@
 # Anthony Robins GetTheEdge --
-
+ [[GetTheEdge_Worksheet]] 
 
     TRIAD
     - Body position

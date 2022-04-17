@@ -1,6 +1,8 @@
-
-- [ ] km - upgrade strip_name or whatever in order to correctly link folder with dates in them.
-- [ ] turn delivery list into a table, with links, maybe multiple per row
+- [ ] get speaker setup upstairs
+- [ ] refactor KM to scan for both kinds of link types, AND to produce both types depending on the context.
+- [ ] extend the mYY-MM-DD to other forms
+- [ ] renamed t...  to e...
+- [ ] get doordash stuff in
 - [ ] [[@Maria Cross]]
 - [ ] get outliner to work; get wheel click toggle folding
 - [ ] refactor km so it tracks MEET as well as TXT
@@ -15,8 +17,11 @@
 - [ ] - buy air purifier
 
 - [ ] shutdown script
-- [ ] - Fling that uses direct file writes
+- [x] - Fling that uses direct file writes
 
+- foo
+	- bar
+	- bat
 
 
 ## = QUICKIES = 
