@@ -1,4 +1,4 @@
-[[Quick]], [[MetaFlow]], [[MetaPlan]],  [[MetaOrg]],  [[MetaAll]],  [[MetaSetup]],  
+[[PKM]],  [[Quick]], [[MetaFlow]], [[MetaPlan]],  [[MetaOrg]],  [[MetaAll]],  [[MetaSetup]],  
 
  [[Msg]],  [[Anchors]],  [[DYL]], 
 
