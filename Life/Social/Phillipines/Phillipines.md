@@ -1,4 +1,4 @@
-(See Nomad too)
+(See [[Nomad]] too)
 
 # Info
 ## Timezones

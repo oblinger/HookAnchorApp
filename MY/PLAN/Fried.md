@@ -1,5 +1,9 @@
+fried from nothing
+quick page
+progressive refinement read->write
 - [ ] get speaker setup upstairs
 - [ ] refactor KM to scan for both kinds of link types, AND to produce both types depending on the context.
+      zzz
 - [ ] extend the mYY-MM-DD to other forms
 - [ ] renamed t...  to e...
 - [ ] get doordash stuff in

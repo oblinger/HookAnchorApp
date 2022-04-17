@@ -1,3 +1,4 @@
+  [Quick](Quick.md)
   [Quarterly](Quarterly.md)  [Archive](Archive.md)  [Work](Work.md)  [Full](Full.md)  [Self](Self.md)  [Later](Later.md)  [Repeat](Repeat.md)  [Ping](Ping.md)  [Q2](Q2.md)  [Todo](Todo.md)  [Habits](Habits.md)  [Social](Social.md)  [Scratch](Scratch/Scratch.md)  [Watching](Watching.md)  [Current](Current.md)  [Links](Links.md)  [Hack](Hack.md)
   [Archive](__Archive__.md)
   [Work](__Work__.md)

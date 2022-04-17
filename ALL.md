@@ -15,11 +15,11 @@ ALL TOPIC ROOTS
      [[DocR]],   [[DocCPP]],   [[DocDanO]],   [[DocObjectiveC]],   [[DocAPI]],   [[DocPython]],   [[DocVagrant]],   
   [[DocCucumber]],   [[DocApplescript]],   [[DocRuby]],   [[DocMarkdown]],   [[DocRails]],   [[DocSamurai]],   
   [[DocPandas]],   [[DocDelayedJob]],   [[DocLinux]],   [[DocClojure]],   [[DocOSX]],   [[DAILY]],   [[TAGS]],   
-  [[LOGS]],   [[WP]],   [[Phone]],   [[Ideas]],   [[TIER Z]],   [[Crowd Self Assessment]],   [[wordwar]],   
-  [[homerobot]],   [[Consulting Co]],   [[LeanCanvas]],   [[Tableau Killer]],   [[ClaimsAnalyzer]],   [[Flipping 
+  [[LOGS]],   [[WP]],   [[Phone]],   [[Ideas]],   [[TIER Z]],   [[Crowd Self Assessment]],   [[homerobot]],   
+  [[Consulting Co]],   [[Word-War]],   [[LeanCanvas]],   [[Tableau Killer]],   [[ClaimsAnalyzer]],   [[Flipping 
   Websites]],   [[FinScreener]],   [[Elastic Block Chain]],   [[EduCorp]],   [[Too Big To Fail]],   [[DriveDev]],   
-  [[walmart]],   [[technotherapy]],   [[Tier-1]],   [[OpenBricks]],   [[Treesheets]],   [[myorgstartup]],   [[Brain]],
-     [[Brain3]],   [[EOC]],   [[The Sentient Weapon]],   [[EOCA]],   [[ppp]],   [[TIER 4]],   [[MedAR]],   [[CtrlSaaS]],
+  [[Walmart]],   [[technotherapy]],   [[Tier-1]],   [[OpenBricks]],   [[Treesheets]],   [[myorgstartup]],   [[Brain]],
+     [[Brain3]],   [[EOC]],   [[The Sentient Weapon]],   [[EOCA]],   [[PPP]],   [[TIER 4]],   [[MedAR]],   [[CtrlSaaS]],
      [[TIER 3]],   [[Forum]],   [[Autonomy]],   [[TIER 2]],   [[MKT]],   [[SmartScale]],   [[SETS]],   [[Obsidian]],   
   [[Quotes]],   [[Places]],   [[Books]],   [[LANG]],   [[haskell]],   [[Humor]],   [[Recipes]],   [[Movies]],   
   [[flix]],   [[ToRead]],   [[Buy]],   [[Bought]],   [[R]],   [[metrics]],   [[BSL]],   [[MY]],   [[PLAN]],   
