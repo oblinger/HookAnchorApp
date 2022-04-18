@@ -1,72 +1,33 @@
 
 | Name    | Ordered    | Dated    | Typed | Notes                |
 | ------- | ---------- | -------- | ----- | -------------------- |
-| STREAMS | Ordered    | Dated    | Typed | H3 Entries on a page |
-| LOGS    | Ordered    | UN-dated | Typed |                      |
-| SETS    | UN-ordered | UN-dated | Type  | Separated pages      |
+| [[STREAMS]] | Ordered    | Dated    | Typed | H3 Entries on a page |
+| [[LOGS]]    | Ordered    | UN-dated | Typed |                      |
+| [[SETS]]    | UN-ordered | UN-dated | Type  | Separated pages      |
 |         |            |          |       |                      |
--: UN-dated, Chronologically Organiz
-
-### - STREAMS -- Dated, Typed, H3 Entries
-| STREAMS           | Time-indexed recurring activities                           |
-| ----------------- | ----------------------------------------------------------- |
-| H3 Entries        | t ()   n ()   r ()                                          |
-| DAILY             |              Daily planning pages                                               |
-| E - EMAILS        | textual message                                             |
-| M - MEETINGS      | Any kind of person to person interactionF                   |
-| N - NOTES         | Notes created by me                                         |
-| PRJ - PROJECTS    |                                                             |
-| R - REF MATERIALS | Reference material/links                                    |
-| WP - WORK PRODUCT | Wp (small one-off work product)   Prj (non-coding projects) |
-|                   |                                                             |
 
 
-### - LOGS --
-| LOGS      | Dated, temporally sequenced lists                               |
-|-----------|-----------------------------------------------------------------|
-| [DAILY](__Daily__)     |                                                                 |
-| [MEET](__MEET__)      | Meeting notes                                                   |
-| [WP](__WP__.md)        | Work-Product -- Smaller single documents I produced             |
-| [ROCKS](__ROCKS__.md)     | Medium sized projects expected completion within a quarter      |
-| [PRJ](__Prj__)       | Larger / Longer or indefinite running projects                  |
-|           |                                                                 |                     
-| [Ideas](__Ideas__)     |                                                                 |
-| [Phone](__Phone__)     | Administrative actions associated with accounts or such         |
-| [Letters](__Letters__.md)   |                                                                 |
-
-
-| LISTS     | Undated collections of information of a single type             |
-|-----------|-----------------------------------------------------------------|
-| Small Item| [Books](__books__.md)  [Buy](__Buy__.md)  [Humor](LOGS/Humor.md)  [Movies](__Movies)  [Quotes](__Quotes__.md)  [Recipes](__Recipies__)  [ToRead](__ToRead__.md)              |
-| [APP](__APPS__.md)       |                                                                 |
-| [CORP](__CORP__.md)      |                                                                 |
-| [LANG](__LANG__.md)      |                                                                 |
-| [PEOPLE](__PEOPLE__.md)    |                                                                 |
-
-
-### - TOPLEVEL -- 
-| TOPLEVEL  |                                                                 |
-|-----------|-----------------------------------------------------------------|
+## = SUB TREES
+| Name                     | BIGGER SUB TREES OF INFO        |
+| ------------------------ | ------------------------------- |
 | [BIG](__BIG__)       |                                                                 |
-| [LISTS](__SETS__.md)     | Undated collections of information of a single type             |
-| [LOGS](__LOGS__)      |                                                                 |
+| [[Career]]               |                                 |
+| [Docs](__Docs__.md)      |                                 |
+| [FIN](__Fin__.md)        |                                 |
+| [Food](__FOOD__.md)      |                                 |
+| [Legal](__Legal__.md)    |                                 |
+| [Life](__LIFE__.md)      |                                 |
+| [MED](__MED__.md)        |                                 |
 | [MISC](__MISC__)      |                                                                 |
+| [MY](__MY__.md)          |                                 |
+| [Notester](__Notester__) |                                 |
+| [REF](__Ref__.md)        | Reference materials of any kind |
 
 
-| BIG AREAS |                                                                 |
-|-----------|-----------------------------------------------------------------|
-| [Career](__Career__.md)    |                                                                 |
-| [Docs](__Docs__.md)      |                                                                 |
-| [FIN](__Fin__.md)       |                                                                 |
-| [Food](__FOOD__.md)      |                                                                 |
-| [Legal](__Legal__.md)     |                                                                 |
-| [Life](__LIFE__.md)      |                                                                 |
-| [MED](__MED__.md)       |                                                                 |
-| [MY](__MY__.md)        |                                                                 |
-| [Notester](__Notester__)  |                                                                 |
-| [REF](__Ref__.md)       | Reference materials of any kind                                 |
 
 
+
+# UNSORTED STUFF
 
 ### 2010 -- Notester MetaAll
 						**=== META DESCRIPTION OF ALL DAN'S INFO ===**

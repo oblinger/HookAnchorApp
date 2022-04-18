@@ -1,4 +1,23 @@
-  [Books](Books/Books.md)
+- [[AT]] - Entities (People, Organizations, etc.)
+- [[App]] - Info about specific applications
+- [[Humor]] - Jokes I have collected
+- [[Lang]] - Computer Languages
+- [[ToRead]] - Stuff "to read"
+- [[Movies]] - Movies "to watch"
+- [[Places]] - Info I have collected about specific places
+- [[Quotes]] - Quotes that I have collected
+
+
+| LISTS     | Undated collections of information of a single type             |
+|-----------|-----------------------------------------------------------------|
+| Small Item| [Books](__books__.md)  [Buy](__Buy__.md)  [Humor](LOGS/Humor.md)  [Movies](__Movies)  [Quotes](__Quotes__.md)  [Recipes](__Recipies__)  [ToRead](__ToRead__.md)              |
+| [APP](__APPS__.md)       |                                                                 |
+| [CORP](__CORP__.md)      |                                                                 |
+| [LANG](__LANG__.md)      |                                                                 |
+| [PEOPLE](__PEOPLE__.md)    |                                                                 |
+
+  
+[Books](Books/Books.md)
   [Quotes](Quotes/Quotes.md)  [Places](Places/Places.md)  [Books](Books.md)  [Lang](Lang/Lang.md)  [Humor](Humor/Humor.md)  [Recipes](Recipes/Recipes.md)  [Movies](Movies/Movies.md)  [ToRead](ToRead/ToRead.md)  [Buy](Buy/Buy.md)
 [Quotes](Quotes/__Quotes__.md)  [Places](Places/__Places__.md)  [Books](Books/__Books__.md)  [Lang](Lang/__Lang__.md)  [Humor](Humor/__Humor__.md)  [Recipes](Recipes/__Recipes__.md)  [Movies](Movies/__Movies__.md)  [ToRead](ToRead/__ToRead__.md)  [Buy](Buy/__Buy__.md)
 
