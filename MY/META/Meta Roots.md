@@ -1,10 +1,10 @@
 
-| Name    | Ordered    | Dated    | Typed | Notes                |
-| ------- | ---------- | -------- | ----- | -------------------- |
-| [[STREAMS]] | Ordered    | Dated    | Typed | H3 Entries on a page |
-| [[LOGS]]    | Ordered    | UN-dated | Typed |                      |
-| [[SETS]]    | UN-ordered | UN-dated | Type  | Separated pages      |
-|         |            |          |       |                      |
+| Name        | Ordered    | Dated    | Typed | Notes                | .................................................................. |
+| ----------- | ---------- | -------- | ----- | -------------------- | ------------------------------------ |
+| [[STREAMS]] | Ordered    | Dated    | Typed | H3 Entries on a page |                                      |
+| [[LOGS]]    | Ordered    | UN-dated | Typed |                      |                                      |
+| [[SETS]]    | UN-ordered | UN-dated | Type  | Separated pages      |                                      |
+|             |            |          |       |                      |                                      |
 
 
 ## = SUB TREES

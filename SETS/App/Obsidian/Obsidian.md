@@ -74,6 +74,6 @@ Dan O
 [showcase](https://forum.obsidian.md/t/dataviewjs-snippet-showcase/17847)
 ## Workspaces
 [video](https://www.youtube.com/watch?v=eOcumDChzEQ)
-# # NOTES # 
+# LOG 
 ### n2022-03-31  Using javascript to setup your Daily page
 
