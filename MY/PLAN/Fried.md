@@ -1,14 +1,13 @@
-fried from nothing
-quick page
-progressive refinement read->write
-- [ ] get speaker setup upstairs
+
+- [ ] Buy Dad's mac
+
 - [ ] refactor KM to scan for both kinds of link types, AND to produce both types depending on the context.
-      zzz
 - [ ] extend the mYY-MM-DD to other forms
 - [ ] renamed t...  to e...
 - [ ] get doordash stuff in
 - [ ] [[@Maria Cross]]
 - [ ] get outliner to work; get wheel click toggle folding
+- [ ] Exercise plan
 - [ ] refactor km so it tracks MEET as well as TXT
 - [ ] refactor km into separate scripts
 - [ ] Write table extractor for calls
@@ -26,7 +25,6 @@ progressive refinement read->write
 - foo
 	- bar
 	- bat
-
 
 ## = QUICKIES = 
 - [ ] MED:  Research best vitamins
