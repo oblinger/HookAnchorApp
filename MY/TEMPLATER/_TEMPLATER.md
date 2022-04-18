@@ -2,13 +2,15 @@
 
 | Template Name                               | Explanation                                        |
 | ------------------------------------------- | -------------------------------------------------- |
-| [[LOGGED sub note]]                         |                                                    |
 | [[MEETING Entry]]                           |                                                    |
 | [[NOTE entry]]                              |                                                    |
-| [[PERSON Page]]             |                                                    |
 | [[TEXT Entry]]                              | Use for all outgoing email/text/linked-in messages |
-| [[subnote]]                                 |                                                    |
+| [[PRJ Entry]]                               |                                                    |
+| [[WP Entry]]                                |                                                    |
 | .                                           |                                                    |
+| [[subnote]]                                 |                                                    |
+| [[LOGGED sub note]]                         |                                                    |
+| [[PERSON Page]]                             |                                                    |
 | [Z JOURNAL header](Z%20JOURNAL%20header.md) |                                                    |
 | [[Z TEST TEMPLATE]]                         |                                                    |
 |                                             |                                                    |

@@ -1,5 +1,5 @@
   [Mission Statement](Mission%20Statement/Mission%20Statement.md)
-  [Plan](Plan/Plan.md)  [META](META/META.md)  [Myfo](Myfo/Myfo.md)  [TEMPLATER](TEMPLATER/TEMPLATER.md)  [Mission Statement](Mission Statement/Mission Statement.md)  [MyNow](MyNow/MyNow.md)
+  [Plan](Plan/Plan.md)  [META](META/META.md)  [Myfo](Myfo/Myfo.md)  [_TEMPLATER](_TEMPLATER.md)  [Mission Statement](Mission Statement/Mission Statement.md)  [MyNow](MyNow/MyNow.md)
   [Anchors](Anchors.md)
   [Plan](Plan/__Plan__.md)
   [Apps](Apps.md)
