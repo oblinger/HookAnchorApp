@@ -10,7 +10,7 @@
 | .                                           |                                                    |
 | [[subnote]]                                 |                                                    |
 | [[LOGGED sub note]]                         |                                                    |
-| [[PERSON Page]]                             |                                                    |
+| [[AT Page]]                             |                                                    |
 | [Z JOURNAL header](Z%20JOURNAL%20header.md) |                                                    |
 | [[Z TEST TEMPLATE]]                         |                                                    |
 |                                             |                                                    |
