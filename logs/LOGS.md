@@ -1,4 +1,4 @@
-  [DATED](DATED.md),   [NOTE](NOTE.md)
+= [[TOP]] 
 
 # LOGS -- Dated, Typed, H3 Entries
 - [[DATED]]         '...'      - Dated but untyped entries
@@ -14,6 +14,6 @@
 
 
 - ...
-  [Y22](Y22.md),     [DATED](LOGS/DATED.md),   [WP22](WP22.md),   [NOTE](LOGS/NOTE.md),   [WP21](WP21.md)
+  [Y22](Y22.md),     [DATED](LOGS/DATED.md),   [WP22](WP22.md),   [NOTE](LOGS/NOTE.md),   [WP21](WP21.md),  [DATED](DATED.md),   [NOTE](NOTE.md),   
 
 
