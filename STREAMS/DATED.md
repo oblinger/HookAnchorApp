@@ -9,7 +9,7 @@
 | 2022-04-07 | [[FirstTouch]]                            | Joe Yeh Recruiter Outline                                                                 |
 | 2022-04-07 | [[SNIP]]                                  | UF - math vs code                                                                         |
 | 2022-04-07 | [[SNIP]]                                  | QL brag sheet                                                                             |
-| 2022-04-06 | [[Letters]]                               | John Cameron thank you                                                                    |
+| 2022-04-06 | [[NSTR Letters]]                               | John Cameron thank you                                                                    |
 | 2022-04-05 | [[Campaigns]]                             | FAANG ML  [[FAANG#2022-04-05 - topics - Ask FAANG folks about hiring|topics]].            |
 | 2022-04-05 | [[Campaigns]]                             | VC recruiters / Headhunter List   [[__BeVC__#m2022-04-06 Recruiter topics|TOPICS]]        |
 | 2022-04-05 | [[Calls]]                                 | VC List                                                                                   |
