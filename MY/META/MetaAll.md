@@ -37,7 +37,7 @@
 
 | LISTS     | Undated collections of information of a single type             |
 |-----------|-----------------------------------------------------------------|
-| Small Item| [Books](__books__.md)  [Buy](__Buy__.md)  [Humor](__Humor__.md)  [Movies](__Movies)  [Quotes](__Quotes__.md)  [Recipes](__Recipies__)  [ToRead](__ToRead__.md)              |
+| Small Item| [Books](__books__.md)  [Buy](__Buy__.md)  [Humor](LOGS/Humor.md)  [Movies](__Movies)  [Quotes](__Quotes__.md)  [Recipes](__Recipies__)  [ToRead](__ToRead__.md)              |
 | [APP](__APPS__.md)       |                                                                 |
 | [CORP](__CORP__.md)      |                                                                 |
 | [LANG](__LANG__.md)      |                                                                 |
