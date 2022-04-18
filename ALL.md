@@ -20,7 +20,7 @@ ALL TOPIC ROOTS
   [[DocSublime]],   [[DocMac]],   [[DocJavascript]],   [[DocArduino]],   [[DocPyML]],   [[DocCapistrano]],   [[DocR]],
      [[DocCPP]],   [[DocDanO]],   [[DocObjectiveC]],   [[DocAPI]],   [[DocPython]],   [[DocVagrant]],   [[DocCucumber]],
      [[DocApplescript]],   [[DocRuby]],   [[DocMarkdown]],   [[DocRails]],   [[DocSamurai]],   [[DocPandas]],   
-  [[DocDelayedJob]],   [[DocLinux]],   [[DocClojure]],   [[DocOSX]],   [[DAILY]],   [[TAGS]],   [[SETS]],   
+  [[DocDelayedJob]],   [[DocLinux]],   [[DocClojure]],   [[DocOSX]],   [[DAILY]],   [[TAGS]],   [[LOGS]],   [[SETS]],   
   [[Obsidian]],   [[Quotes]],   [[Places]],   [[Books]],   [[LANG]],   [[haskell]],   [[Humor]],   [[Recipes]],   
   [[Movies]],   [[flix]],   [[ToRead]],   [[Buy]],   [[Bought]],   [[R]],   [[metrics]],   [[BSL]],   [[MY]],   
   [[PLAN]],   [[scratch]],   [[META]],   [[Myfo]],   [[Mission Statement]],   [[MyNow]],   [[Outcult]],   [[FOOD]],   
