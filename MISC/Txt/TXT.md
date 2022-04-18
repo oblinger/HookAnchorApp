@@ -3,7 +3,7 @@
   [Letters](Letters/__Letters__.md)  [Campaigns](__Campaigns__.md)  [TXTS](__TXTS__.md)
 
 - [[ALL TXT|TXTS]] - Partial log of outgoing messages.    [[ALL TXT|ALL TXT]] 
-- [[Letters|Letters]] - Formal correspondence 
+- [[Letters]] - Formal correspondence 
 - [[Campaigns|Campaigns]] - Planned batched first-touch outreach
 - [FirstTouch](__FirstTouch__.md) - Ideas for first touch messaging
 - [G-sheet CRM](https://docs.google.com/spreadsheets/d/166xqGspRbmUjKoRYcgGvAu-GIRsKQrKBH_GYiJAMaSs/edit#gid=361746386) - 
