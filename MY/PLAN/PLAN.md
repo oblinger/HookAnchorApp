@@ -1,3 +1,49 @@
+  [Calls](Calls.md)
+= [[TOP]]
+
+ACTIVITY PAGES
+- [[Quick]] - 
+- [[Todo]] -
+- [[Current]] - Current weeks major tasks
+- [[Q2]] - 
+- [[Later]] - Tasks that have been pushed to 'later'
+- [[Quarterly]] - 
+- [[Weekly]] - 
+- [[Archive]] - Place to retire planning items
+
+SPECIALTY ACTIVITY PAGES
+- [[Fried]] - Easy, Fun tasks to do when taking a break from highest value work
+- [[Habits]] - Current and past habit goals
+- [[Hack]] - Hacking task (related to fried)
+- [[Repeat]] - 
+
+SOCIAL ACTIVITIES PAGES
+- [[Calls]] -
+- [[Social]] - 
+
+
+STORAGE PAGES
+- [[Scratch]] - 
+- [[NOTE]] - 
+- [[WP]] - 
+- [[PRJ]] / [[ROCKS]] - 
+- [[Top#KMR|KMR]] - Permanent Evergreen pages
+
+
+
+UNSORTED PLANNING PAGES
+- [[Journal Old]] - 
+- [[Links]] -
+- [[Ping]] - 
+- [[Self]] - 
+- [[Watching]] -
+
+
+
+
+- XXX
+
+
   [Quick](Quick.md)
   [Quarterly](Quarterly.md)  [Archive](Archive.md)  [Work](Work.md)  [Full](Full.md)  [Self](Self.md)  [Later](Later.md)  [Repeat](Repeat.md)  [Ping](Ping.md)  [Q2](Q2.md)  [Todo](Todo.md)  [Habits](Habits.md)  [Social](Social.md)  [Scratch](Scratch/Scratch.md)  [Watching](Watching.md)  [Current](Current.md)  [Links](Links.md)  [Hack](Hack.md)
   [Archive](__Archive__.md)

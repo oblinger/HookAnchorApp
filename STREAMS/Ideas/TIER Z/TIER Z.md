@@ -1,0 +1,2 @@
+  [Crowd Self Assessment](Crowd%20Self%20Assessment/Crowd%20Self%20Assessment.md),   [LeanCanvas](LeanCanvas/LeanCanvas.md),   [Tableau Killer](Tableau%20Killer/Tableau%20Killer.md),   [ClaimsAnalyzer](ClaimsAnalyzer/ClaimsAnalyzer.md)
+  [Crowd Self Assessment](Crowd%20Self%20Assessment.md)  [LeanCanvas](STREAMS/Ideas/TIER%20Z/LeanCanvas/LeanCanvas.md)  [Tableau Killer](Tableau%20Killer.md)  [ClaimsAnalyzer](ClaimsAnalyzer.md)

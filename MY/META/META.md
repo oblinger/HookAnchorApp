@@ -1,10 +1,11 @@
+  [Top](Top.md)
 
 # META
-- [MetaFlow](MetaFlow.md)    -  Overview of my data intake and processing pathways
-- [MetaPlan](MetaPlan.md)     -  Overview of the pages used for short and long term planning
-- [MetaOrg](MetaOrg.md)      -  Overview of all info resources 
-- [Meta Roots](Meta%20Roots.md)  -  List of all top level info pages    
-- [MetaSetup](MetaSetup.md)   -  Setup details for my info pages
+- [[Top]]                -  List of all top level info pages    
+- [[PLAN]]            -  Overview of the pages used for short and long term planning
+- [[Meta Flow]]     -  Overview of my data intake and processing pathways
+- [[Meta Org]]      -  Overview of all info resources 
+- [[Meta Setup]]   -  Setup details for my info pages
 
 
 - Others:    [Base](Base.md),    [Tasks](Tasks.md),         [Empty](Empty.md),    

@@ -1,17 +1,21 @@
-
+- [ ] Social Heartbeat - Establish regular time and list of social connections
 - [ ] Buy Dad's mac
 
-- [ ] refactor KM to scan for both kinds of link types, AND to produce both types depending on the context.
-- [ ] extend the mYY-MM-DD to other forms
-- [ ] renamed t...  to e...
-- [ ] get doordash stuff in
 - [ ] [[@Maria Cross]]
-- [ ] get outliner to work; get wheel click toggle folding
 - [ ] Exercise plan
-- [ ] refactor km so it tracks MEET as well as TXT
-- [ ] refactor km into separate scripts
 - [ ] Write table extractor for calls
 - [ ] [btt](https://folivora.ai/buy)
+
+- [ ] Organize the plan pages
+- [ ] get outliner to work; get wheel click toggle folding
+- [ ] Fling 1  # Should extend fling to numbered list positions.  
+- [ ] Add quick entry using an input box
+- [ ] shutdown script.  Fix so it does not kill w/o saving.  why does it use different shutdown methods in the same script
+- [ ] KM # refactor KM to scan for both kinds of link types, AND to produce both types depending on the context.
+- [ ] KM -i  # should scan and 
+- [ ] KM # refactor km into separate scripts
+- [x] KM # extend the mYY-MM-DD to other forms
+- [x] refactor km so it tracks MEET as well as TXT
 
 - [ ] scan all CMD and create huge spottext.txt sorted by type, then by path.  manually trim to keeper list, then delete and rebuild cmd folder
 - [ ] IFTTT output of Apple Health data (or any kind of export
@@ -19,12 +23,9 @@
 - [ ] [[MED|MED]] Nutritionist - Choose one #todo 
 - [ ] - buy air purifier
 
-- [ ] shutdown script
+- [x] get doordash stuff in
 - [x] - Fling that uses direct file writes
 
-- foo
-	- bar
-	- bat
 
 ## = QUICKIES = 
 - [ ] MED:  Research best vitamins

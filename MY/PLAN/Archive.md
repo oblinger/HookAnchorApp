@@ -1,3 +1,6 @@
+- X renamed t...  to e...
+[x] KM # extend the mYY-MM-DD to other forms
+- [ ]
 [x]  quick page
 pro
 [x] fried from nothing
