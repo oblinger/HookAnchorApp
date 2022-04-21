@@ -1,4 +1,6 @@
 
+call Ronny and other sms messages and jaz and sami
+
 # People SF
   Praveen Paritosh
   

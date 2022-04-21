@@ -1,5 +1,8 @@
-# TODO
 
+
+- PBG - Get linked in acquisition notice updated
+- 
+- ! Write up Chuck Morphield's review
 
 
 

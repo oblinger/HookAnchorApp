@@ -562,18 +562,17 @@ _
 |         |                  |                         |            |           |                |                                                                                                           |
 |         |                  |                         |            |           |                |                                                                                                           |
 
+
 OTHER PATHS:
 - CTO
 - CONSULTANT
 - WEB3
 
-
 -  6 Word Title; Graphical timeline; Questions option is asking; 
-
-Considerations: Geography, Learning, Impacts/Results, Role
+- Considerations: Geography, Learning, Impacts/Results, Role
 
 ### - FAANG GUY 
-- BigCo Project Leader & Technology Driver
+! BigCo Project Leader & Technology Driver
 | <div style="width:190px">property</div> Time | Activity         | Notes                            |
 | -------------------------------------------- | ---------------- | -------------------------------- |
 | Year 1                                       | Interviewing     | Learning Mgt, ML, interview prep |
@@ -596,7 +595,13 @@ ATTRIBUTES:
 
 
 ### - ML Researcher
+!
 
+
+
+Questions:
+- Can I make this switch
+- 
 
 ### - VC GUY - Vision spouting, Meeting man, Deal closer
 | Time   | Activity                        | Notes                                |

@@ -1,8 +1,6 @@
 
   
 - [ ] https://www.marcusbuckingham.com/gift-of-standout/
-- [ ] buy train tracks and new train for eli
-- [ ] Social Heartbeat - Establish regular time and list of social connections
 - [ ] Buy Dad's mac
 
 - [ ] [[@Maria Cross]]
@@ -10,6 +8,7 @@
 - [ ] Write table extractor for calls
 - [ ] [btt](https://folivora.ai/buy)
 
+- [ ] Social Heartbeat - Establish regular time and list of social connections
 - [ ] Organize the plan pages
 - [ ] get outliner to work; get wheel click toggle folding
 - [ ] Fling 1  # Should extend fling to numbered list positions.  

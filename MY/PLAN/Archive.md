@@ -1,3 +1,5 @@
+- [x] buy train tracks and new train for eli
+
 - [ ] - [ ] designing life - VC story
 - [x] Get meeting with Brian.
 - [x] intro hatton

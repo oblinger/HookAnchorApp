@@ -1,7 +1,7 @@
 
 ## = ACTIVE
 
-- Anket: 2
+- [[@Aniket Kumar]]: [[@Emily Wallach]],  [[@Melissa Cote]],
 - FAANG: Vit, Davis
 
 ## = Rotation
@@ -115,7 +115,7 @@ Alex Avendano.  alex@robocore.systems
 -- Andres Meija (lunch in SF)
 
 — ask Michael freed about guy to give advice on growing our company .  
-  Marc Torrance — what to do and not to do  
+- Marc Torrance — what to do and not to do  
 
 
 
@@ -130,4 +130,3 @@ Alex Avendano.  alex@robocore.systems
 -- Freed lunch/dinner
 -- marsha photos
 -- Carl
-call Ronny and other sms messages and jaz and sami

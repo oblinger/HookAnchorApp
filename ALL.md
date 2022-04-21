@@ -8,9 +8,9 @@ ALL TOPIC ROOTS
   [[Qingling]],   [[Eli]],   [[BCMS]],   [[jason]],   [[House]],   [[Biking]],   [[Glossary]],   [[Gym]],   [[Games]],
      [[napa]],   [[hiking]],   [[Career]],   [[NextJob]],   [[NJ22]],   [[Resume]],   [[bio]],   [[AFmaterials]],   
   [[Mgr]],   [[Contracts]],   [[MyMgr]],   [[Nanny]],   [[leadership]],   [[Test88]],   [[Ref]],   [[Research]],   
-  [[deeplearning]],   [[ML]],   [[Fin]],   [[RealEstate]],   [[Expenses]],   [[Bills]],   [[Taxes]],   [[STREAMS]],   
-  [[Phone]],   [[Ideas]],   [[TIER Z]],   [[Crowd Self Assessment]],   [[homerobot]],   [[Consulting Co]],   
-  [[Word-War]],   [[LeanCanvas]],   [[Tableau Killer]],   [[ClaimsAnalyzer]],   [[Flipping Websites]],   
+  [[deeplearning]],   [[ML]],   [[Fin]],   [[RealEstate]],   [[Expenses]],   [[Bills]],   [[Taxes]],   [[Meet]],   
+  [[STREAMS]],   [[Phone]],   [[Ideas]],   [[TIER Z]],   [[Crowd Self Assessment]],   [[homerobot]],   [[Consulting 
+  Co]],   [[Word-War]],   [[LeanCanvas]],   [[Tableau Killer]],   [[ClaimsAnalyzer]],   [[Flipping Websites]],   
   [[FinScreener]],   [[Elastic Block Chain]],   [[EduCorp]],   [[Too Big To Fail]],   [[DriveDev]],   [[Walmart]],   
   [[technotherapy]],   [[Tier-1]],   [[OpenBricks]],   [[Treesheets]],   [[myorgstartup]],   [[Brain]],   [[Brain3]],   
   [[EOC]],   [[The Sentient Weapon]],   [[EOCA]],   [[PPP]],   [[TIER 4]],   [[MedAR]],   [[CtrlSaaS]],   [[TIER 3]],   
@@ -26,5 +26,5 @@ ALL TOPIC ROOTS
   [[PLAN]],   [[scratch]],   [[META]],   [[Myfo]],   [[Mission Statement]],   [[MyNow]],   [[Outcult]],   [[FOOD]],   
   [[PRJ]],   [[AF]],   [[AFwp]],   [[AFactive]],   [[AFldr]],   [[AFarchive]],   [[UF_Docs]],   [[ufPublish]],   
   [[UfApps]],   [[ufBrick]],   [[AT]],   [[ORG]],   [[VC]],   [[VC]],   [[ROCKS]],   [[2021-04 FindDayCare]],   
-  [[Yearbook]],   [[AF Wind Down]],   [[wedding]],   [[PKM]],   [[BeFAANG]],   [[BeVC]],   [[ResReset]],   [[Learning]],
-     [[Legal]],   [[Legal Uniform]],   [[Legal Ob Labs]],   [[MED]]
+  [[Yearbook]],   [[AF Wind Down]],   [[wedding]],   [[PKM]],   [[BeFAANG]],   [[Ready]],   [[BeVC]],   [[Learning]],   
+  [[Legal]],   [[Legal Uniform]],   [[Legal Ob Labs]],   [[MED]]
