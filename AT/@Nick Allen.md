@@ -1,5 +1,6 @@
- [[START]], [[@Analytics Fire]]     [Founder](https://www.linkedin.com/in/nickballen/)  [[@Rzero]]  
+=[[START]], [[@Analytics Fire]]     [Founder](https://www.linkedin.com/in/nickballen/)  [[@Rzero]]  
 
+- [ ] Give hiring tests to Nick
 
 
 # MEETINGS

@@ -22,7 +22,7 @@
 | P     |                     |                             |                    |
 | Q     |                     | go QUIT to login            |                    |
 | R     |                     | go READER (Feedly)          | RESOLUTION change  |
-| S     | NO. SAVE file       | go STUFF (Asana)            | SHOW current app   |
+| S     | tgl SOUND ON        | go STUFF (Asana)            | SHOW current app   |
 | T     |                     | go TUNES / tgl PLAN         |                    |
 | U     |                     |                             |                    |
 | V     | ?? V PASTE          |                             | plain PASTE        |
@@ -206,7 +206,7 @@ CMD = Standard Page Edit
 | Opt                | OPT    |             | App "user defined" control |                                  |
 | Cmd                | CMD    | "MODIFY"    | App "global" commands      |                                  |
 | Ctrl-Opt           | LEFT2  |             | LEFT PAIR -                |                                  |
-| Ctrl-Cmd           | TAB    | global "GO" | Dan "Global" commands      | Dan's Global "GOTO" Destinations |
+| Ctrl-Cmd           | TAB    | "GO"        | global "GO" / page "go"    | Dan's Global "GOTO" Destinations |
 | Opt-Cmd            | RIGHT2 |             | RIGHT PAIR -               |                                  |
 | Ctrl-Opt-Cmd       | SLAM   | global "DO" | Ctrl-Opt-Cmd -             | Dan's Global Commands            |
 | Ctrl-Opt-Cmd-Shift | HYPER  | app "NAV"   | Dan "Cursor" commands      | Dan's Fastest Bindings           |
@@ -225,160 +225,83 @@ CMD = Standard Page Edit
 #### . Tab key Remap
 { "title": "Tab to Hyper When Held", "rules": [ { "description": "Map Tab to Hyper when held", "manipulators": [ { "type": "basic", "from": { "key_code": "tab", "modifiers": { "optional": [ "any" ] } }, "to_if_alone": [ { "key_code": "tab" } ], "to_if_held_down": [ { "key_code": "left_control", "modifiers": [ "left_command"] } ] } ] } ] }
 #### . XXXX
-## = OLD GLOBAL =
-
-| CH   | COMMAND / [SHIFTED] | ALT  / [SHIFTED]        |
-| ---- | ------------------- | ----------------------- |
-| A    | select ALL          | --- ABOUT prefix        |
-| B    |                     |                         |
-| C    |                     | # COPY to clip          |
-| D    |                     | DEV terminal            |
-| E    |                     | EMAIL message           |
-| F    |                     | FINDER                  |
-| G    |                     |                         |
-| H    |                     | HIDE window             |
-| I    | tgl ITALIC          | INFO (obsidian)         |
-| J    |                     | JUMP to folder          |
-| K    | insert LINK         | KICK window around      |
-| L    |                     | LAUNCH                  |
-| M    |                     | MAIL                    |
-| N    | NEW note / New PANE | # NEW                   |
-| O    | OPEN switcher       |                         |
-| P    | cmd PALETTE         |                         |
-| Q    |                     | QUICK look at web       |
-| R    |                     | READER (Feedly)         |
-| S    | SAVE file           | STUFF (Asana)           |
-| T    | / undo CLOSE        |                         |
-| U    |                     |                         |
-| V    |                     | # V PASTE               |
-| W    | CLOSE pane          | ---WEB prefix           |
-| X    |                     |                         |
-| Y    |                     |                         |
-| Z    |                     | ZOOM (work loop)        |
-| -    |                     |                         |
-| +    |                     | tgl RIGHT pane          |
-| {    |                     | nav BACK                |
-| }    |                     | nav FORWARD             |
-| \    |                     |                         |
-| ;    |                     | DARK mode               |
-| '    |                     | LIGHT mode              |
-| ,    | SETTINGS            |                         |
-| .    |                     |                         |
-| /    | tgl COMMENT         |                         |
-| ~    |                     |                         |
-| LT   |                     |                         |
-| RT   |                     |                         |
-| UP   |                     |                         |
-| DN   |                     |                         |
-| ENTR | tgl CHECKBOX        | show LINK in pane       |
-| INS  |                     |                         |
-| DEL  |                     |                         |
-| HOME |                     |                         |
-| END  |                     |                         |
-| PgUp |                     |                         |
-| PgDn |                     |                         |
-| 1    | xxxx                | MERGE one window        |
-| 2    |                     | SPLIT vertically into 2 |
-| 3    |                     | SPLIT horizontally      |
-| 4    |                     |                         |
-| 5    |                     |                         |
-| 6    |                     |                         |
-| 7    |                     |                         |
-| 8    |                     |                         |
-| 9    |                     |                         |
-| 0    |                     |                         |
-| F1   |                     |                         |
-| F2   |                     |                         |
-| F3   |                     |                         |
-| F4   |                     |                         |
-| F5   |                     | PREV daily note         |
-| F6   |                     | TODAY'S daily note      |
-| F7   |                     | NEXT daily note         |
-| F8   |                     |                         |
-| F9   |                     |                         |
-| F10  |                     |                         |
-| F11  |                     |                         |
-| F12  |                     |                         |
-|      |                     |                         |
-
-
 ## = Obsidian Builtins = 
 
 
-| CH    | CTRL                |  |
-| ----- | ------------------- | ---------------- |
-|       |                     |                  |
-| A     | AT start of line    |                  |
-| B     | Char BACK           |                  |
-| C     | COPY to clipboard   |                  |
-| D     | DELETE char         |                  |
-| E     | END of line         |                  |
-| F     | FORWARD char        |                  |
-| G     |                     |                  |
-| H     | CHAR backspace      |                  |
-| I     |                     |                  |
-| J     |                     |                  |
-| K     | KILL to end of line |                  |
-| L     |                     |                  |
-| M     |                     |                  |
-| N     | NEXT line           |                  |
-| O     | OPEN newline        |                  |
-| P     | PREVIOUS line       |                  |
-| Q     |                     |                  |
-| R     |                     |                  |
-| S     | SAVE note           |                  |
-| T     | TRANSPOSE chars     |                  |
-| U     |                     |                  |
-| V     | PAGE down           |                  |
-| W     |                     |                  |
-| X     |                     |                  |
-| Y     |                     |                  |
-| Z     |                     |                  |
-| -     |                     |                  |
-| +     |                     |                  |
-| {     | nav BACK            |                  |
-| }     | nav FORWARD         |                  |
-| \     |                     |                  |
-| ;     |                     |                  |
-| '     |                     |                  |
-| ,     |                     |                  |
-| .     |                     |                  |
-| /     |                     |                  |
-| ~     |                     |                  |
-| LT    |                     |                  |
-| RT    |                     |                  |
-| UP    |                     |                  |
-| DN    |                     |                  |
-| SPACE |                     |                  |
-| ENTR  |                     | follow LINK      |
-| INS   |                     |                  |
-| DEL   |                     |                  |
-| HOME  |                     |                  |
-| END   |                     |                  |
-| PgUp  |                     |                  |
-| PgDn  |                     |                  |
-| 1     | ONE pane            |                  |
-| 2     | TWO vert panes      |                  |
-| 3     | split pane hor      |                  |
-| 4     |                     |                  |
-| 5     |                     |                  |
-| 6     |                     |                  |
-| 7     |                     |                  |
-| 8     |                     |                  |
-| 9     |                     |                  |
-| 0     |                     |                  |
-| F1    |                     |                  |
-| F2    |                     |                  |
-| F3    |                     |                  |
-| F4    |                     |                  |
-| F5    |                     |                  |
-| F6    |                     |                  |
-| F7    |                     |                  |
-| F8    |                     |                  |
-| F9    |                     |                  |
-| F10   |                     |                  |
-| F11   |                     |                  |
-| F12   |                     |                  |
+| CH    | CTRL                |             |
+| ----- | ------------------- | ----------- |
+|       |                     |             |
+| A     | AT start of line    |             |
+| B     | Char BACK           |             |
+| C     | COPY to clipboard   |             |
+| D     | DELETE char         |             |
+| E     | END of line         |             |
+| F     | FORWARD char        |             |
+| G     |                     |             |
+| H     | CHAR backspace      |             |
+| I     |                     |             |
+| J     |                     |             |
+| K     | KILL to end of line |             |
+| L     |                     |             |
+| M     |                     |             |
+| N     | NEXT line           |             |
+| O     | OPEN newline        |             |
+| P     | PREVIOUS line       |             |
+| Q     |                     |             |
+| R     |                     |             |
+| S     | SAVE note           |             |
+| T     | TRANSPOSE chars     |             |
+| U     |                     |             |
+| V     | PAGE down           |             |
+| W     |                     |             |
+| X     |                     |             |
+| Y     |                     |             |
+| Z     | UNDO last edit      |             |
+| -     |                     |             |
+| +     |                     |             |
+| {     | nav BACK            |             |
+| }     | nav FORWARD         |             |
+| \     |                     |             |
+| ;     |                     |             |
+| '     |                     |             |
+| ,     |                     |             |
+| .     |                     |             |
+| /     |                     |             |
+| ~     |                     |             |
+| LT    |                     |             |
+| RT    |                     |             |
+| UP    |                     |             |
+| DN    |                     |             |
+| SPACE |                     |             |
+| ENTR  |                     | follow LINK |
+| INS   |                     |             |
+| DEL   |                     |             |
+| HOME  |                     |             |
+| END   |                     |             |
+| PgUp  |                     |             |
+| PgDn  |                     |             |
+| 1     | ONE pane            |             |
+| 2     | TWO vert panes      |             |
+| 3     | split pane hor      |             |
+| 4     |                     |             |
+| 5     |                     |             |
+| 6     |                     |             |
+| 7     |                     |             |
+| 8     |                     |             |
+| 9     |                     |             |
+| 0     |                     |             |
+| F1    |                     |             |
+| F2    |                     |             |
+| F3    |                     |             |
+| F4    |                     |             |
+| F5    |                     |             |
+| F6    |                     |             |
+| F7    |                     |             |
+| F8    |                     |             |
+| F9    |                     |             |
+| F10   |                     |             |
+| F11   |                     |             |
+| F12   |                     |             |
 
 
 
@@ -1072,3 +995,80 @@ CMD = Standard Page Edit
 
 
 ### end
+
+## = OLD GLOBAL =
+
+| CH   | COMMAND / [SHIFTED] | ALT  / [SHIFTED]        |
+| ---- | ------------------- | ----------------------- |
+| A    | select ALL          | --- ABOUT prefix        |
+| B    |                     |                         |
+| C    |                     | # COPY to clip          |
+| D    |                     | DEV terminal            |
+| E    |                     | EMAIL message           |
+| F    |                     | FINDER                  |
+| G    |                     |                         |
+| H    |                     | HIDE window             |
+| I    | tgl ITALIC          | INFO (obsidian)         |
+| J    |                     | JUMP to folder          |
+| K    | insert LINK         | KICK window around      |
+| L    |                     | LAUNCH                  |
+| M    |                     | MAIL                    |
+| N    | NEW note / New PANE | # NEW                   |
+| O    | OPEN switcher       |                         |
+| P    | cmd PALETTE         |                         |
+| Q    |                     | QUICK look at web       |
+| R    |                     | READER (Feedly)         |
+| S    | SAVE file           | STUFF (Asana)           |
+| T    | / undo CLOSE        |                         |
+| U    |                     |                         |
+| V    |                     | # V PASTE               |
+| W    | CLOSE pane          | ---WEB prefix           |
+| X    |                     |                         |
+| Y    |                     |                         |
+| Z    |                     | ZOOM (work loop)        |
+| -    |                     |                         |
+| +    |                     | tgl RIGHT pane          |
+| {    |                     | nav BACK                |
+| }    |                     | nav FORWARD             |
+| \    |                     |                         |
+| ;    |                     | DARK mode               |
+| '    |                     | LIGHT mode              |
+| ,    | SETTINGS            |                         |
+| .    |                     |                         |
+| /    | tgl COMMENT         |                         |
+| ~    |                     |                         |
+| LT   |                     |                         |
+| RT   |                     |                         |
+| UP   |                     |                         |
+| DN   |                     |                         |
+| ENTR | tgl CHECKBOX        | show LINK in pane       |
+| INS  |                     |                         |
+| DEL  |                     |                         |
+| HOME |                     |                         |
+| END  |                     |                         |
+| PgUp |                     |                         |
+| PgDn |                     |                         |
+| 1    | xxxx                | MERGE one window        |
+| 2    |                     | SPLIT vertically into 2 |
+| 3    |                     | SPLIT horizontally      |
+| 4    |                     |                         |
+| 5    |                     |                         |
+| 6    |                     |                         |
+| 7    |                     |                         |
+| 8    |                     |                         |
+| 9    |                     |                         |
+| 0    |                     |                         |
+| F1   |                     |                         |
+| F2   |                     |                         |
+| F3   |                     |                         |
+| F4   |                     |                         |
+| F5   |                     | PREV daily note         |
+| F6   |                     | TODAY'S daily note      |
+| F7   |                     | NEXT daily note         |
+| F8   |                     |                         |
+| F9   |                     |                         |
+| F10  |                     |                         |
+| F11  |                     |                         |
+| F12  |                     |                         |
+|      |                     |                         |
+

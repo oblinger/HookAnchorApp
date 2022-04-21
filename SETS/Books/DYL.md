@@ -168,6 +168,151 @@ Burnett, Bill; Evans, Dave. Designing Your Life (p. 40). Knopf Doubleday Publish
 	 - SMART PEOPLE:  It should provide daily interactions with smart folks.
 
 ### - LIFE VIEW
+### - ABOUT ME
+- **IDEAS** -- I love to focus on the technical: the big idea, and technical details
+- **THE WAY I WORK**
+	- **ALLEY CAT** - Like working on several different things, and jumping between then as my interest shifts.
+	- **BURSTY** - I can execute well as a burst, but not continuous
+	 	(except SW or idea coding)
+	- **REACTIVE** - Work easiest when task triggers are presented from the outside.
+	- **COMMITMENT AVERSE** -- I systematically dodge certain commitment steps
+	- **WORKY** - I am always "working" its my mental mode
+	- **LIMIT** - seem to have daily limit (3h), not effective after (for work I don't love)
+- AREAS OF ATTRACTION
+	- SOCIAL *SYSTEMS* - 
+	- SYSTEMATIC -- idea is a systems idea relating to how things work
+	- BULLET -- idea is single "silver bullet" for some acknowledged problem
+
+
+
+Quick Observations:
+- CAT -- I jump from idea to idea
+- VARIABLE -- impt stuff per day, can vary from near zero to good
+- SWEET SPOT
+  SWEET SPOT -- I dive to this place often
+- technical idea
+- "of the mind" -- just pencil and paper, no research, etc.
+- MINE -- I feel the idea is one other's don't see
+  
+  AVERSION
+- HOP -- Love pushing deep into an idea, but after certain
+- Research
+- Execution
+- Commitment
+- PRAGMATIC SHORT TERM
+- COMMITMENT AVERSE at commitment stage
+  
+  
+  PRETENDING -- pretending I might do a thing, but knowing in heart I wont
+  With JASON flirted, but was never going to say yes, but spent time pretending
+  
+### - DAN WORK - The kind of conceptual work that drives me
+
+
+There is a certain kind of work (lets call in DAN-WORK) and this kind of work is so compelling I tend to work on it even when it is not rational to do so; in to the night; sometimes at expense of nearly anything else.
+
+DAN-WORK = TRANSFORMATIVE, CLEVER/HARD, INTERNALIZED, CONCEPTUAL PROBLEM-SOLVING and MENTORING
+
+
+CLEVER/HARD
+- HARD WORK CAN BE BORING -- work that is just hard, like solving some huge calculus problem is just drudgery.  There are no insights to be found or tricks to play then it is exhausting and not very rewarding
+- CLEVER WORK IS TOO RANDOM/QUICK -- work that is just one clever trick has no staying power, in one flash it is over, or you have no ideas and make no progress forever.
+- CLEVER + HARD -- now we are TALKING.  I can play with the right kind of mathematical puzzle for weeks if it is the right shape.
+  
+  
+  TRANSFORMATIVE
+- LIFE MISSION NEEDS CONSEQUENCE -- even if I can play with a hard+clever problem for a long time, it feels hollow.  like binge-watching six seasons of game of thrones in one weekend... it was kinda fun a the time, but also anxiety provoking because you are say...  why the fuck am I doing this?
+- A TRANSFORMATION STORY PROVIDES THE ANSWER -- when I can construct a story about how solving this problem will somehow transform things for some group for the better in a significant way, then have no such hollow feeling... it it jet-fuel to work even later into the night!
+- SOCIAL -- One common and very satifying way for work to be transformative is for the work to be social in nature, figuring out how society can work better is inherently transformative and hard (if it were easy it would already be done!)
+  
+  
+  INTERNALIZED
+- NO PAPER NEEDED -- the very best problems are ones that can be considered for days or weeks without even needing a piece of paper -- just pure thinking.
+- LESS LIBRARY RESEARCH -- I am ok needing to do some background learning in order to attack a problem.  Still this learning, unless it involves learning clever insights is a bit of needed drudgery work, it is not the main course.
+- LESS COLLABORATIVE -- I am ok problem solving as part of a team, but I like moving fast, and I like the thrill of the solving itself, thus collaboration can be a bit of a speed bump for all of that.  It is ok, and can even be energizing when my partner is complementary and sharp/fast.
+  
+  
+  CONCEPTUAL PROBLEM SOLVING
+- PROBLEM FRAMING -- Often the most unconstrained (and thus hardest/cleverest) part of solving a problem is properly framing it in a way that it CAN be solved in a good way.  This is very satisfying work.
+- EDGE OF FORMAL AND INFORMAL -- Often the at the fringes of what is known and what is properly framed is where the exciting action is at.  It is close enough in that one might make the transformative difference by properly framing the work, but it is not so far in that the proper framing is easily obtained.  Often this work is called "conceptualizing" a problem.  I freaking love it!
+  
+  
+  MENTORING
+- Advising
+- Vision --
+- Details & Tracking & Plodding -- not so much
+  
+  
+  EXAMPLES OF DAN-WORK:
+- BLOCKCHAIN - Building a POS block chain as robust as today's POW chains are
+- ELDERBOT - Building an automated human-transport robot for the elderly
+- TEAMSAVER - Identifying and overcoming limitations that make remote work less effective than in-person work
+- ENGINES-OF-CONTROL - Building a conscious computer
+- NANO-SCALE-PROGRAMMABLE-MATTER - How to build programmed 3D-nano structures
+- AEOLUS-ROBOT-ARCHITECTURE - Designing the high-level APIs and architecture
+  
+  
+  
+  NEGATIVE EXAMPLES
+- BORING DETAILS - I desperately want to hand off
+- POLISHING - Polishing text describing an idea
+- MEETINGS - Being in meetings once all the hard stuff is resolved
+- TRACKING - Tracking work being done
+  
+  
+  
+  WHAT MIGHT FIT ME?
+- BUSY BEE - helping with the framing & large scale solutioning across many hard tasks.
+  
+  
+  _
+#### . NINA WORK
+
+HARD - Trying to prove theorems about privacy is very hard.
+DELEGATE - Working with student means they do bulk of the tedious writeup.
+EXPERT - Working near experts means that my work is efficient
+
+_
+#### . Conceptual Work
+
+I am positively driven to think about
+- the detailed conceptualization of a clever solution to a big-impact problem.
+- Love just thinking, 
+  
+  
+  DONT LOVE
+- Don't love doing the library research
+- I dread coordinating it.
+- I resist doing it on a schedule, or for many hours at a time.
+- I dread working on more boring parts.
+- I dread working on parts where cleverness is not needed.
+  
+  _
+#### . Technical center
+Clear that my work must have a strongly technical center.
+Possible centers:
+- Applied ML reseracher
+- Robotics project lead
+- SOLVE -- dig into range of disparate problems and apply deep tech to them
+- MENTOR -- Work as mentor to direct technical work to be done
+  _
+#### . Procrastination
+- As soon as I work, I resort to procrastination by 
+	organizing / processing easy stuff
+- Emails, Medium/Blogs
+- Take Nap (I physically feel sleepy in a quick way)
+  _
+#### . Uniform/Marcel
+- IMPORTANCE -- feeling that the idea has potential for large impact
+- UNIQUE -- feeling that idea that is not generally known, or solved
+- PURE THOUGHT -- Struggling to understand/solve using pure thought
+- 
+- CLEVER SOLUTION --
+- EFFICIENT SYSTEM -- love thinking about how to make systems efficient
+  
+  _
+
+
 
 ## = (3) INSIGHTS LOG =
 AEIOU: Activities; Environments; Interactions; Objects; Users
@@ -212,6 +357,7 @@ NEAR MISS -- Can perform well, but not my passion, nor place of excellence
 ## = (3) ACTIVITY LOG = 
 >> How: Engaged; Energized
 
+### 2022-04-19  Design - long distance commuter train, package delivery systems, 
 ### 2022-04-14  OBSIDIAN COMPLETIST 9&6
 
 
@@ -408,37 +554,48 @@ _
 ## = (5) ODYSSEY PLANS = Three Near Futures
 ### -- DASHBOARD --
 
-| Odyssey | Resources Needed | Likability              | Confidence | Coherence | Considerations |
-| ------- | ---------------- | ----------------------- | ---------- | --------- | -------------- |
-| FAANG   | Yes              | 70-80% Ok - pretty good | 70%        |           | Mgr, Sci       |
-| VC GUY  | Need 5y          |                         | 50%        |           |                |
-| MY CO   | Probably         |                         | 20%        |           |                |
-|         |                  |                         |            |           |                |
+| Odyssey | Resources Needed | Likability              | Confidence | Coherence | Considerations | ......................................................................................................... |
+| ------- | ---------------- | ----------------------- | ---------- | --------- | -------------- | --------------------------------------------------------------------------------------------------------- |
+| FAANG   | Yes              | 70-80% Ok - pretty good | 70%        |           | Mgr, Sci       | Data Scientist, Manager                                                                                                          |
+| VC GUY  | Need 5y          |                         | 50%        |           |                |                                                                                                           |
+| MY CO   | Probably         |                         | 20%        |           |                |                                                                                                           |
+|         |                  |                         |            |           |                |                                                                                                           |
+|         |                  |                         |            |           |                |                                                                                                           |
+
+OTHER PATHS:
+- CTO
+- CONSULTANT
+- WEB3
 
 
 -  6 Word Title; Graphical timeline; Questions option is asking; 
 
 Considerations: Geography, Learning, Impacts/Results, Role
 
-### - FAANG GUY - BigCo Project Leader & Technology Driver
-| Time   | Activity         | Notes                            |
-| ------ | ---------------- | -------------------------------- |
-| Year 1 | Interviewing     | Learning Mgt, ML, interview prep |
-|        | Intense Learning | Slammed at work                  |
-| Year 2 | Groove           | Getting my groove                |
-| Year 3 | SIDE GIG         | Just starting my side gig        |
-| Year 4 |                  |                                  |
-| Year 5 |                  |                                  |
+### - FAANG GUY 
+- BigCo Project Leader & Technology Driver
+| <div style="width:190px">property</div> Time | Activity         | Notes                            |
+| -------------------------------------------- | ---------------- | -------------------------------- |
+| Year 1                                       | Interviewing     | Learning Mgt, ML, interview prep |
+|                                              | Intense Learning | Slammed at work                  |
+| Year 2                                       | Groove           | Getting my groove                |
+| Year 3                                       | SIDE GIG         | Just starting my side gig        |
+| Year 4                                       |                  |                                  |
+| Year 5                                       |                  |                                  |
+
 
 QUESTIONS:
-1.  APPLIED SCIENTIST  --  Am I in range to be an applied scientist?  Would I want that?
-2.  
+1.  DATA SCIENTIST  --  Am I in range to be an applied/data scientist?  
+2.  DAY TO DAY -- What are the day to day activities of a manager?  of a data scientist?
+
 
 ATTRIBUTES:
 - Bit of free time.
 - Lower risk.
 - Making rich company richer.  eh, ok.  need a side thing in all cases to make a difference
-- 
+
+
+### - ML Researcher
 
 
 ### - VC GUY - Vision spouting, Meeting man, Deal closer

@@ -3,8 +3,8 @@
 # LOGS -- Dated, Typed, H3 Entries
 - [[DATED]]         '...'      - Dated but untyped entries
 - [[MEET/MEETING|MEETING]]    'm...'   -  Meeting notes. Any kind of person to person interaction
-- [[ALL TXT|TXT]]              't...'     -  Textual message written and sent by me
-- [[NSTR Letters]]         '...'       -  Formal correspondence 
+- [[ALL TXT|TXT]]              't...'     -  Textual message written and sent by me   (Meta [[TXT]])
+- [[Letters]]         '...'       -  Formal correspondence 
 - REF              'e...'     - Reference Materials/Links (maybe this should be 'e' for external authored by others)
 
 - [[NOTE]]           'n...'    - Single 'note' created by me, often associated with some larger project

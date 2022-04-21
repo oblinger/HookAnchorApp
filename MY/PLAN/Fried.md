@@ -1,3 +1,7 @@
+
+  
+- [ ] https://www.marcusbuckingham.com/gift-of-standout/
+- [ ] buy train tracks and new train for eli
 - [ ] Social Heartbeat - Establish regular time and list of social connections
 - [ ] Buy Dad's mac
 
@@ -9,6 +13,7 @@
 - [ ] Organize the plan pages
 - [ ] get outliner to work; get wheel click toggle folding
 - [ ] Fling 1  # Should extend fling to numbered list positions.  
+- [ ] KICK window into position 1, 2, 3 and back
 - [ ] Add quick entry using an input box
 - [ ] shutdown script.  Fix so it does not kill w/o saving.  why does it use different shutdown methods in the same script
 - [ ] KM # refactor KM to scan for both kinds of link types, AND to produce both types depending on the context.

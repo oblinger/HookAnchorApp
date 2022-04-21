@@ -48,6 +48,53 @@ _
 	For temp >= 38.5C
 - Vitamin D3  10 mcg/mL  (400 unit/mL)
 _
+# TOPICS
+## = TEACHING
+## - Good manners
+listen during a story
+turn the pages of a book
+properly blow their nose
+cover a cough
+open or close a door
+walk inside
+greet a friend or visitor (or for older child, answer the phone)
+say goodbye
+wait for something
+observe someone's work
+pull out a chair
+carry around furniture
+walk with glass
+handle sibling conflict
+apologize
+use basic manners "please," "thank you," "excuse me"
+acknowledging something that has been said to them
+return something to its proper place
+touch a baby
+brush their teeth
+ask someone to play with them
+decline an invitation to play
+ask to play with someone else
+This list could almost be endless!
+
+Since this is a different way of parenting for most people it can take some time to get used to
+it. Here are some tips to keep in mind:
+1. These don't happen in a the moment. Choose a neutral time (not a time when your child is
+exhibiting the undesired behavior) when everyone is calm. If you see something that needs to
+change, use that time to observe and make a mental note to do a grace and courtesy lesson.
+2.Keep your own expectations in check. Kids may need more than one lesson on the same
+topic before they understand it. Avoid the temptation to just think your kids aren't listening or
+are being naughty if they don't follow or understand these unsaid social expectations or rules.
+3. Make it simple. The younger the child, the simpler the lesson should be. There's no one
+specific script you need to follow, just adapt to your child's level.
+4.Keep it fun and positive. Make a lesson about connection not correction. Avoid judgment,
+don't bring up past behavior. Use humor, silliness and love to make your point.
+5. Practice, practice, practice. These lessons will take time and patience. Maybe you give the
+lesson a couple times. Maybe you practice a new skill together outside of the lesson for a
+while. Maybe you're playing with dolls and they practice the skill! Just remember this isn't a
+one-and-done thing.
+6.Model. Practice what you preach! If you're asking your kids to hold a plate with two hands
+and walk slowly to the table do it yourself. If you're asking your kids to talk in the house
+then avoid yelling. They are absorbing your everyday behavior as much as anything else.
 # INFO
 ## === DATES ===
 - 2022-04-02 - First full poop in his living room toilet.  (after restarting his training; Grandma got it partly on many months before)

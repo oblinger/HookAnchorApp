@@ -12,8 +12,8 @@
 | 2022-04-06 | [[NSTR Letters]]                               | John Cameron thank you                                                                    |
 | 2022-04-05 | [[Campaigns]]                             | FAANG ML  [[FAANG#2022-04-05 - topics - Ask FAANG folks about hiring|topics]].            |
 | 2022-04-05 | [[Campaigns]]                             | VC recruiters / Headhunter List   [[__BeVC__#m2022-04-06 Recruiter topics|TOPICS]]        |
-| 2022-04-05 | [[Calls]]                                 | VC List                                                                                   |
-| 2022-04-05 | [[Calls]]                                 | old list                                                                                  |
+| 2022-04-05 | [[../NSTR/NSTR CALLS]]                                 | VC List                                                                                   |
+| 2022-04-05 | [[../NSTR/NSTR CALLS]]                                 | old list                                                                                  |
 | 2022-04-05 | [[FAANG]]                                 | topics - Ask FAANG folks about hiring                                                     |
 | 2022-04-04 | [[ToBuy]]                                 | Crisper                                                                                   |
 | 2022-04-03 | [[Bache]]                                 | Bartholome Flores - Restraining order 220-052-081                                         |
@@ -122,12 +122,12 @@
 | 2021-10-01 | [[Journal Old]]                           | -- SITUATION SUMMARY --                                                                   |
 | 2021-09-28 | [[Coaches]]                               | Career Counciling                                                                         |
 | 2021-09-23 | [[Resume]]                                | Resume Experience                                                                         |
-| 2021-09-23 | [[Calls]]                                 | WHOM IN MY NETWORK TO ASK                                                                 |
+| 2021-09-23 | [[../NSTR/NSTR CALLS]]                                 | WHOM IN MY NETWORK TO ASK                                                                 |
 | 2021-09-23 | [[Journal Old]]                           | WHOM IN MY NETWORK TO ASK                                                                 |
 | 2021-09-22 | [[nj22_contents]]                         | >>> WP    --  ACTIVITIES <<<                                                              |
 | 2021-09-22 | [[Resume]]                                | RESUME OBJECTIVE                                                                          |
 | 2021-09-22 | [[Journal Old]]                           | >>> WP    -- NEXT JOB ACTIVITIES <<<                                                      |
-| 2021-09-21 | [[Calls]]                                 | QUESTIONS TO ASK                                                                          |
+| 2021-09-21 | [[../NSTR/NSTR CALLS]]                                 | QUESTIONS TO ASK                                                                          |
 | 2021-09-21 | [[Journal Old]]                           | QUESTIONS TO ASK                                                                          |
 | 2021-09-21 | [[Journal Old]]                           | SUMMARY OF WORK THAT FITS                                                                 |
 | 2021-09-21 | [[DYL]]                                   | SUMMARY OF WORK THAT FITS                                                                 |

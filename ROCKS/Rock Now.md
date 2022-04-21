@@ -16,6 +16,7 @@
 
 ## = [[BeFAANG|BeFAANG]] =
 - [ ] Speak with as many FAANG research light as I can 
+- [ ] [[DYL]] odyssey
 
 ## = [[Learning|Learning]] =
 - [ ] Complete Coursera Deep Learning Course
@@ -25,5 +26,6 @@
 - [ ] ask XXXX about fonts
 - [ ] Write announcement email (maybe more)
 
+## = [[Ready]] = 
 
 

@@ -1,3 +1,19 @@
+
+
+### 2022-04-11
+- [ ] [[DYL]] Dan one-pager (from quick pass on earlier chapters)
+- [ ] [[DYL]] Build 3 Odyssey plans. [LOTS on one]
+- [x] [[DYL]] Pick leading odyssey one 
+- [ ] Schedule FAANG Engineer calls  (bit 'o FAANG planning)
+- [x] Email Anket guys [Emailed Anket]
+- [ ] [Yearbook](__Yearbook__.md) 
+	- [x] Get QL UX person ASAP
+	- [x] Writeup announcement email
+	- [ ] Get first draft of materials to provide parents
+
+
+
+
 ### 2022-04-03
 - [x] [[DYL]] - try to do a chapter per day
 - [ ] Plan calling & FAANG investigations

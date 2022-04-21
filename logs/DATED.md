@@ -2,6 +2,7 @@
 
 | Date       | File                                  | Notes                                                                                     |
 | ---------- | ------------------------------------- | ----------------------------------------------------------------------------------------- |
+| 2022-04-19 | [[DYL]]                                   | Design - long distance commuter train, package delivery systems,                          |
 | 2022-04-14 | [[DYL]]                                   | OBSIDIAN COMPLETIST 9&6                                                                   |
 | 2022-04-11 | [[MED]]                                   | Pulmonologist visit                                                                       |
 | 2022-04-11 | [[DYL]]                                   | Big city birthday party                                                                   |
@@ -12,8 +13,6 @@
 | 2022-04-06 | [[Letters]]                               | John Cameron thank you                                                                    |
 | 2022-04-05 | [[Campaigns]]                             | FAANG ML  [[FAANG#2022-04-05 - topics - Ask FAANG folks about hiring|topics]].            |
 | 2022-04-05 | [[Campaigns]]                             | VC recruiters / Headhunter List   [[__BeVC__#m2022-04-06 Recruiter topics|TOPICS]]        |
-| 2022-04-05 | [[Calls]]                                 | VC List                                                                                   |
-| 2022-04-05 | [[Calls]]                                 | old list                                                                                  |
 | 2022-04-05 | [[FAANG]]                                 | topics - Ask FAANG folks about hiring                                                     |
 | 2022-04-04 | [[ToBuy]]                                 | Crisper                                                                                   |
 | 2022-04-03 | [[Bache]]                                 | Bartholome Flores - Restraining order 220-052-081                                         |
@@ -25,7 +24,7 @@
 | 2022-03-21 | [[Weekly]]                                |                                                                                           |
 | 2022-03-21 | [[Phone]]                                 | Home Depot - replace new GE microwave                                                     |
 | 2022-03-19 | [[Crunchbase]]                            | === AMY SEARCH STRATEGY ===                                                               |
-| 2022-03-19 | [[Areas]]                                 | VC Areas                                                                                  |
+| 2022-03-19 | [[Paths]]                                 | VC Areas                                                                                  |
 | 2022-03-19 | [[Uniting America]]                       | Uniting America On The Issues Of Racial Fairness and Racial Disparity                     |
 | 2022-03-18 | [[Uniting America]]                       | letter to steve                                                                           |
 | 2022-03-18 | [[Campaigns]]                             | Aniket Recruiters                                                                         |
@@ -98,7 +97,6 @@
 | 2021-11-25 | [[Paths]]                                 | PATHS MISSION                                                                             |
 | 2021-11-25 | [[Journal Old]]                           | PATHS TABLE SUMMARY                                                                       |
 | 2021-11-25 | [[Journal Old]]                           | PATHS MISSION                                                                             |
-| 2021-11-21 | [[Paths]]                                 | NINA WORK                                                                                 |
 | 2021-11-21 | [[Journal Old]]                           | NINA WORK                                                                                 |
 | 2021-11-17 | [[Resume]]                                | Linked-in 'about' examples                                                                |
 | 2021-11-14 | [[Paths]]                                 | Ikigai - my "passion" - IDEAS                                                             |
@@ -122,12 +120,12 @@
 | 2021-10-01 | [[Journal Old]]                           | -- SITUATION SUMMARY --                                                                   |
 | 2021-09-28 | [[Coaches]]                               | Career Counciling                                                                         |
 | 2021-09-23 | [[Resume]]                                | Resume Experience                                                                         |
-| 2021-09-23 | [[Calls]]                                 | WHOM IN MY NETWORK TO ASK                                                                 |
+| 2021-09-23 | [[Comms]]                                 | WHOM IN MY NETWORK TO ASK                                                                 |
 | 2021-09-23 | [[Journal Old]]                           | WHOM IN MY NETWORK TO ASK                                                                 |
 | 2021-09-22 | [[nj22_contents]]                         | >>> WP    --  ACTIVITIES <<<                                                              |
 | 2021-09-22 | [[Resume]]                                | RESUME OBJECTIVE                                                                          |
 | 2021-09-22 | [[Journal Old]]                           | >>> WP    -- NEXT JOB ACTIVITIES <<<                                                      |
-| 2021-09-21 | [[Calls]]                                 | QUESTIONS TO ASK                                                                          |
+| 2021-09-21 | [[Comms]]                                 | QUESTIONS TO ASK                                                                          |
 | 2021-09-21 | [[Journal Old]]                           | QUESTIONS TO ASK                                                                          |
 | 2021-09-21 | [[Journal Old]]                           | SUMMARY OF WORK THAT FITS                                                                 |
 | 2021-09-21 | [[DYL]]                                   | SUMMARY OF WORK THAT FITS                                                                 |

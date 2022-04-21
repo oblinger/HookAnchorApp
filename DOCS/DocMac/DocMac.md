@@ -1,12 +1,12 @@
-# ORIG
+
+
+## = INFO
+### - Links
+
   [KBD_Shortcuts](__KBD%20Shortcuts__.md)
-  [__DocMac__](__DocMac__.md)
-
-# APPS
+  
 
 
-# TOP 
-## = NOTES =
 ### _
 Jupiter Notebook:  https://medium.com/@blessedmarcel1/how-to-install-jupyter-notebook-on-mac-using-homebrew-528c39fd530f
 
@@ -1484,6 +1484,12 @@ Removed /System/Library/Frameworks/AddressBook.framework/Versions/A/Helpers/Addr
 ### GOOGLE DRIVE -- google drive cannot continue syncing because your google drive folder is missing
 ~-- Select google drive icon.  select error message.  click locate.  find folder.
 ## = xx HOW-TO   xx how to   xx howto =
+### - AIRPOD MAX - switching
+	#space -> pref -> Bluetooth -> Airpod Max -> !Options -> off "Automatic Head Detection" 
+
+brew install audioswitcher_osx
+
+
 ### - BLUETOOTH - Prevent auto device switching to MacOS
 
    $ sudo defaults write /Library/Preferences/com.apple.Bluetooth.plist DontPageAudioDevices 1 

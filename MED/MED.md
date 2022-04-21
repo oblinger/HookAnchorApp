@@ -1,5 +1,3 @@
-  [Vitamins](Vitamins.md)
-  [Vitamins](__Vitamins__.md) 
 
 # TODO 
 - [ ] Daily 7-min exercise
@@ -53,11 +51,15 @@
 
 
 
-# TOPICS 
+# TOPICS
+## = ASK
+- My penis bends to the side, but it did not used to do this.
+
 ## = SUB NOTES =
 
   [MED_Heart](MED_Heart.md)  [MED_Food](MED_Food.md)  [MED_Psoriasis](MED_Psoriasis.md)  [MED_Vaccinations](MED_Vaccinations.md)  [MED_General](MED_General.md)  [MED_History](MED_History.md)  [MED_Doctors](MED_Doctors.md)  [MED_Checkups](MED_Checkups.md)  [Medifast](Medifast.md)  [MED_Journal](MED_Journal.md)  [MED_Sleep](MED_Sleep.md)  [MED_Weight](MED_Weight.md)   [MED_Tests](MED_Tests.md)  [MED_Insurance](MED_Insurance.md)  [MED_Pills](MED_Pills.md)
   [MED_Vision](MED_Vision.md)
+  [MED-Vitamins](MED-Vitamins.md)
 
 ## = HEART =
 - CPMC - Heart Disease Reversal Nutrition Program: CPMC 415-353-4278
@@ -86,7 +88,11 @@
   if framingham calculator.  is above 10% in next ten years
   Good quality vitamin
 - vitamin D.
-# LOG 
+# LOG
+### t2022-04-20  COVID - Test Accuracy as function of time since exposure
+ [https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7240870/](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7240870/)  
+  [https://www.gavi.org/vaccineswork/false-negative-how-long-does-it-take-coronavirus-become-detectable-pcr](https://www.gavi.org/vaccineswork/false-negative-how-long-does-it-take-coronavirus-become-detectable-pcr)  
+  
 ### 2022-04-11  - Pulmonologist visit
 
 Three likely causes for my cough:

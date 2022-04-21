@@ -1,3 +1,7 @@
+- [ ] - [ ] designing life - VC story
+- [x] Get meeting with Brian.
+- [x] intro hatton
+- [x] Talk with Phil about Ross Hatton
 - X renamed t...  to e...
 [x] KM # extend the mYY-MM-DD to other forms
 - [ ]

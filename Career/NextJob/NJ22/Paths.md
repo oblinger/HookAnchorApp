@@ -1,112 +1,6 @@
  [[NJ22|NJ22]]  
 
 
-# # BIG 
-## = DAN-WORK - The kind of conceptual work that drives me
-### _
-
-There is a certain kind of work (lets call in DAN-WORK) and this kind of work is so compelling I tend to work on it even when it is not rational to do so; in to the night; sometimes at expense of nearly anything else.
-
-DAN-WORK = TRANSFORMATIVE, CLEVER/HARD, INTERNALIZED, CONCEPTUAL PROBLEM-SOLVING and MENTORING
-
-
-CLEVER/HARD
-- HARD WORK CAN BE BORING -- work that is just hard, like solving some huge calculus problem is just drudgery.  There are no insights to be found or tricks to play then it is exhausting and not very rewarding
-- CLEVER WORK IS TOO RANDOM/QUICK -- work that is just one clever trick has no staying power, in one flash it is over, or you have no ideas and make no progress forever.
-- CLEVER + HARD -- now we are TALKING.  I can play with the right kind of mathematical puzzle for weeks if it is the right shape.
-  
-  
-  TRANSFORMATIVE
-- LIFE MISSION NEEDS CONSEQUENCE -- even if I can play with a hard+clever problem for a long time, it feels hollow.  like binge-watching six seasons of game of thrones in one weekend... it was kinda fun a the time, but also anxiety provoking because you are say...  why the fuck am I doing this?
-- A TRANSFORMATION STORY PROVIDES THE ANSWER -- when I can construct a story about how solving this problem will somehow transform things for some group for the better in a significant way, then have no such hollow feeling... it it jet-fuel to work even later into the night!
-- SOCIAL -- One common and very satifying way for work to be transformative is for the work to be social in nature, figuring out how society can work better is inherently transformative and hard (if it were easy it would already be done!)
-  
-  
-  INTERNALIZED
-- NO PAPER NEEDED -- the very best problems are ones that can be considered for days or weeks without even needing a piece of paper -- just pure thinking.
-- LESS LIBRARY RESEARCH -- I am ok needing to do some background learning in order to attack a problem.  Still this learning, unless it involves learning clever insights is a bit of needed drudgery work, it is not the main course.
-- LESS COLLABORATIVE -- I am ok problem solving as part of a team, but I like moving fast, and I like the thrill of the solving itself, thus collaboration can be a bit of a speed bump for all of that.  It is ok, and can even be energizing when my partner is complementary and sharp/fast.
-  
-  
-  CONCEPTUAL PROBLEM SOLVING
-- PROBLEM FRAMING -- Often the most unconstrained (and thus hardest/cleverest) part of solving a problem is properly framing it in a way that it CAN be solved in a good way.  This is very satisfying work.
-- EDGE OF FORMAL AND INFORMAL -- Often the at the fringes of what is known and what is properly framed is where the exciting action is at.  It is close enough in that one might make the transformative difference by properly framing the work, but it is not so far in that the proper framing is easily obtained.  Often this work is called "conceptualizing" a problem.  I freaking love it!
-  
-  
-  MENTORING
-- Advising
-- Vision --
-- Details & Tracking & Plodding -- not so much
-  
-  
-  EXAMPLES OF DAN-WORK:
-- BLOCKCHAIN - Building a POS block chain as robust as today's POW chains are
-- ELDERBOT - Building an automated human-transport robot for the elderly
-- TEAMSAVER - Identifying and overcoming limitations that make remote work less effective than in-person work
-- ENGINES-OF-CONTROL - Building a conscious computer
-- NANO-SCALE-PROGRAMMABLE-MATTER - How to build programmed 3D-nano structures
-- AEOLUS-ROBOT-ARCHITECTURE - Designing the high-level APIs and architecture
-  
-  
-  
-  NEGATIVE EXAMPLES
-- BORING DETAILS - I desperately want to hand off
-- POLISHING - Polishing text describing an idea
-- MEETINGS - Being in meetings once all the hard stuff is resolved
-- TRACKING - Tracking work being done
-  
-  
-  
-  WHAT MIGHT FIT ME?
-- BUSY BEE - helping with the framing & large scale solutioning across many hard tasks.
-  
-  
-  _
-### 2021-11-21 - NINA WORK
-
-HARD - Trying to prove theorems about privacy is very hard.
-DELEGATE - Working with student means they do bulk of the tedious writeup.
-EXPERT - Working near experts means that my work is efficient
-
-_
-### - Conceptual Work
-
-I am positively driven to think about
-- the detailed conceptualization of a clever solution to a big-impact problem.
-- Love just thinking, 
-  
-  
-  DONT LOVE
-- Don't love doing the library research
-- I dread coordinating it.
-- I resist doing it on a schedule, or for many hours at a time.
-- I dread working on more boring parts.
-- I dread working on parts where cleverness is not needed.
-  
-  _
-### - Technical center
-Clear that my work must have a strongly technical center.
-Possible centers:
-- Applied ML reseracher
-- Robotics project lead
-- SOLVE -- dig into range of disparate problems and apply deep tech to them
-- MENTOR -- Work as mentor to direct technical work to be done
-  _
-### - Procrastination
-- As soon as I work, I resort to procrastination by 
-	organizing / processing easy stuff
-- Emails, Medium/Blogs
-- Take Nap (I physically feel sleepy in a quick way)
-  _
-### - Uniform/Marcel
-- IMPORTANCE -- feeling that the idea has potential for large impact
-- UNIQUE -- feeling that idea that is not generally known, or solved
-- PURE THOUGHT -- Struggling to understand/solve using pure thought
-- 
-- CLEVER SOLUTION --
-- EFFICIENT SYSTEM -- love thinking about how to make systems efficient
-  
-  _
 
 # # PATHS  
 ## alternatives
@@ -915,3 +809,10 @@ CORP-KM:
 SUSTAIN: Jason, TeamSaver, 
 
 MISSION?
+### 2022-03-19 - VC Areas
+Possible Specialization for VC Role
+
+- ML - deep strength & reputation
+- **AI** - cohesive area of understanding; too broad to be a deep specialization
+- **Robotics** - strong reputation in this area; less knowledge
+- WEB3 - its a reach goal

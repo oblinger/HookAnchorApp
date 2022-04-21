@@ -1,54 +1,28 @@
 
- [FOLDER](/Users/oblinger/ob/topics/CRM/__CRM__.md)   [[Mentors|Mentors]]  [[Campaigns|Campaigns]] 
-### 2022-04-05  -  VC List
+## = ACTIVE
+
+- Anket: 2
+- FAANG: Vit, Davis
+
+## = Rotation
+- Attilla, Ben Wild
 
 
+### - SLOWER 
+- Kryzsiek, Greg Hornby, 
 
+## = LINKS
+    [[Mentors|Mentors]]  [[Campaigns|Campaigns]] 
+ 
 
-
-
-
-
-
-
-### 2022-04-05  - old list
-
-Attilla
-1.  Greg Hornby
-2.  Gemma from OSARO (thru Hong)
-3.  Yearbook
-4.  Frank change Crunch Base
-  
-buy masks, cake flour
-
-
-## 2021-09-23 - WHOM IN MY NETWORK TO ASK
+# LOG
+### 2021-09-23 - WHOM IN MY NETWORK TO ASK
 
 To CALL:	 [Juan Huerta](https://www.linkedin.com/in/juanmhuerta/), [Rafah Hosn](https://www.linkedin.com/in/rafahhosn/), [Ron Brachman](https://www.linkedin.com/in/ron-brachman-9195764/), 
 Later:      Melanie Dumas, Theo Enns, [Doug Gordin](https://www.linkedin.com/in/douglas-gordin-69848/),
 To Call:  	Dennis DeCoste, Foster Provost, Chris Ramming, Ronny Kohavi, 
 Maybe:		Joe hellerstein, John Turek, Steve Chien, Daniel Haddick?, Drew Dean
 	Herb Derby, ?Manish Gupta
-
-#### 2021-09-21 - QUESTIONS TO ASK
-**QUESTIONS**
-- **VP-FIRST** -- VP verses FAANG	(VP at 200M series-B).
-- **GAP-OK** -- Gap w. consulting
-- **DESIRED ACTIVITIES** --
-	-
-- **SELF FRAMING** -- Framing of self
-	- Applied-ML-Robotics guy
-	- Objective Statement
-- **DESIRED ROLE**
-	- Job titles sought
-- **KEY KNOWLEDGE** -- Key knowlege to have
-	- Jupiter(ML-data-algo-slinging); ML-alg verbal; Management info
-	  
-	  PATH: 		Series-B VP;  Directly to Google;  1-year gap w. consulting
-	  Framing:  	Applied-ML guy, Project Leader(Robotics/ML)
-	  Job Title:	Tech-PM, DataScientist, TechLead/Manager
-	  
-	  _
 
 -Christina Fonseca
 Aniket
@@ -72,6 +46,28 @@ MAYBES:	 Chris Ramming, Ronny Kohavi, Joe hellerstein, John Turek,
 		 Foster Provost, Jack Porter
 
 
+### 2021-09-21 - QUESTIONS TO ASK
+**QUESTIONS**
+- **VP-FIRST** -- VP verses FAANG	(VP at 200M series-B).
+- **GAP-OK** -- Gap w. consulting
+- **DESIRED ACTIVITIES** --
+	-
+- **SELF FRAMING** -- Framing of self
+	- Applied-ML-Robotics guy
+	- Objective Statement
+- **DESIRED ROLE**
+	- Job titles sought
+- **KEY KNOWLEDGE** -- Key knowlege to have
+	- Jupiter(ML-data-algo-slinging); ML-alg verbal; Management info
+	  
+	  PATH: 		Series-B VP;  Directly to Google;  1-year gap w. consulting
+	  Framing:  	Applied-ML guy, Project Leader(Robotics/ML)
+	  Job Title:	Tech-PM, DataScientist, TechLead/Manager
+	  
+	  _
+
+
+
 CONSIDER
 — https://www.battery.com/talent-recruiting/
 — https://www.linkedin.com/in/garrettbiel/
@@ -82,11 +78,7 @@ Find other fraction CTOs
 PEOPLE
 Jack Porter
 Tribe Guy
-Ben Wild
 
-
-— I should have mentors... but do not.
-— Get list of 5 mentors and speak with them quarterly
 
 
 

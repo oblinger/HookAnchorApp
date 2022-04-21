@@ -1,5 +1,4 @@
-  [Calls](Calls.md)
-= [[TOP]]
+< [[TOP]]
 
 ACTIVITY PAGES
 - [[Quick]] - 
@@ -12,13 +11,13 @@ ACTIVITY PAGES
 - [[Archive]] - Place to retire planning items
 
 SPECIALTY ACTIVITY PAGES
+- [[Comms]] - 
 - [[Fried]] - Easy, Fun tasks to do when taking a break from highest value work
 - [[Habits]] - Current and past habit goals
 - [[Hack]] - Hacking task (related to fried)
 - [[Repeat]] - 
 
 SOCIAL ACTIVITIES PAGES
-- [[Calls]] -
 - [[Social]] - 
 
 
@@ -42,7 +41,8 @@ UNSORTED PLANNING PAGES
 
 
 - XXX
-
+  [Comms](Comms.md)
+- 
 
   [Quick](Quick.md)
   [Quarterly](Quarterly.md)  [Archive](Archive.md)  [Work](Work.md)  [Full](Full.md)  [Self](Self.md)  [Later](Later.md)  [Repeat](Repeat.md)  [Ping](Ping.md)  [Q2](Q2.md)  [Todo](Todo.md)  [Habits](Habits.md)  [Social](Social.md)  [Scratch](Scratch/Scratch.md)  [Watching](Watching.md)  [Current](Current.md)  [Links](Links.md)  [Hack](Hack.md)

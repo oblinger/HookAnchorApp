@@ -3,14 +3,16 @@
 
 | Status | Name                   | Ask [[FAANG]] about associate scientist positions  [[FAANG#2022-04-05 - Ask FAANG folks about hiring\|topics]] |     |     |
 | ------ | ---------------------- | -------------------------------------------------------------------------------------------------------------- | --- | --- |
-| S      | [[@Rafah Hosn]]        | Dig deep on required training                                                                                  |     |     |
-| S      | [[@John Davis]]        | his experience at google                                                                                       |     |     |
-| W      | [[@Joe Hellerstein]]   |                                                                                                                |     |     |
-| -      | [[__]]                 |                                                                                                                |     |     |
-|        | [[@Juan Huerta]]       | Life update & dig deep on required training                                                                    |     |     |
+| .      | [[@Rafah Hosn]]        | Dig deep on required training                                                                                  |     |     |
+| n      | [[@John Davis]]        | his experience at google                                                                                       |     |     |
+|        | [[@Joe Hellerstein]]   |                                                                                                                |     |     |
+|        | [[__]]                 |                                                                                                                |     |     |
+| L      | [[@Juan Huerta]]       | Life update & dig deep on required training                                                                    |     |     |
 |        | [[@Michael Freed]]     |                                                                                                                |     |     |
 |        | [[@Mark Drummond]]     |                                                                                                                |     |     |
-|        | [[@Vittorio Castelli]] | Update about his new position, best training, min requirements                                                 |     |     |
+| n      | [[@Vittorio Castelli]] | Update about his new position, best training, min requirements                                                 |     |     |
+|        | [[@Ron Brachman]]      |                                                                                                                |     |     |
+|        |                        |                                                                                                                |     |     |
 
 
 

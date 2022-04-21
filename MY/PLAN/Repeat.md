@@ -46,7 +46,7 @@
 Life:
 - Experience we have
 - Contributions we make
-- The Groth we experience, and 
+- The Growth we experience, and 
 - the Connections we have
 
 All Meaning is constructed meaning, there is no intrinsic meaning:
