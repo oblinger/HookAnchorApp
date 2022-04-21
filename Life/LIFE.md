@@ -1,4 +1,4 @@
-  [LOGS](LOGS.md)
+  [Logs](Logs.md)
 
 # # TODO # 
 - [ ] 

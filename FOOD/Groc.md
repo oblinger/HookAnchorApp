@@ -219,7 +219,7 @@ _
 [Split Pea Lentil](https://www.allrecipes.com/recipe/218654/red-lentil-and-yellow-split-pea-soup-made-with-a-pressure-cooker/?utm_source=emailshare&utm_medium=email&utm_campaign=email-share-recipe&utm_content=20210412)  <---- 
 [African Yam Soup](https://www.allrecipes.com/recipe/48121/spicy-african-yam-soup/?utm_source=emailshare&utm_medium=email&utm_campaign=email-share-recipe&utm_content=20210109)  sweet potato
 
-[Mulligatawny Soup](https://thewanderlustkitchen.com/indian-mulligatawny-soup/)  [FOOD](/Users/oblinger/ob/topics/Food/__Food__.md)   [[NSTR-Books]]   [[MISC/Biking/Notes]]  [resturants]([[ZKN-20220108210139]])  [[20220108210139]]  [[Diet]]  [[#Delivery]]
+[Mulligatawny Soup](https://thewanderlustkitchen.com/indian-mulligatawny-soup/)  [FOOD](/Users/oblinger/ob/topics/Food/__Food__.md)   [[NSTR-Books]]   [[Biking Notes]]  [resturants]([[ZKN-20220108210139]])  [[20220108210139]]  [[Diet]]  [[#Delivery]]
 
 
 _

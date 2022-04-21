@@ -21,7 +21,7 @@
 	Pin some repos; should I add some more?;  Maybe some activity?; update photo
 
 ### m2022-03-21 - List of VC firms
-60m Topics: Deep  [[Crunchbase|VCs]]   [[Resume|Resume]]   [[MSG]] 
+60m Topics: Deep  [[Crunchbase|VCs]]   [[Resume|Resume]]   [[NSTR/Pic/Msg]] 
 
 Jennifer Chan
 
@@ -65,7 +65,7 @@ My Strategy
 - Do anything for a VC
 
 
-[[MSG]]  
+[[NSTR/Pic/Msg]]  
 
 Strengths
 - **Robotics**, strong generalist knowledge, good reputation, NO research depth.

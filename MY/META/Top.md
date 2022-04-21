@@ -1,15 +1,20 @@
 
 | Name         | Notes                                          | .................................................................. |     |     |
 | ------------ | ---------------------------------------------- | ------------------------------------------------------------------ | --- | --- |
-| [[LOGS]]     | Ordered, Dated, Typed  -- H3 Entries on a page |                                                                    |     |     |
+| [[Logs]]     | Ordered, Dated, Typed  -- H3 Entries on a page |                                                                    |     |     |
 | [[STREAMS]]  | Ordered, UN-dated, Typed                       |                                                                    |     |     |
 | [[SETS]]     | UN-ordered, UN-dated, Typed -- Separated pages |                                                                    |     |     |
 | [[__]]       |                                                |                                                                    |     |     |
 | [[Plan]]     | Planning pages                                 |                                                                    |     |     |
 | [[MY]]       |                                                |                                                                    |     |     |
 | [[__]]       |                                                |                                                                    |     |     |
-| [[REF]]      | Reference materials of any kind                |                                                                    |     |     |
+| [[LOGS/Dated]]    |                                                |                                                                    |     |     |
 | [[Meet]]     |                                                |                                                                    |     |     |
+| [[Notes]]    |                                                |                                                                    |     |     |
+| [[Prjs]]     |                                                |                                                                    |     |     |
+| [[Refs]]     | Reference materials of any kind                |                                                                    |     |     |
+| [[Texts]]    |                                                |                                                                    |     |     |
+| [[WPs]]             |                                                |                                                                    |     |     |
 | [[__]]       |                                                |                                                                    |     |     |
 | [[Career]]   |                                                |                                                                    |     |     |
 | [[Docs]]     |                                                |                                                                    |     |     |

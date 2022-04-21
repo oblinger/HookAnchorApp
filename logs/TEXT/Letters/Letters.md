@@ -1,4 +1,4 @@
-= [[LOGS]] 
+= [[Logs]] 
 
 ### 2022-04-06  John Cameron thank you
 

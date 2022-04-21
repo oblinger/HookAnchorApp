@@ -1,4 +1,5 @@
   [DATED](DATED.md)
+  [DATED](STREAMS/DATED.md)
   [Phone](Phone/Phone.md),   [Ideas](Ideas/Ideas.md)
 = [[TOP]] 
 

@@ -23,9 +23,9 @@ SOCIAL ACTIVITIES PAGES
 
 STORAGE PAGES
 - [[Scratch]] - 
-- [[NOTE]] - 
+- [[Notes]] - 
 - [[WP]] - 
-- [[PRJ]] / [[ROCKS]] - 
+- [[Prjs]] / [[ROCKS]] - 
 - [[Top#KMR|KMR]] - Permanent Evergreen pages
 
 
