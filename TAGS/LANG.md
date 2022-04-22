@@ -1,4 +1,4 @@
- [[NSTR/COMP]]
+ = > [[COMP]]
 
 # Lang --
 

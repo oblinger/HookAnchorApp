@@ -4,11 +4,6 @@
 = [[Root]] 
 
 # STREAMS - Undated, Ordered, Typed entries
-- [Phone](STREAMS/Phone/Phone.md) - 
-- [Ideas](STREAMS/Ideas/Ideas.md) -
-- [[Receipts]] - 
-- [[ToRead]] -
-
 
 
 
