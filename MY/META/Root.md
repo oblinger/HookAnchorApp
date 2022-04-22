@@ -9,14 +9,14 @@
 | .  [[Tags]]              |                                                                                                                               |
 | [[__]]                   |                                                                                                                               |
 | [[Sets]]                 | GROUPS OF LIKE ENTRIES -- (UN-dated, UN-ordered, Typed)                                                                       |
-| .  [[AT/At]]             | Entities (People, Organizations, etc.)                                                                                        |
+| .  [[At]]                | Entities (People, Organizations, etc.)                                                                                        |
 | .  [[App]]               | Info about specific applications                                                                                              |
 | .  [[Docs]]              |                                                                                                                               |
 | .  [[Humor]]             | Jokes I have collected                                                                                                        |
 | .  [[Lang]]              | Computer Languages                                                                                                            |
 | .  [[Movies]]            | Movies "to watch"                                                                                                             |
 | .  [[Places]]            | Info I have collected about specific places                                                                                   |
-| .  [[Quotes]]            | Quotes that I have collected                                                                                                  |
+| .  [[NSTR/Quotes]]            | Quotes that I have collected                                                                                                  |
 | .  [[ToRead]]            | Stuff "to read"                                                                                                               |
 | [[__]]                   |                                                                                                                               |
 | [[Streams]]              | ORDERED GROUPS OF LIKE ENTRIES -- (UN-dated, Ordered, Typed)                                                                  |
