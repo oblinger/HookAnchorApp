@@ -4,12 +4,12 @@
 | [[__]]                   |                                                                                                                               |
 | [[MY]]                   | MY OVERVIEW PAGES                                                                                                             |
 | .  [[Meta]]              |                                                                                                                               |
-| .  [[Planning]]          | TASK PLANNING PAGES                                                                                                           |
 | .  [[Lists]]             |                                                                                                                               |
+| .  [[Planning]]          | TASK PLANNING PAGES                                                                                                           |
 | .  [[Tags]]              |                                                                                                                               |
 | [[__]]                   |                                                                                                                               |
 | [[Sets]]                 | GROUPS OF LIKE ENTRIES -- (UN-dated, UN-ordered, Typed)                                                                       |
-| .  [[AT/At]]                | Entities (People, Organizations, etc.)                                                                                        |
+| .  [[AT/At]]             | Entities (People, Organizations, etc.)                                                                                        |
 | .  [[App]]               | Info about specific applications                                                                                              |
 | .  [[Docs]]              |                                                                                                                               |
 | .  [[Humor]]             | Jokes I have collected                                                                                                        |
@@ -20,7 +20,7 @@
 | .  [[ToRead]]            | Stuff "to read"                                                                                                               |
 | [[__]]                   |                                                                                                                               |
 | [[Streams]]              | ORDERED GROUPS OF LIKE ENTRIES -- (UN-dated, Ordered, Typed)                                                                  |
-| .  [[Phone]]             |                                                                                                                               |
+| .  [[Phone]]             | Administrative actions associated with accounts or such                                                                       |
 | [[__]]                   |                                                                                                                               |
 | [[Logs]]                 | DATED, ORDERED, GROUPS OF LIKE ENTRIES -- (Dated, Ordered, Typed)                                                             |
 | .  [[Dated]]    '...'    | Dated but untyped entries                                                                                                     |

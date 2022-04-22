@@ -1,2 +1,1 @@
-
-My Knowledge Management Root
+=[[INFO_PAGE]]  ! My Knowledge Management Root

@@ -1,8 +1,8 @@
 ALL TOPIC ROOTS
 
-  [[Receipts]],   [[Misc]],   [[Spirit]],   [[Karaoke]],   [[tickets]],   [[meditation]],   [[Rental]],   [[Info 
-  Startups]],   [[Startups]],   [[Hotels]],   [[Shop]],   [[Craps]],   [[Old]],   [[Hackers]],   [[Search]],   
-  [[Politics]],   [[race]],   [[Blockchain]],   [[SF]],   [[courses]],   [[UX Course at 500]],   [[Presentations]],   
+  [[Misc]],   [[Spirit]],   [[Karaoke]],   [[tickets]],   [[meditation]],   [[Rental]],   [[Info Startups]],   
+  [[Startups]],   [[Hotels]],   [[Shop]],   [[Craps]],   [[Old]],   [[Hackers]],   [[Search]],   [[Politics]],   
+  [[race]],   [[Blockchain]],   [[SF]],   [[courses]],   [[UX Course at 500]],   [[Presentations]],   
   [[Robotics_Fireside]],   [[Jeopardy Machine Reading]],   [[Nomad]],   [[Gifts]],   [[Trip]],   [[Thailand]],   
   [[PEOPLE]],   [[family]],   [[Parents]],   [[Epsilon]],   [[Qingling]],   [[Eli]],   [[BCMS]],   [[jason]],   
   [[House]],   [[Biking]],   [[Glossary]],   [[Gym]],   [[Games]],   [[napa]],   [[hiking]],   [[Career]],   
@@ -20,11 +20,11 @@ ALL TOPIC ROOTS
   [[DocMac]],   [[DocJavascript]],   [[DocArduino]],   [[DocPyML]],   [[DocCapistrano]],   [[DocR]],   [[DocCPP]],   
   [[DocDanO]],   [[DocObjectiveC]],   [[DocAPI]],   [[DocPython]],   [[DocVagrant]],   [[DocCucumber]],   
   [[DocApplescript]],   [[DocRuby]],   [[DocMarkdown]],   [[DocRails]],   [[DocSamurai]],   [[DocPandas]],   
-  [[DocDelayedJob]],   [[DocLinux]],   [[DocClojure]],   [[DocOSX]],   [[DAILY]],   [[Tags]],   [[Logs]],   [[Meet]],   
-  [[Letters]],   [[IBM-years]],   [[Msg]],   [[Sets]],   [[Obsidian]],   [[Quotes]],   [[Places]],   [[Books]],   
-  [[LANG]],   [[haskell]],   [[Humor]],   [[Recipes]],   [[Movies]],   [[flix]],   [[ToRead]],   [[Buy]],   [[Bought]],
-     [[R]],   [[NSTR]],   [[metrics]],   [[BSL]],   [[MY]],   [[scratch]],   [[Meta]],   [[Myfo]],   [[FOOD]],   [[AF]],
-     [[AFwp]],   [[Outcult]],   [[AFactive]],   [[AFldr]],   [[AFarchive]],   [[UF_Docs]],   [[ufPublish]],   
-  [[UfApps]],   [[ufBrick]],   [[At]],   [[ORG]],   [[VC]],   [[VC]],   [[Rocks]],   [[2021-04 FindDayCare]],   
-  [[Yearbook]],   [[AF Wind Down]],   [[wedding]],   [[PKM]],   [[BeFAANG]],   [[Ready]],   [[BeVC]],   [[Learning]],   
-  [[Legal]],   [[Legal Uniform]],   [[Legal Ob Labs]],   [[MED]]
+  [[DocDelayedJob]],   [[DocLinux]],   [[DocClojure]],   [[DocOSX]],   [[DAILY]],   [[Tags]],   [[Logs]],   
+  [[Receipts]],   [[Meet]],   [[Letters]],   [[IBM-years]],   [[Msg]],   [[Sets]],   [[Obsidian]],   [[Quotes]],   
+  [[Places]],   [[Books]],   [[LANG]],   [[haskell]],   [[Humor]],   [[Recipes]],   [[Movies]],   [[flix]],   
+  [[ToRead]],   [[Buy]],   [[Bought]],   [[R]],   [[NSTR]],   [[metrics]],   [[BSL]],   [[MY]],   [[scratch]],   
+  [[Meta]],   [[Myfo]],   [[FOOD]],   [[AF]],   [[AFwp]],   [[Outcult]],   [[AFactive]],   [[AFldr]],   [[AFarchive]],
+     [[UF_Docs]],   [[ufPublish]],   [[UfApps]],   [[ufBrick]],   [[At]],   [[ORG]],   [[VC]],   [[VC]],   [[Rocks]],   
+  [[2021-04 FindDayCare]],   [[Yearbook]],   [[AF Wind Down]],   [[wedding]],   [[PKM]],   [[BeFAANG]],   [[Ready]],   
+  [[BeVC]],   [[Learning]],   [[Legal]],   [[Legal Uniform]],   [[Legal Ob Labs]],   [[MED]]
