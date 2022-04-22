@@ -3,6 +3,7 @@
 
 - [[@Aniket Kumar]]: [[@Emily Wallach]],  [[@Melissa Cote]],
 - FAANG: Vit, Davis
+- [[DYL#- FAANG GUY|Faang questions]]:  [[@Vittorio Castelli]],  
 
 ## = Rotation
 - Attilla, Ben Wild
@@ -24,14 +25,8 @@ To Call:  	Dennis DeCoste, Foster Provost, Chris Ramming, Ronny Kohavi,
 Maybe:		Joe hellerstein, John Turek, Steve Chien, Daniel Haddick?, Drew Dean
 	Herb Derby, ?Manish Gupta
 
--Christina Fonseca
-Aniket
-Tessa Lau 
-Headhunters??
-Amy Kruse
--Joe
--Cassie
--Cris
+- Christina Fonseca, Aniket, Tessa Lau, Headhunters??, Amy Kruse
+- Joe, 
 
 
 [AI Scout](https://medium.com/@kevindewalt/the-ai-talent-crises-is-real-and-unlike-the-dot-com-era-bdd10ac74742?source=email-5358356385a8-1645525198208-digest.reader-f04298f17939-bdd10ac74742----0-49----------1af65db9c2f8--------db8ddc30_b3ce_4a5e_a80c_50ef7cfcf114-11-) Kevin Dewalt
@@ -39,7 +34,6 @@ Amy Kruse
 SOON: Theo, Juan, Rafah Hosn, Davis, 
 UP: Pietro, Greg Hornby, 
 AGAIN: Freed, Drummond, Vittorio, Nina, Luis, 
-FRIENDS: Anastasia, Tanja
 BIGGIES: Dennis DeCoste, Melanie Dumas, 
 LATER:	 Steve Chien, Daniel Haddick?, Ben Wild
 MAYBES:	 Chris Ramming, Ronny Kohavi, Joe hellerstein, John Turek, 

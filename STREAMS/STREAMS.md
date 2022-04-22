@@ -1,7 +1,7 @@
-  [DATED](DATED.md)
+  [DATED](STREAMS/DATED.md)
   [DATED](STREAMS/DATED.md)
   [Phone](Phone/Phone.md),   [Ideas](Ideas/Ideas.md)
-= [[TOP]] 
+= [[Root]] 
 
 # STREAMS - Undated, Ordered, Typed entries
 - [Phone](STREAMS/Phone/Phone.md) - 

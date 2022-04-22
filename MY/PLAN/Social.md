@@ -1,4 +1,5 @@
 
+FRIENDS: Anastasia, Tanja
 call Ronny and other sms messages and jaz and sami
 
 # People SF

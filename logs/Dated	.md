@@ -2,6 +2,7 @@
 
 | Date       | File                                  | Notes                                                                                     |
 | ---------- | ------------------------------------- | ----------------------------------------------------------------------------------------- |
+| 2022-04-22 | [[DYL]]                                   | Innovation & Insight                                                                      |
 | 2022-04-19 | [[DYL]]                                   | Design - long distance commuter train, package delivery systems,                          |
 | 2022-04-14 | [[DYL]]                                   | OBSIDIAN COMPLETIST 9&6                                                                   |
 | 2022-04-11 | [[MED]]                                   | Pulmonologist visit                                                                       |

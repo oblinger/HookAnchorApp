@@ -316,6 +316,10 @@ Possible centers:
 
 ## = (3) INSIGHTS LOG =
 AEIOU: Activities; Environments; Interactions; Objects; Users
+### 2022-04-22  Innovation & Insight
+
+- I love to ***think*** thru the ***technical details*** of some ***innovation*** built upon some surprising ***insight***.
+
 ### 2021-09-21 - SUMMARY OF WORK THAT FITS
 
 Leadership over deeply-technical projects involving AI, ML, or Robotics
@@ -573,20 +577,24 @@ OTHER PATHS:
 
 ### - FAANG GUY 
 ! BigCo Project Leader & Technology Driver
-| <div style="width:190px">property</div> Time | Activity         | Notes                            |
-| -------------------------------------------- | ---------------- | -------------------------------- |
-| Year 1                                       | Interviewing     | Learning Mgt, ML, interview prep |
-|                                              | Intense Learning | Slammed at work                  |
-| Year 2                                       | Groove           | Getting my groove                |
-| Year 3                                       | SIDE GIG         | Just starting my side gig        |
-| Year 4                                       |                  |                                  |
-| Year 5                                       |                  |                                  |
+
+| <div style="width:190px">Time</div> | Activity         | Notes                            |
+| ----------------------------------- | ---------------- | -------------------------------- |
+| Year 1                              | Interviewing     | Learning Mgt, ML, interview prep |
+|                                     | Intense Learning | Slammed at work                  |
+| Year 2                              | Groove           | Getting my groove                |
+| Year 3                              | SIDE GIG         | Just starting my side gig        |
+| Year 4                              |                  |                                  |
+| Year 5                              |                  |                                  |
 
 
 QUESTIONS:
-1.  DATA SCIENTIST  --  Am I in range to be an applied/data scientist?  
+1.  DATA SCIENTIST  --  Am I in range to be an applied/data scientist?  (prep needed?)
 2.  DAY TO DAY -- What are the day to day activities of a manager?  of a data scientist?
 
+DETAILS QUESTIONS:
+- ML ENG Training -- 
+- MGR Training -- 
 
 ATTRIBUTES:
 - Bit of free time.
@@ -595,7 +603,23 @@ ATTRIBUTES:
 
 
 ### - ML Researcher
-!
+MGR: Same as IC, but less training, less uniform, and more money
+
+TIMELINE YEAR 1
+- Y1:	Park at Visio, or Consulting
+- Y1:	ML Courses
+- Y1:	Publish Uniform; build community
+- Y2:	Interviewing & Get job
+- Y2:	Heads down learning @ Google
+- Y3:	Back to Uniform
+- Y3:	Build Social Life @ home and @ google
+- Y3:	Leading an interesting project
+- Y4:	UF info project w/ open source
+- Y4:	First Goog success; building network & leads for many projects
+  
+  
+  
+  _
 
 
 
@@ -618,29 +642,14 @@ Questions:
 - Selling founders and investors on shared vision of the future
 
 
-
+### - Insight follower???
+- Early stage prototyping
+- Thinking thru details
 ### - MY CO - 
 
 
-### - FAANG research guy
-MGR: Same as IC, but less training, less uniform, and more money
-
-TIMELINE YEAR 1
-- Y1:	Park at Visio, or Consulting
-- Y1:	ML Courses
-- Y1:	Publish Uniform; build community
-- Y2:	Interviewing & Get job
-- Y2:	Heads down learning @ Google
-- Y3:	Back to Uniform
-- Y3:	Build Social Life @ home and @ google
-- Y3:	Leading an interesting project
-- Y4:	UF info project w/ open source
-- Y4:	First Goog success; building network & leads for many projects
-  
-  
-  
-  _
-### - KMCO - Marketplace - UNIFORM - Guy
+### - OLDER ODSSEYS
+#### - KMCO - Marketplace - UNIFORM - Guy
 QUESTIONS:
 - Who is my 'customer'? what will they pay for?  ML-wizard
   
