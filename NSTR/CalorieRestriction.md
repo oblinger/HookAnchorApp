@@ -1,3 +1,0 @@
-# CalorieRestriction --
-
-    <<>>  O+M7

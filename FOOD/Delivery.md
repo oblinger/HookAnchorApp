@@ -19,6 +19,8 @@ MOM:  Thai, Poki, Seafood, Japanese, Sandwich, EURO(Italian, French, German, Spa
 | d+~~  BOWL-Korean     | Moonbowls - Healthy Korean Bowls                           |     |
 | d+~~  BOWL            | West Coast Bowl                                            |     |
 | d+~~  BOWL            | Ben's Fast Food                                            |     |
+| d?~~  BURMESE         | New Burma (yelp 4.5)  Burma Cafe/Love/Superstar (yelp 4.0) |     |
+| d+~~  VIETNAMESE      | Chic n' Time (y5.0)                                        |     |
 | ====   SEAFOOD   ==== |                                                            |     |
 | d+~~  SEAFOOD         | Fish District                                              |     |
 | d+~~  SEAFOOD         | Pacific Catch                                              |     |
@@ -29,7 +31,9 @@ MOM:  Thai, Poki, Seafood, Japanese, Sandwich, EURO(Italian, French, German, Spa
 | d+~~  CHINESE         | Beijing Resturants                                         |     |
 | ====  AMERICAN   ==== | > Salad, Sandwich, Pizza, Fast                             |     |
 | d++~  SALADS          | Mixt Greens                                                |     |
-| u+++  SANDWCH         | Grubbin (Great but opens @ 11:15)  Bite (not great)        |     |
+| d+~~  PIZZA           | The Pizza Shop (4.5yelp)                                   |     |
+| ~~~~  PIZZA           | Little Star Pizza (4 or 4.5yelp)                           |     |
+| u+++  SANDWICH        | Grubbin (Great but opens @ 11:15)  Bite (not great)        |     |
 | d-~~  FAST            | McDonalds                                                  |     |
 |                       |                                                            |     |
 | -----------------     | ---------------------------------------------------------- |     |

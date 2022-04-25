@@ -1,4 +1,0 @@
-# Dimitri\_Patents --
-
-
-      <<>>

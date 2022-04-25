@@ -1,4 +1,0 @@
-# NewCarAlternatives --
-
-
-    See DannysDoodles.doc

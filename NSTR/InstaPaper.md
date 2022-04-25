@@ -1,7 +1,0 @@
-# InstaPaper --
-
-    contacts
-
-    <<>>
-
-     W1

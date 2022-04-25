@@ -1,8 +1,0 @@
-# Momentum --
-
-    See <<>>
-
-      
-
-      <<>> doblinger
-     

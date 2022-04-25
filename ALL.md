@@ -23,8 +23,8 @@ ALL TOPIC ROOTS
   [[DocDelayedJob]],   [[DocLinux]],   [[DocClojure]],   [[DocOSX]],   [[DAILY]],   [[Tags]],   [[Logs]],   
   [[Receipts]],   [[Meet]],   [[Letters]],   [[IBM-years]],   [[Msg]],   [[Sets]],   [[Obsidian]],   [[Places]],   
   [[Books]],   [[LANG]],   [[haskell]],   [[Humor]],   [[Recipes]],   [[Movies]],   [[flix]],   [[ToRead]],   [[Buy]],
-     [[Bought]],   [[R]],   [[NSTR]],   [[metrics]],   [[BSL]],   [[MY]],   [[scratch]],   [[Meta]],   [[Myfo]],   
-  [[FOOD]],   [[AF]],   [[AFwp]],   [[Outcult]],   [[AFactive]],   [[AFldr]],   [[AFarchive]],   [[UF_Docs]],   
-  [[ufPublish]],   [[UfApps]],   [[ufBrick]],   [[At]],   [[ORG]],   [[VC]],   [[VC]],   [[Rocks]],   [[2021-04 
-  FindDayCare]],   [[Yearbook]],   [[AF Wind Down]],   [[wedding]],   [[PKM]],   [[BeFAANG]],   [[Ready]],   [[BeVC]],
-     [[Learning]],   [[Legal]],   [[Legal Uniform]],   [[Legal Ob Labs]],   [[MED]]
+     [[Bought]],   [[MY]],   [[scratch]],   [[Meta]],   [[Myfo]],   [[FOOD]],   [[AF]],   [[AFwp]],   [[Outcult]],   
+  [[AFactive]],   [[AFldr]],   [[AFarchive]],   [[UF_Docs]],   [[ufPublish]],   [[UfApps]],   [[ufBrick]],   [[At]],   
+  [[ORG]],   [[VC]],   [[VC]],   [[Rocks]],   [[BeMLR]],   [[2021-04 FindDayCare]],   [[Yearbook]],   [[AF Wind Down]],
+     [[wedding]],   [[PKM]],   [[BeFAANG]],   [[BeVC]],   [[Learning]],   [[Legal]],   [[Legal Uniform]],   [[Legal Ob 
+  Labs]],   [[MED]]

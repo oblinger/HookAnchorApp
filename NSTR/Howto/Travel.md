@@ -1,7 +1,0 @@
-# Howto.Travel --
-
-
-    City Pairs:  <<>>
-
-
-    <<>>

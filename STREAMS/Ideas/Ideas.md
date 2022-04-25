@@ -4,7 +4,7 @@
 
 (See [startup/index](__stindex__.md) for list)
 
-# ### QUICK THOUGHTS ###
+# # QUICK THOUGHTS
 ### --- AREAS ---
 - ENERGY -- Building something that 
 ### Getting to another star
@@ -54,7 +54,7 @@ ACCESS
 
 -- Key actions at all times:
    Mute/unmute self.  See all participants.  mute others.
-# ### IDEAS BY TOPIC AREA ###
+# # IDEAS BY TOPIC AREA
 ### BOOK - Organizing Your Life
 
 IDEAS

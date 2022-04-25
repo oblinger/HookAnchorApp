@@ -1,9 +1,0 @@
-# Notester.Template.Templates Top --
-
-
-     <<>>
-     <<>>
-     <<>>
-     <<>>
-     <<>>
-     <<>>

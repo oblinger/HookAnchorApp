@@ -1,6 +1,0 @@
-# Life.Habits\_Summaries --
-
-
-    <<>>
-
-    <<>>

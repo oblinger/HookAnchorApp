@@ -1,5 +1,0 @@
-# Noah\_Friedman --
-
-
-
-    <<>>

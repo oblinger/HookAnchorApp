@@ -1,7 +1,0 @@
-# Idea.Ideas\_Other --
-
-
-     <<>>
-
-
-     

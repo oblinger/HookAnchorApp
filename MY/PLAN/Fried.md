@@ -2,33 +2,27 @@
   
 - [ ] https://www.marcusbuckingham.com/gift-of-standout/
 - [ ] Buy Dad's mac
-
 - [ ] [[@Maria Cross]]
 - [ ] Exercise plan
-- [ ] Write table extractor for calls
 - [ ] [btt](https://folivora.ai/buy)
 
-- [ ] Social Heartbeat - Establish regular time and list of social connections
-- [ ] Organize the plan pages
-- [ ] get outliner to work; get wheel click toggle folding
-- [ ] Fling 1  # Should extend fling to numbered list positions.  
-- [ ] KICK window into position 1, 2, 3 and back
-- [ ] Add quick entry using an input box
-- [ ] shutdown script.  Fix so it does not kill w/o saving.  why does it use different shutdown methods in the same script
 - [ ] KM # refactor KM to scan for both kinds of link types, AND to produce both types depending on the context.
-- [ ] KM -i  # should scan and 
-- [ ] KM # refactor km into separate scripts
-- [x] KM # extend the mYY-MM-DD to other forms
-- [x] refactor km so it tracks MEET as well as TXT
+- [ ] KICK window into position 1, 2, 3 and back  (Mess with STATE)
+- [ ] Social Heartbeat - Establish regular time and list of social connections
+- [ ] Fling 1  # Should extend fling to numbered list positions.  
+- [ ] HACK -- get all mail messages logged
 
-- [ ] scan all CMD and create huge spottext.txt sorted by type, then by path.  manually trim to keeper list, then delete and rebuild cmd folder
+- [ ] Organize the plan pages
+- [ ] Publish my org-info stuff
+
+- [ ] ? Add quick entry using an input box
+- [ ] shutdown script.  Fix so it does not kill w/o saving.  why does it use different shutdown methods in the same script
+
 - [ ] IFTTT output of Apple Health data (or any kind of export
 - [ ] buy food scale
 - [ ] [[MED|MED]] Nutritionist - Choose one #todo 
 - [ ] - buy air purifier
 
-- [x] get doordash stuff in
-- [x] - Fling that uses direct file writes
 
 
 ## = QUICKIES = 
@@ -47,111 +41,34 @@
 - [ ] Verify which emails and drafts are being saved/missing?  which accounts?  hard core backup of all emails . (all funnel in, then all get recorded?) 
 - [ ] email drafts:  loosing them; many copies
 - [ ] ?? Have you seen Calendly?
-
-## = REPEAT = 
-- [ ] CLEAN: 	In2 * House * Basement * Scratch * ToRead
-- [ ] WEEKLY: 	FILE THIS * TO_BUY * TIDY * EMAIL JOY *
-- [ ] QUARTERLY:	Mint * 
-- [ ] CALLS:		Mom&Dad * Repeat * Habits
-- [ ] THINK:  [[Habits|Habits]]   [[Current|Plan]]  
-
-
-[[Obsidian]]     [[Fin]]    [[ToBuy]]    [[ToRead]]  [[Hack]]  
+- [ ] Personal CRM to track my own contacts?
 
 
 ## = STUFF = 
+- [ ] [[PHOTOS]] 
 - [ ] [[Fin|FIN]] >>>Find value investments
 - [ ] [[Fin|FIN]] Roth Conversion Consideration
 - [ ] [[MED|MED]] Heart health institute
 - [ ] [[MED|MED]] Nutritionist - Decide who to work with 
 - [ ] Fix archiving of email
-
 - [ ] Nick meeting days (pick them with him)
 - [ ] Allison restart
 - [ ] Figure out new meals
 - [ ] research multi-vitamin and omega 3 to buy
 - [ ] Merge photos (read about)
 - [ ] Photos on computer
-
 - [ ] Glucose monitor (buy it)
 - [ ] Jared:  Facial counter strain, glocose Libre (Zoe projec
 - [ ] Wider laptop desk
-
-## = OTHERS =
 - [ ] [[Photos]] 
 - [ ] Create Small album of wedding photos
-### .
-
-## = HOME =
-- [ ] Clean basement
 
 
-### -HOUSE LATER -
-- Raised deck box
-- House Remodel
-- Fast Water Heater.  866 486-3669 . 
-- Shades -- just buy some (call Bali)
-- BEDROOM --  Closet Pole
-- BASEMENT -- Add light controls
-## = THINK =
-- [ ] THINK!  write goals, and options
-- [ ] Personal CRM to track my own contacts?
-- [ ] [[PHOTOS]] 
+## = REPEAT = 
+[[Fried Later]]
+- [ ] CLEAN: 	In2 * House * Basement * Scratch * ToRead
+- [ ] WEEKLY: 	FILE THIS * TO_BUY * TIDY * EMAIL JOY *
+- [ ] QUARTERLY:	Mint * 
+- [ ] CALLS:		Mom&Dad * Repeat * Habits
+- [ ] THINK:  [[Habits|Habits]]   [[Current|Plan]]  [[Obsidian]]     [[Fin]]    [[ToBuy]]    [[ToRead]]  [[Hack]]  
 
-## = TO_HACK =
-### - to consider - 
-HACK -- get all mail messages logged
-
--- Calendar automation
--- Zoom schedule . #Zoom (should bring up notes)
-
--- move paypal so we never use oblinger@gmail.com
-
--- strip broken CMD links
--- add media keys to the default touchbar
--- Sublime MD folding
-_
-
-
-
-~-~ OLDER ~-~
-- summary groups
-- life paper house
---  notice idle time
-
--- Ability to show defined groupings "1" "2" ...
-
--- ability to specify activty UPTO certain time
-.
-
--- Double entries are merged when saving
--- Print report w. summary categories added
--- life tidy-->clean .  cooking-->food
--- life-->daily . exercise
-
-
-
-
--- CMD-P to raise control window
-
-=== GUI ===
-GAP time amount
-CURRENT TIMER:  time left, time accrued, category
-NEW ENTRY: category duration starttime
-
-
-
-=== COMMANDS IN WINDOW ===
- 
-CMD-P -- hides window
-      if timer is not running then it starts next default pomodoro
-
-SPACE [ <CAT> ] [ <TIME> ] SPACE comment string RETURN
-    Adds a new time entry.  default category is current category.
-    Default time is all the gap time
-
-"/"  show categories list (shown a dense block)
-
-
-
-_

@@ -1,6 +1,0 @@
-# Bash --
-
-
-
-
-    source .bashrc

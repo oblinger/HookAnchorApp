@@ -1,5 +1,0 @@
-# CRSociety --
-
-    not contacts
-
-    <<>>  

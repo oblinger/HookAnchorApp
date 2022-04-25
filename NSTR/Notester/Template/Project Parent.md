@@ -1,1 +1,0 @@
-# Notester.Template.Project Parent --

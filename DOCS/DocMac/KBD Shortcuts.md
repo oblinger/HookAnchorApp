@@ -106,7 +106,7 @@
 | T     |                | / undo CLOSE        |                  | new TEMPLATE/insert only       |
 | U     |                |                     |                  |                                |
 | V     |                | PASTE from clip     |                  |                                |
-| W     |                | CLOSE pane          |                  | Load WORKSPACE / & save cur    |
+| W     |                | CLOSE pane          |                  | WORKSPACE  Load / Manage       |
 | X     |                | CUT to clip         |                  |                                |
 | Y     |                |                     |                  |                                |
 | Z     |                | UNDO / REDO         |                  | ZOOM mode                      |

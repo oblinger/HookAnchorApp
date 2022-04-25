@@ -1,3 +1,15 @@
+- [x] -- move paypal so we never use oblinger@gmail.com
+- [x] Clean basement
+- [x] scan all CMD and create huge spottext.txt sorted by type, then by path.  manually trim to
+- [x] - Fling that uses direct file writes
+- [x] get doordash stuff in
+- [x] refactor km so it tracks MEET as well as TXT
+- [x] KM # extend the mYY-MM-DD to other forms
+- [x] Write table extractor for calls
+- [ ] KM # refactor km into separate scripts
+- [x] get outliner to work; get wheel click toggle folding
+- [x] LAB-CORP - 2622 Ocean Ave 416-469-9710  (Fasted in morning before 10am)
+- [x] COOKING TVP chili / Easy Vegan Chili * BLACK BEAN Insta/Thermo/Soup * CrispyTofu  * Edamame Broc Dip ^f
 - [x] buy train tracks and new train for eli
 
 - [ ] - [ ] designing life - VC story

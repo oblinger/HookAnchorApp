@@ -1,7 +1,0 @@
-# NH.Refactor --
-
-
-
-
-    GUI REFACTOR
-    - 

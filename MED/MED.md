@@ -53,6 +53,8 @@
 
 # TOPICS
 ## = ASK
+- Shingles vaccine.
+- 
 - My penis bends to the side, but it did not used to do this.
 
 ## = SUB NOTES =
@@ -89,11 +91,11 @@
   Good quality vitamin
 - vitamin D.
 # LOG
-### t2022-04-20  COVID - Test Accuracy as function of time since exposure
+### 2022-04-20  COVID - Test Accuracy as function of time since exposure
  [https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7240870/](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7240870/)  
   [https://www.gavi.org/vaccineswork/false-negative-how-long-does-it-take-coronavirus-become-detectable-pcr](https://www.gavi.org/vaccineswork/false-negative-how-long-does-it-take-coronavirus-become-detectable-pcr)  
   
-### 2022-04-11  - Pulmonologist visit
+### 2022-04-11  Pulmonologist visit
 
 Three likely causes for my cough:
 1. non-allergic rhinitis -- might need to freeze nerve ending in nose

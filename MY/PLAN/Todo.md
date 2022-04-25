@@ -6,7 +6,7 @@
 - [x] Errands:  Blood Work
 
 - [ ] COOK: Peanut sauced tofu; 
-- [ ] COOK: Chickpea pasta; hot/sour now; potato skins;  Edamame&Broc; 
+- [ ] COOK:  hot/sour now; potato skins;  Edamame&Broc; 
 
 
 

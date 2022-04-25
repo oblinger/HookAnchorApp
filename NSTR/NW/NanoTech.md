@@ -1,4 +1,0 @@
-# NW.NanoTech --
-
-    <<>>         Nanotech
-    xxx

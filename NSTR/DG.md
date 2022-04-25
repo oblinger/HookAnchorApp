@@ -1,3 +1,0 @@
-# DG --
-
-    DARPA General

@@ -1,3 +1,0 @@
-# NW.Avoris --
-
-    Dayden <<>>

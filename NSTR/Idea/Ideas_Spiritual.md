@@ -1,5 +1,0 @@
-# Idea.Ideas\_Spiritual --
-
-
-    <<>>
-    <<>>

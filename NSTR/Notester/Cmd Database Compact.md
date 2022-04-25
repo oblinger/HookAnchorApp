@@ -1,1 +1,0 @@
-# Notester.Cmd Database Compact --

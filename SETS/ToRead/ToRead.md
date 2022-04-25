@@ -1,16 +1,84 @@
-  [ToResearch](ToResearch.md)
----
-alias: RIL
----
+  [BooksToRead](BooksToRead.md),   [ToResearch](ToResearch.md)
 
--  [Power of Full Engagement](https://www.amazon.com/Power-Full-Engagement-Managing-Performance-ebook/dp/B000FC0SWS/ref=tmm_kin_title_0?_encoding=UTF8&qid=1644162775&sr=8-1)  
+- [ ] [Mental Models List](https://medium.com/@yegg/mental-models-i-find-repeatedly-useful-936f1cc405d)    
+## = REPEAT =
+- >>>>>        Clean-Unsorted * Scan thru them * Do Repeats or Ref Pages
+-  MAIN:        [WSJ](https://wsj.com),  [Seeking Alpha](https://seekingalpha.com),   [Feedly](https://feedly.com),  
+- BLOGS:      [Future Of Coding](https://futureofcoding.org/community),  
+- OTHERS:    [BBC](https://news.bbc.co.uk/),  [NY Times](https://www.nytimes.com/),  [CNN](https://edition.cnn.com/),  
 
-- 
-	- [ ] Read study  [IF](https://jamanetwork.com/journals/jamainternalmedicine/fullarticle/2771095?guestAccessKey=444bbcb2-7e13-4dc6-998f-5de5e27aa19e&amp;utm_source=For_The_Media&amp;utm_medium=referral&amp;utm_campaign=ftm_links&amp;utm_content=tfl&amp;utm_term=092820) 
-	- [ ] [Mental Models List](https://medium.com/@yegg/mental-models-i-find-repeatedly-useful-936f1cc405d)    
-	- [ ] [amz](https://www.amazon.com/Power-Full-Engagement-Managing-Performance-ebook/dp/B000FC0SWS/ref=tmm_kin_title_0?_encoding=UTF8&qid=1644162775&sr=8-1) 
+## = TOPICS
+### [[BooksToRead]] 
+### Org System
 - [ ] https://www.zsolt.blog/2021/04/exploring-obsidian.html
 
+
+### Health
+- [ ] Read study  [IF](https://jamanetwork.com/journals/jamainternalmedicine/fullarticle/2771095?guestAccessKey=444bbcb2-7e13-4dc6-998f-5de5e27aa19e&amp;utm_source=For_The_Media&amp;utm_medium=referral&amp;utm_campaign=ftm_links&amp;utm_content=tfl&amp;utm_term=092820) 
+
+### ML RELATED
+
+[Hinton Modules](https://medium.com/syncedreview/better-than-capsules-a0429d7170e2) 
+https://medium.com/syncedreview/yoshua-bengio-team-leverages-dl-to-rejuvenate-symbolic-ai-neural-production-systems-reveal-latent-18a41a718bd7
+[Google's latest deep learning](https://arxiv.org/abs/2101.03961) [Math of DL](https://arxiv.org/abs/2105.04026) 
+~-~~
+[Notes on Coursara DL speclizations](https://towardsdatascience.com/the-deep-learning-specialization-2503b9ee7ff6) [course #1 login](https://www.coursera.org/learn/neural-networks-deep-learning/home/welcome) 
+~-~~
+Transformers:  [Attention is all you need](https://papers.nips.cc/paper/2017/file/3f5ee243547dee91fbd053c1c4a845aa-Paper.pdf) [video overview](https://www.youtube.com/watch?v=lQYkLJf4blg) [overview](https://towardsdatascience.com/attention-is-all-you-need-discovering-the-transformer-paper-73e5ff5e0634)  
+
+Mail-Reading ->  #L toReadURLs ->  #L RIL ->
+ 
+Starting A Startup Course:  http://feedshare.flipora.com/new/flip.html?src=home&url=http%3A%2F%2Fwww.businessinsider.com%2Fdustin-moskovitzs-startup-advice-deck-2014-9%3Fop%3D1%23ixzz3EL1NaRVm&topicid=684&actorId=28257643&actor=Samuel%20Nyirongo##http:%2F%2Fwww.businessinsider.com%2Fdustin-moskovitzs-startup-advice-deck-2014-9%3Fop=1%23ixzz3EL1NaRVm
+Coursra Graphical Models   https://class.coursera.org/pgm/lecture
+Read paul utgoff's multi layer from txt 
+
+
+[Mirror Test](http://www.intel.com/content/dam/www/public/us/en/documents/technology-briefs/intel-labs-tomorrow-project-anthology-brief.pdf) 
+
+curriculum. — https://ml-jku.github.io/hopfield-layers/
+
+
+
+
+
+
+## = OCCASIONAL ROTATION 
+### - SCIFI
+
+* [LYRIS](http://lyris.org/fiction/) 
+- [VINGE-innovation](http://www-rohan.sdsu.edu/faculty/vinge/misc/IBM/innovation.htm)   Singularity, EarthWeb, Marc Steigler (vernor vinge)
+
+### - MISC 
+- [Tell Me What You Did Today](https://medium.com/age-of-awareness/tell-me-what-you-did-today-and-ill-tell-you-where-you-ll-be-in-10-years-8921face679d)
+- LIT:  Search Targets  Like Melville’s discourse on the whiteness of the whale, it’s worth a read.
+- LIT:  Nero Wolfe -- detective stories written by Rex Stout
+
+### - RE-READ LIST
+- [coach](https://betterhumans.coach.me/the-ultimate-model-for-successful-and-long-lasting-behavior-change-221e678c642b) 
+- [Occasionally Ask](https://medium.com/mind-cafe/8-great-questions-you-should-occasionally-ask-yourself-ebc929094777) 
+- [Markus Aurelius 10 rules](https://medium.com/swlh/marcus-aurelius-10-rules-for-life-dfbdc9869e68) 
+
+
+### - VERY OLD
+
+- [Coach Marty Nemko](http://www.martynemko.com/home.htm) 
+- http://www.nytimes.com/2003/11/11/science/11ESSA.html
+- Http://edge.org/    
+- Religion note in notester
+- Prayer experiment
+
+
+
+  
+
+
+## = SUB PAGE LINKS
+- [ToResearch](__ToResearch__.md)
+## = OLD UNREAD 
+### - KIDS MAKE YOU HAPPIER?
+http://nymag.com/news/features/67024/index1.html
+http://www.cnn.com/2012/07/30/opinion/etzioni-children
+http://parenting.blogs.nytimes.com/2012/05/17/having-children-makes-you-relatively-happier/
 
 # UNSORTED  
 ## = FROM BOOKS
@@ -85,81 +153,4 @@ It's basically an ode to concentrating on the problem, not the solution. I think
 #### blog of language guy
 https://marijnhaverbeke.nl/blog/  
 https://www.python.org/dev/peps/pep-3118/
-
-
-# TOP
-## = REPEAT =
-- >>>>>        Clean-Unsorted * Scan thru them * Do Repeats or Ref Pages
--  MAIN:        [WSJ](https://wsj.com),  [Seeking Alpha](https://seekingalpha.com),   [Feedly](https://feedly.com),  
-- BLOGS:      [Future Of Coding](https://futureofcoding.org/community),  
-- OTHERS:    [BBC](https://news.bbc.co.uk/),  [NY Times](https://www.nytimes.com/),  [CNN](https://edition.cnn.com/),  
-
-
-# # REF # 
-## = SUB-PAGES
-- [ToResearch](__ToResearch__.md)
-
-## = OCCASIONAL ROTATION 
-### - SCIFI
-
-* [LYRIS](http://lyris.org/fiction/) 
-- [VINGE-innovation](http://www-rohan.sdsu.edu/faculty/vinge/misc/IBM/innovation.htm)   Singularity, EarthWeb, Marc Steigler (vernor vinge)
-
-### - MISC 
-- [Tell Me What You Did Today](https://medium.com/age-of-awareness/tell-me-what-you-did-today-and-ill-tell-you-where-you-ll-be-in-10-years-8921face679d)
-- LIT:  Search Targets  Like Melville’s discourse on the whiteness of the whale, it’s worth a read.
-- LIT:  Nero Wolfe -- detective stories written by Rex Stout
-
-### - RE-READ LIST
-- [coach](https://betterhumans.coach.me/the-ultimate-model-for-successful-and-long-lasting-behavior-change-221e678c642b) 
-- [Occasionally Ask](https://medium.com/mind-cafe/8-great-questions-you-should-occasionally-ask-yourself-ebc929094777) 
-- [Markus Aurelius 10 rules](https://medium.com/swlh/marcus-aurelius-10-rules-for-life-dfbdc9869e68) 
-
-
-### - VERY OLD
-
-- [Coach Marty Nemko](http://www.martynemko.com/home.htm) 
-- http://www.nytimes.com/2003/11/11/science/11ESSA.html
-- Http://edge.org/    
-- Religion note in notester
-- Prayer experiment
-
-
-
-  
-# OLD UNSORTED # 
-### - KIDS MAKE YOU HAPPIER?
-http://nymag.com/news/features/67024/index1.html
-http://www.cnn.com/2012/07/30/opinion/etzioni-children
-http://parenting.blogs.nytimes.com/2012/05/17/having-children-makes-you-relatively-happier/
-
-## === PROFESSIONAL ===
-blank class:
-- https://www.slideshare.net/sblank/hacking-for-recovery-syllabus
-- https://steveblank.com/2019/05/07/how-to-stop-playing-target-market-roulette-a-new-addition-to-the-lean-toolset/
-_
-## === ML RELATED ===
-
-[Hinton Modules](https://medium.com/syncedreview/better-than-capsules-a0429d7170e2) 
-https://medium.com/syncedreview/yoshua-bengio-team-leverages-dl-to-rejuvenate-symbolic-ai-neural-production-systems-reveal-latent-18a41a718bd7
-[Google's latest deep learning](https://arxiv.org/abs/2101.03961) [Math of DL](https://arxiv.org/abs/2105.04026) 
-~-~~
-[Notes on Coursara DL speclizations](https://towardsdatascience.com/the-deep-learning-specialization-2503b9ee7ff6) [course #1 login](https://www.coursera.org/learn/neural-networks-deep-learning/home/welcome) 
-~-~~
-Transformers:  [Attention is all you need](https://papers.nips.cc/paper/2017/file/3f5ee243547dee91fbd053c1c4a845aa-Paper.pdf) [video overview](https://www.youtube.com/watch?v=lQYkLJf4blg) [overview](https://towardsdatascience.com/attention-is-all-you-need-discovering-the-transformer-paper-73e5ff5e0634)  
-
-Mail-Reading ->  #L toReadURLs ->  #L RIL ->
- 
-Starting A Startup Course:  http://feedshare.flipora.com/new/flip.html?src=home&url=http%3A%2F%2Fwww.businessinsider.com%2Fdustin-moskovitzs-startup-advice-deck-2014-9%3Fop%3D1%23ixzz3EL1NaRVm&topicid=684&actorId=28257643&actor=Samuel%20Nyirongo##http:%2F%2Fwww.businessinsider.com%2Fdustin-moskovitzs-startup-advice-deck-2014-9%3Fop=1%23ixzz3EL1NaRVm
-Coursra Graphical Models   https://class.coursera.org/pgm/lecture
-Read paul utgoff's multi layer from txt 
-
-
-[Mirror Test](http://www.intel.com/content/dam/www/public/us/en/documents/technology-briefs/intel-labs-tomorrow-project-anthology-brief.pdf) 
-
-curriculum. — https://ml-jku.github.io/hopfield-layers/
-
-
-
-
 

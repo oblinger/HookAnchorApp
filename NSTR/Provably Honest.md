@@ -1,8 +1,0 @@
-# Provably Honest --
-
-    OLD <<>>
-
-      <<>>
-
-
-      <<>>

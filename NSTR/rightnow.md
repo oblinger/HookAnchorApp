@@ -1,3 +1,0 @@
-# rightnow --
-
-    sfldskfjfldskjf

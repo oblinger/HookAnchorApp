@@ -1,3 +1,0 @@
-# Meals\_Removed --
-
-    Cashews,

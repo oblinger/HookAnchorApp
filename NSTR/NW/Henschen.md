@@ -1,8 +1,0 @@
-# NW.Henschen --
-
-
-
-     <<>>   (sasha)
-     
-
-     

@@ -1,3 +1,0 @@
-# Rails\_Install --
-
-     

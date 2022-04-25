@@ -1,4 +1,0 @@
-# Planning\_Lists --
-
-
-     <<>>

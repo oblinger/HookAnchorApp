@@ -1,20 +1,15 @@
-### 2022-04-18
-- [ ] FAANG Deep
-	- [ ] Schedule FAANG Engineer calls  (bit 'o FAANG planning)
-	- [ ] Questions to answer
+### 2022-04-25
+- [ ] ML hands on course
+- [ ]  FAANG Deep
+	- [ ] Schedule FAANG Engineer calls
 	- [ ] Best Training ordered
 	- [ ] calls
-	- [ ] Run code for Coursera... maybe do a few hrs
-- [ ] [[DYL]] Dan one-pager (from quick pass on earlier chapters)
-- [ ] [[DYL]] Build 3 Odyssey plans.
+	- [ ] Run code for Coursera... & few hours
+
+- [ ] [[DYL]] Build 3 Odyssey plans. FAANG, 
 - [ ] [[DYL]] Read prototyping chapter
-- [ ] [Yearbook](__Yearbook__.md) 
-	- [ ] Create loom videos
-	- [ ] Get final approvals & 
-	- [ ] Send announcement email
+- [ ] [Yearbook](__Yearbook__.md) OUT
 - [ ] Email Anket guys
-
-
 
 
 

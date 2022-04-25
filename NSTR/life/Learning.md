@@ -1,5 +1,0 @@
-# Life.Learning --
-
-
-
-     <<>>

@@ -1,3 +1,0 @@
-# CFC --
-
-    Combined Federal Campaign

@@ -1,1 +1,0 @@
-# Cmd Notester Activate --

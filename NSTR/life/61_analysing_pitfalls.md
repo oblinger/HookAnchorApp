@@ -1,6 +1,0 @@
-# life.61\_analysing\_pitfalls --
-
-    Not sure how you feel about a special person in your life? Analyzing the pluses and minuses of the relationship might not be the answer.
-    In a study I conducted with Dolores Kraft, a clinical psychologist at the University of Texas Southwestern Medical Center, and Dana Dunn, a social psychologist at Moravian College in Pennsylvania, people in one group were asked to list the reasons their relationship with a romantic partner was going the way it was, and then rate how satisfied they were with the relationship. People in another group were asked to rate their satisfaction without any analysis; they just gave their gut reactions. 
-    It might seem that the people who thought about the specifics would be best at figuring out how they really felt, and that their satisfaction ratings would thus do the best job of predicting the outcome of their relationships. 
-    In fact, we found the reverse. It was the people in the "gut feeling" group whose ratings predicted whether they were still dating their partner several months later. As for the navel gazers, their satisfaction ratings did not predict the outcome of their relationships at all. Our conclusion? Too much analysis can confuse people about how they really feel.

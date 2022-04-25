@@ -1,4 +1,0 @@
-# Nameplate --
-
-
-      <<>> : "Hawthorne Nameplates"

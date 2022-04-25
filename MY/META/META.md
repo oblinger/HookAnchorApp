@@ -1,9 +1,9 @@
   [KMR](KMR.md)
   [Tasks](Tasks.md)
-  [Root](Root.md)
+  [Top](Top.md)
 
 # META
-- [[Root]]                -  List of all top level info pages    
+- [[Top]]                -  List of all top level info pages    
 - [[MY/Plan/Planning]]            -  Overview of the pages used for short and long term planning
 - [[Meta Flow]]     -  Overview of my data intake and processing pathways
 - [[Meta Org]]      -  Overview of all info resources 

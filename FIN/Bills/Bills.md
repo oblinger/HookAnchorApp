@@ -1,9 +1,10 @@
+  [Budget](Budget.md)
 vorwerk $40/yr
 
 # ### SETUP ###
-## === FAMILY BALANCE ===
+## = FAMILY BALANCE
 
-
+```
 OWED TO QINGLING
   $5,920  2020.07.??	-- QL cash stash paying for Mary and Ayi#1
   $8,000  2020-09-01 	-- got out to pay Ayi
@@ -21,9 +22,9 @@ OWED TO QINGLING
  -$9,000  2021-11-08	-- QL transferred to herself from grandcntrl (ZERO BAL)
 
  
- 
-_
-### --- pre 2021 ---
+```
+
+### - pre 2021
 
 **Family Budget**
 	8000	Housing
@@ -51,7 +52,7 @@ MONTHLY 4K
 	2000	Food	
 
 _
-## === CASH FLOWS ===
+## = CASH FLOWS
 
 
 **Grand Central Income**
@@ -87,7 +88,7 @@ _
  2,000	Occasional spending
 
 _
-## === RECURRING BILLS ===
+## = RECURRING BILLS
 ### info
 
 - APPLE:  Mac->AppStore->MyPicture->ViewInfo->Manage
@@ -130,7 +131,7 @@ CHASE FREEDOM
 - vary		FEDEX
 - vary		USPS
 
-CHASE SAPHIRE  ==CARD==
+CHASE SAPPHIRE  CARD
 - vary		FANDANGO
 
 APPLE

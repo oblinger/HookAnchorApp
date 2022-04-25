@@ -1,3 +1,0 @@
-# NW.Greg\_Dunham --
-
-    <<>>

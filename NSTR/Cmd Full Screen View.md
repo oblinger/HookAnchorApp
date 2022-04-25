@@ -1,1 +1,0 @@
-# Cmd Full Screen View --

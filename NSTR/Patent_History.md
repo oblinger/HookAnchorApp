@@ -1,5 +1,0 @@
-# Patent\_History --
-
-
-
-    <<>>

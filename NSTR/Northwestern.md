@@ -1,3 +1,0 @@
-# Northwestern -- -- Generated --
-
-    <<>>

@@ -1,4 +1,4 @@
-
+water plants
 - [ ] F: script control of Airpod Max connection on Mac
 - [ ] F: play with 'state' app
 - [ ] PKM: Use ^a ^e to select whole line to move?  

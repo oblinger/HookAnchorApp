@@ -1,5 +1,0 @@
-# Notester.Layout.Weekly View --
-
-    <<>>
-        <<>>
-    }

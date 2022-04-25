@@ -1,2 +1,0 @@
-# Notester.Template.Meeting --
-

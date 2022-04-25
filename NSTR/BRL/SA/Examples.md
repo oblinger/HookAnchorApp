@@ -1,4 +1,0 @@
-# BRL.SA.Examples --
-
-
-      <<>>

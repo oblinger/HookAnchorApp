@@ -1,1 +1,0 @@
-# Picatinny Arsenal --

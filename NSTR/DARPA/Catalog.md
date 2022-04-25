@@ -1,6 +1,0 @@
-# DARPA.Catalog --
-
-
-    <<>>
-
-     

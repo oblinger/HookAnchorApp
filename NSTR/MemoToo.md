@@ -1,5 +1,0 @@
-# MemoToo --
-
-    contacts 
-
-    <<>>  W2

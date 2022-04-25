@@ -1,5 +1,0 @@
-# Gist --
-
-    contacts
-
-    <<>>  W2

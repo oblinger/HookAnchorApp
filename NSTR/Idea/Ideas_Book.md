@@ -1,4 +1,0 @@
-# Idea.Ideas\_Book --
-
-
-      <<>>
