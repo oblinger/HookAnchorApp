@@ -1,9 +1,25 @@
- 
 ## = ACTIVE
+https://www.asianhustlenetwork.com/
+https://www.asianleadersalliance.com/
+https://www.asianleadersalliance.com/
 
-- [[@Aniket Kumar]]: [[@Emily Wallach]],  [[@Melissa Cote]],
-- FAANG: Vit, Davis
-- [[DYL#- FAANG GUY|Faang questions]]:  [[@Vittorio Castelli]],  
+
+|           |                      | . . . . . . . . . . . . . . . . . . . . . . . . . . . . |
+| --------- | -------------------- | ------------------------------------------------------- |
+| S - W5-04 | [[@Emily Wallach]]   | BeVC                                                    |
+| W - M4-25 | [[@Melissa Cote]]    | BeVC                                                    |
+| W - M4-25 | [[@Arkady Epshteyn]] | BeFAANG                                                 |
+|           | [[@John Davis]]      | BeFAANG                                                 |
+|           | [[@Michael Freed]]   | BeFAANG Mgr                                             |
+| P - T5-03 | [[@Sahil Kejriwal]]  | Robotics / Startup                                      |
+|           | [[__]]               |                                                         |
+|           | [[__]]               |                                                         |
+|           | [[@Juan Huerta]]     |                                                         |
+|           | [[@Rafah Hosn]]      |                                                         |
+
+## = SOON
+-    [[@Vittorio Castelli]],
+
 
 ## = Rotation
 - Attilla, Ben Wild
@@ -18,7 +34,7 @@
 
 # LOG
 ### 2021-09-23 - WHOM IN MY NETWORK TO ASK
-
+- [[FAANG]] 
 To CALL:	 [Juan Huerta](https://www.linkedin.com/in/juanmhuerta/), [Rafah Hosn](https://www.linkedin.com/in/rafahhosn/), [Ron Brachman](https://www.linkedin.com/in/ron-brachman-9195764/), 
 Later:      Melanie Dumas, Theo Enns, [Doug Gordin](https://www.linkedin.com/in/douglas-gordin-69848/),
 To Call:  	Dennis DeCoste, Foster Provost, Chris Ramming, Ronny Kohavi, 

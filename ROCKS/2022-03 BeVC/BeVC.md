@@ -8,6 +8,32 @@
 
 ### . 
 .
+## = DYL Odessy
+! Vision spouting, Meeting man, Deal closer
+| Time   | Activity                        | Notes                                |
+| ------ | ------------------------------- | ------------------------------------ |
+| Year 1 | Ad hoc advising                 | Providing small value to multiple VC |
+| Year 2 | Committing to a VC, FT advising |                   |
+| Year 3 | Going deep with them            |             |
+| Year 4 | Making Partner                  |                                      |
+| Year 5 | -spending-5-years-              |                                      |
+|        |                                 |                                      |
+
+- High energy @ many meeting about tech
+- Selling founders and investors on shared vision of the future
+
+
+QUESTIONS:
+- Gut Check On My Value Prop:  
+	- Develop, Assess & Sell Investment Thesis  (landscaping).  
+	- Operate within the AI community as a peer and leader.  
+	- Excellent in selling technical vision - 2 founders & LPs.
+	- Technical Diligence
+	- Operational support for AI strategy and execution
+- My early value prop.
+- 
+
+
 ## === PLAN ===
 ### --- Read about being a VC
 

@@ -1,5 +1,7 @@
-
-  
+y
+- https://github.com/jigish/slate
+- https://github.com/jigish/slate
+- 
 - [ ] https://www.marcusbuckingham.com/gift-of-standout/
 - [ ] Buy Dad's mac
 - [ ] [[@Maria Cross]]
@@ -7,7 +9,7 @@
 - [ ] [btt](https://folivora.ai/buy)
 
 - [ ] KM # refactor KM to scan for both kinds of link types, AND to produce both types depending on the context.
-- [ ] KICK window into position 1, 2, 3 and back  (Mess with STATE)
+- [ ] KICK window into position 1, 2, 3 and back  (Mess with SLATE)
 - [ ] Social Heartbeat - Establish regular time and list of social connections
 - [ ] Fling 1  # Should extend fling to numbered list positions.  
 - [ ] HACK -- get all mail messages logged

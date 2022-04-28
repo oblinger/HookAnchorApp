@@ -169,6 +169,7 @@ Burnett, Bill; Evans, Dave. Designing Your Life (p. 40). Knopf Doubleday Publish
 
 ### - LIFE VIEW
 ### - ABOUT ME
+- **CORE**:  (1) Want to work on something "important"     (2) Enjoy the process of 'thinking something thru'
 - **IDEAS** -- I love to focus on the technical: the big idea, and technical details
 - **THE WAY I WORK**
 	- **ALLEY CAT** - Like working on several different things, and jumping between then as my interest shifts.
@@ -591,6 +592,8 @@ OTHER PATHS:
 QUESTIONS:
 1.  DATA SCIENTIST  --  Am I in range to be an applied/data scientist?  (prep needed?)
 2.  DAY TO DAY -- What are the day to day activities of a manager?  of a data scientist?
+3.  BEST PREP -- What are the best things to do now land strongest job w/ greatest flexibility
+4. BEST WAY TO:   (1) important   &   (2) thinking thru ideas
 
 DETAILS QUESTIONS:
 - ML ENG Training -- 
@@ -627,21 +630,7 @@ Questions:
 - Can I make this switch
 - 
 
-### - VC GUY - Vision spouting, Meeting man, Deal closer
-| Time   | Activity                        | Notes                                |
-| ------ | ------------------------------- | ------------------------------------ |
-| Year 1 | Ad hoc advising                 | Providing small value to multiple VC |
-| Year 2 | Committing to a VC, FT advising |                   |
-| Year 3 | Going deep with them            |             |
-| Year 4 | Making Partner                  |                                      |
-| Year 5 | -spending-5-years-              |                                      |
-|        |                                 |                                      |
-
-
-- High energy @ many meeting about tech
-- Selling founders and investors on shared vision of the future
-
-
+### - [[BeVC]] 
 ### - Insight follower???
 - Early stage prototyping
 - Thinking thru details

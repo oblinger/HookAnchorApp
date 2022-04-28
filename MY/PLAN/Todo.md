@@ -1,8 +1,8 @@
-- [ ] if I did research what would it be
+- [ ] If I did research what would it be
 
 - [ ] High output management summary
 - [ ] Dave, Dad, Sammie gifts
-- [x] Taxes Delayed
+- [x] Taxes Delay
 - [x] Errands:  Blood Work
 
 - [ ] COOK: Peanut sauced tofu; 

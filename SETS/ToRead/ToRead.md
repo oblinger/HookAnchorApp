@@ -1,22 +1,28 @@
-  [BooksToRead](BooksToRead.md),   [ToResearch](ToResearch.md)
 
-- [ ] [Mental Models List](https://medium.com/@yegg/mental-models-i-find-repeatedly-useful-936f1cc405d)    
-## = REPEAT =
+## = REPEAT
 - >>>>>        Clean-Unsorted * Scan thru them * Do Repeats or Ref Pages
 -  MAIN:        [WSJ](https://wsj.com),  [Seeking Alpha](https://seekingalpha.com),   [Feedly](https://feedly.com),  
 - BLOGS:      [Future Of Coding](https://futureofcoding.org/community),  
 - OTHERS:    [BBC](https://news.bbc.co.uk/),  [NY Times](https://www.nytimes.com/),  [CNN](https://edition.cnn.com/),  
+- LINKS:        [BooksToRead](BooksToRead.md),   [ToResearch](ToResearch.md)
+
+## = MISC
+- [ ] [Mental Models List](https://medium.com/@yegg/mental-models-i-find-repeatedly-useful-936f1cc405d)    
+
+## = NJ22
+- [[DL#t2022-04-26 Lample Charton]] 
+- [GANs summary for 2020](https://towardsdatascience.com/gan-papers-to-read-in-2020-2c708af5c0a4)
 
 ## = TOPICS
 ### [[BooksToRead]] 
-### Org System
+### - Org System
 - [ ] https://www.zsolt.blog/2021/04/exploring-obsidian.html
 
 
 ### Health
 - [ ] Read study  [IF](https://jamanetwork.com/journals/jamainternalmedicine/fullarticle/2771095?guestAccessKey=444bbcb2-7e13-4dc6-998f-5de5e27aa19e&amp;utm_source=For_The_Media&amp;utm_medium=referral&amp;utm_campaign=ftm_links&amp;utm_content=tfl&amp;utm_term=092820) 
 
-### ML RELATED
+### - OLDER ML RELATED
 
 [Hinton Modules](https://medium.com/syncedreview/better-than-capsules-a0429d7170e2) 
 https://medium.com/syncedreview/yoshua-bengio-team-leverages-dl-to-rejuvenate-symbolic-ai-neural-production-systems-reveal-latent-18a41a718bd7

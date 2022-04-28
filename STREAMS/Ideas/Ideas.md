@@ -1,6 +1,24 @@
   [TIER Z](TIER%20Z/TIER%20Z.md),   [TIER-1](TIER-1/TIER-1.md),   [TIER 4](TIER%204/TIER%204.md),   [TIER 3](TIER%203/TIER%203.md),   [TIER 2](TIER%202/TIER%202.md)
   [TIER Z](TIER%20Z.md)  [GHOST-Seed](GHOST-Seed.md)  [Tier-1](Tier-1.md)  [TIER 4](TIER%204.md)  [TIER 3](TIER%203.md)  [TIER 2](TIER%202.md)  [stindex](stindex.md)
 
+## = TIER 1 =
+- [[OpenBricks]]
+- [[TreeSheet]] 
+## = TIER 2
+-  [[MKT]]
+- [[SmartScale]]
+## = TIER 3
+- [[Forum]]
+- [[Autonomy]]
+## = TIER 4
+- [[MedAR]]
+- [[CtrlSaaS]]
+## = TIER Z
+- [[Crowd Self Assessment]]
+- [[LeanCanvas]]
+- [[Tableau Killer]]
+- [[ClaimsAnalyzer]] 
+
 
 (See [startup/index](__stindex__.md) for list)
 

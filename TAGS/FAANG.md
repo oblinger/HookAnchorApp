@@ -5,9 +5,9 @@ Includes  [[@Meta]],  [[@Facebook]],  [[@Amazon]],  [[@Apple]],  [[@Netflix]],  
 PLUS:  [[@Microsoft]],  [[@LinkedIn]]   PLUS:  [[@Vmware]],  [[@PARC]],  
  [LinkedIn Search](https://www.linkedin.com/search/results/people/?currentCompany=%5B%226442186%22%2C%2229028525%22%2C%2234924%22%2C%222382910%22%2C%22208137%22%2C%221441%22%2C%221586%22%2C%221035%22%2C%2276987811%22%2C%2210667%22%2C%22162479%22%2C%221009%22%2C%221337%22%2C%22165158%22%5D&network=%5B%22F%22%5D&origin=FACETED_SEARCH&page=4&pastCompany=%5B%221586%22%2C%221009%22%2C%221441%22%2C%221035%22%2C%2276987811%22%2C%22162479%22%2C%2210667%22%2C%221337%22%2C%22165158%22%5D&sid=vX0)
 ### - Salaries and Levels
-- Medium article broken out by [Level.](https://medium.com/@mikldd/data-salaries-at-faang-companies-in-2022-29d5b56b2428).
-- 
+- Medium article broken out by [Level](https://medium.com/@mikldd/data-salaries-at-faang-companies-in-2022-29d5b56b2428).
 
+- Lead, Technical AI, Research
 
 ## = People
 
@@ -18,7 +18,7 @@ PLUS:  [[@Microsoft]],  [[@LinkedIn]]   PLUS:  [[@Vmware]],  [[@PARC]],
   A | [[@Mark Drummond]],  [[@Carlos Guestrin]],  [[@Jeff Provost]],  [[@Mark Reid]],
   G | [[@Melanie Dumas]],  [[@John Davis]],  [[@Doug Gordin]],  [[@Arkady Epshteyn]],  
   M | [[@Rafah Hosn]],  [[@Luiz Pires]], ...more
-  O | [[@Sofus Macskassy]],  [[@Chris Ramming]],  
+  O | LinkedIn [[@Sofus Macskassy]], VMware [[@Chris Ramming]],  
   
 
  GOOGLE    | [[@Google]]                                                                                                                  
