@@ -1,4 +1,5 @@
-- [ ] F: edit scripts to be python3 scripts
+- [ ] fix keyboard maestro xcode error
+- [ ] - [ ] F: edit scripts to be python3 scripts
 - [ ] water plants
 - [ ] F: script control of Airpod Max connection on Mac
 - [ ] F: play with 'state' app
@@ -11,6 +12,20 @@
       and that one
 - [ ] another
 
+~
+2022-04-30 11:26:07.040 xcodebuild[1773:80457] Requested but did
+not find extension point with identifier
+Xcode. IDEKit. ExtensionSentinelHostApplications for extension
+Xcode. DebuggerFoundation. AppExtensionHosts.watchOS of plug-in
+com.apple.dt.IDEWatchSupportCore
+2022-04-30 11:26:07.040 xcodebuild[1773:80457] Requested but did
+not find extension point with identifier
+Xcode. IDEKit. ExtensionPointIdentifierToBundleIdentifier for
+extension
+Xcode. DebuggerFoundation.AppExtensionToBundleIdentifierMap-watchos
+of plug-in com. apple.dt.IDEWatchSupportCore
+
+~
 
 Sondra, thanks for the constructive response!
 

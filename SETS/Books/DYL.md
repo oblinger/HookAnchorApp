@@ -151,8 +151,6 @@ PAGE 27
  PAGE 40.  250 words each
  Where do your views on work and life complement one another? b. Where do they clash? c. Does one drive the other? How?
 
-Burnett, Bill; Evans, Dave. Designing Your Life (p. 40). Knopf Doubleday Publishing Group. Kindle Edition. 
-
 ### - WORK VIEW
 - PRIMARY VALUE -- Why do I work?  To:
 	- earn good money,
@@ -174,15 +172,15 @@ Burnett, Bill; Evans, Dave. Designing Your Life (p. 40). Knopf Doubleday Publish
 - **THE WAY I WORK**
 	- **ALLEY CAT** - Like working on several different things, and jumping between then as my interest shifts.
 	- **BURSTY** - I can execute well as a burst, but not continuous
-	 	(except SW or idea coding)
+	 	(except SW or idea coding in flow)
 	- **REACTIVE** - Work easiest when task triggers are presented from the outside.
 	- **COMMITMENT AVERSE** -- I systematically dodge certain commitment steps
 	- **WORKY** - I am always "working" its my mental mode
 	- **LIMIT** - seem to have daily limit (3h), not effective after (for work I don't love)
-- AREAS OF ATTRACTION
-	- SOCIAL *SYSTEMS* - 
-	- SYSTEMATIC -- idea is a systems idea relating to how things work
-	- BULLET -- idea is single "silver bullet" for some acknowledged problem
+- **AREAS OF ATTRACTION**
+	- **SOCIAL *SYSTEMS*** - 
+	- **SYSTEMATIC** -- idea is a systems idea relating to how things work
+	- **BULLET** -- idea is single "silver bullet" for some acknowledged problem
 
 
 
@@ -579,21 +577,22 @@ OTHER PATHS:
 ### - FAANG GUY 
 ! BigCo Project Leader & Technology Driver
 
-| <div style="width:190px">Time</div> | Activity         | Notes                            |
-| ----------------------------------- | ---------------- | -------------------------------- |
-| Year 1                              | Interviewing     | Learning Mgt, ML, interview prep |
-|                                     | Intense Learning | Slammed at work                  |
-| Year 2                              | Groove           | Getting my groove                |
-| Year 3                              | SIDE GIG         | Just starting my side gig        |
-| Year 4                              |                  |                                  |
-| Year 5                              |                  |                                  |
+| Time   | Activity         | Notes                            |
+| ------ | ---------------- | -------------------------------- |
+| Year 1 | Interviewing     | Learning Mgt, ML, interview prep |
+|        | Intense Learning | Slammed at work                  |
+| Year 2 | Groove           | Getting my groove no             |
+| Year 3 | SIDE GIG         | Just starting my side gig        |
+| Year 4 |                  |                                  |
+| Year 5 |                  |                                  |
+|        |                  |                                  |
 
 
 QUESTIONS:
-1.  DATA SCIENTIST  --  Am I in range to be an applied/data scientist?  (prep needed?)
-2.  DAY TO DAY -- What are the day to day activities of a manager?  of a data scientist?
-3.  BEST PREP -- What are the best things to do now land strongest job w/ greatest flexibility
-4. BEST WAY TO:   (1) important   &   (2) thinking thru ideas
+1.  **DATA SCIENTIST**  --  Am I in range to be an applied/data scientist?  (prep needed?)
+2.  **DAY TO DAY** -- What are the day to day activities of a manager?  of a data scientist?
+3.  **BEST PREP** -- What are the best things to do now land strongest job w/ greatest flexibility
+4. **BEST WAY TO**:   (1) important   &   (2) thinking thru ideas
 
 DETAILS QUESTIONS:
 - ML ENG Training -- 
@@ -637,7 +636,7 @@ Questions:
 ### - MY CO - 
 
 
-### - OLDER ODSSEYS
+### - OLDER ODESSEYS
 #### - KMCO - Marketplace - UNIFORM - Guy
 QUESTIONS:
 - Who is my 'customer'? what will they pay for?  ML-wizard

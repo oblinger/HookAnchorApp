@@ -1,3 +1,4 @@
+b'- [ ] ML hands on course'
 - [x] -- move paypal so we never use oblinger@gmail.com
 - [x] Clean basement
 - [x] scan all CMD and create huge spottext.txt sorted by type, then by path.  manually trim to

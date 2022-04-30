@@ -1,5 +1,30 @@
  [[COACH]] [[@A Path That Fits]]  
 
+### m2022-04-30  FINE Restart
+
+Dan, 
+
+Each of our sessions are expensive in time and attention both yours and mine, as well as financially too.  So I wanted them to be valuable, but didn't know how to MAKE them valuable.  So I paused them for a bit.
+
+Subject to the constraints on your schedule I would like to "un-pause" and continue our dialog.  I think it is helpful to let you know where my head is at (you often would encourage me to write out my thoughts, so I will do that here in bullet form)
+
+
+**PROBLEM FROM BEFORE** -- I felt you were telling me stuff I wanted to hear, but not stuff that is realistic or actionable.  The cause of this lies mostly with myself, you are good at gathering a sense of a person and reflecting that back to them.  But in this case I don't think this was yielding actionable paths.
+
+**MY PENCHANT** -- I have a strong predilection for 'big ideas' for 'hard ideas' and then thinking them through.  I believe I do have a gift in seeing a technically detailed view of the world as it COULD be...  and I *love* exercising this gift.
+
+**MY GAPS** -- But this penchant has several downside:
+- NO FOLLOW THRU -- I end up thinking thru many such big ideas, but without required follow thru.
+- EACH IS COSTLY -- Each idea, requires significant effort and resources from humanity to execute.  I do believe they each has a chance to be wildly valuable, thus worth humanity's effort.  Still this creates a catch-22.
+- DIVERGENT -- Each idea is borne from a central problem and some novel, transformative insight about how to attach the problem.  What ties them together is that each is a large human issue, and I see a novel transformative approach.  But other than that, they are ALL OVER THE FLIPPING MAP.  Thus, making progress on one adds no value for me, or for the others.  So I flail.
+
+
+
+
+
+I definitely value your intuitions, and indeed 
+
+
 
 
 ### m2021-11-07 - FINE - Truths 

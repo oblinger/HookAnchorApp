@@ -313,7 +313,6 @@ alternative
 
 cat >/Users/oblinger/.emacs
 (load-file "/ob/bin/emacs.el")
-^D
  
      # OPTIONAL:   brew services start emacs 
 
@@ -352,6 +351,12 @@ URL:  about:config
 
 ### nope xx SourceTree (from sourcetree associated with Atlassian)
 ### --- (Paid) ---
+### xx Launchbar
+
+LaunchBar 6[Download](https://obdev.at/launchbar/download.html)
+
+16RG19Z2W0-717NJ-49SN9BUKF0
+
 ### xx Flotato Pro
 
 wef234@gmail.com

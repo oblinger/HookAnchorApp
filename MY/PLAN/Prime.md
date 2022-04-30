@@ -1,7 +1,6 @@
 ## = [[NJ22|NJ22]] =
-- [ ] [[DYL]] Dan one-pager (from quick pass on earlier chapters)
 - [ ] [[DYL]] Build 3 Odyssey plans.
-- [ ] [[DYL]] Pick leading odyssey one
+- [ ] [[DYL]] Dan one-pager (from quick pass on earlier chapters)
 
 ## = [[BeFAANG|BeFAANG]] =
 - [ ] Speak with as many FAANG research light as I can 

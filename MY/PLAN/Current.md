@@ -1,15 +1,16 @@
 ### 2022-04-25
-- [ ] ML hands on course
+MIT
+- [ ] [[DYL]] Build 3 Odyssey plans. FAANG, 
+- [ ] [[DYL]] Read prototyping chapter
+- [ ] Read GANs (Benjio)
+
 - [ ]  FAANG Deep
 	- [ ] Schedule FAANG Engineer calls
 	- [ ] Best Training ordered
 	- [ ] calls
 	- [ ] Run code for Coursera... & few hours
-
-- [ ] [[DYL]] Build 3 Odyssey plans. FAANG, 
-- [ ] [[DYL]] Read prototyping chapter
-- [ ] [Yearbook](__Yearbook__.md) OUT
-- [ ] Email Anket guys
+- [x] [Yearbook](__Yearbook__.md) OUT
+- [x] Email Aniket guys
 
 
 

@@ -1,7 +1,4 @@
 ## = ACTIVE
-https://www.asianhustlenetwork.com/
-https://www.asianleadersalliance.com/
-https://www.asianleadersalliance.com/
 
 
 |           |                      | . . . . . . . . . . . . . . . . . . . . . . . . . . . . |
@@ -24,7 +21,6 @@ https://www.asianleadersalliance.com/
 ## = Rotation
 - Attilla, Ben Wild
 
-
 ### - SLOWER 
 - Kryzsiek, Greg Hornby, 
 
@@ -35,9 +31,9 @@ https://www.asianleadersalliance.com/
 # LOG
 ### 2021-09-23 - WHOM IN MY NETWORK TO ASK
 - [[FAANG]] 
-To CALL:	 [Juan Huerta](https://www.linkedin.com/in/juanmhuerta/), [Rafah Hosn](https://www.linkedin.com/in/rafahhosn/), [Ron Brachman](https://www.linkedin.com/in/ron-brachman-9195764/), 
-Later:      Melanie Dumas, Theo Enns, [Doug Gordin](https://www.linkedin.com/in/douglas-gordin-69848/),
-To Call:  	Dennis DeCoste, Foster Provost, Chris Ramming, Ronny Kohavi, 
+To CALL:	[Juan Huerta](https://www.linkedin.com/in/juanmhuerta/), [Rafah Hosn](https://www.linkedin.com/in/rafahhosn/), [Ron Brachman](https://www.linkedin.com/in/ron-brachman-9195764/), 
+Later:      	Melanie Dumas, Theo Enns, [Doug Gordin](https://www.linkedin.com/in/douglas-gordin-69848/),
+To Call:   	Dennis DeCoste, Foster Provost, Chris Ramming, Ronny Kohavi, 
 Maybe:		Joe hellerstein, John Turek, Steve Chien, Daniel Haddick?, Drew Dean
 	Herb Derby, ?Manish Gupta
 

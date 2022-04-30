@@ -1,4 +1,6 @@
-y
+- [ ] CAPS-return use title bar to decide if it should trigger command and go back
+- [ ] Merge all AF and oblinger contacts together.
+- [ ] Ensure sent mail is saved. and received mail is saved.
 - https://github.com/jigish/slate
 - https://github.com/jigish/slate
 - 
