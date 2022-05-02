@@ -40,6 +40,9 @@ Each of our sessions are expensive in time and attention both yours and mine, as
 - **VALUE MARKETS** - A post-capital, web3.0 mechanism that accurately pays CONSUMERS for the benefit their market participation brings to a knowledge economy, and disincentivizes the rent-seeking (sustainable differentiation) behaviors that underlie traditional capital markets.
   Insight:  Traditional capital markets serve capital rather than the participants:  its incentivizes rent-seeking (calling it sustainable differentiation), and CHARGES consumers to on whole are actually ADDING value as the consume in a market economy.
 
+**A PRACTICAL ALTERNATIVE**
+- **TILE CUTTING ROBOT** -- Free rental of very accurate laser range finder provided for self-measurement, coupled with a tile-cutting robot located near a tile production facility to provide custom cut tile.
+
 
 
 ### m2021-11-07 - FINE - Truths 

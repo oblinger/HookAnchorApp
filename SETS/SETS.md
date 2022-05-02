@@ -1,4 +1,5 @@
-  [Cmd](Cmd/Cmd.md),   [Writings](Writings/Writings.md)
+  [Cmd](Cmd/Cmd.md)
+  [CMD](CMD.md),   [Writings](Writings/Writings.md)
   [Quotes](LOGS/Quotes.md),   [Places](Places/Places.md),   [Books](Books/Books.md),   [Lang](Lang/Lang.md),   [Humor](Humor/Humor.md),   [Recipes](Recipes/Recipes.md),   [Movies](Movies/Movies.md),   [ToRead](ToRead/ToRead.md),   [Buy](Buy/Buy.md)
 
 

@@ -24,7 +24,7 @@ ALL TOPIC ROOTS
      [[DocR]],   [[DocCPP]],   [[DocDanO]],   [[DocObjectiveC]],   [[DocAPI]],   [[DocPython]],   [[DocVagrant]],   
   [[DocCucumber]],   [[DocApplescript]],   [[DocRuby]],   [[DocMarkdown]],   [[DocRails]],   [[DocSamurai]],   
   [[DocPandas]],   [[DocDelayedJob]],   [[DocLinux]],   [[DocClojure]],   [[DocOSX]],   [[DAILY]],   [[Tags]],   
-  [[Logs]],   [[Receipts]],   [[Meet]],   [[Letters]],   [[IBM-years]],   [[Msg]],   [[Sets]],   [[Cmd]],   
+  [[Logs]],   [[Receipts]],   [[Meet]],   [[Letters]],   [[IBM-years]],   [[Msg]],   [[Sets]],   [[CMD]],   
   [[Writings]],   [[Politics]],   [[race]],   [[Obsidian]],   [[Places]],   [[Books]],   [[LANG]],   [[haskell]],   
   [[Humor]],   [[Recipes]],   [[Movies]],   [[flix]],   [[ToRead]],   [[Buy]],   [[Bought]],   [[MY]],   [[scratch]],   
   [[Meta]],   [[Myfo]],   [[FOOD]],   [[AF]],   [[AFwp]],   [[Outcult]],   [[AFactive]],   [[AFldr]],   [[AFarchive]],

@@ -28,7 +28,6 @@ QUESTIONS:
 	- Operate within the AI community as a peer and leader.  
 	- Excellent in selling technical vision - 2 founders & LPs.
 - My early value prop.
-- 
 
 
 ## === PLAN ===
