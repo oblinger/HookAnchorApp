@@ -1,10 +1,5 @@
-  [Searches](Searches.md)
- [[Crunchbase|Crunchbase]] 
- [[ROCKS/2022-03 BeVC/Searches|Searches]]  [[TXT|OR]] 
 
-### ### TODO ### 
-
-
+### TODO
 
 ### . 
 .
@@ -24,12 +19,14 @@
 
 
 QUESTIONS:
+- Do you see my BG as having strong value?  And for whom?
 - Gut Check On My Value Prop:  
+	- DARPA PM angle
+	- Technical Diligence
+	- Operational support for AI strategy and execution
 	- Develop, Assess & Sell Investment Thesis  (landscaping).  
 	- Operate within the AI community as a peer and leader.  
 	- Excellent in selling technical vision - 2 founders & LPs.
-	- Technical Diligence
-	- Operational support for AI strategy and execution
 - My early value prop.
 - 
 
@@ -54,6 +51,9 @@ Questions
 
 ## = REF
 - [How much does a VC partner earn?](https://www.quora.com/How-much-does-a-VC-partner-earn)  
+  [Searches](Searches.md)
+ [[Crunchbase|Crunchbase]] 
+ [[ROCKS/2022-03 BeVC/Searches|Searches]]  [[TXT|OR]] 
 
 # # MEETINGS
 ### m2022-04-06  Recruiter topics

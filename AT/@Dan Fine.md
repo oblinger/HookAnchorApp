@@ -1,29 +1,44 @@
  [[COACH]] [[@A Path That Fits]]  
 
+
 ### m2022-04-30  FINE Restart
+
 
 Dan, 
 
-Each of our sessions are expensive in time and attention both yours and mine, as well as financially too.  So I wanted them to be valuable, but didn't know how to MAKE them valuable.  So I paused them for a bit.
-
-Subject to the constraints on your schedule I would like to "un-pause" and continue our dialog.  I think it is helpful to let you know where my head is at (you often would encourage me to write out my thoughts, so I will do that here in bullet form)
+Each of our sessions are expensive in time and attention both yours and mine, as well as financially too.  So I wanted them to be valuable, but didn't know how to MAKE them valuable.  So I paused them for a bit.  I feel I should have given some explanation at the time, but this pause happened by degrees rather than an all at once decision,  sorry for that.  In any case, I would love to have our next chat when your schedule allows.  I think it is helpful to let you know where my head is at as we do our restart.  You often would encourage me to write out my thoughts, so I will do that here in bullet form:
 
 
-**PROBLEM FROM BEFORE** -- I felt you were telling me stuff I wanted to hear, but not stuff that is realistic or actionable.  The cause of this lies mostly with myself, you are good at gathering a sense of a person and reflecting that back to them.  But in this case I don't think this was yielding actionable paths.
+**PROBLEM FROM BEFORE** -- I felt you were telling me stuff I wanted to hear, but not stuff I needed to hear; stuff that would be realistic or actionable.  The cause of this lies mostly with myself, you are good at gathering a sense of a person and reflecting that back to them.  But in this case I don't think this was yielding actionable paths.
 
-**MY PENCHANT** -- I have a strong predilection for 'big ideas' for 'hard ideas' and then thinking them through.  I believe I do have a gift in seeing a technically detailed view of the world as it COULD be...  and I *love* exercising this gift.
+**MY PENCHANT** -- I have a strong predilection for  (1) hard TECHNICAL problems, (2) where I seem to have a NOVEL thought, (3) that could result in big IMPACT.   My love is *thinking* through how the problem could be solved.  I believe I do have a gift in seeing a technically detailed view of a different world as it COULD be...  and I *love* exercising this gift.
 
-**MY GAPS** -- But this penchant has several downside:
-- NO FOLLOW THRU -- I end up thinking thru many such big ideas, but without required follow thru.
-- EACH IS COSTLY -- Each idea, requires significant effort and resources from humanity to execute.  I do believe they each has a chance to be wildly valuable, thus worth humanity's effort.  Still this creates a catch-22.
-- DIVERGENT -- Each idea is borne from a central problem and some novel, transformative insight about how to attach the problem.  What ties them together is that each is a large human issue, and I see a novel transformative approach.  But other than that, they are ALL OVER THE FLIPPING MAP.  Thus, making progress on one adds no value for me, or for the others.  So I flail.
+**MY GAPS** -- But this penchant has several downsides:
+- **NO NATURAL FOLLOW THRU** -- Without external constraint, I end up thinking thru many such big ideas, but without required follow thru.
+- **EACH IS COSTLY** -- Each idea, requires significant resource from humanity to execute.  I do believe they each has a chance to be wildly valuable too.  Still this creates a catch-22; and it is less my skill and predilection to raise money build community.
+- **DIVERGENT** -- Each idea is borne from some core problem humanity has along with some novel, transformative insight about how to attack that problem.  What ties these together is that each is a large human issue, and I think I see a novel transformative approach.  But other than this connection, they are ALL OVER THE MAP.  Thus, making progress on one adds no value for me, or to the other ideas.  Thus w/o singular commitment to one, I easily flail.
 
+**MY CONTEXT** -- 
+- **DRIVEN BY WORK** -- I have traded some health and many other life interests for my work and pursuit of side projects.
+- **LIFESTYLE BUSINESS** -- I had hoped to turn my current business into a lifestyle income stream so I could execute on of my big ideas.
+- **ON FIRE** -- Four 4 years, I was on fire for an exceedingly abstract side-project agenda (my uniform language)--it had a shot of having big impact, and I LOVE it..  
+- **CRASHING DOWN** -- In 2021 I realized none of this would come to pass.  I have accepted this, but now struggle to have enthusiasm for any paths I see forward.
+- **LACK AVAILABLE ENERGY** -- Health issues, age, family context, and desire to have a more rounded life all mean that I don't have the available energy I once had for executing crazy ideas.
+- **EIGHT YEARS 'TIL RETIREMENT** -- I wont ever quit working, but 8 years until I am no longer focused on earning money.
+- **THE LAZY WORKAHOLIC** -- I am mentally organized around work, and am always 'working' on something.  Still I have rarely had a "real" job, where I needed to slog thru many hours of menial/required work.  Instead I have worked on stuff I wanted to, and not at a large constant rate, but instead in bursty spurts.  I think I would have significant difficulty maintaining focus month after month on a job that did not grab me.
 
+**EXISTING IDEAS**
+- **HIGH RISK** -- Each idea has a core innovation that is novel.  Since they are trying something new, they are inherently higher risk.
+- **NOT STRONGLY PAYING** -- These ideas are borne out of a desire to fix a societal problem, rather than get paid.  So even if I succeed in the high risk endevour I STILL don't make large money from it personally.
+- **MISALIGNED** -- Core idea and thinking fits me well, that is how I found the idea; Still the majority of the future work required is human relations work that I am not skilled as at, and don't love nearly as much.  (Still if I feel it is going somewhere, I will do whatever is required, I am a completionist in that way.)
 
-
-
-I definitely value your intuitions, and indeed 
-
+**EXISTING IDEAS**
+- **FORUM** - Use people's innate desire to be heard and make a difference to create crowd-sourced societal summaries of key issues.
+  Insight:  Purely mechanical processes and metrics can drive people to express concise summaries of societal issues in an un-gam-able, bias-neutral way.  (the 'fake news' conundrum is that no one is qualified to define 'fake' - but this system could be)
+- **EDU-CORP** - Solves a key catch-22.  Edu-Corp use future income, and business connections, and skills to "pay for" the upfront training required for success.
+  Insight:  Uses a pyramid of contractual obligations, peer teaching, and free-market economics to create-jobs and train those most at risk with ZERO cost.
+- **VALUE MARKETS** - A post-capital, web3.0 mechanism that accurately pays CONSUMERS for the benefit their market participation brings to a knowledge economy, and disincentivizes the rent-seeking (sustainable differentiation) behaviors that underlie traditional capital markets.
+  Insight:  Traditional capital markets serve capital rather than the participants:  its incentivizes rent-seeking (calling it sustainable differentiation), and CHARGES consumers to on whole are actually ADDING value as the consume in a market economy.
 
 
 

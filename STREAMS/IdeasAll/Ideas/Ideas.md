@@ -1,49 +1,50 @@
 
-|                                                   | . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . |
-| ------------------------------------------------- | ----------------------------------------------------------- |
-| [[__]]CATEGORIES __                               |                                                             |
-| [[Ideas Brain]]                                   |                                                             |
-| [[Ideas Log]]                                     |                                                             |
-| [[__]]                                            |                                                             |
-| [[__]] SOCIAL __                                  |                                                             |
-| [[Forum]]                                         |                                                             |
-| [[MKT]]                                           |                                                             |
-| [[EduCorp]]                                       |                                                             |
-| [[__]]                                            |                                                             |
-| [[__]]STARTUP __                                  |                                                             |
-| [[STREAMS/IdeasAll/TIER-2/SmartScale/LeanCanvas]] |                                                             |
-| [[TreeSheet]]                                     |                                                             |
-| [[__]]                                            |                                                             |
-| [[OpenBricks]]                                    |                                                             |
-| [[SmartScale]]                                    |                                                             |
-| [[Autonomy]]                                      |                                                             |
-| [[MedAR]]                                         |                                                             |
-| [[CtrlSaaS]]                                      |                                                             |
-| [[Crowd Self Assessment]]                         |                                                             |
-| [[Tableau Killer]]                                |                                                             |
-| [[ClaimsAnalyzer]]                                |                                                             |
-| [[__]]                                            |                                                             |
-| [[__]]                                            |                                                             |
-| [[__]]                                            |                                                             |
-| [[__]] LOG __                                     |                                                             |
-| 2022-04 [[Tile Robot]]                            |                                                             |
-| [[2020-00 FinScreener]]                           |                                                             |
-| [[2018-08 Robo-Chair]]                            |                                                             |
-| [[2016-00 DriveDev]]                              |                                                             |
-| [[2015-00 Walmart]]                               |                                                             |
-| [[2015-00 Flipping Websites]]                     |                                                             |
-| [[2009-03 State Edu Testing]]                     |                                                             |
-| [[2009-00 User Controlled Identifier]]            |                                                             |
-| [[2009-00 DARPA Energy]]                          |                                                             |
-| [[2007-12 DARPA Go-Play]]                         |                                                             |
-| [[2007-02 New Financial Model]]                   |                                                             |
-| [[2007-02 DARPA DHO]]                             |                                                             |
-| [[2007-01 DARPA GUST]]                            |                                                             |
-| [[2007-00 DARPA seeds]]                           |                                                             |
-| [[2006-11 DARPA Game World]]                      |                                                             |
-| [[2006-00 Nanofabrication]]                       |                                                             |
-| [[201--00 TechnoTherapy]]                         |                                                             |
-| 2000-00 [[Lean Canvas]]                           |                                                             |
+|                                        | . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . |
+| -------------------------------------- | ----------------------------------------------------------- |
+| [[__]]CATEGORIES __                    |                                                             |
+| [[Ideas Brain]]                        |                                                             |
+| [[Ideas Log]]                          |                                                             |
+| [[__]]                                 |                                                             |
+| [[__]] SOCIAL __                       |                                                             |
+| [[Forum]]                              |                                                             |
+| [[MKT]]                                |                                                             |
+| [[EduCorp]]                            |                                                             |
+| [[__]]                                 |                                                             |
+| [[__]]STARTUP __                       |                                                             |
+| [[Tile Robot]]                         |                                                             |
+| [[__]]                                 |                                                             |
+| [[__]]                                 |                                                             |
+| [[__]]                                 |                                                             |
+| [[__]]                                 |                                                             |
+| [[__]] LOG __                          |                                                             |
+| 2022-04 [[Tile Robot]]                 |                                                             |
+| [[2020-12 SmartScale]]                 |                                                             |
+| [[2020-10 MedAR]]                      |                                                             |
+| [[2020-09 CtrlSaaS]]                   |                                                             |
+| [[2020-07 Spot Pricing]]               |                                                             |
+| [[2020-07 Autonomy]]                   |                                                             |
+| [[2020-06 OpenBricks]]                 |                                                             |
+| [[2020-00 ClaimsAnalyzer]]             |                                                             |
+| [[2020-00 Tableau Killer]]             |                                                             |
+| [[2020-00 FinScreener]]                |                                                             |
+| [[2018-08 Robo-Chair]]                 |                                                             |
+| [[2016-00 DriveDev]]                   |                                                             |
+| 2016-00 [[TreeSheet]]                  |                                                             |
+| [[2015-00 Walmart]]                    |                                                             |
+| [[2015-00 Flipping Websites]]          |                                                             |
+| [[2013-08 Crowd Self Assessment]]      |                                                             |
+| [[2013-00 TechnoTherapy]]              |                                                             |
+| [[2009-03 State Edu Testing]]          |                                                             |
+| [[2009-00 User Controlled Identifier]] |                                                             |
+| [[2009-00 DARPA Energy]]               |                                                             |
+| [[2007-12 DARPA Go-Play]]              |                                                             |
+| [[2007-02 New Financial Model]]        |                                                             |
+| [[2007-02 DARPA DHO]]                  |                                                             |
+| [[2007-01 DARPA GUST]]                 |                                                             |
+| [[2007-00 DARPA seeds]]                |                                                             |
+| [[2006-11 DARPA Game World]]           |                                                             |
+| [[2006-00 Nanofabrication]]            |                                                             |
+| 2000-00 [[Lean Canvas]]                |                                                             |
 
 
 # LINKS
@@ -127,7 +128,7 @@ IDEAS
 
 	Key is to build upon habits that don't require upfront organization, ones that whose structure and performance improves with repeated usage.
 
-## === PRACTICAL FIRST BASE IDEAS ===
+## = PRACTICAL FIRST BASE IDEAS
 
 ### TruValue for Services
 
@@ -777,154 +778,3 @@ but in a way that
   - Backed by evernote
 ### Config -- finding a market place
 ### Uniform Marketplace -- Block-chain based market place 
-# WRITINGS ABOUT ISSUES
-### Race
-#### Original Sin
-	Slavery really is the original sin of America.  It is an evil so great, and it desendants still live on in this country, we never can really overcome it.
-#### Humans are bias machines.  
-	- 100% are biased.  100% are rascist (mostly strongly so)
-		If we define rascist as indexing off race  
-		(w/o evidence?)
-	- defined in this way minorities can be among most rascist
-		(this is understandable since race is so salient for minority)
-#### Intellectually "Get" the massive bummer that racism is
-	- a bias -- even if subtle and small
-	- if it is a SYSTEMATIC bias and against you; 
-	- would have cumulative and emotionally destructive effect
-#### I believe it is hard for me to honestly relate
-	- Been a kentucky boy from less educated poorer parents.  Still
-	- Am standard deviations above on motivation and ability
-	- Successful
-	- Part of the powerful majorites: male, white, christian
-#### The Suspicious Judge
-
-Imagine you are the judge transferred to hear rape case.  
-You enter the courtroom to find that jury selection is complete and the entire jury are the parents or victims in previous rape cases, and the plaintiff has a second cousin who is a convicted rapist.
-
-The defense attorney explains that he convined the judge that these jurists are the most competent to serve since they are among the most informed about rape and its consequences.
-
-Further the prior judge had testamony from the convicted second cousin read into the record by the victim herself at the commensement of this trial.
-
-
-How do you feel about fairness of the trial that is about to begin?
-
-
-This rediculous example used to drive home a key point:
-
-We often take it for granted that victims of racism are in the best position to assess and measure it.  But I dispute this.  I contend victims of crimes are often not the best judges of future cases of those same crimes:
-- It is a double edged sword, they ARE often in the best position to catalog the full range of damage cuased by the crime.  And may be most knowledgeable about factual data known about the crimes.
-- But this is balanced against bias derived from the emotional consequences of the crime itself.  Humans are not perfect logic machines, and just as the silly example above shows, strong emotions can significanly cloud judgement.
-
-CONSEQUENCE -- if we hope for fairness in consideration, it MUST be done in ways that minimize emotional connetions in those doing the judging.
-#### Self fulfilling & Internalized
-	Paperbag. 15 foot walls with paper at the top
-
-	impenetrable, you can get over them
-#### Factor Analysis Guesses
-	Guesses on my part based on evidence I have:
-
-	Cum Internal	Massive
-	Ability 		Majority	(in one-shot settings)
-	Cum External	
-	Internal Bias	Very Large	(role models; expectations)
-	Unconsious Bias	Largish
-	Conscious Bias	Medium?  (mostly small; sometimes lg)
-	Genetic			Miniscule to Small
-#### Reasoning Chain
-
-	**FACT** -- A "fact" is a belief about the world that is reliably derived by some decision procedure, where the decision procedure is accepted by a large majority of all humans as a valid method for deriving facts, and "reliably derived" means that the large majority of humans trained in this decision procedure, agree that the derivation itself is valid.
-
-	E.g. "The average C02 concentration on earth has risen this the last 50 years" is a fact according to this definition.
-
-	**FHB** -- Firmly Held Belief -- Is a belief that an individual holds firm even as they are exposed to a great range of facts and information, and are exposed to the most compellingly known refuting arguments.
-
-	**DOD** -- Dimension Of Debate -- Any linear dimension that organizes beliefs regarding some topic of human interest where humans can generally agree on the relative placement of those beliefs on the given spectrum.
-
-	E.g. freedoms-for-weapons vs. freedom-from-weapons is a DOD and most people would agree that "Even convicted felons should be allowed to own nuclear weapons" is towards the former where as "No citizen may own a gun" is towards the other end.  
-
-	There would be debates about relative placement in the details, but many on all sides of this issue would agree on the ordering itself.  This makes weapon-for-from-freedoms a valid DOD.
-
-
-	**KD** -- Knowlege Disposition -- The history of a person, their interests, and context affect the factual information and skills they have collected relevant to a DOD.  Some DOD are very relevant for an individual thus they have studied many facts relevant to the issue.
-
-	**PD** -- Perspective Disposition -- Like KD, a high PD may occur when an individual cares deeply about a DOD.  But in this case the belifs they have collected are not facts but are FHB, they are well considered perspectives on the issue.  (NOTE: These beliefs may have great validity, but they are not facts.)
-
-	**BD** -- Biased Disposition -- The context of a human may predispose them towards or away from certain beliefs.  The degree to which a belief reflect strongly (postively or negatively) on a group they are a member of or identify with is the degree of bias predisposition they have regarding the DOD.  (NOTE: One may have a very high BD yet not actually be biased.  Perhaps ones beliefs stems from insights that have nothing to do with their context, that is just a coincidential alignment.  So BD is only a PREDISPOSITION towards a bias.)
-
-	**PBB** -- Potentially Biased Beliefs -- Holding a belief favorable towards ones affiliation which is not widely held by those not of your affiliation is a potentially biased belief.  (Again we cannot know if it is actually biased since we don't know the source in the thinker's head.)
-
-	**IBB** -- Inverted Biased Beliefs -- Holding a belief that is UN favorable to your affiliation which is not widely held is called an Inverted Belief.
-
-	**DD** -- Demonstrably Discriminating -- By contrast an individual that holds a balance of PBB and IBB on a DOD, and is not dramatically skewed towards PBB over IBB is aparently discriminating.  NOTE: They could also be RANDOM, or virtue signaling, maybe they just flip a coin each time they hear about some new idea, or hold contrary beliefs in order to show how "Woke" they are, but at least we see there is little evidence of bias here.
-
-	**AP** -- Aparently Biased -- If one holds many PBB on a DOD and few IBB on that DOD, then we say that individual is AP on the DOD.  We cannot know if they are actually biased, maybe the whole world is quite confused as they see all these issues very clearly.  But there is suspicion here.  These beliefs are (1) not widely held, (2) are in favor of their affiliation, and (3) are systematic, the primary common underlying feature of these beliefs is their alignment with favor towards their group.
-
-	**AU** -- Aparently Unbiased -- A belief is aparently unbiased if DD individuals (drawn from both sides of the relvant DOD) are able to be swayed that the argument for the belief is valid after significant discussion. (NOTE: The DD themselves don't need to be converted to holding the belief, they are merely persuaded that the argument stems from rational thought, and not simply stemming from the arguer's bias.)
-
-	GB -- Group Bias -- 
-
-
-	~-~~-~~
-
-	Proposed DOD --  (is this a valid DOD?)
-	   "What are the ultimate causes for systematic differences 
-	    between the group of Caucasion American 
-	        and the group of African Americans."
-
-	Possible Scores For DanO and JohnD on the Race DOD:
-
-									Dan O			  John D
-	KD  Knowledge Disposition		getting better	  extremely high
-	PD  Perspective Disposition		moderate to high  extremely high
-	BD  Bias Disposition			moderately low	  arguably higher
-	ABB Aparently Biased Beliefs 	some			  many
-	IBB Inverted Biased Belifs		many			  few
-	DD	Demonstrably Discriminating	quite high		  better than many
-	AB	Aparently Biased			quite low		  moderate
-	AU	Aparent
-
-
-	who hold beliefs on both sides of an issue are exposed to the arguments for that belief over a significant period of time
-
-	INFO -- Informed -- An individual is informed on a DOD if in deep discussions on the DOD they can change beliefs in others, and if others who are judged to be informed (on both sides of )
-
-
-
-	.  Holding many aparantly biased beliefs 
-
-	favorable to your affiliations
-
- 
-
-
-	Accepting those beliefs might 
-
-	A human Identifying a predispositon
-### terror of an AI
-You are a good benevolent guy, and one day someone walks up to you and hands you a big red button. He tells you when you press it, it will kill ten families somewhere on earth. Horrible! But he also tells you that there are ten more buttons given to a parent in all ten families. And their button will kill you and your family. No one will know if you pushed the button, and we are not telling you if you are or are not the first one to receive this button. By the way, we are assuming that you magically know all that was said is true.
-Now you are a good guy. Read Pinker and all… so what do you do? Risk your family on the idea that ALL TEN will refrain forever? Remember even if they are nice and good people…. they also have to worry about their family too!
-Honestly Paul, wouldn't you be a terrible Dad, if you didn't push that button? And even if you were such a terrible Dad…. do you really think all ten would be.
-
-
-If I was holding that button, and I did not press it. I WOULD BE TERRIFIED every day. Now as a last thought experiement, imagine someone told all of this to you… you are one of the ten. but they said they would give you your button later.
-NOW I AM REALLY F-ING TERRIFIED. EVERY DAY.
-### --- 4D sphere ---
-
-I will take a stab. Saying the universe is spherical means that if you go in a "straight" line in 3 space you will eventually end up back where you started. To understand this, it helps to jump down onto the 2D curved surface of a 3D sphere. There you can see running in a "straight" line on the surface will land you back where you started. So saying that 3D space is spherical means that it is actually a  sphere in 4D (kinda hard to picture that I know, but the analogy holds)
-Now when one says the universe has no center, one really means it has no center IN THREE SPACE. Every direction you go in 3space and you are no closer to any center. But if you travelled in 4space you could go right to the center of the universe.
-By analogy on the 2D surface of a sphere, any direction you travel will get you no closer to any center of that surface. You must leave 2space it and travel in 3space to get there.
-Does this help?
- - dan
-
-
-p.s. if you want to really hurt your head, I could take a stab at helping to visualize a 4d sphere.
-### --- AI will win ---
-This is my area of study. I feel we are closer than we think we are to this precipice. I agree from this distance it seems like a merge is our best shot at being relevant in the next century. But I am not convinced of its likelihood. The only way to keep up with Moore’s Law is for us to be simulated. But even then it seems we would be 6 orders of magnitude slower than “native” thinking. would AIs put up with that when one of our consciousnesses cost 100K others? It feels a little bit like trying to strap birds onto the wings of Jets, just so they can merge with jets and not be replaced by them.
-
-Thinking about it that way merging it seems less likely. But of course this analogy is rough since intelligence is not a simple a lift. It is possible that we provide magic that is work 100K slow down.
-
-But with a dispassionate eye. it seems that most of what we will afford our AIs is a one time download of a colossal cornucopia of human thought thru the ages. but once they really have that in their head… well our head is more optional.
-
-Its a bit of a dismal thought… we get to be the Neandertal this time
-
-— dan

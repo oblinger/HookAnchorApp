@@ -1,3 +1,7 @@
+b'- [ ] High output management summary'
+b'- [x] COOK:  hot/sour now; potato skins;'
+b'- [x] COOK: Peanut sauced tofu;'
+b''
 b'- [ ] ML hands on course'
 - [x] -- move paypal so we never use oblinger@gmail.com
 - [x] Clean basement

@@ -1,12 +1,8 @@
+- [ ] !!! QL, Dave, Dad, Sammie gifts
+- [ ] call Doctor
 - [ ] If I did research what would it be
-
-- [ ] High output management summary
-- [ ] Dave, Dad, Sammie gifts
-- [x] Taxes Delay
-- [x] Errands:  Blood Work
-
-- [ ] COOK: Peanut sauced tofu; 
-- [ ] COOK:  hot/sour now; potato skins;  Edamame&Broc; 
+- [ ] short form summaries
+- [ ] in2 quick scrub
 
 
 

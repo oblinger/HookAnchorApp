@@ -1,4 +1,5 @@
-  [Race](Race/Race.md)  [trump](trump.md)
+  [Race](Race/Race.md)
+  [race](race.md)  [trump](trump.md)
 
 
 ### --- ARE YOU INFORMED OR ARE YOU MANAGED?

@@ -438,7 +438,7 @@ _
 
 
 _
-# ### TOPICS ###
+# TOPICS
 ## === AGENDA ===
 
 _**Basic message**: It is so common for people to have an agenda, you should just assume that you DO have these agendas.  You should identify what they are, and then look for how these agendas blind you to certain realities that others see._
@@ -474,11 +474,134 @@ Introspective sorts on the right will admit this is true, but will assert their 
 
 
 _
-# ### REF ###
+# REF
 ### --- Walter Williams ---
 [zzz](https://docs.google.com/presentation/d/1fDHRgMzS7Wg8DiHWS3vo0Im5GlhHOP8it1Fw0D6nbwM/edit#slide=id.g8af1f037a6_0_15) 
 _
-# ### LOG ###
+# LOG
+
+### Race (misc section)
+#### Original Sin
+	Slavery really is the original sin of America.  It is an evil so great, and it desendants still live on in this country, we never can really overcome it.
+#### Humans are bias machines.  
+	- 100% are biased.  100% are rascist (mostly strongly so)
+		If we define rascist as indexing off race  
+		(w/o evidence?)
+	- defined in this way minorities can be among most rascist
+		(this is understandable since race is so salient for minority)
+#### Intellectually "Get" the massive bummer that racism is
+	- a bias -- even if subtle and small
+	- if it is a SYSTEMATIC bias and against you; 
+	- would have cumulative and emotionally destructive effect
+#### I believe it is hard for me to honestly relate
+	- Been a kentucky boy from less educated poorer parents.  Still
+	- Am standard deviations above on motivation and ability
+	- Successful
+	- Part of the powerful majorites: male, white, christian
+#### The Suspicious Judge
+
+Imagine you are the judge transferred to hear rape case.  
+You enter the courtroom to find that jury selection is complete and the entire jury are the parents or victims in previous rape cases, and the plaintiff has a second cousin who is a convicted rapist.
+
+The defense attorney explains that he convined the judge that these jurists are the most competent to serve since they are among the most informed about rape and its consequences.
+
+Further the prior judge had testamony from the convicted second cousin read into the record by the victim herself at the commensement of this trial.
+
+
+How do you feel about fairness of the trial that is about to begin?
+
+
+This rediculous example used to drive home a key point:
+
+We often take it for granted that victims of racism are in the best position to assess and measure it.  But I dispute this.  I contend victims of crimes are often not the best judges of future cases of those same crimes:
+- It is a double edged sword, they ARE often in the best position to catalog the full range of damage cuased by the crime.  And may be most knowledgeable about factual data known about the crimes.
+- But this is balanced against bias derived from the emotional consequences of the crime itself.  Humans are not perfect logic machines, and just as the silly example above shows, strong emotions can significanly cloud judgement.
+
+CONSEQUENCE -- if we hope for fairness in consideration, it MUST be done in ways that minimize emotional connetions in those doing the judging.
+#### Self fulfilling & Internalized
+	Paperbag. 15 foot walls with paper at the top
+
+	impenetrable, you can get over them
+#### Factor Analysis Guesses
+	Guesses on my part based on evidence I have:
+
+	Cum Internal	Massive
+	Ability 		Majority	(in one-shot settings)
+	Cum External	
+	Internal Bias	Very Large	(role models; expectations)
+	Unconsious Bias	Largish
+	Conscious Bias	Medium?  (mostly small; sometimes lg)
+	Genetic			Miniscule to Small
+#### Reasoning Chain
+
+	**FACT** -- A "fact" is a belief about the world that is reliably derived by some decision procedure, where the decision procedure is accepted by a large majority of all humans as a valid method for deriving facts, and "reliably derived" means that the large majority of humans trained in this decision procedure, agree that the derivation itself is valid.
+
+	E.g. "The average C02 concentration on earth has risen this the last 50 years" is a fact according to this definition.
+
+	**FHB** -- Firmly Held Belief -- Is a belief that an individual holds firm even as they are exposed to a great range of facts and information, and are exposed to the most compellingly known refuting arguments.
+
+	**DOD** -- Dimension Of Debate -- Any linear dimension that organizes beliefs regarding some topic of human interest where humans can generally agree on the relative placement of those beliefs on the given spectrum.
+
+	E.g. freedoms-for-weapons vs. freedom-from-weapons is a DOD and most people would agree that "Even convicted felons should be allowed to own nuclear weapons" is towards the former where as "No citizen may own a gun" is towards the other end.  
+
+	There would be debates about relative placement in the details, but many on all sides of this issue would agree on the ordering itself.  This makes weapon-for-from-freedoms a valid DOD.
+
+
+	**KD** -- Knowlege Disposition -- The history of a person, their interests, and context affect the factual information and skills they have collected relevant to a DOD.  Some DOD are very relevant for an individual thus they have studied many facts relevant to the issue.
+
+	**PD** -- Perspective Disposition -- Like KD, a high PD may occur when an individual cares deeply about a DOD.  But in this case the belifs they have collected are not facts but are FHB, they are well considered perspectives on the issue.  (NOTE: These beliefs may have great validity, but they are not facts.)
+
+	**BD** -- Biased Disposition -- The context of a human may predispose them towards or away from certain beliefs.  The degree to which a belief reflect strongly (postively or negatively) on a group they are a member of or identify with is the degree of bias predisposition they have regarding the DOD.  (NOTE: One may have a very high BD yet not actually be biased.  Perhaps ones beliefs stems from insights that have nothing to do with their context, that is just a coincidential alignment.  So BD is only a PREDISPOSITION towards a bias.)
+
+	**PBB** -- Potentially Biased Beliefs -- Holding a belief favorable towards ones affiliation which is not widely held by those not of your affiliation is a potentially biased belief.  (Again we cannot know if it is actually biased since we don't know the source in the thinker's head.)
+
+	**IBB** -- Inverted Biased Beliefs -- Holding a belief that is UN favorable to your affiliation which is not widely held is called an Inverted Belief.
+
+	**DD** -- Demonstrably Discriminating -- By contrast an individual that holds a balance of PBB and IBB on a DOD, and is not dramatically skewed towards PBB over IBB is aparently discriminating.  NOTE: They could also be RANDOM, or virtue signaling, maybe they just flip a coin each time they hear about some new idea, or hold contrary beliefs in order to show how "Woke" they are, but at least we see there is little evidence of bias here.
+
+	**AP** -- Aparently Biased -- If one holds many PBB on a DOD and few IBB on that DOD, then we say that individual is AP on the DOD.  We cannot know if they are actually biased, maybe the whole world is quite confused as they see all these issues very clearly.  But there is suspicion here.  These beliefs are (1) not widely held, (2) are in favor of their affiliation, and (3) are systematic, the primary common underlying feature of these beliefs is their alignment with favor towards their group.
+
+	**AU** -- Aparently Unbiased -- A belief is aparently unbiased if DD individuals (drawn from both sides of the relvant DOD) are able to be swayed that the argument for the belief is valid after significant discussion. (NOTE: The DD themselves don't need to be converted to holding the belief, they are merely persuaded that the argument stems from rational thought, and not simply stemming from the arguer's bias.)
+
+	GB -- Group Bias -- 
+
+
+	~-~~-~~
+
+	Proposed DOD --  (is this a valid DOD?)
+	   "What are the ultimate causes for systematic differences 
+	    between the group of Caucasion American 
+	        and the group of African Americans."
+
+	Possible Scores For DanO and JohnD on the Race DOD:
+
+									Dan O			  John D
+	KD  Knowledge Disposition		getting better	  extremely high
+	PD  Perspective Disposition		moderate to high  extremely high
+	BD  Bias Disposition			moderately low	  arguably higher
+	ABB Aparently Biased Beliefs 	some			  many
+	IBB Inverted Biased Belifs		many			  few
+	DD	Demonstrably Discriminating	quite high		  better than many
+	AB	Aparently Biased			quite low		  moderate
+	AU	Aparent
+
+
+	who hold beliefs on both sides of an issue are exposed to the arguments for that belief over a significant period of time
+
+	INFO -- Informed -- An individual is informed on a DOD if in deep discussions on the DOD they can change beliefs in others, and if others who are judged to be informed (on both sides of )
+
+
+
+	.  Holding many aparantly biased beliefs 
+
+	favorable to your affiliations
+
+ 
+
+
+	Accepting those beliefs might 
+
+	A human Identifying a predispositon
 ### --- 2020-07-21 - Factor Analysis - internal / external factors
 
 Oh the factors are hoplessly tangled from one generation to the next, and one moment to the next.

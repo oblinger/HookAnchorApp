@@ -1,17 +1,15 @@
-### 2022-04-25
+### 2022-05-02
 MIT
+- [ ] Fine note
 - [ ] [[DYL]] Build 3 Odyssey plans. FAANG, 
-- [ ] [[DYL]] Read prototyping chapter
+- [ ] [[DYL]] Finish prototyping chapter
 - [ ] Read GANs (Benjio)
+- [ ] Do 4 hours on WarStories
+- [ ] Look @ FAANG jobs
+- [ ] Schedule FAANG Engineer calls
 
-- [ ]  FAANG Deep
-	- [ ] Schedule FAANG Engineer calls
-	- [ ] Best Training ordered
-	- [ ] calls
-	- [ ] Run code for Coursera... & few hours
-- [x] [Yearbook](__Yearbook__.md) OUT
-- [x] Email Aniket guys
-
+- [ ] Run code for Coursera... & few hours
+- [ ] FAANG Training ordered
 
 
 REPEAT:  

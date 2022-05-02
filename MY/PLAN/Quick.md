@@ -12,7 +12,7 @@
       and that one
 - [ ] another
 
-~
+~ Keyboard Maestro - Shell Script Results 
 2022-04-30 11:26:07.040 xcodebuild[1773:80457] Requested but did
 not find extension point with identifier
 Xcode. IDEKit. ExtensionSentinelHostApplications for extension

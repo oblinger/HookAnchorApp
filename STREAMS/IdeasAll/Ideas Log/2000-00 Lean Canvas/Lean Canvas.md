@@ -35,3 +35,6 @@ Layout:  1 4/8  3  5/9 2  lower: 7  6
 
 Addiction:  Trigger -> Action -> Reward -> Investment(they make that increase chance of repeat)
 RICE:	Reach, Impact, Confidence, Effort.  (which features to build)
+
+
+

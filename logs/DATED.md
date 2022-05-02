@@ -276,8 +276,8 @@
 | 2021-02-15 | [[ufBrick]]                               | lean canvas                                                                               |
 | 2021-01-31 | [[Journal]]                               | So what the fuck am I doing? What's my goal here?                                         |
 | 2021-01-31 | [[Journal Old]]                           | So what the fuck am I doing? What's my goal here?                                         |
-| 2021-01-21 | [[Autonomy]]                              | Irving on wheelchair.com                                                                  |
-| 2021-01-20 | [[Autonomy]]                              | ALS forum Query                                                                           |
+| 2021-01-21 | [[2020-07 Autonomy]]                              | Irving on wheelchair.com                                                                  |
+| 2021-01-20 | [[2020-07 Autonomy]]                              | ALS forum Query                                                                           |
 | 2021-00-00 | [[DocMac]]                                | apple support chat                                                                        |
 | 2021-00-00 | [[SNIP]]                                  | Fox news egregious                                                                        |
 | 2021-00-00 | [[SNIP]]                                  | ELI music                                                                                 |
@@ -289,7 +289,7 @@
 | 2020-11-25 | [[Journal Old]]                           | Unicore Implementation Days                                                               |
 | 2020-11-19 | [[Journal]]                               | AF Strategy                                                                               |
 | 2020-11-19 | [[Journal Old]]                           | AF Strategy                                                                               |
-| 2020-10-08 | [[Autonomy]]                              | Out Reach to Yoon                                                                         |
+| 2020-10-08 | [[2020-07 Autonomy]]                              | Out Reach to Yoon                                                                         |
 | 2020-10-02 | [[NJ22]]                                  | An assessment of me                                                                       |
 | 2020-10-02 | [[Journal Old]]                           | An assessment of me                                                                       |
 | 2020-09-17 | [[Forum]]                                 | Police violence                                                                           |

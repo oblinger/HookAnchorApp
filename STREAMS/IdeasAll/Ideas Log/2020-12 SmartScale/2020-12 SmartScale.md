@@ -1,4 +1,4 @@
-  [LeanCanvas](LeanCanvas.md)
+  [Lean Canvas](Lean%20Canvas.md)
   [LeanCanvas](STREAMS/IdeasAll/TIER-2/SmartScale/LeanCanvas.md)
   [LeanCanvas](STREAMS/IdeasAll/TIER-2/SmartScale/LeanCanvas.md)
 

@@ -1,4 +1,20 @@
 
+### 2022-05-02  Buying an office chair
+866-733-0698
+
+- Tension knob on back for leap v2
+- Steel case is not listed as a 24/7 chair, but as an Ergo chair
+- best to buy directly from steel case
+
+- Low back pain.
+- Seem to do best with aggressive, low lumbar support
+- Often cannot get my chair to go low enough (with no shoes on and rollerblade wheels)
+- What are the best possible chairs for this?
+
+$570 -- Leap V2.  
+Nutral posture 8000 series.  17"  3" cynlider
+- Google reviews.
+
 ### 2021-00-00  Eli's Birth Certificate
   
 

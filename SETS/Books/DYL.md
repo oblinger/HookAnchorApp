@@ -1,3 +1,15 @@
+it’s about technical ideas with impact. Space space.Benefit and matters efficiency and organization
+not committed enough to any one idea
+
+- Always problem solving in my mind, like chewing on a bone
+- 
+Pulled to many interests
+Data scientist
+Lots of little problems
+
+
+
+
  [[NJ22]] 
  
 **>>> BOOK  -- DESIGNING YOUR LIFE <<<** 
