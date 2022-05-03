@@ -1,3 +1,5 @@
+b'- [x] Merge all AF and oblinger contacts together.'
+b'- [x] CAPS-return use title bar to decide if it should trigger command and go back'
 b'- [ ] High output management summary'
 b'- [x] COOK:  hot/sour now; potato skins;'
 b'- [x] COOK: Peanut sauced tofu;'
