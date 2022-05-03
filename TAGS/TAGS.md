@@ -18,6 +18,9 @@
 			- [[PE firm]] 
 	- [[COMP]] 
 		- [[LANG]] 
-		- [[TAG]]
 		- [[INFO_PAGE]] 
 		- [[LOG]]   
+	- OBSIDIAN
+		- [[CMD]]
+		- [[TAG]]
+		- 

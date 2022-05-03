@@ -8,17 +8,30 @@ https://www.indeed.com/career-advice/interviewing/most-common-behavioral-intervi
 STAR: Situation, Task -> Action -> Result
 ## = KEY ONE-OFF QUESTIONS
 ### - TELL ME ABOUT YOURSELF
-1. Highlight skills, qualities, and attributes that match role
-2. One example where you have succeeded in previous job
-3. Explain how you understand your perf links to AMZ success
+1. Be MEMORABLE
+2. Highlight skills, qualities, and attributes that match role
+3. One example where you have succeeded in previous job
+4. Explain how you understand your perf links to AMZ success
 ### - WHY AMAZON
 1. talk about the research you carried out
 2. leadership principles
 3. Amz products
 4. A place I can grow and develop
 ### - YOUR STRENGTHS AND WEAKNESSES
-### - 
+- Weakness (short/simple with emphasis on improvement)
+### - WHY ARE YOU A GREAT HIRE
+- In 6 months, I am better than anyone you could hire today in whatever I am tasked to do.
+### - DO YOU HAVE ANY FINAL QUESTIONS?
+- "What is the next step?"
+### - WHY WOULD YOU BE A GREAT FIT?
+- 
+### - TECHNICAL QUESTION YOU DONT KNOW
+- I don't know, but I can venture to guess
+### - TELL ME ABOUT A TIME WHEN YOU OVERCAME
+- Be sure to close with reactions of others
 
+### NOTE
+Most talk about themselves, some talk about their customers, the one who aces the interview: talks about the customer’s customer.
 ## >>> UNSORTED QUESTIONS
 
 When have you had a conflict with a coworker and worked through it?

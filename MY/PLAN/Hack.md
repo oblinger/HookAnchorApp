@@ -1,4 +1,5 @@
 
+- [ ] PKM: Use ^a ^e to select whole line to move?  
 
 ## PROJECTS
 ### Bidirectional sync to gsheets

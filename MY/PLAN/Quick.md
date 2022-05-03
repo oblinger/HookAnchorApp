@@ -1,19 +1,16 @@
-- [ ] buy chair
-- [ ] fix curcuit breakers
+cards for teachers
+- [ ] - [ ] buy chair
+- [ ] fix circuit breakers
 - [ ] 
-- [ ] - [ ] fix keyboard maestro xcode error
+- [ ] - [ ] fix keyboard maestro Xcode error
 - [ ] - [ ] F: edit scripts to be python3 scripts
-- [ ] water plants
-- [ ] F: script control of Airpod Max connection on Mac
+- [ ] F: script control of AirPod Max connection on Mac
 - [ ] F: play with 'state' app
-- [ ] PKM: Use ^a ^e to select whole line to move?  
 - [ ] 415 850-7006 --
 - [ ] Big city emergency
-- [ ] 
-- [ ] A quick note
-- [ ] this idea
-      and that one
-- [ ] another
+
+- [ ] EMAILS:  Verify saving, verify drafts save, verify save sends, merge all AF mail in.  back backup of all mail.
+	- [ ] Remove repeated stuff in email history
 
 ~ Keyboard Maestro - Shell Script Results 
 2022-04-30 11:26:07.040 xcodebuild[1773:80457] Requested but did
