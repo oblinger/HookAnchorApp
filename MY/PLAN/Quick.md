@@ -1,4 +1,5 @@
 - [ ] buy chair
+- [ ] fix curcuit breakers
 - [ ] 
 - [ ] - [ ] fix keyboard maestro xcode error
 - [ ] - [ ] F: edit scripts to be python3 scripts
