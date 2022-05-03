@@ -655,7 +655,12 @@ Etsy
 ### --- Hudson Jeans ---
 other info somewhere else
 
-# ### MISC ###
+# MISC
+## = CLOTHING
+### - Teeshirts
+- **Bananna Republic Factory** - much better quality tee shirt.
+- Threadless - low/moderate quality.  many fun designs.
+- Six Dollar Shirts - low/moderate quality.  fewer designs
 ## Amazon Subscription Buying
 
 

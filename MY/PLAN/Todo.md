@@ -1,6 +1,4 @@
 - [ ] !!! QL!!!, Dave, Dad, Sammie gifts
-- [ ] buy chair
-- [ ] get coffee sorted
 - [ ] call Doctor
 - [ ] If I did research what would it be
 - [ ] short form summaries

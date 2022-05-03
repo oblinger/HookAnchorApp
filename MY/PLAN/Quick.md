@@ -1,6 +1,6 @@
 cards for teachers
-- [ ] - [ ] buy chair
-- [ ] fix circuit breakers
+
+- [ ] - [ ] fix circuit breakers
 - [ ] 
 - [ ] - [ ] fix keyboard maestro Xcode error
 - [ ] - [ ] F: edit scripts to be python3 scripts

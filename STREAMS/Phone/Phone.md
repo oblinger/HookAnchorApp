@@ -1,9 +1,17 @@
+### 2022-05-03  paid lung doctor
+   # 019317
 
 ### 2022-05-02  Buying an office chair
 866-733-0698
+http://btod.com
+
+
+- Sitting on it vs. a new Leap v2.  (more spring/thicker from 1/2")
+- Steel case is not listed as a 24/7 chair, but as an Ergo chair
+- When will it arrive?
+
 
 - Tension knob on back for leap v2
-- Steel case is not listed as a 24/7 chair, but as an Ergo chair
 - best to buy directly from steel case
 
 - Low back pain.
@@ -14,6 +22,9 @@
 $570 -- Leap V2.  
 Nutral posture 8000 series.  17"  3" cynlider
 - Google reviews.
+
+~ 2022-05-04 bought by phone from Nick
+Black   # 114271
 
 ### 2021-00-00  Eli's Birth Certificate
   

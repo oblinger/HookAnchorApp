@@ -2,6 +2,7 @@
 
 | Date       | File                | Notes                                                                                     |
 | ---------- | ------------------- | ----------------------------------------------------------------------------------------- |
+| 2022-05-03 | [[Phone]]               | paid lung doctor                                                                          |
 | 2022-05-02 | [[Writings]]            | DREAM: Alien take over                                                                    |
 | 2022-05-02 | [[Phone]]               | Buying an office chair                                                                    |
 | 2022-04-22 | [[DYL]]                 | Innovation & Insight                                                                      |
