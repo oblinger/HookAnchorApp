@@ -9,27 +9,6 @@ https://time.com/6087577/michael-fanone-january-6-interview/
 ysl
 ~-~~-~~
 
-Al:
-
-Good to electronically meet!  It sounds like we share a common interest regarding disinformation and hyper partisanship.
-
-
-For me, this has been a line of thinking that is many years in the making, though I have never really done anything with it, since I was never clear if I could turn it into some kind of sustaining business  (I am still not clear about that).
-
-My aim is a discussion forum that synthesizes succinct (single phrase) summaries of what different communities think about important issues.  e.g. is there significant evidence of climate change?  is there significant evidence of 2020 election fraud?  The first aim would not be to arrive at a single “correct” answer, but rather succinct summaries of different schools of thought.
-
-The second analysis, however, would be to try to push as much consensus as possible around these issues.
-e.g.  conservatives agree giving global consensus that certain minimal statements about climate change are empirically supported, while liberals agree giving global consensus that other stronger statements are not supported.
-
-The result could be looked as a spectrum of statements (which could be succinctly shown on a single page!)
-At the ends of the list would be statements broadly agreed, with hotly contested statements in the middle.
-
-Such a summary could really advance the societal discussion, since it could show everyone which statements are not really even supported by their own clan when their members look deeply at the topic.
-
-~-~~
-
-But that only works if one can trust the analysis system itself, and only if the system can good judges from all political sides of an issue.
-
 
 _
 # DESCRIPTION
@@ -1202,6 +1181,29 @@ Reuters joins the list of US fact-checking partners that include The Associated 
 
 _
 # LOG
+### t2022-05-05  Invitation to talk w. Al
+
+Al:
+
+Good to electronically meet!  It sounds like we share a common interest regarding disinformation and hyper partisanship.
+
+
+For me, this has been a line of thinking that is many years in the making, though I have never really done anything with it, since I was never clear if I could turn it into some kind of sustaining business  (I am still not clear about that).
+
+My aim is a discussion forum that synthesizes succinct (single phrase) summaries of what different communities think about important issues.  e.g. is there significant evidence of climate change?  is there significant evidence of 2020 election fraud?  The first aim would not be to arrive at a single “correct” answer, but rather succinct summaries of different schools of thought.
+
+The second analysis, however, would be to try to push as much consensus as possible around these issues.
+e.g.  conservatives agree giving global consensus that certain minimal statements about climate change are empirically supported, while liberals agree giving global consensus that other stronger statements are not supported.
+
+The result could be looked as a spectrum of statements (which could be succinctly shown on a single page!)
+At the ends of the list would be statements broadly agreed, with hotly contested statements in the middle.
+
+Such a summary could really advance the societal discussion, since it could show everyone which statements are not really even supported by their own clan when their members look deeply at the topic.
+
+~-~~
+
+But that only works if one can trust the analysis system itself, and only if the system can good judges from all political sides of an issue.
+
 ### n2022-04-28  My big question about the forum
 My world has flipped upside down, with regards to what problems I get to work on.  So I don’t have confidence that I can begin work on that in any specific timeframe.  Still it is a huge problem for society, and if I gained evidence that I had something of value to contribute, then I would get much more excited about it.
 

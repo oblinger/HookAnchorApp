@@ -14,9 +14,10 @@ Each of our sessions are expensive in time and attention both yours and mine, as
 **MY PENCHANT** -- I have a strong predilection for  (1) hard TECHNICAL problems, (2) where I seem to have a NOVEL thought, (3) that could result in big IMPACT.   My love is *thinking* through how the problem could be solved.  I believe I do have a gift in seeing a technically detailed view of a different world as it COULD be...  and I *love* exercising this gift.
 
 **MY GAPS** -- But this penchant has several downsides:
-- **NO NATURAL FOLLOW THRU** -- Without external constraint, I end up thinking thru many such big ideas, but without required follow thru.
+- **SPOTTY FOLLOW THRU** -- Without external constraint, I end up thinking thru many such big ideas, but without required follow thru.
 - **EACH IS COSTLY** -- Each idea, requires significant resource from humanity to execute.  I do believe they each has a chance to be wildly valuable too.  Still this creates a catch-22; and it is less my skill and predilection to raise money build community.
-- **DIVERGENT** -- Each idea is borne from some core problem humanity has along with some novel, transformative insight about how to attack that problem.  What ties these together is that each is a large human issue, and I think I see a novel transformative approach.  But other than this connection, they are ALL OVER THE MAP.  Thus, making progress on one adds no value for me, or to the other ideas.  Thus w/o singular commitment to one, I easily flail.
+- **DIVERGENT** -- Each idea is borne from some core problem humanity has along with some novel, transformative insight about how to attack that problem.  What ties these together is that each is a large human issue, and I think I see a novel transformative approach.  But other than this connection, they are 
+- **ALL OVER THE MAP** --  Thus, making progress on one adds no value for me, or to the other ideas.  Thus w/o singular commitment to one, I easily flail.
 
 **MY CONTEXT** -- 
 - **DRIVEN BY WORK** -- I have traded some health and many other life interests for my work and pursuit of side projects.

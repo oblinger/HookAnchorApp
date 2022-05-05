@@ -1,5 +1,14 @@
 
 ## = CURRENT FOCUS
+### - MIT STACKS
+
+==> 5min-intention-walk -> Login -> First song -> Begin MIT
+
+==> 30min-Admin; Eat/Read 1hr -> MIT #2
+	(can 'escape' MIT for admin; *MUST* do 30m MIT before eating)
+==> Alarm -> Read In Bed -> Set morning alarm
+	(set second alarm if not going to bed immediately)
+
 ### - MLC - MULTI LAYER CAKE
 
 Idea: Manage level of work effort in defined layers

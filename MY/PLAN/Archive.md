@@ -1,3 +1,9 @@
+- [ ] 415 850-7006 --
+- [ ] Big city emergency
+- [x] cards for teachers
+- [x] fling daily does not work
+- [x] Prep VC call
+b'- [ ] If I did research whaat would it be'
 b'- [ ] If I did research what would it be\n- [ ] short form summaries'
 b'- [ ] If I did research what would it be\n- [ ] short form summaries'
 b'- [ ] If I did research what would it be\n- [ ] short form summaries'

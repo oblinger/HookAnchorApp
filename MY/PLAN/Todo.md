@@ -1,8 +1,9 @@
-- [ ] !!! QL!!!, Dave, Dad, Sammie gifts
+- [ ] day in the life of a VC
 - [ ] call Doctor
-- [ ] If I did research what would it be
+- [ ] !!! QL!!!, Dave, Dad, Sammie gifts
 - [ ] short form summaries
 - [ ] in2 quick scrub
+- [ ] call Doctor
 
 
 

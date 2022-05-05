@@ -30,6 +30,39 @@ QUESTIONS:
 - My early value prop.
 
 
+VC ROLE
+- SOURCING DEALS:  Events in areas of interest, Meeting other VCs & Angels, taking founder pitches
+- BOARDS: Sitting on boards of companies
+- HELPING: Helping companies hire
+- what I enjoy doing most is supporting and helping companies grow
+
+## = VC QUESTIONS
+
+Selling company; advice on moving into the VC space...
+- Machine Learning, PhD researcher by training.
+- Managed quarter billion dollar tech portfolio as PM at DARPA.
+- Exited 3 companies as a founder.
+
+- I seem poised to own a tech vision & portfolio as part of a VC firm.
+  (specifically the larger firms that will have highly specialized & technical funds)
+	- I am uniquely qualified if deep understanding of current tech risks & roadmap is key
+	- Do you agree?  
+		- Seems roadmap is to simply provide value @ firms to prove my mettle 
+	- Concrete steps and connections to make
+
+Operators.  Fin.  Credibility.  Been there done that.  How to scale.
+Recruiting @ hiring, go to market strategy
+
+Venture investors
+find companies that are interesting to you -> find who their 
+
+
+Questions
+- What is the day to day like for a VC or advisor?
+- What value might I bring to a VC firm?
+- Where specifically might I work?
+
+
 ## === PLAN ===
 ### --- Read about being a VC
 
@@ -39,16 +72,15 @@ Objective:
 - Decide if I want to be a VC, or support a VC as an advisor.
 - If I might, then progress down that path
 
-Questions
-- What is the day to day like for a VC or advisor?
-- What value might I bring to a VC firm?
-- Where specifically might I work?
-
 
 
 
 
 ## = REF
+- [VC Roles](https://www.huntclub.com/blog/what-is-a-venture-partner-an-overview),   Venture Partner
+- [A day in the life of a VC partner](https://pitchbook.com/news/articles/a-day-in-the-life-of-a-vc-partner),       
+-  [Day in the life of a ...](https://pitchbook.com/news/search?tags=day-in-the-life&refType=NA)  
+- 
 - [How much does a VC partner earn?](https://www.quora.com/How-much-does-a-VC-partner-earn)  
   [Searches](Searches.md)
  [[Crunchbase|Crunchbase]] 

@@ -1,8 +1,9 @@
 ### 2022-05-02
 MIT
-- [ ] Fine note
-- [ ] [[DYL]] Build 3 Odyssey plans. FAANG, 
-- [ ] [[DYL]] Finish prototyping chapter
+- [ ] +Totally Finish Fine note.  e.g. subject line
+- [ ] +[[DYL]] Finish FAANG odessy.
+- [ ] +Do Tile Robot oddessy 
+- [ ] +[[DYL]] Finish prototyping chapter
 - [ ] Read GANs (Benjio)
 - [ ] Do 4 hours on WarStories
 - [ ] Look @ FAANG jobs

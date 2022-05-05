@@ -2,7 +2,7 @@
 
 | Date        | File             | Notes                                             |
 | ----------- | ---------------- | ------------------------------------------------- |
-| m2022-04-30 | [[@Dan Fine]]        | FINE Restart                                      |
+| m2022-04-30 | [[@Dan O]]           | FINE Restart                                      |
 | m2022-04-29 | [[@Arkady Epshteyn]] | FAANG ML Guy                                      |
 | m2022-04-06 | [[@Joseph Yeh]]      | Resume;                                           |
 | m2022-04-06 | [[BeVC]]             | Recruiter topics                                  |
@@ -14,12 +14,12 @@
 | m2022-03-08 | [[@Theo Enns]]       | Ideas About Amazon Levels                         |
 | m2022-03-03 | [[@Theo Enns]]       | AEOLUS research summary from Theo's perspective   |
 | m2022-02-14 | [[@Aniket Kumar]]    | Aniket  [[BeVC|BeVC]]                             |
-| m2021-11-07 | [[@Dan Fine]]        | FINE - Truths                                     |
-| m2021-11-04 | [[@Dan Fine]]        | FINE - Dreaming big with Google                   |
+| m2021-11-07 | [[@Dan O]]           | FINE - Truths                                     |
+| m2021-11-04 | [[@Dan O]]           | FINE - Dreaming big with Google                   |
 | m2021-11-04 | [[Year2022]]         | NEATO CTO feedback                                |
-| m2021-11-01 | [[@Dan Fine]]        | FINE journal -                                    |
-| m2021-10-27 | [[@Dan Fine]]        | FINE journal                                      |
-| m2021-10-27 | [[@Dan Fine]]        | FINE passion questions / KM trajectory            |
+| m2021-11-01 | [[@Dan O]]           | FINE journal -                                    |
+| m2021-10-27 | [[@Dan O]]           | FINE journal                                      |
+| m2021-10-27 | [[@Dan O]]           | FINE passion questions / KM trajectory            |
 | m2021-10-07 | [[@Nina Mishra]]     | NINA                                              |
 | m2021-10-06 | [[@Baji Gobburi]]    | BAJI                                              |
 | m2021-10-00 | [[@Luis Arrellano]]  | Luis - Pub chat                                   |

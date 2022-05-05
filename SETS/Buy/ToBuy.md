@@ -1,5 +1,15 @@
 (See [ReBuy](__ReBuy__.md))
 
+### 2022-05-04  Smart scale
+
+-  [Pizza dual scale](https://ooni.com/products/ooni-dual-platform-digital-scales?variant=31116717359201&currency=USD&utm_medium=cpc&utm_content=Ooni+Digital+Scales+Dual+Platform&utm_source=shopping&utm_campaign=Google_Shopping_US&utm_gcmpgn_typ=us-shopping&gclid=EAIaIQobChMItdHoiN3G9wIVsCitBh0JNAIWEAQYBCABEgJVH_D_BwE),  
+-  [four-scales combo](https://cambridgeenviro.com/products/balances-scales-smart-diet-scale),  
+-  [XYwin](https://www.amazon.com/YXwin-0-05ounce-Measuring-Precision-Stainless/dp/B08CKZ91TD/ref=sw_img_sspa_dk_huc_pt_expsub_1?_encoding=UTF8&pd_rd_i=B08CKZ91TD&pd_rd_w=jiaWF&pf_rd_p=f308fc1f-d033-4acc-a8c1-8aa7aca0edd8&pf_rd_r=4VXK8SE6T87GNYQWTF99&pd_rd_r=ec0994b5-0ee5-4321-a228-9b74a2cb2038&pd_rd_wg=Y71Sd&spLa=ZW5jcnlwdGVkUXVhbGlmaWVyPUExQUtIVUNGT0NXWjJJJmVuY3J5cHRlZElkPUEwNDQ1NTc2MkNKUkhSSk5HTjBYMiZlbmNyeXB0ZWRBZElkPUEwODY5MzA4Mk8wVDYyOVY1SEtCNiZ3aWRnZXROYW1lPXNwX2h1Y19tcmFpJmFjdGlvbj1jbGlja1JlZGlyZWN0JmRvTm90TG9nQ2xpY2s9dHJ1ZQ==),  sleek, quick tare?
+-  [zibet](https://www.amazon.com/Zibet-Rechargeable-Function-Stainless-Tempered/dp/B07XZKBSDJ/ref=sw_ttl_sspa_dk_huc_pt_expsub_0?_encoding=UTF8&pd_rd_i=B07XZKBSDJ&pd_rd_w=jiaWF&pf_rd_p=f308fc1f-d033-4acc-a8c1-8aa7aca0edd8&pf_rd_r=4VXK8SE6T87GNYQWTF99&pd_rd_r=ec0994b5-0ee5-4321-a228-9b74a2cb2038&pd_rd_wg=Y71Sd&spLa=ZW5jcnlwdGVkUXVhbGlmaWVyPUExQUtIVUNGT0NXWjJJJmVuY3J5cHRlZElkPUEwNDQ1NTc2MkNKUkhSSk5HTjBYMiZlbmNyeXB0ZWRBZElkPUEwMDg1MjU3MTg0NjlFQ0xBQlRRVyZ3aWRnZXROYW1lPXNwX2h1Y19tcmFpJmFjdGlvbj1jbGlja1JlZGlyZWN0JmRvTm90TG9nQ2xpY2s9dHJ1ZQ==),  
+-  [Etekcity](https://www.amazon.com/dp/B08QN1RX1K?th=1&linkCode=sl1&tag=mw0ca-20&linkId=1b80dbf731c9ad53f67b561437f15c89&language=en_US&ref_=as_li_ss_tl) ,
+
+
+
 ### 2022-04-04  Crisper
 - https://www.google.com/shopping/product/6650619068781724208?client=safari&q=huge+steel+crisper&prds=eto:11839512918393164080_0,rsk:PC_1582192993424458004
 - [home depot](https://www.homedepot.com/pep/Nordic-Ware-Large-Oven-Bacon-Pan-35702M/312440701?g_store=&source=shoppingads&locale=en-US&&mtc=Shopping-BF-F_HDH-G-D59H-029_029_HOUSEWARES-Multi-NA-NA-SMART-NA-NA-bakeware_smart_pla_test&cm_mmc=Shopping-BF-F_HDH-G-D59H-029_029_HOUSEWARES-Multi-NA-NA-SMART-NA-NA-bakeware_smart_pla_test-71700000087623971-58700007447146482-92700068477512700&gclid=CjwKCAjwrqqSBhBbEiwAlQeqGmuunuBfdSkPsFyfRl7vf2MFdvqDnwD2E0ZYiTHa70D_c4TBLhs9fBoC-vsQAvD_BwE&gclsrc=aw.ds) 

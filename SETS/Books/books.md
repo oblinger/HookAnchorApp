@@ -2,6 +2,7 @@
 
 | Started    | Book                                     | Notes               |     |
 | ---------- | ---------------------------------------- | ------------------- | --- |
+| 2022-05-03 | [[Atomic Habits]]                                         |                     |     |
 | 2021-07-00 | [[DYL]]                                  | Designing Your Life |     |
 | 2021-00-00 | [[High Output Management]]               |                     |     |
 |            | [[Getting_Things_Done]]                  |                     |     |
