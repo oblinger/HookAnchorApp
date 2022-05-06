@@ -1,7 +1,6 @@
   [Contracts](Contracts/Contracts.md)  [MyMgr](MyMgr/MyMgr.md)
-  [Contracts](Contracts/__Contracts__.md)  [MyMgr](MyMgr/__MyMgr__.md)
-  [Contracts](__Contracts__.md)  [MyMgr](__MyMgr__.md)
-## === COACHES ===
+  
+  ## === COACHES ===
 - [Poised](https://www.poised.vip/service-page/career-personalized-coaching-session) - ^^ this is an exec coach that a successful CTO that I know, in the context of being on her first board of directors (not day-to-day), however she also does tech exec stuff & has a career pivot coaching practice
 - [iracoach](https://irataucoaching.com) - NickWrote: this is a referral from the “CTO coach” for life / career coach
 - [80,000 hours](https://80000hours.org) - free coaching for impact career paths

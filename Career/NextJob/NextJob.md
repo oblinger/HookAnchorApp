@@ -2,7 +2,6 @@
   [NJ22](NJ22.md)
   [NJ22](NJ22.md)
 
-[NextJob 2022](n:/Users/oblinger/ob/topics/Career/NextJob/NJ22/__NJ22__.md) 
 # ### LOG ###
 ### 2021 REBOOT
 ### 2016 After Bizzy

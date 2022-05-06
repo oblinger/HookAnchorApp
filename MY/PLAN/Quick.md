@@ -1,4 +1,8 @@
 
+- [ ] find out about AF website
+- [ ] toggle email notifications
+- [ ] Export 1-password for auto logins
+- [ ] Use some shellscript text expander to execute on page load
 - [ ] Buy weight scales
 
 - [ ] Fix circuit breakers

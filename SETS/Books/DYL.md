@@ -1,8 +1,7 @@
 it’s about technical ideas with impact. Space space.Benefit and matters efficiency and organization
 not committed enough to any one idea
 
-- Always problem solving in my mind, like chewing on a bone
-- 
+Always problem solving in my mind, like chewing on a bone
 Pulled to many interests
 Data scientist
 Lots of little problems
@@ -179,7 +178,9 @@ PAGE 27
 
 ### - LIFE VIEW
 ### - ABOUT ME
-- **CORE**:  (1) Want to work on something "important"     (2) Enjoy the process of 'thinking something thru'
+- **SUPER DRIVERS:**
+	- IMPORTANT - *CREATE* something that really *MATTERS* to society.
+	- THINK - Spend time *THINKING* through some technical problem.
 - **IDEAS** -- I love to focus on the technical: the big idea, and technical details
 - **THE WAY I WORK**
 	- **ALLEY CAT** - Like working on several different things, and jumping between then as my interest shifts.
@@ -567,15 +568,16 @@ _
 ## = (4) MINDMAPS = 
 
 ## = (5) ODYSSEY PLANS = Three Near Futures
-### -- DASHBOARD --
+### DASHBOARD --
 
-| Odyssey | Resources Needed | Likability              | Confidence | Coherence | Considerations | ......................................................................................................... |
-| ------- | ---------------- | ----------------------- | ---------- | --------- | -------------- | --------------------------------------------------------------------------------------------------------- |
-| FAANG   | Yes              | 70-80% Ok - pretty good | 70%        |           | Mgr, Sci       | Data Scientist, Manager                                                                                                          |
-| VC GUY  | Need 5y          |                         | 50%        |           |                |                                                                                                           |
-| MY CO   | Probably         |                         | 20%        |           |                |                                                                                                           |
-|         |                  |                         |            |           |                |                                                                                                           |
-|         |                  |                         |            |           |                |                                                                                                           |
+| Odyssey    | Resources Needed | Likability     | Confidence | Coherence | Considerations | ................................................... |
+| ---------- | ---------------- | -------------- | ---------- | --------- | -------------- | --------------------------------------------------- |
+| FAANG TLM  | Yes              | 70-80% Ok/Good | 80%        |           | Mgr, Sci       | Data Scientist, Manager                             |
+| VC GUY     | Need 5y          |                | 50%        |           |                |                                                     |
+| TILE ROBOT | Probably         |                | 30%        |           |                |                                                     |
+| FORUM      |                  |                | 20%        |           |                |                                                     |
+|            |                  |                |            |           |                |                                                     |
+
 
 
 OTHER PATHS:
