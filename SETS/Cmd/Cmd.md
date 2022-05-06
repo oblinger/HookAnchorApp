@@ -1,3 +1,4 @@
+  [gobs.command](gobs.command.md)
   [km.command](km.command.md)
   [gpy.command](gpy.command.md),   [wef](wef.md)
   [Amazon.webloc](Amazon.webloc.md)
