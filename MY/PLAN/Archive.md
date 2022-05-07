@@ -1,4 +1,6 @@
 - [x] call Doctor
+- [ ] !!! QL!!!, Dave, Dad, Sammie gifts
+- [x] call Doctor
 - [ ] 415 850-7006 --
 - [ ] Big city emergency
 - [x] cards for teachers

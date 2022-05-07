@@ -9,6 +9,18 @@
 ==> Alarm -> Read In Bed -> Set morning alarm
 	(set second alarm if not going to bed immediately)
 
+
+IDEAS:
+- BOOT  w/  WIFI OFF  & F1 fullscreen
+- 
+#### . FAILURE
+- 2022-05-06
+	- WAKING IDEA - Drawn off course by tempting idea thinking as I wake.
+	- DRAWN BACK - As I started to work I kept getting pulled back to idea.
+	- READ E-MAIL/NEWS - Read news first.
+	- ON TRACK - Eventually took control.  4-hrs lost (including in bed)
+	
+
 ### - MLC - MULTI LAYER CAKE
 
 Idea: Manage level of work effort in defined layers

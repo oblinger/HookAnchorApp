@@ -1,3 +1,4 @@
+  [TASK](TASK.md)
   [@Kartik](@Kartik.md)
   [LOG](LOG.md)
   [INFO_PAGE](INFO_PAGE.md)
@@ -24,4 +25,4 @@
 	- OBSIDIAN
 		- [[CMD]]
 		- [[TAG]]
-		- 
+		- [[TASK]] - task list

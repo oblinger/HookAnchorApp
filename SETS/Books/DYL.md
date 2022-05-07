@@ -177,24 +177,63 @@ PAGE 27
 	 - SMART PEOPLE:  It should provide daily interactions with smart folks.
 
 ### - LIFE VIEW
+
+### - ME: SUPER DRIVERS
+#### . About Something
+#### . **DESIGNING** something
+- Like to ORGANIZE the information and processes of a thing
+- Like to DESIGN / CREATE / ARCHITECT these structures
+- Like to worry about the EFFICIENCY and details of a well crafted purposeful thing
+- Like to sit and THINK on my own about how accomplish this thing
+- Like to work on HARD things.  Things that cannot be solved in days, but need weeks or months.
+- **IDEAS** -- I love to focus on the technical: the big idea, and technical details
+
+#### . DOING something
+#### . OWNING something
+- To a smaller extent I also want OWN a thing
+	- Get paid a lionshare of its value
+	- Get credit for its creation
+#### .
+
+
+### - ME: - **THE WAY I WORK**
+#### . ALLEY CAT
+- Like working on several different things, and jumping between then as my interest shifts.
+#### . BURSTY
+ - I can execute well in a burst, but not continuous
+	 	(except SW or idea coding in flow)
+#### . REACTIVE
+- Work easiest when task triggers are presented from the outside.
+#### . COMMITMENT AVERSE
+- I systematically dodge certain commitment steps
+#### . WORKY
+ - I am always "working" its my mental mode
+#### . LIMIT
+- seem to have daily limit (3h), not effective after (for work I don't love)
+
+
+#### . 
+
+
+
+### - ME: AREAS OF ATTRACTION
+#### . **SOCIAL *SYSTEMS***
+#### . SYSTEMATIC
+- idea is a systems idea relating to how things work
+#### . BULLET
+- idea is single "silver bullet" for some acknowledged problem
+#### .
+
+
+
+
+
 ### - ABOUT ME
 - **SUPER DRIVERS:**
 	- IMPORTANT - *CREATE* something that really *MATTERS* to society.
 	- THINK - Spend time *THINKING* through some technical problem.
-- **IDEAS** -- I love to focus on the technical: the big idea, and technical details
-- **THE WAY I WORK**
-	- **ALLEY CAT** - Like working on several different things, and jumping between then as my interest shifts.
-	- **BURSTY** - I can execute well as a burst, but not continuous
-	 	(except SW or idea coding in flow)
-	- **REACTIVE** - Work easiest when task triggers are presented from the outside.
-	- **COMMITMENT AVERSE** -- I systematically dodge certain commitment steps
-	- **WORKY** - I am always "working" its my mental mode
-	- **LIMIT** - seem to have daily limit (3h), not effective after (for work I don't love)
-- **AREAS OF ATTRACTION**
-	- **SOCIAL *SYSTEMS*** - 
-	- **SYSTEMATIC** -- idea is a systems idea relating to how things work
-	- **BULLET** -- idea is single "silver bullet" for some acknowledged problem
 
+- **
 
 
 Quick Observations:

@@ -1,1 +1,1 @@
-[[Full|Full]]
+[[Full]] 

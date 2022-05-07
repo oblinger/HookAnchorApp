@@ -1,9 +1,7 @@
-- [ ] day in the life of a VC
-- [ ] call Doctor
-- [ ] !!! QL!!!, Dave, Dad, Sammie gifts
 - [ ] short form summaries
 - [ ] in2 quick scrub
 - [ ] call Doctor
+- [ ] day in the life of a VC
 
 
 

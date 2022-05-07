@@ -1,4 +1,7 @@
 
+- [ ] 
+- [ ] Drag-n-drop should use folding anchors.
+- [ ]  james loan - docs from Mary
 - [ ] find out about AF website
 - [ ] toggle email notifications
 - [ ] Export 1-password for auto logins

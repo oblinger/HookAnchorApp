@@ -1,4 +1,6 @@
 
+- [ ]  [Scripting Obsidian](https://www.thoughtasylum.com/2021/09/12/automating-your-obsidian-workspace/)  
+- [ ] 
 - [ ] PKM: Use ^a ^e to select whole line to move?  
 
 ## PROJECTS

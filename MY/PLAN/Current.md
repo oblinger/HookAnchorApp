@@ -1,8 +1,9 @@
 ### 2022-05-02
 MIT
 - [ ] +Totally Finish Fine note.  e.g. subject line
-- [ ] +[[DYL]] Finish FAANG odessy.
-- [ ] +Do Tile Robot oddessy 
+- [ ] +[[DYL]] Finish FAANG odyssey.
+- [ ] DYL forum odyssey
+- [ ] +Do Tile Robot odyssey.
 - [ ] +[[DYL]] Finish prototyping chapter
 - [ ] Read GANs (Benjio)
 - [ ] Do 4 hours on WarStories

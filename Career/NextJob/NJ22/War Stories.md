@@ -1,62 +1,75 @@
+### _
 https://www.indeed.com/career-advice/interviewing/most-common-behavioral-interview-questions-and-answers
 
 -  [AMAZON Interview TIPS](https://www.youtube.com/watch?v=0jFjGkjdHl8)  
 
+### notes
+
+
+
 AEOLUS - how many lines of code?
-
-
-- HIRING GRASPING EXPERTS
-
-- ALEXEY - ALONE
-- GEORGIOS FRAGILITY - MGR / STRESS - 
-- HIRING EUROPEANS 
-- NAVIGATING VACATION TIME POLICY - 
 - ARTHREX MGT FAILURE - 
-- BASIL HEALTH CONTRACT LOSSES
-- XXXX 
-- YYYY NO TESTING FAILURES --> free testing teams
-- CONTRACT TIME FRAMES DEPEND UPON REQUIRED MATERIALS
 - AEOLUS HW DELIVERY FAILURES
 - PREMATURE SCALING (ROS REMOVAL)
 - PIECEWISE HW TESTING; DIRECTLY BUILDING ON HW TEAMS OUTPUT
-- DUAL BACKLOG MAINTAINANCE
-- MANAGER'S BANDWIDTH, DEPTH, WIDTH, PADDING, CREATIVITY, CARE
-	- Bryan
-	- Matt
-	- Ruby
-	- Jess Universal Soldier
-- HERDER OF CATS; MANAGER OF SNOWFLAKES -
-	- Polyphasic sleeper  (what to do, but never how); Thought others were lesser programmers
-	- Good at helping, happy to do what is told.  
-	- COMPANY OWNERS: PIOTR & SOUTH AM PROFESSORS; Roboticist
-	- Krzsiek Thai-beaches; Attilla crypto conferences; 
-
-AEOLUS: not done 'till integrated upstream system ran
-AEOLUS: Universal video validation:  really forces full test, upper mgt porn, alignment validation 
-  people were not lying exactly, but they were being sloppy and generous in saying it was tested.
-  backlog items had a star if they needed a video (often sub items did not need a video)
-
-AEOLUS surveillance video system, w tripods and canned setups.
-
-- a 
-	- b
-		- c
-	- d
-		- e
-	- f
 
 # STORIES
 
+## = DARPA
+### - DELEGATION
+#### . Developed Ten Stage Deck 
 ## = MARTIAN/AEOLUS STORIES
-### - TESTING FAILURES
-#### . Universal Video Validation
+### - HIRING
+#### . Hiring Grasping Experts (Aeolus, Hiring)
+- Had team identify tier1 journals; & frequently publishing teams; picked top 10 world wide
+- Wrote hand crafted emails to lead prof at each
+- Phone call woowing; Flew to Vienna; funding multi-year grant;  Hired two leading graduates
+#### . Money Ball Hiring
+
+### - TESTING
+#### . Universal Video Validation  (Aeolus, Mgt, Fail, Testing)
    REQ:  Explain in text how you tested it & why that shows it is done.  Include phone video w/ audio.
 ==> Super super EASY.  No one can argue it is too hard.  avoids generality/stability need for repeatable tests.
 ==> Ensure testing really did happen.  (just compiled it!  couldn't test easily so said it 'worked')
 ==> Upper management results porn; Team alignment (hey! that is not done, or not right!)
-#### . Not done till upstream top-level system ran
 
-### - 
+  people were not lying exactly, but they were being sloppy and generous in saying it was tested.
+  backlog items had a star if they needed a video (often sub items did not need a video)
+  
+#### . Not done till upstream top-level system ran (Aeolus, Mgt, Fail, Testing)
+#### . Customer Bug-Frustration
+- Customers don't like paying to fix newly discovered bugs in already delivered code.
+- Built out cost effective testing org, and use it even when customer isn't paying for it.
+
+### - PERSONNEL MANAGEMENT
+#### . People as Jigsaw Puzzles
+- Consider employee's:  Depth, Width, Velocity, Padding, Creativity, Care, etc.
+- Mix and Match strengths to cover any gaps before they are large problems.
+- AF EXAMPLES:  Bryan, Matt, Ben, Ruby, Jess (universal soldier)
+- AE EXAMPLES:  Georgios+, Alexey 
+#### . Lone Wolf Alexey 
+- Super strong & focused C++ developer.  Wanted to know more than all others & be better
+- Willing to do anything in C++.  Willing to help & teach, debug, code anything
+- Asshole who knew he knew more.  wanted autonomy and isolation
+#### . Fragile Georgios
+- Did not mind managing details, nor working hard/long
+- Feared being 'in charge' & 'responsible w/o partner;  Could not handle pushing others or ANY confrontation.
+- Feared for job security  
+#### . Vacation Policy - Hiring Europeans
+- Taiwanese CEO; 5-days in my contract; sleep @ desks; 5-week expectation 
+- Early employee 'red-flag' rejected offer; placeholder-excuse  ->
+	emailed CEO second ask  ->  then emailed reject w/ strong policy recommend for no explicit policy
+#### . Manager Of Snowflakes
+- Polyphasic sleeper (what to do but, never how)  lesser programmers; great helper, does anything asked.
+- Company Owners:  Piotr, S Am, Roboticist professor
+- Single Guy:  Thai-beaches, Crypto conferences
+### - POLITICS - MANAGING UP
+- Vacation Policy
+- Product vision
+#### . Dual Backlog Maintenance
+
+### - REMOTE WORK
+#### . Video surveillance system w. Tripods and canned setups.
 ## = AF STORIES
 ### - CONTRACTING (customer-forced delivery failures)
 #### . In-then-Out Planning; Delivery Timeframes Tied To All Inputs In; Aggressive Tracking & Notify
@@ -69,6 +82,7 @@ AEOLUS surveillance video system, w tripods and canned setups.
 ==> Example:  Payment and Work-stoppage Timelines
 - Massively screwed by an unscrupulous founder - almost sunk the company.
 #### . Dual BackLog Management
+#### . Basil Health Contracting Failure
 
 ### - HIRING by direct testing  (Blow their doors off & see what happens.)
 #### . BP Sox
