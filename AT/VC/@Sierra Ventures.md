@@ -1,4 +1,4 @@
- [[VC CORP]]    [Sierra Ventures](https://www.crunchbase.com/organization/sierra-ventures) CB: 1775 375/84 p11+ 
+ [[VC ORG]]    [Sierra Ventures](https://www.crunchbase.com/organization/sierra-ventures) CB: 1775 375/84 p11+ 
     early-stage -- sectors include artificial intelligence/machine learning, big data, cloud, fintech, health tech, IoT/infrastructure, marketplaces, SaaS & enterprise apps, security, and emerging technologies such as 5G, devices, blockchain, robotics, and virtual reality / augmented reality.
     ~ $2B AUM, 1982.  Early stage, many emerging tech areas.
   Sierra Ventures is an early-stage venture firm investing globally with a focus on next generation enterprise and emerging technologies.

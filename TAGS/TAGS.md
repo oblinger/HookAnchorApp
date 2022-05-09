@@ -15,9 +15,8 @@
 		- WHERE:  [[HACKERS]], [[DARPA]], 
 		- AREA:  [[AI]], [[ROBOTICS]], [[ML]], [[CONSULTANT]],  
 	- [[ORG]] 
-		- [[CORP]] 
-			- [[VC CORP]]   
-			- [[PE firm]] 
+		- [[VC ORG]]   
+		- [[PE firm]] 
 	- [[COMP]] 
 		- [[LANG]] 
 		- [[INFO_PAGE]] 

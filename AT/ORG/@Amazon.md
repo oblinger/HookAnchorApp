@@ -1,4 +1,4 @@
- [[CORP]] [[FAANG]]  
+ [[ORG]] [[FAANG]]  
 
 
 ## = LEVELS   [Levels.fyi](https://www.levels.fyi/?compare=Amazon,Google,Facebook&track=Software%20Engineer)  

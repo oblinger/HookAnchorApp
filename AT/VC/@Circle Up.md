@@ -1,4 +1,4 @@
-[[VC CORP]]   [CircleUp](https://www.crunchbase.com/organization/circleup-growth-partners)   CB: 3643 90/9
+[[VC ORG]]   [CircleUp](https://www.crunchbase.com/organization/circleup-growth-partners)   CB: 3643 90/9
     CircleUp is an investment platform that provides capital and resources to innovative, early-stage consumer brands.
     ~ ML-alg - focused on brands
 

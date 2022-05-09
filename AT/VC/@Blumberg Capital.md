@@ -1,4 +1,4 @@
-[[VC CORP]]    [Blumberg Capital](https://www.crunchbase.com/organization/blumberg-capital)   CB: 1658 217/44 p11+
+[[VC ORG]]    [Blumberg Capital](https://www.crunchbase.com/organization/blumberg-capital)   CB: 1658 217/44 p11+
   Early stage B2B w. Innovative use of AI
   ~ Innovative use of AI
   

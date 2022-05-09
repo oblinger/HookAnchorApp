@@ -1,4 +1,5 @@
-  [A-EduCorp](A-EduCorp.md)
+
+	[A-EduCorp](A-EduCorp.md)
 
 -- Big Idea
 	-- might not happen, or happen much later

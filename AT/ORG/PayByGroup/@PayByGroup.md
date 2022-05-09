@@ -1,4 +1,4 @@
- [[CORP]] 
+=[[ORG]] 
 
 # MEETINGS
 

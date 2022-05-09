@@ -1,21 +1,22 @@
  [[PKM Overview]]
 
+- [[PKM Anchors]] 
 - [[PKM Global 2 Local]] 
 
-KEY IDEAS
+
+
+
+
+
+# Key Ideas
+
+
 
 - LOCAL-GLOBAL-BUCKETING
 	- UNIFIED-NAMESPACE
 	- BUCKETING
 	- (See OPEN LOOP NAV / MUSCLE-MEMORY)
 	- HUFF-CODED-NEUMONIC-NAMING
-	- 
-- 
-
-
-
-
-# Key Ideas
 
 ## LOCAL-GLOBAL BUCKETING
 A (*the*?) most important aspect of any PKM is the amount of volume and density of relevant information one can access per minute.  Thus shaving even small percentages off the mental, temporal, and physical ease of navigating to some desired piece of knowledge GREATLY boosts the value of the PKM.  After 3 decades of organizing dozens of PKMs here is what I believe to be a set of best practices for achieving the highest levels of PKM nav efficiency, and how I have implemented them in Obsidian.
