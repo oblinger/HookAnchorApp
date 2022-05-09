@@ -1,15 +1,12 @@
-
-
-- [ ] EMAILS: Verify saving, verify drafts save, verify save sends, merge all AF mail in. back backup of all mail.
-- [ ] fix ccd to work with Obsidian
-- [ ] To Read  [Scripting Obsidian](https://www.thoughtasylum.com/2021/09/12/automating-your-obsidian-workspace/)  
-- [ ] Drag-n-drop should use folding anchors.
-- [ ] Toggle email notifications
-- [ ] Export 1-password for auto logins
-- [ ] Remove repeated stuff in email history
 - [ ]  F: edit scripts to be python3 scripts
-- [ ] F: script control of AirPod Max connection on Mac
+- [ ] EMAILS: Verify saving, verify drafts save, verify save sends, merge all AF mail in. back backup of all mail.
 - [ ] F: play with 'state' app
+- [ ] Remove repeated stuff in email history
+- [ ] Toggle email notifications
+- [ ] To Read  [Scripting Obsidian](https://www.thoughtasylum.com/2021/09/12/automating-your-obsidian-workspace/)  
+- [ ] Export 1-password for auto logins
+- [ ] F: script control of AirPod Max connection on Mac
+- [ ] fix ccd to work with Obsidian
 
 ## PROJECTS
 ### Bidirectional sync to gsheets
