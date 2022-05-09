@@ -9,7 +9,8 @@
  - [[Dataview]],   [mdfind](__mdfind__.md)  [Dataview](__Dataview__.md)
  - [[Meta Org]] 
 
-
+## = DEV LINKS
+- [API Docs](https://marcus.se.net/obsidian-plugin-docs/api),  
 
 
 # # TODO

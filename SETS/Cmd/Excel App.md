@@ -1,0 +1,2 @@
+=[[CMD]]   app   Microsoft Excel
+

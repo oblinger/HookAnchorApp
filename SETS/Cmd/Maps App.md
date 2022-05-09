@@ -1,0 +1,1 @@
+=[[CMD]]   apps   Maps

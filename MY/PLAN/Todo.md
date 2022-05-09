@@ -3,6 +3,7 @@
 - [ ] call Doctor
 - [ ] day in the life of a VC
 
+on todo?
 
 
 

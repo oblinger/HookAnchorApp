@@ -1,0 +1,2 @@
+=[[CMD]]   app   Spotify
+

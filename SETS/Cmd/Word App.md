@@ -1,0 +1,3 @@
+=[[CMD]]   app   Microsoft Word
+
+

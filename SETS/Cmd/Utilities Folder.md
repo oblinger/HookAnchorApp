@@ -1,0 +1,3 @@
+=[[CMD]]   folder   /Applications/Utilities
+
+

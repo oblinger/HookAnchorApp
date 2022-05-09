@@ -1,7 +1,15 @@
 
-- [ ]  [Scripting Obsidian](https://www.thoughtasylum.com/2021/09/12/automating-your-obsidian-workspace/)  
-- [ ] 
-- [ ] PKM: Use ^a ^e to select whole line to move?  
+
+- [ ] EMAILS: Verify saving, verify drafts save, verify save sends, merge all AF mail in. back backup of all mail.
+- [ ] fix ccd to work with Obsidian
+- [ ] To Read  [Scripting Obsidian](https://www.thoughtasylum.com/2021/09/12/automating-your-obsidian-workspace/)  
+- [ ] Drag-n-drop should use folding anchors.
+- [ ] Toggle email notifications
+- [ ] Export 1-password for auto logins
+- [ ] Remove repeated stuff in email history
+- [ ]  F: edit scripts to be python3 scripts
+- [ ] F: script control of AirPod Max connection on Mac
+- [ ] F: play with 'state' app
 
 ## PROJECTS
 ### Bidirectional sync to gsheets
@@ -9,17 +17,12 @@
 - scan three level hiearchy with direct content or links to next level down
 - map key value pairs into a table row
 - build URL links to local files
+- Format Idea:
+	- leading space indicates positional arguments (can be wiki-link, markdown-link, key: value-pair, trimmed string with spaces)
 
 
-Format:
-- leading space indicates positional arguments (can be wiki-link, markdown-link, key: value-pair, trimmed string with spaces)
-
-%% here is a comment %%
-
-> [!Yo]
-> more stuff here
-> and more
+## LATER
+- [ ] PKM: Use ^a ^e to select whole line to move?  
 
 
-and some more
 

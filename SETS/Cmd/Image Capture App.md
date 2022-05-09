@@ -1,0 +1,1 @@
+=[[CMD]]   app   Image Capture

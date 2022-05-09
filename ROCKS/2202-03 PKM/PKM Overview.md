@@ -10,8 +10,8 @@ After 2+ decades and building dozens of large PKMs these principles have yielded
 
 
 **GLOBAL 2 LOCAL** -- Remember dozens or hundreds of special global "G" pages that serve as the starting point for navigation, then use the emergent LOCAL structure found at that G page in order to complete the search.
-- **OPEN LOOP NAV** -- Critical that one can navigate to any "G" place literally with eyes closed.
 - **UNIFIED NAMESPACE** -- Critical that all "G" pages exist within one namespace.  Many Gs will have info in many different places, formats, and kinds.  All that stuff must be in one G-"Place" so it can be access
+- **OPEN LOOP NAV** -- Critical that one can navigate to any "G" place literally with eyes closed.
 - **OPPORTUNISTIC G-ROUTING** --  
 -  and user should not need to think about storage location/kind, app-type, etc.  just the G-name in their brain
 

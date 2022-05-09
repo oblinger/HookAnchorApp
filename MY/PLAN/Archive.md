@@ -1,3 +1,4 @@
+- [x] Buy weight scales
 - [x] call Doctor
 - [ ] !!! QL!!!, Dave, Dad, Sammie gifts
 - [x] call Doctor
