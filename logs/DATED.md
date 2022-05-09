@@ -6,8 +6,8 @@
 | 2022-05-06 | [[Climate]]             | David response to the IPCC paper                                                          |
 | 2022-05-04 | [[ToBuy]]               | Smart scale                                                                               |
 | 2022-05-03 | [[Phone]]               | paid lung doctor                                                                          |
-| 2022-05-02 | [[Writings]]            | DREAM: Alien take over                                                                    |
 | 2022-05-02 | [[Phone]]               | Buying an office chair                                                                    |
+| 2022-05-02 | [[Writings]]            | DREAM: Alien take over                                                                    |
 | 2022-04-22 | [[DYL]]                 | Innovation & Insight                                                                      |
 | 2022-04-20 | [[MED]]                 | COVID - Test Accuracy as function of time since exposure                                  |
 | 2022-04-19 | [[DYL]]                 | Design - long distance commuter train, package delivery systems,                          |
@@ -27,8 +27,8 @@
 | 2022-04-03 | [[DYL]]                 | Organizational Systems - Tirelessly setup Obsidian & cleaned texts                        |
 | 2022-04-02 | [[ToBuy]]               | Food Scale                                                                                |
 | 2022-03-31 | [[Weekly]]              | (short week)                                                                              |
-| 2022-03-25 | [[Dataview]]            | [templater+dataview example](https://github.com/blacksmithgu/obsidian-dataview/issues/42) |
 | 2022-03-25 | [[EOCA]]                | guy writing book on evil and ai control                                                   |
+| 2022-03-25 | [[Dataview]]            | [templater+dataview example](https://github.com/blacksmithgu/obsidian-dataview/issues/42) |
 | 2022-03-21 | [[Weekly]]              |                                                                                           |
 | 2022-03-21 | [[Phone]]               | Home Depot - replace new GE microwave                                                     |
 | 2022-03-19 | [[Crunchbase]]          | === AMY SEARCH STRATEGY ===                                                               |
@@ -80,12 +80,12 @@
 | 2022-01-11 | [[Brain3]]              | combining DL and logic                                                                    |
 | 2022-01-11 | [[EOCA]]                | The intrisic value of knowelge                                                            |
 | 2022-01-04 | [[Paths]]               | My purpose                                                                                |
-| 2022-01-04 | [[FailedMessages]]      | CTO Outreach Email                                                                        |
-| 2022-01-04 | [[Journal Old]]         | My purpose                                                                                |
 | 2022-01-04 | [[DEEP_BOOT]]           | MERI GUY RESPONSE                                                                         |
 | 2022-01-04 | [[DEEP_BOOT]]           | REFLECTIVITY                                                                              |
 | 2022-01-04 | [[DEEP_BOOT]]           | WAYS TO CONTAIN IT                                                                        |
 | 2022-01-04 | [[DEEP_BOOT]]           | WAYS TO BREAK FREE                                                                        |
+| 2022-01-04 | [[FailedMessages]]      | CTO Outreach Email                                                                        |
+| 2022-01-04 | [[Journal Old]]         | My purpose                                                                                |
 | 2022-01-02 | [[DEEP_BOOT]]           | Key Capabilities                                                                          |
 | 2022-00-00 | [[FailedMessages]]      | JOE Quora                                                                                 |
 | 2021-12-28 | [[DEEP_BOOT]]           | Deep Introspection Claim                                                                  |
@@ -99,8 +99,8 @@
 | 2021-11-30 | [[Paths]]               | PATHS GOOGLE vs R-ZERO vs UF-now                                                          |
 | 2021-11-30 | [[Journal Old]]         | PATHS GOOGLE vs R-ZERO vs UF-now                                                          |
 | 2021-11-29 | [[Journal]]             | Talk w QL                                                                                 |
-| 2021-11-29 | [[Journal Old]]         | Talk w QL                                                                                 |
 | 2021-11-29 | [[DEEP_BOOT]]           | Deep Learning + Bootstrapping Microtheory                                                 |
+| 2021-11-29 | [[Journal Old]]         | Talk w QL                                                                                 |
 | 2021-11-25 | [[Paths]]               | PATHS TABLE SUMMARY                                                                       |
 | 2021-11-25 | [[Paths]]               | PATHS MISSION                                                                             |
 | 2021-11-25 | [[Journal Old]]         | PATHS TABLE SUMMARY                                                                       |
@@ -224,10 +224,10 @@
 | 2021-05-10 | [[Journal Old]]         | LIFE VIEW                                                                                 |
 | 2021-05-10 | [[Journal Old]]         | PATHS                                                                                     |
 | 2021-05-10 | [[DYL]]                 | LIFE VIEW                                                                                 |
+| 2021-05-06 | [[EOCA]]                | Disposition - Stance and Agenda                                                           |
 | 2021-05-06 | [[Journal Old]]         | >>> BOOK  -- DESIGNING YOUR LIFE <<<                                                      |
 | 2021-05-06 | [[Journal Old]]         | WORK VIEW                                                                                 |
 | 2021-05-06 | [[DYL]]                 | WORK VIEW                                                                                 |
-| 2021-05-06 | [[EOCA]]                | Disposition - Stance and Agenda                                                           |
 | 2021-05-05 | [[Journal]]             | DECISION - NO TO JASON                                                                    |
 | 2021-05-05 | [[Journal Old]]         | DECISION - NO TO JASON                                                                    |
 | 2021-05-00 | [[Jnl]]                 | Recent stuff                                                                              |

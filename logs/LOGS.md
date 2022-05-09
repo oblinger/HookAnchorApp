@@ -1,5 +1,5 @@
-  [Receipts](Receipts/Receipts.md),   [Quotes](Quotes.md)
-  [Quotes](LOGS/Quotes.md)
+  [Notes](Notes.md)
+   [[Ideas All]],   [Receipts](Receipts/Receipts.md),   [Quotes](Quotes.md)
   [Receipts](Receipts.md),   [Dated](Dated.md),   [Notes	](Notes	.md),   [Refs](Refs.md),   [MEET](MEET/MEET.md),   [Dated	](Dated	.md),   [Notes App](Notes%20App.md)
 
 

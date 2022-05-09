@@ -1,6 +1,7 @@
   [Levels](Levels.md)
-  [Levels](STREAMS/IdeasAll/Ideas%20Brain/Brain/2015.00%20-%20EOC/Archive/2015%20-%20The%20Sentient%20Weapon/Levels.md)
-  [Levels](STREAMS/IdeasAll/Ideas%20Brain/Brain/2015.00%20-%20EOC/Archive/2015%20-%20The%20Sentient%20Weapon/Levels.md)  [book_outline](book_outline.md)  [story](story.md)  [_Brain_](_Brain_.md)
+  [Levels](LOGS/IdeasAll/Ideas%20Brain/Brain/2015.00%20-%20EOC/Archive/2015%20-%20The%20Sentient%20Weapon/Levels.md)
+  [Levels](LOGS/IdeasAll/Ideas%20Brain/Brain/2015.00%20-%20EOC/Archive/2015%20-%20The%20Sentient%20Weapon/Levels.md)
+  [Levels](LOGS/IdeasAll/Ideas%20Brain/Brain/2015.00%20-%20EOC/Archive/2015%20-%20The%20Sentient%20Weapon/Levels.md)  [book_outline](book_outline.md)  [story](story.md)  [_Brain_](_Brain_.md)
 
 ## Quick discussion
 - Amex open 
