@@ -1,3 +1,13 @@
+
+- [ ] contigo thermos
+- [ ] 
+- [ ] day in the life of a VC
+- [ ] buy juicer
+- [ ] buy bubble blowing dinosour
+- [ ] remove mealy-bug plants
+- [ ] ask JAmes for online tests
+- [ ] Write Reviews for Jessie
+- [ ] factory os (read about it)
 - [ ] Ensure sent mail is saved. and received mail is saved.
 - https://github.com/jigish/slate
 - [ ] ? Add quick entry using an input box

@@ -1,3 +1,5 @@
+- [x] +[[DYL]] Finish FAANG odyssey.
+- [x] call Doctor
 - [x] Buy weight scales
 - [x] call Doctor
 - [ ] !!! QL!!!, Dave, Dad, Sammie gifts

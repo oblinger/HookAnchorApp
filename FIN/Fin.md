@@ -5,7 +5,7 @@
 
 # # TODO #  
 - [ ] [[Fin|FIN]] >>>Find value investments
-
+- [ ] -- set pin on sapphire
 - [ ] Mint budget (run it)
 - [ ] Freeze Eli's Credit
 

@@ -1,3 +1,15 @@
+### 2022-05-02
+MIT
+- [ ] +Totally Finish Fine note.  e.g. subject line
+- [x] +[[DYL]] Finish FAANG odyssey.
+- [ ] DYL forum odyssey
+- [ ] +Do Tile Robot odyssey.
+- [ ] +[[DYL]] Finish prototyping chapter
+- [ ] Read GANs (Benjio)
+- [x] Do 4 hours on WarStories
+- [ ] Look @ FAANG jobs
+- [ ] Schedule FAANG Engineer calls
+
 ### 2022-04-25
 MIT
 fine note

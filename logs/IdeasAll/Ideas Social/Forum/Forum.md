@@ -1,4 +1,4 @@
-
+cacac
 [[Forum Mechanically Unbiased]],  
 
 
@@ -14,11 +14,12 @@
 - What we observe
 ### KEY POINTS
 - VALUE PROPOSITION 
-	- Provide society with a validated overview of what it thinks.
-	- Provide best feedback/criticism of those thoughts.
-- KEY INSIGHTS
-	- MEANING - People want to make a difference/contribution
-	- HEARD - People want to be heard
+	- SUMMARY - Provide a demonstrably - unbiased view of what society believes.
+	- ANSWER - Quickly see what informed, open peers believe about an issue.
+	- FACT CHECK - Quickly see most informed counter points for your favorite stance on an issue.
+- KEY MOTIVATING INSIGHTS
+	- MEANING - People want to make a difference/contribution if the output of the forum is valuable, people will be motivated to help create it.
+	- HEARD - People want to be heard.  We each feel our thoughts on topics of interest will have value if they are heard by others (especially those that disagree).  If the forum does this for them, they will use it.
 	- CONVINCE - People think they are right, and have something of import to share
 
 ### FACT CHECKER CANVAS
@@ -185,6 +186,12 @@ COMPLETE
 
 
 	_
+
+## ODYSSEY
+YEAR 1 -
+YEAR 2 - 
+
+
 # APPROACH
 # SOLUTION DETAILS 
 ## KEY IDEAS
@@ -988,7 +995,15 @@ Dynamics combine best aspects of top-down and bottom-up to yield a workable non-
 - System mechanically computes bias/coercion score for each each potential summaries for each scope.  If there is one or two notes with high consensus scores across ALL interestd groups then this consensus these consensus document and will not present any single author sumaries for an area that when there are no 
 
 _
-## === METRICS ===
+## METRICS
+### - PARTICIPANT ACCURACY
+- Do their scores match their peers well.
+- Percentile rank within their group.  So cannot compare well across groups.
+### - PARTICIPANT OPENNESS
+- Will a participant go against their group when middle third strongly goes against their position
+### - PARTICIPANT CONSTRUCTIVITY / CONGENEALITY
+- Does participant operate in destructive, deceptive, dishonest ways (as assessed by their peers)
+- Do they operate in constructive ways (as assessed by everyone)
 ### ...
 
 Forum automation performs it decison making on the basis of a handful of key metrics.
@@ -1276,6 +1291,11 @@ Reuters joins the list of US fact-checking partners that include The Associated 
 
 _
 # LOG
+### m2022-05-09  Yashin and Phippa
+
+- Explain idea at highest level & get a gut check reaction; quick pointers
+- 
+
 ### t2022-05-05  Invitation to talk w. Al
 
 Al:

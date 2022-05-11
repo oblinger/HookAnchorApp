@@ -1,3 +1,19 @@
+Managers Path
+
+OHTER MGT BOOKS TO CONSIDER (from whom??)
+OTHER Ideas:
+
+HardThingAboutHardThings
+
+BecomingATechMgr
+
+Meditations
+
+BreakAllTheRules
+
+5DisfunctionsOfTeam
+
+7HabitsOfHiEffectPeople
 
 ## = REPEAT
 - >>>>>        Clean-Unsorted * Scan thru them * Do Repeats or Ref Pages

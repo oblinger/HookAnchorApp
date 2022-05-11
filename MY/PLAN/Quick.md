@@ -1,6 +1,11 @@
 
+- [ ] 
+- [ ] 
+- [ ] ready car; picknick
+- [ ] packing cubes for mom
 - [ ] Fix circuit breakers
 
+Write thank you note to Klembara and others
 
 Zarina, My comments come from thousands of miles away from any conflict or risk, so I want to start w/ more humility than I did in my first post.
 

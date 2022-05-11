@@ -1,9 +1,9 @@
-- [ ] short form summaries
+comms
+- [ ] look @ yearbook progress
+- [ ] Restart with Dan Fine
+- [ ] short form summaries Atomic Habits; Managers Path
 - [ ] in2 quick scrub
-- [ ] call Doctor
-- [ ] day in the life of a VC
 
-on todo?
 
 
 

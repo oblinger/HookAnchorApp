@@ -1,4 +1,5 @@
-- [ ]  F: edit scripts to be python3 scripts
+
+- [ ] - [ ]  F: edit scripts to be python3 scripts
 - [ ] EMAILS: Verify saving, verify drafts save, verify save sends, merge all AF mail in. back backup of all mail.
 - [ ] F: play with 'state' app
 - [ ] Remove repeated stuff in email history

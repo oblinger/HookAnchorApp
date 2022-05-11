@@ -2,6 +2,9 @@
 
 | Date       | File                | Notes                                                                                     |
 | ---------- | ------------------- | ----------------------------------------------------------------------------------------- |
+| 2022-05-11 | [[Phone]]               | American Airline                                                                          |
+| 2022-05-09 | [[Phone]]               | Marriage courses to consider                                                              |
+| 2022-05-09 | [[Phone]]               | Marriage Retreats to consider                                                             |
 | 2022-05-06 | [[Climate]]             | IPCC draft                                                                                |
 | 2022-05-06 | [[Climate]]             | David response to the IPCC paper                                                          |
 | 2022-05-04 | [[ToBuy]]               | Smart scale                                                                               |
@@ -406,7 +409,11 @@
 | 2019-00-00 | [[ReBuy]]               | Office Drawers  (bought)                                                                  |
 | 2019-00-00 | [[ReBuy]]               | Front Door Lock                                                                           |
 | 2018-08-07 | [[Phone]]               | #### starting to use Evernote ####                                                        |
+| 2017-12-18 | [[Phone]]               | Notes from HACKERS                                                                        |
+| 2017-11-14 | [[Phone]]               | Prenup info  -- info moved to evernote                                                    |
 | 2017-09-29 | [[Phone]]               | Double Cash Back                                                                          |
+| 2017-08-01 | [[Phone]]               | Sutter health                                                                             |
+| 2017-05-00 | [[Phone]]               | Experian                                                                                  |
 | 2017-00-00 | [[Phone]]               | Bought glasses                                                                            |
 | 2017-00-00 | [[Phone]]               | CREDIT CARDS                                                                              |
 | 2016-11-06 | [[Phone]]               | changed address                                                                           |

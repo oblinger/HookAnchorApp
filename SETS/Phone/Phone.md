@@ -1,3 +1,9 @@
+### 2022-05-11  American Airline
+
+800-433-7300  
+
+pet confirmation:  FRWRWH
+
 ### 2022-05-03  paid lung doctor
    # 019317
 
@@ -127,9 +133,70 @@ $133,276 = $5,126 * 26 net pay
 
 ### 2022-03-15 - #### STARTED USING THIS AGAIN #### 
 
+### 2022-05-09  Marriage courses to consider
+[https://cmp.memberclicks.net/login](https://cmp.memberclicks.net/login)
+
+[http://www.catholicmarriageprep.com/index.php?option=com_content&view=article&id=137&Itemid=611](http://www.catholicmarriageprep.com/index.php?option=com_content&view=article&id=137&Itemid=611)
+
+### 2022-05-09  Marriage Retreats to consider
+Retrouvaille.   
+
+Vallembrosa
+
+Jesuit retreat in los gatos
+
+Carmelite retreat big sur
+
+Marriage encounters.   
+
+Epifany.   St Cecilia 
+
+Fr. Roger st. Brandon’s
+
+  
+
+  
+
+Blessings.  
+
+Magisenter.com.     
+
+Humani vitae
 ### 2018-08-07 - #### starting to use Evernote #### 
 
 
+### 2017-12-18  Notes from HACKERS
+Corss the the unknown sea David white
+
+Neil Miller [nmiller@actionlife.com](mailto:nmiller@actionlife.com)
+
+4 or more mica. invensense
+
+connects it shipsets for voice
+
+  
+
+Mji. heart breath pills 1000 usd. face
+
+en.abilix.com api opened.
+
+  
+
+philip cutler. 5 force anaporter
+
+  
+
+robust composition. Mark S miller. E wrights org
+
+catallac dessert
+
+[alstrong2006@gmail.com](mailto:alstrong2006@gmail.com) . snady
+
+seldon remain aging. amber
+
+all the way
+
+Greg piper 415 624-6412 . [gcpiper@gmail.com](mailto:gcpiper@gmail.com)
 ### 2016-00-00 - Aeolus notes
 
 picker/sweeper
@@ -280,7 +347,7 @@ EFFECTIVE CONNECTIVITY TO TAIWAN
 
 
  
-### 17-11-14 Prenup info  -- info moved to evernote
+### 2017-11-14 Prenup info  -- info moved to evernote
 
 Edna Avraham, LMFT; 205 East 3rd Avenue, Suite 308; San Mateo CA 94401; 650-579-7153
 Neil Liebert, MA, LMFT; 555 Middlefield Road, Suite 106-B; Palo Alto, CA 94301; 650-906-5000
@@ -296,14 +363,14 @@ George Richardson
 
 
 
-### 17-08-01 Sutter health
+### 2017-08-01 Sutter health
 
 acct  402972202  Sutter Health
 
 march charge for $1,7xx.xx was correct for HR visit
 
 
-### 17-05-00  Experian
+### 2017-05-00  Experian
 logged in and changed email to my wef account.
 
 

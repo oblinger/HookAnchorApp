@@ -1,5 +1,4 @@
 
-
 ## = [[SELF|SELF]] =
 ### - [[MED|MED]] -
 - [ ] Daily 7-min exercise

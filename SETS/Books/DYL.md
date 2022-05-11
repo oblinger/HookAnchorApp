@@ -7,8 +7,6 @@ Data scientist
 Lots of little problems
 
 
-
-
  [[NJ22]] 
  
 **>>> BOOK  -- DESIGNING YOUR LIFE <<<** 

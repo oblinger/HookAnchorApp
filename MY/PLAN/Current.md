@@ -1,15 +1,14 @@
-### 2022-05-02
+mwe### 2022-05-09
 MIT
-- [ ] +Totally Finish Fine note.  e.g. subject line
-- [ ] +[[DYL]] Finish FAANG odyssey.
-- [ ] DYL forum odyssey
+- [ ] T1/M2 Totally Finish Fine note.  e.g. subject line
+- [ ] T1/M2 DYL forum odyssey
+- [ ] T2 Work on forum presentation
+- [ ] M2 [[DYL]] Finish prototyping chapter
+- [ ] W1 Do 4 hours on WarStories
+- [ ] W1 Look @ FAANG jobs & FAANG Planning
 - [ ] +Do Tile Robot odyssey.
-- [ ] +[[DYL]] Finish prototyping chapter
 - [ ] Read GANs (Benjio)
-- [ ] Do 4 hours on WarStories
-- [ ] Look @ FAANG jobs
 - [ ] Schedule FAANG Engineer calls
-
 - [ ] Run code for Coursera... & few hours
 - [ ] FAANG Training ordered
 
