@@ -3,6 +3,23 @@
   [Mom](__Mom__.md)
 [[Mom|Mom]]  [[Dad|Dad]] 
 
+## TOPICS
+### GIFTS
+- Packing Cubes for mom
+### - Travel Food
+ON HAND:  
+- MILK:  
+- FROZEN: edamame, peas, and corn (will not go bad if we don't eat them)
+- HUMMUS: 16oz red-pepper hummus with celery and radishes (Eli and Dan both like)
+- FRUIT:  Fuji Apples, Bananas, Watermellon (and many other fruits too)
+- VEGGIES: Broccoli, 
+- ENTREE: TVP Chili, Barley Mushroom, Pasta&Tomato Sauce, Salmon, 
+
+  
+
+—dan
+# MISC
+
 ### --- 2019.11 tasks ---
 - Fix something on moms phone
 - Show pictures from dads laptop to the TV

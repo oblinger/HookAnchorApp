@@ -5,10 +5,15 @@
   - Introduced me to [[@Deep Sahini]]
 
 
-
+https://www.amazon.sg/
 
 
 # MEETINGS
+### m2022-05-26  - Prep for FAANG
+
+- VC; 
+
+
 ### m2022-04-06  - Resume; 
 - What am I up to:
 	- [[FAANG]] - My FAANG contacts.

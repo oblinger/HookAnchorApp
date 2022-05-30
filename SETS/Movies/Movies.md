@@ -1,7 +1,6 @@
-  [movienotes](movienotes.md)  [Flix](Flix/Flix.md)
-  [movienotes](__movienotes__.md)  [Flix](Flix/__Flix__.md)
-### RT Searches (rotten tomato searches)
 
+
+### RT Searches (rotten tomato searches)
 [RT Best Flix Movies Now](https://editorial.rottentomatoes.com/guide/best-netflix-movies-to-watch-right-now/) 
 [RT Best Flix Shows Now](https://editorial.rottentomatoes.com/guide/best-netflix-shows-and-movies-to-binge-watch-now/) 
 [Best Flix Series](https://editorial.rottentomatoes.com/guide/best-netflix-shows-and-movies-to-binge-watch-now/)  
@@ -16,6 +15,7 @@
 [REEL TV](https://reelgood.com/show/mad-men-2007) 
 [RottenTomatos](https://www.rottentomatoes.com/) 
 
+OTHERS:  [Just Watch](https://www.justwatch.com),  
 MOM: [Reel Crime](https://reelgood.com/tv/genre/crime/on-netflix)  [Reel Mystery](https://reelgood.com/tv/genre/mystery/on-netflix) 
 
 ### christian

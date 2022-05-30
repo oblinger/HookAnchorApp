@@ -1,3 +1,4 @@
+<%* tR += tp.file.selection() .split("\n") .join(" \n"); %>
 
 <%*
   let title = tp.file.title

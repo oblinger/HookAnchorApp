@@ -434,6 +434,13 @@ Bob Daniels
 San Francisco, CA 94110 
 United States
 
+### xx Karabiner-Elements
+
+See ~/.config/karabiner/karabiner.json
+
+I dramatically lowered:  basic.simultaneous_threshold_milliseconds: 1    (from 50 and maybe it was even larger before this)
+This fixed typing TAB-SHIFT too fast.
+
 ### xx Keyboard Maestro
   
 [[Doc Keyboard Maestro]] 

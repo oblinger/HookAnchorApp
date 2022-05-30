@@ -10,6 +10,17 @@
 [[BeVC]] 
 
 
+### t2022-05-12  followup
+  
+  
+Emily,  
+  
+Thanks for taking the time to chat last week. At the end of our call you mentioned sending a list of VC firms that I might productively connect with. Please so send that list, and I look forward to connecting again in the future.  
+  
+Cheers,   
+Dan
+
+
 ### t2022-04-07  -  Aniket intro
 
 Subj: Technology Focused Venture Capital

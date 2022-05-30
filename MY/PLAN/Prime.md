@@ -1,13 +1,14 @@
 ## = [[NJ22|NJ22]] =
 - [ ] [[DYL]] Build 3 Odyssey plans.
 - [ ] [[DYL]] Dan one-pager (from quick pass on earlier chapters)
+- [ ] War-Stories
 
 ## = [[BeFAANG|BeFAANG]] =
 - [ ] Speak with as many FAANG research light as I can 
 - [ ] [[DYL]] odyssey
 
 ## = [[BeMLR]] =
-
+- [ ] Read benjio papers
 
 ## = [[ROCKS/2022-03 Learning/Learning|Learning]] =
 - [ ] Complete Coursera Deep Learning Course

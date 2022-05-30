@@ -1,7 +1,4 @@
-### _
-https://www.indeed.com/career-advice/interviewing/most-common-behavioral-interview-questions-and-answers
-
--  [AMAZON Interview TIPS](https://www.youtube.com/watch?v=0jFjGkjdHl8)  
+ ### _
 
 ### notes
 
@@ -13,71 +10,70 @@ AEOLUS - how many lines of code?
 - PREMATURE SCALING (ROS REMOVAL)
 - PIECEWISE HW TESTING; DIRECTLY BUILDING ON HW TEAMS OUTPUT
 
+
 # STORIES
 
-## = DARPA
-### - DELEGATION
-#### . Developed Ten Stage Deck 
-## = MARTIAN/AEOLUS STORIES
+## = PERSONNEL MANAGEMENT
+### - TEAM MANAGEMENT
+#### . Personal Wizards Team (3)
+#### . DARPA in house () BL () TL () MR ()
+#### . AF 40+ 
+
 ### - HIRING
 #### . Hiring Grasping Experts (Aeolus, Hiring)
 - Had team identify tier1 journals; & frequently publishing teams; picked top 10 world wide
 - Wrote hand crafted emails to lead prof at each
-- Phone call woowing; Flew to Vienna; funding multi-year grant;  Hired two leading graduates
-#### . Money Ball Hiring
+- Phone call wooing; Flew to Vienna; funding multi-year grant;  Hired two leading graduates
+#### . Money Ball Hiring (AF)
 
-### - TESTING
-#### . Universal Video Validation  (Aeolus, Mgt, Fail, Testing)
-   REQ:  Explain in text how you tested it & why that shows it is done.  Include phone video w/ audio.
-==> Super super EASY.  No one can argue it is too hard.  avoids generality/stability need for repeatable tests.
-==> Ensure testing really did happen.  (just compiled it!  couldn't test easily so said it 'worked')
-==> Upper management results porn; Team alignment (hey! that is not done, or not right!)
-
-  people were not lying exactly, but they were being sloppy and generous in saying it was tested.
-  backlog items had a star if they needed a video (often sub items did not need a video)
-  
-#### . Not done till upstream top-level system ran (Aeolus, Mgt, Fail, Testing)
-#### . Customer Bug-Frustration
-- Customers don't like paying to fix newly discovered bugs in already delivered code.
-- Built out cost effective testing org, and use it even when customer isn't paying for it.
-
-### - PERSONNEL MANAGEMENT
-#### . People as Jigsaw Puzzles
+### - PERSONALITY MANAGEMENT
+#### . People as Jigsaw Puzzles (Aeolus, AF)
 - Consider employee's:  Depth, Width, Velocity, Padding, Creativity, Care, etc.
 - Mix and Match strengths to cover any gaps before they are large problems.
 - AF EXAMPLES:  Bryan, Matt, Ben, Ruby, Jess (universal soldier)
 - AE EXAMPLES:  Georgios+, Alexey 
-#### . Lone Wolf Alexey 
+#### . Lone Wolf Alexey (Aeolus)
 - Super strong & focused C++ developer.  Wanted to know more than all others & be better
 - Willing to do anything in C++.  Willing to help & teach, debug, code anything
 - Asshole who knew he knew more.  wanted autonomy and isolation
-#### . Fragile Georgios
+#### . Fragile Georgios (Aeolus)
 - Did not mind managing details, nor working hard/long
 - Feared being 'in charge' & 'responsible w/o partner;  Could not handle pushing others or ANY confrontation.
 - Feared for job security  
-#### . Vacation Policy - Hiring Europeans
+#### . Vacation Policy - Hiring Europeans (Aeolus, AF)
 - Taiwanese CEO; 5-days in my contract; sleep @ desks; 5-week expectation 
 - Early employee 'red-flag' rejected offer; placeholder-excuse  ->
 	emailed CEO second ask  ->  then emailed reject w/ strong policy recommend for no explicit policy
-#### . Manager Of Snowflakes
+#### . Manager Of Snowflakes (Aeolus, AF)
 - Polyphasic sleeper (what to do but, never how)  lesser programmers; great helper, does anything asked.
 - Company Owners:  Piotr, S Am, Roboticist professor
 - Single Guy:  Thai-beaches, Crypto conferences
 ### - POLITICS - MANAGING UP
-- Vacation Policy
-- Product vision
+- Vacation Policy (Aeolus)
+- Product vision (Aeolus)
 #### . Dual Backlog Maintenance
 
+
+
+
+## = PROJECT MANAGEMENT
 ### - REMOTE WORK
 #### . Video surveillance system w. Tripods and canned setups.
-## = AF STORIES
+
+### - DELEGATION & MONITORING
+#### . Developed Ten Stage Deck (DARPA)
+#### . Monitoring and Testing Standards (DARPA)
+- Worked with NIST/LDC on TREC competition and on test set creation & APIs
+- Worked closely with XXX at Cycorp to develop BL curricula
+
+## = CUSTOMER MANAGEMENT
 ### - CONTRACTING (customer-forced delivery failures)
-#### . In-then-Out Planning; Delivery Timeframes Tied To All Inputs In; Aggressive Tracking & Notify
+#### . In-then-Out Planning; Delivery Timeframes Tied To All Inputs In; Aggressive Tracking & Notify (AF)
 - Joe at Acme will provide X by DATE1  (with contract having DATE2>DATE1 in planning)
 - Aggressive steak holder notification of delivery risks.
-#### . In House Testing Upon Delivery
+#### . In House Testing Upon Delivery (AF)
 - Ultimately do it for free; but try to charge on next cycle.
-#### . Poor Counter-Party Performance Planning
+#### . Poor Counter-Party Performance Planning (AF)
 ==> Easy to get apriori-agreement for harsh actions on non-compliance; better to get appropriate actions 
 ==> Example:  Payment and Work-stoppage Timelines
 - Massively screwed by an unscrupulous founder - almost sunk the company.
@@ -104,6 +100,43 @@ AEOLUS - how many lines of code?
 #### . Vision algorithms do flood fill
 
 
+
+
+
+
+## = DEVELOPMENT MANAGEMENT
+### - TESTING
+#### . Universal Video Validation  (Aeolus, Mgt, Fail, Testing)
+   REQ:  Explain in text how you tested it & why that shows it is done.  Include phone video w/ audio.
+==> Super super EASY.  No one can argue it is too hard.  avoids generality/stability need for repeatable tests.
+==> Ensure testing really did happen.  (just compiled it!  couldn't test easily so said it 'worked')
+==> Upper management results porn; Team alignment (hey! that is not done, or not right!)
+
+  people were not lying exactly, but they were being sloppy and generous in saying it was tested.
+  backlog items had a star if they needed a video (often sub items did not need a video)
+  
+#### . Robot Integration - Not done till upstream system ran (Aeolus, Mgt, Fail, Testing)
+#### . Customer Bug-Frustration
+- Customers don't like paying to fix newly discovered bugs in already delivered code.
+- Built out cost effective testing org, and use it even when customer isn't paying for it.
+
+
+## = VISION / LEADERSHIP
+### - Pitched winning proposals
+#### . 12PY adventurous research grant (IBM)
+#### . BL program, MR Program (DARPA)
+#### . Tapped for IPTO SAG; Gates presentation (DARPA)
+
+
+## .
+
+
+
+# CROSS CUTTING GROUPINGS
+## = TROUBLE
+- CONTRACTING:  Whole section Basil Health, Dual Backlog, ...  
+- TESTING: Robot integration
+## = OUTCOMES
 
 
 
@@ -324,7 +357,7 @@ _
 ## === STRENGTHS / WEAKNESSES ===
 ### --- VERBALLY/INTELLECTUALLY FAST ON FEET ---
 
-# ### STORY MATERIALS ===
+# STORY MATERIALS
 ### --- AEOLUS->CES -- 13 Months & A team of one ---
 
 _
@@ -342,7 +375,7 @@ _
 _
 ### --- XXX YYY ZZZ at DARPA ---
 
-Today we cannot XXX, but YYY is a promising apporach, and if it succeeds will mean ZZZ.
+Today we cannot XXX, but YYY is a promising approach, and if it succeeds will mean ZZZ.
 
 XXX a very basic thing that cannot be done today
 YYY an approach that might work for XXX
@@ -352,10 +385,15 @@ _
 ### --- IBM: Few shot learning ---
 
 _
-### --- IBM: Personal Wizards Algoirithm - Interleaving edits and learning ---
+### --- IBM: Personal Wizards Algorithm - Interleaving edits and learning ---
 
 _
 ### --- IBM: Email Mining - Overcoming privacy concerns ---
 
 _
-# ### LOG ###
+# REF
+https://www.indeed.com/career-advice/interviewing/most-common-behavioral-interview-questions-and-answers
+
+-  [AMAZON Interview TIPS](https://www.youtube.com/watch?v=0jFjGkjdHl8)  
+
+# LOG

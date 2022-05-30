@@ -1,3 +1,34 @@
+### 2022-05-24 - Forum presentation
+- [x] W1  Finish forum presentation; Yashin feedback
+- [ ] T1  FAANG Planning
+
+- [ ] DYL forum odyssey
+- [ ] [[DYL]] Finish prototyping chapter
+- [ ] Do 1 hour on WarStories
+- [ ] +Do Tile Robot odyssey
+- [ ] Read GANs (Benjio)
+- [ ] Finish Atomic Habits
+- [ ] Schedule FAANG Engineer calls
+- [ ] Run code for Coursera... & few hours
+- [ ] FAANG  Look @ jobs & Training ordered
+
+Spent huge hours fleshing out the forum presentation.
+
+
+### 2022-05-09
+MIT
+- [x] W1/T1/M2 Totally Finish Fine note.  e.g. subject line
+- [ ] W1/T1/M2 DYL forum odyssey
+- [x] T2 Work on forum presentation
+- [ ] W2/M2 [[DYL]] Finish prototyping chapter
+- [x] W1 Do 4 hours on WarStories
+- [ ] W1 Look @ FAANG jobs & FAANG Planning
+- [ ] +Do Tile Robot odyssey.
+- [ ] Read GANs (Benjio)
+- [ ] Schedule FAANG Engineer calls
+- [ ] Run code for Coursera... & few hours
+- [ ] FAANG Training ordered
+
 ### 2022-05-02
 MIT
 - [ ] +Totally Finish Fine note.  e.g. subject line

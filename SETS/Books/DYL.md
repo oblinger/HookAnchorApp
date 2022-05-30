@@ -1,3 +1,4 @@
+#### _
 it’s about technical ideas with impact. Space space.Benefit and matters efficiency and organization
 not committed enough to any one idea
 
@@ -610,11 +611,13 @@ _
 | Odyssey    | Resources Needed | Likability     | Confidence | Coherence | Considerations | ................................................... |
 | ---------- | ---------------- | -------------- | ---------- | --------- | -------------- | --------------------------------------------------- |
 | FAANG TLM  | Yes              | 70-80% Ok/Good | 80%        |           | Mgr, Sci       | Data Scientist, Manager                             |
-| VC GUY     | Need 5y          |                | 50%        |           |                |                                                     |
-| TILE ROBOT | Probably         |                | 30%        |           |                |                                                     |
 | FORUM      |                  |                | 20%        |           |                |                                                     |
 |            |                  |                |            |           |                |                                                     |
+| VC GUY     | Need 5y          |                | 50%        |           |                |                                                     |
+| TILE ROBOT | Probably         |                | 30%        |           |                |                                                     |
+|            |                  |                |            |           |                |                                                     |
 
+Other Path; Anything Path
 
 
 OTHER PATHS:
@@ -625,34 +628,12 @@ OTHER PATHS:
 -  6 Word Title; Graphical timeline; Questions option is asking; 
 - Considerations: Geography, Learning, Impacts/Results, Role
 
-### - FAANG GUY 
-! BigCo Project Leader & Technology Driver
-
-| Time   | Activity         | Notes                            |
-| ------ | ---------------- | -------------------------------- |
-| Year 1 | Interviewing     | Learning Mgt, ML, interview prep |
-|        | Intense Learning | Slammed at work                  |
-| Year 2 | Groove           | Getting my groove no             |
-| Year 3 | SIDE GIG         | Just starting my side gig        |
-| Year 4 |                  |                                  |
-| Year 5 |                  |                                  |
-|        |                  |                                  |
-
-
-QUESTIONS:
-1.  **DATA SCIENTIST**  --  Am I in range to be an applied/data scientist?  (prep needed?)
-2.  **DAY TO DAY** -- What are the day to day activities of a manager?  of a data scientist?
-3.  **BEST PREP** -- What are the best things to do now land strongest job w/ greatest flexibility
-4. **BEST WAY TO**:   (1) important   &   (2) thinking thru ideas
-
-DETAILS QUESTIONS:
-- ML ENG Training -- 
-- MGR Training -- 
-
-ATTRIBUTES:
-- Bit of free time.
-- Lower risk.
-- Making rich company richer.  eh, ok.  need a side thing in all cases to make a difference
+### - [[BeFAANG]]
+### - [[Forum]]
+### - BeInventor
+Title:  Philanthropist, Inventor, Dilettante
+### - ML CTO
+Title:  
 
 
 ### - ML Researcher
@@ -687,7 +668,7 @@ Questions:
 ### - MY CO - 
 
 
-### - OLDER ODESSEYS
+### - OLDER ODYSSEYS
 #### - KMCO - Marketplace - UNIFORM - Guy
 QUESTIONS:
 - Who is my 'customer'? what will they pay for?  ML-wizard

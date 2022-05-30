@@ -1,53 +1,18 @@
 
-- [ ] contigo thermos
 - [ ] 
-- [ ] day in the life of a VC
-- [ ] buy juicer
-- [ ] buy bubble blowing dinosour
-- [ ] remove mealy-bug plants
-- [ ] ask JAmes for online tests
+- [ ] - [ ] ready car; picknick
+- [ ] think thru auto sending of cards
+- [ ] Write thank you note to Klembara and others
+- [ ] Fix circuit breakers
+- [ ] buy tripod. consider go-pro or other video. search best camera w/ a kid
+- [ ] ask James for online tests
 - [ ] Write Reviews for Jessie
-- [ ] factory os (read about it)
-- [ ] Ensure sent mail is saved. and received mail is saved.
-- https://github.com/jigish/slate
-- [ ] ? Add quick entry using an input box
-- [ ] shutdown script.  Fix so it does not kill w/o saving.  why does it use different shutdown methods in the same script
-- [ ] IFTTT output of Apple Health data (or any kind of export
-- [ ] KM # refactor KM to scan for both kinds of link types, AND to produce both types depending on the context.
-- [ ] KICK window into position 1, 2, 3 and back  (Mess with SLATE)
-- [ ] KMT - scan whole note not just prefix
-- [ ] Figure out: reset mac for headset bluetooth connect
-- [ ] Verify which emails and drafts are being saved/missing?  which accounts?  hard core backup of all emails . (all funnel in, then all get recorded?) 
-- [ ] Fix archiving of email
-
-
 - [ ] https://www.marcusbuckingham.com/gift-of-standout/
-- [ ] Buy Dad's mac
 - [ ] [[@Maria Cross]]
 - [ ] Exercise plan
-- [ ] [btt](https://folivora.ai/buy)
-
 - [ ] Social Heartbeat - Establish regular time and list of social connections
-- [ ] Fling 1  # Should extend fling to numbered list positions.  
-- [ ] HACK -- get all mail messages logged
-
-- [ ] Organize the plan pages
-- [ ] Publish my org-info stuff
-
-- [ ] buy food scale
-- [ ] [[MED|MED]] Nutritionist - Choose one #todo 
 - [ ] - buy air purifier
-
-
-
-## = QUICKIES = 
 - [ ] MED:  Research best vitamins
-- [ ] OBS - have side panels remember state
-- [ ] One button night noise / Biurnal beats / Use shortcut  (add apps to home screen)
-- [ ] Org these lists & obsidian
-- [ ] Reset door codes. (info in myfo->mystuff)
-- [ ] Take notes on using the call recorder [[Record]]
-- [ ] Use WhatSize to clean disk
 - [ ] Estimate Water Usage
 - [ ] get list of hikes figured out
 - [ ]  [Udemy - Tara - Sleep](https://www.udemy.com/heal-anxiety-sleep-easily-tara-brach/learn/lecture/14770060#overview) 
@@ -55,9 +20,13 @@
 - [ ] ?? Have you seen Calendly?
 - [ ] Personal CRM to track my own contacts?
 
+## = Easy-Ready = 
+- [ ] remove mealy-bug plants
+- [ ] Reset door codes. (info in myfo->mystuff)
+
 
 ## = STUFF = 
-- [ ] [[Photos App]] 
+- [ ] Read about back exercises
 - [ ] [[Fin|FIN]] >>>Find value investments
 - [ ] [[Fin|FIN]] Roth Conversion Consideration
 - [ ] [[MED|MED]] Heart health institute
@@ -74,6 +43,9 @@
 - [ ] [[Photos App]] 
 - [ ] Create Small album of wedding photos
 
+## = PROJECTS = 
+- [ ] [[MED|MED]] Nutritionist - Choose one
+- [ ] [[WP2022#wp2022-05-21 Photo Management Strategy]] 
 
 ## = REPEAT = 
 [[Fried Later]]

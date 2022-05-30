@@ -1,3 +1,15 @@
+- [x] in2 quick scrub
+- [x] One button night noise / Biurnal beats / Use shortcut  (add apps to home screen)
+- [x] Org these lists & obsidian
+- [x] Fan in bedroom
+- [x] OBS - have side panels remember state
+- [ ] day in the life of a VC
+- [x] Fan in bedroom
+- [x] W1/T1/M2 Totally Finish Fine note.  e.g. subject line
+- [x] list of foods for mom
+- [x] Restart with Dan Fine
+- [x] shutdown script.  Fix so it does not kill w/o saving.  why does it use different shutdown methods in the same script
+- [x] buy juicer
 - [x] +[[DYL]] Finish FAANG odyssey.
 - [x] call Doctor
 - [x] Buy weight scales

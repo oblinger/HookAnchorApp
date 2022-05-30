@@ -1,4 +1,5 @@
-Managers Path
+ [Humane Tech](https://www.humanetech.com/podcast)  
+ Managers Path
 
 OHTER MGT BOOKS TO CONSIDER (from whom??)
 OTHER Ideas:

@@ -91,6 +91,13 @@
   Good quality vitamin
 - vitamin D.
 # LOG
+### 2022-05-21  Joint Pain
+
+-  [Possible Causes](https://www.mayoclinic.org/symptoms/joint-pain/basics/causes/sym-20050668)  
+-  [Stretches](https://www.spine-health.com/blog/exercises-upper-and-middle-back-pain)  including door jam stretch
+-  [Upper Back Stretches](https://www.menshealth.com/fitness/a25616194/upper-back-stretches/)  
+-  [Piriformis Release & Stretch](https://www.youtube.com/watch?v=dl474z1bhnk)  
+- 
 ### 2022-04-20  COVID - Test Accuracy as function of time since exposure
  [https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7240870/](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7240870/)  
   [https://www.gavi.org/vaccineswork/false-negative-how-long-does-it-take-coronavirus-become-detectable-pcr](https://www.gavi.org/vaccineswork/false-negative-how-long-does-it-take-coronavirus-become-detectable-pcr)  

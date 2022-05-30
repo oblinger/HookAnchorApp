@@ -1,10 +1,6 @@
  [[FAANG]]    [Strategy Lead, Google Assistant](https://www.linkedin.com/in/luisearellano/)  [[@Google]]
 
 
- 
-
-
-
 
 # MEETINGS
 

@@ -1,5 +1,7 @@
 (See [ReBuy](__ReBuy__.md))
 
+
+- [ ] contigo thermos
 ### 2022-05-04  Smart scale
 
 -  [Pizza dual scale](https://ooni.com/products/ooni-dual-platform-digital-scales?variant=31116717359201&currency=USD&utm_medium=cpc&utm_content=Ooni+Digital+Scales+Dual+Platform&utm_source=shopping&utm_campaign=Google_Shopping_US&utm_gcmpgn_typ=us-shopping&gclid=EAIaIQobChMItdHoiN3G9wIVsCitBh0JNAIWEAQYBCABEgJVH_D_BwE),  

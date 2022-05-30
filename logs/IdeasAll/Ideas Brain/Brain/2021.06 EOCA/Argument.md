@@ -1,5 +1,5 @@
 
-## === ONTOLOGICAL ===
+## === EOCA ONTOLOGICAL ===
 ### --- MAKING-PREDICTIONS -- What can we know about the future? ---
 #### Horse Races & Black Swans -- 
 - Balance between many is hard

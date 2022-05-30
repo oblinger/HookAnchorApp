@@ -2,7 +2,10 @@
 
 | Date        | File           | Notes                                                                  |
 | ----------- | -------------- | ---------------------------------------------------------------------- |
+| t2022-05-13 | [[@Dan Fine]]      | FINE Restart  2                                                        |
+| t2022-05-12 | [[@Emily Wallach]] | followup                                                               |
 | t2022-05-05 | [[Forum]]          | Invitation to talk w. Al                                               |
+| t2022-04-30 | [[@Dan Fine]]      | FINE Restart                                                           |
 | t2022-04-26 | [[DL]]             | Lample & Charton                                                       |
 | t2022-04-26 | [[GANs]]           | Papers 2 read in 2020                                                  |
 | t2022-04-25 | [[@Michael Freed]] | Catch up (not sent)                                                    |

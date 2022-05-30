@@ -1,164 +1,167 @@
 
 
-## = GLOBALS =
+## = GLOBAL KEYS =
 
-| CH    | CAPS - App NAV      | TAB - Global "GO" / Page go | SLAM - Global "DO" |
-| ----- | ------------------- | --------------------------- | ------------------ |
-| A     | NO. select ALL      |                             |                    |
-| B     |                     | go BUBBLES                  |                    |
-| C     | ?? COPY to clip     | go CALENDAR                 | ?? Super copy      |
-| D     |                     | go DEV terminal             | tgl DARK mode      |
-| E     |                     | go EMAIL message            |                    |
-| F     |                     | go FINDER / FRIED           |                    |
-| G     |                     |                             |                    |
-| H     | >HIDE window        |                             |                    |
-| I     |                     |                             |                    |
-| J     |                     | xx go JUMP to folder        |                    |
-| K     | >KICK window around |                             |                    |
-| L     | >LAUNCH command     |                             | link2obsidian      |
-| M     |                     | go MAIL                     |                    |
-| N     | NO. NEW             | go NEXT tunes song          |                    |
-| O     |                     | go OBSIDIAN                 |                    |
-| P     |                     |                             |                    |
-| Q     |                     | go QUIT to login            |                    |
-| R     |                     | go READER (Feedly)          | RESOLUTION change  |
-| S     | tgl SOUND ON        | go STUFF (Asana)            | SHOW current app   |
-| T     |                     | go TUNES / tgl PLAN         |                    |
-| U     |                     |                             |                    |
-| V     | ?? V PASTE          |                             | plain PASTE        |
-| W     |                     | go WEB                      | reset all WINDOWS  |
-| X     | ?? X CUT            |                             |                    |
-| Y     |                     |                             |                    |
-| Z     |                     |                             |                    |
-| -     |                     |                             |                    |
-| +     |                     |                             |                    |
-| {     |                     |                             |                    |
-| }     |                     |                             |                    |
-| \     |                     |                             |                    |
-| ;     |                     |                             |                    |
-| '     |                     |                             |                    |
-| ,     |                     |                             |                    |
-| .     |                     |                             |                    |
-| /     |                     |                             | 1 Password         |
-| ~     |                     | / go QUICK page             |                    |
-| LT    |                     |                             |                    |
-| RT    |                     |                             |                    |
-| UP    |                     |                             |                    |
-| DN    |                     |                             |                    |
-| SPACE | Contextual DOIT     |                             |                    |
-| ENTR  | OBSIDIAN Anchor     |                             |                    |
-| INS   |                     |                             |                    |
-| DEL   |                     |                             |                    |
-| HOME  |                     |                             |                    |
-| END   |                     |                             |                    |
-| PgUp  |                     |                             |                    |
-| PgDn  |                     |                             |                    |
-| 1     |                     |                             |                    |
-| 2     |                     |                             |                    |
-| 3     |                     |                             |                    |
-| 4     |                     |                             |                    |
-| 5     |                     |                             |                    |
-| 6     |                     |                             |                    |
-| 7     |                     |                             |                    |
-| 8     |                     |                             |                    |
-| 9     |                     |                             |                    |
-| 0     |                     |                             | link->FireFox      |
-| F1    | tgl DAILY view      |                             |                    |
-| F2    | tgl PLANNING view   |                             |                    |
-| F3    |                     |                             |                    |
-| F4    |                     |                             |                    |
-| F5    |                     |                             |                    |
-| F6    |                     |                             |                    |
-| F7    |                     |                             |                    |
-| F8    |                     |                             | Obsidian URL       |
-| F9    |                     |                             |                    |
-| F10   |                     |                             |                    |
-| F11   |                     |                             |                    |
-| F12   |                     |                             |                    |
-|       |                     |                             |                    |
+| CH    | BARE              | CAPS - FAST keys    | TAB - Global "GO" / SHIFTED | SLAM - Global "DO" |
+| ----- | ----------------- | ------------------- | --------------------------- | ------------------ |
+| A     |                   | NO. select ALL      |                             |                    |
+| B     |                   |                     | go BUBBLES                  |                    |
+| C     |                   | ?? COPY to clip     | go CALENDAR                 | ?? Super copy      |
+| D     |                   |                     | go DEV terminal             | tgl DARK mode      |
+| E     |                   |                     | go EMAIL message            |                    |
+| F     |                   |                     | go FINDER / FRIED           | start FREEDOM      |
+| G     |                   | GOOGLE edit it      |                             |                    |
+| H     |                   | >HIDE window        | / go HACK                   |                    |
+| I     |                   |                     |                             |                    |
+| J     |                   |                     | xx go JUMP to folder        |                    |
+| K     |                   | >KICK window around |                             |                    |
+| L     |                   | >LAUNCH command     |                             | LINK 2 obsidian    |
+| M     |                   |                     | go MAIL                     |                    |
+| N     |                   | NO. NEW             | >>> go NEXT song            | create NEU doc     |
+| O     |                   | ?? open OBSIDIAN    | go OBSIDIAN                 |                    |
+| P     |                   |                     |                             |                    |
+| Q     |                   |                     | go QUICK page               |                    |
+| R     |                   |                     | go READER (Feedly)          | RESOLUTION change  |
+| S     |                   | tgl SOUND           | go STUFF (Asana)            | SHOW current app   |
+| T     |                   |                     | go TUNES / tgl PLAN         |                    |
+| U     |                   |                     |                             |                    |
+| V     |                   | ?? V PASTE          |                             | plain PASTE        |
+| W     |                   |                     | go WEB                      | reset all WINDOWS  |
+| X     |                   | ?? X CUT            |                             |                    |
+| Y     |                   |                     |                             |                    |
+| Z     |                   |                     |                             |                    |
+| -     |                   |                     |                             |                    |
+| +     |                   |                     |                             |                    |
+| {     |                   | Nav BACK            |                             |                    |
+| }     |                   | Nav FWD             |                             |                    |
+| \     |                   |                     |                             |                    |
+| ;     |                   |                     |                             |                    |
+| '     |                   |                     |                             |                    |
+| ,     |                   |                     |                             |                    |
+| .     |                   |                     |                             |                    |
+| /     |                   |                     |                             | 1 Password         |
+| ~     |                   |                     | / go QUICK page             |                    |
+| LT    |                   | go PANE left        |                             |                    |
+| RT    |                   | go PANE right       |                             |                    |
+| UP    |                   | go PANE above       |                             |                    |
+| DN    |                   | go PANE below       |                             |                    |
+| SPACE |                   | BACK or Ctx DOIT    |                             |                    |
+| ENTR  |                   | obsidian GOTO page  |                             |                    |
+| INS   |                   | INSERT line         |                             |                    |
+| DEL   |                   | DELETE line         |                             |                    |
+| HOME  |                   |                     |                             |                    |
+| END   |                   |                     |                             |                    |
+| PgUp  |                   |                     |                             |                    |
+| PgDn  |                   |                     |                             |                    |
+| 1     |                   |                     |                             |                    |
+| 2     |                   | obsidian AT page    |                             |                    |
+| 3     |                   |                     |                             |                    |
+| 4     |                   | spell correct       |                             |                    |
+| 5     |                   |                     |                             |                    |
+| 6     |                   |                     |                             |                    |
+| 7     |                   |                     |                             |                    |
+| 8     |                   |                     |                             |                    |
+| 9     |                   |                     |                             |                    |
+| 0     |                   |                     |                             | link->FireFox      |
+| F1    | tgl DAILY view    |                     |                             |                    |
+| F2    | tgl PLANNING view |                     |                             |                    |
+| F3    |                   |                     |                             |                    |
+| F4    |                   |                     |                             |                    |
+| F5    | SEARCH markdown   |                     |                             |                    |
+| F6    |                   |                     |                             |                    |
+| F7    |                   |                     |                             |                    |
+| F8    |                   |                     |                             | Obsidian URL       |
+| F9    | LOCK SCREEN       |                     |                             |                    |
+| F10   | AA MAX connect    |                     |                             |                    |
+| F11   |                   |                     |                             |                    |
+| F12   |                   |                     |                             |                    |
+| F13   | -script-internal- |                     |                             |                    |
+| F14   | -script-internal- |                     |                             |                    |
+|       |                   |                     |                             |                    |
 
 
 
-## = OBSIDIAN = 
+## = OBSIDIAN APP KEYS = 
 
-| CH    | CAPS           | COMMAND / [SHIFTED] | OPTION [SHIFTED] | LT PAIR: CTRL-ALT  / [SHIFTED] |
-| ----- | -------------- | ------------------- | ---------------- | ------------------------------ |
-|       |                | Standard Editing    |                  | Global Go/Create               |
-| A     |                |                     |                  |                                |
-| B     |                | toggle BOLD         |                  |                                |
-| C     |                | COPY to clip        |                  | COLAPSE all / UNCOLLAPSE       |
-| D     |                | DELETE paragraph    |                  | / DELETE file                  |
-| E     |                |                     |                  |                                |
-| F     |                | FILE search / ALL   | FIND ALL         | FILE in explorer / finder      |
-| G     |                | GRAPH view          |                  |                                |
-| H     | >HIDE<         |                     |                  |                                |
-| I     |                | tgl ITALIC          |                  |                                |
-| J     |                |                     |                  | / insert JOURNAL header        |
-| K     | >KICK<         | insert LINK         |                  |                                |
-| L     | >LAUNCH<       |                     |                  | / LINKS pane                   |
-| M     | / MOVE note    |                     |                  | MISC note                      |
-| N     |                | NEW note / New PANE |                  | /                              |
-| O     |                | OPEN switcher       |                  | OPEN in default app            |
-| P     |                | cmd PALETTE         |                  | PLAN note /                    |
-| Q     |                |                     |                  |                                |
-| R     |                |                     | search REPLACE   | RECENT notes pane              |
-| S     |                | SAVE file           |                  | SCRATCH note / STARRED pane    |
-| T     |                | / undo CLOSE        |                  | new TEMPLATE/insert only       |
-| U     |                |                     |                  |                                |
-| V     |                | PASTE from clip     |                  |                                |
-| W     |                | CLOSE pane          |                  | WORKSPACE  Load / Manage       |
-| X     |                | CUT to clip         |                  |                                |
-| Y     |                |                     |                  |                                |
-| Z     |                | UNDO / REDO         |                  | ZOOM mode                      |
-| -     |                |                     |                  | tgl LEFT pane                  |
-| +     |                |                     |                  | tgl RIGHT pane                 |
-| {     | nav BACK       |                     |                  | nav BACK                       |
-| }     | nav FORWARD    |                     |                  | nav FORWARD                    |
-| \     |                |                     |                  |                                |
-| ;     |                |                     |                  | DARK mode                      |
-| '     |                |                     |                  | LIGHT mode                     |
-| ,     |                | SETTINGS            |                  |                                |
-| .     |                |                     |                  |                                |
-| /     |                | tgl COMMENT         |                  |                                |
-| ~     |                |                     |                  |                                |
-| LT    |                |                     |                  |                                |
-| RT    |                |                     |                  |                                |
-| UP    |                | mv line UP          |                  |                                |
-| DN    |                | mv line DOWN        |                  |                                |
-| SPACE |                | Obsidian Anchor     |                  |                                |
-| ENTR  |                | tgl BOX / tgl CHECK | follow LINK      | show LINK in pane              |
-| INS   | INS line       |                     |                  |                                |
-| DEL   | DEL line       |                     |                  |                                |
-| HOME  |                |                     |                  |                                |
-| END   |                |                     |                  |                                |
-| PgUp  |                |                     |                  |                                |
-| PgDn  |                |                     |                  |                                |
-| 1     | ONE pane       | xxxx                |                  | MERGE one window               |
-| 2     | TWO vert panes |                     |                  | SPLIT vertically into 2        |
-| 3     | split pane hor |                     |                  | SPLIT horizontally             |
-| 4     |                |                     |                  |                                |
-| 5     |                |                     |                  |                                |
-| 6     |                |                     |                  |                                |
-| 7     |                |                     |                  |                                |
-| 8     |                |                     |                  |                                |
-| 9     |                |                     |                  |                                |
-| 0     |                |                     |                  |                                |
-| F1    |                |                     |                  |                                |
-| F2    |                |                     |                  |                                |
-| F3    |                |                     |                  |                                |
-| F4    |                |                     |                  |                                |
-| F5    |                |                     |                  | PREV daily note                |
-| F6    |                |                     |                  | TODAY'S daily note             |
-| F7    |                |                     |                  | NEXT daily note                |
-| F8    |                |                     |                  |                                |
-| F9    |                |                     |                  |                                |
-| F10   |                |                     |                  |                                |
-| F11   |                |                     |                  |                                |
-| F12   |                |                     |                  |                                |
+| CH    | COMMAND / [SHIFTED]   | OPTION [SHIFTED] | LT PAIR: CTRL-ALT  / [SHIFTED] | RT PAIR           |
+| ----- | --------------------- | ---------------- | ------------------------------ | ----------------- |
+|       | Standard Editing      |                  | Global Go/Create               |                   |
+| A     |                       |                  |                                |                   |
+| B     | toggle BOLD           |                  |                                |                   |
+| C     | COPY to clip          |                  | COLAPSE all / UNCOLLAPSE       |                   |
+| D     | DELETE paragraph      | open DAILY       | open DAILY / DELETE file       |                   |
+| E     | ?? tgl READING view   |                  |                                |                   |
+| F     | FIND infile / REPLACE | FIND everywhere  | FILE in explorer / finder      |                   |
+| G     | GRAPH view            |                  |                                |                   |
+| H     |                       |                  |                                |                   |
+| I     | tgl ITALIC            |                  |                                |                   |
+| J     |                       |                  | / insert JOURNAL header        |                   |
+| K     | insert LINK           |                  |                                |                   |
+| L     |                       |                  | / LINKS pane                   |                   |
+| M     | / MOVE folder         |                  | MISC note                      |                   |
+| N     | NEW note / New PANE   |                  | /                              |                   |
+| O     | OPEN switcher/OUTLINE |                  | OPEN in default app            |                   |
+| P     | cmd PALETTE           |                  | PLAN note /                    |                   |
+| Q     |                       |                  |                                |                   |
+| R     |                       | search REPLACE   | RECENT notes pane              |                   |
+| S     | SAVE file             |                  | SCRATCH note / STARRED pane    |                   |
+| T     | / undo CLOSE          |                  | new TEMPLATE/insert only       |                   |
+| U     |                       |                  |                                |                   |
+| V     | PASTE from clip       |                  |                                |                   |
+| W     | CLOSE pane            |                  | WORKSPACE  Load / MANAGE       |                   |
+| X     | CUT to clip           |                  |                                |                   |
+| Y     |                       |                  |                                |                   |
+| Z     | UNDO / REDO           |                  | ZOOM mode                      |                   |
+| -     |                       |                  | tgl LEFT pane                  |                   |
+| +     |                       |                  | tgl RIGHT pane                 |                   |
+| {     |                       |                  | nav BACK / DAILY note          |                   |
+| }     |                       |                  | nav FORWARD / DAILY note       |                   |
+| \     |                       |                  |                                |                   |
+| ;     |                       |                  | DARK mode                      |                   |
+| '     |                       |                  | LIGHT mode                     |                   |
+| ,     | SETTINGS              |                  |                                |                   |
+| .     |                       |                  |                                |                   |
+| /     | tgl COMMENT           |                  |                                |                   |
+| ~     |                       |                  |                                |                   |
+| TAB   |                       | tgl FOLD         | tgl FOLD                       |                   |
+| LT    | FOLD list             |                  |                                |                   |
+| RT    | UNFOLD list           |                  |                                |                   |
+| UP    | mv line UP            |                  |                                |                   |
+| DN    | mv line DOWN          |                  |                                |                   |
+| SPACE | Obsidian Anchor       |                  |                                |                   |
+| ENTR  | tgl BOX / tgl CHECK   | follow LINK      | show LINK in pane              |                   |
+| INS   |                       |                  |                                |                   |
+| DEL   |                       |                  |                                |                   |
+| HOME  |                       |                  |                                |                   |
+| END   |                       |                  |                                |                   |
+| PgUp  |                       |                  |                                |                   |
+| PgDn  |                       |                  |                                |                   |
+| 1     | ONE pane              |                  | MERGE one window               |                   |
+| 2     | split VERTICALLY      |                  | SPLIT vertically into 2        |                   |
+| 3     | split HORIZONTAL      |                  | SPLIT horizontally             |                   |
+| 4     |                       |                  |                                |                   |
+| 5     |                       |                  |                                |                   |
+| 6     |                       |                  |                                |                   |
+| 7     |                       |                  |                                |                   |
+| 8     |                       |                  |                                |                   |
+| 9     |                       |                  |                                |                   |
+| 0     |                       |                  |                                |                   |
+| F1    |                       |                  |                                |                   |
+| F2    |                       |                  |                                |                   |
+| F3    |                       |                  |                                |                   |
+| F4    |                       |                  |                                |                   |
+| F5    |                       |                  | PREV daily note                |                   |
+| F6    |                       |                  | TODAY'S daily note             |                   |
+| F7    |                       |                  | NEXT daily note                |                   |
+| F8    | -copy-obs-URL-        |                  |                                |                   |
+| F9    |                       |                  |                                | / Logi-top-button |
+| F10   |                       |                  |                                |                   |
+| F11   |                       |                  |                                |                   |
+| F12   |                       |                  |                                |                   |
 
 CMD OPT
 F REPLACE
-
+%%zzzzz%%
 OPT
 ^ / v  swap line up/down
 enter follow link

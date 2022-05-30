@@ -1,10 +1,8 @@
-comms
-- [ ] look @ yearbook progress
-- [ ] Restart with Dan Fine
+- [ ] [[Comms]] 
 - [ ] short form summaries Atomic Habits; Managers Path
-- [ ] in2 quick scrub
-
-
+- [ ] Dan Fine document
+- [ ] Get Justin's number (clean up suitcase)
+- [ ] Get "Fun" list filled out
 
 
 

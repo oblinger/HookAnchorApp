@@ -1,6 +1,7 @@
 
 
 
+
 # Startup Ideas 
 ### TO ASK ABOUT
 - TEAM SAVER 			--  

@@ -1,3 +1,4 @@
+  [LIST](LIST.md),   [PTM](PTM.md)
   [TASK](TASK.md)
   [@Kartik](@Kartik.md)
   [LOG](LOG.md)
@@ -17,11 +18,12 @@
 	- [[ORG]] 
 		- [[VC ORG]]   
 		- [[PE firm]] 
-	- [[COMP]] 
-		- [[LANG]] 
-		- [[INFO_PAGE]] 
-		- [[LOG]]   
-	- OBSIDIAN
-		- [[CMD]]
-		- [[TAG]]
-		- [[TASK]] - task list
+- [[COMP]] 
+	- [[LANG]] 
+	- [[INFO_PAGE]] 
+	- [[LOG]]   
+- [[PTM]] 
+	- [[CMD]]
+	- [[TAG]]
+	- [[TASK]] - task list
+	- [[LIST]]  

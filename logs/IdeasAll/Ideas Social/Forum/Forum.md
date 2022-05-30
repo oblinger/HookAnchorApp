@@ -1,8 +1,229 @@
-cacac
+
 [[Forum Mechanically Unbiased]],  
 
 
-# DESCRIPTION
+# 2022 - THE FORUM - WHAT WE BELIEVE
+
+## = APPROACH
+### Steps
+
+#### 1. CLUSTERS - Derive Population Factors and Clusters
+- Use existing surveys to derive an order list of 'factors' that best describe survey data.
+- Cluster US population according to these factors.
+
+#### 2. PARTICIPANTS - Survey & Recruit Participants To Fit Into Clusters
+- Survey existing participants to determine which cluster they belong in
+- Measure under-representation both at the factor (axis) level, and at the cluster level.
+- Recruit new participant for under-represented areas.
+	- Perform recruiting from within specific sub-populations (e.g. specialized reddit forum)
+	- Use existing participants of a given type to recruit more like minded participants
+- Monitor voting behavior of participants to see they are not far out of line w/ their cluster
+
+#### 3. DISCUSSION - Bottom Up Participant Discussions
+- POST - Participants engage in the forum by reading and authoring forum 'posts'.  Post parts:
+	- BODY:  Each post has a body of text.
+	- PARENT:  Each is placed into the forum hierarchy thru its attachment to a parent post.  (like email threading)
+- BUCKET - Each post defines a bucket of all posts in the threaded responses that directly or indirectly attach to it.
+
+#### 4. STANCE - Expressing Support or Opposition
+In addition to simply adding to the discussion of a topic, a post may indicate a "vote" -- the support or opposition to some perspective, claim, or position.  
+- POST - These additional fields on a post help indicate this extra info:
+	- STANCE: A post might indicate a personal disposition towards its parent using a "+1" or "-1".
+
+	- NAME: A note might have a naming phrase which can be used to refer to the note.
+	- TITLE: A note might have a 'one-liner' title that summarizes its content.
+
+#### 5. Mechanical Synthesis
+- A purely mechanical (algorithmic) process computes the output of the forum:
+         an annotated, ranked, synthesis of human though expressed by the participants over their topics of interest.
+
+HIERARCHY - The '+1' and '-1' marks provide the first bit of structure for the forum:
+- VOTE - a '+1' or '-1' note is a called a vote on the note it references.
+- STANCE - a note that begins receiving but positive and negative votes is call a 'stance' -- that is accepted/rejected by others
+- ISSUE - a note that has stances as children are called an 'issue' they are a topic upon which there exists competing stances
+- TOPIC - a parent of an issues or topics
+
+COVERAGE - At all levels in the taxonomy the votes of relevant participants are used to derive an order lists of position notes to "cover" the diversity of thoughts (called ***positions***) on a particular topic or issue.  Algorithm:
+- Initially the set of uncovered voters is the set of all participants that issues a "+1" vote in this sub-tree, 
+  and the list covering notes is empty.
+- The note gaining the most "+1" from the set of uncovered voters is added to the list of covering notes.
+- All voters that voted for this covering note are then removed from the set of uncovered voters, and the process repeats.
+
+POSITION / COVERED - Each note within the covering list is called a ***position***, and each participant whose "+1" was responsible for that position to including in the covering is said to be ***covered*** by that stance. 
+
+SUPPORT - A note's support from a given set of participants is positively by the number of "+1" votes it receives and strongly negatively affected by any "-1" votes from that population.
+
+BIAS - The 'bias' of a note is a measure of the balance in support it receives across participants covered by different stances.
+- BIAS = the entropy of a note's support across the stances covering its peers.
+
+
+#### 6. Authorized Participants -- (Creating Safe Sub-communities of Thought)
+- AVOIDING THE TYRANNY OF THE MAJORITY - The forum avoids the "tyranny of the majority" where minority positions are manipulated or overwhelmed by greater numbers in the majority with contrary perspectives using the "STANCE TREE".  
+- STANCE TREE - Covering stances are computed at all levels in the forum's taxonomy using the "+1" votes from the participants that supported that particular stance.  
+- AUTHORIZED PARTICIPANTS - This sub-population of participants are the only participants that are authorized to extend this part of the forum tree.  This sub-tree becomes their "playground" in which they can clarify the meaning, claims, and details of this particular stance.
+
+
+#### 7. Combination and Summarization
+- The forum is intended to synthesize concentrated summaries of important positions, areas, etc. of human thought.
+- A 'summary' is intended to provide such a synthesis over some subset of its space of discourse.
+- SUMMARY NOTE - In addition to the "+1" and "-1" intents listed above, and note might specify intent = summary
+	- VOTES - All notes that list themselves as a summary for a node within the forum taxonomy are voted upon.
+	- COVERAGE - The same coverage algorithms used over those summary notes, but only those with some minimum support are considered, and instead of popularity, it is the summary with the least bias that is chosen first.
+	- Areas with little contention the top summary will have wide support and very little anti-support.  In cases with great contention one will want to look at the second and maybe even third summary in order to even get a sense about how various 
+- CONTENTION - 
+	- Even areas with significant contention might be able to agree on an unbiased summary with many '+1' and few '-1' votes.  
+	- For the most contentious areas however this will be impossible.  The framing (even *naming* of the area) might be impossible w/o great dissent from certain sub groups.
+	- The Bias coverage algorithm is designed specifically for this case.  It lists a sequence of summaries that collectively cover an ever greater fraction of all voters with a summary that they personally had accepted.
+	- The forum's Reader is set to automatically show all summaries down to some some minimum size (e.g. perhaps down to >10% of the voting population), thus extra summaries are only provided by default when there is great contention.  Otherwise one summary will suffice.
+- COMPOSITION -
+	- FORUM IS BOTTOM UP: The forums discussions are very bottom up.  Any top-down framing of the discussion will be seen by some as biasing its output.  Still high value output require synthesizing larger claims, stances, issues and areas from these more granular contributions.
+	- PARTS: To counter this, new notes may explicitly specify existing buckets as their children and then synthesize into a summary thought as described in their body.
+	- VOTING UP:  Of course since ANY participant can combine nodes from ANY place in the taxonomy there is no guarantee that other will find value in this synthesis.  Thus these combined synthesis notes will undergo the same voting process as all other notes.  Only those with greatest support will bubble up within the tree.
+	- COMPOSITION IS RECURSIVE:
+		- Facts (external references) combine into claims.
+		- Claims combine into larger claims or into stances.
+		- Stances combine into issues.
+		- Issues combine into topic areas.
+		- Topic areas combine into larger topics.
+		- Topic areas can be multiply organized into as many taxonomies as the participants have interest in maintaining and voting upon.
+		- E.g. Largest topics of 2022.  Political topics.  Topics relevant to gender.  Humanity and spirituality. etc.
+		- The existence of one lens on the roiling mass of discussion on the forum need not preclude a competing lens over the same set of topics.
+
+
+
+
+
+
+#### 8. Adjudication
+- They may offer a more technical adjudication on the note as well:  +CONSTRUCTIVE, +ACCURATE, +COGENT
+  (move this to later)
+
+
+
+
+
+#### 4. Top Down Topic Tree Construction
+- Population-balanced groups of the most open, constructive participants organize discussions into topic taxonomies
+- Taxonomies are DAGS where each node's children are organized into more central and more peripheral topics
+- Textual topic thumbnails give an quick overview of a topic area.
+  NOTE: the more detailed summary for each sub-area and for each position is produced by those sub-groups.
+
+#### 5. Stance Authoring
+- Any participant may author any claim/position/stance on any topic or issue.
+- By default a stance is simply the stance of that single author, and they are the only ones who have authority to edit this stance.
+- The author may select individual participants as co-editors.
+- The author may also may propose it as a stance held by any cluster they are a member of, in that case all other members may edit that stance.
+
+
+
+### Definitions
+
+**NOTE TYPE** -- The intention of a note specifies what the author 'intends' to convey by their note.  These include:
+- **post**	  -  General discussion on topic
+- **edit**		  -  Proposed edit on part or all of a note
+- **subarea**	  -  Named Sub section of a note
+- **issue**	  -  A topic upon which one may adopt different positions
+- **position**	  -  A particular stance on an issue
+- **critique**	  -  A critique of a position, or the framing of an area
+- **+1**		  -  A vote in support of a note
+- **-1**		  -  A vote in opposition to a note
+
+
+**SUPPORT** -- The ***support*** of note within a population is the fraction (or percent) of that population that have posted a "+1" for that note.
+
+**OPPOSITION** -- The ***opposition*** of note within a population is the fraction (or percent) of that population that have posted a "-1" for that note.
+
+**COVERING** -- The ***covering*** for a population of voters given a set of alternative notes is an ordering of the alternatives that best "covers" the support received by the voters.  The covering constructed by repeatedly selecting the alternative with the greatest support among the remaining voters, where voters are removed from the set of remaining voters each time a new alternative is added to the growing list of alternatives.  This process continues until no voters remain.
+ 
+**CUMULATIVE COVERING** -- The ***cumulative covering*** is the 
+
+ALPHA COVERING -- 
+and removing its supporters from the set of remaining uncovered voters.  This process continues until no position remains with support greater than alpha.  The remaining uncovered voters are lumped together and treated as a special "none-of-the-above" position.  Thus a 10%-cover of an issue might be a list of four positions along with their supporting voters: {A with 70%, B with 15%, C with 11%, and OTHERS with 14%}
+
+COHORT -- The voters within each element of the alpha cover are called a ***cohort***---the ith cohort are that voters that were responsible for the ith position in the alpha cover, or are the final, special 'none-of-the-above' cohort.
+
+AUTHORIZED COHORTS -- The authorized cohorts for a given note are those cohorts whose participants are "authorized" to participate in the refinement of the note.
+- default - By default a note will inherit the authorized cohorts of its parent note.
+- issue - An issue's authorized cohort its alpha-covering.
+- position - A position's authorized cohorts is a single cohort containing all voters that supported the position.
+- critique - A critique's authorized cohort is the set of cohorts that are NOT supporters of it parent note.
+
+BALANCE -- The ***balance*** of a note is a number from 0 to 1, where a balance of 0 means it has no balance, e.g. it was supported entirely by voters from a single cohort, zero supporters from other cohorts.  A balance of 1 on the other hand indicates that its level of support s, that is precisely the same level over all cohorts, in this case it has a perfectly balanced support.  The cohorts are chosen from the first ancestor of the note to have cohorts, e.g. the first ancestor that is an issue.
+Formally the balance of an note is the entropy of its support across its participating cohorts:
+	Given a note n, with authorized cohorts {cohort_0, cohort_1, ..., cohort_k}
+	balance(*n*) = Sum j in [0, k]  support(n, cohort_j) * log_k support(n, cohort_j)
+
+REPRESENTATIVES -- The versions of a note is the 60% cumulative covering of its editset for a note.
+
+
+
+
+
+
+
+
+
+    Balance(note, issue) = Sum cohort_i in alpha-cover(issue)  support(n, cohort_i) * log_k( support(n, cohort_i)
+
+
+
+
+HIERARCHY - The '+1' and '-1' marks provide the first bit of structure for the forum:
+- VOTE - a '+1' or '-1' note is a called a vote on the note it references.
+- STANCE - a note that begins receiving but positive and negative votes is call a 'stance' -- that is accepted/rejected by others
+- ISSUE - a note that has stances as children are called an 'issue' they are a topic upon which there exists competing stances
+- TOPIC - a parent of an issues or topics
+
+COVERAGE - At all levels in the taxonomy the votes of relevant participants are used to derive an order lists of position notes to "cover" the diversity of thoughts (called ***positions***) on a particular topic or issue.  Algorithm:
+- Initially the set of uncovered voters is the set of all participants that issues a "+1" vote in this sub-tree, 
+  and the list covering notes is empty.
+- The note gaining the most "+1" from the set of uncovered voters is added to the list of covering notes.
+- All voters that voted for this covering note are then removed from the set of uncovered voters, and the process repeats.
+
+POSITION / COVERED - Each note within the covering list is called a ***position***, and each participant whose "+1" was responsible for that position to including in the covering is said to be ***covered*** by that stance. 
+
+SUPPORT - A note's support from a given set of participants is positively by the number of "+1" votes it receives and strongly negatively affected by any "-1" votes from that population.
+
+BIAS - The 'bias' of a note is a measure of the balance in support it receives across participants covered by different stances.
+- BIAS = the entropy of a note's support across the stances covering its peers.
+
+## = ALGORITHMICS
+
+DATA
+
+    participant
+    cohort
+    note
+    forum
+    vote(note, participant)          -- +1, -1, or 0  depending on the participant's support for a note
+    query(question, note, ...)       -- a query about a note (which could involve further args)
+    opinion(participant, question)   -- returns  -1 to +1
+
+DERIVED TERMS
+
+    axis(participant)                           -- Maps a participant onto [0,1]
+    covering(notes, participants)               -- Ordering of notes based on participant '+1' votes
+    alpha_covering(notes, participants, alpha)  -- List of cohorts
+    cumulative_covering(notes, participants, )  -- List of cohorts
+
+NOTE METRICS
+
+    support(note, participants)                 -- the fraction of participants that posted a '+1' for a note
+    opposition(note, participants)              -- the fraction of participants that posted a '-1' for a note
+    
+PARTICIPANT METRICS
+
+    alignment(participant, axis)                -- [0,1] position of a participant on a population axis
+    authority(participant, axis)                -- 
+    ???
+    congeniality(participant, opinions)         -- [0,1] denoting  
+    accuracy(participant, forum)                --  
+    openness(participant, forum)                --  
+    expertise(participant, forum, area)         --  
+    
+
+
+# 2020 - DESCRIPTION
 ## = OVERVIEWS
 ### NAMES 
 - WWB - What We Believe
@@ -128,6 +349,10 @@ cacac
 
 	_
 
+### Quotes
+
+(2) I have a gleam in my eye.  The germ of an idea for a social network that uses simple algorithms to bubble up the most concise, informed, critiqued  summaries of human though on key topics along with the best critiques of each of these positions.  In my dream future, all citizens come to trust the site as being the "wikipedia" of human though on a topic.  In this dream world there would even be browser plugins that could flag content if it was refuted BY YOUR CHOSEN TRIBE.  in this future world I am not trying to get folks to listen to a different tribe, I only want to be sure each person is aware of the criticisms of the elders of their own tribe would levy against the content.  I think this might reduce the batshit crazy stuff the flys around.  I want informed reasonable conservatives to provide a check on conservatives, and the same for liberals.  (There is much more to this idea, but alas it does not fit into the margin on this page.) 
+
 ## = PRINCIPLES
 
 COMPETITION&EGO DRIVEN
@@ -188,12 +413,18 @@ COMPLETE
 	_
 
 ## ODYSSEY
-YEAR 1 -
+YEAR 1 - Discuss idea w/ many; Hack 1st proto; 
 YEAR 2 - 
+YEAR 3 - 
+YEAR 4 - 
+YEAR 5 - 
 
+Questions:
+- Will a motivated community grow around the goal of producing synthesis summaries?
+- Would for-profit companies pay for assessments of their content and of their processes?
+- Will I like a role of shepherding such a community and effort forward?
 
-# APPROACH
-# SOLUTION DETAILS 
+# 2020 - SOLUTION DETAILS 
 ## KEY IDEAS
 ### _
 
@@ -1284,6 +1515,10 @@ _
 
 - [Change My View](https://www.reddit.com/r/changemyview/)   channel dedicated to persuasive arguments 
 
+
+### r2022-05-14  Best Forum Software
+https://www.hostinger.com/tutorials/best-forum-software
+
 ### --- COMPANIES ---
 #### -- For pay fact checkers --
 [Tech Crunch about Reuters](https://techcrunch.com/2020/02/12/reuters-facebook-fact-checker/) 
@@ -1291,6 +1526,53 @@ Reuters joins the list of US fact-checking partners that include The Associated 
 
 _
 # LOG
+### n2022-05-28  Raw material for Immigration issue based slides
+
+Conservative issues:  Immigration, 2020 Election Fraud
+Liberal issues: Guns, Climate
+
+
+Recent US Immigration
+
+DISASTEROUS BIDEN POLICIES
+
+
+### n2022-05-27  Thinking about how to drive compromise  (Using 2020 election fraud example)
+
+- Assuming there is little evidence for massive fraud in the 2020 election, 
+  how do we ensure reasonable conservatives a successful push for a balanced conservative position?
+
+
+TRUMP WON -- Massive fraud perpetrated during the 2020 election
+
+:thumbs down:
+The 2020 US election was host to widespread election fraud.  
+Several of these frauds were large enough to have independently thrown the election fraudulently in favor of Joe Biden.
+Thus we know that Donald Trump is almost certainly the rightful winner of the 2020 election.
+
+DISSENTING ALLY POSITION:
+There were voting irregularities in the 2020 election of unknown magnitude.  We did not have the time, resources or access to properly assess this election, so we will never be sure.  We cannot be sure that Trump would have won, but we also cannot be sure that he lost.
+
+NEUTRAL CRITIQUE:
+Every election presumably has some degree of fraud.  The 2020 election had a many claims of fraud which resulted in a record number of 59 court cases being filed on behalf of Donald Trump.  Everyone of these 59 cases was thrown out of court as lacking merit.  Thus it seems quite improbable that somehow a massive fraud was committed, large enough to throw off the election across multiple indpendent states and not leave enough evidence even be considered in court.
+
+~
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ### m2022-05-09  Yashin and Phippa
 
 - Explain idea at highest level & get a gut check reaction; quick pointers

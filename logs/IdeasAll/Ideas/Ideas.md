@@ -1,4 +1,6 @@
 
+- [[Startup Ideas]]:  [[Forum]],   [[Tile Robot]],   
+- Categories:  [[Ideas Brain]],   [[Ideas Social]],   
 |                                        | . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . |
 | -------------------------------------- | ----------------------------------------------------------- |
 | [[__]]CATEGORIES __                    |                                                             |
@@ -6,12 +8,7 @@
 | [[Ideas Log]]                          |                                                             |
 | [[__]]                                 |                                                             |
 | [[__]] SOCIAL __                       |                                                             |
-| [[Forum]]                              |                                                             |
-| [[MKT]]                                |                                                             |
-| [[EduCorp]]                            |                                                             |
 | [[__]]                                 |                                                             |
-| [[__]]STARTUP __                       |                                                             |
-| [[Tile Robot]]                         |                                                             |
 | [[__]]                                 |                                                             |
 | [[__]]                                 |                                                             |
 | [[__]]                                 |                                                             |
@@ -49,7 +46,7 @@
 
 # LINKS
   [TIER Z](TIER%20Z.md),   [Tier-1](Tier-1.md),   [TIER-4](TIER-4.md),   [TIER-3](TIER-3.md),   [TIER-2](TIER-2.md)
-  [TIER Z](TIER%20Z.md)  [GHOST-Seed](GHOST-Seed.md)  [Tier-1](Tier-1.md)  [TIER-4](TIER-4.md)  [TIER-3](TIER-3.md)  [TIER-2](TIER-2.md)  [stindex](stindex.md)
+  [TIER Z](TIER%20Z.md)  [GHOST-Seed](GHOST-Seed.md)  [Tier-1](Tier-1.md)  [TIER-4](TIER-4.md)  [TIER-3](TIER-3.md)  [TIER-2](TIER-2.md)  [Startup Ideas](Startup%20Ideas.md)
 (See [startup/index](__stindex__.md) for list)
 
 # # QUICK THOUGHTS
