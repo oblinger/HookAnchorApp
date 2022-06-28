@@ -1,4 +1,4 @@
- [[VC]]   [Partner at Root Ventures](https://www.linkedin.com/in/avidanross/)  [[@Root Ventures]]
+ [[VC ORG]]   [Partner at Root Ventures](https://www.linkedin.com/in/avidanross/)  [[@Root Ventures]]
 
  - Invested in [[@Dusty Robotics]], close friend with [[@Tessa Lau]].
  

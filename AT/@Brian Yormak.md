@@ -1,3 +1,15 @@
+=[[VC]]  
+
+Sports VC.  Almost invested in Jason's sports Visio.
+
+
+
+
+
+
+
+
+
  [[VC]]   [Partner](https://www.linkedin.com/in/brian-yormak-4a161630/)  [[@Story Ventures]]
 
 

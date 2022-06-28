@@ -1,7 +1,29 @@
 
-### .
+## TODO
+- [ ] Get 5 good job posting.
+- [ ] Build pro-cons FAANG matrix for different companies
+- [ ] Learn about Instant design
+- 
+- [ ] Best training for FAANG (do some reading on this)
+- [ ] Speak with as many FAANG research light as I can 
+## PLAN
+- [ ] Training in Management
+- [ ] Training in Machine Learning & DL
+- [ ] Prep materials: Linked-In, Resume, WarStories, Website, Forum, 
+- [ ] Investigate:  Job postings, Conversations 
 
-### ODYSSEY - FAANG GUY - BigCo Project Leader & Technology Driver
+
+Holly Lee.   TLM Level-6
+
+- Talk to the professors.  Getting into it for the love of it.
+- Specialty:  Talking research and turning into products.
+
+General Networking, 15-min zooms.
+Hone pitch about what next.
+Diary of company activity.
+
+# TOPICS
+## = ODYSSEY - FAANG GUY - BigCo Project Leader & Technology Driver
 
 | Time   | Activity         | Notes                            |
 | ------ | ---------------- | -------------------------------- |
@@ -58,11 +80,14 @@ ATTRIBUTES:
 - Framing 
 - Mgt Training
 
-# BeFAANG
 
+## = Job Postings
+### - Google   [Jobs](https://huntr.co/jobs/jobs-at-google)  
 
-
-
+- [AI](https://huntr.co/job-post/6199e24f507207004c0a678e), 
+- 
+### - APPLE
+- [RL/Control](https://huntr.co/job-post/6299483f40df65005a7ccf9d),   [ML-Scientist](https://huntr.co/job-post/629a6489bec86a005861a0cb),   [Broad-ML-Researcher](https://huntr.co/job-post/6291c319c6f611004a22af1f),   
 
 ## References:
 - 

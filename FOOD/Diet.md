@@ -1,3 +1,10 @@
+2020-06 FORCED-WEIGHT-DROP
+- [ ] TRACKING - Noom based food tracking.  (can I export?)
+- [ ] RUNNING - Exercise T,R,F,U
+- [ ] FOODS - Beans++, Snacking--, Meat++, 
+- [ ] WEIGHT???
+
+
 ### 2021 - Fix My Heart
 Regular:  	Flackers, Turmeric, AppleVinegar(2tsp)
 			Fruit, 

@@ -2,6 +2,7 @@
 
 - [[GANs]] 
 - [[Self Supervised Learning]] 
+- [[Bengio]] 
 
 
 

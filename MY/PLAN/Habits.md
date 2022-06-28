@@ -56,17 +56,23 @@ Idea: Define specific activities associated with three daily hooks
 
 WAKING ANCHOR
 - Dress: Bed, Teeth, Scale, Clothes, Meditate
-- +++ <30min ready; 30+ MIT; Select Engage Time
 - Desk: Pills, Coffee, Apples
+- MIT: 
 
-ENGAGE ANCHOR
-- ++ Starts at Engage time.  Plan rest of work day.  Execute.
 
-EVENING ANCHOR -- immediately after Eli is in bed.
+LUNCH ANCHOR -- Immediately after lunch
+- Plan post-lunch engage period & rest of day
+
+
+EVENING ANCHOR -- Immediately after Eli is in bed.
 - ++ Plan next day; add MIT *completion* plus ~2 other tasks to todo
 - Scan emails
 - Scan todo list
 
+
+Waking Rules:
+- <30min ready; 30+ MIT; Select Engage Time
+- ++ Starts at Engage time.  Plan rest of work day.  Execute.
 
 ## = PRIOR FOCUS
 ### - Block Scheduled Day - July 2021

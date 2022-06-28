@@ -1,3 +1,4 @@
+- [ ] Finish Atomic Habits
 - [ ] Write Love Letter
 - [ ] Guy in Africa taht I need to send this slides to
 - [ ] PHOTOS ask guests if anyone recorded video

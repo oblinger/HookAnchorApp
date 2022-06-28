@@ -1,6 +1,7 @@
 
 
 ### RT Searches (rotten tomato searches)
+[RT Best Streaming Shows](https://www.rottentomatoes.com/browse/tv_series_browse/affiliates:amazon_prime,netflix~sort:popular?page=1),   [Movies](https://www.rottentomatoes.com/browse/movies_at_home/affiliates:amazon_prime,netflix~critics:certified_fresh,fresh~sort:popular?page=1).
 [RT Best Flix Movies Now](https://editorial.rottentomatoes.com/guide/best-netflix-movies-to-watch-right-now/) 
 [RT Best Flix Shows Now](https://editorial.rottentomatoes.com/guide/best-netflix-shows-and-movies-to-binge-watch-now/) 
 [Best Flix Series](https://editorial.rottentomatoes.com/guide/best-netflix-shows-and-movies-to-binge-watch-now/)  
@@ -33,29 +34,18 @@ tree of life 2011
 
 
 ### --- Personal Recommends ---
-
 Brodie: Highly recommended: Frequently Asked Questions about Time Travel
 
 ### New Yorker picks for the decade 2019
-
 “The Wolf of Wall Street” (2013), Martin Scorsese
-
 “Madeline’s Madeline” (2018), Josephine Decker
-
 “Get Out” (2017), Jordan Peele
-
 “An Elephant Sitting Still” (2019), Hu Bo
-
 “Did You Wonder Who Fired the Gun?” (2018), Travis Wilkerson
-
 “The Future” (2011), Miranda July
-
 “Margaret” (2011), Kenneth Lonergan
-
 “The Grand Budapest Hotel” (2014), Wes Anderson
-
 “Somewhere” (2010), Sofia Coppola
-
 “Li’l Quinquin” (2015), Bruno Dumont
 
 “Film Socialisme” (2011), Jean-Luc Godard

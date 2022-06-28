@@ -541,13 +541,11 @@ FROM MEMORY:
   ACT 27??
   GRE (Best scores:  800, 790, 730   =2320
 ## = FACT CHECK - "AT A GLANCE" 
-### --- Technology & Product Development ---
-
-**AI AREAS** ---
+### - Technology & Product Development
+#### AI AREAS
 	robotics, machine learning, computer vision, 
 	NLP, programming by demonstration, and cyber security
-
-**WORKED ON 21 AI Technologies**
+#### Worked On 21 AI Technologies
 
 - Instant Design
 - Aeolus Elderbot
@@ -588,7 +586,7 @@ Larger exploratory DARPA efforts (1⁄2 to 5 million dollars)
 9. **Latent Information in Folksonomies** – Extracting latent structure in user content tags. (e.g. flickr / delicious)
 10. **Universal Self-Supervised Hierarchical Learning** – Adaptive algorithms driven by spectrum of novel feedback signals (e.g. curiosity, drive to control, drive to mimic, etc.)
 _
-### --- Org Building & Team Leadership ---
+### - Org Building & Team Leadership
 
 **NUMBER OF TEAMS MANAGED 8**
 1. Personal Wizards
@@ -635,7 +633,7 @@ Not counted
 - DECISION MAKER INTERVIEW: (40% retained)
 
 _
-### --- Num Papers/Presentations/Keynotes/Founded-Chaired Workshops ---
+### - Num Papers/Presentations/Keynotes/Founded-Chaired Workshops
 
 workshop on meta learning:  russ griener??
 
@@ -671,14 +669,14 @@ WORKSHOPS
 - ?? Workshop on Meta learning
 
 _
-### --- Boards / Advisorships ---
-#### --- Advisorships ---
+### - Boards / Advisorships
+#### . Advisorships
 	- TECHNO-THERAPY advisor  (Jan 2014 - present)
 	- ADVISOR RULY Feb 2014 to Nov 2014 - Chad Mulder - chadmulder@gmail.com - 
 		Discussions start 2/18/2014 - NDA signed 3/22/2014 - 
 		10/14/2014 submitted to YC - 11/3/2014 seems over
 	_
-#### notes
+#### . notes
 	5
 
 	- **Northwestern**.  I when there on two different years.  
@@ -691,12 +689,10 @@ _
 	- TechnoTherapy, Washington, D.C., Business & Technical Advisor, Jan 2014 to present
 	- NIST/TREC, Washington, D.C., TAC-KBP track Advisor, Mar 2009 to Oct 2011
 		(data posted [6/4/09](http://pmcnamee.net/kbp.html))
-	- DARPA/IPTO, Washington, D.C., Senior Advisory Group (SAG) member, Dec 2009 to Oct 2011   (the beginning date is pretty made up)
-
+	- DARPA/IPTO, Washington, D.C., Senior Advisory Group (SAG) member, Dec 2009 to Oct 2011   
+		(the beginning date is pretty made up)
 	- ??? Jotter - chief science officor.
-
 	- Should I count Each DARPA program
-
 
 	- Ruly
 	- Techno Therapy
@@ -706,45 +702,47 @@ _
 	- President of Math club?  & volleyball team
 
 	_
+
+
 ## = FACT CHECK - JOB EXPERIENCE
-### --- 2013.07 - ANALYTICS FIRE -- Founder/CTO Analytics Fire
-#### -- AF Numbers --
+### - 2013.07 - ANALYTICS FIRE -- Founder/CTO Analytics Fire
+#### . AF Numbers
 
-	- **Customers**:  SunPower, Enphase, Boston Scientific, Arthrex, iCracked, NovaSource, Moxion, Pythian, Blackbird, Drive Dev, Basil Health
-	- **40+ number of employees**.  
-		(including part-time, PH team, and rebased etc. we hit 45 in 2018)
-	- **130+ number of projects**.  (see below)
-	- **20+ person years over 3 calendar years of effort for residential solar**.
-		On the low side it was just Eddie with 3devs+1pm+1QA.  
-		For a month in march2020 we hit the hight side of 13 
-		Average 7py over 3 years 2018-2020
-	- **$3B+ in IoT assets controlled by our software**
-		See below
+- **Customers**:  SunPower, Enphase, Boston Scientific, Arthrex, iCracked, NovaSource, Moxion, Pythian, Blackbird, Drive Dev, Basil Health
+- **40+ number of employees**.  
+	(including part-time, PH team, and rebased etc. we hit 45 in 2018)
+- **130+ number of projects**.  (see below)
+- **20+ person years over 3 calendar years of effort for residential solar**.
+	On the low side it was just Eddie with 3devs+1pm+1QA.  
+	For a month in march2020 we hit the hight side of 13 
+	Average 7py over 3 years 2018-2020
+- **$3B+ in IoT assets controlled by our software**
+	See below
 
-	**DETAILS ON NUM PROJECTS**
-	- Standard/full project = 2 devs, 1-2 QA, fractional PM
-		Small project is 1.5 devs.  Large project >2 devs.
-	**130+ projects.** 
-		(end-to-end product releases with defined caps delivered by AF.)
-	- 2015 1
-	- 2016 2
-	- 2017 16proj
-	- 2018 39proj 
-		- On NOV 2018 we were working on 16 workstream at one moment time)
-	- 2019 plateau (same or maybe little bigger than 2018)
-	- 2020 slightly smaller than 2019 (was shaping to be bigger before covid)
+**DETAILS ON NUM PROJECTS**
+- Standard/full project = 2 devs, 1-2 QA, fractional PM
+	Small project is 1.5 devs.  Large project >2 devs.
+**130+ projects.** 
+	(end-to-end product releases with defined caps delivered by AF.)
+- 2015 1
+- 2016 2
+- 2017 16proj
+- 2018 39proj 
+	- On NOV 2018 we were working on 16 workstream at one moment time)
+- 2019 plateau (same or maybe little bigger than 2018)
+- 2020 slightly smaller than 2019 (was shaping to be bigger before covid)
 
 
-	**DETAILS ON NUMBER OF IOT DEVICES**
-	- **we wrote code for hubs, multiple 100K devices controlling millions of devices**
-	- **TMAC** - powerplant controllers.   100K+  (We did not build from scratch.)
-		- [Gala oregon plant](https://newsroom.sunpower.com/2017-02-27-SunPower-Starts-Construction-On-56-Megawatt-Gala-Solar-Power-Plant-in-Oregon) Big plant $300M Gala oregon plant.
-		- Solar star. largest solar in world until 2016. 1.7M panels
-	- **OASIS** - powerplant controllers.
-		(upto 70 trackers per hub, many solar panels))
-	- **PVS5** - residential hub  100s K connected to handful of devices.
-	- **Envoy** - residential hub.  handful of devices per envoy.
-	- 1M+ clean energy devices.  (these are individual sensors or panels)
+**DETAILS ON NUMBER OF IOT DEVICES**
+- **we wrote code for hubs, multiple 100K devices controlling millions of devices**
+- **TMAC** - powerplant controllers.   100K+  (We did not build from scratch.)
+	- [Gala oregon plant](https://newsroom.sunpower.com/2017-02-27-SunPower-Starts-Construction-On-56-Megawatt-Gala-Solar-Power-Plant-in-Oregon) Big plant $300M Gala oregon plant.
+	- Solar star. largest solar in world until 2016. 1.7M panels
+- **OASIS** - powerplant controllers.
+	(upto 70 trackers per hub, many solar panels))
+- **PVS5** - residential hub  100s K connected to handful of devices.
+- **Envoy** - residential hub.  handful of devices per envoy.
+- 1M+ clean energy devices.  (these are individual sensors or panels)
   
 
 	_
@@ -780,15 +778,15 @@ https://us.sunpower.com/blog/2019/04/09/home-solar-design-made-easier-google-clo
 Design Studio  https://www.youtube.com/watch?v=AXD2FUPkncw&feature=youtu.be
 
 _
-### --- 2016.10 - 2018.06(07) -- Founder/CTO Aeolus Robotics --
-#### --- AEOLUS Numbers ---
-	- 2,000+  NUMBER CANDIDATES CONSIDERED
-		Robotics Specialist Candidates -- 447
-		C/C++ Robot Brain Engineer Candidates -- 1,353
-		Director of Software Engineering Candidates -- 123
-		Total -- 1,923
-		plus hundreds interviewed by An
-#### notes
+### - 2016.10 - 2018.06(07) - Founder/CTO Aeolus Robotics
+#### . AEOLUS Numbers
+- 2,000+  NUMBER CANDIDATES CONSIDERED
+	Robotics Specialist Candidates -- 447
+	C/C++ Robot Brain Engineer Candidates -- 1,353
+	Director of Software Engineering Candidates -- 123
+	Total -- 1,923
+	plus hundreds interviewed by AF too
+#### . notes
 
 - Lead the development of the software for the Aeolus Eldercare Assistance Robot, and delivered this widely noted prototype for presentation at CES.  (Prototype is also the basis for an ongoing relationship with a largest keretsu in Japan, where it is in service in their elder care facilities.)
 - Created and lead the hiring team which in turn hired 60 engineers out of over 15,000 applicants (most within a 9 month window).  We hired over 40 with PhDs, many in very targeted sub-disciplines: robotics (grasping, haptic control, etc.), vision (skeletal tracking, high frame rate feature tracking, etc), machine learning (deep learning).
@@ -801,12 +799,12 @@ PR about Aeolus Robot at CES
 -- live videos (long so jump around) https://www.youtube.com/watch?v=IzHb6G97tLw
 
 _
-### --- 2015.11 - 2016.10 -- Founder/CTO Bizzy Robotics
+### - 2015.11 - 2016.10 - Founder/CTO Bizzy Robotics
 - Developed initial bathroom cleaning robot -- kinematics, sensing, haptic feedback loops, and firmware drivers.
-- Hired/lead the 8 software members of our team, and served as the archiect for development of a Robot OS specialized for household cleaning (for mapping and operating haptically with generalized effectors over arbitary, non-parametric, surfaces.)  
+- Hired/lead the 8 software members of our team, and served as the archiect for development of a Robot OS specialized for household cleaning (for mapping and haptic operation with generalized effectors over arbitrary, non-parametric, surfaces.)  
 - Co-negotiated the acquisition of the Bizzy Robotics IP and team to Aeolus.
-### --- PAY BY GROUP ---
-### --- DARPA Materials ---
+### - PAY BY GROUP
+### - DARPA Materials
 
 JEOPARDY
 
@@ -869,7 +867,7 @@ BL Prime = 50heads (little smaller). 20 on Blue = 120heads for BL
 I was managing ~300 heads when both BL and MR were executing.
 
 _
-### --- IBM Materials ---
+### - IBM Materials
 
 AT IBM:   19 PATENTS; 10 peer reviewed pubs:  3 Journal; 7 Long Conference
 
@@ -881,67 +879,14 @@ AT IBM:   19 PATENTS; 10 peer reviewed pubs:  3 Journal; 7 Long Conference
 - Email Contacts Graph Viewer / Traversal tool
 - Watch Me Read Analytics
 _
-### >>> EXPERIENCE <<<	
-### --- Company sizes ---
+### > EXPERIENCE
+### - Company sizes
 - IBM: 3000 across 12 labs.  Yorktown 3levels* 40asles* 2sides *8slots=1,920  
 budget = $700M = 2000 * 350K
 - ORIX: $25.86=2,949B yen — ORIX Living, 32 facilities with 2,726 rooms (2019)
 
 _
-## = ANSWERS
 
-https://www.indeed.com/career-advice/interviewing/top-interview-questions-and-answers?from=careeradvice-US
-
-
-### --- Favorite Manager: Chuck Morfield ---
-Nick?? Chuck?? - He taught me how to manage & 
-Peter WMR - how to think about my career
-Chuck Morfield - He brought challenging problems to me
-### --- Qualities of a good leader ---
-Emotive & Incisive
-
-
-
-### --- ABOUT US ---
-- Name of our CEO ---
-- Why is our company interesting to you
-#### --- What question have I not asked you ---
-
-## = BRAGGING STORIES AND ANSWERS
-#### Hacked something to my advantage
-
-	- Convinced my linear algebra teacher that I should not be scored on my homeworks but only on my
-	  test results.
-
-	- Later used his open-ended test taking policy to save my GPA, by staying over an entire night and re-deriving 
-	  two required lemmas that I would have known had I actually done the homework.
-
-	  (ok, so my second hack was really more of a painful recovery from the consequences of my first hack.
-	   still in the end, I got my way, and saved my grade.  Wise?  no.  but hacked, yes.)
-
-
-
-	--- Most impressive thing built.
-
-	 - the IBM Jeopardy Playing Computer Watson.  (Ok I didn't build it, but I conceived of and executed
-	   the 150+ million DARPA program mapping unstructured text onto fixed ontologies -- which is the core 
-	   tech the IBM used to beat Jennings)
-
-	Something directly coded by me?
-	Personal Wizards -- A learning system that induces executable scripts with loops, branches, and variables 
-	based on "watching" a desktop user (by trapping & abstracting messages at Windows event layer).  
-	This is now part of an IBM Rational product.
-
-
-	Built solely from my own two hands?
-	- A full screen LISP debugger that allows user to both fwd and backwards in time and up and down in abstraction.
-
-
-_
-#### Most impressive thing you have built or achieved
-
-
-_
 
 # # LOG
 ### 2021-12-00  Jared Resume writing notes

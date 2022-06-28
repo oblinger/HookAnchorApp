@@ -1,1 +1,2 @@
+  [Fun](Fun.md)
  [[Quarterly]],  [Quarterly](Quarterly.md),   [Planning](Planning.md),   [Archive](Archive.md),   [WORK](WORK.md),   [Full](Full.md),   [Self](Self.md),   [Later](Later.md),   [Repeat](Repeat.md),   [Calls](Calls.md),   [Ping](Ping.md),   [Q2](Q2.md),   [Fried](Fried.md),   [Todo](Todo.md),   [Habits](Habits.md),   [Social](Social.md),   [Scratch](Scratch/Scratch.md),   [Comms](Comms.md),   [Prime](Prime.md),   [Watching](Watching.md),   [Current](Current.md),   [Links](Links.md),   [Quick](Quick.md),   [Hack](Hack.md),   [Second](Second.md)

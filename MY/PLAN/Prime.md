@@ -1,17 +1,30 @@
+MORNING:  		Meditate, Pills, Day, [[Comms]], 
+AFTERNOON:   	EVE: Plan, Chew
+
 ## = [[NJ22|NJ22]] =
-- [ ] [[DYL]] Build 3 Odyssey plans.
-- [ ] [[DYL]] Dan one-pager (from quick pass on earlier chapters)
 - [ ] War-Stories
-
-## = [[BeFAANG|BeFAANG]] =
-- [ ] Speak with as many FAANG research light as I can 
-- [ ] [[DYL]] odyssey
-
-## = [[BeMLR]] =
-- [ ] Read benjio papers
+- [ ] [[DYL]] Build 3 Odyssey plans.  Dan one-pager.  Prototype chapter
+- [ ] [[BeFAANG|BeFAANG]] -
 
 ## = [[ROCKS/2022-03 Learning/Learning|Learning]] =
 - [ ] Complete Coursera Deep Learning Course
+- [ ] Hack some tensor flow
+- [ ] Find best FAANG prep (1) class.  (2) mentors
+- [ ] Read mgt books
+
+## = [[BeMLR]] - DL-GANS proposal
+- [ ] Read benjio papers
+
+
+
+
+
+
+
+
+
+
+
 
 ## = [[BeVC|BeVC]] =
 - [ ] Get response to Amy Kruse   [[Crunchbase|CB]] 

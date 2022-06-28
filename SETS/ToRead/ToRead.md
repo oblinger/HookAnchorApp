@@ -30,6 +30,7 @@ BreakAllTheRules
 - [[DL#t2022-04-26 Lample Charton]] 
 - [GANs summary for 2020](https://towardsdatascience.com/gan-papers-to-read-in-2020-2c708af5c0a4)
 
+- [Vitaly Daily RL](https://www.notion.so/Paper-Notes-by-Vitaly-Kurin-97827e14e5cd4183815cfe3a5ecf2f4c),  
 ## = TOPICS
 ### [[BooksToRead]] 
 ### - Org System

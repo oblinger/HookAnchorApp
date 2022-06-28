@@ -1,6 +1,6 @@
+Get online doc
 
-- [ ] 
-- [ ] - [ ] ready car; picknick
+- [ ] Ready car; picknick
 - [ ] think thru auto sending of cards
 - [ ] Write thank you note to Klembara and others
 - [ ] Fix circuit breakers
@@ -21,8 +21,8 @@
 - [ ] Personal CRM to track my own contacts?
 
 ## = Easy-Ready = 
-- [ ] remove mealy-bug plants
 - [ ] Reset door codes. (info in myfo->mystuff)
+- [ ] Reset car seat auto adjust
 
 
 ## = STUFF = 
@@ -55,3 +55,4 @@
 - [ ] CALLS:		Mom&Dad * Repeat * Habits
 - [ ] THINK:  [[Habits|Habits]]   [[Current|Plan]]  [[Obsidian]]     [[Fin]]    [[ToBuy]]    [[ToRead]]  [[Hack]]  
 
+## = LATER

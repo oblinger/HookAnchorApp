@@ -38,3 +38,39 @@ RICE:	Reach, Impact, Confidence, Effort.  (which features to build)
 
 
 
+
+# Pitch Deck Slides
+
+FORBES
+-   Company Overview.
+-   Mission/Vision of the Company.
+-   The Team.
+-   The Problem.
+-   The Solution.
+-   The Market Opportunity.
+-   The Product.
+-   The Customers.
+
+
+Vennage.com  [Bplan](https://articles.bplans.com/what-to-include-in-your-pitch-deck/)  
+- Company Purpose / Vision
+- Problem
+- Solution
+- Why Now
+- Market Potential    (Target market)
+- Alternatives
+- Business Model
+- Team
+
+Guy Kawasaki
+- Problem / Opportunity
+- Value Proposition
+- Underlying Magic
+- Business Model
+- Go to market
+- Competitive analysis
+- Management Team
+- Financial Projections
+- Current status and projections
+
+

@@ -1,0 +1,1 @@
+=[[CMD]]   url   https://www.amazon.com/gp/video/storefront/ref=atv_cat_facettext?filterId=OFFER_FILTER%3DPRIME_mkw_sPfLbcut2-dc&mrntrk=pcrid_448130500925_slid__pgrid_29008589832_pgeo_9031964_x_229970169255_ptid_kwd-12712851&gclid=CjwKCAjwy_aUBhACEiwA2IHHQPw4IKhWtJI3kBNFYnJc_p2PiUDKjiEUbABEATKFi2AIovmXNwmmkhoCKUMQAvD_BwE

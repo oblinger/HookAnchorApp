@@ -2,6 +2,10 @@
 
 | Date       | File                | Notes                                                                                     |
 | ---------- | ------------------- | ----------------------------------------------------------------------------------------- |
+| 2022-06-27 | [[Phone]]               | PENFED - reset connection /                                                               |
+| 2022-06-20 | [[MED]]                 | Cough followup                                                                            |
+| 2022-06-06 | [[Phone]]               | Fix MAC mic                                                                               |
+| 2022-06-06 | [[Phone]]               | Drains Flooding                                                                           |
 | 2022-05-28 | [[Arc ALL]]             | SOCIAL                                                                                    |
 | 2022-05-24 | [[Weekly]]              | Forum presentation                                                                        |
 | 2022-05-21 | [[MED]]                 | Joint Pain                                                                                |
@@ -33,7 +37,6 @@
 | 2022-04-03 | [[DYL]]                 | Organizational Systems - Tirelessly setup Obsidian & cleaned texts                        |
 | 2022-04-02 | [[ToBuy]]               | Food Scale                                                                                |
 | 2022-03-31 | [[Weekly]]              | (short week)                                                                              |
-| 2022-03-25 | [[EOCA]]                | guy writing book on evil and ai control                                                   |
 | 2022-03-25 | [[Dataview]]            | [templater+dataview example](https://github.com/blacksmithgu/obsidian-dataview/issues/42) |
 | 2022-03-21 | [[Weekly]]              |                                                                                           |
 | 2022-03-21 | [[Phone]]               | Home Depot - replace new GE microwave                                                     |
@@ -56,20 +59,16 @@
 | 2022-03-04 | [[MKT]]                 | From the top                                                                              |
 | 2022-03-03 | [[Journal]]             | A FULL LIFE                                                                               |
 | 2022-03-00 | [[Journal]]             | QJ note                                                                                   |
-| 2022-02-28 | [[EOCA]]                | Notes from reading Alignment forums                                                       |
+| 2022-02-25 | [[EOCA]]                | RED ALERT - THIS IS NOT A DRILL - I REPEAT THIS IS NOT A DRILL                            |
 | 2022-02-25 | [[EOCA]]                | DAG OF SCOPES / INHERENT TO SOCIETY OF AGENTS / 0-DAY-ATTACKS                             |
 | 2022-02-25 | [[EOCA]]                | INHERENT CENTRALIZATION / SUCCEPTABLE TO DEVISTATING ATTACK                               |
 | 2022-02-25 | [[EOCA]]                | COMPETITION WILL BE KEY & DIFFERENTIAL SOCIETAL KNOWLEGE WILL BE KING                     |
 | 2022-02-25 | [[EOCA]]                | DEGENERACY / TAIL COMPLEXITY                                                              |
-| 2022-02-24 | [[EOCA]]                | LARGEST CLAIMS                                                                            |
-| 2022-02-24 | [[EOCA]]                |                                                                                           |
 | 2022-02-22 | [[Paths]]               | Latest Thinking                                                                           |
 | 2022-02-16 | [[Forum]]               | Email based first system.                                                                 |
 | 2022-02-15 | [[Paths]]               | Choice Space                                                                              |
 | 2022-02-08 | [[Campaigns]]           | Meetups to consider                                                                       |
 | 2022-02-07 | [[Journal]]             | Growing my Circles                                                                        |
-| 2022-02-06 | [[EOCA]]                | Quicklist Key Conclusions                                                                 |
-| 2022-02-01 | [[EOCA]]                | EOCA Book Intro                                                                           |
 | 2022-02-00 | [[FirstTouch]]          | Recruiter - Refer Anyone - LOW HIT RATE                                                   |
 | 2022-01-29 | [[Campaigns]]           | L1-VC-ask-advice                                                                          |
 | 2022-01-28 | [[Journal]]             | Joe/Deep Advisor                                                                          |
@@ -78,13 +77,10 @@
 | 2022-01-27 | [[Campaigns]]           | Recruiter outreach #2  (NOT FINISHED)                                                     |
 | 2022-01-20 | [[Paths]]               | PATHS, spiritual dimension                                                                |
 | 2022-01-20 | [[Journal Old]]         | PATHS, spiritual dimension                                                                |
-| 2022-01-18 | [[EOCA]]                | >>> ASK EVAN HUBINGER <<<                                                                 |
-| 2022-01-17 | [[EOCA]]                | The treasonous human                                                                      |
 | 2022-01-16 | [[Brain3]]              | Using GANs                                                                                |
 | 2022-01-14 | [[Journal]]             | Morning thoughts                                                                          |
 | 2022-01-14 | [[Journal Old]]         | morning thoughts                                                                          |
 | 2022-01-11 | [[Brain3]]              | combining DL and logic                                                                    |
-| 2022-01-11 | [[EOCA]]                | The intrisic value of knowelge                                                            |
 | 2022-01-04 | [[Paths]]               | My purpose                                                                                |
 | 2022-01-04 | [[DEEP_BOOT]]           | MERI GUY RESPONSE                                                                         |
 | 2022-01-04 | [[DEEP_BOOT]]           | REFLECTIVITY                                                                              |
@@ -201,7 +197,6 @@
 | 2021-06-30 | [[Journal Old]]         | Alternatives                                                                              |
 | 2021-06-29 | [[Journal]]             | Jason Redux                                                                               |
 | 2021-06-29 | [[Journal Old]]         | Jason Redux                                                                               |
-| 2021-06-23 | [[EOCA]]                | Evan Response                                                                             |
 | 2021-06-20 | [[Journal]]             | FUTURES                                                                                   |
 | 2021-06-20 | [[Journal Old]]         | FUTURES                                                                                   |
 | 2021-06-18 | [[Brain3]]              | AML - Artifical Machine Learning   (formalization & claim)                                |
@@ -219,18 +214,13 @@
 | 2021-05-26 | [[Journal]]             | Quick Plan before Michael/Nick call                                                       |
 | 2021-05-26 | [[Journal Old]]         | Quick Plan before Michael/Nick call                                                       |
 | 2021-05-19 | [[Jnl]]                 | Gaining Emotional Stability                                                               |
-| 2021-05-19 | [[EOCA]]                | Quick Agenda                                                                              |
-| 2021-05-18 | [[EOCA]]                | Who To Talk To?                                                                           |
 | 2021-05-17 | [[Jnl]]                 | HALF ASS IDEA TO JOURNAL                                                                  |
 | 2021-05-17 | [[Journal]]             | LOG JAM                                                                                   |
 | 2021-05-17 | [[Journal Old]]         | LOG JAM                                                                                   |
-| 2021-05-13 | [[EOCA]]                | Alg setup                                                                                 |
-| 2021-05-11 | [[EOCA]]                | Hard Step                                                                                 |
 | 2021-05-10 | [[Paths]]               | PATHS                                                                                     |
 | 2021-05-10 | [[Journal Old]]         | LIFE VIEW                                                                                 |
 | 2021-05-10 | [[Journal Old]]         | PATHS                                                                                     |
 | 2021-05-10 | [[DYL]]                 | LIFE VIEW                                                                                 |
-| 2021-05-06 | [[EOCA]]                | Disposition - Stance and Agenda                                                           |
 | 2021-05-06 | [[Journal Old]]         | >>> BOOK  -- DESIGNING YOUR LIFE <<<                                                      |
 | 2021-05-06 | [[Journal Old]]         | WORK VIEW                                                                                 |
 | 2021-05-06 | [[DYL]]                 | WORK VIEW                                                                                 |
@@ -264,7 +254,6 @@
 | 2021-03-28 | [[Journal Old]]         | Big picture next step ideas / pulls                                                       |
 | 2021-03-27 | [[Journal]]             | Jason analysis #4                                                                         |
 | 2021-03-27 | [[Journal Old]]         | Jason analysis #4                                                                         |
-| 2021-03-24 | [[EOCA]]                | Note to Mark and Leslie                                                                   |
 | 2021-03-20 | [[Journal]]             | Jason response #3                                                                         |
 | 2021-03-20 | [[Journal Old]]         | Jason response #3                                                                         |
 | 2021-03-17 | [[Journal]]             | Jason response #2                                                                         |

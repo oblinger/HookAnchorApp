@@ -1,4 +1,4 @@
- [[VC]]  [VP](https://www.linkedin.com/in/aniket-kumar-/) [[@Software Growth Partners]] 
+ [[VC ORG]]  [VP](https://www.linkedin.com/in/aniket-kumar-/) [[@Software Growth Partners]] 
 
 
 

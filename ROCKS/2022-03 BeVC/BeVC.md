@@ -1,8 +1,24 @@
 
-### TODO
+## TODO
 
 ### . 
 .
+## CRM
+
+| ---       | ---                |      |     |
+| --------- | ------------------ | ---- | --- |
+|           | [[__]]             |      |     |
+| S - W5-12 | [[@Emily Wallach]] | BeVC |     |
+| W - M4-25 | [[@Melissa Cote]]  | BeVC |     |
+|           | [[@Brian Yormak]]  |      |     |
+|           | [[@Avidan Ross]]   | BeVC |     |
+|           |                    |      |     |
+
+
+
+Brian Yormak, Advian Ross (Tessa's contact)
+
+
 ## = DYL Odessy
 ! Vision spouting, Meeting man, Deal closer
 | Time   | Activity                        | Notes                                |

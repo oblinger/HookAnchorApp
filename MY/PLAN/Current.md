@@ -1,15 +1,15 @@
-### 2022-05-24
-- [ ] W1  Finish forum presentation; Yashin feedback
-- [ ] Completed FAANG planning across all areas to some level
-- [ ] One pagers for all startup ideas
+### 2022-06-20
+- [ ] JOE READY - 2 hours on WarStories. 
+- [ ] BENJIO - What is my GANs idea
+- [ ] HACK - Hack some tensor flow
+- [ ] FAANG (matrix, courses, war stories, reading)
 
-- [ ] DYL forum odyssey
-- [ ] [[DYL]] Finish prototyping chapter
-- [ ] Do 2 hour on WarStories
+- [ ] [[DYL]] Build 3 Odyssey plans.  Dan one-pager.  Prototype chapter
+- [ ] Mgr Book (read in background)
 
-- [ ] Finish Atomic Habits
-- [ ] +Do Tile Robot odyssey
-- [ ] Restart Coursera training??
+SECOND:
+- [ ] Yearbook restart
+- [ ] Ready for Moses EduCorp call; have call
 
 
 REPEAT:  

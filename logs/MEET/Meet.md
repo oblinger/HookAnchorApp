@@ -2,12 +2,14 @@
 
 | Date        | File             | Notes                                                             |
 | ----------- | ---------------- | ----------------------------------------------------------------- |
+| m2022-06-21 | [[Forum]]            | Joe Yeh                                                           |
 | m2022-05-26 | [[@Dan Fine]]        | Constructive strategies forward.  Time could be short for a FAANG |
 | m2022-05-26 | [[@Joseph Yeh]]      | Prep for FAANG                                                    |
 | m2022-05-09 | [[Forum]]            | Yashin and Phippa                                                 |
 | m2022-04-29 | [[@Arkady Epshteyn]] | FAANG ML Guy                                                      |
 | m2022-04-06 | [[@Joseph Yeh]]      | Resume;                                                           |
 | m2022-04-06 | [[BeVC]]             | Recruiter topics                                                  |
+| m2022-03-25 | [[EOCA]]             | guy writing book on evil and ai control                           |
 | m2022-03-21 | [[@Joseph Yeh]]      | List of VC firms                                                  |
 | m2022-03-17 | [[@Joseph Yeh]]      | foo                                                               |
 | m2022-03-13 | [[2022 CORIS]]       | TRIP CORIS Robotics Institute (OREGON STATE UNIV)                 |
@@ -29,6 +31,7 @@
 | m2021-07-28 | [[@Nick Allen]]      | Meeting with Nick and Michael                                     |
 | m2021-07-27 | [[@Nick Allen]]      | Nick's request info                                               |
 | m2021-07-04 | [[@Doug Gordin]]     | Doug conversation                                                 |
+| m2014-06-02 | [[Edu Corp]]         | Random meeting notes                                              |
 | m2011-10-29 | [[@PayByGroup]]      | SEO.                                                              |
 | m2011-10-20 | [[@PayByGroup]]      | MVP discussion w. frank                                           |
 | m2011-10-18 | [[@PayByGroup]]      | One line pitch                                                    |

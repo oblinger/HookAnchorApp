@@ -20,9 +20,12 @@ http://en.wikipedia.org/wiki/Simpson's_paradox
 (3) Ignoring priors   -- P-value does not consider prior knowlege about the effect
 
 
-### - Hypothesis Testing;  Type I / Type II Errors
+### - Hypothesis Testing;  Type I / Type II Errors  [Precision & Recall](https://en.wikipedia.org/wiki/Precision_and_recall)  
+
+[Wikipedia]()
 
 
+![[Screen Shot 2022-06-25 at 10.18.36 AM.png]]
 | Type I Error                              | Type II Error                          |
 | ----------------------------------------- | -------------------------------------- |
 | Null hyp is true                          | other hyp is true                      |

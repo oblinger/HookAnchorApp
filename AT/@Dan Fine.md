@@ -1,4 +1,4 @@
-[[COACH]] [[@A Path That Fits]]  
+[[COACH]]   [[@A Path That Fits]]  
 
 ### m2022-05-26  -  Constructive strategies forward.  Time could be short for a FAANG
 
@@ -21,11 +21,13 @@ Viable Paths Forward
 
 ### t2022-05-13  FINE Restart  2
 
+NOTES:
+- Checkout spirit rock
+- couch   2-five-K    mindfulness    goldstein
+
+
 Dan, 
 My prior note, was an effective way synthesize a great deal of mental complexity into pithy bullets.  In prep for our meeting I am going to do try to capture the rest of my context in a second note:
-
-spirit rock
-couch   2-five-K    mindfulness    goldstein
 
 PHYSICAL HEALTH
 - In 2020 I had a calcium CT scan and found I have the beginnings of heart disease.  It is critical now that I:

@@ -21,7 +21,7 @@
 | Status | Name                 | Ask [[@Aniket Kumar]]'s head hunters?      |
 | ------ | -------------------- | ------------------------------------------ |
 |        | [[@Avidan Ross]]     | Tessa's investor                           |
-|        | [[@Brain Yormak]]    | Potential investor for [[@Sports Visio]]   |
+|        | [[@Brian Yormak]]    | Potential investor for [[@Sports Visio]]   |
 |        | [[__]]               |                                            |
 |        | [[@Emily Wallach]]   | <<                                         |
 |        | [[@Melissa Cote]],   | <<                                         |

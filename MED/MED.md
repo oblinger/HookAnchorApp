@@ -1,6 +1,23 @@
 
 # TODO 
+Bend, knot, 
+
+addyi
+
+pre-diabeteies
+
+CRP 
+
+levelated liver markers - fatty liver
+
+- noom.  
+- boot-camp SF.  Koi fitness
+- Manuel Villacorta
+- 20-40 pepsit
+
+
 - [ ] Daily 7-min exercise
+- [ ] PENIS - 
 - [ ] LAB-CORP - 2622 Ocean Ave 416-469-9710  (Fasted in morning before 10am)
 - [ ] [[MED|MED]] Nutritionist - Decide who to work with #todo
 - [ ] PULMONOLOGIST - Charles McDonald  2100 Webster Street  415-749-5779
@@ -91,8 +108,11 @@
   Good quality vitamin
 - vitamin D.
 # LOG
-### 2022-05-21  Joint Pain
+### 2022-06-20  Cough followup
+- Cough maybe a bit better, acid reflux definitely seems an issue, was not great in keeping up with the flonase
+- 
 
+### 2022-05-21  Joint Pain
 -  [Possible Causes](https://www.mayoclinic.org/symptoms/joint-pain/basics/causes/sym-20050668)  
 -  [Stretches](https://www.spine-health.com/blog/exercises-upper-and-middle-back-pain)  including door jam stretch
 -  [Upper Back Stretches](https://www.menshealth.com/fitness/a25616194/upper-back-stretches/)  

@@ -43,14 +43,14 @@ _
 10/08/2019	Rotavirus Pentavalent
 
 _
+# TOPICS
 ## === Allowed Medications ===
 - Acetaminophen 160mg/5ml (every 4hrs)
 	For temp >= 38.5C
 - Vitamin D3  10 mcg/mL  (400 unit/mL)
 _
-# TOPICS
 ## = TEACHING
-## - Good manners
+### - Good manners
 listen during a story
 turn the pages of a book
 properly blow their nose

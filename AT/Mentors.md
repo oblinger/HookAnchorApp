@@ -1,4 +1,4 @@
- MENTORS:  [[FAANG]],  [[VC]],  
+ MENTORS:  [[FAANG]],  [[VC ORG]],  
 
 
 ## MENTORS
@@ -49,6 +49,8 @@ PING		  [Anand Raghunathan](https://www.linkedin.com/in/araghunathan/),
 			 [Peter Berger](https://www.linkedin.com/in/peter-berger-5536b92/),  [Derrick Boudwin](https://www.linkedin.com/in/dboudwin/),  
 OTHERS:	 [Tarik Zarkaria Benmerar](https://www.linkedin.com/in/tarikbenmerar/) 
 FRIENDS:        Phil Herget,  Yannick, Dan Shapiro
+
+
 
 
 

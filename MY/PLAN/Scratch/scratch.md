@@ -1,4 +1,3 @@
-  [SNIP](SNIP.md)
 
 I love the drive-by constructive feedback that is possible on Medium.  Unvarnished and to the point, Thanks!!  I do have an ax to grind in the health & medicine space.  On nearly every topic I can find 'keto kills' or 'keto will save you', BOTH with arguments backed by an argument derived from at some level by legitimate science.  This misinformation KILLS people, so I am a bit of Dan Quixote for health claims.
 
@@ -48,11 +47,6 @@ My idea is we would strip most of this away, and just provide 
 Let me know your thoughts, and feel very free to just start editing on this starter doc:
   
   
-  
-  [SNIP](__SNIP__.md)
- [G-doc Scratch](https://docs.google.com/document/d/19rapJqTzTSeLPrQPIRligaFna5yc44p-gDhdhlOJLdI/edit),  [[SNIP|Snip]],  
-
-
 
 
 
@@ -874,13 +868,14 @@ You want to spend your time working on the most interesting part of interesting,
 You have mentioned the pay cut of working at Open AI as a deal killer (making $160k year, eating & breathing interesting projects, & helping save the world from the existential threat of malignant AI). But you have also expressed openness to spending $100k (post tax) to pay devs to make a prototype of KM tool while toiling away at another job. This does not compute for me, especially since, after 2 years at an Open AI you will probably be in a good position to do side consulting at high rates. Whereas after 2 years of paying some devs to work on a KM prototype, you will only make a little part time progress, you will be tired and overworked, and if you don't hit a real home run most people will think you are crazy for doing it.
 ==> if I were you I would bias towards things strongly connected to my prior outsized successes in order to keep "connecting the dots"
 If I were you I would probably do one of the following:
-1. Go work at an AI safety research lab
+
+-- Go work at an AI safety research lab
 Save the world. (If you truly believe we're all doomed to be destroyed by a malignant AI... don't you have a moral imperative to try to help stop it????)
 Leverage your rarified background
 Spend all day working on interesting problems. Follow your passions, but within a framework .
 Take a temporary pay cut, but hone your AI expertise. MAybe do some ML side consulting starting on the 2nd or 3rd year
 2. Go work at a FAANG
-Make tons of $$
+Make tons of $
 Bounce around internally until you find the right job that you love. Take as long as I needed to decide what you want to do long term.
 Once established, slack off and have interesting hobbies.
 I would not do either of the following:
@@ -3700,6 +3695,12 @@ Dan Oblinger
 Founder/CTO
 Analytics Fire
 
+
+  
+  [SNIP](__SNIP__.md)
+ [G-doc Scratch](https://docs.google.com/document/d/19rapJqTzTSeLPrQPIRligaFna5yc44p-gDhdhlOJLdI/edit),  [[SNIP|Snip]],  
+
+  [SNIP](SNIP.md)
 
 
 

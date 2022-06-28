@@ -1,20 +1,16 @@
 ## = ACTIVE
 
-Brian Yormak, Advian Ross (Tessa's contact)
 
-|           |                                    | . . . . . . . . . . . . . . . . . . . . . . . . . . . . |     |
-| --------- | ---------------------------------- | ------------------------------------------------------- | --- |
-| S - W5-12 | [[@Emily Wallach]]                 | BeVC                                                    |     |
-| W - M4-25 | [[@Melissa Cote]]                  | BeVC                                                    |     |
-|           | [[@John Davis]]                    | BeFAANG                                                 |     |
-|           | [[@Michael Freed]]                 | BeFAANG Mgr                                             |     |
-| P - T5-03 | [[@Sahil Kejriwal]]                | Robotics / Startup                                      |     |
-|           | [[__]]                             |                                                         |     |
-|           | [[__]]                             |                                                         |     |
-|           |                                    | <-- see how I am broken?                                |     |
-|           | [[@Juan Huerta]]                   |                                                         |     |
-|           | [@Dan Fine](very very very broken) | <- very broken                                          |     |
-|           | [[@Rafah Hosn]]                    |                                                         |     |
+|           |                     | . . . . . . . . . . . . . . . . . . . . . . . . . . . . |     |
+| --------- | ------------------- | ------------------------------------------------------- | --- |
+|           | [[@John Davis]]     | BeFAANG                                                 |     |
+|           | [[@Michael Freed]]  | BeFAANG Mgr                                             |     |
+| P - T5-03 | [[@Sahil Kejriwal]] | Robotics / Startup                                      |     |
+|           | [[__]]              |                                                         |     |
+|           | [[__]]              |                                                         |     |
+|           | [[@Juan Huerta]]    |                                                         |     |
+|           | [[@Dan Fine]]       |                                                         |     |
+|           | [[@Rafah Hosn]]     |                                                         |     |
 
 ## = SOON
 -    [[@Vittorio Castelli]],

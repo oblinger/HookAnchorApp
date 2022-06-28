@@ -1,8 +1,24 @@
-- [ ] [[Comms]] 
-- [ ] short form summaries Atomic Habits; Managers Path
+
+- [ ] budget
+- [ ] PenFed reset.
+- [ ] Get Schedule C and income from last year
+
+- [ ] Fix audio on laptop
+- [ ] [[Comms]]  
+- [ ] Get Taxes Filed
+- [ ] war stories online
+
+- [ ] lung followup
+- [ ] Amazon key replacement
+- [ ] Call about re-opening long close citibank credit card account.
+- [ ] Clean Email
+- [x] Call PenFed.  
+
+- [ ] Short form summaries Atomic Habits; Managers Path
 - [ ] Dan Fine document
 - [ ] Get Justin's number (clean up suitcase)
 - [ ] Get "Fun" list filled out
+- [x] 311   # 15403113   1->3
 
 
 

@@ -2,7 +2,7 @@
 | WEEKLY        |                                                                                                                |
 | ------------- | -------------------------------------------------------------------------------------------------------------- |
 | **HOT LISTS** | [SimpleNote](https://app.simplenote.com/) [Reminders](https://www.icloud.com/#reminders) AudioMemos # FileThis |
-|               | Bk  Nails  Nose  Groc  Plant  Friday                                                                           |
+|               | Bk  Nails  Nose  Groc  Friday                                                                           |
 | **HOUSE**     | Room: [My-]Desks/Bin/Shelf  House: Pass.                                                                       |
 | **TODO**      | Clean todo list for this week                                                                                  |
 | **PLAN**      | Week plan in Top                                                                                               |
@@ -127,3 +127,87 @@ CNN rnn
   - Later
   - All lists in OblioView and PlanningView
 
+
+
+
+### - OLD (Very from phone contacts)
+
+out of date;  see emacs
+>>WEEK<<
+Plants, Scan Calendar
+NEWS: Watnews
+B-BAG: Batteries, Pills, Reading, Wired
+BACKUP:  Pilot, Sync laptop
+CLEAN: Wallet, I/O Box, Desk(top)
+EMAIL: Inbox, Hold
+PILOT:Hold,ToDo, Work,  Proj, Coor
+Nails,Pay B ills,Plan week
+E:Coorespond
+>>DAILY<<
+Vitamins
+Floss
+>>MONTHLY<<
+P:Notes
+===
+MON  Pick&Shop+[Clean;;Batch;;]
+TUE
+WED	  Laundry;Lst
+THR	  Iron & Hang
+FRI
+SAT
+SUN
+---
+NDUP
+out of date;  see emacs
+
+>>WEEK<<
+
+Plants, Scan Calendar
+
+NEWS: Watnews
+
+B-BAG: Batteries, Pills, Reading, Wired
+
+BACKUP:  Pilot, Sync laptop
+
+CLEAN: Wallet, I/O Box, Desk(top)
+
+EMAIL: Inbox, Hold
+
+PILOT: Hold,ToDo, Work,  Proj, Coor
+
+Nails,Pay Bills,Plan week
+
+E:Coorespond
+
+>>DAILY<<
+
+Vitamins
+
+Floss
+
+
+
+>>MONTHLY<<
+
+P:Notes
+
+
+
+
+
+===
+
+MON  Pick&Shop+ [Clean;;Batch;;]
+
+TUE
+
+WED	  Laundry;Lst
+
+THR	  Iron & Hang
+
+FRI
+
+SAT
+
+SUN

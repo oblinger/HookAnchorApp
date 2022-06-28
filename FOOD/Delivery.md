@@ -1,4 +1,6 @@
-
+ASIAN:	Chinese, Japanese, Thai, Korean, Vietnamese, Burmese, Fusion, Raman, Poke/Hawaiian
+TYPE:	Seafood, Salad, Pizza, Burger, Sandwich, Fast, Soul, Desert, American
+WORLD:	  Italian, Mediterranean, German, Spanish, Mexican, Indian, African
 
 MOM:  Thai, Poki, Seafood, Japanese, Sandwich, EURO(Italian, French, German, Spanish), Salad, Pizza, Burger
 
@@ -11,6 +13,7 @@ MOM:  Thai, Poki, Seafood, Japanese, Sandwich, EURO(Italian, French, German, Spa
 | >>>>  DOORDASH   <<<< |                                                            |     |
 | ====    ASIAN    ==== | >> Chinese, Japanese, Thai, Korean, Pho, Bowls, Burmese    |     |
 | d++~  CHINESE-North   | Dong Bei Mamma                                             |     |
+| d+~~  CHINESE         | Beijing Resturants                                         |     |
 | d+~~  CHINESE         | Big Lantern                                                |     |
 | d+~~  JAPANESE        | Ginza Sushi                                                |     |
 | d+~~  THAI            | Farm House Kitchen                                         |     |
@@ -28,7 +31,6 @@ MOM:  Thai, Poki, Seafood, Japanese, Sandwich, EURO(Italian, French, German, Spa
 | ====    WORLD    ==== |                                                            |     |
 | d+~~  MEDITERR        | Mediterranean Aroma                                        |     |
 | d+~~  ITALIAN         | Pastime Pasta                                              |     |
-| d+~~  CHINESE         | Beijing Resturants                                         |     |
 | ====  AMERICAN   ==== | > Salad, Sandwich, Pizza, Fast                             |     |
 | d++~  SALADS          | Mixt Greens                                                |     |
 | d+~~  PIZZA           | The Pizza Shop (4.5yelp)                                   |     |

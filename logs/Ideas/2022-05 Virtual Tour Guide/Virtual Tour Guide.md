@@ -1,8 +1,22 @@
 
 
+## TODO  [[LOGS/Ideas/2022-05 Virtual Tour Guide/Virtual Tour Guide.pptx|Powerpoint]]  
+
+## Approach
+
+PROBLEM: 
+- Tourist activities are by nature one off activities.  
+- Significant research is needed to ensure all the details work out for each new activity.
+
+SOLUTION:
+
+
+
+## Canvas
+
 Lean Canvas Order of Exploration
 1 PROBLEM		Top 3 Problems
-2 SEGMENTS		Target Customer Segments
+2 SEGMENTS	Target Customer Segments
 3 VALUE PROP	Unique Value (& high lev)
 4 SOLUTION		Top 3 Features
 5 UNFAIR ADV	Things that cannot be easily copied or bought

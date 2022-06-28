@@ -1,3 +1,16 @@
+[ ] budget
+- [ ] https://betterprogramming.pub/how-to-creat
+- [ ] Polynesian cultural center, hike
+- [x] remove mealy-bug plants
+- [x] LUIS - One pagers for all startup ideas as needed for Luis. Meet Luis. Close to done.
+- [x] Restart Coursera training
+- [x] Read Nick's V2
+- [x] Completed FAANG planning across all areas to some level
+-
+- [x] Completed FAANG planning across all areas to some level
+-
+- [x] Write announcement email (maybe more)
+- [x] Get stuff to Salvation Army
 - [x] in2 quick scrub
 - [x] One button night noise / Biurnal beats / Use shortcut  (add apps to home screen)
 - [x] Org these lists & obsidian

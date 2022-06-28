@@ -1,9 +1,11 @@
-
-[[Forum Mechanically Unbiased]],  
+## Todo  [[LOGS/Ideas/Ideas Social/Forum/Forum.pptx|Power Point]] 
+- [ ] Research prototype Forum platform
+- [ ] Look for partners:  Jason, The common wealth club, Braver Angels, ...
+- [ ] Build & Test prototype; Run 4-6 person alpha.
+- [ ] Run time-limited alpha test.
 
 
 # 2022 - THE FORUM - WHAT WE BELIEVE
-
 ## = APPROACH
 ### Steps
 
@@ -223,6 +225,20 @@ PARTICIPANT METRICS
     
 
 
+## Topics
+### Minimal Build
+- DISPLAY NOTE STACK
+	- CORE SCREEN - this screen is the heart of the forum interface
+	- META - Full name, title, bread crumb path
+	- RICH TEXT - Bold, Italic, Underline, images
+	- COMMENTS - Both +1 and -1 comments listed to the side.
+	- ARRANGEMENT - Author orders and prioritizes comments
+	- SECTIONS - A note can have a list of parts or sections
+	- CRITIQUE - Each note has a critique note
+- EDIT NOTE
+- ACCOUNT MGT
+- ALGORITHM
+- 
 # 2020 - DESCRIPTION
 ## = OVERVIEWS
 ### NAMES 
@@ -424,7 +440,7 @@ Questions:
 - Would for-profit companies pay for assessments of their content and of their processes?
 - Will I like a role of shepherding such a community and effort forward?
 
-# 2020 - SOLUTION DETAILS 
+## 2020 - SOLUTION DETAILS 
 ## KEY IDEAS
 ### _
 
@@ -1525,16 +1541,304 @@ https://www.hostinger.com/tutorials/best-forum-software
 Reuters joins the list of US fact-checking partners that include The Associated Press, PolitiFact, Factcheck.org, and four others. Facebook offers fact-checking in over 60 countries, though often with just one partner like Agence France-Presse’s local branches.
 
 _
+# REF
+### t2022-06-11  Medium how fear and outrage is sold for profit.
+
+https://tobiasrose.medium.com/the-enemy-in-our-feeds-e86511488de
+
 # LOG
+### m2022-06-21  Joe Yeh
+
+
+- [ ] 
+- [ ] Heritage Foundation; Commonwealth Club; Cato Institute; 
+	- [ ] Who would provide visibility?
+	- [ ] Thought leaders
+- [ ] https://www.commonwealthclub.org    Live Events    $1000 plate fundraising events
+- [ ] Connected with a school - 
+### t2022-06-10  Yashin: Forum example of moderate acceptance of voter fraud claim
+
+  
+  
+
+> January 6 widens the political divide fora number of reasons not the least because it makes Republicans just look like people who have alien logic. It's difficult to relate to.
+
+  
+
+:-)   spoken like a liberal.  I think the a conservative can look negatively upon the Jan 6th commission w/o alien logic.  But I think it might not be worth me trying to support that claim.
+
+  
+
+  
+
+  
+
+> I'm looking through some of the footage of the January 6th commission. No doubt what Philippa said about people not being interested in evidence that contradicts their beliefs is shaped by this recent event. There really was no evidence of widespread fraud, and 70% of Republicans still believe the election was not fair. I don't get it either, but it really does tell you the power of having someone that is highly respected (Trump) influencing people's beliefs.
+
+  
+
+Indeed.  And more than that, it is simply shows the power of believing what you are motivated to believe.
+
+  
+
+> The problem is that he's not evidence based. This is also scary in that out could suggest that the left, you or me could also be susceptible to such brain skips.
+
+  
+
+Not could be, WE ARE susceptable.  Progressives are blinded by believing themselves different.
+
+  
+
+But this is not about not being evidenced based.  Trump uses lots of evidence and ignores even more.  One should not describe what Nancy Pelosi, Ted Cruz, or Donald Trump is doing is getting to truth thru evidence…..   No they already know the conclusion that want, and they are looking for the best evidence which can support that conclusion.
+
+  
+
+The “evidence rules" that Nancy must play by are more different than those of Trump, but their approach and goals are the same.  
+
+  
+
+(Also don’t need to debate exactly what I mean by this claim either.)
+
+  
+
+  
+
+  
+
+  
+
+> So for me, I'm interested in what the forum can do as a go to place for those people at the edges, who might be undecided or questioning. Or the Ragfenspergers. That's the main hope I have.
+
+  
+
+Yes providing a source for those who are genuinely questioning / undecided is a huge goal.
+
+  
+
+And another perhaps bigger goal:   Ground our national conversation with a tiny bit of reality.   
+
+  
+
+  
+
+Here is how:
+
+(1) Assuming that the forum really has strong/articulate conservative voices in it.
+
+      It will have powerfully presented conservative perspectives on key issues.
+
+(2) Assuming it has open-minded liberals in it, those open minded ones will ARGEE with key claims made
+
+      As part of those conservative perspectives.   (They don’t agree w/ conclusions, just agree with certain claims)
+
+(3) Non-open minded conservatives from the larger population “cherry pick” those perspectives they already believe.
+
+      They will say:   ``See!!  Even Liberals accept X and Y are true!!”
+
+  
+
+(4) Over time conservatives see the forum as having honest conservative values, and informed perspectives.
+
+      They will have used liberal agreement with certain facts they know to be true as evidence in arguments online & off
+
+(5) Then when some open minded conservative agrees with a liberal claim that YYYY is true they will pause and consider
+
+      (Especially since that open-minded conservative explains how they concede this small point, but still retain their 
+
+       Larger conservative conclusions about the larger issue.)
+
+  
+
+  
+
+Notice how the Forum is different here:
+
+  
+
+Imagine this is a conservative who says  ``American elections are inherently unsafe, cheating can happen and the moves towards mail in ballots is just a ploy to allow MASSIVE cheating.  I think liberals are systematically trying to throw the election unfairly in their favor on each election.  And I think illegal immigration is just a ploy to get more democrat voters.''
+
+  
+
+     …. but I have to concede, while I still think fraud probably happened, we just don’t have the evidence to prove that it did.
+
+     …  It is true that Trump appointed judges saw the evidence presented, and dismissed it as not having the basis for a case.
+
+  
+
+  
+
+See how a close minded conservative is much more likely to listen to this voice.  This voice is not trying to convince them that fraud did not occur.  They can tell this voice WANTS to support the fraud claim, but just cannot support the claim that we have proof, since we don’t.  It is the perspective of this voice that makes it so much more powerful for the somewhat close minded listener. 
+
+  
+
+It is just w/o the forum we have no mechanism to elevate the opinions of these rare “strongly partisan, open-minded thinkers”
+
+  
+
+That is what the forum does.  (I hope)
+
+  
+
+  
+
+  
+
+NOTICE:  My goal with the forum is not to try to convince the conservative that voter fraud did not occur, or that our election system is in good shape, or that liberals aren’t trying to steal etc.  None of that is on the table.  What **IS** on the table is the narrow claim that we don’t have evidence to massive fraud against Trump.  That narrow claim is it.  (But if that narrow claim was broadly accepted it would massively adjust the national discussion.  It would inject just a bit of reality into that discussion.)
+
+  
+
+  
+
+—dan
+### t2022-06-07  Yashin response about OARS and DARN
+
+>   
+> Seems like if the forum could incorporate principles of behavior change, it could perhaps help?
+> 
+>   
+> 
+> Observing the email conversations with Mark and Leslie, sometimes it seems that the more interested you were in having them follow you into a line of logic you were confident would prove they actually might agree with you, the less interested Mark was in engaging. 
+
+  
+
+Indeed it is an occasional failure mode of mine.  When I perceive the other person to be ignoring a cut-and-dried, black-and-white consideration I first try to express it in a constructive way.
+
+  
+
+When I perceive them as deliberately dodging the bullet, I can revert into a prove-it-to-you mode and the other person generally can sense this, and goes into hyper defense.  Denying even that 2+2=4 as a defensive tactic against a logic weapon being wielded.
+
+  
+
+Not so constructive from my side.  I generally don’t do it in cases that I don’t respect the other person.  Rather it happens when I have some or alot of respect for the other, but they are being intentionally or unintentionally obtuse as a arguementation tactic.
+
+  
+
+I HATE THIS TACTIC!  Still, I have to concede that my response to it, is not very helpful.
+
+  
+
+  
+
+>   
+> 
+> Not sure the below is helpful, but I think what Philippa was pointing out it's that the average person isn't motivated to listening to counter arguments. That's really true. 
+
+  
+
+agreed.
+
+  
+
+> We're all focused elsewhere, and after maybe ones 20s, exploring new views is even lower priority than before. So how to emphasize the importance of productive discourse? I understand that in the forum the motivation is to produce an accurate statement of my beliefs and the underlying evidence supporting it. Correct?  
+
+  
+
+Is correct, but it aims for more.  Both sides are aiming for the most compelling mind changing framings.  So there are two aspects of the system that help at least a little bit for this:
+
+  
+
+(1) Smart partisans will read the counter points being made against their arguments, and naturally they will want to select the most compelling arguments….  Those will involve facts, but they will be the most COMPELLING ones… including emotion and other considerations.
+
+  
+
+(2) Assuming I can select for those rare partisans that are open minded in accepting counter evidence (while not changing their overall stance) I hope to co-opt them in producing the persuasive arguments.  (AGAINST the position that they hold.)
+
+  
+
+This is a subtle idea… let me provide an example:   Joe believes the climate change winers are overblowing the issues, and it has strongly against most legislation that tries to mitigate climate change.  But Joe is also pretty sophisticated in understanding studies and statistics etc.
+
+  
+
+So the Forum sees he is anti-climate, but that he has judged this specific claim made about climate change causing ice sheet melting.  A pro-climate person argues this study shows compellingly that the haderwhite self’s collapse in 2014 was driven significantly by human driven warming.
+
+  
+
+The algorithms sees he has pretty high authority score too, so it invites him to justify his reason for accepting this pro-climate person’s argument.  
+
+  
+
+Now remember Joe STILL does not think we need to enact legislation … things are not that bad, BUT this study and argument IS valid.  He must concede it.
+
+  
+
+When the algorithm asks you to write up your arguments, it is very likely that they will be prominent on the site, since it already knows the structure of the votes, and your position in them.  So Joe is motivated to do a good job with his post.
+
+  
+
+  
+
+Now think about the situation….   An anti-climate person sees this claim…  human warming collapse ice shelf, and it has three check marks.  Meaning it is being accepted by the open minded folks ON HIS SIDE.  So he thinks, well let me see that these “so called” conservatives are saying.  (He is skeptical that this is just a RINO pretending to be conservative.)
+
+  
+
+But all the words written by Joe are clearly from an anti-climate perspective.  Yes this shelf melted, but that does not mean others will, or even if they do, we can deal with the elevated water (or whatever).  I think hearing this perspective is a much more compelling argument for the anti-climate person.
+
+  
+
+It is more compelling for the simple reason that the reader can tell Joe is NOT trying to make an argument that is pro-climate … Joe is just acknowledging this narrow fact in a begrudging kind of way.   It is the begrudging nature of Joe’s perspective that lets the reader drop their guard.  Joe is NOT trying to slide one over on them.
+
+  
+
+They can tell Joe is ALSO anti-climate, yet begrudgingly Joe is accepting this one fact, because of his deeper understanding the stats, and careful reading of the paper.
+
+  
+
+~~
+
+  
+
+There are alot of other ideas in the really interesting stuff you copied here.  In one way the goal of the form is not behavior change, but rather it is belief change.  And indeed it is not even belief change.  (Since the forum does not know which positions are superior, it is not really trying to aim towards any particular position.)
+
+  
+
+Its aim is simply to elevate the discussion into a place where as many starting assumptions as possible are accepted by many.
+
+  
+
+The other gap to that info, is the forum is focused on ’self-serve’ info output.  Maybe there could be a way to cause the forum to have each person execute OARS or DARN on others.  It is an interesting idea, but I think the number of really good ‘rare’ people used to drive the system will be pretty rare, so it will be harder to have them doing any kind of one-on-one coaching.  Still maybe they could execute a kind of DARN via text discussion with many others at one time.
+
+  
+
+This is kind of the sort of interaction I imagine a person with high authority would be doing within their community.
+
+  
+
+Interesting way to think about it.
+
+  
+
+—d
+
+
 ### n2022-05-28  Raw material for Immigration issue based slides
+
 
 Conservative issues:  Immigration, 2020 Election Fraud
 Liberal issues: Guns, Climate
 
 
-Recent US Immigration
+- **2020 Immigration** -- At issue are the causes, consequences, and levels of recent undocumented/illegal immigrants entering the United States
+	- **Disastrous Biden Policies** -- In a few short years Biden has enacted a number policies which together have had a disastrous effect on illegal immigration to the United States.
+		- **Cancelled remain in mexico** -- This likely has significantly increased illegal immigration for immigrants waiting for their court case to be heard.
+		- **Reinstated catch and release** -- 
+			- **Its the Law!** -- US law guarantees every seeker their day in court.  Using title 42 to deny this w/o medical need it illegal.
+		- **Spiked under Trump too** -- Immigration spikes happen, we had a similar sized spike under Trump.
+	- **Undocumented Immigrant Issue improves with time** -- Biden and Trump both had a spike in undocumented immigrants at the border.  Despite these spikes, the overall trend in the number of illegal immigrants in the country has been steadily declining over the last 25 years.
+	- **Immigrants Drive American Greatness** -- We are a country of immigrants, just as as mass immigration from China's country sides drive its immigration so to do immigrants from Elon Musk down to the homeless child at our border drive our greatness.
 
-DISASTEROUS BIDEN POLICIES
+- Remain in Mexico worked -- 
+- Catch and release 
+
+- +++
+
+	+++ Tribe, Neutrals, Experts
+	
+
+Percentile match to a given tribe
+Percentile rank of opinions on axis
+
+
+
 
 
 ### n2022-05-27  Thinking about how to drive compromise  (Using 2020 election fraud example)
@@ -1577,6 +1881,7 @@ Every election presumably has some degree of fraud.  The 2020 election had a man
 
 - Explain idea at highest level & get a gut check reaction; quick pointers
 - 
+
 
 ### t2022-05-05  Invitation to talk w. Al
 

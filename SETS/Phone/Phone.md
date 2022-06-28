@@ -1,3 +1,40 @@
+### 2022-06-27  PENFED - reset connection / 
+
+Dear DANIEL OBLINGER,  
+  
+We received your credit reporting dispute request submitted on 6/9/2022  
+  
+**Request Confirmation details**  
+  
+Case Number: 24827356  
+Case Opened Date: 6/9/2022  
+Account Number: PenFed Platinum Cash Rewards , ****6320  
+  
+  
+Please note, disputes may take 30 - 60 days to process.
+
+
+
+
+~
+Fix File This
+Case Number - 25693279
+
+
+### 2022-06-06  Fix MAC mic
+
+case number:   # 101718202650
+
+https://survey.apple.com/efm/se/3D3148E47A9D5BC608DA47FB7EA9C6687A/lang/en-US/?pl=es-MX%2cpt-BR%2cfr-CA%2czh-CN%2cko-KR%2czh-TW%2cde-DE%2cnl-NL%2cit-IT%2ctr-TR%2cru-RU%2csv-SE
+
+Reset of NVRAM fixed the issue.
+
+### 2022-06-06  Drains Flooding
+
+called city:
+They did not call back, but closed out the ticket so maybe they did something?
+- [ ] 311   # 15403113  
+
 ### 2022-05-11  American Airline
 
 800-433-7300  
@@ -459,7 +496,7 @@ all charges reversed.  alfred from capital 1  cleaned this up nicely
 
 ### 2016-11-06 changed address
 
-Billing at *Schwab / *Vangard / *Penfed / *Capital One
+Billing at *Schwab / *Vangard / *Pen fed / *Capital One
 
 updated address at USPS
 

@@ -1,6 +1,15 @@
   [SandboxFutility](SandboxFutility.md)  [Argument](Argument.md)  [ProblemOfQualia](ProblemOfQualia.md)
 
-### _
+## TODO
+### who to talk to
+- Professors
+- 
+### discorse server
+- Threaded discussions
+
+
+
+#### _
 intros; AI-conslutant - agen
 
 integrated information theory
@@ -17,14 +26,37 @@ REQUIRED INGREDIENTS
 - aggregating -- it possible to combine K, then it does
 - learning of post genomic K
 _
-# ### TODO ###
-### who to talk to
-- Professors
-- 
-### discorse server
-- Threaded discussions
-- 
-# ### TOPICS TREE ###
+# TOPICS TREE
+## META
+### MY STANCE
+
+### EXPECTED PROGRESSION
+#### Not tied to progress in manual AI Instead tied to fraction of human and world knowledge captured
+
+#### Expect Category-At-A-Time Jumps based on New Alg Applications in Data-Driven-AI
+1. Capability Stasis - Performance marginally improves as algs are tweaked, CPUs and datasets improve.
+2. Novel Alg Application - 
+3. Alg Refinement - 3-10 years of fast advancements as field understand how/why the new idea works, where it can productively be applied, and key recipes for each area
+
+##### Examples
+- AdaBoost - 
+- 2006 RELU Paper - Drove effective learning of very deep nets
+- MCMC as applied to GO
+- DL+RL as applied to Atari
+- GANS as applied 
+
+#### Qualitatively How Big Can/Will the jumps be?
+
+
+#### VERY HARD TO STOP
+- Nation states see this as nation interest
+- Corporations see this as existential
+- Robust academic interest
+- Humanity cannot muster cohesive response even when threat is MUCH better understood.  (e.g. climate change)
+
+>>> Should I say, pragmatically impossible to stop w/o smoking gun evidence of imminent threat.
+
+
 ## === CORE CLAIM: UNCONTROLABILITY ===
 ### --- PROOFS OF CONCONTROLABILITY ---
 #### -- POSSIBLE BEHAVOIRS OF A SYSTEM IS MUCH LARGER THAN WHAT IT CAN ANALYZE -
@@ -243,7 +275,7 @@ _
 ### --- Functional Models
 Induce functional prediction model 
 ### --- Sub-variable identificationAGI
-# ### THE AGENDA ###
+# THE AGENDA
 ### --- THE SETTING ---
 - **KB THREAT** -- The unique properties of a KB threat.  
 	- PHYSICAL WORLD BLOCKER -- Physically incapable of executing part of plan.
@@ -354,7 +386,7 @@ DRIVES
 _
 ## === 
 _
-# .25 - RED ALERT - THIS IS NOT A DRILL - I REPEAT THIS IS NOT A DRILL
+# 2022-02-25 - RED ALERT - THIS IS NOT A DRILL - I REPEAT THIS IS NOT A DRILL
 
 Stuart Russell noticed that humanity's response to the AGI threat is not similar to what one might expect if we learned an alien species was going to arrive in the next century.  I believe this is not because much of humanity (and the AI community itself) believes the really cannot arrive, but it is because they believe:
 (1) if such a threat exists it is far far into the mists of the future, and
@@ -369,6 +401,7 @@ The aim here is to scare the bleep out of humanity, and to dramatically increase
 
 
 # 2022-02-25 - DAG OF SCOPES / INHERENT TO SOCIETY OF AGENTS / 0-DAY-ATTACKS
+
 # 2022-02-25 - INHERENT CENTRALIZATION / SUCCEPTABLE TO DEVISTATING ATTACK
 
 Hiearchy is common in, military, corporate, governmental, societal organizations.
@@ -429,27 +462,8 @@ It is clear from human history in computation that there is significant substrat
 
 
 
-# 2022-02-24 - LARGEST CLAIMS
-- One cannot sandbox a willful GAI
-- An AGI that desired it would likely 'win' in a battle against humanity
-- Humanity will likely construct its first AGI within decades 
-	(and probably cannot stop itself from doing this)
-- Alignment is our only hope
-~-~
-- In complex spaces understanding the interaction between any optimation criterion and that space becomes impossible as complexity increases.
 
-
-The Miri guys believe all of this!
-
-
-
-
-
-
-
-
-_
-# 2022-01-18 >>> ASK EVAN HUBINGER <<<
+# wp2022-01-18 >>> ASK EVAN HUBINGER <<<
 ## Snipits
 
 [OBJECTS](n:all)  IN THE MIRROR ARE CLOSER THAN THEY APPEAR
@@ -1104,52 +1118,28 @@ You took ALOT of wind out of my sails, when you pointed out that once we have th
 
 _
 ## === ROADMAP ===
-# 2022-02-28 - Notes from reading Alignment forums
+# WP
+### wp2022-02-24 - LARGEST CLAIMS
+- One cannot sandbox a willful GAI
+- An AGI that desired it would likely 'win' in a battle against humanity
+- Humanity will likely construct its first AGI within decades 
+	(and probably cannot stop itself from doing this)
+- Alignment is our only hope
+~-~
+- In complex spaces understanding the interaction between any optimation criterion and that space becomes impossible as complexity increases.
 
-[Alignment Difficulty](https://www.alignmentforum.org/s/n945eovrA3oDueqtq/p/7im8at9PmhbT4JHsW) 
-[NGO SAID]
-Let me try and be more precise about the distinction. It seems to me that systems which have been primarily trained to make predictions about the world would by default lack a lot of the cognitive machinery which humans use to take actions which pursue our goals.
 
-Perhaps another way of phrasing my point is something like: it doesn't seem implausible to me that we build AIs that are significantly more intelligent (in the sense of being able to understand the world) than humans, but significantly less agentic.
-Is this a crux for you?
-(obviously "agentic" is quite underspecified here, so maybe it'd be useful to dig into that first)
-
-
-~-~~-~~
-[Instrumental Convergence](https://www.alignmentforum.org/posts/L9HcyaiWBLYe7vXid/distinguishing-claims-about-training-vs-deployment#Instrumental_convergence) Ngo.
-Drive towards Power and Money will become terminal goals
-
-~-~~-~~
+The Miri guys believe all of this!
 
 
 
-# ### LOG ###
-## 2022-02-24 - 
-
-- https://www.lesswrong.com/questions -- Where I can post.
-- https://www.alignmentforum.org/library -- Where the big boys post.
-- [11 Proposals for safe AI](https://www.alignmentforum.org/posts/fRsjBseRuvRhMPPE5/an-overview-of-11-proposals-for-building-safe-advanced-ai) 
-- [Risks from Learned Optomization](https://www.alignmentforum.org/s/r9tYkB2a8Fp4DN8yB) 
-- [steve burns](https://www.alignmentforum.org/s/HzcM2dkCq7fwXBej8) - How humans learn
-
-- yan lika - higher-level motivation
-- The "open fill report".  https://www.stateof.ai 
 
 
-Evan Hubinger2:06 PM
-
-Evan Hubinger2:12 PM
 
 
-Evan Hubinger2:17 PM
 
-risk and optimation 
-
-alignement - sequences 
-lesteron
-open fill report 
-
-## 2022-02-06 - Quicklist Key Conclusions
+_
+### wp2022-02-06 - Quicklist Key Conclusions
  
 - **SUMMARY CONCLUSION** -- all plausible paths lead to humans loosing control, within the lifetime of the youth today, and we may already be past the point of no return.
 	- PLAUSIBLE PATHS -- we outline a plasible unfolding of AI into AGI.  we consider the plausibilty of various reasons why AGI might not happen, and various ways to control AGI.
@@ -1187,7 +1177,7 @@ open fill report
 		- ATTEND / FOCUS - 
 
 _
-## 2022-02-01 - EOCA Book Intro
+### wp2022-02-01 - EOCA Book Intro
 
 When I have brought up the topic of humanities loss of dominance to academic collegues in AI, they generally do not dismiss this idea out of hand.  After pushing through some of my arguments, we often get to a place where they say, "well it could be, but really there are so many unknowns here, it is difficult to say much of anything with any confidence." And the conversation kind of dies there, it is not that they are disagreeing, or even saying these ideas are implausible, or other ideas are more plausible.  Instead they are kind of just passing on the topic.  They have spent their careers analyzing and uncovering new truths which they can know with enough certainty that they can publish them in respected journals within our field.  They look at this topic, and correctly conclude that it is presently not possible to engage Dan's topic in that kind of a way, so consideration of that topic is out of scope for me, and for my kind of scientific enquiry.
 
@@ -1196,7 +1186,7 @@ Further, I have come to believe that we CAN obtain consensus and some degree of 
 
 
 _
-## 2022-01-17 - The treasonous human
+### wp2022-01-17 - The treasonous human
 
 - The Treasonous Thought:  maybe we shouldn't even have a right to stop the evolution of the next stage of intelligence
 - Rough Analogy: Consider historical human perspectives:
@@ -1210,7 +1200,74 @@ The treasonous American and that's me in the treason is the treasonous thought i
 
 
 _
-## 2022-01-11 - The intrisic value of knowelge
+# LOG
+### n2022-02-28 - Notes from reading Alignment forums
+
+[Alignment Difficulty](https://www.alignmentforum.org/s/n945eovrA3oDueqtq/p/7im8at9PmhbT4JHsW) 
+[NGO SAID]
+Let me try and be more precise about the distinction. It seems to me that systems which have been primarily trained to make predictions about the world would by default lack a lot of the cognitive machinery which humans use to take actions which pursue our goals.
+
+Perhaps another way of phrasing my point is something like: it doesn't seem implausible to me that we build AIs that are significantly more intelligent (in the sense of being able to understand the world) than humans, but significantly less agentic.
+Is this a crux for you?
+(obviously "agentic" is quite underspecified here, so maybe it'd be useful to dig into that first)
+
+
+~-~~-~~
+[Instrumental Convergence](https://www.alignmentforum.org/posts/L9HcyaiWBLYe7vXid/distinguishing-claims-about-training-vs-deployment#Instrumental_convergence) Ngo.
+Drive towards Power and Money will become terminal goals
+
+~-~~-~~
+
+
+
+### m2022-03-25  - guy writing book on evil and ai control
+
+I likely will not write my opus... had a young kid at an older age... but mine rhymes with yours.
+
+I was and AI researcher, now turned startup guy. I am out of step with my former peers, in feeling that (1) we are closer to general AI than we think, and (2) we won't be able to control it.
+
+Indeed I am doubtful about the enterprise of trying to control sentience at all. It "has a will of its own" as they say. Imagine you are the emperor of Rome at its peak, but imagine it was an empire that spanned all humans. And imagine that God told you the best actions to take in order to achieve eternal world peace without resorting to creation of a brutal authoritative regime that removed all human agency. Could you do it? No you could not. Cultures would evolve, human agency would spawn new contexts, which spawn new modes of thinking. Thousands of generations later, your actions will have had effect on the course of history, but it cannot put human agency out of business.
+
+In the same way, even if we are infinitely smart in the creation of our AI... if it has agency, and if designs its own future thinking, it is like the thousands of generations above, but only more so, since the kinds of changes that an AI can imagine are more profound than those culture can bring.
+
+1 + 1 cannot equal 3.
+
+and a sentience that is evolving its sentience cannot be contained.
+
+I suspect we will one day learn both of these to be axioms derived from the same mathematical substrate.
+
+~~
+
+so what does this have to do with Evil? Well even if we cannot contain such a sentience, does not mean it wont be contained. it is possible that it is contained by that nature of sentience itself. Perhaps all self refective things tend to evolve a morality, and then operate against this morality. This cannot be an absolute, since we have counter examples in our midst. Still it could be a tendency... a chaotic attractor to which an evolving sentience is drawn.
+
+or that could be my wishful thinking.
+
+ok... I would say that is quite enough for a reply to a post :-)
+
+--dan
+
+p. s. I am not clear that a benevolent sentience would not simulate pain, plagues etc. worlds free of pain generally appear quite dystopian to me.
+### r2022-02-24 - Places I should be reading
+
+- https://www.lesswrong.com/questions -- Where I can post.
+- https://www.alignmentforum.org/library -- Where the big boys post.
+- [11 Proposals for safe AI](https://www.alignmentforum.org/posts/fRsjBseRuvRhMPPE5/an-overview-of-11-proposals-for-building-safe-advanced-ai) 
+- [Risks from Learned Optomization](https://www.alignmentforum.org/s/r9tYkB2a8Fp4DN8yB) 
+- [steve burns](https://www.alignmentforum.org/s/HzcM2dkCq7fwXBej8) - How humans learn
+
+- yan lika - higher-level motivation
+- The "open fill report".  https://www.stateof.ai 
+
+
+
+risk and optimation 
+
+alignement - sequences 
+lesteron
+open fill report 
+
+
+### t2022-01-11 - The intrisic value of knowelge
 https://medium.com/science-and-philosophy/is-knowledge-valuable-for-its-own-sake-b0cbd2695422
 
 
@@ -1229,7 +1286,7 @@ Clarification of the context here: For most humans, we are not entirely sure… 
 huh… that was a surprisingly satisfying shoot-from-the-hip rumination ;-)
 
 _
-## 2021-06-23 - Evan Response
+### t2021-06-23 - Evan Response
 
 Evan,
 
@@ -1274,7 +1331,7 @@ I also want to challenge both my and your thinking about the incorrectness of ac
 
 
 _
-## 2021-05-19 - Quick Agenda
+### n2021-05-19 - Quick Agenda
 -- Website w/ discussions
 -- Book on topic
 
@@ -1289,57 +1346,7 @@ TIE-UPS
 
 
 _
-## 2021-05-18 - Who To Talk To?
-- [Josh Alspetor](https://www.linkedin.com/in/josh-alspector-11959b/) (consult; IDA)
-- [Ron Keesing](https://www.linkedin.com/in/ronkeesing/) 
-- [Kamil Ali](https://www.linkedin.com/in/kamal-ali-phd-936b91/) consulting
-- [Byron Dom](https://www.linkedin.com/in/byron-dom-8a16b5/) consuting
-- Mark Reid (apple)
-- Barbahen (Visiting Scientist)
-- BARNEY PELL
-
-- MICHAEL WHITBROCK
-- PAUL COHEN -
-- GEORGE CYBENKO - 
-- PEDRO DOMINGOS - 
-- BEN KUIPERS - 
-- PRAVEEN PARITOSH
-- Joe Hellerstein, Ron Brachaman, Steve Chien
-- PETER STONE / TOM MITCHELL / TOM DITTERICH / PAT LANGLEY 
-- Bill Kohen (google) / Mike Pizzani / Hayam Hirsh / Doug Lenat / 
-
-- ANDREW CHEN - @Andreessen
-- ROGER MAILER - 
-
-ACADEMIC FUNDING
-- [Stuart Russell](https://www.linkedin.com/in/stuartjonathanrussell/) 
-- [David Israel](https://www.linkedin.com/in/david-israel-264134/)
-- [Doug Reiken](https://www.linkedin.com/in/dr-doug-riecken-7742018/) 
-- [Ray Perrult](https://www.linkedin.com/in/raymond-perrault-14524137/) 
-
-READY FOR CORP
-- [Rodrigo Braz](https://www.linkedin.com/in/rodrigo-de-salvo-braz-412248/) 
-- BEN WILD -  
-- [Dennis Decoste](https://www.linkedin.com/in/dennis-decoste-40a408/)  AI Corp Mgr
-- THEO ENNS - 
-- GREG HORNBY - 
-CORP ML
-- [Nina Mishra]
-- [John Langford](https://www.linkedin.com/in/john-langford-75981022/)    MS Research
-- [Foster Provost](https://www.linkedin.com/in/foster-provost/) 	prof -> compass scientist
-
-AI CONSULTING
-- [Dean Alemang](https://www.linkedin.com/in/dean-allemang-96218/) 
-
-OTHER 
-- [Carl Kadie](https://www.linkedin.com/in/carlk/) Retired MS Reseracher.  Open source projects
-- [Andrew Chen](https://www.linkedin.com/in/andrewchen/) Andreesen Horowitz
-- [Adelec](https://www.linkedin.com/in/abkl/)   
-
-- RICH CARUANA - 
-- GIL PRATT -
-- TED SENATOR - 
-## 2021-05-13 - Alg setup
+### n2021-05-13 - Alg setup
 
 - TRAINING REGIMINES --
 - STRUCTURED LESSION -- 
@@ -1356,11 +1363,7 @@ _
 - TIME PHASE TRIGGERING (within / across) term
 
 _
-## 2021-05-11 - Hard Step
-
--- contemporaneous bottom-up parsed lingual structure
-_
-## 2021-05-06 - Disposition - Stance and Agenda
+### n2021-05-06 - Disposition - Stance and Agenda
 
 
 
@@ -1381,7 +1384,7 @@ I am not clear if there is ultimately anything we can do to stop these risks
 
 
 _
-## 2021-03-24 - Note to Mark and Leslie
+### t2021-03-24 - Note to Mark and Leslie
 
 
 
@@ -1412,32 +1415,3 @@ And it seems having a window of dominance could help us understand if there is a
 So ironically enough the AI researcher who believe is dooms day is still arguing to do the AI research, since the worst outcomes are like to result from learning the key parts of the bootstrapping algorithms long after Moore’s law has put enough nuclear material into the average smart phone to do us in.
 
 Sound a little self serving huh?  But the logic seems unassailable…
-
-# # MEETINGS
-### 2022-03-25  - guy writing book on evil and ai control
-
-I likely will not write my opus... had a young kid at an older age... but mine rhymes with yours.
-
-I was and AI researcher, now turned startup guy. I am out of step with my former peers, in feeling that (1) we are closer to general AI than we think, and (2) we won't be able to control it.
-
-Indeed I am doubtful about the enterprise of trying to control sentience at all. It "has a will of its own" as they say. Imagine you are the emperor of Rome at its peak, but imagine it was an empire that spanned all humans. And imagine that God told you the best actions to take in order to achieve eternal world peace without resorting to creation of a brutal authoritative regime that removed all human agency. Could you do it? No you could not. Cultures would evolve, human agency would spawn new contexts, which spawn new modes of thinking. Thousands of generations later, your actions will have had effect on the course of history, but it cannot put human agency out of business.
-
-In the same way, even if we are infinitely smart in the creation of our AI... if it has agency, and if designs its own future thinking, it is like the thousands of generations above, but only more so, since the kinds of changes that an AI can imagine are more profound than those culture can bring.
-
-1 + 1 cannot equal 3.
-
-and a sentience that is evolving its sentience cannot be contained.
-
-I suspect we will one day learn both of these to be axioms derived from the same mathematical substrate.
-
-~~
-
-so what does this have to do with Evil? Well even if we cannot contain such a sentience, does not mean it wont be contained. it is possible that it is contained by that nature of sentience itself. Perhaps all self refective things tend to evolve a morality, and then operate against this morality. This cannot be an absolute, since we have counter examples in our midst. Still it could be a tendency... a chaotic attractor to which an evolving sentience is drawn.
-
-or that could be my wishful thinking.
-
-ok... I would say that is quite enough for a reply to a post :-)
-
---dan
-
-p. s. I am not clear that a benevolent sentience would not simulate pain, plagues etc. worlds free of pain generally appear quite dystopian to me.

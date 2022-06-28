@@ -1,3 +1,56 @@
+### 2022-06-20
+- [x] JOE READY - 4 hours on WarStories. 
+- [ ] BENJIO - What is my GANs idea
+- [ ] HACK - Hack some tensor flow
+- [ ] FAANG (matrix, courses, war stories, reading)
+
+- [ ] [[DYL]] Build 3 Odyssey plans.  Dan one-pager.  Prototype chapter
+- [x] Mgr Book (read in background)
+
+SECOND:
+- [ ] Yearbook restart
+- [ ] Research platforms for prototype
+
+### 2022-06-13
+- [x] JOE READY - 4 hours on WarStories. 
+- [ ] BENJIO - What is my GANs idea
+- [ ] HACK - Hack some tensor flow
+
+- [x] LUIS - One pagers for all startup ideas as needed for Luis. Meet Luis. Close to done.
+- [ ] FAANG (matrix, courses, war stories, reading)
+- [ ] [[DYL]] Build 3 Odyssey plans.  Dan one-pager.  Prototype chapter
+- [x] Mgr Book (read in background)
+
+SECOND:
+- [ ] Yearbook restart
+- [ ] Research platforms for prototype
+### 2022-05-24
+- [x] LUIS - One pagers for all startup ideas as needed for Luis
+- [x] FAANG (matrix, courses, war stories, reading)
+	- [x] Do 2 hour on WarStories
+- [x] Restart Coursera training
+
+- [ ] THREE odyssey:  FAANG, CTO, INVENTOR | CEO
+- [ ] [[DYL]] Finish prototyping chapter
+
+
+SECOND:
+- [ ] Yearbook restart
+- [ ] Forum prototype build
+
+### 2022-05-24
+- [x] W1  Finish forum presentation; Yashin feedback; meeting
+- [x] Completed FAANG planning across all areas to some level
+- [ ] One pagers for all startup ideas
+
+- [ ] THREE odyssey:  FAANG, CTO, INVENTOR | CEO
+- [ ] [[DYL]] Finish prototyping chapter
+- [ ] Do 2 hour on WarStories
+
+- [ ] Finish Atomic Habits
+- [ ] +Do Tile Robot odyssey
+- [ ] Restart Coursera training??
+
 ### 2022-05-24 - Forum presentation
 - [x] W1  Finish forum presentation; Yashin feedback
 - [ ] T1  FAANG Planning
