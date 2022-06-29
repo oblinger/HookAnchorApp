@@ -1,18 +1,14 @@
 
-- [ ] budget
-- [ ] PenFed reset.
 - [ ] Get Schedule C and income from last year
+- [ ] Budget
+- [ ] W PenFed reset
 
 - [ ] Fix audio on laptop
-- [ ] [[Comms]]  
-- [ ] Get Taxes Filed
-- [ ] war stories online
+- [ ] W Get Taxes Filed
 
 - [ ] lung followup
 - [ ] Amazon key replacement
 - [ ] Call about re-opening long close citibank credit card account.
-- [ ] Clean Email
-- [x] Call PenFed.  
 
 - [ ] Short form summaries Atomic Habits; Managers Path
 - [ ] Dan Fine document

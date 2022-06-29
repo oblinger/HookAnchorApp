@@ -3,7 +3,30 @@
 - [ ] Give hiring tests to Nick
 
 
-# MEETINGS
+# LOG
+
+### t2022-06-28  Request for Letter of reference
+
+Nick, 
+I am getting my public persona together for interviewing.  You have been the constant factor over the last 8 years, so I think it would be great to get a letter of reference from you.  Perhaps a longer one that can be sent, but for the moment I am focused on having one on my linked-in.  This one should be a couple of paragraphs, but not so long that folks wont read it.  
+
+Let me know if you have the bandwidth to write one.
+
+Thanks!
+--dan
+
+- Fast on feet.
+- Good at organizing flows & and hiring.
+- Strong in presenting and in high consquence meetings.
+- Very strong understanding of a range of technical topic including and beyond ML
+- 
+
+Assuming you are good with this, I thought I would provide a few starter thoughts, though I think it will be 
+
+Here are 
+
+
+
 
 ### m2021-07-28 - Meeting with Nick and Michael
 

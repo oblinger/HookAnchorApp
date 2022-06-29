@@ -1,3 +1,5 @@
+- [x] Clean Email
+- [x] Call PenFed.
 [ ] budget
 - [ ] https://betterprogramming.pub/how-to-creat
 - [ ] Polynesian cultural center, hike

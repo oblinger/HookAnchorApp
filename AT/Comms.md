@@ -1,5 +1,12 @@
 ## = ACTIVE
 
+LETTER OF RECOMMENDATION
+- [[@Nick Allen]],  [[@Theo Enns]],  [[@Joe Augenbraun]],   [[@Attila Aros]], 
+- Support @ AF....  at Aeolus, Charlie or Tony @ DARPA
+- AF: [[@James Briones]]  
+- Aeolus: [[@Felipe Lavratti]],   [[@Daniel Haddick]]  ???
+- 
+
 
 |           |                     | . . . . . . . . . . . . . . . . . . . . . . . . . . . . |     |
 | --------- | ------------------- | ------------------------------------------------------- | --- |
@@ -11,6 +18,18 @@
 |           | [[@Juan Huerta]]    |                                                         |     |
 |           | [[@Dan Fine]]       |                                                         |     |
 |           | [[@Rafah Hosn]]     |                                                         |     |
+
+#### Letters
+
+
+Nick,
+
+I am getting prepped for interviewing, and I would love to get a letter of recommendation from you.  We have put in a few years of effort together, so I think you know me well.  Let me know if you have the time to do it.
+
+
+
+
+
 
 ## = SOON
 -    [[@Vittorio Castelli]],

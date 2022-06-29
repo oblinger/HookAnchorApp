@@ -129,8 +129,8 @@
 | 2021-10-01 | [[nj22_contents]]       | -- SITUATION SUMMARY --                                                                   |
 | 2021-10-01 | [[Journal Old]]         | -- SITUATION SUMMARY --                                                                   |
 | 2021-09-28 | [[Coaches]]             | Career Counciling                                                                         |
-| 2021-09-23 | [[Resume]]              | Resume Experience                                                                         |
 | 2021-09-23 | [[Comms]]               | WHOM IN MY NETWORK TO ASK                                                                 |
+| 2021-09-23 | [[Resume]]              | Resume Experience                                                                         |
 | 2021-09-23 | [[Journal Old]]         | WHOM IN MY NETWORK TO ASK                                                                 |
 | 2021-09-22 | [[nj22_contents]]       | >>> WP    --  ACTIVITIES <<<                                                              |
 | 2021-09-22 | [[Resume]]              | RESUME OBJECTIVE                                                                          |

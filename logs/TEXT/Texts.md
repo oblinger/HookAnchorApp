@@ -2,6 +2,8 @@
 
 | Date        | File           | Notes                                                                  |
 | ----------- | -------------- | ---------------------------------------------------------------------- |
+| t2022-06-28 | [[@Attila Aros]]   | Request Reference                                                      |
+| t2022-06-28 | [[@Nick Allen]]    | Request for Letter of reference                                        |
 | t2022-06-25 | [[Edu Corp]]       | Transcript                                                             |
 | t2022-06-11 | [[Forum]]          | Medium how fear and outrage is sold for profit.                        |
 | t2022-06-10 | [[Forum]]          | Yashin: Forum example of moderate acceptance of voter fraud claim      |

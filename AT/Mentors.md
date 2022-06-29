@@ -15,7 +15,8 @@
  Good      | [Wiktor Schmidt](https://www.linkedin.com/in/wiktorschmidt/),  [Szymon Stoma](https://www.linkedin.com/in/sstoma/),  
  x         | [Ric Szopa](https://www.linkedin.com/in/szopa/), [Mark Urdahl](https://www.linkedin.com/in/mark-urdahl-42018/),  [Ruwan Welaratna](https://www.linkedin.com/in/ruwanwelaratna/),  [Jean Yang](https://www.linkedin.com/in/jean-yang-96575030/),  [Peter Berger](https://www.linkedin.com/in/peter-berger-5536b92/), [Sam Corbitt](https://www.linkedin.com/in/samcorbitt/),    [Joe Augenbraun](https://www.linkedin.com/in/jaugenbraun/),  
  HEAVY     | [Eyal Amir](https://www.linkedin.com/in/eyalamir1/),  [Peter Ashley](https://www.linkedin.com/in/peterashley/),  [Dileep George](https://www.linkedin.com/in/dileep-george?miniProfileUrn=urn%3Ali%3Afs_miniProfile%3AACoAAAAzIv8BwpTvXVaGH66SjJnK9LARUIFYcEM&lipi=urn%3Ali%3Apage%3Ad_flagship3_search_srp_people%3BBYBweJ%2BzSRSV8FeL5Rs6xw%3D%3D),
- COACH     |	  [David Whittemore](https://www.linkedin.com/in/davewhittemore/),  [Jim Tye](https://www.linkedin.com/in/jim-tye-2ba0514/),  
+ COACH     |	  [David Whittemore](https://www.linkedin.com/in/davewhittemore/),  [Jim Tye](https://www.linkedin.com/in/jim-tye-2ba0514/),  |
+ Friend | [[@John Davis]],  
 
 
 
