@@ -6,6 +6,7 @@
 - [ ] 
 ### - [[LIFE|LIFE]] - 
 ## = [[WORK]] =
+- [ ] Get Mentor
 
 ## = [[SOCIAL]] =
 - [[Calls]]: John, Anastasia

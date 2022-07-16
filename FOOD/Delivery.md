@@ -17,11 +17,13 @@ MOM:  Thai, Poki, Seafood, Japanese, Sandwich, EURO(Italian, French, German, Spa
 | d+~~  CHINESE         | Big Lantern                                                |     |
 | d+~~  JAPANESE        | Ginza Sushi                                                |     |
 | d+~~  THAI            | Farm House Kitchen                                         |     |
-| d+~~  KOREAN          | Mamma' Tofu House                                          |     |
+| d+~~  KOREAN          | Mamma' Tofu House.  Affordable/ok.                         |     |
+| d++~  KOREAN          | Jin Mi Korean.  Affordable/better than mammas              |     |
 | d+++  PHO             | Turtle Tower                                               |     |
-| d+~~  BOWL-Korean     | Moonbowls - Healthy Korean Bowls                           |     |
+| d-+~  BOWL-Korean     | Moon Bowls - QL does not like; Dan = just ok               |     |
 | d+~~  BOWL            | West Coast Bowl                                            |     |
 | d+~~  BOWL            | Ben's Fast Food                                            |     |
+| d+++  BURMESE         | Burmese Kitchen ~ We all like it & it is affordable        |     |
 | d?~~  BURMESE         | New Burma (yelp 4.5)  Burma Cafe/Love/Superstar (yelp 4.0) |     |
 | d+~~  VIETNAMESE      | Chic n' Time (y5.0)                                        |     |
 | ====   SEAFOOD   ==== |                                                            |     |
@@ -30,6 +32,7 @@ MOM:  Thai, Poki, Seafood, Japanese, Sandwich, EURO(Italian, French, German, Spa
 | d+~~  SEAFOOD         | Soto Mare                                                  |     |
 | ====    WORLD    ==== |                                                            |     |
 | d+~~  MEDITERR        | Mediterranean Aroma                                        |     |
+| d~~~  SPANISH TAPAS   | Picaro                                                     |     |
 | d+~~  ITALIAN         | Pastime Pasta                                              |     |
 | ====  AMERICAN   ==== | > Salad, Sandwich, Pizza, Fast                             |     |
 | d++~  SALADS          | Mixt Greens                                                |     |

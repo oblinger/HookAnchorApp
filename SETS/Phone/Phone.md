@@ -1,3 +1,46 @@
+
+Tues 3:30p - 
+
+
+### 2022-07-12  Eli Sand toys
+-  [scoop](https://www.amazon.com/GOVSSING-Excavator-Toy-Sandbox-Construction/dp/B09PNJ34TP/ref=sr_1_191?crid=TJ6OFAK2YBUB&keywords=sandbox&qid=1657664999&sprefix=sandbox%2Caps%2C157&sr=8-191)  
+-  [drill](https://www.amazon.com/HABA-Sand-Drill-Little-Sandbox/dp/B007PF41XU/ref=sr_1_177?crid=TJ6OFAK2YBUB&keywords=sandbox&qid=1657664999&sprefix=sandbox%2Caps%2C157&sr=8-177)  
+-  [truck](https://www.amazon.com/CO-T-Dump-Truck-Toy-Construction/dp/B08MQFCVPM/ref=sr_1_151_sspa?crid=TJ6OFAK2YBUB&keywords=sandbox&qid=1657664929&sprefix=sandbox%2Caps%2C157&sr=8-151-spons&smid=A3C2CBDFQ3FT4L&spLa=ZW5jcnlwdGVkUXVhbGlmaWVyPUEzUjUyRDJHODY2ODJWJmVuY3J5cHRlZElkPUEwNzU2MTg1MjRJUE1IUDVMUDFYTCZlbmNyeXB0ZWRBZElkPUEwMTAyNzg5MTdTTkpROEVINzlZRCZ3aWRnZXROYW1lPXNwX210ZiZhY3Rpb249Y2xpY2tSZWRpcmVjdCZkb05vdExvZ0NsaWNrPXRydWU&th=1)  
+-  [4 take apart trucks](https://www.amazon.com/OENUX-Construction-Building-Magnetic-Toddlers/dp/B09QC745XL/ref=sr_1_75?crid=TJ6OFAK2YBUB&keywords=sandbox&qid=1657664797&sprefix=sandbox%2Caps%2C157&sr=8-75)  
+- 
+
+### 2022-07-12  LOWES tool rental
+
+-  [Top Soil](https://www.lowes.com/search?searchTerm=top%20soil)  
+- 5 bags of  [Steer Manure](https://www.lowes.com/pd/GRO-WELL-1-cu-ft-Organic-Compost-and-Manure-Provides-Organic-Nutrients/1000142563)  
+- 3 bags of  [Top Soil](https://www.lowes.com/pd/GRO-WELL-1-cu-ft-Organic-Compost-and-Manure-Provides-Organic-Nutrients/1000142563)  or maybe I should get  [Organic Top Soil](https://www.lowes.com/pd/GRO-WELL-1-cu-ft-Organic-Compost-and-Manure-Provides-Organic-Nutrients/1000142563)  
+- [Tiller](https://rentals.lowes.com/item/Garden%20Cultivator/24399), [jack Hammer](https://rentals.lowes.com/item/120V,%201-18%20in.%20Breaker%20Hammer/24432), 
+- [Retaining Blocks](https://www.lowes.com/pl/Retaining-wall-block-Retaining-walls-Pavers-retaining-walls-Lawn-garden/4294612593),  [Retaining Wood](https://www.lowes.com/collections/Oldcastle-Planter-Wall-Block-Raised-Garden-Bed-Project/GR_4314),  
+- Main :    (415) 486-8611     Pro Desk:   (415) 486-8640
+- [Minature Cypress](https://www.google.com/search?q=miniature+cypress+tree&newwindow=1&client=firefox-b-1-d&sxsrf=ALiCzsbKvZ7UJm5YPinou-2gBRTy7PQ5rQ:1657656374195&source=lnms&tbm=shop&sa=X&ved=2ahUKEwjvvd-ak_T4AhVbJEQIHSf-BLMQ_AUoAXoECAIQAw&biw=1423&bih=1424&dpr=2.22#spd=9602396106559560709), 
+
+
+
+
+### 2022-07-07  Setting up Sonic internet service
+
+- Added pre-order for service.  likely going live in 2-6 months.
+- Freedom credit card.
+
+Tech support:     support@sonic.com      844-721-0300
+They use either the:  EERO-6   or the EERO PRO for their service
+- preorder rollout.  2-6 months.
+$29.99 basic service - text/email tech support.  no email.  VPN.
+$39.99 with VPN and phone support
+
+
+
+Marco. 
+	
+Basic fiber - 
+
+--  ONT -- Optical 
+
 ### 2022-06-27  PENFED - reset connection / 
 
 Dear DANIEL OBLINGER,  

@@ -1,3 +1,4 @@
+  [MgrContracts](MgrContracts/MgrContracts.md)
   [Contracts](Contracts/Contracts.md)  [MyMgr](MyMgr/MyMgr.md)
   
   ## === COACHES ===

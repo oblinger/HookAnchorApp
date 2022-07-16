@@ -8,22 +8,30 @@
 ### t2022-06-28  Request for Letter of reference
 
 Nick, 
-I am getting my public persona together for interviewing.  You have been the constant factor over the last 8 years, so I think it would be great to get a letter of reference from you.  Perhaps a longer one that can be sent, but for the moment I am focused on having one on my linked-in.  This one should be a couple of paragraphs, but not so long that folks wont read it.  
+I am getting my public persona together for interviewing.  You have been the constant factor over the last 8+ years, so I think it would be great to get a letter of reference from you.  Perhaps a longer one that can be sent, but for the moment I am focused on having one on my linked-in.  This one should be a couple of paragraphs, but not so long that folks wont read it.  
 
 Let me know if you have the bandwidth to write one.
 
 Thanks!
 --dan
 
-- Fast on feet.
-- Good at organizing flows & and hiring.
-- Strong in presenting and in high consquence meetings.
-- Very strong understanding of a range of technical topic including and beyond ML
-- 
 
-Assuming you are good with this, I thought I would provide a few starter thoughts, though I think it will be 
+In many ways you are better at this, than I am, so feel free to take the note in any direction you see fit.
+If it saves you time, here are some ideas that came to me...
 
-Here are 
+
+Perhaps it can be structured around the fact that we have been co-founders and in every big decision I have been an able "right hand man".
+Just an overall sense that we were in the trenches for many years together, and look forward to the next chance we get to jump into the trenches with him.
+Also, consistent with the CTO title and the idea of an AI practice, I was your 'go to person' for technical questions and particularly for AI/ML related ones.
+
+A-la-carte ideas:
+- Strong in constructing processes.
+- Strong ability to hire world class talent within competitive markets.
+- Having high EQ enabling me to support and retain rarified talent.  (ok, so I think that was majority YOUR effort, still I think I do have pretty strong EQ and was a positive influence when I was more active)
+- Fast on feet.  Strong at presenting in high consequence meetings.  
+- Able create and coalesce others around a strong technical vision.  (here I am thinking mostly about Aeolus, as I had less chance for that on other AF projects)
+- Innovative in finding pragmatic solutions to problems.
+- Good executive judgement about people and about business decisions.
 
 
 

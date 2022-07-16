@@ -44,6 +44,10 @@ _
 
 _
 # TOPICS
+## ELECTRONICS
+#### Guided Access
+- Ipad -> Settings -> Accessibility -> Guided Access
+- 
 ## === Allowed Medications ===
 - Acetaminophen 160mg/5ml (every 4hrs)
 	For temp >= 38.5C

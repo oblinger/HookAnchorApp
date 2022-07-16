@@ -1,14 +1,14 @@
+- [ ] cover outlets
+- [ ] Book Photographer
 
-- [ ] Get Schedule C and income from last year
-- [ ] Budget
-- [ ] W PenFed reset
 
+
+
+
+- [ ] Justin
+- [ ] W PenFed Reset
+- [ ] Call about re-opening long close citi-bank credit card account.
 - [ ] Fix audio on laptop
-- [ ] W Get Taxes Filed
-
-- [ ] lung followup
-- [ ] Amazon key replacement
-- [ ] Call about re-opening long close citibank credit card account.
 
 - [ ] Short form summaries Atomic Habits; Managers Path
 - [ ] Dan Fine document
@@ -18,7 +18,7 @@
 
 
 
-
+I intend each day to be part of a fulfilled and fulfilling life focused on joy, meaning, and benefit for others.
 
 
 

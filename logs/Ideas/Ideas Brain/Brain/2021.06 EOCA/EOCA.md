@@ -1201,6 +1201,106 @@ The treasonous American and that's me in the treason is the treasonous thought i
 
 _
 # LOG
+
+HEALTH
+HOME
+HACK
+
+### t2022-07-09  Zombie Consciousness
+
+  
+Steven, I don't think the idea of a 'zombie' consciousness makes sense.  I definitely accept that one can fake a consciousness (as Elisa or LaMDA does), so a thoughtful interrogation is required to separate the two.  But assuming one accepts the reductionist position that consciousness (and indeed all mental phenomena) are information processing phenomena, then it makes no sense to say that its input and output are valid in all cases, yet it is somehow it is 'fake' or 'zombie'.  That is like having a fake sort function that in all cases it correctly returns the sorted list, but it is somehow a fake version of sorting.  Nope, if it correctly sorts all lists all the time, then it cannot be a fake sort, since the meaning of ‘sort’ **IS** its input / output behavior.
+
+Peculiarly, many human agents (people), willingly accept that their brain’s are info processing systems, and yet reject the idea that their own consciousness (which they also accept comes from this system) is itself reducible in its entirety to such an info processing specification.  I think I understand where this peculiar conundrum comes from:
+
+Such a human agent is very familiar with explicit computational models of one kind or another.  For example, they might even have a fairly detailed model of their own propensity to get angry.  Perhaps when someone makes fun of them, or they trip and drop an expensive vase.  But they (correctly) intuit that no matter how accurate their explicit model of their own anger becomes, it is NOT the same as their lived experience of BEING angry.  The former, no matter how accurate it is at predicting anger, is not the same as BEING angry--it is 'zombie' anger.
+
+What is the difference?  There are two gaps here, between real and zombie anger:  Real anger is directly tied to sensors attached to the meat implementing the system itself.  The complexity of modeling how rising cortisol levels will affect the whole meat system and subsequent distortions of thinking that will occur are not likely no to be modelable in any system less complex than full modeling of the atoms and molecules of that whole meat system.  This makes real anger a non-explicitly-modeled-system IN PRACTICE.  At best, this level-one phenomena can be monitored, and only approximately be modeled.  The second gap is simply the difference in levels in our consciousness system.  Real anger is a level one phenomena, while any explicit model of that a human might have about anger must be a level two phenomena.  Level two models are not sensed by the  same sensors as level one is.  Thus the reasoning system see their inherent incompatibility.
+
+Hence (without understanding this two-level model) the 'mysterious spark' idea is invoked to explain how the human mind which we accept as an info processing system can give rise to consciousness which appears to not be reducible to info processing.  The human agent is not wrong in their conclusion that perception/awareness/consciousness really is different from meta-cognition about those subjects.  Very naturally both human and machine agents will separate level one models (which are sensed and lived) from explicit level two models even when both are models of the same anger thing.  The different nature of these models as well as how they are differently wired into the two-level consciousness means they can never be interoperable.
+
+Importantly I expect a two-level silicon agent to draw much the same conclusions about itself: its lived-experience of having an emotive experience (anger) will be irreducibly distinct from any meta-cognitive model it might construct about that emotive experience.
+
+Of course I can say all of these things 'till I am blue in the face, but many humans will not accept my arguments–the arguments seem too at odds with their lived experience of their own consciousness.  I am guessing this situation will continue, until we live among silicon agents who regularly retort "Screw you, I know I am conscious and I don't give two shits about your confusion on the matter."  (and soon after that humanity really WILL be screwed--just as the Neanderthals where.... only much much faster.)
+
+
+
+
+
+### t2022-07-06  What is Consciousness - Response to Erik
+
+Erik, here is my thinking on this very interesting question: I am reminded of a Minsky quote: "you don't really know a thing, until you know it in 50 different ways." I think, despite me having such a simple & concrete definition of consciousness, that it is something of a continuum, and like the Minsky quote, you don't have full human-like consciousness until that two-level system is embedded into a fairly complex larger reasoning context. So just as you say, the barest dual layer system would not be conscious of much... and I agree. Still as we add the reasoning superstructure around it, we progressively get a system that behaves as a conscious agent does... not just at a superficial level as Lamda might, but in ways fully characteristic of all features of consciousness that I can imagine testing.
+
+Without being an exhaustive list, let me list several key aspects of the larger reasoning system that would be required in order to be conscious as a human is conscious:
+
+- **The Base System** -- (1) An embedded agent, (2) with an instinctive "action" generator, (3) a separate generic modelling engine, (4) containing a theory of the world which includes fully distinct model of its body, and its own mental behaviors.
+
+- A **"lymbic system"** -- a command and control super structure akin to human emotional drives. Fear, curiosity, etc. Being fully conscious is to have "skin in the game" meaning that you "care" about the outcome. I map this care to a set of drives which the agent is optimizing.
+- **Generic functional modeling** - the ability to understand any system as a bunch of components with causal linkages between them. Being fully conscious is to be able to reason about oneself in the third person, and to tie that third person reasoning back to the first person experience reported back you the agent thru its animal/instinctive nature.
+
+- **Temporal Reasoning** -- the ability to project forward and backwards in time, and reason about what states will result various actions. Being fully conscious is to imagine how one will feel after eating that third bowl of ice creme before eating it.
+
+- **Counter factual reasoning** - the ability to create and reason about worlds that don't exist now, but could under certain circumstances exist. Being fully conscious is to be able to imagine being dead, and then providing the limbic system with access to that inferred world state in order to drive emotive consequences.
+
+- **Unified Reasoning Substrate** - it is not enough that one has an emotive system, and a counter factual reasoning sub-system, and an temporal projection sub-system, the key is that they are integrated in a way that all of the human like info flows between these sub-systems happens as expected. So it can decide to lie to get what it wants, or it might have negative emotive reactions to actions that might result in its death.
+
+This was just six ways... I still have 44 more to go, before I hit Minsky's required 50 ways... but you get the idea. My claim is that the richness of human consciousness stems from the richness of the human reasoning that surrounds that core two-layer structure.
+
+In principle, you could just program an AI system with all requisite ways of reasoning (assuming we could even enumerate an integrated theory with all of them). I believe this, just as I a believe, in principle, if one emulated all atoms in my brain that emulation would also be conscious. Still both are impractical in different ways, so at a practical level I think our first conscious AI will be "born" and will be "raised" by humans in some way. But importantly there is nothing "magic" about being born and the consciousness "emerging" from its learning. What makes it conscious is all of the ways that basic two level structure is linked into all of these other ways of thinking.
+
+That said, at a practical level, we presently can't manually build expert systems with the kind of generativity require for human reasoning. We can build systems that execute very predefined structures of thought, so I think the reasoning system that can generativity connect these subsystems will have been learned, and it will learn to connect its counter factual reasoning with all of its other forms of reasoning as it learns its model of counter factual reasoning itself. I think the top down divide and conquer of traditional coding will put too large a straight jacket on the flexibility of thought which is possible. So I am not inclined to thinking one can code this in practice. But I notice that deep learned model of cat images does not seem to suffer from this same limitation. Various learned aspects of cat-ness seem to be integrated into the final model w/o having a top-down theory of cat which they fit into. In the same way, once we have extended DL-like algorithms to be able to learn the requisite (First-Order like) structures we learn will also be able to combine the knowledge that has been learned (in a totally subconscious way, just as we do) into explicitly manipulated meta reasoning in ways parallel to explicit human thought. Once constructed these implicit+explicit reasoning hybrids will occasionally be just as surprised as we are about their own behavior.
+
+Frighteningly, I suspect the learning substrate required to bootstrap fully human-like consciousness is not that much more advanced than where have today.
+
+p.s. Erik, my "simple minded" claim about consciousness might seem at odds with your more expansive desire to celebrate the "spiritual richness" of consciousness. This is not the case, even as we come to mechanically understand consciousness, I think it is key that we don't allow that understanding to trample upon its spiritual significance, and mystery.
+
+
+
+
+
+Erik, here is my thinking on this very interesting question:  I am reminded of a Minsky quote:  "you don't really know a thing, until you know it 50 different ways."  I think, despite me having such a concrete definition of consciousness, I think consciousness is something of a continuum, and like the Minsky quote, you don't have full human-like consciousness until that two-level system is embedded into a fairly complex reasoning super system.  So just as you say, the barest dual layer system would not be conscious of much... and I agree.  Still as we add the reasoning superstructure around it, we progressively get a system that behaves as a conscious agent does... not just at a superficial way as Lamda might, but in ways fully characteristic of all features of consciousness that I can imagine testing.  
+
+Without being an exhaustive list, let me list several key aspects of the larger system that would be required in order to conscious as a human:
+- **The Base System** -- (1) An embedded agent, (2) with an instinctive "action" generator, (3) a separate generic modelling engine, (4) containing a theory of the world which includes fully distinct model of its body, and its own mental behaviors.
+- A **"lymbic system"** -- a set of drivers akin to human base drive.  Fear, curiosity, etc.  being fully conscious is to have "skin in the game" meaning that you "care" about the outcome.  I map this care to a set of drives which the agent is optimizing.
+- **Generic functional modeling** - the ability to understand a system as a bunch of components with causal linkages between them.  Being fully conscious is to be able to reason about oneself in the third person, and to tie that third person reasoning back to the first person experience of that same agent.
+- **Temporal Reasoning** -- the ability to project forward and backwards in time, and reason about what states will result various actions.  Being fully conscious is to imagine how one will feel after eating that third bowl of ice creme before eating it.
+- **Counter factual reasoning** - the ability to create and reason about worlds that don't exist now, but could under certain circumstances exist.  Being fully conscious is to be able to imagine being dead, and then providing the limbic system access to that inferred world state.
+- **Unified Reasoning Substrate** - it is not enough that one has an emotive system, and a counter factual reasoning sub-system, and an temporal projection sub-system, the key is that they are integrated in a way that all of the human like info flows between these sub-systems happens as expected.  So it can decide to lie to get what it wants, and can have negative emotive reactions to actions that might result in its death.
+
+This was just six ways... I still have 44 more to go, before I hit Minsky's required 50 ways... but you get the idea. 
+
+In principle, you could just program an AI system with all requisite ways of reasoning (if we could even enumerate an integrated theory with all of them).  I believe this, just as I a believe if one emulated all atoms in my brain it would also be conscious.  Still both are impractical in different ways, so at a practical level I think our first conscious AI will be "born" and will be "raised" by humans.  But importantly there is nothing "magic" about being born and the consciousness "emerging" from its learning.  What makes it conscious is all of the ways that basic two level structure is linked into all of these other ways of thinking.
+
+That said, at a practical level, we presently can't build expert systems with the kind of generatively require for human reasoning.  We can build systems that execute very predefined structures of thought, so I think the reasoning system that can generatively connect these subsystems will have been learned, and it will learn to connect its counter factual reasoning with all of its other forms of reasoning as it learns its model of counter factual reasoning itself.  I think the top down divide and conquer of traditional coding will put too large a straight jacket on the flexibility of thought which is possible.  So I am not inclined to thinking one can code this in practice.  But notice a deep learned model of cat images does not suffer from this same limitation.   Various learned aspects of cat-ness are integrated w/o having a theory of cat which they fit into.  In the same way, the extension of deep learning which can learn the structures we learn will also be able to combine the knowledge that has been learned (in a totally subconscious way, just as we do).  Indeed these systems will occasionally be just as surprised as we are about their own behavior.
+
+Frighteningly, I think the learning substrate required to bootstrap fully human-like consciousness is not that much more advanced than where we are today.  
+
+### t2022-07-06  Bengio's based model of consciousness
+
+Indeed I find Yoshio Bengio's Generative Flow Networks to be the first deep learning model I know of that seems to be able to entertain the generated mental structures required of this base learning system..  My intuition is that this needs to be coupled with a GANS like feedback loop so that these structured can self-reinforce even when only given unsupervised world-data inputs, just as a GANS use such unsupervised inputs to achieve self-reinforced learning between multiple opposing system.  Then all of this needs to be wrapped up into an agent that is embedded into an appropriate body, with an appropriate animal nature, an appropriate society, and an appropriate learning curriculum.... then viola a bootstrapped understanding of all of those layers, culminating in a bootstrapped human-like consciousness.
+
+This is frightening to me because I don't think we are remotely equipped to deal with the hive-mind consciousness that this will engender.  
+Frightening because like alpha-gos conquering of go, deep mind's conquering of ALL atari games, statistical NLP's conquering of part-of-speech tagging, or HMM's conquering of speech-recognition, the jump will be fairly qualitative.  For many years we had systems that simply SUCKED at performing these tasks.  Then we developed an algorithm that can bootstrapped the require capability directly from data and the problem was solved.  The same qualitative jump will happen with construction of human-like cognitive models.  For years it will suck with very slow progress until we have the alg (like a human baby) which can bootstrap this knowledge from data.  Then all at once we will go from whatever current (lame) handed coded bunk we can build straight to a system that knows all that can been boot strapped from its experience with humans (in a period of a few short years).  It will happen just as all of these other advancements happened all-at-once.  likely the first such learners will not handle all structural forms, so there may be a few plateaus in this progression as we fully generalize the learner.
+
+Most AI-researchers disbelieve this short path to GAI, because they are still thinking about needing to hand code some aspects of the system "to get it started".  This lacks imagination.  Yes in the early days of Go, speech reco, and all of these other areas we did gain advantage by hand coding and aligning the learning alg with the problem.  But once we really have learning algorithms capable of learning the requisite knowledge, none of that turned out to be needed.  Just add a little bit more data.  Our best systems today in most all of these classes of knowledge are largely tabla-rasa learning algorithms that are themselves not so very complex.  And critically the complexity of MCMC or HMMs algorithm itself is totally divorced from the complexity of the theory of speech phonemes or go moves that is learned.  Most AI folks keep looking at the complexity of human thought and saying wow its going to be a long time before we can build that!  But this is wrong headed thinking, just as looking at the complexity expressed in a library of go strategy books is the wrong way to assess the complexity of MCMC.
+
+And on that happy note, I will end this overly bloated reply to a reply  :-)
+
+
+
+
+
+
+
+
+limbic system with its various  
+
+
+
+As you say, having an embedded agent with some instinctual nature is totally trivial, nearly every AI game agent fits this bill.  Few go the extra step and have an abstraction of the world with the embedded agent in it -- especially an abstraction containing the agent in a way that this agent's instinctual nature itself is encoded into that abstraction as a kind of lossy duplicate model of its underlying instinctual nature, but it could be done... and pretty easily.
+
+
 ### n2022-02-28 - Notes from reading Alignment forums
 
 [Alignment Difficulty](https://www.alignmentforum.org/s/n945eovrA3oDueqtq/p/7im8at9PmhbT4JHsW) 

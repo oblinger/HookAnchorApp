@@ -2,7 +2,20 @@
 
 | Date       | File                | Notes                                                                                     |
 | ---------- | ------------------- | ----------------------------------------------------------------------------------------- |
+| 2022-07-15 | [[MLeng]]               | DL class notes                                                                            |
+| 2022-07-13 | [[Jnl]]                 | Thoughts during the day                                                                   |
+| 2022-07-12 | [[Phone]]               | Eli Sand toys                                                                             |
+| 2022-07-12 | [[Phone]]               | LOWES tool rental                                                                         |
+| 2022-07-11 | [[Jnl]]                 | NOOM -                                                                                    |
+| 2022-07-11 | [[MLeng]]               | Coursera Tech Setup                                                                       |
+| 2022-07-08 | [[MED]]                 | Pain after sex - Spoke with Lucas, Hasslers PA                                            |
+| 2022-07-07 | [[Phone]]               | Setting up Sonic internet service                                                         |
+| 2022-07-02 | [[DocJupyter]]          | config example                                                                            |
+| 2022-07-02 | [[Jnl]]                 | RULESET                                                                                   |
+| 2022-07-02 | [[Jnl]]                 | Begin Anew - Put your big boy pants on                                                    |
+| 2022-06-29 | [[Jnl]]                 | What brings me joy - Breaking my holding pattern                                          |
 | 2022-06-27 | [[Phone]]               | PENFED - reset connection /                                                               |
+| 2022-06-25 | [[MED]]                 | Hassler Visit                                                                             |
 | 2022-06-20 | [[MED]]                 | Cough followup                                                                            |
 | 2022-06-06 | [[Phone]]               | Fix MAC mic                                                                               |
 | 2022-06-06 | [[Phone]]               | Drains Flooding                                                                           |

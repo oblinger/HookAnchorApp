@@ -9,16 +9,20 @@ PLUS:  [[@Microsoft]],  [[@LinkedIn]]   PLUS:  [[@Vmware]],  [[@PARC]],
 
 - Lead, Technical AI, Research
 
+Question: what groups should I target.  what training should I have.
+Freed.  Luis.  Rafah.  Huerta.  
+  --> Davis, Gordin, Herb, 
+
 ## = People
 
  Ask|  about FAANG ML: 
  ---|------------------------------------
-  F | [[@Rodrigo Braz]], 
-  A | [[@Michael Freed]], [[@Juan Huerta]],  [[@Nina Mishra]],  [[@Felipe Lavratti]],  [[@Vittorio Castelli]], 
-  A | [[@Mark Drummond]],  [[@Carlos Guestrin]],  [[@Jeff Provost]],  [[@Mark Reid]],
-  G | [[@Melanie Dumas]],  [[@John Davis]],  [[@Doug Gordin]],  [[@Arkady Epshteyn]],  
-  M | [[@Rafah Hosn]],  [[@Luiz Pires]], ...more
-  O | LinkedIn [[@Sofus Macskassy]], VMware [[@Chris Ramming]],  
+  Fa | [[@Rodrigo Braz]], 
+  Am | [[@Michael Freed]], [[@Juan Huerta]],  [[@Nina Mishra]],  [[@Felipe Lavratti]],  [[@Vittorio Castelli]], 
+  Ap | [[@Mark Drummond]],  [[@Carlos Guestrin]],  [[@Jeff Provost]],  [[@Mark Reid]],
+  Go | [[@Melanie Dumas]],  [[@John Davis]],  [[@Doug Gordin]],  [[@Arkady Epshteyn]],  
+  Mi | [[@Rafah Hosn]],  [[@Luiz Pires]], ...more
+  Ot | LinkedIn [[@Sofus Macskassy]], VMware [[@Chris Ramming]],  
   
 
  GOOGLE    | [[@Google]]                                                                                                                  

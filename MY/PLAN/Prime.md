@@ -2,13 +2,15 @@ MORNING:  		Meditate, Pills, Day, [[Comms]],
 AFTERNOON:   	EVE: Plan, Chew
 
 ## = [[NJ22|NJ22]] =
-- [ ] War-Stories
-- [ ] [[DYL]] Build 3 Odyssey plans.  Dan one-pager.  Prototype chapter
-- [ ] [[BeFAANG|BeFAANG]] -
+- [ ] [[War Stories]]*  
+- [ ] [[Bengio]]+
+- [ ] [[Comms]]* - Get 4 letters of reference
+- [ ] [[DYL]] Build 3 Odyssey plans.  Dan one-pager.  Prototype chapter.
+- [ ] [[BeFAANG#^todo|BeFAANG]] - Hack it
 
 ## = [[ROCKS/2022-03 Learning/Learning|Learning]] =
+- [ ] HACK+  Hack some tensor flow
 - [ ] Complete Coursera Deep Learning Course
-- [ ] Hack some tensor flow
 - [ ] Find best FAANG prep (1) class.  (2) mentors
 - [ ] Read mgt books
 

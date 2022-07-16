@@ -1,15 +1,18 @@
+misc
 
 ## = [[Yearbook|Yearbook]] =
 - [ ] Engage with  Sioban about restart for yearbook
 
 ## = Self =
-- [ ] FIN - Prep account for recession (check Allspring)
-- [ ]  [[Diet]] - Loose Weight & Exercise (try Noom) 
-- [ ] Mental
+- [ ] [[FIN]] - Prep assets for recession (check Allspring)
+- [ ] [[Diet]] - Loose Weight & Exercise (try Noom) 
+- [ ] Mental - Get therapist
 
-## = [[Forum#Todo|Forum]] = 
+## = [[Forum#Todo|Forum]] =   research platform
 - [ ] Research platforms for prototype
 - [ ] Forum infrastructure
 
 ## = [[Edu Corp]] =
 - [ ] Meeting with Moses
+## = [[PKM]] =
+- [ ] Build website with thoughts on PKM.

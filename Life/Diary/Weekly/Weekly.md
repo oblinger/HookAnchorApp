@@ -1,3 +1,32 @@
+### 2022-07-05
+- [x] WAR STORIES - 3 hours on WarStories. 
+- [x] RECOMMENDATIONS - 
+- [ ] BENJIO - What is my GANs idea
+- [ ] HACK - Hack some tensor flow (coursera)
+
+
+- [ ] [[DYL]] Build 3 Odyssey plans.  Dan one-pager.  Prototype chapter
+- [x] Mgr Book (read in background)
+
+SECOND:
+- [x] Yearbook restart
+
+
+
+### 2022-06-27
+- [x] JOE READY - 2 hours on WarStories. 
+- [ ] BENJIO - What is my GANs idea
+- [ ] HACK - Hack some tensor flow
+- [ ] FAANG (matrix, courses, war stories, reading)
+
+- [ ] [[DYL]] Build 3 Odyssey plans.  Dan one-pager.  Prototype chapter
+- [x] Mgr Book (read in background)
+
+SECOND:
+- [ ] Yearbook restart
+- [x] Ready for Moses EduCorp call; have call
+
+
 ### 2022-06-20
 - [x] JOE READY - 4 hours on WarStories. 
 - [ ] BENJIO - What is my GANs idea

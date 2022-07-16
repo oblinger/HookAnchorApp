@@ -1,3 +1,75 @@
+### 2022-07-13  Thoughts during the day
+
+- no happy with progress
+- sleepy
+- not getting work
+- happy finished pomodoros
+- hungry
+- tired of doing war-stories
+- me
+### 2022-07-11  NOOM - 
+
+- Three challenges I would change now: 
+	1. Exercise effectively over the days of each week
+	2. Get into a working zone each day for a number of high-effectiveness work progress
+	3. Find joy in each week
+
+- #1 and #2 are most that are most impt for YBP
+
+- #2 is so important I need to hit it now.
+
+
+
+
+
+### 2022-07-02  RULESET
+
+- ALARM - Set alarm, Cash card controls required waking.
+- PLAN - Plan day (After Eli, or In Morning)
+- WAKE - Waking activities:  Teeth,Dress,Clean  Meditate,Walk [wack]
+- FAMILY - Break for family when need.  Immediate return.
+- FOOD - 20min food break is ok, can read
+- !!NO OTHER - No other shit!  Need to get down to work
+- !!!30MIN - Target 30-min from wake to work
+- !!!60MIN - Drop everything and begin work @ 60min after waking
+- WORK - DayPlan and flagged items ONLY
+- WORK MIN - Must do at least 30 min.  Ideally 3hrs with.  
+- SHORT BREAKS - Frequently I take breaks.  set alarm each time:  Read, Chew
+- CHEW - After doing work I switch to chew.
+
+TRY:
+- Allowing a work break for an extended chew.  with work expected after.
+- Allow reading & email during breaks
+
+
+### 2022-07-02  - Begin Anew - Put your big boy pants on
+
+- BIG BOY PANTS - Enough of the coddling, I am not happy with my life... indeed I am wasting it!!!  I am not happy each day.
+- DONT BELEIVE - I don't believe at some basic level, so I put in such piss poor efforts.
+- HARSHLY FOLLOW MY MORNING COMMITMENTS - I need to keep my feet firmly to the fire.  
+- 100% COMPLIANCE - At the moment, any inch I give myself turns into a fucking MILE.
+- BEGIN ANEW - Each morn I will begin anew, trying HARD 2 PERFECTLY follow my rules.
+- EVER EVOLVING - In order to not be too harsh I will allow these rules to evolve daily.
+- START SMALLER - This is a marathon, not a sprint.  It is fine for me to start a bit smaller.
+
+- FROG - Key failing is not working on the hardest part first.  So many excuses.
+
+### 2022-06-29  What brings me joy - Breaking my holding pattern
+
+- I am in a large holding pattern right now, that I must break free from
+- I have a lot of living left to do, which I can still do in this life, but which I am not doing right now
+
+
+- I have a couple of ideas (Forum, EduCorp, EOCA, Notester) that I need to get into the world at least a bit.  (Probably not as my paid job)
+
+- Joy for me is a certain kind of thinking/doing:
+	- It only seems to happen in limited degree in paid work.
+	- It is the working out of details in my head:  Uniform
+	- It is a certain kind of careful, completionist, organizing:  Obsidian, The basement boxes  (and pushing it to a certain kind of completion)
+	- It is (often save the world) systems thinking: EduCorp, Forum, ElasticBlockChain
+
+
+
 ### 2021-06-06 - summary
 GRATITUDE
 - Eli's happiness

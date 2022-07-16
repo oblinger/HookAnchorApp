@@ -1,5 +1,31 @@
 
-# MEETINGS
+# LOG
+### t2022-06-29  Request for recommendation
+
+
+Theo,
+Any forward progress on figuring out your next project?  Any ML ideas?  From my side I am spending some time getting current on ML algorithms.  (Everything has changed since I was last here!)  Not sure how deep I want to go, but my thought is it might land me more interesting gigs.  (I have not yet gotten serious about interviewing, but I am ramping up to it.)
+
+And for that I have a favor to ask.  Could you write letter of reference for me?  I think you have seen me in action as a manager, as mentor, and as a technology driver, so you are in a great position to write one.  
+
+let me know,
+--Dan
+
+
+If it is valuable here are a few ideas that occurred to me... feel free to use or disregard them:
+
+- MENTOR:  When I started working with Dan, I had never managed, was not confident nor knowledgeable about how to do this.  Over time at Martian then Aeolus robotics I went from managing my own efforts to effectively serving as the VP of eng over 60+ engineers.  Over these years Dan provided nuanced feedback about how to best manage the interpersonal, and organizational aspects as I progressively transitioned into these larger roles. 
+- TECHNICAL: Dan is very deep and very broad technically.  His Robot OS architecture was the blueprint for the Martian software system and the starting point for our Aeolus system as well.  As our organization grew his job push him progressively higher level.  Still as problems arose he could and would dive very deep into all aspects of AI, Firmware, Robotic Control, Vision etc. in order to understand and collaborate in plotting technical paths forward.  He is an ideal advanced technologist leader in that sense.  In the early days he and I spent many afternoons at the white board discussing algorithmic innovations that would control the complex 3D wiping required by our bathroom cleaning bot.  Later he architected and mentored the team building our asynchronous, incremental, hierarchical planning system.
+- INTERPERSONAL:  Dan is a hard driving leader, during our time at Aeolus especially we were under incredible time pressure, the CES deadline could not slip, not even by a day.  He slides from delegate&monitor, to mentoring&proposing, all the way down to tactical firefighting depending on severity and urgency---he is an 'all in' leader.  At the same time, the team likes and respects him.  Many of his direct reports (like me) never managed anyone before, so we all looked to him to varying degrees in how to best execute.  
+- I would say he also promotes a low politics, low drama, mission oriented organization.  There were stresses, but those were the stresses from driving hard for an ambitious deadline that cannot slip, not of politics.
+- Dan, was watchful for issues of burnout.  He and I often discussed how individual members of the whole organization were doing, and in cases we would temporarily assign one manager to help another, or tactically move specific tasks with pressing deadlines to avoid emotional overwhelm anywhere in the team.  
+- His approach promoted a "we are with you", rather than "we own you" vibe.  With Dan's help I also became much better at driving an aggressive schedule w/o burning or angering the team.
+
+This is an interesting story, but it might be too much info for a letter of recommend:
+- TURN AROUND STORY:  With only three months before CES we realized several of our key vision and motion algorithms were performing more poorly than we thought.  It was a big risk to rip these out, but they too poor to build from even in the medium term.  He organized a two week sprint to see if we could get completely new algorithms to a basic level of functionality.  Once we did that, then the big swap decision was made.  Dan's approach minimized the risks of total failure while still allow the team to move over much better algorithms.
+
+
+
 ### m2022-03-08 Astro. FAANG. ML new ideas.
 existing product; science early prod validation; new product
 

@@ -1,6 +1,6 @@
 
-# ### FOOD ###
-## === DryGoods ===
+# FOODS
+## DRY GOODS
 ### Canned
 
 
@@ -532,6 +532,12 @@ LOW CARB DRESSING/SNACKS    http://store.yahoo.com/lowcarboutfitters/chocolateca
 Progresso  Escarole, Chicken Barley, Chicka??
 Campbells Carb request
 Delmonte Carb Clever
+### TEAS
+
+FAVS:  Twinings Honey Bush, Kava Stress Relief, Pukka Blackcurrant Beauty
+
+TEAS  http://carandafinefoods.com 
+
 ### Drinks
 
 
@@ -546,8 +552,6 @@ taste of California.  by the case.  owe me free shipping  800 615 7304
 http://4seasonswine.com/
 _
 #### TEAS
-
-TEAS  http://carandafinefoods.com 
 
 _
 #### Scotch

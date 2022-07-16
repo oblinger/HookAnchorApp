@@ -1,6 +1,14 @@
+- [ ]  Quarterly Budget
+- [ ] mission statement
+- [ ] Research crones
+- [ ] Amazon key replacement
+- [ ] - [ ] Rona glass
+- [ ] Downstairs desk
+Get obsidian plugin published - Unified namespace -
+- [ ] clean dan@af
+- [ ] https://blog.pragmaticengineer.com/holiday-tech-book-recommendations/
 Get online doc
 
-- [ ] Ready car; picknick
 - [ ] think thru auto sending of cards
 - [ ] Write thank you note to Klembara and others
 - [ ] Fix circuit breakers
@@ -15,10 +23,12 @@ Get online doc
 - [ ] MED:  Research best vitamins
 - [ ] Estimate Water Usage
 - [ ] get list of hikes figured out
-- [ ]  [Udemy - Tara - Sleep](https://www.udemy.com/heal-anxiety-sleep-easily-tara-brach/learn/lecture/14770060#overview) 
+- [ ]  [Udemy - Tara - Sleep](https://www.udemy.com/heal-anxiety-sleep-easily-tara-brach/learn/lecture/14770060#overview) s
 - [ ] email drafts:  loosing them; many copies
 - [ ] ?? Have you seen Calendly?
 - [ ] Personal CRM to track my own contacts?
+- [ ] 
+- [ ] mike klembara
 
 ## = Easy-Ready = 
 - [ ] Reset door codes. (info in myfo->mystuff)

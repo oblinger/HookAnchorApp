@@ -99,7 +99,7 @@
 | K     | insert LINK           |                  |                                |                   |
 | L     |                       |                  | / LINKS pane                   |                   |
 | M     | / MOVE folder         |                  | MISC note                      |                   |
-| N     | NEW note / New PANE   |                  | /                              |                   |
+| N     | NEW note / new 'MISC' |                  | /                              |                   |
 | O     | OPEN switcher/OUTLINE |                  | OPEN in default app            |                   |
 | P     | cmd PALETTE           |                  | PLAN note /                    |                   |
 | Q     |                       |                  |                                |                   |
@@ -116,7 +116,7 @@
 | +     |                       |                  | tgl RIGHT pane                 |                   |
 | {     |                       |                  | nav BACK / DAILY note          |                   |
 | }     |                       |                  | nav FORWARD / DAILY note       |                   |
-| \     |                       |                  |                                |                   |
+| \\     |                       |                  |                                |                   |
 | ;     |                       |                  | DARK mode                      |                   |
 | '     |                       |                  | LIGHT mode                     |                   |
 | ,     | SETTINGS              |                  |                                |                   |

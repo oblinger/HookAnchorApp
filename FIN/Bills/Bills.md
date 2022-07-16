@@ -142,6 +142,8 @@ OTHER  ~~
 
 DANO CAP 1 CARD
 - 02/mo    	Filethis.com   2/m
+- 20/yr??		Clean Email
+- 60/mo 		Coursera
 - 20/yr		Google Play (100Gig) oblinger@gmail.com 
 - vary		PAYPAL
 - vary		Uber/Lyft (also on Freedom card)

@@ -1,3 +1,6 @@
+- [ ] OBS: key to add to lists with one letter prefix  e.g. t=todo, etc.
+OBS: Synthetic todo list views - 
+OBS: command to create a new page with wiki link from current curor location
 - [ ] [btt](https://folivora.ai/buy)
 
 - [ ] 

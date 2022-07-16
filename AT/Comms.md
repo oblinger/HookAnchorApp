@@ -1,11 +1,13 @@
 ## = ACTIVE
 
 LETTER OF RECOMMENDATION
-- [[@Nick Allen]],  [[@Theo Enns]],  [[@Joe Augenbraun]],   [[@Attila Aros]], 
-- Support @ AF....  at Aeolus, Charlie or Tony @ DARPA
+- [[@Nick Allen]],  [[@Theo Enns]],  [[@Joe Augenbraun]],   [[@Attila Aros]],  
+
+
 - AF: [[@James Briones]]  
 - Aeolus: [[@Felipe Lavratti]],   [[@Daniel Haddick]]  ???
-- 
+
+
 
 
 |           |                     | . . . . . . . . . . . . . . . . . . . . . . . . . . . . |     |

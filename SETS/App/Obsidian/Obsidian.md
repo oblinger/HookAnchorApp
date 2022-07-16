@@ -1,5 +1,8 @@
   [mdfind](mdfind.md)  [Dataview](Dataview.md)
 
+--
+cssclass: dashboard
+--
 
 # # LINKS 
 

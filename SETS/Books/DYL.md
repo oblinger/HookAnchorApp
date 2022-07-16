@@ -368,6 +368,9 @@ Possible centers:
 AEIOU: Activities; Environments; Interactions; Objects; Users
 ### 2022-04-22  Innovation & Insight
 
+- 
+Love doing:  working-out-in-my-head-details, help-humanity, big-picture
+
 - I love to ***think*** thru the ***technical details*** of some ***innovation*** built upon some surprising ***insight***.
 
 ### 2021-09-21 - SUMMARY OF WORK THAT FITS

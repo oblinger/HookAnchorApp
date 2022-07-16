@@ -1,3 +1,4 @@
+
   [[Top]] > [[MY]] 
 
 | Name            | Notes                                                             | ............................................................................. |
@@ -22,7 +23,7 @@
 | [[Self]]        |                                                                   |                                                                               |
 | [[__]]          | STORAGE PAGES                                                     |                                                                               |
 | [[Archive]]     | Place to retire planning items                                    |                                                                               |
-| [[Misc]]   | Permanent Evergreen pages                                         |                                                                               |
+| [[Misc]]        | Permanent Evergreen pages                                         |                                                                               |
 | [[Scratch]]     |                                                                   |                                                                               |
 |                 |                                                                   |                                                                               |
 

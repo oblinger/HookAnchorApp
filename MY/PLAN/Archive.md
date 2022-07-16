@@ -1,3 +1,4 @@
+- [x] Ready for Moses EduCorp call; have call
 - [x] Clean Email
 - [x] Call PenFed.
 [ ] budget

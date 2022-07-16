@@ -2,6 +2,8 @@
 [[LOGS/Ideas/Ideas Social/EduCorp/Edu Corp.pptx|PowerPoint]]    
 	[Edu Corp](Edu%20Corp.md)
 
+
+### _
 -- Big Idea
 	-- might not happen, or happen much later
 	-- gap in the universe
@@ -28,6 +30,71 @@ The (1) connections,  (2) cash, and (3) training needed to succeed.
 Using one's future success to obtain the (1) connections, (2) cash, and (3) training need to achieve that success
 
 
+## PROCESS TWEAKS
+
+### THE EDU CORP ANCILLARY-SERVICES TOOLBOX
+
+**THE PROBLEM** - There are a great number of skills required for any one business.  Most of Edu Corp's training is focused on the core skills and capabilities required to perform the business itself.  Beyond these skills, however, there are many dozens of other speciality skill capabilities, from the one-off construction of a green house, the legal services required in forming/operating the business, to the month end accounting required for each business.  It will be too much for new entrepreneurs to acquire all of these skills in order to operate their business.  Instead Central builds a blueprint for each business type where it proposes a combination of the four tools listed here to fully cover supply each of these ancillary services to the templated businesses in a way that maximizes the tradeoffs that exist around each required skill capacity.  These four approaches should be viewed as tools in Central's tool box, allowing it to design the template business type in the most cost effective ways, and with optimized incentive alignments between each of the participants within the larger web of constructed businesses.
+
+FOUR TOOLS IN OUR BUSINESS TEMPLATE CONSTRUCTION TOOLBOX
+	1. Centrally provided services
+	2. Cohort specialist services
+	3. Student-consultant services
+	4. Tandem sub-business services
+
+
+**CENTRALLY PROVIDED SERVICES SOLUTION** - This tool is appropriate for skills that:
+	(1) require very high levels of training and expertise and cannot be learned in a modest period of time, and
+	(2) are only sporadically needed such that purchasing them externally or providing them for free will not represent an unsustainable cost.  
+	In these cases the central non-profit can have internal staff or external consultants provide these services to the schools and businesses either as a free benefit, or as a paid service as needed.  
+- CORPORATE LAWYER/ACCOUNTING EXAMPLE - Each corporation will need to have legal representation that is well versed in local corporate law.  This could be provided as a combination of free corporation templates specialized for each type of business, along with a small number of free consulting hours to look over final docs, plus paid hourly support for specialized per-business work as required for each new business.  Central is able to negotiate better rates since it is promising a steady stream of work, and because everything is constructed around templates shared across many businesses, the hours required by the expert familiar with these templates will be greatly reduced on a per-corporation basis.
+- ANCILLARY SERVICE EXAMPLES - Other services, like building websites, providing marketing services, etc can all be handled by getting reduced rates from select vendors for in return for a steady stream of business.
+- BENEFIT - Having a trusted supplier for these services will greatly lighten the initial complexity of starting a new business, and reduces the chances of making poor choices which could greatly damage the business.  At the same time, the sporadic nature of these services likely means many of the experts in the business of providing these services will spend significant effort in sales and marketing in order to get a steady supply of work.  This means that Central is in a great position to negotiate for rock bottom pricing from skilled professionals in return for a steady supply of hassle-free work for them.
+
+
+**THE COHORT SPECIALIST SOLUTION** - Is appropriate for skills that:
+	(1) are frequently needed on an on going basis, but 
+	(2) are not the main activity of the business, and 
+	(3) are trainable within the standard period of the schools regular training.  
+	In this case Central can offer specialized classes and training for one or two selected individuals within each cohort.  
+- MONTHLY ACCOUNTING EXPERT EXAMPLE - Businesses are likely going to still need to get professional end of year accounting in order to file with the government correctly, etc.  Still great savings are reaped, if the day to day and month end accounting is performed by a member of the corporation.  To that end, one member of each cohort is selected to become trained and eventually perform this regular activity.
+- PAYMENTS & FORWARD LOANS - Since these selected individuals are part of the corporation for which they serve it is possible, but not required that they would be paid by the corporation for this work.  If the training itself was expensive, then it might be appropriate to tie a modest forward loan to their execution of this duty for some defined period of time.
+- BENEFIT:  Cohort specialists are employees of the business, so this approach is quite cost effective since optional payments will stay within the corporation's employees.  Also by explicitly choosing one or two cohort members it ensures that each business has two or four of its employees with this require skill while not bothering the majority of the students with this more ancillary training.
+
+
+**THE STUDENT CONSULTANT SOLUTION** - For skills that:
+	(1) are trainable within a modest period of time, 
+	(2) are only needed too sporadically by each business to justify training a cohort specialist, but
+	(3) are still needed often enough that the ongoing costs of paying centrally provided external experts would add up. 
+	In this case, Central can train a special cadre of consultants from exceptional students within *all* of the incoming classes.
+- INTERNSHIP - Central will offer special internships to selected students to cover these occasionally used skills.  The student that accepts the internship will then be required to train with the original instructor experts, operating first as an assistant, and finally as the expert themselves.  This will be a 'side business' for these selected students in addition  to their regular duties within their corporation.
+- CONSULTANT - Once trained they will be paid by each corp that they help out with a certain number of future corporations.  Their cohort must accept this extra responsibility (and might take a cut of the income too depending on how disruptive it was to their expected work) 
+- FORWARD LOAN - Each internship will come with a special forward loan, if the student later choose to stop executing the responsibility they would pay a pro-rated forward loan that covers the cost of training an new consultant before the full period is complete.
+- GREEN HOUSE CONSTRUCTION EXAMPLE - The construction of a green house from raw materials is not a regularly needed skill in running a green house, but it is a non-trivial skill to acquire, and having even one expert on hand during construction means that the green house is constructed much faster and much better.
+  In this case, a small number of individual students are selected to deeply learn this skill from the original business instructors.  They agree they will be on hand to help during construction of many green houses (not just for their business), eventually they will be paid as support and eventually as the lead expert, and will come to be the paid expert for up to 10 years or 100 green houses in order to fulfill their duty in this side job.  (If they want to escape this contract before it is up, they will pay a pro-rated forward loan for the education they received instead of serving their whole term.)
+- BENEFIT - This approach is less burdensome than a cohort specialist, and it also can work in cases where the trained skill is hard to learn, since we can pick and choose the very most apt students for the training.  Finally it can be as cost effective as the cohort specialist approach since it is still student labor that is being paid for.
+
+
+**THE TANDEM SUB-BUSINESS SOLUTION** - Certain "difficult" skill capabilities are too expensive and required too often for them to be a "Centrally Provided Solution".  At the same time they are 'difficult' in some way so that the consultant or cohort specialist approaches also fail.  These might capacities are difficult because of some combination these needs:  They: 
+	(1) require a heavy investment of time to acquire the skills, and/or 
+	(2) require expensive assets to accomplish, and/or 
+	(3) require  economies of scale that are only achieved when amortized over many corporations, and/or 
+	(4) require a whole team of individuals rather than a single individual to provide this capacity.  
+	In these difficult cases the central non-profit structures a specialty sub-business which will operate in tandem with multiple of the core businesses that it serves.
+	In some cases these tandem relationships will require contractual and financial linkages in order to spread the risks and align the incentives between these tandem businesses.  But in all cases these separate corporations will be free to make their own decisions subject to the formalized incentive alignment built into their formation.
+- SHARED TRANSPORT EXAMPLE - Consider the catch-22 situation where a farming business is only profitable if there is an affordable/reliable transport to some central market place.  But the only way for such a transport business to be affordable is for it to be serving the transport needs of many farms.  If those farms don't yet exist, then there is a high risk in setting up this transport business since its high cost outlays could could overwhelm their income stream for years causing the business to fail long before it is profitable.  But w/o a pre-existing transport business no farm is built.
+- APPROACH - In this case, Central creates a new corp billet for a speciality transport business.  This business can be partially owned across many corporations, or could be directly owned by the students that own/run this speciality business.  In either case, the risks of the loans required for this business are tied to the future execution of other farming businesses which don't exist yet.  To make this work each of those farm corps that require this transport will need to co-sign for part of the loan for this transportation business.  Further to avoid price gouging and price stability these businesses will need to pay enough for there transport to cover the operating costs of the transport business plus their loans plus an amount of money that matches the take home salary of the transport workers with the take home salary of the operators of each farm (so each farm will pay a little different price for their transport).  This arrangement will only hold constant during the payback period.  After that there will be some number of months or years where the price controls are gradually removed.  During this relaxation period, Central encourages both sides to negotiate forward looking contracts in order to ensure long term reliability is maintained.  At the same time, since the legal restrictions are being removed, it allows the free market to properly set pricing.  Ultimately it also leaves both farms and transporters the option to choose alternate partners or businesses as they see fit.
+- BENEFITS - This approach (1) greatly reduces the capital risks around the specialty sub-business since it has a captive customer base, and it (2) greatly increases the reliability and cost effectiveness of the sub-businesses services since they are contracted and required to perform this work for the farms, and because their pricing is controlled to match the fortunes or famines that beset the farms themselves.  Independent businesses by contrast would be far riskier since they could not control or predict their customer loan, and they could easily gouge those same customers since each one of them is absolutely dependent upon their transportation.  This approach mitigates both of these negative common negative outcomes.
+
+
+
+TOOL CHOICE CHART
+- Is skill so sporadic that business can just pay external experts for it?    --->  use a Centrally Provided Service
+- Is the capacity 'difficult' skill to provide?                                                  --->   use a Tandem Business
+- Is the skill needed frequently and easily trained?                                    --->   use a Cohort Specialist 
+- The skill is moderate, not easily trained, but also not difficult, OR
+	its usage is moderate, not too frequent, and not rare                        --->  use a Student Consultant
+
 # REF 
 ### --- IGBO - Nigerian Fin Scheme ---
 - [BBC](https://www.bbc.com/news/world-africa-56985304) 
@@ -36,10 +103,78 @@ Using one's future success to obtain the (1) connections, (2) cash, and (3) trai
 
 
 # LOG
+### m2022-06-30  Moses Discussion [[@Moses Baffour Awuah]]  
+
+NEXT:  
+- He would send info on two case studies.
+- He would connect me to his contact at USAID, and MOFA
+
+
+
+FOLLOWUP EMAIL
+
+
+Moses, 
+
+This was such a good meeting!  Thanks.  It is quite surprising how closely your knowledge and experience matches this idea.  It is a very auspicious connection!  It is far too early to understand how things might be connected together, still I can see how this kind of a system could work well with an international center in Ghana, it is an idea to keep in mind.
+
+  
+
+You asked me for a list of next step items just to keep these efforts organized.  We actually mentioned a pretty big list of items like the framework for analyzing potential businesses etc.  Rather that create such a large list right now, I will keep this focused on immediate actions.  Here are two items:
+
+- Business info for green house farming and for agricultural product transportation 
+
+- Introductions at US-aid and MOFA
+
+  
+
+  
+
+BUSINESS CASES
+
+Even before you make any introductions at US-aid or MOFA, I think it will be quite valuable to try to paint a very basic picture of how this system might work in the case of an actual business.  I thought about the different cases we discussed, and it occurs to me two business types stand out:
+
+  
+
+- GREEN HOUSE FARMING - As you mentioned such businesses are easier to fund since they are more reliable, and I expect that there is notable skill and cash needed to setup a green house and then maximize every square meter of its output for maximum profit.  I bet this is an area where cash and training can have large value.  I also bet this is a business where it would be reasonable to create a 20 or 100 person shared corp - I think the size of the business might be good.  
+
+  At this stage it would be super useful to have ANY kinds of numbers about what the setup costs would be, and what kind of revenue was plausible.  I am not trying to build the actual business case here; rather I would just love to have some “somewhat" real numbers in a simple table so that when I speak about this idea I have at least one business where I have very basic numbers that show the idea at least has potential.
+
+  
+
+- AGRI-BUSINESS TRANSPORTATION - This idea which we began with has the virtue of being more easily analyzed and paid back since it is a pretty simple business.  Thus having basic numbers for a specific case (like Coconut transportation near a particular city) would lend some credibility to the presentation.
+
+  I know it will take alot of work to get real numbers for either of these, I am hoping there is some easy starting point that I might integrate into my thinking even before I discuss these ideas with others.
+
+  
+
+  
+
+INTRODUCTIONS
+
+My thought is that as soon as I have any initial info you might have easy access to, I could then connect with your contacts, perhaps to have that three way call if they have the interest.
+
+  
+
+  
+
+  
+
+I look forward to future discussions.  Thanks much for such a good call.
+
+  
+
+Regards,
+
+--Dan
+
+
+
+
 ### t2022-06-25  Transcript
 
 #### Title
-- Exponential Edu Corp uses one's future success to obtain the connections cash and training needed to achieve that success. 
+- Exponential Edu Corp.  Using one's future success to obtain the connections cash and training needed to achieve that success. 
 
 #### Problem
 - What problem are we solving?  The disadvantaged need what the rich already have, the connections cash in training to make to succeed.
