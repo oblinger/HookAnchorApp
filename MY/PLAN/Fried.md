@@ -1,3 +1,7 @@
+- [ ] Cover outlets
+Write to Maria (dietician... maybe work with her)
+- [ ] Cable guard for new desk
+- [ ] find the huberman podcast (or blog)
 - [ ]  Quarterly Budget
 - [ ] mission statement
 - [ ] Research crones

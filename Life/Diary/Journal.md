@@ -1,4 +1,11 @@
+### 2022-07-18  MISSION
 
+- CONTRIBUTE - To envision and support the creation of a novel mechanism for societal good.
+- SOCIAL - To be part of a rich web of family, friends, and colleagues.  (how many show @ my funeral)
+- INTELLECTUAL - 
+	- THINK - 
+	- OPTOMIZE - 
+- EXPERIENCES -  
 
 ### 2022-03-00 - QJ note
 As I understand it, there are 1000+ biological-men who can run faster than the fastest biological-woman, so was imagining a future where it becomes normal for a tiny fraction (0.1% to 1%) of non-trans elite athletes to adjust their self determination specifically to BECOME a world champion.  It would not take many folks to decided they had a bit of room in their life for a bit of ambiguity.  The stakes would be high...  millions in advertising etc. and the gold medal title.  And just 0.1% would be enough....

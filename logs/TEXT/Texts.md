@@ -2,6 +2,9 @@
 
 | Date        | File                 | Notes                                                                  |
 | ----------- | -------------------- | ---------------------------------------------------------------------- |
+| t2022-07-20 | [[@Felipe Lavratti]]     |                                                                        |
+| t2022-07-20 | [[@Rafah Hosn]]          | Reconnect                                                              |
+| t2022-07-18 | [[Politics]]             | Optimal Tax Policy                                                     |
 | t2022-07-09 | [[EOCA]]                 | Zombie Consciousness                                                   |
 | t2022-07-06 | [[EOCA]]                 | What is Consciousness - Response to Erik                               |
 | t2022-07-06 | [[EOCA]]                 | Bengio's based model of consciousness                                  |

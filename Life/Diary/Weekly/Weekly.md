@@ -1,3 +1,15 @@
+### 2022-07-11  -- CRAP WEEK
+- [ ] CALLS lined up - 
+- [ ] BENJIO - What is my GANs idea
+- [ ] HACK - Hack some Coursera
+- [ ] 
+- [ ] [[DYL]] Build 3 Odyssey plans.  Dan one-pager.  Prototype chapter
+- [ ] Mgr Book (read in background)
+
+SECOND:
+- [ ] Yearbook push parents to contribute
+
+
 ### 2022-07-05
 - [x] WAR STORIES - 3 hours on WarStories. 
 - [x] RECOMMENDATIONS - 

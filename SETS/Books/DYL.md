@@ -1,3 +1,6 @@
+## = TODO
+  ///  Build 3 Odyssey plans.  Dan one-pager.  Prototype chapter.
+  
 #### _
 it’s about technical ideas with impact. Space space.Benefit and matters efficiency and organization
 not committed enough to any one idea

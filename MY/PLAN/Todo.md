@@ -1,8 +1,6 @@
-- [ ] cover outlets
-- [ ] Book Photographer
-
-
-
+- [ ] Nick meeting
+- [ ] Figure recipes for mom to make when she is here
+- [ ] in2
 
 
 - [ ] Justin
@@ -10,15 +8,11 @@
 - [ ] Call about re-opening long close citi-bank credit card account.
 - [ ] Fix audio on laptop
 
-- [ ] Short form summaries Atomic Habits; Managers Path
 - [ ] Dan Fine document
-- [ ] Get Justin's number (clean up suitcase)
 - [ ] Get "Fun" list filled out
-- [x] 311   # 15403113   1->3
-
-
-
 I intend each day to be part of a fulfilled and fulfilling life focused on joy, meaning, and benefit for others.
+- [ ] passport
+- [ ] Get AF accounts cleaned:   (Find the hiring tests)
 
 
 
@@ -27,19 +21,6 @@ I intend each day to be part of a fulfilled and fulfilling life focused on joy, 
 
 
 - [ ] Rocket Lawyer
-
-- [ ] Reddick Linked-in updates
-- [ ] Dan Fine
-- [ ] give hiring tests to nick!
-- [ ] passport
-- [ ] Get AF accounts cleaned
-- [ ] CALLS: call Facebook AI guy; QL BF; l
-
-
-
-
-
-  [Outcult](Outcult.md)
 ### Lefty
 
 Lefties die younger than righty.  Most of the difference is accidents or war.

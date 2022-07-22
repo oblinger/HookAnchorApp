@@ -2,6 +2,17 @@
 
 
 - [ ] contigo thermos
+
+### 2022-07-18  Walnut desktop
+
+
+........ . . . . . . . . . . . . . . . . . . . . . 	Cost
+- [The Heritage Wood Co](https://docs.google.com/document/d/1MSKuH6oLD6Xd719SRmIESWrAhflPj9cCgz3Jzzvk62w/edit)  - 	$1200+0	60x30x1.25		Lacquer		x fewer reviews
+- [Brick Mill Co](https://www.etsy.com/listing/1248926252/walnut-desk-top-walnut-standing-desk-top?ga_order=most_relevant&ga_search_type=all&ga_view_type=gallery&ga_search_query=solid+walnut+tabletop&ref=sr_gallery-1-5&frs=1&organic_search_click=1) 				$950+0		60x24x1.25 (+)	Lacquer 	many reviews
+- [JJwood Furnishings](https://www.etsy.com/listing/1142059842/walnut-table-top-black-walnut-table-top?ref=cart&variation0=2426515137&variation1=2720708320) 		$930+		56x24x~1.35 	Oil 			124 reviews
+- [Hedge Custom Wood](https://www.etsy.com/listing/1095664425/solid-american-walnut-tabledesk-top?ref=cart&variation0=2274906035&variation1=2425088906) 		$515		54x24x.75 		Oil 			57 reviews
+ 
+
 ### 2022-05-04  Smart scale
 
 -  [Pizza dual scale](https://ooni.com/products/ooni-dual-platform-digital-scales?variant=31116717359201&currency=USD&utm_medium=cpc&utm_content=Ooni+Digital+Scales+Dual+Platform&utm_source=shopping&utm_campaign=Google_Shopping_US&utm_gcmpgn_typ=us-shopping&gclid=EAIaIQobChMItdHoiN3G9wIVsCitBh0JNAIWEAQYBCABEgJVH_D_BwE),  

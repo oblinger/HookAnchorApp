@@ -1,5 +1,6 @@
+  [DocPyDatetime](DocPyDatetime.md)
   [DocNumPy](DocNumPy.md)
-  [__DocPython__](__DocPython__.md)
+  [__DocPython__](__DocPython__.md)   [[DocPandas]],  [[DocPyDatetime]], 
   -[[DocNumPy]] 
 
 (See file:///ob/topics/Docs/src/Blam_Python/Blam_Python.md )

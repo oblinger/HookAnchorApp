@@ -2,11 +2,16 @@
 
 | Date       | File                | Notes                                                                                     |
 | ---------- | ------------------- | ----------------------------------------------------------------------------------------- |
+| 2022-07-19 | [[Comms]]               | Ping Goals                                                                                |
+| 2022-07-19 | [[Brain3]]              | G-Flow Nets Maybe - whats my example                                                      |
+| 2022-07-18 | [[Journal]]             | MISSION                                                                                   |
+| 2022-07-18 | [[ToBuy]]               | Walnut desktop                                                                            |
 | 2022-07-15 | [[MLeng]]               | DL class notes                                                                            |
 | 2022-07-13 | [[Jnl]]                 | Thoughts during the day                                                                   |
 | 2022-07-12 | [[Phone]]               | Eli Sand toys                                                                             |
 | 2022-07-12 | [[Phone]]               | LOWES tool rental                                                                         |
 | 2022-07-11 | [[Jnl]]                 | NOOM -                                                                                    |
+| 2022-07-11 | [[Weekly]]              | CRAP WEEK                                                                                 |
 | 2022-07-11 | [[MLeng]]               | Coursera Tech Setup                                                                       |
 | 2022-07-08 | [[MED]]                 | Pain after sex - Spoke with Lucas, Hasslers PA                                            |
 | 2022-07-07 | [[Phone]]               | Setting up Sonic internet service                                                         |

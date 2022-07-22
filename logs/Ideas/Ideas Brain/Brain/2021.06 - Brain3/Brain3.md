@@ -1,7 +1,10 @@
   [BrainDomains](BrainDomains.md)
 
 
-# ### LOG ###
+# LOG
+### 2022-07-19  G-Flow Nets Maybe - whats my example
+- Examples of the reasoning I want to bootstrap
+
 ### 2022-01-16 - Using GANs
 
 INPUTS -- Raw experiential input nodes
@@ -10,7 +13,7 @@ DNET -- Deep Net of CNN/RNN abstraction layers with no or limited supervisory si
 SUB -- Subsumption DAG -- A subsumption DAG with exclusion links
 FWD -- Forward propagation network -- Forward propagation network
 
-CTX -- Context Hiearchy -- 
+CTX -- Context Hierarchy -- 
 INTENT -- Intention DAG -- 
 
 ### 2022-01-11 - combining DL and logic

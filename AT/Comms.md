@@ -1,34 +1,13 @@
 ## = ACTIVE
+- Rafah, Felipe, 
+- Freed, G: John Davis, Gordin, 
 
 LETTER OF RECOMMENDATION
-- [[@Nick Allen]],  [[@Theo Enns]],  [[@Joe Augenbraun]],   [[@Attila Aros]],  
+- [[@Nick Allen]],  [[@Theo Enns]],  [[@Joe Augenbraun]],  [[@Felipe Lavratti]], 
 
 
 - AF: [[@James Briones]]  
-- Aeolus: [[@Felipe Lavratti]],   [[@Daniel Haddick]]  ???
-
-
-
-
-|           |                     | . . . . . . . . . . . . . . . . . . . . . . . . . . . . |     |
-| --------- | ------------------- | ------------------------------------------------------- | --- |
-|           | [[@John Davis]]     | BeFAANG                                                 |     |
-|           | [[@Michael Freed]]  | BeFAANG Mgr                                             |     |
-| P - T5-03 | [[@Sahil Kejriwal]] | Robotics / Startup                                      |     |
-|           | [[__]]              |                                                         |     |
-|           | [[__]]              |                                                         |     |
-|           | [[@Juan Huerta]]    |                                                         |     |
-|           | [[@Dan Fine]]       |                                                         |     |
-|           | [[@Rafah Hosn]]     |                                                         |     |
-
-#### Letters
-
-
-Nick,
-
-I am getting prepped for interviewing, and I would love to get a letter of recommendation from you.  We have put in a few years of effort together, so I think you know me well.  Let me know if you have the time to do it.
-
-
+- Aeolus:   [[@Daniel Haddick]]  ???,  [[@Attila Aros]],  
 
 
 
@@ -48,6 +27,16 @@ I am getting prepped for interviewing, and I would love to get a letter of recom
  
 
 # LOG
+### 2022-07-19  Ping Goals
+- Heartbeat - 
+- Groups to target - 
+- Active Job Reqs - 
+- Training self?
+- Positioning self
+
+
+
+
 ### 2021-09-23 - WHOM IN MY NETWORK TO ASK
 - [[FAANG]] 
 To CALL:	[Juan Huerta](https://www.linkedin.com/in/juanmhuerta/), [Rafah Hosn](https://www.linkedin.com/in/rafahhosn/), [Ron Brachman](https://www.linkedin.com/in/ron-brachman-9195764/), 

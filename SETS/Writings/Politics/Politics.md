@@ -2,7 +2,11 @@
   [Race](Race/Race.md)
   [race](race.md)  [trump](trump.md)
 
-
+# REF
+### t2022-07-18  Optimal Tax Policy
+- https://scholar.harvard.edu/files/mankiw/files/optimal_taxation_in_theory.pdf
+- 
+# LOG
 ### --- ARE YOU INFORMED OR ARE YOU MANAGED?
 
 

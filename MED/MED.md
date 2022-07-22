@@ -91,6 +91,33 @@
   if framingham calculator.  is above 10% in next ten years
   Good quality vitamin
 - vitamin D.
+# REF
+### r2022-07-20  Stomach Upset Decision Tree
+
+Ate: 2apples over 90min, Hummus&lots of Daikon 30min before.
+
+- Neasia, salavating, dramatic diarea, 
+- Stomach pain:  centered in upper stomach, but later spreading more evenly across all stomach and later intenstins
+- flu-like Body aches in arms and legs
+
+- POISING - [3-6hr onset](https://bcbstnews.com/bluehealthsolutions/what-do-i-have-food-poisoning-stomach-flu-or-food-allergy/)  ; [hours to weeks onset](https://badgut.org/information-centre/health-nutrition/food-allergy-vs-intolerance/);  
+- INTOLERANCE - [usually 30min, up to 48hr onset](https://badgut.org/information-centre/health-nutrition/food-allergy-vs-intolerance/);   [Normal Portion](https://badgut.org/information-centre/health-nutrition/food-allergy-vs-intolerance/);  
+- ALLERGY - [Immediate-2hr](https://badgut.org/information-centre/health-nutrition/food-allergy-vs-intolerance/);   [immediate-several hours onset](https://badgut.org/information-centre/health-nutrition/food-allergy-vs-intolerance/);   [Tiny Portion](https://badgut.org/information-centre/health-nutrition/food-allergy-vs-intolerance/);   
+- IBS - [4-5hrs typical; 2-36 possible](https://badgut.org/information-centre/health-nutrition/food-allergy-vs-intolerance/);  
+
+
+[Causes Sorted By Timing](https://www.fodmapeveryday.com/timing-of-digestive-symptoms-what-it-means/);
+- 0-15min    Immune(Food Allergy), Biochemical(Sulfite sensitivity, Histamine Intolerance),  Dyspepsia (Acid Indigestion, Functional Dyspepsia)
+- 15-90min   GCR(Acclerated Gastrolic Reflex)  High volume foods
+
+
+
+
+
+accelerated gastrocolic reflex (GCR)
+small intestine bacterial over growth (SIBO)
+- [[Allergy vs Intolerance]](https://badgut.org/information-centre/health-nutrition/food-allergy-vs-intolerance/) -
+
 # LOG
 ### 2022-07-08  Pain after sex - Spoke with Lucas, Hasslers PA
 - 7/26 - 

@@ -1,20 +1,13 @@
-### 2022-07-11
+### 2022-07-18
+- [ ] What's my plan
 - [ ] CALLS lined up - 
-- [ ] BENJIO - What is my GANs idea
-- [ ] HACK - Hack some Coursera
-
+- [ ] BENJIO - What is my GANs idea  (2h)
+- [ ] HACK - Hack some Coursera (2h)
 - [ ] [[DYL]] Build 3 Odyssey plans.  Dan one-pager.  Prototype chapter
-- [ ] Mgr Book (read in background)
 
 SECOND:
-- [ ] Yearbook push parents to contribute
+- [ ] Yearbook final ping to parents
 
-
-WAITING
-- [ ] [[Yearbook]]  July 23 - Final day
-- [ ] Get Schedule C and income from last year
-- [ ] Moses follow up
-- [ ] lung followup
 
 
 REPEAT:  
