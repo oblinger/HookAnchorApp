@@ -1,6 +1,7 @@
 =[[TAG]]
 
-[[Meetings]]   [[Y22]]  | Date        | File                 | Notes                                                             |
+[[Meetings]]   [[Y22]]  
+| Date        | File                 | Notes                                                             |
 | ----------- | -------------------- | ----------------------------------------------------------------- |
 | m2022-08-11 | [[@Joseph Yeh]]          | Activities                                                        |
 | m2022-08-11 | [[m2022]]                | Jobot Recruiter                                                   |
