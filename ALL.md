@@ -10,8 +10,8 @@ ALL TOPIC ROOTS
   [[RealEstate]],   [[Expenses]],   [[Bills]],   [[Taxes]],   [[LIFE]],   [[Phillipines]],   [[mate]],   [[Diary]],   
   [[Weekly]],   [[Mission Statement]],   [[Docs]],   [[Unix Command Line]],   [[DocEmacs]],   [[DocMac]],   
   [[DocJavascript]],   [[DocR]],   [[DocPython]],   [[DocApplescript]],   [[DocRuby]],   [[DAILY]],   [[Tags]],   
-  [[Logs]],   [[Receipts]],   [[Letters]],   [[IBM-years]],   [[Msg]],   [[Ideas]],   [[Alloy]],   [[2013-00 
-  TechnoTherapy]],   [[2020-07 Autonomy]],   [[2007-02 DARPA DHO]],   [[2007-02 New Financial Model]],   [[Ideas Old]],
+  [[Logs]],   [[Receipts]],   [[Meet]],   [[Letters]],   [[IBM-years]],   [[Msg]],   [[Ideas]],   [[Alloy]],   [[2013-00
+   TechnoTherapy]],   [[2020-07 Autonomy]],   [[2007-02 DARPA DHO]],   [[2007-02 New Financial Model]],   [[Ideas Old]],
      [[homerobot]],   [[Consulting Co]],   [[Word-War]],   [[Ideas Social]],   [[MKT]],   [[Greenhouse Farming]],   
   [[Forum]],   [[Elastic Block Chain]],   [[Too Big To Fail]],   [[2007-00 DARPA seeds]],   [[Ideas Brain]],   
   [[Brain]],   [[Brain3]],   [[EOC]],   [[The Sentient Weapon]],   [[EOCA]],   [[PPP]],   [[2015-00 Walmart]],   

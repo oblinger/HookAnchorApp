@@ -1,3 +1,4 @@
+  [MEET](MEET/MEET.md)
   [Ideas](Ideas/Ideas.md)
   [Ideas Quick](Ideas%20Quick.md)
   [Notes](Notes.md)
