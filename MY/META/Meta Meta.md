@@ -1,5 +1,37 @@
  [[Meta]]
 
+## THEORY
+
+### ASPECTS OF A TERM
+- MEANING CONFLICT BY DESIGN - Unified naming implies there will be multiple conflicting aspects for many terms.
+- ARTFUL DECONFLICTION - We reject distinct naming for various aspects (except when applied as a consistent modifier)
+
+ASPECTS:
+
+- FOLDER - 
+  ==> It will be the folder containing the item also have the same name as the item.
+          ( Thus the item is always named:    Foo/Foo.md  )
+
+- CONTENT - 
+  ==> It will be after the preamble of the item (it it has a preamble).
+
+- COMMAND - Command usually external to obsidian
+
+- DOCUMENT - Non textual document within Obsidian
+  ==> It will be opened via a command (with CMD prefix)
+
+- TOC ROUTER - 
+  ==> It will be in the preamble of the item
+
+- INSTANCES LIST - 
+  ==> Stored as a python computed table of pointers appended to the items contents.
+
+- ABOUT - Meta info about this item.
+  ==> Can be stored in items contents if simple, else in Meta
+
+- PROJ - Source tree or other project resource folder external to obsidian
+- PRJ - Project resources within obsidian
+
 
 ## DASHBOARDS
 
@@ -53,3 +85,4 @@ THREE MONITOR SETUP
 		- [[TAGS/TEXT]] - 
 		- [[MEETING]] - 
 		- [[REF]] - Reference type info ???   (could be listed under log, or topic)
+

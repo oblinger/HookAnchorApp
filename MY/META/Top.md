@@ -30,7 +30,7 @@
 | .  [[Refs]]     'r...'   | Reference Materials/Links (maybe this should be 'e' for external authored by others)                                          |
 | .  [[WP]]      'wp...'  | Work Product -- Smaller single documents I produce.  Any (smaller one-off work products) produced in part by my hand          |
 | [[__]]                   | SPECIALTY LOGS                                                                                                                |
-| .  [[Ideas]]             |                                                                                                                               |
+| .  [[IDEA]]             |                                                                                                                               |
 | .  [[Letters]]  '...'    | Formal correspondence                                                                                                         |
 | .  [[Receipts]]          |                                                                                                                               |
 | .  [[Rocks]]    'prj...' | Medium sized projects expected completion within a quarter.  (non-coding projects?)                                           |

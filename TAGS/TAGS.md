@@ -29,8 +29,11 @@
 	- [[CMD]]
 	- [[TAG]]
 	- [[TASK]] - task list
+	- [[SET TYPE]] - 
+		- [[Quotes]] -  
 	- [[DATED TYPE]]  - 
 		- [[DATED]] -
+		- [[JOURNAL]] - Daily Journal entries
 		- [[MEETING]] -
 		- [[NOTE]] - 
 		- [[PRJ]] - 

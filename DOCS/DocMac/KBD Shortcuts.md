@@ -111,12 +111,12 @@
 | W     | CLOSE pane            |                  | WORKSPACE  Load / MANAGE       |                   |
 | X     | CUT to clip           |                  |                                |                   |
 | Y     |                       |                  |                                |                   |
-| Z     | UNDO / REDO           |                  | ZOOM mode                      |                   |
+| Z     | UNDO / REDO           |                  | ZOOM mode                      | Ins Template Menu |
 | -     |                       |                  | tgl LEFT pane                  |                   |
 | +     |                       |                  | tgl RIGHT pane                 |                   |
 | {     |                       |                  | nav BACK / DAILY note          |                   |
 | }     |                       |                  | nav FORWARD / DAILY note       |                   |
-| \\     |                       |                  |                                |                   |
+| \\    |                       |                  |                                |                   |
 | ;     |                       |                  | DARK mode                      |                   |
 | '     |                       |                  | LIGHT mode                     |                   |
 | ,     | SETTINGS              |                  |                                |                   |

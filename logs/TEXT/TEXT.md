@@ -43,7 +43,7 @@
 | t2021-00-00 | [[@Deep Sahini]]             | Thanks note                                                            |
 | t2021-00-00 | [[MED]]                      | Questions and topics                                                   |
 | t2021-00-00 | [[Politics]]                 | Cheap housing idea                                                     |
-| t2020-00-00 | [[Ideas Quick]]              | Chipstack                                                              |
+| t2020-00-00 | [[Ideas]]                    | Chipstack                                                              |
 | t2019-00-00 | [[Qingling]]                 | QL Notes                                                               |
 | t2019-00-00 | [[Politics]]                 | Ryan (Baltimore school teacher)                                        |
 | t2019-00-00 | [[Politics]]                 | CONSEQUENCES in the classroom                                          |

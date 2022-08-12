@@ -1,5 +1,5 @@
   [Coursera](Coursera.md)
-  [Startups](Startups/Startups.md),   [Template](Template.md)
+  [Startups](Startups/Startups.md),   [Templates](Templates.md)
   [Anchors](Anchors.md)
   [Test88](Test88/Test88.md)
   [Politics](Politics.md)
