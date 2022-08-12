@@ -1,3 +1,3 @@
-=[[TAG]]
+=[[TAG]] <[[DATED TYPE]]  
 
 [[Refs]]  

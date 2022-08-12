@@ -50,6 +50,6 @@ THREE MONITOR SETUP
 	- [[PROJ]] - Project (code) folders.  These are generally OUTSIDE the kmr tree.
 		
 	-  [[LOG]] - Chronically organized and labelled pages and folders  (Often part of a topic)
-		- [[TEXT]] - 
+		- [[TAGS/TEXT]] - 
 		- [[MEETING]] - 
 		- [[REF]] - Reference type info ???   (could be listed under log, or topic)

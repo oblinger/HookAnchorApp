@@ -1,5 +1,6 @@
-  [REF](REF.md),   [TEXT](TEXT.md),   [MEETING](MEETING.md),   [TOPIC](TOPIC.md)
-  [LIST](LIST.md),   [PTM](PTM.md)
+  [TEXT](TEXT.md)
+  [REF](REF.md),   [TEXT](TAGS/TEXT.md),   [MEETING](MEETING.md),   [TOPIC](TOPIC.md)
+  [DATED TYPE](DATED%20TYPE.md),   [PTM](PTM.md)
   [TASK](TASK.md)
   [@Kartik](@Kartik.md)
   [LOG](LOG.md)
@@ -28,4 +29,11 @@
 	- [[CMD]]
 	- [[TAG]]
 	- [[TASK]] - task list
-	- [[LIST]]  
+	- [[DATED TYPE]]  - 
+		- [[DATED]] -
+		- [[MEETING]] -
+		- [[NOTE]] - 
+		- [[PRJ]] - 
+		- [[REF]] - 
+		- [[TEXT]] - 
+		- [[WP]] - 

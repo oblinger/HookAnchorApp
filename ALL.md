@@ -10,16 +10,16 @@ ALL TOPIC ROOTS
   [[RealEstate]],   [[Expenses]],   [[Bills]],   [[Taxes]],   [[LIFE]],   [[Phillipines]],   [[mate]],   [[Diary]],   
   [[Weekly]],   [[Mission Statement]],   [[Docs]],   [[Unix Command Line]],   [[DocEmacs]],   [[DocMac]],   
   [[DocJavascript]],   [[DocR]],   [[DocPython]],   [[DocApplescript]],   [[DocRuby]],   [[DAILY]],   [[Tags]],   
-  [[Logs]],   [[Receipts]],   [[Meet]],   [[Letters]],   [[IBM-years]],   [[Msg]],   [[Ideas]],   [[Alloy]],   [[2013-00
-   TechnoTherapy]],   [[2020-07 Autonomy]],   [[2007-02 DARPA DHO]],   [[2007-02 New Financial Model]],   [[Ideas Old]],
-     [[homerobot]],   [[Consulting Co]],   [[Word-War]],   [[Ideas Social]],   [[MKT]],   [[Greenhouse Farming]],   
-  [[Forum]],   [[Elastic Block Chain]],   [[Too Big To Fail]],   [[2007-00 DARPA seeds]],   [[Ideas Brain]],   
-  [[Brain]],   [[Brain3]],   [[EOC]],   [[The Sentient Weapon]],   [[EOCA]],   [[PPP]],   [[2015-00 Walmart]],   
-  [[2007-01 DARPA GUST]],   [[2007-12 DARPA Go-Play]],   [[2016-00 DriveDev]],   [[Tile Robot]],   [[2006-00 
-  Nanofabrication]],   [[2006-11 DARPA Game World]],   [[2009-00 User Controlled Identifier]],   [[Lean Canvas]],   
-  [[2020-12 SmartScale]],   [[2020-00 Tableau Killer]],   [[2020-00 ClaimsAnalyzer]],   [[Virtual Tour Guide]],   
-  [[2009-00 DARPA Energy]],   [[2020-10 MedAR]],   [[2020-09 CtrlSaaS]],   [[2020-07 Spot Pricing]],   [[2015-00 
-  Flipping Websites]],   [[2013-08 Crowd Self Assessment]],   [[2020-06 OpenBricks]],   [[TreeSheet]],   
+  [[Logs]],   [[Receipts]],   [[NOTE]],   [[WP]],   [[TEXT]],   [[Letters]],   [[IBM-years]],   [[Msg]],   [[Ideas]],   
+  [[Alloy]],   [[2013-00 TechnoTherapy]],   [[2020-07 Autonomy]],   [[2007-02 DARPA DHO]],   [[2007-02 New Financial 
+  Model]],   [[Ideas Old]],   [[homerobot]],   [[Consulting Co]],   [[Word-War]],   [[Ideas Social]],   [[MKT]],   
+  [[Greenhouse Farming]],   [[Forum]],   [[Elastic Block Chain]],   [[Too Big To Fail]],   [[2007-00 DARPA seeds]],   
+  [[Ideas Brain]],   [[Brain]],   [[Brain3]],   [[EOC]],   [[The Sentient Weapon]],   [[EOCA]],   [[PPP]],   [[2015-00 
+  Walmart]],   [[2007-01 DARPA GUST]],   [[2007-12 DARPA Go-Play]],   [[2016-00 DriveDev]],   [[Tile Robot]],   
+  [[2006-00 Nanofabrication]],   [[2006-11 DARPA Game World]],   [[2009-00 User Controlled Identifier]],   [[Lean 
+  Canvas]],   [[2020-12 SmartScale]],   [[2020-00 Tableau Killer]],   [[2020-00 ClaimsAnalyzer]],   [[Virtual Tour 
+  Guide]],   [[2009-00 DARPA Energy]],   [[2020-10 MedAR]],   [[2020-09 CtrlSaaS]],   [[2020-07 Spot Pricing]],   
+  [[2015-00 Flipping Websites]],   [[2013-08 Crowd Self Assessment]],   [[2020-06 OpenBricks]],   [[TreeSheet]],   
   [[myorgstartup]],   [[2009-03 State Edu Testing]],   [[2020-00 FinScreener]],   [[Sets]],   [[Cmd]],   [[Writings]],
      [[Politics]],   [[race]],   [[App]],   [[Obsidian]],   [[Books]],   [[LANG]],   [[haskell]],   [[Humor]],   
   [[Recipes]],   [[Movies]],   [[Phone]],   [[ToRead]],   [[Buy]],   [[Bought]],   [[MY]],   [[Plan]],   [[scratch]],   

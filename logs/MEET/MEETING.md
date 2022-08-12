@@ -1,13 +1,14 @@
-=[[TAG]]
+=[[TAG]]   <[[DATED TYPE]]
 
-[[Meetings]]   [[Y22]]  
+
+[[Meetings]]  
 
 
 
 | Date        | File                 | Notes                                                             |
 | ----------- | -------------------- | ----------------------------------------------------------------- |
 | m2022-08-11 | [[@Joseph Yeh]]          | Activities                                                        |
-| m2022-08-11 | [[m2022]]                | Jobot Recruiter                                                   |
+| m2022-08-11 | [[Meetings]]             | Jobot Recruiter                                                   |
 | m2022-08-03 | [[@Joseph Yeh]]          | Activities                                                        |
 | m2022-06-30 | [[@Moses Baffour Awuah]] | First discussion about EduCorp                                    |
 | m2022-06-30 | [[Edu Corp]]             | Moses Discussion [[@Moses Baffour Awuah]]                         |
@@ -29,7 +30,7 @@
 | m2022-02-14 | [[@Aniket Kumar]]        | Aniket  [[BeVC|BeVC]]                                             |
 | m2021-11-07 | [[@Dan Fine]]            | FINE - Truths                                                     |
 | m2021-11-04 | [[@Dan Fine]]            | FINE - Dreaming big with Google                                   |
-| m2021-11-04 | [[m2022]]                | NEATO CTO feedback                                                |
+| m2021-11-04 | [[Meetings]]             | NEATO CTO feedback                                                |
 | m2021-11-01 | [[@Dan Fine]]            | FINE journal -                                                    |
 | m2021-10-27 | [[@Dan Fine]]            | FINE journal                                                      |
 | m2021-10-27 | [[@Dan Fine]]            | FINE passion questions / KM trajectory                            |

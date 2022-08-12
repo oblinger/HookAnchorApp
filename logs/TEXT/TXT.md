@@ -1,7 +1,7 @@
   [@Melissa](@Melissa.md)
 
 
-- [[Texts|TXTS]] - Partial log of outgoing messages.    [[Texts|ALL TXT]] 
+- [[LOGS/TEXT/TEXT|TXTS]] - Partial log of outgoing messages.    [[LOGS/TEXT/TEXT|ALL TXT]] 
 - [[Letters]] - Formal correspondence 
 - [[Campaigns|Campaigns]] - Planned batched first-touch outreach
 - [FirstTouch](__FirstTouch__.md) - Ideas for first touch messaging
@@ -9,4 +9,4 @@
 - [FailedMessages](__FailedMessages__.md)  
 
 
-  [Letters](Letters.md)  [Msg](LOGS/TEXT/Msg/Msg.md)  [Texts](Texts.md)  [Campaigns](__Campaigns__.md)  [TXTS](__TXTS__.md)
+  [Letters](Letters.md)  [Msg](LOGS/TEXT/Msg/Msg.md)  [TEXT](LOGS/TEXT/TEXT.md)  [Campaigns](__Campaigns__.md)  [TXTS](__TXTS__.md)
