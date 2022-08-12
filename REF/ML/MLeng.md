@@ -4,6 +4,9 @@ TOOLS:  [[DocJupyter]],
 
 
 # LOG
+### j2022-08-12  Cousera
+
+
 
 ### j2022-08-10  VAR Autoencoders
 

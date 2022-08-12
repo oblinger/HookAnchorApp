@@ -1,11 +1,12 @@
-  [Journals](Journals.md)
+
 =[[TAG]]  <[[DATED TYPE]]  
 
-[[Journals]]
+  [Journals](Journals.md)  
 
 
 | Date        | File     | Notes                    |
 | ----------- | -------- | ------------------------ |
+| j2022-08-12 | [[MLeng]]    | Cousera                  |
 | j2022-08-10 | [[MLeng]]    | VAR Autoencoders         |
 | j2022-08-05 | [[Journals]] | [[Coursera]]             |
 | j2022-08-04 | [[Journals]] | Attention and DL reading |
