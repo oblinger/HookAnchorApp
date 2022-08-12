@@ -13,6 +13,7 @@ Question: what groups should I target.  what training should I have.
 Freed.  Luis.  Rafah.  Huerta.  
   --> Davis, Gordin, Herb, 
 
+
 ## = People
 
  Ask|  about FAANG ML: 

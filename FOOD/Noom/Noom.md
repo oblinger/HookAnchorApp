@@ -3,8 +3,21 @@
 - [Green Foods](https://content.noom.com/custom-content/green_2021/?branding=noom2), 
 - [GDPR data export](https://account.noom.com/gdpr-export) - 
 - [py notebook data exploration](https://gist.github.com/nealmcb/d6e3e0b50495bb10c943b1231bd0bca5)
-- [Noom Color Computation](https://www.noom.com/support/faqs/question-topics/food-logging/2016/08/think-food-color-wrong/)   
-- 
+- [Noom Color Computation](https://www.noom.com/support/faqs/question-topics/food-logging/2016/08/think-food-color-wrong/),  
+	- SOLID:   G<1.0    1.0<Y<2.4    2.4< R 
+	- LIQUID:  G<.4      .4 < Y < .5   .5 < R
+	- SOUPS:	G < .5    .5 < Y < 1.0   1.0 < R
+
+
+PASTA 1.3
+
+
+## Answered Questions
+
+#### Situations that Gives You Trouble
+- SNACKY @ NIGHT - 
+
+## TOPICS
 
 YBP - 
 

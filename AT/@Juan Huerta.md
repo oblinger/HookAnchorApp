@@ -2,7 +2,7 @@
   [Github](https://github.com/JuanManuelHuerta)  [Pubs](https://scholar.google.com/citations?user=0YpCT4kAAAAJ&hl=en)  [Pubs](https://www.researchgate.net/profile/Juan-Huerta-7)  
 
 
-hold off 
+hold off   (have not spoken yet, I think 7.2022)
 
 - get levels figured out
 - try to understand my value relative to those levels

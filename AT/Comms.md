@@ -1,6 +1,11 @@
 ## = ACTIVE
-- Rafah, Felipe, 
-- Freed, G: John Davis, Gordin, 
+- Rafah, 
+- Felipe, 
+- Freed, John Davis, Gordin, 
+- Nina 
+
+
+
 
 LETTER OF RECOMMENDATION
 - [[@Nick Allen]],  [[@Theo Enns]],  [[@Joe Augenbraun]],  [[@Felipe Lavratti]], 
@@ -10,7 +15,7 @@ LETTER OF RECOMMENDATION
 - Aeolus:   [[@Daniel Haddick]]  ???,  [[@Attila Aros]],  
 
 
-
+[[FAANG]]  
 
 ## = SOON
 -    [[@Vittorio Castelli]],

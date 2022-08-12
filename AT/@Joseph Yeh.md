@@ -9,9 +9,43 @@ https://www.amazon.sg/
 
 
 # MEETINGS
+
+
+### m2022-08-11  - Activities
+- JOBOT
+- ML prep
+- Who to talk with?  Hang w/ grad students?
+- [[WarStories]]  
+
+
+### m2022-08-03  - Activities
+
+- JOBOT - 
+- FAANG prep class?
+
+
+
 ### m2022-05-26  - Prep for FAANG
 
 - VC; 
+
+
+
+- Factory work mentality
+- Working large hours
+- Amazon Scientist
+
+- Facebook - eng culture is easier.
+
+
+--> What is her experience at MSR vs. IBM
+--> Want to be working on hard technical problem & building from my experience
+--> Where do I best fit.
+- 
+- Wanting to build my network...  
+- How to 'Shop you around'
+
+MRP: Eyal Amir, Dan Roth, 
 
 
 ### m2022-04-06  - Resume; 

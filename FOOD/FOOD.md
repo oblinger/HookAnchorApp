@@ -1,3 +1,4 @@
+  [Glycemic Index](Glycemic%20Index/Glycemic%20Index.md)
   [Noom](Noom/Noom.md)
   [Diet](Diet.md)  [Groc](Groc.md)  [Meals](Meals.md)  [Delivery](Delivery.md)  [Eat](Eat.md)  [Restaurants](Restaurants.md)
   [FastingDiet](FastingDiet.md)  [Meals](__Meals__.md)

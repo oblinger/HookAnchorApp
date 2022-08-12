@@ -1,4 +1,4 @@
-# # Shopping ALL  (Master Here) # 
+# Shopping ALL  (Master Here) 
 
 Fresh VEG	Radish  Celery  Carrots  Cabbage  Cauliflower  Asparagus  Cucumber  Spinach 
 Fresh VEG	Avacado  Beets  Yam
@@ -72,10 +72,23 @@ Eh: Spinach, Napa , Zuchini
 
 _
 # # SHOPPING LISTS # 
+## Dragon Baby
+
+VEG:       Green Beans, Lotus Root, Corn, Wo-Sun,  You-Mai-Cai, . . .
+FISH:      RiverBass, Salmon
+FRUIT:   Peach, DinoFruit
+MEAT:    Chicken
+
+
 ## Shopping Weee
 
-VEG PeaSprouts  YellowChive  ChineseCelery 	
+
+Ginger, Green Onions, Noodles, 
+
+VEG Mushrooms  PeaSprouts  YellowChive  ChineseCelery 	
 	Celery  Asparagus  Lettuce  Potato 
+
+NO LONGER
 -- Lotus Root  Mushrooms (Many) 
 Meat: Ribs
 Ready:
@@ -106,6 +119,7 @@ Banana  1.49 . 1.89 .  26%
 G.bean . 6.49 7.99 . 23%
 Scotch 35.99  42.59 . 18%
 ## Shopping Amazon (Fresh)
+
 ## Shopping Amazon (Whole Food)
 FRESH  - Barley&Lentils
 ### DanO Weekly (SEE BOOKMARKS IN OPERA)

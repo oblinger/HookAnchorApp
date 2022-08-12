@@ -1,13 +1,7 @@
   [RR](RR.md)  [DeepLearning](DeepLearning/DeepLearning.md)  [ML](ML/ML.md)
   [Research](Research/__Research__.md)  [DeepLearning](DeepLearning/__DeepLearning__.md)  [ML](ML/__ML__.md)
 
-# ### LOG ###
-### --- Military spending video
-https://youtu.be/FQbEWKy7i64
 
-
-
-_
 ## Online Services
 *** Text
 **** Hemmingway text analysis tool
@@ -190,4 +184,29 @@ https://web.fdi.ucm.es/posgrado/conferencias/MaribelFernandez-slides.pdf
 #### Code pointers
 * DMS code xform toolkit -- http://www.semanticdesigns.com/Products/DMS/DMSToolkit.html
 
-* 
+
+
+# LOG
+
+### r2022-00-00  - Military spending video
+https://youtu.be/FQbEWKy7i64
+
+
+### r2021-00-00  - Lefty Attributes
+
+
+Lefties die younger than righty.  Most of the difference is accidents or war.
+But there is still more difference even when accidents are removed.
+https://www.ncbi.nlm.nih.gov/pmc/articles/PMC1059767/
+https://www.newscientist.com/article/mg13017662-900-left-handers-dont-die-young-after-all/
+
+
+Not smarter:
+https://www.psychologytoday.com/us/blog/brain-myths/201303/three-myths-and-three-facts-about-left-handers
+
+Lefty facts:
+https://blog.massmutual.com/post/left-handers-day
+https://www.psychologytoday.com/us/blog/brain-myths/201303/three-myths-and-three-facts-about-left-handers
+
+
+_

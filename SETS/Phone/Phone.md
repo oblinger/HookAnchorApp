@@ -1,4 +1,19 @@
 
+### 2022-08-01  notes while out - about me
+
+high low
+infectious energy
+growing highest quality team
+fast on feet both in an important meeting,  or when responding to an execution failure
+very technical and very creative
+
+highest integrity
+deliver 
+
+
+puzzles.  problem solving 
+solutions w impact
+
 Tues 3:30p - 
 
 
@@ -242,6 +257,19 @@ Blessings.  
 Magisenter.com.     
 
 Humani vitae
+### 2018-00-00 - coinbase
+HELP!  It has been almost a week and none of your account recover processes are working:
+
+-- I no longer have the phone used to set up this account   415-656-6182
+-- I do have access to the email and password.
+-- I do have the google validator
+-- I can send a photo of myself
+-- I still have control of the account used to initially fund the account
+-- I wrote at the beginning of this week that someone might be trying to access the account since someone tried to setup a bitcoin remittance accont in my name.  I don't know if this is connected.
+
+Over and over my support tickets are closed (even when I am NOT trying to login for 48 hours)
+
+I have no place else to turn!!!  I am trying to follow all paths, I don't know what to do!
 ### 2018-08-07 - #### starting to use Evernote #### 
 
 

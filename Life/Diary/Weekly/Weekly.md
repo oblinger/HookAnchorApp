@@ -1,3 +1,19 @@
+### 2022-07-18
+- [ ] What's my plan
+- [x] CALLS lined up - 
+- [ ] BENJIO - What is my GANs idea  (2h)
+- [x] HACK - Hack some Coursera (2h)
+- [ ] [[DYL]] Build 3 Odyssey plans.  Dan one-pager.  Prototype chapter
+
+SECOND:
+- [x] Yearbook final ping to parents
+
+
+
+REPEAT:  
+- [ ] Daily 7-min exercise
+- [x] PING: Emails, [[Comms]]
+
 ### 2022-07-11  -- CRAP WEEK
 - [ ] CALLS lined up - 
 - [ ] BENJIO - What is my GANs idea

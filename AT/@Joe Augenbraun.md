@@ -19,7 +19,6 @@ If it helps your thinking, I have included a couple of starter ideas, but of cou
 - Dan breadth of hands on and theoretical knowledge across the wide range of AI and robotics as we needed.  (I think I have a pretty good pragmatic/business sense about our technical decision making, and that is coupled with a pretty deep more academic/theoretic understanding over a range of areas.
 - Dan's integrity and enthusiastic drive helped him to forge and maintain a high functioning team.  Dan helped to create a combination of fast pace, individual autonomy, with a careful attention-to and respect-for each team member.
    (Indeed we hired Axel away from Apple as firmware engineer at half his previous salary on the basis of our work environment, team, and our project vision)
-- Dan's integrity, decision making, and drive made him valuable as a co-founder and leader within our team.  
 
 - Dan is an ideal CTO, problem solver, quickly digging to the root of a problem, and listening to and thinking thru the technical approaches one might use to resolve it.  He is the right balance of theoretical understanding and hands on action.  (duplicate framing as above)
 

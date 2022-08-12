@@ -1,6 +1,8 @@
  [[Meta]]
 
 
+## DASHBOARDS
+
 DAILY VIEW DASHBOARD
 
 | col-1 |  col-2  | col-3  | .......................................................... |     |
@@ -32,3 +34,22 @@ THREE MONITOR SETUP
 	Tall  v={Safari, Opera}
 	Mid   PyCharm = {Mail, Firefox} {}
 	Lap   ^=[Messages, Spotify] v=[Finder, Terminal]
+
+
+## INFO TYPES
+
+- [[PLAN]] - Planning LIST pages
+
+
+- [[TOPIC]] - Topic type pages (may be subtopics within other topics)
+	- [[AT]] - Entity pages
+
+
+- [[TOPIC PART]] - 
+	- [[DOC]] - Specialized doc types
+	- [[PROJ]] - Project (code) folders.  These are generally OUTSIDE the kmr tree.
+		
+	-  [[LOG]] - Chronically organized and labelled pages and folders  (Often part of a topic)
+		- [[TEXT]] - 
+		- [[MEETING]] - 
+		- [[REF]] - Reference type info ???   (could be listed under log, or topic)

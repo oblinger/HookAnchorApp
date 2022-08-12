@@ -1,3 +1,4 @@
+Peloton signed 7/31
   [Budget](Budget.md)
 vorwerk $40/yr
 
@@ -54,6 +55,19 @@ MONTHLY 4K
 _
 ## = CASH FLOWS
 
+TRACKING: 	SchwabGrandCentral, SchwabJointChecking, FreedomBills, AmazonGrocery, 
+			AmazonMisc, SapphireSpending, DoubleExtra
+DANO:		SchwabDanO, CapOne, Vanguard, PenFedOther
+
+BUDGET SECTIONS
+- TOP 	-- Ignore this
+- UTIL 	-- Utilities breakout
+- INCOME	--  
+- BIG FIXED ITEMS	--  Three huge single fixed expenses
+- FIXED BILLS			--  Long list of bills
+- VAR BILLS 			-- 
+
+- SUMMARY 			--  
 
 **Grand Central Income**
     $8000    27th  Dan's income
@@ -67,16 +81,18 @@ _
 - 2,600/6mo -- House Taxes 	Manual [Gov Payments](https://ttxonlineportal.sfgov.org/content/San-Francisco-Forms-Portal/Residents/propertyTaxAndLicense.html) 2x/yr Nov? & April?)
 
 **Joint Spending (maintain 40K)**
-2,340	Cash		Nanny		($540/wk)
-4,527	House /03  	Morgage		(1st of month; autopay setup at: [Wells Fargo](https://www.wellsfargo.com/))
-2,000	Grand		Prop Tax
-2,000	Chase		Amz Groc
-1,000	Chase /04  	Amz NonG	(but bounces up to 2K or more)
-2,000   Chase /23  	Saphire  	(was 5K when ordering out)
+
+Budget	22Q2	Purpose
+2,340	2,340*	Cash		Nanny		($540/wk = $90 * 6)
+4,527	2,527 	House /03  	Mortgage	(1st of month; autopay setup at: [Wells Fargo](https://www.wellsfargo.com/))
+2,000	2,000*	Grand		Prop Tax
+2,000	2,000	Chase		Amazon Grocery
+1,000	1,000	Chase /04  	Amazon Misc (but bounces up to 2K or more)
+2,000   	5,000!!	Chase /23  	Sapphire  	 (was 5K when ordering out)
   400	Chase /27  	Freedom  	(pretty steady)
-  250	PG&E
-  150   SF PUC
-  130	Sunset Scavenger 		(/3mo)
+  250	PG&E 
+  150   	SF PUC (water)
+  130		Sunset Scavenger 		(/3mo)
 ~-~-~
 15K / month
 

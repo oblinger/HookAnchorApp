@@ -50,14 +50,65 @@ I am just sure that throwing around generalities is NOT a constructive path, and
 
 ## Steve QJ - Framing of the race debates
 
+
 Steve, 
-I propose the following framework as a way to think about the issues around Race in America.  I think it has advantages of being: accurate, consensus building, and actionable.  Below are the bare-bones of the core argument, separately one would need to think about how it might be packaged for different audiences.  For now, I am soliciting your thoughts on the framing:
+You asked if we had ideas about things that you might explore deeper, or new ways of looking at issues you have not considered.  Below is an idea that I wrote up a couple of months ago for you...  its not exactly what you are asking for.  But it is a set of ideas that I think resonate with your general outlook.  
+
+There is a bit of a QJ reframing here.  The focus is on trying to get two dramatically different sides of the race debate to agree on a common core, even if the differ dramatically in where they see 'most' of the problem.  Today I believe each side of the debate on unequal outcomes correctly sees some amount of culpability exists but is not acknowledged by the 'other' side.  And they refuse to think further to acknowledge the culpability on 'their' side.  I think there is great power in advancing a consensus message where culpability is clearly acknowledged on both sides.  
+
+I have seen you strongly argue for pieces of this story, but really making the case for specific failures on each side is quite difficult to do.  One is vilified and attacked for it, still it very much aligns with your world outlook (I think.)  And I think it could be quite transformational for the world.
+
+~~
+
+Steve, 
+I propose the following framework as a way to think about the issues around race inequality in America.  I think it has advantages of being: accurate, consensus building, and actionable.  Below are the bare-bones of the core argument, separately one would need to think about how it might be packaged for different audiences.  For now, I am soliciting your thoughts on the framing.  Here is the core of the idea written in bullet points:
+
+RESPONSIBILITY - AMERICA AS A NATION IS 100% "AT FAULT", AND IS 100% RESPONSIBLE FOR FIXING IT -- Many have argue about why this group or that group is responsible for the disparity in outcomes for some African Americans sub groups in America today.  Without weighing in on any of these arguments one way or another, it seems that we can all agree the fault lies somewhere within America as a nation, both in minds and actions of people in the present and in actions taken in the past.  100% of what we see today is a consequence of policies, peoples, and cultures that were born on this soil and citizens belonging to this nation.  So any problems that exist are 100% the fault of some parts of America, and thus at least at a societal level it is America's responsibility to fix them.
+
+REALITY IS A FEEDBACK LOOP - Past conditions are what has created created present-day cultural sub-groups, present day laws, and biases that we have today.  Differences between sub-groups today and actions of sub-groups today in turn naturally drive downstream actions from others in this same feedback loop.  Today each group can LEGITIMATELY point OUTSIDE THEMSELVES to actual contributors that significantly drive any negative actions they may take in perpetuating the system.  So this blame-shifting does have a legitimate basis in one sense.  These feedbacks are real so blaming the other guys has merit.  Still if something is going to change, then at least some groups are going to have to change their behavior "first" even when "the other guy" is still perpetuating the cycle.  Seen from this perspective it become in appropriate to shift responsibility, even if ones argument for shifting responsibility is sound.
+
+WE ACKNOWLEDGE BUT THEN STRATEGICALLY IGNORE THIS FEEDBACK LOOP - In the abstract most Americans see and accept the reality of this feedback loop, but in the concrete details they will balk.  Either they reject ANY culpability within their group, or more likely they quietly accept a tiny bit of culpability, but they worry if the loudly accept any culpability, then it will "give the other side a way out".  So they gaslight, they fervently reject ANY responsibility INSIDE their group, and double down on culpability OUTSIDE the group. But this approach only engenders a symmetric approach from the other side.  The other side knows they are not responsible for 100% of the problem, so they fully reject the criticism level against them.  This allows each side to comfortably adopt their view of 0% responsibility.  And nothing changes.
+
+COMMUNAL CULPABILITY AGENDA -- Even when your group's actions are well justified by actions outside your group, you STILL have responsibility to "break the chain" -- since it was your nation that created that feedback system in the first place.  The logic of communal culpability denies the validity of ever saying  "yes but" in defense of ones part within this great feedback system.
+
+Examples to make this concrete:
+
+POLICE SUPPORTERS - Police supporters will point to the large, statistically-verifiable difference between white and African American crime to justify any biased behavior that is exhibited by the police.  They will correctly note that even African American police behave in biased towards African Americans as further evidence that such biases are justified by reality OUTSIDE their group -- outside of the police force.
+
+WHITES - Whites will quietly (or loudly) absolve themselves of culpability, arguing they are not responsible for the transgressions of their forefathers, and that any difference in outcomes for present day African Americans are the result of the behavior of present day African Americans.  But studies reliably show that having an African sounding name, or being Black behind the wheel both will statistically strong differences in how they are treated.
+
+AFRICAN AMERICANS - African Americans will correctly note the dramatic differences in the ways that society treats them, they will dismiss any idea that any aspect of those differences are partially rooted in actual cultural differences within African American sub groups themselves.  The general stance is that any disparity in African American outcomes is evidence of racism and bias which it is, but it is NOT taken as evidence against any cultural practices within African Americans themselves.  The suggestion of ANY blame landing within a subgroup is often loudly vilified as victim blaming.  Even acknowledging responsibility for established causal factors like single parenting rates or parental hours spent reading with a child is rejected on the grounds that those factors are affected by things from OUTSIDE the group.  (which of course they are since everything is a large feedback loop.)
+
+
+~
+THE RIGHT KIND OF MESSENGER - It shouldn't matter who the messenger is, if the message is true.  But this is not at all how humans work.  We are emotional and tribal, so the tribe of the messenger is inextricably tied to the legitimacy of the delivered message.  
+Sure it should not be that way, but it dramatically IS this way.  Thus if one hopes for a message to have impact one must select a messenger that maximizes rather than minimizes their perceived legitimacy. In today's world, the part of the message above that is going to be hardest to have accepted.  Is not that cops have a responsibility own and correct their own biases, or that non-minorities need to own and account for their privilege -- there is large disagreement about the size of the changes needed, but even conservatives will acknowledge the truth of those statements.  But there IS strong pushback that any cultural aspect of any African American sub cultures could play a significant part in the discrepancies seen.  There is pushback against ownership and the need for change.  It MUST be an insider who delivers that message, no one else has the legitimacy to say it.
+
+THE STEVE QJ CONSENSUS MESSAGE - You are somewhat unique in your strong willingness to place responsibility INSIDE groups while not categorically placing all blame there, you also acknowledge many other legitimate causes outside too.  Still it seems your current focus is on the ways in which in which other group's responsibilities are mitigated by factors.  I think the harder things for anyone to do is to is to "victim blame," that is to specifically call out ways in which the African American community "brings trouble upon oneself" -- That kind of message is straight from the MAGA lovin' gun-toting right wing of our nation.  BUT I don't hear anyone trying to build a communal culpability message that includes this.  Building a COMMUNAL consensus building message that include such recriminations would be a very tall order to pull off well.
+
+And I have heard you note that whites living today are not directly responsible for cultural aspects that have formed long before they would born.  I agree with you, still as citizen of America, the nation the forged those cultures, they still have responsibility for solving the problem.  I expect you might buy this, but it is a little at variance with things I have heard from you.
+
+
+~ 
+
+Sorry this got so long winded.  I am from Kentucky and have lived in DC, NYC and now San Francisco...  I see up close what each side believes and how each side used the "well, but what about..." defense the only way out is collective ownership of responsibility -- a tricky message to get right!
+
+
+
+
+
+
+
+
+
 
 BACKGROUND CLAIMS:
-- 100% AMERICA'S "FAULT" -- Many have arguments about why this group or that group is responsible for the present conditions of Blacks in America.  Without weighing in on any of these one way or another, it seems that we can all agree the fault lies somewhere within America the nation.  Its present and past policies, peoples, and cultures somehow have come together to result in our present state of affairs.
-	- Which sub groups, policies, and cultures are MOST at fault is quite a contention topic, we are not likely to reach consensus on this.  
-	- Still we can agree that that American historical actions which includes the brutal policies of slavery, as well as the many subcultural behaviors of today are all part of that mix.
-	- African American culture today itself owes relatively little to the African cultures of our ancestors, these were ripped forcefully away by slavery, and replaced with a culture that grew over time 100% here in America. 
+- AMERICA AS A NATION IS 100% "AT FAULT", AND IS 100% RESPONSIBLE FOR FIXING IT -- Many have argue about why this group or that group is responsible for the disparity in outcomes for African American today in America.  Without weighing in on any of these arguments one way or another, it seems that we can all agree the fault lies somewhere within America as a nation, both in the present and in the past.  100% of what we see today in a consequence of policies, peoples, and cultures that were born on this soil and in this nation.  So any problems are the fault of America, and it is America's responsibility to fix them.
+	- Which sub groups, policies, and cultures are MOST at fault is quite a contention topic, and we are not likely to reach consensus on this.  
+	- Still we can agree that that America's historical actions which includes the brutal policies of slavery, as well as the many subcultural behaviors of today such as having children out of wedlock, or passing over resumes with African American names at a much higher rate are all part of that mix.
+	- African American culture today itself owes relatively little to the African cultures of its biological ancestors, these cultures were ripped forcefully away by slavery, and replaced with a culture that grew over time 100% here in America, borne from policies and experiences here.
+
+
 
 
 ## Affirmative Access

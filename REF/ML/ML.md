@@ -1,4 +1,5 @@
-  [MLeng](MLeng.md)
+  [VAE](VAE.md)
+[[VAE]]  [MLeng](MLeng.md)
 =[[TAG]]
   - [STATS](STATS.md)  [Neural](Neural.md)  [BL](BL.md)
   - [STATS](__STATS__.md)

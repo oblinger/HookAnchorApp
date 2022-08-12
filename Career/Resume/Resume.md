@@ -3,6 +3,13 @@
    [[Bio|Bio]]    [[Dan Oblinger Resume.docx|Current Resume]]    [[My Patents]] 
 __
 
+
+Addendum
+- organize by area
+- who is he as an IC
+
+s
+
 # # RESUME SOURCE INFO # 
 ## = ADDRESES
 
@@ -134,12 +141,12 @@ Dates   :  10/26/2016 - 06/30/2018
 Salaries:  $83.3K/mo   $1M/yr   (one month of $41.6K/mo)
 Duties  :  
 _________ 
-Employer:  Bizzy Inc.
+Employer:  Bizzy Inc.    (Martian Robots)
 Address :  390 Vassar Ave. Berkeley, CA 94708
 Title   :  CTO / VP Eng
 Contact :  Joe Augenbraun
 C-phone :  (650) 796-1966
-Dates   :  11/1/2015 - 10/25/2016
+Dates   :  11/1/2015 - 10/25/2016    
 Salaries:  $10K / month
 Duties  :  
 _________ 
@@ -887,6 +894,21 @@ budget = $700M = 2000 * 350K
 
 _
 
+
+## = LETTERS OF REFERENCE
+### JOE AUGENBRAUN
+  
+Dan was one of my co-founders at Martian Robots.  I worked closely with Dan in the intense, exhilarating, dynamic, and often frustrating world of doing a startup together.  Dan was CTO and I was CEO.  
+  
+Let me start with Dan’s technical capabilities – they're top-notch.  He’s smart, clever (those are different things), knowledgeable, and detail-oriented while being able to keep the big picture in mind at all times.  He has an impressive combination of hands-on and theoretical knowledge across a wide range of AI and robotics topics.  His ability to understand deep academic papers in almost any engineering field and apply the learning to practical problems is the sort of secret weapon that every company wants but few have.  
+  
+He rolled up his sleeves and did work personally to help construct our robot prototype needed for fundraising and then built and ran a high-performance engineering team that spanned the globe.  He has a methodology and a machine for hiring top-notch people and has the personal skills to build them into an organization that delivers.  His enthusiasm and drive created a culture of fast pace, individual autonomy, and deep respect for every individual in his team and in the organization.  
+  
+Dan isn’t just good at technology.  As CTO he helped figure out the business with me.  He has a good business sense and is an excellent communicator and was great with investors.  
+  
+I loved working with Dan and would work with him again in a heartbeat.  He has the highest integrity and even when times were tough (they always are at some point in a startup) he was loyal and constructive.  We formed a great friendship and in our business a great partnership.  
+  
+-    Joe Augenbraun
 
 # # LOG
 ### 2021-12-00  Jared Resume writing notes

@@ -725,4 +725,27 @@ but in a way that
   - Backed by evernote
 ### Config -- finding a market place
 ### Uniform Marketplace -- Block-chain based market place 
-  
+
+
+# LOG
+
+### t2020-00-00  Chipstack
+
+his boss (sr VP north sales)
+Allen Lyn (VP R&D)
+
+bit more layman
+-- types of markets
+-- simplify value 
+-- service providers  ``smart''
+   telco, cable, ISP, wire, mobile
+
+
+
+7-800M year.  
+-- most revenue is from service providers (like AT&T)
+-- also tier 3 companies 
+   (10K employee companies)
+-- now doing vertical markets
+   SP was first.
+_

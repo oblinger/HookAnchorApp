@@ -3,6 +3,7 @@ AFTERNOON:   	EVE: Plan, Chew
 
 ## = [[NJ22|NJ22]] =
 - [ ] [[WarStories]]*  
+- [ ] [[NJ22 Framing]] - Github
 - [ ] [[Bengio]]+
 - [ ] [[Comms]]* - Get 4 letters of reference
 - [ ] [[DYL]]*+  Summarize self  
@@ -14,7 +15,7 @@ AFTERNOON:   	EVE: Plan, Chew
 - [ ] Find best FAANG prep (1) class.  (2) mentors
 - [ ] Read mgt books
 
-## = [[BeMLR]] - DL-GANS proposal
+## = [[BeMLR#todo]] - DL-GANS proposal
 - [ ] Read benjio papers
 
 

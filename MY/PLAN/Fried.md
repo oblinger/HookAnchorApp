@@ -1,3 +1,12 @@
+- [ ] Safemode: test zoom audio
+ PAP:  baked potato, brussle sprouts, riced cauliflower
+- [ ] PAP:  Weekly snacks,  OLD regulars
+- [ ] PAP: cabbage, cauliflower, gbeans??
+- [ ] FRIED:  Buy some great sheets
+- [ ] FRIED:  Budget (Taxes->DanO, figure sections of sheet and rename rows, write down analysis path)
+- [ ] buy marble run; buy gears
+- [ ] Foods to eat
+- [ ] Cleanup Todo list
 - [ ] Cover outlets
 Write to Maria (dietician... maybe work with her)
 - [ ] Cable guard for new desk

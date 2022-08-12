@@ -1,3 +1,7 @@
+GI
+- [Pastas](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8623826/),  
+
+
 2020-06 FORCED-WEIGHT-DROP
 - [ ] TRACKING - Noom based food tracking.  (can I export?)
 - [ ] RUNNING - Exercise T,R,F,U

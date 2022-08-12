@@ -1,5 +1,4 @@
 
-
 ## = INFO
 ### - Links
 
@@ -254,6 +253,7 @@ Me:cheers!
   - Y! home
 - Zoom.us
 ### --- (Appstore) ---
+
 ### xx Airmail 3
 x
 ### xx Divvy
@@ -297,6 +297,7 @@ Disk Inventory; Tree Size; DiskInventory; TreeSize
 alternative
 
 ### --- (Free) ---
+
 ### xx Chrome 
 
   #, -> PrivacyAndSecurity -> SiteSettings -> Permissions -> Location (turn off)    -> notificaions (turn off)
@@ -307,17 +308,18 @@ alternative
 - DRIVERS:      G:DivX (link within QuickTime)
 
 ### xx Dropbox
+
 ### xx Emacs
      ALSO USE:  https://emacsformacosx.com   # in order to get an Application/Emacs
      brew install emacs   # used 2019.07 15" pro HW rebuild
 
-cat >/Users/oblinger/.emacs
-(load-file "/ob/bin/emacs.el")
+	cat >/Users/oblinger/.emacs
+	(load-file "/ob/bin/emacs.el")
  
-     # OPTIONAL:   brew services start emacs 
+     ;; OPTIONAL:   brew services start emacs 
 
 
-     # Old method...
+     ;; Old method...
      $ brew install --with-cocoa --srgb emacs
      $ brew services start emacs  # if you want it to launch at login
 
@@ -335,22 +337,32 @@ URL:  about:config
   layout.css.devPixelsPerPx  --> -1/0 --> 8.0   # This scales EVERYTHING
 
 ### xx Flux (CNET)
+
 ### xx Google drive
+
 ### xx Slack
+
 ### xx Skype
-### xx Spotify  (https://www.spotify.com/us/download/mac/)
+
+### xx Spotify 
+(https://www.spotify.com/us/download/mac/)
 ### xx Opera
+
 ### xx PaintBrush (from CNET)
+
 ### xx PlainClip (Mac Update)
    https://www.macupdate.com/app/mac/13732/plain-clip
 ### xx NoSleep     (Use MAC update.  select commandline options)
+
 ### xx VLC
 
 ### xx Zoom
 .
 
 ### nope xx SourceTree (from sourcetree associated with Atlassian)
+
 ### --- (Paid) ---
+
 ### xx Launchbar
 
 LaunchBar 6[Download](https://obdev.at/launchbar/download.html)
@@ -671,7 +683,6 @@ REF# 461655345. You will receive a separate order confirmation by e-mail.
 ### xx QuickRes
       -- MacUpdate  
 
-~-~-~
  bought on 9/21/2017
  no registration id shown
 
@@ -711,6 +722,19 @@ Serial Number:		C2MM5CIPI2O-5UK6EIB7ARG-C4MJBKVXFOU-I5QDGYBCVWF-N27KL2WQPHU-R5GF
 CDOG170804-3612-53157
 
 Living Room: 1692x3008  LG-2560x1440  LCD-2560x1440
+
+
+LEFT DISPLAY:
+- SIDE:  		Opera, Firefox, 
+- SIDE-DN:	Calendar
+- MAIN:  		Obsidian, Chrome, Safari, Mail,    Discord, PyCharm
+- MAIN-UP:	Zoom
+
+RIGHT DISPLAY
+- LEFT-UP:	Messages, Slack, 
+- LEFT-LOW:	Terminal, Finder
+- RIGHT:		Spotify, 
+
 
 
 ### xx Sublime

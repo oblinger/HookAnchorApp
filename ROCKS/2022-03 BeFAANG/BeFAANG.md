@@ -25,7 +25,30 @@ Hone pitch about what next.
 Diary of company activity.
 
 # TOPICS
-## = ODYSSEY - FAANG GUY - BigCo Project Leader & Technology Driver
+## = JOB FRAMING
+
+I think one thing that would be helpful would be to take 20 minute to write down the answer to these questions…
+
+1. Who do you want to be hired by? (What humans, in what org) 
+2. Who does that person think they want to hire? (What is the stereotype they are looking for? Words do they use to describe them?)
+3. What do they think that the person they are looking for does all day? (Skills, type of experience)
+4. What outcomes do they think they are going to get? What words describe those outcomes?
+…and then, as a separate follow up activity, try to fit yourself (skills, experience) into to match.
+
+
+1. HIRED BY:  A FAANG VP/Director with leadership gap in their Data Science/DL/ML project team.
+2. THEY WANT:  A hands on, leader, with extensive experienced  building novel solutions that transfer recent AI advances into product.
+3. MY DAILY WORK:  Forges business&technical consensus around solution approach, then leads his team's tactical & strategic execution of the approach.
+4. DESIRED OUTCOMES: 
+	- TEAM GROWN - Often such teams must first be hired internally or externally.  Then
+	- CORP CONSENSUS BUILT - Technically, Strategically, and Politically strong solutions planned ...
+	- STRONG/TIMELY PROJECT COMPLETION -   ... and aggressively executed.
+	- TEAM MANAGED AND MENTORED - ... by an engaged, happy, and progressing team of individuals.
+
+
+
+
+## = ODYSSEY - FAANG GUY - BigCo Eng Mgr & Technology Driver
 
 | Time   | Activity         | Notes                            |
 | ------ | ---------------- | -------------------------------- |

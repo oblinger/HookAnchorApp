@@ -1,8 +1,18 @@
 
 ### How To
-- Mint.com --> Transactions --> !export all transactions (@bottom)
+
+**MINT**
+- Mint.com --> Transactions --> !export XXXX transactions (@bottom)
 - $ budget.py   # historical data in ~/ob/data/budget
 
+**SCHWAB**
+- Account -> Balances ! Joint Checking      (15K monthly flow starting before 2021)
+
+
+
+
+
+See Bills -> CashFlow for active accounts tracked in mint
 
 
 
@@ -50,9 +60,10 @@
 |      |              |
 
 
+
 # LOG
 
-### 2020-07-18 - Budget ---
+### 2020-07-18 - Budget
 
 
 Monthly

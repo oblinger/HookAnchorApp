@@ -24,7 +24,7 @@
 | [[__]]                   |                                                                                                                               |
 | [[Logs]]                 | DATED, ORDERED, GROUPS OF LIKE ENTRIES -- (Dated, Ordered, Typed)                                                             |
 | .  [[Dated]]    '...'    | Dated but untyped entries                                                                                                     |
-| .  [[Meet]]     'm...'   | Meeting notes. Any kind of person to person interaction                                                                       |
+| .  [[Meetings]]     'm...'   | Meeting notes. Any kind of person to person interaction                                                                       |
 | .  [[Notes App]]    'n...'   | Single 'note' created by me, often associated with some larger project                                                        |
 | .  [[Texts]]    't...'   | Textual message written and sent by me   (Meta [[TXT]])                                                                       |
 | .  [[Refs]]     'r...'   | Reference Materials/Links (maybe this should be 'e' for external authored by others)                                          |

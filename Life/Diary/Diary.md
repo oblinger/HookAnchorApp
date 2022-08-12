@@ -1,7 +1,9 @@
+  [Notebook](Notebook.md)
   [Journal](Journal.md),   [Jnl](Jnl.md),   [Weekly](Weekly/Weekly.md)
 
 VARIOUS DIARIES
 
+- [[Notebook]]	-  
 - [[Jnl]] 			-  More tactical professional diary
 - [[Journal]]		-  More strategic professional diary
 - [[Diary Doc.docx|Diary Doc]] 	-  Personal (non-work) diary entries

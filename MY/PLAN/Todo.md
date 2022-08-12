@@ -1,372 +1,29 @@
-- [ ] Nick meeting
-- [ ] Figure recipes for mom to make when she is here
-- [ ] in2
+- Nicole call
+- [ ] Get logins for MyHealth
+- [ ] CALLS lined up -
+- [ ] Joe review
+- [ ] In2
+- [ ] Get deferred comp done.
 
-
+- [ ] Nick: Meredith, Takeout, Review
+- [ ] Fix audio on laptop
 - [ ] Justin
 - [ ] W PenFed Reset
-- [ ] Call about re-opening long close citi-bank credit card account.
-- [ ] Fix audio on laptop
+- [ ] Call about re-opening long closed citi-bank credit card account.
+
+
+LOWES
+- Drywall patch, speckle, texturing brush, putty knives
 
 - [ ] Dan Fine document
+- [ ] Nick meeting:  Takeout, Review
 - [ ] Get "Fun" list filled out
-I intend each day to be part of a fulfilled and fulfilling life focused on joy, meaning, and benefit for others.
+- [ ] >> I intend each day to be part of a fulfilled and fulfilling life focused on joy, meaning, and benefit for others.
 - [ ] passport
 - [ ] Get AF accounts cleaned:   (Find the hiring tests)
-
-
-
-
-
-
-
 - [ ] Rocket Lawyer
-### Lefty
 
-Lefties die younger than righty.  Most of the difference is accidents or war.
-But there is still more difference even when accidents are removed.
-https://www.ncbi.nlm.nih.gov/pmc/articles/PMC1059767/
-https://www.newscientist.com/article/mg13017662-900-left-handers-dont-die-young-after-all/
 
-
-Not smarter:
-https://www.psychologytoday.com/us/blog/brain-myths/201303/three-myths-and-three-facts-about-left-handers
-
-Lefty facts:
-https://blog.massmutual.com/post/left-handers-day
-https://www.psychologytoday.com/us/blog/brain-myths/201303/three-myths-and-three-facts-about-left-handers
-
-
-_
-### Cheap housing idea
-
-- Not for everyone, but a cheap good option for some.
-- Need to be able (with help of a community) be a strong member of a community.
-
--- 
--- Needs-based application process
--- Self assembling groups from members in good standing (in grp for year)
-
--- Hardened groups
-   -- Drug users
-_
-### HEART
-
-TODO
--- pressure machine  (morning & afternoon)
--- TESTS:  chest XRAY; echo cardiagram ; stress echo cardigram
--- asprin 83mg
-
--- clubbing ; numb fingers in cold
--- dry cough; continuous tickle;  
-   days of tickle/cough if very heavy breathing for 10 min
--- arm sneeze
-
--- Salt 1,500 -- blood pressure
--- Tums
--- level of exercise
--- medical testing; safety devices; 
--- diabetes
-
--- cannot remove
-   
-_
-### xxx
-
-35 min 
-
-PKG: Gold 3AF, 10meetings, Workshop. $79K  
-PKG: Silver 2AF, 10meetings, Workshop.  $59K
-       team dedicated to followups.
-       
-
--- 15 companies.  
--- 5 1-on-1 meetings.  5 1-on-1 meetings.  
--- workshop. cocktail hour. CIOs lead discussions.
-
--- 2/3 of member -- 
-we have editorial control over -- 
-case study
-
-
-_
-### QL Notes
-Incrementality:
--- Ads are not randomly provided, but aimed at good prospects boosting results
-    people choose when to be advertized to
-    -- randomized experiementation fixes this  (Instrumental variables)  bid level rnd
-	-- num auctions won (somehow) varies by instrumental var
-
--- gain two values: statistical & economic.
-   (spend less on stat as more accurate; "quasi-posterior of covar matrix")
-
-
-AD STOCK 
--- Treat 'ad' as stock that the reducing over time.
--- Each ad has different "beta-weighted" components that affect incrementality
-
-
-COMBINING WITH BIDDING STRATEGIES
--- Estimate ad value based on future incremental value obtained
-
-BLACK BOX ESTIMATOR INPUTS:  (see page 16-17)
-
-Fourier Series w. Dynamic Ad stock -- for time varying incremental effects
-
-Non-additive ad stock (direct modeling of integral)
-
-Downsampling negatives in continuous time
-   (double counting issue)
-
-
-continuous time easier to deal w. than batched
--- helps avoid things like reverse-causality biasing. 
-   (when bid-behavior feedback is faster than incrmentatily estimating)But 
-
-
-_
-### chipstack
-his boss (sr VP north sales)
-Allen Lyn (VP R&D)
-
-bit more layman
--- types of markets
--- simplify value 
--- service providers  ``smart''
-   telco, cable, ISP, wire, mobile
-
-
-
-7-800M year.  
--- most revenue is from service providers (like AT&T)
--- also tier 3 companies 
-   (10K employee companies)
--- now doing vertical markets
-   SP was first.
-_
-### Religious toleranc
-
-This seems an issue of legitimate disagreement in this country.
-Some honestly see same-sex couples as a natural and healthy thing.
-Others see it as unhealthy and evil. Which group on earth is qualified to determine who is right?
-An honest question: Shouldn't we be working to have Christian schools that don't discriminate, and others that do? It seems wrong to me, for the government to force the opinion that same sex IS moral. By forcing all religious schools to adopt a specific practice we are effectively having the government take a moral stance here.
-NOTE: it seems very reasonable that the government ensure that there are Christian schools available that are same-sex affirming. after all 53% of the population is in favor of this, so it would be wrong to have a coalition of Christian churches block other churches. But it seems just as wrong to have a government lead coalition.
-This note is not intended to be confrontational. I am honestly questioning this.
- - dan
-### Scoot
-
-Scoot,
-This is Dan "Three-eyed-raven" Ex-altar boy here.  I must say the scoot-at-night show has transformed things for me ... It just shuts my Effing brain DOWN!
-
-But I must also say your assertion that your stuff is not spiritual is way off the mark!!  MOST of your stuff has got a monty-python-esque slant that feels like it draws heavily on your personal history.  Besos is in **Purgatory** with the founder of J.C. Penny?  Nuns in space?  A flat-world-like story about goddesses manipulating humanity with a not-good/not-evil dicotomy drawn from some kind of princess-mononoke-like philosopical world view.
-
-Really?!?  There is alot of stuff rolling around that head of yours!
-
-I just listened to the good humor story, and learned that "beyond the binary" does not mean "on the other side of this podcast line" as I originally imagined.  Instead it indirectly indicates the Borgean library of ambuguity, the half-connected-logic, into which you bathe our brains.  Like dreaming itself, everything is connected, and everything is yet a bit of another thing.
-
-In my youth I was part of a Dr. Who style club where we each of us had rediculously long, descriptive titles.  Mine was abbreviated to: ``Your most non-binary verbosity'' --- indicating my penchant for seeing (and loquaciously expounding upon) the grey bits of ambiguity found at the boundaries of even the most bright of lines.  Maybe I missed my calling... I think perhaps I do have evidence I too can put people to sleep!
-
-I am waiting for the rest of the good humor story!  But that one is far too engaging for me to sleep, that one I will stay awake for...
-
-
-but that is ok, I will sleep on the next.
-
-
-
-
-
-
-
-
-Concrete suggestion:  
--- Create a second patreon feed with similar or the same content.  
-
-WHY: I would use this so my feed does not run dry.  I listen to your feed with "delete after play" set.  I want it to run on auto-pilot, I have a dedicated ipad and bluetooth headband speaker.  At night I do not want to look at my screen, just press the 'play' button on the headband that is already on my head.  This works quite well, but occasionally I run out of feed.  Since I often sleep thru it, I would not mind having them play a second time... I could always fast forward if I needed to.
-
-bonus:  I think you want to do everything you can, to keep people from keeping your episodes.  too tempting to stop the service!  a second feed might help.
-### ZZZZZ  Men on top of wage ladder
-
-https://research.stlouisfed.org/publications/economic-synopses/2018/09/14/married-men-sit-atop-the-wage-ladder
-
-https://medium.com/@lil_shu/good-news-the-gender-pay-gap-is-solved-bad-news-its-not-solved-ea69882bd4b7
-
-
-
-Keel. 
-ICC
-want everything integrated.  dont trust smaller co.
-_
-### Ryan
-
-Ryan,
-Thanks for taking the time to respond! If you don't mind indulging me further, I would love to get your critical assessment a bit further. It is remotely possible that some action might even come from this thinking…
-My aim is to NOT spend (much) more money per student, yet partially address this issue. The not spending more money part is the hard part of course, but if it is solvable, then it has a greater chance to be implemented.
-The idea is to have:
-(1) a SINGLE bootcamp school for an entire city the size of Baltimore. So even though the cost per student per day is much higher than a traditional school, since we only have ONE, the city-wide cost per student is negligible.
-(2) to make this happen, students have to actively and dramatically NOT want to go to this school, so even for a difficult student, they actively choose to avoid being sent there. (If they don't mind going to the school, then we run out of room at our expensive school.)
-(3) the central (proposed) benefit is that as a teacher you can require a basic level of cooperation and if they can be placed in detention at your school. If they don't comply you can escalate at any hour of any day to their immediate transfer to this school, just for the night, or for a week.
-
-
-As I see it, the problem with suspension and detention is that they are
-
-_
-### CONSEQUENCES in the classroom
-CONSEQUENCES.
-It seems to me that in our effort to have "no child left behind" we have gone astray. But I wonder your thoughts on the matter, you might not agree.
-We correctly note that when we suspend a student, prison other legal actions, chances are higher that they will fail in life. From this we conclude that we should minimize these corrective actions when we can.
-My theory is that this is not a good path. Seems to me that we all need consequences tied to actions as a way of shaping behavior. And failing to have consequences early on, allow behaviors to become progressively worse.
-That said, it seems we should have (1) certain, (2) compelling, but (3) temporary consequences, so one can learn. It also seems that our lack of rigorous enforcement of consequences on a few, has significant impact on many within those same classrooms.
-So as I imagine it, we would have rigorously enforced, quick response, quick relief consequences.
-But you are living it, in a Baltimore public school, and I am not. Tell me what you think:
-We both know suspension damages education, so it is best avoided. What if instead of this we had a "bootcamp" school. The cost per student per day is probably 4x the cost for a normal class. The students have therapists on staff, and strong physical controls with pretty limited interaction with other students. No TV, no 2-way Internet. Significant physical chores each day, as well as their daily lessons captured via smartphone from their classroom.
-My idea is that this place would be LESS FUN than most any other life choices, and so it would be avoided at all costs. Any student that repeatedly ended up in this spot, likely has strong enough emotional problems, that they inadvertently end up there. So those students need specialized theraputic help.
-In my imagination, have such a "low-damage, quick fix" at your fingertips would be transformative in your classroom. You would just say: ``billy, sit down now and be quiet, or you will spend 1/2 hour after class on extra homework.'' …. he knows from experience if he does not stay after for his extra homework, he will spend a week in bootcamp. He knows this with CERTAINTY, that this will be his consequence. Its just 1/2 hour, but if he does not do his 1/2, then his WHOLE NEXT WEEK will be no fun at all.
-How many times do you think he will need to learn this lesson? Many others will learn of this CONSEQUENCE by just watching what happened to Billy.
-
-
-So I know the purpose of your post was very much a heart felt quandry about very real choices you are forced to make. Sorry for high-jacking your post to ask this question. But you are the right one to ask.
-Would it work? Would it be good? Would it transform your classrooms?
-Thanks in advance for your thoughts!
- - dan
-### coinbase
-HELP!  It has been almost a week and none of your account recover processes are working:
-
--- I no longer have the phone used to set up this account   415-656-6182
--- I do have access to the email and password.
--- I do have the google validator
--- I can send a photo of myself
--- I still have control of the account used to initially fund the account
--- I wrote at the beginning of this week that someone might be trying to access the account since someone tried to setup a bitcoin remittance accont in my name.  I don't know if this is connected.
-
-Over and over my support tickets are closed (even when I am NOT trying to login for 48 hours)
-
-I have no place else to turn!!!  I am trying to follow all paths, I don't know what to do!
-### zzzz
-
-
-- Split into separate meetings
-- Align on problem
-- prove that you are the ones 
-- propose something
-- negotiatate
-
-
-
-- Lots of work in optomizing our ML flow, be interesting to see how our approach benefit in your flow problem context.
-- Access to data, IOT
-- 
--   (e.g. Jupiter notebook
-
-
-Candace, the Chinese nanny let us know that she *can* become a CA resident so we can give her a W2.  All things equal Qingling wants a Chinese nanny, so we have decided to go that way.  It was great to have you out to the house, and I do think becoming a fulltime nanny in SF, might be a good way for you to go in the future.  Sorry we are not the ones to give you that job...
-
-
-Sara,
-I haven't connected with Michael yet; I am excited to, would you be able to introduce us?  Please be sure he knows this is NOT a sales call.  
-
-We have put lots of effort into formalizing our engineering processes, and want to understand how it relates to what others in Energy with remote members and similar scale have evolved.  We have also done some formalization around our Machine Learning processes too, perhaps that is also a valuable connection.
-
-Let me know if there is anything I can do from my side to help connect.
-
-Thanks,
-Dan
-
-
-
-
-
-
-
-LOOK AT BACKED UP FILES
-LOOK IN DADS BACKUP
--- Plug in backup drive
--- double click on "Dad's Backup" drive
--- double click on "Backups.Backupdb"
--- double click on "acct's MacBookPro"
--- double click on "Latest"
--- double click on "Macintosh HD"
--- double click on "Users"
--- double click on "pa.oblinger"
--- double click on "Desktop"
-    you are now looking at your desktop from the PAST
-    you can copy any files you need onto your desktop to recover them  
-### sales steps
-
--1- discover
--2- prove
--3- propose 
--4- negotiate
-
-
-Lead with a general kind of problem
--- show how it connect back to AF
-
-_
-### scooter
-
-Scooter:
-
-What a great response you gave.  No need for you to keep up that kind of volume, you have a podcast to produce!  Still, but I feel compelled to write back on a number of things, so I already know I will ramble...
-
-YOU WARNED:
->> I did two entire seasons (about 30 episodes) of a series I wrote called "Nuns In Space" where I was on a spaceship with the nuns from my childhood. 
-
-Right.  I have already heard one of them, but the nuns did not figure much into that one.  I am very much looking forward to your trials with the Nuns.
-That whole idea strikes me as hilarious and harmless.  (Remember I have nuns in my past as well).  No real trauma from that past, but well Nuns are Nuns as you know.
-
-YOU WROTE:
->> I'm not sure if the old gods and new will ever come back on the show or not but I will keep your feedback in mind for sure.
-
-I think it was just the specific act of actually praying to them that caught me.  (That said, the prayers themselves were quite funny, and kind of genius too.  They were strange scooter dialed up to ELEVEN.)  I thought the prayers were a regular part of your program… they are not... Got it!
-
-YOU WROTE:
->> I had a discussion with our community a few years the consensus was that trigger warnings would be more disruptive than do good.
-
-Where is this community?  A chat group?  Would be fun to join.  Yeah I agree with them.  The last think you want to do for folks that think too much is to give us another thing to think about!!!
-
-YOU WROTE:
->> The overall feel of the podcast is very on that level of weirdness and that is just the tip of the iceberg so if you are concerned about any of that level of stuff getting into your subconscious you should be aware that most of the content is on that odd side of things and you may want to consume the podcast with caution.
-
-Thanks for the warning, but Scoot at level eleven is really quite genius stuff.  I need something like that to pull on my brain. Somehow the combination of locally clever turns of phrase and unexpected connections keeps me engaged, yet the explicit chaos that it is embedded into causes my brain to not try to follow.  
-
-Also on the rare occasions where I have been relaxed enough to watch my brain drift into sleep…. Those moment before sleep are EXACTLY like the chaos of meaning that somehow you are able to channel while you are awake.  I wonder if your chaos kind-of weaves in with the listener's chaos and kind of jump starts it??  Dunno.
-
-
-YOU WROTE ABOUT YOUR BUSINESS
- as you probably know from your business most of that time I was supporting the podcast with a full-time day job. ….   lots of support at $1/$2 but I am hoping to keep slowing growing
- 
-Got it.  Yeah that is not quite the level I thought.  Still brand reputation is very very slow moving ball, but once it is rolling it is also slow to stop.  We both live in the Bay Area, so I know that it takes a really healthy lifestyle-business to pay the bills.  (I am six years into my lifestyle business, and perhaps a bit a head of you, but with greater existential risks looming for the business)  I feel your podcast is a pretty sticky product, and at least folks like me are quite grateful so willing to continue dropping the coin even after our need diminishes.  
-
-Your focus on keeping a free service is both a smart business move, and is also aligned with making the biggest difference.  …  and it energizes your community!
-
-
-=== DETAILED USAGE ===
-In my case, I can fall asleep anytime anywhere.  But once I have had three hours of sleep if I wake and start thinking about anything intellectually challenging it wakes me up.  Even 2 minutes of concentration will put enough juices in my blood stream that I can feel the difference 30 minutes later.
-
-Thus if I wake, it is essential in the first 5 minutes that I really try NOT TO DO ANYTHING.  If I make it back to sleep all is well, else I am up for 3 hours, until I get tired again.  So I pee before bed, water is right next to my pillow, as are cough drops, extra covers and pillow.
-
-Fiddling with logins for a phone, or buttons on a podcast reader are a definite no-no.  The solution is this hands free bluetooth eyemask headphone thing (see below)  I have a dedicated ipad that is paired with this headset.  It is on my head when I sleep, so when I wake I can just press my "three eyed raven button in the middle of my forhead....  and Scooter starts talking.
-
-The ipad will remember the correct app, and the headphone paring, so I can start scooter with a single press on the button on my forhead even after 24 hours off.  It allows me to "Boot the Scoot" as soon as I am aware that I am awake.  This is MAGIC.  It greatly increases the chance of an immediate return to the nether world...
-
-and I feel like the three eyed raven each time I press that little button.
-
---d
-
-
-https://www.amazon.com/gp/product/B07WKVZPMV/ref=ppx_yo_dt_b_asin_title_o02_s00?ie=UTF8&psc=1
-
-
-
-
-
-
-
-
-
-
-
-https://www.sleepwithmepodcast.com/patreonfaq/
 ### bootstrapping intelligence
 Erik, nicely thought out piece, and I agree that Sci Fi has all the right ingredients by usually it is small differences that make all the difference. Asimov wrote a futurist piece that I read, and is predictions were kind of right, but mostly irrelevant.
 But I feel your analysis of deep fakes is a bit off the mark. Here is an analogy: We have shown that indexed mutual funds can perform as good as active investors, but no one believes this would continue if we replaced ALL active investors with indices, there would be no "original content" to copy!
@@ -459,7 +116,7 @@ BACKGROUND:
 
 GOAL:
 - ON Build an "off chain" computation substrate using AWS lambda which "borrows" some of the block chain guarantees by being "launched" from a on-chain data.
-## The Future #2
+### The Future #2
 
 I find pieces like this quite frustrating. You assert: we don't have to chase "talent," we can have pay parity... and profits won't suffer. I promise!
 
@@ -574,10 +231,6 @@ QA quality assessment
 - dev hapiness & unhappiness (alarm)
 - scheduling risks (tracking releases)
 
-### 
-Building new / retro-fit
-
-
 ### zzzzz
 
 - fin services / fin tech
@@ -605,7 +258,7 @@ find GW Fathem in inbox ; call her
 -1- EIP indirect
 -2- AI cool
 -3- 
-# XXXX
+## XXXX
 ### Outcult email
 
 Dan,
@@ -762,7 +415,7 @@ but once we start believing that the only way to create a NEW chain is to burn c
 I am only mildly long in BTC now, but maybe I should change that.
 
 
-~-~~
+~-~
 IDEA:   BRIDGE BOND CONTRACTS
 
 I know there are theoretical secure ways to transfer coins between chains.  Nobody has implemented them yet.  Maybe they will work well.  Maybe they will be compatible with the flexibility offered by all of these smart contract types.  I cannot tell.
@@ -967,7 +620,7 @@ Kerry,
 Thanks for taking the time at GDS.  We are sceduled for a 9am
 call on Nov 20th and I was wondering if that was a good meeting for (ask about EIP??).....
 
-~-~~-~
+~-~-~
 Mr Tuscon Electric.
 
 We did some work modelling earlier this year disaggregating power usage of individual devices in the home, based on very rough instrumentation at the fusebox.  And last year we worked with MICROSYNCOGUYS who have an extremely high resolution power monitoring sensor.  Depending on the data being collected it seem possible one could produce hyper-fine grained power usage models.  It would be interesting to estimate the costs savings that could be obtained if such modelling were used in planning and decision may co-founder to bring in an idea for your engineering team?
@@ -1074,7 +727,7 @@ Let me know,
 --Dan
 
 
-~-~~-~
+~-~-~
 2a STRATOSCALE
 $$ [sent] 
 
@@ -1155,7 +808,7 @@ Dan
 
 
 
-~-~~-~
+~-~-~
 4a CRH --    (4-sales partner)
 $$ [sent]. Dec-3 call 1pm EST
 
@@ -1183,7 +836,7 @@ Looking forward to the call,
 
 
 
-~-~~-~~
+~-~-~
 4b UPS      (5)
 $$ [sent]
 
@@ -1222,7 +875,7 @@ We talked a bunch
 
 
 
-~-~~-~
+~-~-~
 4c IPSOS
 $$ [sent]
 Send info before about our projects to remind her.
@@ -1267,7 +920,7 @@ Joseph innovation leader for US.
 she is more tech, methodology expert
 
 
-~-~~
+~-~
 Nicole,
 
 I am really glad that you found the time to meet with me, after your original slot was missed.  
@@ -1281,7 +934,7 @@ Have a great weekend,
 
 
 
-~-~~-~~
+~-~-~
 4d ELC     (6)
 $$ [!!!]  Call on Nov 20 9PST
 
@@ -1307,7 +960,7 @@ call on Nov 20th and I was wondering if that was a good meeting for my co-founde
 
 
 
-~-~~-~~
+~-~-~
 5 SAMS CLUB
 $$ ---  no action
 
@@ -1319,14 +972,14 @@ huaxin.gong@samsclub.com	+1-312-725-8296
 Not a great connection.  They are a Microsoft shop.
 
 
-~-~~-~~
+~-~-~
 6 OLIVER GDS
 $$ ---  no action
 
 No action.  see how we do at closing.
 
 
-~-~~-~
+~-~-~
 7 SYNCHRONY FINANCIAL
 $$ [sent] schedule DEC chat
 
@@ -1357,7 +1010,7 @@ Dan
 
 
 
-~-~~-~
+~-~-~
 8a CEMEX
 $$ [sent] Visit Prague
 
@@ -1399,7 +1052,7 @@ T / R
 
 
 
-~-~~-~
+~-~-~
 8b UTZ
 $$ [sent] DEC - Trip to Fresno
 - Send general areas for consideration before trip
@@ -1496,7 +1149,7 @@ Dan
 
 
 
-~-~~-~
+~-~-~
 
 8c OLAM
 $$ [sent]
@@ -1544,7 +1197,7 @@ Really looking forward!
 
 
 
-~-~~-~
+~-~-~
 9 INTEL 
 $$ [READY.] join AI partner program
 
@@ -1580,7 +1233,7 @@ Great to get to know you a bit too.
 
 
 
-~-~~-~
+~-~-~
 STATE STREET
 $$ [READY.]
 
@@ -1617,7 +1270,7 @@ king.
 
 
 
-~-~~-~
+~-~-~
 
 SMILE DIRECT CLUB
 	Ryan Jackson	Global VP IT`	SmileDirectClub	ryan.jackson@smiledirectclub.com	+1 800 848 756
@@ -1717,7 +1370,7 @@ I talked with him about scheduling a quarterly “catch up call” to stay in to
 ⇒ You should get that call locked down on the books NOW.
 
 
-~-~~-~~
+~-~-~
 
 Nick: [ ] [ ] Tuscon Electric
 Redis Labs?
@@ -1803,7 +1456,7 @@ areas that we do, then examples.
 baseball player opto parts
 ### GDS backups
 
-~-~~-~
+~-~-~
 1 RESERVOIR GROUP  (1)
 $$ Followup create DS team connecting with geologists.
 
@@ -1827,7 +1480,7 @@ My November is pretty much spoken for, but if you have interest in thinking thro
 Let me know,
 Dan
 
-~-~~-~
+~-~-~
 2a STRATOSCALE
 $$ Send email.
 
@@ -1852,7 +1505,7 @@ Dan
 
 
 
-~-~~-~
+~-~-~
 2b SCOTTS MIRACLE-GRO  (2)
 
 Eric Sullivan
@@ -1868,7 +1521,7 @@ Keith is doing some supply chain optomization.
 
 
 
-~-~~-~
+~-~-~
 3 STEWARD HEALTH CARE SYSTEMS  (3)
 $$ ????
 
@@ -1884,7 +1537,7 @@ WILL WRITE THIS TOMORROW
 
 
 
-~-~~-~
+~-~-~
 4a CRH --    (4-sales partner)
 $$ Dec-3 call 1pm EST
 
@@ -1911,7 +1564,7 @@ Looking forward to the call,
 
 
 
-~-~~-~~
+~-~-~
 4b UPS      (5)
 $$
 	
@@ -1924,7 +1577,7 @@ ebbarayuga@ups.com	+1 201.828.7890
 WILL RESEARCH THIS TOMORROW
 
 
-~-~~-~~
+~-~-~
 4c ELC     (6)
 $$ Call on Nov 20 9PST
 
@@ -1939,7 +1592,7 @@ kodonnel@estee.com	646-338-9108
 WILL WRITE THIS TOMORROW
 
 
-~-~~-~
+~-~-~
 Send info before about our projects to remind her.
 nicole.alexander@ipsos.com.  
     Wednesday  2pm  Nov 20th  Meet in SF.
@@ -1974,7 +1627,7 @@ Joseph innovation leader for US.
 she is more tech, methodology expert
 
 
-~-~~
+~-~
 Nicole,
 
 I am really glad that you found the time to meet with me, after your original slot was missed.  
@@ -1991,7 +1644,7 @@ Have a great weekend,
 
 
 
-~-~~-~~
+~-~-~
 5 SAMS CLUB
 $$ 
 
@@ -2003,14 +1656,14 @@ huaxin.gong@samsclub.com	+1-312-725-8296
 ?????
 
 
-~-~~-~~
+~-~-~
 6 OLIVER GDS
 $$ ---
 
 No action.  see how we do at closing.
 
 
-~-~~-~
+~-~-~
 7 SYNCHRONY FINANCIAL
 $$ schedule DEC chat
 
@@ -2040,7 +1693,7 @@ Dan
 
 
 
-~-~~-~
+~-~-~
 8a CEMEX
 $$ Visit Prague
 
@@ -2081,7 +1734,7 @@ Thoughts,
 
 
 
-~-~~-~
+~-~-~
 8b OLAM
 $$ DEC - Trip to Fresno
 - Send general areas for consideration before trip
@@ -2099,7 +1752,7 @@ WILL WRITE TOMORROW
 
 
 
-~-~~-~
+~-~-~
 9 INTEL 
 $$ join AI partner program
 
@@ -2117,7 +1770,7 @@ WRITE THIS FOLLOWUP LATER -- is loose connection
 
 
 
-~-~~-~
+~-~-~
 10 MEREK & CO
 $$ ???
 
@@ -2130,7 +1783,7 @@ Nick & I together
 
 
 
-~-~~-~
+~-~-~
 11 CLOUD GENERA
 $$ DEC - Call to pitch us & 
 Bobby Allen, PMP |  CTO & Chief Evangelist
@@ -2149,9 +1802,9 @@ Great to get to know you a bit too.
 
 
 
-~-~~-~
+~-~-~
 STATE STREET
-$$
+
 
 Sundeep Kumar	
 VP Technology	State Street	
@@ -2185,15 +1838,19 @@ Dan
 
 
 
-~-~~-~
+~-~-~
 10 STITCH FIX     	-- Nick what do we do here?
 U South Carolina  	-- Nick what do we do here?  Anything?
 
 
-~-~~-~~
+~-~-~
 SMILE DIRECT CLUB
 	Ryan Jackson	Global VP IT`	SmileDirectClub	ryan.jackson@smiledirectclub.com	+1 800 848 7566
-# Enphase discussions 2019-10-18 - Shane & Ilan
+	
+	
+	
+	     
+### Enphase discussions 2019-10-18 - Shane & Ilan
 
 
 - SW validation
@@ -2412,7 +2069,7 @@ Actually do you mind if I CC you on an email to Josh just to get his thinking ab
 ### James Note
 
 
-~-~~-~
+~-~-~
 
 Nick here is my starter lists for team and for business model. I also included the direction I am giving James, just so you see where the deck is going....
 
@@ -2447,7 +2104,7 @@ We are 60+ Senior Engineers and Data Scientists:
 
 
 
-~-~~-~~
+~-~-~
 
 James, 
 I sent this to Nick and you at the same time, tomorrow he will work on this, so you can check in with him before you start, or you can just begin and then make his edits to both the old and new  versions.  (long term we will keep both portrait and landscape versions)

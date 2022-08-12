@@ -1,6 +1,6 @@
 
-[[LOGS/Ideas/Ideas Social/EduCorp/Edu Corp.pptx|PowerPoint]]    
-	[Edu Corp](Edu%20Corp.md)
+[[LOGS/Ideas/Ideas Social/EduCorp/Edu Corp.pptx|PowerPoint]]    [[Greenhouse Farming]]   
+	[Edu Corp](Edu%20Corp.md)    
 
 
 ### _
@@ -94,6 +94,7 @@ TOOL CHOICE CHART
 - Is the skill needed frequently and easily trained?                                    --->   use a Cohort Specialist 
 - The skill is moderate, not easily trained, but also not difficult, OR
 	its usage is moderate, not too frequent, and not rare                        --->  use a Student Consultant
+
 
 # REF 
 ### --- IGBO - Nigerian Fin Scheme ---

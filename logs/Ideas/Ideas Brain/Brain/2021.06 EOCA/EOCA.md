@@ -1206,7 +1206,78 @@ HEALTH
 HOME
 HACK
 
+
+
+
+
+
 ### t2022-07-09  Zombie Consciousness
+
+
+
+
+~~
+
+ERIK:
+The standard practice is to separate between an informal definition of consciousness and a formal scientific one. In the informal definition, science is subjectivity, your feeling of what it is like to be you. It is experiences and sensations. A scientific definition tries to explain this phenomenon. I fail to see how any of the properties listed explain this property, the one we are most concerned about with consciousness, which is its subjective nature. They seem like a list of easy-to-implement minimum requirements which it would be trivial to give to an NPC in a video game. But I repeat myself.
+
+I agree, the barest version of base awareness could be encoded into an NPC.  Full human consciousness is far out of range for an NPC encoded by hand, since the "grab bag" of mental capacities is far too large.  But consider the spectrum between base awareness and full human consciousness.  I think a dog is conscious and aware, but likely does not have full human meta-cognitive abilities to allow for certain aspects of being aware one is aware, etc.  Reptiles are more emotionally primitive, thus while they still actively avoiding death, the fear-aspects of their awareness are likely more primitive.  If we consider insects, they likely do not have a theory of mind, nor a very complete theory of independent interactive objects in the physical world.  Thus while they might still retain some aspects of awareness, our level of awareness/consciousness is out of range.  But a base "gut" level awareness according to your subjective measure and according to my definition both seem possible for insects, though we cannot know for sure.  The lobster only has 100K neurons and most likely encode low level sensor processing with much less for awareness.  Thus the computational complexity of a lobster's awareness (if it has it) is approaching that of a complex hand built NPC.  So it does not seem unreasonable to me, on complexity grounds alone that both of these cases might be on the very lowest end of this awareness-consciousness spectrum.  
+
+Still I am not addressing the center of your complaint: the subjective 'gut' feeling one has about one's own awareness/consciousness.  But what can one really know about that gut feeling anyway?  For example, there are many firing patterns in your brain which affect you, but which you are unaware---these are patterns that you do not "know" about.  The only things one can "know" about one's awareness are those indirect subjective and objective comparisons and assertions that come to our mind regarding our awareness/consciousness.  If I can show that a digital agent would come to claim similar things about their own subjective experience then you no longer have basis distinguish your consciousness from theirs.    
+
+Let me just consider just one of these assertions here.  But this is the assertion about subjective experience that is often used to argue that "zombie" processing can never be the same as "true" experience.  Here is the assertion:  No amount of encoding of information-about or thinking-about the pain felt when stepping on a nail can ever be the same as the ACTUAL pain felt when actually stepping on a nail.  The intuitive conclusion is that felt-pain is "more than" and "qualitatively distinct from" any encoded representation of those same sensations.  
+
+This distinction (which is accurate) is then used to argue that hand-coded NPC pain would be akin to the "zombie" pain of our reasoning about pain but not like the felt-experience of our actual pain.  We know, at one level, that an NPC is merely an algorithmic encoding of sensations, and this is very akin to our thinking about pain, and very different from our feeling of pain.  But let's think about why these two forms of knowing of pain are so different in the human case.  I think there are two reasons:  (1) the information provided by felt experience is far richer in an information-theoretic sense than any representational encoding one might devise in one's mind about that same pain; One kind of pain-knowing requires orders of magnitude more bits to fully encode than the other kind of knowing.  (2) Second these two distinct kinds of knowing are wired into the human brain architecture differently.  Physiological, psychological, and emotional reactions to these two different knowings are incomparable.  We are incapable of injecting a representational knowing of pain into the same mind circuits that a felt knowing of pain is already hard wired into.  Notice that a dog likely has the same dichotomy, its imagined knowings are distinct from their abstracted-sensed knowings, even if their theory of mind is not developed enough to have a full (or even any) awareness of this distinction.  
+
+Now let's turn to a computational system.  Imagine a general purpose learning system inside an embedded agent, it would ALSO come to classify abstracted-sensor knowings distinctly from reasoning-system knowings.  Such an embedded agent would be "born" with a set of felt concepts and abstractions of those concepts, then could learn or be told of represented encodings.  A learning/clustering system would certainly identify the distinction between these two kinds of knowing.  If I have made my example clear, perhaps you will now accept that such a system might indeed draw a similar distinctions just as humans do regarding felt vs. reasoned knowings, but then go on to say.  "so what, even if the system does this, it does not prove it actually FEELS anything.  And I would agree, this has not yet been proven.
+
+Here is the agenda I propose (but alas cannot be execute in these emails!)  You would enumerate all adjectives and all comparisons you could make about your gut subjective feelings regarding awareness and consciousness.  I would then describe, build, or bootstrap the AI systems that would also drawing similar conclusions regarding the contents of its own mind system.  Imagine if we did this to exhaustion, and at every turn, I was successfully able to describe, evolve, or build an AI that also drew the same conclusions about its own mind.  At that point, I would argue if you continued to believe that the systems I described or built were not aware or conscious, then you were no longer operating empirically, instead your conclusions are being taken as a matter of faith.  
+
+Now, since we have not executed this thought experiment, you can argue my current belief that I would succeed in this agenda is itself is an article of faith. That is true, but it is a faith borne out of ME trying and failing to find some assertion about the subjective experience of awareness/consciousness that would not also be plausibly derived from a suitably augmented base model of awareness, given a system that could build its own theory of mind.  
+
+Of course you can refute me right now by simply providing some description of your own awareness that you believe a general purpose modeling agent would not derive about its own awareness/consciousness.  Off the top of your head, can you articulate something you believe about your own awareness that you think such a system would not conclude about its own?
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+~~
+
+
+Got it.  So not convinced at all.  :-)
+
+Well I actually agree with the foundational assertion in your challenge:  My definition of human consciousness is a grab bag of interrelated items.  That seems appropriate to me, however, since when I listen to folks describe what full human consciousness is, it feels like a grab bag, not a singular thing.  For example, being able to project oneself into counter factual futures seems an important aspects of human consciousness, but so do a dozen other fairly disjoint mental capacities.  Thus the best definition that I can imagine mirrors this grab bag.  
+
+In contrast my definition of awareness is precise, it is the interlinking of two models of the world: a sensor-abstraction model of the first-person-perceived world with a second generic-entity, tabla-rasa representational model of that same world.  So far I am happy with that model as I can explain all of the awareness-related phenomenology (including subjectively reported phenomenology) that I am aware of.  
+
+Perhaps you would argue this model is too weak and it admits too much.  But in that case can you articulate an aspect of awareness that cannot be accounted for?  I cannot find it.
+I suspect it might be something regarding subjective experience of awareness.  In that case I will submit, that we don't actually know anything about the actual subjective experience (even though we are the ones experiencing it).  Instead we only know the beliefs that we conclude about out subjective experience.  I insist on this subtle distinction, since first it is true: if mental activity does not solidify into a belief then we don't "know" it.  And second, focusing on agent beliefs regarding its subjective experience gives me a concrete aspect of the awareness system about which I can reason.  Every belief about the subjective experience of awareness I have considered seems to very naturally follow from an appropriately stimulated two-level awareness system.  But maybe I am being myopic, perhaps there are aspects, I am just being narrow minded and missing them.  
+
+Thus I am very interested in any concrete,  "how does your system exhibit XXX" kinds of challenges.  (if they come to you off the top of your head.)
+
+I would also love to know which definition for consciousness and awareness to which you subscribe.  or maybe you don't know, but you do have a list of things it must do?  
+
+Not challenging you, just interested.  Cheers, 
+Dan
+
+https://erikhoel.substack.com/p/from-ai-to-abortion-the-scientific/comment/7584068#comment-7952406
+
+
+
+~~
 
   
 Steven, I don't think the idea of a 'zombie' consciousness makes sense.  I definitely accept that one can fake a consciousness (as Elisa or LaMDA does), so a thoughtful interrogation is required to separate the two.  But assuming one accepts the reductionist position that consciousness (and indeed all mental phenomena) are information processing phenomena, then it makes no sense to say that its input and output are valid in all cases, yet it is somehow it is 'fake' or 'zombie'.  That is like having a fake sort function that in all cases it correctly returns the sorted list, but it is somehow a fake version of sorting.  Nope, if it correctly sorts all lists all the time, then it cannot be a fake sort, since the meaning of ‘sort’ **IS** its input / output behavior.

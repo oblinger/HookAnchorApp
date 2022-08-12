@@ -573,6 +573,7 @@ talk more soon!
 
 _
 ### 2021-05-05 - DECISION - NO TO JASON
+
 ### 2021-03-00 - JASON BASKETBALL
 #### 2021-04-29 - Thumbnail Math
 - 500 	gyms

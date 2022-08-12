@@ -5,6 +5,34 @@
 
 # LOG
 
+### t2022-07-26  Notes for letter of reference
+
+IDEAS:
+
+Dan is a high energy and capable leader across many dimensions:
+
+- I watched Dan rapidly build out a team of the highest quality team of 40+ PhD specialists using sophisticated combination of scaled outreach and assessment along with innovative university partnerships.     
+
+- Dan is fast on his feet and creative, both in a high stakes client meetings, or in working with the team in overcoming unexpected execution problems threatening delivery schedules.    (diluted)
+
+- He is an unusual combination of very technical at the lowest levels, and very articulate, organized, and compelling at the highest level.  
+
+- He quickly comes up to speed in disparate technical sub-areas in order to help the team creatively problem solve with the team, or to pitch a new approaches for a new client.  Often on the heels of our first meeting with a new client, it would be Dan proposing how our or other technologies might productively apply to their problems.  
+
+- Dan is a creative technical problem solver, he gets up to speed in very deeply into new areas and works with the team to propose new solutions to new clients, or to help attack details within ongoing projects.  
+
+- As a leader dan is very process oriented allowing him to effectively structure organizations and execution for greatest effect.  In one of our more technically complex efforts he built out a two-level reporting structure that streamlined integrations in a way that afford highest development speeds.
+
+- Finally Dan has the highest levels of integrity.  This has been a crucial ingredient in maintaining the trust and alignment we needed as co-founders over the twists and turns that occur in founding a company founding.  And that integrity along with a kind of infectious energy allows him to hire, retain, and lead world class technical talent.
+
+~
+
+- Solved hard problem / vision 
+
+
+
+
+
 ### t2022-06-28  Request for Letter of reference
 
 Nick, 

@@ -2,6 +2,11 @@
 
 | Date       | File                | Notes                                                                                     |
 | ---------- | ------------------- | ----------------------------------------------------------------------------------------- |
+| 2022-08-10 | [[MLeng]]               | VAR Autoencoders                                                                          |
+| 2022-08-05 | [[Notebook]]            | [[Coursera]]                                                                              |
+| 2022-08-04 | [[Notebook]]            | Attention and DL reading                                                                  |
+| 2022-08-01 | [[Phone]]               | notes while out - about me                                                                |
+| 2022-07-28 | [[Jnl]]                 | PURPOSE - What is my purpose                                                              |
 | 2022-07-19 | [[Comms]]               | Ping Goals                                                                                |
 | 2022-07-19 | [[Brain3]]              | G-Flow Nets Maybe - whats my example                                                      |
 | 2022-07-18 | [[Journal]]             | MISSION                                                                                   |
@@ -320,7 +325,7 @@
 | 2020-08-15 | [[Journal]]             | My Futures                                                                                |
 | 2020-08-15 | [[Journal Old]]         | My Futures                                                                                |
 | 2020-07-23 | [[DocMac]]              | Applications folder                                                                       |
-| 2020-07-18 | [[Budget]]              | Budget ---                                                                                |
+| 2020-07-18 | [[Budget]]              | Budget                                                                                    |
 | 2020-06-29 | [[Jnl]]                 | MON                                                                                       |
 | 2020-06-08 | [[Jnl]]                 | MON                                                                                       |
 | 2020-05-29 | [[Jnl]]                 | FRI                                                                                       |
@@ -419,6 +424,7 @@
 | 2019-00-00 | [[ReBuy]]               | Office Drawers  (bought)                                                                  |
 | 2019-00-00 | [[ReBuy]]               | Front Door Lock                                                                           |
 | 2018-08-07 | [[Phone]]               | #### starting to use Evernote ####                                                        |
+| 2018-00-00 | [[Phone]]               | coinbase                                                                                  |
 | 2017-12-18 | [[Phone]]               | Notes from HACKERS                                                                        |
 | 2017-11-14 | [[Phone]]               | Prenup info  -- info moved to evernote                                                    |
 | 2017-09-29 | [[Phone]]               | Double Cash Back                                                                          |

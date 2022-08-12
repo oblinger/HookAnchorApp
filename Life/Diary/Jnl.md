@@ -1,3 +1,24 @@
+### 2022-07-28  PURPOSE - What is my purpose
+
+WHAT DO I WANT?
+- PUZZLES - I love thinking hard about a concrete/elegant puzzle to be solved w/o pencil or paper.
+- RECOGNITION - To be valued by society both socially and financially
+- EASE/FREEDOM - I am older, I want to work, but also to have room to rest, and to explore where my interests in the moment take me.
+
+WHAT IS MY PURPOSE
+- TO LET MY LIGHT SHINE - I am creative and insightful about humanities problems on the largest scales.  My purpose is to use this capability at least once in creating something of scaled and lasting value for humanity.
+
+
+
+CONCRETE DIRECTIONS:
+- SENTIENCE 
+- EDU CORP
+- FORUM
+
+
+
+
+
 ### 2022-07-13  Thoughts during the day
 
 - no happy with progress

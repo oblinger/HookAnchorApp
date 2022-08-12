@@ -5,6 +5,7 @@
 - [ ] LAB-CORP - 2622 Ocean Ave 416-469-9710  (Fasted in morning before 10am)
 - [ ] [[MED|MED]] Nutritionist - Decide who to work with #todo
 - [ ] PULMONOLOGIST - Charles McDonald  2100 Webster Street  415-749-5779
+- [ ] Homeocyctein
 - [ ] [Thyroid](https://allyoucaneat.org.uk/wp/weight-tired-underactive-thyroid-tests/) 
 
 - [ ] DERMATOLOGIST - David J MacGregor 450 Sutter Rm 1824  415-989-9400
@@ -69,6 +70,9 @@
 - Stanford Preventive Cardiology -  (650) 725-5909
 
 
+## = MEDICAL MEASUREMENTS
+### HOMEOCYSTEIN
+- [Maria](https://medium.com/feed-your-brain/forget-cholesterol-its-your-homocysteine-level-that-matters-716a8fe9d345),   Ideal is <10.   >15 is considered abnormal.
 ## OLDER TODO
 	- Simvastatin level  chol 240/ LDL 190
 	- sutter bernal campus CPMC
@@ -181,6 +185,29 @@ Plan:  Use flonase x2 day & prolosec daily to remove #2 and #3
 Met with EMT doctor, he said my sinuses are inflamed.   (he did not see polyps)
 - Wants to do an x-ray
 
+### t2021-00-00  - Questions and topics
+
+### HEART
+
+TODO
+-- pressure machine  (morning & afternoon)
+-- TESTS:  chest XRAY; echo cardiagram ; stress echo cardigram
+-- asprin 83mg
+
+-- clubbing ; numb fingers in cold
+-- dry cough; continuous tickle;  
+   days of tickle/cough if very heavy breathing for 10 min
+-- arm sneeze
+
+-- Salt 1,500 -- blood pressure
+-- Tums
+-- level of exercise
+-- medical testing; safety devices; 
+-- diabetes
+
+-- cannot remove
+   
+_
 ### 2020-04-27  Notes for doc meeting
 -- diet
 -- salt
