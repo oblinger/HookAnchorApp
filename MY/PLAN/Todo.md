@@ -1,9 +1,5 @@
-- Nicole call
-- [ ] Get logins for MyHealth
-- [ ] CALLS lined up -
-- [ ] Joe review
+ - [ ] Get logins for MyHealth
 - [ ] In2
-- [ ] Get deferred comp done.
 
 - [ ] Nick: Meredith, Takeout, Review
 - [ ] Fix audio on laptop

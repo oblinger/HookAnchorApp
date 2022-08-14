@@ -1,3 +1,5 @@
+- [ ] Crones doctor
+- [ ] Get deferred comp done.
 - [ ] Deferred comp
 - [ ] Book Photographer
 - [ ] Privacy Panel

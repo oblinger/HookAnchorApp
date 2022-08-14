@@ -1,17 +1,12 @@
 
 - [ ] What his name. respond southbay guy
-- [ ] check tufts guy
 - [ ] 
-I am mentoring a recent Tufts graduate who is originally from Gambia.  He thinks a "robotics summer camp" in Gambia could be transformational in exposing tens of thousands of middle school students in Gambia to the world of computing that he experienced at Tufts.  He believes early exposure could allow them to finish high school and college aiming towards participation in the global tech workforce.  I find the idea exciting, here is his go fund me page.  For any that want more details you can contact me directly.
-
-To prove this out he is building his first summer camp on the cheap.  If you want to learn about it and maybe drop a nickel in the collection box, click here.
 
 
-- https://www.linkedin.com/in/alinelerner/
+- [ ] https://www.linkedin.com/in/alinelerner/
 - [ ] [Opportunity Atlas](https://www.opportunityatlas.org/) - child outcomes by location
 - [ ] 
 - [ ] 
-- [ ] Crones doctor
 
 
 Head of AI practice 

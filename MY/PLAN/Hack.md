@@ -1,22 +1,17 @@
+- [ ] OBS: key to add list items to lists with one letter prefix  e.g. t=todo, etc.   TAB-Q
+- [ ] Ensure sent mail is saved. and received mail is saved.
+- [ ] OBS: command to create a new page with wiki link from current curor location
+
 
 - [ ] how do I manage cross linked logs
 - [ ] OBS: Fling 's'start 'e'end  1, 2, 3
-- [ ] OBS: key to add to lists with one letter prefix  e.g. t=todo, etc.
-OBS: Synthetic todo list views - 
-OBS: command to create a new page with wiki link from current curor location
-- [ ] [btt](https://folivora.ai/buy)
+- [ ] [btt](https://folivora.ai/buy) - Better Touch Tool
 
-- [ ] 
-- [ ] 
-- [ ] Publish my org-info stuffm
-- [ ] 
-- [ ] Fling 1  # Should extend fling to numbered list positions.  
-- [ ] 
-- [ ] Ensure sent mail is saved. and received mail is saved.
-- https://github.com/jigish/slate
+
+- [ ] Publish my org-info stuff
 - [ ] ? Add quick entry using an input box
 - [ ] IFTTT output of Apple Health data (or any kind of export
-- [ ] KICK window into position 1, 2, 3 and back  (Mess with SLATE)
+- [ ] 
 - [ ] KMT - scan whole note not just prefix
 - [ ] Figure out: reset mac for headset bluetooth connect
 - [ ] Verify which emails and drafts are being saved/missing?  which accounts?  hard core backup of all emails . (all funnel in, then all get recorded?) 
@@ -53,6 +48,8 @@ OBS: command to create a new page with wiki link from current curor location
 
 ## LATER
 - [ ] PKM: Use ^a ^e to select whole line to move?  
+- [ ] OBS: Synthetic todo list views - 
+- [ ] https://github.com/jigish/slate  -  KICK window into position 1, 2, 3 and back  (Mess with SLATE)
 
 
 
