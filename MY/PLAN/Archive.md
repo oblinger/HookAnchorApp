@@ -1,3 +1,4 @@
+- [x] Repeat
 - [x] Meeting with Moses
 - [x] Ready for Moses EduCorp call; have call
 - [x] Clean Email

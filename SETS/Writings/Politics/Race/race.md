@@ -50,7 +50,6 @@ I am just sure that throwing around generalities is NOT a constructive path, and
 
 ## Steve QJ - Framing of the race debates
 
-
 Steve, 
 You asked if we had ideas about things that you might explore deeper, or new ways of looking at issues you have not considered.  Below is an idea that I wrote up a couple of months ago for you...  its not exactly what you are asking for.  But it is a set of ideas that I think resonate with your general outlook.  
 
@@ -154,7 +153,7 @@ I think a program like this especially stripped of specific color bias could be 
 
 
 _
-## Weak Men Are Superweapons
+## Weak Men Are Super weapons
 https://www.slatestarcodexabridged.com/Weak-Men-Are-Superweapons
 
 ## Why vote right?

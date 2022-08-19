@@ -46,8 +46,6 @@ DAILY VIEW DASHBOARD
 |       |         |        |                                                            |     |
 
 
-
-
 PLANNING VIEW DASHBOARD
 
 |  col-1  |  col-2   |   col-3   | col-4 |............................................     |

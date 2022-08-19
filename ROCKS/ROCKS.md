@@ -1,9 +1,10 @@
   [2020-08 Race Pitch](2020-08%20Race%20Pitch/2020-08%20Race%20Pitch.md)
 |                            |                                                      | . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . |
 | -------------------------- | ---------------------------------------------------- | --------------------------------------------------------------------------------------------------- |
-| 2022-05 [[Photo Setup]]                           |                                                      |                                                                                                     |
+| 2022-05 [[Photo Setup]]    |                                                      |                                                                                                     |
 | 2022-05 [[Eli Elementary]] | .                                                    |                                                                                                     |
 | 2022-05 [[Grandpa DJ]]     | Steve Cresep's Livestream and DJ service             |                                                                                                     |
+| 2022-05 [[Action Pages]]   | Obsidian plugin                                      |                                                                                                     |
 | 2022-04 [[BeMLR]]          | Understand what it would take to be an ML Researcher |                                                                                                     |
 | 2022-03 [[PKM]]            | My Personal Knowledge Management Approach            |                                                                                                     |
 | 2022-04 [[ClosingAF]]      | Wind down tasks for the AF company                   |                                                                                                     |

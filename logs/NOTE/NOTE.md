@@ -1,5 +1,5 @@
   [Notes](Notes.md)
-=[[TAG]]  <[[DATED TYPE]]  
+=[[TAG]]  <[[DATED]]  
 
 
 [[Notes]]  

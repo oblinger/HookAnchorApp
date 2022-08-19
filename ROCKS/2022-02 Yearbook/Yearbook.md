@@ -56,7 +56,8 @@ OLDER INFO
 ## = VENMO
 
 
-
+30   Evelyn's   Rafaela Cagan  -  Stefania Pifer (1x + $20 donation)
+29   Soumya   Asher Oliner  (Lin Mach)
 28   Evelyn's   Zoe Johnson (3x)
 27   Amanda   Olivia Bornheimer 
 26   Evelyn's   Clio Coe

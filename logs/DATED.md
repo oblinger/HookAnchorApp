@@ -1,8 +1,12 @@
-=[[TAG]]   <[[DATED TYPE]]  
+=[[TAG]]   <[[DATED]]  
+[[tags]] 
+
+=[[TAG]]     [[TAG ROOT]] > [[PTM]]
 
 
 | Date       | File                | Notes                                                                                     |
 | ---------- | ------------------- | ----------------------------------------------------------------------------------------- |
+| 2022-08-17 | [[Phone]]               | Dr Lue Urologist                                                                          |
 | 2022-08-01 | [[Phone]]               | notes while out - about me                                                                |
 | 2022-07-28 | [[Jnl]]                 | PURPOSE - What is my purpose                                                              |
 | 2022-07-19 | [[Comms]]               | Ping Goals                                                                                |

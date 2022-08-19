@@ -1,4 +1,4 @@
-=[[TAG]] <[[DATED TYPE]]  
+=[[TAG]] <[[DATED]]  
 
 
 [[WP2022]]    [WP2022](WP2022.md),   [WP2021](WP2021.md)   

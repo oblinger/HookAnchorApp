@@ -1,5 +1,5 @@
   [MKT](MKT/MKT.md),   [Edu Corp](Edu%20Corp.md),   [Forum](Forum/Forum.md)
-=[[DATED TYPE]]   [[IDEA]]  
+=[[DATED]]   [[IDEA]]  
 
 
   [Ideas](Ideas.md)

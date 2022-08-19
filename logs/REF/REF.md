@@ -1,5 +1,5 @@
   [Refs](Refs.md)
-=[[TAG]] <[[DATED TYPE]]  
+=[[TAG]] <[[DATED]]  
 
 [[Refs]]  
 

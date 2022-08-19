@@ -1,6 +1,5 @@
 
-[[LOGS/Ideas/Ideas Social/EduCorp/Edu Corp.pptx|PowerPoint]]    [[Greenhouse Farming]]   
-	[Edu Corp](Edu%20Corp.md)    
+[[LOGS/IDEA/Ideas Social/EduCorp/Edu Corp.pptx|PowerPoint]]    [[Greenhouse Farming]]   
 
 
 ### _
@@ -19,7 +18,10 @@
 	-- Self funding system
 	
 
-# EDU CORP
+# TODO
+- [ ] Learn about LA-based returning citizen program
+- [ ] Reach out to greenhouse researchers
+- [ ] G: Back of napkin math for greenhouse-based biz in Gambia
 # TOPICS
 ## TAG LINE / OVERVIEW
 

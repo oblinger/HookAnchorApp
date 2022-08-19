@@ -1,5 +1,5 @@
 LIBRARIES:  [[DocPandas]],  [[DocNumPy]],  [[DocSciKit]],  
-TOOLS:  [[DocJupyter]],  
+TOOLS:  [[DOCS/DocJupyter]],  
 
 
 

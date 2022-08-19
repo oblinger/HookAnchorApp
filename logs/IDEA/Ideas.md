@@ -1,4 +1,5 @@
 
+
 # # QUICK THOUGHTS
 ### --- AREAS ---
 - ENERGY -- Building something that 

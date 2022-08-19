@@ -1,11 +1,13 @@
 
-=[[TAG]]  <[[DATED TYPE]]  
+=[[TAG]]  <[[DATED]]  
 
   [Journals](Journals.md)  
 
 
 | Date        | File     | Notes                    |
 | ----------- | -------- | ------------------------ |
+| j2022-08-17 | [[Journals]] |                          |
+| j2022-08-15 | [[Journals]] | Repeat, monthly, EduCorp |
 | j2022-08-14 | [[Journals]] | [[Coursera]] W2          |
 | j2022-08-12 | [[Journals]] | Cousera                  |
 | j2022-08-10 | [[Journals]] | VAR Autoencoders         |

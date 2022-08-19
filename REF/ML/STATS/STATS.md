@@ -1,3 +1,4 @@
+  [Softmax](Softmax.md),   [()](().md),   [Sigmoid](Sigmoid.md)
   [AutoRegressive](AutoRegressive.md),   [Stationary](Stationary.md)
 
 

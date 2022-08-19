@@ -1,3 +1,10 @@
+### m2022-08-16  Nick - RZ share price
+
+- Assume drop in price removes tax free status.
+
+Pay taxeszoo
+
+
 
 ### m2022-08-11  - Jobot Recruiter
 

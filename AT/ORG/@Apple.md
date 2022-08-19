@@ -1,4 +1,4 @@
-
+## INFO
 ~MASTER IN 1PASSWORD~
 MAC PRO 2019 — C02DP1LYMD6R
 800-275-2273  Say: “Macbook Customer Service”
@@ -46,3 +46,11 @@ Phone password:  5465
 CHAT:  http://store.apple.com/us/help/contact   (press chat bubble at top)
 
 Retina15 Serial:  C02V811RHTD9
+
+## ACTIONS
+#### Chat
+#### Check Warranty
+- Enter serial number here
+  https://checkcoverage.apple.com/
+
+

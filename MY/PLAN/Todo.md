@@ -1,15 +1,11 @@
- - [ ] Get logins for MyHealth
-- [ ] In2
 
+- [ ] mac:  Battery life; Fix audio on laptop
+- [ ] Get logins for MyHealth
 - [ ] Nick: Meredith, Takeout, Review
-- [ ] Fix audio on laptop
+	
 - [ ] Justin
 - [ ] W PenFed Reset
 - [ ] Call about re-opening long closed citi-bank credit card account.
-
-
-LOWES
-- Drywall patch, speckle, texturing brush, putty knives
 
 - [ ] Dan Fine document
 - [ ] Nick meeting:  Takeout, Review

@@ -2,10 +2,11 @@
 
 # INFO
 ## PEOPLE
-[[@Meredith Bates]] - 
-- [[@AugustineAntwi-Boasiako]] - 
-- 
-- [Koby Yeboah](https://www.facebook.com/koby.yeboah.925?comment_id=Y29tbWVudDozMTgyNDcyMDAxOTk1NTkwXzIyNjE4ODE0NjcyOTM2MjU%3D) - took field trip to Agri-impact facility.  graduate of KNUST
+
+### PEOPLE LOG
+[[@Meredith Bates]] - Friend of Pallen
+[[@AugustineAntwi-Boasiako]] - Researcher.  Will write to him
+[Koby Yeboah](https://www.facebook.com/koby.yeboah.925?comment_id=Y29tbWVudDozMTgyNDcyMDAxOTk1NTkwXzIyNjE4ODE0NjcyOTM2MjU%3D) - took field trip to Agri-impact facility.  graduate of KNUST.  no action.
 
 ## PAPERS
 ###  [Safeguarding food security through large-scale adoption of agricultural production technologies](https://www.facebook.com/agricimpact/)  

@@ -1,5 +1,5 @@
   [Meetings](Meetings.md)
-=[[TAG]]   <[[DATED TYPE]]
+=[[TAG]]   <[[DATED]]
 
 
 [[Meetings]]  
@@ -8,6 +8,7 @@
 
 | Date        | File                 | Notes                                                             |
 | ----------- | -------------------- | ----------------------------------------------------------------- |
+| m2022-08-16 | [[Meetings]]             | Nick - RZ share price                                             |
 | m2022-08-11 | [[@Joseph Yeh]]          | Activities                                                        |
 | m2022-08-11 | [[Meetings]]             | Jobot Recruiter                                                   |
 | m2022-08-03 | [[@Joseph Yeh]]          | Activities                                                        |

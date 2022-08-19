@@ -1,3 +1,4 @@
+  [ArmChair](ArmChair/ArmChair.md)
   [An_Athiests_Spiritual_Calling](An_Athiests_Spiritual_Calling.md),   [Politics](Politics/Politics.md)
 
 

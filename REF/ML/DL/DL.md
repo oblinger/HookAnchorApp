@@ -1,3 +1,4 @@
+  [Regularization](Regularization.md),   [Coursera](Coursera.md)
   [deeplearning](deeplearning.md),   [Autoencoder](Autoencoder.md),   [Bengio](Bengio.md),   [GANs](GANs.md)
 =[[TAG]] <[[ML]] 
 
@@ -5,6 +6,8 @@
 - [[Self Supervised Learning]] 
 - [[Attention Mechanism]] 
 - [[Bengio]] 
+- [[VAE - Variational Auto Encoder]] - 
+- [[Invertable Density Estimation]] - 
 
 
 

@@ -3,6 +3,7 @@
 # META
 - [[Top]] 		-  List of all top level info pages    
 - [[Planning]]	-  Pages used for short and long term planning
+- [[Logs]] 
 - [[Meta Flow]]     -  My data intake and processing pathways
 - [[Meta Org]] 	-  Overview of all info resources 
 - [[Meta Meta]] 	-  Setup details for my info pages

@@ -1,3 +1,9 @@
+### 2022-08-17  Dr Lue Urologist
+
+@ parnassus health.
+415.353.2200  #1 adult urologist  ->  #1   #1  other #3
+
+
 
 ### 2022-08-01  notes while out - about me
 

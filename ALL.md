@@ -22,11 +22,11 @@ ALL TOPIC ROOTS
   CtrlSaaS]],   [[2020-07 Spot Pricing]],   [[2015-00 Flipping Websites]],   [[2013-08 Crowd Self Assessment]],   
   [[2020-06 OpenBricks]],   [[TreeSheet]],   [[myorgstartup]],   [[2009-03 State Edu Testing]],   [[2020-00 
   FinScreener]],   [[MEETING]],   [[TEXT]],   [[Letters]],   [[IBM-years]],   [[Msg]],   [[Sets]],   [[Cmd]],   
-  [[Writings]],   [[Politics]],   [[race]],   [[App]],   [[Obsidian]],   [[Books]],   [[LANG]],   [[haskell]],   
-  [[Humor]],   [[Recipes]],   [[Movies]],   [[Phone]],   [[ToRead]],   [[Buy]],   [[Bought]],   [[MY]],   [[Plan]],   
-  [[scratch]],   [[Meta]],   [[Myfo]],   [[FOOD]],   [[Noom]],   [[Glycemic Index]],   [[PRJ]],   [[AF]],   [[AFwp]],   
-  [[Outcult]],   [[AFactive]],   [[AFldr]],   [[AFarchive]],   [[UF_Docs]],   [[ufPublish]],   [[UfApps]],   
-  [[ufBrick]],   [[At]],   [[ORG]],   [[VC ORG]],   [[Streams]],   [[VC]],   [[TIER-4]],   [[Rocks]],   [[BeMLR]],   
-  [[Eli Elementary]],   [[2021-04 FindDayCare]],   [[Yearbook]],   [[AF Wind Down]],   [[Grandpa DJ]],   [[wedding]],   
-  [[BeFAANG]],   [[2020-08 Race Pitch]],   [[BeVC]],   [[PKM]],   [[Learning]],   [[Legal]],   [[Legal Uniform]],   
-  [[Legal Ob Labs]],   [[MED]]
+  [[Writings]],   [[ArmChair]],   [[Politics]],   [[race]],   [[App]],   [[Obsidian]],   [[Books]],   [[LANG]],   
+  [[haskell]],   [[Humor]],   [[Recipes]],   [[Movies]],   [[Phone]],   [[ToRead]],   [[Buy]],   [[Bought]],   [[MY]],
+     [[Plan]],   [[scratch]],   [[Meta]],   [[Myfo]],   [[FOOD]],   [[Noom]],   [[Glycemic Index]],   [[PRJ]],   [[AF]],
+     [[AFwp]],   [[Outcult]],   [[AFactive]],   [[AFldr]],   [[AFarchive]],   [[UF_Docs]],   [[ufPublish]],   
+  [[UfApps]],   [[ufBrick]],   [[At]],   [[ORG]],   [[VC ORG]],   [[Streams]],   [[VC]],   [[TIER-4]],   [[Rocks]],   
+  [[BeMLR]],   [[Eli Elementary]],   [[2021-04 FindDayCare]],   [[Yearbook]],   [[AF Wind Down]],   [[Grandpa DJ]],   
+  [[wedding]],   [[BeFAANG]],   [[2020-08 Race Pitch]],   [[BeVC]],   [[PKM]],   [[Learning]],   [[Legal]],   [[Legal 
+  Uniform]],   [[Legal Ob Labs]],   [[MED]]

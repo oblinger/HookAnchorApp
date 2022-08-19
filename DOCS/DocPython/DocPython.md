@@ -1,3 +1,4 @@
+  [DocJupyter](DocJupyter.md)
   [DocPyDatetime](DocPyDatetime.md)
   [DocNumPy](DocNumPy.md)
   [__DocPython__](__DocPython__.md)   [[DocPandas]],  [[DocPyDatetime]], 

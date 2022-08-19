@@ -1,12 +1,10 @@
-  [JOURNAL](JOURNAL/JOURNAL.md),   [REF](REF/REF.md),   [IDEA](IDEA/IDEA.md),   [MEETING](MEETING/MEETING.md)
-  [NOTE](NOTE/NOTE.md)
-  [WP](WP/WP.md),   [TEXT](TEXT/TEXT.md)
-  [MEET](MEET/MEET.md)
-  [IDEA](IDEA.md)
-  [Ideas](Ideas.md)
-  [NOTE](NOTE.md)
-   [[Ideas All]],   [Receipts](Receipts/Receipts.md),   [Quotes](Quotes.md)
-  [Receipts](Receipts.md),   [DATED](DATED.md),   [Notes	](Notes	.md),   [Refs](Refs.md),   [Meetings](Meetings.md),   [Dated	](Dated	.md),   [Notes App](Notes%20App.md)
-
-
+  [DATED](DATED.md),   [NOTE](NOTE/NOTE.md),   [REF](REF/REF.md),   [WP](WP/WP.md),   [IDEA](IDEA/IDEA.md),   [MEETING](MEETING/MEETING.md),   [TEXT](TEXT/TEXT.md)
 =[[INFO_PAGE]]  !  DATED, ORDERED, GROUPS OF LIKE ENTRIES -- (Dated, Ordered, Typed)  
+
+- [[DATED]]:		[[JOURNAL]],  [[MEETING]],  [[NOTE]],  [[PRJ]],  [[REF]],  [[TEXT]],  [[WP]], 
+- 			[[Journals]], [[Meetings]],  [[Notes]],  [[Prjs]],  [[Refs]],  [[Texts]],  [[WPs]],  
+- [[DIARY]]:		[[Jnl]],   [JOURNAL](JOURNAL/JOURNAL.md), 
+- [[IDEA]]: 		[[Ideas]], [[Ideas Brain]],  [[Ideas Social]],   
+- SPECIALTY:	[Receipts](Receipts/Receipts.md),   [Quotes](Quotes.md),  [Notes App](Notes%20App.md),  
+
+

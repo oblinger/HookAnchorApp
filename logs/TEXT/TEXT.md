@@ -1,4 +1,4 @@
-=[[TAG]] <[[DATED TYPE]]  
+=[[TAG]] <[[DATED]]  
 
 [[Texts]] 
 
@@ -7,6 +7,7 @@
 
 | Date        | File                     | Notes                                                                  |
 | ----------- | ------------------------ | ---------------------------------------------------------------------- |
+| t2022-08-15 | [[Refs]]                     | Child Education Outcome by location                                    |
 | t2022-08-02 | [[@AugustineAntwi-Boasiako]] | Initial Email                                                          |
 | t2022-07-26 | [[@Nick Allen]]              | Notes for letter of reference                                          |
 | t2022-07-22 | [[Politics]]                 | Religious tolerance                                                    |
