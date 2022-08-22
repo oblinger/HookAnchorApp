@@ -13,7 +13,7 @@
 | m2022-08-11 | [[Meetings]]             | Jobot Recruiter                                                   |
 | m2022-08-03 | [[@Joseph Yeh]]          | Activities                                                        |
 | m2022-06-30 | [[@Moses Baffour Awuah]] | First discussion about EduCorp                                    |
-| m2022-06-30 | [[Edu Corp]]             | Moses Discussion [[@Moses Baffour Awuah]]                         |
+| m2022-06-30 | [[EduCorp]]              | Moses Discussion [[@Moses Baffour Awuah]]                         |
 | m2022-06-21 | [[Forum]]                | Joe Yeh                                                           |
 | m2022-05-26 | [[@Dan Fine]]            | Constructive strategies forward.  Time could be short for a FAANG |
 | m2022-05-26 | [[@Joseph Yeh]]          | Prep for FAANG                                                    |
@@ -43,7 +43,7 @@
 | m2021-07-28 | [[@Nick Allen]]          | Meeting with Nick and Michael                                     |
 | m2021-07-27 | [[@Nick Allen]]          | Nick's request info                                               |
 | m2021-07-04 | [[@Doug Gordin]]         | Doug conversation                                                 |
-| m2014-06-02 | [[Edu Corp]]             | Random meeting notes                                              |
+| m2014-06-02 | [[EduCorp]]              | Random meeting notes                                              |
 | m2011-10-29 | [[@PayByGroup]]          | SEO.                                                              |
 | m2011-10-20 | [[@PayByGroup]]          | MVP discussion w. frank                                           |
 | m2011-10-18 | [[@PayByGroup]]          | One line pitch                                                    |

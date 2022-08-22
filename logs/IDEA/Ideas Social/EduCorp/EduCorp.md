@@ -1,5 +1,13 @@
+  [Greenhouse Farming](Greenhouse%20Farming/Greenhouse%20Farming.md)
 
 [[LOGS/IDEA/Ideas Social/EduCorp/Edu Corp.pptx|PowerPoint]]    [[Greenhouse Farming]]   
+- [gEduCorp](https://drive.google.com/drive/u/0/folders/10pUPzVcBn5PxmMQYC8T60PDpdrQgQ817):   
+
+
+
+
+
+
 
 
 ### _
@@ -180,7 +188,7 @@ Regards,
 - Exponential Edu Corp.  Using one's future success to obtain the connections cash and training needed to achieve that success. 
 
 #### Problem
-- What problem are we solving?  The disadvantaged need what the rich already have, the connections cash in training to make to succeed.
+- What problem are we solving?  The disadvantaged need what the rich already have, the connections, cash, and training to succeed.
 - Simply giving loaning money fails.  The set up and the incentives are all wrong.
 - Nobody's in the trenches with you.  Unlike the rich uncle with a business, your competitors are not trying help you, but rather to beat you!
 - Opportunities are squandered because they're not earned.
@@ -195,7 +203,6 @@ Regards,
 - ITS A RUNNING BUSINESS - The school is organized around a running business, it employs ***peer-to-peer*** apprenticeship teaching, along with online video material.
 - JUNIORS - On graduation day, the junior cohorts ***sign loans*** to form a new corporation and to buy the school the senior cohort.  And the cohorts split -- One cohort becomes the seniors at the school and the other joins the new business.
 - RECRUIT - The newly ranking seniors then must recruit two freshman cohorts to rebuilt the school, and this process is repeated as a way of pumping out a stream no newly form businesses.
-
 - RESOURCES - Notice that the resources are protected because they're owned by the senior cohort who bought it with their loans, and can only sell it onward if in good condition.
 - JOB - You are guaranteed a job because you are a part owner of the company that you will work for.
 - SCALES - And its scales indefinitely since each corporation is bought using its future income.

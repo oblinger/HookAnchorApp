@@ -1,3 +1,5 @@
+-   numpy.random.rand() produces numbers in a [uniform distribution](https://raw.githubusercontent.com/jahnog/deeplearning-notes/master/Course2/images/rand.jpg).
+-   and numpy.random.randn() produces numbers in a [normal distribution](https://raw.githubusercontent.com/jahnog/deeplearning-notes/master/Course2/images/randn.jpg).
 
 A.sum(axis=0)    # sum vertically (along axis 0);  Resulting matrix has this axis completely removed
 A.reshape((1,4))
@@ -9,7 +11,7 @@ m.shape
 
 ### ELEMENT WISE (with broadcast)
     .sum(axis=0, keepdims=True)
-    .sum(list)  .multiply(...)  .power(x, y)
+    .sum(list)  .multiply(...)  .power(x, y)   .sqrt(x)
 
 ### SPECIAL
     .dot(a, b)      (matrix multiplication)

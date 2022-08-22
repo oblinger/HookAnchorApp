@@ -1,3 +1,4 @@
+
 - [ ] OBS: key to add list items to lists with one letter prefix  e.g. t=todo, etc.   TAB-Q
 - [ ] Ensure sent mail is saved. and received mail is saved.
 - [ ] OBS: command to create a new page with wiki link from current curor location
@@ -9,7 +10,7 @@
 
 
 - [ ] Publish my org-info stuff
-- [ ] ? Add quick entry using an input box
+- [ ] OBS: Add quick entry using an input box
 - [ ] IFTTT output of Apple Health data (or any kind of export
 - [ ] 
 - [ ] KMT - scan whole note not just prefix

@@ -1,11 +1,11 @@
-  [Regularization](Regularization.md),   [Coursera](Coursera.md)
-  [deeplearning](deeplearning.md),   [Autoencoder](Autoencoder.md),   [Bengio](Bengio.md),   [GANs](GANs.md)
+  [Regularization](Regularization.md),   [Coursera](Coursera.md)  [[Activation Functions]] 
+ [Autoencoder](Autoencoder.md),   [@Yoshua Bengio](@Yoshua%20Bengio.md),   [GANs](GANs.md)
 =[[TAG]] <[[ML]] 
 
 - [[GANs]] 
 - [[Self Supervised Learning]] 
 - [[Attention Mechanism]] 
-- [[Bengio]] 
+- [[@Yoshua Bengio]] 
 - [[VAE - Variational Auto Encoder]] - 
 - [[Invertable Density Estimation]] - 
 

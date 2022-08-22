@@ -8,6 +8,10 @@
 **SCHWAB**
 - Account -> Balances ! Joint Checking      (15K monthly flow starting before 2021)
 
+### BUDGET APP
+- (See Pycharm -> bin)   
+- Master in budget.py
+
 
 
 
@@ -18,6 +22,7 @@ See Bills -> CashFlow for active accounts tracked in mint
 
 - Transactions are sorted by column K (Main)
 
+## BUDGET.PY
 
 | SECTIONS        | Begins          | Col       | Notes                                   |
 | --------------- | --------------- | --------- | --------------------------------------- |

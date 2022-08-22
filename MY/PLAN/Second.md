@@ -11,7 +11,7 @@ misc
 - [ ] Research platforms for prototype
 - [ ] Forum infrastructure
 
-## = [[Edu Corp]] =
+## = [[EduCorp]] =
 - [ ] Contact Meridith & Meet
 
 ## = [[PKM]] =

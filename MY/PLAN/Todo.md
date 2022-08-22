@@ -1,8 +1,11 @@
-
+- [ ] Bloodwork.  
 - [ ] mac:  Battery life; Fix audio on laptop
 - [ ] Get logins for MyHealth
 - [ ] Nick: Meredith, Takeout, Review
 	
+- [ ] Arima - Noomer data analysis
+- [ ] Add mentor?  DL?
+- [ ] Github?
 - [ ] Justin
 - [ ] W PenFed Reset
 - [ ] Call about re-opening long closed citi-bank credit card account.

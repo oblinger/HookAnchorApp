@@ -1,4 +1,9 @@
 
+### j2022-08-21  
+09   
+
+04:	Exercise
+
 
 ### j2022-08-18
 07' Read/Bfast/FRIT  (iPython)

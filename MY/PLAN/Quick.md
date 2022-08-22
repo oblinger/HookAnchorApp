@@ -1,7 +1,7 @@
 
+- [ ] discord for BCMS
 - [ ] salt, chili-garlic
-- [ ] - [ ] 
-- [ ] - [ ] 
+- [ ] calls: David Israel.  
 - [ ] date nite
 - [ ] Payments for deffirred income
 - [ ] 

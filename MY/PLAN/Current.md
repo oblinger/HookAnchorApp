@@ -1,13 +1,13 @@
 ### 2022-08-14
-- [ ] War Stories* (2h)
+- [ ] Update Linked In
 - [ ] Coursera* (10h)
-- [ ] BENJIO* - What is my GANs idea  (2h)
-- [ ] Writeup job search game plan & 3 month game plan
+- [ ] BENJIO* - What is my GANs idea  (4h) - Frame K that cannot be learned today
+
 - [ ] CALLS lined up???
+- [ ] ??? Writeup job search game plan & 3 month game plan
 
 SECOND:
-- [ ] Yearbook  Ordered
-- [ ] [[Edu Corp]]:  Contact guy in gambia
+- [ ] [[EduCorp]]:  Get tomato rates for Ghana.
 
 REPEAT:  
 - [ ] Daily 7-min exercise

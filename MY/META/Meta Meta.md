@@ -50,10 +50,10 @@ PLANNING VIEW DASHBOARD
 
 |  col-1  |  col-2   |   col-3   | col-4 |............................................     |
 |:-------:|:--------:|:---------:|:-----:|:---|
-| Current |   Prime  |  Second   | Daily |     |
+| Threads |   Prime  |  Second   | Daily |     |
 |    "    |    "     |     "     |   "   |     |
-|  Full   |    "     |   Later   | Todo  |     |
-|   ---   |    Q2    |    ""     |  ---  |     |
+| Current |   Full   |   Later   | Todo  |     |
+|  Wings  |    Q2    |    ""     |  ---  |     |
 
 
 THREE MONITOR SETUP

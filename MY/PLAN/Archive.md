@@ -1,3 +1,5 @@
+- [x] [[EduCorp]]:  Contact guy in gambia
+- [x] Yearbook  Ordered
 - [x] Repeat
 - [x] Meeting with Moses
 - [x] Ready for Moses EduCorp call; have call

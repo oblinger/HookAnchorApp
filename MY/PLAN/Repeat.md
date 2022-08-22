@@ -1,4 +1,6 @@
 
+shut
+
 | WEEKLY        |                                                                                                                |
 | ------------- | -------------------------------------------------------------------------------------------------------------- |
 | **HOT LISTS** | [SimpleNote](https://app.simplenote.com/) [Reminders](https://www.icloud.com/#reminders) AudioMemos # FileThis |

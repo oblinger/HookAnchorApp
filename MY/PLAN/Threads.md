@@ -1,8 +1,8 @@
-s
+
 - [[BeMLR]] - Articulated research agenda
 
-- [[NJ22 Framing]] - Fully polished: War, LinkedIn, Reco
+- [[NJ22 Framing]] - Fully polished: LinkedIn    , Reco, War, 
 
-- [[Self]] - Get TPST
+- [[Self]] - Get Tsp
 
-- [[Edu Corp]] - Napkin-level Greenhouse Model
+- [[EduCorp]] - Napkin-level Greenhouse Model
