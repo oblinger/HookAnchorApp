@@ -1,5 +1,3 @@
--   numpy.random.rand() produces numbers in a [uniform distribution](https://raw.githubusercontent.com/jahnog/deeplearning-notes/master/Course2/images/rand.jpg).
--   and numpy.random.randn() produces numbers in a [normal distribution](https://raw.githubusercontent.com/jahnog/deeplearning-notes/master/Course2/images/randn.jpg).
 
 A.sum(axis=0)    # sum vertically (along axis 0);  Resulting matrix has this axis completely removed
 A.reshape((1,4))
@@ -17,11 +15,19 @@ m.shape
     .dot(a, b)      (matrix multiplication)
 
 
+## RANDOM
+-   numpy.random.rand() produces numbers in a [uniform distribution](https://raw.githubusercontent.com/jahnog/deeplearning-notes/master/Course2/images/rand.jpg).
+-   and numpy.random.randn() produces numbers in a [normal distribution](https://raw.githubusercontent.com/jahnog/deeplearning-notes/master/Course2/images/randn.jpg).
+- np.random.permutation(size)    X[:permutation]  (will generate a permuted matrix)
+
 ## CREATE   .zeros(dims)  .deepcopy  .randint  .randn
 - np.zeros([x, y])
 - np.deepcopy( X )
 - np . random . randint(1, 11, (4,3,2))
 - np.random.randn(r, c)   # matrix of [0, 1]
+
+
+## SELECT X[:, 10:20]
 
 ## HOW IT WORKS
 ### BROADCAST

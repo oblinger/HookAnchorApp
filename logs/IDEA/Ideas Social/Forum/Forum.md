@@ -1547,6 +1547,15 @@ _
 https://tobiasrose.medium.com/the-enemy-in-our-feeds-e86511488de
 
 # LOG
+### m2022-08-24  Matt Pinson - Friend Christy - Friend of Yashin
+
+
+304-654-0087
+
+[Welcome to Huntingtonnews.net | Huntington News | Huntington News](https://nam02.safelinks.protection.outlook.com/?url=https%3A%2F%2Fwww.huntingtonnews.net%2F&data=05%7C01%7Cchristine.risch%40marshall.edu%7C7af239706c9a45710f0d08da845c4315%7C239ab2783bba4c78b41d8508a541e025%7C0%7C0%7C637967829057083101%7CUnknown%7CTWFpbGZsb3d8eyJWIjoiMC4wLjAwMDAiLCJQIjoiV2luMzIiLCJBTiI6Ik1haWwiLCJXVCI6Mn0%3D%7C3000%7C%7C%7C&sdata=4R3WE1E9qjpyBqCMqmqrAgaqafTzFXFZcOB8I4C1szY%3D&reserved=0)
+
+
+
 ### m2022-06-21  Joe Yeh
 
 

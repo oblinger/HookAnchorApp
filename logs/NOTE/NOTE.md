@@ -7,6 +7,7 @@
 
 | Date        | File             | Notes                                                                       |
 | ----------- | ---------------- | --------------------------------------------------------------------------- |
+| n2022-08-23 | [[Brain3]]           | ARCHITECTURE & ALGORITHM IDEAS                                              |
 | n2022-07-28 | [[@Felipe Lavratti]] | Job pointers at Amazon                                                      |
 | n2022-05-30 | [[TeamSaver]]        | Compressed summary                                                          |
 | n2022-05-28 | [[Forum]]            | Raw material for Immigration issue based slides                             |

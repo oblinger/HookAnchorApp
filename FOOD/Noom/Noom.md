@@ -11,6 +11,12 @@
 
 PASTA 1.3
 
+## REWARDS
+- TANGIBLE: Gift, 
+- SELF CARE: Car ride, Scenic walk, 
+- SOCIAL: Out w/ Friends
+- HEALTHY: Dining @ healthy restaurant, 
+
 
 ## Answered Questions
 

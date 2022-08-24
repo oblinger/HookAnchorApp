@@ -1,4 +1,11 @@
 
+
+- Dash Building
+- Learning New
+
+- [ ] 
+- [ ] Plan for crypto
+- [ ] create Eli spotify account.
 - [ ] discord for BCMS
 - [ ] salt, chili-garlic
 - [ ] calls: David Israel.  

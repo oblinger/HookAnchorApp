@@ -1,7 +1,35 @@
   [BrainDomains](BrainDomains.md)
 
 
+
 # LOG
+### n2022-08-23  ARCHITECTURE & ALGORITHM IDEAS
+
+- CTX - CONTEXT - subnet dedicated to abstracting thinking context
+	- ENV_CTX - ENVIRONAMENTAL CONTEXT - Context derived from the external world
+	- INTENTION - Hiearchy of intentions for the thinking itself
+- UTILITY - subnet dedicated to assessing the value of a particular thought or line of thinking
+	- ANTI-UTILITY - subnet dedicated to assessing when a thought is NOT valuable
+
+
+GOAL - INTENT - UTILITY - GOAL DUALITY
+- For every measurable goal, there is the intention to achieve that goal, and measurement of utility of specific thoughts or actions in achieving that intention.
+
+
+THOUGHT STATE - Activation of a set of set of net nodes
+
+THOUGHT PROGRESSION ENGINE - Stochastic thought state progression engine
+
+
+ITERATIVE REPLAY - 
+- System 'thinks' until some thought connects with abstractions of instructor's speech or actions.
+- System replays thinking and assigns credit to steps within the line of thinking that yielded the connecting thoughts.
+
+- Can update ones model of: thought utility and thinking progression engine
+
+
+
+
 ### 2022-07-19  G-Flow Nets Maybe - whats my example
 - Examples of the reasoning I want to bootstrap
 

@@ -1,25 +1,31 @@
-  [Regularization](Regularization.md),   [Coursera](Coursera.md)  [[Activation Functions]] 
- [Autoencoder](Autoencoder.md),   [@Yoshua Bengio](@Yoshua%20Bengio.md),   [GANs](GANs.md)
+  [Regularization](Regularization.md),   [GANs](GANs.md),   [NN](NN.md)
 =[[TAG]] <[[ML]] 
 
-- [[GANs]] 
-- [[Self Supervised Learning]] 
-- [[Attention Mechanism]] 
 - [[@Yoshua Bengio]] 
-- [[VAE - Variational Auto Encoder]] - 
-- [[Invertable Density Estimation]] - 
+- [Coursera](Coursera.md),  [[NN]],  [@Yoshua Bengio](@Yoshua%20Bengio.md),  
 
 
 
+[[DL topics]] 
 
+[[DL algs]] 
+
+[[DL optimization]] - 
 
 
 
 
 
 # LOG
-### t2022-04-26  Lample & Charton
-! Symbolically solving integrals using a transformer
+### t2022-04-26  Lample & Charton  -  Symbolically solving integrals using a transformer
 
  [Deep Learning for Symbolic Mathematics](https://arxiv.org/abs/1912.01412)  
- 
+
+### t2022-00-00 
+
+
+Science overview
+
+rebut http://arxiv.org/abs/1404.7828
+
+Lee dang Microsoft  http://research.microsoft.com/apps/pubs/default.aspx?id=209355
