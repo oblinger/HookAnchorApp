@@ -1,4 +1,4 @@
-### 2022-07-28  PURPOSE - What is my purpose
+### j2022-07-28  PURPOSE - What is my purpose
 
 WHAT DO I WANT?
 - PUZZLES - I love thinking hard about a concrete/elegant puzzle to be solved w/o pencil or paper.
@@ -19,7 +19,7 @@ CONCRETE DIRECTIONS:
 
 
 
-### 2022-07-13  Thoughts during the day
+### j2022-07-13  Thoughts during the day
 
 - no happy with progress
 - sleepy
@@ -28,7 +28,7 @@ CONCRETE DIRECTIONS:
 - hungry
 - tired of doing war-stories
 - me
-### 2022-07-11  NOOM - 
+### j2022-07-11  NOOM - 
 
 - Three challenges I would change now: 
 	1. Exercise effectively over the days of each week
@@ -43,7 +43,7 @@ CONCRETE DIRECTIONS:
 
 
 
-### 2022-07-02  RULESET
+### j2022-07-02  RULESET
 
 - ALARM - Set alarm, Cash card controls required waking.
 - PLAN - Plan day (After Eli, or In Morning)
@@ -63,7 +63,7 @@ TRY:
 - Allow reading & email during breaks
 
 
-### 2022-07-02  - Begin Anew - Put your big boy pants on
+### j2022-07-02  - Begin Anew - Put your big boy pants on
 
 - BIG BOY PANTS - Enough of the coddling, I am not happy with my life... indeed I am wasting it!!!  I am not happy each day.
 - DONT BELEIVE - I don't believe at some basic level, so I put in such piss poor efforts.
@@ -75,7 +75,7 @@ TRY:
 
 - FROG - Key failing is not working on the hardest part first.  So many excuses.
 
-### 2022-06-29  What brings me joy - Breaking my holding pattern
+### j2022-06-29  What brings me joy - Breaking my holding pattern
 
 - I am in a large holding pattern right now, that I must break free from
 - I have a lot of living left to do, which I can still do in this life, but which I am not doing right now
@@ -91,102 +91,7 @@ TRY:
 
 
 
-### 2021-06-06 - summary
-GRATITUDE
-- Eli's happiness
-- The options I have in life
-- A relaxed day
-MISSION  Dan Obligner 2021
-- Have a confirmed career vector
-WORKED
-- Was relaxed. 
-- Wrote this jnl
-- Good Dean Allemang conversation
-DIDN'T WORK
-- Didn't wake on time.
-- Didn't engage in my work for the WHOLE day!
-- didn't exercise.
 
-### 2021-06-04 - 
-Technical Design
-Puzzle -- 
-Efficiency / Effectiveness -- How to make something work better in a key way, at a detailed level
-
-
-### 2021-06-04 - LIKE - Autonomy - Designing Human Mobility Solution 
-- Loved thinking about approaches for addressing this problem.
-- Wanted to think them thru far enough to see if they could work or not.
-- Nights and weekends I spent thinking thru a crypto currency algorithm
-- Hacking Python with Qingling 
-- Designing sets of API is very cool
-- Writing out the UX for the smart scale was engaging
-- 
-
-
-
-### 2021-05-00 - Recent stuff
-
-### 2021-05-19 - Gaining Emotional Stability
-
-Wow, I am so ineffective and demoralized these days.  A key activity is to get this back into good shape.  Too many hours on too many days are just wasted.  I am not 
-
-ACTIONS
-- LIST -- Mantain list of shovel-ready activities
-- SLEEP -- Stop and start reading when time.  Ready clothes etc. for morning
-- FUN -- Jam significant fun into each day
-- RESET -- Figure out a reset procedure
-- PROGRESS -- Need to feel progress each day, need plan I believe in.  how?
-
-
-_
-### 2021-05-17 - HALF ASS IDEA TO JOURNAL
-
-- QUICK THOUGHT -- have the quick thought to journal.  To try to help break the log jam.
-- 
-
-_
-### 2020.04.0
-DREAMS:	
-	
-TODAY:
-	
-GRATEFUL:
-	
-STRUGGLES:
-	
-INTENTIONS:
-	
-YEARS AGO:
-	
-_
-### 2020.04.0
-DREAMS:	
-	
-TODAY:
-	
-GRATEFUL:
-	
-STRUGGLES:
-	
-INTENTIONS:
-	
-YEARS AGO:
-	
-_
-### 2020.04.0
-DREAMS:	
-	
-TODAY:
-	
-GRATEFUL:
-	
-STRUGGLES:
-	
-INTENTIONS:
-	
-YEARS AGO:
-	
-_
 ### 2020-06-29 MON
 DREAMS:	
 	Did not get on train in time.  Road on outside on flat platform

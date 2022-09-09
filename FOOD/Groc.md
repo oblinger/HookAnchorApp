@@ -71,7 +71,6 @@ Dan No:  Bok Choi, Crown Daisy, Sweet Potato Leaves, Yo-Mai-Tscai, EggPlant, She
 Eh: Spinach, Napa , Zuchini 
 
 _
-# # SHOPPING LISTS # 
 ## Dragon Baby
 
 VEG:       Green Beans, Lotus Root, Corn, Wo-Sun,  You-Mai-Cai, . . .
@@ -387,8 +386,7 @@ Honey ==> Reduce Geherlin
 [Pulses](https://www.sciencedirect.com/science/article/abs/pii/S1756464617301615) ==> Reduce total calorie in
 
 Not proven:  jinger,
-# # MEALS # 
-## = OUTTAKES = 
+## = MEAL OUTTAKES = 
 
 ===PORRAIGE===
 -- PurpleRice

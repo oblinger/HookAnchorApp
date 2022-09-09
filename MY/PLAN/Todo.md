@@ -1,8 +1,10 @@
+- [ ] Penfed
 - [ ] Bloodwork.  
 - [ ] mac:  Battery life; Fix audio on laptop
 - [ ] Get logins for MyHealth
 - [ ] Nick: Meredith, Takeout, Review
 	
+- [ ] Plan for crypto
 - [ ] Arima - Noomer data analysis
 - [ ] Add mentor?  DL?
 - [ ] Github?

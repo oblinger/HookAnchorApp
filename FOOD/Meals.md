@@ -1,10 +1,23 @@
+# MEALS
+
+## NIGHT SNACK
+- Radish, Celery, Bell Pepper, 
+- Cherry, Strawberry, 
+## QUICK SNACK
+- FRUIT:   BERRIES:  
+- Hummus, 
+## READY
+- CAN:  Amy's Lentil Vegetable
+- FZN:  Edamame, Peas, Corn, Miso??
+- BATCH: SweetBurritos, Chili/SplitPea/
+
+https://www.theseaganlife.com/home/the-complete-list-of-vegetables-from-around-the-world
+
 # ### REGULAR ###
 ### Dan Lunches
 - BATCH:	Barley; Lentils; 
-- 
 - PKG:	Epicurean; EggBites; 
 - SALAD: 
-
 "Condomints"
 - Nuts, Golgi, 
 
@@ -32,7 +45,9 @@ https://en.wikipedia.org/wiki/List_of_vegetable_dishes
 https://en.wikipedia.org/wiki/List_of_salads
 
 COLD:	Tabbouleh, 
-FRIED: Cauliflower, 
+FRIED: Cauliflower,   
+
+==> sweet, satisfying, addicting, caloric, bad for heart, delicious, crunchy, off limits
 ### AYI
 - STIR FRY: 	Chicken, Tofu, Egg, Fish, 
 - CHICKEN: 	
@@ -46,12 +61,10 @@ FRIED: Cauliflower,
 Lentils, Barley
 Flaxseeds
 Cruciferous
-
-
 - BEANS		--
 - BERRIES 	--
 - FRUITS		-- 
-- CRUCIFEROUS-- 
+- CRUCIFEROUS  -- 
 - GREENS		-- 
 - VEGGIES	-- 
 - NUTS/SEEDS	-- 

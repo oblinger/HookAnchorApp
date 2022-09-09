@@ -1,4 +1,4 @@
-=[[TAG]]   <[[DATED]]  
+=[[TAG]]   <[[UNTYPED]]  
 [[tags]] 
 
 =[[TAG]]     [[TAG ROOT]] > [[PTM]]
@@ -8,22 +8,15 @@
 | ---------- | ------------------- | ----------------------------------------------------------------------------------------- |
 | 2022-08-17 | [[Phone]]               | Dr Lue Urologist                                                                          |
 | 2022-08-01 | [[Phone]]               | notes while out - about me                                                                |
-| 2022-07-28 | [[Jnl]]                 | PURPOSE - What is my purpose                                                              |
 | 2022-07-19 | [[Comms]]               | Ping Goals                                                                                |
 | 2022-07-19 | [[Brain3]]              | G-Flow Nets Maybe - whats my example                                                      |
-| 2022-07-18 | [[Jnl Strategic]]       | MISSION                                                                                   |
 | 2022-07-18 | [[ToBuy]]               | Walnut desktop                                                                            |
-| 2022-07-13 | [[Jnl]]                 | Thoughts during the day                                                                   |
 | 2022-07-12 | [[Phone]]               | Eli Sand toys                                                                             |
 | 2022-07-12 | [[Phone]]               | LOWES tool rental                                                                         |
-| 2022-07-11 | [[Jnl]]                 | NOOM -                                                                                    |
 | 2022-07-11 | [[Weekly]]              | CRAP WEEK                                                                                 |
 | 2022-07-08 | [[MED]]                 | Pain after sex - Spoke with Lucas, Hasslers PA                                            |
 | 2022-07-07 | [[Phone]]               | Setting up Sonic internet service                                                         |
 | 2022-07-02 | [[DocJupyter]]          | config example                                                                            |
-| 2022-07-02 | [[Jnl]]                 | RULESET                                                                                   |
-| 2022-07-02 | [[Jnl]]                 | Begin Anew - Put your big boy pants on                                                    |
-| 2022-06-29 | [[Jnl]]                 | What brings me joy - Breaking my holding pattern                                          |
 | 2022-06-27 | [[Phone]]               | PENFED - reset connection /                                                               |
 | 2022-06-25 | [[MED]]                 | Hassler Visit                                                                             |
 | 2022-06-20 | [[MED]]                 | Cough followup                                                                            |
@@ -80,8 +73,6 @@
 | 2022-03-10 | [[Searches]]            | ML COMPANIES ===                                                                          |
 | 2022-03-09 | [[Paths]]               | Post Amy Kruse Thinking                                                                   |
 | 2022-03-04 | [[MKT]]                 | From the top                                                                              |
-| 2022-03-03 | [[Jnl Strategic]]       | A FULL LIFE                                                                               |
-| 2022-03-00 | [[Jnl Strategic]]       | QJ note                                                                                   |
 | 2022-02-25 | [[EOCA]]                | RED ALERT - THIS IS NOT A DRILL - I REPEAT THIS IS NOT A DRILL                            |
 | 2022-02-25 | [[EOCA]]                | DAG OF SCOPES / INHERENT TO SOCIETY OF AGENTS / 0-DAY-ATTACKS                             |
 | 2022-02-25 | [[EOCA]]                | INHERENT CENTRALIZATION / SUCCEPTABLE TO DEVISTATING ATTACK                               |
@@ -91,17 +82,14 @@
 | 2022-02-16 | [[Forum]]               | Email based first system.                                                                 |
 | 2022-02-15 | [[Paths]]               | Choice Space                                                                              |
 | 2022-02-08 | [[Campaigns]]           | Meetups to consider                                                                       |
-| 2022-02-07 | [[Jnl Strategic]]       | Growing my Circles                                                                        |
 | 2022-02-00 | [[FirstTouch]]          | Recruiter - Refer Anyone - LOW HIT RATE                                                   |
 | 2022-01-29 | [[Campaigns]]           | L1-VC-ask-advice                                                                          |
-| 2022-01-28 | [[Jnl Strategic]]       | Joe/Deep Advisor                                                                          |
 | 2022-01-28 | [[Journal Old]]         | Joe/Deep Advisor                                                                          |
 | 2022-01-27 | [[Campaigns]]           | Sources                                                                                   |
 | 2022-01-27 | [[Campaigns]]           | Recruiter outreach #2  (NOT FINISHED)                                                     |
 | 2022-01-20 | [[Paths]]               | PATHS, spiritual dimension                                                                |
 | 2022-01-20 | [[Journal Old]]         | PATHS, spiritual dimension                                                                |
 | 2022-01-16 | [[Brain3]]              | Using GANs                                                                                |
-| 2022-01-14 | [[Jnl Strategic]]       | Morning thoughts                                                                          |
 | 2022-01-14 | [[Journal Old]]         | morning thoughts                                                                          |
 | 2022-01-11 | [[Brain3]]              | combining DL and logic                                                                    |
 | 2022-01-04 | [[Paths]]               | My purpose                                                                                |
@@ -114,7 +102,6 @@
 | 2022-01-02 | [[DEEP_BOOT]]           | Key Capabilities                                                                          |
 | 2022-00-00 | [[FailedMessages]]      | JOE Quora                                                                                 |
 | 2021-12-28 | [[DEEP_BOOT]]           | Deep Introspection Claim                                                                  |
-| 2021-12-25 | [[Jnl Strategic]]       | Friends Audit                                                                             |
 | 2021-12-25 | [[Journal Old]]         | Friends Audit                                                                             |
 | 2021-12-17 | [[Campaigns]]           | RECRUITER OUTREACH                                                                        |
 | 2021-12-01 | [[Paths]]               | PATHS cash                                                                                |
@@ -123,7 +110,6 @@
 | 2021-12-00 | [[MKT]]                 |                                                                                           |
 | 2021-11-30 | [[Paths]]               | PATHS GOOGLE vs R-ZERO vs UF-now                                                          |
 | 2021-11-30 | [[Journal Old]]         | PATHS GOOGLE vs R-ZERO vs UF-now                                                          |
-| 2021-11-29 | [[Jnl Strategic]]       | Talk w QL                                                                                 |
 | 2021-11-29 | [[DEEP_BOOT]]           | Deep Learning + Bootstrapping Microtheory                                                 |
 | 2021-11-29 | [[Journal Old]]         | Talk w QL                                                                                 |
 | 2021-11-25 | [[Paths]]               | PATHS TABLE SUMMARY                                                                       |
@@ -166,7 +152,6 @@
 | 2021-09-13 | [[Journal Old]]         | Writing up yet another idea (Alloy/crypto ownership)                                      |
 | 2021-09-13 | [[DYL]]                 | Writing up yet another idea (Alloy/crypto ownership)                                      |
 | 2021-09-10 | [[ufBrick]]             | Problem sketch                                                                            |
-| 2021-09-07 | [[Jnl Strategic]]       | Daily Schedule Ideas                                                                      |
 | 2021-09-07 | [[Journal Old]]         | Daily Schedule Ideas                                                                      |
 | 2021-09-03 | [[Journal Old]]         | WORK: happy to chat fast; but then hand details off to others                             |
 | 2021-09-03 | [[DYL]]                 | WORK: happy to chat fast; but then hand details off to others                             |
@@ -209,36 +194,22 @@
 | 2021-07-19 | [[DYL]]                 | Marcel response  -- couldn't stop writing it!**                                           |
 | 2021-07-19 | [[DYL]]                 | Thinking while walking                                                                    |
 | 2021-07-14 | [[ufElements]]          | LANG.LAL.BOOT.LOAD -- run/boot/load steps                                                 |
-| 2021-07-06 | [[Jnl Strategic]]       | Visio Terms                                                                               |
 | 2021-07-06 | [[Journal Old]]         | Visio Terms                                                                               |
 | 2021-07-04 | [[Journal Old]]         | Doug conversation                                                                         |
-| 2021-07-01 | [[Jnl Strategic]]       | Design your life thinking                                                                 |
-| 2021-07-01 | [[Jnl Strategic]]       | notes                                                                                     |
 | 2021-07-01 | [[Journal Old]]         | Design your life thinking                                                                 |
 | 2021-07-01 | [[Journal Old]]         | notes                                                                                     |
-| 2021-06-30 | [[Jnl Strategic]]       | Alternatives                                                                              |
 | 2021-06-30 | [[Journal Old]]         | Alternatives                                                                              |
-| 2021-06-29 | [[Jnl Strategic]]       | Jason Redux                                                                               |
 | 2021-06-29 | [[Journal Old]]         | Jason Redux                                                                               |
-| 2021-06-20 | [[Jnl Strategic]]       | FUTURES                                                                                   |
 | 2021-06-20 | [[Journal Old]]         | FUTURES                                                                                   |
 | 2021-06-18 | [[Brain3]]              | AML - Artifical Machine Learning   (formalization & claim)                                |
 | 2021-06-18 | [[Brain3]]              | AGI Agenda intro text                                                                     |
-| 2021-06-06 | [[Jnl]]                 | summary                                                                                   |
 | 2021-06-06 | [[Brain3]]              | Inputs to ML                                                                              |
-| 2021-06-04 | [[Jnl]]                 |                                                                                           |
-| 2021-06-04 | [[Jnl]]                 | LIKE - Autonomy - Designing Human Mobility Solution                                       |
 | 2021-06-00 | [[Journal Old]]         | QL modelling                                                                              |
 | 2021-06-00 | [[Journal Old]]         | QL Hacking                                                                                |
 | 2021-06-00 | [[DYL]]                 | QL modelling                                                                              |
 | 2021-06-00 | [[DYL]]                 | QL Hacking                                                                                |
-| 2021-05-31 | [[Jnl Strategic]]       | Nick Text Response                                                                        |
 | 2021-05-31 | [[Journal Old]]         | Nick Text Response                                                                        |
-| 2021-05-26 | [[Jnl Strategic]]       | Quick Plan before Michael/Nick call                                                       |
 | 2021-05-26 | [[Journal Old]]         | Quick Plan before Michael/Nick call                                                       |
-| 2021-05-19 | [[Jnl]]                 | Gaining Emotional Stability                                                               |
-| 2021-05-17 | [[Jnl Strategic]]       | LOG JAM                                                                                   |
-| 2021-05-17 | [[Jnl]]                 | HALF ASS IDEA TO JOURNAL                                                                  |
 | 2021-05-17 | [[Journal Old]]         | LOG JAM                                                                                   |
 | 2021-05-10 | [[Paths]]               | PATHS                                                                                     |
 | 2021-05-10 | [[Journal Old]]         | LIFE VIEW                                                                                 |
@@ -247,9 +218,7 @@
 | 2021-05-06 | [[Journal Old]]         | >>> BOOK  -- DESIGNING YOUR LIFE <<<                                                      |
 | 2021-05-06 | [[Journal Old]]         | WORK VIEW                                                                                 |
 | 2021-05-06 | [[DYL]]                 | WORK VIEW                                                                                 |
-| 2021-05-05 | [[Jnl Strategic]]       | DECISION - NO TO JASON                                                                    |
 | 2021-05-05 | [[Journal Old]]         | DECISION - NO TO JASON                                                                    |
-| 2021-05-00 | [[Jnl]]                 | Recent stuff                                                                              |
 | 2021-04-30 | [[Brain3]]              |                                                                                           |
 | 2021-04-29 | [[Jnl Strategic]]       | Thumbnail Math                                                                            |
 | 2021-04-29 | [[Journal Old]]         | Thumbnail Math                                                                            |
@@ -262,7 +231,6 @@
 | 2021-04-14 | [[Paths]]               | Compass                                                                                   |
 | 2021-04-14 | [[Journal Old]]         | Dan O Drivers & Futures                                                                   |
 | 2021-04-14 | [[Journal Old]]         | Compass                                                                                   |
-| 2021-04-11 | [[Jnl Strategic]]       | NFT transfer - Atilla discussion                                                          |
 | 2021-04-11 | [[Journal Old]]         | NFT transfer                                                                              |
 | 2021-04-07 | [[Jnl Strategic]]       | Jason #5                                                                                  |
 | 2021-04-07 | [[Journal Old]]         | Jason #5                                                                                  |
@@ -288,9 +256,7 @@
 | 2021-03-04 | [[Journal Old]]         | The Nick and Dan LLC Model                                                                |
 | 2021-03-03 | [[Paths]]               | Dan's North Star                                                                          |
 | 2021-03-03 | [[Journal Old]]         | Dan's North Star                                                                          |
-| 2021-03-00 | [[Jnl Strategic]]       | JASON BASKETBALL                                                                          |
 | 2021-03-00 | [[Journal Old]]         | JASON BASKETBALL                                                                          |
-| 2021-02-28 | [[Jnl Strategic]]       | Uniform - What could be pitched now                                                       |
 | 2021-02-28 | [[Journal Old]]         | Uniform - What could be pitched now                                                       |
 | 2021-02-24 | [[Paths]]               | Dan's Futures Ranked                                                                      |
 | 2021-02-24 | [[Journal Old]]         | Dan's Futures Ranked                                                                      |
@@ -300,7 +266,6 @@
 | 2021-02-17 | [[Journal Old]]         | Dan's Mind & North Star                                                                   |
 | 2021-02-15 | [[ufBrick]]             | thinking                                                                                  |
 | 2021-02-15 | [[ufBrick]]             | lean canvas                                                                               |
-| 2021-01-31 | [[Jnl Strategic]]       | So what the fuck am I doing? What's my goal here?                                         |
 | 2021-01-31 | [[Journal Old]]         | So what the fuck am I doing? What's my goal here?                                         |
 | 2021-01-21 | [[2020-07 Autonomy]]    | Irving on wheelchair.com                                                                  |
 | 2021-01-20 | [[2020-07 Autonomy]]    | ALS forum Query                                                                           |
@@ -311,18 +276,14 @@
 | 2020-12-23 | [[scratch]]             | XMAS FAMILY ZOOM                                                                          |
 | 2020-12-23 | [[scratch]]             | SHANE RESUME                                                                              |
 | 2020-11-30 | [[spirit_older_bigger]] | GOD THOUGHTS                                                                              |
-| 2020-11-25 | [[Jnl Strategic]]       | Unicore Implementation Days                                                               |
 | 2020-11-25 | [[Journal Old]]         | Unicore Implementation Days                                                               |
-| 2020-11-19 | [[Jnl Strategic]]       | AF Strategy                                                                               |
 | 2020-11-19 | [[Journal Old]]         | AF Strategy                                                                               |
 | 2020-10-08 | [[2020-07 Autonomy]]    | Out Reach to Yoon                                                                         |
 | 2020-10-02 | [[NJ22]]                | An assessment of me                                                                       |
 | 2020-10-02 | [[Journal Old]]         | An assessment of me                                                                       |
 | 2020-09-17 | [[Forum]]               | Police violence                                                                           |
 | 2020-09-07 | [[Forum]]               | Shinster email                                                                            |
-| 2020-08-23 | [[Jnl Strategic]]       | Lost at Sea but with good provisions                                                      |
 | 2020-08-23 | [[Journal Old]]         | Lost at Sea but with good provisions                                                      |
-| 2020-08-15 | [[Jnl Strategic]]       | My Futures                                                                                |
 | 2020-08-15 | [[Journal Old]]         | My Futures                                                                                |
 | 2020-07-23 | [[DocMac]]              | Applications folder                                                                       |
 | 2020-07-18 | [[Budget]]              | Budget                                                                                    |
@@ -362,7 +323,6 @@
 | 2020-02-23 | [[Jnl]]                 | Sunday                                                                                    |
 | 2020-02-21 | [[Jnl]]                 | Friday                                                                                    |
 | 2020-02-20 | [[Jnl]]                 | Thursday                                                                                  |
-| 2020-02-19 | [[Jnl Strategic]]       | DECADE TIMELINE                                                                           |
 | 2020-02-19 | [[Journal Old]]         | DECADE TIMELINE                                                                           |
 | 2020-02-16 | [[Jnl]]                 | Monday                                                                                    |
 | 2020-02-14 | [[Jnl]]                 | Friday                                                                                    |
@@ -435,7 +395,6 @@
 | 2016-11-06 | [[Phone]]               | changed address                                                                           |
 | 2016-11-04 | [[Phone]]               | Recology Sunset Scavenger                                                                 |
 | 2016-11-04 | [[Phone]]               | water power sewer                                                                         |
-| 2016-05-25 | [[Jnl Strategic]]       | – Lex Ownership                                                                           |
 | 2016-05-25 | [[OLD 201x Weekly]]     | – Lex Ownership                                                                           |
 | 2016-05-25 | [[Journal Old]]         | – Lex Ownership                                                                           |
 | 2016-00-00 | [[Fin]]                 | Idea for adelec analysis                                                                  |
@@ -452,36 +411,25 @@
 | 2013-03-03 | [[ReBuy]]               | Standing mat                                                                              |
 | 2013-00-00 | [[ReBuy]]               | Scotch                                                                                    |
 | 2012-09-19 | [[Meta Org]]            | Highlevel organization of Roles/Goals                                                     |
-| 2011-04-10 | [[Jnl Strategic]]       | – Not Energized                                                                           |
 | 2011-04-10 | [[Journal Old]]         | – Not Energized                                                                           |
 | 2011-00-00 | [[ReBuy]]               | Wireless data                                                                             |
-| 2010-12-17 | [[Jnl Strategic]]       | – LESSONS FROM DATING ELAINE                                                              |
 | 2010-12-17 | [[OLD 201x Weekly]]     | – LESSONS FROM DATING ELAINE                                                              |
 | 2010-12-17 | [[Journal Old]]         | – LESSONS FROM DATING ELAINE                                                              |
-| 2010-11-18 | [[Jnl Strategic]]       | – A day laid waste                                                                        |
 | 2010-11-18 | [[Journal Old]]         | – A day laid waste                                                                        |
-| 2010-10-09 | [[Jnl Strategic]]       | – Organizing Self                                                                         |
 | 2010-10-09 | [[OLD 201x Weekly]]     | – Organizing Self                                                                         |
 | 2010-10-09 | [[Journal Old]]         | – Organizing Self                                                                         |
-| 2010-10-00 | [[Jnl Strategic]]       | – Gave up on Siege                                                                        |
 | 2010-10-00 | [[OLD 201x Weekly]]     | – Gave up on Siege                                                                        |
 | 2010-10-00 | [[Journal Old]]         | – Gave up on Siege                                                                        |
-| 2010-04-01 | [[Jnl Strategic]]       | – Life is moving faster                                                                   |
 | 2010-04-01 | [[OLD 201x Weekly]]     | – Life is moving faster                                                                   |
 | 2010-04-01 | [[Journal Old]]         | – Life is moving faster                                                                   |
-| 2010-01-02 | [[Jnl Strategic]]       | – From last year’s retreat  (12/2008)                                                     |
 | 2010-01-02 | [[OLD 201x Weekly]]     | – From last year’s retreat  (12/2008)                                                     |
 | 2010-01-02 | [[Journal Old]]         | – From last year’s retreat  (12/2008)                                                     |
-| 2009-12-29 | [[Jnl Strategic]]       | Elasticity of Time                                                                        |
 | 2009-12-29 | [[OLD 200x Weekly]]     | Elasticity of Time                                                                        |
 | 2009-12-29 | [[Journal Old]]         | Elasticity of Time                                                                        |
-| 2009-12-19 | [[Jnl Strategic]]       | personal update                                                                           |
 | 2009-12-19 | [[OLD 200x Weekly]]     | not great - low motivation                                                                |
 | 2009-12-19 | [[Journal Old]]         | personal update                                                                           |
-| 2009-11-22 | [[Jnl Strategic]]       | – Joe Laconti                                                                             |
 | 2009-11-22 | [[OLD 200x Weekly]]     | – Joe Laconti                                                                             |
 | 2009-11-22 | [[Journal Old]]         | – Joe Laconti                                                                             |
-| 2009-11-19 | [[Jnl Strategic]]       | – Progress                                                                                |
 | 2009-11-19 | [[Journal Old]]         | – Progress                                                                                |
 | 2009-11-09 | [[OLD 200x Weekly]]     | – Progress                                                                                |
 | 2000-00-00 | [[MED]]                 | Medical.InsuranceAnalysis --                                                              |

@@ -1,3 +1,8 @@
+  [Recurring](Recurring.md)
+[[Recurring]] - 
+
+
+consumer reports
 Peloton signed 7/31
   [Budget](Budget.md)
 vorwerk $40/yr
@@ -103,85 +108,6 @@ Budget	22Q2	Purpose
    500	
  2,000	Occasional spending
 
-_
-## = RECURRING BILLS
-### info
-
-- APPLE:  Mac->AppStore->MyPicture->ViewInfo->Manage
-
-2020-04-06 -- last cleaned
-2016-06-16 -- last checked
-
-_
-### recurring
-
-SCHWAB JOINT 6956-1345
-- $5,200		House Taxes ???
-- $6,010/mo	House Morgage
-- $220/mo	PGandE Gas/Ele
-- $130/mo    SFpuc  (water bill)  Used to be $70 now $130  (2020.08 $321.02)
-- $130/mo?	Sunset Scavenger  (where did this bill go???)
-- $217/mo?	Blue Cross Monthly
-- $350/yr	Elan (Vijaya accountant)
-
-CHASE FREEDOM
-- $5			Nest video
-- $1,375/yr 	AAA Home Insurance
-- $20/yr		File This
-- $36/yr		1password
-- $50/yr		Nest Aware (renews Dec 1)
-- vary		Uber (mostly on on this account)
-- vary		Lyft  
-- $56.16		iphone  ('till june of 2020)
-- vary		rinse
-- $4/m		Ny times (revert to $15/m no Nov-23-2020)
-- $15/m		Spotify
-- vary		Paperless Post
-- $600/bi  	Geico
-- ??? 		Netflix
-- $59/yr  	CONSUMER REPORTS
-- $ 70/yr  	MS OFFICE (paypal)
-- vary		GRUB HUB
-- vary		CAVIAR
-- vary		DOOR DASH
-- vary		FEDEX
-- vary		USPS
-
-CHASE SAPPHIRE  CARD
-- vary		FANDANGO
-
-APPLE
-- $29/yr		Insight Timer
-
-OTHER  ~~
-- $230/mo	AT&T  (Paid on corp SVB account)
-
-DANO CAP 1 CARD
-- 02/mo    	Filethis.com   2/m
-- 20/yr??		Clean Email
-- 60/mo 		Coursera
-- 20/yr		Google Play (100Gig) oblinger@gmail.com 
-- vary		PAYPAL
-- vary		Uber/Lyft (also on Freedom card)
-- vary		STARBUCKS
-- vary		Apple Pay
-- vary		SKYPE
-DANO PAYPAL
-- 70/yr		MS OFFICE 365
-- 20/yr		Google 100 Gig;  Google Calls
-- 24/yr		On Health (Consumer Reports)
-- ??			MyDomain
-DANO OTHER
-- 15/yr 		apple	simpler contacts backup 
-- 36/yr		pen		1password     	(not yet setup)
-- 22/mo 		pen		planusa 		1-800-556-7918
-DANO TO CHANGE
-- cap   		Am Airlines
-
-
-QINGLING
-
-PENFED
 _
 ## === ACCOUNTS & TRACKING ===
 ### --- WIRED FUNDS ---

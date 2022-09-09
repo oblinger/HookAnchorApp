@@ -2,6 +2,7 @@ ASIAN:	Chinese, Japanese, Thai, Korean, Vietnamese, Burmese, Fusion, Raman, Poke
 TYPE:	Seafood, Salad, Pizza, Burger, Sandwich, Fast, Soul, Desert, American
 WORLD:	  Italian, French, Mediterranean, German, Spanish, Mexican, Indian, African
 
+ELI:    Thai, 
 MOM:  Thai, Poki, Seafood, Japanese, Sandwich, EURO(Italian, French, German, Spanish), Salad, Pizza, Burger
 
 

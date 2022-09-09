@@ -1,4 +1,5 @@
 
+
 | Name                     | Notes                                           ............................................................................. |
 | ------------------------ | ----------------------------------------------------------------------------------------------------------------------------- |
 | [[__]]                   |                                                                                                                               |
@@ -23,7 +24,7 @@
 | .  [[Phone]]             | Administrative actions associated with accounts or such                                                                       |
 | [[__]]                   |                                                                                                                               |
 | [[Logs]]                 | DATED, ORDERED, GROUPS OF LIKE ENTRIES -- (Dated, Ordered, Typed)                                                             |
-| .  [[DATED]]    '...'    | Dated but untyped entries                                                                                                     |
+| .  [[UNTYPED]]    '...'    | Dated but untyped entries                                                                                                     |
 | .  [[Meetings]]     'm...'   | Meeting notes. Any kind of person to person interaction                                                                       |
 | .  [[Notes App]]    'n...'   | Single 'note' created by me, often associated with some larger project                                                        |
 | .  [[LOGS/TEXT/TEXT]]    't...'   | Textual message written and sent by me   (Meta [[TXT]])                                                                       |

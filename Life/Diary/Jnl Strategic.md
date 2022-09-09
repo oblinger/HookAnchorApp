@@ -1,4 +1,26 @@
-### 2022-07-18  MISSION
+### j2022-09-09  Jason Redux-Redux
+
+PATHS
+
+- HIGH ROAD - Focus intensely on self modelling 
+- VISIO - Join visio & switch if not fun or not growing
+- GOOGLE - Hold out 
+
+
+
+
+
+	2,000	gyms.    For profit gyms in the USA
+	30		teams/gym.
+	60K    teams  * 50 games per year   (25 per season)
+	3M     games per year   * 10% penetration
+	300K   monitized games  * $20 profit per game
+	6M     Total annual revenue from Men's rec leagues  * 8x multiple
+	48M    Sale price   
+
+
+
+### j2022-07-18  MISSION
 
 - CONTRIBUTE - To envision and support the creation of a novel mechanism for societal good.
 - SOCIAL - To be part of a rich web of family, friends, and colleagues.  (how many show @ my funeral)
@@ -7,7 +29,7 @@
 	- OPTOMIZE - 
 - EXPERIENCES -  
 
-### 2022-03-00 - QJ note
+### j2022-03-00 - QJ note
 As I understand it, there are 1000+ biological-men who can run faster than the fastest biological-woman, so was imagining a future where it becomes normal for a tiny fraction (0.1% to 1%) of non-trans elite athletes to adjust their self determination specifically to BECOME a world champion.  It would not take many folks to decided they had a bit of room in their life for a bit of ambiguity.  The stakes would be high...  millions in advertising etc. and the gold medal title.  And just 0.1% would be enough....
 
 I think both this generation and next generation know what a biological-women and self-declared-women are.  The difference is which of these definitions is given primacy when one simply uses the term "woman."  
@@ -20,7 +42,7 @@ We are just in this weird present state where we have rules tied to "woman" whic
 
 
 
-### 2022-03-03 - A FULL LIFE
+### j2022-03-03 - A FULL LIFE
 
 My full life is built from several key pieces:
 
@@ -43,7 +65,7 @@ HEAVY HOBBY
 
 
 
-### 2022-02-07 - Growing my Circles
+### j2022-02-07 - Growing my Circles
 
 FAMILY
 - CORE: Dean/Jane; Frank/Sue; Janick/Jessie; 
@@ -55,7 +77,7 @@ FRIENDS
 
 
 _
-### 2022-01-28 - Joe/Deep Advisor
+### j2022-01-28 - Joe/Deep Advisor
 
 
 P
@@ -122,7 +144,7 @@ Thanks for the help so far, and looking forward to our next chat!
 
 
 _
-### 2022-01-14 - Morning thoughts
+### j2022-01-14 - Morning thoughts
 
 - NOT SO EFFECTIVE -- The last decade has not been so effective career wise.
 - FEAR: WASHED UP -- Fear that I am not no longer at cutting edge of my field.
@@ -140,7 +162,7 @@ _
 - PURPOSE: Push an idea into reality???
 
 _
-### 2021-12-25 - Friends Audit
+### j2021-12-25 - Friends Audit
 
 Nina, Kartik, Nick, 
 
@@ -148,7 +170,7 @@ John Davis,
 
 Elevate: bi-weekly meetup 
 _
-### 2021-11-29 - Talk w QL
+### j2021-11-29 - Talk w QL
 
 - ABOUT KY trip:	 felt stubborn once make up mind - several K to avoid O'hare 
 					does not feel rational to me.  
@@ -163,7 +185,7 @@ _
 - Talk for a minute about AF split in the marriage.
 					
 _
-### 2021-09-07 - Daily Schedule Ideas
+### j2021-09-07 - Daily Schedule Ideas
 #### BASIC TEMPLATE
 
   5:00	Meditate & Ready	L 1h
@@ -213,7 +235,7 @@ _
 					L 7.5h	W 8h	A 2h	S 6.5
  
 _
-### 2021-07-01 - Design your life thinking
+### j2021-07-01 - Design your life thinking
 
 Build it:  building it; Concrete projects; concrete customers; concrete value
 
@@ -227,7 +249,7 @@ Big problems:
 
 
 _
-### 2021-07-06 - Visio Terms
+### j2021-07-06 - Visio Terms
 
 Comp Cap -- 
 - $10M max on non-salary cash going into Dan's pocket unencumbered
@@ -255,7 +277,7 @@ $1 for 1000 impressions (flashes on screen)
 ely.ai
 
 _
-### 2021-07-01 - notes
+### j2021-07-01 - Notes
 
 WANT FREEDOM -- I to get wrapped up in a Dan project from time to time, and feel I have time to really drive it somewhere.  For the moment, that is Uniform, but later it will be something else.
 
@@ -296,8 +318,10 @@ QUESTIONS FOR DOUG:
 ~-~-~
 
 
-_
-### 2021-06-30 - Alternatives
+_BACK
+d
+
+### j2021-06-30 - Alternatives
 
 Most Likely:  
 -- 1.5y Fiddle --> Google   (-->BatCo, -->DanCo)
@@ -349,7 +373,7 @@ KEY
 - BATCO -- My company built around customer driven problem
 
 _
-### 2021-06-29 - Jason Redux
+### j2021-06-29 - Jason Redux
 
 
 Terms:
@@ -374,7 +398,7 @@ The aim here is to ensure that if Visio hits big, that the lion's share of Dan's
 
 
 _
-### 2021-06-20 - FUTURES
+### j2021-06-20 - FUTURES
 
 RANKED
 - AI CONSULTANT -- $250K/yr; 1/2 Time Working; 1/2 Time side stuff
@@ -396,7 +420,42 @@ DRIVES
 - ROOM -- Room to persue projects of my choosing
 
 _
-### 2021-05-31 - Nick Text Response
+### j2021-06-06 - summary
+GRATITUDE
+- Eli's happiness
+- The options I have in life
+- A relaxed day
+MISSION  Dan Obligner 2021
+- Have a confirmed career vector
+WORKED
+- Was relaxed. 
+- Wrote this jnl
+- Good Dean Allemang conversation
+DIDN'T WORK
+- Didn't wake on time.
+- Didn't engage in my work for the WHOLE day!
+- didn't exercise.
+
+### j2021-06-04 - 
+Technical Design
+Puzzle -- 
+Efficiency / Effectiveness -- How to make something work better in a key way, at a detailed level
+
+BACK
+d
+
+### j2021-06-04 - LIKE - Autonomy - Designing Human Mobility Solution 
+- Loved thinking about approaches for addressing this problem.
+- Wanted to think them thru far enough to see if they could work or not.
+- Nights and weekends I spent thinking thru a crypto currency algorithm
+- Hacking Python with Qingling 
+- Designing sets of API is very cool
+- Writing out the UX for the smart scale was engaging
+- 
+
+
+
+### j2021-05-31 - Nick Text Response
 Some bullet point thoughts:
 
 **DIFFERENT SITUATION** -- Before marriage I had 'infinite' time with a growing net worth each month.  After marriage in 2018, I told my brother I was "retired-ish".  With 2.5M in the bank earning the equivelant of a $150K/yr interest salary, and my aim to get AF salary over $100K I figured that would cover things, so any additional cash from other adventures would just sweeten the pot.
@@ -418,7 +477,7 @@ Some bullet point thoughts:
 - PAST ACTION -- I don't think I have been very strategic in persuit of my interests.  Rather I am always looking for interesting problems to consider, and I consider them at two levels:  (1) pencil paper design.  (2) ground up implementation.
 
 
-### 2021-05-26 - Quick Plan before Michael/Nick call
+### j2021-05-26 - Quick Plan before Michael/Nick call
 
 DEMORALIZED
 - COMPASS - 
@@ -444,7 +503,26 @@ NEXT
 - Short Pitch - Health monitor
 - Designing Your Life
 _
-### 2021-05-17 - LOG JAM
+### j2021-05-19 - Gaining Emotional Stability
+
+Wow, I am so ineffective and demoralized these days.  A key activity is to get this back into good shape.  Too many hours on too many days are just wasted.  I am not 
+
+ACTIONS
+- LIST -- Mantain list of shovel-ready activities
+- SLEEP -- Stop and start reading when time.  Ready clothes etc. for morning
+- FUN -- Jam significant fun into each day
+- RESET -- Figure out a reset procedure
+- PROGRESS -- Need to feel progress each day, need plan I believe in.  how?
+
+
+_
+### j2021-05-17 - HALF ASS IDEA TO JOURNAL
+
+- QUICK THOUGHT -- have the quick thought to journal.  To try to help break the log jam.
+- 
+
+_
+### j2021-05-17 - LOG JAM
 
 DROWNING -- I am 'drowning' in my present state of indecision.
 VELOCITY -- My current velocity is low
@@ -481,8 +559,10 @@ Finally I am rejecting the Jason possibility in my mind.  Why?
 
 -- EQUIV TECH TO GOOGLE - I want to work heads down on some technical mission.  Likely I could do this better inside a tech company like Google.  I likely could jump between different ML tasks providing value to them, maybe in a way that would at least rival the diversity I would find at Visio.
 
--- WATER UNDER BRIDGE - Well partly because it is now water under the bridge, I likely cannot pull out a good working relationship given that things have progressed timewise so far.
-### 2021-04-11 - NFT transfer - Atilla discussion
+-- WATER UNDER BRIDGE - Well partly because it is now water under the bridge, I likely cannot pull out a good working relationship given that things have progressed timewise so far.BACK
+d
+
+### j2021-04-11 - NFT transfer - Atilla discussion
 Atilla,
 Please treat this idea with care... since it could have value. 
 Not sure why I kept thinking about this, but I think I have an approach where NFTs from multiple chains could be merged into a new NFT univers on some different chain:
@@ -572,9 +652,9 @@ talk more soon!
 
 
 _
-### 2021-05-05 - DECISION - NO TO JASON
+### j2021-05-05 - DECISION - NO TO JASON
 
-### 2021-03-00 - JASON BASKETBALL
+### j2021-03-00 - JASON BASKETBALL
 #### 2021-04-29 - Thumbnail Math
 - 500 	gyms
 - 30 	= 30 team/gym * 10 players/team * 10% penetration
@@ -617,6 +697,14 @@ _
 	15K		Subscribers
 	1.5M	$100/yr/subscriber. ($3 game)
 
+
+	2,000	gyms.    For profit gyms in the USA
+	300		players.  30 team * 10players/team
+	60K    teams  * 50 games per year   (25 per season)
+	3M     games per year   * 10% penetration
+	300K   monitized games  * $20 profit per game
+	6M     Total annual revenue from Men's rec leagues  * 8x multiple
+	48M    Sale price   
 
 
 	Jason,
@@ -1472,7 +1560,7 @@ _
 
 
 	_
-### 2021-01-31 - So what the fuck am I doing? What's my goal here?
+### j2021-01-31 - So what the fuck am I doing? What's my goal here?
 
 
 What is my end-game in my career?  I have held out for a decade not working for the big boys, but what is my plan here what are my objectives?
@@ -1509,7 +1597,7 @@ MARKET BAT SWING
 
 
 _
-### 2021-02-28 - Uniform - What could be pitched now
+### j2021-02-28 - Uniform - What could be pitched now
 
 CORP KM -- Build out a live Google Doc/Sheet centric system
 - Key Ideas: AppLocalData, LiveConnections(DeltaPushing), ScriptedConnect
@@ -1519,7 +1607,7 @@ LOCAL DATA BRICKS / SETUP WIZARDS
 
 VALUE MARKET -- Publish Idea; Build payments platform
 _
-### 2020-11-25 - Unicore Implementation Days
+### j2020-11-25 - Unicore Implementation Days
 
 Here is my schedule:
 
@@ -1546,7 +1634,7 @@ AN AWESOME DAY
  1 hour Exercising
 
 _
-### 2020-11-19 - AF Strategy
+### j2020-11-19 - AF Strategy
 
 _**Double down on 1/2 as much in area of Energy-Related Standards**_
 
@@ -1557,7 +1645,7 @@ _**Double down on 1/2 as much in area of Energy-Related Standards**_
 - CALL -- Ideas should move from thought to phone call w/ team effort
 
 _
-### 2020-08-15 - My Futures
+### j2020-08-15 - My Futures
 
 
 Hard Realities:
@@ -1579,7 +1667,7 @@ Hard Realities:
 	- Selling an idea, Instilling confidence
 
 _
-### 2020-08-23 - Lost at Sea but with good provisions
+### j2020-08-23 - Lost at Sea but with good provisions
 
 My Situation
 - DEMORALIZED - Not really excited about any of the directions I can push lif
@@ -1606,7 +1694,7 @@ SIDE THINGS:
 
 
 _
-### 2020-02-19 - DECADE TIMELINE
+### j2020-02-19 - DECADE TIMELINE
 
 2020   Lost at sea
 2019   Pregnant.  Getting Serious about AF.  Eli.
@@ -1622,7 +1710,7 @@ _
 2011   7Final DARPA.  Zanzors.  500-startups
 2010   Final year Elaine.  MaybeSeige.  
 _
-### 2016-05-25 – Lex Ownership
+### j2016-05-25 – Lex Ownership
 
 My goals:
 l-- GROW – Able to safely work at Martian, Google, etc.  and retain ownership of newly grown Lex stuff
@@ -1649,7 +1737,7 @@ Oblio Labs
 Oblinger LLC
 
 _
-### 2011-04-10 – Not Energized
+### j2011-04-10 – Not Energized
 
 9 – woke
 10 – out of bed
@@ -1671,7 +1759,7 @@ Yesterday was just as ineffective.
 
 
 _
-### 2010-12-17 – LESSONS FROM DATING ELAINE
+### j2010-12-17 – LESSONS FROM DATING ELAINE
 
 lesson
 
@@ -1683,7 +1771,7 @@ lesson
 
 
 _
-### 2010-11-18 – A day laid waste
+### j2010-11-18 – A day laid waste
 
 I am trying to figure out things with Elaine, and manage to completely kill a day, in prep for thinking about that.
 I want to understand this day.
@@ -1714,7 +1802,7 @@ I want to understand this day.
 Web  STACY 781-496-2437 
 
 _
-### 2010-10-00 – Gave up on Siege
+### j2010-10-00 – Gave up on Siege
 
 It occurred to me after our phone call yesterday, that ours was one of the best business relationships that I never had.  I was worried early on, based on the comments coming from STO, but I have found them to be quite groundless.  There have been several times when it was clearly in your best interest to simply let things ride along w/o comment—after all you were getting effort for free.  But you (or at least your wife) took it upon yourself to be explicit about assumptions being made.
 
@@ -1737,7 +1825,7 @@ Best luck with Siege!
 
 
 _
-### 2010-10-09 – Organizing Self
+### j2010-10-09 – Organizing Self
 
 FOCUS – I can do many different things, but I jump from idea to idea way too quickly.  
 - At DARPA there are so many efforts that have never gone anywhere, but I never ran into a wall, I just got working on something else.
@@ -1761,7 +1849,7 @@ This is consistent w. my work from: IBM, from BL, and Cyber or ISR.
 
 
 _
-### 2010-04-01 – Life is moving faster
+### j2010-04-01 – Life is moving faster
 
 There is much less time, than I am pretending there is.  But less that needs doing as well.
 - Need to ensure that the important stuff is getting done.
@@ -1800,7 +1888,7 @@ SELF:  Pretty on track.  Focused hours
 
 
 _
-### 2010-01-02 – From last year’s retreat  (12/2008)
+### j2010-01-02 – From last year’s retreat  (12/2008)
 
 RETREAT
 
@@ -1830,7 +1918,7 @@ intense study.
 
 I wanted to thank you for the retreat.  
 _
-### 2009-12-29 - Elasticity of Time
+### j2009-12-29 - Elasticity of Time
 This morning
 1.5h	bed	0
 1h	ready	.5
@@ -1843,7 +1931,7 @@ Lesson learned.  In all cases I need to get to my focused hour *immediately*
 That focused hour must be fun too so I want to do it
 
 _
-### 2009-12-19 - personal update
+### j2009-12-19 - personal update
 Things are not great.  I am at a place of very low motivation.  
 My current situation is reinforcing some habits that are not great:
 No movement with elaine… by having big ideas, but no progress (just putting stuff onto lists), 
@@ -1855,7 +1943,7 @@ Will attempt new habit:  Morning Default
 
 
 _
-### 2009-11-22 – Joe Laconti
+### j2009-11-22 – Joe Laconti
 
 
 * Idea of a building up model spirituality from observations from stmts scientist would accept about world (social world)
@@ -1865,7 +1953,7 @@ _
 * your spiritual drivers / goals / life goals 
 
 _
-### 2009-11-19 – Progress
+### j2009-11-19 – Progress
 
 TIME & PROGRESS
 •	Life is structured so I often don’t get time for the most important personal things

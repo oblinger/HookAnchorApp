@@ -1,5 +1,5 @@
   [Meetings](Meetings.md)
-=[[TAG]]   <[[DATED]]
+=[[TAG]]   <[[UNTYPED]]
 
 
 [[Meetings]]  
@@ -8,6 +8,7 @@
 
 | Date        | File                 | Notes                                                             |
 | ----------- | -------------------- | ----------------------------------------------------------------- |
+| m2022-09-07 | [[@Nick Allen]]          | AF Tax Discussion                                                 |
 | m2022-08-24 | [[Forum]]                | Matt Pinson - Friend Christy - Friend of Yashin                   |
 | m2022-08-16 | [[Meetings]]             | Nick - RZ share price                                             |
 | m2022-08-11 | [[@Joseph Yeh]]          | Activities                                                        |

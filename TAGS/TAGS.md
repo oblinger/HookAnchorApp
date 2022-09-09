@@ -1,6 +1,6 @@
   [TEXT](TEXT.md)
   [REF](REF.md),   [TEXT](TAGS/TEXT.md),   [MEETING](MEETING.md),   [TOPIC](TOPIC.md)
-  [DATED](DATED.md),   [PTM](PTM.md)
+  [UNTYPED](UNTYPED.md),   [PTM](PTM.md)
   [TASK](TASK.md)
   [@Kartik](@Kartik.md)
   [LOG](LOG.md)
@@ -31,7 +31,7 @@
 	- [[TASK]] - task list
 	- [[SET TYPE]] - 
 		- [[Quotes]] -  
-	- [[DATED]]  - 
+	- [[UNTYPED]]  - 
 		- [[JOURNAL]] - Daily Journal entries
 		- [[MEETING]] -
 		- [[NOTE]] - 

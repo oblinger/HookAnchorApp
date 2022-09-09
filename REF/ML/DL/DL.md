@@ -1,3 +1,4 @@
+- [[DL algs]], [[DL topics]], [[DL optimization]], [[DL strategy]], 
   [Regularization](Regularization.md),   [GANs](GANs.md),   [NN](NN.md)
 =[[TAG]] <[[ML]] 
 

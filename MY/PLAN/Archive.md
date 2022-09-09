@@ -1,3 +1,7 @@
+- [ ] create Eli spotify account.
+- [ ] discord for BCMS
+- [ ]
+- [ ] create Eli spotify account.
 - [x] [[EduCorp]]:  Contact guy in gambia
 - [x] Yearbook  Ordered
 - [x] Repeat

@@ -177,9 +177,68 @@ PAGE 27
  - How does it relate to the individual/others/society?  
 	 - NET GOOD: It should provide value for others in the abstract... it should be a net positive for society.  
 	 - SMART PEOPLE:  It should provide daily interactions with smart folks.
+#### 2021-05-06 - WORK VIEW
 
+Work is the technical building of value:
+- OWNERSHIP --
+	- BUILDING -- I am organized around the idea of _building_ things--BUILDING a THING that has tangible value for some 'customer' community
+	- LEADERSHIP -- Having some vision/leadership scope fits best w/ my personality.
+- TECHNICAL DEPTH -- Somewhere in my life there needs to be some hard problem solving going on.  Work is a very natural place to find this activity.
+- IMPACT
+	- JUSTIFICATION -- To myself and to others this output is central to my value.
+	- WORTHWHILE - Work should move society forward.  Be a net gain.  The more people affected, the greater the gain.
+	- MY PRIME OUTPUT -- For me, my "prime output" in life are the ideas that I realize, in both a technical and social sense.
+	- VISION -- some dan-specific ideas are being executed
+- ASPECTS:
+	- INVENTING / BUILDING -- I spend my time 'inventing' things
+	- SOCIAL SYSTEMS -- I am driven towards a kind of 'systems' thinking.
+	- ORGANIZATIONAL / REPRESENTATIONAL -- I tend to think about org and rep
+- SPRINT -- I am a sprinter, and am comefortable working intensly in a sprint, but I flag if doing admin/low-mental work for too many hours per month.
+- MONEY & FREEDOM -- Money buys freedom from the drudgery of work that does not stem from innate desire to create.  Money supports the family, and allows me to go where interest dictates rather than where money is plentiful.
+- FULFILLMENT - I am happiest when I am building/inventing.
+	  
+	  
+	  
+	  
+	  
+  	DETAILS
+- TECHNICAL -- At times in my life when my job became more "management" I am driven to create side projects which are technical building.
+- INVENT -- I am always 'inventing' things.  Thinking about the problems around me, and trying to see new ways to address them.  I stick with a few problems over many years, but I spend almost all of my time thinking thru solutions that I don't get feedback on, or try out in the world.
+- SOCIAL SYSTEMS -- Many of my ideas are "social systems" or self-working process in nature.
+- DETAILED DESIGN -- I am driven to think about the biggest of pictures, but then like to try to THINK THRU solutions down to pretty detailed levels.
+	  
+  	_
 ### - LIFE VIEW
+#### 2021-05-10 - LIFE VIEW
 
+Why Are we here?
+- **EXPERIENCES** -- _For the experiences we have_
+  		Measured by the subjective value we attach both at the time and after
+- **CONTRIBUTIONS** -- _For the contributions we make_
+  		Being part of, giving to, & receiving from others within a society we build
+- **GROWTH** -- _For the growth we undergo_
+  		To grow in faith, wisdom, and understanding
+	  
+  	What is Meaning/Purpose of life?
+- First, it is an adopted/constructed thing, but that fact should not and does not reduce its validity or importance.
+- For me, the "why are we here" goals are ends unto themselves
+	  
+  	Relation To Others
+- In the most important sense, we are peers of all others.
+- And building/living a relation with them is central to life.
+	  
+  	Good & Evil
+- Good is moving towards and living our purpose
+- Evil is moving away or destroying our purpose, or doing that to another
+	  
+  	Higher Power
+- I live my life beliving there is a higher power, though I will likely never know this with certainty.
+	  
+  	Role of joy, sorrow, justice, injustice, love, peace, and strife in life?
+- These are the backdrop of experiences, contributions, and growth.
+	  
+	  
+  	_
 ### - ME: SUPER DRIVERS
 #### . About Something
 #### . **DESIGNING** something
@@ -787,67 +846,8 @@ Writing the associated texts or APIs
   _
 #### - Mindmap for IN FLOW
 _
-#### 2021-05-06 - WORK VIEW
 
-Work is the technical building of value:
-- OWNERSHIP --
-	- BUILDING -- I am organized around the idea of _building_ things--BUILDING a THING that has tangible value for some 'customer' community
-	- LEADERSHIP -- Having some vision/leadership scope fits best w/ my personality.
-- TECHNICAL DEPTH -- Somewhere in my life there needs to be some hard problem solving going on.  Work is a very natural place to find this activity.
-- IMPACT
-	- JUSTIFICATION -- To myself and to others this output is central to my value.
-	- WORTHWHILE - Work should move society forward.  Be a net gain.  The more people affected, the greater the gain.
-	- MY PRIME OUTPUT -- For me, my "prime output" in life are the ideas that I realize, in both a technical and social sense.
-	- VISION -- some dan-specific ideas are being executed
-- ASPECTS:
-	- INVENTING / BUILDING -- I spend my time 'inventing' things
-	- SOCIAL SYSTEMS -- I am driven towards a kind of 'systems' thinking.
-	- ORGANIZATIONAL / REPRESENTATIONAL -- I tend to think about org and rep
-- SPRINT -- I am a sprinter, and am comefortable working intensly in a sprint, but I flag if doing admin/low-mental work for too many hours per month.
-- MONEY & FREEDOM -- Money buys freedom from the drudgery of work that does not stem from innate desire to create.  Money supports the family, and allows me to go where interest dictates rather than where money is plentiful.
-- FULFILLMENT - I am happiest when I am building/inventing.
-	  
-	  
-	  
-	  
-	  
-  	DETAILS
-- TECHNICAL -- At times in my life when my job became more "management" I am driven to create side projects which are technical building.
-- INVENT -- I am always 'inventing' things.  Thinking about the problems around me, and trying to see new ways to address them.  I stick with a few problems over many years, but I spend almost all of my time thinking thru solutions that I don't get feedback on, or try out in the world.
-- SOCIAL SYSTEMS -- Many of my ideas are "social systems" or self-working process in nature.
-- DETAILED DESIGN -- I am driven to think about the biggest of pictures, but then like to try to THINK THRU solutions down to pretty detailed levels.
-	  
-  	_
-#### 2021-05-10 - LIFE VIEW
 
-Why Are we here?
-- **EXPERIENCES** -- _For the experiences we have_
-  		Measured by the subjective value we attach both at the time and after
-- **CONTRIBUTIONS** -- _For the contributions we make_
-  		Being part of, giving to, & receiving from others within a society we build
-- **GROWTH** -- _For the growth we undergo_
-  		To grow in faith, wisdom, and understanding
-	  
-  	What is Meaning/Purpose of life?
-- First, it is an adopted/constructed thing, but that fact should not and does not reduce its validity or importance.
-- For me, the "why are we here" goals are ends unto themselves
-	  
-  	Relation To Others
-- In the most important sense, we are peers of all others.
-- And building/living a relation with them is central to life.
-	  
-  	Good & Evil
-- Good is moving towards and living our purpose
-- Evil is moving away or destroying our purpose, or doing that to another
-	  
-  	Higher Power
-- I live my life beliving there is a higher power, though I will likely never know this with certainty.
-	  
-  	Role of joy, sorrow, justice, injustice, love, peace, and strife in life?
-- These are the backdrop of experiences, contributions, and growth.
-	  
-	  
-  	_
 #### energized, engaged, in flow
 
 

@@ -3,6 +3,9 @@
   [BCMS](__BCMS__.md)
 [BCMS](__BCMS__.md) 
 
+- [[Eli Math]], 
+
+12oz.  milk.  5oz juice.  5.5oz milk.  
 
 # MEDICAL
 ## === UCSF INFO ===

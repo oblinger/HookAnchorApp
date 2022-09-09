@@ -1,4 +1,5 @@
-  [()](().md)
+  [HarmonicMean](HarmonicMean.md),   [()](().md)
+[[Bayes Optimal Error]] [[HarmonicMean]]  [()](().md)
   [()](().md),   [Likelihood](Likelihood.md)
   [Softmax](Softmax.md),   [()](().md),   [Sigmoid](Sigmoid.md)
   [AutoRegressive](AutoRegressive.md),   [Stationary](Stationary.md)

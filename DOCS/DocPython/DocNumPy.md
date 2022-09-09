@@ -19,7 +19,8 @@ m.shape
 -   numpy.random.rand() produces numbers in a [uniform distribution](https://raw.githubusercontent.com/jahnog/deeplearning-notes/master/Course2/images/rand.jpg).
 -   and numpy.random.randn() produces numbers in a [normal distribution](https://raw.githubusercontent.com/jahnog/deeplearning-notes/master/Course2/images/randn.jpg).
 - np.random.permutation(size)    X[:permutation]  (will generate a permuted matrix)
-
+- np.random.seed(1)  -- Initializes the random number generator
+-  
 ## CREATE   .zeros(dims)  .deepcopy  .randint  .randn
 - np.zeros([x, y])
 - np.deepcopy( X )
