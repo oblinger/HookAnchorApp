@@ -1,27 +1,16 @@
+=[[TAG]]  <[[PTM]]<[[DATED]]  
 
-=[[TAG]]  <[[UNTYPED]]  
 
-  [Journals](Journals.md)  
+  [Days](Days.md)  
 
 
 | Date        | File          | Notes                                               |
 | ----------- | ------------- | --------------------------------------------------- |
 | j2022-09-09 | [[Jnl Strategic]] | Jason Redux-Redux                                   |
-| j2022-08-26 | [[Journals]]      |                                                     |
-| j2022-08-21 | [[Journals]]      |                                                     |
-| j2022-08-17 | [[Journals]]      |                                                     |
-| j2022-08-15 | [[Journals]]      | Repeat, monthly, EduCorp                            |
-| j2022-08-14 | [[Journals]]      | [[Coursera]] W2                                     |
-| j2022-08-12 | [[Journals]]      | Cousera                                             |
-| j2022-08-10 | [[Journals]]      | VAR Autoencoders                                    |
-| j2022-08-05 | [[Journals]]      | [[Coursera]]                                        |
-| j2022-08-04 | [[Journals]]      | Attention and DL reading                            |
 | j2022-07-28 | [[Jnl]]           | PURPOSE - What is my purpose                        |
 | j2022-07-18 | [[Jnl Strategic]] | MISSION                                             |
-| j2022-07-15 | [[Journals]]      | DL class notes                                      |
 | j2022-07-13 | [[Jnl]]           | Thoughts during the day                             |
 | j2022-07-11 | [[Jnl]]           | NOOM -                                              |
-| j2022-07-11 | [[Journals]]      | Coursera Tech Setup                                 |
 | j2022-07-02 | [[Jnl]]           | RULESET                                             |
 | j2022-07-02 | [[Jnl]]           | Begin Anew - Put your big boy pants on              |
 | j2022-06-29 | [[Jnl]]           | What brings me joy - Breaking my holding pattern    |

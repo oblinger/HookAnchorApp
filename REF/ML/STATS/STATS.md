@@ -1,3 +1,5 @@
+  [()](().md)
+  [()](().md)
   [HarmonicMean](HarmonicMean.md),   [()](().md)
 [[Bayes Optimal Error]] [[HarmonicMean]]  [()](().md)
   [()](().md),   [Likelihood](Likelihood.md)

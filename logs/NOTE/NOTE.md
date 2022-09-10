@@ -1,5 +1,6 @@
+  [DATED](DATED.md)
   [Notes](Notes.md)
-=[[TAG]]  <[[UNTYPED]]  
+=[[TAG]]  <[[PTM]]<[[DATED]]  
 
 
 [[Notes]]  

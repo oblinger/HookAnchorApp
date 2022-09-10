@@ -21,8 +21,8 @@ ALL TOPIC ROOTS
   [[2020-00 ClaimsAnalyzer]],   [[Virtual Tour Guide]],   [[2009-00 DARPA Energy]],   [[2020-10 MedAR]],   [[2020-09 
   CtrlSaaS]],   [[2020-07 Spot Pricing]],   [[2015-00 Flipping Websites]],   [[2013-08 Crowd Self Assessment]],   
   [[2020-06 OpenBricks]],   [[TreeSheet]],   [[myorgstartup]],   [[2009-03 State Edu Testing]],   [[2020-00 
-  FinScreener]],   [[MEETING]],   [[TEXT]],   [[Letters]],   [[IBM-years]],   [[Msg]],   [[Sets]],   [[Cmd]],   
-  [[Writings]],   [[ArmChair]],   [[Politics]],   [[race]],   [[App]],   [[Obsidian]],   [[Books]],   [[LANG]],   
+  FinScreener]],   [[MEETING]],   [[TEXT]],   [[Letters]],   [[IBM-years]],   [[Msg]],   [[DAY]],   [[Sets]],   [[Cmd]],
+     [[Writings]],   [[ArmChair]],   [[Politics]],   [[race]],   [[App]],   [[Obsidian]],   [[Books]],   [[LANG]],   
   [[haskell]],   [[Humor]],   [[Recipes]],   [[Movies]],   [[Phone]],   [[ToRead]],   [[Buy]],   [[Bought]],   [[MY]],
      [[Plan]],   [[scratch]],   [[Meta]],   [[Myfo]],   [[FOOD]],   [[Noom]],   [[Glycemic Index]],   [[PRJ]],   [[AF]],
      [[AFwp]],   [[Outcult]],   [[AFactive]],   [[AFldr]],   [[AFarchive]],   [[UF_Docs]],   [[ufPublish]],   

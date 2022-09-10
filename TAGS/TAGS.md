@@ -31,11 +31,13 @@
 	- [[TASK]] - task list
 	- [[SET TYPE]] - 
 		- [[Quotes]] -  
-	- [[UNTYPED]]  - 
+	- [[DATED]] - 
+		- [[DAY]] - 
 		- [[JOURNAL]] - Daily Journal entries
 		- [[MEETING]] -
 		- [[NOTE]] - 
 		- [[PRJ]] - 
 		- [[REF]] - 
 		- [[TEXT]] - 
-		- [[WP]] - 
+		- [[WP]] -
+		- [[UNTYPED]]  - 

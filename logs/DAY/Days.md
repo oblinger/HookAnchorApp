@@ -1,5 +1,5 @@
 
-### j2022-08-26  
+### d2022-08-26  
 
 
    400K Annual equity
@@ -7,13 +7,13 @@
  ~ - - - ~
   3%
 
-### j2022-08-21  
+### d2022-08-21  
 09   
 
 04:	Exercise
 
 
-### j2022-08-18
+### d2022-08-18
 07' Read/Bfast/FRIT  (iPython)
 11:  Finish DL course assignment
 01   Lunch
@@ -25,7 +25,7 @@
 - [[Coursera]] - finishing first DL class
 
 
-### j2022-08-17  
+### d2022-08-17  
 
 09 	Plan
 09: FRIT
@@ -41,41 +41,41 @@
 
 
 
-### j2022-08-15  Repeat, monthly, EduCorp
+### d2022-08-15  Repeat, monthly, EduCorp
 
 [[Greenhouse Farming]] :   sent email requesting call.
 
 
 
-### j2022-08-14  [[Coursera]] W2 
+### d2022-08-14  [[Coursera]] W2 
 - W2 quiz
 
 
-### j2022-08-12  Cousera
+### d2022-08-12  Cousera
 
 
 
-### j2022-08-10  VAR Autoencoders
+### d2022-08-10  VAR Autoencoders
 
 - [[VAE - Variational Auto Encoder]] 
 - 
 - [Jupyter/Python tutorial](https://www.youtube.com/watch?v=twHaVc_H7ik) - 
 - 
-### j2022-08-04  - Attention and DL reading
+### d2022-08-04  - Attention and DL reading
 
 See notes in [[Attention Mechanism]]
 
 
-### j2022-08-05  [[Coursera]]
+### d2022-08-05  [[Coursera]]
 
 
-### j2022-07-15  DL class notes
+### d2022-07-15  DL class notes
 
 - https://huggingface.co/course/chapter2/2?fw=pt
 - my notebook   [here](https://colab.research.google.com/drive/1FT0tKqsO1qKNfUd7OreqKvFwLQTAjjBJ#scrollTo=01HA22j1TDKG)  
 
 
-### j2022-07-11  Coursera Tech Setup
+### d2022-07-11  Coursera Tech Setup
 
 -  [Coursera Setup](https://www.coursera.org/learn/neural-networks-deep-learning/supplement/oABOh/programming-assignment-faq)  
 - 

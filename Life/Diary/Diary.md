@@ -1,9 +1,9 @@
-  [Journals](Journals.md)
+  [Days](Days.md)
   [Jnl Strategic](Jnl%20Strategic.md),   [Jnl](Jnl.md),   [Weekly](Weekly/Weekly.md)
 
 VARIOUS DIARIES
 
-- [[Journals]]	-  
+- [[Days]]	-  
 - [[Jnl]] 			-  More tactical professional diary
 - [[Jnl Strategic]]		-  More strategic professional diary
 - [[Diary Doc.docx|Diary Doc]] 	-  Personal (non-work) diary entries
