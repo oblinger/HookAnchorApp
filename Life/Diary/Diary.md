@@ -1,11 +1,11 @@
   [Days](Days.md)
-  [Jnl Strategic](Jnl%20Strategic.md),   [Jnl](Jnl.md),   [Weekly](Weekly/Weekly.md)
+  [Jnl](Jnl.md),   [Jnl](Jnl.md),   [Weekly](Weekly/Weekly.md)
 
 VARIOUS DIARIES
 
 - [[Days]]	-  
 - [[Jnl]] 			-  More tactical professional diary
-- [[Jnl Strategic]]		-  More strategic professional diary
+- [[Jnl]]		-  More strategic professional diary
 - [[Diary Doc.docx|Diary Doc]] 	-  Personal (non-work) diary entries
 - [[Weekly]]		-  Weekly list of planning tasks
 - [[Eat]]			-  Diary of foods eaten each day

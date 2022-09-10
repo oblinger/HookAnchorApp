@@ -220,7 +220,7 @@
 | 2021-05-06 | [[DYL]]                 | WORK VIEW                                                                                 |
 | 2021-05-05 | [[Journal Old]]         | DECISION - NO TO JASON                                                                    |
 | 2021-04-30 | [[Brain3]]              |                                                                                           |
-| 2021-04-29 | [[Jnl Strategic]]       | Thumbnail Math                                                                            |
+| 2021-04-29 | [[Jnl]]                 | Thumbnail Math                                                                            |
 | 2021-04-29 | [[Journal Old]]         | Thumbnail Math                                                                            |
 | 2021-04-27 | [[Journal Old]]         | INDEX CARD SUMMARY                                                                        |
 | 2021-04-26 | [[2021.04 Directions]]  | Founder Profile                                                                           |
@@ -232,27 +232,27 @@
 | 2021-04-14 | [[Journal Old]]         | Dan O Drivers & Futures                                                                   |
 | 2021-04-14 | [[Journal Old]]         | Compass                                                                                   |
 | 2021-04-11 | [[Journal Old]]         | NFT transfer                                                                              |
-| 2021-04-07 | [[Jnl Strategic]]       | Jason #5                                                                                  |
+| 2021-04-07 | [[Jnl]]                 | Jason #5                                                                                  |
 | 2021-04-07 | [[Journal Old]]         | Jason #5                                                                                  |
-| 2021-04-01 | [[Jnl Strategic]]       | Jason #5                                                                                  |
+| 2021-04-01 | [[Jnl]]                 | Jason #5                                                                                  |
 | 2021-04-01 | [[Journal Old]]         | Jason #5                                                                                  |
 | 2021-04-00 | [[nj22_contents]]       | >>> TOP   -- NEXT JOB <<<                                                                 |
 | 2021-04-00 | [[Buckets]]             | Summary at that time                                                                      |
 | 2021-04-00 | [[Journal Old]]         | >>> TOP   -- NEXT JOB <<<                                                                 |
-| 2021-03-30 | [[Jnl Strategic]]       | Jason Summary                                                                             |
+| 2021-03-30 | [[Jnl]]                 | Jason Summary                                                                             |
 | 2021-03-30 | [[Journal Old]]         | Jason Summary                                                                             |
 | 2021-03-28 | [[Paths]]               | Big picture next step ideas / pulls                                                       |
 | 2021-03-28 | [[Journal Old]]         | Big picture next step ideas / pulls                                                       |
-| 2021-03-27 | [[Jnl Strategic]]       | Jason analysis #4                                                                         |
+| 2021-03-27 | [[Jnl]]                 | Jason analysis #4                                                                         |
 | 2021-03-27 | [[Journal Old]]         | Jason analysis #4                                                                         |
-| 2021-03-20 | [[Jnl Strategic]]       | Jason response #3                                                                         |
+| 2021-03-20 | [[Jnl]]                 | Jason response #3                                                                         |
 | 2021-03-20 | [[Journal Old]]         | Jason response #3                                                                         |
-| 2021-03-17 | [[Jnl Strategic]]       | Jason response #2                                                                         |
-| 2021-03-17 | [[Jnl Strategic]]       | Jason response #1                                                                         |
+| 2021-03-17 | [[Jnl]]                 | Jason response #2                                                                         |
+| 2021-03-17 | [[Jnl]]                 | Jason response #1                                                                         |
 | 2021-03-17 | [[Journal Old]]         | Jason response #2                                                                         |
 | 2021-03-17 | [[Journal Old]]         | Jason response #1                                                                         |
 | 2021-03-15 | [[MED_Heart]]           | Doctor's Appt                                                                             |
-| 2021-03-04 | [[Jnl Strategic]]       | The Nick and Dan LLC Model                                                                |
+| 2021-03-04 | [[Jnl]]                 | The Nick and Dan LLC Model                                                                |
 | 2021-03-04 | [[Journal Old]]         | The Nick and Dan LLC Model                                                                |
 | 2021-03-03 | [[Paths]]               | Dan's North Star                                                                          |
 | 2021-03-03 | [[Journal Old]]         | Dan's North Star                                                                          |
@@ -260,7 +260,7 @@
 | 2021-02-28 | [[Journal Old]]         | Uniform - What could be pitched now                                                       |
 | 2021-02-24 | [[Paths]]               | Dan's Futures Ranked                                                                      |
 | 2021-02-24 | [[Journal Old]]         | Dan's Futures Ranked                                                                      |
-| 2021-02-21 | [[Jnl Strategic]]       | Jason's Basketball Thing                                                                  |
+| 2021-02-21 | [[Jnl]]                 | Jason's Basketball Thing                                                                  |
 | 2021-02-21 | [[Journal Old]]         | Jason's Basketball Thing                                                                  |
 | 2021-02-17 | [[Paths]]               | Dan's Mind & North Star                                                                   |
 | 2021-02-17 | [[Journal Old]]         | Dan's Mind & North Star                                                                   |
@@ -287,58 +287,14 @@
 | 2020-08-15 | [[Journal Old]]         | My Futures                                                                                |
 | 2020-07-23 | [[DocMac]]              | Applications folder                                                                       |
 | 2020-07-18 | [[Budget]]              | Budget                                                                                    |
-| 2020-06-29 | [[Jnl]]                 | MON                                                                                       |
-| 2020-06-08 | [[Jnl]]                 | MON                                                                                       |
-| 2020-05-29 | [[Jnl]]                 | FRI                                                                                       |
-| 2020-05-26 | [[Jnl]]                 | TUE/THR                                                                                   |
-| 2020-05-25 | [[Jnl]]                 | MON                                                                                       |
-| 2020-05-22 | [[Jnl]]                 | FRI                                                                                       |
-| 2020-05-21 | [[Jnl]]                 | THR                                                                                       |
-| 2020-05-20 | [[Jnl]]                 | WED                                                                                       |
-| 2020-05-19 | [[Jnl]]                 | TUE                                                                                       |
-| 2020-05-18 | [[Jnl]]                 | MON                                                                                       |
-| 2020-05-17 | [[Jnl]]                 | SUN                                                                                       |
 | 2020-05-11 | [[OLD 2020 Weekly]]     | NOW COUNTING 90 SLOTS                                                                     |
-| 2020-05-06 | [[Jnl]]                 | WED                                                                                       |
-| 2020-05-02 | [[Jnl]]                 |                                                                                           |
 | 2020-04-27 | [[MED]]                 | Notes for doc meeting                                                                     |
-| 2020-04-16 | [[Jnl]]                 | thr                                                                                       |
 | 2020-04-14 | [[MED]]                 | Stress test results                                                                       |
-| 2020-04-01 | [[Jnl]]                 | Wed                                                                                       |
 | 2020-04-00 | [[OLD 2020 Weekly]]     | QUARTERLY - Big goals                                                                     |
 | 2020-04-00 | [[OLD 2020 Weekly]]     | MONTH APRIL habits                                                                        |
 | 2020-04-00 | [[MED]]                 | Heart Disease Questions                                                                   |
-| 2020-03-31 | [[Jnl]]                 | Tue                                                                                       |
 | 2020-03-23 | [[OLD 2020 Weekly]]     | focus fail                                                                                |
-| 2020-03-12 | [[Jnl]]                 | Thr                                                                                       |
-| 2020-03-11 | [[Jnl]]                 | Wed                                                                                       |
-| 2020-03-09 | [[Jnl]]                 | Mon                                                                                       |
-| 2020-03-07 | [[Jnl]]                 | Sat                                                                                       |
-| 2020-03-06 | [[Jnl]]                 | Fri                                                                                       |
-| 2020-03-04 | [[Jnl]]                 | Wed                                                                                       |
-| 2020-02-29 | [[Jnl]]                 | Sat                                                                                       |
-| 2020-02-28 | [[Jnl]]                 | Fri                                                                                       |
-| 2020-02-27 | [[Jnl]]                 | Thr                                                                                       |
-| 2020-02-25 | [[Jnl]]                 | Tuesday                                                                                   |
-| 2020-02-23 | [[Jnl]]                 | Sunday                                                                                    |
-| 2020-02-21 | [[Jnl]]                 | Friday                                                                                    |
-| 2020-02-20 | [[Jnl]]                 | Thursday                                                                                  |
 | 2020-02-19 | [[Journal Old]]         | DECADE TIMELINE                                                                           |
-| 2020-02-16 | [[Jnl]]                 | Monday                                                                                    |
-| 2020-02-14 | [[Jnl]]                 | Friday                                                                                    |
-| 2020-02-11 | [[Jnl]]                 | Tue                                                                                       |
-| 2020-02-06 | [[Jnl]]                 | Thr                                                                                       |
-| 2020-02-05 | [[Jnl]]                 | Wed                                                                                       |
-| 2020-01-30 | [[Jnl]]                 | Thr                                                                                       |
-| 2020-01-29 | [[Jnl]]                 | Wed                                                                                       |
-| 2020-01-28 | [[Jnl]]                 | Tue                                                                                       |
-| 2020-01-27 | [[Jnl]]                 | Mon                                                                                       |
-| 2020-01-26 | [[Jnl]]                 | Sun                                                                                       |
-| 2020-01-25 | [[Jnl]]                 | Sat                                                                                       |
-| 2020-01-24 | [[Jnl]]                 | Fri                                                                                       |
-| 2020-01-23 | [[Jnl]]                 | Thr                                                                                       |
-| 2020-01-22 | [[Jnl]]                 | Wed                                                                                       |
-| 2020-01-21 | [[Jnl]]                 | Tue                                                                                       |
 | 2020-01-06 | [[OLD 2020 Weekly]]     | WEEK                                                                                      |
 | 2020-01-05 | [[OLD 2020 Weekly]]     | GOALS FOR THE YEAR                                                                        |
 | 2020-00-00 | [[Forum]]               | UNSORTED                                                                                  |
