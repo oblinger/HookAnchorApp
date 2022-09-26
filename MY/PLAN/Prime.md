@@ -6,7 +6,6 @@ AFTERNOON:   	EVE: Plan, Chew
 - [ ] [[NJ22 Framing]] - Linkedin; Github
 - [ ] [[@Yoshua Bengio]]+
 - [ ] [[Comms]]* - Get 4 letters of reference
-- [ ] [[DYL]]*+  Summarize self  
 - [ ] [[BeFAANG#^todo|BeFAANG]] - Hack it
 
 ## = [[ROCKS/2022-03 Learning/Learning|Learning]] =

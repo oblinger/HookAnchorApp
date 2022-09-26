@@ -8,7 +8,10 @@
 
 | Date        | File                 | Notes                                                             |
 | ----------- | -------------------- | ----------------------------------------------------------------- |
-| m2022-09-07 | [[@Nick Allen]]          | AF Tax Discussion                                                 |
+| m2022-09-22 | [[@Sports Visio]]        | Joining SV as consultant                                          |
+| m2022-09-14 | [[@Joseph Yeh]]          | Jason decision                                                    |
+| m2022-09-13 | [[@Sports Visio]]        | [[@Michael Seibert]] discussion                                   |
+| m2022-09-07 | [[AF]]                   | AF Tax Discussion (with Nick)                                     |
 | m2022-08-24 | [[Forum]]                | Matt Pinson - Friend Christy - Friend of Yashin                   |
 | m2022-08-16 | [[Meetings]]             | Nick - RZ share price                                             |
 | m2022-08-11 | [[@Joseph Yeh]]          | Activities                                                        |

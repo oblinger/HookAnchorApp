@@ -10,6 +10,10 @@ https://www.amazon.sg/
 
 # MEETINGS
 
+### m2022-09-14  Jason decision
+
+- SRI:  
+
 
 ### m2022-08-11  - Activities
 - JOBOT

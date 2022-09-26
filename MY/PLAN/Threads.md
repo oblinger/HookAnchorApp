@@ -1,8 +1,13 @@
 
-- [[BeMLR]] - Articulated research agenda
+[[NJ22 Framing]] -
+- LINKED:  Title; Refactor AF; TopImage.   WAR:  Finish
 
-- [[NJ22 Framing]] - Fully polished: LinkedIn    , Reco, War, 
+- [[BeMLR]] - Articulated research agenda.
 
 - [[Self]] - Get Tsp
 
-- [[EduCorp]] - Napkin-level Greenhouse Model
+- [[EduCorp]] - Napkin-level screenhouse Model
+
+
+# GROWTH
+

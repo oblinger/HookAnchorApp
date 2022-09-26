@@ -2,8 +2,8 @@ most of the time I use somthing simple like:  ResNet, UNet, and Bert.  [ref](htt
 
 # Active
 - [ ] [[MLeng]] - Complete Coursera Deep Learning Course
-- [ ] VCR - Find online articles about being a VC
 
+- [ ] Arima - Noomer data analysis
 
 
 BOOKS TO CONSIDER

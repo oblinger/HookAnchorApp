@@ -1,4 +1,4 @@
-misc
+misc  [[Obsidian#LINKS]]  
 
 ## = [[Yearbook|Yearbook]] =
 - [ ] Engage with  Sioban about restart for yearbook

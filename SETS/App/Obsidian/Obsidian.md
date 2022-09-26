@@ -1,22 +1,20 @@
-  [mdfind](mdfind.md)  [Dataview](Dataview.md)
+# OBSIDIAN
+[mdfind](mdfind.md)  [Dataview](Dataview.md)
 
---
-cssclass: dashboard
---
 
 # # LINKS 
 
- [Forum](https://forum.obsidian.md),    [Discord](http://app/discord),   [Oblio](https://publish.obsidian.md/oblio)  (LMI!)
+ [Forum](https://forum.obsidian.md),    [Discord](http://app/discord),   [Oblio](https://publish.obsidian.md/oblio)  (LMI!)   - [[Meta Org]] 
  -  [Obsidian Website](https://obsidian.md)  [support@obsidian.md](mailto:support@obsidian.md)   [[Action Pages]]   
  - Mermaid:   [Syntax](https://mermaid-js.github.io/mermaid/#/./n00b-syntaxReference)   [LiveEditor](https://mermaid-js.github.io/mermaid-live-editor/edit#pako:eNpVkE1qw0AMha8itGohvoAXhcROswm00Ow8WQiPnBma-WEsU4LHd--4aSHVSrz3PQlpxj5oxhoviaKBU6s8lNp2jUl2FEfjGarqJR9YwAXPtwy7p0OA0YQYrb883_ndCkEzH1eMQYz1n8vdan7yb54ztN2RooR4fnROXyHDvrPvpoz_75jEJfXaDVQPVPWUoKH0iEDWATRRhq3yq44bdJwcWV1OmldFoRh2rLAureaBpqsoVH4p6BQ1Ce-1lZCwrLiOvEGaJHzcfI-1pIn_oNZS-ZD7pZZvMgpjfg)     [[mdfind]]   //ss64.com/osx/mdfind.html)  
  - [[Dataview]],   [mdfind](__mdfind__.md)  [Dataview](__Dataview__.md)
- - [[Meta Org]] 
+
 
 ## = DEV LINKS
 - [API Docs](https://marcus.se.net/obsidian-plugin-docs/api),  
 
 
-# # TODO
+# TODO
 
 ## = BIG HACKS
 - Add 'throw' commands
@@ -25,13 +23,20 @@ cssclass: dashboard
 - [ ] Add template for rocks (name & description inputs; sub-folder, with link)
 
 
-# # REF # 
+# REF
 ## = CODING IT
 ### - Writing a Plugin
 https://phibr0.medium.com/how-to-create-your-own-obsidian-plugin-53f2d5d44046
 
 
-## = MY HACKS =
+## = MY TWEAKS =
+### - H2 colored Blue
+- Configured the minimal theme for blue H2 headers.
+- Prefs -> Community plugs (on left panel) -> Style Settings -> Minimal -> Headers -> H2 Settings -> H2 color  ! "blue color area"
+### - CSS Tweaks
+- obsidian -> pref -> appearance -> CSS Tweaks
+	- Dashboard Plus Plus
+	- 
 ### - Keyboard Maestro Safari URL grabber
 
 

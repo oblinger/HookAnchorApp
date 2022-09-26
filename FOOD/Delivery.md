@@ -2,112 +2,121 @@ ASIAN:	Chinese, Japanese, Thai, Korean, Vietnamese, Burmese, Fusion, Raman, Poke
 TYPE:	Seafood, Salad, Pizza, Burger, Sandwich, Fast, Soul, Desert, American
 WORLD:	  Italian, French, Mediterranean, German, Spanish, Mexican, Indian, African
 
-ELI:    Thai, 
+ELI:    Thai, Mexican, Chinese, Korean, Pizza, ?Seafood
 MOM:  Thai, Poki, Seafood, Japanese, Sandwich, EURO(Italian, French, German, Spanish), Salad, Pizza, Burger
 
+https://www.frannyskitchensf.com/
 
-| >> PICKUP <<          |                                                            |     |
-| --------------------- | ---------------------------------------------------------- | --- |
-| p SANDWICH            | Hazel's Kitchen 415.647.7941 https://www.hazelskitchen.com |     |
-| p+  NEPALESE          | Little Nepal                                               |     |
-| --------------------- | ---------------------------------------------------------- |     |
-| >>>>  DOORDASH   <<<< |                                                            |     |
-| ====    ASIAN    ==== | >> Chinese, Japanese, Thai, Korean, Pho, Bowls, Burmese    |     |
-| d++~  CHINESE-North   | Dong Bei Mamma                                             |     |
-| d+~~  CHINESE         | Beijing Resturants                                         |     |
-| d+~~  CHINESE         | Big Lantern                                                |     |
-| d+~~  JAPANESE        | Ginza Sushi                                                |     |
-| d+~~  THAI            | Farm House Kitchen                                         |     |
-| d+~~  KOREAN          | Mamma' Tofu House.  Affordable/ok.                         |     |
-| d++~  KOREAN          | Jin Mi Korean.  Affordable/better than mammas              |     |
-| d+++  PHO             | Turtle Tower                                               |     |
-| d-+~  BOWL-Korean     | Moon Bowls - QL does not like; Dan = just ok               |     |
-| d+~~  BOWL            | West Coast Bowl                                            |     |
-| d+~~  BOWL            | Ben's Fast Food                                            |     |
-| d+++  BURMESE         | Burmese Kitchen ~ We all like it & it is affordable        |     |
-| d?~~  BURMESE         | New Burma (yelp 4.5)  Burma Cafe/Love/Superstar (yelp 4.0) |     |
-| d+~~  VIETNAMESE      | Chic n' Time (y5.0)                                        |     |
-| ====   SEAFOOD   ==== |                                                            |     |
-| d+~~  SEAFOOD         | Fish District                                              |     |
-| d+~~  SEAFOOD         | Pacific Catch                                              |     |
-| d+~~  SEAFOOD         | Soto Mare                                                  |     |
-| ====    WORLD    ==== |                                                            |     |
-| d+~~  MEDITERR        | Mediterranean Aroma                                        |     |
-| d~~~  SPANISH TAPAS   | Picaro                                                     |     |
-| d+~~  ITALIAN         | Pastime Pasta                                              |     |
-| ====  AMERICAN   ==== | > Salad, Sandwich, Pizza, Fast                             |     |
-| d++~  SALADS          | Mixt Greens                                                |     |
-| d+~~  PIZZA           | The Pizza Shop (4.5yelp)                                   |     |
-| ~~~~  PIZZA           | Little Star Pizza (4 or 4.5yelp)                           |     |
-| u+++  SANDWICH        | Grubbin (Great but opens @ 11:15)  Bite (not great)        |     |
-| d-~~  FAST            | McDonalds                                                  |     |
-|                       |                                                            |     |
-| -----------------     | ---------------------------------------------------------- |     |
-| >>  UBER-EATS  <<     | Notes                                                      |     |
-| u-  FUSION            | Laksa (good)                                               |     |
-|                       | u+  CHINESE                                                |     |
-| u+  CHINESE           | x? Little Szechuan                                         |     |
-| u-  CHINESE           | x? Tsing Tao (3.5)                                         |     |
-| u+  SUSHI             | Sushi Delight  (maybe)  katana-ya 3.5                      |     |
-| u-  RAMAN             | Raman Izakaya Goku (tapas)                                 |     |
-| ?   JAPANESE          | Ginto Express (good, very "meaty" no sushi"                |     |
-| ?   ALOHA BBQ         |                                                            |     |
-| u*? KOREAN            | Stone Bowl Plus                                            |     |
-| u*? KOREAN            | Barnzu (expensive)                                         |     |
-| u+  THAI              | Osha Thai                                                  |     |
-| u   THAI              | One Wan (4.5) little expensive                             |     |
-| u-  THAI              | Tuk Tuk Thai (3.5 stars)                                   |     |
-| u+? THAI              | Lers Ros Thai (3.5 stars)                                  |     |
-|                       | King of Thai (3.5 stars) iThai                             |     |
-| u+  VIET              | An Chi                                                     |     |
-| u+  PHO               | Turtle Tower                                               |     |
-| u+  BURMESE           | Burma Love 4.0                                             |     |
-| u+  BURMESE           | Rangoon Ruby (good)    (cannot order from there)           |     |
-| u+  BURMASE           | Taste of Burma                                             |     |
-| u?  NEPALESE          | Little Nepal 4.0                                           |     |
-| ==  AMERICAN  ==      |                                                            |     |
-| u*- AMERICAN          | Oola (3.5 stars; bfast)                                    |     |
-| u+  PIZZA             | Bellissimo Pizza                                           |     |
-| u+  PIZZA             | Pizza Express (mom likes.  i think)                        |     |
-| u*? PIZZA             | Reds Pizzeria 4.5                                          |     |
-| u-  PIZZA             | Patxi's Pizza  (deep dish)                                 |     |
-| u-  PIZZA             | Fire Pie  (pizza always burned)                            |     |
-| u+  BURGER            | Wes Burger (Tots, good small burgers)                      |     |
-| u+  BURGER            | Umama Burger (ok)                                          |     |
-| u-  BURGER            | Adam's grub truck                                          |     |
-| u+  BURGER            | Hall of Flame                                              |     |
-| ==  CHICKEN  ==       |                                                            |     |
-| u-  SANDWCH           | Oxbridge (9am not ready for 45 min)                        |     |
-| u+  SANDWCH           | Hazel's Kitchen (potreo 9a)                                |     |
-|                       | Lous Cafe                                                  |     |
-| u   SANDWCH           | Mr. Pickles (no DD)                                        |     |
-| u-  SANDWCH           | Limoncello (5.0)                                           |     |
-| u-  SALADS            | Soma Eats (4.0; bfast/brunch/sandwich)                     |     |
-| u+  BUN MEE           | Bunn Mee Market (good)                                     |     |
-| u-  SOUL              | Soul Food City (3.5)                                       |     |
-| u-  SEAFOOD           | Poki time (4.0)  Poke Bowl;  Aloha BBQ                     |     |
-| ==  EURO  ==          |                                                            |     |
-| u++ ITALIAN           | Italian Homemade Company (good value & meatballs)          |     |
-| u*- ITALIAN           | Luisa's Pizza and Pasta (good, small portion)              |     |
-|                       | Homemade Company                                           |     |
-| u*+ GERMAN            | Rosamunde Sausage Grill                                    |     |
-| u-  SPANISH           | Canela Tapas (4.0)                                         |     |
-| u-  TURKISH           |                                                            |     |
-| == SOUTH ==           |                                                            |     |
-| u*?  MEXICAN          | Bayshore Taqueria                                          |     |
-| u-  MEXICAN           | Taqueria Los Coyotes (4 stars)                             |     |
-|                       | Cajun, Caribbean, Southern, SouthAm                        |     |
-| == WORLD ==           |                                                            |     |
-| u+  MEDITERR          | Palmyra (good meats, but gave QL whitemeat)                |     |
-| u-  MEDITERR          | Halal Guys (good?)                                         |     |
-| u-  INDIAN            | North Indian Resturant 4.0                                 |     |
-|                       | OTHERS:  Deccan Spice 4.0; Halal house; Chaat Corner;      |     |
-| AFRICAN               |                                                            |     |
-| == DESSERT ==         |                                                            |     |
-| u- DESSERT            | +++ [Dianda's Bakery]                                      |     |
-| y- DESSERT            | Viva La Tarte (croissant type pasteries; fast delivery)    |     |
-| u- DESSERT            | Craftsman and Wolves  (expensive croissant and front case) |     |
-|                       |                                                            |     |
+ 1980   77%-70%-89%  39.5   30.5 - 24 norway       //    2020   83%-79%-90%  57.21   47   
+
+| >> PICKUP <<           | DOOR DASH OPTIONS                                          |     |
+| ---------------------- | ---------------------------------------------------------- | --- |
+| p SANDWICH             | Hazel's Kitchen 415.647.7941 https://www.hazelskitchen.com |     |
+| p+  NEPALESE           | Little Nepal                                               |     |
+| ---------------------  | ---------------------------------------------------------- |     |
+| >>>>  DOORDASH   <<<<  |                                                            |     |
+| ====    ASIAN    ====  | >> Chinese, Japanese, Thai, Korean, Pho, Bowls, Burmese    |     |
+| d++~  CHINESE-North    | Dong Bei Mamma                                             |     |
+| d+~~  CHINESE          | Beijing Resturants                                         |     |
+| d+~~  CHINESE          | Big Lantern                                                |     |
+| d+~~  JAPANESE         | Ginza Sushi                                                |     |
+| d???  JAPANESE(-sushi) | Ginto Express                                              |     |
+| d+~~  THAI             | Farm House Kitchen                                         |     |
+| d+~~  KOREAN           | Mamma' Tofu House.  Affordable/ok.                         |     |
+| d++~  KOREAN           | Jin Mi Korean.  Affordable/better than mammas              |     |
+| d+++  PHO              | Turtle Tower                                               |     |
+| d-+~  BOWL-Korean      | Moon Bowls - QL does not like; Dan = just ok               |     |
+| d+~~  BOWL             | West Coast Bowl                                            |     |
+| d++~  BOWL             | Ben's Fast Food                                            |     |
+| d+++  BURMESE          | Burmese Kitchen ~ We all like it & it is affordable        |     |
+| d?~~  BURMESE          | New Burma (yelp 4.5)  Burma Cafe/Love/Superstar (yelp 4.0) |     |
+| d+~~  VIETNAMESE       | Chic n' Time (y5.0)                                        |     |
+| ====   SEAFOOD   ====  |                                                            |     |
+| P++~  SEAFOOD          | Seafood Station                                            |     |
+| d+~~  SEAFOOD          | Fish District                                              |     |
+| d+~~  SEAFOOD          | Pacific Catch                                              |     |
+| d+~~  SEAFOOD          | Soto Mare                                                  |     |
+| ====    WORLD    ====  |                                                            |     |
+| d???  MEXICAN          | Taqueria Guadalajara (4.0Y)                                |     |
+| y???  MEXICAN          | Taco Los Altos (3.5Y) seemed alittle expensive             |     |
+| d+~~  MEDITERR         | Mediterranean Aroma                                        |     |
+| d~~~  SPANISH TAPAS    | Picaro                                                     |     |
+| d+~~  ITALIAN          | Pastime Pasta                                              |     |
+| d???  FRENCH           | Chez Maman West (Y4.0)                                     |     |
+| ====  AMERICAN   ====  | > Salad, Sandwich, Pizza, Fast                             |     |
+| d++~  SALADS           | Mixt Greens                                                |     |
+| d+~~  PIZZA            | The Pizza Shop (4.5yelp)                                   |     |
+| ~~~~  PIZZA            | Little Star Pizza (4 or 4.5yelp)                           |     |
+| u+++  SANDWICH         | Grubbin (Great but opens @ 11:15)  Bite (not great)        |     |
+| d-~~  FAST             | McDonalds                                                  |     |
+
+| Type              |                                                            |     |
+| ----------------- | ---------------------------------------------------------- | --- |
+| >>  UBER-EATS  << | Notes                                                      |     |
+| u-  FUSION        | Laksa (good)                                               |     |
+|                   | u+  CHINESE                                                |     |
+| u+  CHINESE       | x? Little Szechuan                                         |     |
+| u-  CHINESE       | x? Tsing Tao (3.5)                                         |     |
+| u+  SUSHI         | Sushi Delight  (maybe)  katana-ya 3.5                      |     |
+| u-  RAMAN         | Raman Izakaya Goku (tapas)                                 |     |
+| ?   JAPANESE      | Ginto Express (good, very "meaty" no sushi"                |     |
+| ?   ALOHA BBQ     |                                                            |     |
+| u*? KOREAN        | Stone Bowl Plus                                            |     |
+| u*? KOREAN        | Barnzu (expensive)                                         |     |
+| u+  THAI          | Osha Thai                                                  |     |
+| u   THAI          | One Wan (4.5) little expensive                             |     |
+| u-  THAI          | Tuk Tuk Thai (3.5 stars)                                   |     |
+| u+? THAI          | Lers Ros Thai (3.5 stars)                                  |     |
+|                   | King of Thai (3.5 stars) iThai                             |     |
+| u+  VIET          | An Chi                                                     |     |
+| u+  PHO           | Turtle Tower                                               |     |
+| u+  BURMESE       | Burma Love 4.0                                             |     |
+| u+  BURMESE       | Rangoon Ruby (good)    (cannot order from there)           |     |
+| u+  BURMASE       | Taste of Burma                                             |     |
+| u?  NEPALESE      | Little Nepal 4.0                                           |     |
+| ==  AMERICAN  ==  |                                                            |     |
+| u*- AMERICAN      | Oola (3.5 stars; bfast)                                    |     |
+| u+  PIZZA         | Bellissimo Pizza                                           |     |
+| u+  PIZZA         | Pizza Express (mom likes.  i think)                        |     |
+| u*? PIZZA         | Reds Pizzeria 4.5                                          |     |
+| u-  PIZZA         | Patxi's Pizza  (deep dish)                                 |     |
+| u-  PIZZA         | Fire Pie  (pizza always burned)                            |     |
+| u+  BURGER        | Wes Burger (Tots, good small burgers)                      |     |
+| u+  BURGER        | Umama Burger (ok)                                          |     |
+| u-  BURGER        | Adam's grub truck                                          |     |
+| u+  BURGER        | Hall of Flame                                              |     |
+| ==  CHICKEN  ==   |                                                            |     |
+| u-  SANDWCH       | Oxbridge (9am not ready for 45 min)                        |     |
+| u+  SANDWCH       | Hazel's Kitchen (potreo 9a)                                |     |
+|                   | Lous Cafe                                                  |     |
+| u   SANDWCH       | Mr. Pickles (no DD)                                        |     |
+| u-  SANDWCH       | Limoncello (5.0)                                           |     |
+| u-  SALADS        | Soma Eats (4.0; bfast/brunch/sandwich)                     |     |
+| u+  BUN MEE       | Bunn Mee Market (good)                                     |     |
+| u-  SOUL          | Soul Food City (3.5)                                       |     |
+| u-  SEAFOOD       | Poki time (4.0)  Poke Bowl;  Aloha BBQ                     |     |
+| ==  EURO  ==      |                                                            |     |
+| u++ ITALIAN       | Italian Homemade Company (good value & meatballs)          |     |
+| u*- ITALIAN       | Luisa's Pizza and Pasta (good, small portion)              |     |
+|                   | Homemade Company                                           |     |
+| u*+ GERMAN        | Rosamunde Sausage Grill                                    |     |
+| u-  SPANISH       | Canela Tapas (4.0)                                         |     |
+| u-  TURKISH       |                                                            |     |
+| == SOUTH ==       |                                                            |     |
+| u*?  MEXICAN      | Bayshore Taqueria                                          |     |
+| u-  MEXICAN       | Taqueria Los Coyotes (4 stars)                             |     |
+|                   | Cajun, Caribbean, Southern, SouthAm                        |     |
+| == WORLD ==       |                                                            |     |
+| u+  MEDITERR      | Palmyra (good meats, but gave QL whitemeat)                |     |
+| u-  MEDITERR      | Halal Guys (good?)                                         |     |
+| u-  INDIAN        | North Indian Resturant 4.0                                 |     |
+|                   | OTHERS:  Deccan Spice 4.0; Halal house; Chaat Corner;      |     |
+| AFRICAN           |                                                            |     |
+| == DESSERT ==     |                                                            |     |
+| u- DESSERT        | +++ [Dianda's Bakery]                                      |     |
+| y- DESSERT        | Viva La Tarte (croissant type pasteries; fast delivery)    |     |
+| u- DESSERT        | Craftsman and Wolves  (expensive croissant and front case) |     |
+|                   |                                                            |     |
 
 
 ### YELP

@@ -27,6 +27,8 @@ OWED TO QINGLING
   $9,000  2021-11-01	-- QL got from personal citi bank (west portal)
  -$9,000  2021-11-08	-- QL transferred to herself from grandcntrl (ZERO BAL)
 
+
+DanO  $20K or $60K for taxes
  
 ```
 

@@ -11,13 +11,9 @@
 | t2022-08-15 | [[Refs]]                     | Child Education Outcome by location                                     |
 | t2022-08-02 | [[@AugustineAntwi-Boasiako]] | Initial Email                                                           |
 | t2022-07-26 | [[@Nick Allen]]              | Notes for letter of reference                                           |
-| t2022-07-22 | [[Politics]]                 | Religious tolerance                                                     |
 | t2022-07-20 | [[@Felipe Lavratti]]         |                                                                         |
 | t2022-07-20 | [[@Rafah Hosn]]              | Reconnect                                                               |
-| t2022-07-18 | [[Politics]]                 | Optimal Tax Policy                                                      |
-| t2022-07-09 | [[EOCA]]                     | Zombie Consciousness                                                    |
 | t2022-07-06 | [[EOCA]]                     | What is Consciousness - Response to Erik                                |
-| t2022-07-06 | [[EOCA]]                     | Bengio's based model of consciousness                                   |
 | t2022-06-30 | [[@Moses Baffour Awuah]]     | Next Steps Email                                                        |
 | t2022-06-29 | [[@Theo Enns]]               | Request for recommendation                                              |
 | t2022-06-28 | [[@Attila Aros]]             | Request Reference                                                       |
@@ -45,8 +41,7 @@
 | t2021-03-24 | [[EOCA]]                     | Note to Mark and Leslie                                                 |
 | t2021-00-00 | [[@Deep Sahini]]             | Thanks note                                                             |
 | t2021-00-00 | [[MED]]                      | Questions and topics                                                    |
-| t2021-00-00 | [[Politics]]                 | Cheap housing idea                                                      |
 | t2020-00-00 | [[Ideas]]                    | Chipstack                                                               |
+| t2019-00-00 | [[Ideas]]                    | Coin thoughts - alloy???                                                |
 | t2019-00-00 | [[Qingling]]                 | QL Notes                                                                |
 | t2019-00-00 | [[Politics]]                 | Ryan (Baltimore school teacher)                                         |
-| t2019-00-00 | [[Politics]]                 | CONSEQUENCES in the classroom                                           |

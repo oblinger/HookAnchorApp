@@ -1,3 +1,9 @@
+
+### 2022-09-25
+- [ ] Decide Jason.
+
+
+
 ### 2022-08-14
 - [ ] Update Linked In
 - [ ] Coursera* (10h)

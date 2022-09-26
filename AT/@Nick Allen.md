@@ -5,25 +5,6 @@
 
 # LOG
 
-### m2022-09-07  AF Tax Discussion
-#AF-legal
-
-1. Formed HoldCo as a C-corp 
-   
-2. Exchanged 100% AF shares for 100% shares in HoldCo
-   ==> N&D owns holdco  which owns AF-shares
-3. We converted AF to an LLCs
-4. AF transfers IP to holdco
-5. HoldCo buy back part of its shares back from N&D in exchange for AF-share
-6. HoldCo merges with RzeroMerger Corp
-          N&D exchanges remain shares of holdco for cash and RZ-stock
-          
-7. RzeroMergerCorp merges into RzeroSubLLC (owned by Rzero)
-
-
-Filing 2021 AF-LLC in december return (money coming in and out); Filing 2022 return as well
-Filing 2021 HoldCo corp tax return 
-
 
 ### t2022-07-26  Notes for letter of reference
 

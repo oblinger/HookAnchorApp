@@ -529,7 +529,6 @@ _
 [zzz](https://docs.google.com/presentation/d/1fDHRgMzS7Wg8DiHWS3vo0Im5GlhHOP8it1Fw0D6nbwM/edit#slide=id.g8af1f037a6_0_15) 
 _
 # LOG
-
 ### Race (misc section)
 #### Original Sin
 	Slavery really is the original sin of America.  It is an evil so great, and it desendants still live on in this country, we never can really overcome it.
@@ -1198,3 +1197,12 @@ All analysis would be conducted on premisis
   and routinely available
   
 _
+### 201--00-00  RACE
+cannot find the main thread... adding this here
+#### Human axioms of behavior
+- IDENTITY IS RELATIONAL -- To strongly identify X as a Y is to also strong identify that X is not a NOT-Y.  Thus strongly binding ones identity to a group is to also strongly identify onself as SEPERATE from non-members of that group.  The more one feels the most important aspects come from a group identity, the less one feels connection to any not in that group.
+- SYMMETRY IN STANCE -- 
+- HUMANS HELP THEIR GROUP -- 
+### r201--00-00 - gun deaths are cultural
+https://medium.com/handwaving-freakoutery/geographic-evidence-that-gun-deaths-are-cultural-277cb90fa06d
+gun deaths are cultural

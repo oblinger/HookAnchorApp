@@ -1,6 +1,6 @@
 
 
-# # QUICK THOUGHTS
+# QUICK THOUGHTS
 ### --- AREAS ---
 - ENERGY -- Building something that 
 ### Getting to another star
@@ -50,7 +50,7 @@ ACCESS
 
 -- Key actions at all times:
    Mute/unmute self.  See all participants.  mute others.
-# # IDEAS BY TOPIC AREA
+# IDEAS BY TOPIC AREA
 ### BOOK - Organizing Your Life
 
 IDEAS
@@ -729,7 +729,6 @@ but in a way that
 
 
 # LOG
-
 ### t2020-00-00  Chipstack
 
 his boss (sr VP north sales)
@@ -750,3 +749,106 @@ bit more layman
 -- now doing vertical markets
    SP was first.
 _
+### t2019-00-00 - Coin thoughts - alloy???
+
+coin thoughts:
+(this will likely be rambling, hope you don't mind...)
+this is not really about your business, which one way or another I am generally bullish on, but expect it will dramtically fail to execute in ways you expect.
+
+this is more about crypto generally:
+
+
+(TOPIC #1) tell me again about this guy who is going to tank BTC in a years time.  Is he claiming he ALREADY has all the parts of the key, or is he claiming that he *will* have those parts by then.  (the reason I care is that **IF** he is claiming he already has them, then i might be tempted to think about how to trade to leverage this situation... not sure)
+
+
+
+(TOPIC #2) you gave an off the cuff argument that the ETH gas model is flawed relative to the BTC model where computation is proportionate to program size.
+
+I thought about this...  and I don't see why this should be so.  I agree we need to charge enough per transaction that we can pay for the computation required by that transaction.  Still whether you unroll a loop into may BTC tranactions, or you roll it up into one ETH transaction with enough gas, either way you are paying for the compute you use.
+
+So why does the ETH model not scale?
+
+
+
+(3) It seems to me long term, that the things we hope a consensus protocol do for us are not even enumerated yet.  Thus there is essentially a zero percent chance that these protocol will stand the test of time.
+
+BUT:
+
+(3a) Just as the JS ecosystem is now unrecognizably different from what JS was when it was born, so the current coin protocols might evolve, in a continuous way w/o a break in continuity.  Maybe.  It will not be enough to simply implement fancy new things on top.  Many changes in speed and capability will require incompatible changes at the bottom.
+
+BUT just as with the JS community, there was this installed browser base, so it was a non-starter to just build a new better standard.  The browser writers needed to agree to adopt breaking changes over time so the standard could move forward.  We was the BTC community *fail* to do this, but it is early days, and I think one currency or another will adopt some good governance model that will allow such progress more smoothly.
+
+
+(3b) And even if we DONT see an actual continuously adapting protocol live into the future, it may not matter.  There might be ways that crypto assets abstract above the specific chain they reside upon.  this second idea relates to a couple of tenative predictions in the next section:
+
+
+
+TENTATIVE PREDICTION #1 -- Transaction costs will drop to the cost of computing.  (e.g. very very low).  I know all the issues with non-proof of work systems, and I am not sure the ways around them.  Still it seems incredibly unlikely that there are not work around to either reduce per transaction costs for proof of work, or to strengthen non-proof of work.  thus giving us a huge boost to productivity.
+
+TENTIATIVE PREDICTION #2 -- ICOs will mostly go away.  Not just the ICO itself, but even more, the idea that big money will be made in the growing of the currency stock for new coins.  I think investors and users will put up with a tiny amount of that as a percentage of the total assets invested, but nothing remotely like what has happened with BTC.  A HUGE percent of the NPV of BTC is in the hands of the miners and early investors that took a gamble.
+
+In a way this is a ponzi scheme since it offers rewards that are not sustainable.  and later investors are carrying the weight of the largess bestowed upon earlier investors.  
+
+Early on this made sense since the next bitcoin was not just around the corner, you should jump on and ride the one time capitalization.  But once the worlds coin-available-stores-of-wealth are already stored on chain somewhere, we are not in the same situation.
+
+Only if someone one coin would magically be in a position relative to all others to be known to be destined to dominate could one really expect such a ponzi like growth to occur.  but what would one coin be better in the long run than another?  Seems others could adopt the same innovations.
+
+If that is right.  No coin will be at dramatic, sustained advantage, then it cannot command a strong premium.  e.g. sell at a 20% discount since new buyers would be paying a tax to all those who already own the coin at a much lower cost.  If all new coins have similar chances in this future world, why choose one forcing me to only get 80cents on the dollar in value?
+
+
+So this brings me to the prediction:
+
+The only way to start a new currency is by "burning" coins on an existing chain.  that is locking those coins up in a practical way that allows for reversing BACK into that original currency.  I have some thoughts about how do to that, and there are papers on it too.
+
+But anyway this suggests a social shift.  Now no new currency will be free to just print coins and expect money.  Rather they will shift coins from existing chains.
+
+I predict either 3a or 3b will be how BTC ends.
+
+Either it evolves or it dies.  But either way it seems the VALUE stored on the chain might live on.  
+
+this is a critical prediction since #3 says it will be replaced, so don't invest but 3a & 3b together suggest you SHOULD invest.  (right now the fraction of the worlds wealth that wants to be stored safely is HUGE, it just does not yet trust crypto enough)
+
+
+
+
+TENATIVE PREDICTION #3 -- before 2030 the world will dramatically shift to store long term assets on chain -- but unlike most today who make that same prediction, I don't think humans will trust such tech's long term sustainabililty within that time frame.  Instead I think they will trust the idea of the contuation of some kind of chain.
+
+e.g. Even today if I poll many tech guys, most all say (1) chains are here to stay.  (2) most chains of today may/will die.
+
+but once we start believing that the only way to create a NEW chain is to burn coins (or other assets) in exchange for those new coins on the new chain, NOW I can trust that my old chain coins will still retain value.  Indeed if the only way to get one OZ of gold's worth of new coin is to burn one OZ of gold's worth of old coin, then it seems this would keep the price of old chain's coins from collapsing too fast even as the writing on the wall became clear that it was not going to be a long time winner, you still need to coins to buy the new currency.
+
+I am only mildly long in BTC now, but maybe I should change that.
+
+
+~-~
+IDEA:   BRIDGE BOND CONTRACTS
+
+I know there are theoretical secure ways to transfer coins between chains.  Nobody has implemented them yet.  Maybe they will work well.  Maybe they will be compatible with the flexibility offered by all of these smart contract types.  I cannot tell.
+
+But I have a competing approach... I bet others have not considered, since it has a social element.  But basically it involved creating and destroying these bridge bond contracts.  It is only half worked out in my head... nothing on paper.  
+
+But unlike the proposals I have heard about, this approach would work between ANY two chains w/o any specific dependency on the chain contract details since it would operate via a third protocol that is not on EITHER chain.
+
+It would be fun to tell you about the 1/2 thought sometime....
+If I am right about the need to shift chains, and it turns out the purely computational approach does not work well, it could be an important technology.
+
+anyway, just fun stuff to think about!
+
+Enjoy bangkok,
+--dan
+
+
+
+
+
+
+
+
+
+
+[https://medium.com/p/3d93f1c75903/info  xx](https://medium.com/p/3d93f1c75903/info) 
+Heh, well I agree the battle cries are absurd - they are not designed to connect with a majority of the country - so by definition they are absurd. And the utter stupidity of the democratic attack is laughable. Still I am living in the house that burns, so it is hard for me to laugh. :-/
+
+
+cumuulative effects are cumulative
+effects:  overt.  mindset(both sides).  

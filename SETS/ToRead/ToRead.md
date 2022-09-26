@@ -1,3 +1,4 @@
+- Alignment Forum
  [Humane Tech](https://www.humanetech.com/podcast)  
  Managers Path
 
@@ -178,3 +179,15 @@ It's basically an ode to concentrating on the problem, not the solution. I think
 https://marijnhaverbeke.nl/blog/  
 https://www.python.org/dev/peps/pep-3118/
 
+
+### zzz web to read
+
+https://forge.medium.com/a-complete-list-of-our-best-life-changing-tips-8dff051f37a2
+
+https://waitbutwhy.com/2019/12/political-disney-world.html?utm_source=Main+List&utm_campaign=5578c85fb5-STORY-CH09&utm_medium=email&utm_term=0_5b568bad0b-5578c85fb5-51005933&mc_cid=5578c85fb5&mc_eid=06333c7df3
+
+https://elemental.medium.com/painful-sex-is-more-common-than-you-think-is-there-a-fix-479afe5aa513
+
+https://medium.com/better-marketing/be-more-persuasive-with-these-9-magic-phrases-939d20075fe5
+
+https://towardsdatascience.com/microservice-architecture-a-brief-overview-and-why-you-should-use-it-in-your-next-project-a17b6e19adfd

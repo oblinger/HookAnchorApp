@@ -1,5 +1,4 @@
 =[[TASK]] < [[Full]] < [[Social]] << 
 
-david israel
+Use [[Comms]]
 
-John Cameron, Anastasia, 

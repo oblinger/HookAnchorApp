@@ -1,12 +1,11 @@
 
 ## = [[SELF|SELF]] =
 ### - [[MED|MED]] -
-- [ ] Daily 7-min exercise; 
-- [ ] Diet... build up and execute plan
-- [ ] 
+- [ ] DAILY: Walking or Peleton w/ weights
+- [ ] FOOD: PapTry, 
 ### - [[LIFE|LIFE]] - 
 ## = [[WORK]] =
-- [ ] Get Mentor
+- [ ] Get Mentors
 
 ## = [[SOCIAL]] =
 - [[Calls]]: John, Anastasia

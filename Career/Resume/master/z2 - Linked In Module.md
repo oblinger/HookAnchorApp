@@ -25,6 +25,34 @@ Co-founded a boutique consultancy built to help multibillion-dollar companies de
 Tenure spans more than 45 software and analytics projects involving a 60-member workforce building and operating on behalf of clients including Arthrex, Boston Scientific, Enphase, iCracked, and SunPower.
 
 Design and productization engagements include ML / vision-based installation design and productization of an automated, one-touch sales channel leveraging satellite data, custom geometric reasoning, and deep learning to eliminate human-in-the-loop solar installation; greenfield-to-operations development of a computational infrastructure (omnibus solution) cited by the Fortune 1000 client as “the largest single driver of new revenue growth” in a single quarter; shepherding the company’s greenfielding, build, launch, and operation of a complex software ecosystem controlling $2B in clean energy IoT assets; and building software and infrastructure enabling video connectivity for a medical device company’s telerobotically operated surgical unit.
+
+~
+
+
+- hands on; remove -- head of US operations; reverse CTO/Co-founder.
+- less about TEAM; programming; DL alg for AF SP instant designer
+- Angel Investor.  (Somewhere)
+- Passion projects
+~
+
+Head of the AI practice
+
+Oversaw our AI related solutions practice.  
+
+Solutions sold, owned, and oversaw AI projects.
+
+included a deep-learning-based installation design and productization of an automated, one-touch sales channel leveraging satellite data, custom geometric reasoning, and deep learning to eliminate human-in-the-loop solar installation; 
+
+greenfield-to-operations development of a computational infrastructure (omnibus solution) cited by the Fortune 1000 client as “the largest single driver of new revenue growth” in a single quarter; 
+
+shepherding the company’s greenfielding, build, launch, and operation of a complex software ecosystem controlling $2B in clean energy IoT assets; and building software and infrastructure enabling video connectivity for a medical device company’s telerobotically operated surgical unit.
+
+Co-Founder/CTO
+
+Co-founded a boutique consultancy built to help multibillion-dollar companies design, develop, and productize clean energy solutions involving: AI, analytics, and IoT.  We delivered more than 45 software and analytics projects involving a 60-member workforce; clients included Arthrex, Boston Scientific, Enphase, iCracked, and SunPower.
+
+
+
 ### - Aeolus Robotics  --  CTO & Head of U.S. Operations
 Tapped as employee #1—following Martian Robotics acquisition—to reimagine Martian IP as an eldercare robotic, ultimately deployed through an exclusive relationship with a Japanese conglomerate.
 

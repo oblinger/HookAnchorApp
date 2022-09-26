@@ -159,7 +159,7 @@ Home Depot 800 553-3199    #4   #3
 
 833-763-0688 - Appliance Claims Department   #2   #4   
 
-- Five year warrantee department.  (needed to return in 48 hours for replace)
+Five year warrantee department.  (needed to return in 48 hours for replace)
 
 
       **WD95991116**  I purchased a GE microwave less than 30 days ago.  It was installed by Home Depot's 3rd party vendors, and it mostly works.  But every 4-5 days all of its LEDs will light up briefly, and then it resets itself, and needs the clock reset as if it is the first time it is powered up.  No other appliance in the house is having power issues.  I would like to have the microwave replaced with a fully functioning one.  Thanks.
@@ -168,8 +168,7 @@ home depot --> square trade -->  GE
 
 800-466-3337 - Home Depot Customer Service #7 #2
 
---- GE will have technician come out
-Thurs 1-5
+ GE will have technician come out Thurs 1-5
   case number - 07600535      800-386-1215 
 
 ~
@@ -263,6 +262,318 @@ Blessings.  
 Magisenter.com.     
 
 Humani vitae
+
+### 201--00-00  Loan amounts
+
+5/17/2018 44,660.00   Loan paid back to Dan w. $660 interest
+5/15/2018 49,994.86   Loan to Dan
+5/16/2018 29,189.65   Loan to Dan
+          ---------
+          79,184.51
+
+
+877-742-9488 M-F 7p EST Move Money
+
+
+sign doc say she wants to live here
+### 201--00-00  Hackers
+CompCert
+
+streamlet -- barney is an advisor for this company.  look at 
+
+
+STG spin tagless g-machine
+
+ML-style module system <-- a way to do typed generic programmings
+   OCAML is a successor to ML and has it.
+
+abstract interpretation....   galwa connection.
+notion of a simplified interpretation schema
+   
+algol like languages -- survey
+
+
+Practical Meta Programming
+
+JSON allows for simple data interchange.
+What is the computational equivelant 
+allowing for interchange of interpretation?
+
+Lets have a talk among those interested in languages.
+### 201--00-00  Carolina
+Understand its hard to work w. QL and mom both doing stuff
+--  Proactive action / Cleanliness / Attention to detail
+	cleaning kitchen on day one.  
+	Leaving trash bags in sink.
+	Not taking out the trash.
+	Each day pots boiled over and made a mess on the stove
+	Kitchen is mess.  not your nature to simply do things unasked
+	Dishes not put into washer, or washed.
+	--	Dirty wet towel under sink. Soaked the toilet paper.
+	--  alarm clock on day2
+	-- food on the floor, not on the table.
+    -- pills on the floor.
+    -- spilled water in the stroller, lid not tight
+    -- put Eli's stroller basket onto the soft footstool
+    -- leaving stroller so front door cannot open.
+    -- giving $100 change back after groceries
+    -- pretty forgetful, phone, ...
+    -- heater is on, and window is open, and no one in the room
+-- Reliability, leaving 
+-- Clock watching, even w. many hours where we did not have work.
+   off clock min 6pm hit  (on day-1)
+-- strength, ability to hold Eli for longer periods of time.
+-- buying your shampoo w. family money.
+
+#### C Review
+
+We did a 4-day trial with Carolina for a full time Nanny position.  It did not go that well, partly for reasons outside her control.  But we did learn some things of relevance for others.
+
+MESSY.  In her own words, she is messy by nature.  She claims that she can organize and be clean professionally.  We found that messiness does show through in her execution.  Examples:   Each day as she cooked her liquids would boil over on the stove, and she did not clean them without explicit request (she said she was going to clean these the next moring).  I called some of her references who also said the needed to clean after her at times.  She left a soaking wet dirty cleaning towel under sink on top of toilet paper.  
+
+ATTENTION TO DETAIL.  There were many small examples of just not  paying attention to details.  Not putting the cap tightly onto a water bottle before putting it into the stroller.  Forgetting things like keys and phone etc. frequently.  Leaving a room heater on in a room with all windows open.  Not setting her alarm clock so she wakes for work.  Leaving things out, leaving the stroller directly in front of the front door so it cannot open.
+
+SAFETY.  One or two things seemed somewhat unsafe.  She returned with our baby and started putting him in his carrier onto an unstable surface -- I cried out before she let go, but it did not make me feel safe.  The main concern around safety stems from the attention to detail.  Her heart seems in the right place, but I worry that something bad could happen by accident.
+
+
+INTEGRITY.  I gave her $100 to buy groceries.  Asked her to buy "soft scrub" to clean tub.  She bought a body scrub.  When she left she took it with her.  When I confronted about this she said this was a confusion.  Ok, but if this is a confusion, then why take it with you? 
+
+
+We hired her for Nanny work, and for reason beyond her control she was not really able to do that work.  Still for all of the reasons above we became less comefortable to even let her try.
+### 201--00-00  Eva photos
+
+Hi Dan,
+
+This is Eva. I’m outside for session shooting this afternoon.
+
+Thank you for enquiring about our session package and information.
+
+Best result for newborn photography is within the first 5-12 days of life. 
+
+The photography agreement and deposit will secure your session date and rate.
+
+Session shooting location is my new boutique studio which is located on 3033 Moorpark Ave, San Jose, CA with free parking on-site. I have designed my studio to give you the best session experience in very safe, warm and comfortable environments for newborn, parents and siblings.:)
+
+I will setting up every thing for your session before you arrive (Such as studio equipment / backdrops/ posing bag/ blankets/ bows/ baskets/ hand knit hats/ headbands/ wraps/ baby body suits...)
+
+Here are some details I need to know before your session booking process...
+
+evawu@newbornphotography.us.com
+
+*Could you let me know you need to set up a in studio or in home session?
+>> We would love to come to your studio
+
+*Do you prefer to set up a Weekday Session or Weekend Session?
+>> First available.  ASAP.  (weekday discount preferred)
+
+*Where is your location?
+>> SF but we will travel to you
+
+*Are you expecting a baby girl or baby boy?
+>> Boy.  (he is one month old now)
+
+*How many people will join this newborn session?
+>> Baby, Mom, Dad, grandma (and our dog if we can)
+
+*Which package of our newborn session you want to book?
+>> Premium for $699
+
+Here are some information of newborn session for you.
+
+* Weekday in Studio Session will take extra 5% off for total payment
+
+
+1. Newborn Only Package : $499
+
+Including:
+-2 hours shooting in Studio 
+
+-1 Newborn baby only
+
+-All newborn photography props provided
+
+-10 digital professional retouched photos
+
+-All of the final delivered digital photos are un-watermarked.
+
+-3 Sets up
+
+2. Newborn Basic Package : $599 
+
+Including:
+-2-2.5 hours shooting in Studio
+
+-1 Newborn baby + 2 Parents
+
+-All newborn photography props provided
+
+-20 digital professional retouched photos
+
+-All of the final delivered professional retouched digital photos are un-watermarked.
+
+-3-4 Sets up
+
+3. Newborn Premium Package: $699
+
+Including:
+-2.5-3 hours shooting in Studio 
+
+-1 Newborn baby+2 Parents+1 sibling or Twins newborn + 2 Parents
+
+-All newborn photography props provided
+
+-30 digital professional retouched photos
+
+-All of the final delivered professional retouched digital photos are un-watermarked.
+
+-3-4 Sets up
+
+_______________________________________________
+
+_____________________________________________________________________
+Other informations:
+
+* $50 non-refundable deposit is required to secure your session.
+
+* The deposit can be transferred to another date in half year if need be.
+
+* The balance is due on the day of the session.
+
+* A signed photography agreement is required for all sessions.
+
+* We accepted PayPal for deposit, Cash Only for the balance.
+
+* Proof viewing gallery with studio water marks will be available to view after 7 business days of your session.
+
+You can choose the photos from the gallery to take professional retouching.
+
+* Final Professional Retouched photos will available to download in your online gallery within 21 business days after your written approval is sent via e-mail to photographer.
+
+* Professional Retouching includes brightness/contrast adjustment, color correction, cropping, removal of blemishes, softening of skin tones and other visually enhancing techniques if necessary.
+
+* Online gallery is available for 1 month;
+   You can order the prints from online gallery ;
+   Albums and professional enlargements products can be ordered at our studio ;
+
+* Additional professional retouched photos is $35/photo;
+
+* Special required composite photos is $50/photo;
+
+* Entire Proof viewing gallery download with print release will be added $350;
+
+* For add additional Newborn to join session, each additional baby is $100;
+
+* For add additional persons to join your session, each additional person is $50;
+
+* In-home session shooting service fee is $75 for round trip within 20 miles of Sunnyvale,CA 94087,
+Additional travel fee will apply if the location is beyond this range.
+
+* Outdoor/Event Session Shooting location should be within 20 miles of Sunnyvale,CA 94087.
+Additional travel fee will apply if the location is beyond this range.
+
+* Overtime will be added $300/hour;
+
+* Print products will take up to 2-4 weeks to delivery after images have been selectedby client for products processing;
+
+* Delivery fee will apply depend on your location;
+
+* Tax is included in session rate;
+
+* Please note: We don't delivery non-edited photos or raw files to our clients since these are unfinished works.
+
+* Services and price subject to change without notice, but will be honored at the time of booking.
+
+Hope these informations can help you to set up your session.
+
+Please feel free to contact me if you have any concerns or ideas about your session.
+
+Thanks and have a great day!
+
+Eva Newborn Photography Studio
+Location: 3033 Moorpark Ave, #26, San Jose, CA. 95128
+Tel: +1(408)5837145
+http://www.newbornphotography.us.com
+evawu@newbornphotography.us.com
+Instagram.com/newbornphotography_eva
+Please leave us a review on Yelp for help us to growing up! Thanks!
+https://m.yelp.com/biz/eva-wu-photography-sunnyvale-7
+
+### 201--00-00  Sleep question
+-- 200K 3%
+
+Nick, 
+I am that guy.  reads all the sleep blogs, CBT class, eye-mask, ear-plugs, all the gadgets too.  My sleep is not terrible, but if I wake after 3-4 hours, oh god help me!  Even before I am fully conscious I am already thinking.  Many exciting projects in my world, and a few mild anxieties too.
+
+I try put a boring topic front and center in my mind... with marginal success.  I try not to even go to pee as my chances of going back to sleep plummet.  After 30 min I am unlikely to make it back to sleep, so I get up.
+
+Its tricky to take something to get back to sleep at that time.  Occasionally I will work for 2-3 hours, then fall back a sleep for 2 hours or so.  (essentially segmenting my night's sleep.)  If I do that early in the day, I will be sleepy again at night, but it is not time-efficient to have segmented sleep.
+
+My sleep drive is plenty to GET to sleep.  but too weak to ensure I stay asleep and/or I just have too much going on so that waking up becomes a bigger issue.
+
+
+How do I GET BACK TO SLEEP?
+
+--dan
+### 201--00-00  Garage door project
+Daniel Oblinger:
+	Is this Home Depot?
+38698:
+	Thanks for messaging with The Home Depot. Message and data rates may apply. For more information text HELP, to opt-out text STOP. Privacy Policy and full Terms at https://corporate.homedepot.com/privacy-policy
+Daniel Oblinger:
+	I have a question about selecting the correct garage door spring.
+38698:
+	Hello! My name is Susan and I'll be assisting you today. With whom do I have the pleasure of speaking?
+Daniel Oblinger:
+	This is Dan
+38698:
+	Hi there Dan! Did you have a specific question about selecting your garage door spring, or just need help figuring out which one you need?
+Daniel Oblinger:
+	I think I need to choose the correct torsion spring
+	Mine has some grey or white spray paint on one end.
+38698:
+	https://www.homedepot.com/p/DURA-LIFT-0-218-in-Wire-x-2-in-D-x-26-in-L-Torsion-Springs-in-White-Left-and-Right-Wound-Pair-for-Sectional-Garage-Doors-DLTW226B/302333485
+	Does that look correct?
+Daniel Oblinger:
+	Yes, but is that the only spring with that approximate color?
+38698:
+	Yes, white is it's own distinct color, so this would be what you'd need. The white indicates that it is a 110 pound spring. The next closest colors would be tan, yellow, or light blue, which are still all going to be fairly distinct from the white.
+Daniel Oblinger:
+	How heavy is the light blue one?  (Just to be sure that is not it)
+	And what does it cost for delivery of the spring?  (Thx)
+38698:
+	Light blue is 190--it's actually the highest weight option.
+	The link I sent is for the pair of springs, and it has free shipping!
+Daniel Oblinger:
+	Thanks, but I am confused.  The link you sent is for one that is rated at 188lbs.  That is almost exactly 190!
+38698:
+	If you'll allow me just a moment, I'm actually going to see about grabbing a supervisor, because my knowledge on these is limited, so I want to verify I'm giving you the best information. Please bear with me.
+Daniel Oblinger:
+	Sure!  Thanks!
+38698:
+	Thank you so much for your patience. I apologize, I was slightly off on what I was telling you, so I'm glad we checked. The color represents the wire gauge/thickness, which does directly impact weight, but is not the only factor we need to look at. 
+White IS the color you have--I'm going to send you the official PDF from the Commercial & Residential Garage Door Division so you can see all of the colors--I'm still saying white is the only one close 😃
+	However, that is not the only information that you need to base your choice on.
+	https://www.dasma.com/PDF/Publications/TechDataSheets/CommercialResidential/TDS171.pdf (Colors on page 4)
+	You also need to measure the inside diameter and length of your existing spring. I'm going to send you another link that shows you exactly how to do that.
+Daniel Oblinger:
+	Ok
+38698:
+	The other thing this link is going to talk about is the wind direction. We sell them in pairs, so you'll have one of each wind direction. You just need to make sure you are putting the correct spring on the correct side.
+	https://idcspring.com/measure-order-torsion-springs/
+	https://www.homedepot.com/s/white%2520garage%2520torsion%2520spring?NCNI-5
+	This is a selection of different lengths, all in the 0.218 gauge (white) wire.
+	You can purchase only one and replace one side, but just like with tires, you're going to get the best performance and balance by changing both sides at the same time.
+Daniel Oblinger:
+	Got it.  Ok thanks!
+38698:
+	Also, they did recommend, if you haven't changed torsion springs before, that you definitely look up a few tutorials on youtube to familiarize yourself with the process. It is a relatively simple process, but can be a bit tricky, and can also be dangerous if you don't exercise a few precautions.
+Daniel Oblinger:
+	Thanks!
+	Does Home Depot partner with installation experts?
+38698:
+	We certainly do! You can go to this link to get more information on service for your area. https://www.homedepot.com/services/c/garage-door-opener-repair/ee5eda8e1?vfrom=search-results
+Daniel Oblinger:
+	Thanks so much for carefully answering my questions!   (This has been my best Home Depot interaction)
 ### 2018-00-00 - coinbase
 HELP!  It has been almost a week and none of your account recover processes are working:
 

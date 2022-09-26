@@ -363,6 +363,11 @@ URL:  about:config
 
 ### --- (Paid) ---
 
+### Audio Hijack
+**Name:** Daniel A Oblinger  
+**Code:** STCK-XY9Z-VVG9-8FND-KN2U-XBYK-DGYE-UW4J-NJWP
+
+$64 9/17/2022  
 ### xx Launchbar
 
 LaunchBar 6[Download](https://obdev.at/launchbar/download.html)
@@ -2671,7 +2676,8 @@ brew install python3
 python3 --version    # 3.8.1 (2021.04 installed 3.9)
 open https://docs.conda.io/en/latest/miniconda.html
 
-
+### xx PYTHON3 on OSX at system level
+- In running my _ fling.py script from keyboard maestro it ran some MAC OS install of python3  (I think this became a system level python3 instance)
 
 #### brew xx python       (16.10.07 approach)
      $ brew install python

@@ -2,11 +2,67 @@
 ### How To
 
 **MINT**
+- VERIFY CURRENT ON:  DanO, AmzMisc, Bills(Freedom), Groc, Sapphire, timetime
 - Mint.com --> Transactions --> !export XXXX transactions (@bottom)
 - $ budget.py   # historical data in ~/ob/data/budget
 
 **SCHWAB**
 - Account -> Balances ! Joint Checking      (15K monthly flow starting before 2021)
+
+
+### BUDGET CROSS CHECKS
+- SIMILAR:  **GrandTotal** ~ **Joint_Out** 	GrandTotal sums many transactions,   JointOut sums credit card payments and outputs of Joint Checking
+- SMALL:    Transfers 					Transactions with category 'transfer'
+- SMALL:    JOINT_OTHER      			Transactions from 'Joint Checking' account that are not covered in the budget below
+- EXACT: 	  CrossCheck          			These items should exactly? match ALL_CARDS section
+
+
+### BUDGET SECTIONS EXPLANATION
+
+
+"""
+SECTIONS
+
+**CARVE OUTS**			= Excludes transactions from budget below
+
+**INCOME_ALL**     		= Income from all sources
+
+**BIG_ALL** 		
+- Mortgage, School, Nanny
+
+**ITEMS_ALL**
+- Ele_Gas, Water, Data (phone&comcast)
+- Auto, House(grass,lowes,...), Medical, Content(WSJ,...)
+- Fees, Pet, Service (legal,checks,shipping,thermomix,life insurance...)
+- Venmo, Checking
+- Other (any other payments from the freedom card)
+
+**GROC_ALL**
+- Costco, Weee, Dragon, Amz Groc, Groc Other
+
+**DISC_ALL**			= Many discretionary expenses
+
+**BUDGET SUMMARY** 	= Adds up sections from above
+
+
+**>>> JOINT CHECKING ANALYSIS <<<**
+**CARVE OUTS**
+
+**ALL_BIG**
+- Mortgage, School, Gov
+**ALL_CARDS**
+- Spending, Util, Groc, AmzMisc, 
+**ALL_CASH**
+- Cash, Checking, VenmoEtc, Interest
+
+**JOINT FLOWS**				= Flows in to and out of Joint Checking
+
+**CROSS CHECK**  			= Should match credit cards in all cards (it is the inverse transaction)
+
+ DATES:  Groc 4th    AmzMisc 13-15th    Sapphire 20-23th    Bills 26-1th
+
+
+
 
 ### BUDGET APP
 - (See Pycharm -> bin)   

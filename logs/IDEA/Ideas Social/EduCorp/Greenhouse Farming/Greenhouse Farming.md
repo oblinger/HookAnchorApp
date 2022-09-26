@@ -12,6 +12,10 @@ DATA:  [[Greenhouse Farming Data]]
 ## PAPERS
 ###  [Safeguarding food security through large-scale adoption of agricultural production technologies](https://www.facebook.com/agricimpact/)  
 
+- Julian Mitchell, the C.E.O. of one such company, InspiraFarms, told me. “And that excludes the poorest of the poor”
+  From NewYorker: Africa’s Cold Rush and the Promise of Refrigeration
+
+
 
 ## ORGANIZATIONS
 -  [TuDelft University](https://www.facebook.com/agricimpact/)  - They have some 'manual' for building greenhouses
@@ -27,3 +31,6 @@ DATA:  [[Greenhouse Farming Data]]
 
 ### PEOPLE
 - 
+
+# LOG
+

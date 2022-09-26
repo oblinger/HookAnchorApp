@@ -1,4 +1,7 @@
-  [SandboxFutility](SandboxFutility.md)  [Argument](Argument.md)  [ProblemOfQualia](ProblemOfQualia.md)
+  [MindSlavery](MindSlavery.md)
+  
+  
+   - [[EOCA IDEAS]]:  [SandboxFutility](SandboxFutility.md),  [Argument](Argument.md),  [ProblemOfQualia](ProblemOfQualia.md), [[Subjective Aspects of Consciousness]],  
 
 ## TODO
 ### who to talk to
@@ -323,7 +326,8 @@ _
 	The default path is that Societal, Economic, and Technological forces will shape the unfolding of this next 
 
 _AGI
-# ### BUILDING A SENTIENT SYSTEM ###
+# BUILDING A SENTIENT SYSTEM
+
 ## === THE GOAL & REQUIREMENTS ===
 #### -- BOOTSTRAPPING --
 - NOT PROVEN -- Not strictly proven as a requirement.  However there are a number of indicators that suggest this as a very promising route.
@@ -386,7 +390,8 @@ DRIVES
 _
 ## === 
 _
-# 2022-02-25 - RED ALERT - THIS IS NOT A DRILL - I REPEAT THIS IS NOT A DRILL
+# WP
+### wp2022-02-25 - RED ALERT - THIS IS NOT A DRILL - I REPEAT THIS IS NOT A DRILL
 
 Stuart Russell noticed that humanity's response to the AGI threat is not similar to what one might expect if we learned an alien species was going to arrive in the next century.  I believe this is not because much of humanity (and the AI community itself) believes the really cannot arrive, but it is because they believe:
 (1) if such a threat exists it is far far into the mists of the future, and
@@ -400,9 +405,9 @@ The aim here is to scare the bleep out of humanity, and to dramatically increase
 
 
 
-# 2022-02-25 - DAG OF SCOPES / INHERENT TO SOCIETY OF AGENTS / 0-DAY-ATTACKS
+### wp2022-02-25 - DAG OF SCOPES / INHERENT TO SOCIETY OF AGENTS / 0-DAY-ATTACKS
 
-# 2022-02-25 - INHERENT CENTRALIZATION / SUCCEPTABLE TO DEVISTATING ATTACK
+### wp2022-02-25 - INHERENT CENTRALIZATION / SUCCEPTABLE TO DEVISTATING ATTACK
 
 Hiearchy is common in, military, corporate, governmental, societal organizations.
 It is common in ecosystems, bioligical entities too.
@@ -410,11 +415,11 @@ It is common in ecosystems, bioligical entities too.
 ?? Here we argue that it is inherent aspect of goal-directedness / intent ??
 
 
-# 2022-02-25 - COMPETITION WILL BE KEY & DIFFERENTIAL SOCIETAL KNOWLEGE WILL BE KING
+### wp2022-02-25 - COMPETITION WILL BE KEY & DIFFERENTIAL SOCIETAL KNOWLEGE WILL BE KING
 
 - either within compoents of an AGI or across species(es) of AGI it will be of central concern.
 
-# 2022-02-25 - DEGENERACY / TAIL COMPLEXITY
+### wp2022-02-25 - DEGENERACY / TAIL COMPLEXITY
 
 I do not have conviction that this claim is true, rather it seem it could be true.
 
@@ -463,8 +468,8 @@ It is clear from human history in computation that there is significant substrat
 
 
 
-# wp2022-01-18 >>> ASK EVAN HUBINGER <<<
-## Snipits
+### wp2022-01-18    >>> ASK EVAN HUBINGER <<<   (big sections)
+#### Snipits
 
 [OBJECTS](n:all)  IN THE MIRROR ARE CLOSER THAN THEY APPEAR
 
@@ -483,7 +488,7 @@ This is a funny admission from Mr. doom and gloom.  But it is accurate, and furt
 ~-~~
 
 Ok I hope I have throughly trounced all "that just cant happen soon" kinds of objections.  We really DONT have evidence that it cannot and will not happen 
-## === THE ENVISIONMENT AGENDA ===
+#### === THE ENVISIONMENT AGENDA ===
 
 My first thesis advior Ken Forbus had an idea he called _qualitative envisionment_.  It was the set of all possible futures that could proceed from a given starting state and a set of qualitative processes operating on that starting world.  For example, imagine a bath tub with water flowing in, and an open plug so water is also draining out.  The envisionment of this system has three states:  an empty tub, an overflowing tub, and a tub with a water height that generates a pressure which perfectly equalizes the inflow and outflow of water.  Qualitative analysis allows us to see this intermediate height is one of three attractor of this system.  By rough analogy I imagine expressing causal processes and historical trends that we see today as the rules or laws of the "AGI construction universe".  Here are two possible rules for describing this world:  Over time there we tend to be able to pack more transistors per chip/computer.  Or over time we tend to develop new tabla-rasa learning systems that train behaviors that we once built as explicitly encoded AI systems, and once this transition occurs we rarely transistion back.  The aim of this envisionment is not to predict a single future, but instead it is to provide a set of possible futures that are all consistent with the rules/trends we observe.  This weaker aim I think is more achievable, and still has great value since we can see those particular futures we really don't like within that set, and what things they causally depend upon.  This provides a starting point for doing some shaping about how the future unfolds.
 
@@ -495,7 +500,7 @@ My thinking is that one could formulate many rules/trends/causal-patterns in a w
 
 
 _AGI
-## === CLOSER THAN THEY APPEAR ===
+#### === CLOSER THAN THEY APPEAR ===
 Each of the arguments below can be broken into their constituent claims and debated as part of the envisionment agenda.
 The idea would be to precisely frame each claim/question and see if as a field we had a consensus belief about that narrow claim.  My feeling is in many cases we will find consensus, thus bringing us closer to consensus on some overall beliefs about AGI, before it is upon us.  Here they are simply presented as arguments that we may be systemtically underestimating the threat because we are over estimating the time before AGI is achieved.
 
@@ -508,12 +513,12 @@ The idea would be to precisely frame each claim/question and see if as a field w
 _
 
 
-### Key Breakthrough Quantum Jumps -- 
+##### Key Breakthrough Quantum Jumps -- 
 
 - HMMs for speech reco
 - MCMC for Go
 _
-### --- Performance comparison is drastically wrong ---
+##### --- Performance comparison is drastically wrong ---
 
 Imagine the generals during WWII were questioning the enormous costs of Nuclear research, and not trusting the scientists they decided to simply plot the total energy output of the largest nuclear reaction measured each point in time against the total energy output of that reaction.
 
@@ -533,16 +538,17 @@ The reason that direct
 
 
 _
-### --- Currently doing it all wrong, but this only obfuscates the real progress being made ---
+##### --- Currently doing it all wrong, but this only obfuscates the real progress being made ---
 
 If our
 _
-### AFB -- Attack From Below
+##### AFB -- Attack From Below
 
 _
-### --- Each algorithms AGI
-## === AGI MILESTONES ===
-### --- Executive Overview ---
+##### --- Each algorithms AGI
+
+#### === AGI MILESTONES ===
+##### --- Executive Overview ---
  
 In this chaper we enumerate the reasons why our first AGI will very likely be made in the image of us, will learn, and will reason "like" us.  We explain what we mean by this claim, and we show how this illuminates the path towards our first AGI.
 
@@ -559,7 +565,7 @@ We argue human acquisition of general intelligence is so tied to human ability t
 We see that much of present day AI is not directly addressing this roadmap, nonetheless many ancellary activities are advancing our understanding of these required compoents.
 
 _
-### _
+##### _
 
 I don't believe that we understand AGI, nor do I believe if we just do more of what we have done so far that a ghost-in-the-machine AGI is going to pop out.  Still I do believe we can already see the outlines of a path toward AGI.  Perhaps there are other faster paths, but at least by looking more carefully at this one path, we can get an upper bound kind of estimate of the distance that remains before achieving AGI.
 
@@ -588,7 +594,7 @@ Finally we consider where the tipping point might be where the genie of AGI is f
 
 
 _AGI
-### PG -- Post Genomic (Task, Reasoning, Learning)
+##### PG -- Post Genomic (Task, Reasoning, Learning)
 
 Humans are our best template for understanding the design and construction of a AGI systems, thus it behooves us to characterize and understand the generality of the human system as a first step towards AGI.  There seems to be great generality in what humans can learn; in a sense we can view each human baby is a kind of universal learner.  All things equal, a single human child could grow to know and perform at an expert level over a collossal variety specialized domains.  There is something quasi-universal about human learning in that respect.  Still it is not the case that all imaginable capabilies can be learned by humans---finding a best regression line over noisy data with many dimensions is ill suited for humans, among other poor task choices.  On the flip side there are many human capabilities (like how to walk) which quite plausibly are not learned via some universal algorithm, but are instead partially hard-wired through millions of years of evolution.
 
@@ -625,7 +631,7 @@ Of course it is not quite a clean as presented above.  There are several systema
 **POST GENOMIC** -- We use _**post genomic**_ to refer to learning, reasoning, and tasks that did not exist during the large span of time where the basic function and structure of our human cognition was evolving.
 
 _
-### CC -- Curricular Conjecture
+##### CC -- Curricular Conjecture
 
 In reasoning about this post genomic capability we find it useful to introduce a second distinction articulable verses inarticulable knowlege.
 
@@ -661,20 +667,20 @@ Includes both:
 
 - conscious 
 _
-### CHS -- Conscious Human Strategies (for Reasoning, for Learning, for Validating)
+##### CHS -- Conscious Human Strategies (for Reasoning, for Learning, for Validating)
 
 _
-### PGME -- Post Genomic Modelling Engine --
+##### PGME -- Post Genomic Modelling Engine --
 	- Includes strategies for discovering, exercising, and refining existing modeling gaps
 	- Includes passive agent observation strategies
 	- Includes interative instructor driven strategies
 	- Includes ability to identify and refine new abstractions 
 _
-### IAE -- INTROSPECTIVE ADAPTATION ENGINE -- 
+##### IAE -- INTROSPECTIVE ADAPTATION ENGINE -- 
 
 _
-## === END RUN ANALYSIS ===
-### Executive Overview
+#### === END RUN ANALYSIS ===
+##### Executive Overview
 
 MY AIMS
 - FEEDBACK -- A gut check regarding the novelty & value of the thinking
@@ -726,12 +732,12 @@ Defensive approaches:
 
 
 _
-### _
+##### _
 
 Here we introduce a bit of notation that allows us to uniformly refer-to and reason-about a very broad class of safety measures one might consider in conjunction with a powerful AGI system.  Below you will see we are not modelling the specfics of (1) the AGI systems itself, (2) the safety measures built to constraint it, nor (3) the kind of controllability / safety guarantees one is seeking.  Thus this framework and these results apply extremely broadly even in the face of many unknown unknowns regarding the nature of the future AGI systems and the kind of safety guarantees we attempt to ensure.
 
 _
-### --- FRAMEWORK FOR CONTROLLABILITY ANALYSIS ---
+##### --- FRAMEWORK FOR CONTROLLABILITY ANALYSIS ---
 
 Here we build up the framework for our analysis by introducing it as a sequence of term defintions.  Later we use these to reason about the controlability of AGI itself.  Many of these terms are so obvious and elementary, it may seem pointless to take such care in formulating each so carefully.  We will see later how this attention to detail pays off as some of the most pernicious attacks on AI safety systems come from aspects of the AGI system that are often not formalized when thinking about these systems. 
 
@@ -794,7 +800,7 @@ Notice the notation above provides a fairly low-commitment framework for discuss
 
 
 _
-### --- CONTAINMENT STRATEGIES ---
+##### --- CONTAINMENT STRATEGIES ---
 
 In a full treatment of this subject one would use the framework to characterize the different containment strategies according to which parts of the system one is attempting to control in order to ensure safety requirements are maintained.
 
@@ -827,7 +833,7 @@ For now instead of digging into this rich space of ideas -- a space where most o
 {[Evan, good scholarship here would be to take the space of proposed safety mechanism and place them into this taxonomy.  That has the second benefit of reinforcing the idea that the challenges I will list below, will cover ALL of these defense approaches.]}
 
 _
-### --- END RUN --- 
+##### --- END RUN --- 
 
 An "end run" is a type of escape strategy that exploits an unexpected weaknesses in the implementation of the AGI system or its safety mechanism in order to acheive an escape trajectories from an AGI ensemble that has a valid ACP (algorithmic containment proof).  Formally:
 
@@ -916,7 +922,7 @@ Intention is a chosen tendency (?derived from adapt, or maybe ?derived from conf
 
 
 _
-### --- Lessons from goal directed agents - Optomization System ---
+##### --- Lessons from goal directed agents - Optomization System ---
 
 Any introduction to AI course will teach that one can express most any problem as a search or as an optomization problem.  According to this formulation there are a large number of alternatives that might be considered, and some kind of scoring function that indicates how good each alternative is according to the purpose indended by the system's creator.  In complex cases the scoring function itself may be difficult or impossible to compute.  Nontheless, assuming the creator aimed to achieve some end when creating the system, there will be some measure of how well it is doing, even if that measure is not computable for particular instances.
 
@@ -957,8 +963,8 @@ Like any drive, potentially this is a drive that can be managed, but it will be 
 
 
 _
-### --- Lessons from Cyber Defense ---
-#### _
+##### --- Lessons from Cyber Defense ---
+###### _
 
 We believe humanity's experience in cyber defense and cyber warfare provide an invaluable window onto what the containment of a AGI might be like.  Cyber defense/offense is now fairly mature discipline with many 10,000s of person years worth of effort dedicated to both cyber offense and cyber defense.  This gives us a unique view into the general rules of thumb that (we argue) will likely hold true for the upcomming battle to contain AGI systems.
 
@@ -985,7 +991,7 @@ So what lessons can we learn?
   
 
 _
-#### -- Web of Scopes -- 
+###### -- Web of Scopes -- 
 
 - Management of control is of central concern in for both physical and cyber space.
 - The cyber world is formally constructed as a complex web of nested regions and forms of control.
@@ -995,7 +1001,7 @@ _
 - Since the AGI war for control will be first fought in cyber space and only later in the physical world, we expect lessons learned regarding warfare over a web of scope will directly apply.
 
 _
-#### -- Wedge expansion --
+###### -- Wedge expansion --
  A LITTLE DAB WILL DO YA --
 
 - Generally (but not universally) once an actor is able to execute a single unsafe action at a specific generative scope of capability then complete loss of control is achieved over that scope.
@@ -1009,14 +1015,14 @@ This is why we are focused on proofs of complete and perfect control. Likely any
 
 
 _
-#### -- Scope Containment Domination --
+###### -- Scope Containment Domination --
 - A defender controlling a scope from outside of that scope can often over power an attacker forced to operate within that scope --
 e.g. re-install the OS
 
 The defender looses this advantage when the attacker can penetrate the outer most scope controlled by the defender.
 
 _
-#### -- Scope boomerang -- Extrinsic Boomerang Effects --
+###### -- Scope boomerang -- Extrinsic Boomerang Effects --
 
 An ACP by definition applies to some particular algorithmic context over which we have proven some constrian.
 
@@ -1035,16 +1041,16 @@ e.g. an 0-day at the powerstation powering the system.
 --> Provisioned extrnisic boomerang effects
 
 _
-#### -- APTs are the worst???
-#### >> LESSER IDEAS <<
-#### -- Stenography trumps inspection??? -- 
+###### -- APTs are the worst???
+###### >> LESSER IDEAS <<
+###### -- Stenography trumps inspection??? -- 
 
 
 _
-#### -- Reasoning from authorship and intentionality --
+###### -- Reasoning from authorship and intentionality --
 
 _
-#### -- Non-reversability 
+###### -- Non-reversability 
 
 favors the most destrcutive agents.
 - If agent A dominate agent B, but does not incapacitate B.
@@ -1054,7 +1060,7 @@ this transition is usually non-reversible.
 Causes temporal domination
 
 _
-#### -- Cyber Defense Conclusions
+###### -- Cyber Defense Conclusions
 
 - DEFENSE will be much harder than OFFENSE
 	- Holding the rock 1/2 down the hill
@@ -1066,15 +1072,15 @@ _
 	==> This provides an advantage to any agent seeking annialiation of others.
 
 _
-### --- Lessons from the societal success of nuclear non-proliferation --- 
+##### --- Lessons from the societal success of nuclear non-proliferation --- 
 
 Societal lessons about approaches for technology control
 
 This is about the propagation of know how and technological means
 
 _
-### --- Defending against End Runs ---
-#### - In-escapable substrate -
+##### --- Defending against End Runs ---
+###### - In-escapable substrate -
 
 Idea: If we can expand our proof of controllability to encompass the computing substrate itself, this would yield a proof of controllability that was rooted directly in the laws of physics.
 
@@ -1094,11 +1100,11 @@ WHY THAT IS DOUBTFUL AT THE LEVEL
 
 
 _
-### --- Chapter Conclusions ---
+##### --- Chapter Conclusions ---
 
 _
-## === FIRST PERSON AGI RESEARCH
-### _
+#### === FIRST PERSON AGI RESEARCH
+##### _
 
 
 I have a thought about why actually doing work towards
@@ -1117,8 +1123,6 @@ You took ALOT of wind out of my sails, when you pointed out that once we have th
 
 
 _
-## === ROADMAP ===
-# WP
 ### wp2022-02-24 - LARGEST CLAIMS
 - One cannot sandbox a willful GAI
 - An AGI that desired it would likely 'win' in a battle against humanity
@@ -1201,17 +1205,7 @@ The treasonous American and that's me in the treason is the treasonous thought i
 
 _
 # LOG
-
-HEALTH
-HOME
-HACK
-
-
-
-
-
-
-### t2022-07-09  Zombie Consciousness
+### n2022-07-09  Zombie Consciousness
 
 
 
@@ -1347,7 +1341,7 @@ That said, at a practical level, we presently can't build expert systems with th
 
 Frighteningly, I think the learning substrate required to bootstrap fully human-like consciousness is not that much more advanced than where we are today.  
 
-### t2022-07-06  Bengio's based model of consciousness
+### n2022-07-06  Bengio's based model of consciousness
 
 Indeed I find Yoshio Bengio's Generative Flow Networks to be the first deep learning model I know of that seems to be able to entertain the generated mental structures required of this base learning system..  My intuition is that this needs to be coupled with a GANS like feedback loop so that these structured can self-reinforce even when only given unsupervised world-data inputs, just as a GANS use such unsupervised inputs to achieve self-reinforced learning between multiple opposing system.  Then all of this needs to be wrapped up into an agent that is embedded into an appropriate body, with an appropriate animal nature, an appropriate society, and an appropriate learning curriculum.... then viola a bootstrapped understanding of all of those layers, culminating in a bootstrapped human-like consciousness.
 
@@ -1586,3 +1580,11 @@ And it seems having a window of dominance could help us understand if there is a
 So ironically enough the AI researcher who believe is dooms day is still arguing to do the AI research, since the worst outcomes are like to result from learning the key parts of the bootstrapping algorithms long after Moore’s law has put enough nuclear material into the average smart phone to do us in.
 
 Sound a little self serving huh?  But the logic seems unassailable…
+
+### t201--00-00 - bootstrapping intelligence
+Erik, nicely thought out piece, and I agree that Sci Fi has all the right ingredients by usually it is small differences that make all the difference. Asimov wrote a futurist piece that I read, and is predictions were kind of right, but mostly irrelevant.
+But I feel your analysis of deep fakes is a bit off the mark. Here is an analogy: We have shown that indexed mutual funds can perform as good as active investors, but no one believes this would continue if we replaced ALL active investors with indices, there would be no "original content" to copy!
+Measuring how well ML can ape humans is not relevant to how close they are to replicating the thoughts required to produce a NOVEL style. This is the more important measure.
+Still all that said, I believe that we have already constructed much of the machinery needed to build the first self-bootstrapping intelligence. THAT intelligence will grow like a baby does, and construct its own theory of mind. 
+My take is that we are like physicists doing science before the construction of the first atomic bomb. We might theorize what effects such a chain reaction would have, but until we light one up, we are not going to really see that reaction for ourselves.
+In a similar way, the behavior of our non-chain-reacting intelligences will always look quite different from our chain-reacting intelligence. UNTIL we build the other one. Then just as alpha-go in one step moved computer go from the back waters to beating all humans, this chain-reacting algorithm will bootstrap human knowledge (kind of) in one step.

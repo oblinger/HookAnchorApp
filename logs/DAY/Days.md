@@ -1,4 +1,23 @@
 
+### d2022-09-21 - still covid positive 
+07:   Coursera
+
+### d2022-09-20  
+04:  Think for nick call about Jason
+07:   Coursera
+
+
+### d2022-09-19  
+05   chew
+07   Courera
+
+
+
+
+### d2022-09-15  
+01  Weekly
+
+
 ### d2022-08-26  
 
 

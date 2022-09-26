@@ -6,7 +6,7 @@
 - DAILY then WEEKLY reviews on most days.  Write a JNL entry with (1) gratitude, (2) what's working & not, (3) any updated plans, (4) occasionally retrospectives.
 - ALARM - Set alarm, Cash card controls required waking.
 - PLAN - Plan day (After Eli, or In Morning)
-- WAKE - Waking activities:  Teeth,Dress,Clean  Meditate,Walk [wack]
+- WAKE - Waking activities:  Teeth,Dress,Clean  Meditate,Walk wack
 - FAMILY - Break for family when need.  Immediate return.
 - FOOD - 20min food break is ok, can read
 - !!NO OTHER - No other shit!  Need to get down to work
@@ -77,12 +77,12 @@ FEATURES
 Idea: Define specific activities associated with three daily hooks
 
 WAKING ANCHOR
-- Dress: Bed, Teeth, Scale, Clothes, Meditate
+- Dress: Bed/Teeth/Scale/Clothes, ?Meditate?
 - Desk: Pills, Coffee, Apples
 - MIT: 
 
 
-LUNCH ANCHOR -- Immediately after lunch
+EAT ANCHOR -- Immediately after lunch
 - Plan post-lunch engage period & rest of day
 
 

@@ -1,8 +1,47 @@
   [BrainDomains](BrainDomains.md)
-
-
+	 211.6 - 1e87.8
+## TOPICS
 
 # LOG
+
+### n2022-09-24  Broad Agenda (For Nina)
+
+
+- DL system output.
+	- similar to type I reasoning -- intuitive and instant
+- No critiquing.  
+	- Dali-E returns six photos for picking.
+	- Code writing systems cannot debug incorrect outputs.
+	- Story writing systems can generate cohesive texts some times, but cannot distinguish between cohisive and in-cohesive texts.
+- WHY?  
+	- Unexpected:  Either data should fully constrain good solution, or the top 10K solutions should all be bad.  Unlikely that EXACT amount of data to ALMOST succeed.
+	- WHY?  Knowledge required to fully solve problem is a very different kind....    
+- Deliberative/Critiquing:   
+	- All of these things require a second deliberative, critquing step.  Examples:
+- HOW
+	- Can use GAN-like approach to build second model.
+	- BY DEMONSTRATION - 
+
+
+- AI Safety
+
+
+### n2022-09-11  WORLD MODEL
+
+- PERCEPTION STACK - A [[VAE]] stack.  In additional to optimally reconstructing the original inputs, the system is optimized to provide needed distinctions for remainder of the brain.
+- WORLD MODEL - "Nexter" - Predicts next state of the VAE and its score
+
+
+WORLD MODEL:
+- WORLD STATE - Abstracted Perceptive State.
+	- ws = WS(p)
+- INPUT:
+	- tObserved action taken as input --OR-- Predict action taken as output
+- ==> New Abstracted Perceived State
+- DRIVES:
+	- Correctly predict the next world state.
+	- Accurately reconstruct perceptive state.
+
 ### n2022-08-23  ARCHITECTURE & ALGORITHM IDEAS
 
 - CTX - CONTEXT - subnet dedicated to abstracting thinking context

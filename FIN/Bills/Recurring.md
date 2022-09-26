@@ -13,7 +13,7 @@
 - $350/yr		Elan (Vijaya accountant)
 - $6,010/mo 	House Mortgage
 - $220/mo	PGandE Gas/Ele
-- $130/mo    	SFpuc  (water bill)  Used to be $70 now $130  (2020.08 $321.02)
+- $130/mo    	SF PUC  (water bill)  Used to be $70 now $130  (2020.08 $321.02)
 - $130/mo?	Sunset Scavenger  (where did this bill go???)
 - $217/mo?	Blue Cross Monthly
 
@@ -24,13 +24,14 @@
 - $36/yr		1-Password
 - $50/yr		Nest Aware (renews Dec 1)
 - $600/bi  	Geico
+
 - $15.50/mo 	Netflix
 - $15/m		Spotify Premium
 
-Consumer Reports
 - $xxxxx		Nest video  $5
-- $56.16		iphone  ('till june of 2020)
 - $4/m		Ny times (revert to $15/m no Nov-23-2020)
+- 		Wall Street Journal
+- $13/m		Peloton
 
 VARYING - CHASE FREEDOM
 - vary		Uber (mostly on on this account)
@@ -49,6 +50,9 @@ SAPPHIRE
 
 DANO - APPLE - Mac->AppStore->MyPicture->AccountSettings->Manage->Subscriptions
 - $29/yr		Insight Timer
+- $49/mo		Coursera
+- $20/mo		Obsidian Publish    (also paid annual for sync)
+- 
 
 OTHER  ~~
 - $230/mo	AT&T  (Paid on corp SVB account)

@@ -1,12 +1,21 @@
-  [Greenhouse Farming](Greenhouse%20Farming/Greenhouse%20Farming.md)
-
-[[LOGS/IDEA/Ideas Social/EduCorp/Edu Corp.pptx|PowerPoint]]    [[Greenhouse Farming]]   
-- [gEduCorp](https://drive.google.com/drive/u/0/folders/10pUPzVcBn5PxmMQYC8T60PDpdrQgQ817):   
+- [[LOGS/IDEA/Ideas Social/EduCorp/Edu Corp.pptx|PowerPoint]]    [Greenhouse Farming](Greenhouse%20Farming/Greenhouse%20Farming.md),  [gEduCorp](https://drive.google.com/drive/u/0/folders/10pUPzVcBn5PxmMQYC8T60PDpdrQgQ817):   
 
 
+# TODO
+- GREENHOUSE / SCREENHOUSE:  Napkin model of greenhouse, screenhouse, transport.
+
+
+# TOPICS
 
 
 
+you don’t want or don’t feel comfortable dealing with hardware but still want to stake your 32 ETH, staking-as-a-service options allow you to delegate the hard part while you earn native block rewards.
+
+These options usually walk you through creating a set of validator credentials, uploading your signing keys to them, and depositing your 32 ETH. This allows the service to validate on your behalf.
+
+This method of staking requires a certain level of trust in the provider. To limit counter-party risk, the keys to withdrawal your ETH are usually kept in your possession.
+
+Learn more about staking as a service [here.](https://ethereum.org/en/staking/saas/)
 
 
 

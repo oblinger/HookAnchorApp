@@ -1,9 +1,14 @@
+  [null](null.md)
   [Days](Days.md)
 =[[TAG]]   [[PTM]]<[[UNTYPED]]
 - [[Days]]   
 
 | Date        | File  | Notes                    |
 | ----------- | ----- | ------------------------ |
+| d2022-09-21 | [[Days]]  | still covid positive     |
+| d2022-09-20 | [[Days]]  |                          |
+| d2022-09-19 | [[Days]]  |                          |
+| d2022-09-15 | [[Days]]  |                          |
 | d2022-08-26 | [[Days]]  |                          |
 | d2022-08-21 | [[Days]]  |                          |
 | d2022-08-17 | [[Days]]  |                          |

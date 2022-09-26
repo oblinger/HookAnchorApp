@@ -1,4 +1,6 @@
-
+## test
+- Examples Vault [here](https://s-blu.github.io/obsidian_dataview_example_vault/),
+- 
 # # LOG # 
 ### 2022-03-25   [templater+dataview example](https://github.com/blacksmithgu/obsidian-dataview/issues/42)  
 

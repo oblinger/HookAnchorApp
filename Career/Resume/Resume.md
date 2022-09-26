@@ -8,7 +8,8 @@ Addendum
 - organize by area
 - who is he as an IC
 
-s
+# LINKED IN PARTS
+- [[z2 - Linked In Module]] - 
 
 # # RESUME SOURCE INFO # 
 ## = ADDRESES

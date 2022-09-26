@@ -1,3 +1,11 @@
+
+## TODO
+- LINKED:  Title; Refactor AF; TopImage
+- Git Hub Presence -- Start commenting and starring other projects
+- Choose title for linked-in
+- Is my resume good?  how to know?
+- [ ] what work was being done in MRP that is DL related?
+
 ### LINKED IN ACTIONS
 - Three Recommendations:  Joe, Nick, Felipe
 - Title:  Engineering Leader | Machine Learning Scientist
@@ -7,13 +15,6 @@
 - List out Other projects at AF. e. g.  redis
 - Aeolus:  break out different technology 
 - Linked in post about R-Z acquistion
-
-## TODO
-- Git Hub Presence
-	- Start commenting and starring other projects
-- Choose title for linked-in
-- Is my resume good?  how to know?
-- [ ] what work was being done in MRP that is DL related?
 
 
 # LOG

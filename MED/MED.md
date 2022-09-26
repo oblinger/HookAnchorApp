@@ -1,19 +1,21 @@
+a-[[MED_Food]],  
 
 # TODO 
-- [ ] Daily 7-min exercise
+- [ ] DAILY: Walking or Peleton w/ weights
 - [ ] PENIS - 
 - [ ] LAB-CORP - 2622 Ocean Ave 416-469-9710  (Fasted in morning before 10am)
 - [ ] [[MED|MED]] Nutritionist - Decide who to work with #todo
 - [ ] PULMONOLOGIST - Charles McDonald  2100 Webster Street  415-749-5779
-- [ ] Homeocyctein
+- [ ] Homeocyctein; apo-e
 - [ ] [Thyroid](https://allyoucaneat.org.uk/wp/weight-tired-underactive-thyroid-tests/) 
 
+- [ ] Daily 7-min exercise
+- [ ] do my budget
 - [ ] DERMATOLOGIST - David J MacGregor 450 Sutter Rm 1824  415-989-9400
 - [ ] [[MED|MED]] Find Heart health institute
 - [ ] [[MED|MED]] Diet & Exercise
 - [ ] Get measurements (salt, BP-base, HR-watch tracking)
 - [ ] Get Therapist
-
 
 
 #### Diet & Exercise notes
@@ -73,6 +75,12 @@
 ## = MEDICAL MEASUREMENTS
 ### HOMEOCYSTEIN
 - [Maria](https://medium.com/feed-your-brain/forget-cholesterol-its-your-homocysteine-level-that-matters-716a8fe9d345),   Ideal is <10.   >15 is considered abnormal.
+### APO-B
+- [Pritikin Article](https://www.pritikin.com/what-is-apob?utm_campaign=Weekly%20Newsletter%20Campaign%20&utm_medium=email&_hsmi=224117336&_hsenc=p2ANqtz--l-p5JO-PYGYpraHeIa0oRwqdqb5IZ4jsUes5gFpNwPClwrNac4R9oKNykGHqH7OuJd6RTtouCgobo1BQiSKAEifjFZA&utm_content=224118332&utm_source=hs_email),
+	- two kinds:  apoB-48       apoB-100 (made in the liver, )
+	- They was under 100 for TotalCholesterol-HDL   or under 80 if reversing CVD
+	- Same 100 and 80 numbers for the apoB levels
+
 ## OLDER TODO
 	- Simvastatin level  chol 240/ LDL 190
 	- sutter bernal campus CPMC
@@ -303,6 +311,10 @@ Ted hose
 
 97.4 - 100.4. Good temp
 
+### r201--00-00  IBS Links
+
+[IBS food to avoid](https://www.webmd.com/ibs/guide/diet-solution-ibs-with-diarrhea#2) 
+[Fiber for urgent poop](https://health.usnews.com/health-news/blogs/eat-run/2013/06/25/a-tale-of-two-fibers) 
 ### 2000-00-00  Medical.InsuranceAnalysis --
 
     (800) 441-5741 
@@ -364,3 +376,4 @@ Ted hose
      *  Mother, Grandmother, and 3 others in extended family have diabeties
 
 
+-----------------

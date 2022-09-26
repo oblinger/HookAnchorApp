@@ -734,6 +734,31 @@ Questions:
 
 
 ### - OLDER ODYSSEYS
+#### - ML Researcher
+MGR: Same as IC, but less training, less uniform, and more money
+
+TIMELINE YEAR 1
+- Y1:	Park at Visio, or Consulting
+- Y1:	ML Courses
+- Y1:	Publish Uniform; build community
+- Y2:	Interviewing & Get job
+- Y2:	Heads down learning @ Google
+- Y3:	Back to Uniform
+- Y3:	Build Social Life @ home and @ google
+- Y3:	Leading an interesting project
+- Y4:	UF info project w/ open source
+- Y4:	First Goog success; building network & leads for many projects
+  
+  
+  
+  _
+
+
+
+Questions:
+- Can I make this switch
+- 
+
 #### - KMCO - Marketplace - UNIFORM - Guy
 QUESTIONS:
 - Who is my 'customer'? what will they pay for?  ML-wizard

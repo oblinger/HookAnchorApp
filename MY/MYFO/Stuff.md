@@ -37,6 +37,7 @@ S32D850T  LS32D85KTSR/ZA   32"  2560x1440   300CD/M2   (3840x2400) (Aeolus 2017)
 ## = OTHER =
 - FAN - [Voranado 660 AE](https://www.vornado.com/wp-content/uploads/2021/03/660AE.pdf)  
 - LOCK - 
+- AIR PURIFIER - Conway Airmega 
 ## = KITCHEN =
 ### - Oven
 LG SIGNATURE 7.3CuFt Dual Fuel Slide-in Gas Convection Range with Infrared Heating in Textured Steel 

@@ -11,6 +11,12 @@ LETTER OF RECOMMENDATION
 - [[@Nick Allen]],  [[@Theo Enns]],  [[@Joe Augenbraun]],  [[@Felipe Lavratti]], 
 
 
+
+david israel
+
+John Cameron, Anastasia, 
+
+
 - AF: [[@James Briones]]  
 - Aeolus:   [[@Daniel Haddick]]  ???,  [[@Attila Aros]],  
 

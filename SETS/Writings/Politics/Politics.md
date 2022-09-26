@@ -3,12 +3,12 @@
   [race](race.md)  [trump](trump.md)
 
 # REF
-### t2022-07-18  Optimal Tax Policy
+### r2022-07-18  Optimal Tax Policy
 - https://scholar.harvard.edu/files/mankiw/files/optimal_taxation_in_theory.pdf
 
 
 # LOG
-### 2021.00.00 - ARE YOU INFORMED OR ARE YOU MANAGED?
+### n2021-00-00 - ARE YOU INFORMED OR ARE YOU MANAGED?
 
 
 I have a thought I have been chewing on thought for a bit.   See what you think...
@@ -45,7 +45,7 @@ What ya think?
 
 
 _
-### 2021.01 - Not fact based -- trump won by a lot
+### n2021-01-00 - Not fact based -- trump won by a lot
 
 
 https://apnews.com/article/donald-trump-courts-election-results-e1297d874f45d2b14bc99c403abd0457
@@ -65,7 +65,7 @@ Nevada judges are nonpartisan. But Russell’s father was a Republican governor 
 ~-~-~
 — U.S. Circuit Judge Stephanos Bibas, a former law professor appointed by Trump, wrote, “voters, not lawyers, choose the president. Ballots, not briefs, decide elections,” as his panel refused to grant a request to stop Pennsylvania from certifying its results. 
 
-### t2022-07-22  - Religious tolerance
+### n2022-07-22  - Religious tolerance
 
 This seems an issue of legitimate disagreement in this country.
 Some honestly see same-sex couples as a natural and healthy thing.
@@ -74,7 +74,7 @@ An honest question: Shouldn't we be working to have Christian schools that don't
 NOTE: it seems very reasonable that the government ensure that there are Christian schools available that are same-sex affirming. after all 53% of the population is in favor of this, so it would be wrong to have a coalition of Christian churches block other churches. But it seems just as wrong to have a government lead coalition.
 This note is not intended to be confrontational. I am honestly questioning this.
  - dan
-### t2021-00-00  - Cheap housing idea
+### n2021-00-00  - Cheap housing idea
 
 - Not for everyone, but a cheap good option for some.
 - Need to be able (with help of a community) be a strong member of a community.
@@ -99,7 +99,7 @@ The idea is to have:
 As I see it, the problem with suspension and detention is that they are
 
 _
-### t2019-00-00 - CONSEQUENCES in the classroom
+### n2019-00-00 - CONSEQUENCES in the classroom
 CONSEQUENCES.
 It seems to me that in our effort to have "no child left behind" we have gone astray. But I wonder your thoughts on the matter, you might not agree.
 We correctly note that when we suspend a student, prison other legal actions, chances are higher that they will fail in life. From this we conclude that we should minimize these corrective actions when we can.
@@ -123,5 +123,95 @@ t2018-00-00 -  Men on top of wage ladder
 https://research.stlouisfed.org/publications/economic-synopses/2018/09/14/married-men-sit-atop-the-wage-ladder
 
 https://medium.com/@lil_shu/good-news-the-gender-pay-gap-is-solved-bad-news-its-not-solved-ea69882bd4b7
+
+
+
+### n2019-00-00 - selection bias in science
+
+https://medium.com/p/fab3a09409ad/responses/show
+
+My Context: not quite a believer in God, nor a non-believer either.
+
+
+Ella, as usual your piece is well written, and conveys the Anthropomorphic concept well. As I consider the assertion in the text: ``that these coincidences *force* scientist toward the multiverse model'' it occurs to me:
+Science can never really provide insight onto the question of the divine.
+Science has an unshakable bias towards naturalist explanations - science itself has a strong selection bias. Thus its successes in finding naturalist explanations, and its failure to find evidence for anything else merely reflects the selection bias of science itself - this outcome is not necessarily a reflection on reality.
+That said, I am not trying to bend this into some kind of God proof. What it is, is dramatic proof of the unshakability of the scientific bias (which of course has empirically served humanity quite well.)
+interesting read
+ - dan
+
+### n2019-00-00 - THE TWO CHOICES (politics)
+
+FELLOW DEMOCRATS, WAKE THE EFF UP !
+
+
+Mathematics dictates that each party has exactly two choices:
+
+(1) Craft a message that resonates with a winning majority of electorial seats.
+
+(2) Whine and moan from the sidelines while others lead.
+
+
+
+In 2016 the Democrats chose option #2 and Trump chose #1 -- that is not my opinion that is historical fact.  
+
+As we head further left we dig deeper into #2 -- folks that's not my opinion -- that is simple math.
+
+       *WAKE*  *THE*   *EFF*   *UP* !!!   
+
+
+
+So what should we do?
+1. Focus!  Only talk about issues that appeal broadly to all Americans.
+
+
+
+### n201--00-00  The Future #2 - no jobs
+
+I find pieces like this quite frustrating. You assert: we don't have to chase "talent," we can have pay parity... and profits won't suffer. I promise!
+
+I agree with your worries, but pretending that dynamics which CAUSE these problems are not there is pointless hand wringing. Like basecamp we hire rarified talent, and treat them well -- you have to if you are going to keep them!
+
+But here is the reality check for you: the jobs (like basecamp) where one person's output will impact 1M+ other people are mathematically going to be rare. And these markets are winner(s) take most all. This is the nature of knowledge work. And with automation/robotics/AI the remaining physical work will continue to have less and less monetary value.
+
+Knowledge work is an inherently unstable business. It reinvents itself at an astounding speed. Winners get more profit then grow faster, and win more. They grow to permanently dominate their area, until it is disrupted. The main areas for growth are new ones where no one has yet established dominance... and the race to gain that dominance in those areas is FIERCE. Only the luckiest, talent-est, hardest driving have a shot at that dominance, the rest will dwindle. This is the math of reality my friend, as much as you feel it morally should be different, it is not.
+
+For me the more troubling trend is the reality that we have physical work which is loosing value, and knowledge work is tending towards greater concentration. (e.g. 1 human impacts more and more others). Thus the percentage of the population that are strong financial contributors drops.
+
+Capitalism was just not built for this situation, and humans were not built to have no job.
+
+But back to your article.  It is frustrating because it purports to aim at a solution and has not even identified the problem correctly (in my opinion).
+
+--Dan
+
+
+
+### n201--00-00  The Future
+
+The core problem that is killing / will kill the present economic system:
+
+TALENT.  
+
+MULTIPLIERS.  I define a multiplier as a person whose output noticeably benefits 1M+ other people in a way that they are willing to pay for over the course of a year.  For example a well known, or strong football player might affect their team to a degree to drive game sales for 1M+ people within a given year.
+
+In the past multipliers were rare, and the fraction of the GDP paid to mulipliers was tiny, but several trends (aggregation, automationm, robotics and AI) are driving the to a point where multipliers will dominate and ultimately destroy the current economic system.
+
+This analysis is a bit simplistic, but it gets to the root of the current shift:
+Automation and aggregation are increasing the multiplication of the people remaining within certain industries.  At the turn of the last century a single farmer could only grow the food for several, now it is several hundred thousands, and the trend only accelerates.  Distribution and manufacturing are on similar trajectories.  The result is fewer people needed and outputs increased.
+
+The second trend AI and Robotics replaces human labor with capital -- the capital needed to pay for the AI and robotics.  This also reduces the number of non-multiplier jobs available.  
+
+The only counter trend to this is a craftsman or service trend where a premium is paid specifically for human labor itself.  Either because the human labor is in some way still superior to the automated alternative, or it is just the luxury of having another human wait upon you.
+
+But the fraction of the GDP paid to the non-multiplier crowd will drop without limit as automation replaces humans as the most effective solution for most tasks.
+
+This will yield a three tiered society: multipliers, servers/craftsman, and unemployables.
+
+Now how do we run such a society?  The multipliers will easily make 100x more than servers do, and the unemployed make nothing?  The present system would leave one group dead, the next group desolate earning a few percent of the GDP, and the top group making all the money.
+
+IDEA #1: 
+
+
+
 
 

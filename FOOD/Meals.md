@@ -3,17 +3,24 @@
 ## NIGHT SNACK
 - Radish, Celery, Bell Pepper, 
 - Cherry, Strawberry, 
+- CAN: Bamboo Shoots, 
+- DRY: Oatmeal
+
 ## QUICK SNACK
 - FRUIT:   BERRIES:  
 - Hummus, 
+- DRY: BeanPack, 
+
 ## READY
-- CAN:  Amy's Lentil Vegetable
-- FZN:  Edamame, Peas, Corn, Miso??
+- CAN:  Amy's Lentil Vegetable, Refried Beans
+- FZN:  Edamame, Peas, Corn, RicedCauliflower, Miso??    (Kale?, Spinach?, Cauliflower?, Okra?)
 - BATCH: SweetBurritos, Chili/SplitPea/
 
 https://www.theseaganlife.com/home/the-complete-list-of-vegetables-from-around-the-world
 
-# ### REGULAR ###
+
+
+# REGULAR
 ### Dan Lunches
 - BATCH:	Barley; Lentils; 
 - PKG:	Epicurean; EggBites; 
@@ -31,9 +38,11 @@ BATCH
 FRUIT
 - Fuji, Bananna, Berry
 
-_
-# ### OTHER ###
-### --- VEGETABLES ---
+
+
+
+# OTHER
+### --- VEGETABLES
 SNACK:	Celery, Radish, Edamame, Hummus, 
 REGULR: Cauliflower, Broccoli, Brussels, GreenBean, Peas, 
 MORE:	Beet, Cabbage, Kale, Turnip, Spinach, Quinoa, 
