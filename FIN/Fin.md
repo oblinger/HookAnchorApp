@@ -1,4 +1,4 @@
-  [Expenses](Expenses/Expenses.md),   [Bills](Bills/Bills.md)
+  [Bills](Bills/Bills.md)
 
   [[Expenses]],   [Taxes](Taxes/Taxes.md),   [Vanguard](Vanguard.md)
 
