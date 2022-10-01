@@ -6,6 +6,7 @@
 
 | Date        | File     | Notes                                                                             |
 | ----------- | -------- | --------------------------------------------------------------------------------- |
+| r2022-09-28 | [[Mgr]]      | Career COACHES                                                                    |
 | r2022-07-20 | [[MED]]      | Stomach Upset Decision Tree                                                       |
 | r2022-07-18 | [[Politics]] | Optimal Tax Policy                                                                |
 | r2022-06-10 | [[UF]]       | Master thesis, Code Mirror 6 editor that edits in two different languages at once |

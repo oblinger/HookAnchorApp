@@ -9,5 +9,4 @@
 - [[EduCorp]] - Napkin-level screenhouse Model
 
 
-# GROWTH
 

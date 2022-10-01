@@ -1,4 +1,133 @@
 
+### d2022-09-29  
+- [ ] Linked-in update
+- [ ] Yashin Email
+- [ ] Chew: Cash ideas, 
+- [ ] resume 2 Nina
+
+### d2022-09-29  
+- [x] Yashin sheet
+- [ ] Chew: Cash ideas, 
+- [x] Linked-in update
+- [ ] resume 2 Nina
+
+### d2022-09-28  
+- [ ] Linked-in update
+- [x] Joseph & Ronny call
+- [ ] Chew
+
+### d2022-09-26  
+- [x] Jason Plan
+- [ ] Cash plan; Crypto plan
+- [ ] Linked In update
+- [ ] Chew
+
+#### notes
+Alabama -  
+Alaska -
+Arizona -
+
+Arkansas -
+
+California -![✈️](https://static.xx.fbcdn.net/images/emoji.php/v9/t37/2/16/2708.png)
+
+Colorado - ![✈️](https://static.xx.fbcdn.net/images/emoji.php/v9/t37/2/16/2708.png)
+
+Connecticut - ![✈️](https://static.xx.fbcdn.net/images/emoji.php/v9/t37/2/16/2708.png)
+
+Delaware -
+
+Florida - ![✈️](https://static.xx.fbcdn.net/images/emoji.php/v9/t37/2/16/2708.png)
+
+Georgia -?
+
+Hawaii - ![✈️](https://static.xx.fbcdn.net/images/emoji.php/v9/t37/2/16/2708.png)
+
+Idaho -
+
+Illinois -![✈️](https://static.xx.fbcdn.net/images/emoji.php/v9/t37/2/16/2708.png)
+
+Indiana -![✈️](https://static.xx.fbcdn.net/images/emoji.php/v9/t37/2/16/2708.png)
+
+Iowa -
+
+Kansas -
+
+Kentucky -![✈️](https://static.xx.fbcdn.net/images/emoji.php/v9/t37/2/16/2708.png)
+
+Louisiana -
+
+Maine - 
+
+Maryland-
+
+Massachusetts- ![✈️](https://static.xx.fbcdn.net/images/emoji.php/v9/t37/2/16/2708.png)
+
+Michigan -![✈️](https://static.xx.fbcdn.net/images/emoji.php/v9/t37/2/16/2708.png)
+
+Minnesota - 
+
+Mississippi -
+
+Missouri -
+
+Montana -
+
+Nebraska - ![✈️](https://static.xx.fbcdn.net/images/emoji.php/v9/t37/2/16/2708.png)
+
+Nevada -![✈️](https://static.xx.fbcdn.net/images/emoji.php/v9/t37/2/16/2708.png)
+
+New Hampshire - 
+
+New Jersey - ![✈️](https://static.xx.fbcdn.net/images/emoji.php/v9/t37/2/16/2708.png)
+
+New Mexico -
+
+New York - ![✈️](https://static.xx.fbcdn.net/images/emoji.php/v9/t37/2/16/2708.png)
+
+North Carolina - 
+
+North Dakota -![✈️](https://static.xx.fbcdn.net/images/emoji.php/v9/t37/2/16/2708.png)
+
+Ohio - ![✈️](https://static.xx.fbcdn.net/images/emoji.php/v9/t37/2/16/2708.png)
+
+Oklahoma -
+
+Oregon -![✈️](https://static.xx.fbcdn.net/images/emoji.php/v9/t37/2/16/2708.png)
+
+Pennsylvania - ![✈️](https://static.xx.fbcdn.net/images/emoji.php/v9/t37/2/16/2708.png)
+
+Rhode Island -
+
+South Carolina -
+
+South Dakota -
+
+Tennessee - 
+
+Texas - ![✈️](https://static.xx.fbcdn.net/images/emoji.php/v9/t37/2/16/2708.png)
+
+Utah -![✈️](https://static.xx.fbcdn.net/images/emoji.php/v9/t37/2/16/2708.png)
+
+Vermont - ![✈️](https://static.xx.fbcdn.net/images/emoji.php/v9/t37/2/16/2708.png)
+
+Virginia - ![✈️](https://static.xx.fbcdn.net/images/emoji.php/v9/t37/2/16/2708.png)
+
+Washington - 
+
+Washington DC - ![✈️](https://static.xx.fbcdn.net/images/emoji.php/v9/t37/2/16/2708.png)
+
+West Virginia -
+
+Wisconsin -
+
+Wyoming - 
+
+Canada - ![✈️](https://static.xx.fbcdn.net/images/emoji.php/v9/t37/2/16/2708.png)
+
+Mexico- 
+
+
 ### d2022-09-21 - still covid positive 
 07:   Coursera
 

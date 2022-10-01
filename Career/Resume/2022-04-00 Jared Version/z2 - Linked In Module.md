@@ -1,3 +1,7 @@
+
+OUT OF DATE.   (See [[ResLinkedIn]])
+
+
 ## = TODO
 - [ ] Add patents
 - [ ] Add publications
@@ -35,7 +39,16 @@ Design and productization engagements include ML / vision-based installation des
 - Passion projects
 ~
 
-Head of the AI practice
+Head of AI
+
+Oversaw Analytics Fire's AI Practice.  Developed and managed relationship with clients as well as solutions produced.  These included 
+
+Lead AF's AI practice:
+
+AI solutions included ...
+Notable AI products included fully automated solar installation designer.
+- Our Fortune 1000 client sighted this as their “the largest single driver of new revenue growth” in the year it was released.
+- We greenfielded and productized a novel Convolutional NN used to 
 
 Oversaw our AI related solutions practice.  
 

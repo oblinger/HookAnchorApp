@@ -1,12 +1,17 @@
+  [ResLinkedIn](ResLinkedIn.md)
   [Bio](Bio/Bio.md)
   [Bio](Bio/__Bio__.md)
-   [[Bio|Bio]]    [[Dan Oblinger Resume.docx|Current Resume]]    [[My Patents]] 
+   [[Bio]]  [[ResLinkedIn]],    [[Dan Oblinger Resume.docx|Current Resume]]    [[My Patents]] 
 __
 
 
 Addendum
 - organize by area
 - who is he as an IC
+
+# TODO 
+- [ ] LI:  Featured pic for (DARPA IBM-watson-jeopardy, AF Instant design)
+- [ ] 
 
 # LINKED IN PARTS
 - [[z2 - Linked In Module]] - 

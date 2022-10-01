@@ -6,6 +6,7 @@
 
 | Date       | File                | Notes                                                                                     |
 | ---------- | ------------------- | ----------------------------------------------------------------------------------------- |
+| 2022-09-30 | [[Phone]]               | Building Work Desk in livingroom                                                          |
 | 2022-08-17 | [[Phone]]               | Dr Lue Urologist                                                                          |
 | 2022-08-01 | [[Phone]]               | notes while out - about me                                                                |
 | 2022-07-19 | [[Comms]]               | Ping Goals                                                                                |

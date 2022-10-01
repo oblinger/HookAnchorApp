@@ -1,3 +1,13 @@
+### 2022-09-30  Building Work Desk in livingroom
+
+14.75"   =   59" / 4
+Hole center:  14.75"  &  3.5"
+
+BRACKET:    2.75" from face.   5.75"
+HOLES:   		Centers at 14.75 from side edge & 4" from front face.    (edge will be 3" from front face)
+LEG TABS:	 1" in from sides.  2" from front face, and 1" from chair face.   (Front tabs stick out by 3.75" beyond central black backstop support.)
+
+
 ### 2022-08-17  Dr Lue Urologist
 
 @ parnassus health.
@@ -107,7 +117,6 @@ pet confirmation:  FRWRWH
 
 ### 2022-05-03  paid lung doctor
    # 019317
-
 ### 2022-05-02  Buying an office chair
 866-733-0698
 http://btod.com

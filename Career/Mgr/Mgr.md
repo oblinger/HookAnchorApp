@@ -1,12 +1,6 @@
-  [MgrContracts](MgrContracts/MgrContracts.md)
-  [Contracts](Contracts/Contracts.md)  [MyMgr](MyMgr/MyMgr.md)
+  [MgrTracking](MgrTracking/MgrTracking.md)
+-   [MgrContracts](MgrContracts/MgrContracts.md) [[MgrTracking]]  [Contracts](Contracts/Contracts.md)  [MyMgr](MyMgr/MyMgr.md)
   
-  ## === COACHES ===
-- [Poised](https://www.poised.vip/service-page/career-personalized-coaching-session) - ^^ this is an exec coach that a successful CTO that I know, in the context of being on her first board of directors (not day-to-day), however she also does tech exec stuff & has a career pivot coaching practice
-- [iracoach](https://irataucoaching.com) - NickWrote: this is a referral from the “CTO coach” for life / career coach
-- [80,000 hours](https://80000hours.org) - free coaching for impact career paths
-- [Design Your Life](https://designingyour.life/dyl-certified-coaches-california/) - Coaches associated with the book
-
 ## = ADVICE
 ### Advice For Meetings
 - 5min prep before meeting; Track actions; Begin meeting with a check-in; Take time to review priorities to ensure alignment; Summarize&Next steps at end; sometime send reminder of discussion same day
@@ -161,3 +155,10 @@ CULLING THE HERD
 http://projectmanagementhacks.com/meeting-tips/
 ** Decision Making (Pro/Con/Mitigation)
 http://firstround.com/review/this-matrix-helps-growing-teams-make-great-decisions/
+
+# LOG
+### r2022-09-28  Career COACHES
+- [Poised](https://www.poised.vip/service-page/career-personalized-coaching-session) - ^^ this is an exec coach that a successful CTO that I know, in the context of being on her first board of directors (not day-to-day), however she also does tech exec stuff & has a career pivot coaching practice
+- [iracoach](https://irataucoaching.com) - NickWrote: this is a referral from the “CTO coach” for life / career coach
+- [80,000 hours](https://80000hours.org) - free coaching for impact career paths
+- [Design Your Life](https://designingyour.life/dyl-certified-coaches-california/) - Coaches associated with the book

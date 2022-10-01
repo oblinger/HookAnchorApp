@@ -1,6 +1,8 @@
+  [2022-02 Yearbook](2022-02%20Yearbook/2022-02%20Yearbook.md)
   [2020-08 Race Pitch](2020-08%20Race%20Pitch/2020-08%20Race%20Pitch.md)
 |                            |                                                      | . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . |
 | -------------------------- | ---------------------------------------------------- | --------------------------------------------------------------------------------------------------- |
+| 2022-09 [[Mom80]]          |                                                      |                                                                                                     |
 | 2022-05 [[Photo Setup]]    |                                                      |                                                                                                     |
 | 2022-05 [[Eli Elementary]] | .                                                    |                                                                                                     |
 | 2022-05 [[Grandpa DJ]]     | Steve Cresep's Livestream and DJ service             |                                                                                                     |
@@ -11,7 +13,7 @@
 | 2022-03 [[Learning]]       | Various kinds of learning for NJ22                   |                                                                                                     |
 | 2022-03 [[BeFAANG]]        | Decide and plan for a FAANG role                     |                                                                                                     |
 | 2022-03 [[BeVC]]           | Decide if I want/can be a VC/advisor                 |                                                                                                     |
-| 2022-02 [[Yearbook]]       | Organize and produce BCMS Yearbook                   |                                                                                                     |
+| [[2022-02 Yearbook]]       | Organize and produce BCMS Yearbook                   |                                                                                                     |
 | [[2021-04 FindDayCare]]    | Select day care for Eli                              |                                                                                                     |
 | [[2020-08 Race Pitch]]     | .                                                    |                                                                                                     |
 | 2022-00 [[NJ22]]           | Career reset. Reframe self.  Prepare for job         |                                                                                                     |

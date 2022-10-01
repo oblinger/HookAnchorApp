@@ -1,4 +1,5 @@
-
+fix auto generator to create wiki links
+- [ ] buy basket for QL in bathroom; add try to her drawer
 - [ ] OBS: key to add list items to lists with one letter prefix  e.g. t=todo, etc.   TAB-Q
 - [ ] Ensure sent mail is saved. and received mail is saved.
 - [ ] OBS: command to create a new page with wiki link from current curor location

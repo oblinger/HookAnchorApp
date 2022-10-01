@@ -10,7 +10,6 @@
 | ----------- | ---------------- | --------------------------------------------------------------------------- |
 | n2022-09-24 | [[Brain3]]           | Broad Agenda (For Nina)                                                     |
 | n2022-09-11 | [[Brain3]]           | WORLD MODEL                                                                 |
-| n2022-09-09 | [[NJ22]]             | Jason or Google                                                             |
 | n2022-08-23 | [[Brain3]]           | ARCHITECTURE & ALGORITHM IDEAS                                              |
 | n2022-07-28 | [[@Felipe Lavratti]] | Job pointers at Amazon                                                      |
 | n2022-07-22 | [[Politics]]         | Religious tolerance                                                         |

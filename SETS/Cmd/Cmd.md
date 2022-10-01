@@ -5,6 +5,12 @@
 =[[TAG]]   [[TAG ROOT]] > [[PTM]] 
 
 
+FORMAT FOR COMMAND:
+=[[CMD]]   folder   /Users/oblinger/My Drive/Oblio
+
+
+
+
 
   [AmaContent](AmaContent.md),   [GitHub](GitHub.md),   [AmaKindle](AmaKindle.md)
   [GOB](GOB.md)

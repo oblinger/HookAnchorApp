@@ -1,29 +1,98 @@
 =[[CORP]]      [[@Jason Syversen]]   [[@Michael Seibert]]    
 
-
-Jack hungry non-technical
-Brian  SW lead -- A- in motivation.  
-Mark Lick-dee  Sales and marketing (interim prod mgr)
-
+# TOPICS
+## = People
+- Jack hungry non-technical
+- Brian  SW lead -- A- in motivation.  
+- Mark Lick-dee  Sales and marketing (interim prod mgr)
 
 
 # LOG
-
 ### m2022-09-22  Joining SV as consultant
+#### _
 
-| Amount | Equity @ 13M | 4 year equity | 60% @ 100M |
-| ------ | ------------ | ------------- | ---------- |
-| 150K   | 1.15%        | 4.6%          | $2.7M      |
-| 200K   | 1.5%         | 6%            | $3.69M     |
-| 300K   | 2.3%         | 9.2%          | $5.5M      |
-| 400K   | 3.07%        | 12.3%         | $7.38M     |
-|        |              |               |            |
-
-
-TWO TOP LEVEL PRIORITIES
-- REAL TIME BB STATS 
+| Amount | Equity @ 13M | 4 year equity | 60% @ 100M | 60% @ 130M | 60% @ 350M |
+| ------ | ------------ | ------------- | ---------- | ---------- | ---------- |
+| 150K   | 1.15%        | 4.6%          | $2.7M      |            | $10M       |
+| 180K   | 1.38%        | 5.5%          | $3.32M     |            | $12M       |
+| 500K   | 3.84%        | 15.3%         | $9.23M     | $12M       |            |
+|        |              |               |            |            |            |
 
 
+- QL:  Prefers I simply get a stable income that covers us both while raising Eli  
+  (money now rather than maybe more money later).  
+- But she knows I am way more excited about Visio than Google.   
+  So if SV exits, we should aim for at least an ok bay area income for the family.  e.g.  $360K/yr
+- No half measures:   Dan, go big or go home!
+  If you do this you will get totally absorbed just like DARPA, Martian Robotics, and Aeolus.  so make it worth it.
+- -->    $360K ~ $8M net ~ $12M gross.        $12M * 67.7% * 4.5% = $365K
+
+#### _
+- Whole company is a risk for the fact that you don't have a fire-in-the-belly technical co-founder.
+	- VELOCITY IS LOW - After 1.5 years you are running tweaked off shelf code vision code IN THE LAB.
+	- IP IS OFF SHELF - Replication barrier is currently low, but most believe it wont work so are not trying.
+		- FOLLOWER RISK - Market penetration is always years long, fast followers will eat us
+	- RECESSION - Fed is not going to stop raising until inflation comes down & winter in Europe will be brutal.
+	  -->   4 more months is not good.   8 is disastrous.  
+- Can be the CTO:  Get velocity, focus, differentiated-IP.     Drive valuations w investors.
+
+##### _
+- $700K total comp and $500K worth of equity is a conservative measure of my value.  
+  And hits my $360K/yr  @ 130M.      Not at 350M!
+  --> Costs you an extra 10% of your 60% equity
+  --> You are giving up 1/6 more of your equity to notably decrease risks with a technical co-founder.
+
+
+#### _
+- Here is my idea:
+	- Let's keep the cash cap idea from before.  
+	- I don't keep a penny more than $12M, so if we really do hit $350M its as if I only got the $150K equity.
+
+
+- SALES IS SLOW / PARTNERSHIPS REIGN SUPREME - Sales driven by word of mouth.
+
+
+#### _ sheets
+
+
+| Amount | Equity @ 13M | 4 year equity | 60% @ 100M | 60% @ 130M | 60% @ 350M |
+| ------ | ------------ | ------------- | ---------- | ---------- | ---------- |
+| 150K   | 1.15%        | 4.6%          | $2.7M      |            | $10M       |
+| 180K   | 1.38%        | 5.5%          | $3.32M     |            | $12M       |
+| 300K   | 2.3%         | 9.2%          | $5.5M      |            |            |
+| 400K   | 3.07%        | 12.3%         | $7.38M     |            |            |
+| 500K   | 3.84%        | 15.3%         | $9.23M     | $12M       |            |
+| 600K   | 4.61%        | 18.4%         | $11.08M    |            |            |
+|        |              |               |            |            |            |
+
+
+
+| Amount | Equity @ 13M | 4 year equity | 60% @ 100M | 60% @ 130M | 60% @ 350M |
+| ------ | ------------ | ------------- | ---------- | ---------- | ---------- |
+| 150K   | 1.15%        | 4.6%          | $2.7M      | $433M      | $10M       |
+| 200K   | 1.5%         | 6%            | $3.69M     | $325M      | $13M       |
+| 300K   | 2.3%         | 9.2%          | $5.5M      | $217M      |            |
+| 400K   | 3.07%        | 12.3%         | $7.38M     | $162M      |            |
+| 500K   | 3.84%        | 15.3%         | $9.23M     | $130M      |            |
+| 600K   | 4.61%        | 18.4%         | $11.08M    | $108M      |            |
+|        |              |               |            |            |            |
+
+
+#### _
+
+COMPS
+
+| Level      | L7 Comp | L8 Comp |
+| ---------- | ------- | ------- |
+| Levels.FYI | $695K   | $1,077K |
+| Levels.FYI | $709K   | $1,043K |
+|            |         |         |
+
+
+
+
+
+_
 ### j2022-09-22  Proposed SV Priorities
 
 ASSUMPTIONS
@@ -153,20 +222,24 @@ About $3/hr on demand or $1/hr reserved.
 4. ZZZ
 ### j2022-09-09  Value of SV based on Basketball
 
-PATHS
+    80K  = 200 leagues * 40 teams/league * 10x for total    - Lifetime fitness x10
 
-- HIGH ROAD - Focus intensely on self-modelling 
-- VISIO - Join visio & switch if not fun or not growing
-- GOOGLE - Hold out 
+	2K   gyms        For profit gyms where mens rec leagues play (USA for profit gyms)
+	30   teams/gym              
+	60K  teams       = 2000 gyms                                 (USA Men's adult teams)
+	3M   games/year  = 60K teams * 45 games per year             (Games per year) (15 per season)     
+	300K games/year  = 3M game/year * 10% penetration            (Monetized games  
+	$3M  usd/year    = 300K games/year * $10 profit per game     (Annual Revenue) 
+	$24M usd         = 3M usd/year * 8x multiple                 (Sale price) 
+	.
+	.
+	3K   leagues     = 60K teams / 20 teams/league
+	300  leagues     = 3K * 10% penetration
+	$3M  usd/year    = 300 * $10K/league/year profit
+  
 
+$13.6M post.    raised $3.6M      Jason 58%.     5% pool.  
 
-	2,000	gyms.    For profit gyms in the USA
-	30		teams/gym.
-	60K    teams  * 50 games per year   (25 per season)
-	3M     games per year   * 10% penetration
-	300K   monitized games  * $20 profit per game
-	6M     Total annual revenue from Men's rec leagues  * 8x multiple
-	48M    Sale price   
 
 
 
@@ -1104,3 +1177,10 @@ _
 
 
 	_
+
+### _
+
+
+
+
+_

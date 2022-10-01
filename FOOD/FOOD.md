@@ -13,7 +13,9 @@
 
 [FastingDiet](FastingDiet.md)
 
-#### Kinds of Resturants
+## foo
+
+#### Kinds ofResturants
 Asian 	Chinese, Japanese/Sushi/Raman, 		Korean, Thai, Viet/Pho, Burmese
 Kind  	USA, Pizza, Burger, Sandwich, Veg
 Euro 	Italian, French, German, Spanish	British, Irish, East Euro, Greek, Turkish

@@ -1,11 +1,13 @@
-- [ ] Book appt w/ EMT
-- [ ] Resume to Nina
 - [ ] MOM-BDAY:  Ronny, mom's bday
-- [ ] Yolo-x
+- [ ] re- [ ] Yolo-x
+- [ ] Resume to Nina
+
+- [ ] Covid wait for - Yashin's conservative friend
 - [ ] look at differred comp and decide what to do.
 - [ ] mac:  Battery life; Fix audio on laptop; Battery lasts 2:20 with screen brightness below 50%
 - [ ] buy plane tixs
 - [ ] ask about polishing desk
+- [ ] Book appt w/ EMT
 
 - [ ] Get AF accounts cleaned:   (Find the hiring tests)
 - [ ] Get logins for MyHealth

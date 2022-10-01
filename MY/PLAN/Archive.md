@@ -1,3 +1,4 @@
+- [ ] - [ ]
 - [ ] Dan Fine document
 - [ ] VCR - Find online articles about being a VC
 - [ ] Bloodwork.

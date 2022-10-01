@@ -1,3 +1,4 @@
+  [Empty](Empty.md)
   [KMR](KMR.md),   [Tasks](Tasks.md),   [Top](Top.md)
 
 # META
@@ -9,6 +10,6 @@
 - [[Meta Meta]] 	-  Setup details for my info pages
 
 
-- Others:    [Base](Base.md),    [Tasks](MY/Meta/Tasks.md),   [Empty](Empty.md),    [Buckets](Buckets.md),   
+- Others:    [Base](Base.md),    [Tasks](MY/Meta/Tasks.md),   [Empty](MY/Meta/Empty.md),    [Buckets](Buckets.md),   
 
 
