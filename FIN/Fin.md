@@ -1,4 +1,4 @@
-  [[bills]]
+  [[Bills]]
 
   [[Expenses]],   [Taxes](Taxes/Taxes.md),   [Vanguard](Vanguard.md)
 
