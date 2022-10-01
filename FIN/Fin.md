@@ -1,7 +1,4 @@
-  [Expenses](Expenses/Expenses.md)  [Bills](Bills/Bills.md)  [Taxes](Taxes/Taxes.md)
-  [Vanguard](Vanguard.md)
-  [Expenses](Expenses/__Expenses__.md)  [Bills](Bills/__Bills__.md)  [Taxes](Taxes/__Taxes__.md)  [Vanguard](FIN/Vanguard.md)
-  [Expenses](__Expenses__.md)  [Bills](__Bills__.md)  [Taxes](__Taxes__.md)  [Vanguard](FIN/Vanguard.md)
+  [Expenses](Expenses/Expenses.md),   [Bills](Bills/Bills.md),   [Taxes](Taxes/Taxes.md),   [Vanguard](Vanguard.md)
 
 # TODO
 - [ ] Check Allspring
