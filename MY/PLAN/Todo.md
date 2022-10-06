@@ -1,9 +1,13 @@
-- [ ] MOM-BDAY:  Ronny, mom's bday
-- [ ] re- [ ] Yolo-x
-- [ ] Resume to Nina
-
+- [ ] GET BLOOD WORK DONE
+- [ ] mom xmas trip.
+- [ ] MOM-BDAY:  Ronny, mom's bday.
+       Thr-3  Tue-8
+- [ ] Yolo-x
 - [ ] Covid wait for - Yashin's conservative friend
-- [ ] look at differred comp and decide what to do.
+- [ ] friend of Dean (back yard work)
+- [ ] Find CTO coach
+
+- [ ] look at differed comp and decide what to do.
 - [ ] mac:  Battery life; Fix audio on laptop; Battery lasts 2:20 with screen brightness below 50%
 - [ ] buy plane tixs
 - [ ] ask about polishing desk

@@ -1,3 +1,9 @@
+### 2022-10-03  
+- [ ] finalize Jason
+- [ ] Get comms list planned & schedule
+- [ ] Hours on Coursera
+- [ ] Read in NLP - flesh out that path
+- [ ] Sync resume w/ strategy & linked in
 
 ### 2022-09-25
 - [ ] Decide Jason.

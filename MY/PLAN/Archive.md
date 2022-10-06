@@ -1,3 +1,5 @@
+- [x] Resume to Nina
+- [x] Resume to Nina
 - [ ] - [ ]
 - [ ] Dan Fine document
 - [ ] VCR - Find online articles about being a VC

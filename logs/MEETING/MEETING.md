@@ -8,6 +8,7 @@
 
 | Date        | File                 | Notes                                                             |
 | ----------- | -------------------- | ----------------------------------------------------------------- |
+| m2022-10-03 | [[@Sports Visio]]        | Counter Offer Discussion                                          |
 | m2022-09-22 | [[@Sports Visio]]        | Joining SV as consultant                                          |
 | m2022-09-14 | [[@Joseph Yeh]]          | Jason decision                                                    |
 | m2022-09-13 | [[@Sports Visio]]        | [[@Michael Seibert]] discussion                                   |

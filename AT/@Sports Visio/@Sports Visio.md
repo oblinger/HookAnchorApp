@@ -8,6 +8,181 @@
 
 
 # LOG
+### m2022-10-03  Counter Offer Discussion
+
+
+Jason,
+
+As far as triangulating the reality of these online numbers I have included a bit of analysis in a separate google doc below.  Short answer: Levels.FYI has by far the most comprehensive data on the FAANGS and that data is pretty darn accurate.  It shows a breakout of the different forms of compensation by types of compensation too, so you can see there is no fluff in those numbers.  
+
+I also have spoken with folks working at Google about roles and salaries I might expect as well in some cases generalities about what they make.  I am pretty uncomfortable asking them to divulge their salary info to a third person...  They might do it, but this is a pretty big favor to ask from a people that I want to have owing ME favors.  As a concrete reference point, I do know ex-DARPA folks that are at both Level 7 and Level 8.
+
+Finally, I also know FAANG recruiters that can vouch for these numbers, and for the kinds of compensation I could expect as well.  I suspect they would be willing to have a short call where you could just ask them this yourself.  But I think the summary that we said before is quite accurate:  getting a $700K compensation (or significantly more) is definitely doable for me given the right need, and at the same time it is by no means a simple "snap your fingers" kind of thing. 
+
+
+.,.,.
+
+Well I am either good or lucky when it comes to negotiating.  We started the conversation by me being skeptical about his justifications for a $350M exit for the company.  (Such an exit is certainly possible if we notably expand the products offered over time, but I remain unconvinced about such lofty numbers for the more narrow basketball stats USA rec-league plus AAU markets.)  Still this debate serve my purposes well.  It got him strongly counter arguing well OF COURSE we have great chances to hit $350M or more!  via paths A or B or C or D!!!
+
+After that 30min lead in, THEN I started talking about my idea:
+
+I noticed how a $12M cap would actually push my equity stake down from 15% to about 3.5% once we got to $350M.  This is BELOW the level that other employees are at.  So in many ways this cap idea is easier to sell to his existing team, than johnny-come-lately getting more than triple their equity.  (Which is what his counter offer was going to give me.)
+
+Once he got it, he was pretty sold (he is still going to "look at" at the written proposal, but he says "we are close" with this.)
+As I expected he was also accepting of the CTO title.
+
+I want to put stuff in writing here, and I want to frame my value at a high level away from Dan is going to come in as a CV expert on day one, into a more broad role which fits my skills and value better.  Also I want to wedge any other important things into the response email...
+
+
+
+SO THAT IS MY REQUEST:  Would you propose any edits to the email below?  And are there aspects of the role that I should include here in this very high level proposal?
+
+
+Thanks!
+--Dan
+
+
+
+.,.,.
+
+
+Jason,
+
+Here are the terms we just outlined:
+
+Dan will join Sports Visio as a full time salaried employee with a $200K salary per year and 2M shares  $500K worth of equity.  (This is equivalent to , or 14.54% of the post seed equity.)
+Additionally Dan's equity is subject to a $12M cap.  Dan keeps 100% of the proceeds from the sale of his first $12M worth of shares, after that point 100% of all remaining shares must be put into a 503(c) non-profit from which Dan is forever barred from obtaining funds or income from of any kind.
+
+
+
+I think it's important that Jason frames Dan as the guy who is supposed to get into the knickers at all levels of the technical execution of the company in order to achieve A+ execution without having any formal report-to authority.  (As we discussed it is a strategic/organic decision over time if we decide move parts of the report-to structure under Dan, or perhaps we never do that.)
+
+I am particularly jazzed that my role on day one would begin with a formalized philanthropic aspect to it.  This idea has been my abstract target for the last 15 years, but this would be the first job where I am actually "putting my money where my mouth is"
+
+I am also particularly having jazzed about my co-founder style-mandate over a product built upon world class CV algorithms.  The whole solution ownership connects with my proven strengths, it is super fun, and being part of a world class CV team will be interesting and valuable too.
+
+Cheers, 
+Dan
+
+
+.,.,.
+NOTES FOR THE CALL
+
+that the success of this company will be intimately tied with development of novel CV algorithms.  This is _HARD_ and it will take me time to personally become expert, and to find/hire world class experts, but it is a mission that is 
+
+
+
+
+**Performance-based Stock Bonus**
+- Dan will receive his performance based stock bonus when sports visio is able to use AI to provide:  Real time basketball stats, a dramatic reduction in manual annoation time, or some other mutually agreed upon product or engineering pivot goal.
+
+
+USE OF AI TO PRODUCE REAL TIME BASKET BALL STATS
+- Usable during the game.  set of stats that are meaningful to view during game with lag which meaning.
+- people want to use
+
+DRAMATIC REDUCTION IN MANUAL ANNOTATION TIME
+- AI enables cuts the time required for hand annotation by at least 1/3 time.
+- Use AI in the support of manual annotation of basketball stats in a way that reduces the time required to produce those stats by at least 1/3.  (the resulting time is less than 66% of the original annotation time.)
+
+
+.,.,.
+
+- your partner & in for the long haul.  will spend years becoming a super expert in CV...  so this is a huge vectoring event.
+- 
+
+(1) Jason, it seems you are aiming for a co-founder style partner, rather than a super IC contributor?
+     But from an equity perspective that is not what we are framing here.  But I have an idea.  If we are really talking about an 8 or 9 figure exit here.  Let me give some of that equity BACK to you!  Let's keep the $400K (15.3%) equity stake, but let's add a $12M cap to my deal.  This way, just after hitting that 8 figure mark I hit my cap, and I must transfer ALL additional shares to a 503c non-profit, never to go into my pocket.  If we hit the 9 figure point my equity drops to just a percent or two.
+
+(2) Ok Jason.  Lets increase the performance bonus to $150K and transfer $50K salary into equity ($250K salary + $250K equity)
+
+
+.,.,.
+
+#### _
+I know I am signing up for quite a bit of intensity here, AND I will really need to hump to quickly become a competent CV alg developer.
+But I do worry that he will forever have the moral high ground to demand crazy performance from me.
+
+
+I think my value is ZZZZ. 
+
+
+
+(2) Ok Jason.  I accept.  This is a solid offer and I am very excited to ramp up in CV and to work with you.  Still this is NOT a co-founder style offer. 
+     Gaining co-founder level single-minded total-commitment requires a co-founder level of equity.
+
+
+-- X to Y --
+(3) Ok Jason.  I accept.  But this is not co-founder level equity offer to me, and ultimately I think I will evolve to effectively BE your co-founder.
+	I think it is plausible I will be central in driving the whole team towards our deliverables.
+	I think it is plausible that I will be central both thru hiring and direct contribution in moving the company away from tweaking off the shelf algorithms into a space sustainable differentiation coming from novel basket-ball specific CV algorithms.
+	Once it becomes clear that I AM doing these things, then I am going to be pushing for a real chunk of YOUR slice of the company!
+	These are the things that move this company from one of the many towards a unicorn...  If I am central to those things then I will be demanding an equity stake that really matches it.
+
+
+
+
+I accept your $600K total comp.  but lets push it to 250K+100K+50K equity and $250K cash.  this get me (barely) into double digit equity (assuming I maky my performance goal)
+
+
+(3) Ok Jason.  I accept.  But this is not co-founder level equity.  Do you want me as your co-founder, or just a CTO with a more narrow.
+	Co-founder fund-raising, 
+	Looking for minority co-founder.
+
+
+We've already talked about the things you could help with, but my thinking is 
+- help on the CV side
+- help on engineering help
+- hiring on both sides from your network. And giving me 
+- a strong technical partner and friend.
+- help us build this thing up into a killer company using AI/deeptech for sports.
+
+### n2022-10-05  Jason offer email
+Dan,
+
+  
+
+Did some research and looks like $700k is definitely high/aggressive but also a real thing and probably something that you could swing if Google was hiring and wanted you badly enough. (Looks like that's the mid point for VPs and directors and on the upper end of possible for some lower bands)
+
+It's tricky as our team is all closer to $300-400k too, and we're a startup. Obviously part of the startup appeal (besides working from home, cool people/projects, etc.) is also the fact your stock has a lot more upside than a big firm that might move up or down 5-10%. 
+
+When we spoke earlier you proposed something more like $500-600k which sounded more doable. Our ENTIRE AI team of 5 people for 18 months has cost about $1M to date... I'm not sure spending 70% of that in a year on one person would produce more results (although I do think you're pretty awesome and want to get you on board!) 
+
+How about $300k cash, $200k stock and a $100k stock bonus when we hit some mutually agreed upon big AI product milestone? (Some real time capability, or get human annotations down to a low amount, etc.) 
+
+I think we can make that work on our end. And it's not an unchanging, never negotiable point... all of us will be revisiting our situation over time as things evolve. (I'm currently making nothing!) Given we are only burning $140k a month it's a big jump in our cash burn rate (20% jump and a full two months of runway!) but I think if you bring your A game it will be more than worth it. (Which will then also make the stock go up and make that a great deal for you too!) 
+
+We've already talked about the things you could help with, but my thinking is help on the CV side as well as some engineering help and hiring on both sides from your network. And giving me a strong technical partner and friend that can help us build this thing up into a killer company using AI/deeptech for sports. What do you say, are we finally going to do this, or do I have to build another 8 or 9 digit company without you again!? :-) 
+
+
+- help on the CV side
+- as well as some engineering help
+- help and hiring on both sides from your network. And giving me a 
+- strong technical partner and friend that can help us build this thing up into a killer company using AI/deeptech for sports.
+
+  
+
+Jason
+### n2022-10-04 Thinking about the Job choice
+
+DOING THIS
+- STRENGTHEN MY:  Deep Learning Alg development:  Learn how much I like; Learn how good I am at it.  Gain experience & reputation in it.
+- 
+
+
+
+After a Year
+- I like the job & I am adding acknowledged value.
+- The product is shipping
+
+
+- In 3 months if I am central, then I push for more equity?
+
+
+DOING THIS
+
+
+
 ### m2022-09-22  Joining SV as consultant
 #### _
 
@@ -77,6 +252,7 @@
 | 600K   | 4.61%        | 18.4%         | $11.08M    | $108M      |            |
 |        |              |               |            |            |            |
 
+12
 
 #### _
 
@@ -222,12 +398,13 @@ About $3/hr on demand or $1/hr reserved.
 4. ZZZ
 ### j2022-09-09  Value of SV based on Basketball
 
-    80K  = 200 leagues * 40 teams/league * 10x for total    - Lifetime fitness x10
+    80K teams  =  200 leagues * 40 teams/league * 10x for total    - Assume total gyms is 10x of Lifetime fitness
 
 	2K   gyms        For profit gyms where mens rec leagues play (USA for profit gyms)
 	30   teams/gym              
 	60K  teams       = 2000 gyms                                 (USA Men's adult teams)
-	3M   games/year  = 60K teams * 45 games per year             (Games per year) (15 per season)     
+	
+	3M   games/year  = 60K teams * 50 games per year             (Games per year) (15 per season * 3 seasons)     
 	300K games/year  = 3M game/year * 10% penetration            (Monetized games  
 	$3M  usd/year    = 300K games/year * $10 profit per game     (Annual Revenue) 
 	$24M usd         = 3M usd/year * 8x multiple                 (Sale price) 

@@ -1,4 +1,12 @@
 
+### d2022-10-03  
+- [x] repeat, chew
+- [x] [[mom80]] - 
+- [ ] Yolo-x
+- [ ] War Stories
+- [ ] [[Comms]]
+
+
 ### d2022-09-29  
 - [ ] Linked-in update
 - [ ] Yashin Email

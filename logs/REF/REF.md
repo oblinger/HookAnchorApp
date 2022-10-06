@@ -14,4 +14,12 @@
 | r2022-05-14 | [[Forum]]    | Best Forum Software                                                               |
 | r2022-02-24 | [[EOCA]]     | Places I should be reading                                                        |
 | r2022-00-00 | [[RefMisc]]  | Military spending video                                                           |
+| r2021-11-10 | [[Coaches]]  | Anke Thiele, Rick Eigenbrod, Katie Wurtz - Deeper Exploration / Intentionality    |
+| r2021-11-10 | [[Coaches]]  | Merideth Melberg - Career Search Tactics                                          |
+| r2021-10-08 | [[Coaches]]  | Ira Tau Coaching                                                                  |
+| r2021-09-28 | [[Coaches]]  | Career Counseling                                                                 |
+| r2021-09-00 | [[Coaches]]  | From jerry-first-phd consultant???                                                |
+| r2021-08-29 | [[Coaches]]  | DYL coaches (Designing your life)  & 80000 hours                                  |
+| r2021-08-29 | [[Coaches]]  | Poised                                                                            |
+| r2021-04-00 | [[Coaches]]  | A PATH THAT FITS.  Daniel Fine. --                                                |
 | r2021-00-00 | [[RefMisc]]  | Lefty Attributes                                                                  |

@@ -1,4 +1,5 @@
 - [ ] Crones doctor
+- [ ] refund for returned AirMega $595
 - [ ] Get deferred comp done.
 - [ ] Deferred comp
 - [ ] Book Photographer

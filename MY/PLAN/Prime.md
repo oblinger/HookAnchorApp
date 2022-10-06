@@ -2,6 +2,7 @@ MORNING:  		Meditate, Pills, Day, [[Comms]],
 AFTERNOON:   	EVE: Plan, Chew
 
 ## = [[NJ22|NJ22]] =
+- [ ] Get Resume ready 4 hands on
 - [ ] [[WarStories]]*  
 - [ ] [[NJ22 Framing]] - Linkedin; Github
 - [ ] [[@Yoshua Bengio]]+

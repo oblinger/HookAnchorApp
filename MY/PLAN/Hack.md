@@ -1,4 +1,8 @@
-fix auto generator to create wiki links
+- [ ] OBS: Publish clean looking web content automatically from markdown
+- [ ] OBS:  have the CMDS page auto create / refresh the obsidian CMD entries
+- [ ] OBS:  TABULAR TITLE (see below)
+- [ ] OBS: CHANGE LOG - maintain list of edits.  track mod times & file lengths.  Do chron list of edits & dedup within window  (check if some tool exists)
+- [ ] fix auto generator to create wiki links
 - [ ] buy basket for QL in bathroom; add try to her drawer
 - [ ] OBS: key to add list items to lists with one letter prefix  e.g. t=todo, etc.   TAB-Q
 - [ ] Ensure sent mail is saved. and received mail is saved.
@@ -39,6 +43,14 @@ fix auto generator to create wiki links
 
 
 ## PROJECTS
+### OBS Tabular Title
+- Each kind of table has an table indicator REGEX
+- Each kind of table has title data field REGEX (used to extract title from entry's markdown page)
+- Table maintains bidirectional link between table entry and the title field value
+- All rows with no indent up to a double blank line are the table entries.
+- All text beyond the first @ link is the title of the table entry (it is the synced part)
+
+
 ### Bidirectional sync to gsheets
 - [coupler.io](https://blog.coupler.io/python-to-google-sheets/)   has some good ref material for py-bindings
 - scan three level hiearchy with direct content or links to next level down

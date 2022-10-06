@@ -3,6 +3,8 @@
 14.75"   =   59" / 4
 Hole center:  14.75"  &  3.5"
 
+59 - 16.5 = 42.5 = 21.25g
+
 BRACKET:    2.75" from face.   5.75"
 HOLES:   		Centers at 14.75 from side edge & 4" from front face.    (edge will be 3" from front face)
 LEG TABS:	 1" in from sides.  2" from front face, and 1" from chair face.   (Front tabs stick out by 3.75" beyond central black backstop support.)

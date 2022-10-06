@@ -1,21 +1,33 @@
-
+[Page](https://docs.google.com/document/d/1qW9pG3psyC-XOSOQqqTsjaDOBETDozUVPHWErpOgcgM/edit#) - 
 
 ## TODO
 - send invites
-- flights
+- book flights
+- Ask Linda about having an Eli on Saturday.
+
+- Get Music
 - buy decorations
 - finalize food
 - linda drinks
-- 
+
+
 
 
 ## INFO
 
+- DATES:  
 - Lothers 859-689-4030 T
 - Confirmed Friday Nov 4th
 - Lion's Club:  Chuck Carlson
 - 
 
+SCHEDULE:
+WED 2		Flight 12:37p-11p
+THR 3		
+FRI   4		Party
+SAT  5		Eli Party
+SUN 6
+MON 7		Flight 12:24p - 5:50p
 
 
 
@@ -110,7 +122,7 @@ WHAT:     Only bring your casually dressed smiling self.
 "Ryan Parnell" <
 "Linda Litzler" <lalitzler@fuse.net>,
 "Jeff and Kate Litzler" <jobli@aol.com>, 
-"Tina "
+"Tina Carlson" <tinamaries77@yahoo.com>, 
   ....   Tina's kids.... 
 "Patty Toolen" <knotfinder@gmail.com>, 
 "Larry and Bunny" <LARRYBROWN@aol.com>,
@@ -131,7 +143,10 @@ WHAT:     Only bring your casually dressed smiling self.
 "Jeff and Kim Oblinger" <JObl@aol.com>, 
 "Ben and Marie Oblinger" <oblingerb@gmail.com>,
 "Jeffery and Dana Oblinger" <muppetpunkerkack@yahoo.com>,
-
+"Shaundra Frye &Snooky Cross" <spnatigrl@aol.com>,
+"Jim and Shannon Pilala" <Kpilaia6@gmail.com>, 
+"Kimberly Wetzel" <kimwetzel1026@gmail.com>,
+Beth Johnson 
 
 **FRIENDS**
 
@@ -140,7 +155,7 @@ WHAT:     Only bring your casually dressed smiling self.
 "Mernie Whalen" <jwhalen@twc.com>, 
 "Joyce Smyth and David" <jsmyth5052@gmail.com>, 
 "Marge Laib and Linda" <Lmwink65@gmail.com>, 
-"Nancy Adam" <
+"Nancy Adam" <Nancyctayler.adams@gmail.com>, 
 "Violet & Angie Becraft" <
 "Jean Jones,   J.J and Jeanie Miller" <
 
@@ -155,5 +170,11 @@ WHAT:     Only bring your casually dressed smiling self.
 "Clark and Jennifer Brown" <kclarkbrown@gmail.com>,
 "Maggie Evans" <maggie.brownevans@hotmail.com>,
 "Kristen Celani"  <kristencelain@gmail.com>>, 
+
+"Helen Jo and Frank Arnold", <arnoldhj@bellsouth.net>, 
+"Jo Ann Jenkins" <Jjenkins120@aol.com>,
+"Kathie and Don Knue" <
+"Mary Ann Shiplett" <maryannship@hotmail.com>, 
+"Marge Laib and Linda Wink", <LMwink65@gmail.com>,
 
 

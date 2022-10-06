@@ -1,8 +1,17 @@
-## = ACTIVE
-- Rafah, 
-- Felipe, 
-- Freed, John Davis, Gordin, 
-- Nina 
+## = ACTIVE  [[CRM]] 
+
+n		[[@Rafah Hosn]]		
+n		[[@David Israel]]			Ask about working @SRI
+n		[[@Felipe Lavratti]]		RECOMMENDATION
+s		[[@John Davis]]			RECOMMENDATION
+s		[[@Nick Allen]]			RECOMMENDATION
+s		[[@Theo Enns]] 			
+
+w		[[@Nina Mishra]]			See if her colleagues had any thoughts about my case
+
+BACK BURNER
+
+- Freed, John Davis, Gordin, Felipe, 
 
 
 

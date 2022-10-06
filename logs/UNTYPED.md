@@ -6,6 +6,7 @@
 
 | Date       | File                | Notes                                                                                     |
 | ---------- | ------------------- | ----------------------------------------------------------------------------------------- |
+| 2022-10-03 | [[Current]]             |                                                                                           |
 | 2022-09-30 | [[Phone]]               | Building Work Desk in livingroom                                                          |
 | 2022-08-17 | [[Phone]]               | Dr Lue Urologist                                                                          |
 | 2022-08-01 | [[Phone]]               | notes while out - about me                                                                |
@@ -126,14 +127,12 @@
 | 2021-10-24 | [[Paths]]               | BIGGER Dan Fine KM Summary                                                                |
 | 2021-10-24 | [[Journal Old]]         | >>> BIG   -- NEXT JOB --                                                                  |
 | 2021-10-24 | [[Journal Old]]         | Dan Fine KM Summary                                                                       |
-| 2021-10-08 | [[Coaches]]             | Ira Tau Coaching                                                                          |
 | 2021-10-07 | [[AF Sale]]             | Jon discussion about Taxes                                                                |
 | 2021-10-07 | [[Journal Old]]         | Jon discussion about Taxes                                                                |
 | 2021-10-07 | [[Journal Old]]         | NINA                                                                                      |
 | 2021-10-06 | [[Journal Old]]         | BAJI                                                                                      |
 | 2021-10-01 | [[nj22_contents]]       | -- SITUATION SUMMARY --                                                                   |
 | 2021-10-01 | [[Journal Old]]         | -- SITUATION SUMMARY --                                                                   |
-| 2021-09-28 | [[Coaches]]             | Career Counciling                                                                         |
 | 2021-09-23 | [[Comms]]               | WHOM IN MY NETWORK TO ASK                                                                 |
 | 2021-09-23 | [[Resume]]              | Resume Experience                                                                         |
 | 2021-09-23 | [[Journal Old]]         | WHOM IN MY NETWORK TO ASK                                                                 |
@@ -151,7 +150,6 @@
 | 2021-09-07 | [[Journal Old]]         | Daily Schedule Ideas                                                                      |
 | 2021-09-03 | [[Journal Old]]         | WORK: happy to chat fast; but then hand details off to others                             |
 | 2021-09-03 | [[DYL]]                 | WORK: happy to chat fast; but then hand details off to others                             |
-| 2021-09-00 | [[Coaches]]             | From jerry-first-phd consultant???                                                        |
 | 2021-08-30 | [[Journal Old]]         | Inbox zero                                                                                |
 | 2021-08-30 | [[Journal Old]]         | Waste Time - Blog reading/responding - emails and tasks.                                  |
 | 2021-08-30 | [[DYL]]                 | Inbox zero                                                                                |
@@ -362,7 +360,7 @@
 | 2014-12-10 | [[DocMac]]              | WIFI CONNECTIVITY ISSIE                                                                   |
 | 2013-03-03 | [[ReBuy]]               | Standing mat                                                                              |
 | 2013-00-00 | [[ReBuy]]               | Scotch                                                                                    |
-| 2012-09-19 | [[Meta Org]]            | Highlevel organization of Roles/Goals                                                     |
+| 2012-09-19 | [[Meta Org (old page)]] | Highlevel organization of Roles/Goals                                                     |
 | 2011-04-10 | [[Journal Old]]         | – Not Energized                                                                           |
 | 2011-00-00 | [[ReBuy]]               | Wireless data                                                                             |
 | 2010-12-17 | [[OLD 201x Weekly]]     | – LESSONS FROM DATING ELAINE                                                              |
