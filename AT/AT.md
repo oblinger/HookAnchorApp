@@ -15,3 +15,12 @@
    [ORG](ORG/ORG.md),   [@eGenisis](@eGenisis.md),   [VC ORG](VC%20ORG.md),   [@Vikram](@Vikram.md),   [Mentors](Mentors.md),   [@Rzero](@Rzero.md)
 
 =[[TAG]]
+
+
+FORMAT FOR 'AT' ENTRIES
+- TAG 		What kind of person/entity is this?  [[PP]], [[START]], 
+- TITLE		What is their job title?  (this should also be a link to their linked in)
+- COMPANY	Where to they work?
+- LINKS		Links to other info about them.  Crunchbase, Github, Calendly, 
+
+=[[TAG]]		TITLE	COMPANY  LINKS

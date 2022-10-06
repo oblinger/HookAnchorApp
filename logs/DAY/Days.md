@@ -1,3 +1,9 @@
+### d2022-10-06  
+- [ ] mom's cards out.  Linda party.
+- [ ] silver light
+- [ ] jason response
+- [ ] Igor ; action
+- [ ] list of starting actions
 
 ### d2022-10-03  
 - [x] repeat, chew

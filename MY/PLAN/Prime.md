@@ -1,6 +1,9 @@
 MORNING:  		Meditate, Pills, Day, [[Comms]], 
 AFTERNOON:   	EVE: Plan, Chew
 
+## = [[SV]] =
+
+
 ## = [[NJ22|NJ22]] =
 - [ ] Get Resume ready 4 hands on
 - [ ] [[WarStories]]*  
@@ -15,7 +18,8 @@ AFTERNOON:   	EVE: Plan, Chew
 - [ ] Find best FAANG prep (1) class.  (2) mentors
 - [ ] Read mgt books
 
-## = [[BeMLR#todo]] - DL-GANS proposal
+## = [[BeMLR]] =
+- DL-GANS proposal
 - [ ] Read benjio papers
 
 
