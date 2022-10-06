@@ -8,8 +8,8 @@
 
 | Date        | File             | Notes                                                                       |
 | ----------- | ---------------- | --------------------------------------------------------------------------- |
-| n2022-10-05 | [[@Sports Visio]]    | Jason offer email                                                           |
-| n2022-10-04 | [[@Sports Visio]]    | Thinking about the Job choice                                               |
+| n2022-10-05 | [[SV]]               | Jason offer email                                                           |
+| n2022-10-04 | [[SV]]               | Thinking about the Job choice                                               |
 | n2022-09-24 | [[Brain3]]           | Broad Agenda (For Nina)                                                     |
 | n2022-09-11 | [[Brain3]]           | WORLD MODEL                                                                 |
 | n2022-08-23 | [[Brain3]]           | ARCHITECTURE & ALGORITHM IDEAS                                              |

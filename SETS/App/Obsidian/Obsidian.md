@@ -1,5 +1,3 @@
-# OBSIDIAN
-[mdfind](mdfind.md)  [Dataview](Dataview.md)
 
 
 # # LINKS 
@@ -8,6 +6,11 @@
  -  [Obsidian Website](https://obsidian.md)  [support@obsidian.md](mailto:support@obsidian.md)   [[Action Pages]]   
  - Mermaid:   [Syntax](https://mermaid-js.github.io/mermaid/#/./n00b-syntaxReference)   [LiveEditor](https://mermaid-js.github.io/mermaid-live-editor/edit#pako:eNpVkE1qw0AMha8itGohvoAXhcROswm00Ow8WQiPnBma-WEsU4LHd--4aSHVSrz3PQlpxj5oxhoviaKBU6s8lNp2jUl2FEfjGarqJR9YwAXPtwy7p0OA0YQYrb883_ndCkEzH1eMQYz1n8vdan7yb54ztN2RooR4fnROXyHDvrPvpoz_75jEJfXaDVQPVPWUoKH0iEDWATRRhq3yq44bdJwcWV1OmldFoRh2rLAureaBpqsoVH4p6BQ1Ce-1lZCwrLiOvEGaJHzcfI-1pIn_oNZS-ZD7pZZvMgpjfg)     [[mdfind]]   //ss64.com/osx/mdfind.html)  
  - [[Dataview]],   [mdfind](__mdfind__.md)  [Dataview](__Dataview__.md)
+
+# TOPICS
+## PLUGINS
+### Obsidian Publish
+-  [Oblio](https://publish.obsidian.md/oblio)  (LMI!) 
 
 
 ## = DEV LINKS

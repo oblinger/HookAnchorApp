@@ -1,3 +1,4 @@
+- [ ] OBS:  Change styling of published pages
 - [ ] OBS: Publish clean looking web content automatically from markdown
 - [ ] OBS:  have the CMDS page auto create / refresh the obsidian CMD entries
 - [ ] OBS:  TABULAR TITLE (see below)

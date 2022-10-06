@@ -1,0 +1,1 @@
+=[[START]]	 [Operations & Project Manager](https://www.linkedin.com/in/jackpotvin/)  [[@Sports Visio]]		
