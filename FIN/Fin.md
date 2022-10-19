@@ -16,6 +16,28 @@
 - [ ] IDEA:  Use https://whalewisdom.com/ For investment ideas.
 
 
+## TOPICS
+
+### 22Fin
+
+# LOG
+
+## prj2022-10-07  Fin-Rebalance
+
+
+### m2022-10-07  Avanti's Plan
+
+-          We added all your cash to the preferred deposit program with daily liquidity and paying 2.69% now. When you make investment decisions, we can liquidate out of the program the and use the cash to invest the same day.
+-          We looked at CD s and will keep you apprised of our CD as well as T-Bill yields. The current CD rate chart is attached.
+-          We have sent you a Merrill accredited investor acknowledgement form to e-sign.
+-          We discussed positioning your portfolio more defensively for the coming quarters or even years. In this effort, you will use ‘my financial picture’ inside your [ml.com](http://ml.com/) login to link your outside assets. We can then see your overall asset allocation and recommend changes. 
+-          I have attached profiles of couple of value portfolios that we use for our clients and which  focus on dividends. We don’t have Q3 reports yet but their Q2 numbers will give you an idea of how they performed in a down market. The net numbers assume the highest fees that we can charge. Please look at the gross numbers and keep in mind that your fees will be around 1%.
+-          You are interested in non-correlated alternative investments like private equity and real estate investment trusts. We have started your qualification process and will be able to send you information on open offers after  you are approved in our system.
+
+![[Screen Shot 2022-10-07 at 5.37.00 PM.png]]
+
+
+
 # # UNSORTED # 
 ### OLD ITEMS
 -- Solve 83b issue  (Add activities to this list)

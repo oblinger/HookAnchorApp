@@ -12,13 +12,12 @@
 ### WP	WK PROD	Work product
 
 
-DECISION TREE
-- M:  Are these notes from a meeting I personally attended?  M
-- T:   Is this text that will be sent as correspondence to others?  T
-- R:   Is this some kind of collected reference material? R
-
-- D:   Is this a daily entry for today? D
-- J:    Is this a personal/professional diary entry? J
+CLEAR CHOICES
+- M:  MEETINGS	- Are these notes from a meeting I personally attended? 
+- T:   TEXT		- Is this text that will be sent as correspondence to others? 
+- R:	REFERENCE	- Is this some kind of collected reference material?
+- D:	DAY		- Is this a daily entry for today?
+- J: 	JOURNAL	- Is this a personal/professional diary entry?
 - P:    Are these logistical notes or details from phone or other correspondence?   Use caps-RET phone
 
 - WP: Is this some kind of 'one off' single document work product

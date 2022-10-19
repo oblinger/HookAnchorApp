@@ -10,6 +10,10 @@ https://www.amazon.sg/
 
 # MEETINGS
 
+### m2022-10-13  SV decision
+
+- D1 school, computer science programs
+
 ### m2022-09-14  Jason decision
 
 - SRI:  

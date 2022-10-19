@@ -6,7 +6,9 @@
 
 | Date       | File                | Notes                                                                                     |
 | ---------- | ------------------- | ----------------------------------------------------------------------------------------- |
-| 2022-10-03 | [[Current]]             |                                                                                           |
+| 2022-10-16 | [[ToBuy]]               | Dresser for bedroom                                                                       |
+| 2022-10-10 | [[Nanny]]               | SAVE MONEY                                                                                |
+| 2022-10-03 | [[Current]]             | fre                                                                                       |
 | 2022-09-30 | [[Phone]]               | Building Work Desk in livingroom                                                          |
 | 2022-08-17 | [[Phone]]               | Dr Lue Urologist                                                                          |
 | 2022-08-01 | [[Phone]]               | notes while out - about me                                                                |
@@ -272,9 +274,11 @@
 | 2020-11-30 | [[spirit_older_bigger]] | GOD THOUGHTS                                                                              |
 | 2020-11-25 | [[Journal Old]]         | Unicore Implementation Days                                                               |
 | 2020-11-19 | [[Journal Old]]         | AF Strategy                                                                               |
+| 2020-11-00 | [[Nanny]]               | Job postings                                                                              |
 | 2020-10-08 | [[2020-07 Autonomy]]    | Out Reach to Yoon                                                                         |
 | 2020-10-02 | [[NJ22]]                | An assessment of me                                                                       |
 | 2020-10-02 | [[Journal Old]]         | An assessment of me                                                                       |
+| 2020-10-00 | [[Nanny]]               | notes from asana                                                                          |
 | 2020-09-17 | [[Forum]]               | Police violence                                                                           |
 | 2020-09-07 | [[Forum]]               | Shinster email                                                                            |
 | 2020-08-23 | [[Journal Old]]         | Lost at Sea but with good provisions                                                      |
@@ -294,6 +298,7 @@
 | 2020-00-00 | [[Forum]]               | UNSORTED                                                                                  |
 | 2019-12-09 | [[OLD 201x Weekly]]     | Mostly sideways week                                                                      |
 | 2019-12-06 | [[OLD 201x Weekly]]     | My YES List                                                                               |
+| 2019-11-00 | [[Nanny]]               | Notes                                                                                     |
 | 2019-10-21 | [[OLD 201x Weekly]]     | WEEK -                                                                                    |
 | 2019-10-15 | [[OLD 201x Weekly]]     | WEEK - sideways slip all week                                                             |
 | 2019-10-08 | [[OLD 201x Weekly]]     | WEEK - AI_conf                                                                            |

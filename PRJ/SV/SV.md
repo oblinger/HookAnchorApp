@@ -1,19 +1,150 @@
+ [[@Sports Visio]],  [[@Jason Syversen]],  
+ - [[SV90]],  
+
 # TODO
 - [ ] Get Coach
 - [ ] Build Roadmap
-
+- [ ] Build Roadmap
+- [ ] Yolo-x
+- [ ] Negotiate & Sign
 
 
 # TOPICS
 ## = People
 
-- Jack hungry non-technical
-- Brian  SW lead -- A- in motivation.  
-- Mark Lick-dee  Sales and marketing (interim prod mgr)
 
 
 # LOG
-### m2022-10-03  Counter Offer Discussion
+
+
+
+
+### m2022-10-18  JASON TAM discussion
+
+- How are things going from your side
+- Talk w/ [[@Brian Yormak]]    (Confidence in tech; confidence in market;  What do you think SV needs to show for a strong "A")
+- Mandate:  The 'soft power' of being a late joining 'co-founder' can help, but we may need to think hard about the report-to structure.
+
+
+
+### r2022-10-14 Minimums for VC fundability
+
+Dan,
+
+Enjoyed the brief discussion (Good to know we can have good BRIEF discussions too!)
+
+Spent some time trying to research what people say about expected returns. Included my findings below:
+
+1) They say 10x return at Series A: [https://kruzeconsulting.com/blog/what-vcs-return-expectations/](https://kruzeconsulting.com/blog/what-vcs-return-expectations/)
+
+2) GREAT analysis in [this one](https://www.industryventures.com/insight/the-venture-capital-risk-and-return-matrix/). My favorite section is when they pull data across actual VCs (and not one guys opinion) and come up with this: "Using this data together with an expected loss rate equal to that of individual early-stage investments, we calculated the performance of a hypothetical $100 million fund with a 2% annual management fee (in the first 10 years) and 20% carried interest. We assumed the fund would be invested in 20 companies, where 65% returned 0.5x and the balance returned 10x. We concluded that our hypothetical fund would likely yield a gross expected return multiple of 3.8x and generate a net multiple of 3.1x, or an IRR of 20%." 20% is the average IRR early stage return profile for 30 years according to Cambridge Associates.   
+
+3) Simple math (which is [mentioned here](https://www.bfp.vc/vc-performance-metrics-for-early-stage-funds-beyond-common-multiples/)) would say that if someone wants us to "return the fund" and the typical VC fund does 20x investments... that we need to shoot for a 20x return from a Series A investment (unlikely to see that later/growth stages.) If we raise at $20M for the A that's a $400M valuation in 7-8 years, and implies a $40-50M revenue run rate (conservatively). A $25M valuation would imply $500M. Again, both are in range. Now there's stuff like dilution in there potentially, but my hope is we don't need to raise again after a Series A (which again is why the math changes by investment thesis/fund type/stage/details... if you're Uber and have to raise $100M every few months you gotta have a plan to be a $100B company for any of it to make sense! But if you can be cash flow positive/growth after $3M... it's a different situation from a dilution perspective. You can then explore debt financing, or very friendly growth stage investments down the road for M&A or whatever.
+
+
+
+
+
+QUICK RESPONSES:
+
+(1) I don't know what they are smoking, but NO ONE says series A-investors are shooting for a 10x return as the TARGET for their investments.
+    (They may understand that in practice a 10x return is a good return to get.  But they companies should be AIMING higher than this!)
+    I am very mystified by these guys.  Maybe they are talking about some markets that are not high tech markets, so they have more predictable outcomes.
+    .
+    I think the math does not work for 10x.  No idea what these guys are talking about, but this just seems wrong.
+
+
+
+(2)  Industry Ventures
+- Mark Suster of Upfront Ventures expects a 1/3 - 1/3 - 1/3 split of returns with the last 1/3 returning most profits.
+  (that is a bit bigger than I have seen others assume, but Upfront Ventures does a mix of series-A and series-B)
+  
+- EARLY STAGE FUNDS:  hypothetical VC firm numbers
+	- Expecting ONE THRID of your series-A funds to return 10x ROI is VERY AGGRESSIVE, and not industry norm.
+
+
+
+(3) SIMPLE MATH.  I like your simple math, but the only way that a fund is going to keep its series-A pro-rata rights in order to maintain it fraction of the company, one is going to need to allocate funds for follow on rounds.  I think you simple math was no accounting for that hold back:
+
+Simple Math:
+
+ASSUMPTIONS:
+- GOAL:  Fund aims to return all investments with a single win, each investment should be aiming at such a win.
+- INVESTMENT SPLIT:  40% of the fund is allocated for initial investments, and 60% for follow on investments.  (some say 1/3 - 2/3 split)
+- SERIES A-OUTCOMES:  60% of series-A companies fail.  30% earn modest return.  10% earn 10x or more as a return.
+- BAT SWINGS:  Fund wants 20 investments to maximize chances of a couple big wins.
+
+$1B		 	Fund size
+$400M 	Initial investment pool   ($1000M * 40%)      60% is reserved for follow investments.
+$20M		Typical investment size    ($400M / 20)
+50x			Required multiple to return the whole fund.  ($1000M / $20M)
+
+$60M		Assuming we are forced to give up very a HIGH percentage of the company with a $60M series-A post valuation.
+
+$3B 		Required target valuation in order for their $20M investment to yield a 50x return.  ($60M * 50x)
+				(and they only get that valuation if they have the funds to maintain their pro-rata percentage thru ALL rounds!)
+
+
+
+
+#### Reference:
+- [TAM importance](https://techcrunch.com/2017/09/05/why-tam-doesnt-matter-to-me/) - 
+- [size](https://www.goingvc.com/post/venture-capital-due-diligence-the-market-test) - 
+    A good benchmark is a minimum of $500M-$1B in overall market size and a minimum of $100M in addressable market size.
+
+- [TAM size](https://www.failory.com/blog/series-a-funding) - 
+ -  1.  The Total Available Market (TAM) - It should be over $1B, which shows the market is large enough to sustain $100M in revenue.
+ - [Big Vision](https://www.nfx.com/post/fundraising-checklist-13-proof-points-series-a)  - 
+  - To raise a top series A, be able to show a path to $100M and then potentially $1BN in revenue.
+- [Quora Stan Hanks](https://www.quora.com/What-type-of-exit-multiples-are-VCs-looking-for-when-they-make-an-investment) -
+  If the investor is coming in at seed or Series A, they need to see a greater than 100x return to be happy, but they’re willing to wait 7–10 years.
+
+### m2022-10-14 -
+
+- Proof that custs will pay
+	- Mid 100K upto $1M in Revenue
+- Evidence that other sports
+
+
+John see.  $10-$15 on a $70
+
+step 1 - amateur sports for basketball
+step 2 - another sport (e.g. soccer)
+step 3 - B2C play - streaming of games from phones 
+- sell ads.
+- HUDL killer raised $250M on a $2B
+
+step 1 - 50M-70M (sale w/o A)
+
+- compared with a consumer business - SV - has value 
+- lots of optionality.
+
+
+~~
+- The proxy is Hudl - They raised huge money and huge valuation.  Winner in sports tech in stats.
+
+
+### m2022-10-14 Jason Response Discussion
+
+Ask: Ben++, Kian++, Nick+?, Joseph++, Tessa--, Avidan--
+
+
+Need:  Many segments, Many geos, Many sports
+
+
+- Told John @hyperplane about $360M target?  
+- What we will need to show to get an A?  Other sports?  Other segments?  Cust growth rates?
+- Committed sales?  How many asked?  At what price point?
+
+
+- Thread the needle.
+- Intl grad
+
+
+
+
+
+### m2022-10-03  Counter Offer Discussion  (where I proposed the $12M cap)
 
 
 Jason,
@@ -53,20 +184,17 @@ Thanks!
 
 Jason,
 
-Here are the terms we just outlined:
+Here are the terms we outlined yesterday.  Falling asleep I did think...  "you know Dan, you just gave away a huge, HUGE amount of potential personal upside.  I hope you are not going to be kicking yourself HARD one day!"    but then I slept quite well, so I maybe my subconscious is getting ok with this choice   :-)
 
-Dan will join Sports Visio as a full time salaried employee with a $200K salary per year and 2M shares  $500K worth of equity.  (This is equivalent to , or 14.54% of the post seed equity.)
-Additionally Dan's equity is subject to a $12M cap.  Dan keeps 100% of the proceeds from the sale of his first $12M worth of shares, after that point 100% of all remaining shares must be put into a 503(c) non-profit from which Dan is forever barred from obtaining funds or income from of any kind.
+Dan will join Sports Visio as a full time salaried employee with a $200K annual salary and 2M shares of equity that vests over four years.  (This is equivalent to $500K of equity over four years, and is 14.54% of the post seed equity.)  Additionally Dan's equity is subject to a $12M cap.  Dan keeps 100% of the proceeds from the sale of his first $12M worth of shares, after that point 100% of all remaining shares must be put into a 503(c) non-profit from which Dan is forever barred from obtaining funds or income of any kind.
 
+Dan will be a partner with Jason at Sports Visio, having a co-founder style mandate to get into the knickers at all levels of the execution of the company in order to achieve A+ execution while initially not having any formal report-to authority beyond team-wide acknowledgement of this mandate.  In this partnership DanO is more focused toward the technical side of SV while Jason is more focused towards the business side.  
 
+I am jazzed that my role, on day one, would begin with a formalized philanthropic aspect to it.  This idea has been my abstract goal since leaving DARPA almost 15 year ago, but this will be the first time I am actually "putting my money where my mouth is"
 
-I think it's important that Jason frames Dan as the guy who is supposed to get into the knickers at all levels of the technical execution of the company in order to achieve A+ execution without having any formal report-to authority.  (As we discussed it is a strategic/organic decision over time if we decide move parts of the report-to structure under Dan, or perhaps we never do that.)
+I am also jazzed about having a mission the hinges on our ability to push the very boundaries of what humans can do with CV algorithms.  It is awesome (and rare) to find spots where cutting-edge science actually drives business value in a strong way.
 
-I am particularly jazzed that my role on day one would begin with a formalized philanthropic aspect to it.  This idea has been my abstract target for the last 15 years, but this would be the first job where I am actually "putting my money where my mouth is"
-
-I am also particularly having jazzed about my co-founder style-mandate over a product built upon world class CV algorithms.  The whole solution ownership connects with my proven strengths, it is super fun, and being part of a world class CV team will be interesting and valuable too.
-
-Cheers, 
+Onward,
 Dan
 
 
@@ -403,6 +531,9 @@ About $3/hr on demand or $1/hr reserved.
 4. ZZZ
 ### j2022-09-09  Value of SV based on Basketball
 
+
+$13.6M post.    raised $3.6M      Jason 58%.     5% pool.  
+
     80K teams  =  200 leagues * 40 teams/league * 10x for total    - Assume total gyms is 10x of Lifetime fitness
 
 	2K   gyms        For profit gyms where mens rec leagues play (USA for profit gyms)
@@ -410,7 +541,7 @@ About $3/hr on demand or $1/hr reserved.
 	60K  teams       = 2000 gyms                                 (USA Men's adult teams)
 	
 	3M   games/year  = 60K teams * 50 games per year             (Games per year) (15 per season * 3 seasons)     
-	300K games/year  = 3M game/year * 10% penetration            (Monetized games  
+	300K games/year  = 3M game/year * 10% penetration            (Monetized games)  
 	$3M  usd/year    = 300K games/year * $10 profit per game     (Annual Revenue) 
 	$24M usd         = 3M usd/year * 8x multiple                 (Sale price) 
 	.
@@ -420,9 +551,34 @@ About $3/hr on demand or $1/hr reserved.
 	$3M  usd/year    = 300 * $10K/league/year profit
   
 
-$13.6M post.    raised $3.6M      Jason 58%.     5% pool.  
+
+Jason's bottom up stats:
+
+      250 NH multiplier 243 = 329.5 usa pop / 1.355 nh pop;   266 = $120M / $.45M
+
+    AAU
+                                         $17K/year        = CapCityAAU (10teams * $1100/team/year + 35teams * $200/team/year)
+    $136K/year       = AAU 8x $17K    (8+ other AAU programs in the state)   <--- other programs are probably smaller
+    $160K/year       = MensBA 8x * (50teams * 3sessons/team/year * $150/session/year) * .9 after commission
+    $63K/year        = High School Teams (90teams * 2seasons/year * $350/season)
+    $45K/year        = Middle School Teams (90teams * 2seasons/year * $350/season)
+    $60K/year        = Town and Rec (100groups * 6teams/group * $100/team/year)
+    $464K/year       = Total in NH
+    $120M/year       = USA total revenue per year = $116M = $464K * 250x
+    $12M/year        = SV income = $120M * 10% penetration
+    $96M             = Sale price for USA business = $12M * 8x revenue multiple
+    .
+    $360M/year       = World wide basketball stats
+    .                  OTHER SPORTS: Ice Hockey, Baseball/Softball, Soccer, Football, Field hockey
 
 
+Dan's refactoring per game only looking at men's basketball
+
+    100K mens teams  = USA wide number of men's teams = 50team/gym * 8x gym/nh * 250x nh/usa
+	4.5M games/year  = 100K teams * 45 games per year             (Games per year) (15games/session * 3x seasons/year)     
+	450K games/year  = 4.5M games/year * 10% penetration          (Monetized games)  
+	$4.5M usd/year   = 450K games/year * $10 profit per game      (Annual Revenue) 
+	$36M usd         = $4.5M usd/year * 8x multiple               (Sale price based only on Men's Basket Ball) 
 
 
 ### j2021-06-29 - Jason Redux

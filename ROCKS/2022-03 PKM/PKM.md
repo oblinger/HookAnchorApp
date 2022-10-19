@@ -1,4 +1,5 @@
-
+ ! eBook on my approach for personal knowledge management
+ - [[META]] - 
 
 ### _
 - MATRIX YOUR KNOWLEDGE - Organize info into key hierarchies and don't allow existence of one hierarchy to break another.

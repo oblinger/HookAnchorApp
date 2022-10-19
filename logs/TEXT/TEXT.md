@@ -7,6 +7,7 @@
 
 | Date        | File                     | Notes                                                                   |
 | ----------- | ------------------------ | ----------------------------------------------------------------------- |
+| t2022-10-13 | [[EOCA]]                     | Man in a room soon to die                                               |
 | t2022-08-24 | [[NJ22 Framing]]             | Linked-in AF update                                                     |
 | t2022-08-15 | [[Refs]]                     | Child Education Outcome by location                                     |
 | t2022-08-02 | [[@AugustineAntwi-Boasiako]] | Initial Email                                                           |
@@ -42,6 +43,6 @@
 | t2021-00-00 | [[@Deep Sahini]]             | Thanks note                                                             |
 | t2021-00-00 | [[MED]]                      | Questions and topics                                                    |
 | t2020-00-00 | [[Ideas]]                    | Chipstack                                                               |
+| t2019-00-00 | [[@Qingling Oblinger]]       | QL Notes                                                                |
 | t2019-00-00 | [[Ideas]]                    | Coin thoughts - alloy???                                                |
-| t2019-00-00 | [[Qingling]]                 | QL Notes                                                                |
 | t2019-00-00 | [[Politics]]                 | Ryan (Baltimore school teacher)                                         |

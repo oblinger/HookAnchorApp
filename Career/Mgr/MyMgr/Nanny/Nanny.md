@@ -1,5 +1,5 @@
-# ACTIVE INFO
-## NANNY TASKS TO BE DONE (once Eli is in Daycare)
+## TOPICS
+### NANNY TASKS TO BE DONE (once Eli is in Daycare)
 - Cook; Eli food prep
 - Dishwasher
 - Shop Costco
@@ -8,14 +8,13 @@
 
 _
 
-## COOK QUESTIONS
-
+### COOK QUESTIONS
 - What are your favorite ways to cook chicken?
 - How do you typically cook salmon?  other ways?
 	What are the ways you use to keep it from getting dried out?
 - Have you made dumplings?  What did you use for the filling?
 
-## NANNY QUESTIONS
+### NANNY QUESTIONS
 		KEY:  
 		SITUATION: 	LiveWhere/FAMILY/PLANS/AvailableWhen/salary/Covid
 		EXPERIENCE: years, ftNanny, why leave prev, CallRef, EgTrouble, 
@@ -25,7 +24,7 @@ _
 
 
 _
-## CARE.COM INFO
+### CARE.COM INFO
 ### NANNY SEARCH TERMS
 - <$25
 - 50 miles
@@ -58,21 +57,93 @@ looking forward to hearing more...
 --qingling and dan
 
 _
-### PEOPLE - both -
-- Drive, Clean, 
+# PEOPLE / INTERVIEWING
+## QUESTIONS
+### 2022-10-10 SAVE MONEY
+- CHINESE:  Chinese cooking: Ways do you cook Tofu?  How do you cook Fish?  What is your style? (Region?)  
+- WESTERN:  Chicken ways?  Salmon ways? (keep from dry?)  Can we just give you recipes to follow?
+- CHILD CARE:  What kind of activities do you do w/ a 3 year old.
+- DRIVING: Groceries, Drop off, Go Zoo, 
+- CLEANING: 
+- HOURS: 
+- EXPERIENCE: 
 
-[Vivian $18 SF](https://www.care.com/p/vivienn3/cc) 				Chinese, 
-[Maria B $18-30 Alameda](https://www.care.com/p/vivienn3/cc) 	Hispanic, Transport, Great reviews!
-[Maristela A. $23 Alameda](https://www.care.com/p/maristelaa13/cc) 	-Cleaning Great Reviews
 
-[Dolly 25-30 SF](https://www.care.com/p/dollyf80/cc)	69old, Trans, 
-[Diane X 17-22 SF](https://www.care.com/p/dianex11/cc) 			Transport/-carpool China HS; 
-[Mild $10 SF](https://www.care.com/p/mildayantim/cc)  		++Reviews(part of fam);  No Transportation
-## OTHER INFO
-### AMAZON ACCOUNT
+#### Maggie:
 
-Riley@oblinger.us  2007-07-21
-## INTERVIEWS
+- Housekeeping and cooking.
+
+
+M: Morning and then in afternoon    (Time 12:00 & 3:45 free)
+TR in morning (work afternoon)
+WF she just started in precidio
+
+- get some grocery for another client. 
+
+Working kids friday night.
+
+- Taken care of her own kids, and taking care of bothers and sisters kids.
+
+She need to pickup her kids @ 5:30.
+
+
+-- Books, drawing, finger painting.  bouncy balls.  tricycle.
+-- Playing with kids is more fun.
+
+
+Cooking Tofu:  Pan fry tofu.  veggie stirfry.   tofu soup (miso soup, or with carrots, corn, meats clear ).   Tofu skin... she does not do that.  Silken tofu... (she didnt know enlight)
+Ways you fish:  Live fish - steam.  frozen pan fry.   hardly use oven.   sometimes use oven.   used to cook salmon... now allergies (would steam it w salt & soy, salted soybean little ginger)
+
+Western: if you give me a recipe I can do it.  e.g. for other family today:   butternut squash soup.  did a rice chicken kale on top (one pot dinner).
+
+
+Could you take him to zoo.  (no problem...  )
+
+
+Just started this kind of job; used to help a woman who had 
+- MTR - 12 hours per week - just started.   she is $25/hr
+- At least thru the end of this you can commit.
+- but you think next year you will be ok but cannot commit.
+- possibility to have a full time job.  
+- IN Home support services - 9 hours per week.
+
+
+
+### OLD LIST
+	SALARY:		
+	- Housing situation; plans; why not continue w. work
+	- Experience
+	- Drive / Car
+	- Handle baby 30wake
+	- References. (why nothing on care)
+	+++++++
+	-- baby food; tantrums; what activities w Baby; AboveBoard; NOT 
+
+BABY:  	temper tantrum; not eating ; challenging thing ; most impt things ; 
+		Activities Have Done; 9m old; 
+OTHER:	Salary; Cooking&tasks; Long Days
+
+
+
+### KEY Q
+-- #mosBaby ; #mosNanny ; references ; Housing ; goals
+-- pay ; hours ~ 3x10 ; 3x8
+-- EstablishJobContinuity&LeavingReasons
+
+KEY: BabyMos, Refs, ContiguousWorkHistory(whyLeaving), ExTrouble, 
+	SITUATION(HOUSING/FAMILY/PLANS/AvailableWhen):
+	EXPERIENCE(Babies,ftNanny):
+	SALARY:		
+	- Housing situation; plans; why not continue w. work
+	- Experience
+	- Drive / Car
+	- Handle baby 30wake
+	- References. (why nothing on care)
+	+++++++
+why leave current
+w baby:  most challenging thing ; most impt things ; how to 
+
+## PEOPLE
 ### Adrianne
 
 
@@ -89,8 +160,18 @@ Kelly:  trusted immediately,
 
 
 _
-# OLD INFO
-## OLD NANNY INTERVIEWS
+## OLDER INTERVIEWS
+### OLD LIST
+- Drive, Clean, 
+
+[Vivian $18 SF](https://www.care.com/p/vivienn3/cc) 				Chinese, 
+[Maria B $18-30 Alameda](https://www.care.com/p/vivienn3/cc) 	Hispanic, Transport, Great reviews!
+[Maristela A. $23 Alameda](https://www.care.com/p/maristelaa13/cc) 	-Cleaning Great Reviews
+
+[Dolly 25-30 SF](https://www.care.com/p/dollyf80/cc)	69old, Trans, 
+[Diane X 17-22 SF](https://www.care.com/p/dianex11/cc) 			Transport/-carpool China HS; 
+[Mild $10 SF](https://www.care.com/p/mildayantim/cc)  		++Reviews(part of fam);  No Transportation
+### OLD NANNY INTERVIEW
 	SALARY:		
 	- Housing situation; plans; why not continue w. work
 	- Experience
@@ -182,7 +263,7 @@ dec-feb 9 hours per week.  their kid had autism.  never had worked w. kid be4
 -- he was very violent when when he was upset.
 
 
-$$$ good for another month.
+ good for another month.
 
 
 ~_ ~ ~ _~
@@ -204,8 +285,8 @@ Everything I know
 
 
 _
-## OLDNANNY Email responses
-### --- Basic questions May ---
+### OLD NANNY QUESTIONS
+#### --- Basic questions May ---
 
 Dila, 
 
@@ -223,7 +304,7 @@ Dan
 
 
 
-### --- Basic questions ---
+#### --- Basic questions ---
 
 
 Hey thanks alot for writing!  We looked at your profile and it seems like we could be a good match.  We have a couple of questions to check that we are on the same page:
@@ -239,7 +320,7 @@ Hoping all of this seems like a great situation for you.  If it does, let us kno
 Cheers, 
 Dan and Qingling
 _
-### --- questions for incomming applicants ---
+#### --- questions for incomming applicants ---
 
 	Hey thanks for noticing our ad.  Seems like this could be a good match!  Here are some questions to see if we are on the same page:
 	-1- How many months have you taken care of an infant (< 8months old)?
@@ -253,7 +334,7 @@ _
 	Dan
 	
 _
-### --- older questions ---
+#### --- older questions ---
 
 We are excited that living with us in SF would be an option for you.  We are looking for the newest member of our little gang and it seems like you might be a great fit!  Here are a bunch of questions (a little boring I know) but they are a quick way to check that we are on the same page:
 -1- You can legally work in the US, and are willing to have taxes withheld.
@@ -267,7 +348,7 @@ Cheers,
 Dan
 
 _
-### --- new2Q
+#### --- new2Q
 Thanks for writing!  Here is a little about our situation:  We are looking for a full-time long-term person who can save on rent and food bills by eating and living with us.  Our living situation is pretty low key.  There are lots of parks near the house, and we are pretty flexible about how watch Eli and enjoy your time doing it.  Just to check that we are staring things on the same page, let me know a couple of things:  
 -1- Can you legally work in the US?
 -2- Have you worked with babies, and for how long?
@@ -277,7 +358,7 @@ Looking forward to hearing more...
 --Dan
 
 _
-### --- Job Ad
+#### --- Job Ad
 
 There is a lot (fun) to say about living at our house, living with my husband, our boy Eli, our dog, and me.  We have lots of joy in our house, and we hope that will be lots of joy for you too, our newest member of the gang.
 
@@ -285,11 +366,11 @@ I work down on the peninsula so I will be gone for 12 hours per day including my
 
 There are coffeeshops and 3 parks in easy walk from our house, so you can easily get out with Eli as often as you like.  We are looking for a full-time long-term person who can save on rent and food bills by eating and living with us -- maybe you are our missing piece?
 _
-### --- 2Q2
+#### --- 2Q2
 
 LEVEL 11
 Thanks for the email.  Your qualifications seem great, and I think it seems like it you could be an awesome addition to our gang!  But that was the basis for my question, I can't tell if you are expecting to live with us.  We are definitely hoping so, we are aiming to save money on the monthly rate by providing free food and board.  But this is no good if you already are paying rent on another place.  So if have free room at board at our place what would your monthly rate be for 12hr/day 6days/week?
-### --- 2Q
+#### --- 2Q
 
 Thanks for writing!  Here is a little about our situation:  We are looking for a full-time long-term person who can save on rent and food bills by eating and living with us.  There is a lot (fun) to say about living at our house, living with my wife, dog, boy and me.  We have lots of joy in our house, and we hope that will be lots of joy for you, our new part of the gang.  But just to check that we are staring things on the same page, let me know two things:  
 -1- Can you legally work in the US?
@@ -298,7 +379,7 @@ Thanks for writing!  Here is a little about our situation:  We are looking for a
 Looking forward to hearing more...
 --Dan
 _
-### --- In Range
+#### --- In Range response
 
 Ellie, 
 This all sound pretty good!  I am happy to negotiate rates later, that is just one of many considerations.  But to save both of our time, lets make sure we are in the right ball park.  We have been given rates of $3000-3500 per month so far, assuming free room and board.  Does that fit with your expectations?  Also just checking in that you are legally allowed to work in the US.
@@ -310,7 +391,7 @@ Let me know of both of those are a fit.
 --dan
 
 _
-### --- Hours Per Week
+#### --- Hours Per Week response
 
 Kaydence,
 
@@ -329,32 +410,6 @@ thanks, Dan
 
 
 2
-## Plan
-
-- NOW - Ask AYI - per person count in AZ is now worse than CA
-- NOW - Put job posting back out there
-- THR - Join all groups we can join
-- ??? - Chinese network
-- FAST - Inbound
-
-QUESTIONS
-- We ok with under the table?  Perfer not, but ok.
-- Are we ok with younger?  must shelter in place.  >=4 yrs experience
-
-PRIORITIES
-- Eli safety, baby-experience
-- Ok Price, Professionalism, Hardworking
-- Live In (especially during Covid)
-- Can Cook
-- Speaks English, CanDrive
-
-ISSUES
-- Not testing many while mom is here.
-
-~-~
-
-_
-## People
 ### Mary Morgan
 
 
@@ -734,7 +789,9 @@ _
 
 	19 days @ 115/day = $
 	_
-## mommy groups
+	
+# REF
+### r2020-00-00  mommy groups
 - Next Door
 - https://www.facebook.com/groups/momsintechgroup/
 - https://www.facebook.com/groups/1805440309744035
@@ -753,8 +810,64 @@ non FB
  
 https://www.facebook.com/groups/AdoboNationSF   PH group.  try to post there
 _
-## Job postings
-### Posting #4
+### r2019-00-00 AGENCIES
+Quality Nanny Placements, www.NannyCA.com, of San Francisco.  1-415-715-7787
+# LOG
+### wp2022-10-10  SAVE MONEY ON AYI
+
+
+| ACTIVITY         | TIME  | WHEN | WHO |
+| ---------------- | ----- | ---- | --- |
+| Cooking          | 10h/w |      |     |
+| Dinner Clean     | 2h/w  |      |     |
+| Laundry          | 2h/w  |      |     |
+| Trash            | .5h/w | Thr  |     |
+| Daily Cleaning   | 2h/w  |      |     |
+| Monthly Cleaning | .5h/w |      |     |
+|                  |       |      |     |
+
+
+Mr  Thursday
+- Laundry drying & folding
+- Trash out
+
+
+
+
+AYI COSTS
+- $1950/month = $90/day * 4.33week/month * 5day/week
+- $150/month = Utilities
+- $350/month = $700/month /2    (Dragon + Weee)
+$2450
+
+DAILY
+- $1950  =  $30/hr * 3hr/day * 5day/wk * 4.33wk/mo    (65hr/mo)
+- $1399  =  $20/hr * 3hr/day * 5day/wk * 4.33wk/mo    (65hr/mo)
+- $1732  =  $20/hr * 4hr/day * 5day/wk * 4.33wk/mo    (87hr/mo)
+
+FOUR X WEEKLY
+- $1559 =  $30/hr * 3hr/day * 4day/wk * 4.33wk/mo    (52hr/mo)
+- $1039  =  $20/hr * 3hr/day * 4day/wk * 4.33wk/mo    (52hr/mo)
+- $1386  =  $20/hr * 4hr/day * 4day/wk * 4.33wk/mo    (69hr/mo)
+- $2078  =  $30/hr * 4hr/day * 4day/wk * 4.33wk/mo    (69hr/mo)
+
+
+THRICE WEEKLY
+- $1820 = $35/hr * 4hr/day * 3day/wk * 4.33wk/mo    (39hr/mo)
+- $1560 = $30/hr * 4hr/day * 3day/wk * 4.33wk/mo    (39hr/mo)
+- $1039 = $20/hr * 4hr/day * 3day/wk * 4.33wk/mo    (52hr/mo)
+
+TWICE WEEKLY (Long)
+- $1300 = $30/hr * 5hr/day * 2day/wk * 4.33wk/mo    (43.3hr/mo)
+
+TWICE WEEKLY (+1 CLEANING)
+- $1040 = $30/hr * 4hr/day * 2day/wk * 4.33wk/mo    (34.6hr/mo)
+- $520 = $30/hr * 4hr/day * 1day/wk * 4.33wk/mo    (17.3hr/mo)
+
+
+
+### 2020-11-00 Job postings
+#### Posting #4
 
 Join in on our afternoons and our dinner!
 
@@ -766,7 +879,7 @@ We live in Bernal Heights about 15min walk from Bart.  If all of this sounds goo
 
 
 
-### Posting #3
+#### Posting #3
 
 Join us!  Live-In Nanny Position
 
@@ -778,10 +891,7 @@ I work in South bay so on my days at work I will be gone for 10-11 hrs per day i
 We are looking for a full-time long-term person who can save on rent and food bills by eating and living with us -- are you our missing piece?.
 
 _
-## MyHomePay.com
-Chad Fries
-_
-## _
+### r2020-11-00 care.com login
 
 
 My care.com login: username Qingling.ni@gmail.com pin: QlDo0518
@@ -789,9 +899,7 @@ My care.com login: username Qingling.ni@gmail.com pin: QlDo0518
 888 273-3356 	HomePay
 800-929-9213	GTM
 _
-## 2020.10 notes from asana
-
-
+### 2020-10-00 notes from asana
 -- backgorund check.
 -- call references (her former students)
 -- Guo Mer Ma --  000 291 015 098 .    2-6-1962
@@ -842,7 +950,7 @@ AYI
 
 
 >> send questions to applicants
-%% Raynor Questions ; check Care
+ Raynor Questions ; check Care
 
 -- Interview XXX
 -- Maria look for 
@@ -857,7 +965,7 @@ Cooking.
 on the phone. 
 
 _
-## 2019.11 Notes
+### 2019-11-00 Notes
 
 [MotleyFool avoid tax nightmare](https://www.fool.com/investing/general/2015/07/22/8-ways-to-avoid-a-nanny-tax-nightmare.aspx) 
 [CA worker bill of rights](https://www.dir.ca.gov/dlse/DomesticWorkerBillOfRights-FAQ.html) 
@@ -909,9 +1017,8 @@ Utilities
 food.     $200
 
 _
-## === AGENCIES
-Quality Nanny Placements, www.NannyCA.com, of San Francisco.  1-415-715-7787
-## Plan
+
+### Plan
 
 
 	- TIMES	-- 	WORKING STARTS -- when eli wakes 
@@ -929,7 +1036,7 @@ Quality Nanny Placements, www.NannyCA.com, of San Francisco.  1-415-715-7787
 
 	210+325=270
 	13+8+2
-## NANNY HOURS MATH
+### NANNY HOURS MATH
 
 	-- Room/Board/Utilites is very conservatively worth 3/day $1400/mo
 
@@ -948,7 +1055,7 @@ Quality Nanny Placements, www.NannyCA.com, of San Francisco.  1-415-715-7787
 	       41
 
 	10x4.2 = 42*24 = $1008
-## NANNY CONTRACT
+### NANNY CONTRACT
 
 	how to write a contract
 	https://www.whattoexpect.com/family/finances/nanny-contract/?XID=iOS_share
@@ -1006,7 +1113,7 @@ Quality Nanny Placements, www.NannyCA.com, of San Francisco.  1-415-715-7787
 	- **PHONE/LAPTOP USAGE** -- While you are "on the clock" Eli is the main focus so you generally wont be making social text/calls.  (Of course a quick coordination call is fine, but social chatting/texting isn't)
 
 	- **HOURS** -- Your nominal hours are 12 per day.  There will likely be some gaps in your day where Eli is napping or busy, and a moment here or there in the evening when you can help out if you happen to still be at home that day.
-## NANNY GOALS
+### NANNY GOALS
 
 	$2K for 
 
@@ -1023,10 +1130,8 @@ Quality Nanny Placements, www.NannyCA.com, of San Francisco.  1-415-715-7787
 	- COOKING / LAUNDRY -- Basic cooking (dinner only) and laundry for both yourself and for us are part of the job.  We might each lunch together too, or not depending on the day, and on your desire.  We are not expecting gormet food, just a few healthy choices.  we love veggies lots to we will be buying lots.  Chinese food is great too, but we are open to lots of healthy dishes.
 	- CLEANING -- We will have a separate cleaner so that is not part of your duties.
 	- ELI GROWTH -- Kids pick up alot.  So we are focused on him having lots of 
-## NANNY Info
+### NANNY Info
 	916-367-1931 If you still want a pinch of Help Text me and I'll send you a suggestion for your Ad based on the first message you sent me . ( I liked that message the most) and it would make a great Ad
-
-## NANNY Old
 
 ### NANNY TODO
 	-- Interview Carolyn.  JEnna
@@ -1039,3 +1144,29 @@ Quality Nanny Placements, www.NannyCA.com, of San Francisco.  1-415-715-7787
 	Type=Nanny.  Near=???  Within=50mi
 	HourlyRate=<10.  Availability=FullTime. 
 	AddionalFilter=  WillingToHaveTaxesWithheld.  keyword=Live-In
+
+### Plan
+
+- NOW - Ask AYI - per person count in AZ is now worse than CA
+- NOW - Put job posting back out there
+- THR - Join all groups we can join
+- ??? - Chinese network
+- FAST - Inbound
+
+QUESTIONS
+- We ok with under the table?  Perfer not, but ok.
+- Are we ok with younger?  must shelter in place.  >=4 yrs experience
+
+PRIORITIES
+- Eli safety, baby-experience
+- Ok Price, Professionalism, Hardworking
+- Live In (especially during Covid)
+- Can Cook
+- Speaks English, CanDrive
+
+ISSUES
+- Not testing many while mom is here.
+
+~-~
+
+_

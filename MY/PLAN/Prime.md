@@ -1,8 +1,7 @@
-MORNING:  		Meditate, Pills, Day, [[Comms]], 
-AFTERNOON:   	EVE: Plan, Chew
+
 
 ## = [[SV]] =
-
+- [ ] Have call with Brian
 
 ## = [[NJ22|NJ22]] =
 - [ ] Get Resume ready 4 hands on
@@ -37,3 +36,15 @@ AFTERNOON:   	EVE: Plan, Chew
 
 
 
+
+
+
+
+# __
+
+
+## = [[EduCorp]] =
+- [ ] Contact Meridith & Meet
+
+## = [[PKM]] =
+- [ ] Build website with thoughts on PKM.

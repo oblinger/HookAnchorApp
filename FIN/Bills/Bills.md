@@ -3,6 +3,7 @@
 
 
 consumer reports
+on health
 Peloton signed 7/31
   [Budget](Budget.md)
 vorwerk $40/yr
@@ -28,7 +29,9 @@ OWED TO QINGLING
  -$9,000  2021-11-08	-- QL transferred to herself from grandcntrl (ZERO BAL)
 
 
-DanO  $20K or $60K for taxes
+DanO paid $60K on 2022-04-25 for federal taxes from my schwab account
+DanO paid $15K on 2022-04-18 for state taxes from my schwab account
+
  
 ```
 

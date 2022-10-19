@@ -1,6 +1,17 @@
 (See [ReBuy](__ReBuy__.md))
 
 
+### 2022-10-16  Dresser for bedroom
+
+https://www.amazon.com/Hodedah-HI70DR-Chocolate-Hodeida-Drawers/dp/B079V6MQKF?source=ps-sl-shoppingads-lpcontext&ref_=fplfs&psc=1&smid=ATVPDKIKX0DER
+
+https://www.amazon.com/Hodedah-HI70DR-Chocolate-Hodeida-Drawers/dp/B079V6MQKF?source=ps-sl-shoppingads-lpcontext&ref_=fplfs&psc=1&smid=ATVPDKIKX0DER
+
+https://www.amazon.com/Hodedah-HI70DR-Chocolate-Hodeida-Drawers/dp/B079V6MQKF?source=ps-sl-shoppingads-lpcontext&ref_=fplfs&psc=1&smid=ATVPDKIKX0DER
+
+https://www.amazon.com/Hodedah-HI70DR-Chocolate-Hodeida-Drawers/dp/B079V6MQKF?source=ps-sl-shoppingads-lpcontext&ref_=fplfs&psc=1&smid=ATVPDKIKX0DER
+r
+
 - [ ] contigo thermos
 
 ### 2022-07-18  Walnut desktop

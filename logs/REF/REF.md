@@ -6,6 +6,9 @@
 
 | Date        | File     | Notes                                                                             |
 | ----------- | -------- | --------------------------------------------------------------------------------- |
+| r2022-10-14 | [[SV]]       | Minimums for VC fundability                                                       |
+| r2022-10-06 | [[Coaches]]  | Igor Shindel (CTO Coach)                                                          |
+| r2022-10-06 | [[Coaches]]  | Plato Peer Mentoring                                                              |
 | r2022-09-28 | [[Mgr]]      | Career COACHES                                                                    |
 | r2022-07-20 | [[MED]]      | Stomach Upset Decision Tree                                                       |
 | r2022-07-18 | [[Politics]] | Optimal Tax Policy                                                                |
@@ -23,3 +26,6 @@
 | r2021-08-29 | [[Coaches]]  | Poised                                                                            |
 | r2021-04-00 | [[Coaches]]  | A PATH THAT FITS.  Daniel Fine. --                                                |
 | r2021-00-00 | [[RefMisc]]  | Lefty Attributes                                                                  |
+| r2020-11-00 | [[Nanny]]    | care.com login                                                                    |
+| r2020-00-00 | [[Nanny]]    | mommy groups                                                                      |
+| r2019-00-00 | [[Nanny]]    | AGENCIES                                                                          |

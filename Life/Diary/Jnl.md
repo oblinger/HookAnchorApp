@@ -28,6 +28,13 @@ $2450
 
 DAILY
 - $1950  =  $30/hr * 3hr/day * 5day/wk * 4.33wk/mo    (65hr/mo)
+- $1399  =  $20/hr * 3hr/day * 5day/wk * 4.33wk/mo    (65hr/mo)
+- $1732  =  $20/hr * 4hr/day * 5day/wk * 4.33wk/mo    (65hr/mo)
+
+THRICE WEEKLY
+- $1820 = $35/hr * 4hr/day * 3day/wk * 4.33wk/mo    (52hr/mo)
+- $1560 = $30/hr * 4hr/day * 3day/wk * 4.33wk/mo    (52hr/mo)
+- $1039shu = $20/hr * 4hr/day * 3day/wk * 4.33wk/mo    (52hr/mo)
 
 TWICE WEEKLY (Long)
 - $1300 = $30/hr * 5hr/day * 2day/wk * 4.33wk/mo    (43.3hr/mo)
@@ -35,10 +42,6 @@ TWICE WEEKLY (Long)
 TWICE WEEKLY (+1 CLEANING)
 - $1040 = $30/hr * 4hr/day * 2day/wk * 4.33wk/mo    (34.6hr/mo)
 - $520 = $30/hr * 4hr/day * 1day/wk * 4.33wk/mo    (17.3hr/mo)
-
-THRICE WEEKLY
-- $1560 = $30/hr * 4hr/day * 3day/wk * 4.33wk/mo    (52hr/mo)
-- $1820 = $35/hr * 4hr/day * 3day/wk * 4.33wk/mo    (52hr/mo)
 
 
 

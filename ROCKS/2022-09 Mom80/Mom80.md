@@ -1,14 +1,15 @@
-[Page](https://docs.google.com/document/d/1qW9pG3psyC-XOSOQqqTsjaDOBETDozUVPHWErpOgcgM/edit#) - 
+- [Page](https://docs.google.com/document/d/1qW9pG3psyC-XOSOQqqTsjaDOBETDozUVPHWErpOgcgM/edit#) - 
+
 
 ## TODO
-- send invites
-- book flights
+- send remaining invites
 - Ask Linda about having an Eli on Saturday.
 
 - Get Music
 - buy decorations
 - finalize food
 - linda drinks
+- Get mom a gift.
 
 
 
@@ -22,17 +23,56 @@
 - 
 
 SCHEDULE:
-WED 2		Flight 12:37p-11p
+
+
+WED 2	 12:37p-11p AA2585
 THR 3		
 FRI   4		Party
 SAT  5		Eli Party
 SUN 6
-MON 7		Flight 12:24p - 5:50p
+MON 7		
+TUE 8   12:24p - 5:50p  AA1339
 
 
 
 ## Food
 
+
+
+### LOTHERS
+
+
+- Baked Lemon Cod
+- Slow Roasted Beef and Gravy
+- Stuffed Cheese Manicotti
+
+- Tossed salad
+- Seasoned Green bean & Ham -- Green bean Almondine --Steam Vegetable Medely  -- 
+- Mash potatoes
+
+
+
+LOTHERS
+- Lions Club used is Lothers 859-689-4030 
+- http://www.lotherscatering.com/
+- john@lotherscatering.com
+- $21/person = $17(seafood) + $3(beef) + $1(under100 people)
+- $1050 = $21 * 50
+
+
+### JACKS
+
+- http://jackscatering.com/wp-content/uploads/2018/05/JACKS-MENU-2018.pdf
+
+
+- $1 extra per person for under 100 people
+- 
+
+### COST ANALYSIS
+
+- 40-50 coming   (18yes&7no   40outstanding)
+
+### OLDER
 - FOOD:  Ron's Friends, Ludwig Noll, 
 
 JOE NOLL - 8593803622
@@ -66,28 +106,20 @@ US:
 LIONS
 - Table cloths, decorations, 
 
+Lisa Hall Lmp41017@yahoo.com
 
-### LOTHERS
+From: "bunbun4029 (null)" <bunbun4029@aol.com>
+Date: December 5, 2021 at 8:33:00 PM EST
+To: Ashley Brown <aebrownie@yahoo.com>
+Cc: lalitzler@fuse.net,  coblinger@icloud.com,, morgan.g.manwiller@gmail.com, lparnell0119@yahoo.com, hall.ron121@insightbb.com, hall.ron121@gmail.com, hall.ron121@insight.com, tinamarie77@yahoo.com, khall92@aol.com, dan@analyticsfire.com, larrybrown@aol.com, knotfinder@gmail.com
 
+Jeff Litzler luckylitz1@gmail.com
+Kate Litzler  katelitzler@gmail.com, 
+Adam Morgan Ilu and Penelope Brown  brownadam50@gmail.com,
+Ashley Scott Slater and Walker Cramer 
+Tina  tinamarie77@yahoo.com
 
-- Baked Lemon Cod
-- Slow Roasted Beef and Gravy
-- Stuffed Cheese Manicotti
-
-- Tossed salad
-- Seasoned Green bean & Ham -- Green bean Almondine --Steam Vegetable Medely  -- 
-- Mash potatoes
-
-
-
-LOTHERS
-- Lions Club used is Lothers 859-689-4030 
-- http://www.lotherscatering.com/
-- john@lotherscatering.com
-- $21/person = $17(seafood) + $3(beef) + $1(under100 people)
-- $1050 = $21 * 50
-
-
+amer <aebrownie@yahoo.comAdam Morgan 
 
 ## Invite
 

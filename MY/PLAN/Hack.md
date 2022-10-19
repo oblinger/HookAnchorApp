@@ -1,13 +1,21 @@
+- [ ] OBS:  Rename the Template Create command to be better than CMD-OPT-Z
+- [ ] OBS:  Rename the show folder command???
+- [ ] OBS:   Rename the move folder command
+- [ ] OBS:  Get the 'AT' command working
 - [ ] OBS:  Change styling of published pages
 - [ ] OBS: Publish clean looking web content automatically from markdown
 - [ ] OBS:  have the CMDS page auto create / refresh the obsidian CMD entries
 - [ ] OBS:  TABULAR TITLE (see below)
 - [ ] OBS: CHANGE LOG - maintain list of edits.  track mod times & file lengths.  Do chron list of edits & dedup within window  (check if some tool exists)
-- [ ] fix auto generator to create wiki links
-- [ ] buy basket for QL in bathroom; add try to her drawer
+- [ ] OBS:  km recognized the '@sports visio' topic page, but then did not link all people docs in the folder
+- [ ] OBS:  ??? fix auto generator to create wiki links
 - [ ] OBS: key to add list items to lists with one letter prefix  e.g. t=todo, etc.   TAB-Q
-- [ ] Ensure sent mail is saved. and received mail is saved.
 - [ ] OBS: command to create a new page with wiki link from current curor location
+
+- [ ] BUY: basket for QL in bathroom; add try to her drawer
+- [ ] MAC: Ensure sent mail is saved. and received mail is saved.
+- [ ] EMAILS: Verify saving, verify drafts save, verify save sends, merge all AF mail in. back backup of all mail.
+- [ ] MAC: Toggle email notifications
 
 
 - [ ] how do I manage cross linked logs
@@ -25,11 +33,9 @@
 - [ ] - [ ]  F: edit scripts to be python3 scripts
 - [ ] F: play with 'state' app
 - [ ] Remove repeated stuff in email history
-- [ ] Toggle email notifications
 - [ ] Export 1-password for auto logins
 - [ ] F: script control of AirPod Max connection on Mac
 
-- [ ] EMAILS: Verify saving, verify drafts save, verify save sends, merge all AF mail in. back backup of all mail.
 - [ ] Fix archiving of email
 - [ ] MAIL -- get all mail messages logged
 

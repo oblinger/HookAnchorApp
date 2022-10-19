@@ -8,7 +8,15 @@
 
 | Date        | File                 | Notes                                                             |
 | ----------- | -------------------- | ----------------------------------------------------------------- |
-| m2022-10-03 | [[SV]]                   | Counter Offer Discussion                                          |
+| m2022-10-18 | [[SV]]                   | JASON TAM discussion                                              |
+| m2022-10-17 | [[@Igor Shindel]]        | Intro Call                                                        |
+| m2022-10-14 | [[@Yashin Lin]]          | Discussion at end of her pip                                      |
+| m2022-10-14 | [[SV]]                   |                                                                   |
+| m2022-10-14 | [[SV]]                   | Jason Response Discussion                                         |
+| m2022-10-13 | [[@Avidan Ross]]         | Intro meeting                                                     |
+| m2022-10-13 | [[@Joseph Yeh]]          | SV decision                                                       |
+| m2022-10-07 | [[Fin]]                  | Avanti's Plan                                                     |
+| m2022-10-03 | [[SV]]                   | Counter Offer Discussion  (where I proposed the $12M cap)         |
 | m2022-09-22 | [[SV]]                   | Joining SV as consultant                                          |
 | m2022-09-14 | [[@Joseph Yeh]]          | Jason decision                                                    |
 | m2022-09-13 | [[SV]]                   | [[@Michael Seibert]] discussion                                   |

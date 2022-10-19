@@ -3,3 +3,7 @@
 
   [Prjs](Prjs.md),   [AF](AF/AF.md),   [UF_Docs](UF_Docs/UF_Docs.md)
 
+
+| Date          | File  | Notes         |
+| ------------- | ----- | ------------- |
+| prj2022-10-07 | [[Fin]]   | Fin-Rebalance |

@@ -3,7 +3,28 @@
  - Invested in [[@Dusty Robotics]], close friend with [[@Tessa Lau]].
  
  
- 
+### m2022-10-13  Intro meeting
+
+
+Selling my company, and before really looking, I have an interesting co-founder offer.
+Tessa just thought I should chat at least a tiny bit before jumping in.
+
+
+- Quick Intro:   
+	- AI-PhD from UIUC illinois.  
+	- 7 years as a ML researcher at IBM Watson & teaching in Columbia's EE department.  
+	- 6 years as a DARPA PM.  Funded over $200M in programs all centered on ML
+	- Then as a co-founder CTO in a string of exited startups:
+		- First started as a recommendation play which pivoted into a specialty payments platform
+		- The second is Martian robotics.  Sold to Aeolus where I joined and grew a 60+ person world class robotics team.
+		- The third is the one I am selling now:  It is a clean tech cosultancy focused on building end to end SW solutions for HW companies.
+		  Usually centered on Machine Learning or IoT.  couple billion dollars worth of devices in the field
+
+
+- What kind of TAM and what kind of targeted exits size would you view as the minimum size required in order to be solidly investable?
+- This is a late joining co-founder/CTO role.  double digit equity and $200K salary.
+
+
 ### t2022-02-00 -- Tessa's friend and investor
 
 https://www.linkedin.com/in/avidanross/

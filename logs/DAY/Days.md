@@ -1,7 +1,36 @@
+
+### d2022-10-17
+- [ ] CV decision; Read pricing
+- [ ] Prep todo list for SV
+- [ ] Vanguard let them know about the Deffered comp plans
+- [ ] Book appt w/ EMT
+- [ ] mom xmas trip.
+- [ ] Get food booked for mom80;  Jacks food for party
+- [ ] Hair, Nanny
+- [ ] Structure and plan for schools
+
+### d2022-10-11 
+- [ ] CV decision
+
+
+### d2022-10-11 
+- [x] CV decision
+- [x] Collette, Nanny
+- [ ] Structure and plan for schools
+- [ ] - [ ] get food booked for mom80;  Jacks food for party
+- [ ] get plan for SV stated.
+- [ ] get xmas settled.
+- [ ] 
+
+### d2022-10-07 
+- [x] Call linda about party.
+- [x] Get blood work
+- [ ] 
+
 ### d2022-10-06  
 - [ ] mom's cards out.  Linda party.
-- [ ] silver light
-- [ ] jason response
+- [ ] silver light`
+- [x] jason response
 - [ ] Igor ; action
 - [ ] list of starting actions
 

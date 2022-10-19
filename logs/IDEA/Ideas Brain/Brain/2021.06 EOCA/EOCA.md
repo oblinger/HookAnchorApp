@@ -326,7 +326,7 @@ _
 	The default path is that Societal, Economic, and Technological forces will shape the unfolding of this next 
 
 _AGI
-# BUILDING A SENTIENT SYSTEM
+# BUILDING A SENTIENT SYS
 
 ## === THE GOAL & REQUIREMENTS ===
 #### -- BOOTSTRAPPING --
@@ -391,7 +391,20 @@ _
 ## === 
 _
 # WP
-### wp2022-02-25 - RED ALERT - THIS IS NOT A DRILL - I REPEAT THIS IS NOT A DRILL
+## wp2022-10-18  FTX Competition
+
+### CORE CLAIMS
+#### THE PATH - The path that matters is building a learning agent that bootstraps human knowledge to achieve AGI.
+#### DISTRACTORS - Much of AI "advancements" are distractions
+#### STEPWISE PROGRESS - 
+- Relatively tiny key algorithmic idea blossoms into an entire field's worth of advancement
+#### CAPTURE HUMAN KNOWLEDGE -
+#### GAP FUSING CONSCIOUS with UNCONSCIOUS knowledge
+
+#### MILESTONE BASED ROADMAP -
+
+
+## wp2022-02-25 - RED ALERT - THIS IS NOT A DRILL - I REPEAT THIS IS NOT A DRILL
 
 Stuart Russell noticed that humanity's response to the AGI threat is not similar to what one might expect if we learned an alien species was going to arrive in the next century.  I believe this is not because much of humanity (and the AI community itself) believes the really cannot arrive, but it is because they believe:
 (1) if such a threat exists it is far far into the mists of the future, and
@@ -405,9 +418,9 @@ The aim here is to scare the bleep out of humanity, and to dramatically increase
 
 
 
-### wp2022-02-25 - DAG OF SCOPES / INHERENT TO SOCIETY OF AGENTS / 0-DAY-ATTACKS
+## wp2022-02-25 - DAG OF SCOPES / INHERENT TO SOCIETY OF AGENTS / 0-DAY-ATTACKS
 
-### wp2022-02-25 - INHERENT CENTRALIZATION / SUCCEPTABLE TO DEVISTATING ATTACK
+## wp2022-02-25 - INHERENT CENTRALIZATION / SUCCEPTABLE TO DEVISTATING ATTACK
 
 Hiearchy is common in, military, corporate, governmental, societal organizations.
 It is common in ecosystems, bioligical entities too.
@@ -415,11 +428,11 @@ It is common in ecosystems, bioligical entities too.
 ?? Here we argue that it is inherent aspect of goal-directedness / intent ??
 
 
-### wp2022-02-25 - COMPETITION WILL BE KEY & DIFFERENTIAL SOCIETAL KNOWLEGE WILL BE KING
+## wp2022-02-25 - COMPETITION WILL BE KEY & DIFFERENTIAL SOCIETAL KNOWLEGE WILL BE KING
 
 - either within compoents of an AGI or across species(es) of AGI it will be of central concern.
 
-### wp2022-02-25 - DEGENERACY / TAIL COMPLEXITY
+## wp2022-02-25 - DEGENERACY / TAIL COMPLEXITY
 
 I do not have conviction that this claim is true, rather it seem it could be true.
 
@@ -468,7 +481,7 @@ It is clear from human history in computation that there is significant substrat
 
 
 
-### wp2022-01-18    >>> ASK EVAN HUBINGER <<<   (big sections)
+## wp2022-01-18    >>> ASK EVAN HUBINGER <<<   (big sections)
 #### Snipits
 
 [OBJECTS](n:all)  IN THE MIRROR ARE CLOSER THAN THEY APPEAR
@@ -1123,7 +1136,7 @@ You took ALOT of wind out of my sails, when you pointed out that once we have th
 
 
 _
-### wp2022-02-24 - LARGEST CLAIMS
+## wp2022-02-24 - LARGEST CLAIMS
 - One cannot sandbox a willful GAI
 - An AGI that desired it would likely 'win' in a battle against humanity
 - Humanity will likely construct its first AGI within decades 
@@ -1143,7 +1156,7 @@ The Miri guys believe all of this!
 
 
 _
-### wp2022-02-06 - Quicklist Key Conclusions
+## wp2022-02-06 - Quicklist Key Conclusions
  
 - **SUMMARY CONCLUSION** -- all plausible paths lead to humans loosing control, within the lifetime of the youth today, and we may already be past the point of no return.
 	- PLAUSIBLE PATHS -- we outline a plasible unfolding of AI into AGI.  we consider the plausibilty of various reasons why AGI might not happen, and various ways to control AGI.
@@ -1181,7 +1194,7 @@ _
 		- ATTEND / FOCUS - 
 
 _
-### wp2022-02-01 - EOCA Book Intro
+## wp2022-02-01 - EOCA Book Intro
 
 When I have brought up the topic of humanities loss of dominance to academic collegues in AI, they generally do not dismiss this idea out of hand.  After pushing through some of my arguments, we often get to a place where they say, "well it could be, but really there are so many unknowns here, it is difficult to say much of anything with any confidence." And the conversation kind of dies there, it is not that they are disagreeing, or even saying these ideas are implausible, or other ideas are more plausible.  Instead they are kind of just passing on the topic.  They have spent their careers analyzing and uncovering new truths which they can know with enough certainty that they can publish them in respected journals within our field.  They look at this topic, and correctly conclude that it is presently not possible to engage Dan's topic in that kind of a way, so consideration of that topic is out of scope for me, and for my kind of scientific enquiry.
 
@@ -1190,7 +1203,7 @@ Further, I have come to believe that we CAN obtain consensus and some degree of 
 
 
 _
-### wp2022-01-17 - The treasonous human
+## wp2022-01-17 - The treasonous human
 
 - The Treasonous Thought:  maybe we shouldn't even have a right to stop the evolution of the next stage of intelligence
 - Rough Analogy: Consider historical human perspectives:
@@ -1205,6 +1218,35 @@ The treasonous American and that's me in the treason is the treasonous thought i
 
 _
 # LOG
+
+
+
+CORE CLAIMS
+
+
+
+
+
+### t2022-10-13  Man in a room soon to die
+
+Your response tells me that you don't viscerally really believe in this threat (As most don't.  Indeed, even I have trouble believing emotionally what I see intellectually.)
+
+Consider the man traped in a room from which he will soon die.  He stops asking questions about whether trying this door or flipping that leaver might work.  He violently is doing ALL of those things... even ones he is quite certain will not work.  He does those too.  And that is the correct response.  After all, what is the point of conserving energy to expend on other objectives when soon, no other objectives will matter?
+
+Unlike climate, or nukes, or bio terror.... this puppy really CAN end us all.  every last one of us.  
+
+Intellectually I see no way to stop our progress.  
+Intellectually I see no way to put the genie back once we are close.  
+Intellectually I see no way humanity remains in control of what happens afterwards.
+
+you know.... kinda like the guy in the room... 
+
+
+If all of what I just wrote is even plausibly true.  Then math probabilities, opportunity cost, and chances of productive action, etc. should all go out the window, and one should be grasping at any lever in sight....   
+
+Instead we are slumbering...   the overton window has not progressed far enough for us to emotionally believe it could really be true.
+
+
 ### n2022-07-09  Zombie Consciousness
 
 

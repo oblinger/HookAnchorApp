@@ -1,3 +1,45 @@
+re### 2022-10-07  Lily - Tax Info for 2021 return
+
+Wells Fargo 844-656-0360
+
+Lily,
+
+  
+
+Here is the info as requested.  We did not make any payments this year, but I did make a 60K & 15K payments (I think that is the amount)
+
+When tax day came, just so I would cover any taxes and not get into trouble.  (But no payments were made prior to April 2022).
+
+  
+
+I am not positive if the Wells Fargo statement I have is the correct one.  Let me know.
+
+I have screen shots of house payments, DMV and Tax preparer payments attached.
+
+  
+
+I still have a home office in the same configuration as last year.  But I did very little 1099 work, so I don’t know if I can deduct anything for the home office.
+
+  
+
+  
+
+IMPORTANT DETAIL
+
+- I had a differed comp plan associated with my own sole proprietorship which was terminated in 2021.  Since these funds were kept under my name at Vanguard, they are STILL under my name at vanguard. 
+
+- Perhaps I need to notify Vanguard that these funds are now not in my DC plan, but are just back in my IRA?  I am not sure… the funds aren’t really moving.  But I should be careful since the IRS cares that the funds always remain in a qualified account.  Exactly what actions do I need to take in this case?
+
+- Also I did receive $2000 of 1099 work in 2021.  (This was important for allowing my differed comp plan to be adjusted in a way that avoided it being imbalanced when it closed.  This work was done for my Mom, so I don’t have any 1099 to go with it, but we should report the income as 1099).
+
+  
+
+  
+
+Thanks,
+
+Dan
+
 ### 2022-09-30  Building Work Desk in livingroom
 
 14.75"   =   59" / 4

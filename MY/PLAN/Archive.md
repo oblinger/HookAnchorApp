@@ -1,3 +1,12 @@
+- [ ] Build Roadmap
+- [ ] Yolo-x
+- [ ] Negotiate & Sign
+- [ ] MOM-BDAY:  Ronny, mom's bday.     sh
+- [x] friend of Dean (back yard work)
+- [ ] mom xmas trip.
+- [x] ask about polishing desk
+- [x] Merrill info
+- book flights
 - [x] Resume to Nina
 - [x] Resume to Nina
 - [ ] - [ ]

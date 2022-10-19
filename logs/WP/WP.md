@@ -1,11 +1,16 @@
+---
+aliases: [WPs]
+---
 =[[TAG]] <[[UNTYPED]]  
-
+ - [[WPs]], 
 
 [[WP2022]]    [WP2022](WP2022.md),   [WP2021](WP2021.md)   
 
 
 | Date         | File   | Notes                                                                 |
 | ------------ | ------ | --------------------------------------------------------------------- |
+| wp2022-10-18 | [[EOCA]]   | FTX Competition                                                       |
+| wp2022-10-10 | [[Nanny]]  | SAVE MONEY ON AYI                                                     |
 | wp2022-06-03 | [[WP2022]] | The Midnight Scootifier                                               |
 | wp2022-05-21 | [[WP2022]] | Photo Management Strategy                                             |
 | wp2022-04-17 | [[Y22]]    | just a test entry                                                     |

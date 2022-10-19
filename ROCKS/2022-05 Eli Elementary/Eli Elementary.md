@@ -1,3 +1,10 @@
+---
+aliases: [Eli Next]
+---
+# TODO
+- [ ] Build Spreadsheet
+- [ ] Read orienting materials
+- [ ] Develop written plan
 
 ## Review Sites
 -  [Private School Review](https://www.privateschoolreview.com/mission-montessori-profile/94102)  

@@ -1,18 +1,15 @@
-- [ ] GET BLOOD WORK DONE
-- [ ] mom xmas trip.
-- [ ] MOM-BDAY:  Ronny, mom's bday.
-       Thr-3  Tue-8
-- [ ] Yolo-x
-- [ ] Covid wait for - Yashin's conservative friend
-- [ ] friend of Dean (back yard work)
-- [ ] Find CTO coach
-
-- [ ] look at differed comp and decide what to do.
-- [ ] mac:  Battery life; Fix audio on laptop; Battery lasts 2:20 with screen brightness below 50%
-- [ ] buy plane tixs
-- [ ] ask about polishing desk
 - [ ] Book appt w/ EMT
+- [ ] book care.com woman
+- [ ] Vanguard let them know about the Deffered comp plans
+- [ ] Covid wait for - Yashin's conservative friend
+- [ ] Find CTO coach: waiting on platohq; have app w. Igor
 
+- [ ] LAP: Zoom+PodMax; Batt 2:20 screen <50%; Monitor drops off; Mail client is lagging display
+- [ ] look at differed comp and decide what to do.
+- [ ] buy plane tixs xmas
+
+- [ ] Tennis shoes
+- [ ] [Ikea bin](https://www.ikea.com/us/en/p/trofast-mesh-storage-box-light-green-gray-90518574/) - mesh bins.
 - [ ] Get AF accounts cleaned:   (Find the hiring tests)
 - [ ] Get logins for MyHealth
 - [ ] Nick get review

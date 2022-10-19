@@ -1,3 +1,4 @@
+  [[DocObsidian]]
   [DocMatplotlib](DocMatplotlib.md),   [DocJupyter](DocJupyter.md)
   [DocSciKit](DocSciKit.md)
   [DocJupyter](DOCS/DocJupyter.md)

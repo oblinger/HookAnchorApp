@@ -1,3 +1,11 @@
+
+## TOPICS
+
+### MEASURMENTS
+- APO-B  (or is it APO-E?)
+- A1C?
+- LDL/HDL/Ratio
+
 ### --- BLOOD PRESSURE ---
 2020
 4.27	125/83 76	129/82 84				(slept in)

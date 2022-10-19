@@ -1,8 +1,12 @@
 
 
-	
 # LOG
-
+### r2022-10-06  Igor Shindel (CTO Coach)
+ - [Igor Shindel](https://www.linkedin.com/in/igorshindel)  
+ 
+### r2022-10-06  Plato Peer Mentoring
+-  [Plato](https://www.platohq.com/)  
+- Found by Joseph Yeh
 
 ### r2021-08-29 DYL coaches (Designing your life)  & 80000 hours
 https://designingyour.life/dyl-certified-coaches-california/

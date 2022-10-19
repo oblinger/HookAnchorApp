@@ -1,4 +1,19 @@
-### 2022-10-03  
+MORN:  	Meditate, Pills, Day, [[Comms]],    NOON:   	EVE: Plan, Chew
+
+### 2022-10-17
+- [ ] Get xmas settled.
+- [ ] School Search Reading; Checklist; and spreadsheet started
+- [ ] SV: Discuss with Brian
+- [ ] Structure and plan for schools
+- [ ] SV planning
+- [ ] Comms: Discussions w/ mentors;  Finding mentors
+- [ ] NJ22: Prep for Joe (War Stories)
+
+
+### 2022-10-10
+- [ ] SV: have conversations.  
+
+### 2022-10-03  fre
 - [ ] finalize Jason
 - [ ] Get comms list planned & schedule
 - [ ] Hours on Coursera
