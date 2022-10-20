@@ -9,8 +9,27 @@ git push origin master
 git push --set-upstream origin master
 git push origin
 
-Web->Github -> ![my account picture] -> Settings -> Developer Settings -> 
+SETUP GITHUB ON LAPTOP
+
+- CREATE TOKEN
+  Web->Github -> ![my account picture] -> Settings -> Developer Settings -> 
     Personal Access Tokens -> ![Generate New Token]
+
+    -->  with 'credential.helper cache' set, git will remember the user/pass, and you use token for the pass
+
+- COMMANDS
+
+      git config --global --unset credential.helper   # only if credential exists
+      git config --global user.name "Dan Oblinger"
+      git config --global user.email "code@oblinger.us"
+      git config --global credential.helper cache
+      git remote add origin https://github.com/oblinger/kmr.git
+      git push origin master
+      git push --set-upstream origin master
+      git push origin
+
+
+
 
 
 ## QUICK REF

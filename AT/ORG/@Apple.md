@@ -54,3 +54,11 @@ Retina15 Serial:  C02V811RHTD9
   https://checkcoverage.apple.com/
 
 
+# LOG
+### 2022-10-20  Laptop Repair
+
+OLD Case: [101837219240](https://getsupport.apple.com/GetCaseDetails?caseid=101837219240&locale=en_US) - 
+ID:  D557413411
+
+[https://mysupport.apple.com/repairs/details/D557413411?serialNumber=C02DP1LYMD6R&cid=acs::repair.email](https://mysupport.apple.com/repairs/details/D557413411?serialNumber=C02DP1LYMD6R&cid=acs::repair.email)
+

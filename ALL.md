@@ -1,6 +1,6 @@
 ALL TOPIC ROOTS
 
-  [[Misc]],   [[Spirit]],   [[Startups]],   [[Karaoke]],   [[tickets]],   [[meditation]],   [[Test88]],   [[Rental]],   
+  [[MISC]],   [[Spirit]],   [[Startups]],   [[Karaoke]],   [[tickets]],   [[meditation]],   [[Test88]],   [[Rental]],   
   [[Hotels]],   [[Shop]],   [[Craps]],   [[Old]],   [[Hackers]],   [[Search]],   [[Blockchain]],   [[SF]],   
   [[courses]],   [[UX Course at 500]],   [[Presentations]],   [[Jeopardy Machine Reading]],   [[Robotics_Fireside]],   
   [[Nomad]],   [[Gifts]],   [[Trip]],   [[Thailand]],   [[House]],   [[Biking]],   [[Glossary]],   [[Gym]],   [[Games]],
@@ -9,7 +9,7 @@ ALL TOPIC ROOTS
   [[COURSERA]],   [[ML]],   [[DL]],   [[STATS]],   [[Fin]],   [[RealEstate]],   [[Expenses]],   [[Bills]],   [[Taxes]],
      [[LIFE]],   [[Phillipines]],   [[mate]],   [[Diary]],   [[Weekly]],   [[Mission Statement]],   [[Docs]],   [[Unix 
   Command Line]],   [[DocObsidian]],   [[DocEmacs]],   [[DocMac]],   [[DocJavascript]],   [[DocR]],   [[DocPython]],   
-  [[DocApplescript]],   [[DocRuby]],   [[DAILY]],   [[Tags]],   [[ATTACH]],   [[Logs]],   [[JOURNAL]],   [[Receipts]],
+  [[DocApplescript]],   [[DocRuby]],   [[DAILY]],   [[TAGS]],   [[ATTACH]],   [[LOGS]],   [[JOURNAL]],   [[Receipts]],
      [[NOTE]],   [[REF]],   [[WP]],   [[IDEA]],   [[Alloy]],   [[2013-00 TechnoTherapy]],   [[2020-07 Autonomy]],   
   [[2007-02 DARPA DHO]],   [[2007-02 New Financial Model]],   [[Ideas Old]],   [[homerobot]],   [[Consulting Co]],   
   [[Word-War]],   [[Ideas Social]],   [[MKT]],   [[EduCorp]],   [[Greenhouse Farming]],   [[Forum]],   [[Good With 
@@ -21,13 +21,13 @@ ALL TOPIC ROOTS
   Guide]],   [[2009-00 DARPA Energy]],   [[2020-10 MedAR]],   [[2020-09 CtrlSaaS]],   [[2020-07 Spot Pricing]],   
   [[2015-00 Flipping Websites]],   [[2013-08 Crowd Self Assessment]],   [[2020-06 OpenBricks]],   [[TreeSheet]],   
   [[myorgstartup]],   [[2009-03 State Edu Testing]],   [[2020-00 FinScreener]],   [[MEETING]],   [[TEXT]],   
-  [[Letters]],   [[IBM-years]],   [[Msg]],   [[DAY]],   [[Sets]],   [[Cmd]],   [[Writings]],   [[ArmChair]],   
-  [[Politics]],   [[race]],   [[Books]],   [[LANG]],   [[haskell]],   [[Humor]],   [[Recipes]],   [[Movies]],   
-  [[Phone]],   [[ToRead]],   [[Buy]],   [[Bought]],   [[MY]],   [[Plan]],   [[scratch]],   [[Meta]],   [[Myfo]],   
+  [[Letters]],   [[IBM-years]],   [[Msg]],   [[DAY]],   [[SETS]],   [[Cmd]],   [[Writings]],   [[ArmChair]],   
+  [[Politics]],   [[race]],   [[books]],   [[LANG]],   [[haskell]],   [[Humor]],   [[Recipes]],   [[Movies]],   
+  [[Phone]],   [[ToRead]],   [[Buy]],   [[Bought]],   [[MY]],   [[Plan]],   [[scratch]],   [[META]],   [[Myfo]],   
   [[FOOD]],   [[Noom]],   [[Glycemic Index]],   [[PRJ]],   [[SV]],   [[AF]],   [[AFwp]],   [[Outcult]],   [[AFactive]],
-     [[AFldr]],   [[AFarchive]],   [[UF_Docs]],   [[ufPublish]],   [[UfApps]],   [[ufBrick]],   [[At]],   [[@Qingling 
+     [[AFldr]],   [[AFarchive]],   [[UF_Docs]],   [[ufPublish]],   [[UfApps]],   [[ufBrick]],   [[AT]],   [[@Qingling 
   Oblinger]],   [[ORG]],   [[@Epsilon Oblinger]],   [[VC ORG]],   [[PEOPLE]],   [[family]],   [[Parents]],   [[@Sports 
-  Visio]],   [[@Eli Oblinger]],   [[BCMS]],   [[Streams]],   [[VC]],   [[TIER-4]],   [[Rocks]],   [[BeMLR]],   [[Eli 
+  Visio]],   [[@Eli Oblinger]],   [[BCMS]],   [[Streams]],   [[VC]],   [[TIER-4]],   [[ROCKS]],   [[BeMLR]],   [[Eli 
   Elementary]],   [[2021-04 FindDayCare]],   [[2022-02 Yearbook]],   [[AF Wind Down]],   [[Grandpa DJ]],   [[BeFAANG]],
      [[2020-08 Race Pitch]],   [[BeVC]],   [[PKM]],   [[Mom80]],   [[Learning]],   [[Legal]],   [[Legal Uniform]],   
   [[Legal Ob Labs]],   [[MED]]

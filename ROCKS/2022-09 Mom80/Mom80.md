@@ -1,6 +1,10 @@
 - [Page](https://docs.google.com/document/d/1qW9pG3psyC-XOSOQqqTsjaDOBETDozUVPHWErpOgcgM/edit#) - 
 
 
+
+
+
+
 ## TODO
 - send remaining invites
 - Ask Linda about having an Eli on Saturday.
@@ -11,6 +15,11 @@
 - linda drinks
 - Get mom a gift.
 
+TO BUY
+- Cake
+- Boxes of potato chips and pretzels
+- Cashews/Nuts
+- Leftover Pans
 
 
 
@@ -33,7 +42,16 @@ SUN 6
 MON 7		
 TUE 8   12:24p - 5:50p  AA1339
 
+## People Coming
 
+- Tina is a no  
+- Lisa can’t come working not sure about Ryan   
+- Leila no  
+- Kathleen is now coming  
+- Nancy is coming   
+- John and Monica are coming  
+- Ken and Peggy are coming
+- I need a head count by next Wed
 
 ## Food
 
