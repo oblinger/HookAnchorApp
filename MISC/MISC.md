@@ -1,3 +1,4 @@
+  [[Courses]]
   [webshare](webshare/webshare.md)
   [Coursera](Coursera.md)
   [Startups](Startups/Startups.md),   [Templates](Templates.md)
@@ -5,7 +6,7 @@
   [Test88](Test88/Test88.md)
   [Politics](Politics.md)
   [Startups](Startups.md)
-  [Spirit](Spirit/Spirit.md)  [Karaoke](Karaoke/Karaoke.md)  [Tickets](Tickets/Tickets.md)  [Meditation](Meditation/Meditation.md)  [Rental](Rental/Rental.md)  [Info Startups](Info Startups/Info Startups.md)  [TXT](TXT.md)  [Hotels](Hotels/Hotels.md)  [Shop](Shop/Shop.md)  [Craps](Craps/Craps.md)  [Old](Old/Old.md)  [Info](Info.md)  [Hackers](Hackers/Hackers.md)  [Folders](Folders.md)  [Search](Search/Search.md)  [Politics](Politics.md)  [Blockchain](Blockchain/Blockchain.md)  [SF](SF/SF.md)  [Courses](Courses/Courses.md)  [Presentations](Presentations/Presentations.md)  [Nomad](Nomad/Nomad.md)  [Publications](Publications.md)  [Gifts](Gifts/Gifts.md)  [Trip](Trip/Trip.md)  [Highbrow](Highbrow.md)  [People](People/People.md)  [House](House/House.md)  [Biking](Biking/Biking.md)  [Glossary](Glossary/Glossary.md)  [Gym](Gym/Gym.md)  [Games](Games/Games.md)  [Napa](Napa/Napa.md)  [Hiking](Hiking/Hiking.md)
+  [Spirit](Spirit/Spirit.md)  [Karaoke](Karaoke/Karaoke.md)  [Tickets](Tickets/Tickets.md)  [Meditation](Meditation/Meditation.md)  [Rental](Rental/Rental.md)  [Info Startups](Info Startups/Info Startups.md)  [TXT](TXT.md)  [Hotels](Hotels/Hotels.md)  [Shop](Shop/Shop.md)  [Craps](Craps/Craps.md)  [Old](Old/Old.md)  [Info](Info.md)  [Hackers](Hackers/Hackers.md)  [Folders](Folders.md)  [Search](Search/Search.md)  [Politics](Politics.md)  [Blockchain](Blockchain/Blockchain.md)  [SF](SF/SF.md)  [COURSES](COURSES.md)  [Presentations](Presentations/Presentations.md)  [Nomad](Nomad/Nomad.md)  [Publications](Publications.md)  [Gifts](Gifts/Gifts.md)  [Trip](Trip/Trip.md)  [Highbrow](Highbrow.md)  [People](People/People.md)  [House](House/House.md)  [Biking](Biking/Biking.md)  [Glossary](Glossary/Glossary.md)  [Gym](Gym/Gym.md)  [Games](Games/Games.md)  [Napa](Napa/Napa.md)  [Hiking](Hiking/Hiking.md)
   [Txt](Txt/__Txt__.md)
   [Publications](__Publications__.md)
   [Old](Old/__Old__.md)  [Presentations](Presentations/__Presentations__.md)

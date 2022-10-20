@@ -2,7 +2,7 @@ ALL TOPIC ROOTS
 
   [[Misc]],   [[Spirit]],   [[Startups]],   [[Karaoke]],   [[tickets]],   [[meditation]],   [[Test88]],   [[Rental]],   
   [[Hotels]],   [[Shop]],   [[Craps]],   [[Old]],   [[Hackers]],   [[Search]],   [[Blockchain]],   [[SF]],   
-  [[courses]],   [[UX Course at 500]],   [[Presentations]],   [[Jeopardy Machine Reading]],   [[Robotics_Fireside]],   
+  [[COURSES]],   [[UX Course at 500]],   [[Presentations]],   [[Jeopardy Machine Reading]],   [[Robotics_Fireside]],   
   [[Nomad]],   [[Gifts]],   [[Trip]],   [[Thailand]],   [[House]],   [[Biking]],   [[Glossary]],   [[Gym]],   [[Games]],
      [[napa]],   [[hiking]],   [[Career]],   [[NextJob]],   [[NJ22]],   [[Resume]],   [[bio]],   [[AFmaterials]],   
   [[Mgr]],   [[MgrContracts]],   [[MgrTracking]],   [[MyMgr]],   [[Nanny]],   [[leadership]],   [[MATERIALS]],   

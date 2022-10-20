@@ -11,6 +11,12 @@
 - linda drinks
 - Get mom a gift.
 
+~~
+Boxes of potatos chips
+and pretzules
+cashwes
+- Cake
+- PansPPanPaanans
 
 
 
@@ -63,6 +69,12 @@ LOTHERS
 ### JACKS
 
 - http://jackscatering.com/wp-content/uploads/2018/05/JACKS-MENU-2018.pdf
+
+
+Wedding #9
+- Caramelized Onions and Mushrooms
+- Brown Sugar on Salmon
+~~
 
 
 - $1 extra per person for under 100 people

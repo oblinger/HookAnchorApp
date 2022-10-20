@@ -1,3 +1,7 @@
+ [Apple.com](https://apple.com),  
+- 800-692-7753 Apple Repair
+- 
+
 ## INFO
 ~MASTER IN 1PASSWORD~
 MAC PRO 2019 — C02DP1LYMD6R
@@ -54,3 +58,11 @@ Retina15 Serial:  C02V811RHTD9
   https://checkcoverage.apple.com/
 
 
+
+# LOG
+
+### 2022-10-19  Repair Request
+
+
+- Case: [101837219240](https://getsupport.apple.com/GetCaseDetails?caseid=101837219240&locale=en_US)
+- D557413411  (given by the agent)

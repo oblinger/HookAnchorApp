@@ -1,3 +1,4 @@
+- [ ] OBS:  Fling Active, Wings, Back
 - [ ] OBS:  Rename the Template Create command to be better than CMD-OPT-Z
 - [ ] OBS:  Rename the show folder command???
 - [ ] OBS:   Rename the move folder command
