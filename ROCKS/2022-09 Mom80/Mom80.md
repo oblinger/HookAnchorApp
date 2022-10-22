@@ -15,11 +15,20 @@
 - linda drinks
 - Get mom a gift.
 
+<<<<<<< HEAD
 TO BUY
 - Cake
 - Boxes of potato chips and pretzels
 - Cashews/Nuts
 - Leftover Pans
+=======
+~~
+Boxes of potatos chips
+and pretzules
+cashwes
+- Cake
+- PansPPanPaanans
+>>>>>>> 9e3829c4c7bb45f1c9565d289cd801951efa792b
 
 
 
@@ -81,6 +90,12 @@ LOTHERS
 ### JACKS
 
 - http://jackscatering.com/wp-content/uploads/2018/05/JACKS-MENU-2018.pdf
+
+
+Wedding #9
+- Caramelized Onions and Mushrooms
+- Brown Sugar on Salmon
+~~
 
 
 - $1 extra per person for under 100 people

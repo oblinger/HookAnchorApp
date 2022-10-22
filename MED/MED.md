@@ -67,19 +67,6 @@ a-[[MED_Food]],
   [MED_Vision](MED_Vision.md)
   [MED-Vitamins](MED-Vitamins.md)
 
-## = HEART =
-- CPMC - Heart Disease Reversal Nutrition Program: CPMC 415-353-4278
-- Stanford Preventive Cardiology -  (650) 725-5909
-
-
-## = MEDICAL MEASUREMENTS
-### HOMEOCYSTEINE homocysteine
-- [Maria](https://medium.com/feed-your-brain/forget-cholesterol-its-your-homocysteine-level-that-matters-716a8fe9d345),   Ideal is <10.   >15 is considered abnormal.
-### APO-B
-- [Pritikin Article](https://www.pritikin.com/what-is-apob?utm_campaign=Weekly%20Newsletter%20Campaign%20&utm_medium=email&_hsmi=224117336&_hsenc=p2ANqtz--l-p5JO-PYGYpraHeIa0oRwqdqb5IZ4jsUes5gFpNwPClwrNac4R9oKNykGHqH7OuJd6RTtouCgobo1BQiSKAEifjFZA&utm_content=224118332&utm_source=hs_email),
-	- two kinds:  apoB-48       apoB-100 (made in the liver, )
-	- They was under 100 for TotalCholesterol-HDL   or under 80 if reversing CVD
-	- Same 100 and 80 numbers for the apoB levels
 
 ## OLDER TODO
 	- Simvastatin level  chol 240/ LDL 190

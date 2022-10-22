@@ -48,12 +48,13 @@ DAILY VIEW DASHBOARD
 
 PLANNING VIEW DASHBOARD
 
-|  col-1  |  col-2   |   col-3   | col-4 |............................................     |
-|:-------:|:--------:|:---------:|:-----:|:---|
-| Threads |   Prime  |  Second   | Daily |     |
-|    "    |    "     |     "     |   "   |     |
-| Current |   Full   |   Later   | Todo  |     |
-|  Wings  |    Q2    |    ""     |  ---  |     |
+|  col-1  |  col-2  | col-3 |  col-4  | ............................................ |
+|:-------:|:-------:|:-----:|:-------:|:-------------------------------------------- |
+| Active  | Threads | Prime |  Todo   |                                              |
+|    "    |    "    |   "   |    "    |                                              |
+| Current |   Q2    | Full  |  Quick  |                                              |
+|  Wings  |  Later  |   "   | Waiting |                                              |
+|         |         |       |         |                                              |
 
 
 THREE MONITOR SETUP

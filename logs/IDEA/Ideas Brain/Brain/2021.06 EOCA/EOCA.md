@@ -1,3 +1,4 @@
+  [[FTX]]
   [MindSlavery](MindSlavery.md)
   
   
@@ -61,7 +62,7 @@ _
 
 
 ## === CORE CLAIM: UNCONTROLABILITY ===
-### --- PROOFS OF CONCONTROLABILITY ---
+### --- PROOFS OF CONTROLLABILITY ---
 #### -- POSSIBLE BEHAVOIRS OF A SYSTEM IS MUCH LARGER THAN WHAT IT CAN ANALYZE -
 Result:  one needs to somehow abstract and generalize system in order to draw conclusions about it.
 
@@ -391,19 +392,6 @@ _
 ## === 
 _
 # WP
-## wp2022-10-18  FTX Competition
-
-### CORE CLAIMS
-#### THE PATH - The path that matters is building a learning agent that bootstraps human knowledge to achieve AGI.
-#### DISTRACTORS - Much of AI "advancements" are distractions
-#### STEPWISE PROGRESS - 
-- Relatively tiny key algorithmic idea blossoms into an entire field's worth of advancement
-#### CAPTURE HUMAN KNOWLEDGE -
-#### GAP FUSING CONSCIOUS with UNCONSCIOUS knowledge
-
-#### MILESTONE BASED ROADMAP -
-
-
 ## wp2022-02-25 - RED ALERT - THIS IS NOT A DRILL - I REPEAT THIS IS NOT A DRILL
 
 Stuart Russell noticed that humanity's response to the AGI threat is not similar to what one might expect if we learned an alien species was going to arrive in the next century.  I believe this is not because much of humanity (and the AI community itself) believes the really cannot arrive, but it is because they believe:

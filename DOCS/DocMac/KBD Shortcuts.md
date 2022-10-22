@@ -20,7 +20,7 @@
 | N     |                   | NO. NEW             | >>> go NEXT song            | create NEU doc     |
 | O     |                   | ?? open OBSIDIAN    | go OBSIDIAN                 |                    |
 | P     |                   |                     |                             |                    |
-| Q     |                   |                     | go QUICK page               |                    |
+| Q     |                   |                     | go QUICK obsidian page      |                    |
 | R     |                   |                     | go READER (Feedly)          | RESOLUTION change  |
 | S     |                   | tgl SOUND           | go STUFF (Asana)            | SHOW current app   |
 | T     |                   |                     | go TUNES / tgl PLAN         |                    |

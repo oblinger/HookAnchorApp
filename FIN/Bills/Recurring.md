@@ -78,3 +78,16 @@ DANO OTHER
 - 36/yr		pen		1password     	(not yet setup)
 - 22/mo 		pen		Plan USA 		1-800-556-7918
 
+### JOINT DIGITAL BILLS
+- ? Spotify
+- ? Netflix
+- ? WSJ
+- ? NYtimes
+
+### DAN-O DIGITAL BILLS
+		(check PayPay and Apple)
+- ? Grammarly
+- ? Freedom
+- ? Keyboard Maestro
+- ? Paprika
+- ? Thermomix

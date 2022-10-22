@@ -923,7 +923,7 @@ Setup:  !file>StartSyncingMacros     /ob/topics/Config/KeyboardMaestro-master
 
 https://sites.fastspring.com/stairways/order/complete;jsessionid=F4452DB320FCF3523BD735502721EFA8?csid=1345138
 
-2019-11-03
+2019-11-03  (also in 1password)
 License: Keyboard Maestro Version 9 for 1 user(s)
 Username: wef234@gmail.com
 Serial: J66TWFJX75P5B5GQLW

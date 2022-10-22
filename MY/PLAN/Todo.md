@@ -1,8 +1,13 @@
+- [ ] 
+- [ ] Get food booked for mom80;  Jacks food for party
+- [ ] Hair, Nanny
+- [ ] Vanguard let them know about the Deffered comp plans
 - [ ] Book appt w/ EMT
 - [ ] book care.com woman
-- [ ] Vanguard let them know about the Deffered comp plans
+- [ ] Vanguard let them know:  Differed comp
 - [ ] Covid wait for - Yashin's conservative friend
 - [ ] Find CTO coach: waiting on platohq; have app w. Igor
+- [ ] mom xmas trip.
 
 - [ ] LAP: Zoom+PodMax; Batt 2:20 screen <50%; Monitor drops off; Mail client is lagging display
 - [ ] look at differed comp and decide what to do.

@@ -1,15 +1,7 @@
 [[Fork App]],   [[Sourcetree App]],  
 
-git config --global --unset credential.helper   # only if credential exists
-git config --global user.name "Dan Oblinger"
-git config --global user.email "code@oblinger.us"
-git config --global credential.helper cache
-git remote add origin https://github.com/oblinger/kmr.git
-git push origin master
-git push --set-upstream origin master
-git push origin
 
-SETUP GITHUB ON LAPTOP
+SETUP GITHUB ON NEW COMPUTER
 
 - CREATE TOKEN
   Web->Github -> ![my account picture] -> Settings -> Developer Settings -> 

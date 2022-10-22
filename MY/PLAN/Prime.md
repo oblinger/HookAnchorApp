@@ -5,8 +5,8 @@
 
 ## = [[NJ22|NJ22]] =
 - [ ] Get Resume ready 4 hands on
-- [ ] [[WarStories]]*  
 - [ ] [[NJ22 Framing]] - Linkedin; Github
+	- [ ] [[WarStories]]*  
 - [ ] [[@Yoshua Bengio]]+
 - [ ] [[Comms]]* - Get 4 letters of reference
 - [ ] [[BeFAANG#^todo|BeFAANG]] - Hack it

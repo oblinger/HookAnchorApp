@@ -9,7 +9,7 @@ aliases: [WPs]
 
 | Date         | File   | Notes                                                                 |
 | ------------ | ------ | --------------------------------------------------------------------- |
-| wp2022-10-18 | [[EOCA]]   | FTX Competition                                                       |
+| wp2022-10-18 | [[FTX]]    | FTX Competition                                                       |
 | wp2022-10-10 | [[Nanny]]  | SAVE MONEY ON AYI                                                     |
 | wp2022-06-03 | [[WP2022]] | The Midnight Scootifier                                               |
 | wp2022-05-21 | [[WP2022]] | Photo Management Strategy                                             |
