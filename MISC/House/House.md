@@ -1,5 +1,7 @@
 ### House Fin
 (See FIN)
+## Vendors
+- Solar: 415-412-7021.   Sunternal.  Can    $23,900 / 4.3Kw  = SunRun.  18 years.  3000system.
 ## === INFO ===
 ### --- DRY ROT ETC ---
 - Repaint patio floor

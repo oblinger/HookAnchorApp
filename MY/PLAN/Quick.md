@@ -1,4 +1,5 @@
 
+- [ ] resume sizes
 - [ ] Get grocery list for KY
 
 

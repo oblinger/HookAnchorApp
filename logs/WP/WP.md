@@ -9,6 +9,7 @@ aliases: [WPs]
 
 | Date         | File   | Notes                                                                 |
 | ------------ | ------ | --------------------------------------------------------------------- |
+| wp2022-10-25 | [[Noom]]   | Food Choice Map                                                       |
 | wp2022-10-18 | [[FTX]]    | FTX Competition                                                       |
 | wp2022-10-10 | [[Nanny]]  | SAVE MONEY ON AYI                                                     |
 | wp2022-06-03 | [[WP2022]] | The Midnight Scootifier                                               |

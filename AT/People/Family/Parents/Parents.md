@@ -4,14 +4,25 @@
 [[Mom|Mom]]  [[Dad|Dad]]  [Parents Gdoc]()
 
 ## TOPICS
+
+- * JoannGenkins, * Kathy, * JoyceSmith, ? Marie Mulligan???, MaryAnn Shipley, 
+VioletBecraft, 
+KennyPeggy,  
+
 ### GIFTS
 - Packing Cubes for mom
-### - Travel Food
+### Travel Home
+BRING:
+- Baby Monitor; TVP
+
+FOOD PRE-MADE:
+- TVP Chili; Mushroom Barley Soup   (Make double batches and freeze some.)
+
 ON HAND:  
-- MILK:  
+- MILK:  2Gal Organic (grass fed) Whole Milk
 - FROZEN: edamame, peas, and corn (will not go bad if we don't eat them)
 - HUMMUS: 16oz red-pepper hummus with celery and radishes (Eli and Dan both like)
-- FRUIT:  Fuji Apples, Bananas, Watermellon (and many other fruits too)
+- FRUIT:  Fuji Apples, Bananas, Watermelon (and many other fruits too)
 - VEGGIES: Broccoli, 
 - ENTREE: TVP Chili, Barley Mushroom, Pasta&Tomato Sauce, Salmon, 
 

@@ -1,4 +1,5 @@
-- [ ] Crones doctor
+- [ ]  LAP: Zoom+PodMax; Batt 2:20 screen <50%; Monitor drops off; Mail client is lagging display
+- [ ]  Crones doctor
 - [ ] refund for returned AirMega $595
 - [ ] Get deferred comp done.
 - [ ] Deferred comp

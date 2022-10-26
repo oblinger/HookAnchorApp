@@ -43,6 +43,19 @@ https://forum.obsidian.md/t/create-a-note-and-call-a-template-in-one-step-no-use
 
 
 # REF
+## = GENERAL DOCS
+I don't know exactly what your use case is, but here are some good references.
+
+Dataviewjs docs: [https://blacksmithgu.github.io/obsidian-dataview/api/code-reference/](https://blacksmithgu.github.io/obsidian-dataview/api/code-reference/)  
+Dataviewjs examples: [https://forum.obsidian.md/t/dataviewjs-snippet-showcase/17847](https://forum.obsidian.md/t/dataviewjs-snippet-showcase/17847)
+
+Templater docs (including examples): [https://silentvoid13.github.io/Templater/introduction.html](https://silentvoid13.github.io/Templater/introduction.html)
+
+Obsidian plugin API docs: [https://github.com/obsidianmd/obsidian-api](https://github.com/obsidianmd/obsidian-api)  
+Example plugin: [https://github.com/obsidianmd/obsidian-sample-plugin](https://github.com/obsidianmd/obsidian-sample-plugin)  
+In general, I recommend taking a look at the "Advanced Topics": [https://help.obsidian.md/Obsidian/Index](https://help.obsidian.md/Obsidian/Index)
+
+Hope that helps!
 ## = CODING IT
 ### - Writing a Plugin
 https://phibr0.medium.com/how-to-create-your-own-obsidian-plugin-53f2d5d44046

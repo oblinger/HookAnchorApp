@@ -1,5 +1,13 @@
 MORN:  	Meditate, Pills, Day, [[Comms]],    NOON:   	EVE: Plan, Chew
 
+### 2022-10-24 
+- [ ] War Stories Ready for Joe
+- [ ] FTX submission plan
+- [ ] Coursera work
+- [ ] Comms plan & execute
+- [ ] SV progress
+
+
 ### 2022-10-17
 - [ ] Get xmas settled.
 - [ ] School Search Reading; Checklist; and spreadsheet started

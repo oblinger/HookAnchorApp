@@ -8,6 +8,7 @@
 
 | Date        | File             | Notes                                                                       |
 | ----------- | ---------------- | --------------------------------------------------------------------------- |
+| n2022-10-22 | [[Fin]]              | Getting a wealth advisor                                                    |
 | n2022-10-15 | [[@Yashin Lin]]      | Yashin Self Summary after loosing her job                                   |
 | n2022-10-05 | [[SV]]               | Jason offer email                                                           |
 | n2022-10-04 | [[SV]]               | Thinking about the Job choice                                               |

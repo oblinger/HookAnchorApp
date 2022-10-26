@@ -36,3 +36,16 @@ Why3: I still have living to do, and a legacy to leave In order to see your answ
 ### DATA
 
 
+# LOG
+### wp2022-10-25  Food Choice Map
+
+Cost, Convenience, Health, Pleasure, Visual, Time, Other People
+
+WHAT YOU EAT:  Convenience, Health, Pleasure, Party
+WHEN YOU EAT:  Presence of food, Stress
+HOW MUCH YOU EAT:  Presence of food, Kind of food, Party
+
+ALL:		Presence of food, Party-Time
+WHAT:	Convenience
+MUCH:	Kind of food, Party-Time
+WHEN:	Stress/Boredom

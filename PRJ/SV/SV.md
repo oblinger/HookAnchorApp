@@ -16,6 +16,32 @@
 
 # LOG
 
+### m2022-10-25  Am I Joining, or WHAT?!
+
+- My take on the A-round issue.  Some investors will balk at the TAM.  (60x multiple and multi-B exits are generally expected.  Still others wont balk, and we will know soon enough)
+- There is a window of opportunity for this partnership to happen.
+- The combination of the two of us.
+
+- I agree with you, that you don't need at DanO to get to your A-round.  I agree this narrower MVP is much lower risk and does not require replacing the CV team either.
+- Still SV is not getting to $350M w/o winning multiple sports, multiple geos, thus must have strong differentiation in tech, and strong differentiation market access.
+- Both seem plausible to build.
+	- On the tech side, I think 3.5% equity stake that I get with a $350M exit.  
+	- Is well worth the increased chances that you actually grow the differentiated tech to get there.
+- You could have been persuing the MVP strategy you are now aiming at 9 months ago.
+- You and I together can guide SV in a way that neither of us could do in isolation.
+- You should not TRY being the CTO and the CEO all in one, you need a real partner - either me, or someone else.
+	- SV velocity and strategy up to this point really demonstrates this
+	- You really CAN get to an A-round with this MVP strategy and your current CV team.  But not a $350M company.
+
+
+
+- To be clear:  given the cash cap idea...  and knowing what I know about our chances for an A-round, I am all in.
+- But I am not sure you are.  Either way, we should go ahead and decide what we are doing.
+- 
+
+
+
+
 
 
 

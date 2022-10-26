@@ -193,7 +193,7 @@ Me:You guys are awesome.
 
 Me:I would never by a different brand... and it is 100% you guys!
 
-Andyaww, thanks! I’m glad we’ve been able to come through for you :)
+Andy aww, thanks! I’m glad we’ve been able to come through for you :)
 
 Me:cheers!
 ## = xx HOW-TO   xx how to   xx howto =
@@ -210,9 +210,12 @@ brew install audioswitcher_osx
 other ideas in this thread:
  [https://apple.stackexchange.com/questions/159548/prevent-auto-pairing-for-certain-devices-bluetooth](https://apple.stackexchange.com/questions/159548/prevent-auto-pairing-for-certain-devices-bluetooth)  
  
-### - MESSAGES not always being received
+### - xx MESSAGES (SMS) not always being received
 
-Fixes messages so that all sent messages are recieved on Laptop iMessages
+Fixes messages so that all sent messages are received on Laptop iMessages
+
+- On I-phone:  Settings -> Messages -> Text Message Forwarding
+      (Ensure relevant mac device is listed)
 
 - On Laptop
   command-# messages

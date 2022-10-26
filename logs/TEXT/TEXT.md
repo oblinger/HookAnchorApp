@@ -7,7 +7,8 @@
 
 | Date        | File                     | Notes                                                                   |
 | ----------- | ------------------------ | ----------------------------------------------------------------------- |
-| t2022-10-19 | [[@Brian Yormak]]            | Ask to speak                                                            |
+| t2022-10-25 | [[@Brian Yormak]]            | Ask to speak                                                            |
+| t2022-10-23 | [[Mom80]]                    | update invite                                                           |
 | t2022-10-13 | [[EOCA]]                     | Man in a room soon to die                                               |
 | t2022-08-24 | [[NJ22 Framing]]             | Linked-in AF update                                                     |
 | t2022-08-15 | [[Refs]]                     | Child Education Outcome by location                                     |

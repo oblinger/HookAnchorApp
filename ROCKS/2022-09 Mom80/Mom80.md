@@ -1,27 +1,20 @@
 - [Page](https://docs.google.com/document/d/1qW9pG3psyC-XOSOQqqTsjaDOBETDozUVPHWErpOgcgM/edit#) - 
 
 
-
-
-
-
 ## TODO
-- send remaining invites
-- Ask Linda about having an Eli on Saturday.
-
 - Get Music
-- buy decorations
+- Buy decorations
 - finalize food
 - linda drinks
 - Get mom a gift.
 
-<<<<<<< HEAD
+
 TO BUY
 - Cake
 - Boxes of potato chips and pretzels
 - Cashews/Nuts
 - Leftover Pans
-=======
+- LINDA:  
 ~~
 Boxes of potatos chips
 and pretzules
@@ -33,10 +26,7 @@ cashwes
 
 
 ## INFO
-
-- DATES:  
-- Lothers 859-689-4030 T
-- Confirmed Friday Nov 4th
+- Confirmed Friday Nov 4th.  4-8p  Dinner @5pm
 - Lion's Club:  Chuck Carlson
 - 
 
@@ -53,6 +43,19 @@ TUE 8   12:24p - 5:50p  AA1339
 
 ## People Coming
 
+17 people.
+
+ONE PERSON
+Todd Cole, 
+Monica Oblinger, Jeff Oblinger, Kim Oblinger, Laura Merch,  Joyce Seltzer, Nancy Adams
+
+TWO PEOPLE
+Carolyn Oblinger, Troy Cole, Joe Noll, Kris Duncan, Mark Lynch, 
+
+BOTH LISTS
+Michell Oblinger, Monica Brown, Bunny Brown, Linda Schluter, Cindy Nehaus, 
+
+
 - Tina is a no  
 - Lisa can’t come working not sure about Ryan   
 - Leila no  
@@ -63,9 +66,6 @@ TUE 8   12:24p - 5:50p  AA1339
 - I need a head count by next Wed
 
 ## Food
-
-
-
 ### LOTHERS
 
 
@@ -88,15 +88,23 @@ LOTHERS
 
 
 ### JACKS
-
+859-441-4122
 - http://jackscatering.com/wp-content/uploads/2018/05/JACKS-MENU-2018.pdf
 
 
 Wedding #9
 - Caramelized Onions and Mushrooms
-- Brown Sugar on Salmon
+- Soy Brown Sugar on Salmon
 ~~
 
+Deliver @ 4:45pm
+$35 delivery charge.
+$12.95 + $1 per person
+
+
+Charlie
+
+Friday Nov 4th.  4-8p  Dinner @5pm
 
 - $1 extra per person for under 100 people
 - 
@@ -241,5 +249,15 @@ Beth Johnson
 "Kathie and Don Knue" <
 "Mary Ann Shiplett" <maryannship@hotmail.com>, 
 "Marge Laib and Linda Wink", <LMwink65@gmail.com>,
+
+
+
+# LOG
+### t2022-10-23  update invite
+
+
+
+Change of time.  We are moving the party earlier to 4pm to 8pm, with dinner served at 5pm.  This will help those traveling further.  Please update your status if this changes your ability to come, and if are attending, please let me know you got this note, so I know you have seen the new time.  Can't wait to see everyone!
+
 
 

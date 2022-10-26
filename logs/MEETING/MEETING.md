@@ -8,6 +8,7 @@
 
 | Date        | File                 | Notes                                                             |
 | ----------- | -------------------- | ----------------------------------------------------------------- |
+| m2022-10-25 | [[SV]]                   | Am I Joining, or WHAT?!                                           |
 | m2022-10-21 | [[MED_Heart]]            | Dr. HUI Visit                                                     |
 | m2022-10-18 | [[SV]]                   | JASON TAM discussion                                              |
 | m2022-10-17 | [[@Igor Shindel]]        | Intro Call                                                        |
