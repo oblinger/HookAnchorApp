@@ -456,7 +456,7 @@ computer
     Finder -> !rt -> get_info -> {edit name&ext}   ???
     (does not change the profile used)
 
-### - MAKEAPP -- NOTES on duplicating an app (using ~/bin/makeapp)
+### - MAKE APP -- NOTES on duplicating an app (using ~/bin/makeapp)
 
 (1) Google Image Search for 128x128 icon image
 (2) GIMP   open image.  Export as /ob/bin/some-image.png  
@@ -886,7 +886,7 @@ Date:   2015-02-11
 Email:  wef234@gmail.com
 Paypal
 
-Tool I Never used
+Tools I Never used
 https://github.com/RobTrew/txtquery-tools/tree/master/ftdoc%20url%20scheme%20and%20FTCopyAsURL
 
 ### xx iStatMenus   (App Store)
@@ -914,8 +914,13 @@ United States
 
 See ~/.config/karabiner/karabiner.json
 
-I dramatically lowered:  basic.simultaneous_threshold_milliseconds: 1    (from 50 and maybe it was even larger before this)
-This fixed typing TAB-SHIFT too fast.
+INSTALL:
+- Just drag drop the ~/.config/karabiner/karabiner.json to the new system
+
+NOTES:
+- I dramatically lowered:  basic.simultaneous_threshold_milliseconds: 1    (from 50 and maybe it was even larger before this)
+  This fixed typing TAB-SHIFT too fast.
+- I imported "Caps Lock --> Hyper Key ..."  and "Map Tab ..."    (from [here](https://ke-complex-modifications.pqrs.org/#emulation-modes))   and then I swapped their actions directly in my karabiner.json file.
 
 ### xx Keyboard Maestro
   
@@ -1251,6 +1256,7 @@ To activate Choosy enter this key, along with your email address
  (wef234@gmail.com) on the General tab in Choosy's settings in your Mac's System Preferences.
 
 ### NOPE xx Fluidapp
+
 ### NOPE xx Textmate
 REG:      Daniel Oblinger <wef234@gmail.com>
 INVOICE:  0VE8T-T7VOP
@@ -1481,6 +1487,7 @@ UTILITIES FOLDER
   // slate https://github.com/jigish/slate  //  uTunes (iTunes controller)
 
 ### --- (Old) ---
+
 ### xx Timeboxed
 /ob/large/install/Timeboxed has licence file
 
@@ -1498,7 +1505,9 @@ control music player using keyboard
 used to use these
 
 ### xx Google Earth   (now just in web browswer)
+
 ### xx Onyx         (X11 server I think)
+
 ### xx Alfred
 
 Licence Email:  wef234@gmail.com
@@ -1620,6 +1629,7 @@ Serial Number
 AA1B000001-36EY-5JWR-1DDJ-10J4-BGB5
 
 ### xx Intelli J     (was JS IDE ???)
+
 ### xx Kalidascope
       (Now prefer beyond compare 2019-08-14)
       File comparison / merging tool
@@ -1763,12 +1773,17 @@ Please make sure you copy and paste the name and the key without the quotes.
 ### xx unDock
 (app store)
 ### TimeBoxed (broken now)
+
 ### Timebar
+
 ### WATCH - JustPressRecord
+
 ### WATCH - DayOne
-### Karabiner
+
 ### Fitbit
+
 ### Disk Inventory
+
 ### xx GrandPerspective
       DONT USE
 
@@ -1778,7 +1793,6 @@ NOT GOOD FOR FOLDERS!!
 Then got WhatSize
 
 ## = OTHER HARDWARE =
-
 ### - iPHONE
 #### App arrangement
 
@@ -2337,22 +2351,22 @@ defaults write com.apple.TextEdit PlainTextEncoding -int 4
 defaults write com.apple.TextEdit PlainTextEncodingForWrite -int 4
 
 ### -->xx SPOTLIGHT COMMANDER<--
-     # Add app in /Applications
+     // Add app in /Applications
      ln -s /Users/oblinger/GoogleDrive/ob/proj/spotlight-commander/SpotlightCommander.app /Applications
      chmod -R 755 /ob/proj/spotlight-commander/SpotlightCommander.app
 
-     # Link 'cmd' in user folder
+     // Link 'cmd' in user folder
      ln -s /Users/oblinger/GoogleDrive/ob/cmd /Users/oblinger
 
 
-     # Try running ctrl -x 
+     // Try running ctrl -x 
      ./ctrl --install   # will add cmdEDIT etc.
 
      >> CMD-T (open new terminal after installing .bash_profile
      cmd --install
 
-     # Test CMD-T  cmdedit
-     # Test CMD-T  job
+     // Test CMD-T  cmdedit
+     // Test CMD-T  job
 
 FIXES
  Use cmd --debug foo  # this test link
@@ -2497,10 +2511,10 @@ Crypto email    https://gpgtools.org/gpgmail/
           (not done on retina)
        $ sudo ln -s /System/Library/PrivateFrameworks/Apple80211.framework/Versions/Current/Resources/airport /usr/sbin/airport
        $ airport -I
-       # DB values
+       // DB values
        $ while x=1; do /System/Library/PrivateFrameworks/Apple80211.framework/Versions/Current/Resources/airport -I | grep CtlRSSI; sleep 0.5; done
 
-       # Associate w a network
+       // Associate w a network
        $ sudo networksetup -setairportnetwork en0 Oblio obliooblio
 
 #### POWER
@@ -2723,10 +2737,10 @@ open https://docs.conda.io/en/latest/miniconda.html
     workon $VER
     pip install virtualenv virtualenvwrapper      # install these *within* the new python env too
 
-    # Removes warning about missing SSL object
+    // Removes warning about missing SSL object
     pip install pyopenssl ndg-httpsclient pyasn1
 
-    # INSTALL common modules
+    // INSTALL common modules
     pip install openpyxl
     pip install -U scipy 
     pip install -U matplotlib
@@ -2802,7 +2816,7 @@ ipython-launcher     # this will launch the ipython-launcher app
   brew install gnupg
   gpg --keyserver hkp://keys.gnupg.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3
   \curl -sSL https://get.rvm.io | bash -s stable --ruby
-     #==> should have added line to ~/.bash_profile  and ~/.bashrc
+     //==> should have added line to ~/.bash_profile  and ~/.bashrc
 
   # Reopen terminal
   rvm use 2.2.1         #==> or use which ever version is the lastest

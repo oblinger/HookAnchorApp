@@ -7,6 +7,7 @@
 
 | Date        | File                     | Notes                                                                   |
 | ----------- | ------------------------ | ----------------------------------------------------------------------- |
+| t2022-10-27 | [[SV]]                       | Chew on this - pitch to join                                            |
 | t2022-10-25 | [[@Brian Yormak]]            | Ask to speak                                                            |
 | t2022-10-23 | [[Mom80]]                    | update invite                                                           |
 | t2022-10-13 | [[EOCA]]                     | Man in a room soon to die                                               |

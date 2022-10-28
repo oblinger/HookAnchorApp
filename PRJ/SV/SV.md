@@ -1,4 +1,4 @@
- [[@Sports Visio]],  [[@Jason Syversen]],  
+ [[@Sports Visio]],  [[@Jason Syversen]], 
  - [[SV90]],  
 
 # TODO
@@ -11,38 +11,102 @@
 
 # TOPICS
 ## = People
-
-
-
 # LOG
+
+### t2022-10-27 Chew on this - pitch to join
+
+  
+  
+Jason:  
+  
+A few thoughts as you mull over our discussion:  
+  
+- I am now convinced regarding the A-round funding, and for the offer on the table, I am ready to be all-in.  
+  
+  
+  
+DAN’S NEAR TERM VALUE:  
+  
+- In the period before the A-round.  DanO would be very focused on fire-in-the-belly driving of execution at all levels in all places.  
+  
+- There will be other tactical choices, like the reduction in scope that we just did for the MVP product.  Having you plus me in the trenches together is a proven benefit.  
+  
+- At the A-round raise, I expect to be very helpful in providing articulate compelling technical pitch support in early stages, and also in the final stages when the investor kicks the tires on our tech using some PhD guys to grill us.  I will ensure that we shine.  
+  
+  
+  
+DAN’S LONGER TERM VALUE:  
+  
+- I think in many ways in which I will help build actual differentiation against other CV startups which will inevitably be in the spaces we want to conquer.  
+  
+- We have barely scratched the surface of all the different ways this tech can be used to deliver unique value in each market segment and sport, and you need a partner that can think and operate at that level with you.  
+  
+- In many areas, tweaking off the shelf tech is going to be the smart path.  But in a few magic areas we can build true differentiation, but this will require identifying exactly what is the targeted R&D that will carry the day, and then identify the academics somewhere in the world already near those problems, and hiring that talent.  And or build our own hyper targeted R&D org around those narrow problems.  I have successfully done both of those things more than once, and would love to do it for Sports Visio.  
+  
+  
+FRAMING THIS TO YOUR TEAM, INVESTORS, and SELF:  
+- Dan gets a chunk of Jason's equity, but he is then legally obligated to give more than 75% of it away to charity as SV grows in value, which is exactly what I (Jason) want to do with part of my equity anyway.  
+  
+  
+  
+SUMMING IT UP  
+This is an actual high-tech startup play, and as such it makes NO sense trying to hit $100+M exit w/o having a strong tech co-founder/CTO.  
+True, with a strong A-round behind you and good progress, you can find another solid CTO,  
+But especially when considering my willingness to accept a cash cap, I think you wont find a better one, or a better match.  
+  
+  
+Talk again after all your family stuff is taken care of.  Enjoy!  
+  
+—Dan
+
 
 ### m2022-10-25  Am I Joining, or WHAT?!
 
-- My take on the A-round issue.  Some investors will balk at the TAM.  (60x multiple and multi-B exits are generally expected.  Still others wont balk, and we will know soon enough)
-- There is a window of opportunity for this partnership to happen.
-- The combination of the two of us.
+Talent Cross.
 
-- I agree with you, that you don't need at DanO to get to your A-round.  I agree this narrower MVP is much lower risk and does not require replacing the CV team either.
-- Still SV is not getting to $350M w/o winning multiple sports, multiple geos, thus must have strong differentiation in tech, and strong differentiation market access.
-- Both seem plausible to build.
-	- On the tech side, I think 3.5% equity stake that I get with a $350M exit.  
-	- Is well worth the increased chances that you actually grow the differentiated tech to get there.
-- You could have been persuing the MVP strategy you are now aiming at 9 months ago.
-- You and I together can guide SV in a way that neither of us could do in isolation.
+-  [[@Brian Yormak]]:  My take on the A-round issue.  Some investors will balk at the TAM.  (60x multiple and multi-B exits are generally expected.)
+    Still others probably wont balk.
+
+- TWO PATHS:  multiple sports down market, --or-- a path to win up market
+
+- I agree with you, this narrower MVP is much lower risk and does not require replacing the CV team before the A-round.
+
+- BUT NOTICE:  That strategy came from the combination of the two of us.  You could have been executing that strategy 6 months ago.
+- You don't have a technical co-founder and it dramatically shows.
+- And SV is not getting to $350M w/o winning multiple sports, multiple markets, and multiple geos, 
+  To do that you need strong differentiation in market access and strong differentiation in tech.
+-  Both seem plausible to build.  But you saying things like:  
+	- I can be the CEO and CTO too is not the way to do that.
+	- Saying we can build this tech differentiation using download and tweak strategy does not seem right to me.
+	- Saying, in long term, we don't need a few world class CV people is also does not give the differentiation for multi-geos and sports
+
+
+- I am now convinced this will get funded at the A -- I'm excited to join and take on multiple sports and multiple geos.
+	- With a cash cap, my effective equity is under 3.5% equity stake once we hit $350M exit.  
+	- This is a TINY number since I think I notably increase the chances that we win multiple sports and multiple markets, multiple geos.
+- You could get a different CTO after the A-round but are they going to cap their upside into a non-profit with you?
+- And if you run into speed bumps along the way, I think it will be hard to get a strong CTO.
+
+
+- We have already demonstrated that you and I together can guide SV in a way that neither of us could do in isolation.
+- That is worth more than 3.5%
+
+
+BACKOFF: 
+- CAP WORKS?  It seems like the $12M cap really drops my equity down to a very acceptable level.
+- ISSUE?  Burn-rate?  Equity?
+
+- CUT CASH BEFORE THE A - Longer term I would need to negotiate for a stronger salary, but before the A-round I could drop down to extend our runway
+
+
+
+
 - You should not TRY being the CTO and the CEO all in one, you need a real partner - either me, or someone else.
 	- SV velocity and strategy up to this point really demonstrates this
 	- You really CAN get to an A-round with this MVP strategy and your current CV team.  But not a $350M company.
-
-
-
 - To be clear:  given the cash cap idea...  and knowing what I know about our chances for an A-round, I am all in.
 - But I am not sure you are.  Either way, we should go ahead and decide what we are doing.
 - 
-
-
-
-
-
 
 
 ### m2022-10-18  JASON TAM discussion
