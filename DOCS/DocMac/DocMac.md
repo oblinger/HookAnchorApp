@@ -197,6 +197,15 @@ Andy aww, thanks! I’m glad we’ve been able to come through for you :)
 
 Me:cheers!
 ## = xx HOW-TO   xx how to   xx howto =
+### - xx PORT OB TREE TO NEW SYSTEM
+- Copy ~/ob onto the new machine at /Users/oblinger/ob
+- Copy ~.config/karabiner/karabiner.json to new machine
+- Ensure Keyboard Maestro is loading ~/ob/data/KeyboardMaestro-Master/Keyboard Maestro Macros.kmsync
+- Ensure ~.zprofile is includes "source ~/ob/bin/obrc"
+- Ensure prefs->users->login items-> /Users/oblinger/ob/bin/boot
+
+- if 'km' script does not work, create a new github token for this machine
+
 ### - AIRPOD MAX - switching
 	#space -> pref -> Bluetooth -> Airpod Max -> !Options -> off "Automatic Head Detection" 
 

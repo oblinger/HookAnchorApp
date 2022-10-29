@@ -13,6 +13,98 @@
 ## = People
 # LOG
 
+### t2022-10-27 Response:  So are you a VP of ENG
+
+Jason,
+
+In answer to your question about my management of production level code I captured a bunch of details in an attached document that you can skim as you like.  Here is a thumbnail sketch:
+
+- PayByGroup had higher-stake, higher-tempo code deploys as compared with Sports Visio, since it was a live payments platform.   We could never afford even one critical execution bug to get past us in our bi-weekly push to production because of the large cash amounts that were at play.  (Its true PBG had a small exit, but that was market positioning and lack of differentiation, not its underlying tech—that had to be rock solid in order to even keep executing payments for over 8 years.)
+
+- Aeolus had QA requirements that are more complex than Sports Visio has, simply because we were fusing outputs of 130 engineers into a soup-to-nuts fully autonomous Robot that is being deploy in front of live audiences/cameras at CES, and into physical spaces that are shared with Eldercare patients in Japan.  Ensuring release quality on our 3-week sprints and 2-month release cycles, given the integration complexities with both non-trivial hardware and non-trivial software is much harsher than what I will likely face at SV.  I did a stream-of-consciousness dump of many innovations that I created to manage release quality.  Many of these innovations have relevance for SV since SV also builds from very related computer vision algorithms.  (And by the way,  Aeolus is still very much alive with almost 100 employees and having doubled their funding to $30M since I left.  We will see if one day they achieve product market fit, but either way, their output quality and engineering team is solid.)
+
+I notice when we first started talking, you were saying, "yeah I need to hire some more computer vision guys, and I know you do algorithm hacking so you would be able to help out with the algorithms hacking yourself."  Then weeks later you were saying yeah, "we need stronger CV guys, and you can help me hiring really strong guys."  And now you realize your most pressing problem is the nitty-gritty management of getting production quality code out of a PhD-holding-CV team.   No doubt a month from now there will be a DIFFERENT technical slice that will be most urgently needed.  And this is EXACTLY how it goes with hard tech startups!  The truth is, you need a technical co-founder that is strong across ALL of these areas, plus another dozen or two more that we have not even been in focus yet.  What I like about my background in the context of SV is that I have solid experience that spans from very resaearchy contexts all the way up to code being pushed for a payment processing platform on a bi-weekly cadence.  Not many others cover that kind of breadth in the scrappy fast-moving startup context.
+
+As far as talking with someone about my execution in heat of battle, I think Theo Enns might be a good choice.   He had never even been a team lead when I first hired him then next went to Amazon as an Engineering manager after Aeolus.  He had a front row seat to my org/team building and execution.  Let me see catch up with Theo this weekend and see if he can chat with you.
+free
+Cheers,
+
+Dan
+
+  
+
+Production quality is about how one manages execution details.  To really assess that one needs to get granular about those details.  Here a did a verbose dump of many of those details from memory.  Feel free to skim, taken as a whole I think it gives a sense of the breadth and depth of my experience.
+
+Here I break my “code-centric” experience up into three levels: 
+
+- **LEVEL-0** (hands on coding). 
+
+- **LEVEL-1** (intimate single-level, direct team management.  e. g. scrum master, system architect, source-code review etc.).  And
+
+- **LEVEL-2** (multi-level team construction and leadership;  construction of multi-team process flows, creation of QA testing protocols; scrum of scrum execution, etc.)
+
+I have done a ton of personal coding, right up to the present day (with the creation of a plugin for Obsidian.)  But for this summary I will only focus on professional contexts:
+
+**ML ALG DEVELOPMENT**:  Machine Learning algorithm development (at IBM Research)
+
+- **LEVEL-0**:  Developed a novel programming by demonstration algorithms that automatically learned GUI action procedures by observation (and induced the loops in branches implied in the user’s actions).  This was ultimately transitioned into IBM's Rational Tool Suite.  We got bunch of patents and papers out of this, including a runner up best paper award from the world leading conference for programming by demonstration research.  (I invented the core algorithm and coded it along with 4 other researchers committing code to a common repository, but this was very resaearchy code).
+
+**PRODUCTION CODE FOR PAYMENTS PLATFORM**:  (at PayByGroup)
+
+- It's true the PayByGroup was ultimately only a small acquisition.  Still PBG had over 100K users all doing online FINANCIAL payments.  Our tech was rock solid—it had to be, it was the lack of differentiation, and lack of big player market connections, that resulted in a small exit.
+
+- **LEVEL-0 coding**:  In our first months, the CEO fired the other developer, and we decided to scrap our entire code base.  With only $50K left in the bank I built our first end to end payments processing front end and back end from scratch over three months.  We needed to have a polished system executing live transactions in order to do our seed round raise – I built and shipped the whole system
+
+- **LEVEL-1 team lead**:  The demands for production-level-code were far more stringent at PBG than what we likely will have at Sports Visio.  PBG was a multi-stage payments execution pipeline--the group payments that is facilitates happen in multiple stages since not everyone would be online at once.  This means with thousands of active users, one needs very reliable code, since we could never afford to execute incorrect transactions.  Even worse, even as we upgraded the code, and altered the underlying data tables, we needed to ensure that partially executed payment transactions would never be corrupted even when different parts of the transaction are actually executed by different VERSIONS of our system!  I architected and directly oversaw our execution of this in production, for over a year and a half with live transactions the whole time. 
+
+- _SCRUM MASTER_ - I did all code reviews initially, and was scrum master for the first year, until I hired my replacement.
+
+- _MANUAL TESTING PROCESSES_ - I developed detailed QA procedures that were expanded over time to be more that 30 pages of detailed instructions that were manually executed by our team on each code release to verify correct functioning of the end-to-end app, this was based on an ongoing code coverage analysis, to ensure we were at least executing each part of the branching code once during the QA process.  (over time parts of these flows also were automated into selenium tests as well, but nothing beats kicking the tires on the actual app with each code push too)
+
+- _AUTOMATED TESTING PROCESSES_ - I oversaw (and helped author) the automated testing that went with this, including the automation scripting that ensured tests where systematically run across all code branches during development.
+
+- _CHOREOGRAPHED “PUSH TO PRODUCTION”_ - By the time I left, I had developed a very choreographed "push to production" rhythm that had specific deadlines for each player's part of the process which spanned the globe.  e.g. by xxx GMT all pull requests should have a 'green light' from our handbrake testing suite, then at yyy GMT all devs involved with a PR needed to be online for hot fixing in the case that we had integration conflicts.  and a different time slot for rapid fix or code reversion for bugs uncovered in the hours devoted to executing the QA script.
+
+- _ERROR RECOVERY LOGGING_ - I developed a robust logging system, so in rare cases where a bug would wedge some transaction in a 1/2 completed state, we had all info needed to reconstruct and manually (or by script) fix the broken transactions, w/o anyone loosing or gaining funds.
+
+**_This was not PhD level code, but it was large, complex and it needed to be absolutely rock solid and high tempo in execution._**
+
+**MARTIAN ROBOTICS**:  (Acquired by Aeolus)
+
+**LEVEL-0**:  Personally coded inverse kinematics and robot motion planning on an embedded microprocessor in a mix of C-code and microprocessor libraries. 
+
+**LEVEL-1**:   Ran a daily scrum, architecture of an autonomous robotic system with complex perception, planning and execution.  (Very researchy, and algo-development focused)
+
+**AEOLUS ROBOTICS**:  Autonomous, dexterous, eldercare robots [CRUNCHBASE](https://www.crunchbase.com/organization/aeolus-robotics) & [WEB](https://aeolusbot.com/).
+
+- **LEVEL-2 training and system & team architecting**:  I was employee #1 for Aeolus's software team and lead that team directly when it was below 10.  After that I organized, and continually re-organized that team into 5-8 "swim lanes".  These were called swim lanes because they were optimized to minimize their 3-week sprints from dependencies on activity in adjacent lanes in the same sprint.  Only ONE of my swim lane leaders had prior experience managing teams.  So I was the epicenter of planning & execution for this group of 60+ engineers.  We were moving very fast, and each team had numerous gaps, so it was a constant triage to form and reform these lanes to cover these gaps.
+
+- **LEVEL-2 management**:  I kicked off each new swim lane by attending their individual daily scrums, until I saw they were on good footing.  Then I maintained a weekly scrum of scrum meeting with all swim lane leaders in order to surface conflicts or delays to our three week sprints.  Every two months we had a new set of end-to-end robotic capabilities that we were rolling out.  So my lead PM maintained the mother of all dependency charts to ensure nothing was dropped.  He was not technical, so I worked very closely with him and with the lane leaders to ensure that we were covering all key capabilities in our planning.
+
+- **LEVEL-2 QA**:  The QA that had worked well enough at Martian robotics was soon failing at Aeolus.  Our sprint plans included testing, and a minimum of formal test coverage too.  But we were constantly bit, by items marked as completed and tested in JIRA that were just not usable in the next sprint by another team.  I developed many of innovations that dramatically reduced these problems while not costing us too much in velocity.  From memory here are some:
+
+-       _MANUAL TESTING LIBRARY_:  We had pretty cheap labor available in Taiwan, so we simply hired a couple of test engineers and developed a library of written robotic testing procedures.  I developed a format where one could specify a full testing protocol right in JIRA tickets by referencing these testing documents.  These ticket-by-ticket tests  allowed us to surfaced bugs much faster and fix them before integration testing even began.
+
+-       _REMOTE DEV AND TEST CENTER_: We built out a 24/7 dev and test center in Taiwan.  My counter part peer in Taiwan hired the techs, but I designed simple shared resource allocation spreadsheets, and arbitrated the contention within the SW team for those resources.  These techs executed QA, and allowed remote PhDs to run experiments on robots that were 10,000 miles away by ssh-ing into the machines, with dedicated surveillance video and voice comms to the techs.
+
+- **LEVEL-2 documentation and processes**:  Nearly all processes and documentation used to drive this workforce were initially developed by me, then ultimately owned and refined by the team.  As issues arose, I was nearly always part of the conversation about how to redesign required documentation and processes.  For a 100% remote hardware + software company with over 130 engineers on very aggressive timelines, these written processes and flows needed to be world class.  I brought much of the learnings we had done at Analytics Fire over as templates for these.  **_We had documented templates, rules, and timelines for EVERYTHING_**.  What is a valid JIRA ticket? A valid backlog item? A valid story-item? A valid pull request? A valid hot fix? A valid git-branch? Avalid dataset collection request?  The valid problem escalation procedure and maximum allowed timelines?  I was either the author of these protocols or worked very closely with the author in all cases.  Managing this product, on those time lines, at that scale was complex, and required very well considered formal processes.
+
+            - CONSTRAINT PLANNING:  In the early days (<30 SW engineers) we used sticky notes on a giant chunk of our wall space to manage a giant (6 foot x 30 feet) GANT style chart that was continuously edited by myself, my right hand man Theo, and my head PM.  Things were just moving too fast to capture all dependencies in a more formal tool (though the individual JIRA tickets were religiously kept as well as a detailed back log for each swim).  Later this evolved into various dependency reporting outputs from JIRA once maintenance of the wall became too complex for a sticky notes.  (but honestly we never managed to fully replicate the level of total understanding that was possible from that massive sticky note wall)
+
+            - UPSTREAM INTEGRATION TESTING:  To avoid the she-claimed-it-works-but-later-when-used-it-does-not problem.  I instituted a defined set of seven levels of integration testing.  Then in our sprint planning we would decide on a ticket-by-ticket level the testing that was required for each major ticket.  Extensive testing was heavy hammer, but an expensive one too, so one needed to be judicious about choosing high levels of integration testing between each successive ticket only when crucial.
+
+            - _CELL PHONE VIDEO TESTING_:  A great innovation was to leave the testing undefined on smaller tickets, but then require the engineer to create a quick video recording of whatever "testing" they did for the smaller items.  We found that we did not even need to define what specific test they needed to do.  Just mandate that they turn on their cell phone video recorder and verbally explain what was happening on their console, with the robot, to "proved" the feature was "working".  Just having this requirement was a forcing function, and it removed a common source of miscommunication between the team.   "Oh, I thought you were going to integrate the XXX with the YYY, but you have only tested it on the ZZZ."  These videos dramatically reduced the miscommunication between swim lane leaders, since each swim lane leader watched all videos for their evolving dependencies, so they could see if a feature was not "done enough" for their needs in the upcoming sprint.  What was great about this form of testing is that it added almost ZERO overhead, since you just turned on your video recorder when you ran whatever test you were going to do anyway.
+
+            - DATASET MAINTENANCE and TEST MAINTENANCE:  Early on we had failures with our vision algorithms where we achieve very high accuracies on our test data, but then very low accuracies in the wild.  Subtle discrepancies in context were having outsized effects on outcome.  In concert with the team we developed two innovations to address this:  one, we streamlined the process of making a single algo change on a git-branch and then directly test that one small changed directly on a robot in Taiwan using a predefined test protocol.  This allowed an engineer to immediately gut check their work w/o waiting for the next two month integration tests.  And we also streamlined the data capture during routine testing.  Often the collected datasets were evolving because the whole robot was evolving, so the way the head moved changed so the data collected via cameras was different enough that the algo results from prior recorded data, and live robot results would diverge.  By continuously feeding data from routine testing back into our stored datasets we could give CV engineers more upto data for their automated regression tests.
+
+I feel like there is a lot more LEVEL-2 stuff that I did while at Aeolus... just too much to write.  I think much of it was pretty world class for a scrappy, 100%-remote, startup under tremendous time pressure.  Much of it, is relevant to the SV situation right now, and it will cover SV as it grows an engineering team to support many millions in revenue.  The complexity of code quality problems at Aeolus were high because of the nature of algorithms, of hardware, of team size, and development velocity.  It was high stakes because the code bugs could easily damage the robot, an elder person near the robot, or our reputation at CES.
+
+
+
+
+
+
+
 ### t2022-10-27 Chew on this - pitch to join
 
   

@@ -1,26 +1,15 @@
-- [ ] Safemode: test zoom audio
- PAP:  baked potato, brussle sprouts, riced cauliflower
-- [ ] PAP:  Weekly snacks,  OLD regulars
-- [ ] PAP: cabbage, cauliflower, gbeans??
-- [ ] FRIED:  Buy some great sheets
+
+
 - [ ] FRIED:  Budget (Taxes->DanO, figure sections of sheet and rename rows, write down analysis path)
-- [ ] buy marble run; buy gears
-- [ ] Foods to eat
-- [ ] Cleanup Todo list
-- [ ] Cover outlets
-Write to Maria (dietician... maybe work with her)
 - [ ] Cable guard for new desk
 - [ ] find the huberman podcast (or blog)
-- [ ]  Quarterly Budget
 - [ ] mission statement
 - [ ] Research crones
-- [ ] Amazon key replacement
-- [ ] - [ ] Rona glass
 - [ ] Downstairs desk
 Get obsidian plugin published - Unified namespace -
 - [ ] clean dan@af
 - [ ] https://blog.pragmaticengineer.com/holiday-tech-book-recommendations/
-Get online doc
+- [ ] Get online doc
 
 - [ ] think thru auto sending of cards
 - [ ] Write thank you note to Klembara and others
@@ -32,7 +21,6 @@ Get online doc
 - [ ] [[@Maria Cross]]
 - [ ] Exercise plan
 - [ ] Social Heartbeat - Establish regular time and list of social connections
-- [ ] - buy air purifier
 - [ ] MED:  Research best vitamins
 - [ ] Estimate Water Usage
 - [ ] get list of hikes figured out
@@ -42,10 +30,16 @@ Get online doc
 - [ ] Personal CRM to track my own contacts?
 - [ ] 
 - [ ] mike klembara
+- [ ] - [ ] Safemode: test zoom audio
+- [ ] Write to Maria (dietician... maybe work with her)
+- [ ] 
+- [ ] Cover outlets
+- [ ] - [ ] Rona glass
 
 ## = Easy-Ready = 
 - [ ] Reset door codes. (info in myfo->mystuff)
 - [ ] Reset car seat auto adjust
+- [ ] 
 
 
 ## = STUFF = 
@@ -77,5 +71,6 @@ Get online doc
 - [ ] QUARTERLY:	Mint * 
 - [ ] CALLS:		Mom&Dad * Repeat * Habits
 - [ ] THINK:  [[Habits|Habits]]   [[Current|Plan]]  [[Obsidian]]     [[Fin]]    [[ToBuy]]    [[ToRead]]  [[Hack]]  
+- [ ] Cleanup Todo list; Foods to Eat
 
 ## = LATER

@@ -817,6 +817,9 @@ _
 - Hired/lead the 8 software members of our team, and served as the archiect for development of a Robot OS specialized for household cleaning (for mapping and haptic operation with generalized effectors over arbitrary, non-parametric, surfaces.)  
 - Co-negotiated the acquisition of the Bizzy Robotics IP and team to Aeolus.
 ### - PAY BY GROUP
+- **Technology was used** **to secure $3.2M** in funding.   (Camilo lists $5M on his web-page)
+- Serviced over 500 merchants, 100,000 users, and $10 million in sales  
+• Scaled our platform to 15 countries, in 6 languages, for over 10 currencies
 ### - DARPA Materials
 
 JEOPARDY

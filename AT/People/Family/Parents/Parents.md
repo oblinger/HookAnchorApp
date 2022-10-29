@@ -29,53 +29,17 @@ ON HAND:
 ~~
 Weight control dog food
 
-Eli’s list
-
-Grass fed whole milk
-
-Organic eggs
-
-Shrimps
-
-Organic Fuji apple
-
-Seedless grapes
-
-Organic blueberries
-
-Organic bananas
-
-Brown sugar(for banana bread really)
-
-Organic broccoli
-
-Carrots
-
-Corn on cob
-
-Pasta sauce
-
-Pasta (rotini, rigatoni or penne.. the small ones)
-
-Happybaby organic teething wafers
-
-Qingling
-
+ELI:  
+DAIRY: Grass fed whole milk, Organic eggs, Shrimps, Organic Fuji apple, Seedless grapes, Organic blueberries, Organic bananas
+Brown sugar(for banana bread really), Organic broccoli, Carrots, Corn on cob, Pasta sauce, Pasta (rotini, rigatoni or penne.. the small ones)
 Veggies(cabbage, asparagus, kale)
 
 Dan
-
 FROZEN: shelled edamame, peas
-
 FRUIT: (lots of) Fuji Apples
-
 VEG: many kinds
-
 EITHER: ingredients for SPLIT PEA or LENTIL soup in paprika
-
-Dan Bring:
-
-Starbucks, Brol, Lentils
+Dan Bring:  Starbucks, Brol, Lentils
   
 
 —dan

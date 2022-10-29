@@ -1,3 +1,4 @@
+- [x] - buy air purifier
 - [ ] Build Roadmap
 - [ ] Yolo-x
 - [ ] Negotiate & Sign
