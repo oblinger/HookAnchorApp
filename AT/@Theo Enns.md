@@ -1,5 +1,8 @@
 
 # LOG
+### t2022-10-30  BOOM BOOM
+zippy do da
+
 ### m2022-10-30  Prep for call from Jason
 
 - Ability to create and execute processes for production quality outputs.
