@@ -28,6 +28,7 @@
 | m2022-08-11 | [[@Joseph Yeh]]          | Activities                                                        |
 | m2022-08-11 | [[Meetings]]             | Jobot Recruiter                                                   |
 | m2022-08-03 | [[@Joseph Yeh]]          | Activities                                                        |
+| m2022-07-20 | [[@Rafah Hosn]]          | Reconnect                                                         |
 | m2022-06-30 | [[@Moses Baffour Awuah]] | First discussion about EduCorp                                    |
 | m2022-06-30 | [[EduCorp]]              | Moses Discussion [[@Moses Baffour Awuah]]                         |
 | m2022-06-21 | [[Forum]]                | Joe Yeh                                                           |

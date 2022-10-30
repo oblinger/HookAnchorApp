@@ -1,4 +1,4 @@
-
+[[#STUFF]] - 
 
 - [ ] FRIED:  Budget (Taxes->DanO, figure sections of sheet and rename rows, write down analysis path)
 - [ ] Cable guard for new desk
@@ -42,7 +42,7 @@ Get obsidian plugin published - Unified namespace -
 - [ ] 
 
 
-## = STUFF = 
+## STUFF
 - [ ] Read about back exercises
 - [ ] [[Fin|FIN]] >>>Find value investments
 - [ ] [[Fin|FIN]] Roth Conversion Consideration

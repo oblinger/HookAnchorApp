@@ -17,7 +17,6 @@
 | t2022-08-02 | [[@AugustineAntwi-Boasiako]] | Initial Email                                                           |
 | t2022-07-26 | [[@Nick Allen]]              | Notes for letter of reference                                           |
 | t2022-07-20 | [[@Felipe Lavratti]]         |                                                                         |
-| t2022-07-20 | [[@Rafah Hosn]]              | Reconnect                                                               |
 | t2022-07-06 | [[EOCA]]                     | What is Consciousness - Response to Erik                                |
 | t2022-06-30 | [[@Moses Baffour Awuah]]     | Next Steps Email                                                        |
 | t2022-06-29 | [[@Theo Enns]]               | Request for recommendation                                              |

@@ -1,4 +1,4 @@
- [[FAANG]], [[@IBM]]    [Senior Director at Microsoft Research](https://www.linkedin.com/in/rafahhosn/)  [[@Microsoft]]  [MS Page](https://www.microsoft.com/en-us/research/people/raaboulh/),  
+[[FAANG]], [[@IBM]]    [Senior Director at Microsoft Research](https://www.linkedin.com/in/rafahhosn/)  [[@Microsoft]]  [MS Page](https://www.microsoft.com/en-us/research/people/raaboulh/),  
 
 
 -- More technical; more hands on
@@ -7,13 +7,34 @@
 - Public repo - Obsidian plugin.
 - 
 
+FOR ME
+- Corp Vice President - two levels above Rafah
+  (CPV - Deep expertise  -  300-400 people)
+- CTO for a division - xbox
+- Partner Eng Mgr
+- Partner Applied Resaerch Mgr in a Microsoft   (in an APPLIED research position)
+  (Very much can publish)
 
+
+Consulting  
+
+Tim Chung
+
+    [[top]]  
+
+~~
+Chris White - he is a CVP - 
+
+
+-- h-index (john langford)
+
+Partner Level - First level executive - 
+Rafah wants a larger scope - so she needs to leave research -
+she is in the product management line - can't go up - 
 
 
 # LOG
-### t2022-07-20  Reconnect
-
-CALL:  
+### m2022-07-20  Reconnect
 
 OUTLINE:	Her Career;  Pivot:  MoreTechnical & Hands On; Decade+ Delayed Pay
 
