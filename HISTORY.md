@@ -5516,8 +5516,12 @@
 [[DocApplescript|DocApplescript]]		[[DocApplescript#DOCS|DOCS]]
 [[DocApplescript|DocApplescript]]		[[DocApplescript#TOPLEVEL|TOPLEVEL]]
 [[DocArduino|DocArduino]]		[[DocArduino#Setup|Setup]]
-[[DocBash|DocBash]]		[[DocBash#BLAM BASH|BLAM BASH]]
-[[DocBash|DocBash]]		[[DocBash#BLAM BASH|BLAM BASH]]
+[[DocBash|DocBash]]		[[DocBash#BLAM BASH
+|BLAM BASH
+]]
+[[DocBash|DocBash]]		[[DocBash#BLAM BASH
+|BLAM BASH
+]]
 [[DocCPP|DocCPP]]		[[DocCPP#Docs|Docs]]
 [[DocClojure|DocClojure]]		[[DocClojure#lein|lein]]
 [[DocClojure|DocClojure]]		[[DocClojure#DOCS|DOCS]]
@@ -5619,15 +5623,33 @@
 [[DocOSX|DocOSX]]		[[DocOSX#Stuff I never really use but cannot delete either because of http://xkcd.com/530|Stuff I never really use but cannot delete either because of http://xkcd.com/530]]
 [[DocOSX|DocOSX]]		[[DocOSX#does not work|does not work]]
 [[DocObjectiveC|DocObjectiveC]]		[[DocObjectiveC#Docs|Docs]]
-[[DocPyML|DocPyML]]		[[DocPyML#show level three|show level three]]
-[[DocPyML|DocPyML]]		[[DocPyML#Docs|Docs]]
-[[DocPyML|DocPyML]]		[[DocPyML#NumPy|NumPy]]
-[[DocPyML|DocPyML]]		[[DocPyML#Lib SciPy|Lib SciPy]]
-[[DocPyML|DocPyML]]		[[DocPyML#Blam Python|Blam Python]]
-[[DocPython|DocPython]]		[[DocPython#iPython|iPython]]
-[[DocPython|DocPython]]		[[DocPython#Python Topics|Python Topics]]
-[[DocPython|DocPython]]		[[DocPython#Python SETUP|Python SETUP]]
-[[DocPython|DocPython]]		[[DocPython#Py Docs|Py Docs]]
+[[DocPyML|DocPyML]]		[[DocPyML#show level three
+|show level three
+]]
+[[DocPyML|DocPyML]]		[[DocPyML#Docs
+|Docs
+]]
+[[DocPyML|DocPyML]]		[[DocPyML#NumPy
+|NumPy
+]]
+[[DocPyML|DocPyML]]		[[DocPyML#Lib SciPy
+|Lib SciPy
+]]
+[[DocPyML|DocPyML]]		[[DocPyML#Blam Python
+|Blam Python
+]]
+[[DocPython|DocPython]]		[[DocPython#iPython
+|iPython
+]]
+[[DocPython|DocPython]]		[[DocPython#Python Topics
+|Python Topics
+]]
+[[DocPython|DocPython]]		[[DocPython#Python SETUP
+|Python SETUP
+]]
+[[DocPython|DocPython]]		[[DocPython#Py Docs
+|Py Docs
+]]
 [[DocRackspace|DocRackspace]]		[[DocRackspace#Rackspace Login details|Rackspace Login details]]
 [[DocRackspace|DocRackspace]]		[[DocRackspace#Instances|Instances]]
 [[DocRackspace|DocRackspace]]		[[DocRackspace#was dev-lamp [DNS=dev] -- now has the wordpress site -om- dev.paybygroup.c|was dev-lamp [DNS=dev] -- now has the wordpress site -om- dev.paybygroup.c]]
@@ -5667,20 +5689,48 @@
 [[DocRackspace|DocRackspace]]		[[DocRackspace#gpay1 In: /var/www/beta.paybygroup|gpay1 In: /var/www/beta.paybygroup]]
 [[DocRackspace|DocRackspace]]		[[DocRackspace#build from beta.paybygroup (which is built from Base-2011-11-11|build from beta.paybygroup (which is built from Base-2011-11-11)]]
 [[DocRackspace|DocRackspace]]		[[DocRackspace#How To|How To]]
-[[DocRails|DocRails]]		[[DocRails#x|x]]
-[[DocRails|DocRails]]		[[DocRails#API.RUBYONRAILS          http://api.rubyonrails.org/|API.RUBYONRAILS          http://api.rubyonrails.org/]]
-[[DocRails|DocRails]]		[[DocRails#GUIDES                   http://guides.rubyonrails.org/|GUIDES                   http://guides.rubyonrails.org/]]
-[[DocRails|DocRails]]		[[DocRails#Ruby                     http://www.ruby-doc.org/core-1.9.2/  |Ruby                     http://www.ruby-doc.org/core-1.9.2/  ]]
-[[DocRails|DocRails]]		[[DocRails#Other Docs|Other Docs]]
-[[DocRails|DocRails]]		[[DocRails#Docs Tree|Docs Tree]]
-[[DocRails|DocRails]]		[[DocRails#hold |hold ]]
-[[DocRails|DocRails]]		[[DocRails#EXPRESSIONS|EXPRESSIONS]]
-[[DocRails|DocRails]]		[[DocRails#IO_ETC|IO_ETC]]
-[[DocRails|DocRails]]		[[DocRails#BLAM RAILS FNs|BLAM RAILS FNs]]
-[[DocRails|DocRails]]		[[DocRails#Overview|Overview]]
-[[DocRails|DocRails]]		[[DocRails#MVC -- Routing|MVC -- Routing]]
-[[DocRails|DocRails]]		[[DocRails#MVC -- Views       (.erb stuff)|MVC -- Views       (.erb stuff)]]
-[[DocRails|DocRails]]		[[DocRails#Renders the same partial with a local variable.|Renders the same partial with a local variable.]]
+[[DocRails|DocRails]]		[[DocRails#x
+|x
+]]
+[[DocRails|DocRails]]		[[DocRails#API.RUBYONRAILS          http://api.rubyonrails.org/
+|API.RUBYONRAILS          http://api.rubyonrails.org/
+]]
+[[DocRails|DocRails]]		[[DocRails#GUIDES                   http://guides.rubyonrails.org/
+|GUIDES                   http://guides.rubyonrails.org/
+]]
+[[DocRails|DocRails]]		[[DocRails#Ruby                     http://www.ruby-doc.org/core-1.9.2/  
+|Ruby                     http://www.ruby-doc.org/core-1.9.2/  
+]]
+[[DocRails|DocRails]]		[[DocRails#Other Docs
+|Other Docs
+]]
+[[DocRails|DocRails]]		[[DocRails#Docs Tree
+|Docs Tree
+]]
+[[DocRails|DocRails]]		[[DocRails#hold 
+|hold 
+]]
+[[DocRails|DocRails]]		[[DocRails#EXPRESSIONS
+|EXPRESSIONS
+]]
+[[DocRails|DocRails]]		[[DocRails#IO_ETC
+|IO_ETC
+]]
+[[DocRails|DocRails]]		[[DocRails#BLAM RAILS FNs
+|BLAM RAILS FNs
+]]
+[[DocRails|DocRails]]		[[DocRails#Overview
+|Overview
+]]
+[[DocRails|DocRails]]		[[DocRails#MVC -- Routing
+|MVC -- Routing
+]]
+[[DocRails|DocRails]]		[[DocRails#MVC -- Views       (.erb stuff)
+|MVC -- Views       (.erb stuff)
+]]
+[[DocRails|DocRails]]		[[DocRails#Renders the same partial with a local variable.
+|Renders the same partial with a local variable.
+]]
 [[DocRuby|DocRuby]]		[[DocRuby#RUBY SCRIPTING|=== RUBY SCRIPTING ===]]
 [[DocSQL|DocSQL]]		[[DocSQL#LOG|LOG]]
 [[DocSQL|DocSQL]]		[[DocSQL#BASIC SQL COMMANDS|BASIC SQL COMMANDS]]
@@ -5894,7 +5944,9 @@
 [[About HomeRobot|About HomeRobot]]		[[About HomeRobot#Ref|Ref]]
 [[About HomeRobot|About HomeRobot]]		[[About HomeRobot#Log|Log]]
 [[About WordWar|About WordWar]]		[[About WordWar#Competitors|Competitors]]
-[[Zanzors|Zanzors]]		[[Zanzors#ASPECTS|ASPECTS]]
+[[Zanzors|Zanzors]]		[[Zanzors#ASPECTS
+|ASPECTS
+]]
 [[MetaMeta|MetaMeta]]		[[MetaMeta#Meta Meta Parts|Meta Meta Parts]]
 [[The Sentient Weapon OLD|The Sentient Weapon OLD]]		[[The Sentient Weapon OLD#Quick discussion|Quick discussion]]
 [[The Sentient Weapon OLD|The Sentient Weapon OLD]]		[[The Sentient Weapon OLD#IDEAS|IDEAS]]
