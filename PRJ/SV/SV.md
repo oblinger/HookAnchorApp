@@ -32,6 +32,8 @@ Cheers,
 Dan
 
   
+((See word doc for final version of this))
+
 
 Production quality is about how one manages execution details.  To really assess that one needs to get granular about those details.  Here a did a verbose dump of many of those details from memory.  Feel free to skim, taken as a whole I think it gives a sense of the breadth and depth of my experience.
 

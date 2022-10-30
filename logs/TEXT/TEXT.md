@@ -7,6 +7,7 @@
 
 | Date        | File                     | Notes                                                                   |
 | ----------- | ------------------------ | ----------------------------------------------------------------------- |
+| t2022-10-30 | [[@Jason Syversen]]          | boom!                                                                   |
 | t2022-10-27 | [[SV]]                       | Response:  So are you a VP of ENG                                       |
 | t2022-10-27 | [[SV]]                       | Chew on this - pitch to join                                            |
 | t2022-10-25 | [[@Brian Yormak]]            | Ask to speak                                                            |
