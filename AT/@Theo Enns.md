@@ -1,5 +1,16 @@
 
 # LOG
+### m2022-10-30  Prep for call from Jason
+
+- He 
+- At the end of our time @ Aeolus we were beginning to ship robots to Japan for 
+
+- Ability to create and execute processes for production quality outputs.
+	- Instituted Cell Phone Demos, 
+	- 
+	- Authored our hiring tests, and got into the coding weeds with each finalist canidate before hiring.
+
+
 ### t2022-06-29  Request for recommendation
 
 
