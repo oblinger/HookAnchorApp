@@ -2,6 +2,15 @@
 
 
 ## TODO
+- Verify Cake Order.
+- 
+delivered at 4:45 to Florence lions club.
+48 is the final head count
+Wedding option #9 -- with salmon, soy-brown sugar, julian veggies, loaded potatos
+
+LINDA:
+- Two Cakes I have ordered (in my and your name).  A case of Mixed Red wines, Case of Mixed White wines, box of potato chips, Box of pretzles (or three large bags), Aluminum pans for leftovers, Two containers of roasted cashews.
+
 - Get Music
 - Buy decorations
 - finalize food
@@ -43,17 +52,26 @@ TUE 8   12:24p - 5:50p  AA1339
 
 ## People Coming
 
-17 people.
+ 48 =  17 people from DaveO and 31 from DanO 
+ 54 = 48 + 2 + 2 + 2
 
-ONE PERSON
+ONE PERSON 7
 Todd Cole, 
 Monica Oblinger, Jeff Oblinger, Kim Oblinger, Laura Merch,  Joyce Seltzer, Nancy Adams
 
-TWO PEOPLE
+TWO PEOPLE 10
 Carolyn Oblinger, Troy Cole, Joe Noll, Kris Duncan, Mark Lynch, 
 
-BOTH LISTS
+ON BOTH LISTS 10
 Michell Oblinger, Monica Brown, Bunny Brown, Linda Schluter, Cindy Nehaus, 
+
+FROM MOM 2
+Marie and Monica Mulligan
+
+TWO MYSTERY FOLKS FROM DAVE 2
+
+EXTRAS 4
+
 
 
 - Tina is a no  

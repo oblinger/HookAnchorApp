@@ -1,4 +1,75 @@
-  [[Active]]
+=> [[Top]] > [[MY]] > [[Plan]]  
+
+  
+SHORT TERM / TACTICAL LISTS
+- [[Active]]		-  [[Wings]], 
+- [[Current]]		-  My 'current' weekly plan
+- Daily		- 
+- [[Fried]]		-  Easy, Fun tasks to do when taking a break from highest value work.   [[Fried Later]], 
+- [[Quick]]		- 
+- [[Todo]]		-  
+
+
+LONGER TERM / SPECIALTY LISTS
+- [[Full]]			-  
+- [[Fun]]			-  
+- [[Hack]]		-  Hacking/Coding activities
+- [[Habits]]		-  Current and past habit goals
+- [[Gap]]		-  
+- [[Journal Old]]	-  
+- [[Links]]		-  
+- [[Self]]			-  
+- [[Quarterly]]	-  
+- [[Repeat]]		-  
+- [[scratch]]		-  
+- [[Social]]		-  
+- [[Q2]]			- Second 
+
+OFFLOAD LISTS
+- [[Archive]]		-  Place to retire planning items.   [[Arc ALL]],  [[MY/Plan/Archive]], 
+- [[Later]]		-  Tasks that have been pushed to 'later'     
+- [[Quarterly]]	-  
+- [[Waiting]]		-  
+
+
+COMMS PAGES
+- [[Comms]]		-  
+- [[ComNow]]	-  
+- [[ComSoon]]	-  
+- [[ComWaiting]]	-  
+- [[Ping]]		-  	
+
+PREFIX NAMED:   [[Active]]   B   [[Comms]]   DAILY   [[Fried]]   E   F   G   [[Hack]]   I   J   K   L   M   N   O   [[Prime]]   [[Quick]]  [[Repeat]]   [[Self]]   [[Todo]]   U   V   [[Waiting]]   X   Y   Z
+
+
+CHANGE: [[Wings]], [[Current]], 
+
+
+
+
+
+
+UNSORTED PLANNING PAGES
+- [[Journal Old]] - 
+- [[Links]] -
+- [[Ping]] - 
+
+
+
+
+- XXX
+  [Comms](Comms.md)
+- 
+
+  [Quick](Quick.md)
+  [Quarterly](Quarterly.md)  [Archive](Archive.md)  [Work](Work.md)  [Full](Full.md)  [Self](Self.md)  [Later](Later.md)  [Repeat](Repeat.md)  [Ping](Ping.md)  [Q2](Q2.md)  [Todo](Todo.md)  [Habits](Habits.md)  [Social](Social.md)  [Scratch](Scratch/Scratch.md)  [Watching](Watching.md)  [Current](Current.md)  [Links](Links.md)  [Hack](Hack.md)
+  [Archive](__Archive__.md)
+  [Work](__Work__.md)
+  [Todo](__Todo__.md)  [Repeat](__Repeat__.md)  [Calls](AT/__Calls__.md)  [Later](__Later__.md)  [Watching](__Watching__.md)  [Habits](__Habits__.md)  [Current](__Current__.md)  [Links](__Links__.md)  [Scratch](Scratch/__Scratch__.md)  [Full](__Full__.md)  [Quarterly](__Quarterly__.md)  [Self](__Self__.md)  [Q2](__Q2__.md)  [Hack](__Hack__.md)  [Ping](__Ping__.md)  [Social](__Social__.md)  [Fried](Fried.md)
+
+
+- 
+- 
   [Wings](Wings.md)
 [[Wings]]  [Threads](Threads.md)
   [Coursra](Coursra.md)

@@ -1,4 +1,10 @@
-(See [ReBuy](__ReBuy__.md))
+- [ ] Tennis shoes
+- [ ] Buy tripod. consider go-pro or other video. search best camera w/ a kid
+- [ ] BUY: basket for QL in bathroom; add try to her drawer
+### 2022-11-20  Big Insta-pot
+
+- Instant Pot Duo Nova 7-in-1 Electric Pressure Cooker, Slow Cooker, Rice Cooker, Steamer, Saute, Yogurt Maker, Sterilizer, and Warmer, 10 Quart,
+
 
 ### 2022-10-28  Scotch Crystal
 https://www.crystalclassics.com/cashs/cooper/22579C.htm  (leaded?)
@@ -47,6 +53,16 @@ r
 - [reddit](https://www.google.com/imgres?imgurl=https%3A%2F%2Fm.media-amazon.com%2Fimages%2FI%2F61zSjNXM28L.jpg&imgrefurl=https%3A%2F%2Fredditfavorites.com%2Fproducts%2Ftoastabags-crispease-oven-crisper-tray-reinforced-ptfe-red-34-x-29-x-2-5-cm&tbnid=6nKBS8mbilsp-M&vet=10CIwBEDMoogFqFwoTCPCe6Kn4-_YCFQAAAAAdAAAAABAL..i&docid=yv-YgpelMPn0IM&w=394&h=500&itg=1&q=crisper%20tray&client=safari&ved=0CIwBEDMoogFqFwoTCPCe6Kn4-_YCFQAAAAAdAAAAABAL) 
 - 
 
+
+
+
+
+
+
+
+
+
+
 # OLDER
 
 - [ ] Light for Eli's room
@@ -83,7 +99,7 @@ https://www.npr.org/2020/08/31/905804301/welcome-to-story-hour-100-favorite-book
 
 
 
-# # BUYING RESEARCH # 
+# RESEARCH # 
 ### 2022-04-02  Food Scale
 -  [FITINDEX](https://www.amazon.com/FITINDEX-Nutritional-Calculator-Multifunction-Smartphone/dp/B081BTKHFW/ref=sr_1_4?crid=GD7V3QKT8TIG&keywords=bluetooth+food+scale&qid=1648916734&sprefix=bluetooth+food+scale%2Caps%2C138&sr=8-4)  AppleHealth
 -  [Etekcity](https://www.amazon.com/Etekcity-ESN00-Nutrition-Counting-Bluetooth/dp/B07FCZSC41/ref=sr_1_3?crid=GD7V3QKT8TIG&keywords=bluetooth%2Bfood%2Bscale&qid=1648916734&sprefix=bluetooth%2Bfood%2Bscale%2Caps%2C138&sr=8-3&th=1)  

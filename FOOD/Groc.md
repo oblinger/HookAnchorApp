@@ -463,6 +463,7 @@ SNACK:  Radish, Celery |
 FRUIT:  W-mellon, Fuji, Orange | Berries, Grape, S-berries
 DRIED:  Almonds, Seaweed
 ## On Hand
+FRZN:		Pap Veg
 FRZN:   G-beef, Thigh, Fish, Shrimp
 FRIDGE: Eggs, Olives, ParmCheese, 
 DRIED:  PastaSauce

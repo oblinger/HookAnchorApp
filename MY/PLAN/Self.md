@@ -1,3 +1,7 @@
+- [ ] doggy poop
+- [ ] get the dogs poop
 [[Full]] 
 
-- Get TPST
+- [ ] [[self]]:  Hire health coach
+- [ ] Get TPST
+- [ ] Daily Exercise [[Habits]].

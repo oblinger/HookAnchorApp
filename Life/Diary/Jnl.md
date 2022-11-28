@@ -1,3 +1,15 @@
+### j2022-10-31  Career Plan
+
+- My Center Is DEEP LEARNING:  Plus: Robotics, NLP, Vision
+- Both Value and Interest suggest increasing technical & hands on.
+- At some level, scrappy startup and MGT are now me
+- Grow an AGI agenda that adds 'gloss' and optionality
+- Side Stuff
+	- AGI safety research
+	- Edu Corp
+
+
+
 ### j2022-09-23  AUTOMATING CHORES
 
 

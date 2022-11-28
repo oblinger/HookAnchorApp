@@ -1,9 +1,9 @@
-
--[NZ veg poster](https://www.vegetables.co.nz/assets/Prints/Posters/Classification-poster-A2-2017.pdf)
+- [[FastingDiet]], 
+- [NZ veg poster](https://www.vegetables.co.nz/assets/Prints/Posters/Classification-poster-A2-2017.pdf)
 - [Pastas](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8623826/),  [[ContainerWeights]], 
 
 
-2020-06 FORCED-WEIGHT-DROP
+### 2020-06 FORCED-WEIGHT-DROP
 - [ ] TRACKING - Noom based food tracking.  (can I export?)
 - [ ] RUNNING - Exercise T,R,F,U
 - [ ] FOODS - Beans++, Snacking--, Meat++, 

@@ -34,7 +34,29 @@ she is in the product management line - can't go up -
 
 
 # LOG
+### t2022-11-01  Intro Email for Robotics Mgr
+
+Rafah, awesome to catch up!  I am glad to hear your future plans include moving to more relaxing locations (both NH and FL fit that bill!)  
+Looking forward to hearing a more in depth summary from your side on our next call.  
+Here is a few sentences you can use to introduce me to your college who is setting up a new robotics group.  
+  
+~  
+  
+Dan is an ex-colleague of mine from IBM research.  He is in the midst of selling his third exited startup and is deciding what he's going to do next.  Here are a few words from him:  
+  
+The first half of my career was devoted to Machine Learning as an individual researcher (PhD from UIUC, IBM Researcher, and teaching at Columbia) then scaling that ML thousands of researchers as a Program Manager at DARPA.  The half has been in silicon valley focused on Robotics, Machine Learning, and HW+SW solutions.  I have co-founded a couple of successfully-exited Robotic / IoT companies, and twice hired & managed 50+ person orgs, including 40+ PhDs in Robotics.  
+  
+My sweet-spot and personal-love is managing teams that are bridging recent academic research into novel commercial plays.  I love the complex interplay between recently understood technologies and novel, not-fully-understood business use cases and products.  If there are roles within Microsoft that fit this kind of a sweet spot, I would love to hear about them!
+
+
+
 ### m2022-07-20  Reconnect
+
+  
+
+~~l
+
+
 
 OUTLINE:	Her Career;  Pivot:  MoreTechnical & Hands On; Decade+ Delayed Pay
 

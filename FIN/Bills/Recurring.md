@@ -1,3 +1,5 @@
+
+peloton
 crunchbase
 
 ## INFO
@@ -18,12 +20,19 @@ crunchbase
 - $130/mo?	Sunset Scavenger  (where did this bill go???)
 - $217/mo?	Blue Cross Monthly
 
+### APPLE 
+DANO - APPLE - Mac->AppStore->MyPicture->AccountSettings->Manage->Subscriptions
+- $29/yr		Insight Timer  (2022-12-14)
+- OFF		$49/mo		Coursera   **maybe paid elsewhere?**
+- OFF		$20/mo		Obsidian Publish    (also paid annual for sync)  **maybe paid elsewhere?**
+
 ### SMALLER - CHASE FREEDOM
 - $1,375/yr 	AAA Home Insurance
 - $20/yr		File This
 - $39/yr  		Consumer Reports
 - $36/yr		1-Password
 - $50/yr		Nest Aware (renews Dec 1)
+- $100/y		Blink Plus  (11-09-2023) 
 - $600/bi  	Geico
 
 - $15.50/mo 	Netflix
@@ -49,16 +58,10 @@ VARYING - CHASE FREEDOM
 SAPPHIRE
 - vary   		Am Airlines
 
-DANO - APPLE - Mac->AppStore->MyPicture->AccountSettings->Manage->Subscriptions
-- $29/yr		Insight Timer
-- $49/mo		Coursera
-- $20/mo		Obsidian Publish    (also paid annual for sync)
-- 
-
 OTHER  ~~
 - $230/mo	AT&T  (Paid on corp SVB account)
 
-DANO CAP 1 CARD
+### DANO CAP 1 CARD
 - $20/yr		Google Play (100Gig) oblinger@gmail.com 
 - $20/yr??	Clean Email
 - $02/mo    	Filethis.com   2/m
@@ -69,7 +72,7 @@ DANO CAP 1 CARD
 - vary		Apple Pay
 - vary		SKYPE
 
-DANO PAYPAL
+### DANO PAYPAL
 - 70/yr		MS OFFICE 365
 - 20/yr		Google 100 Gig;  Google Calls
 - 24/yr		On Health (Consumer Reports)

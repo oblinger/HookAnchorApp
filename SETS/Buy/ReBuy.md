@@ -20,9 +20,12 @@ Brands: Amy's Organic, Health Valley, Wolfgang Puck, Eden Organic,
         Fantastic Always Natural)
 _
 ### Grains & Nuts
-- [Azure Standard](https://www.azurestandard.com/): Barley, Brown Rice, Flaxseed, Teas
+- [Azure Standard](https://www.azurestandard.com/):   ==>  [Barley](https://www.azurestandard.com/shop/search/barley), Rye, Oats, Lentils, Soy Curls, Brown Rice, Flaxseed, Teas, Soup Mix
+	- [SPICES]  [Cumin](https://www.azurestandard.com/shop/product/food/spices-seasonings/spices/cumin-seed/ground-powder/cumin-seed-ground-organic/7566?package=HS607), [Pepper](https://www.azurestandard.com/shop/product/food/spices-seasonings/spices/ground-pepper/black/pepper-ground-black-organic/9871?package=HS604), [Cyanne], [Curry Powder], 
+		- [Mustard Powder], [Onion], [Garlic], [Red Chili Peppers], [Paprika], 
+-  [Web Resturant Store](https://www.webstaurantstore.com/cart/), [TVP],   
 - 
-- [Country Life Grains Wholesale](https://www.clnf.org/grains) 
+- [Country Life Grains Wholesale](https://www.clnf.org/grains) (no longer buy from these guys)
 
 === NUTS ===
 !Almonds

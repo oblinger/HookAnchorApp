@@ -63,3 +63,7 @@ pd.read_csv('data.csv')
 ### Multiplication
 
 [a, b] dot [b, c] = [a, c]      
+# REF
+### r2022-11-08  Pandas Examples
+-  [https://github.com/wesm/pydata-book](https://ideaspace.substack.com/p/on-competition?utm_medium=email&utm_campaign=cta&utm_source=substack)  
+- 

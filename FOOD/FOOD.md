@@ -1,17 +1,8 @@
-- [ContainerWeights](ContainerWeights.md),  [[ReBuy]],  
+  [[FastingDiet]]
 
-  - SECTIONS:    [Diet](Diet.md),  [Groc](Groc.md),  [Meals](Meals.md),  [Delivery](Delivery.md),  
-  - TOPICS:  [Glycemic Index](Glycemic%20Index/Glycemic%20Index.md),   [Noom](Noom/Noom.md)
-  [Eat](Eat.md)  [Restaurants](Restaurants.md)
-  [FastingDiet](FastingDiet.md)  [Meals](__Meals__.md)
-
-[Delivery](__Delivery__.md) 
-[Diet](__Diet__.md) 
-[Eat](__Eat__.md) Food Log
-[Groc](__Groc__.md)  [word](groc.docx)		-- Shopping list
-[Resturants](__Resturants__.md) 
-
-[FastingDiet](FastingDiet.md)
+ - SECTIONS:	[[Diet]],  [[Groc]],  [[Meals]],  [[Delivery]],  [[Eat]],  
+ - TOPICS:  	[[Noom]],  [[ReBuy]],  [[Restaurants]]
+ - SMASS:		[[ContainerWeights]],  [[Glycemic Index]],  [old-word-shopping-list](groc.docx),  
 
 ## foo
 
@@ -24,14 +15,3 @@ World	Mediterranean, Indian, African
 
 
 
-
-Pork
-Cabbage
-Salt
-Sugar
-
-Vinegar
-Soy sauce
-
-ShiSan Xiang
-Spicy Sauce

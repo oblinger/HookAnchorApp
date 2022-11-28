@@ -1,11 +1,26 @@
 MORN:  	Meditate, Pills, Day, [[Comms]],    NOON:   	EVE: Plan, Chew
+### 2022-11-28
+- [ ] 5h	[[Coursera]]
+
+### 2022-11-07  
+- [ ] Progress: [[SV]], [[WarStories]],  
+
+
+
+
+### 2022-10-31
+- [ ] FTX submission plan
+- [ ] Coursera - Get to tensor flow
+- [ ] FIN: Avanti, Solar
+- [ ] [[Enxt]]:  Student Ratio Research.
+
 
 ### 2022-10-24 
-- [ ] War Stories Ready for Joe
+- [x] War Stories Ready for Joe
 - [ ] FTX submission plan
 - [ ] Coursera work
 - [ ] Comms plan & execute
-- [ ] SV progress
+- [x] SV progress
 
 
 ### 2022-10-17

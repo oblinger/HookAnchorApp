@@ -1,5 +1,3 @@
-
-
 ## = [[SV]] =
 - [ ] Have call with Brian
 
@@ -11,7 +9,7 @@
 - [ ] [[Comms]]* - Get 4 letters of reference
 - [ ] [[BeFAANG#^todo|BeFAANG]] - Hack it
 
-## = [[ROCKS/2022-03 Learning/Learning|Learning]] =
+## = [[Learn|Learning]] =
 - [ ] [[Coursera]]* - Complete Coursera Deep Learning Course
 - [ ] HACK+  Hack some tensor flow
 - [ ] Find best FAANG prep (1) class.  (2) mentors

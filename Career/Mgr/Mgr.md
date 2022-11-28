@@ -1,15 +1,9 @@
+
+- [[MgrMeetings]], 
   [MgrTracking](MgrTracking/MgrTracking.md)
 -   [MgrContracts](MgrContracts/MgrContracts.md) [[MgrTracking]]  [Contracts](Contracts/Contracts.md)  [MyMgr](MyMgr/MyMgr.md)
   
 ## = ADVICE
-### Advice For Meetings
-- 5min prep before meeting; Track actions; Begin meeting with a check-in; Take time to review priorities to ensure alignment; Summarize&Next steps at end; sometime send reminder of discussion same day
-- for a 1-on-1
-	- Have a recurring time slot
-	- Have a discussion tracker so you have a record 
-	- If talking about mentoring/development give forewarning to
-https://medium.dave-bailey.com/how-to-run-exceptional-one-on-ones-7cf9f22fce6e
-
 _
 ### Hiring/Mgt
 -- ACCOUNTABILITY -- which role did you have largest accountability.  what happened.

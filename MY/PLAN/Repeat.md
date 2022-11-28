@@ -1,11 +1,10 @@
 
-
 | WEEKLY        |                                                                                                                |
 | ------------- | -------------------------------------------------------------------------------------------------------------- |
 | **HOT LISTS** | [SimpleNote](https://app.simplenote.com/) [Reminders](https://www.icloud.com/#reminders) AudioMemos # FileThis |
 |               | Bk  Nails  Nose  Groc  Friday                                                                                  |
 | **HOUSE**     | Room: [My-]Desks/Bin/Shelf  House: Pass                                                                        |
-| **TODO**      | Clean todo list for this week                                                                                  |
+| **TODO**      | Clean [[Todo]] list for this week                                                                                  |
 | **PLAN**      | Week plan in Top                                                                                               |
 | **IN2**       | Quick scrub                                                                                                    |
 

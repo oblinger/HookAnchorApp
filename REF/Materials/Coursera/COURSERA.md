@@ -5,8 +5,4 @@
 
 
 
-
-## Deep Learning
-
-### DL2
-- [[Regularization]] 
+- [[Coursera Deep Learning Specialization]] - 

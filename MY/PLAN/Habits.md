@@ -1,5 +1,8 @@
 
 ## = CURRENT FOCUS
+### - Daily Exercise
+
+
 ### - A NEW DAY - RULESET
 
 - BEGIN ANEW - Each day I begin anew, the successes and failings of the day before are past, THIS day, this one will be good.

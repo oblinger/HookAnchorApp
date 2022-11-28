@@ -1,22 +1,56 @@
 # MEALS
 
 ## NIGHT SNACK
-- Radish, Celery, Bell Pepper, 
-- Cherry, Strawberry, 
-- CAN: Bamboo Shoots, 
-- DRY: Oatmeal
+- ZERO:	Radish, Celery, Bell Pepper, 
+- FRUIT:	Cherry, Strawberry, 
+- CAN: 	Bamboo Shoots, 
+- DRY: 	Oatmeal
+
 
 ## QUICK SNACK
 - FRUIT:   BERRIES:  
 - Hummus, 
-- DRY: BeanPack, 
+- DRY: 
+
 
 ## READY
 - CAN:  Amy's Lentil Vegetable, Refried Beans
 - FZN:  Edamame, Peas, Corn, RicedCauliflower, Miso??    (Kale?, Spinach?, Cauliflower?, Okra?)
 - BATCH: SweetBurritos, Chili/SplitPea/
 
-https://www.theseaganlife.com/home/the-complete-list-of-vegetables-from-around-the-world
+
+
+## TRAVEL
+- FRUIT:		Apples, Banana, BeanPack, 
+- VEG:		Hummos + Celery/Radish
+
+
+- FRZN:		Edamame
+- GRAINS:  	SteelCut,
+- PROTEIN: 	TVP Chili, Lentils, 
+
+
+
+## TOPICS 
+### Inspirations
+
+- https://www.theseaganlife.com/home/the-complete-list-of-vegetables-from-around-the-world
+
+
+
+### Kinds of sauces
+
+Pork
+Cabbage
+Salt
+Sugar
+
+Vinegar
+Soy sauce
+
+ShiSan Xiang
+Spicy Sauce
+
 
 
 

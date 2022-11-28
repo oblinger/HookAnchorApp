@@ -1,3 +1,45 @@
+- [x] Find nanny for 11/23
+- [x] dad HD
+email Grz<>Jason
+- [ ]
+- [x] buy jeep
+- [x] get quote fixing car.
+- [ ]
+- [x] Review for Yana
+- [ ] Go thru in2 list
+- [x] find places for AF guys
+- [x] Pay Linda
+- [ ] Go thru in2 list
+- [x] F: script control of AirPod Max connection on Mac
+- [x] duplicated contacts
+- [x] Create section of NUMBERS - in resumeSsa section
+- [x] upgrade to Ventura
+- [x] Make backup to second laptop work smoothly
+- [x] Check BoA for funds to send:   $850 to Joe
+- [x] quick add script
+- [x] Create the GAP: view.  OBS, Hack, Fried, ToBuy, (todo?), GAP
+- [x] def comp check movement.  @ vanguard
+- [x] tea 2 home
+- [x] Flownase
+- [ ] def comp check movement.  @ vanguard
+- [x] Email Jason
+- [x] final prep for mom80.  final numbers.
+- [x] [[Mom80]]:	Order food
+- [x] OBS:  Get the 'AT' command working
+- [x] OBS:  Rename the Template Create command to be better than CMD-OPT-Z
+- [x] OBS:   Rename the move folder command
+- [x] OBS:  Rename the show folder command???
+- [x] OBS: key to add list items to lists with one letter prefix  e.g. t=todo, etc.   TAB-Q
+- [ ] OBS:  BUG -  fix auto generator to create wiki links (convert to URL encoding to handle spaces)
+- [ ] Jason note.   get a hold of Frank
+- [x] Get grocery list for KY
+
+- [x] Fix-Lap:		Copy Files; Test4hours; GetMailer;
+- [x] OBS: CHANGE LOG - maintain list of edits.  track mod times & file lengths.  Do chron list of edits & dedup in window  (check if tool exists)
+- [ ] Downstairs desk
+- [x] FRIED:  Budget (Taxes->DanO, figure sections of sheet and rename rows, write down analysis path)
+- [x] Cable guard for new desk
+- [ ] FRIED:  Budget (Taxes->DanO, figure sections of sheet and rename rows, write down analysis path)
 - [x] - buy air purifier
 - [ ] Build Roadmap
 - [ ] Yolo-x

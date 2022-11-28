@@ -1,3 +1,7 @@
+## TODO
+
+LINKS: [[Babysitting]], 
+
 ## TOPICS
 ### NANNY TASKS TO BE DONE (once Eli is in Daycare)
 - Cook; Eli food prep

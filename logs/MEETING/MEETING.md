@@ -8,21 +8,27 @@
 
 | Date        | File                 | Notes                                                             |
 | ----------- | -------------------- | ----------------------------------------------------------------- |
+| m2022-11-22 | [[@Grzgorz Biziel]]      | About AF                                                          |
+| m2022-11-21 | [[@Teddy Lange]]         | Conversation #2 ideas and pointers                                |
+| m2022-11-21 | [[EduCorp]]              | [[@Teddy Lange]]                                                  |
+| m2022-11-14 | [[@Jason Syversen]]      | Hiring Ex-SV folks                                                |
+| m2022-11-09 | [[@Nick Allen]]          | Leaving R-Zero                                                    |
+| m2022-11-05 | [[@Frank Langston]]      | Discussions before Reference call                                 |
 | m2022-10-30 | [[@Theo Enns]]           | Prep for call from Jason                                          |
-| m2022-10-25 | [[SV]]                   | Am I Joining, or WHAT?!                                           |
+| m2022-10-25 | [[@Jason Syversen]]      | Am I Joining, or WHAT?!                                           |
 | m2022-10-21 | [[MED_Heart]]            | Dr. HUI Visit                                                     |
-| m2022-10-18 | [[SV]]                   | JASON TAM discussion                                              |
+| m2022-10-18 | [[@Jason Syversen]]      | JASON TAM discussion                                              |
 | m2022-10-17 | [[@Igor Shindel]]        | Intro Call                                                        |
+| m2022-10-14 | [[@Jason Syversen]]      |                                                                   |
+| m2022-10-14 | [[@Jason Syversen]]      | Jason Response Discussion                                         |
 | m2022-10-14 | [[@Yashin Lin]]          | Discussion at end of her pip                                      |
-| m2022-10-14 | [[SV]]                   |                                                                   |
-| m2022-10-14 | [[SV]]                   | Jason Response Discussion                                         |
 | m2022-10-13 | [[@Avidan Ross]]         | Intro meeting                                                     |
 | m2022-10-13 | [[@Joseph Yeh]]          | SV decision                                                       |
 | m2022-10-07 | [[Fin]]                  | Avanti's Plan                                                     |
-| m2022-10-03 | [[SV]]                   | Counter Offer Discussion  (where I proposed the $12M cap)         |
-| m2022-09-22 | [[SV]]                   | Joining SV as consultant                                          |
+| m2022-10-03 | [[@Jason Syversen]]      | Counter Offer Discussion  (where I proposed the $12M cap)         |
+| m2022-09-22 | [[@Jason Syversen]]      | Joining SV as consultant                                          |
 | m2022-09-14 | [[@Joseph Yeh]]          | Jason decision                                                    |
-| m2022-09-13 | [[SV]]                   | [[@Michael Seibert]] discussion                                   |
+| m2022-09-13 | [[@Jason Syversen]]      | [[@Michael Seibert]] discussion                                   |
 | m2022-09-07 | [[AF]]                   | AF Tax Discussion (with Nick)                                     |
 | m2022-08-24 | [[Forum]]                | Matt Pinson - Friend Christy - Friend of Yashin                   |
 | m2022-08-16 | [[Meetings]]             | Nick - RZ share price                                             |

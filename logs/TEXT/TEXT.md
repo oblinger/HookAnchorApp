@@ -7,10 +7,12 @@
 
 | Date        | File                     | Notes                                                                   |
 | ----------- | ------------------------ | ----------------------------------------------------------------------- |
-| t2022-10-30 | [[@Jason Syversen]]          | boom!                                                                   |
+| t2022-11-03 | [[@Frank Langston]]          | Reference for Sports Visio                                              |
+| t2022-11-01 | [[@Rafah Hosn]]              | Intro Email for Robotics Mgr                                            |
+| t2022-10-31 | [[@George Richardson]]       | Email about terminating the differed comp plan                          |
 | t2022-10-30 | [[@Theo Enns]]               | BOOM BOOM                                                               |
-| t2022-10-27 | [[SV]]                       | Response:  So are you a VP of ENG                                       |
-| t2022-10-27 | [[SV]]                       | Chew on this - pitch to join                                            |
+| t2022-10-27 | [[@Jason Syversen]]          | Response:  So are you a VP of ENG                                       |
+| t2022-10-27 | [[@Jason Syversen]]          | Chew on this - pitch to join                                            |
 | t2022-10-25 | [[@Brian Yormak]]            | Ask to speak                                                            |
 | t2022-10-23 | [[Mom80]]                    | update invite                                                           |
 | t2022-10-13 | [[EOCA]]                     | Man in a room soon to die                                               |

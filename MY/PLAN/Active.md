@@ -1,9 +1,13 @@
 
-- [ ] [[NJ22]]:		[[WarStories]].
-- [ ] Fix-Lap:		Copy Files; Test4hours; GetMailer; 
-- [ ] [[Eli Elementary|Eli Next]]: 	Build Spreadsheet; Read orienting materials
-- [ ] [[Mom80]]:		Order food
-- [ ] [[Eli]]: 			Find babysitter
-- [ ] [[Fin]]:			Consider Avanti Paperwork
-- [ ] [[SV]]:			Have call with Brian
+- [ ] [[Fin Adv]]:		Find advisor; Consider Avanti Paperwork
+- [ ] [[Learn]]:		[[First90]],  [[Coursera]],  
+- [ ] [[NJ22]]:		[[WarStories]].  [[NJ22#LI|LI]]: Title, AF-refactor; 
+- [ ] [[Enxt]]: 		Sheet; Read materials
+
+- [ ] [[SV]]:			
+- [ ] [[Self]]:		Get Tsp; 
 - [ ] TRIPS:		Book Disney, Where xmas
+
+
+
+

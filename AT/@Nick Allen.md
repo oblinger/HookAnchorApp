@@ -5,6 +5,10 @@
 
 # LOG
 
+### m2022-11-09  Leaving R-Zero
+
+14m. 30 y o y
+
 
 ### t2022-07-26  Notes for letter of reference
 

@@ -4,6 +4,7 @@
 
 ### Weight
 
+2022-11-27		23.4  (evening return from doggie hotel)
 2022-09-11		23.8  (noon after walk)
 2022-09-04	23.4  (return from doggie hotel)
 2021-11-09		24 0oz	baby; morning

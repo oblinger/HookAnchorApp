@@ -1,77 +1,28 @@
-- [ ] OBS:  Fling Active, Wings, Back
-- [ ] OBS:  Rename the Template Create command to be better than CMD-OPT-Z
-- [ ] OBS:  Rename the show folder command???
-- [ ] OBS:   Rename the move folder command
-- [ ] OBS:  Get the 'AT' command working
-- [ ] OBS:  Change styling of published pages
-- [ ] OBS: Publish clean looking web content automatically from markdown
-- [ ] OBS:  have the CMDS page auto create / refresh the obsidian CMD entries
-- [ ] OBS:  TABULAR TITLE (see below)
-- [ ] OBS: CHANGE LOG - maintain list of edits.  track mod times & file lengths.  Do chron list of edits & dedup within window  (check if some tool exists)
-- [ ] OBS:  km recognized the '@sports visio' topic page, but then did not link all people docs in the folder
-- [ ] OBS:  ??? fix auto generator to create wiki links
-- [ ] OBS: key to add list items to lists with one letter prefix  e.g. t=todo, etc.   TAB-Q
-- [ ] OBS: command to create a new page with wiki link from current curor location
+- [ ] obs: fix add to default to 'q' = quick
+- [ ] Fix wires at desk
 
-- [ ] BUY: basket for QL in bathroom; add try to her drawer
-- [ ] MAC: Ensure sent mail is saved. and received mail is saved.
+- [ ] SLAM-S Show all does not work
+- [ ] GitHub daily submit (along with KM)
 - [ ] EMAILS: Verify saving, verify drafts save, verify save sends, merge all AF mail in. back backup of all mail.
+      Ensure sent mail is saved. and received mail is saved.  many copies when creating email
+
 - [ ] MAC: Toggle email notifications
-
-
-- [ ] how do I manage cross linked logs
-- [ ] OBS: Fling 's'start 'e'end  1, 2, 3
-- [ ] [btt](https://folivora.ai/buy) - Better Touch Tool
-
-
+- [ ] How do I manage cross linked logs.  Add TAGS???
 - [ ] Publish my org-info stuff
-- [ ] OBS: Add quick entry using an input box
-- [ ] IFTTT output of Apple Health data (or any kind of export
-- [ ] 
+- [ ] IFTTT output of Apple Health data (or any kind of export)
+
 - [ ] KMT - scan whole note not just prefix
 - [ ] Figure out: reset mac for headset bluetooth connect
 - [ ] Verify which emails and drafts are being saved/missing?  which accounts?  hard core backup of all emails . (all funnel in, then all get recorded?) 
-- [ ] - [ ]  F: edit scripts to be python3 scripts
-- [ ] F: play with 'state' app
-- [ ] Remove repeated stuff in email history
+- [ ] F: edit scripts to be python3 scripts
 - [ ] Export 1-password for auto logins
-- [ ] F: script control of AirPod Max connection on Mac
-
-- [ ] Fix archiving of email
-- [ ] MAIL -- get all mail messages logged
-
-## EASY
-- [ ] To Read  [Scripting Obsidian](https://www.thoughtasylum.com/2021/09/12/automating-your-obsidian-workspace/)  
 - [ ] Take notes on using the call recorder [[Record]]
 - [ ] Use WhatSize to clean disk
 
-## SMALL HACK
-- [ ] KM # refactor KM to scan for both kinds of link types, AND to produce both types depending on the context.
-- [ ] fix ccd to work with Obsidian
 
-
-## PROJECTS
-### OBS Tabular Title
-- Each kind of table has an table indicator REGEX
-- Each kind of table has title data field REGEX (used to extract title from entry's markdown page)
-- Table maintains bidirectional link between table entry and the title field value
-- All rows with no indent up to a double blank line are the table entries.
-- All text beyond the first @ link is the title of the table entry (it is the synced part)
-
-
-### Bidirectional sync to gsheets
-- [coupler.io](https://blog.coupler.io/python-to-google-sheets/)   has some good ref material for py-bindings
-- scan three level hiearchy with direct content or links to next level down
-- map key value pairs into a table row
-- build URL links to local files
-- Format Idea:
-	- leading space indicates positional arguments (can be wiki-link, markdown-link, key: value-pair, trimmed string with spaces)
-
-
-## LATER
-- [ ] PKM: Use ^a ^e to select whole line to move?  
-- [ ] OBS: Synthetic todo list views - 
+### LATER
+- [ ] [btt](https://folivora.ai/buy) - Better Touch Tool
+- [ ] F: play with 'state' app
+- [ ] Remove repeated stuff in email history
+- [ ] To Read  [Scripting Obsidian](https://www.thoughtasylum.com/2021/09/12/automating-your-obsidian-workspace/)  
 - [ ] https://github.com/jigish/slate  -  KICK window into position 1, 2, 3 and back  (Mess with SLATE)
-
-
-

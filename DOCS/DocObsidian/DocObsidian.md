@@ -1,6 +1,6 @@
 
 
-# # LINKS 
+# LINKS 
 
 - [[Discord App]],  [Forum](https://forum.obsidian.md),  [[PKM]], 
 
@@ -29,15 +29,14 @@ https://forum.obsidian.md/t/create-a-note-and-call-a-template-in-one-step-no-use
 
 - [Minimal Guide](https://minimal.guide/Plugins/Style+Settings) - 
 - 
-## = DEV LINKS
+## DEV LINKS
 - [API Docs](https://marcus.se.net/obsidian-plugin-docs/api),  
 
 
 # TODO
-
-## = BIG HACKS
+## BIG HACKS
 - Add 'throw' commands
-## = TODO LATER
+## TODO LATER
 - [ ] Update kmt so .md will match without num prefix and with/without dunder
 - [ ] Add template for rocks (name & description inputs; sub-folder, with link)
 

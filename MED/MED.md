@@ -1,4 +1,4 @@
-a-[[MED_Food]],  
+-[[MED_Food]],  [[Jet Lag]], [[Exercise]], 
 
 # TODO 
 - [ ] DAILY: Walking or Peleton w/ weights
@@ -118,6 +118,13 @@ small intestine bacterial over growth (SIBO)
 - [[Allergy vs Intolerance]](https://badgut.org/information-centre/health-nutrition/food-allergy-vs-intolerance/) -
 
 # LOG
+### 2022-11-10  Maria Cross - Registered Dietician
+
+- https://medium.com/@mariacross
+- [Twitter](https://twitter.com/MariaXCross?source=about_page------------------------------------- [FeedYourBrain](chrome://newtab/)  
+-  [FeedYourBrain](chrome://newtab/)  
+- 
+
 ### 2022-07-08  Pain after sex - Spoke with Lucas, Hasslers PA
 - 7/26 - 
 	2186 Geary BLVD #214  (Divisidaro)  Dr. Edward Collins

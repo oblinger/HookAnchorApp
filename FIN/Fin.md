@@ -1,4 +1,4 @@
-  [[Bills]]
+  [[Bills]], [[Fin Adv]], 
 
   [[Expenses]],   [Taxes](Taxes/Taxes.md),   [Vanguard](Vanguard.md)
 
@@ -16,30 +16,8 @@
 - [ ] IDEA:  Use https://whalewisdom.com/ For investment ideas.
 
 
-## TOPICS
 
-### 22Fin
-
-# LOG
-
-### n2022-10-22  Getting a wealth advisor
-
-- [Top 3 Credentials](https://www.investopedia.com/articles/personal-finance/060515/top-3-financial-advisor-credentials.asp) - Certified Financial Planner (CFP);  Chartered Financial Analyst (CFA); Personal Finacial Specialist (PFS)
-	- [forbes article](https://www.forbes.com/advisor/investing/cfa-chartered-financial-analyst/) - 
-
-- CFA - Hard tests; aimed at investment research and portfolio management
-
-
-- [Fee-Only Financial Advisors]()
-- [Accredited Wealth Management Advisor(AWMA)]
-
-
-QUESTIONS FOR ME
-[1. Create your personal financial goals](https://www.wiseradvisor.com/interview-tips.asp#goals)  
-[2. Prepare your Interview questions for the advisor](https://www.wiseradvisor.com/interview-tips.asp#prepare)  
-[3. Verify the credentials and record of integrity of the advisor](https://www.wiseradvisor.com/interview-tips.asp#credentials)  
-[4. Evaluate your advisor once you have completed the interview](https://www.wiseradvisor.com/interview-tips.asp#after)  
-[5. Make a decision on which advisor you wish to hire](https://www.wiseradvisor.com/interview-tips.asp#decision)
+# PRJ
 
 ## prj2022-10-07  Fin-Rebalance
 
@@ -57,7 +35,7 @@ QUESTIONS FOR ME
 
 
 
-# # UNSORTED # 
+# # UNSORTED  
 ### OLD ITEMS
 -- Solve 83b issue  (Add activities to this list)
 -- Consider additions to portfolio

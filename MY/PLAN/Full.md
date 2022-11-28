@@ -1,4 +1,3 @@
-
 ## = [[SELF|SELF]] =
 ### - [[MED|MED]] -
 - [ ] DAILY: Walking or Peleton w/ weights

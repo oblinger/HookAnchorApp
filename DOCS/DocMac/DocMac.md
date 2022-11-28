@@ -932,11 +932,12 @@ NOTES:
 - I imported "Caps Lock --> Hyper Key ..."  and "Map Tab ..."    (from [here](https://ke-complex-modifications.pqrs.org/#emulation-modes))   and then I swapped their actions directly in my karabiner.json file.
 
 ### xx Keyboard Maestro
-  
+
+SETUP FILE:    !file>StartSyncingMacros     /ob/topics/Config/KeyboardMaestro-master
+
+
 [[Doc Keyboard Maestro]] 
 
-
-Setup:  !file>StartSyncingMacros     /ob/topics/Config/KeyboardMaestro-master
 
 https://sites.fastspring.com/stairways/order/complete;jsessionid=F4452DB320FCF3523BD735502721EFA8?csid=1345138
 
@@ -1800,6 +1801,13 @@ Please make sure you copy and paste the name and the key without the quotes.
 
 NOT GOOD FOR FOLDERS!!
 Then got WhatSize
+
+## = BREW =
+### xx Pandoc
+   # https://medium.com/macoclock/how-to-setup-pandoc-and-latex-on-macos-mojave-8e18fa71e816 
+    brew install pandoc
+    brew install librsvg python 
+    brew install --cask basictex
 
 ## = OTHER HARDWARE =
 ### - iPHONE

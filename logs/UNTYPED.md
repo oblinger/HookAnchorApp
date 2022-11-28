@@ -6,18 +6,31 @@
 
 | Date       | File                | Notes                                                                                     |
 | ---------- | ------------------- | ----------------------------------------------------------------------------------------- |
+| 2022-11-23 | [[ELI]]                 | QL planting ideas                                                                         |
+| 2022-11-23 | [[Parents]]             | Mom's multiple facebook accounts                                                          |
+| 2022-11-22 | [[Phone]]               | Fire Dept response for Eli                                                                |
+| 2022-11-20 | [[ToBuy]]               | Big Insta-pot                                                                             |
+| 2022-11-10 | [[MED]]                 | Maria Cross - Registered Dietician                                                        |
+| 2022-11-10 | [[Enxt]]                | The San Francisco School                                                                  |
+| 2022-11-08 | [[Fin Adv]]             | Finding a Fiduciary                                                                       |
+| 2022-11-08 | [[Fin Adv]]             | My plan                                                                                   |
+| 2022-11-08 | [[Fin Adv]]             | Initial reading                                                                           |
+| 2022-11-07 | [[Current]]             |                                                                                           |
+| 2022-10-31 | [[Bio]]                 | Rafah - Microsoft Intro                                                                   |
+| 2022-10-31 | [[Bio]]                 | Avidan - Tessa VC                                                                         |
 | 2022-10-28 | [[ToBuy]]               | Scotch Crystal                                                                            |
 | 2022-10-24 | [[Current]]             |                                                                                           |
 | 2022-10-20 | [[@Apple]]              | Laptop Repair                                                                             |
 | 2022-10-19 | [[@Apple]]              | Repair Request                                                                            |
 | 2022-10-16 | [[ToBuy]]               | Dresser for bedroom                                                                       |
 | 2022-10-10 | [[Nanny]]               | SAVE MONEY                                                                                |
+| 2022-10-07 | [[Phone]]               | Lily - Tax Info for 2021 return                                                           |
 | 2022-10-03 | [[Current]]             | fre                                                                                       |
 | 2022-09-30 | [[Phone]]               | Building Work Desk in livingroom                                                          |
 | 2022-08-17 | [[Phone]]               | Dr Lue Urologist                                                                          |
 | 2022-08-01 | [[Phone]]               | notes while out - about me                                                                |
-| 2022-07-19 | [[Comms]]               | Ping Goals                                                                                |
 | 2022-07-19 | [[Brain3]]              | G-Flow Nets Maybe - whats my example                                                      |
+| 2022-07-19 | [[Comms]]               | Ping Goals                                                                                |
 | 2022-07-18 | [[ToBuy]]               | Walnut desktop                                                                            |
 | 2022-07-12 | [[Phone]]               | Eli Sand toys                                                                             |
 | 2022-07-12 | [[Phone]]               | LOWES tool rental                                                                         |
@@ -139,8 +152,8 @@
 | 2021-10-06 | [[Journal Old]]         | BAJI                                                                                      |
 | 2021-10-01 | [[nj22_contents]]       | -- SITUATION SUMMARY --                                                                   |
 | 2021-10-01 | [[Journal Old]]         | -- SITUATION SUMMARY --                                                                   |
-| 2021-09-23 | [[Comms]]               | WHOM IN MY NETWORK TO ASK                                                                 |
 | 2021-09-23 | [[Resume]]              | Resume Experience                                                                         |
+| 2021-09-23 | [[Comms]]               | WHOM IN MY NETWORK TO ASK                                                                 |
 | 2021-09-23 | [[Journal Old]]         | WHOM IN MY NETWORK TO ASK                                                                 |
 | 2021-09-22 | [[nj22_contents]]       | >>> WP    --  ACTIVITIES <<<                                                              |
 | 2021-09-22 | [[Resume]]              | RESUME OBJECTIVE                                                                          |
@@ -220,8 +233,8 @@
 | 2021-05-06 | [[DYL]]                 | WORK VIEW                                                                                 |
 | 2021-05-05 | [[Journal Old]]         | DECISION - NO TO JASON                                                                    |
 | 2021-04-30 | [[Brain3]]              |                                                                                           |
+| 2021-04-29 | [[@Jason Syversen]]     | Thumbnail Math                                                                            |
 | 2021-04-29 | [[Journal Old]]         | Thumbnail Math                                                                            |
-| 2021-04-29 | [[SV]]                  | Thumbnail Math                                                                            |
 | 2021-04-27 | [[Journal Old]]         | INDEX CARD SUMMARY                                                                        |
 | 2021-04-26 | [[2021.04 Directions]]  | Founder Profile                                                                           |
 | 2021-04-21 | [[BL]]                  | Conscious computing agenda                                                                |
@@ -232,36 +245,36 @@
 | 2021-04-14 | [[Journal Old]]         | Dan O Drivers & Futures                                                                   |
 | 2021-04-14 | [[Journal Old]]         | Compass                                                                                   |
 | 2021-04-11 | [[Journal Old]]         | NFT transfer                                                                              |
+| 2021-04-07 | [[@Jason Syversen]]     | Jason #5                                                                                  |
 | 2021-04-07 | [[Journal Old]]         | Jason #5                                                                                  |
-| 2021-04-07 | [[SV]]                  | Jason #5                                                                                  |
+| 2021-04-01 | [[@Jason Syversen]]     | Jason #5                                                                                  |
 | 2021-04-01 | [[Journal Old]]         | Jason #5                                                                                  |
-| 2021-04-01 | [[SV]]                  | Jason #5                                                                                  |
 | 2021-04-00 | [[nj22_contents]]       | >>> TOP   -- NEXT JOB <<<                                                                 |
 | 2021-04-00 | [[Buckets]]             | Summary at that time                                                                      |
 | 2021-04-00 | [[Journal Old]]         | >>> TOP   -- NEXT JOB <<<                                                                 |
+| 2021-03-30 | [[@Jason Syversen]]     | Jason Summary                                                                             |
 | 2021-03-30 | [[Journal Old]]         | Jason Summary                                                                             |
-| 2021-03-30 | [[SV]]                  | Jason Summary                                                                             |
 | 2021-03-28 | [[Paths]]               | Big picture next step ideas / pulls                                                       |
 | 2021-03-28 | [[Journal Old]]         | Big picture next step ideas / pulls                                                       |
+| 2021-03-27 | [[@Jason Syversen]]     | Jason analysis #4                                                                         |
 | 2021-03-27 | [[Journal Old]]         | Jason analysis #4                                                                         |
-| 2021-03-27 | [[SV]]                  | Jason analysis #4                                                                         |
+| 2021-03-20 | [[@Jason Syversen]]     | Jason response #3                                                                         |
 | 2021-03-20 | [[Journal Old]]         | Jason response #3                                                                         |
-| 2021-03-20 | [[SV]]                  | Jason response #3                                                                         |
+| 2021-03-17 | [[@Jason Syversen]]     | Jason response #2                                                                         |
+| 2021-03-17 | [[@Jason Syversen]]     | Jason response #1                                                                         |
 | 2021-03-17 | [[Journal Old]]         | Jason response #2                                                                         |
 | 2021-03-17 | [[Journal Old]]         | Jason response #1                                                                         |
-| 2021-03-17 | [[SV]]                  | Jason response #2                                                                         |
-| 2021-03-17 | [[SV]]                  | Jason response #1                                                                         |
 | 2021-03-15 | [[MED_Heart]]           | Doctor's Appt                                                                             |
+| 2021-03-04 | [[@Jason Syversen]]     | The Nick and Dan LLC Model                                                                |
 | 2021-03-04 | [[Journal Old]]         | The Nick and Dan LLC Model                                                                |
-| 2021-03-04 | [[SV]]                  | The Nick and Dan LLC Model                                                                |
 | 2021-03-03 | [[Paths]]               | Dan's North Star                                                                          |
 | 2021-03-03 | [[Journal Old]]         | Dan's North Star                                                                          |
 | 2021-03-00 | [[Journal Old]]         | JASON BASKETBALL                                                                          |
 | 2021-02-28 | [[Journal Old]]         | Uniform - What could be pitched now                                                       |
 | 2021-02-24 | [[Paths]]               | Dan's Futures Ranked                                                                      |
 | 2021-02-24 | [[Journal Old]]         | Dan's Futures Ranked                                                                      |
+| 2021-02-21 | [[@Jason Syversen]]     | Jason's Basketball Thing                                                                  |
 | 2021-02-21 | [[Journal Old]]         | Jason's Basketball Thing                                                                  |
-| 2021-02-21 | [[SV]]                  | Jason's Basketball Thing                                                                  |
 | 2021-02-17 | [[Paths]]               | Dan's Mind & North Star                                                                   |
 | 2021-02-17 | [[Journal Old]]         | Dan's Mind & North Star                                                                   |
 | 2021-02-15 | [[ufBrick]]             | thinking                                                                                  |
@@ -292,13 +305,16 @@
 | 2020-05-11 | [[OLD 2020 Weekly]]     | NOW COUNTING 90 SLOTS                                                                     |
 | 2020-04-27 | [[MED]]                 | Notes for doc meeting                                                                     |
 | 2020-04-14 | [[MED]]                 | Stress test results                                                                       |
+| 2020-04-00 | [[Bio]]                 | Bio Parts                                                                                 |
 | 2020-04-00 | [[OLD 2020 Weekly]]     | QUARTERLY - Big goals                                                                     |
 | 2020-04-00 | [[OLD 2020 Weekly]]     | MONTH APRIL habits                                                                        |
 | 2020-04-00 | [[MED]]                 | Heart Disease Questions                                                                   |
 | 2020-03-23 | [[OLD 2020 Weekly]]     | focus fail                                                                                |
 | 2020-02-19 | [[Journal Old]]         | DECADE TIMELINE                                                                           |
+| 2020-02-00 | [[Bio]]                 | – Redis Conf Bio                                                                          |
 | 2020-01-06 | [[OLD 2020 Weekly]]     | WEEK                                                                                      |
 | 2020-01-05 | [[OLD 2020 Weekly]]     | GOALS FOR THE YEAR                                                                        |
+| 2020-00-00 | [[Parents]]             | Subscriptions that Dad might want                                                         |
 | 2020-00-00 | [[Forum]]               | UNSORTED                                                                                  |
 | 2019-12-09 | [[OLD 201x Weekly]]     | Mostly sideways week                                                                      |
 | 2019-12-06 | [[OLD 201x Weekly]]     | My YES List                                                                               |
@@ -307,6 +323,7 @@
 | 2019-10-15 | [[OLD 201x Weekly]]     | WEEK - sideways slip all week                                                             |
 | 2019-10-08 | [[OLD 201x Weekly]]     | WEEK - AI_conf                                                                            |
 | 2019-10-06 | [[OLD 201x Weekly]]     | OCT PLAN                                                                                  |
+| 2019-10-00 | [[Bio]]                 | Sales Deck bio                                                                            |
 | 2019-09-30 | [[OLD 201x Weekly]]     | WEEK - Forcing: M/C/S/W/R/F                                                               |
 | 2019-09-26 | [[Hackers]]             | Application Details                                                                       |
 | 2019-09-23 | [[OLD 201x Weekly]]     | WEEK - AIdeck_v0; SalesSync; UFprintlists  (0%)                                           |
@@ -335,6 +352,8 @@
 | 2019-05-07 | [[ReBuy]]               | Living room cabinets                                                                      |
 | 2019-04-12 | [[Fin]]                 | Ev Notes                                                                                  |
 | 2019-04-03 | [[OLD 201x Weekly]]     | APRIL  MIN-JNL                                                                            |
+| 2019-04-00 | [[Bio]]                 | AF confluence bio                                                                         |
+| 2019-03-00 | [[Bio]]                 | – Verbal (Sales Call) BIO                                                                 |
 | 2019-02-08 | [[Fin]]                 | EV Notes                                                                                  |
 | 2019-02-00 | [[AFmaterials]]         | Turbot Materials                                                                          |
 | 2019-00-00 | [[MED]]                 | Ideas for QL Pregnancy Heroids                                                            |
@@ -356,6 +375,7 @@
 | 2016-11-04 | [[Phone]]               | water power sewer                                                                         |
 | 2016-05-25 | [[OLD 201x Weekly]]     | – Lex Ownership                                                                           |
 | 2016-05-25 | [[Journal Old]]         | – Lex Ownership                                                                           |
+| 2016-00-00 | [[Parents]]             | Parents Internet speed                                                                    |
 | 2016-00-00 | [[Fin]]                 | Idea for adelec analysis                                                                  |
 | 2016-00-00 | [[Journal Old]]         | Bizzy Robotics - Early days                                                               |
 | 2016-00-00 | [[DYL]]                 | Bizzy Robotics - Early days                                                               |
@@ -365,6 +385,7 @@
 | 2015-04-06 | [[Fin]]                 | Ben Ng -- Indexed Universal Life -- IRS sec 7702 section 79                               |
 | 2015-03-30 | [[Fin]]                 | Setup SEP.  Planned 2015                                                                  |
 | 2015-02-05 | [[Fin]]                 | Mike's options trading strategy                                                           |
+| 2015-00-00 | [[Parents]]             | old software for Dad info                                                                 |
 | 2015-00-00 | [[MED_Sleep]]           | Pill exploration                                                                          |
 | 2014-12-10 | [[DocMac]]              | WIFI CONNECTIVITY ISSIE                                                                   |
 | 2013-03-03 | [[ReBuy]]               | Standing mat                                                                              |
@@ -383,6 +404,8 @@
 | 2010-04-01 | [[Journal Old]]         | – Life is moving faster                                                                   |
 | 2010-01-02 | [[OLD 201x Weekly]]     | – From last year’s retreat  (12/2008)                                                     |
 | 2010-01-02 | [[Journal Old]]         | – From last year’s retreat  (12/2008)                                                     |
+| 2010-00-00 | [[Parents]]             | Angels landing                                                                            |
+| 2010-00-00 | [[Parents]]             | ### Dave O Car Money                                                                      |
 | 2009-12-29 | [[OLD 200x Weekly]]     | Elasticity of Time                                                                        |
 | 2009-12-29 | [[Journal Old]]         | Elasticity of Time                                                                        |
 | 2009-12-19 | [[OLD 200x Weekly]]     | not great - low motivation                                                                |

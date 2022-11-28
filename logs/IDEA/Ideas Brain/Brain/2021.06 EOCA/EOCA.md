@@ -1,9 +1,3 @@
-  [[FTX]]
-  [MindSlavery](MindSlavery.md)
-  
-  
-   - [[EOCA IDEAS]]:  [SandboxFutility](SandboxFutility.md),  [Argument](Argument.md),  [ProblemOfQualia](ProblemOfQualia.md), [[Subjective Aspects of Consciousness]],  
-
 ## TODO
 ### who to talk to
 - Professors
@@ -30,6 +24,16 @@ REQUIRED INGREDIENTS
 - aggregating -- it possible to combine K, then it does
 - learning of post genomic K
 _
+## LINKS
+
+- [[FF-prize]]		-  
+- [[Cyber Model]]	-  
+- [[Prime Path]]		-  
+  [MindSlavery](MindSlavery.md)
+  
+  
+   - [[EOCA IDEAS]]:  [SandboxFutility](SandboxFutility.md),  [Argument](Argument.md),  [ProblemOfQualia](ProblemOfQualia.md), [[Subjective Aspects of Consciousness]],  
+
 # TOPICS TREE
 ## META
 ### MY STANCE
@@ -63,7 +67,7 @@ _
 
 ## === CORE CLAIM: UNCONTROLABILITY ===
 ### --- PROOFS OF CONTROLLABILITY ---
-#### -- POSSIBLE BEHAVOIRS OF A SYSTEM IS MUCH LARGER THAN WHAT IT CAN ANALYZE -
+#### -- POSSIBLE BEHAVIORS OF A SYSTEM IS MUCH LARGER THAN WHAT IT CAN ANALYZE -
 Result:  one needs to somehow abstract and generalize system in order to draw conclusions about it.
 
 _
