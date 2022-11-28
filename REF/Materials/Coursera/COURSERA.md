@@ -5,4 +5,4 @@
 
 
 
-- [[Coursera Deep Learning Specialization]] - 
+- [[Coursera Deep Learning]] - 
