@@ -6,6 +6,9 @@
 
 | Date       | File                | Notes                                                                                     |
 | ---------- | ------------------- | ----------------------------------------------------------------------------------------- |
+| 2022-11-29 | [[Phone]]               | [[@Audi]]                                                                                 |
+| 2022-11-29 | [[Phone]]               | DIY Peloton Treadmill                                                                     |
+| 2022-11-29 | [[Phone]]               | Exercise Tracking (Horizon 7.4AT)                                                         |
 | 2022-11-23 | [[ELI]]                 | QL planting ideas                                                                         |
 | 2022-11-23 | [[Parents]]             | Mom's multiple facebook accounts                                                          |
 | 2022-11-22 | [[Phone]]               | Fire Dept response for Eli                                                                |

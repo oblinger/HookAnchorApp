@@ -1,6 +1,9 @@
 - [ ] Tennis shoes
 - [ ] Buy tripod. consider go-pro or other video. search best camera w/ a kid
 - [ ] BUY: basket for QL in bathroom; add try to her drawer
+## FOREVER
+- Shoe Rack; Office Dresser; 
+## ITEMS
 ### 2022-11-20  Big Insta-pot
 
 - Instant Pot Duo Nova 7-in-1 Electric Pressure Cooker, Slow Cooker, Rice Cooker, Steamer, Saute, Yogurt Maker, Sterilizer, and Warmer, 10 Quart,

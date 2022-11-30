@@ -21,17 +21,14 @@
 
 
 ## QUESTIONS
-1. Our Needs
-2. Teacher Ratio
-3. Behavior Problems
-4. What Distinguishes School
-5. How Much Homework
-6. How to support different learning styles & needs?
-7. After school activities?
-8. Physical Environment?  Outdoors.  Auditorium.
-9. Teacher Support & Standards?
-10. Expectations for Students?
+- What Distinguishes School
+- Teacher Ratio;  How Much Homework; Behavior Problems
 
+1. How to support different learning styles & needs?
+2. After school activities?
+3. Physical Environment?  Outdoors.  Auditorium.
+4. Teacher Support & Standards?
+5. Expectations for Students?  
 
 # REF
 ### r2022-11-08  School Stats
@@ -49,6 +46,22 @@
 # LOG
 ### 2022-11-10  The San Francisco School
 
+Open Campus:  Saturday
+Open Tour:  Next Friday
+Jan-6th application.
+
+~~ Session #2 ~~
+SFS - San Francisco School
+- Teacher Ratio 5:1
+- Mission: Inspire passion for learning.  Diversity (window & mirror books).  
+	- Conflict Resolution Kid Training
+- Ed Philosophy: Curiosity, Passion, Courage, Compassion   (The power of yet), math taught in groups of 5
+	- Kindergartners:  3-outdoor-playtimes
+	- Project Based Learning:  6th-grade, design your own country.  2nd grade learning around bird (math, music, art, writing)
+- Goal in 4th grade:  homework over multiple days for time management.
+	- Give grades in middle school.  broken out by skill type (interacting in school)
+
+~~ Session #1 ~~
 FOCUS:  Social - Emotional Learning.
 - the power of YET
 

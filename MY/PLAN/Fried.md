@@ -1,3 +1,5 @@
+- [ ] obs shows non existent links in the [[ menu
+- [ ] Better Kuerig
 - [ ] fix curtain rod in Eli's room
 - [ ] understand apple photo importing of shared albums; and duplicate import
 

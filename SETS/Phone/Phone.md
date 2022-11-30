@@ -1,4 +1,29 @@
 
+
+### 2022-11-29  [[@Audi]]
+415-241-8100
+
+### 2022-11-29  DIY Peloton Treadmill
+
+- Horizon 7.0AT - as device holder lip, foldable,  ---SLOW CLICK-CKICK adjustments
+- Horizon 7.4AT; Good for HIIT; 
+
+STEP
+- Stryd; Garmin Run Pod;  Garmin Forerunner 645; 
+
+### 2022-11-29  Exercise Tracking (Horizon 7.4AT)
+
+888 878 9011
+- Sends incline, speed, and heart to Peloton Digital?
+- works with Wahoo, or scoche arm band?
+- Auto connects to Peloton Digital?
+- Better about the 7.4 over the 7.0  (just weight and running area?)  better auto connect
+- best step counter to add
+
+
+800-244-4192  Tech Support
+
+
 ### 2022-11-22  Fire Dept response for Eli
 
 833-532-2237

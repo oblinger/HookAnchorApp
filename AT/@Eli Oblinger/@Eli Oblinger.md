@@ -1,14 +1,7 @@
-  [[ELI]]
 =[[PP]]  
-
-
-
-  [BCMS](BCMS/BCMS.md)
-  [BCMS](BCMS/__BCMS__.md)
-  [BCMS](__BCMS__.md)
-[BCMS](__BCMS__.md) 
-
-- [[Eli Math]], 
+- [[ELI]], [[BCMS]],  [[Eli Math]], 
+- 
+- 
 
 12oz.  milk.  5oz juice.  5.5oz milk.  
 

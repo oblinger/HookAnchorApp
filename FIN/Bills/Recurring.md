@@ -22,6 +22,7 @@ crunchbase
 
 ### APPLE 
 DANO - APPLE - Mac->AppStore->MyPicture->AccountSettings->Manage->Subscriptions
+- $3/mo ??	Apple iCloud storage
 - $29/yr		Insight Timer  (2022-12-14)
 - OFF		$49/mo		Coursera   **maybe paid elsewhere?**
 - OFF		$20/mo		Obsidian Publish    (also paid annual for sync)  **maybe paid elsewhere?**
