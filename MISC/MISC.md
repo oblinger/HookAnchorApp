@@ -1,4 +1,4 @@
-  [[Startups]]
+[[Effective Altruism]] [[Compensation]],  [[Startups]]
 [[Babysitting]],  [[Disks]]
   [[Courses]]
   [webshare](webshare/webshare.md)

@@ -1,6 +1,8 @@
-## = TODO
+## = TODO  [web](https://linkedin.com) 
+- [ ] Top Image:  ???     Headshot:  
+
+
 - [ ] Patent:  Wish to elevate a filed patent...
-- [ ] Top Image:  ???
 
 - [ ] Work with Joe
 	- [ ] choose headline

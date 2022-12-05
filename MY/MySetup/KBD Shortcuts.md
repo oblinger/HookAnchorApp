@@ -103,7 +103,7 @@
 | O     | OPEN switcher/OUTLINE |                  | OPEN in default app            |                   |     |
 | P     | cmd PALETTE           |                  | PLAN note /                    |                   |     |
 | Q     |                       |                  |                                |                   |     |
-| R     |                       | search REPLACE   | RECENT notes pane              |                   |     |
+| R     | RENAME file           | search REPLACE   | RECENT notes pane              |                   |     |
 | S     | SAVE file             |                  | SCRATCH note / STARRED pane    |                   |     |
 | T     | / undo CLOSE          |                  | new TEMPLATE/insert only       | TEXT entry        |     |
 | U     |                       |                  |                                | UNTYPED entry     |     |

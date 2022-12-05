@@ -3,6 +3,8 @@
 - [ ] [[Learn]]:		[[First90]],  [[Coursera]],  
 - [ ] [[NJ22]]:		[[WarStories]].  [[NJ22#LI|LI]]: Title, AF-refactor; 
 - [ ] [[Enxt]]: 		Sheet; Read materials
+- [ ] [[Exercise]]:	Get daily activities figured out.  [[Habits]].
+- [ ] [[Comms]]:		
 
 - [ ] [[SV]]:			
 - [ ] [[Self]]:		Get Tsp; 

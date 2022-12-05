@@ -835,7 +835,7 @@ Mr  Thursday
 - Laundry drying & folding
 - Trash out
 
-
+20
 
 
 AYI COSTS
@@ -845,13 +845,16 @@ AYI COSTS
 $2450
 
 DAILY
+- $2165  =  $25/hr * 4hr/day * 5day/wk * 4.33wk/mo    (65hr/mo)   <--- Ayi rate.
 - $1950  =  $30/hr * 3hr/day * 5day/wk * 4.33wk/mo    (65hr/mo)
 - $1399  =  $20/hr * 3hr/day * 5day/wk * 4.33wk/mo    (65hr/mo)
-- $1732  =  $20/hr * 4hr/day * 5day/wk * 4.33wk/mo    (87hr/mo)
+- $1624  =  $25/hr * 3hr/day * 5day/wk * 4.33wk/mo    (65hr/mo)
+- $1399  =  $20/hr * 3hr/day * 5day/wk * 4.33wk/mo    (65hr/mo)2
 
 FOUR X WEEKLY
 - $1559 =  $30/hr * 3hr/day * 4day/wk * 4.33wk/mo    (52hr/mo)
 - $1039  =  $20/hr * 3hr/day * 4day/wk * 4.33wk/mo    (52hr/mo)
+- $1732  =  $25/hr * 4hr/day * 4day/wk * 4.33wk/mo    (69hr/mo)
 - $1386  =  $20/hr * 4hr/day * 4day/wk * 4.33wk/mo    (69hr/mo)
 - $2078  =  $30/hr * 4hr/day * 4day/wk * 4.33wk/mo    (69hr/mo)
 

@@ -59,6 +59,7 @@ Can't stop ourselvesm
 ## NON-LINEAR - Graphing Progress Is Profoundly Misleading
 - Merging results from distinct and incompatible approaches 
 ## ALIGNMENT LIKELY FAILS
+
 ## AGI WILL BE BORN SUPER HUMAN
 
 

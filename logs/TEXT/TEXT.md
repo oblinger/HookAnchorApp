@@ -7,6 +7,7 @@
 
 | Date        | File                     | Notes                                                                   |
 | ----------- | ------------------------ | ----------------------------------------------------------------------- |
+| t2022-12-02 | [[@Jason Syversen]]          | The 'Hire me'  compensation re-evaluation email                         |
 | t2022-11-03 | [[@Frank Langston]]          | Reference for Sports Visio                                              |
 | t2022-11-01 | [[@Rafah Hosn]]              | Intro Email for Robotics Mgr                                            |
 | t2022-10-31 | [[@George Richardson]]       | Email about terminating the differed comp plan                          |

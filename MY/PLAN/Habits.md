@@ -1,6 +1,12 @@
 
 ## = CURRENT FOCUS
 ### - Daily Exercise
+- RULE: Engage in 30 min of exercise each weekday and maybe weekends
+
+TYPES:
+- Treadmill - 
+- Pickup Eli - listen on way to Eli - Push self
+- Nordic - 
 
 
 ### - A NEW DAY - RULESET

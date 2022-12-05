@@ -26,7 +26,7 @@ REQUIRED INGREDIENTS
 _
 ## LINKS
 
-- [[FF-prize]]		-  
+- [[FF-prize]], [[LimitsOnAlignment]],  
 - [[Cyber Model]]	-  
 - [[Prime Path]]		-  
   [MindSlavery](MindSlavery.md)

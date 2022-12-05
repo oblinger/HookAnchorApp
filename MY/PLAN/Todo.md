@@ -1,17 +1,15 @@
+- [ ] dec-3 olga; collette
 - [ ] car roof
- - [ ] Go thru in2 list
+- [ ] Go thru in2 list
 
-
-
-- [ ] Book care.com woman
-
+- [ ] tsp thinking.
+- [ ] mailto:bbrugler@tiedemannadvisors.com  dwells@albionfinancial.com  albion
 - [ ] DEF COMP:  Move funds
 - [x] Credit card for QL
 - [ ] Covid wait for - Yashin's conservative friend
 - [ ] Call doc about my heart test results.
 - [ ] Cancel our winery.  (QL confirm)
 - [ ] Add 1password to shared acct
-
 
 - [ ] [[self]]: Hire health coach
 - [ ] MED:  Book appt w/ EMT

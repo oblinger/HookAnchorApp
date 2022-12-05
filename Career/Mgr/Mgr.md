@@ -1,17 +1,12 @@
 
-- [[MgrMeetings]], 
-  [MgrTracking](MgrTracking/MgrTracking.md)
--   [MgrContracts](MgrContracts/MgrContracts.md) [[MgrTracking]]  [Contracts](Contracts/Contracts.md)  [MyMgr](MyMgr/MyMgr.md)
+-  [MyMgr](MyMgr/MyMgr.md),  [[MgrMeetings]],   [MgrTracking](MgrTracking/MgrTracking.md)
+-   [MgrContracts](MgrContracts/MgrContracts.md) [[MgrTracking]] 
+- [Contracts](Contracts/Contracts.md) 
   
 ## = ADVICE
 _
-### Hiring/Mgt
--- ACCOUNTABILITY -- which role did you have largest accountability.  what happened.
--- SMART goals (specific, measurable, achievable, results-focused and time- bound)
--- DELEGATE authority (to match responsibility)
--- REVIEW measure and review;  ADDRESS deficiencies
+- [[Hiring]] - 
 
-_
 ### Giving a PEP TALK
 (1) SENSE what they really need: (vent, confidence, advice)
 (2) EMPATHIZE / BOLSTER confidence / LISTEN

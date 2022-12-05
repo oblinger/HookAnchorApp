@@ -5,7 +5,7 @@ ALL TOPIC ROOTS
   [[COURSES]],   [[UX Course at 500]],   [[Presentations]],   [[Jeopardy Machine Reading]],   [[Robotics_Fireside]],   
   [[Nomad]],   [[Gifts]],   [[Trip]],   [[Thailand]],   [[House]],   [[Biking]],   [[Glossary]],   [[Gym]],   [[Games]],
      [[napa]],   [[hiking]],   [[Career]],   [[NextJob]],   [[NJ22]],   [[Resume]],   [[Bio]],   [[AFmaterials]],   
-  [[Mgr]],   [[MgrContracts]],   [[MgrTracking]],   [[MyMgr]],   [[Nanny]],   [[leadership]],   [[MATERIALS]],   
+  [[MGR]],   [[MgrContracts]],   [[MgrTracking]],   [[MyMgr]],   [[Nanny]],   [[leadership]],   [[MATERIALS]],   
   [[COURSERA]],   [[ML]],   [[DL]],   [[STATS]],   [[Fin]],   [[RealEstate]],   [[Expenses]],   [[Bills]],   [[Taxes]],
      [[LIFE]],   [[Phillipines]],   [[mate]],   [[Diary]],   [[Weekly]],   [[Mission Statement]],   [[Docs]],   [[Unix 
   Command Line]],   [[DocObsidian]],   [[DocEmacs]],   [[DocMac]],   [[DocJavascript]],   [[DocR]],   [[DocPython]],   

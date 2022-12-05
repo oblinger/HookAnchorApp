@@ -44,6 +44,32 @@
 -  [SCHOOL-BASED PEER EFFECTS AND JUVENILE BEHAVIOR](https://gspp.berkeley.edu/assets/uploads/research/pdf/School_Based_Peer_Effects_and_Juvenile_Behavior.pdf)  
 - d
 # LOG
+### 2022-12-01  Alta Vista
+
+- School hours:   8:25a - 3:30p
+- STEAM school: 	(everything organized around this.)
+- School Lunch Option:  
+- Specialist Classes:  Art/tinker, Music, Spanish, Drama, Garden, PE  (collaborative & project based)
+	- Middle school - spanish everyday.  lower = 2/wk
+- Co-Teaching model:  two lead teachers, they split the load
+- Formal assessment in trimester periods.  
+- homework:  15min at younger age.  30min in older grades.  ()
+- community meeting:  Steam Focused  (mondays)    Social Emotional (fridays)
+- After school programs (BookEnds, Adventure Camp)
+- 
+
+- SEL - Social Emotional Learning model (Ruler)  Yale
+- Essay coaching, interviewing practice, working hard
+
+- Learning is fun (even when being assessed)
+- 16-18 students with 2 teachers.
+- Violence:  Restorative conversation.  I statements, Apology
+- 4-day mosaic field trip.
+- working in the neighborhood (fixing the library, etc.)
+- 9 teachers at the people of color conference.
+- Noa   noa.mendelevitch@altavistaschool.org     question about outcomes
+
+
 ### 2022-11-10  The San Francisco School
 
 Open Campus:  Saturday

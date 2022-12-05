@@ -8,7 +8,9 @@
 
 | Date        | File                 | Notes                                                             |
 | ----------- | -------------------- | ----------------------------------------------------------------- |
-| m2022-11-22 | [[@Grzgorz Biziel]]      | About AF                                                          |
+| m2022-12-02 | [[@Jason Syversen]]      | GRZ & push to hire                                                |
+| m2022-12-01 | [[@Joseph Yeh]]          | Prep for [[@Jason Syversen]] 'final' discussion.                  |
+| m2022-11-22 | [[@Grzegorz Biziel]]     | About AF                                                          |
 | m2022-11-21 | [[@Teddy Lange]]         | Conversation #2 ideas and pointers                                |
 | m2022-11-21 | [[EduCorp]]              | [[@Teddy Lange]]                                                  |
 | m2022-11-14 | [[@Jason Syversen]]      | Hiring Ex-SV folks                                                |

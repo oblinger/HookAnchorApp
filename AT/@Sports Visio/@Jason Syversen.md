@@ -3,6 +3,109 @@
 - Get resume.  
 
 # LOG
+
+### t2022-12-02  The 'Hire me'  compensation re-evaluation email
+
+
+Jason, 
+
+  
+
+Knocking Sports Visio out of the park with you is an awesome picture for our future!  I hope we can converge on it.
+
+  
+
+I did some looking online to figure out what my up-to-the moment compensation would be.  I focused entirely on job posted in the month of November.  I used levels.fyi to derive a multiplier to convert published base salaries into estimated total comp.  The lowest multiplier over the three FAANGs I checked was 2.21x.
+
+  
+
+Linked-in provides a search tool ([https://www.linkedin.com/jobs/collections/recommended/](https://www.linkedin.com/jobs/collections/recommended/)) for jobs they recommended for you as computed directly from your profile.  At this moment there was only one Google job that matched me with… a VP of Product Management in Core Data.  There were many other high-level cool looking jobs matching too, but they did not list salaries.  Linked in also sends me top picks for me as an email each week.  I copied ALL of those emails also into the document.  There were 4 Google jobs with salaries listed among the November emails.  The raw data is all here [https://docs.google.com/document/d/1gVWhVuCtFhXmUANTtQgEsyGpY2O5K05VMY9yKr2nFlE/edit#](https://docs.google.com/document/d/1gVWhVuCtFhXmUANTtQgEsyGpY2O5K05VMY9yKr2nFlE/edit#) for reference.
+
+  
+
+The VP job linked-in recommended had a $1.2M total comp, and the average of the 4 non VP jobs was $636K.  Notice, even when companies announced hiring freezes, they often explicitly excluded Machine Learning related roles from the freeze.  Also they generally didn’t stop their senior hiring, since those roles are hard to fill.  Thus the massive tech slowdown seems to have affected relevant ML and executive roles much less than most of the tech jobs.  Still if adjusting my offer now can get me on board along with this new crop of hires I am all for it – I think joining with them lowers social risks, and it also makes my job easier too.  
+
+  
+
+The cash cap on my equity drives my 15% equity down to 3.4% by the time we hit $350M, so it does not seem to make sense to making further adjustments on the equity side of the equation. (Lowering the 15% number will only change things in the case that the company is struggling, but in that case, we BOTH want me to have every bit of that 15% so I can stick it out thru the hard years w/o feeling that I am losing out.)
+
+  
+
+We can drop my salary some, as long as we agree to have a fresh Dan-O-salary-discussion after our A-round closes.  I actually like this kind of approach since it lengthens our runway during this period when cash is most precious.  How about a $180K salary until the A-round, and call it done?
+
+  
+
+Also, if we are moving forward now, I would really love to help you land Grzegorz at the same time.  He is such a high velocity guy, ideal for alg development work and able to connect the fancy ML with all the moving parts of our larger system. AND he has a proven Dan-GRZ high-bandwidth mind meld, I know he would be a big help in getting the whole team gelled into a “crank-in-out” fest from day one.
+
+  
+
+Looking forward to your thoughts,
+
+–dan
+
+
+### m2022-12-02  GRZ & push to hire
+
+OUTLINE:
+
+- Grzegorz discussion.  What did you think?  Any negatives?  Moving forward?
+
+- SV status and find the pain discussion:
+	- INVESTORS:  Are checks written?   What caps&targets will drive the A?  When do you begin A-round?  Scheduled touch base meetings prior? 
+	- CUSTOMERS:  Realtime & Stats customers.  Any informal MOUs?  What usage data do you need prior to the A?
+		- Analysis on what percentage of prime segment will signup for alternate MVP features?
+		- Analysis for takers for a real-time augmentation for other products?
+		- What percent of your time last month have you put towards this?
+	- TECH:  Both products in alpha?
+	- ROADMAP:  What is your roadmap over then next 3 months, 6month, 9months?  
+
+- THE ASK:  As I listen to you over the last two years I feel you have been in fire-fighting mode with the whole company centered on Jason Syversen.
+	- Its not the ideal way build a market leading company that requires significant new tech AND significantly many business partnerships.
+		- What is your Super power?    Driving vision and external leading of company, not tech strategy 
+	- You should have a hits-all-the-bases technical partner:
+		- Able to think deeply at the technical level AND at the business level at the same time.  Proven to work very well with you;  
+			- If you and I were talking deeply a year ago you would be done w/ your A-round now; much lower risk, much faster execution.
+			- Market analysis was strong; and generally just the bull sessions over the years have been very high quality.
+		- Fire in the belly to drive urgency in the team.
+		- Able to stretch all the way from optimizing an R&D roadmap to leading rapid execution.
+		- Able to cultivate a fun, high-energy, high-engagement team with very low turn-over.
+		- Able to find and hire world class talent for highly specialized roles, in a high-speed, cost sensitive, and world-wide way.
+		- Able to be compelling and articulate in high stakes investor meetings and during diligence talks as well.
+		- There is an ebb and flow of product development. Strategy, execution, iterations, pivots, learnings, which I have accomplished multiple times.
+	- Your biggest risk is not getting big enough, fast enough;  The one thing you can never get back is time; 
+	- You should have that partner NOW.  Team is rolling over now, and should be 100% outward facing right now, readying to complete the A-round in Q1.
+	- So what do you think?  Are you in?  Can we formalize this before end of year?
+
+
+pytorch
+video processing
+3d img proc
+science aspect of CS
+
+
+$1.5M in bank
+$140K monthtly burn.
+
+
+- Add 5 people in the last 2 weeks
+- 6 full time employees
+- 13 full time 1099s
+- 7 part time employees  (three senior management)
+
+QA guy.
+
+- Lost 7 early customers.  POC,   two-cameras, uploader is less customer
+- downsampled to 1080p.
+- 8 customers.  middle school, 2-3 highschools, semi-pro legeags, 
+- reach out to your major investors.  what doyou need to elad A
+	- better uploader
+	- get the PIOVO - gets down to one camera.  
+	- AI team - deployed to human annotation.  (1) single camera, (2) shot detect, (3) halo float number, (4) teach how to use the buttons
+- AI-team goes to the 70-80% accuracy.
+- When to start another sport?
+- You-stat:  platform to record games.  Stream this real time maybe do 150% margin as lead gen
+
+
 ### m2022-11-14  Hiring Ex-SV folks
 
 - Talk w/ Theo and Frank?
@@ -798,32 +901,6 @@ _
 - $2.5M	/yr
 - $7.5M	Sale price
 - $1.2M	= 7.5 * 15% Dan's take (for the market; double that for the tech too)
-#### 2021-03-04 - The Nick and Dan LLC Model
-
-	- WILDERNESS -- We venture forth into the wilderness of OPP (other people's problems)
-		- IDEA FUNNEL -- Each sees many a wild and weird thing, most are of no use
-		- CONJURES SOLUTIONS -- Many imagined solutions are spoken of to see if anyone will listen.  If excitement is found then he digs further
-		- VET -- Still in the wilderness working only with quill and papayrus each vets and discards many dozens of these half ideas seeking a gem.
-			A gem that will pay for the efforts of the expedition a 1000 times over
-		- GEM == An idea w/ strong market signal & strong vetting (biz model etc.)
-		- SUPPLIES -- The expedition will travel light a bit of admin time, and maybe some coach time... can pull them from his money or not worry about it.
-	
-	- BRINGING IT HOME -- What happens next depends upon the gem found:
-		- AF CENTRIC BOOTSTRAP --
-			- AF PROTOTYPING -- performed for equity at full freight rate with reasonable market cap (e.g. 3M or such)
-			- AF EQUITY SPLIT -- AF equity for prototyping is split 50/50 and given directly to founders. (need to work out legal details on this;
-				probably done @ low rate as loan w. low interest.)
-			- BOTH FOUNDERS -- aim is to have both be founders, but each would eventaully need to have substantitive roles (see hold door)
-		- AF CENTRIC + FUND RAISE -- 
-			- Same picture as above, except AF fraction likely to shrink.  
-				Still additional equity expected based on each person's role too.
-		- NOT AF CENTRIC -- Then company is built and filled it with founders and such, the aim is for both to be there, but both have to have roles.
-	
-	- HOLD THE DOOR OPEN -- In general whatever happens the advantage to being a team is that each can lean forward on the exploration of an idea, still allowing the other to jump in later if an idea really starts taking off.  Thus for a limited time the idea is that the 2nd founder can still "jump in"
-
-
-
-	_
 #### 2021-04-07 - Jason #5
 
 	2,000	for profit gyms in the USA

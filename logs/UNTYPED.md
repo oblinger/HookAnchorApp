@@ -6,9 +6,14 @@
 
 | Date       | File                | Notes                                                                                     |
 | ---------- | ------------------- | ----------------------------------------------------------------------------------------- |
+| 2022-12-03 | [[Phone]]               | thumb tack TV install                                                                     |
+| 2022-12-01 | [[Enxt]]                | Alta Vista                                                                                |
+| 2022-11-30 | [[Current]]             | short week (cyber monday)                                                                 |
+| 2022-11-30 | [[Current]]             | short week (cyber monday)                                                                 |
 | 2022-11-29 | [[Phone]]               | [[@Audi]]                                                                                 |
 | 2022-11-29 | [[Phone]]               | DIY Peloton Treadmill                                                                     |
 | 2022-11-29 | [[Phone]]               | Exercise Tracking (Horizon 7.4AT)                                                         |
+| 2022-11-28 | [[Current]]             | thanksgiving trip                                                                         |
 | 2022-11-23 | [[ELI]]                 | QL planting ideas                                                                         |
 | 2022-11-23 | [[Parents]]             | Mom's multiple facebook accounts                                                          |
 | 2022-11-22 | [[Phone]]               | Fire Dept response for Eli                                                                |
@@ -268,7 +273,7 @@
 | 2021-03-17 | [[Journal Old]]         | Jason response #2                                                                         |
 | 2021-03-17 | [[Journal Old]]         | Jason response #1                                                                         |
 | 2021-03-15 | [[MED_Heart]]           | Doctor's Appt                                                                             |
-| 2021-03-04 | [[@Jason Syversen]]     | The Nick and Dan LLC Model                                                                |
+| 2021-03-04 | [[Jnl]]                 | The Nick and Dan LLC Model                                                                |
 | 2021-03-04 | [[Journal Old]]         | The Nick and Dan LLC Model                                                                |
 | 2021-03-03 | [[Paths]]               | Dan's North Star                                                                          |
 | 2021-03-03 | [[Journal Old]]         | Dan's North Star                                                                          |

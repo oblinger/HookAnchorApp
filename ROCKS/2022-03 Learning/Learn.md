@@ -1,4 +1,4 @@
-
+ 
 ## ACTIVE
 - [ ] [[Coursera]] - Complete Deep Learning Course
 - [ ] [[First90]] - First 90 days
@@ -7,7 +7,7 @@
 - [ ] Attention
 
 ## WINGS
-- [ ] Arima - Noomer data analysis
+- [ ] Arima - Noomer data analysis  [asdf](ddd) 
 
 **BOOKS TO CONSIDER**
 - The Pragmatic Engineer - 

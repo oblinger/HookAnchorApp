@@ -1,4 +1,4 @@
-[[@Grzgorz Biziel]], 
+[[@Grzegorz Biziel]], 
 [[@Frank Langston]],  [[@Brian]]
   [[@Qingling Oblinger]],   [[@Epsilon Oblinger]],   [[People]],   [[@Eli Oblinger]]
 [[@Igor Shindel]],   [[@Sports Visio]]

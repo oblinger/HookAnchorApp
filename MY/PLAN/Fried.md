@@ -1,4 +1,8 @@
-- [ ] obs shows non existent links in the [[ menu
+- [ ] read https://www.mckinsey.com/industries/agriculture/our-insights/winning-in-africas-agricultural-market
+
+- [ ] job from nick  https://jobs.climatebase.org/job/45940719/chief-technology-officer    https://boards.greenho
+- [ ] joe says check out  https://boards.greenhouse.io/fractalfounders/jobs/4116035004
+- [ ] obs shows non existent links in the [[ menu  [[
 - [ ] Better Kuerig
 - [ ] fix curtain rod in Eli's room
 - [ ] understand apple photo importing of shared albums; and duplicate import

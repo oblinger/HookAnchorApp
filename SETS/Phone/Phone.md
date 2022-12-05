@@ -1,7 +1,18 @@
+### 2022-12-03  thumb tack TV install
+
+I have purchased a mantle-mount system for my 42" LCD TV.
+I want it installed over my fireplace with only a power cord connection needed.  The installation is very generic.
+
+The only challenge is the power.  The fireplace is an island in the house w/o any power on any part of that island.  I am assuming one would need to run electrical by going thru the basement ceiling. 
+
+The first photo shows the location above the mantel where it would be installed.  The next two show the back sides of the fireplace island, and the final photo shows that area in the basement where an electrical connection might be dropped thru the ceiling.
+
+How do you typically get electrical to such a TV?
 
 
 ### 2022-11-29  [[@Audi]]
 415-241-8100
+415-241-8189 Danny
 
 ### 2022-11-29  DIY Peloton Treadmill
 
@@ -21,7 +32,7 @@ STEP
 - best step counter to add
 
 
-800-244-4192  Tech Support
+800-244-4192  Tech Supportkk
 
 
 ### 2022-11-22  Fire Dept response for Eli

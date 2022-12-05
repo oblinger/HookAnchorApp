@@ -1,3 +1,6 @@
+- [x] Check BoA for funds to send:   $850 to Joe
+- [x] plan travel food
+- [x] Book care.com woman
 - [x] Find nanny for 11/23
 - [x] dad HD
 email Grz<>Jason

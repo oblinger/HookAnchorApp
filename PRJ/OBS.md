@@ -1,18 +1,10 @@
-- [ ] Jump "p" goes to planning not phone.  what to do?
-- [ ] zot
-- [ ] zxsa
-- [ ] crabble
-boing
 
-- [ ] comms GRZ;  quick add script
-- [ ] 
-- [ ] 
-- [ ] ---
-aliases: ['jjq']
----
-- [ ] USB-A to USB-C into bookbag  
-- [ ] Check BoA for funds to send:   $850 to Joe
 
+## TODO
+
+
+:: [[todo]], [[plan]], 
+:: 
 
 {
     "a": "/Users/oblinger/ob/kmr/MY/Plan/Active.md",

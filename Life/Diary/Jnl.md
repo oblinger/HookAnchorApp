@@ -623,6 +623,7 @@ ACTIONS
 
 
 _
+
 ### j2021-05-17 - HALF ASS IDEA TO JOURNAL
 
 - QUICK THOUGHT -- have the quick thought to journal.  To try to help break the log jam.
@@ -759,6 +760,33 @@ talk more soon!
 
 
 _
+
+### 2021-03-04 - The Nick and Dan LLC Model
+
+	- WILDERNESS -- We venture forth into the wilderness of OPP (other people's problems)
+		- IDEA FUNNEL -- Each sees many a wild and weird thing, most are of no use
+		- CONJURES SOLUTIONS -- Many imagined solutions are spoken of to see if anyone will listen.  If excitement is found then he digs further
+		- VET -- Still in the wilderness working only with quill and papayrus each vets and discards many dozens of these half ideas seeking a gem.
+			A gem that will pay for the efforts of the expedition a 1000 times over
+		- GEM == An idea w/ strong market signal & strong vetting (biz model etc.)
+		- SUPPLIES -- The expedition will travel light a bit of admin time, and maybe some coach time... can pull them from his money or not worry about it.
+	
+	- BRINGING IT HOME -- What happens next depends upon the gem found:
+		- AF CENTRIC BOOTSTRAP --
+			- AF PROTOTYPING -- performed for equity at full freight rate with reasonable market cap (e.g. 3M or such)
+			- AF EQUITY SPLIT -- AF equity for prototyping is split 50/50 and given directly to founders. (need to work out legal details on this;
+				probably done @ low rate as loan w. low interest.)
+			- BOTH FOUNDERS -- aim is to have both be founders, but each would eventaully need to have substantitive roles (see hold door)
+		- AF CENTRIC + FUND RAISE -- 
+			- Same picture as above, except AF fraction likely to shrink.  
+				Still additional equity expected based on each person's role too.
+		- NOT AF CENTRIC -- Then company is built and filled it with founders and such, the aim is for both to be there, but both have to have roles.
+	
+	- HOLD THE DOOR OPEN -- In general whatever happens the advantage to being a team is that each can lean forward on the exploration of an idea, still allowing the other to jump in later if an idea really starts taking off.  Thus for a limited time the idea is that the 2nd founder can still "jump in"
+
+
+
+	_
 ### j2021-01-31 - So what the fuck am I doing? What's my goal here?
 
 
