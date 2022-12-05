@@ -1,11 +1,19 @@
 
 
+Mon Dec 5  		[[Recurring|Recurring]] ..............................................	[[Recurring#RECURRING BILLS|RECURRING BILLS]] 
+Mon Dec 5  		[[Recurring|Recurring]] ..............................................	[[Recurring#TOPICS|TOPICS]] 
+Mon Dec 5  		[[2022-W50|2022-W50]] ..............................................	[[2022-W50#2022-11-30|2022-11-30]] 
+Mon Dec 5  		[[2022-W50|2022-W50]] ..............................................	[[2022-W50#Monday|Monday]] 
+Mon Dec 5  		[[2022-W50|2022-W50]] ..............................................	[[2022-W50#Tuesday|Tuesday]] 
+Mon Dec 5  		[[2022-W50|2022-W50]] ..............................................	[[2022-W50#Wednesday|Wednesday]] 
+Mon Dec 5  		[[2022-W50|2022-W50]] ..............................................	[[2022-W50#Thursday|Thursday]] 
+Mon Dec 5  		[[2022-W50|2022-W50]] ..............................................	[[2022-W50#Friday|Friday]] 
 Mon Dec 5  		[[@Joseph Yeh|Joseph Yeh]] .........................................	[[@Joseph Yeh#m2022-12-01  Prep for ((@Jason Syversen)) 'final' discussion|m2022-12-01  Prep for ((@Jason Syversen)) 'final' discussion]] 
 Mon Dec 5  		[[@Jason Syversen|Jason Syversen]] ...................................	[[@Jason Syversen#t2022-12-02  The 'Hire me'  compensation re-evaluation email|t2022-12-02  The 'Hire me'  compensation re-evaluation email]] 
 Mon Dec 5  		[[@Jason Syversen|Jason Syversen]] ...................................	[[@Jason Syversen#m2022-12-02  GRZ & push to hire|m2022-12-02  GRZ & push to hire]] 
 Mon Dec 5  		[[Hiring|Hiring]] ....................................................	[[Hiring#Hiring/Mgt|Hiring/Mgt]] 
 Mon Dec 5  		[[Hiring|Hiring]] ....................................................	[[Hiring#CS HIRING CRITERA|CS HIRING CRITERA]] 
-Mon Dec 5  		[[ResLnked|ResLinkedIn]] ..........................................	[[ResLnked#TODO  (web)(https://linkedin.com|= TODO  (web)(https://linkedin.com)]] 
+Mon Dec 5  		[[ResLinkedIn|ResLinkedIn]] ..........................................	[[ResLinkedIn#TODO  (web)(https://linkedin.com|= TODO  (web)(https://linkedin.com)]] 
 Mon Dec 5  		[[Jnl|Jnl]] ........................................................	[[Jnl#2021-03-04 - The Nick and Dan LLC Model|2021-03-04 - The Nick and Dan LLC Model]] 
 Mon Dec 5  		[[Compensation|Compensation]] ........................................	[[Compensation#FAANG Compensation|FAANG Compensation]] 
 Mon Dec 5  		[[Current|Current]] .................................................	[[Current#2022-11-30  short week (cyber monday|2022-11-30  short week (cyber monday)]] 
@@ -224,10 +232,10 @@ Sat Oct 1  		[[@Analytics Fire|Analytics Fire]] ................................
 Sat Oct 1  		[[@Sports Visio|Sports Visio]] .........................................	[[@Sports Visio#TOPICS|TOPICS]] 
 Sat Oct 1  		[[@Sports Visio|Sports Visio]] .........................................	[[@Sports Visio#LOG|LOG]] 
 Sat Oct 1  		[[Mgr|Mgr]] ......................................................	[[Mgr#LOG|LOG]] 
-Sat Oct 1  		[[ResLnked|ResLinkedIn]] ..........................................	[[ResLnked#TODO|= TODO]] 
-Sat Oct 1  		[[ResLnked|ResLinkedIn]] ..........................................	[[ResLnked#Professional Headline|= Professional Headline]] 
-Sat Oct 1  		[[ResLnked|ResLinkedIn]] ..........................................	[[ResLnked#Featured Links|= Featured Links]] 
-Sat Oct 1  		[[ResLnked|ResLinkedIn]] ..........................................	[[ResLnked#Experience|= Experience]] 
+Sat Oct 1  		[[ResLinkedIn|ResLinkedIn]] ..........................................	[[ResLinkedIn#TODO|= TODO]] 
+Sat Oct 1  		[[ResLinkedIn|ResLinkedIn]] ..........................................	[[ResLinkedIn#Professional Headline|= Professional Headline]] 
+Sat Oct 1  		[[ResLinkedIn|ResLinkedIn]] ..........................................	[[ResLinkedIn#Featured Links|= Featured Links]] 
+Sat Oct 1  		[[ResLinkedIn|ResLinkedIn]] ..........................................	[[ResLinkedIn#Experience|= Experience]] 
 Sat Oct 1  		[[Resume|Resume]] ................................................	[[Resume#TODO|TODO]] 
 Sat Oct 1  		[[FOOD|FOOD]] ...................................................	[[FOOD#foo|foo]] 
 Sat Oct 1  		[[Mom80|Mom80]] .................................................	[[Mom80#TODO|TODO]] 
@@ -6519,12 +6527,8 @@ Wed Mar 9  		[[DocAWS|DocAWS]] ................................................	
 Wed Mar 9  		[[DocApplescript|DocApplescript]] .......................................	[[DocApplescript#DOCS|DOCS]] 
 Wed Mar 9  		[[DocApplescript|DocApplescript]] .......................................	[[DocApplescript#TOPLEVEL|(TOPLEVEL)]] 
 Wed Mar 9  		[[DocArduino|DocArduino]] ...........................................	[[DocArduino#Setup|Setup]] 
-Wed Mar 9  		[[DocBash|DocBash]] ...............................................	[[DocBash#BLAM BASH
-|BLAM BASH
-]] 
-Wed Mar 9  		[[DocBash|DocBash]] ...............................................	[[DocBash#BLAM BASH
-|BLAM BASH
-]] 
+Wed Mar 9  		[[DocBash|DocBash]] ...............................................	[[DocBash#BLAM BASH|BLAM BASH]] 
+Wed Mar 9  		[[DocBash|DocBash]] ...............................................	[[DocBash#BLAM BASH|BLAM BASH]] 
 Wed Mar 9  		[[DocCPP|DocCPP]] ................................................	[[DocCPP#Docs|Docs]] 
 Wed Mar 9  		[[DocClojure|DocClojure]] .............................................	[[DocClojure#lein|lein]] 
 Wed Mar 9  		[[DocClojure|DocClojure]] .............................................	[[DocClojure#DOCS|DOCS]] 
@@ -6626,33 +6630,15 @@ Wed Mar 9  		[[DocOSX|DocOSX]] ................................................	
 Wed Mar 9  		[[DocOSX|DocOSX]] ................................................	[[DocOSX#Stuff I never really use but cannot delete either because of http://xkcd.com/530|Stuff I never really use but cannot delete either because of http://xkcd.com/530]] 
 Wed Mar 9  		[[DocOSX|DocOSX]] ................................................	[[DocOSX#does not work|does not work]] 
 Wed Mar 9  		[[DocObjectiveC|DocObjectiveC]] .......................................	[[DocObjectiveC#Docs|Docs]] 
-Wed Mar 9  		[[DocPyML|DocPyML]] ..............................................	[[DocPyML#show level three
-|show level three
-]] 
-Wed Mar 9  		[[DocPyML|DocPyML]] ..............................................	[[DocPyML#Docs
-|Docs
-]] 
-Wed Mar 9  		[[DocPyML|DocPyML]] ..............................................	[[DocPyML#NumPy
-|NumPy
-]] 
-Wed Mar 9  		[[DocPyML|DocPyML]] ..............................................	[[DocPyML#Lib SciPy
-|Lib SciPy
-]] 
-Wed Mar 9  		[[DocPyML|DocPyML]] ..............................................	[[DocPyML#Blam Python
-|Blam Python
-]] 
-Wed Mar 9  		[[DocPython|DocPython]] .............................................	[[DocPython#iPython
-|iPython
-]] 
-Wed Mar 9  		[[DocPython|DocPython]] .............................................	[[DocPython#Python Topics
-|Python Topics
-]] 
-Wed Mar 9  		[[DocPython|DocPython]] .............................................	[[DocPython#Python SETUP
-|Python SETUP
-]] 
-Wed Mar 9  		[[DocPython|DocPython]] .............................................	[[DocPython#Py Docs
-|Py Docs
-]] 
+Wed Mar 9  		[[DocPyML|DocPyML]] ..............................................	[[DocPyML#show level three|show level three]] 
+Wed Mar 9  		[[DocPyML|DocPyML]] ..............................................	[[DocPyML#Docs|Docs]] 
+Wed Mar 9  		[[DocPyML|DocPyML]] ..............................................	[[DocPyML#NumPy|NumPy]] 
+Wed Mar 9  		[[DocPyML|DocPyML]] ..............................................	[[DocPyML#Lib SciPy|Lib SciPy]] 
+Wed Mar 9  		[[DocPyML|DocPyML]] ..............................................	[[DocPyML#Blam Python|Blam Python]] 
+Wed Mar 9  		[[DocPython|DocPython]] .............................................	[[DocPython#iPython|iPython]] 
+Wed Mar 9  		[[DocPython|DocPython]] .............................................	[[DocPython#Python Topics|Python Topics]] 
+Wed Mar 9  		[[DocPython|DocPython]] .............................................	[[DocPython#Python SETUP|Python SETUP]] 
+Wed Mar 9  		[[DocPython|DocPython]] .............................................	[[DocPython#Py Docs|Py Docs]] 
 Wed Mar 9  		[[DocRackspace|DocRackspace]] .......................................	[[DocRackspace#Rackspace Login details|Rackspace Login details]] 
 Wed Mar 9  		[[DocRackspace|DocRackspace]] .......................................	[[DocRackspace#Instances|Instances]] 
 Wed Mar 9  		[[DocRackspace|DocRackspace]] .......................................	[[DocRackspace#was dev-lamp (DNS=dev) -- now has the wordpress site -om- dev.paybygroup.c|was dev-lamp (DNS=dev) -- now has the wordpress site -om- dev.paybygroup.c]] 
@@ -6692,48 +6678,20 @@ Wed Mar 9  		[[DocRackspace|DocRackspace]] .....................................
 Wed Mar 9  		[[DocRackspace|DocRackspace]] .......................................	[[DocRackspace#gpay1 In: /var/www/beta.paybygroup|gpay1 In: /var/www/beta.paybygroup]] 
 Wed Mar 9  		[[DocRackspace|DocRackspace]] .......................................	[[DocRackspace#build from beta.paybygroup (which is built from Base-2011-11-11|build from beta.paybygroup (which is built from Base-2011-11-11)]] 
 Wed Mar 9  		[[DocRackspace|DocRackspace]] .......................................	[[DocRackspace#How To|How To]] 
-Wed Mar 9  		[[DocRails|DocRails]] ................................................	[[DocRails#x
-|x
-]] 
-Wed Mar 9  		[[DocRails|DocRails]] ................................................	[[DocRails#API.RUBYONRAILS          http://api.rubyonrails.org/
-|API.RUBYONRAILS          http://api.rubyonrails.org/
-]] 
-Wed Mar 9  		[[DocRails|DocRails]] ................................................	[[DocRails#GUIDES                   http://guides.rubyonrails.org/
-|GUIDES                   http://guides.rubyonrails.org/
-]] 
-Wed Mar 9  		[[DocRails|DocRails]] ................................................	[[DocRails#Ruby                     http://www.ruby-doc.org/core-1.9.2/  
-|Ruby                     http://www.ruby-doc.org/core-1.9.2/  
-]] 
-Wed Mar 9  		[[DocRails|DocRails]] ................................................	[[DocRails#Other Docs
-|Other Docs
-]] 
-Wed Mar 9  		[[DocRails|DocRails]] ................................................	[[DocRails#Docs Tree
-|Docs Tree
-]] 
-Wed Mar 9  		[[DocRails|DocRails]] ................................................	[[DocRails#hold 
-|hold 
-]] 
-Wed Mar 9  		[[DocRails|DocRails]] ................................................	[[DocRails#EXPRESSIONS
-|EXPRESSIONS
-]] 
-Wed Mar 9  		[[DocRails|DocRails]] ................................................	[[DocRails#IO_ETC
-|IO_ETC
-]] 
-Wed Mar 9  		[[DocRails|DocRails]] ................................................	[[DocRails#BLAM RAILS FNs
-|BLAM RAILS FNs
-]] 
-Wed Mar 9  		[[DocRails|DocRails]] ................................................	[[DocRails#Overview
-|Overview
-]] 
-Wed Mar 9  		[[DocRails|DocRails]] ................................................	[[DocRails#MVC -- Routing
-|MVC -- Routing
-]] 
-Wed Mar 9  		[[DocRails|DocRails]] ................................................	[[DocRails#MVC -- Views       (.erb stuff)
-|MVC -- Views       (.erb stuff)
-]] 
-Wed Mar 9  		[[DocRails|DocRails]] ................................................	[[DocRails#Renders the same partial with a local variable.
-|Renders the same partial with a local variable.
-]] 
+Wed Mar 9  		[[DocRails|DocRails]] ................................................	[[DocRails#x|x]] 
+Wed Mar 9  		[[DocRails|DocRails]] ................................................	[[DocRails#API.RUBYONRAILS          http://api.rubyonrails.org/|API.RUBYONRAILS          http://api.rubyonrails.org/]] 
+Wed Mar 9  		[[DocRails|DocRails]] ................................................	[[DocRails#GUIDES                   http://guides.rubyonrails.org/|GUIDES                   http://guides.rubyonrails.org/]] 
+Wed Mar 9  		[[DocRails|DocRails]] ................................................	[[DocRails#Ruby                     http://www.ruby-doc.org/core-1.9.2/  |Ruby                     http://www.ruby-doc.org/core-1.9.2/  ]] 
+Wed Mar 9  		[[DocRails|DocRails]] ................................................	[[DocRails#Other Docs|Other Docs]] 
+Wed Mar 9  		[[DocRails|DocRails]] ................................................	[[DocRails#Docs Tree|Docs Tree]] 
+Wed Mar 9  		[[DocRails|DocRails]] ................................................	[[DocRails#hold |hold ]] 
+Wed Mar 9  		[[DocRails|DocRails]] ................................................	[[DocRails#EXPRESSIONS|EXPRESSIONS]] 
+Wed Mar 9  		[[DocRails|DocRails]] ................................................	[[DocRails#IO_ETC|IO_ETC]] 
+Wed Mar 9  		[[DocRails|DocRails]] ................................................	[[DocRails#BLAM RAILS FNs|BLAM RAILS FNs]] 
+Wed Mar 9  		[[DocRails|DocRails]] ................................................	[[DocRails#Overview|Overview]] 
+Wed Mar 9  		[[DocRails|DocRails]] ................................................	[[DocRails#MVC -- Routing|MVC -- Routing]] 
+Wed Mar 9  		[[DocRails|DocRails]] ................................................	[[DocRails#MVC -- Views       (.erb stuff)|MVC -- Views       (.erb stuff)]] 
+Wed Mar 9  		[[DocRails|DocRails]] ................................................	[[DocRails#Renders the same partial with a local variable.|Renders the same partial with a local variable.]] 
 Wed Mar 9  		[[DocRuby|DocRuby]] ...............................................	[[DocRuby#RUBY SCRIPTING|=== RUBY SCRIPTING ===]] 
 Wed Mar 9  		[[DocSQL|DocSQL]] ................................................	[[DocSQL#LOG|LOG]] 
 Wed Mar 9  		[[DocSQL|DocSQL]] ................................................	[[DocSQL#BASIC SQL COMMANDS|BASIC SQL COMMANDS]] 
@@ -6950,9 +6908,7 @@ Wed Mar 9  		[[Consulting Co|Consulting Co]] ...................................
 Wed Mar 9  		[[About HomeRobot|About HomeRobot]] ...................................	[[About HomeRobot#Ref|Ref]] 
 Wed Mar 9  		[[About HomeRobot|About HomeRobot]] ...................................	[[About HomeRobot#Log|Log]] 
 Wed Mar 9  		[[About WordWar|About WordWar]] ......................................	[[About WordWar#Competitors|Competitors]] 
-Wed Mar 9  		[[Zanzors|Zanzors]] ................................................	[[Zanzors#ASPECTS
-|ASPECTS
-]] 
+Wed Mar 9  		[[Zanzors|Zanzors]] ................................................	[[Zanzors#ASPECTS|ASPECTS]] 
 Wed Mar 9  		[[MetaMeta|MetaMeta]] ..............................................	[[MetaMeta#Meta Meta Parts|Meta Meta Parts]] 
 Wed Mar 9  		[[The Sentient Weapon OLD|The Sentient Weapon OLD]] ........................	[[The Sentient Weapon OLD#Quick discussion|Quick discussion]] 
 Wed Mar 9  		[[The Sentient Weapon OLD|The Sentient Weapon OLD]] ........................	[[The Sentient Weapon OLD#IDEAS|IDEAS]] 
