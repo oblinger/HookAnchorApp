@@ -1,7 +1,8 @@
 - [ ] dec-3 olga; collette
 - [ ] car roof
 - [ ] Go thru in2 list
-- [ ] DEF COMP:  Move funds
+- [ ] DEF COMP:  Move funds.
+- [ ] 
 
 - [ ] tsp thinking.
 - [ ] mailto:bbrugler@tiedemannadvisors.com  dwells@albionfinancial.com  albion
