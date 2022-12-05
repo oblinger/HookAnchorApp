@@ -1,5 +1,5 @@
 
-OUT OF DATE.   (See [[ResLinkedIn]])
+OUT OF DATE.   (See [[ResLnked]])
 
 
 ## = TODO

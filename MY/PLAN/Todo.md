@@ -1,14 +1,15 @@
 - [ ] dec-3 olga; collette
 - [ ] car roof
 - [ ] Go thru in2 list
+- [ ] DEF COMP:  Move funds
 
 - [ ] tsp thinking.
 - [ ] mailto:bbrugler@tiedemannadvisors.com  dwells@albionfinancial.com  albion
-- [ ] DEF COMP:  Move funds
 - [x] Credit card for QL
 - [ ] Covid wait for - Yashin's conservative friend
 - [ ] Call doc about my heart test results.
 - [ ] Cancel our winery.  (QL confirm)
+- [ ] Cancel Lover Every
 - [ ] Add 1password to shared acct
 
 - [ ] [[self]]: Hire health coach

@@ -23,11 +23,11 @@ ALL TOPIC ROOTS
   [[myorgstartup]],   [[2009-03 State Edu Testing]],   [[2020-00 FinScreener]],   [[MEETING]],   [[TEXT]],   
   [[Letters]],   [[IBM-years]],   [[Msg]],   [[DAY]],   [[Sets]],   [[Cmd]],   [[Writings]],   [[ArmChair]],   
   [[Politics]],   [[race]],   [[Books]],   [[LANG]],   [[haskell]],   [[Humor]],   [[Recipes]],   [[Movies]],   
-  [[Phone]],   [[ToRead]],   [[Buy]],   [[Bought]],   [[MY]],   [[Plan]],   [[scratch]],   [[Meta]],   [[Myfo]],   
-  [[FOOD]],   [[Noom]],   [[Glycemic Index]],   [[PRJ]],   [[SV]],   [[EduCorp]],   [[Greenhouse Farming]],   [[OBS]],
-     [[AF]],   [[AFwp]],   [[Outcult]],   [[AFactive]],   [[AFldr]],   [[AFarchive]],   [[UF_Docs]],   [[ufPublish]],   
-  [[UfApps]],   [[ufBrick]],   [[At]],   [[@Qingling Oblinger]],   [[ORG]],   [[@Epsilon Oblinger]],   [[VC ORG]],   
-  [[PEOPLE]],   [[family]],   [[Parents]],   [[@Sports Visio]],   [[@Eli Oblinger]],   [[BCMS]],   [[Streams]],   
-  [[VC]],   [[TIER-4]],   [[Rocks]],   [[BeMLR]],   [[2021-04 FindDayCare]],   [[2022-02 Yearbook]],   [[AF Wind Down]],
-     [[Grandpa DJ]],   [[BeFAANG]],   [[2020-08 Race Pitch]],   [[BeVC]],   [[PKM]],   [[Mom80]],   [[Legal]],   [[Legal
-   Uniform]],   [[Legal Ob Labs]],   [[MED]]
+  [[Phone]],   [[ToRead]],   [[Read]],   [[Buy]],   [[Bought]],   [[MY]],   [[Plan]],   [[scratch]],   [[Meta]],   
+  [[Myfo]],   [[FOOD]],   [[Noom]],   [[Glycemic Index]],   [[PRJ]],   [[SV]],   [[EduCorp]],   [[Greenhouse Farming]],
+     [[OBS]],   [[AF]],   [[AFwp]],   [[Outcult]],   [[AFactive]],   [[AFldr]],   [[AFarchive]],   [[UF_Docs]],   
+  [[ufPublish]],   [[UfApps]],   [[ufBrick]],   [[At]],   [[@Qingling Oblinger]],   [[ORG]],   [[@Epsilon Oblinger]],   
+  [[VC ORG]],   [[PEOPLE]],   [[family]],   [[Parents]],   [[@Sports Visio]],   [[@Eli Oblinger]],   [[BCMS]],   
+  [[Streams]],   [[VC]],   [[TIER-4]],   [[Rocks]],   [[BeMLR]],   [[2021-04 FindDayCare]],   [[2022-02 Yearbook]],   
+  [[AF Wind Down]],   [[Grandpa DJ]],   [[BeFAANG]],   [[2020-08 Race Pitch]],   [[BeVC]],   [[PKM]],   [[Mom80]],   
+  [[Legal]],   [[Legal Uniform]],   [[Legal Ob Labs]],   [[MED]]

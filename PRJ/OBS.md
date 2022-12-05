@@ -1,7 +1,7 @@
 
 
 ## TODO
-
+- Add 'history' all changed files by commit
 
 :: [[todo]], [[plan]], 
 :: 

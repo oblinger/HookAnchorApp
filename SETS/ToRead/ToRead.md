@@ -1,3 +1,4 @@
+  [[Read]]
 - Alignment Forum
  [Humane Tech](https://www.humanetech.com/podcast)  
  Managers Path

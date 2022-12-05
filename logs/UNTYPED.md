@@ -9,7 +9,6 @@
 | 2022-12-03 | [[Phone]]               | thumb tack TV install                                                                     |
 | 2022-12-01 | [[Enxt]]                | Alta Vista                                                                                |
 | 2022-11-30 | [[Current]]             | short week (cyber monday)                                                                 |
-| 2022-11-30 | [[Current]]             | short week (cyber monday)                                                                 |
 | 2022-11-29 | [[Phone]]               | [[@Audi]]                                                                                 |
 | 2022-11-29 | [[Phone]]               | DIY Peloton Treadmill                                                                     |
 | 2022-11-29 | [[Phone]]               | Exercise Tracking (Horizon 7.4AT)                                                         |

@@ -1,17 +1,9 @@
-
+freedom
 peloton
 crunchbase
 
-## INFO
-
-- APPLE:  Mac->AppStore->MyPicture->ViewInfo->Manage
-
-2020-04-06 -- last cleaned
-2016-06-16 -- last checked
-
-## RECURRING BILLS
-
-### BIGGER BILLS - SCHWAB JOINT 6956-1345
+# RECURRING BILLS
+## BIGGER BILLS - SCHWAB JOINT 6956-1345
 - $5,200/bi	House Taxes ???
 - $350/yr		Elan (Vijaya accountant)
 - $6,010/mo 	House Mortgage
@@ -20,14 +12,13 @@ crunchbase
 - $130/mo?	Sunset Scavenger  (where did this bill go???)
 - $217/mo?	Blue Cross Monthly
 
-### APPLE 
-DANO - APPLE - Mac->AppStore->MyPicture->AccountSettings->Manage->Subscriptions
-- $3/mo ??	Apple iCloud storage
-- $29/yr		Insight Timer  (2022-12-14)
-- OFF		$49/mo		Coursera   **maybe paid elsewhere?**
-- OFF		$20/mo		Obsidian Publish    (also paid annual for sync)  **maybe paid elsewhere?**
+## JOINT DIGITAL BILLS
+- ? Spotify
+- ? Netflix
+- ? WSJ
+- ? NYtimes
 
-### SMALLER - CHASE FREEDOM
+## SMALLER - CHASE FREEDOM
 - $1,375/yr 	AAA Home Insurance
 - $20/yr		File This
 - $39/yr  		Consumer Reports
@@ -62,6 +53,21 @@ SAPPHIRE
 OTHER  ~~
 - $230/mo	AT&T  (Paid on corp SVB account)
 
+## DANO RECURRING
+		(check PayPay and Apple)
+- ? Grammarly
+- ? Freedom
+- ? Keyboard Maestro
+- ? Paprika
+- ? Thermomix
+## DANO CHANNELS
+### APPLE 
+DANO - APPLE - Mac->AppStore->MyPicture->AccountSettings->Manage->Subscriptions
+- $3/mo ??	Apple iCloud storage
+- $29/yr		Insight Timer  (2022-12-14)
+- OFF		$49/mo		Coursera   **maybe paid elsewhere?**
+- OFF		$20/mo		Obsidian Publish    (also paid annual for sync)  **maybe paid elsewhere?**
+
 ### DANO CAP 1 CARD
 - $20/yr		Google Play (100Gig) oblinger@gmail.com 
 - $20/yr??	Clean Email
@@ -83,16 +89,13 @@ DANO OTHER
 - 36/yr		pen		1password     	(not yet setup)
 - 22/mo 		pen		Plan USA 		1-800-556-7918
 
-### JOINT DIGITAL BILLS
-- ? Spotify
-- ? Netflix
-- ? WSJ
-- ? NYtimes
+## .
 
-### DAN-O DIGITAL BILLS
-		(check PayPay and Apple)
-- ? Grammarly
-- ? Freedom
-- ? Keyboard Maestro
-- ? Paprika
-- ? Thermomix
+# TOPICS
+
+## INFO
+
+- APPLE:  Mac->AppStore->MyPicture->ViewInfo->Manage
+
+2020-04-06 -- last cleaned
+2016-06-16 -- last checked
