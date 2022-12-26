@@ -19,9 +19,13 @@ https://www.frannyskitchensf.com/
 | d++~  CHINESE-North    | Dong Bei Mamma                                             |     |
 | d+~~  CHINESE          | Beijing Resturants                                         |     |
 | d+~~  CHINESE          | Big Lantern                                                |     |
+| d+~~ CHINESE VEG       | Enjoy Veg Resturant.  low salt, but just ok flavor         |     |
+| d??? SUSHI             | Moki Sushi                                                 |     |
 | d+~~  JAPANESE         | Ginza Sushi                                                |     |
 | d???  JAPANESE(-sushi) | Ginto Express                                              |     |
-| d+~~  THAI             | Farm House Kitchen                                         |     |
+| d++~  THAI             | Osha Thai -                                                |     |
+| d+~~  THAI             | Farm House Kitchen (expensive)                             |     |
+| d???  THAI             | Marnee Thai                                                |     |
 | d+~~  KOREAN           | Mamma' Tofu House.  Affordable/ok.                         |     |
 | d++~  KOREAN           | Jin Mi Korean.  Affordable/better than mammas              |     |
 | d+++  PHO              | Turtle Tower                                               |     |
@@ -31,6 +35,8 @@ https://www.frannyskitchensf.com/
 | d+++  BURMESE          | Burmese Kitchen ~ We all like it & it is affordable        |     |
 | d?~~  BURMESE          | New Burma (yelp 4.5)  Burma Cafe/Love/Superstar (yelp 4.0) |     |
 | d+~~  VIETNAMESE       | Chic n' Time (y5.0)                                        |     |
+| === NOODLE ===         |                                                            |     |
+| d++~ RAMAN             | Marufuku Raman - our fav raman                             |     |
 | ====   SEAFOOD   ====  |                                                            |     |
 | P++~  SEAFOOD          | Seafood Station                                            |     |
 | d+~~  SEAFOOD          | Fish District                                              |     |
@@ -41,7 +47,9 @@ https://www.frannyskitchensf.com/
 | y???  MEXICAN          | Taco Los Altos (3.5Y) seemed alittle expensive             |     |
 | d+~~  MEDITERR         | Mediterranean Aroma                                        |     |
 | d~~~  SPANISH TAPAS    | Picaro                                                     |     |
+| d-~~  ITALIAN / PIZZA  | a Mano (needed to get refund, they screwedup)              |     |
 | d+~~  ITALIAN          | Pastime Pasta                                              |     |
+| d???  ITALIAN          | Thats Amore SF.                                            |     |
 | d???  FRENCH           | Chez Maman West (Y4.0)                                     |     |
 | ====  AMERICAN   ====  | > Salad, Sandwich, Pizza, Fast                             |     |
 | d++~  SALADS           | Mixt Greens                                                |     |

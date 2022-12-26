@@ -1,3 +1,3 @@
-=[[CMD]]   app   /Applications/Flux.app
+=[[CMD]]   app /Applications/Flux.app
 
-
+- added-by-km-cmd

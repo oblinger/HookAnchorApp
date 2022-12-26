@@ -1,0 +1,3 @@
+=[[CMD]]   url CjwKCAjwy_aUBhACEiwA2IHHQPw4IKhWtJI3kBNFYnJc_p2PiUDKjiEUbABEATKFi2AIovmXNwmmkhoCKUMQAvD_BwE
+
+- added-by-km-cmd

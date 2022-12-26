@@ -1,3 +1,3 @@
-=[[CMD]]   app   Stay
+=[[CMD]]   app /Applications/Stay.app
 
-
+- added-by-km-cmd

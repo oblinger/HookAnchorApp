@@ -1,3 +1,3 @@
-=[[CMD]]   app   Chrome
+=[[CMD]]   app Chrome
 
-
+- added-by-km-cmd

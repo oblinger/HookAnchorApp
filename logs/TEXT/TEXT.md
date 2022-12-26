@@ -7,6 +7,10 @@
 
 | Date        | File                     | Notes                                                                   |
 | ----------- | ------------------------ | ----------------------------------------------------------------------- |
+| t2022-12-19 | [[@Jake Wachman]]            | Summary of email for Nick.                                              |
+| t2022-12-16 | [[@Jason Syversen]]          | Return text                                                             |
+| t2022-12-13 | [[@Chris Hayden]]            | Intro Email                                                             |
+| t2022-12-07 | [[@Jake Wachman]]            | Reconnect email                                                         |
 | t2022-12-02 | [[@Jason Syversen]]          | The 'Hire me'  compensation re-evaluation email                         |
 | t2022-11-03 | [[@Frank Langston]]          | Reference for Sports Visio                                              |
 | t2022-11-01 | [[@Rafah Hosn]]              | Intro Email for Robotics Mgr                                            |

@@ -1,3 +1,3 @@
-=[[CMD]]   app   /Applications/FoldingText.app
+=[[CMD]]   app /Applications/FoldingText.app
 
-
+- added-by-km-cmd

@@ -1,2 +1,3 @@
-=[[CMD]]   app   zoom.us
+=[[CMD]]   app zoom.us
 
+- added-by-km-cmd

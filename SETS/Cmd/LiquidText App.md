@@ -1,2 +1,3 @@
-=[[CMD]]   app      app   /Applications/LiquidText.app
+=[[CMD]]   app /Applications/LiquidText.app
 
+- added-by-km-cmd

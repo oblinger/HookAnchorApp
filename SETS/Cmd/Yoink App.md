@@ -1,2 +1,3 @@
-=[[CMD]]   app   Yoink
+=[[CMD]]   app /Applications/Yoink.app
 
+- added-by-km-cmd

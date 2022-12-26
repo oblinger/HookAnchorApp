@@ -1,8 +1,9 @@
-### House Fin
-(See FIN)
-## Vendors
-- Solar: 415-412-7021.   Sunternal.  Can    $23,900 / 4.3Kw  = SunRun.  18 years.  3000system.
-## === INFO ===
+## TODO
+- [ ] fix curtain rod in Eli's room
+- [ ] Fix closet rod in main bedroom
+
+## SERVICES
+## === 101 BACHE INFO ===
 ### --- DRY ROT ETC ---
 - Repaint patio floor
 - Fence trellis & Dry rot
@@ -62,52 +63,5 @@ Blue. 	Living light plug basement dining
 Black	Washer
 
 
-### Cabinets in living room
-
-25-27" deep (with sliding doors)
-
-45" wide
-
-PAX 59"w    26"d  93"h
-PAX 78.75"w 26"d  93.125h
-PAX 98.375w 26"d  93.125h
-
-138"w    Med(2door) + Lg(2door)
 
 
-
-28 x 65 baby room shelf fits in closet
-
-Ikea Emeryville (888) 888-4532  092.472.57
-
-#### Window sizes
-
-## === STUFF ===
-### Electronics
-#### GarageDoor
-
-CHAMBERLAIN CLICKER KEYLESS ENTRY
-800 442-1255
-
-# ### BERNAL HEIGHTS ###
-
-==============
-=== COFFEE ===
-==============
-
-
-DOPAT
-
-BERN -- Progressive Grounds, Pinhold, Martha&Bros, Moonlight, Black Jet
-
-MISH -- Tierra Mia
-
-
-
-
-DOGPAT
---
-
-
-DOPAT
---  

@@ -4,6 +4,12 @@
 
 LINKS:  [[Babysitting]], [[Enxt]], 
 
+## Trucks
+
+- [ ] Most Amazing And Powerful Machines Operating On Another Level | Part 3     https://youtu.be/i-X8MWX1CwM
+- [ ]  CAT D10T2 Dozer Removing Massive Rock- Amazing Power      https://youtu.be/LTYWOconCpo
+- [ ] Top 5 Biggest Dump Trucks in the World 2022       https://youtu.be/PObdCK9Jb0M
+- [ ] World's TOP 10 Most Powerful Subsea TRENCHERS      https://youtu.be/ofEzYq_EKmw
 
 # LOG
 ### 2022-11-23  QL planting ideas

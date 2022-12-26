@@ -6,6 +6,7 @@
 
 | Date        | File            | Notes                                                                             |
 | ----------- | --------------- | --------------------------------------------------------------------------------- |
+| r2022-12-08 | [[GHOST]]           | Professor who sees the damage of corrupt judges                                   |
 | r2022-11-08 | [[DocPandas]]       | Pandas Examples                                                                   |
 | r2022-11-08 | [[Enxt]]            | School Stats                                                                      |
 | r2022-11-08 | [[Enxt]]            | Atlantic-Private Schools;                                                         |

@@ -1,6 +1,6 @@
-  [Stuff](Stuff.md),   [Emails](Emails.md)
+  [MyStuff](MyStuff.md),   [Emails](Emails.md)
 [[Emails]] 
 
 [Med](__MED__.md) 
-[[Stuff]]
+[[MyStuff]]
 

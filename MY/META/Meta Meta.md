@@ -1,4 +1,5 @@
- [[Meta]]
+TAXONOMY:	[[Meta]]  
+VIEWS:			[[Meta Dashboards]],  
 
 ## THEORY
 
@@ -33,28 +34,6 @@ ASPECTS:
 - PRJ - Project resources within obsidian
 
 
-## DASHBOARDS
-
-DAILY VIEW DASHBOARD
-
-| col-1 |  col-2  | col-3  | .......................................................... |     |
-|:-----:|:-------:|:------:|:---------------------------------------------------------- |:---:|
-| Today |  Quick  | Prime  |                                                            |     |
-|   "   |  Todo   |        |                                                            |     |
-| Prev. | Current | Second |                                                            |     |
-|   "   | Waiting |  Full  |                                                            |     |
-|       |         |        |                                                            |     |
-
-
-PLANNING VIEW DASHBOARD
-
-|  col-1  | col-2 | col-3 |  col-4  | ............................................ |
-|:-------:|:-----:|:-----:|:-------:|:-------------------------------------------- |
-| Active  | Wings | Prime |  Todo   |                                              |
-|    "    |   "   |   "   |    "    |                                              |
-| Current |  Q2   | Full  |  Quick  |                                              |
-|  Empty  | Later |   "   | Waiting |                                              |
-|         |       |       |         |                                              |
 
 
 THREE MONITOR SETUP

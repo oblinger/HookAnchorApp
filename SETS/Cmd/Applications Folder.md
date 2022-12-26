@@ -1,3 +1,3 @@
-=[[CMD]]   folder   /Applications
+=[[CMD]]   folder /Applications
 
-
+- added-by-km-cmd

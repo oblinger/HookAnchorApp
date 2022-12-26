@@ -1,16 +1,19 @@
-- [ ] dec-3 olga; collette
-- [ ] car roof
-- [ ] Go thru in2 list
-- [ ] DEF COMP:  Move funds.
-- [ ] 
+- [ ] employment IRS verification for Nick Allen
+- [ ] refill bookbag and toiletries
+- [ ] Call Audi international   800-822-2834.
+- [ ] flu shot 
+- [ ] Auto Repair
 
+- [ ] evidence based teaching
+- [ ] Call Collette, Vikram
+
+- [ ] Get job application tests from James
 - [ ] tsp thinking.
 - [ ] mailto:bbrugler@tiedemannadvisors.com  dwells@albionfinancial.com  albion
 - [x] Credit card for QL
 - [ ] Covid wait for - Yashin's conservative friend
 - [ ] Call doc about my heart test results.
-- [ ] Cancel our winery.  (QL confirm)
-- [ ] Cancel Lover Every
+- [ ] Cancel Love Every
 - [ ] Add 1password to shared acct
 
 - [ ] [[self]]: Hire health coach
@@ -22,3 +25,13 @@
 - [ ] Plan for crypto
 - [ ] Rocket Lawyer
 
+
+GIFTS:
+- Cards.
+- QL:  drive, Method 7, 
+- Eli swing set.  rocking horse.  thomas the train.
+- Mom, got her ear-rings... Dad has them
+- Dad, got him the hard drives
+- Dave-O:
+- Sammie, Jazz, Zuly
+- 

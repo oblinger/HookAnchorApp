@@ -1,3 +1,13 @@
+### 2022-12-14  Fix roof fin
+
+Avenue Body 415-864-4417
+
+
+
+### 2022-12-08  Solar Installer
+
+- Solar: 415-412-7021.   Sunternal.  Can    $23,900 / 4.3Kw  = SunRun.  18 years.  3000system.
+
 ### 2022-12-03  thumb tack TV install
 
 I have purchased a mantle-mount system for my 42" LCD TV.
@@ -14,7 +24,27 @@ How do you typically get electrical to such a TV?
 415-241-8100
 415-241-8189 Danny
 
-### 2022-11-29  DIY Peloton Treadmill
+
+- Brandy-K - 
+- Darren 
+
+~~
+(800) 822-2834‬  - Audi of America -- 
+
+Case #05516208 
+
+I have Platnium Pkg - 
+and Audi Care until 12-31-2022
+
+
+
+### 2022-11-29  Horizon 7.4AT  Treadmill
+
+- Your order: 300171905
+- **Tracking Number:** 4087459223
+- EFW:  855-433-9669
+
+
 
 - Horizon 7.0AT - as device holder lip, foldable,  ---SLOW CLICK-CKICK adjustments
 - Horizon 7.4AT; Good for HIIT; 

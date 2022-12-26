@@ -1,3 +1,3 @@
-=[[CMD]]   app   Calculator
+=[[CMD]]   app Calculator
 
-
+- added-by-km-cmd

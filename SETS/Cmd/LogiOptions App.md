@@ -1,3 +1,3 @@
-=[[CMD]]   app   /Applications/Logi Options+.app
+=[[CMD]]   app /Applications/Logi Options+.app
 
-
+- added-by-km-cmd

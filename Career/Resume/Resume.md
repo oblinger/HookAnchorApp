@@ -1,8 +1,8 @@
 # _
-_  [ResLnked](ResLnked.md)
+_  [resLI](resLI.md)
   [Bio](Bio.md)
   [Bio](Bio/__Bio__.md)
-   [[Bio]]  [[ResLnked]],    [[Dan Oblinger Resume.docx|Current Resume]]    [[My Patents]] 
+   [[Bio]]  [[resLI]],    [[Dan Oblinger Resume.docx|Current Resume]]    [[Patents]] 
 __
 
 

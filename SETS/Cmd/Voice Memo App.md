@@ -1,3 +1,3 @@
-=[[CMD]]   app  Voice Memo
+=[[CMD]]   app /Applications/Voice Memo.app
 
-
+- added-by-km-cmd

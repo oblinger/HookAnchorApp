@@ -1,1 +1,3 @@
-=[[CMD]]   app   Launchpad
+=[[CMD]]   app Launchpad
+
+- added-by-km-cmd

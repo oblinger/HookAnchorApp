@@ -1,3 +1,3 @@
-=[[CMD]]   app   /Applications/GotoMeeting.app
+=[[CMD]]   app /Applications/GoToMeeting.app
 
-
+- added-by-km-cmd

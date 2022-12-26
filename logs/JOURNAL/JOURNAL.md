@@ -6,6 +6,7 @@
 
 | Date        | File            | Notes                                               |
 | ----------- | --------------- | --------------------------------------------------- |
+| j2022-12-11 | [[Jnl]]             | Discipline for Eli                                  |
 | j2022-10-31 | [[Jnl]]             | Career Plan                                         |
 | j2022-09-23 | [[Jnl]]             | AUTOMATING CHORES                                   |
 | j2022-09-22 | [[@Jason Syversen]] | Proposed SV Priorities                              |

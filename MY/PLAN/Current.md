@@ -4,14 +4,14 @@ MORN:  	Meditate, Pills, Day, [[Comms]],    NOON:   	EVE: Plan, Chew
 ### 2022-11-30  short week (cyber monday)
 - [x] [[Exercise]]:  Get treadmill setup
 - [ ] [[Comms]]:  Get plan in execution
-- [ ] [[ResLnked]]:  Draft update & todo list
+- [ ] [[resLI]]:  Draft update & todo list
 - [x] [[WarStories]]:  Crank it
-- [ ] [[Coursera]]: 5h
+- [ ] [[Coursera InfoPage]]: 5h
 - [ ] + SV Negotiations%%%%
 
 
 ### 2022-11-28 thanksgiving trip
-- [ ] 5h	[[Coursera]]
+- [ ] 5h	[[Coursera InfoPage]]
 
 ### 2022-11-07  
 - [ ] Progress: [[SV]], [[WarStories]],  

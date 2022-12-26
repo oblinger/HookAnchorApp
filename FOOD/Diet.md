@@ -2,6 +2,25 @@
 - [NZ veg poster](https://www.vegetables.co.nz/assets/Prints/Posters/Classification-poster-A2-2017.pdf)
 - [Pastas](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8623826/),  [[ContainerWeights]], 
 
+### 2022-12-12  Evening Eating - Hormones
+
+HUNGER SIGNAL
+- GHRELIN - Empty Tummy - 
+- NPY - triggered when leptin is low for a period
+- INSL-5 - INSULIN-LIKE PEPTIDE-5 - In colon
+
+STOP SIGNAL
+- LEPTIN - from fat cells / maintain energy balance - Berries/Bean/Greens
+- CCK - Potatoes/Oatmeal - 
+- NYY  & GLP-1 - Supresses appetite
+
+- INSULIN - lowers glucose in blood by moving it to fat & muscle cells
+- GLUCAGON - raises glucose in blood by converting glucagon to glucose 
+
+IDEAS
+- Heavy run
+- Stretch tummy in evening - 
+
 
 ### 2020-06 FORCED-WEIGHT-DROP
 - [ ] TRACKING - Noom based food tracking.  (can I export?)

@@ -1,1 +1,3 @@
-=[[CMD]]   app   Transcribe
+=[[CMD]]   app /Applications/Transcribe.app
+
+- added-by-km-cmd

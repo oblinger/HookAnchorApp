@@ -1,11 +1,11 @@
 
-- [ ] [[Fin Adv]]:		Find advisor; Consider Avanti Paperwork
-- [ ] [[Learn]]:		[[First90]],  [[Coursera]],  
-- [ ] [[NJ22]]:		[[WarStories]].  [[NJ22#LI|LI]]: Title, AF-refactor; 
 - [ ] [[Enxt]]: 		Sheet; Read materials
-- [ ] [[Exercise]]:	Get daily activities figured out.  [[Habits]].
+- [ ] [[Learn]]:		[[First90]],  [[Coursera InfoPage]],  
+- [ ] [[NJ22]]:		[[WarStories]].  [[NJ22#LI|LI]]: Title, AF-refactor; 
+- [ ] [[Fin Adv]]:		Find advisor; Consider Avanti Paperwork
 - [ ] [[Comms]]:		
 
+- [ ] [[Exercise]]:	Get daily activities figured out.  [[Habit]].
 - [ ] [[SV]]:			
 - [ ] [[Self]]:		Get Tsp; 
 - [ ] TRIPS:		Book Disney, Where xmas

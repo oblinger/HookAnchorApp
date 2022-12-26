@@ -1,4 +1,8 @@
+DanO:  Minions, SecretLifeOfPets (seen it???),  
 
+Weird: Swiss Army Man
+
+Comedy:  Enchanted?,  
 
 ### RT Searches (rotten tomato searches)
 [RT Best Streaming Shows](https://www.rottentomatoes.com/browse/tv_series_browse/affiliates:amazon_prime,netflix~sort:popular?page=1),   [Movies](https://www.rottentomatoes.com/browse/movies_at_home/affiliates:amazon_prime,netflix~critics:certified_fresh,fresh~sort:popular?page=1).

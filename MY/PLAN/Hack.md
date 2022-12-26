@@ -1,4 +1,4 @@
-- [ ] obs: fix add to default to 'q' = quick
+
 - [ ] Fix wires at desk
 
 - [ ] SLAM-S Show all does not work
@@ -18,6 +18,11 @@
 - [ ] Export 1-password for auto logins
 - [ ] Take notes on using the call recorder [[Record]]
 - [ ] Use WhatSize to clean disk
+
+# PROJ
+
+### Active Pages Plugin
+- [ ] get plugin published
 
 
 ### LATER

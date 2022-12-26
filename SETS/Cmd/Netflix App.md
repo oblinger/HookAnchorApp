@@ -1,3 +1,3 @@
-=[[CMD]]   app   /Applications/Netflix.app
+=[[CMD]]   app /Applications/Netflix.app
 
-
+- added-by-km-cmd

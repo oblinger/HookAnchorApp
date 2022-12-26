@@ -1,3 +1,3 @@
-=[[CMD]]   app   Dictionary
+=[[CMD]]   app Dictionary
 
-
+- added-by-km-cmd

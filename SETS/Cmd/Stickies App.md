@@ -1,1 +1,3 @@
-=[[CMD]]   app   Stickies
+=[[CMD]]   app Stickies
+
+- added-by-km-cmd

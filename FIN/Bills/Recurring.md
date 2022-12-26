@@ -18,27 +18,48 @@ crunchbase
 - ? WSJ
 - ? NYtimes
 
-## SMALLER - CHASE FREEDOM
+## SMALLER
+### CHASE FREEDOM
 - $1,375/yr 	AAA Home Insurance
 - $20/yr		File This
-- $39/yr  		Consumer Reports
+- $39/yr  		Consumer Reports Digital   renews 2023-08-23   (On Health cancelled?)
 - $36/yr		1-Password
-- $50/yr		Nest Aware (renews Dec 1)
-- $100/y		Blink Plus  (11-09-2023) 
+- $50/yr		Nest Aware (Cancelled)
+- $100/y		Blink Plus  (renews 11-09-2023) 
 - $600/bi  	Geico
+- $230/mo	AT&T  (Paid on corp SVB account)
 
 - $15.50/mo 	Netflix
 - $15/m		Spotify Premium
+- $55/yr		Thermomix Recipes (renews 2023-12-11.  Web -> {ChefHat} -> Account )
+- $17/mo		Noom (last paid $50 in June 2022, not sure what is up)
 
-- $xxxxx		Nest video  $5
-- $4/m		Ny times (revert to $15/m no Nov-23-2020)
-- 		Wall Street Journal
+- $10/mo		WSJ - Wall Street Journal
 - $13/m		Peloton
+
+PAUSED
+- $0/m		Ny times (revert to $15/m no Nov-23-2020)
+- $			Disney+
+- $0/mo		Sling TV  ($20/mo)
+
+APPLE
+- $9/mo		Dan's Apple iCloud  (Apple ID -> MyPic -> Plan)
+- $30/yr		Insight Timer  (APPLE SUBSCRIPTION iPhone -> Settings -> Me -> Subscriptions)
+
+PAYPAL			Web -> {setting gear} -> Payments -> Manage Automatic Payments
+- $239/yr		Seeking Alpha renews ?? 2023-12-??
+- $5/mo		Patreon - Sleep With Me Podcast
+
+CAP ONE
+- $20/yr		Google Storage renews 2023-05-13
+- $20/mo		Obsidian Publish
+
+
 
 VARYING - CHASE FREEDOM
 - vary		Uber (mostly on on this account)
 - vary		Lyft  
-- vary		rinse
+- vary		Rinse
 - vary		Paperless Post
 - vary		GRUB HUB
 - vary		CAVIAR
@@ -46,20 +67,23 @@ VARYING - CHASE FREEDOM
 - vary		FEDEX
 - vary		USPS
 - vary		FANDANGO
+- vary		Chewy
 
 SAPPHIRE
 - vary   		Am Airlines
 
-OTHER  ~~
-- $230/mo	AT&T  (Paid on corp SVB account)
 
 ## DANO RECURRING
 		(check PayPay and Apple)
-- ? Grammarly
-- ? Freedom
-- ? Keyboard Maestro
-- ? Paprika
-- ? Thermomix
+
+RETIRED or ONE TIME
+- $0		Dropbox
+- $0		Linked-In Premium
+- $0		Grammarly  (Free plan)
+- $0		Keyboard Maestro  (One time purchase for version)
+- $0		Paprika  (One Time Purchase)
+- $0		Freedom  (cancelled on 2022-12-24 for some time in future)
+
 ## DANO CHANNELS
 ### APPLE 
 DANO - APPLE - Mac->AppStore->MyPicture->AccountSettings->Manage->Subscriptions
@@ -89,6 +113,11 @@ DANO OTHER
 - 36/yr		pen		1password     	(not yet setup)
 - 22/mo 		pen		Plan USA 		1-800-556-7918
 
+## QL RECURRING
+- Apple
+- Google
+- 1Password
+- Yoga
 ## .
 
 # TOPICS

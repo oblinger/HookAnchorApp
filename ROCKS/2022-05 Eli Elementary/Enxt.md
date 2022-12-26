@@ -10,6 +10,7 @@
 -  [Great Schools](https://www.greatschools.org/california/san-francisco/25336-San-Francisco-Public-Montessori-School/) - Numeric ratings by category
 -  [US News](https://www.usnews.com/education/k12/california/mission-montessori-317803#reviews-and-ratings) - Sparse info
 -  [School Digger](https://www.schooldigger.com/go/CA/schools/9999956846/school.aspx) - Teacher ratio & Racial breakdown
+- [Niche](https://www.niche.com/k12/search/best-schools/) - 
 
 
 94110, 94131, 94114, 94117
@@ -18,6 +19,10 @@
 ## CONSIDERATIONS
 - [Great Schools](https://www.greatschools.org/gk/articles/choosing-elementary-school-ten-questions-to-ask/) - 
 - [How To Choose](https://family.lovetoknow.com/about-family-values/how-choose-elementary-school-your-child-thrive) - 
+
+## EMPIRICAL RESULTS
+
+- [Tutoring Meta Analysis](https://sci-hub.se/10.2307/1162567) - 
 
 
 ## QUESTIONS
@@ -31,6 +36,11 @@
 5. Expectations for Students?  
 
 # REF
+## Teaching Styles
+### [McKinsey Report](https://www.mckinsey.com/industries/education/our-insights/how-to-improve-student-educational-outcomes-new-insights-from-data-analytics) 
+- Teacher driven in most classes & inquiry based in some.
+
+
 ### r2022-11-08  School Stats
 
  [Public and private school comparison](https://nces.ed.gov/fastfacts/display.asp?id=55)  - 

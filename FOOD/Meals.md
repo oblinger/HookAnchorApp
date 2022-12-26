@@ -54,6 +54,18 @@ Spicy Sauce
 
 
 
+## INPUTS
+### Types of Vegetables
+- [NZ Veggies](https://www.vegetables.co.nz/assets/Prints/Posters/Classification-poster-A2-2017.pdf)
+- [Asians Veggies in CA](https://ucanr.edu/sites/Small_Farms_and_Specialty_Crop/files/88378.pdf)  
+- [Asian Veggies](https://asianworldmarket.com/produce/)  
+
+- [Veggies Dishes](https://en.wikipedia.org/wiki/List_of_vegetable_dishes) 
+- [Salad Dishes](https://en.wikipedia.org/wiki/List_of_salads)  
+
+
+
+
 # REGULAR
 ### Dan Lunches
 - BATCH:	Barley; Lentils; 

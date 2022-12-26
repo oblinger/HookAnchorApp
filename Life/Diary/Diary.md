@@ -1,5 +1,5 @@
   [Days](Days.md)
-  [Jnl](Jnl.md),   [Jnl](Jnl.md),   [Weekly](Weekly/Weekly.md)
+  [Jnl](Jnl.md),   [Weekly](Weekly/Weekly.md)
 
 VARIOUS DIARIES
 

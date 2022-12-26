@@ -1,4 +1,4 @@
-
+- [[Key Code]], 
 ## = INFO
 ### - Links
 
@@ -854,35 +854,7 @@ Hardware Serial Number	C02V811RHTD9
 Coverage End Date	September 18, 2020
 Agreement Number	970075117051737
 
-### xx 1Password
-oblinger@gmail.com
-A3-ZEHREB-P76CXL-ANA4V-FKRFX-YZTT3-WLGMV
-
-
-> Sync with iCloud !
-
-
-
-~ iOS --- on app store -----
-Your receipt No.209069338737
-
-Billed To:
-wef234@gmail.com
-Daniel Oblinger 
-3403 cesar chavez ave. apt c
-San Francisco, CA 94110-4565
-USA	Order ID: MHMN8MYBGZ
-Receipt Date: 02/06/14
-Order Total: $17.99
-Billed To: Visa .... 9051
-
-
-
-
-Item	Seller	Type	Unit Price
-
-1Password - Password Manager and Secure Wallet, v4.3.2 (17+) 
- Write a Review   Report a Problem	AgileBits Inc.	iOS App	$17.99
+### xx 1Password   [[Doc 1Password]]  
 
 ### xx Bartender
 

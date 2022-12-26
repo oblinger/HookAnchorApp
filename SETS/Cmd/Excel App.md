@@ -1,2 +1,3 @@
-=[[CMD]]   app   Microsoft Excel
+=[[CMD]]   app Microsoft Excel
 
+- added-by-km-cmd

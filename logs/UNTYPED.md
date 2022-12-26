@@ -6,11 +6,20 @@
 
 | Date       | File                | Notes                                                                                     |
 | ---------- | ------------------- | ----------------------------------------------------------------------------------------- |
+| 2022-12-16 | [[2022-W51]]            | FRI                                                                                       |
+| 2022-12-14 | [[Phone]]               | Fix roof fin                                                                              |
+| 2022-12-14 | [[2022-W51]]            | WED                                                                                       |
+| 2022-12-13 | [[DYL]]                 | Dan the designer                                                                          |
+| 2022-12-13 | [[DYL]]                 | Captured from earlier notes                                                               |
+| 2022-12-12 | [[Diet]]                | Evening Eating - Hormones                                                                 |
+| 2022-12-11 | [[Meta Dashboards]]     | Daily                                                                                     |
+| 2022-12-08 | [[Phone]]               | Solar Installer                                                                           |
+| 2022-12-07 | [[resLI]]               | Framing Self                                                                              |
 | 2022-12-03 | [[Phone]]               | thumb tack TV install                                                                     |
 | 2022-12-01 | [[Enxt]]                | Alta Vista                                                                                |
 | 2022-11-30 | [[Current]]             | short week (cyber monday)                                                                 |
 | 2022-11-29 | [[Phone]]               | [[@Audi]]                                                                                 |
-| 2022-11-29 | [[Phone]]               | DIY Peloton Treadmill                                                                     |
+| 2022-11-29 | [[Phone]]               | Horizon 7.4AT  Treadmill                                                                  |
 | 2022-11-29 | [[Phone]]               | Exercise Tracking (Horizon 7.4AT)                                                         |
 | 2022-11-28 | [[Current]]             | thanksgiving trip                                                                         |
 | 2022-11-23 | [[ELI]]                 | QL planting ideas                                                                         |
@@ -84,7 +93,7 @@
 | 2022-03-25 | [[Dataview]]            | [templater+dataview example](https://github.com/blacksmithgu/obsidian-dataview/issues/42) |
 | 2022-03-21 | [[Weekly]]              |                                                                                           |
 | 2022-03-21 | [[Phone]]               | Home Depot - replace new GE microwave                                                     |
-| 2022-03-19 | [[Crunchbase]]          | === AMY SEARCH STRATEGY ===                                                               |
+| 2022-03-19 | [[Crunchbase InfoPage]] | === AMY SEARCH STRATEGY ===                                                               |
 | 2022-03-19 | [[Paths]]               | VC Areas                                                                                  |
 | 2022-03-19 | [[Uniting America]]     | Uniting America On The Issues Of Racial Fairness and Racial Disparity                     |
 | 2022-03-18 | [[Campaigns]]           | Aniket Recruiters                                                                         |
@@ -131,6 +140,7 @@
 | 2021-12-01 | [[Journal Old]]         | PATHS cash                                                                                |
 | 2021-12-00 | [[Resume]]              | Jared Resume writing notes                                                                |
 | 2021-12-00 | [[MKT]]                 |                                                                                           |
+| 2021-12-00 | [[DYL]]                 | DAN WORK (Written for Nina discussion)                                                    |
 | 2021-11-30 | [[Paths]]               | PATHS GOOGLE vs R-ZERO vs UF-now                                                          |
 | 2021-11-30 | [[Journal Old]]         | PATHS GOOGLE vs R-ZERO vs UF-now                                                          |
 | 2021-11-29 | [[DEEP_BOOT]]           | Deep Learning + Bootstrapping Microtheory                                                 |

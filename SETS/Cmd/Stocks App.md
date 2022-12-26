@@ -1,1 +1,3 @@
-=[[CMD]]   app   Stocks
+=[[CMD]]   app Stocks
+
+- added-by-km-cmd

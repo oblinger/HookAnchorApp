@@ -1,3 +1,3 @@
-=[[CMD]]   app   Pycharm
+=[[CMD]]   app /Applications/PyCharm.app
 
-
+- added-by-km-cmd

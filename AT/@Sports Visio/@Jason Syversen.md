@@ -3,6 +3,10 @@
 - Get resume.  
 
 # LOG
+### t2022-12-16  Return text
+
+HORRAY on landing GRZ!  You will not be disappointed with that choice.  Things are good here.  I had a first meeting with Sunnova leadership (another solar company).  A former Analytics Fire client who loved us, has moved there, and has put my name in the ring to lead their software org.  It is a 100+ org, and they are hiring another 150-200 in 2023, so it would be a move up for me in scope, and fun to grow.  (Still not likely nearly as fun as the Jason and Dan show will be :-) ).  They are a big co. so there is little chance of you moving slower than they will.  But I am excited to get started so keep me posted.  Btw signing GRZ quickly was also a good move since Sunnova knows he is a free agent and he worked on some VERY relevant stuff in his previous gig.  They would have certainly given him an offer.
+
 
 ### t2022-12-02  The 'Hire me'  compensation re-evaluation email
 

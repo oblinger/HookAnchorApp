@@ -1,1 +1,3 @@
-=[[CMD]]   folder    /Users/oblinger/Dropbox
+=[[CMD]]   folder /Users/oblinger/Dropbox
+
+- added-by-km-cmd

@@ -1,1 +1,3 @@
-=[[CMD]]   app   QuickTime Player
+=[[CMD]]   app QuickTime Player
+
+- added-by-km-cmd

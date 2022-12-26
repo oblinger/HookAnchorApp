@@ -1,3 +1,3 @@
-=[[CMD]]   app   Microsoft Word
+=[[CMD]]   app Microsoft Word
 
-
+- added-by-km-cmd

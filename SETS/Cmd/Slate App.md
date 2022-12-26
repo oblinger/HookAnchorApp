@@ -1,3 +1,3 @@
-=[[CMD]]   app   Slate
+=[[CMD]]   app /Applications/Slate.app
 
-
+- added-by-km-cmd

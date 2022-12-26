@@ -161,8 +161,7 @@ PAGE 27
 	- PILLS & TESTS - I need to fix them.
 
 ## = (2) WORK VIEW / LIFE VIEW / COHERENCY / TRUE NORTH =
- PAGE 40.  250 words each
- Where do your views on work and life complement one another? b. Where do they clash? c. Does one drive the other? How?
+ PAGE 40.  250 words each.  Where do your views on work and life complement one another? b. Where do they clash? c. Does one drive the other? How?
 
 ### - WORK VIEW
 - PRIMARY VALUE -- Why do I work?  To:
@@ -201,7 +200,7 @@ Work is the technical building of value:
 	  
 	  
 	  
-  	DETAILS
+DETAILS
 - TECHNICAL -- At times in my life when my job became more "management" I am driven to create side projects which are technical building.
 - INVENT -- I am always 'inventing' things.  Thinking about the problems around me, and trying to see new ways to address them.  I stick with a few problems over many years, but I spend almost all of my time thinking thru solutions that I don't get feedback on, or try out in the world.
 - SOCIAL SYSTEMS -- Many of my ideas are "social systems" or self-working process in nature.
@@ -239,62 +238,66 @@ Why Are we here?
 	  
 	  
   	_
-### - ME: SUPER DRIVERS
-#### . About Something
-#### . **DESIGNING** something
-- Like to ORGANIZE the information and processes of a thing
-- Like to DESIGN / CREATE / ARCHITECT these structures
-- Like to worry about the EFFICIENCY and details of a well crafted purposeful thing
-- Like to sit and THINK on my own about how accomplish this thing
-- Like to work on HARD things.  Things that cannot be solved in days, but need weeks or months.
-- **IDEAS** -- I love to focus on the technical: the big idea, and technical details
 
-#### . DOING something
-#### . OWNING something
-- To a smaller extent I also want OWN a thing
-	- Get paid a lionshare of its value
-	- Get credit for its creation
-#### .
+## = (3) INSIGHTS =   [[JobTypes|JT]]
+AEIOU: Activities; Environments; Interactions; Objects; Users
 
+### CONSIDERATIONS
+### EXECUTIVE - Strategic, Leader
+#### STRATEGIC:  Creating/leading strategic aspects of the business.
+- VISIONARY - 
+- CREATIVE - Creative in technical spheres
+- TRANSFORMATIVE - 
+- CONCEPTUAL - 
+- GENERATIVE - 
+- CORP NORTH STAR - 
 
-### - ME: - **THE WAY I WORK**
-#### . ALLEY CAT
-- Like working on several different things, and jumping between then as my interest shifts.
-#### . BURSTY
- - I can execute well in a burst, but not continuous
-	 	(except SW or idea coding in flow)
-#### . REACTIVE
-- Work easiest when task triggers are presented from the outside.
-#### . COMMITMENT AVERSE
-- I systematically dodge certain commitment steps
-#### . WORKY
- - I am always "working" its my mental mode
-#### . LIMIT
-- seem to have daily limit (3h), not effective after (for work I don't love)
+#### PERSUASIVE:
+- PRESENTER - Compelling, Articulate, FastOnFeet, 
+- GREGARIOUS - 
 
+#### LEADING:  
+- OWNING - 
+- MENTORING - 
+- DELIGATING/MENTORING - 
+##### .
 
 #### . 
 
+### DESIGNER / CREATOR - 
+#### DESIGNING something
+- ORGANIZING - Like to ORGANIZE the information and processes of a thing
+- SYSTEMATIC - Like to DESIGN / CREATE / ARCHITECT these structures
+- EFFICIENCY - Like to worry about the EFFICIENCY and details of a well crafted purposeful thing
+- Like to sit and THINK on my own about how accomplish this thing
+- Like to work on HARD things.  Things that cannot be solved in days, but need weeks or months.
+- **IDEAS** -- I love to focus on the technical: the big idea, and technical details
+- BULLET - Love looking for "silver bullet" or organizing principle for some acknowledged problem
 
-
-### - ME: AREAS OF ATTRACTION
-#### . **SOCIAL *SYSTEMS***
-#### . SYSTEMATIC
-- idea is a systems idea relating to how things work
-#### . BULLET
-- idea is single "silver bullet" for some acknowledged problem
+#### EARLY STAGE - Prototyping
+- INNOVATIVE - Aspects of the work should feel innovative to me.
+- PROTOTYPING - The earlier the phase of the work, the better
+- PROJECT/PRODUCT - Is most interesting
 #### .
 
+### TECHNICAL - Hard, Innovative, Technically-deep, Problem solving
+- HARD - 
+- TECHNICALLY DEEP - 
+- PROBLEM SOLVING - 
 
 
 
 
-### - ABOUT ME
+
+
+
+
+
+#### . ABOUT ME
 - **SUPER DRIVERS:**
 	- IMPORTANT - *CREATE* something that really *MATTERS* to society.
 	- THINK - Spend time *THINKING* through some technical problem.
 
-- **
 
 
 Quick Observations:
@@ -305,7 +308,7 @@ Quick Observations:
 - technical idea
 - "of the mind" -- just pencil and paper, no research, etc.
 - MINE -- I feel the idea is one other's don't see
-  
+
   AVERSION
 - HOP -- Love pushing deep into an idea, but after certain
 - Research
@@ -313,49 +316,45 @@ Quick Observations:
 - Commitment
 - PRAGMATIC SHORT TERM
 - COMMITMENT AVERSE at commitment stage
-  
-  
-  PRETENDING -- pretending I might do a thing, but knowing in heart I wont
-  With JASON flirted, but was never going to say yes, but spent time pretending
-  
-### - DAN WORK - The kind of conceptual work that drives me
+
+
+PRETENDING -- pretending I might do a thing, but knowing in heart I wont
+With JASON flirted, but was never going to say yes, but spent time pretending
+
+#### . DAN WORK - The kind of conceptual work that drives me
 
 
 There is a certain kind of work (lets call in DAN-WORK) and this kind of work is so compelling I tend to work on it even when it is not rational to do so; in to the night; sometimes at expense of nearly anything else.
 
-DAN-WORK = TRANSFORMATIVE, CLEVER/HARD, INTERNALIZED, CONCEPTUAL PROBLEM-SOLVING and MENTORING
+DAN-WORK = TRANSFORMATIVE, CLEVER/HARD, INTERNALIZED, CONCEPTUAL, PROBLEM-SOLVING and MENTORING
 
 
-CLEVER/HARD
+##### Clever / Hard
 - HARD WORK CAN BE BORING -- work that is just hard, like solving some huge calculus problem is just drudgery.  There are no insights to be found or tricks to play then it is exhausting and not very rewarding
 - CLEVER WORK IS TOO RANDOM/QUICK -- work that is just one clever trick has no staying power, in one flash it is over, or you have no ideas and make no progress forever.
 - CLEVER + HARD -- now we are TALKING.  I can play with the right kind of mathematical puzzle for weeks if it is the right shape.
   
-  
-  TRANSFORMATIVE
+##### Transformative
 - LIFE MISSION NEEDS CONSEQUENCE -- even if I can play with a hard+clever problem for a long time, it feels hollow.  like binge-watching six seasons of game of thrones in one weekend... it was kinda fun a the time, but also anxiety provoking because you are say...  why the fuck am I doing this?
 - A TRANSFORMATION STORY PROVIDES THE ANSWER -- when I can construct a story about how solving this problem will somehow transform things for some group for the better in a significant way, then have no such hollow feeling... it it jet-fuel to work even later into the night!
 - SOCIAL -- One common and very satifying way for work to be transformative is for the work to be social in nature, figuring out how society can work better is inherently transformative and hard (if it were easy it would already be done!)
   
-  
-  INTERNALIZED
+##### Internalized
 - NO PAPER NEEDED -- the very best problems are ones that can be considered for days or weeks without even needing a piece of paper -- just pure thinking.
 - LESS LIBRARY RESEARCH -- I am ok needing to do some background learning in order to attack a problem.  Still this learning, unless it involves learning clever insights is a bit of needed drudgery work, it is not the main course.
 - LESS COLLABORATIVE -- I am ok problem solving as part of a team, but I like moving fast, and I like the thrill of the solving itself, thus collaboration can be a bit of a speed bump for all of that.  It is ok, and can even be energizing when my partner is complementary and sharp/fast.
   
-  
-  CONCEPTUAL PROBLEM SOLVING
+##### Conceptual Problem Solving
 - PROBLEM FRAMING -- Often the most unconstrained (and thus hardest/cleverest) part of solving a problem is properly framing it in a way that it CAN be solved in a good way.  This is very satisfying work.
 - EDGE OF FORMAL AND INFORMAL -- Often the at the fringes of what is known and what is properly framed is where the exciting action is at.  It is close enough in that one might make the transformative difference by properly framing the work, but it is not so far in that the proper framing is easily obtained.  Often this work is called "conceptualizing" a problem.  I freaking love it!
   
-  
-  MENTORING
+##### Mentoring
 - Advising
 - Vision --
 - Details & Tracking & Plodding -- not so much
+
   
-  
-  EXAMPLES OF DAN-WORK:
+##### Examples of Dan-Work
 - BLOCKCHAIN - Building a POS block chain as robust as today's POW chains are
 - ELDERBOT - Building an automated human-transport robot for the elderly
 - TEAMSAVER - Identifying and overcoming limitations that make remote work less effective than in-person work
@@ -363,29 +362,26 @@ CLEVER/HARD
 - NANO-SCALE-PROGRAMMABLE-MATTER - How to build programmed 3D-nano structures
 - AEOLUS-ROBOT-ARCHITECTURE - Designing the high-level APIs and architecture
   
-  
-  
-  NEGATIVE EXAMPLES
+##### Negative Examples
 - BORING DETAILS - I desperately want to hand off
 - POLISHING - Polishing text describing an idea
 - MEETINGS - Being in meetings once all the hard stuff is resolved
 - TRACKING - Tracking work being done
   
+##### What Might Fit Me?
+- BUSY BEE - helping with the framing & large scale problem solving across many hard tasks.
   
-  
-  WHAT MIGHT FIT ME?
-- BUSY BEE - helping with the framing & large scale solutioning across many hard tasks.
-  
-  
-  _
-#### . NINA WORK
+DAN-WORK = Strategic, Transformative, Hard, Conceptual, Problem-Solving, Mentoring
+
+
+#### 2021-12-00 DAN WORK (Written for Nina discussion)
 
 HARD - Trying to prove theorems about privacy is very hard.
 DELEGATE - Working with student means they do bulk of the tedious writeup.
 EXPERT - Working near experts means that my work is efficient
 
-_
-#### . Conceptual Work
+	_
+##### . Conceptual Work
 
 I am positively driven to think about
 - the detailed conceptualization of a clever solution to a big-impact problem.
@@ -399,22 +395,22 @@ I am positively driven to think about
 - I dread working on more boring parts.
 - I dread working on parts where cleverness is not needed.
   
-  _
-#### . Technical center
+	  _
+##### . Technical center
 Clear that my work must have a strongly technical center.
 Possible centers:
-- Applied ML reseracher
+- Applied ML researcher
 - Robotics project lead
 - SOLVE -- dig into range of disparate problems and apply deep tech to them
 - MENTOR -- Work as mentor to direct technical work to be done
-  _
-#### . Procrastination
+	  _
+##### . Procrastination
 - As soon as I work, I resort to procrastination by 
 	organizing / processing easy stuff
 - Emails, Medium/Blogs
 - Take Nap (I physically feel sleepy in a quick way)
-  _
-#### . Uniform/Marcel
+	  _
+##### . Uniform/Marcel
 - IMPORTANCE -- feeling that the idea has potential for large impact
 - UNIQUE -- feeling that idea that is not generally known, or solved
 - PURE THOUGHT -- Struggling to understand/solve using pure thought
@@ -422,12 +418,32 @@ Possible centers:
 - CLEVER SOLUTION --
 - EFFICIENT SYSTEM -- love thinking about how to make systems efficient
   
-  _
+	  _
 
 
 
-## = (3) INSIGHTS LOG =
-AEIOU: Activities; Environments; Interactions; Objects; Users
+### .
+
+
+## = (3) INSIGHT LOG
+
+### 2022-12-13  Dan the designer
+
+Excitement for me is thinking about something innovative and new
+- Novel business model
+- Novel algorithm
+- Novel approach or way to looking at to an old problem
+
+- Discussing and refining the idea with others
+- Presenting and persuading others of the idea
+
+
+### 2022-12-13  Captured from earlier notes
+
+
+##### 
+
+
 ### 2022-04-22  Innovation & Insight
 
 - 

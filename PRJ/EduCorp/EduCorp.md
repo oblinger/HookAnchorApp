@@ -1,4 +1,5 @@
-  [[Forwardism]],   [[out]]
+
+   [[Forwardism]],   [[out]], [[EC types]], 
 
 
 # TODO - [[PRJ/EduCorp/Edu Corp.pptx|PP]]   [[#EDU CORP WHITE PAPER NOTES|>]][[Edu Corp Whitepaper|WP]][[Edu Corp Whitepaper.html|*]]   [[#EDU CORP SUPPLEMENT NOTES|>]][[Edu Corp Supplement.md|Sup]][[Edu Corp Supplement.html|]][[Edu Corp Supplement.html|*]]    [[#FORWARDISM|>]][[Forwardism.md|Fwd]][[Forwardism.html|*]]   [Sheet](https://docs.google.com/spreadsheets/d/1HgqpWQFMyiOU47gzSmkFUPQcrgJ_7ALyxmgSm8nwA44/edit#gid=0)  
@@ -10,6 +11,14 @@
 
 
 # TOPICS
+## SHEET DETAILS
+#### TYPE
+- B2B
+- B2C
+### AREA
+#### locB2B
+- FARM
+- 
 ## LINKS
 - [Greenhouse Farming](Greenhouse%20Farming/Greenhouse%20Farming.md),  [gEduCorp](https://drive.google.com/drive/u/0/folders/10pUPzVcBn5PxmMQYC8T60PDpdrQgQ817):   
 ## EDU CORP WHITE PAPER NOTES
@@ -258,6 +267,7 @@ TOOL CHOICE CHART
 
 
 # REF 
+## ORGS
 ### --- IGBO - Nigerian Fin Scheme ---
 - [BBC](https://www.bbc.com/news/world-africa-56985304) 
 - [HBR](https://hbr.org/2021/05/a-nigerian-model-for-stakeholder-capitalism) 
@@ -265,6 +275,7 @@ TOOL CHOICE CHART
 
 
 # LOG
+### n2022-12-22  Job Typeshttps://medium.com/p/ea8432c673b9
 ### m2022-11-21  [[@Teddy Lange]]
 
 ### m2022-06-30  Moses Discussion [[@Moses Baffour Awuah]]  

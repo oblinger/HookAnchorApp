@@ -1,3 +1,3 @@
-=[[CMD]]   app   Sublime Text
+=[[CMD]]   app /Applications/Sublime Text.app
 
-
+- added-by-km-cmd

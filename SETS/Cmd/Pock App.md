@@ -1,4 +1,3 @@
-=[[CMD]]   app   /Applications/Pock.app
+=[[CMD]]   app /Applications/Pock.app
 
-
-; Widget manager to the mac toolbar
+- added-by-km-cmd

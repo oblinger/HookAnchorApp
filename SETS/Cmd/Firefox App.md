@@ -1,3 +1,3 @@
-=[[CMD]]   app   /Applications/Firefox.app
+=[[CMD]]   app /Applications/Firefox.app
 
-
+- added-by-km-cmd

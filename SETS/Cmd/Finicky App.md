@@ -1,3 +1,3 @@
-=[[CMD]]   app   /Applications/Finicky.app
+=[[CMD]]   app /Applications/Finicky.app
 
-
+- added-by-km-cmd

@@ -1,3 +1,24 @@
+### j2022-12-11  Discipline for Eli
+
+
+- You put glue on back of santa, and told Eli to place the card.  he did.  
+- But it needed to be repositioned.  Eli watched you fix his placement.
+- As you asked him to place the next... he refused.  He just barely touched it after you placed it, to stick it down.
+
+- Then you wanted him to put arms and other tricky things on an already crowded front of the car.  
+- We were already loosing his excitement for the cards...  this was a recipe for failure.
+- I just wanted to open the card and he could put anything... anywhere.
+
+
+
+- You make make multiple dozen decisions for us each weekend.  
+- Even if I see a way that seems better I often don't say anything...  Not so critical to do everything in best way... and it simplifies things.
+- Sometimes i say an alternative idea, but if it get shot down, more than 1/2 the time I just drop it.  Again not worth a debate.
+- But sometimes it does matter.  Then I push back
+
+
+
+
 ### j2022-10-31  Career Plan
 
 - My Center Is DEEP LEARNING:  Plus: Robotics, NLP, Vision

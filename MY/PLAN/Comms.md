@@ -1,11 +1,14 @@
-- [ ] Call Grz
+- [[Calls]]:  John Cameron, Ms Anastasia, 
 
 
 ## = ACTIVE  [[CRM]] 
-n		[[@Felipe Lavratti]]		RECOMMENDATION
-s		[[@John Davis]]			RECOMMENDATION
-s		[[@Nick Allen]]			RECOMMENDATION
-s		[[@Theo Enns]] 			
+s		[[@Grzegorz Biziel]]	RECO; Do it now.
+s 		[[@Maria Galang]]		Touch base
+		[RZ](https://docs.google.com/document/d/1wQ53u87r9uVrFxVcrx8w43QANBjuuCBo31rJ8HZbBdU/edit) folks 				Jonas, Anibal, Nestor, 
+n		[[@Felipe Lavratti]]		RECO
+s		[[@John Davis]]			RECO
+s		[[@Nick Allen]]			RECO
+s		[[@Theo Enns]] 			Have Lunch  (Study Neuro)
 
 
 

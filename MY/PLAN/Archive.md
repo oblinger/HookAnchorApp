@@ -1,3 +1,13 @@
+- [x] OBS: Add quick entry using an input box
+- [x] obs: fix add to default to 'q' = quick
+- [x] Cancel our winery.  (QL confirm  FRIDAY)
+- [x] QL gift
+- [ ] flu shot
+- [x] Check the FTX AGI competition
+- [x] [Peloton](https://millennialhawk.com/best-peloton-strength-classes-for-beginners/) -
+- [x] oatmeal
+- [x] update schwab transfers
+- [x] DEF COMP:  Move funds.
 - [x] Check BoA for funds to send:   $850 to Joe
 - [x] plan travel food
 - [x] Book care.com woman

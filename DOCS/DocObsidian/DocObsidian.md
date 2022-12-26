@@ -7,10 +7,15 @@
   [Discord](http://app/discord),   [Oblio](https://publish.obsidian.md/oblio)  (LMI!)   
  -  [Obsidian Website](https://obsidian.md)  [support@obsidian.md](mailto:support@obsidian.md)   [[Action Pages]]   
  - Mermaid:   [Syntax](https://mermaid-js.github.io/mermaid/#/./n00b-syntaxReference)   [LiveEditor](https://mermaid-js.github.io/mermaid-live-editor/edit#pako:eNpVkE1qw0AMha8itGohvoAXhcROswm00Ow8WQiPnBma-WEsU4LHd--4aSHVSrz3PQlpxj5oxhoviaKBU6s8lNp2jUl2FEfjGarqJR9YwAXPtwy7p0OA0YQYrb883_ndCkEzH1eMQYz1n8vdan7yb54ztN2RooR4fnROXyHDvrPvpoz_75jEJfXaDVQPVPWUoKH0iEDWATRRhq3yq44bdJwcWV1OmldFoRh2rLAureaBpqsoVH4p6BQ1Ce-1lZCwrLiOvEGaJHzcfI-1pIn_oNZS-ZD7pZZvMgpjfg)     [[mdfind]]   //ss64.com/osx/mdfind.html)  
- - PLUGINS:  [[Dataview]],   [mdfind](__mdfind__.md)  [Dataview](__Dataview__.md)
 
 
 # PLUGINS
+ - PLUGINS:     [mdfind](__mdfind__.md) 
+## Quick Switcher
+
+- Selects all entries fuzzy matching prompt string
+- Sorts by length, then 
+
 ## Obsidian Publish
 -  [Oblio](https://publish.obsidian.md/oblio)  (LMI!) 
 ## Templater
@@ -18,12 +23,19 @@
             const templateName = await tp.system.suggester(["Template1", "Template2"], ["Template1", "Template2"]) 
             tp.file.create_new(tp.file.find_tfile(templateName), fileName, tp.file.folder()) 
     %>
-
+[Docs](https://silentvoid13.github.io/Templater/)  
 
 https://forum.obsidian.md/t/create-a-note-and-call-a-template-in-one-step-no-user-function-or-3rd-party-code-editor/26160/6
 
 
 
+
+## USING CSS
+[meta post](https://forum.obsidian.md/t/meta-post-common-css-hacks/1978)
+## DataView
+[[Dataview]],
+[Snippets](https://forum.obsidian.md/t/dataview-plugin-snippet-showcase/13673)
+[showcase](https://forum.obsidian.md/t/dataviewjs-snippet-showcase/17847)
 # TOPICS
 ## CSS SETTINGS
 
@@ -31,34 +43,6 @@ https://forum.obsidian.md/t/create-a-note-and-call-a-template-in-one-step-no-use
 - 
 ## DEV LINKS
 - [API Docs](https://marcus.se.net/obsidian-plugin-docs/api),  
-
-
-# TODO
-## BIG HACKS
-- Add 'throw' commands
-## TODO LATER
-- [ ] Update kmt so .md will match without num prefix and with/without dunder
-- [ ] Add template for rocks (name & description inputs; sub-folder, with link)
-
-
-# REF
-## = GENERAL DOCS
-I don't know exactly what your use case is, but here are some good references.
-
-Dataviewjs docs: [https://blacksmithgu.github.io/obsidian-dataview/api/code-reference/](https://blacksmithgu.github.io/obsidian-dataview/api/code-reference/)  
-Dataviewjs examples: [https://forum.obsidian.md/t/dataviewjs-snippet-showcase/17847](https://forum.obsidian.md/t/dataviewjs-snippet-showcase/17847)
-
-Templater docs (including examples): [https://silentvoid13.github.io/Templater/introduction.html](https://silentvoid13.github.io/Templater/introduction.html)
-
-Obsidian plugin API docs: [https://github.com/obsidianmd/obsidian-api](https://github.com/obsidianmd/obsidian-api)  
-Example plugin: [https://github.com/obsidianmd/obsidian-sample-plugin](https://github.com/obsidianmd/obsidian-sample-plugin)  
-In general, I recommend taking a look at the "Advanced Topics": [https://help.obsidian.md/Obsidian/Index](https://help.obsidian.md/Obsidian/Index)
-
-Hope that helps!
-## = CODING IT
-### - Writing a Plugin
-https://phibr0.medium.com/how-to-create-your-own-obsidian-plugin-53f2d5d44046
-
 
 ## = MY TWEAKS =
 ### - H2 colored Blue
@@ -102,18 +86,29 @@ Cheers,
 Dan O
 
 
+
+# REF
+## = GENERAL DOCS
+I don't know exactly what your use case is, but here are some good references.
+
+Dataviewjs docs: [https://blacksmithgu.github.io/obsidian-dataview/api/code-reference/](https://blacksmithgu.github.io/obsidian-dataview/api/code-reference/)  
+Dataviewjs examples: [https://forum.obsidian.md/t/dataviewjs-snippet-showcase/17847](https://forum.obsidian.md/t/dataviewjs-snippet-showcase/17847)
+
+Templater docs (including examples): [https://silentvoid13.github.io/Templater/introduction.html](https://silentvoid13.github.io/Templater/introduction.html)
+
+Obsidian plugin API docs: [https://github.com/obsidianmd/obsidian-api](https://github.com/obsidianmd/obsidian-api)  
+Example plugin: [https://github.com/obsidianmd/obsidian-sample-plugin](https://github.com/obsidianmd/obsidian-sample-plugin)  
+In general, I recommend taking a look at the "Advanced Topics": [https://help.obsidian.md/Obsidian/Index](https://help.obsidian.md/Obsidian/Index)
+
+Hope that helps!
+## = CODING IT
+### - Writing a Plugin
+https://phibr0.medium.com/how-to-create-your-own-obsidian-plugin-53f2d5d44046
+
+
 ## === IDEAS ===
 [Forum Share&Showcase](https://forum.obsidian.md/c/share-showcase/9)  
-## === BY PLUGIN ===
-### CSS
-[meta post](https://forum.obsidian.md/t/meta-post-common-css-hacks/1978)
-### Templater
-[Docs](https://silentvoid13.github.io/Templater/)  
-### DataView
-[Snippets](https://forum.obsidian.md/t/dataview-plugin-snippet-showcase/13673)
-[showcase](https://forum.obsidian.md/t/dataviewjs-snippet-showcase/17847)
 ## Workspaces
 [video](https://www.youtube.com/watch?v=eOcumDChzEQ)
 # LOG 
-### n2022-03-31  Using javascript to setup your Daily page
 

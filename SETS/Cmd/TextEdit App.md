@@ -1,3 +1,3 @@
-=[[CMD]]   app   TextEdit
+=[[CMD]]   app TextEdit
 
-
+- added-by-km-cmd

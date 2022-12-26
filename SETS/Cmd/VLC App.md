@@ -1,3 +1,3 @@
-=[[CMD]]   app   VLC
+=[[CMD]]   app /Applications/VLC.app
 
-
+- added-by-km-cmd

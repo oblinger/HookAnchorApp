@@ -1,3 +1,3 @@
-=[[CMD]]   app   System Preferences
+=[[CMD]]   app System Preferences
 
-
+- added-by-km-cmd

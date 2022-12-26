@@ -28,6 +28,9 @@ OWED TO QINGLING
   $9,000  2021-11-01	-- QL got from personal citi bank (west portal)
  -$9,000  2021-11-08	-- QL transferred to herself from grandcntrl (ZERO BAL)
 
+  $9,000  2022-04-22    -- Teller #4073
+  $9,000  2022-08-12    -- Teller #4073
+
 
 DanO paid $60K on 2022-04-25 for federal taxes from my schwab account
 DanO paid $15K on 2022-04-18 for state taxes from my schwab account

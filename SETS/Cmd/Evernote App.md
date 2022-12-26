@@ -1,3 +1,3 @@
-=[[CMD]]   app   /Applications/Evernote.app
+=[[CMD]]   app /Applications/Evernote.app
 
-
+- added-by-km-cmd

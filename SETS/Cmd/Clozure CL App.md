@@ -1,3 +1,3 @@
-=[[CMD]]   app   /Applications/Clozure CL.app
+=[[CMD]]   app /Applications/Clozure CL.app
 
-
+- added-by-km-cmd

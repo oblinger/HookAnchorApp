@@ -1,4 +1,3 @@
-=[[CMD]]   app      app   /Applications/BlueJeans.app
+=[[CMD]]   app /Applications/BlueJeans.app
 
-
-
+- added-by-km-cmd

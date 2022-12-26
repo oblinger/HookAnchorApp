@@ -1,3 +1,3 @@
-=[[CMD]]   app   /Applications/QL Amazon.app
+=[[CMD]]   app /Applications/QL Amazon.app
 
-
+- added-by-km-cmd

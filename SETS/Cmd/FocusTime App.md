@@ -1,3 +1,3 @@
-=[[CMD]]   app   /Applications/FocusTime.app
+=[[CMD]]   app /Applications/FocusTime.app
 
-
+- added-by-km-cmd

@@ -1,3 +1,3 @@
-=[[CMD]]   app   /Applications/Plain Clip.app
+=[[CMD]]   app /Applications/Plain Clip.app
 
-
+- added-by-km-cmd

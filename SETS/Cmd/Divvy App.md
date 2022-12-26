@@ -1,3 +1,3 @@
-=[[CMD]]   app   /Applications/Divvy.app
+=[[CMD]]   app /Applications/Divvy.app
 
-
+- added-by-km-cmd

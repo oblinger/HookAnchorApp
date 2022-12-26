@@ -1,2 +1,3 @@
-=[[CMD]]   app   Activity Monitor
+=[[CMD]]   app Activity Monitor
 
+- added-by-km-cmd

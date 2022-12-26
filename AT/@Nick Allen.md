@@ -5,6 +5,36 @@
 
 # LOG
 
+### m2022-12-14  Prep for talking with Jake
+
+
+I just shot the intros to Jake, CC'ng you
+
+make sure to give off the vibe:
+
+-   "overflowing devs"
+-   magnetic to top talent
+-   fast moving, force of nature
+-   helpful, easy to work with, earnestly interested in working together
+
+quick reference:
+
+ [Placement Help](https://docs.google.com/document/d/1wQ53u87r9uVrFxVcrx8w43QANBjuuCBo31rJ8HZbBdU/edit)  
+-   grzegorz - you know him
+-   paulo - full-stack dev in brazil
+-   joremy - QA lead (manual) - PH
+-   marisson - QA automation - PH
+-   nestor - QA automation + jr full-stack/mobile dev - PH
+
+Paulo - full stack
+Nestor - 
+Grz
+Jouromy, QA-lead
+Marrison - QA
+
+
+
+
 ### m2022-11-09  Leaving R-Zero
 
 14m. 30 y o y

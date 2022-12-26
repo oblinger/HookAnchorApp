@@ -1,8 +1,10 @@
+  [[foob3]],   [[foo]],   [[Travel]]
+
 [[Effective Altruism]] [[Compensation]],  [[Startups]]
 [[Babysitting]],  [[Disks]]
   [[Courses]]
   [webshare](webshare/webshare.md)
-  [Coursera](Coursera.md)
+  [Coursera InfoPage](Coursera%20InfoPage.md)
   [STARTUPS](STARTUPS.md),   [Templates](Templates.md)
   [Anchors](Anchors.md)
   [Test88](Test88/Test88.md)

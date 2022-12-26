@@ -1,13 +1,36 @@
-- [ ] [[OBS]]: edit KM so topic pages look for a 'links' section and then rewrite the subsequent bullet lines
+
+## TODO
+- [ ] Add colon-colon section with links:    :: [[todo]], [[plan]], 
+- [ ] OBS: edit KM so topic pages look for a 'links' section and then rewrite the subsequent bullet lines
 - [ ] OBS:  km recognized the '@sports visio' topic page, but then did not link all people docs in the folder
 - [ ] OBS:  BUG -  fix auto generator to create wiki links (convert to URL encoding to handle spaces)
-- [ ] OBS: Add quick entry using an input box
 - [ ] [[OBS]]:  KM # refactor KM to scan for both kinds of link types, AND to produce both types depending on the context.
+- [ ] Add 'history' all changed files by commit    #foo_bar 
+
+
+## LATER
 - [ ] [[OBS]]:  fix ccd to work with Obsidian
+- [ ] Update kmt so .md will match without num prefix and with/without dunder
+- [ ] Add template for rocks (name & description inputs; sub-folder, with link)
+- [ ] obs shows non existent links in the bracket-bracket menu   (edit the history log with deletes and renames) 
+- [ ] PKM: Use ^a ^e to select whole line to move?  
+- [ ] 
+- [ ] - Unified namespace -
+- [ ] OBS: Synthetic todo list views - 
+- [ ] OBS:  have the CMDS page auto create / refresh the obsidian CMD entries
+- [ ] OBS: command to create a new page with wiki link from current curor location
+- [ ] 
+- [ ] OBS:  Change styling of published pages
+- [ ] OBS: Publish clean looking web content automatically from markdown
+- [ ] OBS: Get obsidian plugin published 
 
 
 ## PROJECTS
-### FLING
+### HISTORY
+
+- Creates [[HISTORY]].md page from git log -p
+
+### SEND
 - [ ] [[OBS]]:  Fling Active, Wings, Back
 - [ ] [[OBS]]: Fling 's'start 'e'end  1, 2, 3
 
@@ -27,15 +50,3 @@
 - Format Idea:
 	- leading space indicates positional arguments (can be wiki-link, markdown-link, key: value-pair, trimmed string with spaces)
 
-
-## LATER
-- [ ] PKM: Use ^a ^e to select whole line to move?  
-- [ ] 
-- [ ] - Unified namespace -
-- [ ] OBS: Synthetic todo list views - 
-- [ ] OBS:  have the CMDS page auto create / refresh the obsidian CMD entries
-- [ ] OBS: command to create a new page with wiki link from current curor location
-- [ ] 
-- [ ] OBS:  Change styling of published pages
-- [ ] OBS: Publish clean looking web content automatically from markdown
-- [ ] OBS: Get obsidian plugin published 

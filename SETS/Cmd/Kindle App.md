@@ -1,3 +1,3 @@
-=[[CMD]]   app   /Applications/Kindle.app
+=[[CMD]]   app /Applications/Kindle.app
 
-
+- added-by-km-cmd

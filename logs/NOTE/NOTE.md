@@ -8,6 +8,10 @@
 
 | Date        | File             | Notes                                                                       |
 | ----------- | ---------------- | --------------------------------------------------------------------------- |
+| n2022-12-22 | [[EC types]]         | Ideal Job Requirements                                                      |
+| n2022-12-22 | [[EC types]]         | Job Ideas                                                                   |
+| n2022-12-22 | [[EduCorp]]          | Job Typeshttps://medium.com/p/ea8432c673b9                                  |
+| n2022-12-14 | [[@Chris Hayden]]    | AI @ Sunnova                                                                |
 | n2022-11-03 | [[Parents]]          | Stuff dad does with his laptop                                              |
 | n2022-10-15 | [[@Yashin Lin]]      | Yashin Self Summary after loosing her job                                   |
 | n2022-10-05 | [[@Jason Syversen]]  | Jason offer email                                                           |
@@ -24,7 +28,6 @@
 | n2022-05-27 | [[Forum]]            | Thinking about how to drive compromise  (Using 2020 election fraud example) |
 | n2022-04-28 | [[Forum]]            | My big question about the forum                                             |
 | n2022-04-17 | [[Notes]]            | a test note entry                                                           |
-| n2022-03-31 | [[DocObsidian]]      | Using javascript to setup your Daily page                                   |
 | n2022-02-28 | [[EOCA]]             | Notes from reading Alignment forums                                         |
 | n2021-05-19 | [[EOCA]]             | Quick Agenda                                                                |
 | n2021-05-18 | [[NJ22]]             | Who To Talk To?                                                             |

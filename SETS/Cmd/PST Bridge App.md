@@ -1,5 +1,3 @@
-=[[CMD]]   app   PST Bridge
+=[[CMD]]   app /Applications/PST Bridge.app
 
-
-
-; Manages Microsoft Outlook PST files
+- added-by-km-cmd

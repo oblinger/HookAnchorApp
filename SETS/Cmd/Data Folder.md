@@ -1,3 +1,3 @@
-=[[CMD]]   folder    /Users/oblinger/ob/data
+=[[CMD]]   folder /Users/oblinger/ob/data
 
-
+- added-by-km-cmd

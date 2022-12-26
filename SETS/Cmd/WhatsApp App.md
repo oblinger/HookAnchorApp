@@ -1,3 +1,3 @@
-=[[CMD]]   app  WhatsApp
+=[[CMD]]   app /Applications/WhatsApp.app
 
-
+- added-by-km-cmd

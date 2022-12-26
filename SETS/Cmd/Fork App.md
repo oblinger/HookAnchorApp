@@ -1,1 +1,3 @@
-=[[CMD]]   app   Fork
+=[[CMD]]   app /Applications/Fork.app
+
+- added-by-km-cmd

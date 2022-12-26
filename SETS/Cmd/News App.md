@@ -1,1 +1,3 @@
-=[[CMD]]   app   News
+=[[CMD]]   app News
+
+- added-by-km-cmd

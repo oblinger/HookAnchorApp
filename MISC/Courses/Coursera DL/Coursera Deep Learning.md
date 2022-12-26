@@ -2,6 +2,15 @@
 
 ## Deep Learning
 
+## NOTATION
+
+- a^[l]	Superscript-Bracket denotes the *l*-th layer
+- x^(*i*)	Superscript-Paren denotes the *i*-th input example
+- a_*i*		Subscript denotes the *i*-th vector element.  e. g. the *i*-th activation value
+- n_H 	Subscript _H _W _C denotes the Height, Width, and num Channels for  a layer
+
+- np		Array shape:  (example_i, axis0, axis1, ..., channel_j)
+
 ### DL2
 - [[Regularization]] 
 
@@ -76,31 +85,44 @@ TEST SET:					Use to assess overall performance as expected in the real world.
 
 - m = the number of training instances.
 - *n*^[*l*] = The **Length** or **Width** of the input matrix in convolution layer *l*.
-- *f*^[*l*] = The **Filter** size in convolution layer *l*.
-- *p*^[*l*] = The **padding** in convolution layer *l*.
-- *s*^[*l*] = The **stride** of the convolution layer *l*.
+- *f*^[*l*] = The **Filter** size in convolution layer *l*.  how many cells in row/col to merge.
+- *p*^[*l*] = The **padding** in convolution layer *l*. how many padding cells on each edge.
+- *s*^[*l*] = The **stride** of the convolution layer *l*.  how many cells to jump in each step.
+- layer_i = only count layers with weights (not pooling layer etc.)
 
 
-### Padding
+#### Standard CNN Structure
+
+- Conv - ... - Pooling - { Conv - ... - Pooling }* - FC - FC* - SoftMax
+
+
+#### CNN Intuition
+- PARAM SHARING - CNNs share parameters in the conv layers
+- SPARSE PARAMS - Conv layers are local - each output depends upon small num
+- Input structure is translation invariant
+
+
+### Convolution Layer
+- input n x n x NUM_CHAN  --->  n_shrink x n_shrink x NUM_KERNELS
+
+#### Padding
 - Valid = No padding
 - Same convolution = enough padding to avoid any shrinkage.   p =  (f-1)/2
 
-### Strided Convolution
+#### Strided Convolution
  - Skipping more than one position when computing the convolution.
  - output = floor( n+2p-f / s+1 )    n=input, p=padding, f=filter, s=stride
-- 
 
-### 3D Convolution
-- Input:  height, width, channels.   Filter: height, width, channels.   Output:  height, width, 1.   (with potential shrinking)
+#### 3D Convolution
+- Input:  height, width, channels.   
+  Filter: height, width, channels.   
+  Output:  height, width, 1.   (with potential shrinking)
  
-
-### NOTE: Mathematicians call convolution the cross-coorelation operator 
+#### NOTE: Mathematicians call convolution the cross-coorelation operator 
 - The convolution operator is first mirrored on both horizontal and vertical.
-- By first inverting the filter it makes the convolution operator associative:  A * (B * C) = (A * B) * C
+- By first inverting the filter it makes the convolution operator associative:  
+        A * (B * C) = (A * B) * C
 
-
-### Convolutions over Volume
-- input n x n x NUM_CHAN  --->  n_shrink x n_shrink x NUM_KERNELS
 
 
 ### Pooling Layer
@@ -112,4 +134,19 @@ TEST SET:					Use to assess overall performance as expected in the real world.
 - Very rarely use padding; no parameters, just hyper parameters
 
 
+### Fully Connected Layer
+- inputs n units and outputs m units with m * n weights
 
+
+### Soft Max Layer 
+- Inputs n units and outputs m soft-max outputs
+
+
+
+
+
+### OTHER IDEAS
+#### Intersection Over Union
+- A measure of the accuracy of a bounding box:
+  Divide the intersection area by the union area.
+  0% to 100%

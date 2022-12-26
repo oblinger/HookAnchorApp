@@ -6,6 +6,6 @@
   [Aeolus](@Aeolus.md)
   [PayByGroup](@PayByGroup.md)  [Aeolus](@Aeolus.md)
 
-- BIN PRJS:  [[FileThisPrj]],  
+- BIN PRJS:  [[FileThis InfoPage]],  
 
 

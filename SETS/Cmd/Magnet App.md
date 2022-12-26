@@ -1,3 +1,3 @@
-=[[CMD]]   app   /Applications/Magnet.app
+=[[CMD]]   app /Applications/Magnet.app
 
-
+- added-by-km-cmd

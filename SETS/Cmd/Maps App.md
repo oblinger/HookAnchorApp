@@ -1,1 +1,3 @@
-=[[CMD]]   apps   Maps
+=[[CMD]]   app Maps
+
+- added-by-km-cmd
