@@ -1,5 +1,5 @@
 TAXONOMY:	[[Meta]]  
-VIEWS:			[[Meta Dashboards]],  
+VIEWS:			[[OBS Dashboards]],  
 
 ## THEORY
 

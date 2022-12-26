@@ -1,4 +1,4 @@
-- [[MetaLogs]],  
+- [[Meta Logs]],  
 
 Pretty out of date
 

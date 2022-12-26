@@ -12,7 +12,7 @@
 | 2022-12-13 | [[DYL]]                 | Dan the designer                                                                          |
 | 2022-12-13 | [[DYL]]                 | Captured from earlier notes                                                               |
 | 2022-12-12 | [[Diet]]                | Evening Eating - Hormones                                                                 |
-| 2022-12-11 | [[Meta Dashboards]]     | Daily                                                                                     |
+| 2022-12-11 | [[OBS Dashboards]]      | Daily                                                                                     |
 | 2022-12-08 | [[Phone]]               | Solar Installer                                                                           |
 | 2022-12-07 | [[resLI]]               | Framing Self                                                                              |
 | 2022-12-03 | [[Phone]]               | thumb tack TV install                                                                     |

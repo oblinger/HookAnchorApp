@@ -2,7 +2,7 @@
 
 # LINKS 
 
-- [[Discord App]],  [Forum](https://forum.obsidian.md),  [[PKM]], 
+- [[Discord App]],  [Forum](https://forum.obsidian.md),  [[PKM]], [[OBS InfoPage]], 
 
   [Discord](http://app/discord),   [Oblio](https://publish.obsidian.md/oblio)  (LMI!)   
  -  [Obsidian Website](https://obsidian.md)  [support@obsidian.md](mailto:support@obsidian.md)   [[Action Pages]]   

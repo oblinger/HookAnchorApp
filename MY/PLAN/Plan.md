@@ -3,7 +3,7 @@
 => [[Top]] > [[MY]] > [[Plan]]  
 
   
-SHORT TERM / TACTICAL LISTS
+#### Short Term Tactical Lists
 - [[Active]]		-  [[Wings]], 
 - [[Current]]		-  My 'current' weekly plan
 - Daily		- 
@@ -12,7 +12,7 @@ SHORT TERM / TACTICAL LISTS
 - [[Todo]]		-  
 
 
-LONGER TERM / SPECIALTY LISTS
+#### Longer Term Specialty List
 - [[Full]]			-  
 - [[Fun]]			-  
 - [[Hack]]		-  Hacking/Coding activities
@@ -27,35 +27,30 @@ LONGER TERM / SPECIALTY LISTS
 - [[Social]]		-  
 - [[Q2]]			- Second 
 
-OFFLOAD LISTS
+
+#### Offload Lists
 - [[Archive]]		-  Place to retire planning items.   [[Arc ALL]],  [[MY/Plan/Archive]], 
 - [[Later]]		-  Tasks that have been pushed to 'later'     
 - [[Quarterly]]	-  
 - [[Waiting]]		-  
 
 
-COMMS PAGES
+#### Comms Pages
 - [[Comms]]		-  
 - [[ComNow]]	-  
 - [[ComSoon]]	-  
 - [[ComWaiting]]	-  
 - [[Ping]]		-  	
 
-PREFIX NAMED:   [[Active]]   B   [[Comms]]   DAILY   [[Fried]]   E   F   G   [[Hack]]   I   J   K   L   M   N   O   [[Prime]]   [[Quick]]  [[Repeat]]   [[Self]]   [[Todo]]   U   V   [[Waiting]]   X   Y   Z
 
-
-CHANGE: [[Wings]], [[Current]], 
-
-
-
-
-
-
-UNSORTED PLANNING PAGES
+#### Unsorted Planning Pages
 - [[Journal Old]] - 
 - [[Links]] -
 - [[Ping]] - 
 
+
+PREFIX NAMED:   [[Active]]   B   [[Comms]]   DAILY   [[Fried]]   E   F   G   [[Hack]]   I   J   K   L   M   N   O   [[Prime]]   [[Quick]]  [[Repeat]]   [[Self]]   [[Todo]]   U   V   [[Waiting]]   X   Y   Z
+CHANGE: [[Wings]], [[Current]], 
 
 
 
