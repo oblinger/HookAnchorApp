@@ -3,7 +3,7 @@
 [[@Frank Langston]],  [[@Brian]]
   [[@Qingling Oblinger]],   [[@Epsilon Oblinger]],   [[People]],   [[@Eli Oblinger]]
 [[@Igor Shindel]],   [[@Sports Visio]]
-  [[DEVSHOP]]sh
+  [[DEVSHOP]]
   [Chew](Chew.md)
   [Untitled](AT/Untitled.md)
   [Untitled](AT/Untitled.md)

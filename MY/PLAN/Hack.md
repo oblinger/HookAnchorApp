@@ -1,21 +1,13 @@
 
-- [ ] Fix wires at desk
-
-- [ ] SLAM-S Show all does not work
-- [ ] GitHub daily submit (along with KM)
+- [ ] GitHub daily submit (along with KM) - 
 - [ ] EMAILS: Verify saving, verify drafts save, verify save sends, merge all AF mail in. back backup of all mail.
       Ensure sent mail is saved. and received mail is saved.  many copies when creating email
-
 - [ ] MAC: Toggle email notifications
-- [ ] How do I manage cross linked logs.  Add TAGS???
-- [ ] Publish my org-info stuff
-- [ ] IFTTT output of Apple Health data (or any kind of export)
 
-- [ ] KMT - scan whole note not just prefix
+
 - [ ] Figure out: reset mac for headset bluetooth connect
 - [ ] Verify which emails and drafts are being saved/missing?  which accounts?  hard core backup of all emails . (all funnel in, then all get recorded?) 
 - [ ] F: edit scripts to be python3 scripts
-- [ ] Export 1-password for auto logins
 - [ ] Take notes on using the call recorder [[Record]]
 - [ ] Use WhatSize to clean disk
 

@@ -18,5 +18,5 @@
 | [[2021-04 FindDayCare]]    | Select day care for Eli                              |                                                                                                     |
 | [[2020-08 Race Pitch]]     | .                                                    |                                                                                                     |
 | 2022-00 [[NJ22]]           | Career reset. Reframe self.  Prepare for job         |                                                                                                     |
-| 2018-00 [[Wedding]]        | Plan our wedding                                     |                                                                                                     |
+| [[2018-00 Wedding]]        | Plan our wedding                                     |                                                                                                     |
 

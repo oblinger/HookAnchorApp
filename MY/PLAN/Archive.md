@@ -1,3 +1,13 @@
+- [x] Export 1-password for auto logins
+- [x] IFTTT output of Apple Health data (or any kind of export)
+- [x] SLAM-S Show all does not work
+- [x] Tennis shoes
+- [x] Make caps lock be a tab key
+- [x] where does delete note belong in keyboard shortcuts  [[KBD Shortcuts]]
+- [x] Fix wires at desk
+- [x] OBS:  have the CMDS page auto create / refresh the obsidian CMD entries
+- [x] OBS - Unified namespace -
+- [x] [[OBS.]]:  KM # refactor KM to scan for both kinds of link types, AND to produce both types depending on the context.
 - [x] OBS: Add quick entry using an input box
 - [x] obs: fix add to default to 'q' = quick
 - [x] Cancel our winery.  (QL confirm  FRIDAY)

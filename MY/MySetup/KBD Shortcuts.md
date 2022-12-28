@@ -1,5 +1,4 @@
 
-
 ## = GLOBAL KEYS =
 
 | CH    | BARE              | CAPS - FAST keys   | TAB - Global "GO" / SHIFTED | SLAM - Global "DO" |
@@ -10,7 +9,7 @@
 | D     |                   |                    | go DEV terminal             | tgl DARK mode      |
 | E     |                   |                    | go EMAIL message            |                    |
 | F     |                   |                    | go FINDER                   | start FREEDOM      |
-| G     |                   | GOOGLE edit it     |                             |                    |
+| G     |                   | GOOGLE edit it     |                             | GOOGLE check spell |
 | H     |                   | HIDE window        |                             |                    |
 | I     |                   |                    |                             |                    |
 | J     |                   | JUMP to Obs Pg     |                             |                    |
@@ -26,7 +25,7 @@
 | T     |                   |                    | go TUNES / NEXT             |                    |
 | U     |                   |                    |                             |                    |
 | V     |                   | ?? V PASTE         |                             | plain PASTE        |
-| W     |                   |                    | go WEB                      | reset all WINDOWS  |
+| W     |                   |                    | go WEB                      | WINDOW placements  |
 | X     |                   | ?? X CUT           |                             |                    |
 | Y     |                   |                    |                             |                    |
 | Z     |                   |                    |                             |                    |
@@ -86,11 +85,11 @@
 
 | CH    | COMMAND / [SHIFTED]    | OPTION [SHIFTED] | LT PAIR:  / [SHIFTED]       | RT PAIR           | CRTL      |
 | ----- | ---------------------- | ---------------- | --------------------------- | ----------------- | --------- |
-|       | Standard Editing       |                  | Global Go/Create            |                   |           |
+|       | Standard Editing       |                  | Global Go                   | Obsidian Create   |           |
 | A     |                        |                  |                             |                   | Start ln  |
 | B     | toggle BOLD            |                  |                             |                   | Back Char |
 | C     | COPY to clip           |                  | COLAPSE all / UNCOLLAPSE    | CREATE w template |           |
-| D     | DEL para / file        |                  | open DAILY / .DELETE file   |                   | Del Char  |
+| D     | DEL para / file        | ? DEL note       | open DAILY / .DELETE file   |                   | Del Char  |
 | E     | ?? tgl READING view    |                  |                             |                   | End ln    |
 | F     | FIND in file / REPLACE | FIND everywhere  | FILE in finder/explorer     |                   | Fwd char  |
 | G     | GRAPH view             |                  |                             |                   |           |
@@ -104,8 +103,8 @@
 | O     | OPEN switcher/OUTLINE  |                  | OPEN in default app         |                   |           |
 | P     | cmd PALETTE            |                  | PLAN note /                 | PAGE entry        |           |
 | Q     |                        |                  |                             |                   |           |
-| R     | RENAME file            |                  | RECENT notes pane           |                   |           |
-|       | SAVE file              |                  | SCRATCH note / STARRED pane | SUB PAGE entry    |           |
+| R     | RENAME file            | ? Rename note    | RECENT notes pane           |                   |           |
+| S     | SAVE file              |                  | SCRATCH note / STARRED pane | SUB PAGE entry    |           |
 | T     | TAB new / undo CLOSE   |                  |                             | TEXT entry        | Transpose |
 | U     |                        |                  |                             | UNTYPED entry     |           |
 | V     | PASTE from clip        |                  |                             |                   | Paste     |

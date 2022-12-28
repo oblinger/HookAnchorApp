@@ -2,7 +2,6 @@
   [REF](REF.md),   [TEXT](TAGS/TEXT.md),   [MEETING](MEETING.md),   [TOPIC](TOPIC.md)
   [UNTYPED](UNTYPED.md),   [PTM](PTM.md)
   [TASK](TASK.md)
-  [@Kartik](@Kartik.md)
   [LOG](LOG.md)
   [INFO_PAGE](INFO_PAGE.md)
   [COMP](COMP.md),   [AT](AT.md)

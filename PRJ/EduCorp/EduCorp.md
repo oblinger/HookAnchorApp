@@ -2,7 +2,7 @@
    [[Forwardism]],   [[out]], [[EC types]], 
 
 
-# TODO - [[PRJ/EduCorp/Edu Corp.pptx|PP]]   [[#EDU CORP WHITE PAPER NOTES|>]][[Edu Corp Whitepaper|WP]][[Edu Corp Whitepaper.html|*]]   [[#EDU CORP SUPPLEMENT NOTES|>]][[Edu Corp Supplement.md|Sup]][[Edu Corp Supplement.html|]][[Edu Corp Supplement.html|*]]    [[#FORWARDISM|>]][[Forwardism.md|Fwd]][[Forwardism.html|*]]   [Sheet](https://docs.google.com/spreadsheets/d/1HgqpWQFMyiOU47gzSmkFUPQcrgJ_7ALyxmgSm8nwA44/edit#gid=0)  
+# TODO - [[PRJ/EduCorp/Edu Corp.pptx|PP]]   [[#EDU CORP WHITE PAPER NOTES|>]][[EduCorp White Paper|WP]][[Edu Corp Whitepaper.html|*]]   [[#EDU CORP SUPPLEMENT NOTES|>]][[EduCorp Supplement|Sup]][[Edu Corp Supplement.html|]][[Edu Corp Supplement.html|*]]    [[#FORWARDISM|>]][[Forwardism.md|Fwd]][[Forwardism.html|*]]   [Sheet](https://docs.google.com/spreadsheets/d/1HgqpWQFMyiOU47gzSmkFUPQcrgJ_7ALyxmgSm8nwA44/edit#gid=0)  
 - [ ] Learn about LA-based returning citizen program
 - [ ] Reach out to greenhouse researchers
 - [ ] G: Back of napkin math for greenhouse-based biz in Gambia

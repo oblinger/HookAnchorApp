@@ -1,5 +1,21 @@
 
+# Job Types
 
+## Local - Technical
+## Local - Farming
+
+
+## Knowledge Worker
+
+
+# Value Props
+
+### Mentoring - Role Model
+- In developed countries having role models locked into your success.
+  ==> Agree to garnished 10% of wages for 5 years of full time work or $50K which ever comes first
+  ==> OR pull new junior class man into the business
+
+### BRAND  
 
 
 # LOG

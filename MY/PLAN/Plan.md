@@ -2,6 +2,7 @@
   [[Chew]]
 => [[Top]] > [[MY]] > [[Plan]]  
 
+[[OBS.]] 
   
 #### Short Term Tactical Lists
 - [[Active]]		-  [[Wings]], 

@@ -1,3 +1,6 @@
+- [ ] dennis decoste
+- [ ] thanks for Eli's presents
+- [ ] stomach acid
 
 - [ ] - [ ] paypal validate schwab
 - [ ] nanny for Wednesday

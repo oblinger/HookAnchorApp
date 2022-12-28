@@ -1,4 +1,3 @@
-- [ ] Tennis shoes
 - [ ] Buy tripod. consider go-pro or other video. search best camera w/ a kid
 - [ ] BUY: basket for QL in bathroom; add try to her drawer
 ## FOREVER

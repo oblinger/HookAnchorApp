@@ -1,3 +1,4 @@
+- [ ] CRAZY Powerful Trucks, Trailers, And Machines That Are On Another Level  https://youtu.be/VDNzQMhn3PU
 - [ ] The Most Advanced Tow Trucks you have to see ▶  Knuckle Boom Cranes  https://youtu.be/jyUY32DY2ak 
 - [ ] def-comp accounts going to zero
 - [ ] Caterpillar 990 Wheel Loader Loading Coal On Trucks   https://youtu.be/d1M6tL9VLUY

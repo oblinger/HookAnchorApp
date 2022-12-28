@@ -14,7 +14,7 @@
 | [[__]]               |                                                    |
 | [[subnote]]          |                                                    |
 | [[LOGGED sub note]]  |                                                    |
-| [[AT Page]]          |                                                    |
+| [[AT Entry]]          |                                                    |
 | [[Z JOURNAL header]] |                                                    |
 | [[Z TEST TEMPLATE]]  |                                                    |
  

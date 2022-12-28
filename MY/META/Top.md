@@ -5,12 +5,12 @@
 | [[__]]                          |                                                                                                                               |
 | [[MY]]                          | MY OVERVIEW PAGES                                                                                                             |
 | .  [[Meta]]                     | Descriptions of my organizational systems                                                                                     |
-| .  [[Lists]]                    | My organizational lists (e.g. camping list, etc)                                                                              |
-| .  [[Plan]]                     | My task planning pages                                                                                                        |
+| .  [[Lists]]                    | My organizational lists (e.g. camping list, travel list, etc)                                                                              |
+| .  [[Plan]]                     | My task planning lists                                                                                                     |
 | .  [[Tags]]                     | My tags hierarchy                                                                                                             |
 | [[__]]                          |                                                                                                                               |
-| [[Sets]]                        | GROUPS OF LIKE ENTRIES -- (UN-dated, UN-ordered, Typed)                                                                       |
-| .  [[At]]                       | All Entities (People, Organizations, etc.)                                                                                    |
+| [[SETS]]                        | GROUPS OF LIKE ENTRIES -- (UN-dated, UN-ordered, Typed)                                                                       |
+| .  [[AT]]                       | All Entities (People, Organizations, etc.)                                                                                    |
 | .  [[App]]                      | Info about specific applications                                                                                              |
 | .  [[Docs]]                     | Personal documentations pages                                                                                                 |
 | .  [[Humor]]                    | Jokes I have collected                                                                                                        |
@@ -34,7 +34,7 @@
 | .  [[IDEA]]                     |                                                                                                                               |
 | .  [[Letters]]  '...'           | Formal correspondence                                                                                                         |
 | .  [[Receipts]]                 |                                                                                                                               |
-| .  [[Rocks]]    'prj...'        | Medium sized projects expected completion within a quarter.  (non-coding projects?)                                           |
+| .  [[ROCKS]]    'prj...'        | Medium sized projects expected completion within a quarter.  (non-coding projects?)                                           |
 | .  [[Prjs]]     '...'           | Larger / Longer or indefinite running projects                                                                                |
 | [[__]]                          |                                                                                                                               |
 | [[KMR]]                         |                                                                                                                               |
@@ -45,7 +45,7 @@
 | .  [[Career]]                   |                                                                                                                               |
 | .  [[Fin]]                      |                                                                                                                               |
 | .  [[Food]]                     |                                                                                                                               |
-| .  [[Legal]]                    |                                                                                                                               |
+| .  [[Legal InfoPage]]                    |                                                                                                                               |
 | .  [[Life]]                     |                                                                                                                               |
 | .  [[Med]]                      |                                                                                                                               |
 | .  [[NSTR]]                     |                                                                                                                               |

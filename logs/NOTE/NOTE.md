@@ -34,9 +34,9 @@
 | n2021-05-13 | [[EOCA]]             | Alg setup                                                                   |
 | n2021-05-06 | [[EOCA]]             | Disposition - Stance and Agenda                                             |
 | n2021-01-00 | [[Politics]]         | Not fact based -- trump won by a lot                                        |
-| n2021-00-00 | [[Coaches]]          | Mentor Ideas --                                                             |
 | n2021-00-00 | [[Politics]]         | ARE YOU INFORMED OR ARE YOU MANAGED?                                        |
 | n2021-00-00 | [[Politics]]         | Cheap housing idea                                                          |
+| n2021-00-00 | [[Coaches]]          | Mentor Ideas --                                                             |
 | n2019-00-00 | [[Politics]]         | CONSEQUENCES in the classroom                                               |
 | n2019-00-00 | [[Politics]]         | selection bias in science                                                   |
 | n2019-00-00 | [[Politics]]         | THE TWO CHOICES (politics)                                                  |
