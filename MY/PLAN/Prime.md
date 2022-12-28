@@ -1,7 +1,7 @@
 ## = [[SV]] =
 - [ ] Have call with Brian
 
-## = [[NJ22|NJ22]] =
+## = [[NJ22.]] =
 - [ ] Get Resume ready 4 hands on
 - [ ] [[NJ22 Framing]] - Linkedin; Github
 	- [ ] [[WarStories]]*  

@@ -132,6 +132,20 @@ NOTES:
 
 #### .
 
+### PROJECT TEMPLATE
+
+- SHORT NAME - Each project has a short name, NNNN.  This short name needs to be short if this project is to have TODO items associated.
+  This name need not be unique if it is short lived, longer lived ones will usually have a unique name
+- FOLDER - A project is rooted in a single folder PRJ/NNNN  or it can be dated as:   ROCKS/YYYY-MM NNNN
+- FOLDER CMD - A projects folder can be launched via the "NNNN Folder" action command
+- HEAD - Each project will have a head markdown in its root folder:   ... NNNN/NNNN.md
+- TODO - Projects may have a markdown of todo items in its root folder:   ... NNNN/NNNN..md
+- SPECIALTY LAUNCHERS:
+	- GDRIVE - Projects may have a gDrive folder, if so it is accessed via the "NNNN gdrive" command.
+	- WEBPAGE -  Projects may have an associated web page, if so it is accessed via the "NNNN page" command.
+	- 1PASS -  Projects may have an associated login, if so it is accessed via the "NNNN 1pass" command.
+-  
+
 ## LOCAL-GLOBAL BUCKETING
 A (*the*?) most important aspect of any PKM is the amount of volume and density of relevant information one can access per minute.  Thus shaving even small percentages off the mental, temporal, and physical ease of navigating to some desired piece of knowledge GREATLY boosts the value of the PKM.  After 3 decades of organizing dozens of PKMs here is what I believe to be a set of best practices for achieving the highest levels of PKM nav efficiency, and how I have implemented them in Obsidian.
 

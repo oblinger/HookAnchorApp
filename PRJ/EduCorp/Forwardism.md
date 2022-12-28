@@ -1,5 +1,6 @@
 ---
-	pagetitle: ""
+	pagetitle: "Forwardism"
+	title: "Forwardism"
 	header-includes: |
 		\usepackage{fancyhdr}
 		\pagestyle{fancy}

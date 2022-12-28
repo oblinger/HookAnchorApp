@@ -1,5 +1,5 @@
 ---
-	pagetitle: ""
+	pagetitle: "EduCorp White Paper"
 	header-includes: |
 		\usepackage{fancyhdr}
 		\pagestyle{fancy}

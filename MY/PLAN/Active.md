@@ -1,7 +1,7 @@
 
 - [ ] [[Enxt]]: 		Sheet; Read materials
 - [ ] [[Learn]]:		[[First 90 Days]],  [[Coursera InfoPage]],  
-- [ ] [[NJ22]]:		[[WarStories]].  [[NJ22#LI|LI]]: Title, AF-refactor; 
+- [ ] [[NJ22.]]		[[WarStories]].  [[NJ22#LI|LI]]: Title, AF-refactor; 
 - [ ] [[Fin Adv]]:		Find advisor; Consider Avanti Paperwork
 - [ ] [[Comms]]:		
 

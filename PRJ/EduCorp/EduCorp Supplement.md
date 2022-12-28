@@ -1,5 +1,5 @@
 ---
-	pagetitle: ""
+	pagetitle: "Supplement"
 	header-includes: |
 		\usepackage{fancyhdr}
 		\pagestyle{fancy}

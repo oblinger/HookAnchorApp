@@ -6,6 +6,13 @@
 - CAPS operates as HYPER (Shift-Control-Option-Command)
 - CAPS alone generates Opt-Cmd-F12 which runs my Keyboard Maestro "global command" script
 
+#### TAB-KEY
+- TAB-ALONE --> Generates a 'TAB' key     (via Karabiner Rule)
+- TAB-MODIFIER --> Same as CTRL-CMD
+- TAB-Q --> CTRL-CMD-Q  (use System Preferences -> Keyboard -> Keyboard Shortcuts -> App Shortcuts -> All Applications
+	Press "+"  then add 'Lock Screen'  Shift-Ctrl-Cmd-Q    (this changes the default lock screen keyboard shortcut)
+- TAB-Q --> CTRL-CMD-Q --> Keyboard Maestro Macro to insert a tab key
+
 ### CMD PAGES
 -  [[Action Pages]],  
 
