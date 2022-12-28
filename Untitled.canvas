@@ -1,0 +1,12 @@
+{
+	"nodes":[
+		{"id":"7f23aa894ef06155","x":-125,"y":-30,"width":250,"height":60,"type":"text","text":"this is a card\nwhat is a card?\n"},
+		{"id":"5fff4ed74ee4fa05","x":-219,"y":102,"width":400,"height":400,"type":"file","file":"TAGS/obs.md"},
+		{"id":"2e34c35862f95170","x":-764,"y":-170,"width":400,"height":400,"type":"file","file":"MY/Meta/Top.md"}
+	],
+	"edges":[
+		{"id":"38a5b4f2a61002f7","fromNode":"7f23aa894ef06155","fromSide":"bottom","toNode":"5fff4ed74ee4fa05","toSide":"top"},
+		{"id":"77fe329407c7c2cc","fromNode":"5fff4ed74ee4fa05","fromSide":"left","toNode":"2e34c35862f95170","toSide":"right"},
+		{"id":"6c2ade45e195a535","fromNode":"2e34c35862f95170","fromSide":"top","toNode":"5fff4ed74ee4fa05","toSide":"top"}
+	]
+}
