@@ -1,3 +1,6 @@
+- [ ] adolfo ladder
+- [ ] email Allison
+- [ ]  RT-A should use quick add to create a new @ entry
 - [ ] dennis decoste
 - [ ] thanks for Eli's presents
 - [ ] stomach acid

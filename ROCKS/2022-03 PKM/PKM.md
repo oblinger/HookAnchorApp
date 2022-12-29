@@ -1,12 +1,12 @@
- ! eBook on my approach for personal knowledge management
- - [[META]] - 
+
+
+- [[PKM.]],  [[META]],  [[Hook System]], 
 
 ### _
 - MATRIX YOUR KNOWLEDGE - Organize info into key hierarchies and don't allow existence of one hierarchy to break another.
 	- Divorce 'what' from 'where'.  Avoid using info's global location as a way of specifying its type or intent.  type and intent are always a good organizing axes...  best to allow location to serve another key axis.
 	  (Its ok to use relative location for type or intent, e.g. always using an H1 header 'Todo' to track task types, since that relative path can exist in many places.  but don't put all todos in one global tree)
 	 
-## TODO
 
 # PKM DESIGN
 ## SUBSECTIONS

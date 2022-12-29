@@ -1,0 +1,5 @@
+- [The PARA Method](https://fortelabs.com/blog/para/)
+	- PROJECTS -
+	- AREAS -
+	- RESOURCES -
+	- ARCHIVES -

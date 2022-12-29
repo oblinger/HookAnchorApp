@@ -1,4 +1,5 @@
 
+- [ ] Take notes on using the call recorder [[Record]]
 - [ ] GitHub daily submit (along with KM) - 
 - [ ] EMAILS: Verify saving, verify drafts save, verify save sends, merge all AF mail in. back backup of all mail.
       Ensure sent mail is saved. and received mail is saved.  many copies when creating email
@@ -8,7 +9,6 @@
 - [ ] Figure out: reset mac for headset bluetooth connect
 - [ ] Verify which emails and drafts are being saved/missing?  which accounts?  hard core backup of all emails . (all funnel in, then all get recorded?) 
 - [ ] F: edit scripts to be python3 scripts
-- [ ] Take notes on using the call recorder [[Record]]
 - [ ] Use WhatSize to clean disk
 
 # PROJ

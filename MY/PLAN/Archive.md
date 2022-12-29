@@ -1,3 +1,4 @@
+- [x] employment IRS verification for Nick Allen
 - [x] Export 1-password for auto logins
 - [x] IFTTT output of Apple Health data (or any kind of export)
 - [x] SLAM-S Show all does not work
