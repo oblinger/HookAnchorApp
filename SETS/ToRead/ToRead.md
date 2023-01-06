@@ -23,7 +23,7 @@ BreakAllTheRules
 -  MAIN:        [WSJ](https://wsj.com),  [Seeking Alpha](https://seekingalpha.com),   [Feedly](https://feedly.com),  
 - BLOGS:      [Future Of Coding](https://futureofcoding.org/community),  
 - OTHERS:    [BBC](https://news.bbc.co.uk/),  [NY Times](https://www.nytimes.com/),  [CNN](https://edition.cnn.com/),  
-- LINKS:        [BooksToRead](BooksToRead.md),   [ToResearch](ToResearch.md)
+- LINKS:        [Books To Read](Books%20To%20Read.md),   [ToResearch](ToResearch.md)
 
 ## = MISC
 - [ ] [Mental Models List](https://medium.com/@yegg/mental-models-i-find-repeatedly-useful-936f1cc405d)    
@@ -34,7 +34,7 @@ BreakAllTheRules
 
 - [Vitaly Daily RL](https://www.notion.so/Paper-Notes-by-Vitaly-Kurin-97827e14e5cd4183815cfe3a5ecf2f4c),  
 ## = TOPICS
-### [[BooksToRead]] 
+### [[Books To Read]] 
 ### - Org System
 - [ ] https://www.zsolt.blog/2021/04/exploring-obsidian.html
 

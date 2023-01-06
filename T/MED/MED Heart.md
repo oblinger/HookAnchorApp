@@ -1,4 +1,6 @@
-## = POINTERS =
+ 
+ 
+ ## = POINTERS =
 - CPMC - Heart Disease Reversal Nutrition Program: CPMC 415-353-4278
 - Stanford Preventive Cardiology -  (650) 725-5909
 

@@ -1,4 +1,4 @@
-  [[@Sunnova]]
+ [[@Horizon Fitness]],  [[@Sunnova]]
 [[@Jake Wachman]], [[@Grzegorz Biziel]], 
 [[@Frank Langston]],  [[@Brian]]
   [[@Qingling Oblinger]],   [[@Epsilon Oblinger]],   [[People]],   [[@Eli Oblinger]]
@@ -14,7 +14,7 @@
 
   [@Allison Binns](@Allison%20Binns.md)
   [@Allison Binns](@Allison%20Binns.md)
-  [@Allison Binns](@Allison%20Binns.md),   [Comms](Comms.md)
+  [@Allison Binns](@Allison%20Binns.md),   [COMS](COMS.md)
   [VC ORG](VC%20ORG/VC%20ORG.md),   [Crm](Crm.md)
    [ORG](ORG/ORG.md),   [@eGenisis](@eGenisis.md),   [VC ORG](VC%20ORG.md),   [@Vikram](@Vikram.md),   [Mentors](Mentors.md),   [@Rzero](@Rzero.md)
 

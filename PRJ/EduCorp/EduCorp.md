@@ -1,6 +1,5 @@
-
-   [[Forwardism]],   [[out]], [[EC types]], 
-
+- [[EC.]],   [[Forwardism]],   [[out]], [[EduCorp Types]], 
+- 
 
 # TODO - [[PRJ/EduCorp/Edu Corp.pptx|PP]]   [[#EDU CORP WHITE PAPER NOTES|>]][[EduCorp White Paper|WP]][[Edu Corp Whitepaper.html|*]]   [[#EDU CORP SUPPLEMENT NOTES|>]][[EduCorp Supplement|Sup]][[Edu Corp Supplement.html|]][[Edu Corp Supplement.html|*]]    [[#FORWARDISM|>]][[Forwardism.md|Fwd]][[Forwardism.html|*]]   [Sheet](https://docs.google.com/spreadsheets/d/1HgqpWQFMyiOU47gzSmkFUPQcrgJ_7ALyxmgSm8nwA44/edit#gid=0)  
 - [ ] Learn about LA-based returning citizen program
@@ -11,14 +10,7 @@
 
 
 # TOPICS
-## SHEET DETAILS
-#### TYPE
-- B2B
-- B2C
-### AREA
-#### locB2B
-- FARM
-- 
+
 ## LINKS
 - [Greenhouse Farming](Greenhouse%20Farming/Greenhouse%20Farming.md),  [gEduCorp](https://drive.google.com/drive/u/0/folders/10pUPzVcBn5PxmMQYC8T60PDpdrQgQ817):   
 ## EDU CORP WHITE PAPER NOTES
@@ -275,6 +267,29 @@ TOOL CHOICE CHART
 
 
 # LOG
+### t2023-01-03  Email to Ketav
+Ketav Patel <pketav@gmail.com>
+
+
+XXXX:
+
+I didn't want to take over Kian's nice birthday party with my naive questions 
+still seems being a CFO for a non-profit focused on providing alternative funding for new businesses you are amazingly well place to throw enlightening cold water on my nacent thinking.
+
+Even in 
+
+-- I was surprised to learn that loan failure was not a large issue with these alternate loans.  I wonder if that is genaerlly true.  Even if the loan amounts required become larger does this remain mostly a non-issue?  Also I wonder if one needs to be overly conservative in order to keep failure rates low.  That is, if one had significantly greater personal knowlege about the recipient, could one safely offer loans to a much larger set of recipients?  Any thought on that?
+
+-- SIGNIFICANT TRAINING -- Jobs that require significant training can be problematic since one may not get a job after the training.  This limits the recipients desire to take the risk in time and money, and it increase the loan failure rate.  With EduCorp you are guaranteed a job, since you are joining a functioning business, and when you sign a loan you immediately a starting the business in which you are a part owner.  The job risk is replace by a business failure risk, but the business failure risk is reduced by having a sister business.
+
+-- NETWORK --  Jobs with significant network effects can be helped by having successful businesses co-signing your loan.
+
+-- BRAND --  Group of businesses form a natural informal or formal brand.  
+
+
+
+
+
 ### n2022-12-22  Job Typeshttps://medium.com/p/ea8432c673b9
 ### m2022-11-21  [[@Teddy Lange]]
 

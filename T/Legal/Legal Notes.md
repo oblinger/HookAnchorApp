@@ -304,5 +304,5 @@ As far as reviewing an NDA goes, best practice is to send them to me. There is n
 Hope that helps, Dave
 
 -----------
-  [Legal InfoPage](Legal%20InfoPage.md)
-  [Legal Uniform](Legal Uniform/__Legal Uniform__.md)  [Legal InfoPage](Legal%20InfoPage.md)
+  [Legal Notes](Legal%20Notes.md)
+  [Legal Uniform](Legal Uniform/__Legal Uniform__.md)  [Legal Notes](Legal%20Notes.md)

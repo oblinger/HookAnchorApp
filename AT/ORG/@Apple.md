@@ -60,6 +60,11 @@ Retina15 Serial:  C02V811RHTD9
 
 <<<<<<< HEAD
 # LOG
+### 2023-01-03  Laptop Repair
+
+AirMax
+- pushing crown or other button had no effect
+
 ### 2022-10-20  Laptop Repair
 
 OLD Case: [101837219240](https://getsupport.apple.com/GetCaseDetails?caseid=101837219240&locale=en_US) - 

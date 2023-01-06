@@ -11,7 +11,7 @@
 - [ ] Get Mentors
 
 ## = [[SOCIAL]] =
-- [[Comms]]: John, Anastasia
+- [[COMS]]: John, Anastasia
 
 
 

@@ -1,6 +1,15 @@
-## TODO
+
+- [ ]  should use quick add to create a new @ entry
+- [ ] ARROWS:  hotkeys for bullets, headings, calendar, ???    for up, down, left, right
+- [ ] change 'page' suffix to 'web'
+- [ ] Quick Add Cmd page.
+- [ ] CMD rename and delete
+- [ ] CMD application folder scanner should not update cmd if it already exists with a different name
+
+ Instacart
+ ## TODO
 - [ ] [[#COLON-COLON]]: Add colon-colon section with links:    :: [[todo]], [[plan]], 
-- [ ] [[#CROSS-LINKING]]: 
+- [ ] [[#CROSS-LINKING]]:  [[Multi-List WorkFlow]],  
 - [ ] [[#KM-T]]: 
 - [ ] [[#OBS-PUBLISH]]: 
 - [ ] How do I manage cross linked logs.  Add TAGS???

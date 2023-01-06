@@ -1,7 +1,7 @@
  
 ## ACTIVE
-- [ ] [[Coursera InfoPage]] - Complete Deep Learning Course
-- [ ] [[First 90 Days]] - First 90 days
+- [ ] [[Coursera Notes]] - Complete Deep Learning Course
+- [ ] [[F90]] - First 90 days
 
 ## PAPERS
 - [ ] Attention

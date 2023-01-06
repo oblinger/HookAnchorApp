@@ -11,7 +11,7 @@
 | d2022-09-26 | [[2022-10-26]] |                          |
 | d2022-08-17 | [[2022-08-17]] |                          |
 | d2022-08-10 | [[Days]]       | VAR Autoencoders         |
-| d2022-08-05 | [[Days]]       | [[Coursera InfoPage]]    |
+| d2022-08-05 | [[Days]]       | [[Coursera Notes]]       |
 | d2022-08-04 | [[Days]]       | Attention and DL reading |
 | d2022-07-15 | [[Days]]       | DL class notes           |
 | d2022-07-11 | [[Days]]       | Coursera Tech Setup      |

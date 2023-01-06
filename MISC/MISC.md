@@ -4,7 +4,7 @@
 [[Babysitting]],  [[Disks]]
   [[Courses]]
   [webshare](webshare/webshare.md)
-  [Coursera InfoPage](Coursera%20InfoPage.md)
+  [Coursera Notes](Coursera%20Notes.md)
   [STARTUPS](STARTUPS.md),   [Templates](Templates.md)
   [Anchors](Anchors.md)
   [Test88](Test88/Test88.md)

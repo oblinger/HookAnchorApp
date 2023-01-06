@@ -1,3 +1,3 @@
 =[[TAG]]   [[TAG ROOT]] 
 
-- [[My Setup]],  
+- [[MY Digital Setup]],  

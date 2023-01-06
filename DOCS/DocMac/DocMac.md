@@ -891,7 +891,7 @@ Bob Daniels
 San Francisco, CA 94110 
 United States
 
-### xx Karabiner-Elements
+### xx Karabiner-Elements  [[Karabiner Notes]] 
 
 See ~/.config/karabiner/karabiner.json
 

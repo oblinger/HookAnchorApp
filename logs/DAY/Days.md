@@ -13,7 +13,7 @@
 See notes in [[Attention Mechanism]]
 
 
-### d2022-08-05  [[Coursera InfoPage]]
+### d2022-08-05  [[Coursera Notes]]
 
 
 ### d2022-07-15  DL class notes

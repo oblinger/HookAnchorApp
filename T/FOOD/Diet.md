@@ -28,7 +28,7 @@ IDEAS
 - [ ] FOODS - Beans++, Snacking--, Meat++, 
 - [ ] WEIGHT???
 
-[[Noom]] 
+[[Noom Notes]] 
 
 
 ### 2021 - Fix My Heart

@@ -1,3 +1,16 @@
+
+SOON
+- [ ] mesh bag for food
+- [ ] hair catcher for tub
+- [ ] [Ikea bin](https://www.ikea.com/us/en/p/trofast-mesh-storage-box-light-green-gray-90518574/) - mesh bins.
+- [ ] buy freezer containers
+
+
+
+- [ ] Glucose monitor (buy it)
+- [ ] kureig
+- [ ] [10Q](https://antneygrub-store.mybigcommerce.com/instant-pot-duo-nova-10qt-multi-cooker-stainless-steel/?gclid=CjwKCAiA68ebBhB-EiwALVC-NuIDsXNcsuBgSPRdG5844ShzVztqIWPzAsg_8qHO6T8On9W5Wm_MkxoChNgQAvD_BwE) instapot  
+
 - [ ] Buy tripod. consider go-pro or other video. search best camera w/ a kid
 - [ ] BUY: basket for QL in bathroom; add try to her drawer
 ## FOREVER

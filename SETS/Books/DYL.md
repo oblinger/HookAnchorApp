@@ -1,6 +1,6 @@
+ 
 ## = TODO
-  ///  Build 3 Odyssey plans.  Dan one-pager.  Prototype chapter.
-  
+
 #### _
 it’s about technical ideas with impact. Space space.Benefit and matters efficiency and organization
 not committed enough to any one idea
@@ -11,7 +11,7 @@ Data scientist
 Lots of little problems
 
 
- [[NJ22]] 
+- [[NJ22]] 
  
 **>>> BOOK  -- DESIGNING YOUR LIFE <<<** 
 ## = SUMMARY
@@ -239,8 +239,27 @@ Why Are we here?
 	  
   	_
 
-## = (3) INSIGHTS =   [[JobTypes|JT]]
-AEIOU: Activities; Environments; Interactions; Objects; Users
+## = (3) INSIGHTS =   [[Job Types|JobTypes]] 
+AEIOU: Activities; Environments; Interactions; Objects; SOCial, Users
+
+### COMPELLING WORK
+#### Design Work (Strategy, Mechanism)
+
+#### Mechanism Design (Universal, Self-Correcting, Societal, Complex)
+- Bone to chew on.  
+##### Scalable Block Chain
+##### Edu Corps propagation mechanism
+##### Hook System
+##### Aeolus Config; Plan State Machine; 
+
+
+#### Strategy (leader, creator)
+
+#### Coding
+##### Designing API
+##### Qingling's two projects
+
+#### _
 
 ### CONSIDERATIONS
 ### EXECUTIVE - Strategic, Leader
@@ -257,9 +276,11 @@ AEIOU: Activities; Environments; Interactions; Objects; Users
 - GREGARIOUS - 
 
 #### LEADING:  
+- STATUS/CENTRALITY/IMPACT
 - OWNING - 
 - MENTORING - 
 - DELIGATING/MENTORING - 
+
 ##### .
 
 #### . 
@@ -422,10 +443,32 @@ Possible centers:
 
 
 
+### LOVED BIGGER PROJECTS
+ACTualize, BIG, ME, MONEY, PRODuctivity, PUBlish, SOCial, 
+
+#### 2022	Hook System	Me, Prod, Pub
+#### 2022	EduCorp			Act, Soc
+#### 2021	Forum 				Act, Soc, 
+#### 2021	OBSIDIAN			Me, Prod, Pub
+- ActionPages, Fling, 
+#### 2019	E Blk Chain
+#### 2018	UNIFORM			Big, 
+#### 2009	Auto Hot Key
+#### 2007	Ghost				Big, Soc
+#### 2002	Notester: 
+
+### LIKED PROJECTS
+#### 2020	Team Saver		Mon, 
+#### 2020	Org Bsmnt		Me, Prod,
+
+
+
+
 ### .
 
 
 ## = (3) INSIGHT LOG
+
 
 ### 2022-12-13  Dan the designer
 
@@ -491,6 +534,13 @@ NEAR MISS -- Can perform well, but not my passion, nor place of excellence
   _
 ## = (3) ACTIVITY LOG = 
 >> How: Engaged; Energized
+### 2023-01-01  Hook System
+For several days my brain was focused on crystalizing insights about how I use obsidian into the hook system.
+- Really put energy into hyper optimizing this for my personal use
+- Really get continued joy out of using this efficient system
+- Was excited to think thru and write up the core ideas for this system
+### 2023-01-01  Edu Corp
+
 
 ### 2022-04-19  Design - long distance commuter train, package delivery systems, 
 ### 2022-04-14  OBSIDIAN COMPLETIST 9&6

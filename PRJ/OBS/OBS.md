@@ -1,6 +1,22 @@
   [[km]]
 
-- [[OBS.]] (todos),   [[DocObsidian]],   [[KBD Shortcuts]], 
+- [[OBS.]] (todos),   [[DocObsidian]],   [[KBD Shortcuts]],   [[MY Digital Setup]],  
+- [[Action Pages Plugin]],  [[Multi-List WorkFlow]], 
+
+### CMD PAGES
+-  [[Action Pages Plugin]],  
+
+### FACETS
+- 			--  No suffix overrides others as leading choice
+- 1Pass		--  Launches from 1password (5)
+- App		--  Launches Mac App (3)
+- Box			--  Drop box folder
+- Folder		--  Launches finder on Folder (6)
+- Gdrive		--  Web folder (6)
+- Notes		--  Background info on Keyword (8)
+- Page		--  Launches URL (7)
+
+qrstuvwxyz
 
 ### KEY-REMAPPING
 #### CAPS-LOCK
@@ -14,12 +30,9 @@
 	Press "+"  then add 'Lock Screen'  Shift-Ctrl-Cmd-Q    (this changes the default lock screen keyboard shortcut)
 - TAB-Q --> CTRL-CMD-Q --> Keyboard Maestro Macro to insert a tab key
 
-### CMD PAGES
--  [[Action Pages]],  
-
 
 ### PREFIX NAMED PAGES:   (for the Jump and Add commands)
-- [[Active]]   B   [[Comms]]   DAILY   [[Fried]]   E   F   G   [[Hack]]   I   J   K   L   M   N   O   [[Prime]]   [[Quick]]  [[Repeat]]   [[Self]]   [[Todo]]   U   V   [[Waiting]]   X   Y   Z
+- [[Active]]   B   [[COMS]]   DAILY   [[Fried]]   E   F   G   [[Hack]]   I   J   K   L   M   N   O   [[Prime]]   [[Quick]]  [[Repeat]]   [[Self]]   [[Todo]]   U   V   [[Waiting]]   X   Y   Z
 - [[PLAN]] -- This is the list of planning pages.
 
 

@@ -1,3 +1,25 @@
+- [x] Clean Drain in bath
+- [ ] FAANG (matrix, courses, war stories, reading)
+- [ ] [[DYL]] Build 3 Odyssey plans.  Dan one-pager.  Prototype chapter
+- [ ] Get Schedule C and income from last year
+- [x] [[Yearbook]]  July 23 - Final day
+- [ ] photographer
+- [x] Book Photographer
+- [x] - [ ] Send zero balance to from Vanguard to Nicholas Pensions for Oct and Nov
+- [x] Find War Stories
+- [x]  mom's visit
+- [x]  Fix microwave [[__Phone__#2022-03-21 replace new GE microwave|ph]]
+- [x] Taxes
+- [x] QL sapphire card replament
+- [x] pictures of party to mom
+- [ ] buy: compact jewelry storage
+- [x] def-comp accounts going to zero
+- [x] treadmill shock; 5K does complete 5K; FatBurn does not allow cool down
+- [x] treadmill shock; 5K does complete 5K; FatBurn does not allow cool down
+- [x] Wider laptop desk
+- [x] Cancel Love Every
+- [x] Credit card for QL
+- [x] Call Audi international   800-822-2834.
 - [x] employment IRS verification for Nick Allen
 - [x] Export 1-password for auto logins
 - [x] IFTTT output of Apple Health data (or any kind of export)

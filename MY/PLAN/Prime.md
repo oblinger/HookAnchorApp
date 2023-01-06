@@ -6,11 +6,11 @@
 - [ ] [[NJ22 Framing]] - Linkedin; Github
 	- [ ] [[WarStories]]*  
 - [ ] [[@Yoshua Bengio]]+
-- [ ] [[Comms]]* - Get 4 letters of reference
+- [ ] [[COMS]]* - Get 4 letters of reference
 - [ ] [[BeFAANG#^todo|BeFAANG]] - Hack it
 
 ## = [[Learn|Learning]] =
-- [ ] [[Coursera InfoPage]]* - Complete Coursera Deep Learning Course
+- [ ] [[Coursera Notes]]* - Complete Coursera Deep Learning Course
 - [ ] HACK+  Hack some tensor flow
 - [ ] Find best FAANG prep (1) class.  (2) mentors
 - [ ] Read mgt books

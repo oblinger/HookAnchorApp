@@ -8,14 +8,15 @@
 
 | Date        | File             | Notes                                                                       |
 | ----------- | ---------------- | --------------------------------------------------------------------------- |
-| n2022-12-22 | [[EC types]]         | Ideal Job Requirements                                                      |
-| n2022-12-22 | [[EC types]]         | Job Ideas                                                                   |
+| n2023-01-04 | [[@Jason Syversen]]  | Equity Calculations & Negotiation Summary                                   |
+| n2022-12-22 | [[EduCorp Types]]    | Ideal Job Requirements                                                      |
+| n2022-12-22 | [[EduCorp Types]]    | Job Ideas                                                                   |
 | n2022-12-22 | [[EduCorp]]          | Job Typeshttps://medium.com/p/ea8432c673b9                                  |
 | n2022-12-14 | [[@Chris Hayden]]    | AI @ Sunnova                                                                |
 | n2022-11-03 | [[Parents]]          | Stuff dad does with his laptop                                              |
 | n2022-10-15 | [[@Yashin Lin]]      | Yashin Self Summary after loosing her job                                   |
-| n2022-10-05 | [[@Jason Syversen]]  | Jason offer email                                                           |
 | n2022-10-04 | [[@Jason Syversen]]  | Thinking about the Job choice                                               |
+| n2022-10-03 | [[@Jason Syversen]]  | Jason offer email                                                           |
 | n2022-09-24 | [[Brain3]]           | Broad Agenda (For Nina)                                                     |
 | n2022-09-11 | [[Brain3]]           | WORLD MODEL                                                                 |
 | n2022-08-23 | [[Brain3]]           | ARCHITECTURE & ALGORITHM IDEAS                                              |

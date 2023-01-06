@@ -6,6 +6,9 @@
 
 | Date       | File                | Notes                                                                                     |
 | ---------- | ------------------- | ----------------------------------------------------------------------------------------- |
+| 2023-01-03 | [[@Apple]]              | Laptop Repair                                                                             |
+| 2023-01-01 | [[DYL]]                 | Hook System                                                                               |
+| 2023-01-01 | [[DYL]]                 | Edu Corp                                                                                  |
 | 2022-12-16 | [[2022-W51]]            | FRI                                                                                       |
 | 2022-12-14 | [[Phone]]               | Fix roof fin                                                                              |
 | 2022-12-14 | [[2022-W51]]            | WED                                                                                       |
@@ -46,7 +49,7 @@
 | 2022-08-17 | [[Phone]]               | Dr Lue Urologist                                                                          |
 | 2022-08-01 | [[Phone]]               | notes while out - about me                                                                |
 | 2022-07-19 | [[Brain3]]              | G-Flow Nets Maybe - whats my example                                                      |
-| 2022-07-19 | [[Comms]]               | Ping Goals                                                                                |
+| 2022-07-19 | [[COMS]]                | Ping Goals                                                                                |
 | 2022-07-18 | [[ToBuy]]               | Walnut desktop                                                                            |
 | 2022-07-12 | [[Phone]]               | Eli Sand toys                                                                             |
 | 2022-07-12 | [[Phone]]               | LOWES tool rental                                                                         |
@@ -93,7 +96,7 @@
 | 2022-03-25 | [[Dataview]]            | [templater+dataview example](https://github.com/blacksmithgu/obsidian-dataview/issues/42) |
 | 2022-03-21 | [[Phone]]               | Home Depot - replace new GE microwave                                                     |
 | 2022-03-21 | [[Weekly]]              |                                                                                           |
-| 2022-03-19 | [[Crunchbase InfoPage]] | === AMY SEARCH STRATEGY ===                                                               |
+| 2022-03-19 | [[Crunchbase Notes]]    | === AMY SEARCH STRATEGY ===                                                               |
 | 2022-03-19 | [[Uniting America]]     | Uniting America On The Issues Of Racial Fairness and Racial Disparity                     |
 | 2022-03-19 | [[Paths]]               | VC Areas                                                                                  |
 | 2022-03-18 | [[Campaigns]]           | Aniket Recruiters                                                                         |
@@ -105,7 +108,7 @@
 | 2022-03-14 | [[Weekly]]              | Q2 GOALS                                                                                  |
 | 2022-03-13 | [[Paths]]               | inside google                                                                             |
 | 2022-03-13 | [[Paths]]               | zzzz                                                                                      |
-| 2022-03-13 | [[MED_Sleep]]           | Frequent Sleeping Pills                                                                   |
+| 2022-03-13 | [[MED Sleep]]           | Frequent Sleeping Pills                                                                   |
 | 2022-03-10 | [[Searches]]            | COMPANIES ===                                                                             |
 | 2022-03-10 | [[Searches]]            | ML COMPANIES ===                                                                          |
 | 2022-03-09 | [[Paths]]               | Post Amy Kruse Thinking                                                                   |
@@ -168,14 +171,14 @@
 | 2021-10-07 | [[AF Sale]]             | Jon discussion about Taxes                                                                |
 | 2021-10-06 | [[Journal Old]]         | BAJI                                                                                      |
 | 2021-10-01 | [[Journal Old]]         | -- SITUATION SUMMARY --                                                                   |
-| 2021-10-01 | [[nj22_contents]]       | -- SITUATION SUMMARY --                                                                   |
-| 2021-09-23 | [[Comms]]               | WHOM IN MY NETWORK TO ASK                                                                 |
+| 2021-10-01 | [[NJ22 Contents]]       | -- SITUATION SUMMARY --                                                                   |
+| 2021-09-23 | [[COMS]]                | WHOM IN MY NETWORK TO ASK                                                                 |
 | 2021-09-23 | [[Journal Old]]         | WHOM IN MY NETWORK TO ASK                                                                 |
 | 2021-09-23 | [[Resume]]              | Resume Experience                                                                         |
 | 2021-09-22 | [[Journal Old]]         | >>> WP    -- NEXT JOB ACTIVITIES <<<                                                      |
-| 2021-09-22 | [[nj22_contents]]       | >>> WP    --  ACTIVITIES <<<                                                              |
+| 2021-09-22 | [[NJ22 Contents]]       | >>> WP    --  ACTIVITIES <<<                                                              |
 | 2021-09-22 | [[Resume]]              | RESUME OBJECTIVE                                                                          |
-| 2021-09-21 | [[Comms]]               | QUESTIONS TO ASK                                                                          |
+| 2021-09-21 | [[COMS]]                | QUESTIONS TO ASK                                                                          |
 | 2021-09-21 | [[Journal Old]]         | QUESTIONS TO ASK                                                                          |
 | 2021-09-21 | [[Journal Old]]         | SUMMARY OF WORK THAT FITS                                                                 |
 | 2021-09-21 | [[DYL]]                 | SUMMARY OF WORK THAT FITS                                                                 |
@@ -268,7 +271,7 @@
 | 2021-04-01 | [[Journal Old]]         | Jason #5                                                                                  |
 | 2021-04-00 | [[Buckets]]             | Summary at that time                                                                      |
 | 2021-04-00 | [[Journal Old]]         | >>> TOP   -- NEXT JOB <<<                                                                 |
-| 2021-04-00 | [[nj22_contents]]       | >>> TOP   -- NEXT JOB <<<                                                                 |
+| 2021-04-00 | [[NJ22 Contents]]       | >>> TOP   -- NEXT JOB <<<                                                                 |
 | 2021-03-30 | [[@Jason Syversen]]     | Jason Summary                                                                             |
 | 2021-03-30 | [[Journal Old]]         | Jason Summary                                                                             |
 | 2021-03-28 | [[Journal Old]]         | Big picture next step ideas / pulls                                                       |
@@ -281,7 +284,7 @@
 | 2021-03-17 | [[@Jason Syversen]]     | Jason response #1                                                                         |
 | 2021-03-17 | [[Journal Old]]         | Jason response #2                                                                         |
 | 2021-03-17 | [[Journal Old]]         | Jason response #1                                                                         |
-| 2021-03-15 | [[MED_Heart]]           | Doctor's Appt                                                                             |
+| 2021-03-15 | [[MED Heart]]           | Doctor's Appt                                                                             |
 | 2021-03-04 | [[Journal Old]]         | The Nick and Dan LLC Model                                                                |
 | 2021-03-04 | [[Jnl]]                 | The Nick and Dan LLC Model                                                                |
 | 2021-03-03 | [[Journal Old]]         | Dan's North Star                                                                          |
@@ -403,7 +406,7 @@
 | 2015-03-30 | [[Fin]]                 | Setup SEP.  Planned 2015                                                                  |
 | 2015-02-05 | [[Fin]]                 | Mike's options trading strategy                                                           |
 | 2015-00-00 | [[Parents]]             | old software for Dad info                                                                 |
-| 2015-00-00 | [[MED_Sleep]]           | Pill exploration                                                                          |
+| 2015-00-00 | [[MED Sleep]]           | Pill exploration                                                                          |
 | 2014-12-10 | [[DocMac]]              | WIFI CONNECTIVITY ISSIE                                                                   |
 | 2013-03-03 | [[ReBuy]]               | Standing mat                                                                              |
 | 2013-00-00 | [[ReBuy]]               | Scotch                                                                                    |
@@ -432,6 +435,6 @@
 | 2009-11-19 | [[Journal Old]]         | – Progress                                                                                |
 | 2009-11-09 | [[OLD 200x Weekly]]     | – Progress                                                                                |
 | 2000-00-00 | [[ReBuy]]               | Tofurky                                                                                   |
+| 2000-00-00 | [[MED Sleep]]           | Sleep meds                                                                                |
 | 2000-00-00 | [[MED]]                 | Medical.InsuranceAnalysis --                                                              |
 | 2000-00-00 | [[MED]]                 | Medical Questions --                                                                      |
-| 2000-00-00 | [[MED_Sleep]]           | Sleep meds                                                                                |

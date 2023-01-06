@@ -1,12 +1,13 @@
 
-| WEEKLY        |                                                                                                                |
-| ------------- | -------------------------------------------------------------------------------------------------------------- |
-| **HOT LISTS** | [SimpleNote](https://app.simplenote.com/) [Reminders](https://www.icloud.com/#reminders) AudioMemos # [FileThis](https://filethis.com/login/) |
-|               | Bk  Nails  Nose  Groc  Friday                                                                                  |
-| **HOUSE**     | Room: [My-]Desks/Bin/Shelf  House: Pass                                                                        |
-| **TODO**      | Clean [[Todo]] list for this week                                                                                  |
-| **PLAN**      | Week plan in Top                                                                                               |
-| **IN2**       | Quick scrub                                                                                                    |
+| WEEKLY        |                                                                                                                            |
+| ------------- | -------------------------------------------------------------------------------------------------------------------------- |
+| **HOT LISTS** | [[SimpleNote 1Pass\|SimpleNote]] [Reminders](https://www.icloud.com/#reminders) AudioMemos # [[FileThis Shell\|File This]] |
+|               | Bk  Nails  Nose  Groc  [[Friday]]                                                                                              |
+| **HOUSE**     | Room: [My-]Desks/Bin/Shelf  House: Pass                                                                                    |
+| **TODO**      | Clean [[Quick]] & [[Todo]] lists for this week                                                                                          |
+| **PLAN**      | Week plan in Top                                                                                                           |
+| **IN2**       | Quick scrub                                                                                                                |
+|               |                                                                                                                            |
 
 
 | MONTHLY     |                                                      |
@@ -20,7 +21,7 @@
 
 ### === QUARTERLY ===
 -- ToFile
--- In3 ...
+-- In3 ... 
 
 
 

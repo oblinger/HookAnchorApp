@@ -150,7 +150,7 @@ MRP: Eyal Amir, Dan Roth,
 ### m2022-04-06  - Resume; 
 - What am I up to:
 	- [[FAANG]] - My FAANG contacts.
-	- [[Comms|Calls]] - My list of planned calls.
+	- [[COMS|Calls]] - My list of planned calls.
 	- [[DYL|DYL]] - Notes on my "homework" for Design Your Life.
 	-  [Oblio](https://publish.obsidian.md/oblio) - External site  [Joes page](https://publish.obsidian.md/oblio/AT/%40Joseph+Yeh) 
 - Linked In updates [[z2 - Linked In Module|here]].
@@ -159,7 +159,7 @@ MRP: Eyal Amir, Dan Roth,
 	Pin some repos; should I add some more?;  Maybe some activity?; update photo
 
 ### m2022-03-21 - List of VC firms
-60m Topics: Deep  [[Crunchbase InfoPage|VCs]]   [[Resume|Resume]]   [[NSTR/Pic/Msg]] 
+60m Topics: Deep  [[Crunchbase Notes|VCs]]   [[Resume|Resume]]   [[NSTR/Pic/Msg]] 
 
 Jennifer Chan
 

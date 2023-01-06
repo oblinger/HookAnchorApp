@@ -1,17 +1,18 @@
-MORN:  	Meditate, Pills, Day, [[Comms]],    NOON:   	EVE: Plan, Chew
+- [ ] dennis decoste
+MORN:  	Meditate, Pills, Day, [[COMS]],    NOON:   	EVE: Plan, Chew
 
 
 ### 2022-11-30  short week (cyber monday)
 - [x] [[Exercise]]:  Get treadmill setup
-- [ ] [[Comms]]:  Get plan in execution
+- [ ] [[COMS]]:  Get plan in execution
 - [ ] [[resLI]]:  Draft update & todo list
 - [x] [[WarStories]]:  Crank it
-- [ ] [[Coursera InfoPage]]: 5h
+- [ ] [[Coursera Notes]]: 5h
 - [ ] + SV Negotiations%%%%
 
 
 ### 2022-11-28 thanksgiving trip
-- [ ] 5h	[[Coursera InfoPage]]
+- [ ] 5h	[[Coursera Notes]]
 
 ### 2022-11-07  
 - [ ] Progress: [[SV]], [[WarStories]],  
@@ -72,6 +73,6 @@ SECOND:
 
 REPEAT:  
 - [ ] Daily 7-min exercise
-- [ ] PING: Emails, [[Comms]]
+- [ ] PING: Emails, [[COMS]]
 
 

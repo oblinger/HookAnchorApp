@@ -1,1 +1,2 @@
-- 30 min peleton.
+- [[MED]], [[Run]]
+- - 30 min peleton.

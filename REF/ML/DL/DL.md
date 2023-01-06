@@ -4,7 +4,7 @@
 =[[TAG]] <[[ML]] 
 
 - [[@Yoshua Bengio]] 
-- [Coursera InfoPage](Coursera%20InfoPage.md),  [[NN]],  [@Yoshua Bengio](@Yoshua%20Bengio.md),  
+- [Coursera Notes](Coursera%20Notes.md),  [[NN]],  [@Yoshua Bengio](@Yoshua%20Bengio.md),  
 
 
 

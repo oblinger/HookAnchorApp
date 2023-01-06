@@ -1,37 +1,38 @@
-- [ ] [[NJ22.]]	Update github photo and profile info
-- [ ] refill bookbag and toiletries
-- [ ] Call Audi international   800-822-2834.
+- [ ] Ground the treadmill
+- [ ] Get Amanda call on the books
+- [ ] [[@Sunnova]] prep
+- [ ] Figure out my coaching situation
+- [ ] get house repair guy to come
+- [ ] Dr Hassler.  get rid of the prilosec
+
+- [ ] Allison restart
+- [ ] GIFTS:  Dave-O, Sammie, Jazz, Zuly
+- [ ] Paypal validate schwab
+- [ ] thanks for Eli's presents
+- [ ] handkerchief
+- [ ] take photos of all things we want to sell
+- [ ] meeting with Amanda @ BCMS
 - [ ] flu shot 
-- [ ] Auto Repair
+- [ ] Nick meeting days (pick them with him)
 
-- [ ] evidence based teaching
-- [ ] Call Collette, Vikram
 
-- [ ] Get job application tests from James
+- [ ] Covid wait for - Yashin's conservative friend
+- [ ] adolfo ladder
+- [ ] Fix car
+- [ ] Write to guy at BCMS
+- [ ] Eli note to Julian
+- [ ] passport for eli
+- [ ] birth certificates and docs into iphone
 - [ ] tsp thinking.
 - [ ] mailto:bbrugler@tiedemannadvisors.com  dwells@albionfinancial.com  albion
-- [x] Credit card for QL
-- [ ] Covid wait for - Yashin's conservative friend
-- [ ] Call doc about my heart test results.
-- [ ] Cancel Love Every
 - [ ] Add 1password to shared acct
 
+
+- [ ] Get job application tests from James
 - [ ] [[self]]: Hire health coach
-- [ ] MED:  Book appt w/ EMT
-- [ ] Process mom's Eli educational funds.
-- [ ] XMAS:  Plan our time
 - [ ] Get AF accounts cleaned:   (Find the hiring tests)
-- [ ] Nick get review
-- [ ] Plan for crypto
-- [ ] Rocket Lawyer
 
 
-GIFTS:
-- Cards.
-- QL:  drive, Method 7, 
-- Eli swing set.  rocking horse.  thomas the train.
-- Mom, got her ear-rings... Dad has them
-- Dad, got him the hard drives
-- Dave-O:
-- Sammie, Jazz, Zuly
-- 
+
+
+

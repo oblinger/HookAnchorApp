@@ -8,6 +8,7 @@
 
 | Date        | File                 | Notes                                                             |
 | ----------- | -------------------- | ----------------------------------------------------------------- |
+| m2023-01-04 | [[@Horizon Fitness]]     | Service call                                                      |
 | m2022-12-14 | [[@Nick Allen]]          | Prep for talking with Jake                                        |
 | m2022-12-12 | [[@Jake Wachman]]        | First Call; Tell me about 150 person headcount                    |
 | m2022-12-07 | [[@Joseph Yeh]]          | [[resLI#2022-12-07  Framing Self]]                                |
@@ -21,7 +22,7 @@
 | m2022-11-05 | [[@Frank Langston]]      | Discussions before Reference call                                 |
 | m2022-10-30 | [[@Theo Enns]]           | Prep for call from Jason                                          |
 | m2022-10-25 | [[@Jason Syversen]]      | Am I Joining, or WHAT?!                                           |
-| m2022-10-21 | [[MED_Heart]]            | Dr. HUI Visit                                                     |
+| m2022-10-21 | [[MED Heart]]            | Dr. HUI Visit                                                     |
 | m2022-10-18 | [[@Jason Syversen]]      | JASON TAM discussion                                              |
 | m2022-10-17 | [[@Igor Shindel]]        | Intro Call                                                        |
 | m2022-10-14 | [[@Jason Syversen]]      |                                                                   |

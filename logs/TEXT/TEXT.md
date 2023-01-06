@@ -7,6 +7,8 @@
 
 | Date        | File                     | Notes                                                                   |
 | ----------- | ------------------------ | ----------------------------------------------------------------------- |
+| t2023-01-04 | [[@Jason Syversen]]          | Nick & Joe help                                                         |
+| t2023-01-03 | [[EduCorp]]                  | Email to Ketav                                                          |
 | t2022-12-19 | [[@Jake Wachman]]            | Summary of email for Nick.                                              |
 | t2022-12-16 | [[@Jason Syversen]]          | Return text                                                             |
 | t2022-12-13 | [[@Chris Hayden]]            | Intro Email                                                             |

@@ -3,6 +3,93 @@
 - Get resume.  
 
 # LOG
+### t2023-01-04  Nick & Joe help
+
+Well shit, Jason finally DID make me a job offer, and it is a legit offer.  I think working at Sports Visio has the potential to be a fun gig, and in this very crappy job market I am a bit inclined to climb aboard.  The equity is half of what I proposed, but there is no cap, and it is a 3 year vesting.  This lower equity does make me a flight risk if SV starts to falter in the marketplace, but I guess I can worry about that problem later (when the job market is likely better than it is now!)
+
+What do you think?  And if you think I should go for it, then what "asks" would you propose I make right now?
+
+Here are two ideas.... but really I don't want to pollute your thinking...  if you step back.  what are the things I should be thinking about here?
+
+~
+
+
+
+
+
+### n2023-01-04  Equity Calculations & Negotiation Summary
+
+**8/25  JASON'S VERBAL "SHOT ACROSS THE BOW"**
+$350K total comp.  You can split it anyway you like it.  e. g.
+$200K salary
+$150K equity  * 4 years = $600K  ~  **4.4% of company** @ $13.6M  ~  600K shares
+
+==> 8/22 Jason call -  Dan expresses real interest, says nothing about compensation.
+==> 9/13 Spoke with Mike Seibert the ML-lead 
+==> 9/27 Jason call -  Dan says:  "I am worth $700K per year"
+==> 10/3 Jason email.   Jason says:  "I agree, if FAANG really wants you $700K could happen, but it is aggressive."
+
+**10/3 JASON'S OFFER**
+$300K salary
+$200+100K equity * 4years = $1.2M  =  **8.8% of the company** ~ 2.1% of the company @ $13.6M  ~  1.2M shares
+
+**10/6 DAN'S RESPONSE (THE $12M CAP IDEA)**
+$200K salary
+2M shares ~ **14.7% of the company w. cap** @ $13.6M  ~  $2M cash = $500K/yr * 4years   ~  2M shares
+(payout capped @ $12M)
+==> 10/10? Spoke to John Murphy??  investor from Hyperplane
+
+**1/4 JASON'S OFFER LETTER**
+$200K salary
+1M shares  ~  **7.35% of the company** @ $13.6M  ~  $1M cash = $333K/yr * 3years  ~ 1M shares
+3 year vesting
+
+
+
+My Proposed Asks:
+- SALARY - Bump salary above $300K after A-round + revenue + I am central to team
+- CO-FOUNDER - Get the co-founder title
+
+- EARLY PARTIAL EXIT - Ability to sell some fraction of shares before the final exit.  (not sure if this makes sense to ask for now)
+- REPORTING STRUCTURE - Right now I think I will start with no-one reporting to me.  might be hard to add value if that does not change.
+- CIIA - I don't know if I will be required to sign a strong CIIA.  The offer letter have one tiny section that almost IS a CIIA, so maybe that is all the IP protection they need.
+  I do want to be able to create unrelated IP and own it myself.  Maybe I don't need to ask for this, until he tries to make me sign something that removes it.
+
+
+
+Possible response email:
+
+Jason,
+This is a credible offer, of course it is LOWER in both cash and equity than the last offer you made to me!  Still I agree with you, the risks to Sports Visio have materially dropped in these last two months --- mostly because of a strategy you developed in discussions with this certain guy I know.   Remind me in the future to shut my big mouth until AFTER I sign the offer letter!  ;-)  
+
+All that aside, I DO feel Sports Visio has a real shot at grasping the golden ring, and I am excited to work with you too...  it could be jet fuel!  Here are some thoughts:  
+
+For now I like the $200K salary since it preserves our capital in this most risky period, but with revenue coming in.
+
+But medium-term, in order to ride out my next years in the co-pilot seat at Sports Visio, I need to cover my bases at home.
+After the A-round, and with revenue coming in, we should negotiate my salary above the $300K point you set earlier, assuming that I am central to the team at that time.
+Cash will be less precious then, and this will let me bring home some fraction of a FAANG salary for the many years before any of that exit cash will be available to the family.
+
+I believe a lot of my value will be in serving as your partner in running SV.  You are more outward facing towards investors and customers, and I am more inward facing towards product and team.  Still I think both of us will adding significant value on both sides of that split.  I think the biggest risk to my success is my smooth integration into an existing org.  It makes sense that on day one, I don't have the whole SW team reporting to me...  But it probably does make sense to signal to both investors and employees the centrality of my role.  Perhaps we should be explicit that I am a late-joining co-founder in the company.  The title doesn't really affect my role, but it does suggest a level of centrality.
+
+
+Well this is all EXCITING STUFF!  They are being very slow about it, but it does seem Sunnova is going to materialize a VP role for me, with big headcount and FAANG like salary.  But I it will be middle management purgatory, and likely wont spend too much time strategizing with my team about fancy AI, but rather rafting the rough water politics in a big co.  Jason & Sports Visio sounds a lot more fun.  ;-)
+
+Cheers, 
+Dan
+
+
+- Post A-round I want to bump my salary above 
+
+
+NOTES from the 2022-09-26 cap table
+
+13,530,618 implied shared from:  10,333,333 shared is 76.37% of fully diluted shared
+From other places I found $13.75M as the post seed valuation.
+Thus I am using $13.6M as the valuation and 16.6M shares as the fully diluted share count
+
+
+
 ### t2022-12-16  Return text
 
 HORRAY on landing GRZ!  You will not be disappointed with that choice.  Things are good here.  I had a first meeting with Sunnova leadership (another solar company).  A former Analytics Fire client who loved us, has moved there, and has put my name in the ring to lead their software org.  It is a 100+ org, and they are hiring another 150-200 in 2023, so it would be a move up for me in scope, and fun to grow.  (Still not likely nearly as fun as the Jason and Dan show will be :-) ).  They are a big co. so there is little chance of you moving slower than they will.  But I am excited to get started so keep me posted.  Btw signing GRZ quickly was also a good move since Sunnova knows he is a free agent and he worked on some VERY relevant stuff in his previous gig.  They would have certainly given him an offer.
@@ -10,38 +97,21 @@ HORRAY on landing GRZ!  You will not be disappointed with that choice.  Things
 
 ### t2022-12-02  The 'Hire me'  compensation re-evaluation email
 
-
 Jason, 
-
-  
 
 Knocking Sports Visio out of the park with you is an awesome picture for our future!  I hope we can converge on it.
 
-  
-
 I did some looking online to figure out what my up-to-the moment compensation would be.  I focused entirely on job posted in the month of November.  I used levels.fyi to derive a multiplier to convert published base salaries into estimated total comp.  The lowest multiplier over the three FAANGs I checked was 2.21x.
-
-  
 
 Linked-in provides a search tool ([https://www.linkedin.com/jobs/collections/recommended/](https://www.linkedin.com/jobs/collections/recommended/)) for jobs they recommended for you as computed directly from your profile.  At this moment there was only one Google job that matched me with… a VP of Product Management in Core Data.  There were many other high-level cool looking jobs matching too, but they did not list salaries.  Linked in also sends me top picks for me as an email each week.  I copied ALL of those emails also into the document.  There were 4 Google jobs with salaries listed among the November emails.  The raw data is all here [https://docs.google.com/document/d/1gVWhVuCtFhXmUANTtQgEsyGpY2O5K05VMY9yKr2nFlE/edit#](https://docs.google.com/document/d/1gVWhVuCtFhXmUANTtQgEsyGpY2O5K05VMY9yKr2nFlE/edit#) for reference.
 
-  
-
 The VP job linked-in recommended had a $1.2M total comp, and the average of the 4 non VP jobs was $636K.  Notice, even when companies announced hiring freezes, they often explicitly excluded Machine Learning related roles from the freeze.  Also they generally didn’t stop their senior hiring, since those roles are hard to fill.  Thus the massive tech slowdown seems to have affected relevant ML and executive roles much less than most of the tech jobs.  Still if adjusting my offer now can get me on board along with this new crop of hires I am all for it – I think joining with them lowers social risks, and it also makes my job easier too.  
-
-  
 
 The cash cap on my equity drives my 15% equity down to 3.4% by the time we hit $350M, so it does not seem to make sense to making further adjustments on the equity side of the equation. (Lowering the 15% number will only change things in the case that the company is struggling, but in that case, we BOTH want me to have every bit of that 15% so I can stick it out thru the hard years w/o feeling that I am losing out.)
 
-  
-
 We can drop my salary some, as long as we agree to have a fresh Dan-O-salary-discussion after our A-round closes.  I actually like this kind of approach since it lengthens our runway during this period when cash is most precious.  How about a $180K salary until the A-round, and call it done?
 
-  
-
 Also, if we are moving forward now, I would really love to help you land Grzegorz at the same time.  He is such a high velocity guy, ideal for alg development work and able to connect the fancy ML with all the moving parts of our larger system. AND he has a proven Dan-GRZ high-bandwidth mind meld, I know he would be a big help in getting the whole team gelled into a “crank-in-out” fest from day one.
-
-  
 
 Looking forward to your thoughts,
 
@@ -557,10 +627,8 @@ We've already talked about the things you could help with, but my thinking is
 - a strong technical partner and friend.
 - help us build this thing up into a killer company using AI/deeptech for sports.
 
-### n2022-10-05  Jason offer email
+### n2022-10-03  Jason offer email
 Dan,
-
-  
 
 Did some research and looks like $700k is definitely high/aggressive but also a real thing and probably something that you could swing if Google was hiring and wanted you badly enough. (Looks like that's the mid point for VPs and directors and on the upper end of possible for some lower bands)
 
@@ -574,15 +642,15 @@ I think we can make that work on our end. And it's not an unchanging, never nego
 
 We've already talked about the things you could help with, but my thinking is help on the CV side as well as some engineering help and hiring on both sides from your network. And giving me a strong technical partner and friend that can help us build this thing up into a killer company using AI/deeptech for sports. What do you say, are we finally going to do this, or do I have to build another 8 or 9 digit company without you again!? :-) 
 
-
 - help on the CV side
 - as well as some engineering help
 - help and hiring on both sides from your network. And giving me a 
 - strong technical partner and friend that can help us build this thing up into a killer company using AI/deeptech for sports.
 
-  
-
 Jason
+
+
+
 ### n2022-10-04 Thinking about the Job choice
 
 DOING THIS

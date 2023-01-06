@@ -1,7 +1,7 @@
 
 ## TODO
 
-- [ ] Get response to Amy Kruse   [[Crunchbase InfoPage|CB]] 
+- [ ] Get response to Amy Kruse   [[Crunchbase Notes|CB]] 
 - [ ] Warm intros from [[@Amy Kruse]] 
 	- [ ] Get list of target firms to present to Amy
 	- [ ] Get intro version of email written
@@ -108,7 +108,7 @@ Objective:
 - 
 - [How much does a VC partner earn?](https://www.quora.com/How-much-does-a-VC-partner-earn)  
   [Searches](Searches.md)
- [[Crunchbase InfoPage|Crunchbase]] 
+ [[Crunchbase Notes|Crunchbase]] 
  [[ROCKS/2022-03 BeVC/Searches|Searches]]  [[TXT|OR]] 
 
 # # MEETINGS

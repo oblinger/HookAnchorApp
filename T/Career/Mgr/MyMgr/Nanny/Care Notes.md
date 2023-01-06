@@ -1,6 +1,22 @@
 
+- [[Babysitting]],   [Babysitter Search](https://www.care.com/visitor/captureSearchBar.do?searchPerformed=true&milesFromZipCode=10&searchByZip=true&defaultZip=true&zipCode=94110&sitterService=childCare&pageNumber=1) 
 
-- [Babysitter Search](https://www.care.com/visitor/captureSearchBar.do?searchPerformed=true&milesFromZipCode=10&searchByZip=true&defaultZip=true&zipCode=94110&sitterService=childCare&pageNumber=1) 
+
+### BABYSITTING QUESTIONS
+CHECK:  Reviews.  Costs.  |  HowFar.  Availability/Duration.
+
+- Where do you live?
+- Do you typically have availability on Saturday mornings?
+- Our typical rate is $25/hr.  Does that work for you?
+
+Thanks, I looked at your profile and we seem like a good fit!  A couple more questions:   We live in Bernal Heights, where do you live?   We often have need on Saturday mornings, do you typically have availability then?  And how many months into the future do you think you will be doing occasional nannying (e. g. is this very temporary or is this a longer term activity?)
+
+Thanks for writing, hope we can work together!  --dan   (Qingling's husband)
+
+
+Our typical rate is $25/hr.  Does that work for you?
+And more generally what is your availability for occasional nannying at other times of the day and week?   (e. g. do you have a pretty constrained week, or are you usually able to work?)
+
 
 ### CARE.COM INFO
 ### NANNY SEARCH TERMS

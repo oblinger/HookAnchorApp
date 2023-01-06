@@ -1,5 +1,7 @@
-  [spirit_older_bigger](spirit_older_bigger.md)
-  [spirit_older_bigger](__spirit_older_bigger__.md)
+
+  - [[spirit_older_bigger]]
+
+
 ## = Reading =
  Miracolo eucaristico
 - Enclical. Human vitae.  Vows.   Love letter.   Spiritual plan

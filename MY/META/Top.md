@@ -45,7 +45,7 @@
 | .  [[Career]]                   |                                                                                                                               |
 | .  [[Fin]]                      |                                                                                                                               |
 | .  [[Food]]                     |                                                                                                                               |
-| .  [[Legal InfoPage]]                    |                                                                                                                               |
+| .  [[Legal Notes]]                    |                                                                                                                               |
 | .  [[Life]]                     |                                                                                                                               |
 | .  [[Med]]                      |                                                                                                                               |
 | .  [[NSTR]]                     |                                                                                                                               |

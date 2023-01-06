@@ -34,7 +34,7 @@ SECOND:
 
 REPEAT:  
 - [ ] Daily 7-min exercise
-- [x] PING: Emails, [[Comms]]
+- [x] PING: Emails, [[COMS]]
 
 ### 2022-07-11  -- CRAP WEEK
 - [ ] CALLS lined up - 
@@ -260,7 +260,7 @@ fine note
 	
 
 ### 2022-03-21  
-- [ ] Get response to Amy Kruse   [[Crunchbase InfoPage|CB]] 
+- [ ] Get response to Amy Kruse   [[Crunchbase Notes|CB]] 
 - [x] Plan calling ...  maybe Schedule FAANG Engineer
 - [ ] Run code for coursera... maybe do a few hrs
 - [ ] [Yearbook](__Yearbook__.md) 

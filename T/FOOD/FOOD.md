@@ -1,7 +1,7 @@
   [[FastingDiet]]
 
- - SECTIONS:	[[Diet]],  [[Groc]],  [[Meals]],  [[Delivery]],  [[Eat]],  
- - TOPICS:  	[[Noom]],  [[ReBuy]],  [[Restaurants]]
+ - SECTIONS:	[[Diet]],  [[Groc]],  [[Meals]],  [[Delivery]],  [[Eat]],  [[Food Research]],  
+ - TOPICS:  	[[Noom Notes]],  [[ReBuy]],  [[Restaurants]]
  - SMASS:		[[ContainerWeights]],  [[Glycemic Index]],  [old-word-shopping-list](groc.docx),  
 
 ## foo

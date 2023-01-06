@@ -1,1 +1,1 @@
-  [Coursera InfoPage](Coursera%20InfoPage.md)
+  [Coursera Notes](Coursera%20Notes.md)

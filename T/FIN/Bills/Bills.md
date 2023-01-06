@@ -31,6 +31,8 @@ OWED TO QINGLING
   $9,000  2022-04-22    -- Teller #4073
   $9,000  2022-08-12    -- Teller #4073
 
+ -$9,000  2022-01-01    -- QL transferred to herself from Grandcentrl 
+
 
 DanO paid $60K on 2022-04-25 for federal taxes from my schwab account
 DanO paid $15K on 2022-04-18 for state taxes from my schwab account

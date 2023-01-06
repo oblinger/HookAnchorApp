@@ -1,5 +1,5 @@
 =[[TAG]]   <[[ORG]]
 
-  [Crunchbase InfoPage](Crunchbase%20InfoPage.md)
+  [Crunchbase Notes](Crunchbase%20Notes.md)
   [@Smartficial](@Smartficial.md)  [@GsrVentures](@GsrVentures.md)  [@Fin](@Fin.md)  [Crunchbase](__Crunchbase__.md)
 

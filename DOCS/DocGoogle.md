@@ -1,15 +1,14 @@
-  [__DocGoogle__](__DocGoogle__.md)
+  - [[@Google]],  
 
-
-
- "   "Exact Phrase"
- -   -ExcludedWord  -site:.gov
- ~   ~RelatedWord
- *     "a * saved is a * earned"
- ..   50..100   $50..100   ..2014
- |   this OR that   this | that  [ this word | that word ]
-
- site:some-site.com
+``
+	~ 		~RelatedWord
+	"		"Exact Phrase"
+	-		-ExcludedWord  -site:.gov
+	*   		"a * saved is a * earned"
+	.. 		50..100   $50..100   ..2014
+	|   	this OR that   this | that  [ this word | that word ] 
+			site:some-site.com
+``
 
 
 
