@@ -36,6 +36,54 @@ Sports Visio need an investor-friendly CIIA strategy, this means:
 
 One simple possibility is use the Orrick CIIA.  This one does all the things listed above and is perhaps the most commonly used contract.  Indeed it is the default CIIA used by Clerky.
 
+===
+
+  
+The CIIA 
+
+-1- is invalid when executed in multiple states including California   
+
+-2- has its jurisdiction in NEW HAMPSHIRE not Delaware, so during diligence investors will need to retain council familiar with the gotchas specific to NH law, and
+
+-3- the CIIA is not one of the standard CIIAs that startups use.  Normally in diligence they are given a CIIA they have already seen times before, so it is much less work for them since they have already done very careful diligence on those specific documents.  Giving them a unique one is needless work for them.
+
+-4- And really a company like Sports Visio operating across multiple states is better served by a CIIA that has explicit carve outs for each of those states, like the standard CIIA that all startups using [Clerky.com](http://clerkly.com/) use.
+
+  
+
+These are not issues for me as much as they are issues for Sports Visio.
+
+(And these are very fixable issues too.  We can talk about this stuff once you are back… I don’t want to sully the tranquil Cancun air with such crap.  :-)
+
+  
+
+  
+
+The structuring of the equity on the other hand is an issue for me.  It needs to be tweaked otherwise not only can I not get QSBS, but even worse, I will loose almost half of any eventual exit, as it will be taxed as ORDINARY INCOME!  Again we can fix these things by tweaking the way they are awarded.  And I believe the required tweaks don't have any costs or downsides for sports Visio, they just affect me and Uncle Sam.
+
+  
+
+  
+
+>>> But the offer letter terminates this FRIDAY.  :-) <<<
+
+  
+
+  
+
+Perhaps the simplest plan is to just edit the offer letter’s expiration date 10 or so days out, and then forget all this stuff until Friday morning when you are back… Let me know what you think
+
+  
+
+  
+
+And have fun in Cancun!!
+
+  
+
+  
+
+Cheers,
 
 ### t2023-01-04  Nick & Joe help
 
