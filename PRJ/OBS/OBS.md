@@ -11,7 +11,7 @@
 - [[OBS Dashboards]]	-  
 - [[KBD Shortcuts]],   
 - [[QUICKADD]], 
-- [[__TEMPLATER__]],  
+- [[TEMPLATER]],  
 
 
 

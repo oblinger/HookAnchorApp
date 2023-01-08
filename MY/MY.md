@@ -1,3 +1,4 @@
+  [[TEMPLATER]]
   [[Plan]]
   [[QUICKADD]]
   [[MY Stuff]]  [[Closet]]  
