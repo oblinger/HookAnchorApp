@@ -15,11 +15,11 @@ ALL TOPIC ROOTS
   [[Alloy]],   [[2013-00 TechnoTherapy]],   [[2020-07 Autonomy]],   [[2007-02 DARPA DHO]],   [[2007-02 New Financial 
   Model]],   [[Ideas Old]],   [[homerobot]],   [[Consulting Co]],   [[Word-War]],   [[Ideas Social]],   [[MKT]],   
   [[Forum]],   [[Good With Money]],   [[Elastic Block Chain]],   [[GHOST]],   [[Better Voting]],   [[Too Big To Fail]],
-     [[2007-00 DARPA seeds]],   [[Ideas Brain]],   [[Brain]],   [[Brain DARPA Program]],   [[PPP]],   [[EOC]],   [[The 
-  Sentient Weapon]],   [[End Of Man Book]],   [[2009-05-00 Consciousness]],   [[Brain3]],   [[EOCA]],   [[2015-00 
-  Walmart]],   [[2007-01 DARPA GUST]],   [[2007-12 DARPA Go-Play]],   [[2016-00 DriveDev]],   [[2022-04 Tile Robot]],   
-  [[2006-00 Nanofabrication]],   [[2006-11 DARPA Game World]],   [[2009-00 User Controlled Identifier]],   [[Lean 
-  Canvas]],   [[2020-12 SmartScale]],   [[2020-00 Tableau Killer]],   [[2009-03 Team Saver]],   [[2020-00 
+     [[2007-00 DARPA seeds]],   [[Ideas Brain]],   [[Brain]],   [[Brain DARPA Program]],   [[PPP]],   [[2015-00-00 
+  EOC]],   [[The Sentient Weapon]],   [[End Of Man Book]],   [[2009-05-00 Consciousness]],   [[Brain3]],   [[EOCA]],   
+  [[2015-00 Walmart]],   [[2007-01 DARPA GUST]],   [[2007-12 DARPA Go-Play]],   [[2016-00 DriveDev]],   [[2022-04 Tile 
+  Robot]],   [[2006-00 Nanofabrication]],   [[2006-11 DARPA Game World]],   [[2009-00 User Controlled Identifier]],   
+  [[Lean Canvas]],   [[2020-12 SmartScale]],   [[2020-00 Tableau Killer]],   [[2009-03 Team Saver]],   [[2020-00 
   ClaimsAnalyzer]],   [[2022-05 Virtual Tour Guide]],   [[2009-00 DARPA Energy]],   [[2020-10 MedAR]],   [[2020-09 
   CtrlSaaS]],   [[2020-07 Spot Pricing]],   [[2015-00 Flipping Websites]],   [[2013-08 Crowd Self Assessment]],   
   [[2020-06 OpenBricks]],   [[2016-00 TreeSheet]],   [[myorgstartup]],   [[2009-03 State Edu Testing]],   [[2020-00 
