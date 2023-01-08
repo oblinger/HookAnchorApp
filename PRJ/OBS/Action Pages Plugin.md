@@ -1,3 +1,4 @@
+- (See [[QUICKADD]])
 
 FORMAT
 =[[CMD]]  url  ...
@@ -19,5 +20,3 @@ SCRIPTING
 
 EXAMPLES
     =[[CMD]]  shell _ 1pass crunchbase
-
-[[Pb App]] 

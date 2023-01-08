@@ -1,3 +1,4 @@
+- [ ] obs:  find out how to move todo item around
 
 - [ ]  should use quick add to create a new @ entry
 - [ ] ARROWS:  hotkeys for bullets, headings, calendar, ???    for up, down, left, right
@@ -8,7 +9,7 @@
 
  Instacart
  ## TODO
-- [ ] [[#COLON-COLON]]: Add colon-colon section with links:    :: [[todo]], [[plan]], 
+- [ ] [[#COLON-COLON]]: Add colon-colon section with links:    :: [[todo]], [[PLAN]], 
 - [ ] [[#CROSS-LINKING]]:  [[Multi-List WorkFlow]],  
 - [ ] [[#KM-T]]: 
 - [ ] [[#OBS-PUBLISH]]: 
@@ -27,6 +28,22 @@
 
 
 ## PROJECTS
+### PROJECT FACTORY
+
+New Project Creation
+- REQUIRED selection of name, and check it against all projects (folder containing a landing page, or linked from P.md)
+- OPTIONALLY Add dated subfolder to the P folder.
+- REQUIRED creation of dated named landing page
+- REQUIRED additon of "=[[P]]  "  as first list of the landing page
+- REQUIRED addition of dated entry to P.md
+
+OPTIONAL SHORT NAME
+- Creation of shortname sim link
+- Creation of folder lanuch command
+- Creation of shortname landing page with crosslinking
+- OPTIONAL creation of project task list
+
+
 ### COLON-COLON
 ### CROSS-LINKING
 - SOURCE -- A link source is a 3-pound dated header in a uniquely named markdown with a wiki-link in the title that also points to a uniquely named markdown

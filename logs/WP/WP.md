@@ -1,8 +1,7 @@
----
-aliases: [WPs]
----
+
 =[[TAG]] <[[UNTYPED]]  
- - [[WPs]], 
+
+- [[wp2023-01-05 Keyboard Settlement]], 
 
 [[WP2022]]    [WP2022](WP2022.md),   [WP2021](WP2021.md)   
 

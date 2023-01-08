@@ -1,3 +1,4 @@
+- [x] find War Stories
 - [x] Clean Drain in bath
 - [ ] FAANG (matrix, courses, war stories, reading)
 - [ ] [[DYL]] Build 3 Odyssey plans.  Dan one-pager.  Prototype chapter

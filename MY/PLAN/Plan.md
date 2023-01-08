@@ -1,6 +1,6 @@
   [[FriedProj]]
   [[Chew]]
-=> [[Top]] > [[MY]] > [[Plan]]  
+=> [[Top]] > [[MY]] > [[PLAN]]  
 
 [[OBS.]] 
   

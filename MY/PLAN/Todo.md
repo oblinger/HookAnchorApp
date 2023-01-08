@@ -1,10 +1,12 @@
-- [ ] Ground the treadmill
+- [ ] Ground the treadmill [[@Horizon Fitness]]  
 - [ ] Get Amanda call on the books
 - [ ] [[@Sunnova]] prep
 - [ ] Figure out my coaching situation
 - [ ] get house repair guy to come
 - [ ] Dr Hassler.  get rid of the prilosec
 
+- [ ] Check if venmo is linked
+- [ ] Review for Jessie
 - [ ] Allison restart
 - [ ] GIFTS:  Dave-O, Sammie, Jazz, Zuly
 - [ ] Paypal validate schwab

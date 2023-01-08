@@ -3,6 +3,40 @@
 - Get resume.  
 
 # LOG
+
+
+### n2023-01-07  Hiring negotiations
+
+
+- Get shares or options at the 409A price.   QSBS never applies to 
+- Get an executive offer loan for the 409A price at lowest legal interest rate, that is payable upon sale of the shares.
+- Use an investor friendly (valid) CIIA
+
+
+https://frostbrowntodd.com/a-section-1202-walkthrough-the-qualified-small-business-stock-gain-exclusion/
+> **QSBS must be “stock” for federal income tax purposes**.
+    -->  Stock options and warrants are not “stock” for federal income tax purposes.
+> **QSBS must be held more than five years**.
+
+
+- You want a CIIA that makes diligence easy & safe for investors:
+	- The CIIA should not making claims that are illegal according to state law, doing this could piss off a judge and put ones IP at risk.
+	- The CIIA should not be governed by NH law.  Council for our new investors are unlikely to be familiar with various pitfalls and details of NH law, thus they will need to do additional diligent to have full confidence in the agreement.
+	- The CIIA should be a standard CIIA that investors have seen hundreds of times before.  This allows them have confidence by default w/ little effort.
+	  (here is a quote from my lawyer:  "I have seen thousands of CIIAs and I have never seen this one, or one from NH")
+
+
+Here is my thinking about a possible strategy for Sports Visio 
+
+Sports Visio need an investor-friendly CIIA strategy, this means:
+- A CIIA that is governed by state law that most familiar to their council.  (e. g. Delaware state law)
+- A single uniform strategy for all employees (ideally with a single core document) that nonetheless correctly accounts for regional differences in IP law across all employees.
+- It should be a CIIA that is dominant across a large number of startups, so the specific CIIA chosen has been seen many times before by their council.
+
+
+One simple possibility is use the Orrick CIIA.  This one does all the things listed above and is perhaps the most commonly used contract.  Indeed it is the default CIIA used by Clerky.
+
+
 ### t2023-01-04  Nick & Joe help
 
 Well shit, Jason finally DID make me a job offer, and it is a legit offer.  I think working at Sports Visio has the potential to be a fun gig, and in this very crappy job market I am a bit inclined to climb aboard.  The equity is half of what I proposed, but there is no cap, and it is a 3 year vesting.  This lower equity does make me a flight risk if SV starts to falter in the marketplace, but I guess I can worry about that problem later (when the job market is likely better than it is now!)
@@ -17,7 +51,7 @@ Here are two ideas.... but really I don't want to pollute your thinking...  if y
 
 
 
-### n2023-01-04  Equity Calculations & Negotiation Summary
+### n2023-01-04  Equity Calculations & Negotiation Summary over the last months
 
 **8/25  JASON'S VERBAL "SHOT ACROSS THE BOW"**
 $350K total comp.  You can split it anyway you like it.  e. g.

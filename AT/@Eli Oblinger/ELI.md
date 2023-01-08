@@ -6,9 +6,8 @@ LINKS:  [[Babysitting]], [[Enxt]],
 
 ## Truck Videos
 
-- [ ] obs:  find out how to move todo item around
 
-[ ] Top 10 Crane Accident & Heavy Lifting Equipments Fails Caught On Camera  https://youtu.be/YumRTZkleyw 
+- [ ] Top 10 Crane Accident & Heavy Lifting Equipments Fails Caught On Camera  https://youtu.be/YumRTZkleyw 
 - [ ] 75 000 h.p. The Biggest Nuclear Icebreaker     https://youtu.be/bKaVhXn49xY
 - [ ] Top 10 Biggest Bulldozers Used In The World   https://youtu.be/hIFtJN3sEXE 
 - [ ] I hope you can turn off the volume on this one. It is pretty annoying. https://youtu.be/oNvjpE-Q308
@@ -27,6 +26,9 @@ LINKS:  [[Babysitting]], [[Enxt]],
 - [ ] Top 10 Semi Truck, Tractor and Car Stuck In Snow & Rescuing out of Muddy     https://youtu.be/tHs5ificx7c
 - [ ] 10 Most Amazing Logging Trucks in the World      https://youtu.be/uGzMtdbCby0
 - [ ] Our TOP 30 Selections Of The World's Biggest Powerful And Most Dangerous...   https://youtu.be/ZnZXFgayMkc
+
+
+Given to ELI
 - [ ] Loading bulls with Brick Kate and Dan   https://youtu.be/_9yKJvmBGLg
 - [ ] Birds eye view of an army of CAT 657E and 657G scrapers in action  https://youtu.be/MyMWqxsBasc
 - [ ] Connecticut Fire Department Top 30 Best Responding Of 2020   https://youtu.be/owLP3eL_nfU
@@ -36,6 +38,9 @@ LINKS:  [[Babysitting]], [[Enxt]],
 - [ ] TOP 20 Crazy Powerful AND Dangerous MACHINES That Are On Another Level    https://youtu.be/FIispTI2WGI
 - [ ] Railroad Bridge Bounces Up & Down While Train Flies Over It!  Horn Salut...   https://youtu.be/4VlGxMBB_8M
 - [ ] 8 Of The WORLD'S COOLEST Machines Ever Made    https://youtu.be/nsF-leZImyI
+
+STEPS:  Email these to self.  on phone click on apple mail, then click on each video... 
+		while video is playing, click the screen to see the share button, then look for youtube kids in menu (at bottom)
 
 
 

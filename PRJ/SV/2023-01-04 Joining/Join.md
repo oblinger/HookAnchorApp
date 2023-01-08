@@ -1,12 +1,41 @@
 
 
 ## Issues
+- Post A salary of $300K
 - IP restrictions
+- 
 - Max shares on the SIP
 
 
+- cannot get cap gains on the sale, unless you sell before 1 year
+	- QSBS works well when reinvesting it.
+	  (holding period required.  option is not )
+	- Congress QSBS has already been looking hard 
+
+- will pay ordinary income on shares
+
+
+- 409A - valuation
+- Exercise the option.
+
+
+2.4 Keep the company informed:  Do I just give them a running log of all inventions that I conceive.  Even ones that have nothing to do with the business?
+   can we limit this to inventions that relate to the business.
+
+
+Company cannot force you to assign.  22.42
+- Own time
+- Relates to the companies business
+- Arises out of the work for you company
+- Don't use their resources.
+
+Approach
+- Disclose some things - 
+- Seperate laptops - 
+- Create evidentiary record - 
+
 =================
-CIIA 2 (d) “**_Company Inventions_**” means any and all Inventions (and all Intellectual Property Rights related to Inventions) that are made, conceived, developed, prepared, produced, authored, edited, amended, reduced to practice, or learned or set out in any tangible medium of expression or otherwise created, in whole or in part, by me, either alone or with others, during my employment by Company, and all printed, physical, and electronic copies, and other tangible embodiments of Inventions.
+CIIA 2.1 (d) “**_Company Inventions_**” means any and all Inventions (and all Intellectual Property Rights related to Inventions) that are made, conceived, developed, prepared, produced, authored, edited, amended, reduced to practice, or learned or set out in any tangible medium of expression or otherwise created, in whole or in part, by me, either alone or with others, during my employment by Company, and all printed, physical, and electronic copies, and other tangible embodiments of Inventions.
 
 
 **==> If I understand this... it is TERRIBLE.  If I came up with a catchy tune, they would own it!  If so I am trying to think of ways to amend this that would be acceptable to investors in their upcoming A-round.  Here are some ideas:**

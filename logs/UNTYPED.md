@@ -6,6 +6,7 @@
 
 | Date       | File                | Notes                                                                                     |
 | ---------- | ------------------- | ----------------------------------------------------------------------------------------- |
+| 2023-01-06 | [[Amazon Customer]]     | Fake Taylor's Tea                                                                         |
 | 2023-01-03 | [[@Apple]]              | Laptop Repair                                                                             |
 | 2023-01-01 | [[DYL]]                 | Hook System                                                                               |
 | 2023-01-01 | [[DYL]]                 | Edu Corp                                                                                  |
@@ -46,6 +47,8 @@
 | 2022-10-07 | [[Phone]]               | Lily - Tax Info for 2021 return                                                           |
 | 2022-10-03 | [[Current]]             | fre                                                                                       |
 | 2022-09-30 | [[Phone]]               | Building Work Desk in livingroom                                                          |
+| 2022-09-29 | [[DAILY]]               |                                                                                           |
+| 2022-09-28 | [[DAILY]]               |                                                                                           |
 | 2022-08-17 | [[Phone]]               | Dr Lue Urologist                                                                          |
 | 2022-08-01 | [[Phone]]               | notes while out - about me                                                                |
 | 2022-07-19 | [[Brain3]]              | G-Flow Nets Maybe - whats my example                                                      |

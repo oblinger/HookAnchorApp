@@ -1,14 +1,19 @@
 (see [[Care Notes]],  [[Nanny]])
 
 
+
+### Maria Joao S.  $25/hr.  206-295-7181  < next
+- Explicitly agreed $25/hr
+- Availability:  I'm usually free all day Saturday and Sunday mornings.
+	- During the week I'm only available after work hours, so after 5. Fridays I have more flexibility
+	- Free all day Sat and Sunday mornings.
+
+
 ### Nina A. $25/hr.  < Iranian, Mech-E
 - 347-615-8690
 - Build many lego buildings w/ Eli.  Could engage him.
 - But also ran out of steam and would check phone too.
 
-
-### Maria Joao S.  $25/hr.  206-295-7181  < next
-- Explicitly agreed $25/hr
 
 
 ### Maggie (Portola Asian)  - Getting Divorced

@@ -1,4 +1,60 @@
 
+Google Oblio:
+https://drive.google.com/drive/u/0/folders/0B1nxErVPR2RafnYtTG0xQXZsaFlmT0RKZ2twZGtaY3lhdmFfTlg1U3VJVW5yOHBoN2s3Ulk?resourcekey=0-3BKa8xNRbv33aiUJXzmsWw
+
+
+
+- [ ] - CIIA resolve issues.
+- Get for 409A done.  
+- Loan document (term sheet for the loan in the offer letter)  <-- typically done from Jason side.
+- Agreement that share price is 409A price.
+
+
+- You want a CIIA that makes diligence easy & safe for investors:
+	- The CIIA should not making claims that are illegal according to state law, doing this could piss off a judge and put ones IP at risk.
+	- The CIIA should not be governed by NH law.  Council for our new investors are unlikely to be familiar with various pitfalls and details of NH law, thus they will need to do additional diligent to have full confidence in the agreement.
+	- The CIIA should be a standard CIIA that investors have seen hundreds of times before.  This allows them have confidence by default w/ little effort.
+	  (here is a quote from my lawyer:  "I have seen thousands of CIIAs and I have never seen this one, or one from NH")
+
+Sports Visio need an investor-friendly CIIA strategy.  
+- One that is governed by state law most familiar to their coucil.  (e. g. Deleware state law)
+- It should be a single uniform stategy (ideally with a single) core document that nonetheless correctly accounts for regional differences in IP law
+- It should be a CIIA that is dominant across a large number of startups so it has been seen many times before by their council.
+
+
+
+
+- Buying shares at 409A price and make an executive loan.  
+- Sign offer letter & CIIA at same time.
+- Wait 409A to come in.
+- Buy the equity & sign the SIP at same time
+
+- My lawyers fears you stock plan is crap.
+
+- why don't you have a 409A?
+- Consistent set of CIIA is very critical in diligence
+- A judge can declare the contract to be crap 
+- You want to be easy in diligence.  
+- obvious you use a standard 
+-  don't want
+- Looked at thousands of CIIA and it is the first one you
+	- Govered by NH law... not by deleware?!?!?
+
+
+- Used by Clerky Tried and true CIIA beneficial 
+	- we dont even ahve a NH laywer so how do we know it is 
+
+
+- Disclose & Exclude orrick
+
+- Loan 
+
+
+
+
+
+
+carpet
 
 
 UPDATE: I originally challenged Erik's "overselling" this tech, but it was mostly my sloppy/quick reading. This is indeed an interesting and promising niche transport technology. Thanks Erik!

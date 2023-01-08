@@ -6,7 +6,7 @@
 | [[MY]]                          | MY OVERVIEW PAGES                                                                                                             |
 | .  [[Meta]]                     | Descriptions of my organizational systems                                                                                     |
 | .  [[Lists]]                    | My organizational lists (e.g. camping list, travel list, etc)                                                                              |
-| .  [[Plan]]                     | My task planning lists                                                                                                     |
+| .  [[PLAN]]                     | My task planning lists                                                                                                     |
 | .  [[Tags]]                     | My tags hierarchy                                                                                                             |
 | [[__]]                          |                                                                                                                               |
 | [[SETS]]                        | GROUPS OF LIKE ENTRIES -- (UN-dated, UN-ordered, Typed)                                                                       |

@@ -1,3 +1,8 @@
+- [[Nutrition Value Webpage]]	- Lots of food types
+- [[Nutrition Data Webpage]]	-  Original food types page (kinda slow to load)
+- [[Nutrition Facts Webpage]]	- Michael Greger 
+
+
 - [Nutrition.gov](https://www.nutrition.gov/) - 
 - [Nutrion Data](https://nutritiondata.self.com/) - 
 - [Nutrition Value.org](https://www.nutritionvalue.org/) - 

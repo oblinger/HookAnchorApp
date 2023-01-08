@@ -1,22 +1,19 @@
-  [[km]]
 
-- [[OBS.]] (todos),   [[DocObsidian]],   [[KBD Shortcuts]],   [[MY Digital Setup]],  
+::	[[OBS.]] (todos),  [[OBS Facets]],  [[OBS Projects]],  [[OBS Meta]],  
+::	[[PLAN]],  [[km]]
+
+-    [[DocObsidian]],   [[KBD Shortcuts]],   [[MY Digital Setup]],   [[OBS Setup]] 
 - [[Action Pages Plugin]],  [[Multi-List WorkFlow]], 
 
-### CMD PAGES
--  [[Action Pages Plugin]],  
 
-### FACETS
-- 			--  No suffix overrides others as leading choice
-- 1Pass		--  Launches from 1password (5)
-- App		--  Launches Mac App (3)
-- Box			--  Drop box folder
-- Folder		--  Launches finder on Folder (6)
-- Gdrive		--  Web folder (6)
-- Notes		--  Background info on Keyword (8)
-- Page		--  Launches URL (7)
 
-qrstuvwxyz
+- [[OBS]] 
+- [[OBS Dashboards]]	-  
+- [[KBD Shortcuts]],   
+- [[QUICKADD]], 
+- [[__TEMPLATER__]],  
+
+
 
 ### KEY-REMAPPING
 #### CAPS-LOCK
@@ -30,21 +27,20 @@ qrstuvwxyz
 	Press "+"  then add 'Lock Screen'  Shift-Ctrl-Cmd-Q    (this changes the default lock screen keyboard shortcut)
 - TAB-Q --> CTRL-CMD-Q --> Keyboard Maestro Macro to insert a tab key
 
+### PREFIX DATE ENTRIES
+
+- r	reference
+- t	text written by me to be sent via emailed, texted, etc.
+- m	info collected during a meeting
+- n	dated notes on a given topic
+- wp	Work Product
+
+Rocks  (maybe 'p' for projects)
+Daily notes
+Tiny
+
 
 ### PREFIX NAMED PAGES:   (for the Jump and Add commands)
 - [[Active]]   B   [[COMS]]   DAILY   [[Fried]]   E   F   G   [[Hack]]   I   J   K   L   M   N   O   [[Prime]]   [[Quick]]  [[Repeat]]   [[Self]]   [[Todo]]   U   V   [[Waiting]]   X   Y   Z
 - [[PLAN]] -- This is the list of planning pages.
-
-
-### PRJ - Projects
-PRJ - Larger efforts.
-- SHORT NAME -- Used as a prefix for todo items and for the folder name.
-
-
-### ROCKS
-ROCK -- A large-ish time bounded effort.    [[ROCKS]] 
-- NAME -- Each rock has a shortname shows as: NNNN.  If this project will have todo items the name should be abbreviated to under 10 chars
-- FOLDER -- Each has a dedicated dated folder ROCKS/YYYY-MM NNNN
-- HEAD -- Each rock has a head file whose name is:   ROCKS/YYYY-MM NNNN/YYYY-MM NNNN
-- PRJ -- Optionally a Rock may have a project folder:  PRJ/NNNN  with a project head:   PRJ/NNNN/NNNN
 

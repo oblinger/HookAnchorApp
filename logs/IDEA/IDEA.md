@@ -1,6 +1,6 @@
 =[[TAG]]  
 
-- [[Startup Ideas]]:   [[Forum]],   [[TeamSaver]],   [[Virtual Tour Guide]],   [[Tile Robot]], 
+- [[Startup Ideas]]:   [[Forum]],   [[2009-03 Team Saver]],   [[2022-05 Virtual Tour Guide]],   [[2022-04 Tile Robot]], 
 - Categories:  [[Ideas]],   [[Ideas Brain]],   [[Ideas Social]]
 
 
@@ -14,35 +14,34 @@
 (See [startup/index](__stindex__.md) for list)
 
 
-|                                        | . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . |
-| -------------------------------------- | ----------------------------------------------------------- |
-| 2022-05 [[Virtual Tour Guide]]         |                                                             |
-| 2022-04 [[Tile Robot]]                 |                                                             |
-| [[2020-12 SmartScale]]                 |                                                             |
-| [[2020-10 MedAR]]                      |                                                             |
-| [[2020-09 CtrlSaaS]]                   |                                                             |
-| [[2020-07 Spot Pricing]]               |                                                             |
-| [[2020-07 Autonomy]]                   |                                                             |
-| [[2020-06 OpenBricks]]                 |                                                             |
-| [[2020-00 ClaimsAnalyzer]]             |                                                             |
-| [[2020-00 Tableau Killer]]             |                                                             |
-| [[2020-00 FinScreener]]                |                                                             |
-| [[2018-08 Robo-Chair]]                 |                                                             |
-| [[2016-00 DriveDev]]                   |                                                             |
-| 2016-00 [[TreeSheet]]                  |                                                             |
-| [[2015-00 Walmart]]                    |                                                             |
-| [[2015-00 Flipping Websites]]          |                                                             |
-| [[2013-08 Crowd Self Assessment]]      |                                                             |
-| [[2013-00 TechnoTherapy]]              |                                                             |
-| [[2009-03 State Edu Testing]]          |                                                             |
-| 2009-03 [[TeamSaver]]             |                                                             |
-| [[2009-00 User Controlled Identifier]] |                                                             |
-| [[2009-00 DARPA Energy]]               |                                                             |
-| [[2007-12 DARPA Go-Play]]              |                                                             |
-| [[2007-02 New Financial Model]]        |                                                             |
-| [[2007-02 DARPA DHO]]                  |                                                             |
-| [[2007-01 DARPA GUST]]                 |                                                             |
-| [[2007-00 DARPA seeds]]                |                                                             |
-| [[2006-11 DARPA Game World]]           |                                                             |
-| [[2006-00 Nanofabrication]]            |                                                             |
-| 2000-00 [[Lean Canvas]]                |                                                             |
+- [[2022-05 Virtual Tour Guide]] 
+- [[2022-04 Tile Robot]]                 
+- [[2020-12 SmartScale]]                 
+- [[2020-10 MedAR]]                      
+- [[2020-09 CtrlSaaS]]                   
+- [[2020-07 Spot Pricing]]               
+- [[2020-07 Autonomy]]                   
+- [[2020-06 OpenBricks]]                 
+- [[2020-00 ClaimsAnalyzer]]             
+- [[2020-00 Tableau Killer]]             
+- [[2020-00 FinScreener]]                
+- [[2018-08 Robo-Chair]]                 
+- [[2016-00 DriveDev]]                   
+- [[2016-00 TreeSheet]]                  
+- [[2015-00 Walmart]]                    
+- [[2015-00 Flipping Websites]]          
+- [[2013-08 Crowd Self Assessment]]      
+- [[2013-00 TechnoTherapy]]              
+- [[2009-03 State Edu Testing]]          
+- [[2009-05 SCATA Security]]             
+- [[2009-03 Team Saver]]                  
+- [[2009-00 User Controlled Identifier]] 
+- [[2009-00 DARPA Energy]]               
+- [[2007-12 DARPA Go-Play]]              
+- [[2007-02 New Financial Model]]        
+- [[2007-02 DARPA DHO]]                  
+- [[2007-01 DARPA GUST]]                 
+- [[2007-00 DARPA seeds]]                
+- [[2006-11 DARPA Game World]]           
+- [[2006-00 Nanofabrication]]            
+- 2000-00 [[Lean Canvas]]                

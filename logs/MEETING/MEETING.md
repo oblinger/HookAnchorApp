@@ -8,6 +8,7 @@
 
 | Date        | File                 | Notes                                                             |
 | ----------- | -------------------- | ----------------------------------------------------------------- |
+| m2023-01-06 | [[@Citibank]]            | Autopay                                                           |
 | m2023-01-04 | [[@Horizon Fitness]]     | Service call                                                      |
 | m2022-12-14 | [[@Nick Allen]]          | Prep for talking with Jake                                        |
 | m2022-12-12 | [[@Jake Wachman]]        | First Call; Tell me about 150 person headcount                    |

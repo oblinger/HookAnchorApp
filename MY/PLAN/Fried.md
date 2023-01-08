@@ -1,4 +1,3 @@
-- [ ] get all of Eli's videos to his system
 - [ ] Container store
 - [ ] Privacy Panel
 - [ ] hands free phone holder
@@ -7,9 +6,8 @@
 - [ ] USB-A to USB-C into Bookbag
 - [ ] drycleaning
 - [ ] happy new year
-- [ ] find War Stories
 - [ ] refill bookbag and toiletries
-- [ ] Figure out new meals
+- [ ] Figure out new mealscc
 - [ ] Evidence-based child rearing
 
 
@@ -23,6 +21,7 @@
 - [ ] setup blink
 - [ ] Get logins for MyHealth
 
+- [ ] get all of Eli's videos to his system
 - [ ] Process mom's Eli educational funds.
 - [ ] passport
 

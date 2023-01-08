@@ -1,2 +1,3 @@
+  [[Paprika]],   [[AMA]]
 
 - [[Cmd Folder]] 
