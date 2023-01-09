@@ -35,6 +35,8 @@
 
 :: [[Alloy]],   [[Lean Canvas]]
 
+:: [[Alloy]],   [[Lean Canvas]]
+
 :: [[Alloy]],   [[Ideas Brain]],   [[Ideas Old]],   [[Ideas Social]],   [[Ideas]],   [[Lean Canvas]],   [[Startup Ideas]]
 
 
