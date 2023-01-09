@@ -1,4 +1,6 @@
 
+:: [[FIN Topics]]
+
 - [[FIN.]]   [[Bills]], [[Fin Adv]], 
 
   [[Expenses]],   [Taxes](Taxes/Taxes.md),   [Vanguard](Vanguard.md)
