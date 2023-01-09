@@ -1,3 +1,7 @@
+
+:: [[Legal Bizzy]],   [[Legal NDA - AF]],   [[Legal Ob Labs]]
+
+:: [[Legal Bizzy]],   [[Legal NDA - AF]],   [[Legal Ob Labs]]
   [Legal Uniform](Legal%20Uniform/Legal%20Uniform.md)
 
   [Legal Uniform](Legal Uniform/Legal Uniform.md)
@@ -304,5 +308,5 @@ As far as reviewing an NDA goes, best practice is to send them to me. There is n
 Hope that helps, Dave
 
 -----------
-  [Legal Notes](Legal%20Notes.md)
-  [Legal Uniform](Legal Uniform/__Legal Uniform__.md)  [Legal Notes](Legal%20Notes.md)
+  [LEGAL](LEGAL.md)
+  [Legal Uniform](Legal Uniform/__Legal Uniform__.md)  [LEGAL](LEGAL.md)

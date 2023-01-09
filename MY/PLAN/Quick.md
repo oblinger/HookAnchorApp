@@ -1,3 +1,5 @@
+- [ ] do recalls on audi
+- [ ] laurette
 
 - [ ] 
 Google Oblio:
@@ -96,41 +98,4 @@ DAS was great, but I get the sense that there are several very highly rated germ
 These guys are organized around extracting your money.  I bought a late model A4 and paid $10K for four years of protection and service.  It was a poor choice on my part, and not worth it.  Still these guys are typical dealers in that regard.
 
 
-~
-
-
->  many with better understanding of this than me argue that we will never get general intelligence from the language models
-
-I agree we will need a fundamentally different approach.
-
-Indeed if we look a human reasoning our brains "just bubble ideas, conclusions, actions up" from our unconscious all the time... it is a firehose of creative garbage.  (type one reasoning)
-
-From that we operate in a very different way.  We remember and execute macro algorithms we have trained our one brain to do.  like drafting this message.  My brain is executing a process that i have learned for selecting and validating words, for refining sentences and whole paragraphs, plus validation procedures to check that the words mean what I want etc.  But all of these steps are still using the unconscious firehose as its basic building block.  So I am agreeing that language model are profoundly inadequate, but if we build AI like our minds seem to operate, then building the unconscious building block is still a huge step forward.
-
-
-> we have not emulated birds, yet we fly.
-
-agreed.  and for type-II reasoning (deliberative planned reasoning that you could partially describe in words as you were doing it.) I think the way AI has done it so far, is way off base.  It would lead to AGI.
-
-But what I see from large language models, Dalle, and ChatGPT it seems like these system behave lot like our unconscious.  .... and interesting firehose of creative garbage.
-So I think we may have nailed type-I reasoning in a way that is close enough to bird flight, that we can fly as well as birds in all the contexts that birds can fly.
-
-
-> It may very well accumulate among the 1%.
-
-I very much agree this is likely here too, except in this case the skew towards the rich will be much much larger.  So much larger than I think it will break the current system down.  I am hopeful that it will just get voted down.  
-
-> I mean the US the last 20-30 years has seen something similar.
-
-yup.  we agree, and I think it is getting WORSE.  That is as automation and AI continue they reduce the number of well paying jobs and increase the pay of those jobs.
-Service jobs will always be with us as long as human prefer the attention of humans, but those jobs will ride the coat tails of the elite jobs.
-
-> I just think we have to prepare for the possibility that this wonderful technology creates sharper divisions.
-
-A wise idea.  My sense is the best preparation is to have a cohesive electorate that is committed to democracy.  Laws can change pretty fast when a huge majority is at a disadvantage as long as democracy is functioning.
-
-> physchological effect of relative poverty
-
-Yeah, you are speaking a language quite foreign to the American ears.  even those well below the average will shrink away from such thinking, they will worry about those "lazy" ones even poorer than themselves getting something they don't deserve.  Still as long as democracy functions even Americans will cave on this point.
-
-
+~p

@@ -1,4 +1,6 @@
 
+:: [[GHOST-other]]
+
 # LOG
 ### r2022-12-08  Professor who sees the damage of corrupt judges
 

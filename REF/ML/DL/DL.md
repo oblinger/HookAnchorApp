@@ -1,3 +1,5 @@
+
+:: [[VAE - Variational Auto Encoder]],   [[Attention Mechanism]],   [[Gradient Checking]],   [[NG Notation]],   [[Invertable Density Estimation]],   [[Self Supervised Learning]],   [[Activation Functions]],   [[Auto Encoders]]
   [VAE](VAE.md)
 - [[DL algs]], [[DL topics]], [[DL optimization]], [[DL strategy]], 
   [Regularization](Regularization.md),   [GANs](GANs.md),   [NN](NN.md)

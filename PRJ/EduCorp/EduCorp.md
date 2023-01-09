@@ -1,3 +1,5 @@
+
+:: [[EduCorp Supplement]],   [[EduCorp White Paper]]
 - [[EC.]],   [[Forwardism]],   [[out]], [[EduCorp Types]], 
 - 
 

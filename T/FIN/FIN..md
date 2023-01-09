@@ -2,7 +2,7 @@
 # TODO
 - [ ] Check Allspring
 - [ ] 
-- [ ] [[Fin|FIN]] >>>Find value investments
+- [ ] [[FIN|FIN]] >>>Find value investments
 - [ ] -- set pin on sapphire
 - [ ] Mint budget (run it)
 - [ ] Freeze Eli's Credit
@@ -13,5 +13,5 @@
 - [ ] IDEA:  Use https://whalewisdom.com/ For investment ideas.
 
 
-- [ ] [[Fin|FIN]] >>>Find value investments
-- [ ] [[Fin|FIN]] Roth Conversion Consideration
+- [ ] [[FIN|FIN]] >>>Find value investments
+- [ ] [[FIN|FIN]] Roth Conversion Consideration

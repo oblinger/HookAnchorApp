@@ -1,3 +1,5 @@
+
+:: [[2000-00 Lean Canvas]],   [[2018-00 Alloy]]
 =[[TAG]]  
 
 - [[Startup Ideas]]:   [[Forum]],   [[2009-03 Team Saver]],   [[2022-05 Virtual Tour Guide]],   [[2022-04 Tile Robot]], 

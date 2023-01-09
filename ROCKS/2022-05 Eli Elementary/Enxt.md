@@ -49,8 +49,31 @@
 
 - [pub teacher private school](https://www.theatlantic.com/education/archive/2015/03/why-im-a-public-school-teacher-but-a-private-school-parent/386797/) - 
 -  [SCHOOL-BASED PEER EFFECTS AND JUVENILE BEHAVIOR](https://gspp.berkeley.edu/assets/uploads/research/pdf/School_Based_Peer_Effects_and_Juvenile_Behavior.pdf)  
-- d
+
+
+
 # LOG
+### ### 2023-01-08  When to start school?
+
+	S					YOUNGEST	OLDEST
+	Sept-2023	 4y/o	BCMS		BCMS
+	Sept-2024	 5y/o	Kgarden		BCMS
+	Sept-2025	 6y/o	First 		Kgarden
+
+
+SAYS TO DELAY
+- [Stanford study](https://www.image.ie/self/the-best-age-to-start-big-school-we-asked-a-child-psychologist-131047)    -- better executive function at 7 and 11
+-  [The Gift of Time (stanford pub)](https://cepa.stanford.edu/content/gift-time-school-starting-age-and-mental-health)  
+-  [Cambridge Research summary](https://www.cam.ac.uk/research/discussion/school-starting-age-the-evidence)  
+-  [2002 US study by Rebecca Marcon](http://ecrp.uiuc.edu/v4n1/marcon.html),- Lower marks in 6th grade is preschooling was not play-based.
+-  [a 2004 longitudinal study of 3,000 children](http://www.ioe.ac.uk/RB_Final_Report_3-7.pdf) - elementary years are better if preschool is play-based.
+- [mixed bag pub](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2140009/) 
+ 
+
+- Play Based Preschool: superior academic, motivational, well-being outcomes
+- 
+
+
 ### 2022-12-01  Alta Vista
 
 - School hours:   8:25a - 3:30p

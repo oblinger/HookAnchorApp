@@ -1,4 +1,6 @@
-= [[Logs]] 
+
+:: [[2000-00-00 IBM-years]]
+= [[LOGS]] 
 
 ### 2022-04-06  John Cameron thank you
 

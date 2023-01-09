@@ -1,3 +1,5 @@
+
+:: [[OLD 200x Weekly]],   [[OLD 2020 Weekly]],   [[OLD 201x Weekly]]
 ### 2022-08-14
 - [ ] War Stories* (2h)
 - [x] Coursera* (10h)

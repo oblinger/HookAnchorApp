@@ -1,8 +1,8 @@
-  [Meetings](Meetings.md)
+  [MEETINGS](MEETINGS.md)
 =[[TAG]]   [[PTM]]<[[UNTYPED]]
 
 
-[[Meetings]]  
+[[MEETINGS]]  
 
 
 
@@ -31,16 +31,16 @@
 | m2022-10-14 | [[@Yashin Lin]]          | Discussion at end of her pip                                      |
 | m2022-10-13 | [[@Avidan Ross]]         | Intro meeting                                                     |
 | m2022-10-13 | [[@Joseph Yeh]]          | SV decision                                                       |
-| m2022-10-07 | [[Fin]]                  | Avanti's Plan                                                     |
+| m2022-10-07 | [[FIN]]                  | Avanti's Plan                                                     |
 | m2022-10-03 | [[@Jason Syversen]]      | Counter Offer Discussion  (where I proposed the $12M cap)         |
 | m2022-09-22 | [[@Jason Syversen]]      | Joining SV as consultant                                          |
 | m2022-09-14 | [[@Joseph Yeh]]          | Jason decision                                                    |
 | m2022-09-13 | [[@Jason Syversen]]      | [[@Michael Seibert]] discussion                                   |
 | m2022-09-07 | [[AF]]                   | AF Tax Discussion (with Nick)                                     |
 | m2022-08-24 | [[Forum]]                | Matt Pinson - Friend Christy - Friend of Yashin                   |
-| m2022-08-16 | [[Meetings]]             | Nick - RZ share price                                             |
+| m2022-08-16 | [[MEETINGS]]             | Nick - RZ share price                                             |
 | m2022-08-11 | [[@Joseph Yeh]]          | Activities                                                        |
-| m2022-08-11 | [[Meetings]]             | Jobot Recruiter                                                   |
+| m2022-08-11 | [[MEETINGS]]             | Jobot Recruiter                                                   |
 | m2022-08-03 | [[@Joseph Yeh]]          | Activities                                                        |
 | m2022-07-20 | [[@Rafah Hosn]]          | Reconnect                                                         |
 | m2022-06-30 | [[@Moses Baffour Awuah]] | First discussion about EduCorp                                    |
@@ -63,7 +63,7 @@
 | m2022-02-14 | [[@Aniket Kumar]]        | Aniket  [[BeVC|BeVC]]                                             |
 | m2021-11-07 | [[@Dan Fine]]            | FINE - Truths                                                     |
 | m2021-11-04 | [[@Dan Fine]]            | FINE - Dreaming big with Google                                   |
-| m2021-11-04 | [[Meetings]]             | NEATO CTO feedback                                                |
+| m2021-11-04 | [[MEETINGS]]             | NEATO CTO feedback                                                |
 | m2021-11-01 | [[@Dan Fine]]            | FINE journal -                                                    |
 | m2021-10-27 | [[@Dan Fine]]            | FINE journal                                                      |
 | m2021-10-27 | [[@Dan Fine]]            | FINE passion questions / KM trajectory                            |

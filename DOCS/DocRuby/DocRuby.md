@@ -307,7 +307,7 @@ inject
 [] each_pair, each_key, each_value
 
 [MAP]   http://www.ruby-doc.org/core-1.9.2/Hash.html
-::[], ::new, ::try_convert, ==, [], []=, assoc, clear, compare_by_identity,
+ ::[], ::new, ::try_convert, ==, [], []=, assoc, clear, compare_by_identity,
  compare_by_identity?, default, default=, default_proc, default_proc=, 
 delete, delete_if, each, each_key, each_pair, each_value, empty?, eql?, 
 fetch, flatten, has_key?, has_value?, hash, include?, initialize_copy, 
@@ -328,7 +328,7 @@ store, to_a, to_hash, to_s, update, value?, values, values_at
 
 
 [ARRAY-]
-::[], ::new, ::try_convert, &, *, +, -, <<, <=>, ==, [], []=, assoc, at, clear, collect, collect!, combination, 
+ ::[], ::new, ::try_convert, &, *, +, -, <<, <=>, ==, [], []=, assoc, at, clear, collect, collect!, combination, 
 compact, compact!, concat, count, cycle, delete, delete_at, delete_if, drop, drop_while, each, each_index, empty?, 
 eql?, fetch, fill, find_index, first, flatten, flatten!, frozen?, hash, include?, index, initialize_copy, insert, 
 inspect, join, keep_if, last, length, map, map!, pack, permutation, pop, product, push, rassoc, reject, reject!, 

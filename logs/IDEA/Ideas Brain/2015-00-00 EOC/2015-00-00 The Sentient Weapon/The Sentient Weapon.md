@@ -1,3 +1,5 @@
+
+:: [[Sufficient Set]],   [[brain book outline]],   [[The Sentient Weapon OLD]],   [[consciousness how it will happen]]
   [Levels](Levels.md)
   [Levels](LOGS/Ideas/Ideas%20Brain/Brain/2015.00%20-%20EOC/Archive/2015%20-%20The%20Sentient%20Weapon/Levels.md)
   [Levels](LOGS/Ideas/Ideas%20Brain/Brain/2015.00%20-%20EOC/Archive/2015%20-%20The%20Sentient%20Weapon/Levels.md)

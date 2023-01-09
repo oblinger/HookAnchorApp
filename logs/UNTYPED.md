@@ -369,15 +369,15 @@
 | 2019-07-01 | [[OLD 201x Weekly]]     | WEEK Back in town - slow week                                                             |
 | 2019-06-25 | [[OLD 201x Weekly]]     | WEEK Baby Shower Weekend                                                                  |
 | 2019-06-18 | [[OLD 201x Weekly]]     | WEEK CEMEX weekend                                                                        |
-| 2019-06-13 | [[Fin]]                 | Can go to 0-300K each year                                                                |
+| 2019-06-13 | [[FIN]]                 | Can go to 0-300K each year                                                                |
 | 2019-06-09 | [[OLD 201x Weekly]]     | WEEK Lists caughtup, Living room put together                                             |
 | 2019-06-05 | [[OLD 201x Weekly]]     | JUNE - Trying 2 chunks of focus on many days                                              |
 | 2019-05-07 | [[ReBuy]]               | Living room cabinets                                                                      |
-| 2019-04-12 | [[Fin]]                 | Ev Notes                                                                                  |
+| 2019-04-12 | [[FIN]]                 | Ev Notes                                                                                  |
 | 2019-04-03 | [[OLD 201x Weekly]]     | APRIL  MIN-JNL                                                                            |
 | 2019-04-00 | [[Bio]]                 | AF confluence bio                                                                         |
 | 2019-03-00 | [[Bio]]                 | – Verbal (Sales Call) BIO                                                                 |
-| 2019-02-08 | [[Fin]]                 | EV Notes                                                                                  |
+| 2019-02-08 | [[FIN]]                 | EV Notes                                                                                  |
 | 2019-02-00 | [[AFmaterials]]         | Turbot Materials                                                                          |
 | 2019-00-00 | [[Journal Old]]         | Block Chain                                                                               |
 | 2019-00-00 | [[DYL]]                 | Block Chain                                                                               |
@@ -403,11 +403,11 @@
 | 2016-00-00 | [[DYL]]                 | Bizzy Robotics - Early days                                                               |
 | 2016-00-00 | [[ReBuy]]               | STANDING DESK                                                                             |
 | 2016-00-00 | [[Phone]]               | Aeolus notes                                                                              |
-| 2016-00-00 | [[Fin]]                 | Idea for adelec analysis                                                                  |
-| 2015-07-11 | [[Fin]]                 | Tax consequences                                                                          |
-| 2015-04-06 | [[Fin]]                 | Ben Ng -- Indexed Universal Life -- IRS sec 7702 section 79                               |
-| 2015-03-30 | [[Fin]]                 | Setup SEP.  Planned 2015                                                                  |
-| 2015-02-05 | [[Fin]]                 | Mike's options trading strategy                                                           |
+| 2016-00-00 | [[FIN]]                 | Idea for adelec analysis                                                                  |
+| 2015-07-11 | [[FIN]]                 | Tax consequences                                                                          |
+| 2015-04-06 | [[FIN]]                 | Ben Ng -- Indexed Universal Life -- IRS sec 7702 section 79                               |
+| 2015-03-30 | [[FIN]]                 | Setup SEP.  Planned 2015                                                                  |
+| 2015-02-05 | [[FIN]]                 | Mike's options trading strategy                                                           |
 | 2015-00-00 | [[Parents]]             | old software for Dad info                                                                 |
 | 2015-00-00 | [[MED Sleep]]           | Pill exploration                                                                          |
 | 2014-12-10 | [[DocMac]]              | WIFI CONNECTIVITY ISSIE                                                                   |

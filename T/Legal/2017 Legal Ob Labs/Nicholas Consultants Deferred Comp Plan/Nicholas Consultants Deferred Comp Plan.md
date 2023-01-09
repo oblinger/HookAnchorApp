@@ -1,4 +1,10 @@
 
+:: [[2018.04]],   [[2018.04]]
+
+:: [[2018.04]],   [[2018.04]]
+
+:: [[2018.04]],   [[2018.04]]
+
 -- Freeze plan -- getting plan frozen.  prepare , ; then terminate plan;
 
 TODO 

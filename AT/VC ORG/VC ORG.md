@@ -1,3 +1,5 @@
+
+:: [[@Social Capital]],   [[@Citizen VC]],   [[@Intel Capital]],   [[@Circle Up]],   [[@Vela Partners]],   [[@Sierra Ventures]],   [[@Bryer Capital]],   [[@Njord Venture Group]],   [[@Social Starts]],   [[@Streamlined Ventures]],   [[Crunchbase Notes]],   [[@Rebel Partners]],   [[@Zetta Venture Partners]],   [[@Blumberg Capital]],   [[@Bee Partners]]
 =[[TAG]]   <[[ORG]]
 
   [Crunchbase Notes](Crunchbase%20Notes.md)

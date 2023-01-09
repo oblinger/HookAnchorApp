@@ -9,4 +9,4 @@
 
 | Date          | File  | Notes         |
 | ------------- | ----- | ------------- |
-| prj2022-10-07 | [[Fin]]   | Fin-Rebalance |
+| prj2022-10-07 | [[FIN]]   | Fin-Rebalance |

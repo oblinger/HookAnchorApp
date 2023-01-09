@@ -510,7 +510,7 @@ predicate uses self?
 ###### - load construct file -
 
 	-~- uc -~-
-:: 
+ :: 
 		pkg uc.LAZY;
 			example.pkg_name.foo1: GND(eval3: "pyfn.foo1")
 			def fn foo2: eval3:

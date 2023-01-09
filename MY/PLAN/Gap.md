@@ -23,5 +23,5 @@
 - [ ] WEEKLY: 	FILE THIS * TO_BUY * TIDY * EMAIL JOY *
 - [ ] QUARTERLY:	Mint * 
 - [ ] CALLS:		Mom&Dad * Repeat * Habits
-- [ ] THINK:  [[Habit|Habits]]   [[Current|Plan]]  [[OBS.]]     [[Fin]]    [[ToBuy]]    [[ToRead]]  [[Hack]]  
+- [ ] THINK:  [[Habit|Habits]]   [[Current|Plan]]  [[OBS.]]     [[FIN]]    [[ToBuy]]    [[ToRead]]  [[Hack]]  
 - [ ] Cleanup Todo list; Foods to Eat

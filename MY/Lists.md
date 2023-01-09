@@ -1,4 +1,4 @@
-(see [[Logs]] for sequential stuff in my KMR)
+(see [[LOGS]] for sequential stuff in my KMR)
 
 ## = IN CONTACTS  (Master In Contacts)
 ### - ALL lst
