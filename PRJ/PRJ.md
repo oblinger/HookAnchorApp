@@ -1,11 +1,9 @@
-  [[UF Docs]]
-  [[OBS]]
-  [[EduCorp]]
-  [[SV]]
-=[[TAG]]  <[[UNTYPED]]
 
-  [Prjs](Prjs.md),   [AF](AF/AF.md),   [UF_Docs](UF_Docs/UF_Docs.md), [[OBS.]],  
+:: [[AF]],   [[EduCorp]],   [[OBS]],   [[Prjs]],   [[SV]],   [[UF Docs]]
 
+
+	
+[[TAG]]  <[[UNTYPED]]
 
 | Date          | File  | Notes         |
 | ------------- | ----- | ------------- |

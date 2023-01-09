@@ -7,7 +7,7 @@
 - [[Tags]] 		- My tags hierarchy
 
 
-[[SETS]]				 GROUPS OF LIKE ENTRIES -- (UN-dated, UN-ordered, Typed)
+[[SET]]				 GROUPS OF LIKE ENTRIES -- (UN-dated, UN-ordered, Typed)
 - [[AT]] 			- All Entities (People, Organizations, etc.) 
 - [[App]] 		- Info about specific applications
 - [[Docs]] 		- Personal documentations pages 
