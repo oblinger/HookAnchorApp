@@ -7,12 +7,12 @@
 - [[Tags]] 		- My tags hierarchy
 
 
-[[SET]]				 GROUPS OF LIKE ENTRIES -- (UN-dated, UN-ordered, Typed)
+[[Set]]					GROUPS OF LIKE ENTRIES -- (UN-dated, UN-ordered, Typed)
 - [[AT]] 			- All Entities (People, Organizations, etc.) 
-- [[APP]] 		- Info about specific applications
+- [[App]] 		- Info about specific applications
 - [[Docs]] 		- Personal documentations pages 
 - [[Humor]]		- Jokes I have collected
-- [[TAGS/LANG]]		- Collected info about specific computer languages
+- [[Lang]]		- Collected info about specific computer languages
 - [[Movies]]		- Movies "to watch"
 - [[Phone]]		- Administrative actions associated with accounts or such
 - [[Places]] 		- Info I have collected about specific places

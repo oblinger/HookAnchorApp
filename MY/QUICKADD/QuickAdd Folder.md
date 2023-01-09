@@ -1,1 +1,1 @@
-=[[Cmd]]   url {{VALUE:Folder Path}}
+=[[Cmd]]   folder {{VALUE:Folder Path}}

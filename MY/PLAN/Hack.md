@@ -1,3 +1,4 @@
+- [ ] git o    fails
 
 - [ ] Take notes on using the call recorder [[Record]]
 - [ ] GitHub daily submit (along with KM) - 

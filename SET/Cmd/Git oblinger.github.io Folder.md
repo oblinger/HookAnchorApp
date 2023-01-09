@@ -1,1 +1,1 @@
-=[[Cmd]]   url /Users/oblinger/ob/proj/oblinger.github.io
+=[[Cmd]]   folder /Users/oblinger/ob/proj/oblinger.github.io

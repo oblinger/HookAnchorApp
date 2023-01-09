@@ -1,5 +1,5 @@
 
-:: [[LANG]]
+:: [[TAGS/LANG]]
 
 :: [[Data Science]],   [[@Kartik Agaram]]
   [TEXT](TEXT.md)
