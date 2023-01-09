@@ -1,1 +1,1 @@
-=[[CMD]]   app {{VALUE:Application Path}}
+=[[Cmd]]   app {{VALUE:Application Path}}

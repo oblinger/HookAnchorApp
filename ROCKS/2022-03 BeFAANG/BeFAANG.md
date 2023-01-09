@@ -90,7 +90,7 @@ ATTRIBUTES:
 
 ## =  LINKS
 
-- [[../../SETS/Books/DYL#- FAANG GUY|FAANG Guy]] 
+- [[DYL#- FAANG GUY|FAANG Guy]] 
 - [[Campaigns]]
 
 

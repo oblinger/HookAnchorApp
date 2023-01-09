@@ -1,7 +1,7 @@
 - (See [[QUICKADD]])
 
 FORMAT
-=[[CMD]]  url  ...
+=[[Cmd]]  url  ...
 
 
 | suffix  | cmdtype       | arg         | Action behavior                                         |
@@ -19,4 +19,4 @@ SCRIPTING
     _ 1pass  < word >         # will open browser and login to specified _1pass target
 
 EXAMPLES
-    =[[CMD]]  shell _ 1pass crunchbase
+    =[[Cmd]]  shell _ 1pass crunchbase

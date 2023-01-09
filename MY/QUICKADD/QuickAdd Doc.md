@@ -1,1 +1,1 @@
-=[[CMD]]   doc {{VALUE:Document's path}}
+=[[Cmd]]   doc {{VALUE:Document's path}}

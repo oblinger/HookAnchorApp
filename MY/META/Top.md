@@ -9,10 +9,10 @@
 
 [[SET]]				 GROUPS OF LIKE ENTRIES -- (UN-dated, UN-ordered, Typed)
 - [[AT]] 			- All Entities (People, Organizations, etc.) 
-- [[App]] 		- Info about specific applications
+- [[APP]] 		- Info about specific applications
 - [[Docs]] 		- Personal documentations pages 
 - [[Humor]]		- Jokes I have collected
-- [[Lang]]		- Collected info about specific computer languages
+- [[TAGS/LANG]]		- Collected info about specific computer languages
 - [[Movies]]		- Movies "to watch"
 - [[Phone]]		- Administrative actions associated with accounts or such
 - [[Places]] 		- Info I have collected about specific places

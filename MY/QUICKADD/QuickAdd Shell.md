@@ -1,1 +1,1 @@
-=[[CMD]]   shell {{VALUE:Shell command line}}
+=[[Cmd]]   shell {{VALUE:Shell command line}}

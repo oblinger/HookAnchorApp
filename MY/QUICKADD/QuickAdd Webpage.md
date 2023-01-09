@@ -1,1 +1,1 @@
-=[[CMD]]   url {{VALUE:Webpage URL}}
+=[[Cmd]]   url {{VALUE:Webpage URL}}
