@@ -1,24 +1,3 @@
 
-:: [[Z Example Template]],   [[VC Template]],   [[indent OUT]],   [[indent IN]],   [[NAMED sub note]]
-
-
-| Template Name        | Explanation                                        |
-| -------------------- | -------------------------------------------------- |
-| [[DAY Entry]]        |                                                    |
-| [[JOURNAL Entry]]    | Used for daily journal entries                     |
-| [[MEETING Entry]]    |                                                    |
-| [[NOTE entry]]       |                                                    |
-| [[TEXT Entry]]       | Use for all outgoing email/text/linked-in messages |
-| [[PRJ Entry]]        |                                                    |
-| [[REF Entry]]        |                                                    |
-| [[UNTYPED Entry]]    |                                                    |
-| [[WP Entry]]         |                                                    |
-| [[__]]               |                                                    |
-| [[subnote]]          |                                                    |
-| [[LOGGED sub note]]  |                                                    |
-| [[AT Entry]]          |                                                    |
-| [[Z JOURNAL header]] |                                                    |
-| [[Z TEST TEMPLATE]]  |                                                    |
- 
-
+:: [[AT Entry]],   [[DAY Entry]],   [[JOURNAL Entry]],   [[LOGGED sub note]],   [[MEETING Entry]],   [[NAMED sub note]],   [[NOTE entry]],   [[PRJ Entry]],   [[REF Entry]],   [[TEXT Entry]],   [[UNTYPED Entry]],   [[VC Template]],   [[WP Entry]],   [[Z Example Template]],   [[Z JOURNAL header]],   [[Z TEST TEMPLATE]],   [[indent IN]],   [[indent OUT]]
 
