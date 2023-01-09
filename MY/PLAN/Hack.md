@@ -1,3 +1,4 @@
+- [ ] km -t   BUG:  keeps adding info forever
 
 - [ ] Take notes on using the call recorder [[Record]]
 - [ ] GitHub daily submit (along with KM) - 
