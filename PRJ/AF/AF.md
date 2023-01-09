@@ -1,19 +1,5 @@
 
-:: [[AFtasks]],   [[AFtasks]],   [[Codility]],   [[Codility]]
-=[[ORG]]
-- [[@Analytics Fire]],
-
-
-  [Outcult](Outcult/Outcult.md)
-  [AFwp](AFwp/AFwp.md)  [AFactive](AFactive/AFactive.md)  [AFarchive](AFarchive/AFarchive.md)
-  [AFwp](AFwp/__AFwp__.md)  [AFactive](AFactive/__AFactive__.md)  [AFarchive](AFarchive/__AFarchive__.md)
- [AFwp](__AFwp__.md)  [AFactive](__AFactive__.md)  [AFarchive](__AFarchive__.md)
- ORG		[Team Hub](https://hub.analyticsfire.com/confluence/#/eventhub) 
- [PEOPLE](https://docs.google.com/spreadsheets/d/12MG49glulqxR3dsMtrqoV61bqq-MbFoVx2FsLYgB-JU/edit#gid=1076533490)  [Pics](https://trello.com/b/o5IfDTOv/af-team) 
- [AFinfo](/ob/topics/AF/_AF.md)  [Ptracker](https://www.pivotaltracker.com/n/projects/2203533)  [AF_OPS](https://trello.com/b/noDwPHIm/afops) 
-		[JOB ADS](https://stackoverflow.com/jobs/companies/analytics-fire)  These are on stack overflow
-		[FinOps](https://docs.google.com/document/d/1bdmmALb2WsQUQ4tTHRalBf7oZJ8RvfOrPShQe0HAYyo/edit?ts=5cffd648) 
-OTHER 	[EIP](https://docs.google.com/document/d/1U2gdNkpDn3nXfl8EHVrLDHSGPeKujtE9MvgtVonFW7U/edit?ts=5df91a31) 
+:: [[AFactive]],   [[AFarchive]],   [[AFtasks]],   [[AFwp]],   [[Codility]],   [[Outcult]]
 
 [PublicFolders](https://drive.google.com/drive/folders/1ea7ZeBwMrI_DdasGH0BqrStAYhmn70DN) 
 - [AFcompanies](https://drive.google.com/drive/folders/1cmegc2f6RGchbsynVYg6kRZL5a5vR0KP)  
