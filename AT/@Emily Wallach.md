@@ -7,7 +7,7 @@
 ### m2022-05-04
 - Andreessen, Kleiner Perkins, Sequoia, Khosla Ventures, Lightspeed, point72??, Eightfold.AI, neo4J, AmpRobotics, 
 
-[[BeVC]] 
+[[2022-03 BeVC]] 
 
 
 ### t2022-05-12  followup

@@ -1,4 +1,6 @@
-  [ufBrick](ufBrick/ufBrick.md)
+
+:: [[ufBrick]]
+  [ufBrick](ufBrick.md)
   [ufBrick](ufBrick.md)  [UfGui](UfGui.md)
   [ufBrick](ufBrick/__ufBrick__.md)  [Recommender](Recommender.md)
 

@@ -71,7 +71,7 @@ email Grz<>Jason
 - [ ] def comp check movement.  @ vanguard
 - [x] Email Jason
 - [x] final prep for mom80.  final numbers.
-- [x] [[Mom80]]:	Order food
+- [x] [[2022-09 Mom80]]:	Order food
 - [x] OBS:  Get the 'AT' command working
 - [x] OBS:  Rename the Template Create command to be better than CMD-OPT-Z
 - [x] OBS:   Rename the move folder command

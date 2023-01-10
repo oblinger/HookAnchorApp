@@ -447,7 +447,7 @@ When all three go bad, get out.  Or more conservatively, when 2 of the 3 go bad,
 ### Tax Deferred Accounts
 
 Plan for 2015
-- move $$ into Roth.
+- move $ $ into Roth.
 - invest into tradional IRA.  plus SEP.
 
 
@@ -715,7 +715,7 @@ AN ANNUITY
 life insurance—combine a death benefit with an investment vehicle. 
 
 
-moved $$$ C-corp to LLC  (deemed distribution)   qualified dividend 20%+3.8%
+moved $ $ $ C-corp to LLC  (deemed distribution)   qualified dividend 20%+3.8%
 
 
 -- Can we move money to annuity and then deduct the purchase price.
@@ -1101,7 +1101,7 @@ Any help here would be really valuable for me,
 
 Thanks,
 Dan
-## old
+   ## old
 For example, consider a lump sum of $100,000, on which a taxpayer has two alternatives. First, call it Scenario A, 
 he can pay tax today, at 35 percent, and invest the net proceeds in a portfolio of growth stocks that will grow at 5
 percent a year compounded, and eventually produce long-term capital gain when sold. 

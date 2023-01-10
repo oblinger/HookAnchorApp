@@ -13,4 +13,4 @@ OTHER:	ID-info, EarPlugs, Sunscreen, Coconut, Headlamp,
 
 
 #### SKI
-TAHOE: Humidifier, Caramex, 
+TAHOE: Humidifier, Caramex, Sled

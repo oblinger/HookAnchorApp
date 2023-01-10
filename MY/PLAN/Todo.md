@@ -1,8 +1,8 @@
-- [ ] Ground the treadmill [[@Horizon Fitness]]  
+- [ ] Ground the treadmill [[@Horizon Fitness]]  & test run it
 - [ ] Get Amanda call on the books
+
 - [ ] [[@Sunnova]] prep
 - [ ] Figure out my coaching situation
-- [ ] get house repair guy to come
 - [ ] Dr Hassler.  get rid of the prilosec
 
 - [ ] Check if venmo is linked

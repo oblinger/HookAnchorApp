@@ -1,7 +1,7 @@
 
 :: [[Eli LOG]]
 =[[PP]]  
-- [[ELI]], [[BCMS]],  [[Eli Math]], [[enxt]], 
+- [[ELI]], [[BCMS]],  [[Eli Math]], [[Enxt]], 
 - 
 - 
 - 

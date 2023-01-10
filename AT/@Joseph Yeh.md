@@ -182,7 +182,7 @@ go to events
 
 
 ### m2022-03-17 - foo
-[[BeVC]] 
+[[2022-03 BeVC]] 
 - Background: RoboticsTalk=Great; AI-safety=No
 - Current path:  VC/FAANG
 

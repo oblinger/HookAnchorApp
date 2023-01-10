@@ -82,7 +82,7 @@ NO LONGER USED
 - [ ] 11	[[Repeat]] [[todo]] 
 - [ ] 12	[[@Jason Syversen]] 
 - [ ] 12:	lunch
-- [ ] 1:	[[enxt]] 
+- [ ] 1:	[[Enxt]] 
 - [ ] 2:	[[FF-prize]] 
 - [ ] 4	Exercise
 
@@ -190,7 +190,7 @@ NO LONGER USED
 
 ### 2022-10-03
 -  repeat, chew
-- [x] [[mom80]] - 
+- [x] [[2022-09 Mom80]] - 
 - [ ] Yolo-x
 - [ ] War Stories
 - [ ] [[COMS]]
@@ -652,7 +652,7 @@ Researcher
 - [x] [[DYL|DYL]] Ch2&3  (almost)
 - [x] Chew 1h
 - [x] Doctor visits
-- [ ] [[BeFAANG|BeFAANG]] ; setup CRM / calls list
+- [ ] [[2022-03 BeFAANG|BeFAANG]] ; setup CRM / calls list
 - [ ] 
 ### 2022-04-02
 design life
@@ -712,7 +712,7 @@ Delegate into org.
 Story Ventures.
 
 ### 2022-03-17
-- [ ] Prep for Joe meeting [[BeVC]] 
+- [ ] Prep for Joe meeting [[2022-03 BeVC]] 
 
 ### 2022-03-16
 - [ ] Strategy for Amy written up

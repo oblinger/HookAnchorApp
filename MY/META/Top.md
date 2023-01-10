@@ -32,7 +32,7 @@ DATED FILE [[LOGS]]
 - [[IDEA]] 
 - [[Letters]]  						Formal correspondence
 - [[Receipts]]  
-- [[ROCKS]]		- 'prj...' prefix	Medium sized projects expected completion within a quarter.  (non-coding projects?) 
+- [[PRJ]]		- 'prj...' prefix	Medium sized projects expected completion within a quarter.  (non-coding projects?) 
 - [[Prjs]]			- no prefix		Larger / Longer or indefinite running projects   
 
 

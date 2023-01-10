@@ -51,7 +51,7 @@
 | m2022-05-09 | [[Forum]]                | Yashin and Phippa                                                 |
 | m2022-04-29 | [[@Arkady Epshteyn]]     | FAANG ML Guy                                                      |
 | m2022-04-06 | [[@Joseph Yeh]]          | Resume;                                                           |
-| m2022-04-06 | [[BeVC]]                 | Recruiter topics                                                  |
+| m2022-04-06 | [[2022-03 BeVC]]         | Recruiter topics                                                  |
 | m2022-03-25 | [[EOCA]]                 | guy writing book on evil and ai control                           |
 | m2022-03-21 | [[@Joseph Yeh]]          | List of VC firms                                                  |
 | m2022-03-17 | [[@Joseph Yeh]]          | foo                                                               |
@@ -60,7 +60,7 @@
 | m2022-03-08 | [[@Theo Enns]]           | Astro. FAANG. ML new ideas.                                       |
 | m2022-03-08 | [[@Theo Enns]]           | Ideas About Amazon Levels                                         |
 | m2022-03-03 | [[@Theo Enns]]           | AEOLUS research summary from Theo's perspective                   |
-| m2022-02-14 | [[@Aniket Kumar]]        | Aniket  [[BeVC|BeVC]]                                             |
+| m2022-02-14 | [[@Aniket Kumar]]        | Aniket  [[2022-03 BeVC|BeVC]]                                     |
 | m2021-11-07 | [[@Dan Fine]]            | FINE - Truths                                                     |
 | m2021-11-04 | [[@Dan Fine]]            | FINE - Dreaming big with Google                                   |
 | m2021-11-04 | [[MEETINGS]]             | NEATO CTO feedback                                                |

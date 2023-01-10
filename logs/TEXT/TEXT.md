@@ -23,7 +23,7 @@
 | t2022-10-27 | [[@Jason Syversen]]          | Response:  So are you a VP of ENG                                       |
 | t2022-10-27 | [[@Jason Syversen]]          | Chew on this - pitch to join                                            |
 | t2022-10-25 | [[@Brian Yormak]]            | Ask to speak                                                            |
-| t2022-10-23 | [[Mom80]]                    | update invite                                                           |
+| t2022-10-23 | [[2022-09 Mom80]]            | update invite                                                           |
 | t2022-10-13 | [[EOCA]]                     | Man in a room soon to die                                               |
 | t2022-08-24 | [[NJ22 Framing]]             | Linked-in AF update                                                     |
 | t2022-08-15 | [[Refs]]                     | Child Education Outcome by location                                     |

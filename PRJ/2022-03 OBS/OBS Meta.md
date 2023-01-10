@@ -1,5 +1,7 @@
 ### UNIFIED NAMESPACE
 
+#### Hook Page
+
 #### Switcher Presentation Ordering
 
 
@@ -16,9 +18,11 @@ FOOBAR          		< prefix matches, but lack of trailing space pushes this after
 2023-01-01 Foo		< Contains match, but is not a prefix
 z2011-00-00 Foo	< The Z can be used to force a dated entry later than others
 
+
 ### ALL CAPS
 
-- Used to denote a namespace menu or a page tag
+- Used to denote a namespace submenu
+- Capitalization of a folder should always match the capitalization of its hook page
 
 An ***all caps*** entry is a "hook of hooks", within the unified namespace it serves as a prefix for many other hooks thus becoming a menu of other hooks.
 

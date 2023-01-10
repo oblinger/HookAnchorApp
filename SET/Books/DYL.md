@@ -759,7 +759,7 @@ OTHER PATHS:
 -  6 Word Title; Graphical timeline; Questions option is asking; 
 - Considerations: Geography, Learning, Impacts/Results, Role
 
-### - [[BeFAANG]]
+### - [[2022-03 BeFAANG]]
 ### - [[Forum]]
 ### - BeInventor
 Title:  Philanthropist, Inventor, Dilettante
@@ -792,7 +792,7 @@ Questions:
 - Can I make this switch
 - 
 
-### - [[BeVC]] 
+### - [[2022-03 BeVC]] 
 ### - Insight follower???
 - Early stage prototyping
 - Thinking thru details

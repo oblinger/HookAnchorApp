@@ -7,7 +7,7 @@
 	- [ ] [[WarStories]]*  
 - [ ] [[@Yoshua Bengio]]+
 - [ ] [[COMS]]* - Get 4 letters of reference
-- [ ] [[BeFAANG#^todo|BeFAANG]] - Hack it
+- [ ] [[2022-03 BeFAANG#^todo|BeFAANG]] - Hack it
 
 ## = [[Learn|Learning]] =
 - [ ] [[Coursera Notes]]* - Complete Coursera Deep Learning Course
@@ -15,7 +15,7 @@
 - [ ] Find best FAANG prep (1) class.  (2) mentors
 - [ ] Read mgt books
 
-## = [[BeMLR]] =
+## = [[2022-04 BeMLR]] =
 - DL-GANS proposal
 - [ ] Read benjio papers
 
@@ -44,5 +44,5 @@
 ## = [[EduCorp]] =
 - [ ] Contact Meridith & Meet
 
-## = [[PKM]] =
+## = [[2022-03 PKM]] =
 - [ ] Build website with thoughts on PKM.
