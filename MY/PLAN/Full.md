@@ -10,7 +10,7 @@
 ## = [[WORK]] =
 - [ ] Get Mentors
 
-## = [[SOCIAL]] =
+## = [[MY/Plan/Social]] =
 - [[Coms]]: John, Anastasia
 
 

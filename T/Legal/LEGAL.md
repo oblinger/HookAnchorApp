@@ -1,4 +1,6 @@
 
+:: [[Legal Bizzy]],   [[Legal NDA - AF]],   [[Legal Ob Labs]],   [[Legal Uniform]]
+
 :: [[Legal Bizzy]],   [[Legal NDA - AF]],   [[Legal Ob Labs]]
 
 :: [[Legal Bizzy]],   [[Legal NDA - AF]],   [[Legal Ob Labs]]
@@ -69,7 +71,7 @@
 
 :: [[Legal Bizzy]],   [[Legal NDA - AF]],   [[Legal Ob Labs]]
 >>>>>>> 5ae69d8aebeb626c9537e0986ec12eebd3756e34
-  [Legal Uniform](Legal%20Uniform/Legal%20Uniform.md)
+  [Legal Uniform](Legal%20Uniform.md)
 
   [Legal Uniform](Legal Uniform/Legal Uniform.md)
   

@@ -65,7 +65,7 @@ zzz
 
 
                [[forward]]
- [[Social]]    [[NSTR/Self]]    [[Work]]
+ [[MY/Plan/Social]]    [[NSTR/Self]]    [[Work]]
              [[Execution]]  		 
 
 
