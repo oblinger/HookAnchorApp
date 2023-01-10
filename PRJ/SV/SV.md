@@ -1,7 +1,11 @@
 
-:: [[2022-10-17 SV90]]
+:: [[SV Joining]],   [[SV90]]
+
+:: [[SV Joining]],   [[SV90]]
+
+:: [[SV90]]
+
  [[@Sports Visio]],  [[@Jason Syversen]], 
- - [[SV90]],  
 
 
 Spiritually in Feb-1-2023 we already have a separated R&D org.

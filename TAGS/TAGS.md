@@ -1,18 +1,9 @@
 
-:: [[LANG]]
-
-:: [[Data Science]],   [[@Kartik Agaram]]
-  [TEXT](TEXT.md)
-  [REF](REF.md),   [TEXT](TAGS/TEXT.md),   [MEETING](MEETING.md),   [TOPIC](TOPIC.md)
-  [UNTYPED](UNTYPED.md),   [PTM](PTM.md)
-  [TASK](TASK.md)
-  [LOG](LOG.md)
-  [INFO_PAGE](INFO_PAGE.md)
-  [COMP](COMP.md),   [AT](AT.md)
-  [LANG](TAGS/LANG.md)  [FAANG](FAANG.md)  [ACADEMIC](ACADEMIC.md)  [RND](RND.md)  [HEAVY](HEAVY.md)  [ML](ML.md)  [HACKERS](HACKERS.md)  [RECRUITER](RECRUITER.md)  [TAG](TAG.md)  [DARPA](DARPA.md)  [CORP](CORP.md)  [COACH](COACH.md)  [SOLID](SOLID.md)  [CONSULTANT](CONSULTANT.md)  [ORG](ORG.md)  [VC](VC.md)  [CORE](CORE.md)  [ROBOTICS](ROBOTICS.md)  [START](START.md)  [AT](TAGS/AT.md)  [PP](PP.md)  [TECH](TECH.md)  [AI](AI.md)
+:: [[Data Science]],  
 
 
-[[TAG ROOT]] 
+[[TAGS]]: [[AT]], [[PLAN]], [[PRJ]], [[REF]], 
+
 - [[AT]]
 	- [[PP]]
 		- LEVEL: [[CORE]], [[SOLID]], [[HEAVY]], [[RND]], 
@@ -23,11 +14,20 @@
 	- [[ORG]] 
 		- [[VC ORG]]   
 		- [[PE firm]] 
-- [[COMP]] 
-	- [[TAGS/LANG]] 
-	- [[INFO_PAGE]] 
-	- [[LOG]]   
-	- [[PRJ]] 
+
+- [[PLAN]] 
+  
+- [[PRJ]]  
+  
+- [[REF]] 
+	- [[COMP]] 
+		- [[LANG]] 
+		- [[INFO_PAGE]] 
+		- [[LOG]]   
+		- [[PRJ]] 
+		- 
+	- [[T]]
+ 	
 - [[PTM]] 
 	- [[Cmd]]
 	- [[TAG]]
@@ -44,3 +44,4 @@
 		- [[TEXT]] - 
 		- [[WP]] -
 		- [[UNTYPED]]  - 
+

@@ -1,6 +1,24 @@
+### UNIFIED NAMESPACE
+
+#### Switcher Presentation Ordering
 
 
-### CAPS ENTRY
+- Case insensitive exact prefix matching has highest priority
+- Followed by entries that contain the query string as a case-insensitive exact match
+- Entries are alphabetically sorted
+
+EXAMPLE results for "foo"  search:  
+
+Foo							< prefix matches and it is shorter than all others
+Foo Bar					< prefix matches space is before all other matches
+Foo 0first				< prefix matches and zero is before all other non-space matches
+FOOBAR          		< prefix matches, but lack of trailing space pushes this after all spaced entries
+2023-01-01 Foo		< Contains match, but is not a prefix
+z2011-00-00 Foo	< The Z can be used to force a dated entry later than others
+
+### ALL CAPS
+
+- Used to denote a namespace menu or a page tag
 
 An ***all caps*** entry is a "hook of hooks", within the unified namespace it serves as a prefix for many other hooks thus becoming a menu of other hooks.
 

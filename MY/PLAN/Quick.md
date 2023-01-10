@@ -1,5 +1,5 @@
-- [ ] need to global rename [[Cmd]] to [[Cmd]]
-- [ ] do recalls on audi
+- [ ] need to global  
+- [ ] do recalls on Audi
 - [ ] laurette
 - [ ] NICK
 

@@ -213,22 +213,8 @@ _
 
 
 ## = BEST HABITS
-
 ### - THE ENVELOPE - Brutally effective self accountability ---
-
-
-2022-01-27 - 30/30/30 - Morning Effiency & Focus on tough task
-- HARD READY: after weekday meditation&bath set 30 min timer. 
-		  then start MIT immediately after (within 30 minutes)
-- HARD MIT: set 30 min timer & work in focused way; reset timer if distracted.
-- OPTIONAL: (if hungry)   eat + read email&firefox for HARD 30 min before MIT
-- SOFT: Work for 1.5-3hrs
-- SOFT: After dinner: set MIT & tasks for next day, clear desk and eamils.
-- SOFT: 7-min exercise in late afternoon & walk to pickup Eli too.
-- MEDITATION EXCEPTION: if something thwarts meditation, then rules are soft.
-- URGENCY EXCEPTION: No email/web before MIT unless I have reason to need to.
-- HUNGER EXCEPTION: If hungrier than 2apples, do 30min eat & read.
-
+#### THE METHOD
 
 CURRENT DETAILS:
 - ACTIVATION LOCATION: on night stand after meditation.  OFF = on floor
@@ -259,10 +245,6 @@ I have used this for years, it is a brutally effective way for you to become you
 Sometimes our impulses of the moment, and self excuses, override our true intentions.  This commitment device is nearly guaranteed to fix this mismatch between what you say you want in the cool light of day, and what you do in the heat of battle.  If you follow it, you will either change your mind about what you really want, or you will change your behavior...  if you follow it, there is no other option!  (Careful what you wish for, its BRUTAL!)
 
 
-If you really follow it, then either:
-
-In the abstract 
-
 
 
 Here is a brutal but very effective commitment device:
@@ -278,7 +260,30 @@ You can update the sticky note as your goals shift.
 
 
 ~-~~
-2022-01-27 - 30&30 - Morning Effiency & Focus on tough task
+#### 2023-01-09 Wake-First-MIT
+
+- TRIGGER - When first sitting down in front of the computer
+	- RULE:  Triage day in first half hour.  
+		- Generally triage email at same time, pushing social and medium stuff to in2, and bigger tasks onto todo
+	- RULE:  Do at least 1/2 of productive work.   (Generally on a MIT tasks)
+	- RULE:  During this time:  No reading medium, and no free cell.
+
+ISSUE: Stress it causing me to fritter time, big chunks are lost at days start.  Partial fix is to get on track first thing.
+
+
+#### 2022-01-27 - 30/30/30 - Morning Effiency & Focus on tough task
+- HARD READY: after weekday meditation&bath set 30 min timer. 
+		  then start MIT immediately after (within 30 minutes)
+- HARD MIT: set 30 min timer & work in focused way; reset timer if distracted.
+- OPTIONAL: (if hungry)   eat + read email&firefox for HARD 30 min before MIT
+- SOFT: Work for 1.5-3hrs
+- SOFT: After dinner: set MIT & tasks for next day, clear desk and eamils.
+- SOFT: 7-min exercise in late afternoon & walk to pickup Eli too.
+- MEDITATION EXCEPTION: if something thwarts meditation, then rules are soft.
+- URGENCY EXCEPTION: No email/web before MIT unless I have reason to need to.
+- HUNGER EXCEPTION: If hungrier than 2apples, do 30min eat & read.
+
+#### 2022-01-27 - 30&30 - Morning Effiency & Focus on tough task
 - HARD READY: after weekday meditation&bath set 30 min timer. 
 		  then start MIT immediately after (within minutes)
 - HARD MIT: set 30 min timer & work in focused way; reset timer if distracted.
@@ -287,7 +292,7 @@ You can update the sticky note as your goals shift.
 - MEDITATION: if something thwarts meditation, then all rules are soft.
 - URGENCY EXCEPTION: No email/web before MIT unless I have reason to need to.
 - STARVING EXCEPTION: If hungrier than 2apples, do 30min eat & read.
-- 
+
 ### - PDP - Procrastination Defense Protocol
 
 **HARD RULES**

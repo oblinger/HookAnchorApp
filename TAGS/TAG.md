@@ -1,3 +1,3 @@
-=[[TAG]]   [[TAG ROOT]] > [[PTM]]
+=[[TAG]]   [[TAGS]] > [[PTM]]
 
 [[Tags]] 

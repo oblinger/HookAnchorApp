@@ -1,5 +1,5 @@
 
-:: [[Race]]
+:: [[race]]
   [Climate](Climate.md)
   [race](race.md)
   [race](race.md)  [trump](trump.md)

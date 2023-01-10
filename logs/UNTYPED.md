@@ -1,11 +1,12 @@
 =[[TAG]]   <[[UNTYPED]]  
 [[tags]] 
 
-=[[TAG]]     [[TAG ROOT]] > [[PTM]]
+=[[TAG]]     [[TAGS]] > [[PTM]]
 
 
 | Date       | File                | Notes                                                                                     |
 | ---------- | ------------------- | ----------------------------------------------------------------------------------------- |
+| 2023-01-09 | [[Habit]]               | Wake-First-MIT                                                                            |
 | 2023-01-06 | [[Amazon Customer]]     | Fake Taylor's Tea                                                                         |
 | 2023-01-03 | [[@Apple]]              | Laptop Repair                                                                             |
 | 2023-01-01 | [[DYL]]                 | Hook System                                                                               |
@@ -125,6 +126,8 @@
 | 2022-01-28 | [[Journal Old]]         | Joe/Deep Advisor                                                                          |
 | 2022-01-27 | [[Campaigns]]           | Sources                                                                                   |
 | 2022-01-27 | [[Campaigns]]           | Recruiter outreach #2  (NOT FINISHED)                                                     |
+| 2022-01-27 | [[Habit]]               | 30/30/30 - Morning Effiency & Focus on tough task                                         |
+| 2022-01-27 | [[Habit]]               | 30&30 - Morning Effiency & Focus on tough task                                            |
 | 2022-01-20 | [[Journal Old]]         | PATHS, spiritual dimension                                                                |
 | 2022-01-20 | [[Paths]]               | PATHS, spiritual dimension                                                                |
 | 2022-01-16 | [[Brain3]]              | Using GANs                                                                                |

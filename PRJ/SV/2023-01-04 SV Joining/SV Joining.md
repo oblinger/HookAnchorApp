@@ -1,5 +1,16 @@
 
 
+
+Jason, 
+Generally US labor law generally recognizes location of where as the governing law.  In 2016 California explicitly eliminated possibility of using contract jurisdiction at a means of avoiding California CIIA rules.
+So its fine to use that CIIA, but it is not valid for a California resident without modification.  A common strategy is to adopt an Orrick-style CIIA (as used by default when Clerky.com sets up a new company) this CIIA explicitly retains strong IP guarantees while also accommodating laws in relevant states.
+
+As is this contract creates ambiguity.  This is a stick point for those we hire (like me), and also for our investors, as they would need to use a partially invalid contact as the basis of any IP fight.
+
+
+
+
+
 ## Issues
 - Post A salary of $300K
 - IP restrictions
