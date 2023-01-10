@@ -1,4 +1,6 @@
-  [MyOrgStartup](MyOrgStartup/MyOrgStartup.md)
+
+:: [[MyOrgStartup]]
+  [myorgstartup](myorgstartup.md)
   [myorgstartup](myorgstartup.md)
   [myorgstartup](myorgstartup.md)
   [myorgstartup](myorgstartup.md)

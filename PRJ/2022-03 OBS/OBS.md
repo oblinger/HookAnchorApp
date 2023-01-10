@@ -1,6 +1,6 @@
 
 ::	[[OBS.]] (todos),  [[OBS Facets]],  [[OBS Projects]],  [[OBS Meta]],  
-::	[[PLAN]],  [[km]]
+::	[[Plan]],  [[km]]
 
 -    [[DocObsidian]],   [[KBD Shortcuts]],   [[MY Digital Setup]],   [[OBS Setup]] 
 - [[Action Pages]],  [[Multi-List WorkFlow]], 
@@ -41,6 +41,6 @@ Tiny
 
 
 ### PREFIX NAMED PAGES:   (for the Jump and Add commands)
-- [[Active]]   B   [[COMS]]   DAILY   [[Fried]]   E   F   G   [[Hack]]   I   J   K   L   M   N   O   [[Prime]]   [[Quick]]  [[Repeat]]   [[Self]]   [[Todo]]   U   V   [[Waiting]]   X   Y   Z
-- [[PLAN]] -- This is the list of planning pages.
+- [[Active]]   B   [[Coms]]   DAILY   [[Fried]]   E   F   G   [[Hack]]   I   J   K   L   M   N   O   [[Prime]]   [[Quick]]  [[Repeat]]   [[Self]]   [[Todo]]   U   V   [[Waiting]]   X   Y   Z
+- [[Plan]] -- This is the list of planning pages.
 

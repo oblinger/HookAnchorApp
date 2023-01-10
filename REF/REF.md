@@ -1,7 +1,7 @@
 
 :: [[Business]],   [[MATERIALS]],   [[ML]],   [[Para]],   [[RR]],   [[Research]]
 
-== [[TAG]] <[[UNTYPED]]  
+== [[TAG]] <[[Untyped]]  
 
 [[Refs]]  
 

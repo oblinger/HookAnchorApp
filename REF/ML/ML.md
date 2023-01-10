@@ -1,7 +1,9 @@
 
+:: [[DL]],   [[STATS]]
+
 :: [[ARIMA Algorithm]],   [[ML Alg]],   [[ML Tools]]
 
-SECTIONS:  [DL](DL/DL.md)   [STATS](STATS/STATS.md)
+SECTIONS:  [DL](DL.md)   [STATS](STATS.md)
   [VAE - Variational Auto Encoder](VAE%20-%20Variational%20Auto%20Encoder.md)
 [[VAE - Variational Auto Encoder]]  [MLeng](MLeng.md)
 =[[TAG]]

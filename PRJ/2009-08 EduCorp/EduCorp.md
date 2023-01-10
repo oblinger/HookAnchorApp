@@ -1,9 +1,11 @@
 
+:: [[Greenhouse Farming]]
+
 :: [[EduCorp Supplement]],   [[EduCorp White Paper]]
 - [[EC.]],   [[Forwardism]],   [[out]], [[EduCorp Types]], 
 - 
 
-# TODO - [[PRJ/EduCorp/Edu Corp.pptx|PP]]   [[#EDU CORP WHITE PAPER NOTES|>]][[EduCorp White Paper|WP]][[Edu Corp Whitepaper.html|*]]   [[#EDU CORP SUPPLEMENT NOTES|>]][[EduCorp Supplement|Sup]][[Edu Corp Supplement.html|]][[Edu Corp Supplement.html|*]]    [[#FORWARDISM|>]][[Forwardism.md|Fwd]][[Forwardism.html|*]]   [Sheet](https://docs.google.com/spreadsheets/d/1HgqpWQFMyiOU47gzSmkFUPQcrgJ_7ALyxmgSm8nwA44/edit#gid=0)  
+# TODO - [[PRJ/EduCorp/Edu Corp.pptx|PP]]   [[#EDU CORP WHITE PAPER NOTES|>]][[EduCorp White Paper|WP]][[Edu Corp Whitepaper.html|*]]   [[#EDU CORP SUPPLEMENT NOTES|>]][[EduCorp Supplement|Sup]][[Edu Corp Supplement.html|]][[Edu Corp Supplement.html|*]]    [[#FORWARDISM|>]][[Forwardism|Fwd]][[Forwardism.html|*]]   [Sheet](https://docs.google.com/spreadsheets/d/1HgqpWQFMyiOU47gzSmkFUPQcrgJ_7ALyxmgSm8nwA44/edit#gid=0)  
 - [ ] Learn about LA-based returning citizen program
 - [ ] Reach out to greenhouse researchers
 - [ ] G: Back of napkin math for greenhouse-based biz in Gambia
@@ -14,7 +16,7 @@
 # TOPICS
 
 ## LINKS
-- [Greenhouse Farming](Greenhouse%20Farming/Greenhouse%20Farming.md),  [gEduCorp](https://drive.google.com/drive/u/0/folders/10pUPzVcBn5PxmMQYC8T60PDpdrQgQ817):   
+- [Greenhouse Farming](Greenhouse%20Farming.md),  [gEduCorp](https://drive.google.com/drive/u/0/folders/10pUPzVcBn5PxmMQYC8T60PDpdrQgQ817):   
 ## EDU CORP WHITE PAPER NOTES
 
 ## EDU CORP SUPPLEMENT NOTES

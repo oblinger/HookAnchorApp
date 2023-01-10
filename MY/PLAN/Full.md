@@ -6,12 +6,12 @@
 - [ ] [[Med]] - Daily exercise
 - [ ] Mental - Get therapist
 
-### - [[LIFE]] - 
+### - [[Life]] - 
 ## = [[WORK]] =
 - [ ] Get Mentors
 
 ## = [[SOCIAL]] =
-- [[COMS]]: John, Anastasia
+- [[Coms]]: John, Anastasia
 
 
 

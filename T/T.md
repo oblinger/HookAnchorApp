@@ -1,4 +1,4 @@
 
-:: [[LEGAL]]
+:: [[Legal]]
 
-:: [[CAREER]],   [[FIN]],   [[FOOD]],   [[LIFE]],   [[MED]],   [[Webshare]]
+:: [[Career]],   [[FIN]],   [[Food]],   [[Life]],   [[MED]],   [[Webshare]]

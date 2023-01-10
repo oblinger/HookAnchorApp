@@ -1,5 +1,5 @@
   [MEETINGS](MEETINGS.md)
-=[[TAG]]   [[PTM]]<[[UNTYPED]]
+=[[TAG]]   [[PTM]]<[[Untyped]]
 
 
 [[MEETINGS]]  

@@ -1,3 +1,5 @@
 
+:: [[Levels]]
+
 :: [[Strong AI]]
-  [[Levels]]
+  [[Logs/IDEA/Ideas Brain/2009-05-00 Consciousness/Levels]]

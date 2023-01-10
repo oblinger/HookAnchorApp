@@ -1,7 +1,6 @@
-  [[ARCHEOLOGY]]
-  [[FriedProj]]
+  [[Archeology]]
   [[Chew]]
-=> [[Top]] > [[MY]] > [[PLAN]]  
+=> [[Top]] > [[MY]] > [[Plan]]  
 
 [[OBS.]] 
   
@@ -41,7 +40,7 @@
 
 
 #### Comms Pages
-- [[COMS]]		-  
+- [[Coms]]		-  
 - [[Com Now]]	-  
 - [[Com Next]]	-  
 - [[Com Waiting]]	-  
@@ -54,13 +53,13 @@
 - [[Ping]] - 
 
 
-PREFIX NAMED:   [[Active]]   B   [[COMS]]   DAILY   [[Fried]]   E   F   G   [[Hack]]   I   J   K   L   M   N   O   [[Prime]]   [[Quick]]  [[Repeat]]   [[Self]]   [[Todo]]   U   V   [[Waiting]]   X   Y   Z
+PREFIX NAMED:   [[Active]]   B   [[Coms]]   DAILY   [[Fried]]   E   F   G   [[Hack]]   I   J   K   L   M   N   O   [[Prime]]   [[Quick]]  [[Repeat]]   [[Self]]   [[Todo]]   U   V   [[Waiting]]   X   Y   Z
 CHANGE: [[Wings]], [[Current]], 
 
 
 
 - XXX
-  [COMS](COMS.md)
+  [Coms](Coms.md)
 - 
 
   [Quick](Quick.md)
@@ -78,4 +77,4 @@ CHANGE: [[Wings]], [[Current]],
   [Waiting](Waiting.md)
 
   [Fun](Fun.md)
- [[Quarterly]],  [Quarterly](Quarterly.md),   [Planning](Planning.md),   [Archive](Archive.md),   [WORK](WORK.md),   [Full](Full.md),   [Self](Self.md),   [Later](Later.md),   [Repeat](Repeat.md),   [Calls](Calls.md),   [Ping](Ping.md),   [Q2](Q2.md),   [Fried](Fried.md),   [Todo](Todo.md),   [Habit](Habit.md),   [Social](Social.md),   [Scratch](Scratch/Scratch.md),   [COMS](COMS.md),   [Prime](Prime.md),   [Watching](Watching.md),   [Current](Current.md),   [Links](Links.md),   [Quick](Quick.md),   [Hack](Hack.md),   [Active](Active.md)
+ [[Quarterly]],  [Quarterly](Quarterly.md),   [Planning](Planning.md),   [Archive](Archive.md),   [WORK](WORK.md),   [Full](Full.md),   [Self](Self.md),   [Later](Later.md),   [Repeat](Repeat.md),   [Calls](Calls.md),   [Ping](Ping.md),   [Q2](Q2.md),   [Fried](Fried.md),   [Todo](Todo.md),   [Habit](Habit.md),   [Social](Social.md),   [Scratch](Scratch/Scratch.md),   [Coms](Coms.md),   [Prime](Prime.md),   [Watching](Watching.md),   [Current](Current.md),   [Links](Links.md),   [Quick](Quick.md),   [Hack](Hack.md),   [Active](Active.md)

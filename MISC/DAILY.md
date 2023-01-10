@@ -23,15 +23,15 @@ NO LONGER USED
 
 - [ ] ### 2022-11-30
 - [ ] 7:	[[Chew]]
-- [ ] 8:	[[Eli]]
-- [ ] 9	[[FOOD]]
+- [ ] 8:	[[ELI]]
+- [ ] 9	[[Food]]
 - [ ] 10	[[Repeat]] 
 - [ ] 10:	[[Chew]] 
 - [ ] 11: ???
 - [ ] 12:	[[Lunch]] 
 - [ ] 1'	[[WarStories]]: 
 - [ ] 10	[[resLI]] 
-- [ ] 11	[[COMS]] 
+- [ ] 11	[[Coms]] 
 - [ ] 11	[[Lunch]],  
 - [ ] 12:	[[WarStories]] 
 - [ ] 2	[[Gap]]  
@@ -39,7 +39,7 @@ NO LONGER USED
 - [ ] 4:	[[Exercise]]  
 
 ### 2022-11-23
-- [ ] [[PLAN]] - 
+- [ ] [[Plan]] - 
 - [ ] ready
 
 - [ ] [[Coursera Notes]] - 
@@ -193,7 +193,7 @@ NO LONGER USED
 - [x] [[2022-09 Mom80]] - 
 - [ ] Yolo-x
 - [ ] War Stories
-- [ ] [[COMS]]
+- [ ] [[Coms]]
 
 ### 2022-09-29  
 - [x] Yashin sheet
@@ -236,7 +236,7 @@ NO LONGER USED
 
 ### 2022-08-03
 - [x] Ready joe
-- [ ] [[COMS]] - 
+- [ ] [[Coms]] - 
 - [x] War Stories
 
 - [ ] Chew
@@ -528,7 +528,7 @@ ec- [ ] Do 4 hours on WarStories
 - [ ] DYL forum odyssey
 - [ ] +Totally Finish Fine note.  e.g. subject line
 - [ ] check airline
-- [ ] [[COMS]]
+- [ ] [[Coms]]
 - [ ] exercise
 
 ### 2022-05-04
@@ -539,7 +539,7 @@ ec- [ ] Do 4 hours on WarStories
 
 ### 2022-04-27
 - [ ] Do some GAANs research.  Read Benjio stuff
-- [ ] [[COMS]] complete
+- [ ] [[Coms]] complete
 - [ ] Ready for Joe
 - [ ] Odyssey plans
 - [ ] Read prototyping
@@ -549,7 +549,7 @@ ec- [ ] Do 4 hours on WarStories
 
 ### 2022-04-26
 - [x] Do some GAANs research.  
-- [x] [[COMS]] complete
+- [x] [[Coms]] complete
 - [ ] Odyssey plans
 - [ ] Read prototyping
 
@@ -564,12 +564,12 @@ ec- [ ] Do 4 hours on WarStories
 ### 2022-04-22
 - [ ] Dave, Dad, Sammie gifts
 - [ ] High output management summary
-- [ ] organize and execute [[COMS]].
+- [ ] organize and execute [[Coms]].
 - [ ] Coursera.  best to read.
 - [ ] call doctors
 
 ### 2022-04-21
-- [ ] organize and execute [[COMS]].
+- [ ] organize and execute [[Coms]].
 - [ ] go deep on FAANG; questions; people; training; 
 - [x] Yearbook ready
 

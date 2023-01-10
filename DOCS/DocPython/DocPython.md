@@ -1,5 +1,7 @@
+
+:: [[DocJupyter]]
   [DocTensorFlow](DocTensorFlow.md)
-  [DocJupyter](DocJupyter.md)
+  [DocJupyter](Docs/DocPython/DocJupyter.md)
   [DocPyDatetime](DocPyDatetime.md)
   [DocNumPy](DocNumPy.md)
   [__DocPython__](__DocPython__.md)   [[DocPandas]],  [[DocPyDatetime]], 

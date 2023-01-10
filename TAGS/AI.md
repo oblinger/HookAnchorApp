@@ -2,5 +2,5 @@
 
 - ML
 	- [[Data Science]]
-	- [[Stats]]
+	- [[STATS]]
 	- [[DL]] 

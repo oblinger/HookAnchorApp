@@ -1,4 +1,4 @@
-- [[Key Code]], 
+- [[key code]], 
 ## = INFO
 ### - Links
 

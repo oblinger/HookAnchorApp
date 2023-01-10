@@ -62,6 +62,8 @@
 :: [[Legal Bizzy]],   [[Legal NDA - AF]],   [[Legal Ob Labs]]
 
 :: [[Legal Bizzy]],   [[Legal NDA - AF]],   [[Legal Ob Labs]]
+
+:: [[Legal Bizzy]],   [[Legal NDA - AF]],   [[Legal Ob Labs]]
 <<<<<<< HEAD
 =======
 
@@ -373,5 +375,5 @@ As far as reviewing an NDA goes, best practice is to send them to me. There is n
 Hope that helps, Dave
 
 -----------
-  [LEGAL](LEGAL.md)
-  [Legal Uniform](Legal Uniform/__Legal Uniform__.md)  [LEGAL](LEGAL.md)
+  [Legal](Legal.md)
+  [Legal Uniform](Legal Uniform/__Legal Uniform__.md)  [Legal](Legal.md)

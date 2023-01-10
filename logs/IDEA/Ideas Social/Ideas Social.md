@@ -1,8 +1,10 @@
 
+:: [[Forum]],   [[MKT]]
+
 :: [[OLDER Social Ideas]]
-  [EduCorp](EduCorp/EduCorp.md)
-  [MKT](MKT/MKT.md),   [EduCorp](EduCorp.md),   [Forum](Forum/Forum.md)
-=[[UNTYPED]]   [[IDEA]]  
+  [EduCorp](EduCorp.md)
+  [MKT](MKT.md),   [EduCorp](EduCorp.md),   [Forum](Forum.md)
+=[[Untyped]]   [[Idea]]  
 
 
   [Ideas](Ideas.md)

@@ -1,4 +1,6 @@
-  [CRM_Phrases](CRM_Phrases.md)  [Family](Family/Family.md)  [Crm](Crm.md)
+
+:: [[Family]]
+  [CRM_Phrases](CRM_Phrases.md)  [family](family.md)  [Crm](Crm.md)
   [CRM_Phrases](__CRM_Phrases__.md)
   [Family](Family/__Family__.md)
   [Family](__family__.md)
@@ -20,7 +22,7 @@ Ron Hall <1rhall@fuse.net>
 The Girls
 Gina Huffman <gina_huffman@yahoo.com>
 Michelle Marie <rrhairs@yahoo.com>
-  [Mentors](Mentors.md) [[COMS|Calls]]  [CRM](__Crm__.md)  [Family](__family__.md)  [Outreach](__TXT__.md)
+  [Mentors](Mentors.md) [[Coms|Calls]]  [CRM](__Crm__.md)  [Family](__family__.md)  [Outreach](__TXT__.md)
   [PP](__AT__.md)
 
 

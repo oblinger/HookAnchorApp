@@ -1,10 +1,12 @@
 
+:: [[Letters]],   [[Msg]]
+
 :: [[[%40Melissa Cote%23t2022-04-11  1st touch]]
-=[[TAG]] <[[UNTYPED]]  
+=[[TAG]] <[[Untyped]]  
 
 [[Texts]] 
 
-  [Texts](Texts.md),   [Letters](Letters/Letters.md),   [Msg](Msg/Msg.md),   [@Melissa](@Melissa.md),   [TXT](TXT.md)
+  [Texts](Texts.md),   [Letters](Letters.md),   [Msg](Msg.md),   [@Melissa](@Melissa.md),   [TXT](TXT.md)
   
 
 | Date        | File                     | Notes                                                                   |

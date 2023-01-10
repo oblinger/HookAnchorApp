@@ -1,2 +1,2 @@
   [Games](Games.md)
-  [Games](MISC/Games/Games.md)
+  [Games](Games.md)

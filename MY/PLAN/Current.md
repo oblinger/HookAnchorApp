@@ -1,10 +1,10 @@
 - [ ] dennis decoste
-MORN:  	Meditate, Pills, Day, [[COMS]],    NOON:   	EVE: Plan, Chew
+MORN:  	Meditate, Pills, Day, [[Coms]],    NOON:   	EVE: Plan, Chew
 
 
 ### 2022-11-30  short week (cyber monday)
 - [x] [[Exercise]]:  Get treadmill setup
-- [ ] [[COMS]]:  Get plan in execution
+- [ ] [[Coms]]:  Get plan in execution
 - [ ] [[resLI]]:  Draft update & todo list
 - [x] [[WarStories]]:  Crank it
 - [ ] [[Coursera Notes]]: 5h
@@ -73,6 +73,6 @@ SECOND:
 
 REPEAT:  
 - [ ] Daily 7-min exercise
-- [ ] PING: Emails, [[COMS]]
+- [ ] PING: Emails, [[Coms]]
 
 

@@ -4,6 +4,6 @@
 - [ ] [[2022-04 BeMLR]]:		Articulated research agenda.
 - [ ] [[EduCorp]]:	Napkin-level screen house Model
 
-- [ ] [[Eli]]: 			Find babysitter
+- [ ] [[ELI]]: 			Find babysitter
 
 - [ ] DL Reading - Have an interesting agenda - Dig into NLP 

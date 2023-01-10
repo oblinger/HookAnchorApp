@@ -1,2 +1,2 @@
 
-:: [[DAY]],   [[IDEA]],   [[JOURNAL]],   [[MEETING]],   [[NOTE]],   [[Quotes]],   [[REF]],   [[Receipts]],   [[TEXT]],   [[UNTYPED]],   [[WP]]
+:: [[DAY]],   [[Idea]],   [[JOURNAL]],   [[Meeting]],   [[Note]],   [[Quotes]],   [[REF]],   [[Receipts]],   [[Text]],   [[Untyped]],   [[WP]]

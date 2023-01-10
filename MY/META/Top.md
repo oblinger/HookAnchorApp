@@ -3,11 +3,11 @@
 [[MY]]					 MY OVERVIEW PAGES
 - [[Meta]]		- Descriptions of my organizational systems 
 - [[Lists]] 		- My organizational lists (e.g. camping list, travel list, etc) 
-- [[PLAN]]		- My task planning lists
-- [[Tags]] 		- My tags hierarchy
+- [[Plan]]		- My task planning lists
+- [[TAGS]] 		- My tags hierarchy
 
 
-[[Set]]					GROUPS OF LIKE ENTRIES -- (UN-dated, UN-ordered, Typed)
+[[Set]]					 GROUPS OF LIKE ENTRIES -- (UN-dated, UN-ordered, Typed)
 - [[AT]] 			- All Entities (People, Organizations, etc.) 
 - [[App]] 		- Info about specific applications
 - [[Docs]] 		- Personal documentations pages 
@@ -20,35 +20,34 @@
 - [[ToRead]]		- Stuff "to read"
 
 
-DATED ENTRY [[LOGS]]  				 DATED, ORDERED, GROUPS OF LIKE ENTRIES -- (Dated, Ordered, Typed)
-- [[UNTYPED]] 	- no prefix		Dated but untyped entries 
-- [[MEETING]] 	- 'm...' prefix		Meeting notes. Any kind of person to person interaction
-- [[NOTE]]		- 'n...' prefix		Single 'note' created by me, often associated with some larger project
-- [[TEXT]]		- 't...' prefix		Textual message written and sent by me   (Meta [[TXT]]) 
+DATED ENTRY [[Logs]]  				 	 DATED, ORDERED, GROUPS OF LIKE ENTRIES -- (Dated, Ordered, Typed)
+- [[Untyped]] 	- no prefix		Dated but untyped entries 
+- [[Meeting]] 	- 'm...' prefix		Meeting notes. Any kind of person to person interaction
+- [[Note]]		- 'n...' prefix		Single 'note' created by me, often associated with some larger project
+- [[Text]]		- 't...' prefix		Textual message written and sent by me   (Meta [[TXT]]) 
 - [[Refs]] 		- 'r...' prefix		Reference Materials/Links (maybe this should be 'e' for external authored by others)
 - [[WP]] 		- 'wp...' prefix	Work Product -- Smaller single documents I produce.  Any (smaller one-off work products) produced in part by my hand
 
-DATED FILE [[LOGS]]
-- [[IDEA]] 
+DATED FILE [[Logs]]
+- [[Idea]] 
 - [[Letters]]  						Formal correspondence
 - [[Receipts]]  
-- [[PRJ]]		- 'prj...' prefix	Medium sized projects expected completion within a quarter.  (non-coding projects?) 
-- [[Prjs]]			- no prefix		Larger / Longer or indefinite running projects   
+- [[Prj]]		- 'prj...' prefix		Medium sized projects expected completion within a quarter.  (non-coding projects?) 
 
 
-[[KMR]]   
-- [[MISC]]		- 
-- [[PRJ]]			- 
+[[Kmr Folder]]    
+- [[Misc]]		- 
+- [[Prj]]			- 
 
 
 [[T]] 	TAXONOMIC TOPIC ROOTS
-- [[CAREER]]  
+- [[Career]]  
 - [[FIN]]  
-- [[FOOD]] 
-- [[LEGAL]] 
-- [[LIFE]]
+- [[Food]] 
+- [[Legal]] 
+- [[Life]]
 - [[MED]] 
-- [[WEBSHARE]]
+- [[Webshare]]
 
 
 

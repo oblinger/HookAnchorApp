@@ -1,30 +1,32 @@
 
+:: [[HACKERS]]
+
 :: [[Data Science]],  
 
 
-[[TAGS]]: [[AT]], [[PLAN]], [[PRJ]], [[REF]], 
+[[TAGS]]: [[AT]], [[Plan]], [[Prj]], [[REF]], 
 
 - [[AT]]
 	- [[PP]]
 		- LEVEL: [[CORE]], [[SOLID]], [[HEAVY]], [[RND]], 
 		- ROLE:  [[RECRUITER]],  [[COACH]],  
 		- KIND:   [[FAANG]],   [[START]],  [[TECH]], [[VC]], [[ACADEMIC]], 
-		- WHERE:  [[HACKERS]], [[DARPA]], 
+		- WHERE:  [[Tags/HACKERS]], [[DARPA]], 
 		- AREA:  [[AI]], [[ROBOTICS]], [[ML]], [[CONSULTANT]],  
 	- [[ORG]] 
 		- [[VC ORG]]   
 		- [[PE firm]] 
 
-- [[PLAN]] 
+- [[Plan]] 
   
-- [[PRJ]]  
+- [[Prj]]  
   
 - [[REF]] 
 	- [[COMP]] 
 		- [[LANG]] 
 		- [[INFO_PAGE]] 
 		- [[LOG]]   
-		- [[PRJ]] 
+		- [[Prj]] 
 		- 
 	- [[T]]
  	
@@ -37,11 +39,11 @@
 	- [[DATED]] - 
 		- [[DAY]] - 
 		- [[JOURNAL]] - Daily Journal entries
-		- [[MEETING]] -
-		- [[NOTE]] - 
-		- [[PRJ]] - 
+		- [[Meeting]] -
+		- [[Note]] - 
+		- [[Prj]] - 
 		- [[REF]] - 
-		- [[TEXT]] - 
+		- [[Text]] - 
 		- [[WP]] -
-		- [[UNTYPED]]  - 
+		- [[Untyped]]  - 
 

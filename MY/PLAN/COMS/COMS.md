@@ -1,8 +1,8 @@
 
-- [[COMS.]],  [[Com Now]], [[Com Next]], [[Com Waiting]], [[Calls]]:  John Cameron, Ms Anastasia, 
+- [[Coms.]],  [[Com Now]], [[Com Next]], [[Com Waiting]], [[Calls]]:  John Cameron, Ms Anastasia, 
 
 
-## = ACTIVE  [[CRM]] 
+## = ACTIVE  [[Crm]] 
 s		[[@Grzegorz Biziel]]	RECO; Do it now.
 s 		[[@Maria Galang]]		Touch base
 		[RZ](https://docs.google.com/document/d/1wQ53u87r9uVrFxVcrx8w43QANBjuuCBo31rJ8HZbBdU/edit) folks 				Jonas, Anibal, Nestor, 

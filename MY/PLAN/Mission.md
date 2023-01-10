@@ -12,7 +12,7 @@ weight training
 **NEXT JOB**:		Get one that I like.  Be good at what I do.
 **FUN**:				Regular solo socializing.  Whole family friends.  New forms of fun (Need to increase diversity)
 **NETWK**:		
-[[SPIRIT]]:			Grow spiritually.  Have meaning in year 2023.
+[[Spirit]]:			Grow spiritually.  Have meaning in year 2023.
 SELF:				Grit
 
 

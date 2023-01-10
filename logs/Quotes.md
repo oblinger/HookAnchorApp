@@ -101,5 +101,5 @@ I am glad I was born in these.
 We have not succeeded in answering all our problems. The answers we have found only serve to raise a whole set of new questions. 
 In some ways we feel we are as confused as ever, but we believe we are confused on a higher level, and about more important things." 
 
-  [Quotes](LOGS/Quotes.md)
-  [Quotes](LOGS/Quotes.md)
+  [Quotes](Quotes.md)
+  [Quotes](Quotes.md)

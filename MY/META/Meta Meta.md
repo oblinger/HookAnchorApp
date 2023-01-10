@@ -48,7 +48,7 @@ THREE MONITOR SETUP
 
 ## INFO TYPES
 
-- [[PLAN]] - Planning LIST pages
+- [[Plan]] - Planning LIST pages
 
 
 - [[TOPIC]] - Topic type pages (may be subtopics within other topics)
@@ -61,6 +61,6 @@ THREE MONITOR SETUP
 		
 	-  [[LOG]] - Chronically organized and labelled pages and folders  (Often part of a topic)
 		- [[TAGS/TEXT]] - 
-		- [[MEETING]] - 
+		- [[Meeting]] - 
 		- [[REF]] - Reference type info ???   (could be listed under log, or topic)
 

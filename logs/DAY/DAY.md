@@ -1,6 +1,6 @@
   [null](null.md)
   [Days](Days.md)
-=[[TAG]]   [[PTM]]<[[UNTYPED]]
+=[[TAG]]   [[PTM]]<[[Untyped]]
 - [[Days]]   
 
 | Date        | File  | Notes                    |

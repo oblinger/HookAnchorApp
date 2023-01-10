@@ -1,4 +1,4 @@
-- [[COMS]]:  Work communications
+- [[Coms]]:  Work communications
 
 - John Cameron; Laurette Caniza
 - Anastasia

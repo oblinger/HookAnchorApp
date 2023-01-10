@@ -1,5 +1,5 @@
-=[[TAG]]   <[[UNTYPED]]  
-[[tags]] 
+=[[TAG]]   <[[Untyped]]  
+[[TAGS]] 
 
 =[[TAG]]     [[TAGS]] > [[PTM]]
 
@@ -53,7 +53,7 @@
 | 2022-08-17 | [[Phone]]               | Dr Lue Urologist                                                                          |
 | 2022-08-01 | [[Phone]]               | notes while out - about me                                                                |
 | 2022-07-19 | [[Brain3]]              | G-Flow Nets Maybe - whats my example                                                      |
-| 2022-07-19 | [[COMS]]                | Ping Goals                                                                                |
+| 2022-07-19 | [[Coms]]                | Ping Goals                                                                                |
 | 2022-07-18 | [[ToBuy]]               | Walnut desktop                                                                            |
 | 2022-07-12 | [[Phone]]               | Eli Sand toys                                                                             |
 | 2022-07-12 | [[Phone]]               | LOWES tool rental                                                                         |
@@ -178,13 +178,13 @@
 | 2021-10-06 | [[Journal Old]]         | BAJI                                                                                      |
 | 2021-10-01 | [[Journal Old]]         | -- SITUATION SUMMARY --                                                                   |
 | 2021-10-01 | [[NJ22 Contents]]       | -- SITUATION SUMMARY --                                                                   |
-| 2021-09-23 | [[COMS]]                | WHOM IN MY NETWORK TO ASK                                                                 |
+| 2021-09-23 | [[Coms]]                | WHOM IN MY NETWORK TO ASK                                                                 |
 | 2021-09-23 | [[Journal Old]]         | WHOM IN MY NETWORK TO ASK                                                                 |
 | 2021-09-23 | [[Resume]]              | Resume Experience                                                                         |
 | 2021-09-22 | [[Journal Old]]         | >>> WP    -- NEXT JOB ACTIVITIES <<<                                                      |
 | 2021-09-22 | [[NJ22 Contents]]       | >>> WP    --  ACTIVITIES <<<                                                              |
 | 2021-09-22 | [[Resume]]              | RESUME OBJECTIVE                                                                          |
-| 2021-09-21 | [[COMS]]                | QUESTIONS TO ASK                                                                          |
+| 2021-09-21 | [[Coms]]                | QUESTIONS TO ASK                                                                          |
 | 2021-09-21 | [[Journal Old]]         | QUESTIONS TO ASK                                                                          |
 | 2021-09-21 | [[Journal Old]]         | SUMMARY OF WORK THAT FITS                                                                 |
 | 2021-09-21 | [[DYL]]                 | SUMMARY OF WORK THAT FITS                                                                 |
@@ -415,10 +415,10 @@
 | 2015-00-00 | [[MED Sleep]]           | Pill exploration                                                                          |
 | 2014-12-10 | [[DocMac]]              | WIFI CONNECTIVITY ISSIE                                                                   |
 | 2013-03-03 | [[ReBuy]]               | Standing mat                                                                              |
-| 2013-02-00 | [[ARCHEOLOGY]]          | OKC                                                                                       |
+| 2013-02-00 | [[Archeology]]          | OKC                                                                                       |
 | 2013-00-00 | [[ReBuy]]               | Scotch                                                                                    |
 | 2012-09-19 | [[Meta Org (old page)]] | Highlevel organization of Roles/Goals                                                     |
-| 2012-06-00 | [[ARCHEOLOGY]]          | OKC                                                                                       |
+| 2012-06-00 | [[Archeology]]          | OKC                                                                                       |
 | 2011-04-10 | [[Journal Old]]         | – Not Energized                                                                           |
 | 2011-00-00 | [[ReBuy]]               | Wireless data                                                                             |
 | 2010-12-17 | [[Journal Old]]         | – LESSONS FROM DATING ELAINE                                                              |

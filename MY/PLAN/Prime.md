@@ -6,7 +6,7 @@
 - [ ] [[NJ22 Framing]] - Linkedin; Github
 	- [ ] [[WarStories]]*  
 - [ ] [[@Yoshua Bengio]]+
-- [ ] [[COMS]]* - Get 4 letters of reference
+- [ ] [[Coms]]* - Get 4 letters of reference
 - [ ] [[2022-03 BeFAANG#^todo|BeFAANG]] - Hack it
 
 ## = [[Learn|Learning]] =

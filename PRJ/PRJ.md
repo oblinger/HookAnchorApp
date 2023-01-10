@@ -1,6 +1,8 @@
 
 :: [[AF Wind down]],   [[EduCorp]],   [[Enxt]],   [[OBS]]
 
+:: [[AF Wind down]],   [[EduCorp]],   [[Enxt]],   [[OBS]]
+
 == [[TAG]]  <[[TAGS]]
 
 - 2022-10 [[SV90]]  			[[@Sports Visio]] Plan for first 90 days 
@@ -30,7 +32,7 @@
 
 Code PROJ folders
   [UF_Docs](UF_Docs/UF_Docs.md)
-  [AF](AF/AF.md)  [UF_Docs](UF_Docs.md)
+  [AF](AF.md)  [UF_Docs](UF_Docs.md)
   [AF](AF/__AF__.md)
   [UF_docs](UF_docs/__UF_docs__.md)
   [AFall](__AF__.md)  [PBG_Links](PBG_Links.md)
