@@ -6,7 +6,7 @@
 - [[Plan]]		[[Plan]]			PLAN 	-  Pages used for short and long term planning
 - [[Logs]] 		[[Meta Logs]]		TIME 	-  Lists with a time-based organization
 - 			[[Meta Flow]]    		PROC	-  My data intake and processing pathways
--  [[Meta]]		[[MY/Meta/Meta Meta]] 		META	- 
+-  [[Meta]]		[[Meta Meta]]		META	- 
 -  [[OBS]]		[[OBS Meta]] 		OBS	- Setup details for my info pages
 
 

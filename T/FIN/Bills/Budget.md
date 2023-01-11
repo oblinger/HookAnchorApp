@@ -123,6 +123,13 @@ See Bills -> CashFlow for active accounts tracked in mint
 
 
 # LOG
+### 2023-01-10  Energy Usage
+
+PGE Ele:		$150/mo		Wastage: [Dishwasher]; Laundry
+PGE Gas: 	$90/mo		
+Water:			$200/mo		Showers    <---- 
+
+
 
 ### 2020-07-18 - Budget
 

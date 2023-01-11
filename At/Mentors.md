@@ -1,3 +1,7 @@
+
+LEADERSHIP / STRATEGY:	[[@Tessa Lau]], [[@Nick Allen]], 
+ 
+ 
  MENTORS:  [[FAANG]],  [[VC ORG]],  
 
 

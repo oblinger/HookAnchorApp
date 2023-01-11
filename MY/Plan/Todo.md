@@ -1,3 +1,5 @@
+- [ ] ben wild
+- [ ] touch base: Rafah, Luis, Juan, Michael, Vittorio, 
 - [ ] Ground the treadmill [[@Horizon Fitness]]  & test run it
 - [ ] Get Amanda call on the books
 

@@ -1,6 +1,21 @@
 
+Y7JmYZDQGbZe@
+
+### t2023-01-10  Explanation of edits
+
+Jason,
+
+Here is the markup from my lawyer, along with my understanding:
+
+The CIIA is missing any definition for the "NON-ATTRIBUTABLE IP" term that it is using.  He added a definition that excludes any IP that cannot be legally assigned for a California resident (even in contracts that have jurisdiction outside of California).
+  
+It turns out one cannot get QSBS for options, AND if I don't exercise them early I will LOOSE HALF the sale price in taxes upon exit.  So:
+- We setup an executive loan from the company to me so I can exercise them right away.  No money actually changes hands, this is just for tax purposes.  Then when when the company exits and we sell shares, I pay the company for the options (with interest).  This loan is just paperwork for the company, it does not add cost or risk as compared with just offering the options.
+- For technical reasons the IRS requires that I am AT RISK for the full price of this loan if the company fails.  I don't want to be at risk for taxes on a $1M dollars in case that everything falls apart, thus the offer is edited to use the 409A price (to be computed in the next weeks) instead of the seed price.  (This does mean when we sell, the company gets a small amount less from me, but it is a rounding error.  The real effect is to lower my risk from that loan a lot.)
+- The double trigger just means if the company is acquired, the acquirer cannot grab my unvested shares by firing me.
 
 
+### t2023-01-10  unsent
 Jason, 
 Generally US labor law generally recognizes location of where as the governing law.  In 2016 California explicitly eliminated possibility of using contract jurisdiction at a means of avoiding California CIIA rules.
 So its fine to use that CIIA, but it is not valid for a California resident without modification.  A common strategy is to adopt an Orrick-style CIIA (as used by default when Clerky.com sets up a new company) this CIIA explicitly retains strong IP guarantees while also accommodating laws in relevant states.
@@ -11,7 +26,7 @@ As is this contract creates ambiguity.  This is a stick point for those we hire 
 
 
 
-## Issues
+### 2023-01-05 Issues
 - Post A salary of $300K
 - IP restrictions
 - 

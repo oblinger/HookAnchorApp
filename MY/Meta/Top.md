@@ -20,13 +20,15 @@
 - [[ToRead]]		- Stuff "to read"
 
 
+:: [[Day]],   [[Idea]],   [[Journal]],   [[Meeting]],   [[Note]],   [[Quotes]],   [[REF]],   [[Receipts]],   [[Text]],   [[Untyped]],   [[WP]]
+
 DATED ENTRY [[Logs]]  				 	 DATED, ORDERED, GROUPS OF LIKE ENTRIES -- (Dated, Ordered, Typed)
 - [[Untyped]] 	- no prefix		Dated but untyped entries 
 - [[Meeting]] 	- 'm...' prefix		Meeting notes. Any kind of person to person interaction
 - [[Note]]		- 'n...' prefix		Single 'note' created by me, often associated with some larger project
 - [[Text]]		- 't...' prefix		Textual message written and sent by me   (Meta [[TXT]]) 
-- [[Refs]] 		- 'r...' prefix		Reference Materials/Links (maybe this should be 'e' for external authored by others)
-- [[WP]] 		- 'wp...' prefix	Work Product -- Smaller single documents I produce.  Any (smaller one-off work products) produced in part by my hand
+- [[Ref]] 			- 'r...' prefix		Reference Materials/Links (maybe this should be 'e' for external authored by others)
+- [[WP]] 		- 'wp...' prefix	Work Product -- Smaller single documents I produce.  
 
 DATED FILE [[Logs]]
 - [[Idea]] 

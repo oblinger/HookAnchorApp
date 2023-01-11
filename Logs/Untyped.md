@@ -6,8 +6,10 @@
 
 | Date       | File                | Notes                                                                                     |
 | ---------- | ------------------- | ----------------------------------------------------------------------------------------- |
+| 2023-01-10 | [[Budget]]              | Energy Usage                                                                              |
 | 2023-01-09 | [[Habit]]               | Wake-First-MIT                                                                            |
 | 2023-01-06 | [[Amazon Customer]]     | Fake Taylor's Tea                                                                         |
+| 2023-01-05 | [[SVJ]]                 | Issues                                                                                    |
 | 2023-01-03 | [[@Apple]]              | Laptop Repair                                                                             |
 | 2023-01-01 | [[DYL]]                 | Hook System                                                                               |
 | 2023-01-01 | [[DYL]]                 | Edu Corp                                                                                  |

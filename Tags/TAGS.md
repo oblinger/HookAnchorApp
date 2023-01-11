@@ -37,8 +37,8 @@
 	- [[SET TYPE]] - 
 		- [[Quotes]] -  
 	- [[DATED]] - 
-		- [[DAY]] - 
-		- [[JOURNAL]] - Daily Journal entries
+		- [[Day]] - 
+		- [[Journal]] - Daily Journal entries
 		- [[Meeting]] -
 		- [[Note]] - 
 		- [[Prj]] - 
