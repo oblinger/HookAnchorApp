@@ -6,6 +6,7 @@
 
 | Date       | File                | Notes                                                                                     |
 | ---------- | ------------------- | ----------------------------------------------------------------------------------------- |
+| 2023-01-11 | [[References]]          | Grzegorz References                                                                       |
 | 2023-01-10 | [[Budget]]              | Energy Usage                                                                              |
 | 2023-01-09 | [[Habit]]               | Wake-First-MIT                                                                            |
 | 2023-01-06 | [[Amazon Customer]]     | Fake Taylor's Tea                                                                         |
@@ -29,7 +30,7 @@
 | 2022-11-29 | [[Phone]]               | Horizon 7.4AT  Treadmill                                                                  |
 | 2022-11-29 | [[Phone]]               | Exercise Tracking (Horizon 7.4AT)                                                         |
 | 2022-11-28 | [[Current]]             | thanksgiving trip                                                                         |
-| 2022-11-23 | [[ELI]]                 | QL planting ideas                                                                         |
+| 2022-11-23 | [[Eli]]                 | QL planting ideas                                                                         |
 | 2022-11-23 | [[Parents]]             | Mom's multiple facebook accounts                                                          |
 | 2022-11-22 | [[Phone]]               | Fire Dept response for Eli                                                                |
 | 2022-11-20 | [[ToBuy]]               | Big Insta-pot                                                                             |

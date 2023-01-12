@@ -2,11 +2,12 @@
 :: [[2021-10-00  AFmaterials]]
 
 :: [[Resume Samples]]
-# _
+
+
 _  [resLI](resLI.md)
   [Bio](Bio.md)
   [Bio](Bio/__Bio__.md)
-   [[Bio]]  [[resLI]],    [[Dan Oblinger Resume.docx|Current Resume]]    [[Patents]] 
+   [[Bio]]  [[resLI]],    [[Dan Oblinger Resume.docx|Current Resume]]    [[Patents]],  [[References]],  
 __
 
 

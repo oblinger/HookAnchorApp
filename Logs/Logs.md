@@ -1,10 +1,9 @@
 
-[[Logs]]  				 	 DATED, ORDERED, GROUPS OF LIKE ENTRIES -- (Dated, Ordered, Typed)
-- [[Idea]] 
+[[Logs]]  				 GROUPS OF LIKE ENTRIES -- (Dated, Ordered, Typed)
+- [[Idea]] 		- Ideas
 - [[Letters]]  						Formal correspondence
 - [[Quotes]]		- Quotes
 - [[Receipts]]  
-
 DATED, ORDERED LOGS
 - [[Day]]			- 'd...' prefix		Daily journal notes log (NOT USED)
 - [[Journal]]		- 'j...' prefix		Journal entries  (NOT USED)
@@ -15,5 +14,3 @@ DATED, ORDERED LOGS
 - [[Untyped]] 	- no prefix		Dated but untyped entries 
 - [[Ref]] 			- 'r...' prefix		Reference Materials/Links (maybe this should be 'e' for external authored by others)
 - [[WP]] 		- 'wp...' prefix	Work Product -- Smaller single documents I produce.  
-
-DATED FILE [[Logs]]

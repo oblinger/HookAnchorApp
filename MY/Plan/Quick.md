@@ -1,3 +1,6 @@
+- [ ] clean up playpen and livingroom desk
+- [ ] change page to web on all webpage for all
+- [ ] James
 - [ ] need to global  
 - [ ] do recalls on Audi
 - [ ] laurette
