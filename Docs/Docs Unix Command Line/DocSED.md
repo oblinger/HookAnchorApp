@@ -1,6 +1,10 @@
  [[Unix Command Line]]
     [SED examples](https://linuxhint.com/50_sed_command_examples/#s11)  
 
+	# Global Search and Replace
+	find . -name '*.md' | xargs -r sed -i '' "s/orig/new/g"
+
+
 	# Replace all data...js with {{{...}}} in place
 	sed -i '' 's/data\(.*\)js/{{{\1}}}/' afile.md
 	# Replace all 20xx.xx.xx  with  20xx-xx-xx

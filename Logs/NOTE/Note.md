@@ -8,7 +8,9 @@
 
 | Date        | File               | Notes                                                                       |
 | ----------- | ------------------ | --------------------------------------------------------------------------- |
+| n2023-01-12 | [[@Jason Syversen]]    | notes about my response                                                     |
 | n2023-01-07 | [[@Jason Syversen]]    | Hiring negotiations                                                         |
+| n2023-01-05 | [[@Jason Syversen]]    | Issues                                                                      |
 | n2023-01-04 | [[@Jason Syversen]]    | Equity Calculations & Negotiation Summary over the last months              |
 | n2022-12-22 | [[EduCorp Types]]      | Ideal Job Requirements                                                      |
 | n2022-12-22 | [[EduCorp Types]]      | Job Ideas                                                                   |

@@ -1,3 +1,8 @@
+- [ ] [[@Sunnova]] prep
+- [x] NICK
+- [x] laurette
+- [x] need to global
+- [x] change page to web on all webpage for all
 - [x] find War Stories
 - [x] Clean Drain in bath
 - [ ] FAANG (matrix, courses, war stories, reading)

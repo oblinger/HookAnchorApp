@@ -3,7 +3,7 @@
 ::	[[Plan]],  [[km]]
 
 -    [[DocObsidian]],   [[KBD Shortcuts]],   [[MY Digital Setup]],   [[OBS Setup]] 
-- [[Action Pages]],  [[Multi-List WorkFlow]], 
+- [[Action Notes]],  [[Multi-List WorkFlow]], 
 
 
 

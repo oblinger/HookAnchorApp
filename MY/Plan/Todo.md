@@ -1,10 +1,13 @@
-- [ ] ben wild
-- [ ] touch base: Rafah, Luis, Juan, Michael, Vittorio, 
+
+- [ ] Accept Job, touch base
+
+- [ ] Figure out my coaching situation
+- [ ] James
+- [ ] clean up playpen and livingroom desk
+- [ ] meeting with Nick:  Moss adams, RZ summary,
+- [ ] do recalls on Audi
 - [ ] Ground the treadmill [[@Horizon Fitness]]  & test run it
 - [ ] Get Amanda call on the books
-
-- [ ] [[@Sunnova]] prep
-- [ ] Figure out my coaching situation
 - [ ] Dr Hassler.  get rid of the prilosec
 
 - [ ] Check if venmo is linked
