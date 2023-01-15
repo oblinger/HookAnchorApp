@@ -1,9 +1,6 @@
 - [ ] get whatsize working
-<<<<<<< HEAD
 - [ ] km -t   BUG:  keeps adding info forever
-=======
 - [ ] git o    fails
->>>>>>> 5ae69d8aebeb626c9537e0986ec12eebd3756e34
 
 - [ ] Take notes on using the call recorder [[Record]]
 - [ ] GitHub daily submit (along with KM) - 
