@@ -1,3 +1,7 @@
+- [x] babysitter on the 16th
+- [x] starting points for narratives for director positions
+- [x] handkerchief
+- [x] Check if venmo is linkeds
 - [ ] [[@Sunnova]] prep
 - [x] NICK
 - [x] laurette

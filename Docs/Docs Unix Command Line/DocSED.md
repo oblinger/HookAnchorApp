@@ -2,7 +2,7 @@
     [SED examples](https://linuxhint.com/50_sed_command_examples/#s11)  
 
 	# Global Search and Replace
-	find . -type f -name "*.md" -print0 | xargs -0 sed -i '' -e 's|- added-by-km-cmd||g'   # Not using REGEX
+	find . -type f -name "*.md" -print0 | xargs -0 sed -i '' -e 's|- added-by-km-cmd||g'   # Not using REGEXs
 
 
 	# Replace all data...js with {{{...}}} in place

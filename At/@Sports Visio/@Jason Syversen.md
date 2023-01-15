@@ -3,6 +3,38 @@
 - Get resume.  
 
 # LOG
+### m2023-01-13  Final discussion
+
+TALKING POINTS
+- How was Cancun
+- 5x~2M can't retire.  10x~4M I can.  20x~8M
+- Already more bullish now than $40M-mkt-cap  A-round investors will need to be.  still instructive to adopt their thinking here
+     even when the company is worth $100M it really still have a large chance of somehow being a zero for the founders.
+
+
+
+
+
+
+
+- Post-A with revenue coming in the company can afford to get me back to the $300K you originally offered.
+
+
+- expectation would be that Dan O would be getting 
+
+brian part-time, wants $330K.  don't think he will be going to go full time
+
+
+
+ESTABLISH PERVUE OVER WHOLE SW ORG
+
+
+MIKE
+Biggest problems that you personally face at SV
+
+
+
+
 ### n2023-01-12  notes about my response
 
 

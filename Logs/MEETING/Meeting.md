@@ -8,6 +8,9 @@
 
 | Date        | File                 | Notes                                                             |
 | ----------- | -------------------- | ----------------------------------------------------------------- |
+| m2023-01-13 | [[@Amanda Riccetti]]     | talk about weekly newsletter                                      |
+| m2023-01-13 | [[@Jason Syversen]]      | Final discussion                                                  |
+| m2023-01-13 | [[@Kyle Langworthy]]     | intro                                                             |
 | m2023-01-06 | [[@Citibank]]            | Autopay                                                           |
 | m2023-01-04 | [[@Horizon Fitness]]     | Service call                                                      |
 | m2022-12-14 | [[@Nick Allen]]          | Prep for talking with Jake                                        |

@@ -1,6 +1,10 @@
 < [[OBS]]
 
+- [[Hook System]] 
+
 ### FACETS
+
+
 - 			--  No suffix overrides others as leading choice
 - 1Pass		--  Launches from 1password (5)
 - App		--  Launches Mac App (3)

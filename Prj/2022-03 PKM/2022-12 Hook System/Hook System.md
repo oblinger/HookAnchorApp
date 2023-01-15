@@ -2,7 +2,7 @@
 
 THE HOOK SYSTEM - Synchronizing your meat brain with your digital brain.
 
-### HOOKING
+## HOOKING
 
 ### __
 - The hook system synchronizes your meat brain with your digital brain by maintains of a set of known *hook names* and associated destinations.
@@ -13,24 +13,31 @@ THE HOOK SYSTEM - Synchronizing your meat brain with your digital brain.
 ### intro #1
 The hook system is designed for larger-scale, task-driven digital brains.  It assume that information collected should be organized and presented optimally for an evolving set of overlapping work efforts.  Knowledge is not collected for knowledge sake, but rather for using in a progression of specific knowledge-based efforts.  This system is consistent with and syntergistic with Zettleskin, Para and other digital brain paradigms.
 
-But the hook system is hyper focused on micro-efficiencies around, storing information, maintaining information, and retrieving information.  High levels of efficiencies in these facilitate working in-flow that is unbroken by the ones knowledge management system.  Ideally as soon as one has information to add, one already knows where it goes, when a specific bit of information is needed it appears with nearly no effort, and complex knowlege-based tasks are executed with information organized specifically for that task.  The hook system approaches this ideal using a number of interlocking methods and tricks described below; these methods may be adopted in part or in whole.
+But the hook system is hyper focused on micro-efficiencies around, storing information, maintaining information, and retrieving information.  High levels of efficiencies in these facilitate working in-flow that is unbroken by the ones knowledge management system.  Ideally as soon as one has information to add, one already knows where it goes, when a specific bit of information is needed it appears with nearly no effort, and complex knowledge-based tasks are executed with information organized specifically for that task.  The hook system approaches this ideal using a number of interlocking methods and tricks described below; these methods may be adopted in part or in whole.
 
-### Hooking
 
-A *hook* is a short name that automatically comes to mind when thinking about some "digital destination" (a previously seen screen of information).
+### Overview - The Hook System
+
+Knowledge work is a process of synthesizing new outputs from prior knowledge.  Critical for this activity is effortless retrieval of specifically remembered personally entered information.  The hook system scales to tens or hundreds of thousands of item while retaining effortless retrieval taking mere seconds. 
+
+A *hook* is a short name that automatically comes to mind when thinking about some "digital destination" (some previously seen screen of information).
 
 The hook system methods incrementally adapt these hooks and destinations facilitate knowledge work in flow state.  The idea is to organize ones digital brain so the most frequent operations are reduced to subconscious muscle memory so ones mind can remain focused of the work at hand, not the digital tool or info organization.  The key ideas of this method are outlined here and described in detail in the subsequent section.
 
-INCREMENTALITY - Rich and complete cross-linking of ones information has many benefits for retrieval and processing.  But it comes at significant time and effort for creation and maintenance.  This cost is especially acute in the common case where one does not know the importance or appropriate organization for information at time of adding.  The hook system optimizes this by capturing 
-
-TWO STEP ACCESS - Most info operations are begin with a two step access pattern.  
+**TWO STEP ACCESS** - Most info operations are begin with a two step access pattern.  
 - In step #1 the users thinks of some previously seen screen and remembers the hook name for that destination and after touch typing that name sees that destination.
 - In step #2 the user uses the destination "landing page" to navigate to the place for the required action.
 
 Getting this two step access pattern working well allows one to use hundreds or thousands of hooks to rapidly access tens or hundreds of thousands of info items.  This system really scales!  Many initially feel such a two step structure cannot work for their information, I encourage them to dig into the XXXX section, since it many cases this seems to turn out to be incorrect.
 
 
-DESTINATIONS - A destination can be *ANY* screen that serves as a "launch point" for some range of activity.  So in the broadest implementation of the hook system all of the following are examples of destinations, but to be clear this list in not intended to be exhaustive,:
+**OPEN LOOP ACCESS** - Once a hook name is thought of one should be able to access that bucket entirely via muscle memory, e. g. with touch typing alone.  So no use of mouse or menus, or knowlege about what state the computer is in.  e. g. you can get from any place in any app to the correct bucket with your eyes closed, and no knowledge of your systems state beyond the fact that it is logged in, and your fingers are on the keyboard.  (Open loop access requires several tricks and really an optional "next level" implementation of the hook system.  It still provides significant value simply using the quick switcher for access.
+
+
+
+### Hook Destinations
+
+**DESTINATIONS** - A destination can be *ANY* screen that serves as a "launch point" for some range of activity.  So in the broadest implementation of the hook system all of the following are examples of destinations, but to be clear this list in not intended to be exhaustive,:
 
 - EXTERNAL ENTITY HOOKS - Any named, unique entity that exists in the physical world, can have a digital destination that organizes information about that entity
 	- PERSON - An info page about an individual.  In my case I have standard
@@ -58,15 +65,17 @@ DESTINATIONS - A destination can be *ANY* screen that serves as a "launch point"
 As we see, a great range of operational pages and interfaces can serve a hook destination.  Still this list is not intended to be exhaustive, really ANY remembered screen of information or interface could potentially serve as a hooked destination.  The Hook System requires that we artfully evolve and maintain and effective set of hundreds or thousands of these hooked destinations.
 
 
-OPEN LOOP ACCESS - Once a hook name is thought of one should be able to access that bucket entirely via muscle memory, e. g. with touch typing alone.  So no use of mouse or menus, or knowlege about what state the computer is in.  e. g. you can get from any place in any app to the correct bucket with your eyes closed, and no knowledge of your systems state beyond the fact that it is logged in, and your fingers are on the keyboard.  (Open loop access requires several tricks and really an optional "next level" implementation of the hook system.  It still provides significant value simply using the quick switcher for access.
-
-UNIFIED NAME SPACE - (talk about this here)
 
 
-
-### Hook space maintenance
+### Hook Space Maintenance
 
 We refer to the evolving set of all hook name and associated destinations collectively as *hook space*.  The set of ideas and methods here are key to managing this space:
+
+
+**INCREMENTALITY** - Rich and complete cross-linking of ones information has many benefits for retrieval and processing.  But it comes at significant time and effort for creation and maintenance.  This cost is especially acute in the common case where one does not know the importance or appropriate organization for information at time of adding.  The hook system optimizes this by capturing 
+
+
+**UNIFIED NAME SPACE** - (talk about this here)
 
 
 SHORT NAMING - 

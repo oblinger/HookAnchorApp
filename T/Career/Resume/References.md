@@ -2,18 +2,6 @@
 
 ### 2023-01-11  Grzegorz References
 
-
-Grzegorz,
-
-Here are the bullet points I have for your letter of recommend.  My understanding is that you want the next stage of your career to focus on the senior most individual contributor roles (rather than management) and you want to become increasingly specialized into machine learning, AI, and deep learning.  So the bullet points below are aiming in that direction.  If my assumptions are wrong, let me know, and I can adjust accordingly:
-
-
-- Grzegorz is among the very 
-- The strongest 
-
-- Raise
-
-
 ==============================
 
 

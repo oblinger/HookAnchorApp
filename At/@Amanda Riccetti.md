@@ -1,4 +1,8 @@
-- [ ] obs: 100% meta-data drive pandoc integration
+
+
+
+# LOG
+### m2023-01-13  talk about weekly newsletter
 
 
 
@@ -25,12 +29,4 @@ how
 k
 
 
-
-
-
-ESTABLISH PERVUE OVER WHOLE SW ORG
-
-
-MIKE
-Biggest problems that you personally face at SV
 

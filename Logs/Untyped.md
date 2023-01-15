@@ -59,7 +59,7 @@
 | 2022-07-18 | [[ToBuy]]               | Walnut desktop                                                                            |
 | 2022-07-12 | [[Phone]]               | Eli Sand toys                                                                             |
 | 2022-07-12 | [[Phone]]               | LOWES tool rental                                                                         |
-| 2022-07-11 | [[Weekly]]              | CRAP WEEK                                                                                 |
+| 2022-07-11 | [[OLD 2022 Weekly]]     | CRAP WEEK                                                                                 |
 | 2022-07-08 | [[MED]]                 | Pain after sex - Spoke with Lucas, Hasslers PA                                            |
 | 2022-07-07 | [[Phone]]               | Setting up Sonic internet service                                                         |
 | 2022-07-02 | [[DocJupyter]]          | config example                                                                            |
@@ -69,7 +69,7 @@
 | 2022-06-06 | [[Phone]]               | Fix MAC mic                                                                               |
 | 2022-06-06 | [[Phone]]               | Drains Flooding                                                                           |
 | 2022-05-28 | [[Arc ALL]]             | SOCIAL                                                                                    |
-| 2022-05-24 | [[Weekly]]              | Forum presentation                                                                        |
+| 2022-05-24 | [[OLD 2022 Weekly]]     | Forum presentation                                                                        |
 | 2022-05-21 | [[MED]]                 | Joint Pain                                                                                |
 | 2022-05-11 | [[Phone]]               | American Airline                                                                          |
 | 2022-05-09 | [[Phone]]               | Marriage courses to consider                                                              |
@@ -98,10 +98,10 @@
 | 2022-04-03 | [[Bache]]               | Bartholome Flores - Restraining order 220-052-081                                         |
 | 2022-04-03 | [[DYL]]                 | Organizational Systems - Tirelessly setup Obsidian & cleaned texts                        |
 | 2022-04-02 | [[ToBuy]]               | Food Scale                                                                                |
-| 2022-03-31 | [[Weekly]]              | (short week)                                                                              |
+| 2022-03-31 | [[OLD 2022 Weekly]]     | (short week)                                                                              |
 | 2022-03-25 | [[Dataview]]            | [templater+dataview example](https://github.com/blacksmithgu/obsidian-dataview/issues/42) |
 | 2022-03-21 | [[Phone]]               | Home Depot - replace new GE microwave                                                     |
-| 2022-03-21 | [[Weekly]]              |                                                                                           |
+| 2022-03-21 | [[OLD 2022 Weekly]]     |                                                                                           |
 | 2022-03-19 | [[Crunchbase Notes]]    | === AMY SEARCH STRATEGY ===                                                               |
 | 2022-03-19 | [[Uniting America]]     | Uniting America On The Issues Of Racial Fairness and Racial Disparity                     |
 | 2022-03-19 | [[Paths]]               | VC Areas                                                                                  |
@@ -110,8 +110,8 @@
 | 2022-03-15 | [[Phone]]               | Qingling's income and taxes                                                               |
 | 2022-03-15 | [[Phone]]               | #### STARTED USING THIS AGAIN ####                                                        |
 | 2022-03-15 | [[OLD 201x Weekly]]     |                                                                                           |
-| 2022-03-15 | [[Weekly]]              |                                                                                           |
-| 2022-03-14 | [[Weekly]]              | Q2 GOALS                                                                                  |
+| 2022-03-15 | [[OLD 2022 Weekly]]     |                                                                                           |
+| 2022-03-14 | [[OLD 2022 Weekly]]     | Q2 GOALS                                                                                  |
 | 2022-03-13 | [[Paths]]               | inside google                                                                             |
 | 2022-03-13 | [[Paths]]               | zzzz                                                                                      |
 | 2022-03-13 | [[MED Sleep]]           | Frequent Sleeping Pills                                                                   |
