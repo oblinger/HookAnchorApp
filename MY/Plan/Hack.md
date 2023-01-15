@@ -1,4 +1,3 @@
-- [ ] get whatsize working
 - [ ] km -t   BUG:  keeps adding info forever
 - [ ] git o    fails
 

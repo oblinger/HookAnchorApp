@@ -1,3 +1,4 @@
+- [x] get whatsize working
 - [x] babysitter on the 16th
 - [x] starting points for narratives for director positions
 - [x] handkerchief
