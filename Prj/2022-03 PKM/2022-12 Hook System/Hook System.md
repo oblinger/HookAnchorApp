@@ -1,3 +1,5 @@
+
+:: [[Hook 2]]
 # THE HOOK SYSTEM
 
 THE HOOK SYSTEM - Synchronizing your meat brain with your digital brain.
