@@ -261,8 +261,8 @@
 | 2021-05-06 | [[DYL]]                 | WORK VIEW                                                                                 |
 | 2021-05-05 | [[Journal Old]]         | DECISION - NO TO JASON                                                                    |
 | 2021-04-30 | [[Brain3]]              |                                                                                           |
-| 2021-04-29 | [[@Jason Syversen]]     | Thumbnail Math                                                                            |
 | 2021-04-29 | [[Journal Old]]         | Thumbnail Math                                                                            |
+| 2021-04-29 | [[@Jason Syversen]]     | Thumbnail Math                                                                            |
 | 2021-04-27 | [[Journal Old]]         | INDEX CARD SUMMARY                                                                        |
 | 2021-04-26 | [[2021.04 Directions]]  | Founder Profile                                                                           |
 | 2021-04-21 | [[BL]]                  | Conscious computing agenda                                                                |
@@ -273,25 +273,25 @@
 | 2021-04-14 | [[NJ22]]                | Dan O Drivers & Futures                                                                   |
 | 2021-04-14 | [[Paths]]               | Compass                                                                                   |
 | 2021-04-11 | [[Journal Old]]         | NFT transfer                                                                              |
-| 2021-04-07 | [[@Jason Syversen]]     | Jason #5                                                                                  |
 | 2021-04-07 | [[Journal Old]]         | Jason #5                                                                                  |
-| 2021-04-01 | [[@Jason Syversen]]     | Jason #5                                                                                  |
+| 2021-04-07 | [[@Jason Syversen]]     | Jason #5                                                                                  |
 | 2021-04-01 | [[Journal Old]]         | Jason #5                                                                                  |
+| 2021-04-01 | [[@Jason Syversen]]     | Jason #5                                                                                  |
 | 2021-04-00 | [[Buckets]]             | Summary at that time                                                                      |
 | 2021-04-00 | [[Journal Old]]         | >>> TOP   -- NEXT JOB <<<                                                                 |
 | 2021-04-00 | [[NJ22 Contents]]       | >>> TOP   -- NEXT JOB <<<                                                                 |
-| 2021-03-30 | [[@Jason Syversen]]     | Jason Summary                                                                             |
 | 2021-03-30 | [[Journal Old]]         | Jason Summary                                                                             |
+| 2021-03-30 | [[@Jason Syversen]]     | Jason Summary                                                                             |
 | 2021-03-28 | [[Journal Old]]         | Big picture next step ideas / pulls                                                       |
 | 2021-03-28 | [[Paths]]               | Big picture next step ideas / pulls                                                       |
-| 2021-03-27 | [[@Jason Syversen]]     | Jason analysis #4                                                                         |
 | 2021-03-27 | [[Journal Old]]         | Jason analysis #4                                                                         |
-| 2021-03-20 | [[@Jason Syversen]]     | Jason response #3                                                                         |
+| 2021-03-27 | [[@Jason Syversen]]     | Jason analysis #4                                                                         |
 | 2021-03-20 | [[Journal Old]]         | Jason response #3                                                                         |
-| 2021-03-17 | [[@Jason Syversen]]     | Jason response #2                                                                         |
-| 2021-03-17 | [[@Jason Syversen]]     | Jason response #1                                                                         |
+| 2021-03-20 | [[@Jason Syversen]]     | Jason response #3                                                                         |
 | 2021-03-17 | [[Journal Old]]         | Jason response #2                                                                         |
 | 2021-03-17 | [[Journal Old]]         | Jason response #1                                                                         |
+| 2021-03-17 | [[@Jason Syversen]]     | Jason response #2                                                                         |
+| 2021-03-17 | [[@Jason Syversen]]     | Jason response #1                                                                         |
 | 2021-03-15 | [[MED Heart]]           | Doctor's Appt                                                                             |
 | 2021-03-04 | [[Journal Old]]         | The Nick and Dan LLC Model                                                                |
 | 2021-03-04 | [[Jnl]]                 | The Nick and Dan LLC Model                                                                |
@@ -301,8 +301,8 @@
 | 2021-02-28 | [[Journal Old]]         | Uniform - What could be pitched now                                                       |
 | 2021-02-24 | [[Journal Old]]         | Dan's Futures Ranked                                                                      |
 | 2021-02-24 | [[Paths]]               | Dan's Futures Ranked                                                                      |
-| 2021-02-21 | [[@Jason Syversen]]     | Jason's Basketball Thing                                                                  |
 | 2021-02-21 | [[Journal Old]]         | Jason's Basketball Thing                                                                  |
+| 2021-02-21 | [[@Jason Syversen]]     | Jason's Basketball Thing                                                                  |
 | 2021-02-17 | [[Journal Old]]         | Dan's Mind & North Star                                                                   |
 | 2021-02-17 | [[Paths]]               | Dan's Mind & North Star                                                                   |
 | 2021-02-15 | [[ufBrick]]             | thinking                                                                                  |

@@ -1,17 +1,12 @@
 
+:: [[Action Notes]],   [[Multi-List WorkFlow]],   [[OBS Dashboards]]
+
 ::	[[OBS.]] (todos),  [[OBS Facets]],  [[OBS Projects]],  [[OBS Meta]],  
 ::	[[Plan]],  [[km]]
 
--    [[DocObsidian]],   [[KBD Shortcuts]],   [[MY Digital Setup]],   [[OBS Setup]] 
-- [[Action Notes]],  [[Multi-List WorkFlow]], 
+-    [[DocObsidian]],   [[KBD Shortcuts]],    [[OBS Setup]] 
 
 
-
-- [[OBS]] 
-- [[OBS Dashboards]]	-  
-- [[KBD Shortcuts]],   
-- [[QUICKADD]], 
-- [[TEMPLATER]],  
 
 
 

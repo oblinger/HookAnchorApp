@@ -1,4 +1,5 @@
 
+- [ ] km -d  Folder method accepts action, and sync args directly from config file
 - [ ] Need method to push page to FRONT of unified name space.  (ideally w/o changing the name itself, using attributes or such)
 
 - [ ] obs:  find out how to move todo item around
