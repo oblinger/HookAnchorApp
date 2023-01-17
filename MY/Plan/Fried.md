@@ -1,4 +1,4 @@
-- [ ] Container store
+- [ ] Container store 
 - [ ] Privacy Panel
 - [ ] hands free phone holder
 - [ ] refund for returned AirMega $595

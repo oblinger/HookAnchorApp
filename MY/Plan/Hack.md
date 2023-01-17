@@ -1,6 +1,5 @@
 
 - [ ] Take notes on using the call recorder [[Record]]
-- [ ] GitHub daily submit (along with KM) - 
 - [ ] EMAILS: Verify saving, verify drafts save, verify save sends, merge all AF mail in. back backup of all mail.
       Ensure sent mail is saved. and received mail is saved.  many copies when creating email
 - [ ] MAC: Toggle email notifications
