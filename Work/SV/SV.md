@@ -28,7 +28,11 @@ Spiritually in Feb-1-2023 we already have a separated R&D org.
 
 ### 2023-01-23  Prior Inventions
 
-[[Ideas]]
+SOURCES:  [[Idea]], [[Ideas]]
+
+
+ENGINES OF CONTROL - Proposed models for AGI (Artificial General Intelligence), and analysis of properties that are likely or required of all AGI systems.  These proposals and analyses serve as the basis for AI-safety work -- assessing the feasibility and approaches one might take to ensure safe usage of such AGI systems.
+
 
 
 

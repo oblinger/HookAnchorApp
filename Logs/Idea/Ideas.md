@@ -1,5 +1,4 @@
 
-
 # QUICK THOUGHTS
 ### --- AREAS ---
 - ENERGY -- Building something that 
@@ -727,6 +726,8 @@ but in a way that
 ### UNIFORM: Config -- finding a market place
 ### UNIFORM: Marketplace -- Block-chain based market place 
 
+
+### .
 
 # LOG
 ### 2020-00-00  Chipstack
