@@ -1,6 +1,16 @@
 
+
 # FOODS
 ## DRY GOODS
+### Coffee
+#### K-cups
+
+++ SF Bay Coffee:  French Roast
+
+BAD
+-- Happy Belly: Donut Shop Coffee
+-- Kirkland:  ???
+
 ### Canned
 
 

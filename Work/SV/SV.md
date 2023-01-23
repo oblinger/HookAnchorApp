@@ -1,54 +1,6 @@
 
 :: [[SV90]]
 
-:: [[SV90]]
-
-:: [[SV90]]
-
-:: [[SV90]]
-
-:: [[SV90]]
-
-:: [[SV90]]
-
-:: [[SV90]]
-
-:: [[SV90]]
-
-:: [[SV90]]
-
-:: [[SV90]]
-
-:: [[SV90]]
-
-:: [[SV90]]
-
-:: [[SV90]]
-
-:: [[SV90]]
-
-:: [[SV90]]
-
-:: [[SV90]]
-
-:: [[SV90]]
-
-:: [[SV90]]
-
-:: [[SV90]]
-
-:: [[SV90]]
-
-:: [[SV90]]
-
-:: [[SV90]]
-
-:: [[SVJ]],   [[SV90]]
-
-:: [[SVJ]],   [[SV90]]
-
-:: [[SV90]]
-
  [[@Sports Visio]],  [[@Jason Syversen]], 
 
 
@@ -71,6 +23,11 @@ Spiritually in Feb-1-2023 we already have a separated R&D org.
 # TOPICS
 ## = People
 # LOG
+
+### 2023-01-23  Prior Inventions
+
+[[Ideas]]
+
 
 
 

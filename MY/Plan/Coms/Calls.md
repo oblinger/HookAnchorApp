@@ -1,6 +1,7 @@
-- [[Coms]]:  Work communications
+- Anastasia
+
 
 - John Cameron; Laurette Caniza
-- Anastasia
 - Collette Roney
-- 
+
+- [[Coms]]:  Work communications

@@ -14,7 +14,7 @@ Dan Oblinger (c) 2022.  Please do not distribute.  (Draft 11/21/2022)
 _Contractually and Culturally Mandated “Pay It Forward”_
 :::
 
-Empowering those without opportunity but with motivation and potential but to create opportunities for themselves and others, by providing the (1) funds, (2) training, and (3) network to create ones own business...
+Empowering those without opportunity but with motivation and potential but to create opportunities for themselves and others, by providing the (1) funds, (2) training, and (3) network to create ones own business.
 
 ## INTRODUCTION
 
@@ -264,4 +264,4 @@ Getting this balancing act correct is important for the _profits_ of the corpora
 
 But once businesses have discharged their obligations for a given period their funds are theirs to use as they see fit.  They will likely have rules regarding employee voting and such when major transactions are being considered.  A nice benefit of having the corporation in this stylized receivership position is that such oversight validation can be easily and reliable done for benefit of the corporation.  This virtually eliminates the very real risks new corporations face that somehow one of the employees manage to drain huge funds, then quickly flying to the Bahamas for early retirement never to be seen again.
 
-Once a corporation has discharged all its Edu Corp contractual obligations it is free to leave receivership with Edu Corp, or for a fee, it might choose to continue to retain the added layer of accounting protection afforded by the arrangement.  But either way, at that point, all restrictions are removed from how it might utilize its monies.
+Once a corporation has discharged all its Edu Corp contractual obligations it is free to leave receivership with Edu Corp, or for a fee, it might choose to continue to retain the added layer of accounting protection afforded by the arrangement.  But either way, at that point, all restrictions are removed from how it might utilize its monies.ro

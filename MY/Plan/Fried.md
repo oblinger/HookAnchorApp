@@ -1,17 +1,15 @@
-- [ ] Container store 
-- [ ] Privacy Panel
+- [ ] do quarterly budgeting
+- [ ] put plate on wall outlet
+- [ ] get password I know by memory for gmail; think about logon w/o computer to many accounts
+
 - [ ] hands free phone holder
-- [ ] refund for returned AirMega $595
 - [ ]  Crones doctor
-- [ ] USB-A to USB-C into Bookbag
 - [ ] drycleaning
-- [ ] happy new year
-- [ ] refill bookbag and toiletries
-- [ ] Figure out new mealscc
 - [ ] Evidence-based child rearing
 
 
 - [ ] Get "Fun" list filled out
+- [ ] Jump list should jump directly even whne inside another jump workspace
 - [ ] Call doc about my heart test results.
 - [ ] Plan for crypto
 - [ ] add other wifi
@@ -29,11 +27,6 @@
 - [ ] [job from nick](https://jobs.climatebase.org/job/45940719/chief-technology-officer)    https://boards.greenho
 - [ ] joe says check out  https://boards.greenhouse.io/fractalfounders/jobs/4116035004f
 - [ ] [annual review](https://humanparts.medium.com/how-to-pull-off-a-personal-annual-review-bc3ae908f493) 
-
-
-- [ ] [[WP2022#wp2022-05-21 Photo Management Strategy]] 
-- [ ] PHOTOS:  Create Rock for this
-      - [ ] understand apple photo importing of shared albums; and duplicate import
 - BEDROOM --  Closet Pole
 
 
@@ -72,6 +65,10 @@ make a 'photo' hook page
 figure out how to merge all photos
 figure out workflow for injestion
 - do we display on wall.  how?
+
+- [ ] [[WP2022#wp2022-05-21 Photo Management Strategy]] 
+- [ ] PHOTOS:  Create Rock for this
+      - [ ] understand apple photo importing of shared albums; and duplicate import
 
 #### __
 

@@ -6,6 +6,8 @@
 
 | Date       | File                | Notes                                                                                     |
 | ---------- | ------------------- | ----------------------------------------------------------------------------------------- |
+| 2023-01-23 | [[SV]]                  | Prior Inventions                                                                          |
+| 2023-01-19 | [[DYL]]                 | Dan Job                                                                                   |
 | 2023-01-11 | [[References]]          | Grzegorz References                                                                       |
 | 2023-01-10 | [[Budget]]              | Energy Usage                                                                              |
 | 2023-01-09 | [[Habit]]               | Wake-First-MIT                                                                            |
@@ -19,39 +21,39 @@
 | 2022-12-13 | [[DYL]]                 | Dan the designer                                                                          |
 | 2022-12-13 | [[DYL]]                 | Captured from earlier notes                                                               |
 | 2022-12-12 | [[Diet]]                | Evening Eating - Hormones                                                                 |
-| 2022-12-11 | [[OBS Dashboards]]      | Daily                                                                                     |
+| 2022-12-11 | [[OBS Task]]            | Daily                                                                                     |
 | 2022-12-08 | [[Phone]]               | Solar Installer                                                                           |
 | 2022-12-07 | [[resLI]]               | Framing Self                                                                              |
 | 2022-12-03 | [[Phone]]               | thumb tack TV install                                                                     |
 | 2022-12-01 | [[Enxt]]                | Alta Vista                                                                                |
-| 2022-11-30 | [[Current]]             | short week (cyber monday)                                                                 |
+| 2022-11-30 | [[2022-W46]]            | short week (cyber monday)                                                                 |
 | 2022-11-29 | [[Phone]]               | [[@Audi]]                                                                                 |
 | 2022-11-29 | [[Phone]]               | Horizon 7.4AT  Treadmill                                                                  |
 | 2022-11-29 | [[Phone]]               | Exercise Tracking (Horizon 7.4AT)                                                         |
-| 2022-11-28 | [[Current]]             | thanksgiving trip                                                                         |
+| 2022-11-28 | [[2022-W45]]            | thanksgiving trip                                                                         |
 | 2022-11-23 | [[Eli]]                 | QL planting ideas                                                                         |
 | 2022-11-23 | [[Parents]]             | Mom's multiple facebook accounts                                                          |
 | 2022-11-22 | [[Phone]]               | Fire Dept response for Eli                                                                |
 | 2022-11-20 | [[ToBuy]]               | Big Insta-pot                                                                             |
 | 2022-11-10 | [[Enxt]]                | The San Francisco School                                                                  |
 | 2022-11-10 | [[MED]]                 | Maria Cross - Registered Dietician                                                        |
-| 2022-11-08 | [[Fin Adv]]             | Finding a Fiduciary                                                                       |
-| 2022-11-08 | [[Fin Adv]]             | My plan                                                                                   |
-| 2022-11-08 | [[Fin Adv]]             | Initial reading                                                                           |
-| 2022-11-07 | [[Current]]             |                                                                                           |
+| 2022-11-08 | [[FIN Advisor]]         | Finding a Fiduciary                                                                       |
+| 2022-11-08 | [[FIN Advisor]]         | My plan                                                                                   |
+| 2022-11-08 | [[FIN Advisor]]         | Initial reading                                                                           |
+| 2022-11-07 | [[2022-W45]]            |                                                                                           |
 | 2022-10-31 | [[Bio]]                 | Rafah - Microsoft Intro                                                                   |
 | 2022-10-31 | [[Bio]]                 | Avidan - Tessa VC                                                                         |
 | 2022-10-28 | [[ToBuy]]               | Scotch Crystal                                                                            |
-| 2022-10-24 | [[Current]]             |                                                                                           |
+| 2022-10-24 | [[2022-w43]]            |                                                                                           |
 | 2022-10-20 | [[@Apple]]              | Laptop Repair                                                                             |
 | 2022-10-19 | [[@Apple]]              | Repair Request                                                                            |
 | 2022-10-16 | [[ToBuy]]               | Dresser for bedroom                                                                       |
 | 2022-10-10 | [[Nanny]]               | SAVE MONEY                                                                                |
 | 2022-10-07 | [[Phone]]               | Lily - Tax Info for 2021 return                                                           |
-| 2022-10-03 | [[Current]]             | fre                                                                                       |
+| 2022-10-03 | [[2022-W40]]            | fre                                                                                       |
 | 2022-09-30 | [[Phone]]               | Building Work Desk in livingroom                                                          |
-| 2022-09-29 | [[DAILY]]               |                                                                                           |
-| 2022-09-28 | [[DAILY]]               |                                                                                           |
+| 2022-09-29 | [[Daily]]               |                                                                                           |
+| 2022-09-28 | [[Daily]]               |                                                                                           |
 | 2022-08-17 | [[Phone]]               | Dr Lue Urologist                                                                          |
 | 2022-08-01 | [[Phone]]               | notes while out - about me                                                                |
 | 2022-07-19 | [[Brain3]]              | G-Flow Nets Maybe - whats my example                                                      |
@@ -314,8 +316,8 @@
 | 2021-00-00 | [[SNIP]]                | Fox news egregious                                                                        |
 | 2021-00-00 | [[SNIP]]                | ELI music                                                                                 |
 | 2021-00-00 | [[Phone]]               | Eli's Birth Certificate                                                                   |
-| 2020-12-23 | [[scratch]]             | XMAS FAMILY ZOOM                                                                          |
-| 2020-12-23 | [[scratch]]             | SHANE RESUME                                                                              |
+| 2020-12-23 | [[Scratch Note]]        | XMAS FAMILY ZOOM                                                                          |
+| 2020-12-23 | [[Scratch Note]]        | SHANE RESUME                                                                              |
 | 2020-11-30 | [[spirit_older_bigger]] | GOD THOUGHTS                                                                              |
 | 2020-11-25 | [[Journal Old]]         | Unicore Implementation Days                                                               |
 | 2020-11-19 | [[Journal Old]]         | AF Strategy                                                                               |
@@ -327,6 +329,7 @@
 | 2020-09-17 | [[Forum]]               | Police violence                                                                           |
 | 2020-09-07 | [[Forum]]               | Shinster email                                                                            |
 | 2020-08-23 | [[Journal Old]]         | Lost at Sea but with good provisions                                                      |
+| 2020-08-17 | [[Bills]]               | QL - AYI payments                                                                         |
 | 2020-08-15 | [[Journal Old]]         | My Futures                                                                                |
 | 2020-07-23 | [[DocMac]]              | Applications folder                                                                       |
 | 2020-07-18 | [[Budget]]              | Budget                                                                                    |
@@ -344,6 +347,7 @@
 | 2020-01-05 | [[OLD 2020 Weekly]]     | GOALS FOR THE YEAR                                                                        |
 | 2020-00-00 | [[Parents]]             | Subscriptions that Dad might want                                                         |
 | 2020-00-00 | [[Forum]]               | UNSORTED                                                                                  |
+| 2020-00-00 | [[Ideas]]               | Chipstack                                                                                 |
 | 2019-12-09 | [[OLD 201x Weekly]]     | Mostly sideways week                                                                      |
 | 2019-12-06 | [[OLD 201x Weekly]]     | My YES List                                                                               |
 | 2019-11-00 | [[Nanny]]               | Notes                                                                                     |
@@ -384,10 +388,12 @@
 | 2019-03-00 | [[Bio]]                 | – Verbal (Sales Call) BIO                                                                 |
 | 2019-02-08 | [[FIN]]                 | EV Notes                                                                                  |
 | 2019-02-00 | [[AFmaterials]]         | Turbot Materials                                                                          |
+| 2019-00-00 | [[Ideas]]               | Coin thoughts - alloy???                                                                  |
 | 2019-00-00 | [[Journal Old]]         | Block Chain                                                                               |
 | 2019-00-00 | [[DYL]]                 | Block Chain                                                                               |
 | 2019-00-00 | [[ReBuy]]               | Office Drawers  (bought)                                                                  |
 | 2019-00-00 | [[ReBuy]]               | Front Door Lock                                                                           |
+| 2019-00-00 | [[Bills]]               | AF CHARGES                                                                                |
 | 2019-00-00 | [[MED]]                 | Ideas for QL Pregnancy Heroids                                                            |
 | 2018-08-07 | [[Phone]]               | #### starting to use Evernote ####                                                        |
 | 2018-00-00 | [[Phone]]               | coinbase                                                                                  |

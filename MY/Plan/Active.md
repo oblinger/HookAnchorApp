@@ -3,7 +3,7 @@
 - [ ] [[Enxt]]: 		Sheet; Read materials
 - [ ] [[Learn]]:		[[F90]],  [[Coursera Notes]],  
 
-- [ ] [[Fin Adv]]:		Find advisor; Consider Avanti Paperwork
+- [ ] [[FIN Advisor]]:		Find advisor; Consider Avanti Paperwork
 - [ ] [[Coms]]:		
 
 - [ ] [[Exercise]]:	Get daily activities figured out.  [[Habit]].

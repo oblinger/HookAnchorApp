@@ -1,0 +1,897 @@
+  [pppw](pppw.md)
+
+
+
+# Plan for progress
+
+# Junk
+// turtles all the way down.
+// - folders nest in uniform expressions
+// - this.that.my_file..key1.33.subkey
+//   use double dot, or ._. to denote transition into file contents
+// - special roots like local files system:
+//   file.ob.proj.uniform.some_pod.pod._.what.is.this
+//     (I '_' is not needed if we assume we can view FS to determine meaning)
+
+--- move this stuff to ppp.org ---
+
+Python deep learning library:  https://github.com/fchollet/keras
+
+http://www.nicole-lillycarter.com/arp/a.php/m/3afcf/72g6vl
+
+
+# IMPL SPEC -- Embodied Multi-Drive Emergent Intelligence
+### LAYERS -- OUTLINE of the meta-meta implementation
+-- BACKGROUND ENCODING LAYER          --  Defines the underlying encoding data structures  
+-- BACKGROUND STANDARD TERMS LAYER    --  Defines many commonplace terms from other programming paradigms systems
+-- BACKGROUND SEMANTICS LAYER         --  Defines core sematic elements of the PPP processor
+-- BACKGROUND EMBODIMENT LAYER        --  Defines the components needed to embed the PPP within a world that it can sense and manipulate
+-- LEARNING LAYERS
+
+  -- prerequisite embodiment
+- categories of learning
+- Positioning existing ML within the larger hll
+- Enumerating many HLLDs
+- Requirements for bootstrapping 
+  - K composibility
+  - K Triangulation
+
+- Requirements for autonomy
+  
+
+### ===HARNESS===
+
+### TASKING LAYER
+
+TASK --
+
+
+ONE_RUN
+
+
+SNIPIT
+
+FEATURE_STATE
+
+
+### BACKGROUND LAYERS
+#### TL;DR for the background layers.
+
+- The 'UNI-FORM' is a python function call   fn(val1, val2, ..., key_a=value_a, key_b=value_b)  where values
+  are either recurive uni-form expressions, or are a number.
+- UNI-FORM is homoiconic like LISP but it build from a subset of JSON (or LISP) that only grounds out in numeric literals.
+- UNI-FORM has a templating typing system that can constrain all variables using a sophisticated recurive typing constraint system
+- All parts of a UNI-FORM expressions can have weights or probabilities associated with them (even the parts of a typespec expressions for example)
+- The programmable population processor is embedded into a real or simulated world by having a set of input features computed by the world, and a set of output features that control actuators on the embodiment within that world.
+
+### BACKGROUND KNOWLEDGE ENCODINGS
+
+In order to frame later discussion it is useful to define two information types, data and knowledge.
+
+DATA -- A sequence of activation sets, where each activation set is a set of feature activation levels.  A feature activation is the pairing of a floating point activation level to a feature token, where a feature token is some durable identifier used to refer to this same activation level across other activation sets.
+
+KNOWLEDGE -- One or more elements from the UNI-FORM LANGUAGE.  The uni-form language is set of uni-form expressions -- recursive compositions of numbers and the 'uni-form' itself.  Formally, the uni-form is expressed as:      head( VALUE_1, VALUE_2, ..., key_a=VALUE_A, key_b=VALUE_B )     where head and key_a, key_b, ... are drawn from some enumerable set of identifiers, and VALUE_1, VALUE_A, VALUE_2, VALUEB, ... are either floating point numbers, or are sub-uni-form expressions. 
+
+EXECUTION -- Uni-form expressions define a simple form of computation.
+-- Uni-form execution is the mapping of a uni-form expression, E, and execution context, C, onto some resuting form R and an updated context C'.  Each of these parts, E, C, C', and R are elements of uni-form.
+-- Execution is dictated by the 'head' identifier of the uni-form expression.  EXECUTOR(head, C) maps some subset of identifiers 'head' onto an executor functions, EXE.  Each executor function, EXE, accepts an expression, E, and context C, and returns a result R.  It may optionally modify the execution context to produce a new execution context C'
+-- Execute(E, C) maps to R and updates C to C'   when   E==head(...)   and   exe,C'==EXECUTOR(head, C)   and  R==EXE(E,C), otherwise
+   Execute(E, C) maps to E and C remains unchanged.
+-- In the first case E is called a FUNCTIONAL FORM, and in the second case E is called a CONSTANT FORM
+
+IMPLICIT KNOWLEDGE -- The information encoded in the EXE functions returned by the EXECUTOR function is call implicit knowledge.  This distinguishes this information from the explicitly encoded information that we are calling 'KNOWLEDGE' above.
+
+
+
+--- DISCUSSION ABOUT UNI-FORM ENCODINGS ---
+RELATING UNI-FORM TO EXISTING LANGUAGES.  Uni-form execution over JSON expressions is much like LISP evaluation except LISP operates over cons structures.     Uni-form execution is also analogous to, but more general than, lambda caluculus since it does not define any fixed function application semantics.  For example we can define a 'while' form, a uniform-expression whose head is 'while' that when executed, will in turn execute it first arguemnt and then iteratively execute is the remaining body elements repeatedly based on results returned from repeated execution of the its first argument.  
+
+UNI-FORM GENERALITY.  Lambda-style function application can naturally be expressed as uni-form execution, as can every modern procedural langauge.  But uni-form expressions themselve do not fully specify any proecdural lanaguage since it does not specify the semantics employed by the head implementations, nor does it specify the variables, datastructures, etc. employed by those languages -- all of that information is only implicitly encoded within the 'context' datastructure and in the EXE implementations.  Thus, Uni-form and it execution model can be thought of as a language of 'structure' over which one can define many different representational and computational systems.  
+
+INTENDED USAGE OF DATA AND KNOWLEDGE FORMS --  In the embodied intelligent agent context we use DATA in many forms to represent 'raw' data from sensors, data sent to actuators, historical 'training' data. etc.  In some contexts successive activation sets within DATA are intended to be interpreted as temporally ordered accounts of sensor/action states, in more classical inductive contexts we may use DATA to encode elements drawn iid from some distriubtion to be modelled.  KNOWLEDGE by contrast is never directly expressible outside of the execution of an embodied intelligence.  It is used in various forms to encode models learned from data, is used to control the execution of those learning processes, and is used to encode all behaviors of the embodied agent.  Knowledge is the language of structures latent in the structure of the embodied agent's processor.
+
+### BACKGROUND STANDARD TERMS LAYER
+
+Many useful programming idioms commonplace in modern imparative programming can be straightforwardly encoded as uni-form knowledge.  This laborious exercise is necessary in order for us to define the adaptive meta processes that operate over these forms.  Here we provide precise definitions for these intuitive and commonly used terms in the uni-form context.  The reader might skim these definitions now, and refer back to them as needed as they are used in later sections.
+
+UNI-FORM -- The recursively defined set of all uni-form expressions.
+EXPR -- UNI-FORM EXPRESSION -- An element of uni-form.
+NUMBER -- NUMERIC EXPRESSION -- An element of uni-form that is a floating point or integer number.
+STRCTURED EXPRESSION -- An element of uni-form that is not a numeric expression -- i.e. it has at least one structured component.
+ROOT -- The 'toplevel' outer most structured form in some structured expression.  All structued expressions have one root form:  head( value_1, value_2 ..., key_a=value_a, key_b=value_b, ...)
+EXPRESSION PARTS -- When refering to the the parts of a strctured expression, we are implicitly referring to the parts of its root form.  So a structured form, E,  will have a HEAD, it may have a first, second, ... expression, and make have expressions associated with each possible 'key' identifier.
+FUNCTIONAL FORM -- A structed expression whose HEAD maps is mapped to a non-NULL value by the EXECUTOR function.
+CONSTANT FORM -- An element of uni-form that is not a functional form.
+STRUCTURED CONSTANT -- A constant form that is also a structured form, e.g. is has a root form, but its head function is not defined or returns itself.
+FIXED ARGUMENTS -- the value, value_1, value_2, etc. within the root of a structured uni-form as defined above.
+KEYWORD ARGUMENTS -- the values value_a, value_a, etc. within the root of a structured uni-form as defined above, whose keyword identifer does not begin with '^'
+META-KEYWORDS ARGUMENTS -- values associated with keywords whose identifer begins with '^' character.  (these special keywords are used by convention to encode information that should not be processed in the same way standard keywords are processed.)
+
+LIST -- a list is a structured form whose head is the identifier 'list'.  The executor associated with 'list' will return the passed execution form as a constant will, but returns and error form if any keyword is provieded.  (meta-keywords may be provided w/o error.)
+MAP -- a map is a structured form whose head is 'map'.  Analgous to 'list', it returns its constant value in the case that no fixed arguments are specified, else an 'error' structure is returned.
+
+N-ARY FUNCTION -- A functional form that operates over execution contexts with no keyword aruments and exactly N fixed arguments.  (Note: N-ARY exuction contexts may have meta-keyworks, just no defined keywords).
+UNARY FUNCTION -- An n-ary form where n=1
+BINARY FUNCTION -- An n-ary form where n=2
+THUNK -- An n-ary form where n=0
+
+NUMERIC FUNCTION -- A functional form that always returns a numeric value.  Also called a 'metric' in certain contexts.
+SIMPLE INDICATOR FUNCTION -- A unary numeric funtion returning either 0.0 or 1.0
+WEIGHTED INDICATOR FUNCTION -- A unary numeric function returning a number between 0.0 and 1.0 with the intent that intermediate values
+
+
+---SPECIAL STRUCTURED FORMS USED IN EXECUTION---
+SYMBOL -- A symbol is a strutured form whose head maps to an executor that always returns the structured form itself.  Formally a symbol, S, is a structured form "head()" where Executor(head)==exe and exe(E, C) always returns "head()" for all E and all C.  In printed form, for textual simplicity we drop the '()' suffix for symbol forms.  So, foo( alpha, beta, gamma ) is a uni-form expression with three symbols as arguments: alpha(), beta(), and gamma().  NOTE: Depending on the context symbol are often used as a indicator of one of N scalar alternatives, in other contexts symbol are used as a variable placholder.
+NULL -- The symbol whose head identifer is the string 'null'.  (This is used to denote no result.)
+ERROR -- A structured constant form whose head is 'error'.  this the result for an execution that fails -- typically its arguments tell you some details about the failure.
+
+
+STANDARD EXECUTORS -- The 'EXECUTOR' function maps many terms onto their expected computational embodiments. Including:
+min, max, +, -, *, /, etc.  all map to their expected mathematical functions.
+if, while, for, etc. all map to their expected imparative programming implementation.
+(If using LISP these can simply be the LISP functions, for JSON there is no as readily availalble implementation)
+
+
+SYNTACTIC SUGAR -- For convenience a simple parser / printer may be employed to map textual forms with embedded infix operators
+into a uni-form expression.  So  c^2 == a^2 + b^2  might map to   '=='( '^'(c, 2), '+'( '^'(a, 2), '^'(b, 2) ) )
+
+
+
+---SPECIALIZED-STUFF---
+
+
+ALT EXPRESSION -- An alt expression (weighted expression) is a structured expression where numeric weights are associated with each value and each keyword.  alt( .3~111, 1.5~222, 22~foo=333 ) is an example of a weighted expression with three weights .3, 1.5, and 22 associated its values and keys.  At the JSON level this is encoded by simply having a second structured expression under the '^weights' key of the first expression.  So the JSON for the example above is   alt(111, 222, foo=333, ^weights=w(.3, 1.5, foo=22)).  Semantically a weighted expression defines a non-normalized probability density funcition (where weights do not need to sum to 1.0). 
+
+
+TYPESPEC -- A TYPESPEC, T, is a uniform expression which is also an indicator function, used to define a representational sub langauge, S, where S is some subset of the set of all UNI-FORM expressions.  Formally S == { k for all k in UNI-FORM LANGUAGE where I(k)=1.0}.  In the case that I is a weighted indicatior function, then it encodes a weighted subset of the UNI-FORM LANGAUGE where each element, k, in the sub-language, S, is associated with some weight, w>0, where w=I(k).  We refer to a typespec with a weighted indicator as a soft or weighted typespec in order to indicate that its membership is not absolute.  In the case that the weighted indicator function denotes the probability of set membership, then a weighted typespec would be a pdf over uni-form expressions.  But in other cases no precise formal semantics are associated with the weightings.  Still the intended usage is that larger values of the indicator function indicate elements that are 'more' indicated, 'more' important, 'more' represented in the data, 'more' worthy of exploration, etc.  they are 'more' of something where that 'more-ness' is implicit in the processes that are executing over the typespec.
+
+
+TYPESPACE -- A TYPESPACE is the set of expressions indicated by a TYPESPEC.  Here is the recursively defined typespec langauge
+
+tspec( TYPESPEC )       // wrapper used to indicate a TYPESPEC expression
+none                    // does not match an expression of any type
+any                     // same as 'expr' it will match any value
+int                     // matches any number without a decimal expansion
+number                  // matches any number
+symbol                  // matches any symbol function
+list( VAL_SPEC )        // matches any uni-form with a head 'list' and only fixed arg
+obj( HEAD_SYMBOL_SPEC, SPEC1, SPEC2, ..., key_a=SPEC_A, key_b=SPEC_B, varargs=SPEC, keyargs=SPEC )
+// matches a structured expression with given HEAD, and matching arguments.  fixedargs and keyargs 
+// are the specs used for other fixed or keyword arguments.
+
+// matches a function with the specified signature.  'result' specifies the typespec for the function's result.
+fspec( SPEC1, SPEC2, ..., key_a=SPEC_A, key_b=SPEC_B, varargs=SPEC, keyargs=SPEC, result=SPEC )
+
+
+#### details -- the typesystem's structure defined using typespec
+
+WRAPPER == tspec( TYPESPEC )
+
+TYPESPEC == alt( none, any, int, number, symbol, LISTSPEC, OBJSPEC, FNSPEC )
+
+LISTSPEC == obj( list, TYPESPEC, varargs=none, keyargs=none )
+
+OBJSPEC == obj( obj, varargs=TYPESPEC, keyargs=TYPESPEC )
+
+FNSPEC == obj( fn, varargs=TYPESPEC, keyargs=TYPESPEC )
+
+### FEATURE LAYER
+
+DATA BINDINGS -- Special uni-form symbols which provide access to the DATA layer within the KNOWLEDGE language.  Each data binding symbol of cooresponds to single features within the DATA layer.  The following functions are defined over features symbols in order to access and control their execution:
+-- 'activation' is a numeric function that accepts a feature symbol, and returns it current activation.  
+-- 'activate' accepts a feature symbol and an activation level and 'sets' the current activation of that feature to the new level.  
+(NOTE: the consequence of this setting will vary depnding on the feature and upon the embodiment.  
+-- IMPLICIT KNOWLEDGE FEATURE FUNCTIONS -- Other feature functions may also be defined for certain EMBODIMENTS.  For example 'history()' might provide access to some limited list of historical activation values.  or adjacent(feature1, feature2) might express IMPLICIT KNOWLEDGE about the relationship between features.  For example, the 2d-spatial layout of features encoding an embedded agent's vusual system might be encoded using the feature function adjacent(feature1, feature2)
+
+-- 'STATE' -- an expression that records the moment to moment state of the learning.
+-- 'CONFIGURATION' -- an expression that records results of learning
+-- 'INPUTS' -- a list of features that are used to compute the activation of this feature
+-- 'FN' -- an optional numeric function that computes the activation of a feature given its state, configuration, and the prior activation of its input features.
+
+FEATURE -- The complete state of a feature.  Each can be encoded as an instance of FEATIRE.tspec
+
+FEATURE.tspec = 
+tspec( obj(
+    feature, 
+    pop=POPULATION,                          // the population this features belongs to
+    fid=integer,                             // unique integer id for this feature 
+    connectivity=list(int),
+    activation=number,                       // the current activation level for this feature
+    history=list(number),
+    state=expr,                              // internal state of this feature  (perhaps this should simply be list(int))
+    configuration=expr,                      // the result of learning
+))
+
+
+
+POPULATION -- A group of features that have indentical genetic endowment.  
+
+tspec( obj(
+    pop,
+    activation_fn=ACTIVATION_FUNCTION        // Function used to compute the activation of any feature within the population 
+    configspec=TYPESPEC                      //  Hypespec
+    statespec=TYPESPEC
+
+    
+    
+)
+
+
+ACTIVATION_FN is a function of STATE1, STATE2, ...,  INPUT1, INPUT2, ..., and CONFIG
+tspec( fn(varargs=number, state=expr, config=expr, result=number) )
+
+
+
+=========
+
+SNAPSHOT -- A snapshot is a mapping of some set of features onto an activation level for each feature.  NOTE: a snapshot is a recording of activation levels without regard to whether they are input or output features.  
+
+EXPERIENCE -- is a sequence of snapshots.  In some cases these snapshots are to be interpreted as having occurred temporally in order in the world.  In other cases shapshots simply represent distinct experiences w/o any implied temporal ordering.  (Each snapshot has a boolean flag called 'chained'.  When true it signified that this shapshot is to be interpreted as having occured temporally immediately after the preceding snapshot within the EXPERIENCE.
+
+Note: we use the term 'experience' since a key usage of experience is to encode data obtained from the embodiment of an agent.  In other caseses however the 'experience' a learning algorithm is exposed to is 'experience' internally derived from other computation.  It makes no different to the receiving learning algorithms, in both cases it represents experience presented from outside over which it is expected to process / learn.
+
+
+
+SNIPIT -- a short sequence of snapshots that are chained.  A snipit is 'short' in the sense that the system does not attempt to temporally organize within the timeframe of the snipit, though it may operate on concepts that depend on the order of the snapshot chaining.
+
+(for example 'increasing' is a concept that does not encode temporal relationships within the snapshots, but it does depend on their ordering)
+
+
+##### Population Modulation
+
+Any population can be modulated with a modulation function.
+Based on its inputs it will map any initial activation level onto an output activation level.
+
+This can be used to turn on/off a population as well as accentuate/diminish its effects, etc.
+
+
+
+### FUNCTIONAL FEATURE TYPES
+These features are used as building blocks to connect between adaptive 
+layers in ways that modulate the learning
+
+#### TEMPORAL MASKS (tmask)
+These features activate as a parametric function of the history of another single feature.
+
+- TMAX(width, [delay]) -- Temporal Max -- Activation is set at the maximum acitivation across a window of steps 'width' long, which ends 'delay'+1 steps before the present step.
+
+- TAVG(width, [delay])
+
+- TGAUSSIAN(width, delay) -- ??? activation integrated over history
+    not efficient
+
+- TEXP(rate, delay)
+
+### OPTOMIZATION FEATURE TYPES
+#### Tweakers
+- Constellation of optomization methods which are systematically applied to all spaces within the PPP.
+- And the PPP is designed with spaces around every interestng choice point in its design.
+- Methods include many that require an objective function, and operator that provide structure 
+- to the search space
+- Methods include: gradient ascent, MCMC?, simulated annealing, GAs
+
+#### CATEGORY TREES or (ctrees)
+A category tree is a weighted DAG of features.  Each category tree has its customized propensity:
+-- To maintain feature activation STABILITY over time
+-- To EXCLUDE activation of siblings when active
+-- To COVER all activations of parents with at least one active child
+-- To have all activations SUBSUMED by activation of all parents
+
+#### PREDICTOR MAP or (pmap)
+pmap(target, base)
+Predicts the activation of the 'target' population as a function of the base population.
+
+#### NEXTER
+A NEXTER is a predictor of the future states of some targeted population of features based on some base set of features
+
+how implemeted?  masks are going the wrong way???
+
+#### IDENTITY MAPPER (imap)
+A special case of the pmap where the only function considered is the identity function mapping from a single base feature onto each target feature.
+
+
+
+
+
+### BACKGROUND SEMANTICS LAYER
+
+OBJECTIVE FUNCTION -- A unary, numeric functional form.  Given an objective function, F, and two expressions, E1 and E2, F(E1)>F(E2) means that E1 is a more preferred result for the search task defined by F.
+
+
+UNI-FORM TASK -- A fully specified uni-form execution that could be performed.  Formally an execution is defined by some uni-form expression E, and an execution context C.
+
+
+PROCESS -- Task that unfolds over time (e.g. with data in and out) <<<<<<< FIX <<<<<<<<<<<<<<<<<<<<<<<<
+
+
+KNOWLEDEGE COMPLEXITY -- Some metric over uni-from expressions.  Intuitively larger values of this metric indicate greater complexity.  Counting the number of literals within an expression would be a measure of complexity, the minimum number of transform operators to generate expression given a set of transform operators might be another (harder to compute) measure of complexity.
+
+
+SPACE COMPLEXTTY -- A metric over uni-form typespec.  This is a measure of the complexity of represtnational spaces.  MinimumDescriptionLength is one formualtion of space complexity. VC-dimension is another measure of space complexity.  Intuitively this measure captures some notion of the difficulty in doing operations over this TYPESPACE.
+
+
+COPMPARABLE KNOWELDGE -- Two uni-forms, k1 and k2 are said to be comperable according to some mapping space, M, if there exists m1, m2 in M such that k2=m1(k1) and k1=m1(k2).  In the case that M is a weighted typespace then it defined a degree of comparability of k1 and k2 defined as the min( M(m1), M(m2) ).
+(recall a typespec is an indicator function over uni-form expressions)
+
+### BACKGROUND EMBODIMENT LAYER
+
+??? where ???
+
+UTILITY -- a binary numeric function accepting a list of knowledge forms, and execution context which include some data over which the utilty is computed.
+
+TARGETED CAPABILITIES -- things that are useful to learn
+
+>>>> note: current formulation does not express other agents and there exectution explictly, but it should.
+>>>> connecting 'utility' to 'objective' function as applied to a single knowledge form.
+
+
+
+WORLD -- An actual or simulated universe that derives a succession of world states based past world states and on the actions of agents embedded within the world.
+
+AGENT -- A actor within the world.  Actors can sense the world, and can take actions which affect this succession of world states.
+
+EMBODIMENTS -- Those agents that are each controlled by an instantiation of the PPP system.  In some contexts we may refer to one of the embodiments as the STUDENT AGENT.
+
+PEER AGENTS -- Agents that that exhibit targeted caps   <<<<<
+
+TEACHING AGENT -- An agent that acts in a goal directed way aiming at <<<<< student agent in a goal directed way <<<<<<<<
+
+THINKING -- A process outside of the world itself which an agent performs to determine its actions.  Thinking may depend on the sensed world, but can also depend on things entirely outside of the world.
+
+INPUT FEATURES -- PPP FEATURES whose activation is computed at any point in time based on sensors within the WORLD
+
+OUTPUT FEATURES -- PPP FEATURES whose activation at any point in time drives 
+
+MENTAL FEATURES -- FEATURES that are a kind of INPUT FEATURES for the PPP, but these features sense the state of the PPP computational implementation itself rather than the sensed state of the world.  So a counter of the number of function invocations executed since birth (how much thinking had been done) could be one such sensor which could potentially allow the embodied agent to note its thinking was going in circles.
+
+
+
+
+### CATEGORIES OF LEARNING
+
+LEARNING.  A Learning is an execution task which produces as list of acquired knowledge forms, A=list(k_1, k_2, ...), as a function of some data, D, where L seeks to optomize some objective function, O, over the data.  Specifically L seeks to maximize the utility of A given D.
+
+Formally L = task( learn_alg( ...configuration..., dataspec=TYPESPEC, knowledgespec=TYPESPEC, objective=NUMERIC_FUNCTION ), ctx( data=DATA )  )   where the result of task execution R = list( k_1, k_2, ... ) such that objective( k_i, DATA ) are maximized in some way.  (could be the average is maximized, coverage of all DTATA is maximized, the maximial element is maxized, etc.)
+
+Equivelantly a learning task is an execution that seeks to return results of high utility (see definition of utility above).
+
+
+Within the learning context we define three types of learning:  Discovey learning, Emulative learning, Collaborative learning
+
+
+---DISCOVERY LEARNING--- makes the least assumptions about the learning context.  Data is assumed to be generated by some process, learning attempts to select a element from model class which optomizes some objective function.  All of classical inductive learning, all optomization algorithms, and all serach algorithms can be encoded as a discovery learning.   (Discovery learning is where most (but not all) effort has been in machine learning over the last decades.)
+
+
+---EMULATIVE LEARNING--- is discovery learning where it is assumed that the provided DATA results from some execution that is based in part on some target knowledge T = list( t_1, t_2, ...).  The objective of emulative learning, like discovery learning is to produce results with high utility.
+
+Additinally it is expected that knowledge forms c_1, c_2, ... which are comparible to the targeted knowledge t_1, ..., t_n used to generate the data will turn out to have high utility.  Thus specfic forms of emulative learning directly seek to feret out targeted forms of knowledge based on data that results from them.
+
+There is no universal emulative forms of learning.  Each eumlative form of learning must make some kind of assumption about how targeted knoweldge is employed during the execution used to produce the avaialble data.  Still in the case that those generation assumptions are valid, the we will show they can provide great constraint, allowing eumlative learning to acquire knoweldge much greater in complexity as compared to what is possible with discovery learning alone.
+
+
+---COLLABORATIVE LEARNING--- is a form of emulative learning where both the generator function, and the learning functions are constructed in a way to yield utile output from learning execution.  Collaborative learning opens up a wide vista of paired social processes that aim to efficietly transfer knoweldge from one agent to another.
+
+---ATTENTIONAL COLLABORATION--- is a simple form of collaborative learning where the generator function's guidance of the learning function is limited to attentional cue.
+
+---SITUATIONAL COLLABORATION--- is a more complex form of collaborative learning where the 
+
+---REPRESENTATIONAL COLLABORATION--- is an advanced form of collaborative learning where the generator and learning function seek to establish a new shared communication langauge.  Such collaboration is advanced in the sense that once the mapping of this language onto data is comparably mapped by both agents, it can be used to very effectively transmit arbirarily complex expressions between these agents.  
+
+Algebra as taught in high school is an example of representational collaboration.  it is a reresentational system known to the teacher that through representational collaboration becomes known to the learner.
+
+Human langauge itself is an example of representational collaboration.  Mommy and daddy very explicitly endevor to expose baby to deveopmentally appropriate expressions of language in order to that baby might obtain facile use of that lanuage.  Baby is hard wired to attend to places where mommy and daddy look, is hard wired to try to reproduce behaviors (actions, speech etc.) that mommy and daddy do.  Baby is hardwired to seek acceptance of mommy and daddy.  Baby is hardwired to seek after certain thingsa and to fear or avoid others.
+
+All of these behaviors in baby are understood my mommy and daddy and are used with great effect to arrive at a form of representational collaborative learning that results in knoweldge of complexity far far beyond the complexity that is can be learned by discovery.
+
+
+
+
+So the moral of this story is to express current formulation of Machine Learning the full context of human learning.  To see to that the assumptions we typically make oabout the context of our learning algorithms are equivelant to operating with both of poor learners hands tied behind its back -- no ability to affect and experiment with the world, its feet bound around its head -- no ability to move to radically different contrexts where learning might be more asspicious.  In hard world with no benevolant mommy with who knows the targeted knowledge and uses it to guide baby.  indeed on a Desserted island where there are no agents benevolant or not that baby might emulate in his or her leraning.
+
+The one signal we typically provide our learning algorithm is a simply 'plus' / 'minus'   'hot' / 'cold'  'pleasure' / 'pain' signal to guide it toward utile knowldege and away from garbage.
+
+Most of machine learning today, even the most advanced forms of deep learning are equivelant to putting a caluclus problem in front of Johnny the learner, and giving him a bit of cake when his scrawls on emppty paper are correct, and a smack of the ruler in the cases where his scrawls are not correct.
+
+
+
+
+
+
+
+
+
+
+
+
+
+#### DISCOVERING  VS  COPYING  VS  COLLABORATING
+
+INTUITIVELY 
+  discovering is like supervised induction or optomization typically 
+  copying is a kind of discovery that relies assumptions about the agent generating the data
+  collaborating
+
+
+- Search, induction, and optomization can all be expressed as the selelection of some 'value' (a hypothesis element) from a defined set of possible values, 
+  using some defined process, aiming to maximize some computable objective.
+- The process and objective functions are defined in terms of some training data -- the intent is that the selected value (hypothesis) can be used to 
+  make predictons about future data.
+- For concreteness, at the base level, let us assume that data is expressed as a sequence of sets of feature activation (numbers between 0 and 1), and values
+  (hypotheses considered) are sets of functions that compute one feature activation as a function of other activations.
+- For concreteness we assume that the objective functions and the processing functions are expressed as uni-form values given some set of predefined functions.
+
+- A 'discovering' process makes no further assumptions about the source of the data other than it is drawn "randomly" (iid) from some distribution that we 
+  hope the discovering process 'learns' to emulate, by accurately predicting output features as a function of input features over the entire distribution.
+
+- A 'copying' is a kind of discovery process seeking targeted model, M, where it is known/expected that the training data is generated by a processess based
+  on M' where M and M' can be computed from each other using simple transform processes.
+
+- A 'collaborating' process is designed to facilitate rapid collaborative copying.  Collaborative copying 
+
+
+Discovery is induction of some model, M, of one variable as a fucntion of another set of variables from 'blind-data' -- data that is 
+drawn from a distribution that was constructed by some process not known, or expected to be based on some form of that knowledge 'M' itself.
+Learning approximate models of physical phenomenon often fits this 'discovery' model.
+
+Copying, by contrast is induction of some model, M, in a context where it is known or expected that the process used in generated the training data
+directly relied on some model, M', closely related to M.  For specific copying techniques there is generally a distance function between knowledge forms
+where acceptable resulting fucnctions should be 'close' to the underlying generative model, M'
+
+Notice given a dataset it is generally no apparent if a task is a discovery or capying inductive task -- prior knowlege about the task is generally used to 
+indicate if it is a copying task, and what form of copying it might be.
+
+
+
+
+
+---------
+
+### HUMAN-LIKE LEARNING DRIVES
+
+#### intro
+     ???? dissonance, understanding, model agency, functional modelling.   achievement drive
+
+We have framed a wide vista showing a range of learning that humans routinely engage in, and have shown that most of today's machine learning is all bunched up in the most difficult corner of human learning.
+
+What might it take to build unified model of machine learning that incorporated many learning types from each of these classes of machine learning?
+To answer this first enumerate many of theses drives, naming them, and describing in English how each appears to work in the human case.
+Later we consider a learning substrate that appears sufficient for encoding them.
+
+It should be noted that while the bulk of ML research and practice today fits into the discovery learning category, there has been nacent work in all of the learning drives we list below in the other categories of learning.  Here we try to express a unified framework that can simultaneously leverge the range of HLLDs that humans exhibit within one autnomous seed AI.
+
+
+THE HUMNAN SEED INTELLIGENCE
+It appears (to the author) that the human seed intelligence is an embodied processing system driven opportunisticslly by a bundle of dozens of 'drives' each of which is trigged in certain understandable circumstances, and appears to aim towards explainable outcomes.  
+
+
+##### MODELLING DRIVES -- PASSIVE DISCOVERY
+
+These drives most closely resemble existing machine learning, in that their inputs and outputs match today's learning inputs and outputs.  Both accepts a stream of EXPERIENCE and output models of that experience that maximize of objective over a space of possible models.
+
+But even at this most basic level, expressing our system as a set of drives provides one with a rich space of combinations which result in interesting hybrid algorithms that SIMULTANEOUSLY leverage constraints that are nearly always found in isolation.
+
+Even at this most basic level, we see this multi-drive opportunism can provide great advantage since advancement from each of these distinct drives can be tightly interleaved (or combinded) in ways that would not occur, if expressed as separated algorithms.
+
+NOTE:  As ML reserachers dive deeply into one doamin of application, sometimes they have invented specialized combinations that do mirror combinations here, and also mirror contstrains of their problem domain.  But the PPP is easily and naturally programmed with such combinations.
+
+#### DRIVES
+
+==== TO ADD ====
+  
+ATTENTIONAL MIMICRY -- ten people all looking up, you will too
+BY OTHER MEANS -- unexpected connections are inherently interesting --
+
+ADVENTURER -- seek contexts where interesting things happen
+              dont want to mis-out.
+
+==== USEFUL "PRE"-LEARNING DRIVES
+FEAR -- 
+FIGHT/FLIGHT -- 
+FRUSTRATION --
+ANGER -- 
+
+#### MODELLING DRIVES
+
+
+==== OTHER MODELING DRIVES
+
+MODELING DRIVES -- the drive to produce a derived representation of experience which is in some way approximately optimizes some criteria in it selection of from some representational space.   
+
+Specifically a modeling drive, D, will produce a model, M, given some experience, E, and some fitness critera, C. In this case we say that model M, is drive, D's, REPRESENTATION of experince, E, given fitness critera, C.
+
+XXXXXX   >>>>  (All induction, clustering, and optomization fit into this broad algorithmic characterization.  Indeed the CATIGORIZATION DRIVE listed above are a specific form of modeling drives that were described as a group since their input/output structures align in a way that they can be combined in to hybrid algorithms that arbitrarily compose their constraints into an algorithms that is simultaneiously constrained by any arbitrary cobination of their constraints.)
+
+ENSEMBLATION DRIVE -- the drive to represent each snapshot, snipit, or slice within some experience as a subset of some ensemble set.
+
+RELATIONALIZER -- 
+prototyper
+
+~-~~-~~-~~-~~-~~-~~-~~-~~-~~-~
+
+
+
+==== "TAXONOMIC" MODELLING DRIVES -- PASSIVE DISCOVERY
+
+CATEGORY DRIVES -- These drives all related to the creation and maintaince of categories that somehow model the system's EXPERIENCE.  Formally, each categoryin maps a SNAPSHOT onto a score denoting how well that snapshot matches the given category.  (In some cases this function depneds on a limited 'prior window' of SNAPSHOTS within the EXPERIENCE.
+
+GROUPING DRIVE -- the drive to partition EXPERIENCE into n distinct categories where each category is as different as possilble and where experience wthin each category is a similar as possible.   (NOTE:  clustering algorithms implement this grouping drive.  NOTE: this drive is all about the "distance" between elements of experience within and across categories.)
+???  distance function attends to subet of features overwhich grouping-ness is being achieved
+
+SEGMENTATIONAL DRIVE -- the drive to partition SNAPSHOTS of EXPERIENCE into n categories in order to match some external signal or fitness function....  (NOTE: supervised induction implements this drive.  NOTE: this drive is all about the relationship between elemnts of experience and some external supervisory signal.)
+
+???? external signal or fitness function.
+minimizes entropy of mapping of category to signal
+
+TAXONOMIC DRIVE -- The drive to create subsumption hierarchies among the created categories.  This drive can be implemented by creating new categories, or by shaping modifying existing categories.
+
+EXCLUSIVITY DRIVE -- The drive to create categories (within the taxonomy) that are distinct from their peers.
+
+COMPLETENESS DRIVE -- The drive to 
+
+STABILITY DRIVE -- The drive for categories to remain constant over successive SNAPSHOTS of EXPERIENCE.
+
+
+
+
+==== "OBJECTIFICATION" MODELLING DRIVES ====
+
+SEGMENT STATE -- Partition experience into buckets where instances within same bucket are similar in some way
+SEGMENT CHANGE 
+PREDICT "HAPPENS NEXT"
+
+OBJECTIFIER -- Reimagine experience as a story about objects resulting in that experience.
+OBJ-IDENTIFIER
+OBJ-PROPERTIZER
+OBJ-CHANGE-RECOGNIZER
+
+STRUCTURE-BY
+- BY TIME
+- BY PART
+
+
+
+==== "TEMPORAL" MODELLING DRIVES
+
+ACTIONATION DRIVE -- the 
+
+CAUSALIZER -- conditional "happens next"
+
+CONTEXTUALIZATION DRIVE -- the drive to group 
+
+
+
+
+
+
+
+
+
+
+
+#### ACTIVE DISCOVERY -- AUTNOMOUS DRIVES
+
+
+PLEASURE SEEKING / PAIN AVOIDING -- 
+
+ANAL RETENTIVE DRIVE --
+
+FRUSTRATION RESPONSE -- 
+
+PLAN -- 
+  FORMULATE GOALS
+  FOLLOW SUB-GOAL CHAINS
+
+
+ATTENTIONAL ACTIONS
+  - put eyes on something
+  - spend time around somehting
+  - think about something (try to model/predict all aspects of it)
+
+ATTENTIONAL STRATEGIES --
+  FOLLOW SOUND
+  CURIOSITY - 
+  BOREDOM -- 
+
+
+#### AGENT EMULATION DRIVES
+
+DO WHAT DADDY DOES -- Drive to emulate
+
+FOLLOW THE HERD -- 
+
+
+
+
+#### COLLABORATIVE DRIVES
+
+TO SEEK APPROVAL -- 
+
+
+
+
+
+
+
+
+# Todo
+== THREAD-LEARNING
+- DOCS       Read docs on factories
+== THREAD-STACK
+- TSPEC      Get tspec working -> Use it to validate example structures
+- STRUCTURE  Use uf to create factorie structures
+- EXAMPLES   Create examples of key object types
+== THREAD-RESULTS
+
+
+- HELLO      Implement hello world factorie app
+- READ       Deep learning texts
+
+
+- EVAL       Implement parts of evaluator
+
+
+## Build 'academic' / gov investment plan
+
+- Write up PPP enought to present it to a few professors.
+- Get a thumbs up, consider approaches for getting it paid for
+- Code a hello world version.
+
+- pitch to gov or investors
+
+# Ref
+
+## Pointers
+### Datasets
+#### LI-NER
+# Log
+## 16.09.14 -- high level thinking  4 pressures...
+
+abilty to push ideas around in context tree
+
+abilty to encode drives
+
+abilities in relational concepts
+
+
+
+
+--> ability to copy intelligence
+
+
+abiltty to encode any bias... any learning alg.
+
+
+
+bias lang.
+
+
+let L1, L2, ..., Ln be reps, 
+
+then L = <L1 x L2 x ... x Ln> is a rep
+
+
+
+Given a rep, R, then the following functions may be defined:
+
+
+all(R) -> [ ... ]
+sample(R,n) -> [ ... ]
+less(r1, r2) -> boolean
+between(r1, r2) -> [ ... ]
+
+adj(r1, direction) -> [ ... ]
+directions(R)
+## 15.05 My MDL plan
+
+--  Hard-coded factorie example code.
+--  JSON declared factor graph plus control
+
+
+
+
+===DISCUSSION===
+Above is my plan for incrementally progressing on MDL.
+My goal is to:
+-- Learn skills valuable for getting top jobs.
+-- 
+
+
+
+## 14.10 Using Factorie
+
+ brew install maven   
+
+ cd ~/proj/external/factorie
+
+export MAVEN_OPTS="-Xmx512m -XX:MaxPermSize=128m"
+mvn compile
+mvn test
+
+
+### Factories Questions
+- http://metaoptimize.com/qa/questions/2086/experience-with-factorie-for-crfs-with-arbitrary-structure
+- github issues   https://github.com/factorie/factorie/issues/
+
+### Docs 
+Docs and Google  https://sites.google.com/site/factoriesite/docs/api
+
+## 14.09 C++ IMPLEMENTATION
+
+
+### Design decisions
+
+EXPR -- An expr is a recursive from (like JSON).
+- It is composed of: List, Map, String, Int, Float
+- It can be efficiently indexed and modified
+- It can be marshalled back and forth to JSON
+
+
+FEATURE -- The core element of the PPP
+- Fields
+  - feature_source_ptr   -- points to the containing feature source
+  - activation
+  - inputs
+  ...
+
+
+FEATURE_SOURCE
+- Contains a list of FEATURE structs
+
+
+FPTR -- A pointer to a feature struct
+- can get the FeatureSource for this feature
+- can determine feature number, and all feature properties
+  (*f).feature_inputs(f)     <--- example access to feature property
+
+## 14.09 Meta Meta design
+
+### Parts
+
+---- CNODE -- CHOICE NODE -- A 
+
+
+
+### Notes
+
+## 14.07 Design
+
+### OBJ LAYER
+Obj              --  A Map -- a controllable, inspectable component of the PPP
+
+### POPULATION LAYER
+Feature          --  An element with a real value that is computed as a function of other features.
+Population       --  A set of features with identical configuration 
+
+### MEMORY LAYOUT / IMPLEMENTATION
+
+    ppp -->
+
+
+    feature --> 
+        - id, state, config
+        ->backing (defining population)
+            - config
+            - op methods
+            - feature access methods
+            - object storage layer
+
+- sub-population relies on defining population to execute operations
+- hetrogeneuous populations combine sub-populations from different defining populations
+
+
+
+### KEY CLASSES
+
+PPP -- A PROGRAMMABLE POPULATION PROCESSOR
+    A universe of features that:
+    - all potentially visible to each other
+    - have unique feature id numbers.  So:
+    PPP.f[i] is the ith feature within the PPP.
+    PPP.a[i] is the ith feature's activation level.
+    PPP.p[j] is the jth population within the PPP.
+    PPP.b[k] is the kth backing set for PPP.
+
+
+FEATURE -- the atomic computational unit within a PPP.  Each feature has:
+    id -- its index within the ppp
+    activation -- a floating point current activation of the feature.  (stored in PPP.a[id])
+    tmp1 -- the 'next' activation value (when computing new activation values)
+    pop -- the defining population which controls this feature.
+    inputs -- a list of ids of the features upon which this feature depends
+    data -- a list of values used in computing this feature's value (config + state)
+      config -- data values that are config parameters set by learning
+      state -- data values set dynamically during execution
+
+
+
+POPULAION -- a list of features.
+    id -- the unique id number for this population
+    features -- the list of features contained within this population
+    shortname -- a short descriptive name for this population (may not be unique)
+    fullname -- recursively defined in terms of the parent population for this population:  fullname = shortname '(' parent_fullname ')'
+
+DEFINING POPULATION -- a population that is its own parent population, and with uniform features.
+    fullname -- recurively defined description that include dependent population names.  (expands until unique shortnames are found)
+                fullname == shortname '(' pop1_fullname, pop2_fullname, ... ')'   or just 'shortname' if it is unique
+    inputs -- populations that this population may depend upon.
+
+POPULATION OPERATIONS:
+    FWD     -- Computes each feature activation based on the activation of its inputs.
+    PROP    -- PROPagates changes in activation levels with sufficient magnitude.  (this is a more efficient approximate FWD operator)
+    BACK    -- Computes the EXPECTATION of each activation level to minimize errors.
+    ADAPT   -- Updates each feature's config to minimize 'BACK' errors over a dataset.  (does not alter the POTENTIAL inputs for the features)
+    REMODEL -- Updates to the topology of the feature inputs across the ppp
+        GROW  -- Adds new features to the ppp according to the growth policy of the population.  Features are added to the backing population.
+        TRIM  -- Removes features from some population according to its trim policy.  (dead features can only be cleaned in a GC sweep, to remove references)
+        SHAPE -- A kind of adaptation that updates the inputs being used for each feature
+
+
+
+
+POPULATION -- a list of features.  
+    - A population, p, is the DEFINING population for a feature, f, iff pop(f)==p.
+    - Non-defining populations are subsets of definining populations that can be manipulated 
+    - All the features within a defining population will have:
+      - A common algorithm for updating/learning and processing its value
+      - Features are processed in unison as a population.
+
+    backing -- the feature backing that implements *all* features within this population.  
+        NOTE: a hetrogenous population will not have a backing (since it combines features from multiple backings.
+        If a population does not have a backing, the operations 
+
+    name -- fully qualified functional form describing the placement of this population.
+        Each pop must have a unique name within the PPP -- the name has a head symbol and a prefix traversal of argument population names that are args.
+    fn -- A recurively defined function used to compute the value of each feature within the population.
+        The activation value is derived from the activation of the input features, along with this features config, state, and activation
+        Often this function is just one or two native functions chained (e.g. perceptron + normalized)
+    interconnect -- List of POPULATIONS whose features are potential inputs for this populations features.
+    status -- a list of derived state properties of the population, each computed by some function written in PPP_SCRIPT
+    methods -- a list of action methods defined in PPP_SCRIPT that perform high level activites coordinating the POP OPS of this pop, and related pops
+    triggers -- a list of trigger conditions expressed in pop 'status' that invoke pop 'methods'
+
+    features -- The list of features in this population.
+
+    backing -- The defining population backing all the feautures of this population (a defining population is its own backing)
+    storage -- optional place to store the config and state for the features within a defining population.  
+        In some cases the storage is in the feature itself.  For other classes of features the entire population is contained in 'storage'
+        in some compact algorithm specific format.
+
+
+
+
+FEATURE_BACKING -- The implementation and storage for a set of features with a common implementation.
+    - Feature operations invoked at the population level are actually implemented at this level.
+    - Each operation accepts a sub population of the backing's features, and a map of parameters
+    - ?????  Feature indexing:   f=PPP.feature(i);  b=f.backing;  b.feature_op(f)
+
+
+
+PPP CONTROL -- A toplevel control programming language and control program that modulates the execution of the PPP.
+    - PPP_CTRL is a script written in a traditional procedural langauge (like Python).
+    - PPP_SCRIPT is the programming langauge (and PPP control libraries) used to write PPP_CTRL
+    - It creates the universe of defining and derived populations along with their interconnect and policies.
+    - Over time this procedural script monitors and adjusts the PPP 
+
+
+
+STORAGE
+    - Storage for feature & population data.
+    - Each object has 
+        - a unique reference id within the storage space.
+        - a type id
+    - Tree structured lists, structs, and maps are explicitly interned and disposed from the storage space.
+    - Struct-Plist uses a list to code n fixed slots of a typed object, followed by keyword value pairs for other values in the object / map
+
+
+FEATURE TYPES
+    - STANDARD -- These computational unit compute an output activation level as a function of thier inputs
+    - I/O      -- These features are tied to an input or output channel
+    - EDGE     -- Edge features are used to propage feature activation between separated PPP ref-spaces
+
+### C++ Intersection
+
+// Feature access
+f = feature
+
+f.
+

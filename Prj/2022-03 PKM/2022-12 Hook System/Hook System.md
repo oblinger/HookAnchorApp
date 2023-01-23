@@ -1,5 +1,5 @@
 
-:: [[Hook 2]]
+:: [[Hook 2]],  [[Task Page System]],  
 # THE HOOK SYSTEM
 
 THE HOOK SYSTEM - Synchronizing your meat brain with your digital brain.
@@ -82,13 +82,14 @@ We refer to the evolving set of all hook name and associated destinations collec
 
 SHORT NAMING - 
 
+
 LOCAL / INCREMENTAL - Both the pragmatics of human pyschology, and our focus on optomizing time & effort efficiecy require that (nearly) all maintaince operations required by the hook system are incremental and "on the fly" in nature.  So mis-remembering a hook name is an opportunity to add another alias or rename a destination.  Landing on the wrong hook is an opportunity for merging/refactoring two hooks, or adding a links between them, etc.
 
 ALIASING - 
 
 
 DATING - 
-
+way to keeping namespace clean.
 
 REIFICATION - Much of our info space was initially captured as a side effect of some other activity at a time when the ultimate placement and importance of that knowldege was not understood, and at a time when it would not have been convenient to stop of consider how to be organize the new info.  Often such info is jammed into a dated meeting or note entry connected with the hook page for some existing activity.  If that info is needed in the future it can be accessed from within the relevant meeting note.  If this occurs often enough, or if that information is further refined after that meeting, then it is copied to its own note, within an appropriate hook page, or potentially with its own hook name.  Over time richer and richer linking can be added directly to this page.  What is key from the very beginning is that the information is in a location that it is two step retrievable at least for a period of months.  (If it is never further accessed for many months, and thus never reified, then it is acceptable if it requires full text search or other very generic methods of retrieval)
 

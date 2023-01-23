@@ -5,6 +5,52 @@
 
 # LOG
 
+### t2023-01-19 Co-founder @ SV?
+
+My text response turned into an incoherent ramble!  Let me frame the issue:
+
+My natural (and currently stated) mandate is to:  (1) Lead R&D,  (2) be the 'chief architect', (3) drive hiring, and (4) drive investor relations
+- These are ideal roles, but they are not very central prior to the A-around.
+
+Prior to A-round I plan to look for and help fix critical gaps:
+- in  our current team composition across all departments, focusing mostly on tech.
+- in our software and data management practices.
+- in our methodology for finding product market fit.
+- in our product features as needed to maximize new customer acquisition.
+- in other things I uncover in digging into our operations.
+
+
+
+My sense is that I have greatest value in understanding that something is not going well, and having creative ideas about how to fix it, and perhaps rolling up my sleeves and helping with the creation of that fix.  I think I add relatively less value in the routine day to day monitoring of execution.
+
+- So one way I might operate is to: (1) identify an area of concern, (2) foment consensus with Jason and others about an approach, (3) roll up sleeves with team to address issue.  (4) Then move on to the next one.  I did this with the recent revamp of the entire product's formulation.  Future fixes will likely be smaller in scope, but still of that nature.
+- It not clear I need a report to structure to achieve this.  I need a CEO and senior leadership who I can convince of problem and solution.  And really the only report-to structure that would suffice in providing the natural authority required to drive these changes would be to have the entire SW org report to me.
+
+So I can just aim to own the whole SW team, but that takes me down the path of day to day execution tracking somewhat.
+As a founder it is kind of natural to just dive into places of greatest pain but then not stick around after that.
+I feel as long Jason agreed with me about what the problem areas were, and agreed they were better after I intervened, he would be quite happy with my value.
+
+
+So this is what aimed me towards the co-founder style role.  but maybe I should be aiming more narrowly, then the dig in and try to fully execute that narrower thing?
+I can also try to do the same thing as a CTO.  Later I may have trouble justifying my scope, but perhaps I am over thinking things....
+
+
+But when you suggest I should aim to have my report-to structure match my objectives, I am at a loss for what that would mean, except to have the whole SW org report to me.  
+
+
+
+
+
+It feels a bit safer and better explained if I have such a 
+- 
+- 
+- If this is the role I aim for, then having the co-founder title matches what I am doing
+
+
+Given
+
+
+
 ### m2022-12-14  Prep for talking with Jake
 
 

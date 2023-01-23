@@ -1,5 +1,4 @@
 
-
 [[MY]]					 MY OVERVIEW PAGES
 - [[Meta]]		- Descriptions of my organizational systems 
 - [[Lists]] 		- My organizational lists (e.g. camping list, travel list, etc) 
@@ -37,7 +36,7 @@ DATED, ORDERED LOGS
 
 
 [[T]] 	TAXONOMIC TOPIC ROOTS
-- [[Career]]  
+- [[JOB]]  
 - [[FIN]]  
 - [[Food]] 
 - [[Legal]] 

@@ -1136,6 +1136,32 @@ SELF:  Pretty on track.  Focused hours
 
 
 _
+### j2010-03-18 - Siege no
+Don’t want to join Jason now.  Most specifically I would rather be at DARPA now, still have stuff I want to do here, less change allows me to focus on Elaine now, and would rather shoot for product company than consulting company.
+
+But don’t “see” product company yet either.  Would jump to product company if I saw a viable product with viable path.  Indeed, I would jump to Jason’s company too if I saw a thing to build.
+### j2020-03-00 Siege maybe
+Short-term targeted thinking:  Is there a syverson product to create?
+
+Decide Jason fast.   (If yes, path is clear)  if no, then:
+
+·       MR+BL;  Work on transitions; Global ISR
+
+·       Push toward Cortical:  write up;  seedling;  program
+
+·       Explore Startups
+
+·       1-tech event every other week.
+
+·       Weekly hours refining / creating startup ideas
+
+·       Push best idea mostly rapidly toward decision point
+
+·       Teach self / connect self / find partners
+
+·       Explore Mainstream Jobs
+
+·       Present at leading places: Google, SRI
 ### j2010-01-02 – From last year’s retreat  (12/2008)
 
 RETREAT

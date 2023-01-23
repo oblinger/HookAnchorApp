@@ -1,3 +1,4 @@
+
 - [[key code]], 
 ## = INFO
 ### - Links
@@ -15,7 +16,7 @@ Virtual Box
 
 
 
-
+# LOG
 ### 2021-00-00 - apple support chat 
 You're now chatting with Andy.
 
@@ -196,6 +197,7 @@ Me:I would never by a different brand... and it is 100% you guys!
 Andy aww, thanks! I’m glad we’ve been able to come through for you :)
 
 Me:cheers!
+# MAC
 ## = xx HOW-TO   xx how to   xx howto =
 ### - xx PORT OB TREE TO NEW SYSTEM
 - Copy ~/ob onto the new machine at /Users/oblinger/ob
@@ -206,8 +208,16 @@ Me:cheers!
 
 - if 'km' script does not work, create a new github token for this machine
 
-### - AIRPOD MAX - switching
-	#space -> pref -> Bluetooth -> Airpod Max -> !Options -> off "Automatic Head Detection" 
+### - AIRPODS MAX - switching
+	#space 
+
+ALL DEVICES:
+  -> pref -> Bluetooth -> Airpod Max -> !Options -> off "Automatic Head Detection" 
+
+I-PHONE
+  -> settings -> Accessibility -> Touch -> Auto Call Routing    ! Automatic
+
+
 
 brew install audioswitcher_osx
 

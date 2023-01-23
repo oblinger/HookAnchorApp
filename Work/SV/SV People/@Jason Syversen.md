@@ -3,6 +3,36 @@
 - Get resume.  
 
 # LOG
+### m2023-01-19  Co-Founder??
+
+Jason, 
+Two topics:  start date and mandate.  
+
+Ideally I will have some days to be chatting with the team prior to my start date, so it might make sense to push out my start date a week or two to let that happen.
+
+
+From early on, we spoke about me having  a co-founder-like mandate, I think there is potential value in being explicit about that mandate.  Explicitly calling me a CTO - cofounder:
+
+- ROLE IN TEAM - You and I have spoken about me digging in, in whatever place most needs it, initially w/o any change to the existing reporting structure.  Being a 'co-founder' helps explain why I am, for example, digging into our processes around collecting data on product market fit, etc.  The co-founder label matches that mandate.
+
+- INVESTOR EXPLANATION - At the A-round no investor is going to be confused about when I joined.  Still referring to me a co-founder helps explain how my mandate in the company matches my bigger cap table entry.
+
+- INVESTOR CACHET - When speaking with investors, either on my own, or with you, I think being called a 'co-founder' helps give me a bit of gravity in a way that is helpful for Sports Visio.
+
+- MY CAREER - After years at Sports Visio it will be helpful in explaining my role to say 'co-founder' -- as a short hand describing this broader mandate.
+
+
+The only potential downside I see, is team feeling I am getting too much centrality.  But if we hope to have Dan broadly overseeing internal activities and Jason broadly overseeing external activities, then I think it is a soft but clear way to communicate this to the team.
+
+
+Give some thought to these things.  It does matter to me, I will feel more comfortable if my label and my role better match.  Still this IS just a label w/o any specific consequence, so I will go with whatever you decide.  And same for the start date.
+
+
+
+
+
+
+
 ### m2023-01-13  Final discussion
 
 TALKING POINTS
@@ -106,6 +136,58 @@ So its fine to use that CIIA, but it is not valid for a California resident with
 As is this contract creates ambiguity.  This is a stick point for those we hire (like me), and also for our investors, as they would need to use a partially invalid contact as the basis of any IP fight.
 
 
+~~ ~~
+Hehe well….
+
+  
+
+The CIIA 
+
+-1- is invalid when executed in multiple states including California   
+
+-2- has its jurisdiction in NEW HAMPSHIRE not Delaware, so during diligence investors will need to retain council familiar with the gotchas specific to NH law, and
+
+-3- the CIIA is not one of the standard CIIAs that startups use.  Normally in diligence they are given a CIIA they have already seen times before, so it is much less work for them since they have already done very careful diligence on those specific documents.  Giving them a unique one is needless work for them.
+
+-4- And really a company like Sports Visio operating across multiple states is better served by a CIIA that has explicit carve outs for each of those states, like the standard CIIA that all startups using [Clerky.com](http://clerkly.com/) use.
+
+  
+
+These are not issues for me as much as they are issues for Sports Visio.
+
+(And these are very fixable issues too.  We can talk about this stuff once you are back… I don’t want to sully the tranquil Cancun air with such crap.  :-)
+
+  
+
+  
+
+The structuring of the equity on the other hand is an issue for me.  It needs to be tweaked otherwise not only can I not get QSBS, but even worse, I will loose almost half of any eventual exit, as it will be taxed as ORDINARY INCOME!  Again we can fix these things by tweaking the way they are awarded.  And I believe the required tweaks don't have any costs or downsides for sports Visio, they just affect me and Uncle Sam.
+
+  
+
+  
+
+>>> But the offer letter terminates this FRIDAY.  :-) <<<
+
+  
+
+  
+
+Perhaps the simplest plan is to just edit the offer letter’s expiration date 10 or so days out, and then forget all this stuff until Friday morning when you are back… we can talk then.  Let me know what you think
+
+  
+
+  
+
+And have fun in Cancun!!
+
+  
+
+  
+
+Cheers, 
+
+Dan
 
 
 

@@ -1,6 +1,11 @@
 freedom
 peloton
 crunchbase
+consumer reports
+on health
+Peloton signed 7/31
+  [Budget](Budget.md)
+vorwerk $40/yr
 
 # RECURRING BILLS
 ## BIGGER BILLS - SCHWAB JOINT 6956-1345
@@ -21,41 +26,46 @@ crunchbase
 ## SMALLER
 ### CHASE FREEDOM
 - $1,375/yr 	AAA Home Insurance
-- $20/yr		File This
-- $39/yr  		Consumer Reports Digital   renews 2023-08-23   (On Health cancelled?)
-- $36/yr		1-Password
-- $50/yr		Nest Aware (Cancelled)
-- $100/y		Blink Plus  (renews 11-09-2023) 
 - $600/bi  	Geico
 - $230/mo	AT&T  (Paid on corp SVB account)
 
-- $15.50/mo 	Netflix
+- $16/mo 		Netflix
 - $15/m		Spotify Premium
-- $55/yr		Thermomix Recipes (renews 2023-12-11.  Web -> {ChefHat} -> Account )
-- $17/mo		Noom (last paid $50 in June 2022, not sure what is up)
-
-- $10/mo		WSJ - Wall Street Journal
 - $13/m		Peloton
+- $10/mo		WSJ - Wall Street Journal
 
-PAUSED
-- $0/m		Ny times (revert to $15/m no Nov-23-2020)
-- $			Disney+
-- $0/mo		Sling TV  ($20/mo)
+- $100/y		Blink Plus  (renews 11-09-2023) 
+- $55/yr		Thermomix Recipes (2023-12-11.  Web -> {ChefHat} -> Account )
+- $39/yr  		Consumer Reports Digital   2023-08-23   (On Health cancelled?)
+- $36/yr		1-Password
+- $20/yr		File This
 
-APPLE
+### APPLE
 - $9/mo		Dan's Apple iCloud  (Apple ID -> MyPic -> Plan)
 - $30/yr		Insight Timer  (APPLE SUBSCRIPTION iPhone -> Settings -> Me -> Subscriptions)
 
-PAYPAL			Web -> {setting gear} -> Payments -> Manage Automatic Payments
-- $239/yr		Seeking Alpha renews ?? 2023-12-??
-- $5/mo		Patreon - Sleep With Me Podcast
+### PAYPAL			
+	Web -> {setting gear} -> Payments -> Manage Automatic Payments
+- $239/yr	12/10/22	Seeking Alpha renews ?? 2023-12-??
+- $50/yr	6/29/22		Noom
+- $70/yr	6/28/22		Microsoft
+- $60/yr	7/19/22		Bit Defender (Avangate)
+- $5/mo				Patreon - Sleep With Me Podcast
 
-CAP ONE
+### CAP ONE
 - $20/yr		Google Storage renews 2023-05-13
 - $20/mo		Obsidian Publish
+- $49/mo		Coursera
+
+### QL RECURRING
+- Apple
+- Google
+- 1Password
+- Yoga
 
 
 
+## VARYING PAYMENTS
 VARYING - CHASE FREEDOM
 - vary		Uber (mostly on on this account)
 - vary		Lyft  
@@ -73,8 +83,14 @@ SAPPHIRE
 - vary   		Am Airlines
 
 
-## DANO RECURRING
-		(check PayPay and Apple)
+
+## PAUSED
+
+PAUSED
+- $50/yr		Nest Aware (Cancelled)
+- $0/m		Ny times (revert to $15/m no Nov-23-2020)
+- $			Disney+
+- $0/mo		Sling TV  ($20/mo)
 
 RETIRED or ONE TIME
 - $0		Dropbox
@@ -84,7 +100,7 @@ RETIRED or ONE TIME
 - $0		Paprika  (One Time Purchase)
 - $0		Freedom  (cancelled on 2022-12-24 for some time in future)
 
-## DANO CHANNELS
+### DANO CHANNELS  (out of date)
 ### APPLE 
 DANO - APPLE - Mac->AppStore->MyPicture->AccountSettings->Manage->Subscriptions
 - $3/mo ??	Apple iCloud storage
@@ -92,7 +108,7 @@ DANO - APPLE - Mac->AppStore->MyPicture->AccountSettings->Manage->Subscriptions
 - OFF		$49/mo		Coursera   **maybe paid elsewhere?**
 - OFF		$20/mo		Obsidian Publish    (also paid annual for sync)  **maybe paid elsewhere?**
 
-### DANO CAP 1 CARD
+### DANO CAP 1 CARD  
 - $20/yr		Google Play (100Gig) oblinger@gmail.com 
 - $20/yr??	Clean Email
 - $02/mo    	Filethis.com   2/m
@@ -113,12 +129,6 @@ DANO OTHER
 - 36/yr		pen		1password     	(not yet setup)
 - 22/mo 		pen		Plan USA 		1-800-556-7918
 
-## QL RECURRING
-- Apple
-- Google
-- 1Password
-- Yoga
-## .
 
 # TOPICS
 

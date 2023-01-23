@@ -49,6 +49,7 @@
 | j2020-11-19 | [[Jnl]]             | AF Strategy                                         |
 | j2020-08-23 | [[Jnl]]             | Lost at Sea but with good provisions                |
 | j2020-08-15 | [[Jnl]]             | My Futures                                          |
+| j2020-03-00 | [[Jnl]]             | Siege maybe                                         |
 | j2020-02-19 | [[Jnl]]             | DECADE TIMELINE                                     |
 | j2016-05-25 | [[Jnl]]             | – Lex Ownership                                     |
 | j2011-04-10 | [[Jnl]]             | – Not Energized                                     |
@@ -57,6 +58,7 @@
 | j2010-10-09 | [[Jnl]]             | – Organizing Self                                   |
 | j2010-10-00 | [[Jnl]]             | – Gave up on Siege                                  |
 | j2010-04-01 | [[Jnl]]             | – Life is moving faster                             |
+| j2010-03-18 | [[Jnl]]             | Siege no                                            |
 | j2010-01-02 | [[Jnl]]             | – From last year’s retreat  (12/2008)               |
 | j2009-12-29 | [[Jnl]]             | Elasticity of Time                                  |
 | j2009-12-19 | [[Jnl]]             | personal update                                     |

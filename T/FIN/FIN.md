@@ -1,9 +1,7 @@
 
-:: [[FIN Topics]]
+:: [[FIN.]],  [[FIN Topics]],  [[FIN Mint]],  [[FIN Advisor]], [[FIN Tracking]],  
 
-- [[FIN.]]   [[Bills]], [[Fin Adv]], 
-
-  [[Expenses]],   [Taxes](Taxes/Taxes.md),   [Vanguard](Vanguard.md)
+-  [[Bills]],  [[Expenses]],   [Taxes](Taxes/Taxes.md),   [Vanguard](Vanguard.md)
 
 
 

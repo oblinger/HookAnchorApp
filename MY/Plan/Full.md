@@ -1,5 +1,5 @@
 ## = [[SELF|SELF]] =
-### - [[MED]]
+### - [[MED]] -
 - [ ] DAILY: Walking or Peleton w/ weights
 - [ ] FOOD: PapTry, 
 - [ ] [[FIN]] - Prep assets for recession (check Allspring)
@@ -7,7 +7,10 @@
 - [ ] Mental - Get therapist
 
 ### - [[Life]] - 
-## = [[WORK]] =
+- [ ] [[Spirit]] - 
+- [ ] [[Actualize]] - 
+
+## = [[Work/Work]] =
 - [ ] Get Mentors
 
 ## = [[MY/Plan/Social]] =

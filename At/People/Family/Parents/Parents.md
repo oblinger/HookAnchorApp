@@ -53,6 +53,9 @@ Dan Bring:  Starbucks, Brol, Lentils
 
 # FL HOME
 
+USPS will not deliver to 2016 address.  must be the pobox address.
+
+
 # KY HOME
 
 ### Hardware

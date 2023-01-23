@@ -1,3 +1,21 @@
+- [x] Privacy Panel
+GOOGLE:  197,547    AF: 18,214  18,191
+- [ ] Paypal validate schwab  (re-submitted on Jan-17th)
+- [ ] properties of a dan-job
+- [x] Jason conversation about cofounder
+- [x]  should use quick add to create a new @ entry
+- [x] Need method to push page to FRONT of unified name space.  (ideally w/o changing the name itself, using
+- [x] km -d  Folder method accepts action, and sync args directly from config file
+- [x] tray for QL toothbrush
+- [x] Clean crib
+- [x] clean up playpen and livingroom desk
+- [x] mesh bags for fridge
+- [x] obs: 100% meta-data drive pandoc integration
+- [x] Figure out new meals
+- [ ] happy new ye[[Cmd Folder]]ar
+- [x] USB-A to USB-C into Bookbag
+- [x] refill bookbag and toiletries
+- [x] refund for returned AirMega $595
 - [x] GitHub daily submit (along with KM) -
 - [x] km -t   BUG:  keeps adding info forever
 - [x] get whatsize working

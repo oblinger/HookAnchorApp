@@ -1,13 +1,13 @@
 
 - QUICK:	TidyUp, 
-- FUN:	[[ToBuy]],  
+- FUN:	[[ToBuy]],  New Recipe
 - READ:	[[Pocket App]], [[ToRead]], [Good Reads](https://www.goodreads.com/), 
 - CHECK:	[[MED.]]   
 
 
 - [ ] [HeavyBit](https://www.heavybit.com) 
 
-
+[Build systems](https://medium.com/swlh/dont-just-set-goals-build-systems-8158ac541df#ff79)  
 
 
 

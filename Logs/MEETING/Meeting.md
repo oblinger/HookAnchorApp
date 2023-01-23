@@ -8,6 +8,9 @@
 
 | Date        | File                 | Notes                                                             |
 | ----------- | -------------------- | ----------------------------------------------------------------- |
+| m2023-01-19 | [[@Jason Syversen]]      | Co-Founder??                                                      |
+| m2023-01-18 | [[@Siobhan Quinn]]       | comp at google                                                    |
+| m2023-01-17 | [[@Brandis Paden]]       | intro call                                                        |
 | m2023-01-13 | [[@Amanda Riccetti]]     | talk about weekly newsletter                                      |
 | m2023-01-13 | [[@Kyle Langworthy]]     | intro                                                             |
 | m2023-01-13 | [[@Jason Syversen]]      | Final discussion                                                  |

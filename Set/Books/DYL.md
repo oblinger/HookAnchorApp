@@ -469,6 +469,34 @@ ACTualize, BIG, ME, MONEY, PRODuctivity, PUBlish, SOCial,
 
 ## = (3) INSIGHT LOG
 
+### 2023-01-19  Dan Job
+
+#### INNOVATION ORG - Org is centrally focused on non-trivial innovation
+
+- Non-trivial innovation - Needs a PhD, Publishable
+
+
+#### VISIONARY - I am delivering vision
+
+#### MANAGEMENT - Providing management oversight
+
+
+#### AI FOCUSED - Probably ML/DL/CV/Robotics Focused
+
+#### NEAR TERM - Compensation hits in near term
+
+#### WELL PAID
+
+- $300K or above for very open-ended researchy job
+- $700K or above for management heavy job
+
+
+#### SPECIAL - Setting my sights on one-of-a-kind jobs
+
+- If well paid, then VERY well paid
+- If cool researchy, they very cool researchy
+- 
+
 
 ### 2022-12-13  Dan the designer
 

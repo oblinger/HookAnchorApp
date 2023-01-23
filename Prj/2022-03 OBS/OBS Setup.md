@@ -2,10 +2,10 @@
 
 
 - [[OBS]] 
-- [[OBS Dashboards]]	-  
+- [[OBS Task]]	-  
 - [[KBD Shortcuts]],   
 - [[QUICKADD]], 
 - [[TEMPLATER]],  
 -  [[MY Digital Setup]], 
-- [[Action Notes]],  
+- HACKS: [[Action Notes]],  [[Fling]],  
 - [[Multi-List WorkFlow]], 

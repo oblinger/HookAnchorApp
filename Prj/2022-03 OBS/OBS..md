@@ -1,15 +1,14 @@
 
-- [ ] km -d  Folder method accepts action, and sync args directly from config file
-- [ ] Need method to push page to FRONT of unified name space.  (ideally w/o changing the name itself, using attributes or such)
 
 - [ ] obs:  find out how to move todo item around
-
-- [ ]  should use quick add to create a new @ entry
+ Yelp
+- [ ] 
 - [ ] ARROWS:  hotkeys for bullets, headings, calendar, ???    for up, down, left, right
 - [ ] change 'page' suffix to 'web'
 - [ ] Quick Add Cmd page.
 - [ ] CMD rename and delete
 - [ ] CMD application folder scanner should not update cmd if it already exists with a different name
+- [ ] F1 and other global goto should not toggle, rather they should just 'set' if not already in workspace, else just switch
 
  Instacart
  ## TODO

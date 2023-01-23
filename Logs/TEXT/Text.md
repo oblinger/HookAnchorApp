@@ -11,6 +11,7 @@
 
 | Date        | File                     | Notes                                                                   |
 | ----------- | ------------------------ | ----------------------------------------------------------------------- |
+| t2023-01-19 | [[@Nick Allen]]              | Co-founder @ SV?                                                        |
 | t2023-01-10 | [[@Jason Syversen]]          | Explanation of edits                                                    |
 | t2023-01-10 | [[@Jason Syversen]]          | unsent                                                                  |
 | t2023-01-04 | [[@Jason Syversen]]          | Nick & Joe help                                                         |
@@ -62,7 +63,5 @@
 | t2021-03-24 | [[EOCA]]                     | Note to Mark and Leslie                                                 |
 | t2021-00-00 | [[@Deep Sahini]]             | Thanks note                                                             |
 | t2021-00-00 | [[MED]]                      | Questions and topics                                                    |
-| t2020-00-00 | [[Ideas]]                    | Chipstack                                                               |
 | t2019-00-00 | [[@Qingling Oblinger]]       | QL Notes                                                                |
-| t2019-00-00 | [[Ideas]]                    | Coin thoughts - alloy???                                                |
 | t2019-00-00 | [[Politics]]                 | Ryan (Baltimore school teacher)                                         |

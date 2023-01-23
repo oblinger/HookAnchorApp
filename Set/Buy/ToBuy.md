@@ -1,5 +1,7 @@
+- [ ] Kureg coffee maker
+- [ ] 
 
-SOON
+### SOON
 - [ ] mesh bag for food
 - [ ] hair catcher for tub
 - [ ] [Ikea bin](https://www.ikea.com/us/en/p/trofast-mesh-storage-box-light-green-gray-90518574/) - mesh bins.

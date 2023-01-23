@@ -1,16 +1,8 @@
 
-:: [[z old Bills]]
-  [Recurring](Recurring.md)
-[[Recurring]] - 
+:: [[Budget]],   [[Recurring]],   [[z old Bills]]
 
 
-consumer reports
-on health
-Peloton signed 7/31
-  [Budget](Budget.md)
-vorwerk $40/yr
-
-# ### SETUP ###
+# SETUP
 ## = FAMILY BALANCE
 
 ```
@@ -121,7 +113,7 @@ Budget	22Q2	Purpose
  2,000	Occasional spending
 
 _
-## === ACCOUNTS & TRACKING ===
+## = ACCOUNTS & TRACKING
 ### --- WIRED FUNDS ---
 07/16/2021	65,431.67	Extra funds paid for our Refi
 06/25/2021	46,350.00	Refund of 1/2 of the space Ex money
@@ -213,7 +205,7 @@ SCHWAB x9506
 -- CapOne, Chase, Penfed, 
 -- Atm, Venmo, Paypal, 
 -- Allstate, 
-## === NET WORTH ===
+## = NET WORTH
 
 As of 2021-12-02
 1,584	Vanguard Total
@@ -230,12 +222,12 @@ x .45%
   
   
 _
-## === AF CHARGES ===
-2019
-10	Kincade -- Dinner with Dan Outcult
 _
 # LOG
-## QL - AYI payments
+### 2019-00-00  AF CHARGES
+2019
+10	Kincade -- Dinner with Dan Outcult
+### 2020-08-17 QL - AYI payments
 
 2020-08-17 Cash from Qingling
 	Mary: $1200
