@@ -4,7 +4,7 @@
 - [ ] [[Learn]]:		[[F90]],  [[Coursera Notes]],  
 
 - [ ] [[FIN Advisor]]:		Find advisor; Consider Avanti Paperwork
-- [ ] [[Coms]]:		
+- [ ] [[COMS]]:		
 
 - [ ] [[Exercise]]:	Get daily activities figured out.  [[Habit]].
 - [ ] [[NJ22.]]		[[WarStories]].  [[NJ22#LI|LI]]: Title, AF-refactor; 

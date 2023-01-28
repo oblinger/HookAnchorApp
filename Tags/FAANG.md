@@ -23,15 +23,19 @@ Freed.  Luis.  Rafah.  Huerta.
   Go | [[@Melanie Dumas]],  [[@John Davis]],  [[@Doug Gordin]],  [[@Arkady Epshteyn]],  
   Mi | [[@Rafah Hosn]],  [[@Luiz Pires]], ...more
   Ot | LinkedIn [[@Sofus Macskassy]], VMware [[@Chris Ramming]],  
-  
+
+OTHERS:   [[@Dennis DeCoste]],
+RECRUITER:	[[@Kyle Langworthy]],    |
+|        |     |
 
  GOOGLE    | [[@Google]]                                                                                                                  
  --------- | -------------------------------------------------------------------------------------
- Core      | [[@Melanie Dumas]],  [[@John Davis]],  [[@Doug Gordin]],  [[@Luis Arrellano]],                                    
+ Core      | [[@Melanie Dumas]],  [[@John Davis]],  [[@Doug Gordin]],  [[@Luis Arrellano]], [[@Siobhan Quinn]],                                     
  Solid     | [[@James Miller]],  [[@Sara Basson]],   [[@Herb Derby]],  X [[@Arkady Epshteyn]],  [[@Acorn Pooley]],  [[@Qingling Oblinger]],  [[@Greg Hornby]],          
  Heavy     | [[@Praveen Paritosh]],  [[@Dan Kaufman]], [[@Chris Welty]], [[@Manish Gupta]],  [[@Ming-Hsuan Yang]],  [[@William Cohen]],                                                         
  AI        | [[@Andrew Tomkins]],  [[@Eugene Agichtein]],  [[@Shalini Ghosh]],  [[@Ian Simon]],  [[@Mariusz Pasek]],  [[@Alexander Toshev]],                                              
  Goog Otr  | [[@Preston Marshall]],  [[@Josh Yelon]],  [[@Abhishek Verma]],  [[@Tony DiLoreto]],  [[@Dav Zimak]],  [[@Ernest Galbrun]],  [[@Ehsan Saeedi]],  [[@Jared DeMott]],  [[@Raghu Mann]],  [[@Kyle Seaman]],  [[@Bobby Allen]], 
+[[@Dan Egnor]], 
 
  AMAZON    | [[@Amazon]] 
  --------- | --------------------------------------------------------------------------------------
@@ -39,6 +43,7 @@ Freed.  Luis.  Rafah.  Huerta.
  Solid     | [[@Rogan Creswick]],  [[@Hiba Sharief]],   [[@Mathew Hsu]],  
  Heavy     | [[@Ashwin Ram]],  [[@Tomas Singliar]],  [[@Rohit Prasad]],  [[@Prem Natarajan]],  [[@Siddhartha Srinivasa]],  AI [[@Drew Dean]],   
  Amz Otr   | [[@Leila Brown]],  [[@James Fang]],  [[@Jessie Bones]],  [[@Sharif Khan]],  
+[[@Dan Roth]]
 
  FACEBOOK  | [[@Facebook-Meta]] 
  --------- | ---------------------------------------------------------------------------------------
@@ -63,6 +68,7 @@ Freed.  Luis.  Rafah.  Huerta.
  NetFlix   | [[@Kalina Panayotova]],  [[@Abhishek Kapatkar]],  
  VMware    | [[@Chris Ramming]],  
  PARC      | [[@Johan de Kleer]],  
+NVIDIA:	[[@Senthil E]], 
 
  AI        | [[ROBOTICS]], [[CONSULTANT]], 
  --------- | ----------------------------------------------------------------------------------------

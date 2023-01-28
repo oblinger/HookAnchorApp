@@ -1,4 +1,5 @@
-=[[START]]   [Machine Learning Engineer](https://www.linkedin.com/in/grzegorzbiziel/)  
+=[[SV]]   [Machine Learning Engineer](https://www.linkedin.com/in/grzegorzbiziel/)  [[@Sports Visio]]
+
 
 
 # LOG

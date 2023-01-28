@@ -1,7 +1,23 @@
 
 # QUICK THOUGHTS
-### --- AREAS ---
-- ENERGY -- Building something that 
+
+
+### 2020-00-00 HAND HELD PKG DIMENSIONER
+##### Legal For Trade
+- https://scaletronicglobal.com/what-does-legal-for-trade-mean/
+- [NIST Handbook44](https://www.nist.gov/system/files/documents/2017/04/28/hb44-15-web-final.pdf) -- defines legal for trade (secion 5-71)
+	- tolerance are domain specific
+##### 3d printed shell
+- https://3space.com/blog/how-much-does-3d-printing-cost/#:~:text=They%20are%20used%20in%20FDM,to%20%247.50%20per%20cubic%20inch.
+- 
+### 2020-00-00 Room occupancy sensor - idea from AF partnership calls
+_
+#### AF
+	- Control as a service.
+	- Smart home control.
+	- EV control.
+
+_
 ### Getting to another star
 
 Terry... I think it is just engineering....
@@ -53,6 +69,13 @@ ACCESS
 
 
 
+### DANS HEAD
+- UNIFORM: 	Code Markdown; Agenda; Unicore
+- UF APPS: 	Textputer; Wizard Market; Data Tool
+- PHIL:		Forum; EduCorp
+- BRAIN:		
+
+_
 ### .
 
 # IDEAS BY TOPIC AREA
@@ -853,3 +876,5 @@ Heh, well I agree the battle cries are absurd - they are not designed to con
 
 cumuulative effects are cumulative
 effects:  overt.  mindset(both sides).  
+
+

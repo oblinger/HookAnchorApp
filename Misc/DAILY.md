@@ -10,7 +10,7 @@
 
 ### 2022-12-01
 - [ ] 10:		[[EOCA]]:  Notes capture
-- [ ] 11:		[[Chew]] 
+- [ ] 11:		[[chew]] 
 - [ ] 11:	[[SV]]: summarize notes
 - [ ] 12	[[Lunch]],  
 - [ ] 1	
@@ -20,23 +20,23 @@
 
 
 - [ ] 9:	[[EOCA]]:  Notes capture
-- [ ] 10:	[[Chew]] 
+- [ ] 10:	[[chew]] 
 - [ ] 11:	[[SV]]: summarize notes
 - [ ] 12	[[Lunch]],  
 - [ ] 1	
 - [ ] 2	Yashin / Exercise
 
 - [ ] ### 2022-11-30
-- [ ] 7:	[[Chew]]
+- [ ] 7:	[[chew]]
 - [ ] 8:	[[Eli]]
 - [ ] 9	[[Food]]
 - [ ] 10	[[Repeat]] 
-- [ ] 10:	[[Chew]] 
+- [ ] 10:	[[chew]] 
 - [ ] 11: ???
 - [ ] 12:	[[Lunch]] 
 - [ ] 1'	[[WarStories]]: 
 - [ ] 10	[[resLI]] 
-- [ ] 11	[[Coms]] 
+- [ ] 11	[[COMS]] 
 - [ ] 11	[[Lunch]],  
 - [ ] 12:	[[WarStories]] 
 - [ ] 2	[[Gap]]  
@@ -198,7 +198,7 @@
 - [x] [[2022-09 Mom80]] - 
 - [ ] Yolo-x
 - [ ] War Stories
-- [ ] [[Coms]]
+- [ ] [[COMS]]
 
 ### 2022-09-29  
 - [x] Yashin sheet
@@ -241,7 +241,7 @@
 
 ### 2022-08-03
 - [x] Ready joe
-- [ ] [[Coms]] - 
+- [ ] [[COMS]] - 
 - [x] War Stories
 
 - [ ] Chew
@@ -533,7 +533,7 @@ ec- [ ] Do 4 hours on WarStories
 - [ ] DYL forum odyssey
 - [ ] +Totally Finish Fine note.  e.g. subject line
 - [ ] check airline
-- [ ] [[Coms]]
+- [ ] [[COMS]]
 - [ ] exercise
 
 ### 2022-05-04
@@ -544,7 +544,7 @@ ec- [ ] Do 4 hours on WarStories
 
 ### 2022-04-27
 - [ ] Do some GAANs research.  Read Benjio stuff
-- [ ] [[Coms]] complete
+- [ ] [[COMS]] complete
 - [ ] Ready for Joe
 - [ ] Odyssey plans
 - [ ] Read prototyping
@@ -554,7 +554,7 @@ ec- [ ] Do 4 hours on WarStories
 
 ### 2022-04-26
 - [x] Do some GAANs research.  
-- [x] [[Coms]] complete
+- [x] [[COMS]] complete
 - [ ] Odyssey plans
 - [ ] Read prototyping
 
@@ -569,12 +569,12 @@ ec- [ ] Do 4 hours on WarStories
 ### 2022-04-22
 - [ ] Dave, Dad, Sammie gifts
 - [ ] High output management summary
-- [ ] organize and execute [[Coms]].
+- [ ] organize and execute [[COMS]].
 - [ ] Coursera.  best to read.
 - [ ] call doctors
 
 ### 2022-04-21
-- [ ] organize and execute [[Coms]].
+- [ ] organize and execute [[COMS]].
 - [ ] go deep on FAANG; questions; people; training; 
 - [x] Yearbook ready
 

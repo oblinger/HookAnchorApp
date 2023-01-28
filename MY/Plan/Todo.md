@@ -1,18 +1,15 @@
 
-- [ ] Friday reservations
-- [ ] house repair quote - Better bid on house
-- [ ] My Accept Job, touch base
 - [ ] Figure out my coaching situation
-- [ ] remove care.com review
-- [ ] Find backup drive
+- [ ] house repair quote - Better bid on house
+- [ ] Dr Hassler.  get rid of the prilosec   MyChart
 
+- [ ] Job-Accept, touch base
 
 - [ ] James
 - [ ] meeting with Nick:  Moss adams, RZ summary,
 - [ ] do recalls on Audi
 - [ ] Ground the treadmill [[@Horizon Fitness]]  & test run it
 - [ ] Get Amanda call on the books
-- [ ] Dr Hassler.  get rid of the prilosec
 - [ ] flu shot 
 - [ ] Fix car
 - [ ] Get job application tests from James

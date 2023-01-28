@@ -1,6 +1,6 @@
 
 FRIDAY RESTAURANTS
-- FireFly
+- (415) 821-7652	FireFly
 - One Waan
 - 
 

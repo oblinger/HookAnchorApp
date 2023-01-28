@@ -1,3 +1,4 @@
+- [ ] OBS - system keeps prepending topics to each page
 - [ ] do quarterly budgeting
 - [ ] put plate on wall outlet
 - [ ] get password I know by memory for gmail; think about logon w/o computer to many accounts

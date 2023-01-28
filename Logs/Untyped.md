@@ -6,6 +6,8 @@
 
 | Date       | File                | Notes                                                                                     |
 | ---------- | ------------------- | ----------------------------------------------------------------------------------------- |
+| 2023-01-27 | [[COM Campaigns]]       | Joining SV Touchbase                                                                      |
+| 2023-01-23 | [[UC]]                  | Uniform Compute                                                                           |
 | 2023-01-23 | [[SV]]                  | Prior Inventions                                                                          |
 | 2023-01-19 | [[DYL]]                 | Dan Job                                                                                   |
 | 2023-01-11 | [[References]]          | Grzegorz References                                                                       |
@@ -57,7 +59,7 @@
 | 2022-08-17 | [[Phone]]               | Dr Lue Urologist                                                                          |
 | 2022-08-01 | [[Phone]]               | notes while out - about me                                                                |
 | 2022-07-19 | [[Brain3]]              | G-Flow Nets Maybe - whats my example                                                      |
-| 2022-07-19 | [[Coms]]                | Ping Goals                                                                                |
+| 2022-07-19 | [[COMS]]                | Ping Goals                                                                                |
 | 2022-07-18 | [[ToBuy]]               | Walnut desktop                                                                            |
 | 2022-07-12 | [[Phone]]               | Eli Sand toys                                                                             |
 | 2022-07-12 | [[Phone]]               | LOWES tool rental                                                                         |
@@ -93,8 +95,8 @@
 | 2022-04-07 | [[SNIP]]                | UF - math vs code                                                                         |
 | 2022-04-07 | [[SNIP]]                | QL brag sheet                                                                             |
 | 2022-04-06 | [[Letters]]             | John Cameron thank you                                                                    |
-| 2022-04-05 | [[Campaigns]]           | FAANG ML  [[FAANG#2022-04-05 - topics - Ask FAANG folks about hiring|topics]].            |
-| 2022-04-05 | [[Campaigns]]           | VC recruiters / Headhunter List   [[__BeVC__#m2022-04-06 Recruiter topics|TOPICS]]        |
+| 2022-04-05 | [[COM Campaigns]]       | FAANG ML  [[FAANG#2022-04-05 - topics - Ask FAANG folks about hiring|topics]].            |
+| 2022-04-05 | [[COM Campaigns]]       | VC recruiters / Headhunter List   [[__BeVC__#m2022-04-06 Recruiter topics|TOPICS]]        |
 | 2022-04-05 | [[FAANG]]               | topics - Ask FAANG folks about hiring                                                     |
 | 2022-04-04 | [[ToBuy]]               | Crisper                                                                                   |
 | 2022-04-03 | [[Bache]]               | Bartholome Flores - Restraining order 220-052-081                                         |
@@ -107,7 +109,7 @@
 | 2022-03-19 | [[Crunchbase Notes]]    | === AMY SEARCH STRATEGY ===                                                               |
 | 2022-03-19 | [[Uniting America]]     | Uniting America On The Issues Of Racial Fairness and Racial Disparity                     |
 | 2022-03-19 | [[Paths]]               | VC Areas                                                                                  |
-| 2022-03-18 | [[Campaigns]]           | Aniket Recruiters                                                                         |
+| 2022-03-18 | [[COM Campaigns]]       | Aniket Recruiters                                                                         |
 | 2022-03-18 | [[Uniting America]]     | letter to steve                                                                           |
 | 2022-03-15 | [[Phone]]               | Qingling's income and taxes                                                               |
 | 2022-03-15 | [[Phone]]               | #### STARTED USING THIS AGAIN ####                                                        |
@@ -120,16 +122,16 @@
 | 2022-03-10 | [[Searches]]            | COMPANIES ===                                                                             |
 | 2022-03-10 | [[Searches]]            | ML COMPANIES ===                                                                          |
 | 2022-03-09 | [[Paths]]               | Post Amy Kruse Thinking                                                                   |
-| 2022-03-04 | [[MKT]]                 | From the top                                                                              |
+| 2022-03-04 | [[2020-12 MKT]]         | From the top                                                                              |
 | 2022-02-22 | [[Paths]]               | Latest Thinking                                                                           |
 | 2022-02-16 | [[Forum]]               | Email based first system.                                                                 |
 | 2022-02-15 | [[Paths]]               | Choice Space                                                                              |
-| 2022-02-08 | [[Campaigns]]           | Meetups to consider                                                                       |
+| 2022-02-08 | [[COM Campaigns]]       | Meetups to consider                                                                       |
 | 2022-02-00 | [[FirstTouch]]          | Recruiter - Refer Anyone - LOW HIT RATE                                                   |
-| 2022-01-29 | [[Campaigns]]           | L1-VC-ask-advice                                                                          |
+| 2022-01-29 | [[COM Campaigns]]       | L1-VC-ask-advice                                                                          |
 | 2022-01-28 | [[Journal Old]]         | Joe/Deep Advisor                                                                          |
-| 2022-01-27 | [[Campaigns]]           | Sources                                                                                   |
-| 2022-01-27 | [[Campaigns]]           | Recruiter outreach #2  (NOT FINISHED)                                                     |
+| 2022-01-27 | [[COM Campaigns]]       | Sources                                                                                   |
+| 2022-01-27 | [[COM Campaigns]]       | Recruiter outreach #2  (NOT FINISHED)                                                     |
 | 2022-01-27 | [[Habit]]               | 30/30/30 - Morning Effiency & Focus on tough task                                         |
 | 2022-01-27 | [[Habit]]               | 30&30 - Morning Effiency & Focus on tough task                                            |
 | 2022-01-20 | [[Journal Old]]         | PATHS, spiritual dimension                                                                |
@@ -148,10 +150,10 @@
 | 2022-00-00 | [[FailedMessages]]      | JOE Quora                                                                                 |
 | 2021-12-28 | [[DEEP_BOOT]]           | Deep Introspection Claim                                                                  |
 | 2021-12-25 | [[Journal Old]]         | Friends Audit                                                                             |
-| 2021-12-17 | [[Campaigns]]           | RECRUITER OUTREACH                                                                        |
+| 2021-12-17 | [[COM Campaigns]]       | RECRUITER OUTREACH                                                                        |
 | 2021-12-01 | [[Journal Old]]         | PATHS cash                                                                                |
 | 2021-12-01 | [[Paths]]               | PATHS cash                                                                                |
-| 2021-12-00 | [[MKT]]                 |                                                                                           |
+| 2021-12-00 | [[2020-12 MKT]]         |                                                                                           |
 | 2021-12-00 | [[DYL]]                 | DAN WORK (Written for Nina discussion)                                                    |
 | 2021-12-00 | [[Resume]]              | Jared Resume writing notes                                                                |
 | 2021-11-30 | [[Journal Old]]         | PATHS GOOGLE vs R-ZERO vs UF-now                                                          |
@@ -182,13 +184,13 @@
 | 2021-10-06 | [[Journal Old]]         | BAJI                                                                                      |
 | 2021-10-01 | [[Journal Old]]         | -- SITUATION SUMMARY --                                                                   |
 | 2021-10-01 | [[NJ22 Contents]]       | -- SITUATION SUMMARY --                                                                   |
-| 2021-09-23 | [[Coms]]                | WHOM IN MY NETWORK TO ASK                                                                 |
+| 2021-09-23 | [[COMS]]                | WHOM IN MY NETWORK TO ASK                                                                 |
 | 2021-09-23 | [[Journal Old]]         | WHOM IN MY NETWORK TO ASK                                                                 |
 | 2021-09-23 | [[Resume]]              | Resume Experience                                                                         |
 | 2021-09-22 | [[Journal Old]]         | >>> WP    -- NEXT JOB ACTIVITIES <<<                                                      |
 | 2021-09-22 | [[NJ22 Contents]]       | >>> WP    --  ACTIVITIES <<<                                                              |
 | 2021-09-22 | [[Resume]]              | RESUME OBJECTIVE                                                                          |
-| 2021-09-21 | [[Coms]]                | QUESTIONS TO ASK                                                                          |
+| 2021-09-21 | [[COMS]]                | QUESTIONS TO ASK                                                                          |
 | 2021-09-21 | [[Journal Old]]         | QUESTIONS TO ASK                                                                          |
 | 2021-09-21 | [[Journal Old]]         | SUMMARY OF WORK THAT FITS                                                                 |
 | 2021-09-21 | [[DYL]]                 | SUMMARY OF WORK THAT FITS                                                                 |
@@ -347,6 +349,8 @@
 | 2020-01-05 | [[OLD 2020 Weekly]]     | GOALS FOR THE YEAR                                                                        |
 | 2020-00-00 | [[Parents]]             | Subscriptions that Dad might want                                                         |
 | 2020-00-00 | [[Forum]]               | UNSORTED                                                                                  |
+| 2020-00-00 | [[Ideas]]               | HAND HELD PKG DIMENSIONER                                                                 |
+| 2020-00-00 | [[Ideas]]               | Room occupancy sensor - idea from AF partnership calls                                    |
 | 2020-00-00 | [[Ideas]]               | Chipstack                                                                                 |
 | 2019-12-09 | [[OLD 201x Weekly]]     | Mostly sideways week                                                                      |
 | 2019-12-06 | [[OLD 201x Weekly]]     | My YES List                                                                               |

@@ -14,7 +14,7 @@
 - [ ] Get Mentors
 
 ## = [[MY/Plan/Social]] =
-- [[Coms]]: John, Anastasia
+- [[COMS]]: John, Anastasia
 
 
 

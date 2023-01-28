@@ -1,4 +1,4 @@
-
+- [ ] bug: CMD
 
 - [ ] obs:  find out how to move todo item around
  Yelp

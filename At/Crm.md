@@ -1,5 +1,5 @@
  
-Main:   	[Mentors](Mentors.md)    [[Coms]]   [[Coms|Calls]]      [G-sheet CRM](https://docs.google.com/spreadsheets/d/166xqGspRbmUjKoRYcgGvAu-GIRsKQrKBH_GYiJAMaSs/edit#gid=0) 
+Main:   	[Mentors](Mentors.md)    [[COMS]]   [[COMS|Calls]]      [G-sheet CRM](https://docs.google.com/spreadsheets/d/166xqGspRbmUjKoRYcgGvAu-GIRsKQrKBH_GYiJAMaSs/edit#gid=0) 
 Sub:	[[2022-03 BeVC#CRM|BeVC]]  
 
 

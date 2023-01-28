@@ -1,1 +1,1 @@
-=[[START]]	 [Business Analyst](https://www.linkedin.com/in/james-sullivan-iii/)  [[@Sports Visio]]		
+=[[SV]]	 [Business Analyst](https://www.linkedin.com/in/james-sullivan-iii/)  [[@Sports Visio]]		

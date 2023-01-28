@@ -1,0 +1,1 @@
+=[[AI]]   [President](https://www.linkedin.com/in/steve-minton-483a/)  [[@Infralink]]

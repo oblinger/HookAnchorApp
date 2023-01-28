@@ -1,1 +1,1 @@
-=[[START]]	 [Senior Principal AI Researcher](https://www.linkedin.com/in/fliu44/)  [[@Sports Visio]]		
+=[[SV]]	 [Senior Principal AI Researcher](https://www.linkedin.com/in/fliu44/)  [[@Sports Visio]]		

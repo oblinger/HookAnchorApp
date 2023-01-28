@@ -1,4 +1,4 @@
-
+[[Offload Folder]]
 [[Logs]]  				 GROUPS OF LIKE ENTRIES -- (Dated, Ordered, Typed)
 - [[Idea]] 		- Ideas
 - [[Letters]]  						Formal correspondence

@@ -1,3 +1,9 @@
+- [x] 2023 update posting.    Sunnova.
+- [x] cancel obsidian monthly
+- [x] snapshot my IP
+- [x] Friday reservations
+- [ ] Find backup drive
+- [x] remove care.com review
 - [x] Privacy Panel
 GOOGLE:  197,547    AF: 18,214  18,191
 - [ ] Paypal validate schwab  (re-submitted on Jan-17th)

@@ -1,8 +1,13 @@
 
-:: [[MED Heart]],   [[MED History]],   [[MED Checkups]],   [[MED General]],   [[MED Psoriasis]],   [[MED Tests]],   [[MED Doctors]],   [[MED Vaccinations]],   [[MED Vision]],   [[MED Insurance]],   [[MED Journal]],   [[MED Pills]],   [[MED Sleep]],   [[Low Back Pain]],   [[MED Weight]]
-  [[Run]]
+:: [[MED Measurements]]
 
-- [[MED.]], [[MED Food]],  [[Jet Lag]], [[Exercise]], 
+:: [[MED.]], [[MED Food]],  [[MED Heart]],   [[MED History]],   [[MED Checkups]],   [[MED General]],   [[MED Psoriasis]],   [[MED Tests]],  
+:: [[MED Doctors]],   [[MED Vaccinations]],   [[MED Vision]],   [[MED Insurance]],   [[MED Journal]],   [[MED Pills]],   [[MED Sleep]],    [[MED Weight]], 
+
+- [[Low Back Pain]], 
+  [[run]]
+
+-  [[Jet Lag]], [[Exercise]], 
  [MED Heart](MED%20Heart.md)  [MED Food](MED%20Food.md)  [MED Psoriasis](MED%20Psoriasis.md)  [MED Vaccinations](MED%20Vaccinations.md)  [MED General](MED%20General.md)  [MED History](MED%20History.md)  [MED Doctors](MED%20Doctors.md)  [MED_Checkups](MED_Checkups.md)  [Medifast](Medifast.md)  [MED Journal](MED%20Journal.md)  [MED Sleep](MED%20Sleep.md)  [MED Weight](MED%20Weight.md)   [MED Tests](MED%20Tests.md)  [MED Insurance](MED%20Insurance.md)  [MED Pills](MED%20Pills.md)
   [MED Vision](MED%20Vision.md)
   [MED-Vitamins](MED-Vitamins.md)

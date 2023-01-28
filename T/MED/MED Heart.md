@@ -4,44 +4,8 @@
 - CPMC - Heart Disease Reversal Nutrition Program: CPMC 415-353-4278
 - Stanford Preventive Cardiology -  (650) 725-5909
 
-## = MEDICAL MEASUREMENTS
-### hsCRP - High-sensitivity C-reactive protein
-### HOMEOCYSTEINE homocysteine
-- [Maria](https://medium.com/feed-your-brain/forget-cholesterol-its-your-homocysteine-level-that-matters-716a8fe9d345),   Ideal is <10.   >15 is considered abnormal.
-
-### APO-B
-- [Pritikin Article](https://www.pritikin.com/what-is-apob?utm_campaign=Weekly%20Newsletter%20Campaign%20&utm_medium=email&_hsmi=224117336&_hsenc=p2ANqtz--l-p5JO-PYGYpraHeIa0oRwqdqb5IZ4jsUes5gFpNwPClwrNac4R9oKNykGHqH7OuJd6RTtouCgobo1BQiSKAEifjFZA&utm_content=224118332&utm_source=hs_email),
-	- two kinds:  apoB-48       apoB-100 (made in the liver, )
-	- They was under 100 for TotalCholesterol-HDL   or under 80 if reversing CVD
-	- Same 100 and 80 numbers for the apoB levels
-
-
-
-
-### A1C 
-
-
-### LP(a) -   (genetic, indicates higher propensity)
-[Mayo](https://www.mayoclinic.org/diseases-conditions/heart-disease/in-depth/heart-disease/art-20049357) - 
-
 ## TOPICS
 
-### MEASURMENTS
-- APO-B  (or is it APO-E?)
-- A1C?
-- LDL/HDL/Ratio
-
-### --- BLOOD PRESSURE ---
-2020
-4.27	125/83 76	129/82 84				(slept in)
-4.26	142/92 132/88 81
-4.25	134/90 2p
-4.02	124/87 87				(first reading first time 135/95)
-4.01    137/102 95              (first reading in afternoon, after shower)
-3.31				139/90 84
-3.20	139/92 9a	164/93 10p (scotch)
-
-_
 
 
 # LOG

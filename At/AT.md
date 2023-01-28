@@ -1,4 +1,6 @@
 
+:: [[@AJ Forsythe]],   [[@Ahern Knox]],   [[@Ayal Amir]],   [[@Balaz Gaal]],   [[@Barney Pell]],   [[@Chris Machut]],   [[@Dan Newcome]],   [[@Dan Roth]],   [[@Dean Allenmang]],   [[@Dileep George]],   [[@Doug Lenat]],   [[@Foster Provost]],   [[@Geoffrey Hayes]],   [[@Haym Hirsh]],   [[@Jason Wells]],   [[@Joel Selanikio]],   [[@John Laird]],   [[@John Turek]],   [[@Jurg von Kanel]],   [[@Michael Witbrock]],   [[@Oren Etzioni]],   [[@Peter Ashley]],   [[@Peter Clarke]],   [[@Philipp Herget]],   [[@Ric Szopa]],   [[@Richard Goodwin]],   [[@Rob Farrell]],   [[@Robert Leshner]],   [[@Ron Keesing]],   [[@Ronny Kohavi]],   [[@Senthil E]],   [[@Steve Chien]],   [[@Steve Minton]],   [[@Szymon Stoma]],   [[@Todd Hylton]],   [[@Tom Ditterich]],   [[@Tom Mitchell]],   [[@Tom Wagner]],   [[@Usama Fayyad]],   [[@Wiktor Schmidt]],   [[@Yannick Germain]],   [[@Yiftach Eisenberg]]
+
 :: [[@Kyle Langworthy]],   [[@Siobhan Quinn]]
 
 :: [[@Amanda Riccetti]]
@@ -18,7 +20,7 @@
   [[@Qingling Oblinger]],   [[@Epsilon Oblinger]],   [[PEOPLE]],   [[@Eli Oblinger]]
 [[@Igor Shindel]],   [[@Sports Visio]]
   [[DEVSHOP]]
-  [Chew](Chew.md)
+  [chew](chew.md)
   [@Allison Binns](@Allison%20Binns.md)
   [@Allison Binns](@Allison%20Binns.md)
   [@Allison Binns](@Allison%20Binns.md)
@@ -28,7 +30,7 @@
 
   [@Allison Binns](@Allison%20Binns.md)
   [@Allison Binns](@Allison%20Binns.md)
-  [@Allison Binns](@Allison%20Binns.md),   [Coms](Coms.md)
+  [@Allison Binns](@Allison%20Binns.md),   [COMS](COMS.md)
   [VC ORG](VC%20ORG.md),   [Crm](Crm.md)
    [ORG](ORG.md),   [@eGenisis](@eGenisis.md),   [VC ORG](VC%20ORG.md),   [@Vikram](@Vikram.md),   [Mentors](Mentors.md),   [@Rzero](@Rzero.md)
 

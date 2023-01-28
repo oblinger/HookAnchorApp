@@ -1,4 +1,4 @@
-# GOOGLE PITCH - Search + Lens: Contextualized Influencer Content Platform
+# Google Search + Google Lens: Contextualized Influencer Content Platform
 
 ## **Problem**
 1. End users; especially the younger generation, increasingly start their search on social media platforms such as TikTok and Instagram instead of Google Search or Map. They prefer to get their content from creators they trust and in more visually-rich narrative form.

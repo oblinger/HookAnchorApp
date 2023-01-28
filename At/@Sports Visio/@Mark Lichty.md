@@ -1,1 +1,1 @@
-=[[START]]	 [Director of Growth](https://www.linkedin.com/in/mark-lichty-8ab915a5/)  [[@Sports Visio]]		
+=[[SV]]	 [Director of Growth](https://www.linkedin.com/in/mark-scott-lichty-8ab915a5/)  [[@Sports Visio]]		

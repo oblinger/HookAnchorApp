@@ -1,13 +1,15 @@
 
+:: [[Untitled]],   [[Work]],   [[dinner]],   [[wake]]
+
 :: [[Spirit]],   [[Waiting]]
 
 :: [[lunch]]
 
-:: [[First]],   [[Run]]
+:: [[first]],   [[run]]
 
 :: [[Social]]
   [[Archeology]]
-  [[Chew]]
+  [[chew]]
 => [[Top]] > [[MY]] > [[Plan]]  
 
 [[OBS.]] 
@@ -48,10 +50,10 @@
 
 
 #### Comms Pages
-- [[Coms]]		-  
-- [[Com Now]]	-  
-- [[Com Next]]	-  
-- [[Com Waiting]]	-  
+- [[COMS]]		-  
+- [[COM Now]]	-  
+- [[COM Next]]	-  
+- [[COM Waiting]]	-  
 - [[Ping]]		-  	
 
 
@@ -61,13 +63,13 @@
 - [[Ping]] - 
 
 
-PREFIX NAMED:   [[Active]]   B   [[Coms]]   DAILY   [[Fried]]   E   F   G   [[Hack]]   I   J   K   L   M   N   O   [[Prime]]   [[Quick]]  [[Repeat]]   [[Self]]   [[Todo]]   U   V   [[External]]   X   Y   Z
+PREFIX NAMED:   [[Active]]   B   [[COMS]]   DAILY   [[Fried]]   E   F   G   [[Hack]]   I   J   K   L   M   N   O   [[Prime]]   [[Quick]]  [[Repeat]]   [[Self]]   [[Todo]]   U   V   [[External]]   X   Y   Z
 CHANGE: [[Wings]], [[Current]], 
 
 
 
 - XXX
-  [Coms](Coms.md)
+  [COMS](COMS.md)
 - 
 
   [Quick](Quick.md)
@@ -85,4 +87,4 @@ CHANGE: [[Wings]], [[Current]],
   [External](External.md)
 
   [Fun](Fun.md)
- [[Quarterly]],  [Quarterly](Quarterly.md),   [Planning](Planning.md),   [Archive](Archive.md),   [Work](Work/Work.md),   [Full](Full.md),   [Self](Self.md),   [Later](Later.md),   [Repeat](Repeat.md),   [Calls](Calls.md),   [Ping](Ping.md),   [Q2](Q2.md),   [Fried](Fried.md),   [Todo](Todo.md),   [Habit](Habit.md),   [Social](MY/Plan/Social.md),   [Scratch Note](Scratch%20Note.md),   [Coms](Coms.md),   [Prime](Prime.md),   [Watching](Watching.md),   [Current](Current.md),   [Links](Links.md),   [Quick](Quick.md),   [Hack](Hack.md),   [Active](Active.md)
+ [[Quarterly]],  [Quarterly](Quarterly.md),   [Planning](Planning.md),   [Archive](Archive.md),   [Work](Work/Work.md),   [Full](Full.md),   [Self](Self.md),   [Later](Later.md),   [Repeat](Repeat.md),   [Calls](Calls.md),   [Ping](Ping.md),   [Q2](Q2.md),   [Fried](Fried.md),   [Todo](Todo.md),   [Habit](Habit.md),   [Social](MY/Plan/Social.md),   [Scratch Note](Scratch%20Note.md),   [COMS](COMS.md),   [Prime](Prime.md),   [Watching](Watching.md),   [Current](Current.md),   [Links](Links.md),   [Quick](Quick.md),   [Hack](Hack.md),   [Active](Active.md)

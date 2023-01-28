@@ -7,24 +7,47 @@ LEADERSHIP / STRATEGY:	[[@Tessa Lau]], [[@Nick Allen]],
 
 ## MENTORS
 
- VC        | 
- --------- | ----------------
- Solid     | [[@Christina Fonseca]],  [[@Amy Kruse]],  
+STARTUP MKT:  [[@Ahern Knox]], [[@Gaurav Rekhi]],
 
+COACH:			[[@Igor Shindel]], 
+GREY BEARD:		[[@Joe Hellerstein]], 
+NON-PROFITS:		[[@Teddy Lange]], [[@Moses Baffour Awuah]], [[@Micah Nettey]], [[@Joel Selanikio]], 
+MGR:				[[@John Turek]], 
+
+
+AF:				[[@Balaz Gaal]], 
+ [[@Robert Leshner]],[[@Frank Langston]], [[@Geoffrey Hayes]], 
+DARPA:			[[@Ron Keesing]], [[@Todd Hylton]], [[@Yiftach Eisenberg]], 
+IBM:				[[@Jurg von Kanel]], [[@Rob Farrell]], [[@Richard Goodwin]], w
+
+
+VC Solid     | [[@Christina Fonseca]],  [[@Amy Kruse]],  [[@Barney Pell]]
+VC OTHER:	[[@Wiktor Schmidt]], 
 
  STARTUP   | 
  --------- | -------------------
  Core      | [[@Tessa Lau]],  [[@Ben Wild]],  [[@Jason Syversen]], 
- Solid     | [[@Daniel Haddick]],  [[@Gaurav Rekhi]],  [[@Jack Porter]],  [[@Mark Drummond]]
+ Solid     | [[@Daniel Haddick]],  [[@Gaurav Rekhi]],  [[@Jack Porter]],  [[@Mark Drummond]], [[@Philipp Herget]], 
  Good      | [Wiktor Schmidt](https://www.linkedin.com/in/wiktorschmidt/),  [Szymon Stoma](https://www.linkedin.com/in/sstoma/),  
  x         | [Ric Szopa](https://www.linkedin.com/in/szopa/), [Mark Urdahl](https://www.linkedin.com/in/mark-urdahl-42018/),  [Ruwan Welaratna](https://www.linkedin.com/in/ruwanwelaratna/),  [Jean Yang](https://www.linkedin.com/in/jean-yang-96575030/),  [Peter Berger](https://www.linkedin.com/in/peter-berger-5536b92/), [Sam Corbitt](https://www.linkedin.com/in/samcorbitt/),    [Joe Augenbraun](https://www.linkedin.com/in/jaugenbraun/),  
- HEAVY     | [Eyal Amir](https://www.linkedin.com/in/eyalamir1/),  [Peter Ashley](https://www.linkedin.com/in/peterashley/),  [Dileep George](https://www.linkedin.com/in/dileep-george?miniProfileUrn=urn%3Ali%3Afs_miniProfile%3AACoAAAAzIv8BwpTvXVaGH66SjJnK9LARUIFYcEM&lipi=urn%3Ali%3Apage%3Ad_flagship3_search_srp_people%3BBYBweJ%2BzSRSV8FeL5Rs6xw%3D%3D),
+ HEAVY     | [[@Ayal Amir]], [[@Peter Ashley]], [[@Dileep George]], [[@Tom Wagner]], [[@Dan Roth]],
  COACH     |	  [David Whittemore](https://www.linkedin.com/in/davewhittemore/),  [Jim Tye](https://www.linkedin.com/in/jim-tye-2ba0514/),  |
  Friend | [[@John Davis]],  
+[[@AJ Forsythe]], 
+[[@Yannick Germain]], [[@Mark Kapij]], [[@Dan Newcome]], [[@Szymon Stoma]], 
+[[@Ric Szopa]], [[@Ahern Knox]],
 
 
 
+AI RND:	[[@Jason Wells]], 
+AI
+[[@Ron Brachman]], [[@Ronny Kohavi]], [[@Steve Minton]], [[@Usama Fayyad]], [[@Oren Etzioni]], [[@John Laird]], [[@Doug Lenat]],
+AI PROF:	[[@Tom Ditterich]], [[@Haym Hirsh]], 
 
+
+[[@Steve Chien]], [[@Michael Witbrock]], [[@David Israel]], [[@Tom Mitchell]], 
+
+[[@Praveen Paritosh]], [[@Dean Allenmang]], [[@Barney Pell]], [[@Foster Provost]], [[@Rich Caruana]], [[@Peter Clarke]]
 
 ### AI & OTHERS
 
