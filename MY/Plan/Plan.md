@@ -1,4 +1,6 @@
 
+:: [[bfast]],   [[meet]],   [[standup]]
+
 :: [[Untitled]],   [[Work]],   [[dinner]],   [[wake]]
 
 :: [[Spirit]],   [[Waiting]]

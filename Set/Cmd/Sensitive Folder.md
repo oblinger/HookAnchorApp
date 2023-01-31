@@ -1,0 +1,1 @@
+=[[Cmd]]   folder /Volumes/Sensitive

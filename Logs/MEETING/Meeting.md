@@ -8,6 +8,7 @@
 
 | Date        | File                 | Notes                                                             |
 | ----------- | -------------------- | ----------------------------------------------------------------- |
+| m2023-01-30 | [[@Jack Potvin]]         |                                                                   |
 | m2023-01-24 | [[@Igor Shindel]]        | Context Call                                                      |
 | m2023-01-19 | [[@Jason Syversen]]      | Co-Founder??                                                      |
 | m2023-01-18 | [[@Siobhan Quinn]]       | comp at google                                                    |

@@ -2,7 +2,131 @@
 
 - Get resume.  
 
+
+## JASON Tracking
+
+#### J1.1 - Dont force all teams into programs
+Right now new customers are teams, which are linked to programs and programs have events. This is nice, but sometimes events are standalone things and the customer could BE the event organizer. Forcing every team into an arbitrary program doesn't always make sense. 
+
+### J1.2 - Scott byers
+Scott Byers has designed our backend systems and while he's a fast coder who can right code well and find bugs quickly, he's not in touch with users, doesn't ask for help/input, and usually makes incorrect design decisions from my experience. I've told Brian that Scott should NOT be making any design decisions without sign off from me or Mark because his approaches usually create more problems than they solve. Brian has not managed him strongly enough and it has led to numerous issues. (Database structure, authentication issues, and many others) It's annoying because he literally taught classes on programming and I've talked to people who took them, as well as a former boss and everyone ranted about how smart/good he was. 
+
+### J1.3 - Android BG uploader
+We need to get the background uploader for Android in production (should be happening imminently) and iOS background uploader developed (not even started yet!) Background uploading is a key feature for customers that experience difficulty waiting for the app and interrupting it as they use the phone.
+
+### J1.4 - Support 3rd party video sources
+We are going to need to support third party video sources. At a minimum a hand picked wall mounted camera that streams to our systems from a static vantage point... but possibly arbitrary platforms too. While we don't NEED to support arbitrary third party video sources, it would be amazing if we could as we have a universe of existing customers that have existing video they could upload and we could analyze. But we definitely need to move beyond just mobile phones on a tripod to something permanently installed in many venues and nobody has even started on this (other than me doing some research on camera options and Brian looking at ones that support native streaming to AWS)
+
+### J1.5 - Improve our QA
+We need to improve our QA processes. We still have WAY too many bugs slipping through into production. It appears none of the engineers actually use the product, which I get as it's a lot of moving parts and most don't apply to them. But unfortunately those pieces end up slipping through into production and create issues that we keep discovering WAY too late
+
+### J1.6 - Social video sharing
+It's too difficult to share videos onto social media. I've been told that's going to be fixed but no idea when that's happening and I strongly believe that is a critical component to creating some viral growth engines as customers share their clips with others.
+
+### J1.7 - Company watermarking on videos
+7) Similarly, we still don't have a company watermark on the video clips. See #6
+
+8) We don't have enough customers using the app regularly. Mark doesn't seem to care about it but I care greatly... we need to figure out why that is. Mark has pointed out that we don't even know which customers sign up and what they experience, I think we need to add some customer tracking software into the app that tells us who signed up, who's using what, and give us feedback that allows us to improve the experience. 
+
+9) We don't do a good job tracking developer productivity. Obviously stuff like LOC counting is stupid, but I'd love to learn what you did at AF to track productivity and see what we can do to better analyze performance. Obviously we see things like code check ins and stuff that works or not, but quality and design decisions and other things are harder to measure. Especially with a bunch of younger developers I think some of them are less motivated and need some focus help/training (and in some cases to be replaced.) But maybe I'm wrong and they're all amazing. Would love to get your take on productivity but also the team quality/depth across the board. 
+
+10) We need to start doing design reviews, which have not happened (again, an issue stemming from Brian I think) I'd like to review the architecture, key design decisions and make sure that customer requirements are being properly addressed in those decisions. Right now we have Mark making complaints or he and Jack adding stuff into Jira and then we find out later if the code that's in QA solves the problems or not, and it often does or doesn't but then also introduces other issues. I guess this is restating #10... but it's more than just Scott
+
+11) There are a bunch of things that are supposed to be coming out but seem to be slow to get the internal wickets (and then still have bugs when they do!) A game summary page, a watch page where people can see the video, a streaming/watch live page, the aforementioned features like watermarking and sharing, the customer management page where they can manage rosters, etc.
+
+12) We don't do a good job communicating with customers. Features, collaboration, community. We don't tell them when games are uploaded or available. Not strictly technical issues but sort of technical issues (as we can use the tech to communicate with people) Really want to do a better job there.
+
+
 # LOG
+### t2023-01-30  JASON IDEAS email
+
+
+Jason, this email is a gold mine of detail! Thanks for taking the time to write it.  It really helps to get me up to speed more quickly, thanks!
+
+My sense is that we are committing a number of unforced errors in our execution, I would love to help get focus on the most crucial ones first so that we making maximum progress as a company per day.  I hope to split my time between (1) learning enough details about all of our processes to make me effective in leading change within them, (2) LEADING the most crucial tactical changes right now, and (3) building slightly longer term plans so we can efficiently execute next week and next month as well.
+
+>  I am not listing here the stuff I already shared, but things like patents (we have nothing in process yet),
+
+Right.  And I think for the immediate future, I should really focus my time on more immediate needs, once the whole team is spun up with most crucial taskings, then it makes sense to start designing out our longer term IP strategy, longer term AI algo strategy.  For the moment it feels like I should really be focused much more tactically.
+
+Of course, in these early days, there are always many more important tasks than there are hands to do them.  
+Here is my early thoughts about the two key priority areas:
+-1- "Sharpen the saw tasks" -- that multiply our orgs per-day productive capacity should be very high priority.
+-2- "Data enablers" -- tasks that are absolutely required in order to be gathering data regarding product market fit.
+
+
+FRICTION - It seems usage friction is currently so large, it becomes a #2 issue above.  Its becomes difficult to assess the value of the product for our users, simply because it is hard to use for reasons are hard eminently fixable.  It is heartbreaking to see that we are loosing customers because the very basics of our systems are failing us.
+e.g. reliable upload! usage in areas with weak internet, etc.
+- Your #2, #3, #8 are all front and center on this issue.
+
+I 100% agree with you, we need REGULAR DAILY USAGE! And if folks don't find the app has enough value to organically drive that usage we darn well need to know why.  I think it is ok if we restrict our universe of users to some subset of our market for the moment, but for that identified subset, we should be providing knock it out of the park value.
+
+In #8 you talked about updating the app to gather more feedback.  We should consider that especially if it is easy. And we should should just be use calling those users too.  Maybe if that process becomes too labor intensive we can consider getting offshore support.  Over time we need to create a very robust customer feedback capacity.
+
+
+MULTIPLIERS - Some actions we take early will permanently make our org more efficient per day. Some of these multiplier actions should really be front loaded.  I agree your #5 item is definitely on that list. Over time we build a very robust QA process at Analytics Fire. We had $4/hr folks who were quite trained at reading a 20 page QA doc, and then just doing all the steps in that doc.  (OVER and OVER)  This really allowed us to deploy extremely sensitive code in a rapid fire way, since we had such robust regression testing.  I think some of that is overkill for this context, but still the basic structure of offshore talent being trained on text documents is a very cost efficient structure.
+
+The dirty secret around functional testing is that it is very expensive to maintain, since all those test break as you evolve the UX of our app.  (which you should be doing rapidly in response to evolving customer feedback.)  The beautiful pipe is something like this:
+- Jason or Mark interact with customers and have ideas for app changes to incorporate.  These are written up in sloppy form with sketches.
+- Someone like Jasu&Greg write these up in more precise form for approval by you/mark or whoever is originating the experiement to try.
+- Dev backlog tickets are built from these docs.
+- QA testing docs are updated to match the new flow, with specific tests to test that the new fixes are in.
+- The devs use this info
+- The QAs use this info.  (and over time portions of these docs live on in the regression testing that is done.)
+
+This kind of a flow, is cost effective complement to transition code tests. (which we should also have).
+
+
+I also noticed in Fridays standup that we had one of the engineers doing hand labelling of video in order to run an experiment.
+This is some precious and expensive talent to use on hand annotation.  It was specialized annotation for a particular experiment, still I dream of an annotation pipeline that can be "programmed" (with text requests) for such specialized annotations.  This will be a regular part of the experimentation cycle these guys will be running.  So it will pay dividends forever if we can provide lower costs ways of getting more data.  (I need to dig it to see if this idea is practical and high priority) if it is, I will figure out how we can arrange it.
+
+
+These are early days in my learning, but maybe the list of crucial multipliers and frictions are not so large.  I hope this is the case, so we can make rapid progress on them.  will keep you posted as I learn more.
+
+
+Specific comments are inline below
+
+
+
+
+Mark and I have been discussing random things that the product doesn't do now but should. I'm capturing a high level list here (not necessarily in Jira and all the tracking systems but maybe it is!) But anyway it's stuff I'm hoping gets resolved sooner rather than later and I'm hoping that I can eventually lean on you as the go to person that just "makes stuff happen" on the technical side of things. It started as specific technical goals but quickly meandered, just figured I'd send it anyway so you know some stuff that's bugging me that I hope gets more attention.
+
+  
+
+1) Right now new customers are teams, which are linked to programs and programs have events. This is nice, but sometimes events are standalone things and the customer could BE the event organizer. Forcing every team into an arbitrary program doesn't always make sense. 
+
+2) Scott Byers has designed our backend systems and while he's a fast coder who can right code well and find bugs quickly, he's not in touch with users, doesn't ask for help/input, and usually makes incorrect design decisions from my experience. I've told Brian that Scott should NOT be making any design decisions without sign off from me or Mark because his approaches usually create more problems than they solve. Brian has not managed him strongly enough and it has led to numerous issues. (Database structure, authentication issues, and many others) It's annoying because he literally taught classes on programming and I've talked to people who took them, as well as a former boss and everyone ranted about how smart/good he was. 
+
+3) We need to get the background uploader for Android in production (should be happening imminently) and iOS background uploader developed (not even started yet!) Background uploading is a key feature for customers that experience difficulty waiting for the app and interrupting it as they use the phone.
+
+4) We are going to need to support third party video sources. At a minimum a hand picked wall mounted camera that streams to our systems from a static vantage point... but possibly arbitrary platforms too. While we don't NEED to support arbitrary third party video sources, it would be amazing if we could as we have a universe of existing customers that have existing video they could upload and we could analyze. But we definitely need to move beyond just mobile phones on a tripod to something permanently installed in many venues and nobody has even started on this (other than me doing some research on camera options and Brian looking at ones that support native streaming to AWS)
+
+5) We need to improve our QA processes. We still have WAY too many bugs slipping through into production. It appears none of the engineers actually use the product, which I get as it's a lot of moving parts and most don't apply to them. But unfortunately those pieces end up slipping through into production and create issues that we keep discovering WAY too late
+
+6) It's too difficult to share videos onto social media. I've been told that's going to be fixed but no idea when that's happening and I strongly believe that is a critical component to creating some viral growth engines as customers share their clips with others.
+
+7) Similarly, we still don't have a company watermark on the video clips. See #6
+
+8) We don't have enough customers using the app regularly. Mark doesn't seem to care about it but I care greatly... we need to figure out why that is. Mark has pointed out that we don't even know which customers sign up and what they experience, I think we need to add some customer tracking software into the app that tells us who signed up, who's using what, and give us feedback that allows us to improve the experience. 
+
+9) We don't do a good job tracking developer productivity. Obviously stuff like LOC counting is stupid, but I'd love to learn what you did at AF to track productivity and see what we can do to better analyze performance. Obviously we see things like code check ins and stuff that works or not, but quality and design decisions and other things are harder to measure. Especially with a bunch of younger developers I think some of them are less motivated and need some focus help/training (and in some cases to be replaced.) But maybe I'm wrong and they're all amazing. Would love to get your take on productivity but also the team quality/depth across the board. 
+
+10) We need to start doing design reviews, which have not happened (again, an issue stemming from Brian I think) I'd like to review the architecture, key design decisions and make sure that customer requirements are being properly addressed in those decisions. Right now we have Mark making complaints or he and Jack adding stuff into Jira and then we find out later if the code that's in QA solves the problems or not, and it often does or doesn't but then also introduces other issues. I guess this is restating #10... but it's more than just Scott
+
+11) There are a bunch of things that are supposed to be coming out but seem to be slow to get the internal wickets (and then still have bugs when they do!) A game summary page, a watch page where people can see the video, a streaming/watch live page, the aforementioned features like watermarking and sharing, the customer management page where they can manage rosters, etc.
+
+12) We don't do a good job communicating with customers. Features, collaboration, community. We don't tell them when games are uploaded or available. Not strictly technical issues but sort of technical issues (as we can use the tech to communicate with people) Really want to do a better job there.
+
+  
+
+I am not listing here the stuff I already shared, but things like patents (we have nothing in process yet), AI implemented (it's sort of implemented into the human annotator page but the design is such that they can't really use it yet! Hoping to fix that soon and expand it to include numbers for the players and other features to speed them up... and get the single camera, AI recorder working too which will be huge.
+
+  
+
+Jason
+
+
+
 ### m2023-01-19  Co-Founder??
 
 Jason, 

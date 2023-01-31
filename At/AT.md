@@ -1,3 +1,7 @@
+== [[START]] 
+;; every: 10, last: 2022-10-08 
+
+
 
 :: [[@AJ Forsythe]],   [[@Ahern Knox]],   [[@Ayal Amir]],   [[@Balaz Gaal]],   [[@Barney Pell]],   [[@Chris Machut]],   [[@Dan Newcome]],   [[@Dan Roth]],   [[@Dean Allenmang]],   [[@Dileep George]],   [[@Doug Lenat]],   [[@Foster Provost]],   [[@Geoffrey Hayes]],   [[@Haym Hirsh]],   [[@Jason Wells]],   [[@Joel Selanikio]],   [[@John Laird]],   [[@John Turek]],   [[@Jurg von Kanel]],   [[@Michael Witbrock]],   [[@Oren Etzioni]],   [[@Peter Ashley]],   [[@Peter Clarke]],   [[@Philipp Herget]],   [[@Ric Szopa]],   [[@Richard Goodwin]],   [[@Rob Farrell]],   [[@Robert Leshner]],   [[@Ron Keesing]],   [[@Ronny Kohavi]],   [[@Senthil E]],   [[@Steve Chien]],   [[@Steve Minton]],   [[@Szymon Stoma]],   [[@Todd Hylton]],   [[@Tom Ditterich]],   [[@Tom Mitchell]],   [[@Tom Wagner]],   [[@Usama Fayyad]],   [[@Wiktor Schmidt]],   [[@Yannick Germain]],   [[@Yiftach Eisenberg]]
 

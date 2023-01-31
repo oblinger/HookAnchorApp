@@ -9,64 +9,66 @@ https://www.frannyskitchensf.com/
 
  1980   77%-70%-89%  39.5   30.5 - 24 norway       //    2020   83%-79%-90%  57.21   47   
 
-| >> PICKUP <<           | DOOR DASH OPTIONS                                          |     |     |
-| ---------------------- | ---------------------------------------------------------- | --- | --- |
-| p SANDWICH             | Hazel's Kitchen 415.647.7941 https://www.hazelskitchen.com |     |     |
-| p+  NEPALESE           | Little Nepal                                               |     |     |
-| ---------------------  | ---------------------------------------------------------- |     |     |
-| >>>>  DOORDASH   <<<<  |                                                            |     |     |
-| ====    ASIAN    ====  | >> Chinese, Japanese, Thai, Korean, Pho, Bowls, Burmese    |     |     |
-| d++~  CHINESE-North    | Dong Bei Mamma                                             |     |     |
-| d+~~  CHINESE          | Beijing Resturants                                         |     |     |
-| d+~~  CHINESE          | Big Lantern                                                |     |     |
-| d+~~  CHINESE VEG      | Enjoy Veg Resturant.  low salt, but just ok flavor         |     |     |
-| d???  SUSHI            | Moki Sushi                                                 |     |     |
-| d+~~  JAPANESE         | Ginza Sushi                                                |     |     |
-| d???  JAPANESE(-sushi) | Ginto Express                                              |     |     |
-| d++~  THAI             | Osha Thai -                                                |     |     |
-| d+~~  THAI             | Farm House Kitchen (expensive)                             |     |     |
-| d???  THAI             | Marnee Thai                                                |     |     |
-| d+~~  KOREAN           | Mamma' Tofu House.  Affordable/ok.                         |     |     |
-| d++~  KOREAN           | Jin Mi Korean.  Affordable/better than mammas              |     |     |
-| d+++  BURMESE          | Burmese Kitchen ~ We all like it & it is affordable        |     |     |
-| d?~~  BURMESE          | New Burma (yelp 4.5)  Burma Cafe/Love/Superstar (yelp 4.0) |     |     |
-| d+~~  VIETNAMESE       | Chic n' Time (y5.0)                                        |     |     |
-| d+++  VIETNAMESE       | Parella.  QL loved it. modest salt. selection. flavor.     |     |     |
-| d???  FUSION           |                                                            |     |     |
-| === BOWL ===           |                                                            |     |     |
-| d+++  PHO              | Turtle Tower                                               |     |     |
-| d++~  BOWL             | Ben's Fast Food                                            |     |     |
-| d-+~  BOWL-Korean      | Moon Bowls - QL does not like; Dan = just ok               |     |     |
-| d+~~  BOWL             | West Coast Bowl                                            |     |     |
-| d4.2  RAMAN            | Marufuku Raman - our fav raman                             |     |     |
-| d4.0  RAMAN            | Menya Kanemaru Golden Raman                                |     |     |
-| d???  POKE             |                                                            |     |     |
-| ====   SEAFOOD   ====  |                                                            |     |     |
-| P++~  SEAFOOD          | Seafood Station                                            |     |     |
-| d+~~  SEAFOOD          | Fish District                                              |     |     |
-| d+~~  SEAFOOD          | Pacific Catch                                              |     |     |
-| d+~~  SEAFOOD          | Soto Mare                                                  |     |     |
-| ====  AMERICAN   ====  | > Salad, Sandwich, Pizza, Fast                             |     |     |
-| d++~  SALADS           | Mixt Greens                                                |     |     |
-| d+~~  PIZZA            | The Pizza Shop (4.5yelp)                                   |     |     |
-| d???  PIZZA            | Little Star Pizza (4 or 4.5yelp)                           |     |     |
-| u+++  SANDWICH         | Grubbin (Great but opens @ 11:15)  Bite (not great)        |     |     |
-| d???  BURGER           |                                                            |     |     |
-| d-~~  FAST             | McDonalds                                                  |     |     |
-| d???  DESSERT          |                                                            |     |     |
-| ====    WORLD    ====  |                                                            |     |     |
-| d-~~  ITALIAN / PIZZA  | a Mano (needed to get refund, they screwedup)              |     |     |
-| d+~~  ITALIAN          | Pastime Pasta                                              |     |     |
-| d???  ITALIAN          | Thats Amore SF.                                            |     |     |
-| d???  FRENCH           | Chez Maman West (Y4.0)                                     |     |     |
-| d???  GERMAN           |                                                            |     |     |
-| d~~~  SPANISH TAPAS    | Picaro                                                     |     |     |
-| d+~~  MEDITERR         | Mediterranean Aroma                                        |     |     |
-| d???  MEXICAN          | Taqueria Guadalajara (4.0Y)                                |     |     |
-| y???  MEXICAN          | Taco Los Altos (3.5Y) seemed alittle expensive             |     |     |
-| d???  INDIAN           |                                                            |     |     |
-| d???  AFRICAN          |                                                            |     |     |
-|                        |                                                            |     |     |
+| >> PICKUP <<                    | DOOR DASH OPTIONS                                          |     |     |
+| ------------------------------- | ---------------------------------------------------------- | --- | --- |
+| p SANDWICH                      | Hazel's Kitchen 415.647.7941 https://www.hazelskitchen.com |     |     |
+| p+  NEPALESE                    | Little Nepal                                               |     |     |
+| ---------------------           | ---------------------------------------------------------- |     |     |
+| >>>>  DOORDASH   <<<<           |                                                            |     |     |
+| ====    ASIAN    ====           | >> Chinese, Japanese, Thai, Korean, Pho, Bowls, Burmese    |     |     |
+| d++~  CHINESE-North             | Dong Bei Mamma                                             |     |     |
+| d+~~  CHINESE                   | Beijing Resturants                                         |     |     |
+| d+~~  CHINESE                   | Big Lantern                                                |     |     |
+| d+~~  CHINESE VEG               | Enjoy Veg Resturant.  low salt, but just ok flavor         |     |     |
+| d???  SUSHI                     | Moki Sushi                                                 |     |     |
+| d+~~  JAPANESE                  | Ginza Sushi                                                |     |     |
+| d???  JAPANESE(-sushi)          | Ginto Express                                              |     |     |
+| d++~  THAI                      | Osha Thai -                                                |     |     |
+| d+~~  THAI                      | Farm House Kitchen (expensive)                             |     |     |
+| d???  THAI                      | Marnee Thai                                                |     |     |
+| d+~~  KOREAN                    | Mamma' Tofu House.  Affordable/ok.                         |     |     |
+| d++~  KOREAN                    | Jin Mi Korean.  Affordable/better than mammas              |     |     |
+| d+++  BURMESE                   | Burmese Kitchen ~ We all like it & it is affordable        |     |     |
+| d?~~  BURMESE                   | New Burma (yelp 4.5)  Burma Cafe/Love/Superstar (yelp 4.0) |     |     |
+| d+~~  VIETNAMESE                | Chic n' Time (y5.0)                                        |     |     |
+| d+++  VIETNAMESE                | Parella.  QL loved it. modest salt. selection. flavor.     |     |     |
+| d???  FUSION                    |                                                            |     |     |
+| === BOWL ===                    |                                                            |     |     |
+| d+++  PHO                       | Turtle Tower                                               |     |     |
+| d++~  BOWL                      | Ben's Fast Food                                            |     |     |
+| d-+~  BOWL-Korean               | Moon Bowls - QL does not like; Dan = just ok               |     |     |
+| d+~~  BOWL                      | West Coast Bowl                                            |     |     |
+| d4.2  RAMAN                     | Marufuku Raman - our fav raman                             |     |     |
+| d4.0  RAMAN                     | Menya Kanemaru Golden Raman                                |     |     |
+| d???  POKE                      |                                                            |     |     |
+| ====   SEAFOOD   ====           |                                                            |     |     |
+| P++~  SEAFOOD                   | Seafood Station                                            |     |     |
+| d+~~  SEAFOOD                   | Fish District                                              |     |     |
+| d+~~  SEAFOOD                   | Pacific Catch                                              |     |     |
+| d+~~  SEAFOOD                   | Soto Mare                                                  |     |     |
+| ====  AMERICAN   ====           | > Salad, Sandwich, Pizza, Fast                             |     |     |
+| d++~  SALADS                    | Mixt Greens                                                |     |     |
+| d+~~  PIZZA                     | The Pizza Shop (4.5yelp)                                   |     |     |
+| d???  PIZZA                     | Little Star Pizza (4 or 4.5yelp)                           |     |     |
+| u+++  SANDWICH                  | Grubbin (Great but opens @ 11:15)  Bite (not great)        |     |     |
+| d???  BURGER                    |                                                            |     |     |
+| d-~~  FAST                      | McDonalds                                                  |     |     |
+| d???  DESSERT                   |                                                            |     |     |
+| ====    WORLD    ====           |                                                            |     |     |
+| d-~~  ITALIAN / PIZZA           | a Mano (needed to get refund, they screwedup)              |     |     |
+| d++   ITALIAN Vega              |                                                            |     |     |
+| d??? ITALIAN Spiazzo Ristorante |                                                            |     |     |
+| d+~~  ITALIAN                   | Pastime Pasta                                              |     |     |
+| d???  ITALIAN                   | Thats Amore SF.                                            |     |     |
+| d???  FRENCH                    | Chez Maman West (Y4.0)                                     |     |     |
+| d???  GERMAN                    |                                                            |     |     |
+| d~~~  SPANISH TAPAS             | Picaro                                                     |     |     |
+| d+~~  MEDITERR                  | Mediterranean Aroma                                        |     |     |
+| d???  MEXICAN                   | Taqueria Guadalajara (4.0Y)                                |     |     |
+| y???  MEXICAN                   | Taco Los Altos (3.5Y) seemed alittle expensive             |     |     |
+| d???  INDIAN                    |                                                            |     |     |
+| d???  AFRICAN                   |                                                            |     |     |
+|                                 |                                                            |     |     |
 
 
 WORLD:	Italian, French, German, Spanish, Mediterranean,  Mexican, Indian, African

@@ -1,3 +1,4 @@
+- [ ] buy red envelopes; water filter
 - [ ] OBS - system keeps prepending topics to each page
 - [ ] do quarterly budgeting
 - [ ] put plate on wall outlet

@@ -1,4 +1,4 @@
-
+- [ ] Schedule with Doctor
 - [ ] Figure out my coaching situation
 - [ ] house repair quote - Better bid on house
 - [ ] Dr Hassler.  get rid of the prilosec   MyChart

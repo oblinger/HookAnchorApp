@@ -9,6 +9,20 @@ A simplest space of hosted compute:
 ## CORE SEMANTICS
 
 
+### UNIFORM DATA
+
+In essence computer data is symbolic information that affords structured access.
+
+**VALUE** -- A *value* can be any JSON value.  
+
+**ARGS** -- An *args* is a value that is also a JSON map whose keys are non-negative integers or are strings that are valid Java identifiers.    By convention, a value associated with the special "^" key is called the ***head***, values associated with whole numbered keys are called the ***fixed args***, and the remaining values are called the ***keyword args***.  An ARGS can be written in functional form as:
+	head(fixed1, fixed2, ..., key1=value1, key2=value2, ...)
+
+**MAP** - A *map* (or namespace) is an API that implements a "get" operator that maps its first arg called the "key" onto a value.  
+Optionally a map can also implement "set", "len", and "iterate" operators too.  The following shorthand may be used:
+	map[key]  to get value.    map[key]=value  to set value.   len(map) for its size.   map.map(args) to iterate over all keys except the head of an args 
+
+
 ### UNIFORM COMPUTE
 
 At its essence a computer language specifies what happens when you "apply" some "executable" code to some "input" data.
@@ -49,20 +63,6 @@ NOTES:
 
 
 
-### UNIFORM DATA
-
-In essence computer data is symbolic information that affords structured access.
-
-**VALUE** -- A *value* can be any JSON value.  
-
-**ARGS** -- An *args* is a value that is also a JSON map whose keys are non-negative integers or are strings that are valid Java identifiers.    By convention, a value associated with the special "^" key is called the ***head***, values associated with whole numbered keys are called the ***fixed args***, and the remaining values are called the ***keyword args***.  An ARGS can be written in functional form as:
-	head(fixed1, fixed2, ..., key1=value1, key2=value2, ...)
-
-**MAP** - A *map* (or namespace) is an API that implements a "get" operator that maps its first arg called the "key" onto a value.  
-Optionally a map can also implement "set", "len", and "iterate" operators too.  The following shorthand may be used:
-	map[key]  to get value.    map[key]=value  to set value.   len(map) for its size.   map.map(args) to iterate over all keys except the head of an args 
-
-
 ### UNIFORM SPACE
 
 **NAMESPACE** - A *namespace* is a persistent is a map whose keys are restricted to be strings sometimes referred to as names.  The namespace's set operator will return a new namespace with the updated value.
@@ -72,6 +72,7 @@ Optionally a map can also implement "set", "len", and "iterate" operators too.  
 - A *patch* is an ordered sequence of paths associated with sub-patches or values.  The path-value pairs of a patch are always listed in lexical order with the "." character sorting after all other key characters.  A patch can be expressed as a namespace or as a list of alternating path value entries.
 - The *load* operator on map iterates thru the path value pairs of the patch applying setting each value as indicating.
 
+### UNIFORM TIME
 
 **WALLET** / **IDENTITY** - A namespace containing the currencies required to pay for operations (computation, bandwidth, and storage, etc.), as well as the credentials required for those operations.  Wallets-namespaces can be composed to aggregate resources available.  Each wallet serves as an an *identity* that may correspond to a person, a group of people, an authority that can be granted, etc.
 
@@ -81,6 +82,10 @@ Optionally a map can also implement "set", "len", and "iterate" operators too.  
 	chain.reader --> wallet								# the wallet permitted to access the chain
 	chain[i] 														# reads the ith value from the chain
 	chain.append( value ) 								# appends a new value to the chain.
+
+
+
+### UNIFORM UNIVERSE
 
 **UNIVERSE** - A *universe*, U, is a versioned namespace of shared information.  U is recursively constructed from sub universes which are each collaboratively maintained via distributed control authorities.  Each universe has a time, a place, a substrate, and an authority:
 - TIME - The timestamp on a sub universe is a UTC timestamp denoting when this version came to exist.  
@@ -100,8 +105,6 @@ Optionally a map can also implement "set", "len", and "iterate" operators too.  
   	U.jurisdiction --> Jurisdiction object 					(see Collaboration section for discussion of Jurisdiction)
 
 
-### UNIFORM ENVIRONMENT FOR COMPUTATION
-
 Using these three simplest notions we express software as a space (Universe) where actions (Exe) are applied to data objects (Values).
 
 
@@ -111,7 +114,7 @@ Using these three simplest notions we express software as a space (Universe) whe
 
 
 
-### SEMANTICS
+### UNIFORM SEMANTICS
 
 
 **UNIVERSE SEMANTICS**
@@ -255,7 +258,7 @@ MAP - The map functor wraps a base exe into an one that will apply the base exe 
 
 
 
-### STARTING OBJECTS
+### UNFORM STARTING OBJECTS
 
 - ENV0 - A least common denominator base env for the system.  It has all the operators specified here
 
@@ -288,6 +291,30 @@ MAP - The map functor wraps a base exe into an one that will apply the base exe 
 	- usd / btc / eth / amazon credits
 
 
+
+
+
+#### U.web.protocol.url
+- U.web.http...
+- U.web.https...
+- U.web.git.*USERNAME*.*PROJECT*
+
+#### U.pub
+- U.pub.*ORGNAME*...
+
+#### U.lang
+- U.lang.py
+- U.lang.py311
+- U.lang.js
+
+#### U.io
+- U.io.in			-- Console input
+- U.io.out			-- Console out
+- U.io.err			-- Console error messages
+- U.io.dom		-- Local browser dom
+
+#### U.env
+- U.env.py0		-- 
 
 
 ## VERSION 0

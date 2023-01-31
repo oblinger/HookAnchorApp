@@ -1,10 +1,8 @@
 
 :: [[SV90]]
-- [[Jira]]
 
-:: [[SV90]]
-
-:: [[SV90]]
+ - [[SV90.]],  [[SV90]], [[SV Pages]],[[SV Customer]], [[SV Pages]],   
+- [[Jira]], [[SVJ]], 
 
  [[@Sports Visio]],  [[@Jason Syversen]], 
 
@@ -24,6 +22,7 @@ git clone https://dan@sportsvisio.com/SVEngineering/algorithms2.git
 - [ ] Build Roadmap
 - [ ] Yolo-x
 - [ ] Negotiate & Sign
+ 
 
 
 # TOPICS

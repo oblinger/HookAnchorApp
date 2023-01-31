@@ -1,7 +1,8 @@
-RECOMMENDATIONS:  Greg's review, Felipe, Nick, Theo?
 
-- [ ] touch base: Rafah, Luis, Juan, Michael, Vittorio, ?ben wild
-- [ ] - [ ] 
+- [ ] Job acceptance outreach
+- [ ] Create SV blog post; Change Linked-in; 
+- [ ] RECOMMENDATIONS:  Greg's review, Felipe, Nick, Theo?
+
 
 
 

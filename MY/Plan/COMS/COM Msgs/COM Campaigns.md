@@ -1,6 +1,10 @@
 
 ### 2023-01-27  Joining SV Touchbase
 
+
+
+- [ ] touch base: Rafah, Luis, Juan, Michael, Vittorio, ?ben wild
+- [ ] - [ ] 
 START:  
 
 
