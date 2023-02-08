@@ -1,10 +1,16 @@
 
 :: [[SV90]]
 
- - [[SV90.]],  [[SV90]], [[SV Pages]],[[SV Customer]], [[SV Pages]],   
-- [[Jira]], [[SVJ]], 
+:: [[SV90]]
 
- [[@Sports Visio]],  [[@Jason Syversen]], 
+- [[SV Customer]],  [[SV Deliverables]],  [[SV Folder]], [[SV SW]], [[SV CV]], [[SV Apps]], 
+- [[SVT]],  
+
+- [[@Sports Visio]], 
+ - [[SV90.]],  [[SV90]],  [[SVT]], [[WW]],     
+- [[Jira]], [[SV Joining]], 
+
+ [[@Jason Syversen]], 
 
 
 Spiritually in Feb-1-2023 we already have a separated R&D org.

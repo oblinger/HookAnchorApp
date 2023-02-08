@@ -5,6 +5,12 @@
 
 # LOG
 
+### m2023-02-02  Post RZ chat
+
+- JAMES - 
+- Ken, Luryen, 
+- [[WW]] 
+
 ### t2023-01-19 Co-founder @ SV?
 
 My text response turned into an incoherent ramble!  Let me frame the issue:

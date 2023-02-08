@@ -11,7 +11,9 @@
 
 | Date        | File                     | Notes                                                                   |
 | ----------- | ------------------------ | ----------------------------------------------------------------------- |
-| t2023-01-30 | [[@Jason Syversen]]          | JASON IDEAS email                                                       |
+| t2023-02-06 | [[@Grzegorz Biziel]]         | Quick Email about Edge detection                                        |
+| t2023-02-06 | [[@Igor Shindel]]            | Meeting Prep                                                            |
+| t2023-01-30 | [[@Jason Syversen]]          | REQUESTS email                                                          |
 | t2023-01-19 | [[@Nick Allen]]              | Co-founder @ SV?                                                        |
 | t2023-01-10 | [[@Jason Syversen]]          | Explanation of edits                                                    |
 | t2023-01-10 | [[@Jason Syversen]]          | unsent                                                                  |

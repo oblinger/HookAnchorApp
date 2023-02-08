@@ -1,4 +1,6 @@
-  [[Read]]
+
+:: [[Read]]
+  [[Set/ToRead/Read/Read]]
 - Alignment Forum
  [Humane Tech](https://www.humanetech.com/podcast)  
  Managers Path

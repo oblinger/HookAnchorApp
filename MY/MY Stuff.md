@@ -6,6 +6,36 @@
 
 
 ## > HOME <
+## Electricity
+- With all off: water boilers, bedroom-computer, lights, and 
+	- 130 (lowest number I saw, fridge, freezer and all boilers off)
+	- 170 seemed to be the base
+- furnace .260 - .165 =  100w 
+
+- $.4 usd/kwh / 1000 * 24 * 30 = $.288 usd/w/mo
+
+- 720h/mo = 24h/d * 30d/m = 720h/mo
+- 730h/mo = 24h/d * 365d/y * 1/12y/m = 730h/mo   
+- $292usd/kw/mo = .4 usd/kwh * 730
+- $.29 /w/mo
+
+- THERMS:  29.3therms/kwh  {/1000}=  .0293therms/wh   {* 730}=   21.4therms/w  
+
+
+Monthly costs at margin for various parts of our
+- $203 		= 700w * $.29    
+- $4.35 	= 15w * .29		Toilet
+- $.30 		= 1w * .29			Living room TV standby
+- $1.20	= 4w					Apple TV + Living TV on standby
+- $6			= 21w				Living side on all day & night
+- $17		= 58w=21+28x4/3		Living main(only3lights) and side 
+- 									doorbell 1.4w (w/o light on)
+
+
+
+- 1000w avg usage = 733kwh = 186+547 Dec 2022
+
+
 ## = KITCHEN =
 ### - Oven
 LG SIGNATURE 7.3CuFt Dual Fuel Slide-in Gas Convection Range with Infrared Heating in Textured Steel 

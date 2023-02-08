@@ -1,12 +1,12 @@
 
 :: [[OBS API Docs]]
 
-MY SETUP:	 [[OBS Facets]],  [[OBS Projects]],  [[OBS Meta]],   [[OBS Setup]],   [[KBD Shortcuts]],    [[OBS Task]], 
+MY SETUP:	[[OBS Facets]],  [[OBS Projects]],  [[OBS Meta]],   [[OBS Setup]],   [[KBD Shortcuts]],    [[OBS Task]], 
 MY IDEAS:	[[Multi-List WorkFlow]],  
-HACKING:	[[Action Notes]], [[#ADD ITEM COMMAND|Add Item]],  [[#SEND ITEM COMMAND|Send Item]],  
+HACKING:		[[Action Notes]], [[#ADD ITEM COMMAND|Add Item]],  [[#SEND ITEM COMMAND|Send Item]],  
 FORA:			[[Discord App]],  [Forum](https://forum.obsidian.md),   [Obsidian Website](https://obsidian.md)  [support@obsidian.md](mailto:support@obsidian.md)  
 PUBLIC: 		[Oblio](https://publish.obsidian.md/oblio)  (LMI!),
-PLUGINS:	[Templater Docs](https://silentvoid13.github.io/Templater/internal-functions/internal-modules/file-module.html),  
+PLUGINS:		[Templater Docs](https://silentvoid13.github.io/Templater/internal-functions/internal-modules/file-module.html),  
 
 [[2022-03 PKM]], [[OBS]], 
 

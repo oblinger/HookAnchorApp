@@ -1,7 +1,9 @@
 
+:: [[Untitled]]
+
 :: [[bfast]],   [[meet]],   [[standup]]
 
-:: [[Untitled]],   [[Work]],   [[dinner]],   [[wake]]
+:: [[MY/Plan/Untitled]],   [[work]],   [[dinner]],   [[wake]]
 
 :: [[Spirit]],   [[Waiting]]
 

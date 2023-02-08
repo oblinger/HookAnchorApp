@@ -8,7 +8,9 @@
 
 | Date        | File                 | Notes                                                             |
 | ----------- | -------------------- | ----------------------------------------------------------------- |
-| m2023-01-30 | [[@Jack Potvin]]         |                                                                   |
+| m2023-02-06 | [[@Igor Shindel]]        | Intro meeting                                                     |
+| m2023-02-02 | [[@Nick Allen]]          | Post RZ chat                                                      |
+| m2023-01-30 | [[@Jack Potvin]]         | Intro call                                                        |
 | m2023-01-24 | [[@Igor Shindel]]        | Context Call                                                      |
 | m2023-01-19 | [[@Jason Syversen]]      | Co-Founder??                                                      |
 | m2023-01-18 | [[@Siobhan Quinn]]       | comp at google                                                    |

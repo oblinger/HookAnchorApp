@@ -1,3 +1,39 @@
+
+
+- TV on the sideline?  (Jason Feature)
+- Lo-fi estimate of time saving using AI-based annotations
+- Sprint deliverable for AI-based annotations
+
+- [ ] That Guy, nephew Ted, daughter sophia, Youngest of 6
+
+
+enternprenure, investors, reseracher/innnovator
+- Investors
+- Dan O, just exited 
+- next level in AI R&D
+- passion for sports - application of AI to sports
+
+ESPN
+read blog posts from SV
+- update blog to add stuff about CV - tech and sports
+
+
+
+
+
+
+- CTO corner chat - here is what CV is for sports - 
+
+
+
+Sports Visio Inc. 
+sportsvisioinc.
+
+
+
+- [ ] notification of text does not show on phone's lockscreen
+- [ ] competitors DB
+- [x] add a calendar icon to my slack
 - [ ] papers chew weekly
 - [ ] rince
 - [ ] port replicator
@@ -12,16 +48,11 @@ paperwork
 
 
 
+BIO
 
-Grz:
+In the decade and a half that I have known Jason, we have actively looked for ways to join forces, and I am excited to see that this is finally happening.  Advances in Computer Vision have spurred a cambrian explosion of computer vision based-startup, now is the time these new companies will cement their positions in these new markets, so I was looking for an opportunity just like this to be part of that revolution.
 
-I was thinking some about the player/team discrimination problem. It seems that there is a hugely valuable info source that should be pretty decorrelated with errors in detection: detections in subsequent/previous frames where we have high-confidence tracks. For the moment I am imagining an inefficient method of running thru the entirely length of a game and finding all tracks that are high reliability, and perhaps are sufficiently separated from other tracks that we are confident in our tracking.  Then independently we label that patches along these tracks, and notice when we get discrepancies in our labelling.
-
-This should give us a reliable source of ground truth to improve our per-player and per-team discriminators.  We can re-train the discriminators with new error correction examples added in. Ultimately this could even be fed back into the tracker to make it better, but that loop would probably be too expensive to run on a per-game basis.  We would need to build some kind of pre-training strategy for this.
-
-Before getting further into the details, what do you think about that direction?
-
---dan
+I have a PhD in Machine Learning from UIUC and have used that background as an individual researcher at IBM's Watson Lab and Teaching at Columbia University, publishing dozens of papers and hold almost 30 patents. Expanding on my IC work, I joined DARPA (along side Jason) and funded over $200M in R&D focusing on Machine Learning as applied to Vision and Natural Language Processing. One of my DARPA programs of note was "Machine Reading." in which IBM developed their  Watson Jeopardy playing system.   that unified knowledge across tens of thousands of books to best humanity in answering Jeopardy questions. After DARPA I moved to silicon valley where I have started and exited three companies, a specialized payments platform, a robotics company building a general purpose in home dexterous robot, and an AI-based clean tech company. In the past I have built 50+ person engineering teams, including a team of 40+ PhDs that spanned the globe.  I can't wait to dig in and make myself useful here at Sports Visio!
 
 
 
@@ -29,4 +60,4 @@ Before getting further into the details, what do you think about that direction?
 
 
 
-The direction I am thinking about here, will not be the most efficient per game
+

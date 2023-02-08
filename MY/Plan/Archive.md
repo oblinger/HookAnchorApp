@@ -1,3 +1,8 @@
+- [x] look at Mike's Assessment roadmap
+- [x] talk with Jasu, Mark,
+- [x] share notes
+- [ ] mess with Confluence page creation
+- [x] create new calendar entries from work, in my personal calendar; share personal calendar with whole team; or share work calendar with home folks
 - [x] 2023 update posting.    Sunnova.
 - [x] cancel obsidian monthly
 - [x] snapshot my IP

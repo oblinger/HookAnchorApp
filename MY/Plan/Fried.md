@@ -1,3 +1,4 @@
+- [ ] dongle with usbc ports
 - [ ] buy red envelopes; water filter
 - [ ] OBS - system keeps prepending topics to each page
 - [ ] do quarterly budgeting

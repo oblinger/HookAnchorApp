@@ -41,14 +41,6 @@ Dan Bring:  Starbucks, Brol, Lentils
   
 
 —dan
-# MISC
-
-### --- 2019.11 tasks ---
-- Fix something on moms phone
-- Show pictures from dads laptop to the TV
-
-
-
 
 
 # FL HOME
@@ -525,14 +517,6 @@ Here are the parts of the money:
   be worse than where it is today.
 
 
-I think I have thought of all the bad crap that could happen!  Better to have
-a plan for rainy whether, than to get wet.  Hopefully, it will be just the opposite,
-and this buisness can get underway!
-
-Let me know if all this sounds right, and let me know when I should paypal the $7000!
-
-
-
 
 
 # LOG
@@ -562,6 +546,14 @@ discover                        maybe
 
 ONLINE
 - Tennis, US Open, 
+
+# MISC
+
+### --- 2019.11 tasks ---
+- Fix something on moms phone
+- Show pictures from dads laptop to the TV
+
+
 
 
 ### 2016-00-00 Parents Internet speed

@@ -1,11 +1,19 @@
+- [ ] Passport  [[Phone]]  
+- [ ] Plan Argintina
+- [ ] Bio to Greg
+- [ ] Brian "SV" and "S V" both work in search
+- [ ] location of the hotel to QL.
+ 
+- [ ] generate "routing" for jason tasks
+- [ ] add a calendar icon to my slack
+- [ ] apple airpodmax  [[@Apple]]  
 - [ ] Schedule with Doctor
 - [ ] Figure out my coaching situation
 - [ ] house repair quote - Better bid on house
 - [ ] Dr Hassler.  get rid of the prilosec   MyChart
-
 - [ ] Job-Accept, touch base
-
 - [ ] James
+
 - [ ] meeting with Nick:  Moss adams, RZ summary,
 - [ ] do recalls on Audi
 - [ ] Ground the treadmill [[@Horizon Fitness]]  & test run it

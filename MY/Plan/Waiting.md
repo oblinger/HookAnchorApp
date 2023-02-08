@@ -1,3 +1,11 @@
+- [ ] https://youtu.be/ff4o3BpaYtU
+- [ ] https://youtu.be/iWaLLovhYD4
+- [ ] https://youtu.be/SCaotGvYQEo
+- [ ] mess with Todoist
+- [ ] https://youtu.be/fgOLRQjvdW0
+- [ ] https://youtu.be/9OC6vFw_2Jw
+- [ ] https://youtu.be/2lDcyfgIJLs
+- [ ] https://youtu.be/y5YqWO8doPM
 - [ ] https://youtu.be/hGpItpIlLkc
 - [ ] https://youtube.com/watch?v=YHn1CTxag00&feature=share   <--- SUBSCRIBE
 - [ ] https://youtu.be/f-zpmrN7tnU

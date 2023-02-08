@@ -3,6 +3,8 @@
 
 :: [[Alloy]],   [[Elastic Block Chain]],   [[Forum]],   [[Lean Canvas]]
 
+:: [[Alloy]],   [[Elastic Block Chain]],   [[Forum]],   [[Lean Canvas]]
+
 :: [[Alloy]],   [[Lean Canvas]]
 
 :: [[Alloy]],   [[Lean Canvas]]
@@ -47,7 +49,7 @@
 - [[2009-00 DARPA Energy]]               
 - [[2008-11 Smart Grid]]      
 - [[2007-12 DARPA Go-Play]]              
-- [[2007-02 New Financial Model]]        
+- [[2007-02-00 New Financial Model]]        
 - [[2007-02 DARPA DHO]]                  
 - [[2007-01 DARPA GUST]]           
 - 2007-01 [[Forum]]      

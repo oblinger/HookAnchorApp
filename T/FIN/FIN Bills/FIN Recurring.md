@@ -4,7 +4,7 @@ crunchbase
 consumer reports
 on health
 Peloton signed 7/31
-  [Budget](Budget.md)
+  [FIN Budget](FIN%20Budget.md)
 vorwerk $40/yr
 
 # RECURRING BILLS

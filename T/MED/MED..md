@@ -14,6 +14,7 @@
 - [ ] Homeocyctein; apo-e
 - [ ] [Thyroid](https://allyoucaneat.org.uk/wp/weight-tired-underactive-thyroid-tests/) 
 
+#foo 
 - [ ] Daily 7-min exercise
 - [ ] do my budget
 - [ ] DERMATOLOGIST - David J MacGregor 450 Sutter Rm 1824  415-989-9400

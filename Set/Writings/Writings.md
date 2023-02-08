@@ -4,6 +4,36 @@
   [An_Athiests_Spiritual_Calling](An_Athiests_Spiritual_Calling.md),   [Politics](Politics.md)
 
 
+
+### 2023-02-05 Noom Dieting
+
+Good article. but I think it is very easy to misinterpret results about calorie consumption. Its true that eating fewer calories causes weight loss, just as depositing money in your own bank account causes one to be rich -- also true.
+
+Indeed if one takes into account the amount of money one puts in ones own accounts we can show that neither hard work, advanced degrees, or even having a job correlates with being rich.
+
+the only thing that really matters is how much money you put into your bank accounts.
+
+Also true, but really irrelevant. The real question is HOW do you manage to put money into your accounts! In the same way the real question is HOW do you mange to eat fewer calories.
+
+the studies we NEED to carry out should compare the level of discomfort relative to the weight loss.
+
+these studies are harder, so they are mostly not done.
+
+Here are my (careful) but anecdotal observations:
+
+(0) CALORIE DENSITY. The noom diet breaks food into Red, Yellow, Green based almost exclusively on calories per gram. Now that I eat a lot more green and yellow foods, I am just naturally not hungry. NOTE: it takes *months* to find and learn to like new foods... but don't worry, you have the rest of your life to figure this out. it is a lot of work, but it is worth it.
+
+(1) We have a limited amount of 'discomfort' will power, and if we use up too much of it on effort to fast, and then feel license to "eat whatever" during feeding it will not work well.
+
+(2) I see modest, but clear benefit to NOT eating for many hours before bed. The more the better, and if one can eat a light dinner, and STILL not snack then it is really good. So this is kind of like an 8:16 partial fast for me. (I say partial because I will eat plain celery or radishes in the evening if I get the munchies.)
+
+(3) For me, I seem to do better trying to limit the number of formal meals I have. I am disappointed to eat a small meal and still feel hungry even right at its end. I am happier to get slightly sated. (This might just be me.)
+
+(4) Modest Protein, and lots of fiber helps. I say modest protein, since many protein sources are calorie dense. So you need to really watch them or you will eat alot of calories.
+
+btw, I have done MANY diets, and I think Noom is the best one. but really the noom strategy is all about calorie density. (And a bunch of pretty good accountability hacks.) It will only work if you really changes the foods you eat. but it WILL work, and without tremendous hunger, which for me is the key.
+
+
 ### 2022-05-02  DREAM: Alien take over
 
 - They tricked me/us into sitting off a nuke that will somehow stop the spread of a virus that we think is in the area.

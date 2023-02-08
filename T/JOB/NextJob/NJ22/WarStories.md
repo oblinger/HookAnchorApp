@@ -73,11 +73,17 @@ Emotive & Incisive
 
 ## = BASIC 
 
-### OTHER QUESTIONS - What questions haven’t I asked you?        <<<<<<  JY
+### ENDING OF INTERVIEW -
+
+
+### OTHER QUESTIONS - What questions haven’t I asked you?    <<  ??? 
 {{AIM towards a thing I want to highlight, which they missed}}
+- EXPERIENCE - HandsOn(Bizzy,Obs); Innovation Leadership(Aeolus/AF-Team); Turnaround(AeolusOctober)
 - EXCITEMENT - Indicate excitement - What will I do when I join, and imagine super performance... what would I have accomplished in my first year?
-- EXPERIENCE - HandsOn(Bizzy,Obs); Leadership(Aeolus/AF-Team); Turnaround(AeolusOctober)
 - THEM - Questions related to their group.  (my experience related to them)
+
+"we didn't talk as much about my background in XXX, YYY, ZZZ"
+- DAN PILARS: Leadership; Hands On; Researcher; Entrepreneur.   (give them one last story about me)
 
 
 ### LEADER QUALITIES - What qualities make a good leader?   
@@ -461,856 +467,925 @@ GOOGLE: "Impact the world @ scale."   Get Granular about parts of google that I 
 	- Good Information
 
 
-# STORIES:   WHOLISTIC
-## ONE-OFF QUESTIONS
+## .
 
 
-### SELF SUMMARY - Tell me about yourself           ?????       < JY
-1. Highlight skills, qualities, and attributes that match role
-2. One example where you have succeeded in previous job
-3. Explain how you understand your perf links to AMZ success
-- Tell Story/Be memorable
-
-{{what order?}}
-
-- HANDS ON NERD - Aeolus started w/ hacking inverse kinematics on an arduino.  Todo list --> Notester & OBS plug-in
-- HAIR ON FIRE:  30min w. DARPA dir. (Looking for hair on fire)      VISION?? (Pitching $150M MR ML-NLP)
-	- VERBALLY FAST - Represented DARPA to Sec Def Bill Gates
-	- ENTHUSIASTIC - Selected from over 50 TA to lead separate campus.  (articulate, ).   (AF low turn over??)
-- PRODUCT ORIENTED - Martian bath-bot; Aeolus Elder-Robot; AF solar designer; DARPA-jeopardizer 
-- LEADER (team 20-50) - management philosophy
-	- LOYAL - Theo, JoeA, Nick, Felipe
-	- . . .
-#### .
-#### . HAIR ON FIRE
-- Fits DARPA Efforts & Instant Design AT AF.
-- Example from AEOLUS:  Zero employees, zero HW, CES-2018 booth is already booked 13 months later.
-	- Tie in the tech stack
-	- Was the defacto architect 
-. Andrew NG ?
-#### . Robert Gates 
-#### . XXX  ENTHUSIASTIC
-- I never knew someone could be that excited about computer science
-	- Selected from 50 TAs to lead/run our external OSU labs and extension classes at Bellcore
-	- One of two PMs at DARPA to directly present to Director of defense Gates his visit.
-	- Fast on feet, technical deep, but mostly a bit over the top enthused about the possibilities of tech.
+# STORIES
+## STORIES:   WHOLISTIC
+### ONE-OFF QUESTIONS
 
 
-### - WHY AMAZON / WHY XXX
-1. talk about the research you carried out
-2. Leadership principles
-3. Amz products
-4. A place I can grow and develop
-- Why do you want to work here? 
+#### SELF SUMMARY - Tell me about yourself           ?????       < JY
+	1. Highlight skills, qualities, and attributes that match role
+	2. One example where you have succeeded in previous job
+	3. Explain how you understand your perf links to AMZ success
+	- Tell Story/Be memorable
 
-????    
+	{{what order?}}
 
-WHY MICROSOFT
-- Like the cutulre, haerd good things, and here is why...
-
-### - WHY WOULD YOU BE A GREAT HIRE     ????
-- Strong executor from day one.  Positive influence on team dynamics.  Learn very fast.     Been able to execute quickly ; plan
-- In 6 months I will be better than anyone you could hire today at whatever I am tasked to do.
-- Folks will want to work with/for me.
-- Grown orgs and people w/ great outcomes
-	- Hold on to team during covid
-	- Career growth
-
-
-### - Why would you be a good leader?
-Constellation: Foment Action, People follow, Technically Strong, Cut to core of issue, 
-
-
-### - DO YOU HAVE ANY FINAL QUESTIONS
-- What is the next step?
-
-
-### - WHY WOULD YOU BE A GREAT FIT?
-- Contagiously enthusiastic; get great joy from owning&delivering something technical
-- Love cool tech but focused on effective motion   (balance company need & team joy)
-
-- I excel at what others consider boring.  I enjoy them.  My teams find me complementary
-
-
-### - ANY TECHNICAL QUESTION YOU DON'T KNOW
-- I don't know, but I can venture to guess...
-
-
-### - TELL ME A TIME WHEN YOU OVERCAME ...
-- Always close w/ the reactions of other people to your action
-
-
-### - WORDS TO USE IN AN INTERVIEW 
-- My research indicates ...
-- BEST ANSWER - talk about your customer's customer:  what do you like to cook?  your fav thing.  I enjoy cooking & will do well
-
-
-### - BIGGEST ACCOMPLISHMENTS   ?????
-What are some of your most significant accomplishments?
-What are the most successful projects that you’ve worked on (and what results did the project achieve)?
-In what ways have you had a positive impact?
-Most impressive thing you have built or achieved
-
-#### . Aeolus OS 
-- OS for robot
-- 
-
- #### . Most impressive thing built.
-	 - the IBM Jeopardy Playing Computer Watson.  (didn't build it, but I conceived of and executed
-	   the 150+ million DARPA program mapping unstructured text onto fixed ontologies -- which is the core 
-	   tech the IBM used to beat Jennings)
-
-#### . Coded By Me
-##### -- Personal Wizards -- A learning system that induces executable scripts with loops, branches, and variables 
-	based on "watching" a desktop user (by trapping & abstracting messages at Windows event layer).  
-	This is now part of an IBM Rational product.
-##### -- Notester -- Note taking app
-
-##### -- Full Screen LISP Debugger - 
-- A full screen LISP debugger that allows user to both fwd and backwards in time and up and down in abstraction.
-
-
+	- HANDS ON NERD - Aeolus started w/ hacking inverse kinematics on an arduino.  Todo list --> Notester & OBS plug-in
+	- HAIR ON FIRE:  30min w. DARPA dir. (Looking for hair on fire)      VISION?? (Pitching $150M MR ML-NLP)
+		- VERBALLY FAST - Represented DARPA to Sec Def Bill Gates
+		- ENTHUSIASTIC - Selected from over 50 TA to lead separate campus.  (articulate, ).   (AF low turn over??)
+	- PRODUCT ORIENTED - Martian bath-bot; Aeolus Elder-Robot; AF solar designer; DARPA-jeopardizer 
+	- LEADER (team 20-50) - management philosophy
+		- LOYAL - Theo, JoeA, Nick, Felipe
+		- . . .
 ##### .
-### - WHY ME - Why should we hire you?
-- ENTHUSIASTIC - adding joy and velocity to team
-- TECHNICAL - depth, breadth, vision, creativity
-- STRONG MANAGER - I like, people like me, am organized
+##### . HAIR ON FIRE
+	- Fits DARPA Efforts & Instant Design AT AF.
+	- Example from AEOLUS:  Zero employees, zero HW, CES-2018 booth is already booked 13 months later.
+		- Tie in the tech stack
+		- Was the defacto architect 
+	. Andrew NG ?
+##### . Robert Gates 
+##### . XXX  ENTHUSIASTIC
+	- I never knew someone could be that excited about computer science
+		- Selected from 50 TAs to lead/run our external OSU labs and extension classes at Bellcore
+		- One of two PMs at DARPA to directly present to Director of defense Gates his visit.
+		- Fast on feet, technical deep, but mostly a bit over the top enthused about the possibilities of tech.
 
 
-## ONE-OFF TOPICS
+#### - WHY AMAZON / WHY XXX
+	1. talk about the research you carried out
+	2. Leadership principles
+	3. Amz products
+	4. A place I can grow and develop
+	- Why do you want to work here? 
 
+	????    
 
-### SALARY                                                         ????    < JY
-1.  [Can you discuss your salary history?](https://www.indeed.com/career-advice/pay-salary/providing-salary-history)
-2.  How much do you expect to be earning in five years? 
-    Read more:  [How To Talk About Salary in a Job Interview](https://www.indeed.com/career-advice/interviewing/how-to-talk-about-salary-in-a-job-interview)
+	WHY MICROSOFT
+	- Like the cutulre, haerd good things, and here is why...
 
-"My recent salaries have ranged from half a million to just over a million per year.  So my expectation for this job will really depend on my role and level."
+#### - WHY WOULD YOU BE A GREAT HIRE     ????
+	- Strong executor from day one.  Positive influence on team dynamics.  Learn very fast.     Been able to execute quickly ; plan
+	- In 6 months I will be better than anyone you could hire today at whatever I am tasked to do.
+	- Folks will want to work with/for me.
+	- Grown orgs and people w/ great outcomes
+		- Hold on to team during covid
+		- Career growth
 
 
-“I’m looking for a competitive offer that includes benefits and other kinds of compensation, but I’d like to know more about the specifics of what this job requires first."
+#### - Why would you be a good leader?
+	Constellation: Foment Action, People follow, Technically Strong, Cut to core of issue, 
 
-### STRENGTHS
-1.  [What are some positive things your last boss would say about you?](https://www.indeed.com/career-advice/interviewing/how-would-your-boss-describe-you)
-2.  [What differentiates you from our other candidates?](https://www.indeed.com/career-advice/interviewing/interview-question-what-makes-you-unique)
 
+#### - DO YOU HAVE ANY FINAL QUESTIONS
+	- What is the next step?
 
-- ML Researcher, Eng. Mgr, Entrepreneur
 
-#### - TECHNICAL - depth, breadth, vision, creativity
+#### - WHY WOULD YOU BE A GREAT FIT?
+	- Contagiously enthusiastic; get great joy from owning&delivering something technical
+	- Love cool tech but focused on effective motion   (balance company need & team joy)
 
-#### -  FAST - VERBALLY/INTELLECTUALLY FAST ON FEET
-- DARPA PROGRAMS - 
-- AF?
+	- I excel at what others consider boring.  I enjoy them.  My teams find me complementary
 
-#### - MGR - Strong Manager
-- PEOPLE PHILIC: I like people & growing people;  people like me, trust my integrity & see I have their interests at heart.
-- ORGANIZED - SOLVER - I am organized; I am a problem solver
-- INSIGHTFUL -  I am quick to identify heart of a problem, and quick/creative in proposing solutions
-- CONFIDENT -  Personal confidence in my abilities makes it fun and natural to revel in the strengths of others -- not threatened by those better than me
-- PERCEPTIVE - Very good at understanding misunderstandings & perspectives of others.
-	- Strong (but not superb) at anticipating / detecting problems before they are problems. (very perceptive, but too fast & too optimistic) 
 
+#### - ANY TECHNICAL QUESTION YOU DON'T KNOW
+	- I don't know, but I can venture to guess...
 
 
-### MY WEAKNESSES        ???   ++++++ 
-- Short, simple weakness w/ emphasis on improvement
+#### - TELL ME A TIME WHEN YOU OVERCAME ...
+	- Always close w/ the reactions of other people to your action
 
-#### (TOO) FAST START 
-- Fast on feet problem solver; so I will just jump right to the solution and propose & execute it on the spot.
-- Can be disconcerting to the team
-- Can lead to loss of buy in
-- Can lead to poorly planned action
-- Can lead to thrashing
-- Can lead loss of ownership for (middle skill levels)
-==> Measure is
-
-### ??? 
-
-
-### no!  DECISIVENESS - Core value of a leader is to DECIDE and MOVE
-- Long process of improvement
-	1. Shoot from the hip in low consequence or easily reversed decisions.
-	2. Explicitly state appropriate amount of analysis for a choice, then follow thru.
-	3. Aggressively gather key info on time sensitive decisions.
-
-
-### ABOUT THEM
-6.  What is the name of our CEO?
-8.  [What do you know about our company?](https://www.indeed.com/career-advice/interviewing/what-do-you-know-about-our-company)
-11.  [Why is our company interesting to you?](https://www.indeed.com/career-advice/interviewing/interview-question-why-do-you-want-to-work-here)
-13.  Who are our competitors?
-17.  What do you know about our industry?
-1.  [Why are you the right person for this job?](https://www.indeed.com/career-advice/interviewing/what-make-you-a-good-candidate-for-this-position)
-
-- COMPETITORS - Who are our competitors?
-- COMPANY - What do you know about our company?
-- CEO - What is the name of our CEO?
-- OVER QUALIFIED - Are you over qualified for this role?
-- CHANGE - Why are you changing careers?
-- INTERESTING - What makes our company interesting to you?
-- FIRST 90 - What do you want to accomplish in first 90 days?
-	- Deliver end-to-end result
-	- Demonstrate Readiness: Technical, Leadership, Creativity, Interpersonal, Organizational
-## . 
-
-# STORIES:  PEOPLE MANAGEMENT
-## = MY MANAGEMENT STYLE/PHILOSOPHY
-### MGT STYLE -  [What is your management style?](https://www.indeed.com/career-advice/career-development/what-is-my-management-style) 
-- Problem Solver
-	- UNDERLYING TECHNICAL PROBLEM - 
-	- HUMAN PUZZLE PIECES PROBLEM;  Georgios-stressed, Adams-Proj-Autonomy;   DEMO LOYALTY
-		- Adams ran tangents if not corralled, but chaffed (gave his own proj) - 
-		- Georgios-stressed leader, but awesome leader (tandem leadeship ownership)
-
-- Human puzzle pieces
-- How “hands-on” of a manager are you?  depends.  See delegation
-- How do you support an underperforming team member?  see delegation
-	-> fast/precise decision to fire  (AF-test-tasks)
-	-> progress towards ownership (see situational leadership)
-	-> peering/mentoring arrangements
-- Can you provide examples of when you have had to deliver negative feedback?  PIETRO, ADAMS, 
-	- THEO(Autistic, ), 
-- What strategies do you use to motivate your team? (see human puzzle pieces)
-	-> Ownership.    -> Benefit.   -> Trust/Honesty.  -> Greater Good.  
-- DELEGATION
-
-
-## = MY WORKING STYLE
-1.  [Describe your work style.](https://www.indeed.com/career-advice/interviewing/what-is-your-work-style)     <<<<<
-- How would you describe your top three strengths related to work? What are your three biggest areas that have room for improvement?
-- How do you deal with stressful situations?
-
-
-#### . Organized Person - Do you describe yourself as an organized person?
-- Builder of systems.  Fast Start, Fast Edit, No Committees (just do it, or assign it)
-- Out of my head and into lists kind of organization person
-
-Use document, spreadsheet, or asana as step one
-
-
-_
-### - MISSED DEADLINES - When is the last time you missed a deadline? Why did this happen?
-Aeolus: 2-month demos.  would pull capabilities back
-
-_
-### - STAYING CALM - STRESSFUL SITUATIONS
-- Am a talker
-
-
-_
-### --- Aeolus: 3M to go and core functions are unexpectedly failing; poor algs ---
-- WHY: Moving too fast on the basic stuff; claims were false
-- 3 weeks to build new algs
-
-_   <<<<<
-## = PERSONNEL MANAGEMENT    !!!!!
-### - TEAM MANAGEMENT
-#### . Personal Wizards Team (3)
-#### . DARPA in house () BL () TL () MR ()
-#### . AF 40+ 
-
-### - HIRING
-#### . Hiring Grasping Experts (Aeolus, Hiring)
-- Had team identify tier1 journals; & frequently publishing teams; picked top 10 world wide
-- Wrote hand crafted emails to lead prof at each
-- Phone call wooing; Flew to Vienna; funding multi-year grant;  Hired two leading graduates
-#### . Money Ball Hiring (AF)
-
-### - PERSONALITY MANAGEMENT
-#### . Manager Of Snowflakes (Aeolus, AF)
-- ALEXI - Polyphasic sleeper (what to do but, never how)  lesser programmers; great helper, does anything asked.
-- PIOTR, ???, SENAD - Company Owners:  Piotr, S Am, Roboticist professor
-- Single Guy:  Thai-beaches, Crypto conferences
-#### . People as Jigsaw Puzzles (Aeolus, AF)
-- Consider employee's:  Depth, Width, Velocity, Padding, Creativity, Care, etc.
-- Mix and Match strengths to cover any gaps before they are large problems.
-- AF EXAMPLES:  Bryan, Matt, Ben, Ruby, Jess (universal soldier)
-- AE EXAMPLES:  Georgios+, Alexey 
-#### . Lone Wolf Alexey (Aeolus)
-- Super strong & focused C++ developer.  Wanted to know more than all others & be better
-- Willing to do anything in C++.  Willing to help & teach, debug, code anything
-- Asshole who knew he knew more.  wanted autonomy and isolation
-#### . Fragile Georgios (Aeolus)
-- Did not mind managing details, nor working hard/long
-- Feared being 'in charge' & 'responsible w/o partner;  Could not handle pushing others or ANY confrontation.
-- Feared for job security  
-#### . Vacation Policy - Hiring Europeans (Aeolus, AF)
-- Taiwanese CEO; 5-days in my contract; sleep @ desks; 5-week expectation 
-- Early employee 'red-flag' rejected offer; placeholder-excuse  ->
-	emailed CEO second ask  ->  then emailed reject w/ strong policy recommend for no explicit policy
-#### . Jess.  The Universal Soldier
-- Supported her music career, worked flexibly with her
-#### . Derrick Depression -
-- Worked at a distance.  Dinners when in town.
-### - POLITICS - MANAGING UP
-- Vacation Policy (Aeolus)
-- Product vision (Aeolus)
-#### . Dual Backlog Maintenance
-#### . Multi-team Synergies
-
-
-
-
-
-## = STAKEHOLDER MANAGEMENT
-### - CONTRACTING (customer-forced delivery failures)
-#### . In-then-Out Planning; Delivery Timeframes Tied To All Inputs In; Aggressive Tracking & Notify (AF)
-- Joe at Acme will provide X by DATE1  (with contract having DATE2>DATE1 in planning)
-- Aggressive steak holder notification of delivery risks.
-#### . In House Testing Upon Delivery (AF)
-- Ultimately do it for free; but try to charge on next cycle.
-#### . Poor Counter-Party Performance Planning (AF)
-==> Easy to get apriori-agreement for harsh actions on non-compliance; better to get appropriate actions 
-==> Example:  Payment and Work-stoppage Timelines
-- Massively screwed by an unscrupulous founder - almost sunk the company.
-#### . Dual BackLog Management
-#### . Basil Health Contracting Failure
-
-- State with controller @ sun power
-- Arthrex agree on timeline; but then did not deliver inputs; we had to scramble including unpaid work to keep timeline
-- Enphase 
-### - HIRING by direct testing  (Blow their doors off & see what happens.)
-#### . BP Sox
-- CEO's buddy runs a medical device company & whole outsourced dev team for one product ghosted.
-- half-ass spec, and email history indirectly describing setup.
-- faked-inbox of panicked, lazy, vacationing team members.
-- bullet point dossier of team members.
-- What do you do in first 3 hours, first 3 days, three 3months.
-- Outline of an improvement roadmap pitch to the client (drawing from complaints seen in emails)
-- One presentable slide from the pitch to the client.
-- If you need some missing info, then email the CEO, and invent a reasonable response email and go with it.
-  (e.g.  do you have offsite backups of the source code?)
-
-- Do they raise a flag at the email FYI that the a key guy is taking a PTO.
-- How do they respond
-- Can they play nice with the one dev from the team the ghosted them in order to get server keys.
-- Do they act to preserve data.
-- Do they act to keep servers online (bills had not been paid).
-#### . Vision algorithms do flood fill
-
-
-
-
-
-
-## = ORGANIZATION MANAGEMENT
-### - ORG CHANGING
-- Broken org, org in flight, dramatic org shift (to )
-### - MARTIAN->AEOLUS->LANE-LEADERS
-### - AF
-- Hiring
-- Pod Teaming Matrix Structure (PM, Dev, QA, Admin)   Cross Cutting Org Roles
-- Quarterly Planning Discipline, Digital Escalation Tools.
-  ==> Days matter, need to know early when things are wrong
-### - DARPA
-- BL-testing team
-- MR-
-## = EXAMPLES: TEAM MOTIVATION & RETENTION
-- What strategies do you use to motivate your team? (see human puzzle pieces)
-	->Ownership.    ->Benefit.    ->Trust/Honesty.    -> Greater Good.  
-
-### - OWNERSHIP -
-
-
-### - VISION - Motivation from Coherent Company Vision
-        AF: Clean Tech.  Aeolus: Eldercare.  DARPA: Driving AI Field
-
-### - TRUST - How to maintain trust among co-workers
-Is is scalable, is it personal
-
-#### . AF - BONUS STRUCTURE - 
-#### . AF - Personnel Evaluation
-- Input from MGR but final determinations two levels up
-- Explicit 360 Positive Attribute assessment from others
-
-
-### TOPIC: TEAM - Cohesion / Retention / Quality
-#### . AF - Annual Offsite
-- Spent 2% of top line revenue on this.
-- Huge team involvement!  
-Nominate, Analyze, Trim outliers, Let team vote (sometimes with location qualifiers)
-- Hackathon. Philippine winners.
-#### . AF - Bonus structuring 
-- team bonuses.  Job title, one-time bonuses
-#### . AF - Friday "lunch" talks, Offsite hackathon, talks
-
-
-
-
-
-## = EXAMPLES: HUMAN PUZZLE PIECES
-- Clearly demand what is required; with argument about why; then let them propose 
-	Early failure feedback
-- Notice where people gravitate; build from that
-
-### - AMBITIOUS
-#### . Attilla
-#### . Krzsiek
-
-### - STRONG DIFFICULT
-#### . Alexy
-- Let him operate on his own
-- Let him define & own and run his own stuff
-	- He defines, we review, raise inconsistencies
-	- He delivers, tests and supports integration
-- Required to provide short term coaching on specific activities
-
-- Issues:
-	- didn't respect others (but he was stronger dev)
-		but was polite as long as other was more junior & not too much of his time
-	- Poly-phasic sleeper
-	- didn't want others defining his tasks/apis, but his work was good
-		--> just needed to validate his approach was compatible (& would easily update)
-#### . in the Italian log cabin
-
-### --- AF: Snowflakes Krzsiek/Attila side gigs,
-
-### - GAP FILLING
-#### . Matt 
-Stressed by top down politics
-Stressed by ambiguity
-- Great people skills, client skills, technical skills, 
-- High velocity, bandwidth
-
-## = EXAMPLES: DELEGATION
-What’s your approach to delegating work to employees? 
-### --- Ensuring Results:  SMART
-How do you ensure that tasks are completed?
-
---> Let THEM tell YOU when and how they will do it.  AF-admin-team.  AF-leads.  AF-alexey. 
-> Get precise especially about when.  Add time for other things.
-> Allow them to slip for good reason, but be explicit and target new time
-
-- SPECIFIC (simple, sensible, significant).
-- MEASURABLE (meaningful, motivating).
-- AGREED  Achievable (agreed, attainable).
-- REALISTIC   Relevant (reasonable, realistic and resourced, results-based).
-- TIME bounded (time-based, time limited, time/cost limited, timely, time-sensitive).
-
-
-### --- R&R Doc + One belly button ---
-- AEOLUS Role & Responsibilities docs at.  (needed to tread softly, tentatively,  and swiftly, would often ask person to assume role for a month to 'help out')
-- AF: Responsibilities Chart -- Hundreds of responsibilities
-### --- By Written Input & Output ---
-- Written output
-- Video outputs -- At Aeolus.
-
-_
-### --- By Pairing ---
-- AF: Hiring/Research - James with Maria
-- AF: Piotr and Monica
-- AEOLUS: Georgios (afraid of responsibilty), and Filepe
-_
-### --- Theory: Situational Leadership:   Directing --> Coaching --> Supporting --> Delegating
-[Web](http://www.md2md.uk/delegation-using-situational-leadership/) [Situational Leadership](Kenneth Blanchard and Paul Hersey’s situational leadership model ) Blanchard&Hersey
-
-					EMPLOYEE SKILL
-				High		Low
-SUPPORT High	Supporting	Coaching
-SUPPORT Low		Delegating	Directing
-
-- Precise output
-- Small / Quick -- 
-- From Them (in quick iterations)
-- Written -- goal&output (even few sentences)
-- SLOPPY! -- I grade on sloppiness of result
-- VIDEO --
-- Actually Delivered
-- Process
-
-DIRECTING: 
-COACHING:  DARPA slides.  Aeolus: Theo.  AF Hiring
-SUPPORT:  Aeolus: Georgios
-DELEGATING: Aeolus Lane leaders:  Filepe&Severin, 
-
-_
-### --- Clarity beats Speed
-- Dot your i-s and cross your t-s when delegating.  Extra overhead seems a waste at the time, but it's NOT!  Something blows up so often when you don't do it!
-
-- Not able to make a quick 'firing' decision because tasking was not clear.  So failure was plausibly our fault.
-- Ownership of testing and validation was not agreed upon @ Aeolus and it resulting in team skill gap.
-- PH team data gathering.  Many hours of wasted effort, until we forced "single row" acknowledgment.  (cannot just say 'I got it'.  Instead say 'like this, right?')
-  Highlighted mis-understandings, missing knowledge/capabilities etc.
-### --- Simplicity is key in goal/business case
-- Everyone needs to be able to articulate their goal easily and quickly
-- 
-### --- Communicate Obsessively
-- Have regular 1-on-1 meetings w/ reports and stakeholders
-
-### --- Create a Flywheel
-- Creatively clump things together in order for you and others to gain efficiency in throughput.
-- How things are delegated.  What things you&others are responsible for.  
-- Which areas each person must 'keep track of'
-
-
-### --- OKRs 
-- Objectives and Key Results - Very powerful in cases where they can be made to make sense
-- Many Contracting Objectives - Around completeness and timeliness for contracts and agile stories
-### --- EXAMPLES ---
-
-### --- AEOLUS:  Two level org structure
-- Built around skill areas & architectural design
-### --- DARPA: Decks.  DIRECTING -> COACHING ---
-
-### --- AF: PDD.  Supporting --> Delegating ---
-
-### --- AF: Hiring.  Directing --> Delegating ---
-
-## = EXAMPLES: TROUBLE
-#### __
-1.  Describe a time when your boss was wrong. How did you handle the situation?
-2.  [Tell me about the last mistake you made.](https://www.indeed.com/career-advice/interviewing/tell-me-about-a-time-you-made-a-mistake)
-3.  Describe a time you got angry at work.
-4.  Describe a time when you disagreed with your boss.
-5.  [Describe a time when you had to give a person difficult feedback.](https://www.indeed.com/career-advice/career-development/how-to-give-negative-feedback)
-6.  [Tell me about how you dealt with a difficult challenge in the workplace.](https://www.indeed.com/career-advice/interviewing/what-is-the-biggest-challenge-you've-faced-in-work)
-7.  [How would you deal with an angry or irate customer?](https://www.indeed.com/career-advice/career-development/how-to-deal-with-angry-customers)
-8.  Describe a time you chose to not help a teammate.
-9.  [Describe a time when your work was criticized?](https://www.indeed.com/career-advice/career-development/steps-to-handle-criticism-at-work)
-10.  [How would you fire someone?](https://www.indeed.com/career-advice/career-development/terminate-an-employee)
-29.  [What was your greatest failure, and what did you learn from it?](https://www.indeed.com/career-advice/interviewing/interview-question-what-is-your-biggest-failure)
-30.  What’s the biggest lesson you’ve learned from a mistake you’ve made?
-
-	- When have you failed and learned from the failure?  Basil Health.  
-	- When did you fix something that went wrong or broke down?  AEOLUS-FAILURES
-	- When did you improve something? 
-
-### MISTAKE - Tell me about the last mistake you made.
-
-### CONFLICT - When have you had a conflict with a coworker and worked through it?  
-	- TESSA, PIETRO/ADAMS(PhD-helper,FeetDragging,GoodDelegation,OwnedSBIRs), AZAT, 
-	- ALEX(RefusedToAcceptTradeoff; effiency&prototype)
-### - BOSS WAS WRONG?
-#### . Alex 
-
-### - FIRING SOMEONE - How would you fire someone?
-#### . Pietro
-#### . Ken @ AF
-
-
-### - ANGRY - Describe a time you got angry at work.
-#### . Alex CEO -
-#### . Axle - Working on parts he wanted
-- Dual backlog, working weekends
-#### . AZAT - Reimplemented core as means of control
-
-
-
-### - FAILURE&FIXING EXAMPLES
-- CONTRACTING:  Whole section Basil Health, Dual Backlog, ...  
-- TESTING: Robot integration
-
-## = EXAMPLES: GOOD OUTCOMES
-2.  Describe a time you went out of your way to help somebody.
-
-#### ABOVE & BEYOND - Describe a time you went above and beyond at work.
-
-
-## = EXAMPLES: INTEGRITY
-- Dedication to team - Theo
-### INTEGRITY
-#### INTEGRITY STORIES
-##### .. IBM motto -> DARPA reality
-honesty always
-	“IBMers value:
-	Dedication to every client’s success
-	Innovation that matters – for our company and for the world
-	Trust and personal responsibility in all relationships”
-##### .. China Stealing Secrets
-- Double locked doors, with blanket kept overtop robot
-
-
-#### LIE - [Would you ever lie for a company?](https://www.indeed.com/career-advice/interviewing/integrity-interview-questions)   [Integrity Story]
-YES:  Under legal obligation.
-- NDA occasionally requires white lies in order to keep secrecy.  (90% of the time an lie of omission will suffice)
-	- Why are you in town?  (they can infer it is because of work with a competitor...)
-- SELLING NDA:
-	- Needed to create an entire fake activity stream to cover the large gaps in founder availability.
-- SELLING MARTIAN ROBOTICS:
-	- Tricky investors, midnight call, don't tell the CEO, etc.
-	- Told them my Lawyer told me I cannot talk to them until I resign from Martian
-
-
-
-## = EASILY ANSWERED or IRRELEVANT
-
-### TRAVEL - [Are you willing to travel?](https://www.indeed.com/career-advice/interviewing/how-to-answer-interview-questions-about-travel)
-- ABSOLUTELY YES - You do what you need to do to get the job done.  I would even enjoy a certain amount of it.
-- BUT - I am not looking for a job where frequent travel is a core part of the job itself.
-
-
-NIGHT AND WEEKENDS -[Would you be willing to work nights and weekends?](https://www.indeed.com/career-advice/interviewing/how-to-answer-interview-questions-about-shift-work)
-- ABSOLUTELY YES - You do what you need to do to get the job done.  I would even enjoy a certain amount of it.
-- BURSTY - Indeed I am a 'bursty' performer, with desire and ability to drive hard when it matters
-- BUT - A job that frequently requires lots of nights and weekend work is not sustainable or efficient/effective.  It is a sign of a broken org; I would not be happy with that & would try to change it
-
-
-### YOUNGER MANAGER - How would you feel about reporting to a person younger than you?
-- I HAVE - Nick @ AF.  Tessa @ IBM.  
-- ZERO ISSUE - Ideally I work for someone I respect.  And my respect has ABSOLUTELY ZERO to do with age.  They might also have less experience too.  is fine too, if good instincts.
-
-
-### MANY JOBS -  Explain why you’ve had so many jobs?
-- N/A - I have not had so many jobs
-
-
-### GAPS - [Can you explain these gaps in your resume?](https://www.indeed.com/career-advice/interviewing/how-to-explain-employment-gaps)
-- N/A - I don't have gaps on my resume
-
-
-### OVERQUALIFIED - [Are you overqualified for this role?](https://www.indeed.com/career-advice/finding-a-job/overqualified-for-job)
-- N/A - I am not over qualified for this job
-
-
-### MOVIE - What is your favorite movie of all time and why?
-
-## .
-
-# STORIES:  PROJECT MANAGEMENT   !!!!!
-## = PROJECT MANAGEMENT
-### - REMOTE WORK
-#### . ROBOTIC VIDEOING - Video surveillance system w. Tripods and canned setups.
-
-### - DELEGATION & MONITORING
-#### . Developed Ten Stage Deck (DARPA)
-#### . Monitoring and Testing Standards (DARPA)
-- Worked with NIST/LDC on TREC competition and on test set creation & APIs
-- Worked closely with XXX at Cycorp to develop BL curricula
-
-
-## = DEVELOPMENT MANAGEMENT
-### - TESTING
-#### . Universal Video Validation  (Aeolus, Mgt, Fail, Testing)
-   REQ:  Explain in text how you tested it & why that shows it is done.  Include phone video w/ audio.
-==> Super super EASY.  No one can argue it is too hard.  avoids generality/stability need for repeatable tests.
-==> Ensure testing really did happen.  (just compiled it!  couldn't test easily so said it 'worked')
-==> Upper management results porn; Team alignment (hey! that is not done, or not right!)
-
-  people were not lying exactly, but they were being sloppy and generous in saying it was tested.
-  backlog items had a star if they needed a video (often sub items did not need a video)
+
+#### - WORDS TO USE IN AN INTERVIEW 
+	- My research indicates ...
+	- BEST ANSWER - talk about your customer's customer:  what do you like to cook?  your fav thing.  I enjoy cooking & will do well
+
+
+#### - BIGGEST ACCOMPLISHMENTS   ?????
+	What are some of your most significant accomplishments?
+	What are the most successful projects that you’ve worked on (and what results did the project achieve)?
+	In what ways have you had a positive impact?
+	Most impressive thing you have built or achieved
+
+##### . Aeolus OS 
+	- OS for robot
+	- 
+
+	 #### . Most impressive thing built.
+		 - the IBM Jeopardy Playing Computer Watson.  (didn't build it, but I conceived of and executed
+		   the 150+ million DARPA program mapping unstructured text onto fixed ontologies -- which is the core 
+		   tech the IBM used to beat Jennings)
+
+##### . Coded By Me
+###### -- Personal Wizards -- A learning system that induces executable scripts with loops, branches, and variables 
+		based on "watching" a desktop user (by trapping & abstracting messages at Windows event layer).  
+		This is now part of an IBM Rational product.
+###### -- Notester -- Note taking app
+
+###### -- Full Screen LISP Debugger - 
+	- A full screen LISP debugger that allows user to both fwd and backwards in time and up and down in abstraction.
+
+
+###### .
+#### - WHY ME - Why should we hire you?
+	- ENTHUSIASTIC - adding joy and velocity to team
+	- TECHNICAL - depth, breadth, vision, creativity
+	- STRONG MANAGER - I like, people like me, am organized
+
+
+### ONE-OFF TOPICS
+
+
+#### SALARY                                                         ????    < JY
+	1.  [Can you discuss your salary history?](https://www.indeed.com/career-advice/pay-salary/providing-salary-history)
+	2.  How much do you expect to be earning in five years? 
+	    Read more:  [How To Talk About Salary in a Job Interview](https://www.indeed.com/career-advice/interviewing/how-to-talk-about-salary-in-a-job-interview)
+
+	"My recent salaries have ranged from half a million to just over a million per year.  So my expectation for this job will really depend on my role and level."
+
+
+	“I’m looking for a competitive offer that includes benefits and other kinds of compensation, but I’d like to know more about the specifics of what this job requires first."
+
+#### STRENGTHS
+	1.  [What are some positive things your last boss would say about you?](https://www.indeed.com/career-advice/interviewing/how-would-your-boss-describe-you)
+	2.  [What differentiates you from our other candidates?](https://www.indeed.com/career-advice/interviewing/interview-question-what-makes-you-unique)
+
+
+	- ML Researcher, Eng. Mgr, Entrepreneur
+
+##### - TECHNICAL - depth, breadth, vision, creativity
+
+##### -  FAST - VERBALLY/INTELLECTUALLY FAST ON FEET
+	- DARPA PROGRAMS - 
+	- AF?
+
+##### - MGR - Strong Manager
+	- PEOPLE PHILIC: I like people & growing people;  people like me, trust my integrity & see I have their interests at heart.
+	- ORGANIZED - SOLVER - I am organized; I am a problem solver
+	- INSIGHTFUL -  I am quick to identify heart of a problem, and quick/creative in proposing solutions
+	- CONFIDENT -  Personal confidence in my abilities makes it fun and natural to revel in the strengths of others -- not threatened by those better than me
+	- PERCEPTIVE - Very good at understanding misunderstandings & perspectives of others.
+		- Strong (but not superb) at anticipating / detecting problems before they are problems. (very perceptive, but too fast & too optimistic) 
+
+
+
+#### MY WEAKNESSES        ???   ++++++ 
+	- Short, simple weakness w/ emphasis on improvement
+
+##### (TOO) FAST START 
+	- Fast on feet problem solver; so I will just jump right to the solution and propose & execute it on the spot.
+	- Can be disconcerting to the team
+	- Can lead to loss of buy in
+	- Can lead to poorly planned action
+	- Can lead to thrashing
+	- Can lead loss of ownership for (middle skill levels)
+	==> Measure is
+
+#### ??? 
+
+
+#### no!  DECISIVENESS - Core value of a leader is to DECIDE and MOVE
+	- Long process of improvement
+		1. Shoot from the hip in low consequence or easily reversed decisions.
+		2. Explicitly state appropriate amount of analysis for a choice, then follow thru.
+		3. Aggressively gather key info on time sensitive decisions.
+
+
+#### ABOUT THEM
+	6.  What is the name of our CEO?
+	8.  [What do you know about our company?](https://www.indeed.com/career-advice/interviewing/what-do-you-know-about-our-company)
+	11.  [Why is our company interesting to you?](https://www.indeed.com/career-advice/interviewing/interview-question-why-do-you-want-to-work-here)
+	13.  Who are our competitors?
+	17.  What do you know about our industry?
+	1.  [Why are you the right person for this job?](https://www.indeed.com/career-advice/interviewing/what-make-you-a-good-candidate-for-this-position)
+
+	- COMPETITORS - Who are our competitors?
+	- COMPANY - What do you know about our company?
+	- CEO - What is the name of our CEO?
+	- OVER QUALIFIED - Are you over qualified for this role?
+	- CHANGE - Why are you changing careers?
+	- INTERESTING - What makes our company interesting to you?
+	- FIRST 90 - What do you want to accomplish in first 90 days?
+		- Deliver end-to-end result
+		- Demonstrate Readiness: Technical, Leadership, Creativity, Interpersonal, Organizational
+### . 
+
+## STORIES:  PEOPLE MANAGEMENT
+### = MY MANAGEMENT STYLE/PHILOSOPHY
+#### MGT STYLE -  [What is your management style?](https://www.indeed.com/career-advice/career-development/what-is-my-management-style) 
+	- Problem Solver
+		- UNDERLYING TECHNICAL PROBLEM - 
+		- HUMAN PUZZLE PIECES PROBLEM;  Georgios-stressed, Adams-Proj-Autonomy;   DEMO LOYALTY
+			- Adams ran tangents if not corralled, but chaffed (gave his own proj) - 
+			- Georgios-stressed leader, but awesome leader (tandem leadeship ownership)
+
+	- Human puzzle pieces
+	- How “hands-on” of a manager are you?  depends.  See delegation
+	- How do you support an underperforming team member?  see delegation
+		-> fast/precise decision to fire  (AF-test-tasks)
+		-> progress towards ownership (see situational leadership)
+		-> peering/mentoring arrangements
+	- Can you provide examples of when you have had to deliver negative feedback?  PIETRO, ADAMS, 
+		- THEO(Autistic, ), 
+	- What strategies do you use to motivate your team? (see human puzzle pieces)
+		-> Ownership.    -> Benefit.   -> Trust/Honesty.  -> Greater Good.  
+	- DELEGATION
+
+
+### = MY WORKING STYLE
+	1.  [Describe your work style.](https://www.indeed.com/career-advice/interviewing/what-is-your-work-style)     <<<<<
+	- How would you describe your top three strengths related to work? What are your three biggest areas that have room for improvement?
+	- How do you deal with stressful situations?
+
+
+##### . Organized Person - Do you describe yourself as an organized person?
+	- Builder of systems.  Fast Start, Fast Edit, No Committees (just do it, or assign it)
+	- Out of my head and into lists kind of organization person
+
+	Use document, spreadsheet, or asana as step one
+
+
+	_
+#### - MISSED DEADLINES - When is the last time you missed a deadline? Why did this happen?
+	Aeolus: 2-month demos.  would pull capabilities back
+
+	_
+#### - STAYING CALM - STRESSFUL SITUATIONS
+	- Am a talker
+
+
+	_
+#### --- Aeolus: 3M to go and core functions are unexpectedly failing; poor algs ---
+	- WHY: Moving too fast on the basic stuff; claims were false
+	- 3 weeks to build new algs
+
+	_   <<<<<
+### = PERSONNEL MANAGEMENT    !!!!!
+#### - TEAM MANAGEMENT
+##### . Personal Wizards Team (3)
+##### . DARPA in house () BL () TL () MR ()
+##### . AF 40+ 
+
+#### - HIRING
+##### . Hiring Grasping Experts (Aeolus, Hiring)
+	- Had team identify tier1 journals; & frequently publishing teams; picked top 10 world wide
+	- Wrote hand crafted emails to lead prof at each
+	- Phone call wooing; Flew to Vienna; funding multi-year grant;  Hired two leading graduates
+##### . Money Ball Hiring (AF)
+
+#### - PERSONALITY MANAGEMENT
+##### . Manager Of Snowflakes (Aeolus, AF)
+	- ALEXI - Polyphasic sleeper (what to do but, never how)  lesser programmers; great helper, does anything asked.
+	- PIOTR, ???, SENAD - Company Owners:  Piotr, S Am, Roboticist professor
+	- Single Guy:  Thai-beaches, Crypto conferences
+##### . People as Jigsaw Puzzles (Aeolus, AF)
+	- Consider employee's:  Depth, Width, Velocity, Padding, Creativity, Care, etc.
+	- Mix and Match strengths to cover any gaps before they are large problems.
+	- AF EXAMPLES:  Bryan, Matt, Ben, Ruby, Jess (universal soldier)
+	- AE EXAMPLES:  Georgios+, Alexey 
+##### . Lone Wolf Alexey (Aeolus)
+	- Super strong & focused C++ developer.  Wanted to know more than all others & be better
+	- Willing to do anything in C++.  Willing to help & teach, debug, code anything
+	- Asshole who knew he knew more.  wanted autonomy and isolation
+##### . Fragile Georgios (Aeolus)
+	- Did not mind managing details, nor working hard/long
+	- Feared being 'in charge' & 'responsible w/o partner;  Could not handle pushing others or ANY confrontation.
+	- Feared for job security  
+##### . Vacation Policy - Hiring Europeans (Aeolus, AF)
+	- Taiwanese CEO; 5-days in my contract; sleep @ desks; 5-week expectation 
+	- Early employee 'red-flag' rejected offer; placeholder-excuse  ->
+		emailed CEO second ask  ->  then emailed reject w/ strong policy recommend for no explicit policy
+##### . Jess.  The Universal Soldier
+	- Supported her music career, worked flexibly with her
+##### . Derrick Depression -
+	- Worked at a distance.  Dinners when in town.
+#### - POLITICS - MANAGING UP
+	- Vacation Policy (Aeolus)
+	- Product vision (Aeolus)
+##### . Dual Backlog Maintenance
+##### . Multi-team Synergies
+
+
+
+
+
+### = STAKEHOLDER MANAGEMENT
+#### - CONTRACTING (customer-forced delivery failures)
+##### . In-then-Out Planning; Delivery Timeframes Tied To All Inputs In; Aggressive Tracking & Notify (AF)
+	- Joe at Acme will provide X by DATE1  (with contract having DATE2>DATE1 in planning)
+	- Aggressive steak holder notification of delivery risks.
+##### . In House Testing Upon Delivery (AF)
+	- Ultimately do it for free; but try to charge on next cycle.
+##### . Poor Counter-Party Performance Planning (AF)
+	==> Easy to get apriori-agreement for harsh actions on non-compliance; better to get appropriate actions 
+	==> Example:  Payment and Work-stoppage Timelines
+	- Massively screwed by an unscrupulous founder - almost sunk the company.
+##### . Dual BackLog Management
+##### . Basil Health Contracting Failure
+
+	- State with controller @ sun power
+	- Arthrex agree on timeline; but then did not deliver inputs; we had to scramble including unpaid work to keep timeline
+	- Enphase 
+#### - HIRING by direct testing  (Blow their doors off & see what happens.)
+##### . BP Sox
+	- CEO's buddy runs a medical device company & whole outsourced dev team for one product ghosted.
+	- half-ass spec, and email history indirectly describing setup.
+	- faked-inbox of panicked, lazy, vacationing team members.
+	- bullet point dossier of team members.
+	- What do you do in first 3 hours, first 3 days, three 3months.
+	- Outline of an improvement roadmap pitch to the client (drawing from complaints seen in emails)
+	- One presentable slide from the pitch to the client.
+	- If you need some missing info, then email the CEO, and invent a reasonable response email and go with it.
+	  (e.g.  do you have offsite backups of the source code?)
+
+	- Do they raise a flag at the email FYI that the a key guy is taking a PTO.
+	- How do they respond
+	- Can they play nice with the one dev from the team the ghosted them in order to get server keys.
+	- Do they act to preserve data.
+	- Do they act to keep servers online (bills had not been paid).
+##### . Vision algorithms do flood fill
+
+
+
+
+
+
+### = ORGANIZATION MANAGEMENT
+#### - ORG CHANGING
+	- Broken org, org in flight, dramatic org shift (to )
+#### - MARTIAN->AEOLUS->LANE-LEADERS
+#### - AF
+	- Hiring
+	- Pod Teaming Matrix Structure (PM, Dev, QA, Admin)   Cross Cutting Org Roles
+	- Quarterly Planning Discipline, Digital Escalation Tools.
+	  ==> Days matter, need to know early when things are wrong
+#### - DARPA
+	- BL-testing team
+	- MR-
+### = EXAMPLES: TEAM MOTIVATION & RETENTION
+	- What strategies do you use to motivate your team? (see human puzzle pieces)
+		->Ownership.    ->Benefit.    ->Trust/Honesty.    -> Greater Good.  
+
+#### - OWNERSHIP -
+
+
+#### - VISION - Motivation from Coherent Company Vision
+	        AF: Clean Tech.  Aeolus: Eldercare.  DARPA: Driving AI Field
+
+#### - TRUST - How to maintain trust among co-workers
+	Is is scalable, is it personal
+
+##### . AF - BONUS STRUCTURE - 
+##### . AF - Personnel Evaluation
+	- Input from MGR but final determinations two levels up
+	- Explicit 360 Positive Attribute assessment from others
+
+
+#### TOPIC: TEAM - Cohesion / Retention / Quality
+##### . AF - Annual Offsite
+	- Spent 2% of top line revenue on this.
+	- Huge team involvement!  
+	Nominate, Analyze, Trim outliers, Let team vote (sometimes with location qualifiers)
+	- Hackathon. Philippine winners.
+##### . AF - Bonus structuring 
+	- team bonuses.  Job title, one-time bonuses
+##### . AF - Friday "lunch" talks, Offsite hackathon, talks
+
+
+
+
+
+### = EXAMPLES: HUMAN PUZZLE PIECES
+	- Clearly demand what is required; with argument about why; then let them propose 
+		Early failure feedback
+	- Notice where people gravitate; build from that
+
+#### - AMBITIOUS
+##### . Attilla
+##### . Krzsiek
+
+#### - STRONG DIFFICULT
+##### . Alexy
+	- Let him operate on his own
+	- Let him define & own and run his own stuff
+		- He defines, we review, raise inconsistencies
+		- He delivers, tests and supports integration
+	- Required to provide short term coaching on specific activities
+
+	- Issues:
+		- didn't respect others (but he was stronger dev)
+			but was polite as long as other was more junior & not too much of his time
+		- Poly-phasic sleeper
+		- didn't want others defining his tasks/apis, but his work was good
+			--> just needed to validate his approach was compatible (& would easily update)
+##### . in the Italian log cabin
+
+#### --- AF: Snowflakes Krzsiek/Attila side gigs,
+
+#### - GAP FILLING
+##### . Matt 
+	Stressed by top down politics
+	Stressed by ambiguity
+	- Great people skills, client skills, technical skills, 
+	- High velocity, bandwidth
+
+### = EXAMPLES: DELEGATION
+	What’s your approach to delegating work to employees? 
+#### --- Ensuring Results:  SMART
+	How do you ensure that tasks are completed?
+
+	--> Let THEM tell YOU when and how they will do it.  AF-admin-team.  AF-leads.  AF-alexey. 
+> > Get precise especially about when.  Add time for other things.
+> > Allow them to slip for good reason, but be explicit and target new time
+
+	- SPECIFIC (simple, sensible, significant).
+	- MEASURABLE (meaningful, motivating).
+	- AGREED  Achievable (agreed, attainable).
+	- REALISTIC   Relevant (reasonable, realistic and resourced, results-based).
+	- TIME bounded (time-based, time limited, time/cost limited, timely, time-sensitive).
+
+
+#### --- R&R Doc + One belly button ---
+	- AEOLUS Role & Responsibilities docs at.  (needed to tread softly, tentatively,  and swiftly, would often ask person to assume role for a month to 'help out')
+	- AF: Responsibilities Chart -- Hundreds of responsibilities
+#### --- By Written Input & Output ---
+	- Written output
+	- Video outputs -- At Aeolus.
+
+	_
+#### --- By Pairing ---
+	- AF: Hiring/Research - James with Maria
+	- AF: Piotr and Monica
+	- AEOLUS: Georgios (afraid of responsibilty), and Filepe
+	_
+#### --- Theory: Situational Leadership:   Directing --> Coaching --> Supporting --> Delegating
+	[Web](http://www.md2md.uk/delegation-using-situational-leadership/) [Situational Leadership](Kenneth Blanchard and Paul Hersey’s situational leadership model ) Blanchard&Hersey
+
+						EMPLOYEE SKILL
+					High		Low
+	SUPPORT High	Supporting	Coaching
+	SUPPORT Low		Delegating	Directing
+
+	- Precise output
+	- Small / Quick -- 
+	- From Them (in quick iterations)
+	- Written -- goal&output (even few sentences)
+	- SLOPPY! -- I grade on sloppiness of result
+	- VIDEO --
+	- Actually Delivered
+	- Process
+
+	DIRECTING: 
+	COACHING:  DARPA slides.  Aeolus: Theo.  AF Hiring
+	SUPPORT:  Aeolus: Georgios
+	DELEGATING: Aeolus Lane leaders:  Filepe&Severin, 
+
+	_
+#### --- Clarity beats Speed
+	- Dot your i-s and cross your t-s when delegating.  Extra overhead seems a waste at the time, but it's NOT!  Something blows up so often when you don't do it!
+
+	- Not able to make a quick 'firing' decision because tasking was not clear.  So failure was plausibly our fault.
+	- Ownership of testing and validation was not agreed upon @ Aeolus and it resulting in team skill gap.
+	- PH team data gathering.  Many hours of wasted effort, until we forced "single row" acknowledgment.  (cannot just say 'I got it'.  Instead say 'like this, right?')
+	  Highlighted mis-understandings, missing knowledge/capabilities etc.
+#### --- Simplicity is key in goal/business case
+	- Everyone needs to be able to articulate their goal easily and quickly
+	- 
+#### --- Communicate Obsessively
+	- Have regular 1-on-1 meetings w/ reports and stakeholders
+
+#### --- Create a Flywheel
+	- Creatively clump things together in order for you and others to gain efficiency in throughput.
+	- How things are delegated.  What things you&others are responsible for.  
+	- Which areas each person must 'keep track of'
+
+
+#### --- OKRs 
+	- Objectives and Key Results - Very powerful in cases where they can be made to make sense
+	- Many Contracting Objectives - Around completeness and timeliness for contracts and agile stories
+#### --- EXAMPLES ---
+
+#### --- AEOLUS:  Two level org structure
+	- Built around skill areas & architectural design
+#### --- DARPA: Decks.  DIRECTING -> COACHING ---
+
+#### --- AF: PDD.  Supporting --> Delegating ---
+
+#### --- AF: Hiring.  Directing --> Delegating ---
+
+### = EXAMPLES: TROUBLE
+##### __
+	1.  Describe a time when your boss was wrong. How did you handle the situation?
+	2.  [Tell me about the last mistake you made.](https://www.indeed.com/career-advice/interviewing/tell-me-about-a-time-you-made-a-mistake)
+	3.  Describe a time you got angry at work.
+	4.  Describe a time when you disagreed with your boss.
+	5.  [Describe a time when you had to give a person difficult feedback.](https://www.indeed.com/career-advice/career-development/how-to-give-negative-feedback)
+	6.  [Tell me about how you dealt with a difficult challenge in the workplace.](https://www.indeed.com/career-advice/interviewing/what-is-the-biggest-challenge-you've-faced-in-work)
+	7.  [How would you deal with an angry or irate customer?](https://www.indeed.com/career-advice/career-development/how-to-deal-with-angry-customers)
+	8.  Describe a time you chose to not help a teammate.
+	9.  [Describe a time when your work was criticized?](https://www.indeed.com/career-advice/career-development/steps-to-handle-criticism-at-work)
+	10.  [How would you fire someone?](https://www.indeed.com/career-advice/career-development/terminate-an-employee)
+	29.  [What was your greatest failure, and what did you learn from it?](https://www.indeed.com/career-advice/interviewing/interview-question-what-is-your-biggest-failure)
+	30.  What’s the biggest lesson you’ve learned from a mistake you’ve made?
+
+		- When have you failed and learned from the failure?  Basil Health.  
+		- When did you fix something that went wrong or broke down?  AEOLUS-FAILURES
+		- When did you improve something? 
+
+#### MISTAKE - Tell me about the last mistake you made.
+
+#### CONFLICT - When have you had a conflict with a coworker and worked through it?  
+		- TESSA, PIETRO/ADAMS(PhD-helper,FeetDragging,GoodDelegation,OwnedSBIRs), AZAT, 
+		- ALEX(RefusedToAcceptTradeoff; effiency&prototype)
+#### - BOSS WAS WRONG?
+##### . Alex 
+
+#### - FIRING SOMEONE - How would you fire someone?
+##### . Pietro
+##### . Ken @ AF
+
+
+#### - ANGRY - Describe a time you got angry at work.
+##### . Alex CEO -
+##### . Axle - Working on parts he wanted
+	- Dual backlog, working weekends
+##### . AZAT - Reimplemented core as means of control
+
+
+
+#### - FAILURE&FIXING EXAMPLES
+	- CONTRACTING:  Whole section Basil Health, Dual Backlog, ...  
+	- TESTING: Robot integration
+
+### = EXAMPLES: GOOD OUTCOMES
+	2.  Describe a time you went out of your way to help somebody.
+
+##### ABOVE & BEYOND - Describe a time you went above and beyond at work.
+
+
+### = EXAMPLES: INTEGRITY
+	- Dedication to team - Theo
+#### INTEGRITY
+##### INTEGRITY STORIES
+###### .. IBM motto -> DARPA reality
+	honesty always
+		“IBMers value:
+		Dedication to every client’s success
+		Innovation that matters – for our company and for the world
+		Trust and personal responsibility in all relationships”
+###### .. China Stealing Secrets
+	- Double locked doors, with blanket kept overtop robot
+
+
+##### LIE - [Would you ever lie for a company?](https://www.indeed.com/career-advice/interviewing/integrity-interview-questions)   [Integrity Story]
+	YES:  Under legal obligation.
+	- NDA occasionally requires white lies in order to keep secrecy.  (90% of the time an lie of omission will suffice)
+		- Why are you in town?  (they can infer it is because of work with a competitor...)
+	- SELLING NDA:
+		- Needed to create an entire fake activity stream to cover the large gaps in founder availability.
+	- SELLING MARTIAN ROBOTICS:
+		- Tricky investors, midnight call, don't tell the CEO, etc.
+		- Told them my Lawyer told me I cannot talk to them until I resign from Martian
+
+
+
+### = EASILY ANSWERED or IRRELEVANT
+
+#### TRAVEL - [Are you willing to travel?](https://www.indeed.com/career-advice/interviewing/how-to-answer-interview-questions-about-travel)
+	- ABSOLUTELY YES - You do what you need to do to get the job done.  I would even enjoy a certain amount of it.
+	- BUT - I am not looking for a job where frequent travel is a core part of the job itself.
+
+
+	NIGHT AND WEEKENDS -[Would you be willing to work nights and weekends?](https://www.indeed.com/career-advice/interviewing/how-to-answer-interview-questions-about-shift-work)
+	- ABSOLUTELY YES - You do what you need to do to get the job done.  I would even enjoy a certain amount of it.
+	- BURSTY - Indeed I am a 'bursty' performer, with desire and ability to drive hard when it matters
+	- BUT - A job that frequently requires lots of nights and weekend work is not sustainable or efficient/effective.  It is a sign of a broken org; I would not be happy with that & would try to change it
+
+
+#### YOUNGER MANAGER - How would you feel about reporting to a person younger than you?
+	- I HAVE - Nick @ AF.  Tessa @ IBM.  
+	- ZERO ISSUE - Ideally I work for someone I respect.  And my respect has ABSOLUTELY ZERO to do with age.  They might also have less experience too.  is fine too, if good instincts.
+
+
+#### MANY JOBS -  Explain why you’ve had so many jobs?
+	- N/A - I have not had so many jobs
+
+
+#### GAPS - [Can you explain these gaps in your resume?](https://www.indeed.com/career-advice/interviewing/how-to-explain-employment-gaps)
+	- N/A - I don't have gaps on my resume
+
+
+#### OVERQUALIFIED - [Are you overqualified for this role?](https://www.indeed.com/career-advice/finding-a-job/overqualified-for-job)
+	- N/A - I am not over qualified for this job
+
+
+#### MOVIE - What is your favorite movie of all time and why?
+
+### .
+
+## STORIES:  PROJECT MANAGEMENT   !!!!!
+### = PROJECT MANAGEMENT
+#### - REMOTE WORK
+##### . ROBOTIC VIDEOING - Video surveillance system w. Tripods and canned setups.
+
+#### - DELEGATION & MONITORING
+##### . Developed Ten Stage Deck (DARPA)
+##### . Monitoring and Testing Standards (DARPA)
+	- Worked with NIST/LDC on TREC competition and on test set creation & APIs
+	- Worked closely with XXX at Cycorp to develop BL curricula
+
+
+### = DEVELOPMENT MANAGEMENT
+#### - TESTING
+##### . Universal Video Validation  (Aeolus, Mgt, Fail, Testing)
+	   REQ:  Explain in text how you tested it & why that shows it is done.  Include phone video w/ audio.
+	==> Super super EASY.  No one can argue it is too hard.  avoids generality/stability need for repeatable tests.
+	==> Ensure testing really did happen.  (just compiled it!  couldn't test easily so said it 'worked')
+	==> Upper management results porn; Team alignment (hey! that is not done, or not right!)
+
+	  people were not lying exactly, but they were being sloppy and generous in saying it was tested.
+	  backlog items had a star if they needed a video (often sub items did not need a video)
   
-#### . Robot Integration - Not done till upstream system ran (Aeolus, Mgt, Fail, Testing)
-#### . Customer Bug-Frustration
-- Customers don't like paying to fix newly discovered bugs in already delivered code.
-- Built out cost effective testing org, and use it even when customer isn't paying for it.
+##### . Robot Integration - Not done till upstream system ran (Aeolus, Mgt, Fail, Testing)
+##### . Customer Bug-Frustration
+	- Customers don't like paying to fix newly discovered bugs in already delivered code.
+	- Built out cost effective testing org, and use it even when customer isn't paying for it.
 
 
-## = VISION / LEADERSHIP
-### - Pitched winning proposals
-#### . 12PY adventurous research grant (IBM)
-#### . BL program, MR Program (DARPA)
-#### . Tapped for IPTO SAG; Gates presentation (DARPA)
+### = VISION / LEADERSHIP
+#### - Pitched winning proposals
+##### . 12PY adventurous research grant (IBM)
+##### . BL program, MR Program (DARPA)
+##### . Tapped for IPTO SAG; Gates presentation (DARPA)
 
 
-## = INITIATIVE
-- When did you create a new process or initiative?  
+### = INITIATIVE
+	- When did you create a new process or initiative?  
 
-#### . AEOLUS - 2-level mgt; R&R; 3-week sprints, 2-month prototypes, remote work, testing regime
+##### . AEOLUS - 2-level mgt; R&R; 3-week sprints, 2-month prototypes, remote work, testing regime
 
-#### . AF&AEOLUS HIRING PROCESS, 
-#### . TREC-TAC, 
-#### . BL-PROGRAM, 
-
-
-### HACKED - Hacked something to my advantage
-
-	- Convinced my linear algebra teacher that I should not be scored on my homeworks but only on my
-	  test results.
-
-	- Later used his open-ended test taking policy to save my GPA, by staying over an entire night and re-deriving 
-	  two required lemmas that I would have known had I actually done the homework.
-
-	  (ok, so my second hack was really more of a painful recovery from the consequences of my first hack.
-	   still in the end, I got my way, and saved my grade.  Wise?  no.  but hacked, yes.)
+##### . AF&AEOLUS HIRING PROCESS, 
+##### . TREC-TAC, 
+##### . BL-PROGRAM, 
 
 
+#### HACKED - Hacked something to my advantage
 
-_
+		- Convinced my linear algebra teacher that I should not be scored on my homeworks but only on my
+		  test results.
 
-## = OUTCOMES & ACCOMPLISHMENTS
+		- Later used his open-ended test taking policy to save my GPA, by staying over an entire night and re-deriving 
+		  two required lemmas that I would have known had I actually done the homework.
+
+		  (ok, so my second hack was really more of a painful recovery from the consequences of my first hack.
+		   still in the end, I got my way, and saved my grade.  Wise?  no.  but hacked, yes.)
 
 
 
-## = GONE ABOVE & BEYOND 
+	_
+
+### = OUTCOMES & ACCOMPLISHMENTS
+
+
+
+### = GONE ABOVE & BEYOND 
+
+
+### .
+
+
+## STORIES: TECHNICAL
+### AF - Instant Design
+
+##### Instant Design Story
+
+Path we took:
+	1. Non-ML-based Edge extraction
+	2. Hand-built energy-based edge cleanup
+	3. NN-based obstruction detection
+	4. Combine NN & Geo edge detection
+
+
+Level 1: **Edge Extraction**  -- (Based on finding flats.  Leverages accuracy from plane fitting large region)
+- find flat planes
+- glue together
+- derive edges
+
+Level 2:**Energy based cleanup**
+- remove small planes
+- remove super sharp corners
+- replace line pairs that are nearly 180-degrees
+- (sides of roof were not symmetric; fixed this for sales)
+
+Level 3:**NN MODELS** - pixel level models (RGB+depth)
+	- Tree detection (?yard tree?)
+	- obstruction detection
+	- pixel based-edge detection   (weakest model, needed help from the others)
+
+Level 4: **NN-models + Geo**
+- Perf improvements & combine with Geo edge detection
+- Do batch normalization
+- Use residual connection
+- grab resnet-50.
+- Started with plain units.
+- We always trained from scratch 
+
+- do contrast learning (never did that to do pretraining)
+- 2% delta from best to worse model, so we needed to care.  (semantics segmentation accracy at the pixel level)  
+	- was 97 - 98% at pixel level
+
+
+SUMMARY OUTCOME: Worked pretty well - but still not enough to completely eliminate the human planner
+Ultimate failures came from mis labelling one part of roof and failed from there (e.g. mis-labelled one part... and it kills )
+
+- FUTURE IDEA:  Do object detect, instead of  (use mask CNN to do it)
+	- Grabbed the RTR from facebook
+
+
+OTHER IDEAS:
+- RoofGan paper: [https://arxiv.org/abs/2012.09340](https://arxiv.org/abs/2012.09340)  code: [https://github.com/yi-ming-qian/roofgan](https://github.com/yi-ming-qian/roofgan)
+- Object detection:  DETR: [https://github.com/facebookresearch/detr](https://github.com/facebookresearch/detr)
+- RTF frome facebook
+
+- Hand written  CV
+	- derivative of DSM data, flat planes  (Grz Bartchek; MIT)
+	- hand written CV geo algorithms
+	- apply RGB data (Energy minimization)
+		- corners should meet at non-nearly straight angles (energy constraints)
+	- NN for detecting obstructions
+		- then idea lets swap edges from NN into the existing pipeline for 
+
+
+## STORIES:  MISC
+### MISC STORIES
+
+#### TEAM GROWTH
+	-  [Theo](https://www.linkedin.com/in/theodore-enns-1329633a/)  - Polished Gem - Amazon SDM who led the Astro project
+	-  [Felipe](https://www.linkedin.com/in/theodore-enns-1329633a/)  - Student -> mgr of 13 person team -> Robotics Engineer @ Amazon
+	-  [Sahil](https://www.linkedin.com/in/theodore-enns-1329633a/)  -  Student to Senior Roboticist @ Agility & Osario 
+	- [Rogerio Fonteles](https://www.linkedin.com/in/rogerio-fonteles-074169b0/)  Student -> Manager? -> Senior Robotics Engineer --> Head of Engineering @ Moley Robotics
+	- [Georgios](https://www.linkedin.com/in/georgios-floros-76a3067/) - Fragile researcher --> Effective Manager
+
+
+	- [Attilla Aros](https://www.linkedin.com/in/aaros/)  - Hacker -> Strongest Tech Lead --> Crypto Founder
+	- Senad - 
+	- [Krzysiek Herod](https://www.linkedin.com/in/krzysiek-herod/) - Hacker -> ML 'founder'
+	- [Ben Jacobs](https://www.linkedin.com/in/bencjacobs/) - Web dev -> Multi-Team Project Management -> Eng Mgr @ RZ  &  Founded his own company while @ AF
+
+
+###### ALEX - "Stole" Alex from Apple @ 1/3 pay...  and he did not really value equity... he valued experience.
+	- Time-stamping buffering multi-tiered architecture.
+	- Git-driven Hardware unit-testing rig.
+	- Worked hard & long hours on task he was motivated by.
+	- Managed him via a dual backlog
+###### THEO - Polished Gem   << GROWING TALENT >>
+	- Asberger, Physics guy hacking robots @ night, writing test scripts
+	- Grew thru MGT -> Aeolus 
+	- Tone Deaf, insecure, very teachable Task Manager.  (lots of post-hoc repair)
+	- Now accomplished Lab 126 - SDM - lead Amazon Astro project.
+
+#### CES DEMO - 13 Months from a team of one
+
+#### MARTIAN ARDUINO BOT - Just do it
+	- CEO came w/ a broken demo
+	- pulled me into a week-long hack fest to build the demo system
+
+#### LANDING TALENT - Pipeline of very best talent in the world
+	- SCALED HIRING PIPE 
+	- RELATION W U VIENNA / SW LAB
+	- LICENCE SKELETAL TRACKING SW 
+
+#### DARPA MENTORING - XXX YYY ZZZ at DARPA
+
+	Today we cannot XXX, but YYY is a promising approach, and if it succeeds will mean ZZZ.
+	XXX a very basic thing that cannot be done today
+	YYY an approach that might work for XXX
+	ZZZ some transformative benefit that having XXX will achieve
+
+	_
+#### --- IBM: Few shot learning ---
+
+	_
+#### --- IBM: Personal Wizards Algorithm - Interleaving edits and learning ---
+
+	_
+#### --- IBM: Email Mining - Overcoming privacy concerns ---
+
+	_
+
+
+### UNUSUAL QUESTIONS
+	STAR: Situation, Task -> Action -> Result
+
+#### BRAINTEASERS
+	1.  If you suddenly gained the ability to time travel, what’s the first thing you’d do?
+	2.  If you could get rid of any U.S. state, which would you choose and why?
+	3.  Which is more important: creativity or efficiency?
+	4.  Is it better to be good and on time or perfect and late with your work?
+	5.  How many times per day do a clock’s hands overlap?
+	6.  How many stacked pennies would equal the height of the Empire State Building?
+
+#### TEACH - Teach me something fascinating I don't know.
+		Patterson Commitment.  Merkel Tree.  CNN.
+#### PITCH - Elevator pitch for Dream client
+
+#### TOMBSTONE - What do you want on your tombstone & how does this job help
+	- what are you doing now to make it happen.
+## STORIES: BY YEAR
+
+### SCHOOL YEARS 
+	- Tons of personal hacking projects; its all I did
+	- Second place state science fair
+
+### COLLEGE YEARS
+	- Math club president; Putnam Math Exams
+	- Wes Ragland; attendant for mute quadriplegic; brother paid me to build specialized editor environment for him
+	- Student of the year in CS and Math
+
+### GRAD YEARS
+
+### IBM RESEARCH YEARS
+#### Watch ME Read - 
+	- INTERPERSONAL: In classroom, developing & testing solution
+#### Personal Wizards - Pitched, Won, and Co-Lead 12 PY Effort To Develop ...
+	- ACCOMPLISHMENT:  Conceived -> Won -> Lead -> Technically Innovated -> Productized ... Shipped
+#### ?20? Patents - Law suit against Air BnB 
+
+### DARPA YEARS
+#### Andrew Ng
+ 
+#### Machine Reading Program
+	- ACCOMPLISHMENT:  Conceived, Won, Led, Largest DARPA effort in IPTO office at the time.  Outcome IBM Watson / Jeopardy
+##### NIST TREC-TAC - International Competition
+	- Creation of standards track and competition.  
+	- OWNED IT:  Initiated it, Funded it, hired the teams to develop it, and was responsible for its visions and approved details of its implementation.
+#### BL & TL
+
+### PAY BY GROUP YEARS
+
+### JOTTR YEARS
+
+### MARTIAN YEARS
+#### PROTOTYPE - Late-night Proto Building
+	- Really wanted me as a co-founder
+	- Inverse Kinematics by hand on an Arduino powered bath cleaning robot
+#### - HIRING - Hiring Martian Team
+#### PEOPLE: Alex, Theo, ?Brandon, 
+###### ALEX - "Stole" Alex from Apple @ 1/3 pay...  and he did not really value equity... he valued experience.
+	- Time-stamping buffering multi-tiered architecture.
+	- Git-driven Hardware unit-testing rig.
+	- Worked hard & long hours on task he was motivated by.
+	- Managed him via a dual backlog
+###### THEO - Polished Gem   << GROWING TALENT >>
+	- Asberger, Physics guy hacking robots @ night, writing test scripts
+	- Grew thru MGT -> Aeolus 
+	- Tone Deaf, insecure, very teachable Task Manager.  (lots of post-hoc repair)
+	- Now accomplished Lab 126 - SDM - lead Amazon Astro project.
+### AEOLUS YEARS
+#### Hiring
+##### . Hiring Pipe
+##### . Vienna Research Project
+##### Management
+##### . Swim Lane Architecture
+##### . Remote Robotics
+
+#### Management
+##### . Remote Work
+	- 3-shifts.  24/7 lab tech support.  Fly-in
+##### . Siloed & Interoperable work streams
+#### FAILURES
+##### . "Completed" work failures
+	- Frequently we were running into failures in work that was claimed to be completed & tested.
+	- Obvious approach is to agree on formal tests, but way to costly for our velocity and work piece size.
+	  (is appropriate for 2 month integration tests, and maybe 3 week sprint tests, but not back log items)
+	- PUBLISHED 10 LEVELS of test & validation.  Documentation of validation included: the level used, an explanation, and a video.
+
+	--- Aeolus: 'done' things were never really ---
+	- Team members said it was done; Even fantisized it was
+		but they had only tested their part
+		but only run in simulation
+		but only ran it in their context
+		but it only ran once and is not stable
+
+	==> Needed to carefully construct test, that would really show it.	
+	==> Cell phone video	
+	_
+##### . MIT Work - Delivered Work Failures
+	- Tested vision system w/ high accuracies was non-usable & needed to go back to drawing board.
+	- SOLN:  Work delivered in sprint X, tested on robot in sprint X or X+1.  (delivery owned by both teams)
+##### . Integration failures
+#### PEOPLE - Alexey, Georgios, ?Haddick
+
+### ANALYTICS FIRE YEARS
+#### BASIL HEALTH - Basil Health Non-Payment Scam
+#### INSTANT DESIGN - Cutting edge Deep Learning
+#### PROJECTS
+	- OASIS - soup to nuts build of a new product line
+	- ARTHREX - Robotic surgical equipment communications suite
+	- I-CRACKED - B2B Marketplace
+	- SUN POWER - Solar Control Systems
+	- ENPHASE - Inverters
+	- MOXION - Batteries
+#### TOPIC: PERSONALITIES - Jess, Derrick
+#### TOPIC: TEAM - Cohesion / Retention / Quality - Offsite, Bonuses, Friday talks
+
 
 
 ## .
-
-
-# STORIES:  MISC
-## MISC STORIES
-
-### TEAM GROWTH
--  [Theo](https://www.linkedin.com/in/theodore-enns-1329633a/)  - Polished Gem - Amazon SDM who led the Astro project
--  [Felipe](https://www.linkedin.com/in/theodore-enns-1329633a/)  - Student -> mgr of 13 person team -> Robotics Engineer @ Amazon
--  [Sahil](https://www.linkedin.com/in/theodore-enns-1329633a/)  -  Student to Senior Roboticist @ Agility & Osario 
-- [Rogerio Fonteles](https://www.linkedin.com/in/rogerio-fonteles-074169b0/)  Student -> Manager? -> Senior Robotics Engineer --> Head of Engineering @ Moley Robotics
-- [Georgios](https://www.linkedin.com/in/georgios-floros-76a3067/) - Fragile researcher --> Effective Manager
-
-
-- [Attilla Aros](https://www.linkedin.com/in/aaros/)  - Hacker -> Strongest Tech Lead --> Crypto Founder
-- Senad - 
-- [Krzysiek Herod](https://www.linkedin.com/in/krzysiek-herod/) - Hacker -> ML 'founder'
-- [Ben Jacobs](https://www.linkedin.com/in/bencjacobs/) - Web dev -> Multi-Team Project Management -> Eng Mgr @ RZ  &  Founded his own company while @ AF
-
-
-##### ALEX - "Stole" Alex from Apple @ 1/3 pay...  and he did not really value equity... he valued experience.
-- Time-stamping buffering multi-tiered architecture.
-- Git-driven Hardware unit-testing rig.
-- Worked hard & long hours on task he was motivated by.
-- Managed him via a dual backlog
-##### THEO - Polished Gem   << GROWING TALENT >>
-- Asberger, Physics guy hacking robots @ night, writing test scripts
-- Grew thru MGT -> Aeolus 
-- Tone Deaf, insecure, very teachable Task Manager.  (lots of post-hoc repair)
-- Now accomplished Lab 126 - SDM - lead Amazon Astro project.
-
-### CES DEMO - 13 Months from a team of one
-
-### MARTIAN ARDUINO BOT - Just do it
-- CEO came w/ a broken demo
-- pulled me into a week-long hack fest to build the demo system
-
-### LANDING TALENT - Pipeline of very best talent in the world
-- SCALED HIRING PIPE 
-- RELATION W U VIENNA / SW LAB
-- LICENCE SKELETAL TRACKING SW 
-
-### DARPA MENTORING - XXX YYY ZZZ at DARPA
-
-Today we cannot XXX, but YYY is a promising approach, and if it succeeds will mean ZZZ.
-XXX a very basic thing that cannot be done today
-YYY an approach that might work for XXX
-ZZZ some transformative benefit that having XXX will achieve
-
-_
-### --- IBM: Few shot learning ---
-
-_
-### --- IBM: Personal Wizards Algorithm - Interleaving edits and learning ---
-
-_
-### --- IBM: Email Mining - Overcoming privacy concerns ---
-
-_
-
-
-## UNUSUAL QUESTIONS
-STAR: Situation, Task -> Action -> Result
-
-### BRAINTEASERS
-1.  If you suddenly gained the ability to time travel, what’s the first thing you’d do?
-2.  If you could get rid of any U.S. state, which would you choose and why?
-3.  Which is more important: creativity or efficiency?
-4.  Is it better to be good and on time or perfect and late with your work?
-5.  How many times per day do a clock’s hands overlap?
-6.  How many stacked pennies would equal the height of the Empire State Building?
-
-### TEACH - Teach me something fascinating I don't know.
-	Patterson Commitment.  Merkel Tree.  CNN.
-### PITCH - Elevator pitch for Dream client
-
-### TOMBSTONE - What do you want on your tombstone & how does this job help
-- what are you doing now to make it happen.
-# STORIES BY YEAR
-
-## SCHOOL YEARS 
-- Tons of personal hacking projects; its all I did
-- Second place state science fair
-
-## COLLEGE YEARS
-- Math club president; Putnam Math Exams
-- Wes Ragland; attendant for mute quadriplegic; brother paid me to build specialized editor environment for him
-- Student of the year in CS and Math
-
-## GRAD YEARS
-
-## IBM RESEARCH YEARS
-### Watch ME Read - 
-- INTERPERSONAL: In classroom, developing & testing solution
-### Personal Wizards - Pitched, Won, and Co-Lead 12 PY Effort To Develop ...
-- ACCOMPLISHMENT:  Conceived -> Won -> Lead -> Technically Innovated -> Productized ... Shipped
-### ?20? Patents - Law suit against Air BnB 
-
-## DARPA YEARS
-### Andrew Ng
- 
-### Machine Reading Program
-- ACCOMPLISHMENT:  Conceived, Won, Led, Largest DARPA effort in IPTO office at the time.  Outcome IBM Watson / Jeopardy
-#### NIST TREC-TAC - International Competition
-- Creation of standards track and competition.  
-- OWNED IT:  Initiated it, Funded it, hired the teams to develop it, and was responsible for its visions and approved details of its implementation.
-### BL & TL
-
-## PAY BY GROUP YEARS
-
-## JOTTR YEARS
-
-## MARTIAN YEARS
-### PROTOTYPE - Late-night Proto Building
-- Really wanted me as a co-founder
-- Inverse Kinematics by hand on an Arduino powered bath cleaning robot
-### - HIRING - Hiring Martian Team
-### PEOPLE: Alex, Theo, ?Brandon, 
-##### ALEX - "Stole" Alex from Apple @ 1/3 pay...  and he did not really value equity... he valued experience.
-- Time-stamping buffering multi-tiered architecture.
-- Git-driven Hardware unit-testing rig.
-- Worked hard & long hours on task he was motivated by.
-- Managed him via a dual backlog
-##### THEO - Polished Gem   << GROWING TALENT >>
-- Asberger, Physics guy hacking robots @ night, writing test scripts
-- Grew thru MGT -> Aeolus 
-- Tone Deaf, insecure, very teachable Task Manager.  (lots of post-hoc repair)
-- Now accomplished Lab 126 - SDM - lead Amazon Astro project.
-## AEOLUS YEARS
-### Hiring
-#### . Hiring Pipe
-#### . Vienna Research Project
-#### Management
-#### . Swim Lane Architecture
-#### . Remote Robotics
-
-### Management
-#### . Remote Work
-- 3-shifts.  24/7 lab tech support.  Fly-in
-#### . Siloed & Interoperable work streams
-### FAILURES
-#### . "Completed" work failures
-- Frequently we were running into failures in work that was claimed to be completed & tested.
-- Obvious approach is to agree on formal tests, but way to costly for our velocity and work piece size.
-  (is appropriate for 2 month integration tests, and maybe 3 week sprint tests, but not back log items)
-- PUBLISHED 10 LEVELS of test & validation.  Documentation of validation included: the level used, an explanation, and a video.
-
---- Aeolus: 'done' things were never really ---
-- Team members said it was done; Even fantisized it was
-	but they had only tested their part
-	but only run in simulation
-	but only ran it in their context
-	but it only ran once and is not stable
-
-==> Needed to carefully construct test, that would really show it.	
-==> Cell phone video	
-_
-#### . MIT Work - Delivered Work Failures
-- Tested vision system w/ high accuracies was non-usable & needed to go back to drawing board.
-- SOLN:  Work delivered in sprint X, tested on robot in sprint X or X+1.  (delivery owned by both teams)
-#### . Integration failures
-### PEOPLE - Alexey, Georgios, ?Haddick
-
-## ANALYTICS FIRE YEARS
-### BASIL HEALTH - Basil Health Non-Payment Scam
-### INSTANT DESIGN - Cutting edge Deep Learning
-### PROJECTS
-- OASIS - soup to nuts build of a new product line
-- ARTHREX - Robotic surgical equipment communications suite
-- I-CRACKED - B2B Marketplace
-- SUN POWER - Solar Control Systems
-- ENPHASE - Inverters
-- MOXION - Batteries
-### TOPIC: PERSONALITIES - Jess, Derrick
-### TOPIC: TEAM - Cohesion / Retention / Quality - Offsite, Bonuses, Friday talks
-
 
 
 # REF

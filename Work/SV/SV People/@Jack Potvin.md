@@ -1,7 +1,7 @@
 =[[SV]]	 [Operations & Project Manager](https://www.linkedin.com/in/jackpotvin/)  [[@Sports Visio]]		
 
 # LOG
-### m2023-01-30  
+### m2023-01-30  Intro call  
 
 
 ABOUT HIM

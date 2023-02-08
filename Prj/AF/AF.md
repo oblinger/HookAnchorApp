@@ -1,5 +1,6 @@
 
-:: [[AFactive]],   [[AFarchive]],   [[AFtasks]],   [[AFwp]],   [[Codility]],   [[Outcult]]
+:: [[AFactive]],   [[AFarchive]],   [[AFtasks]],   [[AFwp]],   [[Codility]],   [[Outcult]], 
+- [[AF Instant Design Story]],  
 
 [PublicFolders](https://drive.google.com/drive/folders/1ea7ZeBwMrI_DdasGH0BqrStAYhmn70DN) 
 - [AFcompanies](https://drive.google.com/drive/folders/1cmegc2f6RGchbsynVYg6kRZL5a5vR0KP)  

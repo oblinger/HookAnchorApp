@@ -1,6 +1,6 @@
  [Apple.com](https://apple.com),  
 - 800-692-7753 Apple Repair
-- 
+
 
 ## INFO
 ~MASTER IN 1PASSWORD~
@@ -58,8 +58,17 @@ Retina15 Serial:  C02V811RHTD9
   https://checkcoverage.apple.com/
 
 
-<<<<<<< HEAD
+## .
+
+
 # LOG
+
+### 2023-02-06  Airpod max issues
+
+- 2023-02-06 - volume on the airpod did not work (but did make the clicking noises as if it were working); volume did work on phone to control headset vol
+- 2023-02-04 - Airpods grabbing phone even though they were far away and last connected to the laptop
+
+
 ### 2023-01-03  Laptop Repair
 
 AirMax
@@ -68,17 +77,7 @@ AirMax
 ### 2022-10-20  Laptop Repair
 
 OLD Case: [101837219240](https://getsupport.apple.com/GetCaseDetails?caseid=101837219240&locale=en_US) - 
-ID:  D557413411
+ID:  D557413411 (given by the agent)
 
 [https://mysupport.apple.com/repairs/details/D557413411?serialNumber=C02DP1LYMD6R&cid=acs::repair.email](https://mysupport.apple.com/repairs/details/D557413411?serialNumber=C02DP1LYMD6R&cid=acs::repair.email)
 
-=======
-
-# LOG
-
-### 2022-10-19  Repair Request
-
-
-- Case: [101837219240](https://getsupport.apple.com/GetCaseDetails?caseid=101837219240&locale=en_US)
-- D557413411  (given by the agent)
->>>>>>> 9e3829c4c7bb45f1c9565d289cd801951efa792b
