@@ -1,11 +1,7 @@
 
-:: [[Swearing]]
-
-:: [[Business]],   [[MATERIALS]],   [[ML]],   [[Para]],   [[RR]],   [[Research]]
-
 == [[TAG]] <[[Untyped]]  
 
-[[Refs]]  
+LINKS:  [[Refs]]  [[RR]]
 
 
 | Date        | File            | Notes                                                                             |

@@ -1,6 +1,10 @@
 
 :: [[Thailand]]
 
+:: [[Thailand]]
+
+:: [[Thailand]]
+
 - [[Travel]],  [Trip](Trip.md)
 
 - [ ] Passport
@@ -9,14 +13,14 @@
 
 
 
-F  10	.
+F  10	?travel?
 S  11	.
 U  12	.
 M 13	.
 T  14	All day meetings
 W 15	All Day Meetings
 R  16	.
-F  17	.
+F  17	?travel?
 
 
 

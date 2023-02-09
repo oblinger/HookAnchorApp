@@ -1,6 +1,8 @@
 
 :: [[Untitled]]
 
+:: [[MY/Plan/Untitled]]
+
 :: [[bfast]],   [[meet]],   [[standup]]
 
 :: [[MY/Plan/Untitled]],   [[work]],   [[dinner]],   [[wake]]

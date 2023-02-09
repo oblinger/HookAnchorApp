@@ -12,5 +12,5 @@ DATED, ORDERED LOGS
 - [[Prj]]			- 'prj...' prefix		Medium sized projects expected completion within a quarter.  (non-coding projects?) 
 - [[Text]]		- 't...' prefix		Textual message written and sent by me   (Meta [[TXT]]) 
 - [[Untyped]] 	- no prefix		Dated but untyped entries 
-- [[Ref]] 			- 'r...' prefix		Reference Materials/Links (maybe this should be 'e' for external authored by others)
+- [[REF]] 			- 'r...' prefix		Reference Materials/Links (maybe this should be 'e' for external authored by others)
 - [[WP]] 		- 'wp...' prefix	Work Product -- Smaller single documents I produce.  

@@ -5,6 +5,80 @@
 
 
 # LOG
+### t2023-02-08  Diligence analysis for Hubble
+
+
+Jason wrote:
+> I'm suspicious of their constant 10x claims
+
+Me too.  But I suspect they are not lying, rather those claims don't mean what one might think.  They wrote this:
+- [we provide] 20x the density of the best LiDAR, 10x the range, at 1% of the cost
+
+What they really mean is 
+   ANYONE using the relatively well understood parallax calculation algorithms can use COTs cameras to beat Lidar as Hubble is doing now.
+
+So the are not lying, but those massive gains do not represent a competitive advantage.
+
+At minute 14 in their video, they spoke about 30x better depth resolution and 10x cost reduction as compared with ANY OTHERS IN THE MARKET.
+Now that feels like hyperbole, or the way they are slicing the market they are claiming they are the ONLY folks that are providing paralax-based solutions.  In short I am extremely doubtful that they have any way to 10x / 30x gains over others that are using the same algorithms & cameras.  That would shock me, and they provide no evidence that this is true.
+
+
+Ok, so their proprietary stuff is not so proprietary, but what about the overall value of the company?
+
+
+Company Value & Investment Risk
+
+- A BET ON STEREO: See below.  Likely this technology choice will be superior in some areas, so investing now could have benefit, still at the moment it is not the favored path, and if solid state Lidar becomes a reality it might forever remain less desired over a range of industries.
+
+- PROPRIETY TECH: There is only modest hints that they might have proprietary tech.  The key measure of this would be a head to head comparison with published parallax-based depth algorithms.  this did not provide this (obvious) comparison.  (See below)
+
+- STRENGTH OF TEAM:  The founding team seems pretty strong.  They have lead multiple successful companies.  The CTO seems to have produced value within the signal processing.  (they did not note a specific strength in computer vision however, maybe they have one, I don't know.)
+	==> but overall this is a strong founding team.
+
+- ACCESS TO MARKET: If this niche does become successful across some industries (which seems likely) then players that build scaled robust solutions early on will be a valuable companies to own.  Still this all hinges on their ability to be win these markets:
+
+	- EVIDENCE OF MARKET TRACTION - If they have strong uptake of their technology, they might have a viable business even if they have no sustainably differentiated tech.  I don't see evidence that they have this, and I am not qualified to assess how strong Ron might be in getting this.
+	
+	- BUSINESS MODEL - Generally tech solutions providers are reluctant to embed a SAAS component within their stack even in the case that their product is itself a SAAS component.  If the tech is not replicable internally then they will, but there will be a barrier to making such an adoption.  This company might face such a hurdle in trying to get their service widely adopted in the face of existing depth algorithms that might simply be ported and used instead.
+		==> At 55:10 in the video they note the AWS has a vision as a service business model, similar in structure to the SAAS charging they hope to do.
+		I agree with this, but I also notice that the VAST majority of CV algorithms are not done in this way.  For the obvious reasons, companies choose to roll their own and thus don't participate in this SAAS marketplace.  So they need to argue that even though it will only be a small slice of their market, that it will still be large enough to drive a successful SAAS business providing parallax-based depth.
+
+
+
+So overall I am pessimistic regarding this business as an investment.  Still my opinion should shift notably if:
+-1- they provided compelling evidence for sustainable differentiation of their parallax matching algorithm relative to published algorithms, OR
+-2- they had compelling evidence that they had a proven method for acquiring significant customer uptake.
+
+Cheers, 
+Dan
+
+
+
+
+BETTING ON STEREO 
+- Many industries have thus far mostly bet on lidar not stereoscopic vision.  Why?
+	- I think this represents relative price insensitivity in the market, don't worry about price, just get something that works.
+	- The need to have depth accuracy at DISTANCE.  They make a bit show to talk about parallax providing depth resolution improvements relative to lidar, but the never talk about at what DISTANCE those comparative measurement accuracies are being made.  LIDAR gives similar accuracy over its entire range of measurement which quite frequently is in the tens of meters or notably further.  Stereoscopic depth by contrast provides great depth perception in the first meters but drops off as parallax angles quickly approach zero.  So for some applications, like controlling a robotic arm, this working range is just great, but when talking about sports analytics or autonomous drones one is not going to get 10x improvements in depth perception.
+       ==> you can see this reality in action.  in their video at 19:50 we see the very first center line road divider is very clear and sharp in the depth map image (probably <10 feet in front of the camera)  but even the second one is barely visible in the depth map even though its absolute depth delta to the road is the same as the first one, after that they are just a shadow of nothing in the depth map.
+       ==> looking at the motorcycle and cars park on side of the road on can see the delta, but those deltas to ground are huge.  Thus the claims of 10x better likely apply only apply in the factory floor like settings.
+	- They talk about the relative advantages of passive vs active measurements.  These claims accurate, but there are counter advantages that go in the other direction. e.g. ability to operate is most lighting conditions, including the dark.  Measuring depth on smooth surfaces w/ few optical features etc.  So the reality is these technologies are incomparable, each one as areas where it dramatically out performs the other.
+	
+- Lidar Price drops.  Many industrial depth vision applications use lidar, thus significant investment is being put into solid state lidar, if this succeeds it could eliminate the price advantage for these stereo system (which still have a notable compute cost).  Not a certainty, but it is a real risk.
+
+
+
+PROPRIETARY TECH
+- Looking at their pitch deck it does not seem they have proprietary algorithms.
+- When I look at the video of the motorcycle I am impressed at the ability to see parallax at extreme distances.  Almost seems "impossible", but I wonder if they are leveraging the continuity of the scene, e.g. smoothly receding distances from flat road and building sides?  Like wise the basketball scene is impressive too.
+
+- STILL IF they are claiming sustainable differentiation from their algorithms it will be in their match step. and if that is true, then they should show hyperplane head to head comparison to other depth data generated using published parallax algorithms using the same cameras and the same input images.
+- If that shows a strong improvement in a fair test, that is of notable value, otherwise I see little competitive advantage from their AI/algorithms.
+
+- I AM NOT COMMENTING ON HUBBLE CORTEX HERE (but that is not a near-term tech, they made few specific claims about it.)
+
+- Attached is a quick google search for the kind of published algorithms they should be comparing with.  (I have no idea if this one is better, or best in the field, but comparisons should be made against EXISTING tech that is most similar in approach, not just against lidar.)
+
+
 ### t2023-01-30  REQUESTS email
 
 

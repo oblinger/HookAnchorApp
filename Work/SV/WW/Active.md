@@ -1,7 +1,7 @@
 - [ ] [[Phone]] - passport
 - [ ] [[Trip]] - 
 - [ ] [[Bio]] - Bio to greg
-- [ ] Blog announcement entry
+- [ ] [[Blog Announce and Bio]]
 - [ ] [[WW Learning]] - 
 
 - .
@@ -12,6 +12,9 @@
 - [ ] [[WW Container Entity Permissions Data Model]] - 
 
 
+- TV on the sideline?  (Jason Feature)
+- Lo-fi estimate of time saving using AI-based annotations
+- Sprint deliverable for AI-based annotations
 
 - LATER
 

@@ -1,5 +1,30 @@
 
+## SV Releases
+- [[Confluence Webpage]] 
+- [Product Releases](https://software-engineering-team.atlassian.net/wiki/spaces/~6044e56c03ceda006979f4f5/pages/43450397/Product+Releases) 
 
+
+## Bug Tracking
+- Click button to create Jira bug ticket 
+
+
+BUG TICKET FIELDS:
+- title
+- description
+- steps needed to produce it
+- screenshots/videos
+- Times:
+	- Ticket Creation
+	- Dispatched (the right dev knows about it & is assigned to it)
+	- Working
+	- Completed
+	- QA
+	- Deployed
+
+
+
+
+## ISSUES
 #### GAME RECORDING / Uploading  (Red3 to Red5)
 	- NATIVE APP - (also instruct user to select do not disturb)
 	- UPLOAD WITH AUTO RETRY - 
@@ -31,6 +56,7 @@
 
 - ONBOARDING COMPLEXITY
 #### .
+
 
 
 
@@ -69,7 +95,6 @@ Even this expanded leveling system is really just a start.  Once we are out of f
 
 
 
-# CURRENT RED ALERTS
 
 
 

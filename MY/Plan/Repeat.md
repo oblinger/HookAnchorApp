@@ -4,7 +4,7 @@
 | WEEKLY        |                                                                                                                            |
 | ------------- | -------------------------------------------------------------------------------------------------------------------------- |
 | **HOT LISTS** | [[SimpleNote 1Pass\|SimpleNote]] [Reminders](https://www.icloud.com/#reminders) AudioMemos [[Mint 1pass\|Mint]]   # [[FileThis Shell\|File This]] |
-|               | Bk  Nails  Nose  Groc  [[Friday]]                                                                                              |
+|               | Bk  Nails  Nose  Groc  [[Friday]]    AF-email                                                                                          |
 | **HOUSE**     | Room: [My-]Desks/Bin/Shelf  House: Pass                                                                                    |
 | **TODO**      | Clean [[Quick]] & [[Todo]] lists for this week                                                                                          |
 | **PLAN**      | Week plan in Top                                                                                                           |

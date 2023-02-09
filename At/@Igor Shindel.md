@@ -25,7 +25,7 @@
   
 [[WW Jason Tasks]] - Jason shot me a 15 point email of issues that need to be addressed, and he feels I should somehow facilitate motion on them.  
   
-[[SV Deliverables]] - I have an evolving list of “deliverables” that seem indicated.  I have the luxury and curse of a pretty open-ended mandate here, so I need tell SV what I will be delivering and when.  
+[[WW Deliverables]] - I have an evolving list of “deliverables” that seem indicated.  I have the luxury and curse of a pretty open-ended mandate here, so I need tell SV what I will be delivering and when.  
 
 
 ~

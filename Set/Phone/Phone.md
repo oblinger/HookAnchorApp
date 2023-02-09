@@ -4,6 +4,16 @@ Fedex  800-220-1899   #2 new-customer  #3 general questions.
 
 - Cost-TypicalTime - Max time (assuming nothing is wrong)
 
+- SPEED:  Adult renewal; Child new passport.
+- 7days.  14day
+- COSTS: $599.
+- FASTEST CONTACT: Chat
+- INFO NEEDED: (web link)
+	- 
+- Link for child.
+
+
+https://checkout.rushmypassport.com/step-1?product=passport-renewal
 
 
 ### 2022-12-14  Fix roof fin

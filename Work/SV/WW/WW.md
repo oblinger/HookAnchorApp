@@ -1,5 +1,7 @@
 
-:: [[Active]],   [[SV Deliverables]],   [[WW Competitive Analysis]]
+:: [[2023-02 CTO Corner Blog]]
+
+:: [[Active]],   [[WW Deliverables]],   [[WW Competitive Analysis]]
 - [[WW Gdrive Webpage]],  
 
 
