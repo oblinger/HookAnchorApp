@@ -1,7 +1,6 @@
+- [ ] Bio to Greg
 - [ ] Passport  [[Phone]]  
 - [ ] Plan Argintina
-- [ ] Bio to Greg
-- [ ] Brian "SV" and "S V" both work in search
 - [ ] location of the hotel to QL.
  
 - [ ] generate "routing" for jason tasks

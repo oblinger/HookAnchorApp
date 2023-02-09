@@ -1,3 +1,4 @@
+- [x] Brian "SV" and "S V" both work in search
 - [x] look at Mike's Assessment roadmap
 - [x] talk with Jasu, Mark,
 - [x] share notes
