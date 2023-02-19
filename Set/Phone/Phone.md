@@ -1,3 +1,29 @@
+### 2023-02-11  Instapot
+
+C8 = wrong pan
+
+[https://instantpot.com/troubleshooting/](https://instantpot.com/troubleshooting/)
+
+> If you are unable to resolve the problem and/or if it persists please contact the Customer Care team for assistance:
+> 
+> Open a support ticket: [https://www.InstantPot.com/support/](https://www.instantpot.com/support/)
+> 
+> Email: [support@InstantPot.com](mailto:support@InstantPot.com)
+> 
+> Call: 1.800.828.7280 x2
+
+### 2023-02-10  Pay for Ambulance
+
+833-532-2237  
+
+$258.90
+
+
+
+### 2023-02-09  Cancel WSJ Wine.com
+
+877-975-9463  
+
 ### 2023-02-06  Passport Renewal
 
 Fedex  800-220-1899   #2 new-customer  #3 general questions.
@@ -26,7 +52,7 @@ Avenue Body 415-864-4417
 
 - Solar: 415-412-7021.   Sunternal.  Can    $23,900 / 4.3Kw  = SunRun.  18 years.  3000system.
 
-### 2022-12-03  thumb tack TV install
+### 2022-12-03  Thumb Tack TV install
 
 I have purchased a mantle-mount system for my 42" LCD TV.
 I want it installed over my fireplace with only a power cord connection needed.  The installation is very generic.

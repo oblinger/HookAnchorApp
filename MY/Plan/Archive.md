@@ -1,3 +1,8 @@
+- [ ] Venmo @BCMS-big-city
+- [x] Ambulance [[Phone]]
+- [x] Passport  [[Phone]]
+- [x] Bio to Greg
+- [x] pay ambulance
 - [x] Brian "SV" and "S V" both work in search
 - [x] look at Mike's Assessment roadmap
 - [x] talk with Jasu, Mark,

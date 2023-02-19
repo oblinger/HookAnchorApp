@@ -4,6 +4,10 @@
 
 # WW JASON TASKS
 
+## JASON
+### 2023-02-13  Systematic QA processing
+- We should be automating QA 
+- Testing matrix
 
 ## JASON Tracking
 
@@ -13,14 +17,26 @@ Right now new customers are teams, which are linked to programs and programs hav
 ### J1.2 - Scott byers
 Scott Byers has designed our backend systems and while he's a fast coder who can right code well and find bugs quickly, he's not in touch with users, doesn't ask for help/input, and usually makes incorrect design decisions from my experience. I've told Brian that Scott should NOT be making any design decisions without sign off from me or Mark because his approaches usually create more problems than they solve. Brian has not managed him strongly enough and it has led to numerous issues. (Database structure, authentication issues, and many others) It's annoying because he literally taught classes on programming and I've talked to people who took them, as well as a former boss and everyone ranted about how smart/good he was. 
 
+==> Will eval [[@Pablo Calofatti]] 	 perhaps another hire?
+
+
 ### J1.3 - Android BG uploader
 We need to get the background uploader for Android in production (should be happening imminently) and iOS background uploader developed (not even started yet!) Background uploading is a key feature for customers that experience difficulty waiting for the app and interrupting it as they use the phone.
+
+==> with our flutter strategy we should not hire more native OS.
+     but maybe we consider strong consulting??
+ 
 
 ### J1.4 - Support 3rd party video sources
 We are going to need to support third party video sources. At a minimum a hand picked wall mounted camera that streams to our systems from a static vantage point... but possibly arbitrary platforms too. While we don't NEED to support arbitrary third party video sources, it would be amazing if we could as we have a universe of existing customers that have existing video they could upload and we could analyze. But we definitely need to move beyond just mobile phones on a tripod to something permanently installed in many venues and nobody has even started on this (other than me doing some research on camera options and Brian looking at ones that support native streaming to AWS)
 
+==> 
+
 ### J1.5 - Improve our QA
 We need to improve our QA processes. We still have WAY too many bugs slipping through into production. It appears none of the engineers actually use the product, which I get as it's a lot of moving parts and most don't apply to them. But unfortunately those pieces end up slipping through into production and create issues that we keep discovering WAY too late
+
+==> Many fixes here!
+
 
 ### J1.6 - Social video sharing
 It's too difficult to share videos onto social media. I've been told that's going to be fixed but no idea when that's happening and I strongly believe that is a critical component to creating some viral growth engines as customers share their clips with others.

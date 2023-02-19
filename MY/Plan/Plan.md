@@ -3,6 +3,8 @@
 
 :: [[MY/Plan/Untitled]]
 
+:: [[MY/Plan/Untitled]]
+
 :: [[bfast]],   [[meet]],   [[standup]]
 
 :: [[MY/Plan/Untitled]],   [[work]],   [[dinner]],   [[wake]]
@@ -21,18 +23,18 @@
 [[OBS.]] 
   
 #### Short Term Tactical Lists
-- [[Active]]		-  [[Wings]], 
+- [[active]]		-  [[wings]], 
 - [[Current]]		-  My 'current' weekly plan
 - Daily		- 
 - [[Fried]]		-  Easy, Fun tasks to do when taking a break from highest value work.   [[Fried Later]], 
-- [[Quick]]		- 
-- [[Todo]]		-  
+- [[quick]]		- 
+- [[todo]]		-  
 
 
 #### Longer Term Specialty List
 - [[Actualize]]	-  
 - [[Dropped]]	-  
-- [[Full]]			-  
+- [[full]]			-  
 - [[Fun]]			-  
 - [[Friday]]		-  Planning for date nights
 - [[Hack]]		-  Hacking/Coding activities
@@ -45,14 +47,14 @@
 - [[Repeat]]		-  
 - [[Scratch Note]]		-  
 - [[MY/Plan/Social]]		-  
-- [[Q2]]			- Second 
+- [[q2]]			- Second 
 - [[Mission]]		- 
 
 #### Offload Lists
 - [[Archive]]		-  Place to retire planning items.   [[Arc ALL]],  [[MY/Plan/Archive]], 
-- [[Later]]		-  Tasks that have been pushed to 'later'     
+- [[later]]		-  Tasks that have been pushed to 'later'     
 - [[Quarterly]]	-  
-- [[External]]		-  
+- [[external]]		-  
 
 
 #### Comms Pages
@@ -69,8 +71,8 @@
 - [[Ping]] - 
 
 
-PREFIX NAMED:   [[Active]]   B   [[COMS]]   DAILY   [[Fried]]   E   F   G   [[Hack]]   I   J   K   L   M   N   O   [[Prime]]   [[Quick]]  [[Repeat]]   [[Self]]   [[Todo]]   U   V   [[External]]   X   Y   Z
-CHANGE: [[Wings]], [[Current]], 
+PREFIX NAMED:   [[active]]   B   [[COMS]]   DAILY   [[Fried]]   E   F   G   [[Hack]]   I   J   K   L   M   N   O   [[prime]]   [[quick]]  [[Repeat]]   [[Self]]   [[todo]]   U   V   [[external]]   X   Y   Z
+CHANGE: [[wings]], [[Current]], 
 
 
 
@@ -78,8 +80,8 @@ CHANGE: [[Wings]], [[Current]],
   [COMS](COMS.md)
 - 
 
-  [Quick](Quick.md)
-  [Quarterly](Quarterly.md)  [Archive](Archive.md)  [Work](Work/Work.md)  [Full](Full.md)  [Self](Self.md)  [Later](Later.md)  [Repeat](Repeat.md)  [Ping](Ping.md)  [Q2](Q2.md)  [Todo](Todo.md)  [Habit](Habit.md)  [Social](MY/Plan/Social.md)  [Scratch Note](Scratch%20Note.md)  [Watching](Watching.md)  [Current](Current.md)  [Links](Links.md)  [Hack](Hack.md)
+  [quick](quick.md)
+  [Quarterly](Quarterly.md)  [Archive](Archive.md)  [Work](Work/Work.md)  [full](full.md)  [Self](Self.md)  [later](later.md)  [Repeat](Repeat.md)  [Ping](Ping.md)  [q2](q2.md)  [todo](todo.md)  [Habit](Habit.md)  [Social](MY/Plan/Social.md)  [Scratch Note](Scratch%20Note.md)  [Watching](Watching.md)  [Current](Current.md)  [Links](Links.md)  [Hack](Hack.md)
   [Archive](__Archive__.md)
   [Work](__Work__.md)
   [Todo](__Todo__.md)  [Repeat](__Repeat__.md)  [Calls](AT/__Calls__.md)  [Later](__Later__.md)  [Watching](__Watching__.md)  [Habits](__Habits__.md)  [Current](__Current__.md)  [Links](__Links__.md)  [Scratch](Scratch/__Scratch__.md)  [Full](__Full__.md)  [Quarterly](__Quarterly__.md)  [Self](__Self__.md)  [Q2](__Q2__.md)  [Hack](__Hack__.md)  [Ping](__Ping__.md)  [Social](__Social__.md)  [Fried](Fried.md)
@@ -87,10 +89,10 @@ CHANGE: [[Wings]], [[Current]],
 
 - 
 - 
-  [Wings](Wings.md)
-[[Wings]]  [Threads](Threads.md)
+  [wings](wings.md)
+[[wings]]  [Threads](Threads.md)
   [Coursra](Coursra.md)
-  [External](External.md)
+  [external](external.md)
 
   [Fun](Fun.md)
- [[Quarterly]],  [Quarterly](Quarterly.md),   [Planning](Planning.md),   [Archive](Archive.md),   [Work](Work/Work.md),   [Full](Full.md),   [Self](Self.md),   [Later](Later.md),   [Repeat](Repeat.md),   [Calls](Calls.md),   [Ping](Ping.md),   [Q2](Q2.md),   [Fried](Fried.md),   [Todo](Todo.md),   [Habit](Habit.md),   [Social](MY/Plan/Social.md),   [Scratch Note](Scratch%20Note.md),   [COMS](COMS.md),   [Prime](Prime.md),   [Watching](Watching.md),   [Current](Current.md),   [Links](Links.md),   [Quick](Quick.md),   [Hack](Hack.md),   [Active](Active.md)
+ [[Quarterly]],  [Quarterly](Quarterly.md),   [Planning](Planning.md),   [Archive](Archive.md),   [Work](Work/Work.md),   [full](full.md),   [Self](Self.md),   [later](later.md),   [Repeat](Repeat.md),   [Calls](Calls.md),   [Ping](Ping.md),   [q2](q2.md),   [Fried](Fried.md),   [todo](todo.md),   [Habit](Habit.md),   [Social](MY/Plan/Social.md),   [Scratch Note](Scratch%20Note.md),   [COMS](COMS.md),   [prime](prime.md),   [Watching](Watching.md),   [Current](Current.md),   [Links](Links.md),   [quick](quick.md),   [Hack](Hack.md),   [active](active.md)

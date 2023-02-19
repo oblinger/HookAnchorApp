@@ -1,7 +1,19 @@
 
 
 # TOPICS
-## PROFESSIONAL DEVELOPMENT
+## YASHIN TYPE JOBS
+
+### TASK ORIENTED
+- A job where one is responding to explicitly provided "tasks"
+#### Quick
+- Task turn around is quick, both because it is more fun, and because feedback comes quickly
+#### Concrete
+- Tasks are explicitly provided, well defined, and clear, with folk ready at hand to clarify 
+#### Moderate Difficulty
+- Tasks should require some brain power and learning, but still not be so hard they become (1) slow, or (2) generate much uncertainty about how to proceed or uncertainty that you WILL succeed.
+- 
+
+## PROFESSIONAL DEVELOPMENT AREAS
 
 ### WISDOM /  PERCEPTION / PERSPECTIVE OF OTHERS
 #### Nobody Told Me That
@@ -15,6 +27,99 @@
 
 
 # LOG
+
+### 2023-02-14 Looking for VALID TARGETS
+
+Yashin:
+
+I read your note to me.  I feel it represents very solid progress, even if that progress is to learn a negative, that you are not really able to DS jobs.  If it is time now to do a bootcamp I am not sure I have good advice on which to pick... I don't think you really have the plan in place so it may or may not be helpful.  Maybe you can choose one that provide greatest range of benefit?  really not sure.  Qingling does data analytics so perhaps talking with her about data analytics in industry would be a good idea.  I think she would have a sense of your chances.  let me know if you want me to set that up.
+
+I think data engineer is an interesting direction.  I am worried that it COULD be way more technical in the software coding direction, and that becomes a problem, not sure.  But I bet it IS better pay, and I bet it would fit with you better, since it is very very concrete.  It requires problem solving, but it does not require much interpretation, it is about getting the data into a form you can use for some very well defined purpose.  So you could learn it, and then do it well.
+
+I WOULD just worry about choosing a path that you don't really like.  is ok if it is not your number one choice, but you need to basically like it.
+So figure that out.  (talk w/ data engineer about what they do all day, and about how much training you would need in order to get hired.)
+
+~~
+
+BIG PICTURE
+
+But my big picture thought is that you should be looking for "Valid Targets" for job areas where you have some evidence that with a reasonable amount of training you could land a job within that area.  Right now you don't have a valid target, so its hard to decide what to do.
+
+I think finding a Valid Target will be hard, and it will cause you to struggle and switch directions as you give up on and home in on targets that are more and more validated.  I think you need to be prepared for this high level of uncertainty and apparent lack of progress.  This is not a kind of task that fits well with you, still I think you can do it, and more to the point, you kinda HAVE to do it.  :-)  I think a good measure of progress is number of conversations you are having in potentially useful areas.  I would not MAXIMIZE that metric since it would cause to you have lots of conversations down paths you already know don't work.  But just ensuring that you are dreaming up possibilities and then actually talking to folks is a valuable process....  (and it will be hard, so give yourself a break for being confused in it.)
+
+Below is a template for a "Valid Target" my idea is that you try to actually write them out as you are exploring them.  If an area seems huge and undirected, then just make a selection and see what you find down that sub path.  If you start getting strong signals that an area is not going to work, you can move on to others, but be careful to avoid moving on too quickly.  NOT knowing that an area WILL work is not are good reason to stop looking.  Rather KNOWING that is likely WONT work is the best reason to drop an area.  
+
+
+
+For each "Valid Target" areas that you consider, I think you should try to fill out the information in order, and if you start running into a brick wall where it looks like a particular target is going to fail, then ask yourself if there is an edit to the target that might fix it?  e.g. what if you do the same thing, but in a different industry where the jobs are more plentiful, or the requirements for degrees is less.... e.g. try to make an edit that fixes whatever is failing.
+
+For trying to think of NEW areas, I would start with a SINGLE key insight about yourself about the kind of job that fits you, and then think of jobs that need that one single thing.  e. g.  "I like to do online data gather and build it into structured form like a spreadsheet"   and then think about jobs that might have the single thing just as a starting point.  (e. g. market research in retail, where you gather info on product markets.  just to make one up.)  Don't be bothered if you are making random choices into a very large space.  that is ok.  talking with one or two people will give you a quick idea if the whole space is terrible, or possible, AND those people will probably tell you of related industries etc. so you can zoom in.  The key it to START with ONE thing that you know you like, and/or ONE thing that you know you are good at, and like at least ok.
+
+
+Try filling these in, in order, for those areas that you are starting to explore:
+
+
+NICKNAME:  this is just a handle to let us refer to this particular target.
+IDEA:  This is the initial idea/reason for looking in this direction
+JOB TITLES:  the specific job titles you might get in this area
+INDUSTRY TYPE: broad industry category.  (e. g. B2C products)
+INDUSTRY SUBTYPE: Try to zoom into areas (even randomly, where jobs that MIGHT work exist, you will validate and refine/pivot this)
+INDUSTRY EXAMPLES:  Actual companies 3-10.  Pick at random, pick ones whose mission you like, pick ones with jobs available now
+JOB POSTINGS:  3-10 Job postings.  (include link to web posting)
+JOB AVAILABILITY: Qualitative sense if there are few or many jobs in this area
+PEOPLE: 3-10 people working in, or hiring in the area.  (provide their linked in)
+DISCUSSION RESULTS:  Summarize take aways from discussions.
+CONCLUSIONS: List your findings here.  (just like you did in the doc you sent me.)
+
+
+Here is a made up example just to give the idea:
+
+NICKNAME:  RPA - Retail Data Analyst
+IDEA:  Build on my love of data gathering, low-level data insights in industries with lots of jobs that would only require modest training and don't require specialized degrees.
+JOB TITLE(S):  Data Analyst
+INDUSTRY TYPE:  B2C product or services companies.  Bonus if these industries rely on customer surveys or other qualitative data.
+INDUSTRY SUBTYPE(S): Healthcare products, Healthcare services, Companies that provide products or tutoring for educationally at risk children.
+    Companies that provide health services that are somehow
+INDUSTRY EXAMPLES: DuoLingo, https://www.tools4reading.com/, ...
+JOB AVAILABILITY: Strong
+JOB POSTING: ...
+PEOPLE: ...
+DISCUSSION RESULTS:
+- Kim @ Tools2Read said:  gov background is helpful.  skills are already close, need SQL.  Need closer job experience. get lucky or do 3 month internship.
+- Jeff @ ... said: ...
+CONCLUSION:
+- Breaking into the industry is going to require luck or some kind of very junior internship / position.  
+- Requires focused training on data processing steps.  will succeed on this
+- Job is a good fit as long as I feel good about the product provided.
+
+
+I am hopeful that as you run into roadblocks in filling out a valid target you will be able to "edit" industry type, job title etc. to find an area that fits.
+I am hopeful that starting from one core idea about the job fit will quickly throw out many many job matches and that a few random conversations will allow you get a sense of fit for the whole huge space, and provide pointers to help zoom in.
+
+tell me what you think
+
+--dan
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ### n2022-10-15  Yashin Self Summary after loosing her job
 
 One thing that has resulted from those process is that, bc M was committed to knowing whether I could be a fit, she's given me discuss things to think about. She *was* my coach in terms of diagnosing what I have a tendency to do that was not helpful in this context. Hope you don't mind my writing this out (I should be writing in a journal but feel more compelled to write off there is an audience): I have a tendency to complicate things. Consultants are supposed to simplify things for their clients. So not only is this tendency something that works against what my time should be, but I shoot myself in the foot. That's what certainly contributed to my assignments taking longer than the time alloted. I mean, certainly they are underbudgeted, but in this context, a tendency to not see things simply (I think, focusing on the end goal and

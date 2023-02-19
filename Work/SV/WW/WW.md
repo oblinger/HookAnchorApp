@@ -1,29 +1,30 @@
 
-:: [[2023-02 CTO Corner Blog]]
-
-:: [[Active]],   [[WW Deliverables]],   [[WW Competitive Analysis]]
-- [[WW Gdrive Webpage]],  
 
 
-
-- [[WW Jason Tasks]] - 
-
-
-
-TACTICAL VELOCITY
-- [[WW Upload]] - 
-
-STRATEGIC DELIVERABLES
-- [[WW Container Entity Permissions Data Model]] - 
-- [[WW Headroom Analysis]] - 
-- [[WW Remote Work Guidelines]] -
-- [[WW March Product]]
-
-STRATEGIC 
+### Now
+- [[WW Bridge Round]] - 
+- [[WW Velocity]] - 
+- [[WW Info]] 
 - [[WW Learning]] - 
 
+- [[WW Remote Work Guidelines]] - 
 
-APPROACH
-- [[WW Velocity]] - 
+- [[WW Roadmap]] - 
+- [[WW Container Entity Permissions Data Model]] - 
+- [[WW Deliverables]], 
+- [[WW Jason Tasks]] -
+
+
+### Later
+- [[WW Headroom Analysis]] - 
+- [[WW Competitive Analysis]], 
+- [[2023-02 CTO Corner Blog]] - 
+#### hold
+- [[WW Meta Thinking]] - 
+
+
+### __
+- [[2023-02-00 Upload UX]] - 
 - [[WW Strategic]] - 
-- [[WW Meta]] - 
+
+

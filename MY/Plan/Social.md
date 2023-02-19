@@ -1,4 +1,4 @@
-=[[TASK]]  > [[Full]] > [[Calls]]
+=[[TASK]]  > [[full]] > [[Calls]]
 
 
 - Kartik

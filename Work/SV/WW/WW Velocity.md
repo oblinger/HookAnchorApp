@@ -1,7 +1,94 @@
+- [Prominent Bugs](https://docs.google.com/spreadsheets/d/1yRZe4Km9APGhBWO3Z6tHrn9RfuQDv5M5zZ9SIxuULDw/edit#gid=0) - 
+
+Markus Fillman - 
+- wants to use
+- has a semi-pro league 
+- his guys are building resume 
+- is doing his practice games now until May-17
+
+Oxford women's league - 
+High School teams
+Men league games, Near where Mark.  
+
+
+As product
+
+~
+What is Issue
+User account
+
+~
+
+
+~
+- 1-camera pivo record
+- Wireless
+- Stats back to my website: Exportable as CSV.
+
+~ 
+- Can't see game stats until publish
+
+~
+- Record first, add 
+~
+- On/off to record games
+~
+- Onboarding flow (record first)
+- Subscription swt
+
+## Boards
+- Deprecate: tickets, epics, boards (delete)
+- Moving to three boards:  AI, Mobile, Web
+- Unified 
+
+
+Web Team
+Mobile Team
+AI Team - 
+
+Leos Idea
+
+TO DO: (no hay mucho mas estatus) 
+IN PROGRESS (In Progress, In Review, Blocked) 
+DEV (si esta aca, ese feature/bug esta deployado en 
+DEV, , quizas un status de Approved o algo asi, que se testo y esta bien para pasar a QA) 
+QA (si esta aca, ese feature/bug esta deployado en 
+QA, quizas un status de Approved o algo asi, que se testo y esta bien para pasar a STAGE) 
+STAGE (si esta aca, ese feature/bug esta deployado en 
+STAGE, quizas un status de Approved o algo asi, que se testo y esta bien para pasar
+
+
+DO: (not much more status) 
+IN PROGRESS (In Progress, Under Review, Blocked) 
+IN DEV (if it's here, that feature/bug is implemented in DEV, maybe a status of Approved or something, which has been tested and is ok to move to QA) 
+IN QA (if it's here, that feature/bug is implemented in QA, maybe a status of Approved or something, which has been tested and is ok to move to STAGE) 
+IN STAGE (if it's here, that feature/bug is implemented in STAGE, maybe a status of Approved or something, which has been tested and
+
+
+
+TODO 				- Upcoming work
+IN PROGRESS		- Currently work on this task
+COMPLETED		-  x
+
+
+- 
+
+
+
+
+
+
+
+
+
+
 
 ## SV Releases
 - [[Confluence Webpage]] 
 - [Product Releases](https://software-engineering-team.atlassian.net/wiki/spaces/~6044e56c03ceda006979f4f5/pages/43450397/Product+Releases) 
+
+- [R1](https://software-engineering-team.atlassian.net/wiki/spaces/~6044e56c03ceda006979f4f5/pages/edit-v2/43155458?draftShareId=47a8e678-1948-4073-872c-0403e58682a8) - 
+
 
 
 ## Bug Tracking

@@ -5,12 +5,11 @@
 
 ### m2023-02-06  Intro meeting
 
-#todo
-- [ ] [[WW Velocity]] - Figure out what needs to be done tactically - then drive its execution relentlessly.
-- [ ] Attend standups 
-- [ ] Get folks excited about shipping on time.
-- [ ] PILLARS:  simple, simple, deliver,   ACTIONS: Give energy, Simple pillars, Delegates responsibility, Deliver today.
-- [ ] Jason standup everyday.  Mind meld:  "This is my strategy, what do you think Jason?"
+- [[WW Velocity]] - Figure out what needs to be done tactically - then drive its execution relentlessly.
+- Attend standups 
+- Get folks excited about shipping on time.
+- PILLARS:  simple, simple, deliver,   ACTIONS: Give energy, Simple pillars, Delegates responsibility, Deliver today.
+- Jason standup everyday.  Mind meld:  "This is my strategy, what do you think Jason?"
 
 
 **[[SV90|90-DAY PLAN]]** - I have the beginnings of a 90-day plan.  I would love to get your thinking about my priorities and approach.  

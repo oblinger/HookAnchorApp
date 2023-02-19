@@ -6,6 +6,23 @@
 
 | Date       | File                    | Notes                                                                                     |
 | ---------- | ----------------------- | ----------------------------------------------------------------------------------------- |
+| 2023-02-20 | [[2023-W07]]                | W08                                                                                       |
+| 2023-02-17 | [[@John Murphy]]            | Mgt trip meeting                                                                          |
+| 2023-02-17 | [[Trip]]                    | Mike                                                                                      |
+| 2023-02-17 | [[@Jason Syversen]]         | Mgt Trip                                                                                  |
+| 2023-02-17 | [[@Mike Seibert]]           | AI Elements                                                                               |
+| 2023-02-16 | [[WW Deliverables]]         | Jason conversation                                                                        |
+| 2023-02-15 | [[Trip]]                    | Comments with the Team                                                                    |
+| 2023-02-14 | [[@Yashin Lin]]             | Looking for VALID TARGETS                                                                 |
+| 2023-02-13 | [[Trip]]                    | Manager's Monthly Meeting                                                                 |
+| 2023-02-13 | [[2023-W07]]                | W07                                                                                       |
+| 2023-02-13 | [[WW Jason Tasks]]          | Systematic QA processing                                                                  |
+| 2023-02-11 | [[Phone]]                   | Instapot                                                                                  |
+| 2023-02-10 | [[@Tomas Tisocco]]          | Intro                                                                                     |
+| 2023-02-10 | [[Phone]]                   | Pay for Ambulance                                                                         |
+| 2023-02-09 | [[Phone]]                   | Cancel WSJ Wine.com                                                                       |
+| 2023-02-09 | [[@James Sullivan III]]     | Intro                                                                                     |
+| 2023-02-09 | [[@Leonardo Almiron]]       | Intro                                                                                     |
 | 2023-02-08 | [[SV90]]                    | Unsorted Chunch                                                                           |
 | 2023-02-07 | [[@Jasu Victorio]]          | march prod                                                                                |
 | 2023-02-07 | [[@Scott Byers]]            |                                                                                           |
@@ -37,7 +54,7 @@
 | 2022-12-11 | [[OBS Task]]                | Daily                                                                                     |
 | 2022-12-08 | [[Phone]]                   | Solar Installer                                                                           |
 | 2022-12-07 | [[resLI]]                   | Framing Self                                                                              |
-| 2022-12-03 | [[Phone]]                   | thumb tack TV install                                                                     |
+| 2022-12-03 | [[Phone]]                   | Thumb Tack TV install                                                                     |
 | 2022-12-01 | [[Enxt]]                    | Alta Vista                                                                                |
 | 2022-11-30 | [[2022-W46]]                | short week (cyber monday)                                                                 |
 | 2022-11-29 | [[Phone]]                   | [[@Audi]]                                                                                 |
@@ -453,6 +470,7 @@
 | 2014-00-00 | [[FIN]]                     | Garage Spot                                                                               |
 | 2013-03-03 | [[ReBuy]]                   | Standing mat                                                                              |
 | 2013-02-00 | [[Archeology]]              | OKC                                                                                       |
+| 2013-01-30 | [[Jnl]]                     | Quit working at paybygroup???                                                             |
 | 2013-00-00 | [[ReBuy]]                   | Scotch                                                                                    |
 | 2013-00-00 | [[FIN]]                     | Rent from Nick Cicero                                                                     |
 | 2012-09-19 | [[Meta Org (old page)]]     | Highlevel organization of Roles/Goals                                                     |

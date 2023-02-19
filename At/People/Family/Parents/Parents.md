@@ -47,6 +47,13 @@ Dan Bring:  Starbucks, Brol, Lentils
 
 USPS will not deliver to 2016 address.  must be the pobox address.
 
+SMALL PACKAGES:
+-  
+- 
+- Dan Oblinger  2016 Minnesota Ave.   bradenton, FL 34281. 5707
+
+
+
 
 # KY HOME
 

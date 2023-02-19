@@ -5,6 +5,19 @@
 
 
 # LOG
+### 2023-02-17  Mgt Trip
+
+Pitch key points for this round:
+
+-   Product market fit
+-   AI speed up-> gross margin improvement
+-   Bugs removed, product becoming robust and easy to use
+-   Single AI camera product created
+-   CTO and patent strategy
+-   Plan to do AR, analytics, replays
+
+
+
 ### t2023-02-08  Diligence analysis for Hubble
 
 

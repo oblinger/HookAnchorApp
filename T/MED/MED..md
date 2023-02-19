@@ -9,7 +9,7 @@
 - [ ] DAILY: Walking or Peleton w/ weights
 - [ ] PENIS - 
 - [ ] LAB-CORP - 2622 Ocean Ave 416-469-9710  (Fasted in morning before 10am)
-- [ ] [[MED|MED]] Nutritionist - Decide who to work with #todo
+- [ ] [[MED|MED]] Nutritionist - Decide who to work with 
 - [ ] PULMONOLOGIST - Charles McDonald  2100 Webster Street  415-749-5779 ^1
 - [ ] Homeocyctein; apo-e
 - [ ] [Thyroid](https://allyoucaneat.org.uk/wp/weight-tired-underactive-thyroid-tests/) 

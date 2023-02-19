@@ -6,6 +6,6 @@
 
 - [ ] doggy poop
 - [ ] get the dogs poop
-[[Full]] 
+[[full]] 
 
 - [ ] [[self]]:  Hire health coach

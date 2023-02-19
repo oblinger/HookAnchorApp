@@ -1,4 +1,4 @@
-
+in scratchFins
 
 
 enternprenure, investors, reseracher/innnovator
@@ -18,3 +18,4 @@ I have a PhD in Machine Learning from UIUC and have used that background as an i
 
 
 
+	

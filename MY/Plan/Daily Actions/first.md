@@ -1,1 +1,1 @@
-(see [[Todo]] and [[Plan]])
+(see [[todo]] and [[Plan]])

@@ -1,3 +1,5 @@
+- [ ] add ron hall's new address to cards  3743 Oak meadow dr 
+Colorado Springs 80920
 - [ ] dongle with usbc ports
 - [ ] buy red envelopes; water filter
 - [ ] OBS - system keeps prepending topics to each page

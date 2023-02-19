@@ -37,6 +37,18 @@ Monthly costs at margin for various parts of our
 
 
 ## = KITCHEN =
+### - SMALL APPLIANCES
+#### Instant Pot Duo Plus
+
+INSTANT POT DUO EVO PLUS REVIEW
+
+##### BURN MESSAGES
+https://www.paintthekitchenred.com/instant-pot-burn-message/
+https://www.paintthekitchenred.com/16-reasons-why-instant-pot-not-sealing/
+
+C8 = wrong pot in unit (usually means heating plate it getting too hot too quick)
+
+
 ### - Oven
 LG SIGNATURE 7.3CuFt Dual Fuel Slide-in Gas Convection Range with Infrared Heating in Textured Steel 
 Item # ‌1095743‌
@@ -77,6 +89,7 @@ Model:  LSXC22396S  (I think).   or home depot: Internet #301459556  Model # LSX
 The filter warning light can be reset by pressing, and holding, the LIGHT/FILTER button for at least 3 seconds.
 
 ### - Smaller Freezer - Frigidaire 5.8 cu. ft. Upright Freezer
+
 
 ## = BATH 
 ### - Toilet

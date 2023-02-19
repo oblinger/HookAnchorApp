@@ -8,9 +8,49 @@
 
 LINKS:  [[Babysitting]], [[Enxt]], 
 
+## HOW TO
+### YOUTUBE KIDS SHARING
+- Copy URLs from WAITING into Eli (here) and into an email to oblinger@gmail
+- Open mail on ipad and copy URLS into a new apple Notes note
+- Click "done" and urls will be active
+- Go to each video, click "Share" youtube kids "share"  then back arrow
+
+ph
 ## Truck Videos
 
+2023-02-09
+- [ ] https://youtu.be/oGpqZpm0k_U
+- [ ] https://youtu.be/e6mCsVhMMdI
+- [ ] https://youtu.be/8tLZo1qP4uQ
+- [ ] https://youtu.be/A-TSULWWzoE
+- [ ] https://youtu.be/KPyiDHdfOWo
+- [ ] https://youtu.be/jo7eS_M_YGE
+- [ ] https://youtu.be/cYh3ciokvV0
+- [ ] https://youtu.be/yUWSQrUe59k
+- [ ] https://youtu.be/Fln95LIoBpU
+- [ ] https://youtu.be/ff4o3BpaYtU
+- [ ] https://youtu.be/iWaLLovhYD4
+- [ ] https://youtu.be/SCaotGvYQEo
+- [ ] https://youtu.be/fgOLRQjvdW0
+- [ ] https://youtu.be/9OC6vFw_2Jw
+- [ ] https://youtu.be/2lDcyfgIJLs
+- [ ] https://youtu.be/y5YqWO8doPM
+- [ ] https://youtu.be/hGpItpIlLkc
+- [ ] https://youtu.be/f-zpmrN7tnU
+- [ ] https://youtu.be/RWA9yEOCNVU
+- [ ] https://youtube.com/watch?v=YHn1CTxag00&feature=share
+- [ ] https://youtu.be/lhrOyiHzA-U
+- [ ] https://youtu.be/KoaOw-tn_Mg
+- [ ]  https://youtu.be/4ENclDR_GLE
+- [ ] https://youtu.be/oBIHgkmMbes
+- [ ] https://youtu.be/3q8ylgL0Fy0
+- [ ] https://youtu.be/ZnZXFgayMkc
+- [ ] https://youtu.be/V_91IvxsqVY
+- [ ] https://youtu.be/3OU1GA475WA
+- [ ] - [ ] https://youtu.be/3sb-0xQH6SY
 
+
+2023-01
 - [ ] Top 10 Crane Accident & Heavy Lifting Equipments Fails Caught On Camera  https://youtu.be/YumRTZkleyw 
 - [ ] 75 000 h.p. The Biggest Nuclear Icebreaker     https://youtu.be/bKaVhXn49xY
 - [ ] Top 10 Biggest Bulldozers Used In The World   https://youtu.be/hIFtJN3sEXE 

@@ -21,3 +21,27 @@
 - So the only path is to work smarter
 	- You as the IC are the key to all of this....  You are sitting alone in your home office or at the coffeeshop.
 		- in the first analysis, you are the only one who knows that high efficiency is not happening right now in this hour.  only you.
+
+
+
+
+
+## SLIDES
+
+### SV Report Card
+- Heart, 
+- Mind
+- Skill B-
+- Output C-
+
+
+### Remote Work Reality
+- Alone in home office, with #@$%&@ still not working!
+
+### Every hour counts!!!
+
+
+### Measuring Excellence
+- Your regular output.  (difficult to measure size & support)
+- You team foo.  *Concrete* ways, big and small 
+- Ultimate total contribution.
