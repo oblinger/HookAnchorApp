@@ -7,12 +7,16 @@
 | Date       | File                    | Notes                                                                                     |
 | ---------- | ----------------------- | ----------------------------------------------------------------------------------------- |
 | 2023-02-20 | [[2023-W07]]                | W08                                                                                       |
+| 2023-02-19 | [[@Mark Lichty]]            | At First Mgt Meeting                                                                      |
+| 2023-02-19 | [[@Mark Lichty]]            | Intro discussion                                                                          |
+| 2023-02-19 | [[@Yashin Lin]]             | discussion                                                                                |
+| 2023-02-19 | [[SV Mgt]]                  | Feb Management Meeting                                                                    |
 | 2023-02-17 | [[@John Murphy]]            | Mgt trip meeting                                                                          |
 | 2023-02-17 | [[Trip]]                    | Mike                                                                                      |
 | 2023-02-17 | [[@Jason Syversen]]         | Mgt Trip                                                                                  |
 | 2023-02-17 | [[@Mike Seibert]]           | AI Elements                                                                               |
 | 2023-02-16 | [[WW Deliverables]]         | Jason conversation                                                                        |
-| 2023-02-15 | [[Trip]]                    | Comments with the Team                                                                    |
+| 2023-02-15 | [[SV Mgt]]                  | Comments with the Team                                                                    |
 | 2023-02-14 | [[@Yashin Lin]]             | Looking for VALID TARGETS                                                                 |
 | 2023-02-13 | [[Trip]]                    | Manager's Monthly Meeting                                                                 |
 | 2023-02-13 | [[2023-W07]]                | W07                                                                                       |

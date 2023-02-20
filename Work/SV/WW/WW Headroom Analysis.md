@@ -1,4 +1,20 @@
 
+
+
+- [ ] Build a catalog of **edge cases**:
+    (info gathered from hand annotation team)
+    e.g. three different three-point lines.   lines for multiple courts on the floor.
+	- Get this data from cloud factory.   Organize catalog of cases that don't fit.
+- [ ] Build catalog of **Black swan events** 
+	- someone made a basket for the other team 
+	- two people with same color and same jersey number on the court
+
+
+
+## Writeup
+
+
+
 BACKGROUND: 
 Prioritizing CV work is very difficult, there are an infinite number of approaches, problems, and sub parts one might consider, each having its own unique and complex interacting tradeoffs. Given this it is difficult to effectively plan, project progress, and allocate limited R&D resources.
 

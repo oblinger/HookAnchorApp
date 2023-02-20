@@ -1,30 +1,7 @@
 
-:: [[ADF - Augmented Dickey Fuller Test]],   [[Q-Q Plot]]
-  [[()]]
-  [()](().md)
-  [()](().md)
-  [()](().md)
-  [()](().md)
-  [()](().md)
-  [()](().md)
-  [()](().md)
-  [()](().md)
-  [()](().md)
-  [()](().md)
-  [()](().md)
-  [()](().md)
-  [()](().md)
-  [()](().md)
-  [()](().md)
-  [()](().md)
-  [()](().md)
-  [PCA](PCA.md),   [()](().md)
-[[PCA]]
+:: [[()]]
 
-  [()](().md)
-  [()](().md)
-  [()](().md)
-  [()](().md)
+:: [[ADF - Augmented Dickey Fuller Test]],   [[Q-Q Plot]],  [[PCA]],  
   [HarmonicMean](HarmonicMean.md),   [()](().md)
 [[Bayes Optimal Error]] [[HarmonicMean]]  [()](().md)
   [()](().md),   [Likelihood](Likelihood.md)

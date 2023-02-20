@@ -11,7 +11,6 @@
 
 | Date        | File                     | Notes                                                                   |
 | ----------- | ------------------------ | ----------------------------------------------------------------------- |
-| t2023-02-14 | [[Trip]]                     | March Release                                                           |
 | t2023-02-08 | [[@Jason Syversen]]          | Diligence analysis for Hubble                                           |
 | t2023-02-06 | [[@Grzegorz Biziel]]         | Quick Email about Edge detection                                        |
 | t2023-02-06 | [[@Igor Shindel]]            | Meeting Prep                                                            |

@@ -1,4 +1,5 @@
-- [ ] laurette i am sorry
+- [ ] slack notifications not working
+- [ ] don't forget laurette
 
 - [ ] Finish Atomic Habits
 - [ ] Write Love Letter

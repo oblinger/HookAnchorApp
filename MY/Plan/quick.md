@@ -1,11 +1,8 @@
-- [ ] slack notifications not working
-
-- [ ] Platypus and also holder for my phone
-- [ ] setup info page for all folks.
-- [ ] Mark show me apps
-- [ ] Jack show me polaris
-- [ ] don't forget laurette
-
+	- [ ] robustness of our QA guy:  try to understand knowdlege of HW/Wifi 
+- TV on the sideline?  (Jason Feature)
+- Lo-fi estimate of time saving using AI-based annotations
+- Sprint deliverable for AI-based annotations
+- Year
 
 - [ ] severance - 
 - [ ] Date for Friday

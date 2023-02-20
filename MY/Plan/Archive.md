@@ -1,3 +1,7 @@
+- [ ] add a calendar icon to my slack
+- [x] schedule meetings
+- [x] laurette i am sorry
+- [x] Platypus and also holder for my phone
 - [ ] Venmo @BCMS-big-city
 - [x] Ambulance [[Phone]]
 - [x] Passport  [[Phone]]

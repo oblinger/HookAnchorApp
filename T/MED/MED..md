@@ -1,3 +1,4 @@
+- [ ] Get alzhimers checked - by mental acuity testing
 - [ ] Read about back exercises
 - [ ] - [ ] Figure out new meals
 - [ ] research multi-vitamin and omega 3 to buy

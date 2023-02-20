@@ -7,3 +7,6 @@
 - [ ] [[Eli]]: 			Find babysitter
 
 - [ ] DL Reading - Have an interesting agenda - Dig into NLP 
+
+[[SV Wings]]
+- [ ] [[2023-02-00 CTOs corner]]: 

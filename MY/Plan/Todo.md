@@ -1,10 +1,9 @@
-- [ ] schedule meetings
-- [ ] doctor call
+- [ ] Jack show me polaris
+- [ ] Mark show me apps
+- [ ] doctor Hassler call
 - [ ] Hotel Room:  pay for us; get confirmation for QL; pay for mom
+- [ ] care.com
  
-- [ ] generate "routing" for jason tasks
-- [ ] add a calendar icon to my slack
-
 - [ ] apple airpodmax  [[@Apple]]  
 
 - [ ] Schedule with Doctor

@@ -114,8 +114,8 @@ Dialog used to add a single line item to a todo list note
 | col-1  | col-2 | col-3 |  col-4  |
 |:------:|:-----:|:-----:|:-------:|
 |  Week  | Todo  | Prime |   Q2    |
-|   "    |   "   |   "   |  Later  |
-| Active | Wings | Full  |  Quick  |
+| Active |   "   |   "   |  Later  |
+|  Work  | Wings | Full  |  Quick  |
 |   "    |   "   |   "   | Waiting |
 
 

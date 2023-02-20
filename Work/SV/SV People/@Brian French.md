@@ -67,9 +67,6 @@ Pivot to background -
 Two Page
 
 
-TODO:
-- Remote work process docs
-
 
 
 

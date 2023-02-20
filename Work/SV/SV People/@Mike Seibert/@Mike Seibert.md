@@ -43,19 +43,18 @@
 		- --> what is the ratio/
 
 
-TODO:
+#to-do
 - DEF of MARCH PRODUCT
 - TICKET TRACKING 
 - QA - 
 - Onboarding - 
-- 
 
 ~~
 ROTC - BA - MS - Air Force - 
 - Risk - BU (MIT profs) - Lincoln labs - NN / 
 - Joined Alpha Tech
 	- Beta Tech (STR)
-- Divsion Manager at BAE 120-130 people.  $30M/year
+- Division Manager at BAE 120-130 people.  $30M/year
 - three year vesting. 
 - doing this for fun.
 - making this stuff operational real.
@@ -70,7 +69,11 @@ DIFFERENTION
 - Pulling teeth to get cloud factory to annotate
 
 
-TODO:
-- Catalog of edge cases.  three, three point lines.   multiple courts on the floor.
-	- Get this data from cloud factory.   Cases that don't fit.
-- Black swan - someone made a basket - two people with same color and same jersey
+TO DO:
+- Build a catalog of **edge cases**:
+    (info gathered from hand annotation team)
+    e.g. three different three-point lines.   lines for multiple courts on the floor.
+	- Get this data from cloud factory.   Organize catalog of cases that don't fit.
+- Build catalog of **Black swan events** 
+	- someone made a basket for the other team 
+	- two people with same color and same jersey number on the court

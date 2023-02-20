@@ -289,7 +289,7 @@ Lets you do zero
 Personal limits $24,500K + $9.9K
 $310. Into DB plan
 
-Todo:
+To do
 — K-plan statements. From vanguard.  (Check earliest)
 — contribution in 2019.  2020. 
 

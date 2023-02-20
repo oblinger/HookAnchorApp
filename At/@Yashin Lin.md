@@ -27,6 +27,18 @@
 
 
 # LOG
+### 2023-02-19  discussion
+
+Summary:
+
+
+Quick notes:
+flexibility, not high pressure, makes 100K eventaully,  
+want to not be the only person doing the role,
+
+
+
+
 
 ### 2023-02-14 Looking for VALID TARGETS
 
@@ -201,5 +213,5 @@ It was a matter of perspective and wisdom to even try to do it.  I think this i
 
 
 ~ 
-TODO:  
+TO DO  
 - What will be on your HR record.  Can you get rid of the PIP?

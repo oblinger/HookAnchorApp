@@ -1887,11 +1887,11 @@ Squad / leader tracking(git, tickets) /
 - Tickets QA every day; tickets update; status updates; every ticket QAed;
 	dev happiness known
 
-### TODO
-1. Ontology filling: nick dan   growing to  marissa, ben
-2. Data model flesh
-3. Data input pipes
-4. Dependency tree structures:
+### TO DO
+- Ontology filling: nick dan   growing to  marissa, ben
+- Data model flesh
+- Data input pipes
+- Dependency tree structures:
 	- QA Excellence - James
 	- Ticket Release and testing
 	- Client/stakeholder update readiness & execution

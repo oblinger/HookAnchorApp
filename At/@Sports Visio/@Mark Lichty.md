@@ -1,7 +1,48 @@
 =[[SV]]	 [Director of Growth](https://www.linkedin.com/in/mark-scott-lichty-8ab915a5/)  [[@Sports Visio]]		
 
 
+# LOG 
 
+### 2023-02-19  At First Mgt Meeting
+
+Markus Fillman - 
+- wants to use us
+- has a semi-pro league 
+- his guys are building resume 
+- is doing his practice games now until May-17
+
+Oxford women's league - 
+High School teams
+Men league games, Near where Mark.  
+
+
+As product
+
+~
+What is Issue
+User account
+
+~
+
+
+~
+- 1-camera pivo record
+- Wireless
+- Stats back to my website: Exportable as CSV.
+
+~ 
+- Can't see game stats until publish
+
+~
+- Record first, add 
+~
+- On/off to record games
+~
+- Onboarding flow (record first)
+- Subscription swt
+
+
+### 2023-02-19  Intro discussion
 - Growth, customer, Success
 - Leading product, sitting on the product side, voice of the custsomer, most important features to drive revenue.
 

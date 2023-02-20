@@ -1,40 +1,8 @@
+
+- [[V]], 
 - [Prominent Bugs](https://docs.google.com/spreadsheets/d/1yRZe4Km9APGhBWO3Z6tHrn9RfuQDv5M5zZ9SIxuULDw/edit#gid=0) - 
 
-Markus Fillman - 
-- wants to use
-- has a semi-pro league 
-- his guys are building resume 
-- is doing his practice games now until May-17
 
-Oxford women's league - 
-High School teams
-Men league games, Near where Mark.  
-
-
-As product
-
-~
-What is Issue
-User account
-
-~
-
-
-~
-- 1-camera pivo record
-- Wireless
-- Stats back to my website: Exportable as CSV.
-
-~ 
-- Can't see game stats until publish
-
-~
-- Record first, add 
-~
-- On/off to record games
-~
-- Onboarding flow (record first)
-- Subscription swt
 
 ## Boards
 - Deprecate: tickets, epics, boards (delete)

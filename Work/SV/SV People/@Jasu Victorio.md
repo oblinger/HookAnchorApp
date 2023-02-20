@@ -11,7 +11,7 @@
 
 ### 2023-02-01  
 
-- prod mgt - background - web3 comapnies
+- prod mgt - background - web3 companies
 - scrum methodology 
 - don't have product manager
 - ran survey when she 
@@ -21,11 +21,12 @@
 	- [[@Augustia]] user testing feels we need user testing
 
 
+#to-do pay for transcriptions
 
-TODO: add my entry to 
-TODO: Perf review process. 
 
-TODO:  get User flows from Jasu 
+#later
+- Perf review process. 
+- get User flows from Jasu 
 
 - !! QA guy does not have different iphones or androids
 - !! QA guy does not have 
@@ -38,7 +39,6 @@ TODO:  get User flows from Jasu
 
 - Chosica - where she grew up.
 - jaak.ai
-TODO: pay for transcriptions
 - Leo did this big documentation - 
 	- how do I do this?  (it was in the documentation)
 

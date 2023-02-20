@@ -672,7 +672,7 @@ _
 - CHOICE: does a Lex expose its structure?  Yes. but Ident does not.
 - IDEA: Lexspace:  Lexspace(x)   .path_to(x)   .str_to(x)   .chroot(x)  
 
-TODO:
+TO DO
 - CHOICE: Does L.env get the current env?  (Needed inside __repr__)
 - CHOICE: How do we access pathify and access origin?
 - CHOICE: should Idents have a get method?  a follow method??   (maybe on the lexspace?)

@@ -7,7 +7,7 @@
 - spit ball on taxes
 #### _zzyy
 
-TODO:
+TO DO 
 - DAN: write up accelerate value
 - TAX ACCT: call.
 - LAWYER: call.

@@ -47,8 +47,8 @@ The resulting output of a successful build is a Vagrant base box in the followin
 Step-by-step guide to building a Vagrant base box for Amazon AWS
 Icon 
 Currently, only builds for VirtualBox VM are configured.
-TODO: Add build configuration for Amazon EC2
- TODO: Build Vagrant base box for Amazon EC2
+TO DO Add build configuration for Amazon EC2
+TO DO Build Vagrant base box for Amazon EC2
 
 ## Ari doc for setting up the box on a local machine
 How to setup a Jotter server development environment

@@ -64,9 +64,8 @@ Retina15 Serial:  C02V811RHTD9
 # LOG
 
 ### 2023-02-06  Airpod max issues
-
 - 2023-02-06 - volume on the airpod did not work (but did make the clicking noises as if it were working); volume did work on phone to control headset vol
-- 2023-02-04 - Airpods grabbing phone even though they were far away and last connected to the laptop
+- 2023-02-04 - Airpods grabbing i-phone even though they were far away and last connected to the laptop
 
 
 ### 2023-01-03  Laptop Repair

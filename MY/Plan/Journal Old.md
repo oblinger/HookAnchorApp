@@ -1004,7 +1004,7 @@ Finally I am rejecting the Jason possibility in my mind.  Why?
 
 #### _
 
-TODO:
+TO DO
 - DAN: write up accelerate value
 - TAX ACCT: call.
 - LAWYER: call.
