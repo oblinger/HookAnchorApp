@@ -1,15 +1,13 @@
 
-
-
-| WEEKLY        |                                                                                                                            |
-| ------------- | -------------------------------------------------------------------------------------------------------------------------- |
+| WEEKLY        |                                                                                                                                                   |
+| ------------- | ------------------------------------------------------------------------------------------------------------------------------------------------- |
 | **HOT LISTS** | [[SimpleNote 1Pass\|SimpleNote]] [Reminders](https://www.icloud.com/#reminders) AudioMemos [[Mint 1pass\|Mint]]   # [[FileThis Shell\|File This]] |
-|               | Bk  Nails  Nose  Groc  [[Friday]]    AF-email                                                                                          |
-| **HOUSE**     | Room: [My-]Desks/Bin/Shelf  House: Pass                                                                                    |
-| **TODO**      | Clean [[quick]] & [[todo]] lists for this week                                                                                          |
-| **PLAN**      | Week plan in Top                                                                                                           |
-| **IN2**       | Quick scrub                                                                                                                |
-|               |                                                                                                                            |
+|               | Bk  Nails  Nose  Groc  [[Friday]]    [AF-email](https://mail.google.com/mail/u/1/#inbox)                                                          |
+| **HOUSE**     | Room: [My-]Desks/Bin/Shelf  House: Pass                                                                                                           |
+| **TODO**      | Clean [[quick]] & [[todo]] lists for this week                                                                                                    |
+| **PLAN**      | Week plan in Top                                                                                                                                  |
+| **IN2**       | Quick scrub                                                                                                                                       |
+|               |                                                                                                                                                   |
 
 
 | MONTHLY     |                                                      |

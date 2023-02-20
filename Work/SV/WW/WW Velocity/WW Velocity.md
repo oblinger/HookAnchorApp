@@ -1,10 +1,11 @@
 
-- [[V]], 
-- [Prominent Bugs](https://docs.google.com/spreadsheets/d/1yRZe4Km9APGhBWO3Z6tHrn9RfuQDv5M5zZ9SIxuULDw/edit#gid=0) - 
+- [[V.]], 
+- [[SV Release Planning]] - 
+- [[SV Bug Board]] - 
 
 
 
-## Boards
+## JIRA BOARDS
 - Deprecate: tickets, epics, boards (delete)
 - Moving to three boards:  AI, Mobile, Web
 - Unified 
@@ -46,37 +47,9 @@ COMPLETED		-  x
 
 
 
-
-
-
-
-
 ## SV Releases
-- [[Confluence Webpage]] 
-- [Product Releases](https://software-engineering-team.atlassian.net/wiki/spaces/~6044e56c03ceda006979f4f5/pages/43450397/Product+Releases) 
-
-- [R1](https://software-engineering-team.atlassian.net/wiki/spaces/~6044e56c03ceda006979f4f5/pages/edit-v2/43155458?draftShareId=47a8e678-1948-4073-872c-0403e58682a8) - 
-
-
 
 ## Bug Tracking
-- Click button to create Jira bug ticket 
-
-
-BUG TICKET FIELDS:
-- title
-- description
-- steps needed to produce it
-- screenshots/videos
-- Times:
-	- Ticket Creation
-	- Dispatched (the right dev knows about it & is assigned to it)
-	- Working
-	- Completed
-	- QA
-	- Deployed
-
-
 
 
 ## ISSUES

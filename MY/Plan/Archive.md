@@ -1,3 +1,12 @@
+- [ ] document bug tracking flow
+s- [ ] trip
+- [x] V-day
+- [x] Eli birth certificate
+- [x] Finish bio for Jack; and for blog
+- [ ] pillow buy, wnizr
+check on v-day boquet
+- [ ] yashin
+- [ ] yashin
 - [ ] add a calendar icon to my slack
 - [x] schedule meetings
 - [x] laurette i am sorry

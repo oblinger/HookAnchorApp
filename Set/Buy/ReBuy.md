@@ -546,21 +546,29 @@ Progresso  Escarole, Chicken Barley, Chicka??
 Campbells Carb request
 Delmonte Carb Clever
 ### TEAS
-FAVS:  		Twinings Honey Bush, Kava Stress Relief, Pukka Blackcurrant Beauty
+FAVS:  		Twinings Honey Bush, Kava Stress Relief
 FAVS:		Lemon, Ginger, Mint, 
 
 PUKKA:  BlackcurrantBeauty+++, ThreeGinger+, ThreeLicorice+
 
 TEAS  http://carandafinefoods.com 
 
+#### QL TEAS
+- [Numi - Yuzu Bancha](https://smile.amazon.com/gp/product/B0B57Y35MD/ref=ox_sc_act_image_2?smid=A1UURZ0SEW4JD3&almBrandId=VUZHIFdob2xlIEZvb2Rz&psc=1&fpw=alm) [Numi - Matcha Toasted Rice](https://smile.amazon.com/gp/product/B000M7OWKK/ref=ewc_pr_img_2?smid=A1UURZ0SEW4JD3&almBrandId=VUZHIFdob2xlIEZvb2Rz&psc=1&fpw=alm) 
+- Numi Tea - Box of 100 Single Serve Packets: Rooibos
+- Numi Tea - Box of 100 Single Serve Packets: Chamomile Lemon
+
+
+
+
 #### PUKKA
-- Love purple (Blackcurrant Beauty)
+- ?
 
 
 ### Drinks
 
 
-==ALCHOL==
+== ALCHOL ==
 CALIFORNIA:  http://www.bevmo.com/
 FLORIDA:  http://www.sarasotaliquorlocker.com
 THOMPSON CIGAR  http://www.thompsONCIGAR.com/

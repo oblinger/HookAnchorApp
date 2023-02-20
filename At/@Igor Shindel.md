@@ -27,6 +27,14 @@
 [[WW Deliverables]] - I have an evolving list of “deliverables” that seem indicated.  I have the luxury and curse of a pretty open-ended mandate here, so I need tell SV what I will be delivering and when.  
 
 
+
+
+Spiritually in Feb-1-2023 we already have a separated R&D org.
+- March-1 we are having meetings
+- Summer we have interns
+- Is NH an at will state.
+
+
 ~
 
 

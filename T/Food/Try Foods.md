@@ -1,3 +1,4 @@
+
 **NOW**:
 - SOUPS: White Bean, Black bean, Mixed bean, Split Pea, Butternut, lentil (retry), 
 - CURL: curry, peanut stew, Soup?
@@ -10,7 +11,7 @@
 - TOFU: BreadedPanFried
 
 
-**AYI**:  Hot-Sour-Soup, 
+**AYI**:  Hot-Sour-Soup, CARROT-something, CABBAGE-something, 
 **NOW**:  Butternut Soup, 
 **PROTEIN**:  TVP (Soya); TOFU dish; Chia, Quinoa
 **LATER**: Greek Yogurt???, VEG flavorings; GRAINS; 

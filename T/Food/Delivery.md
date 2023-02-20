@@ -21,6 +21,7 @@ https://www.frannyskitchensf.com/
 | d+~~  CHINESE                   | Big Lantern                                                |     |     |
 | d+~~  CHINESE VEG               | Enjoy Veg Resturant.  low salt, but just ok flavor         |     |     |
 | d???  SUSHI                     | Moki Sushi                                                 |     |     |
+| d4.6  JAPANESE                  | Outer Orbit (Salad, fries, pasta)                                        |     |     |
 | d+~~  JAPANESE                  | Ginza Sushi                                                |     |     |
 | d???  JAPANESE(-sushi)          | Ginto Express                                              |     |     |
 | d++~  THAI                      | Osha Thai -                                                |     |     |

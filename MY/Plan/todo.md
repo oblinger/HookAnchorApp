@@ -3,10 +3,10 @@
 - [ ] doctor Hassler call
 - [ ] Hotel Room:  pay for us; get confirmation for QL; pay for mom
 - [ ] care.com
+- [ ] friday date
+- [ ] Nick taxes
+- [ ] Scrub lists & in2
  
-- [ ] apple airpodmax  [[@Apple]]  
-
-- [ ] Schedule with Doctor
 - [ ] house repair quote - Better bid on house
 - [ ] Dr Hassler.  get rid of the prilosec   MyChart
 - [ ] Job-Accept, touch base
@@ -14,8 +14,6 @@
 
 - [ ] Ants
 - [ ] get house repair guy to come
-
-- [ ] Lynne @ Nicholas; Get deferred comp done.
 
 - [ ] Moses follow up
 - [ ] lung followup

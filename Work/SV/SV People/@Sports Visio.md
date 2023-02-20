@@ -2,9 +2,6 @@
 
 =[[START]]    [[SV]]  [[sv90]]
 
-
-
-
 # PEOPLE
 
 TOP
@@ -52,6 +49,7 @@ BUS DEVS
 - [[@Burke Griffin]] - Intern
 - [[@Charlotte Corbitt]] - Intern?
 - [[@Miles Drum]] - Durham NH - Sales Intern
+- [[@Jeff Pratt]] - Sports content writer consultant
 
 
 OTHERS

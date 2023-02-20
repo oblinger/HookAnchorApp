@@ -7,59 +7,51 @@
 # REVERSE ORDER LIST WRITTEN BIOS
 
 
-## EMAIL INTRO BIO
+### 2023-02-20  SportsVisio newsletter and blog entry
+
+=== SV BLOG ENTRY ===
+
+DO joins SV as a CTO
+
+Dan recently sold his third company and will be joining our already strong computer vision team.
+
+He as Lead hundreds of millions of dollars in innovation in AI/ML, as a program manager at DARPA which included successes like IBM’s “Watson” Jeporary playing system “Watson”
+
+He has taught at Machine Learning course at columbia, author 25+ patents, and lead global teams of 50+ engineers in delivering advanced AI/computer vision/robotics solution, as well as help ship over $3B in IoT solutions.
+
+He brings brings a proven ability to deliver mission critical software scaled software along that is simultatnously   leading cutting edge research driven innovation.
+
+Dan is excited to use his technical background for our socially important mission of radically expanding the basketball stats to a much wider range of
+
+Dan is also very excited about potential for great social change with sports visio.  We will bring to every althesel what the elite athletes have today:  player specific stats, and player specific “highlight” reels.  This promises to change the game for very wide range of players that don’t have access to such advangates today.
+
+  
+
+===  NEWSLETTER ===
 
 
-### 2022-10-31  Rafah - Microsoft Intro
+I have known Jason as both close friend and colleague for over 15 years and have always appreciated his leadership style and ability to execute.  Over the years since DARPA we have been actively looking for a way to join forces, indeed I was one of the first people Jason called when he had his vision for an AI-driven Basketball stats.  SportsVisio.
 
-Rafah, awesome to catch up!  I am glad to hear your future plans include moving to more relaxing locations (both NH and FL fit that bill!)
-Looking forward to hearing a more in depth summary from your side on our next call.
-Here is a few sentences you can use to introduce me to your college who is setting up a new robotics group.
+Over the last 2 years I have enjoyed being a sounding board for many technical aspects of Sportsvisio's execution, and now that I have sold my previous company, I am in a great position to (finally) join forces with Jason as the CTO for SportsVisio.  Independent of my connection to Jason, I have been watching the Cambrian explosion of startups building on recent advances in deep learning with an eye towards founding or joining one.  Many transformative new companies will be born during this period---I am thrilled to be part of this revolution!
 
-~
-
-Dan is an ex-colleague of mine from IBM research.  He is in the midst of selling his third exited startup, and is deciding what he's going to do next.  Here are a few words from him:
-
-The first chunk of my career was devoted to Machine Learning as an individual researcher (PhD from UIUC, IBM Researcher, teaching at Columbia) then scaling that to many hundreds of researchers as a Program Manager at DARPA.  The second chunk has been in silicon valley focused on Robotics, Machine Learning, and HW+SW systems.  I have co-founded a couple of successfully-exited Robotic, or HW+SW/IoT companies, and twice hired & managed 50+ person orgs, including 40+ PhDs in Robotics.
-
-My sweet-spot and personal-love is managing teams that are bridging recent academic research into novel commercial plays.  I love the complex interplay between recently understood technologies and novel, not-fully-understood business use cases and products.  If there are roles within Microsoft that fit this kind of a sweet spot, I would love to hear about them!
+QUICK BIO:  
+Dan began his research career with a PhD in Machine Learning from U Illinois Urbana-Champaign then working at IBM Research and teaching at Columbia University he authored many first tier publications and almost 30 patents. Building from his individual contributor work he joined DARPA (alongside Jason) and funded over $200M in R&D focusing on Machine Learning as applied to Vision and Natural Language Processing. One of his programs, "Machine Reading," provided the basis for IBM's Watson technology used in their Jeopardy playing system.   After DARPA he moved to silicon valley where he has founded and exited three companies, including an AI-based clean tech company, and a robotics company with a general purpose in dexterous eldercare robot that required building out a 40+ person Ph.D. team spanning a dozen plus subspecialties.
 
 
+===== 
+STARTER BIO
+In the decade and a half that I have known Jason, we have actively looked for ways to join forces, and I am excited to see that this is finally happening.  Advances in Computer Vision have spurred a Cambrian explosion of computer vision based-startup, now is the time these new companies will cement their positions in these new markets, so I was looking for an opportunity just like this to be part of that revolution.
 
+I have a PhD in Machine Learning from UIUC and have used that background as an individual researcher at IBM's Watson Lab and Teaching at Columbia University, publishing dozens of papers and hold almost 30 patents. Expanding on my IC work, I joined DARPA (alongside Jason) and funded over $200M in R&D focusing on Machine Learning as applied to Vision and Natural Language Processing. One of my DARPA programs of note was "Machine Reading." in which IBM developed their  Watson Jeopardy playing system.   that unified knowledge across tens of thousands of books to best humanity in answering Jeopardy questions. After DARPA I moved to silicon valley where I have started and exited three companies, a specialized payments platform, a robotics company building a general purpose in home dexterous robot, and an AI-based clean tech company. In the past I have built 50+ person engineering teams, including a team of 40+ PhDs that spanned the globe.  I can't wait to dig in and make myself useful here at Sports Visio!
 
-
-
-between newly understood technologies and newly 
-
-
-He founded Martian Robotics building fully autonomous home robots which sold to Aeolus Robotics.  He served as CTO at Aeolus Robotics where he hired/led a 20-Engineer, 40-Phd  engineering team (40+ PhDs) 
-
-
-
-He has a PhD in Machine Learning from UIUC (Illinois) and has been his last several companies have been focused on Robotics, Machine Learning, and HW+SW systems.  He founded Martian Robotics building fully autonomous home robots which sold to Aeolus Robotics.  He served as CTO at Aeolus Robotics where he hired/led a 20-Engineer, 40-Phd  engineering team (40+ PhDs) 
-
-
-
-### 2022-10-31  Avidan - Tessa VC
-Avidan,
-
-Over the years Tessa has told me a lot about you, so it will be great to finally make your acquittance. 
-
-I am in the final stages of selling my startup into a fast growing building disinfection startup, and have just received an offer to be a late-joining co-founder & CTO for an unrelated computer vision startup.  It is an interesting offer and interesting technology, but I would be accepting w/o having really explored the larger market much.
-
-So, as Tessa suggested in the note below, it would be great to get your perspective on this specific offer, and more generally on how I might best use my talents in the next years.  Beyond this, I think there is good value in us getting connected since you enjoy digging in on the early side of hard tech startups…. And I enjoy digging in on the early side of hard tech startups too!
-
-Let me know if you have time for a short call or quick coffee in the next days.  I will arrange my schedule and/or location to accommodate.
-
-Looking forward,
-Dan
-
-## MISC BIOS
+  
+  
 ### 2020-04-00 - Bio Parts
 
 - Created and executed $200M+ in AI solutions as Program Manager at DARPA
 - PhD in AI from U Illinois; Taught at Columbia.
 - Serial entreprenure, founding successful AI-based companies in finance and energy.
+
 
 ### 2020-02-00 – Redis Conf Bio
 Dan Oblinger, Ph.D.

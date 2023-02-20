@@ -6,7 +6,8 @@
 
 | Date       | File                    | Notes                                                                                     |
 | ---------- | ----------------------- | ----------------------------------------------------------------------------------------- |
-| 2023-02-20 | [[2023-W07]]                | W08                                                                                       |
+| 2023-02-20 | [[Bio]]                     | SportsVisio newsletter and blog entry                                                     |
+| 2023-02-20 | [[2023-W08]]                | W08                                                                                       |
 | 2023-02-19 | [[@Mark Lichty]]            | At First Mgt Meeting                                                                      |
 | 2023-02-19 | [[@Mark Lichty]]            | Intro discussion                                                                          |
 | 2023-02-19 | [[@Yashin Lin]]             | discussion                                                                                |
@@ -30,7 +31,7 @@
 | 2023-02-08 | [[SV90]]                    | Unsorted Chunch                                                                           |
 | 2023-02-07 | [[@Jasu Victorio]]          | march prod                                                                                |
 | 2023-02-07 | [[@Scott Byers]]            |                                                                                           |
-| 2023-02-07 | [[SV SW]]                   | Standup                                                                                   |
+| 2023-02-07 | [[SV SW Team]]              | Standup                                                                                   |
 | 2023-02-06 | [[@Apple]]                  | Airpod max issues                                                                         |
 | 2023-02-06 | [[Phone]]                   | Passport Renewal                                                                          |
 | 2023-02-05 | [[Writings]]                | Noom Dieting                                                                              |
@@ -75,8 +76,8 @@
 | 2022-11-08 | [[2022-10-00 Find Advisor]] | My plan                                                                                   |
 | 2022-11-08 | [[2022-10-00 Find Advisor]] | Initial reading                                                                           |
 | 2022-11-07 | [[2022-W45]]                |                                                                                           |
-| 2022-10-31 | [[Bio]]                     | Rafah - Microsoft Intro                                                                   |
-| 2022-10-31 | [[Bio]]                     | Avidan - Tessa VC                                                                         |
+| 2022-10-31 | [[Bio Email]]               | Rafah - Microsoft Intro                                                                   |
+| 2022-10-31 | [[Bio Email]]               | Avidan - Tessa VC                                                                         |
 | 2022-10-28 | [[ToBuy]]                   | Scotch Crystal                                                                            |
 | 2022-10-24 | [[2022-w43]]                |                                                                                           |
 | 2022-10-20 | [[@Apple]]                  | Laptop Repair                                                                             |

@@ -1,30 +1,22 @@
 
-:: [[SV Hiring]],   [[SV Wings]],   [[SV90]]
-
 :: [[SV90]]
-- [[SV Archive]], [[SV Mgt]], [[SV Roadmap]], 
-- [[SV Customer]],  [[WW Deliverables]],  [[SV Folder]], [[SV SW]], [[SV CV]], [[SV Apps]], [[SV Code]], 
-- [[SVT]],  
 
-- [[@Sports Visio]], 
- - [[SV90.]],  [[SV90]],  [[SVT]], [[WW]], [[QQ]],     
+- [[SV Apps]],   [[SV Archive]],   [[SV Bug Board]],    [[SV CV Team]],   [[SV Employees]],   [[SV Hiring]], 
+- [[SV Mgt]],    [[SV Release Planning]],   [[SV Roadmap]],   [[SV Wings]], 
+- [[SV Customer]],  [[WW Deliverables]],  [[SV Folder]], [[SV SW Team]], 
+- [[SV Code]], 
+- [[SVT]]ools,
+
+- [[@Sports Visio]],   [[WW]],   [[QQ]],
+ - [[SV90.]],  [[SV90]],  [[SVT]],      
 - [[Jira]], [[SV Joining]], 
 
  [[@Jason Syversen]], 
 
 
-Spiritually in Feb-1-2023 we already have a separated R&D org.
-- March-1 we are having meetings
-- Summer we have interns
 
-- Is NH an at will state.
-
-git clone https://dan@sportsvisio.com/SVEngineering/algorithms2.git
-
-
-# TODO
+### TODO
 - [ ] Get Coach
-- [ ] Build Roadmap
 - [ ] Build Roadmap
 - [ ] Yolo-x
 - [ ] Negotiate & Sign
