@@ -1,6 +1,10 @@
+
+- [ ] gMeet link that goes to SV 
+- [ ] swimming classes in slack
+insuran
 - [ ] wsj wine in phone
+- [ ] Sam...
 - [ ] Get receipts in
-- [ ] buy pillow
 - [ ] duvet cover
 - [ ] Beale book
 

@@ -8,6 +8,8 @@
 
 | Date        | File                 | Notes                                                             |
 | ----------- | -------------------- | ----------------------------------------------------------------- |
+| m2023-02-21 | [[@Mark Lichty]]         |                                                                   |
+| m2023-02-21 | [[@Joaquin Perez Mano]]  | Intro call                                                        |
 | m2023-02-06 | [[@Igor Shindel]]        | Intro meeting                                                     |
 | m2023-02-02 | [[@Nick Allen]]          | Post RZ chat                                                      |
 | m2023-01-30 | [[@Jack Potvin]]         | Intro call                                                        |

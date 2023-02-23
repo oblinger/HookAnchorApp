@@ -1,3 +1,4 @@
+- [x] buy pillow
 - [ ] document bug tracking flow
 s- [ ] trip
 - [x] V-day

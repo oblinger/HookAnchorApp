@@ -1,15 +1,12 @@
 
 :: [[Thailand]]
 
-:: [[Thailand]]
-
-:: [[Thailand]]
-
-
 ### __
-- [[Travel]],  [Trip](Trip.md)
+- [[Travel]],  [Trip](Trip.md), [[Thailand]],
 
-- [Argentina](https://docs.google.com/document/d/1hoF_iCN4-W0Lnigf9rLML9vxB1R5NNKq3O9PNM36xU0/edit#)  
+
+### 2023-02-10  ARGENTINA
+- [ ] Shared Page w/ Mom & QL:  [Argentina](https://docs.google.com/document/d/1hoF_iCN4-W0Lnigf9rLML9vxB1R5NNKq3O9PNM36xU0/edit#)  
 - [ ] Passport; Visa; 
 - [ ] Get discount for mom.  Pick flights.   plugs.  webpage for mom. stuff for kids. 
 - [ ] [Spouses](https://docs.google.com/document/d/1czxaZNHbaEWyWa_O_KmiReyHnq52CqesbWc1lqlwE8U/edit) - Sheet ready

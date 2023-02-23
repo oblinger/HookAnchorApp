@@ -1,6 +1,48 @@
-=[[SV]]	 [Operations & Project Manager](https://www.linkedin.com/in/jackpotvin/)  [[@Sports Visio]]		
+[[gMEET Webpage]]=[[SV]]	 [Operations & Project Manager](https://www.linkedin.com/in/jackpotvin/)  [[@Sports Visio]]		
 
 # LOG
+### 2023-02-20  Polaris overview
+
+- Robust
+- AI-Pivo
+- AI-Driven-Manual-Annotations
+- Backend-Process-Improvements:  Lock-slippage, , Notification 
+- Improve User Adoption withy UX and SEtup
+- Customer Web Portal - Mostly for coaches
+- Transition Stat Calculation to Backend - 
+- Game Fulfillment Dashboard - Workflow visualization and optimization
+- Operational Enhancements - (Non-software)
+- Offer SV UStat = Giveing end user annotation portal
+- 
+
+Reduce Friction: Pivo, Robutness
+Leverage AI:  ADMI    -> BPI 
+Drive Adoption:  Impromentn, Exportable stats
+Scaling Execution:  Cust Portal, BIP, Editable Stats
+
+
+Potential Customers Segment
+- Tournaments are Massive - 
+	- Sponsor them
+	- Cerebro?  
+	- More competitvie EYBL 
+- Coach email outreach
+
+
+
+
+#todo 
+- get video of annotator
+- Aseem team lead of the annotation team.  
+- AI: Halo Numbers, PlayerZoom
+- Demo of Veo from Mark
+
+
+Guest Mode
+
+
+
+
 ### m2023-01-30  Intro call  
 
 

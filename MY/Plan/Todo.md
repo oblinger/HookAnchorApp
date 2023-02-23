@@ -1,12 +1,24 @@
-- [ ] Jack show me polaris
+- [ ] 
+
+
+Shot detect is correct.
+
+
+
+- [ ] Jack show me polaris;   
+- [ ] Jason next Release topics
+- [ ] Alpha testing tracking
 - [ ] Mark show me apps
 - [ ] doctor Hassler call
 - [ ] Hotel Room:  pay for us; get confirmation for QL; pay for mom
 - [ ] care.com
 - [ ] friday date
+- [ ] call James
+- [ ] Customer Portal
 - [ ] Nick taxes
 - [ ] Scrub lists & in2
  
+- [ ] Medical coverage from SV
 - [ ] house repair quote - Better bid on house
 - [ ] Dr Hassler.  get rid of the prilosec   MyChart
 - [ ] Job-Accept, touch base

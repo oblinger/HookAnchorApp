@@ -1,8 +1,15 @@
 - [Prominent Bugs](https://docs.google.com/spreadsheets/d/1yRZe4Km9APGhBWO3Z6tHrn9RfuQDv5M5zZ9SIxuULDw/edit#gid=0) - 
 
+- [Bug Tracking Docs](https://software-engineering-team.atlassian.net/wiki/spaces/SPORTSVISI1/pages/47251463/External+Bug+Tracking) - 
+
+
+- [List of Bugs](https://software-engineering-team.atlassian.net/issues/?filter=10029) - 
+- [Jacks Bug Board](https://software-engineering-team.atlassian.net/jira/software/projects/EB/boards/27) - (Click "Create"; Select "bug"; fill details)
+  Summary, Description, Attachment
+
+
 - [ ] Docs for Bug Tracking
 - [ ] Retrospective analysis on bug backlog
-- [ ] 
 
 
 - Click button to create Jira bug ticket 
@@ -20,6 +27,12 @@ BUG TICKET FIELDS:
 	- Completed
 	- QA
 	- Deployed
+
+
+
+- [All Jira Projects](https://software-engineering-team.atlassian.net/jira/projects) - 
+- [SW MOB board](https://software-engineering-team.atlassian.net/jira/software/projects/MOB/boards/24) - 
+- [SW WU Board](https://software-engineering-team.atlassian.net/jira/software/projects/WU/boards/26) - 
 
 
 

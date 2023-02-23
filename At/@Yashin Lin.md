@@ -1,6 +1,30 @@
 
 
 # TOPICS
+## CODING DATA ANALYST PATH
+
+  
+PATH:  Coding Data Analyst
+  
+IDEA:
+- DATA-Y - I want do to something ‘data-y’ both because I like it, and because my prior experience will also be adding value.
+- CODING-CENTRIC - I want a job that required R/Python coding since I believe this will move me into a more marketable, higher paying space.
+- SALARY-FIRST - In the short and medium run, I value making money over social value of a job, since later I can always decided to switch back “down” to a lower paying job in the social value space.  
+- FOR-PROFIT - I am now looking for something in the for-profit space because I suspect there will be many more jobs there.  Secondarily it will not cost me in the program evaluation space since I am already quite experienced there, data will be additive and I won’t grow stale to the area for quite a while.
+- STEP-BACKWARDS-IS-OK - I expect that  will need to take a step back in job level, in order to make this switch, but that is ok, since the jobs are plentiful, and it seems that I will be able to progress back up to a well paying job after just a couple of years.
+  
+POST BOOT JOBS:
+- PBJs - I have found multiple code-related starter jobs that seem plausible next steps after boot camp, that I am ok accepting.
+  
+"CAREER" JOBS:
+- NEXTERS - I have found multiple “upgrade” jobs that seem plausible to get after a year or two experience in a PBJ, and I would be happy to grow in these jobs for many years.
+
+
+
+NOTES:
+- CODING-UPSKILL - I am now looking for something in the for-profit space because I suspect there will be many more jobs there, especially for someone who has the skills and a proven track record of extracting value from different data sources and redesigning data that are collected such that they produce increased value. I am also thinking of this upskilling as an opportunity to actually upskill in a lasting way, so I'd like to take on jobs that will hire me, that offer the opportunity to expand my current skills. So data intensive SQL, Python and R (preferably not just R)--my preference would be a job that uses SQL and Python, since I expect to not be as good in R. But some jobs do ask for Python and R, and those would be great as well, but only R (unlikely to happen) feels limiting to me, almost as limiting as just STATA.
+
+
 ## YASHIN TYPE JOBS
 
 ### TASK ORIENTED

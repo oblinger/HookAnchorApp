@@ -8,6 +8,8 @@
 | ---------- | ----------------------- | ----------------------------------------------------------------------------------------- |
 | 2023-02-20 | [[Bio]]                     | SportsVisio newsletter and blog entry                                                     |
 | 2023-02-20 | [[2023-W08]]                | W08                                                                                       |
+| 2023-02-20 | [[@Jack Potvin]]            | Polaris overview                                                                          |
+| 2023-02-20 | [[@Michael Fearnley]]       | Intro call                                                                                |
 | 2023-02-19 | [[@Mark Lichty]]            | At First Mgt Meeting                                                                      |
 | 2023-02-19 | [[@Mark Lichty]]            | Intro discussion                                                                          |
 | 2023-02-19 | [[@Yashin Lin]]             | discussion                                                                                |
@@ -24,6 +26,7 @@
 | 2023-02-13 | [[WW Jason Tasks]]          | Systematic QA processing                                                                  |
 | 2023-02-11 | [[Phone]]                   | Instapot                                                                                  |
 | 2023-02-10 | [[@Tomas Tisocco]]          | Intro                                                                                     |
+| 2023-02-10 | [[Trip]]                    | ARGENTINA                                                                                 |
 | 2023-02-10 | [[Phone]]                   | Pay for Ambulance                                                                         |
 | 2023-02-09 | [[Phone]]                   | Cancel WSJ Wine.com                                                                       |
 | 2023-02-09 | [[@James Sullivan III]]     | Intro                                                                                     |

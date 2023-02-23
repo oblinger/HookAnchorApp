@@ -3,6 +3,29 @@
 
 # LOG 
 
+### m2023-02-21  
+
+
+In the short run, setting up SportsVisio record all games 
+
+
+TOURNAMENT TRIALS
+- Teams at Tournament:		80small, 200-400medium, 1000+large    
+- Number of Tournaments:	req tournament; premier/invitational tournament,  National level tournaments (already have stats deals)
+- Numbers:						200 Games Per Tournament; 10Players per team.   50minute games.  running clock
+	- Shot-detections, make/miss, shot point value, team/player making the shot. assist, rebound, shot-related-fouls  (not steals, turnovers, blocks)
+	- $15 or 2 hours for 1 hr game.  $10 or 90 min for 1 hr game.
+
+
+MOTIVATED COACH TRIAL
+- Coach/Player/Parent had enough motivation to by the $25/$100 recording setup to try SportsVisio's free trial
+- They have info about the players on their team, but little info on their 
+
+
+
+
+
+
 ### 2023-02-19  At First Mgt Meeting
 
 Markus Fillman - 

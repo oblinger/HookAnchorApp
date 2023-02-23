@@ -2,8 +2,12 @@
 - [ ] What percentage of tournaments are using Cerebro?
 
 
+# COMPETITORS
 
+## MANUAL ANNOATATION APPS
+- [Top 5](https://www.basketballforcoaches.com/basketball-stats-apps/)
 
+# __
 ## ISSUES / FEATURES
 ### Friction Retention Issues
 #### Key Value Proposition
