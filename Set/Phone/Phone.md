@@ -1,3 +1,81 @@
+### 2023-02-24  Passport Application
+
+March 3rd 9pm
+
+Pin: 2468
+Confirmation:  830-843-46  ID: OBLCIN
+Address:
+San Francisco Passport Agency  
+450 Golden Gate Ave.  
+3rd Floor  
+Suite #3-2501  
+San Francisco, CA 94102
+
+
+BRING
+
+1. Completed passport application and citizenship documents). Please refer to the application form for the specific documents required.
+2. Passport photo
+3. Passport fees including the $60 expedited service fee. We accept checks, money orders, credit cards and debit cards for payment. (Quick Link to passport fees on our website:
+Passport Fees)
+4. Printed proof of international travel.
+5. Proof of Life or Death Emergency (if applicable)
+6. If you are applying for a child under 16, both parents and child must be present to apply. You must submit documentation that shows parental relationship to that of the child
+applying for a passport. See Children Under 16 for a full list of requirements and documents.
+
+
+
+Indutrial 
+
+Powerboats
+parasailing
+Icreme Store
+
+
+Exposition Company
+- sell slots
+
+- Finance, Economics, 
+
+
+- lock martina leadership development side
+
+Gradshool MBA, MS Finance, MS Business School,  OO-programming
+
+Northrup grummond 
+
+Director Leonardo
+
+had a baby 
+
+Partner and KPMG
+
+Seige + Rolls Royce
+
+
+Consulting on the side
+- sports facility
+- Insurance 
+- consuling
+
+
+Been in 20 something 
+
+
+
+~ QA
+
+- Raise is not feeling good.  
+- Yahoo email does not 
+
+
+The smarter the product is:
+- Full annotation 
+
+
+
+
+
 ### 2023-02-11  Instapot
 
 C8 = wrong pan
@@ -12,17 +90,28 @@ C8 = wrong pan
 > 
 > Call: 1.800.828.7280 x2
 
+
+
 ### 2023-02-10  Pay for Ambulance
 
 833-532-2237  
-
-$258.90
-
 
 
 ### 2023-02-09  Cancel WSJ Wine.com
 
 877-975-9463  
+
+https://WSJWine.com
+
+
+$258.90
+
+- Refund, send 3 email.
+- prepare case in April.
+- Prepare full case in May
+
+
+
 
 ### 2023-02-06  Passport Renewal
 

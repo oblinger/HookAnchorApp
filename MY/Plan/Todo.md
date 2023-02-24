@@ -1,9 +1,5 @@
-- [ ] 
-
-
-Shot detect is correct.
-
-
+- [ ] BugB ready
+- [ ] Summary of Tournament
 
 - [ ] Jack show me polaris;   
 - [ ] Jason next Release topics
