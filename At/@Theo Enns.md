@@ -1,9 +1,30 @@
+=[[FAANG]]    [[@Amazon]]
+
+
 
 # LOG
-### t2022-10-30  BOOM BOOM
-zippy do da
 
-### m2022-10-30  Prep for call from Jason
+### m2023-02-27  Theo 2023 chat1
+
+GETTING HIRED AT AMAZON
+
+- DanO best as Software Manager Role
+	- Could be an AS, but higher levels endup more like a SDE (software developer)
+	- Could be a SDE, but probably add more value as mgr, and probably like it more too.  (but lots of meetings)
+	- Expected to understand deep learning algs, but not expected to be able to code tensor flow models.  (should get coursera training anyway)
+
+- Leveling Comparison.
+	- Theo is presently an L5; could become an L6 in right context
+	- Grzegorz would probably come in as an L6 SDE
+
+- L7 Expectations:  $500-700 total comp; 25-50people in report to; e.g. 2 regular managers + 3-4 direct reports; Scope of one or multiple products
+
+- Getting Hired
+	- Leadership principles - able to answer questions based on them
+	- Role Guidelines - each role has its guidelines (they are internal, but likely on the web somewhere)
+
+
+### m2022-10-30  Prep for Reference call for Jason
 
 - Ability to create and execute processes for production quality outputs.
 	- Lead Payments Platform were all transactions had to complete error free & interface needed to look perfect.
@@ -27,7 +48,7 @@ zippy do da
 	- MIT QUALITY - Systematic testing in operational conditions:
 		- TURN TABLE - Developed turn table systematic data collect; Live robot data collect;
 		- CONTINUOUS TEST FLOOR DATA COLLECTING
-
+	
 
 ### t2022-06-29  Request for recommendation
 

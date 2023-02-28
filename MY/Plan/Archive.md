@@ -1,3 +1,14 @@
+- [x] UROLOGIST - Dr Tom Liu 415-353-2200 400 Parnassus #610A
+- [x] buy duvet cover
+- [x] take ball launcher back.
+- [x] att
+- [ ] Sam...
+- [x] Get the Tournament details docs agreed with Mark
+- [x] notifications
+- [ ] returns
+- [x] Get Mark L geared up
+- [ ] Being Valuable is FUN
+
 - [x] buy pillow
 - [ ] document bug tracking flow
 s- [ ] trip

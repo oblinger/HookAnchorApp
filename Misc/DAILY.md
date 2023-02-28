@@ -39,7 +39,7 @@
 - [ ] 11	[[COMS]] 
 - [ ] 11	[[Lunch]],  
 - [ ] 12:	[[WarStories]] 
-- [ ] 2	[[Gap]]  
+- [ ] 2	[[gap]]  
 - [ ] 3:	[[@Joseph Yeh]]  
 - [ ] 4:	[[Exercise]]  
 

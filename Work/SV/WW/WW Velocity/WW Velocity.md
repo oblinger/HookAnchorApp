@@ -1,7 +1,7 @@
 
 - [[V.]], 
 - [[SV Release Planning]] - 
-- [[SV Bug Board]] - 
+- [[SV Bugs]] - 
 
 
 

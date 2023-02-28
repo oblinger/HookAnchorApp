@@ -1,4 +1,6 @@
-[[gMEET Webpage]]=[[SV]]	 [Operations & Project Manager](https://www.linkedin.com/in/jackpotvin/)  [[@Sports Visio]]		
+ 
+ 
+ =[[SV]]	 [Operations & Project Manager](https://www.linkedin.com/in/jackpotvin/)  [[@Sports Visio]]		
 
 # LOG
 ### 2023-02-20  Polaris overview

@@ -1,4 +1,4 @@
-## = [[SELF|SELF]] =
+## = [[MY/Plan/self|SELF]] =
 ### - [[MED]] -
 - [ ] DAILY: Walking or Peleton w/ weights
 - [ ] FOOD: PapTry, 

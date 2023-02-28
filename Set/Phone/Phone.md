@@ -25,55 +25,6 @@ applying for a passport. See Children Under 16 for a full list of requirements a
 
 
 
-Indutrial 
-
-Powerboats
-parasailing
-Icreme Store
-
-
-Exposition Company
-- sell slots
-
-- Finance, Economics, 
-
-
-- lock martina leadership development side
-
-Gradshool MBA, MS Finance, MS Business School,  OO-programming
-
-Northrup grummond 
-
-Director Leonardo
-
-had a baby 
-
-Partner and KPMG
-
-Seige + Rolls Royce
-
-
-Consulting on the side
-- sports facility
-- Insurance 
-- consuling
-
-
-Been in 20 something 
-
-
-
-~ QA
-
-- Raise is not feeling good.  
-- Yahoo email does not 
-
-
-The smarter the product is:
-- Full annotation 
-
-
-
 
 
 ### 2023-02-11  Instapot

@@ -1,19 +1,17 @@
 
 **NOW**:
-- SOUPS: White Bean, Black bean, Mixed bean, Split Pea, Butternut, lentil (retry), 
-- CURL: curry, peanut stew, Soup?
-- Tempeh pasta, Quinoa Peppers, 	
+- SOUPS:   White Bean - , Black bean - , Mixed bean ?just-use-white?, Split Pea, Butternut, lentil (retry), 
+- CURL:    Peanut Stew, Curry, Soup, Millet
+- QUINOA:  Southwest,  Peppers w/ more Quinoa
 
 **GOALS**:
-- More Soups:  Veg Soup, Carrot??, 
+- More Soups:  Veg Soup, 
 - Oven Brussel sprouts, Riced cauliflower, Tasty Lunch Salad
-- Budda Bowl???
-- TOFU: BreadedPanFried
+- Budda Bowl???,  Chia???
+- AYI:  Hot-Sour-Soup, CARROT-something, CABBAGE-something, 
 
 
-**AYI**:  Hot-Sour-Soup, CARROT-something, CABBAGE-something, 
-**NOW**:  Butternut Soup, 
-**PROTEIN**:  TVP (Soya); TOFU dish; Chia, Quinoa
+
 **LATER**: Greek Yogurt???, VEG flavorings; GRAINS; 
 **DISH**:  Tea Leaf Salad, A Tasty Salad?, Roasted Veggies, Stewed Potatoes, Cabbage Stew, 
 
@@ -25,7 +23,6 @@
     Chia, Quinoa, Tofu, Barley, Soba Noodles, Lentils, 
 **TOPPINGS** (veg):  Lemon Pepper + Toasted Onion + Garlic Powder, salt, chili-garlic
 **AREAS**:
-- SOUP - A veggie soup to love.
 - PASTA - Finding a low GI pasta we like.  Maybe more flavors for quick pasta.
 - TOFU - Trying different things to mix it up.
 **LATER**:  Potatoes, TEMPEH dish?; 
@@ -44,10 +41,11 @@ UNIQUE:	Fahita, Pizza
 - Baked Potatos, Oatmeal, Fish, Soups, MCT oil, Popcorn
 
 
+- TOFU: BreadedPanFried
 GOALS: BAMBOO shoots, OKRA, DAIKON;  
 --> research more
 
 
 ~~
-- [ ] onion powder, tosted onion, tumeric, garlic powder, lemon pepper  (heat in microwave)
+- [ ] onion powder, toasted onion, tumeric, garlic powder, lemon pepper  (heat in microwave)
 - [ ] Broc, cauliflower.

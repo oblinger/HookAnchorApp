@@ -29,4 +29,23 @@
 
 # MEETINGS
 ### [[@Theo Enns#m2022-03-08 Ideas About Amazon Levels]] 
+### m2023-02-27  Hire related
+
+GETTING HIRED AT AMAZON
+
+- DanO best as Software Manager Role
+	- Could be an AS, but higher levels endup more like a SDE (software developer)
+	- Could be a SDE, but probably add more value as mgr, and probably like it more too.  (but lots of meetings)
+	- Expected to understand deep learning algs, but not expected to be able to code tensor flow models.  (should get coursera training anyway)
+
+- Leveling Comparison.
+	- Theo is presently an L5; could become an L6 in right context
+	- Grzegorz would probably come in as an L6 SDE
+
+- L7 Expectations:  $500-700 total comp; 25-50people in report to; e.g. 2 regular managers + 3-4 direct reports; Scope of one or multiple products
+
+- Getting Hired
+	- Leadership principles - able to answer questions based on them
+	- Role Guidelines - each role has its guidelines (they are internal, but likely on the web somewhere)
+
 

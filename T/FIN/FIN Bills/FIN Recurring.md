@@ -1,11 +1,5 @@
-freedom
-peloton
-crunchbase
-consumer reports
-on health
-Peloton signed 7/31
-  [FIN Budget](FIN%20Budget.md)
-vorwerk $40/yr
+
+< [[FIN]]    [[FIN Budget]]
 
 # RECURRING BILLS
 ## BIGGER BILLS - SCHWAB JOINT 6956-1345
@@ -27,22 +21,26 @@ vorwerk $40/yr
 ### CHASE FREEDOM
 - $1,375/yr 	AAA Home Insurance
 - $600/bi  	Geico
-- $230/mo	AT&T  (Paid on corp SVB account)
+- $200/mo		AT&T  (Paid on corp SVB account)
+- $119/mo		Comcast
+- $192/mo?	Illuminata Skin Care
 
+- $20/mo		Core Power Yoga
 - $16/mo 		Netflix
 - $15/m		Spotify Premium
-- $13/m		Peloton
-- $10/mo		WSJ - Wall Street Journal
+- $13/m		Peloton  7/31
+- $10/mo		APPLE - Apple iCloud 2TB Storage (Apple ID -> MyPic -> Plan)  (!!! Should be used by whole family)
+- $9/mo		Dan's Apple iCloud  
+- $6/mo		WSJ - Wall Street Journal  (2023-02)
+- $5/mo		Medium Monthly
 
-- $100/y		Blink Plus  (renews 11-09-2023) 
-- $55/yr		Thermomix Recipes (2023-12-11.  Web -> {ChefHat} -> Account )
-- $39/yr  		Consumer Reports Digital   2023-08-23   (On Health cancelled?)
+- $100/yr		Blink Plus  (renews 11-09-2023) 
+- $55/yr		Vorwerk Thermomix Recipes (2023-12-11.  Web -> {ChefHat} -> Account )
+- $39/yr  		Consumer Reports Digital   2023-08-23   (
+- ???			CR On Health cancelled?)
 - $36/yr		1-Password
+- $30/yr		APPLE - Insight Timer  (APPLE SUBSCRIPTION iPhone -> Settings -> Me -> Subscriptions)
 - $20/yr		File This
-
-### APPLE
-- $9/mo		Dan's Apple iCloud  (Apple ID -> MyPic -> Plan)
-- $30/yr		Insight Timer  (APPLE SUBSCRIPTION iPhone -> Settings -> Me -> Subscriptions)
 
 ### PAYPAL			
 	Web -> {setting gear} -> Payments -> Manage Automatic Payments
@@ -50,7 +48,7 @@ vorwerk $40/yr
 - $50/yr	6/29/22		Noom
 - $70/yr	6/28/22		Microsoft
 - $60/yr	7/19/22		Bit Defender (Avangate)
-- $5/mo				Patreon - Sleep With Me Podcast
+- $5/mo					Patreon - Sleep With Me Podcast
 
 ### CAP ONE
 - $20/yr		Google Storage renews 2023-05-13
@@ -85,6 +83,7 @@ SAPPHIRE
 
 
 ## PAUSED
+- crunch base
 
 PAUSED
 - $50/yr		Nest Aware (Cancelled)

@@ -1,3 +1,4 @@
+
  [Apple.com](https://apple.com),  
 - 800-692-7753 Apple Repair
 
@@ -62,6 +63,14 @@ Retina15 Serial:  C02V811RHTD9
 
 
 # LOG
+
+### 2023-02-27  Do not disturb mode
+
+There you go! I have already reached them to reconnect to you. Please expect their call within this hour to be assisted further.  
+  
+Our Phone Support number is 1-800-275-2273. All you have to do is provide this Case ID: **101946361290.** I have fully documented our conversation so you won’t have to repeat yourself and to make it easier for you when you speak with them.
+
+
 
 ### 2023-02-06  Airpod max issues
 - 2023-02-06 - volume on the airpod did not work (but did make the clicking noises as if it were working); volume did work on phone to control headset vol

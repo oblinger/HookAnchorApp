@@ -1,3 +1,4 @@
+
 ## TODO
 ### who to talk to
 - Professors
@@ -1210,13 +1211,29 @@ The treasonous American and that's me in the treason is the treasonous thought i
 
 _
 # LOG
+### t2023-02-25  One Pager What To Do?
+
+- HOW FAR AWAY
+	- STEPWISE - AI capabilities arrive in a stepwise fashion.
+	- HUMAN LEVEL IS ALREADY SUPER - Ability to reason as a person does and learn as a person does is sufficient
+	- ENTERED A NEW ERA - 
+	- SEEMS WE ARE CLOSE - 
+
+- WE WLL FAIL TO STOP THIS
+	- DRAMATIC (EXPENSIVE) ACTION WILL NEVER BE TAKEN AGAINST A POSSIBLE THREAT.  Only against a CERTAIN threat.
+	- UNCERTAINTY WILL PERSIST - Even as we achieve AGI uncertainty will persist among even the educated on this topic.
+	- AGENCY IS EASILY ADDED, AND MAY EVEN INEVITABLY EMERGE - 
+	- SYSTEMS WILL PERMUTE SO ALL FORMS OF AGENCY WILL BE IN THE WILD - 
 
 
-
-CORE CLAIMS
-
-
-
+- WHAT HAPPENS NEXT?
+	- WEAPONIZED AGI
+	- COMMERCIALIZED AGI 
+	- AGI-BASED DEFENSE
+	- LOOSE CONTROL 
+		- DATA TRANSPORT at moderate bandwidth
+		- POCKETS OF COMPUTE 
+		- OCCASIONAL CASES OF MASSIVE COMPUTE 
 
 
 ### t2022-10-13  Man in a room soon to die

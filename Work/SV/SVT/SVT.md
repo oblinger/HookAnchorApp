@@ -6,7 +6,8 @@
 - [[SVT Jira]] - 
 - [[SVT Polaris]] - 
 - [[SVT Slack]] - 
-
+- [[SVT Sentry]] - 
+- [[SVT Google Drive]] -
 
 
 

@@ -1,13 +1,26 @@
-- [ ] BugB ready
-- [ ] Summary of Tournament
+- [ ] Monday:  Alpha testing docs.
+- [ ] watch links: 
 
-- [ ] Jack show me polaris;   
-- [ ] Jason next Release topics
-- [ ] Alpha testing tracking
-- [ ] Mark show me apps
+- [ ] iOS dev
 - [ ] doctor Hassler call
-- [ ] Hotel Room:  pay for us; get confirmation for QL; pay for mom
+- [ ] Call James
+- [ ] find PH support for staffing.  Reach out
+
+- [ ] update bug docs
+- [ ] triage my _in2 list
+- [ ] date nite
+- [ ] Nick Allen other Dev Shops build list
+- [ ] Get receipts in
+- [ ] Get hotel fully booked
+- [ ] swimming classes in slack
+- [ ] Josh Yelon
 - [ ] care.com
+
+- [ ] post to linked in
+- [ ] do we have an open req for QA for SV
+- [ ] Jack show me apps
+- [ ] TRIP READY: Hotel Room:  pay for us; get confirmation for QL; pay for mom
+
 - [ ] friday date
 - [ ] call James
 - [ ] Customer Portal
@@ -18,7 +31,6 @@
 - [ ] house repair quote - Better bid on house
 - [ ] Dr Hassler.  get rid of the prilosec   MyChart
 - [ ] Job-Accept, touch base
-- [ ] James
 
 - [ ] Ants
 - [ ] get house repair guy to come
@@ -51,7 +63,7 @@
 - [ ] tsp thinking.
 - [ ] mailto:bbrugler@tiedemannadvisors.com  dwells@albionfinancial.com  albion
 - [ ] Add 1password to shared acct
-- [ ] [[self]]: Hire health coach
+- [ ] [[MY/Plan/self]]: Hire health coach
 - [ ] Get AF accounts cleaned:   (Find the hiring tests)
 
 

@@ -2,12 +2,13 @@
 
 
 ### Work
+- [[WW Bugs]] - 
 - [[WW Bridge Round]] - 
 - [[WW Velocity]] - 
 - [[WW Info]] 
 - [[WW Learning]] - 
 - [[WW Releases]]:
-- [[WW Tournament Management]]: 
+- [[WW Tournaments]]: 
 
 
 - [[WW Remote Work Guidelines]] - 

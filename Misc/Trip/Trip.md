@@ -3,6 +3,8 @@
 
 :: [[Thailand]]
 
+:: [[Thailand]]
+
 ### __
 - [[Travel]],  [Trip](Trip.md), [[Thailand]],
 
@@ -13,6 +15,21 @@
 - [ ] Get discount for mom.  Pick flights.   plugs.  webpage for mom. stuff for kids. 
 - [ ] [Spouses](https://docs.google.com/document/d/1czxaZNHbaEWyWa_O_KmiReyHnq52CqesbWc1lqlwE8U/edit) - Sheet ready
 
+
+
+R09  8:02p-10:28a  SFO->EZE 
+       # GALGHB AA9299, 953
+F  10 ?travel?
+S  11 .
+U  12 .
+M 13 .
+T  14 All day meetings
+W 15 All Day Meetings
+R  16 8p-10:39a  EZE->SFO 
+        AA 996, AA 2798
+
+  
+**
 
 
 ### 2023-02-17  Mike

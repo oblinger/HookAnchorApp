@@ -11,6 +11,8 @@
 
 | Date        | File                     | Notes                                                                   |
 | ----------- | ------------------------ | ----------------------------------------------------------------------- |
+| t2023-02-25 | [[EOCA]]                     | One Pager What To Do?                                                   |
+| t2023-02-25 | [[WP2023]]                   | QL Letter to Waymo HR                                                   |
 | t2023-02-08 | [[@Jason Syversen]]          | Diligence analysis for Hubble                                           |
 | t2023-02-06 | [[@Grzegorz Biziel]]         | Quick Email about Edge detection                                        |
 | t2023-02-06 | [[@Igor Shindel]]            | Meeting Prep                                                            |
@@ -28,7 +30,6 @@
 | t2022-11-03 | [[@Frank Langston]]          | Reference for Sports Visio                                              |
 | t2022-11-01 | [[@Rafah Hosn]]              | Intro Email for Robotics Mgr                                            |
 | t2022-10-31 | [[@George Richardson]]       | Email about terminating the differed comp plan                          |
-| t2022-10-30 | [[@Theo Enns]]               | BOOM BOOM                                                               |
 | t2022-10-27 | [[@Jason Syversen]]          | Response:  So are you a VP of ENG                                       |
 | t2022-10-27 | [[@Jason Syversen]]          | Chew on this - pitch to join                                            |
 | t2022-10-25 | [[@Brian Yormak]]            | Ask to speak                                                            |

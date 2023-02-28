@@ -3,6 +3,14 @@
 
 # LOG 
 
+### 2023-02-27  App Run Thru
+
+- 8 cameras for a tournament
+
+- Uploading while recording; 
+
+
+
 ### m2023-02-21  
 
 

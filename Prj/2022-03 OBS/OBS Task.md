@@ -10,9 +10,9 @@
 - C	[[COMS]]		A W 		*WORKSPACE* of professional communication pages.  ([[Calls]] page is used for personal coms)
 - D	Daily		   W			*WORKSPACE* of daily lists
 - E	
-- F	[[Fried]]		A J   S		Things to do when 'fried'
-- G	[[Gap]]		   W			*WORKSPACE* of activities ...
-- H	[[Hack]]		A J   S		Hacking tasks
+- F	[[fried]]		A J   S		Things to do when 'fried'
+- G	[[gap]]		   W			*WORKSPACE* of activities ...
+- H	[[hack]]		A J   S		Hacking tasks
 - I
 - J						
 - K
@@ -23,7 +23,7 @@
 - P	[[Plan]]		A W 		WORKSPACE showing all weekly planning lists
 - Q	[[quick]]		A J   		Quickly added info
 - R	[[Repeat]]					Weekly 'repeat' list
-- S	[[Self]]			A W		WORKSPACE of personal planning pages
+- S	[[MY/Plan/self]]			A W		WORKSPACE of personal planning pages
 - T	[[todo]]		A J   S		Primary, unified, small-item todo list
 - U
 - V
@@ -37,18 +37,20 @@
 ### ADD ITEM COMMAND
 Dialog used to add a single line item to a todo list note
 
+See Keyboard Maestro CAPS-S for latest version
+
 {
-    "a": "/Users/oblinger/ob/kmr/MY/Plan/Active.md",
-    "c": "/Users/oblinger/ob/kmr/MY/Plan/Comms.md",
-    "f": "/Users/oblinger/ob/kmr/MY/Plan/Fried.md",
-    "h": "/Users/oblinger/ob/kmr/MY/Plan/Hack.md",
-    "l": "/Users/oblinger/ob/kmr/MY/Plan/Later.md",
-    "o": "/Users/oblinger/ob/kmr/PRJ/OBS/OBS.md",
-    "p": "/Users/oblinger/ob/kmr/MY/Plan/Prime.md",
-    "q": "/Users/oblinger/ob/kmr/MY/Plan/Quick.md",
-    "s": "/Users/oblinger/ob/kmr/MY/Plan/Self.md",
-    "t": "/Users/oblinger/ob/kmr/MY/Plan/Todo.md",
-    "w": "/Users/oblinger/ob/kmr/MY/Plan/Waiting.md"
+    "a": "/Users/oblinger/ob/kmr/MY/Plan/active.md",
+    "c": "/Users/oblinger/ob/kmr/MY/Plan/coms.md",
+    "f": "/Users/oblinger/ob/kmr/MY/Plan/fried.md",
+    "h": "/Users/oblinger/ob/kmr/MY/Plan/hack.md",
+    "l": "/Users/oblinger/ob/kmr/MY/Plan/later.md",
+    "o": "/Users/oblinger/ob/kmr/MY/Plan/other.md",
+    "p": "/Users/oblinger/ob/kmr/MY/Plan/prime.md",
+    "q": "/Users/oblinger/ob/kmr/MY/Plan/quick.md",
+    "s": "/Users/oblinger/ob/kmr/MY/Plan/self.md",
+    "t": "/Users/oblinger/ob/kmr/MY/Plan/todo.md",
+    "w": "/Users/oblinger/ob/kmr/MY/Plan/work.md"
 }
 
 
@@ -75,15 +77,15 @@ Dialog used to add a single line item to a todo list note
 
 ### DAILY VIEW DASHBOARD
 
-|    col-1    | col-2 |
-|:-----------:|:-----:|
-|  [[quick]]  | Week  |
-|  [[todo]]   |       |
-|      "      |       |
-| [[active]]  |       |
-|      "      |       |
-| [[external]] |       |
-|             |       |
+|   col-1    | col-2 |
+|:----------:|:-----:|
+| [[quick]]  | Week  |
+|  [[todo]]  |       |
+|     "      |       |
+| [[work]] |       |
+|     "      |       |
+|  [[active]]  |       |
+|            |       |
 
 
 
@@ -100,12 +102,12 @@ Dialog used to add a single line item to a todo list note
 
 ### GAP DASHBOARD
 
-| col-1 | col-2 | col-3 |
-|:-----:|:-----:|:-----:|
-| Fried | Hack  | ToBuy |
-|   "   |  OBS  | Quick |
-|  Gap  |  Fun  | Todo  |
-|       |       |       |
+|   col-1   |  col-2   |   col-3   |
+|:---------:|:--------:|:---------:|
+| [[fried]] | [[hack]] | [[ToBuy]] |
+|     "     | [[OBS]]  | [[quick]] |
+|    [[gap]]    | [[fun]]  | [[todo]]  |
+|           |          |           |
 
 
 
@@ -114,9 +116,9 @@ Dialog used to add a single line item to a todo list note
 | col-1  | col-2 | col-3 |  col-4  |
 |:------:|:-----:|:-----:|:-------:|
 |  Week  | Todo  | Prime |   Q2    |
-| Active |   "   |   "   |  Later  |
-|  Work  | Wings | Full  |  Quick  |
-|   "    |   "   |   "   | Waiting |
+| Active |   "   |   "   |  [[later]]  |
+|  Work  | Wings | Full  |  [[quick]]  |
+|   "    |   "   |   "   |  [[other]] |
 
 
 

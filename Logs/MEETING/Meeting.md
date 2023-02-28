@@ -8,6 +8,8 @@
 
 | Date        | File                 | Notes                                                             |
 | ----------- | -------------------- | ----------------------------------------------------------------- |
+| m2023-02-27 | [[@Theo Enns]]           | Theo 2023 chat1                                                   |
+| m2023-02-27 | [[@Amazon]]              | Hire related                                                      |
 | m2023-02-21 | [[@Mark Lichty]]         |                                                                   |
 | m2023-02-21 | [[@Joaquin Perez Mano]]  | Intro call                                                        |
 | m2023-02-06 | [[@Igor Shindel]]        | Intro meeting                                                     |
@@ -33,7 +35,8 @@
 | m2022-11-14 | [[@Jason Syversen]]      | Hiring Ex-SV folks                                                |
 | m2022-11-09 | [[@Nick Allen]]          | Leaving R-Zero                                                    |
 | m2022-11-05 | [[@Frank Langston]]      | Discussions before Reference call                                 |
-| m2022-10-30 | [[@Theo Enns]]           | Prep for call from Jason                                          |
+| m2022-10-30 | [[@Theo Enns]]           | Prep for Reference call for Jason                                 |
+| m2022-10-30 | [[@Aeolus]]              | MY VALUE - Notes for Theo<>Jason Reference call                   |
 | m2022-10-25 | [[@Jason Syversen]]      | Am I Joining, or WHAT?!                                           |
 | m2022-10-21 | [[MED Heart]]            | Dr. HUI Visit                                                     |
 | m2022-10-18 | [[@Jason Syversen]]      | JASON TAM discussion                                              |

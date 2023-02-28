@@ -1,8 +1,9 @@
 
 | WEEKLY        |                                                                                                                                                   |
 | ------------- | ------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **HOT LISTS** | [[SimpleNote 1Pass\|SimpleNote]] [Reminders](https://www.icloud.com/#reminders) AudioMemos [[Mint 1pass\|Mint]]   # [[FileThis Shell\|File This]] |
-|               | Bk  Nails  Nose  Groc  [[Friday]]    [AF-email](https://mail.google.com/mail/u/1/#inbox)                                                          |
+| **HOT LISTS** | [[SimpleNote 1Pass\|SimpleNote]] [Reminders](https://www.icloud.com/#reminders)  [[Mint 1pass\|Mint]]  [AF-email](https://mail.google.com/mail/u/1/#inbox)    # [[FileThis Shell\|File This]] |
+|               | Bk  Nails  Nose  Groc AudioMemos [[Friday]]                                                           |
+|               | [[Reflections]]                                                                                                                                        |
 | **HOUSE**     | Room: [My-]Desks/Bin/Shelf  House: Pass                                                                                                           |
 | **TODO**      | Clean [[quick]] & [[todo]] lists for this week                                                                                                    |
 | **PLAN**      | Week plan in Top                                                                                                                                  |
@@ -23,7 +24,7 @@
 -- ToFile
 -- In3 ... 
 
-
+dddd
 
 ## === MORNING ===
 - Meditate, Vit, Apples, Clean

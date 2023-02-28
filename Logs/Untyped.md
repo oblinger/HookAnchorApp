@@ -6,6 +6,10 @@
 
 | Date       | File                    | Notes                                                                                     |
 | ---------- | ----------------------- | ----------------------------------------------------------------------------------------- |
+| 2023-02-27 | [[@Mark Lichty]]            | App Run Thru                                                                              |
+| 2023-02-27 | [[@Apple]]                  | Do not disturb mode                                                                       |
+| 2023-02-27 | [[Reflections]]             | Week 2 at SV                                                                              |
+| 2023-02-27 | [[@Sam Corbitt]]            | Intro call                                                                                |
 | 2023-02-24 | [[Phone]]                   | Passport Application                                                                      |
 | 2023-02-20 | [[Bio]]                     | SportsVisio newsletter and blog entry                                                     |
 | 2023-02-20 | [[2023-W08]]                | W08                                                                                       |
