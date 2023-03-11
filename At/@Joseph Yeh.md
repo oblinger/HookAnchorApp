@@ -1,4 +1,4 @@
- [[COACH]], [[RECRUITER]]  [Career Coach](https://www.linkedin.com/in/josephsyeh/) [[@DotConnect]]  
+ [[COACH]], [[RECRUITER]]  [Career Coach](https://www.linkedin.com/in/josephsyeh/) [[@DotConnect]]  [D<>J](https://docs.google.com/document/d/1mksc7XIoeo6LV8eczQXi1xEDzZ-8syGoGEpJRioIXVo/edit)      
 
  Career Coach -- Specializing in DeepLearning, Vision
   - [Hours](https://docs.google.com/spreadsheets/d/1MkWide1VMd0Jez3Z_Z2WIJfZdHKP7Gg2KmS0yodrZWY/edit#gid=0) -- 
@@ -12,7 +12,13 @@ https://www.amazon.sg/
 
 ### m2022-12-07  [[resLI#2022-12-07  Framing Self]] 
 
-Jake
+In a later post I will tell you more about my sale of Analytics Fire last year to one of our former clients (R-Zero) who raised over $170M for building disinfections. I will be sure to follow up with a future LinkedIn post telling you more about that exit, our technologies, our stories and an almost decade long experience with my team.  
+  
+Separate from that, last week I just accepted a CTO role at SportsVisio, a computer-vision-based startup that automatically provides basketball stats from user/coach recorded games.  It’s yet another transformational business coming out of recent advances in Deep Learning / Computer Vision.  The idea is to bring collegiate/professional-level stats-tracking and intelligent highlights out for everyone (e. g. Req leagues, AAU leagues, etc.).  A smartphone, tripod, and deep learned action models is enough to deeply understand and track many sports.  
+  
+I am excited about the mission of the company, and excited about the level of deep learning / computer vision that we are already bringing to this super interesting and hard problem.  Here is an intro blurb about me joining from their corporate blog.
+
+
 
 ### m2022-12-01  Prep for [[@Jason Syversen]] 'final' discussion.
 

@@ -1,4 +1,6 @@
 
+:: [[@Cezary Kopacz]],   [[@Daniel Handyman]],   [[@Glydways]],   [[@Paulo Cheque]],   [[@Shane Junior]],   [[AF ALUM]],   [[SERVICES]]
+[[@Tomas Piaggio]] 
 :: [[@Jeff Pratt]]
 [[@John Murphy]] 
 :: [[@Drew Ackerman]]

@@ -11,6 +11,7 @@
 
 | Date        | File                     | Notes                                                                   |
 | ----------- | ------------------------ | ----------------------------------------------------------------------- |
+| t2023-03-01 | [[EOCA]]                     | Trevor Klee - My Beliefs In a Nutshell                                  |
 | t2023-02-25 | [[EOCA]]                     | One Pager What To Do?                                                   |
 | t2023-02-25 | [[WP2023]]                   | QL Letter to Waymo HR                                                   |
 | t2023-02-08 | [[@Jason Syversen]]          | Diligence analysis for Hubble                                           |

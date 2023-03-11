@@ -1,17 +1,15 @@
-- [ ] scrub <0xa0> non-breaking spaces from clipboard see argentina trip info
-- [ ] buy freezer containers
+- [ ] time tracking
+- [ ] time tracking
+- [ ] eoca note
 - [ ] apple news
-
-- [ ] dongle with usbc ports
 - [ ] buy red envelopes; water filter
+
 - [ ] OBS - system keeps prepending topics to each page
-- [ ] do quarterly budgeting
 - [ ] put plate on wall outlet
 - [ ] get password I know by memory for gmail; think about logon w/o computer to many accounts
 
-- [ ] hands free phone holder
+- [ ] scrub <0xa0> non-breaking spaces from clipboard see argentina trip info
 - [ ]  Crones doctor
-- [ ] drycleaning
 - [ ] Evidence-based child rearing
 
 
@@ -28,13 +26,15 @@
 
 - [ ] get all of Eli's videos to his system
 - [ ] Process mom's Eli educational funds.
-- [ ] passport
 
+LATER
+- [ ] do quarterly budgeting
 - [ ] [read]( https://www.mckinsey.com/industries/agriculture/our-insights/winning-in-africas-agricultural-market) - africa
 - [ ] [job from nick](https://jobs.climatebase.org/job/45940719/chief-technology-officer)    https://boards.greenho
 - [ ] joe says check out  https://boards.greenhouse.io/fractalfounders/jobs/4116035004f
 - [ ] [annual review](https://humanparts.medium.com/how-to-pull-off-a-personal-annual-review-bc3ae908f493) 
 - BEDROOM --  Closet Pole
+
 
 
 ### Older

@@ -1,4 +1,7 @@
 
+:: [[Hiring Resources WebDev]]
+
+- [[Hiring]], 
 :: [[Employee Notes]],   [[MgrContracts]],   [[My Staff]],   [[MyMgr]],   [[leadership]]
 
 -  [MyMgr](MyMgr.md),  [[MgrMeetings]],   [MgrTracking](MgrTracking.md)

@@ -13,14 +13,14 @@
 | G     |                   | GOOGLE edit it     |                             | GOOGLE check spell |
 | H     |                   | HIDE window        |                             |                    |
 | I     |                   |                    |                             |                    |
-| J     |                   | JUMP to Obs Pg     |                             |                    |
+| J     |                   | JUMP to Obs Pg     | go JUMP obsidian            |                    |
 | K     |                   | KICK window around |                             |                    |
 | L     |                   | >                  |                             | LINK 2 obsidian    |
 | M     |                   |                    | go MAIL                     |                    |
 | N     |                   | NO. NEW            | >>> go NEXT song            | create NEU doc     |
 | O     |                   |                    | go OBSIDIAN                 |                    |
 | P     |                   |                    |                             |                    |
-| Q     |                   |                    | go QUICK obsidian page      |                    |
+| Q     |                   |                    | go QUICK tab insert         |                    |
 | R     |                   |                    | go READER (Firefox)         | RESOLUTION change  |
 | S     |                   |                    | go STUFF (Opera)            | SHOW current app   |
 | T     |                   |                    | go TUNES / NEXT             |                    |
@@ -35,7 +35,7 @@
 | {     |                   | Nav BACK           |                             |                    |
 | }     |                   | Nav FWD            |                             |                    |
 | \\    |                   |                    |                             |                    |
-| ;     |                   |                    |                             |                    |
+| ;     |                   | TIME TRgACKING      |                             |                    |
 | '     |                   |                    |                             |                    |
 | ,     |                   |                    |                             |                    |
 | .     |                   |                    |                             |                    |
@@ -99,15 +99,15 @@
 | J     |                        |                  |                             |                   |             |
 | K     | insert LINK            |                  |                             |                   | Kill ln     |
 | L     |                        |                  | / LINKS pane                | LIST of template  |             |
-| M     | -MINIMIZE- /           | note MOVE/MERGE  |                             | MEETING entry     |             |
-| N     | NEW note / new 'MISC'  |                  | /                           | NOTE entry        |             |
+| M     | -MINIMIZE- /           | note MOVE/MERGE  |                             | MEETING heading   |             |
+| N     | NEW note / new 'MISC'  |                  | /                           | NOTE heading      |             |
 | O     | OPEN switcher/OUTLINE  |                  | OPEN in app / note OUTLINE  |                   |             |
-| P     | cmd PALETTE            |                  | PLAN note /                 | PAGE entry        |             |
+| P     | cmd PALETTE            |                  | PLAN note /                 | PAGE note         |             |
 | Q     |                        |                  |                             |                   |             |
 | R     | RENAME file            | ? Rename note    | RECENT notes pane           | QUICK ADD menu    |             |
 | S     | SAVE file              |                  | SCRATCH note / STARRED pane | SUB PAGE entry    |             |
-| T     | TAB new / undo CLOSE   |                  |                             | TEXT entry        | Transpose   |
-| U     |                        |                  |                             | UNTYPED entry     |             |
+| T     | TAB new / undo CLOSE   |                  |                             | TEXT heading      | Transpose   |
+| U     |                        |                  |                             | UNTYPED heading   |             |
 | V     | PASTE from clip        |                  |                             |                   | Paste       |
 | W     | CLOSE pane             | WEEKLY note      | WORKSPACE  Load / Manage    |                   |             |
 | X     | CUT to clip            |                  |                             |                   | Cut         |

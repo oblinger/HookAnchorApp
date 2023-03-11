@@ -3,6 +3,16 @@
  =[[SV]]	 [Operations & Project Manager](https://www.linkedin.com/in/jackpotvin/)  [[@Sports Visio]]		
 
 # LOG
+
+### 2023-02-28  Bug validation process
+
+- Feature/Bugs both use this external-bug label
+- Alpha Testing Docs
+- Alpha Testers spreadsheet
+- Brian can require specific staging validations
+- Add initials to each ATDs
+
+
 ### 2023-02-20  Polaris overview
 
 - Robust
@@ -14,7 +24,7 @@
 - Transition Stat Calculation to Backend - 
 - Game Fulfillment Dashboard - Workflow visualization and optimization
 - Operational Enhancements - (Non-software)
-- Offer SV UStat = Giveing end user annotation portal
+- Offer SV UStat = Giving end user annotation portal
 - 
 
 Reduce Friction: Pivo, Robutness

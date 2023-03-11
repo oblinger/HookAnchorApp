@@ -1,3 +1,4 @@
+TOP:   Chin/Jap/Thai/Ko
 ASIAN:	 Chinese, Japanese, Thai, Korean, Burmese, Vietnamese, Fusion    BOWL: Pho, Bowl, Raman, Poke/Hawaiian
 AMER:	 Seafood, American (Salad, Pizza,  Sandwich, Burger, Fast, Soul, Desert)		
 WORLD:	Italian, French, Mediterranean, German, Spanish, Mexican, Indian, African
@@ -21,7 +22,7 @@ https://www.frannyskitchensf.com/
 | d+~~  CHINESE                   | Big Lantern                                                |     |     |
 | d+~~  CHINESE VEG               | Enjoy Veg Resturant.  low salt, but just ok flavor         |     |     |
 | d???  SUSHI                     | Moki Sushi                                                 |     |     |
-| d4.6  JAPANESE                  | Outer Orbit (Salad, fries, pasta)                                        |     |     |
+| d4.6  JAPANESE                  | Outer Orbit (Salad, fries, pasta)                          |     |     |
 | d+~~  JAPANESE                  | Ginza Sushi                                                |     |     |
 | d???  JAPANESE(-sushi)          | Ginto Express                                              |     |     |
 | d++~  THAI                      | Osha Thai -                                                |     |     |
@@ -49,6 +50,7 @@ https://www.frannyskitchensf.com/
 | d+~~  SEAFOOD                   | Soto Mare                                                  |     |     |
 | ====  AMERICAN   ====           | > Salad, Sandwich, Pizza, Fast                             |     |     |
 | d++~  SALADS                    | Mixt Greens                                                |     |     |
+| d3.8  PIZZA                     | Bernal Heights Pizzeria                                    |     |     |
 | d+~~  PIZZA                     | The Pizza Shop (4.5yelp)                                   |     |     |
 | d???  PIZZA                     | Little Star Pizza (4 or 4.5yelp)                           |     |     |
 | u+++  SANDWICH                  | Grubbin (Great but opens @ 11:15)  Bite (not great)        |     |     |

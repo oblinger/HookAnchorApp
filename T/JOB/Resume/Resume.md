@@ -507,7 +507,7 @@ Address :  100 Produce Ave Suite F   South San Francisco, CA 94
 Title   :  CTO / Head of US operations
 Contact :  Patrick Tien / Alex Huang
 C-phone :  (425) 442-8508‬
-Dates   :  10/26/2016 - 06/30/2018
+Dates   :  10/26/2016 - 06/30/2018  (LI: oct2016 - july2018)
 Salaries:  $83.3K/mo   $1M/yr   (one month of $41.6K/mo)
 Duties  :  
 _________ 
@@ -516,7 +516,7 @@ Address :  390 Vassar Ave. Berkeley, CA 94708
 Title   :  CTO / VP Eng
 Contact :  Joe Augenbraun
 C-phone :  (650) 796-1966
-Dates   :  11/1/2015 - 10/25/2016    
+Dates   :  11/1/2015 - 10/25/2016   (LI: Nov-2015-oct2016) 
 Salaries:  $10K / month
 Duties  :  
 _________ 
@@ -534,7 +534,7 @@ Address :  507 Homer Ave.   Palo Alto, CA 94301
 Title   :  Co-Founder / CTO
 Contact :  Nick Allen
 C-phone :  (775) 230-4251
-Dates   :  07/20/2013 - present
+Dates   :  07/20/2013 - 07/01/2022 (corp dissolved, or 10/01/2022 last day dealing w/ taxes???)
 Salaries:  
 Duties  :  
 _________ 
@@ -543,7 +543,7 @@ Address :  444 Castro St Suite 1200
 Title   :  CTO / Founder
 Contact :  Frank Langston
 C-phone :
-Dates   :  10/09/2011 - 07/20/2013  (date I went to Thailand)
+Dates   :  10/09/2011 - 07/20/2013  (date I went to Thailand) ()
 Salaries:  
 Duties  :  
 _________ 
@@ -552,7 +552,7 @@ Address :  3701 Fairfax Drive, Arlington, VA 22203
 Title   :  Program Manager
 Contact :  Dan Kaufman.  
 C-phone :  571-218-4584
-Dates   :  11/1/2007 - 10/08/2011
+Dates   :  11/1/2007 - 10/08/2011  (LI: Aug2005-Oct2011)
 Salaries:  $154K+25K
 Duties  :  
 _________ 
@@ -570,7 +570,7 @@ Address :  Department of Electrical Engineering, 1312 S.W. Mudd 500 West 120th S
 Title   :  Adjunct Faculty
 Contact :  Shih-Fu Chang 
 C-phone :  (212) 854-6894
-Dates   :  01/2003 - 05/2003
+Dates   :  01/2003 - 05/2003  (Jan2003-May2003)
 Salaries:  ~5K for semester
 Duties  :  Instructor for ELEN E6880 -- Statistical Pattern Recognition
 _________ 
@@ -580,7 +580,7 @@ Address : 19 Skyline drive, Hawthorn NY 10532
 Contact : Juerg Von Kaenel     Peter Gustav Fairweather
 C-Phone : 914-784-7990         (Peters phone: 914-945-2138)
 Title   : Research Staff Member
-Dates   : 3/98 - 6/30/2005?  3/98-7/05  (used to list: 11/09/2005???)
+Dates   : 3/98 - 6/30/2005?  3/98-7/05  (used to list: 11/09/2005???)   (LI:Mar1998-Jul2005)
 Salaries: 87K-150K
 Duties  : RSM 
 _________ 

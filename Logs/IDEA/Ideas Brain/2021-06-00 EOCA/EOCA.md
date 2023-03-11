@@ -1211,15 +1211,135 @@ The treasonous American and that's me in the treason is the treasonous thought i
 
 _
 # LOG
+### t2023-03-01  Trevor Klee - My Beliefs In a Nutshell
+
+Trevor,
+I would *love* for you to punch holes in my thinking on this, or sharpen the argument and propagate it to others if it is correct (though I don't know that it can do any good).
+
+I very much appreciate the visceral/compelling prima-facia counter argument:   "Come on! 27 years!  no way...."  indeed I am of two minds precisely because of the appeal of that argument.  Still given that we are talking about the fate of humanity here, it seems we should really try to defeat the main argument itself.
+
+In a nutshell I believe:
+1. CANT STOP - even once the writing on the wall becomes clear, we still will be unable to stop ourselves.  Indeed we probably already cannot.
+2. FUTURE != PAST - various ways graphing what is about to happen will yield a discontinuity such that any 'regression' over the past is not meaningful.
+3. HUMAN-LEVEL IS ALREADY SUPER - A digital system that is generally able to learn/reason at a human level is already "super" enough that we will loose control.
+4. PIECES ARE KNOWN - We cant build them all, but I think some know and are building what is needed: Existing deep systems are something akin to Dan Kahaner type-I human reasoning.  I think a LeCun type extensions will be sufficient to bootstrap type-II reasoning (which is very similar in nature to the already understood 'old school' AI reasoning systems.)
+5. WE ARE PROBABLY CLOSE - I don't think it will be terminator-style 'flip the switch' kind of take over.  Rather trillion-dollar corporations and nation-states will drive capacity (under their control) forward well beyond their human capacity to comprehend the "battle" they are waging. We will stridently attempt to develop AGI-based counter measures, and they will work.  But along the way they (we) will rapidly loose ability to manage or even understand the systems being built, such that at some point our actual loss of control will have silently occurred without us even knowing it.
+
+
+Based on your compelling "Aww come on man!" counter argument, all five of my beliefs seem pretty improbable.  I wonder if there is one of them that you think is easiest to attack first?  or one that just seems MOST improbable to you?  Maybe you can even suggest why it seems wrong?  And of course the summary above is ridiculously compressed, you might just ask me to elaborate one of the points before trying to rebut it.
+
+
+The fate of humanity, or at least my ability to sleep restfully lies in your hands!  (grin)
+
+--dan
+
+#### Future!=Past
+
+The future not being similar to the past. My grandfather was born in 1927 in Brooklyn. He used to ride his bike on the sidewalk, past big buildings, as automobiles trundled by. That's pretty similar to what kids do today. The only major thing he'd have to get used to would be the Internet. Everything else would likely be improved, but not a huge, unrecognizable change. In fact, he'd probably be disappointed we're not living Jetsons-style, and I still have to cook my own food.
+
+
+Trevor:
+Agree, as a bayesian prior assuming that things will be more similar than not has extremely strong empirical support.  But it we look closer we see that big shifts did occur during that time, and it was possible (with strong foresight) to see those effects before they happened, they were not inscrutable.  Your point is that the human condition remained similar even as it became regular to transit the entire United States in an afternoon.  True, and maybe (somehow) the human condition might survive into a world where humans are not in control?!  But more on that here:
+
+I think it **IS** possible on occasion to see a specific capability as likely before it has happened, even when that capability will cause a discontinuity that really cannot be modeled by past performance.  I consider two cases:  The atom bomb and the transistor.
+
+Imagine a general speaking to a scientist proposing the Manhattan project.  The scientist is talking about weapon capable of leveling hundreds of square miles with a single bomb the size of a car.  Now if one were to graph improvements in weapon technology since the beginning of humankind there is nothing in the record to support this scientists claim.  It is just ludicrous.  Of course there have been big improvements on occasion in the power of a weapon, but never before has there been a jump in power like what is being discussed.  The general could dismiss this claim on the basis of that very solid historical record.
+
+I argue that when one has a particular technology pathway yielding a transformative outcome, it is wrong in general to measure the chances of that outcome based on the resulting discrepancy with the past.  As a general guide it is a fine prior, but it is nearly entirely supplanted by an analysis of the particular pathway.  (which would get us into #4 or #5 in my list above).
+
+
+Just one more example.  Folks, repeatedly and famously mis-predicted the path of computers over and over again until we adopted a new way of looking at things (e.g. Moore's Law).  And More's law is VERY weird.  before computation and the transistor we really didn't have things that would multiplicatively improve on the scale of 1 or 2 years.  If we graph the number of digits of PI that humanity had computed over time since the earliest days it would be a very flat graph with a few pronounced jumps along the way.  but nothing before 1950 that might suggest that humanity might would know 62.8 trillion digits in 2021.  even on log graph that is just a stupidly improbable claim.
+
+Feynman famously gave a talk entitled "there is a lot of room at the bottom" where he foresaw some of this unfolding.  Again I think it is possible for a person seeing the beginning of the transistor revolution (especially once lithography had been invented) to see the writing on this wall.  If you just ask the question, as Feynman did, just how small will physics let you go?  Just how fast will it let you propagate&process info? you can infer this outcome long before the graph starts showing it.
+
+
+So my point is that when someone proposes a specific pathway towards a transformational outcome, one must assess the pathway itself, as a means of assessing the likelihood of the outcome, and nearly IGNORE the level of absurdity that the outcome represents... considering that absurdity to 'hedge' on the level of the outcome is usually how humanity ends up UNDER estimating transformational shifts.  (of course the end of humanity has been predicted many times, so our level of skepticism in assessing #4 and #5 should be high.)
+
+
+
+The last point required to justify our departure from the Bayesian prior that not so very much will change is to express in simple terms the nature of the transformation itself.  We can't just wave our hand and say "transformative!!" We need to point to very specific path and argue IF that path work we should disregard priors based on unrelated earlier outcomes:
+
+An Atom Bomb:   Physics had experimental evidence that the switch from electrostatic force to the strong force would yield a 20 MILLION fold increase per gram
+A Transistor:   Physicists knew speed of transistors were related to size, and knew fundamental limits were more than a BILLION times smaller/faster than electromechanical systems.
+A Compu-brain:  Will be a thousand times a human brain with todays tech, and the gap will grow from there.
+
+
+A compu-brain is a closed digital system capable of performing human reasoning and learn at the level and breadth that humans can today.
+
+
+
+We have yet to construct a compu-brain of any capacity.  To be a compu-brain it is essential that is be a closed system, it must not require human augmentation for any part of its learning or reasoning, and as a closed system it must be capable of any learning or reasoning a human could do.
+
+Here we simply argue that **IF** one were to construct a compu-brain the result would be transformative in the same way the the bomb and transistor were, such that one should expect a discontinuty and should NOT consider extensions of past performance to assess what comes next, doing so, like all other transformations will cause one to wildly underestimate the actual outcome.
+
+
+Of course I still need to convince the reader that we are not so far from creating the compu-brain, that we cannot stop, and we already know many of the pieces!
+
+but at least have I justified my disregard of the past in assessing the likelihood and outcome of the compu-brain pathway?
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Tsara Bomba = 62megaton yield / 27 ton weight     > 20,000,000 time more energy than TNT per gram
+Transistor = 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ### t2023-02-25  One Pager What To Do?
 
 - HOW FAR AWAY
 	- STEPWISE - AI capabilities arrive in a stepwise fashion.
+	- DOLLARS not YEARS - 
 	- HUMAN LEVEL IS ALREADY SUPER - Ability to reason as a person does and learn as a person does is sufficient
 	- ENTERED A NEW ERA - 
 	- SEEMS WE ARE CLOSE - 
 
-- WE WLL FAIL TO STOP THIS
+- WE CANT STOP BUILDING THIS
 	- DRAMATIC (EXPENSIVE) ACTION WILL NEVER BE TAKEN AGAINST A POSSIBLE THREAT.  Only against a CERTAIN threat.
 	- UNCERTAINTY WILL PERSIST - Even as we achieve AGI uncertainty will persist among even the educated on this topic.
 	- AGENCY IS EASILY ADDED, AND MAY EVEN INEVITABLY EMERGE - 

@@ -1,4 +1,5 @@
-
+- [[Bug Board Webpage]]
+- [Bug Tracking Docs](https://software-engineering-team.atlassian.net/wiki/spaces/SPORTSVISI1/pages/47251463/External+Bug+Tracking) - 
 - [[SV Bugs]] - 
 - [List of Bugs](https://software-engineering-team.atlassian.net/issues/?filter=10029) - 
 

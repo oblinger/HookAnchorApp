@@ -1,5 +1,7 @@
 
-:: [[Untitled]],   [[self]]
+:: [[Untitled]]
+
+:: [[MY/Plan/Untitled]],   [[self]]
 
 :: [[MY/Plan/Untitled]]
 

@@ -1,8 +1,8 @@
-
+Black Bean (chili / soup / cuban);  brussel
 **NOW**:
 - SOUPS:   White Bean - , Black bean - , Mixed bean ?just-use-white?, Split Pea, Butternut, lentil (retry), 
-- CURL:    Peanut Stew, Curry, Soup, Millet
-- QUINOA:  Southwest,  Peppers w/ more Quinoa
+- CURL:    +Peanut Stew, +Curry, Soup, Millet
+- QUINOA:  +Southwest,  +Peppers w/ more Quinoa
 
 **GOALS**:
 - More Soups:  Veg Soup, 

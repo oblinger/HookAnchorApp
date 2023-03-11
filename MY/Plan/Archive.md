@@ -1,3 +1,22 @@
+- [ ] [[MY/Plan/self]]: Hire health coach
+- [ ] Crunchbase: do investor search, then cancel account
+- [x] Ants
+- [x] find PH support for staffing.  Reach out
+- [ ] friday date
+- [x] do we have an open req for QA for SV
+- [x] post to linked in
+- [ ] Josh Yelon
+- [x] Get hotel fully booked
+- [ ] Nick Allen other Dev Shops build list
+- [ ] date nite
+- [ ] triage my _in2 list
+- [x] update bug docs
+- [x] Update linkedin
+- [x] drycleaning
+- [x] hands free phone holder
+- [x] passport
+- [x] dongle with usbc ports
+- [x] buy freezer containers
 - [x] UROLOGIST - Dr Tom Liu 415-353-2200 400 Parnassus #610A
 - [x] buy duvet cover
 - [x] take ball launcher back.

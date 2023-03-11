@@ -1,10 +1,12 @@
-- [ ] [[WW Bugs]]: MON - see all bugs in, watch flow
-- [ ] [[WW Bugs]]: Verify alpha testing, 
-- [ ] [[WW Tournaments]]: 
-- [ ] [[SV Hiring]]:    iOS dev, Ph Admin
+- [ ] [[SV Hiring]]:    iOS dev,    Ph:  +James, +++ Jormey
 
-- [ ] Call Trees who gets called
-- [ ] [[WW Learning]]: 
+- [ ] [[WW Bugs]]: -- monitor --
+- [ ] [[WW Tournaments]]: Write doc for UX for tour, doc for coach trial user
+
+
+- [ ] Execute app - end to end run by DanO
+- [ ] [[WW Learning]]: Execute System
+- [ ] [[COMS]]: iOS dev, Paulo,    PH: James, Christine
 - [ ] [[WW Info]]: Contact info(pages, email)  info page for all folks.
 - [ ] [[SV90.]] - 
 	

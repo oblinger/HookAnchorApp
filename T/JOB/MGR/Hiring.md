@@ -1,3 +1,7 @@
+
+- [[ROLODEX]], 
+- [[CRM]] 
+
 ### Hiring/Mgt
 -- ACCOUNTABILITY -- which role did you have largest accountability.  what happened.
 -- SMART goals (specific, measurable, achievable, results-focused and time- bound)

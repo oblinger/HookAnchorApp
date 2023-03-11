@@ -188,7 +188,7 @@ Emotive & Incisive
 
 ## = ABOUT ME
 
-### UNCOMFORTABLE - What makes you uncomfortable?   
+### UNCOMFORTABLE - What makes you uncomfortable? 
 - BRO / SPORTS  TALK - Grew up a nerd.  Never watched sports
 
 
@@ -265,14 +265,25 @@ GOOGLE: "Impact the world @ scale."   Get Granular about parts of google that I 
 
 
 ### MISSING TRAITS - What are three skills or traits you wish you had?                       <<<<<<   ????
+
+- HI-EXPECTATION & HI-VELOCITY - but can wear self and folks down.  
+	- PATIENCE & BALANCE - next level performance is to have those expectations with less stress generation.
+		- TODAY - much much better, but I still know others who are EVEN better, so it is an area of focus for me
+
+- SPORTS-LIKING - Good for health and mentality
+
+
+- SOCIAL INSTIGATOR
+
 - LESS INTENSE - 
 	- Understand flow and tempo of R&D org and when to switch into emergency.
 		- Do it w/o always flipping into higher intensity ... burnout.  
 	- Naturally easy going, but less intense under fire.  (ideally all emotion)  I am working to internalize less
-		- Multi-year projects
-- SPORTS-LIKING - Good for health and mentality
+		- Multi-year projects.
 
-- SPONTANEOUS - s
+  
+
+- ENTREPRENEUR STARTUP EXECUTIVE - Work best in "fire hose" roles with where rapid response is required.  Less excited and less valueable in slower moving contents where politics is key.
 
 
 
@@ -301,10 +312,17 @@ GOOGLE: "Impact the world @ scale."   Get Granular about parts of google that I 
     ==>  SOW writing at AF.  2-month goal setting, sprint and API decisions at Aeolus.
 
 
-### IMPROVE - How do you want to improve yourself in the upcoming year?          <<<<<<<<<   ?????
+### IMPROVE - How do you want to improve yourself in the upcoming year?
 - ML HACKING -  (talk about specific project; get granular)
 - HEART HEALTH - 
 - SIDE PROJS - 
+
+- LEADERSHIP SKILLS
+	- Book learning & mentoring & doing it
+- EXECUTION LEADERSHIP
+	- Book learning & mentoring & doing it
+- DEEP LEARNING
+	- Course, doing on the side
 
 
 ### HEROS - Who are your heroes?
@@ -326,11 +344,12 @@ GOOGLE: "Impact the world @ scale."   Get Granular about parts of google that I 
 - AEOLUS - Hands on building team, hands on building architecture, hands on building a solution
 
 
-### BEST BOOK - What’s the last book you read?                        <<<<<<<   ??????
+### BEST BOOK - What’s the last book you read?
+- A management book?     First-90-days                   <<<<<<< Good ML or Biz or anything where it obviously enriching
+
 - Ghost Boy - 
 - How to not Die - 
 - Ciuxin Liu's Three Body Problem    <<<< needs story about WHY it is interesting or enriching
-- A management book?                        <<<<<<< Good ML or Biz or anything where it obviously enriching
 
 
 ### BEST JOB - What is the best job you ever had?

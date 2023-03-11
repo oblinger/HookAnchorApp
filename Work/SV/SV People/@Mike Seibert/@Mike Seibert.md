@@ -3,6 +3,68 @@
 
 # Log
 
+### 2023-03-06  Three guys CV guys from Argentina
+
+(#1) Gonzalo
+- He has one year of ML work.  and that was not even deep learning work.
+- in Metrica Sports he did some un-named "CV research"
+- I am pretty skeptaical, but would love to hear what he did.
+  I watched their video, but did not see fancy AI CV stuff...
+  maybe that stuff is still in R&D in 2023?!?!
+
+not so impressed.
+
+
+(#2) Matias
+- I like Top Tal, it has some good (but sometimes expensive) devs
+- I like IBM Research (but of course I am biased  ;-) )
+- He was really only doing pipeline creation work
+- XGboost is fine, but really old school ML, not what we need.
+- NLP w/ bert is more end user ML, not developing the algs himself.
+- Docker/Kubernettes is definitely a skill we could use and that seemed like he really did the work himself.  Still that is a narrow and time limited need that we have, and does not even need an ML/CV guy really for that.
+- WORK AT IBM seems possibly interesting:
+  Could not download his two papers, both seemed possibly interesting for us (maybe DL but not CV)  Transformer work is relevant and bert is not.
+  - seems maybe capable of real algo development work.
+- WORK AT WE VAT
+  - "developed CV algos on tensor flow"   very very interesting if it was "real" algo work.
+- WORK at MORSUM
+	- some relevant dev-ops ML stuff, could be valuable if he really is a high velocity SW guy.
+- I like that he founded his own company, motivation and broader perspective
+
+Overall this guy seems like a legit possibility.
+Mostly would want to understand what kind of DL algo stuff has he really done, AND do we think he is a high velocity executer.  if both of those were strong positives, then I would be pretty excited.
+
+
+(#3) Gabriel
+DATA SCIENTIST @ COE
+- Technical leader running autoML.  Ugh.
+- predicting oil pressure instabilities -- I have looked at this area... state of the art in this area is mostly using some silly regression model.  One *could* theoretically apply some interesting 3D modeling into a specialized ML alg, but you mostly dont' have the data to drive such fanciness, so I bet he did some old school generic ML on this.  (we can check, but I am skeptical).
+- PySpark...  again generic ML tooling.
+RESEARCHER AT CONICET
+- 18 papers co-authored, but never tells us exactly what he did?!
+- Self-propelled particles???
+- the scope of tasks could have interesting models and algos, but I am skeptical since we are not told of a single alg or such developed (maybe there are too many to list?!)  we can ask, but I am quite skeptical.
+POST DOC
+- clear systems work, but feels more like a tools / platform and less algo work.
+- "my own data science algos in Mat Lab"
+  Can ask, but I bet it is old school ML-like stuff.
+
+Doubtful this is a viable candidate, but cannot reject base on what we see here.
+
+
+
+
+### m2023-03-01  Hiring AI / CV guys
+
+- Linked In ad
+- Stack overflow 
+	- Open CV task, or PyTorch task
+
+
+
+
+
+
 ### 2023-02-17  AI Elements
 
 ### 2023-02-01  Intro 

@@ -7,7 +7,7 @@
 - [[WW Velocity]] - 
 - [[WW Info]] 
 - [[WW Learning]] - 
-- [[WW Releases]]:
+- [[WW 32 Releases]]:
 - [[WW Tournaments]]: 
 
 

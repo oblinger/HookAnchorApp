@@ -1,4 +1,28 @@
 
+### Dream: "what am I getting myself into"
+
+Woke this morning with a feeling that doing the "crush it" talk in Argentina that I am signing myself up to be a maniac worker for the next many years.
+
+Maybe I am to some degree, but I do need to deliver value, and this is one kind of value I can deliver.  I still think I can shape the job stay out of many of the weeds, AND get stronger in CV at the same time.
+
+
+worried about this issue, but I am hopeful I can manage it.
+
+And it is part of an evolving picture of what I can deliver in future jobs too.  My biggest worry is that I will only earn 200-300K at SV but need more in order to retire well.
+
+
+
+
+
+### 2023-03-01  Mid Week - Different kind of tracking
+- Before SV I needed to track that I was getting stuff done each day
+- Now I am "running hot" with many actions happening each day
+- But not necessarily the most important actions happening all the time
+- Idea: track 'buckets' of activity in order to ensure good percentage is going in best directions
+
+ [[Buckets]]  
+
+
 ### 2023-02-27  Week 2 at SV 
 
 - **EFFECTIVE** - For the first time in a long time I feel like I am being particularly effective with my time.  Why?

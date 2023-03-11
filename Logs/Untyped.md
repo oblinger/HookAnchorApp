@@ -6,6 +6,14 @@
 
 | Date       | File                    | Notes                                                                                     |
 | ---------- | ----------------------- | ----------------------------------------------------------------------------------------- |
+| 2023-03-11 | [[Bio Verbal]]              | BULLETS FOR SLIDE                                                                         |
+| 2023-03-07 | [[@Daniel Handyman]]        | Quote for house work                                                                      |
+| 2023-03-06 | [[@Mike Seibert]]           | Three guys CV guys from Argentina                                                         |
+| 2023-03-01 | [[@Tomas Piaggio]]          | Maybe work for Sports Visio                                                               |
+| 2023-03-01 | [[Buckets]]                 | New Time Tracking Bucketing                                                               |
+| 2023-03-01 | [[Reflections]]             | Mid Week - Different kind of tracking                                                     |
+| 2023-03-01 | [[@Pablo Calofatti]]        |                                                                                           |
+| 2023-02-28 | [[@Jack Potvin]]            | Bug validation process                                                                    |
 | 2023-02-27 | [[@Mark Lichty]]            | App Run Thru                                                                              |
 | 2023-02-27 | [[@Apple]]                  | Do not disturb mode                                                                       |
 | 2023-02-27 | [[Reflections]]             | Week 2 at SV                                                                              |
