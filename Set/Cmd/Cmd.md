@@ -1,4 +1,6 @@
 
+:: [[Plan Folder]],   [[Sensitive OPEN Doc]],   [[Set Folder]]
+
 :: [[BillPay Joint]],   [[BillPay Personal]],   [[Receipts Folder]],   [[Returns Folder]]
 
 :: [[Bug Board Webpage]],   [[K Folder]],   [[hROOM]]

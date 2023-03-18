@@ -1,4 +1,6 @@
+- [ ] learning: run the apps; build the AI
 - [ ] Call Hassler; Urologist; 
+- [ ] link up mission & write some of it
 - [ ] taxes plan
 - [ ] pull trigger on iOS contrators (CreateThrive)
 - [ ] finish doc for exportable stats

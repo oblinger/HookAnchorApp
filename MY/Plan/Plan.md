@@ -1,17 +1,8 @@
 
-:: [[Untitled]],   [[self]]
+:: [[Social]],   [[Spirit]],   [[Untitled]],   [[other]],   [[self]],   [[work]]
 
-:: [[bfast]],   [[meet]],   [[standup]]
 
-:: [[MY/Plan/Untitled]],   [[work]],   [[dinner]],   [[wake]]
 
-:: [[Spirit]],   [[other]]
-
-:: [[lunch]]
-
-:: [[first]],   [[run]]
-
-:: [[Social]]
   [[Archeology]]
   [[chew]]
 => [[Top]] > [[MY]] > [[Plan]]  

@@ -1,13 +1,12 @@
 
-:: [[Untitled]]
-
-# ROOTS
-- [[Kmr Folder|Kmr]]		[[Top]] 				TOP 	-  List of all top level info pages    
-- [[Plan]]		[[Plan]]				PLAN 	-  Pages used for short and long term planning
+- ***ROOT***		***DOCS***
+- [[Kmr Folder|KMR]]		[[Top]] 				TOP 	-  List of all top level info pages    
+- [[Plan Folder|Plan]]		[[Plan]]				PLAN 	-  Short and long term planning
 - [[Logs]] 		[[Meta Logs]]		TIME 	-  Lists with a time-based organization
+- [[Set Folder|Set]]		[[Set]]				SET	-	Groupings of like (typed) entries 
 - 			[[Meta Flow]]    	PROC	-  My data intake and processing pathways
--  [[Meta]]	[[Meta Meta]]		META	- 
--  [[OBS]]		[[OBS Meta]] 		OBS	- Setup details for my info pages
+- [[Meta]]		[[Meta Meta]]		META	-  These docs here
+- [[OBS]]		[[OBS Meta]] 		OBS	-  Setup details for my info pages
 
 
 OTHER STUFF

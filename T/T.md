@@ -1,4 +1,9 @@
 
-:: [[Legal]]
-
-:: [[JOB]],   [[FIN]],   [[Food]],   [[Life]],   [[MED]],   [[Webshare]]
+T (master)
+- [[JOB]]		- 
+- [[FIN]]		- 
+- [[Food]]		- 
+- [[Legal]]		- 
+- [[Life]]		- 
+- [[MED]]		- 
+- [[Webshare]]	- 
