@@ -1,10 +1,10 @@
 
+:: [[Archeology]]
+
 :: [[Social]],   [[Spirit]],   [[Untitled]],   [[other]],   [[self]],   [[work]]
 
 
 
-  [[Archeology]]
-  [[chew]]
 => [[Top]] > [[MY]] > [[Plan]]  
 
 [[OBS.]] 
