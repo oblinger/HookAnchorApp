@@ -1,6 +1,6 @@
 
-:: [[race]]
-  [Climate](Climate.md)
+:: [[race]]  [[Socialism]]  [[AI-HISTORY]]  
+  [Climate](Climate.md)  
   [race](race.md)
   [race](race.md)  [trump](trump.md)
 

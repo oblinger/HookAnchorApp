@@ -59,7 +59,7 @@ Ordered By Planned Delivery Time
 Insight:  Prioritization is messy and ill defined.  But final delivery order is never ill defined.  Thus agreeing on delivery ordering is both most valuable for team's planning and most well defined for management.
 
 More Apples To Apples
-Insight: Each pillar has its own metric for improvement that help prioritize within that pillar.  But no useful metric spans all four, thus priorizing within pillar is much more apple to apples than across pillars.
+Insight: Each pillar has its own metric for improvement that helps to prioritize within that pillar.  But no useful metric spans all four pillars, thus prioritizing across pillars less apples to apples and far harder to do.  Here we avoid that.
 
 
 Key Ideas
@@ -80,15 +80,15 @@ Beyond this features are progressively less specified, and their exact ordering 
 Key Ideas
 
 Fluid
-Idea: Exact ordering of each backlog represents up to the minute understanding of our corporate prioritize.
+Idea: Exact ordering of each backlog represents up to the minute understanding of our corporate priorities.
 
 Stable
-Idea: Management will strive for backlog stability, but not at expense of corp efficacy.  
-Idea: No matter what sprints are locked down at the beginning of the sprint, separate small-feature mechanism is used within a sprint
+Idea: Management will strive for backlog stability, but not at expense of corporate efficacy.  
+Idea: No matter what, sprints are locked down at the beginning of the sprint, a small-feature mechanism used for within-sprint updates.
 
 Time Efficient
 Idea: Many fewer prioritization discussions / meetings.  Management boils all prioritization complexity down into a simple delivery ordering.
-This ordering is the key output need for dev planning.
+This ordering is the main thing dev teams need for planning.
 
 Plantastic
 Idea:  Knowing the next couple bigger deliverables allows teams to opportunistically allocate effort to optimize multi-sprint output.

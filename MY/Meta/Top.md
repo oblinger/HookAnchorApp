@@ -1,21 +1,21 @@
 
 [[MY]]					 MY OVERVIEW PAGES
 - [[Meta]]		- Descriptions of my organizational systems 
-- [[Lists]] 		- My organizational lists (e.g. camping list, travel list, etc) 
+- [[Lists]] 	- My organizational lists (e.g. camping list, travel list, etc) 
 - [[Plan]]		- My task planning lists
 - [[TAGS]] 		- My tags hierarchy
 
 
-[[Set]]					 GROUPS OF LIKE ENTRIES -- (UN-dated, UN-ordered, Typed)
-- [[AT]] 			- All Entities (People, Organizations, etc.) 
+[[Set]]				GROUPS OF LIKE ENTRIES -- (UN-dated, UN-ordered, Typed)
+- [[AT]] 		- All Entities (People, Organizations, etc.) 
 - [[App]] 		- Info about specific applications
 - [[Docs]] 		- Personal documentations pages 
-- [[Humor]]		- Jokes I have collected
+- [[Humor]]	- Jokes I have collected
 - [[Lang]]		- Collected info about specific computer languages
-- [[Movies]]		- Movies "to watch"
-- [[Phone]]		- Administrative actions associated with accounts or such
-- [[Places]] 		- Info I have collected about specific places
-- [[ToRead]]		- Stuff "to read"
+- [[Movies]]	- Movies "to watch"
+- [[Phone]]	- Administrative actions associated with accounts or such
+- [[Places]] 	- Info I have collected about specific places
+- [[ToRead]]	- Stuff "to read"
 
 
 [[Logs]]  				 GROUPS OF LIKE ENTRIES -- (Dated, Ordered, Typed)

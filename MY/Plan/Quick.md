@@ -1,3 +1,7 @@
+- [ ] Call Hassler; Urologist; 
+- [ ] taxes plan
+- [ ] pull trigger on iOS contrators (CreateThrive)
+- [ ] finish doc for exportable stats
 
 - [ ] - [ ] snack list
 

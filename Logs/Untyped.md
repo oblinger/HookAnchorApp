@@ -6,6 +6,9 @@
 
 | Date       | File                    | Notes                                                                                     |
 | ---------- | ----------------------- | ----------------------------------------------------------------------------------------- |
+| 2023-03-17 | [[FIN]]                     | Vanguard Get TIPS, dave-O opening an account                                              |
+| 2023-03-13 | [[Socialism]]               | Achilles (flutter dev at SV)                                                              |
+| 2023-03-11 | [[Trip]]                    | Argentina places                                                                          |
 | 2023-03-11 | [[Bio Verbal]]              | BULLETS FOR SLIDE                                                                         |
 | 2023-03-07 | [[@Daniel Handyman]]        | Quote for house work                                                                      |
 | 2023-03-06 | [[@Mike Seibert]]           | Three guys CV guys from Argentina                                                         |
@@ -62,7 +65,7 @@
 | 2023-01-11 | [[References]]              | Grzegorz References                                                                       |
 | 2023-01-10 | [[FIN Budget]]              | Energy Usage                                                                              |
 | 2023-01-09 | [[Habit]]                   | Wake-First-MIT                                                                            |
-| 2023-01-06 | [[Amazon Customer]]         | Fake Taylor's Tea                                                                         |
+| 2023-01-06 | [[AMA Notes]]               | Fake Taylor's Tea                                                                         |
 | 2023-01-03 | [[@Apple]]                  | Laptop Repair                                                                             |
 | 2023-01-01 | [[DYL]]                     | Hook System                                                                               |
 | 2023-01-01 | [[DYL]]                     | Edu Corp                                                                                  |

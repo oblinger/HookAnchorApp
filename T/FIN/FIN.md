@@ -3,7 +3,7 @@
 
 -  [[FIN Bills]],  [[Expenses]],   [Taxes](Taxes/Taxes.md),   [Vanguard](Vanguard.md)
 
-
+- [[BillPay]] 
 
 
 # PRJ
@@ -786,6 +786,23 @@ Is CAPE Broken?  http://www.hussmanfunds.com/rsi/cape.htm
 books to read    http://mebfaber.com/about/
 
 # LOG
+
+### 2023-03-17  Vanguard Get TIPS, dave-O opening an account
+Fixed Income Desk - 
+800-669-0514  8:00a-5:30p
+
+
+treasurydirect.gov
+
+
+Dave-O
+877-662-7447
+Onboarding Department - Open a new account.
+- [CD Rates](https://investor.vanguard.com/investment-products/cds)
+
+
+4.53% settlement fund current rate
+
 ### 2019-00-00  AF CHARGES
 2019
 10	Kincade -- Dinner with Dan Outcult

@@ -671,17 +671,24 @@ https://www.amazon.com/Lutron-Cover-Smart-Bridge-P-BDGPRO-PKG3AW/dp/B079DKY386/r
 ### Disposable Condiment Cups
 http://webresturantstore.com
 _
+### STORAGE CONTAINERS
+
+#### Rubbermaid Brilliance
+- https://www.amazon.com/gp/product/B079MMSZ4Z/ref=ppx_yo_dt_b_search_asin_title?ie=UTF8&psc=1
+- 4.7 Cup 
+
 ## === CLOTHING ===
 ### --- Tee Shirts ---
-Threadless - great designs, ok quality.  (maybe buy premium)
-6-dollar-shirts - BAD QUALITY - DONT ORDER
-Headline-Shirts - good quality? few designs
+NOPE!
+- Threadless - great designs, ok quality.  (maybe buy premium. nope.)
+- 6-dollar-shirts - BAD QUALITY - DONT ORDER
+- http://society6.com - poor quality?
 
 
+- Headline-Shirts - good quality? few designs
 Bananna Republic - good quality - few designs - white tee with leaves outline
 j Crew - solid steel blue tee
 http://designbyhumans.com
-http://society6.com
 Etsy
 
 ### --- Hudson Jeans ---

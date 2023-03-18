@@ -1,15 +1,5 @@
 
-:: [[Untitled]]
-
-:: [[MY/Plan/Untitled]],   [[self]]
-
-:: [[MY/Plan/Untitled]]
-
-:: [[MY/Plan/Untitled]]
-
-:: [[MY/Plan/Untitled]]
-
-:: [[MY/Plan/Untitled]]
+:: [[Untitled]],   [[self]]
 
 :: [[bfast]],   [[meet]],   [[standup]]
 
@@ -28,7 +18,7 @@
 
 [[OBS.]] 
   
-#### Short Term Tactical Lists
+#### [[Now]] Short Term Tactical Lists
 - [[active]]		-  [[wings]], 
 - [[Current]]		-  My 'current' weekly plan
 - Daily		- 

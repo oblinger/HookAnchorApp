@@ -5,7 +5,7 @@
 - [[WW Bugs]] - 
 - [[WW Bridge Round]] - 
 - [[WW Velocity]] - 
-- [[WW Info]] 
+- [[WW Notes]] 
 - [[WW Learning]] - 
 - [[WW 32 Releases]]:
 - [[WW Tournaments]]: 

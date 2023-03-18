@@ -1,8 +1,40 @@
 
 :: [[Thailand]]
 
+:: [[Thailand]]
+
 ### __
 - [[Travel]],  [Trip](Trip.md), [[Thailand]],
+
+### 2023-03-11  Argentina places
+
+#### [Yellow bus](https://www.google.com/maps/place/Galer%C3%ADas+Pac%C3%ADfico/@-34.5996417,-58.3777718,16z/data=!4m6!3m5!1s0x95bccacb0b1afcaf:0x8d53a5cf4f399e9c!8m2!3d-34.5992496!4d-58.3747789!16s%2Fm%2F02rlb3t) 
+- Galarias Pacifico pickup - Every 20 minutes - pay on bus
+- Cordoban
+
+#### [Museo de los Ninos](https://www.tripadvisor.com/Attraction_Review-g312741-d1068434-Reviews-Museo_de_los_Ninos-Buenos_Aires_Capital_Federal_District.html) 
+  - Mall it is inside of [Abasto de Buenos Aires](https://www.google.com/maps/dir/474+BUENOS+AIRES+HOTEL,+San+Mart%C3%ADn,+CABA/Abasto+de+Buenos+Aires,+Avenida+Corrientes+3247,+Lavalle+3120,+C1193+CABA/@-34.6009541,-58.409947,14z/data=!3m1!4b1!4m14!4m13!1m5!1m1!1s0x95bccaccfca199f9:0x6b89b24251f69a21!2m2!1d-58.3739561!2d-34.6024776!1m5!1m1!1s0x95bcca8c854bd13f:0xfc0cf5c054da4aa1!2m2!1d-58.4109897!2d-34.6038802!3e0) 
+  - Ferris Wheel
+  - Open 1-8pm  [web](http://www.museoabasto.org.ar/)
+
+#### Tango
+
+
+#### Small Grp Tigre Delta
+-  [trip advisor](https://www.tripadvisor.com/AttractionProductReview-g312741-d11446058-Small_Group_San_Isidro_and_Tigre_Delta_Tour-Buenos_Aires_Capital_Federal_District.html)  $85  can work for mom
+-  [viator](https://www.viator.com/tours/Buenos-Aires/TIGRE-DELTA-TOUR-BUENOS-AIRES/d901-109228P14)  
+
+
+#### Horse Riding
+-  [trip advisor](https://www.tripadvisor.com/AttractionProductReview-g312741-d11446348-Gaucho_Day_Tour_Ranch_in_San_Antonio_de_Areco_from_Buenos_Aires-Buenos_Aires_Capit.html)  
+
+
+#### Others
+-  [small boat tour - delta in Tigre](https://www.tripadvisor.com/AttractionProductReview-g312762-d24129560-Half_Day_Private_Safari_Delta_in_Tigre-Tigre_Province_of_Buenos_Aires_Central_Arge.html)  
+
+
+
+
 
 
 ### 2023-02-10  ARGENTINA
