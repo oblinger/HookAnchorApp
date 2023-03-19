@@ -1,7 +1,7 @@
 
 :: [[OBS API Docs]]
 
-MY SETUP:	[[OBS Facets]],  [[OBS Projects]],  [[Meta OBS]],   [[OBS Setup]],   [[KBD Shortcuts]],    [[OBS Task]], 
+MY SETUP:	[[OBS Projects]],  [[OBS Setup]],     [[OBS Task]], 
 MY IDEAS:	[[Multi-List WorkFlow]],  
 HACKING:		[[Action Notes]], [[#ADD ITEM COMMAND|Add Item]],  [[#SEND ITEM COMMAND|Send Item]],  
 FORA:			[[Discord App]],  [Forum](https://forum.obsidian.md),   [Obsidian Website](https://obsidian.md)  [support@obsidian.md](mailto:support@obsidian.md)  
