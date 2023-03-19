@@ -1,111 +1,19 @@
 
-:: [[AF Wind down]],   [[EduCorp]],   [[Enxt]]
-
-:: [[AF Wind down]],   [[EduCorp]],   [[Enxt]],   [[OBS]]
-
-:: [[AF Wind down]],   [[EduCorp]],   [[Enxt]],   [[OBS]]
-
-:: [[AF Wind down]],   [[EduCorp]],   [[Enxt]],   [[OBS]]
-
-:: [[AF Wind down]],   [[EduCorp]],   [[Enxt]],   [[OBS]]
-
-:: [[AF Wind down]],   [[EduCorp]],   [[Enxt]],   [[OBS]]
-
-:: [[AF Wind down]],   [[EduCorp]],   [[Enxt]],   [[OBS]]
-
-:: [[AF Wind down]],   [[EduCorp]],   [[Enxt]],   [[OBS]]
-
-:: [[AF Wind down]],   [[EduCorp]],   [[Enxt]],   [[OBS]]
-
-:: [[AF Wind down]],   [[EduCorp]],   [[Enxt]],   [[OBS]]
-
-:: [[AF Wind down]],   [[EduCorp]],   [[Enxt]],   [[OBS]]
-
-:: [[AF Wind down]],   [[EduCorp]],   [[Enxt]],   [[OBS]]
-
-:: [[AF Wind down]],   [[EduCorp]],   [[Enxt]],   [[OBS]]
-
-:: [[AF Wind down]],   [[EduCorp]],   [[Enxt]],   [[OBS]]
-
-:: [[AF Wind down]],   [[EduCorp]],   [[Enxt]],   [[OBS]]
-
-:: [[AF Wind down]],   [[EduCorp]],   [[Enxt]],   [[OBS]]
-
-:: [[AF Wind down]],   [[EduCorp]],   [[Enxt]],   [[OBS]]
-
-:: [[AF Wind down]],   [[EduCorp]],   [[Enxt]],   [[OBS]]
-
-:: [[AF Wind down]],   [[EduCorp]],   [[Enxt]],   [[OBS]]
-
-:: [[AF Wind down]],   [[EduCorp]],   [[Enxt]],   [[OBS]]
-
-:: [[AF Wind down]],   [[EduCorp]],   [[Enxt]],   [[OBS]]
-
-:: [[AF Wind down]],   [[EduCorp]],   [[Enxt]],   [[OBS]]
-
-:: [[AF Wind down]],   [[EduCorp]],   [[Enxt]],   [[OBS]]
-
-:: [[AF Wind down]],   [[EduCorp]],   [[Enxt]],   [[OBS]]
-
-:: [[AF Wind down]],   [[EduCorp]],   [[Enxt]],   [[OBS]]
-
-:: [[AF Wind down]],   [[EduCorp]],   [[Enxt]],   [[OBS]]
-
-:: [[AF Wind down]],   [[EduCorp]],   [[Enxt]],   [[OBS]]
-
-:: [[AF Wind down]],   [[EduCorp]],   [[Enxt]],   [[OBS]]
-
-:: [[AF Wind down]],   [[EduCorp]],   [[Enxt]],   [[OBS]]
-
-:: [[AF Wind down]],   [[EduCorp]],   [[Enxt]],   [[OBS]]
-
-:: [[AF Wind down]],   [[EduCorp]],   [[Enxt]],   [[OBS]]
-
-:: [[AF Wind down]],   [[EduCorp]],   [[Enxt]],   [[OBS]]
-
-:: [[AF Wind down]],   [[EduCorp]],   [[Enxt]],   [[OBS]]
-
-:: [[AF Wind down]],   [[EduCorp]],   [[Enxt]],   [[OBS]]
-
-:: [[AF Wind down]],   [[EduCorp]],   [[Enxt]],   [[OBS]]
-
-:: [[AF Wind down]],   [[EduCorp]],   [[Enxt]],   [[OBS]]
-
-:: [[AF Wind down]],   [[EduCorp]],   [[Enxt]],   [[OBS]]
-
-:: [[AF Wind down]],   [[EduCorp]],   [[Enxt]],   [[OBS]]
-
-:: [[AF Wind down]],   [[EduCorp]],   [[Enxt]],   [[OBS]]
-
-:: [[AF Wind down]],   [[EduCorp]],   [[Enxt]],   [[OBS]]
-
-:: [[AF Wind down]],   [[EduCorp]],   [[Enxt]],   [[OBS]]
-
-:: [[AF Wind down]],   [[EduCorp]],   [[Enxt]],   [[OBS]]
-
-:: [[AF Wind down]],   [[EduCorp]],   [[Enxt]],   [[OBS]]
-
-:: [[AF Wind down]],   [[EduCorp]],   [[Enxt]],   [[OBS]]
-
-:: [[AF Wind down]],   [[EduCorp]],   [[Enxt]],   [[OBS]]
-
-:: [[AF Wind down]],   [[EduCorp]],   [[Enxt]],   [[OBS]]
-
-:: [[AF Wind down]],   [[EduCorp]],   [[Enxt]],   [[OBS]]
+:: [[AF Wind down]],   [[Enxt]]
 
 == [[TAG]]  <[[TAGS]]
 
-- 2022-10 [[SV90]]  			[[@Sports Visio]] Plan for first 90 days 
-- 2022-09 [[SV]]				Sports Visio
-- 2022-05 [[Enxt]]       		Figuring out where Eli is going to go to school 
-- 2022-05 [[Photos Notes]]  	Setting up our family photo 'workflow'
-- 2022-05 [[Action Notes]] 	Obsidian plugin 
+- 2022-10 [[SV90]]  				[[@Sports Visio]] Plan for first 90 days 
+- 2022-09 [[SV]]						Sports Visio
+- 2022-05 [[Enxt]]       			Figuring out where Eli is going to go to school 
+- 2022-05 [[Photos Notes]]  		Setting up our family photo 'workflow'
+- 2022-05 [[Action Notes]] 		Obsidian plugin 
 - 2022-04 [[AF Wind down]]  	Wind down tasks for the AF company   
-- 2022-03 [[Learn]]    		Various kinds of learning for NJ22     
-- 2022-03 [[OBS]]			My obsidian setup
-- 2022-00 [[NJ22]]    		Career reset. Reframe self.  Prepare for job   
-- 2014-00 [[AF]]				Analytics Fire
-- 2009-08 [[EduCorp]]		Non-profit for scalable education and job creation
+- 2022-03 [[Learn]]    				Various kinds of learning for NJ22     
+- 2022-03 [[OBS]]					My obsidian setup
+- 2022-00 [[NJ22]]    				Career reset. Reframe self.  Prepare for job   
+- 2014-00 [[AF]]						Analytics Fire
+- 2009-08 [[EduCorp]]				Non-profit for scalable education and job creation
 
 - [[2022-09 Mom80]]    		Mom's 80th birthday party     
 - [[2022-05 Grandpa DJ]]   	Steve Cresep's Livestream and DJ service  
