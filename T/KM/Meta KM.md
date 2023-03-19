@@ -1,3 +1,6 @@
+
+[[PKM MyObsidian]]  [[PKM]]  .
+
 ### UNIFIED NAMESPACE
 
 #### Hook Page

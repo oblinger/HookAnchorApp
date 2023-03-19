@@ -2,7 +2,7 @@
 
 
 - [[OBS]] 
-- [[OBS Task]]	-  
+- [[KM Task]]	-  
 - [[KBD Shortcuts]],   
 - [[QUICKADD]], 
 - [[TEMPLATER]],  

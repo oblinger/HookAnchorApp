@@ -1,35 +1,4 @@
-
-:: [[Hook System]]
-
-:: [[Hook System]]
-
-:: [[Hook System]]
-
-:: [[Hook System]]
-
-:: [[Hook System]]
-
-:: [[Hook System]]
-
-:: [[Hook System]]
-
-:: [[Hook System]]
-
-:: [[Hook System]]
-
-:: [[Hook System]]
-
-:: [[Hook System]]
-
-:: [[Hook System]]
-
-:: [[Hook System]]
-
-:: [[Hook System]]
-
-:: [[Hook System]]
-
-:: [[Hook System]]
+(merge with hook system)
 
 - [[KM.]],  [[META]],  [[Hook System]], 
 

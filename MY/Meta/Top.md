@@ -7,7 +7,7 @@
 - [[Set]]		[[Set Folder|Set]]		[[Meta Set]]	 By TYPE -	Groups of like (typed) entries
 - [[T]]			[[T Folder|T]]			[[Meta Topic]]	 By TOPIC -	Toplevel Taxonomic Topics
 - 						[[Meta Flow]]	 By PROC	-	My data processing paths
-- [[OBS]]					[[Meta OBS]] 	 OBSIDIAN -	Setup details for obsidian
+- [[OBS]]					[[Meta KM]] 	 OBSIDIAN -	Setup details for obsidian
 
 
 [[T]] 				MAJOR TAXONOMIC TOPIC ROOTS

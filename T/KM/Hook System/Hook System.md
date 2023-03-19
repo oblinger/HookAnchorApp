@@ -1,5 +1,9 @@
+(merge with PKM)
 
-:: [[Hook 2]],  [[Task Page System]],  
+- [[PKM]]  [[Hook 2]],  [[Task Page System]],
+ 
+
+ 
 # THE HOOK SYSTEM
 
 THE HOOK SYSTEM - Synchronizing your meat brain with your digital brain.

@@ -9,7 +9,7 @@
 - [[Set]]		[[Set Folder|Set]]		[[Meta Set]]	 By TYPE -	Groupings of like (typed) entries
 - [[T]]			[[T Folder|T]]			[[Meta Topic]]	 By TOPIC -	Toplevel Taxonomic Topics
 - 						[[Meta Flow]]	 By PROC	-	My data processing paths
-- [[OBS]]					[[Meta OBS]] 	 OBSIDIAN -	Setup details for my info pages
+- [[OBS]]					[[Meta KM]] 	 OBSIDIAN -	Setup details for my info pages
 - [[MY]]		[[My Folder|MY]] 						 MYFO    -	Info about me & my stuff				 
 
 

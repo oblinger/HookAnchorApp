@@ -45,7 +45,7 @@
 ## = [[EduCorp]] =
 - [ ] Contact Meridith & Meet
 
-## = [[2022-03 PKM]] =
+## = [[PKM]] =
 - [ ] Build website with thoughts on PKM.
 ## .
 			
