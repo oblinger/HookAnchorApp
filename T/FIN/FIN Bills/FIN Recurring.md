@@ -5,9 +5,9 @@
 ## BIGGER BILLS - SCHWAB JOINT 6956-1345
 - $5,200/bi	House Taxes ???
 - $350/yr		Elan (Vijaya accountant)
-- $6,010/mo 	House Mortgage
-- $220/mo	PGandE Gas/Ele
-- $130/mo    	SF PUC  (water bill)  Used to be $70 now $130  (2020.08 $321.02)
+- $6,010/mo House Mortgage
+- $220/mo		PGandE Gas/Ele
+- $130/mo    SF PUC  (water bill)  Used to be $70 now $130  (2020.08 $321.02)
 - $130/mo?	Sunset Scavenger  (where did this bill go???)
 - $217/mo?	Blue Cross Monthly
 
@@ -18,7 +18,7 @@
 - ? NYtimes
 
 ## SMALLER
-### CHASE FREEDOM
+### CHASE FREEDOM x4654
 - $1,375/yr 	AAA Home Insurance
 - $600/bi  	Geico
 - $200/mo		AT&T  (Paid on corp SVB account)
@@ -30,7 +30,8 @@
 - $15/m		Spotify Premium
 - $13/m		Peloton  7/31
 - $10/mo		APPLE - Apple iCloud 2TB Storage (Apple ID -> MyPic -> Plan)  (!!! Should be used by whole family)
-- $9/mo		Dan's Apple iCloud  
+- $9/mo		Dan's Apple iCloud
+- $7/mo		Apple TV+ 
 - $6/mo		WSJ - Wall Street Journal  (2023-02)
 - $5/mo		Medium Monthly
 

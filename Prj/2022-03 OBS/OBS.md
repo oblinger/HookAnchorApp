@@ -1,7 +1,7 @@
 
 :: [[OBS API Docs]]
 
-MY SETUP:	[[OBS Facets]],  [[OBS Projects]],  [[OBS Meta]],   [[OBS Setup]],   [[KBD Shortcuts]],    [[OBS Task]], 
+MY SETUP:	[[OBS Facets]],  [[OBS Projects]],  [[Meta OBS]],   [[OBS Setup]],   [[KBD Shortcuts]],    [[OBS Task]], 
 MY IDEAS:	[[Multi-List WorkFlow]],  
 HACKING:		[[Action Notes]], [[#ADD ITEM COMMAND|Add Item]],  [[#SEND ITEM COMMAND|Send Item]],  
 FORA:			[[Discord App]],  [Forum](https://forum.obsidian.md),   [Obsidian Website](https://obsidian.md)  [support@obsidian.md](mailto:support@obsidian.md)  
@@ -15,7 +15,7 @@ PLUGINS:		[Templater Docs](https://silentvoid13.github.io/Templater/internal-fun
  - Mermaid:   [Syntax](https://mermaid-js.github.io/mermaid/#/./n00b-syntaxReference)   [LiveEditor](https://mermaid-js.github.io/mermaid-live-editor/edit#pako:eNpVkE1qw0AMha8itGohvoAXhcROswm00Ow8WQiPnBma-WEsU4LHd--4aSHVSrz3PQlpxj5oxhoviaKBU6s8lNp2jUl2FEfjGarqJR9YwAXPtwy7p0OA0YQYrb883_ndCkEzH1eMQYz1n8vdan7yb54ztN2RooR4fnROXyHDvrPvpoz_75jEJfXaDVQPVPWUoKH0iEDWATRRhq3yq44bdJwcWV1OmldFoRh2rLAureaBpqsoVH4p6BQ1Ce-1lZCwrLiOvEGaJHzcfI-1pIn_oNZS-ZD7pZZvMgpjfg)     [[mdfind]]   //ss64.com/osx/mdfind.html)  
 
 ::	[[OBS.]] (todos), 
-::	[[Plan]],  [[km]]
+::	[[Plan]],  [[KM]]
 
 -    [[DocObsidian]],  
 

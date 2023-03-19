@@ -1,7 +1,7 @@
 
-:: [[Diary]],   [[Mate]],   [[Mission Statement]],   [[Social]]
+:: [[Diary]],   [[Mate]],   [[Mission Statement]],   [[Life Social]]
 
-:: [[T/Life/Social/Social]]
+:: [[Life Social]]
 
 :: [[T/Life/Mate/Mate]]
   [Diary](Diary.md)

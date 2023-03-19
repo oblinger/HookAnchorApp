@@ -1,16 +1,20 @@
 
-- ***ROOT***		***DOCS***
-- [[Kmr Folder|KMR]]		[[Top]] 				TOP 	-  List of all top level info pages    
-- [[Plan Folder|Plan]]		[[Plan]]				PLAN 	-  Short and long term planning
-- [[Logs]] 		[[Meta Logs]]		TIME 	-  Lists with a time-based organization
-- [[Set Folder|Set]]		[[Set]]				SET	-	Groupings of like (typed) entries 
-- 			[[Meta Flow]]    	PROC	-  My data intake and processing pathways
-- [[Meta]]		[[Meta Meta]]		META	-  These docs here
-- [[OBS]]		[[OBS Meta]] 		OBS	-  Setup details for my info pages
+:: [[Tasks]]
+
+[[Meta]]	TOP LEVEL INFO ORGANIZATIONS
+- ***ORG***		***FOLDER***	***META DOCS***
+- [[Top]]		[[Kmr Folder|KMR]]		[[Meta Meta]]	 ALL 		-	Top level of all info pages
+- [[Plan]]		[[Plan Folder|Plan]]		[[Meta Plan]]	 By TASK -	Short and long term planning
+- [[Logs]]		[[Logs Folder|Logs]]		[[Meta Logs]]	 By TIME -	Lists with a time-based org
+- [[Set]]		[[Set Folder|Set]]		[[Meta Set]]	 By TYPE -	Groupings of like (typed) entries
+- [[T]]			[[T Folder|T]]			[[Meta Topic]]	 By TOPIC -	Toplevel Taxonomic Topics
+- 						[[Meta Flow]]	 By PROC	-	My data processing paths
+- [[OBS]]					[[Meta OBS]] 	 OBSIDIAN -	Setup details for my info pages
+- [[MY]]		[[My Folder|MY]] 						 MYFO    -	Info about me & my stuff				 
 
 
 OTHER STUFF
 - [[Meta Org (old page)]] 	-  Overview of all info resources 
-- Others:    [Base](Base.md),    [Tasks](MY/Meta/Tasks.md),   [Empty](MY/Closet/Empty.md),    [Buckets](Buckets.md),   
+- Others:    [Base](Base.md),    [Tasks](MY/Meta/Tasks.md),   [Empty](MY/Closet/Empty.md), 
 
 

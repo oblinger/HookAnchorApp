@@ -1,6 +1,7 @@
 - [[Offload Folder]]
 
-[[Logs]]  			TEMPORALLY ORDERED TYPED NOTES
+
+[[Logs]]  	TEMPORALLY ORDERED TYPED NOTES
 - [[Idea]] 		- Ideas
 - [[Letters]]  - Formal correspondence
 - [[Quotes]]	- Quotes

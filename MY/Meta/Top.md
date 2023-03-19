@@ -1,25 +1,36 @@
 
-
-[[MY]]					 MY OVERVIEW PAGES
-- [[Meta]]		- Descriptions of my organizational systems 
-- [[Lists]] 	- My organizational lists (e.g. camping list, travel list, etc) 
-- [[Plan]]		- My task planning lists
-- [[TAGS]] 		- My tags hierarchy
-
-
-[[Kmr Folder]]	- Root of my info hierarchy 
-- [[Misc]]		- 
-- [[Prj]]			
+[[Meta]]		TOP LEVEL INFO ORGANIZATIONS
+- ***ORG***		***FOLDER***	***META DOCS***
+- [[Top]]		[[Kmr Folder|KMR]]		[[Meta Meta]]	 ALL 		-	Top level of all info pages
+- [[Plan]]		[[Plan Folder|Plan]]		[[Meta Plan]]	 By TASK -	Short and long term planning
+- [[Logs]]		[[Logs Folder|Logs]]		[[Meta Logs]]	 By TIME -	Lists with a time-based org
+- [[Set]]		[[Set Folder|Set]]		[[Meta Set]]	 By TYPE -	Groups of like (typed) entries
+- [[T]]			[[T Folder|T]]			[[Meta Topic]]	 By TOPIC -	Toplevel Taxonomic Topics
+- 						[[Meta Flow]]	 By PROC	-	My data processing paths
+- [[OBS]]					[[Meta OBS]] 	 OBSIDIAN -	Setup details for obsidian
 
 
-[[T]] 				lMAJOR TAXONOMIC TOPIC ROOTS
+[[T]] 				MAJOR TAXONOMIC TOPIC ROOTS
 - [[JOB]]		- 
 - [[FIN]]		- 
 - [[Food]]		- 
+- [[KM]]		- 
 - [[Legal]]		- 
 - [[Life]]		- 
 - [[MED]]		- 
-- [[Webshare]]	- in wrong place???
+- [[Tags]]		- 
+- [[Webshare]]	- 
+
+TOPLEVELS
+- [[At]]			- 
+- [[Attach]]	- 
+- [[Docs]]		- 
+- [[MY]]		-	Info about me & my stuff	[[My Folder|MY]] 	
+- [[Misc]]		- 
+- [[Prj]]		- 
+- [[RR]]			- 
+- [[Weekly]]	-
+- [[Work]]		- [[SV]]
 
 
 [[Set]]			GROUPS OF LIKE ENTRIES -- (UN-dated, UN-ordered, Typed)

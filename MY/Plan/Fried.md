@@ -1,3 +1,4 @@
+- [ ] create T/KM folder and reorg all into there from PKM and OBS etc.
 - [ ] time tracking
 - [ ] time tracking
 - [ ] eoca note

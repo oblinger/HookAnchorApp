@@ -1,4 +1,6 @@
 
+:: [[Logs Folder]],   [[My Folder]],   [[SCR Gdrive]],   [[SCR Joe<>Dan Webpage]],   [[SCR Qingling<>Dan Webpage]],   [[T Folder]]
+
 :: [[Plan Folder]],   [[Sensitive OPEN Doc]],   [[Set Folder]]
 
 :: [[BillPay Joint]],   [[BillPay Personal]],   [[Receipts Folder]],   [[Returns Folder]]
@@ -15,7 +17,7 @@
 
 :: [[Jira]],   [[Offload Folder]],   [[Timestamps Folder]]
 
-:: [[Clean Email]],   [[Mail Archive Folder]],   [[Oblio Webpage]],   [[Scratch]],   [[gdr web Webpage]]
+:: [[Clean Email]],   [[Mail Archive Folder]],   [[Oblio Webpage]],   [[Set/Cmd/Scratch]],   [[gdr web Webpage]]
 
 :: [[GDR Folder]],   [[GDR]]
 

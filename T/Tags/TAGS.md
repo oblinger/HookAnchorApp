@@ -1,6 +1,4 @@
 
-:: [[@Dan Egnor]]
-
 :: [[HACKERS]]
 
 :: [[Data Science]],  

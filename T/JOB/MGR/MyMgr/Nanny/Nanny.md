@@ -1,8 +1,7 @@
 
-- [[Care Notes]],  
+LINKS: [[Babysitting]],  [[Care Notes]],  
 ## TODO
 
-LINKS: [[Babysitting]], 
 
 ## TOPICS
 ### NANNY TASKS TO BE DONE (once Eli is in Daycare)

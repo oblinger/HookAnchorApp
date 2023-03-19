@@ -369,8 +369,8 @@
 | 2021-00-00 | [[SNIP]]                    | Fox news egregious                                                                        |
 | 2021-00-00 | [[SNIP]]                    | ELI music                                                                                 |
 | 2021-00-00 | [[Phone]]                   | Eli's Birth Certificate                                                                   |
-| 2020-12-23 | [[Scratch Note]]            | XMAS FAMILY ZOOM                                                                          |
-| 2020-12-23 | [[Scratch Note]]            | SHANE RESUME                                                                              |
+| 2020-12-23 | [[SCR Note]]                | XMAS FAMILY ZOOM                                                                          |
+| 2020-12-23 | [[SCR Note]]                | SHANE RESUME                                                                              |
 | 2020-11-30 | [[spirit_older_bigger]]     | GOD THOUGHTS                                                                              |
 | 2020-11-25 | [[Journal Old]]             | Unicore Implementation Days                                                               |
 | 2020-11-19 | [[Journal Old]]             | AF Strategy                                                                               |

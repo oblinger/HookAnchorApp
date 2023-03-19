@@ -28,7 +28,8 @@ https://www.frannyskitchensf.com/
 | d++~  THAI                      | Osha Thai -                                                |     |     |
 | d+~~  THAI                      | Farm House Kitchen (expensive)                             |     |     |
 | d???  THAI                      | Marnee Thai                                                |     |     |
-| d+~~  KOREAN                    | Mamma' Tofu House.  Affordable/ok.                         |     |     |
+| d3.2  KOREAN                    | Namu Stonepot (veg fresh, rice not)                        |     |     |
+| d4.0  KOREAN                    | Mom's Tofu House.  Affordable/ok.                          |     |     |
 | d++~  KOREAN                    | Jin Mi Korean.  Affordable/better than mammas              |     |     |
 | d+++  BURMESE                   | Burmese Kitchen ~ We all like it & it is affordable        |     |     |
 | d?~~  BURMESE                   | New Burma (yelp 4.5)  Burma Cafe/Love/Superstar (yelp 4.0) |     |     |
@@ -45,7 +46,7 @@ https://www.frannyskitchensf.com/
 | d???  POKE                      |                                                            |     |     |
 | ====   SEAFOOD   ====           |                                                            |     |     |
 | P++~  SEAFOOD                   | Seafood Station                                            |     |     |
-| d+~~  SEAFOOD                   | Fish District                                              |     |     |
+|                                 |                                                            |     |     |
 | d+~~  SEAFOOD                   | Pacific Catch                                              |     |     |
 | d+~~  SEAFOOD                   | Soto Mare                                                  |     |     |
 | ====  AMERICAN   ====           | > Salad, Sandwich, Pizza, Fast                             |     |     |
