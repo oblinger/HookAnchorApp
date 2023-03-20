@@ -1,20 +1,21 @@
 
 **NOW**:
-- SOUPS:   White Bean, Black bean (++chili / soup / ++cuban) , Mixed bean ?just-use-white?, ++Split Pea, +Butternut, ++Lentil, 
+- SOUPS:   White Bean, Black bean (++chili / soup / ++cuban) , 
+              Mixed bean ?white?, ++Split Pea, +Butternut, ++Lentil, 
 - CURL:    ++Peanut Stew, ++Curry, Soup, ++Millet
 - QUINOA:  ++Southwest,  ++Peppers w/ more Quinoa
-- brussel
+- 
 
 **GOALS**:
-- More Soups:  Veg Soup, 
+- BASE:  Chia, TVP, 
+- SOUPS: Veg, 
 - Oven Brussel sprouts, Riced cauliflower, Tasty Lunch Salad
-- Budda Bowl???,  Chia???
 - AYI:  Hot-Sour-Soup, CARROT-something, CABBAGE-something, 
 
 
 
 **LATER**: Greek Yogurt???, VEG flavorings; GRAINS; 
-**DISH**:  Tea Leaf Salad, A Tasty Salad?, Roasted Veggies, Stewed Potatoes, Cabbage Stew, 
+**DISH**:  Tea Leaf Salad, A Tasty Salad?, Roasted Veggies, Stewed Potatoes, Cabbage Stew, Budda Bowl
 
 **THEMES**:
 - FLAVORED VEGGIES - We need new flavors for our loved veggies:

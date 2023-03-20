@@ -1,5 +1,4 @@
-
-[[PKM MyObsidian]]  [[PKM]]  .
+  [[PKM]]  .
 
 ### UNIFIED NAMESPACE
 

@@ -1,5 +1,5 @@
 
-:: [[FIN.]],  [[FIN Topics]],  [[FIN Mint]],  [[FIN Advisor]], [[FIN Tracking]],  
+:: [[FIN.]],  [[FIN Topics]],  [[FIN Mint]],  [[FIN Tracking]],  
 
 -  [[FIN Bills]],  [[Expenses]],   [Taxes](Taxes/Taxes.md),   [Vanguard](Vanguard.md)
 
@@ -786,6 +786,16 @@ Is CAPE Broken?  http://www.hussmanfunds.com/rsi/cape.htm
 books to read    http://mebfaber.com/about/
 
 # LOG
+
+### 2023-03-19  Taxes 2022
+
+
+- Final federal
+- Final Utah
+- final 
+- K1 goes into both fed and state in 2023. 
+
+	
 
 ### 2023-03-17  Vanguard Get TIPS, dave-O opening an account
 Fixed Income Desk - 

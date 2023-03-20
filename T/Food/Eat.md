@@ -1,4 +1,15 @@
 
+
+U19 185.2
+
+// ### 2023-03-19
+// - Returned from Argentina; continuing Noom; Plan:
+// - Delay morning eating, then 1.5C stew when hungry, delay lunch
+// - Big lunch; fruit & stew in afternoon; Solid dinner;
+// - Mostly no evening snack, except radish/celery
+// - Mostly no sweets, limited sweets in afternoon on occasion
+// - Exercise 5x week
+
 W12 190.0	4apples 10:17ozNoodleTofuVeg  3:10ozPasta  
 R06 190.6	9:3ozHummus,Lentils  
 W05 190.0	8:MapuTofu   1:   	6:4ozFish,Vin  .5ozScotch  (no apples)

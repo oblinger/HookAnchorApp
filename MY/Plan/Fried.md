@@ -1,44 +1,47 @@
-- [ ] create T/KM folder and reorg all into there from PKM and OBS etc.
-- [ ] time tracking
+- [ ] time tracker, don't merge if text comment exists
+- [ ] [[Phone]] - passport
+- [ ] Ground the treadmill [[@Horizon Fitness]]  & test run it
+- [ ] figure out how to get notifications working
+- [ ] write up phone contacable plan
+- [ ] link up mission & write some of it
+
 - [ ] time tracking
 - [ ] eoca note
-- [ ] apple news
-- [ ] buy red envelopes; water filter
+- [ ] update my CRM workflow
 
-- [ ] OBS - system keeps prepending topics to each page
-- [ ] put plate on wall outlet
+- [ ] - [ ] snack list (for trip)
+- [ ] apple news
+
 - [ ] get password I know by memory for gmail; think about logon w/o computer to many accounts
 
-- [ ] scrub <0xa0> non-breaking spaces from clipboard see argentina trip info
 - [ ]  Crones doctor
-- [ ] Evidence-based child rearing
 
-
-- [ ] Get "Fun" list filled out
-- [ ] Jump list should jump directly even whne inside another jump workspace
 - [ ] Call doc about my heart test results.
-- [ ] Plan for crypto
 - [ ] add other wifi
-- [ ] get plans onto the friday lists
 - [ ] stomach acid
-- [ ] Grabby apple air max.  (read about it)
-- [ ] setup blink
 - [ ] Get logins for MyHealth
 
-- [ ] get all of Eli's videos to his system
 - [ ] Process mom's Eli educational funds.
 
-LATER
+
+### RESEARCH
+- [ ] Evidence-based child rearing
+- [ ] Plan for crypto
+
+### HOUSE
+- [ ] BEDROOM --  Closet Pole
+- [ ] LIVINGROOM -- TV power
+- [ ] BEDRM -- put plate on wall outlet
+
+### LATER
 - [ ] do quarterly budgeting
 - [ ] [read]( https://www.mckinsey.com/industries/agriculture/our-insights/winning-in-africas-agricultural-market) - africa
-- [ ] [job from nick](https://jobs.climatebase.org/job/45940719/chief-technology-officer)    https://boards.greenho
-- [ ] joe says check out  https://boards.greenhouse.io/fractalfounders/jobs/4116035004f
 - [ ] [annual review](https://humanparts.medium.com/how-to-pull-off-a-personal-annual-review-bc3ae908f493) 
-- BEDROOM --  Closet Pole
-
 
 
 ### Older
+- [ ] Grabby apple air max.  (read about it)
+- [ ] setup blink
 - [ ] Reset door codes. (info in myfo->mystuff)
 - [ ] Reset car seat auto adjust
 - [ ] Call about re-opening long closed citi-bank credit card account.

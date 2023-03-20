@@ -1,5 +1,5 @@
 TAXONOMY:	[[Meta]]  
-VIEWS:			[[KM Task]],  
+VIEWS:			[[KM Task Lists]],  
 
 ## THEORY
 

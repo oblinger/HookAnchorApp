@@ -1,4 +1,5 @@
 
+
 | WEEKLY        |                                                                                                                                                   |
 | ------------- | ------------------------------------------------------------------------------------------------------------------------------------------------- |
 | **HOT LISTS** | [[SimpleNote 1Pass\|SimpleNote]] [Reminders](https://www.icloud.com/#reminders)  [[Mint 1pass\|Mint]]  [AF-email](https://mail.google.com/mail/u/1/#inbox)    # [[FileThis Shell\|File This]] |
@@ -21,6 +22,7 @@
 
 
 ### === QUARTERLY ===
+- [[Scrub]] 
 -- ToFile
 -- In3 ... 
 

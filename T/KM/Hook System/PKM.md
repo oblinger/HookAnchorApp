@@ -11,7 +11,6 @@
 # PKM DESIGN
 ## SUBSECTIONS
 - [[KM Overview]]
-- [[PKM MyObsidian]] 
 - [[KM Anchors]] 
 - [[KM Global 2 Local]] 
 

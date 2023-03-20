@@ -6,6 +6,11 @@
 
 | Date       | File                    | Notes                                                                                     |
 | ---------- | ----------------------- | ----------------------------------------------------------------------------------------- |
+| 2023-03-20 | [[Text Shutdown]]           | Old Shutdown Text                                                                         |
+| 2023-03-20 | [[Text Shutdown]]           | Old "TKO - No Interest Shutdown"                                                          |
+| 2023-03-19 | [[SNIP]]                    |                                                                                           |
+| 2023-03-19 | [[FIN]]                     | Taxes 2022                                                                                |
+| 2023-03-19 | [[SV]]                      | hold  sports stats data                                                                   |
 | 2023-03-17 | [[FIN]]                     | Vanguard Get TIPS, dave-O opening an account                                              |
 | 2023-03-13 | [[Socialism]]               | Achilles (flutter dev at SV)                                                              |
 | 2023-03-11 | [[Trip]]                    | Argentina places                                                                          |
@@ -75,7 +80,7 @@
 | 2022-12-13 | [[DYL]]                     | Dan the designer                                                                          |
 | 2022-12-13 | [[DYL]]                     | Captured from earlier notes                                                               |
 | 2022-12-12 | [[Diet]]                    | Evening Eating - Hormones                                                                 |
-| 2022-12-11 | [[KM Task]]                 | Daily                                                                                     |
+| 2022-12-11 | [[KM Dashboards]]           | Daily                                                                                     |
 | 2022-12-08 | [[Phone]]                   | Solar Installer                                                                           |
 | 2022-12-07 | [[resLI]]                   | Framing Self                                                                              |
 | 2022-12-03 | [[Phone]]                   | Thumb Tack TV install                                                                     |
@@ -100,7 +105,7 @@
 | 2022-10-28 | [[ToBuy]]                   | Scotch Crystal                                                                            |
 | 2022-10-24 | [[2022-w43]]                |                                                                                           |
 | 2022-10-20 | [[@Apple]]                  | Laptop Repair                                                                             |
-| 2022-10-16 | [[ToBuy]]                   | Dresser for bedroom                                                                       |
+| 2022-10-16 | [[ToBuy]]                   | bedrm Dresser                                                                             |
 | 2022-10-10 | [[Nanny]]                   | SAVE MONEY                                                                                |
 | 2022-10-07 | [[Phone]]                   | Lily - Tax Info for 2021 return                                                           |
 | 2022-10-03 | [[2022-W40]]                | fre                                                                                       |
@@ -111,7 +116,7 @@
 | 2022-08-01 | [[Phone]]                   | notes while out - about me                                                                |
 | 2022-07-19 | [[Brain3]]                  | G-Flow Nets Maybe - whats my example                                                      |
 | 2022-07-19 | [[COMS]]                    | Ping Goals                                                                                |
-| 2022-07-18 | [[ToBuy]]                   | Walnut desktop                                                                            |
+| 2022-07-18 | [[ToBuy]]                   | $Walnut desktop                                                                           |
 | 2022-07-12 | [[Phone]]                   | Eli Sand toys                                                                             |
 | 2022-07-12 | [[Phone]]                   | LOWES tool rental                                                                         |
 | 2022-07-11 | [[OLD 2022 Weekly]]         | CRAP WEEK                                                                                 |
@@ -131,7 +136,7 @@
 | 2022-05-09 | [[Phone]]                   | Marriage Retreats to consider                                                             |
 | 2022-05-06 | [[Climate]]                 | IPCC draft                                                                                |
 | 2022-05-06 | [[Climate]]                 | David response to the IPCC paper                                                          |
-| 2022-05-04 | [[ToBuy]]                   | Smart scale                                                                               |
+| 2022-05-04 | [[ToBuy]]                   | xSmart scale                                                                              |
 | 2022-05-03 | [[Phone]]                   | paid lung doctor                                                                          |
 | 2022-05-02 | [[Phone]]                   | Buying an office chair                                                                    |
 | 2022-05-02 | [[Writings]]                | DREAM: Alien take over                                                                    |

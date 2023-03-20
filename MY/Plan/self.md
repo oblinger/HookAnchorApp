@@ -8,4 +8,5 @@
 - [ ] get the dogs poop
 [[full]] 
 
-- [ ] [[MY/Plan/self]]:  Hire health coach
+- [ ] [[self]]:  Hire health coach
+

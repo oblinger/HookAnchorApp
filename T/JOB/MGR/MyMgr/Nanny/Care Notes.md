@@ -1,5 +1,12 @@
 
-- [[Babysitting]],   [Babysitter Search](https://www.care.com/visitor/captureSearchBar.do?searchPerformed=true&milesFromZipCode=10&searchByZip=true&defaultZip=true&zipCode=94110&sitterService=childCare&pageNumber=1) 
+- [[Babysitting]], 
+
+
+### BabySitter Search
+
+- [Babysitter Search](https://www.care.com/visitor/captureSearchBar.do?searchPerformed=true&milesFromZipCode=10&searchByZip=true&defaultZip=true&zipCode=94110&sitterService=childCare&pageNumber=1) 
+
+- Within 1mi;  Rate: <$30;   Availability: PartTime;  Last Login: 1 month
 
 
 ### BABYSITTING QUESTIONS

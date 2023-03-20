@@ -1,13 +1,17 @@
+- [[KM Overview]],   [[KM.]]
 
-- [[Meta KM]]
-[[Multi-List WorkFlow]], 
+[[KM]]
+- [[KM Dashboards]]	- 
+- [[KM Facets]]			- 
+- [[KM Folder]]			- 
+- [[KM Misc]]				- 
+- [[KM Task Lists]]		- 
+- [[KBD Shortcuts]]		- 
 
-- [[KM Facets]],   
-- [[KM Setup]], 
-- [[KM Task]]
 
-:: [[KM Anchors]],   [[KM Global 2 Local]],   [[KM Overview]],   [[KM.]]
+[[Meta KM]] - [[PKM]] - [[Hook 2]] - [[Hook System]] 
+- [[Multi-List WorkFlow]] 
+- [[KM Anchors]]
+- [[KM Global 2 Local]] 
 
 
-- [[Hook System]] 
-- [[KBD Shortcuts]], 

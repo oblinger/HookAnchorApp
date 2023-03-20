@@ -7,10 +7,10 @@
 - [[Set]]		[[Set Folder|Set]]		[[Meta Set]]	 By TYPE -	Groups of like (typed) entries
 - [[T]]			[[T Folder|T]]			[[Meta Topic]]	 By TOPIC -	Toplevel Taxonomic Topics
 - 						[[Meta Flow]]	 By PROC	-	My data processing paths
-- [[OBS]]					[[Meta KM]] 	 OBSIDIAN -	Setup details for obsidian
 
 
-[[T]] 				MAJOR TAXONOMIC TOPIC ROOTS
+
+[[T]]OPICS		MAJOR TAXONOMIC TOPIC ROOTS
 - [[JOB]]		- 
 - [[FIN]]		- 
 - [[Food]]		- 
@@ -18,6 +18,7 @@
 - [[Legal]]		- 
 - [[Life]]		- 
 - [[MED]]		- 
+- [[OBS]]		- OBSIDIAN setup details
 - [[Tags]]		- 
 - [[Webshare]]	- 
 
@@ -33,7 +34,7 @@ TOPLEVELS
 - [[Work]]		- [[SV]]
 
 
-[[Set]]			GROUPS OF LIKE ENTRIES -- (UN-dated, UN-ordered, Typed)
+[[Set]]		GROUPS OF LIKE ENTRIES -- (UN-dated, UN-ordered, Typed)
 - [[AT]] 		- All Entities (People, Organizations, etc.) 
 - [[App]] 		- Info about specific applications
 - [[Books]]
@@ -49,10 +50,10 @@ TOPLEVELS
 - [[Returns]]	- 
 - [[Places]] 	- Info I have collected about specific places
 - [[ToRead]]	- Stuff "to read"
-- [[Writings]]		-	???
+- [[Writings]]	-	???
 
 
-[[Logs]]  			TEMPORALLY ORDERED TYPED NOTES
+[[Logs]]  		TEMPORALLY-ORDERED, TYPED NOTES
 - [[Idea]] 		- Ideas
 - [[Letters]]  - Formal correspondence
 - [[Quotes]]	- Quotes

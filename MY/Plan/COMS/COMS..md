@@ -1,9 +1,10 @@
 
+- [ ] Job-Accept, touch base
 - [ ] Job acceptance outreach
 - [ ] Create SV blog post; Change Linked-in; 
 - [ ] RECOMMENDATIONS:  Greg's review, Felipe, Nick, Theo?
 
-
+MENTORS???
 
 
 	

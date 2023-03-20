@@ -1,3 +1,7 @@
+taxes don't come from joint
+- easier to see spending
+- taxes are not really spending
+- house is easy to remember)
 
 ### How To
 

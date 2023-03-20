@@ -35,7 +35,6 @@
 | {     |                   | Nav BACK           |                             |                    |
 | }     |                   | Nav FWD            |                             |                    |
 | \\    |                   |                    |                             |                    |
-| ;     |                   | TIME TRgACKING      |                             |                    |
 | '     |                   |                    |                             |                    |
 | ,     |                   |                    |                             |                    |
 | .     |                   |                    |                             |                    |
@@ -45,7 +44,7 @@
 | RT    |                   | go PANE right      |                             |                    |
 | UP    |                   | go PANE above      |                             |                    |
 | DN    |                   | go PANE below      |                             |                    |
-| SPACE |                   | BACK or Ctx DOIT   |                             |                    |
+| SPACE |                   | TIME TRACKING      |                             |                    |
 | ENTR  |                   | obsidian GOTO page |                             |                    |
 | INS   |                   | INSERT line        |                             |                    |
 | DEL   |                   | DELETE line        |                             |                    |

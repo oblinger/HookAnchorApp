@@ -1,16 +1,12 @@
 - [ ] Kureg coffee maker
-- [ ] 
+- [ ] buy red envelopes; water filter
 
-### SOON
-- [ ] mesh bag for food
 - [ ] hair catcher for tub
 - [ ] [Ikea bin](https://www.ikea.com/us/en/p/trofast-mesh-storage-box-light-green-gray-90518574/) - mesh bins.
 - [ ] buy freezer containers
-
-
+- [ ] Research containers:  chat webresturant store
 
 - [ ] Glucose monitor (buy it)
-- [ ] kureig
 - [ ] [10Q](https://antneygrub-store.mybigcommerce.com/instant-pot-duo-nova-10qt-multi-cooker-stainless-steel/?gclid=CjwKCAiA68ebBhB-EiwALVC-NuIDsXNcsuBgSPRdG5844ShzVztqIWPzAsg_8qHO6T8On9W5Wm_MkxoChNgQAvD_BwE) instapot  
 
 - [ ] Buy tripod. consider go-pro or other video. search best camera w/ a kid
@@ -30,7 +26,7 @@ https://ourdiningtable.com/products/handmade-whisky-glasses
 
 
 
-### 2022-10-16  Dresser for bedroom
+### 2022-10-16  bedrm Dresser 
 
 https://www.amazon.com/Hodedah-HI70DR-Chocolate-Hodeida-Drawers/dp/B079V6MQKF?source=ps-sl-shoppingads-lpcontext&ref_=fplfs&psc=1&smid=ATVPDKIKX0DER
 
@@ -43,7 +39,7 @@ r
 
 - [ ] contigo thermos
 
-### 2022-07-18  Walnut desktop
+### 2022-07-18  $Walnut desktop
 
 
 ........ . . . . . . . . . . . . . . . . . . . . . 	Cost
@@ -53,7 +49,7 @@ r
 - [Hedge Custom Wood](https://www.etsy.com/listing/1095664425/solid-american-walnut-tabledesk-top?ref=cart&variation0=2274906035&variation1=2425088906) 		$515		54x24x.75 		Oil 			57 reviews
  
 
-### 2022-05-04  Smart scale
+### 2022-05-04  xSmart scale
 
 -  [Pizza dual scale](https://ooni.com/products/ooni-dual-platform-digital-scales?variant=31116717359201&currency=USD&utm_medium=cpc&utm_content=Ooni+Digital+Scales+Dual+Platform&utm_source=shopping&utm_campaign=Google_Shopping_US&utm_gcmpgn_typ=us-shopping&gclid=EAIaIQobChMItdHoiN3G9wIVsCitBh0JNAIWEAQYBCABEgJVH_D_BwE),  
 -  [four-scales combo](https://cambridgeenviro.com/products/balances-scales-smart-diet-scale),  

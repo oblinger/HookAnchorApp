@@ -1,16 +1,11 @@
 
-
 - [ ] Chat with all team members.
-- [ ] Run all tools
 - [ ] Download a build app
-- [ ] [[WW Competitors Etc.]] - build analysis (intro to James)
-- [ ] Background Reading:  Old slacks, confluence, gDrive
 
-IMMEDIATE
-- [ ] [[@Sports Visio]] - Intro call with each person
-- [ ] Run all apps
-- [ ] Build systems
-- [ ] Read Slack, Docs
+- [ ] Run ML Stack
+- [ ] [[WW Competitors Etc.]] - build analysis (intro to James)
+
+
 
 # IMMEDIATE LEARNING
 - ALL INTROS: [[@Sports Visio]]

@@ -1,6 +1,6 @@
 #### Snacks
-B-BAG:	Pistachios, Mangos
-Luggage:	Water, Scotch, Coffee, Quinoa, Oatmeal
+B-BAG:	Pistachios, Mangos, Water
+Luggage:	Scotch, Coffee, Quinoa, Oatmeal
 
 
 #### Book Bag

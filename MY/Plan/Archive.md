@@ -1,3 +1,13 @@
+- [x] meeting with Nick:  Moss adams, RZ summary,
+- [x] get all of Eli's videos to his system
+- [ ] joe says check out  https://boards.gre
+- [ ] Figure out: reset mac for headset
+- [ ] MAC: Toggle email notifications
+- [x] new page for "work" and 'comms'
+- [x] mesh bag for food
+- [x] create T/KM folder and reorg all into
+- [x] get house repair guy to
+- [x] [[Blog Announce and Bio]]; [[
 - [ ] [[MY/Plan/self]]: Hire health coach
 - [ ] Crunchbase: do investor search, then cancel account
 - [x] Ants

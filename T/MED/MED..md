@@ -1,3 +1,9 @@
+
+- [ ] Dr Hassler.  get rid of the prilosec   MyChart
+- [ ] Insurance Check: Urologist, Hassler
+- [ ] Visit Urologist
+- [ ] Visit Hassler: Tamzepan, 
+
 - [ ] Get alzhimers checked - by mental acuity testing
 - [ ] Read about back exercises
 - [ ] - [ ] Figure out new meals

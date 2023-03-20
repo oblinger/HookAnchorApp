@@ -1,18 +1,18 @@
-- [ ] new page for "work" and 'comms'
-- [ ] todo, sv90 joining f90
+- [ ] pick new list name for 'wait' with unique first letter
 
-- [ ] Take notes on using the call recorder [[Record]]
+- [ ] Jump list should jump directly even whne inside another jump workspace
+- [ ] scrub <0xa0> non-breaking spaces from clipboard see argentina trip info
+- [ ] [[prj]] page still has duplicating :: entries
+- [ ] Take notes on call recorder [[Record]]
 - [ ] EMAILS: Verify saving, verify drafts save, verify save sends, merge all AF mail in. back backup of all mail.
       Ensure sent mail is saved. and received mail is saved.  many copies when creating email
-- [ ] MAC: Toggle email notifications
 
-- [ ] Figure out: reset mac for headset bluetooth connect
-- [ ] Verify which emails and drafts are being saved/missing?  which accounts?  hard core backup of all emails . (all funnel in, then all get recorded?) 
+- [ ] Hard core backup of all emails.
 - [ ] F: edit scripts to be python3 scripts
 - [ ] Use WhatSize to clean disk
 
-# PROJ
 
+# PROJ
 ### Active Pages Plugin
 - [ ] get plugin published
 

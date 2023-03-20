@@ -1,9 +1,4 @@
 
-- [ ] Research containers:  chat webresturant store
-
-
-
-
 ## FUN THINGS
 - BOOKS:		
 - SHOWS:	

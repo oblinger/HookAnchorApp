@@ -1,6 +1,6 @@
-(merge with PKM)
+(merge with PKM, [[Meta KM]])
 
-- [[PKM]]  [[Hook 2]],  [[Task Page System]],
+- [[PKM]]   [[Task Page System]],
  
 
  

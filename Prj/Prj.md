@@ -3,6 +3,8 @@
 
 :: [[AF Wind down]],   [[Enxt]]
 
+:: [[AF Wind down]],   [[Enxt]]
+
 == [[TAG]]  <[[TAGS]]
 
 - 2022-10 [[SV90]]  				[[@Sports Visio]] Plan for first 90 days 
@@ -18,17 +20,17 @@
 - 2014-00 [[AF]]						Analytics Fire
 - 2009-08 [[EduCorp]]				Non-profit for scalable education and job creation
 
-- [[2022-09 Mom80]]    		Mom's 80th birthday party     
-- [[2022-05 Grandpa DJ]]   	Steve Cresep's Livestream and DJ service  
+- [[2022-09 Mom80]]    			Mom's 80th birthday party     
+- [[2022-05 Grandpa DJ]]  	 	Steve Cresep's Livestream and DJ service  
 - [[2022-04 BeMLR]]       		Understand what it would take to be an ML Researcher
-- [[2022-03 BeFAANG]]  		Decide and plan for a FAANG role       
-- [[2022-03 BeVC]]   			Decide if I want/can be a VC/advisor      
-- [[2022-02 Yearbook]]  		Organize and produce BCMS Yearbook   
-- [[2021-04 FindDayCare]]  	Select day care for Eli   
-- [[2020-08 Race Pitch]] 		Project with [[@Allison Binns]] to model race and network effects
-- [[2018-00 UF Docs]]		Documentation for the Uniform language
-- [[2018-00 Wedding]]  		Plan our wedding   
-- [[2016-00 FileThis]]			Automated script for downloading and viewing account statements 
+- [[2022-03 BeFAANG]]  			Decide and plan for a FAANG role       
+- [[2022-03 BeVC]]   				Decide if I want/can be a VC/advisor      
+- [[2022-02 Yearbook]]  			Organize and produce BCMS Yearbook   
+- [[2021-04 FindDayCare]]  		Select day care for Eli   
+- [[2020-08 Race Pitch]] 			Project with [[@Allison Binns]] to model race and network effects
+- [[2018-00 UF Docs]]				Documentation for the Uniform language
+- [[2018-00 Wedding]]  			Plan our wedding   
+- [[2016-00 FileThis]]				Automated script for downloading and viewing account statements 
 
 Code PROJ folders
   [UF_Docs](UF_Docs/UF_Docs.md)

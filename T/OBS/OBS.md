@@ -1,14 +1,15 @@
 
 :: [[OBS API Docs]]
 
-MY SETUP:	[[OBS Projects]],  [[KM Setup]],     [[KM Task]], 
+MY SETUP:	[[OBS Projects]],   
 MY IDEAS:	[[Multi-List WorkFlow]],  
 HACKING:		[[Action Notes]], [[#ADD ITEM COMMAND|Add Item]],  [[#SEND ITEM COMMAND|Send Item]],  
 FORA:			[[Discord App]],  [Forum](https://forum.obsidian.md),   [Obsidian Website](https://obsidian.md)  [support@obsidian.md](mailto:support@obsidian.md)  
 PUBLIC: 		[Oblio](https://publish.obsidian.md/oblio)  (LMI!),
 PLUGINS:		[Templater Docs](https://silentvoid13.github.io/Templater/internal-functions/internal-modules/file-module.html),  
 
-[[PKM]], [[OBS]], 
+- [[QUICKADD]], 
+- [[TEMPLATER]],  
 
   [Discord](http://app/discord),  
  - [[Action Notes]]   
@@ -18,7 +19,6 @@ PLUGINS:		[Templater Docs](https://silentvoid13.github.io/Templater/internal-fun
 ::	[[Plan]],  [[KM]]
 
 -    [[DocObsidian]],  
-
 
 
 
@@ -45,6 +45,7 @@ PLUGINS:		[Templater Docs](https://silentvoid13.github.io/Templater/internal-fun
 Rocks  (maybe 'p' for projects)
 Daily notes
 Tiny
+
 
 
 
