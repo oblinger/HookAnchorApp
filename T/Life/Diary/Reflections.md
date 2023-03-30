@@ -1,3 +1,17 @@
+### 2023-03-21  Back from all hands; feeling of efficiency coming!
+
+
+Wow, my ability to execute feels stronger and strong by the day!
+
+OBSERVATION:  I *am* a cat person, I DIVE on a juicy problem that looks like it is just about to get away with fervor!  But I often want to jump from task to task, w/o specific timeline (except for move FASTER).  But I tire of working on the same task for too many hours.  I am happiest to have a rotation of five all in motion.
+
+
+Still, my execution is very dependent upon avoidance of too many meetings.  Still building that muscle.
+
+Also I should take extra care to be humble as I am feeling stronger and stronger in my ability to execute.
+I think there is a risk that my confidence will spill over into a kind of patronizing of Jason, or riding rough on Mike.
+
+
 
 ### Dream: "what am I getting myself into"
 

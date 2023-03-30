@@ -6,6 +6,12 @@
 
 | Date       | File                    | Notes                                                                                     |
 | ---------- | ----------------------- | ----------------------------------------------------------------------------------------- |
+| 2023-03-27 | [[2023-W13]]                | W13                                                                                       |
+| 2023-03-23 | [[2020-12 MKT]]             | Yancy Comment                                                                             |
+| 2023-03-22 | [[Phone]]                   | Food Delivery                                                                             |
+| 2023-03-22 | [[@Mike Mathieu]]           | Intro??                                                                                   |
+| 2023-03-21 | [[Reflections]]             | Back from all hands; feeling of efficiency coming!                                        |
+| 2023-03-21 | [[MED]]                     | Picking health insurance                                                                  |
 | 2023-03-20 | [[Text Shutdown]]           | Old Shutdown Text                                                                         |
 | 2023-03-20 | [[Text Shutdown]]           | Old "TKO - No Interest Shutdown"                                                          |
 | 2023-03-19 | [[SNIP]]                    |                                                                                           |
@@ -39,12 +45,12 @@
 | 2023-02-17 | [[Trip]]                    | Mike                                                                                      |
 | 2023-02-17 | [[@Jason Syversen]]         | Mgt Trip                                                                                  |
 | 2023-02-17 | [[@Mike Seibert]]           | AI Elements                                                                               |
-| 2023-02-16 | [[WW Deliverables]]         | Jason conversation                                                                        |
+| 2023-02-16 | [[2023 Deliverables]]       | Jason conversation                                                                        |
 | 2023-02-15 | [[SV Mgt]]                  | Comments with the Team                                                                    |
 | 2023-02-14 | [[@Yashin Lin]]             | Looking for VALID TARGETS                                                                 |
 | 2023-02-13 | [[Trip]]                    | Manager's Monthly Meeting                                                                 |
 | 2023-02-13 | [[2023-W07]]                | W07                                                                                       |
-| 2023-02-13 | [[WW Jason Tasks]]          | Systematic QA processing                                                                  |
+| 2023-02-13 | [[2023 Jason Tasks]]        | Systematic QA processing                                                                  |
 | 2023-02-11 | [[Phone]]                   | Instapot                                                                                  |
 | 2023-02-10 | [[@Tomas Tisocco]]          | Intro                                                                                     |
 | 2023-02-10 | [[Trip]]                    | ARGENTINA                                                                                 |

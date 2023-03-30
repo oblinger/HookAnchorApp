@@ -798,6 +798,7 @@ books to read    http://mebfaber.com/about/
 	
 
 ### 2023-03-17  Vanguard Get TIPS, dave-O opening an account
+
 Fixed Income Desk - 
 800-669-0514  8:00a-5:30p
 

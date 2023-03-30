@@ -1,2 +1,4 @@
 
-- [Dev livestream](https://www.youtube.com/watch?v=outcGtbnMuQ) 
+
+- [[2023 GPT Jason Report]]
+

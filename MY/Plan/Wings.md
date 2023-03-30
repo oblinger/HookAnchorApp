@@ -1,13 +1,13 @@
 
 #### [[SV Wings]]
 - [ ] [[2023-02-00 CTOs corner]]: 
-- [ ] [[WW Bugs]]: -- monitor --
+- [ ] [[2023 Bugs  Flow]]: -- monitor --
 - [ ] [[WW Container Entity Permissions Data Model]] - 
 - [ ] [[SV Customer]]: who is using Cerebro
 
 #### __
 - [ ] [[ROLODEX]] - 
-- [ ] [[WW Roadmap]]:
+- [ ] [[2023 SV Roadmap]]:
 - [ ] [[WW 32 Releases]]:
 
 - [ ] [[Learn]]:		[[MgrPath]],  

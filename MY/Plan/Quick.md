@@ -1,6 +1,24 @@
+- [ ] border visial 
 
-- [ ] 
-- [ ] - [ ] doctor call
+- [ ] Cats: Family, Daily, Self
+- [ ] Work, Prime
+USB Camera
+
+FAANG mentor; Investment mentor; VPEng mentor (planto)
+
+bop- blue apron
+ - [ ] scott call
+ - [ ] Regularly
+ 
+ - [ ] verify what the boards look like
+- [ ] Yancy response: Centralization-but-no-for-profit-owner, indicators-of-derived-value, pay-pipes-as-pipes
+- [ ] Called “Liberal Radicalism,” their paper - now known as quadratic funding.
+
+- [ ] [[EOCA]]:  5-part argument
+
+
+
+- [ ] Doctor call
 - [ ] Writeup EOCA summary; ask Trevor
 
 - [ ] - [ ] Call Hassler; Urologist; 
@@ -14,20 +32,12 @@
 
 
 
+https://optimusmedical.com/
 
-Do you Anthem or Blue Shield - and which plan?
-
-- Blue Shield 70 plan
-	- Primary care $45 co pay
-	- Lab test $50 co pay
-	- Drugs
-		- Generic Drugs Tier 1:  $16co-pay.  plus 100% up to $85   ?per prescription? 
-		- $60 tier 2
-		- $90 tier 3
-		- 20% pay for tier after $250 deductible
-	- Hospital 
-		- 20% after $9000
-
+	
 
 
 	pay(x) = x if x<85 else 91
+
+
+	

@@ -6,39 +6,40 @@
 
 TOP
 - [[@Jason Syversen]] - CEO
-- >[[@Sam Corbitt]] - COO
+- [[@Sam Corbitt]] - COO
 
 CV TEAM
 - [[@Michael Seibert]] 		- Chief Scientist / Co-founder
-- [[@Chris Stauffer]] 		- CV ML Researcher
 - [[@Vishal Batavia]] 		- CV PhD - BC Canada
 - >[[@Parthsarthi Rawat]]	- (Sarti) - MS Robotics / CV - Mass (WPI)
 - >[[@Martin Reyes]] 		- Argentina - ML Eng
 - [[@Grzegorz Biziel]] 		- Poland - 
 - [[@Sayan Das]] 			- CV Eng - Intern from WPI  (works at Danfoss)
 
-- [[@Jack Potvin]]* 		- Op and Proj Mgt - "hungry" but non-technical
+- [[@Jack Potvin]] 			- Op and Proj Mgt - "hungry" but non-technical
 - [[@Jasu Victorio]] 		- 
 
 SOFTWARE TEAM
 - [[@Brian French]] 		- SW lead -- A- in motivation.  
+- [[@Jasu Victorio]] 		- Argentina
 - [[@Scott Byers]] 			- Principle Software Architect
+- [[@Mike Mathieu]] 		- 
+- [[@Michael Fearnley]] 	- Boston area - Front End Dev
+
 FLUTTER DEVS
-- >[[@Tomas Tisocco]] 		- (Achilles) Flutter Dev  TICKETS!
+- [[@Tomas Tisocco]] 		- (Double-T) Flutter Dev  TICKETS!
 - [[@Jorge Rincon Arias]]	- Flutter Dev
 - >[[@Tomas Sasovsky  (Aquiles)]]	- Flutter Dev - caring wanting more $
-- [[@Nazareno Cavazzon (Nasa)]]	- Flutter Dev
-- >[[@Leonardo Almiron]] 	- Angular - doing QA???  TICKETS!
-- [[@Roberto Daviduk]] 	- RECORD APP - Quiet
+- ?[[@Nazareno Cavazzon (Nasa)]]	- Flutter Dev
+- [[@Leonardo Almiron]] 	- Angular - doing QA???  TICKETS!
+- >[[@Roberto Daviduk]] 	- RECORD APP - Quiet
 - [[@Pablo Calofatti]] 		- Argentina - Full stack dev
 
 
 UX
-- [[@Agustina Revenga]] - UX/UI   TICKETS!
-- [[@Camila Morales]] - Prod Designer
-
+- >[[@Agustina Revenga]] - UX/UI   TICKETS!
 QA
-- >[[@Joaquin Perez Mano]] - Buenos Aires - QA
+- [[@Joaquin Perez Mano]] - Buenos Aires - QA
 
 
 BUS DEVS
@@ -53,14 +54,9 @@ BUS DEVS
 
 
 OTHERS
-- [[@Jasu Victorio]] - Argentina
 - [[@Rizwan Ahmed]] - Pakistan - Media Assistant
-- [[@Roberto Daviduk]] - Buenos Aires - Mobile Dev
-- [[@Leo Almiron]] - 
 - [[@David Ukeje]] - 
-- [[@Mike Mathieu]] - 
 - [[@Aseem Shrestha]] - Nepal - Project manager [[@Cloud Factory]]  
-- [[@Michael Fearnley]] - Boston area - Front End Dev
 - [[@Aashutosh Dhital]] - 
 
 
@@ -68,3 +64,5 @@ OTHERS
 
 LAID OFF
 - [[@Fang Liu]] - Senior Principle AI Researcher
+- [[@Chris Stauffer]] 		- CV ML Researcher
+- [[@Camila Morales]] - Prod Designer

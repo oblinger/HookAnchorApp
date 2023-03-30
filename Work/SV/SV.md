@@ -1,6 +1,8 @@
 
 :: [[SV90]]
 
+:: [[SV90]]
+
 :: [[SV Release Planning]],   [[SV Roadmap]],   [[SV90]]
 < [[???]]   [[@Sports Visio]],  [[@Jason Syversen]], 
 
@@ -9,7 +11,7 @@
 - INFO:			[[SV Code]], [[SVT]]ools,
 - ARCHIVE:		[[SV Archive]],   [[SV Wings]], 
 - MARKET:		[[SV Customer]], [[SV Competitor]], 
-- TOP:			[[WW]],   [[QQ]],  [[SV Mgt]],  [[WW Deliverables]],  [[SV90.]],  [[SV Folder]],  [[SV Joining]], 
+- TOP:			[[WW]],   [[QQ Notes]],  [[SV Mgt]],  [[2023 Deliverables]],  [[SV90.]],  [[SV Folder]],  [[SV Joining]], 
 
 
 [[SV User Flows]] 

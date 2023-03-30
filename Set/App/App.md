@@ -3,3 +3,6 @@
 
 :: [[Git Notes]]
 =[[TAG]] 
+
+
+- [[Hubspot Notes]] - 

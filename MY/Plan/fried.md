@@ -1,3 +1,6 @@
+- [ ] squirt google search
+- [ ] buy fine knit shirts 
+- [ ] add repeat
 - [ ] time tracker, don't merge if text comment exists
 - [ ] [[Phone]] - passport
 - [ ] Ground the treadmill [[@Horizon Fitness]]  & test run it

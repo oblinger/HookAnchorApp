@@ -1,3 +1,13 @@
+
+:: [[h]]
+### 2023-03-22  Food Delivery
+
+
+
+FACTOR:  $12.99  @10 meals.  plus $10 shipping
+- Wed cutoff time.   Delivers: M,T,W
+- Ongoing cost per meal:  
+
 ### 2023-02-24  Passport Application
 
 March 3rd 9pm

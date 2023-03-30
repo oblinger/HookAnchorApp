@@ -1,5 +1,5 @@
 
-:: [[MED Measurements]]
+:: [[MED Measurements]], [[MED Exercise]], 
 
 :: [[MED.]], [[MED Food]],  [[MED Heart]],   [[MED History]],   [[MED Checkups]],   [[MED General]],   [[MED Psoriasis]],   [[MED Tests]],  
 :: [[MED Doctors]],   [[MED Vaccinations]],   [[MED Vision]],   [[MED Insurance]],   [[MED Journal]],   [[MED Pills]],   [[MED Sleep]],    [[MED Weight]], 
@@ -78,6 +78,36 @@ small intestine bacterial over growth (SIBO)
 - [[Allergy vs Intolerance]](https://badgut.org/information-centre/health-nutrition/food-allergy-vs-intolerance/) -
 
 # LOG
+### 2023-03-21  Picking health insurance
+
+
+blue shield 100%   <-- this is what we picked
+covered california
+blue cross + blue shield
+
+
+- $1500/mo. Anthem EPO 	- 
+- $2060/mo. Blue Shield PPO	- 30%-in-net  Covers UCSF (QL & Eli)  Hassler not covered. 
+
+- $2500/mo. Anthem PPO 	- 10%-in-net  Cobra - 
+
+
+
+
+Do you Anthem or Blue Shield - and which plan?
+
+- Blue Shield 70 plan
+	- Primary care $45 co pay
+	- Lab test $50 co pay
+	- Drugs
+		- Generic Drugs Tier 1:  $16co-pay.  plus 100% up to $85   ?per prescription? 
+		- $60 tier 2
+		- $90 tier 3
+		- 20% pay for tier after $250 deductible
+	- Hospital 
+		- 20% after $9000
+
+
 ### 2022-11-10  Maria Cross - Registered Dietician
 
 - https://medium.com/@mariacross

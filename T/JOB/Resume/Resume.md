@@ -497,9 +497,18 @@ Employer:
 Address :  
 Title   :  
 Contact :  
-C-phone :
-Dates   :  
+C-phone : 
+Dates   :   
 Salaries:  
+Duties  :  
+_________ 
+Employer:  Sports Visio
+Address :  
+Title   :  CTO
+Contact :  Jason Syversen
+C-phone :
+Dates   :  02/13/2023 - 
+Salaries:  $200K
 Duties  :  
 _________ 
 Employer:  Aeolus Robotics Inc.

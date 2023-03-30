@@ -1,4 +1,6 @@
 - [ ] !! MED
+- [ ] !! iOS <<<<<<<<<
+- [ ] !! KRZ response 
 - [ ] Get receipts in
 
 - [ ] - [[reflections]]  in2  clean planning

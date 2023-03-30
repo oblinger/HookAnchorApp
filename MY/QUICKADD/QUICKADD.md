@@ -2,10 +2,16 @@
 alias: Quick Add Plugin
 ---
 
-
 - This is Dan's templates folder for the Quick Add plugin
+- The quick add menu is triggered by the OPT-CMD-Q
+- This menu configured in the plugin and its entries are listed here:
+	- AT entry
+	- CMD new
+	- MISC Page
+	- QUICK SV Page
 
-The Create Command Quick Add is a menu of these options:
+
+HERE ARE THE ENTRIES UNDER "NEW COMMAND"
 - [[QuickAdd 1Pass]]		-  
 - [[QuickAdd App]]		-  
 - [[QuickAdd Doc]]		-  
@@ -13,5 +19,18 @@ The Create Command Quick Add is a menu of these options:
 - [[QuickAdd General]]	-  	
 - [[QuickAdd Shell]]		-  
 - [[QuickAdd Webpage]]	-  
+
+
+
+
+DOCS:
+- [Github Page](https://github.com/chhoumann/quickadd) - 
+- [Docs](https://quickadd.obsidian.guide/docs/) - 
+
+
+EXAMPLES:
+  {{DATE+1:YYYY-MM-DD}}
+
+
 
 

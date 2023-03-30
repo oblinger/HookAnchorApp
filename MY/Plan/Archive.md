@@ -1,3 +1,5 @@
+- [x] Verify bug board is upgraded
+- [x] doc to brian stats
 - [x] meeting with Nick:  Moss adams, RZ summary,
 - [x] get all of Eli's videos to his system
 - [ ] joe says check out  https://boards.gre

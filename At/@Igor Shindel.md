@@ -5,7 +5,7 @@
 
 ### m2023-02-06  Intro meeting
 
-- [[WW Velocity]] - Figure out what needs to be done tactically - then drive its execution relentlessly.
+- [[2023 Velocity]] - Figure out what needs to be done tactically - then drive its execution relentlessly.
 - Attend standups 
 - Get folks excited about shipping on time.
 - PILLARS:  simple, simple, deliver,   ACTIONS: Give energy, Simple pillars, Delegates responsibility, Deliver today.
@@ -13,18 +13,18 @@
 
 
 **[[SV90|90-DAY PLAN]]** - I have the beginnings of a 90-day plan.  I would love to get your thinking about my priorities and approach.  
-	- [[WW Learning]]
+	- [[2023 Learning]]
 	- Job Defining Conversations
 
   
 **[[@Sports Visio|The People]]**. I have been in meetings with all the top folks already, and can give thoughts about how to operate with each.  
   
-**[[WW Velocity]]** - I have a “Red alerts” list of issues that are causing bleeding now within the org.  I would love to get your thoughts about politically and practically how to address these.  
+**[[2023 Velocity]]** - I have a “Red alerts” list of issues that are causing bleeding now within the org.  I would love to get your thoughts about politically and practically how to address these.  
 
   
-[[WW Jason Tasks]] - Jason shot me a 15 point email of issues that need to be addressed, and he feels I should somehow facilitate motion on them.  
+[[2023 Jason Tasks]] - Jason shot me a 15 point email of issues that need to be addressed, and he feels I should somehow facilitate motion on them.  
   
-[[WW Deliverables]] - I have an evolving list of “deliverables” that seem indicated.  I have the luxury and curse of a pretty open-ended mandate here, so I need tell SV what I will be delivering and when.  
+[[2023 Deliverables]] - I have an evolving list of “deliverables” that seem indicated.  I have the luxury and curse of a pretty open-ended mandate here, so I need tell SV what I will be delivering and when.  
 
 
 
