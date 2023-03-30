@@ -8,15 +8,15 @@
 | ---------- | ----------------------- | ----------------------------------------------------------------------------------------- |
 | 2023-03-27 | [[2023-W13]]                | W13                                                                                       |
 | 2023-03-23 | [[2020-12 MKT]]             | Yancy Comment                                                                             |
-| 2023-03-22 | [[Phone]]                   | Food Delivery                                                                             |
 | 2023-03-22 | [[@Mike Mathieu]]           | Intro??                                                                                   |
+| 2023-03-22 | [[Phone]]                   | Food Delivery                                                                             |
 | 2023-03-21 | [[Reflections]]             | Back from all hands; feeling of efficiency coming!                                        |
 | 2023-03-21 | [[MED]]                     | Picking health insurance                                                                  |
 | 2023-03-20 | [[Text Shutdown]]           | Old Shutdown Text                                                                         |
 | 2023-03-20 | [[Text Shutdown]]           | Old "TKO - No Interest Shutdown"                                                          |
 | 2023-03-19 | [[SNIP]]                    |                                                                                           |
-| 2023-03-19 | [[FIN]]                     | Taxes 2022                                                                                |
 | 2023-03-19 | [[SV]]                      | hold  sports stats data                                                                   |
+| 2023-03-19 | [[FIN]]                     | Taxes 2022                                                                                |
 | 2023-03-17 | [[FIN]]                     | Vanguard Get TIPS, dave-O opening an account                                              |
 | 2023-03-13 | [[Socialism]]               | Achilles (flutter dev at SV)                                                              |
 | 2023-03-11 | [[Trip]]                    | Argentina places                                                                          |
@@ -25,18 +25,18 @@
 | 2023-03-06 | [[@Mike Seibert]]           | Three guys CV guys from Argentina                                                         |
 | 2023-03-01 | [[@Tomas Piaggio]]          | Maybe work for Sports Visio                                                               |
 | 2023-03-01 | [[Buckets]]                 | New Time Tracking Bucketing                                                               |
-| 2023-03-01 | [[Reflections]]             | Mid Week - Different kind of tracking                                                     |
 | 2023-03-01 | [[@Pablo Calofatti]]        |                                                                                           |
+| 2023-03-01 | [[Reflections]]             | Mid Week - Different kind of tracking                                                     |
 | 2023-02-28 | [[@Jack Potvin]]            | Bug validation process                                                                    |
 | 2023-02-27 | [[@Mark Lichty]]            | App Run Thru                                                                              |
 | 2023-02-27 | [[@Apple]]                  | Do not disturb mode                                                                       |
-| 2023-02-27 | [[Reflections]]             | Week 2 at SV                                                                              |
 | 2023-02-27 | [[@Sam Corbitt]]            | Intro call                                                                                |
+| 2023-02-27 | [[Reflections]]             | Week 2 at SV                                                                              |
 | 2023-02-24 | [[Phone]]                   | Passport Application                                                                      |
-| 2023-02-20 | [[Bio]]                     | SportsVisio newsletter and blog entry                                                     |
-| 2023-02-20 | [[2023-W08]]                | W08                                                                                       |
 | 2023-02-20 | [[@Jack Potvin]]            | Polaris overview                                                                          |
 | 2023-02-20 | [[@Michael Fearnley]]       | Intro call                                                                                |
+| 2023-02-20 | [[Bio]]                     | SportsVisio newsletter and blog entry                                                     |
+| 2023-02-20 | [[2023-W08]]                | W08                                                                                       |
 | 2023-02-19 | [[@Mark Lichty]]            | At First Mgt Meeting                                                                      |
 | 2023-02-19 | [[@Mark Lichty]]            | Intro discussion                                                                          |
 | 2023-02-19 | [[@Yashin Lin]]             | discussion                                                                                |
@@ -49,15 +49,15 @@
 | 2023-02-15 | [[SV Mgt]]                  | Comments with the Team                                                                    |
 | 2023-02-14 | [[@Yashin Lin]]             | Looking for VALID TARGETS                                                                 |
 | 2023-02-13 | [[Trip]]                    | Manager's Monthly Meeting                                                                 |
-| 2023-02-13 | [[2023-W07]]                | W07                                                                                       |
 | 2023-02-13 | [[2023 Jason Tasks]]        | Systematic QA processing                                                                  |
+| 2023-02-13 | [[2023-W07]]                | W07                                                                                       |
 | 2023-02-11 | [[Phone]]                   | Instapot                                                                                  |
 | 2023-02-10 | [[@Tomas Tisocco]]          | Intro                                                                                     |
 | 2023-02-10 | [[Trip]]                    | ARGENTINA                                                                                 |
 | 2023-02-10 | [[Phone]]                   | Pay for Ambulance                                                                         |
-| 2023-02-09 | [[Phone]]                   | Cancel WSJ Wine.com                                                                       |
 | 2023-02-09 | [[@James Sullivan III]]     | Intro                                                                                     |
 | 2023-02-09 | [[@Leonardo Almiron]]       | Intro                                                                                     |
+| 2023-02-09 | [[Phone]]                   | Cancel WSJ Wine.com                                                                       |
 | 2023-02-08 | [[SV90]]                    | Unsorted Chunch                                                                           |
 | 2023-02-07 | [[@Jasu Victorio]]          | march prod                                                                                |
 | 2023-02-07 | [[@Scott Byers]]            |                                                                                           |

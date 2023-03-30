@@ -183,7 +183,7 @@ With all of these limitations noted, it is really quite stunning just how deep G
 
 #### DETECTING THAT ONES OPPONENT IS USING THE PICK AND ROLL
 
-![[Work/SV/QQ/2023-03 GPT-4 Jason Report/Pick and Roll 1 (Detecting it).png]]
+![[Pick and Roll 1 (Detecting it).png]]
 
 
 
@@ -191,14 +191,14 @@ With all of these limitations noted, it is really quite stunning just how deep G
 
 Ok, so we no see our opponent is using pick and roll offensively against us, so what we do about that?
 
-![[Work/SV/QQ/2023-03 GPT-4 Jason Report/Pick and Roll 2 (Defending Against).png]]
+![[Pick and Roll 2 (Defending Against).png]]
 
 
 #### DIAGNOSING FAILURES IN OUR DEFENSE
 
 Here we assume that we opted to use hedging in defending against the pick and roll, how can we tell of our hedging strategy is working, and if it is not working how do we diagnose the failures we are seeing?
 
-![[Work/SV/QQ/2023-03 GPT-4 Jason Report/Pick and Roll 3 (Diagnosing Defense Failures in use of hedging).png]]
+![[Pick and Roll 3 (Diagnosing Defense Failures in use of hedging).png]]
 
 
 
@@ -206,7 +206,7 @@ Here we assume that we opted to use hedging in defending against the pick and ro
 
 Given repeated observations of the opposing team dribbling between our hedging defender and our screener what might we do to strengthen or adjust our hedging approach?
 
-![[Work/SV/QQ/2023-03 GPT-4 Jason Report/Pick and Roll 4 (Strategizing on hedging failures).png]]
+![[Pick and Roll 4 (Strategizing on hedging failures).png]]
 
 
 
@@ -221,14 +221,14 @@ To test this we described a specific game context to GPT-4 and then began asking
 Here we describe our players and the opponent's players and immediately GPT-4 has got ideas about what we might do:
 
 
-![[Work/SV/QQ/2023-03 GPT-4 Jason Report/Strategy Example 1.png]]
+![[Strategy Example 1.png]]
 
 
 #### EFFECTIVE USE OF OUR BALL-HANLDER IN A FULL COURT PRESS
 
 So we are choosing your option #2 the full court press.  Exactly how do we leverage our ball-hander?
 
-![[Work/SV/QQ/2023-03 GPT-4 Jason Report/Strategy Example 1a1 using ball-handler with full court pressure.png]]
+![[Strategy Example 1a1 using ball-handler with full court pressure.png]]
 
 
 #### FULL COURT PRESS: QUESTION 2
@@ -236,14 +236,14 @@ So we are choosing your option #2 the full court press.  Exactly how do we lever
 A slightly more advance version of full court press question:  Given that we are executing a full court press as indicated how can we best combine the skill of our ball-handler with our well rested fast-break player?
 
 
-![[Work/SV/QQ/2023-03 GPT-4 Jason Report/Strategy Example 1a1 using both fast-break and ball handling in full-court pressure.png]]
+![[Strategy Example 1a1 using both fast-break and ball handling in full-court pressure.png]]
 
 
 #### DEFENSIVE STRATEGY QUESTION
 
 Given their taller players and better shooting abilities, what strategies should we consider?
 
-![[Work/SV/QQ/2023-03 GPT-4 Jason Report/Strategy Example 1d1 defend against tallest opponents.png]]
+![[Strategy Example 1d1 defend against tallest opponents.png]]
 
 
 #### CAN GPT-4 MAKE QUANTITATIVE STRATEGIC ASSESSMENTS
@@ -251,12 +251,12 @@ Given their taller players and better shooting abilities, what strategies should
 Above we have been presenting qualitative assessments of game context, and GPT-4 has been providing qualitative descriptions of correct actions in response.  What happens if we provide quantitative information in our context, can GPT-4 use these quantities in providing appropriate advise?
 
 Case 1 - N=2
-![[Work/SV/QQ/2023-03 GPT-4 Jason Report/Strategy Example 1d2 quantative assessment of strat failure.png]]
+![[Strategy Example 1d2 quantative assessment of strat failure.png]]
 
 
 Case 2 - N=15
 
-![[Work/SV/QQ/2023-03 GPT-4 Jason Report/Strategy Example 1d3 larger quantity same question.png]]
+![[Strategy Example 1d3 larger quantity same question.png]]
 
 
 
