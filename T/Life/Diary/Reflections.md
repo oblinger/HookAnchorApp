@@ -1,3 +1,19 @@
+### 2023-03-31  Week travel to Disney
+
+Trip to Disney was a great way to spend time with Eli and QL.
+I was able to enjoy the trip, and QL gave me time to work too.
+
+I am feeling like I can get on top of my job with enough room left over to start taking on the rest of life.
+
+But I need to use the same efficiencies to other parts of life in order to get them to fit into available time.  My three strategies:
+- Just say 'no' - find ways to get stuff off my lists.
+- Put in more hours - avoid frittered time, and get more time in.
+- Get obsidian organized about all these areas, so with limited time I can dispatch the core stuff in efficient ways
+
+==> Want to make progress of 'self' items, and want to have feeling of spare time... just small amounts, but not the feeling of overwhelm that I have had my whole adult life.
+
+
+
 ### 2023-03-21  Back from all hands; feeling of efficiency coming!
 
 

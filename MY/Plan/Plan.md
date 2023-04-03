@@ -1,4 +1,6 @@
 
+:: [[Self Evergreen]]
+
 :: [[Scrub]]
 
 :: [[Archeology]],   [[Spirit]],   [[Untitled]],   [[other]],   [[work]]
@@ -8,13 +10,15 @@
 
 [[OBS.]] 
   
-#### [[Now]] Short Term Tactical Lists
+#### Short Term Tactical Lists
 - [[active]]		-  [[wings]], 
 - [[Current]]		-  My 'current' weekly plan
 - Daily			- 
 - [[fried]]			-  Easy/Fun/Taking-Break tasks.   [[Fried Later]], 
 - [[quick]]			- 
 - [[todo]]			- 
+- [[now]]			-  
+- [[work]]			- 
 
 
 #### Longer Term 

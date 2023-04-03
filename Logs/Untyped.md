@@ -6,8 +6,13 @@
 
 | Date       | File                    | Notes                                                                                     |
 | ---------- | ----------------------- | ----------------------------------------------------------------------------------------- |
+| 2023-04-03 | [[2023-W14]]                | W14                                                                                       |
+| 2023-04-02 | [[@Shawn Hassler]]          | Hassler Visit                                                                             |
+| 2023-04-02 | [[MKT]]                     | Quadratic Funding                                                                         |
+| 2023-03-31 | [[Reflections]]             | Week travel to Disney                                                                     |
+| 2023-03-30 | [[@Apple]]                  | Air Max issues                                                                            |
 | 2023-03-27 | [[2023-W13]]                | W13                                                                                       |
-| 2023-03-23 | [[2020-12 MKT]]             | Yancy Comment                                                                             |
+| 2023-03-23 | [[MKT]]                     | Yancy Comment and Response                                                                |
 | 2023-03-22 | [[@Mike Mathieu]]           | Intro??                                                                                   |
 | 2023-03-22 | [[Phone]]                   | Food Delivery                                                                             |
 | 2023-03-21 | [[Reflections]]             | Back from all hands; feeling of efficiency coming!                                        |
@@ -74,7 +79,7 @@
 | 2023-01-23 | [[SV]]                      | Prior Inventions                                                                          |
 | 2023-01-19 | [[DYL]]                     | Dan Job                                                                                   |
 | 2023-01-11 | [[References]]              | Grzegorz References                                                                       |
-| 2023-01-10 | [[FIN Budget]]              | Energy Usage                                                                              |
+| 2023-01-10 | [[FIN_Budget]]              | Energy Usage                                                                              |
 | 2023-01-09 | [[Habit]]                   | Wake-First-MIT                                                                            |
 | 2023-01-06 | [[AMA Notes]]               | Fake Taylor's Tea                                                                         |
 | 2023-01-03 | [[@Apple]]                  | Laptop Repair                                                                             |
@@ -130,7 +135,7 @@
 | 2022-07-07 | [[Phone]]                   | Setting up Sonic internet service                                                         |
 | 2022-07-02 | [[DocJupyter]]              | config example                                                                            |
 | 2022-06-27 | [[Phone]]                   | PENFED - reset connection /                                                               |
-| 2022-06-25 | [[MED]]                     | Hassler Visit                                                                             |
+| 2022-06-25 | [[@Shawn Hassler]]          | Hassler Visit                                                                             |
 | 2022-06-20 | [[MED]]                     | Cough followup                                                                            |
 | 2022-06-06 | [[Phone]]                   | Fix MAC mic                                                                               |
 | 2022-06-06 | [[Phone]]                   | Drains Flooding                                                                           |
@@ -184,7 +189,7 @@
 | 2022-03-10 | [[Searches]]                | COMPANIES ===                                                                             |
 | 2022-03-10 | [[Searches]]                | ML COMPANIES ===                                                                          |
 | 2022-03-09 | [[Paths]]                   | Post Amy Kruse Thinking                                                                   |
-| 2022-03-04 | [[2020-12 MKT]]             | From the top                                                                              |
+| 2022-03-04 | [[MKT]]                     | From the top                                                                              |
 | 2022-02-22 | [[Paths]]                   | Latest Thinking                                                                           |
 | 2022-02-16 | [[Forum]]                   | Email based first system.                                                                 |
 | 2022-02-15 | [[Paths]]                   | Choice Space                                                                              |
@@ -215,7 +220,7 @@
 | 2021-12-17 | [[COM Campaigns]]           | RECRUITER OUTREACH                                                                        |
 | 2021-12-01 | [[Journal Old]]             | PATHS cash                                                                                |
 | 2021-12-01 | [[Paths]]                   | PATHS cash                                                                                |
-| 2021-12-00 | [[2020-12 MKT]]             |                                                                                           |
+| 2021-12-00 | [[MKT]]                     |                                                                                           |
 | 2021-12-00 | [[DYL]]                     | DAN WORK (Written for Nina discussion)                                                    |
 | 2021-12-00 | [[Resume]]                  | Jared Resume writing notes                                                                |
 | 2021-11-30 | [[Journal Old]]             | PATHS GOOGLE vs R-ZERO vs UF-now                                                          |
@@ -396,7 +401,7 @@
 | 2020-08-17 | [[FIN]]                     | QL - AYI payments                                                                         |
 | 2020-08-15 | [[Journal Old]]             | My Futures                                                                                |
 | 2020-07-23 | [[DocMac]]                  | Applications folder                                                                       |
-| 2020-07-18 | [[FIN Budget]]              | Budget                                                                                    |
+| 2020-07-18 | [[FIN_Budget]]              | Budget                                                                                    |
 | 2020-05-11 | [[OLD 2020 Weekly]]         | NOW COUNTING 90 SLOTS                                                                     |
 | 2020-04-27 | [[MED]]                     | Notes for doc meeting                                                                     |
 | 2020-04-14 | [[MED]]                     | Stress test results                                                                       |
@@ -534,6 +539,6 @@
 | 2009-11-19 | [[Journal Old]]             | – Progress                                                                                |
 | 2009-11-09 | [[OLD 200x Weekly]]         | – Progress                                                                                |
 | 2000-00-00 | [[ReBuy]]                   | Tofurky                                                                                   |
-| 2000-00-00 | [[MED Sleep]]               | Sleep meds                                                                                |
 | 2000-00-00 | [[MED]]                     | Medical.InsuranceAnalysis --                                                              |
 | 2000-00-00 | [[MED]]                     | Medical Questions --                                                                      |
+| 2000-00-00 | [[MED Sleep]]               | Sleep meds                                                                                |

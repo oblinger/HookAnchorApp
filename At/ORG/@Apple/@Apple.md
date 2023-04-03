@@ -8,8 +8,8 @@
 MAC PRO 2019 — C02DP1LYMD6R
 800-275-2273  Say: “Macbook Customer Service”
 SUBSCRIPTIONS:  Mac -> AppStore -> Menu -> !Store  -> 
-!View My Account ->  ! View Info -> 
-Manage Subscriptions ! Manage
+  !View My Account ->  ! View Info -> 
+  Manage Subscriptions ! Manage
 CHAT:       Search “chat”  -> !Chat w Apple
 GENIUS:   Search “genius” -> !HardwareHelp
 UNION SQ: 415.486.4800
@@ -63,6 +63,12 @@ Retina15 Serial:  C02V811RHTD9
 
 
 # LOG
+
+### 2023-03-30  Air Max issues
+
+- repeated attempts to connect to mac failed, even after reboot, even after forgetting device, and resetting headset.
+- finally worked on second forget device.
+- Soon after the transparency button on the headset was not working until pressing 
 
 ### 2023-02-27  Do not disturb mode
 

@@ -7,6 +7,7 @@
 - [[Set]]		[[Set Folder|Set]]		[[Meta Set]]	 By TYPE -	Groups of like (typed) entries
 - [[T]]			[[T Folder|T]]			[[Meta Topic]]	 By TOPIC -	Toplevel Taxonomic Topics
 - 						[[Meta Flow]]	 By PROC	-	My data processing paths
+- [[SV]]			[[SV Folder|SV]]			[[Meta SV]] 	 WORK	-  Work related [[WW]].
 
 
 
@@ -31,7 +32,6 @@ TOPLEVELS
 - [[Prj]]		- 
 - [[RR]]			- 
 - [[Weekly]]	-
-- [[Work]]		- [[SV]]
 
 
 [[Set]]		GROUPS OF LIKE ENTRIES -- (UN-dated, UN-ordered, Typed)

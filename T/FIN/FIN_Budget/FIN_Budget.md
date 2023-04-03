@@ -1,3 +1,9 @@
+
+- [Spreadsheet Budget](/Users/oblinger/ob/kmr/T/FIN/FIN_Budget/Budget.xlsx)
+
+
+## budget.py
+
 taxes don't come from joint
 - easier to see spending
 - taxes are not really spending

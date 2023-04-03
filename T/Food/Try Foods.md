@@ -4,7 +4,7 @@
               Mixed bean ?white?, ++Split Pea, +Butternut, ++Lentil, 
 - CURL:    ++Peanut Stew, ++Curry, Soup, ++Millet
 - QUINOA:  ++Southwest,  ++Peppers w/ more Quinoa
-- 
+- TRY: CHIA, TVP
 
 **GOALS**:
 - BASE:  Chia, TVP, 

@@ -1,8 +1,9 @@
-
+- [ ] [[COMS]]: Julian
 - [ ] [[Ops]]:	
 - [ ] [[Beta]]:	Beta testing proposal. Jason ask today.
 - [ ] [[SV Hiring]]: iOS dev, Ph:James, Jormey; Layoffs
 - [ ] [[Bridge]]: Check Deck; Rolodex
+- [ ] [[SVlrn]]: Calls; Run Apps
 
 
 - [ ] Joachim: Assess; Rainforest.QA - Get Joachim assessment
@@ -22,7 +23,7 @@
 
 
 
-
+[[foo]] 
 
 ## DONE
 - [ ] [[2023 Remote Work Guidelines]] 

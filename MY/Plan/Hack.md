@@ -1,6 +1,9 @@
 - [ ] pick new list name for 'wait' with unique first letter
+- [ ] squirt google search
+- [ ] time tracker, don't merge if text comment exists
+- [ ] - [ ] figure out how to get notifications working
+- [ ] tracker bug hit delete & time get screwed
 
-- [ ] Jump list should jump directly even whne inside another jump workspace
 - [ ] scrub <0xa0> non-breaking spaces from clipboard see argentina trip info
 - [ ] [[prj]] page still has duplicating :: entries
 - [ ] Take notes on call recorder [[Record]]

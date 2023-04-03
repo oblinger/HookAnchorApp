@@ -1,8 +1,9 @@
 - [ ] Kureg coffee maker
 - [ ] buy red envelopes; water filter
+- [ ] [wsj-9min-dress](https://www.wsj.com/articles/get-dressed-for-work-in-under-9-minutes-with-these-smart-tricks-63386bd6?page=1); ECCO Chelsea Boot; lyocell
+- [ ] buy fine knit shirts 
 
 - [ ] hair catcher for tub
-- [ ] [Ikea bin](https://www.ikea.com/us/en/p/trofast-mesh-storage-box-light-green-gray-90518574/) - mesh bins.
 - [ ] buy freezer containers
 - [ ] Research containers:  chat webresturant store
 
@@ -10,8 +11,7 @@
 - [ ] [10Q](https://antneygrub-store.mybigcommerce.com/instant-pot-duo-nova-10qt-multi-cooker-stainless-steel/?gclid=CjwKCAiA68ebBhB-EiwALVC-NuIDsXNcsuBgSPRdG5844ShzVztqIWPzAsg_8qHO6T8On9W5Wm_MkxoChNgQAvD_BwE) instapot  
 
 - [ ] Buy tripod. consider go-pro or other video. search best camera w/ a kid
-- [ ] BUY: basket for QL in bathroom; add try to her drawer
-## FOREVER
+FOREVER
 - Shoe Rack; Office Dresser; 
 ## ITEMS
 ### 2022-11-20  Big Insta-pot

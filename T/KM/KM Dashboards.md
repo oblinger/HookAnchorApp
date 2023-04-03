@@ -13,15 +13,12 @@
 
 ### DAILY VIEW DASHBOARD
 
-|   col-1    | col-2 |
-|:----------:|:-----:|
-| [[quick]]  | Week  |
-|  [[todo]]  |       |
-|     "      |       |
-| [[work]] |       |
-|     "      |       |
-|  [[active]]  |       |
-|            |       |
+| col-1 | col-2 | col-3  | col-4 |
+|:-----:|:-----:|:------:|:-----:|
+| quick | todo  |  Week  | Week  |
+| work  |  now  |   "    |   "   |
+|   "   |   "   |   "    |   "   |
+|   "   |   "   | active | wings |
 
 
 
@@ -38,33 +35,33 @@
 
 ### GAP DASHBOARD
 
-|   col-1   |  col-2   |   col-3   |
-|:---------:|:--------:|:---------:|
-| [[fried]] | [[hack]] | [[ToBuy]] |
-|   "   | [[fun]]  | [[todo]]  |
-|   "   | [[Gap]]  | [[quick]] |
+| col-1 | col-2 | col-3 |
+|:-----:|:-----:|:-----:|
+| fried | hack  | ToBuy |
+|   "   |  fun  | empty |
+|   "   |  Gap  | quick |
 
 
 
 ### PLANNING VIEW DASHBOARD
 
-| col-1  | col-2 | col-3 |  col-4  |
-|:------:|:-----:|:-----:|:-------:|
-|  Week  | Todo  | Prime |   Q2    |
-| Active |   "   |   "   |  [[later]]  |
-|  Work  | Wings | Full  |  [[quick]]  |
-|   "    |   "   |   "   |  [[other]] |
+| col-1  | col-2 | col-3 | col-4 |
+|:------:|:-----:|:-----:|:-----:|
+|  Week  | Todo  | Prime |  Q2   |
+| Active |   "   |   "   | later |
+|  Work  | Wings | Full  | quick |
+|   "    |   "   |   "   | other |
 
 
 
 ### SELF DASHBOARD
 
-| col-1  | col-2 | col-3 |  col-4  |
-|:------:|:-----:|:-----:|:-------:|
-|  Self  | Todo  | Prime |   Q2    |
-|   "    |   "   |   "   |  Later  |
-| Active | Wings | Full  |  Quick  |
-|   "    |   "   |   "   | Waiting |
+| col-1  | col-2 | col-3 |  col-4   |
+|:------:|:-----:|:-----:|:--------:|
+|  Self  | Todo  | Prime |    Q2    |
+|   "    |   "   |   "   |  Later   |
+| Active | Wings | Full  | SelfEver |
+|   "    |   "   |   "   | Waiting  |
 
 
 
@@ -72,11 +69,11 @@
 # LOG
 ### 2022-12-11  Daily
 
-| col-1 |  col-2  | col-3  | .......................................................... |     |
-|:-----:|:-------:|:------:|:---------------------------------------------------------- |:---:|
-| Today |  Quick  | Prime  |                                                            |     |
-|   "   |  Todo   |        |                                                            |     |
-| Prev. | Current | Second |                                                            |     |
-|   "   | Waiting |  Full  |                                                            |     |
-|       |         |        |                                                            |     |
+| col-1 |  col-2  | col-3  | 
+|:-----:|:-------:|:------:|
+| Today |  Quick  | Prime  | 
+|   "   |  Todo   |        |
+| Prev. | Current | Second |
+|   "   | Waiting |  Full  | 
+|       |         |        |
 

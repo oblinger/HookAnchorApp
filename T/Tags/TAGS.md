@@ -9,7 +9,7 @@
 - [[AT]]
 	- [[PP]]
 		- LEVEL: [[CORE]], [[SOLID]], [[HEAVY]], [[RND]], 
-		- ROLE:  [[RECRUITER]],  [[COACH]],  
+		- [[SERVER]]:  [[RECRUITER]],  [[COACH]],  [[DOCTOR]],   
 		- KIND:   [[FAANG]],   [[START]],  [[TECH]], [[VC]], [[ACADEMIC]], 
 		- WHERE:  [[Tags/HACKERS]], [[DARPA]], 
 		- AREA:  [[AI]], [[ROBOTICS]], [[ML]], [[CONSULTANT]],  

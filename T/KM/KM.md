@@ -9,7 +9,7 @@
 - [[KBD Shortcuts]]		- 
 
 
-[[Meta KM]] - [[PKM]] - [[Hook 2]] - [[Hook System]] 
+[[Meta KM]] - [[PKM]] - [[Hook System]] 
 - [[Multi-List WorkFlow]] 
 - [[KM Anchors]]
 - [[KM Global 2 Local]] 

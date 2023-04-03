@@ -1,29 +1,9 @@
-- [ ] squirt google search
-- [ ] buy fine knit shirts 
-- [ ] add repeat
-- [ ] time tracker, don't merge if text comment exists
-- [ ] [[Phone]] - passport
-- [ ] Ground the treadmill [[@Horizon Fitness]]  & test run it
-- [ ] figure out how to get notifications working
-- [ ] write up phone contacable plan
+
+- [ ] [[Travel]]: pills; snacks
+- [ ] write up phone contactable plan
 - [ ] link up mission & write some of it
-
-- [ ] time tracking
-- [ ] eoca note
-- [ ] update my CRM workflow
-
-- [ ] - [ ] snack list (for trip)
-- [ ] apple news
-
-- [ ] get password I know by memory for gmail; think about logon w/o computer to many accounts
-
-- [ ]  Crones doctor
-
-- [ ] Call doc about my heart test results.
-- [ ] add other wifi
-- [ ] stomach acid
+- [ ] Update CRM workflow
 - [ ] Get logins for MyHealth
-
 - [ ] Process mom's Eli educational funds.
 
 
@@ -32,9 +12,12 @@
 - [ ] Plan for crypto
 
 ### HOUSE
+- [ ] USB Camera
 - [ ] BEDROOM --  Closet Pole
 - [ ] LIVINGROOM -- TV power
+- [ ] WIFI -- Add fancy wifi
 - [ ] BEDRM -- put plate on wall outlet
+- [ ] BASEMENT -- Ground treadmill, put back together
 
 ### LATER
 - [ ] do quarterly budgeting

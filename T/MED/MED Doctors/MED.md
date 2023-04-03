@@ -1,4 +1,9 @@
 
+
+- [ ]  Crones doctor
+- [ ] Call doc about my heart test results.
+
+
 :: [[MED Measurements]], [[MED Exercise]], 
 
 :: [[MED.]], [[MED Food]],  [[MED Heart]],   [[MED History]],   [[MED Checkups]],   [[MED General]],   [[MED Psoriasis]],   [[MED Tests]],  
@@ -126,30 +131,6 @@ Call - (415) 202-0250 for an earliest available appointment with Dr Sharlip. Or 
 SAN FRANCISCO, CA 94115
 
 https://peyronies-disease.xiaflex.com/patient/urologist-finder-results/?zip_code=94115&radius=25
-
-### 2022-06-25  Hassler Visit
-
-Bend, knot, 
-
-addyi
-
-pre-diabeteies
-
-CRP 
-
-levelated liver markers - fatty liver
-
-- noom.  
-- boot-camp SF.  Koi fitness
-- Manuel Villacorta
-- 20-40 pepsit
-
-
-- Pentoxathlene - First line treatment - 6 months.  Vitamin
-- Xiaflex.com - Ira Sharlip - 2100 Webster.  415-202-0250.  Golden Gate Urology
-- Brian Grady - 
-- Tom Liu @ UCSF
-
 
 ### 2022-06-20  Cough followup
 - Cough maybe a bit better, acid reflux definitely seems an issue, was not great in keeping up with the flonase

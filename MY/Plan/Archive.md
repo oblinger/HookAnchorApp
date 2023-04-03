@@ -1,3 +1,13 @@
+- [x] apple news
+- [x] get password I know by memory for gmail; think about logon w/o computer to many accounts
+- [x] BUY: basket for QL in bathroom; add try to her drawer
+##
+- [ ] [Ikea bin](https://www.ikea.com/us/en/p/trofast-mesh-storage-box-light-green-gray-90518574/) - mesh bins.
+- [x] Dog ball thrower
+- [x] [[Phone]] - passport
+- [x] time tracking
+- [x] Jump list should jump directly even whne inside another jump workspace
+- [x] scott call
 - [x] Verify bug board is upgraded
 - [x] doc to brian stats
 - [x] meeting with Nick:  Moss adams, RZ summary,

@@ -1,5 +1,6 @@
+clean email
 
-< [[FIN]]    [[FIN Budget]]
+< [[FIN]]    [[FIN_Budget]]
 
 # RECURRING BILLS
 ## BIGGER BILLS - SCHWAB JOINT 6956-1345
@@ -52,9 +53,10 @@
 - $5/mo					Patreon - Sleep With Me Podcast
 
 ### CAP ONE
+- $49/mo	!!	Coursera
 - $20/yr		Google Storage renews 2023-05-13
-- $20/mo		Obsidian Publish
-- $49/mo		Coursera
+- $43/yr		Clean Email
+- 				Obsidian Publish  (cancelled $20/mo)
 
 ### QL RECURRING
 - Apple

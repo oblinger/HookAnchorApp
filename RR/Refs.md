@@ -1,4 +1,4 @@
-- [[REF Covid]]
+- [[Covid]]
 
 ### t2022-08-15  Child Education Outcome by location
 

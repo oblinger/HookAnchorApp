@@ -1,7 +1,7 @@
 
 :: [[Systems]]
 
-:: [[REF Covid]]
+:: [[Covid]]
 
 :: [[ML]],   [[Materials]],   [[Para]],   [[REF]],   [[RMS]],   [[RefMisc]],   [[Refs]],   [[Research]],   [[Swearing]]
 

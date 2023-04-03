@@ -1,3 +1,63 @@
+! Upgrading our monitoring and testing
+
+- [[Beta prod push]] 
+
+- [Prod Push](https://docs.google.com/document/d/1hXXBXI0PhSXIwLEsYcTKQPHBeIiNsvYW8zNuONveR40/edit#) 
+- [Regular Reporting](https://docs.google.com/document/d/1N8AbXgFkXNoqDmYx77tSH_Lxp6JQf4palKKXdUkoTFQ/edit) 
+- [Pillars](https://docs.google.com/document/d/1bhmtxJnbB7gPOGnJqV4ibzzQJaUNT5UimnAs9PTli-w/edit#) a
+
+
+
+### 1
+! Build consensus proposal doc this week with one on one discussions with many stake holder; wider meeting next week
+
+
+- [ ] [[2023 Notes]]: Contact info(pages, email)  info page for all folks.
+
+- [ ] Call Trees who gets
+      what to do with system is down
+
+
+
+
+
+KEY PLANS AND ACTIONS
+
+REVERSION - Plan for 
+
+DEV ON CALL - 
+
+CALL TREE - 
+
+CONTACTABLE HOURS - 
+
+BACKUPS - Separate thread to be addressed subsequently
+
+
+### 2 
+
+
+
+SUMMARY
+- TRACKING
+  - Joachim will track QA ticket tests and outcomes.
+  - Lichty Lines - Simple weekly template that summarizes user outcomes and testing
+- BETA TESTING
+	- Visual Indicator 
+
+
+
+
+
+
+SMALLER IDEAS
+- VERSION CONFUSION - With test flight it is easy to be mislead about which version is on your device so we introduce a configurable colored border on all test flight versions to distinguish which app is currently active.
+- VERSION CHECKING - Backend publishes a version number that is checked for compatibility to it is not possible to mismatch front and backends.
+
+
+- Joachim tracking: ticket tests
+
+
 
 
 APPROACH

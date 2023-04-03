@@ -1,5 +1,6 @@
 =[[SV]]  [QA Specialist](https://www.linkedin.com/in/joaquin-perez-mano-140228158/)  [[@Sports Visio]]
 
+- Buenos Aries
 
 # LOG
 
@@ -20,3 +21,5 @@
 - My priority right now is to contribute anyway I can.
 
 - Language abilities are strong, so he might be able to help.
+
+

@@ -1,9 +1,11 @@
 
+:: [[FIN Log]]
+
 :: [[FIN.]],  [[FIN Topics]],  [[FIN Mint]],  [[FIN Tracking]],  
 
 -  [[FIN Bills]],  [[Expenses]],   [Taxes](Taxes/Taxes.md),   [Vanguard](Vanguard.md)
 
-- [[BillPay]] 
+- [[BillPay]],   [[FIN_Budget]],  
 
 
 # PRJ
