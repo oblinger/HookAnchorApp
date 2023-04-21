@@ -1,22 +1,19 @@
 
-:: [[SV90]]
-
-::   [[SV Roadmap]],  
 < [[???]]   [[@Sports Visio]],  [[@Jason Syversen]], 
 
-- TOPS:		[[WW]],   [[QQ]],  [[SV Mgt]],  [[2023 Deliverables]],   [[SV Folder]],  [[SV Joining]], [[Meta SV]], 
-- [[SV Strat]]:	
+- TOPS:		[[WW]],   [[QQ]],  [[SV Mgt]],   [[SV Folder]],  [[Meta SV]], 
+- [[SV Strat]]:	[[Reset]],  [[Roadmap]], 
 - [[SV Ops]]:	 	[[SV Bugs]],  [[SV Testing]], [[SV Release Planning]],  
-- [[SV People]]:		[[SV People]],   [[SV Hiring]], [[SV SW Team]],   [[SV CV Team]],
-- [[SV Market]]:	[[SV Product]] ,   [[SV Apps]],   [[SV Customer]],  [[SV Competitor]], 
-- INFO:			[[SV Code]], [[SVT]]ools,
+- [[SV People]]:	[[SV Hiring]], [[SV SW Team]],   [[SV CV Team]],
+- [[SV Market]]:	[[SV Customer]],  [[SV Competitor]], 
+- [[SV Product]]: [[SV Code]],  [[SV Apps]], [[SV System]],   
+- INFO:			[[SV Code]], [[SVT]],  [[SV Legal]],
 - ARCHIVE:		[[SV Archive]],   [[SV Wings]], 
 
 
--  [[SV System]], 
 
 LOG
--  [[SV90]], [[SV90.]],   [[SV Investor Related]], 
+-  [[SV90]], [[SV90.]],   [[SV Investor Related]], [[2023 Deliverables]],  
 
 ### TODO
 - [ ] Get Coach

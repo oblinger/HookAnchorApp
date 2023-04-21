@@ -1,14 +1,15 @@
 ### Work Projects
+=	[[Reset]]			[[2023 DanO Role Reset]].
+=	[[Roadmap]]		[[2023 SV Roadmap]] - 
 =	[[Baller]]			[[2023 Baller TV Partnership]].
-=	[[SV Letter]]		[[2023 SV Investor News Letter]].
 =	[[Demo]]			[[2023 Bridge Round AI Demo]].
 =	[[Bridge]]			[[2023 Bridge Round]] - 
 =	[[SV Hiring]]		
 =	[[SV learn]]		[[2023 Learning]] - 
 
 =	[[Stat]]			[[2023 Stat Calculations and Annotations]] - 
-=	[[Ops]]			[[2023 Ops Flow]] - 
 =	[[Beta]]			[[2023 Beta Testing]] - 
+v	[[SV Letter]]		[[2023 SV Investor News Letter]].
 v					[[2023 Basketball Stats]] - 
 
 s	[[GPT Rpt]]		[[2023 GPT Report]] - 
@@ -24,7 +25,6 @@ l					[[2023 Competitive Analysis]] -
 
 ?					[[2023 Velocity]] - 
 ?					[[2023 SV Notes]] -
-?					[[2023 SV Roadmap]] - 
 ?					[[2023 Deliverables]], 
 ?					[[2023 Jason Tasks]] -
 ?					[[2023 Meta Thinking]] - 
