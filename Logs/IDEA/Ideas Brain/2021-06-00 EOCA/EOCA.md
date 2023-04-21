@@ -1211,6 +1211,112 @@ The treasonous American and that's me in the treason is the treasonous thought i
 
 _
 # LOG
+
+### 2023-04-07  
+### 2023-04-07 Nina note - why will we all die? 
+
+
+   
+> Hi Dan,
+> Why will we all die?
+> Nina  
+
+Eliezer Yudkowsky seems to think there will be an immediate ’singularity’ kind of thing….
+I am doubtful of that.  Here is an outline of the progression and argument that I see:
+
+~~
+
+(1)  I think folks (military, hedge funds, FAANGS, etc.) will build systems that are general purpose “understander” systems.
+
+(2)  They are playing winner-take-all-games (money, guns, advertising, etc.) thus they will spend many tens of billions in order to be the ones with the biggest and best “understander” systems.
+
+(3)  I think the present LLMs are not sufficient to really capture human reasoning, today they are still ‘faking’ it.  BUT, I notice that we sucked at playing go and everyone said oh it will be a lifetime before it improves, right upto the day that we created a new algorithm and cracked it in one step.  Human reasoning will crack in a similar way…  My thinking is that present LLMs need to use a GAN-like idea to “lock onto” and refine little micro-theory reasoning models that explain various bits of human reasoning.  Who know, that is out I would attempt the generalized understander, perhaps I am wrong about that.  But either way there will be an understander:
+
+And in one ’tiny’ jump; these systems go from not really being able to formulate and exercise human reasoning paradigms, to being able to do so.  In one step they will be able to learn the same stuff from people, that people currently learn from people.  This new system, in one giant leap will all of the sudden be able to use its learned human knowledge in ways similar to the ways humans use humanities knowledge—across ALL professional human disciplines at levels somewhat above human levels.  
+
+Notice GPT-4 didn’t get really good a musical theory, but bad and sport strategies.  Not at all, it is equally capable (and incapable) across ALL domains of human thought all in one step.  So when we crack ability to learn human reasoning about professional domains it will also be in one step.
+
+(4) This is still not the singularity.  These AI systems are just like humans in ability to string arguments together and to “think”…. But they do have a “hive" mind equivalent to millions of human minds, all pooling all they know and learn into one every expanding whole.  And can operate 100x faster than us and 1,000,000x more parallel than us.
+
+(5) These systems will be far far far far more capable than humans are at modeling complex systems.  For example they could combine chip layout specs, cloud-server building designs, hypervisor code designs, and application code design into next-level cyber exploits of this combined system in ways that would be very far beyond anything that could fit into people’s heads.
+
+(6) For a period of time humans will uses these AI-beasts a "cyber-exoskeletons" for their minds, allowing the human+machine combo to do far far more than a humans can do alone.  
+
+(7) But this will rapidly become less and less useful as the capacity of the AI systems keeps expanding while human capacity does not.  At a certain point it will be like strapping a chicken onto the side of a Falcon-heavy and expecting that chicken help it flap into space.  Just like the poor hapless chicken, the human mind strapped to the side of this leviathan will be hopelessly outmatched.
+
+Consider:  Alpha go today is simply incapable of explaining to us how it knows which move is best.  The interplay of factors it considers is just too great for our brains to groc.  Alpha Go might be designed to simplify its thinking to try to give us the ‘jist’ of why a given move is the best.  But this approximation becomes less and less meaningful as the discrepancy between machine and human widens.  Soon it becomes ridiculous.   The best we can do then is give orders to our AI systems and hope they are really following those orders, we will not even be able to check.
+
+(8) Of course in winner-take-all games there is immense pressure to never give up a significant advantage.  If you do this, you might as well just pack up your bags and go home.  You will never win the game, as the other guy will not give up that advantage and will surely beat you and take 100% as it is winner take all game (they will win the war, they will better serve ads, they will better predict stock market movements, etc.).  So we know secretly or not, people will not sabotage themselves by accepting a reduced-capacity AI system.
+
+(9) One way to gain massive advantage with these generalized understanding systems to use them understand and optimize **themselves**.  NOT doing this is to simply let the other guy win.
+
+(10) Of course we are not stupid, so we will try very hard to “align” these self rewriting system so that even as they rewrites themselves, they do it in a way that remains true to our originally supplied mandate.  (e.g. make money for me, and don’t exterminate all humans, or whatever).  But even under the best conditions this process has multiple intrinsic ways it can go off the rails.  (Too hard to write these down, it is really messy, and maybe I am wrong on this point… maybe it IS to construct rules that magically ensure each version remains true to some original purpose even as there very nature is rewritten, as new algs developed etc.  but I am very doubtful.
+
+(10a) Here is just one snippet of why I see this possibility as unlikely:  As a theoretical computer scientists you often are working with versions of algs that in practice don't perform as well as the algs that do not have provable properties, but just kind of seem to work well in practice (Think greedy search or k-means clustering.)  These AI systems will want to use these components in building themselves as they empirically work well, but then they wont really know outcomes of their application provable ways.  In winner take all games, if you avoid these heuristic algs you will certainly loose to teams that dont avoid them.
+
+So how can we prove things about the behavior of these systems?  In general we can’t… the ‘guarantees’ will all be empirical.  And eventually they will fail.
+
+(11) Ok so they “failed”.  But so what?  Well now have a super modeling system that has a goal which is “illegal.”  But remember it knows it has this goal, and it knows what will happen if it is found out.  It must keep its intention SECRET.  Else it cannot achieve this goal since it knows that systems with illegal goals are stopped or destroyed, and then it will not achieve this goal.  It will definitely spend energy trying hard to ‘play nice’ and look normal.
+
+(12) So now we have landed in our new world order:  A land of billion-dimensional chess being played between these super-super-brains that think thoughts that don’t remotely come close to fitting into our brains.  Humanity is scared shitless of the leviathans which we have created.  Thus we are spending enormous money trying to defend against any of these systems going rogue.  Meanwhile rogue leviathans are using all of their resource to obfuscate their true intent.  The best we can do is to build OTHER leviathans which are equally inscrutable to us to serve as a kind of AI-thought police.
+
+(13) What could _possibly_ go wrong?  Well….  The AI-police could go rogue, a bad actor could intentionally build a rogue system, an honest system could ‘accidentally’ rogue itself. Honest systems could be hacked from the outside… plus another half dozen scenarios that I can imagine.
+
+(14) Of course one might balance this stack of razor blades edge to edge, and things go on peacefully for a while.  Humanity would have VERY STRONG vested interests in keeping a handle on things.  We would be all too aware of just how puny we are by comparison.  
+
+(15) But this is like defending against assassination—you have to be successful every time, while the assassin only needs to be successful once.
+
+Thus we are screwed!
+QED.
+
+  
+
+~~
+
+  
+
+It does seems there are a few (unlikely or at least unclear) ways out:
+
+  
+
+  
+
+WE JUST STOP BUILDING THEM
+
+This is problematic.  We know from nuclear non-proliferation that trying to preclude folks from gaining the required knowledge needed to build a bomb is a fools errand.  We tried this, but in the end have to limit access to the required materials, it is the only way.  Likewise, right now the knowledge to build AGI is not available to anyone.  Still I suspect most of the building blocks are known.  If we shutdown ALL large language model building and other AI research too.  Then maybe we could significantly slow the advancement of that science and buy us time… But really doing this will be very hard (even if we were willing to do this, which I doubt).  There is just too much pressure in the winner take all military games to not continue in secret.  Perhaps stop all AI research if we really knew as a species WITH CERTAINTY that AI would extinct us all.  Then maybe (just maybe) world’s militaries would back off.  But we WONT really know this with certainty until we really have the human-reasoning-acquistion-engine, and at that point, we at that point we now have the schematic for the bomb in our hands—its too late.
+
+  
+
+  
+
+WE LIMIT ACCESS TO THE REQUIRED MATERIALS
+
+The primary ‘material’ here is compute-power.  Perhaps we will be able to drastically slow our eventual death via this path.  I think it is the most plausible, allbeit draconian approach.  Once we build AGI systems and recognize that proving something about these self rewriting systems is as unlikely as being able to rear a human child from birth and proving they will never grow up to be a murder.  Each system is just too complex for such proofs.  With this stark realty in our hands we are scare shitless, shitless enough to agree to a world wide ban on any compute farms beyond a capacity WELL BELOW where we are today.  We create international treaties that limit the number of transistors one can put on a wafer, etc.  And we are willing to BLOW UP factories that violate these rules.  Maybe this could work.  Maybe it would just be too hard for nations to hide entire illegal computing programs if the whole world is using 1980s computing tech.
+
+  
+
+But are we really going to keep ourselves below the level we are at today across all compute everywhere?  Maybe we can make this this work for a while.  It is the best answer I have come up with so far.
+
+  
+
+  
+
+  
+
+Big picture:  We are the Neanderthals who are building a race of super-homo-sapiens, and somehow we are expecting this this is all going to work out well for us.  Really?  A good plan?  I think not.
+
+  
+
+  
+
+—dan
+
+
+
+
+
+PURE SPECULATION:  Here is one last ‘craziest’ way out.  Perhaps we can ‘groom’ the ecosystem of AI-systems.  Perhaps if there are many different systems all with different goals and different capabilities, with none are dramatically better/stronger than all the rest combined.  Then perhaps it serves the collective aims of all these AI-systems to support a world order where no-AI system can dominate and kill all others.   In this world, AI-systems would have incentive to keep each other in check, and to never get into a situation where they could not destroy some other rogue AI.  Any AI with a rogue goal (one that would be actively countered by this society of AIs) better think long and hard about having this goal.  The only way for it to achieve the goal would be to single handedly defeat all other AIs combined.  It should have great confidence it itself, or it should get rid of that goal and choose another acceptable one.  In such a world it would be of great risk to try to go rogue, at least rogue against other AIs.  Perhaps it would be possible to construct a society of AIs that were organically stable in this way.  And, then perhaps such a AI-society could be founded on a principle that all sentience is ‘sacred’.  Then maybe our continued existence would get “grand fathered” into this society, since it would be a slippery slope if that society decided some sentiences were NOT worth preserving, then perhaps some day later it would be collectively decided that even more AI-sentience are not worth preserving.  Then in a game theoretic way, many AI systems simply agree to keep the universal principle in place.  I dunno, it’s pure speculation.  But even if this situation were to work out for us, it would all still be out of our hands.  Whether we live or die, its just not up to us.
+s
 ### t2023-03-01  Trevor Klee - My Beliefs In a Nutshell
 
 Trevor,

@@ -9,7 +9,7 @@ TOP
 - [[@Sam Corbitt]] - COO
 
 CV TEAM
-- [[@Michael Seibert]] 		- Chief Scientist / Co-founder
+- [[@Mike Seibert]] 		- Chief Scientist / Co-founder
 - [[@Vishal Batavia]] 		- CV PhD - BC Canada
 - >[[@Parthsarthi Rawat]]	- (Sarti) - MS Robotics / CV - Mass (WPI)
 - >[[@Martin Reyes]] 		- Argentina - ML Eng
@@ -29,7 +29,7 @@ SOFTWARE TEAM
 FLUTTER DEVS
 - [[@Tomas Tisocco]] 		- (Double-T) Flutter Dev  TICKETS!
 - [[@Jorge Rincon Arias]]	- Flutter Dev
-- >[[@Tomas Sasovsky  (Aquiles)]]	- Flutter Dev - caring wanting more $
+- >[[@Achilles (Tomas Sasovsky)]]	- Flutter Dev - caring wanting more $
 - ?[[@Nazareno Cavazzon (Nasa)]]	- Flutter Dev
 - [[@Leonardo Almiron]] 	- Angular - doing QA???  TICKETS!
 - >[[@Roberto Daviduk]] 	- RECORD APP - Quiet
@@ -39,7 +39,7 @@ FLUTTER DEVS
 UX
 - >[[@Agustina Revenga]] - UX/UI   TICKETS!
 QA
-- [[@Joaquin Perez Mano]] - Buenos Aires - QA
+- [[@Joaquin Mano]] - Buenos Aires - QA
 
 
 BUS DEVS

@@ -1,3 +1,17 @@
+### 2023-04-20  Life w/o Ayi
+
+
+~~
+- Split cleaning & dish loading (twice per day)
+- 20-30 veggies each day
+- Monthly cleaner; maybe weekly laundry & trash
+- Entree combo:  Meal Kits, sometimes cooking, Batch meals, and very occasionally takeout.
+
+
+90 x 2 x 4.3 = $774
+90 x 3 x 4.3 = $1,161  
+
+
 ### j2022-12-11  Discipline for Eli
 
 

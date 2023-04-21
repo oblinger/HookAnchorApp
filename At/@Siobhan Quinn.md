@@ -1,4 +1,4 @@
-=[[PP]]   [Director of Product Management](https://www.linkedin.com/in/siobhanquinn/)  [[@Youtube]]
+=[[PP]]   [Director of Product Management](https://www.linkedin.com/in/siobhanquinn/)  [[@Youtube]]   #FAANG 
 
 =[[FAANG]]    [Director of Product Management](https://www.linkedin.com/in/siobhanquinn/)  [[@Youtube]]
 

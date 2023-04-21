@@ -4,22 +4,22 @@
 
 
 ## INFO
-~MASTER IN 1PASSWORD~
-MAC PRO 2019 — C02DP1LYMD6R
-800-275-2273  Say: “Macbook Customer Service”
+~MASTER IN OBSIDIAN~
+INFO:			MAC PRO 2019 — C02DP1LYMD6R
+CUST SRV:	800-275-2273  Say: “Macbook Customer Service”
 SUBSCRIPTIONS:  Mac -> AppStore -> Menu -> !Store  -> 
   !View My Account ->  ! View Info -> 
   Manage Subscriptions ! Manage
-CHAT:       Search “chat”  -> !Chat w Apple
-GENIUS:   Search “genius” -> !HardwareHelp
-UNION SQ: 415.486.4800
-PURCHASES: Mac->AppStore->Menu->Store-> View…
+CHAT:  		Search “chat”  -> !Chat w Apple
+GENIUS:   	Search “genius” -> !HardwareHelp
+UNION SQ: 	415.486.4800
+PURCHASES: 	Mac->AppStore->Menu->Store-> View…
 ! View Info (top window) -> 
-PURCHASES: iTunes->Menu->!Account->View…->
+PURCHASES: 	iTunes->Menu->!Account->View…->
 iTunes Store -> Purchase History -> See All
-DISABLE PAYMENTS Phone->Settings->Screen Time ->
+DISABLE PAY	Phone->Settings->Screen Time ->
 Content … Restrictions -> iTunes… Purchases ->
-iPhone-X. F17WK1VYJCL8
+iPhone-X		F17WK1VYJCL8
 ~
 800.275.2273 USA. (never tried)
 800.800.2275 EDU. (never tried)
@@ -63,6 +63,21 @@ Retina15 Serial:  C02V811RHTD9
 
 
 # LOG
+
+### 2023-04-20  
+
+Mac-
+
+M2 
+
+### 2023-04-07  
+
+Case  #101972730928 
+- Test User
+- Storage is good 900Gig of 2T used.g
+- disk utility
+- Reinstall the OS - g
+- NV Ram
 
 ### 2023-03-30  Air Max issues
 

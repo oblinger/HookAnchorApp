@@ -8,11 +8,12 @@
 
 | Date        | File                 | Notes                                                             |
 | ----------- | -------------------- | ----------------------------------------------------------------- |
+| m2023-04-11 | [[@Joseph Yeh]]          | prep for bridge                                                   |
 | m2023-03-01 | [[@Mike Seibert]]        | Hiring AI / CV guys                                               |
 | m2023-02-27 | [[@Theo Enns]]           | Theo 2023 chat1                                                   |
 | m2023-02-27 | [[@Amazon]]              | Hire related                                                      |
 | m2023-02-21 | [[@Mark Lichty]]         |                                                                   |
-| m2023-02-21 | [[@Joaquin Perez Mano]]  | Intro call                                                        |
+| m2023-02-21 | [[@Joaquin Mano]]        | Intro call                                                        |
 | m2023-02-06 | [[@Igor Shindel]]        | Intro meeting                                                     |
 | m2023-02-02 | [[@Nick Allen]]          | Post RZ chat                                                      |
 | m2023-01-30 | [[@Jack Potvin]]         | Intro call                                                        |
@@ -51,7 +52,7 @@
 | m2022-10-03 | [[@Jason Syversen]]      | Counter Offer Discussion  (where I proposed the $12M cap)         |
 | m2022-09-22 | [[@Jason Syversen]]      | Joining SV as consultant                                          |
 | m2022-09-14 | [[@Joseph Yeh]]          | Jason decision                                                    |
-| m2022-09-13 | [[@Jason Syversen]]      | [[@Michael Seibert]] discussion                                   |
+| m2022-09-13 | [[@Jason Syversen]]      | [[@Mike Seibert]] discussion                                      |
 | m2022-09-07 | [[AF]]                   | AF Tax Discussion (with Nick)                                     |
 | m2022-08-24 | [[Forum]]                | Matt Pinson - Friend Christy - Friend of Yashin                   |
 | m2022-08-16 | [[MEETINGS]]             | Nick - RZ share price                                             |

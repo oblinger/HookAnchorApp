@@ -1,8 +1,10 @@
 
+:: [[out]]
+
 :: [[Greenhouse Farming]]
 
 :: [[EduCorp Supplement]],   [[EduCorp White Paper]]
-- [[EC.]],   [[Forwardism]],   [[out]], [[EduCorp Types]], 
+- [[EC.]],   [[Forwardism]],   [[T/EduCorp/out]], [[EduCorp Types]], 
 - 
 
 # TODO - [[PRJ/EduCorp/Edu Corp.pptx|PP]]   [[#EDU CORP WHITE PAPER NOTES|>]][[EduCorp White Paper|WP]][[Edu Corp Whitepaper.html|*]]   [[#EDU CORP SUPPLEMENT NOTES|>]][[EduCorp Supplement|Sup]][[Edu Corp Supplement.html|]][[Edu Corp Supplement.html|*]]    [[#FORWARDISM|>]][[Forwardism|Fwd]][[Forwardism.html|*]]   [Sheet](https://docs.google.com/spreadsheets/d/1HgqpWQFMyiOU47gzSmkFUPQcrgJ_7ALyxmgSm8nwA44/edit#gid=0)  

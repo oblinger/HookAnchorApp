@@ -1,4 +1,6 @@
 
+:: [[Eli Food]],   [[Eli Interactions]]
+
 :: [[ELI Education]]
 
 :: [[Eli LOG]]

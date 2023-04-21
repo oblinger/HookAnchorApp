@@ -5,6 +5,129 @@
 
 
 # LOG
+### 2023-04-10  Feedback Call
+
+- How am I doing?
+
+Three different paths:
+
+**CoFounder go where the problem is;  CTO Ninja**
+- jumping between broken places and helping to fix them.
+	- Leverages my experience and breadth. Keeps me from getting tied into 'monitoring' roles.  Maybe max value for company?
+		- BUT can lead to de-confliction issues.  Getting credit.  Owning a function over long term.
+
+**CTO - head of software team**
+- Ownership of our end-to-end delivery of 
+- Clearer rules of engagement:  Organizationally A reports to B, B reports to A, A and B have unrelated roles, or A and B "compete" for responsibility.
+
+**Head of AI -** 
+- Lead AI team
+- Innovate 
+
+- Org change w/o discussion
+
+
+- AI Side more the AI side
+- People like me.
+
+- Mike: Less wide ranging. 
+
+
+Show Stats
+- when tracks player number
+- Stats on system -
+- blonid test real game
+- assits
+possessions, posessions historgram
+
+stats on how well we are going
+
+
+
+### 2023-04-03  Slide deck feedback
+
+[deck](https://www.canva.com/design/DAFfG6B1zwE/eSscSjHNIkwFd-kAtuCIUw/view?amp&amp&amp&utm_source=integration_slack&utm_medium=referral&utm_content=T01PJPYFDL5&utm_campaign=unfurl_document-url_open-in-canva_button&utm_term=7e73a008-6cee-4a48-9e8c-867339f48023)  
+
+brain dumping on the slide deck:
+
+SLIDE #1  is telling me where ‘visio’ came from important enough to list on slide?  (maybe it is a cool detail?  should you just tell it verbally?)
+
+SLIDE #2 - typo in “wiithout” on problem page 2
+
+SLIDE #4 - love the video on pg 4.  (how much did that cost?)
+
+SLIDE #9 - Why now?   "in 5 years" 
+  - I am not convinced there will be open source solutions for the WHOLE basketball stats problem.  there will (already are) many open source algos that one can use to build parts of the whole complex thing... but the whole thing will remain complex to piece together...  and end to end systems will probably only exist for parts of the problem.  I think this will forever remain a modest mote for our business.  It will take real money to pull together the dozens and dozens of algorithms to do all the parts of this problem.  So I think we should tell this to our investors.  But either way, the key thing about 5 years from now, is that these markets will be locked up with players that have network effects holding them in place, and also then have the revenues needed to keep improving their product.  (we wanna be one of those companies :-) )
+
+I think this might be a more true story, and a more compelling one too.
+
+SLIDE #10 - TAM / SAM / SOM
+- Just love to hear your words in justifying these (I bet they are good, I just wanting to learn them)
+
+SLIDE #16 
+- is AI really 3x of all of SW team?
+
+SLIDE #17 - One investor pushed on me that I was not thinking big enough or moving fast enough if I planned to only raise an A and then grow nationally using revenue funding alone.  Wonder what other investors think?  Wonder if we can/should edit the words so it is clear after the A that we expect national reach, but don't make it sound like we are saying that we are done raising.
+
+
+SLIDE #19 - maybe we say "organic" traction or such, just because it looks in compatible with your claims of 5000 in a year.
+the graph looks to linear, feels a little fake that all three are growing like that.  not sure what to do... that is the data!
+
+
+
+- No slide on fancy AI?  Not expecting a slide to really explain any of it, just to give the sense that we have it, and it is cool???
+
+
+=== 
+
+Here is some ideas about a fancy AI-slide:  Many times our audience will not be up to speed on AI stuff, so they won't know enough to really evaluate us, and they wont care.  But they WILL care that we have depth in this area...  and nothing in this deck suggests that we do (except credentials of the team)
+
+But intuitively one gets a feeling for the depth of AI by looking at moving video with the outputs of AI overlaid on top of the video.  Plus such videos can look pretty cool and visually engaging.  What about the following?
+
+
+
+We get a 30 second clip that shows video of a game being played with:
+- Ball tracking shown on the ball
+- Skeletal tracking of all the players on the court
+- Jersey detect highlighted as a flash next to the player when it occurs, then and a 5-second line trace on the player themselves (thru successive frames connected by the position of their chest.)
+
+
+I am imagining a video clip that gets a jersey detect (with cool looking skeletal tracking helping us identify when/where to look for the Jersey number)...   then that player is traced upto the basket and makes a shot where clearly it is impossible to get a shot on the jersey number.
+
+our system is showing a highlight for the basket location, and the trace of the ball.  Right as the shot is made we momentarily popup up five zoomed-in static images in a row that show the specific images we used to verify that in fact this was a successful shot, and not a bounce off the rim.
+
+
+perhaps we even show a near miss that hits just under the rim, so it is hard to see it was not a basket, and perhaps in the second shot we actually DON'T see the jersey number until after the shot and the video ends by it playing in reverse to show that we grabed the Jersey number from the future moment.
+
+
+I know someone who can chop up the output from our system in order to build that quick little montage, if we need it.
+
+
+I went a little "hog wild" there, but you get the basic idea:  show a real game with real data overlays from our algorithms and include:
+- Jersey numbers
+- Player tracks
+- ball tracks
+- skeletal tracking
+- hoop tracking and shot detect.
+
+This video will take some real work from the team, but I have already spoken to Grzogorz about the complexity of getting outputs needed... it sounds very doable.
+
+
+Let me know if I should pursue that.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ### 2023-02-17  Mgt Trip
 
 Pitch key points for this round:
@@ -1400,7 +1523,7 @@ PRIORITIES
       - FAST - 150ms response time preload on all user actions (with double buffering)
         
 
-### m2022-09-13  - [[@Michael Seibert]] discussion
+### m2022-09-13  - [[@Mike Seibert]] discussion
 
 
 
@@ -1409,7 +1532,7 @@ TEAM -
 
 - [[@Sam Corbitt]] - 
 - 
-- [[@Michael Seibert]] - 
+- [[@Mike Seibert]] - 
 - [[@Chris Stauffer]] - Automated testing - Tracking the ball backwards - 
 - [[@Fong Liu]] - Jersey number - Camera calibration - trying to get down to one camera
 - [[@Vishall Batvia]] - Yolo-X faster - daily :30 min, weekly with eng team.

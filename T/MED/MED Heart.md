@@ -34,6 +34,9 @@ Measuring Progression
 
 LDL is now @ 47.  I tolerate astorvastin well.  just keep taking 80mg?
 
+
+ALT - AST 
+
 ### 2021-03-15 - Doctor's Appt
 
 Questions

@@ -192,7 +192,7 @@ Emotive & Incisive
 - BRO / SPORTS  TALK - Grew up a nerd.  Never watched sports
 
 
-### BEST ENV - [What is your ideal working environment?](https://www.indeed.com/career-advice/career-development/ideal-work-environment)    +++++
+### BEST ENV - [What is your ideal working environment?](https://www.indeed.com/career-advice/career-development/ideal-work-environment)  {PER COMPANY}
 - WIN-WIN w/ BLUNT ASSESSMENTS - The mood is win-win, not zero-sum.  Still blunt feedback appreciated, given, and received.
 - INITIATIVE - Rewards initiative.  (not a keep your head down kind of place)
 - ACTION & ASYNCH COMMS not POLITICS or LONG/INEFFICIENT MEETINGS - If you keep focused on outcome you get rewarded 
@@ -235,13 +235,13 @@ GOOGLE: "Impact the world @ scale."   Get Granular about parts of google that I 
 	- e. g.  spend a little extra effort to validate contentious choice.  Do a bit extra to also satisfy a reasonable dissenting voice.
 
 
-### MISSION - [Do you have a personal mission statement?](https://www.indeed.com/career-advice/career-development/personal-mission-statement-examples)  ++++ ???
+### MISSION - [Do you have a personal mission statement?](https://www.indeed.com/career-advice/career-development/personal-mission-statement-examples) 
 "To use my infectious energy, and technical strength in ways that have significant and positive impact"
 "To inspire others to achieve great things, to make a real difference."  
 
 
-### SELF LIKE - What do you like most about yourself?    ++++
-- TECHNICAL CREATIVITY - Ability to imagine innovative approaches to across a wide range of technical areas.
+### SELF LIKE - What do you like most about yourself?
+- TECHNICAL STRENGTH/DIVERSITY/CREATIVITY - Ability to imagine innovative approaches to across a wide range of technical areas.
 - INFECTIOUS POSITIVE ENERGY - Can-do optimism resonates often
 
 
@@ -266,6 +266,8 @@ GOOGLE: "Impact the world @ scale."   Get Granular about parts of google that I 
 
 ### MISSING TRAITS - What are three skills or traits you wish you had?                       <<<<<<   ????
 
+- CONCISENESS
+
 - HI-EXPECTATION & HI-VELOCITY - but can wear self and folks down.  
 	- PATIENCE & BALANCE - next level performance is to have those expectations with less stress generation.
 		- TODAY - much much better, but I still know others who are EVEN better, so it is an area of focus for me
@@ -282,9 +284,7 @@ GOOGLE: "Impact the world @ scale."   Get Granular about parts of google that I 
 		- Multi-year projects.
 
   
-
 - ENTREPRENEUR STARTUP EXECUTIVE - Work best in "fire hose" roles with where rapid response is required.  Less excited and less valueable in slower moving contents where politics is key.
-
 
 
 ### PERFECT COMPANY - [Describe your perfect company.](https://www.indeed.com/career-advice/career-development/ideal-work-environment)

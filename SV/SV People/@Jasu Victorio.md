@@ -30,7 +30,7 @@
 
 - !! QA guy does not have different iphones or androids
 - !! QA guy does not have 
-- [[@Joaquin Perez Mano]]  Lead
+- [[@Joaquin Mano]]  Lead
 - [[@Tomas Tisocco]] - 
 
 

@@ -1,5 +1,8 @@
 - [ ] DMV licence renewal.
-- [ ]  SV Dashboards
+- [ ] buy airpods
+- [ ] ben check
+- [ ] receipts to SV
+- [ ] SV Dashboards
 - [ ] !! MED
 - [ ] !! iOS <<<<<<<<<
 - [ ] !! KRZ response 

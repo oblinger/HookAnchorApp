@@ -1,3 +1,14 @@
+### 2023-04-12  PIVOT - shift towards AI
+
+
+### 2023-04-04  STRESS!  Feel my path AT SV is time limited
+
+
+I have never jumped into a job more fervently than at SV.
+I feel I am provided value and help
+
+
+
 ### 2023-03-31  Week travel to Disney
 
 Trip to Disney was a great way to spend time with Eli and QL.

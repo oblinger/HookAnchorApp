@@ -1,3 +1,3 @@
-=[[AI]]    [Principle Scientist]()  [[@SRI]]
+=[[AI]]    [Principle Scientist]()  [[@SRI]]   #AI 
 
 

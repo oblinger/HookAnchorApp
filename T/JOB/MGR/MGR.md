@@ -8,16 +8,22 @@
 -   [MgrContracts](MgrContracts.md) [[MgrTracking]] 
 - [Contracts](Contracts/Contracts.md) 
   
-## = ADVICE
+
+
+# ADVICE
+
+## HIRING
 _
 - [[Hiring]] - 
 
-### Giving a PEP TALK
+## Giving a PEP TALK
 (1) SENSE what they really need: (vent, confidence, advice)
 (2) EMPATHIZE / BOLSTER confidence / LISTEN
  - Don't offer unsolicited advice. Don't talk too much about self.
+## Giving Feedback
+- [Giving Feedback To Friends](https://betterhumans.pub/stand-out-by-giving-feedback-the-right-way-df683e91cc41) -
 _
-### Older stuff
+## Older stuff
 
 
 * TEAM PEP TALK

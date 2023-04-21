@@ -1,44 +1,44 @@
-
-LEADERSHIP / STRATEGY:	[[@Tessa Lau]], [[@Nick Allen]], 
- 
+## __
  
  MENTORS:  [[FAANG]],  [[VC ORG]],  
 
 
 ## MENTORS
-
-STARTUP MKT:  [[@Ahern Knox]], [[@Gaurav Rekhi]],
+CORE:				[[@Nick Allen]], 
+MGR-LEADER:		[[@John Turek]], 
+LUNCH:			[[@Tessa Lau]], [[@John Davis]], 
 
 COACH:			[[@Igor Shindel]], 
-GREY BEARD:		[[@Joe Hellerstein]], 
+GREY BEARDS:	[[@Joe Hellerstein]], 
 NON-PROFITS:		[[@Teddy Lange]], [[@Moses Baffour Awuah]], [[@Micah Nettey]], [[@Joel Selanikio]], 
-MGR:				[[@John Turek]], 
+STARTUP MKT:	[[@Ahern Knox]], [[@Gaurav Rekhi]],
 
 
 AF:				[[@Balaz Gaal]], 
- [[@Robert Leshner]],[[@Frank Langston]], [[@Geoffrey Hayes]], 
+500:				[[@Robert Leshner]],  [[@Frank Langston]],  [[@Geoffrey Hayes]], 
 DARPA:			[[@Ron Keesing]], [[@Todd Hylton]], [[@Yiftach Eisenberg]], 
-IBM:				[[@Jurg von Kanel]], [[@Rob Farrell]], [[@Richard Goodwin]], w
+IBM:				[[@Jurg von Kanel]], [[@Rob Farrell]], [[@Richard Goodwin]], 
 
 
-VC Solid     | [[@Christina Fonseca]],  [[@Amy Kruse]],  [[@Barney Pell]]
-VC OTHER:	[[@Wiktor Schmidt]], 
+VC Solid     		[[@Christina Fonseca]],  [[@Amy Kruse]],  [[@Barney Pell]]
+VC OTHER:		[[@Wiktor Schmidt]], 
 
- STARTUP   | 
- --------- | -------------------
- Core      | [[@Tessa Lau]],  [[@Ben Wild]],  [[@Jason Syversen]], 
- Solid     | [[@Daniel Haddick]],  [[@Gaurav Rekhi]],  [[@Jack Porter]],  [[@Mark Drummond]], [[@Philipp Herget]], 
- Good      | [Wiktor Schmidt](https://www.linkedin.com/in/wiktorschmidt/),  [Szymon Stoma](https://www.linkedin.com/in/sstoma/),  
- x         | [Ric Szopa](https://www.linkedin.com/in/szopa/), [Mark Urdahl](https://www.linkedin.com/in/mark-urdahl-42018/),  [Ruwan Welaratna](https://www.linkedin.com/in/ruwanwelaratna/),  [Jean Yang](https://www.linkedin.com/in/jean-yang-96575030/),  [Peter Berger](https://www.linkedin.com/in/peter-berger-5536b92/), [Sam Corbitt](https://www.linkedin.com/in/samcorbitt/),    [Joe Augenbraun](https://www.linkedin.com/in/jaugenbraun/),  
- HEAVY     | [[@Ayal Amir]], [[@Peter Ashley]], [[@Dileep George]], [[@Tom Wagner]], [[@Dan Roth]],
- COACH     |	  [David Whittemore](https://www.linkedin.com/in/davewhittemore/),  [Jim Tye](https://www.linkedin.com/in/jim-tye-2ba0514/),  |
- Friend | [[@John Davis]],  
-[[@AJ Forsythe]], 
+/
+
+### STARTUP 
+Core:		[[@Tessa Lau]],  [[@Ben Wild]],  [[@Jason Syversen]], 
+Solid:		[[@Daniel Haddick]],  [[@Gaurav Rekhi]],  [[@Jack Porter]],  [[@Mark Drummond]], [[@Philipp Herget]], 
+Good:		[Wiktor Schmidt](https://www.linkedin.com/in/wiktorschmidt/),  [Szymon Stoma](https://www.linkedin.com/in/sstoma/),  
+x  			[Ric Szopa](https://www.linkedin.com/in/szopa/), [Mark Urdahl](https://www.linkedin.com/in/mark-urdahl-42018/),  [Ruwan Welaratna](https://www.linkedin.com/in/ruwanwelaratna/),  [Jean Yang](https://www.linkedin.com/in/jean-yang-96575030/),  [Peter Berger](https://www.linkedin.com/in/peter-berger-5536b92/), [Sam Corbitt](https://www.linkedin.com/in/samcorbitt/),    [Joe Augenbraun](https://www.linkedin.com/in/jaugenbraun/),  
+HEAVY     | [[@Ayal Amir]], [[@Peter Ashley]], [[@Dileep George]], [[@Tom Wagner]], [[@Dan Roth]],
+COACH     |	  [David Whittemore](https://www.linkedin.com/in/davewhittemore/),  [Jim Tye](https://www.linkedin.com/in/jim-tye-2ba0514/),  |
+Friend | [[@John Davis]], [[@AJ Forsythe]], 
 [[@Yannick Germain]], [[@Mark Kapij]], [[@Dan Newcome]], [[@Szymon Stoma]], 
 [[@Ric Szopa]], [[@Ahern Knox]],
 
 
 
+### AI
 AI RND:	[[@Jason Wells]], 
 AI
 [[@Ron Brachman]], [[@Ronny Kohavi]], [[@Steve Minton]], [[@Usama Fayyad]], [[@Oren Etzioni]], [[@John Laird]], [[@Doug Lenat]],
@@ -49,8 +49,9 @@ AI PROF:	[[@Tom Ditterich]], [[@Haym Hirsh]],
 
 [[@Praveen Paritosh]], [[@Dean Allenmang]], [[@Barney Pell]], [[@Foster Provost]], [[@Rich Caruana]], [[@Peter Clarke]]
 
-### AI & OTHERS
 
+
+### AI & OTHERS
 AI			  [Steve Chien](https://www.linkedin.com/in/chien/),  [Michael Witbrock](https://www.linkedin.com/in/witbrock/),  [David Israel](https://www.linkedin.com/in/david-israel-264134/),  [Tom Mitchell](https://www.linkedin.com/in/tom-mitchell-98a91b3/),
 			 [Praveen Paritosh](https://www.linkedin.com/in/pkparitosh/),
 			 [Dean Allemang](https://www.linkedin.com/in/dean-allemang-96218/),  > [Barney Pell](https://www.linkedin.com/in/barneypell/),  [Foster Provost](https://www.linkedin.com/in/foster-provost/),  [Rich Caruana](https://www.linkedin.com/in/rich-caruana-a4235a91/),  

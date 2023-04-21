@@ -1,11 +1,17 @@
+
 - [[FOOD Recipe Research]], [[FOOD Research]],  
   [[FastingDiet]]
 
- - SECTIONS:	[[Diet]],  [[Groc]],  [[Meals]],  [[Delivery]],  [[Eat]],  [[FOOD Research]],  
+ - SECTIONS:	[[Diet]],  [[Groc]],  [[Delivery]],  [[Eat]],  [[FOOD Research]],  
  - TOPICS:  	[[Noom Notes]],  [[ReBuy]],  [[Restaurants]], [[Try Foods]], 
  - SMASS:		[[ContainerWeights]],  [[Glycemic Index]],  [old-word-shopping-list](groc.docx),  
+ - MEALS:		[[Meals]],  [[Entrees]], [[Vegetables]], 
+ - 				[[Eli Food]],  [[Meals Thermomix]] 
 
-## foo
+
+
+
+## Foo
 
 #### Kinds ofResturants
 Asian 	Chinese, Japanese/Sushi/Raman, 		Korean, Thai, Viet/Pho, Burmese

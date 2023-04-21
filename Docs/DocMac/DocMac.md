@@ -1,4 +1,6 @@
+[[ToTrash Folder]][[ToOffload Folder]][[ToFile Folder]]
 
+# __
 - [[key code]], 
 ## = INFO
 ### - Links
@@ -423,7 +425,7 @@ Add this to its plist:
 -- Pwr -> hold ^  _/  shift  ---  RESET SMC:  (hold 7 sec, till powerdown)
 -- Pwr -> hold # v           ---  VERBOSE MODE:
 -- Pwr -> hold # s           ---  SINGLE USER MODE:
--- Pwr -> hold # t           ---  TARGET DISK MODE:  machine becomes a remote disk for another computer via a USB cable
+-- Pwr -> hold t           ---  TARGET DISK MODE:  machine becomes a remote disk for another computer via a USB cable
 
 
 Reset PRAM/SMC:  https://www.avast.com/c-reset-mac-pram-smc#gref
@@ -916,6 +918,11 @@ NOTES:
 
 ### xx Keyboard Maestro
 
+SETUP FILE:    !file>StartSyncingMacros     /ob/bin/Keyboard Maestro Macros.kmsync
+
+
+--i-think-this-is-out-of-date--
+
 SETUP FILE:    !file>StartSyncingMacros     /ob/topics/Config/KeyboardMaestro-master
 
 
@@ -1371,7 +1378,7 @@ $ sudo tail -f /var/log/kernel.log
 - FOR NOTESTER I needed to install Java 8 (the JRE I think; but I searched Java JVM; and version said ti woluld not work w. chrome, which I ignored)
 ### xx Postgres
    open http://postgresapp.com/
-     # download 'Postgres.app' into /Applications
+     ~# download 'Postgres.app' into /Applications
    echo 'export PATH=/Applications/Postgres.app/Contents/Versions/9.4/bin/:$PATH' > ~/.bash_profile
    source ~/.bash_profile
    pip install psycopg2   # this is the Postgres specific driver
@@ -1379,7 +1386,7 @@ $ sudo tail -f /var/log/kernel.log
 
    ??? psql postgres -c 'CREATE EXTENSION "adminpack";'  # Optional.  for PgAdmin UI
    open http://www.pgadmin.org/download/macosx.php
-     # download 'pgAdmin3' into /Applications
+     ~# download 'pgAdmin3' into /Applications
 
 
 ### ===LIST OF APP (NAMES ONLY)===
@@ -2521,7 +2528,7 @@ Crypto email    https://gpgtools.org/gpgmail/
 pmset -g assertions    # the key PreventUserIdleSystemSleep is '1' if something will stop sleeping
 
 sudo nvram boot-args=iog=0x0   # CAREFUL.  don't know how to undo.
-                               # system will sleep in 'clamshell' mode when lid closes.  internal display will also shutdown
+                               ~# system will sleep in 'clamshell' mode when lid closes.  internal display will also shutdown
 
 ~# Test is clamshell is closed
 ioreg -r -k AppleClamshellState -d 4 | grep AppleClamshellState  | head -1

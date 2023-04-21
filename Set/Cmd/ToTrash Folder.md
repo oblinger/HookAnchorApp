@@ -1,3 +1,1 @@
-=[[Cmd]]   folder /Users/oblinger/ob/data/ToTrash
-
-
+=[[Cmd]]   folder /Users/oblinger/large/_TO_TRASH_

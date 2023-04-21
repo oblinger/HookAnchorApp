@@ -1,5 +1,5 @@
 
-:: [[NextJob]],   [[Resume]]
+:: [[NextJob]],   [[Resume]],  [[Career]], 
 
 - [[JOB Compensation]], 
 - [[MGR]]

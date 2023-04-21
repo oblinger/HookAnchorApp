@@ -1,4 +1,4 @@
-=[[START]]     [Head of Operations](https://www.linkedin.com/in/jamesmarvinbriones/)  [[@Rzero]]  
+=[[START]]     [Head of Operations](https://www.linkedin.com/in/jamesmarvinbriones/)  [[@Rzero]]   #Soon 
 - Head of PH operations @ AF
 
 

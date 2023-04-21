@@ -10,4 +10,4 @@
 - https://www.docracy.com/topic/5snzara7ks/term-sheet-guide-book
 
 
-  [STARTUPS](STARTUPS.md)
+  [STARTUPS](Misc/Startups/STARTUPS.md)

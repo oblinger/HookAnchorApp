@@ -8,6 +8,7 @@
 - [[SVT Slack]] - 
 - [[SVT Sentry]] - 
 - [[SVT Google Drive]] -
+- [[SVT Figma]] - 
 
 
 

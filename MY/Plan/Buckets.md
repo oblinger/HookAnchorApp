@@ -1,11 +1,31 @@
 
+## BUCKETS
+- FUN -
+- SELF
+	- CAREER - 
+- OBLIGATIONS
+	- FAMILY -
+	- UPKEEP: Finances, Home, 
 
 # LOG
 
 ### 2023-03-01  New Time Tracking Bucketing
 
-UBER CATEGORIES
+SELF:			Self, Fried, Out, Project, Read
+PERSONAL:	Personal, Career, Eli, Family, Home, Med, Run, Spirit
+WORK:			Work, Chew, Email, First, Secondary, Prime, zMit, Repeat,    ???Comms, ???Meeting
+DAILY:			Daily, Tidy, Wake
+LOUNGE:		Lounge, Browse, Eat, Frittered, Watch
+GAP:			Gap, Sleep, Nap
 
+Reporting:
+1. Self
+2. Personal / Fam
+3. Work / Prime / Comms
+4. Daily
+5. Lounge
+6. Sleep
+7. Gap
 
 
 ### 2021 

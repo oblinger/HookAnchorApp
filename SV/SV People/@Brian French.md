@@ -2,6 +2,28 @@
 
 # Log
 
+### 2023-04-04  Push 2 Prod.
+
+TOPICS:
+- Scott rule
+- P2P discussion
+- 
+
+
+Rule regarding production
+  => Brian is *always* the decider
+  => Brian is the decider, unless out of pocket, then Dan, then Scott.
+
+
+Text 20
+
+
+
+
+
+
+
+
 
 ### 2023-02-02  intro call
 [[Bio Verbal]]
@@ -9,7 +31,7 @@
 
 
 - Definition for the March product
-- QA [[@Joaquin Perez Mano]] 
+- QA [[@Joaquin Mano]] 
 
 
 MS in Comp Engineering, 

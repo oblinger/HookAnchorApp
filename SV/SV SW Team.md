@@ -15,7 +15,7 @@ Achilles
 
 Michael Fearnley
 
-[[@Joaquin Perez Mano]]
+[[@Joaquin Mano]]
 - testing recording app.  by end of week full cycle of the app & 
 
 

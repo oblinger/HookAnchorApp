@@ -1,9 +1,231 @@
-=[[START]], [[@Analytics Fire]]     [Founder](https://www.linkedin.com/in/nickballen/)  [[@Rzero]]  
+=[[START]], [[@Analytics Fire]]     [Founder](https://www.linkedin.com/in/nickballen/)  [[@Rzero]]   #Mentor 
 
 - [ ] Give hiring tests to Nick
 
 
 # LOG
+### 2023-04-04 Navigating the choppy waters.
+
+
+Subj: 
+
+
+Navigating the choppy waters at Sports Visio
+
+
+I think I am appreciated at Sports Visio by many including Jason.  Still Jason is quite Machiavellian... Perhaps just a bit like Jake.
+
+I think (thought?) I have have 'credits' to my name, but recently have started seeing some writing on the wall that seems BAD.
+
+Big picture:
+- Jason and others thinks well of me, but I cost double equity of others, and as much as others in salary.
+- He is quite willing to fire folks when he does not see them as worth the cost, and have HUUUUGE equity relative to others.
+- Indeed Brian (head of SW) once quipped:  "at one point or another Jason has said he is going to fire nearly everyone in the co"
+
+
+CORE PROBLEM -- I don't have a solid role.
+	- My job letter says 'head of AI' but we have a computer vision team lead, and other things are not critical right now
+	- He gives me a la carte tasks (like analyze GPT-4 as a risk, or gather data for a pitch deck), but I don't have a real role.
+	- I have been providing good value to the software lead, and I think he likes me and is a real ally
+	- The rank and file love me I think, and already come to me as a leader often.
+	- The Head of SW is a good ally, and we seem to complement well.
+	- The AI lead has his elbows out near his turf, but was receptive when I chatted and offered to help.
+
+
+BAD MOVE
+- I have been having weekly calls when Jason has a moment he will call
+- But I have not been part of the Sam-Jason weekly lunch (will try get in on that)
+- I have not had a fixed scheduled weekly call with him, and have been pretty heads down with the team....
+	- Jason is seeing lots of evidence around the edges of outputs from these activities, but its not being formally reported.
+
+
+BAD SIGNS
+
+- Random taskings - at some level I think he is trying to figure out how to get value from me.
+	- Figure out if GPT-4 is going to 
+	- This PIVO system is not getting delivered, figure out where we are and if we are really going to have it functioning.
+	- Is Joaquin working well as a QA? Brian is slow to fire, find out what we should do.
+
+- Recently he just increased the hours of his spiritual co-founder Sam so he could run product, and manage Jack who is a high energy 22y/o.
+	- Defacto managing the tie together of SW and product and AI, which could have be a pretty good role for me.
+	- Sam is older, and no fire in belly, so I likely would do better in tying stuff together than he will.
+	- Jason didn't even consult me about this shift -- not very co-founder like.
+
+- Got smacked on the writ to not "chase every shiny thing" but focus on AI which is what we brought you in for
+	- I noticed that we HAD an AI team lead, but that the rest of the org was in the crapper, so that is where I went.
+		- told him my plan was to do that for some months but then transition towards more AI focus
+	- He said:  oh, well our AI guy is fully vested in 9-months and might leave.
+	- I said: so what do you want me to do?  fix our SW stuff, or focus on AI?
+	- He said: ok, so for the next month or two just keep working on the SW side.
+
+- Bridge Round Financing
+	- We are now doing a bridge round, and Jason has asked me to check with my contacts to see if I can get an intros
+	- I just found out that 
+
+
+GOOD SIGN
+- Saturday Jason called and said, I want us to do stats for 1000 games for Cerebro
+- At the end of the call he said  "And I want to be out with customers and then come back to you, and have you just make these happen"
+
+
+
+STATUS
+- Overall the company has been a bit of a shit-show.  
+- we really don't test well, have not planned well.
+- Jason and Sam are both very much 'executive' managers, they are not in the weeds with issues
+- Jason has a rosier view of our capacity and leadership than I think is accurate.
+
+
+
+
+THREE POSSIBLE ROLES FOR DAN
+
+**CoFounder: I go where the problem is;  CTO Ninja**
+- jumping between broken places and helping to fix them.
+	- Leverages my experience and breadth. Keeps me from getting tied into 'monitoring' roles.  Maybe max value for company?
+		- BUT can lead to de-confliction issues.  Getting credit.  Owning a function over long term.
+
+**CTO - head of software team**
+- Ownership of our end-to-end delivery of 
+- Clearer rules of engagement:  Organizationally A reports to B, B reports to A, A and B have unrelated roles, or A and B "compete" for responsibility.
+
+**Head of AI -** 
+- Lead AI team
+- Get deep into the AI-algs to drive sustained differentiation with the team.
+
+
+
+
+POSSIBLE NEXT STEP DISCUSSIONS I COULD HAVE
+
+- MICHAEL - Just bring issue up with Mike, head of AI, to see if he plans to stay, and talk about how we BOTH can add value if he does.
+- SAM - Talk with Sam about situation and get advice.
+- JASON - Talk about one or all of these:
+	- Ask Jason again what he wants from me.
+	- Raise issue about not consulting before the org-change and about fund raising.
+	- Acknowledge that (not with intent) I have come in the door, but w/o a mandate that I can execute.
+- BRIAN - He is an ally, get his take and support.  But not sure about his support to become his boss.
+
+
+
+BIG PICTURE
+
+=> HEAD OF AI - I can lead the AI team, and I think do so in a way that is more precise and higher tempo than Michael.  And I can be a co-founder, this is a thing that I doubt Mike will never be.
+
+
+=> HEAD OF SW - I can be the co-founder that owns the delivery of all of our technology - and do this, not as an executive manager of others, but as one that understands all the way to the bottom what we are doing, and where stuff is going off the rails.
+
+
+Our poor performance over the last two years is primarily due to this gap.
+Its not something that you couldn't do, but it is something that you didn't and don't have the bandwidth to do given other responsibilities.
+
+Presently the only other candidate for this Brian.
+
+He is an excellent team lead and tracks details well.  BUT he does not get in there and assess if choices being made on the back end are going to extend to other sports (or even across basketball).  Hint: They are not.
+
+He doesn't zoom out and consider how the whole product connects with the ecosystem and customers.
+
+He is pretty gapped in creating and assessing processes.
+
+He is happy enough simply accepting the devs we get from one source.
+
+He seems like a company man, focused on justifying support for resources to get his job done, but does not think like a do-or-die co-founder and own the mission of the whole company winning.  Just not operating at that level or with that hunger.
+
+Neither of your leaders have the hunger of a co-founder.
+
+
+
+
+~ 
+
+For SportsVisio to win it seems there are three big objectives that we need to meet:
+(1) Raise the funds required to execute
+(2) Deliver fully-automated AI-based sport stats
+(3) Deliver a stream of polished SW products from high-functioning SW team
+
+
+- If it is to deliver full AI stats, then I need to build a road map from where where are today to that goal, and it needs to be structured well so it leverages Mike if he stays and does not gap if he leaves.  BUT
+	- I am not happy w/ our hiring process:
+		- Vishal is the only non-Talent-cross person we have not fired.
+		- TC loves interviewing w/ us because no test, just quick interview
+		- On both sides we bring folks in for LONG time before firing
+	- Not happy that we are running all our guys fully parallel because we are not sure who is able to deliver value.  (its a good tactical hack, but shows where we are at)
+	- Roadmap might have Mike & I splitting technical responsibility:
+	  e. g. maybe I would have him run a 'tracking' task force delivering player halos & while I coordinate others to deliver the balance of the
+	  AI capabilities.
+	  But it would be a UNIFIED vision & elbows would not be out as it is clear who owns responsibility for the outcome.
+
+
+- You might say, No I prefer Dan owns the delivery high functioning products and SW team, and Mike owns delivery of autonomous AI as part of that team. Thus Dan needs to be ready if Mike leaves his role.
+  But Dan's scope is delivery of the product as a whole:
+	- But again not I am not in an ideal position to shape towards success of that larger role either:
+	  Yesterday Scott half-delivered a few solutions for Mark that were not sufficient, but he did not test them well enough to ensure they were sufficient, so in the 11th hour we are scrambling to cobble alternatives.
+	- If he reported into my org, I would be having a discussion with HIM about ownership today, but he's not my guy, and I don't own that delivery.
+
+
+But presently I don't own the delivery of any of those things.
+--> I have been nipping at the edges of things and providing tactical value anywhere I see great need.  We have some dumpster fires to that adds value, but 
+- This does not put me on path to delivering fully autonomous AI stats, nor high-functioning products and high-functioning org.
+- Worse I am not in the ideal position to be shaping things right now towards those deliverables.
+- And this ambiguity harms efficient collaboration as elbows can be a good way to jockey for responsibility.
+
+
+
+
+
+
+
+
+
+
+
+
+
+- 
+- 
+- , and Mike may or may not leave, then I nee
+
+
+I have been 'lane splitting' in a way 
+
+
+If it is to deliver fully automated AI
+
+
+
+
+
+
+
+Deliver stream of polished SW covering an ever wider range of cust
+
+
+
+We are 2+ years in with a year plus having a fully staffed team, and I cannot even execute our app end-to-end without it crashing on me.
+
+So our third objective is a dumpster fire.
+
+
+
+
+
+
+
+
+
+
+if we only have ONE device, but they have a million 50 browser tabs open, will they be able to complete this task?  The uploads are pretty snappy, it is really the processing step that is slow.  They 
+
+
+
+
+
+
+
+
+
+
+
 
 ### m2023-02-02  Post RZ chat
 

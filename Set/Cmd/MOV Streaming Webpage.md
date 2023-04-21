@@ -1,0 +1,1 @@
+=[[Cmd]]   url https://www.rottentomatoes.com/browse/tv_series_browse/affiliates:amazon_prime,netflix~audience:upright~critics:fresh~genres:animation,documentary,drama,entertainment,nature,sci_fi~sort:newest

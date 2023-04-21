@@ -5,10 +5,10 @@
 
 
 #todo bug
-- [ ] Alpha Testing Docs from [[@Joaquin Perez Mano]].
+- [ ] Alpha Testing Docs from [[@Joaquin Mano]].
 - [ ] Verify all bugs in, and flowing.
 
-- [ ] [[@Joaquin Perez Mano]] generate list of reference games for QA testing
+- [ ] [[@Joaquin Mano]] generate list of reference games for QA testing
 
 
 

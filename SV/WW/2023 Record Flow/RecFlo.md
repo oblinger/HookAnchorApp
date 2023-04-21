@@ -1,3 +1,54 @@
+
+- [Spec](https://docs.google.com/document/d/1ZZbLfJBvZebmRCy4ILwn-46HHaGyu2F0_8Ulpr3RrD8/edit#) 
+- [Scott flow](https://docs.google.com/presentation/d/1dPhzfmOEM04qu98Aorc4Cp5Rwk3YrdMKrBlAGeoh7Dg/edit#slide=id.g22b1ba1399d_0_13) - 
+
+
+# LOG
+
+### 2023-04-20  Record App 2.0
+
+
+Background: I have talking w/ Jack and some with Mark about needs for 'headless' game recording.  I think I might see a dramatically more flexible and simpler design struggling to escape our current complexity.  Jack asked me to hurry up and finish a spec for this, so Agus can mock it up, as she has a gap now.  Attached is a starter spec.
+
+Here are some thoughts about next steps:
+- This is Brian's team and brian's resources, so he will be deciding what we are really doing (Brian please chime in).
+- Jack once you look at this you should think about it from a user perspective and verify indeed it is an awesome north start to aim at.
+  Subject to Mark's time he should also give it a thumbs up either earlier or later in the process before we build it.
+- I think this capability can be built upon Scott's Record Later capability, but I am not positive, so this should be verified.
+- If Scott and Jack give it a tentative thumbs up (we can do a quick call to talk it thru) then Agus can mock it up.
+- It includes a proposed progression of features, so then Brian & Jasu can figure out when various parts would go live.
+  (The proposal's step one is matched to the team's current record flow, so it builds from what we are building now... 
+  its step two would begin extending beyond what we are currently spec-ing out.)
+
+
+Scott is currently hammered by fast moving requirements from the Cerebro effort, so we should be sensitive to his time.
+Jack if you are confident the design is in a direction that Mark will want, (with Brian's thumbs up), we can mock it up now, that way we can have a more concrete discussion with Mark and Scott before any further planning is done.
+
+
+
+
+(though I am hopeful a tentative thumbs up might happen in a very focused 10 minute conversation...  but of course I have been accused of being an optimist.)
+
+And Brian should give his input before anyone does anything.
+
+
+
+
+~~
+**
+
+-   TABS - The top of the page is two tabs.  Most of the time the user is viewing the “Current” recordings list  (these are entries that have not yet been recorded, not yet uploaded, or do not yet have all the info needed in order to properly index and annotate recording.)  
+    Once an entry has all of its info and is uploaded, then it is moved to the “Completed” tab.  (Usually a user has little reason to look at this list.  We might even decide to simply remove it, and force them to go to the hoops app to find and/or edit info about completed tiles, since there is not much else they can do with it here.)
+    
+
+**
+
+
+
+
+
+### 2023-04-20  Original Note
+
 SEND TODAY LATER
 
 

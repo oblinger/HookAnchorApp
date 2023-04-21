@@ -1,10 +1,17 @@
+- [[Beta prod push]] 
 ! Upgrading our monitoring and testing
 
-- [[Beta prod push]] 
 
-- [Prod Push](https://docs.google.com/document/d/1hXXBXI0PhSXIwLEsYcTKQPHBeIiNsvYW8zNuONveR40/edit#) 
+- [Prod Push](https://docs.google.com/document/d/1hXXBXI0PhSXIwLEsYcTKQPHBeIiNsvYW8zNuONveR40/edit#)  [testers sheet](https://drive.google.com/drive/u/4/folders/1Hapg-3w3fG8S-ny3hIAct-zPlGxQywL5)  
+- 
 - [Regular Reporting](https://docs.google.com/document/d/1N8AbXgFkXNoqDmYx77tSH_Lxp6JQf4palKKXdUkoTFQ/edit) 
-- [Pillars](https://docs.google.com/document/d/1bhmtxJnbB7gPOGnJqV4ibzzQJaUNT5UimnAs9PTli-w/edit#) a
+- [Pillars](https://docs.google.com/document/d/1bhmtxJnbB7gPOGnJqV4ibzzQJaUNT5UimnAs9PTli-w/edit#) 
+- 
+
+
+### Scott Management
+
+Brian,
 
 
 

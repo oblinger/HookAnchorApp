@@ -7,7 +7,7 @@
 :: [[MED Measurements]], [[MED Exercise]], 
 
 :: [[MED.]], [[MED Food]],  [[MED Heart]],   [[MED History]],   [[MED Checkups]],   [[MED General]],   [[MED Psoriasis]],   [[MED Tests]],  
-:: [[MED Doctors]],   [[MED Vaccinations]],   [[MED Vision]],   [[MED Insurance]],   [[MED Journal]],   [[MED Pills]],   [[MED Sleep]],    [[MED Weight]], 
+:: [[MED Doctors]],   [[MED Vaccinations]],   [[MED Vision]],   [[MED Insurance]],   [[MED Journal]],   [[MED Pills]],   [[MED Sleep]],    [[MED Weight]], [[MED Research]], 
 
 - [[Low Back Pain]], 
   [[run]]
@@ -83,6 +83,37 @@ small intestine bacterial over growth (SIBO)
 - [[Allergy vs Intolerance]](https://badgut.org/information-centre/health-nutrition/food-allergy-vs-intolerance/) -
 
 # LOG
+### 2023-04-10  <<<<
+- Prilosec
+- Tamzepan
+- Lipator 
+
+
+- CRP,
+- A1C -
+- PSA - 
+- GI - referal - 
+- connect in the fall about calsium 
+
+  
+TEMAZEPAM - A couple years ago you prescribed Temazepam for occasional insomnia. The stuff is great, it knocks me out, and does not last into the morning. As directed I use it very occasionally. Indeed it has taken years to use up the bottle! I would love to get a refill.
+
+PRILOSEC - The lung doctor asked me to take Prilosec as an experiment to see if my persistent cough was related to acid reflux. You commented on my visit that if it was working for me, that we needed to move me to another medicine since ones body adapts to Prilosec. Indeed I have likely waited too long to switch... now I really get noticeable acid reflux if I stop taking Prilosec for a couple of days. What should I switch to?
+
+LIVER RESULTS - My liver numbers (Bilirubin, AST, ALT) are often a bit too high. I am working on this thru diet (fiber, fruits, etc.) But so far, I have not really dropped them much. Still working on it! I just noticed a test result from 10/7/2019 (CPMC-E) that was an indicator for possible HEP-C.
+
+Did I ever get checked for HEP-C? Should I? It seems a long shot, but I wondered if there could be a connection.
+
+
+
+Famotidine - Pepsit 20mg OTC - 
+
+
+Bilirubin - colestatis - marker of obstruction - inflamed liver can do that - 
+gilbert - high bilirubin - genetic - 
+
+
+
 ### 2023-03-21  Picking health insurance
 
 

@@ -1,3 +1,4 @@
+- [ ] gjs  google javascript
 - [ ] pick new list name for 'wait' with unique first letter
 - [ ] squirt google search
 - [ ] time tracker, don't merge if text comment exists

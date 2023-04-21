@@ -1,3 +1,5 @@
+easter
+easter
 - [x] apple news
 - [x] get password I know by memory for gmail; think about logon w/o computer to many accounts
 - [x] BUY: basket for QL in bathroom; add try to her drawer

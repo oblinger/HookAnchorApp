@@ -1,3 +1,1 @@
-=[[Cmd]]   folder /Users/oblinger/ob/data/ToFile
-
-
+=[[Cmd]]   folder /Users/oblinger/large/_TO_FILE_

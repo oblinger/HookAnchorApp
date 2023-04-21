@@ -1,7 +1,41 @@
 =[[SV]]   [Co-founder and Chief Scientist](https://www.linkedin.com/in/michael-seibert/)  [[@Sports Visio]]		
 
 
+- "weirdness" annotation
+
 # Log
+
+### 2023-04-03  Catchup call
+
+
+#todo
+- Joachim testing; get the doc
+
+
+- locating and identifying play.  pretty good 
+
+
+- what's keeping you up @ night?
+- Jersey detect strategy
+- Where are we at:  Hoop, Lines, Tracking, Shots
+- Blocks/Assists/Minutes
+	- 2 vs 3
+
+~~ 
+Topics:  
+- anything you want to talk about...  
+- the new guy  
+- your strategic shift towards jersey detect (which I applaud)  
+- any ways the rest of the org can accelerate CV progress  
+- any things you want me in particular to be doing, or to be aware of, or monitoring?
+
+
+- New guy is Maxim Dorogov. His resume was in the group I sent you.
+- Jasu has done an amazing job integrating our new player location and ID plan into jira and confluence - all the info is there now.
+- I'd be interested to see how to integrate Juaquin into our AI QA process when it's a good time for him.
+- nothing in particular, and I appreciate you asking!
+
+
 
 ### 2023-03-06  Three guys CV guys from Argentina
 
@@ -139,3 +173,4 @@ TO DO:
 - Build catalog of **Black swan events** 
 	- someone made a basket for the other team 
 	- two people with same color and same jersey number on the court
+

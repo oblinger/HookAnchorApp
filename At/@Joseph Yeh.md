@@ -10,6 +10,78 @@ https://www.amazon.sg/
 
 # MEETINGS
 
+### 2023-04-11  
+### m2023-04-11  prep for bridge
+
+
+#### A-round
+- [ ] Show progression of AI-alg capabilities over time
+
+
+
+Create a VC list.
+Check your LinkedIn network for intros.
+Attend industry events where VCs or pitches happen.
+Follow VC newsletters.
+Follow folks on Twitter and understand your pitches for each type of VC - early stage, family office, athletes, etc
+
+
+FIVE CONVERSATIONS
+1. Situational Diagnosis - boss's view of STARS portfolio, and how we got here?
+2. Expectations Conversation - needs me to do?  What constitutes success?  How do we measure success?  When?
+3. Resources Conversation - 
+4. Style Conversation - forms?  for what?  frequency?  consult vs just decide?
+5. Personal Development Conversation - How am I doing?  Improvements?  Special projects w/o loosing focus?
+
+
+- Situation does not feel safe.
+  -> have fired many.  As Brian said in a recent meeting, Jason has said ''oh I need to fire XXX'' for just about every person in the company.
+- not co-founder tell jason
+
+- How Am I doing?
+- What value do you want me to bring?
+	- Founder ninja & Jason's special ops; and CV grey beard guy --    <- will I get 
+	- Leader of SW team --   <-- report to Sam
+
+
+- Topics:  either I am their boss, their subordinate, or their competition.
+
+
+Investing in this space
+
+- CV space
+- VC - Sports investing space
+- actual atheltes that would invest
+
+
+50-100:   super angels; family office $200M; VC  - high networth 
+
+- minimum check size, number of investors, 
+- $50K
+- helps to raise a series A.
+
+air table - Spreadsheet
+? approach fundraising 
+? 
+? momentum stategy
+? which pitches and which stategy for different 
+? Roadshow. 
+? 
+
+COL:
+- Name, 
+- Assets, 
+- what do they invest in
+- who hare the investing in that is related (break by type)
+- Main partners (contacts, associates)
+- - any of them former CV or sports
+- how do I get to them.
+
+? Current customers - 
+
+
+
+
 ### m2022-12-07  [[resLI#2022-12-07  Framing Self]] 
 
 In a later post I will tell you more about my sale of Analytics Fire last year to one of our former clients (R-Zero) who raised over $170M for building disinfections. I will be sure to follow up with a future LinkedIn post telling you more about that exit, our technologies, our stories and an almost decade long experience with my team.  

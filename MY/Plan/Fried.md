@@ -1,4 +1,8 @@
 
+- [ ] create 'sub' entry can't find 'path'
+- [ ] - [ ] qq handling
+- [ ] giphy grab
+
 - [ ] [[Travel]]: pills; snacks
 - [ ] write up phone contactable plan
 - [ ] link up mission & write some of it

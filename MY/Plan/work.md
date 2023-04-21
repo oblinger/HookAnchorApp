@@ -1,17 +1,25 @@
+
+- [ ] [[Bridge]] - Get contacts.
+- [ ] [[Demo]] - 
+- [ ] App Testing - 
+- [ ] [[QQ]]: Valere.io iOS dev
+
+- [ ] [[Beta]]:	Beta testing proposal
+	- [ ] [Prod Push](https://docs.google.com/document/d/1hXXBXI0PhSXIwLEsYcTKQPHBeIiNsvYW8zNuONveR40/edit#) 
+- [ ] [[SV Hiring]]: iOS dev, 
+	- [ ] Ph:James, Jormey
+- [ ] [[SV learn]]: Calls; Run Apps
 - [ ] [[COMS]]: Julian
-- [ ] [[Ops]]:	
-- [ ] [[Beta]]:	Beta testing proposal. Jason ask today.
-- [ ] [[SV Hiring]]: iOS dev, Ph:James, Jormey; Layoffs
-- [ ] [[Bridge]]: Check Deck; Rolodex
-- [ ] [[SVlrn]]: Calls; Run Apps
+- [ ] Joaquin
+- [ ] [[SV learn]]: RunApps; Call All; [[SV90.]]
+- [ ] [Tix Flow](https://software-engineering-team.atlassian.net/wiki/spaces/SPORTSVISI1/pages/edit-v2/74678280) 
 
 
-- [ ] Joachim: Assess; Rainforest.QA - Get Joachim assessment
-- [ ] [[SVlrn]]: RunApps; Call All; [[SV90.]]
+
+
 ## watch
 - [ ] [[MinCalcs]]: Verify that we have a minutes spec
 - [ ] [[RecFlo]]: See how this evolves
-- [ ] [[Bug]]:	Monitor 
 ## soon
 - [ ] [[GPT Rpt]]:	 Get Beta signup
 - [ ] [[Pillars]]: Soon
@@ -23,7 +31,6 @@
 
 
 
-[[foo]] 
 
 ## DONE
 - [ ] [[2023 Remote Work Guidelines]] 

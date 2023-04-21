@@ -1,4 +1,4 @@
-[[FAANG]], [[@IBM]]    [Senior Director at Microsoft Research](https://www.linkedin.com/in/rafahhosn/)  [[@Microsoft]]  [MS Page](https://www.microsoft.com/en-us/research/people/raaboulh/),  
+[[FAANG]], [[@IBM]]    [Senior Director at Microsoft Research](https://www.linkedin.com/in/rafahhosn/)  [[@Microsoft]]  [MS Page](https://www.microsoft.com/en-us/research/people/raaboulh/),  #Mentor 
 
 
 -- More technical; more hands on

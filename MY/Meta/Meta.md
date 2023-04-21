@@ -12,6 +12,10 @@
 - [[OBS]]					[[Meta KM]] 	 OBSIDIAN -	Setup details for my info pages
 - [[MY]]		[[My Folder|MY]] 						 MYFO    -	Info about me & my stuff				 
 
+SPECIALTY PAGES
+- [[CRM]]		[[AT Folder|CRM]]		[[Meta CRM]]	 How I track my regular pings
+
+
 
 OTHER STUFF
 - [[Meta Org (old page)]] 	-  Overview of all info resources 

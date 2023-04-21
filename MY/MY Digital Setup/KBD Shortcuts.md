@@ -106,7 +106,7 @@
 | T     | TAB new / undo CLOSE   |                    |                             | TEXT heading         | Transpose       |
 | U     |                        |                    |                             | UNTYPED heading      |                 |
 | V     | PASTE from clip        |                    |                             |                      | Paste           |
-| W     | CLOSE pane             | WEEKLY note        | WORKSPACE  Load / Manage    |                      |                 |
+| W     | CLOSE pane             | WEEKLY note        | WORKSPACE  Load / Manage    | WORK project         |                 |
 | X     | CUT to clip            |                    |                             |                      | Cut             |
 | Y     |                        |                    |                             |                      |                 |
 | Z     | UNDO / REDO            |                    | ZOOM mode                   |                      |                 |

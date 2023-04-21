@@ -8,6 +8,7 @@ FORA:			[[Discord App]],  [Forum](https://forum.obsidian.md),   [Obsidian Websit
 PUBLIC: 		[Oblio](https://publish.obsidian.md/oblio)  (LMI!),
 PLUGINS:		[Templater Docs](https://silentvoid13.github.io/Templater/internal-functions/internal-modules/file-module.html), [[QuickAdd]], 
 
+- [[OBS Examples]]  
 - [[QUICKADD]], 
 - [[TEMPLATER]],  
 
@@ -20,7 +21,8 @@ PLUGINS:		[Templater Docs](https://silentvoid13.github.io/Templater/internal-fun
 
 -    [[DocObsidian]],  
 
-
+800-692-7793  my apple   (luke in tech support)
+- support 
 
 ### KEY-REMAPPING
 #### CAPS-LOCK

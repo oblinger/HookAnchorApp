@@ -1,7 +1,5 @@
 
-
-# FOODS
-## DRY GOODS
+## === DRY GOODS ===
 ### Coffee
 #### K-cups
 
@@ -694,19 +692,19 @@ Etsy
 ### --- Hudson Jeans ---
 other info somewhere else
 
-# HOME ACCESSORIES
-### Bed Sheets
-
-#### Hotel Signature Sateen (100% Cotton 800 thread count)
-- Bought from Costco (we hear the Amazon supplier of same brand is lower quality)
-
-# MISC
-## = CLOTHING
 ### - Teeshirts
 - **Bananna Republic Factory** - much better quality tee shirt.
 - Threadless - low/moderate quality.  many fun designs.
 - Six Dollar Shirts - low/moderate quality.  fewer designs
-## Amazon Subscription Buying
+## === BEDROOM ===
+
+### - BEDSHEETS
+#### Hotel Signature Sateen (100% Cotton 800 thread count)
+- Bought from Costco (we hear the Amazon supplier of same brand is lower quality)
+- [costco](https://www.costco.com/hotel-signature-800-thread-count-cotton-6-piece-sheet-set.product.4000099225.html) Hotel Signature 800 Thread Count Cotton 6-Piece Sheet Set
+   Item  1691379
+
+## === Amazon Subscription Buying
 
 
 - [Subscribe n save](https://www.amazon.com/gp/subscribe-and-save/manage/ref=rcxsubs_redir_newmys_change_quantity_frequency_month_success?subscriptionId=SNSD0_RJSG2KKH74AZB0GRBS82&shipId=jmploqjopikq&snsActionCompleted=changeQuantityFrequencyMonth&expiration=1570818653&ASIN=B009NKX7N0#subscriptionViewSNSD0_RJSG2KKH74AZB0GRBS82) 
