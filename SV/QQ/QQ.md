@@ -3,6 +3,21 @@
 # QUICK - QUICK work projects
 
 ### 2023-04-14  iOS consultant
+~
+- Create Thrive $6K = 80hrs 60-80hr
+- Crowdar $
+- 10 testers and 20 games
+~
+
+
+- guy@Valere.io
+- DD  dd@valere.io
+- Alex alex@valere.io
+- Anmol anmol@valere.io   (admin??)
+
+
+@DD deoradharmendra](mailto:dd@valere.io) [@Alex Turgeon](mailto:alex@valere.io) --
+- https://www.visualvisitor.com/companies/1043418/Valere-Labs
 
 
 - Hourly contract for a Senior iOS/Flutter dev for 2 weeks to 2months of full time work.

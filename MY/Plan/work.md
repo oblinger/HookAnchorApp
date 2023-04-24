@@ -1,8 +1,10 @@
 
+- [ ] iOS: Valere
+- [ ] QA: Crowbar
 - [ ] [[Bridge]] - Get contacts.
 - [ ] [[Demo]] - 
 - [ ] App Testing - 
-- [ ] [[QQ]]: Valere.io iOS dev
+- [ ] [[QQ]]: guy@Valere.io iOS dev
 
 - [ ] [[Beta]]:	Beta testing proposal
 	- [ ] [Prod Push](https://docs.google.com/document/d/1hXXBXI0PhSXIwLEsYcTKQPHBeIiNsvYW8zNuONveR40/edit#) 
@@ -13,7 +15,7 @@
 - [ ] Joaquin
 - [ ] [[SV learn]]: RunApps; Call All; [[SV90.]]
 - [ ] [Tix Flow](https://software-engineering-team.atlassian.net/wiki/spaces/SPORTSVISI1/pages/edit-v2/74678280) 
-
+[[RecFlo]]
 
 
 

@@ -1,5 +1,5 @@
 
-## ACCOUNTS  (audit list is complete)
+## = ACCOUNTS  (audit list is complete)
 ### BANK
 #### DanO - BofA (Checking&Savings)
 #### BofA Mortgage (Loans)
@@ -23,6 +23,9 @@
 
 
 ## = TRACKING
+### --- EXPLANATIONS ---
+	.07	One time special transfers
+
 ### --- WIRED FUNDS ---
 07/16/2021	65,431.67	Extra funds paid for our Refi
 06/25/2021	46,350.00	Refund of 1/2 of the space Ex money

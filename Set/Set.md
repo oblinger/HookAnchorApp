@@ -1,7 +1,7 @@
 == [[TAG]]  ! Groupings of like (typed) entries
 - [[Logs]] (temporally ordered sets)
 
-
+[[CTC Note (Adds)]] 
 SETS (master)
 - [[AT]] 		- All Entities (People, Organizations, etc.) 
 - [[App]] 		- Info about specific applications

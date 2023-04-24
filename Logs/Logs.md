@@ -5,6 +5,7 @@
 - [[Idea]] 		- Ideas
 - [[Letters]]  - Formal correspondence
 - [[Quotes]]	- Quotes
+- [[PP]]			- Personal Projects
 
 PROCESS ORIENTED LOGS
 - [[Bought]]	- 

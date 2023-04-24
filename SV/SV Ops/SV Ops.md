@@ -1,2 +1,2 @@
 
-:: [[SV Bugs]],   [[SV Release Planning]],   [[SV Testing]]
+:: [[SV Dashboards]],   [[SV Release Planning]],   [[SV Testing]]

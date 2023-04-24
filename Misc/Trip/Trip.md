@@ -1,24 +1,23 @@
 
 :: [[Thailand]]
 
-:: [[Thailand]]
-
-:: [[Thailand]]
-
-:: [[Thailand]]
-
-:: [[Thailand]]
-
-:: [[Thailand]]
-
-:: [[Thailand]]
-
-:: [[Thailand]]
-
 - [[Travel]],  [Trip](Trip.md), [[Thailand]],
 - [[Trip Webpage]]
 
 # LOG
+
+### 2023-04-23  Dad's 85th Birthday
+
+Dave-O  may 25-28th
+
+
+MAY
+Wed24 2:37p - 12:44a  
+        #BFCUKN  F662 F2782
+
+Sun28 3:27p - 9:54p   F2785 F2839
+
+
 ### 2023-03-11  Argentina places
 
 #### [Yellow bus](https://www.google.com/maps/place/Galer%C3%ADas+Pac%C3%ADfico/@-34.5996417,-58.3777718,16z/data=!4m6!3m5!1s0x95bccacb0b1afcaf:0x8d53a5cf4f399e9c!8m2!3d-34.5992496!4d-58.3747789!16s%2Fm%2F02rlb3t) 

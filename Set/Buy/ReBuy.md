@@ -29,6 +29,7 @@ Brands: Amy's Organic, Health Valley, Wolfgang Puck, Eden Organic,
 _
 ### Grains & Nuts
 #### Azure Standard
+
 - [Azure Standard](https://www.azurestandard.com/):   ==> [Steel Cut Oats](https://www.azurestandard.com/shop/product/food/cereals/hot/whole-grain/steel-cut-oats/oats-steel-cut-organic/10944?package=CE228),  [Barley](https://www.azurestandard.com/shop/search/barley), Rye, Oats, Lentils, Soy Curls, Brown Rice, Flaxseed, Teas, Soup Mix   ==> Millet
 	- [SPICES]  [Cumin](https://www.azurestandard.com/shop/product/food/spices-seasonings/spices/cumin-seed/ground-powder/cumin-seed-ground-organic/7566?package=HS607), [Pepper](https://www.azurestandard.com/shop/product/food/spices-seasonings/spices/ground-pepper/black/pepper-ground-black-organic/9871?package=HS604), [Cyanne], [Curry Powder], 
 		- [Mustard Powder], [Onion], [Garlic], [Red Chili Peppers], [Paprika], 
@@ -704,7 +705,7 @@ other info somewhere else
 - [costco](https://www.costco.com/hotel-signature-800-thread-count-cotton-6-piece-sheet-set.product.4000099225.html) Hotel Signature 800 Thread Count Cotton 6-Piece Sheet Set
    Item  1691379
 
-## === Amazon Subscription Buying
+## === SUBSCRIPTIONS FROM AMAZON===
 
 
 - [Subscribe n save](https://www.amazon.com/gp/subscribe-and-save/manage/ref=rcxsubs_redir_newmys_change_quantity_frequency_month_success?subscriptionId=SNSD0_RJSG2KKH74AZB0GRBS82&shipId=jmploqjopikq&snsActionCompleted=changeQuantityFrequencyMonth&expiration=1570818653&ASIN=B009NKX7N0#subscriptionViewSNSD0_RJSG2KKH74AZB0GRBS82) 

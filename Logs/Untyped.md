@@ -6,8 +6,15 @@
 
 | Date       | File                       | Notes                                                                                                                             |
 | ---------- | -------------------------- | --------------------------------------------------------------------------------------------------------------------------------- |
+| 2023-04-24 | [[@Martin Reyes]]              | intro                                                                                                                             |
+| 2023-04-24 | [[Reflections]]                | Lesson Learned:  I am too tactical, too insecure, not proactive @ high level, & running from fear                                 |
+| 2023-04-23 | [[Trip]]                       | Dad's 85th Birthday                                                                                                               |
+| 2023-04-23 | [[Phone]]                      | SF BAY AREA HEATED POOLS                                                                                                          |
 | 2023-04-21 | [[Eli Interactions]]           | Ms Amanda & Ms Soumya                                                                                                             |
 | 2023-04-21 | [[SV Product]]                 | Customer Onboarding Pathways                                                                                                      |
+| 2023-04-21 | [[Reset]]                      | AI Deliverables                                                                                                                   |
+| 2023-04-21 | [[Reset]]                      | discussion                                                                                                                        |
+| 2023-04-21 | [[2023 SV Strategic Plan]]     | Strategic Tasks                                                                                                                   |
 | 2023-04-20 | [[@Apple]]                     |                                                                                                                                   |
 | 2023-04-20 | [[SV CV Team]]                 | Big Ideas                                                                                                                         |
 | 2023-04-20 | [[SV CV Team]]                 | What are people doing?                                                                                                            |

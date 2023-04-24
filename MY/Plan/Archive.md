@@ -1,3 +1,5 @@
+- [x] one time xfr
+- [x] sheet
 easter
 easter
 - [x] apple news

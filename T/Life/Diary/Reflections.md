@@ -1,4 +1,23 @@
+### 2023-04-24  Lesson Learned:  I am too tactical, too insecure, not proactive @ high level, & running from fear
+
+
+- GUT KNOWLEDGE - I have known from the start that my position seemed untenable, 
+- AVOIDANCE RESPONSE - But I ran from this issue rather than confronting it.
+- ***SHINY THINGS - I worked furiously on other things instead of the key thing that needed fixing***.   <--- key point
+- INSECURE - I am insecure in feeling I needed more coding & algo strength than I now do for the CTO job
+  INSECURE - Not acknowledging broad strengths that others see in me.
+  INSECURE - in feeling that I am "not worth" the extra equity over Mike/Brian
+- NOT TALKING - Not talking with Jason/sam nearly enough
+- NOT SEEING - Jason feels isolated at the top, and I should have seen this
+
+
+NEED TO GROW A PAIR! - Just assume I am amazing and can own any piece that is needed, and figure out what is really needed here.
+
+
+
 ### 2023-04-12  PIVOT - shift towards AI
+
+
 
 
 ### 2023-04-04  STRESS!  Feel my path AT SV is time limited

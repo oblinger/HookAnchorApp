@@ -1,6 +1,11 @@
 
 
 
+
+# LOG
+### 2023-04-21  Strategic Tasks
+
+
 ### DEVOPS HIRE
 - Seems soup to nuts our DevOps is weak.
 	- Server / Image management

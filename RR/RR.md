@@ -1,4 +1,4 @@
-
+[[Yolo]] [[BoT-SORT]] [[ByteTrack]]  
 :: [[Systems]], [[Startups Note]] 
 
 :: [[Covid]]

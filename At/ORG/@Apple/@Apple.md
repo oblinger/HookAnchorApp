@@ -1,6 +1,8 @@
 
  [Apple.com](https://apple.com),  
 - 800-692-7753 Apple Repair
+- 408-974-9604 Victoria Eaton  (Corp Executive Relations)  _[victoriae@apple.com](mailto:victoriae@apple.com)_
+- 
 
 
 ## INFO

@@ -1,21 +1,22 @@
 
 < [[???]]   [[@Sports Visio]],  [[@Jason Syversen]], 
 
-- TOPS:		[[WW]],   [[QQ]],  [[SV Mgt]],   [[SV Folder]],  [[Meta SV]], 
+- TOPS:		[[WW]],   [[QQ]],  [[SV Mgt]], 
 - [[SV Strat]]:	[[Reset]],  [[Roadmap]], 
-- [[SV Ops]]:	 	[[SV Bugs]],  [[SV Testing]], [[SV Release Planning]],  
+- [[SV Ops]]:	 	[[SV Dashboards]],  [[SV Testing]], [[SV Release Planning]],  
 - [[SV People]]:	[[SV Hiring]], [[SV SW Team]],   [[SV CV Team]],
 - [[SV Market]]:	[[SV Customer]],  [[SV Competitor]], 
 - [[SV Product]]: [[SV Code]],  [[SV Apps]], [[SV System]],   
-- INFO:			[[SV Code]], [[SVT]],  [[SV Legal]],
+- INFO:			[[SV Code]], [[SVT]],  [[SV Legal]],   [[SV Folder]],  [[Meta SV]], 
 - ARCHIVE:		[[SV Archive]],   [[SV Wings]], 
-
-
+[[SV Basketball Info]] 
 
 LOG
--  [[SV90]], [[SV90.]],   [[SV Investor Related]], [[2023 Deliverables]],  
+-  [[SV90]], [[SV90.]],  [[2023 Deliverables]],  
 
-### TODO
+
+
+# TODO
 - [ ] Get Coach
 - [ ] Build Roadmap
 - [ ] Yolo-x

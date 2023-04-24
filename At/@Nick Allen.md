@@ -136,7 +136,7 @@ Neither of your leaders have the hunger of a co-founder.
 
 
 
-~ 
+~ Copied to 
 
 For SportsVisio to win it seems there are three big objectives that we need to meet:
 (1) Raise the funds required to execute
@@ -168,54 +168,6 @@ But presently I don't own the delivery of any of those things.
 - This does not put me on path to delivering fully autonomous AI stats, nor high-functioning products and high-functioning org.
 - Worse I am not in the ideal position to be shaping things right now towards those deliverables.
 - And this ambiguity harms efficient collaboration as elbows can be a good way to jockey for responsibility.
-
-
-
-
-
-
-
-
-
-
-
-
-
-- 
-- 
-- , and Mike may or may not leave, then I nee
-
-
-I have been 'lane splitting' in a way 
-
-
-If it is to deliver fully automated AI
-
-
-
-
-
-
-
-Deliver stream of polished SW covering an ever wider range of cust
-
-
-
-We are 2+ years in with a year plus having a fully staffed team, and I cannot even execute our app end-to-end without it crashing on me.
-
-So our third objective is a dumpster fire.
-
-
-
-
-
-
-
-
-
-
-if we only have ONE device, but they have a million 50 browser tabs open, will they be able to complete this task?  The uploads are pretty snappy, it is really the processing step that is slow.  They 
-
 
 
 

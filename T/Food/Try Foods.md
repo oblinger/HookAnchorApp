@@ -1,10 +1,11 @@
 
 **NOW**:
-- SOUPS:   White Bean, Black bean (++chili / soup / ++cuban) , 
-              Mixed bean ?white?, ++Split Pea, +Butternut, ++Lentil, 
-- CURL:    ++Peanut Stew, ++Curry, Soup, ++Millet
-- QUINOA:  ++Southwest,  ++Peppers w/ more Quinoa, ++Kitchari (cauliflower)
-- TRY: CHIA, TVP
+- SOUPS:		White Bean, Black bean (++chili / soup / ++cuban) , 
+- 				Mixed bean ?white?, ++Split Pea, +Butternut, ++Lentil, 
+- CURL:    	++Peanut Stew, ++Curry, Soup, ++Millet
+- QUINOA:  	++Southwest,  ++Peppers w/ more Quinoa, ++Kitchari (cauliflower)
+- TRY: 			CHIA, TVP
+- 2ST TRY:	Tacos, 
 
 **GOALS**:
 - BASE:  Chia, TVP, 

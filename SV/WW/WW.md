@@ -1,5 +1,5 @@
 ### Work Projects
-=	[[Reset]]			[[2023 DanO Role Reset]].
+=	[[Reset]]			[[2023 Reset DanO Role]].
 =	[[Roadmap]]		[[2023 SV Roadmap]] - 
 =	[[Baller]]			[[2023 Baller TV Partnership]].
 =	[[Demo]]			[[2023 Bridge Round AI Demo]].
@@ -35,6 +35,6 @@ l					[[2023 Competitive Analysis]] -
 .					[[2023 Remote Work Guidelines]] - 
 .					[[2023 Blog Announce and Bio]] - 
 ?					[[2023 Brians Birds Eye]] - 
-.					[[2023 Customer Acq Strategy]] - 
+.					[[2023 Customer Acquisition]] - 
 
 qq

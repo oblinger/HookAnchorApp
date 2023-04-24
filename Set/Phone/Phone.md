@@ -1,5 +1,11 @@
 
-:: [[h]]
+### 2023-04-23  SF BAY AREA HEATED POOLS
+
+
+- $7+$1	27min	[North Beach Aquatic Center](https://sfrecpark.org/DocumentCenter/View/19652/NB-Winter-) - 
+- $30+$10	24min	[JCCSF](https://www.jccsf.org/hours/) -  
+
+
 ### 2023-03-22  Food Delivery
 
 

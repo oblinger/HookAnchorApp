@@ -1,12 +1,8 @@
-- [ ] DMV licence renewal.
+- [ ] [[@Horizon Fitness]]
 - [ ] buy airpods
 - [ ] ben check
-- [ ] receipts to SV
-- [ ] SV Dashboards
 - [ ] !! MED
-- [ ] !! iOS <<<<<<<<<
-- [ ] !! KRZ response 
-- [ ] Get receipts in
+- [ ] Get receipts in to SV
 
 - [ ] - [[reflections]]  in2  clean planning
 - [ ] Soccer for Eli
