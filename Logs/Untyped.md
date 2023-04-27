@@ -6,7 +6,15 @@
 
 | Date       | File                       | Notes                                                                                                                             |
 | ---------- | -------------------------- | --------------------------------------------------------------------------------------------------------------------------------- |
+| 2023-04-27 | [[@Jason Syversen]]            | AI will replicate                                                                                                                 |
+| 2023-04-26 | [[@Azure Standard]]            | Missing Order                                                                                                                     |
+| 2023-04-26 | [[@Nate Blaylock]]             | talk                                                                                                                              |
+| 2023-04-26 | [[@PenFed]]                    | Returning call from them                                                                                                          |
+| 2023-04-26 | [[QQ]]                         | QA hires                                                                                                                          |
+| 2023-04-26 | [[Reset]]                      | Manhattan Project                                                                                                                 |
+| 2023-04-24 | [[@Jason Syversen]]            | [[reset]]                                                                                                                         |
 | 2023-04-24 | [[@Martin Reyes]]              | intro                                                                                                                             |
+| 2023-04-24 | [[Reset]]                      | Jason Response                                                                                                                    |
 | 2023-04-24 | [[Reflections]]                | Lesson Learned:  I am too tactical, too insecure, not proactive @ high level, & running from fear                                 |
 | 2023-04-23 | [[Trip]]                       | Dad's 85th Birthday                                                                                                               |
 | 2023-04-23 | [[Phone]]                      | SF BAY AREA HEATED POOLS                                                                                                          |
@@ -18,8 +26,8 @@
 | 2023-04-20 | [[@Apple]]                     |                                                                                                                                   |
 | 2023-04-20 | [[SV CV Team]]                 | Big Ideas                                                                                                                         |
 | 2023-04-20 | [[SV CV Team]]                 | What are people doing?                                                                                                            |
-| 2023-04-20 | [[RecFlo]]                     | Record App 2.0                                                                                                                    |
-| 2023-04-20 | [[RecFlo]]                     | Original Note                                                                                                                     |
+| 2023-04-20 | [[Headless]]                   | Record App 2.0                                                                                                                    |
+| 2023-04-20 | [[Headless]]                   | Original Note                                                                                                                     |
 | 2023-04-20 | [[Jnl]]                        | Life w/o Ayi                                                                                                                      |
 | 2023-04-18 | [[COM Investor]]               | Jason (Harvard Alumni Group)                                                                                                      |
 | 2023-04-18 | [[Investor Intros]]            | Scott Brady @ Innovation Endeavors - Joe Augenbraun                                                                               |

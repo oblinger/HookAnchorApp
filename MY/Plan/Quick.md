@@ -1,10 +1,22 @@
 - [ ] steroid creme
-- [ ] eyes hurt
+- [ ] Eyes hurt
 - [ ] Jeremey gift
-- [ ] phone holder desk meeting
 - [ ] Investors, 
-- [ ] ways to use James
-- [ ] Sammie
 CRM
+
+
+
+$13.5M
+
+
+
+~~
+- Month over month in increasing sales.
+- Millions in ARR
+- Increasing sales
+- TAM
+
+~~
+- SAM - 
 
 

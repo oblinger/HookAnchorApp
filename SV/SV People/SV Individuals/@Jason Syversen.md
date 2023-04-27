@@ -4,7 +4,30 @@
 - [[2023 Jason Tasks]] - 
 
 
+T = 7
+LF = 9
+L = 6
+
+31 = T + L + LF + TF
+22 = T + L + LF
+15 = L + LF
+9 = LF
+
+9 = TF = 31 - 22
+
 # LOG
+
+### 2023-04-27  AI will replicate
+
+
+Oddly I find my self agreeing with Matt Shumer's conclusion be largely disagreeing with his justification.  There is just too much koolaid drinking going around with this ChatGPT -- yes it is amazing and yes it will transform whole industries, etc.  but NO you are not going to push a button and some super AI is going to build you an ecosystem of tuned solutions that are optimized cost effectively handle all aspects of all analytics across all sports.  I am a crazy optimist (pessimist) about the power of AGI, and even I am not saying that!  A team of PhDs will be involved.
+
+Still his conclusion that one cannot rely on an AI mote is still valid.  BECAUSE the problem is AI-stats problem is finite and solvable.  So we can maintain a really healthy lead for 5 years, maybe a little more, but we are not the only org with PhDs, and there is not an every deepening well of "better" to keep tapping.  We will solve it, and others will catch up.  SO, by then we better have some distribution play that locks us in, so the our ever diminishing lead is being relied upon less and less over time.  Even better than a distribution play, is a network effects play.  If our value to one customer comes from our domination over other customers (as HUDL's does) then we really win big time!  We become untouchable until the market itself is somehow disrupted.  (oh I see Matt mentioned Network effects... yeah I agree!)
+
+Even though the market at the bottom is the most fractured, and thus the hardest to acquire, I think direct value to player/parent/coach could be among the most sticky and valuable network available to us.  Once a parent has a year's worth of games in our system and links on their social media to our clips they are going to want to stay with our service, plus there is the HUDL-like network of AAU teams and shared games etc.  I dont see any other available space like that with such a sticky customer-base.  Still we might need to land a different kind of partnership (like Cerebro) in order to drive adoption in the ultimate target market.
+
+
+### 2023-04-24  [[reset]]
 
 ### 2023-04-10  Feedback Call
 

@@ -1,7 +1,6 @@
-- [ ] Crowdar - 1-month
-- [ ] [[QQ]]: iOS Consultant
-- [ ] 
-- [ ] james
+
+- [ ] James: 
+
 - [ ] [[QQ]]: New Ticket Flow
 - [ ] Headless games
 - [ ] [[QQ]]: PIVO - testing

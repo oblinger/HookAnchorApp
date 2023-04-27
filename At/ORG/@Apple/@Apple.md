@@ -4,6 +4,16 @@
 - 408-974-9604 Victoria Eaton  (Corp Executive Relations)  _[victoriae@apple.com](mailto:victoriae@apple.com)_
 - 
 
+## 2023 LAPTOP
+
+
+APPLE CARE
+**Product**      					MBP 16 SG CTO
+**Hardware Serial Number** 	GXD7H6QV6Y
+**Coverage End Date**			May 02, 2024
+**Agreement Number**			5773744682
+
+
 
 ## INFO
 ~MASTER IN OBSIDIAN~
@@ -65,6 +75,8 @@ Retina15 Serial:  C02V811RHTD9
 
 
 # LOG
+
+
 
 ### 2023-04-20  
 

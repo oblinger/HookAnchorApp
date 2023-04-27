@@ -1,6 +1,8 @@
 
 :: [[Untitled]]
 
+:: [[Misc/Untitled]]
+
 :: [[Startups]]
 
 :: [[Lists]]

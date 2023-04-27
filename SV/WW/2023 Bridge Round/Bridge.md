@@ -9,3 +9,17 @@
 
 
 hmmmm that is an interesting idea!
+
+
+JOE
+- Gradient Ventures - Google's AI arm
+- Start Engine - Reg A - 
+- Micro Ventures - $250K
+	- Charlie Gaw - 
+
+- Start-X - Stanford startup community.  
+
+- AI video -  
+
+
+Joe, it was great to catch up

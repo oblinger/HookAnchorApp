@@ -1,6 +1,10 @@
 =[[START]]     [Head of Operations](https://www.linkedin.com/in/jamesmarvinbriones/)  [[@Rzero]]   #Soon 
 - Head of PH operations @ AF
 
+6pm PST - 6am PST -- Normal waking hours.
+
+Sleep at 7-8 PST.
+
 
 [His loan](https://docs.google.com/spreadsheets/d/1xHVpVsxHcarJHsMQ1IODOqgkum66D-BU8Mhp2ga7swc/edit#gid=0)  
 

@@ -1,4 +1,6 @@
 - [ ] Yearbook
+- [ ] [[CRM]]: 
+- [ ] Sammie
 - [ ] go to KY
 - [ ] 
 - [ ] Taxes

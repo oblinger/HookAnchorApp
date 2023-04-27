@@ -1,8 +1,18 @@
 - [[QQ Folder]]
 
 # QUICK - QUICK work projects
+### 2023-04-26  QA hires
+
+- [Shared folder](https://drive.google.com/drive/folders/1rMRtMUPG4kw_zBV00tPlLo7zee-rbB7D) - 
+
+https://docs.google.com/spreadsheets/d/1XWOjBiGP1HOSs2BkOYRUiYPJGj7BU60UE4AGhlNDrFo/edit#gid=0
+
 
 ### 2023-04-14  iOS consultant
+
+guy@Valere.io iOS dev
+
+
 ~
 - Create Thrive $6K = 80hrs 60-80hr
 - Crowdar $

@@ -1,10 +1,11 @@
 - [ ] [[@Horizon Fitness]]
+- [ ] phone holder desk meeting
+
 - [ ] buy airpods
-- [ ] ben check
 - [ ] !! MED
 - [ ] Get receipts in to SV
 
-- [ ] - [[reflections]]  in2  clean planning
+
 - [ ] Soccer for Eli
 - [ ] take photos of all things we want to sell
 - [ ] Call James: contractors

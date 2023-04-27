@@ -4,10 +4,12 @@
 - SERIAL:  	TM499G220600821
 - MODEL:  	7.4AT-04
 - ORDER:		300171905
-- MY INFO:	415-94-9499   wef234@gmail.com
+- MY INFO:	415-949-9499
+     wef234@gmail.com
 - DELIVERY:	2022-12-13?
 - MAIN:		888-878-9011
 - TECH SUP:	800-244-4192     10p EST - 5p EST
+- WARANTEE:	800-244-4192
 
 - [Website](https://www.horizonfitness.com/) - 
 - [Website troubleshooting](https://support.horizonfitness.com/hc/en-us/sections/4407799193613-Troubleshooting) 
