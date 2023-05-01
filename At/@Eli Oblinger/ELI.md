@@ -9,7 +9,7 @@
 - [ ] Find babysitter
 
 
-LINKS:  [[Babysitting]], [[Enxt]], 
+LINKS:  [[Babysitting]], [[2022-05 ELI next school]], 
 
 ## HOW TO
 ### YOUTUBE KIDS SHARING

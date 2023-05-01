@@ -14,7 +14,7 @@
 [[T]]OPICS		MAJOR TAXONOMIC TOPIC ROOTS
 - [[JOB]]		- 
 - [[FIN]]		- 
-- [[Food]]		- 
+- [[T/Food/Food]]		- 
 - [[KM]]		- 
 - [[Legal]]		- 
 - [[Life]]		- 
@@ -56,7 +56,7 @@ TOPLEVELS
 [[Logs]]  		TEMPORALLY-ORDERED, TYPED NOTES
 - [[Idea]] 		- Ideas
 - [[Letters]]  - Formal correspondence
-- [[Quotes]]	- Quotes
+- [[Logs/Quotes]]	- Quotes
 
 PROCESS ORIENTED LOGS
 - [[Bought]]	- 

@@ -53,7 +53,7 @@
 
 # active
 - [ ] [[SV90]]:		Prep to sign
-- [ ] [[Enxt]]: 		Sheet; Read materials
+- [ ] [[2022-05 ELI next school]]: 		Sheet; Read materials
 - [ ] [[Learn]]:		[[F90]],  [[Coursera Notes]],  
 
 - [ ] 				Find advisor; Consider Avanti Paperwork

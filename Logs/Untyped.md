@@ -156,7 +156,7 @@
 | 2022-12-08 | [[Phone]]                      | Solar Installer                                                                                                                   |
 | 2022-12-07 | [[resLI]]                      | Framing Self                                                                                                                      |
 | 2022-12-03 | [[Phone]]                      | Thumb Tack TV install                                                                                                             |
-| 2022-12-01 | [[Enxt]]                       | Alta Vista                                                                                                                        |
+| 2022-12-01 | [[2022-05 ELI next school]]    | Alta Vista                                                                                                                        |
 | 2022-11-30 | [[2022-W46]]                   | short week (cyber monday)                                                                                                         |
 | 2022-11-29 | [[Phone]]                      | [[@Audi]]                                                                                                                         |
 | 2022-11-29 | [[Phone]]                      | Horizon 7.4AT  Treadmill                                                                                                          |
@@ -166,7 +166,7 @@
 | 2022-11-23 | [[Parents]]                    | Mom's multiple facebook accounts                                                                                                  |
 | 2022-11-22 | [[Phone]]                      | Fire Dept response for Eli                                                                                                        |
 | 2022-11-20 | [[ToBuy]]                      | Big Insta-pot                                                                                                                     |
-| 2022-11-10 | [[Enxt]]                       | The San Francisco School                                                                                                          |
+| 2022-11-10 | [[2022-05 ELI next school]]    | The San Francisco School                                                                                                          |
 | 2022-11-10 | [[MED]]                        | Maria Cross - Registered Dietician                                                                                                |
 | 2022-11-08 | [[2022-10-00 Find Advisor]]    | Finding a Fiduciary                                                                                                               |
 | 2022-11-08 | [[2022-10-00 Find Advisor]]    | My plan                                                                                                                           |
@@ -442,7 +442,7 @@
 | 2021-01-31 | [[Journal Old]]                | So what the fuck am I doing? What's my goal here?                                                                                 |
 | 2021-01-21 | [[2020-07 Autonomy]]           | Irving on wheelchair.com                                                                                                          |
 | 2021-01-20 | [[2020-07 Autonomy]]           | ALS forum Query                                                                                                                   |
-| 2021-00-00 | [[DocMac]]                     | apple support chat                                                                                                                |
+| 2021-00-00 | [[@Apple]]                     | apple support chat                                                                                                                |
 | 2021-00-00 | [[SNIP]]                       | Fox news egregious                                                                                                                |
 | 2021-00-00 | [[SNIP]]                       | ELI music                                                                                                                         |
 | 2021-00-00 | [[Phone]]                      | Eli's Birth Certificate                                                                                                           |

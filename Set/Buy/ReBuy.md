@@ -704,6 +704,7 @@ other info somewhere else
 - Bought from Costco (we hear the Amazon supplier of same brand is lower quality)
 - [costco](https://www.costco.com/hotel-signature-800-thread-count-cotton-6-piece-sheet-set.product.4000099225.html) Hotel Signature 800 Thread Count Cotton 6-Piece Sheet Set
    Item  1691379
+- 2023-05-01 - Bought two pure white queen sheets.  love them.
 
 ## === SUBSCRIPTIONS FROM AMAZON===
 

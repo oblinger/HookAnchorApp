@@ -1,4 +1,4 @@
-(See [[Food|Food]] for most info about diet & food)
+(See [[T/Food/Food|Food]] for most info about diet & food)
 
 # Medical.Diarrhea --
 

@@ -29,7 +29,7 @@
 - [ ] ### 2022-11-30
 - [ ] 7:	[[chew]]
 - [ ] 8:	[[Eli]]
-- [ ] 9	[[Food]]
+- [ ] 9	[[T/Food/Food]]
 - [ ] 10	[[Repeat]] 
 - [ ] 10:	[[chew]] 
 - [ ] 11: ???
@@ -87,7 +87,7 @@
 - [ ] 11	[[Repeat]] [[todo]] 
 - [ ] 12	[[@Jason Syversen]] 
 - [ ] 12:	lunch
-- [ ] 1:	[[Enxt]] 
+- [ ] 1:	[[2022-05 ELI next school]] 
 - [ ] 2:	[[FF-prize]] 
 - [ ] 4	Exercise
 
@@ -97,7 +97,7 @@
 - [x] 11	[[Coursera Notes]] - (food break)
 - [ ] 1	lunch
 - [x] 2	[[todo]] - Jason
-- [ ] 3	[[Enxt]] 
+- [ ] 3	[[2022-05 ELI next school]] 
 - [ ] 4:	exercise
 
 - [ ] 	[[First90]]
@@ -106,7 +106,7 @@
 - [ ] 10	[[Coursera Notes]] - (food break)
 - [ ] 11:	lunch
 - [ ] 12:	[[todo]] 
-- [ ] 2	[[Enxt]] 
+- [ ] 2	[[2022-05 ELI next school]] 
 - [ ] 3:	exercise
 
 - [ ] 	[[First90]]
@@ -143,14 +143,14 @@
 - [ ] 1:	Exercise
 - [ ] 3	War 
 - [x] 3:	Joe
-- [ ] -	[[Enxt|Eli Next]] - Spreadsheet
+- [ ] -	[[2022-05 ELI next school|Eli Next]] - Spreadsheet
 
 
 - [ ] [[Coursera Notes]] - 
 
 ### 2022-10-25
 - [x] [[WarStories]] - Ready for Joe
-- [x] [[Enxt|Eli Next]] - Spreadsheet
+- [x] [[2022-05 ELI next school|Eli Next]] - Spreadsheet
 - [ ] [[Coursera Notes]] - 
 - [ ] Chew
 

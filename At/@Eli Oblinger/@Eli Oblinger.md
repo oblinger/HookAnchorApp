@@ -5,7 +5,7 @@
 
 :: [[Eli LOG]]
 =[[PP]]  
-- [[Eli]], [[BCMS]],  [[Eli Math]], [[Enxt]], 
+- [[Eli]], [[BCMS]],  [[Eli Math]], [[2022-05 ELI next school]], 
 - 
 - 
 - 

@@ -35,7 +35,7 @@
 	- [[TAG]]
 	- [[TASK]] - task list
 	- [[SET TYPE]] - 
-		- [[Quotes]] -  
+		- [[Logs/Quotes]] -  
 	- [[DATED]] - 
 		- [[Day]] - 
 		- [[Journal]] - Daily Journal entries

@@ -1,10 +1,12 @@
+
+:: [[Quotes]]
 - [[Offload Folder]]
 
 
 [[Logs]]  	TEMPORALLY ORDERED TYPED NOTES
 - [[Idea]] 		- Ideas
 - [[Letters]]  - Formal correspondence
-- [[Quotes]]	- Quotes
+- [[Logs/Quotes]]	- Quotes
 - [[PP]]			- Personal Projects
 
 PROCESS ORIENTED LOGS

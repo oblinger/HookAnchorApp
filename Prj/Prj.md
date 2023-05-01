@@ -1,37 +1,14 @@
 
-:: [[AF Wind down]],   [[Enxt]]
-
-:: [[AF Wind down]],   [[Enxt]]
-
-:: [[AF Wind down]],   [[Enxt]]
-
-:: [[AF Wind down]],   [[Enxt]]
-
-:: [[AF Wind down]],   [[Enxt]]
-
-:: [[AF Wind down]],   [[Enxt]]
-
-:: [[AF Wind down]],   [[Enxt]]
-
-:: [[AF Wind down]],   [[Enxt]]
-
-:: [[AF Wind down]],   [[Enxt]]
-
-:: [[AF Wind down]],   [[Enxt]]
-
-:: [[AF Wind down]],   [[Enxt]]
-
-:: [[AF Wind down]],   [[Enxt]]
-
-:: [[AF Wind down]],   [[Enxt]]
+:: [[AF Wind down]]
 
 == [[TAG]]  <[[TAGS]]
 
 - 2022-10 [[SV90]]  				[[@Sports Visio]] Plan for first 90 days 
 - 2022-09 [[SV]]						Sports Visio
-- 2022-05 [[Enxt]]       			Figuring out where Eli is going to go to school 
+- 2022-05 [[2022-05 ELI next school]]       			Figuring out where Eli is going to go to school 
 - 2022-05 [[Photos Notes]]  		Setting up our family photo 'workflow'
 - 2022-05 [[Action Notes]] 		Obsidian plugin 
+?	[[2022-05 ELI next school]]		x
 - 2022-04 [[AF Wind down]]  	Wind down tasks for the AF company   
 - 2022-03 [[Learn]]    				Various kinds of learning for NJ22     
 - 2022-03 [[PKM]]          		My Personal Knowledge Management Approach  
