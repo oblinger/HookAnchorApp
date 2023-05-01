@@ -1,6 +1,21 @@
 =[[START]]    [CEO](https://www.linkedin.com/in/jaugenbraun/)  [[@Peanut Robotics]]  
 
 
+# LOG
+
+### 2023-04-27  Getting investors
+
+~~
+- Month over month in increasing sales.
+- Millions in ARR
+- Increasing sales
+- TAM
+
+~~
+- SAM - 
+
+### 2023-04-27  leter of reference
+
 Subj:  Letter of Reference
 
 Joe,

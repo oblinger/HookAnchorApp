@@ -1,4 +1,6 @@
 ### Work Projects
+=	[[Lichty]]			[[2023 Customer Support Tasks]].
+=	[[RNR Notes]]			[[2023 SV Roles and Responsibilities]].
 =	[[Reset]]			[[2023 Reset DanO Role]].
 =	[[Roadmap]]		[[2023 SV Roadmap]] - 
 =	[[Baller]]			[[2023 Baller TV Partnership]].

@@ -6,13 +6,21 @@
 
 | Date       | File                       | Notes                                                                                                                             |
 | ---------- | -------------------------- | --------------------------------------------------------------------------------------------------------------------------------- |
+| 2023-04-30 | [[@Jason Syversen]]            | Response to Tweet about Company Strategy                                                                                          |
+| 2023-04-30 | [[Reset]]                      | Reset notes                                                                                                                       |
+| 2023-04-29 | [[@Drew Ackerman]]             | The 3am Scoot-master-2000                                                                                                         |
+| 2023-04-28 | [[@Jason Syversen]]            | Lichty Craziness                                                                                                                  |
+| 2023-04-27 | [[@Joe Augenbraun]]            | Getting investors                                                                                                                 |
+| 2023-04-27 | [[@Joe Augenbraun]]            | leter of reference                                                                                                                |
 | 2023-04-27 | [[@Jason Syversen]]            | AI will replicate                                                                                                                 |
+| 2023-04-27 | [[Investor Intros]]            | My Intro                                                                                                                          |
+| 2023-04-27 | [[Investor Intros]]            | JUNK                                                                                                                              |
 | 2023-04-26 | [[@Azure Standard]]            | Missing Order                                                                                                                     |
 | 2023-04-26 | [[@Nate Blaylock]]             | talk                                                                                                                              |
 | 2023-04-26 | [[@PenFed]]                    | Returning call from them                                                                                                          |
 | 2023-04-26 | [[QQ]]                         | QA hires                                                                                                                          |
 | 2023-04-26 | [[Reset]]                      | Manhattan Project                                                                                                                 |
-| 2023-04-24 | [[@Jason Syversen]]            | [[reset]]                                                                                                                         |
+| 2023-04-24 | [[@Jason Syversen]]            | F90-CALL2 -   [[reset]]                                                                                                           |
 | 2023-04-24 | [[@Martin Reyes]]              | intro                                                                                                                             |
 | 2023-04-24 | [[Reset]]                      | Jason Response                                                                                                                    |
 | 2023-04-24 | [[Reflections]]                | Lesson Learned:  I am too tactical, too insecure, not proactive @ high level, & running from fear                                 |
@@ -44,7 +52,7 @@
 | 2023-04-11 | [[QQ]]                         | New Ticket Flow                                                                                                                   |
 | 2023-04-10 | [[QQ]]                         | Pivo                                                                                                                              |
 | 2023-04-10 | [[@Achilles (Tomas Sasovsky)]] | Intro call                                                                                                                        |
-| 2023-04-10 | [[@Jason Syversen]]            | Feedback Call                                                                                                                     |
+| 2023-04-10 | [[@Jason Syversen]]            | F90-CALL3 - Feedback Call                                                                                                         |
 | 2023-04-10 | [[MED]]                        | <<<<                                                                                                                              |
 | 2023-04-07 | [[@Apple]]                     |                                                                                                                                   |
 | 2023-04-07 | [[EOCA]]                       |                                                                                                                                   |

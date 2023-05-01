@@ -1,7 +1,7 @@
 
 - QUICK:	TidyUp, 
 - LIGHT:	[[Scrub]], 
-- FUN:		[[ToBuy]],  New Recipe
+- FUN:		[[ToBuy]],  [[Try Foods]], 
 - READ:	[[Pocket App]], [[ToRead]], [Good Reads](https://www.goodreads.com/), 
 - CHECK:	[[MED.]]   
 

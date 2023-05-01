@@ -16,6 +16,24 @@ OUR DESTINATION
 - Jason owns Investors w support from Sam and Dan.
 - VP-Eng owns Tactical SW Delivery.  Oversight by Dan or Jason.
 
+### 2023-04-30  Reset notes
+
+
+TACTICAL REALITIES FOR THE SW TEAM
+{{NCK: here I want to summarize}}
+
+VP-ENG - We need a very capable VP-of-Eng who is not Dan (if you want any AI)
+- B+	BUG TRACKING
+- B-	WORK TRACKING
+- C+	WORK (Sprint) PLANNING
+- D	RELEASE COORDINATION
+- F	QA & TESTING
+- F	ESCALATION
+- C+	SPRINT PLANNING 
+- -	ROADMAPPING 
+
+
+
 ### 2023-04-26  Manhattan Project
 
   

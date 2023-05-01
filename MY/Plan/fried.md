@@ -1,6 +1,4 @@
 
-- [ ] create 'sub' entry can't find 'path'
-- [ ] - [ ] qq handling
 - [ ] giphy grab
 
 - [ ] [[Travel]]: pills; snacks
@@ -15,6 +13,8 @@
 - [ ] Evidence-based child rearing
 - [ ] Plan for crypto
 
+ LinkedIn
+ 
 ### HOUSE
 - [ ] USB Camera
 - [ ] BEDROOM --  Closet Pole
@@ -22,6 +22,7 @@
 - [ ] WIFI -- Add fancy wifi
 - [ ] BEDRM -- put plate on wall outlet
 - [ ] BASEMENT -- Ground treadmill, put back together
+
 
 ### LATER
 - [ ] do quarterly budgeting

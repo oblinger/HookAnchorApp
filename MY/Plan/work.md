@@ -1,4 +1,4 @@
-
+- [ ] [[reset]]: 
 - [ ] [[QQ]]: iOS: Valere
 - [ ] [[QQ]]: QA-hires: Crowbar
 - [ ] [[Bridge]] - Get contacts.
@@ -16,6 +16,7 @@
 - [ ] Joaquin
 - [ ] [[SV learn]]: RunApps; Call All; [[SV90.]]
 - [ ] [Tix Flow](https://software-engineering-team.atlassian.net/wiki/spaces/SPORTSVISI1/pages/edit-v2/74678280) 
+- [ ] [[RNR]]: 
 
 
 

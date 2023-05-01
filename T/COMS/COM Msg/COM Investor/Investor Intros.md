@@ -80,6 +80,106 @@ Dan
 
 
 
+
+
+
+### 2023-04-18  Bee Partners - Ai Wee
+
+### 2023-04-27  My Intro
+
+
+XXX,
+
+Responding to your request for a forwardable email. The company is called [Sports Visio](https://sportsvisio.com/), we are using AI/Computer Vision to automatically calculate stats/analytics video highlights for sports. We can do it for $20-25 a game (our costs are around $10 and we can get it down to $3-4) when incumbent large firms like Hudl and Synergy do it manually for $50-80/game. (And humans sitting sideline do 1/4 the stats and no video for $25/game poorly!) We have 3 AI PhDs plus two MS graduates driving our AI team as well as a team of software engineers, sales/marketing/etc. Market for basketball is $1.5B (bottoms up analysis) and total market including other sports is approximately $18B. We aren't raising at the moment (we raised $3.1M last year led by Hyperplane, with Sovereign's Capital and Geek Ventures participating) but will be this Spring and are thinking of who we'd want to talk to. I keep hearing good things about Mucker despite my negative experience (set up a meeting that was a no show and no follow up). But two friends of mine have been strong endorsements so I'm assuming it was just a mixup. 
+
+  
+
+[My background](https://t.sidekickopen10.com/s3t/c/5/f18dQhb0S7kF8c82QMW27Rw3m59hl3kW7_k2841CXdp3VPw-j-58ytGhW2dykgT1wsJRm101?te=W3R5hFj4cm2zwW4mKLS-3ZWVWBW3K2-zv1JxwY5W1Lyz993W1-CTw3K8R4y48T2&si=8000000002212955&pi=3bbcd12a-e8d5-4fce-e6e3-98bb940c0d3d): Grew up in Suburbia 0-10 and in (American) poverty aged 10-18) (holes in my socks, food stamps, homeless for a summer, etc.). Got a free ride for computer engineering and worked 9 years focused in hacking/cyber warfare/tech development. Served as a program manager at [DARPA](https://t.sidekickopen10.com/s3t/c/5/f18dQhb0S7kF8c82QMW27Rw3m59hl3kW7_k2841CXdp3VPw-j-58ytGhW2dykgT1wsJRm101?te=W3R5hFj4cm2zwW4mKLS-3H3br6w3yMkgD48R2&si=8000000002212955&pi=3bbcd12a-e8d5-4fce-e6e3-98bb940c0d3d) running a classified portfolio of $100M in tech programs, then started a cyber security tech firm. Spun out a patent and some code to a VC-backed startup that raised $18M, and wanted to launch several others but ended up selling to a PE-backed firm. I had an 8-digit exit and used those resources to start a charitable foundation. Have invested over 30 times as the CIO (as well as my own retirement funds) into over 25 tech firms while running [10X Venture Partners](https://t.sidekickopen10.com/s3t/c/5/f18dQhb0S7kF8c82QMW27Rw3m59hl3kW7_k2841CXdp3VPw-j-58ytGhW2dykgT1wsJRm101?te=W3R5hFj4cm2zwW4mKLS-1Q2Z1nw45lvZ548S2&si=8000000002212955&pi=3bbcd12a-e8d5-4fce-e6e3-98bb940c0d3d), an angel group (we also started a small fund I run.) Ramped down investing to a minimum to focus on the startup full time, and put $500k of my retirement money into it so I'm all in.
+
+  
+~
+
+Sports Visio uses AI/computer vision to automatically calculate sports stats and highlights. We can do this for $20-25 per game (with costs around $10 eventually to be reduced to $3-4) while incumbent large firms like Hudl and Synergy do this manually for $50-80 per game.  Based on my experiences founding/exiting robotic/vision companies I knew the time was ripe for market disruptions based on deep-learned vision.  Sport stats is particularly exciting as it is well established with existing multi-billon dollar competitors *and* completely virgin market-segments that cannot be touched using the existing manual methods.  Further automation provides a level of game analysis that is simply impossible to duplicate via manual methods.  Thus, I believe the entire industry will be fully disrupted in the next few short years.
+
+
+viability is well established with billion dollar competitors
+
+I chose Sport Stats since its market value is well established, and having virgin market segments open for the taking as incumbent simply cannot offer products with viable price points.
+
+
+up market and completely open for the taking down market where incumbent player simply cannot offer 
+
+, and sports stats is well 
+
+
+Talking with coaches myself I learned just how 
+
+I joined SportsVisio knowing the tech was viable, and seeing that 
+
+SportsVisio has opportunity to dominate sticky market segments where incumbent pricing has precluded adoption.
+
+is poised to dominate sport segments that 
+
+
+I joined SV because it strattles the magic window where the innovative tech I used in founding/exiting robotic/vision companies can be used to command leads in sticky, virgin markets where sports stats has not yet penetrated becasue of existing pricing.
+
+
+
+
+why joined
+my experience
+SV hitting magic window where new tech opens 
+
+I joined because Sports Visio is 
+
+I joined Sports Visio because of my experience founding/exiting robotic/computer-vision companies.  I was looking for industries like sport stats where recent advancements in deep learning provide disruptive advantage 
+
+
+Based on my experience founding & exiting robotic/computer-vision companies I knew that now is the time for market disruptions 
+
+
+Based on my experience founding two robotic vision companies I know now is the moment for 
+
+I know now is the window for disruptive advancements based on these technologies.
+
+
+
+I joined because Sports Visio is positioned to leverage
+I am excited that we are lev
+
+
+I joined because Sports Visio is positioned in the rare moment when recent 
+
+What excites me about the company is these new price points open 
+
+We have a couple of PhDs in computer vision as well as MS engineers, computer vision engineers, 
+
+
+
+
+### 2023-04-18  Jason to Lance at Areena Sports
+  
+Lance,
+
+Responding to your request for a forwardable email. The company is called [Sports Visio](https://sportsvisio.com/), we are using AI/Computer Vision to automatically calculate stats/analytics video highlights for sports. We can do it for $20-25 a game (our costs are around $10 and we can get it down to $3-4) when incumbent large firms like Hudl and Synergy do it manually for $50-80/game. (And humans sitting sideline do 1/4 the stats and no video for $25/game poorly!) We have 3 AI PhDs plus two MS graduates driving our AI team as well as a team of software engineers, sales/marketing/etc. Market for basketball is $1.5B (bottoms up analysis) and total market including other sports is approximately $18B. We aren't raising at the moment (we raised $3.1M last year led by Hyperplane, with Sovereign's Capital and Geek Ventures participating) but will be this Spring and are thinking of who we'd want to talk to. I keep hearing good things about Mucker despite my negative experience (set up a meeting that was a no show and no follow up). But two friends of mine have been strong endorsements so I'm assuming it was just a mixup. 
+
+  
+
+[My background](https://t.sidekickopen10.com/s3t/c/5/f18dQhb0S7kF8c82QMW27Rw3m59hl3kW7_k2841CXdp3VPw-j-58ytGhW2dykgT1wsJRm101?te=W3R5hFj4cm2zwW4mKLS-3ZWVWBW3K2-zv1JxwY5W1Lyz993W1-CTw3K8R4y48T2&si=8000000002212955&pi=3bbcd12a-e8d5-4fce-e6e3-98bb940c0d3d): Grew up in Suburbia 0-10 and in (American) poverty aged 10-18) (holes in my socks, food stamps, homeless for a summer, etc.). Got a free ride for computer engineering and worked 9 years focused in hacking/cyber warfare/tech development. Served as a program manager at [DARPA](https://t.sidekickopen10.com/s3t/c/5/f18dQhb0S7kF8c82QMW27Rw3m59hl3kW7_k2841CXdp3VPw-j-58ytGhW2dykgT1wsJRm101?te=W3R5hFj4cm2zwW4mKLS-3H3br6w3yMkgD48R2&si=8000000002212955&pi=3bbcd12a-e8d5-4fce-e6e3-98bb940c0d3d) running a classified portfolio of $100M in tech programs, then started a cyber security tech firm. Spun out a patent and some code to a VC-backed startup that raised $18M, and wanted to launch several others but ended up selling to a PE-backed firm. I had an 8-digit exit and used those resources to start a charitable foundation. Have invested over 30 times as the CIO (as well as my own retirement funds) into over 25 tech firms while running [10X Venture Partners](https://t.sidekickopen10.com/s3t/c/5/f18dQhb0S7kF8c82QMW27Rw3m59hl3kW7_k2841CXdp3VPw-j-58ytGhW2dykgT1wsJRm101?te=W3R5hFj4cm2zwW4mKLS-1Q2Z1nw45lvZ548S2&si=8000000002212955&pi=3bbcd12a-e8d5-4fce-e6e3-98bb940c0d3d), an angel group (we also started a small fund I run.) Ramped down investing to a minimum to focus on the startup full time, and put $500k of my retirement money into it so I'm all in.
+
+  
+
+I've played basketball for 30+ years, my kids have all played (my oldest is 22) and I've coached for 15 years which inspired the idea. Plan to use the majority of my funds from this exit for our foundation and some other non profit initiatives.
+
+  
+
+Jason
+
+
+### 2023-04-27  JUNK
+
+
+
 Its a joy to find a spot where hard tech can open new
 Its rare to find places where hard tech 
 
@@ -108,37 +208,15 @@ We are in a space where incumbents like Hudl and Synergy are MANUALLY doing this
 
 
 I love the opportunity because the market is proven and the technology to gather stats automatically is within reach.
-
-
-
-
-
 SportsVisio is a really great opportunity
-
 I joined because sports stats is a well established market among price insensitive college/pro/ and some high school teams using manual 
-
-
 What I like about the 
-
-
 What attracted me is 
-
-
-
 I would love to get and intro to Babak it seems like a good fit to you too.
-
 Cheers, 
 Dan
-
-
 ~~
-
-
 Here i
-
-
-
-
 The founder is a close friend of mine from DARPA (he was also a PM).
 
 
@@ -152,49 +230,12 @@ We do automated basketballs stats, which is a pretty mature market
 
 
 
-
-
-
-
-
-
-
-
-
-
 SportsVisio won out because of the connection to the founder, and also because its market risk 
-
 I ultimately chose SportsVisio since
-
 I am great friends with the founder (also an Ex-DARPA-PM) 
-
 Beyond my connection to the founder
 
 
 
 
 
-
-
-
-
-
-### 2023-04-18  Bee Partners - Ai Wee
-
-### 2023-04-18  Jason to Lance at Areena Sports
-  
-Lance,
-
-Responding to your request for a forwardable email. The company is called [Sports Visio](https://sportsvisio.com/), we are using AI/Computer Vision to automatically calculate stats/analytics video highlights for sports. We can do it for $20-25 a game (our costs are around $10 and we can get it down to $3-4) when incumbent large firms like Hudl and Synergy do it manually for $50-80/game. (And humans sitting sideline do 1/4 the stats and no video for $25/game poorly!) We have 3 AI PhDs plus two MS graduates driving our AI team as well as a team of software engineers, sales/marketing/etc. Market for basketball is $1.5B (bottoms up analysis) and total market including other sports is approximately $18B. We aren't raising at the moment (we raised $3.1M last year led by Hyperplane, with Sovereign's Capital and Geek Ventures participating) but will be this Spring and are thinking of who we'd want to talk to. I keep hearing good things about Mucker despite my negative experience (set up a meeting that was a no show and no follow up). But two friends of mine have been strong endorsements so I'm assuming it was just a mixup. 
-
-  
-
-[My background](https://t.sidekickopen10.com/s3t/c/5/f18dQhb0S7kF8c82QMW27Rw3m59hl3kW7_k2841CXdp3VPw-j-58ytGhW2dykgT1wsJRm101?te=W3R5hFj4cm2zwW4mKLS-3ZWVWBW3K2-zv1JxwY5W1Lyz993W1-CTw3K8R4y48T2&si=8000000002212955&pi=3bbcd12a-e8d5-4fce-e6e3-98bb940c0d3d): Grew up in Suburbia 0-10 and in (American) poverty aged 10-18) (holes in my socks, food stamps, homeless for a summer, etc.). Got a free ride for computer engineering and worked 9 years focused in hacking/cyber warfare/tech development. Served as a program manager at [DARPA](https://t.sidekickopen10.com/s3t/c/5/f18dQhb0S7kF8c82QMW27Rw3m59hl3kW7_k2841CXdp3VPw-j-58ytGhW2dykgT1wsJRm101?te=W3R5hFj4cm2zwW4mKLS-3H3br6w3yMkgD48R2&si=8000000002212955&pi=3bbcd12a-e8d5-4fce-e6e3-98bb940c0d3d) running a classified portfolio of $100M in tech programs, then started a cyber security tech firm. Spun out a patent and some code to a VC-backed startup that raised $18M, and wanted to launch several others but ended up selling to a PE-backed firm. I had an 8-digit exit and used those resources to start a charitable foundation. Have invested over 30 times as the CIO (as well as my own retirement funds) into over 25 tech firms while running [10X Venture Partners](https://t.sidekickopen10.com/s3t/c/5/f18dQhb0S7kF8c82QMW27Rw3m59hl3kW7_k2841CXdp3VPw-j-58ytGhW2dykgT1wsJRm101?te=W3R5hFj4cm2zwW4mKLS-1Q2Z1nw45lvZ548S2&si=8000000002212955&pi=3bbcd12a-e8d5-4fce-e6e3-98bb940c0d3d), an angel group (we also started a small fund I run.) Ramped down investing to a minimum to focus on the startup full time, and put $500k of my retirement money into it so I'm all in.
-
-  
-
-I've played basketball for 30+ years, my kids have all played (my oldest is 22) and I've coached for 15 years which inspired the idea. Plan to use the majority of my funds from this exit for our foundation and some other non profit initiatives.
-
-  
-
-Jason

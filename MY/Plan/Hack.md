@@ -1,10 +1,11 @@
-- [ ] gjs  google javascript
-- [ ] pick new list name for 'wait' with unique first letter
-- [ ] squirt google search
-- [ ] time tracker, don't merge if text comment exists
-- [ ] - [ ] figure out how to get notifications working
 - [ ] tracker bug hit delete & time get screwed
 
+- [ ] pick new list name for 'wait' with unique first letter
+- [ ] squirt google search
+- [ ] time tracker, don't merge if text comment exists ???
+- [ ] figure out how to get notifications working
+
+- [ ] gjs  google javascriptÏ
 - [ ] scrub <0xa0> non-breaking spaces from clipboard see argentina trip info
 - [ ] [[prj]] page still has duplicating :: entries
 - [ ] Take notes on call recorder [[Record]]

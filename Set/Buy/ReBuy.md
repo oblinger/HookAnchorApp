@@ -29,7 +29,7 @@ Brands: Amy's Organic, Health Valley, Wolfgang Puck, Eden Organic,
 _
 ### Grains & Nuts
 #### Azure Standard
-
+buckwheat
 - [Azure Standard](https://www.azurestandard.com/):   ==> [Steel Cut Oats](https://www.azurestandard.com/shop/product/food/cereals/hot/whole-grain/steel-cut-oats/oats-steel-cut-organic/10944?package=CE228),  [Barley](https://www.azurestandard.com/shop/search/barley), Rye, Oats, Lentils, Soy Curls, Brown Rice, Flaxseed, Teas, Soup Mix   ==> Millet
 	- [SPICES]  [Cumin](https://www.azurestandard.com/shop/product/food/spices-seasonings/spices/cumin-seed/ground-powder/cumin-seed-ground-organic/7566?package=HS607), [Pepper](https://www.azurestandard.com/shop/product/food/spices-seasonings/spices/ground-pepper/black/pepper-ground-black-organic/9871?package=HS604), [Cyanne], [Curry Powder], 
 		- [Mustard Powder], [Onion], [Garlic], [Red Chili Peppers], [Paprika], 

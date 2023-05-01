@@ -1,3 +1,6 @@
+- [x] - [ ] qq handling
+- [x] create 'sub' entry can't find 'path'
+- [x] Jeremey gift
 - [x] ben check
 - [x] one time xfr
 - [x] sheet

@@ -1,21 +1,42 @@
 [[SV]]   [CEO](https://www.linkedin.com/in/jsyversen/)  [[@Sports Visio]]  	 [Calendly](http://calendly.com/syversen),  [[SV]], 
-
-
 - [[2023 Jason Tasks]] - 
 
+TOPICS
+- POSSESSIONS - Possessions Analysis - 
+- 
+- DAN-ML - 
 
-T = 7
-LF = 9
-L = 6
 
-31 = T + L + LF + TF
-22 = T + L + LF
-15 = L + LF
-9 = LF
-
-9 = TF = 31 - 22
 
 # LOG
+
+### 2023-04-30  Response to Tweet about Company Strategy
+
+
+
+
+### 2023-04-28  Lichty Craziness
+
+
+Team gets a C+ for its response to "hey we just committed to 1000 games, drop everything else and make this work"
+- We have never 
+
+
+LICHTY
+--> 6am the way I planned to record games last night wont work, I am driving to the tournament now and need a solution.
+
+- upload w/ Wi-transfer use Virtual box to add game.
+- build import tool; better than boxes
+- upload using record app because file names are better
+- upload using gallery
+- upload to a hard drive
+- batch ingest now working, but too hard to use wi-transfer
+- Don't want to use external drive; need android app
+- excel sheet google calcs
+- TUE-21 (ok we will fix other bugs on Prod.   build player min on Stage and do manually until min completed & tested.)
+	- FRI-28 The MM-team will fail to do player min fully manually and I am 3 hours late delivering to customer.  Can someone write a macro.
+
+
 
 ### 2023-04-27  AI will replicate
 
@@ -27,9 +48,8 @@ Still his conclusion that one cannot rely on an AI mote is still valid.  BECAUSE
 Even though the market at the bottom is the most fractured, and thus the hardest to acquire, I think direct value to player/parent/coach could be among the most sticky and valuable network available to us.  Once a parent has a year's worth of games in our system and links on their social media to our clips they are going to want to stay with our service, plus there is the HUDL-like network of AAU teams and shared games etc.  I dont see any other available space like that with such a sticky customer-base.  Still we might need to land a different kind of partnership (like Cerebro) in order to drive adoption in the ultimate target market.
 
 
-### 2023-04-24  [[reset]]
-
-### 2023-04-10  Feedback Call
+### 2023-04-24  F90-CALL2 -   [[reset]]
+### 2023-04-10  F90-CALL3 - Feedback Call
 
 - How am I doing?
 

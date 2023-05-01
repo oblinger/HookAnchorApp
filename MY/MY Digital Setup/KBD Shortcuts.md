@@ -40,12 +40,12 @@
 | ,     |                   |                        |                  |                        |
 | .     |                   |                        |                  |                        |
 | /     |                   |                        |                  | 1 Password             |
-| ~     |                   |                        |                  |                        |
+| ~     |                   |                        | TIME TRACKING    |                        |
 | LT    |                   | go PANE left           |                  |                        |
 | RT    |                   | go PANE right          |                  |                        |
 | UP    |                   | go PANE above          |                  |                        |
 | DN    |                   | go PANE below          |                  |                        |
-| SPACE |                   | TIME TRACKING          |                  |                        |
+| SPACE |                   | go FINDER on folder    |                  |                        |
 | ENTR  |                   | obsidian GOTO page     |                  |                        |
 | INS   |                   | INSERT line            |                  |                        |
 | DEL   |                   | DELETE line            |                  |                        |
@@ -67,7 +67,7 @@
 | F2    | tgl PLANNING view |                        |                  |                        |
 | F3    |                   |                        |                  |                        |
 | F4    |                   |                        |                  |                        |
-| F5    | SEARCH markdown   |                        |                  |                        |
+| F5    | SEARCH markdown   |                  	      |                  |                        |
 | F6    |                   |                        |                  |                        |
 | F7    |                   |                        |                  |                        |
 | F8    |                   |                        |                  | Obsidian URL           |
