@@ -1,3 +1,8 @@
+## Installation
+
+- https://1password.com/downloads/
+- Install 1password
+- One web page click 'install' for each browser  (scroll down a little)
 
 ## Install Info
 oblinger@gmail.com

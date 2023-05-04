@@ -9,6 +9,13 @@
 - [ ] Find babysitter
 
 
+
+
+# LOG
+- [[2023-05 Cool Kids]] Cool Kids
+
+
+
 LINKS:  [[Babysitting]], [[2022-05 ELI next school]], 
 
 ## HOW TO

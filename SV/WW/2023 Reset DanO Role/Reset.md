@@ -16,8 +16,32 @@ OUR DESTINATION
 - Jason owns Investors w support from Sam and Dan.
 - VP-Eng owns Tactical SW Delivery.  Oversight by Dan or Jason.
 
-### 2023-04-30  Reset notes
+### 2023-05-03  Elbows out
 
+- 
+
+### 2023-04-30  KEY TEAM GAPS
+
+#### Team Tasking
+- 1000 Cerebro games WITH MINUTES - 
+	- Had not significantly used the annotation team 
+	- Did not have a product that even did minutes
+	- Did not really do minutes for anyone
+	- In a moment when stage have many feature not pushed to production
+
+#### PM - Project Management
+
+
+#### QA
+
+
+
+#### TESTING -
+
+
+
+
+#### OTHER - 
 
 TACTICAL REALITIES FOR THE SW TEAM
 {{NCK: here I want to summarize}}

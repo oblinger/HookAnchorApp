@@ -1,7 +1,12 @@
-
-:: [[Doc 1Password]],   [[Doc Keyboard Maestro]],   [[Karabiner Notes]]
 ! Mac Related Software and Configurations
 
 
 - [[DocMac]] - 
 - [[MAC Apps]] - 
+- [[MAC How To]] - 
+- [[MAC Build]] - 
+- [[MAC Other HW]] - 
+
+- [[Doc 1Password]],   
+- [[Doc Keyboard Maestro]],   
+- [[Karabiner Notes]] - 

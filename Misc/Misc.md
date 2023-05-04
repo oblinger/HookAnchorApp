@@ -1,4 +1,4 @@
-
+[[Record Notes]] 
 :: [[Glossary]]
 [[Public Notes]] 
 :: [[Untitled]]

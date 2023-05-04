@@ -1,9 +1,38 @@
+- [ ] sam call
+- [ ] QApapers
+- [ ] QL tasks
+valere
+- [ ] costing of annotating game
+- [ ] spec for batch import
+- [ ] create thrive
 - [ ] fast track Jasu and TT
 - [ ] CV - Dan run config file execution
 - [ ] fast track QA
 - [ ] Crowdar
 - [ ] steroid creme
 - [ ] Eyes hurt
+
+
+
+
+
+
+
+
+annotation summaries
+https://drive.google.com/drive/folders/1Gv8XrtRo1zM9PDTE85CqZuiHDVsekYNY?usp=sharing_eip_m&ts=64512288
+
+
+
+
+
+
+
+
+
+
+
+
 
 The SportsVisio "A-round" Strategy (May 2023)
 - Achieve $1M in ARR from a growing set of customers

@@ -4,6 +4,26 @@
 
 
 # LOG
+
+### 2023-05-01  Prep for my Reset conversation
+- [[Reset]] planning
+
+- Think I want AI-team reporting to me, wonder if I want SW reporting to me
+- DONT want product details reporting up thru me.
+- DO want ownership of specific gaps (in technical product spec, and architecture)
+
+
+- MY Value on AI side
+	- Depth in ML / DL
+	- Driving tempo
+- MY Gap on AI side
+	- CV specific background
+	- Heavy life to get facile with code base & 2-years of R&D efforts
+
+
+- Why report-to-impt  Constrained in providing value on AI side.  
+- Limited in providing value 
+
 ### 2023-04-04 Navigating the choppy waters.
 
 

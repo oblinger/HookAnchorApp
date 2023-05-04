@@ -1,3 +1,9 @@
+- [ ] Backups - 
+## later
+- [ ] [[2023 Tournament Flow]]: Write it
+- [ ] [[HeadRm]]: 
+- [ ] [[2023 Competitive Analysis]]: 
+
 
 #### [[SV Wings]]
 - [ ] [[2023-02-00 CTOs corner]]: 

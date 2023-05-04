@@ -2,6 +2,7 @@
 # SV TOOLS (TARGETS)
 
 - [[SVT Bitbucket]] - 
+- [[SVT Clickup]] - 
 - [[SVT Confluence]] - 
 - [[SVT Jira]] - 
 - [[SVT Polaris]] - 

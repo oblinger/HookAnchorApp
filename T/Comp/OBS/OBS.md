@@ -1,7 +1,7 @@
 
 :: [[OBS API Docs]]
 
-MY SETUP:	[[OBS Projects]],   
+MY SETUP:	[[OBS Setup]],   [[OBS Projects]],   
 MY IDEAS:	[[Multi-List WorkFlow]],  
 HACKING:		[[Action Notes]], [[#ADD ITEM COMMAND|Add Item]],  [[#SEND ITEM COMMAND|Send Item]],  
 FORA:			[[Discord App]],  [Forum](https://forum.obsidian.md),   [Obsidian Website](https://obsidian.md)  [support@obsidian.md](mailto:support@obsidian.md)  
@@ -23,32 +23,6 @@ PLUGINS:		[Templater Docs](https://silentvoid13.github.io/Templater/internal-fun
 
 800-692-7793  my apple   (luke in tech support)
 - support 
-
-### KEY-REMAPPING
-#### CAPS-LOCK
-- CAPS operates as HYPER (Shift-Control-Option-Command)
-- CAPS alone generates Opt-Cmd-F12 which runs my Keyboard Maestro "global command" script
-
-#### TAB-KEY
-- TAB-ALONE --> Generates a 'TAB' key     (via Karabiner Rule)
-- TAB-MODIFIER --> Same as CTRL-CMD
-- TAB-Q --> CTRL-CMD-Q  (use System Preferences -> Keyboard -> Keyboard Shortcuts -> App Shortcuts -> All Applications
-	Press "+"  then add 'Lock Screen'  Shift-Ctrl-Cmd-Q    (this changes the default lock screen keyboard shortcut)
-- TAB-Q --> CTRL-CMD-Q --> Keyboard Maestro Macro to insert a tab key
-
-### PREFIX DATE ENTRIES
-
-- r	reference
-- t	text written by me to be sent via emailed, texted, etc.
-- m	info collected during a meeting
-- n	dated notes on a given topic
-- wp	Work Product
-
-Rocks  (maybe 'p' for projects)
-Daily notes
-Tiny
-
-
 
 
 

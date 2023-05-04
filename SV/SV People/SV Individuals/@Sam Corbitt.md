@@ -3,6 +3,21 @@
 
 # LOG
 
+### 2023-05-03  Contracting process
+
+
+
+
+The SportsVisio "A-round" Strategy (May 2023)
+- Achieve $1M in ARR from a growing set of customers
+- Use AI-stats augmented with human annotation to serve these $1M in customers,
+  with an ever decreasing cost structure that at no point puts an undue burden on our total monthly burn rate.
+- A fully automated near real-time capability for providing stats to some paying customer segment.
+
+
+
+
+
 ### 2023-02-27  Intro call
 
 

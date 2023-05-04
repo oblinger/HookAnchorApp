@@ -6,8 +6,15 @@
 
 | Date       | File                       | Notes                                                                                                                             |
 | ---------- | -------------------------- | --------------------------------------------------------------------------------------------------------------------------------- |
+| 2023-05-03 | [[@Sam Corbitt]]               | Contracting process                                                                                                               |
+| 2023-05-03 | [[Reset]]                      | Elbows out                                                                                                                        |
+| 2023-05-02 | [[MAC Build]]                  | Installation on 2023-M2                                                                                                           |
+| 2023-05-02 | [[MAC Build]]                  | Installation                                                                                                                      |
+| 2023-05-01 | [[@Nick Allen]]                | Prep for my Reset conversation                                                                                                    |
+| 2023-05-01 | [[MAC Build]]                  | Setup                                                                                                                             |
+| 2023-05-01 | [[MAC Build]]                  | 2023-05-M2-Build                                                                                                                  |
 | 2023-04-30 | [[@Jason Syversen]]            | Response to Tweet about Company Strategy                                                                                          |
-| 2023-04-30 | [[Reset]]                      | Reset notes                                                                                                                       |
+| 2023-04-30 | [[Reset]]                      | KEY TEAM GAPS                                                                                                                     |
 | 2023-04-29 | [[@Drew Ackerman]]             | The 3am Scoot-master-2000                                                                                                         |
 | 2023-04-28 | [[@Jason Syversen]]            | Lichty Craziness                                                                                                                  |
 | 2023-04-27 | [[@Joe Augenbraun]]            | Getting investors                                                                                                                 |
@@ -461,7 +468,7 @@
 | 2020-08-23 | [[Journal Old]]                | Lost at Sea but with good provisions                                                                                              |
 | 2020-08-17 | [[FIN]]                        | QL - AYI payments                                                                                                                 |
 | 2020-08-15 | [[Journal Old]]                | My Futures                                                                                                                        |
-| 2020-07-23 | [[DocMac]]                     | Applications folder                                                                                                               |
+| 2020-07-23 | [[MAC Apps]]                   | Applications folder                                                                                                               |
 | 2020-07-18 | [[FIN_Budget]]                 | Budget                                                                                                                            |
 | 2020-05-11 | [[OLD 2020 Weekly]]            | NOW COUNTING 90 SLOTS                                                                                                             |
 | 2020-04-27 | [[MED]]                        | Notes for doc meeting                                                                                                             |
@@ -566,7 +573,7 @@
 | 2015-00-00 | [[FIN]]                        | Jotter                                                                                                                            |
 | 2015-00-00 | [[FIN]]                        | Mom Phone                                                                                                                         |
 | 2015-00-00 | [[MED Sleep]]                  | Pill exploration                                                                                                                  |
-| 2014-12-10 | [[DocMac]]                     | WIFI CONNECTIVITY ISSIE                                                                                                           |
+| 2014-12-10 | [[MAC How To]]                 | WIFI CONNECTIVITY ISSIE                                                                                                           |
 | 2014-00-00 | [[FIN]]                        | Rent from Peter Berger                                                                                                            |
 | 2014-00-00 | [[FIN]]                        | Garage Spot                                                                                                                       |
 | 2013-03-03 | [[ReBuy]]                      | Standing mat                                                                                                                      |

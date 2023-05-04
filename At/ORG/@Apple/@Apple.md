@@ -4,7 +4,9 @@
 - 408-974-9604 Victoria Eaton  (Corp Executive Relations)  _[victoriae@apple.com](mailto:victoriae@apple.com)_
 - 
 
-## 2023 LAPTOP
+
+## DEVICES
+### 2023 LAPTOP
 
 
 APPLE CARE
@@ -13,7 +15,14 @@ APPLE CARE
 **Coverage End Date**			May 02, 2024
 **Agreement Number**			5773744682
 
+### 2020 Laptop
 
+Coverage End Date	September 18, 2020
+Agreement Number	970075117051737
+
+### 2017 
+Product	MACBOOK PRO (15-INCH, 2017)
+Hardware Serial Number	C02V811RHTD9
 
 ## INFO
 ~MASTER IN OBSIDIAN~

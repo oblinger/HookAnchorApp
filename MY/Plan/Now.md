@@ -1,5 +1,6 @@
+- QA docs to MM.  WITH CHECK LIST
 
-- [ ] James: 
+
 
 - [ ] [[QQ]]: New Ticket Flow
 - [ ] Headless games
