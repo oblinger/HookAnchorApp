@@ -19,6 +19,8 @@
 
 :: [[Alloy]],   [[Elastic Block Chain]],   [[Forum]],   [[Lean Canvas]]
 
+:: [[Alloy]],   [[Elastic Block Chain]],   [[Forum]],   [[Lean Canvas]]
+
 - [[Life Projects]] 
 :: [[Alloy]],   [[Elastic Block Chain]],   [[Forum]],   [[Lean Canvas]]
 

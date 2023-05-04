@@ -1,6 +1,5 @@
-  [@Melissa](@Melissa.md)
 
-
+- [[Msg]] - Log of messages
 - [[Text|TXTS]] - Partial log of outgoing messages.    [[Text|ALL TXT]] 
 - [[Letters]] - Formal correspondence 
 - [[COM Campaigns OLDER|Campaigns]] - Planned batched first-touch outreach

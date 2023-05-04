@@ -1,4 +1,4 @@
-- [ ] sam call
+- [x] sam call
 - [ ] QApapers
 - [ ] QL tasks
 valere

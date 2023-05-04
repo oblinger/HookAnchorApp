@@ -1,6 +1,5 @@
 
-:: [[FIN Accounts]]
-
+:: [[FIN Accounts]], 
 :: [[FIN_Budget]],   [[FIN Recurring]],   [[z old Bills]]
 
 
@@ -66,7 +65,7 @@ MONTHLY 4K
 _
 ## = CASH FLOWS
 
-TRACKING: 	SchwabGrandCentral, SchwabJointChecking, FreedomBills, AmazonGrocery, 
+TRACKING: SchwabGrandCentral, SchwabJointChecking, FreedomBills, AmazonGrocery, 
 			AmazonMisc, SapphireSpending, DoubleExtra
 DANO:		SchwabDanO, CapOne, Vanguard, PenFedOther
 
@@ -77,8 +76,7 @@ BUDGET SECTIONS
 - BIG FIXED ITEMS	--  Three huge single fixed expenses
 - FIXED BILLS			--  Long list of bills
 - VAR BILLS 			-- 
-
-- SUMMARY 			--  
+- SUMMARY 			--
 
 **Grand Central Income**
     $8000    27th  Dan's income

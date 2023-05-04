@@ -26,7 +26,7 @@ SETUP GITHUB ON NEW COMPUTER
       git push --set-upstream origin master
       git push origin
 
-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
+
 
 
 

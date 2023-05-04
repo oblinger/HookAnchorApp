@@ -274,9 +274,19 @@ To get DEL key to archive:
 	brew analytics off
 	brew update
 
+
+### brew xx Pandoc. (2023-05-03 installed again)
+
+# https://medium.com/macoclock/how-to-setup-pandoc-and-latex-on-macos-mojave-8e18fa71e816 
+brew install pandoc
+brew install librsvg python 
+brew install --cask basictex
+
+
+
 ### BREW SETUP
-     --  Google "Homebrew"  then cut/paste line into terminal window
-     --  install xcode licence as described, then rerun
+ --  Google "Homebrew"  then cut/paste line into terminal window
+ --  install xcode licence as described, then rerun
 
 BREW NOTES
      $ brew install xxxx    # Never as root
@@ -290,14 +300,8 @@ brew install python3 / emacs
 
 Jupiter Notebook:  https://medium.com/@blessedmarcel1/how-to-install-jupyter-notebook-on-mac-using-homebrew-528c39fd530f
 
-### brew xx Pandoc
-   # https://medium.com/macoclock/how-to-setup-pandoc-and-latex-on-macos-mojave-8e18fa71e816 
-    brew install pandoc
-    brew install librsvg python 
-    brew install --cask basictex
-
 ### brew xx clojure
-     $ brew install meld clojure
+ $ brew install meld clojure
 
 ### BREW OLDER
 #### brew older xx Utilities

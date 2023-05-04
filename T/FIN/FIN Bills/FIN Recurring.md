@@ -31,6 +31,7 @@ clean email
 - $15/m		Spotify Premium
 - $13/m		Peloton  7/31
 - $10/mo		APPLE - Apple iCloud 2TB Storage (Apple ID -> MyPic -> Plan)  (!!! Should be used by whole family)
+- $10/mo		GITHUB Copilot - pr
 - $9/mo		Dan's Apple iCloud
 - $7/mo		Apple TV+ 
 - $6/mo		WSJ - Wall Street Journal  (2023-02)
