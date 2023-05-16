@@ -1,3 +1,6 @@
+- 
+- [ ]
+- [ ] Investor plans
 - QA docs to MM.  WITH CHECK LIST
 
 

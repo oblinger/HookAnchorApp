@@ -5,6 +5,17 @@
 
 # Log
 
+### 2023-05-15  New Report To Call
+
+- When I joined idea was that J-S-D were 
+
+
+
+- 
+
+
+
+
 ### 2023-04-03  Catchup call
 
 

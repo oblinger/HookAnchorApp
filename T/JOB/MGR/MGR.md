@@ -8,6 +8,7 @@
 -   [MgrContracts](MgrContracts.md) [[MgrTracking]] 
 - [Contracts](Contracts/Contracts.md) 
   
+- [[MGR Negotiations]],  
 
 
 # ADVICE

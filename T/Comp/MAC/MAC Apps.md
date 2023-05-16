@@ -3,6 +3,9 @@
 # APPS (Appstore)
 ## xx 1Password  (not from here)   [[Doc 1Password]]
 
+## xx Amphetamine
+No Sleep replacement
+keeps mac from shutting down
 ## xx Be Focused Pro (Timer)
 
 ## xx Daisy Disk (disk size checking)
@@ -33,7 +36,7 @@ m
 ## xx Docs For X Code
 
 ## xx Easy Res
-
+jdk
 ## xx Evernote
 
 ## xx Free Cell
@@ -143,15 +146,31 @@ RIGHT DISPLAY
 ## xx Yoink
 
 # APPS (Paid)
-## xx 1Password  [[Doc 1Password]]  
+## xx 1Password  [[Doc 1Password]] 
+
 ## xx Bartender
 - See 1pass
 - Google:  Mac Bartender Download
 
 
+## xx Better Touch Tool
+
+Y S1-NW	U S1-W	I S1-E		O S1-Full		P S2-NW
+H S1-SW	J S2-W	K S2-E	L S2-Full		; S2-SW
+N S3-NW	M S3-NE	, S3-SW	. S3-SE
+
+
+IDEAS:
+- HOOKS MENU:	DF		== CAPS == Hooks Menu
+- QW	
+
+
 ## xx FoldingText    <<<<<<
 
-Download:  from Hogs Bay, then try to "BUY" enter wef234@gmail.com 94110 (already paid)
+3EF409D0-CE3E2555-9B0EF247-91DC8936-295D22C4
+
+
+Download:  from Hogs Bay, then try to "BUY" enter wef234@gmail.com 94110 (it will say already paid)
 Date:   2015-02-11
 Email:  wef234@gmail.com
 Paypal
@@ -545,6 +564,7 @@ URL:  about:config
 ## xx PaintBrush (from CNET)
 
 ## xx NoSleep     (Use MAC update.  select command line options)
+http://macupdate.com 
 
 ## xx Skype
 
@@ -568,7 +588,8 @@ URL:  about:config
 
 ## xx Visual Studio Code
 
-## --- probly yes above here ---
+## --- probably yes above here ---
+
 ## xx Yi Home
 (for camera devices we have??)
 
@@ -699,6 +720,7 @@ Then, type the following command in Terminal.app
 $ sudo tail -f /var/log/kernel.log
 
 ## xx SourceTree (from sourcetree associated with Atlassian)
+
 ## xx Gemini 2 (file duplicates finder)
 https://sites.fastspring.com/macpaw/order/complete
 id879701667977odr

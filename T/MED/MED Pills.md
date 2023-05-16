@@ -1,6 +1,16 @@
 
-L484       200mg Tylenol ???
+## == CONDITIONS ==
+### --- Acid Reflux ---
+- Prilosec - Omeprazole 20mg - This worked well, but had a rebound effect after months of use.  2023-01-??
+- Pepcid AC - Famotidine 10mg & 20mg - 2023-04-?? Started
+
+### --- SLEEP ---
 ZPL / 10   Zolpidem 10mg  (Ambien)
+
+
+### --- HEAD ACHE ---
+
+L484       200mg Tylenol ???
 
 
 ## === DAILY PILLS/VITAMINS ===

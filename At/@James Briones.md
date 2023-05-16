@@ -1,7 +1,10 @@
 =[[START]]     [Head of Operations](https://www.linkedin.com/in/jamesmarvinbriones/)  [[@Rzero]]   #Soon 
 - Head of PH operations @ AF
 
-6pm PST - 6am PST -- Normal waking hours.
+	Wake	11p PST - 2pm PH
+	Jog	3pm PST - 6am PH
+	Sleep	5am PST - 8pm PH
+	6pm PST - 6am PST -- Normal waking hours.
 
 Sleep at 7-8 PST.
 

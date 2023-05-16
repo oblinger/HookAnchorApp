@@ -1,4 +1,6 @@
 
+:: [[Cmd Folder]]
+
 :: [[Msg]]
 
 :: [[Letters]],   [[COM Msg]]

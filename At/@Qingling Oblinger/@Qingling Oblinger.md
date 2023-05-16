@@ -1,9 +1,11 @@
+
+:: [[QL _Interviewing]]
  [[FAANG]]    [Product Data Science Lead](https://www.linkedin.com/in/qingling-ni/)  [[@Google]]  (Waymo)
 
 
  
 
-  [Interviewing](Interviewing.md)
+  [QL _Interviewing](QL%20_Interviewing.md)
   [Interviewing](MISC/People/Family/Qingling/Interviewing.md)
 
 ## DATE NIGHTS

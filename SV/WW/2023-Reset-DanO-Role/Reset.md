@@ -1,8 +1,15 @@
 
-Web-UI - 
+- [[Reset Doc]] 
 
 
-(See [[2023 Reset DanO Role]])
+### __
+- [my doc](/Users/oblinger/ob/kmr/SV/WW/2023 Reset DanO Role/Proposed Path.docx)
+
+
+- [Proposed Path](/Users/oblinger/ob/kmr/SV/WW/2023 Reset DanO Role/Proposed Path.docx) 
+- 
+
+(See [[2023-Reset-DanO-Role]])
 
 ### __
 ASK
@@ -15,6 +22,276 @@ R&R
 OUR DESTINATION
 - Jason owns Investors w support from Sam and Dan.
 - VP-Eng owns Tactical SW Delivery.  Oversight by Dan or Jason.
+
+
+
+### 2023-05-15  Executing the reset
+
+
+
+### 2023-05-08  FRIDAY DISCUSSION - Key needs / Simple Plan
+
+
+
+- **AI-SHIFT** - Both personal interest and best value to company it is clear that overtime I will shift increasingly towards AI.  its not in question.
+- **ULTIMATE ROLES** - But we should get clear about ultimate roles targeted for the three of us:  here is a start; how we max our respective value; discuss/confirm:
+  - JASON (Investors & Sales).  SAM (Operations both internal and customer facing).  Dan (AI and SW).  
+    JASON (CEO gravitas & abilities).  SAM (Company Ops.  High-stakes client decision making.  Org building). DAN (tech depth in both AI and SW)
+- **IN WEEDS BUT UP SOON** - Roles, Processes, Escalations, Delegations (instant tracking only as needed, very targeted origination from me)
+- **SAM-DAN SPLIT** - Sam/Dan long term split.
+	- Customer Facing Needs, Annotation optimization, and PM details represent a MASSIVE complexity.
+	- Hiring Choices, SW Processes, Technical / Architectural choices, Annual Evaluations, 
+- **ON AI-SIDE**   
+	- Joint Planning - Tempo, Making Bets, Parallelization.
+	- Cleave Parts - ML deep throw.  Drive shot replay mode.  AI-record product.
+	- Lean-in-vs Sit Back; Divide & conqueror; consensus leadership.
+
+- **REPORT-TO CHANGE** - If ever, then now.
+	- TEMPO - have a good working relation w/ both.  Still it is awkward to ask if we can squeeze something a bit faster.  I am not their boss!
+	- DYNAMICS - either report or compete:  Brian hid:  test;  silence after speaking up.  
+	  Mike hiring; demos; radio silence anytime I suggest or ask; what it we XXX, that is in next sprint;   can feel the chill.
+	- STEP BACK - process, report-up, escalate
+	- STEP IN - Jointly driving tempo & tactical strategy.
+	- BRIAN'S SIDE - Just ratifying what already is: focused on hiring, architecture, technical deliverables.  Cust Facing flows up thru Jack as now, exit ASAP.
+	- MIKE'S SIDE - Make very few changes; establish his "kingdom" & chain of command as forcing function for us to talk.
+		- Progressively suggest ideas for tactical velocity &
+		- Dig into applications deeper applications of DL in player tracking.
+		- Cleave off "special ops" & fold results into larger flow
+
+- ML PARTS
+- 	- Wanted player ID on shot map; even if we needed to ignore many false negatives and just pick the ones we were confident in.
+		- Only 50 frames / 3-second long tracks;  only 60% accuracy when we get a shot on Jersey.
+	- Asked about doing a experiment using specially prepared training set just to see if DL could be helping --> will be doing that in two sprints.  UGH.
+		- GRZ Already tried for a month; I was not happy w/ his approach, still I am sure I am not going to just walk in, have an idea and save the day.
+		- It will take many tries and many ideas, but it would be good to get into the thick of it!  (will take focused time and effort on my part!)
+
+- **BIG CHANGES** 
+	- Lean in vs. sit back.
+	- Cleave off pieces for independent action
+	- Divide & conquer
+	- Consensus leadership
+
+
+- STAGES W/ AI TEAM - 
+	- Attend meetings & contribute as Mike is.
+	- Plan w/ mike looking for tactical moves to achieve increased velocity
+	- 
+
+
+- We need a VP-ENG & ultimately it should not me, but for now it will be me.
+- Leverage Brian where he is best: in the weeds on this issue or that issue, and keeping scrum org.
+  => Maybe we replace him, or we expand around him
+- Make the report to structure explicit so I can straightforwardly direct the team and have clear authority to create processes etc.
+
+- Drive tempo and leadership in both SW and AI
+	- Report to clarity will allow me to work more firmly & simply w. Brain
+	- Report to with Mike will allow me to drive tempo
+		- Switch from sitting back accepting, to leaning forward suggesting.  each of us working closely w/ some is better.
+		- Unified strategy leverages the small slices of my time, and his time too.
+		- Best uses our FIVE guys for different roles sometimes, not just all doing the same.
+		- Overall just drive TEMPO
+
+AI-side
+- Need to be in the week-to-week details with Mike to push for tempo
+	- Initially with a light touch, just
+- He has solid intuitions and a ton of CV experience that complements my ML experience, and he is a good team-lead giving good tactical advice to his team at the high level.
+
+### 2023-05-06  Email to send.
+
+
+  
+Sam, 
+
+Jason and I had a text message exchange on Thursday, we were noticing that a lot of our acute failings right now could be fixed by getting your operational leadership into the mix.  Figuring out how structure your leadership into our customer and operation success are key to allowing Jason to more fully focus on sales and fundraising and me on technical leadership in AI and SW.  More important than that, I think we need this ASAP just to keep from loosing our existing customers!
+
+  
+
+Jason asked me for some concrete ideas in that area, I have some, but the devil is in the details in getting these structures right.  I am worried in particular that you will need the right levels of support below you in order for this arrangement to be workable for you.  Perhaps we should schedule a 3-way call in the near future to just talk about such an alignment.
+
+  
+
+--Dan
+
+  
+
+  
+
+  
+
+Here is Thursday's text conversation:
+
+  
+
+DAN:  My biggest fire of the second is the fact that two days in a row now, the MM team got stuck… we lost a WHOLE evening of work, now our team is reacting and they will be off for a day.  Structurally this is very broken.  (Not blaming, Issac is pulling our fat from the fire as we just have no other QA for the next week at least). But I want to fix this, either by pulling our team forward or their team back.  will keep ya posted…
+
+  
+
+JASON:  Yeah, we need to get Mark out of that process and let you and Sam run that process. Mark just runs around doing whatever comes to mind. He’s got a great startup/hustle mindset but it breaks easily and isn’t efficient and doesn’t scale well.
+
+  
+
+DAN:  Very good hustle… but he is ANTI-process and he speak at one volume level….   11.   😊
+
+  
+
+JASON: Exactly
+
+Everything is an emergency, nothing works, he told us this earlier, etc. etc.
+
+Love the hustle and motivation to get things done but it’s exhausting too
+
+You and Sam also care and get stuff done but without injecting noise into the system
+
+  
+
+DAN: Well it tears up the team.  So at the very least he needs to be buffered.   Yes I would **LOVE** to get sam into direct management of some of these parts, I think it fit him super well.
+
+  
+
+JASON:  Agreed. I’ve already asked him to get more involved so loop him in
+
+He technically owns annotation since Jack works for him now and that’s an operations function. 
+
+  
+
+DAN: +1!
+
+  
+
+JASON: He’s a little stressed with the finance stuff being neglected but that’s because he likes to do everything on time and cross every t
+
+  
+
+DAN:  This is a key function, and a fast moving one, but it needs leadership!
+
+  
+
+JASON:  
+
+I’m ok with ignoring that stuff for a bit and managing this since it’s super important and filing tax forms with Florida or whatever isn’t. 
+
+Plus James and Charlotte aren’t available at the moment due to finals and Kate is leaving
+
+Once they’re done it will be better since they’ll be free Ft over the summer
+
+  
+
+DAN: +1.  I think we need to figure out a good structuring from a Roles and Responsibilities perspective that will put Sam in the right position to lead that function and have the right boots on the ground folks to support him too.  Will copy this conversation for him to see too.
+
+  
+
+JASON:  Excellent, totally agree
+
+  
+
+DAN: +1
+
+Sam, 
+Jason and I had an text message exchange on Thursday, we were noticing that a lot of our acute failings right now could be fixed by getting your operational leadership into the mix.  Figuring out how align you into operational leadership is key in allowing Jason to more fully focus on sales and fundraising, and me on technical leadership in AI and SW.  More than that I think we need it ASAP just to keep from loosing our existing customers!
+
+Jason asked me for some concrete ideas in that area, I have some, but the devil is in the details in getting these structures right.  Perhaps we should schedule a 3-way call in the near future to just talk about such an alignment.
+
+--Dan
+
+
+Here is Thursday's text conversation:
+
+DAN:  My biggest fire of the second is the fact that two days in a row now, the MM team got stuck… we lost a WHOLE evening of work, now our team is reacting and they will be off for a day.  Structurally this is very broken.  (Not blaming, Issac is pulling our fat from the fire as we just have no other QA for the next week at least). But I want to fix this, either by pulling our team forward or their team back.  will keep ya posted…
+
+JASON:  Yeah, we need to get Mark out of that process and let you and Sam run that process. Mark just runs around doing whatever comes to mind. He’s got a great startup/hustle mindset but it breaks easily and isn’t efficient and doesn’t scale well.
+
+DAN:  Very good hustle… but he is ANTI-process and he speak at one volume level….   11.   😊
+
+JASON: Exactly
+Everything is an emergency, nothing works, he told us this earlier, etc. etc.
+Love the hustle and motivation to get things done but it’s exhausting too
+You and Sam also care and get stuff done but without injecting noise into the system
+
+DAN: Well it tears up the team.  So at the very least he needs to be buffered.   Yes I would **LOVE** to get sam into direct management of some of these parts, I think it fit him super well.
+
+JASON:  Agreed. I’ve already asked him to get more involved so loop him in
+He technically owns annotation since Jack works for him now and that’s an operations function. 
+
+DAN: +1!
+
+JASON: He’s a little stressed with the finance stuff being neglected but that’s because he likes to do everything on time and cross every t
+
+DAN:  This is a key function, and a fast moving one, but it needs leadership!
+
+JASON:  
+I’m ok with ignoring that stuff for a bit and managing this since it’s super important and filing tax forms with Florida or whatever isn’t. 
+Plus James and Charlotte aren’t available at the moment due to finals and Kate is leaving
+Once they’re done it will be better since they’ll be free Ft over the summer
+
+DAN: +1.  I think we need to figure out a good structuring from a Roles and Responsibilities perspective that will put Sam in the right position to lead that function and have the right boots on the ground folks to support him too.  Will copy this conversation for him to see too.
+
+JASON:  Excellent, totally agree
+
+DAN: +1
+
+
+
+
+
+
+
+
+
+I think it is also essential if we are just going to
+
+aligning me more into deeper technical leadership in SW and AI
+
+
+dreaming of ways that your prowess 
+
+Sam, 
+
+Jason and I had an text message exchange on Thursday and I told him I would copy you on those texts since we were talking about how to split customer success and product/project management to be led by you, away from technical SW leadership, Architecture, etc. to be led by me.
+
+I think figuring out how best organize the three of us in order to get , so we get the most benefit from your leadership is 
+
+Here are those texts, and also the beginnings of a document I have been noodling on regarding how we might best split our roles to be utilize our respective talents.  I was very excited to learn this weekend that you are already taking point on the relationship with Cerebro.  This is *exactly* the kind of splitting that I was dreaming we might do!!  Because there is SO many nuanced, high-tempo details in the customer-facing work, we will  need to provide you with strong support, still I think it is a great match for you experience, and will allow me focus in areas where I have best match to my background.  Here are the texts with Jason, and also that beginning of the document I had been noodling:
+
+
+
+
+
+
+
+
+
+### 2023-05-05  Why Change Report To
+
+#### SW Side - documenenting what is already true
+- The change on SW side is actually just documenting what already exists in practice.  Brian already brings everything to me before bringing it forward you guys Jason/Sam
+- We already strategize about how to meet our goals in everything from how to combine multiple hires strategically within budget.  to ways to handle back end data, to 
+- I already delegate things down for management by him within his team
+
+#### Would let me push tempo in a clearer way
+- he is a pliable guy, so me merely suggesting that maybe we can aim to push a requested Mark feature before the weekend might be accepted w/o me having formal authority.  
+
+#### Most Impt: Escalation and Reporting
+- Being Brians boss make it clear who he reports to.  This allows me to create unambioguous escalation and reporting requirements.
+
+in my future world I will be far less in the weeds of many of the day to day issues of the SW team, BUT we will have very practiced pathways of escalation and reporting, so w/o even checking in I am already confident that when it is critical for me (or you guys) to be in the loop on some issue of the moment, we WILL be in those weeds... and not 3 hours later, but just as soon as the issue presents.
+
+Ideally from the lowest to the highest in the org we all have our escalation rules so we alert upward quickly, and ideally with progressively greater wisdom added to the alert about how to resolve it.  And indeed when it is running correctly.  Brian wont even need to alert me in many cases, yet nothing slips thru the cracks because he WOULD alert me when needed.
+
+This is the jet fuel!  It allows me to maintain strong outcomes, w/o being in the details much of the time.
+
+
+
+Will allow me to build clear escalation & reporting requirements that will allow me to eventually step back in hours per week
+
+
+#### AI - Push vs Pull
+Right now 
+
+
+#### AI - Tempo
+
+
+
 
 ### 2023-05-03  Elbows out
 

@@ -1,7 +1,8 @@
 ### Work Projects
+=	[[Agenda]]		[[2023 SV CV New Agenda]].
 =	[[Lichty]]			[[2023 Customer Support Tasks]].
 =	[[RNR Notes]]		[[2023 SV Roles and Responsibilities]].
-=	[[Reset]]			[[2023 Reset DanO Role]].
+=	[[Reset]]			[[2023-Reset-DanO-Role]].
 =	[[Roadmap]]		[[2023 SV Roadmap]] - 
 =	[[Baller]]			[[2023 Baller TV Partnership]].
 =	[[Demo]]			[[2023 Bridge Round AI Demo]].
@@ -14,7 +15,7 @@
 v	[[SV Letter]]		[[2023 SV Investor News Letter]].
 v					[[2023 Basketball Stats]] - 
 
-s	[[GPT Rpt]]		[[2023 GPT Report]] - 
+s	[[The GPT Rpt]]		[[2023 GPT Report]] - 
 s	[[Pillars]]	 		[[2023 Four Pillars]] - 
 s	[[Blog]]			[[2023 CTO Corner Blog]] - 
 w					[[2023 Record Flow]] - 
@@ -38,5 +39,3 @@ l					[[2023 Competitive Analysis]] -
 .					[[2023 Blog Announce and Bio]] - 
 ?					[[2023 Brians Birds Eye]] - 
 .					[[2023 Customer Acquisition]] - 
-
-qq

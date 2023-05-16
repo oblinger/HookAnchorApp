@@ -1,4 +1,6 @@
 
+:: [[Preferences App]],   [[SV Confluence Webpage]],   [[Thistle]],   [[gCALENDAR Webpage]]
+
 :: [[SV Clickup Webpage]],   [[SV Google Drive Webpage]],   [[War Room Webpage]]
 
 :: [[Public Gdrive Webpage]],   [[Sub lime Text App]]

@@ -15,7 +15,14 @@
 - [Website troubleshooting](https://support.horizonfitness.com/hc/en-us/sections/4407799193613-Troubleshooting) 
 - [Owners Manual](https://support.johnsonfit.com/resource.php?url=http://productload.johnsonfit.com/inc/uploaded_media/5f012b36983d99af18d9e7d4c11bb076/owners_guide/99017f16054fc17d01630ddf29f5b2d6.pdf) - 
 
+
+800-244-4192. #4. 
+
 # LOG
+
+### 2023-05-10  Send out a Tech
+
+Warantee Team: 800-244-4192. #2. 
 
 ### m2023-01-04  Service call
 

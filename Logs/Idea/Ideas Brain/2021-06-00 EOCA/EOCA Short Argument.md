@@ -1,4 +1,14 @@
 
+# THE ROLLUP
+
+### 2023-05-09  Rollup Argument
+
+- BOOTSTRAPPING IS THE KEY - 
+- AI JUMPS - 
+- MISSING LINK - 
+
+
+# THE PARTS
 
 
 - BOOTSTRAPPING IS KEY - 

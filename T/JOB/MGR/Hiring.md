@@ -1,6 +1,7 @@
 
 - [[ROLODEX]], 
-- [[CRM]] 
+- [[CRM]]
+	- [[Employee Notes]]. in
 
 ### Hiring/Mgt
 -- ACCOUNTABILITY -- which role did you have largest accountability.  what happened.

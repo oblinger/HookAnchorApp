@@ -6,7 +6,21 @@
 
 | Date       | File                       | Notes                                                                                                                             |
 | ---------- | -------------------------- | --------------------------------------------------------------------------------------------------------------------------------- |
+| 2023-05-15 | [[@Brian French]]              | Change in Report To Structure                                                                                                     |
+| 2023-05-15 | [[@Mike Seibert]]              | New Report To Call                                                                                                                |
+| 2023-05-15 | [[Reset]]                      | Executing the reset                                                                                                               |
+| 2023-05-11 | [[@Isaac Cohen]]               | Unsent                                                                                                                            |
+| 2023-05-10 | [[@Horizon Fitness]]           | Send out a Tech                                                                                                                   |
+| 2023-05-10 | [[@Jason Syversen]]            | COMPANY STRATEGY EMAIL                                                                                                            |
+| 2023-05-09 | [[EOCA Short Argument]]        | Rollup Argument                                                                                                                   |
+| 2023-05-08 | [[Reset]]                      | FRIDAY DISCUSSION - Key needs / Simple Plan                                                                                       |
+| 2023-05-07 | [[QQ]]                         | Product Spec                                                                                                                      |
+| 2023-05-06 | [[QQ]]                         | Urgent Ticket Creation and Dispatch                                                                                               |
+| 2023-05-06 | [[Reset]]                      | Email to send.                                                                                                                    |
+| 2023-05-05 | [[Reset]]                      | Why Change Report To                                                                                                              |
 | 2023-05-04 | [[Msg]]                        | increasing MM-SV overlap                                                                                                          |
+| 2023-05-04 | [[Msg]]                        | Friday production push                                                                                                            |
+| 2023-05-04 | [[QQ]]                         | Many Mangos                                                                                                                       |
 | 2023-05-04 | [[QQ]]                         | WAR ROOM                                                                                                                          |
 | 2023-05-03 | [[@Sam Corbitt]]               | Contracting process                                                                                                               |
 | 2023-05-03 | [[Reset]]                      | Elbows out                                                                                                                        |
@@ -29,7 +43,7 @@
 | 2023-04-26 | [[@PenFed]]                    | Returning call from them                                                                                                          |
 | 2023-04-26 | [[QQ]]                         | QA hires                                                                                                                          |
 | 2023-04-26 | [[Reset]]                      | Manhattan Project                                                                                                                 |
-| 2023-04-24 | [[@Jason Syversen]]            | F90-CALL2 -   [[reset]]                                                                                                           |
+| 2023-04-24 | [[@Jason Syversen]]            | F90-CALL2 -   [[Reset]]                                                                                                           |
 | 2023-04-24 | [[@Martin Reyes]]              | intro                                                                                                                             |
 | 2023-04-24 | [[Reset]]                      | Jason Response                                                                                                                    |
 | 2023-04-24 | [[Reflections]]                | Lesson Learned:  I am too tactical, too insecure, not proactive @ high level, & running from fear                                 |
@@ -37,9 +51,9 @@
 | 2023-04-23 | [[Phone]]                      | SF BAY AREA HEATED POOLS                                                                                                          |
 | 2023-04-21 | [[Eli Interactions]]           | Ms Amanda & Ms Soumya                                                                                                             |
 | 2023-04-21 | [[SV Product]]                 | Customer Onboarding Pathways                                                                                                      |
+| 2023-04-21 | [[2023 SV Strategic Plan]]     | Strategic Tasks                                                                                                                   |
 | 2023-04-21 | [[Reset]]                      | AI Deliverables                                                                                                                   |
 | 2023-04-21 | [[Reset]]                      | discussion                                                                                                                        |
-| 2023-04-21 | [[2023 SV Strategic Plan]]     | Strategic Tasks                                                                                                                   |
 | 2023-04-20 | [[@Apple]]                     |                                                                                                                                   |
 | 2023-04-20 | [[SV CV Team]]                 | Big Ideas                                                                                                                         |
 | 2023-04-20 | [[SV CV Team]]                 | What are people doing?                                                                                                            |

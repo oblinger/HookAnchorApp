@@ -1,14 +1,31 @@
 
 
 - [Shared Folder](https://drive.google.com/drive/u/4/folders/1GdLWPNXw6lNDp9kxLjIQsaX1zAcnszAl) - 
-
-
 - [BitBucket MVP Algos](https://bitbucket.org/SVEngineering/workspace/projects/MVPAL) - 
 - [JIRA](https://software-engineering-team.atlassian.net/jira/software/projects/AIT/boards/25) 
 - [CONFLUENCE](https://software-engineering-team.atlassian.net/wiki/spaces/SVAI/overview) 
 
 
-## = CONFLUENCE INFO
+## = IDEAS
+
+#### Bayesian Track-let Identity Mapping
+
+#### Deep Learned Identity Model
+
+## = MISC INFO
+
+### METRICS 
+#### J-Check
+#### P-Check
+
+
+#### Tracker Info
+- Velocity
+- IOU
+
+94%
+05
+
 
 
 

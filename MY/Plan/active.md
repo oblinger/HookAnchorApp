@@ -1,3 +1,6 @@
+- [ ] Check Penfed that payment 
+- [ ] Diaries setup
+- [ ] QL tasks: Fix car; sell stuff
 - [ ] Yearbook
 - [ ] [[CRM]]: 
 - [ ] Sammie

@@ -1,6 +1,103 @@
-- [[QQ Folder]]
+app- [[QQ Folder]]
 
 # QUICK - QUICK work projects
+
+
+but the fog of war is still quite thick around this issue.  I honestly cant tell what can and cannot be done w/ the tool in this moment.  One thing that would be 
+
+
+### 2023-05-06  Urgent Ticket Creation and Dispatch
+
+ISSUE: We are sometimes needlessly loosing tempo because of management overhead in reacting to fast moving critical issues.  This is very understandable as there is a lot going on.  Still perhaps a bit of process can greatly help this.
+
+ISSUE: Some bugs/urgent features are being transmitted in slack but not getting into bug tickets, and more importantly are not getting into fully specified Jira ticket form and dispatched fast enough.
+
+QUESTION #1:  We might require a greater number of folks who report issues, put them directly into Jira.  This saves some copy and pasting mostly on the part of Jasu and Jack.  But I am not sure if we should push for this or not, here are some considerations:
+- folks still wont always do it.  Slack is so instant, folks will go to a slack channel first any way.   "holy crap XXX is not working!!"
+- even if they create Jira tickets, they will often not be detailed enough for action either Brian, Jack or Jasu will need to really look at the ticket and understand, has all of the needed information been captured?  If not then will need to proactively push to get more information right as they read it.
+ 
+OBSERVATION #1:  for the fastest moving issues/bugs maybe slack is the best first place for those issues.  people seem to watch slack more than jira tickets... it is more set up that way.  I know for sure that senior leadership is more tuned into slack than anything else.  Thus regardless of what we do with Jira, we probably ALSO want a slack message for critical issues just so it has correct visibility.  
+
+QUESTION #2:  Thus maybe the simplest is for us to report directly in slack, and have that copied into a Jira ticket at the time it is dispatched (by Brian/Jack).  Alternatively we could require that a Jira ticket is created by the person reporting the issue, and then simply reference that ticket in slack.  That would also give visibility, but I expect there may be resistance and/or bad ticket writing, of course you guys can edit the ticket as you dispatch.  What is best here?
+
+
+
+ISSUE: We have too many "highest" priority tickets, so when an even higher priority ticket comes into the system, we have no way to watch those specifically.
+
+PROPOSED SOLN: We add one higher priority as existing priorities are already used pretty well:
+
+Medium: It is natural for this priority to be the default priority.  Medium means an issue is important and needs to be address in a timely fashion.
+High: Indicates that an issue is 'high' priority.  It is specifically being pulled above the default priority.
+Highest: Indicates that an issue is especially important, if it is not going to be address within the next sprint, then a remediation discussion is REQUIRED with the customer.  The ticket itself should explain what remediation the client has accepted if getting it into the present sprint is not going to happen.
+CRITICAL: This kind of issues is a CODE RED.  "drop everything". wake people from sleep, and 
+
+
+ISSUE: Quick look board
+
+### 2023-05-07  Product Spec
+
+ISSUE:  We are moving fast and cutting corners, as expected in startups.  But in the area of product spec it is really biting us hard!
+ISSUE:  We are NOT writing even the barest of spec in some cases, and then are unhappy with what is built.
+ISSUE:  Or we do have a spec, but then we do not gain consensus about whether or not we are going to follow it.
+ISSUE:  Compromises will need to be made and we need a mechanism that will FORCE such compromises to be made rather than simply executing w/o consensus.
+QUESTION:  Dan favors Google-Docs over Confluence for ease of editing, and for the look of the document, but others may prefer confluence.  Either works well as they can be linked easily to a Jira ticket.  We could just have two directories and allow the spec writer to choose, or we could pick as a team either option.  (Dan is ok going confluence if the group prefers it.). What should we do?  Confluence?  Google?  Both?
+
+
+PROPOSED FLOW:
+(1) A Jira ticket is created for a new capability.  @Brian or @Jack will add REQUIRES SPEC to the top of the Jira ticket's description.
+(2) A Spec document is created in the specs folder with the same prefix as this Jira Ticket (e.g. "MOB-255 ...") and it linked to the ticket.
+(3) At the top of the spec document is an approvals section with three kinds of approvals:  an approval that the spec is complete, an approval from the product team, and an approval from the SW team.  Each approval is a single bullet specifying a date, approval type and signing initials.  e.g.
+    - 04/17 Spec Complete.  [JP, BF]
+(4) Brian, Jack, and Jasu ensure that that work does not begin on the ticket until all three approvals are in place.
+
+
+MECHANICS:
+- COMPROMISE - System forces compromise, since work is blocked until the proposal can be shifted until we get approvals on all sides.
+- ACCOUNTABILITY - System also forces accountability, since someone needs to put their initials saying they approved.  (multiple will sign if it's a collective decision)
+- REVERSAL - We NEVER alter an approval line once written.  In rare cases an approval could be rescinded, but if this is done it is APPENDED with a date and initials to indicate when this change happened.
+- COUNTER PROPOSAL - Anyone can make a counter proposal as a separate document and attach it to the same Jira ticket.
+- DEADLOCK - If the teams are at lager heads then leadership can make the call and simple sign either/both sides of a proposal to break the deadlock.
+
+
+Def
+
+
+
+THE CONTENTS OF A SPEC
+
+MOB-255 - Headless game flow with single camera, and existing team
+
+APPROVALS
+- 04/17. Spec Complete.  [JP, BF]
+- 04/18. Product Approval.  [ML]
+- 05/02. SW Approval. [SB]
+
+
+COMMENT: At a base level, I believe sometimes we need to do a much better job of just showing a completely filled out detailed example of what our system should output.  What that means in each case will be different, but in most cases it will be some kind of attachment to an example which is detailed enough that a QA person could look at that example and confidently say "yes" or "no" if the system's behavior was correct.
+
+QUESTION: Should we be more specific here about what counts as a "complete spec"
+
+
+
+
+### 2023-05-04  Many Mangos
+
+
+m
+
+
+
+
+If we take their premium package he is
+
+
+
+
+
+2.75 full time.  $3.75 = $7,500   7am - 12am.   5 * 3.75 * 1000
+
+
+
 
 Issac MM CEO - Kenya - 22hrs day.  $3.75/hr.     1am-1pm EST.  (could stretch)
 - MM guys - 
@@ -39,6 +136,61 @@ THE WAR ROOM PROPOSAL
 
 
 ### 2023-04-26  QA hires
+
+- [Maxtrix](https://docs.google.com/spreadsheets/d/1vn81SFXde45vu27f5DolFcj9n7AlHV0m/edit#gid=1186196946) -
+
+
+Mayra Perez
+
+Mayra is quite professional, and is clearly a senior QA.  She seems to have wisdom regarding how to execute the job.
+Her English and interaction presence is excellent.
+
+I liked her approach to handling 
+
+- Very good english
+- chatting with people.  with dev.  
+- Monkey testing.  design.  check if tickets are duplicated or not.  
+- putting priorities to the tickets
+
+when we disagree.  reproducing steps together.
+could be resolution of screen, in 
+
+went in post sale.  
+- started with exploratory test.  
+- asking have you taken any action on this?
+
+Work history:
+- The app lost lots of cash.  decided pass all native app to go to web. 
+- working as a contractor at cloudX.  last job had too much security; job was getting very reduced.
+
+- Stability, and good team.  helpful.
+
+
+**Maximo Davico** 
+
+- developed 
+
+- pretty junior guy 
+- Language will be an issue for english speaking devs
+- clearly not really a QA guy, he is probably a smart
+- has not really had experience 
+
+
+Things were not breaking 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 - [Shared folder](https://drive.google.com/drive/folders/1rMRtMUPG4kw_zBV00tPlLo7zee-rbB7D) - 
 

@@ -42,5 +42,3 @@
 Rocks  (maybe 'p' for projects)
 Daily notes
 Tiny
-
-

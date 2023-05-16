@@ -1,8 +1,6 @@
 - [ ] [[@Horizon Fitness]]
-- [ ] phone holder desk meeting
 
-- [ ] buy airpods
-- [ ] !! MED
+- [ ] [[MED.]] - [[MED]]  
 - [ ] Get receipts in to SV
 
 

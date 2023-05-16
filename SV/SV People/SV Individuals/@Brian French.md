@@ -2,6 +2,24 @@
 
 # Log
 
+
+### 2023-05-15  Change in Report To Structure
+
+- Originally joined SV; idea was to have report to for all of SW.
+  I think Jason wanted to get the measure of me first & best to move in slowly
+
+- suggested to Jason last friday that now was the time to make this switch & he agreed.
+
+- SHIFT 2 CV - The aim is to use this shift percentage of my time away from SW towards AI team.
+  So over time I would progressively shift upwards in SW team 
+
+- You have been wanting 2 come full time in SV.  I think this move slightly improves the chances for that.
+- Was clear w/ Jason & Sam that we eventually need a VP-ENG and it should not be me.
+- And SW group will always need a lead and obviously that role is also not me.
+
+- Fact that Brian<>Dan working relationship is amazing from my perspective & I don't see this changing.
+- Still 
+
 ### 2023-04-04  Push 2 Prod.
 
 TOPICS:

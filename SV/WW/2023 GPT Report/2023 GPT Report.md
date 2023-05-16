@@ -1,1 +1,1 @@
-Alias:: [[GPT Rpt]]
+Alias:: [[The GPT Rpt]]

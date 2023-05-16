@@ -1,3 +1,4 @@
+- [ ] [divvy fix](https://apple.stackexchange.com/questions/430314/cant-assign-normal-keyboard-shortcuts-on-monterey-because-its-already-used-by)
 - [ ] tracker bug hit delete & time get screwed
 
 - [ ] pick new list name for 'wait' with unique first letter

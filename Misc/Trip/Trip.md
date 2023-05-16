@@ -1,24 +1,6 @@
 
 :: [[Thailand]]
 
-:: [[Thailand]]
-
-:: [[Thailand]]
-
-:: [[Thailand]]
-
-:: [[Thailand]]
-
-:: [[Thailand]]
-
-:: [[Thailand]]
-
-:: [[Thailand]]
-
-:: [[Thailand]]
-
-:: [[Thailand]]
-
 - [[Travel]],  [Trip](Trip.md), [[Thailand]],
 - [[Trip Webpage]]
 
@@ -26,14 +8,8 @@
 
 ### 2023-04-23  Dad's 85th Birthday
 
-Dave-O  may 25-28th
 
-
-MAY
-Wed24 2:37p - 12:44a  
-        #BFCUKN  F662 F2782
-
-Sun28 3:27p - 9:54p   F2785 F2839
+Dave-O is in  may 25-28th
 
 
 ### 2023-03-11  Argentina places

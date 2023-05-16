@@ -1,4 +1,4 @@
-
+l
 - [ ] Bridge round Demos and bridge round by justification of efficiencies in the auto annotation
 
 - [ ] Lo-fi estimate of time saving using AI-based annotations
@@ -23,3 +23,26 @@ JOE
 
 
 Joe, it was great to catch up
+
+
+VC
+[[@Aniket Kumar]], 
+
+**Startup Friends**
+[[@Krzysiek Herod]], [[@Shane Junior]],  [[@Mark Kapij]],  [[@Yannick Germain]],  
+[[@Joseph Yeh]],  [[@Kyle Langworthy]], 
+[[@Siobhan Quinn]], 
+
+Startup
+[[@Patrick Pantel]], [[@Dave Whitmore]],  
+
+Academic
+[[@paul cohen]] 
+
+
+Maybe
+[[@Hiba Sharief]]. AMZ
+
+
+No
+[[@Gill Pratt]], [[]]

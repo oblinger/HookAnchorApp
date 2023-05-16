@@ -9,6 +9,11 @@ When did I talk with him?
 Super tall, tall/thin wife.
 
 
+Android dev
+
+
+
+
 
 
 

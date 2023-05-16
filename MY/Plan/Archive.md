@@ -1,3 +1,7 @@
+- [x] james
+- [x] phone holder desk meeting
+- [x] sam call
+- [x] Sam discussions
 - [x] - [ ] qq handling
 - [x] create 'sub' entry can't find 'path'
 - [x] Jeremey gift

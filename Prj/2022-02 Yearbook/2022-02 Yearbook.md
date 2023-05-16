@@ -1,3 +1,7 @@
+
+Kelly Barry is doing the yearbook this year
+
+## __
    [gddrive](gddrive.md)
   # TODO
 - [ ] Writeup announcement email
@@ -46,7 +50,7 @@ Stefania Pifer <stefania.pifer@gmail.com>,
 OLDER INFO   
 -   [Online Plan](https://docs.google.com/document/d/1UgT3RLfLRh_GmbC4qltnKDFVi_vCVnvccVGRitrk1uM/edit#heading=h.i7qcdkrkeflz),    [Samples Sheet](https://docs.google.com/presentation/d/1DrSX9Yp6Gth8V7JM7RY3AyMb05xefyTqXbDGme_WyBI/edit?usp=sharing),   [MCC](https://docs.google.com/presentation/d/1eqF6iduxWytohTrURN22F1zB-B9CDvgRimbkBbKXAss/edit#slide=id.p),  
 -  [Spreadsheet](https://docs.google.com/spreadsheets/d/12DuxkEN-rgrqPVTHPvqVTzVzh43xJffxHSB9304Fl48/edit#gid=449064384)  
-- [Family Lists](https://docs.google.com/spreadsheets/d/1qkYsF1O66l5tltn_PTOT8Saui5Gc1LSSdelb_nUfNLY/edit#gid=449064384)  
+- [Family Lists](https://docs.google.com/spreadsheets/d/1qkYsF1O66l5tltn_PTOT8Saui5Gc1LSSdelb_nUfNLY/edit#gid=449064384)  ca
 - [Printers](https://docs.google.com/spreadsheets/d/139pv3_ZB9gkoe-M8S5X6tJ6NFRHHnsRhH5Vr7tXDBvQ/edit#gid=1552543262), 
 - 
 [Folder](https://drive.google.com/drive/u/1/folders/1C-Uvjho9JmO8WPHbKGsK5Fiwr0VrIK7G)

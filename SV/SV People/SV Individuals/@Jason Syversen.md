@@ -1,14 +1,117 @@
 [[SV]]   [CEO](https://www.linkedin.com/in/jsyversen/)  [[@Sports Visio]]  	 [Calendly](http://calendly.com/syversen),  [[SV]], 
 - [[2023 Jason Tasks]] - 
 
-TOPICS
-- POSSESSIONS - Possessions Analysis - 
-- 
-- DAN-ML - 
 
+TOPICS
+- DEMOS - 
+	- Shot chart - heat map - 
+	- Fireball explosion - 
+	- Instant Replay of shots - 
+- POSSESSIONS - Possessions Analysis - 
+- DAN-ML - 
+- Joe Chan - 
+
+- List of investor - 
+	- Story Ventures
+	- BTS - 
+
+- people who have raised money 
+
+- AAU - connection
+
+- Sam - Jamie - Ring.com
 
 
 # LOG
+### 2023-05-10  COMPANY STRATEGY EMAIL
+
+**Jason's "A-round" Strategy** 
+- Achieve $1M in ARR from a growing set of customers
+- Use AI-stats augmented with human annotation to serve these $1M in customers,
+
+  with an ever decreasing cost structure that at no point puts an undue burden on our total monthly burn rate.
+- A fully automated near real-time capability for providing stats to some paying customer segment.
+jku
+**The Shallow AI-Moat**
+- We all agree that AI-stats likely provides a short lived moat -- rather than a long term differentiation.
+- Notable expertise and "fiddling" is currently required to use existing algorithms to "solve" basketball.
+- But this capability will become much less differentiated as ever greater capability is automated and packaged into ever-stronger open-source libraries.
+- The YOLO series of algorithms that serves as the backbone of our current detector, for example, has gotten progressively and dramatically better in the last few short years, and the trend is accelerating!
+
+
+**Dan's Claim about our A-round strategy.**
+- I think this implies that neither a "Baller-like" nor "Cerebro-like" B2B-stats product (like we are delivering in our A-round) will be very "sticky" products.  Consider: we might grow a market-leading customer base in providing B2B stats to many businesses over the next 3-5 years.  But then find that our customers are very willing to switch to competitors once they can provide similar stats for less money.
+- I predict there will be emerging standards for the way that stats info is exported -- it’s not rocket science.  Thus switching will be easy and very plug-and-play.
+- Thus both markets seem they could become more "race to the bottom" rather than "sticky" markets when AI-stats becomes commonplace.
+
+  
+**Sam's Observation**
+- The AAU market could have network effects that would allow a HUDL-like dominant player to achieve a "lock" on the market by becoming *THE* recognized brand.
+- He gave an example of a stats provider (which one?) whose numbers were recognized as accurate by recruiters.  This cements their leading position since no one would want to get stats from other companies, they have become a defacto standard.
+- I agree with this kind of network effect, but I think there can be other subtle network effects too (like sharing games, etc.) within the AAU market as well.  (we should really work to understand what all these effects might be.)
+
+  
+**Dan's follow-on thoughts**
+- It seems plausible that network effects in AAU, like with HUDL in the High School market, will favor a single long-term winner within each given sub-segment.
+- If that is true for AAU as it is with high schools, then it will be more important to become #1 in one market, rather than #2 in three different markets.  
+- Luckily, full-AI should drastically lower our per-game price point (e.g. $3-4/game).  This could be the key capability (even given lower accuracy levels) which propels SV into this #1 spot within that market.
+- If this is to be our strategy, it means it will be important for us to use Q3 to really experiment with penetration techniques into the AAU market, and experiment with products that are sellable at the lowest accuracy levels, since I expect our levels will grow over time.
+
+  
+**Betting the Farm**
+- Jason's has made it clear that we are not (yet) in a position to "bet the farm" on any given single direction.
+- I would agree with this, there are too many unknowns about how these markets will react to these new kinds of products, and too many unknowns about the products themselves too.
+- But I would add: "ok not **_YET_** ready".  But if getting to number #1 within a sub-market is key, then we better become ready to bet the farm at some future point (which is probably not long after we get full-AI working.)
+- My guess is that it will take 3-5 years for the open-source products to get to the spot that full AI stats is "easy" for others to do.  Still long before it is "easy" for others to do, there will be a COUPLE who are doing it along with us.  And if so, we cannot afford for one of those few to become #1 in AAU, as we may never get it back!
+
+
+
+#### ORIG
+
+Jason's "A-round" Strategy 
+- Achieve $1M in ARR from a growing set of customers
+- Use AI-stats augmented with human annotation to serve these $1M in customers,
+  with an ever decreasing cost structure that at no point puts an undue burden on our total monthly burn rate.
+- A fully automated near real-time capability for providing stats to some paying customer segment.
+
+
+We all agree that AI-stats provides a short lived moat -- rather than a long term differentiation.
+- Notable expertise and "fiddling" is currently required to use existing algorithms to "solve" basketball.
+- But this capability will become much less differentiated as ever greater capability is automated and packaged into ever-stronger open-source libraries.
+- The YOLO series of algorithms that serves as the backbone of our current detector, for example, has gotten progressively and dramatically better in the last few short years, and it does not seem to be slowing down, if anything it feels like it is speeding up!
+
+
+Dan's Claim about our A-round strategy.
+- I think this implies that neither the Baller-like nor Cerebro-like B2B-stats products that we are delivering in our A-round strategy are very "sticky" products.  Consider: we might grow a market-leading customer base in providing stats to many businesses over the next 3-5 years.  But then find that our customers are very willing to switch to competitors once they can provide similar stats for less money
+- I predict that there will be emerging standards for the way that stats info is exported -- its not rocket science.  Thus switching will be easy and plug and play.
+- Thus both markets seem they could become more "race to the bottom" rather than "sticky" markets as AI-stats becomes commonplace.
+
+
+Sam's Observation
+- The AAU market could have network effects that would allow a HUDL-like dominant player to achieve a "lock" on the market by becoming *THE* recognized brand.
+- He gave an example of a stats provider (which one?) whose numbers were recognized as accurate by recruiters.  Thus cementing their leading position since no one would want to get stats from other companies, they have become a defacto standard.
+- I agree with this kind of network effect, but I think there can be other subtle network effects (like sharing games, etc.) within the AAU market as well.  (we should really work to understand what all these effects might be.)
+
+
+Dan's follow-on thoughts
+- It seems plausible that network effects in AAU, like with HUDL in the High School market, will favor a single long-term winner within each given sub-segment.
+- If that is true for AAU as it is with high schools, then it will be more important to become #1 in one market, rather than #2 in three different markets.  
+- Luckily, full-AI should drastically lower our per-game price point (e.g. $3-4/game).  This could be the key capability (even at lower accuracy levels) that propels SV into #1 spot within that market.
+- If this is to be our strategy it means it will be important for us to use Q3 to really experiment with penetration strategies into the AAU market, and experiment with products that are sellable at the lowest accuracy levels, since I expect our levels will grow over time.
+
+
+Betting the Farm
+- Jason's has made it clear that we are not (yet) in a position to "bet the farm" on any given single direction.
+- I would agree with this, there are too many unknowns about how these markets will react to these new kinds of products.
+- But I would add: "ok not YET ready".  But if getting to number #1 within a sub-market is key, then we better become ready to bet the farm at some future point (which is probably not long after we get full AI working.)
+- My guess is that it will take 3-5 years for the open-source product to get to the spot that full AI stats is "easy" for others to do.  Still long before it is "easy" for others to do it, there will be a COUPLE who do it along with us.  Since we cannot afford for one of those few to become #1 in AAU, as we may never get it back.
+
+
+
+
+
+
+
 
 ### 2023-04-30  Response to Tweet about Company Strategy
 
@@ -48,7 +151,7 @@ Still his conclusion that one cannot rely on an AI mote is still valid.  BECAUSE
 Even though the market at the bottom is the most fractured, and thus the hardest to acquire, I think direct value to player/parent/coach could be among the most sticky and valuable network available to us.  Once a parent has a year's worth of games in our system and links on their social media to our clips they are going to want to stay with our service, plus there is the HUDL-like network of AAU teams and shared games etc.  I dont see any other available space like that with such a sticky customer-base.  Still we might need to land a different kind of partnership (like Cerebro) in order to drive adoption in the ultimate target market.
 
 
-### 2023-04-24  F90-CALL2 -   [[reset]]
+### 2023-04-24  F90-CALL2 -   [[Reset]]
 ### 2023-04-10  F90-CALL3 - Feedback Call
 
 - How am I doing?
