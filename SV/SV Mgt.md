@@ -1,8 +1,23 @@
+Wow, I guess you did a lot of thinking on that plane ride!  Is this a paid intern that is already working with Many Mangos or someone you have been talking with before?  She does seems like a pretty solid intern!  Is she based in SF area for the summer?
+
+I have a fair bit of content at this point, a white paper, and other content that is more focused on working out details on how the actual mechanics of the organizations would evolve over time at a practical level.  This is definitely been a labor of love over a couple of years.  At this stage I feel 
 
 
 # Log
 
 ### 2023-02-19  Feb Management Meeting
+
+TASKS:
+- Work with Jack to deliver core SV Hoops PRODUCT & AI Team Roadmap
+- Present Q3 and Q4 deliverable plan at next monthly meeting
+- Baseline Pivo cold storage status
+- For Record app also (Find clean break point)
+- Baseline for BallerTV for Player Identification
+- Look into/consider preparing patents for our new ML approach to player tracking, see if we can file a patent, also will likely need 2 patents filed for Series A.
+
+
+
+
 
 
 ### 2023-02-15  Comments with the Team

@@ -1,2 +1,0 @@
-
-:: [[AFinfo_strategy]]

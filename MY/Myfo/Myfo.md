@@ -1,7 +1,7 @@
   [MY Stuff](MY%20Stuff.md),   [Emails](Emails.md)
 [[Emails]] 
 
-- [Med](__MED__.md) 
+- [[Med]] 
 - [[MY Stuff]]
-- [[MY Digital Setup]] 
+- [[MySys]] 
 

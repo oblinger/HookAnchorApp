@@ -1,4 +1,6 @@
 
+- [ ] elevator pitch who you are (ask QL)
+
 TEXECUTION
 Which (inter)
 

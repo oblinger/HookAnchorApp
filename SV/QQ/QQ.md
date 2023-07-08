@@ -3,7 +3,45 @@ app- [[QQ Folder]]
 # QUICK - QUICK work projects
 
 
+### 2023-07-05  KPIs
+
+- 
+
+### 2023-07-05  Push2Prod
+
+- [Release Management](https://docs.google.com/document/d/1hXXBXI0PhSXIwLEsYcTKQPHBeIiNsvYW8zNuONveR40/edit#heading=h.hakx43ti74qk) -
+
+- Key idea is very precisely timed handoffs
+- Room in schedule for quick bugfix
+- Clear authority
+- Clear min reqs for regression test etc.
+
+- Basic Idea: 
+	- Brian decides which systems will push
+	- Defined time/date code freeze
+	- Defined time/date code push
+	- Defined authority & rules
+
+- Breaking change
+- Hot fix
+- 
+
+
+
+### 2023-06-20  ??
 but the fog of war is still quite thick around this issue.  I honestly cant tell what can and cannot be done w/ the tool in this moment.  One thing that would be 
+
+### 2023-06-18  CALL TREE
+
+ Dan Oblinger's availability
+
+
+
+
+
+
+
+
 
 
 ### 2023-05-06  Urgent Ticket Creation and Dispatch

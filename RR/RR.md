@@ -1,14 +1,22 @@
-[[Yolo]] [[BoT-SORT]] [[ByteTrack]]  
+
+:: [[ByteTrack]]
+[[Trackers]]. 
+[[Yolo]] [[BoT-SORT]]   
 :: [[Systems]], [[Startups Note]] 
 
 :: [[Covid]]
 
-:: [[ML]],   [[Materials]],   [[Para]],   [[REF]],   [[RMS]],   [[RefMisc]],   [[Refs]],   [[Research]],   [[Swearing]]
+::   [[Materials]],   [[Para]],   [[REF]],   [[RMS]],   [[RefMisc]],   [[Refs]],   [[Research]],   [[Swearing]]
 
 [[Business]]
+
+- [[Alg]]: 
+- [[AI]]: [[ML]]: [[CV]]: [[DL]]:
+
+
+
 ## = COMPUTER SCIENCE
 ## = AI
-- [[AI]] 
 
 
 ### --- RESEARCH AREAS ---

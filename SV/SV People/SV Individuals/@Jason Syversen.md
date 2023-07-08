@@ -1,6 +1,24 @@
 [[SV]]   [CEO](https://www.linkedin.com/in/jsyversen/)  [[@Sports Visio]]  	 [Calendly](http://calendly.com/syversen),  [[SV]], 
 - [[2023 Jason Tasks]] - 
 
+DISCUSS
+- [ ] $1000/mo budget
+
+
+## = distractions
+
+
+
+Score Board operation
+
+Reply idea - monitor
+
+
+
+# LOG
+### 2023-06-07  Xxxxx
+VolleyBall
+Flaming 
 
 TOPICS
 - DEMOS - 
@@ -22,7 +40,124 @@ TOPICS
 - Sam - Jamie - Ring.com
 
 
-# LOG
+
+
+### 2023-06-04  Jason's visit  [[@Circle#2023-06-03 Jason's Visit]] 
+### 2023-06-01  Doug @ Sapphire Ventures
+
+[[@Sapphire Ventures]] 
+
+summary: he is a pretty sports forward investor, but the fund focuses on AI/technology
+
+Second is Doug Higgins/Seamus from Sapphire Capital (a well known Sports VC). Thursday, June 1 2-2:30PM EST
+[seamus@sapphireventures.com](mailto:seamus@sapphireventures.com)
+
+
+helped him start 
+
+- Sounds 'poor' - 
+- last round might be an 'A'
+
+
+
+### 2023-05-26  Lightbank (Joythi)
+- https://www.linkedin.com/in/jvallurupalli/
+
+todo:
+- leaning into my skeptics.   
+- 
+- leaning into underserved market
+
+
+
+
+Her
+
+Goupon 
+
+generalist earaly stage 500K-5M.  12-15 new investments.
+
+
+- Rapid adoption.  62K in revenue.
+- Finding National Accounts.
+
+- Thesis: 
+	- Use Adv-AI to sports.
+		- remove human, in order to get into 
+		- and features that could 
+
+	- Guy was bragging after game.  what
+- 
+- 1/2M in NH.
+
+- Sizing analysis.    soccer 6x.
+- trace, vao 
+
+- CAC to LTP
+
+
+GROWTH
+- National Accounts
+- Viral 
+
+
+- National Accounts Model:  
+	- Baller TV (600K )  
+	- 3STEP AAU trou (300K  $7M ARR)
+	- Lifetime Fitness.  50-gyms (150-200K. $3-4M ARR)
+	- Presto Sports
+
+- Ideal Customer Profile
+
+
+- Flywheel: Viral,  tournaments, 
+
+
+STATS
+- steals, ball tracking, shot detecting, 1-2-3, 
+- rebound, 
+
+
+Next Market
+- Volley ball
+- more discretionary funding
+- stats are
+
+Standalone Recording Camera
+- Partnership discount w/ Pivo
+
+
+
+last round
+- $2.5M = $1.5 hyperplane + 
+
+
+
+this term
+- Convertable note. 
+
+
+
+
+
+
+
+### 2023-05-24  before travel discussion
+
+- Big 
+
+
+ALL HANDS
+- Finishing sprint to integrate color identification into trackers attempting to track while on screen
+- Monday begins sprint for Re-ID 
+- Strong baseline - 
+- Maxim - Segment and Track anything
+- Grzegorz - Re-ID
+- Vishal 
+- Pivo - testing has been 
+- Re-ID
+
+
 ### 2023-05-10  COMPANY STRATEGY EMAIL
 
 **Jason's "A-round" Strategy** 
@@ -31,7 +166,7 @@ TOPICS
 
   with an ever decreasing cost structure that at no point puts an undue burden on our total monthly burn rate.
 - A fully automated near real-time capability for providing stats to some paying customer segment.
-jku
+
 **The Shallow AI-Moat**
 - We all agree that AI-stats likely provides a short lived moat -- rather than a long term differentiation.
 - Notable expertise and "fiddling" is currently required to use existing algorithms to "solve" basketball.

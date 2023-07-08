@@ -1,21 +1,27 @@
 ### Work Projects
-=	[[Agenda]]		[[2023 SV CV New Agenda]].
-=	[[Lichty]]			[[2023 Customer Support Tasks]].
-=	[[RNR Notes]]		[[2023 SV Roles and Responsibilities]].
-=	[[Reset]]			[[2023-Reset-DanO-Role]].
-=	[[Roadmap]]		[[2023 SV Roadmap]] - 
-=	[[Baller]]			[[2023 Baller TV Partnership]].
-=	[[Demo]]			[[2023 Bridge Round AI Demo]].
-=	[[Bridge]]			[[2023 Bridge Round]] - 
-=	[[SV Hiring]]		
-=	[[SV learn]]		[[2023 Learning]] - 
+=	[[Dataset]]			[[2023 Build Datasets Needed for the CV Team]].
+=	[[Baseline]]			[[2023 SV Mgt Meeting Slides]].
+=	[[Test.]]			[[2023 SV Testing Plans]].
+=	[[Rdmap.]]		[[2023 SV Roadmap]] - 
+=	[[Agenda.]]		[[2023 SV CV New Agenda]].
 
+=	[[RNR]]			[[2023 SV Roles and Responsibilities]].
+=	[[Demos.]]		[[2023 Bridge Round AI Demo]].
+=	[[SV lrn]]		[[2023 Learning]] - 
+
+o	[[Bites]]			[[2023 Sound Bites for Bridge Round Financing]].
+
+=	[[Reset]]			[[2023-Reset-DanO-Role]].
+.	[[Metrics]]		[[2023 CV team new agenda metrics]].
+.	[[Bridge]]			[[2023 Bridge Round]] - 
+
+=	[[Lichty]]			[[2023 Customer Support Tasks]].
 =	[[Stat]]			[[2023 Stat Calculations and Annotations]] - 
 =	[[Beta]]			[[2023 Beta Testing]] - 
 v	[[SV Letter]]		[[2023 SV Investor News Letter]].
 v					[[2023 Basketball Stats]] - 
 
-s	[[The GPT Rpt]]		[[2023 GPT Report]] - 
+s	[[The GPT Rpt]]	[[2023 GPT Report]] - 
 s	[[Pillars]]	 		[[2023 Four Pillars]] - 
 s	[[Blog]]			[[2023 CTO Corner Blog]] - 
 w					[[2023 Record Flow]] - 

@@ -3,6 +3,11 @@
 
 
 # LOG
+
+### 2023-06-29  how does gallery work
+
+- byte-tracker 
+
 ### 2023-04-06  Current status of AI - Finding stuff for bridge round
 
 Android versions - is done

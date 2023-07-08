@@ -1,4 +1,6 @@
 
+:: [[EOCA What Happens Now]]
+
 - [[EOCA Last Best Hope]] - 
 
 ## TODO
@@ -1213,6 +1215,33 @@ The treasonous American and that's me in the treason is the treasonous thought i
 
 _
 # LOG
+### 2023-06-21  quote: most intelligent species is changing hands
+
+For the last 10K+ years the most intelligent species on earth, ruled the earth.
+
+That wont change in the 2020s... it just that he species with that title is now changing hands.
+
+You are correctly seeing many interesting trees, but entirely missing the forest.
+
+
+### 2023-06-03 Response to Paul M
+
+Paul, like you I wish I had published writing from years earlier. I was just afraid of being a heretic in my field. alas.
+
+But I do find some variance with your current thinking. I agree that the complexity of getting to GPT-4 is likely larger than the complexity of get from here to AGI. Still there are some non-trivial missing pieces to bootstrap theory of mind and long term agendas. but that said, with so many working on it, I agree the gap will be quickly closed.
+
+Here seems a modest point of disagreement:
+
+Your focus on androids seems misplaced to me. I think AGIs will initially be symbiotic with wealthy corporations that instantiated them. Both those corporations and the AGI itself will explicitly have the agenda of manipulating the larger world towards their own ends. They will be part of the vast ecosystem that is building more advanced AI (mostly in SW, but also in physical automation too.)
+
+As AGIs starting having agendas that are divergent from their host corporations, it seems to me they need not and likely will not have need for physical bodies in order to achieve any physical aims they might have. For example, suppose and AGI wanted connected computed that was 100,000 times larger than ever built and had very low latency... I can imagine it manipulating corporations, governments, etc. in order to achieve that aim. We would even understand that the AGI wanted this... its not even a secret. It is just providing so much value to so many stake holders that no one stops it. Indeed many compete to help it.
+
+AGIs will have androids too of course, just as they will have ability to cash checks, create movies, broadcast on national TV, etc. but their android abilities will be dwarfed by their ability to achieve physical ends via many other means. They will NOT be the ones builting the next generation of chips in a vacuum, they will be attached an entire ecosystem of for-profit entities that are part of that equation. Its just the the human meat part of that equation will rapidly have less and less understanding of, or control of the system as a whole.
+
+And I agree as that happen all bet are off. who knows what happens then.
+
+As far as timing, I put things out further than you do. Not by a large amount, but I think the real singularity happens when the ecosystem of AGI systems effectively have pragmatic control of human/corporate-originated means of production. And that control will be given over, progressively and willingly one company at a time. Thus it will take years for that transformation to complete... Still not too many years.... since those laggards that do not give increasing control to their AGI systems will be rapidly out-competed by those who do. Once it is clear which side of the bread is buttered, corporations and governments will quickly fall in line.
+
 
 ### 2023-04-07  
 ### 2023-04-07 Nina note - why will we all die? 

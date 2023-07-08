@@ -4,15 +4,13 @@
 - [[ELI Education]]
 - [[Eli Interactions]] 
 - [[Eli Food]] 
+- [[Eli Activities]] 
 
 # TODO
 - [ ] Find babysitter
 
 
 
-
-# LOG
-- [[2023-05 Cool Kids]] Cool Kids
 
 
 
@@ -97,6 +95,31 @@ Given to ELI
 
 STEPS:  Email these to self.  on phone click on apple mail, then click on each video... 
 		while video is playing, click the screen to see the share button, then look for youtube kids in menu (at bottom)
+
+
+
+# LOG
+
+
+### 2023-06-27  STEP LADDERS
+- [[2023-05 Cool Kids]] Cool Kids
+
+
+- Scheduled Checkins
+
+CAUTION STRATEGIES
+- Modeling - one of us explain to the other, 
+  or self how to be less afraid
+
+- Set him for success
+- Problem Solve - 
+	- What will happen
+	- What happened in the past
+	- What can we do to make it less
+	- Realistic thinking
+- Step Ladder
+
+- One bad experience
 
 
 

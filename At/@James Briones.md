@@ -1,13 +1,20 @@
 =[[START]]     [Head of Operations](https://www.linkedin.com/in/jamesmarvinbriones/)  [[@Rzero]]   #Soon 
 - Head of PH operations @ AF
 
+	Wake	4am PH 	1pm PST
+	Sleep	10p? PH	7am PST
+
 	Wake	11p PST - 2pm PH
 	Jog	3pm PST - 6am PH
 	Sleep	5am PST - 8pm PH
 	6pm PST - 6am PST -- Normal waking hours.
 
+
+
 Sleep at 7-8 PST.
 
+
+## Loans
 
 [His loan](https://docs.google.com/spreadsheets/d/1xHVpVsxHcarJHsMQ1IODOqgkum66D-BU8Mhp2ga7swc/edit#gid=0)  
 
@@ -40,4 +47,20 @@ Here is my thinking for a concrete plan… see if you like it as an approach….
 
   
 
-  
+# LOG
+
+### 2023-05-17  sports
+
+Find VC that:
+- Invest specifically in sports.  and ALSO invest in advanced tech / (mostly) AI
+
+Find Portfolio Companies that are
+- Sports AND AI - 
+
+Find Starting points
+- https://www.openvc.app/search?s=sports&countries%5B%5D=USA&stages%5B%5D=2.+Prototype&stages%5B%5D=3.+Early+Revenue&round_size=
+- https://startupsavant.com/top-venture-capital-firms/sports
+- https://www.failory.com/blog/sports-venture-capital-firms
+- https://www.quora.com/Who-are-the-angel-investors-and-VC-firms-that-focus-on-sports-tech-and-or-wearables
+- https://www.quora.com/Are-there-VC-firms-that-invest-in-sport-related-startups
+- 

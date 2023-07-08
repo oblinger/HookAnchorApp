@@ -29,6 +29,8 @@
 
 :: [[Alloy]],   [[Elastic Block Chain]],   [[Forum]],   [[Lean Canvas]]
 
+:: [[Alloy]],   [[Elastic Block Chain]],   [[Forum]],   [[Lean Canvas]]
+
 - [[Life Projects]] 
 :: [[Alloy]],   [[Elastic Block Chain]],   [[Forum]],   [[Lean Canvas]]
 
@@ -133,7 +135,7 @@
 - [[2010-08 Siege]]		 
 - [[2009-05 SCATA Security]]             
 - [[2009-03 Team Saver]]      
-- [[2009-10 Contact Caddy]]       
+- [[2009-10 Contacts Caddy]]       
 - [[2009-00 User Controlled Identifier]] 
 - [[2009-00 DARPA Energy]]               
 - [[2008-11 Smart Grid]]      

@@ -1,5 +1,5 @@
 
-:: [[NJ22]]
+:: [[NJ22]].  [[WarStories]]. 
 
 :: [[2015.05 GoogleInterviewPrep]],   [[2021.04 Directions]],   [[2016.09 NextJob]]
   [NJ22](NJ22.md)

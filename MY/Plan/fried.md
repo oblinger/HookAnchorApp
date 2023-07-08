@@ -1,4 +1,6 @@
-	
+- [ ] Drawers near desk in bedroom
+
+- [ ] budget big transfers list	
 - [ ] giphy grab
 
 - [ ] [[Travel]]: pills; snacks
@@ -31,6 +33,7 @@
 
 
 ### Older
+
 - [ ] Grabby apple air max.  (read about it)
 - [ ] setup blink
 - [ ] Reset door codes. (info in myfo->mystuff)

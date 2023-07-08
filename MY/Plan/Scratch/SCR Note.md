@@ -1,4 +1,15 @@
 
+### 2023-07-07  Nick note (stressed)
+
+Could not sleep…. Stressed.   You are right about me of course, no matter what I am going to think … it is what I do, and it would be sad (but also likely) that nothing will every really come of it.  And you are also right that now is a magic time for generalized AI ideas (starting a new-co using GPT, or somehow being a pundit around the un-align-ability apocalypse).  Presently things are going well at Sports Visio, we just got a $3M term sheet...  but I feel overwhelmed, and I do not feel safe at Sports Visio...  too much fucking around on the side could get me burned.
+
+In my defense, I did NOT try to open this can of worms around EduCorp.  In general I agree I should try to learn from experts, that is what I was trying to do...  Now I wish I could put the worm back in the can for 6 months.  If I were stuck at Google, I would *love* to have an EduCorp thing to noodle on the side.  but right now, my noodling time is spoken for.
+
+
+
+
+
+### 2023-07-07  Older
 I love the drive-by constructive feedback that is possible on Medium.  Unvarnished and to the point, Thanks!!  I do have an ax to grind in the health & medicine space.  On nearly every topic I can find 'keto kills' or 'keto will save you', BOTH with arguments backed by an argument derived from at some level by legitimate science.  This misinformation KILLS people, so I am a bit of Dan Quixote for health claims.
 
 Still if I am honest with myself, as you suspected, this predilection runs deeper than that.  I am always wanting to look at things the "wrong" way to see if I can see something that others don't.  (hmmm, if I dig deep, then post it as a reply to a reply PUBLICLY,  one part of my personal identity is thinking I am good at stepping outside the expected framings of things.)  Interesting.

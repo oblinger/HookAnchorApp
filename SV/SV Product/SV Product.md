@@ -5,6 +5,19 @@
 
 # LOG
 
+### 2023-06-20  Few ideas from Jason
+
+
+Sneaker sponsored tournaments (we canot get to those)
+- Synergy
+- Hudl
+but we might own other tournamets as a way to get to customdrs
+
+
+Score Board operation
+
+Reply idea - monitor
+
 ### 2023-04-21  Customer Onboarding Pathways
 
 KEY FLOWS

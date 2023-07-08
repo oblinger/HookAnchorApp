@@ -1,4 +1,6 @@
 
+:: [[Eli Activities]]
+
 :: [[Eli Food]],   [[Eli Interactions]]
 
 :: [[ELI Education]]

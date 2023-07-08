@@ -1,2 +1,2 @@
-Alias [[Demo]]
+Alias [[Demos.]]
  

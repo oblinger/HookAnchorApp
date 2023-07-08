@@ -1,3 +1,14 @@
+
+
+
+### 2023-06-15  Noom Diet summary
+
+
+I am a fan of the Noom diet, and I have done many ;-)
+The diet is strongly focusing you on calorie density rather than macro nutrients (like low carb or such).  It fits into a realistic lifestyle since all foods are allowed it just biases towards "green" foods and less "red" foods.  It does require you to track your eating in the app AT EVERY MEAL.  they have entries for many many restaurants and grocery foods, so it is pretty easy.  Tracking my food really helped me eat the right amounts to loose weight and not get hungry.  The Red/Yellow/Green system helped me shift the foods I eat over time.  And the little "psychology" audio clips each day game me good tips and were worth the time.  I tracked my food daily for over 6 months, and now I just listed to their daily tips.  Occasionally I use the app to check the calorie density of a new food, but mostly I know which foods are which.  (Note: calorie density will steer you differently than many other diets.  For example chicken breast is ok, as a yellow food, but not is large amounts, sweet potatoes as a green food can be eaten in larger portions.). I would additionally focus on protein content of food, and fiber content of food, which noom talks about, but does not focus on.  Still overall I think noom helps you eat in a way that keeps you from feeling (as) hungry as you loose weight.  best luck! -dan
+
+
+
 ### 2023-03-19  
 ### 2022-04-07  UF - math vs code
 Observation:  

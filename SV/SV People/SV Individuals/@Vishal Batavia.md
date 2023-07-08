@@ -4,6 +4,30 @@
 
 # Log 
 
+### 2023-05-30  Autoruning our stuff
+todo:
+- conda
+- get aws account
+- .pem key
+- bit bucket password
+- pcheck, jcheck, bcheck
+
+- rpt, pcheck, code, dataset(groundtruth)
+
+- shot origination (up-down)
+
+- 50-60%  -  95% there but loose it in a couple seconds.
+
+
+- Prebuilt image
+
+- env.yml     (conda based config)
+
+- conda intall 
+
+### 2023-05-30  Intro conversation
+
+
 from india to Canada.
 
 wanted to get 

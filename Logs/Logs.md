@@ -6,8 +6,9 @@
 [[Logs]]  	TEMPORALLY ORDERED TYPED NOTES
 - [[Idea]] 		- Ideas
 - [[Letters]]  - Formal correspondence
-- [[Logs/Quotes]]	- Quotes
+- [[Quotes]]	- Quotes
 - [[PP]]			- Personal Projects
+- [[TT]]			- Misc Text Notes
 
 PROCESS ORIENTED LOGS
 - [[Bought]]	- 

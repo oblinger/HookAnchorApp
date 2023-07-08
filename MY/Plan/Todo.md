@@ -1,19 +1,26 @@
-- [ ] [[@Horizon Fitness]]
+- [ ] [camping](https://docs.google.com/document/d/1z5OvYTMfusVHRzN99-1JFQ7dI6SJY6YW91UbrGF-MAQ/edit#heading=h.5icyubrac0y6) 
+- [ ] Write Phillip
+- [ ] [VO2max](https://kin.sfsu.edu/exercise-fitness-testing) 
 
-- [ ] [[MED.]] - [[MED]]  
 - [ ] Get receipts in to SV
+- [ ] Diablo Medical ‭
+     Remove bill (925) 809-6203
+- [ ] Freed friend Mark Followup
 
-
+- [ ] Taxes underway
+- [ ] Eli's B-day (music)
+- [ ] Find School 4 Eli
+- [ ] Call vanguard to move funds to new account
+- [ ] [[MED.]] - vo2max
+- [ ] QL Celebration
+- [ ] photos of all to sell
 - [ ] Soccer for Eli
-- [ ] take photos of all things we want to sell
-- [ ] Call James: contractors
-- [ ] flu shot 
-- [ ] Nick taxes
-- [ ] swimming classes in slack  (see BCMS)
-- [ ] Add 1password to shared acct
 
-- [ ] Fix car & do recalls on Audi
+
+
+- [ ] do recalls on Audi
 - [ ] Review for Jessie
+
 
 
 

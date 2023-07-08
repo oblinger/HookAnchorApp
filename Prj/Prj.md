@@ -1,20 +1,6 @@
 
 :: [[AF Wind down]]
 
-:: [[AF Wind down]]
-
-:: [[AF Wind down]]
-
-:: [[AF Wind down]]
-
-:: [[AF Wind down]]
-
-:: [[AF Wind down]]
-
-:: [[AF Wind down]]
-
-:: [[AF Wind down]]
-
 == [[TAG]]  <[[TAGS]]
 
 - 2022-10 [[SV90]]  				[[@Sports Visio]] Plan for first 90 days 

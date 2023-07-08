@@ -1,4 +1,6 @@
 
+:: [[@Chuck Morefield]],   [[@Collette Roney]],   [[@DARPA]],   [[@Fernando Eillman]],   [[@Ignacio Diorio]],   [[@Juan Heber]],   [[@Phillip Alvelda]],   [[@Talent Cross]]
+
 :: [[@Dave Whitmore]],   [[@Gill Pratt]],   [[@Isaac Cohen]],   [[@Jonathan Abrams]]
 
 :: [[@JCCSF]]

@@ -1,7 +1,7 @@
 
 
 - [[EOCA Short Argument]] 
-
+- [[EOCA What Happens Now]] 
 
 ## = Starting conclusions
 - CANNOT AVERT THE COMING OF DOMINATING-AI

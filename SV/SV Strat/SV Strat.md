@@ -1,6 +1,6 @@
 (See [[Strat]])
 
-=	[[Roadmap]]		[[2023 SV Roadmap]]
+=	[[Rdmap.]]		[[2023 SV Roadmap]]
 =	[[Reset]]			[[2023-Reset-DanO-Role]] 
 
 ?					[[2023 Deliverables]],  

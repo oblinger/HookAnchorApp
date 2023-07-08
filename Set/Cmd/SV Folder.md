@@ -1,1 +1,1 @@
-=[[Cmd]]   folder /Users/oblinger/ob/kmr/Work/SV
+=[[Cmd]]   folder /Users/oblinger/ob/kmr/SV

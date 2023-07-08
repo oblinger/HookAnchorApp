@@ -1,4 +1,3 @@
-SimpleNote
 
 
 | WEEKLY        |                                                                                                                                                   |
@@ -27,7 +26,7 @@ SimpleNote
 -- ToFile
 -- In3 ... 
 
-dddd
+
 
 ## === MORNING ===
 - Meditate, Vit, Apples, Clean

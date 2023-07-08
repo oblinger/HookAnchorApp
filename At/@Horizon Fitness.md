@@ -21,8 +21,27 @@
 # LOG
 
 ### 2023-05-10  Send out a Tech
+- Now escalating.
+- 49
 
 Warantee Team: 800-244-4192. #2. 
+
+Hello warranties:
+
+I received my 7.4 treadmill a couple of months ago.  I have been getting static shocks from the system, so I asked for the grounding kit (which I have received).  I tried to install it, but there is a 1-inch by 2-inch rectangular tube in the console of the unit where I am supposed to attach the grounding wire.
+
+The screw that I should connect to has its matching nut.  INSIDE  this rectangular tube.  And this nut is free spinning.  Thus we cannot unscrew this screw.  It must be cut off or something like this.
+
+I would like a technician to come out an perform this installation as I am unable to do it.
+
+  
+
+  
+
+Thanks,
+
+Dan
+
 
 ### m2023-01-04  Service call
 

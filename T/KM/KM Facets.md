@@ -15,7 +15,20 @@
 - WebPage	--  Launches URL (7)
 
 - Meta
-qrstuvwxyz
+
+
+
+
+- @XXX 	--  Entity page for an item
+
+ENTITY
+- m... 	Notes from a MEETING with entity
+- t... 		TEXT sent/received from entity
+- n...		NOTES about entity
+- r...		REF materials for an entity
+- ...		UNTYPED entries about entity
+
+
 
 
 

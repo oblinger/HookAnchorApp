@@ -1,5 +1,55 @@
 
 ## BUCKETS
+
+
+- 10-11h			from 7am to 5pm
+- 3h - DAILY	-  Tidy, Wake, nap, exercise, poop ; Lounge, Eat
+- 2h - CHEW 	-  Email, First, Slack, Repeat
+- 2h - COMS	-  Meetings, Zoom, Huddle, Phone
+- 3h - PRIME	-  MIT, Prime, Work
+  ==
+
+- 5h 				from 5p until 10p
+- 2h - FAM	-  Dinner, Play, Bedtime
+- 3h - EVE		-	Fried, Self, Social, Learn
+
+
+
+# LOG
+
+### 2023-06-20  Proposed Buckets
+
+
+ME:			Self, Fried, Out, Project, Read
+PERSONAL:	Personal, Career
+-- FAMILY:	Family, Date, Eli, Home
+-- SPIRIT:	Spirit, Med
+
+WORK:			
+-- WORK:		Work, Prime, zMit, Secondary
+-- CHEW:		Chew, Email, First, Slack, Repeat
+-- COMS:		Comms, Slack, Talk, zMeeting
+
+DAILY:			Daily, Run, Tidy, Wake
+-- LOUNGE:	Lounge, Browse, Eat, Frittered, Watch
+-- GAP:		Gap, Sleep, Nap
+
+
+
+- 3h - DAILY	-  Tidy, Wake, nap, exercise, poop ; Lounge, Eat
+- 2h - CHEW 	-  Email, First, Slack, Repeat
+- 2h - COMS	-  Meetings, Zoom, Huddle, Phone
+- 3h - PRIME	-  MIT, Prime, Work
+  ==
+- 10 hours from 7am to 5pm
+
+[[Productivity#2023-06-21 Workday Ideal Breakdown]] 
+
+
+- WORK
+	- PRIME: MIT
+	- CHEW:
+	- 
 - FUN -
 - SELF
 	- CAREER - 
@@ -7,7 +57,6 @@
 	- FAMILY -
 	- UPKEEP: Finances, Home, 
 
-# LOG
 
 ### 2023-03-01  New Time Tracking Bucketing
 

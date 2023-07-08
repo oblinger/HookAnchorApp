@@ -1,5 +1,7 @@
 # MEALS
 
+## AYI
+- TOFU:  (Fried, Chicken Meatball, Mushroom, Tomato)
 
 ## NIGHT SNACK
 - ZERO:	Radish, Celery, Bell Pepper, 

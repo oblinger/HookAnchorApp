@@ -1,3 +1,22 @@
+- [x] contigo
+- [x] omni-prosal
+- [x] tray for coffee maker
+- [x] yearbook
+- [x] Yearbook
+- [x] send links to barry
+- [x] budget for travel
+- [x]  [[@Horizon Fitness]]
+- [x] BCPO cash
+- [ ] buy kraken
+- [x] ask others to pay
+- [x] one password
+Assoc at 2100 Webster Street.
+- [x] Dr. Tan, I also recommend Pacific Eye
+- [x] wsj cancel
+- [x] [[QQ]]: Angular Test
+- [x] Write up about Mike
+- [x] tell sam/jason I will be out next week
+- [x] apple returns
 - [x] james
 - [x] phone holder desk meeting
 - [x] sam call

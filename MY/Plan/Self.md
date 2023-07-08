@@ -1,5 +1,4 @@
 
-- [ ] taxes plan
 - [ ] [[EOCA]]:  5-part argument
 
 FAANG mentor; Investment mentor; VPEng mentor (planto)

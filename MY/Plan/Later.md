@@ -1,3 +1,4 @@
+- [ ] play with VScode
 - [ ] DMV licence renewal.
 - [ ] DMV licence renewal.
 - [ ] slack notifications not working

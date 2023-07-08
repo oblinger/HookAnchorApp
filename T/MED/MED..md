@@ -1,8 +1,12 @@
+ [[DOCTOR]] 
 
-- [ ] Dr Hassler. call about eye pain
+### TODO
+- [ ] Call Hassler about Gasterenterology appointment
+- [ ] Call Eyes about aug-16 @ 3:15 (what doc will I see)
+
+
 - [ ] DAILY: Walking or Peleton w/ weights
-
-- [ ] MED:  Book appt w/ EMT
+- [ ] MED:  Book appt w/ EMT check nose inflammation
 ### Later
 - [ ] LAB-CORP - 2622 Ocean Ave 416-469-9710  (Fasted in morning before 10am)
 - [ ] Get Alzheimer checked - by mental acuity testing

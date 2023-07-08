@@ -1,18 +1,10 @@
-- [ ] Kureg coffee maker
-- [ ] buy red envelopes; water filter
-- [ ] [wsj-9min-dress](https://www.wsj.com/articles/get-dressed-for-work-in-under-9-minutes-with-these-smart-tricks-63386bd6?page=1); ECCO Chelsea Boot; lyocell
-- [ ] buy fine knit shirts 
 
-- [ ] hair catcher for tub
-- [ ] buy freezer containers
-- [ ] Research containers:  chat webresturant store
+- Office Dresser; 
 
 - [ ] Glucose monitor (buy it)
 - [ ] [10Q](https://antneygrub-store.mybigcommerce.com/instant-pot-duo-nova-10qt-multi-cooker-stainless-steel/?gclid=CjwKCAiA68ebBhB-EiwALVC-NuIDsXNcsuBgSPRdG5844ShzVztqIWPzAsg_8qHO6T8On9W5Wm_MkxoChNgQAvD_BwE) instapot  
 
 - [ ] Buy tripod. consider go-pro or other video. search best camera w/ a kid
-FOREVER
-- Shoe Rack; Office Dresser; 
 ## ITEMS
 ### 2022-11-20  Big Insta-pot
 
@@ -77,6 +69,9 @@ r
 
 
 # OLDER
+- shirt [s1](https://suitsupply.com/en-us/men/knitwear/green-crewneck/SW1456.html?gclid=CjwKCAjw-vmkBhBMEiwAlrMeF-gsYG0O_snaO9y87gNooubaaUOqNHraxMXDOVZEeGX_IVXx7oArRhoCr3QQAvD_BwE) [s2](https://www.charlestyrwhitt.com/us/merino-crew-neck-sweater---mocha/KNJ0347MCA.html?gclid=CjwKCAjw-vmkBhBMEiwAlrMeF-GlnGxb9UQ9kmorHlv9RpuksgHt5cil2U5In9WP9ngPiWQxLrybDBoCI1kQAvD_BwE&marketing=true&utm_campaign=USA-Shopping-F15&marketingCode=us39t3&utm_source=google) [s3](https://www.google.com/shopping/product/3153575309593426631?newwindow=1&biw=1280&bih=1326&sxsrf=AB5stBhPWzAbhnU_shFhkYim4DKOv3_YFQ:1688185782382&q=super-fine-knit+crewnecks&prds=opd:3419886666796973276,&sa=X&ved=0ahUKEwjO9Kyl2Oz_AhXBIDQIHQMrBDsQlIUHCD8oAA)  [wsj-9min-dress](https://www.wsj.com/articles/get-dressed-for-work-in-under-9-minutes-with-these-smart-tricks-63386bd6?page=1);  lyocell;  buy fine knit shirts 
+- [ ] https://www.amazon.com/Earth-Clouds-MOVA-Globe-4-5/dp/B002U21ZZK?ref_=ast_sto_dp&th=1
+
 
 - [ ] Light for Eli's room
 -- oximetry

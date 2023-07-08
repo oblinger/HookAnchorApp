@@ -1,4 +1,6 @@
 
+:: [[Segment Anything]]
+
 :: [[VAE - Variational Auto Encoder]],   [[Attention Mechanism]],   [[Gradient Checking]],   [[NG Notation]],   [[Invertable Density Estimation]],   [[Self Supervised Learning]],   [[Activation Functions]],   [[Auto Encoders]]
   [VAE](VAE.md)
 - [[DL algs]], [[DL topics]], [[DL optimization]], [[DL strategy]], 
@@ -8,7 +10,7 @@
 - [[@Yoshua Bengio]] 
 - [Coursera Notes](Coursera%20Notes.md),  [[NN]],  [@Yoshua Bengio](@Yoshua%20Bengio.md),  
 
-
+[[RLHF Reinforcement Learning from Human Feedback]], 
 
 [[DL topics]] 
 

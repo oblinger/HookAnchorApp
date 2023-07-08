@@ -1,11 +1,33 @@
 
+	JUNE: Franchesca, Laika, 
+
+	JULY: Kayt, (slack) Nidhi/Anaya, Adam/Linh Oliner, Andrew Crocker, Beth Chamlain
+
+
+
+Here are the parameters:  
+
+- Saturday, July 22 ~ 3pm - 7pm
+- Siblings 2.5+ may be dropped off as well
+- Kids will only be from Miss Soumya's class
+- There is no (additional) cost for anyone - whether donated or not - everyone is invited! 
+- Pizza, popcorn milk, and water
+- Movie: Finding Dory 
+
+**DAN:** please send me an RSVP list by Wed, 7/19/23 - we will need to know the names of / how many kids (so we can plan staff & pizza 😀)
+
+
+
+
+
+
 - Get info like this published - swimming pools 
 https://docs.google.com/document/d/1umv38fuKnCZuG7EysZxUyi-ZkwyWVzrvqV_-fxV98Pw/edit#heading=h.vf2170et6bjo
 
 
 
 - [Miss Soumya's Class](https://docs.google.com/spreadsheets/d/1ou9kUoqPB56-Jwe2PXjGEMWysLTVA4vpQQ4i7tYkwfw/edit#gid=738113275)  
-
+	
 
 ### Miss Soumya's class emails
 

@@ -13,6 +13,25 @@
 - [[SVT Virtual Box Notes]] - 
 
 
+- Prod: [WebUI](https://web-ui.sportsvisio-api.com/) 
+- Stage: [WebUI](https://stage-web-ui.sportsvisio-api.com/) 
+
+
+
+WebUI (CreateProgram, CreateTeam, Event, Game)
+
+
+- colors were from last record not from game itself
+- can't click anywghere to record
+- 'save game' should go back to the tile view
+- why the Flip do we need to "add to roster" TWICE?!?!?
+- There is no option for start of game
+- Why is clip 3sec before and 3 sec after.  should be 4 and 2 
+
+
+- all of our live games are missing
+
+
 
 ## PAGES
 - [SV Homepage](https://sportsvisio.com/) - 

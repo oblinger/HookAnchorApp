@@ -1,7 +1,7 @@
 
 **NOW**:
-- SOUPS:		White Bean, Black bean (++chili / soup / ++cuban) , 
-- 				Mixed bean ?white?, ++Split Pea, +Butternut, ++Lentil, 
+- SOUPS:		White Bean, Black bean (++chili / soup / ++cuban), ++Veg
+- 				Mixed bean ?white?, ++Split Pea, +Butternut, ++Lentil(curry,?), 
 - CURL:    	++Peanut Stew, ++Curry, Soup, ++Millet
 - QUINOA:  	++Southwest,  ++Peppers w/ more Quinoa, ++Kitchari (cauliflower)
 - TRY: 			CHIA, TVP

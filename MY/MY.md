@@ -1,9 +1,9 @@
 
-:: [[MY Config]]
+- [[Myfo]],  [[MySys]],  [[MY Stuff]], 
 
-:: [[MY Digital Setup]]
 
-:: [[Closet]],   [[Lists]],   [[MY Stuff]],   [[Meta]],   [[Myfo]],   [[Plan]],   [[QUICKADD]]
+:: [[Closet]],   [[Lists]],   [[Meta]],   [[Myfo]],   [[Plan]],   [[QUICKADD]]
 :: [[TEMPLATER]]
+
 
 

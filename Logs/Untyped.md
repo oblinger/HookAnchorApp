@@ -6,8 +6,71 @@
 
 | Date       | File                       | Notes                                                                                                                             |
 | ---------- | -------------------------- | --------------------------------------------------------------------------------------------------------------------------------- |
+| 2023-07-07 | [[SCR Note]]                   | Nick note (stressed)                                                                                                              |
+| 2023-07-07 | [[SCR Note]]                   | Older                                                                                                                             |
+| 2023-07-05 | [[@Phillip Alvelda]]           | Ideas:                                                                                                                            |
+| 2023-07-05 | [[QQ]]                         | KPIs                                                                                                                              |
+| 2023-07-05 | [[QQ]]                         | Push2Prod                                                                                                                         |
+| 2023-07-03 | [[@CV]]                        | Flow                                                                                                                              |
+| 2023-06-29 | [[@Grzegorz Biziel]]           | how does gallery work                                                                                                             |
+| 2023-06-29 | [[@Phillip Alvelda]]           |                                                                                                                                   |
+| 2023-06-28 | [[Phone]]                      | Coffee usage                                                                                                                      |
+| 2023-06-27 | [[Eli]]                        | STEP LADDERS                                                                                                                      |
+| 2023-06-22 | [[Jnl]]                        | [[NextCo]]                                                                                                                        |
+| 2023-06-22 | [[NextCo]]                     | GPT Ideas                                                                                                                         |
+| 2023-06-21 | [[EOCA]]                       | quote: most intelligent species is changing hands                                                                                 |
+| 2023-06-21 | [[Productivity]]               | Workday Ideal Breakdown                                                                                                           |
+| 2023-06-20 | [[Buckets]]                    | Proposed Buckets                                                                                                                  |
+| 2023-06-20 | [[@CV]]                        | GRZ how many frams                                                                                                                |
+| 2023-06-20 | [[QQ]]                         | ??                                                                                                                                |
+| 2023-06-20 | [[SV Product]]                 | Few ideas from Jason                                                                                                              |
+| 2023-06-20 | [[Reflections]]                | A HAH - Treadmill                                                                                                                 |
+| 2023-06-20 | [[Reflections]]                | Work First; Streamlining;                                                                                                         |
+| 2023-06-19 | [[@PenFed]]                    |                                                                                                                                   |
+| 2023-06-18 | [[Investor Intros]]            | Mark Torrance (friend of Mike Freed)                                                                                              |
+| 2023-06-18 | [[QQ]]                         | CALL TREE                                                                                                                         |
+| 2023-06-17 | [[Job Ads]]                    | SV - Backend Architect                                                                                                            |
+| 2023-06-15 | [[SNIP]]                       | Noom Diet summary                                                                                                                 |
+| 2023-06-15 | [[INV Log]]                    | Michael Freed                                                                                                                     |
+| 2023-06-09 | [[@SV]]                        | Response to Baller TV                                                                                                             |
+| 2023-06-08 | [[Eli Interactions]]           | From sensitivity class                                                                                                            |
+| 2023-06-08 | [[Phone]]                      | 1-password ideas for QL                                                                                                           |
+| 2023-06-07 | [[@Jason Syversen]]            | Xxxxx                                                                                                                             |
+| 2023-06-06 | [[@CV]]                        | daily                                                                                                                             |
+| 2023-06-06 | [[@CV]]                        | ???                                                                                                                               |
+| 2023-06-05 | [[@Juan Heber]]                | Applied to Sports Visio                                                                                                           |
+| 2023-06-04 | [[@Jason Syversen]]            | Jason's visit  [[@Circle#2023-06-03 Jason's Visit]]                                                                               |
+| 2023-06-03 | [[Eli Interactions]]           | Positive Discipline (from Miss Amanda)                                                                                            |
+| 2023-06-03 | [[EOCA]]                       | Response to Paul M                                                                                                                |
+| 2023-06-03 | [[@Circle]]                    | AGENDA -- Whole Company Roadmap                                                                                                   |
+| 2023-06-03 | [[@Circle]]                    | AGENDA -- CV Team Assessment                                                                                                      |
+| 2023-06-03 | [[@Circle]]                    | AGENDA -- CV Team Roadmap                                                                                                         |
+| 2023-06-03 | [[@Circle]]                    | VISIT -- Old Notes                                                                                                                |
+| 2023-06-01 | [[@Jason Syversen]]            | Doug @ Sapphire Ventures                                                                                                          |
+| 2023-05-31 | [[@CV]]                        | Daily                                                                                                                             |
+| 2023-05-30 | [[@CV]]                        | Daily                                                                                                                             |
+| 2023-05-30 | [[@Vishal Batavia]]            | Autoruning our stuff                                                                                                              |
+| 2023-05-30 | [[@Vishal Batavia]]            | Intro conversation                                                                                                                |
+| 2023-05-29 | [[@CV]]                        | Daily                                                                                                                             |
+| 2023-05-28 | [[@Maxim Dorogov]]             | Money metric discussion                                                                                                           |
+| 2023-05-28 | [[Bites]]                      | Sound Bites From Jason                                                                                                            |
+| 2023-05-26 | [[@Jason Syversen]]            | Lightbank (Joythi)                                                                                                                |
+| 2023-05-26 | [[COM Investor]]               | Sports based investors                                                                                                            |
+| 2023-05-24 | [[@CV]]                        | Daily                                                                                                                             |
+| 2023-05-24 | [[@Jason Syversen]]            | before travel discussion                                                                                                          |
+| 2023-05-23 | [[@CV]]                        |                                                                                                                                   |
+| 2023-05-23 | [[Phone]]                      |                                                                                                                                   |
+| 2023-05-22 | [[@CV]]                        | Weekly                                                                                                                            |
+| 2023-05-22 | [[@CV]]                        | daily                                                                                                                             |
+| 2023-05-22 | [[@CV]]                        | TAKING MEASUREMENTS                                                                                                               |
+| 2023-05-18 | [[@Maxim Dorogov]]             | intro                                                                                                                             |
+| 2023-05-17 | [[@James Briones]]             | sports                                                                                                                            |
+| 2023-05-17 | [[@CV]]                        | [[SVCV Re-ID]]                                                                                                                    |
+| 2023-05-17 | [[SVCV Re-ID]]                 | Prior Re-ID work.                                                                                                                 |
+| 2023-05-16 | [[Bridge]]                     | Networking events                                                                                                                 |
 | 2023-05-15 | [[@Brian French]]              | Change in Report To Structure                                                                                                     |
 | 2023-05-15 | [[@Mike Seibert]]              | New Report To Call                                                                                                                |
+| 2023-05-15 | [[Team]]                       | Process Call                                                                                                                      |
 | 2023-05-15 | [[Reset]]                      | Executing the reset                                                                                                               |
 | 2023-05-11 | [[@Isaac Cohen]]               | Unsent                                                                                                                            |
 | 2023-05-10 | [[@Horizon Fitness]]           | Send out a Tech                                                                                                                   |
@@ -24,20 +87,20 @@
 | 2023-05-04 | [[QQ]]                         | WAR ROOM                                                                                                                          |
 | 2023-05-03 | [[@Sam Corbitt]]               | Contracting process                                                                                                               |
 | 2023-05-03 | [[Reset]]                      | Elbows out                                                                                                                        |
-| 2023-05-02 | [[MAC Build]]                  | Installation on 2023-M2                                                                                                           |
-| 2023-05-02 | [[MAC Build]]                  | Installation                                                                                                                      |
+| 2023-05-02 | [[MAC Setup]]                  | Installation on 2023-M2                                                                                                           |
+| 2023-05-02 | [[MAC Setup]]                  | Installation                                                                                                                      |
 | 2023-05-01 | [[@Nick Allen]]                | Prep for my Reset conversation                                                                                                    |
-| 2023-05-01 | [[MAC Build]]                  | Setup                                                                                                                             |
-| 2023-05-01 | [[MAC Build]]                  | 2023-05-M2-Build                                                                                                                  |
+| 2023-05-01 | [[MAC Setup]]                  | Setup                                                                                                                             |
+| 2023-05-01 | [[MAC Setup]]                  | 2023-05-M2-Build                                                                                                                  |
 | 2023-04-30 | [[@Jason Syversen]]            | Response to Tweet about Company Strategy                                                                                          |
 | 2023-04-30 | [[Reset]]                      | KEY TEAM GAPS                                                                                                                     |
 | 2023-04-29 | [[@Drew Ackerman]]             | The 3am Scoot-master-2000                                                                                                         |
 | 2023-04-28 | [[@Jason Syversen]]            | Lichty Craziness                                                                                                                  |
 | 2023-04-27 | [[@Joe Augenbraun]]            | Getting investors                                                                                                                 |
 | 2023-04-27 | [[@Joe Augenbraun]]            | leter of reference                                                                                                                |
-| 2023-04-27 | [[@Jason Syversen]]            | AI will replicate                                                                                                                 |
 | 2023-04-27 | [[Investor Intros]]            | My Intro                                                                                                                          |
 | 2023-04-27 | [[Investor Intros]]            | JUNK                                                                                                                              |
+| 2023-04-27 | [[@Jason Syversen]]            | AI will replicate                                                                                                                 |
 | 2023-04-26 | [[@Azure Standard]]            | Missing Order                                                                                                                     |
 | 2023-04-26 | [[@Nate Blaylock]]             | talk                                                                                                                              |
 | 2023-04-26 | [[@PenFed]]                    | Returning call from them                                                                                                          |
@@ -54,21 +117,20 @@
 | 2023-04-21 | [[2023 SV Strategic Plan]]     | Strategic Tasks                                                                                                                   |
 | 2023-04-21 | [[Reset]]                      | AI Deliverables                                                                                                                   |
 | 2023-04-21 | [[Reset]]                      | discussion                                                                                                                        |
-| 2023-04-20 | [[@Apple]]                     |                                                                                                                                   |
-| 2023-04-20 | [[SV CV Team]]                 | Big Ideas                                                                                                                         |
-| 2023-04-20 | [[SV CV Team]]                 | What are people doing?                                                                                                            |
+| 2023-04-20 | [[@CV]]                        | Big Ideas                                                                                                                         |
+| 2023-04-20 | [[@CV]]                        | What are people doing?                                                                                                            |
 | 2023-04-20 | [[Headless]]                   | Record App 2.0                                                                                                                    |
 | 2023-04-20 | [[Headless]]                   | Original Note                                                                                                                     |
 | 2023-04-20 | [[Jnl]]                        | Life w/o Ayi                                                                                                                      |
-| 2023-04-18 | [[COM Investor]]               | Jason (Harvard Alumni Group)                                                                                                      |
 | 2023-04-18 | [[Investor Intros]]            | Scott Brady @ Innovation Endeavors - Joe Augenbraun                                                                               |
 | 2023-04-18 | [[Investor Intros]]            | Kelly Chen @ DCVC - Peter Berger                                                                                                  |
 | 2023-04-18 | [[Investor Intros]]            | Madrona - Michael Witbrock                                                                                                        |
 | 2023-04-18 | [[Investor Intros]]            | Bee Partners - Ai Wee                                                                                                             |
 | 2023-04-18 | [[Investor Intros]]            | Jason to Lance at Areena Sports                                                                                                   |
+| 2023-04-18 | [[COM Investor]]               | Jason (Harvard Alumni Group)                                                                                                      |
 | 2023-04-16 | [[Letters]]                    | Tim Cook Email                                                                                                                    |
 | 2023-04-14 | [[QQ]]                         | iOS consultant                                                                                                                    |
-| 2023-04-13 | [[Baller]]                     | Email from CEO                                                                                                                    |
+| 2023-04-13 | [[@BallerTV]]                  | Email from CEO                                                                                                                    |
 | 2023-04-12 | [[@Joaquin Mano]]              |                                                                                                                                   |
 | 2023-04-12 | [[Reflections]]                | PIVOT - shift towards AI                                                                                                          |
 | 2023-04-11 | [[@Joseph Yeh]]                |                                                                                                                                   |
@@ -77,7 +139,7 @@
 | 2023-04-10 | [[@Achilles (Tomas Sasovsky)]] | Intro call                                                                                                                        |
 | 2023-04-10 | [[@Jason Syversen]]            | F90-CALL3 - Feedback Call                                                                                                         |
 | 2023-04-10 | [[MED]]                        | <<<<                                                                                                                              |
-| 2023-04-07 | [[@Apple]]                     |                                                                                                                                   |
+| 2023-04-07 | [[@Apple]]                     | Sent in for                                                                                                                       |
 | 2023-04-07 | [[EOCA]]                       |                                                                                                                                   |
 | 2023-04-07 | [[EOCA]]                       | Nina note - why will we all die?                                                                                                  |
 | 2023-04-06 | [[@Grzegorz Biziel]]           | Current status of AI - Finding stuff for bridge round                                                                             |

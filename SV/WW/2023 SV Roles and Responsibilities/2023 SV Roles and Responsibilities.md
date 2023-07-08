@@ -1,2 +1,2 @@
-Alias [[RNR Notes]]
+Alias [[RNR]]
  

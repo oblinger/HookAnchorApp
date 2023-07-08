@@ -1,4 +1,16 @@
-- [ ] [divvy fix](https://apple.stackexchange.com/questions/430314/cant-assign-normal-keyboard-shortcuts-on-monterey-because-its-already-used-by)
+
+- [ ] Team Work Proj
+	 - period will avoid adding 'Webpage to end of name'
+	 - auto create for 'WW' in confluence and g-docs
+- [ ] cut buffer history
+- [ ] ask about finding update times for obsidian notes
+- [ ] plugin sync using pandoc
+
+- [ ] folding text
+- [ ] dates anniversary; bday
+- [ ] - [ ] how would we refactor if a short abbreviation prefix like CV were to change later?  how can we refactor prefixes generally?
+
+
 - [ ] tracker bug hit delete & time get screwed
 
 - [ ] pick new list name for 'wait' with unique first letter

@@ -1,30 +1,14 @@
 
+
+
+## INFO / DEVICES
+### INFO
+
  [Apple.com](https://apple.com),  
 - 800-692-7753 Apple Repair
 - 408-974-9604 Victoria Eaton  (Corp Executive Relations)  _[victoriae@apple.com](mailto:victoriae@apple.com)_
-- 
 
 
-## DEVICES
-### 2023 LAPTOP
-
-
-APPLE CARE
-**Product**      					MBP 16 SG CTO
-**Hardware Serial Number** 	GXD7H6QV6Y
-**Coverage End Date**			May 02, 2024
-**Agreement Number**			5773744682
-
-### 2020 Laptop
-
-Coverage End Date	September 18, 2020
-Agreement Number	970075117051737
-
-### 2017 
-Product	MACBOOK PRO (15-INCH, 2017)
-Hardware Serial Number	C02V811RHTD9
-
-## INFO
 ~MASTER IN OBSIDIAN~
 INFO:			MAC PRO 2019 — C02DP1LYMD6R
 CUST SRV:	800-275-2273  Say: “Macbook Customer Service”
@@ -73,6 +57,24 @@ CHAT:  http://store.apple.com/us/help/contact   (press chat bubble at top)
 
 Retina15 Serial:  C02V811RHTD9
 
+### 2023 LAPTOP
+
+
+APPLE CARE
+**Product**      					MBP 16 SG CTO
+**Hardware Serial Number** 	GXD7H6QV6Y
+**Coverage End Date**			May 02, 2024
+**Agreement Number**			5773744682
+
+### 2020 Laptop
+
+Coverage End Date	September 18, 2020
+Agreement Number	970075117051737
+
+### 2017 
+Product	MACBOOK PRO (15-INCH, 2017)
+Hardware Serial Number	C02V811RHTD9
+
 ## ACTIONS
 #### Chat
 #### Check Warranty
@@ -80,20 +82,12 @@ Retina15 Serial:  C02V811RHTD9
   https://checkcoverage.apple.com/
 
 
-## .
-
-
 # LOG
+### 2023-04-07  Sent in for
 
-
-
-### 2023-04-20  
-
-Mac-
-
-M2 
-
-### 2023-04-07  
+Send in for repair. #  20000082294343
+- Air pods. # GXDZR4M2LKKT
+- Mac:  # C02DP1LYMD6R
 
 Case  #101972730928 
 - Test User

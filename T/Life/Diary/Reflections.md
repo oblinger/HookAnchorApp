@@ -1,3 +1,50 @@
+### 2023-06-20  A HAH - Treadmill
+
+I am living on a self-inflicted treadmill.
+I never feel I am remotely caught up.
+
+Key Issue:
+- I do chew first, thus prime things slip so I feel/am behind
+- If prime things are not fun enough, wont do them
+  need to shape aims to be more fun, or drop them
+
+Approach:
+- Do prime things first, chew will slip, thats ok
+- Radical streamlining of prime list needed
+	- Drop many things
+	- Do others FAST, with 80/20 thinking
+	- Delegate, Multitask, Track
+
+- Less Is More.  Be happy with less done & planned
+- Broaden list of things getting 'prime' time
+
+
+
+
+
+### 2023-06-20  Work First; Streamlining; 
+
+Observation:  All of my chew tasks eat up much of my prime working time, and I am not getting important stuff done.
+
+Proposed Approach:
+- Meetings - My day typically begins with 1-2 hours of meetings.
+- Flash Check - based on email senders and slack channel I *ONLY* look for emergencies, usual there are few/none.
+- Prime - Then I try to work on any F1 tasks under work, now, or week
+- Eat - While reading or fun chew tasks
+- Chew - Daily & Chew tasks are done in the afternoon/evening
+
+This week I am getting more 'prime' tasks done.  Still not as many hours as I hope.  BUT
+It really helped that this weekend I really cleaned up my F1 lists well so things are organized.
+Still don't feel like I am quite getting as much prime tasks as I hope, but definitely way more (than the typical ZERO from before)
+
+Makes me realize I need to streamline my prime and chew tasks dramatically.
+Makes me realize I can achieve SO much more, by saying no, by delgating, by being intelligent, by streamlining tasks.
+
+==> Need to start adding:  Startup thinking, and Networking thinking to my weekly mix
+==> Need further steamlining first, and need to get small tactical plans for these activities
+
+
+
 ### 2023-04-24  Lesson Learned:  I am too tactical, too insecure, not proactive @ high level, & running from fear
 
 

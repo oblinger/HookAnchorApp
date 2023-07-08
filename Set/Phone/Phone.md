@@ -1,3 +1,47 @@
+### 2023-06-28  Coffee usage
+
+- 16.8 - 15.1 	= 1.7oz/10cups	= $.31/cup
+- 11.4 - 10.5 	= .9oz/ 6 cups 	= $/cup
+- 8.7 - 6.8 		= 1.9oz/10C       = .19/oz	= 24 cents/cup Philz		= $.09/cup Amazon Columbian
+- 13.2 - 11.4	= 1.8oz/12C	= .15/oz	= 19 cents/cup Philz
+- 11.4 - 9.5		= 1.9oz/12C	= .158/oz	= 20 cents/cup Philz
+
+$30/16oz =	$1.875/oz. Philz
+$20/16oz = 	$1.25/oz		Direct from Philz
+$15/32oz =	$.47/oz
+
+
+$.31/cup
+
+800-726-0190e
+
+
+### 2023-06-08  1-password ideas for QL
+
+
+- VAULT-DELTA-SECURITY - vault-by-vault delta security
+- UNSTRUCTURED - shared secure info (big editor/viewer)
+	- notes with clickable URL & phone number
+- BUSINESS ONLY CONTACTS
+- LOWER & HIGHER SECURITY
+	- Just look / device login-level
+- SUPER SECURE
+	- TWO factor Physical. (2-physical-device 2-factor) 
+		- Stronger than SIM & email. (coin-base PW)
+		- Monitor 3 devices for frequent use
+- EMERGENCY ZERO-DEVICE ACCESS
+	- Special multi-word PW; Images from two 8x8-grid
+	- 
+- REVOKABLE ACCESS???
+
+
+### 2023-05-23  
+
+
+
+June 28 12:20. w. Dr. Johnson (ear doctor)
+415-362-5443
+
 
 ### 2023-04-23  SF BAY AREA HEATED POOLS
 
