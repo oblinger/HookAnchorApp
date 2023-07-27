@@ -1,7 +1,7 @@
+- [[SYS]],  [[KM]], 
+- [[OBS API Docs]]
 
-:: [[OBS API Docs]]
-
-MY SETUP:	[[OBS Setup]],   [[OBS Projects]],   
+MY SETUP:	[[SYS]], [[OBS Projects]],   
 MY IDEAS:	[[Multi-List WorkFlow]],  
 HACKING:		[[Action Notes]], [[#ADD ITEM COMMAND|Add Item]],  [[#SEND ITEM COMMAND|Send Item]],  
 FORA:			[[Discord App]],  [Forum](https://forum.obsidian.md),   [Obsidian Website](https://obsidian.md)  [support@obsidian.md](mailto:support@obsidian.md)  
@@ -21,7 +21,6 @@ PLUGINS:		[Templater Docs](https://silentvoid13.github.io/Templater/internal-fun
 
 -    [[DocObsidian]],  
 
-800-692-7793  my apple   (luke in tech support)
 - support 
 
 

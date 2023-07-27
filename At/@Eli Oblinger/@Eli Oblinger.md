@@ -1,12 +1,12 @@
 
 :: [[Eli Activities]]
 
-:: [[Eli Food]],   [[Eli Interactions]]
+:: [[Meals Eli Food]],   [[Eli Interactions]]
 
 :: [[ELI Education]]
 
 :: [[Eli LOG]]
-=[[PP]]  
+=[[Person]]  
 - [[Eli]], [[BCMS]],  [[Eli Math]], [[2022-05 ELI next school]], 
 - 
 - 

@@ -6,12 +6,31 @@
 
 | Date       | File                       | Notes                                                                                                                             |
 | ---------- | -------------------------- | --------------------------------------------------------------------------------------------------------------------------------- |
+| 2023-07-26 | [[@Nick Allen]]                | Pitching a Business                                                                                                               |
+| 2023-07-26 | [[SNIP]]                       | Piano                                                                                                                             |
+| 2023-07-26 | [[race]]                       | black dad myth                                                                                                                    |
+| 2023-07-25 | [[@James Briones]]             | TC alternatives                                                                                                                   |
+| 2023-07-24 | [[@Isaac Cohen]]               | Post pitch discussion                                                                                                             |
+| 2023-07-19 | [[@Yiftach Eisenberg]]         | Catch Up                                                                                                                          |
+| 2023-07-17 | [[LOG]]                        | Einstein Puzzle                                                                                                                   |
+| 2023-07-17 | [[QQ]]                         | Patent Thinking                                                                                                                   |
+| 2023-07-17 | [[QQ]]                         | Regression (Virtual Field Tests)                                                                                                  |
+| 2023-07-15 | [[ToBuy]]                      | Coffee Table                                                                                                                      |
+| 2023-07-15 | [[ToBuy]]                      | Table                                                                                                                             |
+| 2023-07-14 | [[Phone]]                      | DEXA. [[@Dexafit]]                                                                                                                |
+| 2023-07-13 | [[@CV]]                        | Progression of halo apps                                                                                                          |
+| 2023-07-12 | [[QQ]]                         | Halos                                                                                                                             |
+| 2023-07-12 | [[SV Mgt]]                     | Deliverables                                                                                                                      |
+| 2023-07-11 | [[Bkts]]                       | Reality time                                                                                                                      |
+| 2023-07-11 | [[EduCorp]]                    | Collette pointers                                                                                                                 |
+| 2023-07-10 | [[@Jason Syversen]]            | Topics                                                                                                                            |
+| 2023-07-08 | [[TT]]                         | production bug                                                                                                                    |
+| 2023-07-07 | [[@Isaac Cohen]]               | Wow, quite a plane ride                                                                                                           |
 | 2023-07-07 | [[SCR Note]]                   | Nick note (stressed)                                                                                                              |
 | 2023-07-07 | [[SCR Note]]                   | Older                                                                                                                             |
 | 2023-07-05 | [[@Phillip Alvelda]]           | Ideas:                                                                                                                            |
-| 2023-07-05 | [[QQ]]                         | KPIs                                                                                                                              |
 | 2023-07-05 | [[QQ]]                         | Push2Prod                                                                                                                         |
-| 2023-07-03 | [[@CV]]                        | Flow                                                                                                                              |
+| 2023-07-03 | [[@CV]]                        | CV team components                                                                                                                |
 | 2023-06-29 | [[@Grzegorz Biziel]]           | how does gallery work                                                                                                             |
 | 2023-06-29 | [[@Phillip Alvelda]]           |                                                                                                                                   |
 | 2023-06-28 | [[Phone]]                      | Coffee usage                                                                                                                      |
@@ -20,9 +39,8 @@
 | 2023-06-22 | [[NextCo]]                     | GPT Ideas                                                                                                                         |
 | 2023-06-21 | [[EOCA]]                       | quote: most intelligent species is changing hands                                                                                 |
 | 2023-06-21 | [[Productivity]]               | Workday Ideal Breakdown                                                                                                           |
-| 2023-06-20 | [[Buckets]]                    | Proposed Buckets                                                                                                                  |
+| 2023-06-20 | [[Bkts]]                       | July 2023 Buckets                                                                                                                 |
 | 2023-06-20 | [[@CV]]                        | GRZ how many frams                                                                                                                |
-| 2023-06-20 | [[QQ]]                         | ??                                                                                                                                |
 | 2023-06-20 | [[SV Product]]                 | Few ideas from Jason                                                                                                              |
 | 2023-06-20 | [[Reflections]]                | A HAH - Treadmill                                                                                                                 |
 | 2023-06-20 | [[Reflections]]                | Work First; Streamlining;                                                                                                         |
@@ -174,7 +192,7 @@
 | 2023-03-07 | [[@Daniel Handyman]]           | Quote for house work                                                                                                              |
 | 2023-03-06 | [[@Mike Seibert]]              | Three guys CV guys from Argentina                                                                                                 |
 | 2023-03-01 | [[@Tomas Piaggio]]             | Maybe work for Sports Visio                                                                                                       |
-| 2023-03-01 | [[Buckets]]                    | New Time Tracking Bucketing                                                                                                       |
+| 2023-03-01 | [[Bkts]]                       | New Time Tracking Bucketing                                                                                                       |
 | 2023-03-01 | [[@Pablo Calofatti]]           |                                                                                                                                   |
 | 2023-03-01 | [[Reflections]]                | Mid Week - Different kind of tracking                                                                                             |
 | 2023-02-28 | [[@Jack Potvin]]               | Bug validation process                                                                                                            |
@@ -190,7 +208,6 @@
 | 2023-02-19 | [[@Mark Lichty]]               | At First Mgt Meeting                                                                                                              |
 | 2023-02-19 | [[@Mark Lichty]]               | Intro discussion                                                                                                                  |
 | 2023-02-19 | [[@Yashin Lin]]                | discussion                                                                                                                        |
-| 2023-02-19 | [[SV Mgt]]                     | Feb Management Meeting                                                                                                            |
 | 2023-02-17 | [[@John Murphy]]               | Mgt trip meeting                                                                                                                  |
 | 2023-02-17 | [[Trip]]                       | Mike                                                                                                                              |
 | 2023-02-17 | [[@Jason Syversen]]            | Mgt Trip                                                                                                                          |
@@ -237,7 +254,7 @@
 | 2022-12-13 | [[DYL]]                        | Dan the designer                                                                                                                  |
 | 2022-12-13 | [[DYL]]                        | Captured from earlier notes                                                                                                       |
 | 2022-12-12 | [[Diet]]                       | Evening Eating - Hormones                                                                                                         |
-| 2022-12-11 | [[KM Dashboards]]              | Daily                                                                                                                             |
+| 2022-12-11 | [[SYS Dashboards]]             | Daily                                                                                                                             |
 | 2022-12-08 | [[Phone]]                      | Solar Installer                                                                                                                   |
 | 2022-12-07 | [[resLI]]                      | Framing Self                                                                                                                      |
 | 2022-12-03 | [[Phone]]                      | Thumb Tack TV install                                                                                                             |
@@ -494,7 +511,7 @@
 | 2021-04-07 | [[@Jason Syversen]]            | Jason #5                                                                                                                          |
 | 2021-04-01 | [[Journal Old]]                | Jason #5                                                                                                                          |
 | 2021-04-01 | [[@Jason Syversen]]            | Jason #5                                                                                                                          |
-| 2021-04-00 | [[Buckets]]                    | Summary at that time                                                                                                              |
+| 2021-04-00 | [[Bkts]]                       | Summary at that time                                                                                                              |
 | 2021-04-00 | [[Journal Old]]                | >>> TOP   -- NEXT JOB <<<                                                                                                         |
 | 2021-04-00 | [[NJ22 Contents]]              | >>> TOP   -- NEXT JOB <<<                                                                                                         |
 | 2021-03-30 | [[Journal Old]]                | Jason Summary                                                                                                                     |

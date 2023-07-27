@@ -4,7 +4,7 @@
 - [[Invertable Density Estimation]] - 
 - [[GANs]] - 
 - [[Self Supervised Learning]] - 
-- [[Attention Mechanism]] - 
+- [[Attention]] - 
 
 
 

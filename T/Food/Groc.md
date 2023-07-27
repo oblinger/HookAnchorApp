@@ -38,7 +38,7 @@ Costco VEG	Celery  GreenBeans   Peppers  Kale  Zuchini
 Costco MEAT	Beef  Chick   
 Costco FROZ	Salmon, fruit/berries
 Costco DRY	Seaweed  Almonds
-~-~~-~
+ ~ - ~ ~ - ~
 Walmrt DRY	Nescafe/Truvia, 
 
 BellPeppers, Kale, 
@@ -194,7 +194,16 @@ DRY - Soups, Corn, Sardine
 https://www.mensjournal.com/food-drink/easy-healthy-meals-7-best-canned-soups/6-tabatchnicks-low-sodium-split-pea-soup/
 
 _
-# # TOPICS # 
+# TOPICS
+
+## TRAVEL SNACKS
+- WF:		Fruit, String Cheese
+- COSTCO: Juice Box, Gold Fish, Mangos, Pistachios, Seaweed, 	
+- WEEE:	Crackers
+- AMAZON:	PB-crackers, Bada Bean, 
+
+## HOME SNACKS
+- Tomatos, Radish, Celery, 
 ## = Travel =
 UTIL: Utensils, Napkins, Sunscreen, 
 DRY: Pistachios, Mangos, PB-crackers, 

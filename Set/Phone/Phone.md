@@ -1,10 +1,14 @@
+### 2023-07-14  DEXA. [[@Dexafit]] 
+
+
+
 ### 2023-06-28  Coffee usage
 
 - 16.8 - 15.1 	= 1.7oz/10cups	= $.31/cup
 - 11.4 - 10.5 	= .9oz/ 6 cups 	= $/cup
 - 8.7 - 6.8 		= 1.9oz/10C       = .19/oz	= 24 cents/cup Philz		= $.09/cup Amazon Columbian
-- 13.2 - 11.4	= 1.8oz/12C	= .15/oz	= 19 cents/cup Philz
-- 11.4 - 9.5		= 1.9oz/12C	= .158/oz	= 20 cents/cup Philz
+- 13.2 - 11.4	= 1.8oz/12C		= .15/oz	= 19 cents/cup Philz
+- 11.4 - 9.5		= 1.9oz/12C		= .158/oz	= 20 cents/cup Philz
 
 $30/16oz =	$1.875/oz. Philz
 $20/16oz = 	$1.25/oz		Direct from Philz

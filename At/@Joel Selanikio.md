@@ -1,2 +1,2 @@
-== [[PP]]   [Physician](https://www.linkedin.com/in/joelselanikio/)[[@Georgetown Hospital]]
+== [[Person]]   [Physician](https://www.linkedin.com/in/joelselanikio/)[[@Georgetown Hospital]]
 

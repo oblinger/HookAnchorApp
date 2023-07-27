@@ -1,13 +1,14 @@
 ### Work Projects
-=	[[Dataset]]			[[2023 Build Datasets Needed for the CV Team]].
-=	[[Baseline]]			[[2023 SV Mgt Meeting Slides]].
-=	[[Test.]]			[[2023 SV Testing Plans]].
-=	[[Rdmap.]]		[[2023 SV Roadmap]] - 
-=	[[Agenda.]]		[[2023 SV CV New Agenda]].
+=	[[Hire]]			[[2023 Team Hiring]].
+=	[[Dataset]]		[[2023 Build Datasets Needed for the CV Team]].
+=	[[Baseline]]		[[2023 SV Mgt Meeting Slides]].
+=	[[Test]]			[[2023 SV Testing Plans]].
+=	[[Roadmap]]		[[2023 SV Roadmap]] - 
+=	[[Agenda]]		[[2023 SV CV New Agenda]].
 
 =	[[RNR]]			[[2023 SV Roles and Responsibilities]].
 =	[[Demos.]]		[[2023 Bridge Round AI Demo]].
-=	[[SV lrn]]		[[2023 Learning]] - 
+=	[[SV lrn]]			[[2023 Learning]] - 
 
 o	[[Bites]]			[[2023 Sound Bites for Bridge Round Financing]].
 

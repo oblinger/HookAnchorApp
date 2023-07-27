@@ -1,4 +1,4 @@
-=[[PP]]    [CIO](https://www.linkedin.com/in/chris-hayden-204766/)  [[@Sunnova]]  
+=[[Person]]    [CIO](https://www.linkedin.com/in/chris-hayden-204766/)  [[@Sunnova]]  
 
 
 

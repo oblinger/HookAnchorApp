@@ -1,5 +1,12 @@
 (See [[T/Food/Food|Food]] for most info about diet & food)
 
+## Health
+- Spicy Foods
+- Nuts (Walnuts)
+- Blueberries
+
+# OLDER STUFF
+
 # Medical.Diarrhea --
 
     The strains that appear to be most effective in treating infectious diarrhea, for instance,

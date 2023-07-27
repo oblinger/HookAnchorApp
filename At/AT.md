@@ -1,4 +1,6 @@
 
+:: [[@Dexafit]],   [[Doctor]],   [[Service]]
+
 :: [[@Chuck Morefield]],   [[@Collette Roney]],   [[@DARPA]],   [[@Fernando Eillman]],   [[@Ignacio Diorio]],   [[@Juan Heber]],   [[@Phillip Alvelda]],   [[@Talent Cross]]
 
 :: [[@Dave Whitmore]],   [[@Gill Pratt]],   [[@Isaac Cohen]],   [[@Jonathan Abrams]]
@@ -65,7 +67,7 @@
 
 
 FORMAT FOR 'AT' ENTRIES
-- TAG 		What kind of person/entity is this?  [[PP]], [[START]], 
+- TAG 		What kind of person/entity is this?  [[Person]], [[START]], 
 - TITLE		What is their job title?  (this should also be a link to their linked in)
 - COMPANY	Where to they work?
 - LINKS		Links to other info about them.  Crunchbase, Github, Calendly, 

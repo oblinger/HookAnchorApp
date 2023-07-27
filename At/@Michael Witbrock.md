@@ -1,2 +1,2 @@
-=[[PP]]   [Professor](https://www.linkedin.com/in/witbrock/)  [[@University of Aukland]]
+=[[Person]]   [Professor](https://www.linkedin.com/in/witbrock/)  [[@University of Aukland]]
 

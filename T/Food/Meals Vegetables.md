@@ -1,12 +1,10 @@
 
-- [[Eli Food]] 
-
-## == SOLO 
+## == SOLO VEGGIES
 
 WK FRZN: .  Edamame, Peas, Corn, Riced Cauliflower, 
-WK CHIN: . . Pea Sprouts, Dragon Wiskers, Carrot-Wosun, Chin Broccoli
+WK CHIN: . . Pea Sprouts, Dragon Whiskers, Carrot-Wosun, Chin Broccoli
 WK CHIN: . . WoodEar-Cucumber, Snow Peas
-CHINESE: . . Jiaobai
+CHINESE: . . Jiaobai, Garlic Sprouts, 
 FAV: . . . . . .  Sweet Potato, Potato, Broccoli, Corn(cob), 
 FAV: . . . . . .  Carrots, Bell Pepper, Cauliflower, Kale/Collards, 
 FAV: . . . . . .  French/Chinese Green Beans, Snap Peas,
@@ -27,6 +25,14 @@ WK SNACK: Fruit, Hummus(Radish, Celery, Bell Pepper)
 WEEKLY:  5-chin, 8-fav, 3-frozen, 3-snack
 DAN NOT:  Bok Choi, Yo-Mai-Tsai, Tong-Hao, 
 
+## Chinese
+
+- GARLIC SPROUTS: Pork belly,  
+fr
+
+
+## More
+
 **BAKE**:
 - SWEET POTATOES - Spray Oil, Turmeric, 
 
@@ -40,7 +46,7 @@ DAN NOT:  Bok Choi, Yo-Mai-Tsai, Tong-Hao,
 - **Cauliflower** broken into florets, microwaved covered with little water for 2-3min until tender
 
 **SAUTE: OIL, WATER, SALT**
-- TOFU SKIN: Mushrooms, Bellpeppers
+- TOFU SKIN: Mushrooms, Bell Peppers
 - **Edamame**, Smoked Tofu
 - **Snap Peas**, 
 - **Asparagus**

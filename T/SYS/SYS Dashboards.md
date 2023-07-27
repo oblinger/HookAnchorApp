@@ -9,6 +9,11 @@
 - CAPS-J P  PLAN	My weekly planning workflow (F2)
 - CAPS-J S  SELF	My personal development workflow
 
+### THREE SCREEN LAYOUT
+
+- CAPS-K  7,8; 8,9; -
+- Slack;   Email, Obsidian;   Browsers, Gmeet;   Browser2
+
 
 
 ### DAILY VIEW DASHBOARD

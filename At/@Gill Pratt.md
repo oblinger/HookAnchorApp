@@ -1,3 +1,3 @@
-=[[PP]]   [CEO](https://www.linkedin.com/in/gillpratt/) [[@Toyota Research Institute]]
+=[[Person]]   [CEO](https://www.linkedin.com/in/gillpratt/) [[@Toyota Research Institute]]
 
 

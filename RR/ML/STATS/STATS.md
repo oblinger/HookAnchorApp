@@ -1,4 +1,7 @@
 
+
+- [[Ransac]],
+- 
 :: [[()]]
 
 :: [[ADF - Augmented Dickey Fuller Test]],   [[Q-Q Plot]],  [[PCA]],  

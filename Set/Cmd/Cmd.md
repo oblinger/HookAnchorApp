@@ -1,4 +1,6 @@
 
+:: [[Bought Folder]],   [[CV Log]],   [[SV Log Webpage]]
+
 :: [[AF Folder]],   [[Baselines]],   [[Bug Actual List Webpage]],   [[Games]],   [[Icons Folder]],   [[SV Root]],   [[svdata]]
 
 :: [[Preferences App]],   [[SV Confluence Webpage]],   [[Thistle]],   [[gCALENDAR Webpage]]

@@ -1,12 +1,4 @@
 
-- Dan outward.
-- VC inward. 
-
-- Targeting list
-	- asking for warm intros.
-	- outreach to Sport&AI angels
-
-
 
 # APPS (Appstore)
 ## xx 1Password  (not from here)   [[Doc 1Password]]

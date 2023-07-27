@@ -1,5 +1,12 @@
 
 
+## Knowlege Xenophanes
+
+
+As for certain truth no [wo-]man knows it, ...  even if by chance s/he were to utter The Final Truth, they would themselves not know it: for all is but a woven web of guesses.  
+   -- Xenophanes 570-478BC
+
+Xenophanes
 
 ## Professional
 

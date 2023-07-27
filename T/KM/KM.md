@@ -1,12 +1,8 @@
-- [[KM Overview]],   [[KM.]]
+- [[KM Overview]],   [[KM.]],   [[SYS]], 
 
-[[KM]]
-- [[KM Dashboards]]	- 
-- [[KM Facets]]			- 
+
+[[KM]]    (Move this to SYS or OBS, KM is for the abstract concept and/or my projects here)
 - [[KM Folder]]			- 
-- [[KM Misc]]				- 
-- [[KM Task Lists]]		- 
-- [[KBD Shortcuts]]		- 
 
 
 [[Meta KM]] - [[PKM]] - [[Hook System]] 

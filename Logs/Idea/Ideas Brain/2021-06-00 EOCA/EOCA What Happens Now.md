@@ -1,6 +1,7 @@
-need a word for a 
 
 
+
+# xxx
 
 # The Immediate Future
 
@@ -18,6 +19,27 @@ WEAPONIZATION
 - Learning specifically to manipulate computing systems for attack and defense
 - 
 
+## SUMMARY
+
+PARALLEL PATHS
+
+- LEVIATHANS - Rise of the leviathans - Large Broadly Trained Models
+	- Cost of inputs means that only a few mega-corps will dominate the construction of leviathans:
+		- Researcher's salary, Compute, gathering static data, providing human feedback
+	- These leviathans will serve as a key part of these AI systems
+	- Still with rapid transfer to open source
+
+
+- FIRST WAVE:
+	- BROAD INTELLIGENCE - TASK ALIGNED EXPERTISE & AGENCY - LIMITED DRIVES & AGENDA
+	- ROGUE ELEMENTS - Broad Intelligence + Broad Autonomy
+- CYBER-APT-GAI-WEAPONS
+	- Autonomous GAI weapons designed to penetrate and survive
+- APT - Ghost in the machine
+
+
+PARALLEL PATH
+- Virtual Employees - broad SW that corporations begin to treat as a kind of autonomous-agent 'employee' within their workforce
 
 
 
@@ -61,4 +83,9 @@ Engineering of all types is shifted rapidly towards machine driven design and in
 
 
 
+# PARTS
+### Corp GAIs
+- Comp Security
+- Corp Finance - All fin goals; All fin contexts & constraints; all accounts & transactions
+- Software Engineering - Translating intent into code
 

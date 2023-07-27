@@ -1,3 +1,4 @@
+
 [[SV]]   [CEO](https://www.linkedin.com/in/jsyversen/)  [[@Sports Visio]]  	 [Calendly](http://calendly.com/syversen),  [[SV]], 
 - [[2023 Jason Tasks]] - 
 
@@ -10,12 +11,27 @@ DISCUSS
 
 
 Score Board operation
-
 Reply idea - monitor
 
 
 
 # LOG
+
+### 2023-07-10  Topics
+
+- HIRE BOTH @ the same time.
+- TWO HIRES NOT THREE
+
+
+
+
+- Best if I am reactive.  Report what I DID do not what I plan to do
+- 
+- Last month most of my time was in weeks w/ individual CV members.  Wanted this month to be same, but not.
+
+
+
+
 ### 2023-06-07  Xxxxx
 VolleyBall
 Flaming 

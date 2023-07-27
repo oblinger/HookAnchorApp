@@ -1,4 +1,17 @@
+- [[Meals Vegetables]],  [[Meals Eli Food]],
+
 # MEALS
+
+## CHINESE VEGETABLES
+- GARLIC SPROUTS: PorkBelly, 
+- 
+
+
+## VEGETABLES
+- RED CABBAGE: 
+
+## SEAFOOD
+- OCTOPUS: (Celery, Carrots); Grilled
 
 ## AYI
 - TOFU:  (Fried, Chicken Meatball, Mushroom, Tomato)

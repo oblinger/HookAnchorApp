@@ -1,3 +1,5 @@
+
+:: [[2023 SV CV New Agenda]]
 - [ ] Least Commit Classes
 - [ ] Datasets
 - [ ] Metrics

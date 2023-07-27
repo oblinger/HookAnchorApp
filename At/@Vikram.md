@@ -1,4 +1,4 @@
- [[PP]]   [Psychotherapist, Founder, and CEO](https://www.linkedin.com/in/vikramsurya/)  [[@Technotherapy]] 
+ [[Person]]   [Psychotherapist, Founder, and CEO](https://www.linkedin.com/in/vikramsurya/)  [[@Technotherapy]] 
 
 
 

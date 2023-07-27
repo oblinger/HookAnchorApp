@@ -1,4 +1,4 @@
-=[[PP]]  [Partner, Investor Relations](https://www.linkedin.com/in/peterashley/)  [[@MDSV Capital]]
+=[[Person]]  [Partner, Investor Relations](https://www.linkedin.com/in/peterashley/)  [[@MDSV Capital]]
 
 
 

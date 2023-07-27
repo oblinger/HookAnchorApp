@@ -1,11 +1,46 @@
+- [skubb insert](https://www.ikea.com/us/en/p/skubb-box-with-compartments-dark-gray-90472967/?utm_source=google&utm_medium=surfaces&utm_campaign=shopping_feed&utm_content=free_google_shopping_clicks_Home_organisation) 
+- [ ] Drawers near desk in bedroom
 
-- Office Dresser; 
-
+- [ ] - [ ] [table](https://www.costco.com/metro-7-piece-dining-set.product.100840500.html). 
 - [ ] Glucose monitor (buy it)
 - [ ] [10Q](https://antneygrub-store.mybigcommerce.com/instant-pot-duo-nova-10qt-multi-cooker-stainless-steel/?gclid=CjwKCAiA68ebBhB-EiwALVC-NuIDsXNcsuBgSPRdG5844ShzVztqIWPzAsg_8qHO6T8On9W5Wm_MkxoChNgQAvD_BwE) instapot  
 
 - [ ] Buy tripod. consider go-pro or other video. search best camera w/ a kid
 ## ITEMS
+### 2023-07-15  Coffee Table
+
+- [QL scratch](https://docs.google.com/document/d/1hoF_iCN4-W0Lnigf9rLML9vxB1R5NNKq3O9PNM36xU0/edit) 
+- [Functional Coffee Table](https://www.roveconcepts.com/truman-coffee-table) 
+
+
+### 2023-07-15  Table
+(master in QL scratch)
+
+71" table
+
+
+
+- [Custom Legs](https://www.outsidetheboxwoodworking.com/custom-tables/smooth-edge-walnut-dining-table-above-and-beyond) 
+
+
+#### West Elm
+- [Live Edge](https://www.westelm.com/products/live-edge-wood-table-h1850/?pkey=cdining-tables) 
+
+
+#### Legs
+- [Square Metal](https://www.etsy.com/listing/996095530/powder-coated-metal-table-legs-u-style?ga_order=most_relevant&ga_search_type=all&ga_view_type=gallery&ga_search_query=metal+bases&ref=sc_gallery-1-6&frs=1&plkey=800cc67c128b0c06eb4ff156deceeee80a1b9b88%3A996095530) 
+- [Etsy Metal Legs](https://www.etsy.com/market/metal_bases?ref=pagination) 
+
+#### Custom
+- [Outside the box](https://www.outsidetheboxwoodworking.com/) 
+- [Rainier Furniture](https://rustictradesfurniture.com/all-tables/) (rustic trade)
+- [Grain Designs](https://graindesigns.com/dining-tables/) 
+- [KC Custom](https://www.kccustomhardwoods.com/collections/portfolio?pf_t_build_type=Dining+Tables) 
+- 
+- [Stumptown](https://www.stumptownreclaimedwood.com/) 
+- [Lumber 2 Love](https://www.lumber2love.com/customer-gallery/) 
+- [Custom Made](https://www.custommade.com/contemporary-dining-table/by/puddletownwoodworking/) 
+
 ### 2022-11-20  Big Insta-pot
 
 - Instant Pot Duo Nova 7-in-1 Electric Pressure Cooker, Slow Cooker, Rice Cooker, Steamer, Saute, Yogurt Maker, Sterilizer, and Warmer, 10 Quart,

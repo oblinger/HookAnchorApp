@@ -1,6 +1,34 @@
 
 :: [[Uniting America]]
 
+# LOG
+### 2023-07-26  black dad myth
+https://www.cdc.gov/nchs/data/nhsr/nhsr071.pdf
+
+Happy Father's Day Will ! And I agree we should only be publishing celebrations on that day.
+
+Still let me push back some here: The reality is that single family homes of any color are under much greater financial and time stress than dual parent homes. There is just 1/2 the cash and 1/2 time time to spread around, so the children get left out.
+
+Now in some hypothetical case where dad lives next door, eats dinner there every night, and shares household chores I could imagine it being similar to cohabitation. But I bet that is a 1% case, not a typical case. So I think we need to recognize this as the dramatic negative that it is. (and the statistically WIDELY shows it to be)
+
+But I think the other reality that needs to be acknowledge is that within white and black populations there are sub-populations that are night and day different. You mentioned that none of your friends were deadbeat dads... and I believe you. We all live in a friend bubble of similar folks. But I think there are other friend bubbles (both white and black) where EVERYONE is a deadbeat dad -- I exaggerate, but you get the point.
+
+So I think the reality is there is a population of failing white families and failing black families. And my take is that they are failing for both internal reasons (e. g. not living together) and external reasons (e. g. racism). If we are going to fix our problems we need to identify the true source of those problems. And for this problem it is clear (to me) that there are significant external issues and internal issues.
+
+Of course these causes are caught in a viscous cycle. Any external cause like racism is increased in response to an internal cause like increased drug dealing which itself is increased in response to external causes (like lack of opportunity). So either side can point fingers and say oh it is all because of X. The real way forward it so acknowledge ALL of the causes, and to acknowledge that nearly ALL causes truly do have deeper roots. But that is no excuse, we need to address each cause, like racism in hiring, like single family homes, like lack of role models. Even if there are reasons why those things exist, it is not an excuse for lack of action, they need to be addressed.
+
+
+~~
+
+Yeah Will I don't think we are disagreeing at all.  Indeed your article and the referenced study shifted my understanding of the issue.  I assumed non-cohabitation mostly meant not-involved, now I see that the level of involvement really could be notable, perhaps in a notable number of cases... it would be cool to see more studies on that!
+
+But your larger point in your response here is one that I very much agree with.  one generally doesn't generally motivate behavior improvement by shouting about how crappy someone is doing...  its not a great motivator at all!  Plus it is just not true.  The real truth is that many of these issues tie to race, but the are not DETERMINED by race.  So the truth to highlight is that there are many African American dads who are showing up, and many who are not.  And that the choice made has a dramatic outcome for your child.  I don't like the messaging that all is because of systemic racism... if that is true, then why bother, you screwed anyway.  And I don't like the messaging that your are fundamentally screwed up.... again it sounds too hard to bother.  The accurate message, and the most motivating message is that systemic racism exists, it sucks and we all need to fix it.... AND there are whole sub-populations that are failing...  the causes of those failings are both from outside and inside, but whatever the cause, SOME families overcome that context and it makes all the difference to their children.  For me that is the messaging that lets no one off the hook, and yet also shows that success by changing oneself is possible even if the face of a larger system that is still broken.
+
+Yeah the messaging that it is "all their fault" is not accurate, and not productive....  whether you mean all those racists, or all those deadbeat dads.  And I think this perspective connects very much with your point!
+
+
+
+# REST
 ## White Fragility
 
 Consider this annoying claim:  ``Blacks have more babies outside of marriage, and studies show adults from single parent homes are poorer.  This is why Blacks are so financially screwed up."

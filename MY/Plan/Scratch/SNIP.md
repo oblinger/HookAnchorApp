@@ -1,4 +1,23 @@
 
+### 2023-07-26  Piano
+
+  
+I just got QL’s piano out from the basement because I remembered how much Eli loved to jump on it as a kid.
+
+  
+
+And he started banging on it, and this time he was telling us about thunderstorms and people running and all kinds of stories to go with it.
+
+The managed to drag a full glass of water off a table right into the keyboard after the first 2 hours of it being out.
+
+  
+
+Yeah after nearly no usage for the last 15 years besides Eli’s stomping as a baby, it bit the dust after 2 hours.
+
+  
+
+So I was thinking you guys might go in together on a new one.  I was doing some research on the best one…. Perhaps splitting something like $200-$250.  I am very happy to go in on it with you guys too.
+
 
 
 ### 2023-06-15  Noom Diet summary

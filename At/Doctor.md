@@ -1,4 +1,4 @@
-< [[PP]] < [[SERVER]] < [[DOCTOR]]
+< [[Person]] < [[Service]] < [[Doctor]]
 
 
 (Master in Obsidian)

@@ -1,23 +1,42 @@
 
-## BUCKETS
+## BUCKETS ORG
+
+2   DAILY:	Daily(Tidy, Wake, Nap, Exercise), Fam(Eli, Home)
+6-7 MAIN: 	Chew(First, Email, ..., Repeat, Papers), 
+.				Coms(Talk, Text, Meet), Work(MIT, Prime, Secondary)
+2  GAP: 		Fried, Hack, Lounge(Browse, Eat, Fritter, Read, Watch)
+2  FAM:
+3  LIFT:		Self(God, Project, Career), Call, Career(Learn), [[fun]](Out)	 
 
 
+
+## BUCKETS TIME ALLOCATIONS
 - 10-11h			from 7am to 5pm
-- 3h - DAILY	-  Tidy, Wake, nap, exercise, poop ; Lounge, Eat
-- 2h - CHEW 	-  Email, First, Slack, Repeat
+- 2h - DAILY	-  Tidy, Wake, Nap, Exercise, Poop 
+- 2h - GAP		-	Lounge, Browse, Eat
+- 2h - CHEW 	-  Email, First, Slack, Repeat, Papers
 - 2h - COMS	-  Meetings, Zoom, Huddle, Phone
-- 3h - PRIME	-  MIT, Prime, Work
+- 2-3h MAIN	-  MIT, Prime, Work
   ==
 
-- 5h 				from 5p until 10p
+- 5h 				from 6p until 11p
 - 2h - FAM	-  Dinner, Play, Bedtime
-- 3h - EVE		-	Fried, Self, Social, Learn
+- 3h - EVE		-	Fried, Self, Out, Call, Learn
 
 
 
 # LOG
 
-### 2023-06-20  Proposed Buckets
+### 2023-07-11  Reality time
+
+Work 8 - 5:30 = 9.5 = 3daily + 3chew + 2.5coms + 1main
+
+### 2023-06-20  July 2023 Buckets
+
+DAILY:		Daily(Tidy, Wake, Nap, Exercise), Fam(Eli, Home)
+MAIN: 	Chew(First, Email, ..., Repeat, Papers), Coms(Talk, Text, Meet), Work(MIT, Prime, Secondary)
+LIFT:		Self(God, Project, Career), Call, Career(Learn), [[fun]](Out)	
+GAP: 		Fried, Hack, Lounge(Browse, Eat, Fritter, Read, Watch)
 
 
 ME:			Self, Fried, Out, Project, Read

@@ -12,6 +12,8 @@
 - [[SVT Figma]] - 
 - [[SVT Virtual Box Notes]] - 
 
+- [[SV Log Webpage]] 
+
 
 - Prod: [WebUI](https://web-ui.sportsvisio-api.com/) 
 - Stage: [WebUI](https://stage-web-ui.sportsvisio-api.com/) 

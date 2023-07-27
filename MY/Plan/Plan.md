@@ -1,7 +1,9 @@
 
+:: [[Untitled]]
+
 :: [[Ping]]
 
-:: [[Untitled]]
+:: [[MY/Plan/Untitled]]
 
 :: [[Self Evergreen]]
 
@@ -28,7 +30,7 @@
 #### Longer Term 
 #### Specialty List
 - [[Actualize]]	-  
-- [[Buckets]]		-  
+- [[Bkts]]		-  
 - [[Dropped]]		-  
 - [[full]]			-  
 - [[fun]]			-  

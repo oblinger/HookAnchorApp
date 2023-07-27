@@ -1,4 +1,6 @@
 
+:: [[Bee Keeping]]
+
 :: [[EduCorp Talk]]
 
 
@@ -19,12 +21,13 @@
 - [ ] Learn about LA-based returning citizen program
 - [ ] Reach out to greenhouse researchers
 - [ ] G: Back of napkin math for greenhouse-based biz in Gambia
-- GREENHOUSE / SCREENHOUSE:  Napkin model of greenhouse, screenhouse, transport.
+- GREENHOUSE / SCREEN HOUSE:  Napkin model of greenhouse, screenhouse, transport.
 
 
 
 
 # TOPICS
+## BUSINESSES
 
 ## LINKS
 - [Greenhouse Farming](Greenhouse%20Farming.md),  [gEduCorp](https://drive.google.com/drive/u/0/folders/10pUPzVcBn5PxmMQYC8T60PDpdrQgQ817):   
@@ -193,6 +196,24 @@ TOOL CHOICE CHART
 
 
 # LOG
+
+### 2023-07-11  Collette pointers
+
+What you are describing makes me think of the Kennedy School.  I don’t know that I have something super particular to offer, though can offer some leads:
+
+-          Check out social impact bonds.  I think they have to have very good and tight rubrics, and what you described briefly seems to be in a similar vein.
+
+-          Skim the table of contents of Harvard Magazine online.  Not every issue reports on a project like you are describing, but periodically they do, and when they do it is often a very good project with quantified outcomes.  
+
+-          Skim Harvard Kennedy School alumni magazines online.  The articles are shorter, but probably more often closer to what you are looking for. These could give you leads for learning more.
+
+-          Also, look for any sort of related efforts (successful or not) and how strengths and weaknesses were evaluated.
+
+
+- [review social inpact bonds](https://givingcompass.org/article/lessons-from-mothers2mothers-the-good-bad-and-ugly-of-social-impact-bonds?gclid=CjwKCAjw-7OlBhB8EiwAnoOEk7X-S6Pm_cYZ2I6_uRUGnXzyPHNgZrbDVJfRr43_4ajJdeT3pD0pkBoCvLoQAvD_BwE) 
+- [Social Finance](https://socialfinance.org/?gclid=CjwKCAjw-7OlBhB8EiwAnoOEk8b67OXoHZFPVv091f8yxAdV3w7NkQ15EJyiGlxJhC1EVJRj7C0cuBoCOjEQAvD_BwE) 
+
+
 ### t2023-01-03  Email to Ketav
 Ketav Patel <pketav@gmail.com>
 

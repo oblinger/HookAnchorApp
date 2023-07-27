@@ -127,7 +127,7 @@ And it is part of an evolving picture of what I can deliver in future jobs too. 
 - But not necessarily the most important actions happening all the time
 - Idea: track 'buckets' of activity in order to ensure good percentage is going in best directions
 
- [[Buckets]]  
+ [[Bkts]]  
 
 
 ### 2023-02-27  Week 2 at SV 

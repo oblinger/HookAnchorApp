@@ -7,9 +7,9 @@
 [[TAGS]]: [[AT]], [[Plan]], [[Prj]], [[REF]], 
 
 - [[AT]]
-	- [[PP]]
+	- [[Person]]
 		- LEVEL: [[CORE]], [[SOLID]], [[HEAVY]], [[RND]], 
-		- [[SERVER]]:  [[RECRUITER]],  [[COACH]],  [[DOCTOR]],   
+		- [[Service]]:  [[RECRUITER]],  [[COACH]],  [[Doctor]],   
 		- KIND:   [[FAANG]],   [[START]],  [[TECH]], [[VC]], [[ACADEMIC]], 
 		- WHERE:  [[Tags/HACKERS]], [[DARPA]], 
 		- AREA:  [[AI]], [[ROBOTICS]], [[ML]], [[CONSULTANT]],  

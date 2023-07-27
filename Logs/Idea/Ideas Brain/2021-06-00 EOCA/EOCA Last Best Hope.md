@@ -9,7 +9,6 @@
 	- CANT STOP BUILDING IT
 	- CANT BLOCK IT WITH REGULATION - can SHAPE it, but cannot BLOCK it
 	- CANT ALIGN IT
-- 
 
 ## = Path of Peace
 
@@ -27,7 +26,7 @@
 ## = Nature of Things
 - bootstrapping all of human knoledge is much easier than extending beyond it
 - learning isolated things is much easier than extending basic chip speeds etc.
-	- So knowlege will jump up quick and stop; processing will jump up quickly and stop.  drives diversity.
+	- So knowledge will jump up quick and stop; processing will jump up quickly and stop.  drives diversity.
 
 ## = How It Unfolds
 

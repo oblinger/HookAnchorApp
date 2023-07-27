@@ -1,6 +1,10 @@
- [[DOCTOR]] 
+ [[Doctor]] 
 
 ### TODO
+- [ ] VO2MAX
+     park merced  [VO2max](https://kin.sfsu.edu/exercise-fitness-testing) 
+   [ucsf](https://hpc.ucsf.edu/contact-us) 415-514-6077
+
 - [ ] Call Hassler about Gasterenterology appointment
 - [ ] Call Eyes about aug-16 @ 3:15 (what doc will I see)
 

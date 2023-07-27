@@ -1,2 +1,2 @@
-=[[PP]]   [CTO](https://www.linkedin.com/in/jcerruti/)  [[@InOrbit]]  #Soon 
+=[[Person]]   [CTO](https://www.linkedin.com/in/jcerruti/)  [[@InOrbit]]  #Soon 
 

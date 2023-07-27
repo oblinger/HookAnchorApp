@@ -1,4 +1,6 @@
 
+:: [[Log]]
+
 :: [[Quotes]]
 - [[Offload Folder]]
 
@@ -7,7 +9,7 @@
 - [[Idea]] 		- Ideas
 - [[Letters]]  - Formal correspondence
 - [[Quotes]]	- Quotes
-- [[PP]]			- Personal Projects
+- [[Person]]			- Personal Projects
 - [[TT]]			- Misc Text Notes
 
 PROCESS ORIENTED LOGS

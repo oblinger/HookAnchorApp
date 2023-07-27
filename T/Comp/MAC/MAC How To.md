@@ -31,12 +31,12 @@ Next to the Ask before sending (recommended) text, click the toggle button. It s
   sudo visudo     # MUST USE VISUDO (no other editor)
 
   {[ CHANGE THIS ]}
-  # User privilege specification
+  ~# User privilege specification
   root    ALL=(ALL) ALL 
   %admin  ALL=(ALL) ALL
 
   {[ TO THIS ]}
-  # User privilege specification
+  ~# User privilege specification
   root    ALL=(ALL) ALL
   %admin  ALL=(ALL) NOPASSWD:ALL
 
@@ -99,7 +99,7 @@ Currently in use:
   $ chrome image.google.com  ((search for .png file for icon))  
     ! --> (copy to /ob/bin2)
   ~# CONVERT
-  $ sips -s format png icon_file.icns --out png_file.png      # Read more at http://www.simplehelp.net/2010/10/08/how-to-convert-icns-files-to-png-files-in-os-x/#o5BJwxJIVWO16hl1.99
+  $ sips -s format png icon_file.icns --out png_file.png      ~# Read more at http://www.simplehelp.net/2010/10/08/how-to-convert-icns-files-to-png-files-in-os-x/#o5BJwxJIVWO16hl1.99
   
   ~# READY CHROME -- close all Chrome browsers
   $ open http://cnn.com   http://gmail.com  about://
@@ -107,8 +107,8 @@ Currently in use:
 
   ~# CREATE
   $ /ob/proj/bin2/makeapp  
-     # Use lowercase w/o spaces in name
-     # saves to /Application 
+     ~# Use lowercase w/o spaces in name
+     ~# saves to /Application 
   $ mv /Application/...app  /ob/proj/bin2
 
 
@@ -166,7 +166,7 @@ JUST DO IT ONCE  (holding the control key)
  ! (on .dmg file)  -->  ^rt! INSTALL.mpkg  -->   {[in installer now there will be an option to install anyway]}
 
 DONE ONCE FOR ALL TIME (I don't do this)
- #space "prefs" -> !SecurityPrivacy -> !General -> !AllowDownloadFromAnywhere
+ ~#space "prefs" -> !SecurityPrivacy -> !General -> !AllowDownloadFromAnywhere
 
 ## = LID-CLOSE - How to prevent sleep on lid close
   ---->  Just Use NoSleep
@@ -209,7 +209,7 @@ Instead use:  pref > sharing >
 https://9to5mac.com/2018/06/20/mac-how-to-change-your-computer-name/
   
 
-   sudo scutil --set HostName NEW_HOSTNAME_HERE.local  # Network name
+   sudo scutil --set HostName NEW_HOSTNAME_HERE.local  ~# Network name
    sudo scutil --set HostName simple.local  # ????reset network name back to computer name
 
 ## = IPHONE RELATED - How to setup the IPHONE

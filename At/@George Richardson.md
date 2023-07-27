@@ -1,4 +1,4 @@
-=[[PP]]    [Divorce Lawyer](https://www.linkedin.com/in/attorneygeorgerichardson/)  [Web](https://attorneygeorgerichardson.com/)  
+=[[Person]]    [Divorce Lawyer](https://www.linkedin.com/in/attorneygeorgerichardson/)  [Web](https://attorneygeorgerichardson.com/)  
 
 # LOG
 

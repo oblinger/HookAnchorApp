@@ -2,10 +2,56 @@ app- [[QQ Folder]]
 
 # QUICK - QUICK work projects
 
+### 2023-07-17  Patent Thinking
 
-### 2023-07-05  KPIs
+- [ ] Ask Mike best approach
+- [ ] Task James
+- [ ] 
 
-- 
+
+- [ ] Gallery for sports
+
+
+1.		   Use automated audiovisual detections of objects, people, and events to generate statistics describing players, events, teams, clubs, leagues, games, tournaments, and seasons.  
+2.      Use automated audiovisual detections of objects and people to detect events in sports games. (This would include jump balls, fouls, assists, rebounds, blocks, steals, errors, shots, made/miss, points, possession gain / loss, time out starts/stops, games start/end, serves, spikes, kicks, throws, hits, and tactics.)  
+3.      Use automated audiovisual detections of objects, people, and events to discriminate the actors in sports games. (This would include active players, shooters, assisters, rebounders, stealers, blockers, passers, receivers, foulers, referees, goalies, setters, servers, guards, etc.)  
+4.      Use automated audiovisual detections of objects and people to control dynamic camera aiming and camera parameters to record and stream sports games. (This would include pan, tilt, rotate, zoom, focus, record on/off, blockage alert.)  
+5.      Use automated audiovisual detections of appearances, locations, and/or motions of objects and people to identify the players, referees, and non-players in sports games. (This would include player identification, referee identification, coach identification, other non-player identification.)  
+6.      Use audiovisual information about the people, objects, and events in sports games to accelerate manual review, annotation, and corrections of annotations. (This would include using player identification cues, location cues, time cues, action cues, event cues, filtering and sorting of cues or confidences.)  
+7.      Use automated detections of objects to calibrate a panning camera, or multiple co-located cameras, to sports fields, courts, and venues. (This would include line detections, vanishing point detections, planar (floors/walls/backboards/nets) detections, ball detections.)  
+8.      Use automated audiovisual detections of objects and people to synchronize multiple recordings. (This would include identifying the same sound or visual event captured by multiple sensors.)
+
+
+
+### 2023-07-17  Regression (Virtual Field Tests)
+
+
+Jasu
+
+
+
+Basic Idea
+- Internal pre-release that points to production. (MikeF)
+- List of dozen or dozens of 'cases' that our 'virtual field test' should cover.  (TT consider the code)
+- List of dozen or dozens of specific team-player views that should be viewed.  (attach to the regression itself)
+- Simple flow per view (what is it?)
+
+
+
+
+### 2023-07-12  Halos
+- 	[HaloAPI](https://docs.google.com/document/d/19GO0MnCZCKt8r1DNxLnKAFC5aquHh6GZXBF4j2Q3psw/edit) 
+
+- End2End on MasterDev
+- TurnKey API on MasterDev
+- TurnKey on Production
+- Demo Integration w portal
+
+
+In Parallel
+- Baseline testing
+
+
 
 ### 2023-07-05  Push2Prod
 
@@ -28,8 +74,7 @@ app- [[QQ Folder]]
 
 
 
-### 2023-06-20  ??
-but the fog of war is still quite thick around this issue.  I honestly cant tell what can and cannot be done w/ the tool in this moment.  One thing that would be 
+
 
 ### 2023-06-18  CALL TREE
 

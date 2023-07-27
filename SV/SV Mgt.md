@@ -1,13 +1,10 @@
-Wow, I guess you did a lot of thinking on that plane ride!  Is this a paid intern that is already working with Many Mangos or someone you have been talking with before?  She does seems like a pretty solid intern!  Is she based in SF area for the summer?
-
-I have a fair bit of content at this point, a white paper, and other content that is more focused on working out details on how the actual mechanics of the organizations would evolve over time at a practical level.  This is definitely been a labor of love over a couple of years.  At this stage I feel 
-
 
 # Log
 
-### 2023-02-19  Feb Management Meeting
+### 2023-07-12  Deliverables
 
-TASKS:
+
+TASKS:  [x](https://docs.google.com/spreadsheets/d/1X9YNns5sMzTPdFIFhtqqVR47SV4Y7jgbbYfDN55k1GM/edit?usp=sharing) 
 - Work with Jack to deliver core SV Hoops PRODUCT & AI Team Roadmap
 - Present Q3 and Q4 deliverable plan at next monthly meeting
 - Baseline Pivo cold storage status

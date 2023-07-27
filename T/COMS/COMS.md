@@ -1,3 +1,6 @@
+
+- [ ] [[@Doug Riecken]]
+- [ ] Freed friend Mark Followup
 - Julian call, 
 
 :: [[COM Msg]]
@@ -7,7 +10,6 @@
 
 [[@Julian]] 
 ## = ACTIVE  [[CRM]] 
-s		[[@Grzegorz Biziel]]	RECO; Do it now.
 s 		[[@Maria Galang]]		Touch base
 		[RZ](https://docs.google.com/document/d/1wQ53u87r9uVrFxVcrx8w43QANBjuuCBo31rJ8HZbBdU/edit) folks 				Jonas, Anibal, Nestor, 
 n		[[@Felipe Lavratti]]		RECO

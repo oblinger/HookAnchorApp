@@ -1,3 +1,3 @@
-=[[PP]]   [Center Director](https://www.linkedin.com/in/juergvonkaenel/)  [[@RMIT Stem College]]   #FAANG 
+=[[Person]]   [Center Director](https://www.linkedin.com/in/juergvonkaenel/)  [[@RMIT Stem College]]   #FAANG 
 
 

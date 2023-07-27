@@ -36,20 +36,40 @@ source /ob/bin/obrc
 ^D
 
 
+
+## xx NOTIFICATIONS
+CAL: everywhere
+PHONE: phone, watch
+SLACK: mention, 
+
+
+### MAC SYS PREF --> Notifications
+- ON FOR: Calendar, 
+
+
+### IPHONE > SETTINGS
+- CAL: Default Alert Times
+
+
+
 ## OS PARAMETER CONFIG
-### Finder Setups
+### FINDER SETUP
+#### Allow Quit Via ⌘ + Q
 ~# Finder: allow quitting via ⌘ + Q; doing so will also hide desktop icons
 defaults write com.apple.finder QuitMenuItem -bool true
 
+#### POSIX PATHS
 !!!~# Display full POSIX path as Finder window title
 defaults write com.apple.finder _FXShowPosixPathInTitle -bool true
 
+#### Spring Loaded Directories
 ~# Enable spring loading for directories
 defaults write NSGlobalDomain com.apple.springing.enabled -bool true
 
 ~# Remove the spring loading delay for directories
 defaults write NSGlobalDomain com.apple.springing.delay -float 0
 
+#### List View By Default
 ~# Use list view in all Finder windows by default
 ~# Four-letter codes for the other view modes: `icnv`, `clmv`, `Flwv`
 defaults write com.apple.finder FXPreferredViewStyle -string "Nlsv"
@@ -85,7 +105,7 @@ defaults write com.apple.finder _FXShowPosixPathInTitle -bool true
 defaults write com.apple.finder FXPreferredViewStyle -string "Nlsv"
 
 ~# Makes default text larger
-defaults write NSGlobalDomain AppleDisplayScaleFactor 1.5    # change back to 1.0 for std system
+defaults write NSGlobalDomain AppleDisplayScaleFactor 1.5    ~# change back to 1.0 for std system
 
 
 ## COMMAND-LINE-BASED SETUPS
@@ -317,19 +337,19 @@ Jupiter Notebook:  https://medium.com/@blessedmarcel1/how-to-install-jupyter-not
 
 ### BREW OLDER
 #### brew older xx Utilities
-	     # These listed with MySql install
+	     ~# These listed with MySql install
 	     $ brew install git cmake ack wget redis memcached libmemcached colordiff imagemagick
-	       # DO35 removed 'brew install curl' since Retina has it
-	       # DO36 added cmake since sql needed it.
+	       ~# DO35 removed 'brew install curl' since Retina has it
+	       ~# DO36 added cmake since sql needed it.
      
 #### brew older xx MySQL
-	     # http://www.frederico-araujo.com/2011/07/30/installing-rails-on-os-x-lion-with-homebrew-rvm-and-mysql/
+	     ~# http://www.frederico-araujo.com/2011/07/30/installing-rails-on-os-x-lion-with-homebrew-rvm-and-mysql/
 	     
 	     $ brew install mysql
-	     # configure it
+	     ~# configure it
 	     $ mysql_install_db --verbose --user=`whoami` --basedir="$(brew --prefix mysql)" --datadir=/usr/local/var/mysql --tmpdir=/tmp
 	
-	     # DONT EXECUTE, but this would cause it to load on boot
+	     ~# DONT EXECUTE, but this would cause it to load on boot
 	     $ mkdir -p ~/Library/LaunchAgents
 	     $ cp /usr/local/Cellar/mysql/5.5.14/com.mysql.mysqld.plist ~/Library/LaunchAgents/
 	     $ launchctl load -w ~/Library/LaunchAgents/com.mysql.mysqld.plist
@@ -386,7 +406,7 @@ Jupiter Notebook:  https://medium.com/@blessedmarcel1/how-to-install-jupyter-not
 	  XXXXX decided to go to download Postgres.app directly   2015.05  Retina-yosemite
 
 
-	  # first get brew & xcode
+	  ~# first get brew & xcode
 	  $ brew install postgres
 	  $ echo 'export PATH=/usr/local/Cellar/postgresql/9.4.2/bin:$PATH' >> ~/.bash_profile
 	  $ 
@@ -428,12 +448,12 @@ Add required folders (owned by oblinger)
 	         chown oblinger include Frameworks
 	         chgrp admin Frameworks include
 	         chmod 775 include Frameworks
-	      # install python
+	      ~# install python
 	      brew install python    # this will brew update & xcode-select --install
       
 ##### xx KERAS 
 
-	      # https://www.youtube.com/watch?v=LnzgQr14p7s
+	      ~# https://www.youtube.com/watch?v=LnzgQr14p7s
 
 	python3 --version    # 3.8.1 (2021.04 installed 3.9)
 	open https://docs.conda.io/en/latest/miniconda.html
@@ -450,19 +470,19 @@ Add required folders (owned by oblinger)
       
 ##### OLD SETUP  (QL-personal 2015.10)
 
-	    # COMMAND-SPACE "XCODE"  (just verify that you can accept any agreements)
+	    ~# COMMAND-SPACE "XCODE"  (just verify that you can accept any agreements)
 	    open a.xcodeproj
 	
-	    # GET BASE PYTHON FOR VIRTUAL ENV TO BUILD FROM
+	    ~# GET BASE PYTHON FOR VIRTUAL ENV TO BUILD FROM
 	    open http://python.org/download  # click "Download Python 2.7.10"
 	
-	    # Install EasyInstall (if needed)
+	    ~# Install EasyInstall (if needed)
 	    curl https://bootstrap.pypa.io/ez_setup.py -o - | sudo python
 	
-	    # Install pip         http://stackoverflow.com/questions/17271319/installing-pip-on-mac-os-x
+	    ~# Install pip         http://stackoverflow.com/questions/17271319/installing-pip-on-mac-os-x
 	    sudo easy_install pip
 	
-	    # Install Virtualenv
+	    ~# Install Virtualenv
 	    VER=Py2_7_10
 	    sudo pip install virtualenv
 	    sudo pip install virtualenvwrapper
@@ -470,7 +490,7 @@ Add required folders (owned by oblinger)
 	    echo 'source /usr/local/bin/virtualenvwrapper.sh' >> ~/.bash_profile
 	    echo "workon $VER" >> ~/.bash_profile
 	
-	    # Create Virtual Env 
+	    ~# Create Virtual Env 
 	    WORKON_HOME=~/Envs
 	    mkdir -p $WORKON_HOME
 	    source /usr/local/bin/virtualenvwrapper.sh
@@ -507,7 +527,7 @@ Add required folders (owned by oblinger)
 	- Use virtual-env burrito to install
 	  https://github.com/brainsik/virtualenv-burrito
 	  $ curl -s https://raw.github.com/brainsik/virtualenv-burrito/master/virtualenv-burrito.sh | $SHELL
-	  # Just ignored this.  installed all in root env
+	  ~# Just ignored this.  installed all in root env
 
 	$ pip install numpy   # already installed
 	~# Need and update
@@ -524,7 +544,7 @@ Add required folders (owned by oblinger)
 
 	  $ sudo pip install -U scikit-learn
 
-	  # test   http://scikit-learn.org/stable/auto_examples/exercises/plot_iris_exercise.html
+	  ~# test   http://scikit-learn.org/stable/auto_examples/exercises/plot_iris_exercise.html
 
 
 
@@ -548,6 +568,7 @@ Add required folders (owned by oblinger)
 	ipython              # this will launch the ipython console
 	ipython-launcher     # this will launch the ipython-launcher app
 	~# l ipython-launcher  # also launches the launcher
+
 
 # LOG
 ### 2023-05-01  2023-05-M2-Build
@@ -878,13 +899,13 @@ Add required folders (owned by oblinger)
 
 2015-09-09 -- install RVM  (from http://usabilityetc.com/articles/ruby-on-mac-os-x-with-rvm/)
 
-  # INSTALL RUBY INSIDE RVM INSIDE $HOME/.rvm
+  ~# INSTALL RUBY INSIDE RVM INSIDE $HOME/.rvm
   brew install gnupg
   gpg --keyserver hkp://keys.gnupg.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3
   \curl -sSL https://get.rvm.io | bash -s stable --ruby
      //==> should have added line to ~/.bash_profile  and ~/.bashrc
 
-  # Reopen terminal
+  ~# Reopen terminal
   rvm use 2.2.1         #==> or use which ever version is the lastest
   gem install bundler 
 

@@ -1,3 +1,10 @@
+- [x] Eli's B-day (music)
+- [x] rebuild computer
+- [x] ML hire
+- [x] branch management
+[[hire]]: 		Hiring
+- [x] dexafit reschsasedule
+- [x] update mgt
 - [x] contigo
 - [x] omni-prosal
 - [x] tray for coffee maker

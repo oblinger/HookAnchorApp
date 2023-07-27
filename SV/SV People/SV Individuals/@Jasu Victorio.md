@@ -1,5 +1,11 @@
 =[[SV]]  [Product Coordinator](https://www.linkedin.com/in/jasuryvictorio/)  [[@Bankless DAO]]
 
+
+.	France	EST	PST
+.	7am		1am	10pm
+.	8pm		2pm	11am
+.
+
 3am - 5pm
 
 # Log

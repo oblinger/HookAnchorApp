@@ -1,2 +1,2 @@
-=[[PP]]   Head of ESG & Sustainability [[@Morgan Stanley]] 
+=[[Person]]   Head of ESG & Sustainability [[@Morgan Stanley]] 
 

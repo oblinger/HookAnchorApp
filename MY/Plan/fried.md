@@ -1,26 +1,26 @@
-- [ ] Drawers near desk in bedroom
+
+- [ ] Eli schools list.
 
 - [ ] budget big transfers list	
 - [ ] giphy grab
 
 - [ ] [[Travel]]: pills; snacks
-- [ ] write up phone contactable plan
-- [ ] link up mission & write some of it
 - [ ] Update CRM workflow
 - [ ] Get logins for MyHealth
 - [ ] Process mom's Eli educational funds.
 
+### WAITING
+- [ ] NextDoor [[Automation]] 
+
 
 ### RESEARCH
-- [ ] Evidence-based child rearing
 - [ ] Plan for crypto
 
- LinkedIn
  
 ### HOUSE
 - [ ] USB Camera
 - [ ] BEDROOM --  Closet Pole
-- [ ] LIVINGROOM -- TV power
+- [ ] LIVING ROOM -- TV power
 - [ ] WIFI -- Add fancy wifi
 - [ ] BEDRM -- put plate on wall outlet
 - [ ] BASEMENT -- Ground treadmill, put back together
@@ -34,6 +34,7 @@
 
 ### Older
 
+- [ ] Evidence-based child rearing
 - [ ] Grabby apple air max.  (read about it)
 - [ ] setup blink
 - [ ] Reset door codes. (info in myfo->mystuff)

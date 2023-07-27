@@ -1,2 +1,2 @@
-=[[PP]]   [Office Director](https://www.linkedin.com/in/chuckmorefield/) [[@DARPA]] 
+=[[Person]]   [Office Director](https://www.linkedin.com/in/chuckmorefield/) [[@DARPA]] 
 

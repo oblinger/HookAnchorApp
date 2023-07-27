@@ -1,5 +1,12 @@
 
 - [EvtSpec](https://docs.google.com/document/d/1ESUxDwrI3L714VihJTbfeoU81PVRvTIYu-FEVILmL3c/edit) 
+- 
+
+
+- multiple games
+- switching camera
+- people in backgound
+
 
 - [ ] Issues list for Baller V
 - [ ] Id 50 video URLs

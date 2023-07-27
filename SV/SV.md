@@ -1,14 +1,17 @@
 
+:: [[CVT]]
+
 :: [[Circle]],   [[SV Software]]
 
 < [[???]]   [[@Sports Visio]],  [[@Jason Syversen]], [[@SV]]
 
 - TOPS:		[[WW]],   [[QQ]],  [[SV Mgt]], 
-- [[SV Strat]]:	[[Reset]],  [[Rdmap.]], 
+- [[SV Strat]]:	[[Reset]],  [[Roadmap]], 
 - [[SV Ops]]:	 	[[SV Dashboards]],  [[SV Testing]], [[SV Release Planning]],  
 - [[SV People]]:	[[Hiring.]], [[SV SW Team]],   [[@CV]],
 - [[SV Market]]:	[[SV Customer]],  [[SV Competitor]], 
 - [[SV Product]]: [[SV Code]],  [[SV Apps]], [[SV System]],   
+- [[SV Software]]: 
 - [[INV]]:
 - INFO:			[[SV Code]], [[SVT]],  [[SV Legal]],   [[SV Folder]],  [[Meta SV]], 
 - ARCHIVE:		[[SV Archive]],   [[SV Wings]], 

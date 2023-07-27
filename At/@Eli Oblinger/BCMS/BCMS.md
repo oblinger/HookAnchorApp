@@ -1,7 +1,60 @@
 
+- [YB](https://docs.google.com/presentation/d/1hhejF_zB78SQqa6ny0dLqBEZE3e0k-1ZoPnkmdnERzg/edit#slide=id.g124923c3949_0_9). 
+
+- Get info like this published - swimming pools 
+https://docs.google.com/document/d/1umv38fuKnCZuG7EysZxUyi-ZkwyWVzrvqV_-fxV98Pw/edit#heading=h.vf2170et6bjo
+- [Miss Soumya's Class](https://docs.google.com/spreadsheets/d/1ou9kUoqPB56-Jwe2PXjGEMWysLTVA4vpQQ4i7tYkwfw/edit#gid=738113275)  
+
+
+### Movie Nite
+
+  
+
+Just a reminder about Miss Soumya's Class Movie "night" on Saturday 22nd next week.
+
+  
+
+[Signup Sheet](https://docs.google.com/spreadsheets/d/1bBMweGNDAv2XxUURMhmJ00EFAFH_VpKeJn3yU6AcKUg/edit?usp=sharing).   <--  Add your child's name here before Wednesday July 19th  
+
+  
+
+Here are the three movies - they are each 30 minutes and are kid vetted for little ones.
+
+> [Duck and Goose](https://www.google.com/search?q=duck%20and%20goose%20site%3Ayoutube.com&rlz=1C1CHBF_enUS864US864&oq=youtube&aqs=chrome.0.0i271j46i67i131i199i433i465i650j69i64j0i67i131i433i650j69i60l4.2476j0j7&sourceid=chrome&ie=UTF-8&ved=2ahUKEwjPwo7B8cX_AhXhiO4BHRikDT4Q2wF6BAgaEAE&ei=8VWLZI-GHOGRur8PmMi28AM#fpstate=ive&vld=cid:4c488526,vid:OewQGub-xRo)  
+> [Here We Are: Notes for Living on Planet Earth](https://www.google.com/search?q=Here%20We%20Are%3A%20Notes%20for%20Living%20on%20Planet%20Earth%20trailer%20site%3Ayoutube.com&rlz=1C1CHBF_enUS864US864&oq=youtube&aqs=chrome.0.0i271j46i67i131i199i433i465i650j69i64j0i67i131i433i650j69i60l4.2476j0j7&sourceid=chrome&ie=UTF-8&ved=2ahUKEwjPwo7B8cX_AhXhiO4BHRikDT4Q2wF6BAgaEAE&ei=8VWLZI-GHOGRur8PmMi28AM#fpstate=ive&vld=cid:12e41e00,vid:2M3Q4-zCTHc)  
+> [The Snail and the Whale](https://www.google.com/search?q=The%20snail%20and%20the%20whale%20trailer%20site%3Ayoutube.com&rlz=1C1CHBF_enUS864US864&oq=youtube&aqs=chrome.0.0i271j46i67i131i199i433i465i650j69i64j0i67i131i433i650j69i60l4.2476j0j7&sourceid=chrome&ie=UTF-8&ved=2ahUKEwjPwo7B8cX_AhXhiO4BHRikDT4Q2wF6BAgaEAE&ei=8VWLZI-GHOGRur8PmMi28AM#fpstate=ive&vld=cid:934b08f3,vid:dmLnraxsKpM)  
+
+There will be pizza, popcorn, mik, and water.
+
+And just for fun kids can show up in their jammies with their favorite stuffy if they like (no branded characters of course!)
+
+  
+
+Here are the full details:
+
+- Saturday, July 22 ~ 3pm - 7pm  
+- Siblings 2.5+ may be dropped off as well  
+- Kids at the movie will only be from Miss Soumya's class  
+- There is no (additional) cost for anyone -- everyone is invited! 
+
+  
+
+During the movie I and a coalition of the willing (parents) will use this moment of respite to go out for drinks together...  somewhere nearby probably on Courtland.
+
+  
+
+  
+
+Gonna be fun!  ![😁](https://fonts.gstatic.com/s/e/notoemoji/15.0/1f601/32.png)![😁](https://fonts.gstatic.com/s/e/notoemoji/15.0/1f601/32.png)![😁](https://fonts.gstatic.com/s/e/notoemoji/15.0/1f601/32.png)
+
+--dan
+
+**Sat, 7/22/23 ~ 3:00-7:00 pm**
+
+
 	JUNE: Franchesca, Laika, 
 
-	JULY: Kayt, (slack) Nidhi/Anaya, Adam/Linh Oliner, Andrew Crocker, Beth Chamlain
+	JULY: Kayt, (slack) Nidhi/Anaya, Adam/Li. h Oliner, Andrew Crocker, Beth Chamlain
 
 
 
@@ -21,13 +74,6 @@ Here are the parameters:
 
 
 
-- Get info like this published - swimming pools 
-https://docs.google.com/document/d/1umv38fuKnCZuG7EysZxUyi-ZkwyWVzrvqV_-fxV98Pw/edit#heading=h.vf2170et6bjo
-
-
-
-- [Miss Soumya's Class](https://docs.google.com/spreadsheets/d/1ou9kUoqPB56-Jwe2PXjGEMWysLTVA4vpQQ4i7tYkwfw/edit#gid=738113275)  
-	
 
 ### Miss Soumya's class emails
 

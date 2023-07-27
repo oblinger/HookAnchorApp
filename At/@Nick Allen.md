@@ -5,6 +5,24 @@
 
 # LOG
 
+### 2023-07-26  Pitching a Business
+
+- COMPANY PITCH - unique opportunity / approach
+	- discuss unique GPT idea with gamers or VCs
+- WHAT IS INVESTIBLE? -  (talk 2 VCs)
+	- Pay james to find contacts
+- PATH TO MARKET? -  (talk 2 Partners; Sales channels; )
+	- 
+- FIND ADVISOR / CO-FOUNDER.      (perhaps from pool of VCs)
+	- Your offer
+	- Deeply understands ecosystem, maybe rolodex of customers, maybe rolodex into VCs
+
+
+Narrative Adventure Game
+- String of pearls - fixed - not replayability - not great format for twitch 
+	- Why should you play after seeing others play it?  you already know how it ends.
+
+
 ### 2023-05-01  Prep for my Reset conversation
 - [[Reset]] planning
 

@@ -49,6 +49,14 @@ Here is my thinking for a concrete plan… see if you like it as an approach….
 
 # LOG
 
+### 2023-07-25  TC alternatives
+
+- [list](https://docs.google.com/spreadsheets/d/1sT7ynSkMVTM97ErFIESYNn1xME09XX3_hvNtM2BLUi8/edit#gid=1927142832) 
+
+
+
+
+
 ### 2023-05-17  sports
 
 Find VC that:

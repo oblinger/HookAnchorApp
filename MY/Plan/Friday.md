@@ -15,6 +15,6 @@
 PLACES
 - [Penny Roma](https://www.google.com/maps/place/Penny+Roma/@37.7592504,-122.4110591,17z/data=!3m1!4b1!4m6!3m5!1s0x808f7e37160ce1af:0x69a65e8dd85a61c!8m2!3d37.7592504!4d-122.4110591!16s%2Fm%2F0zcx1_9?entry=ttu) - Italian close - 
 - [Aziza](https://www.thrillist.com/venue/drink/san-francisco/bar/aziza) - Moroccan - cheap-er Michelin - 
-- [Spruce](https://www.thrillist.com/venue/eat/san-francisco/restaurants/spruce) - Presidio Heights - dress up - 
+- [Spruce](https://www.thrillist.com/venue/eat/san-francisco/restaurants/spruce) - Presidio Heights - dress up - New American
 - [Top of the Mark](https://www.thrillist.com/venue/drink/san-francisco/bar/top-of-the-mark) - hotel up high 
 - 

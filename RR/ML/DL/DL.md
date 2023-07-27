@@ -1,8 +1,10 @@
 
-:: [[Segment Anything]]
+:: [[RASA]],   [[dddddd]]
 
-:: [[VAE - Variational Auto Encoder]],   [[Attention Mechanism]],   [[Gradient Checking]],   [[NG Notation]],   [[Invertable Density Estimation]],   [[Self Supervised Learning]],   [[Activation Functions]],   [[Auto Encoders]]
-  [VAE](VAE.md)
+:: [[Segment Anything]]. [[Transformers]],
+
+:: [[VAE - Variational Auto Encoder]],   [[Attention]],   [[Gradient Checking]],   [[NG Notation]],   [[Invertable Density Estimation]],   [[Self Supervised Learning]],   [[Activation Functions]],   [[Auto Encoders]],  [[VAE]]
+- [[DL Notation]],  [[NG Notation]], 
 - [[DL algs]], [[DL topics]], [[DL optimization]], [[DL strategy]], 
   [Regularization](Regularization.md),   [GANs](GANs.md),   [NN](NN.md)
 =[[TAG]] <[[ML]] 

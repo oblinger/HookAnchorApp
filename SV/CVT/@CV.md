@@ -1,3 +1,86 @@
+- Find interaction rough.  We seem to be agreeing in the end, but somehow it seems I am shoving him the whole way.
+  Need to achieve tempo in actions, and crispness in intent and outcome but often don't.
+- Clearly need group discussion and PhD oversight to guide each dev, but question velocity of trying to have all devs understand all code
+  (not sure).  PR process is taking a loooong time.
+- Who should own master dev & push to prod?   Martin
+- Who should own testing?  Maxim
+- Who should own end-to-end halos?  Sarthi
+- Halos:  
+
+- [[CV Log]],  [[CVT]],  [[CV Planning]], [[CV.]], 
+- [LCM Input](https://docs.google.com/document/d/1kxGMrmPOr9S6whRnV0LI0UpWGeyBzTn8WGDq7ITM4Sc/edit),  [LCM root](https://docs.google.com/document/d/10jm1RRqCqvAXy3Ti1Nu-jLzATy0jjBejUY7-Dz2e85U/edit), 
+
+## People
+- GRZEGORZ - PlayerID & Gallery; Common Classes
+	- Recognizing 
+	- Propagating Player IDs across tracks
+- MAXIM - Build Dataset; Metrics; 2-3-point (homography, )
+	- HOMOGRAPHY - 
+	- POINTS - 
+	- CVAT - waiting on CF
+- MARTIN - Dev-QA-promotion process
+	- Making longer tracks
+	- EVENTS (waiting on what?) - 
+	- Money-metric - 
+	- Keeping track of players in invisible
+- SARTHI - 
+	- Halos
+- VISHAL -
+Propagate playerID. 
+
+
+## Todo
+
+- [ ] Visualizers:  2D.  DataCube. matrix
+- [ ] DATASETS
+
+ [[@CV]]: Evt Datasets: format, video, annotations
+- [ ] [[@CV]]: Ground truth datasets
+- [ ] [[@CV]]: Demo (shotOrig, end2end, classes)
+- [ ] Sidney (trained, docs, g-sheet)
+
+
+THINGS WE WANT
+- [ ] Experimentation Pipelines
+	- [ ] Command Line 'System' translator.
+	- [ ] DVC setup
+- [ ] Datasets
+	- [ ] Box truths
+- [ ]  Taxonomy of errors
+- [ ] Heavy Execution
+	- [ ] Fong Machine
+	- [ ] Lambda 
+
+
+
+[[cv]] 
+
+Taxonomy of errors
+- [ ] Recall error - Just didn't see the shot
+- [ ] Prediction error - Wasn't a shot attempt
+- [ ] PredictMake/Miss error - wa
+- [ ] Shot Pixel Error
+- [ ] Gallery Errors
+- [ ] Player ID error
+
+
+Execution
+- [ ] Build setup scripts
+- [ ] signup for lambda
+- [ ] build fong machine
+- [ ] starting from console
+
+
+- [Baller Demo](https://docs.google.com/document/d/1U0JQ4TQ9Ojblw6OXPuYyPId7X5tq42-8gwmLJNfbswQ/edit)  
+
+[https://bitbucket.org/SVEngineering/algorithms2/src/master-dev/](https://bitbucket.org/SVEngineering/algorithms2/src/master-dev/)
+
+
+
+
+
+## Tasks
+- Halo pipe
 
 # PTRS
 - FOLDERS: [[SV Root]] 	[svdata](https://drive.google.com/drive/folders/10VWKl_3u0--LyLZmzgu8So7i1Jgq6HSr?usp=drive_link) - 
@@ -7,7 +90,7 @@
 - [BitBucket MVP Algos](https://bitbucket.org/SVEngineering/workspace/projects/MVPAL) - 
 - [JIRA](https://software-engineering-team.atlassian.net/jira/software/projects/AIT/boards/25) 
 - [CONFLUENCE](https://software-engineering-team.atlassian.net/wiki/spaces/SVAI/overview) 
-- [[Agenda.]] - 
+- [[Agenda]] - 
 
 - [[CV Planning]] - 
 
@@ -43,8 +126,14 @@ https://github.com/z-x-yang/Segment-and-Track-Anything
 
 
 # LOG
+### 2023-07-13  Progression of halo apps
 
-### 2023-07-03  Flow
+- Player ID 
+- Gallery Fleshing - 
+- Player ID tracks (not just individual frames)
+- 
+
+### 2023-07-03  CV team components
 
 STATS
 - Hoop Detect
@@ -52,7 +141,7 @@ STATS
 - Make Miss
 
 
-=== SHOTS ===
+=== SHOT STATS - SUB SYSTEM ===
 
 SHOTS
 
@@ -72,16 +161,7 @@ SHOTS
 	- Free Throw
 
 
-=== SHOT RELATED ===
-
-ASSISTS
-
-REBOUNDS
-
-SHOT MAP
-
-
-=== SUB SYSTEMS ===
+=== PLAYER TRACKING - SUB SYSTEM ===
 
 PLAYER TRACKING
 - Person tracker
@@ -94,12 +174,26 @@ PLAYER TRACKING
 
 
 
+=== SHOT RELATED ===
+
+ASSISTS
+
+REBOUNDS
+
+SHOT MAP
+
+
+
 === LOGIC ===
+
 
 ACTIVE HOOPS
 
 
 ACTIVE COURT
+
+
+ACTIVE PLAYER
 
 
 === BASE COMPONENTS ===
@@ -125,6 +219,19 @@ CAMERA TRACKING
 - Location & Orientation Relative To court
 - Vanishing points
 
+
+
+=== CROSS CUTTING ===
+
+PERFORMANCE
+
+
+=== METRICS ===
+
+EVENTS
+
+
+OBJECTS
 
 
 

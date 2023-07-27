@@ -792,7 +792,7 @@ This is my first Obsidian Day!
 - 
 ### d2022-08-04  - Attention and DL reading
 
-See notes in [[Attention Mechanism]]
+See notes in [[Attention]]
 
 
 ### d2022-08-05  [[Coursera Notes]]

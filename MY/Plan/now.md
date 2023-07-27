@@ -1,12 +1,22 @@
-- [ ] Pivo&Rec Tickets on their own board (or just in icebox)
+## Waiting
+- [ ] TT equity
+
+## Now
 - [ ] [July Prod](https://docs.google.com/document/d/19_vRUK2Azl5miH7IuDdWZTtyuArSkLU_W_RKUUUiT-o/edit#heading=h.1i0iol8j5snp) 
+- [ ] Sarthi Call
+- [ ] Ask Slack Field Testing
+- [ ] Patent Search
+
+
+- [ ] Pivo&Rec Tickets on their own board (or just in icebox)
 - [ ] Strat doc
 - [ ] Beta cust (Parent/Gym)
-- [ ] Patent Search
 - [ ] Ask Team about GPT
 - [ ] [Issues](https://docs.google.com/document/d/1rHDeKRHHuT4w0q9V8uICIqAt9EzYiUVxdzq85DNzKt0/edit#heading=h.pjeww53fox8q) - CV issues
 - [ ] [[CV.]] Vis
 - [ ] [[CV.]] datasets
+- [ ] CV low road Sum slide
+      all the hard things we need to solve in order 
 
 - [ ] [[Meta CRM]] 
 
