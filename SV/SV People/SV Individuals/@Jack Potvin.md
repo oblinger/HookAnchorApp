@@ -4,6 +4,21 @@
 
 # LOG
 
+### 2023-08-01  evaluation
+
+- high motor; committed; aggressive; high volume;
+- humble
+
+
+- not precise, organized, 
+- trees but not forest
+
+
+- pretty fast learner
+- baller; good judgement (for someone 22)
+
+
+
 ### 2023-02-28  Bug validation process
 
 - Feature/Bugs both use this external-bug label

@@ -6,6 +6,16 @@
 
 | Date       | File                       | Notes                                                                                                                             |
 | ---------- | -------------------------- | --------------------------------------------------------------------------------------------------------------------------------- |
+| 2023-08-03 | [[@CV]]                        | DEV OPs                                                                                                                           |
+| 2023-08-03 | [[@Brian French]]              | update                                                                                                                            |
+| 2023-08-02 | [[@CV]]                        | Grzegorz                                                                                                                          |
+| 2023-08-01 | [[@Jack Potvin]]               | evaluation                                                                                                                        |
+| 2023-07-31 | [[@Agustin Polito]]            | Intro - discussion about Head SW at                                                                                               |
+| 2023-07-31 | [[@CV]]                        | Maxim                                                                                                                             |
+| 2023-07-31 | [[@CV]]                        | Sarthi                                                                                                                            |
+| 2023-07-31 | [[@CV]]                        | Martin                                                                                                                            |
+| 2023-07-31 | [[@CV]]                        | Vishal                                                                                                                            |
+| 2023-07-31 | [[@CV]]                        | Color ALG                                                                                                                         |
 | 2023-07-26 | [[@Nick Allen]]                | Pitching a Business                                                                                                               |
 | 2023-07-26 | [[SNIP]]                       | Piano                                                                                                                             |
 | 2023-07-26 | [[race]]                       | black dad myth                                                                                                                    |

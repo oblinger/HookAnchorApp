@@ -2,7 +2,6 @@
 
 
 
-
 https://www.linkedin.com/in/marianocapurro/
 https://www.linkedin.com/in/iturregui/
 https://www.linkedin.com/in/sebamontini/
@@ -21,3 +20,4 @@ https://www.linkedin.com/in/marcospavelek/
 https://www.linkedin.com/in/estebantundidor/
 https://www.linkedin.com/in/ezegolub/
 https://www.linkedin.com/in/davidjosecohan/details/experience/
+

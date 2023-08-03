@@ -1,9 +1,10 @@
 
-:: [[2023 SV CV New Agenda]]
-- [ ] Least Commit Classes
+- [ ] [Least Commit v2](https://docs.google.com/document/d/1kxGMrmPOr9S6whRnV0LI0UpWGeyBzTn8WGDq7ITM4Sc/edit): grz
+- [ ] Datasets
 - [ ] Datasets
 - [ ] Metrics
-- [ ] End 2 End
+- [ ] [CV plan](https://docs.google.com/document/d/1sxwVOEqIynj4-bkg97b4HQCeodnB743ebamrUw0BMnk/edit): Mike's list
+
 
 
 - [Metrics Folder](https://drive.google.com/drive/folders/1CO5eTdcTrUS9T8BkBcMBBE9e3B6YORvg) - 
@@ -16,6 +17,8 @@
 	- [Dataset Construction](https://docs.google.com/document/d/1_xntQQvwLlmRNKL8isX6tQi23R22KMkdUBFAbMoUtbU/edit) 
 	- [The Money Metric](https://docs.google.com/document/d/1wBDwrPvgvY4CiYC26zec6c5hSwiYX1CmiVVldVBhnZw/edit) 
 	- [Gallery Metrics](https://docs.google.com/document/d/1l07TNwaT5wF39WxN8DWrhivPqj_57exYrKV_8u01600/edit) 
+
+
 
 
 event

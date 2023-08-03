@@ -1,4 +1,5 @@
 - [ ] Backups - 
+- [ ] SOC 		compliance
 ## later
 - [ ] [[2023 Tournament Flow]]: Write it
 - [ ] [[HeadRm]]: 

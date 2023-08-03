@@ -1,17 +1,27 @@
 
+- [[hiring]], [[INTERVIEW]], 
+
 - [SV Hiring*](https://docs.google.com/document/d/121pZhbzvPWvymKfN48TfMxN0i_eXBrd35SxjMSGS4ls/edit) 
+	- [Backend](https://docs.google.com/document/d/17b6lD5zyT-axAwYwQkdXpIYtarGUJoD-L9Zl3N3luYQ/edit) 
+	- [[Head of SW]] [Lead](https://docs.google.com/document/d/1IRmTP2eALbW2FqXlwGMtlqpeDfjyi7jX-v2Zff7M4Kg/edit) 
+
+
+### TODO
+- [Recruiters](https://docs.google.com/document/d/1S8zm_0mKTD40_GghOwxJzQv-BCgxGKfy3RfvLLXN1eI/edit) - 
+- [Architect](https://docs.google.com/document/d/1vmeBfJhZt6RLgHzQD7z5u4oGy1QDP7V7D1exwAIthSE/edit)  test - 
+- Interview - 
+- Ignacio
+
+### __
+- 
 
 - [[July Hiring]], 
-- [[Head of SW]]:
-- [[hiring]],
 - [[2023 Team Hiring]],
 
 - [ ] Architect test
 - [ ] Skills list
 - [ ] Interview TC guy
 - [ ] Respond to Ignacio
-
-
 
 
 

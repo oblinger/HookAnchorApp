@@ -4,7 +4,7 @@
 =	[[Baseline]]		[[2023 SV Mgt Meeting Slides]].
 =	[[Test]]			[[2023 SV Testing Plans]].
 =	[[Roadmap]]		[[2023 SV Roadmap]] - 
-=	[[Agenda]]		[[2023 SV CV New Agenda]].
+=	[[CVP]]		[[2023 SV CV New Agenda]].
 
 =	[[RNR]]			[[2023 SV Roles and Responsibilities]].
 =	[[Demos.]]		[[2023 Bridge Round AI Demo]].

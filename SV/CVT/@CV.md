@@ -1,3 +1,5 @@
+## Foo
+
 - Find interaction rough.  We seem to be agreeing in the end, but somehow it seems I am shoving him the whole way.
   Need to achieve tempo in actions, and crispness in intent and outcome but often don't.
 - Clearly need group discussion and PhD oversight to guide each dev, but question velocity of trying to have all devs understand all code
@@ -7,27 +9,8 @@
 - Who should own end-to-end halos?  Sarthi
 - Halos:  
 
-- [[CV Log]],  [[CVT]],  [[CV Planning]], [[CV.]], 
+- [[CVT]],  [[CV Planning]], [[CV.]], 
 - [LCM Input](https://docs.google.com/document/d/1kxGMrmPOr9S6whRnV0LI0UpWGeyBzTn8WGDq7ITM4Sc/edit),  [LCM root](https://docs.google.com/document/d/10jm1RRqCqvAXy3Ti1Nu-jLzATy0jjBejUY7-Dz2e85U/edit), 
-
-## People
-- GRZEGORZ - PlayerID & Gallery; Common Classes
-	- Recognizing 
-	- Propagating Player IDs across tracks
-- MAXIM - Build Dataset; Metrics; 2-3-point (homography, )
-	- HOMOGRAPHY - 
-	- POINTS - 
-	- CVAT - waiting on CF
-- MARTIN - Dev-QA-promotion process
-	- Making longer tracks
-	- EVENTS (waiting on what?) - 
-	- Money-metric - 
-	- Keeping track of players in invisible
-- SARTHI - 
-	- Halos
-- VISHAL -
-Propagate playerID. 
-
 
 ## Todo
 
@@ -90,7 +73,7 @@ Execution
 - [BitBucket MVP Algos](https://bitbucket.org/SVEngineering/workspace/projects/MVPAL) - 
 - [JIRA](https://software-engineering-team.atlassian.net/jira/software/projects/AIT/boards/25) 
 - [CONFLUENCE](https://software-engineering-team.atlassian.net/wiki/spaces/SVAI/overview) 
-- [[Agenda]] - 
+- [[CVP]] - 
 
 - [[CV Planning]] - 
 
@@ -126,6 +109,125 @@ https://github.com/z-x-yang/Segment-and-Track-Anything
 
 
 # LOG
+
+## People
+[Planning Doc](https://docs.google.com/document/d/1F2hISCp9p-uvfzVt6OTclhOGswQ9EmbVwGxKk9uqJ28/edit) 
+
+- GRZEGORZ - PlayerID & Gallery; Common Classes
+	- [Speedups](https://docs.google.com/document/d/15hc6cdpVLLoDguF75QcoFxEzzkkHtU056-3a7bePT2E/edit)  30hrs --> 7hrs (4 speedup transforms, float16, batching, smart training)
+	- Propagating Player IDs across tracks; PR waiting
+	- Common Input Classes
+- MAXIM - Build Dataset; Metrics; 2-3-point (homography, )
+	- GENERATIVE MODEL
+	- CAMERA CALIBRATION - 
+	- HOMOGRAPHY - 
+	- POINTS - 
+	- CVAT - waiting on CF - 
+- MARTIN - Dev-QA-promotion process
+	- EVENTS - Json file agree.  10 files to James.
+	- MATRICS - Money-metric - Money, Accuracy
+	- Keeping track of players in invisible
+	- Making longer tracks
+- SARTHI - 
+	- Fixing make/miss to have 3rd class
+	- Halos
+- VISHAL -
+	- Memory Profiler
+	- Speedups
+
+### 2023-07-31  Maxim
+- GENERATIVE MODEL to model court.
+
+- CAMERA Calibration - using lines on the court.
+	- USED for 3d points into 2d
+
+
+### 2023-07-31  Sarthi
+COLOR MODEL UPDATE - 
+LEARN TO DEPLOY TO AWS - 
+HALOS ??
+
+NOT A SHOT - Retrain using multi-class class.  (collected 120)
+
+### 2023-07-31  Martin
+
+EVENTS DATASET - 
+- 10 games - 
+- Meet Leo - bug
+
+DEMO -
+Greg PR is merged.
+
+Getting a JSON
+
+### 2023-07-31  Vishal
+
+CIRCLE CI - Friday
+END2END TESTING OF HALO - 
+
+
+SPEEDUP DEBUGGING - 
+
+### 2023-08-02  Grzegorz
+
+COMMON CLASSES
+
+EVENTS
+
+### 2023-08-03  DEV OPs
+- Terraform
+- Ansible
+- CV-image:  conda+main
+
+### 2023-07-31  Color ALG
+
+So @Grzegorz Biziel if you think just throwing some additional training at your current color model is going to mostly make it work, then I am in favor of just doing that, and not trying some totally new approach.  Still I must say, it seems we are going needlessly going the long away around the barn when we could be just walk thru the door.  If you think this approach is not going to go the distance and instead is going to hit a wall below 95% accurate coverage.  Then we should at least talk about a totally different path.  (beginning from the colors observed in the video itself.)
+
+Not saying we go and do this.  It would take a sprint to code it, we I would have to think about how to do it efficiently.
+But here is a thought about a totally different path:
+
+**Compute Color PDF** -- Maps the torso region of each detect onto a PDF over 20-key colors (plus the none-of-the-above color).
+(1) sample a million pixels randomly from the torso regions of detects from the frames from 5 min of game play
+(2) run k-means (K = 20) in RGB space on those pixels to get top 20 most dominant colors.
+(3) This defines a histogram-like PDF for each detect frame.  A 20-tuple of the number of pixels in the detect which are close in RGB-space to each of our 20 dominant colors, or an 'other' category for pixels not close to any of the 20 colors.  
+(4) This defines a function mapping each detect onto a 20-tuple pdf over all pixels in the torso of that detect -- what percent are near each of the key colors.
+
+What is the idea here?
+We are looking for most common colors in torso area.  My thinking is the one to three jersey colors for each team (plus the floor, hair, skin colors, referee colors, etc) will all be among the top 20 colors.
+
+
+
+**Compute Color Z-scores** -- Extends PDF function to map each detect onto 20 Z-scores representing surprise for that color
+- Each element of the color PDF tuple naturally has a gaussian distribution for the levels of that color over ALL detects over both teams and coaches.  
+(1) From this we can compute a Z-score for the level of "surprise" in seeing an abnormally high amount of this key color relative to all detect frames.
+(2) We pick the simple threshold on this Z-score for how much surprise is needed to be "surprised"
+(3) Using this fixed threshold we generate a 20-bit bit-vector of the surprise at the amount of each color seen.
+
+
+What is the idea here?
+The Z-score represents the amount of "surprise" in seeing a give level of color in a single frame.  Skin tone might exist in many frames, so seeing it will not be too surprising.  Perhaps the floor is rarely seen so in the torso, thus seeing alot of floor from a misplaced torso might generate surprise is seeing a lot of it.  We choose the fixed threshold so that most of the time the number of pixels of actual jersey color is above the threshold while things like skin color are not.  This should not be a sensitive parameter since jersey color in large amounts should basically NEVER occur for other players, and should be notably large
+
+the amount of jersey color even with very little jersey is seen has a 
+
+to just below the level of "surprised" we expect for a team color that will occur in more than 1/10 of all detects (gives us room for non-player detects, for the other team, and our own team that had little jersey showing).  
+
+Either way this is detecting notable deviations from expectations.
+
+
+Most Conserved Surprise -- 
+
+at the amount of this color in this detect as compared to all detects.
+(5) Now using the same gallery code we select track that are not close to other tracks an look for max surprise counts for each key color over all tracklets.  The highest scoring key colors are the jersey(s) colors.
+(6) choose the top 2-4 scoring colors
+
+  Still seeing the floor will be random, it will not be conserved as a surprising color over the tracklet's length.  But the jersey color will rise above a properly chosen threshold (for surprise among two teams with a few extras) AND jersey color when it is high will be CONSISTENTLY high over that tracklet.  Indeed it should only be those colors that are unusual and yet are conserved across a track that would be identified.
+- 
+- This does not give us color names
+
+
+
+The highest max ranking colors are those colors
+
 ### 2023-07-13  Progression of halo apps
 
 - Player ID 

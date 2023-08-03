@@ -41,6 +41,7 @@ Basic Idea
 
 ### 2023-07-12  Halos
 - 	[HaloAPI](https://docs.google.com/document/d/19GO0MnCZCKt8r1DNxLnKAFC5aquHh6GZXBF4j2Q3psw/edit) 
+- +[HaloAPI](https://docs.google.com/document/d/19GO0MnCZCKt8r1DNxLnKAFC5aquHh6GZXBF4j2Q3psw/edit) 
 
 - End2End on MasterDev
 - TurnKey API on MasterDev

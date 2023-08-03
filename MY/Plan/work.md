@@ -6,32 +6,30 @@
 - [[Talent Map]] 
 ## ACTIVE
 
+## CV TEAM
+[[QQ]]:		S Halos
+[[Dataset]]:	R James
+[[Baseline]]: +Ach, +TT
+[[CVP]]:		G Inputs
+
 ## TRACKING
-[[QQ]]:		Regression test
+[[Hire]]		Bk,Ang, ML,SW,T
+[DS2MM](https://software-engineering-team.atlassian.net/browse/AIT-394?atlOrigin=eyJpIjoiOWE3ZDUzNGZhZTE2NDUxZWI2ZTFjZDVkMTg2MzIzYWIiLCJwIjoiamlyYS1zbGFjay1pbnQifQ):	
+[[Test]]		[KPIs](https://software-engineering-team.atlassian.net/wiki/spaces/SPORTSVISI1/pages/129794240/OPS.10+KPI+Tracking)  [pri](https://docs.google.com/document/d/16gZQ54Eg3TO_7eRtzSX6iW6DWZKeaiLWwSvZuxVdgJI/edit) Max Auto
+
 [[SV Mgt]]:	+
-[[QQ]]:		+ Patent thinking
 [[Roadmap]]:	+ CVslides, specs
-[[Test]]		[KPIs](https://software-engineering-team.atlassian.net/wiki/spaces/SPORTSVISI1/pages/129794240/OPS.10+KPI+Tracking)  [pri](https://docs.google.com/document/d/16gZQ54Eg3TO_7eRtzSX6iW6DWZKeaiLWwSvZuxVdgJI/edit) 
-[[Baseline]]: Ach, TT,Jack,Max
 
-[[Hire]]		Bk, Ang, ML, SW
-- Hiring Test
-[[QQ]]:		Push2Prod
-[[CV.]] 		Sprnt(G,Mx,Mr,V)
-[[CV.]]		End2End in Mdev
-[[Dataset]]: 
-[[QQ]]:		+[HaloAPI](https://docs.google.com/document/d/19GO0MnCZCKt8r1DNxLnKAFC5aquHh6GZXBF4j2Q3psw/edit) 
-[[Agenda]]:	
+[[QQ]]:		+ Patent thinking
 
-[CV plan](https://docs.google.com/document/d/1sxwVOEqIynj4-bkg97b4HQCeodnB743ebamrUw0BMnk/edit):	many task
 [[QQ]]:		CallTree
 [[@James Briones]]: TC
 
-## THREADS
-- [ ] SOC 		compliance
+## SECONDARY
+[[QQ]]:		Push2Prod
 - [ ] [SW Status](https://docs.google.com/document/d/1v4Rw7tYlSumLs0AqkkCU447N8Nm1ktoGpwNwxwNkbCw/edit): Jack
-- [ ] [[Agenda]] 
-- [ ] [[QQ]]: iOS: Valere
+- [ ] [[CVP]] 
+- [x] [[QQ]]: iOS: Valere
 - [ ] Upload Issue
 
 - [ ] [[QQ]]: PIVO - Product Plan

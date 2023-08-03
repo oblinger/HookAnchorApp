@@ -3,6 +3,8 @@
 
 MAID - Aryane Vieira ‭(415) 612-0099‬
     $40/hr excellent hard worker
+MAID - Adriana - Milan Cleaning - $60/hr/person
+	Deep cleaning specialist.  Owner came w/ her teamj
 HOUSE REPAIR - Daniel. 415 272-0976
     relyserv31@gmail.com  from Jessie.  
     Repaired exterior in 2020
