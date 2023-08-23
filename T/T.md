@@ -9,7 +9,7 @@
 :: [[OBS]]
 
 [[T]]OPICS (master)
-- [[JOB]]		- 
+- [[Career Log]]		- 
 - [[FIN]]		- 
 - [[T/Food/Food]]		- 
 - [[KM]]		- 

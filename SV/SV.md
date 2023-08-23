@@ -1,10 +1,12 @@
 
-:: [[CVT]]
+:: [[cvt]], 
 
 :: [[Circle]],   [[SV Software]]
 
 < [[???]]   [[@Sports Visio]],  [[@Jason Syversen]], [[@SV]]
-
+[[Canva]]
+bu
+- [[SV Tasks]] - 
 - TOPS:		[[WW]],   [[QQ]],  [[SV Mgt]], 
 - [[SV Strat]]:	[[Reset]],  [[Roadmap]], 
 - [[SV Ops]]:	 	[[SV Dashboards]],  [[SV Testing]], [[SV Release Planning]],  

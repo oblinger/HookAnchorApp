@@ -1,3 +1,12 @@
+### 2023-08-21  Gratitude Meditation; Feeling valued @ work
+
+Gratitude meditation course is giving a new view on my day to day.
+I do have much to be happy with, and much to enjoy with Eli.
+
+And for my present role at SV, I am delivering a ton of value, and I am recognized for that value.  So I think I need to relax away from the stress regarding this topic.
+
+Today did have a small backdrop of stress, as I am just "on" and pushing the whole day.  I like the task of getting folks moving on the "ingest" problem @ work, but still it is novel for me to be pushing the ball on so many things at once.  I need to learn how to manage this w/ less stress.
+
 ### 2023-06-20  A HAH - Treadmill
 
 I am living on a self-inflicted treadmill.
@@ -127,7 +136,7 @@ And it is part of an evolving picture of what I can deliver in future jobs too. 
 - But not necessarily the most important actions happening all the time
 - Idea: track 'buckets' of activity in order to ensure good percentage is going in best directions
 
- [[Bkts]]  
+ [[BKT]]  
 
 
 ### 2023-02-27  Week 2 at SV 

@@ -6,8 +6,20 @@
 
 | Date       | File                       | Notes                                                                                                                             |
 | ---------- | -------------------------- | --------------------------------------------------------------------------------------------------------------------------------- |
+| 2023-08-23 | [[@Grzegorz Biziel]]           | Better Gallery                                                                                                                    |
+| 2023-08-22 | [[@Sapphire Ventures]]         | Recruiting                                                                                                                        |
+| 2023-08-21 | [[@CV]]                        | Grzegorz                                                                                                                          |
+| 2023-08-21 | [[@CV]]                        | Sarthi                                                                                                                            |
+| 2023-08-21 | [[@CV]]                        |                                                                                                                                   |
+| 2023-08-21 | [[Reflections]]                | Gratitude Meditation; Feeling valued @ work                                                                                       |
+| 2023-08-13 | [[QQ]]                         | INJEST                                                                                                                            |
+| 2023-08-11 | [[Phone]]                      | Cancer Vet                                                                                                                        |
+| 2023-08-10 | [[Eli]]                        | First Bike Ride                                                                                                                   |
+| 2023-08-10 | [[@Sage Vet]]                  | Surgery to remove cancer                                                                                                          |
+| 2023-08-09 | [[SV Mgt]]                     | AUG MGT MEETING                                                                                                                   |
 | 2023-08-03 | [[@CV]]                        | DEV OPs                                                                                                                           |
 | 2023-08-03 | [[@Brian French]]              | update                                                                                                                            |
+| 2023-08-03 | [[Career Log]]                 | Customer Acquisition (from nick) ---                                                                                              |
 | 2023-08-02 | [[@CV]]                        | Grzegorz                                                                                                                          |
 | 2023-08-01 | [[@Jack Potvin]]               | evaluation                                                                                                                        |
 | 2023-07-31 | [[@Agustin Polito]]            | Intro - discussion about Head SW at                                                                                               |
@@ -31,7 +43,7 @@
 | 2023-07-13 | [[@CV]]                        | Progression of halo apps                                                                                                          |
 | 2023-07-12 | [[QQ]]                         | Halos                                                                                                                             |
 | 2023-07-12 | [[SV Mgt]]                     | Deliverables                                                                                                                      |
-| 2023-07-11 | [[Bkts]]                       | Reality time                                                                                                                      |
+| 2023-07-11 | [[BKT]]                        | Reality time                                                                                                                      |
 | 2023-07-11 | [[EduCorp]]                    | Collette pointers                                                                                                                 |
 | 2023-07-10 | [[@Jason Syversen]]            | Topics                                                                                                                            |
 | 2023-07-08 | [[TT]]                         | production bug                                                                                                                    |
@@ -49,7 +61,7 @@
 | 2023-06-22 | [[NextCo]]                     | GPT Ideas                                                                                                                         |
 | 2023-06-21 | [[EOCA]]                       | quote: most intelligent species is changing hands                                                                                 |
 | 2023-06-21 | [[Productivity]]               | Workday Ideal Breakdown                                                                                                           |
-| 2023-06-20 | [[Bkts]]                       | July 2023 Buckets                                                                                                                 |
+| 2023-06-20 | [[BKT]]                        | July 2023 Buckets                                                                                                                 |
 | 2023-06-20 | [[@CV]]                        | GRZ how many frams                                                                                                                |
 | 2023-06-20 | [[SV Product]]                 | Few ideas from Jason                                                                                                              |
 | 2023-06-20 | [[Reflections]]                | A HAH - Treadmill                                                                                                                 |
@@ -202,7 +214,7 @@
 | 2023-03-07 | [[@Daniel Handyman]]           | Quote for house work                                                                                                              |
 | 2023-03-06 | [[@Mike Seibert]]              | Three guys CV guys from Argentina                                                                                                 |
 | 2023-03-01 | [[@Tomas Piaggio]]             | Maybe work for Sports Visio                                                                                                       |
-| 2023-03-01 | [[Bkts]]                       | New Time Tracking Bucketing                                                                                                       |
+| 2023-03-01 | [[BKT]]                        | New Time Tracking Bucketing                                                                                                       |
 | 2023-03-01 | [[@Pablo Calofatti]]           |                                                                                                                                   |
 | 2023-03-01 | [[Reflections]]                | Mid Week - Different kind of tracking                                                                                             |
 | 2023-02-28 | [[@Jack Potvin]]               | Bug validation process                                                                                                            |
@@ -258,6 +270,7 @@
 | 2023-01-01 | [[DYL]]                        | Hook System                                                                                                                       |
 | 2023-01-01 | [[DYL]]                        | Edu Corp                                                                                                                          |
 | 2023-00-00 | [[Meta CRM]]                   | CRM FORMAT                                                                                                                        |
+| 2023-00-00 | [[BKT]]                        | buckets                                                                                                                           |
 | 2022-12-16 | [[2022-W51]]                   | FRI                                                                                                                               |
 | 2022-12-14 | [[Phone]]                      | Fix roof fin                                                                                                                      |
 | 2022-12-14 | [[2022-W51]]                   | WED                                                                                                                               |
@@ -521,7 +534,7 @@
 | 2021-04-07 | [[@Jason Syversen]]            | Jason #5                                                                                                                          |
 | 2021-04-01 | [[Journal Old]]                | Jason #5                                                                                                                          |
 | 2021-04-01 | [[@Jason Syversen]]            | Jason #5                                                                                                                          |
-| 2021-04-00 | [[Bkts]]                       | Summary at that time                                                                                                              |
+| 2021-04-00 | [[BKT]]                        | Summary at that time                                                                                                              |
 | 2021-04-00 | [[Journal Old]]                | >>> TOP   -- NEXT JOB <<<                                                                                                         |
 | 2021-04-00 | [[NJ22 Contents]]              | >>> TOP   -- NEXT JOB <<<                                                                                                         |
 | 2021-03-30 | [[Journal Old]]                | Jason Summary                                                                                                                     |

@@ -9,33 +9,35 @@
 ## CV TEAM
 [[QQ]]:		S Halos
 [[Dataset]]:	R James
-[[Baseline]]: +Ach, +TT
+[[Baseline]]: +Ach, +TT [DS2MM](https://software-engineering-team.atlassian.net/browse/AIT-394?atlOrigin=eyJpIjoiOWE3ZDUzNGZhZTE2NDUxZWI2ZTFjZDVkMTg2MzIzYWIiLCJwIjoiamlyYS1zbGFjay1pbnQifQ):
 [[CVP]]:		G Inputs
-
+[ColorAlg](https://docs.google.com/document/d/1FWl-9IxLnBLm-n2tgjFlUX4MCrNhAqgcdwUfVhVWyas/edit):	
+Ground Truth
+Cmd line for least commit
+Write better color model
 ## TRACKING
-[[Hire]]		Bk,Ang, ML,SW,T
-[DS2MM](https://software-engineering-team.atlassian.net/browse/AIT-394?atlOrigin=eyJpIjoiOWE3ZDUzNGZhZTE2NDUxZWI2ZTFjZDVkMTg2MzIzYWIiLCJwIjoiamlyYS1zbGFjay1pbnQifQ):	
-[[Test]]		[KPIs](https://software-engineering-team.atlassian.net/wiki/spaces/SPORTSVISI1/pages/129794240/OPS.10+KPI+Tracking)  [pri](https://docs.google.com/document/d/16gZQ54Eg3TO_7eRtzSX6iW6DWZKeaiLWwSvZuxVdgJI/edit) Max Auto
-
-[[SV Mgt]]:	+
-[[Roadmap]]:	+ CVslides, specs
-
-[[QQ]]:		+ Patent thinking
-
-[[QQ]]:		CallTree
-[[@James Briones]]: TC
+[[ingest]]:
+[[Hire]]	    Bk,Ang, ML,SW,T
+[[Test]]		[KPIs](https://software-engineering-team.atlassian.net/wiki/spaces/SPORTSVISI1/pages/129794240/OPS.10+KPI+Tracking)  [pri](https://docs.google.com/document/d/16gZQ54Eg3TO_7eRtzSX6iW6DWZKeaiLWwSvZuxVdgJI/edit) 
+[P2P](https://docs.google.com/document/d/1C0fTdalEsWEPaHFwH1M1ErC3iUDbGgUk/edit):
+[[Dataset]]:	ground truth call
+Bugs:     W clean list; track
+[[bugs]]:
+minutes:
 
 ## SECONDARY
+[[QQ]]:		+ Patent thinking
 [[QQ]]:		Push2Prod
-- [ ] [SW Status](https://docs.google.com/document/d/1v4Rw7tYlSumLs0AqkkCU447N8Nm1ktoGpwNwxwNkbCw/edit): Jack
-- [ ] [[CVP]] 
-- [x] [[QQ]]: iOS: Valere
-- [ ] Upload Issue
+[[QQ]]:		CallTree
+[SW Status](https://docs.google.com/document/d/1v4Rw7tYlSumLs0AqkkCU447N8Nm1ktoGpwNwxwNkbCw/edit): Jack
+[[CVP]] ??Upload Issue
 
-- [ ] [[QQ]]: PIVO - Product Plan
-- [ ] [[Headless]]: watch
-- [ ] Headcount Analysis
+[[Roadmap]]:	+CVslides, specs
+[[QQ]]: PIVO - Product Plan
+[[Headless]]: watch
+Headcount Analysis
 
+[[SV Mgt]]:	+
 ## PAUSED
 - [ ] [[Bridge]]	?? get ctc
 - [ ] [[Demos.]]	??? 

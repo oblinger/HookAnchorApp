@@ -4,6 +4,15 @@
 
 # LOG
 
+### 2023-08-23  Better Gallery
+
+We want a deep learned embedding space that well separates the players (e.g. like a normal embedding, but one that is computed thru multiple deep layers)
+
+Like a normal embedding we use a gradient method to adjust its weights.  But in this cases
+
+
+$70/hr five  
+
 ### 2023-06-29  how does gallery work
 
 - byte-tracker 

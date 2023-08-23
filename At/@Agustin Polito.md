@@ -12,8 +12,11 @@
   not super deep technically
   
 - NEGATIVE:
-  - Really only a single success
+  - Really only a single success (Karvi)
   - Did not have strong ideas about leadership
+
+- UNASKED:
+	- what processes would he use
 
 
 - Into me, intro you & experience; about the company, ideas for role, my ideas
@@ -37,10 +40,10 @@ STARTED AS DEV
 - Java, 
 
 
-KARVI
+KARVI - Car sales platform
 - joined employee 4 (1 dev), grew team to 400 (60 devs)
 - Backend: JS, Go, Micro services, Front: Next JS, AWS
-- 3M requests per-hour.  
+- Scale: 3M requests per-hour.  
 - Algorithm:  Lowest offer, nearest offer, same model car
 	- Added more rules
 	- Elastic search

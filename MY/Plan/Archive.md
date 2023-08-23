@@ -1,3 +1,6 @@
+- [x] job ads to Jason
+- [x] [[BCMS]]: movie
+- [x] Paperwork for equity
 - [x] Eli's B-day (music)
 - [x] rebuild computer
 - [x] ML hire

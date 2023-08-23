@@ -584,6 +584,7 @@ _
 _
 #### Scotch
    Jan-1 2009  22 full bottles (or a bit less)
+    https://www.thespiritsbusiness.com/2023/06/the-scotch-whisky-masters-2023-results/
     
 
 AREAS

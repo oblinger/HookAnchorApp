@@ -1,4 +1,6 @@
 
+:: [[@Nicolas Nicolov]],   [[@Sage Vet]],   [[@Sapphire Ventures]],   [[Friends]]
+
 :: [[@Agustin Polito]]
 
 :: [[@Dexafit]],   [[Doctor]],   [[Service]]
@@ -48,7 +50,7 @@
  [[@Horizon Fitness]],  [[@Sunnova]]
 [[@Jake Wachman]], [[@Grzegorz Biziel]], 
 [[@Frank Langston]],  [[@Brian]]
-  [[@Qingling Oblinger]],   [[@Epsilon Oblinger]],   [[PEOPLE]],   [[@Eli Oblinger]]
+  [[@Qingling Oblinger]],   [[@Epsilon Oblinger]],   [[People]],   [[@Eli Oblinger]]
 [[@Igor Shindel]],   [[@Sports Visio]]
   [[DEVSHOP]]
   [chew](chew.md)

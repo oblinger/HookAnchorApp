@@ -15,8 +15,6 @@
 
 ### RESEARCH
 - [ ] Plan for crypto
-
- 
 ### HOUSE
 - [ ] USB Camera
 - [ ] BEDROOM --  Closet Pole

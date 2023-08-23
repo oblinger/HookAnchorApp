@@ -2,6 +2,7 @@
 :: [[EOCA What Happens Now]]
 
 - [[EOCA Last Best Hope]] - 
+- [[EOCA Consciousness]] 
 
 ## TODO
 ### who to talk to

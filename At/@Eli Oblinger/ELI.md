@@ -98,6 +98,12 @@ STEPS:  Email these to self.  on phone click on apple mail, then click on each v
 
 
 
+# FIRSTS
+### 2023-08-10 First Bike Ride
+Grandma Ni gave Eli a bike for his birthday, and he road it down the block and to the mosque several times with Dad holding on to the back.
+He was afraid initially, but grew willing to keep getting back on even when he fell.  (He insisted to ride by himself which ended quickly each time). After a few times he was content to let dad hold onto the seat or handle bar.
+
+
 # LOG
 
 

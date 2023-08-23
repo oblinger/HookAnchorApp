@@ -6,7 +6,6 @@
 - [ ] Clean paper pile
 - [ ] get latest interview notes into obsidian
 
-- [ ] [[BCMS]]: movie Night
 - [ ] [[Coms]]: 
 - [ ] QL: sell, Yearbook, 
 - [ ] taxes plan

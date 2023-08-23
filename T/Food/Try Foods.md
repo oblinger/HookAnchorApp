@@ -1,4 +1,4 @@
-
+- [ ] 
 **NOW**:
 - SOUPS:		White Bean, Black bean (++chili / soup / ++cuban), ++Veg
 - 				Mixed bean ?white?, ++Split Pea, +Butternut, ++Lentil(curry,?), 

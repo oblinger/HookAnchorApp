@@ -256,7 +256,10 @@ The set of human knowledge/abilities that are extractable from some copying tech
 Each advancement in coping tech will result in stepwise advances as the copy closure of that tech is captured / exploited
 ### UNIVERSAL COPIER
 ### DCONSCIOUSNESS
-An embodied modelling systems model of its embodiment.  Including its innate instincts & propensities. Its: embodiment, sensing, processing, drives, modelling, 
+An embodied modelling systems model of its embodiment.  Including its innate instincts & propensities.
+
+
+Its: embodiment, sensing, processing, drives, modelling, 
 
 DC understanding ==> DC control
 

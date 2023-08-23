@@ -9,7 +9,7 @@
 - Who should own end-to-end halos?  Sarthi
 - Halos:  
 
-- [[CVT]],  [[CV Planning]], [[CV.]], 
+- [[cvt]],  [[CV Planning]], [[CV.]], 
 - [LCM Input](https://docs.google.com/document/d/1kxGMrmPOr9S6whRnV0LI0UpWGeyBzTn8WGDq7ITM4Sc/edit),  [LCM root](https://docs.google.com/document/d/10jm1RRqCqvAXy3Ti1Nu-jLzATy0jjBejUY7-Dz2e85U/edit), 
 
 ## Todo
@@ -66,7 +66,7 @@ Execution
 - Halo pipe
 
 # PTRS
-- FOLDERS: [[SV Root]] 	[svdata](https://drive.google.com/drive/folders/10VWKl_3u0--LyLZmzgu8So7i1Jgq6HSr?usp=drive_link) - 
+- FOLDERS: [[SV G Root]] 	[svdata](https://drive.google.com/drive/folders/10VWKl_3u0--LyLZmzgu8So7i1Jgq6HSr?usp=drive_link) - 
  [[CV.]]
 
 - [Shared Folder](https://drive.google.com/drive/u/4/folders/1GdLWPNXw6lNDp9kxLjIQsaX1zAcnszAl) - 
@@ -108,7 +108,7 @@ https://github.com/z-x-yang/Segment-and-Track-Anything
 
 
 
-# LOG
+
 
 ## People
 [Planning Doc](https://docs.google.com/document/d/1F2hISCp9p-uvfzVt6OTclhOGswQ9EmbVwGxKk9uqJ28/edit) 
@@ -135,8 +135,31 @@ https://github.com/z-x-yang/Segment-and-Track-Anything
 	- Memory Profiler
 	- Speedups
 
+# LOG
+
+### 2023-08-21  Grzegorz
+- Remove Non-Players, by adding generic group 
+
+### 2023-08-21  Sarthi
+- Improving halos - adding GRZ code
+- Improving Color model
+
+### 2023-08-21  
+really close to 60% player ID
+
+- Ball possession.
+- Player 1 and 11.  <--  
+- Distraction players.  (homography)
+
 ### 2023-07-31  Maxim
-- GENERATIVE MODEL to model court.
+- Update Mike's camera/court parameterization 
+- Build GENERATIVE MODEL to model court.
+
+
+- Vanishing points are 
+
+- WROTE doc shared w/ Mike about 
+
 
 - CAMERA Calibration - using lines on the court.
 	- USED for 3d points into 2d
@@ -147,10 +170,9 @@ COLOR MODEL UPDATE -
 LEARN TO DEPLOY TO AWS - 
 HALOS ??
 
-NOT A SHOT - Retrain using multi-class class.  (collected 120)
+- NOT A SHOT - Retrain using multi-class class.  (collected 120)
 
 ### 2023-07-31  Martin
-
 EVENTS DATASET - 
 - 10 games - 
 - Meet Leo - bug
@@ -161,7 +183,6 @@ Greg PR is merged.
 Getting a JSON
 
 ### 2023-07-31  Vishal
-
 CIRCLE CI - Friday
 END2END TESTING OF HALO - 
 
@@ -169,10 +190,13 @@ END2END TESTING OF HALO -
 SPEEDUP DEBUGGING - 
 
 ### 2023-08-02  Grzegorz
+EVENTS:  First round trip with James
 
 COMMON CLASSES
 
-EVENTS
+
+- Built 4 speedups
+- Running end to end system
 
 ### 2023-08-03  DEV OPs
 - Terraform

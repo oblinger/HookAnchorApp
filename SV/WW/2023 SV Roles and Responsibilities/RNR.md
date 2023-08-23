@@ -1,7 +1,10 @@
+- Jack keeps the Jobs page upto date
+- who in CV tracks IP licences??
 
+l
 - [[2023 SV Roles and Responsibilities]]
 
-
+- Jack - Coordinate monday management meeting.
 PIIA
 
 

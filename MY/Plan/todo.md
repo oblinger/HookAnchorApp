@@ -1,13 +1,16 @@
-- [ ] Friday, [[Reflections]],
-- [ ] QL Celebration
-- [ ] [[MED.]] -
-- [ ] Write Phillip
+- [ ] Eli school
+- [ ] bday Dinner Anomaly
 
+- [ ] [[MED.]] -
+
+- [ ] brainstorming wish list for headcount for brian and Mike
+- [ ] like SOC-2, PCI, HIPAA, etc
 - [ ] Get Receipts in to SV
 - [ ] Taxes underway
 - [ ] Call vanguard to move funds to new account
 - [ ] Soccer for Eli
-
+- [ ] dfas login change
+- [ ] 
 - [ ] ask doctor about going above max heart rate
 - [ ] Find School 4 Eli
 

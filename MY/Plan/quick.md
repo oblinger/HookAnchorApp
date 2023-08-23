@@ -1,11 +1,6 @@
-- [ ] James response; ignacio response
-- [ ] planning CV
-- [ ] jasu track testing stuff
+- [ ] CV dev test
 - [ ] 83b filing
 - [ ] re-download everything
-- [ ] check about cigna
-- [ ] push2prod
-- [ ] james update
 - [ ] maximo's tasks
 - [ ] Ask Crowdar about testing scripts
 - [ ] trip plan for visit

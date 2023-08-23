@@ -1,10 +1,15 @@
 
-# Log
 
+# Log
+### 2023-08-09  AUG MGT MEETING
+
+- Backend: Use Juan
+- Ground Truth: Use PH
 ### 2023-07-12  Deliverables
 
+- [Canva](https://www.canva.com/design/DAFrEaB1aNU/eVOTF31pSlykZx6ifJMWAQ/edit) 
 
-TASKS:  [x](https://docs.google.com/spreadsheets/d/1X9YNns5sMzTPdFIFhtqqVR47SV4Y7jgbbYfDN55k1GM/edit?usp=sharing) 
+TASKS:  [Spreadsheet](https://docs.google.com/spreadsheets/d/1X9YNns5sMzTPdFIFhtqqVR47SV4Y7jgbbYfDN55k1GM/edit?usp=sharing) 
 - Work with Jack to deliver core SV Hoops PRODUCT & AI Team Roadmap
 - Present Q3 and Q4 deliverable plan at next monthly meeting
 - Baseline Pivo cold storage status
@@ -13,9 +18,18 @@ TASKS:  [x](https://docs.google.com/spreadsheets/d/1X9YNns5sMzTPdFIFhtqqVR47SV4Y
 - Look into/consider preparing patents for our new ML approach to player tracking, see if we can file a patent, also will likely need 2 patents filed for Series A.
 
 
+#### SLIDES
 
+- Testing
+- Pivo
+- Record App
 
+#### Explanation
 
+- Full Regression Hoops/Ann/WebUI.  
+- Exploratory [Testing](https://docs.google.com/document/d/1iKJLualzSJbBKR8K3qjpuOhf-y6cmDFgsPIW-8nXXAg/edit#heading=h.xv6bvzuutwj0): HOOPS:  Maximo, TT, Achilles, Jasu, Nasa, Leo, Juan
+- Exploratory Record: similar James + Columbian Team
+- Diversity Test:  
 
 ### 2023-02-15  Comments with the Team
 

@@ -1,11 +1,8 @@
-
-- [2023 Roadmap parts](https://docs.google.com/document/d/1AnJtEiR4QACR237XVPQ6Ps5FKhjdQC9LZG4CVa3J1lY/edit) - 
-
-- [Prod Progression](https://docs.google.com/document/d/19_vRUK2Azl5miH7IuDdWZTtyuArSkLU_W_RKUUUiT-o/edit) - Jack specs
-
-- [Jacks Objectives](https://docs.google.com/spreadsheets/d/1y7QKKX-3JYNn0pNKGBGsExFfs_hVa61suPic-V53LTk/edit#gid=222082036) his sheet 
-
 - [[SV Roadmap]] - Document
+
+- [Prod Progression](https://docs.google.com/document/d/19_vRUK2Azl5miH7IuDdWZTtyuArSkLU_W_RKUUUiT-o/edit) JackSpec
+- [Jacks Objectives](https://docs.google.com/spreadsheets/d/1y7QKKX-3JYNn0pNKGBGsExFfs_hVa61suPic-V53LTk/edit#gid=222082036) HisSheet 
+
 
 
 

@@ -1,10 +1,10 @@
 
 (Master in Obsidian)
 
-MAID - Aryane Vieira ‭(415) 612-0099‬
-    $40/hr excellent hard worker
+MAID - Cholico Julio-Cesar  - $30/hr
+	‭+1 (415) 900-0483‬‬.  jcesar.colico@gmail.co  
 MAID - Adriana - Milan Cleaning - $60/hr/person
-	Deep cleaning specialist.  Owner came w/ her teamj
+	Deep cleaning specialist.  Owner came w/ her team
 HOUSE REPAIR - Daniel. 415 272-0976
     relyserv31@gmail.com  from Jessie.  
     Repaired exterior in 2020
@@ -24,3 +24,10 @@ WINDOWS - Hi climber  ($345 based in oakland)
     510-499-1001  
 
 [[@Daniel Handyman]] 
+
+
+OLD
+
+MAID - Aryane Vieira ‭(415) 612-0099‬
+    $40/hr excellent hard worker
+    

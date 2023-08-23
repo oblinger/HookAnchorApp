@@ -4,7 +4,7 @@
 ## xx 1Password  (not from here)   [[Doc 1Password]]
 
 ## xx Amphetamine
-No Sleep replacement
+This is the replacement for xx No Sleep
 keeps mac from shutting down
 ## xx Be Focused Pro (Timer)
 
@@ -572,6 +572,8 @@ URL:  about:config
 ## xx NoSleep     (Use MAC update.  select command line options)
 http://macupdate.com 
 
+
+Use Amphemetifine 
 ## xx Skype
 
 ## xx Spotify 
@@ -1229,69 +1231,8 @@ MEDIA:   P:AudioHiJack, P:TuneUp, P:SizzlingKeys(4iTunes)
 ---- SYSTEM / DRIVERS ----
 - QuickTime, DivX, G: Silverlight
 - Driver: WD portapac, 
-### (Retina List)  
-   P=Paid, G=Google, A=AppStore
 
--  Total Finder
--  Disk Order
-a  Battery Time
-
-SPECIAL INSTALL
--  Total Finder      
--  Timeboxed         --  Licence file in /ob/large/install
--  Private Eye       --  Monitors Net Traffic
--  X11               --  Click /Applications/Utilities/X11.app (to install)
-a  Xcode
-a  Xcode-CmdLnTools  --  Xcode->CMD,->Downloads->!install
-
-COPIED FROM OLD MAC
--  Alfred
--  Aquaemacs
--  Bartender         --  Moves icons from menubar
--  CalendarBar       --  Adds Date to menubar
--  ClipoboardHistory  --  
--  Cobook            --  CAPS-A Q contacts
--  DiskInventoryX    --  Treesize
--  Divvy             --  Window placement utility
--  Dropbox
--  Eclipse
--  Evernote
--  Feedly            --  RSS Reader
--  Firefox           --  
--  Fluid             --  Creates app that opens given URL in safari
--  Folding Text      --  Markdown viewer
--  Gimp              --  Image editor
--  Google Chrome
--  Google Drive      --
--  Hip Chat
--  Keyboard Maestro  --
--  Keynote
--  Kindle
--  Microsoft Office  --
--  mSecure           --             
--  Notation Velocity --  Markdown editor
--  Omni Outliner
--  Picasa            --  
--  Platypus          --  UTIL to create OSX apps (I think)
--  Pocket            --  Read It Later App
--  Postgres          --  Database server
--  Quick Res         --  Changes screen resolutions
--  Skitch
--  Spotify           --  
--  Subline Text      --  git-binary 
--  Textmate
--  Timeboxed         --  Menubar visual timer
-.  Total Finder      --  Replacement for OSX Finder
--  Transmit          --  Remove File Transfer
--  VLC               --  Media File Viewer
--  VMWareFusion      --  Windows Emulation
--  Web Storm         --  JS dev environment
--  Yahoo Messenger
-UTILITIES FOLDER
--  No Sleep
--  XQuartz           --  Execute X11.app to install
-
-### Installs on Old MacAIR (not listed obove)
+### Installs on Old MacAIR (not listed above)
   W:node.js  QuickRes  CheetSheet  Nimbuzz  MemubarCountdown  PrivateEye
   Witch   Docless  GoogleNotifierForMac  SendToKindle
   CircusPoniesNotebook   Hearld  aLaunch.app

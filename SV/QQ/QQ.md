@@ -2,6 +2,17 @@ app- [[QQ Folder]]
 
 # QUICK - QUICK work projects
 
+
+### 2023-08-13  INJEST
+
+- Responsive soln
+- Need all above
+  fixed HW &handsfree
+  tripod phone
+
+==> LeaveOpen on wifi
+
+
 ### 2023-07-17  Patent Thinking
 
 - [ ] Ask Mike best approach

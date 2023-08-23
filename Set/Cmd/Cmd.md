@@ -1,7 +1,9 @@
 
+:: [[BBC Webpage]],   [[Canva]],   [[SV C Root]],   [[SV Tasks]]
+
 :: [[Bought Folder]],   [[CV Log]],   [[SV Log Webpage]]
 
-:: [[AF Folder]],   [[Baselines]],   [[Bug Actual List Webpage]],   [[Games]],   [[Icons Folder]],   [[SV Root]],   [[svdata]]
+:: [[AF Folder]],   [[Baselines]],   [[Bug Actual List Webpage]],   [[Games]],   [[Icons Folder]],   [[SV G Root]],   [[svdata]]
 
 :: [[Preferences App]],   [[SV Confluence Webpage]],   [[Thistle]],   [[gCALENDAR Webpage]]
 

@@ -1,4 +1,4 @@
-
+# SETUP
 ## = NEW COMPUTER - How to setup a new system
 - xx PORT OB TREE TO NEW SYSTEM. (See boot_install for latest)
 - Copy ~/ob onto the new machine at /Users/oblinger/ob
@@ -9,6 +9,17 @@
 
 - if 'km' script does not work, create a new github token for this machine
 
+
+# HOW TO
+
+## = NOTIFICATION SOUNDS
+
+### Different Sounds on Laptop
+- Mail - Biing
+- Messages - Dinggggggg (tiny bell)
+- WhatsApp - Caa-Lung  (two-syllable hitting wood sound)
+- LinkedIn - 
+- Gmail - 
 ## = How to use command line
  [AWESOME COMMAND LINES](https://github.com/herrbischoff/awesome-osx-command-line) 
  

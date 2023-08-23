@@ -1,4 +1,10 @@
 
+- [[@Agustin Polito]] 
+
+INTERVIEWING QUESTIONS:
+
+- TESTING: very little in place.  systems bricks alot.  team is overwhelmed, what order do you rollout and strengthen.
+
 
 
 
