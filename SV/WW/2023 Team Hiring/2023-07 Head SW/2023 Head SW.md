@@ -1,10 +1,13 @@
-- [Req](https://docs.google.com/document/d/1IRmTP2eALbW2FqXlwGMtlqpeDfjyi7jX-v2Zff7M4Kg/edit) 
+- [Req](https://docs.google.com/document/d/1IRmTP2eALbW2FqXlwGMtlqpeDfjyi7jX-v2Zff7M4Kg/edit),   [Can](https://docs.google.com/spreadsheets/d/1AcxFb2U50q_HjgCOtgp_Z52938L_yqeXerKowqQ_BQ0/edit#gid=0),  
 # QUESTIONS
+
+
+
 
 **HIRING**: Roles? Your Process?
 **SHIPPING CODE**:  Outcomes?  Scale?  Your Role?  Num Orgs?
 - Web / Mobile?  Algs?
-**MANAGING**:  Org size/structure?  How do you monitor?  Went wrong?
+**MANAGING**:  Org size/structure?  How do you monitor your team's execution over time?  Went wrong?
 - Proj Mgt?  sizing?  like it?
 **TESTING**:  Design?  Went wrong?  Fixed?  (Ask about our case)
 **ARCH/BACK**:  Most complex?

@@ -4,23 +4,27 @@
 - phase one tix of our spreadsheetless flow 
 - [[@Circle]] 
 - [[Talent Map]] 
-## ACTIVE
 
 ## CV TEAM
-[[QQ]]:		S Halos
+NuGallery	??
 [[Dataset]]:	R James
-[[Baseline]]: +Ach, +TT [DS2MM](https://software-engineering-team.atlassian.net/browse/AIT-394?atlOrigin=eyJpIjoiOWE3ZDUzNGZhZTE2NDUxZWI2ZTFjZDVkMTg2MzIzYWIiLCJwIjoiamlyYS1zbGFjay1pbnQifQ):
+
 [[CVP]]:		G Inputs
+[[QQ]]:		S Halos
+[[Baseline]]: +Ach, +TT [DS2MM](https://software-engineering-team.atlassian.net/browse/AIT-394?atlOrigin=eyJpIjoiOWE3ZDUzNGZhZTE2NDUxZWI2ZTFjZDVkMTg2MzIzYWIiLCJwIjoiamlyYS1zbGFjay1pbnQifQ):
+I run algs
+circle CI
+
 [ColorAlg](https://docs.google.com/document/d/1FWl-9IxLnBLm-n2tgjFlUX4MCrNhAqgcdwUfVhVWyas/edit):	
 Ground Truth
 Cmd line for least commit
-Write better color model
+
 ## TRACKING
 [[ingest]]:
 [[Hire]]	    Bk,Ang, ML,SW,T
 [[Test]]		[KPIs](https://software-engineering-team.atlassian.net/wiki/spaces/SPORTSVISI1/pages/129794240/OPS.10+KPI+Tracking)  [pri](https://docs.google.com/document/d/16gZQ54Eg3TO_7eRtzSX6iW6DWZKeaiLWwSvZuxVdgJI/edit) 
 [P2P](https://docs.google.com/document/d/1C0fTdalEsWEPaHFwH1M1ErC3iUDbGgUk/edit):
-[[Dataset]]:	ground truth call
+[[Dataset]]:	T02 - 
 Bugs:     W clean list; track
 [[bugs]]:
 minutes:

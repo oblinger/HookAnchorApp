@@ -1,7 +1,8 @@
 
 - [ ] [Least Commit v2](https://docs.google.com/document/d/1kxGMrmPOr9S6whRnV0LI0UpWGeyBzTn8WGDq7ITM4Sc/edit): grz
+- [ ] NuGallery
 - [ ] Datasets
-- [ ] Datasets
+
 - [ ] Metrics
 - [ ] [CV plan](https://docs.google.com/document/d/1sxwVOEqIynj4-bkg97b4HQCeodnB743ebamrUw0BMnk/edit): Mike's list
 

@@ -66,8 +66,7 @@ Execution
 - Halo pipe
 
 # PTRS
-- FOLDERS: [[SV G Root]] 	[svdata](https://drive.google.com/drive/folders/10VWKl_3u0--LyLZmzgu8So7i1Jgq6HSr?usp=drive_link) - 
- [[CV.]]
+DIR [[SV G Root]] [svdata](https://drive.google.com/drive/folders/10VWKl_3u0--LyLZmzgu8So7i1Jgq6HSr?usp=drive_link)  [[CV.]]
 
 - [Shared Folder](https://drive.google.com/drive/u/4/folders/1GdLWPNXw6lNDp9kxLjIQsaX1zAcnszAl) - 
 - [BitBucket MVP Algos](https://bitbucket.org/SVEngineering/workspace/projects/MVPAL) - 
@@ -144,7 +143,9 @@ https://github.com/z-x-yang/Segment-and-Track-Anything
 - Improving halos - adding GRZ code
 - Improving Color model
 
-### 2023-08-21  
+### 2023-08-21  Martin
+- Analyze metrics
+
 really close to 60% player ID
 
 - Ball possession.

@@ -7,6 +7,7 @@ LINKS:  [[RR]]   [[Refs]]
 
 | Date        | File                    | Notes                                                                             |
 | ----------- | ----------------------- | --------------------------------------------------------------------------------- |
+| r2023-08-24 | [[DL]]                      | chronological summary                                                             |
 | r2022-12-08 | [[2006-12 GHOST]]           | Professor who sees the damage of corrupt judges                                   |
 | r2022-11-08 | [[DocPandas]]               | Pandas Examples                                                                   |
 | r2022-11-08 | [[2022-05 ELI next school]] | School Stats                                                                      |

@@ -1,9 +1,7 @@
+
+- [ ] Beyondo
 - [ ] CV dev test
-- [ ] 83b filing
 - [ ] re-download everything
-- [ ] maximo's tasks
-- [ ] Ask Crowdar about testing scripts
-- [ ] trip plan for visit
 
 
 

@@ -2,18 +2,16 @@
 - [DIR](https://drive.google.com/drive/folders/1pzCfT5pSH5FAEpjfS1Ydt--5TUcf_4pE):  [mat](https://docs.google.com/spreadsheets/d/12YnUCfj15M3ZtT5ZDWGfO-eZ5PRqoNBEt3A8oaJmlkc/edit#gid=0), [grp](https://docs.google.com/document/d/14tNaA2LooFLqdm-2zrlzRNtjAREdpWe3YBwVlOKasWE/edit#heading=h.dsf5hnrzqfc9),  [app](https://docs.google.com/spreadsheets/d/17dsPR4dunF0-oHn_NKKFt5kLbKjollQFA5SRynUH5O0/edit#gid=0), 
 - [PROB](https://docs.google.com/document/d/14tNaA2LooFLqdm-2zrlzRNtjAREdpWe3YBwVlOKasWE/edit): [Fig](https://www.canva.com/design/DAFr_-71pYE/cMrCD7a9eLjIeEVSFI4IpA/edit)   
 
-- [Marks Matrix](https://docs.google.com/spreadsheets/d/1Jcq5rCIf4Tb6LK4CHF0Hm2p_O591WHAEc4GVneZgOHQ/edit#gid=0) 
-- [Device Search](https://docs.google.com/document/d/1wj09KT1lFsb9F36Q6JMSB-zUiil-gJ0pRdZK1qCJ1Mc/edit#heading=h.x1ppyhyiq8wa) 
-
-
-- Segments - Mark Task
-- Share Button - 
-- DVR UX
-- Share backend upload
-- Share phone upload behav
-- Share UX
+[NVR-UX](https://docs.google.com/document/d/1Zedyt04m3_XpYSlT7rs26YVknng80wRo7G_AyWoLqP4/edit):	
+[DevSrch](https://docs.google.com/document/d/1wj09KT1lFsb9F36Q6JMSB-zUiil-gJ0pRdZK1qCJ1Mc/edit#heading=h.x1ppyhyiq8wa):
+[ShareButton](https://docs.google.com/document/d/1ToiizJghch2FDVwaNYgsWgwLRQI_zKvkjXVkl55TcIQ/edit#heading=h.tkuwfcwopsh1):		
+[CloudKit](https://docs.google.com/document/d/1s1cL-Yu2S6OPNStTozctSMVCe0zp_f5x8ZFron0p6AU/edit):	
+[MktSeg](https://docs.google.com/document/d/1aY91w8mGvHWk_l1Wrx6EaadV-Wmt_nT5yBp5lsM_lG8/edit):	
+[Beyondo](https://docs.google.com/document/d/1tCUgPmVpb4LIIz73RI-tfyJwP9CblLBN0VzN0AVdTr0/edit):			
 - Possible Partners
 
+
+- [Marks Matrix](https://docs.google.com/spreadsheets/d/1Jcq5rCIf4Tb6LK4CHF0Hm2p_O591WHAEc4GVneZgOHQ/edit#gid=0) 
 
 # LOG
 

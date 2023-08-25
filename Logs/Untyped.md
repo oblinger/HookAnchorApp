@@ -10,7 +10,7 @@
 | 2023-08-22 | [[@Sapphire Ventures]]         | Recruiting                                                                                                                        |
 | 2023-08-21 | [[@CV]]                        | Grzegorz                                                                                                                          |
 | 2023-08-21 | [[@CV]]                        | Sarthi                                                                                                                            |
-| 2023-08-21 | [[@CV]]                        |                                                                                                                                   |
+| 2023-08-21 | [[@CV]]                        | Martin                                                                                                                            |
 | 2023-08-21 | [[Reflections]]                | Gratitude Meditation; Feeling valued @ work                                                                                       |
 | 2023-08-13 | [[QQ]]                         | INJEST                                                                                                                            |
 | 2023-08-11 | [[Phone]]                      | Cancer Vet                                                                                                                        |
