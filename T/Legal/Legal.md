@@ -1,9 +1,8 @@
 
 :: [[2015 Legal Bizzy]],   [[2017 Legal Ob Labs]]
 
-:: [[Legal Bizzy]],   [[Legal NDA - AF]],   [[Legal Ob Labs]]
 
-- [[2023 Legal SV]],   [[Legal Bizzy]],   [[Legal NDA - AF]],   [[Legal Ob Labs]],   [[Legal Uniform]]
+- [[2023 Legal SV]],   [[Legal Uniform]]
 
 
 ### Unofficial NDA (to avoid disclosure)
