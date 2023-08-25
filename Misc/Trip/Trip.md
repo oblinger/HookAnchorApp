@@ -15,6 +15,8 @@
 
 :: [[Thailand]]
 
+:: [[Thailand]]
+
 - [[Travel]],  [Trip](Trip.md), [[Thailand]],
 - [[Trip Webpage]]
 
