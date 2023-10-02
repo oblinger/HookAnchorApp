@@ -8,7 +8,7 @@ SETS (master)
 - [[Books]]
 - [[Buy]] 
 - [[Cmd]]		
-- [[Docs]] 		- Personal documentations pages 
+- [[docs]] 		- Personal documentations pages 
 - [[Humor]]	- Jokes I have collected
 - [[Lang]]		- Collected info about specific computer languages
 - [[Movies]]	- Movies "to watch"

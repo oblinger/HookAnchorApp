@@ -7,7 +7,7 @@
 ## OLDER 
 
 :: [[Hiring Resources WebDev]]
-- [[Job Ads]] 
+- [[Jobs]] 
 - [[ROLODEX]], 
 - [[CRM]]
 	- [[Employee Notes]]. 

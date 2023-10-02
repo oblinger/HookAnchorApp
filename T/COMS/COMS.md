@@ -1,46 +1,10 @@
 
-- [ ] [[@Doug Riecken]]
-- [ ] Freed friend Mark Followup
-- Julian call, 
+:: [[@Maria Galang]],   [[COM Next]]
 
-:: [[COM Msg]]
+ [[CRM]] , [[Calls]], [[COM Msg]], [[Mentors]], [[Friends]], 
 
-- [[COMS.]],  [[COM Now]], [[COM Next]], [[COM Waiting]], [[Calls]]:  [[@John Cameron]], [[@Anastasia Kijono]], 
-- [[Mentors]], [[COM Campaigns OLDER]], 
+- Get Reviews:  Felipe, Nick, 
 
-[[@Julian]] 
-## = ACTIVE  [[CRM]] 
-s 		[[@Maria Galang]]		Touch base
-		[RZ](https://docs.google.com/document/d/1wQ53u87r9uVrFxVcrx8w43QANBjuuCBo31rJ8HZbBdU/edit) folks 				Jonas, Anibal, Nestor, 
-n		[[@Felipe Lavratti]]		RECO
-s		[[@John Davis]]			RECO
-s		[[@Nick Allen]]			RECO
-s		[[@Theo Enns]] 			Have Lunch  (Study Neuro)
-
-BACK BURNER
-- Freed, John Davis, Gordin, Felipe, 
-
-
-
-[[@David Israel]] david israel
-
-John Cameron, Anastasia, 
-
-
-- AF: [[@James Briones]]  
-[[FAANG]]  
-## = SOON
--    [[@Vittorio Castelli]],
-
-
-## = Rotation
-- Attilla, Ben Wild
-
-### - SLOWER 
-- Kryzsiek, Greg Hornby, 
-
-## = LINKS
- 
 
 # LOG
 ### 2022-07-19  Ping Goals

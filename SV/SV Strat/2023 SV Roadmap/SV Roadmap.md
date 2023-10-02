@@ -1,5 +1,32 @@
 
+:: [[-[p[ppp]],   [[2023-06 Roadmap old ]]
+
 :: [[2023 SV Roadmap]],   [[Roadmap]]
+
+
+# LOG
+
+### 2023-08 A-Round Ingest RoadMap
+
+FOUR PRODUCT LINES
+- CLOUD - 
+- BARE - 
+- FIXED - 
+- PORTABLE - 
+
+
+ROADMAP
+1. AIR TABLE + OPS - Providing 
+
+
+
+### A-Round Targets
+These are the targets 
+
+1. $2M in ARR
+2. Demo system in a second sport.  (Volley Ball expected.)
+
+### __
 me
 Explanation:
 
@@ -27,7 +54,7 @@ But does have real value, so if we can agree on it.  Then lets do that!
 
 
 
-# Example Application of the Framework
+### Example Application of the Framework
 
 So what?  Nice framework dan, good to see you like typing long documents, but what do you ** DO ** with this framework?
 
@@ -105,7 +132,7 @@ AUTOMATION #2 - BALLER-TV
 
 
 
-# THE SV ROADMAP FOR OUR FIRST INDUSTRY DOMINATION
+### THE SV ROADMAP FOR OUR FIRST INDUSTRY DOMINATION
 
 **Objective**: Provide a skeletal roadmap that can be used to which specific tasks would, and most importantly would not fit into our overall plan for achieving sustained value.  Importantly, this skeleton does not contain ALL important task, like having short term results needed to drive fund raising etc.  The skeleton is spelled out so we keep focus on larger plan and to allow us to look specifically for synergies where we can achieve our short term objectives in ways that simultaneously maximize progress on this larger plan.
 

@@ -1,12 +1,34 @@
+- intern 
+- get dataset support (intern) to be collecting videos
+- get metrics and dataset stuff for maxim
+- build volleyball dataset
+- martin was not doing the PR.
+- credit card PAY!!!
+- Big City Trip to Treasure Island
+- get a video of balltime
+- foo
+- [ ] shinster about mom's phone
+- [ ] pic of epso.  Eli @ 2019 december.  dec of 2020.  all of us
 
+
+
+
+
+
+
+
+
+- Wooshing, Clicking 
+- High pitched can
+- Ear Nose Throat - 
+- Nurologist - 
+
+
+Calsium CT
+buy cabinet
 - [ ] Beyondo
 - [ ] CV dev test
 - [ ] re-download everything
-
-
-
-
-
 
 
 
@@ -39,6 +61,24 @@
 	- outreach to Sport&AI angels
 
 
+~~
 
+Meaning of "heart" in first sentence is confusing.
 
+First paragraph should be reversed:
+- Big concept. >20% want both STORY and STRATEGY
+- the rest is the blah blah
+
+Second paragraph is organized correctly.
+big idea is in the title!  (99% cant do both)
+
+Story+Strat only on Desktop
+??? Why???  what is it about desktop?
+
+~~
+
+Show me that desktop Strategy + Story crushes either alone.
+(since you are arguing doing this for mobile will be a big win)
+
+~~
 

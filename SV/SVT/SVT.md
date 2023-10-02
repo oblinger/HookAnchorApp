@@ -11,6 +11,7 @@
 - [[SVT Google Drive]] -
 - [[SVT Figma]] - 
 - [[SVT Virtual Box Notes]] - 
+- [[SV Notion]] - 
 
 - [[SV Log Webpage]] 
 

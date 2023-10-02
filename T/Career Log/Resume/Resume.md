@@ -3,7 +3,7 @@
 
 :: [[Resume Samples]]
 
-- [[Bio]],  [[resLI]],  [[Patents]],  [[References]],  [[Dan Oblinger Resume.docx]] 
+- [[Bio]],  [[resLI]],  [[Resume Patents]],  [[References]],  [[Dan Oblinger Resume.docx]] 
 - 
  [[T/Career Log/Resume/master/Dan Oblinger Resume.docx|Current Resume]] 
 

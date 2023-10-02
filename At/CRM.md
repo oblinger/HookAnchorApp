@@ -1,10 +1,6 @@
-- [[Friends]],  
-- [[CRM later]],  [[Meta CRM]], 
+- [[Meta CRM]], [[Coms]], [[Calls]], [[Friends]], [[Mentors]], 
 
-
-NEXT
-- [[@Tessa Lau]], 
-- [[@Juan Huerta]], [[@Dennis DeCoste]], 
+RODRIGO: info. [[coms]]
 
 
 ```dataviewjs 

@@ -1,4 +1,23 @@
+# Planning
+- [[Dataset]]
+- 
+## Datasets
+### Events - ask GRZ
+### Objects - Task James
 
+## Points [[@Maxim Dorogov]]
+- MaximEquations, RBP_Shooting_scorer (which needs update for dynamic view labels)
+
+- RBP_Shooting_scorer
+	- <-- SC_courtlines - send messages from Cam Calibration
+		- <-- CameraCalibration class - 
+
+## PlayerID
+
+## Diagnose ShooterID Errors
+
+
+## __
 - [ ] [Least Commit v2](https://docs.google.com/document/d/1kxGMrmPOr9S6whRnV0LI0UpWGeyBzTn8WGDq7ITM4Sc/edit): grz
 - [ ] NuGallery
 - [ ] Datasets
@@ -34,11 +53,39 @@ event
 
 
 
-- Wooshing, Clicking 
-- High pitched can
+# LOG
 
-- Ear Nose Throat - 
-- Nurologist - 
+### 2023-09-21  AI goals from Mgt meeting
+
+I added clarification parentheses and other items from the notes, then ordered them.  
+1.      "Halos need as soon as possible"  
+2.      "95% accurate player IDs" (95% accurate shooter IDs)  
+3.      "game breaks" (start, time-outs, half-time, re-starts, end)  
+4.      "Possession changes" (includes steals)  
+5.      "blocked shots"  
+6.      "Fouls detection" (especially fouled shots)  
+7.      (Assister IDs, Rebounder IDs, Fouler IDs)  
+8.      "no-human-in-the-loop annotation service" (95% accurate)  
+9.      "2nd sport"  
+10.  "demo experiment showing faster-than-human annotations" (25% faster)  
+11.  “augmented reality”  
+12.  “instant replays”  
+13.  "Big plays (crowd noise)"  
+14.  “auto-scoreboard”
+
+### 2023-09-05  older stuff
+
+- [Stuff](https://docs.google.com/document/d/1sxwVOEqIynj4-bkg97b4HQCeodnB743ebamrUw0BMnk/edit)  
+
+- Planning Volleyball - 
+- Shot map 
+- Assist - video add flames - 
+- Pivo
+
+- Ground Truth - 
 
 
-Calsium CT
+SAM model
+DaoT - classifier of pixels
+
+

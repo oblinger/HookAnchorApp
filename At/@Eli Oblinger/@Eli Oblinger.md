@@ -1,7 +1,9 @@
 
+:: [[Eli Firsts]]
+
 :: [[Eli Activities]]
 
-:: [[Meals Eli Food]],   [[Eli Interactions]]
+:: [[Eli Food]],   [[Eli Interactions]]
 
 :: [[ELI Education]]
 

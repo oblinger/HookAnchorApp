@@ -1,4 +1,4 @@
- [[Doctor]] 
+ [[MED]], [[Doctor]] 
 
 ### TODO
 - [ ] VO2MAX

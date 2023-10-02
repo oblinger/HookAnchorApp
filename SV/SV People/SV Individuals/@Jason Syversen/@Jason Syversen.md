@@ -1,21 +1,142 @@
 
+:: [[j]]
+
 [[SV]]   [CEO](https://www.linkedin.com/in/jsyversen/)  [[@Sports Visio]]  	 [Calendly](http://calendly.com/syversen),  [[SV]], 
 - [[2023 Jason Tasks]] - 
 
+
+## Timeline
+- June-4th:  Hire Backend
+
+
+Jason, I strongly applaud your decision to focus on the hoops app,
+and also to push me and the team when it is not working well.
+
+Still you also said it is instanity 
+
+FIRST 18 MONTHS
+- 4 full time devs.  8 user facing systems:
+	- Hoops, Record iOS, Record Android, Admin Portal, Annotation Portal, Cust Web Portal, 
+
+JUNE-28th  MGT MEETING:  JASON:  "Only work on hoops and annotate portal"
+	- 180-flip from get pivo fast, to put pivo on ice.
+	  And everything on ice until hoops works.
+	- took a couple of weeks to full shut down stuff d
+
+AUG-16th.  MGT MEETING:  JASON & DAN:  "Jack, no more features"
+Jacks Topics (see mtg AUG-14)
+	- Release schedule
+	- Ingest discussion
+	- New Features overview
+==> both you and I ganged up on Jack in this meeting 
+     and said "No new features!"
+
+SEPT-20th MGT MEETING:  JACK:  "Hooray, we are "
+	- Jack says "I have been testing app and down to 1 bug"
+	- We all prematurely give high fives for turning the corner
+
+SEPT-22nd 
+- MarkL slacked DanO - so disappointing still bugs.
+- Same night I organized private slack group:
+	- "Fellowship of the bug" whose mission is keep the bug pipe full of bugs 100% of the time.
+
+SEPT-25nd
+- Jason is bluntly demanding results.
+
+12 weeks since Jason declared "Shut it all down except hoops"
+ 2 weeks to shut things down
+ 5 weeks of hoops alone, but with notable features from Jack
+ 5 weeks of 70% hoops bugs.
+   (Jack & James were not prioritizing keeping bug queue full)
+
+Since the "fellowship of the bug" I have never seen the number of
+high priority bugs drop to zero, but that has only been days now.
+
+
+
+10 weeks of at least 50% time on bugs IS along time, it is probably the equivalent of almost 8 weeks of 100% 
+Still we had 4 devs creating code for 18 months w/o testing.
+
+
+Now we have done at least 5 weeks of 100% bug fix time.
+I would have guessed that 5 weeks would have made a bigger dent,
+
+## = Team velocity / distractions
+Score Board operation
+Reply idea - monitor
+- Specialized experience for three kinds of customers:  players, coaches, and administrators.
+- Bet the company on Pivo
+- Specialized Record app.  Our MVP target provides a superior experience than our billion dollar competitor HUDL.
+## CALL TOPICS
+
+### __
 DISCUSS
 - [ ] $1000/mo budget
 
-
-## = distractions
-
-
-
-Score Board operation
-Reply idea - monitor
-
-
-
 # LOG
+
+### 2023-09-25  
+- three sports - 
+- fellowship of the bug - 
+- hiring - 
+
+
+- 8-apps --> 1-app
+
+
+ACTIONS
+- approach 100% time on hoops bug fix 
+- - hiring QA <---
+- formal of kind of bugs <--- assessment of the team
+- hiring backend guy <--- programming test
+- hiring new SW lead.
+	- top to bottom assessment of team
+	- brian decision
+- automated testing
+
+
+- volleyball <--
+	- Miguel
+	- James notes
+
+### 2023-08-29  Velocity
+
+
+HIRING FAILURE - After Action Analysis
+
+I agree this hiring round has been disastrously slow.  In such cases it is useful to look back to understand what went wrong and what can be fixed.  Here is summary:
+- l
+
+Timeline:
+June
+
+### 2023-08-29  A-round Deliverables
+
+Our plan for strong A-round is to come into the beginning of our fund-raising season 10-13 months from now with all core targets achieved.  As we gain confidence that we will achieve all core targets we also add efforts toward our A-round stretch targets as well.  We expect to have achieve all core targets and some fraction of our stretch targets coming into and moving through our A-round financing.
+
+= CORE TARGETS =
+ARR - Approaching $2M in ARR.  We expect most revenue will be larger contracts associated our annotation team's effort and our hoops app.
+AI ANNOTATIONS - We have a well-constructed experiment showing a >25% speedup over best-in-class manual annotations when using AI.
+- Additionally AI-driven annotations are in regular production usage over a non-trivial number is SV annotated games.
+STAND ALONE AI - 
+SECOND SPORT - We will demonstrate that our technology applies beyond basketball by producing a prototype Volleyball stats system.
+- As with basketball It will track points, highlight scoring shots, and track performance by a player's jersey number.
+
+
+
+= STRETCH TARGETS = 
+AI ANNOTATIONS -
+- Likely the speed up will be larger than 25%, but in a thin margin business, the case that AI will disrupt others is made even at 25%
+- Cost of computation is the fly in the ointment.  It is not clear if there will be a total reduction is game annotation costs using AI, by the A-round.  Even if we speed annotation by 2x we are far from breaking even on costs.  We will place moderate effort on speedup before achieving our 
+
+VOLLEYBALL - The volleyball system could
+- Be in regular usage by paying or non-paying customers
+- Recognize signature volleyball actions (bump-set-spike) and track performance across player and actions, as well as by player-pairs
+
+
+IMPLICATIONS
+- Robust, cost-effective manual annotations are a critical part of this success.  We need innovations that will
+
 
 ### 2023-07-10  Topics
 
@@ -58,7 +179,7 @@ TOPICS
 
 
 
-### 2023-06-04  Jason's visit  [[@Circle#2023-06-03 Jason's Visit]] 
+### 2023-06-04  HIRING TIMELINE  [[@Circle#2023-06-03 Jason's Visit]] 
 ### 2023-06-01  Doug @ Sapphire Ventures
 
 [[@Sapphire Ventures]] 

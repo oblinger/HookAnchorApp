@@ -3,7 +3,7 @@
 - [ ] email messages are repeated in archive as you type it.
 - [ ] write up phone contactable plan
 
-- [ ] fix _shutdown
+
 
 - [ ] Team Work Proj
 	 - period will avoid adding 'Webpage to end of name'

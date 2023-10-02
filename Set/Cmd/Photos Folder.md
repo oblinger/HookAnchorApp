@@ -1,3 +1,1 @@
-=[[Cmd]]   folder /Users/oblinger/large/_PHOTOS_/_2022
-
-
+=[[Cmd]]   folder /Users/oblinger/large/_PHOTOS_/_2023

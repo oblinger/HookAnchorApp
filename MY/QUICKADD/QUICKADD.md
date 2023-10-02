@@ -20,7 +20,7 @@ HERE ARE THE ENTRIES UNDER "NEW COMMAND"
 - [[QuickAdd Shell]]		-  
 - [[QuickAdd Webpage]]	-  
 
-
+- [[QuickAdd Weekly]] -
 
 
 DOCS:

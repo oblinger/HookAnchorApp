@@ -1,4 +1,4 @@
-- [[Meals Vegetables]],  [[Meals Eli Food]],
+- [[Meals Vegetables]],  [[Eli Food]],
 
 # MEALS
 

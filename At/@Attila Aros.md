@@ -1,4 +1,4 @@
- [[START]]   [CTO](https://www.linkedin.com/in/aaros/)  [[@MatterPool]]  
+ [[START]]   [CTO](https://www.linkedin.com/in/aaros/)  [[@MatterPool]]   #Q1 
 - Engineer @ AF
 
 

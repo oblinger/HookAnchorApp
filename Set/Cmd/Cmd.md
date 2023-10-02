@@ -1,4 +1,6 @@
 
+:: [[Bard Webpage]],   [[CV Jira Webpage]],   [[Fromm Pet Food Dog]],   [[SV Notion]],   [[Trash Downloads Folder]],   [[Wise]]
+
 :: [[BBC Webpage]],   [[Canva]],   [[SV C Root]],   [[SV Tasks]]
 
 :: [[Bought Folder]],   [[CV Log]],   [[SV Log Webpage]]

@@ -1,3 +1,5 @@
+
+- [ ] Buy table
 - [skubb insert](https://www.ikea.com/us/en/p/skubb-box-with-compartments-dark-gray-90472967/?utm_source=google&utm_medium=surfaces&utm_campaign=shopping_feed&utm_content=free_google_shopping_clicks_Home_organisation) 
 - [ ] Drawers near desk in bedroom
 
@@ -54,6 +56,21 @@ https://ourdiningtable.com/products/handmade-whisky-glasses
 
 
 ### 2022-10-16  bedrm Dresser 
+
+- [45" thin prepac](https://www.amazon.com/dp/B00MKBOYAO/ref=sbl_dpx_bedroom-dressers_B0972JK896_0?th=1) $181. 16"D 31.5"W 45H
+- [48" rustic](https://www.amazon.com/dp/B01MPY75NM/ref=sbl_dpx_bedroom-dressers_B0972JK896_0) 
+
+Living Spaces
+- [47" grey](https://www.livingspaces.com/pdp-eva-grey-chest-of-drawers-284810) $300
+
+HayNeedle
+- [45" prepac]([Prepac Fremont 5-Drawer Chest | Hayneedle](https://www.hayneedle.com/product/fremont5drawerchestespresso.cfm)) $185
+
+Bed Bath Beyond
+- [Veikous]([VEIKOUS 5-Drawer Chest of Drawers Bedroom Dresser with Large Drawer - On Sale - Bed Bath & Beyond - 36148176 (bedbathandbeyond.com)](https://www.bedbathandbeyond.com/Home-Garden/VEIKOUS-5-Drawer-White-Chest-of-Drawers-with-Large-Drawer/36148176/product.html?option=69891613&recalg=995,988&recset=a6a44c3a-c7a7-46ac-ab92-88f4a98e2a92&refccid=7XIBT4SAJR7LCJCDLOY6RBE7U4&recguid=90271ede-e6fe-4660-99e9-0adb13589d80&recidx=3)
+
+Walmart
+- [Bush Grey]([Bush Furniture Somerset Chest of Drawers, Storm Gray - Walmart.com](https://www.walmart.com/ip/Bush-Furniture-Somerset-Chest-of-Drawers-Storm-Gray/575676843)) $329
 
 https://www.amazon.com/Hodedah-HI70DR-Chocolate-Hodeida-Drawers/dp/B079V6MQKF?source=ps-sl-shoppingads-lpcontext&ref_=fplfs&psc=1&smid=ATVPDKIKX0DER
 

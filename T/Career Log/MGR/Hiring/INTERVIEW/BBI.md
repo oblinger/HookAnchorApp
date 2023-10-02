@@ -24,3 +24,16 @@ Some examples of BBI questions for three competencies are provided below:
 - Communication: Describe for me when you had great difficulty communicating your thoughts clearly to another person or group. What was the situation?  Where did the difficulty in communicating effectively lie? What did you do to get your point across more clearly? What was the outcome?
 
 **Please click** [**HERE**](https://zety.com/blog/behavioral-interview-questions#2) **to find 40 top behavioral interview questions , divided in categories i.e. Stress management, decision-making, adaptability,  collaboration, teamwork, etc**.
+
+
+## DANO - Examples
+### 2023-09-05  SV Head SW
+
+BBI PROMPTS
+- Largest two systems & largest two teams lead
+- Example of you being a Dev; being an architect
+- Examples of most challenging leadership contexts:
+	- creating new processes (testing, push to production, planning), tight timelines, 
+	- under performance, low tempo, personnel issues, turn around, 
+
+

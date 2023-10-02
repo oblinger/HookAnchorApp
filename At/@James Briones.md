@@ -1,4 +1,7 @@
-=[[START]]     [Head of Operations](https://www.linkedin.com/in/jamesmarvinbriones/)  [[@Rzero]]   #Soon 
+=[[START]]     [Head of Operations](https://www.linkedin.com/in/jamesmarvinbriones/)  [[@Rzero]].  #y24 
+
+- Payments with Wise
+
 - Head of PH operations @ AF
 
 	Wake	4am PH 	1pm PST
@@ -55,7 +58,7 @@ Here is my thinking for a concrete plan… see if you like it as an approach….
 
 
 
-
+[[Wise]]
 
 ### 2023-05-17  sports
 

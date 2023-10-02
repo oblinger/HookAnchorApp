@@ -1,6 +1,7 @@
 
 > These dashboards are optimized to support my key workflows
 
+## KEYBOARD SHORTCUTS
 
 **Accessed via the "CAPS-Jump" menu**
 - CAPS-J C  COMMS	My communications / CRM workflow
@@ -9,13 +10,22 @@
 - CAPS-J P  PLAN	My weekly planning workflow (F2)
 - CAPS-J S  SELF	My personal development workflow
 
+## SYSTEM WINDOWS
 ### THREE SCREEN LAYOUT
 
-- CAPS-K  7,8; 8,9; -
-- Slack;   Email, Obsidian;   Browsers, Gmeet;   Browser2
+- CAPS-K  7,8; 9,0; -
 
+**RIGHT FOCUSED LAYOUT**
+- Slack;   Obsidian; 
+- Email, ^Brave_Gmeet, FF_Reader,Chrome, Preview;
+  Chrome_Beta, Sublime
+- Safari(GPT), ^Messages vWhatsApp+Finder; 
+  ^Spotify, v Cal+Term
 
+LEFT FOCUSED LAYOUT
+- Slack, Obsidian;  Email+Browser+Gmeet,  Browser2 
 
+## DASHBOARDS
 ### DAILY VIEW DASHBOARD
 
 | col-1 | col-2 | col-3  | col-4 |
@@ -29,12 +39,12 @@
 
 ### COMMS DASHBOARD
 
-|    col-1    |    col-2     |  col-3   |
-|:-----------:|:------------:|:--------:|
-| [[COM Now]] | [[COM Next]] | [[COMS]] |
-|      "      |      "       |    "     |
-|      "      | [[external]] |    "     |
-|      "      |      "       |    "     |
+|   col-1   |    col-2     |  col-3   |
+|:---------:|:------------:|:--------:|
+| [[COMs]]  | [[COM Next]] | [[CRM]] |
+|     "     |      "       |    "     |
+| [[Calls]] | [[external]] |    "     |
+|     "     |      "       |    "     |
 
 
 

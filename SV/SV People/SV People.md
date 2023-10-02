@@ -1,6 +1,6 @@
 
 :: [[@CV]],   [[SV SW Team]]
-- [[Hiring.]],   [[SV Individuals]], 
+- [[Hiring.]],   [[SV Individuals]], [[SV FIN]], 
 - [[Circle]], [[Team]], 
 
 
@@ -12,4 +12,4 @@
 - [QA Board](https://software-engineering-team.atlassian.net/jira/software/projects/QA/boards/23)					[[@Joaquin Mano]], Valen
 
 - MANAGEMENT			[[@Jason Syversen]],  [[@Sam Corbitt]],  [[@Jack Potvin]],  [[@Mark Lichty]]
-- OPS:						[[@Jasu Victorio]],  [[@James Fang]],  
+- OPS:						[[@Jasu Victorio]],  [[@James Fang]], [[@Miguel Gutierrez]],  

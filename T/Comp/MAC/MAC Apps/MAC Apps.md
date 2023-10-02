@@ -36,7 +36,7 @@ m
 ## xx Docs For X Code
 
 ## xx Easy Res
-jdk
+ch
 ## xx Evernote
 
 ## xx Free Cell
@@ -443,6 +443,9 @@ Please note your reference number, which is used to identify your order:
 REF# 461655345. You will receive a separate order confirmation by e-mail.
 
 ## xx Sublime
+### Configure
+
+	"create_window_at_startup": false,
 ### Installation
 
 - Google "Sublime Download"

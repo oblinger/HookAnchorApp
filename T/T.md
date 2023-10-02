@@ -1,4 +1,6 @@
 
+[[Web]] 
+[[Trash]] 
 - [[SYS]] 
 :: [[Comp]],   [[Food]]
 
@@ -22,7 +24,7 @@
 TOPLEVELS
 - [[At]]			- 
 - [[Attach]]	- 
-- [[Docs]]		- 
+- [[docs]]		- 
 - [[MY]]		-	Info about me & my stuff	[[My Folder|MY]] 	
 - [[Misc]]		- 
 - [[Prj]]		- 

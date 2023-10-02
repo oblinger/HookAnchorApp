@@ -1,12 +1,30 @@
-- [ ] Eli school
-- [ ] bday Dinner Anomaly
+- better baller videos
 
-- [ ] [[MED.]] -
+- Eli Schools
+- Google job
+- action items to Jack
+  - Fixed Camera Ingest w/ Miguel
+  - Device serach for portable
 
+- med ask doctor is I can workout to the max
+- [ ] praveen contacts for chatting
+- [ ] Braz boss info
+- [ ] sarthi (intro interview)
+- [ ] war story writing
+
+- [ ] how to train our team?
+- [ ] ask team about chatGPT
+- [ ] audio polycom for team
+- [ ] meeting w/ Sam Jason
+
+
+- [ ] [[MED.]] - [[VO2max]] 
+
+- [ ] Taxes underway
 - [ ] brainstorming wish list for headcount for brian and Mike
+- [ ] link up mission & write some of it
 - [ ] like SOC-2, PCI, HIPAA, etc
 - [ ] Get Receipts in to SV
-- [ ] Taxes underway
 - [ ] Call vanguard to move funds to new account
 - [ ] Soccer for Eli
 - [ ] dfas login change

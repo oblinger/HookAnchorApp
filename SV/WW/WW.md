@@ -1,4 +1,9 @@
 ### Work Projects
+=	[[vball]]			[[2023 Volleyball Product]].
+=	[[LCM]]			[[2023 Least Commitment Model For CV Pipe]].
+=	[[BaseB]]			[[2023 Base Ball Product Offering]].
+=	[[BaseB]]			[[2023 Baseball Batter Tracking]].
+=	[[Patents]]		[[2023 SV Patents]].
 =	[[ingest]]			[[2023-08 Ingest Alternatives Analysis]].
 =	[[Hire]]			[[2023 Team Hiring]].
 =	[[Dataset]]		[[2023 Build Datasets Needed for the CV Team]].

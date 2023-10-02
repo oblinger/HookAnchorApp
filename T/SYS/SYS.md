@@ -1,7 +1,6 @@
-# MY PERSONAL SYSTEMS
+.                 **MY PERSONAL SYSTEMS**
 
 - [[KM]], [[OBS]], 
-
 
 
 [[SYS]] 
@@ -11,6 +10,7 @@
 - [[SYS Misc]]			- 
 - [[SYS Task Lists]]		- 
 - [[KBD Shortcuts]]		- 
+- [[SYS Notations]]		- 
 
 OTHER
 - [[Notifications]]: 

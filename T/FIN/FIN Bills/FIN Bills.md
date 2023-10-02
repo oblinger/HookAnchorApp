@@ -113,3 +113,14 @@ Budget	22Q2	Purpose
  2,000	Occasional spending
 
 _
+
+### 2023-10-02  Proposed
+
+Joint
+- QL card
+- DO card
+- Freedom
+- Groc
+- Amz Card
+
+- Big C

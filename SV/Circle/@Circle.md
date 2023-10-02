@@ -1,5 +1,56 @@
 
 # LOG
+
+### 2023-09-04  Hiring Timeline
+
+**2022 IDEA - MAYBE REPLACE BRAIN/SCOTT**
+
+Nov/Dec During hiring Jason said probably need to replace Brian
+
+
+**FEB IDEA - DEFINITELY REPLACE THEM, BUT AFTER A-ROUND**
+
+Feb 1 When I joined 
+
+
+**JUNE IDEA - REPLACE SCOTT, THEN AFTER REPLACE BRIAN**
+
+Jun 4 Jason gives Dan the go ahead to hire backend & SW head
+- but the agree upon plan was to hire the backend FIRST, then select the Head that leaned towards a PM assuming the backend person was strong.
+
+July 12th - I created a back channel w/ Ignacio to informally begin looking for head of SW.  (BUT not being interviewing 'till we know who the new Backend person will be)
+
+TC initially had difficulty finding experienced folks willing to leave existing positions in order to consider Sports Visio
+
+July 24th - First informal discussion scheduled for following week.
+
+Over the next two weeks I had discussions with about 4 potential candidates.  Each time I told them we have not yet begun interviewing, but we soon will be.
+
+
+**AUG IDEA - REPLACE BOTH NOW W/ CHEAPER FOLKS**
+
+Somewhere in August I began to feel we could not wait for the Backend Role since it was harder than expected to fill, so told Ignacio we would likely begin interviewing head of SW, but this was still not committed.
+
+I found two more recruiting agencies for Latin Am: one required a retainer, but the other (techunters) did not, so we are now working with them now.
+
+
+Aug 22 - Sapphire Call
+- **Decisions**:  
+	- The candidates from US are probably too expensive.
+	- Sapphire is not likely to provide any good candidates.
+	- Jason said we are now hiring for both roles.
+	- Sam said his target for the Head of SW was $150K
+	- We all agreed we did not need super senior person,
+	  we should try to get cheaper, more "roll up your sleeves" recently promoted guys, rather than VP eng types.
+
+Aug 25 - Had first "cheaper guy" Interview.
+
+Sept 1 - Had call with TecHunters to kick off SW-head search for cheaper guy.
+
+
+
+
+
 ### 2023-06-03  AGENDA -- Whole Company Roadmap
 
 #### **SV ROADMAP FOR FIRST INDUSTRY DOMINATION**

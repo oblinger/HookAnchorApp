@@ -1,57 +1,12 @@
 
 :: [[QL _Interviewing]]
- [[FAANG]]    [Product Data Science Lead](https://www.linkedin.com/in/qingling-ni/)  [[@Google]]  (Waymo)
+ [[FAANG]]    [Product Data Science Lead](https://www.linkedin.com/in/qingling-ni/)  [[@1Password]]  (Waymo)
 
 
  
 
   [QL _Interviewing](QL%20_Interviewing.md)
   [Interviewing](MISC/People/Family/Qingling/Interviewing.md)
-
-## DATE NIGHTS
-
-### LISTS
-- https://blog.opentable.com/best-romantic-date-night-restaurants-san-francisco/
-- https://www.timeout.com/san-francisco/restaurants/romantic-restaurants-in-san-francisco
-- 
-
-### JAPANESE
-
-#### Saru Sushi (Noe)
-- https://www.yelp.com/biz/saru-sushi-bar-noe-valley-san-francisco-3?osq=japanese
-
-### Rintaro $ $ $  mission
-- https://www.izakayarintaro.com/
-- 
-
-### BIX
-- 
-
-### Marrakech Magic Theater
-- https://www.yelp.com/biz/marrakech-magic-theater-san-francisco-5
-
-### ContognaSF  (Italian romantic $ $ $)
-https://www.cotognasf.com
-https://www.yelp.com/biz/cotogna-san-francisco?osq=Cotogna
-
-### Robin (michelin; japanese; omakase)
-- https://guide.michelin.com/us/en/california/san-francisco/restaurant/robin
-
-### Serpentine @night
-
-
-### Atelier Crenn  (French)
-- https://www.yelp.com/biz/atelier-crenn-san-francisco?osq=Atelier+Crenn
-- 
-
-### Penny Roma (Italian; 20th & Bryant)
--  [Timeout]()  
-- https://www.yelp.com/biz/penny-roma-san-francisco?osq=penny+roma
-
-
-### Trestle (Italian, Jackson Sq)
--  [yelp]()  
-- [timeont](https://www.timeout.com/san-francisco/restaurants/romantic-restaurants-in-san-francisco)
 
 # LOG
 

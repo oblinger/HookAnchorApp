@@ -1,10 +1,13 @@
-- [ ] 
-**NOW**:
-- SOUPS:		White Bean, Black bean (++chili / soup / ++cuban), ++Veg
-- 				Mixed bean ?white?, ++Split Pea, +Butternut, ++Lentil(curry,?), 
+BB salad. BB chili, MushBarley, Kitchari
+
+
+**PAPRIKA TRY**:
+- TRY: 			+++CHIA, TVP
+- SOUPS:+		White Bean, Black bean (+++chili / +++soup / +++cuban), +++Veg
+- 				Mixed bean ?white?, Split Pea, +Butternut, ??Lentil(curry,?), 
 - CURL:    	++Peanut Stew, ++Curry, Soup, ++Millet
 - QUINOA:  	++Southwest,  ++Peppers w/ more Quinoa, ++Kitchari (cauliflower)
-- TRY: 			CHIA, TVP
+- MEAT:		Chicken, Beef
 - 2ST TRY:	Tacos, 
 
 **GOALS**:
@@ -12,8 +15,10 @@
 - SOUPS: Veg, 
 - Oven Brussel sprouts, Riced cauliflower, Tasty Lunch Salad
 - AYI:  Hot-Sour-Soup, CARROT-something, CABBAGE-something, 
+- SECTIONS:  TVP(chili, Curl),  Bean(BlackB, SplitPea), Grain(Steel, Mush, Quinoa), Other
 
-
+URLs:
+- [Food.Net InstaP](https://www.foodnetwork.com/recipes/packages/comfort-foods/easy-comfort-food-recipes/must-try-instant-pot-recipes), 
 
 **LATER**: Greek Yogurt???, VEG flavorings; GRAINS; 
 **DISH**:  Tea Leaf Salad, A Tasty Salad?, Roasted Veggies, Stewed Potatoes, Cabbage Stew, Budda Bowl

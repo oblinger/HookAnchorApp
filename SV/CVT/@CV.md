@@ -1,3 +1,4 @@
+# Top
 ## Foo
 
 - Find interaction rough.  We seem to be agreeing in the end, but somehow it seems I am shoving him the whole way.
@@ -65,19 +66,19 @@ Execution
 ## Tasks
 - Halo pipe
 
-# PTRS
-DIR [[SV G Root]] [svdata](https://drive.google.com/drive/folders/10VWKl_3u0--LyLZmzgu8So7i1Jgq6HSr?usp=drive_link)  [[CV.]]
+## Ptrs
+SPRINT PLANNING:  [PlanDoc](https://docs.google.com/document/d/1F2hISCp9p-uvfzVt6OTclhOGswQ9EmbVwGxKk9uqJ28/edit),
+DIR [[SV G Root]] [svdata](https://drive.google.com/drive/folders/10VWKl_3u0--LyLZmzgu8So7i1Jgq6HSr?usp=drive_link)  [[CVP]],  
 
 - [Shared Folder](https://drive.google.com/drive/u/4/folders/1GdLWPNXw6lNDp9kxLjIQsaX1zAcnszAl) - 
 - [BitBucket MVP Algos](https://bitbucket.org/SVEngineering/workspace/projects/MVPAL) - 
 - [JIRA](https://software-engineering-team.atlassian.net/jira/software/projects/AIT/boards/25) 
 - [CONFLUENCE](https://software-engineering-team.atlassian.net/wiki/spaces/SVAI/overview) 
 - [[CVP]] - 
+- [[CV Jira Webpage]] - 
 
-- [[CV Planning]] - 
 
-
-# Stuff
+## >>> Stuff <<<
 ## = ALGORITHMS
 DeAOT (left) and byte tracker (right)
 
@@ -137,13 +138,27 @@ https://github.com/z-x-yang/Segment-and-Track-Anything
 # LOG
 
 ### 2023-08-21  Grzegorz
+==> Events with James
+==> Training OCR from scratch
+
+- Memory Profiling - 
+
+- EVENTS - 
+- Baseball - Kinda works
 - Remove Non-Players, by adding generic group 
 
 ### 2023-08-21  Sarthi
+==> New Color Alg
+==> Halos
+
 - Improving halos - adding GRZ code
 - Improving Color model
 
 ### 2023-08-21  Martin
+==> Building new model w/o GPL. 
+  (Especially for active hoops)
+==> Perf detects, hoop
+
 - Analyze metrics
 
 really close to 60% player ID
@@ -153,6 +168,12 @@ really close to 60% player ID
 - Distraction players.  (homography)
 
 ### 2023-07-31  Maxim
+--> how do position / points when player jumps <--
+==> Camera Calibration (metrics and closed loop)
+==> Adding 2/3 points
+??  Ball detector
+
+- Ground Truth - Columbia team 
 - Update Mike's camera/court parameterization 
 - Build GENERATIVE MODEL to model court.
 

@@ -1,5 +1,6 @@
 - [ ] Backups - 
 - [ ] SOC 		compliance
+- [ ] [[EOCA]]:  5-part argument
 ## later
 - [ ] [[2023 Tournament Flow]]: Write it
 - [ ] [[HeadRm]]: 

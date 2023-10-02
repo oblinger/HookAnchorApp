@@ -6,6 +6,52 @@
 
 | Date       | File                       | Notes                                                                                                                             |
 | ---------- | -------------------------- | --------------------------------------------------------------------------------------------------------------------------------- |
+| 2023-10-02 | [[@Chase Bank]]                | Paying off card                                                                                                                   |
+| 2023-10-02 | [[BaseB]]                      | From Nick @ Realplay                                                                                                              |
+| 2023-10-02 | [[BaseB]]                      | notes to Aaron                                                                                                                    |
+| 2023-10-02 | [[Dataset]]                    | Grz Data Requests                                                                                                                 |
+| 2023-10-02 | [[vball]]                      | Dan Response                                                                                                                      |
+| 2023-10-02 | [[vball]]                      | Aaron Spec                                                                                                                        |
+| 2023-10-02 | [[FIN Bills]]                  | Proposed                                                                                                                          |
+| 2023-10-01 | [[Eli Firsts]]                 | Ar-gen-tin-a                                                                                                                      |
+| 2023-10-01 | [[Eli Firsts]]                 | Adding                                                                                                                            |
+| 2023-09-29 | [[2023-07 ML-CV Ops Job Post]] | Mariano                                                                                                                           |
+| 2023-09-28 | [[2023-07 Director of SW]]     | ++Raul2                                                                                                                           |
+| 2023-09-27 | [[Hire]]                       | Luciano Start                                                                                                                     |
+| 2023-09-25 | [[SV Mgt]]                     | Weekly meeting.                                                                                                                   |
+| 2023-09-25 | [[@Jason Syversen]]            |                                                                                                                                   |
+| 2023-09-21 | [[@Jasu Victorio]]             | Review                                                                                                                            |
+| 2023-09-21 | [[Bugs]]                       | Fellowship of the bug                                                                                                             |
+| 2023-09-21 | [[CVP]]                        | AI goals from Mgt meeting                                                                                                         |
+| 2023-09-21 | [[2023-07 Backend Architect]]  | Matias                                                                                                                            |
+| 2023-09-19 | [[@Realplay]]                  | Intro Discussion                                                                                                                  |
+| 2023-09-19 | [[2023-07 Director of SW]]     | Ignacio Larranaga                                                                                                                 |
+| 2023-09-17 | [[ingest]]                     | Portable Rig Parts                                                                                                                |
+| 2023-09-15 | [[SV Mgt]]                     | SEPT MGT MEETING                                                                                                                  |
+| 2023-09-14 | [[BaseB]]                      | Justin / Jason Conversation                                                                                                       |
+| 2023-09-13 | [[BaseB]]                      | Task Breakdown                                                                                                                    |
+| 2023-09-13 | [[Patents]]                    | SheeHan                                                                                                                           |
+| 2023-09-13 | [[Patents]]                    | Watch Tower                                                                                                                       |
+| 2023-09-13 | [[2023-07 Backend Architect]]  | Max                                                                                                                               |
+| 2023-09-13 | [[2023-07 Director of SW]]     | ++Luciano B                                                                                                                       |
+| 2023-09-13 | [[2023-07 Director of SW]]     | Mariano                                                                                                                           |
+| 2023-09-11 | [[@Miguel Gutierrez]]          | Intro call                                                                                                                        |
+| 2023-09-11 | [[2023-07 Director of SW]]     | Emilio                                                                                                                            |
+| 2023-09-11 | [[2023-07 ML-CV Ops Job Post]] | Matias                                                                                                                            |
+| 2023-09-10 | [[Eli Firsts]]                 | Big Boy Swing                                                                                                                     |
+| 2023-09-10 | [[Eli Firsts]]                 | Quote                                                                                                                             |
+| 2023-09-08 | [[2023-07 ML-CV Ops Job Post]] | Marvin                                                                                                                            |
+| 2023-09-08 | [[2023-07 ML-CV Ops Job Post]] | Sebastian                                                                                                                         |
+| 2023-09-07 | [[2023-07 Backend Architect]]  | TH Juan                                                                                                                           |
+| 2023-09-07 | [[2023-07 Backend Architect]]  | TH Eduardo                                                                                                                        |
+| 2023-09-05 | [[Eli Firsts]]                 | Bike Riding in circles                                                                                                            |
+| 2023-09-05 | [[CVP]]                        | older stuff                                                                                                                       |
+| 2023-09-05 | [[BBI]]                        | SV Head SW                                                                                                                        |
+| 2023-09-04 | [[@Circle]]                    | Hiring Timeline                                                                                                                   |
+| 2023-09-01 | [[2023-07 Director of SW]]     | ++Raul                                                                                                                            |
+| 2023-08-29 | [[@Jason Syversen]]            | Velocity                                                                                                                          |
+| 2023-08-29 | [[@Jason Syversen]]            | A-round Deliverables                                                                                                              |
+| 2023-08-25 | [[2023-07 Director of SW]]     | Head - Nico                                                                                                                       |
 | 2023-08-23 | [[@Grzegorz Biziel]]           | Better Gallery                                                                                                                    |
 | 2023-08-22 | [[@Sapphire Ventures]]         | Recruiting                                                                                                                        |
 | 2023-08-21 | [[@CV]]                        | Grzegorz                                                                                                                          |
@@ -69,7 +115,6 @@
 | 2023-06-19 | [[@PenFed]]                    |                                                                                                                                   |
 | 2023-06-18 | [[Investor Intros]]            | Mark Torrance (friend of Mike Freed)                                                                                              |
 | 2023-06-18 | [[QQ]]                         | CALL TREE                                                                                                                         |
-| 2023-06-17 | [[Job Ads]]                    | SV - Backend Architect                                                                                                            |
 | 2023-06-15 | [[SNIP]]                       | Noom Diet summary                                                                                                                 |
 | 2023-06-15 | [[INV Log]]                    | Michael Freed                                                                                                                     |
 | 2023-06-09 | [[@SV]]                        | Response to Baller TV                                                                                                             |
@@ -79,7 +124,7 @@
 | 2023-06-06 | [[@CV]]                        | daily                                                                                                                             |
 | 2023-06-06 | [[@CV]]                        | ???                                                                                                                               |
 | 2023-06-05 | [[@Juan Heber]]                | Applied to Sports Visio                                                                                                           |
-| 2023-06-04 | [[@Jason Syversen]]            | Jason's visit  [[@Circle#2023-06-03 Jason's Visit]]                                                                               |
+| 2023-06-04 | [[@Jason Syversen]]            | HIRING TIMELINE  [[@Circle#2023-06-03 Jason's Visit]]                                                                             |
 | 2023-06-03 | [[Eli Interactions]]           | Positive Discipline (from Miss Amanda)                                                                                            |
 | 2023-06-03 | [[EOCA]]                       | Response to Paul M                                                                                                                |
 | 2023-06-03 | [[@Circle]]                    | AGENDA -- Whole Company Roadmap                                                                                                   |
@@ -281,7 +326,7 @@
 | 2022-12-08 | [[Phone]]                      | Solar Installer                                                                                                                   |
 | 2022-12-07 | [[resLI]]                      | Framing Self                                                                                                                      |
 | 2022-12-03 | [[Phone]]                      | Thumb Tack TV install                                                                                                             |
-| 2022-12-01 | [[2022-05 ELI next school]]    | Alta Vista                                                                                                                        |
+| 2022-12-01 | [[E-nxt]]                      | Alta Vista                                                                                                                        |
 | 2022-11-30 | [[2022-W46]]                   | short week (cyber monday)                                                                                                         |
 | 2022-11-29 | [[Phone]]                      | [[@Audi]]                                                                                                                         |
 | 2022-11-29 | [[Phone]]                      | Horizon 7.4AT  Treadmill                                                                                                          |
@@ -291,7 +336,7 @@
 | 2022-11-23 | [[Parents]]                    | Mom's multiple facebook accounts                                                                                                  |
 | 2022-11-22 | [[Phone]]                      | Fire Dept response for Eli                                                                                                        |
 | 2022-11-20 | [[ToBuy]]                      | Big Insta-pot                                                                                                                     |
-| 2022-11-10 | [[2022-05 ELI next school]]    | The San Francisco School                                                                                                          |
+| 2022-11-10 | [[E-nxt]]                      | The San Francisco School                                                                                                          |
 | 2022-11-10 | [[MED]]                        | Maria Cross - Registered Dietician                                                                                                |
 | 2022-11-08 | [[2022-10-00 Find Advisor]]    | Finding a Fiduciary                                                                                                               |
 | 2022-11-08 | [[2022-10-00 Find Advisor]]    | My plan                                                                                                                           |

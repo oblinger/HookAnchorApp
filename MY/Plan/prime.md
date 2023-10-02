@@ -1,6 +1,31 @@
-- [ ] [[BKT]] root
+- [ ] 
+
+## TOP
+
+# Q2
+- [[BKT]], [[EBT]],
+- [[Coms]]: 
 
 
+# WAITING
+- [ ] QL: sell stuff
+- [ ] taxes
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# __
+Older Stuff
 ## = [[SV]] =
 - [ ] Have call with Brian
 
@@ -41,7 +66,6 @@
 
 
 
-# __
 
 
 ## = [[EduCorp]] =
@@ -51,9 +75,9 @@
 - [ ] Build website with thoughts on PKM.
 ## .
 			
-# .
 
-# active
+
+## active
 - [ ] [[SV90]]:		Prep to sign
 - [ ] [[2022-05 ELI next school]]: 		Sheet; Read materials
 - [ ] [[Learn]]:		[[F90]],  [[Coursera Notes]],  

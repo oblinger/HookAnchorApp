@@ -1,6 +1,6 @@
 ## TOP
 - WORK
-- [[Self]]: 	[[Home]], [[Spirit]], 
+- [[Personal]]: 	[[Home]], [[Spirit]], 
 - [[Career]]:	[[CRM]], 
 
 
@@ -8,16 +8,16 @@
 
 SUMMARY 2023-Q3
 
-10-11h			from 7am to 5pm
-- 2h - DAILY	-  Tidy, Wake, Nap, Exercise, Poop 
+10h			from 7:30am to 5:30pm
+- 2h - DAILY	-  Tidy+Wake(20), Nap(30), Exercise(40), Poop 
 - 2h - GAP		-	Lounge, Browse, Eat
 - 2h - CHEW 	-  Email, First, Slack, Repeat, Papers
 - 2h - COMS	-  Meetings, Zoom, Huddle, Phone
-- 2-3h MAIN	-  MIT, Prime, Work
+- 2h - MAIN	-  MIT, Prime, Work
   
 5h 				from 6p until 11p
 - 2h - FAM	-  Dinner, Play, Bedtime
-- 3h - EVE		-	Fried, Self, Out, Call, Learn
+- 3h - EVE		-	Fried, Self, Out, Call, Learn, Q2
 
 
 

@@ -1,3 +1,6 @@
+- [x] fix _shutdown
+- [x] bday Dinner Anomaly
+- [x] bday Dinner Anomaly
 - [x] job ads to Jason
 - [x] [[BCMS]]: movie
 - [x] Paperwork for equity

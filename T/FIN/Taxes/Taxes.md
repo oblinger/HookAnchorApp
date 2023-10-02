@@ -10,12 +10,13 @@ QL
 Dan
 - Vanguard -- Dan
 - Schwab -- Dan (x1905 investment; x9506 checking)
+- Merrill -- Dan 
 Joint
 - Schwab -- Joint Schwab
 - Schwab -- Grand Central
-- Morgage -- Wells Fargo
+- Bank Of America - Mortgage
 - Property Taxes -- Gov portal (house)
-- Charity
+- Charity -- 
 - DMV fees -- 
 
 ### --- HOME IMPROVEMENTS ---

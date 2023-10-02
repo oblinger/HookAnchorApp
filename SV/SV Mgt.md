@@ -1,6 +1,62 @@
 
-
 # Log
+
+
+### 2023-09-25 Weekly meeting. 
+
+
+- 8-apps --> 1-app
+
+
+ACTIONS
+- approach 100% time on hoops bug fix 
+- - hiring QA <---
+- formal of kind of bugs <--- assessment of the team
+- hiring backend guy <--- programming test
+- hiring new SW lead.
+	- top to bottom assessment of team
+	- brian decision
+- automated testing
+
+
+- volleyball <--
+	- Miguel
+	- James notes
+
+
+- Formal Assessment of bugs
+- QA hiring
+- 
+
+
+### 2023-09-15  SEPT MGT MEETING
+
+Cust
+$400K baseball
+$600K channel partner (Cerebro)
+$1M (50 med cust)
+- 30-40 Men's leagues
+- 40-50 AAU 
+- ...    HS. (no football).  300 HS
+
+
+
+- [canva](https://www.canva.com/design/DAFuuMz7DoQ/lPVWLYkeyECDR5L1dNbWyw/edit?utm_content=DAFuuMz7DoQ&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton) - 
+
+
+- Ingest Slides
+	- Roadmap ordering
+	- Segments Slide
+	- Approaches Slide
+	- rPI Rig
+
+- A La-carte Topics
+	- Patents
+	- Baseball
+	- Stabilize Hoops & SW
+		- PAST:  Jack/James
+		- FUTURE:  2 full time QA, Field Testing --> Automation
+
 ### 2023-08-09  AUG MGT MEETING
 
 - Backend: Use Juan

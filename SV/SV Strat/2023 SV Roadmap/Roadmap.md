@@ -1,7 +1,19 @@
-- [[SV Roadmap]] - Document
 
+:: [[-[p[ppp]],   [[2023-06 Roadmap old ]]
+TODO
+- [[Ingest Roadmap]] 
+- [Jacks roadmap](https://software-engineering-team.atlassian.net/wiki/spaces/SPORTSVISI1/pages/167804949/Dan+s+Copy+of+Jack+s+Product+Epics+Objectives+First+Draft) - 
+- [Confluence Roadmaps](https://software-engineering-team.atlassian.net/wiki/spaces/SPORTSVISI1/pages/158990358/ROADMAPS) 
+
+
+- ACTIVE ROADMAPS
+	- [A Round Roadmap](https://software-engineering-team.atlassian.net/wiki/spaces/SPORTSVISI1/pages/159088647/2023-09+A-Round+Roadmap) 
+- 
+
+- [[SV Roadmap]] - Document
 - [Prod Progression](https://docs.google.com/document/d/19_vRUK2Azl5miH7IuDdWZTtyuArSkLU_W_RKUUUiT-o/edit) JackSpec
 - [Jacks Objectives](https://docs.google.com/spreadsheets/d/1y7QKKX-3JYNn0pNKGBGsExFfs_hVa61suPic-V53LTk/edit#gid=222082036) HisSheet 
+- 
 
 
 

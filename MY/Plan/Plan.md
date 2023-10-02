@@ -1,4 +1,6 @@
 
+:: [[EBT]],   [[Productivity]],   [[Untitled 1]],   [[verizon]]
+
 :: [[Untitled]]
 
 :: [[Ping]]
@@ -40,7 +42,7 @@
 - [[gap]]			-  
 - [[Journal Old]]	-  
 - [[Links]]			-  
-- [[self]]			-  
+- [[Personal]]			-  
 - [[Quarterly]]	-  
 - [[Repeat]]		-  
 - [[SCRatch]]		-  

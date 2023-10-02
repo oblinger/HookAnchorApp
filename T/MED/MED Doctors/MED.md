@@ -1,9 +1,7 @@
 
 
-
-
 MED NUMBERS	[[MED Measurements]],  [[MED Blood Tests]],  [[MED Exercise]],  [[MED Sleep]],   [[MED Weight]],  
-MED HISTORY		[[MED History]],  [[MED Vaccinations]],  
+MED HISTORY		[[MED History]],  [[MED Vaccinations]], [[MED VO2Max]],   
 MED INFO			[[MED Pills]],  [[MED-Vitamins]],  
 MED PART			[[MED Heart]],  [[MED Vision]],   [[MED Psoriasis]],   [[MED Sleep]],   
 - [[MED=]] 

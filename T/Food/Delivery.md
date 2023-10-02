@@ -1,4 +1,5 @@
-lTOP:   Chin/Jap/Thai/Ko
+
+TOP:   Chin/Jap/Thai/Ko
 ASIAN:	 Chinese, Japanese, Thai, Korean, Burmese, Vietnamese, Fusion    BOWL: Pho, Bowl, Raman, Poke/Hawaiian
 AMER:	 Seafood, American (Salad, Pizza,  Sandwich, Burger, Fast, Soul, Desert)		
 WORLD:	Italian, French, Mediterranean, German, Spanish, Mexican, Indian, African

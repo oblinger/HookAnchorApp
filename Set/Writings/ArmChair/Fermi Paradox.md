@@ -55,4 +55,53 @@ SOLAR DOMINANCE - Whatever civilization first dominates a solar system can use t
 
 
 
+~~
+I hope you have time to respond to this response...
+
+
+
+
+Think about it.  If there is one other intelligent species, that makes two, thus there must be many.  Any one of these species would view uncontrolled expansion by another as a lethal cancer, that must be destroyed.  I see only two stable states for this system.  One group dominated and destroyed or incapacitated all others.  (and one day they will come for us when needed).  
+
+
+
+
+Or some global detente was reached.  What would such a detente look like?  Well it would absolutely forbid uncontrolled expansion.  So what level of expansion would be allowed (as a percent from 0% to 100% of habitable worlds).  I don't know, but I see good reason that just as humans to with lands set aside from human expansion, that in a multi-polar world species would want even stronger constraints from others taking too much room.  After all each one of these species began on single planets, if they don't want infinite expansion how much would they need?  10x 1000x  10,000x ?  even this could leave alot of room depending on how common intelligent life is.
+
+
+
+
+If I had to guess on a detente strategy based on competition and symmetry.  it would be that all "qualifying" species get a "standard" allocation of the galaxy.  Anything else invites intrigue that is generally very dangerous for all.  (lets hope we qualify!)
+
+
+
+
+And if we do qualify, it would be natural that no body would be extracting resources from our planet.  and if just observing us it would be trivial to avoid detection if desired.
+
+
+
+
+So what advantage might they have for contacting us?  fun and interest?  gaining info? (hardly)  And what would be lost?  Well there would be politics in such an environment... and we would be 'minors' potentially qualifying as a species with a 'share' coming to us, but no alliances or trade or such yet.  Just as we see today, hucksters, and swindlers would be the most eager to make contact.  I could well imagine just as we have such laws to protect our young, if we were allowed to exist at all, there would of course be prohibitions on contact, and then when contact was deemed appropriate, it would be done in a choreographed way that gave no favor to any group, or perhaps specifically favored groups in power.  Either way, just like the detente against uncontrolled expansion.  This aspect would be controlled by force as well.
+
+
+
+
+For me the big gap in your thinking is to imagine if there were other species, they would be operating in some vague isolation.  I doubt it.  they are either enemies and one is destroyed, or they are part of a single larger society, just as we are evolving towards.  (as weapon grow in strength society must grow in cohesion and compliance in order to survive it)
+
+
+
+
+
+
+
+Also I invite you to think about this notion of "habitable planets"  certainly gravity wells will not be of much consequence for such creatures.  Perhaps even the energy needed to transmute elements may not be too much of a problem... so at a minimum then only thing that will matter is the relative composition of elements anywhere within a star system, and possibly that only thing that will matter is  just the total mass outside the star.  (even for me, the cost of getting mass directly from the star seems too great a cost to absorb if you dont' have too.)
+
+
+
+
+
+
+
+
+
 

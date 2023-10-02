@@ -1,6 +1,8 @@
 
-:: [[EOCA What Happens Now]]
 
+[[Leviathan]] 
+
+:: [[EOCA What Happens Now]]
 - [[EOCA Last Best Hope]] - 
 - [[EOCA Consciousness]] 
 

@@ -1,14 +1,26 @@
 =[[SV]]  [Product Coordinator](https://www.linkedin.com/in/jasuryvictorio/)  [[@Bankless DAO]]
-
-
 .	France	EST	PST
 .	7am		1am	10pm
 .	8pm		2pm	11am
-.
 
 3am - 5pm
 
 # Log
+### 2023-09-21  Review
+++ Work Very Hard
+++ Very Proactive
+++ Likable
+++ Ambitious (make boss look good)
+
+-- Cutsy
+-- Not fully dependable
+-- Not always working on most impt thing
+
+
+Sept-25th
+- Brian asked you what do you think of Mery?
+
+
 ### 2023-02-07  march prod
 
 - [Sprint 6](https://www.canva.com/design/DAFZzQa1d7k/MLPH6DsTTNaHt2uTi1B6Yw/edit) - 
