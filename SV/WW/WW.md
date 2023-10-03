@@ -1,4 +1,6 @@
 ### Work Projects
+=	[[vball]]			[[2023 Volleyball SV Product]].
+=	[[ClshTV]]			[[2023 Clsh.TV Partnership]].
 =	[[vball]]			[[2023 Volleyball Product]].
 =	[[LCM]]			[[2023 Least Commitment Model For CV Pipe]].
 =	[[BaseB]]			[[2023 Base Ball Product Offering]].

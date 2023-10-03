@@ -1,8 +1,3 @@
-...... email from GRZ in tech chanel about videos
-backend test
-homecourt.ai
-
-BugsActual, Spreadsheet, baseball, BackendTest
 ## __
 - GPL license  
     can we use an enterprise license for YOLO??  
@@ -45,7 +40,7 @@ Interns:	Dset videos, Ingest exe (TryBe4,Fixed,)
 [[Hire]]	    >CV-test; !! [[H-F90]]   ^CV-interviews 
 [[Test]]		^field-tests;  >email-to-circle
 ## TRACKING
-[BugCk](https://docs.google.com/document/d/1eh19kxKUBvZqCyJoAsVynOHJxGibkwgzL2tEzu1UnKQ/edit?usp=drive_link):	
+[BugCk](https://docs.google.com/document/d/1eh19kxKUBvZqCyJoAsVynOHJxGibkwgzL2tEzu1UnKQ/edit?usp=drive_link):	^20 bugs in
 [Vball](https://docs.google.com/document/d/1oAj1qUyA-18--TH3vPgoe2MA2KXvcx21IOiTD3b-nEU/edit?usp=drive_link):		^Aaron
 [[BaseB]]:	[BBall](https://docs.google.com/document/d/1oQX5PwkUNGqQ5CCOjsiAK1hBzfY9vbG_lPUKkhYJG8M/edit):	^!Justin
 [DevSrch](https://docs.google.com/document/d/1We_9Fhc1oIUXYdEYm2DwNmIfkVpHJL3PKyuePG39Gi4/edit?usp=drive_link):	
@@ -69,11 +64,13 @@ Interns:	Dset videos, Ingest exe (TryBe4,Fixed,)
 [Reo-T09](https://docs.google.com/document/d/1kpvym1pJYFDJvQZwE8KOKKUlG2tpUuTYwmTpYze7Pyc/edit):	? REO
 [Measure-T15](https://docs.google.com/document/d/1zROifDRbZ6RgrjFuESLMpofiXvIwwatWtx-m_U3iilI/edit): 
 Run Code
+[[ClshTV]]:		^talk w them
 ## WATCH
 QA-hiring
 [CV-test](https://docs.google.com/document/d/1iXhyfyjxna2zGiUs9bg3wmx33DFQrIowdienVyfZVD8/edit?usp=drive_link):
 BK-test	>brian
-[P2P](https://docs.google.com/document/d/1C0fTdalEsWEPaHFwH1M1ErC3iUDbGgUk/edit):
+[P2P](https://docs.google.com/document/d/1C0fTdalEsWEPaHFwH1M1ErC3iUDbGgUk/edit) 
+[[CVP]]:		>give metrics to maxim
 
 ## PAUSE
 

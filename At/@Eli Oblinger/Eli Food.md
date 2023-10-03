@@ -3,12 +3,15 @@
 - Snap Peas, 
 - Woo Swun, Jiaobai, Garlic Sprouts, Lotus?
 
+- Eggs, ground beef, Pasta
 
 MAIN 
 - CARBS: Pasta, RiceBalls, Pizza, Pancakes, Sweet Potatoes
 	- PASTA: Ground-beef&Eggs, Marinara, 
 - FROZN: Dumplings, 
 - MEATS: Chicken(sauteed, panfry), Steak, Salmon, Meatloaf??
+	- PORK: Short Ribs
+- EGG: Ground Beef
 
 MAYBE
 - Glass Noodles 

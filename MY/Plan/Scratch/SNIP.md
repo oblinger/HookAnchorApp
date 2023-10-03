@@ -1,4 +1,16 @@
+### 2023-10-03  Science vs Engineering
 
+
+SCIENCE VS ENGINEERING
+Still inside our team we are doing science experiments and engineering.  Engineering is the kind of thing that we can plan for and depend upon in the short and the medium time frames.  Science experiments are often built out of engineering, so one can have an idea about how long each experiment will take.  But really only has probabilistic assurances over the longer term on the OUTCOME of those experiments.
+
+Player ID seems to be the hardest part of Basketball stats, and Basketball seems to be harder than other sports in this hardest area, and Halos crucially depends upon this key thing.  So not only is this a science experiment, but it is one of our most difficult science experiments.  So we can and should get timelines for delivery of the next bit of engineering in delivering Halos, but that is not going to really give you what you want.  You want a timeline until halos are valuable for reducing our costs.  That timeline you mostly wont get when it depends upon science experiment.
+
+The first answer you can get is timeline for the next engineering steps.
+The second answer you can get is a progression over time of how we are doing, and how far we have to go (in percents, not in weeks)
+The third answer you can get is a breakdown of the parts of the task, and estimates of how important and how well and how difficult each of those parts are.
+
+What we can do is learn where our algorithms are falling down, and then estimate how hard each science experiment will be in fixing each of these areas.  That can give a good sense of how far away we are, and how fast we are moving.
 ### 2023-07-26  Piano
 
   

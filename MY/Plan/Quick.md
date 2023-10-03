@@ -1,5 +1,4 @@
-- intern 
-- get dataset support (intern) to be collecting videos
+
 - get metrics and dataset stuff for maxim
 - build volleyball dataset
 - martin was not doing the PR.

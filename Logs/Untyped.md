@@ -6,6 +6,11 @@
 
 | Date       | File                       | Notes                                                                                                                             |
 | ---------- | -------------------------- | --------------------------------------------------------------------------------------------------------------------------------- |
+| 2023-10-03 | [[SNIP]]                       | Science vs Engineering                                                                                                            |
+| 2023-10-03 | [[LCM]]                        | Batch examples                                                                                                                    |
+| 2023-10-03 | [[LCM]]                        | Command Line Thinking                                                                                                             |
+| 2023-10-03 | [[LCM]]                        | LCM Data Packet                                                                                                                   |
+| 2023-10-03 | [[vball]]                      | Spec notes from Aaron                                                                                                             |
 | 2023-10-02 | [[@Chase Bank]]                | Paying off card                                                                                                                   |
 | 2023-10-02 | [[BaseB]]                      | From Nick @ Realplay                                                                                                              |
 | 2023-10-02 | [[BaseB]]                      | notes to Aaron                                                                                                                    |
