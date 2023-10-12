@@ -2,10 +2,20 @@
 
 # MEALS
 
+
 ## CHINESE VEGETABLES
 - GARLIC SPROUTS: PorkBelly, 
 - 
-
+## WEI-PAW
+- Brown Eggs & G-Beef
+- G-bean: pinch-salt&sugar, 1tsp oyster, 
+- red-ca bage & vinegar
+- Pork Ribs: boiled&braised
+- Dumplings
+- Chicken thiaghs: bay, star anise, pepper corn, soy?, sug
+- 
+## AYI
+- TOFU:  (Fried, Chicken Meatball, Mushroom, Tomato)
 
 ## VEGETABLES
 - RED CABBAGE: 
@@ -13,15 +23,13 @@
 ## SEAFOOD
 - OCTOPUS: (Celery, Carrots); Grilled
 
-## AYI
-- TOFU:  (Fried, Chicken Meatball, Mushroom, Tomato)
-
 ## NIGHT SNACK
 - ZERO:	Radish, Celery, Bell Pepper, 
 - FRUIT:	Cherry, Strawberry, 
 - CAN: 	Bamboo Shoots, 
 - DRY: 	Oatmeal
 
+- Daikon, ChinVingar ~ Soy, Sugar
 
 ## QUICK SNACK
 - FRUIT:   BERRIES:  

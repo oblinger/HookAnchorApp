@@ -4,18 +4,22 @@
 	- [[2023-07 Director of SW|HeadSW]]:	[Can](https://docs.google.com/document/d/1IRmTP2eALbW2FqXlwGMtlqpeDfjyi7jX-v2Zff7M4Kg/edit) [Sheet](https://docs.google.com/spreadsheets/d/1AcxFb2U50q_HjgCOtgp_Z52938L_yqeXerKowqQ_BQ0/edit#gid=0)  [TH](https://docs.google.com/spreadsheets/d/184erF5Y7wgdxiMMnODqpTbdh89itbQZbCu5HArwLJIA/edit#gid=0)
 	- [[2023-07 Backend Architect|Back]]: [Qual](https://docs.google.com/document/d/17b6lD5zyT-axAwYwQkdXpIYtarGUJoD-L9Zl3N3luYQ/edit) [can](https://docs.google.com/spreadsheets/d/1rk01kRhNaOXcfIzf1b-LXIXsA6kKwD2B/edit#gid=1014506710), [TH-sheet](https://docs.google.com/spreadsheets/d/16zyABJ_S1lBxjuQ2Oj0Tq3iaWx0TCGCIAxbN1WBTwkE/edit#gid=0) 
 	- [[2023-07 ML-CV Ops Job Post|CV]]: [mike](https://docs.google.com/spreadsheets/d/1WTGhzbMGHH9jDb4ls5lsdY00TlNfmJ3p/edit#gid=612073226),  [old-sheet](https://docs.google.com/spreadsheets/d/1BGS75wy9EIPLjwY2IrcUFKbbAF_t9TiecYdTLi0XOHo/edit#gid=0), [TH](https://docs.google.com/spreadsheets/d/1FYD5GZJL6CeaPdpZADM-2Lxi-5MxMUgNP7gitSF2_8M/edit#gid=0), 
+	- [[QA-hiring]]:  [QA hires](https://docs.google.com/spreadsheets/d/1XWOjBiGP1HOSs2BkOYRUiYPJGj7BU60UE4AGhlNDrFo/edit#gid=0) - 
+
+TODO
+- Matias tests
+- Bringing Julieta onboard & choosing w/ Mery
+
+
+
+
 
 - [[H-F90]] -- hiring plan
-
 - ML OPS
-- [ ] get ref check for max
-	
-
 - Stuff
 	-: 
 	- [CV-hire](https://drive.google.com/drive/folders/1nTjshSy7yTp4F1seCqOUIzn-s_4p7ghQ) [can](https://docs.google.com/spreadsheets/d/1BGS75wy9EIPLjwY2IrcUFKbbAF_t9TiecYdTLi0XOHo/edit#gid=0), [mike](https://docs.google.com/spreadsheets/d/1WTGhzbMGHH9jDb4ls5lsdY00TlNfmJ3p/edit#gid=612073226) 
 	- [[2023 Head SW]]: [Can](https://docs.google.com/document/d/1IRmTP2eALbW2FqXlwGMtlqpeDfjyi7jX-v2Zff7M4Kg/edit) [Sheet](https://docs.google.com/spreadsheets/d/1AcxFb2U50q_HjgCOtgp_Z52938L_yqeXerKowqQ_BQ0/edit#gid=0) -
-	- [QA hires](https://docs.google.com/spreadsheets/d/1XWOjBiGP1HOSs2BkOYRUiYPJGj7BU60UE4AGhlNDrFo/edit#gid=0) - 
 
 - [TC alternatives](https://docs.google.com/spreadsheets/d/1sT7ynSkMVTM97ErFIESYNn1xME09XX3_hvNtM2BLUi8/edit#gid=1927142832) - 
 	- TH 650 646 3558 https://www.techunting.net/ pmartinez@techunting.net

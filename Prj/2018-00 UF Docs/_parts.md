@@ -7902,7 +7902,7 @@ INDICATORS
     / -- beginning of filesystem based structure 
     ~ -- beginning of filesystem based structure (in homedir of accessing account)
     & -- beginning of parsed file based structure
-    #xxx  -- beginning of parsed file structure with 'xxx' processing
+    # xxx  -- beginning of parsed file structure with 'xxx' processing
     @user -- specifies the user account used for filesystem access
     :port -- specifies the TCP port number
     ' -- begins string with quoted content

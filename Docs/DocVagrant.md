@@ -102,7 +102,7 @@ Step-by-step guide
 39.	 ^D
  exit  
 Edit /var/lib/pgsql/9.3/data/pg_hba.conf to allow users to use db stored passwords. Insert the following at line 75:
-#Allow any IP to connect, with a password:
+# Allow any IP to connect, with a password:
  host    all         postgres    127.0.0.1/32                  ident
  host    all         postgres    ::1/128                       ident
  local   all         postgres                                  peer

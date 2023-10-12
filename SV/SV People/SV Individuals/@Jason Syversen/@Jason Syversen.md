@@ -1,8 +1,13 @@
 
-:: [[j]]
-
 [[SV]]   [CEO](https://www.linkedin.com/in/jsyversen/)  [[@Sports Visio]]  	 [Calendly](http://calendly.com/syversen),  [[SV]], 
 - [[2023 Jason Tasks]] - 
+
+## Tasks
+- vball games download
+- game annotation - 
+- ops execution
+- device search
+- 
 
 
 ## Timeline

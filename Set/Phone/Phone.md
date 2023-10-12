@@ -1039,7 +1039,7 @@ CTO
 #### Jeff Roles
 
 -- Organizational/cleanliness tracking (JIRA, swim lane plans, repo, )
--- Rescource planning  #people, #months, across tasks.
+-- Rescource planning  # people, # months, across tasks.
 
 -- Performance reviews
 -- Scheduling meetings, 

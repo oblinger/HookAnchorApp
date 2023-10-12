@@ -237,7 +237,7 @@ Username: wef234@gmail.com
 Serial: D4GU34F0FY6W23CHAG
 
 ### setup
--- Export -- ! all macros --> #a -> file -> export as library
+-- Export -- ! all macros --> # a -> file -> export as library
 -- Import 
 
 ## xx Microsoft xx Office

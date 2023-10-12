@@ -1,13 +1,7 @@
 
-:: [[DocJupyter]]
-
-:: [[docs/DocPython/DocJupyter]]
-  [DocTensorFlow](DocTensorFlow.md)
-  [DocJupyter](docs/DocPython/DocJupyter.md)
-  [DocPyDatetime](DocPyDatetime.md)
-  [DocNumPy](DocNumPy.md)
-  [__DocPython__](__DocPython__.md)   [[DocPandas]],  [[DocPyDatetime]], 
-  -[[DocNumPy]] 
+:: [[DocNumPy]],   [[DocPyDatetime]],   [[DocTensorFlow]]
+- [[DocJupyter]]
+- [[DocConda]] 
 
 (See file:///ob/topics/Docs/src/Blam_Python/Blam_Python.md )
 

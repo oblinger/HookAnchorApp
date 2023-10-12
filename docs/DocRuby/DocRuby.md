@@ -424,7 +424,7 @@ def devise(*array) array end
 [CLASS] class MyClass < ActiveRecord::base \\ end
 def h(n) \\ puts "hello #{n}" \\ end  \\ h \\ h()
 - PARTS  .instance_variables  .instance_variable_get  
-- CONSTRUCTORS  .new()  .create()  .initialize() #usr defined
+- CONSTRUCTORS  .new()  .create()  .initialize() # usr defined
 
 
 [ACCESSORS] .instance_variable_get("@name")

@@ -434,7 +434,7 @@ Work:      17 Skyline Drive, Hawthorne, NY 10532.
 My Phone:  914 494-1272
 
 ________ 
-Address :  326 W. 49th Street #1FE,  New York, NY 10019 
+Address :  326 W. 49th Street # 1FE,  New York, NY 10019 
 Dates   :  4/2000 - 7/31/2002
 Landlord:  PMG - Property Managememnt Group 
 L. Phone:  (212) 610-2800

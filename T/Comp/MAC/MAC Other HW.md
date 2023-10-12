@@ -60,6 +60,6 @@
    -- register printer .... "mononoke" ...   SHOULD SAY "Sent the settings"
 -- ON Mac
    -- Download Canon print drivers
-   -- #prefs  ->  printers&scanners  ->  !"+"
+   -- # prefs  ->  printers&scanners  ->  !"+"
       -- ! "Canon iP110 series   Bonjour"
       -- use:  ! "AirPrint"

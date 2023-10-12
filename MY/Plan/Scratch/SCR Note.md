@@ -125,7 +125,7 @@ def main():
 	spending_path, transactions_path, today = F'{FOLDER}/transactions.csv', F'{FOLDER}/spending.csv', datetime.today().strftime('%Y-%m-%d')
 	view_csv(trans, transactions_path)
 	view_csv(result, spending_path)
-	#save_excel({'Spending':result, 'Transactions': trans}, f'{FOLDER}/spending')
+	# save_excel({'Spending':result, 'Transactions': trans}, f'{FOLDER}/spending')
 	os.system(F'cp "{spending_path}" "{BACKUPS_FOLDER}/spending-{today}.csv"')
 
 

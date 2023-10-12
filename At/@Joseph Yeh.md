@@ -1,19 +1,29 @@
  [[COACH]], [[RECRUITER]]  [Career Coach](https://www.linkedin.com/in/josephsyeh/) [[@DotConnect]]  [D<>J](https://docs.google.com/document/d/1mksc7XIoeo6LV8eczQXi1xEDzZ-8syGoGEpJRioIXVo/edit)      
-
+### __
  Career Coach -- Specializing in DeepLearning, Vision
   - [Hours](https://docs.google.com/spreadsheets/d/1MkWide1VMd0Jez3Z_Z2WIJfZdHKP7Gg2KmS0yodrZWY/edit#gid=0) -- 
   - Introduced me to [[@Deep Sahini]]
 
 
-https://www.amazon.sg/
-
 
 # MEETINGS
 
-### 2023-04-11  
+### 2023-10-05  Google Director's job.  & Other stuff
+
+- Quick Update. 
+- [[NJ24]]: FAANG: Targets, Todos, 
+- [[WarStories]],
+
+
+- Being a doer
+- other CTOs ?  VPeng?
+- got acquired by Google
+- Plato mentorship group
+- Pragmatic Eng Blog -
+
 ### m2023-04-11  prep for bridge
 
-
+- Tempo, lead, flutter
 #### A-round
 - [ ] Show progression of AI-alg capabilities over time
 

@@ -326,7 +326,7 @@ match "/stories/:name" => redirect("/posts/%{name}")
 match "/stories/:name" => redirect {|params| "/posts/#{params[:name].pluralize}" }
 match "/stories" => redirect {|p, req| "/posts/#{req.subdomain}" }
 
-#As long as Sprockets responds to call and returns a [status, headers, body], the router won’t know the difference between the Rack application and an action.
+	# As long as Sprockets responds to call and returns a [status, headers, body], the router won’t know the difference between the Rack application and an action.
 match "/application.js" => Sprockets
 
 ## docs

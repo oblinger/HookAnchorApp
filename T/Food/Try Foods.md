@@ -1,18 +1,14 @@
-BB salad. BB chili, MushBarley, Kitchari
-
 
 **PAPRIKA TRY**:
-- TRY: 			+++CHIA, TVP
-- SOUPS:+		White Bean, Black bean (+++chili / +++soup / +++cuban), +++Veg
-- 				Mixed bean ?white?, Split Pea, +Butternut, ??Lentil(curry,?), 
+- TRY: 			+++CHIA, TVP, +++Silken Tofu, ++Riced Cauliflower
+- SOUPS:+		White Bean, Black bean (+++chili / +++soup / +++cuban), +1+Veg
+- 				Mixed bean +++white, Split Pea, +Butternut, ??Lentil(curry,?), 
 - CURL:    	++Peanut Stew, ++Curry, Soup, ++Millet
 - QUINOA:  	++Southwest,  ++Peppers w/ more Quinoa, ++Kitchari (cauliflower)
 - MEAT:		Chicken, Beef
 - 2ST TRY:	Tacos, 
 
 **GOALS**:
-- BASE:  Chia, TVP, 
-- SOUPS: Veg, 
 - Oven Brussel sprouts, Riced cauliflower, Tasty Lunch Salad
 - AYI:  Hot-Sour-Soup, CARROT-something, CABBAGE-something, 
 - SECTIONS:  TVP(chili, Curl),  Bean(BlackB, SplitPea), Grain(Steel, Mush, Quinoa), Other

@@ -1,7 +1,9 @@
-- better baller videos
+- ascend conference
+- Cust Success Tracking
 
-- Eli Schools
-- Google job
+- [ups](https://www.ups.com/track?track=yes&trackNums=1Z7827170390791176&loc=en_US&requester=ST/trackdetails) 
+- Aaron call setup
+
 - action items to Jack
   - Fixed Camera Ingest w/ Miguel
   - Device serach for portable

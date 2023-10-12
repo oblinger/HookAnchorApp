@@ -10,9 +10,9 @@
 - Who should own end-to-end halos?  Sarthi
 - Halos:  
 
-- [[cvt]],  [[CV Planning]], [[CV.]], 
+- [[cvt]],  [[CVP]], [[CV.]], 
 - [LCM Input](https://docs.google.com/document/d/1kxGMrmPOr9S6whRnV0LI0UpWGeyBzTn8WGDq7ITM4Sc/edit),  [LCM root](https://docs.google.com/document/d/10jm1RRqCqvAXy3Ti1Nu-jLzATy0jjBejUY7-Dz2e85U/edit), 
-
+e
 ## Todo
 
 - [ ] Visualizers:  2D.  DataCube. matrix
@@ -148,6 +148,7 @@ https://github.com/z-x-yang/Segment-and-Track-Anything
 - Remove Non-Players, by adding generic group 
 
 ### 2023-08-21  Sarthi
+--> Halo Metrics
 ==> New Color Alg
 ==> Halos
 
@@ -155,6 +156,7 @@ https://github.com/z-x-yang/Segment-and-Track-Anything
 - Improving Color model
 
 ### 2023-08-21  Martin
+
 ==> Building new model w/o GPL. 
   (Especially for active hoops)
 ==> Perf detects, hoop
@@ -168,6 +170,8 @@ really close to 60% player ID
 - Distraction players.  (homography)
 
 ### 2023-07-31  Maxim
+--> Baseball POC
+--> dataset speed
 --> how do position / points when player jumps <--
 ==> Camera Calibration (metrics and closed loop)
 ==> Adding 2/3 points

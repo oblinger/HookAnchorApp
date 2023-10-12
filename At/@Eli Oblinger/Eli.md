@@ -98,6 +98,11 @@ STEPS:  Email these to self.  on phone click on apple mail, then click on each v
 
 
 
+
+# Quotes
+
+- The rock would smash you like Play-Doh. You don’t want to do that. Then you would be dead forever.
+
 # FIRSTS
 ### 2023-08-10 First Bike Ride
 Grandma Ni gave Eli a bike for his birthday, and he road it down the block and to the mosque several times with Dad holding on to the back.

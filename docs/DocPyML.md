@@ -63,7 +63,7 @@ type(np.asscalar(np.timedelta64(0))) # <type 'datetime.timedelta'>
    for ele in list: print ele   for i in range(1, 10): print i
    { 'case1': 'val1', 'case2':'val2' }.get(switch_index, 'default_val')
    apply( lambda x,y:x+y , (2,3) )
-   def square(x, root=false): return x*x    #Comment '\\' means indented on next line
+   def square(x, root=false): return x*x    # Comment '\\' means indented on next line
    def proc(a, b=7, ): \\  \\ global gname \\ my (loc_name)=(1) \\ body
    class C: \\  def method_name(self): \\  self.inst_var=5
      def __init__(self,x): pass
@@ -172,7 +172,7 @@ string.write("string")
   (?&lt;!...) 
    m=re.search('(.*)\.mp3',f) m.group(1)
   import re;  m=re.search('(?<=abc)def','abcdef');  m.group(0); --> 'def'
-  #This example looks for a word following a hyphen: 
+	  # This example looks for a word following a hyphen: 
   m=re.search('(?<=-)\w+', 'spam-egg');  m.group(0)  -->  'egg'
   re.compile(pat[,flgs])   .match("ba", l)  .search("ba", 1) 
   search(str[,pos[,end]])  match(str[,pos[,end]]) split(str[,max=0]) 
@@ -330,7 +330,7 @@ print "hello world"                    # stdout
 print "hello", "world",                # comma on end suppresses newline
 print ""
 x = sys.argv                           # list of command line arguments
-#sys.exit()                            # exit application
+# sys.exit()                            # exit application
 
 #########################################################################
 #                                                                       #
@@ -913,9 +913,9 @@ b = callable("hello")                  # flag whether object is callable x()
 x = chr(0x2A)                          # convert ascii int to character
 x = cmp(1, 2)                          # compare function (-1 0 or 1)
 x = coerce(1, 2.0)                     # return tuple with two arguments coerced to common type
-#compile("x = 1", "test.pyc", "exec")  # compile the string into a code object
+# compile("x = 1", "test.pyc", "exec")  # compile the string into a code object
 x = complex(1, 2)                      # build complex number: same as (1+2j)
-#delattr(Circle, "numInstances")       # delete attribute from object
+# delattr(Circle, "numInstances")       # delete attribute from object
 x = dir()                              # list of items in the dictionary
 x = dir(__builtins__)                  # list of built in objects
 (x, y) = divmod(4, 3)                  # return both div and mod values in a tuple
@@ -929,8 +929,8 @@ b = hasattr(Circle, "numInstances")    # test if object has attribute
 x = hash("abc")                        # return 32 bit hash value for object
 x = hex(0x7f)                          # convert int to hex string
 x = id("abc")                          # return the identity of the object
-#try: x = input("&gt;Prompt")             # get input from user prompt
-#except: pass
+# try: x = input("&gt;Prompt")             # get input from user prompt
+# except: pass
 x = int(3.56)                          # convert to int - truncate
 x = intern("abc")                      # intern a string - for speeding up lookups
 b = isinstance(x, Circle)              # test if object is instance of class or a subclass
@@ -947,8 +947,8 @@ x = open("test.txt", "r")              # open file
 x = ord("a")                           # convert ascii char to int
 x = pow(2, 4)                          # power function
 x = range(0, 5, 1)                     # make list over range with start index and increment
-#try: x = raw_input("&gt;Prompt")         # get input from user prompt
-#except: pass
+# try: x = raw_input("&gt;Prompt")         # get input from user prompt
+# except: pass
 y = reduce(lambda a,b: a+b, [1, 2, 3]) # return value by applying iteration (sum list)
 reload(sys)                            # reload module code
 x = repr("hello")                      # get string representation of object

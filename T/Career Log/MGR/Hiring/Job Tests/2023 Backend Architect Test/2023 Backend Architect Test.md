@@ -1,5 +1,6 @@
 
-[gDoc](https://docs.google.com/document/d/1vmeBfJhZt6RLgHzQD7z5u4oGy1QDP7V7D1exwAIthSE/edit) 
+- [gDoc](https://docs.google.com/document/d/1vmeBfJhZt6RLgHzQD7z5u4oGy1QDP7V7D1exwAIthSE/edit) - 
+- [[Software Architecture Challenge.docx]] -
 
 
 

@@ -7,9 +7,9 @@ Good Intro:   http://ejohn.org/apps/workshop/intro/#13
 
 $ == jQuery    (the jQuery object)
 
- #xxx   select XML elements whose 'id' tag matches xxx
- .xxx   select XML elements whose 'class' tag matches xxx
- xxx    select XML elements whose 'head' matches xxx
+	 #xxx   select XML elements whose 'id' tag matches xxx
+	 .xxx   select XML elements whose 'class' tag matches xxx
+	 xxx    select XML elements whose 'head' matches xxx
 
 .parent() .next() .prev() .children() .siblings() ...
 

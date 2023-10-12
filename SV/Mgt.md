@@ -1,6 +1,26 @@
-
 # Log
 
+### 2023-10-11  OCT MGT MEETING
+
+- Full AI
+- Customer Success Spreadsheet
+- AI Camera
+- Password management
+- Pre-A Ingest solutions:  Air-table --> API
+
+- high level planning - A-round - Jack's task breakdown
+  SW TEAM
+	- Robust & Stable: Hoops, Ann Portal, Admin Port, Air Table
+	- Mobile League Page  (includes refactoring programs, etc.)
+	- Web Stats Page
+	- Virality experiments / features
+	- Tweaks:  Ops team improvements.  Easy features. Easy UX.
+  AI TEAM
+	- AI-Shots 
+	- AI-Halos 
+	- AI-Minutes
+	- Full AI sport
+    
 
 ### 2023-09-25 Weekly meeting. 
 

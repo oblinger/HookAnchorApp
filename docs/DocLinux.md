@@ -104,7 +104,7 @@ ACTION
 
    # Remove stupid copyright notice
    $ gksudo gedit /etc/screenrc   # remove copyright notice
-   > #startup_message off         # remove '#' character
+   > # startup_message off         # remove '#' character
 
 ## GUI
 ### rxvt -- xterm

@@ -16,6 +16,8 @@ BBI PROMPTS
 CONTEXT
 - Why Leave?  Looking For?  Plan over next years?
 
+
+
 ## Job Ad
 
 Full-time Deep Learning / Computer Vision / ML Ops Engineer  
@@ -68,6 +70,109 @@ Even better:
 ·      Significant experience developing and deploying real-time video processing algorithms
 
 # Interviews
+
+### 2023-10-04  Juan
+
+
+BBI PROMPTS
+- Complex or Challenging Examples:
+	- ML TRAINING:
+	- CV ALG:
+	- NOVEL ALG: kind of coder?
+	- ML OPS:
+	- INTERPERSONAL:  Gain consensus, Politics
+CONTEXT
+- Why Leave?  Looking For?  Plan over next years?
+
+
+=LG-SYS=
+
+ANSER - 
+- Image processing to assess the area of a wall.
+- perspective corrected 
+- detect the walls
+- not used commercial.
+- hard part:
+	- how to filter out noise from lighting. (inconsistent & dark)
+- Trained model with many samples.
+- Segmentation network.  MASK-R CNN
+	- assigning dense pixel assignment.
+	- uses semantic info about context:  color, patterns-related to other pattersn in higher in network
+	- he explained RCNN well 
+- Labelling: manual. 
+	- speedup: fancy manual edit of polygons.
+
+
+
+=ML-TRAINING=
+
+TECH MONTERRAY - project
+- TRAINING LOOP FOR facebook for transformer (early in transformers 2021)
+- Object deter model from Facebook
+- Wrote core alg in PyTorch - based on pseudo code in paper.
+- validated it by doing key point detection on faces
+- Used model structure based on paper (plus weights)
+
+
+TERNIUM - (collaboration while at univ)
+- used GOOGLE's Big Transfer (model and training frmaework)
+- Used different loss function. (used a focal loss from the) 
+- it only worked for some epochs then training became unstable.
+
+
+=CV-ALGS=
+- majoiryt is off shelf
+
+ANSER - find vanishing points
+- Used ransack to find vanishing point on the walls to only keep the lines that work well
+- Before that he tried to
+- post process / add noise, remove noise, tried to supress lines from textured regions 
+	- filtering, found open contours then and find area to decide if it was a real wall edge.
+	- also used convex hull
+
+
+=NOVEL-ALG=
+
+ANSER - ReID cars - very hard
+- Fuzzy system - combine:
+	- time between detections
+	- distance between dectections
+	- vehicle class / color (top N confidences if car has multiple colors)
+- easier to debug fuzzy
+- timing of video offsets are noisy.
+
+ANSER - teamates
+- 3 CV - rafael and santeago 
+- Rafael - background in research - very creative - buggy code - very fast at coding - does not ask for help
+	- super talkative one.  talking to a fault - what he thinks he says
+- Sante - slower, more by the book - lot of time to do it.  needs to be told
+	- the quiet one, work on something that you missed.
+- HE - likes to understand things - like to solve by self - attntion to detail - 
+	- iteration speed is pretty good.  
+	- I don't talk alot.  more careful socially.  perceived quiet person/introvert.
+	- most ideas that he proposes are high level.  Rafaels ideas are more tactical.
+
+
+=LEADERSHIP= 
+- Current leading team of 5 CV and 10 devs
+
+
+
+=CONTEXT=
+- Why leave?  I am pretty happy with Algotive
+- not seeing way to grow.
+- ANSER lost funding. 
+
+
+
+
+
+
+
+
+
+
+
 
 ### 2023-09-29  Mariano
 

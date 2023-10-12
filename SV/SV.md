@@ -7,7 +7,7 @@
 [[Canva]]
 bu
 - [[SV Tasks]] - 
-- TOPS:		[[WW]],   [[QQ]],  [[SV Mgt]], 
+- TOPS:		[[WW]],   [[QQ]],  [[Mgt]], 
 - [[SV Strat]]:	[[Reset]],  [[Roadmap]], 
 - [[SV Ops]]:	 	[[SV Dashboards]],  [[SV Testing]], [[SV Release Planning]],  
 - [[SV People]]:	[[Hiring.]], [[SV SW Team]],   [[@CV]],

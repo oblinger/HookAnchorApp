@@ -6,6 +6,12 @@
 
 | Date       | File                       | Notes                                                                                                                             |
 | ---------- | -------------------------- | --------------------------------------------------------------------------------------------------------------------------------- |
+| 2023-10-12 | [[@Clash.TV]]                  | Intro Call                                                                                                                        |
+| 2023-10-11 | [[Mgt]]                        | OCT MGT MEETING                                                                                                                   |
+| 2023-10-09 | [[QA-hiring]]                  | Julietta                                                                                                                          |
+| 2023-10-06 | [[LCM]]                        | Batch Command                                                                                                                     |
+| 2023-10-05 | [[@Joseph Yeh]]                | Google Director's job.  & Other stuff                                                                                             |
+| 2023-10-04 | [[2023-07 ML-CV Ops Job Post]] | Juan                                                                                                                              |
 | 2023-10-03 | [[SNIP]]                       | Science vs Engineering                                                                                                            |
 | 2023-10-03 | [[LCM]]                        | Batch examples                                                                                                                    |
 | 2023-10-03 | [[LCM]]                        | Command Line Thinking                                                                                                             |
@@ -23,7 +29,7 @@
 | 2023-09-29 | [[2023-07 ML-CV Ops Job Post]] | Mariano                                                                                                                           |
 | 2023-09-28 | [[2023-07 Director of SW]]     | ++Raul2                                                                                                                           |
 | 2023-09-27 | [[Hire]]                       | Luciano Start                                                                                                                     |
-| 2023-09-25 | [[SV Mgt]]                     | Weekly meeting.                                                                                                                   |
+| 2023-09-25 | [[Mgt]]                        | Weekly meeting.                                                                                                                   |
 | 2023-09-25 | [[@Jason Syversen]]            |                                                                                                                                   |
 | 2023-09-21 | [[@Jasu Victorio]]             | Review                                                                                                                            |
 | 2023-09-21 | [[Bugs]]                       | Fellowship of the bug                                                                                                             |
@@ -32,7 +38,7 @@
 | 2023-09-19 | [[@Realplay]]                  | Intro Discussion                                                                                                                  |
 | 2023-09-19 | [[2023-07 Director of SW]]     | Ignacio Larranaga                                                                                                                 |
 | 2023-09-17 | [[ingest]]                     | Portable Rig Parts                                                                                                                |
-| 2023-09-15 | [[SV Mgt]]                     | SEPT MGT MEETING                                                                                                                  |
+| 2023-09-15 | [[Mgt]]                        | SEPT MGT MEETING                                                                                                                  |
 | 2023-09-14 | [[BaseB]]                      | Justin / Jason Conversation                                                                                                       |
 | 2023-09-13 | [[BaseB]]                      | Task Breakdown                                                                                                                    |
 | 2023-09-13 | [[Patents]]                    | SheeHan                                                                                                                           |
@@ -67,7 +73,7 @@
 | 2023-08-11 | [[Phone]]                      | Cancer Vet                                                                                                                        |
 | 2023-08-10 | [[Eli]]                        | First Bike Ride                                                                                                                   |
 | 2023-08-10 | [[@Sage Vet]]                  | Surgery to remove cancer                                                                                                          |
-| 2023-08-09 | [[SV Mgt]]                     | AUG MGT MEETING                                                                                                                   |
+| 2023-08-09 | [[Mgt]]                        | AUG MGT MEETING                                                                                                                   |
 | 2023-08-03 | [[@CV]]                        | DEV OPs                                                                                                                           |
 | 2023-08-03 | [[@Brian French]]              | update                                                                                                                            |
 | 2023-08-03 | [[Career Log]]                 | Customer Acquisition (from nick) ---                                                                                              |
@@ -92,8 +98,8 @@
 | 2023-07-15 | [[ToBuy]]                      | Table                                                                                                                             |
 | 2023-07-14 | [[Phone]]                      | DEXA. [[@Dexafit]]                                                                                                                |
 | 2023-07-13 | [[@CV]]                        | Progression of halo apps                                                                                                          |
+| 2023-07-12 | [[Mgt]]                        | Deliverables                                                                                                                      |
 | 2023-07-12 | [[QQ]]                         | Halos                                                                                                                             |
-| 2023-07-12 | [[SV Mgt]]                     | Deliverables                                                                                                                      |
 | 2023-07-11 | [[BKT]]                        | Reality time                                                                                                                      |
 | 2023-07-11 | [[EduCorp]]                    | Collette pointers                                                                                                                 |
 | 2023-07-10 | [[@Jason Syversen]]            | Topics                                                                                                                            |
@@ -223,7 +229,6 @@
 | 2023-04-13 | [[@BallerTV]]                  | Email from CEO                                                                                                                    |
 | 2023-04-12 | [[@Joaquin Mano]]              |                                                                                                                                   |
 | 2023-04-12 | [[Reflections]]                | PIVOT - shift towards AI                                                                                                          |
-| 2023-04-11 | [[@Joseph Yeh]]                |                                                                                                                                   |
 | 2023-04-11 | [[QQ]]                         | New Ticket Flow                                                                                                                   |
 | 2023-04-10 | [[QQ]]                         | Pivo                                                                                                                              |
 | 2023-04-10 | [[@Achilles (Tomas Sasovsky)]] | Intro call                                                                                                                        |
@@ -285,7 +290,7 @@
 | 2023-02-17 | [[@Jason Syversen]]            | Mgt Trip                                                                                                                          |
 | 2023-02-17 | [[@Mike Seibert]]              | AI Elements                                                                                                                       |
 | 2023-02-16 | [[2023 Deliverables]]          | Jason conversation                                                                                                                |
-| 2023-02-15 | [[SV Mgt]]                     | Comments with the Team                                                                                                            |
+| 2023-02-15 | [[Mgt]]                        | Comments with the Team                                                                                                            |
 | 2023-02-14 | [[@Yashin Lin]]                | Looking for VALID TARGETS                                                                                                         |
 | 2023-02-13 | [[Trip]]                       | Manager's Monthly Meeting                                                                                                         |
 | 2023-02-13 | [[2023 Jason Tasks]]           | Systematic QA processing                                                                                                          |

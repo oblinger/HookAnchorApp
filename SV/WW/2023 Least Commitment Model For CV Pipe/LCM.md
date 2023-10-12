@@ -1,13 +1,52 @@
 TODO:
 - Dict Docs
+- command line
 
 
  [LCM-013](https://docs.google.com/document/d/1kxGMrmPOr9S6whRnV0LI0UpWGeyBzTn8WGDq7ITM4Sc/edit):  V2 docs for input
  
 - [[2023 Least Commitment Model For CV Pipe]]
 
+- [ ] [Least Commit v2](https://docs.google.com/document/d/1kxGMrmPOr9S6whRnV0LI0UpWGeyBzTn8WGDq7ITM4Sc/edit): grz
 
 # LOG
+
+### 2023-10-06  Batch Command
+
+
+Executes the indicated action using the specified script over the specified arguments and input, followed by any specfifien.
+
+	pts KEYS ARGS
+		-a  --args ARGS				# Specifies the action to be performed (all args etc.)
+		-s  --script SCRIPT_NAME		# Specifies the script or python function used to perform this action
+		-i  --input INPUT			# Specifies the input data to be processed
+		-d  --do DO_COMMANDS			# Specifies additional do methods to perform
+		-o  --output PATH			# Specifies folder path for output (else at YYYY-MM-DD under CWD)
+		
+		     --axes AXES
+		     --avg AXES
+		     --report_axes AXES
+		     --report_actions 
+		
+
+Performs a batch of processing
+
+	batch
+		-a --action actions
+		-i --input  INPUT ...
+		-d --do     METHOD ...
+
+
+ACTION METHODS
+
+	all -a ACTION INPUT_OR_RESULT . . . 
+	avg 
+
+
+DO METHODS
+
+	table PATH VALUE_KEY COL_KEY ROW_KEY SHEET_KEY
+	graph PATH VALUE_KEY COL_KEY ROW_KEY 
 
 ### 2023-10-03  Batch examples
 
@@ -17,7 +56,7 @@ TODO:
 ### 2023-10-03  Command Line Thinking
 
 
-	run --config [config] --input [input] --output [path]
+	run.sh --config [config] --input [input] --output [path]
 run
 - performs a single 'run.sh' of our system
 - a config / input / output is the path to a folder containing the corresponding 

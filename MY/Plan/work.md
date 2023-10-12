@@ -36,50 +36,40 @@ to all of the team based on final results, not just on 'good effort'.  you are a
 
 
 ## TOP
-Interns:	Dset videos, Ingest exe (TryBe4,Fixed,)
-[[Hire]]	    >CV-test; !! [[H-F90]]   ^CV-interviews 
-[[Test]]		^field-tests;  >email-to-circle
-## TRACKING
-[BugCk](https://docs.google.com/document/d/1eh19kxKUBvZqCyJoAsVynOHJxGibkwgzL2tEzu1UnKQ/edit?usp=drive_link):	^20 bugs in
-[Vball](https://docs.google.com/document/d/1oAj1qUyA-18--TH3vPgoe2MA2KXvcx21IOiTD3b-nEU/edit?usp=drive_link):		^Aaron
-[[BaseB]]:	[BBall](https://docs.google.com/document/d/1oQX5PwkUNGqQ5CCOjsiAK1hBzfY9vbG_lPUKkhYJG8M/edit):	^!Justin
-[DevSrch](https://docs.google.com/document/d/1We_9Fhc1oIUXYdEYm2DwNmIfkVpHJL3PKyuePG39Gi4/edit?usp=drive_link):	
-[CVauto](https://docs.google.com/document/d/1XF1NfYpF7gqGBeLYZ_b-mBNkHxZgsRwW78p8ICIEHoQ/edit?usp=drive_link):	>jasu
+Run Code
+[[Mgt]]: 
+[[Hire]]	    ^Matias, ^ [CV-test](https://docs.google.com/document/d/1iXhyfyjxna2zGiUs9bg3wmx33DFQrIowdienVyfZVD8/edit?usp=drive_link), OPS-test, Julieta
+[[Test]]		^"field-tests; 
 
-[MlOps](https://docs.google.com/document/d/1Z4W3PeF0cPhFtVHBmbGuaOCWp2Eqhe9OhgOMG9bW7SA/edit?usp=drive_link): 	^Jasu
-[Fixed](https://docs.google.com/document/d/1wvC4qILhRswR3gDBiCqWG7b1G9z_PP9Y9s03m7x7ToM/edit): 	^mig get ops team  ^ach AWS cam viewing
-[Obj DS-T02](https://docs.google.com/document/d/1HXuS-r_d7J4zaHIiqKGg-p2U0uVDHE7oooCSgyXjoe0/edit):	>???  ask team
+- volleyball dataset
+- showcase - homography
+## TRACKING
+[[vball]]:			!! Sarthi Vball games
+[[CVP]]:[-](https://docs.google.com/document/d/1XF1NfYpF7gqGBeLYZ_b-mBNkHxZgsRwW78p8ICIEHoQ/edit)			dict-docs, cmdline
+[[BaseB]]:		[BBall](https://docs.google.com/document/d/1oQX5PwkUNGqQ5CCOjsiAK1hBzfY9vbG_lPUKkhYJG8M/edit):	^max building model
+[Obj DS-T02](https://docs.google.com/document/d/1HXuS-r_d7J4zaHIiqKGg-p2U0uVDHE7oooCSgyXjoe0/edit):	>???  ask team.  ^maxim estimates
 [Evt DS-T18](https://docs.google.com/document/d/1ugmtrxTsFGpFLIsKX0h8d9D2JFDdGM09EA19iwpS6DA/edit):	^?grz
 [Baseline](https://docs.google.com/document/d/1zROifDRbZ6RgrjFuESLMpofiXvIwwatWtx-m_U3iilI/edit?usp=drive_link):		>"&talk grz
+[Measure-T15](https://docs.google.com/document/d/1zROifDRbZ6RgrjFuESLMpofiXvIwwatWtx-m_U3iilI/edit):  ! metric task - >define it
 
-[[LCM]]:		^-grz  Docs input format. "cmdln mcproc.py
-[[Roadmap]]:	Jack Roadmap
-[Mkt-007](https://docs.google.com/document/d/1aY91w8mGvHWk_l1Wrx6EaadV-Wmt_nT5yBp5lsM_lG8/edit):	Prepare for James
-[Port](https://docs.google.com/document/d/195uYAObqtqEgMePZqiuXEaAN7VQ8RRCqlPHo7iEuIMc/edit):		
+[[LCM]]:			^-grz  Docs input format. "cmdln mcproc.py
 
-[[ingest]]:	! Write up Q about portable devices
-[[Patents]]:	^Sam (Refs)
-
-[CloudKit](https://docs.google.com/document/d/1s1cL-Yu2S6OPNStTozctSMVCe0zp_f5x8ZFron0p6AU/edit):	
-	[Reo-T09](https://docs.google.com/document/d/1kpvym1pJYFDJvQZwE8KOKKUlG2tpUuTYwmTpYze7Pyc/edit):	? REO
-[Measure-T15](https://docs.google.com/document/d/1zROifDRbZ6RgrjFuESLMpofiXvIwwatWtx-m_U3iilI/edit): 
-Run Code
-[[ClshTV]]:		^talk w them
+[[Roadmap]]:		> CV Roadmap
+[Mkt-007](https://docs.google.com/document/d/1aY91w8mGvHWk_l1Wrx6EaadV-Wmt_nT5yBp5lsM_lG8/edit):		Market Segment Analysis
 ## WATCH
-QA-hiring
-[CV-test](https://docs.google.com/document/d/1iXhyfyjxna2zGiUs9bg3wmx33DFQrIowdienVyfZVD8/edit?usp=drive_link):
-BK-test	>brian
+[BugCk](https://docs.google.com/document/d/1eh19kxKUBvZqCyJoAsVynOHJxGibkwgzL2tEzu1UnKQ/edit?usp=drive_link):		[bb](https://docs.google.com/spreadsheets/d/1C1eYv2Ks2GCCQ9_xZ2Pg7eEr33bX1KOdN8Xf8X6nxSY/edit#gid=0), ^waiting for 20 bugs in
+[[Patents]]:		^Sam (Refs)
 [P2P](https://docs.google.com/document/d/1C0fTdalEsWEPaHFwH1M1ErC3iUDbGgUk/edit) 
-[[CVP]]:		>give metrics to maxim
-
 ## PAUSE
+[DevSrch](https://docs.google.com/document/d/1We_9Fhc1oIUXYdEYm2DwNmIfkVpHJL3PKyuePG39Gi4/edit?usp=drive_link):	
+[[ClshTV]]:		^talk w them
+[MlOps](https://docs.google.com/document/d/1Z4W3PeF0cPhFtVHBmbGuaOCWp2Eqhe9OhgOMG9bW7SA/edit?usp=drive_link): 		^Jasu
+[Port](https://docs.google.com/document/d/195uYAObqtqEgMePZqiuXEaAN7VQ8RRCqlPHo7iEuIMc/edit):		
+[CloudKit](https://docs.google.com/document/d/1s1cL-Yu2S6OPNStTozctSMVCe0zp_f5x8ZFron0p6AU/edit):	
+[[ingest]]:		Write up Q about portable devices
+[Reo-T09](https://docs.google.com/document/d/1kpvym1pJYFDJvQZwE8KOKKUlG2tpUuTYwmTpYze7Pyc/edit):		? REO
 
 
-LEAST COMMITMENT MODEL
-Slow as molasses we are building a least commitment model of our pipe to try to facilitate unifying, simplifying, and automating our processing.  I want us to document all of our key interchange data formats.  So one of those would be the JSON file specifying the meta data with a dataset served as input.  We could extend keys.py to include specifications of these external formats as well.  What does everyone think?  Is this the proper place to document such dict "classes" ....  We could grow that file to explain all interface dicts in our system.  It is a little hacky... I kinda want 
-[[CVP]] 		??Upload Issue
-
-## PAUSED
 - [ ] [[Bridge]]	?? get ctc
 - [ ] [[Demos.]]	??? 
 - [ ] [[SV lrn]]: 	RunApps; Call All; [[SV90.]]

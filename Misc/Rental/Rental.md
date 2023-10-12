@@ -61,7 +61,7 @@ Hey guys.  So I dont know the water bill situation but this months electric and 
 --------
 PG&E (electric)     # 3250403250703
 1.800.743.5000
-3100 Mission St #c  ( use this adress for the account, it is where the meters are)
+3100 Mission St # c  ( use this adress for the account, it is where the meters are)
 Last cycle ended Sept 28th so back date to then.
 ######
 Water
