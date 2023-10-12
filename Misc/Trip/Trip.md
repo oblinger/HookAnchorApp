@@ -1,7 +1,5 @@
 
-:: [[2013 Thailand]]
-
-- [[Travel]],  [Trip](Trip.md), [[Thailand]],
+- [[Travel]],  [Trip](Trip.md), [[2013 Thailand]]
 - [[Trip Webpage]]
 
 # LOG
