@@ -1,5 +1,5 @@
   [__DocAWS__](__DocAWS__.md)
-
+- [[AWS]] 
 
 
 # How To
@@ -19,7 +19,6 @@
    $ cd jotter/backend/brain; sudo ./run
    http://jotter002.bonsai.com:8080         # joclient
      !open  !connect  !authenticateDevice 
-
 
 # CHAPTERS
 ## AWS TOOLBELT

@@ -1,4 +1,6 @@
 
+:: [[MED Blood Pressure]],   [[MED Cholesterol]]
+
 :: [[MED VO2Max]]
 
 :: [[whats]]

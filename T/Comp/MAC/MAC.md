@@ -4,7 +4,7 @@
 - [[DocMac]] - 
 - [[MAC Apps]] - 
 - [[MAC How To]] - 
-- [[MAC Setup]] - 
+- [[MAC Setup]] - #build
 - [[MAC Other HW]] - 
 
 - [[Doc 1Password]],   

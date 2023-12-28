@@ -1,5 +1,7 @@
 =[[TAG]] 
 
+- [[LOG Trash]] 
+
 ### 2023-07-17  Einstein Puzzle
 https://gohighbrow.com/einstein-riddle/?utm_source=www.curiouspeoples.com&utm_medium=referral&utm_campaign=ernest-hemingway
 

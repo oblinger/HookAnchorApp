@@ -1,4 +1,6 @@
 ### Work Projects
+=	[[belief]]			[[2023 Belief Propagation]].
+=	[[FullAI]]			[[2023 Full-AI Basketball Highlights Product]].
 =	[[vball]]			[[2023 Volleyball SV Product]].
 =	[[ClshTV]]			[[2023 Clsh.TV Partnership]].
 =	[[vball]]			[[2023 Volleyball Product]].
@@ -11,7 +13,7 @@
 =	[[Dataset]]		[[2023 Build Datasets Needed for the CV Team]].
 =	[[Baseline]]		[[2023 SV Mgt Meeting Slides]].
 =	[[Test]]			[[2023 SV Testing Plans]].
-=	[[Roadmap]]		[[2023 SV Roadmap]] - 
+=	[[ROADMAP]]		[[2023 SV Roadmap]] - 
 =	[[CVP]]			[[2023 SV CV New Agenda]].
 
 =	[[RNR]]			[[2023 SV Roles and Responsibilities]].

@@ -1,7 +1,7 @@
   [Parents Gdoc](https://docs.google.com/document/d/1-RnQcbruiKJQkZIZlaMC_cEZ_Vc17_iP45RcxRSM4Os/edit#heading=h.2i45vboz1026) 
+- [[Christmas Ornaments]] 
 
-
-
+- [[Mom Games]] 
 
 
 
@@ -46,6 +46,23 @@ Dan Bring:  Starbucks, Brol, Lentils
 —dan
 
 
+### Things to do
+
+Cinti Zoo light and go early for the animals too.  
+  
+Kings Island winter Fest.  Nov 24 thro Dec 31 Last time I was there some of the rides were open in kiddy land.  
+  
+Entertainment Junction Mon - Sat 10am to 6pm   on the 26th they will be open till 8 pm. Before xmas there is a Santa to visit.  not sure about pictures. but seem like they took pictures of Sammie and Ryan but don’t think I brought them.  
+  
+Xmas shop  
+  
+Get picture with Santa.  Sammie is suppose to be in on the 20th or 21st haven’t ask her about this.  
+  
+Linda has said that the Burlington Fair grounds has a good drive thro light show.  Doesn’t take long and is warm.  
+  
+heavy coats and double layer recommended for even wear unless we get warm weather.
+
+
 # FL HOME
 
 USPS will not deliver to 2016 address.  must be the pobox address.
@@ -69,17 +86,6 @@ SMALL PACKAGES:
 - Grape crystal light packets
 - Peanut Butter; Bread; Cheese; Herb Tea
 - Sugar Free Coffee Creamer; NOT Vanilla  (CoffeeMate Italian)
-
-
-### --- MOM GAMES ---
-- App store: daily soduku
-- Microsoft free jewel
-- spider online
-- MSN Free Games Online:  https://zone.msn.com/en/utility/searchgame/gametextsearch.aspx?searchterm=&filters=%5B%22freeonline%22,%22arcade%22,%22strategy%22,%22puzzle%22,%22card%22,%22match%22,%22word%22,%22casino%22,%22hidden%22,%22adventure%22,%22multiplayer%22%5D
-- MSN  https://zone.msn.com/en-us/home
-- 
-
-
 
 
 
@@ -559,7 +565,7 @@ ONLINE
 
 # MISC
 
-### --- 2019.11 tasks ---
+2019.11 tasks ---
 - Fix something on moms phone
 - Show pictures from dads laptop to the TV
 

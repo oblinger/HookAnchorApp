@@ -8,9 +8,9 @@
 bu
 - [[SV Tasks]] - 
 - TOPS:		[[WW]],   [[QQ]],  [[Mgt]], 
-- [[SV Strat]]:	[[Reset]],  [[Roadmap]], 
-- [[SV Ops]]:	 	[[SV Dashboards]],  [[SV Testing]], [[SV Release Planning]],  
-- [[SV People]]:	[[Hiring.]], [[SV SW Team]],   [[@CV]],
+- [[SV Strat]]:	[[Reset]],  [[ROADMAP]], 
+- [[SV Ops]]:	 	[[SV Dashboards]],  [[SV Testing]], [[SV Planning]],  
+- [[SV People]]:	[[Hiring.]], [[SV SW Team]],   [[CV]],
 - [[SV Market]]:	[[SV Customer]],  [[SV Competitor]], [[SV Partner]], 
 - [[SV Product]]: [[SV Code]],  [[SV Apps]], [[SV System]],   
 - [[SV Software]]: 

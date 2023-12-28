@@ -1,5 +1,25 @@
 
 
+
+### SINGULARITY TRAP
+
+nanite goo sticks to hand of space-miner and replaces him.  to tell him about others that are non-AIs (before we get to the singularity)
+
+
+
+### ANCILLARY - Ann Leckie
+
+Ship AI becomes a 'person'
+
+SWORD -- avenges death of her captain, and begins destruction of Raddich by telling its leader that she is already a war w/ herself.
+
+MERCY -- hangs out in the backwater near the failing Raddich and protects a population there from being trampled 
+
+TRANSLATION STATE -- further from the Raddich.  Story is connected to a Degenerate member of the diplomatic core for the Prager.
+
+These guys can move matter with their minds.
+
+
 ### Project Hail Mary - Andy Weir
 
 - Man wakes with Amnesia & dead crew mates

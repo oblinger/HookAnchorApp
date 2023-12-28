@@ -1,7 +1,7 @@
 
 :: [[2023-05 Cool Kids]]
 
-:: [[Sleep Training]]
+:: [[Eli Sleep Training]]
 
 
 

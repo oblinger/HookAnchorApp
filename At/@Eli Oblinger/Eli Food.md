@@ -8,6 +8,7 @@
 MAIN 
 - CARBS: Pasta, RiceBalls, Pizza, Pancakes, Sweet Potatoes
 	- PASTA: Ground-beef&Eggs, Marinara, 
+	- RICE: Seaweed sandwich, 
 - FROZN: Dumplings, 
 - MEATS: Chicken(sauteed, panfry), Steak, Salmon, Meatloaf??
 	- PORK: Short Ribs

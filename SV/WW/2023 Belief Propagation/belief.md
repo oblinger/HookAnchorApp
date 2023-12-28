@@ -1,0 +1,30 @@
+
+- [[2023 Belief Propagation]]
+
+[[belief]]
+
+
+
+- n = 2.5 seconds (minimum tracklet / scrum len)
+
+- t = 1.0 seconds 'tick' size
+
+- At each frame moment an ordered IOU tracklet sets ordered left to right
+
+- Once set has existed for n seconds it is added to the graph 
+	- as an arc if set is a singleton tracklet
+	- as a node if it is multiple tracklets
+
+- At each tick the current list of active sets adjusted to move each active set towards the center of its available space
+- Then the list of active tracklets is printed for this tick, connecting each to the tick before
+
+- Tracklet labels are only applied once every ten seconds
+
+
+
+Building The Scrum Graph
+
+Parameters:
+SCRUM_IOU = .3
+
+

@@ -1,6 +1,6 @@
 - (See [[QUICKADD]])
 
-FORMAT
+FORMAT for each CMD.md file
 =[[Cmd]]  url  ...
 
 
@@ -14,9 +14,12 @@ FORMAT
 | Shell   | shell         | cmd line    | Runs cmd line in headless mode                          |
 | Webpage | url           | url         | Opens url in default browser                            |
 
+IMPLEMENTATION
+- JS plugin "Action Notes"
 
-SCRIPTING
-    _ 1pass  < word >         # will open browser and login to specified _1pass target
+- Triggers `_1pass` in the bin directory:
+  `_1pass  WORD`         # will open browser and login to specified _1pass target
 
 EXAMPLES
-    =[[Cmd]]  shell _ 1pass crunchbase
+`    =[[Cmd]]  shell _1pass crunchbase`
+

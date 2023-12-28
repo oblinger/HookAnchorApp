@@ -2,6 +2,7 @@
 
 RODRIGO: info. [[coms]]
 
+- [[CN]], 
 
 ```dataviewjs 
 let line = ""

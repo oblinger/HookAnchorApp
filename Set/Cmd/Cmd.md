@@ -1,4 +1,6 @@
 
+:: [[AWS]],   [[CV Google Webpage]],   [[ecard]],   [[showcase Webpage]]
+
 :: [[Doc Folder]]
 
 :: [[Bard Webpage]],   [[CV Jira Webpage]],   [[Fromm Pet Food Dog]],   [[SV Notion]],   [[Trash Downloads Folder]],   [[Wise]]

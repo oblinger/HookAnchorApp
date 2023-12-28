@@ -2,6 +2,11 @@
 alias: Quick Add Plugin
 ---
 
+# INFO
+## __
+
+
+
 - This is Dan's templates folder for the Quick Add plugin
 - The quick add menu is triggered by the OPT-CMD-Q
 - This menu configured in the plugin and its entries are listed here:
@@ -30,7 +35,10 @@ DOCS:
 
 EXAMPLES:
   {{DATE+1:YYYY-MM-DD}}
-
+## "
+1
+2
+3
 
 
 

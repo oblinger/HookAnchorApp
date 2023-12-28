@@ -1,1 +1,1 @@
-=[[Cmd]]   shell _1pass Canva
+=[[Cmd]]   shell _1pass Canva SV

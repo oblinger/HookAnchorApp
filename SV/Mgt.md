@@ -1,12 +1,82 @@
+- [[ROADMAP]], 
+
 # Log
 
-### 2023-10-11  OCT MGT MEETING
+### 2023-12-07  DEC MGT Meeting
 
+Inputs x annotations x James x internal signals
+
+x scripted logic for experiments/exploration
+x aggregation over many input/run/params
+x visualization of output
+
+
+STATUS
+- Team quality is quite good, as a CV Engineering team
+	- two A players, three B players.  Intelligent leadership.  
+	- Excellent given the price.  Post A we may hire a CV PhDs, for now it would be wrong
+
+- Processes need improvement
+	- Planning
+	- Documentation
+	- Testing - 
+
+- Not tracking players as well as we need.
+	- Three sprints to crack this before branching out.
+	- Good news, this is central for nearly all 
+
+
+NEEDLE MOVERS
+
+- Fast Homography
+- Belief Prop
+- Threading
+- Gallery Updates
+- Seeing
+- Doing
+
+### 2023-12-14  Jason Talk
+
+- March Delivery @ risk
+	- Can happen, add several improvements in pipe
+	- Beyond those, we need to get deeper into prob areas
+		- one at a time - can't delegate this
+	- Meanwhile need to upgrade Engineering quality
+	  its hurting our velocity
+
+- Remedy
+	- Volleyball - 
+	- Pivo - 
+	- Multi-sport Showcase - 
+	- Be later - 
+
+
+
+--- Highlights product @ risk for 80% by March
+     -- might stackup enough improvements
+--- Pivo product
+
+- +++ Better video
+- +++ Fast Homography - off court filtering; lineup; tracking
+- ??  Belief propagation
+- ??  Threading tracklets into the scrum
+- Seeing: James/filtering
+- Speed: Datasets/caching/sharing/restarts/multiplex
+- Gallery fixes? - semantic digit reco
+- Pose
+### 2023-11-13  NOV MGT Meeting
+
+[Nov Canva](https://www.canva.com/design/DAFztB__Tz8/sTXhEG4p51SIZO2N7d61vw/edit) 
+
+
+### 2023-10-11  OCT MGT MEETING
+[Canva](https://www.canva.com/design/DAFxLGPioaI/z7FJd3p9tKKtlgPD25zNvw/edit) 
 - Full AI
-- Customer Success Spreadsheet
-- AI Camera
-- Password management
 - Pre-A Ingest solutions:  Air-table --> API
+- AI Camera
+- A-la Carte
+	- Customer Success Spreadsheet
+	- Password management
 
 - high level planning - A-round - Jack's task breakdown
   SW TEAM
@@ -19,7 +89,9 @@
 	- AI-Shots 
 	- AI-Halos 
 	- AI-Minutes
-	- Full AI sport
+	- Reduce Risk on Full AI sport
+	- Productized Full-AI
+	- Prototype Second Sport
     
 
 ### 2023-09-25 Weekly meeting. 

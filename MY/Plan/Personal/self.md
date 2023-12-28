@@ -1,10 +1,15 @@
+
 [[NJ24]]: Goog job
-[[E-nxt]]: - [[Eli Schools]] 
+- WarStory: adj
+- Interview Prep
+- Back:  Rodrigo,
+
+
+[[Enxt]]: - [[Eli Schools]] 
 
 [[Mentor]]: 
 [[MED]]: hearing test
 [[Calls]]: 
-
 
 
 

@@ -85,6 +85,8 @@ United States
 ## xx Neu       <<<<<<
       Copy Templates To Folder  /Users/oblinger/Library/Application Support/com.elegantchaos.neu/Templates
 
+https://elegantchaos.com/neu/
+
 
 TO INSTALL
 - Install 'neu' app
@@ -197,8 +199,7 @@ NOTES:
   This fixed typing TAB-SHIFT too fast.
 - I imported "Caps Lock --> Hyper Key ..."  and "Map Tab ..."    (from [here](https://ke-complex-modifications.pqrs.org/#emulation-modes))   and then I swapped their actions directly in my karabiner.json file.
 
-## xx Keyboard Maestro
-- 1pass
+## xx Keyboard Maestro. (in 1pass)
 
 SETUP FILE:    !file>StartSyncingMacros     /ob/bin/Keyboard Maestro Macros.kmsync
 

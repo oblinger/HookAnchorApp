@@ -10,6 +10,22 @@
 
 
 # LOG
+
+### 2023-11-13  Dr. HUI Visit
+
+- Startup Job:  Stress/Sleep/Tinnitus from TMJ.  -->  Tinnitus
+- Notable drop in perceived capacity: last 6 months
+- VO2 Max - 31
+
+- Weight loss
+- stress/sleep
+- Diet
+
+QUESTIONS:
+--> Risks for max exertion intervals.  (160-180).   216.       120
+--> Breathing trainer
+--> Sleeping pills
+
 ### m2022-10-21  Dr. HUI Visit
 
 Most Important Targets:
@@ -18,7 +34,7 @@ Most Important Targets:
 - Diet:  Low meat.  (how much salmon?)
 
 Measuring Progression
-- c-reactive protein -
+- C-reactive protein -
 - homeocystein - 
 - apo-b - 
 

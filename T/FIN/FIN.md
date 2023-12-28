@@ -1,65 +1,14 @@
 
 :: [[FIN Log]]
 
-:: [[FIN.]],  [[FIN Topics]],  [[FIN Mint]],  [[FIN Tracking]],  
+:: [[FIN.]],  [[FIN Topics]],  [[FIN Mint]], 
 
--  [[FIN Bills]],  [[Expenses]],   [Taxes](Taxes/Taxes.md),   [Vanguard](Vanguard.md)
+- [[FIN Tracking]]:  [[FIN Recurring]],  [[FIN Bills]], [[FIN Budgeting]],
 
-- [[BillPay]],   [[FIN_Budget]],  
-
-
-# PRJ
-
-## prj2022-10-07  Fin-Rebalance
+- [[FIN Analysis]],   [[Expenses]],   [Taxes](Taxes/Taxes.md),   [Vanguard](Vanguard.md)
+- [[BillPay]],  
 
 
-### m2022-10-07  Avanti's Plan
-
--          We added all your cash to the preferred deposit program with daily liquidity and paying 2.69% now. When you make investment decisions, we can liquidate out of the program the and use the cash to invest the same day.
--          We looked at CD s and will keep you apprised of our CD as well as T-Bill yields. The current CD rate chart is attached.
--          We have sent you a Merrill accredited investor acknowledgement form to e-sign.
--          We discussed positioning your portfolio more defensively for the coming quarters or even years. In this effort, you will use ‘my financial picture’ inside your [ml.com](http://ml.com/) login to link your outside assets. We can then see your overall asset allocation and recommend changes. 
--          I have attached profiles of couple of value portfolios that we use for our clients and which  focus on dividends. We don’t have Q3 reports yet but their Q2 numbers will give you an idea of how they performed in a down market. The net numbers assume the highest fees that we can charge. Please look at the gross numbers and keep in mind that your fees will be around 1%.
--          You are interested in non-correlated alternative investments like private equity and real estate investment trusts. We have started your qualification process and will be able to send you information on open offers after  you are approved in our system.
-
-![[Screen Shot 2022-10-07 at 5.37.00 PM.png]]
-
-
-
-# # UNSORTED  
-### OLD ITEMS
--- Solve 83b issue  (Add activities to this list)
--- Consider additions to portfolio
--- Move Dodge&Cox to IRA.  
--- Set bond holdings to 10%, and Intl to 40%
--- Reallocate remaining mutual funds 
--- Re-up schawab
--- choose cape country stocks
--- Harvest capital losses  (get those from van or tax forms)
-### CONSIDER ADDITIONS
-REIT.  US-BOND.  INTL-BOND.  TIPS. (VTAPX?)
-
-_ check VTABX, VBTLX
-- Find/consider active alt for VTIAX
-
-
-CONSIDER (8-fund)   http://www.obliviousinvestor.com/8-sample-and-simple-portfolios/
-20% Vanguard 500 Index (VFINX, VOO)
-10% Vanguard Small-Cap Value Index (VISVX, VBR)
->10% Vanguard REIT Index (VGSIX, VNQ)
-10% Vanguard Total International Stock Index (VGTSX, VXUS)  == VTIAX 
-10% Vanguard FTSE All-World Ex-US Small-Cap Index (VFSVX, VSS)
-10% Vanguard International Value (VTRIX, n/a)
-15% Vanguard Total Bond Market Index (VBMFX, BND)
->15% Vanguard Inflation-Protected Securities Fund (VIPSX, TIP*)
-
-
-DANO DECISIONS
-yes  10 VGSLX -- REITs  (Ramp slowly, maybe later)   in IRA
-yes  02 VIPSX -- Bonds TIPS
-
-20 VTIAX -- Intl Total Market
-20 VTRIX -- Intl Value
 # TODO Research
 ## Questions
 ### Active managers for Intl & Emerging markets?
@@ -138,8 +87,6 @@ http://seekingalpha.com/article/3245246-two-ways-to-profit-from-the-tight-rental
 
 
 http://www.morningstar.com/funds/XNAS/DDDIX/quote.html  should be doing 13F stuff?
-# TODO later
-- open iternative brokers account 
 # FIN TOPICS
 ## DEFERRED COMP
 #### 2019-06-13 -- Can go to 0-300K each year
@@ -477,7 +424,6 @@ Soc Security  |
 ## Retire now?
 -  How much can I live on each year
 - Calculator:  https://www.sharebuilder401k.com/tools/401k-income.aspx
-## Cash basis.
 ## INFO
 To see cost basis in vanguard:
   My accounts -> cost basis
@@ -788,6 +734,75 @@ Is CAPE Broken?  http://www.hussmanfunds.com/rsi/cape.htm
 books to read    http://mebfaber.com/about/
 
 # LOG
+
+### 2023-12-06  Retirement Analysis
+
+2,700/mo SS-payments @ 65+4mo
+
+
+20,000/mo  After tax income now
+15,000/mo  75% after tax income
+10,000/mo  with both QL and DO getting SS payments
+
+$3M post tax
+
+
+
+2023-12-05
+
+
+SPENDING
+$137K - $102 = 35K - 96K = -61K  ~ -$5K/mo
+
+### 2023-00-00 very old - CONSIDER ADDITIONS
+
+
+-- Solve 83b issue  (Add activities to this list)
+-- Consider additions to portfolio
+-- Move Dodge&Cox to IRA.  
+-- Set bond holdings to 10%, and Intl to 40%
+-- Reallocate remaining mutual funds 
+-- Re-up schawab
+-- choose cape country stocks
+-- Harvest capital losses  (get those from van or tax forms)
+
+REIT.  US-BOND.  INTL-BOND.  TIPS. (VTAPX?)
+
+_ check VTABX, VBTLX
+- Find/consider active alt for VTIAX
+
+
+CONSIDER (8-fund)   http://www.obliviousinvestor.com/8-sample-and-simple-portfolios/
+20% Vanguard 500 Index (VFINX, VOO)
+10% Vanguard Small-Cap Value Index (VISVX, VBR)
+>10% Vanguard REIT Index (VGSIX, VNQ)
+10% Vanguard Total International Stock Index (VGTSX, VXUS)  == VTIAX 
+10% Vanguard FTSE All-World Ex-US Small-Cap Index (VFSVX, VSS)
+10% Vanguard International Value (VTRIX, n/a)
+15% Vanguard Total Bond Market Index (VBMFX, BND)
+>15% Vanguard Inflation-Protected Securities Fund (VIPSX, TIP*)
+
+
+DANO DECISIONS
+yes  10 VGSLX -- REITs  (Ramp slowly, maybe later)   in IRA
+yes  02 VIPSX -- Bonds TIPS
+
+20 VTIAX -- Intl Total Market
+20 VTRIX -- Intl Value
+
+### 2022-10-07  Avanti's Plan
+
+-          We added all your cash to the preferred deposit program with daily liquidity and paying 2.69% now. When you make investment decisions, we can liquidate out of the program the and use the cash to invest the same day.
+-          We looked at CD s and will keep you apprised of our CD as well as T-Bill yields. The current CD rate chart is attached.
+-          We have sent you a Merrill accredited investor acknowledgement form to e-sign.
+-          We discussed positioning your portfolio more defensively for the coming quarters or even years. In this effort, you will use ‘my financial picture’ inside your [ml.com](http://ml.com/) login to link your outside assets. We can then see your overall asset allocation and recommend changes. 
+-          I have attached profiles of couple of value portfolios that we use for our clients and which  focus on dividends. We don’t have Q3 reports yet but their Q2 numbers will give you an idea of how they performed in a down market. The net numbers assume the highest fees that we can charge. Please look at the gross numbers and keep in mind that your fees will be around 1%.
+-          You are interested in non-correlated alternative investments like private equity and real estate investment trusts. We have started your qualification process and will be able to send you information on open offers after  you are approved in our system.
+
+![[Screen Shot 2022-10-07 at 5.37.00 PM.png]]
+
+
+
 
 ### 2023-03-19  Taxes 2022
 

@@ -4,7 +4,7 @@
 - [ ] budget big transfers list	
 - [ ] giphy grab
 
-- [ ] [[Travel]]: pills; snacks
+- [ ] [[Travel Lists]]: pills; snacks
 - [ ] Update CRM workflow
 - [ ] Get logins for MyHealth
 - [ ] Process mom's Eli educational funds.

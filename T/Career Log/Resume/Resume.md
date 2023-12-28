@@ -1,5 +1,5 @@
 
-:: [[2021-10-00  AFmaterials]]
+:: [[2021-10-00  AFmaterials]], [[2024 Resume]], 
 
 :: [[Resume Samples]]
 
@@ -13,7 +13,6 @@ Addendum
 
 # TODO 
 - [ ] LI:  Featured pic for (DARPA IBM-watson-jeopardy, AF Instant design)
-- [ ] 
 
 # LINKED IN PARTS
 - [[z2 - Linked In Module]] - 
@@ -68,11 +67,11 @@ Larger exploratory DARPA efforts (1⁄2 to 5 million dollars)
 _
 ### - 4 Orgs Built, 8 Team Managed, 12 Direct Reports, 17 Countries Spanned
 
-### - 4 ORGS BUILT
+### - 3 ORGS BUILT
 - Martian
 - Aeolus
 - Analytics Fire
-- DARPA   [4-orgs if you want to count DARPA] 
+- DARPA   [4-more-orgs if you want to count DARPA] 
 
 ### - 8  TEAMS MANAGED
 1. Personal Wizards

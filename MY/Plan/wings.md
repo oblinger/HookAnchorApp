@@ -1,3 +1,5 @@
+- 
+- race condition issue - 
 - [ ] Backups - 
 - [ ] SOC 		compliance
 - [ ] [[EOCA]]:  5-part argument

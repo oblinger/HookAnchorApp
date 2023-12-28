@@ -4,7 +4,6 @@
 
 Ob Labs  (see SS4 form)
 WEB:   DOL (in 1pass)  https://www.efast.dol.gov
-le
 TYEP:  Sole Proprietor
 NAIC:  541511
 

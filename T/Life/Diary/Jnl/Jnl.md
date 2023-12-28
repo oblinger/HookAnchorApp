@@ -1,3 +1,41 @@
+### 2023-11-05  Retirement Planning
+
+2024 - Van $1,530K. 
+2030 - Dan Retires
+2042 - QL is 65
+
+
+2024 Net Worth
+1,530K Vanguard
+  665K Merrill
+  457K 
+~ ~ ~ 
+2,652K
+
+   30K Eli's 503b
+   80K Space X
+~ ~ ~
+ 110K
+ 
+  150K Personal saving
+  500K 1/2 Apartment
+  400K QL 401K
+  350K QL Stock Grant
+~ ~ ~ 
+1,400K
+
+4,162K -- 2024 all in net worth
+
+
+Private School
+$576K = $4/mo * 12 * 12
+$450K = Lump sum needed now assuming 4% return
+$160K = $40K/yr = 4yr College - In state, on campus
+
+FAANG Delta
+$1,800K
+
+
 
 ### 2023-06-22  [[NextCo]] 
 ### 2023-04-20  Life w/o Ayi

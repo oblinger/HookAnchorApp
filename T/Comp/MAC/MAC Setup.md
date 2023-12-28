@@ -53,7 +53,7 @@ SLACK: mention,
 
 
 ## OS PARAMETER CONFIG
-### FINDER SETUP
+###  #build FINDER SETUP
 #### Allow Quit Via ⌘ + Q
 ~# Finder: allow quitting via ⌘ + Q; doing so will also hide desktop icons
 defaults write com.apple.finder QuitMenuItem -bool true
@@ -428,6 +428,9 @@ Jupiter Notebook:  https://medium.com/@blessedmarcel1/how-to-install-jupyter-not
 	     Download  OSXFUSE & SSHFS  from http://osxfuse.github.io/
 
 ## PYTHON
+
+### 2023-11-17  CONDA - I now use conda for all python builds #build 
+
 
 ### 2023-05-02 Installation 
 - Google "python download mac"

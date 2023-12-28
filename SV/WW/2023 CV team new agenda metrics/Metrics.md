@@ -1,3 +1,5 @@
+
+:: [[bug]]
 TODO:
 - 
 
@@ -24,3 +26,6 @@ TODO:
 
 
 
+
+
+@Sarthi it looks like we could easily active player it out of the basic action log right?  But my understanding @maxim is that there is a standard annotation format that we have been getting from the annotation team.  Can you share an example of this format here for @sarthi to see.  if we can use the actually annotation format that is probably best.

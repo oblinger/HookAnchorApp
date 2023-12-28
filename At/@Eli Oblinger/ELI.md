@@ -3,9 +3,11 @@
 
 - [[ELI Education]]
 - [[Eli Interactions]] 
+- [[Eli Correct Responses]] 
 - [[Eli Food]] 
 - [[Eli Activities]] 
 - [[Eli Firsts]] 
+- [[Eli Friends]] 
 # TODO
 - [ ] Find babysitter
 

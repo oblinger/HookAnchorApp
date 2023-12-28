@@ -12,6 +12,7 @@
 	conda install matplotlib
 	conda install scikit-learn
 	conda install seaborn
+	conda install pyyaml
 
 
 
@@ -25,3 +26,12 @@
 	conda list
 	conda activate <envname>
 	conda deactive
+	conda env create --name NEW-NAME
+	conda create --name new-env --clone source-env
+	conda env list
+
+## Setup Commands
+
+    conda remove tk 
+    conda install -c anaconda tk
+

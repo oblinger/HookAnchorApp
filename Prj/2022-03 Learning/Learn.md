@@ -1,15 +1,20 @@
+
+# TODO
  
 ## ACTIVE
+- [[Transformers]]: family of algorithms
+- 
 - [ ] [[Coursera Notes]] - Complete Deep Learning Course
 - [ ] [[F90]] - First 90 days
 
-## PAPERS
+## QUEUE
 - [ ] Attention
+- [ ] PyTorch code 
 
 ## WINGS
 - [ ] Arima - Noomer data analysis  [asdf](ddd) 
 
-**BOOKS TO CONSIDER**
+### **BOOKS TO CONSIDER**
 - The Pragmatic Engineer - 
 - The making of a manager - Julie Zhou
 - High output MGT

@@ -1,4 +1,6 @@
 
+:: [[Eli Correct Responses]],   [[Eli Friends]]
+
 :: [[Eli Firsts]]
 
 :: [[Eli Activities]]

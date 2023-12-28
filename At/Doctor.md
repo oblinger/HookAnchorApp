@@ -1,10 +1,10 @@
 < [[Person]] < [[Service]] < [[Doctor]]
 
 
-(Master in Obsidian)
+(Master in Obsidian; Also under MEDICAL ALL)
 
 CARDIO: Peter Hui ‭415-537-8600‬ 
-   1100 Van Ness, 5th Flr
+   1100 Van Ness, 5th Flr (Sutter Health)
 DENTIST: multiple 415-585-1500 
    4 Joost Av Glenn Park Dental
 EAR NOSE: Dr Johnson 

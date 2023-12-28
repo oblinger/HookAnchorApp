@@ -2,6 +2,7 @@
 [[SV]]   [CEO](https://www.linkedin.com/in/jsyversen/)  [[@Sports Visio]]  	 [Calendly](http://calendly.com/syversen),  [[SV]], 
 - [[2023 Jason Tasks]] - 
 
+# TOP
 ## Tasks
 - vball games download
 - game annotation - 
@@ -79,6 +80,36 @@ DISCUSS
 - [ ] $1000/mo budget
 
 # LOG
+
+### 2023-12-20  Jason
+
+- People summary
+- Central activity for 2024 - fully crack Identified player tracking
+	- Low hanging fruit picked
+	- Better video 
+	- Further improvements will be uncertain and hard won
+	- Good differentiation for company, applies very broadly
+- Q1 Plan
+	- Improve Halos product
+	- Improve, Assess and maybe deliver minutes product
+	- Assess Pivo
+- Marque products
+	- Team Highlights -> Player highlights
+	- Volleyball stats
+
+- Going deeper
+- Will make things iterative better w/o slowing team too much
+
+
+AI 
+- Background swap out
+- Game summary in text (from annotations output)
+- Generative AI - Diagnose players and 
+	- here is a link about how slower point guard
+- Shot charts - heat map shot chart - whole team - 
+- Shot analysis - figure out optimal arc
+
+- plus/minus breakdown - 
 
 ### 2023-09-25  
 - three sports - 

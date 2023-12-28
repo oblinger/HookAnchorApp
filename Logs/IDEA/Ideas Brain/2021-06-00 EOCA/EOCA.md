@@ -1,5 +1,7 @@
 
+:: [[Cmd Folder]]
 
+- [[EOCA Root]] 
 [[Leviathan]] 
 
 :: [[EOCA What Happens Now]]
@@ -71,6 +73,12 @@ _
 - Humanity cannot muster cohesive response even when threat is MUCH better understood.  (e.g. climate change)
 
 >>> Should I say, pragmatically impossible to stop w/o smoking gun evidence of imminent threat.
+
+
+## === PHASES ===
+### CORP PAIRING
+- CORP == Mindless Cash Maximizers - Today corps are already 
+- Corporations are already
 
 
 ## === CORE CLAIM: UNCONTROLABILITY ===
@@ -1218,6 +1226,25 @@ The treasonous American and that's me in the treason is the treasonous thought i
 
 _
 # LOG
+
+### 2023-12-08  Society of AGIs - its not about one bad AI
+
+Thoughts about the "One bad AI" idea:
+
+AGI systems will essentially be natives of the cyber world, and cyber warfare will be a central concern. Just as our cells needed to develop immune systems early on, so will these systems too.
+
+I am doubtful that we can align AGI, not sure.
+
+but even either way all of these systems must get good at understanding the manipulation of other AGIs. Just as in cyber security getting good at defense requires skills that enable offense. So we and the AGIs will centrally focus on AGI warfare.
+
+My guess is that this naturally results in a society of mutually regulating AIs. They may or may not care about the well being of humanity, but they certainly will care to preclude an AI that is collectively bad for the aims of that group.
+
+The idea of "one bad AI" sort of implies all the other AIs are happily ignorant of attack and are blind sided by one nefarious one. This seems implausible.
+
+Perhaps the nature of cyber systems is different than biological systems in that there might be a zero-day attack that was so fundamental that it simultaneously took out all other AIs at once. Maybe, but I doubt it. A smart AGI will explicitly aim for heterogeneity in its processing specifically to guard against such zero-days.
+
+So perhaps its not about one bad AI, but rather about whether the society of AGIs decides to be 'nice' to humanity or not. (I think we will have little say in the matter except the possibly important influence of how the early days of that society evolves.)
+
 ### 2023-06-21  quote: most intelligent species is changing hands
 
 For the last 10K+ years the most intelligent species on earth, ruled the earth.

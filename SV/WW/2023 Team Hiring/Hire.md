@@ -11,7 +11,7 @@ TODO
 - Bringing Julieta onboard & choosing w/ Mery
 
 
-
+- best in class 
 
 
 - [[H-F90]] -- hiring plan

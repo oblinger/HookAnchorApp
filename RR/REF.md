@@ -9,8 +9,8 @@ LINKS:  [[RR]]   [[Refs]]
 | ----------- | --------------- | --------------------------------------------------------------------------------- |
 | r2023-08-24 | [[DL]]              | chronological summary                                                             |
 | r2022-12-08 | [[2006-12 GHOST]]   | Professor who sees the damage of corrupt judges                                   |
-| r2022-11-08 | [[E-nxt]]           | School Stats                                                                      |
-| r2022-11-08 | [[E-nxt]]           | Atlantic-Private Schools;                                                         |
+| r2022-11-08 | [[Enxt]]            | School Stats                                                                      |
+| r2022-11-08 | [[Enxt]]            | Atlantic-Private Schools;                                                         |
 | r2022-11-08 | [[DocPandas]]       | Pandas Examples                                                                   |
 | r2022-10-31 | [[Learn]]           | Pragmantic Engineer Blog                                                          |
 | r2022-10-31 | [[Learn]]           | consult's uses                                                                    |

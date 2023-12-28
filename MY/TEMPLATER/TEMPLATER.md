@@ -42,3 +42,5 @@ https://silentvoid13.github.io/Templater/internal-functions/internal-modules/fil
 
 
 <% tp.date.now("YYYY") + "-W" + tp.date.now("W", -7) %>]]
+
+## "

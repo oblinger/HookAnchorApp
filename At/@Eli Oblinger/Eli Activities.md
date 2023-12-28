@@ -1,5 +1,10 @@
-
-
+## Museums
+- Oakland zoo
+- Oakland "exploratorium". ???
+- Oakland Chabot - science and space center
+- OMCA - Oakland museum of CA - art,history, nat sci
+- [Museum of Chilren art]([https://www.mocha.org/](https://www.mocha.org/) - MOCHA
+- USS Hornet - Alameda
 ## Soccer
 
 - 415-762-5123 [SF Tots](https://www.care.com/connect/sftots/providers?months%5B%5D=36&months%5B%5D=48)  check back in Aug?

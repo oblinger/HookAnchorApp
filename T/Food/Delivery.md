@@ -4,7 +4,7 @@ ASIAN:	 Chinese, Japanese, Thai, Korean, Burmese, Vietnamese, Fusion    BOWL: Ph
 AMER:	 Seafood, American (Salad, Pizza,  Sandwich, Burger, Fast, Soul, Desert)		
 WORLD:	Italian, French, Mediterranean, German, Spanish, Mexican, Indian, African
 
-ELI:    Thai, Mexican, Chinese, Korean, Pizza, ?Seafood
+ELI:    Thai, Chinese, Korean, Pizza, Mexican, ?Seafood
 MOM:  Thai, Poki, Seafood, Japanese, Sandwich, EURO(Italian, French, German, Spanish), Salad, Pizza, Burger
 
 https://www.frannyskitchensf.com/
@@ -69,8 +69,9 @@ https://www.frannyskitchensf.com/
 | d???  GERMAN                    |                                                            |     |     |
 | d~~~  SPANISH TAPAS             | Picaro                                                     |     |     |
 | d+~~  MEDITERR                  | Mediterranean Aroma                                        |     |     |
+| d++~  MEXICAN                   | Pepitos (Eli likes it)                                     |     |     |
 | d???  MEXICAN                   | Taqueria Guadalajara (4.0Y)                                |     |     |
-| y???  MEXICAN                   | Taco Los Altos (3.5Y) seemed alittle expensive             |     |     |
+| y???  MEXICAN                   | Taco Los Altos (3.5Y) seemed a little expensive            |     |     |
 | d???  INDIAN                    |                                                            |     |     |
 | d???  AFRICAN                   |                                                            |     |     |
 |                                 |                                                            |     |     |

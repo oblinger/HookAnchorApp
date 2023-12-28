@@ -2,9 +2,10 @@
 :: [[race]]  [[Socialism]]  [[AI-HISTORY]]  
   [Climate](Climate.md)  
   [race](race.md)
-  [race](race.md)  [trump](trump.md)
+  [race](race.md)  [trump](trump.md) [[Palestinians]] 
+. 
 
-# REF
+
 ### r2022-07-18  Optimal Tax Policy
 - https://scholar.harvard.edu/files/mankiw/files/optimal_taxation_in_theory.pdf
 

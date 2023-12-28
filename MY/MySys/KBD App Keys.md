@@ -30,54 +30,54 @@
 | Y   |                        |                    |                             |                      |                 |
 | Z   | UNDO / REDO            |                    | ZOOM mode                   |                      |                 |
 
-| CH    | **CMD (modify)**       | **OPTION (?note)** | **LT PAIR (Go/View)**       | **RT PAIR (Create)** | **CRTL (char)** |
-| ----- | ---------------------- | ------------------ | --------------------------- | -------------------- | --------------- |
-| -     |                        |                    | tgl LEFT pane               |                      |                 |
-| +     |                        |                    | tgl RIGHT pane              |                      |                 |
-| {     |                        |                    | nav BACK / DAILY note       |                      |                 |
-| }     |                        |                    | nav FORWARD / DAILY note    |                      |                 |
-| \\    |                        |                    |                             |                      |                 |
-| ;     |                        |                    | DARK mode                   |                      |                 |
-| '     |                        |                    | LIGHT mode                  |                      |                 |
-| ,     | SETTINGS               |                    |                             |                      |                 |
-| .     |                        |                    |                             |                      |                 |
-| /     | tgl COMMENT            |                    |                             |                      |                 |
-| ~     |                        |                    |                             |                      |                 |
-| TAB   |                        | tgl FOLD           | tgl FOLD                    |                      |                 |
-| LT    | FOLD list              |                    |                             |                      |                 |
-| RT    | UNFOLD list            |                    |                             |                      |                 |
-| UP    | mv line UP             |                    |                             |                      |                 |
-| DN    | mv line DOWN           |                    |                             |                      |                 |
-| SPACE | Obsidian Anchor        |                    |                             |                      |                 |
-| ENTR  | tgl BOX / tgl CHECK    | follow LINK        | show LINK in pane           |                      |                 |
-| INS   |                        |                    |                             |                      |                 |
-| DEL   |                        |                    |                             |                      |                 |
-| HOME  |                        |                    |                             |                      |                 |
-| END   |                        |                    |                             |                      |                 |
-| PgUp  |                        |                    |                             |                      |                 |
-| PgDn  |                        |                    |                             |                      |                 |
-| 1     | ONE pane               |                    | MERGE one window            |                      |                 |
-| 2     | split VERTICALLY       |                    | SPLIT vertically into 2     |                      |                 |
-| 3     | split HORIZONTAL       |                    | SPLIT horizontally          |                      |                 |
-| 4     |                        |                    |                             |                      |                 |
-| 5     |                        |                    |                             |                      |                 |
-| 6     |                        |                    |                             |                      |                 |
-| 7     |                        |                    |                             |                      |                 |
-| 8     |                        |                    |                             |                      |                 |
-| 9     |                        |                    |                             |                      |                 |
-| 0     |                        |                    |                             |                      |                 |
-| F1    |                        |                    |                             |                      |                 |
-| F2    |                        |                    |                             |                      |                 |
-| F3    |                        |                    |                             |                      |                 |
-| F4    |                        |                    |                             |                      |                 |
-| F5    |                        |                    | PREV daily note             |                      |                 |
-| F6    |                        |                    | TODAY'S daily note          |                      |                 |
-| F7    |                        |                    | NEXT daily note             |                      |                 |
-| F8    | -copy-obs-URL-         |                    |                             |                      |                 |
-| F9    |                        |                    |                             | / Logi-top-button    |                 |
-| F10   |                        |                    |                             |                      |                 |
-| F11   |                        |                    |                             |                      |                 |
-| F12   |                        |                    |                             |                      |                 |
+| CH    | **CMD (modify)**    | **OPTION (?note)** | **LT PAIR (Go/View)**    | **RT PAIR (Create)** | **CRTL (char)** |
+| ----- | ------------------- | ------------------ | ------------------------ | -------------------- | --------------- |
+| -     |                     |                    | tgl LEFT pane            |                      |                 |
+| +     |                     |                    | tgl RIGHT pane           |                      |                 |
+| {     |                     |                    | nav BACK / DAILY note    |                      |                 |
+| }     |                     |                    | nav FORWARD / DAILY note |                      |                 |
+| \\    |                     |                    |                          |                      |                 |
+| ;     |                     |                    | DARK mode                |                      |                 |
+| '     |                     |                    | LIGHT mode               |                      |                 |
+| ,     | SETTINGS            |                    |                          |                      |                 |
+| .     |                     |                    |                          |                      |                 |
+| /     | tgl COMMENT         |                    |                          |                      |                 |
+| ~     |                     |                    |                          |                      |                 |
+| TAB   |                     | tgl FOLD           | tgl FOLD                 |                      |                 |
+| LT    | Shift Header Down   |                    | FOLD list                |                      |                 |
+| RT    | Shift Header Up     |                    | UNFOLD list              |                      |                 |
+| UP    | mv line UP          |                    |                          |                      |                 |
+| DN    | mv line DOWN        |                    |                          |                      |                 |
+| SPACE | Obsidian Anchor     |                    |                          |                      |                 |
+| ENTR  | tgl BOX / tgl CHECK | follow LINK        | show LINK in pane        |                      |                 |
+| INS   |                     |                    |                          |                      |                 |
+| DEL   |                     |                    |                          |                      |                 |
+| HOME  |                     |                    |                          |                      |                 |
+| END   |                     |                    |                          |                      |                 |
+| PgUp  |                     |                    |                          |                      |                 |
+| PgDn  |                     |                    |                          |                      |                 |
+| 1     | ONE pane            |                    | MERGE one window         |                      |                 |
+| 2     | split VERTICALLY    |                    | SPLIT vertically into 2  |                      |                 |
+| 3     | split HORIZONTAL    |                    | SPLIT horizontally       |                      |                 |
+| 4     |                     |                    |                          |                      |                 |
+| 5     |                     |                    |                          |                      |                 |
+| 6     |                     |                    |                          |                      |                 |
+| 7     |                     |                    |                          |                      |                 |
+| 8     |                     |                    |                          |                      |                 |
+| 9     |                     |                    |                          |                      |                 |
+| 0     |                     |                    |                          |                      |                 |
+| F1    |                     |                    |                          |                      |                 |
+| F2    |                     |                    |                          |                      |                 |
+| F3    |                     |                    |                          |                      |                 |
+| F4    |                     |                    |                          |                      |                 |
+| F5    |                     |                    | PREV daily note          |                      |                 |
+| F6    |                     |                    | TODAY'S daily note       |                      |                 |
+| F7    |                     |                    | NEXT daily note          |                      |                 |
+| F8    | -copy-obs-URL-      |                    |                          |                      |                 |
+| F9    |                     |                    |                          | / Logi-top-button    |                 |
+| F10   |                     |                    |                          |                      |                 |
+| F11   |                     |                    |                          |                      |                 |
+| F12   |                     |                    |                          |                      |                 |
 
 CMD OPT
 F REPLACE

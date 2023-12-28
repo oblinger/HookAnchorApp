@@ -1,21 +1,20 @@
  [[MED]], [[Doctor]] 
 
+
+- Glucose Patch
+
 ### TODO
-- [ ] VO2MAX
-     park merced  [VO2max](https://kin.sfsu.edu/exercise-fitness-testing) 
-   [ucsf](https://hpc.ucsf.edu/contact-us) 415-514-6077
-
-- [ ] Call Hassler about Gasterenterology appointment
+- [ ] Call Hassler about Gastroenterology appointment
 - [ ] Call Eyes about aug-16 @ 3:15 (what doc will I see)
-
 
 - [ ] DAILY: Walking or Peleton w/ weights
 - [ ] MED:  Book appt w/ EMT check nose inflammation
+
 ### Later
-- [ ] LAB-CORP - 2622 Ocean Ave 416-469-9710  (Fasted in morning before 10am)
 - [ ] Get Alzheimer checked - by mental acuity testing
 - [ ] Call doc about my heart test results.
 - [ ] [[MED|MED]] Heart health institute
+
 ### Pause
 - [ ] Read about back exercises
 - [ ] Figure out new meals

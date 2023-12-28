@@ -1,10 +1,21 @@
 
-:: [[-[p[ppp]],   [[2023-06 Roadmap old ]]
+:: [[2023-06 Roadmap old]],   [[Roadmap Notes]]
 
-:: [[2023 SV Roadmap]],   [[Roadmap]]
+:: [[2023-06 Roadmap old ]]
+
+:: [[2023 SV Roadmap]],   [[ROADMAP]]
 
 
 # LOG
+
+### 2023-11-20  Long Term Plan
+
+- Dominate stats/highlights for AAU
+	- CAC << CLV
+		- Ads - Paid Advertising - 
+		- Viral - Unpaid social-sharing based signups
+		- Events - Event based customer signups
+		- B2B - B2B customer 
 
 ### 2023-08 A-Round Ingest RoadMap
 

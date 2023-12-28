@@ -1,14 +1,7 @@
-- ascend conference
-- Cust Success Tracking
 
-- [ups](https://www.ups.com/track?track=yes&trackNums=1Z7827170390791176&loc=en_US&requester=ST/trackdetails) 
-- Aaron call setup
+- get licence
 
-- action items to Jack
-  - Fixed Camera Ingest w/ Miguel
-  - Device serach for portable
-
-- med ask doctor is I can workout to the max
+- shoes research
 - [ ] praveen contacts for chatting
 - [ ] Braz boss info
 - [ ] sarthi (intro interview)

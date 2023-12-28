@@ -10,6 +10,19 @@
 
 
 # LOG
+
+### 2023-12-01  Bare Bottle Beer
+
+- Need to double down if you want a google job, treat this as a second job
+- YOU SHOULD HAVE "MANAGER" in your title.
+  e.g.  Tech Lead Manager
+
+- LEVEL 6 - 10 Reports      (respectable)
+- LEVEL 7 - 20-40 reports  (my target role)
+- LEVEL 8 - Pretty hard to come into Google @ this level
+
+
+
 ### m2023-01-18  comp at google 
 
 

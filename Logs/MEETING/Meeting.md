@@ -48,7 +48,6 @@
 | m2022-10-14 | [[@Jason Syversen]]      | Jason Response Discussion                                         |
 | m2022-10-13 | [[@Avidan Ross]]         | Intro meeting                                                     |
 | m2022-10-13 | [[@Joseph Yeh]]          | SV decision                                                       |
-| m2022-10-07 | [[FIN]]                  | Avanti's Plan                                                     |
 | m2022-10-03 | [[@Jason Syversen]]      | Counter Offer Discussion  (where I proposed the $12M cap)         |
 | m2022-09-22 | [[@Jason Syversen]]      | Joining SV as consultant                                          |
 | m2022-09-14 | [[@Joseph Yeh]]          | Jason decision                                                    |

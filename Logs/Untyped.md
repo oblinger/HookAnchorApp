@@ -6,10 +6,68 @@
 
 | Date       | File                       | Notes                                                                                                                             |
 | ---------- | -------------------------- | --------------------------------------------------------------------------------------------------------------------------------- |
+| 2023-12-26 | [[LCM]]                        | Notes for the Run class implementation:                                                                                           |
+| 2023-12-23 | [[Palestinians]]               | Try Number two -                                                                                                                  |
+| 2023-12-20 | [[QQ]]                         | Generalize system                                                                                                                 |
+| 2023-12-20 | [[@Jason Syversen]]            | Jason                                                                                                                             |
+| 2023-12-17 | [[Palestinians]]               | Response to Nadav                                                                                                                 |
+| 2023-12-16 | [[FIN Macro Tracking]]         | Estimating our burn                                                                                                               |
+| 2023-12-15 | [[@Chase Bank]]                | Opening an INK card                                                                                                               |
+| 2023-12-14 | [[CV]]                         | Points [[@Maxim Dorogov]]                                                                                                         |
+| 2023-12-14 | [[Mgt]]                        | Jason Talk                                                                                                                        |
+| 2023-12-12 | [[Container]]                  | Guiding Thoughts                                                                                                                  |
+| 2023-12-08 | [[EOCA]]                       | Society of AGIs - its not about one bad AI                                                                                        |
+| 2023-12-07 | [[Enxt]]                       | Roof Top -                                                                                                                        |
+| 2023-12-07 | [[Mgt]]                        | DEC MGT Meeting                                                                                                                   |
+| 2023-12-06 | [[Cookie Clicker]]             |                                                                                                                                   |
+| 2023-12-06 | [[CV]]                         |                                                                                                                                   |
+| 2023-12-06 | [[FIN]]                        | Retirement Analysis                                                                                                               |
+| 2023-12-04 | [[Reflections]]                | Depressive-time-suck                                                                                                              |
+| 2023-12-01 | [[@Siobhan Quinn]]             | Bare Bottle Beer                                                                                                                  |
+| 2023-12-01 | [[Cookie Clicker]]             |                                                                                                                                   |
+| 2023-12-01 | [[CV]]                         | ideas from james                                                                                                                  |
+| 2023-12-01 | [[CVP]]                        | ideas from james                                                                                                                  |
+| 2023-11-30 | [[LCM]]                        | Visualization                                                                                                                     |
+| 2023-11-27 | [[Reflections]]                | Obispo-Trip.  am I depressed?                                                                                                     |
+| 2023-11-21 | [[NJ24]]                       | Tasks from URI                                                                                                                    |
+| 2023-11-20 | [[Eli Firsts]]                 | First Crush - Babysitter                                                                                                          |
+| 2023-11-20 | [[SV Roadmap]]                 | Long Term Plan                                                                                                                    |
+| 2023-11-19 | [[GoogleJob]]                  | Uri                                                                                                                               |
+| 2023-11-17 | [[CV]]                         | Alg2 Build #build                                                                                                                 |
+| 2023-11-17 | [[MAC Setup]]                  | CONDA - I now use conda for all python builds #build                                                                              |
+| 2023-11-17 | [[DocDocker]]                  | Docker for SV laptop setup                                                                                                        |
+| 2023-11-16 | [[DocDocker]]                  | Creating my own docker image                                                                                                      |
+| 2023-11-13 | [[Mgt]]                        | NOV MGT Meeting                                                                                                                   |
+| 2023-11-13 | [[MED Heart]]                  | Dr. HUI Visit                                                                                                                     |
+| 2023-11-09 | [[CVP]]                        | Still image Shot Analysis                                                                                                         |
+| 2023-11-07 | [[LOG Trash]]                  | Notes never sent or OBE                                                                                                           |
+| 2023-11-07 | [[Reflections]]                | Two Blistering Avoidance Failures:  Eating the Frog.  Exercising.                                                                 |
+| 2023-11-06 | [[CVP]]                        | Weekly Management Meeting                                                                                                         |
+| 2023-11-05 | [[Jnl]]                        | Retirement Planning                                                                                                               |
+| 2023-11-04 | [[Palestinians]]               | published on medium                                                                                                               |
+| 2023-11-03 | [[SV Customer]]                | Cust Op -                                                                                                                         |
+| 2023-11-01 | [[GoogleJob]]                  | [[@Siobhan Quinn]],   [[@Doug Gordin]],                                                                                           |
+| 2023-11-01 | [[Palestinians]]               | Israel & Palestine -- Thinking out loud:  I propose a THREE "state" solution.                                                     |
+| 2023-10-31 | [[CVP]]                        | Big Rock Planning                                                                                                                 |
+| 2023-10-30 | [[Enxt]]                       | USDF school fair                                                                                                                  |
+| 2023-10-30 | [[CVP]]                        | kinds of visualizations                                                                                                           |
+| 2023-10-23 | [[CV]]                         | Experimentation tool                                                                                                              |
+| 2023-10-19 | [[LCM]]                        | Report Semantics                                                                                                                  |
+| 2023-10-18 | [[Palestinians]]               | THREE STATE SOLUTION                                                                                                              |
+| 2023-10-17 | [[@Tyler Behsman]]             | Volleyball                                                                                                                        |
+| 2023-10-17 | [[Enxt]]                       | List of schools from Qingling's friend                                                                                            |
+| 2023-10-16 | [[CV]]                         | ========                                                                                                                          |
+| 2023-10-15 | [[Palestinians]]               | Both Isralies and Palestinians are justified in their hearts.  Thinking out loud: I propose a THREE state solution.               |
+| 2023-10-14 | [[LCM]]                        | JOB semantics                                                                                                                     |
+| 2023-10-14 | [[LCM]]                        | Pts Semantics                                                                                                                     |
+| 2023-10-13 | [[CV Annotations]]             | Timings                                                                                                                           |
+| 2023-10-13 | [[CV Annotations]]             | notes                                                                                                                             |
 | 2023-10-12 | [[@Clash.TV]]                  | Intro Call                                                                                                                        |
+| 2023-10-12 | [[Travel]]                     | Ascend Workshop                                                                                                                   |
 | 2023-10-11 | [[Mgt]]                        | OCT MGT MEETING                                                                                                                   |
+| 2023-10-10 | [[@Blaine Bowers]]             | Intro Call                                                                                                                        |
 | 2023-10-09 | [[QA-hiring]]                  | Julietta                                                                                                                          |
-| 2023-10-06 | [[LCM]]                        | Batch Command                                                                                                                     |
+| 2023-10-06 | [[LCM]]                        | Pts Command                                                                                                                       |
 | 2023-10-05 | [[@Joseph Yeh]]                | Google Director's job.  & Other stuff                                                                                             |
 | 2023-10-04 | [[2023-07 ML-CV Ops Job Post]] | Juan                                                                                                                              |
 | 2023-10-03 | [[SNIP]]                       | Science vs Engineering                                                                                                            |
@@ -31,9 +89,9 @@
 | 2023-09-27 | [[Hire]]                       | Luciano Start                                                                                                                     |
 | 2023-09-25 | [[Mgt]]                        | Weekly meeting.                                                                                                                   |
 | 2023-09-25 | [[@Jason Syversen]]            |                                                                                                                                   |
+| 2023-09-21 | [[CVP]]                        | AI goals from Mgt meeting                                                                                                         |
 | 2023-09-21 | [[@Jasu Victorio]]             | Review                                                                                                                            |
 | 2023-09-21 | [[Bugs]]                       | Fellowship of the bug                                                                                                             |
-| 2023-09-21 | [[CVP]]                        | AI goals from Mgt meeting                                                                                                         |
 | 2023-09-21 | [[2023-07 Backend Architect]]  | Matias                                                                                                                            |
 | 2023-09-19 | [[@Realplay]]                  | Intro Discussion                                                                                                                  |
 | 2023-09-19 | [[2023-07 Director of SW]]     | Ignacio Larranaga                                                                                                                 |
@@ -65,26 +123,26 @@
 | 2023-08-25 | [[2023-07 Director of SW]]     | Head - Nico                                                                                                                       |
 | 2023-08-23 | [[@Grzegorz Biziel]]           | Better Gallery                                                                                                                    |
 | 2023-08-22 | [[@Sapphire Ventures]]         | Recruiting                                                                                                                        |
-| 2023-08-21 | [[@CV]]                        | Grzegorz                                                                                                                          |
-| 2023-08-21 | [[@CV]]                        | Sarthi                                                                                                                            |
-| 2023-08-21 | [[@CV]]                        | Martin                                                                                                                            |
+| 2023-08-21 | [[CV]]                         | Grzegorz                                                                                                                          |
+| 2023-08-21 | [[CV]]                         | Sarthi                                                                                                                            |
+| 2023-08-21 | [[CV]]                         | Martin                                                                                                                            |
 | 2023-08-21 | [[Reflections]]                | Gratitude Meditation; Feeling valued @ work                                                                                       |
 | 2023-08-13 | [[QQ]]                         | INJEST                                                                                                                            |
 | 2023-08-11 | [[Phone]]                      | Cancer Vet                                                                                                                        |
 | 2023-08-10 | [[Eli]]                        | First Bike Ride                                                                                                                   |
 | 2023-08-10 | [[@Sage Vet]]                  | Surgery to remove cancer                                                                                                          |
 | 2023-08-09 | [[Mgt]]                        | AUG MGT MEETING                                                                                                                   |
-| 2023-08-03 | [[@CV]]                        | DEV OPs                                                                                                                           |
+| 2023-08-03 | [[CV]]                         | DEV OPs                                                                                                                           |
 | 2023-08-03 | [[@Brian French]]              | update                                                                                                                            |
 | 2023-08-03 | [[Career Log]]                 | Customer Acquisition (from nick) ---                                                                                              |
-| 2023-08-02 | [[@CV]]                        | Grzegorz                                                                                                                          |
+| 2023-08-02 | [[CV]]                         | Grzegorz                                                                                                                          |
 | 2023-08-01 | [[@Jack Potvin]]               | evaluation                                                                                                                        |
 | 2023-07-31 | [[@Agustin Polito]]            | Intro - discussion about Head SW at                                                                                               |
-| 2023-07-31 | [[@CV]]                        | Maxim                                                                                                                             |
-| 2023-07-31 | [[@CV]]                        | Sarthi                                                                                                                            |
-| 2023-07-31 | [[@CV]]                        | Martin                                                                                                                            |
-| 2023-07-31 | [[@CV]]                        | Vishal                                                                                                                            |
-| 2023-07-31 | [[@CV]]                        | Color ALG                                                                                                                         |
+| 2023-07-31 | [[CV]]                         | Maxim                                                                                                                             |
+| 2023-07-31 | [[CV]]                         | Sarthi                                                                                                                            |
+| 2023-07-31 | [[CV]]                         | Martin                                                                                                                            |
+| 2023-07-31 | [[CV]]                         | Vishal                                                                                                                            |
+| 2023-07-31 | [[CV]]                         | Color ALG                                                                                                                         |
 | 2023-07-26 | [[@Nick Allen]]                | Pitching a Business                                                                                                               |
 | 2023-07-26 | [[SNIP]]                       | Piano                                                                                                                             |
 | 2023-07-26 | [[race]]                       | black dad myth                                                                                                                    |
@@ -97,7 +155,7 @@
 | 2023-07-15 | [[ToBuy]]                      | Coffee Table                                                                                                                      |
 | 2023-07-15 | [[ToBuy]]                      | Table                                                                                                                             |
 | 2023-07-14 | [[Phone]]                      | DEXA. [[@Dexafit]]                                                                                                                |
-| 2023-07-13 | [[@CV]]                        | Progression of halo apps                                                                                                          |
+| 2023-07-13 | [[CV]]                         | Progression of halo apps                                                                                                          |
 | 2023-07-12 | [[Mgt]]                        | Deliverables                                                                                                                      |
 | 2023-07-12 | [[QQ]]                         | Halos                                                                                                                             |
 | 2023-07-11 | [[BKT]]                        | Reality time                                                                                                                      |
@@ -109,7 +167,7 @@
 | 2023-07-07 | [[SCR Note]]                   | Older                                                                                                                             |
 | 2023-07-05 | [[@Phillip Alvelda]]           | Ideas:                                                                                                                            |
 | 2023-07-05 | [[QQ]]                         | Push2Prod                                                                                                                         |
-| 2023-07-03 | [[@CV]]                        | CV team components                                                                                                                |
+| 2023-07-03 | [[CV]]                         | CV team components                                                                                                                |
 | 2023-06-29 | [[@Grzegorz Biziel]]           | how does gallery work                                                                                                             |
 | 2023-06-29 | [[@Phillip Alvelda]]           |                                                                                                                                   |
 | 2023-06-28 | [[Phone]]                      | Coffee usage                                                                                                                      |
@@ -119,7 +177,7 @@
 | 2023-06-21 | [[EOCA]]                       | quote: most intelligent species is changing hands                                                                                 |
 | 2023-06-21 | [[Productivity]]               | Workday Ideal Breakdown                                                                                                           |
 | 2023-06-20 | [[BKT]]                        | July 2023 Buckets                                                                                                                 |
-| 2023-06-20 | [[@CV]]                        | GRZ how many frams                                                                                                                |
+| 2023-06-20 | [[CV]]                         | GRZ how many frams                                                                                                                |
 | 2023-06-20 | [[SV Product]]                 | Few ideas from Jason                                                                                                              |
 | 2023-06-20 | [[Reflections]]                | A HAH - Treadmill                                                                                                                 |
 | 2023-06-20 | [[Reflections]]                | Work First; Streamlining;                                                                                                         |
@@ -132,8 +190,8 @@
 | 2023-06-08 | [[Eli Interactions]]           | From sensitivity class                                                                                                            |
 | 2023-06-08 | [[Phone]]                      | 1-password ideas for QL                                                                                                           |
 | 2023-06-07 | [[@Jason Syversen]]            | Xxxxx                                                                                                                             |
-| 2023-06-06 | [[@CV]]                        | daily                                                                                                                             |
-| 2023-06-06 | [[@CV]]                        | ???                                                                                                                               |
+| 2023-06-06 | [[CV]]                         | daily                                                                                                                             |
+| 2023-06-06 | [[CV]]                         | ???                                                                                                                               |
 | 2023-06-05 | [[@Juan Heber]]                | Applied to Sports Visio                                                                                                           |
 | 2023-06-04 | [[@Jason Syversen]]            | HIRING TIMELINE  [[@Circle#2023-06-03 Jason's Visit]]                                                                             |
 | 2023-06-03 | [[Eli Interactions]]           | Positive Discipline (from Miss Amanda)                                                                                            |
@@ -143,25 +201,25 @@
 | 2023-06-03 | [[@Circle]]                    | AGENDA -- CV Team Roadmap                                                                                                         |
 | 2023-06-03 | [[@Circle]]                    | VISIT -- Old Notes                                                                                                                |
 | 2023-06-01 | [[@Jason Syversen]]            | Doug @ Sapphire Ventures                                                                                                          |
-| 2023-05-31 | [[@CV]]                        | Daily                                                                                                                             |
-| 2023-05-30 | [[@CV]]                        | Daily                                                                                                                             |
+| 2023-05-31 | [[CV]]                         | Daily                                                                                                                             |
+| 2023-05-30 | [[CV]]                         | Daily                                                                                                                             |
 | 2023-05-30 | [[@Vishal Batavia]]            | Autoruning our stuff                                                                                                              |
 | 2023-05-30 | [[@Vishal Batavia]]            | Intro conversation                                                                                                                |
-| 2023-05-29 | [[@CV]]                        | Daily                                                                                                                             |
+| 2023-05-29 | [[CV]]                         | Daily                                                                                                                             |
 | 2023-05-28 | [[@Maxim Dorogov]]             | Money metric discussion                                                                                                           |
 | 2023-05-28 | [[Bites]]                      | Sound Bites From Jason                                                                                                            |
 | 2023-05-26 | [[@Jason Syversen]]            | Lightbank (Joythi)                                                                                                                |
 | 2023-05-26 | [[COM Investor]]               | Sports based investors                                                                                                            |
-| 2023-05-24 | [[@CV]]                        | Daily                                                                                                                             |
+| 2023-05-24 | [[CV]]                         | Daily                                                                                                                             |
 | 2023-05-24 | [[@Jason Syversen]]            | before travel discussion                                                                                                          |
-| 2023-05-23 | [[@CV]]                        |                                                                                                                                   |
+| 2023-05-23 | [[CV]]                         |                                                                                                                                   |
 | 2023-05-23 | [[Phone]]                      |                                                                                                                                   |
-| 2023-05-22 | [[@CV]]                        | Weekly                                                                                                                            |
-| 2023-05-22 | [[@CV]]                        | daily                                                                                                                             |
-| 2023-05-22 | [[@CV]]                        | TAKING MEASUREMENTS                                                                                                               |
+| 2023-05-22 | [[CV]]                         | Weekly                                                                                                                            |
+| 2023-05-22 | [[CV]]                         | daily                                                                                                                             |
+| 2023-05-22 | [[CV]]                         | TAKING MEASUREMENTS                                                                                                               |
 | 2023-05-18 | [[@Maxim Dorogov]]             | intro                                                                                                                             |
 | 2023-05-17 | [[@James Briones]]             | sports                                                                                                                            |
-| 2023-05-17 | [[@CV]]                        | [[SVCV Re-ID]]                                                                                                                    |
+| 2023-05-17 | [[CV]]                         | [[SVCV Re-ID]]                                                                                                                    |
 | 2023-05-17 | [[SVCV Re-ID]]                 | Prior Re-ID work.                                                                                                                 |
 | 2023-05-16 | [[Bridge]]                     | Networking events                                                                                                                 |
 | 2023-05-15 | [[@Brian French]]              | Change in Report To Structure                                                                                                     |
@@ -213,8 +271,8 @@
 | 2023-04-21 | [[2023 SV Strategic Plan]]     | Strategic Tasks                                                                                                                   |
 | 2023-04-21 | [[Reset]]                      | AI Deliverables                                                                                                                   |
 | 2023-04-21 | [[Reset]]                      | discussion                                                                                                                        |
-| 2023-04-20 | [[@CV]]                        | Big Ideas                                                                                                                         |
-| 2023-04-20 | [[@CV]]                        | What are people doing?                                                                                                            |
+| 2023-04-20 | [[CV]]                         | Big Ideas                                                                                                                         |
+| 2023-04-20 | [[CV]]                         | What are people doing?                                                                                                            |
 | 2023-04-20 | [[Headless]]                   | Record App 2.0                                                                                                                    |
 | 2023-04-20 | [[Headless]]                   | Original Note                                                                                                                     |
 | 2023-04-20 | [[Jnl]]                        | Life w/o Ayi                                                                                                                      |
@@ -318,7 +376,7 @@
 | 2023-01-23 | [[SV]]                         | Prior Inventions                                                                                                                  |
 | 2023-01-19 | [[DYL]]                        | Dan Job                                                                                                                           |
 | 2023-01-11 | [[References]]                 | Grzegorz References                                                                                                               |
-| 2023-01-10 | [[FIN_Budget]]                 | Energy Usage                                                                                                                      |
+| 2023-01-10 | [[FIN Budgeting]]              | Energy Usage                                                                                                                      |
 | 2023-01-09 | [[Habit]]                      | Wake-First-MIT                                                                                                                    |
 | 2023-01-06 | [[AMA Notes]]                  | Fake Taylor's Tea                                                                                                                 |
 | 2023-01-03 | [[@Apple]]                     | Laptop Repair                                                                                                                     |
@@ -326,6 +384,7 @@
 | 2023-01-01 | [[DYL]]                        | Edu Corp                                                                                                                          |
 | 2023-00-00 | [[Meta CRM]]                   | CRM FORMAT                                                                                                                        |
 | 2023-00-00 | [[BKT]]                        | buckets                                                                                                                           |
+| 2023-00-00 | [[FIN]]                        | very old - CONSIDER ADDITIONS                                                                                                     |
 | 2022-12-16 | [[2022-W51]]                   | FRI                                                                                                                               |
 | 2022-12-14 | [[Phone]]                      | Fix roof fin                                                                                                                      |
 | 2022-12-14 | [[2022-W51]]                   | WED                                                                                                                               |
@@ -336,7 +395,7 @@
 | 2022-12-08 | [[Phone]]                      | Solar Installer                                                                                                                   |
 | 2022-12-07 | [[resLI]]                      | Framing Self                                                                                                                      |
 | 2022-12-03 | [[Phone]]                      | Thumb Tack TV install                                                                                                             |
-| 2022-12-01 | [[E-nxt]]                      | Alta Vista                                                                                                                        |
+| 2022-12-01 | [[Enxt]]                       | Alta Vista                                                                                                                        |
 | 2022-11-30 | [[2022-W46]]                   | short week (cyber monday)                                                                                                         |
 | 2022-11-29 | [[Phone]]                      | [[@Audi]]                                                                                                                         |
 | 2022-11-29 | [[Phone]]                      | Horizon 7.4AT  Treadmill                                                                                                          |
@@ -346,7 +405,7 @@
 | 2022-11-23 | [[Parents]]                    | Mom's multiple facebook accounts                                                                                                  |
 | 2022-11-22 | [[Phone]]                      | Fire Dept response for Eli                                                                                                        |
 | 2022-11-20 | [[ToBuy]]                      | Big Insta-pot                                                                                                                     |
-| 2022-11-10 | [[E-nxt]]                      | The San Francisco School                                                                                                          |
+| 2022-11-10 | [[Enxt]]                       | The San Francisco School                                                                                                          |
 | 2022-11-10 | [[MED]]                        | Maria Cross - Registered Dietician                                                                                                |
 | 2022-11-08 | [[2022-10-00 Find Advisor]]    | Finding a Fiduciary                                                                                                               |
 | 2022-11-08 | [[2022-10-00 Find Advisor]]    | My plan                                                                                                                           |
@@ -360,6 +419,7 @@
 | 2022-10-16 | [[ToBuy]]                      | bedrm Dresser                                                                                                                     |
 | 2022-10-10 | [[Nanny]]                      | SAVE MONEY                                                                                                                        |
 | 2022-10-07 | [[Phone]]                      | Lily - Tax Info for 2021 return                                                                                                   |
+| 2022-10-07 | [[FIN]]                        | Avanti's Plan                                                                                                                     |
 | 2022-10-03 | [[2022-W40]]                   | fre                                                                                                                               |
 | 2022-09-30 | [[Phone]]                      | Building Work Desk in livingroom                                                                                                  |
 | 2022-09-29 | [[Daily]]                      |                                                                                                                                   |
@@ -642,7 +702,7 @@
 | 2020-08-17 | [[FIN]]                        | QL - AYI payments                                                                                                                 |
 | 2020-08-15 | [[Journal Old]]                | My Futures                                                                                                                        |
 | 2020-07-23 | [[MAC Apps]]                   | Applications folder                                                                                                               |
-| 2020-07-18 | [[FIN_Budget]]                 | Budget                                                                                                                            |
+| 2020-07-18 | [[FIN Budgeting]]              | Budget                                                                                                                            |
 | 2020-05-11 | [[OLD 2020 Weekly]]            | NOW COUNTING 90 SLOTS                                                                                                             |
 | 2020-04-27 | [[MED]]                        | Notes for doc meeting                                                                                                             |
 | 2020-04-14 | [[MED]]                        | Stress test results                                                                                                               |

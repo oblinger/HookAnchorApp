@@ -1,3 +1,4 @@
+- [x] TT equity
 [Fixed](https://docs.google.com/document/d/1wvC4qILhRswR3gDBiCqWG7b
 - [x] fix _shutdown
 - [x] bday Dinner Anomaly

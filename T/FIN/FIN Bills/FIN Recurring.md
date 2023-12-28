@@ -1,12 +1,12 @@
 clean email
 
-< [[FIN]]    [[FIN_Budget]]
+< [[FIN]]    [[FIN Budgeting]]
 
 # RECURRING BILLS
 ## BIGGER BILLS - SCHWAB JOINT 6956-1345
 - $5,200/bi	House Taxes ???
 - $350/yr		Elan (Vijaya accountant)
-- $6,010/mo House Mortgage
+- $4,500?/mo House Mortgage
 - $220/mo		PGandE Gas/Ele
 - $130/mo    SF PUC  (water bill)  Used to be $70 now $130  (2020.08 $321.02)
 - $130/mo?	Sunset Scavenger  (where did this bill go???)
@@ -29,18 +29,19 @@ clean email
 - $20/mo		Core Power Yoga
 - $16/mo 		Netflix
 - $15/m		Spotify Premium
-- $13/m		Peloton  7/31
-- $10/mo		APPLE - Apple iCloud 2TB Storage (Apple ID -> MyPic -> Plan)  (!!! Should be used by whole family)
-- $10/mo		GITHUB Copilot - pr
-- $9/mo		Dan's Apple iCloud
+- $15/mo     Audible for dad
+- $10/mo		APPLE - Apple iCloud 2TB Storage 
+                (Apple ID -> MyPic -> Plan)  (!!! Used by whole family??)
+- $10/mo		xxx?  GITHUB Copilot - pr
+- $9/mo		xxx?  Dan's Apple iCloud
 - $7/mo		Apple TV+ 
 - $6/mo		WSJ - Wall Street Journal  (2023-02)
 - $5/mo		Medium Monthly
 
 - $100/yr		Blink Plus  (renews 11-09-2023) 
 - $55/yr		Vorwerk Thermomix Recipes (2023-12-11.  Web -> {ChefHat} -> Account )
-- $39/yr  		Consumer Reports Digital   2023-08-23   (
-- ???			CR On Health cancelled?)
+- $39/yr  		Consumer Reports Digital   2023-08-23
+- ???			CR On Health
 - $36/yr		1-Password
 - $30/yr		APPLE - Insight Timer  (APPLE SUBSCRIPTION iPhone -> Settings -> Me -> Subscriptions)
 - $20/yr		File This
@@ -90,6 +91,7 @@ SAPPHIRE
 - crunch base
 
 PAUSED
+- $13/m		Peloton  7/31/22
 - $50/yr		Nest Aware (Cancelled)
 - $0/m		Ny times (revert to $15/m no Nov-23-2020)
 - $			Disney+

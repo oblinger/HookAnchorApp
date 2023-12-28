@@ -1,15 +1,10 @@
-## Waiting
-- [ ] TT equity
 
 ## Soon
-- planning CV
-
-## Now
 - [July Prod](https://docs.google.com/document/d/19_vRUK2Azl5miH7IuDdWZTtyuArSkLU_W_RKUUUiT-o/edit#heading=h.1i0iol8j5snp) 
-- Sarthi Call
 - Ask Slack Field Testing
-- Patent Search
+- Sarthi Call
 
+- Patent Search
 
 - Pivo&Rec Tickets on their own board (or just in icebox)
 - Strat doc
@@ -25,6 +20,7 @@
 
 - [[Meta CRM]] 
 
+- [[Cookie Clicker]] 
 - AI section of Jack Doc
 - end2end w/ V0 of 2/4 then 3/4 directions
 

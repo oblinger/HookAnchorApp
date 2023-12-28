@@ -2,12 +2,10 @@
 [Folder](https://drive.google.com/drive/u/0/folders/1aKeEdnbKsvIqt4-KgFXzCcAuAmUxyiyA) 
 - [proposal](https://docs.google.com/document/d/1E4EfjYjdkg883J1qhvp-aibiugZ1CounntZ0DrfhIsA/edit#heading=h.rdueoa6l79t8) - 
 - [Figure](https://docs.google.com/presentation/d/1peKBLGXUUUtfxSIKXgCiRZUFeMPWDGaEATWpOYlwbPM/edit#slide=id.p) - 
-
-
-
 - [[/Users/oblinger/ob/kmr/Work/SV/WW/WW Registration UX/Game Manager UX.pptx|PPTX]] [gDrive](https://drive.google.com/drive/u/0/folders/1aKeEdnbKsvIqt4-KgFXzCcAuAmUxyiyA) 
 
 
+## __
 - [ ] - [ ] cap city program - aau NE basketball - // many programs at one tournament
 
 
@@ -34,7 +32,18 @@ Ball Detect, Camera Angle, Rules to Move Camera, Recovery from lost calls.
 
 
 
-# GAMES TAXONOMY
+# LOG
+
+### 2023-12-12  Guiding Thoughts
+
+- Players & Teams have nominal containers
+	- active for a period and may change
+	- may have multiple assignments
+	- e.g.  player team1, team2. add/removed over time
+				game league
+
+
+### 2023-03-??  GAMES TAXONOMY
 
 
 GAME - A key SV building block is a GAME.  A game is comprised of zero or more recordings, and optional meta data about who is playing, where, with what jersey colors etc.

@@ -1,3 +1,32 @@
+### 2023-12-04  Depressive-time-suck
+
+Sunday was a pretty big waste.
+- Just not motivated so I kill many hours watching TV or reading/write on Medium
+- Need to organize fun into my week so I am motivated
+- Need to really organize my energies into actionable channels, so I make bite-sized progress in key areas so I feel better.
+  Adding this to [[full]] section.
+
+
+### 2023-11-27  Obispo-Trip.  am I depressed?
+
+Travelled to Saint Louis Obispo over the weekend.
+Being on the beach with Eli was fun, but in general these days I have little motivation to do hard things.
+
+I think I need to focus on growing this motivation
+I need to re-frame what really matters to me.
+
+I think my motivation is low, because clarity of my mission is so poor.
+
+
+Too many things have been accepted... too many abstract plans to someday fix all of them.
+
+Feels overwhelming... I play solitaire instead!
+
+### 2023-11-07  Two Blistering Avoidance Failures:  Eating the Frog.  Exercising.
+
+My ability to push myself is just not strong, if I have some activity that I am avoiding then I really go into a tail spin and just never do the activity.
+
+
 ### 2023-08-21  Gratitude Meditation; Feeling valued @ work
 
 Gratitude meditation course is giving a new view on my day to day.

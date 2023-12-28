@@ -1,3 +1,18 @@
+### 2023-11-20  First Crush - Babysitter
+
+Maria came over so we could go for Eli's baptism class.
+
+In the minutes after Maria (his favorite babysitter) arrived, he noticed the little hair brush we use on his hair.
+
+(He has never once picked it up or used it before)
+
+But now he grabs it and starts combing his hair down with relish.
+
+I guess you just have to have the right motivation :-)
+
+
+
+
 
 
 

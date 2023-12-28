@@ -1,6 +1,6 @@
 
 - [[V.]], 
-- [[SV Release Planning]] - 
+- [[SV Planning]] - 
 - [[SV Dashboards]] - 
 
 

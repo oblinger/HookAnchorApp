@@ -1,6 +1,6 @@
 
 :: [[FIN Accounts]], 
-:: [[FIN_Budget]],   [[FIN Recurring]],   [[z old Bills]]
+:: [[FIN Budgeting]],   [[FIN Recurring]],   [[z old Bills]]
 
 
 # SETUP

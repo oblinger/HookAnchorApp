@@ -1,5 +1,7 @@
 =[[START]]     [Head of Operations](https://www.linkedin.com/in/jamesmarvinbriones/)  [[@Rzero]].  #y24 
 
+
+- [Miguel's tasks](https://docs.google.com/document/d/1uoT-CZW0ICLvbkosD5uLb84Yh11eujl9WTrOuug74nU/edit) - 
 - Payments with Wise
 
 - Head of PH operations @ AF

@@ -5,6 +5,17 @@
 # QUICK - QUICK work projects
 
 
+### 2023-12-20  Generalize system
+
+
+Entity: Person, Team, Game
+Containers:  DAG of Entity
+Select: List containers & field values.
+Data: Entity=> Dict[column, value]
+Columns:  computed or static
+
+
+
 ### 2023-08-13  INJEST
 
 - Responsive soln

@@ -1,24 +1,31 @@
 
-:: [[RASA]],   [[dddddd]]
+:: [[LSTM]],   [[dddddd]]
 
-:: [[Segment Anything]]. [[Transformers]],
+. [[Transformers]],
 
 :: [[VAE - Variational Auto Encoder]],   [[Attention]],   [[Gradient Checking]],   [[NG Notation]],   [[Invertable Density Estimation]],   [[Self Supervised Learning]],   [[Activation Functions]],   [[Auto Encoders]],  [[VAE]]
-- [[DL Notation]],  [[NG Notation]], 
-- [[DL algs]], [[DL topics]], [[DL optimization]], [[DL strategy]], 
+- [[DL algs]], [[DL topics]], [[DL optimization]], 
   [Regularization](Regularization.md),   [GANs](GANs.md),   [NN](NN.md)
 =[[TAG]] <[[ML]] 
 
 - [[@Yoshua Bengio]] 
-- [Coursera Notes](Coursera%20Notes.md),  [[NN]],  [@Yoshua Bengio](@Yoshua%20Bengio.md),  
+- [Coursera Notes](Coursera%20Notes.md),    [@Yoshua Bengio](@Yoshua%20Bengio.md),  
 
-[[RLHF Reinforcement Learning from Human Feedback]], 
+[[NN]],
+- [[GANs]]
+- [[DL]]
 
-[[DL topics]] 
+[[DL]] - 
+- [[RNN]] 
+- [[CNN]] 
 
-[[DL algs]] 
 
-[[DL optimization]] - 
+
+- [[DL topics]]: 			[[RLHF Reinforcement Learning from Human Feedback]],  
+- [[DL Notation]]:		[[NG Notation]], 
+- [[DL algs]]:				[[RASA]], [[Segment Anything]], 
+- [[DL optimization]] - 
+- [[DL strategy]], 
 
 
 

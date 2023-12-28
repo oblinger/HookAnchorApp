@@ -11,22 +11,25 @@ SETUP GITHUB ON NEW COMPUTER
 
 - COMMANDS
 
-		# 
-		git config --unset-all credential.helper              # from ~/.gitconfig  (i think)
-		git config --global --unset-all credential.helper     # from (repo home)/.git/config
-		git config --system --unset-all credential.helper     # from /etc/gitconfiggdrive 
+        # cd into repo folder
+        git config --unset-all credential.helper              # from ~/.gitconfig  (i think)
+        git config --global --unset-all credential.helper     # from (repo home)/.git/config
+        git config --system --unset-all credential.helper     # from /etc/gitconfiggdrive 
 
-      git config --global --unset credential.helper   # only if credential exists
-      git config --global user.name "Dan Oblinger"
-      git config --global user.email "code@oblinger.us"
-      git config --global credential.helper cache    # will permanently cache the credential 
+        git config --global --unset credential.helper   # only if credential exists
+        git config --global user.name "Dan Oblinger"
+        git config --global user.email "code@oblinger.us"
+        git config --global credential.helper cache    # will permanently cache the credential 
 
-      git remote add origin https://github.com/oblinger/kmr.git
-      git push origin master
-      git push --set-upstream origin master
-      git push origin
+        # git remove remove origin
+        git remote add origin https://github.com/oblinger/kmr.git
+        git push origin master
+        git push --set-upstream origin master
+        git push origin
 
 
+SETUP FOR BIT BUCKET ON NEW COMPUTER
+- Login to BitBucket --> !Gear --> 
 
 
 

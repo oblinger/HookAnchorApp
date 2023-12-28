@@ -1,4 +1,7 @@
 
+
+
+
   - [[spirit_older_bigger]]
 
 
@@ -6,10 +9,12 @@
  Miracolo eucaristico
 - Enclical. Human vitae.  Vows.   Love letter.   Spiritual plan
 - 
-- Markus Aralius meditations -- have a short bit before I sleep or when I wake of uplifting or though provoking reading
+- Markus Aralias meditations -- have a short bit before I sleep or when I wake of uplifting or though provoking reading
 - 
 - is a slow less dense read: [books](https://www.amazon.com/Varieties-Religious-Experience-Penguin-American/dp/0140390340/ref=asc_df_0140390340/?tag=hyprod-20&linkCode=df0&hvadid=312607785736&hvpos=1o1&hvnetw=g&hvrand=17380473608366033599&hvpone=&hvptwo=&hvqmt=&hvdev=c&hvdvcmdl=&hvlocint=&hvlocphy=9061273&hvtargid=pla-414961594307&psc=1&tag=&ref=&adgrpid=61775261186&hvpone=&hvptwo=&hvadid=312607785736&hvpos=1o1&hvnetw=g&hvrand=17380473608366033599&hvqmt=&hvdev=c&hvdvcmdl=&hvlocint=&hvlocphy=9061273&hvtargid=pla-414961594307) 
-### Catholic mariage stuff
+
+
+### Catholic marriage stuff 
 
 THANK YOU Daniel and Qingling (TL)!
 

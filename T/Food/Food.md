@@ -6,7 +6,7 @@
  - TOPICS:  	[[Noom Notes]],  [[ReBuy]],  [[Restaurants]], [[Try Foods]], 
  - SMASS:		[[ContainerWeights]],  [[Glycemic Index]],  [old-word-shopping-list](groc.docx),  
  - MEALS:		[[Meals]],  [[Entrees]], [[Meals Vegetables]], 
- - 				[[Eli Food]],  [[Meals Thermomix]] 
+ - 				[[Eli Food]],  [[Meals Thermomix]], [[Food Parents]], 
 
 
 
