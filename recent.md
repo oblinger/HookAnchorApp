@@ -431,10 +431,10 @@
 | Sat Feb 18 | [[@Yashin Lin\|Yashin Lin]] | [[@Yashin Lin#BS]] | 
 | Sat Feb 18 | [[@Yashin Lin\|Yashin Lin]] | [[@Yashin Lin#EVELOPMENT AREAS]] | 
 | Sat Feb 18 | [[MY Stuff\|MY Stuff]] | [[MY Stuff#LIANCES]] | 
-| Sat Feb 18 | [[full\|full]] | [[full#F]] =]] | 
+| Sat Feb 18 | [[full\|full]] | [[full#LF]] =]] | 
 | Sat Feb 18 | [[full\|full]] | [[full#k]] =]] | 
 | Sat Feb 18 | [[full\|full]] | [[full#Social]] =]] | 
-| Sat Feb 18 | [[prime\|prime]] | [[prime#rning]] =]] | 
+| Sat Feb 18 | [[prime\|prime]] | [[prime#arning]] =]] | 
 | Sat Feb 18 | [[prime\|prime]] | [[prime#eMLR]] =]] | 
 | Sat Feb 18 | [[Trip\|Trip]] | [[Trip#rch Release]] | 
 | Sat Feb 18 | [[Trip\|Trip]] | [[Trip#mments with the Team]] | 
