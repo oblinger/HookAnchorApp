@@ -1,5 +1,6 @@
 
 
+Sun Dec 31 	 [[@Dan Oblinger\|+++]]   [[@Dan Oblinger#2023-12-31  yet another]]  
 Sun Dec 31 	 [[@Dan Oblinger\|+++]]   [[@Dan Oblinger#LOG]]  
 Sun Dec 31 	 [[@Agustin Polito\|+++]]   [[@Agustin Polito#  [CTO](https://www.thumbtack.com/request/67g3jg3g/bids/16ke]]  
 Sun Dec 31 	 [[@Allison Binns\|+++]]   [[@Allison Binns#  Head of ESG & Sustainability [[@Morgan Stanley]] ]]  
