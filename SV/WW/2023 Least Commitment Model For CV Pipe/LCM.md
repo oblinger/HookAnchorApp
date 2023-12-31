@@ -6,6 +6,7 @@ TODO:
 - [[2023 Least Commitment Model For CV Pipe]]
 - [Least Commit v2](https://docs.google.com/document/d/1kxGMrmPOr9S6whRnV0LI0UpWGeyBzTn8WGDq7ITM4Sc/edit): grz
 
+
 # LOG
 
 ### 2023-12-26  Notes for the Run class implementation:
