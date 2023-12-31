@@ -1,6 +1,6 @@
 
 
-| date | page | heading | 
+| date date date | page | heading | 
 | --- | --- | --- | 
 | Dec-31 | [[@Agustin Polito\|Agustin Polito]] | [[@Agustin Polito#  [CTO](https://www.thumbtack.com/request/67g3jg3g/bids/16kedbfq/messages) [[@Co]] | 
 | Dec-31 | [[@Allison Binns\|Allison Binns]] | [[@Allison Binns#  Head of ESG & Sustainability [[@Morgan Stanley]] ]] | 
