@@ -85,7 +85,7 @@ easter
 - [x] passport
 - [x] dongle with usbc ports
 - [x] buy freezer containers
-- [x] UROLOGIST - Dr Tom Liu 415-353-2200 400 Parnassus #610A
+- [x] UROLOGIST - Dr Tom Liu 415-353-2200 400 Parnassus # 610A
 - [x] buy duvet cover
 - [x] take ball launcher back.
 - [x] att

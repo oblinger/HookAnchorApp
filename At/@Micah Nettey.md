@@ -1,4 +1,4 @@
-=[[Person]]        [Founder]()  [[@StemPivot]] 
+#pp        [Founder]()  [[@StemPivot]] 
 
 
 - His mentor [[@Moses Baffour Awuah]]

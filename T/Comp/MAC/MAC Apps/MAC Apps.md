@@ -630,7 +630,7 @@ Use Amphemetifine
 
 ## xx Notester
 - Eclipse -> File -> Eclipse -> Java -> RunnableJARfile 
-- #-space "jar bundle"  (add file to the /ob/data/notester/mac folder)
+- ~# -space "jar bundle"  (add file to the /ob/data/notester/mac folder)
 - FOR NOTESTER I needed to install Java 8 (the JRE I think; but I searched Java JVM; and version said ti woluld not work w. chrome, which I ignored)
 ## xx Flotato Pro
 
@@ -957,9 +957,9 @@ Chrome -> File -> Print
 (2) Cords connect & power on
 
 --> If it does not print
-  #L  prefs  -> printers  -> print queue
+  ~# L  prefs  -> printers  -> print queue
   
-  --> see if print queue is paused
+   --> see if print queue is paused
 
 ## xx Carbon Copy Cloner 4
 

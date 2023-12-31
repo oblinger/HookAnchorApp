@@ -1,4 +1,4 @@
-=[[Person]].   [Electronic Engineer](https://www.linkedin.com/in/maxim-dorogov/) [[@Sports Visio]]
+#pp.   [Electronic Engineer](https://www.linkedin.com/in/maxim-dorogov/) [[@Sports Visio]]
 
 
 

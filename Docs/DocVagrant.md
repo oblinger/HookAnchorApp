@@ -260,7 +260,7 @@ For more information on Web-based test clients, see URL (TBD).
 
 # Virtual Box
   # This this the VM software that Vagrant is running on.
-  - #-space VirtualBox
+  - ~# -space VirtualBox
 
 # HowTo
 ## Setup Snipits

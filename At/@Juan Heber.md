@@ -1,4 +1,4 @@
-=[[Person]]   [Full Stack Dev](https://www.linkedin.com/in/juanbautistaheber/) [[@Analytics Fire]] 
+#pp   [Full Stack Dev](https://www.linkedin.com/in/juanbautistaheber/) [[@Analytics Fire]] 
 
 # LOG
 ### 2023-06-05  Applied to Sports Visio

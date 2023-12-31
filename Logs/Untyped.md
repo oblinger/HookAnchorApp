@@ -464,7 +464,7 @@
 | 2022-04-07 | [[FirstTouch]]                 | Joe Yeh Recruiter Outline                                                                                                         |
 | 2022-04-06 | [[Letters]]                    | John Cameron thank you                                                                                                            |
 | 2022-04-05 | [[COM Campaigns OLDER]]        | FAANG ML  [[FAANG#2022-04-05 - topics - Ask FAANG folks about hiring|topics]].                                                    |
-| 2022-04-05 | [[COM Campaigns OLDER]]        | VC recruiters / Headhunter List   [[__BeVC__#m2022-04-06 Recruiter topics|TOPICS]]                                                |
+| 2022-04-05 | [[COM Campaigns OLDER]]        | VC recruiters / Headhunter List   [[__BeVC__m2022-04-06 Recruiter topics|TOPICS]]                                                 |
 | 2022-04-05 | [[FAANG]]                      | topics - Ask FAANG folks about hiring                                                                                             |
 | 2022-04-04 | [[ToBuy]]                      | Crisper                                                                                                                           |
 | 2022-04-03 | [[Bache]]                      | Bartholome Flores - Restraining order 220-052-081                                                                                 |

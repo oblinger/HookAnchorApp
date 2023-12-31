@@ -65,7 +65,7 @@ OPTIONAL SHORT NAME
 ### HISTORY
 
 - Creates [[HISTORY]].md page from git log -p
-- [ ] Add 'history' all changed files by commit    #foo_bar 
+- [ ] Add 'history' all changed files by commit    # foo_bar 
 
 
 ### SEND

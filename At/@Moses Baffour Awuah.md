@@ -1,4 +1,4 @@
-=[[Person]]  
+#pp  
 - Met thru his mentee [[@Micah Nettey]].
 
 

@@ -25,7 +25,7 @@ AUTO RELOADING REPL
   (do (require 'ppp-clj.core_test :reload-all) (run-tests 'ppp-clj.core-test))
 
 
-- up arrow then #enter
+- up arrow then # enter
 
 
 # DOCS

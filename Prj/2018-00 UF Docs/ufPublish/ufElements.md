@@ -1019,7 +1019,7 @@ KEY IDEAS
 			- can be constants within that scope, or a reference to a slot in the scope
 			- ???
 
-**Solution #1a** -- Variation within a context is only dependent upon the bindings of immediate children slots in parent tree, but not in descendents of parents.  
+**Solution #1 a** -- Variation within a context is only dependent upon the bindings of immediate children slots in parent tree, but not in descendents of parents.  
 - Thus mod-counters can be used within the space tree to track change.
 	- new instances can be shaped according to current class spec
 	- changes in slots could leave old instances on old tree

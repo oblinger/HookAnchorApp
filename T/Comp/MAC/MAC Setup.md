@@ -282,7 +282,7 @@ finder -> #, -> Advanced -> "When Performing Search"  !"Search Current Folder"
 defaults write com.apple.mail AddressesIncludeNameOnPasteboard -bool false
 
 #### SETUP PARAMAETERS TRIED ON 15" 
-- OSX -> #L Pref -> Keyboard -> Shortcuts -> Services -> Shortcut -> Files and Folders -> ! CreateDocument
+- OSX -> # L Pref -> Keyboard -> Shortcuts -> Services -> Shortcut -> Files and Folders -> ! CreateDocument
   
 ### MAIL -- DELETE2ARCHIVE  make delete key do an archive action
 

@@ -1,3 +1,3 @@
-=[[Person]].   [Growth Team Partner](https://www.linkedin.com/in/ignacio-diorio-/) [[@Talent Cross]]. 
+#pp.   [Growth Team Partner](https://www.linkedin.com/in/ignacio-diorio-/) [[@Talent Cross]]. 
 
 

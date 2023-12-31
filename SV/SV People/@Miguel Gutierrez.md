@@ -1,5 +1,5 @@
 
-=[[Person]].   [Head of Vendor Ops](chrome://newtab/) [[@Sports Visio]]
+#pp.   [Head of Vendor Ops](chrome://newtab/) [[@Sports Visio]]
 
 # LOG
 

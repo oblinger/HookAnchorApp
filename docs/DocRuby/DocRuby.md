@@ -40,13 +40,13 @@ https://developer.apple.com/library/mac/#documentation/Cocoa/Conceptual/RubyPyth
 # EXECUTE
 #   run
 #   osascript
-#
+~#
 # I/O
 #   get_clipboard              -- returns clipboard as a string
 #   sets_clipboard(str)        -- sets the clipboard to be the string
 #   send_keys(keys [,using])   -- sends 'keys' to app w. focus.  
 #                                 using = "shift down, option down, control down, command down"
-#   send_key(int)              -- sends single applescript keycode  (see #-space keycode)
+~#   send_key(int)              -- sends single applescript keycode  (see # -space keycode)
 #                                 also http://www.codemacs.com/coding/applescript/applescript-key-codes-reference.8288271.htm
 
 # $: << File.dirname(__FILE__)
@@ -152,7 +152,7 @@ Class   use  <
 
 private /../ /../ 
 
-close #xx  closes #xx fix #xx fixes #xx
+close # xx  closes # xx fix # xx fixes # xx
 
 
 
@@ -345,7 +345,7 @@ to_a, to_ary, to_s, transpose, uniq, uniq!, unshift, values_at, zip, |
 [LIST] l.join(", ")
 
 # BLAM RUBY IO
-File.expand_path("..", "/ob/bin/nstr") #parent folder
+File.expand_path("..", "/ob/bin/nstr") # parent folder
 
 # RUBY Topics
 ## Modules & Classes

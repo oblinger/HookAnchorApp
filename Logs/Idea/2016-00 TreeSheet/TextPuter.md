@@ -431,7 +431,7 @@ _
         tit!le tag		this is a title with a prefix preference
 
 
-any #foo_bar is a link to the indicated name.
+any # foo_bar is a link to the indicated name.
 _
 ### --- LIVE DATA ---
 

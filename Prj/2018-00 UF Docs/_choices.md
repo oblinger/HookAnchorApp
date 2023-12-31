@@ -1296,8 +1296,8 @@ DISCUSSION
 
 ISSUE: Which integer value indicates that a k/v pair is a listy pair?
 CHOICE #1: Could enumerate listy pairs starting at 0 with interspersed k/v pairs
-CHOICE #1a: As with #1 but require that other k/v pairs are not integers, if they are, then they are upgraded to a listy pair with a Pair as their value
-CHOICE #1b: skip over k values that are saved as a non listy pair.
+CHOICE #1 a: As with #1 but require that other k/v pairs are not integers, if they are, then they are upgraded to a listy pair with a Pair as their value
+CHOICE #1 b: skip over k values that are saved as a non listy pair.
 CHOICE #2: A k/v pair is listy iff it is the nth pair and k=n
 
 

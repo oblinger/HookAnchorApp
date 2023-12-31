@@ -467,7 +467,7 @@ other ideas in this thread:
  [https://apple.stackexchange.com/questions/159548/prevent-auto-pairing-for-certain-devices-bluetooth](https://apple.stackexchange.com/questions/159548/prevent-auto-pairing-for-certain-devices-bluetooth)  
  
 ## = AIRPODS MAX - How to get device switching to work
-#space 
+~# space 
 
 ALL DEVICES:
   -> pref -> Bluetooth -> Airpod Max -> !Options -> off "Automatic Head Detection" 

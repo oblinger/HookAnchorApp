@@ -478,8 +478,8 @@ notester("top")
 
 tell document "/Users/oblinger/ref/todo.org"
 	activate
-	#keystroke "X"
-	#keystroke "ref"
+	# keystroke "X"
+	# keystroke "ref"
 	
 end tell
 
@@ -488,8 +488,8 @@ end tell
 
 tell document "/Users/oblinger/ref/todo.org"
 	activate
-	#keystroke "X"
-	#keystroke "ref"
+	# keystroke "X"
+	# keystroke "ref"
 	
 end tell
 

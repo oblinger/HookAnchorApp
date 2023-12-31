@@ -401,7 +401,7 @@ Here are the parts of the money:
 
   # But lets pick a time period now where the loan would have interest:  If by some bizarre reason 
   we had not sold the car in SIX months, then lets make the whole loan be at 10% interest
-  starting from day one.  Basically this should just #NEVER# happen.
+  starting from day one.  Basically this should just NEVER happen.
 
   # Also since I am not making any money on this deal, I really don't want to loose money either!
   So if for whatever reason a car does not sell for as much as you paid for it, then you
@@ -457,7 +457,7 @@ Here are the parts of the money:
 
   # But lets pick a time period now where the loan would have interest:  If by some bizarre reason 
   we had not sold the car in SIX months, then lets make the whole loan be at 10% interest
-  starting from day one.  Basically this should just #NEVER# happen.
+  starting from day one.  Basically this should just NEVER happen.
 
   # Also since I am not making any money on this deal, I really don't want to loose money either!
   So if for whatever reason a car does not sell for as much as you paid for it, then you
@@ -520,7 +520,7 @@ Here are the parts of the money:
 
   # But lets pick a time period now where the loan would have interest:  If by some bizarre reason 
   we had not sold the car in SIX months, then lets make the whole loan be at 10% interest
-  starting from day one.  Basically this should just #NEVER# happen.
+  starting from day one.  Basically this should just NEVER happen.
 
   # Also since I am not making any money on this deal, I really don't want to loose money either!
   So if for whatever reason a car does not sell for as much as you paid for it, then you
@@ -730,7 +730,7 @@ Here are the parts of the money:
 
   # But lets pick a time period now where the loan would have interest:  If by some bizarre reason 
   we had not sold the car in SIX months, then lets make the whole loan be at 10% interest
-  starting from day one.  Basically this should just #NEVER# happen.
+  starting from day one.  Basically this should just NEVER happen.
 
   # Also since I am not making any money on this deal, I really don't want to loose money either!
   So if for whatever reason a car does not sell for as much as you paid for it, then you

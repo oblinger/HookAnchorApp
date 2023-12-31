@@ -1,4 +1,4 @@
-=[[Person]]     [Software and climate leader](https://www.linkedin.com/in/jwachman/)  [[@Sunnova]]  
+#pp     [Software and climate leader](https://www.linkedin.com/in/jwachman/)  [[@Sunnova]]  
 
 
 # LOG 

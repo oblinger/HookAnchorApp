@@ -99,7 +99,7 @@ OTHER:	Salary; Cooking&tasks; Long Days
 
 
 ### KEY Q
--- #mosBaby ; #mosNanny ; references ; Housing ; goals
+-- # mosBaby ; # mosNanny ; references ; Housing ; goals
 -- pay ; hours ~ 3x10 ; 3x8
 -- EstablishJobContinuity&LeavingReasons
 
@@ -521,7 +521,7 @@ heavier so walking up.  (babies carrying up and down stairs)
 -- she does on evenings/weekends/plans-wants, her approach to child-raising, 
 -- cooking 1meal+leftovers ; laundry ; odd jobs ; 
 ### --key-q--
--- #mosBaby ; #mosNanny ; references ; Housing ; goals
+-- # mosBaby ; # mosNanny ; references ; Housing ; goals
 -- pay ; hours ~ 3x10 ; 3x8
 -- EstablishJobContinuity&LeavingReasons
 

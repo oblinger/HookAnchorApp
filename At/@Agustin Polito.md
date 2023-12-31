@@ -1,4 +1,4 @@
-=[[Person]]   [CTO](https://www.thumbtack.com/request/67g3jg3g/bids/16kedbfq/messages) [[@Cometa]] 
+#pp   [CTO](https://www.thumbtack.com/request/67g3jg3g/bids/16kedbfq/messages) [[@Cometa]] 
 
 
 # Log

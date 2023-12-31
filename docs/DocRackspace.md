@@ -153,7 +153,7 @@ $ http://50.57.115.58/
 # ssh sc@184.106.165.117     userpass
 # http://paybygroup.com/
 # http://184.106.165.117/
-#-->  MySQL, MyPHP passwords, 
+~# -->  MySQL, MyPHP passwords, 
 #### Getting AZAT passaords
 /etc/phpmyadmin
 /etc/dbconfig-common/phpmyadmin.conf  <--- in here

@@ -1,4 +1,4 @@
-=[[Person]]
+#pp
 
 - Friend of [[@Jack Potvin]] who is a volleyball coach
 	

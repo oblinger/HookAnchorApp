@@ -1,4 +1,4 @@
-=[[Person]]   [CEO](https://www.linkedin.com/in/isaactcohen/) [[@ManyMangos]] 
+#pp   [CEO](https://www.linkedin.com/in/isaactcohen/) [[@ManyMangos]] 
 
 We each own the IP that we have created.  For clarity the EduCorp concept, framework, and details are owned by Dan Oblinger.  And both Dan Oblinger and Isaac have unlimited rights to use any IP relating to specific business proposals that are shared within this collaboration.
 

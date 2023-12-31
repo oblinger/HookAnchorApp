@@ -177,7 +177,7 @@ $76     01.??     Uber trip to SJ  (Meeting #2)
 $14     02.03     Round trip on caltrain to SJ   (Meeting #3)
 
 $16.99  01.17 e   Wifi for vegas?/taiwan? flight
-        01.06     Vegas Flight  southwsest  #RDCHNT
+        01.06     Vegas Flight  southwsest  # RDCHNT
 
 ## Wedding
 

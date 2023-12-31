@@ -10,7 +10,7 @@
 :: [[ELI Education]]
 
 :: [[Eli LOG]]
-=[[Person]]  
+#pp  
 - [[Eli]], [[BCMS]],  [[Eli Math]], [[2022-05 ELI next school]], 
 - 
 - 

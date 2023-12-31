@@ -1,4 +1,4 @@
-=[[Person]]      [Principle Technologist](https://www.facebook.com/agricimpact/)     [[@Crops Resaerch Institute Ghana]]      bbbantwi@yahoo.com   
+#pp      [Principle Technologist](https://www.facebook.com/agricimpact/)     [[@Crops Resaerch Institute Ghana]]      bbbantwi@yahoo.com   
 
 
 - [R:ed article on greenhouse in Ghana](https://rightforeducation.org/2021/08/31/adoption-of-greenhouse-technology-in-ghana/) - 

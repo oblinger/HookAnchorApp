@@ -25,7 +25,7 @@ START:
 
 
 
-### 2022-04-05  -  VC recruiters / Headhunter List   [[__BeVC__#m2022-04-06 Recruiter topics|TOPICS]] 
+### 2022-04-05  -  VC recruiters / Headhunter List   [[__BeVC__m2022-04-06 Recruiter topics|TOPICS]] 
 
 | Status | Name                 | Ask [[@Aniket Kumar]]'s head hunters?      |
 | ------ | -------------------- | ------------------------------------------ |

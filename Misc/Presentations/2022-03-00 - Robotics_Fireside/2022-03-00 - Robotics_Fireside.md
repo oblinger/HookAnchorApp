@@ -21,7 +21,7 @@ Ravi -
 # NOTES
 TRAVEL DETAILS
 	R10 12:55p-5p 
-	    Alaska 139  #MKVKUK
+	    Alaska 139  # MKVKUK
 	    Marriott Ct downtown  541-753-0199  $195.  #83371308
 	    400 South west First street, Corvallis, OR  
 	F11 6:47p-8:25p United 4706

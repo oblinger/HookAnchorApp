@@ -1,4 +1,4 @@
-=[[Person]]   [VP](https://www.linkedin.com/in/bryanjrichard/).         [[@PhotoBooth]]  
+#pp   [VP](https://www.linkedin.com/in/bryanjrichard/).         [[@PhotoBooth]]  
 
 
 

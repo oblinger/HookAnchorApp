@@ -98,7 +98,7 @@ GOAL:
  
 
 ASSUME:
-- apps are in grouped into BUCKETS organzied by #ALTERNATIVES# for similar service
+- apps are in grouped into BUCKETS organzied by ALTERNATIVES for similar service
 
 
 Payments
@@ -110,7 +110,7 @@ Payments
   (and the customer's bucket dollars are increased by  75% of that excess payment)
 - Customer can 'buy the bucket' or 'by the bucket's core'
   either of these cause all or some pkgs to be 'free' after that
-# TODO Optomizing front end speed
+# TODO Optimizing front end speed
 ### Tools 
 - google Page speed 
 - yslow
@@ -300,7 +300,7 @@ INTERVIWING TIPS
 - A conversation from one question will go for as long as it goes
   (Allow whitespace, time to think)
 - Pair interview, or have a recorder
-- How did you #FEEL# when ___ happened
+- How did you FEEL when ___ happened
 WHY??
 - really, can you tell me WHY that matters
 - say more about 

@@ -208,7 +208,7 @@ with open('eggs.csv', 'wb') as csvfile:
                             quotechar='|', quoting=csv.QUOTE_MINIMAL)
     spamwriter.writerow(['Spam'] * 5 + ['Baked Beans'])
     spamwriter.writerow(['Spam', 'Lovely Spam', 'Wonderful Spam'])
-#SNIFFER
+~# SNIFFER
 with open('example.csv', 'rb') as csvfile:
     dialect = csv.Sniffer().sniff(csvfile.read(1024))
     csvfile.seek(0)

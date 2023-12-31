@@ -1,4 +1,4 @@
-=[[Person]]   [Content Writer](https://www.linkedin.com/in/jeffrey-pratt-a65318185/)   [Website](https://jmpratt07.wixsite.com/jeffpratt)  
+#pp   [Content Writer](https://www.linkedin.com/in/jeffrey-pratt-a65318185/)   [Website](https://jmpratt07.wixsite.com/jeffpratt)  
  
 
 

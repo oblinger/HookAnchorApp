@@ -1,3 +1,3 @@
-=[[Person]]   [Founder](Not Running) [[@System2]] 
+#pp   [Founder](Not Running) [[@System2]] 
 
 

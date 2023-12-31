@@ -1,4 +1,4 @@
-=[[Person]]   [IT Consultant](https://www.linkedin.com/in/blaine-bowers-a78a81285/) [[@Rainbow Restoration]] 
+#pp   [IT Consultant](https://www.linkedin.com/in/blaine-bowers-a78a81285/) [[@Rainbow Restoration]] 
 
 
 

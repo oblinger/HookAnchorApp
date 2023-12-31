@@ -54,7 +54,7 @@ https://medium.com/syncedreview/yoshua-bengio-team-leverages-dl-to-rejuvenate-sy
 ~-~~
 Transformers:  [Attention is all you need](https://papers.nips.cc/paper/2017/file/3f5ee243547dee91fbd053c1c4a845aa-Paper.pdf) [video overview](https://www.youtube.com/watch?v=lQYkLJf4blg) [overview](https://towardsdatascience.com/attention-is-all-you-need-discovering-the-transformer-paper-73e5ff5e0634)  
 
-Mail-Reading ->  #L toReadURLs ->  #L RIL ->
+Mail-Reading ->   # L toReadURLs ->  # L RIL ->
  
 Starting A Startup Course:  http://feedshare.flipora.com/new/flip.html?src=home&url=http%3A%2F%2Fwww.businessinsider.com%2Fdustin-moskovitzs-startup-advice-deck-2014-9%3Fop%3D1%23ixzz3EL1NaRVm&topicid=684&actorId=28257643&actor=Samuel%20Nyirongo##http:%2F%2Fwww.businessinsider.com%2Fdustin-moskovitzs-startup-advice-deck-2014-9%3Fop=1%23ixzz3EL1NaRVm
 Coursra Graphical Models   https://class.coursera.org/pgm/lecture
