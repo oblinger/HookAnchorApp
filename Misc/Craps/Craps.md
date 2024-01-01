@@ -2,23 +2,29 @@
 
 ## Lifetime Craps Returns
 
+```
 
 Vegas/CES 2017                        ###   +442  [AFTER +2,359]
 -600 = -300-300                       At Balagio on $25 tables (it went fast!)
 +82  =                                At Balagio
-+665 = 1665-500-500                   At Paris Paris (one big run w. me rolling at end.  brits wanted to buy me a drink)
++665 = 1665-500-500                   At Paris Paris (one big run w. me rolling at end.  
+.                                        brits wanted to buy me a drink)
 +309 = 519-200 (10tip)                Two long rollers carried me up.  ($5 double odds table was SLOWWW)
 -400 = -200-200
 0    = 300-300                        Played down slowly, then backup up just above  ($10-3-4-5)
-0    = 600-300-300                    Rapidy lost first 300.  then down to last $50.  and back up 600+.  one role above and stopped.  ($10-3-4-5)
-+626 = 936-300 (10tip)                  dropped to $150, then built slow and steady to double then triple. ($10-3-4-5)
--800 = 0-300-300-100-100              wondered down to -400 then near -600 up down before dead.  Was bored so played again.  that money went quick!
-+560 = 1089-529 (4tip)                down 50.  paused.  down, then one long role up.
+0    = 600-300-300                    Rapidy lost first 300.  then down to last $50.  and back up 600+.  
+.                                       one role above and stopped.  ($10-3-4-5)
++626 = 936-300 (10tip)                Dropped to $150, then built slow and steady to double then triple.
+.                                       ($10-3-4-5)
+-800 = 0-300-300-100-100              Wondered down to -400 then near -600 up down before dead.  
+.                                       Was bored so played again.  that money went quick!
++560 = 1089-529 (4tip)                Down 50.  paused.  down, then one long role up.
 ----
 +442 = -600+82+665+309-400+626-800+560
 
 Vegas/CES Jan 2016                    ### +2405  [AFTER +1,917]
-+2405  = 2705? - 300                   I remember it was not quite 10x return.   (I wonder if it was larger than this?)
++2405  = 2705? - 300                   I remember it was not quite 10x return.   
+.                                      (I wonder if it was larger than this?)
 
 
 Vegas/Zion May2016                    ### +58   [AFTER -588]
@@ -29,16 +35,21 @@ Vegas/Zion May2016                    ### +58   [AFTER -588]
 +58
 
 Atl City aug2015 (Dave&My wed)        ### +355    [DOWN -646]
-+355   = 555 -200                     # Was down nearly 200.  ready to put in next $200.  then my roll was crazy.  up $400. 
-                                      # next three rollers were mostly hot.  Walked away up alot.  (with Ken&Unice)
++355   = 555 -200                     # Was down nearly 200.  ready to put in next $200.  
+.                                       then my roll was crazy.  up $400. 
+.                                     # next three rollers were mostly hot.  Walked away up alot.  
+.                                       (with Ken&Unice)
 
 Reno w. Qingling  (Tahoe Tess&Phil)   ### +275    [AFTER -1,001]
-+275   = 875 -300-300                 # dropped $300 on table followed by $300.  she gave me extra $ $ $, never used it, then was way up.
++275   = 875 -300-300                 # dropped $300 on table followed by $300.  
+.                                       she gave me extra $ $ $, never used it, then was way up.
 
-South Lake Tahoe 2015/01              ### -549    [AFTER -1,276]  (with Qingling.  she was a little wowed by the big loss)
+South Lake Tahoe 2015/01              ### -549    [AFTER -1,276]  (with Qingling.  
+.                                      she was a little wowed by the big loss)
 -549   =  51 -200-200-200             
 
-Blackbird @ Vegas  2014/02            ### +1,008  [AFTER -718]  (math does not add, maybe $200 more or $35 less??)
+Blackbird @ Vegas  2014/02            ### +1,008  [AFTER -718]  
+.                                       (math does not add, maybe $200 more or $35 less??)
 +293   = 693 -200-200                 # Fri    3-5x table Down, then VERY slow clawing back
 +980   = 980 -300-300                 #        10x table
 +285?  = 650 -200-200  -200           # Sat    Down then up.   In evening -200 on $25-3-5x table
@@ -74,6 +85,7 @@ When I learned at ICML                ### +600    [AFTER +600]
 +200   = $200 -> $400  Way to airport
 
 ----------------------------------------------
+```
 
    600     600
  1,300     700
