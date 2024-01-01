@@ -12,7 +12,7 @@
 - red-ca bage & vinegar
 - Pork Ribs: boiled&braised
 - Dumplings
-- Chicken thiaghs: bay, star anise, pepper corn, soy?, sug
+- Chicken thighs: bay, star anise, pepper corn, soy?, sug
 - 
 ## AYI
 - TOFU:  (Fried, Chicken Meatball, Mushroom, Tomato)
