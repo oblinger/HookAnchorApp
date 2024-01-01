@@ -9169,7 +9169,7 @@
 [[__scratch__\|Mon Mar 7  2022 ]]  	[[__scratch__#Henry Schein]]  
 [[__scratch__\|Mon Mar 7  2022 ]]  	[[__scratch__#BOSTON SCIENTIFIC]]  
 [[__scratch__\|Mon Mar 7  2022 ]]  	[[__scratch__#Todo]]  
-[[__scratch__\|Mon Mar 7  2022 ]]  	[[__scratch__#Tarick Fadel  (Alberta blue cross) +  ??]]  
+[[__scratch__\|Mon Mar 7  2022 ]]  	[[__scratch__#Tarick Fadel  (Alberta blue cross) +  <<??]]  
 [[__scratch__\|Mon Mar 7  2022 ]]  	[[__scratch__#Sergey Razlivkin (Dito)  >>>]]  
 [[__scratch__\|Mon Mar 7  2022 ]]  	[[__scratch__#Douglas Wilson (CK Telco) +]]  
 [[__scratch__\|Mon Mar 7  2022 ]]  	[[__scratch__#Lockdown]]  
