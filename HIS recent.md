@@ -8334,10 +8334,8 @@
 [[DocApplescript\|Wed Mar 9  2022 ]]  	[[DocApplescript#DOCS]]  
 [[DocApplescript\|Wed Mar 9  2022 ]]  	[[DocApplescript#[TOPLEVEL]]]  
 [[DocArduino\|Wed Mar 9  2022 ]]  	[[DocArduino#Setup]]  
-[[DocBash\|Wed Mar 9  2022 ]]  	[[DocBash#BLAM BASH
-]]  
-[[DocBash\|Wed Mar 9  2022 ]]  	[[DocBash#BLAM BASH
-]]  
+[[DocBash\|Wed Mar 9  2022 ]]  	[[DocBash#BLAM BASH]]  
+[[DocBash\|Wed Mar 9  2022 ]]  	[[DocBash#BLAM BASH]]  
 [[DocCPP\|Wed Mar 9  2022 ]]  	[[DocCPP#Docs]]  
 [[DocClojure\|Wed Mar 9  2022 ]]  	[[DocClojure#lein]]  
 [[DocClojure\|Wed Mar 9  2022 ]]  	[[DocClojure#DOCS]]  
@@ -8439,23 +8437,15 @@
 [[DocOSX\|Wed Mar 9  2022 ]]  	[[DocOSX#Stuff I never really use but cannot delete either because of]]  
 [[DocOSX\|Wed Mar 9  2022 ]]  	[[DocOSX#does not work]]  
 [[DocObjectiveC\|Wed Mar 9  2022 ]]  	[[DocObjectiveC#Docs]]  
-[[DocPyML\|Wed Mar 9  2022 ]]  	[[DocPyML#show level three
-]]  
-[[DocPyML\|Wed Mar 9  2022 ]]  	[[DocPyML#Docs
-]]  
-[[DocPyML\|Wed Mar 9  2022 ]]  	[[DocPyML#NumPy
-]]  
-[[DocPyML\|Wed Mar 9  2022 ]]  	[[DocPyML#Lib SciPy
-]]  
-[[DocPyML\|Wed Mar 9  2022 ]]  	[[DocPyML#Blam Python
-]]  
-[[DocPython\|Wed Mar 9  2022 ]]  	[[DocPython#iPython
-]]  
-[[DocPython\|Wed Mar 9  2022 ]]  	[[DocPython#Python Topics
-]]  
-[[DocPython\|Wed Mar 9  2022 ]]  	[[DocPython#Python SETUP
-]]  
-[[DocPython\|Wed Mar 9  2022 ]]  	[[DocPython#Py Docs]]  
+[[DocPyML\|Wed Mar 9  2022 ]]  	[[DocPyML#show level three]]  
+[[DocPyML\|Wed Mar 9  2022 ]]  	[[DocPyML#Docs]]  
+[[DocPyML\|Wed Mar 9  2022 ]]  	[[DocPyML#NumPy]]  
+[[DocPyML\|Wed Mar 9  2022 ]]  	[[DocPyML#Lib SciPy]]  
+[[DocPyML\|Wed Mar 9  2022 ]]  	[[DocPyML#Blam Python]]  
+[[DocPython\|Wed Mar 9  2022 ]]  	[[DocPython#iPython]]  
+[[DocPython\|Wed Mar 9  2022 ]]  	[[DocPython#Python Topics]]  
+[[DocPython\|Wed Mar 9  2022 ]]  	[[DocPython#Python SETUP]]  
+[[DocPython\|Wed Mar 9  2022 ]]  	[[DocPython#Py Docs]]  
 [[DocRackspace\|Wed Mar 9  2022 ]]  	[[DocRackspace#Rackspace Login details]]  
 [[DocRackspace\|Wed Mar 9  2022 ]]  	[[DocRackspace#Instances]]  
 [[DocRackspace\|Wed Mar 9  2022 ]]  	[[DocRackspace#was dev-lamp [DNS=dev] -- now has the wordpress site -om- de]]  
@@ -8495,33 +8485,20 @@
 [[DocRackspace\|Wed Mar 9  2022 ]]  	[[DocRackspace#gpay1 In: /var/www/beta.paybygroup/]]  
 [[DocRackspace\|Wed Mar 9  2022 ]]  	[[DocRackspace#build from beta.paybygroup (which is built from Base-2011-11]]  
 [[DocRackspace\|Wed Mar 9  2022 ]]  	[[DocRackspace#How To]]  
-[[DocRails\|Wed Mar 9  2022 ]]  	[[DocRails#x
-]]  
-[[DocRails\|Wed Mar 9  2022 ]]  	[[DocRails#API.RUBYONRAILS          http://api.rubyonrails.org/
-]]  
-[[DocRails\|Wed Mar 9  2022 ]]  	[[DocRails#GUIDES                   http://guides.rubyonrails.org/
-]]  
+[[DocRails\|Wed Mar 9  2022 ]]  	[[DocRails#x]]  
+[[DocRails\|Wed Mar 9  2022 ]]  	[[DocRails#API.RUBYONRAILS          http://api.rubyonrails.org/]]  
+[[DocRails\|Wed Mar 9  2022 ]]  	[[DocRails#GUIDES                   http://guides.rubyonrails.org/]]  
 [[DocRails\|Wed Mar 9  2022 ]]  	[[DocRails#Ruby                     http://www.ruby-doc.org/core-1.9.2/]]  
-[[DocRails\|Wed Mar 9  2022 ]]  	[[DocRails#Other Docs
-]]  
-[[DocRails\|Wed Mar 9  2022 ]]  	[[DocRails#Docs Tree
-]]  
-[[DocRails\|Wed Mar 9  2022 ]]  	[[DocRails#hold 
-]]  
-[[DocRails\|Wed Mar 9  2022 ]]  	[[DocRails#EXPRESSIONS
-]]  
-[[DocRails\|Wed Mar 9  2022 ]]  	[[DocRails#IO_ETC
-]]  
-[[DocRails\|Wed Mar 9  2022 ]]  	[[DocRails#BLAM RAILS FNs
-]]  
-[[DocRails\|Wed Mar 9  2022 ]]  	[[DocRails#Overview
-]]  
-[[DocRails\|Wed Mar 9  2022 ]]  	[[DocRails#MVC -- Routing
-]]  
-[[DocRails\|Wed Mar 9  2022 ]]  	[[DocRails#MVC -- Views       (.erb stuff)
-]]  
-[[DocRails\|Wed Mar 9  2022 ]]  	[[DocRails#Renders the same partial with a local variable.
-]]  
+[[DocRails\|Wed Mar 9  2022 ]]  	[[DocRails#Other Docs]]  
+[[DocRails\|Wed Mar 9  2022 ]]  	[[DocRails#Docs Tree]]  
+[[DocRails\|Wed Mar 9  2022 ]]  	[[DocRails#hold ]]  
+[[DocRails\|Wed Mar 9  2022 ]]  	[[DocRails#EXPRESSIONS]]  
+[[DocRails\|Wed Mar 9  2022 ]]  	[[DocRails#IO_ETC]]  
+[[DocRails\|Wed Mar 9  2022 ]]  	[[DocRails#BLAM RAILS FNs]]  
+[[DocRails\|Wed Mar 9  2022 ]]  	[[DocRails#Overview]]  
+[[DocRails\|Wed Mar 9  2022 ]]  	[[DocRails#MVC -- Routing]]  
+[[DocRails\|Wed Mar 9  2022 ]]  	[[DocRails#MVC -- Views       (.erb stuff)]]  
+[[DocRails\|Wed Mar 9  2022 ]]  	[[DocRails#Renders the same partial with a local variable.]]  
 [[DocRuby\|Wed Mar 9  2022 ]]  	[[DocRuby#=== RUBY SCRIPTING ===]]  
 [[DocSQL\|Wed Mar 9  2022 ]]  	[[DocSQL#LOG]]  
 [[DocSQL\|Wed Mar 9  2022 ]]  	[[DocSQL#BASIC SQL COMMANDS]]  
@@ -8738,8 +8715,7 @@
 [[About HomeRobot\|Wed Mar 9  2022 ]]  	[[About HomeRobot#Ref]]  
 [[About HomeRobot\|Wed Mar 9  2022 ]]  	[[About HomeRobot#Log]]  
 [[About WordWar\|Wed Mar 9  2022 ]]  	[[About WordWar#Competitors]]  
-[[Zanzors\|Wed Mar 9  2022 ]]  	[[Zanzors#ASPECTS
-]]  
+[[Zanzors\|Wed Mar 9  2022 ]]  	[[Zanzors#ASPECTS]]  
 [[MetaMeta\|Wed Mar 9  2022 ]]  	[[MetaMeta#Meta Meta Parts]]  
 [[The Sentient Weapon OLD\|Wed Mar 9  2022 ]]  	[[The Sentient Weapon OLD#Quick discussion]]  
 [[The Sentient Weapon OLD\|Wed Mar 9  2022 ]]  	[[The Sentient Weapon OLD#IDEAS]]  
