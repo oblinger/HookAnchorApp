@@ -1,3 +1,6 @@
+#log 
+n:: Misc Text Notes
+
 ### 2023-07-08  production bug
 
 We don't yet know what is going on with this bug, so no comment on that.

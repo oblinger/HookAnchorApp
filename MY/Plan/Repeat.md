@@ -1,7 +1,4 @@
 
-
-
-
 | WEEKLY        |                                                                                                                                                   |
 | ------------- | ------------------------------------------------------------------------------------------------------------------------------------------------- |
 | **HOT LISTS** | [[SimpleNote 1Pass\|SimpleNote]] [Reminders](https://www.icloud.com/#reminders)  [[Mint 1pass\|Mint]]  [AF-email](https://mail.google.com/mail/u/1/#inbox)   |
@@ -29,6 +26,20 @@
 -- In3 ... 
 
 
+## === SCRUB ===
+
+- [[Repeat]] 
+- DASHBOARDS:  F1, F2, CAPS-J  S, C, G
+
+- BOOKS - Find to read
+- FOOD - Recipes to make
+- FUN - Add to lists
+- [[FRIDAY]] - Plan for future dates
+
+
+#### HOUSE
+- BASEMENT - 
+- ...
 
 ## === MORNING ===
 - Meditate, Vit, Apples, Clean
@@ -44,6 +55,7 @@
 
 
 
+# LOG
 
 -- All the right knowledge in all the wrong ways
 -- N^2 successive learning jumps

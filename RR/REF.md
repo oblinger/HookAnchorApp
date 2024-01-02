@@ -1,4 +1,5 @@
-== [[TAG]] <[[Untyped]]  
+#log <[[Untyped]]
+n:: 'r...'		Reference Materials/Links ('e'=external?)
 
 LINKS:  [[RR]]   [[Refs]] 
 
@@ -22,7 +23,7 @@ LINKS:  [[RR]]   [[Refs]]
 | r2022-07-18 | [[Politics]]        | Optimal Tax Policy                                                                |
 | r2022-06-10 | [[UF]]              | Master thesis, Code Mirror 6 editor that edits in two different languages at once |
 | r2022-06-01 | [[STARTUPS]]        | Term Sheets                                                                       |
-| r2022-05-14 | [[Forum]]           | Best Forum Software                                                               |
+| r2022-05-14 | [[2017-01 Forum]]   | Best Forum Software                                                               |
 | r2022-02-24 | [[EOCA]]            | Places I should be reading                                                        |
 | r2022-00-00 | [[RefMisc]]         | Military spending video                                                           |
 | r2021-11-10 | [[Coaches]]         | Anke Thiele, Rick Eigenbrod, Katie Wurtz - Deeper Exploration / Intentionality    |

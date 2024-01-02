@@ -1,4 +1,4 @@
-  [Lean Canvas](Lean%20Canvas.md)
+  [2000-00 Lean Canvas](2000-00%20Lean%20Canvas.md)
   [LeanCanvas](STREAMS/IdeasAll/TIER-2/SmartScale/LeanCanvas.md)
   [LeanCanvas](STREAMS/IdeasAll/TIER-2/SmartScale/LeanCanvas.md)
 

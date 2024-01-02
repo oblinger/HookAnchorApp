@@ -1,5 +1,10 @@
-=[[TAG]]   [[TAGS]] > [[PTM]]
+#tag   [[Tags]] > [[Top]]
 
-[[TAGS]] 
+[[Tags]] 
 
+
+```dataview
+TABLE n AS Description
+FROM #tag
+```
 

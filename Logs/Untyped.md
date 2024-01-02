@@ -1,7 +1,6 @@
-=[[TAG]]   <[[Untyped]]  
-[[TAGS]] 
+#log[[Log|#]] <[[Untyped]]  
+n:: no prefix.	Dated entries without any typing prefix
 
-=[[TAG]]     [[TAGS]] > [[PTM]]
 
 
 | Date       | File                       | Notes                                                                                                                             |
@@ -494,7 +493,7 @@
 | 2022-03-09 | [[Paths]]                      | Post Amy Kruse Thinking                                                                                                           |
 | 2022-03-04 | [[MKT]]                        | From the top                                                                                                                      |
 | 2022-02-22 | [[Paths]]                      | Latest Thinking                                                                                                                   |
-| 2022-02-16 | [[Forum]]                      | Email based first system.                                                                                                         |
+| 2022-02-16 | [[2017-01 Forum]]              | Email based first system.                                                                                                         |
 | 2022-02-15 | [[Paths]]                      | Choice Space                                                                                                                      |
 | 2022-02-08 | [[COM Campaigns OLDER]]        | Meetups to consider                                                                                                               |
 | 2022-02-00 | [[FirstTouch]]                 | Recruiter - Refer Anyone - LOW HIT RATE                                                                                           |
@@ -698,8 +697,8 @@
 | 2020-10-02 | [[Journal Old]]                | An assessment of me                                                                                                               |
 | 2020-10-02 | [[NJ22]]                       | An assessment of me                                                                                                               |
 | 2020-10-00 | [[Nanny]]                      | notes from asana                                                                                                                  |
-| 2020-09-17 | [[Forum]]                      | Police violence                                                                                                                   |
-| 2020-09-07 | [[Forum]]                      | Shinster email                                                                                                                    |
+| 2020-09-17 | [[2017-01 Forum]]              | Police violence                                                                                                                   |
+| 2020-09-07 | [[2017-01 Forum]]              | Shinster email                                                                                                                    |
 | 2020-08-23 | [[Journal Old]]                | Lost at Sea but with good provisions                                                                                              |
 | 2020-08-17 | [[FIN]]                        | QL - AYI payments                                                                                                                 |
 | 2020-08-15 | [[Journal Old]]                | My Futures                                                                                                                        |
@@ -718,7 +717,7 @@
 | 2020-01-06 | [[OLD 2020 Weekly]]            | WEEK                                                                                                                              |
 | 2020-01-05 | [[OLD 2020 Weekly]]            | GOALS FOR THE YEAR                                                                                                                |
 | 2020-00-00 | [[Parents]]                    | Subscriptions that Dad might want                                                                                                 |
-| 2020-00-00 | [[Forum]]                      | UNSORTED                                                                                                                          |
+| 2020-00-00 | [[2017-01 Forum]]              | UNSORTED                                                                                                                          |
 | 2020-00-00 | [[Ideas]]                      | HAND HELD PKG DIMENSIONER                                                                                                         |
 | 2020-00-00 | [[Ideas]]                      | Room occupancy sensor - idea from AF partnership calls                                                                            |
 | 2020-00-00 | [[Ideas]]                      | Chipstack                                                                                                                         |
@@ -841,6 +840,6 @@
 | 2009-11-19 | [[Journal Old]]                | – Progress                                                                                                                        |
 | 2009-11-09 | [[OLD 200x Weekly]]            | – Progress                                                                                                                        |
 | 2000-00-00 | [[ReBuy]]                      | Tofurky                                                                                                                           |
+| 2000-00-00 | [[MED Sleep]]                  | Sleep meds                                                                                                                        |
 | 2000-00-00 | [[MED]]                        | Medical.InsuranceAnalysis --                                                                                                      |
 | 2000-00-00 | [[MED]]                        | Medical Questions --                                                                                                              |
-| 2000-00-00 | [[MED Sleep]]                  | Sleep meds                                                                                                                        |

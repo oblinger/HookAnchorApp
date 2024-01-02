@@ -1,9 +1,7 @@
+#top[[Top|#]] 
+n:: Root folders
 
-:: [[COMS]],   [[Career Log]],   [[Comp]],   [[EduCorp]],   [[FIN]],   [[Food]],   [[KM]],   [[Legal]],   [[Life]],   [[MED]],   [[SYS]],   [[Tags]],   [[Trash]],   [[Web]],   [[Webshare]]
-#top
-n:: Major topic roots
-
-#### [[T]]OPICS [[T Folder|--]] MAJOR TAXONOMIC TOPIC ROOTS. 
+#### [[Roots]] [[Kmr Folder|--]] Toplevel roots for all pages
 ```dataviewjs
 let rows = dv.pages("")
   .where(p => {
@@ -13,14 +11,11 @@ let rows = dv.pages("")
     let fileNameWithoutExt = filePathParts[filePathParts.length - 1].replace('.md', '');
     let parentFolderName = filePathParts[filePathParts.length - 2];
 
-    return String(p.file.path).startsWith("T/") 
-      && filePathParts.length == 3
+    return String(p.file.path).startsWith("") 
+      && filePathParts.length == 2
       && fileNameWithoutExt === parentFolderName;
   })
   .map(p => [p.file.link, p.n]);
 
 dv.table(["File", "Description"], rows);
 ```
-
-
-

@@ -1,11 +1,6 @@
+#top 
 
-:: [[cvt]], 
 
-:: [[Circle]],   [[SV Software]]
-
-< [[???]]   [[@Sports Visio]],  [[@Jason Syversen]], [[@SV]]
-[[Canva]]
-bu
 - [[SV Tasks]] - 
 - TOPS:		[[WW]],   [[QQ]],  [[Mgt]], 
 - [[SV Strat]]:	[[Reset]],  [[ROADMAP]], 
@@ -21,17 +16,43 @@ bu
 
 - [[War Room Webpage]]
 
+:: [[cvt]], 
+
+:: [[Circle]],   [[SV Software]]
+
+< [[???]]   [[@Sports Visio]],  [[@Jason Syversen]], [[@SV]]
+[[Canva]]
+
 LOG
 -  [[SV90]], [[SV90.]],  [[2023 Deliverables]],  
 
 
+#### [[SV]] [[SV Folder|--]] SPORTS VISIO STUFF
+```dataviewjs
+let rows = dv.pages("")
+  .where(p => {
+    if (!p.file) return false;
 
-# TODO
-- [ ] Get Coach
-- [ ] Build Roadmap
-- [ ] Yolo-x
-- [ ] Negotiate & Sign
- 
+	let prefix = "SV"
+	let prefix_len = prefix.split("/").length
+    let filePathParts = String(p.file.path).split("/");
+    let fileNameWithoutExt = filePathParts[filePathParts.length - 1].replace('.md', '');
+    let parentFolderName = filePathParts[filePathParts.length - 2];
+
+    return String(p.file.path).startsWith(prefix) 
+      && (filePathParts.length == prefix_len + 1 || 
+	      filePathParts.length == prefix_len + 2 && fileNameWithoutExt === parentFolderName);
+  })
+  .sort((a, b) => a.file && b.file && a.file.name.localeCompare(b.file.name))
+  .map(p => [p.file.link, p.n]);
+
+dv.table(["File", "Description"], rows);
+```
+
+
+
+
+
 
 
 # TOPICS

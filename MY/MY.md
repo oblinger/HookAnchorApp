@@ -1,3 +1,5 @@
+#root
+n:: Info about me & my stuff
 
 - [[Myfo]],  [[MySys]],  [[MY Stuff]], 
 

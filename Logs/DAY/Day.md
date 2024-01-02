@@ -1,7 +1,6 @@
-  [null](null.md)
-  [Days](Days.md)
-=[[TAG]]   [[PTM]]<[[Untyped]]
-- [[Days]]   
+#log <[[Untyped]]
+n:: 'd...'	Daily journal notes log (NOT USED)
+
 
 | Date        | File  | Notes                    |
 | ----------- | ----- | ------------------------ |

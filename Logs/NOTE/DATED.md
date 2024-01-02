@@ -1,4 +1,4 @@
-=[[TAG]]  <[[PTM]]
-
+#log  <[[Top]]
+n:: All dated logs
 
 

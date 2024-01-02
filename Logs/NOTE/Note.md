@@ -1,6 +1,10 @@
+#log 
+n:: 'n...' 	Isolated 'notes' created by me
+
+
   [DATED](DATED.md)
   [Notes](Notes.md)
-=[[TAG]]  <[[PTM]]<[[DATED]]  
+#tag  <[[Top]]<[[DATED]]  
 
 
 [[Notes]]  
@@ -28,9 +32,9 @@
 | n2022-07-09 | [[EOCA]]               | Zombie Consciousness                                                        |
 | n2022-07-06 | [[EOCA]]               | Bengio's based model of consciousness                                       |
 | n2022-05-30 | [[2009-03 Team Saver]] | Compressed summary                                                          |
-| n2022-05-28 | [[Forum]]              | Raw material for Immigration issue based slides                             |
-| n2022-05-27 | [[Forum]]              | Thinking about how to drive compromise  (Using 2020 election fraud example) |
-| n2022-04-28 | [[Forum]]              | My big question about the forum                                             |
+| n2022-05-28 | [[2017-01 Forum]]      | Raw material for Immigration issue based slides                             |
+| n2022-05-27 | [[2017-01 Forum]]      | Thinking about how to drive compromise  (Using 2020 election fraud example) |
+| n2022-04-28 | [[2017-01 Forum]]      | My big question about the forum                                             |
 | n2022-04-17 | [[Notes]]              | a test note entry                                                           |
 | n2022-02-28 | [[EOCA]]               | Notes from reading Alignment forums                                         |
 | n2021-05-19 | [[EOCA]]               | Quick Agenda                                                                |

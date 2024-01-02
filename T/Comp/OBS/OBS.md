@@ -1,3 +1,4 @@
+n:: OBSIDIAN setup details
 
 :: [[OBS Projects]]
 - [[SYS]],  [[KM]], 

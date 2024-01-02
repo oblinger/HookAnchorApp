@@ -1,5 +1,5 @@
-=[[TAG]]  <[[PTM]]<[[DATED]]  
-
+#log <[[DATED]]
+n:: 'j...' 	Journal entries  (NOT USED)
 
   [Days](Days.md)  
 

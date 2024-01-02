@@ -1,4 +1,4 @@
-=[[TAG]] 
+#tag [[Logs]] 
 
 - [[LOG Trash]] 
 

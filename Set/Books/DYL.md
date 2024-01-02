@@ -788,7 +788,7 @@ OTHER PATHS:
 - Considerations: Geography, Learning, Impacts/Results, Role
 
 ### - [[2022-03 BeFAANG]]
-### - [[Forum]]
+### - [[2017-01 Forum]]
 ### - BeInventor
 Title:  Philanthropist, Inventor, Dilettante
 ### - ML CTO

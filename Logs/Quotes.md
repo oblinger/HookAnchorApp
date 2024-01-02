@@ -1,3 +1,5 @@
+#log 
+n:: Quotes I have collected over the years
 
 
 ## Knowlege Xenophanes

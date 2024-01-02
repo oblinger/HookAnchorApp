@@ -8,7 +8,7 @@ TABLE file.mtime as Edited, file.size as Size FROM #CRM WHERE file.name!="Waitin
 ```dataviewjs 
 dv.el(await dv.io.load("My/Plan/quick.md"))
 ```
-[[At.md]] 
+[[At]] 
 
 - [[@Michael Freed]]
 

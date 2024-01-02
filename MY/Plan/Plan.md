@@ -1,23 +1,29 @@
 
-:: [[EBT]],   [[Productivity]],   [[Untitled 1]],   [[verizon]]
+:: [[EBT]],   [[Ping]],   [[Productivity]],   [[Spirit]],   [[other]]
+#top[[Top|#]] 
+#### [[Plan]] [[Plan Folder|--]] Short and long term planning 
+```dataviewjs
+let rows = dv.pages("")
+  .where(p => {
+    if (!p.file) return false;
 
-:: [[Untitled]]
+	let prefix = "MY/Plan"
+	let prefix_len = prefix.split("/").length
+    let filePathParts = String(p.file.path).split("/");
+    let fileNameWithoutExt = filePathParts[filePathParts.length - 1].replace('.md', '');
+    let parentFolderName = filePathParts[filePathParts.length - 2];
 
-:: [[Ping]]
+    return String(p.file.path).startsWith(prefix) 
+      && (filePathParts.length == prefix_len + 1 || 
+	      filePathParts.length == prefix_len + 2 && fileNameWithoutExt === parentFolderName);
+  })
+  .sort((a, b) => a.file && b.file && a.file.name.localeCompare(b.file.name))
+  .map(p => [p.file.link, p.n]);
 
-:: [[MY/Plan/Untitled]]
-
-:: [[Self Evergreen]]
-
-:: [[Scrub]]
-
-:: [[Archeology]],   [[Spirit]],   [[MY/Plan/Untitled]],   [[other]],   [[work]]
+dv.table(["File", "Description"], rows);
+```
 
 
-< [[Top]] < [[MY]] < [[Plan]]
-
-[[OBS.]] 
-  
 #### Short Term Tactical Lists
 - [[active]]		-  [[wings]], 
 - [[Current]]		-  My 'current' weekly plan
@@ -41,7 +47,7 @@
 - [[Habit]]			-  Current and past habit goals
 - [[gap]]			-  
 - [[Journal Old]]	-  
-- [[Links]]			-  
+- [[MY/Plan/L]]			-  
 - [[Personal]]			-  
 - [[Quarterly]]	-  
 - [[Repeat]]		-  
@@ -67,7 +73,7 @@
 
 #### Unsorted Planning Pages
 - [[Journal Old]]	- 
-- [[Links]] 		-
+- [[MY/Plan/L]] 		-
 - [[MY/Plan/Ping]] 			- 
 
 
@@ -81,7 +87,7 @@ CHANGE: [[wings]], [[Current]],
 - 
 
   [quick](quick.md)
-  [Quarterly](Quarterly.md)  [Archive](Archive.md)  [Work](Work/Work.md)  [full](full.md)  [self](MY/Plan/self.md)  [later](later.md)  [Repeat](Repeat.md)  [Ping](MY/Plan/Ping.md)  [q2](q2.md)  [todo](todo.md)  [Habit](Habit.md)  [Social](MY/Plan/Social.md)  [SCR Note](SCR%20Note.md)  [Watching](Watching.md)  [Current](Current.md)  [Links](Links.md)  [hack](hack.md)
+  [Quarterly](Quarterly.md)  [Archive](Archive.md)  [Work](Work/Work.md)  [full](full.md)  [self](MY/Plan/self.md)  [later](later.md)  [Repeat](Repeat.md)  [Ping](MY/Plan/Ping.md)  [q2](q2.md)  [todo](todo.md)  [Habit](Habit.md)  [Social](MY/Plan/Social.md)  [SCR Note](SCR%20Note.md)  [Watching](Watching.md)  [Current](Current.md)  [L](MY/Plan/L.md)  [hack](hack.md)
   [Archive](__Archive__.md)
   [Work](__Work__.md)
   [Todo](__Todo__.md)  [Repeat](__Repeat__.md)  [Calls](AT/__Calls__.md)  [Later](__Later__.md)  [Watching](__Watching__.md)  [Habits](__Habits__.md)  [Current](__Current__.md)  [Links](__Links__.md)  [Scratch](Scratch/__Scratch__.md)  [Full](__Full__.md)  [Quarterly](__Quarterly__.md)  [Self](__Self__.md)  [Q2](__Q2__.md)  [Hack](__Hack__.md)  [Ping](__Ping__.md)  [Social](__Social__.md)  [fried](fried.md)
@@ -95,4 +101,4 @@ CHANGE: [[wings]], [[Current]],
   [external](external.md)
 
   [fun](fun.md)
- [[Quarterly]],  [Quarterly](Quarterly.md),   [Planning](Planning.md),   [Archive](Archive.md),   [Work](Work/Work.md),   [full](full.md),   [self](MY/Plan/self.md),   [later](later.md),   [Repeat](Repeat.md),   [Calls](Calls.md),   [Ping](MY/Plan/Ping.md),   [q2](q2.md),   [fried](fried.md),   [todo](todo.md),   [Habit](Habit.md),   [Social](MY/Plan/Social.md),   [SCR Note](SCR%20Note.md),   [COMS](COMS.md),   [prime](prime.md),   [Watching](Watching.md),   [Current](Current.md),   [Links](Links.md),   [quick](quick.md),   [hack](hack.md),   [active](active.md)
+ [[Quarterly]],  [Quarterly](Quarterly.md),   [Planning](Planning.md),   [Archive](Archive.md),   [Work](Work/Work.md),   [full](full.md),   [self](MY/Plan/self.md),   [later](later.md),   [Repeat](Repeat.md),   [Calls](Calls.md),   [Ping](MY/Plan/Ping.md),   [q2](q2.md),   [fried](fried.md),   [todo](todo.md),   [Habit](Habit.md),   [Social](MY/Plan/Social.md),   [SCR Note](SCR%20Note.md),   [COMS](COMS.md),   [prime](prime.md),   [Watching](Watching.md),   [Current](Current.md),   [L](MY/Plan/L.md),   [quick](quick.md),   [hack](hack.md),   [active](active.md)

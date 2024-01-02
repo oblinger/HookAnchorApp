@@ -4,6 +4,16 @@
 
 ```
 
+2023-12-31  NOW
+2023-02-00  Sking but no gambling
+2022-02-00  Taho-NV ... small gambling?  no gambling?
+2020-02-00  Covid
+2019-08-08	Eli Born
+skiing & Reno
+2018-05-18	Married
+
+Vegas/CES 2018                        ###   ???negative???    Second Aeolus (the big one)
+
 Vegas/CES 2017                        ###   +442  [AFTER +2,359]
 -600 = -300-300                       At Balagio on $25 tables (it went fast!)
 +82  =                                At Balagio

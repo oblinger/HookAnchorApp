@@ -1,9 +1,10 @@
+#set 
+n:: Stuff "to read"
 
-:: [[Read]], [[Podcasts To Listen To]], 
+- [[Read]], [[Podcasts To Listen To]], 
   [[Set/ToRead/Read/Read]]
-- Alignment Forum
- [Humane Tech](https://www.humanetech.com/podcast)  
- Managers Path
+- Alignment Forum, [Humane Tech](https://www.humanetech.com/podcast)  
+- Managers Path
 
 OHTER MGT BOOKS TO CONSIDER (from whom??)
 OTHER Ideas:

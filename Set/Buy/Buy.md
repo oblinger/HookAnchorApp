@@ -1,5 +1,9 @@
+#set 
+n:: Places where I like to purchase from
 
-:: [[Rebuy Home]],   [[[VEIKOUS]],   [[ph]]
+
+
+:: [[Rebuy Home]],  [[ph]]
 
 :: [[Rebuy Clothing]],   [[Rebuy Food]]
 
@@ -12,7 +16,7 @@ toilet brush; stubby watch charger
  [Cook](/ob/topics/Cook/About Cook.md) [Groc](/ob/topics/Food/Groc.md) 
  [Buy](/ob/topics/Buy/Buy.md) [ToBuy](/ob/topics/Buy/ToBuy/ToBuy.md) [ReBuy](/Users/oblinger/ob/topics/Buy/__ReBuy__.md) 
 
-Ci
+
 
 # QL
 - Shoes

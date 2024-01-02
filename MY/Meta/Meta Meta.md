@@ -52,7 +52,7 @@ THREE MONITOR SETUP
 
 
 - [[TOPIC]] - Topic type pages (may be subtopics within other topics)
-	- [[AT]] - Entity pages
+	- [[At]] - Entity pages
 
 
 - [[TOPIC PART]] - 

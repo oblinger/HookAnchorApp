@@ -1,4 +1,4 @@
-=[[TAG]]
+#tag
 
 - ML
 	- [[Data Science]]

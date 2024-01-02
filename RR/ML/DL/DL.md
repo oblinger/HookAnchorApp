@@ -6,7 +6,7 @@
 :: [[VAE - Variational Auto Encoder]],   [[Attention]],   [[Gradient Checking]],   [[NG Notation]],   [[Invertable Density Estimation]],   [[Self Supervised Learning]],   [[Activation Functions]],   [[Auto Encoders]],  [[VAE]]
 - [[DL algs]], [[DL topics]], [[DL optimization]], 
   [Regularization](Regularization.md),   [GANs](GANs.md),   [NN](NN.md)
-=[[TAG]] <[[ML]] 
+#tag <[[ML]] 
 
 - [[@Yoshua Bengio]] 
 - [Coursera Notes](Coursera%20Notes.md),    [@Yoshua Bengio](@Yoshua%20Bengio.md),  

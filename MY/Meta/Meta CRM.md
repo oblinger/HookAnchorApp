@@ -22,7 +22,7 @@ TIME FRAMES:  * Now Soon Q1 Q2 Q3 Q4 Y24 Y25 Later
 
 #### Line Format
 - STATUS - Single character representing current status
-- NAME - The [[AT]] link for the person
+- NAME - The [[At]] link for the person
 - DATE - Optional date by which action should be taken
 - NOTES - Explanation of current state or goals for the relationship
 

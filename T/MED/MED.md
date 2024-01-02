@@ -1,4 +1,6 @@
 
+:: [[VO2max]]
+
 MED NUMBERS		[[MED Measure.xlsx|MED Measure]],  [[MED Measurements]],  [[MED Blood Tests]],  [[MED Exercise]],  [[MED Sleep]],   [[MED Weight]],
 MED HEART NUMS		[[MED VO2Max]], [[MED Blood Pressure]],  [[MED Cholesterol]],  
 MED HISTORY		[[MED History]],  [[MED Vaccinations]],   

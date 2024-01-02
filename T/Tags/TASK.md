@@ -1,1 +1,1 @@
-=[[TAG]]   [[TAGS]] > [[PTM]]
+#tag   [[Tags]] > [[Top]]

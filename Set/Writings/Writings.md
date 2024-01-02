@@ -1,7 +1,7 @@
+#set
+- [[ArmChair]],   [[Politics]]
 
-:: [[ArmChair]],   [[Politics]]
-  [ArmChair](ArmChair.md)
-  [An_Athiests_Spiritual_Calling](An_Athiests_Spiritual_Calling.md),   [Politics](Politics.md)
+- [An_Athiests_Spiritual_Calling](An_Athiests_Spiritual_Calling.md), 
 
 
 

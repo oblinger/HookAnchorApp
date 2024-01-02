@@ -1,84 +1,91 @@
+#tag 
 
-[[Meta]]		TOP LEVEL INFO ORGANIZATIONS
-- ***ORG***		***FOLDER***	***META DOCS***
-- [[Top]]		[[Kmr Folder|KMR]]		[[Meta Meta]]	 ALL 		-	Top level of all info pages
-- [[Plan]]		[[Plan Folder|Plan]]		[[Meta Plan]]	 By TASK -	Short and long term planning
-- [[Logs]]		[[Logs Folder|Logs]]		[[Meta Logs]]	 By TIME -	Lists with a time-based org
-- [[Set]]		[[Set Folder|Set]]		[[Meta Set]]	 By TYPE -	Groups of like (typed) entries
-- [[T]]			[[T Folder|T]]			[[Meta Topic]]	 By TOPIC -	Toplevel Taxonomic Topics
-- 						[[Meta Flow]]	 By PROC	-	My data processing paths
-- [[SV]]			[[SV Folder|SV]]			[[Meta SV]] 	 WORK	-  Work related [[WW]].
+#### [[Meta]]		TOP LEVEL INFO ORGANIZATIONS
+| ORG | FOLDER | META | By | Notes |
+| ---- | ---- | ---- | ---- | ---- |
+| [[Roots]] | [[Kmr Folder\|KMR]] | [[Meta Meta]] | ALL | Toplevel roots for all pages |
+| [[Plan]] | [[Plan Folder\|Plan]] | [[Meta Plan]] | By TASK | Short and long term planning |
+| [[Logs]] | [[Logs Folder\|Logs]]	 | [[Meta Logs]] | By TIME | Lists with a time-based org |
+| [[Sets]] | [[Set Folder\|Set]] | [[Meta Set]] | By TYPE | Groups of like (typed) entries |
+| [[T]] | [[T Folder\|T]]	 | [[Meta Topic]] | By TOPIC | Toplevel Taxonomic Topics |
+|  |  | [[Meta Flow]] | By PROC | My data processing paths |
+|  [[SV]]	 | [[SV Folder\|SV]]	 | [[Meta SV]]  | WORK | Work related [[WW]] |
+
+#### [[Roots]] [[Kmr Folder|--]] Top level roots for all pages
+```dataviewjs
+let rows = dv.pages("")
+  .where(p => {
+    if (!p.file) return false;
+
+    let filePathParts = String(p.file.path).split("/");
+    let fileNameWithoutExt = filePathParts[filePathParts.length - 1].replace('.md', '');
+    let parentFolderName = filePathParts[filePathParts.length - 2];
+
+    return String(p.file.path).startsWith("") 
+      && filePathParts.length == 2
+      && fileNameWithoutExt === parentFolderName;
+  })
+  .map(p => [p.file.link, p.n]);
+
+dv.table(["File", "Description"], rows);
+```
+
+#### [[Plan]] [[Plan Folder|--]] Short and long term planning 
+```dataviewjs
+let rows = dv.pages("")
+  .where(p => {
+    if (!p.file) return false;
+
+	let prefix = "MY/Plan"
+	let prefix_len = prefix.split("/").length
+    let filePathParts = String(p.file.path).split("/");
+    let fileNameWithoutExt = filePathParts[filePathParts.length - 1].replace('.md', '');
+    let parentFolderName = filePathParts[filePathParts.length - 2];
+
+    return String(p.file.path).startsWith(prefix) 
+      && (filePathParts.length == prefix_len + 1 || 
+	      filePathParts.length == prefix_len + 2 && fileNameWithoutExt === parentFolderName);
+  })
+  .sort((a, b) => a.file && b.file && a.file.name.localeCompare(b.file.name))
+  .map(p => [p.file.link, p.n]);
+
+dv.table(["File", "Description"], rows);
+```
 
 
-
-[[T]]OPICS		MAJOR TAXONOMIC TOPIC ROOTS
-- [[Career Log]]		- 
-- [[FIN]]		- 
-- [[T/Food/Food]]		- 
-- [[KM]]		- 
-- [[Legal]]		- 
-- [[Life]]		- 
-- [[MED]]		- 
-- [[OBS]]		- OBSIDIAN setup details
-- [[Tags]]		- 
-- [[Webshare]]	- 
-
-TOPLEVELS
-- [[At]]			- 
-- [[Attach]]	- 
-- [[docs]]		- 
-- [[MY]]		-	Info about me & my stuff	[[My Folder|MY]] 	
-- [[Misc]]		- 
-- [[Prj]]		- 
-- [[RR]]			- 
-- [[Weekly]]	-
-
-
-[[Set]]		GROUPS OF LIKE ENTRIES -- (UN-dated, UN-ordered, Typed)
-- [[AT]] 		- All Entities (People, Organizations, etc.) 
-- [[App]] 		- Info about specific applications
-- [[Books]]
-- [[Buy]] 
-- [[Cmd]]		
-- [[docs]] 		- Personal documentations pages 
-- [[Humor]]	- Jokes I have collected
-- [[Lang]]		- Collected info about specific computer languages
-- [[Movies]]	- Movies "to watch"
-- [[Phone]]	- Administrative actions associated with accounts or such
-- [[Prj]]		- Project roots		
-- [[Recipes]]	- 
-- [[Returns]]	- 
-- [[Places]] 	- Info I have collected about specific places
-- [[ToRead]]	- Stuff "to read"
-- [[Writings]]	-	???
-
-
-[[Logs]]  		TEMPORALLY-ORDERED, TYPED NOTES
-- [[Idea]] 		- Ideas
-- [[Letters]]  - Formal correspondence
-- [[Logs/Quotes]]	- Quotes
-
-PROCESS ORIENTED LOGS
-- [[Bought]]	- 
-- [[Receipts]]	- 
-
-DATED LOG ENTRIES
-- [[Day]]		- 'd...'	Daily journal notes log (NOT USED)
-- [[Journal]]	- 'j...' 	Journal entries  (NOT USED)
-- [[Meeting]] 	- 'm...'	Verbal, single-person-centered interaction.
-- [[Note]]		- 'n...' 	Isolated 'note' created by me
-- [[Prj]]		- 'prj...'	~3month sized projects
-- [[Text]]		- 't...'		Textual messages written by me   (Meta [[TXT]]) 
-- [[Untyped]] 	- no prefix	Dated entries typed
-- [[REF]] 		- 'r...'		Reference Materials/Links ('e'=external?)
-- [[WP]] 		- 'wp...'	Work Product. Single documents outputs
+#### [[Logs]] [[Logs Folder|--]] DATED, TYPED NOTES (DATED entries)
+```dataview
+TABLE n AS Description
+FROM #log
+SORT file.name
+```
 
 
 
+#### [[Sets]] [[Set Folder|--]] GROUPS OF LIKE ENTRIES -- (UN-dated, Typed entries)
+```dataview
+TABLE n AS Description
+FROM #set
+SORT file.name
+```
 
+#### [[T]]OPICS [[T Folder|--]] MAJOR TAXONOMIC TOPIC ROOTS. 
+```dataviewjs
+let rows = dv.pages("")
+  .where(p => {
+    if (!p.file) return false;
 
+    let filePathParts = String(p.file.path).split("/");
+    let fileNameWithoutExt = filePathParts[filePathParts.length - 1].replace('.md', '');
+    let parentFolderName = filePathParts[filePathParts.length - 2];
 
+    return String(p.file.path).startsWith("T/") 
+      && filePathParts.length == 3
+      && fileNameWithoutExt === parentFolderName;
+  })
+  .map(p => [p.file.link, p.n]);
 
+dv.table(["File", "Description"], rows);
+```
 
-
-
+#### [[SV]] [[SV Folder|--]] SPORTS VISIO STUFF

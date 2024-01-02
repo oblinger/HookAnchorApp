@@ -1,15 +1,10 @@
+#log[[Log|#]] <[[Untyped]] 
+n:: 't...'		Textual messages written by me   (Meta [[TXT]])
 
 :: [[Cmd Folder]]
-
 :: [[Msg]]
-
 :: [[Letters]],   [[COM Msg]]
-
-:: [[[%40Melissa Cote%23t2022-04-11  1st touch]]
-=[[TAG]] <[[Untyped]]  
-
 [[Texts]] 
-
   [Texts](Texts.md),   [Letters](Letters.md),   [COM Msg](COM%20Msg.md),   [@Melissa](@Melissa.md),   [TXT](TXT.md)
   
 
@@ -51,12 +46,12 @@
 | t2022-06-28 | [[@Attila Aros]]             | Request Reference                                                       |
 | t2022-06-28 | [[@Nick Allen]]              | Request for Letter of reference                                         |
 | t2022-06-25 | [[EduCorp]]                  | Transcript                                                              |
-| t2022-06-11 | [[Forum]]                    | Medium how fear and outrage is sold for profit.                         |
-| t2022-06-10 | [[Forum]]                    | Yashin: Forum example of moderate acceptance of voter fraud claim       |
-| t2022-06-07 | [[Forum]]                    | Yashin response about OARS and DARN                                     |
+| t2022-06-11 | [[2017-01 Forum]]            | Medium how fear and outrage is sold for profit.                         |
+| t2022-06-10 | [[2017-01 Forum]]            | Yashin: Forum example of moderate acceptance of voter fraud claim       |
+| t2022-06-07 | [[2017-01 Forum]]            | Yashin response about OARS and DARN                                     |
 | t2022-05-13 | [[@Dan Fine]]                | FINE Restart  2                                                         |
 | t2022-05-12 | [[@Emily Wallach]]           | followup                                                                |
-| t2022-05-05 | [[Forum]]                    | Invitation to talk w. Al                                                |
+| t2022-05-05 | [[2017-01 Forum]]            | Invitation to talk w. Al                                                |
 | t2022-04-30 | [[@Dan Fine]]                | FINE Restart                                                            |
 | t2022-04-26 | [[DL]]                       | Lample & Charton  -  Symbolically solving integrals using a transformer |
 | t2022-04-26 | [[GANs]]                     | Papers 2 read in 2020                                                   |

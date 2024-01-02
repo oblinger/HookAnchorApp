@@ -1,4 +1,5 @@
-=[[TAG]]
+#tag
+n:: FAANG Related Contact
 
 ## = Info
 Includes  [[@Facebook-Meta]],  [[@Facebook]],  [[@Amazon]],  [[@Apple]],  [[@Netflix]],  [[@Google]]    
