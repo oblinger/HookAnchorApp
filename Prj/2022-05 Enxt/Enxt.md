@@ -8,6 +8,14 @@
 - [[Eli Schools]], 
 
 Others:  Grattan
+groton 
+peabody.  
+
+250/day week off
+$6k after
+600. soccer
+$7/day lunch
+
 
 ## TOP CHOICES
 

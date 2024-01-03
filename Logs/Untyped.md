@@ -5,6 +5,8 @@ n:: no prefix.	Dated entries without any typing prefix
 
 | Date       | File                       | Notes                                                                                                                             |
 | ---------- | -------------------------- | --------------------------------------------------------------------------------------------------------------------------------- |
+| 2024-01-02 | [[belief]]                     | test example                                                                                                                      |
+| 2024-01-02 | [[LCM]]                        | foo foo foo                                                                                                                       |
 | 2023-12-31 | [[@Dan Oblinger]]              | yet another                                                                                                                       |
 | 2023-12-31 | [[@Dan Oblinger]]              | just some info                                                                                                                    |
 | 2023-12-26 | [[LCM]]                        | Notes for the Run class implementation:                                                                                           |

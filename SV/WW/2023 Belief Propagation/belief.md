@@ -2,6 +2,7 @@
 - [[2023 Belief Propagation]]
 
 [[belief]]
+- [Quick Hack](https://docs.google.com/document/d/1O8ytJQGBQgYgtyM60XN-OFuGngv5lW-T9EHNpvldQiM/edit#heading=h.1dy43qe05cwu) 
 
 
 
@@ -28,3 +29,8 @@ Parameters:
 SCRUM_IOU = .3
 
 
+
+
+### 2024-01-02  test example
+line 1
+line 2
