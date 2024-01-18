@@ -81,6 +81,43 @@ DISCUSS
 
 # LOG
 
+### 2024-01-11  JASON QUOTE REQUEST
+
+Good to keep in mind for when we are at the point of caring about our costs. Would be useful to have a quote at least from these guys before summer so I can use it when raising the series A  
+  
+  
+Begin forwarded message:  
+  
+
+> **From:** Will Han <[will@bitsync.com](mailto:will@bitsync.com)>  
+> **Date:** January 11, 2024 at 11:24:11 AM AST  
+> **To:** [info@sportsvisio.com](mailto:info@sportsvisio.com)  
+> **Subject:** **GPUs for your AI jobs**  
+>   
+
+> ﻿
+> 
+> Hi SportsVisio Team,  
+>   
+> My name is Will Han, and I’m a cofounder of BitSync. We are a low-cost GPU Cloud and training platform that is easy to migrate to.   
+>   
+> I saw your Crunchbase listing, and **I was wondering if we can have a quick discussion on lowering your GPU compute and overall cloud bill.**   
+>   
+> **Key advantages of BitSync Cloud are:  
+> 
+> - Guaranteed lowest price amongst cloud providers  
+>     
+> - Free instance time to transfer your setup (i.e. billing doesn’t start until your model/data are uploaded and drivers are installed)  
+>     
+> - Free ingress/egress + storage  
+>     
+> - We build complementary infrastructure for your unique needs (e.g. distributed computing, etc)  
+>     
+> 
+> **  
+> Best,  
+> Will
+
 ### 2023-12-20  Jason
 
 - People summary

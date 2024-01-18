@@ -7,7 +7,7 @@
 - [[SV Ops]]:	 	[[SV Dashboards]],  [[SV Testing]], [[SV Planning]],  
 - [[SV People]]:	[[Hiring.]], [[SV SW Team]],   [[CV]],
 - [[SV Market]]:	[[SV Customer]],  [[SV Competitor]], [[SV Partner]], 
-- [[SV Product]]: [[SV Code]],  [[SV Apps]], [[SV System]],   
+- [[SV Product]]: [[SV Code]],  [[SV Apps]], [[SV System]], [[SV Data]],  
 - [[SV Software]]: 
 - [[INV]]:
 - INFO:			[[SV Code]], [[SVT]],  [[SV Legal]],   [[SV Folder]],  [[Meta SV]], 

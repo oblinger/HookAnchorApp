@@ -109,7 +109,7 @@ defaults write NSGlobalDomain AppleDisplayScaleFactor 1.5    ~# change back to 1
 
 
 ## COMMAND-LINE-BASED SETUPS
-- > Do 'sudoers'
+- > Do 'sudoers'. [[MAC How To#^sudo]]  
 - > Do 'ssh-setup'    # not used these days....
 
 ## CONTROL PANEL  ???

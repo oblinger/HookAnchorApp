@@ -7,26 +7,73 @@
 - [SFUSD sheet](https://docs.google.com/spreadsheets/d/1Bh1bC6OCXBGK7BHNNtvO4y84cQncjvqbBWW1FM28lAQ/edit#gid=1381875429) - 
 - [[Eli Schools]], 
 
+- Ask Jeff / ask Avery and Madison
+
+## ...
+West Portal Visit - 415-759-2846
+
+
+
 Others:  Grattan
 groton 
-peabody.  
+peabody.
 
 250/day week off
 $6k after
 600. soccer
 $7/day lunch
 
+Self selecting - 
+	challenging population - 
+After school - 
+--Clarendon - 
+--Ullola
+--Sunny side - 
+--Sloat - 
+--West Portal - 
+- beautiful campus.  mandarin after school
+- positive energy.  impressive principal
+- no-nonsense, parents interested in struc.
+--Fein Stein - 
+alvarado
+glennpark
+
+Physical space - 
+
+
 
 ## TOP CHOICES
 
-- Alta Vista
-- Clarendon Alternative
-- Sunnyside Elementary
-- Sloat?
-- Rooftop?
+--  Alta Vista 
+- Clarendon Alternative (12-20)
+- Ulloa (14-22)
+- Rooftop (10-16)
+- Sloat (10-18). ^ up 
+- Sunny side Elementary (7-10)
+- West Portal (12-24) ^ up
+
+OTHERS:
+
+## After Care
+- [San Miguel](https://smeagles.org/childcare/#:~:text=Childcare%20Options%20At%20San%20Miguel&text=After%2DSchool%20programs%20will%20be,more%20about%20our%20safety%20protocols.) - 
+	- [(415) 469-4756](tel:(415) 469-4756)  [usf](https://www.sfusd.edu/learning/curriculum/additional-learning-opportunities/out-school-time-ost-program?search_api_fulltext=ost%20schools) - school apply.  OST.
+	- Employment Verification (working during that time).  proof low income.   Tuition based program:  $640/mo - $1200/mo.   $8000 @ 100%
+	- wait list.  couple   (principle for the prog)
+- Rooftop
+	- [after care list](https://rooftopk8.org/afterschool/afterschool-programs-offsite/) 
+- Ulloa
+	- https://www.snbc.org/programs/elementary-school-age/ulloa-elementary-school
+	- Phone: 415/745-0776.  Email:tfong@bacr.org  [ifo](https://www.sfusd.edu/school/ulloa-elementary-school/and-after-school/after-school-learning-program-aslp) 
 
 
+### Summer Programs
+- [The Tinker School](https://www.flickr.com/photos/97702372@N07/) 
 
+
+## Transport
+
+- Ulloa
+	- https://drive.google.com/file/d/1I0zMKTl-onqbcNtJlJfGthtST-UaVUAn/view
 ## QUESTIONS
 - What Distinguishes School
 - Teacher Ratio;  How Much Homework; Behavior Problems

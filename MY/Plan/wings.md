@@ -1,4 +1,7 @@
-- 
+- [[@jason syversen#|JASON QUOTE REQ]]
+
+
+
 - race condition issue - 
 - [ ] Backups - 
 - [ ] SOC 		compliance

@@ -1,7 +1,7 @@
 
 **PAPRIKA TRY**:
 - TRY: 			+++CHIA, TVP, +++Silken Tofu, ++Riced Cauliflower
-- SOUPS:		White Bean, Black bean (+++chili / +++soup / +++cuban), +1+Veg
+- SOUPS: >>	White Bean, Black bean (+++chili / +++soup / +++cuban), +1+Veg
 - 				Mixed bean +++white, Split Pea, +Butternut, ??Lentil(curry,?), 
 - CURL:    	++Peanut Stew, ++Curry, Soup, ++Millet
 - QUINOA:  	++Southwest,  ++Peppers w/ more Quinoa, ++Kitchari (cauliflower)

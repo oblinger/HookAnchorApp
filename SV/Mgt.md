@@ -2,6 +2,57 @@
 
 # Log
 
+### 2024-01-11  JAN meeting
+
+Topics
+- Pivo
+- 2024 focus
+- 
+
+2024 Focus: 50%+ effort on player ID
+- First months really looking at all baller10
+- Need to make this fast, easy, robust 
+- Need stronger usage of james codes;  shots ground truth
+- Expect more "needle movers" but quite possibly need better video, more camera, different sport etc. for 95% accuracy.
+     (still don't know what we don't know, )
+
+
+Seeing Better / Executing Better
+- James Codes
+- Shot truth
+- Sarthi / Martin visualization
+
+Executing Better
+- Juan/Dan Encapsulation Game & Run
+- Show: 
+	- Script to assess gallery
+	- Sarthi vis of image space rerun.io
+
+
+Marketing Analysis
+- Product Ideas
+	- Volleyball Highlights (bump set spike per-team)
+
+- Precison / Recall log scale
+- 98 95 90  85 80 70  60 50 30
+
+
+Possible Products
+- Volleyball
+	- VbTh - Highlights Per Team
+	- VbPh - Highlights Per Player
+	- VbPs - Bump-Set-Spike-Score Stats Per player
+- Basketball
+	- BbTh - Highlights Per Team
+	- BbPh - Highlights Per Player
+	- BbPs - Bump-Set-Spike-Score Stats Per player
+	- BbMin - AI-Minutes
+	- BbChart - AI-ShotCharts
+
+
+
+
+
 ### 2023-12-07  DEC MGT Meeting
 
 Inputs x annotations x James x internal signals

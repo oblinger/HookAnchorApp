@@ -1,4 +1,6 @@
-- [sp pl](https://docs.google.com/document/d/1F2hISCp9p-uvfzVt6OTclhOGswQ9EmbVwGxKk9uqJ28/edit), [[cv]],  [[2023-12 CV Tree]], 
+-   [err](https://docs.google.com/document/d/1XSWJ_bXG5s-QAvvU50zuEMz3iTEyE-Us98QLa5g1B3M/edit#heading=h.4911qzsigtsb), [[cv]],  [[2023-12 CV Tree]], 
+- [[lcm]], 
+- [PL](https://drive.google.com/drive/folders/1P18W-qzsNCR3mrkrvAZuD6ocMmfSUu3S): [day](https://docs.google.com/document/d/1LmOhZxJAs9XCzh6SbNzZLW7oHmR_LIvveHEnZjYJwCs/edit),  [sp](https://docs.google.com/document/d/1F2hISCp9p-uvfzVt6OTclhOGswQ9EmbVwGxKk9uqJ28/edit),  [nm](https://docs.google.com/document/d/1C5YW7xad9bos_9ibw1ya3eqtnn-Z03wzXLTWIVynYmQ/edit),  [bp](https://docs.google.com/document/d/1JirdM7CLFwRdbxMn2M-6kZ11oRHe8IAh1GOAdvCbU54/edit),  
 
 
 
@@ -21,11 +23,28 @@
 - Hoop Assignment
 
 
-## SOON
+
+## PL - TREE
+- SEE - 
+	- VIZ: B10 running, verified, Integrated tool
+- EXECUTE - 
+
+- SYSTEM - 
+	- HOMOGRAPHY - 
+		- Pick 4 points - 
+
+- [[CV DATA]] / TESTS - 
+	- B10 ^James 
+	- VB bump-set-spike ground truth
+	- CVAT - shot ground truth
+
+
+
+## PL - SOON
 - Team hoop assignment into shooter ID
 - Four points for homography
 - Gallery thumbnails
-## ACTIVE
+## PL - ACTIVE
 - G: 	Hands up
 - J: 	Homography
 - X: 
@@ -134,6 +153,7 @@ PLANNING
 
 
 # LOG
+
 
 ### 2023-12-01  ideas from james
 - multiple hoops tips

@@ -1,4 +1,4 @@
-- [[Meta CRM]], [[Coms]], [[Calls]], [[Friends]], [[Mentors]], 
+- [[Meta CRM]], [[Coms]], [[call]], [[Friends]], [[Mentors]], 
 
 RODRIGO: info. [[coms]]
 

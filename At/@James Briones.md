@@ -54,6 +54,14 @@ Here is my thinking for a concrete plan… see if you like it as an approach….
 
 # LOG
 
+### 2024-01-02  LOAN
+
+He claimed his total was:
+$1,997 = $1,797 + $200 
+
+that is the balance on 2024-01-02 after I sent $200
+
+
 ### 2023-07-25  TC alternatives
 
 - [list](https://docs.google.com/spreadsheets/d/1sT7ynSkMVTM97ErFIESYNn1xME09XX3_hvNtM2BLUi8/edit#gid=1927142832) 

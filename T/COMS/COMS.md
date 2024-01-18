@@ -1,7 +1,7 @@
 
 :: [[@Maria Galang]],   [[COM Next]]
 
- [[CRM]] , [[Calls]], [[COM Msg]], [[Mentors]], [[Friends]], 
+ [[CRM]] , [[call]], [[COM Msg]], [[Mentors]], [[Friends]], 
 
 - Get Reviews:  Felipe, Nick, 
 

@@ -1,4 +1,5 @@
-- [x](https://medium.com/@modernmoney/reflections-of-a-former-child-garment-worker-inside-the-sweatshop-5993b7d79877?source=email-5358356385a8-1701862746251-digest.reader--5993b7d79877----3-108------------------ccdfdf3b_5d79_435a_ada4_9dbeed7e2ceb-1) 
+
+
 ## __
 - GPL license  
     can we use an enterprise license for YOLO??  
@@ -12,8 +13,8 @@
 - [Beyondo](https://docs.google.com/document/d/1tCUgPmVpb4LIIz73RI-tfyJwP9CblLBN0VzN0AVdTr0/edit): not started
 - Some kind of Dev Training
 
+- [x](https://medium.com/@modernmoney/reflections-of-a-former-child-garment-worker-inside-the-sweatshop-5993b7d79877?source=email-5358356385a8-1701862746251-digest.reader--5993b7d79877----3-108------------------ccdfdf3b_5d79_435a_ada4_9dbeed7e2ceb-1) 
 
-### __
 --  latent >50%
 -- covered
 -- regression
@@ -37,15 +38,15 @@ to all of the team based on final results, not just on 'good effort'.  you are a
 
 
 ## TOP
-[Pivo](https://docs.google.com/document/d/16ee8QGaTCChGW7TC3k0W0sQNyyByygOGzwIw_aUkkpU/edit):			
-[Err codes](https://drive.google.com/drive/folders/1tnEH6NGXSlgJttkSWFAZQSBrNZ14UHPc):	^james 
-Input Spec
-
-[[FullAI]]:			...Spec
-[Field Tst](https://docs.google.com/document/d/1hn97To9o83AnaACYZ99EOYUX3ggNvKvP9By53PQyApI/edit):		^meeting
-[[NJ24]]:			>WarAdj, >Resk
-
+[Pivo](https://docs.google.com/document/d/16ee8QGaTCChGW7TC3k0W0sQNyyByygOGzwIw_aUkkpU/edit):			!!
+			CVAT, Volley, [Err codes](https://drive.google.com/drive/folders/1tnEH6NGXSlgJttkSWFAZQSBrNZ14UHPc),
+[[NJ24]]:			>WarAdj, >Res
+LCM:			prep; JuanTalk; B10-data
+Planning:		SprintPlanning, message2team
 ## TRACKING
+[Field Tst](https://docs.google.com/document/d/1hn97To9o83AnaACYZ99EOYUX3ggNvKvP9By53PQyApI/edit):		^meeting
+[[FullAI]]:			...Spec
+Input Spec	Jira tickets
 
 [[ROADMAP]]:		[[CVP]]:[-](https://docs.google.com/document/d/1XF1NfYpF7gqGBeLYZ_b-mBNkHxZgsRwW78p8ICIEHoQ/edit)			
 [[LCM]]:			>job, docs, rpt
@@ -66,7 +67,6 @@ DATASETS
 [[Test]]			^"field-tests; 
 [[Patents]]:		^Sam (Refs)
 [P2P](https://docs.google.com/document/d/1C0fTdalEsWEPaHFwH1M1ErC3iUDbGgUk/edit) 			^Matias Report
-
 [Mkt-007](https://docs.google.com/document/d/1aY91w8mGvHWk_l1Wrx6EaadV-Wmt_nT5yBp5lsM_lG8/edit):		?Market Segment Analysis
 Orig Brainstorming
 	SHOOTER ORIGINATION BRAINSTORMING
@@ -103,24 +103,14 @@ code
 
 ## .
 
-Nadav,
-I really appreciate you humoring the westerner here.  Thank you!
 
-I think there are two key differences with the Oslo accords:
 
-First, among those who were given autonomy in 2005 there were many who still promised to wipe Israel from the map, they never rescinded that promise and, no surprise, when given the chance they try to fulfill it.  I propose an Enclave where membership requires and oath to proactively protect everyone including Israel from domestic terrorism.  Some will certainly lie but I think many who want out will not.
 
-Second, I am not proposing that Israel needs to reduce its surveillance in this Enclave.  Indeed the existence of and prosperity of this area is tied to its ability to keep terrorism out.  To join this area one must be friends with Israel, one must accept the need for the invasive surveillance needed to keep terrorism out of this area.  So careful surveillance of this area is easier than the rest of Gaza since it is done with the blessing of its members.  Now I want to put ultimate responsibility on the enclave for its own security so it is less of a force imposed from without, and more an action take from within.
 
-But no problem if it is at Israel's digression as to how quickly and how much of the investigations are done via Palestinians.
 
-You may ask, so what is in it for the Palestinian?  Why would any join such an invasive Enclave?  Prosperity.  The west and Israel both need to reward those few willing to sign up for Israel's security.  We reward proof in action, with Jobs.  Initially as this community is tiny, the cost is also tiny.  As the community grows the cost of supporting its economy will also grow, but the benefits in reduced security will also grow.  I also think the ability for businesses to operate in this region could greatly enhanced.  Presently Israel must restrict things a simple a concrete into Gaza as it will be actively used for attack.  Since this community is so much better monitored (by Israel in tight cooperation with Enclave authorities) it is more possible to allow business operations knowing that monitoring is so much tighter.
 
-You may say that no Palestinians will sign up.  Perhaps few will initially.  But that is fine.  It provides Israel a tiny Enclave where it can prove just how friendly it could be to Palestinians if only Israel's security is assured.  And demonstrating this for the west would raise Israel's standing a lot.  It could point to this Enclave and say:  "see, if our security is assured, then we can be quite friendly indeed."  And I think this would be very instructive for Palestinian's too.  You tell me as a Westerner I cannot really understand Israel's position---you might well be right about that.  Still I would say it might also be hard for you to wrap your head around the Palestinian mindset that explains away Israel's prior offers of peace as not "real".  Such a Palestinian has concluded that Israel can never be a friend to Palestinian even if Israel's security is guaranteed---that is really just Israel's excuse for bad behavior.
 
-Notice this enclave is not proof that Israel will ever relinquish security control over Gaza (since Israel is not doing that).  Instead it is proof that Gazan's could have a prosperous life if they were friends with Israel---at the price of having invasive monitoring.  That is probably a new thought for many Palestinians, who have bought into the propaganda that Israel intrinsically hates them and hopes to keep them down no matter what.
 
-Whatever this idea is, it is quite different than the Oslo accords.  Your thoughts?
 
 
 

@@ -4,6 +4,23 @@
 
 # LOG
 
+### 2024-01-11  fixing the player ID
+
+List of issues and ways to fix them
+- Portion of a player so predictor is wrong.
+	  ==>could train on overlaps
+- Mix players from the colors. (loosing 10% wrong1%)
+- Motion Blur (rarely shots happen in that area)
+- people out of game can score better
+	 ==> use homography
+
+- Missing buckets - two games (one missing player)
+- Phantom buckets
+- Wrong bucket
+	- OCR wrong color
+
+
+
 ### 2023-08-23  Better Gallery
 
 We want a deep learned embedding space that well separates the players (e.g. like a normal embedding, but one that is computed thru multiple deep layers)

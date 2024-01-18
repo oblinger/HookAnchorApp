@@ -43,7 +43,7 @@ LEFT FOCUSED LAYOUT
 |:---------:|:------------:|:--------:|
 | [[COMs]]  | [[COM Next]] | [[CRM]] |
 |     "     |      "       |    "     |
-| [[Calls]] | [[external]] |    "     |
+| [[call]] | [[external]] |    "     |
 |     "     |      "       |    "     |
 
 

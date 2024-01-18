@@ -7,7 +7,7 @@
 - 	NAME		FLAGS		NOTES  (Flags: A=ADD  J=JUMP  W=WORSPACE  S=SEND-TO)
 - A	[[active]]		A J   S		Active project pages   *{{send to ARCHIVE}}*
 - B	Back		    J			Jumps to the previous workspace configuration
-- C	[[COMS]]		A W 		*WORKSPACE* of professional communication pages.  ([[Calls]] page is used for personal coms)
+- C	[[COMS]]		A W 		*WORKSPACE* of professional communication pages.  ([[call]] page is used for personal coms)
 - D	Daily		   W			*WORKSPACE* of daily lists
 - E	
 - F	[[fried]]		A J   S		Things to do when 'fried'

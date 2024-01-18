@@ -165,6 +165,47 @@ Fong -
 
 
 # LOG
+- Sarthi - Survey Volleyball on BallerTV
+- Martin: give me script
+- Text summary to the team
+
+- obj-detect, ocr, playerID, shot-attempt, edge-cases (tip in), bad setup (lighting, extra balls, weird lines, other players)
+- video blur. 
+
+B10 not done / hacky / consensus / production
+- vis
+- run
+### 2024-01-12  GRZ
+-- Refactor shot id
+- hands up integration
+
+TODO:
+b10
+writeup
+why went backwards
+
+### 2024-01-12  Martin
+- Hall Shots
+- Shot detector is turned off for 30 frames
+
+### 2024-01-15  Maxim
+==> GPT integration
+- Testing:  
+
+### 2024-01-12  Sarthi
+- Volleyball games
+
+=> Get v10
+
+### 2024-01-12  Juan
+
+
+
+### 2024-01-16  BAD GAMES
+- #6  Bad Lighting
+- #2  White numbers on yellow Jersey
+- #7  Trim
+- #9  Extra short video
 
 ### 2023-12-14 Points [[@Maxim Dorogov]]
 - MaximEquations, RBP_Shooting_scorer (which needs update for dynamic view labels)

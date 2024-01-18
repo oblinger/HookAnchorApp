@@ -8,6 +8,22 @@ status: test
 
 # Log
 
+### 2024-01-16  what he will do
+- Technical advice
+- Sounding board
+
+
+- Frustrating - things take too long
+- Reinventing of the wheel - 
+- Not taking things to completion - 
+
+
+- Better planning
+- Foreshadowding
+- Put silence in the meeting - 
+- Quicker meetings - 
+- Need to have meeting - 
+
 ### 2023-05-15  New Report To Call
 
 - When I joined idea was that J-S-D were 

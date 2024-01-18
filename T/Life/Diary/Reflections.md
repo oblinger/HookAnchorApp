@@ -1,3 +1,11 @@
+### 2024-01-02  the 2024 life reset
+
+- Build sustained, effective action
+- Focus on key things most impt in ALL areas
+- Live a little
+
+
+
 ### 2023-12-04  Depressive-time-suck
 
 Sunday was a pretty big waste.

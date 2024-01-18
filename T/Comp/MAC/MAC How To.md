@@ -37,7 +37,10 @@ Scroll down and click Advanced
 Click content settings
 Click Notifications
 Next to the Ask before sending (recommended) text, click the toggle button. It should now say Blocked.
-## = SUDO - How to setup SUDO w/o PASSWORD (xx sudoers)
+## = SUDO - How to setup SUDO w/o PASSWORD (xx sudoers) 
+
+^sudo
+
   export VISUAL=nano
   sudo visudo     # MUST USE VISUDO (no other editor)
 
@@ -51,6 +54,8 @@ Next to the Ask before sending (recommended) text, click the toggle button. It s
   root    ALL=(ALL) ALL
   %admin  ALL=(ALL) NOPASSWD:ALL
 
+
+^o ^x   (this writes and exits)
 ## = FAST WAKE - How to setup "fast wake" on osx
   pmset -g   # To see original settings
   sudo pmset -b standbydelay 43200        # how long sleeping before switching memory to disk

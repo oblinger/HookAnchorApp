@@ -4,7 +4,7 @@
 - Ask Slack Field Testing
 - Sarthi Call
 
-- Patent Search
+- Patent Search & Patent Plan
 
 - Pivo&Rec Tickets on their own board (or just in icebox)
 - Strat doc

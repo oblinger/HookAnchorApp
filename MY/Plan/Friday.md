@@ -7,7 +7,7 @@
 -  [Thrillist](https://www.thrillist.com/eat/san-francisco/most-romantic-restaurants-san-francisco)  +
 -  [Open Table](https://www.opentable.com/blog/best-romantic-date-night-restaurants-san-francisco/) 
 -  [Time Out](https://www.timeout.com/san-francisco/restaurants/romantic-restaurants-in-san-francisco) 
--  [Yelp](https://www.yelp.com/search?find_desc=Date+Night+Restaurant&find_loc=San+Francisco%2C+CA) 
+-  [Yelp](https://www.yelp.com/search?find_desc=Date+Night+Restaurant&find_loc=San+Francisco%2C+CA)  
 
 
 

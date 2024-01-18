@@ -5,8 +5,20 @@ n:: no prefix.	Dated entries without any typing prefix
 
 | Date       | File                       | Notes                                                                                                                             |
 | ---------- | -------------------------- | --------------------------------------------------------------------------------------------------------------------------------- |
+| 2024-01-16 | [[CV]]                         | BAD GAMES                                                                                                                         |
+| 2024-01-16 | [[@Mike Seibert]]              | what he will do                                                                                                                   |
+| 2024-01-15 | [[CV]]                         | Maxim                                                                                                                             |
+| 2024-01-12 | [[CV]]                         | GRZ                                                                                                                               |
+| 2024-01-12 | [[CV]]                         | Martin                                                                                                                            |
+| 2024-01-12 | [[CV]]                         | Sarthi                                                                                                                            |
+| 2024-01-12 | [[CV]]                         | Juan                                                                                                                              |
+| 2024-01-11 | [[@Grzegorz Biziel]]           | fixing the player ID                                                                                                              |
+| 2024-01-11 | [[Mgt]]                        | JAN meeting                                                                                                                       |
+| 2024-01-11 | [[@Jason Syversen]]            | JASON QUOTE REQUEST                                                                                                               |
+| 2024-01-02 | [[@James Briones]]             | LOAN                                                                                                                              |
 | 2024-01-02 | [[belief]]                     | test example                                                                                                                      |
 | 2024-01-02 | [[LCM]]                        | foo foo foo                                                                                                                       |
+| 2024-01-02 | [[Reflections]]                | the 2024 life reset                                                                                                               |
 | 2023-12-31 | [[@Dan Oblinger]]              | yet another                                                                                                                       |
 | 2023-12-31 | [[@Dan Oblinger]]              | just some info                                                                                                                    |
 | 2023-12-26 | [[LCM]]                        | Notes for the Run class implementation:                                                                                           |

@@ -98,7 +98,7 @@ master in GROC
 [VegLeaf] PeaSprouts, ChineseBrok
 [HotP] Seasoning
 ## Shopping Costco 
-master in GROC
+master in Contacts
 FREQ	 Paper(toilet&towels) VegBroth
 MEAT   - SpareRibs, Cthigh, PorkChop 
 FRUIT  - WaterMellon, Fuji, Orange  | Berry, Strawberry, Bananna, Grape,  

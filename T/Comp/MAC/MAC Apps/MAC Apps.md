@@ -186,7 +186,7 @@ Paypal
 Tools I Never used
 https://github.com/RobTrew/txtquery-tools/tree/master/ftdoc%20url%20scheme%20and%20FTCopyAsURL
 
-## xx Karabiner-Elements  [[Karabiner Notes]]
+## xx Karabiner-Elements  [[Karabiner Notes]].  (Now using Better Touch Tool!)
 
 See ~/.config/karabiner/karabiner.json
 

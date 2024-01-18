@@ -4,13 +4,14 @@
 
 
 [[SYS]] 
-- [[SYS Setup]]			- 
 - [[SYS Dashboards]]	- 
 - [[SYS Facets]]			- 
+- [[SYS Keyboard Setup]]
 - [[SYS Misc]]			- 
-- [[SYS Task Lists]]		- 
-- [[KBD Shortcuts]]		- 
 - [[SYS Notations]]		- 
+- [[SYS Setup]]			- 
+- [[KBD Shortcuts]]		- 
+- [[SYS Task Lists]]		- 
 
 OTHER
 - [[Notifications]]: 
