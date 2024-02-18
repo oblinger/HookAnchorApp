@@ -1,3 +1,1 @@
-=[[Cmd]]   shell _1pass Sophos
-
-
+=[[Cmd]]   shell spot -x Sophos 1Pass

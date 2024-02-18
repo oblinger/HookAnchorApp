@@ -1,3 +1,1 @@
-=[[Cmd]]   shell _1pass OpenTable
-
-
+=[[Cmd]]   shell spot -x OpenTable 1Pass

@@ -86,6 +86,19 @@ small intestine bacterial over growth (SIBO)
 - [[Allergy vs Intolerance]](https://badgut.org/information-centre/health-nutrition/food-allergy-vs-intolerance/) -
 
 # LOG
+
+### 2024-02-12  QL DOC advice for a flu w/ cough
+
+Justin Broughton 9:53 AM
+- mucinex fast max as directed
+- tessalon prn cough (rx)
+- flonase nasal in am daily
+- afrin nasal at 2pm and 8pm x 3 days only, then stop
+- motrin 800mg 3x/day
+- netipot or neil med rinse daily
+- re-test for covid as discussed
+
+
 ### 2023-04-10  <<<<
 - Prilosec
 - Tamzepan

@@ -1,1 +1,1 @@
-=[[Cmd]]   folder /Users/oblinger/ob/kmr/SV/QQ
+=[[Cmd]]   shell spot -x QQ Folder

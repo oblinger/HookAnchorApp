@@ -1,3 +1,1 @@
-=[[Cmd]]   shell _1pass MorningStar
-
-
+=[[Cmd]]   shell spot -x MorningStar 1Pass

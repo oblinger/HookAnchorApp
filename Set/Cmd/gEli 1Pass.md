@@ -1,3 +1,1 @@
-=[[Cmd]]   shell _1pass gEli
-
-
+=[[Cmd]]   shell spot -x gELI 1Pass

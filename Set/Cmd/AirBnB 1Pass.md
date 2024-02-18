@@ -1,3 +1,1 @@
-=[[Cmd]]   shell _1pass AirBnB
-
-
+=[[Cmd]]   shell spot -x AirBnB 1Pass

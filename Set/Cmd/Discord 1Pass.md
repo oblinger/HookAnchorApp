@@ -1,3 +1,1 @@
-=[[Cmd]]   shell _1pass Discord
-
-
+=[[Cmd]]   shell spot -x Discord 1Pass

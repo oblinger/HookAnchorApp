@@ -1,3 +1,1 @@
-=[[Cmd]]   shell _1pass IFTTT
-
-
+=[[Cmd]]   shell spot -x IFTTT 1Pass

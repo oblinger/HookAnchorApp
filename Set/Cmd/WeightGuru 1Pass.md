@@ -1,3 +1,1 @@
-=[[Cmd]]   shell _1pass WeightGuru
-
-
+=[[Cmd]]   shell spot -x WeightGuru 1Pass

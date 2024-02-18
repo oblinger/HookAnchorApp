@@ -1,3 +1,1 @@
-=[[Cmd]]   shell _1pass LastPass
-
-
+=[[Cmd]]   shell spot -x LastPass 1Pass

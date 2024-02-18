@@ -1,3 +1,1 @@
-=[[Cmd]]   shell _1pass HomeDepot
-
-
+=[[Cmd]]   shell spot -x HomeDepot 1Pass

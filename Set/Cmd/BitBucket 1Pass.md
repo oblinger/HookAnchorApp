@@ -1,3 +1,1 @@
-=[[Cmd]]   shell _1pass BitBucket
-
-
+=[[Cmd]]   shell spot -x BitBucket 1Pass

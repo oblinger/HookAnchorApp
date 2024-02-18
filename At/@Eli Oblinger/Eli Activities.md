@@ -6,8 +6,7 @@
 - [Museum of Chilren art]([https://www.mocha.org/](https://www.mocha.org/) - MOCHA
 - USS Hornet - Alameda
 ## Soccer
-
-- 415-762-5123 [SF Tots](https://www.care.com/connect/sftots/providers?months%5B%5D=36&months%5B%5D=48)  check back in Aug?
+- [SF Soccer Kids](https://soccerkidssf.jumbula.com/).   coachjaime@soccerkids.com. - 415-762-5123 SF Tots  check back in Aug?
 
 1. SF Youth Soccer: Their contact information is not directly listed on their website. You may need to use their contact form for inquiries.
     

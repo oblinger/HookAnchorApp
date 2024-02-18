@@ -1,3 +1,1 @@
-=[[Cmd]]   shell _1pass Kaiser
-
-
+=[[Cmd]]   shell spot -x Kaiser 1Pass

@@ -1,3 +1,1 @@
-=[[Cmd]]   shell _1pass MyChart
-
-
+=[[Cmd]]   shell spot -x MyChart 1Pass

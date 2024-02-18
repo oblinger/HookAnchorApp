@@ -1,3 +1,5 @@
+
+[[Notion]]. 
 #set 
 n:: Notes about specific apps
 

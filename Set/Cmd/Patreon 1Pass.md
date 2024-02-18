@@ -1,3 +1,1 @@
-=[[Cmd]]   shell _1pass Patreon
-
-
+=[[Cmd]]   shell spot -x Patreon 1Pass

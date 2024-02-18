@@ -1,3 +1,1 @@
-=[[Cmd]]   shell _1pass AllState
-
-
+=[[Cmd]]   shell spot -x AllState 1Pass

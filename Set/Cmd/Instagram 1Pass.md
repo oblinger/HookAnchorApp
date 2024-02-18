@@ -1,3 +1,1 @@
-=[[Cmd]]   shell _1pass Instagram
-
-
+=[[Cmd]]   shell spot -x Instagram 1Pass

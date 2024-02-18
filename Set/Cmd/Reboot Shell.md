@@ -1,3 +1,1 @@
-=[[Cmd]]   shell _reboot
-
-
+=[[Cmd]]   shell spot -x Reboot Shell

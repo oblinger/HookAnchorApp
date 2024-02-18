@@ -1,3 +1,1 @@
-=[[Cmd]]   shell _1pass Twilio
-
-
+=[[Cmd]]   shell spot -x Twilio 1Pass

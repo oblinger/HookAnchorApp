@@ -1,3 +1,1 @@
-=[[Cmd]]   shell _1pass Calendly
-
-
+=[[Cmd]]   shell spot -x Calendly 1Pass

@@ -1,3 +1,1 @@
-=[[Cmd]]   shell _1pass Coursera
-
-
+=[[Cmd]]   shell spot -x Coursera 1Pass

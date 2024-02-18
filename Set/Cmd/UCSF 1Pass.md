@@ -1,3 +1,1 @@
-=[[Cmd]]   shell _1pass UCSF
-
-
+=[[Cmd]]   shell spot -x UCSF 1Pass

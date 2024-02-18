@@ -1,3 +1,1 @@
-=[[Cmd]]   shell _1pass KeyboardMaestroForum
-
-
+=[[Cmd]]   shell spot -x KeyboardMaestroForum 1Pass

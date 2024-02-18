@@ -1,3 +1,1 @@
-=[[Cmd]]   shell _1pass Rinse
-
-
+=[[Cmd]]   shell spot -x Rinse 1Pass

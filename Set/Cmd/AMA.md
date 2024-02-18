@@ -1,3 +1,1 @@
-=[[Cmd]]   url https://www.amazon.com
-
-
+=[[Cmd]]   shell spot -x AMA

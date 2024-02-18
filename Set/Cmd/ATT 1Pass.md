@@ -1,3 +1,1 @@
-=[[Cmd]]   shell _1pass ATT account
-
-
+=[[Cmd]]   shell spot -x ATT 1Pass

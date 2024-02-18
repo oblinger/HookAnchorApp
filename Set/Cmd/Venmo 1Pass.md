@@ -1,3 +1,1 @@
-=[[Cmd]]   shell _1pass Venmo
-
-
+=[[Cmd]]   shell spot -x Venmo 1Pass

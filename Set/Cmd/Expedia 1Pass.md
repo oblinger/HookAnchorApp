@@ -1,3 +1,1 @@
-=[[Cmd]]   shell _1pass Expedia
-
-
+=[[Cmd]]   shell spot -x Expedia 1Pass

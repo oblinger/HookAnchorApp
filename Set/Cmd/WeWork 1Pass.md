@@ -1,3 +1,1 @@
-=[[Cmd]]   shell _1pass WeWork
-
-
+=[[Cmd]]   shell spot -x WeWork 1Pass

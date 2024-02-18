@@ -1,1 +1,1 @@
-=[[Cmd]]   folder /Users/oblinger/large/_PHOTOS_/_2023
+=[[Cmd]]   shell spot -x Photos Folder

@@ -1,3 +1,1 @@
-=[[Cmd]]   shell _1pass Trello
-
-
+=[[Cmd]]   shell spot -x Trello 1Pass

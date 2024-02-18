@@ -1,3 +1,1 @@
-=[[Cmd]]   shell _1pass ycNews
-
-
+=[[Cmd]]   shell spot -x ycNews 1Pass

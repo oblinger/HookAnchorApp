@@ -3,7 +3,7 @@
 
 | CH  | **CMD (modify)**       | **OPTION (?note)** | **LT PAIR (Go/View)**       | **RT PAIR (Create)** | **CRTL (char)** |
 | --- | ---------------------- | ------------------ | --------------------------- | -------------------- | --------------- |
-| A   |                        |                    |                             | AT entry             | Start line      |
+| A   | ABOUT proj             |                    |                             | AT entry             | Start line      |
 | B   | toggle BOLD            |                    | BIG pane view               |                      | Back Char       |
 | C   | COPY to clip           |                    | COLLAPSE all / UNCOLLAPSE   | add COMMAND          | Toggle CASE     |
 | D   | DEL para / file        | ? DEL note         | open DAILY / .DELETE file   | export word DOC      | Del Char        |
@@ -12,14 +12,14 @@
 | G   | GRAPH view             |                    |                             |                      |                 |
 | H   | -HIDE-                 |                    |                             | export HTML          | Bk Space        |
 | I   | tgl ITALIC             |                    |                             |                      | INDENT +/-      |
-| J   |                        |                    |                             |                      |                 |
+| J   | JUMP proj              |                    |                             |                      |                 |
 | K   | insert LINK            |                    |                             |                      | Kill line       |
-| L   |                        |                    | / LINKS pane                | LIST of template     |                 |
+| L   | LIST proj tasks        |                    | / LINKS pane                | LIST of template     |                 |
 | M   | -MINIMIZE- /           | note MOVE/MERGE    |                             | MEETING heading      |                 |
 | N   | NEW note / new 'MISC'  |                    | /                           | NOTE heading         |                 |
 | O   | OPEN switcher/OUTLINE  |                    | OPEN in app / note OUTLINE  | OBSIDIAN note create |                 |
 | P   | cmd PALETTE            |                    | PLAN note /                 | export POWERPOINT    |                 |
-| Q   |                        |                    |                             | QUICK ADD menu       |                 |
+| Q   | QUICK jotted note      |                    |                             | QUICK ADD menu       |                 |
 | R   | RENAME file            | ? Rename note      | RECOVERY of note snapshot   |                      |                 |
 | S   | SAVE file              |                    | SCRATCH note / STARRED pane | SUB PAGE entry       |                 |
 | T   | TAB new / undo CLOSE   |                    |                             | TEXT heading         | Transpose       |
@@ -59,8 +59,8 @@
 | 1     | ONE pane            |                    | MERGE one window         |                      |                 |
 | 2     | split VERTICALLY    |                    | SPLIT vertically into 2  |                      |                 |
 | 3     | split HORIZONTAL    |                    | SPLIT horizontally       |                      |                 |
-| 4     |                     |                    |                          |                      |                 |
-| 5     |                     |                    |                          |                      |                 |
+| 4     | spell check         |                    |                          |                      |                 |
+| 5     | jump OBS page       |                    |                          |                      |                 |
 | 6     |                     |                    |                          |                      |                 |
 | 7     |                     |                    |                          |                      |                 |
 | 8     |                     |                    |                          |                      |                 |

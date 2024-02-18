@@ -1,3 +1,1 @@
-=[[Cmd]]   shell _1pass SFMTA
-
-
+=[[Cmd]]   shell spot -x SFMTA 1Pass

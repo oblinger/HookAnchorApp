@@ -1,3 +1,1 @@
-=[[Cmd]]   folder /Users/oblinger/ob/bin
-
-
+=[[Cmd]]   shell spot -x Bin Folder

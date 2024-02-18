@@ -1,3 +1,1 @@
-=[[Cmd]]   shell _1pass FedEx
-
-
+=[[Cmd]]   shell spot -x FedEx 1Pass

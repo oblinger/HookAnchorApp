@@ -1,3 +1,1 @@
-=[[Cmd]]   shell _1pass Chase
-
-
+=[[Cmd]]   shell spot -x Chase 1Pass

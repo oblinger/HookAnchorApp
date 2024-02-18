@@ -1,3 +1,1 @@
-=[[Cmd]]   shell _1pass Marriott
-
-
+=[[Cmd]]   shell spot -x Marriott 1Pass

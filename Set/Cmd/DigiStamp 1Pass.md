@@ -1,3 +1,1 @@
-=[[Cmd]]   shell _1pass DigiStamp
-
-
+=[[Cmd]]   shell spot -x DigiStamp 1Pass

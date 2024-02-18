@@ -1,3 +1,1 @@
-=[[Cmd]]   shell _1pass OpenAI
-
-
+=[[Cmd]]   shell spot -x OpenAI 1Pass

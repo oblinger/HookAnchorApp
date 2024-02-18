@@ -1,3 +1,1 @@
-=[[Cmd]]   folder /Users/oblinger/ob/pkg
-
-
+=[[Cmd]]   shell spot -x Pkg Folder

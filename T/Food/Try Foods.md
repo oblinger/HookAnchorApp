@@ -1,3 +1,4 @@
+white S.  qinoia, bb salad
 
 **PAPRIKA TRY**:
 - TRY: 			+++CHIA, TVP, +++Silken Tofu, ++Riced Cauliflower

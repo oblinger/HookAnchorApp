@@ -1,3 +1,1 @@
-=[[Cmd]]   shell _1pass AlaskaAir
-
-
+=[[Cmd]]   shell spot -x AlaskaAir 1Pass

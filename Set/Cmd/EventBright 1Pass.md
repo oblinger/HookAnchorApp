@@ -1,3 +1,1 @@
-=[[Cmd]]   shell _1pass EventBright
-
-
+=[[Cmd]]   shell spot -x EventBright 1Pass

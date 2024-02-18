@@ -1,3 +1,1 @@
-=[[Cmd]]   shell _1pass SouthWest
-
-
+=[[Cmd]]   shell spot -x SouthWest 1Pass

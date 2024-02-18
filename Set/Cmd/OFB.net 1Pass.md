@@ -1,3 +1,1 @@
-=[[Cmd]]   shell _1pass OFB.net
-
-
+=[[Cmd]]   shell spot -x OFB.net 1Pass

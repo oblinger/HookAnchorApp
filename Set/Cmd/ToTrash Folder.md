@@ -1,1 +1,1 @@
-=[[Cmd]]   folder /Users/oblinger/large/_TO_TRASH_
+=[[Cmd]]   shell spot -x ToTrash Folder

@@ -1,3 +1,1 @@
-=[[Cmd]]   shell _1pass PlushCare
-
-
+=[[Cmd]]   shell spot -x PlushCare 1Pass

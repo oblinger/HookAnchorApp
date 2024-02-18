@@ -1,3 +1,1 @@
-=[[Cmd]]   shell _1pass Instacart
-
-
+=[[Cmd]]   shell spot -x Instacart 1Pass

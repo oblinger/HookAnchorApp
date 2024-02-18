@@ -1,3 +1,1 @@
-=[[Cmd]]   shell _1pass FTB
-
-
+=[[Cmd]]   shell spot -x FTB 1Pass

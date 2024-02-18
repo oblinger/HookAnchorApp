@@ -1,3 +1,1 @@
-=[[Cmd]]   shell _1pass Uber
-
-
+=[[Cmd]]   shell spot -x Uber 1Pass

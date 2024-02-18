@@ -1,3 +1,1 @@
-=[[Cmd]]   shell _1pass CoinBase
-
-
+=[[Cmd]]   shell spot -x CoinBase 1Pass

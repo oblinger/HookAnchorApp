@@ -1,3 +1,1 @@
-=[[Cmd]]   shell _1pass Ring
-
-
+=[[Cmd]]   shell spot -x Ring 1Pass

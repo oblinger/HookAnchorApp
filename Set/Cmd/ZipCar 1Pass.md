@@ -1,3 +1,1 @@
-=[[Cmd]]   shell _1pass ZipCar
-
-
+=[[Cmd]]   shell spot -x ZipCar 1Pass

@@ -1,3 +1,1 @@
-=[[Cmd]]   shell _1pass Feedly
-
-
+=[[Cmd]]   shell spot -x Feedly 1Pass

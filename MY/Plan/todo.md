@@ -1,5 +1,13 @@
+- !! trip in Feb
+- !!running shoes
+- !! friday
+- return keyboard, and thule
+- tripod
 
+- Scan Now list
 - get licence
+- 
+- may 20th - may 22nd trip
 
 - shoes research
 - [ ] praveen contacts for chatting

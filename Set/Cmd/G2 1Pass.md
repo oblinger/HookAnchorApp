@@ -1,3 +1,1 @@
-=[[Cmd]]   shell _1pass G2
-
-
+=[[Cmd]]   shell spot -x G2 1Pass

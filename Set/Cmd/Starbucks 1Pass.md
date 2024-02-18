@@ -1,3 +1,1 @@
-=[[Cmd]]   shell _1pass Starbucks
-
-
+=[[Cmd]]   shell spot -x Starbucks 1Pass

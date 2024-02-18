@@ -1,3 +1,1 @@
-=[[Cmd]]   shell _1pass MerrilLynch
-
-
+=[[Cmd]]   shell spot -x MerrilLynch 1Pass

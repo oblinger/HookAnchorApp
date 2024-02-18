@@ -1,3 +1,1 @@
-=[[Cmd]]   shell _1pass PivotalTracker
-
-
+=[[Cmd]]   shell spot -x PivotalTracker 1Pass

@@ -14,11 +14,15 @@ FORMAT for each CMD.md file
 | Shell   | shell         | cmd line    | Runs cmd line in headless mode                          |
 | Webpage | url           | url         | Opens url in default browser                            |
 
-IMPLEMENTATION
+IMPLEMENTATION (of execution)
 - JS plugin "Action Notes"
 
 - Triggers `_1pass` in the bin directory:
   `_1pass  WORD`         # will open browser and login to specified _1pass target
+
+IMPLEMENTATION (of key definition)
+- QUICK Add (need to restart after adding)
+	- 
 
 EXAMPLES
 `    =[[Cmd]]  shell _1pass crunchbase`

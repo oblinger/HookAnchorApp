@@ -1,1 +1,1 @@
-=[[Cmd]]   folder /Users/oblinger/ob/kmr/Logs
+=[[Cmd]]   shell spot -x Logs Folder

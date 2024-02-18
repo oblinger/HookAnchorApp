@@ -1,1 +1,1 @@
-=[[Cmd]]   shell _1pass thistle
+=[[Cmd]]   shell spot -x Thistle

@@ -1,1 +1,1 @@
-=[[Cmd]]   folder /Users/oblinger/ob/proj/oblinger.github.io
+=[[Cmd]]   shell spot -x Git oblinger.github.io Folder

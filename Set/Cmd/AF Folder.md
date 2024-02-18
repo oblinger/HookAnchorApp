@@ -1,1 +1,1 @@
-=[[Cmd]]   folder /Users/oblinger/large/_ROOTS_/AF
+=[[Cmd]]   shell spot -x AF Folder

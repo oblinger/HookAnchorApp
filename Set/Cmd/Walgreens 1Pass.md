@@ -1,3 +1,1 @@
-=[[Cmd]]   shell _1pass Walgreens
-
-
+=[[Cmd]]   shell spot -x Walgreens 1Pass

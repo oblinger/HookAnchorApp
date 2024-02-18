@@ -1,3 +1,1 @@
-=[[Cmd]]   shell _1pass CraigsList
-
-
+=[[Cmd]]   shell spot -x CraigsList 1Pass

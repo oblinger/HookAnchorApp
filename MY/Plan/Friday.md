@@ -22,10 +22,23 @@ PLACES
 - [7 Adams](https://thebolditalic.com/new-michelin-chefs-tasting-menu-for-under-100-at-7-adams-64c2138ef984) - modern looking, new from Marlena's owner - cheap michellen star
 
 
+BERNAL
+-  [Montecristo](https://www.yelp.com/biz/montecristo-restaurant-2-san-francisco-5) Salvadorian
+-  [Mi Lindo Perú](https://www.yelp.com/biz/mi-lindo-per%C3%BA-san-francisco-6) 
+
+GLENN PARK
+- [Gialina Pizzeria](https://www.yelp.com/biz/gialina-pizzeria-san-francisco) 
+
+MISSION. 
+-  [. Cocina](https://www.yelp.com/biz/cocina-mam%C3%A1-cholita-san-francisco) (mexican)
+-  [Old Jerusalem](https://www.yelp.com/biz/old-jerusalem-restaurant-san-francisco) (medittrian). 
+-  [Paprika](https://www.yelp.com/biz/paprika-san-francisco) German
+-   [Itria](https://www.yelp.com/biz/itria-san-francisco) Italian
+- 
 
 
 [Time Out](https://www.timeout.com/san-francisco/restaurants/romantic-restaurants-in-san-francisco)
-- Anomaly SF. [Google](https://www.google.com/maps/place/Anomaly+SF/@37.7849566,-122.4459591,17z/data=!3m1!4b1!4m6!3m5!1s0x80858184ff022515:0x68d8b817285400e8!8m2!3d37.7849566!4d-122.4433842!16s%2Fg%2F11jr7f9hp7?entry=ttu) super fancy
+- Anomaly SF. . Google](https://www.google.com/maps/place/Anomaly+SF/@37.7849566,-122.4459591,17z/data=!3m1!4b1!4m6!3m5!1s0x80858184ff022515:0x68d8b817285400e8!8m2!3d37.7849566!4d-122.4433842!16s%2Fg%2F11jr7f9hp7?entry=ttu). super fancy
 - Marlena (close)
 
 ## BEEN THERE

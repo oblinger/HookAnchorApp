@@ -1,3 +1,1 @@
-=[[Cmd]]   shell _1pass GrubHub
-
-
+=[[Cmd]]   shell spot -x GrubHub 1Pass

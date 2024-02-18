@@ -1,6 +1,7 @@
 
 
 ### Work Projects
+=	[[Choice]]			[[2024 AI Product Choice]].
 =	[[belief]]			[[2023 Belief Propagation]].
 =	[[FullAI]]			[[2023 Full-AI Basketball Highlights Product]].
 =	[[vball]]			[[2023 Volleyball SV Product]].

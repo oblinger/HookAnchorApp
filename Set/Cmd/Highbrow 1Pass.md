@@ -1,3 +1,1 @@
-=[[Cmd]]   shell _1pass Highbrow
-
-
+=[[Cmd]]   shell spot -x Highbrow 1Pass

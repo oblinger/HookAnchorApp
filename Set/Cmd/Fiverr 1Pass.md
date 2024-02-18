@@ -1,3 +1,1 @@
-=[[Cmd]]   shell _1pass Fiverr
-
-
+=[[Cmd]]   shell spot -x Fiverr 1Pass

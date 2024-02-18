@@ -1,3 +1,1 @@
-=[[Cmd]]   shell _1pass Square
-
-
+=[[Cmd]]   shell spot -x Square 1Pass

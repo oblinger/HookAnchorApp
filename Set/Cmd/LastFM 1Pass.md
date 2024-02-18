@@ -1,3 +1,1 @@
-=[[Cmd]]   shell _1pass LastFM
-
-
+=[[Cmd]]   shell spot -x LastFM 1Pass

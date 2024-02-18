@@ -13,7 +13,7 @@
 	- [[EduCorp Principles]],  
 
 - OLDER
-	- [[out]],  [[EC.]],  [[EduCorp Types]], 
+	- [[out]],  [[EduCorp Todos]],  [[EduCorp Types]], 
 - OLDER
 	- [[Greenhouse Farming]]
 

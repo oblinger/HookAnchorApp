@@ -1,3 +1,1 @@
-=[[Cmd]]   shell _1pass RememberTheMilk
-
-
+=[[Cmd]]   shell spot -x RememberTheMilk 1Pass

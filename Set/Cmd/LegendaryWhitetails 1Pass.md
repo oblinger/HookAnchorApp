@@ -1,3 +1,1 @@
-=[[Cmd]]   shell _1pass LegendaryWhitetails
-
-
+=[[Cmd]]   shell spot -x LegendaryWhitetails 1Pass

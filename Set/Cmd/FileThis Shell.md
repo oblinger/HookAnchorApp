@@ -1,3 +1,1 @@
-=[[Cmd]]   shell filethis
-
-
+=[[Cmd]]   shell spot -x FileThis Shell

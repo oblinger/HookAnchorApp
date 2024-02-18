@@ -1,3 +1,1 @@
-=[[Cmd]]   shell _1pass gAR
-
-
+=[[Cmd]]   shell spot -x gAR 1Pass

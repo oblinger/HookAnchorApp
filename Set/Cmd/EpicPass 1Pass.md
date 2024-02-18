@@ -1,3 +1,1 @@
-=[[Cmd]]   shell _1pass EpicPass
-
-
+=[[Cmd]]   shell spot -x EpicPass 1Pass

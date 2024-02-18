@@ -1,3 +1,1 @@
-=[[Cmd]]   shell _1pass Penfed
-
-
+=[[Cmd]]   shell spot -x Penfed 1Pass

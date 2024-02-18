@@ -1,3 +1,1 @@
-=[[Cmd]]   shell _1pass Paprika
-
-
+=[[Cmd]]   shell spot -x Paprika 1Pass

@@ -1,1 +1,1 @@
-=[[Cmd]]   folder /Users/oblinger/ob/kmr/Set
+=[[Cmd]]   shell spot -x Set Folder

@@ -1,3 +1,1 @@
-=[[Cmd]]   shell _1pass GEICO
-
-
+=[[Cmd]]   shell spot -x GEICO 1Pass

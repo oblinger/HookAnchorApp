@@ -1,3 +1,1 @@
-=[[Cmd]]   folder /Users/oblinger/large
-
-
+=[[Cmd]]   shell spot -x Large Folder

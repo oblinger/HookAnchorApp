@@ -1,3 +1,1 @@
-=[[Cmd]]   shell _1pass Smore
-
-
+=[[Cmd]]   shell spot -x Smore 1Pass

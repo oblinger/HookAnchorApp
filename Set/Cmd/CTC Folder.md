@@ -1,3 +1,1 @@
-=[[Cmd]]   folder /Users/oblinger/ob/data/mail/contacts
-
-
+=[[Cmd]]   shell spot -x CTC Folder

@@ -1,3 +1,1 @@
-=[[Cmd]]   shell _1pass ReadWise
-
-
+=[[Cmd]]   shell spot -x ReadWise 1Pass

@@ -1,1 +1,1 @@
-=[[Cmd]]   folder /Users/oblinger/My Drive
+=[[Cmd]]   shell spot -x gDR Folder

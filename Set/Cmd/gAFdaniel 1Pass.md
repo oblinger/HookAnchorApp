@@ -1,3 +1,1 @@
-=[[Cmd]]   shell _1pass gAFdaniel
-
-
+=[[Cmd]]   shell spot -x gAFdaniel 1Pass

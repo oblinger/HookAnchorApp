@@ -1,1 +1,1 @@
-=[[Cmd]]   shell _1pass AWS
+=[[Cmd]]   shell spot -x AWS

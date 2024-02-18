@@ -1,3 +1,1 @@
-=[[Cmd]]   shell _1pass NicholasPension
-
-
+=[[Cmd]]   shell spot -x NicholasPension 1Pass

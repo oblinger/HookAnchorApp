@@ -1,0 +1,39 @@
+
+JUMPS:
+- [SV](spot://SV): 
+- [SV Apps](spot://SV~Apps): 
+- [SV Archive](spot://SV~Archive): 
+- [SV Basketball Info](spot://SV~Basketball~Info): 
+- [SV C Root](spot://SV~C~Root): 
+- [SV Clickup Page](spot://SV~Clickup~Page): 
+- [SV Code](spot://SV~Code): 
+- [SV Competitor](spot://SV~Competitor): 
+- [SV Confluence Page](spot://SV~Confluence~Page): 
+- [SV Customer](spot://SV~Customer): 
+- [SV Dashboards](spot://SV~Dashboards): 
+- [SV Data](spot://SV~Data): 
+- [SV FIN](spot://SV~FIN): 
+- [SV Folder](spot://SV~Folder): 
+- [SV G Root](spot://SV~G~Root): 
+- [SV Google Drive Page](spot://SV~Google~Drive~Page): 
+- [SV Individuals](spot://SV~Individuals): 
+- [SV Legal](spot://SV~Legal): 
+- [SV Letter](spot://SV~Letter): 
+- [SV Log Page](spot://SV~Log~Page): 
+- [SV lrn](spot://SV~lrn): 
+- [SV Market](spot://SV~Market): 
+- [SV Notion](spot://SV~Notion): 
+- [SV Ops](spot://SV~Ops): 
+- [SV Partner](spot://SV~Partner): 
+- [SV People](spot://SV~People): 
+- [SV Planning](spot://SV~Planning): 
+- [SV Product](spot://SV~Product): 
+- [SV Roadmap](spot://SV~Roadmap): 
+- [SV Software](spot://SV~Software): 
+- [SV Strat](spot://SV~Strat): 
+- [SV SW Team](spot://SV~SW~Team): 
+- [SV System](spot://SV~System): 
+- [SV Tasks](spot://SV~Tasks): 
+- [SV Testing](spot://SV~Testing): 
+- [SV Wings](spot://SV~Wings): 
+

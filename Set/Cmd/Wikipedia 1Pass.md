@@ -1,3 +1,1 @@
-=[[Cmd]]   shell _1pass Wikipedia
-
-
+=[[Cmd]]   shell spot -x Wikipedia 1Pass

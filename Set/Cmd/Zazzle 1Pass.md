@@ -1,3 +1,1 @@
-=[[Cmd]]   shell _1pass Zazzle
-
-
+=[[Cmd]]   shell spot -x Zazzle 1Pass

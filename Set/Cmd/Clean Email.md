@@ -1,1 +1,1 @@
-=[[Cmd]]   shell _1pass Clean Email
+=[[Cmd]]   shell spot -x Clean Email

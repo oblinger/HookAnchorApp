@@ -1,3 +1,1 @@
-=[[Cmd]]   shell _1pass Zoom
-
-
+=[[Cmd]]   shell spot -x Zoom 1Pass

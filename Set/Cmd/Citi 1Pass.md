@@ -1,3 +1,1 @@
-=[[Cmd]]   shell _1pass citi doublecash
-
-
+=[[Cmd]]   shell spot -x Citi 1Pass

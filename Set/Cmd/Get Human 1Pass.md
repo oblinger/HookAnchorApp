@@ -1,3 +1,1 @@
-=[[Cmd]]   shell _1pass GetHuman
-
-
+=[[Cmd]]   shell spot -x Get Human 1Pass

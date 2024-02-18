@@ -1,3 +1,1 @@
-=[[Cmd]]   shell _1pass Osmo
-
-
+=[[Cmd]]   shell spot -x Osmo 1Pass

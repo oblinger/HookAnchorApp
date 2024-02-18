@@ -1,1 +1,1 @@
-=[[Cmd]]   folder /Users/oblinger/large/_TO_OFFLOAD_
+=[[Cmd]]   shell spot -x ToOffload Folder

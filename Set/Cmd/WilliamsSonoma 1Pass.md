@@ -1,3 +1,1 @@
-=[[Cmd]]   shell _1pass WilliamsSonoma
-
-
+=[[Cmd]]   shell spot -x WilliamsSonoma 1Pass

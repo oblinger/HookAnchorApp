@@ -1,3 +1,1 @@
-=[[Cmd]]   shell _1pass Zwillow
-
-
+=[[Cmd]]   shell spot -x Zwillow 1Pass

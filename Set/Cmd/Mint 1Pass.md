@@ -1,3 +1,1 @@
-=[[Cmd]]   shell _1pass Mint
-
-
+=[[Cmd]]   shell spot -x Mint 1Pass

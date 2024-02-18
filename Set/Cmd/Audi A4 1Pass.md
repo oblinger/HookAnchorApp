@@ -1,3 +1,1 @@
-=[[Cmd]]   shell _1pass Audi A4
-
-
+=[[Cmd]]   shell spot -x Audi A4 1Pass

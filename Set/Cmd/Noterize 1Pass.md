@@ -1,3 +1,1 @@
-=[[Cmd]]   shell _1pass Noterize
-
-
+=[[Cmd]]   shell spot -x Noterize 1Pass

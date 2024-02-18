@@ -1,3 +1,1 @@
-=[[Cmd]]   shell _1pass Quora
-
-
+=[[Cmd]]   shell spot -x Quora 1Pass

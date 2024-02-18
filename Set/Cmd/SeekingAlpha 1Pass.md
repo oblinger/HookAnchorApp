@@ -1,3 +1,1 @@
-=[[Cmd]]   shell _1pass SeekingAlpha
-
-
+=[[Cmd]]   shell spot -x SeekingAlpha 1Pass

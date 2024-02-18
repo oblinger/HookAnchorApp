@@ -1,3 +1,1 @@
-=[[Cmd]]   shell _1pass HashiCorp
-
-
+=[[Cmd]]   shell spot -x HashiCorp 1Pass

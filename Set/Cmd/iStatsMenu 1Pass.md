@@ -1,3 +1,1 @@
-=[[Cmd]]   shell _1pass iStatsMenu
-
-
+=[[Cmd]]   shell spot -x iStatsMenu 1Pass

@@ -1,3 +1,1 @@
-=[[Cmd]]   shell _1pass Think.org
-
-
+=[[Cmd]]   shell spot -x Think.org 1Pass

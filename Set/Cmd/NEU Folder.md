@@ -1,3 +1,1 @@
-=[[Cmd]]   folder /Users/oblinger/Library/Application Support/com.elegantchaos.neu/Templates
-
-
+=[[Cmd]]   shell spot -x NEU Folder

@@ -1,3 +1,1 @@
-=[[Cmd]]   shell _1pass Pinnterest
-
-
+=[[Cmd]]   shell spot -x Pinnterest 1Pass

@@ -1,3 +1,1 @@
-=[[Cmd]]   shell _1pass WeChat
-
-
+=[[Cmd]]   shell spot -x WeChat 1Pass

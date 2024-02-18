@@ -1,3 +1,1 @@
-=[[Cmd]]   shell _1pass Pzizz
-
-
+=[[Cmd]]   shell spot -x Pzizz 1Pass

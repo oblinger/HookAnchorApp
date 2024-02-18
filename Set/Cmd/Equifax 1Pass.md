@@ -1,3 +1,1 @@
-=[[Cmd]]   shell _1pass Equifax
-
-
+=[[Cmd]]   shell spot -x Equifax 1Pass

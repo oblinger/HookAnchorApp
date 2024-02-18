@@ -1,3 +1,1 @@
-=[[Cmd]]   shell _1pass ResellerRating
-
-
+=[[Cmd]]   shell spot -x ResellerRating 1Pass

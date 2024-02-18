@@ -1,3 +1,1 @@
-=[[Cmd]]   folder /Applications
-
-
+=[[Cmd]]   shell spot -x App Folder

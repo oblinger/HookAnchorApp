@@ -2,6 +2,31 @@
 
 - Friend of [[@Jack Potvin]] who is a volleyball coach
 	
+
+### 2024-01-18  Balltime
+
+- 
+- once they upload they want to be done.
+- Tedious to Upload video 
+
+- Stats would be awesome
+- Little highlights would be awesome
+- Filter by kills
+
+- Price?
+- Stats page is an Eyesore 
+- Can't see the whole game video
+
+- Timeouts detecting
+	- ball rolls on court
+	- whistle
+	- hand signal
+- 
+- Video shown from the end of the court
+
+
+
+
 ### 2023-10-17  Volleyball
 
 >   

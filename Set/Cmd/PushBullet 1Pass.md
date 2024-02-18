@@ -1,3 +1,1 @@
-=[[Cmd]]   shell _1pass PushBullet
-
-
+=[[Cmd]]   shell spot -x PushBullet 1Pass

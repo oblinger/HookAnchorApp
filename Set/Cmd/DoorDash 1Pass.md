@@ -1,3 +1,1 @@
-=[[Cmd]]   shell _1pass DoorDash
-
-
+=[[Cmd]]   shell spot -x DoorDash 1Pass

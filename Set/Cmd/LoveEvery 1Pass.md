@@ -1,3 +1,1 @@
-=[[Cmd]]   shell _1pass LoveEvery
-
-
+=[[Cmd]]   shell spot -x LoveEvery 1Pass

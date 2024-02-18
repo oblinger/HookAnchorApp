@@ -1,1 +1,1 @@
-=[[Cmd]]   doc /Users/oblinger/ob/data/Sensitive_S1S2_2.dmg
+=[[Cmd]]   shell spot -x Sensitive OPEN Doc

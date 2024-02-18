@@ -3,6 +3,12 @@
 
 # LOG
 
+
+### 2024-02-11  Boston Sapphire
+
+- [map](https://www.google.com/maps/dir/9+Tucker+Hill+Rd,+Dunbarton,+NH+03046/Worcester,+MA/Marion+Gerrish+Community+Center+%26+Thrift+Shop,+39+W+Broadway,+Derry,+NH+03038/Hyperplane+Venture+Capital,+137+Newbury+St+8th+Floor,+Boston,+MA+02116/Boston+Logan+International+Airport+(BOS),+East+Boston,+MA/@42.6794297,-72.0655209,9z/data=!3m2!4b1!5s0x89e37a0b849d6051:0x7a0abffa0e5aae3c!4m32!4m31!1m5!1m1!1s0x89e2391d736ef87b:0x3bd9f81c0430bb21!2m2!1d-71.621213!2d43.1008192!1m5!1m1!1s0x89e406585a2a8b0d:0x9e137dd87fca4d6d!2m2!1d-71.8022934!2d42.2625932!1m5!1m1!1s0x89e2531c9b104f4f:0x4d5517f8019d42bc!2m2!1d-71.3297674!2d42.8795623!1m5!1m1!1s0x89e37bde2de8a8a5:0xf19406a7be1b86e9!2m2!1d-71.0772115!2d42.3513055!1m5!1m1!1s0x89e37014d5da4937:0xc9394c31f2d5144!2m2!1d-71.0097645!2d42.3655752!3e0?entry=ttu) 
+
+
 ### 2023-04-23  Dad's 85th Birthday
 
 

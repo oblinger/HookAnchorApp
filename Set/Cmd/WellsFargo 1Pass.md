@@ -1,3 +1,1 @@
-=[[Cmd]]   shell _1pass WellsFargo
-
-
+=[[Cmd]]   shell spot -x WellsFargo 1Pass

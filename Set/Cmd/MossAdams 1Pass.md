@@ -1,3 +1,1 @@
-=[[Cmd]]   shell _1pass MossAdams
-
-
+=[[Cmd]]   shell spot -x MossAdams 1Pass

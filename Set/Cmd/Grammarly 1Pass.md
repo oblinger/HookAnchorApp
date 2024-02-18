@@ -1,3 +1,1 @@
-=[[Cmd]]   shell _1pass Grammarly
-
-
+=[[Cmd]]   shell spot -x Grammarly 1Pass

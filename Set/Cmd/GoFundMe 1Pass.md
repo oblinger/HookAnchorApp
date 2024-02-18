@@ -1,3 +1,1 @@
-=[[Cmd]]   shell _1pass GoFundMe
-
-
+=[[Cmd]]   shell spot -x GoFundMe 1Pass

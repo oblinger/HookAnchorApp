@@ -1,3 +1,1 @@
-=[[Cmd]]   shell _1pass Xfinity
-
-
+=[[Cmd]]   shell spot -x Xfinity 1Pass

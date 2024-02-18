@@ -1,3 +1,1 @@
-=[[Cmd]]   shell _1pass Player
-
-
+=[[Cmd]]   shell spot -x Player 1Pass

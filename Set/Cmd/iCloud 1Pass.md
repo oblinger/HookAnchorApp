@@ -1,3 +1,1 @@
-=[[Cmd]]   shell _1pass iCloud
-
-
+=[[Cmd]]   shell spot -x iCloud 1Pass

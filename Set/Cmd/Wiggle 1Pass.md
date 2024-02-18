@@ -1,3 +1,1 @@
-=[[Cmd]]   shell _1pass Wiggle
-
-
+=[[Cmd]]   shell spot -x Wiggle 1Pass

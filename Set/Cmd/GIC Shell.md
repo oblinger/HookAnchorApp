@@ -1,3 +1,1 @@
-=[[Cmd]]   shell gic
-
-
+=[[Cmd]]   shell spot -x GIC Shell

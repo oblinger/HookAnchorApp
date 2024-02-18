@@ -1,3 +1,1 @@
-=[[Cmd]]   shell _1pass Heroku
-
-
+=[[Cmd]]   shell spot -x Heroku 1Pass

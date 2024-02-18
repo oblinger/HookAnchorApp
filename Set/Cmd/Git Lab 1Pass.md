@@ -1,3 +1,1 @@
-=[[Cmd]]   shell _1pass GitLab
-
-
+=[[Cmd]]   shell spot -x Git Lab 1Pass

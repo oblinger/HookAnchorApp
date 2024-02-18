@@ -21,6 +21,7 @@ HERE ARE THE ENTRIES UNDER "NEW COMMAND"
 - [[QuickAdd App]]		-  
 - [[QuickAdd Doc]]		-  
 - [[QuickAdd Folder]]		-  
+- [[QuickAdd Notion]]	- 
 - [[QuickAdd General]]	-  	
 - [[QuickAdd Shell]]		-  
 - [[QuickAdd Webpage]]	-  

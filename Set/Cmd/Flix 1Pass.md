@@ -1,3 +1,1 @@
-=[[Cmd]]   shell _1pass Flix Qingling
-
-
+=[[Cmd]]   shell spot -x Flix 1Pass

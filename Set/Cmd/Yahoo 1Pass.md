@@ -1,3 +1,1 @@
-=[[Cmd]]   shell _1pass Yahoo
-
-
+=[[Cmd]]   shell spot -x Yahoo 1Pass

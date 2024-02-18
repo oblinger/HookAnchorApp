@@ -1,3 +1,1 @@
-=[[Cmd]]   shell _1pass SimplyToImpress
-
-
+=[[Cmd]]   shell spot -x SimplyToImpress 1Pass

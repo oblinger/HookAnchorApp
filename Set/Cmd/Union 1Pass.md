@@ -1,3 +1,1 @@
-=[[Cmd]]   shell _1pass Union
-
-
+=[[Cmd]]   shell spot -x Union 1Pass

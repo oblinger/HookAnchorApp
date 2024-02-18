@@ -1,3 +1,1 @@
-=[[Cmd]]   shell _1pass JetBlue
-
-
+=[[Cmd]]   shell spot -x JetBlue 1Pass

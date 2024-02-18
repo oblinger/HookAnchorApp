@@ -1,1 +1,1 @@
-=[[Cmd]]   folder /Volumes/Sensitive
+=[[Cmd]]   shell spot -x Sensitive Folder

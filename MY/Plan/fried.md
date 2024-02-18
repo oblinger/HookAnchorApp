@@ -1,4 +1,5 @@
-
+- buy shirts
+fix history month
 - [ ] Eli schools list.
 
 - [ ] budget big transfers list	

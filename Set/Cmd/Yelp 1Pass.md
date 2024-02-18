@@ -1,3 +1,1 @@
-=[[Cmd]]   shell _1pass Yelp
-
-
+=[[Cmd]]   shell spot -x Yelp 1Pass

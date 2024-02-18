@@ -1,3 +1,1 @@
-=[[Cmd]]   shell _1pass Ebay
-
-
+=[[Cmd]]   shell spot -x Ebay 1Pass

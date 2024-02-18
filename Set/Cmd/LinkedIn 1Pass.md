@@ -1,3 +1,1 @@
-=[[Cmd]]   shell _1pass LinkedIn
-
-
+=[[Cmd]]   shell spot -x LinkedIn 1Pass

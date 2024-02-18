@@ -1,3 +1,1 @@
-=[[Cmd]]   shell _1pass Kayak
-
-
+=[[Cmd]]   shell spot -x Kayak 1Pass

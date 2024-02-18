@@ -1,3 +1,1 @@
-=[[Cmd]]   shell _1pass EffectiveAltruism
-
-
+=[[Cmd]]   shell spot -x EffectiveAltruism 1Pass

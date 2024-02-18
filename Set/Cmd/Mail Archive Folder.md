@@ -1,1 +1,1 @@
-=[[Cmd]]   folder /Users/oblinger/ob/data/mail
+=[[Cmd]]   shell spot -x Mail Archive Folder

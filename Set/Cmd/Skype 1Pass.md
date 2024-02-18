@@ -1,3 +1,1 @@
-=[[Cmd]]   shell _1pass Skype
-
-
+=[[Cmd]]   shell spot -x Skype 1Pass

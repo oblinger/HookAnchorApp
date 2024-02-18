@@ -1,3 +1,1 @@
-=[[Cmd]]   shell _1pass PG&E
-
-
+=[[Cmd]]   shell spot -x PGE 1Pass

@@ -1,3 +1,1 @@
-=[[Cmd]]   shell _1pass UrbanSitter
-
-
+=[[Cmd]]   shell spot -x UrbanSitter 1Pass

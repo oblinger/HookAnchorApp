@@ -1,3 +1,1 @@
-=[[Cmd]]   shell _1pass OneMedical
-
-
+=[[Cmd]]   shell spot -x OneMedical 1Pass

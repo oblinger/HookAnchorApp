@@ -1,3 +1,1 @@
-=[[Cmd]]   shell _1pass RottenTomatoes
-
-
+=[[Cmd]]   shell spot -x RottenTomatoes 1Pass

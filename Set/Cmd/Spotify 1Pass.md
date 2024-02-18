@@ -1,3 +1,1 @@
-=[[Cmd]]   shell _1pass Spotify
-
-
+=[[Cmd]]   shell spot -x Spotify 1Pass

@@ -1,3 +1,1 @@
-=[[Cmd]]   shell _1pass Chewy
-
-
+=[[Cmd]]   shell spot -x Chewy 1Pass

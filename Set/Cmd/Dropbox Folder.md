@@ -1,3 +1,1 @@
-=[[Cmd]]   folder /Users/oblinger/Dropbox
-
-
+=[[Cmd]]   shell spot -x Dropbox Folder

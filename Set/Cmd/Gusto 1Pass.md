@@ -1,3 +1,1 @@
-=[[Cmd]]   shell _1pass Gusto
-
-
+=[[Cmd]]   shell spot -x Gusto 1Pass

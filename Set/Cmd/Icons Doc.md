@@ -1,3 +1,1 @@
-=[[Cmd]]   doc /Users/oblinger/ob/data/TEMPLATES/Icons/Icons.pptx
-
-
+=[[Cmd]]   shell spot -x Icons Doc

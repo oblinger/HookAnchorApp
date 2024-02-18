@@ -1,3 +1,1 @@
-=[[Cmd]]   shell _1pass Paypal
-
-
+=[[Cmd]]   shell spot -x Paypal 1Pass

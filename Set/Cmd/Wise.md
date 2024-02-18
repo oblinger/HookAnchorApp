@@ -1,1 +1,1 @@
-=[[Cmd]]   shell _1pass Wise (Pay
+=[[Cmd]]   shell spot -x Wise

@@ -1,3 +1,1 @@
-=[[Cmd]]   shell _1pass GoodReads
-
-
+=[[Cmd]]   shell spot -x GoodReads 1Pass

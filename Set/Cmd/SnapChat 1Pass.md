@@ -1,3 +1,1 @@
-=[[Cmd]]   shell _1pass SnapChat
-
-
+=[[Cmd]]   shell spot -x SnapChat 1Pass

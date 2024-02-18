@@ -1,1 +1,1 @@
-=[[Cmd]]   shell _1pass SchwabJointBillPay
+=[[Cmd]]   shell spot -x BillPay Joint

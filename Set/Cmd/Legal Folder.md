@@ -1,3 +1,1 @@
-=[[Cmd]]   folder /Users/oblinger/ob/kmr/T/Legal
-
-
+=[[Cmd]]   shell spot -x Legal Folder

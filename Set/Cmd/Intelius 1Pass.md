@@ -1,3 +1,1 @@
-=[[Cmd]]   shell _1pass Intelius
-
-
+=[[Cmd]]   shell spot -x Intelius 1Pass

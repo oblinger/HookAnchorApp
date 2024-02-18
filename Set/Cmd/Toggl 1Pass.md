@@ -1,3 +1,1 @@
-=[[Cmd]]   shell _1pass Toggl
-
-
+=[[Cmd]]   shell spot -x Toggl 1Pass

@@ -1,3 +1,1 @@
-=[[Cmd]]   shell _1pass WebMD
-
-
+=[[Cmd]]   shell spot -x WebMD 1Pass

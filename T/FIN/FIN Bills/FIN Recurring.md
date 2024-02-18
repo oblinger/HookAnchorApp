@@ -32,7 +32,6 @@ clean email
 - $15/mo     Audible for dad
 - $10/mo		APPLE - Apple iCloud 2TB Storage 
                 (Apple ID -> MyPic -> Plan)  (!!! Used by whole family??)
-- $10/mo		xxx?  GITHUB Copilot - pr
 - $9/mo		xxx?  Dan's Apple iCloud
 - $7/mo		Apple TV+ 
 - $6/mo		WSJ - Wall Street Journal  (2023-02)
@@ -44,7 +43,6 @@ clean email
 - ???			CR On Health
 - $36/yr		1-Password
 - $30/yr		APPLE - Insight Timer  (APPLE SUBSCRIPTION iPhone -> Settings -> Me -> Subscriptions)
-- $20/yr		File This
 
 ### PAYPAL			
 	Web -> {setting gear} -> Payments -> Manage Automatic Payments
@@ -55,7 +53,9 @@ clean email
 - $5/mo					Patreon - Sleep With Me Podcast
 
 ### CAP ONE
+- $10/mo		xxx?  GITHUB Copilot - pr
 - $49/mo	!!	Coursera
+- $60/yr		Dec, 14th 2024
 - $20/yr		Google Storage renews 2023-05-13
 - $43/yr		Clean Email
 - 				Obsidian Publish  (cancelled $20/mo)
@@ -104,6 +104,7 @@ RETIRED or ONE TIME
 - $0		Keyboard Maestro  (One time purchase for version)
 - $0		Paprika  (One Time Purchase)
 - $0		Freedom  (cancelled on 2022-12-24 for some time in future)
+- $20/yr		File This
 
 ### DANO CHANNELS  (out of date)
 ### APPLE 

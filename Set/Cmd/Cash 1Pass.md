@@ -1,3 +1,1 @@
-=[[Cmd]]   shell _1pass Cash
-
-
+=[[Cmd]]   shell spot -x Cash 1Pass

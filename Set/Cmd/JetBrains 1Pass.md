@@ -1,3 +1,1 @@
-=[[Cmd]]   shell _1pass JetBrains
-
-
+=[[Cmd]]   shell spot -x JetBrains 1Pass

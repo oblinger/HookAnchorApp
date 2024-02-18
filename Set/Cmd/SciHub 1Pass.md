@@ -1,3 +1,1 @@
-=[[Cmd]]   shell _1pass SciHub
-
-
+=[[Cmd]]   shell spot -x SciHub 1Pass

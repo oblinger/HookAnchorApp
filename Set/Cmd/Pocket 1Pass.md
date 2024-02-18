@@ -1,3 +1,1 @@
-=[[Cmd]]   shell _1pass Pocket
-
-
+=[[Cmd]]   shell spot -x Pocket 1Pass

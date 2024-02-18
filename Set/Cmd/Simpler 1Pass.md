@@ -1,3 +1,1 @@
-=[[Cmd]]   shell _1pass Simpler
-
-
+=[[Cmd]]   shell spot -x Simpler 1Pass

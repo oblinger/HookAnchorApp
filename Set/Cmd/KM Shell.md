@@ -1,3 +1,1 @@
-=[[Cmd]]   shell KM
-
-
+=[[Cmd]]   shell spot -x KM Shell

@@ -1,3 +1,1 @@
-=[[Cmd]]   shell fixsound
-
-
+=[[Cmd]]   shell spot -x Fix Sound Shell

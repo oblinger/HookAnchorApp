@@ -1,3 +1,1 @@
-=[[Cmd]]   shell _1pass Weee
-
-
+=[[Cmd]]   shell spot -x Weee 1Pass

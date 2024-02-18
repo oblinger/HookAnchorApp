@@ -1,3 +1,1 @@
-=[[Cmd]]   folder /Users/oblinger/My Drive/Oblio/public
-
-
+=[[Cmd]]   shell spot -x Public Folder

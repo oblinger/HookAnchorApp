@@ -1,3 +1,1 @@
-=[[Cmd]]   shell _1pass Seamless
-
-
+=[[Cmd]]   shell spot -x Seamless 1Pass

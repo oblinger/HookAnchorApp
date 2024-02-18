@@ -2,6 +2,8 @@
 
 # LOG
 
+### Porto Rican
+
 I did make my comment in good faith, but as you suspected, I am pretty clueless about Porto Rican history or prospects, so I am not surprised (or offended) that you might be critical of my off hand ideas.  (I hope you are not either.)
 
 #1 For me I was not assuming it was political condition, but rather economic.  If a human is born with access to certain jobs, education, and prospects they do better than others who don't have them.  So I (naively?) assumed US access was worth a lot.
@@ -18,6 +20,120 @@ The big thing is that it would trade much of its unique culture for the US melti
 
 #5 No question we cannot really look at the past 125 years and pretend the USA did not have dramatic effect--of course it did.  both positive and negative I am sure.  My assumption was based on a very naive view of a generic small island nation w/o strong resources would fair in the world by considering others in similar circumstance.  But I am certain you know many more details so perhaps my generic assumptions are deeply flawed?  I would only caution to not consider the question with rose colored glasses.  (At least if economic prosperity is a critical factor for you, perhaps cultural factor trump those.)
 
+
+
+
+
+### 2024-02-11  Andrew's response
+
+Andrew, I am enormously grateful for your detailed thoughts.  Here are some response, subject to your available time I love to hear your reaction to them:
+
+
+
+
+
+THIS PLAN DOES NOT SEEM TO REQUIRE BALANCED SACRIFICES
+
+True.  But Israel holds all the cards, they need not (and have not) made great sacrifices.
+My aims are (1) immediate, large benefit for those Palestinians to join the Enclave.  (2) a pathway towards a Palestinian State. (3) with !ZERO! reduction in Israeli security.  Not because that is fair, but because it is the only way forward.
+
+Still it should be noted that this is not a free ride for Israel.  Palestinians live in relative poverty at only 1/10th the per capita income of Israel.  Still its population is more than HALF of Israel's.  So it will not be cheap for Israel (and partners) build a prosperous enclave...  They are not getting off scott free, and they are delivering the thing of greatest immediate value:  prosperity.
+
+
+BUT WHERE DOES ALL THIS GO?
+
+Suffrage, passports in Israel?  No way.  Israel will never accept that loss of democratic control.  But I need to add to my post to explain the pathway:
+
+(0) PARTNERSHIP COUNCIL:  Creation of the oversight council.  These partners that will advocate-for and pay-for the enclave.  
+(e.g. Israel, Egypt, USA, EU, maybe Jordan, UAE, Bahrain, Saudi Arabia)
+(1) IMMEDIATE:  Stability and prosperity for Palestinians who join.  Immediate security for Israel.  Immediate payments & favorable trade w/ partners. 
+(2) PROGRESSIVE FREEDOMS:  Enclave must prove to the council it can maintain security while increasing freedoms.
+- Can it import concrete w/o tunnels being built?  Can members travel abroad w/o committing terror or bring weapons back? etc.
+- Of course its not fair that each freedom only comes after proving to safety an external authority who might say no with out recourse.
+- But it is much better than now!  Today Israel is the entire council.  And Hamas lives in your enclave, so what chance to you have to prove the concrete will not get used for tunnels.  None!  Its a step forward.  how big?  hard to say, but if the enclave really can ensure security, it will be politically hard for these partners to keep denying freedoms, and why should they?  Security really is the issue at hand.  
+(3) STATEHOOD:  Statehood would be granted on a progressive and provisional basis.  At core, the issue is the enclave's ability to govern itself and to maintain security.  As it proved year after year it could do this with stability and strength there would be little reason not to allow it all the trappings of statehood, on the provisional basis that it does not backslide.  For many decades it would be economically dependent upon its partnership council and would still be more like a protectorate than a fully sovereign state.  At a practical level this would make very little difference to it citizens.  They would vote, would have their own fully autonomous government within whatever ....
+
+
+
+WHAT ABOUT THOSE WHO NEVER JOIN
+
+Those who never recognized the right for Israel to exist, and who fight on for a "better deal" with Israel, e. g. the right of return within Israeli territory, etc. are effectively at war with Israel.  That is their right.  We cannot deny them the right to say "Israel stole our lands and we will not rest until we have them back!"  But barring Allah descent into their midst to make things right, their plight in this fight is quite sad and quite predictable.
+
+Human & Israeli history both show that a us stronger powers never sacrifices its security or territory unless compelled to do so; even when they are clearly in the wrong.  Gandhi and Martin Luther King both demonstrated that democracies cave cave into PEACEFUL protests of their injustices by those who pose no physical threat.  Over time I think the enclave will prove itself to be more effective at securing concessions from Israel (even on behalf of those OUTSIDE the enclave) than those still waging war against Israel.  If real progress is made via this peaceful path while those at war have little to show it will dramatically undercut the argument that armed resistance it the better path.  But this must be shown with ACTION -- and that can only occur with a partner committed to non-violence and security.
+
+One would hope eventually the zealous group would simply shrink down to a tiny core who were willing generation after generation to sacrifice their children's lives in the hopes that Allah will come to bolster their efforts.
+
+
+
+TRAITORS / SCABS / SELLOUTS
+
+This group **IS** a traitor to the 
+
+
+
+
+DOES IT STILL FEEL HORRIFIC WITH THE CONTINGENT PATH TO STATEHOOD
+
+
+
+
+
+
+
+
+### 2024-02-09  Try Number Three
+
+CONTEXT
+(1) Israel holds all the cards and will not accept any change that notably lowers their security.
+(2) A percentage of Palestinians want to wipe Israel from the map.  No matter what wealth or concessions are given, too much bad blood, too much funding from Iran, and too much of a feeling of lands stolen.  For them its nothing less than "river to sea"!
+(3) Thus a two state solution cannot work:  either (a) Palestinians must be oppressed so thoroughly that it is difficult to obtain any money or resources to launch an attack, or (b) monitored so carefully that they cannot marshal the resources they have to launch an attack.
+(4) While many argue it is a necessary evil, Israel and Egypt are guilty of meting out collective punishment against some innocents by barricading Palestinians.  Here I propose a "way out" ... it is far less than what Palestinians want, but can be offered by Israel and obtain greater security in return.
+
+
+The key insight is to notice that the choice of peace cannot be offered to the Palestinians as a whole, rather it must be offered as an individual choice with individual consequences.  Greater freedom and prosperity cannot be offered to a people as a whole, if those people as a whole are not committed to non-violence against Israel.  Yet human population is a monolith, if given the choice some (many?) would choose Israeli security in exchange for prosperity for themselves and their children. 
+
+So how might this work?  Each Palestinian family is given a *personal* choice with *personal* consequences: Stay where they are today, or move into a separated “Pro-Israel” enclave within the Gaza territory. Families that voluntarily join this enclave must commit to ensuring Israeli security from attack.  This means a commitment to accepting significant security checking, first from by the Enclave itself, and second from Israel and the international community as well.  With heavy checking, this enclave would be LESS of a threat to Israel than the rest of the territories as it is actively cooperating with the checking required.  The first line of security checking would be managed by the enclave itself.  This lowers costs and also helps ensure that checking is done in ways that preserves dignity and civility.  This first line is also done in tight coordination with Israeli and international community to ensure everything is done rigorously.  Since this entire enclave has committed itself to ensuring Israeli security, these checks become something analogous to the indignities innocent travelers voluntarily accept at an airport in order to ensure the security of all.  It is not exactly the same; it is more invasive and it is done for the security of someone else.  Still it is the type of indignity that one might accept as a practical necessity if the payoff were economic escape from the prison of Gaza.
+
+Many Israelis have told me "This will never work, no Gazan will ever sign up for this!"  I think they are wrong, I think many in Gazan feel hopeless knowing there is no practical path for freedom for themselves, their children, or their children's children.  Given a way out, some will take it and I think once others saw benefit, many would follow.  But regardless if I am correct, simply OFFERING a way out is crucial for Israel.  It shows with concrete, practical action that Israel would be a great friend to all Gazan's who were truly committed to its security.  This would dramatically help Israel around the world and with its Arab neighbors.  Anyone who says. "Israel is not serious about offering peace and prosperity to Gazans" would be proven wrong every day it supported an enclave with an open door policy for all who accept and protect Israel.
+
+Of course there would be real work for Israel, Egypt, USA, and other partners:  It is not enough to provide a hunk of dirt for those few willing to vouch for Israeli security, they must get BASIC PROSPERITY in return.  Good jobs with good trading relations.  This is easier to provide to a population that is actively supporting security, still efforts and funds must be made available.  Iran funds Hamas in (small) part to build schools and such.  We must spend MORE in trade and aid to build out businesses so coming to the enclave really is escaping to a better life.  
+
+The idea is to allow this enclave to start small.  The costs will be low, and our ability to instill a strong sense of ensuring security is built in from day one.  You don't like it, you're out!  Everyone in the enclave understands its very existence and the existence of all those good jobs, stability, and schools are predicated on its ability to police itself.  If it fails in this, it fails to exist.  
+
+Societal groups have a way of building-in self-reinforcing ways of thinking.  Hamas builds a society predicated on hatred of Israel and it fosters that world view.  Native Americans in the USA are often deeply offended by the injustice meted out to them in the past and sometime the present.  Still very very few would support vigilante justice against the USA -- they know how harmful the reaction would be towards their community.  In the same way, and enclave of Gazans whose job, school, and community are all predicated on Israel's safety will be come quite concerned about that safety.  Not for love of Israel, rather for love of their children!  Over time cultures change, just as they changed for the Arab-Israeli citizens today, they can change for those Gazans benefitting from partnership with Israel.
+
+There are many practical aspects of this idea that I have left out.  (e.g. buying the land, managing saboteurs, etc.). I leave those for a subsequent article.  For now I would love to just get feedback about the idea.
+
+
+Stable governance, good schools, and medical etc.  All supported and guided by the partners.  
+
+
+
+---now it has offered a real and practical way out!
+
+
+It seems the international community and Israel would gladly partner with such an enclave, indeed most everyone would support such a group. Fostering peace would be a simple a fostering jobs within this enclave. As families realized their jobs were only as secure as their ability to keep their enclave free from Israel-attackers, they would become VERY motivated to keep such folks out! I am sure they would not be 100% effective, still they will be much more effective in policing themselves than Israel is today in policing from afar and operating AGAINST the wishes of the people they hope to control. This is a net gain in security for Israel from day one, and it only gets better over time.
+
+
+
+
+
+Still they do not get their separate state and they must collaborate to ensure the security of Israel, why would any Palestinian agree to this?!  Prosperity.  Imagine your are born in prison and you and your children will die in that same prison.  Some will not be willing to suicide their life and the life of their children to continue the futile quest to destroy Israel---pragmatically they will choose peace and life, even a life with many "airport checks".  Some Israeli's tell me that NO ONE will accept these terms and none will volunteer to join this Enclave.  I don't believe that, but even if it is true, it is our moral obligation to give those that have no intention of harming Israel or support those that do, to escape the endless punishment we are placing upon them and their dependents.  And empty enclave would be proof to the world that the murderous intent extends across the whole of the population.
+
+Instead I think a different thing would happen.  A tiny and prosperous community would form and would live in peace.  It would be a "weird" piece since it requires careful monitoring.  But children would go to school, bakeries would open, jobs are had, lives are lived.  Once the reality of personal life benefits became real and visible, I predict concern over whether the capital was in Jerusalem or such would fade into the distance, as would the desire to blow up Israel at least among those that enjoyed that prosperity.  The flood gates would open and more would want to join this prosperity, accept the required monitoring.
+
+Ironically I also believe this path is the best one for a truly independent Palestine.  Israeli's hold all the cards, and they are never going to allow a separate state if they cannot fully trust the intentions of that state.  No trust, no state.  An enclave built in this way is better than any alternative I can think of in incrementally proving its ability to ensure Israeli security.  Will that work, I don't know, but I know the alternative cannot ever work.
+
+
+
+
+Still some might counter that its not fair that Palestinians should be required to swear an oath to protect Israel and to suffer the monitoring needed to ensure compliance. I would agree, but is seems a tiny price compared with the Palestinian treatment today!
+
+Once this tiny starter group had proven itself capable of carefully monitoring itself, Israel could relax restrictions on this enclave’s travel and it commerce. This, plus international investment, could make the enclave quite attractive. Over time more and more Palestinians might choose to move into this enclave, once it was shown it could be a path to a “post-prison” future for themselves and their children. Perhaps over time the enclave could evolve into a protectorate of Israel. A self-governing country that had all freedoms of other countries except its defense was handled by Israel. 
+
+Some might also counter that Palestinians need violence to be heard by an Israel regarding unfair access to water and many other practical issues. I disagree, since this group is not a security threat Israel cannot use that excuse to limit the group, and their voice would be purer and more universally supported in Israel and on the international stage. They would be _more_ able, not _less_ able, to lobby for real change. Since the founding of Israel, violence has ALWAYS resulted in a loss for the Palestinians.
+
+I have thoughts about how one might manage the buying of land to create such an enclave as well as some thoughts about how to handle groups that would specifically try to destroy such an enclave. But first I thought I might want to get reactions to the idea itself. So… what about a three state solution?
 
 
 ### 2023-12-23  Try Number two -

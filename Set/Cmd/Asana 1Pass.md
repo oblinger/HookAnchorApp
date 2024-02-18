@@ -1,3 +1,1 @@
-=[[Cmd]]   shell _1pass Asana
-
-
+=[[Cmd]]   shell spot -x Asana 1Pass

@@ -1,7 +1,7 @@
 [[Fork App]],   [[Sourcetree App]],  
 
 
-SETUP GITHUB ON NEW COMPUTER
+### SETUP GITHUB ON NEW COMPUTER
 
 - CREATE TOKEN
   Web->Github -> ![my account picture] -> Settings -> Developer Settings -> 

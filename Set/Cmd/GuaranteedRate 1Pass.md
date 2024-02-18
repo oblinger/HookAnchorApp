@@ -1,3 +1,1 @@
-=[[Cmd]]   shell _1pass GuaranteedRate
-
-
+=[[Cmd]]   shell spot -x GuaranteedRate 1Pass

@@ -1,3 +1,1 @@
-=[[Cmd]]   shell _1pass DominosPizza
-
-
+=[[Cmd]]   shell spot -x DominosPizza 1Pass

@@ -1,3 +1,1 @@
-=[[Cmd]]   shell _1pass Vanguard
-
-
+=[[Cmd]]   shell spot -x Vanguard 1Pass

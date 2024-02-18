@@ -1,3 +1,1 @@
-=[[Cmd]]   shell gpy
-
-
+=[[Cmd]]   shell spot -x GPY Shell

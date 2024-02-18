@@ -1,3 +1,1 @@
-=[[Cmd]]   shell _1pass TicketFasTrak
-
-
+=[[Cmd]]   shell spot -x TicketFasTrak 1Pass

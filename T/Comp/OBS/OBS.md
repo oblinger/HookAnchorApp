@@ -6,7 +6,7 @@ n:: OBSIDIAN setup details
 
 MY SETUP:	[[SYS]], [[OBS Plugins]], 
 MY IDEAS:	[[Multi-List WorkFlow]],  
-HACKING:		[[Action Notes]], [[#ADD ITEM COMMAND|Add Item]],  [[#SEND ITEM COMMAND|Send Item]],  
+HACKING:		[[Action Notes]], [[#ADD ITEM COMMAND|Add Item]],  [[#SEND ITEM COMMAND|Send Item]], [[spotlight commander]],  
 FORA:			[[Discord App]],  [Forum](https://forum.obsidian.md),   [Obsidian Website](https://obsidian.md)  [support@obsidian.md](mailto:support@obsidian.md)  
 PUBLIC: 		[Oblio](https://publish.obsidian.md/oblio)  (LMI!),
 PLUGINS:		[Templater Docs](https://silentvoid13.github.io/Templater/internal-functions/internal-modules/file-module.html), [[QuickAdd]], 

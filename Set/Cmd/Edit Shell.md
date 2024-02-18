@@ -1,3 +1,1 @@
-=[[Cmd]]   shell _edit km
-
-
+=[[Cmd]]   shell spot -x Edit Shell

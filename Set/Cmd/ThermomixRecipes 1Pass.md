@@ -1,3 +1,1 @@
-=[[Cmd]]   shell _1pass ThermomixRecipes
-
-
+=[[Cmd]]   shell spot -x ThermomixRecipes 1Pass

@@ -1,3 +1,1 @@
-=[[Cmd]]   shell _1pass LibraryThing
-
-
+=[[Cmd]]   shell spot -x LibraryThing 1Pass

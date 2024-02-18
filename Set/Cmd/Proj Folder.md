@@ -1,3 +1,1 @@
-=[[Cmd]]   folder /Users/oblinger/ob/proj
-
-
+=[[Cmd]]   shell spot -x Proj Folder

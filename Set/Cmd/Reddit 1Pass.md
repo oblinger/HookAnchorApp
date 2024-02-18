@@ -1,3 +1,1 @@
-=[[Cmd]]   shell _1pass Reddit
-
-
+=[[Cmd]]   shell spot -x Reddit 1Pass

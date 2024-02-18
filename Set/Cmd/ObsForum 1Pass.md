@@ -1,3 +1,1 @@
-=[[Cmd]]   shell _1pass ObsForum
-
-
+=[[Cmd]]   shell spot -x ObsForum 1Pass

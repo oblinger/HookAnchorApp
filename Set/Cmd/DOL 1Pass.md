@@ -1,3 +1,1 @@
-=[[Cmd]]   shell _1pass DOL
-
-
+=[[Cmd]]   shell spot -x DOL 1Pass

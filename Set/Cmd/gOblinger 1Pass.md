@@ -1,3 +1,1 @@
-=[[Cmd]]   shell _1pass gOblinger
-
-
+=[[Cmd]]   shell spot -x gOBLINGER 1Pass

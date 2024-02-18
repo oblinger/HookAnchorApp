@@ -1,3 +1,1 @@
-=[[Cmd]]   shell _1pass Evernote
-
-
+=[[Cmd]]   shell spot -x Evernote 1Pass

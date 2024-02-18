@@ -1,3 +1,1 @@
-=[[Cmd]]   folder /Users/oblinger/large/_ARCHIVE_
-
-
+=[[Cmd]]   shell spot -x ARCHIVE Folder

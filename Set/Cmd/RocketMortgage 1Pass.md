@@ -1,3 +1,1 @@
-=[[Cmd]]   shell _1pass RocketMortgage
-
-
+=[[Cmd]]   shell spot -x RocketMortgage 1Pass

@@ -1,3 +1,1 @@
-=[[Cmd]]   shell _1pass Auth0
-
-
+=[[Cmd]]   shell spot -x Auth0 1Pass

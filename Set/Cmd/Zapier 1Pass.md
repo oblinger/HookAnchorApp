@@ -1,3 +1,1 @@
-=[[Cmd]]   shell _1pass Zapier
-
-
+=[[Cmd]]   shell spot -x Zapier 1Pass

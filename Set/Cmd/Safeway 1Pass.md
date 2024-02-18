@@ -1,3 +1,1 @@
-=[[Cmd]]   shell _1pass Safeway
-
-
+=[[Cmd]]   shell spot -x Safeway 1Pass

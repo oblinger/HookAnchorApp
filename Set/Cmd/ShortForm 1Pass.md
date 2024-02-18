@@ -1,3 +1,1 @@
-=[[Cmd]]   shell _1pass ShortForm
-
-
+=[[Cmd]]   shell spot -x ShortForm 1Pass

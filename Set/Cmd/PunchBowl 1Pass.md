@@ -1,3 +1,1 @@
-=[[Cmd]]   shell _1pass PunchBowl
-
-
+=[[Cmd]]   shell spot -x PunchBowl 1Pass

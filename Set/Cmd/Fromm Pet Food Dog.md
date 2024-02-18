@@ -1,1 +1,1 @@
-=[[Cmd]]   shell _1pass Fromm
+=[[Cmd]]   shell spot -x Fromm Pet Food Dog

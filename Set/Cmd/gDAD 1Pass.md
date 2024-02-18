@@ -1,3 +1,1 @@
-=[[Cmd]]   shell _1pass gDan
-
-
+=[[Cmd]]   shell spot -x gDAD 1Pass

@@ -1,3 +1,1 @@
-=[[Cmd]]   shell _1pass Twitter
-
-
+=[[Cmd]]   shell spot -x Twitter 1Pass

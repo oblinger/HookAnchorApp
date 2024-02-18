@@ -1,3 +1,1 @@
-=[[Cmd]]   folder /Users/oblinger/ob/kmr/.trash
-
-
+=[[Cmd]]   shell spot -x Trash for Obsidian Folder

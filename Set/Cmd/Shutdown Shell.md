@@ -1,3 +1,1 @@
-=[[Cmd]]   shell _shutdown
-
-
+=[[Cmd]]   shell spot -x Shutdown Shell

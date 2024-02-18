@@ -1,3 +1,1 @@
-=[[Cmd]]   shell _1pass ReserachGate
-
-
+=[[Cmd]]   shell spot -x ReserachGate 1Pass

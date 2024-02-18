@@ -1,3 +1,1 @@
-=[[Cmd]]   shell _1pass Atlassian - Personal
-
-
+=[[Cmd]]   shell spot -x Atlassian 1Pass

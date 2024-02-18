@@ -1,3 +1,1 @@
-=[[Cmd]]   shell _1pass Lyft
-
-
+=[[Cmd]]   shell spot -x Lyft 1Pass

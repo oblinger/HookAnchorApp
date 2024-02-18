@@ -1,3 +1,1 @@
-=[[Cmd]]   shell _1pass WesternUnion
-
-
+=[[Cmd]]   shell spot -x WesternUnion 1Pass

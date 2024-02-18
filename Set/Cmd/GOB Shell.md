@@ -1,3 +1,1 @@
-=[[Cmd]]   shell gob
-
-
+=[[Cmd]]   shell spot -x gOB Shell

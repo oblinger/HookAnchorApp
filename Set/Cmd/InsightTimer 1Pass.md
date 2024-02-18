@@ -1,3 +1,1 @@
-=[[Cmd]]   shell _1pass InsightTimer
-
-
+=[[Cmd]]   shell spot -x InsightTimer 1Pass

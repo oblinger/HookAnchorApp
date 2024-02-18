@@ -1,3 +1,1 @@
-=[[Cmd]]   shell _1pass GoldStar
-
-
+=[[Cmd]]   shell spot -x GoldStar 1Pass

@@ -1,3 +1,1 @@
-=[[Cmd]]   shell _1pass Niche
-
-
+=[[Cmd]]   shell spot -x Niche 1Pass

@@ -1,3 +1,1 @@
-=[[Cmd]]   shell _1pass Udemy
-
-
+=[[Cmd]]   shell spot -x Udemy 1Pass

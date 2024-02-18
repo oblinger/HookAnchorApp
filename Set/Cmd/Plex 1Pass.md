@@ -1,3 +1,1 @@
-=[[Cmd]]   shell _1pass Plex
-
-
+=[[Cmd]]   shell spot -x Plex 1Pass

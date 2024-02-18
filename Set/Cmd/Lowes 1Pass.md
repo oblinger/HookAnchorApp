@@ -1,3 +1,1 @@
-=[[Cmd]]   shell _1pass Lowes
-
-
+=[[Cmd]]   shell spot -x Lowes 1Pass

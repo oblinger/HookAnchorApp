@@ -1,3 +1,1 @@
-=[[Cmd]]   shell _1pass FileThis
-
-
+=[[Cmd]]   shell spot -x FileThis 1Pass

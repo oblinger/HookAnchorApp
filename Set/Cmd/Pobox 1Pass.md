@@ -1,3 +1,1 @@
-=[[Cmd]]   shell _1pass Pobox
-
-
+=[[Cmd]]   shell spot -x Pobox 1Pass

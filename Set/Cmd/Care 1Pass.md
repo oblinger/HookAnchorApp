@@ -1,3 +1,1 @@
-=[[Cmd]]   shell _1pass Care
-
-
+=[[Cmd]]   shell spot -x Care 1Pass

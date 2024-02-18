@@ -1,3 +1,1 @@
-=[[Cmd]]   shell _1pass Facebook
-
-
+=[[Cmd]]   shell spot -x Facebook 1Pass

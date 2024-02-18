@@ -1,3 +1,1 @@
-=[[Cmd]]   shell _1pass Experian
-
-
+=[[Cmd]]   shell spot -x Experian 1Pass

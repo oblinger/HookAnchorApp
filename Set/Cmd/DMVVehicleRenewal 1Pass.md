@@ -1,3 +1,1 @@
-=[[Cmd]]   shell _1pass DMVVehicleRenewal
-
-
+=[[Cmd]]   shell spot -x DMVVehicleRenewal 1Pass

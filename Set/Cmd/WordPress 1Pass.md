@@ -1,3 +1,1 @@
-=[[Cmd]]   shell _1pass WordPress
-
-
+=[[Cmd]]   shell spot -x WordPress 1Pass

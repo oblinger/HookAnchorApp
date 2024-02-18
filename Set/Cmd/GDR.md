@@ -1,3 +1,1 @@
-=[[Cmd]]   url https://drive.google.com/drive/u/1/my-drive
-
-
+=[[Cmd]]   shell spot -x gDR

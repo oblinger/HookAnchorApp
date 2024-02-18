@@ -1,3 +1,1 @@
-=[[Cmd]]   folder /Users/oblinger
-
-
+=[[Cmd]]   shell spot -x Oblinger Folder

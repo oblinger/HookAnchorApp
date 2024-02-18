@@ -1,8 +1,18 @@
-TODO:
+- [LCM-037](https://docs.google.com/document/d/1Q70YbaXN9YVHPQnrY7mmWViaquSdoXcVngBAcw2RgQs/edit#heading=h.e3wwovqopszq): 
+
+TODO:  
+- do-metric-cube
+- decide on naming [here](https://docs.google.com/document/d/1L_VloF3d7rkmH1zDRd3QhHWsv1bmZOPxcCmcNgDVgM0/edit) 
+- s3 auto up/down.  [[LCM-S3]] 
+- do method "raw mode" for argv processing
+
+
+
+- 
+- do-
 - Dict Docs
 - command line
 
-- [LCM-037](https://docs.google.com/document/d/1Q70YbaXN9YVHPQnrY7mmWViaquSdoXcVngBAcw2RgQs/edit#heading=h.e3wwovqopszq): 
 - [[2023 Least Commitment Model For CV Pipe]]
 - [Least Commit v2](https://docs.google.com/document/d/1kxGMrmPOr9S6whRnV0LI0UpWGeyBzTn8WGDq7ITM4Sc/edit): grz
 

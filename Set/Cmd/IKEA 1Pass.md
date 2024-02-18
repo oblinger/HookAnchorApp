@@ -1,3 +1,1 @@
-=[[Cmd]]   shell _1pass IKEA
-
-
+=[[Cmd]]   shell spot -x IKEA 1Pass

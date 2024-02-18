@@ -1,3 +1,1 @@
-=[[Cmd]]   shell _1pass SunsetScaveger
-
-
+=[[Cmd]]   shell spot -x SunsetScaveger 1Pass

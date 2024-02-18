@@ -1,3 +1,1 @@
-=[[Cmd]]   shell _1pass Zenefits
-
-
+=[[Cmd]]   shell spot -x Zenefits 1Pass

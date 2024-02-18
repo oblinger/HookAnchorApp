@@ -1,3 +1,1 @@
-=[[Cmd]]   shell _1pass Disqus
-
-
+=[[Cmd]]   shell spot -x Disqus 1Pass

@@ -1,3 +1,1 @@
-=[[Cmd]]   shell _1pass Plaxo
-
-
+=[[Cmd]]   shell spot -x Plaxo 1Pass

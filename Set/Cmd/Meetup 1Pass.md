@@ -1,3 +1,1 @@
-=[[Cmd]]   shell _1pass Meetup
-
-
+=[[Cmd]]   shell spot -x Meetup 1Pass

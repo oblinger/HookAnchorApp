@@ -1,3 +1,1 @@
-=[[Cmd]]   shell _1pass BoardGameArea
-
-
+=[[Cmd]]   shell spot -x BoardGameArea 1Pass

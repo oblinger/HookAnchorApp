@@ -1,3 +1,1 @@
-=[[Cmd]]   shell _1pass PoshMark
-
-
+=[[Cmd]]   shell spot -x PoshMark 1Pass

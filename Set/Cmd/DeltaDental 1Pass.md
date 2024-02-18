@@ -1,3 +1,1 @@
-=[[Cmd]]   shell _1pass DeltaDental
-
-
+=[[Cmd]]   shell spot -x DeltaDental 1Pass

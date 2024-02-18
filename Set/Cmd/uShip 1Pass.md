@@ -1,3 +1,1 @@
-=[[Cmd]]   shell _1pass uShip
-
-
+=[[Cmd]]   shell spot -x uShip 1Pass

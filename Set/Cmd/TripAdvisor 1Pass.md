@@ -1,3 +1,1 @@
-=[[Cmd]]   shell _1pass TripAdvisor
-
-
+=[[Cmd]]   shell spot -x TripAdvisor 1Pass

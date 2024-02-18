@@ -1,3 +1,1 @@
-=[[Cmd]]   shell _1pass Target
-
-
+=[[Cmd]]   shell spot -x Target 1Pass

@@ -1,3 +1,1 @@
-=[[Cmd]]   shell _1pass Sonic
-
-
+=[[Cmd]]   shell spot -x Sonic 1Pass

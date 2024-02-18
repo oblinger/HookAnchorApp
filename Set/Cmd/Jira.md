@@ -1,1 +1,1 @@
-=[[Cmd]]   shell _1pass Jira
+=[[Cmd]]   shell spot -x Jira

@@ -1,3 +1,1 @@
-=[[Cmd]]   shell _1pass Fandango
-
-
+=[[Cmd]]   shell spot -x Fandango 1Pass

@@ -1,3 +1,1 @@
-=[[Cmd]]   shell _1pass Uline
-
-
+=[[Cmd]]   shell spot -x Uline 1Pass

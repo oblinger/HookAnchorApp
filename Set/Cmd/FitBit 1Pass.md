@@ -1,3 +1,1 @@
-=[[Cmd]]   shell _1pass FitBit
-
-
+=[[Cmd]]   shell spot -x FitBit 1Pass

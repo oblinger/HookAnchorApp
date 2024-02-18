@@ -1,3 +1,1 @@
-=[[Cmd]]   shell _1pass Buffer
-
-
+=[[Cmd]]   shell spot -x Buffer 1Pass

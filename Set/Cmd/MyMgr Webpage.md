@@ -1,3 +1,0 @@
-=[[Cmd]]   url MyMgr
-
-

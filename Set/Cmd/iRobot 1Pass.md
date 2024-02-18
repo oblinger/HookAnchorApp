@@ -1,3 +1,1 @@
-=[[Cmd]]   shell _1pass iRobot
-
-
+=[[Cmd]]   shell spot -x iRobot 1Pass

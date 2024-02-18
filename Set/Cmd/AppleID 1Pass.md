@@ -1,3 +1,1 @@
-=[[Cmd]]   shell _1pass Apple ID
-
-
+=[[Cmd]]   shell spot -x AppleID 1Pass

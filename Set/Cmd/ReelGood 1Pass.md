@@ -1,3 +1,1 @@
-=[[Cmd]]   shell _1pass ReelGood
-
-
+=[[Cmd]]   shell spot -x ReelGood 1Pass

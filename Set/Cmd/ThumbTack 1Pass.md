@@ -1,3 +1,1 @@
-=[[Cmd]]   shell _1pass ThumbTack
-
-
+=[[Cmd]]   shell spot -x ThumbTack 1Pass

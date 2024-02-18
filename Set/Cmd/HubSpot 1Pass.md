@@ -1,3 +1,1 @@
-=[[Cmd]]   shell _1pass HubSpot
-
-
+=[[Cmd]]   shell spot -x HubSpot 1Pass

@@ -1,3 +1,1 @@
-=[[Cmd]]   shell _1pass PASSWORDS
-
-
+=[[Cmd]]   shell spot -x PASSWORDS 1Pass

@@ -1,3 +1,1 @@
-=[[Cmd]]   shell _1pass OnePeloton
-
-
+=[[Cmd]]   shell spot -x OnePeloton 1Pass

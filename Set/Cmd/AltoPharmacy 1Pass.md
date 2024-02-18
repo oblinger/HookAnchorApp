@@ -1,3 +1,1 @@
-=[[Cmd]]   shell _1pass AltoPharmacy
-
-
+=[[Cmd]]   shell spot -x AltoPharmacy 1Pass

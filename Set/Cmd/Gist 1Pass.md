@@ -1,3 +1,1 @@
-=[[Cmd]]   shell _1pass Gist
-
-
+=[[Cmd]]   shell spot -x Gist 1Pass

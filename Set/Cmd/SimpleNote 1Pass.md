@@ -1,3 +1,1 @@
-=[[Cmd]]   shell _1pass SimpleNote
-
-
+=[[Cmd]]   shell spot -x SimpleNote 1Pass

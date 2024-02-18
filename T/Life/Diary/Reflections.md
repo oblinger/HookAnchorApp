@@ -1,3 +1,13 @@
+### 2024-01-28  Starting to feel caught up
+
+I am going to bed by 11pm, and sometimes waking by 6am, this makes sleeping better and gives me some extra room some days.
+
+- I am cranking thru my lists to delete stuff of finish stuff
+- work lists is getting clean, starting to hit other lists.
+- need to get 1-2h per day on personal stuff to clear the decks.
+- Feel better now that schools are applied for, really was not such a big deal once we got to it.  (though QL was the one that actually filled them out!)
+
+
 ### 2024-01-02  the 2024 life reset
 
 - Build sustained, effective action

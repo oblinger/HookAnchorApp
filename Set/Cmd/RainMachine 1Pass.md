@@ -1,3 +1,1 @@
-=[[Cmd]]   shell _1pass RainMachine
-
-
+=[[Cmd]]   shell spot -x RainMachine 1Pass

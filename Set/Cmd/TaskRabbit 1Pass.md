@@ -1,3 +1,1 @@
-=[[Cmd]]   shell _1pass TaskRabbit
-
-
+=[[Cmd]]   shell spot -x TaskRabbit 1Pass

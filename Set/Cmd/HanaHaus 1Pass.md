@@ -1,3 +1,1 @@
-=[[Cmd]]   shell _1pass HanaHaus
-
-
+=[[Cmd]]   shell spot -x HanaHaus 1Pass

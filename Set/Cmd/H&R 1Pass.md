@@ -1,3 +1,1 @@
-=[[Cmd]]   shell _1pass H&R
-
-
+=[[Cmd]]   shell spot -x H&R 1Pass

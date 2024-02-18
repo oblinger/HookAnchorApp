@@ -1,3 +1,1 @@
-=[[Cmd]]   shell _1pass RoboRock
-
-
+=[[Cmd]]   shell spot -x RoboRock 1Pass

@@ -1,3 +1,1 @@
-=[[Cmd]]   shell _1pass Brain.FM
-
-
+=[[Cmd]]   shell spot -x Brain.FM 1Pass

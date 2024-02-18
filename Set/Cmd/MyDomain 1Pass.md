@@ -1,3 +1,1 @@
-=[[Cmd]]   shell _1pass MyDomain
-
-
+=[[Cmd]]   shell spot -x MyDomain 1Pass

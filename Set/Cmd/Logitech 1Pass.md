@@ -1,3 +1,1 @@
-=[[Cmd]]   shell _1pass Logitech
-
-
+=[[Cmd]]   shell spot -x Logitech 1Pass

@@ -1,3 +1,1 @@
-=[[Cmd]]   shell _1pass Costco
-
-
+=[[Cmd]]   shell spot -x Costco 1Pass

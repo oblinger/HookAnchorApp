@@ -1,3 +1,1 @@
-=[[Cmd]]   folder /
-
-
+=[[Cmd]]   shell spot -x Root Folder

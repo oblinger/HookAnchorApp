@@ -1,3 +1,1 @@
-=[[Cmd]]   shell _1pass RoamResearch
-
-
+=[[Cmd]]   shell spot -x RoamResearch 1Pass

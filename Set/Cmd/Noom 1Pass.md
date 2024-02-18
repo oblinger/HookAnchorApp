@@ -1,3 +1,1 @@
-=[[Cmd]]   shell _1pass Noom
-
-
+=[[Cmd]]   shell spot -x Noom 1Pass

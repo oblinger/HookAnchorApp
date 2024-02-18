@@ -1,3 +1,1 @@
-=[[Cmd]]   shell _1pass SutterHealth
-
-
+=[[Cmd]]   shell spot -x SutterHealth 1Pass

@@ -1,3 +1,1 @@
-=[[Cmd]]   shell _1pass Caviar
-
-
+=[[Cmd]]   shell spot -x Caviar 1Pass

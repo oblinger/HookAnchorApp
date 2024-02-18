@@ -1,3 +1,1 @@
-=[[Cmd]]   shell _1pass Pandora
-
-
+=[[Cmd]]   shell spot -x Pandora 1Pass

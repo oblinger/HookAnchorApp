@@ -1,3 +1,1 @@
-=[[Cmd]]   shell _1pass TikTok
-
-
+=[[Cmd]]   shell spot -x TikTok 1Pass

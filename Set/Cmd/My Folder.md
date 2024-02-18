@@ -1,1 +1,1 @@
-=[[Cmd]]   folder /Users/oblinger/ob/kmr/MY
+=[[Cmd]]   shell spot -x My Folder

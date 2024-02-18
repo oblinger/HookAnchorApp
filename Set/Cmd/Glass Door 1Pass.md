@@ -1,3 +1,1 @@
-=[[Cmd]]   shell _1pass GlassDoor
-
-
+=[[Cmd]]   shell spot -x Glass Door 1Pass

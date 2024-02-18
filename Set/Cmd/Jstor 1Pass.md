@@ -1,3 +1,1 @@
-=[[Cmd]]   shell _1pass Jstor
-
-
+=[[Cmd]]   shell spot -x Jstor 1Pass

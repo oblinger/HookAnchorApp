@@ -1,3 +1,1 @@
-=[[Cmd]]   shell _1pass GreatSchools
-
-
+=[[Cmd]]   shell spot -x GreatSchools 1Pass

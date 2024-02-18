@@ -1,3 +1,1 @@
-=[[Cmd]]   shell _1pass Zenni
-
-
+=[[Cmd]]   shell spot -x Zenni 1Pass

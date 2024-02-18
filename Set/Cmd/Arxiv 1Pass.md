@@ -1,3 +1,1 @@
-=[[Cmd]]   shell _1pass Arxiv
-
-
+=[[Cmd]]   shell spot -x Arxiv 1Pass

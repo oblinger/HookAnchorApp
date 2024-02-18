@@ -1,3 +1,1 @@
-=[[Cmd]]   shell _1pass AllTrails
-
-
+=[[Cmd]]   shell spot -x AllTrails 1Pass

@@ -1,3 +1,1 @@
-=[[Cmd]]   shell _1pass Shyp
-
-
+=[[Cmd]]   shell spot -x Shyp 1Pass

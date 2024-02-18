@@ -1,3 +1,1 @@
-=[[Cmd]]   shell _1pass ConsumerReports
-
-
+=[[Cmd]]   shell spot -x ConsumerReports 1Pass

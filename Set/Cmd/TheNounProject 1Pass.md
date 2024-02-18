@@ -1,3 +1,1 @@
-=[[Cmd]]   shell _1pass TheNounProject
-
-
+=[[Cmd]]   shell spot -x TheNounProject 1Pass

@@ -1,3 +1,1 @@
-=[[Cmd]]   shell _1pass WebsturantStore
-
-
+=[[Cmd]]   shell spot -x WebsturantStore 1Pass

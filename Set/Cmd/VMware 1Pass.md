@@ -1,3 +1,1 @@
-=[[Cmd]]   shell _1pass VMware
-
-
+=[[Cmd]]   shell spot -x VMware 1Pass

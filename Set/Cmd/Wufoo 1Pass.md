@@ -1,3 +1,1 @@
-=[[Cmd]]   shell _1pass Wufoo
-
-
+=[[Cmd]]   shell spot -x Wufoo 1Pass

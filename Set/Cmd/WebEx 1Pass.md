@@ -1,3 +1,1 @@
-=[[Cmd]]   shell _1pass WebEx
-
-
+=[[Cmd]]   shell spot -x WebEx 1Pass

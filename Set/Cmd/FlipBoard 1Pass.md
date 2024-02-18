@@ -1,3 +1,1 @@
-=[[Cmd]]   shell _1pass FlipBoard
-
-
+=[[Cmd]]   shell spot -x FlipBoard 1Pass

@@ -1,3 +1,1 @@
-=[[Cmd]]   shell _1pass 6694My Schwab
-
-
+=[[Cmd]]   shell spot -x Schwab 1Pass

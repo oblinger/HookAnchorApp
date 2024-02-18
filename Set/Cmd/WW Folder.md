@@ -1,1 +1,1 @@
-=[[Cmd]]   folder /Users/oblinger/ob/kmr/SV/WW
+=[[Cmd]]   shell spot -x WW Folder

@@ -1,3 +1,1 @@
-=[[Cmd]]   folder /Users/oblinger/ob/kmr/.obsidian/plugins
-
-
+=[[Cmd]]   shell spot -x Plugins Folder

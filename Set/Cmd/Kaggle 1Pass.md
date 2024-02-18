@@ -1,3 +1,1 @@
-=[[Cmd]]   shell _1pass Kaggle
-
-
+=[[Cmd]]   shell spot -x Kaggle 1Pass

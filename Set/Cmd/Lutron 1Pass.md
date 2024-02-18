@@ -1,3 +1,1 @@
-=[[Cmd]]   shell _1pass Lutron
-
-
+=[[Cmd]]   shell spot -x Lutron 1Pass

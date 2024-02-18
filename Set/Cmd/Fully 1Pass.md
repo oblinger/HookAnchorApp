@@ -1,3 +1,1 @@
-=[[Cmd]]   shell _1pass Fully
-
-
+=[[Cmd]]   shell spot -x Fully 1Pass

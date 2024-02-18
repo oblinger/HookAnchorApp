@@ -1,4 +1,4 @@
-[[bugs]] 
+	ec[[bugs]] 
 ## TODO
 #todo bug
 - [ ] Alpha Testing Docs from [[@Joaquin Mano]].

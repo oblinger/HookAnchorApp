@@ -1,3 +1,1 @@
-=[[Cmd]]   shell _1pass Jupiter
-
-
+=[[Cmd]]   shell spot -x Jupiter 1Pass

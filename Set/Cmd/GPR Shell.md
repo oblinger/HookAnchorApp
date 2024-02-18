@@ -1,3 +1,1 @@
-=[[Cmd]]   shell gpr
-
-
+=[[Cmd]]   shell spot -x GPR Shell

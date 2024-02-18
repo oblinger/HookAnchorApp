@@ -1,3 +1,1 @@
-=[[Cmd]]   shell _1pass DocUSign
-
-
+=[[Cmd]]   shell spot -x DocUSign 1Pass

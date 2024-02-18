@@ -1,3 +1,1 @@
-=[[Cmd]]   shell _1pass Github
-
-
+=[[Cmd]]   shell spot -x Git hub 1Pass

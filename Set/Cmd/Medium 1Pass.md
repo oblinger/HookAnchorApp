@@ -1,3 +1,1 @@
-=[[Cmd]]   shell _1pass Medium
-
-
+=[[Cmd]]   shell spot -x Medium 1Pass

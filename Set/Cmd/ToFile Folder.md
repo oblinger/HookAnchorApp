@@ -1,1 +1,1 @@
-=[[Cmd]]   folder /Users/oblinger/large/_TO_FILE_
+=[[Cmd]]   shell spot -x ToFile Folder

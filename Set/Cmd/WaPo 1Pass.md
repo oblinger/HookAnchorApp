@@ -1,3 +1,1 @@
-=[[Cmd]]   shell _1pass WaPo
-
-
+=[[Cmd]]   shell spot -x WaPo 1Pass

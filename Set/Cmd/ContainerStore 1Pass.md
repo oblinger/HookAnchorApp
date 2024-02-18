@@ -1,3 +1,1 @@
-=[[Cmd]]   shell _1pass ContainerStore
-
-
+=[[Cmd]]   shell spot -x ContainerStore 1Pass

@@ -1,3 +1,1 @@
-=[[Cmd]]   shell _1pass BitDefender
-
-
+=[[Cmd]]   shell spot -x BitDefender 1Pass

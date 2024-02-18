@@ -1,3 +1,1 @@
-=[[Cmd]]   shell _1pass BlueBjiou
-
-
+=[[Cmd]]   shell spot -x BlueBjiou 1Pass

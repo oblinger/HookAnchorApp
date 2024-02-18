@@ -1,3 +1,1 @@
-=[[Cmd]]   shell _1pass StackOverflow
-
-
+=[[Cmd]]   shell spot -x StackOverflow 1Pass

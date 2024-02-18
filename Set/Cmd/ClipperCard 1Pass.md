@@ -1,3 +1,1 @@
-=[[Cmd]]   shell _1pass ClipperCard
-
-
+=[[Cmd]]   shell spot -x ClipperCard 1Pass

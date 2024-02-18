@@ -1,3 +1,1 @@
-=[[Cmd]]   shell _1pass Etsy
-
-
+=[[Cmd]]   shell spot -x Etsy 1Pass

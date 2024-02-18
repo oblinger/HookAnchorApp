@@ -1,3 +1,1 @@
-=[[Cmd]]   shell _1pass WorkFlowy
-
-
+=[[Cmd]]   shell spot -x WorkFlowy 1Pass

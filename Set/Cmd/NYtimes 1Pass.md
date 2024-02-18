@@ -1,3 +1,1 @@
-=[[Cmd]]   shell _1pass NYtimes
-
-
+=[[Cmd]]   shell spot -x NYtimes 1Pass

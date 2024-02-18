@@ -1,3 +1,1 @@
-=[[Cmd]]   shell _1pass gFLT
-
-
+=[[Cmd]]   shell spot -x gFLT 1Pass

@@ -1,3 +1,1 @@
-=[[Cmd]]   shell _1pass Passpack
-
-
+=[[Cmd]]   shell spot -x Passpack 1Pass

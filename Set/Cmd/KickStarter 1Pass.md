@@ -1,3 +1,1 @@
-=[[Cmd]]   shell _1pass KickStarter
-
-
+=[[Cmd]]   shell spot -x KickStarter 1Pass

@@ -1,3 +1,1 @@
-=[[Cmd]]   shell _1pass Upwork
-
-
+=[[Cmd]]   shell spot -x Upwork 1Pass

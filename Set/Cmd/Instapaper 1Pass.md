@@ -1,3 +1,1 @@
-=[[Cmd]]   shell _1pass Instapaper
-
-
+=[[Cmd]]   shell spot -x Instapaper 1Pass

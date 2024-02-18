@@ -1,3 +1,1 @@
-=[[Cmd]]   shell _1pass GLGresearch
-
-
+=[[Cmd]]   shell spot -x GLGresearch 1Pass

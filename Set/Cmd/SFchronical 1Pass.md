@@ -1,3 +1,1 @@
-=[[Cmd]]   shell _1pass SFchronical
-
-
+=[[Cmd]]   shell spot -x SFchronical 1Pass

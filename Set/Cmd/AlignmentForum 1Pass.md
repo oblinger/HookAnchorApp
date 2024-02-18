@@ -1,3 +1,1 @@
-=[[Cmd]]   shell _1pass AlignmentForum
-
-
+=[[Cmd]]   shell spot -x AlignmentForum 1Pass

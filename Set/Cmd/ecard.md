@@ -1,1 +1,1 @@
-=[[Cmd]]   shell _1pass 123 Greetings
+=[[Cmd]]   shell spot -x ecard

@@ -1,3 +1,1 @@
-=[[Cmd]]   shell _1pass CrunchBase
-
-
+=[[Cmd]]   shell spot -x CrunchBase 1Pass

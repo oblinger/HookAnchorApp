@@ -1,3 +1,1 @@
-=[[Cmd]]   shell _1pass WSJ
-
-
+=[[Cmd]]   shell spot -x WSJ 1Pass

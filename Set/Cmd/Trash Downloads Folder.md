@@ -1,1 +1,1 @@
-=[[Cmd]]   folder /Users/oblinger/large/_TO_TRASH_/_OLD_DOWNLOADS_
+=[[Cmd]]   shell spot -x Trash Downloads Folder

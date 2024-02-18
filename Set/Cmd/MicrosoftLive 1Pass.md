@@ -1,3 +1,1 @@
-=[[Cmd]]   shell _1pass MicrosoftLive
-
-
+=[[Cmd]]   shell spot -x MicrosoftLive 1Pass

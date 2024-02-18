@@ -1,10 +1,10 @@
 
-## Soon
-- [July Prod](https://docs.google.com/document/d/19_vRUK2Azl5miH7IuDdWZTtyuArSkLU_W_RKUUUiT-o/edit#heading=h.1i0iol8j5snp) 
-- Ask Slack Field Testing
-- Sarthi Call
+- [[Michael Rampdown]]: 
 
-- Patent Search & Patent Plan
+## Soon
+- [[SV]]
+- Sarthi call 
+
 
 - Pivo&Rec Tickets on their own board (or just in icebox)
 - Strat doc

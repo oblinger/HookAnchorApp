@@ -1,3 +1,1 @@
-=[[Cmd]]   shell _1pass ObsPublish
-
-
+=[[Cmd]]   shell spot -x ObsPublish 1Pass

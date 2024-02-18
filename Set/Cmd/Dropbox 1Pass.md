@@ -1,3 +1,1 @@
-=[[Cmd]]   shell _1pass Dropbox
-
-
+=[[Cmd]]   shell spot -x Dropbox 1Pass

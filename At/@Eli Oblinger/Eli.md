@@ -1,6 +1,7 @@
 
 [https://youtu.be/XBxLpOvm01w](https://youtu.be/XBxLpOvm01w)
 
+- [[Eli Activities]] - 
 - [[ELI Education]]
 - [[Eli Interactions]] 
 - [[Eli Correct Responses]] 
@@ -8,6 +9,7 @@
 - [[Eli Activities]] 
 - [[Eli Firsts]] 
 - [[Eli Friends]] 
+
 # TODO
 - [ ] Find babysitter
 
@@ -106,6 +108,16 @@ STEPS:  Email these to self.  on phone click on apple mail, then click on each v
 - The rock would smash you like Play-Doh. You don’t want to do that. Then you would be dead forever.
 
 # FIRSTS
+
+### 2024-02-17  Put on his underwear
+
+I didn't touch the underware and he managed to figure out where the large opening was, and get both feet into the correct sides!
+He almost can put his pants on, but both feet often end up down the same leg. :-)
+
+The next day Mom said he also put his shirt and pants on without any help.
+He came into me and we put his sox on together.
+Unusually was letting me teach him where to pull to get the sox on.
+
 ### 2023-08-10 First Bike Ride
 Grandma Ni gave Eli a bike for his birthday, and he road it down the block and to the mosque several times with Dad holding on to the back.
 He was afraid initially, but grew willing to keep getting back on even when he fell.  (He insisted to ride by himself which ended quickly each time). After a few times he was content to let dad hold onto the seat or handle bar.

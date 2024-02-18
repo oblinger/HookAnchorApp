@@ -1,1 +1,1 @@
-=[[Cmd]]   folder /Users/oblinger/ob/kmr/MY/Plan
+=[[Cmd]]   shell spot -x Plan Folder

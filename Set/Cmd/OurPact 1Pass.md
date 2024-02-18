@@ -1,3 +1,1 @@
-=[[Cmd]]   shell _1pass OurPact
-
-
+=[[Cmd]]   shell spot -x OurPact 1Pass

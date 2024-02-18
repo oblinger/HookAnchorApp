@@ -5,10 +5,29 @@ n:: no prefix.	Dated entries without any typing prefix
 
 | Date       | File                       | Notes                                                                                                                             |
 | ---------- | -------------------------- | --------------------------------------------------------------------------------------------------------------------------------- |
+| 2024-02-17 | [[Eli]]                        | Put on his underwear                                                                                                              |
+| 2024-02-17 | [[SYS Facets]]                 | Auto Jump pages                                                                                                                   |
+| 2024-02-17 | [[SYS Facets]]                 | EXAMPLES of facet groups                                                                                                          |
+| 2024-02-12 | [[MED]]                        | QL DOC advice for a flu w/ cough                                                                                                  |
+| 2024-02-11 | [[Trip]]                       | Boston Sapphire                                                                                                                   |
+| 2024-02-11 | [[Palestinians]]               | Andrew's response                                                                                                                 |
+| 2024-02-09 | [[Palestinians]]               | Try Number Three                                                                                                                  |
+| 2024-02-07 | [[trump]]                      | Voter fraud rarely happens                                                                                                        |
+| 2024-02-07 | [[trump]]                      | Trump is a danger -- his own aids tells us the truth                                                                              |
+| 2024-01-28 | [[Reflections]]                | Starting to feel caught up                                                                                                        |
+| 2024-01-26 | [[LOG]]                        | cookie clicker code                                                                                                               |
+| 2024-01-25 | [[FIN]]                        | Retirement Planning ^rplan                                                                                                        |
+| 2024-01-23 | [[CVP]]                        | Design for Notion                                                                                                                 |
+| 2024-01-22 | [[CV]]                         | Juan                                                                                                                              |
+| 2024-01-22 | [[CV]]                         | Martin                                                                                                                            |
+| 2024-01-22 | [[CV]]                         | +Sarthi                                                                                                                           |
+| 2024-01-19 | [[@Devansh]]                   | LLM Talk                                                                                                                          |
+| 2024-01-18 | [[@Tyler Behsman]]             | Balltime                                                                                                                          |
+| 2024-01-18 | [[Mgt]]                        | FEB Meeting                                                                                                                       |
 | 2024-01-16 | [[CV]]                         | BAD GAMES                                                                                                                         |
 | 2024-01-16 | [[@Mike Seibert]]              | what he will do                                                                                                                   |
-| 2024-01-15 | [[CV]]                         | Maxim                                                                                                                             |
-| 2024-01-12 | [[CV]]                         | GRZ                                                                                                                               |
+| 2024-01-15 | [[CV]]                         | +Maxim                                                                                                                            |
+| 2024-01-12 | [[CV]]                         | +GRZ                                                                                                                              |
 | 2024-01-12 | [[CV]]                         | Martin                                                                                                                            |
 | 2024-01-12 | [[CV]]                         | Sarthi                                                                                                                            |
 | 2024-01-12 | [[CV]]                         | Juan                                                                                                                              |

@@ -1,1 +1,1 @@
-=[[Cmd]]   folder /Users/oblinger/ob/data/Timestamps
+=[[Cmd]]   shell spot -x Timestamps Folder

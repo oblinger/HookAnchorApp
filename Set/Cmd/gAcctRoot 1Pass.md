@@ -1,3 +1,1 @@
-=[[Cmd]]   shell _1pass gAcctRoot
-
-
+=[[Cmd]]   shell spot -x gAcctRoot 1Pass

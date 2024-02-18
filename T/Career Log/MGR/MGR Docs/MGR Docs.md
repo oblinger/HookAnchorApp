@@ -11,7 +11,7 @@
 - [Contracts](Contracts/Contracts.md) 
   
 - [[MGR Negotiations]],  
-
+- [[MGR Product]] 
 
 # ADVICE
 

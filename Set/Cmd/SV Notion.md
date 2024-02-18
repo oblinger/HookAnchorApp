@@ -1,1 +1,1 @@
-=[[Cmd]]   shell _1pass SV Notion
+=[[Cmd]]   shell spot -x SV Notion

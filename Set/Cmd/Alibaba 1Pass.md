@@ -1,3 +1,1 @@
-=[[Cmd]]   shell _1pass Alibaba
-
-
+=[[Cmd]]   shell spot -x Alibaba 1Pass

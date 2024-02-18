@@ -1,3 +1,1 @@
-=[[Cmd]]   shell _1pass TripIt
-
-
+=[[Cmd]]   shell spot -x TripIt 1Pass

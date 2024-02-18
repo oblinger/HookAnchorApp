@@ -1,3 +1,1 @@
-=[[Cmd]]   shell _1pass Mulberries
-
-
+=[[Cmd]]   shell spot -x Mulberries 1Pass

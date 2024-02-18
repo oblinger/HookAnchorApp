@@ -1,3 +1,1 @@
-=[[Cmd]]   shell _1pass Ancestry
-
-
+=[[Cmd]]   shell spot -x Ancestry 1Pass
