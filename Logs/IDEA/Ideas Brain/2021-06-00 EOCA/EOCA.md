@@ -1,4 +1,8 @@
 
+
+## >
+
+- [[EOCA End Run (Cyber Model)]]	
 :: [[Cmd Folder]]
 
 - [[EOCA Root]] 
@@ -7,6 +11,14 @@
 :: [[EOCA What Happens Now]]
 - [[EOCA Last Best Hope]] - 
 - [[EOCA Consciousness]] 
+
+
+- [[FF-prize]], [[LimitsOnAlignment]],  
+- [[Prime Path]]		-  
+  [MindSlavery](MindSlavery.md)
+  
+  
+   - [[EOCA IDEAS]]:  [SandboxFutility](SandboxFutility.md),  [Argument](Argument.md),  [ProblemOfQualia](ProblemOfQualia.md), [[Subjective Aspects of Consciousness]],  [[EOCA Short Argument]], 
 
 ## TODO
 ### who to talk to
@@ -34,16 +46,6 @@ REQUIRED INGREDIENTS
 - aggregating -- it possible to combine K, then it does
 - learning of post genomic K
 _
-## LINKS
-
-- [[FF-prize]], [[LimitsOnAlignment]],  
-- [[Cyber Model]]	-  
-- [[Prime Path]]		-  
-  [MindSlavery](MindSlavery.md)
-  
-  
-   - [[EOCA IDEAS]]:  [SandboxFutility](SandboxFutility.md),  [Argument](Argument.md),  [ProblemOfQualia](ProblemOfQualia.md), [[Subjective Aspects of Consciousness]],  [[EOCA Short Argument]], 
-
 # TOPICS TREE
 ## META
 ### MY STANCE

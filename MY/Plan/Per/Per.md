@@ -1,4 +1,5 @@
 
+# ...
 
 - [[Per]]: 	[[Home]], [[Spirit]], [[Hack]], [[Learn]], [[Q2]], [[Out]], 
 
@@ -17,8 +18,11 @@
 	- [[Friday]]:
 	- EliBook
 
-- [[SOCIAL]]:	
+- [[SOCIAL]]:	[[Friday]], 
+	- [[OUT]]:		
 
-- [[CAREER]]:
+- [[CAREER]]:  [[Mentor]], 
 	- [[NJ24]].
 	- [[LEARN]].	
+
+- [[Q2]]:	
