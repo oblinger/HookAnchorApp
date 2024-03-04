@@ -1,6 +1,5 @@
 
 JUMPS:
-- [SP](spot://SP): 
 - [SP add](spot://SP~add): 
 - [SP build](spot://SP~build): 
 - [SP delete](spot://SP~delete): 

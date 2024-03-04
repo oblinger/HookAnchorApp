@@ -1,4 +1,6 @@
 
+:: [[BKT Tree]],   [[Prof]]
+
 :: [[EBT]],   [[Ping]],   [[Productivity]],   [[Spirit]],   [[other]]
 #top[[Top|#]] 
 #### [[Plan]] [[Plan Folder|--]] Short and long term planning 
@@ -48,7 +50,7 @@ dv.table(["File", "Description"], rows);
 - [[gap]]			-  
 - [[Journal Old]]	-  
 - [[MY/Plan/L]]			-  
-- [[Personal]]			-  
+- [[Per]]			-  
 - [[Quarterly]]	-  
 - [[Repeat]]		-  
 - [[SCRatch]]		-  
@@ -101,4 +103,4 @@ CHANGE: [[wings]], [[Current]],
   [external](external.md)
 
   [fun](fun.md)
- [[Quarterly]],  [Quarterly](Quarterly.md),   [Planning](Planning.md),   [Archive](Archive.md),   [Work](Work/Work.md),   [full](full.md),   [self](MY/Plan/self.md),   [later](later.md),   [Repeat](Repeat.md),   [call](call.md),   [Ping](MY/Plan/Ping.md),   [q2](q2.md),   [fried](fried.md),   [todo](todo.md),   [Habit](Habit.md),   [Social](MY/Plan/Social.md),   [SCR Note](SCR%20Note.md),   [COMS](COMS.md),   [prime](prime.md),   [Watching](Watching.md),   [Current](Current.md),   [L](MY/Plan/L.md),   [quick](quick.md),   [hack](hack.md),   [active](active.md)
+ [[Quarterly]],  [Quarterly](Quarterly.md),   [Planning](Planning.md),   [Archive](Archive.md),   [Work](Work/Work.md),   [full](full.md),   [self](MY/Plan/self.md),   [later](later.md),   [Repeat](Repeat.md),   [Calls](Calls.md),   [Ping](MY/Plan/Ping.md),   [q2](q2.md),   [fried](fried.md),   [todo](todo.md),   [Habit](Habit.md),   [Social](MY/Plan/Social.md),   [SCR Note](SCR%20Note.md),   [COMS](COMS.md),   [prime](prime.md),   [Watching](Watching.md),   [Current](Current.md),   [L](MY/Plan/L.md),   [quick](quick.md),   [hack](hack.md),   [active](active.md)

@@ -1,6 +1,5 @@
 
 JUMPS:
-- [MGR](spot://MGR): 
 - [MGR Annual Review](spot://MGR~Annual~Review): 
 - [MGR Deligation Planning](spot://MGR~Deligation~Planning): 
 - [MGR Docs](spot://MGR~Docs): 

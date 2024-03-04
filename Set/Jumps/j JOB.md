@@ -1,6 +1,5 @@
 
 JUMPS:
-- [Job](spot://Job): 
 - [JOB Compensation](spot://JOB~Compensation): 
 - [Job Postings](spot://Job~Postings): 
 - [Job Tests](spot://Job~Tests): 

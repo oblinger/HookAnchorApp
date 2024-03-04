@@ -1,6 +1,5 @@
 
 JUMPS:
-- [QuickAdd](spot://QuickAdd): 
 - [QUICKADD](spot://QUICKADD): 
 - [QuickAdd 1Pass](spot://QuickAdd~1Pass): 
 - [QuickAdd App](spot://QuickAdd~App): 

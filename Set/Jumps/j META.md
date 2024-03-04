@@ -12,4 +12,5 @@ JUMPS:
 - [Meta Set](spot://Meta~Set): 
 - [Meta SV](spot://Meta~SV): 
 - [Meta Topic](spot://Meta~Topic): 
+- [meta Tasks](spot://meta~Tasks): 
 

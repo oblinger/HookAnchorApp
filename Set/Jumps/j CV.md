@@ -9,4 +9,5 @@ JUMPS:
 - [cv OKRs](spot://cv~OKRs): 
 - [CV Roadmap](spot://CV~Roadmap): 
 - [CV.](spot://CV.): 
+- [cv ROOT](spot://cv~ROOT): 
 

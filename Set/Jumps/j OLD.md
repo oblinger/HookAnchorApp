@@ -1,6 +1,5 @@
 
 JUMPS:
-- [OLD](spot://OLD): 
 - [Old](spot://Old): 
 - [OLD 200x Weekly](spot://OLD~200x~Weekly): 
 - [OLD 201x Weekly](spot://OLD~201x~Weekly): 

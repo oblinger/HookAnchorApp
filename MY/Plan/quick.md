@@ -1,5 +1,9 @@
+- jason buddy
+- bkt
+- hoka return
+- james on payroll
+- guy's guy
 
-- data for fin
 - car plastic
 - bkt
 - 83b
@@ -10,9 +14,5 @@
 - fix easy passwords
 - change PW
 - Greg's data dependency tracking
-- valentines day
-- balconly
 - Michael's tracking
-- car title
-- tripod
 - docs of saved pictures

@@ -1,7 +1,7 @@
 
 #### Trip
 - pills, toiletries, shoes, bb-snacks
-- [ ]  travels lists, bb-snacks, travel-snacks, car-snacks
+- travels lists, bb-snacks, travel-snacks, car-snacks
 
 #### Snacks
 B-BAG:	Pistachios, Mangos, Water

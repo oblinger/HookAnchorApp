@@ -1,9 +1,10 @@
-
+- sweeper 
 - info filled in for Avanti
 - Buy tripod
 - camping
 - org self
 
+- christmas tree
 - ask Jeff & Avery /madison about after school
 - [wells](https://www.fool.com/the-ascent/credit-cards/landing/top-travel-cards/?campaign_group=643982279418&gad_source=1&gclid=Cj0KCQiAkeSsBhDUARIsAK3tiedEYY6AQZToqvng_1YyFZYoTZnUFDI1X2P8MF6tKGRJqEj5LqM6DjsaAotWEALw_wcB&publisher=ta-cc-co-adw-na-travel-5-na-na&testId=ta-cc-travel&cellId=0&campaign=the-ascent) card
 - [[Sell Car]] : Mail title

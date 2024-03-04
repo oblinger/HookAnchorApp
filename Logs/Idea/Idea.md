@@ -28,7 +28,7 @@ n:: Ideas of mine
 - [[2013-08 Crowd Self Assessment]]      	-- Marketplace of pointer maps; Tourist Concierge 
 - [[2013-06 Consulting Co]]				-- The idea of AF (I think) [startup/old]
 - [[2013-00 TechnoTherapy]]
-- [[2011-09 Word War]]	
+- [[2011-09 Word_War]]	
 - [[2011-09 Startup Ideas]]			
 - [[2011-08 Zanzors]]	              
 - [[2011-03 Entity Search]]	

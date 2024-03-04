@@ -1,6 +1,5 @@
 
 JUMPS:
-- [EOC](spot://EOC): 
 - [EOC Book Snipits](spot://EOC~Book~Snipits): 
 - [EOC reboot](spot://EOC~reboot): 
 - [eoc-atlas](spot://eoc-atlas): 

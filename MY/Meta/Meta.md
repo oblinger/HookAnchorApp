@@ -1,7 +1,7 @@
 
 :: [[Roots]]
 
-:: [[Tasks]]
+:: [[meta Tasks]]
 
 [[Meta]]	TOP LEVEL INFO ORGANIZATIONS
 - ***ORG***		***FOLDER***	***META DOCS***
@@ -21,6 +21,6 @@ SPECIALTY PAGES
 
 OTHER STUFF
 - [[Meta Org (old page)]] 	-  Overview of all info resources 
-- Others:    [Base](Base.md),    [Tasks](MY/Meta/Tasks.md),   [Empty](MY/Closet/Empty.md), 
+- Others:    [Base](Base.md),    [meta Tasks](meta%20Tasks.md),   [Empty](MY/Closet/Empty.md), 
 
 

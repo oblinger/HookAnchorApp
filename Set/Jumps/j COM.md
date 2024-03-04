@@ -1,6 +1,5 @@
 
 JUMPS:
-- [COM](spot://COM): 
 - [COM Campaigns OLDER](spot://COM~Campaigns~OLDER): 
 - [COM Investor](spot://COM~Investor): 
 - [COM Msg](spot://COM~Msg): 

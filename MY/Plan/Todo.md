@@ -1,5 +1,10 @@
-- !! trip in Feb
-- !!running shoes
+- book flights
+- Re-emburse
+- Running shoes
+- tripod
+
+- car title
+- look at loan doc
 - !! friday
 - return keyboard, and thule
 - tripod

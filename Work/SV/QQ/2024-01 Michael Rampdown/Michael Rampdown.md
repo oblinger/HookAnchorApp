@@ -2,9 +2,6 @@
 - Talk with Juan
 
 
-- Work on Patents together w/ team during Feb
-- Help on hiring
-
 
 - Juan manages standups
 - Team manages their own Jira tickets

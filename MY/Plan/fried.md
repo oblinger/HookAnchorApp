@@ -1,3 +1,5 @@
+- [[Fried]].			
+
 - buy shirts
 fix history month
 - [ ] Eli schools list.
@@ -9,6 +11,9 @@ fix history month
 - [ ] Update CRM workflow
 - [ ] Get logins for MyHealth
 - [ ] Process mom's Eli educational funds.
+
+### > 
+- [[Hack]], 
 
 ### WAITING
 - [ ] NextDoor [[Automation]] 

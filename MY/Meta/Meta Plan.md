@@ -5,6 +5,6 @@
 
 Personal Planning
 - [[Mission]] - Life Plannings
-	- [[Personal]] - 
+	- [[Per]] - 
 
 - [[Productivity]] 

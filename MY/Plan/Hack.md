@@ -1,3 +1,5 @@
+- [[Hack]].	km copy entries
+
 - OBS - Evernote log of dated entries
     ingest all dated entries and starred entries 
     daily run script via chron or extend alarm.py

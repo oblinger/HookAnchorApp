@@ -1,8 +1,10 @@
 
+:: [[@Maria Galang]]
+
 :: [[@Devansh]]
 
 
-
+[[@Hoka]] 
 
 #set 
 n:: Entity pages (typically people, organizations, or collaborations)

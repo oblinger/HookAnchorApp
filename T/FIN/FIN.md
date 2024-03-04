@@ -738,6 +738,7 @@ books to read    http://mebfaber.com/about/
 ### 2024-01-25  Retirement Planning ^rplan
 
 - [[FIN Log]] 
+- [[2024-01 Merrill Retirement Planning]]
 - [[2024-01 Wealth Management Questionnaire.pdf]] 
 
 ### 2023-12-06  Retirement Analysis

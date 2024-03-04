@@ -1,11 +1,25 @@
 - [[ROADMAP]], 
 
+ask: sean, Jason, jack -- target for BB speedup
+
+- S3
+- RP play format
+- Minute data format?
+- fusing
+
+- IO.save(path, uri)
+
 # Log
 
 ### 2024-01-18  FEB Meeting
 - [todos](https://docs.google.com/document/d/1wASzo79-0WP6c84z7g2xbqAhXtiOx3Ucm6BY2mDBIeg/edit) 
 
-- [sean](https://www.notion.so/sportsvisio/0d3cb69afa1a459996539e3ea97ea12a?v=e23b2f5802a941b99dd83b1b92957b3c&pvs=4) 
+- [sean](https://www.notion.so/sportsvisio/0d3cb69afa1a459996539e3ea97ea12a?v=e23b2f5802a941b99dd83b1b92957b3c&pvs=4)     [Sean's slides](https://docs.google.com/presentation/d/1ukAw-WWxuqCf3c_vdU79AHPuhjWVQUUdVUWAPBSw37g/edit#slide=id.p) 
+- [BoD](https://docs.google.com/presentation/d/1mEps17ZJfOlh1biiBLWp2eKhu3Ti79pY/edit#slide=id.p1) 
+
+AI STATUS SLIDE
+
+Status: Improvements 
 
 ### 2024-01-11  JAN meeting
 

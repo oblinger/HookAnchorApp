@@ -1,7 +1,5 @@
 
 JUMPS:
-- [Doc](spot://Doc): 
-- [DOC](spot://DOC): 
 - [Doc 1Password](spot://Doc~1Password): 
 - [Doc Folder](spot://Doc~Folder): 
 - [Doc Keyboard Maestro](spot://Doc~Keyboard~Maestro): 

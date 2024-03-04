@@ -1,11 +1,25 @@
 
 JUMPS:
-- [J](spot://J): 
 - [j 1PASSWORD](spot://j~1PASSWORD): 
+- [j 2000](spot://j~2000): 
+- [j 2006](spot://j~2006): 
+- [j 2007](spot://j~2007): 
+- [j 2008](spot://j~2008): 
+- [j 2009](spot://j~2009): 
+- [j 2010](spot://j~2010): 
+- [j 2011](spot://j~2011): 
+- [j 2013](spot://j~2013): 
+- [j 2015](spot://j~2015): 
+- [j 2016](spot://j~2016): 
 - [j 2017](spot://j~2017): 
+- [j 2018](spot://j~2018): 
+- [j 2020](spot://j~2020): 
+- [j 2021](spot://j~2021): 
+- [j 2022](spot://j~2022): 
 - [j 2023](spot://j~2023): 
 - [j 2024](spot://j~2024): 
 - [j AF](spot://j~AF): 
+- [j AI](spot://j~AI): 
 - [j AMA](spot://j~AMA): 
 - [j APP](spot://j~APP): 
 - [j ARCHIVE](spot://j~ARCHIVE): 
@@ -53,11 +67,13 @@ JUMPS:
 - [j GDR](spot://j~GDR): 
 - [j GDRIVE](spot://j~GDRIVE): 
 - [j GET](spot://j~GET): 
+- [j GHOST](spot://j~GHOST): 
 - [j GIT](spot://j~GIT): 
 - [j GMEET](spot://j~GMEET): 
 - [j GOOGLE](spot://j~GOOGLE): 
 - [j GRAMMARLY](spot://j~GRAMMARLY): 
 - [j GREENHOUSE](spot://j~GREENHOUSE): 
+- [j H](spot://j~H): 
 - [j HACKERS](spot://j~HACKERS): 
 - [j HIGHBROW](spot://j~HIGHBROW): 
 - [j HIRING](spot://j~HIRING): 
@@ -74,9 +90,11 @@ JUMPS:
 - [j JIRA](spot://j~JIRA): 
 - [j JOB](spot://j~JOB): 
 - [j JOURNAL](spot://j~JOURNAL): 
+- [j KARABINER](spot://j~KARABINER): 
 - [j KBD](spot://j~KBD): 
 - [j KM](spot://j~KM): 
 - [j L](spot://j~L): 
+- [j LCM](spot://j~LCM): 
 - [j LDATA](spot://j~LDATA): 
 - [j LEGAL](spot://j~LEGAL): 
 - [j LEVELS](spot://j~LEVELS): 
@@ -107,6 +125,7 @@ JUMPS:
 - [j NOTES](spot://j~NOTES): 
 - [j NUTRITION](spot://j~NUTRITION): 
 - [j OBS](spot://j~OBS): 
+- [j OKRs](spot://j~OKRs): 
 - [j OLD](spot://j~OLD): 
 - [j OURPACT](spot://j~OURPACT): 
 - [j PAGE](spot://j~PAGE): 
@@ -121,6 +140,7 @@ JUMPS:
 - [j PRIME](spot://j~PRIME): 
 - [j PRJ](spot://j~PRJ): 
 - [j PUBLIC](spot://j~PUBLIC): 
+- [j QA](spot://j~QA): 
 - [j QL](spot://j~QL): 
 - [j QQ](spot://j~QQ): 
 - [j QUICKADD](spot://j~QUICKADD): 
@@ -137,6 +157,7 @@ JUMPS:
 - [j SELF](spot://j~SELF): 
 - [j SENSITIVE](spot://j~SENSITIVE): 
 - [j SET](spot://j~SET): 
+- [j SF](spot://j~SF): 
 - [j SIMPLENOTE](spot://j~SIMPLENOTE): 
 - [j SKYPE](spot://j~SKYPE): 
 - [j SLEEP](spot://j~SLEEP): 
@@ -145,6 +166,7 @@ JUMPS:
 - [j STARTUPS](spot://j~STARTUPS): 
 - [j SUB](spot://j~SUB): 
 - [j SV](spot://j~SV): 
+- [j SV90](spot://j~SV90): 
 - [j SVT](spot://j~SVT): 
 - [j SYS](spot://j~SYS): 
 - [j T](spot://j~T): 
@@ -168,6 +190,7 @@ JUMPS:
 - [j WEEKLY](spot://j~WEEKLY): 
 - [j WORKFLOWY](spot://j~WORKFLOWY): 
 - [j WP](spot://j~WP): 
+- [j WP2023](spot://j~WP2023): 
 - [j WW](spot://j~WW): 
 - [j YELP](spot://j~YELP): 
 - [j Z](spot://j~Z): 

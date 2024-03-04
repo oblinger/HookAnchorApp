@@ -5,6 +5,7 @@ n:: no prefix.	Dated entries without any typing prefix
 
 | Date       | File                       | Notes                                                                                                                             |
 | ---------- | -------------------------- | --------------------------------------------------------------------------------------------------------------------------------- |
+| 2024-02-18 | [[@Hoka]]                      | Exchange                                                                                                                          |
 | 2024-02-17 | [[Eli]]                        | Put on his underwear                                                                                                              |
 | 2024-02-17 | [[SYS Facets]]                 | Auto Jump pages                                                                                                                   |
 | 2024-02-17 | [[SYS Facets]]                 | EXAMPLES of facet groups                                                                                                          |
@@ -235,6 +236,7 @@ n:: no prefix.	Dated entries without any typing prefix
 | 2023-06-03 | [[@Circle]]                    | AGENDA -- CV Team Roadmap                                                                                                         |
 | 2023-06-03 | [[@Circle]]                    | VISIT -- Old Notes                                                                                                                |
 | 2023-06-01 | [[@Jason Syversen]]            | Doug @ Sapphire Ventures                                                                                                          |
+| 2023-06-00 | [[ROADMAP]]                    | Mad Lib Framework                                                                                                                 |
 | 2023-05-31 | [[CV]]                         | Daily                                                                                                                             |
 | 2023-05-30 | [[CV]]                         | Daily                                                                                                                             |
 | 2023-05-30 | [[@Vishal Batavia]]            | Autoruning our stuff                                                                                                              |
@@ -418,6 +420,8 @@ n:: no prefix.	Dated entries without any typing prefix
 | 2023-01-01 | [[DYL]]                        | Edu Corp                                                                                                                          |
 | 2023-00-00 | [[Meta CRM]]                   | CRM FORMAT                                                                                                                        |
 | 2023-00-00 | [[BKT]]                        | buckets                                                                                                                           |
+| 2023-00-00 | [[CV Roadmap]]                 | FULL-AI / BALLER DELIVERABLE                                                                                                      |
+| 2023-00-00 | [[ROADMAP]]                    | YEAR PRIORITIES                                                                                                                   |
 | 2023-00-00 | [[FIN]]                        | very old - CONSIDER ADDITIONS                                                                                                     |
 | 2022-12-16 | [[2022-W51]]                   | FRI                                                                                                                               |
 | 2022-12-14 | [[Phone]]                      | Fix roof fin                                                                                                                      |

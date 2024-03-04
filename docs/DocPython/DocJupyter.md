@@ -1,5 +1,10 @@
 
 
+### Launch on Mac
+
+	// assuming installed
+	jupyter lab
+
 
   ### Runs magic command from inside a python script
   

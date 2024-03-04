@@ -1,6 +1,5 @@
 
 JUMPS:
-- [My](spot://My): 
 - [MY](spot://MY): 
 - [My Folder](spot://My~Folder): 
 - [my mgr NOTES](spot://my~mgr~NOTES): 

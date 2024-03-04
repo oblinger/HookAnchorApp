@@ -1,11 +1,10 @@
 
-:: [[2021-10-00  AFmaterials]], [[2024 Resume]], 
 
-:: [[Resume Samples]]
+- [Resume Master](spot://resume~master) 
 
+- [[2021-10-00  AFmaterials]], [[2024 Resume]], 
 - [[Bio]],  [[resLI]],  [[Resume Patents]],  [[References]],  [[Dan Oblinger Resume.docx]] 
-- 
- [[T/Career Log/Resume/master/Dan Oblinger Resume.docx|Current Resume]] 
+
 
 Addendum
 - organize by area

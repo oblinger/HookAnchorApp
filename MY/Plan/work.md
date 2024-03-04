@@ -1,4 +1,3 @@
-
 ## __
 
 
@@ -31,7 +30,6 @@ DOCS:			Casual Metrics
 - other reference videos
 
 
-
-
+   my read is that I have left Martin twisting in the wind on this one,  I needed to get you or me or Grz working directly with him.  My aim here was a simple detection of OCR, and a hack to see the batter walk into range and see what this gives.  it would be enough to just count the number of folks inside a fixed box on the screen you would not even need to detect the bat!
 
 

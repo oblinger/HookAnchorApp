@@ -167,6 +167,8 @@ Fong -
 
 
 # LOG
+=> Michael Patent
+
 => AI-tips
 => Swiss Army knife
 => Team stats product

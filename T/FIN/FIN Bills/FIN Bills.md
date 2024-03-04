@@ -31,6 +31,9 @@ OWED TO QINGLING
  -$9,000  2022-01-01    -- QL transferred to herself from Grandcentrl 
 
 
+ $0.      2024-02-27 -- QL sent $700 to herself to cover Eli ski lessons paid via Venmo
+
+
 DanO paid $60K on 2022-04-25 for federal taxes from my schwab account
 DanO paid $15K on 2022-04-18 for state taxes from my schwab account
 

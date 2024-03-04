@@ -1,7 +1,16 @@
 
---> look @ cook & oakland what else should we be doing?
+## A-Round
 
-# FULL-AI / BALLER DELIVERABLE
+- [[cv okrs]] - 
+
+
+- No cost for decision maker, rev-share after min signups
+	- League
+	- Coach
+
+
+# LOG
+### 2023-00-00 - FULL-AI / BALLER DELIVERABLE
 
 ## SEEING
 ### Annotated Error Analysis
@@ -44,5 +53,4 @@
 
 
 
-# CV A-Round Roadmap
 

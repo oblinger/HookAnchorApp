@@ -1,10 +1,11 @@
-## TOP
-- WORK
-- [[Personal]]: 	[[Home]], [[Spirit]], 
-- [[Career]]:	[[CRM]], 
+## >
+- [[Prof]]:	[[Career]], 
+- [[Per]]: 	[[Home]], [[Spirit]], [[Hack]], [[Learn]], [[Q2]], [[Out]], 
+- 
+-  [[BKT Tree]],   
 
-
-## BUCKETS
+## BKT TREE
+## BUCKET TIME BLOCKS
 
 SUMMARY 2023-Q3
 

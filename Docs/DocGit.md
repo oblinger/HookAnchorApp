@@ -33,19 +33,24 @@ SETUP FOR BIT BUCKET ON NEW COMPUTER
 
 
 
+
+
 ## QUICK REF
-  $ git init                     # creates .git
-  $ git add .                    # recursively adds files to repository
-  $ git commit -a -m "msg"       # commits files (and does the 'add .' too)
-  $ git push -u origin master    # ??? Pushes local commit to master
-  $ git checkout [bname]         # moves from 1 branch to other  (changes active files)
-  $ git branch [-d] [bname]      		  # view/create/delete branch
-  $ git status                   # Status of current branch
-  $ git pull <file> <branch>
-  $ git commit --amend -m "msg"  # re-commit with changes and new message
-  $ git clean -d -f              # FORCES removal of files and DIRS
-  $ git reset --hard HEAD        # Revert to last commit
+	git init                     # creates .git
+	git add .                    # recursively adds files to repository
+	git commit -a -m "msg"       # commits files (and does the 'add .' too)
+    git push -u origin master    # ??? Pushes local commit to master
+    git checkout [bname]         # moves from 1 branch to other  (changes active files)
+    git branch [-d] [bname]      		  # view/create/delete branch
+    git status                   # Status of current branch
+    git pull <file> <branch>
+    git commit --amend -m "msg"  # re-commit with changes and new message
+    git clean -d -f              # FORCES removal of files and DIRS
+    git reset --hard HEAD        # Revert to last commit
+
+
 ## DOCS
+
 GIT MAGIC http://www-cs-students.stanford.edu/~blynn/gitmagic/
 ## CREATE
 ### Create New Branch
@@ -53,8 +58,8 @@ GIT MAGIC http://www-cs-students.stanford.edu/~blynn/gitmagic/
     $ git checkout experimental        # ..and entering into it
     $ git push -u origin experimental  # ..setup stream, and push back git
 
-    
-// might be the same as above
+
+	// might be the same as above
     $ git branch -b experimental          # Create new branch (of current branch)
     $ git push -u origin experimental  # ..setup stream, and push back git
 ### Create a new clone
@@ -274,13 +279,15 @@ The key's randomart image is:    <-- in the 11.11.10 build
      $ rake db:migrate
 ## DELETE
 ### branch
-   $ git branch -d some_branch             #   Remove LOCAL branch. warns if unmerged code
-   $ git push origin --delete some_branch  # [DOES NOT WARN!] Removes REMOTE branch (on GIT HUB)
-   $ git remote prune origin               # Removes LOCAL branches whose remote has been deleted
-                                             # did not work 12/5/12
+   $ git branch -d some_branch		# Remove LOCAL branch. warns if unmerged code
+   $ git remote prune origin			# Removes LOCAL branches whose remote has been deleted
+
+
+   $ git push origin --delete some_branch  # {DOES NOT WARN!} Removes REMOTE branch (on GIT HUB)
+                                             // did not work 12/5/12
    $ git branch -D some_branch             #   Remove LOCAL branch. DOES NOT WARN
-   $ git push [remotename] [localbranch]:[remotebranch]   # pushes local to remote so
-   $ git push origin :<branchName>                        # thus this pushes "nothing" to remote branch  & deletes it
+   $ git push origin :some_branch                        # thus this pushes "nothing" to remote branch  & deletes it
+   $ git push [remotename] [localbranch]:{remotebranch}   # pushes local to remote so
 cd commits
     $ git add .
     $ git commit -a -m "msg"
@@ -288,6 +295,11 @@ cd commits
     $ git checkout feature/mgp_api
     $ git fetch
     $ git reset --hard origin/feature/mgp_api
+
+## VIEW
+	git status
+	git diff
+
 ## UNDO
 ### Reset
     $ git reset --hard HEAD         # blows away curent edits back to last commit
@@ -309,10 +321,9 @@ cd commits
 ### Delete all remote branches merged into master
 
 git branch -r --merged | grep origin | grep -v '>' | grep -v dev | grep -v master | egrep "fix/|feature/" | xargs -L1 | awk '{sub(/origin\//,"");print}'  |
- xargs git push origin --delete
-## INFO
+ xargs git push origin --delete## INFO
    $ git reflog                # LIST of commits
-   $ git blame <path>
+   $ git blame {path}
    $ git status                # Status of git system (branch, relation to local, & to github)
    $ git log                   # Log of commits on current branch
    $ git show-branch           # Lists commits and which branches they are part of
@@ -450,7 +461,7 @@ myPC SSH phrase: (blank)
    -> git version 1.7.3.rc2
 
 
-   # === LATER ===
+  ~ ~ ~ ~  LATER ~~~~
    $ git fetch
      ...
      From git://git.kernel.org/pub/scm/git/git
