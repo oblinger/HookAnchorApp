@@ -5,6 +5,10 @@ n:: no prefix.	Dated entries without any typing prefix
 
 | Date       | File                                | Notes                                                                                                                             |
 | ---------- | ----------------------------------- | --------------------------------------------------------------------------------------------------------------------------------- |
+| 2024-03-06 | [[Trips]]                               | VEGAS TRIP                                                                                                                        |
+| 2024-03-05 | [[Trips]]                               | All Hands                                                                                                                         |
+| 2024-03-04 | [[@Jason Syversen]]                     | Salary Cut                                                                                                                        |
+| 2024-03-04 | [[Reflections]]                         | Occasional Loss of Traction;  now building BKT tree                                                                               |
 | 2024-03-03 | [[2024-01 Merrill Retirement Planning]] | Follow On Questions                                                                                                               |
 | 2024-03-03 | [[2024-01 Merrill Retirement Planning]] | Initial Questions                                                                                                                 |
 | 2024-02-18 | [[@Hoka]]                               | Exchange                                                                                                                          |
@@ -12,7 +16,7 @@ n:: no prefix.	Dated entries without any typing prefix
 | 2024-02-17 | [[SYS Facets]]                          | Auto Jump pages                                                                                                                   |
 | 2024-02-17 | [[SYS Facets]]                          | EXAMPLES of facet groups                                                                                                          |
 | 2024-02-12 | [[MED]]                                 | QL DOC advice for a flu w/ cough                                                                                                  |
-| 2024-02-11 | [[Trip]]                                | Boston Sapphire                                                                                                                   |
+| 2024-02-11 | [[Trips]]                               | Boston Sapphire                                                                                                                   |
 | 2024-02-11 | [[Palestinians]]                        | Andrew's response                                                                                                                 |
 | 2024-02-09 | [[Palestinians]]                        | Try Number Three                                                                                                                  |
 | 2024-02-07 | [[trump]]                               | Voter fraud rarely happens                                                                                                        |
@@ -302,7 +306,7 @@ n:: no prefix.	Dated entries without any typing prefix
 | 2023-04-24 | [[@Martin Reyes]]                       | intro                                                                                                                             |
 | 2023-04-24 | [[Reset]]                               | Jason Response                                                                                                                    |
 | 2023-04-24 | [[Reflections]]                         | Lesson Learned:  I am too tactical, too insecure, not proactive @ high level, & running from fear                                 |
-| 2023-04-23 | [[Trip]]                                | Dad's 85th Birthday                                                                                                               |
+| 2023-04-23 | [[Trips]]                               | Dad's 85th Birthday                                                                                                               |
 | 2023-04-23 | [[Phone]]                               | SF BAY AREA HEATED POOLS                                                                                                          |
 | 2023-04-21 | [[Eli Interactions]]                    | Ms Amanda & Ms Soumya                                                                                                             |
 | 2023-04-21 | [[SV Product]]                          | Customer Onboarding Pathways                                                                                                      |
@@ -360,7 +364,7 @@ n:: no prefix.	Dated entries without any typing prefix
 | 2023-03-19 | [[FIN]]                                 | Taxes 2022                                                                                                                        |
 | 2023-03-17 | [[FIN]]                                 | Vanguard Get TIPS, dave-O opening an account                                                                                      |
 | 2023-03-13 | [[Socialism]]                           | Achilles (flutter dev at SV)                                                                                                      |
-| 2023-03-11 | [[Trip]]                                | Argentina places                                                                                                                  |
+| 2023-03-11 | [[Trips]]                               | Argentina places                                                                                                                  |
 | 2023-03-11 | [[Bio Verbal]]                          | BULLETS FOR SLIDE                                                                                                                 |
 | 2023-03-07 | [[@Daniel Handyman]]                    | Quote for house work                                                                                                              |
 | 2023-03-06 | [[@Mike Seibert]]                       | Three guys CV guys from Argentina                                                                                                 |
@@ -382,18 +386,18 @@ n:: no prefix.	Dated entries without any typing prefix
 | 2023-02-19 | [[@Mark Lichty]]                        | Intro discussion                                                                                                                  |
 | 2023-02-19 | [[@Yashin Lin]]                         | discussion                                                                                                                        |
 | 2023-02-17 | [[@John Murphy]]                        | Mgt trip meeting                                                                                                                  |
-| 2023-02-17 | [[Trip]]                                | Mike                                                                                                                              |
+| 2023-02-17 | [[Trips]]                               | Mike                                                                                                                              |
 | 2023-02-17 | [[@Jason Syversen]]                     | Mgt Trip                                                                                                                          |
 | 2023-02-17 | [[@Mike Seibert]]                       | AI Elements                                                                                                                       |
 | 2023-02-16 | [[2023 Deliverables]]                   | Jason conversation                                                                                                                |
 | 2023-02-15 | [[Mgt]]                                 | Comments with the Team                                                                                                            |
 | 2023-02-14 | [[@Yashin Lin]]                         | Looking for VALID TARGETS                                                                                                         |
-| 2023-02-13 | [[Trip]]                                | Manager's Monthly Meeting                                                                                                         |
+| 2023-02-13 | [[Trips]]                               | Manager's Monthly Meeting                                                                                                         |
 | 2023-02-13 | [[2023 Jason Tasks]]                    | Systematic QA processing                                                                                                          |
 | 2023-02-13 | [[2023-W07]]                            | W07                                                                                                                               |
 | 2023-02-11 | [[Phone]]                               | Instapot                                                                                                                          |
 | 2023-02-10 | [[@Tomas Tisocco]]                      | Intro                                                                                                                             |
-| 2023-02-10 | [[Trip]]                                | ARGENTINA                                                                                                                         |
+| 2023-02-10 | [[Trips]]                               | ARGENTINA                                                                                                                         |
 | 2023-02-10 | [[Phone]]                               | Pay for Ambulance                                                                                                                 |
 | 2023-02-09 | [[@James Sullivan III]]                 | Intro                                                                                                                             |
 | 2023-02-09 | [[@Leonardo Almiron]]                   | Intro                                                                                                                             |

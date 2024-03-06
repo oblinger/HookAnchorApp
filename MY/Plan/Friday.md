@@ -1,23 +1,8 @@
+ | eviews-Isa-San_Francisco_California.html) - Cow Hallow Italian |
+ | -------------------------------------------------------------- |
+ |                                                                |
 
-- Find place for 
-
-
-- [Eater](https://sf.eater.com/maps/most-romantic-restaurants-san-francisco) Foreign Cinema, Penny Roma
--  [The Infatuation](https://www.theinfatuation.com/san-francisco/guides/romantic-restaurants-san-francisco) 
--  [Thrillist](https://www.thrillist.com/eat/san-francisco/most-romantic-restaurants-san-francisco)  +
--  [Open Table](https://www.opentable.com/blog/best-romantic-date-night-restaurants-san-francisco/) 
--  [Time Out](https://www.timeout.com/san-francisco/restaurants/romantic-restaurants-in-san-francisco) 
--  [Yelp](https://www.yelp.com/search?find_desc=Date+Night+Restaurant&find_loc=San+Francisco%2C+CA)  
-
-
-
-
-PLACES
-- [Penny Roma](https://www.google.com/maps/place/Penny+Roma/@37.7592504,-122.4110591,17z/data=!3m1!4b1!4m6!3m5!1s0x808f7e37160ce1af:0x69a65e8dd85a61c!8m2!3d37.7592504!4d-122.4110591!16s%2Fm%2F0zcx1_9?entry=ttu) - Italian close - [gog](https://www.google.com/maps/place/Penny+Roma/@37.7592504,-122.4110591,17z/data=!3m1!4b1!4m6!3m5!1s0x808f7e37160ce1af:0x69a65e8dd85a61c!8m2!3d37.7592504!4d-122.4110591!16s%2Fm%2F0zcx1_9?entry=ttu) 
-- [Spruce](https://www.thrillist.com/venue/eat/san-francisco/restaurants/spruce) - Presidio Heights - dress up - New American
-- [Top of the Mark](https://www.thrillist.com/venue/drink/san-francisco/bar/top-of-the-mark) - hotel up high 
-- [Poesia Osteria Italiana](https://www.tripadvisor.com/Restaurant_Review-g60713-d1099521-Reviews-Poesia_Osteria_Italiana-San_Francisco_California.html) - castro Italian [yelp](https://www.yelp.com/biz/poesia-san-francisco?osq=Poesia)
-- [Isa](https://www.tripadvisor.com/Restaurant_Review-g60713-d370463-Reviews-Isa-San_Francisco_California.html) - Cow Hallow Italian
+- Cow hallow italian
 - [Absinthe](https://www.tripadvisor.com/Restaurant_Review-g60713-d349444-Reviews-Absinthe_Brasserie_Bar-San_Francisco_California.html) - [yelp](https://www.yelp.com/biz/absinthe-brasserie-and-bar-san-francisco-2?osq=absinthe) - French not too expensive civic cntr
 - [7 Adams](https://thebolditalic.com/new-michelin-chefs-tasting-menu-for-under-100-at-7-adams-64c2138ef984) - modern looking, new from Marlena's owner - cheap michellen star
 
@@ -34,11 +19,16 @@ MISSION.
 -  [Old Jerusalem](https://www.yelp.com/biz/old-jerusalem-restaurant-san-francisco) (medittrian). 
 -  [Paprika](https://www.yelp.com/biz/paprika-san-francisco) German
 -   [Itria](https://www.yelp.com/biz/itria-san-francisco) Italian
+-  [Cotogna](https://www.yelp.com/biz/cotogna-san-francisco?osq=Cotogna) $ Italian in Fin district [wow](https://www.purewow.com/food/romantic-restaurants-in-san-francisco)   
+- Penny Roma
+- Bix (swanky)
+- Foreign Cinema
+-  [Trestle](https://www.yelp.com/search?find_desc=Trestle&find_loc=San+Francisco%2C+CA)  American. [wow](https://www.purewow.com/food/romantic-restaurants-in-san-francisco) 
 - 
 
 
 [Time Out](https://www.timeout.com/san-francisco/restaurants/romantic-restaurants-in-san-francisco)
-- Anomaly SF. . Google](https://www.google.com/maps/place/Anomaly+SF/@37.7849566,-122.4459591,17z/data=!3m1!4b1!4m6!3m5!1s0x80858184ff022515:0x68d8b817285400e8!8m2!3d37.7849566!4d-122.4433842!16s%2Fg%2F11jr7f9hp7?entry=ttu). super fancy
+- Anomaly SF. . Google]. https://www.google.com/maps/place/Anomaly+SF/@37.7849566,-122.4459591,17z/data=!3m1!4b1!4m6!3m5!1s0x80858184ff022515:0x68d8b817285400e8!8m2!3d37.7849566!4d-122.4433842!16s%2Fg%2F11jr7f9hp7?entry=ttu). super fancy
 - Marlena (close)
 
 ## BEEN THERE

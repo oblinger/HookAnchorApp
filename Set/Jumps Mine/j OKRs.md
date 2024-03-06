@@ -1,11 +1,11 @@
 
-- OKRs:  [cv OKRs](spot://cv~OKRs), [gSlides](https://docs.google.com/presentation/d/1v7Winy9DHxGuYh05_is8zH05ClJi0qclM698-pDXIgY/edit#slide=id.g2bb02bc8ed0_0_3),  [gSheet](https://docs.google.com/spreadsheets/d/1uiaue661WqTPL-RQ5FLWQZzD1MC0ZoP7s75jkd2_XbU/edit#gid=0), [OKRs](spot://okrs),    
+- OKRs:  [cv OKRs](spot://cv~OKRs), [gSlides](https://docs.google.com/presentation/d/1v7Winy9DHxGuYh05_is8zH05ClJi0qclM698-pDXIgY/edit#slide=id.g2bb02bc8ed0_0_3),  [gSheet](https://docs.google.com/spreadsheets/d/1uiaue661WqTPL-RQ5FLWQZzD1MC0ZoP7s75jkd2_XbU/edit#gid=0), [OKRs](spot://okrs),   
 
 
 
 
 
-
+See Notion [OKR spec](spot://okr~spec) 
 #  A-round Targets
 
 #### Objectives

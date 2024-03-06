@@ -1,3 +1,14 @@
+### 2024-03-04  Occasional Loss of Traction;  now building BKT tree
+
+- Sometimes I am pretty effective, and sometimes I will just loose 4 hours.
+
+==> I know I need to "eat the frog" everyday...  this will really help.
+==> I know I need built tree of actions so I have high ROI actions always ready to go
+	- Need to better manage my transitions between activities
+
+
+
+
 ### 2024-01-28  Starting to feel caught up
 
 I am going to bed by 11pm, and sometimes waking by 6am, this makes sleeping better and gives me some extra room some days.

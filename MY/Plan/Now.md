@@ -1,6 +1,6 @@
+- jason buddy
+- AF james
 
-- Patents
-  Work on Patents together w/ team during Feb
 - oakleys. (800) 403-7449
 
 - physic+homgpy
@@ -8,8 +8,7 @@
 ### Track
 - contacts
 	- team members email phone contact order
-- 3on3 games
-- 
+
 ## Soon
 - [[SV]]
 - Sarthi call 

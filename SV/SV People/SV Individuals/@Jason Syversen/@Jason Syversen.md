@@ -81,6 +81,17 @@ DISCUSS
 
 # LOG
 
+### 2024-03-04  Salary Cut
+
+- Me
+- Team
+
+- Guy's Guy
+- BOD meeting at the all hands
+
+- Open Source 1000 lines.  3 nifty modules
+- ML guy
+
 ### 2024-01-11  JASON QUOTE REQUEST
 
 Good to keep in mind for when we are at the point of caring about our costs. Would be useful to have a quote at least from these guys before summer so I can use it when raising the series A  

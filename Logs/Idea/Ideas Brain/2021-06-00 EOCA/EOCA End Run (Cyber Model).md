@@ -20,8 +20,7 @@ IMPLICATION #4 - ALIGNMENT WONT WORK
 ## Cyber Model
 
 ### Layers
-
-- SOCIALLY EMERGENT PROPERTIES
+- SOCIAL EMERGENCE - 
 - INTENT - Objective Specification
 - ALGORITHM - Formally specified alg against mathematically precise language spec
 - SW IMPLEMENTATION - Binary Specification of the alg to be run

@@ -15,4 +15,5 @@ JUMPS:
 - [EOCA Short Argument](spot://EOCA~Short~Argument): 
 - [EOCA The Writing Is On The Wall](spot://EOCA~The~Writing~Is~On~The~Wall): 
 - [EOCA What Happens Now](spot://EOCA~What~Happens~Now): 
+- [EOCA End Run (Cyber Model)](spot://EOCA~End~Run~(Cyber~Model)): 
 
