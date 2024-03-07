@@ -12,4 +12,5 @@ JUMPS:
 - [FIN Topics](spot://FIN~Topics): 
 - [FIN Tracking](spot://FIN~Tracking): 
 - [FIN.](spot://FIN.): 
+- [FIN Retire](spot://FIN~Retire): 
 
