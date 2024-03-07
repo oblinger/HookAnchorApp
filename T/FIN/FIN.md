@@ -1,7 +1,7 @@
 
 :: [[FIN Log]]
 
-:: [[FIN.]],  [[FIN Topics]],  [[FIN Mint]], 
+:: [[FIN.]],  [[FIN Topics]],  [[FIN Mint]], [[FIN Retire]], 
 
 - [[FIN Tracking]]:  [[FIN Recurring]],  [[FIN Bills]], [[FIN Budgeting]],
 

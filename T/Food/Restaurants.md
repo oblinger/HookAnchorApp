@@ -9,20 +9,20 @@ ZKN-20220108210139
 10139
 
 **COURTLAND**
-MeaKura * Vega/Bstar | Hunan/Moki/Veno * Moonlight/Taco
+- Vega/B-star | Hunan/Moki/Veno * Moonlight/Taco, MeaKura * 
 RedHill/Pizza/MixAm/Turo/Piqueo * Nute/3Cousin/Nepal * Bare
 
 MISSION-ISH
 SEAFOOD	--	Mission St Oysters
 DIM SUM	--	Dumpling House
 AM SOUL	--	The Front Porch ; Old Skool
-MEDITRAN--	Foreign Cinema
-THAI	--	Farmhouse Kitchen Thai
+MEDITRAN --	Foreign Cinema
+THAI	    --	Farmhouse Kitchen Thai
 TURKISH	-- 	Tuba
-AMERICAN--	Baretta
-PERU	--  Limon
-INDIAN	--	Dosa
-JAPANESE--	Shabu House
+AMERICAN	--	Baretta
+PERU	    --  Limon
+INDIAN		--	Dosa
+JAPANESE	--	Shabu House
 
 ! Emmys Spaghetti Shack
 ! HILLSIDE SUPPER

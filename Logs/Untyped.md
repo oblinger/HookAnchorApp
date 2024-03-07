@@ -129,7 +129,7 @@ n:: no prefix.	Dated entries without any typing prefix
 | 2023-09-28 | [[2023-07 Director of SW]]              | ++Raul2                                                                                                                           |
 | 2023-09-27 | [[Hire]]                                | Luciano Start                                                                                                                     |
 | 2023-09-25 | [[Mgt]]                                 | Weekly meeting.                                                                                                                   |
-| 2023-09-25 | [[@Jason Syversen]]                     |                                                                                                                                   |
+| 2023-09-25 | [[@Jason Syversen]]                     | notes                                                                                                                             |
 | 2023-09-21 | [[CVP]]                                 | AI goals from Mgt meeting                                                                                                         |
 | 2023-09-21 | [[@Jasu Victorio]]                      | Review                                                                                                                            |
 | 2023-09-21 | [[Bugs]]                                | Fellowship of the bug                                                                                                             |

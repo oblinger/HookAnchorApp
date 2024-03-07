@@ -73,6 +73,22 @@ Reply idea - monitor
 - Specialized experience for three kinds of customers:  players, coaches, and administrators.
 - Bet the company on Pivo
 - Specialized Record app.  Our MVP target provides a superior experience than our billion dollar competitor HUDL.
+
+
+### Defocused Action
+- PIVO - We told the team to "drop everything and make this the main focus"  Tons of time in, no product out.
+- RECORD APP - Specialized record app.
+- IOS BACKGROUND UPLOAD - 
+- HOMOGRAPHY - w/ physical model
+- FIRE BALL - 
+- TEXTUAL GAME SUMMARIES - 
+- VOLLEYBALL - Demo
+- MULTI-SPORT SHOWCASE - 
+- BASEBALL - 
+- BASKETBALL HIGHLIGHTS - 
+- LOGIC ENGINE TO DETECT INVALID ANNOTATION COMBINATIONS - 
+
+
 ## CALL TOPICS
 
 ### __
@@ -159,7 +175,7 @@ AI
 
 - plus/minus breakdown - 
 
-### 2023-09-25  
+### 2023-09-25 notes 
 - three sports - 
 - fellowship of the bug - 
 - hiring - 
@@ -807,6 +823,7 @@ Jason
 
 
 
+## SV Hiring Discussions
 ### m2023-01-19  Co-Founder??
 
 Jason, 

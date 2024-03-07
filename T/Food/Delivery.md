@@ -1,4 +1,4 @@
-- [[desserts]] 
+- [[desserts]],  [[Restaurants]], 
 TOP:   Chin/Jap/Thai/Ko
 ASIAN:	 Chinese, Japanese, Thai, Korean, Burmese, Vietnamese, Fusion    BOWL: Pho, Bowl, Raman, Poke/Hawaiian
 AMER:	 Seafood, American (Salad, Pizza,  Sandwich, Burger, Fast, Soul, Desert)		

@@ -3,6 +3,7 @@
 
 ## TOP
 [OKRs](spot://j~okrs):			>Ask: done RP, Min
+- Miguel UX
 [[NJ24]]:			>Res, >Coursera
 [Assess](spot://assess):		>look
 [RP](spot://rp):			>look

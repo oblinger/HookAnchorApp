@@ -1,5 +1,8 @@
-- book tickets
-- sweeper
+- showcase link
+- videos for Maxim.
+- March 26th Racquet sports
+- Game Changer meeting
+
 - bkt
 - hoka return
 - james on payroll

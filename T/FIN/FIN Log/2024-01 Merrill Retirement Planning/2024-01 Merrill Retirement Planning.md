@@ -1,20 +1,34 @@
 
 Questions:
+- Monthly Burn?
+	- $22K. $19K
+- how to think about retirement
 - SSN payout
 - QL retirement accounts
 
 
+@ 70   $4800/mo.   40 quarters; high water mark; max near $200K. $57,600. (half $30K)
 
 
 
+Essential Retirement Lifestyle
+- Medical, phone bills, 
+
+
+400K * 70% = 280K = 23K 
+
+
+529 -- can allow large
+UGMA/UTMA custodial account for Eli (Gifting account until 18/25) -- $50K in MM would be tax free
+- can fund it with appreciated stock (upto $2500 tax basis)
+- income above $1,250 is taxed normally
+
+
+NOTES:
 Plans
 - Retirement.  Dan 65 y/o. QL 5 years later?
-
-
 Retirement income
 - ???
-
-
 
 ### 2024-03-03  Follow On Questions
 

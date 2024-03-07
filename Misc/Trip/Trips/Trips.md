@@ -1,4 +1,6 @@
 
+:: [[2013 Thailand]]
+
 # LOG
 
 ### 2024-03-06  VEGAS TRIP
@@ -6,7 +8,21 @@
 March
 
 M25 SFO->LAS 5:55p->7:28p
-   id-EFITCJ  Alaska 706
+   Alaska 706.  EFITCJ. (dan)  
+F29 LAS->SFO 9:40a->11:24a
+    Alaska 3358
+
+
+MOM
+
+MAR M25 CVG->LAS 3:12p->6:25p
+    United 479-537
+F29 LAS-SFO 9:59a->11:47a
+    United 354
+
+APR U14 12:37p->8:14p
+    Breeze. MX259   L3UMTF
+
 
 
 
