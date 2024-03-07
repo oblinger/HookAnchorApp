@@ -1,4 +1,9 @@
 
+[[OLD WarStories 2022-11-08\|Thu Jan 5  2023 ]]  	[[OLD WarStories 2022-11-08#TODO]]  
+[[OLD WarStories 2022-11-08\|Thu Jan 5  2023 ]]  	[[OLD WarStories 2022-11-08#QUESTIONS: BIG LIST ([from indeed](https://www.indeed.com/ca]]  
+[[OLD WarStories 2022-11-08\|Thu Jan 5  2023 ]]  	[[OLD WarStories 2022-11-08#STORIES:   WHOLISTIC]]  
+[[OLD WarStories 2022-11-08\|Thu Jan 5  2023 ]]  	[[OLD WarStories 2022-11-08#STORIES:  PEOPLE MANAGEMENT]]  
+[[OLD WarStories 2022-11-08\|Thu Jan 5  2023 ]]  	[[OLD WarStories 2022-11-08#STORIES:  PROJECT MANAGEMENT   !!!!!]]  
 [[OLD WarStories 2022-11-08\|Thu Jan 5  2023 ]]  	[[OLD WarStories 2022-11-08#STORIES:  MISC]]  
 [[OLD WarStories 2022-11-08\|Thu Jan 5  2023 ]]  	[[OLD WarStories 2022-11-08#STORIES BY YEAR]]  
 [[OLD WarStories 2022-11-08\|Thu Jan 5  2023 ]]  	[[OLD WarStories 2022-11-08#REF]]  

@@ -1,4 +1,9 @@
 
+[[Full\|Thu Dec 28  2023]]  	[[Full#Prime]]  
+[[Full\|Thu Dec 28  2023]]  	[[Full#Q2]]  
+[[Full\|Thu Dec 28  2023]]  	[[Full#WAITING]]  
+[[Full\|Thu Dec 28  2023]]  	[[Full#__]]  
+[[Spirit\|Thu Dec 28  2023]]  	[[Spirit#Catholic marriage stuff]]  
 [[full\|Thu Dec 28  2023]]  	[[full#Prime]]  
 [[full\|Thu Dec 28  2023]]  	[[full#Q2]]  
 [[full\|Thu Dec 28  2023]]  	[[full#WAITING]]  
