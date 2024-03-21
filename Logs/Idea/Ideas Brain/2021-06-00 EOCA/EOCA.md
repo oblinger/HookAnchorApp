@@ -1,9 +1,7 @@
 
-
 ## >
-
-- [[EOCA End Run (Cyber Model)]]	
-:: [[Cmd Folder]]
+ACTIVE
+- [[EOCA End Run (Cyber Model)]] - 
 
 - [[EOCA Root]] 
 [[Leviathan]] 

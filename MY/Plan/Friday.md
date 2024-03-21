@@ -1,15 +1,20 @@
- | eviews-Isa-San_Francisco_California.html) - Cow Hallow Italian |
- | -------------------------------------------------------------- |
- |                                                                |
 
+
+![[Friday.numbers]]
+
+
+
+
+
+# OLDER INFO
+
+eviews-Isa-San_Francisco_California.html) - Cow Hallow Italian
+
+- dan and susan:  biron. hotel.  
 - Cow hallow italian
 - [Absinthe](https://www.tripadvisor.com/Restaurant_Review-g60713-d349444-Reviews-Absinthe_Brasserie_Bar-San_Francisco_California.html) - [yelp](https://www.yelp.com/biz/absinthe-brasserie-and-bar-san-francisco-2?osq=absinthe) - French not too expensive civic cntr
 - [7 Adams](https://thebolditalic.com/new-michelin-chefs-tasting-menu-for-under-100-at-7-adams-64c2138ef984) - modern looking, new from Marlena's owner - cheap michellen star
 
-
-BERNAL
--  [Montecristo](https://www.yelp.com/biz/montecristo-restaurant-2-san-francisco-5) Salvadorian
--  [Mi Lindo Perú](https://www.yelp.com/biz/mi-lindo-per%C3%BA-san-francisco-6) 
 
 GLENN PARK
 - [Gialina Pizzeria](https://www.yelp.com/biz/gialina-pizzeria-san-francisco) 
@@ -27,9 +32,6 @@ MISSION.
 - 
 
 
-[Time Out](https://www.timeout.com/san-francisco/restaurants/romantic-restaurants-in-san-francisco)
-- Anomaly SF. . Google]. https://www.google.com/maps/place/Anomaly+SF/@37.7849566,-122.4459591,17z/data=!3m1!4b1!4m6!3m5!1s0x80858184ff022515:0x68d8b817285400e8!8m2!3d37.7849566!4d-122.4433842!16s%2Fg%2F11jr7f9hp7?entry=ttu). super fancy
-- Marlena (close)
 
 ## BEEN THERE
 - [LaLe](https://www.yelp.com/biz/lale-san-francisco-2?osq=Date+Night+Restaurant) [res](https://www.lalesf.com/reservations) - Turkish Mediterranean Tapas - Best Mediterranean in city, casual, limited menu

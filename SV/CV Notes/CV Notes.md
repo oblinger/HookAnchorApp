@@ -33,9 +33,9 @@ DIR [CV Google](https://docs.google.com/document/d/1nGCRGOZVxvIzbM0MFpspTaCtF-f8
 - [ ] Visualizers:  2D.  DataCube. matrix
 - [ ] DATASETS
 
- [[CV]]: Evt Datasets: format, video, annotations
-- [ ] [[CV]]: Ground truth datasets
-- [ ] [[CV]]: Demo (shotOrig, end2end, classes)
+ [[CV Notes]]: Evt Datasets: format, video, annotations
+- [ ] [[CV Notes]]: Ground truth datasets
+- [ ] [[CV Notes]]: Demo (shotOrig, end2end, classes)
 - [ ] Sidney (trained, docs, g-sheet)
 
 

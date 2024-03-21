@@ -3,11 +3,20 @@
 
 
 
-## Assets
+
+# Log
+
+## 2024-03-08  ANALYSIS
+
+$400K/yr		2023 Gross salary
+$22K/mo		Expenses w/ Mgt & School
+
+
+### ASSETS $4.95M
 
 
 
-### Targeted Savings
+## 2024-03-08  Targeted Savings
 
 - Fidelity's guideline: Aim to save **at least 1x your salary by 30, 3x by 40, 6x by 50, 8x by 60, and 10x by 67**.
 - T-Rowe Price:  the more you make, the less SS helps so the bigger ratio you need:  We estimated that most people age 65 

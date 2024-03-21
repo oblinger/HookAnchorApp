@@ -197,4 +197,5 @@ JUMPS:
 - [j ZOOM](spot://j~ZOOM): 
 - [j BKT](spot://j~BKT): 
 - [j OKR](spot://j~OKR): 
+- [j GPT](spot://j~GPT): 
 

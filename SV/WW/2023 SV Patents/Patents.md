@@ -1,13 +1,10 @@
 
-TODO
-- ref for bill
+- see CV [Patents](spot://patents) 
 
 
 - [[2023 SV Patents]]
 
 
-Bill O'Sullivan  wosullivan@sheehan.com
-Jonathan Whitcomb JWhitcomb@sheehan.com
 
 ## PATENTS
 

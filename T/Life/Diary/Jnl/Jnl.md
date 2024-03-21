@@ -1,3 +1,4 @@
+[[Old Daily]] 
 ### 2023-11-05  Retirement Planning
 
 2024 - Van $1,530K. 

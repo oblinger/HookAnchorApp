@@ -6,4 +6,5 @@ JUMPS:
 - [SCR Qingling<>Dan Page](spot://SCR~Qingling<>Dan~Page): 
 - [SCR Team Page](spot://SCR~Team~Page): 
 - [SCR Qingling<>Dan Webpage](spot://SCR~Qingling<>Dan~Webpage): 
+- [SCR dan](spot://SCR~dan): 
 

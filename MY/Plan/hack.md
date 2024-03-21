@@ -1,3 +1,4 @@
+- obsidian memorization cards
 - [[Hack]].	km copy entries
 
 - OBS - Evernote log of dated entries
@@ -39,7 +40,7 @@
 
 - [ ] Hard core backup of all emails.
 - [ ] F: edit scripts to be python3 scripts
-- [ ] Use WhatSize to clean disk
+- [ ] Use WhatSize to clean disk.
 
 
 # PROJ

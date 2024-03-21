@@ -2,18 +2,29 @@
 
 
 ## TOP
-[OKRs](spot://j~okrs):			>Ask: done RP, Min
-- Miguel UX
-- Racquet Presentation
+Q1: +Patents, +Tips, POC, ?Min, ?Halos, 
+- Miguel discussion
+[Racquet](spot://racquet): 		>Greg results
+[OKRs](spot://j~okrs):			! New ones
 [[NJ24]]:			>Res, >Coursera
 [Assess](spot://assess):		>look
-[RP](spot://rp):			>look
-[[patents]]:		>Engage
+[RP](spot://rp):			^Grz POC
+[[patents]]:		^M Sketches
   - Patents
   Work on Patents together w/ team during Feb
-[[LCM]]:			>do, metrics
+[[LCM]]:			>do & metrics
 - define metrics
+[[@Shreshth Saxena]]: 
+   [show](https://www.showpass.com/livelab-10th-anniversary-the-innocents/), Signup, SOW, Brainstorming session, 
 [[CV Data]]:		Pie-chart
+
+Tracking Priorities:
+  - LOE estimate tracking.
+  - Process
+
+Shot Charts
+
+
 
 ## TRACKING
 [Belief](https://docs.google.com/document/d/1H9krXpxS2_Cr9T68pAksb6QGYqpW28DiF2OSw40g0pI/edit?usp=drive_link):		?
@@ -33,8 +44,10 @@ DOCS:			Casual Metrics
 
 
 
-- Sarthi 
 
 
-- RETIRE
 
+- [[journaling]] 
+
+
+## _ 

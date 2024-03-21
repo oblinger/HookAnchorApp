@@ -8,7 +8,46 @@
 - game annotation - 
 - ops execution
 - device search
-- 
+
+
+## Feedback
+
+### Employee Empathy
+- your #1 job is money, you #2 job is people.
+- agree being a 'nice guy' and keeping C players is a fail.  
+- But the unforced error of rattling your employees in ways that could have been avoided is a fail on #2.  if you are going to have negative impact, you need to have gotten a tangible value from it....  and your person convenience or attention is not tangible value.
+
+EXAMPLES: 
+
+#### "Hey layoffs happen all the time, no big deal we don't need to worry much about it too much, or its effect on the team."
+
+- you have been in charge for too many years to really relate to how most people experience work.
+- it is largely a place that is mostly out of their control, where occasionally very bad this strike like a lightening bolt from out of the blue.
+- There is mostly no place on earth where you are safe from this lightening, but there are jobs that are realatively better than others.   All things equal, survival instinct has honed employee senses for places of higher risk, and A players with many options in front of them, flee before they are hit.
+
+
+### Precision in specification
+#### Layoff Sarthi or somehting equivelant to his salary.  Lay off 15% in the CV team.  Lay off 15% including your salary.
+#### Is the meeting happening?
+
+SLACK Jason:  I’m in Austin for SXSW, meeting a SportsTech investor this afternoon so making the OKR review meeting will be tough. I can review the slides or Google sheet if you have them though later when I have time.
+
+(is hard mean maybe I cannot or we will look for options, or I will not.)
+
+SLACK Dan: I think we can drop a weekly update meeting [@Jason Syversen](https://sportsvisioworkspace.slack.com/team/U01PF3NJ4HL) w/o too much cost.  else we can just move it to another day as you like.
+
+Jason:  Thumbs up.
+
+(does this mean thumbs up to the first 1/2 of the statement or the second half?)
+
+{{All folks are unsure so they all show to the meeting}}
+
+Jack:  I think he is meeting with a guy from trace and then coming here afterwards.
+
+Jason Text back to dan:  Yes, skip. I said in my earlier message I couldn’t make today.
+
+
+(So Jason believed he had already communicated a directive, but the entire team thought the opposite.)
 
 
 ## Timeline
@@ -97,6 +136,39 @@ DISCUSS
 
 # LOG
 
+### 2024-03-19  Licencing code
+
+- Over a couple of weekends I wrote some boiler plate for dynmaic loading of phthon object I would like to use at SV, but also in my own projects. 
+- My plan is to slap the same apache licence we already have on SW taht we use, and then use that at SV.
+
+Quick advice: I would love to open source two modules I wrote (mostly on my own time) for use by SportsVisio.  one is currently been provided to SportsVisio and other other I am about to provide to them.  My aim is to have access to these for personal projects, and also potentially for use in future ML contexts too.  What do you think of this ask:
+
+~~
+
+Jason, Over a couple of weekends about 3 months ago I wrote two nifty python modules that provide dynamic loading of code and data.
+
+My motivation was to provide a simple uniform interface for code and datasets used by the CV team in a way that will ultimate interface with open source tools like ML flow, and be easier to manage today too.
+
+I am about to integrate the code abstraction one into SportsVisio code, and it occurs to me that I would love to open source both modules using one of the business friendly licences that we are already using from other modules.  These are both tiny modules (~350 lines of code), not at all specialized to AI, or sports, or SportsVisio.
+
+I am fine if sportsvisio owns the copyright and the license, it would just be nice to be able to cleanly use the code in my own projects, and could be beneficial to advertise this open source output in support of the SV brand.  (I am not sure if investors will care since it is not specialized to sports or AI, but devs definitely like seeing open source code coming out of the places they work.)
+
+Let me know if there are any issues with doing this, and of course I will be sure to show you guys the specific open source license being used before using it!
+
+
+
+#### never sent
+
+I am pretty happy with the level of the talent in our team given our dollar constraints.
+
+Remember we used to have folks like Chris Stauffer who I think is much more of an out of the box thinker, but he costs literally 3x more than our current guys, and he is a slower developer too.
+
+It is true, if I wanted to push our out of the box thinking up a notch I would not look in the USA, rather I would look in Europe for some kick butt PhD.  But still it would be double our current rate.... I don’t think I would want to pay that right now.
+
+Greg gives us engineering level out of the box thinking, and Michael and I give AI/CV level out of the box thinking.  On our budget that is probably correct.  
+
+At “best guy in earth no matter the price” rates we could hire once CV employee (assuming we fired me too).  I think they would get less done than our current team.
+
 ### 2024-03-04  Salary Cut
 
 - Me
@@ -107,6 +179,17 @@ DISCUSS
 
 - Open Source 1000 lines.  3 nifty modules
 - ML guy
+
+
+$32,316
+$4,847 /mo reduction
+$1,660 /mo from Grz  = 2 * 9,965
+$3,186 compensated reduction.
+$2,982 = $5,965 /mo /2 
+$203
+
+
+
 
 ### 2024-01-11  JASON QUOTE REQUEST
 

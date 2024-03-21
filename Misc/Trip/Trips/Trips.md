@@ -1,4 +1,5 @@
 
+
 :: [[2013 Thailand]]
 
 # LOG
@@ -25,6 +26,9 @@ APR U14 12:37p->8:14p
 
 
 
+At the end of March 2024 in Las Vegas, the weather is expected to be warm with high temperatures reaching up to 75°F and low temperatures around 61°F. The month of March will not see any snowfall, continuing the trend from March through November. Daylight will also increase towards the end of the month, with the sunrise at 6:26 am and sunset at 7:02 pm PDT on the last day of March, marking the transition to longer days following the start of Daylight Saving Time on March 10, 2024. The average sunshine in March is around 8.8 hours per day, and the UV index is expected to be medium with an average daily maximum of 5, indicating a moderate risk of harm from unprotected sun exposure
+
+In Las Vegas during March 2024, the expected average humidity is around 34%, indicating relatively dry conditions typical of the desert climate. As for the wind speed, the average in March is expected to be approximately 7.7 mph. These conditions contribute to the generally pleasant weather experienced in Las Vegas during this time of year, with mild temperatures and minimal rainfall
 
 ### 2024-03-05  All Hands
 

@@ -1,12 +1,9 @@
-
-- Running shoes
-- tripod
-
+- Avanti
+- Car Repair
 - car title
 - look at loan doc
 - !! friday
-- return keyboard, and thule
-- tripod
+
 
 - Scan Now list
 - get licence

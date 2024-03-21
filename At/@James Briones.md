@@ -1,5 +1,8 @@
 =[[START]]     [Head of Operations](https://www.linkedin.com/in/jamesmarvinbriones/)  [[@Rzero]].  #y24 
 
+	Wake 6pm   3am PST
+	Sleep 7am.  4pm PST
+
 
 - [Miguel's tasks](https://docs.google.com/document/d/1uoT-CZW0ICLvbkosD5uLb84Yh11eujl9WTrOuug74nU/edit) - 
 - Payments with Wise
@@ -27,10 +30,11 @@ Sleep at 7-8 PST.
 2022-05-06 - $182.51 - James paid
 2022-06-03 - $181.68 - James paid
 
-
+(see log too)
 
   
 So let's document our plan going forward:
+
 
   
 

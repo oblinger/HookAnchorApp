@@ -18,6 +18,8 @@
 [[DL]] - 
 - [[RNN]] 
 - [[CNN]] 
+- [[GPT]] 
+- [[DL SYStems]] 
 
 
 

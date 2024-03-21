@@ -1,19 +1,9 @@
-- showcase link
-- videos for Maxim.
-- March 26th Racquet sports
-- Game Changer meeting
-
+- get boston tix
+- Q1 outputs; Q2 plans
+- Tax Info
+- yashin
 - bkt
-- hoka return
-- james on payroll
-- guy's guy
 
-- car plastic
-- bkt
-- 83b
-- inst PRs
-- audi chains
-- scotty @ AWS
 - paying for noom
 - fix easy passwords
 - change PW

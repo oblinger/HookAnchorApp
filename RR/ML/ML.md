@@ -1,5 +1,5 @@
 
-:: [[DL]],   [[STATS]]
+:: [[DL]],   [[STATS]], [[Learning]], 
 
 :: [[ARIMA Algorithm]],   [[ML Alg]],   [[ML Tools]]
 

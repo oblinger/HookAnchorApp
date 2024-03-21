@@ -6,10 +6,13 @@
 - [Keyboard Shortcuts](https://gist.github.com/discdiver/9e00618756d120a8c9fa344ac1c375ac)  
 - [Keyboard Shortcuts](https://nocomplexity.com/documents/jupyterlab/keyboardshortcuts.html) -- 
 
-### INSTALL
+### INSTALL & RUN
 
 	$ pip3 install jupyterlab
-	$ jupyter-lab
+
+	$ jupyter lab
+	$ jupyter lab my_notebook.ipynb
+	
 
 ### KEYBOARD SHORTCUTS 
 

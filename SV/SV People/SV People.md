@@ -1,5 +1,5 @@
 
-:: [[CV]],   [[SV SW Team]]
+:: [[CV Notes]],   [[SV SW Team]]
 - [[Hiring.]],   [[SV Individuals]], [[SV FIN]], 
 - [[Circle]], [[Team]], 
 

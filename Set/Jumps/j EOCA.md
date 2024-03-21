@@ -16,4 +16,7 @@ JUMPS:
 - [EOCA The Writing Is On The Wall](spot://EOCA~The~Writing~Is~On~The~Wall): 
 - [EOCA What Happens Now](spot://EOCA~What~Happens~Now): 
 - [EOCA End Run (Cyber Model)](spot://EOCA~End~Run~(Cyber~Model)): 
+- [EOCA Agent](spot://EOCA~Agent): 
+- [EOCA Civilizing tendency](spot://EOCA~Civilizing~tendency): 
+- [EOCA Definitions](spot://EOCA~Definitions): 
 

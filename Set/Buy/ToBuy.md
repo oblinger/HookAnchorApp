@@ -1,4 +1,5 @@
 
+- audi chains
 - [ ] Buy table
 - [skubb insert](https://www.ikea.com/us/en/p/skubb-box-with-compartments-dark-gray-90472967/?utm_source=google&utm_medium=surfaces&utm_campaign=shopping_feed&utm_content=free_google_shopping_clicks_Home_organisation) 
 - [ ] Drawers near desk in bedroom
@@ -9,6 +10,26 @@
 
 - [ ] Buy tripod. consider go-pro or other video. search best camera w/ a kid
 ## ITEMS
+### 2024-03-16  Tent
+
+Instant tents:
+-  [Coleman](https://www.amazon.com/dp/B004E4ERHA?tag=rvwtbrn-20&linkCode=ogi&th=1&language=en_US&asc_source=direct&asc_campaign=31183&asc_refurl=https%3A%2F%2Freviewed.usatoday.com%2Fparenting%2Fbest-right-now%2Fbest-family-camping-tents)  
+-  [Beyond Home](https://www.amazon.com/BeyondHOME-Waterproof-Windproof-Ventilation-Backpacking/dp/B0BWYD2BQV?th=1) 44x11x10 
+-  [Core 6](https://www.amazon.com/CORE-Person-Instant-Cabin-Organizer/dp/B08CJJRHH6/ref=sr_1_20?crid=2XJVQ8NWMOGA4&dib=eyJ2IjoiMSJ9.krJPgmZTmgZ33zLTNvEymSQfBEFiKfqR72nOu3lA4MWE0XILIhQwo-T3y0epEvqLrstsVNERPRtmNAi6eUIufkGe63VYZoegY5yRqxpxnF0ZPL5ipOBLybSW0coAZTHbyU2lK_bzGB18VXIOpy8Oxx2j_LNcbg2X72l0qgWrKIhaTkvlkyDwdoh0R890OgtiHCf9-rmchJJVyvHu4_AegTP3CM9LT_1pN8XMAOd99e4qoeKv-ZzTNUmLrZeBhSbLpWigJSFc1YQs-poRCOSD3_ku-XOHUXRgMtIfOWAwtPo.pdxaVuz_ihia9sKUmsidWUZiJQlZpS1j5rO19hnig5w&dib_tag=se&keywords=instant%2Btent%2Bventilation&qid=1710638410&s=sporting-goods&sprefix=instant%2Btent%2Bventalation%2Csporting%2C151&sr=1-20&th=1) 
+- [Core 10](https://www.amazon.com/dp/B078WYF51D?ref=emc_p_m_5_i_atc) 48x13x13
+-  [Coleman Skylodge](https://www.rei.com/product/229305/coleman-skylodge-6-person-instant-tent) 46x10x10 
+- 
+
+Others
+-  [UNP 6 person](https://www.amazon.com/Waterproof-Windproof-Upgraded-Ventilation-10X9X78in/dp/B09PH17GV3/ref=sr_1_14?crid=2XJVQ8NWMOGA4&dib=eyJ2IjoiMSJ9.krJPgmZTmgZ33zLTNvEymSQfBEFiKfqR72nOu3lA4MWE0XILIhQwo-T3y0epEvqLrstsVNERPRtmNAi6eUIufkGe63VYZoegY5yRqxpxnF0ZPL5ipOBLybSW0coAZTHbyU2lK_bzGB18VXIOpy8Oxx2j_LNcbg2X72l0qgWrKIhaTkvlkyDwdoh0R890OgtiHCf9-rmchJJVyvHu4_AegTP3CM9LT_1pN8XMAOd99e4qoeKv-ZzTNUmLrZeBhSbLpWigJSFc1YQs-poRCOSD3_ku-XOHUXRgMtIfOWAwtPo.pdxaVuz_ihia9sKUmsidWUZiJQlZpS1j5rO19hnig5w&dib_tag=se&keywords=instant%2Btent%2Bventilation&qid=1710638410&s=sporting-goods&sprefix=instant%2Btent%2Bventalation%2Csporting%2C151&sr=1-14&th=1) 23x9x9  
+-  [Coleman Sundome](https://www.amazon.com/Coleman-4-Person-Camping-Sundome-Setup/dp/B019N9W7WC/ref=sr_1_1?crid=24AKICSLPRJV6&dib=eyJ2IjoiMSJ9.y7TPw-8TP6I72U4mM-dmfhFDhLBjl_2xnCIcWC7T7X76sMCHjCI3UYgNJ_Yw-Th9xRH-6rN6LsNTB6racSUUXmGsB_TmTdZ-oLQ3iDwx3bdT1FUoXFW0oip0V0W8x4vsgZMNZVHl2yRehRsNSo3hohpk6KWUzmgUZ5FMA0aygmbR1Y0Hr84gUljOkh7T3vjSHYePd2gNy3IQky8URNcYoymj0-5AUCLmYNIN7LtEdzSVV2TQxQ9O07vG531m6JQcI8Z5Ee44rTzIUAlaVsNrBMTfWgUh1VOeJZL1fCaF9Ws.ZtNu7BfucbyBTnlBah0Ex8OJwi4Or5VmHTL3-g8l2IQ&dib_tag=se&keywords=sundome%2Btent&qid=1710643894&s=sporting-goods&sprefix=sundome%2Btent%2Csporting%2C279&sr=1-1&th=1)  
+-  [Coleman Sundome](https://www.amazon.com/Coleman-4-Person-Camping-Sundome-Setup/dp/B019N9W93O/ref=sr_1_1?crid=24AKICSLPRJV6&dib=eyJ2IjoiMSJ9.y7TPw-8TP6I72U4mM-dmfhFDhLBjl_2xnCIcWC7T7X76sMCHjCI3UYgNJ_Yw-Th9xRH-6rN6LsNTB6racSUUXmGsB_TmTdZ-oLQ3iDwx3bdT1FUoXFW0oip0V0W8x4vsgZMNZVHl2yRehRsNSo3hohpk6KWUzmgUZ5FMA0aygmbR1Y0Hr84gUljOkh7T3vjSHYePd2gNy3IQky8URNcYoymj0-5AUCLmYNIN7LtEdzSVV2TQxQ9O07vG531m6JQcI8Z5Ee44rTzIUAlaVsNrBMTfWgUh1VOeJZL1fCaF9Ws.ZtNu7BfucbyBTnlBah0Ex8OJwi4Or5VmHTL3-g8l2IQ&dib_tag=se&keywords=sundome%2Btent&qid=1710643894&s=sporting-goods&sprefix=sundome%2Btent%2Csporting%2C279&sr=1-1&th=1)  
+
+
+Car Camping
+-  [Eurika 6p](https://www.amazon.com/Eureka-Copper-Canyon-6-Person-Camping/dp/B083T9TFW8?tag=camdenxodl-20&ascsubtag=0000OL0000277799O2560129420240317041621++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++&th=1)    27.5x10x10 
+- 
+
 ### 2023-07-15  Coffee Table
 
 - [QL scratch](https://docs.google.com/document/d/1hoF_iCN4-W0Lnigf9rLML9vxB1R5NNKq3O9PNM36xU0/edit) 

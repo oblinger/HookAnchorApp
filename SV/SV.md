@@ -5,7 +5,7 @@
 - TOPS:		[[WW]],   [[QQ]],  [[Mgt]], 
 - [[SV Strat]]:	[[Reset]],  [[ROADMAP]], 
 - [[SV Ops]]:	 	[[SV Dashboards]],  [[SV Testing]], [[SV Planning]],  
-- [[SV People]]:	[[Hiring.]], [[SV SW Team]],   [[CV]],
+- [[SV People]]:	[[Hiring.]], [[SV SW Team]],   [[CV Notes]],
 - [[SV Market]]:	[[SV Customer]],  [[SV Competitor]], [[SV Partner]], 
 - [[SV Product]]: [[SV Code]],  [[SV Apps]], [[SV System]], [[SV Data]],  
 - [[SV Software]]: 

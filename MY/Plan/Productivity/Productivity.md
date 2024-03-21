@@ -3,6 +3,16 @@
 
 
 # LOG
+
+### 2024-03-19  Schedule of my day
+
+07  WAKE - ready, slack
+08  GROUP - Group discussions
+09  TALK - 
+10  SYNC - Daily, Journal, Email
+11  EAT - 
+12  FOCUS
+
 ### 2023-06-21  Workday Ideal Breakdown
 
 
