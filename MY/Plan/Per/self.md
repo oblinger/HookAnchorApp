@@ -1,4 +1,7 @@
-[[FIN#^rplan]]  
+
+ 
+ 
+ [[FIN#^rplan]]  
 [[Enxt]]: - [[Eli Schools]] 
 - Ask Avery/Mad
 - YMCA ask Jeff,
@@ -10,15 +13,22 @@
 	- xoogler
 
 
-
 [[Mentor]]: 
 [[MED]]: hearing test
 [[Calls]]: 
 
 
-
-
-
 - [ ] Daily Exercise [[Habit]].
 - [ ] Noom Eating
 - [ ] Get TPST
+
+- [[NJ24]]: 
+- [[Fun]]: 
+- [[Spirit]]: 
+- [[MED.]]: 
+
+
+[[MED.]] 		Exercise, Heart Learn,
+[[NJ24]]:		.
+[[Enxt]]:	.
+

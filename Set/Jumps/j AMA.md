@@ -7,4 +7,5 @@ JUMPS:
 - [AMA Kindle Page](spot://AMA~Kindle~Page): 
 - [AMA Notes](spot://AMA~Notes): 
 - [AMA Video Page](spot://AMA~Video~Page): 
+- [AMA Devices](spot://AMA~Devices): 
 

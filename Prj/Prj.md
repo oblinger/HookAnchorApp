@@ -15,6 +15,8 @@
 
 :: [[Enxt]]
 
+:: [[Enxt]]
+
 #log 
 n::  'prj...'  Non-work, non-coding ~3mo sized projects
 
@@ -31,7 +33,7 @@ PRJs
 - 2022-05 [[Action Notes]] 		Obsidian plugin 
 ?	[[2022-05 ELI next school]]		x
 - 2022-04 [[AF Wind down]]  	Wind down tasks for the AF company   
-- 2022-03 [[Learn]]    				Various kinds of learning for NJ22     
+- 2022-03 [[Lrn]]    				Various kinds of learning for NJ22     
 - 2022-03 [[PKM]]          		My Personal Knowledge Management Approach  
 - 2022-03 [[OBS]]					My obsidian setup
 - 2022-00 [[NJ22]]    				Career reset. Reframe self.  Prepare for job   

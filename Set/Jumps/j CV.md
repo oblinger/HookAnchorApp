@@ -10,4 +10,5 @@ JUMPS:
 - [CV Roadmap](spot://CV~Roadmap): 
 - [CV.](spot://CV.): 
 - [cv ROOT](spot://cv~ROOT): 
+- [CV Notes](spot://CV~Notes): 
 

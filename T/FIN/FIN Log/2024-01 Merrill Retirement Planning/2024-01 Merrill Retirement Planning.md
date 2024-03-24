@@ -1,4 +1,5 @@
 
+### 2024-03-21  notes
 Questions:
 - Monthly Burn?
 	- $22K. $19K
@@ -147,17 +148,17 @@ The idea is that I retire earlier, and start drawing on my retirement savings, t
 
 - Waymo and 1-password stock's are held at Shareworks (by Morgan Stanley)
 
-### 2024-03-03  Initial Questions
+### 2024-03-03  Assets
 
 Assets:
-
 
 	.      250,000 	Qingling's Personal Savings
 	.    1,635,700	Dan's Vanguard
     .      709,600	Dan's Merril
     
     .      400,000	Dan's Schwab
-    .      250,000	Qingling's 401K
+    .      200,000	Qingling's 401K
+    .      200,000  Qingling's Roth
     .      370,000	Google Stock
     .       25,000	Waymo stock
     .       70,000	SpaceX stock

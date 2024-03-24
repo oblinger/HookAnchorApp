@@ -1,8 +1,34 @@
 
+:: [[LLM Tools Workshop]],   [[Michael Rampdown]],   [[Sell Car]]
+
 :: [[2023-10-01 Special Olympics]]
 - [[QQ Folder]] 
 
 # QUICK - QUICK work projects
+
+### 2024-03-22  Life Time
+
+
+LIFE TIME QUESTIONS
+
+I know J/B and A have been doing ton of planning for the life time launch; I don't want to become another cook in the kitchen, this is just a bit of spot checking.  JASON I am putting your eyes on this so you decide this schedule introduces too many risks.  If so you may need to help push back on requirements coming in if you decide we are set up to fail.  I have no idea if that is true, I just raise the question.  I am on alert that it seems life time kind of slow rolled our ability to work on this rollout and now seems to be pushing for a pretty aggressive release schedule.   
+In the end it will be better to disappoint them by pushing back on an aggressive release schedule rather than disappointing them with angry customer complaints about our crappy software, and about lost or corrupted data.  
+
+Here are some other good questions for us to answer:
+(1) OVERVIEW -- JACK can you provide a link to the high-level plan that contains a list of key dates for actions and commitments?  (if we don't have it, we should build it)
+(2) SHIP DATE -- What is our projected ship date where all functionality for the V1 system as been added?  What day is that projected to his production?
+(3) ACCEPTANCE DATE -- What date is an executive from life time going to give us a thumbs up acceptance that they have tested our system, and are happy with its performance?  What is the name of the executive that will make this determination?  Do they already know they will be doing this?  What information do they need in order to assess our system?  (And if they have no idea, we should suggest to them what kind of validation they might consider, and what data they would need to have in the system to do their testing.)
+(4) TRUTH DATE -- What is the date that our system will become the single source of truth for some portion of life time data?
+
+(5) REFINEMENT DAYS -- As the plan is now, how many working weeks to we have after ship date until acceptance date?  (It should be the difference between acceptance date and truth date right?). And how much flexibility do we have if we or they say the system is not ready?  Are we able to just push the TRUTH DATE our a sprint or two if needed?
+
+
+My thought is that if we don't yet have a plan for an explicit acceptance step from Life Time that it is pretty important for us to add it.  It greatly lowers our downside if our system corrupts user data records or just is unusable and folks complain if their execs signed off saying it was ready, and it also lowers the chances that it wont be ready.  It also makes them feel a little better about pushing the schedule, since they are the ones doing the pushing.
+
+
+
+
+### 2024-03-22  CONTACTS
 
 
 ### 2023-12-20  Generalize system

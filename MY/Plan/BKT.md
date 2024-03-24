@@ -1,6 +1,6 @@
 ## >
 - [[Prof]]:	[[Career]], 
-- [[Per]]: 	[[Home]], [[Spirit]], [[Hack]], [[Learn]], [[Q2]], [[Out]], 
+- [[Per]]: 	[[Home]], [[Spirit]], [[Hack]], [[Lrn]], [[Q2]], [[Out]], 
 - 
 -  [[BKT Tree]],   
 

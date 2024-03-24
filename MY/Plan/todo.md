@@ -3,6 +3,7 @@
 - car title
 - look at loan doc
 - !! friday
+- soap dispenser
 
 
 - Scan Now list

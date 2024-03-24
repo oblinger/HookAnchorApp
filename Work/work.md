@@ -1,3 +1,5 @@
+
+:: [[SV]]
 ## __
 
 
@@ -24,7 +26,28 @@ Tracking Priorities:
 
 Shot Charts
 
+Life Time
+- contract approval cycle
+- contacts
+- call tree
 
+
+- PRs
+
+
+-  [Cost Analysis](https://docs.google.com/document/d/1WYVwgCfHYk6wC8pGFo68t_vAju_oczbSeBTS-zba-XI/edit?usp=drive_link):	Cost Per Game Analysis
+- Product Spec
+- Run AWS instance
+
+- Ask jack about [[SV Roadmap]]
+- Run AWS instance
+
+
+
+- Security Doc
+
+
+- Running the pipeline takes time
 
 ## TRACKING
 [Belief](https://docs.google.com/document/d/1H9krXpxS2_Cr9T68pAksb6QGYqpW28DiF2OSw40g0pI/edit?usp=drive_link):		?

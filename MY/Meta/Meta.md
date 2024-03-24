@@ -16,6 +16,7 @@
 
 SPECIALTY PAGES
 - [[CRM]]		[[AT Folder|CRM]]		[[Meta CRM]]	 How I track my regular pings
+- [[work]]		[work](spot://work~folder)		[[Meta Work]] 	 How I track my work
 
 
 

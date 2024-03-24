@@ -1,7 +1,7 @@
 
 # ...
 
-- [[Per]]: 	[[Home]], [[Spirit]], [[Hack]], [[Learn]], [[Q2]], [[Out]], 
+- [[Per]]: 	[[Home]], [[Spirit]], [[Hack]], [[Lrn]], [[Q2]], [[Out]], 
 
 - [[self]]
 - [[Self Evergreen]]
@@ -23,6 +23,6 @@
 
 - [[CAREER]]:  [[Mentor]], 
 	- [[NJ24]].
-	- [[LEARN]].	
+	- [[Lrn]].	
 
 - [[Q2]]:	

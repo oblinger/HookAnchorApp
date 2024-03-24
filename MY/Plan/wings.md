@@ -23,7 +23,7 @@
 - [ ] [[2023 SV Roadmap]]:
 - [ ] [[WW 32 Releases]]:
 
-- [ ] [[Learn]]:		[[MgrPath]],  
+- [ ] [[Lrn]]:		[[MgrPath]],  
 - [ ] [[NJ22]]:		Linked-In: Title; Refactor AF; TopImg. WAR:  Finish
 - [ ] [[2022-04 BeMLR]]:		Articulated research agenda.
 - [ ] [[EduCorp]]:	Napkin-level screen house Model

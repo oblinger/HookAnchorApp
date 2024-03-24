@@ -26,6 +26,8 @@ LEFT FOCUSED LAYOUT
 - Slack, Obsidian;  Email+Browser+Gmeet,  Browser2 
 
 ## DASHBOARDS
+
+
 ### DAILY VIEW DASHBOARD
 
 | col-1 | col-2 | col-3  | col-4 |
@@ -35,6 +37,15 @@ LEFT FOCUSED LAYOUT
 |   "   |   "   |   "    |   "   |
 |   "   |   "   | active | wings |
 
+
+### PLANNING VIEW DASHBOARD
+
+| col-1  | col-2 | col-3 | col-4 |
+|:------:|:-----:|:-----:|:-----:|
+|  Week  | Todo  | Prime |  Q2   |
+| Active |   "   |   "   | later |
+|  Work  | Wings | Full  | quick |
+|   "    |   "   |   "   | other |
 
 
 ### COMMS DASHBOARD
@@ -48,6 +59,18 @@ LEFT FOCUSED LAYOUT
 
 
 
+
+### SELF DASHBOARD
+
+| col-1 |  col-2   | col-3 | col-4 |
+| :---: | :------: | :---: | :---: |
+| Self  | BKT Tree | Prime |  Q2   |
+|   "   |    "     |   "   | Later |
+| Todo  |    "     | Full  | Quick |
+|   "   |    "     |   "   | other |
+
+
+
 ### GAP DASHBOARD
 
 | col-1 | col-2 | col-3 |
@@ -55,28 +78,6 @@ LEFT FOCUSED LAYOUT
 | fried | hack  | ToBuy |
 |   "   |  fun  | empty |
 |   "   |  Gap  | quick |
-
-
-
-### PLANNING VIEW DASHBOARD
-
-| col-1  | col-2 | col-3 | col-4 |
-|:------:|:-----:|:-----:|:-----:|
-|  Week  | Todo  | Prime |  Q2   |
-| Active |   "   |   "   | later |
-|  Work  | Wings | Full  | quick |
-|   "    |   "   |   "   | other |
-
-
-
-### SELF DASHBOARD
-
-| col-1  | col-2 | col-3 |  col-4   |
-|:------:|:-----:|:-----:|:--------:|
-|  Self  | Todo  | Prime |    Q2    |
-|   "    |   "   |   "   |  Later   |
-| Active | Wings | Full  | SelfEver |
-|   "    |   "   |   "   | Waiting  |
 
 
 

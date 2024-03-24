@@ -33,7 +33,7 @@
 #### Next 90
 - HEALTH: Getting Zone2 + HIIT each week; 183
 - NJ24: Weekly objective.
-- MAX: Max efficiency: delegation, my hours,
+- BALLS: Drive delegation & execution efficiency 
 - ML Research -
 - Did an interview
 - Rekindle

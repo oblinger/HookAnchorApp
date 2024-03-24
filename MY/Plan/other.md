@@ -1,4 +1,9 @@
 insuran
+
+- [ ] QL: sell stuff
+- [ ] taxes
+
+
 -
 - [ ] wsj wine in phone
 - [ ] Check in Notification for slack & text are working

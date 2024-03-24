@@ -1,4 +1,5 @@
-#pp  [PhD](https://beatlab.mcmaster.ca/assets/Shreshth_Saxena_CV.pdf)  @McHaster
+#pp  [PhD](https://beatlab.mcmaster.ca/assets/Shreshth_Saxena_CV.pdf)  @McHaster.  
+shreshth.stan@gmail.com
 
 - https://beatlab.mcmaster.ca/assets/Shreshth_Saxena_CV.pdf
 - 

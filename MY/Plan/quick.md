@@ -1,7 +1,7 @@
+- taxes citibank
 - get boston tix
 - Q1 outputs; Q2 plans
 - Tax Info
-- yashin
 - bkt
 
 - paying for noom

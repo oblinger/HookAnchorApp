@@ -1,11 +1,28 @@
-# Eve
+ [[Self Evergreen|green]], 
+# TAXONOMY
 
-## Self
-## Career
-## Family
+## SPIRIT
+## SELF
+## [[NJ24]] 
+
+## FAMILY
+
+## STUFF
+### [[FIN.]]  Taxes
+### Home
 ### Tidy
 
+## _
 
+
+
+
+
+
+## .
+### WORK
+
+#### [[Meta Work]] 
 
 # Buckets
 10h			from 7:30am to 5:30pm

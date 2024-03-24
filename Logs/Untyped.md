@@ -5,6 +5,9 @@ n:: no prefix.	Dated entries without any typing prefix
 
 | Date       | File                                | Notes                                                                                                                             |
 | ---------- | ----------------------------------- | --------------------------------------------------------------------------------------------------------------------------------- |
+| 2024-03-22 | [[QQ]]                                  | Life Time                                                                                                                         |
+| 2024-03-22 | [[QQ]]                                  | CONTACTS                                                                                                                          |
+| 2024-03-21 | [[2024-01 Merrill Retirement Planning]] | notes                                                                                                                             |
 | 2024-03-19 | [[@Shreshth Saxena]]                    | Intro                                                                                                                             |
 | 2024-03-19 | [[Productivity]]                        | Schedule of my day                                                                                                                |
 | 2024-03-19 | [[@Jason Syversen]]                     | Licencing code                                                                                                                    |
@@ -17,10 +20,10 @@ n:: no prefix.	Dated entries without any typing prefix
 | 2024-03-07 | [[@Parthsarthi Rawat]]                  | Layoff                                                                                                                            |
 | 2024-03-06 | [[Trips]]                               | VEGAS TRIP                                                                                                                        |
 | 2024-03-05 | [[Trips]]                               | All Hands                                                                                                                         |
-| 2024-03-04 | [[@Jason Syversen]]                     | Salary Cut                                                                                                                        |
 | 2024-03-04 | [[Reflections]]                         | Occasional Loss of Traction;  now building BKT tree                                                                               |
+| 2024-03-04 | [[@Jason Syversen]]                     | Salary Cut                                                                                                                        |
 | 2024-03-03 | [[2024-01 Merrill Retirement Planning]] | Follow On Questions                                                                                                               |
-| 2024-03-03 | [[2024-01 Merrill Retirement Planning]] | Initial Questions                                                                                                                 |
+| 2024-03-03 | [[2024-01 Merrill Retirement Planning]] | Assets                                                                                                                            |
 | 2024-02-18 | [[@Hoka]]                               | Exchange                                                                                                                          |
 | 2024-02-17 | [[Eli]]                                 | Put on his underwear                                                                                                              |
 | 2024-02-17 | [[SYS Facets]]                          | Auto Jump pages                                                                                                                   |
@@ -52,9 +55,9 @@ n:: no prefix.	Dated entries without any typing prefix
 | 2024-01-11 | [[Mgt]]                                 | JAN meeting                                                                                                                       |
 | 2024-01-11 | [[@Jason Syversen]]                     | JASON QUOTE REQUEST                                                                                                               |
 | 2024-01-02 | [[@James Briones]]                      | LOAN                                                                                                                              |
+| 2024-01-02 | [[Reflections]]                         | the 2024 life reset                                                                                                               |
 | 2024-01-02 | [[belief]]                              | test example                                                                                                                      |
 | 2024-01-02 | [[LCM]]                                 | foo foo foo                                                                                                                       |
-| 2024-01-02 | [[Reflections]]                         | the 2024 life reset                                                                                                               |
 | 2023-12-31 | [[@Dan Oblinger]]                       | yet another                                                                                                                       |
 | 2023-12-31 | [[@Dan Oblinger]]                       | just some info                                                                                                                    |
 | 2023-12-26 | [[LCM]]                                 | Notes for the Run class implementation:                                                                                           |
@@ -71,8 +74,8 @@ n:: no prefix.	Dated entries without any typing prefix
 | 2023-12-07 | [[Enxt]]                                | Roof Top -                                                                                                                        |
 | 2023-12-07 | [[Mgt]]                                 | DEC MGT Meeting                                                                                                                   |
 | 2023-12-06 | [[Cookie Clicker]]                      |                                                                                                                                   |
-| 2023-12-06 | [[CV Notes]]                            |                                                                                                                                   |
 | 2023-12-06 | [[FIN]]                                 | Retirement Analysis                                                                                                               |
+| 2023-12-06 | [[CV Notes]]                            |                                                                                                                                   |
 | 2023-12-04 | [[Reflections]]                         | Depressive-time-suck                                                                                                              |
 | 2023-12-01 | [[@Siobhan Quinn]]                      | Bare Bottle Beer                                                                                                                  |
 | 2023-12-01 | [[Cookie Clicker]]                      |                                                                                                                                   |
@@ -84,12 +87,12 @@ n:: no prefix.	Dated entries without any typing prefix
 | 2023-11-20 | [[Eli Firsts]]                          | First Crush - Babysitter                                                                                                          |
 | 2023-11-20 | [[SV Roadmap]]                          | Long Term Plan                                                                                                                    |
 | 2023-11-19 | [[GoogleJob]]                           | Uri                                                                                                                               |
-| 2023-11-17 | [[CV Notes]]                            | Alg2 Build #build                                                                                                                 |
 | 2023-11-17 | [[MAC Setup]]                           | CONDA - I now use conda for all python builds #build                                                                              |
+| 2023-11-17 | [[CV Notes]]                            | Alg2 Build #build                                                                                                                 |
 | 2023-11-17 | [[DocDocker]]                           | Docker for SV laptop setup                                                                                                        |
 | 2023-11-16 | [[DocDocker]]                           | Creating my own docker image                                                                                                      |
-| 2023-11-13 | [[Mgt]]                                 | NOV MGT Meeting                                                                                                                   |
 | 2023-11-13 | [[MED Heart]]                           | Dr. HUI Visit                                                                                                                     |
+| 2023-11-13 | [[Mgt]]                                 | NOV MGT Meeting                                                                                                                   |
 | 2023-11-09 | [[CVP]]                                 | Still image Shot Analysis                                                                                                         |
 | 2023-11-07 | [[LOG Trash]]                           | Notes never sent or OBE                                                                                                           |
 | 2023-11-07 | [[Reflections]]                         | Two Blistering Avoidance Failures:  Eating the Frog.  Exercising.                                                                 |
@@ -127,12 +130,12 @@ n:: no prefix.	Dated entries without any typing prefix
 | 2023-10-03 | [[LCM]]                                 | LCM Data Packet                                                                                                                   |
 | 2023-10-03 | [[vball]]                               | Spec notes from Aaron                                                                                                             |
 | 2023-10-02 | [[@Chase Bank]]                         | Paying off card                                                                                                                   |
+| 2023-10-02 | [[FIN Bills]]                           | Proposed                                                                                                                          |
 | 2023-10-02 | [[BaseB]]                               | From Nick @ Realplay                                                                                                              |
 | 2023-10-02 | [[BaseB]]                               | notes to Aaron                                                                                                                    |
 | 2023-10-02 | [[Dataset]]                             | Grz Data Requests                                                                                                                 |
 | 2023-10-02 | [[vball]]                               | Dan Response                                                                                                                      |
 | 2023-10-02 | [[vball]]                               | Aaron Spec                                                                                                                        |
-| 2023-10-02 | [[FIN Bills]]                           | Proposed                                                                                                                          |
 | 2023-10-01 | [[Eli Firsts]]                          | Ar-gen-tin-a                                                                                                                      |
 | 2023-10-01 | [[Eli Firsts]]                          | Adding                                                                                                                            |
 | 2023-09-29 | [[2023-07 ML-CV Ops Job Post]]          | Mariano                                                                                                                           |
@@ -140,24 +143,24 @@ n:: no prefix.	Dated entries without any typing prefix
 | 2023-09-27 | [[Hire]]                                | Luciano Start                                                                                                                     |
 | 2023-09-25 | [[Mgt]]                                 | Weekly meeting.                                                                                                                   |
 | 2023-09-25 | [[@Jason Syversen]]                     | notes                                                                                                                             |
+| 2023-09-21 | [[2023-07 Backend Architect]]           | Matias                                                                                                                            |
 | 2023-09-21 | [[CVP]]                                 | AI goals from Mgt meeting                                                                                                         |
 | 2023-09-21 | [[@Jasu Victorio]]                      | Review                                                                                                                            |
 | 2023-09-21 | [[Bugs]]                                | Fellowship of the bug                                                                                                             |
-| 2023-09-21 | [[2023-07 Backend Architect]]           | Matias                                                                                                                            |
 | 2023-09-19 | [[@Realplay]]                           | Intro Discussion                                                                                                                  |
 | 2023-09-19 | [[2023-07 Director of SW]]              | Ignacio Larranaga                                                                                                                 |
 | 2023-09-17 | [[ingest]]                              | Portable Rig Parts                                                                                                                |
 | 2023-09-15 | [[Mgt]]                                 | SEPT MGT MEETING                                                                                                                  |
 | 2023-09-14 | [[BaseB]]                               | Justin / Jason Conversation                                                                                                       |
-| 2023-09-13 | [[BaseB]]                               | Task Breakdown                                                                                                                    |
-| 2023-09-13 | [[Patents]]                             | SheeHan                                                                                                                           |
-| 2023-09-13 | [[Patents]]                             | Watch Tower                                                                                                                       |
 | 2023-09-13 | [[2023-07 Backend Architect]]           | Max                                                                                                                               |
 | 2023-09-13 | [[2023-07 Director of SW]]              | ++Luciano B                                                                                                                       |
 | 2023-09-13 | [[2023-07 Director of SW]]              | Mariano                                                                                                                           |
-| 2023-09-11 | [[@Miguel Gutierrez]]                   | Intro call                                                                                                                        |
+| 2023-09-13 | [[BaseB]]                               | Task Breakdown                                                                                                                    |
+| 2023-09-13 | [[Patents]]                             | SheeHan                                                                                                                           |
+| 2023-09-13 | [[Patents]]                             | Watch Tower                                                                                                                       |
 | 2023-09-11 | [[2023-07 Director of SW]]              | Emilio                                                                                                                            |
 | 2023-09-11 | [[2023-07 ML-CV Ops Job Post]]          | Matias                                                                                                                            |
+| 2023-09-11 | [[@Miguel Gutierrez]]                   | Intro call                                                                                                                        |
 | 2023-09-10 | [[Eli Firsts]]                          | Big Boy Swing                                                                                                                     |
 | 2023-09-10 | [[Eli Firsts]]                          | Quote                                                                                                                             |
 | 2023-09-08 | [[2023-07 ML-CV Ops Job Post]]          | Marvin                                                                                                                            |
@@ -165,8 +168,8 @@ n:: no prefix.	Dated entries without any typing prefix
 | 2023-09-07 | [[2023-07 Backend Architect]]           | TH Juan                                                                                                                           |
 | 2023-09-07 | [[2023-07 Backend Architect]]           | TH Eduardo                                                                                                                        |
 | 2023-09-05 | [[Eli Firsts]]                          | Bike Riding in circles                                                                                                            |
-| 2023-09-05 | [[CVP]]                                 | older stuff                                                                                                                       |
 | 2023-09-05 | [[BBI]]                                 | SV Head SW                                                                                                                        |
+| 2023-09-05 | [[CVP]]                                 | older stuff                                                                                                                       |
 | 2023-09-04 | [[@Circle]]                             | Hiring Timeline                                                                                                                   |
 | 2023-09-01 | [[2023-07 Director of SW]]              | ++Raul                                                                                                                            |
 | 2023-08-29 | [[@Jason Syversen]]                     | Velocity                                                                                                                          |
@@ -174,18 +177,18 @@ n:: no prefix.	Dated entries without any typing prefix
 | 2023-08-25 | [[2023-07 Director of SW]]              | Head - Nico                                                                                                                       |
 | 2023-08-23 | [[@Grzegorz Biziel]]                    | Better Gallery                                                                                                                    |
 | 2023-08-22 | [[@Sapphire Ventures]]                  | Recruiting                                                                                                                        |
+| 2023-08-21 | [[Reflections]]                         | Gratitude Meditation; Feeling valued @ work                                                                                       |
 | 2023-08-21 | [[CV Notes]]                            | Grzegorz                                                                                                                          |
 | 2023-08-21 | [[CV Notes]]                            | Sarthi                                                                                                                            |
 | 2023-08-21 | [[CV Notes]]                            | Martin                                                                                                                            |
-| 2023-08-21 | [[Reflections]]                         | Gratitude Meditation; Feeling valued @ work                                                                                       |
 | 2023-08-13 | [[QQ]]                                  | INJEST                                                                                                                            |
 | 2023-08-11 | [[Phone]]                               | Cancer Vet                                                                                                                        |
 | 2023-08-10 | [[Eli]]                                 | First Bike Ride                                                                                                                   |
 | 2023-08-10 | [[@Sage Vet]]                           | Surgery to remove cancer                                                                                                          |
 | 2023-08-09 | [[Mgt]]                                 | AUG MGT MEETING                                                                                                                   |
+| 2023-08-03 | [[Career Log]]                          | Customer Acquisition (from nick) ---                                                                                              |
 | 2023-08-03 | [[CV Notes]]                            | DEV OPs                                                                                                                           |
 | 2023-08-03 | [[@Brian French]]                       | update                                                                                                                            |
-| 2023-08-03 | [[Career Log]]                          | Customer Acquisition (from nick) ---                                                                                              |
 | 2023-08-02 | [[CV Notes]]                            | Grzegorz                                                                                                                          |
 | 2023-08-01 | [[@Jack Potvin]]                        | evaluation                                                                                                                        |
 | 2023-07-31 | [[@Agustin Polito]]                     | Intro - discussion about Head SW at                                                                                               |
@@ -228,10 +231,10 @@ n:: no prefix.	Dated entries without any typing prefix
 | 2023-06-21 | [[EOCA]]                                | quote: most intelligent species is changing hands                                                                                 |
 | 2023-06-21 | [[Productivity]]                        | Workday Ideal Breakdown                                                                                                           |
 | 2023-06-20 | [[BKT]]                                 | July 2023 Buckets                                                                                                                 |
-| 2023-06-20 | [[CV Notes]]                            | GRZ how many frams                                                                                                                |
-| 2023-06-20 | [[SV Product]]                          | Few ideas from Jason                                                                                                              |
 | 2023-06-20 | [[Reflections]]                         | A HAH - Treadmill                                                                                                                 |
 | 2023-06-20 | [[Reflections]]                         | Work First; Streamlining;                                                                                                         |
+| 2023-06-20 | [[CV Notes]]                            | GRZ how many frams                                                                                                                |
+| 2023-06-20 | [[SV Product]]                          | Few ideas from Jason                                                                                                              |
 | 2023-06-19 | [[@PenFed]]                             |                                                                                                                                   |
 | 2023-06-18 | [[Investor Intros]]                     | Mark Torrance (friend of Mike Freed)                                                                                              |
 | 2023-06-18 | [[QQ]]                                  | CALL TREE                                                                                                                         |
@@ -260,12 +263,12 @@ n:: no prefix.	Dated entries without any typing prefix
 | 2023-05-29 | [[CV Notes]]                            | Daily                                                                                                                             |
 | 2023-05-28 | [[@Maxim Dorogov]]                      | Money metric discussion                                                                                                           |
 | 2023-05-28 | [[Bites]]                               | Sound Bites From Jason                                                                                                            |
-| 2023-05-26 | [[@Jason Syversen]]                     | Lightbank (Joythi)                                                                                                                |
 | 2023-05-26 | [[COM Investor]]                        | Sports based investors                                                                                                            |
+| 2023-05-26 | [[@Jason Syversen]]                     | Lightbank (Joythi)                                                                                                                |
 | 2023-05-24 | [[CV Notes]]                            | Daily                                                                                                                             |
 | 2023-05-24 | [[@Jason Syversen]]                     | before travel discussion                                                                                                          |
-| 2023-05-23 | [[CV Notes]]                            |                                                                                                                                   |
 | 2023-05-23 | [[Phone]]                               |                                                                                                                                   |
+| 2023-05-23 | [[CV Notes]]                            |                                                                                                                                   |
 | 2023-05-22 | [[CV Notes]]                            | Weekly                                                                                                                            |
 | 2023-05-22 | [[CV Notes]]                            | daily                                                                                                                             |
 | 2023-05-22 | [[CV Notes]]                            | TAKING MEASUREMENTS                                                                                                               |
@@ -312,10 +315,10 @@ n:: no prefix.	Dated entries without any typing prefix
 | 2023-04-26 | [[@PenFed]]                             | Returning call from them                                                                                                          |
 | 2023-04-26 | [[QQ]]                                  | QA hires                                                                                                                          |
 | 2023-04-26 | [[Reset]]                               | Manhattan Project                                                                                                                 |
+| 2023-04-24 | [[Reflections]]                         | Lesson Learned:  I am too tactical, too insecure, not proactive @ high level, & running from fear                                 |
 | 2023-04-24 | [[@Jason Syversen]]                     | F90-CALL2 -   [[Reset]]                                                                                                           |
 | 2023-04-24 | [[@Martin Reyes]]                       | intro                                                                                                                             |
 | 2023-04-24 | [[Reset]]                               | Jason Response                                                                                                                    |
-| 2023-04-24 | [[Reflections]]                         | Lesson Learned:  I am too tactical, too insecure, not proactive @ high level, & running from fear                                 |
 | 2023-04-23 | [[Trips]]                               | Dad's 85th Birthday                                                                                                               |
 | 2023-04-23 | [[Phone]]                               | SF BAY AREA HEATED POOLS                                                                                                          |
 | 2023-04-21 | [[Eli Interactions]]                    | Ms Amanda & Ms Soumya                                                                                                             |
@@ -323,27 +326,27 @@ n:: no prefix.	Dated entries without any typing prefix
 | 2023-04-21 | [[2023 SV Strategic Plan]]              | Strategic Tasks                                                                                                                   |
 | 2023-04-21 | [[Reset]]                               | AI Deliverables                                                                                                                   |
 | 2023-04-21 | [[Reset]]                               | discussion                                                                                                                        |
+| 2023-04-20 | [[Jnl]]                                 | Life w/o Ayi                                                                                                                      |
 | 2023-04-20 | [[CV Notes]]                            | Big Ideas                                                                                                                         |
 | 2023-04-20 | [[CV Notes]]                            | What are people doing?                                                                                                            |
 | 2023-04-20 | [[Headless]]                            | Record App 2.0                                                                                                                    |
 | 2023-04-20 | [[Headless]]                            | Original Note                                                                                                                     |
-| 2023-04-20 | [[Jnl]]                                 | Life w/o Ayi                                                                                                                      |
+| 2023-04-18 | [[COM Investor]]                        | Jason (Harvard Alumni Group)                                                                                                      |
 | 2023-04-18 | [[Investor Intros]]                     | Scott Brady @ Innovation Endeavors - Joe Augenbraun                                                                               |
 | 2023-04-18 | [[Investor Intros]]                     | Kelly Chen @ DCVC - Peter Berger                                                                                                  |
 | 2023-04-18 | [[Investor Intros]]                     | Madrona - Michael Witbrock                                                                                                        |
 | 2023-04-18 | [[Investor Intros]]                     | Bee Partners - Ai Wee                                                                                                             |
 | 2023-04-18 | [[Investor Intros]]                     | Jason to Lance at Areena Sports                                                                                                   |
-| 2023-04-18 | [[COM Investor]]                        | Jason (Harvard Alumni Group)                                                                                                      |
 | 2023-04-16 | [[Letters]]                             | Tim Cook Email                                                                                                                    |
 | 2023-04-14 | [[QQ]]                                  | iOS consultant                                                                                                                    |
 | 2023-04-13 | [[@BallerTV]]                           | Email from CEO                                                                                                                    |
-| 2023-04-12 | [[@Joaquin Mano]]                       |                                                                                                                                   |
 | 2023-04-12 | [[Reflections]]                         | PIVOT - shift towards AI                                                                                                          |
+| 2023-04-12 | [[@Joaquin Mano]]                       |                                                                                                                                   |
 | 2023-04-11 | [[QQ]]                                  | New Ticket Flow                                                                                                                   |
+| 2023-04-10 | [[MED]]                                 | <<<<                                                                                                                              |
 | 2023-04-10 | [[QQ]]                                  | Pivo                                                                                                                              |
 | 2023-04-10 | [[@Achilles (Tomas Sasovsky)]]          | Intro call                                                                                                                        |
 | 2023-04-10 | [[@Jason Syversen]]                     | F90-CALL3 - Feedback Call                                                                                                         |
-| 2023-04-10 | [[MED]]                                 | <<<<                                                                                                                              |
 | 2023-04-07 | [[@Apple]]                              | Sent in for                                                                                                                       |
 | 2023-04-07 | [[EOCA]]                                |                                                                                                                                   |
 | 2023-04-07 | [[EOCA]]                                | Nina note - why will we all die?                                                                                                  |
@@ -352,26 +355,26 @@ n:: no prefix.	Dated entries without any typing prefix
 | 2023-04-05 | [[Meta CRM]]                            | Proposed workflow                                                                                                                 |
 | 2023-04-05 | [[@Joaquin Mano]]                       | Questions                                                                                                                         |
 | 2023-04-04 | [[@Nick Allen]]                         | Navigating the choppy waters.                                                                                                     |
-| 2023-04-04 | [[@Brian French]]                       | Push 2 Prod.                                                                                                                      |
 | 2023-04-04 | [[Reflections]]                         | STRESS!  Feel my path AT SV is time limited                                                                                       |
+| 2023-04-04 | [[@Brian French]]                       | Push 2 Prod.                                                                                                                      |
+| 2023-04-03 | [[2023-W14]]                            | W14                                                                                                                               |
 | 2023-04-03 | [[@Jason Syversen]]                     | Slide deck feedback                                                                                                               |
 | 2023-04-03 | [[@Mike Seibert]]                       | Catchup call                                                                                                                      |
-| 2023-04-03 | [[2023-W14]]                            | W14                                                                                                                               |
 | 2023-04-02 | [[@Shawn Hassler]]                      | Hassler Visit                                                                                                                     |
 | 2023-04-02 | [[MKT]]                                 | Quadratic Funding                                                                                                                 |
 | 2023-03-31 | [[Reflections]]                         | Week travel to Disney                                                                                                             |
 | 2023-03-30 | [[@Apple]]                              | Air Max issues                                                                                                                    |
 | 2023-03-27 | [[2023-W13]]                            | W13                                                                                                                               |
 | 2023-03-23 | [[MKT]]                                 | Yancy Comment and Response                                                                                                        |
-| 2023-03-22 | [[@Mike Mathieu]]                       | Intro??                                                                                                                           |
 | 2023-03-22 | [[Phone]]                               | Food Delivery                                                                                                                     |
+| 2023-03-22 | [[@Mike Mathieu]]                       | Intro??                                                                                                                           |
 | 2023-03-21 | [[Reflections]]                         | Back from all hands; feeling of efficiency coming!                                                                                |
 | 2023-03-21 | [[MED]]                                 | Picking health insurance                                                                                                          |
 | 2023-03-20 | [[Text Shutdown]]                       | Old Shutdown Text                                                                                                                 |
 | 2023-03-20 | [[Text Shutdown]]                       | Old "TKO - No Interest Shutdown"                                                                                                  |
 | 2023-03-19 | [[SNIP]]                                |                                                                                                                                   |
-| 2023-03-19 | [[SV]]                                  | hold  sports stats data                                                                                                           |
 | 2023-03-19 | [[FIN]]                                 | Taxes 2022                                                                                                                        |
+| 2023-03-19 | [[SV]]                                  | hold  sports stats data                                                                                                           |
 | 2023-03-17 | [[FIN]]                                 | Vanguard Get TIPS, dave-O opening an account                                                                                      |
 | 2023-03-13 | [[Socialism]]                           | Achilles (flutter dev at SV)                                                                                                      |
 | 2023-03-11 | [[Trips]]                               | Argentina places                                                                                                                  |
@@ -380,18 +383,18 @@ n:: no prefix.	Dated entries without any typing prefix
 | 2023-03-06 | [[@Mike Seibert]]                       | Three guys CV guys from Argentina                                                                                                 |
 | 2023-03-01 | [[@Tomas Piaggio]]                      | Maybe work for Sports Visio                                                                                                       |
 | 2023-03-01 | [[BKT]]                                 | New Time Tracking Bucketing                                                                                                       |
-| 2023-03-01 | [[@Pablo Calofatti]]                    |                                                                                                                                   |
 | 2023-03-01 | [[Reflections]]                         | Mid Week - Different kind of tracking                                                                                             |
+| 2023-03-01 | [[@Pablo Calofatti]]                    |                                                                                                                                   |
 | 2023-02-28 | [[@Jack Potvin]]                        | Bug validation process                                                                                                            |
 | 2023-02-27 | [[@Mark Lichty]]                        | App Run Thru                                                                                                                      |
 | 2023-02-27 | [[@Apple]]                              | Do not disturb mode                                                                                                               |
-| 2023-02-27 | [[@Sam Corbitt]]                        | Intro call                                                                                                                        |
 | 2023-02-27 | [[Reflections]]                         | Week 2 at SV                                                                                                                      |
+| 2023-02-27 | [[@Sam Corbitt]]                        | Intro call                                                                                                                        |
 | 2023-02-24 | [[Phone]]                               | Passport Application                                                                                                              |
-| 2023-02-20 | [[@Jack Potvin]]                        | Polaris overview                                                                                                                  |
-| 2023-02-20 | [[@Michael Fearnley]]                   | Intro call                                                                                                                        |
 | 2023-02-20 | [[Bio]]                                 | SportsVisio newsletter and blog entry                                                                                             |
 | 2023-02-20 | [[2023-W08]]                            | W08                                                                                                                               |
+| 2023-02-20 | [[@Jack Potvin]]                        | Polaris overview                                                                                                                  |
+| 2023-02-20 | [[@Michael Fearnley]]                   | Intro call                                                                                                                        |
 | 2023-02-19 | [[@Mark Lichty]]                        | At First Mgt Meeting                                                                                                              |
 | 2023-02-19 | [[@Mark Lichty]]                        | Intro discussion                                                                                                                  |
 | 2023-02-19 | [[@Yashin Lin]]                         | discussion                                                                                                                        |
@@ -403,15 +406,15 @@ n:: no prefix.	Dated entries without any typing prefix
 | 2023-02-15 | [[Mgt]]                                 | Comments with the Team                                                                                                            |
 | 2023-02-14 | [[@Yashin Lin]]                         | Looking for VALID TARGETS                                                                                                         |
 | 2023-02-13 | [[Trips]]                               | Manager's Monthly Meeting                                                                                                         |
-| 2023-02-13 | [[2023 Jason Tasks]]                    | Systematic QA processing                                                                                                          |
 | 2023-02-13 | [[2023-W07]]                            | W07                                                                                                                               |
+| 2023-02-13 | [[2023 Jason Tasks]]                    | Systematic QA processing                                                                                                          |
 | 2023-02-11 | [[Phone]]                               | Instapot                                                                                                                          |
 | 2023-02-10 | [[@Tomas Tisocco]]                      | Intro                                                                                                                             |
 | 2023-02-10 | [[Trips]]                               | ARGENTINA                                                                                                                         |
 | 2023-02-10 | [[Phone]]                               | Pay for Ambulance                                                                                                                 |
+| 2023-02-09 | [[Phone]]                               | Cancel WSJ Wine.com                                                                                                               |
 | 2023-02-09 | [[@James Sullivan III]]                 | Intro                                                                                                                             |
 | 2023-02-09 | [[@Leonardo Almiron]]                   | Intro                                                                                                                             |
-| 2023-02-09 | [[Phone]]                               | Cancel WSJ Wine.com                                                                                                               |
 | 2023-02-08 | [[SV90]]                                | Unsorted Chunch                                                                                                                   |
 | 2023-02-07 | [[@Jasu Victorio]]                      | march prod                                                                                                                        |
 | 2023-02-07 | [[@Scott Byers]]                        |                                                                                                                                   |
@@ -436,9 +439,9 @@ n:: no prefix.	Dated entries without any typing prefix
 | 2023-01-01 | [[DYL]]                                 | Edu Corp                                                                                                                          |
 | 2023-00-00 | [[Meta CRM]]                            | CRM FORMAT                                                                                                                        |
 | 2023-00-00 | [[BKT]]                                 | buckets                                                                                                                           |
+| 2023-00-00 | [[FIN]]                                 | very old - CONSIDER ADDITIONS                                                                                                     |
 | 2023-00-00 | [[CV Roadmap]]                          | FULL-AI / BALLER DELIVERABLE                                                                                                      |
 | 2023-00-00 | [[ROADMAP]]                             | YEAR PRIORITIES                                                                                                                   |
-| 2023-00-00 | [[FIN]]                                 | very old - CONSIDER ADDITIONS                                                                                                     |
 | 2022-12-16 | [[2022-W51]]                            | FRI                                                                                                                               |
 | 2022-12-14 | [[Phone]]                               | Fix roof fin                                                                                                                      |
 | 2022-12-14 | [[2022-W51]]                            | WED                                                                                                                               |
