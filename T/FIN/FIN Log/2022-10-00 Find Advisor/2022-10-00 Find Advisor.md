@@ -1,5 +1,5 @@
-# TODO
-- [ ] Find advisor
+
+
 
 
 # INFO
@@ -35,7 +35,6 @@
 		-  [Comprehensive Financial Planning](https://www.napfa.org/firm/1161/5227)  
 		-  [Sherwood Wealth Management](https://www.napfa.org/firm/39245/24145)  
 		-  [Priority Financial Partners](https://www.napfa.org/firm/5524/19623)  
-		- 
 
 - [CFP Search](https://www.letsmakeaplan.org/) - 
 

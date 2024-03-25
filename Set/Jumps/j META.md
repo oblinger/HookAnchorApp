@@ -13,4 +13,6 @@ JUMPS:
 - [Meta SV](spot://Meta~SV): 
 - [Meta Topic](spot://Meta~Topic): 
 - [meta Tasks](spot://meta~Tasks): 
+- [Meta List](spot://Meta~List): 
+- [Meta Work](spot://Meta~Work): 
 

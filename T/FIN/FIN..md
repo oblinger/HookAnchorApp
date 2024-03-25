@@ -1,5 +1,5 @@
 
-# TODO
+# LATER
 - [ ] Check Allspring
 - [ ] 
 - [ ] [[FIN|FIN]] >>>Find value investments

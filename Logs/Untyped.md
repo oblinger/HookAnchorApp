@@ -5,6 +5,7 @@ n:: no prefix.	Dated entries without any typing prefix
 
 | Date       | File                                | Notes                                                                                                                             |
 | ---------- | ----------------------------------- | --------------------------------------------------------------------------------------------------------------------------------- |
+| 2024-03-24 | [[FIN Log]]                             | Financial Advisors                                                                                                                |
 | 2024-03-22 | [[QQ]]                                  | Life Time                                                                                                                         |
 | 2024-03-22 | [[QQ]]                                  | CONTACTS                                                                                                                          |
 | 2024-03-21 | [[2024-01 Merrill Retirement Planning]] | notes                                                                                                                             |
@@ -23,7 +24,8 @@ n:: no prefix.	Dated entries without any typing prefix
 | 2024-03-04 | [[Reflections]]                         | Occasional Loss of Traction;  now building BKT tree                                                                               |
 | 2024-03-04 | [[@Jason Syversen]]                     | Salary Cut                                                                                                                        |
 | 2024-03-03 | [[2024-01 Merrill Retirement Planning]] | Follow On Questions                                                                                                               |
-| 2024-03-03 | [[2024-01 Merrill Retirement Planning]] | Assets                                                                                                                            |
+| 2024-03-03 | [[2024-01 Merrill Retirement Planning]] | Assets In 2024                                                                                                                    |
+| 2024-03-03 | [[FIN Log]]                             | Assets In 2024                                                                                                                    |
 | 2024-02-18 | [[@Hoka]]                               | Exchange                                                                                                                          |
 | 2024-02-17 | [[Eli]]                                 | Put on his underwear                                                                                                              |
 | 2024-02-17 | [[SYS Facets]]                          | Auto Jump pages                                                                                                                   |
@@ -36,7 +38,7 @@ n:: no prefix.	Dated entries without any typing prefix
 | 2024-02-07 | [[trump]]                               | Trump is a danger -- his own aids tells us the truth                                                                              |
 | 2024-01-28 | [[Reflections]]                         | Starting to feel caught up                                                                                                        |
 | 2024-01-26 | [[LOG]]                                 | cookie clicker code                                                                                                               |
-| 2024-01-25 | [[FIN]]                                 | Retirement Planning ^rplan                                                                                                        |
+| 2024-01-25 | [[FIN Log]]                             | Merrill Retirement Planning ^rplan                                                                                                |
 | 2024-01-23 | [[CVP]]                                 | Design for Notion                                                                                                                 |
 | 2024-01-22 | [[CV Notes]]                            | Juan                                                                                                                              |
 | 2024-01-22 | [[CV Notes]]                            | Martin                                                                                                                            |
@@ -74,7 +76,7 @@ n:: no prefix.	Dated entries without any typing prefix
 | 2023-12-07 | [[Enxt]]                                | Roof Top -                                                                                                                        |
 | 2023-12-07 | [[Mgt]]                                 | DEC MGT Meeting                                                                                                                   |
 | 2023-12-06 | [[Cookie Clicker]]                      |                                                                                                                                   |
-| 2023-12-06 | [[FIN]]                                 | Retirement Analysis                                                                                                               |
+| 2023-12-06 | [[FIN Log]]                             | Retirement Analysis                                                                                                               |
 | 2023-12-06 | [[CV Notes]]                            |                                                                                                                                   |
 | 2023-12-04 | [[Reflections]]                         | Depressive-time-suck                                                                                                              |
 | 2023-12-01 | [[@Siobhan Quinn]]                      | Bare Bottle Beer                                                                                                                  |
@@ -373,9 +375,9 @@ n:: no prefix.	Dated entries without any typing prefix
 | 2023-03-20 | [[Text Shutdown]]                       | Old Shutdown Text                                                                                                                 |
 | 2023-03-20 | [[Text Shutdown]]                       | Old "TKO - No Interest Shutdown"                                                                                                  |
 | 2023-03-19 | [[SNIP]]                                |                                                                                                                                   |
-| 2023-03-19 | [[FIN]]                                 | Taxes 2022                                                                                                                        |
+| 2023-03-19 | [[FIN Log]]                             | Taxes 2022                                                                                                                        |
 | 2023-03-19 | [[SV]]                                  | hold  sports stats data                                                                                                           |
-| 2023-03-17 | [[FIN]]                                 | Vanguard Get TIPS, dave-O opening an account                                                                                      |
+| 2023-03-17 | [[FIN Log]]                             | Vanguard Get TIPS, dave-O opening an account                                                                                      |
 | 2023-03-13 | [[Socialism]]                           | Achilles (flutter dev at SV)                                                                                                      |
 | 2023-03-11 | [[Trips]]                               | Argentina places                                                                                                                  |
 | 2023-03-11 | [[Bio Verbal]]                          | BULLETS FOR SLIDE                                                                                                                 |
@@ -439,7 +441,7 @@ n:: no prefix.	Dated entries without any typing prefix
 | 2023-01-01 | [[DYL]]                                 | Edu Corp                                                                                                                          |
 | 2023-00-00 | [[Meta CRM]]                            | CRM FORMAT                                                                                                                        |
 | 2023-00-00 | [[BKT]]                                 | buckets                                                                                                                           |
-| 2023-00-00 | [[FIN]]                                 | very old - CONSIDER ADDITIONS                                                                                                     |
+| 2023-00-00 | [[FIN Log]]                             | very old - CONSIDER ADDITIONS                                                                                                     |
 | 2023-00-00 | [[CV Roadmap]]                          | FULL-AI / BALLER DELIVERABLE                                                                                                      |
 | 2023-00-00 | [[ROADMAP]]                             | YEAR PRIORITIES                                                                                                                   |
 | 2022-12-16 | [[2022-W51]]                            | FRI                                                                                                                               |
@@ -468,6 +470,8 @@ n:: no prefix.	Dated entries without any typing prefix
 | 2022-11-08 | [[2022-10-00 Find Advisor]]             | My plan                                                                                                                           |
 | 2022-11-08 | [[2022-10-00 Find Advisor]]             | Initial reading                                                                                                                   |
 | 2022-11-07 | [[2022-W45]]                            |                                                                                                                                   |
+| 2022-10-31 | [[Lrn]]                                 | Pragmantic Engineer Blog                                                                                                          |
+| 2022-10-31 | [[Lrn]]                                 | consult's uses                                                                                                                    |
 | 2022-10-31 | [[Bio Email]]                           | Rafah - Microsoft Intro                                                                                                           |
 | 2022-10-31 | [[Bio Email]]                           | Avidan - Tessa VC                                                                                                                 |
 | 2022-10-28 | [[ToBuy]]                               | Scotch Crystal                                                                                                                    |
@@ -476,7 +480,7 @@ n:: no prefix.	Dated entries without any typing prefix
 | 2022-10-16 | [[ToBuy]]                               | bedrm Dresser                                                                                                                     |
 | 2022-10-10 | [[Nanny]]                               | SAVE MONEY                                                                                                                        |
 | 2022-10-07 | [[Phone]]                               | Lily - Tax Info for 2021 return                                                                                                   |
-| 2022-10-07 | [[FIN]]                                 | Avanti's Plan                                                                                                                     |
+| 2022-10-07 | [[FIN Log]]                             | Avanti's Plan                                                                                                                     |
 | 2022-10-03 | [[2022-W40]]                            | fre                                                                                                                               |
 | 2022-09-30 | [[Phone]]                               | Building Work Desk in livingroom                                                                                                  |
 | 2022-09-29 | [[Old Daily]]                           |                                                                                                                                   |
@@ -756,7 +760,7 @@ n:: no prefix.	Dated entries without any typing prefix
 | 2020-09-17 | [[2017-01 Forum]]                       | Police violence                                                                                                                   |
 | 2020-09-07 | [[2017-01 Forum]]                       | Shinster email                                                                                                                    |
 | 2020-08-23 | [[Journal Old]]                         | Lost at Sea but with good provisions                                                                                              |
-| 2020-08-17 | [[FIN]]                                 | QL - AYI payments                                                                                                                 |
+| 2020-08-17 | [[FIN Log]]                             | QL - AYI payments                                                                                                                 |
 | 2020-08-15 | [[Journal Old]]                         | My Futures                                                                                                                        |
 | 2020-07-23 | [[MAC Apps]]                            | Applications folder                                                                                                               |
 | 2020-07-18 | [[FIN Budgeting]]                       | Budget                                                                                                                            |
@@ -810,8 +814,8 @@ n:: no prefix.	Dated entries without any typing prefix
 | 2019-06-13 | [[FIN]]                                 | Can go to 0-300K each year                                                                                                        |
 | 2019-06-09 | [[OLD 201x Weekly]]                     | WEEK Lists caughtup, Living room put together                                                                                     |
 | 2019-06-05 | [[OLD 201x Weekly]]                     | JUNE - Trying 2 chunks of focus on many days                                                                                      |
-| 2019-05-29 | [[FIN]]                                 | Kadosh Bills                                                                                                                      |
-| 2019-05-29 | [[FIN]]                                 | Raynor Bills                                                                                                                      |
+| 2019-05-29 | [[FIN Log]]                             | Kadosh Bills                                                                                                                      |
+| 2019-05-29 | [[FIN Log]]                             | Raynor Bills                                                                                                                      |
 | 2019-05-07 | [[ReBuy]]                               | Living room cabinets                                                                                                              |
 | 2019-04-12 | [[FIN]]                                 | Ev Notes                                                                                                                          |
 | 2019-04-03 | [[OLD 201x Weekly]]                     | APRIL  MIN-JNL                                                                                                                    |
@@ -819,18 +823,18 @@ n:: no prefix.	Dated entries without any typing prefix
 | 2019-03-00 | [[Bio]]                                 | – Verbal (Sales Call) BIO                                                                                                         |
 | 2019-02-08 | [[FIN]]                                 | EV Notes                                                                                                                          |
 | 2019-02-00 | [[AFmaterials]]                         | Turbot Materials                                                                                                                  |
-| 2019-01-00 | [[FIN]]                                 | old notes                                                                                                                         |
+| 2019-01-00 | [[FIN Log]]                             | old notes                                                                                                                         |
 | 2019-00-00 | [[Ideas]]                               | Coin thoughts - alloy???                                                                                                          |
 | 2019-00-00 | [[Journal Old]]                         | Block Chain                                                                                                                       |
 | 2019-00-00 | [[DYL]]                                 | Block Chain                                                                                                                       |
 | 2019-00-00 | [[ReBuy]]                               | Office Drawers  (bought)                                                                                                          |
 | 2019-00-00 | [[ReBuy]]                               | Front Door Lock                                                                                                                   |
-| 2019-00-00 | [[FIN]]                                 | AF CHARGES                                                                                                                        |
+| 2019-00-00 | [[FIN Log]]                             | AF CHARGES                                                                                                                        |
 | 2019-00-00 | [[MED]]                                 | Ideas for QL Pregnancy Heroids                                                                                                    |
 | 2018-08-07 | [[Phone]]                               | #### starting to use Evernote ####                                                                                                |
 | 2018-00-00 | [[Phone]]                               | coinbase                                                                                                                          |
-| 2018-00-00 | [[FIN]]                                 | Wedding                                                                                                                           |
-| 2018-00-00 | [[FIN]]                                 | QL                                                                                                                                |
+| 2018-00-00 | [[FIN Log]]                             | Wedding                                                                                                                           |
+| 2018-00-00 | [[FIN Log]]                             | QL                                                                                                                                |
 | 2017-12-18 | [[Phone]]                               | Notes from HACKERS                                                                                                                |
 | 2017-11-14 | [[Phone]]                               | Prenup info  -- info moved to evernote                                                                                            |
 | 2017-09-29 | [[Phone]]                               | Double Cash Back                                                                                                                  |
@@ -838,9 +842,9 @@ n:: no prefix.	Dated entries without any typing prefix
 | 2017-05-00 | [[Phone]]                               | Experian                                                                                                                          |
 | 2017-00-00 | [[Phone]]                               | Bought glasses                                                                                                                    |
 | 2017-00-00 | [[Phone]]                               | CREDIT CARDS                                                                                                                      |
-| 2017-00-00 | [[FIN]]                                 | Aeolus Pay                                                                                                                        |
-| 2017-00-00 | [[FIN]]                                 | Aeolus Bills                                                                                                                      |
-| 2017-00-00 | [[FIN]]                                 | DO NDA Personal receipts                                                                                                          |
+| 2017-00-00 | [[FIN Log]]                             | Aeolus Pay                                                                                                                        |
+| 2017-00-00 | [[FIN Log]]                             | Aeolus Bills                                                                                                                      |
+| 2017-00-00 | [[FIN Log]]                             | DO NDA Personal receipts                                                                                                          |
 | 2016-11-06 | [[Phone]]                               | changed address                                                                                                                   |
 | 2016-11-04 | [[Phone]]                               | Recology Sunset Scavenger                                                                                                         |
 | 2016-11-04 | [[Phone]]                               | water power sewer                                                                                                                 |
@@ -851,25 +855,25 @@ n:: no prefix.	Dated entries without any typing prefix
 | 2016-00-00 | [[DYL]]                                 | Bizzy Robotics - Early days                                                                                                       |
 | 2016-00-00 | [[ReBuy]]                               | STANDING DESK                                                                                                                     |
 | 2016-00-00 | [[Phone]]                               | Aeolus notes                                                                                                                      |
-| 2016-00-00 | [[FIN]]                                 | Bizzy Bills                                                                                                                       |
-| 2016-00-00 | [[FIN]]                                 | Madrone / Ben                                                                                                                     |
-| 2016-00-00 | [[FIN]]                                 | NDA / AF stuff                                                                                                                    |
-| 2016-00-00 | [[FIN]]                                 | Idea for adelec analysis                                                                                                          |
-| 2015-07-11 | [[FIN]]                                 | Tax consequences                                                                                                                  |
-| 2015-04-06 | [[FIN]]                                 | Ben Ng -- Indexed Universal Life -- IRS sec 7702 section 79                                                                       |
-| 2015-03-30 | [[FIN]]                                 | Setup SEP.  Planned 2015                                                                                                          |
-| 2015-02-05 | [[FIN]]                                 | Mike's options trading strategy                                                                                                   |
+| 2016-00-00 | [[FIN Log]]                             | Bizzy Bills                                                                                                                       |
+| 2016-00-00 | [[FIN Log]]                             | Madrone / Ben                                                                                                                     |
+| 2016-00-00 | [[FIN Log]]                             | NDA / AF stuff                                                                                                                    |
+| 2016-00-00 | [[FIN Log]]                             | Idea for adelec analysis                                                                                                          |
+| 2015-07-11 | [[FIN Log]]                             | Tax consequences                                                                                                                  |
+| 2015-04-06 | [[FIN Log]]                             | Ben Ng -- Indexed Universal Life -- IRS sec 7702 section 79                                                                       |
+| 2015-03-30 | [[FIN Log]]                             | Setup SEP.  Planned 2015                                                                                                          |
+| 2015-02-05 | [[FIN Log]]                             | Mike's options trading strategy                                                                                                   |
 | 2015-00-00 | [[Parents]]                             | old software for Dad info                                                                                                         |
-| 2015-00-00 | [[FIN]]                                 | Jotter                                                                                                                            |
-| 2015-00-00 | [[FIN]]                                 | Mom Phone                                                                                                                         |
+| 2015-00-00 | [[FIN Log]]                             | Jotter                                                                                                                            |
+| 2015-00-00 | [[FIN Log]]                             | Mom Phone                                                                                                                         |
 | 2015-00-00 | [[MED Sleep]]                           | Pill exploration                                                                                                                  |
-| 2014-00-00 | [[FIN]]                                 | Rent from Peter Berger                                                                                                            |
-| 2014-00-00 | [[FIN]]                                 | Garage Spot                                                                                                                       |
+| 2014-00-00 | [[FIN Log]]                             | Rent from Peter Berger                                                                                                            |
+| 2014-00-00 | [[FIN Log]]                             | Garage Spot                                                                                                                       |
 | 2013-03-03 | [[ReBuy]]                               | Standing mat                                                                                                                      |
 | 2013-02-00 | [[Archeology]]                          | OKC                                                                                                                               |
 | 2013-01-30 | [[Jnl]]                                 | Quit working at paybygroup???                                                                                                     |
 | 2013-00-00 | [[ReBuy]]                               | Scotch                                                                                                                            |
-| 2013-00-00 | [[FIN]]                                 | Rent from Nick Cicero                                                                                                             |
+| 2013-00-00 | [[FIN Log]]                             | Rent from Nick Cicero                                                                                                             |
 | 2012-09-19 | [[Meta Org (old page)]]                 | Highlevel organization of Roles/Goals                                                                                             |
 | 2012-06-00 | [[Archeology]]                          | OKC                                                                                                                               |
 | 2011-04-10 | [[Journal Old]]                         | – Not Energized                                                                                                                   |

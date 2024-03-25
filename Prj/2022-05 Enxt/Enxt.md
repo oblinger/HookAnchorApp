@@ -1,4 +1,7 @@
-b
+[[Enxt]]: - [[Eli Schools]] 
+- Ask Avery/Mad
+- YMCA ask Jeff,
+
 :: [[2022-05 Enxt]]
 
 :: [[2022-05 ELI next school]]

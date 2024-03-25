@@ -1,34 +1,15 @@
 
- 
- 
- [[FIN#^rplan]]  
-[[Enxt]]: - [[Eli Schools]] 
-- Ask Avery/Mad
-- YMCA ask Jeff,
-
-- [[NJ24]]: G job
-	- WarStory: adj
-	- Interview Prep
-	- Back:  Rodrigo,
-	- xoogler
+[[FIN]]:	Ready [[2024-01 Merrill Retirement Planning|Merrill]] 
+[[NJ24]]:	think
+[[Lrn]]:	
+[[Mentor]]: Sean
 
 
-[[Mentor]]: 
 [[MED]]: hearing test
 [[Calls]]: 
-
-
-- [ ] Daily Exercise [[Habit]].
-- [ ] Noom Eating
-- [ ] Get TPST
-
-- [[NJ24]]: 
-- [[Fun]]: 
-- [[Spirit]]: 
-- [[MED.]]: 
-
-
-[[MED.]] 		Exercise, Heart Learn,
-[[NJ24]]:		.
-[[Enxt]]:	.
-
+- Daily Exercise [[Habit]].
+- Noom Eating
+- Get TPST
+ [[Fun]]: 
+[[Spirit]]: 
+[[MED.]]: Exercise, Heart Learn,

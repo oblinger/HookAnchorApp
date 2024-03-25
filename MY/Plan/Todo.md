@@ -7,7 +7,7 @@
 
 
 - Scan Now list
-- get licence
+- get license
 - 
 - may 20th - may 22nd trip
 

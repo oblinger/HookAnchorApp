@@ -1,3 +1,8 @@
+- signup for Facet
+- cancel seeking alpha
+- fin advisor (fix fee guys)
+- fin flow
+- sarthi drop
 - taxes citibank
 - get boston tix
 - Q1 outputs; Q2 plans
