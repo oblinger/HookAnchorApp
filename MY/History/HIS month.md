@@ -1,4 +1,11 @@
 
+[[@Chris Hayden\|Sun Dec 31  2023]]  	[[@Chris Hayden#   [CIO](https://www.linkedin.com/in/chris-hayden-204766/)  ]]  
+[[@Chris Machut\|Sun Dec 31  2023]]  	[[@Chris Machut#  [idea-synthesizer](https://www.linkedin.com/search/results]]  
+[[@Chuck Morefield\|Sun Dec 31  2023]]  	[[@Chuck Morefield#  [Office Director](https://www.linkedin.com/in/chuckmorefie]]  
+[[@Dileep George\|Sun Dec 31  2023]]  	[[@Dileep George#  [Co-Founder](https://www.linkedin.com/in/dileep-george/)  ]]  
+[[@Doug Riecken\|Sun Dec 31  2023]]  	[[@Doug Riecken# #y24]]  
+[[@Ed H. Chi\|Sun Dec 31  2023]]  	[[@Ed H. Chi#  [Distinguish Scientist](https://www.linkedin.com/in/edchi/]]  
+[[@Fernando Eillman\|Sun Dec 31  2023]]  	[[@Fernando Eillman# [Sales Director](https://www.linkedin.com/in/fereillman/)  ]]  
 [[@George Richardson\|Sun Dec 31  2023]]  	[[@George Richardson#   [Divorce Lawyer](https://www.linkedin.com/in/attorneygeor]]  
 [[@Gill Pratt\|Sun Dec 31  2023]]  	[[@Gill Pratt#  [CEO](https://www.linkedin.com/in/gillpratt/) [[@Toyota Re]]  
 [[@Ignacio Diorio\|Sun Dec 31  2023]]  	[[@Ignacio Diorio#  [Growth Team Partner](https://www.linkedin.com/in/ignacio-]]  

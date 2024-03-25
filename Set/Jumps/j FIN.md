@@ -13,4 +13,5 @@ JUMPS:
 - [FIN Tracking](spot://FIN~Tracking): 
 - [FIN.](spot://FIN.): 
 - [FIN Retire](spot://FIN~Retire): 
+- [FIN Flows](spot://FIN~Flows): 
 
