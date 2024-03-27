@@ -7,7 +7,7 @@ Nick & Mallory son Landon
 
 - Get info like this published - swimming pools 
 https://docs.google.com/document/d/1umv38fuKnCZuG7EysZxUyi-ZkwyWVzrvqV_-fxV98Pw/edit#heading=h.vf2170et6bjo
-- [Miss Soumya's Class](https://docs.google.com/spreadsheets/d/1ou9kUoqPB56-Jwe2PXjGEMWysLTVA4vpQQ4i7tYkwfw/edit#gid=738113275)  
+- [Miss Soukmya's Class](https://docs.google.com/spreadsheets/d/1ou9kUoqPB56-Jwe2PXjGEMWysLTVA4vpQQ4i7tYkwfw/edit#gid=738113275)  
 
 
 ### Movie Nite

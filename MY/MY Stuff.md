@@ -120,6 +120,14 @@ PAX 98.375w 26"d  93.125h
 
 Ikea Emeryville (888) 888-4532  092.472.57
 
+### CLOTHING
+
+#### From China
+- Size 54 - "Enjoy Life" yellow tee shirt
+- 3XL - birds and sail boats
+- 4xl - big neck plain tee
+- XL - uniclo
+- 
 ## = BASEMENT/GARAGE =
 #### GarageDoor
 
