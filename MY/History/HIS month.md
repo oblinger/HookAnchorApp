@@ -1,4 +1,5 @@
 
+[[@Bryan Richard\|Sun Dec 31  2023]]  	[[@Bryan Richard#  [VP](https://www.linkedin.com/in/bryanjrichard/).         ]]  
 [[@Chris Hayden\|Sun Dec 31  2023]]  	[[@Chris Hayden#   [CIO](https://www.linkedin.com/in/chris-hayden-204766/)  ]]  
 [[@Chris Machut\|Sun Dec 31  2023]]  	[[@Chris Machut#  [idea-synthesizer](https://www.linkedin.com/search/results]]  
 [[@Chuck Morefield\|Sun Dec 31  2023]]  	[[@Chuck Morefield#  [Office Director](https://www.linkedin.com/in/chuckmorefie]]  
