@@ -1,4 +1,6 @@
 
+:: [[j DAILY]],   [[j VIEW]]
+
 :: [[j WORK]]
 
 :: [[j GPT]]

@@ -199,4 +199,5 @@ JUMPS:
 - [j OKR](spot://j~OKR): 
 - [j GPT](spot://j~GPT): 
 - [j WORK](spot://j~WORK): 
+- [j DAILY](spot://j~DAILY): 
 
