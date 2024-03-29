@@ -1,6 +1,7 @@
 
 ## = CURRENT FOCUS
 ### - Bucketed Day
+ (See [[Daily Schedules]])
 
 Idea: Streamline day into 7 buckets shows below and strive to ensure progress made each day in key buckets: Main (+Chew, Coms) & EVE(Self, Out, Call, Learn, Q2)
 

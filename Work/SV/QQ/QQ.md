@@ -11,6 +11,8 @@
 
 :: [[LLM Tools Workshop]],   [[Michael Rampdown]],   [[Sell Car]]
 
+:: [[LLM Tools Workshop]],   [[Michael Rampdown]],   [[Sell Car]]
+
 :: [[2023-10-01 Special Olympics]]
 - [[QQ Folder]] 
 

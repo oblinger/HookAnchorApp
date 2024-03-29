@@ -5,12 +5,15 @@ n:: no prefix.	Dated entries without any typing prefix
 
 | Date       | File                                | Notes                                                                                                                             |
 | ---------- | ----------------------------------- | --------------------------------------------------------------------------------------------------------------------------------- |
+| 2024-03-29 | [[@Shreshth Saxena]]                    | SOW                                                                                                                               |
+| 2024-03-29 | [[Daily Schedules]]                     | Tightly scheduled morning                                                                                                         |
+| 2024-03-29 | [[Resume]]                              | Resume Rewrite                                                                                                                    |
 | 2024-03-24 | [[FIN Log]]                             | Financial Advisors                                                                                                                |
 | 2024-03-22 | [[QQ]]                                  | Life Time                                                                                                                         |
 | 2024-03-22 | [[QQ]]                                  | CONTACTS                                                                                                                          |
 | 2024-03-21 | [[2024-01 Merrill Retirement Planning]] | notes                                                                                                                             |
 | 2024-03-19 | [[@Shreshth Saxena]]                    | Intro                                                                                                                             |
-| 2024-03-19 | [[Productivity]]                        | Schedule of my day                                                                                                                |
+| 2024-03-19 | [[Daily Schedules]]                     | Schedule of my day                                                                                                                |
 | 2024-03-19 | [[@Jason Syversen]]                     | Licencing code                                                                                                                    |
 | 2024-03-16 | [[ToBuy]]                               | Tent                                                                                                                              |
 | 2024-03-14 | [[Daily]]                               | Best case - how could my day be spent                                                                                             |
@@ -60,6 +63,7 @@ n:: no prefix.	Dated entries without any typing prefix
 | 2024-01-02 | [[Reflections]]                         | the 2024 life reset                                                                                                               |
 | 2024-01-02 | [[belief]]                              | test example                                                                                                                      |
 | 2024-01-02 | [[LCM]]                                 | foo foo foo                                                                                                                       |
+| 2024-00-00 | [[Daily Schedules]]                     | Bucketed Day                                                                                                                      |
 | 2023-12-31 | [[@Dan Oblinger]]                       | yet another                                                                                                                       |
 | 2023-12-31 | [[@Dan Oblinger]]                       | just some info                                                                                                                    |
 | 2023-12-26 | [[LCM]]                                 | Notes for the Run class implementation:                                                                                           |
@@ -73,7 +77,7 @@ n:: no prefix.	Dated entries without any typing prefix
 | 2023-12-14 | [[Mgt]]                                 | Jason Talk                                                                                                                        |
 | 2023-12-12 | [[Container]]                           | Guiding Thoughts                                                                                                                  |
 | 2023-12-08 | [[EOCA]]                                | Society of AGIs - its not about one bad AI                                                                                        |
-| 2023-12-07 | [[Enxt]]                                | Roof Top -                                                                                                                        |
+| 2023-12-07 | [[2022-05 Enxt]]                        | Roof Top -                                                                                                                        |
 | 2023-12-07 | [[Mgt]]                                 | DEC MGT Meeting                                                                                                                   |
 | 2023-12-06 | [[Cookie Clicker]]                      |                                                                                                                                   |
 | 2023-12-06 | [[FIN Log]]                             | Retirement Analysis                                                                                                               |
@@ -105,13 +109,13 @@ n:: no prefix.	Dated entries without any typing prefix
 | 2023-11-01 | [[GoogleJob]]                           | [[@Siobhan Quinn]],   [[@Doug Gordin]],                                                                                           |
 | 2023-11-01 | [[Palestinians]]                        | Israel & Palestine -- Thinking out loud:  I propose a THREE "state" solution.                                                     |
 | 2023-10-31 | [[CVP]]                                 | Big Rock Planning                                                                                                                 |
-| 2023-10-30 | [[Enxt]]                                | USDF school fair                                                                                                                  |
+| 2023-10-30 | [[2022-05 Enxt]]                        | USDF school fair                                                                                                                  |
 | 2023-10-30 | [[CVP]]                                 | kinds of visualizations                                                                                                           |
 | 2023-10-23 | [[CV Notes]]                            | Experimentation tool                                                                                                              |
 | 2023-10-19 | [[LCM]]                                 | Report Semantics                                                                                                                  |
 | 2023-10-18 | [[Palestinians]]                        | THREE STATE SOLUTION                                                                                                              |
 | 2023-10-17 | [[@Tyler Behsman]]                      | Volleyball                                                                                                                        |
-| 2023-10-17 | [[Enxt]]                                | List of schools from Qingling's friend                                                                                            |
+| 2023-10-17 | [[2022-05 Enxt]]                        | List of schools from Qingling's friend                                                                                            |
 | 2023-10-16 | [[CV Notes]]                            | ========                                                                                                                          |
 | 2023-10-15 | [[Palestinians]]                        | Both Isralies and Palestinians are justified in their hearts.  Thinking out loud: I propose a THREE state solution.               |
 | 2023-10-14 | [[LCM]]                                 | JOB semantics                                                                                                                     |
@@ -214,7 +218,7 @@ n:: no prefix.	Dated entries without any typing prefix
 | 2023-07-13 | [[CV Notes]]                            | Progression of halo apps                                                                                                          |
 | 2023-07-12 | [[Mgt]]                                 | Deliverables                                                                                                                      |
 | 2023-07-12 | [[QQ]]                                  | Halos                                                                                                                             |
-| 2023-07-11 | [[BKT]]                                 | Reality time                                                                                                                      |
+| 2023-07-11 | [[Daily Schedules]]                     | Reality time                                                                                                                      |
 | 2023-07-11 | [[EduCorp]]                             | Collette pointers                                                                                                                 |
 | 2023-07-10 | [[@Jason Syversen]]                     | Topics                                                                                                                            |
 | 2023-07-08 | [[TT]]                                  | production bug                                                                                                                    |
@@ -231,8 +235,8 @@ n:: no prefix.	Dated entries without any typing prefix
 | 2023-06-22 | [[Jnl]]                                 | [[NextCo]]                                                                                                                        |
 | 2023-06-22 | [[NextCo]]                              | GPT Ideas                                                                                                                         |
 | 2023-06-21 | [[EOCA]]                                | quote: most intelligent species is changing hands                                                                                 |
-| 2023-06-21 | [[Productivity]]                        | Workday Ideal Breakdown                                                                                                           |
-| 2023-06-20 | [[BKT]]                                 | July 2023 Buckets                                                                                                                 |
+| 2023-06-21 | [[Daily Schedules]]                     | Workday Ideal Breakdown                                                                                                           |
+| 2023-06-20 | [[Daily Schedules]]                     | July 2023 Buckets                                                                                                                 |
 | 2023-06-20 | [[Reflections]]                         | A HAH - Treadmill                                                                                                                 |
 | 2023-06-20 | [[Reflections]]                         | Work First; Streamlining;                                                                                                         |
 | 2023-06-20 | [[CV Notes]]                            | GRZ how many frams                                                                                                                |
@@ -384,7 +388,7 @@ n:: no prefix.	Dated entries without any typing prefix
 | 2023-03-07 | [[@Daniel Handyman]]                    | Quote for house work                                                                                                              |
 | 2023-03-06 | [[@Mike Seibert]]                       | Three guys CV guys from Argentina                                                                                                 |
 | 2023-03-01 | [[@Tomas Piaggio]]                      | Maybe work for Sports Visio                                                                                                       |
-| 2023-03-01 | [[BKT]]                                 | New Time Tracking Bucketing                                                                                                       |
+| 2023-03-01 | [[Daily Schedules]]                     | New Time Tracking Bucketing                                                                                                       |
 | 2023-03-01 | [[Reflections]]                         | Mid Week - Different kind of tracking                                                                                             |
 | 2023-03-01 | [[@Pablo Calofatti]]                    |                                                                                                                                   |
 | 2023-02-28 | [[@Jack Potvin]]                        | Bug validation process                                                                                                            |
@@ -440,7 +444,7 @@ n:: no prefix.	Dated entries without any typing prefix
 | 2023-01-01 | [[DYL]]                                 | Hook System                                                                                                                       |
 | 2023-01-01 | [[DYL]]                                 | Edu Corp                                                                                                                          |
 | 2023-00-00 | [[Meta CRM]]                            | CRM FORMAT                                                                                                                        |
-| 2023-00-00 | [[BKT]]                                 | buckets                                                                                                                           |
+| 2023-00-00 | [[Daily Schedules]]                     | buckets                                                                                                                           |
 | 2023-00-00 | [[FIN Log]]                             | very old - CONSIDER ADDITIONS                                                                                                     |
 | 2023-00-00 | [[CV Roadmap]]                          | FULL-AI / BALLER DELIVERABLE                                                                                                      |
 | 2023-00-00 | [[ROADMAP]]                             | YEAR PRIORITIES                                                                                                                   |
@@ -454,7 +458,7 @@ n:: no prefix.	Dated entries without any typing prefix
 | 2022-12-08 | [[Phone]]                               | Solar Installer                                                                                                                   |
 | 2022-12-07 | [[resLI]]                               | Framing Self                                                                                                                      |
 | 2022-12-03 | [[Phone]]                               | Thumb Tack TV install                                                                                                             |
-| 2022-12-01 | [[Enxt]]                                | Alta Vista                                                                                                                        |
+| 2022-12-01 | [[2022-05 Enxt]]                        | Alta Vista                                                                                                                        |
 | 2022-11-30 | [[2022-W46]]                            | short week (cyber monday)                                                                                                         |
 | 2022-11-29 | [[Phone]]                               | [[@Audi]]                                                                                                                         |
 | 2022-11-29 | [[Phone]]                               | Horizon 7.4AT  Treadmill                                                                                                          |
@@ -464,7 +468,7 @@ n:: no prefix.	Dated entries without any typing prefix
 | 2022-11-23 | [[Parents]]                             | Mom's multiple facebook accounts                                                                                                  |
 | 2022-11-22 | [[Phone]]                               | Fire Dept response for Eli                                                                                                        |
 | 2022-11-20 | [[ToBuy]]                               | Big Insta-pot                                                                                                                     |
-| 2022-11-10 | [[Enxt]]                                | The San Francisco School                                                                                                          |
+| 2022-11-10 | [[2022-05 Enxt]]                        | The San Francisco School                                                                                                          |
 | 2022-11-10 | [[MED]]                                 | Maria Cross - Registered Dietician                                                                                                |
 | 2022-11-08 | [[2022-10-00 Find Advisor]]             | Finding a Fiduciary                                                                                                               |
 | 2022-11-08 | [[2022-10-00 Find Advisor]]             | My plan                                                                                                                           |
@@ -822,7 +826,6 @@ n:: no prefix.	Dated entries without any typing prefix
 | 2019-04-00 | [[Bio]]                                 | AF confluence bio                                                                                                                 |
 | 2019-03-00 | [[Bio]]                                 | – Verbal (Sales Call) BIO                                                                                                         |
 | 2019-02-08 | [[FIN]]                                 | EV Notes                                                                                                                          |
-| 2019-02-00 | [[AFmaterials]]                         | Turbot Materials                                                                                                                  |
 | 2019-01-00 | [[FIN Log]]                             | old notes                                                                                                                         |
 | 2019-00-00 | [[Ideas]]                               | Coin thoughts - alloy???                                                                                                          |
 | 2019-00-00 | [[Journal Old]]                         | Block Chain                                                                                                                       |

@@ -47,7 +47,7 @@ https://www.frannyskitchensf.com/
 | d???  POKE                      |                                                            |     |     |
 | ====   SEAFOOD   ====           |                                                            |     |     |
 | P++~  SEAFOOD                   | Seafood Station                                            |     |     |
-|                                 |                                                            |     |     |
+| ?? SEAFOOD                      | Basa                                                       |     |     |
 | d+~~  SEAFOOD                   | Pacific Catch                                              |     |     |
 | d+~~  SEAFOOD                   | Soto Mare                                                  |     |     |
 | ====  AMERICAN   ====           | > Salad, Sandwich, Pizza, Fast                             |     |     |

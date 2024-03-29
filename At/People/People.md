@@ -1,11 +1,8 @@
 
+- [[SV People]], 
 - [[CRM]],  [[Family]], [[Friends]],   
 :: [[Family]]
   [CRM_Phrases](CRM_Phrases.md)  [Family](Family.md)  [CRM](CRM.md)
-  [CRM_Phrases](__CRM_Phrases__.md)
-  [Family](Family/__Family__.md)
-  [Family](__family__.md)
-
 # CALLS
 - josh
 - john C

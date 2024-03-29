@@ -1,17 +1,18 @@
 
+:: [[Resume Rewrite]]
+[[Resume]]:		Rewrite
 
 - [Resume Master](spot://resume~master) 
 
-- [[2021-10-00  AFmaterials]], [[2024 Resume]], 
+-  [[2024 Resume]], 
 - [[Bio]],  [[resLI]],  [[Resume Patents]],  [[References]],  [[Dan Oblinger Resume.docx]] 
 
 
+# TODO 
+- [ ] LI:  Featured pic for (DARPA IBM-watson-jeopardy, AF Instant design)
 Addendum
 - organize by area
 - who is he as an IC
-
-# TODO 
-- [ ] LI:  Featured pic for (DARPA IBM-watson-jeopardy, AF Instant design)
 
 # LINKED IN PARTS
 - [[z2 - Linked In Module]] - 
@@ -936,6 +937,12 @@ I loved working with Dan and would work with him again in a heartbeat.  He has 
 -    Joe Augenbraun
 
 # # LOG
+
+### 2024-03-29  Resume Rewrite
+
+
+
+
 ### 2021-12-00  Jared Resume writing notes
 #### --- 2021-10-25 - ABOUT (FIRST LINES) ---
 	- 200 cars

@@ -1,9 +1,10 @@
-[[Lrn]]:	RunSys, 
-
-[[Lrn]]:	[[Transformers|Tfr]]  family of algs
+By May-1
+[[Lrn]]:	RunSys
 [[Lrn]]:	[[Coursera Notes|Coursera]] DL course
 
-huge face tutorial
+[[Lrn]]:	[[Transformers|Tfr]]  family of algs
+
+Hugging-face tutorial
 PyTorch
 
 

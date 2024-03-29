@@ -1,3 +1,5 @@
+- sp add
+- get Eli's ipad connected to mom's account
 - signup for Facet
 - cancel seeking alpha
 - fin advisor (fix fee guys)

@@ -5,7 +5,7 @@
 - [[COM Msg]], [[Mentors]], [[Friends]], 
 
 - Get Reviews:  Felipe, Nick, 
-
+- Rodrigo get back to him
 
 # LOG
 ### 2022-07-19  Ping Goals

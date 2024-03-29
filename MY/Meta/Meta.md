@@ -1,12 +1,10 @@
 
 :: [[Roots]]
 
-:: [[meta Tasks]]
-
 [[Meta]]	TOP LEVEL INFO ORGANIZATIONS
 - ***ORG***		***FOLDER***	***META DOCS***
 - [[Top]]		[[Kmr Folder|KMR]]		[[Meta Meta]]	 ALL 		-	Top level of all info pages
-- [[Plan]]		[[Plan Folder|Plan]]		[[Meta Plan]]	 By TASK -	Short and long term planning
+- [[Plan]]		[[Plan Folder|Plan]]		[[Meta Plan]]	 By TASK -	Short and long term planning. ([[meta Tasks]])
 - [[Logs]]		[[Logs Folder|Logs]]		[[Meta Logs]]	 By TIME -	Lists with a time-based org
 - [[Set]]		[[Set Folder|Set]]		[[Meta Set]]	 By TYPE -	Groupings of like (typed) entries
 - [[T]]			[[T Folder|T]]			[[Meta Topic]]	 By TOPIC -	Toplevel Taxonomic Topics
