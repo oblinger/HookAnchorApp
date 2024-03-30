@@ -1,3 +1,6 @@
+LEGO MINDSTORM
+  [motor](https://www.amazon.com/SEEMEY-Power-Function-Kit-Pins-Gears-Axles-Compatible-Lego-Technic-Parts/dp/B0BZL5TCKN) 
+
 - get Eli's ipad connected to mom's account
 - [[Fried]].			
 

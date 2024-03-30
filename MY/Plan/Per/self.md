@@ -2,14 +2,12 @@
 [[FIN]]:	Ready [[2024-01 Merrill Retirement Planning|Merrill]] 
 [[NJ]]:	think
 [[Lrn]]:	
-[[Mentor]]: Sean
+[[CRM]]: 	Sean
 
+[[MED]]:	Daily Exercise [[Habit]].
+[[MED]]:	Noom Eating
+[[MED]]:	Get TPST
+[[Calls]]:	John, Dave, Ana
 
-[[MED]]: hearing test
-[[Calls]]: 
-- Daily Exercise [[Habit]].
-- Noom Eating
-- Get TPST
- [[Fun]]: 
+[[Fun]]: 
 [[Spirit]]: 
-[[MED.]]: Exercise, Heart Learn,

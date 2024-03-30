@@ -23,7 +23,7 @@
 - [ ] meeting w/ Sam Jason
 
 
-- [ ] [[MED.]] - [[VO2max]] 
+- [ ] [[MED.]] - [[MED VO2Max]] 
 
 - [ ] Taxes underway
 - [ ] brainstorming wish list for headcount for brian and Mike

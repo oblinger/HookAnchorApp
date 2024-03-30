@@ -1,63 +1,33 @@
 
-:: [[VO2max]]
+:: [[MED Doctors]],   [[MED General]],   [[MED Insurance]],   [[MED Journal]]
 
-MED NUMBERS		[[MED Measure.xlsx|MED Measure]],  [[MED Measurements]],  [[MED Blood Tests]],  [[MED Exercise]],  [[MED Sleep]],   [[MED Weight]],
-MED HEART NUMS		[[MED VO2Max]], [[MED Blood Pressure]],  [[MED Cholesterol]],  
-MED HISTORY		[[MED History]],  [[MED Vaccinations]],   
-MED INFO			[[MED Pills]],  [[MED-Vitamins]],  
-MED PART			[[MED Heart]],  [[MED Vision]],   [[MED Psoriasis]],     
-- [[MED=]] 
+[[MED]]:	Daily Exercise [[Habit]].
 
-  [MED Food](MED%20Food.md)  [MED Psoriasis](MED%20Psoriasis.md)  [MED General](MED%20General.md)   [MED Doctors](MED%20Doctors.md)  [MED_Checkups](MED_Checkups.md)  [Medifast](Medifast.md)  [MED Journal](MED%20Journal.md)    [MED Insurance](MED%20Insurance.md)  [MED Pills](MED%20Pills.md)
- 
- 
+[[MED]]:	Noom Eating
+[[MED]]:	Get TPST
 
-:: [[MED.]], [[MED Food]],    [[MED General]],     
-:: [[MED Doctors]],   [[MED Vaccinations]],     [[MED Insurance]],   [[MED Journal]],     [[MED Research]], 
-
-- [[Low Back Pain]], 
-  [[run]]
-
--  [[Jet Lag]], [[Exercise]], 
-- 
-
+[[MED.]]  [[MED VO2Max]]
 
 TRACK: RestingHeartRate, HRV, Rate of Perceived Exertion (RPE)
+## > MED
+NUMS		[[MED Measure.xlsx|MED Measure]],  [[MED Measurements]],  [[MED Blood Tests]],  [[MED Exercise]], 
+.			[[MED Sleep]],   [[MED Weight]],
+HEART		[[MED VO2Max]], [[MED Blood Pressure]],  [[MED Cholesterol]],  
+HISTORY	[[MED History]],  [[MED Vaccinations]],   
+INFO		[[MED Pills]],  [[MED-Vitamins]],  
+PARTS		[[MED Heart]],  [[MED Vision]],   [[MED Psoriasis]],     .
+DIET		[[MED Food]],  [[Medifast]],  
+
+
+
 
 
 
 # TOPICS
-## = ASK
-- Shingles vaccine.
-- 
-- My penis bends to the side, but it did not used to do this.
+- [[Low Back Pain]], 
+-  [[run]], 
+-  [[Jet Lag]], [[Exercise]], 
 
-## = SUB NOTES =
-
- 
-
-## OLDER TODO
-	- Simvastatin level  chol 240/ LDL 190
-	- sutter bernal campus CPMC
-		- Weight.  lo carb. gut bacteria
-		  	xifaxan.   cebo.  gastrocolic reflex.  
-		  	Vibursy. glutin, dairy, 
-		  	IBS drugs [[_parts]] 
-		  	Atrantil -- over counter for IBS, kills archiobacter
-		  	Fiber suplement -- PURE -- less gas with this one
-		  	FOD MAP diet --
-- Colonoscopy, type2diabedies, hep-C
-  	CANCER Colorectal Screening, Prostate, Skin
-  	A1C,
-- Hearing test
-- Sleep clinic
-- CR list of tests
-  
-  NOPE
-- Bone Density, 
-  if framingham calculator.  is above 10% in next ten years
-  Good quality vitamin
-- vitamin D.
 # REF
 ### r2022-07-20  Stomach Upset Decision Tree
 
@@ -351,6 +321,39 @@ _
 --  Clubbing -- 
 --  Diet:  Salt, weight
 
+### 2024-03-30  MISC
+
+#### = ASK
+- Shingles vaccine.
+- 
+- My penis bends to the side, but it did not used to do this.
+
+#### = SUB NOTES =
+
+ 
+
+#### OLDER TODO
+	- Simvastatin level  chol 240/ LDL 190
+	- sutter bernal campus CPMC
+		- Weight.  lo carb. gut bacteria
+		  	xifaxan.   cebo.  gastrocolic reflex.  
+		  	Vibursy. glutin, dairy, 
+		  	IBS drugs [[_parts]] 
+		  	Atrantil -- over counter for IBS, kills archiobacter
+		  	Fiber suplement -- PURE -- less gas with this one
+		  	FOD MAP diet --
+- Colonoscopy, type2diabedies, hep-C
+  	CANCER Colorectal Screening, Prostate, Skin
+  	A1C,
+- Hearing test
+- Sleep clinic
+- CR list of tests
+  
+  NOPE
+- Bone Density, 
+  if framingham calculator.  is above 10% in next ten years
+  Good quality vitamin
+- vitamin D.
 ### 2019-00-00  Ideas for QL Pregnancy Heroids
 Preparation H
 Which hasel pads  tux pads

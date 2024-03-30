@@ -1,5 +1,5 @@
 
-  [[VO2max]] 
+  [[MED VO2Max]] 
  
  ## = POINTERS =
 - CPMC - Heart Disease Reversal Nutrition Program: CPMC 415-353-4278

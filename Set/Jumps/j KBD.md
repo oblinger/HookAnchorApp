@@ -4,4 +4,5 @@ JUMPS:
 - [KBD Global Keys](spot://KBD~Global~Keys): 
 - [KBD Notion](spot://KBD~Notion): 
 - [KBD Shortcuts](spot://KBD~Shortcuts): 
+- [KBD Obsidian Keys](spot://KBD~Obsidian~Keys): 
 

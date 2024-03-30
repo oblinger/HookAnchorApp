@@ -1,8 +1,10 @@
+
 ## >
 - [[Up Task]],  [[Meta Plan]],  [[BKT Tree]],  [[Daily Schedules]], 
 
 
 TOP ORGANIZING VIEWS
+- [View Up Task](spot://View~up~task)	[[Up All]] 
 - [View Work](spot://view~work)		[[work]] 	[[Rocks]] 
 - [View Self](spot://view~self)		[[self]]		[[q2]]		
 - [View Planning](spot://view~planning)	[[plan]]	

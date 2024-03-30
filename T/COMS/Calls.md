@@ -1,11 +1,13 @@
-- DanN, Theo
+
 - John Cameron
 - Anastasia
+- Collette Roney
 
+
+- DanN, Theo
 - Chana whole family chat
 
 
 - Laurette Caniza
-- Collette Roney
 
 - [[COMS]]:  Work communications

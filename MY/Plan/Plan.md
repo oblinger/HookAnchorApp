@@ -1,12 +1,7 @@
 
-:: [[Rest]]
-[[Rocks]], [[Up Task]], 
-:: [[Actualize]],   [[BKT]],   [[Dropped]],   [[Friday]],   [[Fried Later]],   [[Habit]],   [[Lrn]],   [[Mission]],   [[Per]],   [[Quarterly]],   [[Repeat]],   [[Scratch]],   [[Social]],   [[active]],   [[archive]],   [[external]],   [[fried]],   [[full]],   [[fun]],   [[gap]],   [[hack]],   [[later]],   [[now]],   [[prime]],   [[q2]],   [[quick]],   [[todo]],   [[wings]]
-- [[Meta List]], 
-:: [[BKT Tree]],   [[Prof]]
+:: [[Actualize]],   [[BKT Tree]],   [[BKT]],   [[Dropped]],   [[EBT]],   [[Friday]],   [[Fried Later]],   [[Habit]],   [[Lrn]],   [[Meta List]],   [[Mission]],   [[Per]],   [[Ping]],   [[Productivity]],   [[Prof]],   [[Quarterly]],   [[Repeat]],   [[Rest]],   [[Rocks]],   [[Scratch]],   [[Social]],   [[Spirit]],   [[Up All]],   [[Up Task]],   [[active]],   [[archive]],   [[external]],   [[fried]],   [[full]],   [[fun]],   [[gap]],   [[hack]],   [[later]],   [[now]],   [[other]],   [[prime]],   [[q2]],   [[quick]],   [[todo]],   [[wings]]
 
-:: [[EBT]],   [[Ping]],   [[Productivity]],   [[Spirit]],   [[other]]
-#top[[Top|#]] 
+
 #### [[Plan]] [[Plan Folder|--]] Short and long term planning 
 ```dataviewjs
 let rows = dv.pages("")

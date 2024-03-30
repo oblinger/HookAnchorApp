@@ -1,6 +1,4 @@
 
-## = OBSIDIAN APP KEYS = 
-
 | CH  | **CMD (modify)**       | **OPTION (?note)** | **LT PAIR (Go/View)**       | **RT PAIR (Create)** | **CRTL (char)** |
 | --- | ---------------------- | ------------------ | --------------------------- | -------------------- | --------------- |
 | A   | ABOUT proj             |                    |                             | AT entry             | Start line      |

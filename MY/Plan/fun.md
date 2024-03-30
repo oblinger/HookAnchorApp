@@ -1,4 +1,5 @@
 
+- [[Friday]], 
 ## FUN THINGS
 - [[BOOKS]] - 
 - [[Friends]] 

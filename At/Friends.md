@@ -1,8 +1,5 @@
-
-## AI-Related
-
+## AI-Relat
 - Praveen
-
 
 ## PROFESSIONAL-Related
 - John Davis
