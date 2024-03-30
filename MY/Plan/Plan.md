@@ -1,6 +1,17 @@
 
-:: [[Actualize]],   [[BKT Tree]],   [[BKT]],   [[Dropped]],   [[EBT]],   [[Friday]],   [[Fried Later]],   [[Habit]],   [[Lrn]],   [[Meta List]],   [[Mission]],   [[Per]],   [[Ping]],   [[Productivity]],   [[Prof]],   [[Quarterly]],   [[Repeat]],   [[Rest]],   [[Rocks]],   [[Scratch]],   [[Social]],   [[Spirit]],   [[Up All]],   [[Up Task]],   [[active]],   [[archive]],   [[external]],   [[fried]],   [[full]],   [[fun]],   [[gap]],   [[hack]],   [[later]],   [[now]],   [[other]],   [[prime]],   [[q2]],   [[quick]],   [[todo]],   [[wings]]
-
+:: [[Up All]],   [[Up Task]]
+LONG:	[[Rocks]], [[Q2]],  [[Spirit]],  [[Actualize]],  [[Mission]],  
+ROOT:	[[BKT Tree]],  [[BKT]],  [[Meta List]], 
+LATR:	[[Dropped]], 
+OVER:	[[Friday]],  [[Habit]],  [[Repeat]],  [[Productivity]], [[Self Evergreen]],   
+FUN:	[[Fun]], [[Social]],  [[Fried]],  [[Gap]],  [[Hack]],  [[Fried Later]],
+FAM:	[[Family]], [[EBT]], 
+NJ:	[[Lrn]],  
+LST1:	[[Quick]],  [[Todo]],   [[Now]],   [[Active]],  [[Scratch]], 
+LST2: [[Full]],   [[Prime]],
+LST3:	[[Quarterly]],   [[Later]],   [[Wings]],  [[Archive]],
+COM:  [[CRM]],   [[Ping]], [[Mentor]], 
+MISC: [[EBT]],  [[external]],  [[other]], 
 
 #### [[Plan]] [[Plan Folder|--]] Short and long term planning 
 ```dataviewjs
