@@ -1,8 +1,14 @@
 ## >
+- [[Meta Plan]],  [[BKT Tree]],  [[Daily Schedules]], 
 - [[Prof]]:	[[Career]], 
 - [[Per]]: 	[[Home]], [[Spirit]], [[Hack]], [[Lrn]], [[Q2]], [[Out]], 
-- 
-- [[Meta Plan]],  [[BKT Tree]],  [[Daily Schedules]], 
+
+
+TOP ORGANIZING VIEWS
+- [View Work](spot://view~work)		[[work]] 	[[Rocks]] 
+- [View Self](spot://view~self)		[[self]]		[[q2]]		
+- [View Planning](spot://view~planning)	[[plan]]	
+- [View Gap](spot://view~gap) 		[[fried]] 		[[hack]]		[[gap]]
 
 ## BKT TREE
 ### 2021 

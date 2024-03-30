@@ -1,3 +1,4 @@
+- get Eli's ipad connected to mom's account
 - [[Fried]].			
 
 - buy shirts

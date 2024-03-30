@@ -1,13 +1,8 @@
 
-:: [[SV]]
-## __
-
-
 ## TOP
 Q1: +Patents, +Tips, POC, ?Min, ?Halos, 
-- Miguel discussion
-[Racquet](spot://racquet): 		>Greg results
-[OKRs](spot://j~okrs):			! New ones
+- ! Miguel discussion
+[OKRs](spot://j~okrs):			[[cv OKRs]]!Q2
 [[NJ24]]:			>Res, >Coursera
 [Assess](spot://assess):		>look
 [RP](spot://rp):			^Grz POC
@@ -20,6 +15,7 @@ Q1: +Patents, +Tips, POC, ?Min, ?Halos,
    [show](https://www.showpass.com/livelab-10th-anniversary-the-innocents/), Signup, SOW, Brainstorming session, 
 [[CV Data]]:		Pie-chart
 
+[Racquet](spot://racquet): 		>Greg results
 Tracking Priorities:
   - LOE estimate tracking.
   - Process
@@ -30,8 +26,6 @@ Life Time
 - contract approval cycle
 - contacts
 - call tree
-
-
 - PRs
 
 
@@ -56,6 +50,9 @@ Life Time
 DOCS:			Casual Metrics
 [T28Enhance](https://docs.google.com/document/d/1uOdu0gDLiMXK0d_GQ7kr874PBHVgssaY8D521cvdtQw/edit):	> tell team
 -- 3on3 games
+
+- [[SV]]
+
 
 ## PAUSE [bsheet](https://docs.google.com/spreadsheets/d/1C1eYv2Ks2GCCQ9_xZ2Pg7eEr33bX1KOdN8Xf8X6nxSY/edit#gid=0), [hi](https://software-engineering-team.atlassian.net/jira/dashboards/10022), [tst](https://docs.google.com/spreadsheets/d/1Rc07oadsjZgg6_2ZZ-qIXJ9n9ws3LT0FFraLZHnrf9w/edit?usp=sharing), [epic](https://software-engineering-team.atlassian.net/jira/software/projects/MOB/boards/24/timeline), 
 - other reference videos

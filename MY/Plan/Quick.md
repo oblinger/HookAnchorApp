@@ -1,14 +1,13 @@
-- sp add
-- get Eli's ipad connected to mom's account
+- Tax Info
 - signup for Facet
+- Ready for camping
+
 - cancel seeking alpha
 - fin advisor (fix fee guys)
 - fin flow
-- sarthi drop
 - taxes citibank
 - get boston tix
 - Q1 outputs; Q2 plans
-- Tax Info
 - bkt
 
 - paying for noom

@@ -1,9 +1,6 @@
 < [[Meta]] 
 
-TOP ORGANIZING PAGES AND DASHBOARDS
-- [[work]] 	[[q2]]		
-- [[self]]	
-- [[plan]]	
+- [[BKT]] 
 
 
 LONGER TERM PLANNING
