@@ -27,7 +27,7 @@ SUMMARY 2023-Q3
 10: EAT - 	Quick bite
 11	 PROJ - 	Work project time
 01	 LUNCH 	.
-01: [[NJ24]]		.
+01: [[NJ]]		.
 03: [[RUN]]		.
 04: GAP		.
 05, [[FAM]]		.

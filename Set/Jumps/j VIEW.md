@@ -5,4 +5,5 @@ JUMPS:
 - [View Planning](spot://View~Planning): 
 - [View Self](spot://View~Self): 
 - [View Work](spot://View~Work): 
+- [view Up Task](spot://view~Up~Task): 
 

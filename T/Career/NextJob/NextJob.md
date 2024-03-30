@@ -3,7 +3,7 @@
 
 :: [[NJ16]]
 
-- [[NJ22]],  [[NJ24]],  [[WarStories]],
+- [[NJ22]],  [[NJ]],  [[WarStories]],
 
 :: [[2015.05 GoogleInterviewPrep]],   [[2021.04 Directions]],   [[2016.09 NextJob]]
   [NJ22](NJ22.md)

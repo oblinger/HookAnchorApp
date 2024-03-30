@@ -1,6 +1,6 @@
 
 [[FIN]]:	Ready [[2024-01 Merrill Retirement Planning|Merrill]] 
-[[NJ24]]:	think
+[[NJ]]:	think
 [[Lrn]]:	
 [[Mentor]]: Sean
 

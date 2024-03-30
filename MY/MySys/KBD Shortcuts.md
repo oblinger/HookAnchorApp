@@ -1,6 +1,6 @@
 < [[MySys]] 
 - [[KBD Global Keys]] 
-- [[KBD App Keys]] 
+- [[KBD Obsidian Keys]] 
 ## = TOPICS =
 ### - Modifier Combos
 

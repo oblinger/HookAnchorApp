@@ -1,7 +1,5 @@
 ## >
-- [[Meta Plan]],  [[BKT Tree]],  [[Daily Schedules]], 
-- [[Prof]]:	[[Career]], 
-- [[Per]]: 	[[Home]], [[Spirit]], [[Hack]], [[Lrn]], [[Q2]], [[Out]], 
+- [[Up Task]],  [[Meta Plan]],  [[BKT Tree]],  [[Daily Schedules]], 
 
 
 TOP ORGANIZING VIEWS

@@ -3,7 +3,7 @@
 
 ## SPIRIT
 ## SELF
-## [[NJ24]] 
+## [[NJ]] 
 
 ## FAMILY
 

@@ -10,7 +10,6 @@ PyTorch
 
 
 
-
 ### **BOOKS TO CONSIDER**
 - The Pragmatic Engineer - 
 - The making of a manager - Julie Zhou

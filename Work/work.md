@@ -3,7 +3,7 @@
 Q1: +Patents, +Tips, POC, ?Min, ?Halos, 
 - ! Miguel discussion
 [OKRs](spot://j~okrs):			[[cv OKRs]]!Q2
-[[NJ24]]:			>Res, >Coursera
+[[NJ]]:			>Res, >Coursera
 [Assess](spot://assess):		>look
 [RP](spot://rp):			^Grz POC
 [[patents]]:		^M Sketches

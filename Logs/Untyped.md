@@ -89,7 +89,7 @@ n:: no prefix.	Dated entries without any typing prefix
 | 2023-12-01 | [[CVP]]                                 | ideas from james                                                                                                                  |
 | 2023-11-30 | [[LCM]]                                 | Visualization                                                                                                                     |
 | 2023-11-27 | [[Reflections]]                         | Obispo-Trip.  am I depressed?                                                                                                     |
-| 2023-11-21 | [[NJ24]]                                | Tasks from URI                                                                                                                    |
+| 2023-11-21 | [[NJ]]                                  | Tasks from URI                                                                                                                    |
 | 2023-11-20 | [[Eli Firsts]]                          | First Crush - Babysitter                                                                                                          |
 | 2023-11-20 | [[SV Roadmap]]                          | Long Term Plan                                                                                                                    |
 | 2023-11-19 | [[GoogleJob]]                           | Uri                                                                                                                               |

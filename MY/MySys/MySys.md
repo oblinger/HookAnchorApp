@@ -6,7 +6,7 @@
 - [[KBD Shortcuts]],   [[Disks]],  
 
 - [[DOC SYNC COMMANDS]],   [[DOC SYNC]]
-- [[KBD App Keys]],   [[KBD Global Keys]]
+- [[KBD Obsidian Keys]],   [[KBD Global Keys]]
 
 
 ## Obsidian Setup

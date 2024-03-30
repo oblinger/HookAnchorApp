@@ -11,7 +11,7 @@
 ### 2023-10-05  Google Director's job.  & Other stuff
 
 - Quick Update. 
-- [[NJ24]]: FAANG: Targets, Todos, 
+- [[NJ]]: FAANG: Targets, Todos, 
 - [[WarStories]],
 
 

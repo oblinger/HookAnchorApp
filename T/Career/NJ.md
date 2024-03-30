@@ -1,13 +1,15 @@
 
-:: [[NJ24 Learning]]
 By May-1
-
-[[NJ24]]:		Quick Apply
-[[NJ24]]:		WarStory adding
-[[NJ24]]:		[[Resume Rewrite]] 
-[[NJ24]]:		[[crm]]:  Pings
-[[NJ24]]:		[[Mentor]]: 
+[[NJ]]:		Quick Apply
+[[NJ]]:		WarStory adding
+[[NJ]]:		[[Resume Rewrite]]  ()
+[[NJ]]:		[[crm]]:  Pings
+[[NJ]]:		[[Mentor]]: 
 [[Lrn]]:		RunSys, 
+
+- Burnish DL credentials
+
+
 
 
 

@@ -66,8 +66,8 @@
 | 8     |                     |                    |                          |                      |                 |
 | 9     |                     |                    |                          |                      |                 |
 | 0     |                     |                    |                          |                      |                 |
-| F1    | WORK view           |                    | PTREE view               |                      |                 |
-| F2    |                     |                    |                          |                      |                 |
+| F1    | WORK view           |                    |                          |                      |                 |
+| F2    | UP TASK view        |                    |                          |                      |                 |
 | F3    |                     |                    |                          |                      |                 |
 | F4    |                     |                    |                          |                      |                 |
 | F5    |                     |                    | PREV daily note          |                      |                 |
