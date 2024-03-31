@@ -201,4 +201,5 @@ JUMPS:
 - [j WORK](spot://j~WORK): 
 - [j DAILY](spot://j~DAILY): 
 - [j VIEW](spot://j~VIEW): 
+- [j UP](spot://j~UP): 
 

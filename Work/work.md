@@ -1,26 +1,18 @@
-
-## TOP
-Q1: +Patents, +Tips, POC, ?Min, ?Halos, 
+R## NOW
+[OKRs](spot://j~okrs):			!Q2
 - ! Miguel discussion
-[OKRs](spot://j~okrs):			[[cv OKRs]]!Q2
+## TOP
+Q1: +Patents, +Tips, VidSent, ?Min, ?Halos, ShotChart
 [[NJ]]:			>Res, >Coursera
-[Assess](spot://assess):		>look
 [RP](spot://rp):			^Grz POC
 [[patents]]:		^M Sketches
-  - Patents
-  Work on Patents together w/ team during Feb
 [[LCM]]:			>do & metrics
-- define metrics
 [[@Shreshth Saxena]]: 
    [show](https://www.showpass.com/livelab-10th-anniversary-the-innocents/), Signup, SOW, Brainstorming session, 
+
+[Assess](spot://assess):		>look
 [[CV Data]]:		Pie-chart
-
-[Racquet](spot://racquet): 		>Greg results
-Tracking Priorities:
-  - LOE estimate tracking.
-  - Process
-
-Shot Charts
+-  [Cost Analysis](https://docs.google.com/document/d/1WYVwgCfHYk6wC8pGFo68t_vAju_oczbSeBTS-zba-XI/edit?usp=drive_link):	Cost Per Game Analysis
 
 Life Time
 - contract approval cycle
@@ -29,18 +21,12 @@ Life Time
 - PRs
 
 
--  [Cost Analysis](https://docs.google.com/document/d/1WYVwgCfHYk6wC8pGFo68t_vAju_oczbSeBTS-zba-XI/edit?usp=drive_link):	Cost Per Game Analysis
 - Product Spec
 - Run AWS instance
 
 - Ask jack about [[SV Roadmap]]
 - Run AWS instance
-
-
-
 - Security Doc
-
-
 - Running the pipeline takes time
 
 ## TRACKING

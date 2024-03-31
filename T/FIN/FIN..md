@@ -1,4 +1,4 @@
-
+[[FIN]][[FIN Log#2024-03-24 Financial Advisors|:]] Facet
 # LATER
 - [ ] Check Allspring
 - [ ] 

@@ -5,6 +5,8 @@ n:: no prefix.	Dated entries without any typing prefix
 
 | Date       | File                                | Notes                                                                                                                             |
 | ---------- | ----------------------------------- | --------------------------------------------------------------------------------------------------------------------------------- |
+| 2024-03-30 | [[@Facet]]                              | Call them cold                                                                                                                    |
+| 2024-03-30 | [[Daily Schedules]]                     | Buckets                                                                                                                           |
 | 2024-03-30 | [[MED]]                                 | MISC                                                                                                                              |
 | 2024-03-29 | [[@Shreshth Saxena]]                    | SOW                                                                                                                               |
 | 2024-03-29 | [[Daily Schedules]]                     | Tightly scheduled morning                                                                                                         |

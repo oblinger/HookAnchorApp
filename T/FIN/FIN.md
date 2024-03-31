@@ -1,5 +1,5 @@
 
-:: [[FIN Log]], [[FIN.]],  [[FIN Topics]],  [[FIN Retire]], 
+-  [[FIN.]], [[FIN Log]], [[FIN Topics]],  [[FIN Retire]], 
 
 - [[FIN Tracking]]:  [[FIN Recurring]],  [[FIN Bills]],  [[FIN Budgeting]], [[FIN Flows]],  [[FIN Mint]],
 
@@ -310,7 +310,7 @@ CAPE 17.1
 - Macaw casinos
 - HSBC? Global, China first
 - DDD Digital Data Divide
-## Macro Investing Strategies
+## Macro Investing Strat
 ### Dan's Process
 #### PER-COUNTRY ANALYSIS
 #### CAPE BY COUNTRY    --  http://www.starcapital.de/research/stockmarketvaluation?SortBy=Shiller_PE

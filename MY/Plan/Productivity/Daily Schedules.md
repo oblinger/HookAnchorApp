@@ -1,5 +1,5 @@
 
-## BUCKET TIME BLOCKS
+## BUCKETS
 
 SUMMARY 2023-Q3
 
@@ -87,6 +87,32 @@ EVENING:  5:	6: - 11
 - FUN:	2:
 
 
+
+### 2024-03-30  Buckets
+
+
+10h			from 7:30am to 5:30pm
+- 2h - DAILY	-  Tidy+Wake(20), Nap(30), Exercise(40), Poop 
+- 2h - GAP		-	Lounge, Browse, Eat
+- 2h - CHEW 	-  Email, First, Slack, Repeat, Papers
+- 2h - COMS	-  Meetings, Zoom, Huddle, Phone
+- 2h - MAIN	-  MIT, Prime, Work
+  
+5h 				from 6p until 11p
+- 2h - FAM	-  Dinner, Play, Bedtime
+- 3h - EVE		-	Fried, Self, Out, Call, Learn, Q2
+
+
+
+
+
+- 2h - COMS	-  Meetings, Zoom, Huddle, Phone
+
+- 2h - CHEW 	-  Email, First, Slack, Repeat, Papers
+- 
+- 2h - DAILY	-  Tidy+Wake(20), Nap(30), Exercise(40), Poop 
+
+- 2h - GAP		-	Lounge, Browse, Eat
 ### 2023-00-00 buckets
 
 2   DAILY: Daily(Tidy, Wake, Nap, Exercise), Fam(Eli, Home)

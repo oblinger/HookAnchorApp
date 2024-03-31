@@ -1,3 +1,6 @@
+- signup for Facet
+- Ready for camping
+
 - Avanti
 - Car Repair
 - car title

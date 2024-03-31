@@ -20,6 +20,14 @@
 
 LINKS:  [[Babysitting]], [[2022-05 ELI next school]], 
 
+## QUOTES
+
+SELF-REGULATION MECHANISMS
+- It is important for infants and children to develop early their own ways of handling stress and difficulty. 
+- Such self-regulating mechanisms must be acquired and practiced throughout early childhood, 
+	- by both orchid and dandelion children, so that they are ready to cope
+
+
 ## HOW TO
 ### YOUTUBE KIDS SHARING
 - Copy URLs from WAITING into Eli (here) and into an email to oblinger@gmail

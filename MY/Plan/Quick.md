@@ -1,8 +1,5 @@
 - Tax Info
-- signup for Facet
-- Ready for camping
 
-- cancel seeking alpha
 - fin advisor (fix fee guys)
 - fin flow
 - taxes citibank

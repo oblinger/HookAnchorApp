@@ -13,46 +13,14 @@
 
 **[[REPEAT|REP]]:**  [[Tidy]], [[Friday]], [[Habit]], 
 
-LONG:	
 **[[PLAN]]:**	
-
-
-	-
-Dropped	-
-EBT	-
-Friday	-
-Fried Later	-
-Habit	-
-Lrn	-
-Meta List	-
-Mission	-
-Ping	-
-Plan	-
-Productivity	-
-BKT Tree	-
-Repeat	-
-Quarterly	-
-Social	-
-Spirit	-
-active	-
-external	-
-fried	-
-Per	-
-Prof	-
-fun	-
-gap	-
-hack	-
-later	-
-full	-
-now	-
-prime	-
-q2	-
-other	-
-todo	-
-quick	-
-archive	-
-wings	-
-Rocks	-
-Up Task	-
-Rest	-
-Up All
+ OVER:	[[Friday]], [[Habit]], [[Repeat]], [[Productivity]], [[Self Evergreen|Ever]] 
+ LST1:	[[Quick]], [[Todo]], [[Now]], [[Active]], [[Scratch]] 
+ LST2: [[Full]], [[Prime]] 
+ LST3:	[[Quarterly]], [[Later]], [[Wings]], [[Dropped]], [[Archive]] 
+ LONG:	[[Rocks]], [[Q2]], [[Lrn]], [[Spirit]], [[Actualize]], [[Mission]]
+ COM:  [[CRM]], [[Ping]], [[Mentor]] 
+ FUN:	[[Fun]], [[Social]], [[Fried]], [[Gap]], [[Hack]], [[Fried Later]] 
+ FAM:	[[Family]], [[EBT]] 
+ ROOT:	[[BKT Tree]], [[BKT]], [[Meta List]], [[Up All]], [[Up Task]] 
+ MISC: [[EBT]], [[external]],  [[other]] 
