@@ -1,8 +1,10 @@
 
+:: [[My Spot]]
+
 :: [[KBD Notion]]
 
 < [[MY]] 
-- [[KM]],   [[MyHacks]],  
+- [[KM]],   [[My Hacks]],  
 - [[KBD Shortcuts]],   [[Disks]],  
 
 - [[DOC SYNC COMMANDS]],   [[DOC SYNC]]

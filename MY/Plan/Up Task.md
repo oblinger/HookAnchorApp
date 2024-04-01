@@ -5,8 +5,8 @@
  [PLAN](spot://view~planning): [[plan]] 
 
 **[[SELF]]:**
-[[Prof]]:	[[NJ]], [[CRM]],
-[[Per]]: 	[[Home]], [[Spirit]], [[Lrn]],
+Prof:	[[NJ]], [[CRM]],
+Per: 	[[Home]], [[Spirit]], [[Lrn]],
 .       [[Q2]],[[Med]] 
 [[Fun]]:	[[Out]],[[Hack]],[[Fried]],[[Calls]] 
 

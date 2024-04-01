@@ -1,4 +1,5 @@
 
+[[Roots\|Mon Jan 1  2024 ]]  	[[Roots#[[Roots]] [[Kmr Folder\\|--]] Toplevel roots for all pages]]  
 [[Top\|Mon Jan 1  2024 ]]  	[[Top#[[Meta]]		TOP LEVEL INFO ORGANIZATIONS]]  
 [[Top\|Mon Jan 1  2024 ]]  	[[Top#[[Roots]] [[Kmr Folder\\|--]] Top level roots for all pages]]  
 [[Top\|Mon Jan 1  2024 ]]  	[[Top#[[Plan]] [[Plan Folder\\|--]] Short and long term planning]]  
@@ -754,7 +755,7 @@
 [[EOCA\|Fri Jul 7  2023 ]]  	[[EOCA#2023-06-21  quote: most intelligent species is changing hand]]  
 [[EOCA\|Fri Jul 7  2023 ]]  	[[EOCA#2023-06-03 Response to Paul M]]  
 [[TT\|Fri Jul 7  2023 ]]  	[[TT#LOG]]  
-[[MyHacks\|Fri Jul 7  2023 ]]  	[[MyHacks#--- SYNC]]  
+[[My Hacks|Fri Jul 7  2023 ]]  	[[My Hacks#--- SYNC]]  
 [[Buckets\|Fri Jul 7  2023 ]]  	[[Buckets#LOG]]  
 [[SCR Note\|Fri Jul 7  2023 ]]  	[[SCR Note#2023-07-07  Nick note (stressed)]]  
 [[SCR Note\|Fri Jul 7  2023 ]]  	[[SCR Note#2023-07-07  Older]]  

@@ -5,4 +5,6 @@ JUMPS:
 - [my mgr NOTES](spot://my~mgr~NOTES): 
 - [My Staff](spot://My~Staff): 
 - [MY Stuff](spot://MY~Stuff): 
+- [My Hacks](spot://My~Hacks): 
+- [My Spot](spot://My~Spot): 
 

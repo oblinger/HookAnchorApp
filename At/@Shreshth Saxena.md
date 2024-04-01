@@ -2,7 +2,9 @@
 shreshth.stan@gmail.com
 
 - https://beatlab.mcmaster.ca/assets/Shreshth_Saxena_CV.pdf
-- 
+
+- [Saxena](spot://saxena)
+
 ### TODO
 - NDA, Ripling setup
 - Brainstorming session with Greg, Dan & Juan

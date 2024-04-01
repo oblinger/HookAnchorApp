@@ -1,4 +1,6 @@
 
+:: [[j PROJ]],   [[j P]]
+
 :: [[j UP]]
 
 :: [[j DAILY]],   [[j VIEW]]

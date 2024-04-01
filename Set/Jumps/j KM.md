@@ -7,4 +7,5 @@ JUMPS:
 - [KM Overview](spot://KM~Overview): 
 - [KM Shell](spot://KM~Shell): 
 - [KM.](spot://KM.): 
+- [KM script](spot://KM~script): 
 

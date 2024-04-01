@@ -1,4 +1,7 @@
 - Tax Info
+- Maxim's review
+- Bio & website
+- Ask Sean
 
 - fin advisor (fix fee guys)
 - fin flow
