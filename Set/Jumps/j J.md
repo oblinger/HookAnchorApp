@@ -203,4 +203,5 @@ JUMPS:
 - [j VIEW](spot://j~VIEW): 
 - [j UP](spot://j~UP): 
 - [j P](spot://j~P): 
+- [j PROJ](spot://j~PROJ): 
 

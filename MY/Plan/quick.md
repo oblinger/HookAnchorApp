@@ -4,7 +4,6 @@
 - Ask Sean
 
 - fin advisor (fix fee guys)
-- fin flow
 - taxes citibank
 - get boston tix
 - Q1 outputs; Q2 plans

@@ -16,6 +16,8 @@
 :: [[Resume Rewrite]]
 
 :: [[Resume Rewrite]]
+
+:: [[Resume Rewrite]]
 [[Resume]]:		Rewrite
 
 - [Resume Master](spot://resume~master) 

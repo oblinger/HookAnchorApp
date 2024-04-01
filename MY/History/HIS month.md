@@ -755,7 +755,7 @@
 [[EOCA\|Fri Jul 7  2023 ]]  	[[EOCA#2023-06-21  quote: most intelligent species is changing hand]]  
 [[EOCA\|Fri Jul 7  2023 ]]  	[[EOCA#2023-06-03 Response to Paul M]]  
 [[TT\|Fri Jul 7  2023 ]]  	[[TT#LOG]]  
-[[My Hacks|Fri Jul 7  2023 ]]  	[[My Hacks#--- SYNC]]  
+[[MyHacks\|Fri Jul 7  2023 ]]  	[[MyHacks#--- SYNC]]  
 [[Buckets\|Fri Jul 7  2023 ]]  	[[Buckets#LOG]]  
 [[SCR Note\|Fri Jul 7  2023 ]]  	[[SCR Note#2023-07-07  Nick note (stressed)]]  
 [[SCR Note\|Fri Jul 7  2023 ]]  	[[SCR Note#2023-07-07  Older]]  

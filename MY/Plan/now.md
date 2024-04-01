@@ -3,6 +3,7 @@
 
 - oakleys. (800) 403-7449
 
+- Run AWS instance
 - physic+homgpy
 	physics model of homography
 ### Track

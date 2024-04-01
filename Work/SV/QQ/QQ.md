@@ -1,36 +1,5 @@
 
-:: [[LLM Tools Workshop]],   [[Michael Rampdown]],   [[Sell Car]]
-
-:: [[LLM Tools Workshop]],   [[Michael Rampdown]],   [[Sell Car]]
-
-:: [[LLM Tools Workshop]],   [[Michael Rampdown]],   [[Sell Car]]
-
-:: [[LLM Tools Workshop]],   [[Michael Rampdown]],   [[Sell Car]]
-
-:: [[LLM Tools Workshop]],   [[Michael Rampdown]],   [[Sell Car]]
-
-:: [[LLM Tools Workshop]],   [[Michael Rampdown]],   [[Sell Car]]
-
-:: [[LLM Tools Workshop]],   [[Michael Rampdown]],   [[Sell Car]]
-
-:: [[LLM Tools Workshop]],   [[Michael Rampdown]],   [[Sell Car]]
-
-:: [[LLM Tools Workshop]],   [[Michael Rampdown]],   [[Sell Car]]
-
-:: [[LLM Tools Workshop]],   [[Michael Rampdown]],   [[Sell Car]]
-
-:: [[LLM Tools Workshop]],   [[Michael Rampdown]],   [[Sell Car]]
-
-:: [[LLM Tools Workshop]],   [[Michael Rampdown]],   [[Sell Car]]
-
-:: [[LLM Tools Workshop]],   [[Michael Rampdown]],   [[Sell Car]]
-
-:: [[LLM Tools Workshop]],   [[Michael Rampdown]],   [[Sell Car]]
-
-:: [[LLM Tools Workshop]],   [[Michael Rampdown]],   [[Sell Car]]
-
-:: [[2023-10-01 Special Olympics]]
-- [[QQ Folder]] 
+:: [[2023-10-01 Special Olympics]],   [[2023-12 Sell Car]],   [[2024-01 Michael Rampdown]]
 
 # QUICK - QUICK work projects
 

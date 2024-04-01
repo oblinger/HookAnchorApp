@@ -9,7 +9,7 @@ By May-1
 
 - Burnish DL credentials
 
-
+OpenAI, Microsoft, Google, Meta, Nvidia, Tesla, Apple, or Amazon’s
 
 
 
