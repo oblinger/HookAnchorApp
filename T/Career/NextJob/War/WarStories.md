@@ -83,14 +83,16 @@ SMART - Specific, Measurable, Achievable, Relevant, Time-based
 
 
 
-# STORIES: LARGE
-## = SPORTS VISIO TURN AROUND
+# TOPIC STORIES: LARGE
+## = TURN AROUND
 
-### Context - Joined late (after 2 years) w/ large equity & mandate to turn company around
+### Turn around at SPORTS VISIO
+
+#### Context - Joined late (after 2 years) w/ large equity & mandate to turn company around
 Dumpster Fires EVERYWHERE:
 - **Re-Org** --> Initially SW and CV leads still reported to CEO.  -->  whole SW org reported to me.
 - **Low level tracking** in a spreadsheet  --> Jira tracking & sprint planning
-- No written **High level targets** --> Top roadmap, A-round targets
+- No written **High level targets** --> Top roadmap, A-round targets, OKR methodology
 - **Excessive Scope** --> 2apps.   (started as 8 separate interfaces being worked on by 4 full time devs and 4 part time devs.)
 - **App Stability** Issues --> Feature freeze + Fellowship of the bug + External Testing team to drive bug capture & fixing to 100%
 - **Bug tracking** in slack --> Jira + Bug board 
@@ -99,18 +101,18 @@ Dumpster Fires EVERYWHERE:
 - Added **Test Automation** --> Circle CI; Unit testing frameworks; key functional tests & slowly started adding coverage
 - **Key Strategic "Ingest" Gap** --> Owned solution analysis matrix & tasked ICs under my leads
 - Ad hoc **Dev Ops** --> P2P flow + Cloud Formation
-- mid-level planing
+- **Mid-level planning** --> Fully ordered backlog of features complete at two sprints out.  two week
 
 
 
-### No JIRA (Low Planning)
+#### No JIRA (Low Planning)
 Teams had not been doing any ticket tracking and were using spreadsheets
 - They had just hired an junior PM as I joined.
 - We had her start attending sprint planning meetings, initially she just documented activity using JIRA
 - Over time she started prompting for Jira tickets during "planning". but planning was way too in the weeds.
 - --> Instituted 1-page sprint over view broken out by person.  This greatly helped one-sprint at a time planning abstraction.
 
-### No Targets (High Level Planning)
+#### No Targets (High Level Planning)
 
 
 

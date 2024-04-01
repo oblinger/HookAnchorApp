@@ -1,7 +1,7 @@
 
 By May-1
 [[NJ]]:		Quick Apply
-[[NJ]]:		WarStory adding
+[[NJ]]:		WarStory adding [[WarStories]] 
 [[NJ]]:		[[Resume Rewrite]]  ()
 [[NJ]]:		[[crm]]:  Pings
 [[NJ]]:		[[Mentor]]: 

@@ -1,4 +1,4 @@
-R## NOW
+ **NOW**
 [OKRs](spot://j~okrs):			!Q2
 - ! Miguel discussion
 ## TOP
