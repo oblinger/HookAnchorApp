@@ -1,5 +1,4 @@
 
-:: [[SV]]
  **NOW**
 [OKRs](spot://j~okrs):			!Q2
 ## TOP
@@ -11,7 +10,7 @@ Q1: +Patents, +Tips, VidSent, ?Min, ?Halos, ShotChart
 [[@Shreshth Saxena]]: ^Brainstorm   [show](https://www.showpass.com/livelab-10th-anniversary-the-innocents/), 
 Life Time
 	- contract approval cycle
-	- contacts
+	- contacts    >[[qq]] 
 	- call tree
 	- PRs
 
@@ -21,7 +20,7 @@ Life Time
 [Pivo](https://docs.google.com/document/d/16ee8QGaTCChGW7TC3k0W0sQNyyByygOGzwIw_aUkkpU/edit):			!! timeline
 DOCS:			Casual Metrics
 [[journaling]] 
-
+[[SV]] 
 
 
 

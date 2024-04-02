@@ -2,14 +2,12 @@
 - Maxim's review
 - Bio & website
 - Ask Sean
+- get boston tix
 
 - fin advisor (fix fee guys)
 - taxes citibank
-- get boston tix
-- Q1 outputs; Q2 plans
 - bkt
 
-- paying for noom
 - fix easy passwords
 - change PW
 - Greg's data dependency tracking

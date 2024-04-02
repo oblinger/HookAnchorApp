@@ -1,7 +1,42 @@
 
-:: [[2023-10-01 Special Olympics]],   [[2023-12 Sell Car]],   [[2024-01 Michael Rampdown]]
+:: [[2023-10-01 Special Olympics]]
 
+  
 # QUICK - QUICK work projects
+
+### 2024-04-01  Contact info
+
+
+Team:
+I am excited that we are moving from a company with prototypes into a company with scaled products in the field.  Hooray!!  But this means we need to shift into high tempo product 
+We are getting i
+
+
+
+Email:  dan@sportsvisio.com
+Phone: +1 415-494-9499
+Whatsapp: +1 415-494-9499
+Skype:  oblio00. (rarely checked)
+Emergency:  +1 408-480-0508 (wife Qingling)
+
+Contact Order
+- Slack/email preferred defaults
+- Text for faster response
+- Call for fastest response
+Alternatives & Emergency
+- Whatsapp/Skype available for intl
+  But not checked regularly
+
+Waking Hours:
+8am-10pm PST (11a-1a EST)
+Normal Hours:
+8am-5:30pm PST. (11a-9pm EST)
+
+
+As we are moving toward scaled production we need to have emergency contacts for folks for worst case situation.
+	Normally we will be following our call trees and willn
+
+
 
 ### 2024-03-22  Life Time
 
@@ -28,6 +63,9 @@ My thought is that if we don't yet have a plan for an explicit acceptance step f
 ### 2024-03-22  CONTACTS
 
 
+
+### [[2024-01 Michael Rampdown]] 
+
 ### 2023-12-20  Generalize system
 
 
@@ -38,6 +76,8 @@ Data: Entity=> Dict[column, value]
 Columns:  computed or static
 
 
+
+###  [[2023-12 Sell Car]] 
 
 ### 2023-08-13  INJEST
 

@@ -1,4 +1,5 @@
 
+[[WP\|Mon Jan 1  2024 ]]  	[[WP#<[[Untyped]]]]  
 [[Roots\|Mon Jan 1  2024 ]]  	[[Roots#[[Roots]] [[Kmr Folder\\|--]] Toplevel roots for all pages]]  
 [[Top\|Mon Jan 1  2024 ]]  	[[Top#[[Meta]]		TOP LEVEL INFO ORGANIZATIONS]]  
 [[Top\|Mon Jan 1  2024 ]]  	[[Top#[[Roots]] [[Kmr Folder\\|--]] Top level roots for all pages]]  
@@ -105,7 +106,7 @@
 [[SciFi\|Thu Dec 28  2023]]  	[[SciFi#SINGULARITY TRAP]]  
 [[SciFi\|Thu Dec 28  2023]]  	[[SciFi#ANCILLARY - Ann Leckie]]  
 [[Sleep\|Thu Dec 28  2023]]  	[[Sleep#Acupressure For Sleep]]  
-[[Travel Lists\|Thu Dec 28  2023]]  	[[Travel Lists#Trip]]  
+[[Trip Lists|Thu Dec 28  2023]]  	[[Trip Lists#Trip]]  
 [[Travel\|Thu Dec 28  2023]]  	[[Travel#LOG]]  
 [[uniform1_vocabulary\|Thu Dec 28  2023]]  	[[uniform1_vocabulary#### VOCABULARY ###]]  
 [[uniform1_vocabulary\|Thu Dec 28  2023]]  	[[uniform1_vocabulary#REST]]  

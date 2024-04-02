@@ -1,15 +1,14 @@
 - [[@Facet]] signup
-- Ready for camping
+- Ready camping
+- James $11/hr
 
-
+- car title
+- Car Repair
 - fin flow
 - Avanti
-- Car Repair
-- car title
-- look at loan doc
 - !! friday
-- soap dispenser
 
+- paying for noom
 
 - Scan Now list
 - get license
