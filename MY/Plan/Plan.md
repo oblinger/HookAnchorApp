@@ -1,4 +1,6 @@
 
+:: [[Friday Dates]]
+
 **[[PLAN]]:**	
  OVER:	[[Friday]], [[Habit]], [[Repeat]], [[Productivity]], [[Self Evergreen|Ever]] 
  LST1:	[[Quick]], [[Todo]], [[Now]], [[Active]], [[Scratch]] 

@@ -11,7 +11,6 @@ DIR [CV Google](https://docs.google.com/document/d/1nGCRGOZVxvIzbM0MFpspTaCtF-f8
 - [JIRA](https://software-engineering-team.atlassian.net/jira/software/projects/AIT/boards/25) 
 - [CONFLUENCE](https://software-engineering-team.atlassian.net/wiki/spaces/SVAI/overview) 
 - [[CVP]] - 
-- [[CV Jira Webpage]] - 
 
 
 ## Foo

@@ -1,6 +1,6 @@
 
  **NOW**
-[OKRs](spot://j~okrs):			!Q2
+[OKRs](spot://okr~matrix):			!Q2
 ## TOP
 Q1: +Patents, +Tips, VidSent, ?Min, ?Halos, ShotChart
 [[NJ]]:			>war, rewrite, mentor
@@ -10,7 +10,7 @@ Q1: +Patents, +Tips, VidSent, ?Min, ?Halos, ShotChart
 [[@Shreshth Saxena]]: ^Brainstorm   [show](https://www.showpass.com/livelab-10th-anniversary-the-innocents/), 
 Life Time
 	- contract approval cycle
-	- contacts    >[[qq]] 
+	- contacts    > [[qq]] 
 	- call tree
 	- PRs
 

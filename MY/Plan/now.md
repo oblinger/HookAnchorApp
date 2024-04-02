@@ -1,41 +1,16 @@
-- jason buddy
-- AF james
 
-- oakleys. (800) 403-7449
-
+- Sarthi's rate
 - Run AWS instance
-- physic+homgpy
-	physics model of homography
-### Track
-- contacts
-	- team members email phone contact order
+- may 20-22 trip
+- Juan's Q1 rpt out
 
-## Soon
-- [[SV]]
-- Sarthi call 
+## Next
+- Juan's Q2 rpt
 
-
-- Pivo&Rec Tickets on their own board (or just in icebox)
-- Strat doc
-- Beta cust 						(Parent/Gym)
-- Ask Team about GPT
-- [Issues](https://docs.google.com/document/d/1rHDeKRHHuT4w0q9V8uICIqAt9EzYiUVxdzq85DNzKt0/edit#heading=h.pjeww53fox8q) - CV issues
-- [[CV.]] Vis
-- [[CV.]] datasets
-- CV low road Sum slide
-      all the hard things we need to solve in order 
-
-#to-do pay for transcriptions
-
-- [[Meta CRM]] 
-
+## Review
+- CV [Issues](https://docs.google.com/document/d/1rHDeKRHHuT4w0q9V8uICIqAt9EzYiUVxdzq85DNzKt0/edit#heading=h.pjeww53fox8q) 
+- [[CV Notes]]
 - [[Cookie Clicker]] 
-- AI section of Jack Doc
-- end2end w/ V0 of 2/4 then 3/4 directions
-
-- Env & Game ID for the already annotated game
-- Get new game annotated
-- Push 2 prod
 
 
 

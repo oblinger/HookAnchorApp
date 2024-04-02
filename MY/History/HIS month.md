@@ -1,4 +1,9 @@
 
+[[DATED\|Mon Jan 1  2024 ]]  	[[DATED# <[[Top]]]]  
+[[Note\|Mon Jan 1  2024 ]]  	[[Note# <[[Top]]<[[DATED]]]]  
+[[Text\|Mon Jan 1  2024 ]]  	[[Text#<[[Untyped]]]]  
+[[Text\|Mon Jan 1  2024 ]]  	[[Text#<[[Untyped]]]]  
+[[Untyped\|Mon Jan 1  2024 ]]  	[[Untyped#<[[Untyped]]]]  
 [[WP\|Mon Jan 1  2024 ]]  	[[WP#<[[Untyped]]]]  
 [[Roots\|Mon Jan 1  2024 ]]  	[[Roots#[[Roots]] [[Kmr Folder\\|--]] Toplevel roots for all pages]]  
 [[Top\|Mon Jan 1  2024 ]]  	[[Top#[[Meta]]		TOP LEVEL INFO ORGANIZATIONS]]  
@@ -106,7 +111,7 @@
 [[SciFi\|Thu Dec 28  2023]]  	[[SciFi#SINGULARITY TRAP]]  
 [[SciFi\|Thu Dec 28  2023]]  	[[SciFi#ANCILLARY - Ann Leckie]]  
 [[Sleep\|Thu Dec 28  2023]]  	[[Sleep#Acupressure For Sleep]]  
-[[Trip Lists|Thu Dec 28  2023]]  	[[Trip Lists#Trip]]  
+[[Travel Lists\|Thu Dec 28  2023]]  	[[Travel Lists#Trip]]  
 [[Travel\|Thu Dec 28  2023]]  	[[Travel#LOG]]  
 [[uniform1_vocabulary\|Thu Dec 28  2023]]  	[[uniform1_vocabulary#### VOCABULARY ###]]  
 [[uniform1_vocabulary\|Thu Dec 28  2023]]  	[[uniform1_vocabulary#REST]]  

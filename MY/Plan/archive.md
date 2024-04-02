@@ -1,3 +1,5 @@
+s- get license
+- Scan Now list
 - soap dispenser
 - inst PRs
 

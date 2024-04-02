@@ -3,13 +3,8 @@
 - Bio & website
 - Ask Sean
 - get boston tix
+- Oakleys. (800) 403-7449
 
 - fin advisor (fix fee guys)
 - taxes citibank
 - bkt
-
-- fix easy passwords
-- change PW
-- Greg's data dependency tracking
-- Michael's tracking
-- docs of saved pictures

@@ -25,19 +25,20 @@
 
 #### Now
 - Exiting stress about schools.
-- Improving efficiency @work
+- Efficiency jumps @work
 - Not exercising
+- Relationship really in trouble
 #### Last90
 - Getting notably more efficient w/ my days
 - 
 #### Next 90
-- HEALTH: Getting Zone2 + HIIT each week; 183
-- NJ24: Weekly objective.
+- HEALTH: Getting Zone2 + HIIT each week; 180-183
+- NJ24: Weekly objective.  Stretch:  Done by 1pm
 - BALLS: Drive delegation & execution efficiency 
 - ML Research -
 - Did an interview
 - Rekindle
-
 #### Next Year
 - New Job
-- 
+- Real social life
+- Becoming a DL guy

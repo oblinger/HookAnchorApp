@@ -2,13 +2,13 @@
 
 ![[Friday.numbers]]
 
-
+[[Friday Dates]] 
 
 
 
 # OLDER INFO
 
-eviews-Isa-San_Francisco_California.html) - Cow Hallow Italian
+Reviews-Isa-San_Francisco_California.html) - Cow Hallow Italian
 
 - dan and susan:  biron. hotel.  
 - Cow hallow italian

@@ -1,19 +1,25 @@
 - [[@Facet]] signup
 - Ready camping
 - James $11/hr
+- [[Friday]] 
+- Clean
+- !! friday
 
 - car title
 - Car Repair
 - fin flow
 - Avanti
-- !! friday
-
 - paying for noom
 
-- Scan Now list
-- get license
+
+- fix easy passwords
+- change PW
+- Greg's data dependency tracking
+- Michael's tracking
+- docs of saved pictures
+
 - 
-- may 20th - may 22nd trip
+
 
 - shoes research
 - [ ] praveen contacts for chatting

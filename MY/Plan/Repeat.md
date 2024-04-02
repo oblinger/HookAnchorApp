@@ -1,14 +1,14 @@
 
-| WEEKLY        |                                                                                                                                                   |
-| ------------- | ------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **HOT LISTS** | [[SimpleNote 1Pass\|SimpleNote]] [Reminders](https://www.icloud.com/#reminders)  [[Mint 1pass\|Mint]]  [AF-email](https://mail.google.com/mail/u/1/#inbox)   |
-|               | Bk  Nails  Nose  Groc AudioMemos [[Friday]]                                                           |
-|               | [[Reflections]]                                                                                                                                        |
-| **HOUSE**     | Room: [My-]Desks/Bin/Shelf  House: Pass                                                                                                           |
-| **TODO**      | Clean F1 page for week.  [[quick]] & [[todo]]                                                                                                 |
-| **PLAN**      | Week plan in Top                                                                                                                                  |
-| **IN2**       | Quick scrub                                                                                                                                       |
-|               |                                                                                                                                                   |
+| WEEKLY        |                                                                                                                                                            |
+| ------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **HOT LISTS** | [[SimpleNote 1Pass\|SimpleNote]] [Reminders](https://www.icloud.com/#reminders)  [[Mint 1pass\|Mint]]  [AF-email](https://mail.google.com/mail/u/1/#inbox) |
+|               | Bk  Nails  Nose  Groc AudioMemos [[Friday]]                                                                                                                |
+|               | [[Reflections]]                                                                                                                                            |
+| **HOUSE**     | Room: [My-]Desks/Bin/Shelf  House: Pass                                                                                                                    |
+| **TODO**      | Clean F1 page for week.  [[quick]] & [[todo]]                                                                                                              |
+| **PLAN**      | Week plan in Top                                                                                                                                           |
+| **IN2**       | Quick scrub                                                                                                                                                |
+|               |                                                                                                                                                            |
 
 
 | MONTHLY     |                                                      |

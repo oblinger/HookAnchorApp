@@ -1,3 +1,14 @@
+### 2024-04-01  Control from topdown lists
+
+- TOP DOWN CLEAN UP -
+  Strong feeling of control from organizing / cleaning lists from top down.
+- RAPID DELEGATE - 
+  Strong feeling of velocity from rapidly tasking and delegating stuff to team members.
+- top MANAGERS BRIONES & JUAN - 
+  Velocity from setting up Briones and Juan.
+
+
+
 ### 2024-03-04  Occasional Loss of Traction;  now building BKT tree
 
 - Sometimes I am pretty effective, and sometimes I will just loose 4 hours.

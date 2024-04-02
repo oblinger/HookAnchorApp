@@ -12,6 +12,7 @@ By May-1
 OpenAI, Microsoft, Google, Meta, Nvidia, Tesla, Apple, or Amazon’s
 
 
+- [[Meta CRM]] 
 
 	- Interview Prep
 	- xoogler
