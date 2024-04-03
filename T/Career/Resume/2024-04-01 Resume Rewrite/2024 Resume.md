@@ -3,7 +3,7 @@
 
 
 
-Objective:
+**Objective**:
 
 A technical leadership role where my expertise in AI/ML/CV it put to daily use driving advanced tech projects that are a central mission for my company.
 
@@ -34,9 +34,9 @@ AEOLUS ROBOTICS
 
 Lead development of [Human-like Elder-care Robot:](https://www.washingtonpost.com/news/innovations/wp/2018/01/11/this-robotic-maid-takes-us-one-step-closer-to-the-jetsons/?noredirect=on) capable of manipulating human tools and directly serving the elderly.
 
-==> **Led successful 13-month** **“Hail Mary” build** of a new team, a new robot, and new tech in time for [**CES 2017**](https://www.youtube.com/watch?v=IzHb6G97tLw)—
+==> **Led successful 13-month** **“Hail Mary” ground-up build** of a new team, a new robot, and new AI in time for [**CES 2017**](https://www.youtube.com/watch?v=IzHb6G97tLw)—
 
-==> Help secure $16M in funding (based in part on this success)
+==> Help secure $16M in funding (based on this success)
 
 ==> **Built 60-member,** 8-discipline follow-the-sun HW / SW **R&D organization** (40+ PhDs, 20+ engineers) remotely distributed across 6 continents.
 

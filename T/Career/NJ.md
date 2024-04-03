@@ -2,7 +2,7 @@
 By May-1
 [[NJ]]:		Quick Apply
 [[NJ]]:		WarStory adding [[WarStories]] 
-[[NJ]]:		[[Resume Rewrite]]  ()
+[[NJ]]:		[[2024-04-01 Resume Rewrite|Re-Res]] 
 [[NJ]]:		[[crm]]:  Pings
 [[NJ]]:		[[Mentor]]: 
 [[Lrn]]:		RunSys, 

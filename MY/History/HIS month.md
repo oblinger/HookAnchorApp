@@ -1,4 +1,12 @@
 
+[[VC ORG\|Mon Jan 1  2024 ]]  	[[VC ORG#  <[[ORG]]]]  
+[[DAY\|Mon Jan 1  2024 ]]  	[[DAY#<[[Untyped]]]]  
+[[Day\|Mon Jan 1  2024 ]]  	[[Day#<[[Untyped]]]]  
+[[JOURNAL\|Mon Jan 1  2024 ]]  	[[JOURNAL#<[[DATED]]]]  
+[[Journal\|Mon Jan 1  2024 ]]  	[[Journal#<[[DATED]]]]  
+[[LOG\|Mon Jan 1  2024 ]]  	[[LOG#[[Logs]]]]  
+[[Logs\|Mon Jan 1  2024 ]]  	[[Logs#[[SV]] [[SV Folder\\|--]] SPORTS VISIO STUFF]]  
+[[Meeting\|Mon Jan 1  2024 ]]  	[[Meeting#<[[Untyped]]]]  
 [[DATED\|Mon Jan 1  2024 ]]  	[[DATED# <[[Top]]]]  
 [[Note\|Mon Jan 1  2024 ]]  	[[Note# <[[Top]]<[[DATED]]]]  
 [[Text\|Mon Jan 1  2024 ]]  	[[Text#<[[Untyped]]]]  

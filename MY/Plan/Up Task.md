@@ -8,18 +8,15 @@
 Prof:	[[NJ]], [[CRM]],
 Per: 	[[Home]], [[Spirit]], [[Lrn]],
 .       [[Q2]],[[Med]] 
-[[Fun]]:	[[Out]],[[Hack]],[[Fried]],[[Calls]] 
 
-
-**[[REPEAT|REP]]:**  [[Tidy]], [[Friday]], [[Habit]], 
 
 **[[PLAN]]:**	
- OVER:	[[Friday]], [[Habit]], [[Repeat]], [[Productivity]], [[Self Evergreen|Ever]] 
- LST1:	[[Quick]], [[Todo]], [[Now]], [[Active]], [[Scratch]]  
- LST2:	[[Quarterly]], [[Later]], [[Wings]], [[Dropped]], [[Archive]] 
- LONG:	[[Rocks]], [[Q2]], [[Lrn]], [[Spirit]], [[Actualize]], [[Mission]]
- COM:  [[CRM]], [[Ping]], [[Mentor]] 
- FUN:	[[Fun]], [[Social]], [[Fried]], [[Gap]], [[Hack]], [[Fried Later]] 
- FAM:	[[Family]], [[EBT]] 
- ROOT:	[[BKT]], [[Meta List]], [[Up All]], [[Up Task]] 
+ **[[Repeat|REP]]**:	[[Friday]], [[Habit]], [[Productivity]], [[Self Evergreen|Ever]] 
+ **[[NOW]]**:	[[Quick]], [[Todo]], [[Active]], [[Scratch]]  
+ **[[Later|LATR]]**:	[[Quarterly]], [[Wings]], [[Dropped]], [[Archive]] 
+ **[[Q2]]**:	[[Rocks]], [[Lrn]], [[Spirit]], [[Actualize]], [[Mission]]
+ **[[Coms|COM]]**:  [[CRM]], [[Ping]], [[Mentor]], [[Calls]] 
+ **[[FUN]]**:	[[Social]], [[Fried]], [[Gap]], [[Hack]], [[Fried Later]] 
+ **[[Family|FAM]]**:	[[EBT]] 
+ **[[BKT]]**:	[[Meta List]], [[Up All]], [[Up Task]] 
  MISC: [[EBT]], [[external]],  [[other]], [[Full]], [[Prime]] 

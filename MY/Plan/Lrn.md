@@ -1,14 +1,19 @@
 By May-1
 [[Lrn]]:	RunSys
-[[Lrn]]:	[[Coursera Notes|Coursera]] DL course
+Lrn:	Papers?
 
+[[Lrn]]:	[[Coursera Notes|Coursera]] DL course
 [[Lrn]]:	[[Transformers|Tfr]]  family of algs
 
 Hugging-face tutorial
 PyTorch
 
 
-
+- [[Coursera Notes]]* - Complete Coursera Deep Learning Course
+- HACK+  Hack some tensor flow
+- Find best FAANG prep (1) class.
+- Read mgt books
+- Read benjio papers
 
 ### **BOOKS TO CONSIDER**
 - The Pragmatic Engineer - 

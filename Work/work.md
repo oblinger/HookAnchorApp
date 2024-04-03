@@ -22,9 +22,12 @@ DOCS:			Casual Metrics
 [[journaling]] 
 [[SV]] 
 
+## _
 
+- Ask Greg what was his idea for testing if basketball stats will ever work.  give ground truth
 
-
+- inst templated folder
+- cube construction
 
 
 

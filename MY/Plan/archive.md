@@ -1,3 +1,11 @@
+- [ ] meeting w/ Sam Jason
+- [ ] audio polycom for team
+- [ ] ask team about chatGPT
+- [ ] how to train our team?
+- sarthi (intro interview)
+-
+- Tax Info
+Equinimity
 s- get license
 - Scan Now list
 - soap dispenser

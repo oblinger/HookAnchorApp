@@ -1,4 +1,6 @@
 
+:: [[j FRIDAY]]
+
 :: [[j PROJ]],   [[j P]]
 
 :: [[j UP]]

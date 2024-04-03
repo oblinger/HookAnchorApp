@@ -1,7 +1,7 @@
 
 [[FIN]]:	Ready [[2024-01 Merrill Retirement Planning|Merrill]] 
 [[NJ]]:	Think
-[[Lrn]]:	
+[[Lrn]]:	Run system
 [[CRM]]: 	Sean
 
 [[MED]]:	Daily Exercise [[Habit]].
@@ -11,3 +11,7 @@
 
 [[Fun]]: 
 [[Spirit]]: 
+
+
+
+[[Mentor]]:	Get them!

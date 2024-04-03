@@ -6,3 +6,27 @@
 ### 2024-03-30  Call them cold
 
 [888-321-5909](tel:+18883215909)
+
+
+Patrick Bay Senior 
+
+
+- Retirement planning
+- Portfolio mangement
+
+
+Professional Investment Management
+
+Wholistic financial planner
+All certified financial planner
+All are fiduciary 
+Tax planning
+Employer benefits
+
+Flat Fee Model
+- $2K - Core - 
+- $3K - Plus - 2-3 people
+- $6K - Full - 
+
+
+3B assets under management

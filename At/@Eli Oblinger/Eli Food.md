@@ -18,8 +18,9 @@ MAYBE
 - Glass Noodles 
 
 VEG
+- Sweet Potatoes, 
 - Broccoli, Chin G Beans, Edamame, Peas, Corn,
-- Broccoli, Cauliflower, Green Peas, Celery, Edamame, Carrots, sweet Potato, 
+- Cauliflower, Green Peas, Celery, Edamame, Carrots, 
 - Black-Beans
 
 INSTAPOT

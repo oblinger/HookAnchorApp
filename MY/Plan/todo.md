@@ -18,19 +18,10 @@
 - Michael's tracking
 - docs of saved pictures
 
-- 
+- praveen contacts for chatting
+- Braz boss info
 
 
-- shoes research
-- [ ] praveen contacts for chatting
-- [ ] Braz boss info
-- [ ] sarthi (intro interview)
-- [ ] war story writing
-
-- [ ] how to train our team?
-- [ ] ask team about chatGPT
-- [ ] audio polycom for team
-- [ ] meeting w/ Sam Jason
 
 
 - [ ] [[MED.]] - [[MED VO2Max]] 

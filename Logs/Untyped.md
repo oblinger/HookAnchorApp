@@ -5,6 +5,7 @@ n:: no prefix.	Dated entries without any typing prefix
 
 | Date       | File                                | Notes                                                                                                                             |
 | ---------- | ----------------------------------- | --------------------------------------------------------------------------------------------------------------------------------- |
+| 2024-04-02 | [[Daily]]                               | Equanimity                                                                                                                        |
 | 2024-04-01 | [[Reflections]]                         | Control from topdown lists                                                                                                        |
 | 2024-04-01 | [[QQ]]                                  | Contact info                                                                                                                      |
 | 2024-03-30 | [[@Facet]]                              | Call them cold                                                                                                                    |

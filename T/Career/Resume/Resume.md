@@ -1,28 +1,8 @@
 
-:: [[Resume Rewrite]]
+:: [[2024-04-01 Resume Rewrite]]
 
-:: [[Resume Rewrite]]
+[[2024-04-01 Resume Rewrite|RES]]: Rewrite
 
-:: [[Resume Rewrite]]
-
-:: [[Resume Rewrite]]
-
-:: [[Resume Rewrite]]
-
-:: [[Resume Rewrite]]
-
-:: [[Resume Rewrite]]
-
-:: [[Resume Rewrite]]
-
-:: [[Resume Rewrite]]
-
-:: [[Resume Rewrite]]
-
-:: [[Resume Rewrite]]
-
-:: [[Resume Rewrite]]
-[[Resume]]:		Rewrite
 
 - [Resume Master](spot://resume~master) 
 

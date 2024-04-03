@@ -90,9 +90,13 @@ SMART - Specific, Measurable, Achievable, Relevant, Time-based
 
 #### Context - Joined late (after 2 years) w/ large equity & mandate to turn company around
 Dumpster Fires EVERYWHERE:
-- **Re-Org** --> Initially SW and CV leads still reported to CEO.  -->  whole SW org reported to me.
-- **Low level tracking** in a spreadsheet  --> Jira tracking & sprint planning
-- No written **High level targets** --> Top roadmap, A-round targets, OKR methodology
+- MANAGEMENT
+	- **Re-Org** --> Initially SW and CV leads still reported to CEO.  -->  whole SW org reported to me.
+- SCOPE
+- PLANNING
+	- **Low level tracking** in a spreadsheet  --> Jira tracking & sprint planning
+	- No written **High level targets** --> Top roadmap, A-round targets, OKR methodology
+	- Used OKRs 
 - **Excessive Scope** --> 2apps.   (started as 8 separate interfaces being worked on by 4 full time devs and 4 part time devs.)
 - **App Stability** Issues --> Feature freeze + Fellowship of the bug + External Testing team to drive bug capture & fixing to 100%
 - **Bug tracking** in slack --> Jira + Bug board 
