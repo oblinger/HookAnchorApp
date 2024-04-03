@@ -27,10 +27,9 @@
 - Exiting stress about schools.
 - Efficiency jumps @work
 - Not exercising
-- Relationship really in trouble
+- Relationship really is in trouble
 #### Last90
 - Getting notably more efficient w/ my days
-- 
 #### Next 90
 - HEALTH: Getting Zone2 + HIIT each week; 180-183
 - NJ24: Weekly objective.  Stretch:  Done by 1pm

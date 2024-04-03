@@ -2,7 +2,7 @@
  **NOW**
 [OKRs](spot://okr~matrix):			!Q2
 ## TOP
-Q1: +Patents, +Tips, VidSent, ?Min, ?Halos, ShotChart
+Q1: 			Tips, VidSent, ?Min, ?Halos, ShotChart
 [[NJ]]:			>war, rewrite, mentor
 [RP](spot://rp):			^Grz POC
 [[patents]]:		^M Sketches

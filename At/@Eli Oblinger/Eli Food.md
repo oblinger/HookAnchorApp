@@ -1,11 +1,5 @@
 
-- Potatoes??
-- Snap Peas, 
-- Woo Swun, Jiaobai, Garlic Sprouts, Lotus?
-
-- Eggs, ground beef, Pasta
-
-MAIN 
+**MAIN** 
 - CARBS: Pasta, RiceBalls, Pizza, Pancakes, Sweet Potatoes
 	- PASTA: Ground-beef&Eggs, Marinara, 
 	- RICE: Seaweed sandwich, 
@@ -14,10 +8,10 @@ MAIN
 	- PORK: Short Ribs
 - EGG: Ground Beef
 
-MAYBE
+**MAYBE**
 - Glass Noodles 
 
-VEG
+**VEG**
 - Sweet Potatoes, 
 - Broccoli, Chin G Beans, Edamame, Peas, Corn,
 - Cauliflower, Green Peas, Celery, Edamame, Carrots, 
@@ -30,3 +24,10 @@ ORDER
 - Pizza
 
 
+
+
+- Potatoes??
+- Snap Peas, 
+- Woo Swun, Jiaobai, Garlic Sprouts, Lotus?
+
+- Eggs, ground beef, Pasta

@@ -1,3 +1,4 @@
+- miguel opinion on UX
 - Bio & website
 - Ask Sean
 - get boston tix

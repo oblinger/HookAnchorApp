@@ -1,8 +1,11 @@
 (see [[Logs]] for sequential stuff in my KMR)
 
-## = IN CONTACTS  (Master In Contacts)
-### - ALL lst
-List of phone book lists (Out of date)
+# IN CONTACTS  (Master In Obsidian)
+## - ALL Lst
+List of phone book lists
+[[Travel]] 
+
+(Out of date)
 Activities	- Things to do
 Budget	- MonthlyBudget
 Bus		- Change of address list

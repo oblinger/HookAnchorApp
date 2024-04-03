@@ -1,4 +1,8 @@
 
+[[2024-W02\|Wed Jan 17  2024]]  	[[2024-W02#W2   2024-01-08   [[2024-W1\\|<<]] [[2024-W3\\|>>]]]]  
+[[belief\|Tue Jan 2  2024 ]]  	[[belief#2024-01-02  test example]]  
+[[LCM\|Tue Jan 2  2024 ]]  	[[LCM#2024-01-02  foo foo foo]]  
+[[2024-W01\|Tue Jan 2  2024 ]]  	[[2024-W01#W1   2024-01-01   [[2023-W52\\|<<]] [[2024-W2\\|>>]]]]  
 [[VC ORG\|Mon Jan 1  2024 ]]  	[[VC ORG#  <[[ORG]]]]  
 [[DAY\|Mon Jan 1  2024 ]]  	[[DAY#<[[Untyped]]]]  
 [[Day\|Mon Jan 1  2024 ]]  	[[Day#<[[Untyped]]]]  

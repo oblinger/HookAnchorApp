@@ -204,4 +204,5 @@ JUMPS:
 - [j UP](spot://j~UP): 
 - [j P](spot://j~P): 
 - [j PROJ](spot://j~PROJ): 
+- [j FRIDAY](spot://j~FRIDAY): 
 
