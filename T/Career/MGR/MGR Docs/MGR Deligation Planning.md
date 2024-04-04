@@ -1,7 +1,18 @@
 
 
+## Four Phases of Deligation
+https://christopherrjones.com/four-phases-of-delegation/
 
-### Proj planning notes for Vik and Steph
+1. Direct Instruction
+2. Investigate and Propose
+3. Act and Report
+4. Full Delegation -- Complete handoff
+
+IP -> AR
+ ^     v
+DI     FD
+
+## Proj planning notes for Vik and Steph
 
 Super cool.
 

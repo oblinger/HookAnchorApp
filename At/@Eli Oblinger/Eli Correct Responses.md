@@ -1,5 +1,7 @@
 
 
+## __
+
 
 [Emotional Development In Preschooler](https://www.webmd.com/parenting/preschooler-emotional-development) -
 
@@ -32,3 +34,16 @@ And as Miss Amanda says, the a key consequence is withdraw of our attention.
 (4) consequence
 
 don't reward with attention
+
+
+## Don't ask why he does not want to go to school
+
+- when they don't want to go to school.
+- reason:  they will make stuff up based on the words they know.
+
+
+## Don't ask what they want, when you only want one answer
+
+
+
+## Make sure he feels "seen" 

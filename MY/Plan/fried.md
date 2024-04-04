@@ -12,7 +12,7 @@ fix history month
 - [ ] budget big transfers list	
 - [ ] giphy grab
 
-- [ ] [[Trip Lists]]: pills; snacks
+- [ ] [[Travel Lst]]: pills; snacks
 - [ ] Update CRM workflow
 - [ ] Get logins for MyHealth
 - [ ] Process mom's Eli educational funds.

@@ -1,3 +1,4 @@
+- silverware & spices
 - miguel opinion on UX
 - Bio & website
 - Ask Sean

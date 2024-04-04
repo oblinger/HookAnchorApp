@@ -3,7 +3,8 @@
 # IN CONTACTS  (Master In Obsidian)
 ## - ALL Lst
 List of phone book lists
-[[Travel]] 
+[[Travel Lst]] 
+[[Camping Lst]] 
 
 (Out of date)
 Activities	- Things to do

@@ -7,6 +7,9 @@
 B-BAG:	Pistachios, Mangos, Water
 Luggage:	Scotch, Coffee, Quinoa, Oatmeal
 
+#### Ski
+TAHOE: Humidifier, Caramex, Sled
+
 
 #### Book Bag
 ELE:		USB-C 2 (micro-2-apple, RJ45, HTMI2thunder, 			
@@ -18,13 +21,10 @@ DAILY:		ToothBrush/Paste, Clippers, HairGel, Comb
 PILLS:		Tums, ?reflux?, Tylenol, Ibuprofen, Temazepam, Doxy Succinate, Melatonin, Astorvastin, NeckExtender 
 OTHER:	ID-info, EarPlugs, Sunscreen, Coconut, Headlamp, 
 
-#### Special
 
 
-#### SKI
-TAHOE: Humidifier, Caramex, Sled
 
-
+#### Older
 
 CHK: Passport.Toilet,Nuts,Scotch,Water,Pillow,Coffee
 WEAR: Sox,Und,Hank,Shirt
