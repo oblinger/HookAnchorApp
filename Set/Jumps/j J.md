@@ -205,4 +205,5 @@ JUMPS:
 - [j P](spot://j~P): 
 - [j PROJ](spot://j~PROJ): 
 - [j FRIDAY](spot://j~FRIDAY): 
+- [j NOISE](spot://j~NOISE): 
 

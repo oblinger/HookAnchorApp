@@ -21,8 +21,12 @@ Life Time
 DOCS:			Casual Metrics
 [[journaling]] 
 [[SV]] 
-
 ## _
+
+@Scott Byers / @matias:  We are thinking of a version of halos where we would dynamically recompute the halos depending upon the roster as dynamically edit
+
+
+Homography  (physics model)
 
 - Ask Greg what was his idea for testing if basketball stats will ever work.  give ground truth
 

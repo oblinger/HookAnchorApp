@@ -83,33 +83,46 @@ SMART - Specific, Measurable, Achievable, Relevant, Time-based
 
 
 
-# TOPIC STORIES: LARGE
+# TOPIC STORIES
 ## = TURN AROUND
 
-### Turn around at SPORTS VISIO
+### SPORTS VISIO Turn Around
 
 #### Context - Joined late (after 2 years) w/ large equity & mandate to turn company around
-Dumpster Fires EVERYWHERE:
-- MANAGEMENT
-	- **Re-Org** --> Initially SW and CV leads still reported to CEO.  -->  whole SW org reported to me.
+Burnt $4M - no AI product, SW product was an unusable brick.  
+Great CEO vision and investor relations but dumpster Fires EVERYWHERE in SW team.
+
+- PERSONNEL 
+	- **Self Re-Org** --> Initially SW and CV leads still reported to CEO.  -->  whole SW org reported to me.
+	- **Two Level Mgt** & **Split VP Eng** into (Dir Eng & PM)
+	- Many **layoffs**.  Hired QA team; 
+	- **Hiring pipe** "interviewed" recruiting firms & hired 2.  built key paid tests & tracking/triage flows.
 - SCOPE
+	- **Excessive Scope** --> 2apps.   (started as 8 separate interfaces being worked on by 4 full time devs and 4 part time devs.)
+	- **App Stability** Issues --> Feature freeze + Fellowship of the bug + External Testing team to drive bug capture & fixing to 100%
 - PLANNING
 	- **Low level tracking** in a spreadsheet  --> Jira tracking & sprint planning
+	- **Mid-level planning** --> Fully ordered backlog of features complete at two sprints out.  two week
 	- No written **High level targets** --> Top roadmap, A-round targets, OKR methodology
-	- Used OKRs 
-- **Excessive Scope** --> 2apps.   (started as 8 separate interfaces being worked on by 4 full time devs and 4 part time devs.)
-- **App Stability** Issues --> Feature freeze + Fellowship of the bug + External Testing team to drive bug capture & fixing to 100%
-- **Bug tracking** in slack --> Jira + Bug board 
-- **Poor testing** --> Added field testing + regression testing + fellowship of the bug + Weekly tracking of six KPIs
-- No **Regression testing** --> Tests on major apps; Diversity tests; 
-- Added **Test Automation** --> Circle CI; Unit testing frameworks; key functional tests & slowly started adding coverage
-- **Key Strategic "Ingest" Gap** --> Owned solution analysis matrix & tasked ICs under my leads
-- Ad hoc **Dev Ops** --> P2P flow + Cloud Formation
-- **Mid-level planning** --> Fully ordered backlog of features complete at two sprints out.  two week
+	- Instituted pervasive use of **OKRs** per department. 
+	- No push-back / leadership shaping CEO vision into executable path.
+- EXECUTION
+	- **Bug tracking** in slack --> Jira + Bug board.   (Fellow ship of the bug)
+	- **Poor testing** --> Added field testing + regression testing + fellowship of the bug + Weekly tracking of six KPIs
+	- No **Regression testing** --> Tests on major apps; Diversity tests; 
+	- Added **Test Automation** --> Circle CI; Unit testing frameworks; key functional tests & slowly started adding coverage
+	- Ad hoc **Dev Ops** --> P2P flow + Cloud Formation
+- STRATEGIC
+	- **Key Strategic "Ingest" Gap** --> Owned solution analysis matrix & tasked ICs under my leads.
+	- Multi-sport shift
+- CV TEAM
+	- **Missed every deliverable** date and every metric target ever set.
+	- **Replaced 100% of CV team**:  Vishal, Chris, Sarthi, Michael, (Fong)  with  Greg-Martin-Maxim-Juan-James.
+	- Built ML infrastructure -- ML-flow,
+	- Created all execution processes:  Jira, CI-testing, Regression, Collaborative API planning 
+	- Systematic 
 
-
-
-#### No JIRA (Low Planning)
+#### No Jira (Low Planning)
 Teams had not been doing any ticket tracking and were using spreadsheets
 - They had just hired an junior PM as I joined.
 - We had her start attending sprint planning meetings, initially she just documented activity using JIRA
@@ -117,6 +130,33 @@ Teams had not been doing any ticket tracking and were using spreadsheets
 - --> Instituted 1-page sprint over view broken out by person.  This greatly helped one-sprint at a time planning abstraction.
 
 #### No Targets (High Level Planning)
+
+
+### AEOLUS Turn Around
+- PERSONNEL
+	- Interview XXXX in 9 months & hired 40+ PhDs & 20 Eng
+- ARCHITECTURE
+	- 
+
+## PRODUCT DELIVERY
+
+### PRODUCT DELIVERY - Largest Scale -  >$3B at AF - Largest scale deployments
+### PRODUCT DELIVERY - Advanced Products - Dexterous Robot; Full-AI Solar Planner; CV BB stats
+
+### PRODUCT DELIVERY - In The Weeds Execution - SportVisio BB
+
+
+## GENERATIVE AI - DL
+
+### SV - Court Registration
+
+### SV - 
+
+
+
+## LEADERSHIP ???
+
+
 
 
 
