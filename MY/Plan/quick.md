@@ -1,3 +1,5 @@
+- project to take advantage of credits: Azure, GoogleCredits
+- tax info in her hands
 - silverware & spices
 - miguel opinion on UX
 - Bio & website

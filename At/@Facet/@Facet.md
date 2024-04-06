@@ -30,3 +30,31 @@ Flat Fee Model
 
 
 3B assets under management
+
+
+
+
+Retirement plan -
+- "what if" spreadsheet
+
+Design Portfolio
+- specific mutual funds
+
+
+Advanced Tax Strategy
+- 
+
+Trust
+
+
+Keep the "what if" in later years
+- Re-balancing as needed.  if interest rates
+
+
+Money @ Facet
+ETFs in stocks and bonds
+
+- Can tell me what to execute externally
+
+
+

@@ -1,5 +1,6 @@
 
 #pp.   [Head of Vendor Ops](chrome://newtab/) [[@Sports Visio]]
+ ([mgutie01@gmail.com](mailto:mgutie01@gmail.com)) or via [LinkedIn](https://www.linkedin.com/in/migueloraragutierrez/).
 
 # LOG
 
