@@ -1,7 +1,9 @@
 
 - [[2024-01 Merrill Retirement Planning]],
 
-
+# INFO
+## Numbers
+- SSN. $3256 @ 65.  $4581 @ 70.
 
 
 # Log

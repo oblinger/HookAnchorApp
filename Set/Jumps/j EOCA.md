@@ -19,4 +19,7 @@ JUMPS:
 - [EOCA Agent](spot://EOCA~Agent): 
 - [EOCA Civilizing tendency](spot://EOCA~Civilizing~tendency): 
 - [EOCA Definitions](spot://EOCA~Definitions): 
+- [EOCA Corp AI](spot://EOCA~Corp~AI): 
+- [EOCA Digital Native](spot://EOCA~Digital~Native): 
+- [EOCA Plausible Paths](spot://EOCA~Plausible~Paths): 
 

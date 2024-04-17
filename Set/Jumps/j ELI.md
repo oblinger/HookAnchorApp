@@ -12,4 +12,5 @@ JUMPS:
 - [Eli Math](spot://Eli~Math): 
 - [Eli Schools](spot://Eli~Schools): 
 - [Eli Sleep Training](spot://Eli~Sleep~Training): 
+- [ELI Quotes](spot://ELI~Quotes): 
 

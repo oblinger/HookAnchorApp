@@ -7,6 +7,8 @@ By May-1
 [[NJ]]:		[[Mentor]]: 
 [[Lrn]]:		RunSys, 
 
+- find interesting hangout places
+
 - Burnish DL credentials
 
 OpenAI, Microsoft, Google, Meta, Nvidia, Tesla, Apple, or Amazon’s

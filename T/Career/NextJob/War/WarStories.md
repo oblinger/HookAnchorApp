@@ -1,4 +1,4 @@
-y
+
 ## TODO
 
 - [ ] elevator pitch who you are (ask QL)
@@ -137,6 +137,23 @@ Teams had not been doing any ticket tracking and were using spreadsheets
 	- Interview XXXX in 9 months & hired 40+ PhDs & 20 Eng
 - ARCHITECTURE
 	- 
+
+
+## = CONFLICT
+
+### BOSS TASKING CONFLICTS - Jason Scattered & Tasking
+- TASKING
+	- OVER SCOPING - Startups need to do more with less and fast -- still CEO over tasking is counter productive.
+	- ==> #1 - Agreed to 'ship date' ordering, then built schedules based on that evolving ordering.
+	- OVER SCOPING - Showed number of implicit deliverables and maintained product was too high for headcount.
+	- ==> #2 - Got multiple efforts mothballed so we could focus on our mission critical deployments.
+	- SHOOT FROM THE HIP TASKING - Give me a POC for tennis in a day or two.
+	- "this will not be a day or two it will be the better part of a week from most of the team"
+	- ==> #3 - Aggressively moved forward (did planning alone).  Then made all activity very visible on day by day basis.
+	-            He eventually shut it down after several days and accepted a smaller deliverable.
+	- ==> #3b Extended sprint a week to accommodate, then let him see quarterly deliverables slip a week.
+	          he accepted it all, and I think it made him more appreciative of the full POC costs; mid-sprint changes costs.
+
 
 ## PRODUCT DELIVERY
 

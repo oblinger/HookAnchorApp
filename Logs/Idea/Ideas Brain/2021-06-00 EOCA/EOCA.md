@@ -1,18 +1,26 @@
 
+:: [[EOCA Corp AI]],   [[EOCA Digital Native]],   [[EOCA Plausible Paths]],   [[EOCA What Happens Now]],   [[Prime Path]]
+
 ## >
+ORG PAGES
+- [[EOCA Root]] 
+- [[Paths]] 
+
 ACTIVE
 - [[EOCA End Run (Cyber Model)]] - 
 
-- [[EOCA Root]] 
+
+
+
 [[Leviathan]] 
 
-:: [[EOCA What Happens Now]]
+:: 
 - [[EOCA Last Best Hope]] - 
 - [[EOCA Consciousness]] 
 
 
 - [[FF-prize]], [[LimitsOnAlignment]],  
-- [[Prime Path]]		-  
+- 	-  
   [MindSlavery](MindSlavery.md)
   
   

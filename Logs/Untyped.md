@@ -5,6 +5,11 @@ n:: no prefix.	Dated entries without any typing prefix
 
 | Date       | File                                | Notes                                                                                                                             |
 | ---------- | ----------------------------------- | --------------------------------------------------------------------------------------------------------------------------------- |
+| 2024-04-14 | [[ELI Quotes]]                          | Your Fault                                                                                                                        |
+| 2024-04-12 | [[Palestinians]]                        | Dillion updates to the plan                                                                                                       |
+| 2024-04-09 | [[QQ]]                                  | Minutes soft constraint                                                                                                           |
+| 2024-04-09 | [[QQ]]                                  | DAT integration ^dat                                                                                                              |
+| 2024-04-08 | [[@Charles Tyrwhitt]]                   | Exchange                                                                                                                          |
 | 2024-04-03 | [[Daily]]                               | marriage                                                                                                                          |
 | 2024-04-02 | [[Daily]]                               | Equanimity                                                                                                                        |
 | 2024-04-01 | [[Reflections]]                         | Control from topdown lists                                                                                                        |
@@ -539,7 +544,7 @@ n:: no prefix.	Dated entries without any typing prefix
 | 2022-03-21 | [[OLD 2022 Weekly]]                     |                                                                                                                                   |
 | 2022-03-19 | [[Crunchbase Notes]]                    | === AMY SEARCH STRATEGY ===                                                                                                       |
 | 2022-03-19 | [[Uniting America]]                     | Uniting America On The Issues Of Racial Fairness and Racial Disparity                                                             |
-| 2022-03-19 | [[Paths]]                               | VC Areas                                                                                                                          |
+| 2022-03-19 | [[NJ22 Paths]]                          | VC Areas                                                                                                                          |
 | 2022-03-18 | [[Uniting America]]                     | letter to steve                                                                                                                   |
 | 2022-03-18 | [[COM Campaigns OLDER]]                 | Aniket Recruiters                                                                                                                 |
 | 2022-03-15 | [[Phone]]                               | Qingling's income and taxes                                                                                                       |
@@ -547,16 +552,16 @@ n:: no prefix.	Dated entries without any typing prefix
 | 2022-03-15 | [[OLD 201x Weekly]]                     |                                                                                                                                   |
 | 2022-03-15 | [[OLD 2022 Weekly]]                     |                                                                                                                                   |
 | 2022-03-14 | [[OLD 2022 Weekly]]                     | Q2 GOALS                                                                                                                          |
-| 2022-03-13 | [[Paths]]                               | inside google                                                                                                                     |
-| 2022-03-13 | [[Paths]]                               | zzzz                                                                                                                              |
+| 2022-03-13 | [[NJ22 Paths]]                          | inside google                                                                                                                     |
+| 2022-03-13 | [[NJ22 Paths]]                          | zzzz                                                                                                                              |
 | 2022-03-13 | [[MED Sleep]]                           | Frequent Sleeping Pills                                                                                                           |
 | 2022-03-10 | [[Searches]]                            | COMPANIES ===                                                                                                                     |
 | 2022-03-10 | [[Searches]]                            | ML COMPANIES ===                                                                                                                  |
-| 2022-03-09 | [[Paths]]                               | Post Amy Kruse Thinking                                                                                                           |
+| 2022-03-09 | [[NJ22 Paths]]                          | Post Amy Kruse Thinking                                                                                                           |
 | 2022-03-04 | [[MKT]]                                 | From the top                                                                                                                      |
-| 2022-02-22 | [[Paths]]                               | Latest Thinking                                                                                                                   |
+| 2022-02-22 | [[NJ22 Paths]]                          | Latest Thinking                                                                                                                   |
 | 2022-02-16 | [[2017-01 Forum]]                       | Email based first system.                                                                                                         |
-| 2022-02-15 | [[Paths]]                               | Choice Space                                                                                                                      |
+| 2022-02-15 | [[NJ22 Paths]]                          | Choice Space                                                                                                                      |
 | 2022-02-08 | [[COM Campaigns OLDER]]                 | Meetups to consider                                                                                                               |
 | 2022-02-00 | [[FirstTouch]]                          | Recruiter - Refer Anyone - LOW HIT RATE                                                                                           |
 | 2022-01-29 | [[COM Campaigns OLDER]]                 | L1-VC-ask-advice                                                                                                                  |
@@ -566,7 +571,7 @@ n:: no prefix.	Dated entries without any typing prefix
 | 2022-01-27 | [[COM Campaigns OLDER]]                 | Sources                                                                                                                           |
 | 2022-01-27 | [[COM Campaigns OLDER]]                 | Recruiter outreach #2  (NOT FINISHED)                                                                                             |
 | 2022-01-20 | [[Journal Old]]                         | PATHS, spiritual dimension                                                                                                        |
-| 2022-01-20 | [[Paths]]                               | PATHS, spiritual dimension                                                                                                        |
+| 2022-01-20 | [[NJ22 Paths]]                          | PATHS, spiritual dimension                                                                                                        |
 | 2022-01-16 | [[Brain3]]                              | Using GANs                                                                                                                        |
 | 2022-01-14 | [[Journal Old]]                         | morning thoughts                                                                                                                  |
 | 2022-01-11 | [[Brain3]]                              | combining DL and logic                                                                                                            |
@@ -576,31 +581,31 @@ n:: no prefix.	Dated entries without any typing prefix
 | 2022-01-04 | [[DEEP_BOOT]]                           | WAYS TO BREAK FREE                                                                                                                |
 | 2022-01-04 | [[Journal Old]]                         | My purpose                                                                                                                        |
 | 2022-01-04 | [[FailedMessages]]                      | CTO Outreach Email                                                                                                                |
-| 2022-01-04 | [[Paths]]                               | My purpose                                                                                                                        |
+| 2022-01-04 | [[NJ22 Paths]]                          | My purpose                                                                                                                        |
 | 2022-01-02 | [[DEEP_BOOT]]                           | Key Capabilities                                                                                                                  |
 | 2022-00-00 | [[FailedMessages]]                      | JOE Quora                                                                                                                         |
 | 2021-12-28 | [[DEEP_BOOT]]                           | Deep Introspection Claim                                                                                                          |
 | 2021-12-25 | [[Journal Old]]                         | Friends Audit                                                                                                                     |
 | 2021-12-17 | [[COM Campaigns OLDER]]                 | RECRUITER OUTREACH                                                                                                                |
 | 2021-12-01 | [[Journal Old]]                         | PATHS cash                                                                                                                        |
-| 2021-12-01 | [[Paths]]                               | PATHS cash                                                                                                                        |
+| 2021-12-01 | [[NJ22 Paths]]                          | PATHS cash                                                                                                                        |
 | 2021-12-00 | [[MKT]]                                 |                                                                                                                                   |
 | 2021-12-00 | [[DYL]]                                 | DAN WORK (Written for Nina discussion)                                                                                            |
 | 2021-12-00 | [[Resume]]                              | Jared Resume writing notes                                                                                                        |
 | 2021-11-30 | [[Journal Old]]                         | PATHS GOOGLE vs R-ZERO vs UF-now                                                                                                  |
-| 2021-11-30 | [[Paths]]                               | PATHS GOOGLE vs R-ZERO vs UF-now                                                                                                  |
+| 2021-11-30 | [[NJ22 Paths]]                          | PATHS GOOGLE vs R-ZERO vs UF-now                                                                                                  |
 | 2021-11-29 | [[DEEP_BOOT]]                           | Deep Learning + Bootstrapping Microtheory                                                                                         |
 | 2021-11-29 | [[Journal Old]]                         | Talk w QL                                                                                                                         |
 | 2021-11-25 | [[Journal Old]]                         | PATHS TABLE SUMMARY                                                                                                               |
 | 2021-11-25 | [[Journal Old]]                         | PATHS MISSION                                                                                                                     |
-| 2021-11-25 | [[Paths]]                               | PATHS TABLE SUMMARY                                                                                                               |
-| 2021-11-25 | [[Paths]]                               | PATHS MISSION                                                                                                                     |
+| 2021-11-25 | [[NJ22 Paths]]                          | PATHS TABLE SUMMARY                                                                                                               |
+| 2021-11-25 | [[NJ22 Paths]]                          | PATHS MISSION                                                                                                                     |
 | 2021-11-21 | [[Journal Old]]                         | NINA WORK                                                                                                                         |
 | 2021-11-17 | [[Resume]]                              | Linked-in 'about' examples                                                                                                        |
 | 2021-11-14 | [[Journal Old]]                         | Ikigai - my "passion" - IDEAS                                                                                                     |
-| 2021-11-14 | [[Paths]]                               | Ikigai - my "passion" - IDEAS                                                                                                     |
+| 2021-11-14 | [[NJ22 Paths]]                          | Ikigai - my "passion" - IDEAS                                                                                                     |
 | 2021-11-09 | [[Journal Old]]                         | PATHS (Luis note)                                                                                                                 |
-| 2021-11-09 | [[Paths]]                               | PATHS (Luis note)                                                                                                                 |
+| 2021-11-09 | [[NJ22 Paths]]                          | PATHS (Luis note)                                                                                                                 |
 | 2021-11-07 | [[Journal Old]]                         | FINE - Truths                                                                                                                     |
 | 2021-11-04 | [[Journal Old]]                         | FINE - Dreaming big with Google                                                                                                   |
 | 2021-11-01 | [[Journal Old]]                         | FINE journal -                                                                                                                    |
@@ -608,7 +613,7 @@ n:: no prefix.	Dated entries without any typing prefix
 | 2021-10-27 | [[Journal Old]]                         | FINE passion questions / KM trajectory                                                                                            |
 | 2021-10-24 | [[Journal Old]]                         | >>> BIG   -- NEXT JOB --                                                                                                          |
 | 2021-10-24 | [[Journal Old]]                         | Dan Fine KM Summary                                                                                                               |
-| 2021-10-24 | [[Paths]]                               | BIGGER Dan Fine KM Summary                                                                                                        |
+| 2021-10-24 | [[NJ22 Paths]]                          | BIGGER Dan Fine KM Summary                                                                                                        |
 | 2021-10-07 | [[Journal Old]]                         | Jon discussion about Taxes                                                                                                        |
 | 2021-10-07 | [[Journal Old]]                         | NINA                                                                                                                              |
 | 2021-10-07 | [[AF Sale]]                             | Jon discussion about Taxes                                                                                                        |
@@ -647,12 +652,12 @@ n:: no prefix.	Dated entries without any typing prefix
 | 2021-08-03 | [[Journal Old]]                         | >>> -AF-  -- NEXT JOB -- AF Sale <<<                                                                                              |
 | 2021-08-03 | [[AF Sale]]                             | >>> -AF-  -- NEXT JOB -- AF Sale <<<                                                                                              |
 | 2021-07-31 | [[Journal Old]]                         | The Past and The Future - Summary for Nick                                                                                        |
-| 2021-07-31 | [[Paths]]                               | The Past and The Future - Summary for Nick                                                                                        |
+| 2021-07-31 | [[NJ22 Paths]]                          | The Past and The Future - Summary for Nick                                                                                        |
 | 2021-07-29 | [[Journal Old]]                         | >>> CALLS -- NEXT JOB <<<                                                                                                         |
 | 2021-07-29 | [[Journal Old]]                         | "New Programming Language" CTO                                                                                                    |
 | 2021-07-28 | [[Journal Old]]                         | Meeting with Nick and Michael                                                                                                     |
 | 2021-07-28 | [[Journal Old]]                         | DECISION PATH                                                                                                                     |
-| 2021-07-28 | [[Paths]]                               | DECISION PATH                                                                                                                     |
+| 2021-07-28 | [[NJ22 Paths]]                          | DECISION PATH                                                                                                                     |
 | 2021-07-27 | [[Journal Old]]                         | Nick's request info                                                                                                               |
 | 2021-07-25 | [[Journal Old]]                         | Flighty Freddie                                                                                                                   |
 | 2021-07-25 | [[DYL]]                                 | Flighty Freddie                                                                                                                   |
@@ -690,7 +695,7 @@ n:: no prefix.	Dated entries without any typing prefix
 | 2021-05-10 | [[Journal Old]]                         | LIFE VIEW                                                                                                                         |
 | 2021-05-10 | [[Journal Old]]                         | PATHS                                                                                                                             |
 | 2021-05-10 | [[DYL]]                                 | LIFE VIEW                                                                                                                         |
-| 2021-05-10 | [[Paths]]                               | PATHS                                                                                                                             |
+| 2021-05-10 | [[NJ22 Paths]]                          | PATHS                                                                                                                             |
 | 2021-05-06 | [[Journal Old]]                         | >>> BOOK  -- DESIGNING YOUR LIFE <<<                                                                                              |
 | 2021-05-06 | [[Journal Old]]                         | WORK VIEW                                                                                                                         |
 | 2021-05-06 | [[DYL]]                                 | WORK VIEW                                                                                                                         |
@@ -702,11 +707,11 @@ n:: no prefix.	Dated entries without any typing prefix
 | 2021-04-26 | [[2021.04 Directions]]                  | Founder Profile                                                                                                                   |
 | 2021-04-21 | [[BL]]                                  | Conscious computing agenda                                                                                                        |
 | 2021-04-19 | [[Journal Old]]                         | DANO PATHS                                                                                                                        |
-| 2021-04-19 | [[Paths]]                               | DANO PATHS                                                                                                                        |
+| 2021-04-19 | [[NJ22 Paths]]                          | DANO PATHS                                                                                                                        |
 | 2021-04-14 | [[Journal Old]]                         | Dan O Drivers & Futures                                                                                                           |
 | 2021-04-14 | [[Journal Old]]                         | Compass                                                                                                                           |
+| 2021-04-14 | [[NJ22 Paths]]                          | Compass                                                                                                                           |
 | 2021-04-14 | [[NJ22]]                                | Dan O Drivers & Futures                                                                                                           |
-| 2021-04-14 | [[Paths]]                               | Compass                                                                                                                           |
 | 2021-04-11 | [[Journal Old]]                         | NFT transfer                                                                                                                      |
 | 2021-04-07 | [[Journal Old]]                         | Jason #5                                                                                                                          |
 | 2021-04-07 | [[@Jason Syversen]]                     | Jason #5                                                                                                                          |
@@ -718,7 +723,7 @@ n:: no prefix.	Dated entries without any typing prefix
 | 2021-03-30 | [[Journal Old]]                         | Jason Summary                                                                                                                     |
 | 2021-03-30 | [[@Jason Syversen]]                     | Jason Summary                                                                                                                     |
 | 2021-03-28 | [[Journal Old]]                         | Big picture next step ideas / pulls                                                                                               |
-| 2021-03-28 | [[Paths]]                               | Big picture next step ideas / pulls                                                                                               |
+| 2021-03-28 | [[NJ22 Paths]]                          | Big picture next step ideas / pulls                                                                                               |
 | 2021-03-27 | [[Journal Old]]                         | Jason analysis #4                                                                                                                 |
 | 2021-03-27 | [[@Jason Syversen]]                     | Jason analysis #4                                                                                                                 |
 | 2021-03-20 | [[Journal Old]]                         | Jason response #3                                                                                                                 |
@@ -731,15 +736,15 @@ n:: no prefix.	Dated entries without any typing prefix
 | 2021-03-04 | [[Journal Old]]                         | The Nick and Dan LLC Model                                                                                                        |
 | 2021-03-04 | [[Jnl]]                                 | The Nick and Dan LLC Model                                                                                                        |
 | 2021-03-03 | [[Journal Old]]                         | Dan's North Star                                                                                                                  |
-| 2021-03-03 | [[Paths]]                               | Dan's North Star                                                                                                                  |
+| 2021-03-03 | [[NJ22 Paths]]                          | Dan's North Star                                                                                                                  |
 | 2021-03-00 | [[Journal Old]]                         | JASON BASKETBALL                                                                                                                  |
 | 2021-02-28 | [[Journal Old]]                         | Uniform - What could be pitched now                                                                                               |
 | 2021-02-24 | [[Journal Old]]                         | Dan's Futures Ranked                                                                                                              |
-| 2021-02-24 | [[Paths]]                               | Dan's Futures Ranked                                                                                                              |
+| 2021-02-24 | [[NJ22 Paths]]                          | Dan's Futures Ranked                                                                                                              |
 | 2021-02-21 | [[Journal Old]]                         | Jason's Basketball Thing                                                                                                          |
 | 2021-02-21 | [[@Jason Syversen]]                     | Jason's Basketball Thing                                                                                                          |
 | 2021-02-17 | [[Journal Old]]                         | Dan's Mind & North Star                                                                                                           |
-| 2021-02-17 | [[Paths]]                               | Dan's Mind & North Star                                                                                                           |
+| 2021-02-17 | [[NJ22 Paths]]                          | Dan's Mind & North Star                                                                                                           |
 | 2021-02-15 | [[ufBrick]]                             | thinking                                                                                                                          |
 | 2021-02-15 | [[ufBrick]]                             | lean canvas                                                                                                                       |
 | 2021-01-31 | [[Journal Old]]                         | So what the fuck am I doing? What's my goal here?                                                                                 |

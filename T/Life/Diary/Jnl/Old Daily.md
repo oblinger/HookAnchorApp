@@ -775,7 +775,7 @@ DAX robotics
 This is my first Obsidian Day!
 
 
-[[Paths]]
+[[NJ22 Paths]]
 
 
 

@@ -4,13 +4,57 @@
   
 # QUICK - QUICK work projects
 
+### 2024-04-09  Minutes soft constraint
+
+Use scikit-optimize to optomize 3 parameter cost fn:
+
+Three cost parameters:
+- ZeroCostRatio	50%			60%
+- FullCostRatio	50%			20%
+- FullCost			10 units		10 units
+
+### 2024-04-09  DAT integration ^dat 
+
+- Add a 'do' register method
+- Convert do module to singleton
+- Add metric Matrix for minutes
+- Zip S3 loader
+
 ### 2024-04-01  Contact info
 
 
-Team:
-I am excited that we are moving from a company with prototypes into a company with scaled products in the field.  Hooray!!  But this means we need to shift into high tempo product 
-We are getting i
+FIELDS
 
+
+**Contact Information**:
+Email address
+Phone
+
+**About Me:**
+Alternate 1
+Alternate 2
+Emergency Contact
+Contact Order Preference
+Normal Hours
+Waking Hours
+
+**HIDE**:  
+Start Date
+Role Description
+
+
+
+Team:
+I am excited that we are moving from a company with prototypes into a company with scaled products in the field.  Hooray!!  As part of this, it is important that in emergency situations we are able to respond in real time.  To aid this we are having all employees provide contact details with focus on how to contact outside normal hours in the case of emergency.
+
+Please add your info to your slack page as explained HERE.
+
+Thanks,
+Jasu
+
+
+
+Below is an example supplied by Dan O, along with his explanation of the info provided:
 
 
 Email:  dan@sportsvisio.com
@@ -28,9 +72,21 @@ Alternatives & Emergency
   But not checked regularly
 
 Waking Hours:
-8am-10pm PST (11a-1a EST)
+11a-1a EST. (8am-10pm PST)
 Normal Hours:
-8am-5:30pm PST. (11a-9pm EST)
+11a-9pm EST. (8am-5:30pm PST)
+
+
+NOTES:
+- Notice I am including all channels you might use to contact me.  Normally you should just use my email and slack, but for faster/emergency response I am providing all channels I can think of.
+  And I included my wife's number since she is more glued to her phone than I am, so she is better emergency.
+- Our "Normal" working hours are hours where one can usually find us at our computer, and we can always contacted w/o concern.
+- Our "Waking" hours represent the hours that one could contact us w/o waking us (or our kid, etc.).  It is not normal to be contacted during these hours, and there is no guarantee you will actually get through.  But "waking" hours indicates it is not a great hardship if you try to contact us during this time.
+- Contact preference explains the best ways to try to make contact.  In my case Slack and email are my preferred method, texting will get faster response, still calling is best for fastest response.
+
+
+
+
 
 
 As we are moving toward scaled production we need to have emergency contacts for folks for worst case situation.

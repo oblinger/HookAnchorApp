@@ -11,4 +11,5 @@ JUMPS:
 - [CV.](spot://CV.): 
 - [cv ROOT](spot://cv~ROOT): 
 - [CV Notes](spot://CV~Notes): 
+- [CV docs](spot://CV~docs): 
 

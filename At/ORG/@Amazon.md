@@ -1,5 +1,4 @@
- [[ORG]] [[FAANG]]  [[AMA Notes]] 
-
+ [[ORG]] [[FAANG]]  [[AMA Notes]] [[@Amazon as Consumer]] 
 
 ## = LEVELS   [Levels.fyi](https://www.levels.fyi/?compare=Amazon,Google,Facebook&track=Software%20Engineer)  
 - L5 own a feature, not strategy

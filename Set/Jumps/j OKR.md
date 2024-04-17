@@ -8,4 +8,5 @@ JUMPS:
 - [OKR](spot://OKR): 
 - [OKR Defintions](spot://OKR~Defintions): 
 - [OKR Matrix2](spot://OKR~Matrix2): 
+- [OKR Q2](spot://OKR~Q2): 
 

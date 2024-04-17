@@ -1,3 +1,7 @@
+- paying for noom
+- !! friday
+- James $11/hr
+- Ready camping
 - [ ] meeting w/ Sam Jason
 - [ ] audio polycom for team
 - [ ] ask team about chatGPT

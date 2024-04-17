@@ -1,3 +1,5 @@
+
+:: [[RR OKRs]],   [[S.M.A.R.T]]
 n:: Research Reference pages
 
 [[ML Ops]]
@@ -17,6 +19,8 @@ n:: Research Reference pages
 - [[AI]]: [[ML]]: [[rrCV]]: [[DL]]:
 
 
+## = TOPS
+- [[Lrn it]] 
 
 ## = COMPUTER SCIENCE
 ## = AI

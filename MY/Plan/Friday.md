@@ -1,6 +1,6 @@
 
 
-![[Friday.numbers]]
+![[Friday.numbers]] 
 
 [[Friday Dates]] 
 

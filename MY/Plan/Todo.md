@@ -1,15 +1,14 @@
 - [[@Facet]] signup
-- Ready camping
-- James $11/hr
 - [[Friday]] 
 - Clean
-- !! friday
+- James interesting things
 
+- close disney
 - car title
 - Car Repair
 - fin flow
 - Avanti
-- paying for noom
+
 
 
 - fix easy passwords

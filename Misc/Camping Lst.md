@@ -1,8 +1,7 @@
 
-
 REDO:		Pills, Food/Snack, Paper Towels, Plates
 WEAR:		Hat, Hiking pants, Shoes, Sunglasses, 
-BIG:		Tent, SleepBags, Mattress, Stove/Fuel, Cooler, Chairs, Day pack, 
+BIG:		Tent, SleepBags, Mattress, Stove/Fuel, Cooler, Chairs, Day pack, Wagon
 WHITE:	Ponchos, Filter, BugMesh, String, Binoculars, Towel, 
 LAMP:		HeadLamps, Cards, Deet, Sunscreen, 
 

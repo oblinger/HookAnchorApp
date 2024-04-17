@@ -1,4 +1,6 @@
 
+:: [[ELI Quotes]]
+
 :: [[Eli Correct Responses]],   [[Eli Friends]]
 
 :: [[Eli Firsts]]

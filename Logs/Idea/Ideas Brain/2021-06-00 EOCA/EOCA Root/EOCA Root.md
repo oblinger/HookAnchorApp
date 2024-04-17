@@ -7,6 +7,7 @@
 - [[EOCA Civilizing tendency]] - 
 
 
+KEY IDEAS
 - [[EOCA Agenic Aggregation]] - 
 - [[EOCA Hiearachicalization]] - 
 - [[EOCA Incomprehesibility]] - 

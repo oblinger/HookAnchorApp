@@ -1,3 +1,6 @@
+- [[Lrn Mgt]],  
+- John Doerr and the folks at Google
+
 By May-1
 [[Lrn]]:	RunSys
 Lrn:	Papers?
@@ -8,6 +11,7 @@ Lrn:	Papers?
 Hugging-face tutorial
 PyTorch
 
+- [Fast.ai](https://www.youtube.com/playlist?list=PLfYUBJiXbdtSLBPJ1GMx-sQWf6iNhb8mM) 
 
 - [[Coursera Notes]]* - Complete Coursera Deep Learning Course
 - HACK+  Hack some tensor flow
