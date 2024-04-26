@@ -3,7 +3,8 @@
 
 ## = BLOOD PRESSURE
 
-2023-11-11	123 / 75		After salty meal
+2024-04-26. 122/74. 83
+2023-11-11	123/75		After salty meal
 
 ## = MEDICAL MEASUREMENTS
 ### HEART RELATED MEASURES

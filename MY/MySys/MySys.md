@@ -4,7 +4,7 @@
 :: [[KBD Notion]]
 
 < [[MY]] 
-- [[KM]],   [[My Hacks]],  
+- [[KM]],   [[My Hacks]], [[My Android]],  
 - [[KBD Shortcuts]],   [[Disks]],  
 
 - [[DOC SYNC COMMANDS]],   [[DOC SYNC]]

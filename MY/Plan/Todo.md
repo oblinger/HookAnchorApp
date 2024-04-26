@@ -3,8 +3,7 @@
 - [[Friday]] 
 - Clean
 
-- car title
-- Car Repair
+- Car Title
 - fin flow
 - Avanti
 

@@ -1,4 +1,4 @@
-
+	
 JUMPS:
 - [Z Example Template](spot://Z~Example~Template): 
 - [Z JOURNAL header](spot://Z~JOURNAL~header): 
