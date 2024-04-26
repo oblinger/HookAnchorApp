@@ -1,4 +1,4 @@
-
+- [[RR Mgt]], [[RR Philosophy]], 
 :: [[RR OKRs]],   [[S.M.A.R.T]]
 n:: Research Reference pages
 

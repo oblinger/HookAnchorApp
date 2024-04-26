@@ -207,4 +207,5 @@ JUMPS:
 - [j FRIDAY](spot://j~FRIDAY): 
 - [j NOISE](spot://j~NOISE): 
 - [j Q2](spot://j~Q2): 
+- [j LRN](spot://j~LRN): 
 

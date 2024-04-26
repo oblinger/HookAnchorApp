@@ -1,7 +1,7 @@
 
 By May-1
-[[NJ]]:		Quick Apply
-[[NJ]]:		WarStory adding [[WarStories]] 
+[[NJ]]:		Quick Apply to something???
+[[NJ]]:		[[WarStories]]: Turn around, GenAIs
 [[NJ]]:		[[2024-04-01 Resume Rewrite|Re-Res]] 
 [[NJ]]:		[[crm]]:  Pings
 [[NJ]]:		[[Mentor]]: 
@@ -18,6 +18,16 @@ OpenAI, Microsoft, Google, Meta, Nvidia, Tesla, Apple, or Amazon’s
 
 	- Interview Prep
 	- xoogler
+
+
+
+---
+not the best but also not terrible.  it is really hard to be the leader of a 20-person dev team and be trying to heavily job search at the same time.
+
+  
+
+Still on the good side, I have some really GREAT turn around stories to tell.  and I really am leveling up my practical leadership
+
 
 ## TODO
 - G-Cafe: [[@Ashwin Ram]], [[@Dan Kaufman]],  [[@Andrew Tomkins]]

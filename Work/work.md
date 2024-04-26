@@ -1,18 +1,19 @@
  **NOW** 
+[[@Shreshth Saxena|Saxena]]:		^SOW-notes  
 ## TOP
-Fireballs:		!
-[Q2](spot://okrq2) [Slide](spot://Q2~slide):		^J Summary
+SW proc:		^Jasu
+Fireballs:		>Dispatcher; >Maxim
+Shot-boxer:	>Martin
+All Hands:	>Weekend activities
 [Q2exp](spot://q2exp):		Minutes, Docker
-[RP](spot://rp):			!EMAIL. ^SOW(when?)  ^S Dock ^S Stack
+[RP](spot://rp):			>LAST EMAIL 24th. 
 
-[[QQ#^dat]]:		do-register; split cube off; test_cube
+[[QQ#^dat]]:		jupyter dt; instantiate
 [[NJ]]:			>war, rewrite, mentor
 
 Life Time:	^contacts qq ^call tree
 Minutes:		!!planning; 	[[qq]] soft constraints
-[[@Shreshth Saxena|Saxena]]:		^SOW-notes  
 [[patents]]:		^M Sketches
-METRICS:		
 
 ## SOON
 Tips:			>Valen UX call
@@ -42,6 +43,53 @@ Homography  (physics model)
 - cube construction
 
 ## _
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+phy 
+
+In slack
+9 EST - 10 EST.
+
+Scott:
+- PRs early in morning or after 6pm EST.
+- 
+
+
 
 Tactical meeting:  SW / CV 
 Sales/Mkt.  Ops.

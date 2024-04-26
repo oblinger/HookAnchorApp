@@ -2,11 +2,13 @@
 # === DRY GOODS ===
 ### Coffee/TEA
 ### TEAS
-FAVS:		HARNEY: &Son Paris, 
-FAVS:  	TWININGS:  Honey Bush, 
-FAVS:		YOGI: Kava Stress Relief, Egyptian Licorice
-FAVS:		TRAD-MED: Lemon Ginger, Peppermint (good), 
-FAVS:		PUKKA:  	ThreeGinger++, ThreeLicorice+
+FAVS:		
+- HARNEY: &Son Paris, 
+- TWININGS:  Honey Bush, 
+- YOGI: Kava, Egyptian Licorice
+- TRAD-MED: Lemon Ginger, Peppermint,
+- EQ-EXCNG: Vanilla Rooibos
+- PUKKA:  	ThreeGinger++, ThreeLicorice+
 
 TEAS  http://carandafinefoods.com 
 

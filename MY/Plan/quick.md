@@ -1,12 +1,5 @@
-- get baseball into demo folder
-- process for SW team.  6 sprints out.  4 sprints complete.  2 sprints plans are complete.  1 sprint most tickets written.  Day before sprint, all team signed off on tix
-- plan Q2 sprints
-- rp email
-- cold
-- ask about tetnus
+
+- call Luis
 - pay urgent care bill
 - git website public
-- Apple.
-- return stuff
 - Maxim's review
-- Oakleys. (800) 403-7449

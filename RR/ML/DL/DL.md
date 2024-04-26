@@ -1,5 +1,5 @@
 
-:: [[LSTM]],   [[dddddd]]
+:: [[LSTM]],  
 
 . [[Transformers]],
 
@@ -18,9 +18,10 @@
 [[DL]] - 
 - [[RNN]] 
 - [[CNN]] 
-- [[GPT]] 
 - [[DL SYStems]] 
 
+[[GenAI]] 
+- [[GPT]] 
 
 
 - [[DL topics]]: 			[[RLHF Reinforcement Learning from Human Feedback]],  

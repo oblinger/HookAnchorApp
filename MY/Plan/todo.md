@@ -1,9 +1,8 @@
+- Manatee power
 - [[@Facet]] signup
 - [[Friday]] 
 - Clean
-- James interesting things
 
-- close disney
 - car title
 - Car Repair
 - fin flow

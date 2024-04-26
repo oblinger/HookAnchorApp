@@ -1,7 +1,7 @@
 
 **MAIN** 
 - CARBS: Pasta, RiceBalls, Pizza, Pancakes, Sweet Potatoes
-	- PASTA: Ground-beef&Eggs, Marinara, 
+	- PASTA: Ground-beef&Eggs, Marinara, VeggieRisoto
 	- RICE: Seaweed sandwich, 
 - FROZN: Dumplings, 
 - MEATS: Chicken(sauteed, panfry), Steak, Salmon, Meatloaf??
@@ -16,6 +16,9 @@
 - Broccoli, Chin G Beans, Edamame, Peas, Corn,
 - Cauliflower, Green Peas, Celery, Edamame, Carrots, 
 - Black-Beans
+
+INSTANT
+- Eggo Waffles
 
 INSTAPOT
 - Chicken Soup

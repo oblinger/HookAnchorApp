@@ -5,6 +5,8 @@ n:: no prefix.	Dated entries without any typing prefix
 
 | Date       | File                                | Notes                                                                                                                             |
 | ---------- | ----------------------------------- | --------------------------------------------------------------------------------------------------------------------------------- |
+| 2024-04-26 | [[@Oliver Andersson]]                   | Interview                                                                                                                         |
+| 2024-04-18 | [[@Manatee County Utilities]]           | autopay signup                                                                                                                    |
 | 2024-04-14 | [[ELI Quotes]]                          | Your Fault                                                                                                                        |
 | 2024-04-12 | [[Palestinians]]                        | Dillion updates to the plan                                                                                                       |
 | 2024-04-09 | [[QQ]]                                  | Minutes soft constraint                                                                                                           |
