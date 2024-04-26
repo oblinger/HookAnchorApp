@@ -1,4 +1,11 @@
 
+[[LOG\|Sun Feb 18  2024]]  	[[LOG#2024-01-26  cookie clicker code]]  
+[[Trip\|Sun Feb 18  2024]]  	[[Trip#2024-02-11  Boston Sapphire]]  
+[[CV\|Sun Feb 18  2024]]  	[[CV#2024-01-22  Juan]]  
+[[CV\|Sun Feb 18  2024]]  	[[CV#2024-01-22  Martin]]  
+[[CV\|Sun Feb 18  2024]]  	[[CV#2024-01-22  +Sarthi]]  
+[[CV\|Sun Feb 18  2024]]  	[[CV#2024-01-12  +GRZ]]  
+[[CV\|Sun Feb 18  2024]]  	[[CV#2024-01-15  +Maxim]]  
 [[CVP\|Sun Feb 18  2024]]  	[[CVP#2024-01-23  Design for Notion]]  
 [[Mgt\|Sun Feb 18  2024]]  	[[Mgt#2024-01-18  FEB Meeting]]  
 [[@Juan Barajas\|Sun Feb 18  2024]]  	[[@Juan Barajas#Contact]]  
