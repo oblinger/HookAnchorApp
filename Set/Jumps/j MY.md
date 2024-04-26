@@ -7,4 +7,5 @@ JUMPS:
 - [MY Stuff](spot://MY~Stuff): 
 - [My Hacks](spot://My~Hacks): 
 - [My Spot](spot://My~Spot): 
+- [My Android](spot://My~Android): 
 

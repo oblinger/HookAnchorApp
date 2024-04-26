@@ -14,7 +14,7 @@ Dan Oblinger (c) 2022.  Please do not distribute.  (Draft 11/21/2022)
 _Contractually and Culturally Mandated “Pay It Forward”_
 :::
 
-Empowering those without opportunity but with motivation and potential but to create opportunities for themselves and others, by providing the (1) funds, (2) training, and (3) network to create ones own business.
+Empowering those without opportunity but with motivation and potential but to create opportunities for themselves and others, by providing the (1) funds, (2) training, and (3) network to create ones own business..
 
 ## INTRODUCTION
 

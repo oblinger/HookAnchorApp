@@ -1,4 +1,5 @@
 
+[[DocGit\|Sun Feb 18  2024]]  	[[DocGit#SETUP GITHUB ON NEW COMPUTER]]  
 [[LOG\|Sun Feb 18  2024]]  	[[LOG#2024-01-26  cookie clicker code]]  
 [[Trip\|Sun Feb 18  2024]]  	[[Trip#2024-02-11  Boston Sapphire]]  
 [[CV\|Sun Feb 18  2024]]  	[[CV#2024-01-22  Juan]]  
