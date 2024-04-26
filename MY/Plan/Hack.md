@@ -1,3 +1,4 @@
+
 alphanumerics and case to match
 - spot: compress commands remove non
 - spot: strip spaces for name matching
