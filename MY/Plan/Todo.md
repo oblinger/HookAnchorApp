@@ -1,7 +1,6 @@
-- Manatee power
+
 - [[@Facet]] signup
 - [[Friday]] 
-- Clean
 
 - Car Title
 - fin flow

@@ -7,7 +7,7 @@ TOP ORGANIZING VIEWS
 - [View Up Task](spot://View~up~task)	[[Up All]] 
 - [View Work](spot://view~work)		[[work]] 	[[Rocks]] 
 - [View Self](spot://view~self)		[[self]]		[[q2]]		
-- [View Planning](spot://view~planning)	[[plan]]	
+- [View Planning](spot://view~planning)	[[Plan]]	
 - [View Gap](spot://view~gap) 		[[fried]] 		[[hack]]		[[gap]]
 
 ## BKT TREE

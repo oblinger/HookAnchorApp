@@ -3,7 +3,7 @@ LEGO MINDSTORM
   [motor](https://www.amazon.com/SEEMEY-Power-Function-Kit-Pins-Gears-Axles-Compatible-Lego-Technic-Parts/dp/B0BZL5TCKN) 
 
 - get Eli's ipad connected to mom's account
-- [[Fried]].			
+- [[fried]].			
 
 - buy shirts
 fix history month
@@ -18,7 +18,7 @@ fix history month
 - [ ] Process mom's Eli educational funds.
 
 ### > 
-- [[Hack]], 
+- [[hack]], 
 
 ### WAITING
 - [ ] NextDoor [[Automation]] 

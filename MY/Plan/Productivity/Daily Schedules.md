@@ -28,12 +28,12 @@ SUMMARY 2023-Q3
 11	 PROJ - 	Work project time
 01	 LUNCH 	.
 01: [[NJ]]		.
-03: [[RUN]]		.
+03: [[run]]		.
 04: GAP		.
 05, [[FAM]]		.
-06: [[FUN]]		.
+06: [[fun]]		.
 08: [[ELI]]		.
-09	 [[FUN]]		.
+09	 [[fun]]		.
 10	 [[SLEEP]]	.
 
 
@@ -54,7 +54,7 @@ Idea: Streamline day into 7 buckets shows below and strive to ensure progress ma
 
 
 2023-09
-(see [[bkt]])
+(see [[BKT]])
 
 SUMMARY 2023-Q3
 

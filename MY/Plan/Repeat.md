@@ -34,7 +34,7 @@
 - BOOKS - Find to read
 - FOOD - Recipes to make
 - FUN - Add to lists
-- [[FRIDAY]] - Plan for future dates
+- [[Friday]] - Plan for future dates
 
 
 #### HOUSE

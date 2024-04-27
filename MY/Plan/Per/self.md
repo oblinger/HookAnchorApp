@@ -9,7 +9,7 @@
 [[MED]]:	Get TPST
 [[Calls]]:	John, Dave, Ana
 
-[[Fun]]: 
+[[fun]]: 
 [[Spirit]]: 
 
 

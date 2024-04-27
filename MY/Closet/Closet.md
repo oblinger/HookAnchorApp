@@ -1,4 +1,6 @@
-  [[PAGE]],   [[Empty]]
+
+:: [[PAGE]]
+  [[MY/Closet/PAGE]],   [[Empty]]
 
 - 
 

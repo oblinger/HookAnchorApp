@@ -1,6 +1,6 @@
 (merge with hook system)
 
-- [[KM.]],  [[META]],  [[Hook System]], 
+- [[KM.]],  [[Meta]],  [[Hook System]], 
 
 ### _
 - MATRIX YOUR KNOWLEDGE - Organize info into key hierarchies and don't allow existence of one hierarchy to break another.

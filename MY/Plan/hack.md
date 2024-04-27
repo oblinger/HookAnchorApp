@@ -5,7 +5,7 @@ alphanumerics and case to match
 - spgrab and spadd should both add a link to clipboard
 - sp grab should past the spot link into the clipboard
 - obsidian memorization cards
-- [[Hack]].	km copy entries
+- [[hack]].	km copy entries
 
 - OBS - Evernote log of dated entries
     ingest all dated entries and starred entries 

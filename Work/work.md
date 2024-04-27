@@ -16,10 +16,7 @@ Minutes:		!!planning; 	[[qq]] soft constraints
 [[patents]]:		^M Sketches
 
 ## SOON
-Tips:			>Valen UX call
-[Belief](https://docs.google.com/document/d/1H9krXpxS2_Cr9T68pAksb6QGYqpW28DiF2OSw40g0pI/edit?usp=drive_link):		?
-[[ROADMAP]]:	
-DOCS:			Casual Metrics
+[Belief](https://docs.google.com/document/d/1H9krXpxS2_Cr9T68pAksb6QGYqpW28DiF2OSw40g0pI/edit?usp=drive_link):		
 [[journaling]] 
 
 ## PAUSE [bsheet](https://docs.google.com/spreadsheets/d/1C1eYv2Ks2GCCQ9_xZ2Pg7eEr33bX1KOdN8Xf8X6nxSY/edit#gid=0), [hi](https://software-engineering-team.atlassian.net/jira/dashboards/10022), [tst](https://docs.google.com/spreadsheets/d/1Rc07oadsjZgg6_2ZZ-qIXJ9n9ws3LT0FFraLZHnrf9w/edit?usp=sharing), [epic](https://software-engineering-team.atlassian.net/jira/software/projects/MOB/boards/24/timeline), 

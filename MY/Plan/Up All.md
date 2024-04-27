@@ -1,1 +1,1 @@
- [[Work]]   [[Self]]   [[Fried]] . 
+ [[Work]]   [[self]]   [[fried]] . 

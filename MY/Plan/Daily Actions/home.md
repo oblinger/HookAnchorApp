@@ -1,2 +1,2 @@
-- [[HOME]]: 	Tidy, [[Fried]], 
+- [[home]]: 	Tidy, [[fried]], 
 

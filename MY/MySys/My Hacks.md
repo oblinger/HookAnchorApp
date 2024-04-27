@@ -1,13 +1,17 @@
 
+zzz
 - [[My Spot]]:		.
 - [[KM]]:				.
+- [[Closet]],   
+
+OBSIDIAN HACKS
 - [[Action Notes]]:	- My plugin for automating page actions
+- [[QUICKADD]]
+- [[TEMPLATER]]
+- [[DOC SYNC]] 
 
 
-**OBSIDIAN PLUGIN CONFIGURATIONS**
-- [[QUICKADD]]: ![[QUICKADD#"]]
 
-- [[TEMPLATER]],
 ### --- TRACKER
 -- Want to see slices of work to see where to optimize
 -- 5-slice model by day by week w. percentages
@@ -20,4 +24,3 @@
 
 
 ### --- SYNC
-- [[DOC SYNC]] 

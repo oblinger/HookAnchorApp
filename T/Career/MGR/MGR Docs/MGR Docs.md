@@ -1,5 +1,5 @@
 
-:: [[MGR Annual Review]],   [[MGR Deligation Planning]],   [[MGR Leadership]],   [[MGR Meetings]],   [[my mgr NOTES]]
+:: [[MGR Annual Review]],   [[MGR Deligation Planning]],   [[MGR Leadership]],   [[MGR Meetings]],   [[My mgr NOTES]]
 
 :: [[Hiring Resources WebDev]]
 

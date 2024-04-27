@@ -10,7 +10,7 @@
 - [[T]]			[[T Folder|T]]			[[Meta Topic]]	 By TOPIC -	Toplevel Taxonomic Topics
 - 						[[Meta Flow]]	 By PROC	-	My data processing paths
 - [[OBS]]					[[Meta KM]] 	 OBSIDIAN -	Setup details for my info pages
-- [[MY]]		[[My Folder|MY]] 						 MYFO    -	Info about me & my stuff				 
+- [[MY/MY]]		[[My Folder|MY]] 						 MYFO    -	Info about me & my stuff				 
 
 SPECIALTY PAGES
 - [[CRM]]		[[AT Folder|CRM]]		[[Meta CRM]]	 How I track my regular pings
@@ -20,6 +20,6 @@ SPECIALTY PAGES
 
 OTHER STUFF
 - [[Meta Org (old page)]] 	-  Overview of all info resources 
-- Others:    [Base](Base.md),    [meta Tasks](meta%20Tasks.md),   [Empty](MY/Closet/Empty.md), 
+- Others:    [Base](Base.md),    [meta Tasks](meta%20Tasks.md),   [Empty](Empty.md), 
 
 

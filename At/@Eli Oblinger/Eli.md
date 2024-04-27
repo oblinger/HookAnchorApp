@@ -9,7 +9,7 @@
 - [[Eli Activities]] 
 - [[Eli Firsts]] 
 - [[Eli Friends]] 
-- [[ebt]] 
+- [[EBT]] 
 # TODO
 - [ ] Find babysitter
 

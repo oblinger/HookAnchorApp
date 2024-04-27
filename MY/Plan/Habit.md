@@ -7,7 +7,7 @@ Idea: Streamline day into 7 buckets shows below and strive to ensure progress ma
 
 
 2023-09
-(see [[bkt]])
+(see [[BKT]])
 
 SUMMARY 2023-Q3
 

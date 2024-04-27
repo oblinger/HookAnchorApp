@@ -1,14 +1,14 @@
 
 :: [[Friday Dates]]
 
-**[[PLAN]]:**	
+**[[Plan]]:**	
  OVER:	[[Friday]], [[Habit]], [[Repeat]], [[Productivity]], [[Self Evergreen|Ever]] 
- LST1:	[[Quick]], [[Todo]], [[Now]], [[Active]], [[Scratch]] 
- LST2: [[Full]], [[Prime]] 
- LST3:	[[Quarterly]], [[Later]], [[Wings]], [[Dropped]], [[Archive]] 
- LONG:	[[Rocks]], [[Q2]], [[Lrn]], [[Spirit]], [[Actualize]], [[Mission]]
+ LST1:	[[quick]], [[todo]], [[now]], [[active]], [[SCRatch]] 
+ LST2: [[full]], [[prime]] 
+ LST3:	[[Quarterly]], [[later]], [[wings]], [[Dropped]], [[archive]] 
+ LONG:	[[Rocks]], [[q2]], [[Lrn]], [[Spirit]], [[Actualize]], [[Mission]]
  COM:  [[CRM]], [[Ping]], [[Mentor]] 
- FUN:	[[Fun]], [[Social]], [[Fried]], [[Gap]], [[Hack]], [[Fried Later]] 
+ FUN:	[[fun]], [[Social]], [[fried]], [[gap]], [[hack]], [[Fried Later]] 
  FAM:	[[Family]], [[EBT]] 
  ROOT:	[[BKT]], [[Meta List]], [[Up All]], [[Up Task]] 
  MISC: [[EBT]], [[external]],  [[other]] 

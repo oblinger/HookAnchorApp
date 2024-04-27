@@ -1,4 +1,6 @@
 
+:: [[page]]
+
 :: [[Camping Lst]]
 [[Journaling]] 
 :: [[Secure]]
@@ -26,7 +28,7 @@
 
 :: [[Lists]]
 
-:: [[page]]
+:: [[Misc/page]]
 
 :: [[Hold]],   [[Hold]],   [[SciFi]]
 
