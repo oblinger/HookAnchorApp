@@ -3,13 +3,13 @@ zzz
 - [[My Spot]]:		.
 - [[KM]]:				.
 - [[Closet]],   
+- [[ML DAT]] 
 
 OBSIDIAN HACKS
 - [[Action Notes]]:	- My plugin for automating page actions
 - [[QUICKADD]]
 - [[TEMPLATER]]
-- [[DOC SYNC]] 
-
+- [[DOC SYNC]]: 		[[DOC SYNC COMMANDS]], 
 
 
 ### --- TRACKER

@@ -8,4 +8,8 @@ JUMPS:
 - [My Hacks](spot://My~Hacks): 
 - [My Spot](spot://My~Spot): 
 - [My Android](spot://My~Android): 
+- [My Github Webpage](spot://My~Github~Webpage): 
+- [My Info](spot://My~Info): 
+- [My mgr NOTES](spot://My~mgr~NOTES): 
+- [My Stuff](spot://My~Stuff): 
 
