@@ -1,4 +1,4 @@
-=[[START]]     [Head of Operations](https://www.linkedin.com/in/jamesmarvinbriones/)  [[@Rzero]].  #y24 
+=[[START]]     [Head of Operations](https://www.linkedin.com/in/jamesmarvinbriones/)  [[@Rzero]].  #y24  #Org/AF 
 
 	Wake 6pm   3am PST
 	Sleep 7am.  4pm PST

@@ -10,6 +10,10 @@ hold off   (have not spoken yet, I think 7.2022)
 - Principle Eng  L6
 - 
 - selling my company.   I want to work for you.   (I am thinking of )
+- 
+
+
+
   
 
 

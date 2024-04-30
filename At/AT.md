@@ -1,4 +1,6 @@
 
+:: [[@Soucindar Hoche]],   [[@Stripe]]
+
 :: [[@Manatee County Utilities]],   [[@Oliver Andersson]]
 
 :: [[@New York Times]],   [[@Steve Street]]

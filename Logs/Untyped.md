@@ -5,6 +5,7 @@ n:: no prefix.	Dated entries without any typing prefix
 
 | Date       | File                                | Notes                                                                                                                             |
 | ---------- | ----------------------------------- | --------------------------------------------------------------------------------------------------------------------------------- |
+| 2024-04-29 | [[@Stripe]]                             | Intro                                                                                                                             |
 | 2024-04-26 | [[@Oliver Andersson]]                   | Interview                                                                                                                         |
 | 2024-04-18 | [[@Manatee County Utilities]]           | autopay signup                                                                                                                    |
 | 2024-04-14 | [[ELI Quotes]]                          | Your Fault                                                                                                                        |
@@ -218,7 +219,7 @@ n:: no prefix.	Dated entries without any typing prefix
 | 2023-07-26 | [[race]]                                | black dad myth                                                                                                                    |
 | 2023-07-25 | [[@James Briones]]                      | TC alternatives                                                                                                                   |
 | 2023-07-24 | [[@Isaac Cohen]]                        | Post pitch discussion                                                                                                             |
-| 2023-07-19 | [[@Yiftach Eisenberg]]                  | Catch Up                                                                                                                          |
+| 2023-07-19 | [[@Yiftach Eisenberg]]                  | Cat. h Up                                                                                                                         |
 | 2023-07-17 | [[LOG]]                                 | Einstein Puzzle                                                                                                                   |
 | 2023-07-17 | [[QQ]]                                  | Patent Thinking                                                                                                                   |
 | 2023-07-17 | [[QQ]]                                  | Regression (Virtual Field Tests)                                                                                                  |
@@ -367,7 +368,7 @@ n:: no prefix.	Dated entries without any typing prefix
 | 2023-04-07 | [[EOCA]]                                | Nina note - why will we all die?                                                                                                  |
 | 2023-04-06 | [[@Grzegorz Biziel]]                    | Current status of AI - Finding stuff for bridge round                                                                             |
 | 2023-04-06 | [[QQ]]                                  | [Pillars April-2023](https://docs.google.com/document/d/1bhmtxJnbB7gPOGnJqV4ibzzQJaUNT5UimnAs9PTli-w/edit#heading=h.qqdcz342w88e) |
-| 2023-04-05 | [[Meta CRM]]                            | Proposed workflow                                                                                                                 |
+| 2023-04-05 | [[Meta Coms]]                           | Proposed workflow                                                                                                                 |
 | 2023-04-05 | [[@Joaquin Mano]]                       | Questions                                                                                                                         |
 | 2023-04-04 | [[@Nick Allen]]                         | Navigating the choppy waters.                                                                                                     |
 | 2023-04-04 | [[Reflections]]                         | STRESS!  Feel my path AT SV is time limited                                                                                       |
@@ -448,7 +449,7 @@ n:: no prefix.	Dated entries without any typing prefix
 | 2023-01-03 | [[@Apple]]                              | Laptop Repair                                                                                                                     |
 | 2023-01-01 | [[DYL]]                                 | Hook System                                                                                                                       |
 | 2023-01-01 | [[DYL]]                                 | Edu Corp                                                                                                                          |
-| 2023-00-00 | [[Meta CRM]]                            | CRM FORMAT                                                                                                                        |
+| 2023-00-00 | [[Meta Coms]]                           | CRM FORMAT                                                                                                                        |
 | 2023-00-00 | [[Daily Schedules]]                     | buckets                                                                                                                           |
 | 2023-00-00 | [[FIN Log]]                             | very old - CONSIDER ADDITIONS                                                                                                     |
 | 2023-00-00 | [[CV Roadmap]]                          | FULL-AI / BALLER DELIVERABLE                                                                                                      |

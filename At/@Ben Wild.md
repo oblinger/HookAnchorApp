@@ -1,1 +1,1 @@
-[[START]]   [Co-Founder](https://www.linkedin.com/in/ben-wild-72131b3/)  [[@Hubble Network]]  #Startup 
+[[START]]   [Co-Founder](https://www.linkedin.com/in/ben-wild-72131b3/)  [[@Hubble Network]]  Startup 

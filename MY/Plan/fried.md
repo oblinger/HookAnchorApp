@@ -1,3 +1,5 @@
+- metal soap dispenser pump
+- buy ceramic rectangle for cough drops and ear plugs
 - Check in Notification for slack & text are working
 LEGO MINDSTORM
   [motor](https://www.amazon.com/SEEMEY-Power-Function-Kit-Pins-Gears-Axles-Compatible-Lego-Technic-Parts/dp/B0BZL5TCKN) 

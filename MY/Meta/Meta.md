@@ -13,7 +13,7 @@
 - [[MY/MY]]		[[My Folder|MY]] 						 MYFO    -	Info about me & my stuff				 
 
 SPECIALTY PAGES
-- [[CRM]]		[[AT Folder|CRM]]		[[Meta CRM]]	 How I track my regular pings
+- [[CRM]]		[[AT Folder|CRM]]		[[Meta Coms]]	 How I track my regular pings
 - [[work]]		[work](spot://work~folder)		[[Meta Work]] 	 How I track my work
 
 

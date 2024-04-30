@@ -1,3 +1,4 @@
+- [Wk Agenda](https://docs.google.com/document/d/1E5a-4Hvj2LX9KkdSPbcblWSBs3ZwdTgBvY0FA6NKytU/edit?usp=sharing), 
 - [[ROADMAP]], 
 
 ask: sean, Jason, jack -- target for BB speedup

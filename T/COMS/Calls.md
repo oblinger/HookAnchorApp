@@ -11,3 +11,4 @@
 - Laurette Caniza
 
 - [[COMS]]:  Work communications
+  [[@Attila Aros]],  

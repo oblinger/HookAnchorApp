@@ -1,17 +1,27 @@
+Bui
+-  [[@Rafah Hosn]], , Luis, [[@Melanie Dumas]], 
+-  [[@Juan Huerta]],[[@Nick Allen]],
 
 
-- Aeolus:   [[@Daniel Haddick]]  ???,  [[@Attila Aros]],  
+FAANG:	[[@Felipe Lavratti]], [[@Dennis DeCoste]], 
+FAANG2:	[[@Doug Gordin]], [[@Vittorio Castelli]], [[@Rodrigo Braz]], 
+
+
+TIER TWO:
+- Get Reviews:  Felipe, Nick, 
+- Rodrigo get back to him
+- LUNCH:	[[@Theo Enns]], [[@John Davis]], [[@David Israel]], [[@Jack Porter]], 
+
 
 
 FINDING GOOD MENTORS
 
 FOR STRATEGY
 - Michael,
-- Rafah, Luis, Haddick, 
+ Haddick, 
 
-LUNCH:	[[@Theo Enns]], [[@John Davis]], [[@David Israel]], [[@Jack Porter]], 
-STRAT:	[[@Nick Allen]], [[@Joe Hellerstein]], 
-STRAT2:	[[@Luis Arrellano]], [[@Michael Freed]], [[@Ron Brachman]], 
+STRAT:	 [[@Joe Hellerstein]], 
+STRAT2: [[@Michael Freed]], [[@Ron Brachman]], 
 
 
 FAANG:	[[@Felipe Lavratti]], [[@Rafah Hosn]], [[@Juan Huerta]], [[@Dennis DeCoste]], 

@@ -1,8 +1,8 @@
-=[[AF]]       [Founder/CTO](https://www.linkedin.com/feed/update/urn:li:activity:6963002124028821504/)  [[@CreateThrive]]     [Crunchbase](https://www.crunchbase.com/person/tomas-piaggio)
+=[[AF]]       [Founder/CTO](https://www.linkedin.com/feed/update/urn:li:activity:6963002124028821504/)  [[@CreateThrive]]     [Crunchbase](https://www.crunchbase.com/person/tomas-piaggio). #Role/Devshop 
 
 
 
-AF team member, Professor of software architecture, dev shop founder
+AF team member, Professor of softwar.  architecture, dev shop founder
 
 # LOG
 

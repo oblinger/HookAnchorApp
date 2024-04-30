@@ -1,11 +1,8 @@
-- [[SERVICES]]  
-[[DEVSHOP]]  
 
+ROLODEX TAGS
+- Role/Devshop
 
-- [[Hiring Resources WebDev]] - 
+- Org/AF
 
+- [[IOS guys]] - 
 
-## AF RELATED
-
-## AF PH Related
-- [[@James Briones]], 
