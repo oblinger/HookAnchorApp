@@ -22,4 +22,5 @@ JUMPS:
 - [EOCA Corp AI](spot://EOCA~Corp~AI): 
 - [EOCA Digital Native](spot://EOCA~Digital~Native): 
 - [EOCA Plausible Paths](spot://EOCA~Plausible~Paths): 
+- [EOCA Letters](spot://EOCA~Letters): 
 
