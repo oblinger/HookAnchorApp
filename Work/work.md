@@ -1,13 +1,15 @@
  **NOW** 
-[[@Shreshth Saxena|Saxena]]:		/Grz Results  
+ !!! all hands breakout planning
 ## TOP
-GCP over:		
+super Runner	!
+GCP over:		/DockerImage
 SW proc:		[db](https://www.notion.so/sportsvisio/cf65339c09c6486296f8adaa084c141a?v=f8a45e385eea4c2fb590502835f4453f&pvs=4),[doc](https://docs.google.com/document/d/1aHnoqgQ3H_0abUtlVWoMPHDA7nQhzoq0JRqZLujORc0/edit?usp=drive_web&ouid=105281685541312342727)  ^Jasu 
-Fireballs:		>Dispatcher; >Maxim
+Fireballs:		^Dispatcher; ^Maxim 
 Shot-boxer:	>Martin
 All Hands:	>Weekend activities. >Breakout
 [Q2exp](spot://q2exp):		Minutes, Docker
 [RP](spot://rp):			!!! Response to Justin
+[[@Shreshth Saxena|Saxena]]:		/Grz Results  
 
 [[QQ#^dat]]:		jupyter dt; instantiate
 [[NJ]]:			>war, rewrite, mentor
@@ -16,8 +18,8 @@ Life Time:	^contacts qq ^call tree
 Minutes:		!!planning; 	[[qq]] soft constraints
 [[patents]]:		^M Sketches
 
-[[mgt]]:			
-## SOON
+	
+## SOON [[mgt]] [[cvp]] 
 [Belief](https://docs.google.com/document/d/1H9krXpxS2_Cr9T68pAksb6QGYqpW28DiF2OSw40g0pI/edit?usp=drive_link):		
 [[journaling]] 
 
@@ -42,7 +44,7 @@ Homography  (physics model)
 - cube construction
 
 ## _
-
+     # sfoa3396
 
 Jasu, how many of the epics can we reasonably have defined by end of this week?  (don't kill yourself or Jack, just trying to get a sense of how much we can get done.)
 

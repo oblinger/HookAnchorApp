@@ -1,6 +1,6 @@
 
 ## >
-- [[Up Task]],  [[Meta Plan]],  [[BKT Tree]],  [[Daily Schedules]], 
+- [[Up Task]],  [[Meta Plan]],  [[Daily Schedules]], 
 
 
 TOP ORGANIZING VIEWS

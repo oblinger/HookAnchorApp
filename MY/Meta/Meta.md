@@ -10,7 +10,7 @@
 - [[T]]			[[T Folder|T]]			[[Meta Topic]]	 By TOPIC -	Toplevel Taxonomic Topics
 - 						[[Meta Flow]]	 By PROC	-	My data processing paths
 - [[OBS]]					[[Meta KM]] 	 OBSIDIAN -	Setup details for my info pages
-- [[MY/MY]]		[[My Folder|MY]] 						 MYFO    -	Info about me & my stuff				 
+- [[MY]]		[[My Folder|MY]] 						 MYFO    -	Info about me & my stuff				 
 
 SPECIALTY PAGES
 - [[CRM]]		[[AT Folder|CRM]]		[[Meta Coms]]	 How I track my regular pings

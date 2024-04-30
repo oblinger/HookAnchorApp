@@ -1,3 +1,4 @@
+- fin plan for Merrill
 - atorvastin
 - yearbooks
 

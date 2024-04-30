@@ -6,7 +6,7 @@
  LST1:	[[quick]], [[todo]], [[now]], [[active]], [[SCRatch]] 
  LST2: [[full]], [[prime]] 
  LST3:	[[Quarterly]], [[later]], [[wings]], [[Dropped]], [[archive]] 
- LONG:	[[Rocks]], [[q2]], [[Lrn]], [[Spirit]], [[Actualize]], [[Mission]]
+ LONG:	[[Rocks]], [[q2]], [[Lrn]], [[Spirit]], [[Actualize]], [[Mission]], [[WRM]], 
  COM:  [[CRM]], [[Ping]], [[Mentor]] 
  FUN:	[[fun]], [[Social]], [[fried]], [[gap]], [[hack]], [[Fried Later]] 
  FAM:	[[Family]], [[EBT]] 

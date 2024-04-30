@@ -5,6 +5,9 @@ n:: no prefix.	Dated entries without any typing prefix
 
 | Date       | File                                | Notes                                                                                                                             |
 | ---------- | ----------------------------------- | --------------------------------------------------------------------------------------------------------------------------------- |
+| 2024-04-30 | [[@Matias]]                             | 1-on-1                                                                                                                            |
+| 2024-04-30 | [[EOCA Letters]]                        | Response about how AIs take over                                                                                                  |
+| 2024-04-30 | [[WRM]]                                 |                                                                                                                                   |
 | 2024-04-29 | [[@Stripe]]                             | Intro                                                                                                                             |
 | 2024-04-26 | [[@Oliver Andersson]]                   | Interview                                                                                                                         |
 | 2024-04-18 | [[@Manatee County Utilities]]           | autopay signup                                                                                                                    |
@@ -102,6 +105,7 @@ n:: no prefix.	Dated entries without any typing prefix
 | 2023-11-30 | [[LCM]]                                 | Visualization                                                                                                                     |
 | 2023-11-27 | [[Reflections]]                         | Obispo-Trip.  am I depressed?                                                                                                     |
 | 2023-11-21 | [[NJ]]                                  | Tasks from URI                                                                                                                    |
+| 2023-11-21 | [[NJ24]]                                | Tasks from URI                                                                                                                    |
 | 2023-11-20 | [[Eli Firsts]]                          | First Crush - Babysitter                                                                                                          |
 | 2023-11-20 | [[SV Roadmap]]                          | Long Term Plan                                                                                                                    |
 | 2023-11-19 | [[GoogleJob]]                           | Uri                                                                                                                               |

@@ -6,7 +6,7 @@ n:: Info about me & my stuff
 - [[My Info]], [[MySys]], [[My Stuff]], 
 
 
-::
+:: [[My]]   
 
 
 
