@@ -10,9 +10,9 @@
 - https://www.linkedin.com/in/jean-yves-bouguet-63bb7/
 
 
-:: [[NextJob]],   [[Resume]],  [[Career]], 
+:: [[NextJob]],   [[RES]],  [[Career]], 
 
 - [[JOB Compensation]], 
 - [[MGR]]
--  [NextJob](NextJob.md), [[NJ22]],  [Resume](Resume.md) 
+-  [NextJob](NextJob.md), [[NJ22]],  [RES](RES.md) 
 

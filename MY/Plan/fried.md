@@ -1,15 +1,11 @@
-- metal soap dispenser pump
-- buy ceramic rectangle for cough drops and ear plugs
+
+
+
 - Check in Notification for slack & text are working
-LEGO MINDSTORM
-  [motor](https://www.amazon.com/SEEMEY-Power-Function-Kit-Pins-Gears-Axles-Compatible-Lego-Technic-Parts/dp/B0BZL5TCKN) 
 
 - get Eli's ipad connected to mom's account
-- [[fried]].			
 
-- buy shirts
-fix history month
-- [ ] Eli schools list.
+
 
 - [ ] budget big transfers list	
 - [ ] giphy grab
@@ -19,8 +15,6 @@ fix history month
 - [ ] Get logins for MyHealth
 - [ ] Process mom's Eli educational funds.
 
-### > 
-- [[hack]], 
 
 ### WAITING
 - [ ] NextDoor [[Automation]] 

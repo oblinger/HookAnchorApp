@@ -1,12 +1,10 @@
 
-alphanumerics and case to match
-- spot: compress commands remove non
-- spot: strip spaces for name matching
-- spgrab and spadd should both add a link to clipboard
-- sp grab should past the spot link into the clipboard
+
+- sp grab and sp add should both add a link to clipboard
+
 - obsidian memorization cards
 - [[hack]].	km copy entries
-
+- fix history month
 - OBS - Evernote log of dated entries
     ingest all dated entries and starred entries 
     daily run script via chron or extend alarm.py

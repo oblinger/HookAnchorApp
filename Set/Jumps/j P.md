@@ -3,4 +3,5 @@ JUMPS:
 - [p Prj List](spot://p~Prj~List): 
 - [p Proj Folder](spot://p~Proj~Folder): 
 - [p Plan](spot://p~Plan): 
+- [P](spot://P): 
 

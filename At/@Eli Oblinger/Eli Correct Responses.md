@@ -36,6 +36,26 @@ And as Miss Amanda says, the a key consequence is withdraw of our attention.
 don't reward with attention
 
 
+
+## Emotional Vaccination
+
+
+BEFORE AN EMOTIONAL MOMENT
+1. Connection -- 
+2. Validation -- 
+3. Story To Understand --
+
+END OF SCREEN TIME
+- Connect - how will we feel
+	- Model taking deep breath - 
+- Validation - lets get some out of the way
+	- said in a kidding way:  "I wanna watch one more"
+	- said 
+- Story to understand - 
+
+
+SIT ON EMOTIONAL BENCH *WITH* CHILD
+- connect and experience feeling w/o trying to pull them off the bench
 ## Don't ask why he does not want to go to school
 
 - when they don't want to go to school.

@@ -6,4 +6,5 @@ JUMPS:
 - [SP edit](spot://SP~edit): 
 - [SP folder](spot://SP~folder): 
 - [SP grab](spot://SP~grab): 
+- [SP](spot://SP): 
 

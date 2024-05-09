@@ -8,4 +8,5 @@ JUMPS:
 - [SCR Qingling<>Dan Webpage](spot://SCR~Qingling<>Dan~Webpage): 
 - [SCR dan](spot://SCR~dan): 
 - [SCR Gdrive](spot://SCR~Gdrive): 
+- [SCR](spot://SCR): 
 

@@ -1,8 +1,7 @@
 
-:: [[COM Msg]],   [[COM Next]],   [[Calls]]
-- (See [[Meta Coms]])
 
 
+- [[Meta Coms]],  [[COM Msg]],  [[COM Next]],  [[Calls]],  [[CRM]], 
 # LOG
 ### 2022-07-19  Ping Goals
 - Heartbeat - 

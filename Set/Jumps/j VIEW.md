@@ -6,4 +6,5 @@ JUMPS:
 - [View Self](spot://View~Self): 
 - [View Work](spot://View~Work): 
 - [view Up Task](spot://view~Up~Task): 
+- [VIEW](spot://VIEW): 
 

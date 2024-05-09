@@ -10,7 +10,7 @@
  [[@Yoshua Bengio]]   ! Yoshua Bengio Research
  
 TODO
-- [[Brain3]] - Frame my idea & Motivating example
+- [[2021-06-00 Brain3]] - Frame my idea & Motivating example
 
 
  [GFlowNets](https://yoshuabengio.org/2022/03/05/generative-flow-networks/)  

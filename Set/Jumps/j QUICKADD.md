@@ -9,4 +9,5 @@ JUMPS:
 - [QuickAdd Notion](spot://QuickAdd~Notion): 
 - [QuickAdd Shell](spot://QuickAdd~Shell): 
 - [QuickAdd Webpage](spot://QuickAdd~Webpage): 
+- [QuickAdd](spot://QuickAdd): 
 

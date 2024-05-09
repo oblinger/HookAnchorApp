@@ -63,22 +63,92 @@ If we split do and Load.from_template
 Then how do we call from $ do
 
 
-### MOUNT
+### INST Constructor
+- spec = literal dict tree to save as spec for the new inst
+- spec_template = template whose expansion & path expansion is used for the new inst
+- path = literal absolute or relative path where inst should be created.  (error if exists)
+- overwrite = flag allowing folder for auto erasure and overwriting
+- path_template = template expanded to produce final path
 
+  main: {
+      folder_template: "{cwd}/{YYYY}/{MM}/{DD}"
+    }
+
+.stage(bool)
+
+
+Inst(spec=, path=)     "anonymous/Inst{unique}"
+
+check: DVC 
+TAGS: DVC, ML-FLOW, DATA
+### RENAMES
+ML-DAT  ==>  DVC-DAT
+
+DVC-DAT - Thin python wrapper for DVC-based ML-datasets and workflows
+- Python bindings for pulling/pushing data folders directly from DVC.
+- Git-like work flow for staging then pushing updates to the DVC data-repo.
+- Folder declaratively configured via json/yaml to dynamically launched python actions
+  (supports ML-Flow experiment and model building workflows)
+- Pandas DataFrames and Excel reporting over metrics applied to trees of data folders
+
+- Data wrapper
+- An OO-like ability to associate python script actions declaratively in the data folders.
+  (supports ML-Flow experiment and model building workflows)
+- Declarative data execution
+
+- Declarative data execution/management with git-like interface for remote storage.
+
+- Thin wrapper over DVC, Git, and Python module loading that support
+  folders-artifacts with optional script actions.
+- (supports ML workflows leveraging DVC, MLFLOW, Pandas and Excel.)
+
+
+Dat.get(spec, "this.that")
+
+### MOUNT
 do.mount(value: at:)
 do.mount(live_value: at:)
+do.mount(file: at:)
 do.mount(module: at:)
-do.mount(module_tree: at:)
-do.mount(source: at:)
-do.mount(source_tree: at:)
-do.mount(flat_names: at:)
+do.mount(shallow_files: at:)
 
-	# .datconfig
+do.mount(module_tree: at:)
+do.mount(file_tree: at:)
+
+do.load("dotted.key")
+do.mount("dotted.key" file:)
+do.mount("dotted.key" VALUE)
+do.set("dotted.key" module:)
+
+
+Dat.get(dict, "dotted.key")
+Dat.get(dat, "dotted.key")
+Dat.get(dat.get_spec(), "dotted.key")
+
+
+	# .datconfig.yaml
 	mounts:
-		- {value: 555, at: foo.bar} 				# loads constant value
+		- {value: 555, at: "foo.bar"} 		    # loads constant value
 		- {live_value: do_string, at: foo.bar}   # computes dynamic value and loads it
-		- {source: path, at: foo.bar}            # loads .py .json .yaml
-		- {source: module_name, at: foo.bar}     # loads .py using its module path
-		- {source_tree: path, at: foo.bar}       # loads TREE of .py .json .yaml
-		- {source: module_name, at: foo.bar}     # loads TREE of .py using its module path
-		- {source_flat: path, at: foo.bar}       # loads TREE of .py .json .yaml into flat namespace
+		- {file: PATH, at: foo.bar}              # loads .py .json .yaml
+		- {module: module_name, at: foo.bar}     # loads .py using its module path
+		- {all_files: path, at: foo.bar}         # loads TREE of .py .json .yaml into flat namespace
+
+
+    # .datconfig
+    mounts: |-
+	    mount value: 555 at foo.bar
+
+
+
+    $ do foo
+    # foo.py
+    index = {...}
+
+     def my_metric():
+          ...
+
+      def fn(...)
+      do.in_package()
+      do.mount(fn, at:".my_metric.regression", fn)
+    

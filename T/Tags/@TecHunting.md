@@ -1,5 +1,7 @@
 =[[RECRUITER]].   #Role/Recruiter 
 
-- [[@Silvana Oviedo]], 
+- [[@Javier Martinez Rubio]] 
+- [[@Silvana Oviedo]],
+- pracini@techunting.net. Paula Racini (organizer)
 
 Used @ [[SV]]

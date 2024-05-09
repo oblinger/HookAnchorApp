@@ -1,5 +1,5 @@
 
-:: [[2018-00 Alloy]],   [[Ideas Brain]],   [[Ideas Social]],   [[Life Projects]]
+:: [[2018-00 Alloy]],   [[Idea Brain]],   [[Idea Social]],   [[Life Projects]]
 #log 
 n:: Ideas of mine
 

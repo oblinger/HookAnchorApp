@@ -1,4 +1,6 @@
 
+:: [[@Javier Martinez Rubio]]
+
 :: [[BUILD]]
 
 :: [[@Silvana Oviedo]],   [[@TecHunting]]
@@ -27,7 +29,7 @@
   
 - [[REF]] 
 	- [[COMP]] 
-		- [[LANG]] 
+		- [[Lang]] 
 		- [[INFO_PAGE]] 
 		- [[LOG]]   
 		- [[Prj]] 

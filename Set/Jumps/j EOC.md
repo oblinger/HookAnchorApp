@@ -6,4 +6,5 @@ JUMPS:
 - [eoc-book](spot://eoc-book): 
 - [eoc-formal](spot://eoc-formal): 
 - [eoc-impl](spot://eoc-impl): 
+- [EOC](spot://EOC): 
 

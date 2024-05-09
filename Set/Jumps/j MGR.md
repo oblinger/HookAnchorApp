@@ -7,4 +7,6 @@ JUMPS:
 - [MGR Meetings](spot://MGR~Meetings): 
 - [MGR Negotiations](spot://MGR~Negotiations): 
 - [MGR Product](spot://MGR~Product): 
+- [MGR](spot://MGR): 
+- [MGR Plan](spot://MGR~Plan): 
 

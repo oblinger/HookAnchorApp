@@ -37,7 +37,7 @@ clean email
 - $6/mo		WSJ - Wall Street Journal  (2023-02)
 - $5/mo		Medium Monthly
 
-- $100/yr		Blink Plus  (renews 11-09-2023) 
+- $199/yr		Noom (Renews 06-27-2024)
 - $55/yr		Vorwerk Thermomix Recipes (2023-12-11.  Web -> {ChefHat} -> Account )
 - $39/yr  		Consumer Reports Digital   2023-08-23
 - ???			CR On Health
@@ -89,21 +89,20 @@ SAPPHIRE
 
 ## PAUSED
 - crunch base
-
-PAUSED
 - $13/m		Peloton  7/31/22
 - $50/yr		Nest Aware (Cancelled)
-- $0/m		Ny times (revert to $15/m no Nov-23-2020)
-- $			Disney+
+- $0/m			Ny times (revert to $15/m no Nov-23-2020)
+- $				Disney+
 - $0/mo		Sling TV  ($20/mo)
 
 RETIRED or ONE TIME
-- $0		Dropbox
-- $0		Linked-In Premium
-- $0		Grammarly  (Free plan)
-- $0		Keyboard Maestro  (One time purchase for version)
-- $0		Paprika  (One Time Purchase)
-- $0		Freedom  (cancelled on 2022-12-24 for some time in future)
+- $000/yr		Blink Plus  (renews 11-09-2023)  Verified cancelled on 04-30-2024
+- $0				Dropbox
+- $0				Linked-In Premium
+- $0				Grammarly  (Free plan)
+- $0				Keyboard Maestro  (One time purchase for version)
+- $0				Paprika  (One Time Purchase)
+- $0				Freedom  (cancelled on 2022-12-24 for some time in future)
 - $20/yr		File This
 
 ### DANO CHANNELS  (out of date)

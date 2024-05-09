@@ -4,12 +4,12 @@
 
 ## FACETS
 
-### KIND (Info Prefix)
-- ENTITY	@	-	Page for something with agency: a person, an organization, or a group
-- JUMP		j	-	Jump to location.  Local folder, Dropbox, gDrive, etc.
-- GOOGLE	g	-	Google specific location, tool, or account
-- LIST		l	-	Task or todo item list
-- VISION	cv	-	Computer Vision team related
+### KEY FACETS FOR A TERM
+- TASK - A todo list or plan associated with this term
+	- VIEW - A view or dashboard associated with the term (alternative to a task list)
+- JUMP - A jump table for this term
+- DOC - The main artifact described by the term
+- NOTES - Notes for this entry
 
 ### LOCATIONS
 - 			--  No suffix overrides others as leading choice
@@ -35,6 +35,14 @@ ENTITY
 - n...		NOTES about entity
 - r...		REF materials for an entity
 - ...		UNTYPED entries about entity
+
+### CATEGORY (Info Prefix -- not really a facet)
+- ENTITY	@	-	Page for something with agency: a person, an organization, or a group
+- JUMP		j	-	Jump to location.  Local folder, Dropbox, gDrive, etc.
+- GOOGLE	g	-	Google specific location, tool, or account
+- LIST		l	-	Task or todo item list
+- VISION	cv	-	Computer Vision team related
+
 
 
 # LOG

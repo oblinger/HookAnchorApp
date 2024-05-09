@@ -5,4 +5,165 @@ JUMPS:
 - [MAC How To](spot://MAC~How~To): 
 - [MAC Other HW](spot://MAC~Other~HW): 
 - [MAC Setup](spot://MAC~Setup): 
+- [1Password App](spot://1Password~App): 
+- [1Password for Safari App](spot://1Password~for~Safari~App): 
+- [Activity Monitor App](spot://Activity~Monitor~App): 
+- [AppOpen App](spot://AppOpen~App): 
+- [App Store App](spot://App~Store~App): 
+- [Audio Hijack 2 App](spot://Audio~Hijack~2~App): 
+- [Automator App](spot://Automator~App): 
+- [Backgrounds for Zoom App](spot://Backgrounds~for~Zoom~App): 
+- [Bartender 4 App](spot://Bartender~4~App): 
+- [Be Focused Pro App](spot://Be~Focused~Pro~App): 
+- [BlueJeans App](spot://BlueJeans~App): 
+- [Brave Browser App](spot://Brave~Browser~App): 
+- [Calculator App](spot://Calculator~App): 
+- [Calendar App](spot://Calendar~App): 
+- [Chrome App](spot://Chrome~App): 
+- [Cisco Webex Meetings App](spot://Cisco~Webex~Meetings~App): 
+- [Clozure CL App](spot://Clozure~CL~App): 
+- [Contacts](spot://Contacts): 
+- [Contacts App](spot://Contacts~App): 
+- [DaisyDisk App](spot://DaisyDisk~App): 
+- [Dark Noise App](spot://Dark~Noise~App): 
+- [Dash App](spot://Dash~App): 
+- [DEVONthink 3 App](spot://DEVONthink~3~App): 
+- [Dictionary App](spot://Dictionary~App): 
+- [Discord App](spot://Discord~App): 
+- [Divvy App](spot://Divvy~App): 
+- [Docs for Xcode App](spot://Docs~for~Xcode~App): 
+- [Dropbox App](spot://Dropbox~App): 
+- [Emacs App](spot://Emacs~App): 
+- [Evernote App](spot://Evernote~App): 
+- [Excel App](spot://Excel~App): 
+- [Express Scribe Transcription Software App](spot://Express~Scribe~Transcription~Software~App): 
+- [Facetime App](spot://Facetime~App): 
+- [Fast Mbox Editor App](spot://Fast~Mbox~Editor~App): 
+- [Find My App](spot://Find~My~App): 
+- [Finicky App](spot://Finicky~App): 
+- [Firefox App](spot://Firefox~App): 
+- [Flotato App](spot://Flotato~App): 
+- [Flux App](spot://Flux~App): 
+- [FocusTime App](spot://FocusTime~App): 
+- [FoldingText App](spot://FoldingText~App): 
+- [Font Book App](spot://Font~Book~App): 
+- [Fork App](spot://Fork~App): 
+- [FreeCAD App](spot://FreeCAD~App): 
+- [FreeCell App](spot://FreeCell~App): 
+- [Freedom App](spot://Freedom~App): 
+- [gCHROME App](spot://gCHROME~App): 
+- [gDOCS App](spot://gDOCS~App): 
+- [gMEET](spot://gMEET): 
+- [Goban App](spot://Goban~App): 
+- [GoodSync App](spot://GoodSync~App): 
+- [GoodSyncExplorer App](spot://GoodSyncExplorer~App): 
+- [Google Docs App](spot://Google~Docs~App): 
+- [Google Drive App](spot://Google~Drive~App): 
+- [Google Sheets App](spot://Google~Sheets~App): 
+- [Google Slides App](spot://Google~Slides~App): 
+- [GoToMeeting App](spot://GoToMeeting~App): 
+- [GPX Viewer App](spot://GPX~Viewer~App): 
+- [Grammarly Editor App](spot://Grammarly~Editor~App): 
+- [gSheets App](spot://gSheets~App): 
+- [Home App](spot://Home~App): 
+- [hROOM](spot://hROOM): 
+- [Image Capture App](spot://Image~Capture~App): 
+- [Importer for Contacts App](spot://Importer~for~Contacts~App): 
+- [iStat Menus App](spot://iStat~Menus~App): 
+- [Joplin App](spot://Joplin~App): 
+- [Karabiner-Elements App](spot://Karabiner-Elements~App): 
+- [Karabiner-EventViewer App](spot://Karabiner-EventViewer~App): 
+- [Keyboard Maestro App](spot://Keyboard~Maestro~App): 
+- [Keynote App](spot://Keynote~App): 
+- [Kindle App](spot://Kindle~App): 
+- [Launchpad App](spot://Launchpad~App): 
+- [LiquidText App](spot://LiquidText~App): 
+- [LogiOptions App](spot://LogiOptions~App): 
+- [logioptionsplus App](spot://logioptionsplus~App): 
+- [Magnet App](spot://Magnet~App): 
+- [Mail App](spot://Mail~App): 
+- [Maps App](spot://Maps~App): 
+- [Messages App](spot://Messages~App): 
+- [Microsoft Excel App](spot://Microsoft~Excel~App): 
+- [Microsoft OneNote App](spot://Microsoft~OneNote~App): 
+- [Microsoft Outlook App](spot://Microsoft~Outlook~App): 
+- [Microsoft PowerPoint App](spot://Microsoft~PowerPoint~App): 
+- [Microsoft Word App](spot://Microsoft~Word~App): 
+- [Mission Control App](spot://Mission~Control~App): 
+- [Music App](spot://Music~App): 
+- [Named App](spot://Named~App): 
+- [Netflix App](spot://Netflix~App): 
+- [Neu App](spot://Neu~App): 
+- [News App](spot://News~App): 
+- [NOISE DarkNoise](spot://NOISE~DarkNoise): 
+- [NoSleep App](spot://NoSleep~App): 
+- [Notes App](spot://Notes~App): 
+- [Numbers App](spot://Numbers~App): 
+- [Obsidian App](spot://Obsidian~App): 
+- [OneDrive App](spot://OneDrive~App): 
+- [OneNote App](spot://OneNote~App): 
+- [Opera App](spot://Opera~App): 
+- [OurPact Connect App](spot://OurPact~Connect~App): 
+- [Pages App](spot://Pages~App): 
+- [Paintbrush App](spot://Paintbrush~App): 
+- [Paprika](spot://Paprika): 
+- [Paprika App](spot://Paprika~App): 
+- [Paprika Recipe Manager 3 App](spot://Paprika~Recipe~Manager~3~App): 
+- [Paprika Recipe Manager App](spot://Paprika~Recipe~Manager~App): 
+- [Photos App](spot://Photos~App): 
+- [Plain Clip App](spot://Plain~Clip~App): 
+- [Platypus App](spot://Platypus~App): 
+- [Pock App](spot://Pock~App): 
+- [Pocket App](spot://Pocket~App): 
+- [Podcasts App](spot://Podcasts~App): 
+- [PowerPoint App](spot://PowerPoint~App): 
+- [Preferences App](spot://Preferences~App): 
+- [PST Bridge App](spot://PST~Bridge~App): 
+- [PyCharm App](spot://PyCharm~App): 
+- [QL Amazon App](spot://QL~Amazon~App): 
+- [QuickRes App](spot://QuickRes~App): 
+- [QuickTime Player App](spot://QuickTime~Player~App): 
+- [Reminder App](spot://Reminder~App): 
+- [Safari App](spot://Safari~App): 
+- [Save to Pocket App](spot://Save~to~Pocket~App): 
+- [Screen Sharing App](spot://Screen~Sharing~App): 
+- [Shortcuts App](spot://Shortcuts~App): 
+- [Shottr App](spot://Shottr~App): 
+- [Simplenote App](spot://Simplenote~App): 
+- [Skype App](spot://Skype~App): 
+- [Slack App](spot://Slack~App): 
+- [Slate App](spot://Slate~App): 
+- [Sourcetree App](spot://Sourcetree~App): 
+- [Speedtest App](spot://Speedtest~App): 
+- [Spotify App](spot://Spotify~App): 
+- [SpotlightCommander App](spot://SpotlightCommander~App): 
+- [Stay App](spot://Stay~App): 
+- [Stickies App](spot://Stickies~App): 
+- [Stocks App](spot://Stocks~App): 
+- [Sub lime Text App](spot://Sub~lime~Text~App): 
+- [System Preferences App](spot://System~Preferences~App): 
+- [TextEdit App](spot://TextEdit~App): 
+- [TextSniper App](spot://TextSniper~App): 
+- [Time Machine App](spot://Time~Machine~App): 
+- [Timey 3 App](spot://Timey~3~App): 
+- [Transcribe App](spot://Transcribe~App): 
+- [Translator App](spot://Translator~App): 
+- [TV App](spot://TV~App): 
+- [urlhandler App](spot://urlhandler~App): 
+- [vCard Editor App](spot://vCard~Editor~App): 
+- [Visual Studio Code App](spot://Visual~Studio~Code~App): 
+- [VLC App](spot://VLC~App): 
+- [Voice Memo App](spot://Voice~Memo~App): 
+- [Voice Memos App](spot://Voice~Memos~App): 
+- [Webcam Settings App](spot://Webcam~Settings~App): 
+- [WhatsApp App](spot://WhatsApp~App): 
+- [WhatSize App](spot://WhatSize~App): 
+- [Word App](spot://Word~App): 
+- [WorkFlowy App](spot://WorkFlowy~App): 
+- [Xcode App](spot://Xcode~App): 
+- [YiHomeMacInternational App](spot://YiHomeMacInternational~App): 
+- [Yoink App](spot://Yoink~App): 
+- [Zettlr App](spot://Zettlr~App): 
+- [zoom.us App](spot://zoom.us~App): 
+- [Zoom App](spot://Zoom~App): 
 

@@ -1,7 +1,7 @@
 ## __
  
  MENTORS:  [[FAANG]],  [[VC ORG]],  
-
+[[Personal BOD]]:
 ## CORE
 STRAT:	[[@Nick Allen]], 	[[@Luis Arrellano]],
 

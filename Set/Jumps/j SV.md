@@ -36,4 +36,14 @@ JUMPS:
 - [SV Tasks](spot://SV~Tasks): 
 - [SV Testing](spot://SV~Testing): 
 - [SV Wings](spot://SV~Wings): 
+- [Bug.](spot://Bug.): 
+- [Bug Actual List Page](spot://Bug~Actual~List~Page): 
+- [Bug Board Page](spot://Bug~Board~Page): 
+- [Bugs](spot://Bugs): 
+- [Fireball](spot://Fireball): 
+- [HALOS](spot://HALOS): 
+- [Investor Intros](spot://Investor~Intros): 
+- [Jira](spot://Jira): 
+- [Jira Me Page](spot://Jira~Me~Page): 
+- [July Hiring](spot://July~Hiring): 
 

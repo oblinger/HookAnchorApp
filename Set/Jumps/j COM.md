@@ -4,4 +4,6 @@ JUMPS:
 - [COM Investor](spot://COM~Investor): 
 - [COM Msg](spot://COM~Msg): 
 - [COM Next](spot://COM~Next): 
+- [COM](spot://COM): 
+- [COMS](spot://COMS): 
 

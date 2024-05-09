@@ -39,7 +39,7 @@ Still on the good side, I have some really GREAT turn around stories to tell.  
 
 ## ROCKS TODO
 - [[WarStories]]: Adj/Topics
-- [[Resume]]: rewrite
+- [[RES]]: rewrite
 - [[Resume Rewrite]] - 
 - [[Lrn]]:		]]
 

@@ -1,9 +1,0 @@
-
-## FORMAL LEARNING FRAMEWORK
-
-### OUTLINE OF THE FORMAL FRAMEWORK
-
-
-### Formal Embodiment
-
-

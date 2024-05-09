@@ -29,8 +29,9 @@ https://www.frannyskitchensf.com/
 | d++~  THAI                      | Osha Thai -                                                       |     |     |
 | d+~~  THAI                      | Farm House Kitchen (expensive)                                    |     |     |
 | d???  THAI                      | Marnee Thai                                                       |     |     |
-| d3.2  KOREAN                    | Namu Stonepot (veg fresh, rice not)                               |     |     |
-| d4.0  KOREAN                    | Mom's Tofu House.  Affordable/ok.                                 |     |     |
+| d4.0 KOREAN                     | Daeho Kalbijjim                                                   |     |     |
+| <br> d3.5  KOREAN               | Namu Stonepot (veg fresh, rice not)                               |     |     |
+| d3.5  KOREAN                    | Mom's Tofu House.  Affordable/ok.                                 |     |     |
 | d++~  KOREAN                    | Jin Mi Korean.  Affordable/better than mammas                     |     |     |
 | d+++  BURMESE                   | Burmese Kitchen ~ We all like it & it is affordable               |     |     |
 | d?~~  BURMESE                   | New Burma (yelp 4.5)  Burma Cafe/Love/Superstar (yelp 4.0)        |     |     |

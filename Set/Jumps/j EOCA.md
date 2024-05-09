@@ -23,4 +23,6 @@ JUMPS:
 - [EOCA Digital Native](spot://EOCA~Digital~Native): 
 - [EOCA Plausible Paths](spot://EOCA~Plausible~Paths): 
 - [EOCA Letters](spot://EOCA~Letters): 
+- [End Of Man Book](spot://End~Of~Man~Book): 
+- [EndOfMan BookOutline](spot://EndOfMan~BookOutline): 
 

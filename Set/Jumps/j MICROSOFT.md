@@ -5,4 +5,5 @@ JUMPS:
 - [Microsoft Outlook App](spot://Microsoft~Outlook~App): 
 - [Microsoft PowerPoint App](spot://Microsoft~PowerPoint~App): 
 - [Microsoft Word App](spot://Microsoft~Word~App): 
+- [Microsoft](spot://Microsoft): 
 

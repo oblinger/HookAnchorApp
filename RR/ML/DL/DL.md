@@ -1,7 +1,9 @@
 
+:: [[Feed Forward Layer]],   [[ORPO Odds Ratio Preference Optimization]]
+
 :: [[LSTM]],  
 
-. [[Transformers]],
+. [[Transformers]], [[LLM]], 
 
 :: [[VAE - Variational Auto Encoder]],   [[Attention]],   [[Gradient Checking]],   [[NG Notation]],   [[Invertable Density Estimation]],   [[Self Supervised Learning]],   [[Activation Functions]],   [[Auto Encoders]],  [[VAE]]
 - [[DL algs]], [[DL topics]], [[DL optimization]], 

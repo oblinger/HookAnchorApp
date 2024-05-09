@@ -208,4 +208,10 @@ JUMPS:
 - [j NOISE](spot://j~NOISE): 
 - [j Q2](spot://j~Q2): 
 - [j LRN](spot://j~LRN): 
+- [j RES](spot://j~RES): 
+- [j S](spot://j~S): 
+- [J](spot://J): 
+- [j CHRISTXMAS](spot://j~CHRISTXMAS): 
+- [j BOOK](spot://j~BOOK): 
+- [j IDEA](spot://j~IDEA): 
 

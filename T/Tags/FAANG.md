@@ -16,14 +16,15 @@ Freed.  Luis.  Rafah.  Huerta.
 
 ## = People
 
- Ask|  about FAANG ML: 
- ---|------------------------------------
-  Fa | [[@Rodrigo Braz]], 
-  Am | [[@Michael Freed]], [[@Juan Huerta]],  [[@Nina Mishra]],  [[@Felipe Lavratti]],  [[@Vittorio Castelli]], 
-  Ap | [[@Mark Drummond]],  [[@Carlos Guestrin]],  [[@Jeff Provost]],  [[@Mark Reid]],
-  Go | [[@Melanie Dumas]],  [[@John Davis]],  [[@Doug Gordin]],  [[@Arkady Epshteyn]],  
-  Mi | [[@Rafah Hosn]],  [[@Luiz Pires]], ...more
-  Ot | LinkedIn [[@Sofus Macskassy]], VMware [[@Chris Ramming]],  
+| Ask | about FAANG ML:                                                                                          |
+| --- | -------------------------------------------------------------------------------------------------------- |
+| Fa  | [[@Rodrigo Braz]],                                                                                       |
+| Am  | [[@Michael Freed]], [[@Juan Huerta]],  [[@Nina Mishra]],  [[@Felipe Lavratti]],  [[@Vittorio Castelli]], |
+| Ap  | [[@Mark Drummond]],  [[@Carlos Guestrin]],  [[@Jeff Provost]],  [[@Mark Reid]],                          |
+| Go  | [[@Melanie Dumas]],  [[@John Davis]],  [[@Doug Gordin]],  [[@Arkady Epshteyn]],                          |
+| Mi  | [[@Rafah Hosn]],  [[@Luiz Pires]], ...more                                                               |
+| Nv  |                                                                                                          |
+| Ot  | LinkedIn [[@Sofus Macskassy]], VMware [[@Chris Ramming]],                                                |
 
 OTHERS:   [[@Dennis DeCoste]],
 RECRUITER:	[[@Kyle Langworthy]],    |

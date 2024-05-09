@@ -23,4 +23,6 @@ JUMPS:
 - [MED Weight](spot://MED~Weight): 
 - [MED-Vitamins](spot://MED-Vitamins): 
 - [MED.](spot://MED.): 
+- [Glycemic Index](spot://Glycemic~Index): 
+- [Jet Lag](spot://Jet~Lag): 
 

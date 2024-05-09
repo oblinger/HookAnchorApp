@@ -5,4 +5,5 @@ JUMPS:
 - [Google Drive App](spot://Google~Drive~App): 
 - [Google Sheets App](spot://Google~Sheets~App): 
 - [Google Slides App](spot://Google~Slides~App): 
+- [Google](spot://Google): 
 

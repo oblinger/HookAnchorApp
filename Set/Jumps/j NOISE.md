@@ -8,4 +8,5 @@ JUMPS:
 - [NOISE White](spot://NOISE~White): 
 - [NOISE Jazz](spot://NOISE~Jazz): 
 - [NOISE Jazz Autumn](spot://NOISE~Jazz~Autumn): 
+- [NOISE](spot://NOISE): 
 

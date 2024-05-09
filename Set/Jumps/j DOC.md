@@ -5,4 +5,54 @@ JUMPS:
 - [Doc Keyboard Maestro](spot://Doc~Keyboard~Maestro): 
 - [DOC SYNC](spot://DOC~SYNC): 
 - [DOC SYNC COMMANDS](spot://DOC~SYNC~COMMANDS): 
+- [Doc](spot://Doc): 
+- [DocAPI](spot://DocAPI): 
+- [DocApplescript](spot://DocApplescript): 
+- [DocArduino](spot://DocArduino): 
+- [DocAWS](spot://DocAWS): 
+- [DocBash](spot://DocBash): 
+- [DocCapistrano](spot://DocCapistrano): 
+- [DocClojure](spot://DocClojure): 
+- [DocConda](spot://DocConda): 
+- [DocCPP](spot://DocCPP): 
+- [DocCucumber](spot://DocCucumber): 
+- [DocDanO](spot://DocDanO): 
+- [DocDelayedJob](spot://DocDelayedJob): 
+- [DocDocker](spot://DocDocker): 
+- [DocEmacs](spot://DocEmacs): 
+- [DocGit](spot://DocGit): 
+- [DocGnome](spot://DocGnome): 
+- [DocGolang](spot://DocGolang): 
+- [DocGoogle](spot://DocGoogle): 
+- [DocHtml](spot://DocHtml): 
+- [DocJavascript](spot://DocJavascript): 
+- [DocJquery](spot://DocJquery): 
+- [DocJupyter](spot://DocJupyter): 
+- [DocLinux](spot://DocLinux): 
+- [DocMac](spot://DocMac): 
+- [DocMarkdown](spot://DocMarkdown): 
+- [DocMatplotlib](spot://DocMatplotlib): 
+- [DocNumPy](spot://DocNumPy): 
+- [DocObjectiveC](spot://DocObjectiveC): 
+- [DocObsidian](spot://DocObsidian): 
+- [DocOSX](spot://DocOSX): 
+- [DocPandas](spot://DocPandas): 
+- [DocPycharm](spot://DocPycharm): 
+- [DocPyDatetime](spot://DocPyDatetime): 
+- [DocPyML](spot://DocPyML): 
+- [DocPython](spot://DocPython): 
+- [DocR](spot://DocR): 
+- [DocRackspace](spot://DocRackspace): 
+- [DocRails](spot://DocRails): 
+- [DocRuby](spot://DocRuby): 
+- [DocSamurai](spot://DocSamurai): 
+- [DocSciKit](spot://DocSciKit): 
+- [DocSeaborn](spot://DocSeaborn): 
+- [DocSED](spot://DocSED): 
+- [DocSQL](spot://DocSQL): 
+- [DocSublime](spot://DocSublime): 
+- [DocTensorFlow](spot://DocTensorFlow): 
+- [Doctor](spot://Doctor): 
+- [DocVagrant](spot://DocVagrant): 
+- [docs](spot://docs): 
 

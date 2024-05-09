@@ -11,6 +11,9 @@ Lrn:	Papers?
 Hugging-face tutorial
 PyTorch
 
+
+
+- [Hugging Face NLP Tutorial](https://huggingface.co/learn/nlp-course/chapter1/1) 
 - [Fast.ai](https://www.youtube.com/playlist?list=PLfYUBJiXbdtSLBPJ1GMx-sQWf6iNhb8mM) 
 
 - [[Coursera Notes]]* - Complete Coursera Deep Learning Course

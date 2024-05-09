@@ -1,8 +1,8 @@
 #set 
 n:: Books I have read
 
-
-- [[Courses]], [[LibraryThing 1Pass]], [[Books Chat GPT]], 
+- [[Book]] 
+- [[Courses]], [[LibraryThing 1Pass]], [[Book Chat GPT]], 
 - [[SciFi]],
 - [[Agile Software Development]], 
 

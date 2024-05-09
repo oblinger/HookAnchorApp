@@ -1,4 +1,4 @@
-
+[[S.T.A.R.]] 
 - Specific - Goals should be worded as precisely as possible
 - Measurable
 - Achievable

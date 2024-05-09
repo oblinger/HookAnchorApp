@@ -19,6 +19,32 @@
 - Becoming a DL guy
 
 
+## Now
+
+### 2024-05-01  Reflection on 2023
+- I grew to really do things and engage strongly with Eli
+- I grew dramatically at Sports Visio into the CTO role.
+  I am now a pretty damn strong CTO.
+- Biggest learning from failure is to learn that I need to move fast.
+	- Strong in the moment planning and org needed.
+	- Focus on delegation and empowerment of others
+	- Focus on fewer activities
+
+- A year of transition from stasis toward action.  (but mostly still in stasis)
+- Family grew a bit in doing things together
+- Health was not a focus
+
+WHAT WOULD BE 10X BETTER IN 2024?
+- Healthy - Totally kicking it health wise.  VO2max jumping up
+	- 40-min 4x week in health
+- Spiritually strong - Iron discipline about thinking @ night
+- Lock & loaded on dan-next:
+	- Geared for gen-AI
+- Back to great intimacy
+	- ??? - Bi-monthly dating & family nights
+- Energized by daily activity
+	- Twice weekly FUN ACTIVITIES
+
 ### 2024-04-03  marriage
 
 Our marriage is in trouble.  I feel resistance to even trying to interact.

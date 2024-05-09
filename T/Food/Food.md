@@ -3,10 +3,10 @@
 
 :: [[desserts]]
 - [[MED Food]], 
-- [[FOOD Recipe Research]], [[FOOD Research]],  
+- [[Food Recipe Research]], [[Food Research]],  
   [[FastingDiet]]
 
- - SECTIONS:	[[Diet]],  [[Groc]],  [[Delivery]],  [[Eat]],  [[FOOD Research]],  
+ - SECTIONS:	[[Diet]],  [[Groc]],  [[Delivery]],  [[Eat]],  [[Food Research]],  
  - TOPICS:  	[[Noom Notes]],  [[ReBuy]],  [[Restaurants]], [[Try Foods]], 
  - SMASS:		[[ContainerWeights]],  [[Glycemic Index]],  [old-word-shopping-list](groc.docx),  
  - MEALS:		[[Meals]],  [[Entrees]], [[Meals Vegetables]], 

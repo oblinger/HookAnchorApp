@@ -1,0 +1,6 @@
+
+Situation
+Task
+Action
+Result
+

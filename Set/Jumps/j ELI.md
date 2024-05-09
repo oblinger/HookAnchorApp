@@ -13,4 +13,6 @@ JUMPS:
 - [Eli Schools](spot://Eli~Schools): 
 - [Eli Sleep Training](spot://Eli~Sleep~Training): 
 - [ELI Quotes](spot://ELI~Quotes): 
+- [Clarendon](spot://Clarendon): 
+- [Daycare Applications](spot://Daycare~Applications): 
 

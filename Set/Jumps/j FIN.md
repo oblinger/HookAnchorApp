@@ -14,4 +14,6 @@ JUMPS:
 - [FIN.](spot://FIN.): 
 - [FIN Retire](spot://FIN~Retire): 
 - [FIN Flows](spot://FIN~Flows): 
+- [BillPay](spot://BillPay): 
+- [PenFed](spot://PenFed): 
 

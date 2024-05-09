@@ -1,6 +1,5 @@
 - [[pp]]: yearbook
-- paying for noom
-- christmas tree
+- christ tree
 - [[Journaling]] 
 -  quarterly goals
 - sweeper 

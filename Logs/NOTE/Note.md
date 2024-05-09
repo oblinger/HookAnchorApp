@@ -24,9 +24,9 @@ n:: 'n...' 	Isolated 'notes' created by me
 | n2022-10-15 | [[@Yashin Lin]]        | Yashin Self Summary after loosing her job                                   |
 | n2022-10-04 | [[@Jason Syversen]]    | Thinking about the Job choice                                               |
 | n2022-10-03 | [[@Jason Syversen]]    | Jason offer email                                                           |
-| n2022-09-24 | [[Brain3]]             | Broad Agenda (For Nina)                                                     |
-| n2022-09-11 | [[Brain3]]             | WORLD MODEL                                                                 |
-| n2022-08-23 | [[Brain3]]             | ARCHITECTURE & ALGORITHM IDEAS                                              |
+| n2022-09-24 | [[2021-06-00 Brain3]]  | Broad Agenda (For Nina)                                                     |
+| n2022-09-11 | [[2021-06-00 Brain3]]  | WORLD MODEL                                                                 |
+| n2022-08-23 | [[2021-06-00 Brain3]]  | ARCHITECTURE & ALGORITHM IDEAS                                              |
 | n2022-07-28 | [[@Felipe Lavratti]]   | Job pointers at Amazon                                                      |
 | n2022-07-22 | [[Politics]]           | Religious tolerance                                                         |
 | n2022-07-09 | [[EOCA]]               | Zombie Consciousness                                                        |

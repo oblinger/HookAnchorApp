@@ -12,4 +12,8 @@ JUMPS:
 - [My Info](spot://My~Info): 
 - [My mgr NOTES](spot://My~mgr~NOTES): 
 - [My Stuff](spot://My~Stuff): 
+- [My](spot://My): 
+- [MyMgr](spot://MyMgr): 
+- [MyMgr Page](spot://MyMgr~Page): 
+- [MySys](spot://MySys): 
 

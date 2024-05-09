@@ -1,5 +1,5 @@
 
-:: [[MGR Annual Review]],   [[MGR Deligation Planning]],   [[MGR Leadership]],   [[MGR Meetings]],   [[My mgr NOTES]]
+:: [[MGR Annual Review]],   [[MGR Plan]],   [[MGR Leadership]],   [[MGR Meetings]],   [[My mgr NOTES]]
 
 :: [[IOS guys]]
 

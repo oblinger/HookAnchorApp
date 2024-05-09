@@ -1,3 +1,13 @@
+### 2024-05-03  The way you work.... and don't work
+
+- Under the gun, you perform
+- When inspired you perform
+- But after a period you take a break, and it all falls apart
+  you blow out, with many hours frittered away, not with fun, but with distraction.
+
+- But "fun" with family is not "fun"...  you rarely plan fun
+
+
 ### 2024-04-01  Control from topdown lists
 
 - TOP DOWN CLEAN UP -

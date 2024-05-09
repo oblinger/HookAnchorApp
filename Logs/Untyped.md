@@ -5,8 +5,14 @@ n:: no prefix.	Dated entries without any typing prefix
 
 | Date       | File                                | Notes                                                                                                                             |
 | ---------- | ----------------------------------- | --------------------------------------------------------------------------------------------------------------------------------- |
+| 2024-05-08 | [[@Mathew Main]]                        | AI Credits                                                                                                                        |
+| 2024-05-08 | [[@Sage Vet]]                           | Phone Numbers                                                                                                                     |
+| 2024-05-08 | [[MED Log]]                             | Hassler Checkup                                                                                                                   |
+| 2024-05-07 | [[@Kamran Shirazi]]                     | XX                                                                                                                                |
+| 2024-05-03 | [[Reflections]]                         | The way you work.... and don't work                                                                                               |
+| 2024-05-01 | [[Daily]]                               | Reflection on 2023                                                                                                                |
 | 2024-04-30 | [[@Matias]]                             | 1-on-1                                                                                                                            |
-| 2024-04-30 | [[EOCA Letters]]                        | Response about how AIs take over                                                                                                  |
+| 2024-04-30 | [[EOC Log]]                             | Response about how AIs take over                                                                                                  |
 | 2024-04-30 | [[WRM]]                                 |                                                                                                                                   |
 | 2024-04-29 | [[@Stripe]]                             | Intro                                                                                                                             |
 | 2024-04-26 | [[@Oliver Andersson]]                   | Interview                                                                                                                         |
@@ -22,10 +28,10 @@ n:: no prefix.	Dated entries without any typing prefix
 | 2024-04-01 | [[QQ]]                                  | Contact info                                                                                                                      |
 | 2024-03-30 | [[@Facet]]                              | Call them cold                                                                                                                    |
 | 2024-03-30 | [[Daily Schedules]]                     | Buckets                                                                                                                           |
-| 2024-03-30 | [[MED]]                                 | MISC                                                                                                                              |
+| 2024-03-30 | [[MED Log]]                             | MISC                                                                                                                              |
 | 2024-03-29 | [[@Shreshth Saxena]]                    | SOW                                                                                                                               |
 | 2024-03-29 | [[Daily Schedules]]                     | Tightly scheduled morning                                                                                                         |
-| 2024-03-29 | [[Resume]]                              | Resume Rewrite                                                                                                                    |
+| 2024-03-29 | [[RES]]                                 | Resume Rewrite                                                                                                                    |
 | 2024-03-24 | [[FIN Log]]                             | Financial Advisors                                                                                                                |
 | 2024-03-22 | [[QQ]]                                  | Life Time                                                                                                                         |
 | 2024-03-22 | [[QQ]]                                  | CONTACTS                                                                                                                          |
@@ -49,7 +55,7 @@ n:: no prefix.	Dated entries without any typing prefix
 | 2024-02-17 | [[Eli]]                                 | Put on his underwear                                                                                                              |
 | 2024-02-17 | [[SYS Facets]]                          | Auto Jump pages                                                                                                                   |
 | 2024-02-17 | [[SYS Facets]]                          | EXAMPLES of facet groups                                                                                                          |
-| 2024-02-12 | [[MED]]                                 | QL DOC advice for a flu w/ cough                                                                                                  |
+| 2024-02-12 | [[MED Log]]                             | QL DOC advice for a flu w/ cough                                                                                                  |
 | 2024-02-11 | [[Palestinians]]                        | Andrew's response                                                                                                                 |
 | 2024-02-09 | [[Palestinians]]                        | Try Number Three                                                                                                                  |
 | 2024-02-07 | [[trump]]                               | Voter fraud rarely happens                                                                                                        |
@@ -305,7 +311,7 @@ n:: no prefix.	Dated entries without any typing prefix
 | 2023-05-11 | [[@Isaac Cohen]]                        | Unsent                                                                                                                            |
 | 2023-05-10 | [[@Horizon Fitness]]                    | Send out a Tech                                                                                                                   |
 | 2023-05-10 | [[@Jason Syversen]]                     | COMPANY STRATEGY EMAIL                                                                                                            |
-| 2023-05-09 | [[EOCA Short Argument]]                 | Rollup Argument                                                                                                                   |
+| 2023-05-09 | [[EOCT Argument Short]]                 | Rollup Argument                                                                                                                   |
 | 2023-05-08 | [[Reset]]                               | FRIDAY DISCUSSION - Key needs / Simple Plan                                                                                       |
 | 2023-05-07 | [[QQ]]                                  | Product Spec                                                                                                                      |
 | 2023-05-06 | [[QQ]]                                  | Urgent Ticket Creation and Dispatch                                                                                               |
@@ -363,7 +369,7 @@ n:: no prefix.	Dated entries without any typing prefix
 | 2023-04-12 | [[Reflections]]                         | PIVOT - shift towards AI                                                                                                          |
 | 2023-04-12 | [[@Joaquin Mano]]                       |                                                                                                                                   |
 | 2023-04-11 | [[QQ]]                                  | New Ticket Flow                                                                                                                   |
-| 2023-04-10 | [[MED]]                                 | <<<<                                                                                                                              |
+| 2023-04-10 | [[MED Log]]                             | <<<<                                                                                                                              |
 | 2023-04-10 | [[QQ]]                                  | Pivo                                                                                                                              |
 | 2023-04-10 | [[@Achilles (Tomas Sasovsky)]]          | Intro call                                                                                                                        |
 | 2023-04-10 | [[@Jason Syversen]]                     | F90-CALL3 - Feedback Call                                                                                                         |
@@ -389,7 +395,7 @@ n:: no prefix.	Dated entries without any typing prefix
 | 2023-03-22 | [[Phone]]                               | Food Delivery                                                                                                                     |
 | 2023-03-22 | [[@Mike Mathieu]]                       | Intro??                                                                                                                           |
 | 2023-03-21 | [[Reflections]]                         | Back from all hands; feeling of efficiency coming!                                                                                |
-| 2023-03-21 | [[MED]]                                 | Picking health insurance                                                                                                          |
+| 2023-03-21 | [[MED Log]]                             | Picking health insurance                                                                                                          |
 | 2023-03-20 | [[Text Shutdown]]                       | Old Shutdown Text                                                                                                                 |
 | 2023-03-20 | [[Text Shutdown]]                       | Old "TKO - No Interest Shutdown"                                                                                                  |
 | 2023-03-19 | [[SNIP]]                                |                                                                                                                                   |
@@ -410,7 +416,7 @@ n:: no prefix.	Dated entries without any typing prefix
 | 2023-02-27 | [[Reflections]]                         | Week 2 at SV                                                                                                                      |
 | 2023-02-27 | [[@Sam Corbitt]]                        | Intro call                                                                                                                        |
 | 2023-02-24 | [[Phone]]                               | Passport Application                                                                                                              |
-| 2023-02-20 | [[Bio]]                                 | SportsVisio newsletter and blog entry                                                                                             |
+| 2023-02-20 | [[RES Bio]]                             | SportsVisio newsletter and blog entry                                                                                             |
 | 2023-02-20 | [[2023-W08]]                            | W08                                                                                                                               |
 | 2023-02-20 | [[@Jack Potvin]]                        | Polaris overview                                                                                                                  |
 | 2023-02-20 | [[@Michael Fearnley]]                   | Intro call                                                                                                                        |
@@ -446,7 +452,7 @@ n:: no prefix.	Dated entries without any typing prefix
 | 2023-01-23 | [[UC]]                                  | Uniform Compute                                                                                                                   |
 | 2023-01-23 | [[SV]]                                  | Prior Inventions                                                                                                                  |
 | 2023-01-19 | [[DYL]]                                 | Dan Job                                                                                                                           |
-| 2023-01-11 | [[References]]                          | Grzegorz References                                                                                                               |
+| 2023-01-11 | [[RES References]]                      | Grzegorz References                                                                                                               |
 | 2023-01-10 | [[FIN Budgeting]]                       | Energy Usage                                                                                                                      |
 | 2023-01-09 | [[Habit]]                               | Wake-First-MIT                                                                                                                    |
 | 2023-01-06 | [[AMA Notes]]                           | Fake Taylor's Tea                                                                                                                 |
@@ -466,7 +472,7 @@ n:: no prefix.	Dated entries without any typing prefix
 | 2022-12-12 | [[Diet]]                                | Evening Eating - Hormones                                                                                                         |
 | 2022-12-11 | [[SYS Dashboards]]                      | Daily                                                                                                                             |
 | 2022-12-08 | [[Phone]]                               | Solar Installer                                                                                                                   |
-| 2022-12-07 | [[resLI]]                               | Framing Self                                                                                                                      |
+| 2022-12-07 | [[RES Linked In]]                       | Framing Self                                                                                                                      |
 | 2022-12-03 | [[Phone]]                               | Thumb Tack TV install                                                                                                             |
 | 2022-12-01 | [[2022-05 Enxt]]                        | Alta Vista                                                                                                                        |
 | 2022-11-30 | [[2022-W46]]                            | short week (cyber monday)                                                                                                         |
@@ -479,7 +485,7 @@ n:: no prefix.	Dated entries without any typing prefix
 | 2022-11-22 | [[Phone]]                               | Fire Dept response for Eli                                                                                                        |
 | 2022-11-20 | [[ToBuy]]                               | Big Insta-pot                                                                                                                     |
 | 2022-11-10 | [[2022-05 Enxt]]                        | The San Francisco School                                                                                                          |
-| 2022-11-10 | [[MED]]                                 | Maria Cross - Registered Dietician                                                                                                |
+| 2022-11-10 | [[MED Log]]                             | Maria Cross - Registered Dietician                                                                                                |
 | 2022-11-08 | [[2022-10-00 Find Advisor]]             | Finding a Fiduciary                                                                                                               |
 | 2022-11-08 | [[2022-10-00 Find Advisor]]             | My plan                                                                                                                           |
 | 2022-11-08 | [[2022-10-00 Find Advisor]]             | Initial reading                                                                                                                   |
@@ -501,23 +507,23 @@ n:: no prefix.	Dated entries without any typing prefix
 | 2022-09-28 | [[Old Daily]]                           |                                                                                                                                   |
 | 2022-08-17 | [[Phone]]                               | Dr Lue Urologist                                                                                                                  |
 | 2022-08-01 | [[Phone]]                               | notes while out - about me                                                                                                        |
-| 2022-07-19 | [[Brain3]]                              | G-Flow Nets Maybe - whats my example                                                                                              |
+| 2022-07-19 | [[2021-06-00 Brain3]]                   | G-Flow Nets Maybe - whats my example                                                                                              |
 | 2022-07-19 | [[COMS]]                                | Ping Goals                                                                                                                        |
 | 2022-07-18 | [[ToBuy]]                               | $Walnut desktop                                                                                                                   |
 | 2022-07-12 | [[Phone]]                               | Eli Sand toys                                                                                                                     |
 | 2022-07-12 | [[Phone]]                               | LOWES tool rental                                                                                                                 |
 | 2022-07-11 | [[OLD 2022 Weekly]]                     | CRAP WEEK                                                                                                                         |
-| 2022-07-08 | [[MED]]                                 | Pain after sex - Spoke with Lucas, Hasslers PA                                                                                    |
+| 2022-07-08 | [[MED Log]]                             | Pain after sex - Spoke with Lucas, Hasslers PA                                                                                    |
 | 2022-07-07 | [[Phone]]                               | Setting up Sonic internet service                                                                                                 |
 | 2022-07-02 | [[DocJupyter]]                          | config example                                                                                                                    |
 | 2022-06-27 | [[Phone]]                               | PENFED - reset connection /                                                                                                       |
 | 2022-06-25 | [[@Shawn Hassler]]                      | Hassler Visit                                                                                                                     |
-| 2022-06-20 | [[MED]]                                 | Cough followup                                                                                                                    |
+| 2022-06-20 | [[MED Log]]                             | Cough followup                                                                                                                    |
 | 2022-06-06 | [[Phone]]                               | Fix MAC mic                                                                                                                       |
 | 2022-06-06 | [[Phone]]                               | Drains Flooding                                                                                                                   |
 | 2022-05-28 | [[Arc ALL]]                             | SOCIAL                                                                                                                            |
 | 2022-05-24 | [[OLD 2022 Weekly]]                     | Forum presentation                                                                                                                |
-| 2022-05-21 | [[MED]]                                 | Joint Pain                                                                                                                        |
+| 2022-05-21 | [[MED Log]]                             | Joint Pain                                                                                                                        |
 | 2022-05-11 | [[Phone]]                               | American Airline                                                                                                                  |
 | 2022-05-09 | [[Phone]]                               | Marriage courses to consider                                                                                                      |
 | 2022-05-09 | [[Phone]]                               | Marriage Retreats to consider                                                                                                     |
@@ -528,12 +534,12 @@ n:: no prefix.	Dated entries without any typing prefix
 | 2022-05-02 | [[Phone]]                               | Buying an office chair                                                                                                            |
 | 2022-05-02 | [[Writings]]                            | DREAM: Alien take over                                                                                                            |
 | 2022-04-22 | [[DYL]]                                 | Innovation & Insight                                                                                                              |
-| 2022-04-20 | [[MED]]                                 | COVID - Test Accuracy as function of time since exposure                                                                          |
+| 2022-04-20 | [[MED Log]]                             | COVID - Test Accuracy as function of time since exposure                                                                          |
 | 2022-04-19 | [[DYL]]                                 | Design - long distance commuter train, package delivery systems,                                                                  |
 | 2022-04-14 | [[DYL]]                                 | OBSIDIAN COMPLETIST 9&6                                                                                                           |
 | 2022-04-11 | [[DYL]]                                 | Big city birthday party                                                                                                           |
 | 2022-04-11 | [[DYL]]                                 | Scripting/configuring/tweaking my obsidian setup                                                                                  |
-| 2022-04-11 | [[MED]]                                 | Pulmonologist visit                                                                                                               |
+| 2022-04-11 | [[MED Log]]                             | Pulmonologist visit                                                                                                               |
 | 2022-04-07 | [[SNIP]]                                | UF - math vs code                                                                                                                 |
 | 2022-04-07 | [[SNIP]]                                | QL brag sheet                                                                                                                     |
 | 2022-04-07 | [[FirstTouch]]                          | Joe Yeh Recruiter Outline                                                                                                         |
@@ -579,9 +585,9 @@ n:: no prefix.	Dated entries without any typing prefix
 | 2022-01-27 | [[COM Campaigns OLDER]]                 | Recruiter outreach #2  (NOT FINISHED)                                                                                             |
 | 2022-01-20 | [[Journal Old]]                         | PATHS, spiritual dimension                                                                                                        |
 | 2022-01-20 | [[NJ22 Paths]]                          | PATHS, spiritual dimension                                                                                                        |
-| 2022-01-16 | [[Brain3]]                              | Using GANs                                                                                                                        |
+| 2022-01-16 | [[2021-06-00 Brain3]]                   | Using GANs                                                                                                                        |
 | 2022-01-14 | [[Journal Old]]                         | morning thoughts                                                                                                                  |
-| 2022-01-11 | [[Brain3]]                              | combining DL and logic                                                                                                            |
+| 2022-01-11 | [[2021-06-00 Brain3]]                   | combining DL and logic                                                                                                            |
 | 2022-01-04 | [[DEEP_BOOT]]                           | MERI GUY RESPONSE                                                                                                                 |
 | 2022-01-04 | [[DEEP_BOOT]]                           | REFLECTIVITY                                                                                                                      |
 | 2022-01-04 | [[DEEP_BOOT]]                           | WAYS TO CONTAIN IT                                                                                                                |
@@ -598,7 +604,7 @@ n:: no prefix.	Dated entries without any typing prefix
 | 2021-12-01 | [[NJ22 Paths]]                          | PATHS cash                                                                                                                        |
 | 2021-12-00 | [[MKT]]                                 |                                                                                                                                   |
 | 2021-12-00 | [[DYL]]                                 | DAN WORK (Written for Nina discussion)                                                                                            |
-| 2021-12-00 | [[Resume]]                              | Jared Resume writing notes                                                                                                        |
+| 2021-12-00 | [[RES]]                                 | Jared Resume writing notes                                                                                                        |
 | 2021-11-30 | [[Journal Old]]                         | PATHS GOOGLE vs R-ZERO vs UF-now                                                                                                  |
 | 2021-11-30 | [[NJ22 Paths]]                          | PATHS GOOGLE vs R-ZERO vs UF-now                                                                                                  |
 | 2021-11-29 | [[DEEP_BOOT]]                           | Deep Learning + Bootstrapping Microtheory                                                                                         |
@@ -608,7 +614,7 @@ n:: no prefix.	Dated entries without any typing prefix
 | 2021-11-25 | [[NJ22 Paths]]                          | PATHS TABLE SUMMARY                                                                                                               |
 | 2021-11-25 | [[NJ22 Paths]]                          | PATHS MISSION                                                                                                                     |
 | 2021-11-21 | [[Journal Old]]                         | NINA WORK                                                                                                                         |
-| 2021-11-17 | [[Resume]]                              | Linked-in 'about' examples                                                                                                        |
+| 2021-11-17 | [[RES]]                                 | Linked-in 'about' examples                                                                                                        |
 | 2021-11-14 | [[Journal Old]]                         | Ikigai - my "passion" - IDEAS                                                                                                     |
 | 2021-11-14 | [[NJ22 Paths]]                          | Ikigai - my "passion" - IDEAS                                                                                                     |
 | 2021-11-09 | [[Journal Old]]                         | PATHS (Luis note)                                                                                                                 |
@@ -629,10 +635,10 @@ n:: no prefix.	Dated entries without any typing prefix
 | 2021-10-01 | [[NJ22 Contents]]                       | -- SITUATION SUMMARY --                                                                                                           |
 | 2021-09-23 | [[Journal Old]]                         | WHOM IN MY NETWORK TO ASK                                                                                                         |
 | 2021-09-23 | [[COMS]]                                | WHOM IN MY NETWORK TO ASK                                                                                                         |
-| 2021-09-23 | [[Resume]]                              | Resume Experience                                                                                                                 |
+| 2021-09-23 | [[RES]]                                 | Resume Experience                                                                                                                 |
 | 2021-09-22 | [[Journal Old]]                         | >>> WP    -- NEXT JOB ACTIVITIES <<<                                                                                              |
 | 2021-09-22 | [[NJ22 Contents]]                       | >>> WP    --  ACTIVITIES <<<                                                                                                      |
-| 2021-09-22 | [[Resume]]                              | RESUME OBJECTIVE                                                                                                                  |
+| 2021-09-22 | [[RES]]                                 | RESUME OBJECTIVE                                                                                                                  |
 | 2021-09-21 | [[Journal Old]]                         | QUESTIONS TO ASK                                                                                                                  |
 | 2021-09-21 | [[Journal Old]]                         | SUMMARY OF WORK THAT FITS                                                                                                         |
 | 2021-09-21 | [[DYL]]                                 | SUMMARY OF WORK THAT FITS                                                                                                         |
@@ -689,9 +695,9 @@ n:: no prefix.	Dated entries without any typing prefix
 | 2021-06-30 | [[Journal Old]]                         | Alternatives                                                                                                                      |
 | 2021-06-29 | [[Journal Old]]                         | Jason Redux                                                                                                                       |
 | 2021-06-20 | [[Journal Old]]                         | FUTURES                                                                                                                           |
-| 2021-06-18 | [[Brain3]]                              | AML - Artifical Machine Learning   (formalization & claim)                                                                        |
-| 2021-06-18 | [[Brain3]]                              | AGI Agenda intro text                                                                                                             |
-| 2021-06-06 | [[Brain3]]                              | Inputs to ML                                                                                                                      |
+| 2021-06-18 | [[2021-06-00 Brain3]]                   | AML - Artifical Machine Learning   (formalization & claim)                                                                        |
+| 2021-06-18 | [[2021-06-00 Brain3]]                   | AGI Agenda intro text                                                                                                             |
+| 2021-06-06 | [[2021-06-00 Brain3]]                   | Inputs to ML                                                                                                                      |
 | 2021-06-00 | [[Journal Old]]                         | QL modelling                                                                                                                      |
 | 2021-06-00 | [[Journal Old]]                         | QL Hacking                                                                                                                        |
 | 2021-06-00 | [[DYL]]                                 | QL modelling                                                                                                                      |
@@ -707,7 +713,7 @@ n:: no prefix.	Dated entries without any typing prefix
 | 2021-05-06 | [[Journal Old]]                         | WORK VIEW                                                                                                                         |
 | 2021-05-06 | [[DYL]]                                 | WORK VIEW                                                                                                                         |
 | 2021-05-05 | [[Journal Old]]                         | DECISION - NO TO JASON                                                                                                            |
-| 2021-04-30 | [[Brain3]]                              |                                                                                                                                   |
+| 2021-04-30 | [[2021-06-00 Brain3]]                   |                                                                                                                                   |
 | 2021-04-29 | [[Journal Old]]                         | Thumbnail Math                                                                                                                    |
 | 2021-04-29 | [[@Jason Syversen]]                     | Thumbnail Math                                                                                                                    |
 | 2021-04-27 | [[Journal Old]]                         | INDEX CARD SUMMARY                                                                                                                |
@@ -779,15 +785,15 @@ n:: no prefix.	Dated entries without any typing prefix
 | 2020-07-23 | [[MAC Apps]]                            | Applications folder                                                                                                               |
 | 2020-07-18 | [[FIN Budgeting]]                       | Budget                                                                                                                            |
 | 2020-05-11 | [[OLD 2020 Weekly]]                     | NOW COUNTING 90 SLOTS                                                                                                             |
-| 2020-04-27 | [[MED]]                                 | Notes for doc meeting                                                                                                             |
-| 2020-04-14 | [[MED]]                                 | Stress test results                                                                                                               |
-| 2020-04-00 | [[Bio]]                                 | Bio Parts                                                                                                                         |
+| 2020-04-27 | [[MED Log]]                             | Notes for doc meeting                                                                                                             |
+| 2020-04-14 | [[MED Log]]                             | Stress test results                                                                                                               |
+| 2020-04-00 | [[RES Bio]]                             | Bio Parts                                                                                                                         |
 | 2020-04-00 | [[OLD 2020 Weekly]]                     | QUARTERLY - Big goals                                                                                                             |
 | 2020-04-00 | [[OLD 2020 Weekly]]                     | MONTH APRIL habits                                                                                                                |
-| 2020-04-00 | [[MED]]                                 | Heart Disease Questions                                                                                                           |
+| 2020-04-00 | [[MED Log]]                             | Heart Disease Questions                                                                                                           |
 | 2020-03-23 | [[OLD 2020 Weekly]]                     | focus fail                                                                                                                        |
 | 2020-02-19 | [[Journal Old]]                         | DECADE TIMELINE                                                                                                                   |
-| 2020-02-00 | [[Bio]]                                 | – Redis Conf Bio                                                                                                                  |
+| 2020-02-00 | [[RES Bio]]                             | – Redis Conf Bio                                                                                                                  |
 | 2020-01-06 | [[OLD 2020 Weekly]]                     | WEEK                                                                                                                              |
 | 2020-01-05 | [[OLD 2020 Weekly]]                     | GOALS FOR THE YEAR                                                                                                                |
 | 2020-00-00 | [[Parents]]                             | Subscriptions that Dad might want                                                                                                 |
@@ -802,7 +808,7 @@ n:: no prefix.	Dated entries without any typing prefix
 | 2019-10-15 | [[OLD 201x Weekly]]                     | WEEK - sideways slip all week                                                                                                     |
 | 2019-10-08 | [[OLD 201x Weekly]]                     | WEEK - AI_conf                                                                                                                    |
 | 2019-10-06 | [[OLD 201x Weekly]]                     | OCT PLAN                                                                                                                          |
-| 2019-10-00 | [[Bio]]                                 | Sales Deck bio                                                                                                                    |
+| 2019-10-00 | [[RES Bio]]                             | Sales Deck bio                                                                                                                    |
 | 2019-09-30 | [[OLD 201x Weekly]]                     | WEEK - Forcing: M/C/S/W/R/F                                                                                                       |
 | 2019-09-26 | [[Hackers]]                             | Application Details                                                                                                               |
 | 2019-09-23 | [[OLD 201x Weekly]]                     | WEEK - AIdeck_v0; SalesSync; UFprintlists  (0%)                                                                                   |
@@ -833,8 +839,8 @@ n:: no prefix.	Dated entries without any typing prefix
 | 2019-05-07 | [[ReBuy]]                               | Living room cabinets                                                                                                              |
 | 2019-04-12 | [[FIN]]                                 | Ev Notes                                                                                                                          |
 | 2019-04-03 | [[OLD 201x Weekly]]                     | APRIL  MIN-JNL                                                                                                                    |
-| 2019-04-00 | [[Bio]]                                 | AF confluence bio                                                                                                                 |
-| 2019-03-00 | [[Bio]]                                 | – Verbal (Sales Call) BIO                                                                                                         |
+| 2019-04-00 | [[RES Bio]]                             | AF confluence bio                                                                                                                 |
+| 2019-03-00 | [[RES Bio]]                             | – Verbal (Sales Call) BIO                                                                                                         |
 | 2019-02-08 | [[FIN]]                                 | EV Notes                                                                                                                          |
 | 2019-01-00 | [[FIN Log]]                             | old notes                                                                                                                         |
 | 2019-00-00 | [[Ideas]]                               | Coin thoughts - alloy???                                                                                                          |
@@ -843,7 +849,7 @@ n:: no prefix.	Dated entries without any typing prefix
 | 2019-00-00 | [[ReBuy]]                               | Office Drawers  (bought)                                                                                                          |
 | 2019-00-00 | [[ReBuy]]                               | Front Door Lock                                                                                                                   |
 | 2019-00-00 | [[FIN Log]]                             | AF CHARGES                                                                                                                        |
-| 2019-00-00 | [[MED]]                                 | Ideas for QL Pregnancy Heroids                                                                                                    |
+| 2019-00-00 | [[MED Log]]                             | Ideas for QL Pregnancy Heroids                                                                                                    |
 | 2018-08-07 | [[Phone]]                               | #### starting to use Evernote ####                                                                                                |
 | 2018-00-00 | [[Phone]]                               | coinbase                                                                                                                          |
 | 2018-00-00 | [[FIN Log]]                             | Wedding                                                                                                                           |
@@ -913,6 +919,6 @@ n:: no prefix.	Dated entries without any typing prefix
 | 2009-11-19 | [[Journal Old]]                         | – Progress                                                                                                                        |
 | 2009-11-09 | [[OLD 200x Weekly]]                     | – Progress                                                                                                                        |
 | 2000-00-00 | [[ReBuy]]                               | Tofurky                                                                                                                           |
+| 2000-00-00 | [[MED Log]]                             | Medical.InsuranceAnalysis --                                                                                                      |
+| 2000-00-00 | [[MED Log]]                             | Medical Questions --                                                                                                              |
 | 2000-00-00 | [[MED Sleep]]                           | Sleep meds                                                                                                                        |
-| 2000-00-00 | [[MED]]                                 | Medical.InsuranceAnalysis --                                                                                                      |
-| 2000-00-00 | [[MED]]                                 | Medical Questions --                                                                                                              |

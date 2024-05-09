@@ -37,7 +37,7 @@
 - [ ] 11: ???
 - [ ] 12:	[[lunch]] 
 - [ ] 1'	[[WarStories]]: 
-- [ ] 10	[[resLI]] 
+- [ ] 10	[[RES Linked In]] 
 - [ ] 11	[[COMS]] 
 - [ ] 11	[[lunch]],  
 - [ ] 12:	[[WarStories]] 

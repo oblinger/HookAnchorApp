@@ -92,7 +92,7 @@ COL:
 
 
 
-### m2022-12-07  [[resLI#2022-12-07  Framing Self]] 
+### m2022-12-07  [[RES Linked In#2022-12-07  Framing Self]] 
 
 In a later post I will tell you more about my sale of Analytics Fire last year to one of our former clients (R-Zero) who raised over $170M for building disinfections. I will be sure to follow up with a future LinkedIn post telling you more about that exit, our technologies, our stories and an almost decade long experience with my team.  
   
@@ -242,12 +242,12 @@ MRP: Eyal Amir, Dan Roth,
 	- [[DYL|DYL]] - Notes on my "homework" for Design Your Life.
 	-  [Oblio](https://publish.obsidian.md/oblio) - External site  [Joes page](https://publish.obsidian.md/oblio/AT/%40Joseph+Yeh) 
 - Linked In updates [[z2 - Linked In Module|here]].
-- Dig into [[ResumeMaster|resume]]. 
+- Dig into [[Jared Master|resume]]. 
 - Github:  follow a few others, start posting something public, few Kaggle competitions, 
 	Pin some repos; should I add some more?;  Maybe some activity?; update photo
 
 ### m2022-03-21 - List of VC firms
-60m Topics: Deep  [[Crunchbase Notes|VCs]]   [[Resume|Resume]]   [[NSTR/Pic/Msg]] 
+60m Topics: Deep  [[Crunchbase Notes|VCs]]   [[RES|RES]]   [[NSTR/Pic/Msg]] 
 
 Jennifer Chan
 

@@ -5,4 +5,5 @@ JUMPS:
 - [KBD Notion](spot://KBD~Notion): 
 - [KBD Shortcuts](spot://KBD~Shortcuts): 
 - [KBD Obsidian Keys](spot://KBD~Obsidian~Keys): 
+- [KBD](spot://KBD): 
 

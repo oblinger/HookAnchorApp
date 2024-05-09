@@ -27,7 +27,7 @@ n:: 'm...'	Verbal, single-person-centered interaction.
 | m2023-01-04 | [[@Horizon Fitness]]     | Service call                                                      |
 | m2022-12-14 | [[@Nick Allen]]          | Prep for talking with Jake                                        |
 | m2022-12-12 | [[@Jake Wachman]]        | First Call; Tell me about 150 person headcount                    |
-| m2022-12-07 | [[@Joseph Yeh]]          | [[resLI#2022-12-07  Framing Self]]                                |
+| m2022-12-07 | [[@Joseph Yeh]]          | [[RES Linked In#2022-12-07  Framing Self]]                        |
 | m2022-12-02 | [[@Jason Syversen]]      | GRZ & push to hire                                                |
 | m2022-12-01 | [[@Joseph Yeh]]          | Prep for [[@Jason Syversen]] 'final' discussion.                  |
 | m2022-11-22 | [[@Grzegorz Biziel]]     | About AF                                                          |

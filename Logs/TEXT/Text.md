@@ -67,6 +67,6 @@ n:: 't...'		Textual messages written by me   (Meta [[TXT]])
 | t2021-06-23 | [[EOCA]]                     | Evan Response                                                           |
 | t2021-03-24 | [[EOCA]]                     | Note to Mark and Leslie                                                 |
 | t2021-00-00 | [[@Deep Sahini]]             | Thanks note                                                             |
-| t2021-00-00 | [[MED]]                      | Questions and topics                                                    |
+| t2021-00-00 | [[MED Log]]                  | Questions and topics                                                    |
 | t2019-00-00 | [[@Qingling Oblinger]]       | QL Notes                                                                |
 | t2019-00-00 | [[Politics]]                 | Ryan (Baltimore school teacher)                                         |

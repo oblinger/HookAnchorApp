@@ -1,6 +1,6 @@
-Bui
--  [[@Rafah Hosn]], , Luis, [[@Melanie Dumas]], 
--  [[@Juan Huerta]],[[@Nick Allen]],
+
+-  [[@Rafah Hosn]],  ,Luis,  [[@Melanie Dumas]], 
+-  [[@Juan Huerta]],  [[@Nick Allen]],
 
 
 FAANG:	[[@Felipe Lavratti]], [[@Dennis DeCoste]], 
@@ -32,3 +32,4 @@ HACKR:	[[@Krzysiek Herod]], [[@Attila Aros]],
 ROTATE:	[[@Ben Wild]], 
 
 SLOW:
+

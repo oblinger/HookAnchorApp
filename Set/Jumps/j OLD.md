@@ -10,4 +10,5 @@ JUMPS:
 - [OLD WarStories 2022-12-08](spot://OLD~WarStories~2022-12-08): 
 - [OLD WarStories 2022-xx-xx](spot://OLD~WarStories~2022-xx-xx): 
 - [Old Daily](spot://Old~Daily): 
+- [OLD](spot://OLD): 
 

@@ -13,4 +13,8 @@ JUMPS:
 - [CV Notes](spot://CV~Notes): 
 - [CV docs](spot://CV~docs): 
 - [CV Docs](spot://CV~Docs): 
+- [CVA](spot://CVA): 
+- [CVP](spot://CVP): 
+- [CVT](spot://CVT): 
+- [CV OKRs](spot://CV~OKRs): 
 

@@ -4,4 +4,5 @@ JUMPS:
 - [Rebuy Clothing](spot://Rebuy~Clothing): 
 - [Rebuy Food](spot://Rebuy~Food): 
 - [Rebuy Home](spot://Rebuy~Home): 
+- [Rebuy](spot://Rebuy): 
 

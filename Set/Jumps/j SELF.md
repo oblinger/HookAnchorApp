@@ -4,4 +4,5 @@ JUMPS:
 - [Self Evergreen](spot://Self~Evergreen): 
 - [Self Supervised Learning](spot://Self~Supervised~Learning): 
 - [Self View](spot://Self~View): 
+- [Self](spot://Self): 
 
