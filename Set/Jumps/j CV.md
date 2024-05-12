@@ -17,4 +17,6 @@ JUMPS:
 - [CVP](spot://CVP): 
 - [CVT](spot://CVT): 
 - [CV OKRs](spot://CV~OKRs): 
+- [CV Log](spot://CV~Log): 
+- [CV Root](spot://CV~Root): 
 

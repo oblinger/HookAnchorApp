@@ -214,4 +214,7 @@ JUMPS:
 - [j CHRISTXMAS](spot://j~CHRISTXMAS): 
 - [j BOOK](spot://j~BOOK): 
 - [j IDEA](spot://j~IDEA): 
+- [j EOCB](spot://j~EOCB): 
+- [j EOCI](spot://j~EOCI): 
+- [j EOCT](spot://j~EOCT): 
 

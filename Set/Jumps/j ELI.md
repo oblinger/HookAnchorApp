@@ -15,4 +15,5 @@ JUMPS:
 - [ELI Quotes](spot://ELI~Quotes): 
 - [Clarendon](spot://Clarendon): 
 - [Daycare Applications](spot://Daycare~Applications): 
+- [Eli Strategy](spot://Eli~Strategy): 
 
