@@ -6,7 +6,7 @@
 
 **[[self]]:**
 Prof:	[[NJ]], [[CRM]],
-Per: 	[[home]], [[Spirit]], [[Lrn]],
+Per: 	[[Home]], [[Spirit]], [[Lrn]],
 .       [[q2]],[[Med]] 
 
 

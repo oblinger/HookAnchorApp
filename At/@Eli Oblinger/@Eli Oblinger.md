@@ -1,7 +1,7 @@
 
 :: [[ELI Quotes]]
 
-:: [[Eli Correct Responses]],   [[Eli Friends]]
+:: [[Eli Strategy]],   [[Eli Friends]]
 
 :: [[Eli Firsts]]
 

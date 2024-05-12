@@ -136,9 +136,18 @@ DISCUSS
 
 # LOG
 
-### 2024-03-19  Licencing code
+### 2024-05-12  Slow
 
-- Over a couple of weekends I wrote some boiler plate for dynmaic loading of phthon object I would like to use at SV, but also in my own projects. 
+- Locally I feel good about team and vector.
+- But nothing is easy, everything takes 2x longer than expected, and works notably less well than expected:  
+	- Fireballs.  Realplay.
+- Need to aim very well. both from a tech side & a market side
+
+[[SVQ2]] - 
+
+### 2024-03-19  Licensing code
+
+- Over a couple of weekends I wrote some boiler plate for dynamic loading of python object I would like to use at SV, but also in my own projects. 
 - My plan is to slap the same apache licence we already have on SW taht we use, and then use that at SV.
 
 Quick advice: I would love to open source two modules I wrote (mostly on my own time) for use by SportsVisio.  one is currently been provided to SportsVisio and other other I am about to provide to them.  My aim is to have access to these for personal projects, and also potentially for use in future ML contexts too.  What do you think of this ask:

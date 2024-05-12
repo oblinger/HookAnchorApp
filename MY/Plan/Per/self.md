@@ -1,5 +1,5 @@
 
-[[FIN]]:	Ready [[2024-01 Merrill Retirement Planning|Merrill]] 
+[[FIN]]:	Ready [[2024-01 Retirement Planning|Merrill]] 
 [[NJ]]:	Think
 [[Lrn]]:	Run system
 [[CRM]]: 	Sean

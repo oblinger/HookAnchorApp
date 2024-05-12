@@ -1,3 +1,42 @@
+## Frustration Coping Strategies
+
+
+### >> GROWTH MINDSET - Family Values.  In our family
+1. We loved to be challenged
+2. How hard we work is more important than coming up with the 
+3. We know that not knowing, sits next to learning
+4. We try to remember that sticking with things helps us learn
+
+#### FRAME FRUSTRATION as sign of learning.
+- When we feel like we want to stop trying its a sign that we are learning
+#### MODEL COPING STRATEGY -- look to the side and YOU take deep breaths
+
+### >> EMOTIONAL VACCINATIONS
+
+#### BEFORE a frustrating activity
+- Hey when I am learning a new thing it makes me feel frustrated and want to quit, thats how i know I am learning.
+
+
+### >> DRY RUNS
+
+### >> DID I EVER TELL YOU WHEN
+#### SELF-LEARNING STORY -- Frame Coping advice as stuff that was taught to oneself
+- When I was six my dad told
+#### MANTRAS -- My mom told me to say:
+- Dad say when he gets frustrated he puts a hand on his heart and says:
+- This feels hard because it IS hard, not because I am doing something wrong.  So I started saying it to MY-self.  
+- Seems kinds silly, but it worked.  wanna try?  I can show you
+- Mantras
+	- I can do hard things.
+	- I can do it
+	- I like to be challenged
+	- This is tricky and I can stay with it.
+
+#### MUTTER TO SELF
+- Dan, learning new things feels hard, it always feels hard!
+- Thats ok, I can to hard things
+
+
 
 
 ## __

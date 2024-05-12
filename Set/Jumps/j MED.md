@@ -25,4 +25,5 @@ JUMPS:
 - [MED.](spot://MED.): 
 - [Glycemic Index](spot://Glycemic~Index): 
 - [Jet Lag](spot://Jet~Lag): 
+- [MED Log](spot://MED~Log): 
 

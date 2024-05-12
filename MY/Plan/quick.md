@@ -1,3 +1,9 @@
+- fix bathtub
+- fr
+- property tax
+- fix water
+- tensor
+- sarthi
 
 - car price
 - look at the okr docs

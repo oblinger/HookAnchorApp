@@ -4,7 +4,7 @@
 - [[Eli Activities]] - 
 - [[ELI Education]]
 - [[Eli Interactions]] 
-- [[Eli Correct Responses]] 
+- [[Eli Strategy]] 
 - [[Eli Food]] 
 - [[Eli Activities]] 
 - [[Eli Firsts]] 

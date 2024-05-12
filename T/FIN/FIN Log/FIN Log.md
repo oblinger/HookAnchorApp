@@ -31,7 +31,7 @@ Assets:
 
 ### 2024-01-25  Merrill Retirement Planning ^rplan
 
-- [[2024-01 Merrill Retirement Planning]]
+- [[2024-01 Retirement Planning]]
 - [[2024-01 Wealth Management Questionnaire.pdf]] 
 
 ### 2023-12-06  Retirement Analysis

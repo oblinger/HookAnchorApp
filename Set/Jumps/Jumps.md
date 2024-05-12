@@ -1,4 +1,6 @@
 
+:: [[j EOCB]],   [[j EOCI]],   [[j EOCT]]
+
 :: [[j BOOK]],   [[j CHRISTXMAS]],   [[j IDEA]],   [[j RES]],   [[j S]]
 
 :: [[j LRN]]

@@ -1,6 +1,6 @@
 
 TOP PROJECTS
-- [[EOCA]]		-  Formulate position.  Light outreach for reactions.
+- [[EOCA]]		-  Claims
 - [[EduCorp]]	-  Ideas about possible businesses
 - [[OBS]]:		-  [[Action Notes]],  [[Hook System]],  Multi-List Manager, 
 

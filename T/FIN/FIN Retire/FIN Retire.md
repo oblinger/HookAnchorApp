@@ -1,5 +1,5 @@
 
-- [[2024-01 Merrill Retirement Planning]],
+- [[2024-01 Retirement Planning]],
 
 # INFO
 ## Numbers

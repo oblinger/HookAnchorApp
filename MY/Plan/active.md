@@ -1,4 +1,4 @@
-- [[pp]]: yearbook
+- [[PP]]: yearbook
 - christ tree
 - [[Journaling]] 
 -  quarterly goals

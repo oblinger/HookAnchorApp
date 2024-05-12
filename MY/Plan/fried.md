@@ -1,15 +1,16 @@
 
 
 
+
+
+
+
+
+- get printout of service work on Acura
 - Check in Notification for slack & text are working
-
 - get Eli's ipad connected to mom's account
-
-
-
 - [ ] budget big transfers list	
 - [ ] giphy grab
-
 - [ ] [[Travel Lst]]: pills; snacks
 - [ ] Update CRM workflow
 - [ ] Get logins for MyHealth

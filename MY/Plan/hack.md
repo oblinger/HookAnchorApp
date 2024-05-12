@@ -37,7 +37,7 @@
 
 - [ ] gjs  google javascriptÏ
 - [ ] scrub <0xa0> non-breaking spaces from clipboard see argentina trip info
-- [ ] [[prj]] page still has duplicating :: entries
+- [ ] [[Prj]] page still has duplicating :: entries
 - [ ] Take notes on call recorder [[Record]]
 - [ ] EMAILS: Verify saving, verify drafts save, verify save sends, merge all AF mail in. back backup of all mail.
       Ensure sent mail is saved. and received mail is saved.  many copies when creating email

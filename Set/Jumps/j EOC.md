@@ -7,4 +7,6 @@ JUMPS:
 - [eoc-formal](spot://eoc-formal): 
 - [eoc-impl](spot://eoc-impl): 
 - [EOC](spot://EOC): 
+- [EOC IDEAS](spot://EOC~IDEAS): 
+- [EOC Log](spot://EOC~Log): 
 

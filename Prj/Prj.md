@@ -6,7 +6,7 @@ n::  'prj...'  Non-work, non-coding ~3mo sized projects
 
 
 PRJs
-- [[Proj Folder]], 
+- [[Proj Folder]], [[PP]], [[Big]], 
 
 - [[2023-07 Task Rabbit]] 
 - 2022-00 [[AF Wind-down]]
