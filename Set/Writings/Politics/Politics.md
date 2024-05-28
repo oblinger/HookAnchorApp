@@ -11,6 +11,22 @@
 
 
 # LOG
+
+### 2024-05-19  UBI Cant Work - Rebuttal
+
+Great discussion, but your argument is flawed as it adjust one variable (percent unemployed) without adjusting other variables, e.g. cost of things.
+
+When looking at drug prices in poor vs. rich countries we often see complete disconnect in pricing.  A manufacturer never wants to price their goods beyond what can be afforded.  As long as they can afford the raw ingredients needed, they will just keep lowering the price until it can be afforded.  If AI drives the cost (measured in hours of human labor to near zero) it will also drive the ingredient costs down and raw material costs will drop too since there will not be buyers at higher prices.
+
+Consider the per-capita income in the poorest nations of Africa are presently less than 1/100th or 1/1000th the per-capita income of the riches enclaves.  Yet they still have money to buy clothing.  How can they afford them?  The price is lowered until they can.
+
+In an AI-driven world the price of AI-made good will drop until they can be afforded.
+
+Still its not all honey and roses!  AI-companies will accumulate colossal and ever increasing wealth.  Via unpleasant or down right violent means this will have to be reshaped so they get rich, but not infinitely rich relative to the population.  The USA managed this without bloodshed in the beginning of the 19th century when robber barrons threatened to fully control pricing and labor salaries... perhaps we can do it again?
+
+From a purely economic point of view there are no issues having money to pay for material goods in a world where such goods are simply produced via AI-driven processes... Now, getting a redistribution system in place to make that happen.  Yeah that will involve "excitement" of one kind or another.
+
+
 ### n2021-00-00 - ARE YOU INFORMED OR ARE YOU MANAGED?
 
 

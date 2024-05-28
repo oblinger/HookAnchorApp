@@ -5,6 +5,15 @@ n:: no prefix.	Dated entries without any typing prefix
 
 | Date       | File                        | Notes                                                                                                                             |
 | ---------- | --------------------------- | --------------------------------------------------------------------------------------------------------------------------------- |
+| 2024-05-23 | [[MED Log]]                     | EMDR                                                                                                                              |
+| 2024-05-21 | [[@Sean O'Connor]]              | Topics                                                                                                                            |
+| 2024-05-21 | [[2024-W21]]                    | REQ / idea                                                                                                                        |
+| 2024-05-21 | [[2024-W21]]                    | QUESTIONS                                                                                                                         |
+| 2024-05-21 | [[2024-W21]]                    | SW / AI                                                                                                                           |
+| 2024-05-19 | [[Politics]]                    | UBI Cant Work - Rebuttal                                                                                                          |
+| 2024-05-16 | [[PQ]]                          | Replace bath faucet                                                                                                               |
+| 2024-05-16 | [[COMS]]                        | Mentor's call list                                                                                                                |
+| 2024-05-14 | [[@StatsPerform]]               | Talk about sports AI                                                                                                              |
 | 2024-05-12 | [[@Jason Syversen]]             | Slow                                                                                                                              |
 | 2024-05-08 | [[@Mathew Main]]                | AI Credits                                                                                                                        |
 | 2024-05-08 | [[@Sage Vet]]                   | Phone Numbers                                                                                                                     |
@@ -21,7 +30,6 @@ n:: no prefix.	Dated entries without any typing prefix
 | 2024-04-14 | [[ELI Quotes]]                  | Your Fault                                                                                                                        |
 | 2024-04-12 | [[Palestinians]]                | Dillion updates to the plan                                                                                                       |
 | 2024-04-09 | [[QQ]]                          | Minutes soft constraint                                                                                                           |
-| 2024-04-09 | [[QQ]]                          | DAT integration ^dat                                                                                                              |
 | 2024-04-08 | [[@Charles Tyrwhitt]]           | Exchange                                                                                                                          |
 | 2024-04-03 | [[Daily]]                       | marriage                                                                                                                          |
 | 2024-04-02 | [[Daily]]                       | Equanimity                                                                                                                        |
@@ -36,6 +44,7 @@ n:: no prefix.	Dated entries without any typing prefix
 | 2024-03-24 | [[FIN Log]]                     | Financial Advisors                                                                                                                |
 | 2024-03-22 | [[QQ]]                          | Life Time                                                                                                                         |
 | 2024-03-22 | [[QQ]]                          | CONTACTS                                                                                                                          |
+| 2024-03-21 | [[@Sean O'Connor]]              | Discussion                                                                                                                        |
 | 2024-03-21 | [[2024-01 Retirement Planning]] | notes                                                                                                                             |
 | 2024-03-19 | [[@Shreshth Saxena]]            | Intro                                                                                                                             |
 | 2024-03-19 | [[Daily Schedules]]             | Schedule of my day                                                                                                                |
@@ -214,7 +223,7 @@ n:: no prefix.	Dated entries without any typing prefix
 | 2023-08-10 | [[Eli]]                         | First Bike Ride                                                                                                                   |
 | 2023-08-10 | [[@Sage Vet]]                   | Surgery to remove cancer                                                                                                          |
 | 2023-08-09 | [[Mgt]]                         | AUG MGT MEETING                                                                                                                   |
-| 2023-08-03 | [[Career Log]]                  | Customer Acquisition (from nick) ---                                                                                              |
+| 2023-08-03 | [[MGR Log]]                     | Customer Acquisition (from nick) ---                                                                                              |
 | 2023-08-03 | [[CV Notes]]                    | DEV OPs                                                                                                                           |
 | 2023-08-03 | [[@Brian French]]               | update                                                                                                                            |
 | 2023-08-02 | [[CV Notes]]                    | Grzegorz                                                                                                                          |
@@ -267,7 +276,6 @@ n:: no prefix.	Dated entries without any typing prefix
 | 2023-06-18 | [[Investor Intros]]             | Mark Torrance (friend of Mike Freed)                                                                                              |
 | 2023-06-18 | [[QQ]]                          | CALL TREE                                                                                                                         |
 | 2023-06-15 | [[SNIP]]                        | Noom Diet summary                                                                                                                 |
-| 2023-06-15 | [[INV Log]]                     | Michael Freed                                                                                                                     |
 | 2023-06-09 | [[@SV]]                         | Response to Baller TV                                                                                                             |
 | 2023-06-08 | [[Eli Interactions]]            | From sensitivity class                                                                                                            |
 | 2023-06-08 | [[Phone]]                       | 1-password ideas for QL                                                                                                           |
@@ -364,7 +372,10 @@ n:: no prefix.	Dated entries without any typing prefix
 | 2023-04-18 | [[Investor Intros]]             | Madrona - Michael Witbrock                                                                                                        |
 | 2023-04-18 | [[Investor Intros]]             | Bee Partners - Ai Wee                                                                                                             |
 | 2023-04-18 | [[Investor Intros]]             | Jason to Lance at Areena Sports                                                                                                   |
+| 2023-04-17 | [[COM Investor]]                | John Murphy - Hyperplane Investor                                                                                                 |
+| 2023-04-17 | [[COM Investor]]                | Chuck                                                                                                                             |
 | 2023-04-16 | [[Letters]]                     | Tim Cook Email                                                                                                                    |
+| 2023-04-16 | [[COM Investor]]                | Lance                                                                                                                             |
 | 2023-04-14 | [[QQ]]                          | iOS consultant                                                                                                                    |
 | 2023-04-13 | [[@BallerTV]]                   | Email from CEO                                                                                                                    |
 | 2023-04-12 | [[Reflections]]                 | PIVOT - shift towards AI                                                                                                          |

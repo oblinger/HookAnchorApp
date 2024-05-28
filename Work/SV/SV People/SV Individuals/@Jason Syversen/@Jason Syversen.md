@@ -130,6 +130,12 @@ Reply idea - monitor
 
 ## CALL TOPICS
 
+LeCun - AGI does not exist
+https://x.com/ylecun/status/1794731261669355655
+- Cats, dogs, humans and all animals have specialized intelligence.
+- That's the kind of learning that we need to reproduce in machines before we can get anywhere close to human-level AI.
+
+
 ### __
 DISCUSS
 - [ ] $1000/mo budget
@@ -144,6 +150,14 @@ DISCUSS
 - Need to aim very well. both from a tech side & a market side
 
 [[SVQ2]] - 
+
+[[@StatsPerform]] -
+
+Permium per-player
+- Augmented Reality - Fireballs
+- Shot charts, Heatmaps
+
+
 
 ### 2024-03-19  Licensing code
 

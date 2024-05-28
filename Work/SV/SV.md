@@ -10,7 +10,8 @@
 - [[SV Product]]: [[SV Code]],  [[SV Apps]], [[SV System]], [[SV Data]],  
 - [[SV Software]]: 
 - [[INV]]:
-- INFO:			[[SV Code]], [[SVT]],  [[SV Legal]],   [[SV Folder]],  [[Meta SV]], 
+. INFO:			[[SV Code]], [[SVT]],  [[SV Legal]],   [[SV Folder]],
+ 				[[Meta SV]], 
 - ARCHIVE:		[[SV Archive]],   [[SV Wings]], 
 [[SV Basketball Info]] 
 

@@ -1,5 +1,5 @@
 
-- [[SV Notion]] 
+- [[SV Notion 1pass]] 
 
 
 ## Shorcuts

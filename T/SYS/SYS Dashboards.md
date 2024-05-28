@@ -13,7 +13,19 @@
 ## SYSTEM WINDOWS
 ### THREE SCREEN LAYOUT
 
-- CAPS-K  7,8; 9,0; -
+#### 6 - Far Left - Slack, Chrome, Safari(GPT), 
+#### 7 - Left - Obsidian, Notion
+
+#### 8 - Right - Email, Firefox, Brave, 
+
+#### 9 - Far Right - Beta, 
+
+#### 0 - Laptop - Quad
+- NW:	Messages, 
+- NE: 	Spotify, WhatsApp
+- SW:	Terminal, Calendar
+- SE:	Finder, 
+
 
 **RIGHT FOCUSED LAYOUT**
 - Slack;   Obsidian; 

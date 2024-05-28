@@ -7,8 +7,8 @@
 - CANNOT AVERT THE COMING OF DOMINATING-AI
 	- CANT CONTAIN IT
 	- CANT STOP BUILDING IT
-	- CANT BLOCK IT WITH REGULATION - can SHAPE it, but cannot BLOCK it
 	- CANT ALIGN IT
+	- CANT BLOCK IT WITH REGULATION - can SHAPE it, but cannot BLOCK it
 
 ## = Path of Peace
 
@@ -24,7 +24,7 @@
 - Agency
 
 ## = Nature of Things
-- bootstrapping all of human knoledge is much easier than extending beyond it
+- bootstrapping all of human knowledge is much easier than extending beyond it
 - learning isolated things is much easier than extending basic chip speeds etc.
 	- So knowledge will jump up quick and stop; processing will jump up quickly and stop.  drives diversity.
 

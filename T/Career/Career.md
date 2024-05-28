@@ -1,6 +1,6 @@
 
 - [[NJ]], 
-- [[Career Log]],  
+- [[MGR Log]],  
 - ap
 - [[CRM]]: Call 1-3 colleagues per week.
 - Mentors?  

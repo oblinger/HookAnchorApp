@@ -1,8 +1,11 @@
-
-:: [[2023-10-01 Special Olympics]]
-
-  
 # QUICK - QUICK work projects
+- [[2023-10-01 Special Olympics]]
+
+
+1. Fill in list of Project Descriptions
+2. Fill Proj Matrix
+
+
 
 ### 2024-04-09  Minutes soft constraint
 
@@ -13,17 +16,11 @@ Three cost parameters:
 - FullCostRatio	50%			20%
 - FullCost			10 units		10 units
 
-### 2024-04-09  DAT integration ^dat 
-
-- Add a 'do' register method
-- Convert do module to singleton
-- Add metric Matrix for minutes
-- Zip S3 loader
 
 ### 2024-04-01  Contact info
 
 
-FIELDS
+FIELDS 
 
 
 **Contact Information**:

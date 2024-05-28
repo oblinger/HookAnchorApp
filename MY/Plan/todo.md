@@ -1,11 +1,8 @@
-
 - [[@Facet]] signup
 - [[Friday]] 
 
 - fin flow
 - Avanti
-
-
 
 - fix easy passwords
 - change PW

@@ -1,3 +1,4 @@
+- [TrueFood](https://www.truefood.tech/intro?store=all) - Lookup foods
 - [[Nutrition Value Webpage]]	- Lots of food types
 - [[Nutrition Data Webpage]]	-  Original food types page (kinda slow to load)
 - [[Nutrition Facts Webpage]]	- Michael Greger 

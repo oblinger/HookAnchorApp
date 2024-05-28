@@ -1,24 +1,6 @@
-- fix bathtub
-- fr
-- property tax
-- fix water
-- tensor
-- sarthi
 
-- car price
-- look at the okr docs
-- michael 30 courts
-- schedule surgery
-- anniversary
-- CAR:  Notary; sent bill; 
-- mothers day
 - when is eli's bday party
-- shot boxer ticket
-- good page for projects for James
 - fin plan for Merrill
-- atorvastin
-- yearbooks
 
 - call Luis; Melanie
-- pay urgent care bill
 - Maxim's review

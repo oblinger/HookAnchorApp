@@ -1,31 +1,48 @@
+
+:: [[Receipts]]
 #top[[Top|#]] 
-
-#### [[SV]] [[SV Folder|--]] SPORTS VISIO STUFF
-
-:: [[Log]]
-
-:: [[Quotes]]
-- [[Offload Folder]]
 
 
 [[Logs]]  	TEMPORALLY ORDERED TYPED NOTES
-- [[Idea]] 		- 
-- [[Letters]]  - 
-- [[Quotes]]	
-- [[Person]]			
-- [[TT]]			
+. [[Log]]			- The most generic log of stuff
+. [[AT]]			- Entity related logs
 
-PROCESS ORIENTED LOGS
-- [[Bought]]	- 
-- [[Receipts]]	- 
+BIG BUCKETS
+. [[LOG Trash]]		- 
+
+
+LOGGING FOLDERS
+. [[Logs Folder]]	- 
+. [[Offload Folder]]	-
+. [[Receipts Folder]]- 
+. [Bought Folder](spot://BoughtFolder)	- 
+
+
+CAPS CAT		- ALL CAPS topic areas can have a log
+. [[ELI Log]]		- 
+. [[EOC Log]]		- 
+. [[FIN Log]]		- 
+. [[MED Log]]	- 
+. [[MGR Log]] 	- 
+
+
+SPECIALTY LOGS
+. [[Idea]] 		- 
+. [[Letters]]  - 
+. [[Quotes]]	
+. [[TT]]			
+
 
 DATED LOG ENTRIES
 - [[Day]]		- 
 - [[Journal]]	- 
 - [[Meeting]] 	- 
 - [[Note]]		- 
-- [[Prj]]		-
-- [[Text]]		-  
-- [[Untyped]] 	
+- [[Prj]]			-
+- [[Text]]		- 
+- [[Untyped]] 	- 
 - [[REF]] 		- 
 - [[WP]] 		- 
+
+#### [[SV]] [[SV Folder|--]] SPORTS VISIO STUFF
+. [[SV Log Page]]	- Gdrive Folder

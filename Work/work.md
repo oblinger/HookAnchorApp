@@ -1,27 +1,25 @@
  **NOW** 
- !!! all hands breakout planning
- !!! BOD prep; Investor Relations
- - justin videos to him
- - - vb court
+ - high 5 dataset
+ - Find Datasets for training Basketball
+ - Run AWS instance
+ - [[qq]]: 
 ## TOP
-super Runner	! Get Greg started on this
+[[DVC DAT]]:		> main>dat; greg; pip -e
 GCP over:		/DockerImage
 SW proc:		[db](https://www.notion.so/sportsvisio/cf65339c09c6486296f8adaa084c141a?v=f8a45e385eea4c2fb590502835f4453f&pvs=4),[doc](https://docs.google.com/document/d/1aHnoqgQ3H_0abUtlVWoMPHDA7nQhzoq0JRqZLujORc0/edit?usp=drive_web&ouid=105281685541312342727)  ^Jasu 
-Fireballs:		^Dispatcher; ^Maxim 
-Shot-boxer:	^Martin
-All Hands:	>Weekend activities. >Breakout
-[Q2exp](spot://q2exp):		Minutes, Docker
-[RP](spot://rp):			^Send Sneaker net to Justin
-[[@Shreshth Saxena|Saxena]]:		/Grz Results  
-
-[[QQ#^dat]]:		jupyter dt; instantiate
+[RP](spot://rp):			^TestRecall; FixRecall
 [[NJ]]:			>war, rewrite, mentor
+Minutes:		!! Push Conversation.  
+[[Metrics]]:		/Create money metrics page
 
-Life Time:	^contacts qq ^call tree
-Minutes:		!!planning; 	[[qq]] soft constraints
+[ShotBox](https://www.notion.so/sportsvisio/SHOT-BOXER-CROSSOVER-f88db79eeb6a45baa84d40664d8f7f2e?pvs=4):		^James Result
+Fireballs:		^Dispatcher; ^Maxim 
 [[patents]]:		^M Sketches
-[ShotBox](https://www.notion.so/sportsvisio/SHOT-BOXER-CROSSOVER-f88db79eeb6a45baa84d40664d8f7f2e?pvs=4):		^experiment
+Shot-boxer:	^JamesResult
+[Q2exp](spot://q2exp):		Halos, Shot Boxer
+Life Time:	^contacts qq ^call tree
 
+[[@Shreshth Saxena|Saxena]]:		/Grz Results  
 
 ## SOON [[mgt]] [[cvp]] 
 [Belief](https://docs.google.com/document/d/1H9krXpxS2_Cr9T68pAksb6QGYqpW28DiF2OSw40g0pI/edit?usp=drive_link):		

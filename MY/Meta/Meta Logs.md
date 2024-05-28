@@ -1,6 +1,12 @@
 
 
 
+(see [[Logs]], [[Meta Proj]])
+
+
+
+# META LOGS (Explanations) 
+
 ## DATED LOGS
 ### D		DAY				Daily notes entry
 ### J		JOURNAL	Professional diary entries

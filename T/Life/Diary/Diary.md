@@ -2,7 +2,7 @@
 VARIOUS DIARIES
 - [[Journaling]]		- 
 - [[Reflections]]		-  Weekly reflections on work and life
-- [[Daily]]				-  Personal diary
+- [[Daily]]				-  Personal daily diary
 - [[Productivity]]		- 
 - [[Jnl]]				-  Professional & Personal diary
 - [[Eat]]				-  Diary of foods eaten each day

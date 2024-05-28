@@ -4,6 +4,29 @@
 
 ## FACETS
 
+| Type        | Name            | Description                                  |
+| ----------- | --------------- | -------------------------------------------- |
+| **TEXT**    |                 |                                              |
+| Notion      | **XXXX**        | Notion pages                                 |
+| Notes       | **XXXX**        | Background info on Keyword (8)               |
+|             |                 |                                              |
+| **FOLDER**  |                 |                                              |
+| Folder      | **XXXX Folder** | Launches finder on Folder (6)                |
+| Box         | **XXXX Box**    | Drop box folder                              |
+| Gdrive      | **XXXX Gdrive** | Web folder (6)                               |
+|             |                 |                                              |
+| **SPECIAL** |                 |                                              |
+| Task        | **XXXX Task**   |                                              |
+| Meta XXX    | **Meta XXXX**   | Meta info about a term (could be 'about')    |
+| @XXX        | **@ XXXX**      | Entity page for an item                      |
+|             |                 |                                              |
+| **TARGET**  |                 |                                              |
+|             | **XXXX**        | No suffix overrides others as leading choice |
+| App         | **XXXX**        | Launches Mac App (3)                         |
+| Web Site    | **XXXX**        | Launches URL (7)                             |
+| 1Pass       | **XXXX**        | Launches from 1password (5)                  |
+|             |                 |                                              |
+
 ### KEY FACETS FOR A TERM
 - TASK - A todo list or plan associated with this term
 	- VIEW - A view or dashboard associated with the term (alternative to a task list)
@@ -12,22 +35,6 @@
 - NOTES - Notes for this entry
 
 ### LOCATIONS
-- 			--  No suffix overrides others as leading choice
-- 1Pass	--  Launches from 1password (5)
-- App		--  Launches Mac App (3)
-- Box		--  Drop box folder
-- Folder	--  Launches finder on Folder (6)
-- Gdrive	--  Web folder (6)
-- Notes		--  Background info on Keyword (8)
-- Notion	--  Notion pages
-- Page		--  Launches URL (7)
-
-- Meta
-
-
-
-
-- @XXX 	--  Entity page for an item
 
 ENTITY
 - m... 	Notes from a MEETING with entity

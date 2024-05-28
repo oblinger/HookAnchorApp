@@ -10,6 +10,7 @@
 - [[Eli Firsts]] 
 - [[Eli Friends]] 
 - [[EBT]] 
+- [[Eli Measurements.xlsx]] 
 # TODO
 - [ ] Find babysitter
 

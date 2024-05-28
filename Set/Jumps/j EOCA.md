@@ -1,7 +1,6 @@
 
 JUMPS:
 - [EOCA](spot://EOCA): 
-- [EOCA Agenic Aggregation](spot://EOCA~Agenic~Aggregation): 
 - [EOCA Closure](spot://EOCA~Closure): 
 - [EOCA Consciousness](spot://EOCA~Consciousness): 
 - [EOCA Executive Creep](spot://EOCA~Executive~Creep): 

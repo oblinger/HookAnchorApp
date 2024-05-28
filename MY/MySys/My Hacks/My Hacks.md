@@ -3,7 +3,7 @@ zzz
 - [[My Spot]]:		.
 - [[KM]]:				.
 - [[Closet]],   
-- [[ML DAT]] 
+- [[DVC DAT]] 
 
 OBSIDIAN HACKS
 - [[Action Notes]]:	- My plugin for automating page actions

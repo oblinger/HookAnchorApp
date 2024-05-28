@@ -1,3 +1,15 @@
+
+
+# LOG
+
+### 2024-05-23  EMDR
+Sleep advice from a (guy on Airplane) boston all hands
+
+- https://CyberMindz.org - Peter's website
+- iRest Dyad approach
+- [EMDR](https://my.clevelandclinic.org/health/treatments/22641-emdr-therapy) - 
+- [Monroe Institute](https://www.monroeinstitute.org/?gad_source=1&gclid=Cj0KCQjw0ruyBhDuARIsANSZ3wpIcO7O3lwh97Q-AEPKW4Hru2sWhje0UMLSX4rjUUBxMpH7RgvY-X4aAlozEALw_wcB) 
+- 
 ### 2024-05-08  Hassler Checkup
 
 - 
@@ -14,7 +26,6 @@
 - Cough varient asma
 - flonase; claritin alegra l
 
-# LOG
 
 ### 2024-02-12  QL DOC advice for a flu w/ cough
 

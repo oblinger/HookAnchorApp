@@ -2,25 +2,24 @@
 ## For Juan
 - [ ] Figure out how from_template and Inst.do work & have plan
 
-  
+  ### 2024-04-09  DAT integration ^dat 
+
+- Add a 'do' register method
+- Convert do module to singleton
+- Add metric Matrix for minutes
+- Zip S3 loader
+
 
   
 ## Todo
-- [ ] Inst examples
-- [ ] Inst init with name or path and spec
-- [ ] Combining config and code example; threshold and slice (how?)
-- [ ] Inst Templating with folder template
-- [ ] add .datconfig registry for module and value loads  
-- [ ] convert inst names to use '.' instead of '/' (still needs testing)
-- [ ]   
   
 ## Later  
-
 - [ ] DVC - push, load
-- [ ] Inst .move .copy .delete
 - [ ] Inject indicies should not inject for degenerate indicies w/ only one value  
+- [ ] Refactor the Mount commands???
 - [ ] Support cube of cubes with cached points in sub cubes  
 - [ ] Implement the 'get_csv' method  
+- [ ] set result (don't now since it might not be JSON writable)
   
   
 ## Ask  
@@ -37,6 +36,16 @@
   
 
 ## Done
+- [x] add run duration
+- [x] add args kwargs to spec.main
+- [x] remove datconfig.do_folder. ?????
+- [x] Dat .move .copy .delete
+- [x] Inst examples
+- [x] Inst init with name or path and spec
+- [x] Combining config and code example; threshold and slice (how?)
+- [x] Inst Templating with folder template
+- [x] add .datconfig registry for module and value loads  
+- [x] convert inst names to use '.' instead of '/' (still needs testing) 
 - [x] add .columns
 - [x] add .format
 - [x] add .transform

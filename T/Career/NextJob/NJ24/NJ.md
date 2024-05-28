@@ -1,11 +1,23 @@
+. [[NJ24.pptx|PPTX]], 
+- add leading targets to my slides
+low friction no-touch (or nearly notouch)
+portable/no-portable
+power/batt. RJ45/wifi
+two-fix
+
+Spreadsheet with options
+- configurability
+- 
 
 By May-1
 [[NJ]]:		Quick Apply to something???
 [[NJ]]:		[[WarStories]]: Turn around, GenAIs
 [[NJ]]:		[[2024-04-01 Resume Rewrite|Re-Res]] 
+[[NJ]]:		[[Coms]] calling plan
 [[NJ]]:		[[crm]]:  Pings
 [[NJ]]:		[[Mentor]]: 
 [[Lrn]]:		RunSys, 
+[[NJ]]:		[[NJ24.pptx]] 
 
 - find interesting hangout places
 

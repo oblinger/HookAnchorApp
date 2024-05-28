@@ -1,4 +1,4 @@
-
+- [[EOCA Publish]] 
 :: [[EOCB SandboxFutility]],   [[EOCI Alignment as Mind Slavery]],   [[EOCI ProblemOfQualia]],   [[EOCT Argument]]
 
 ## TOP
@@ -6,7 +6,7 @@
 - [[j EOCI]]: Ideas
 
 
-:: [[EOCI Corp AI]],   [[EOCI Digital Native]],  
+:: [[EOCK Corp AI]],   [[EOCI Digital Native]],  
 
 - [[EOCT Plausible Paths]],   [[EOCT What Happens Now]],   [[EOCT Prime Path]]
 ## >
@@ -24,7 +24,7 @@ ACTIVE
 [[EOCI Leviathan]] 
 
 :: 
-- [[EOCA Last Best Hope]] - 
+- [[EOCT Last Best Hope]] - 
 - [[EOCI Consciousness]] 
 
 

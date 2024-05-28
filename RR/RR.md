@@ -18,7 +18,7 @@ n:: Research Reference pages
 - [[Alg]]: 
 - [[AI]]: [[ML]]: [[rrCV]]: [[DL]]:
 
-
+- [[SportsAI]] 
 ## = TOPS
 - [[Lrn it]] 
 

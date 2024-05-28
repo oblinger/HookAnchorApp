@@ -1,4 +1,11 @@
 
+- [[EOCA Root]] 
+
+- [[EOCB SandboxFutility]] - 
+- [[EOCI ProblemOfQualia]] - 
+- [[EOCI Alignment as Mind Slavery]] - 
+
+
 JUMPS:
 - [EOCI Agenic Aggregation](spot://EOCI~Agenic~Aggregation): 
 - [EOCI Agent](spot://EOCI~Agent): 

@@ -1,4 +1,4 @@
-[[MED Measure.xlsx|MED Measure]]   <--  Latest results here
+## [[MED Measure.xlsx|MED Measure]]   <--  Latest results here
 
 		DATE		Ch.	HDL LDL Rat Trig	BP & Pulse  A1C	Glu	Bil	AST	ALT 	Wt	Fat	Gut  Fat  BMI   Place
 	2023-11-13	104	39	43	2.7	112		124/??	??		101			185		40.?

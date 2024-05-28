@@ -1,8 +1,16 @@
+- 
+- git website public
+- git website public
+- 
+- - org self; org mysys
+- get replacement for mint working!
+- the problem of delegated control will be ubiquitous
 
 
 
 
 
+- [[MED Log#EMDR|EMDR]]: try it 
 
 
 

@@ -1,7 +1,7 @@
 
 
 NARRATIVE PARTS
-- [[EOCI Corp AI]] 
+- [[EOCK Corp AI]] 
 - [[EOCI Digital Native]] 
 
 

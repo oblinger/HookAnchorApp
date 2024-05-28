@@ -6,6 +6,16 @@
 # LOG
 
 
+### 2024-05-21  Topics
+
+- 4 Resources = .3 mgt, 1 Ops (B), 3.0
+     1 per prod. 1.0 avail
+  25% improvement. 
+
+- Absolute discipline; matrix
+
+### 2024-03-21 Discussion 
+
 - Cost of Sales
 
 

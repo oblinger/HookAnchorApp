@@ -1,4 +1,6 @@
 
+- [[NJ24.pptx]]. 
+
 :: [[2024 RES objective]]
 
 - [[2024 Res Rewrite At a Glance]] - 

@@ -4,22 +4,24 @@
 
 ### 2024-04-12  Dillion updates to the plan
 
-Agree on the challenge of reconstitution, in Iraq the US F-ed up by not restructuring.  But Afghanistan is the better analog here, just as with Gaza there really was no strong local pro-israel, pro-US institutions to work with, AND in both cases you have a subset of the population ready to die rather than align.  This position is a non-starter, you can never mold such a population into a partner for peace--they believe Israel should not be there... and for some/many we are not changing that belief.
+Dillon, your response was so good it merited my thinking before responding.  Sorry I took so long!
 
-So I think reconstitution is the only path for a real partner, and further it can only be done slowly within the subset of Palestinians 
+RECONSTITUTION -- I agree on the challenge of reconstitution, in Iraq the US screwed up by not restructuring.  But Afghanistan is the better analog to Gaza.  Just as with Gaza there really was no strong local pro-israel, pro-US institutions to work with, AND in both cases you have a subset of the population ready to die rather than align.  This position is a non-starter restructuring, you can never mold such a population into a partner for peace--they believe Israel should not be there... and for some/many we are not changing that belief.
 
+So I think reconstitution is the only path for a real partner, and further it can only be done slowly, and only with the subset of Palestinians.  This is less than everyone wants, but I think it is the most that can be achieved in the medium term.
 
-
-- Coalition of nations (not lead by Israel) provide favored trading, direct funding, and governmental setup assistance
-- Enclave progressively becomes self-governing and self-policing ultimately becoming a separate state
-- Enclave is only populated by those willing to accept Israel and willing to help ensure her safety.
+But let me update/clarify the proposal so it does not trip over the objections you raised:
+- It should be a coalition of nations provide favored trading, direct funding, and governmental setup assistance.
+  (for legitimacy the US should pressure Arab nations to be central.  Israel should be part of but leading this)
+- The enclave progressively becomes self-governing and self-policing ultimately becoming a separate state.
+- Enclave is only populated by those willing to accept Israel and willing to help ensure her safety as the price they are willing to pay for their freedom.
 
 --> Benefits of this path
 - Just as with Iraq, it is not possible to setup a government over a population where many citizens in that population are actively against the goals of that government, as we saw in Iraq, this cannot work long term.  My approach provides a path for the subset of Palestinians willing to accept need to keep Israel secure with a path.  
 - Segregating by willingness to keep Israel secure allows israel to safely allow prosperity and freedom w/o risking another Oct-7th, trying to give prosperity and freedom to citizens that include many who would do harm is far more risky.  (and I think Israel just wont do it.)
 - Over time if the enclave is far more prosperous because of its thriving trade etc.  I think many Palestinians will see it as their personal path to freedom and embrace it and Israel's security too.  (of course those who continue to want to fight Israel to the death will be oppressed by Israel, and she will deny them any freedom to act or grow, just as she does today)
 
-but it is about money.  Today Iran funds Hamas to build hospitals and schools.  Aligned nations need to outspend Iran and build better trade, better schools in the enclave.  If we want Palestinians to favor our path, we need to meet them half way, we cannot allow Iran to outspend us.  And this is a happy situation:  Iran funds the rest of Gaza, but is quite limited in ability to foster trade etc.  And the aligned nations allow great trade and direct funding.  If we cannot beat Iran at this game, we are not trying.  Meanwhile the Gazans on both sides benefit.
+There are many practical "details" not covered here, but I think the biggest one is about money.  Today Iran funds Hamas to build hospitals and schools.  Aligned nations need to outspend Iran and build better trade, better schools in this enclave.  If we want Palestinians to favor our path, we need to meet them half way, we cannot allow Iran to outspend us.  And this is a happy situation:  Iran funds the rest of Gaza, but Iran is quite limited in ability to foster trade & freedoms etc.  Meanwhile the aligned nations allow great trade and direct funding to a growing Enclave.  If we cannot beat Iran at this game, we are not trying.  Meanwhile the Gazans on both sides will benefit.  
 
 
 

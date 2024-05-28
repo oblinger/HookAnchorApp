@@ -1,5 +1,6 @@
 
 - [[Friday]], 
+- [[j EOCK]] 
 ## FUN THINGS
 - [[BOOKS]] - 
 - [[Friends]] 

@@ -1,7 +1,8 @@
 
 :: [[DL]],   [[STATS]], [[Learning]], 
 
-:: [[ARIMA Algorithm]],   [[ML Alg]],   [[ML Tools]]
+:: [[ARIMA Algorithm]],  
+- [[ML Alg]],   [[ML Tools]], [[ML Datasets]],
 
 SECTIONS:  [DL](DL.md)   [STATS](STATS.md)
   [VAE - Variational Auto Encoder](VAE%20-%20Variational%20Auto%20Encoder.md)

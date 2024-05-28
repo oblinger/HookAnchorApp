@@ -1,9 +1,5 @@
 n:: OBSIDIAN setup details
 
-:: [[OBS Projects]]
-- [[SYS]],  [[KM]], 
-- [[OBS API Docs]]
-
 MY SETUP:	[[SYS]], [[OBS Plugins]], 
 MY IDEAS:	[[Multi-List WorkFlow]],  
 HACKING:		[[Action Notes]], [[#ADD ITEM COMMAND|Add Item]],  [[#SEND ITEM COMMAND|Send Item]], [[spotlight commander]],  
@@ -12,6 +8,10 @@ PUBLIC: 		[Oblio](https://publish.obsidian.md/oblio)  (LMI!),
 PLUGINS:		[Templater Docs](https://silentvoid13.github.io/Templater/internal-functions/internal-modules/file-module.html), [[QUICKADD]], 
 
 - [[OBS Examples]]  
+
+:: [[OBS Projects]]
+- [[SYS]],  [[KM]], 
+- [[OBS API Docs]]
 
   [Discord](http://app/discord),  
  - [[Action Notes]]   
