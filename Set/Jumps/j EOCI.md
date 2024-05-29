@@ -22,4 +22,6 @@ JUMPS:
 - [EOCI Perilous Cyberspace](spot://EOCI~Perilous~Cyberspace): 
 - [EOCI ProblemOfQualia](spot://EOCI~ProblemOfQualia): 
 - [EOCI Scaled Intelligence is super-intelligence](spot://EOCI~Scaled~Intelligence~is~super-intelligence): 
+- [EOCI Cannot Stop Ourselves](spot://EOCI~Cannot~Stop~Ourselves): 
+- [EOCI Natural Selection](spot://EOCI~Natural~Selection): 
 

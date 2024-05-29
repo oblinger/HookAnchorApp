@@ -1,15 +1,13 @@
  **NOW** 
- - high 5 dataset
- - Find Datasets for training Basketball
- - Run AWS instance
- - [[qq]]: 
+ High5:			Briones/Grz building this
+ Find:			Find Datasets for training Basketball
 ## TOP
 [[DVC DAT]]:		> main>dat; greg; pip -e
-GCP over:		/DockerImage
+GCP over:		^Juan tracking this
 SW proc:		[db](https://www.notion.so/sportsvisio/cf65339c09c6486296f8adaa084c141a?v=f8a45e385eea4c2fb590502835f4453f&pvs=4),[doc](https://docs.google.com/document/d/1aHnoqgQ3H_0abUtlVWoMPHDA7nQhzoq0JRqZLujORc0/edit?usp=drive_web&ouid=105281685541312342727)  ^Jasu 
 [RP](spot://rp):			^TestRecall; FixRecall
 [[NJ]]:			>war, rewrite, mentor
-Minutes:		!! Push Conversation.  
+Minutes:		!! Push Conversation. 
 [[Metrics]]:		/Create money metrics page
 
 [ShotBox](https://www.notion.so/sportsvisio/SHOT-BOXER-CROSSOVER-f88db79eeb6a45baa84d40664d8f7f2e?pvs=4):		^James Result
@@ -51,6 +49,11 @@ Homography  (physics model)
 Jasu, how many of the epics can we reasonably have defined by end of this week?  (don't kill yourself or Jack, just trying to get a sense of how much we can get done.)
 
 
+OCR:
+Min: 
+RP:   Recall
+
+Martin: videos.
 
 
 

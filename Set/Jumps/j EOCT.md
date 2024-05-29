@@ -7,4 +7,5 @@ JUMPS:
 - [EOCT Subjective Aspects of Consciousness](spot://EOCT~Subjective~Aspects~of~Consciousness): 
 - [EOCT What Happens Now](spot://EOCT~What~Happens~Now): 
 - [EOCT Ways Intelligence Will Be Super](spot://EOCT~Ways~Intelligence~Will~Be~Super): 
+- [EOCT Last Best Hope](spot://EOCT~Last~Best~Hope): 
 

@@ -6,10 +6,11 @@
 
 ### 2024-05-16  Mentor's call list
 
-- Joe 	- email
+- Joe 	- Send Email
 - Nick 	- 
-- Melnie- 
 - Luis	- Dinner update
+- Melnie- 
+
 - Rafah
 - Huerta - 
 

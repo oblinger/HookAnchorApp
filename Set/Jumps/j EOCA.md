@@ -24,4 +24,5 @@ JUMPS:
 - [EOCA Letters](spot://EOCA~Letters): 
 - [End Of Man Book](spot://End~Of~Man~Book): 
 - [EndOfMan BookOutline](spot://EndOfMan~BookOutline): 
+- [EOCA Publish](spot://EOCA~Publish): 
 

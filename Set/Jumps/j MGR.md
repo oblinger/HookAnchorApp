@@ -9,4 +9,5 @@ JUMPS:
 - [MGR Product](spot://MGR~Product): 
 - [MGR](spot://MGR): 
 - [MGR Plan](spot://MGR~Plan): 
+- [MGR Log](spot://MGR~Log): 
 

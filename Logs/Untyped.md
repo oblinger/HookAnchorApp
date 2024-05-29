@@ -259,6 +259,7 @@ n:: no prefix.	Dated entries without any typing prefix
 | 2023-07-05 | [[@Phillip Alvelda]]            | Ideas:                                                                                                                            |
 | 2023-07-05 | [[QQ]]                          | Push2Prod                                                                                                                         |
 | 2023-07-03 | [[CV Notes]]                    | CV team components                                                                                                                |
+| 2023-07-00 | [[@Uri Weiss]]                  | Introduced Thru Qingling                                                                                                          |
 | 2023-06-29 | [[@Grzegorz Biziel]]            | how does gallery work                                                                                                             |
 | 2023-06-29 | [[@Phillip Alvelda]]            |                                                                                                                                   |
 | 2023-06-28 | [[Phone]]                       | Coffee usage                                                                                                                      |

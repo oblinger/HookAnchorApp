@@ -1,5 +1,7 @@
 ## === THE CONTEXT - HAL 2000 ===
 
+[[EOCB Theses Website]] 
+
 - UNDERSTOOD -- It has been more than a decade since fully sentient systems have been acknowledged by several national governments.
 
 - DANGER -- Dangers have been studied and repeatedly shown to be present and significant.

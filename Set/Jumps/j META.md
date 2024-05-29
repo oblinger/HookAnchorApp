@@ -16,4 +16,5 @@ JUMPS:
 - [Meta List](spot://Meta~List): 
 - [Meta Work](spot://Meta~Work): 
 - [Meta Coms](spot://Meta~Coms): 
+- [Meta Proj](spot://Meta~Proj): 
 

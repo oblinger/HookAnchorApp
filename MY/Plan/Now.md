@@ -1,3 +1,4 @@
+.Run AWS instance
 .Sean how to spy
 [[Friday]]: 
 .Clean

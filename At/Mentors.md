@@ -3,12 +3,16 @@
  MENTORS:  [[FAANG]],  [[VC ORG]],  
 [[Personal BOD]]:
 ## CORE
-STRAT:	[[@Nick Allen]], 	[[@Luis Arrellano]],
+STRAT:	[[@Nick Allen]], 	[[@Luis Arrellano]], 
+.			[[@Uri Weiss]], 
+
+## FRIENDS
+LUNCH:		[[@Tessa Lau]], [[@John Davis]], 
+
 
 ## MENTORS
 CORE:			[[@Nick Allen]], 
 MGR-LDR:		[[@John Turek]], 
-LUNCH:		[[@Tessa Lau]], [[@John Davis]], 
 
 COACH:		[[@Igor Shindel]], 
 GREY BRDS:	[[@Joe Hellerstein]], 

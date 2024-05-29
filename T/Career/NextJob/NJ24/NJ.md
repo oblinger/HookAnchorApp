@@ -1,4 +1,14 @@
 . [[NJ24.pptx|PPTX]], 
+
+[[NJ]]:		[[WarStories]]: Turn around, GenAIs
+[[NJ]]:		[[2024-04-01 Resume Rewrite|Re-Res]] 
+[[NJ]]:		[[Coms]] calling plan
+[[NJ]]:		[[crm]]:  Pings
+[[NJ]]:		[[Mentor]]: 
+[[NJ]]:		Quick Apply to something???
+[[Lrn]]:		RunSys, 
+
+
 - add leading targets to my slides
 low friction no-touch (or nearly notouch)
 portable/no-portable
@@ -10,15 +20,6 @@ Spreadsheet with options
 - 
 
 By May-1
-[[NJ]]:		Quick Apply to something???
-[[NJ]]:		[[WarStories]]: Turn around, GenAIs
-[[NJ]]:		[[2024-04-01 Resume Rewrite|Re-Res]] 
-[[NJ]]:		[[Coms]] calling plan
-[[NJ]]:		[[crm]]:  Pings
-[[NJ]]:		[[Mentor]]: 
-[[Lrn]]:		RunSys, 
-[[NJ]]:		[[NJ24.pptx]] 
-
 - find interesting hangout places
 
 - Burnish DL credentials

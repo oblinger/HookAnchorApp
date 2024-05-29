@@ -1,13 +1,13 @@
 - 
 - git website public
-- git website public
-- 
 - - org self; org mysys
 - get replacement for mint working!
 - the problem of delegated control will be ubiquitous
 
 
-
+Git Website
+ - root project page (in obsidian)
+ - copy text over for push to 
 
 
 - [[MED Log#EMDR|EMDR]]: try it 
