@@ -62,4 +62,4 @@ Dedicate paper for Jersey detect -
 ### m2022-11-22  About AF
 
 
-[[AF Instant Design Story]] [[WarStories]] 
+[[AF Instant Design Story]] [[War]] 

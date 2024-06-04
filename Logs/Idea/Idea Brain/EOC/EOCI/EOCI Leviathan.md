@@ -1,4 +1,4 @@
-
+[[EOCI Inevitability Thesis]] 
 
 LEVIATHAN - Planetary-scale organization human + AI organization with a broad but singular focus (typically making money)
 - Planetary means: Apex of resources available, scope of assets controlled, size of ascribed mandate

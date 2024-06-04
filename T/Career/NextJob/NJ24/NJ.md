@@ -1,6 +1,6 @@
 . [[NJ24.pptx|PPTX]], 
 
-[[NJ]]:		[[WarStories]]: Turn around, GenAIs
+[[NJ]]:		[[War]]: Turn around, GenAIs
 [[NJ]]:		[[2024-04-01 Resume Rewrite|Re-Res]] 
 [[NJ]]:		[[Coms]] calling plan
 [[NJ]]:		[[crm]]:  Pings
@@ -51,7 +51,7 @@ Still on the good side, I have some really GREAT turn around stories to tell.  
 - https://io.google/2023/. 
 
 ## ROCKS TODO
-- [[WarStories]]: Adj/Topics
+- [[War]]: Adj/Topics
 - [[RES]]: rewrite
 - [[Resume Rewrite]] - 
 - [[Lrn]]:		]]

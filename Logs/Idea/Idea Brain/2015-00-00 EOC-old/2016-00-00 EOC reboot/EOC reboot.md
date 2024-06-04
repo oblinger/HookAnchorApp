@@ -1,5 +1,5 @@
 
-:: [[F-ing Safe]],   [[eoc-atlas]],   [[eoc-book]],   [[eoc-formal]],   [[eoc-impl]]
+:: [[F-ing Safe]],   [[eoc-atlas]],   [[EOCB Engines Of Control Book]],   [[eoc-formal]],   [[eoc-impl]]
 http://edge.org/response-detail/26587   dataset are the limiting factor
 https://github.com/Matt-Esch/virtual-dom  JS virtual DOM
 https://glebbahmutov.com/blog/instant-web-application/  uses virtual dom

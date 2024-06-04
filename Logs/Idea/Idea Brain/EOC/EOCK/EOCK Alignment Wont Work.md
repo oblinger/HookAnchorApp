@@ -16,3 +16,10 @@ NOTE: The reasoning on this point is messy implying a greater possibility of bei
 - Intelligence Is Chaotic -- What is can do and what it will do are pragmatically impossible to predict
 - Greed and Power -- 
 - Its Unnatural -- Succeeding would be against the nature of things.
+
+
+
+~~
+Alignment won't work to ensure AIs age aligned 
+
+Even if alignment could be make to work, it will still fail in the sense that it won't be pervasively used, and we expect the negative consequences of unaligned AI will occur even with relatively small numbers of unaligned AIs

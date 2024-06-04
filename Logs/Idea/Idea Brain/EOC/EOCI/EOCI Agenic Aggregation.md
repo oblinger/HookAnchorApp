@@ -1,3 +1,4 @@
+[[EOCI]] 
 
 The principle of ***agentic aggregation*** states that certain broad classes of agents to a first order of approximation are overridingly driven towards aggregation of wealth or power.  In particular we argue that corporate-like entities and nation-states both behave in this way.
 

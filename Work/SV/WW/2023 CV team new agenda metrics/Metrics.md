@@ -1,7 +1,11 @@
 
 :: [[bug]]
 TODO:
-- 
+
+
+https://www.notion.so/sportsvisio/2024-05-28-Money-Metrics-4ac7bda38d1f4d5db569d6a12316c831?pvs=4
+
+
 
 - [Least Commitment Model](https://drive.google.com/drive/folders/1WlrtheRK1yL_P0LJoZkabm4HEqW-alem) 
 - [Metrics Folder](https://drive.google.com/drive/folders/1CO5eTdcTrUS9T8BkBcMBBE9e3B6YORvg) -

@@ -1,3 +1,5 @@
+- [ ] setup blink
+- [ ] Grabby apple air max.  (read about it)
 - paying for noom
 - !! friday
 - James $11/hr

@@ -8,8 +8,7 @@ Examples:
 - A person
 - A corporation
 - A military battalion
-- 
-- 
+
 
 Non-optimality
 In general we expect that an agents actions tend toward the goals intended by that agent, but that often their actions will be far from optimal in achieving their ends.

@@ -1,4 +1,4 @@
-( Cross posted to [[WarStories]]; which is now master )
+( Cross posted to [[War]]; which is now master )
 
 
 #### Instant Design Story

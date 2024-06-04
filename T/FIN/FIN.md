@@ -3,7 +3,7 @@
 
 - [[FIN Tracking]]:  [[FIN Recurring]],  [[FIN Bills]],  [[FIN Budgeting]], [[FIN Flows]],  [[FIN Mint]],
 
-- [[FIN Analysis]],   [[Expenses]],   [Taxes](Taxes/Taxes.md),   [Vanguard](Vanguard.md)
+- [[FIN Analysis]],   [[Expenses]],   [Taxes](Taxes/Taxes.md),   [@Vanguard](@Vanguard.md)
 - [[BillPay]],  
 
 

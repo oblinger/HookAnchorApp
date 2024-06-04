@@ -1,6 +1,6 @@
-- [[RR Mgt]], [[RR Philosophy]], 
-:: [[RR OKRs]],   [[S.M.A.R.T]]
 n:: Research Reference pages
+- [[RR MGR]], [[RR Philosophy]], [[RR PAPERS]],
+- 
 
 [[ML Ops]]
 

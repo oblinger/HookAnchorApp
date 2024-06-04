@@ -6,7 +6,26 @@
 ## INSTALL
    - AWS toolbelt
      $ sudo pip install awscli
-## Setup Jotter backend on AWS
+     
+amazon AWS toolbelt   ec2-api-tools   (brew install)
+
+
+# LOG
+
+### 2024-06-02  Setup for SportsVisio
+
+aws s3 cp --recursive s3://annotation-ar-output/dev/Lifetime10/LT10T/ .
+
+- INSTALL: [AWS CLI](https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html) 
+- [Config & Credential File Settings](https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-files.html) 
+
+SSO Configuration
+- Login on https://aws.amazon.com/console.   DanOblingerSV
+
+- Search & goto "IAM Identity Center"
+- 
+
+### 2016-00-00 Setup Jotter backend on AWS
    LOGON  https://438223740058.signin.aws.amazon.com/console   1pass
       ??? does this find the right one???  - !EC2  !LaunchInstance  !AWS Marketplace   "centos 6.5"  {[must be EBS to boot]}
    - https://aws.amazon.com/marketplace/pp/B00IOYDTV6/ref=mkt_wir_centos65
@@ -20,17 +39,17 @@
    http://jotter002.bonsai.com:8080         # joclient
      !open  !connect  !authenticateDevice 
 
-# CHAPTERS
-## AWS TOOLBELT
+
+#### AWS TOOLBELT
    $ aws ec2 describe-instances
 
-# zzzz** Console Actions
+#### Console Actions
 ### Logon 
     - https://438223740058.signin.aws.amazon.com/console   1pass
     - bitbucket.org  O+S6
 
 
-## Random notes
+#### Random notes
 pick centos 6.5  
 
 launch w. console
@@ -61,8 +80,5 @@ ssh -o 'StrictHostKeyChecking no' -i $EC2_KEYPAIR -l root ec2-54-86-169-146.comp
 
 # assign IP addres
 54.86.91.166  == jotter002.bonsai.com
-
-
-# amazon AWS toolbelt   ec2-api-tools   (brew install)
 
 

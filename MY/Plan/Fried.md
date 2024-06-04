@@ -1,36 +1,22 @@
-- 
-- git website public
-- - org self; org mysys
+- facets for menu sub area letters (including notes)
+- mus Notes
+- clean up spotify lists
+- named music channels:  mus Chill mus Class 
+
 - get replacement for mint working!
-- the problem of delegated control will be ubiquitous
 
 
-Git Website
- - root project page (in obsidian)
- - copy text over for push to 
-
-
-- [[MED Log#EMDR|EMDR]]: try it 
-
-
-
-- get printout of service work on Acura
-- Check in Notification for slack & text are working
-- get Eli's ipad connected to mom's account
 - [ ] budget big transfers list	
-- [ ] giphy grab
 - [ ] [[Travel Lst]]: pills; snacks
 - [ ] Update CRM workflow
 - [ ] Get logins for MyHealth
-- [ ] Process mom's Eli educational funds.
+- [[FIN]]: do key items
 
 
 ### WAITING
-- [ ] NextDoor [[Automation]] 
+- Check in Notification for slack & text are working
 
 
-### RESEARCH
-- [ ] Plan for crypto
 ### HOUSE
 - [ ] USB Camera
 - [ ] BEDROOM --  Closet Pole
@@ -41,18 +27,12 @@ Git Website
 
 
 ### LATER
+- get Eli's ipad connected to mom's account
 - [ ] do quarterly budgeting
-- [ ] [read]( https://www.mckinsey.com/industries/agriculture/our-insights/winning-in-africas-agricultural-market) - africa
 - [ ] [annual review](https://humanparts.medium.com/how-to-pull-off-a-personal-annual-review-bc3ae908f493) 
-
+- [ ] Reset door codes. (info in myfo->mystuff)
 
 ### Older
-
-- [ ] Evidence-based child rearing
-- [ ] Grabby apple air max.  (read about it)
-- [ ] setup blink
-- [ ] Reset door codes. (info in myfo->mystuff)
-- [ ] Reset car seat auto adjust
 - [ ] Call about re-opening long closed citi-bank credit card account.
 - [ ] Clean dan@af
 - [ ] Setup Calendly.  ?? Have you seen Calendly?  (calendly hook)
@@ -62,7 +42,6 @@ Git Website
 - [ ] Write Reviews for Jessie
 - [ ] https://www.marcusbuckingham.com/gift-of-standout/
 - [ ] Social Heartbeat - Establish regular time and list of social connections
-- [ ] MED:  Research best vitamins
 - [ ] Estimate Water Usage
 - [ ] get list of hikes figured out
 - [ ]  [Udemy - Tara - Sleep](https://www.udemy.com/heal-anxiety-sleep-easily-tara-brach/learn/lecture/14770060#overview) s

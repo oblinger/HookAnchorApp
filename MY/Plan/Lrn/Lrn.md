@@ -1,4 +1,5 @@
-- [[Lrn Mgt]],  
+- [[Lrn Mgt]], 
+- [[RR Papers]]: 
 - John Doerr and the folks at Google
 
 By May-1

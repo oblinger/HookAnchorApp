@@ -2,7 +2,7 @@
 - QUICK:	TidyUp, 
 - LIGHT:	[[Scrub]], 
 - FUN:		[[ToBuy]],  [[Try Foods]], 
-- READ:	[[Pocket App]], [[ToRead]], [Good Reads](https://www.goodreads.com/), 
+- READ:	[[Pocket App]], [[ToRead]], [Good Reads](https://www.goodreads.com/),
 - CHECK:	[[MED.]]   
 
 
@@ -10,7 +10,7 @@
 
 [Build systems](https://medium.com/swlh/dont-just-set-goals-build-systems-8158ac541df#ff79)  
 
-
+- [Happiness](https://markmanson.medium.com/how-to-be-happy-c55b1001e7ef): 
 
 
 

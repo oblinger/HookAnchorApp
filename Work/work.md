@@ -1,12 +1,27 @@
- **NOW** 
- High5:			Briones/Grz building this
- Find:			Find Datasets for training Basketball
+
+:: [[zz]]
+ **NOW**  
+ shot boxer w/ better video
+ Sean:		!! COGS email
+ [[Fin]]:		!! Vanguard
+ Next Q		> Juan Chat
+ Assess	> Assessment plan for BB	
+ R&D docs	! Briones 2023 R&D
+ RP5		! Re-get this.
+ High5:		Briones/Grz building this
+ Find:		Find DS for BB. (Briones look 4big)
+- Awesome vid: Awesome 1080p no crowds; no camera break
+- Look @ shot boxer; 
+- Juan get ShooterID - recalc halo w/ missing tracks good on entry
+
+[[zz#^Hardcase]] 
+
 ## TOP
-[[DVC DAT]]:		> main>dat; greg; pip -e
+[[DVC DAT]]:		/ root repo
 GCP over:		^Juan tracking this
 SW proc:		[db](https://www.notion.so/sportsvisio/cf65339c09c6486296f8adaa084c141a?v=f8a45e385eea4c2fb590502835f4453f&pvs=4),[doc](https://docs.google.com/document/d/1aHnoqgQ3H_0abUtlVWoMPHDA7nQhzoq0JRqZLujORc0/edit?usp=drive_web&ouid=105281685541312342727)  ^Jasu 
 [RP](spot://rp):			^TestRecall; FixRecall
-[[NJ]]:			>war, rewrite, mentor
+[[NJ]]:			>[[War|War]], rewrite, mentor
 Minutes:		!! Push Conversation. 
 [[Metrics]]:		/Create money metrics page
 
@@ -18,6 +33,9 @@ Shot-boxer:	^JamesResult
 Life Time:	^contacts qq ^call tree
 
 [[@Shreshth Saxena|Saxena]]:		/Grz Results  
+
+
+- saxena
 
 ## SOON [[mgt]] [[cvp]] 
 [Belief](https://docs.google.com/document/d/1H9krXpxS2_Cr9T68pAksb6QGYqpW28DiF2OSw40g0pI/edit?usp=drive_link):		
@@ -44,16 +62,6 @@ Homography  (physics model)
 - cube construction
 
 ## _
-     # sfoa3396
-
-Jasu, how many of the epics can we reasonably have defined by end of this week?  (don't kill yourself or Jack, just trying to get a sense of how much we can get done.)
-
-
-OCR:
-Min: 
-RP:   Recall
-
-Martin: videos.
 
 
 

@@ -1,6 +1,4 @@
 
-Kelly Barry is doing the yearbook this year
-
 ## __
    [gddrive](gddrive.md)
   # TODO

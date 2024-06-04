@@ -217,4 +217,5 @@ JUMPS:
 - [j EOCB](spot://j~EOCB): 
 - [j EOCI](spot://j~EOCI): 
 - [j EOCT](spot://j~EOCT): 
+- [j EOCK](spot://j~EOCK): 
 

@@ -12,7 +12,7 @@
 
 - Quick Update. 
 - [[NJ]]: FAANG: Targets, Todos, 
-- [[WarStories]],
+- [[War]],
 
 
 - Being a doer
@@ -202,7 +202,7 @@ Doing anything w/ world cup.
 - JOBOT
 - ML prep
 - Who to talk with?  Hang w/ grad students?
-- [[WarStories]]  
+- [[War]]  
 
 
 ### m2022-08-03  - Activities

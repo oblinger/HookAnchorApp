@@ -1,5 +1,4 @@
-
-- when is eli's bday party
+- TT in town
 - fin plan for Merrill
 
 - call Luis; Melanie

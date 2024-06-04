@@ -36,11 +36,11 @@
 - [ ] 10:	[[chew]] 
 - [ ] 11: ???
 - [ ] 12:	[[lunch]] 
-- [ ] 1'	[[WarStories]]: 
+- [ ] 1'	[[War]]: 
 - [ ] 10	[[RES Linked In]] 
 - [ ] 11	[[COMS]] 
 - [ ] 11	[[lunch]],  
-- [ ] 12:	[[WarStories]] 
+- [ ] 12:	[[War]] 
 - [ ] 2	[[gap]]  
 - [ ] 3:	[[@Joseph Yeh]]  
 - [ ] 4:	[[Exercise]]  
@@ -141,7 +141,7 @@
 
 ### 2022-10-26
 - [x] 11:	Chew
-- [x] 12	[[WarStories]] - Ready for Joe
+- [x] 12	[[War]] - Ready for Joe
 - [ ] 1:	Exercise
 - [ ] 3	War 
 - [x] 3:	Joe
@@ -151,7 +151,7 @@
 - [ ] [[Coursera Notes]] - 
 
 ### 2022-10-25
-- [x] [[WarStories]] - Ready for Joe
+- [x] [[War]] - Ready for Joe
 - [x] [[2022-05 ELI next school|Eli Next]] - Spreadsheet
 - [ ] [[Coursera Notes]] - 
 - [ ] Chew

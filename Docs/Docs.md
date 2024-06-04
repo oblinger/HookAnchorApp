@@ -1,10 +1,10 @@
 #set 
 n:: Personal doc pages
 - [[Doc Folder]], [CV Docs](spot://cv~docs) 
-:: [[DocDocker]]
 
 
-:: [[DocJupyter]]
+
+[[DocDocker]], [[DocJupyter]]
 
 :: [[docs/DocJupyter]]
   [[DocObsidian]]

@@ -1,27 +1,21 @@
 
-:: [[Read]]
-#set 
 n:: Stuff "to read"
-
+- [[Read]].  #set
+- [read]( https://www.mckinsey.com/industries/agriculture/our-insights/winning-in-africas-agricultural-market) - africa
 - [[Set/ToRead/Read/Read]], [[Podcasts To Listen To]], 
   [[Set/ToRead/Read/Read]]
 - Alignment Forum, [Humane Tech](https://www.humanetech.com/podcast)  
 - Managers Path
+- insight by tasha eurich - yashin is reading it. [Summ](/Users/oblinger/ob/kmr/Set/ToRead/2024 INSIGHT_Summary_Sheet (1).pdf) 
 
 OHTER MGT BOOKS TO CONSIDER (from whom??)
 OTHER Ideas:
-
-HardThingAboutHardThings
-
-BecomingATechMgr
-
-Meditations
-
-BreakAllTheRules
-
-5DisfunctionsOfTeam
-
-7HabitsOfHiEffectPeople
+- HardThingAboutHardThings
+- BecomingATechMgr
+- Meditations
+- BreakAllTheRules
+- 5DisfunctionsOfTeam
+- 7HabitsOfHiEffectPeople
 
 ## = REPEAT
 - >>>>>        Clean-Unsorted * Scan thru them * Do Repeats or Ref Pages

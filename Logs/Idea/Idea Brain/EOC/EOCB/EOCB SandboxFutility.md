@@ -1,6 +1,6 @@
 ## === THE CONTEXT - HAL 2000 ===
 
-[[EOCB Theses Website]] 
+[[EOCB Web]] 
 
 - UNDERSTOOD -- It has been more than a decade since fully sentient systems have been acknowledged by several national governments.
 

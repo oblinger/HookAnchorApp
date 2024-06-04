@@ -1,4 +1,3 @@
-- [[EOCI Natural Selection]] 
 
 
 **TL;DR**. No we really cannot just "pull the plug" 

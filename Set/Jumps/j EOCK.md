@@ -1,3 +1,4 @@
+[[j EOCI]]
 
 JUMPS:
 - [EOCK Alignment Wont Work](spot://EOCK~Alignment~Wont~Work): 
@@ -8,4 +9,3 @@ JUMPS:
 - [EOCK Loop Closing](spot://EOCK~Loop~Closing): 
 - [EOCK Natural Selection](spot://EOCK~Natural~Selection): 
 - [EOCK Nature of AI Progress](spot://EOCK~Nature~of~AI~Progress): 
-

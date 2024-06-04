@@ -3,6 +3,8 @@
 - [wells](https://www.fool.com/the-ascent/credit-cards/landing/top-travel-cards/?campaign_group=643982279418&gad_source=1&gclid=Cj0KCQiAkeSsBhDUARIsAK3tiedEYY6AQZToqvng_1YyFZYoTZnUFDI1X2P8MF6tKGRJqEj5LqM6DjsaAotWEALw_wcB&publisher=ta-cc-co-adw-na-travel-5-na-na&testId=ta-cc-travel&cellId=0&campaign=the-ascent) 
 [[FIN]][[FIN Log#2024-03-24 Financial Advisors|:]] Facet
 # LATER
+
+- [ ] Plan for crypto
 - [ ] Check Allspring
 - [ ] 
 - [ ] [[FIN|FIN]] >>>Find value investments
@@ -18,3 +20,15 @@
 
 - [ ] [[FIN|FIN]] >>>Find value investments
 - [ ] [[FIN|FIN]] Roth Conversion Consideration
+
+
+
+# LOG
+
+### 2024-06-03  Costs For Vanguard
+
+Alex Collins 
+will talk with Dean 
+
+0.3% AUM - Dedicated CFP or Team model.   45 min appt.
+0.15% 

@@ -1,14 +1,14 @@
-
-
-2024 Q2 - What Really Matters
-
+# What Really Matters
+## 2024 Q2
 MAIN
-- [[SVQ2]]:	Moving SportsVisio forward
-- [[NJ24,]]	Moving the needle on getting my next job
-- [[Lrn]]:		Really this is in service of 
-- FUN:		Having fun each day; doing stuff that matters
-- FAM:		Spending time with family; Strengthening bond w/ QL
-- [[PP|BIG]]:		
+. [[SVQ2]]:	Move SportsVisio forward
+. [[NJ24,]]	Move needle, getting next job
+. [[Lrn]]:		Learning for NJ
+. FUN:	Fun each day; stuff that matters
+. [[Spirit]]:	Spending time with family;
+.			Strengthening bond w/ QL
+. [[BIG]]:		
+. [[MED.]]	
 
 AND
 - [[Home]]:	Org basement

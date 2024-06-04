@@ -2,13 +2,11 @@
 - [[EOCA Root]] 
 
 - [[EOCB SandboxFutility]] - 
-- [[EOCI ProblemOfQualia]] - 
-- [[EOCI Alignment as Mind Slavery]] - 
+- [[EOCI ProblemOfQualia]] -  
 
 
 JUMPS:
 - [EOCI Agenic Aggregation](spot://EOCI~Agenic~Aggregation): 
-- [EOCI Agent](spot://EOCI~Agent): 
 - [EOCI Alignment as Mind Slavery](spot://EOCI~Alignment~as~Mind~Slavery): 
 - [EOCI Closure](spot://EOCI~Closure): 
 - [EOCI Consciousness](spot://EOCI~Consciousness): 
@@ -22,6 +20,4 @@ JUMPS:
 - [EOCI Perilous Cyberspace](spot://EOCI~Perilous~Cyberspace): 
 - [EOCI ProblemOfQualia](spot://EOCI~ProblemOfQualia): 
 - [EOCI Scaled Intelligence is super-intelligence](spot://EOCI~Scaled~Intelligence~is~super-intelligence): 
-- [EOCI Cannot Stop Ourselves](spot://EOCI~Cannot~Stop~Ourselves): 
-- [EOCI Natural Selection](spot://EOCI~Natural~Selection): 
 
