@@ -1,5 +1,18 @@
 # Personal "Quick" Projects
 
+
+### 2024-06-06  Faucet
+
+- 6 3/4" 
+- 
+
+### 2024-06-04  Hiring a new Cleaner
+
+
+We are looking for a through clean of 2 bathrooms and a kitchen. Then (vacuum only) for one area. One worker should be plenty. We are aiming for 3 hours of work. We are flexible about which weekday when the work is done.  I am calling this a "through clean" since we want the bathrooms to be carefully cleaned.  Still right now, those bathrooms are not too bad. 
+
+
+
 ### 2024-05-16  Replace bath faucet
 
 https://www.amazon.com/dp/B00TIRHV0I/ref=syn_sd_onsite_desktop_0?ie=UTF8&pd_rd_plhdr=t&aref=n5PPIcTYDi&th=1

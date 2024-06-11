@@ -107,6 +107,15 @@ Now we have done at least 5 weeks of 100% bug fix time.
 I would have guessed that 5 weeks would have made a bigger dent,
 
 ## = Team velocity / distractions
+- Tennis
+- Recording App
+- Pivo
+- Volleyball
+- Basketball
+- Baseball
+
+- Best Possible Recording Rig
+Rule Set to auto validate annotations
 Score Board operation
 Reply idea - monitor
 - Specialized experience for three kinds of customers:  players, coaches, and administrators.

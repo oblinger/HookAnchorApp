@@ -1,3 +1,55 @@
+
+### 2024-06-08  Saying Goodbye to Yoshiko
+
+
+
+Yoshiko its Dan.
+
+The drifted apart
+- not impt part of my life.
+- on my list to re-connect
+- young son
+- I guess this voice message will have to do
+
+Thinking back there are alot of happy memories
+- simple ones like your dinners prepared with care for when I would travel to Princeton for the weekend.
+- The way you were always so so crazy happy if I would repair anything.  I think your plan was to make me feel like a complete genius... and it really kinda worked!
+- mom's wrapping
+- ashley's rememberance
+- my high school reunion
+
+
+More than any other thing, the one that I wanted to tell you these many years later is how badly I missed a most important thing about you while I was with you.  I knew it at the time, but I never really appreciated it!
+
+You are a ray of sunshine to every person in your life.  Your smile, and your presence as soon as you would walk into a room.  everyone could feel it.
+
+It was great to have that as part of my life.  A crazy rare gift actually.  More anything else, you are a walking ball of joy, and it makes the time anyone spends around you joyful.  
+
+I was damn lucky to experience that, I miss it, and I will always miss it, and miss you.
+
+I will never forget you Yoshiko, my big yellow birdie.
+Lots of love always. 
+-- dan
+
+
+
+Hey this is Dan, Yoshiko's boyfriend from years ago  (I think you will remember me from my stay at your parents house and the trip where I took you and Yoshiko to Eiheiji temple). I am so shocked to learn that Yoshiko is in hospice! so, so very sad!  I recorded a letter that I am hoping she is still able to understand.  If you think she would enjoy hearing an audio letter, it would be great if you could play it for her.  I wish I could tell her in person!  I am happy for any details if you think she was or wasn't able to hear it.  This is all so so sad!
+
+Yours, 
+Dan
+
+
+
+
+
+
+~~
+Yoshiko, it's Dan Ablinger from New York City. I heard just recently, a couple days ago actually, some shocking news that you're in hospice and very ill. I still can't quite believe it. I know you were running races and I don't know, it's very hard for me to imagine. Okay. It's been, it's been more than 10 years, I think, since the last time we spoke. I never intended to, to let us drift apart. The truth is when I started doing startups out here in California, I actually drifted away from a lot of my friends. And you were on my list to reconnect to, for the last two years. I really felt like there was one or two things that, that I wanted to say to you, when reconnecting. And, well, I guess this voice message will have to do. You know, I'm just kind of thinking back on our time together. There's really were a lot of happy memories. Most of them were very simple things. I remember the way you were just so crazy happy if I would repair anything. I don't know. I fixed a window at one time and I remember there was something electric. I remember what it was. Each time you feel like a complete genius. I think it was your plan, but it kind of worked. My mom still remembers and often will say something at Christmas time when we're wrapping up the gifts. I don't know if you remember, but that was your job when you were in town. Well, gifts definitely haven't been wrapped as precisely. More beautifully is that. Since then. And my cousin Ashley, I don't know if you remember her, she was young, she was probably eight. No, maybe a little bit more, maybe ten. When you were coming for Christmases. And to her you were the cosmopolitan woman. And so, I don't know, she always would refer back to you and say that. That she kind of wanted to be like you. I mean, she's since grown and probably grown out of that. But that was her memory. I remember my high school reunion, I don't know if you remember, we're on a boat. And you're very gregarious and very happy. And so, still now when I go back to my reunions, my classmates all remember you. And ask after you. But the reason I wanted to connect back, I did feel like there was something that ought to have been said. It's not exactly an apology. It's just, I was very unaware. Unaware of what I had in you. At the time, I knew it, but I just didn't appreciate it. You're very much a ray of sunshine for anybody. Your smile when you go into a room, lights the room up. Everybody can feel it. And it's a presence that I enjoy for a while. But never really. Appreciate it. And realize this over the years, as I just think back to all the different people I've known in my life, that really it's a crazy, rare gift. You're a walking ball of joy, and it makes the time that people spend around you joyful. I was damn lucky to experience that. I'll miss it. I'll always miss it and I'll miss you. I'll never forget you, Yoshiko. My big yellow birdie. Lots of love. Always. Dan. Okay. Okay.
+
+~~
+Yo Shiko, this is Dan, Dan Ablinger from New York City. I just heard that you're in hospice and very ill. I was shocked to hear this. I knew that you had been running races not so long ago, so I couldn't quite believe it. It's been more than a decade since we last talked. And I never imagined that we would just drift apart and not talk. I guess my startup world had me moving away from a lot of my friends. I had the idea that I would reconnect with you over the last year or two. Over and over I kind of thought this was an important thing to do just because we were close and I think there was a few things left unsaid. At this point I guess this message is going to have to do since I've missed my chance for that. I was thinking back on a lot of the happy memories from the time we were together. Really just simple ones like the dinners that you prepared for when I would travel to Princeton for the weekend. They were simple but it was very nice. I was always so crazy happy if I would repair anything. I think it was your way of making me feel like a complete genius. It really worked. I don't know. I think I fixed your water at one point. I fixed something electrical. I can't remember what it was. You were just so happy about it. My mom still mentions you're wrapping. I don't know if you remember, but. Coming to my mom's house for Christmas, your job was always to wrap the gifts and you're quite precise about that. So they've not been wrapped as well since then. My cousin, I don't remember if you remember her. She was very young when you were there, but you were the cosmopolitan woman for her. her. So she's often... said things back to me, just asking about you years later. Of course, she's married now and has kids, but she still remembers. And when I go back to my high school reunion, if you remember when you were here, we went to my high school reunion and your gregarious smile definitely had lasting impact on on the folks that we met then. Then. But more than anything else, there was one thing I wanted to tell you that I felt needed to be said and it's one of the reasons I wanted to get back in contact with you. It's not exactly an apology, but years later looking at it, I knew at the time how special it was, your way of being, but I never appreciate. The reality is, you were a ray of sunshine for me, but for anybody in your life. Your smile and your presence when you came into a room, everybody could feel it. All of my friends felt it, everybody knew it, all of your friends of course knew it, and I was blessed by it and I really took it for granted. And that was the reason I'm not sure. I wanted to get back in touch with you. I felt like, I don't know, just that it was not handled well by me. I think it's a crazy, rare gift. And there's nothing more to say about it. I'm just sorry that I wasn't more appreciative when I had the chance. I was damn lucky to experience it. and I'll miss it and I'll miss you. I'll never forget you Yoshiko. Lots of love always. Bye bye. Okay.
+
+
 ### 2024-05-03  The way you work.... and don't work
 
 - Under the gun, you perform

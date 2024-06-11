@@ -2,6 +2,27 @@
 
 # LOG
 
+### 2024-06-05  Vanguard Advising
+
+- Cost 
+- Retirement planning
+- Tax Efficiency
+- Macro 
+- Mutual fund choice.
+  
+Dean Sprague
+
+-- Carefully done retirement plan
+-- Careful portfolio construction
+-- maybe active management
+
+
+Thursday 4pm
+
+WebEx 
+
+
+
 ### 2024-05-29  ADVICE FROM ADVISORS - Four Levels of Advice
 
 **  
@@ -74,7 +95,8 @@ Assets:
     .      370,000	Google Stock
     .       25,000	Waymo stock
     .       70,000	SpaceX stock
-    
+
+
 
 ### 2024-01-25  Merrill Retirement Planning ^rplan
 

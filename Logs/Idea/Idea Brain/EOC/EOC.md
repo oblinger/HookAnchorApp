@@ -11,3 +11,4 @@
 - [[j EOCT]] - Topics
 - [[j EOCB]] - Book / Paper ideas
 - [[j EOCA]] - Agenda
+- [[EOCLog]] 

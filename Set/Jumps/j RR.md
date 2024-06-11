@@ -5,4 +5,6 @@ JUMPS:
 - [RR OKRs](spot://RR~OKRs): 
 - [RR Mgt](spot://RR~Mgt): 
 - [RR Philosophy](spot://RR~Philosophy): 
+- [RR MGR](spot://RR~MGR): 
+- [RR PAPERS](spot://RR~PAPERS): 
 

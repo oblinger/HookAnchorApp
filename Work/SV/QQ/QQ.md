@@ -1,5 +1,34 @@
 # QUICK - QUICK work projects
-- [[2023-10-01 Special Olympics]]
+
+
+### 2024-06-04  Hard Case Annotating
+^HardCase
+
+Use metrics to notice dropped tracks of any object
+- manually annotate missing frames
+- regularly retrain
+
+
+If OCR predicts number that is not in the gallery
+- we manually annotate the fixes to the gallery
+
+### 2024-06-04  4K videos of basketball
+
+  
+  
+
+[https://youtu.be/8HCAbHd-4hQ?feature=shared](https://youtu.be/8HCAbHd-4hQ?feature=shared) 
+
+[https://youtu.be/KFqwPJfHuuM?feature=shared](https://youtu.be/KFqwPJfHuuM?feature=shared) 
+
+[https://youtu.be/H1kPqT_VE5U?feature=shared](https://youtu.be/H1kPqT_VE5U?feature=shared)
+
+[https://youtu.be/t0DaIgBKX2U?feature=shared](https://youtu.be/t0DaIgBKX2U?feature=shared)
+
+[https://youtu.be/q_7ReCrgwt0?feature=shared](https://youtu.be/q_7ReCrgwt0?feature=shared)
+
+
+### [[2023-10-01 Special Olympics]]
 
 
 1. Fill in list of Project Descriptions

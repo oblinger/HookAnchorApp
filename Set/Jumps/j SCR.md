@@ -10,3 +10,10 @@ JUMPS:
 - [SCR Gdrive](spot://SCR~Gdrive): 
 - [SCR](spot://SCR): 
 
+- Underage/Competitor programs should not be public
+- Parent records game 
+	- others pay to get 
+
+
+- By team and by season
+- Program, season, team

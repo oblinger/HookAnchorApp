@@ -1,18 +1,11 @@
 
-## For Juan
-- [ ] Figure out how from_template and Inst.do work & have plan
-
-  ### 2024-04-09  DAT integration ^dat 
-
-- Add a 'do' register method
-- Convert do module to singleton
-- Add metric Matrix for minutes
-- Zip S3 loader
-
-
-  
+ 
 ## Todo
-  
+- [ ] See if system works
+- [ ] Folder of video files into DatContainer with Dat per file
+- [ ] Folder of folder of video files with prefix left right or center
+
+
 ## Later  
 - [ ] DVC - push, load
 - [ ] Inject indicies should not inject for degenerate indicies w/ only one value  
@@ -36,6 +29,10 @@
   
 
 ## Done
+- [x] Figure out how from_template and Inst.do work & have plan
+- [x] Add a 'do' register method
+- [x] Convert do module to singleton
+- [x] Add metric Matrix for minutes
 - [x] add run duration
 - [x] add args kwargs to spec.main
 - [x] remove datconfig.do_folder. ?????
@@ -160,4 +157,15 @@ Dat.get(dat.get_spec(), "dotted.key")
       def fn(...)
       do.in_package()
       do.mount(fn, at:".my_metric.regression", fn)
-    
+
+
+
+# LOG
+
+### 2024-06-08  Notes on conflict
+
+If local files are updated at the same time that a remote DVC push has occurred:
+- git pull will work and will overwrite old checksum
+- dvc pull will generate an error noting that existing files conflict with OLD checksum so pull cannot happen.
+- If one does a dvc push it will succeed w/o issue in this context.
+

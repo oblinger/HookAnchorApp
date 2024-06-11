@@ -123,6 +123,20 @@ food (which is a nice spread) or people who are job hunting.
 
 # Tourist
 
+For the Argentinians, my favorite places for tourists are:
+
+- [Muir Woods National Monument](https://www.nps.gov/muwo/index.htm): Amazing redwoods to walk through, don't exist anywhere else in the world
+
+- [Battery Spencer Overlook](https://www.nps.gov/places/000/battery-spencer-overlook.htm): Decommissioned WWII military installation, feels like you can touch the Golden Gate Bridge
+
+- [Tunnel Tops](https://presidio.gov/explore/attractions/presidio-tunnel-tops): Really chill place to hang and check out the view
+
+- [Golden Gate Bridge](https://www.goldengate.org/bridge/visiting-the-bridge/): Really cool to walk across this
+
+  
+
+Given that this is their first time to the city and are on a short trip, I'd hit the SF highlights.
+
 =IN CITY=
 - Lookout point
 - Alcatraz
