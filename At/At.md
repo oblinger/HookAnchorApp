@@ -1,5 +1,5 @@
 
-:: [[@Avanti Pakrasi]],   [[@Merrill Lynch]]
+:: [[@Avanti Pakrasi]],   [[@Merrill]]
 
 :: [[@Uri Weiss]]
 

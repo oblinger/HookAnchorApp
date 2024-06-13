@@ -1,4 +1,6 @@
 
+:: [[@Merrill]],   [[@Vanguard]]
+
 -  [[FIN.]], [[FIN Log]], [[FIN Topics]],  [[FIN Retire]], 
 
 - [[FIN Tracking]]:  [[FIN Recurring]],  [[FIN Bills]],  [[FIN Budgeting]], [[FIN Flows]],  [[FIN Mint]],

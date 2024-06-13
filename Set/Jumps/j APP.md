@@ -306,4 +306,5 @@ JUMPS:
 - [Zoom 1Pass](spot://Zoom~1Pass): 
 - [Zwillow 1Pass](spot://Zwillow~1Pass): 
 - [Philz](spot://Philz): 
+- [Mastadon](spot://Mastadon): 
 

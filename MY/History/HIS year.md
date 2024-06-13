@@ -1,4 +1,12 @@
 
+[[Brain3\|Mon Jan 23  2023]]  	[[Brain3#TOPICS]]  
+[[Brain3\|Mon Jan 23  2023]]  	[[Brain3#LOG]]  
+[[BrainDomains\|Mon Jan 23  2023]]  	[[BrainDomains#=== PROGRESSIONS ===]]  
+[[Argument\|Mon Jan 23  2023]]  	[[Argument#=== EOCA ONTOLOGICAL ===]]  
+[[Argument\|Mon Jan 23  2023]]  	[[Argument#=== THE BAD OUTCOME ===]]  
+[[Argument\|Mon Jan 23  2023]]  	[[Argument#=== THE HUMAN WAY ===]]  
+[[Argument\|Mon Jan 23  2023]]  	[[Argument#### BIGGER CLAIMS ###]]  
+[[Argument\|Mon Jan 23  2023]]  	[[Argument#### OLDER ###]]  
 [[EOCA Short Argument\|Mon Jan 23  2023]]  	[[EOCA Short Argument#Mind Seed]]  
 [[EOCA Short Argument\|Mon Jan 23  2023]]  	[[EOCA Short Argument#SEED CONTEXT]]  
 [[EOCA Short Argument\|Mon Jan 23  2023]]  	[[EOCA Short Argument#CONSEQUENCES]]  

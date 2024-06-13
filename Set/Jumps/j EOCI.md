@@ -23,4 +23,5 @@ JUMPS:
 - [EOCI Scaled Intelligence is super-intelligence](spot://EOCI~Scaled~Intelligence~is~super-intelligence): 
 - [EOCI Inevitability Thesis](spot://EOCI~Inevitability~Thesis): 
 - [EOCI Is Alignment Possible](spot://EOCI~Is~Alignment~Possible): 
+- [EOCI Pax Corporana](spot://EOCI~Pax~Corporana): 
 

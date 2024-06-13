@@ -218,4 +218,5 @@ JUMPS:
 - [j EOCI](spot://j~EOCI): 
 - [j EOCT](spot://j~EOCT): 
 - [j EOCK](spot://j~EOCK): 
+- [j AWS](spot://j~AWS): 
 

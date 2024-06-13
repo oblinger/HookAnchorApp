@@ -8,7 +8,7 @@ n:: no prefix.	Dated entries without any typing prefix
 | 2024-06-12 | [[DVC DAT]]                    | notes                                                                                                                             |
 | 2024-06-12 | [[NJ24 Rewrite]]               | Brainstorm Top Adjectives                                                                                                         |
 | 2024-06-12 | [[@Juan Barajas]]              | Discussion                                                                                                                        |
-| 2024-06-11 | [[@Merrill Lynch]]             | Wealth planning                                                                                                                   |
+| 2024-06-11 | [[@Merrill]]                   | Wealth planning                                                                                                                   |
 | 2024-06-11 | [[CVP]]                        |                                                                                                                                   |
 | 2024-06-08 | [[DVC DAT]]                    | Notes on conflict                                                                                                                 |
 | 2024-06-08 | [[Reflections]]                | Saying Goodbye to Yoshiko                                                                                                         |
