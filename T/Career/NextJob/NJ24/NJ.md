@@ -9,6 +9,8 @@
 [[Lrn]]:		RunSys, 
 
 
+most stuff in [[NJ24]] 
+## ... 
 - add leading targets to my slides
 low friction no-touch (or nearly notouch)
 portable/no-portable

@@ -169,3 +169,17 @@ If local files are updated at the same time that a remote DVC push has occurred:
 - dvc pull will generate an error noting that existing files conflict with OLD checksum so pull cannot happen.
 - If one does a dvc push it will succeed w/o issue in this context.
 
+### 2024-06-12  notes
+
+  
+ STUFF NOW IN DATA REPO  
+   dvc init  # only done once  
+   dvc remote add -d storage gdrive://....  
+  
+c d algorithms2  
+ git clone https://dan-oblinger@bitbucket.org/SVEngineering/data.git  
+ cd data  
+  
+  
+ dvc config  
+ mkdir -p data

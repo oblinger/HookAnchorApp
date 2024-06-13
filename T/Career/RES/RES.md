@@ -1,4 +1,4 @@
- [[RES]]ume
+ .[[Resume]].
 - [RES Docx](spot://RES~Docx) 			- 
 - [[RES Todo]] 			- 
 - [[RES Proof Points]] 	- 
@@ -22,7 +22,7 @@ OTHERS:
 
 # # LOG
 
-### 2024-03-29  Resume Rewrite
+### 2024-03-29  [[NJ24 rewrite]]
 
 
 

@@ -1,6 +1,5 @@
 .Run AWS instance
 .Traxxas 1-888-872-9927
-.Sean how to spy
 [[Friday]]: 
 .Clean
 .Facet
@@ -8,7 +7,7 @@
 .anniversary
 
 [[DocAWS]] 
-
+- vet email
 
 ### SOON
 ### Watch
@@ -20,3 +19,16 @@
 - [[War]]: AI
 
 ### [[Q2]]
+
+
+
+
+
+
+
+
+
+
+
+Case Studies google book
+- who I am; how I am different

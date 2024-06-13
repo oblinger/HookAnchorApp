@@ -5,11 +5,15 @@
 :: [[CV Data]],    [[SVCV Re-ID]]
 
 
-GB: RP pitcher.    OCR, 
-MD: Homography, 
-MR: RP, 
-JB: Metrics & more
-SR: Minutes
+GB: 	Finish OCR
+MR:	.
+Mx:	.
+
+Holdout set.
+hoop metric.
+plan.
+
+
 # TOP
 ## __
 - env.yml, sarthi, 
@@ -28,6 +32,9 @@ SR: Minutes
 - Hoop Assignment
 
 
+
+
+# CVP
 
 ## PL - TREE
 
@@ -145,6 +152,13 @@ PLANNING
 
 
 # LOG
+
+### 2024-06-11  
+GB: RP pitcher.    OCR, 
+MD: Homography, 
+MR: RP, 
+JB: Metrics & more
+SR: Minutes
 
 ### 2024-01-23  Design for Notion
 

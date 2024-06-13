@@ -6,6 +6,16 @@
 - 6 3/4" 
 - 
 
+Dan, 
+The faucet on our tub is busted and it will cost $2-3K to break tile and fix it.  We have been thinking about renovating that tub into a shower anyway but right now we are loosing about $300/mo in extra water bills, so we need to decide what to do fast.
+
+Our tub is in an area 28" x 58" x 96".  We are thinking to remove the tub and the tile, then replace with floor to ceiling slate with a glass wall door in front.  I know that you mostly do outside work, but I was hoping you would know very ball park numbers for how much such a simple install could be.
+Is this 10K, 20K or $30K?  Any idea?  And do you have someone that I could send a photo to, who would give a unofficial estimate.  (our main goal is to first just decide if we should just go a head a spend the $3K to fix the faucet and worry about the renovation later, or do the renovation now.)
+
+Thanks for any pointers!
+
+
+
 ### 2024-06-04  Hiring a new Cleaner
 
 

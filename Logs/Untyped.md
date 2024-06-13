@@ -5,6 +5,11 @@ n:: no prefix.	Dated entries without any typing prefix
 
 | Date       | File                       | Notes                                                                                                                             |
 | ---------- | -------------------------- | --------------------------------------------------------------------------------------------------------------------------------- |
+| 2024-06-12 | [[DVC DAT]]                    | notes                                                                                                                             |
+| 2024-06-12 | [[NJ24 Rewrite]]               | Brainstorm Top Adjectives                                                                                                         |
+| 2024-06-12 | [[@Juan Barajas]]              | Discussion                                                                                                                        |
+| 2024-06-11 | [[@Merrill Lynch]]             | Wealth planning                                                                                                                   |
+| 2024-06-11 | [[CVP]]                        |                                                                                                                                   |
 | 2024-06-08 | [[DVC DAT]]                    | Notes on conflict                                                                                                                 |
 | 2024-06-08 | [[Reflections]]                | Saying Goodbye to Yoshiko                                                                                                         |
 | 2024-06-06 | [[PQ]]                         | Faucet                                                                                                                            |
@@ -54,7 +59,7 @@ n:: no prefix.	Dated entries without any typing prefix
 | 2024-03-30 | [[MED Log]]                    | MISC                                                                                                                              |
 | 2024-03-29 | [[@Shreshth Saxena]]           | SOW                                                                                                                               |
 | 2024-03-29 | [[Daily Schedules]]            | Tightly scheduled morning                                                                                                         |
-| 2024-03-29 | [[RES]]                        | Resume Rewrite                                                                                                                    |
+| 2024-03-29 | [[RES]]                        | [[NJ24 rewrite]]                                                                                                                  |
 | 2024-03-24 | [[FIN Log]]                    | Financial Advisors                                                                                                                |
 | 2024-03-22 | [[QQ]]                         | Life Time                                                                                                                         |
 | 2024-03-22 | [[QQ]]                         | CONTACTS                                                                                                                          |
