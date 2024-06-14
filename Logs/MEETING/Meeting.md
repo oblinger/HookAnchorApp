@@ -1,3 +1,5 @@
+
+:: [[2024-06-13 - Juan EC2 setup]]
 #log <[[Untyped]]
 n:: 'm...'	Verbal, single-person-centered interaction.
 

@@ -1,16 +1,12 @@
 - facets for menu sub area letters (including notes)
-- mus Notes
-- clean up spotify lists
-- named music channels:  mus Chill mus Class 
-
-- get replacement for mint working!
-
-
 - [ ] budget big transfers list	
 - [ ] [[Travel Lst]]: pills; snacks
 - [ ] Update CRM workflow
-- [ ] Get logins for MyHealth
-- [[FIN]]: do key items
+
+
+### SOON
+- [ ] [[FIN]]: do key items
+- [ ] get replacement for mint working!
 
 
 ### WAITING

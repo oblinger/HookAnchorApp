@@ -1,4 +1,4 @@
-- implement lazy loader
+
 - briones video of different quality
 
 - brian plan @ mgr meeting.

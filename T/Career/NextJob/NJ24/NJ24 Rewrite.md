@@ -6,9 +6,14 @@ TECHNICAL -
 
 
 
+### 2024-06-13  Sentences
+
+
+
+PARTS: Technical (AI/ML/DL/CV), Proven Leader,  Proven, Bridge
 
 ### 2024-06-12  Brainstorm Top Adjectives
-GROUPS: Technical, Proven Leader, AI/ML/DL/CV, Proven, Fast
+GROUPS: 
 
 
 TECHNICAL

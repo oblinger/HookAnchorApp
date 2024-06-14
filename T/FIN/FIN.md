@@ -1,15 +1,20 @@
 
-:: [[@Merrill]],   [[@Vanguard]]
-
+- [[@Merrill]],   [[@Vanguard]]
 -  [[FIN.]], [[FIN Log]], [[FIN Topics]],  [[FIN Retire]], 
 
 - [[FIN Tracking]]:  [[FIN Recurring]],  [[FIN Bills]],  [[FIN Budgeting]], [[FIN Flows]],  [[FIN Mint]],
 
 - [[FIN Analysis]],   [[Expenses]],   [Taxes](Taxes/Taxes.md),   [@Vanguard](@Vanguard.md)
-- [[BillPay]],  
+- [[BillPay]], 
 
 
-# TODO Research
+# TODO
+- [ ] Decide.  Open Schwab 'Big' account?
+- [ ] Build Retirement Plan as list of assumptions
+- [ ] Tax Efficiency.
+- [ ] Pick Overall Portfolio distribution.
+
+# FIN UNSORTED
 ## Questions
 ### Active managers for Intl & Emerging markets?
 -- Total intl 
@@ -414,7 +419,7 @@ WITHDRAW from Roth
 ## Assets
 
                   1/2014
---------------+----------+
+-~-~-~-----------+----------+
 Van Tax       |  
 Van IRA       |
 Van Roth      |

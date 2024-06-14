@@ -1,5 +1,14 @@
+EC2 Instance dan-pipeline
+. ssh -A -i cv-ops-general.pem ubuntu@3.237.7.41
 
- 
+ conda env create -f environment.yml
+
+
+git submodule init
+git submodule update
+pip install -e ./dvc-dat.  # done by the environment.yml
+
+
 ## Todo
 - [ ] See if system works
 - [ ] Folder of video files into DatContainer with Dat per file

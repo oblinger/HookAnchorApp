@@ -1,4 +1,4 @@
-
+- McCoy 
 .**NOW**. 
 Next Q		!! Juan Chat
 .			!! shot boxer w/ better video
@@ -18,7 +18,8 @@ Awesome vid: Awesome 1080p no crowds; no camera break
 - color
 
 ## Q2
-Vid assess:	Neg entropy gallery
+[[DVC DAT|DAT]]:			do mount tree; do method on Dat class; Implement lazy loading
+Vid assess:	^Neg entropy gallery
 GCP:			Pricing/Perf of using S3
 Minutes:		!! Push Conversation. 
 [MET](spot://met):			B:min     rp?, 

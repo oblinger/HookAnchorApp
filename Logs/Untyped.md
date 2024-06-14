@@ -5,6 +5,8 @@ n:: no prefix.	Dated entries without any typing prefix
 
 | Date       | File                       | Notes                                                                                                                             |
 | ---------- | -------------------------- | --------------------------------------------------------------------------------------------------------------------------------- |
+| 2024-06-13 | [[NJ24 Rewrite]]               | Sentences                                                                                                                         |
+| 2024-06-13 | [[DocAWS]]                     |                                                                                                                                   |
 | 2024-06-12 | [[DVC DAT]]                    | notes                                                                                                                             |
 | 2024-06-12 | [[NJ24 Rewrite]]               | Brainstorm Top Adjectives                                                                                                         |
 | 2024-06-12 | [[@Juan Barajas]]              | Discussion                                                                                                                        |

@@ -7,6 +7,7 @@
 
 ## __
 - pp^^name-for-quickie
+	- MUSIC:  Clean up spotify; named music channels:  mus Chill mus Class 
 - Use GPT to make portrait cartoon 
   (or giphy grab)
 - Read Quadratic Funding
