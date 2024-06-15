@@ -1,4 +1,11 @@
 
+[[PPP\|Mon Jan 23  2023]]  	[[PPP#Junk]]  
+[[PPP\|Mon Jan 23  2023]]  	[[PPP#IMPL SPEC -- Embodied Multi-Drive Emergent Intelligence]]  
+[[PPP\|Mon Jan 23  2023]]  	[[PPP#Todo]]  
+[[PPP\|Mon Jan 23  2023]]  	[[PPP#Ref]]  
+[[PPP\|Mon Jan 23  2023]]  	[[PPP#Log]]  
+[[pppw\|Mon Jan 23  2023]]  	[[pppw#META META JUSTIFICATION]]  
+[[pppw\|Mon Jan 23  2023]]  	[[pppw#META META FORMULATION]]  
 [[Brain3\|Mon Jan 23  2023]]  	[[Brain3#TOPICS]]  
 [[Brain3\|Mon Jan 23  2023]]  	[[Brain3#LOG]]  
 [[BrainDomains\|Mon Jan 23  2023]]  	[[BrainDomains#=== PROGRESSIONS ===]]  

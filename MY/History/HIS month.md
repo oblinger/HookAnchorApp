@@ -1,4 +1,11 @@
 
+[[@Oliver Andersson\|Fri Apr 26  2024]]  	[[@Oliver Andersson#Transcript]]  
+[[Sophie's World\|Fri Apr 26  2024]]  	[[Sophie's World#IDEAS]]  
+[[Sophie's World\|Fri Apr 26  2024]]  	[[Sophie's World#ERAS]]  
+[[2024-W17\|Fri Apr 26  2024]]  	[[2024-W17#W17   2024-04-22   [[2024-W16\\|<<]] [[2024-W18\\|>>]]]]  
+[[@Charles Tyrwhitt\|Wed Apr 17  2024]]  	[[@Charles Tyrwhitt#LOG]]  
+[[ELI Quotes\|Wed Apr 17  2024]]  	[[ELI Quotes#2024-04-14  Your Fault]]  
+[[@Steve Street\|Wed Apr 17  2024]]  	[[@Steve Street#  [CEO](https://www.linkedin.com/in/stevestreet/) [[@Agilite]]  
 [[@Amazon as Consumer\|Wed Apr 17  2024]]  	[[@Amazon as Consumer#Log]]  
 [[RR\|Wed Apr 17  2024]]  	[[RR#= TOPS]]  
 [[Rebuy Food\|Wed Apr 17  2024]]  	[[Rebuy Food#Coffee/TEA]]  

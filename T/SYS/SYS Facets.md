@@ -1,7 +1,11 @@
 < [[KM]]
-
 - [[Hook System]] 
 
+SUFFIX FACETS
+- Ref - References
+- Log - Log of related content
+- 1pass - 
+- Meta - (currently a prefix)
 ## FACETS
 
 | Type        | Name            | Description                                  |

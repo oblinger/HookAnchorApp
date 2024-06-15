@@ -15,7 +15,6 @@ n:: no prefix.	Dated entries without any typing prefix
 | 2024-06-08 | [[DVC DAT]]                    | Notes on conflict                                                                                                                 |
 | 2024-06-08 | [[Reflections]]                | Saying Goodbye to Yoshiko                                                                                                         |
 | 2024-06-06 | [[PQ]]                         | Faucet                                                                                                                            |
-| 2024-06-06 | [[@Vanguard]]                  |                                                                                                                                   |
 | 2024-06-05 | [[FIN Log]]                    | Vanguard Advising                                                                                                                 |
 | 2024-06-04 | [[EOCLog]]                     | Ideas at Night                                                                                                                    |
 | 2024-06-04 | [[PQ]]                         | Hiring a new Cleaner                                                                                                              |

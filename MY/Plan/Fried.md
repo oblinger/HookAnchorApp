@@ -1,3 +1,4 @@
+- Research how "Creatinin" relates to logevity
 - facets for menu sub area letters (including notes)
 - [ ] budget big transfers list	
 - [ ] [[Travel Lst]]: pills; snacks

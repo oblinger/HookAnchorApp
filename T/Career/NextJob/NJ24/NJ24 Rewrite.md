@@ -8,6 +8,7 @@ TECHNICAL -
 
 ### 2024-06-13  Sentences
 
+- Proven leader bridging Generative AI Research into Practical Application
 
 
 PARTS: Technical (AI/ML/DL/CV), Proven Leader,  Proven, Bridge

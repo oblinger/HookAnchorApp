@@ -6,20 +6,20 @@
 
 - Cost 
 - Retirement planning
-- Tax Efficiency
-- Macro 
+- Tax Efficiency: right products in right accounts. 
 - Mutual fund choice.
+- Macro Investment Strategy Over Time
   
 Dean Sprague
-
 -- Carefully done retirement plan
 -- Careful portfolio construction
 -- maybe active management
 
 
-Thursday 4pm
+Personal Advisor
 
-WebEx 
+
+
 
 
 

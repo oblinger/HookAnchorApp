@@ -1,3 +1,4 @@
+- extend 'do' method
 
 - briones video of different quality
 

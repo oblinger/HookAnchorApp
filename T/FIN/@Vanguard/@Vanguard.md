@@ -2,6 +2,7 @@
 - Dean Sprague CFP; Senior Financial Advisor
 - Vanguard Personal Advisor Services
 - dean_sprague@pa.vanguard.com
+  480-713-7908
 - [WebEx](http://vanguardadvice.webex.com/meet/dean_sprague) 
 - For more information about our Advisors, please visit:
 	- www.vanguard.com/brochuresupplement
@@ -66,5 +67,5 @@ ROLLOVER IRA
 
 # Log  (see [[FIN Log]])
 
-### 2024-06-06  
+
 
