@@ -220,4 +220,5 @@ JUMPS:
 - [j EOCK](spot://j~EOCK): 
 - [j AWS](spot://j~AWS): 
 - [j MUSIC](spot://j~MUSIC): 
+- [j MGT](spot://j~MGT): 
 
