@@ -1,3 +1,5 @@
+- spgr
+- spgr
 - matrix; incremental progress ideas
 - get color ASAP
 - RTRTR; better ball tracking; better shot tracking; belief-prop scrum-graph; 
