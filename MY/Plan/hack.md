@@ -1,3 +1,4 @@
+- [[PQ#^newjump]]:  
 - spot grab 1pass mastadon. (got a crash)
 - Refactor Jump screens
 - make alarm show up on full screen

@@ -5,6 +5,8 @@
 - [[GANs]] - 
 - [[Self Supervised Learning]] - 
 - [[Attention]] - 
+- [[KAN - Kolmogorov-Arnold Neworks]] - Deep net with summation nodes and non-linear, parametric (spline) weighting functions
+- 
 
 
 

@@ -1,3 +1,12 @@
+- matrix; incremental progress ideas
+- get color ASAP
+- RTRTR; better ball tracking; better shot tracking; belief-prop scrum-graph; 
+- product matrix
+- get prd doc examples from tree of AF stuff
+- text barry
+- write to Jill about Yearbook
+- run on EC2; see Grz work up close
+- sage
 - extend 'do' method
 
 - briones video of different quality

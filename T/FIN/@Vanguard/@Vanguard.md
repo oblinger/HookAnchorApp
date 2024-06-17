@@ -1,3 +1,4 @@
+
 ## Dean Sprague CFP - Fiduciary
 - Dean Sprague CFP; Senior Financial Advisor
 - Vanguard Personal Advisor Services

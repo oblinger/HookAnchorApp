@@ -15,6 +15,7 @@ pip install -e ./dvc-dat.  # done by the environment.yml
 - [ ] Folder of folder of video files with prefix left right or center
 
 
+# DVC DAT
 ## Later  
 - [ ] DVC - push, load
 - [ ] Inject indicies should not inject for degenerate indicies w/ only one value  
@@ -170,6 +171,33 @@ Dat.get(dat.get_spec(), "dotted.key")
 
 
 # LOG
+
+### 2024-06-17  New Mount Design
+
+
+
+    top_folder/subfolder/.../file.part.subpart...subsubpar
+Tree of Values:
+- Above string is the name-string for a value within the tree of values.
+- The file for this value is relative to the sync folder or any other mounted folder.
+- First system will scan all mounted folders for a local copy of the indicated file, if found that value is loaded.
+	- Else if the indicated folder is in the sync folder it is used
+	- else a DVC pull is performed on the relevant folder within the sync tree and is used.
+- Anytime a DVC pull is done, all values under that folder are scanned and added
+- once per hour a git pull is done to see if new versions of files exist.
+	- Then a DVC pull is done on currently loaded DVC entries???
+
+
+
+
+    sync_folder: ...
+    mounts:
+    - folder: 
+       at: ...
+    - value:
+       at: ...
+    - file:
+       at: ...
 
 ### 2024-06-08  Notes on conflict
 

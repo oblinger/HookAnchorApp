@@ -1,4 +1,6 @@
 
+:: [[KAN - Kolmogorov-Arnold Neworks]]
+
 :: [[Feed Forward Layer]],   [[ORPO Odds Ratio Preference Optimization]]
 
 :: [[LSTM]],  
@@ -17,7 +19,7 @@
 - [[GANs]]
 - [[DL]]
 
-[[DL]] - 
+[[DL]] - [[DL ALGS]] 
 - [[RNN]] 
 - [[CNN]] 
 - [[DL SYStems]] 

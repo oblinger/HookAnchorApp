@@ -5,15 +5,17 @@ n:: no prefix.	Dated entries without any typing prefix
 
 | Date       | File                       | Notes                                                                                                                             |
 | ---------- | -------------------------- | --------------------------------------------------------------------------------------------------------------------------------- |
+| 2024-06-17 | [[DAT]]                        | New Mount Design                                                                                                                  |
+| 2024-06-17 | [[PQ]]                         | ^newjump                                                                                                                          |
 | 2024-06-15 | [[@Sage Vet]]                  | Sage                                                                                                                              |
 | 2024-06-13 | [[NJ24 Rewrite]]               | Sentences                                                                                                                         |
 | 2024-06-13 | [[DocAWS]]                     |                                                                                                                                   |
-| 2024-06-12 | [[DVC DAT]]                    | notes                                                                                                                             |
+| 2024-06-12 | [[DAT]]                        | notes                                                                                                                             |
 | 2024-06-12 | [[NJ24 Rewrite]]               | Brainstorm Top Adjectives                                                                                                         |
 | 2024-06-12 | [[@Juan Barajas]]              | Discussion                                                                                                                        |
 | 2024-06-11 | [[@Merrill]]                   | Wealth planning                                                                                                                   |
 | 2024-06-11 | [[CVP]]                        |                                                                                                                                   |
-| 2024-06-08 | [[DVC DAT]]                    | Notes on conflict                                                                                                                 |
+| 2024-06-08 | [[DAT]]                        | Notes on conflict                                                                                                                 |
 | 2024-06-08 | [[Reflections]]                | Saying Goodbye to Yoshiko                                                                                                         |
 | 2024-06-06 | [[PQ]]                         | Faucet                                                                                                                            |
 | 2024-06-05 | [[FIN Log]]                    | Vanguard Advising                                                                                                                 |
