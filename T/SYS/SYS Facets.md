@@ -1,11 +1,24 @@
 < [[KM]]
 - [[Hook System]] 
 
-SUFFIX FACETS
-- Ref - References
-- Log - Log of related content
+**NAMED SUFFIX FACETS**
+- @ent	- 
+- Doc 	- The core doc (excel, ppt, etc)
+- Log 	- Log of related content
+- Notes	- 
+- Meta	- (currently a prefix)
+- Todo	- 
+- Ref 	- References
+
+- Folder- Launches finder on folder 
+- Box	- 
+- Gdrive- 
+
 - 1pass - 
-- Meta - (currently a prefix)
+- App	-
+- Web	- 
+
+
 ## FACETS
 
 | Type        | Name            | Description                                  |

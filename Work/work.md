@@ -1,8 +1,6 @@
 
 .**NOW**. 
-Next Q		!! Juan Chat
-.			!! shot boxer w/ better video
-[[Fin log]]:	!! Vanguard
+[[Fin log]]:	Invest plan; Retire plan(spreadsheet)
 Assess	> Assessment plan for BB	
 R&D docs	! Briones 2023 R&D
 

@@ -1,4 +1,7 @@
 
+[[eoc-formal\|Mon Jan 23  2023]]  	[[eoc-formal#FORMAL LEARNING FRAMEWORK]]  
+[[eoc-impl\|Mon Jan 23  2023]]  	[[eoc-impl#STRAWMAN IMPLEMENTATION PROPOSAL]]  
+[[eoc-impl\|Mon Jan 23  2023]]  	[[eoc-impl#Original stuff ---- NOT PART OF CURRENT DRAFT --- IGNORE]]  
 [[PPP\|Mon Jan 23  2023]]  	[[PPP#Plan for progress]]  
 [[PPP\|Mon Jan 23  2023]]  	[[PPP#Junk]]  
 [[PPP\|Mon Jan 23  2023]]  	[[PPP#IMPL SPEC -- Embodied Multi-Drive Emergent Intelligence]]  
