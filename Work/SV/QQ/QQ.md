@@ -3,6 +3,7 @@
 
 ### 2024-06-04  Hard Case Annotating
 ^HardCase
+Future Idea for our group, to have auto relearning from cases
 
 Use metrics to notice dropped tracks of any object
 - manually annotate missing frames

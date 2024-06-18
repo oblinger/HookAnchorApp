@@ -3,24 +3,13 @@
 [[Fin log]]:	Invest plan; Retire plan(spreadsheet)
 Assess	> Assessment plan for BB	
 R&D docs	! Briones 2023 R&D
-
-High5:		Briones/Grz building this
-
-Find:		Find DS for BB. (Briones look 4big)
-Awesome vid: Awesome 1080p no crowds; no camera break
-- Look @ shot boxer; 
-- Juan get ShooterID - recalc halo w/ missing tracks good on entry
-[[qq#^Hardcase]] 
-
-- layup
-- color
-
+[[DAT|DAT]]:			newDo; lazy loading
 ## Q2
-[[DAT|DAT]]:			do mount tree; do method on Dat class; Implement lazy loading
 Vid assess:	^Neg entropy gallery
 GCP:			Pricing/Perf of using S3
-Minutes:		!! Push Conversation. 
+Minutes:		!! On production.
 [MET](spot://met):			B:min     rp?, 
+Halos:
 
 ## TOP
 [[DAT]]:		/ root repo
@@ -29,22 +18,16 @@ SW proc:		[db](https://www.notion.so/sportsvisio/cf65339c09c6486296f8adaa084c141
 [RP](spot://rp):			^TestRecall; FixRecall
 [[NJ]]:			>[[War|War]], rewrite, mentor
 [[Metrics]]:		/Create money metrics page
-
-[ShotBox](https://www.notion.so/sportsvisio/SHOT-BOXER-CROSSOVER-f88db79eeb6a45baa84d40664d8f7f2e?pvs=4):		^James Result
-Fireballs:		^Dispatcher; ^Maxim 
 [[patents]]:		^M Sketches
-Shot-boxer:	^JamesResult
 [Q2exp](spot://q2exp):		Halos, Shot Boxer
-Life Time:	^contacts qq ^call tree
-
-[[@Shreshth Saxena|Saxena]]:		/Grz Results  
-
 
 ## SOON [[mgt]] [[cvp]] 
 [Belief](https://docs.google.com/document/d/1H9krXpxS2_Cr9T68pAksb6QGYqpW28DiF2OSw40g0pI/edit?usp=drive_link):		
 [[journaling]] 
 
 ## PAUSE [bsheet](https://docs.google.com/spreadsheets/d/1C1eYv2Ks2GCCQ9_xZ2Pg7eEr33bX1KOdN8Xf8X6nxSY/edit#gid=0), [hi](https://software-engineering-team.atlassian.net/jira/dashboards/10022), [tst](https://docs.google.com/spreadsheets/d/1Rc07oadsjZgg6_2ZZ-qIXJ9n9ws3LT0FFraLZHnrf9w/edit?usp=sharing), [epic](https://software-engineering-team.atlassian.net/jira/software/projects/MOB/boards/24/timeline), 
+[[@Shreshth Saxena|Saxena]]:		/Grz Results  
+Fireballs:		^Dispatcher; ^Maxim 
 [[SV]] 
 [[LCM]]:			>do & metrics
 [Pivo](https://docs.google.com/document/d/16ee8QGaTCChGW7TC3k0W0sQNyyByygOGzwIw_aUkkpU/edit):			!! timeline
