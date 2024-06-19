@@ -1,4 +1,7 @@
 
+[[eoc-book\|Mon Jan 23  2023]]  	[[eoc-book#Book]]  
+[[eoc-book\|Mon Jan 23  2023]]  	[[eoc-book#>>>DELETES<<<]]  
+[[eoc-book\|Mon Jan 23  2023]]  	[[eoc-book#>>>EXTRAS<<<]]  
 [[eoc-formal\|Mon Jan 23  2023]]  	[[eoc-formal#FORMAL LEARNING FRAMEWORK]]  
 [[eoc-impl\|Mon Jan 23  2023]]  	[[eoc-impl#STRAWMAN IMPLEMENTATION PROPOSAL]]  
 [[eoc-impl\|Mon Jan 23  2023]]  	[[eoc-impl#Original stuff ---- NOT PART OF CURRENT DRAFT --- IGNORE]]  
@@ -1118,8 +1121,8 @@
 [[Brain3\|Fri Jul 22  2022]]  	[[Brain3#LOG]]  
 [[@Moses Baffour Awuah\|Fri Jul 15  2022]]  	[[@Moses Baffour Awuah#LOG]]  
 [[@Theo Enns\|Fri Jul 15  2022]]  	[[@Theo Enns#LOG]]  
-[[doc/DocJupyter|Fri Jul 15  2022]]  	[[doc/DocJupyter#TOPICS]]  
-[[doc/DocJupyter|Fri Jul 15  2022]]  	[[doc/DocJupyter#LOG]]  
+[[DocJupyter\|Fri Jul 15  2022]]  	[[DocJupyter#TOPICS]]  
+[[DocJupyter\|Fri Jul 15  2022]]  	[[DocJupyter#LOG]]  
 [[DocNumPy\|Fri Jul 15  2022]]  	[[DocNumPy#BROADCAST]]  
 [[DocNumPy\|Fri Jul 15  2022]]  	[[DocNumPy#ARRAY SHAPE]]  
 [[Fin\|Fri Jul 15  2022]]  	[[Fin#TODO]]  

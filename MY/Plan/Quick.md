@@ -1,3 +1,4 @@
+- four points spec
 
 - matrix; incremental progress ideas
 - get color ASAP
