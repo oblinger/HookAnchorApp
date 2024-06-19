@@ -1,3 +1,4 @@
+- add CV team papers to War Stories
 - [[Lrn Mgt]], 
 - [[RR Papers]]: 
 - John Doerr and the folks at Google

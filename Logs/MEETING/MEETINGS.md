@@ -1,3 +1,4 @@
+### [[2024-06-13 - Juan EC2 setup]] 
 ### m2022-08-16  Nick - RZ share price
 
 - Assume drop in price removes tax free status.

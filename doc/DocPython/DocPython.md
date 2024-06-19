@@ -1,6 +1,8 @@
 
+:: [[DocJupyter]]
+
 :: [[DocNumPy]],   [[DocPyDatetime]],   [[DocTensorFlow]]
-- [[DocJupyter]]
+- [[doc/DocPython/DocJupyter]]
 - [[DocConda]], [[DocSeaborn]], [[DocPycharm]], 
 
 (See file:///ob/topics/Docs/src/Blam_Python/Blam_Python.md )

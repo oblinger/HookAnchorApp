@@ -24,6 +24,17 @@ $ aws s3:
 ~~ 
 $ aws configure
 
+~~
+EC2 Instance dan-pipeline
+. ssh -A -i cv-ops-general.pem ubuntu@3.237.7.41
+
+ conda env create -f environment.yml
+
+
+git submodule init
+git submodule update
+pip install -e ./dvc-dat.  # done by the environment.yml
+
 
 ### 2016-00-00 Setup Jotter backend on AWS
    LOGON  https://438223740058.signin.aws.amazon.com/console   1pass

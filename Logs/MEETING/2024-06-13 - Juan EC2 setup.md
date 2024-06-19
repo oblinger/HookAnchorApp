@@ -1,4 +1,4 @@
-jCV ML daily standup (2024-06-13 16:02 GMT-4) - Transcript
+CV ML daily standup (2024-06-13 16:02 GMT-4) - Transcript
 Attendees
 Daniel Oblinger, Daniel Oblinger's Presentation, Juan Barajas, Juan Barajas's Presentation
 Transcript

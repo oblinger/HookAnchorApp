@@ -5,11 +5,11 @@ n:: no prefix.	Dated entries without any typing prefix
 
 | Date       | File                       | Notes                                                                                                                             |
 | ---------- | -------------------------- | --------------------------------------------------------------------------------------------------------------------------------- |
+| 2024-06-18 | [[QQ]]                         | Lessons Learned From Minutes                                                                                                      |
 | 2024-06-17 | [[DAT]]                        | New Mount Design                                                                                                                  |
 | 2024-06-17 | [[PQ]]                         | ^newjump                                                                                                                          |
 | 2024-06-15 | [[@Sage Vet]]                  | Sage                                                                                                                              |
 | 2024-06-13 | [[NJ24 Rewrite]]               | Sentences                                                                                                                         |
-| 2024-06-13 | [[DocAWS]]                     |                                                                                                                                   |
 | 2024-06-12 | [[DAT]]                        | notes                                                                                                                             |
 | 2024-06-12 | [[NJ24 Rewrite]]               | Brainstorm Top Adjectives                                                                                                         |
 | 2024-06-12 | [[@Juan Barajas]]              | Discussion                                                                                                                        |
@@ -24,7 +24,7 @@ n:: no prefix.	Dated entries without any typing prefix
 | 2024-06-04 | [[QQ]]                         | Hard Case Annotating                                                                                                              |
 | 2024-06-04 | [[QQ]]                         | 4K videos of basketball                                                                                                           |
 | 2024-06-03 | [[FIN.]]                       | Costs For Vanguard                                                                                                                |
-| 2024-06-02 | [[AWS Notes]]                  | Setup for SportsVisio                                                                                                             |
+| 2024-06-02 | [[AWS Log]]                    | Setup for SportsVisio                                                                                                             |
 | 2024-06-01 | [[RR PAPERS]]                  | Attention is all you need                                                                                                         |
 | 2024-05-29 | [[FIN Log]]                    | ADVICE FROM ADVISORS - Four Levels of Advice                                                                                      |
 | 2024-05-23 | [[MED Log]]                    | EMDR                                                                                                                              |
@@ -913,7 +913,7 @@ n:: no prefix.	Dated entries without any typing prefix
 | 2016-00-00 | [[FIN Log]]                    | Madrone / Ben                                                                                                                     |
 | 2016-00-00 | [[FIN Log]]                    | NDA / AF stuff                                                                                                                    |
 | 2016-00-00 | [[FIN Log]]                    | Idea for adelec analysis                                                                                                          |
-| 2016-00-00 | [[AWS Notes]]                  | Setup Jotter backend on AWS                                                                                                       |
+| 2016-00-00 | [[AWS Log]]                    | Setup Jotter backend on AWS                                                                                                       |
 | 2015-07-11 | [[FIN Log]]                    | Tax consequences                                                                                                                  |
 | 2015-04-06 | [[FIN Log]]                    | Ben Ng -- Indexed Universal Life -- IRS sec 7702 section 79                                                                       |
 | 2015-03-30 | [[FIN Log]]                    | Setup SEP.  Planned 2015                                                                                                          |

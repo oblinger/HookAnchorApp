@@ -1,5 +1,12 @@
 # QUICK - QUICK work projects
 
+### 2024-06-18  Lessons Learned From Minutes
+
+- Spec FIRST: 
+- Better Split: 
+- Integration Day: 
+- Integration / Iteration Time: 
+- Too Many Priorities:
 
 ### 2024-06-04  Hard Case Annotating
 ^HardCase

@@ -1,13 +1,3 @@
-EC2 Instance dan-pipeline
-. ssh -A -i cv-ops-general.pem ubuntu@3.237.7.41
-
- conda env create -f environment.yml
-
-
-git submodule init
-git submodule update
-pip install -e ./dvc-dat.  # done by the environment.yml
-
 
 ## Todo
 - [ ] See if system works
@@ -176,9 +166,18 @@ Dat.get(dat.get_spec(), "dotted.key")
 
 
 
-    top_folder/subfolder/.../file.part.subpart...subsubpar
+    top_folder/subfolder/.../_spec_.file1.part.subpart...subsubpar
+       _spec_.yaml
+           file1:
+           annotations:
+      annotations.json
+
+d = Dat.load(). <-- folders
+Dat.get(d, "fffff") 
+do.load() <-- python objects
+
 Tree of Values:
-- Above string is the name-string for a value within the tree of values.
+- The above string is the name-string for a value within the tree of values.
 - The file for this value is relative to the sync folder or any other mounted folder.
 - First system will scan all mounted folders for a local copy of the indicated file, if found that value is loaded.
 	- Else if the indicated folder is in the sync folder it is used
@@ -187,7 +186,7 @@ Tree of Values:
 - once per hour a git pull is done to see if new versions of files exist.
 	- Then a DVC pull is done on currently loaded DVC entries???
 
-
+Should we have Dat.mgr  .getPath  .getPathName  .getPathTail
 
 
     sync_folder: ...
@@ -198,6 +197,28 @@ Tree of Values:
        at: ...
     - file:
        at: ...
+
+
+runset/bb/LT10h
+
+metrics:
+	color:
+		full_reg: ...
+		3val_entropy:
+			main: lamba d:...
+			full_reg: ....
+foo:
+	bot:
+		main: Big_arrag_of_model_params
+		num_epocs: 8
+
+do.load("foo.bot")
+
+...foo.main = lamba x
+...foo.run_env = "foo"
+
+...  that_thing.main = some_model_weights (main)
+      that_thing.meta_data5: ...
 
 ### 2024-06-08  Notes on conflict
 
