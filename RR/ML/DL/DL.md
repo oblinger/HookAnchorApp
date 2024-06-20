@@ -1,4 +1,5 @@
 
+- [[LoRA]] 
 :: [[KAN - Kolmogorov-Arnold Neworks]]
 
 :: [[Feed Forward Layer]],   [[ORPO Odds Ratio Preference Optimization]]
