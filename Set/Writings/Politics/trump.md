@@ -1,5 +1,9 @@
 
 
+### 2024-06-20  Trying to limit FED independence
+
+https://medium.com/the-conversation/central-banks-face-threats-to-their-independence-and-that-isnt-good-news-for-sound-economic-e8e4bd418dcd
+
 
 https://www.wsj.com/economy/central-banking/trump-allies-federal-reserve-independence-54423c2f?mod=hp_lead_pos2
 

@@ -3,7 +3,7 @@
 [[Fin log]]:	Invest plan; Retire plan(spreadsheet)
 Assess	> Assessment plan for BB	
 R&D docs	! Briones 2023 R&D
-[[DAT|DAT]]:			newDo; lazy loading
+[[DAT|DAT]]:		newDo; lazy loading
 ## Q2
 Vid assess:	^Neg entropy gallery
 GCP:			Pricing/Perf of using S3

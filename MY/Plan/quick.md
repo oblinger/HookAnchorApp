@@ -1,3 +1,4 @@
+- git commit
 - four points spec
 
 - matrix; incremental progress ideas

@@ -44,11 +44,23 @@ Host opsg
     # git clone alg2 & data
     $ git submodule update
     
-    
+    $ git submodule update --init --recursive
+    $ git submodule update --remote
 #### conda ???? build
 
 
 ## CONNECT 
+
+    # Login to AWS -> EC2
     # Start "dan-pipe..." Instance
     $ _edit ~/.ssh/config     {add IP} 
     $ ssh -A -i ~/.ssh/cv*.pem opsg
+    #- 
+    # On Remote Ubuntu
+    cd ~/dano/algorithms2
+    git pull
+    git submodule update --remote
+    cd data; git pull
+    conda activate SV_analytics
+
+ sudo snap install dvc --classic

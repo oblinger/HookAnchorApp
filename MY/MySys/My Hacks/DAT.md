@@ -1,9 +1,16 @@
 
 ## Todo
+- [ ] Update mount docs; command
+- [ ] test numount
+
 - [ ] See if system works
 - [ ] Folder of video files into DatContainer with Dat per file
 - [ ] Folder of folder of video files with prefix left right or center
 
+## Later
+- [ ] Verify that generalized mount of file & value works
+      foo/bar.baz.bat = 20
+- [ ] 
 
 # DVC DAT
 ## Later  
