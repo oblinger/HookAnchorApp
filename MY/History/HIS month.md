@@ -1,4 +1,6 @@
 
+[[My mgr NOTES\|Sat Apr 27  2024]]  	[[My mgr NOTES#Lasca INFO]]  
+[[My mgr NOTES\|Sat Apr 27  2024]]  	[[My mgr NOTES#Activities]]  
 [[My mgr NOTES\|Sat Apr 27  2024]]  	[[My mgr NOTES#Services]]  
 [[My mgr NOTES\|Sat Apr 27  2024]]  	[[My mgr NOTES#Info]]  
 [[My mgr NOTES\|Sat Apr 27  2024]]  	[[My mgr NOTES#Security]]  

@@ -22,7 +22,7 @@ OTHERS:
 
 # # LOG
 
-### 2024-03-29  [[NJ24 rewrite]]
+### 2024-03-29  [[NJ Rewrite]]
 
 
 

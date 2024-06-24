@@ -1,7 +1,9 @@
 
 ## Todo
-- [ ] Update mount docs; command
-- [ ] test numount
+- [ ] Implement Lazy Dat.loading
+- [ ] Implement multi-runner
+- [x] Update mount docs; command
+- [x] test nu mount
 
 - [ ] See if system works
 - [ ] Folder of video files into DatContainer with Dat per file

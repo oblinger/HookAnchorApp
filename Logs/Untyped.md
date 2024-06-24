@@ -10,9 +10,9 @@ n:: no prefix.	Dated entries without any typing prefix
 | 2024-06-17 | [[DAT]]                        | New Mount Design                                                                                                                  |
 | 2024-06-17 | [[PQ]]                         | ^newjump                                                                                                                          |
 | 2024-06-15 | [[@Sage Vet]]                  | Sage                                                                                                                              |
-| 2024-06-13 | [[NJ24 Rewrite]]               | Sentences                                                                                                                         |
+| 2024-06-13 | [[NJ Rewrite]]                 | Sentences                                                                                                                         |
 | 2024-06-12 | [[DAT]]                        | notes                                                                                                                             |
-| 2024-06-12 | [[NJ24 Rewrite]]               | Brainstorm Top Adjectives                                                                                                         |
+| 2024-06-12 | [[NJ Rewrite]]                 | Brainstorm Top Adjectives                                                                                                         |
 | 2024-06-12 | [[@Juan Barajas]]              | Discussion                                                                                                                        |
 | 2024-06-11 | [[@Merrill]]                   | Wealth planning                                                                                                                   |
 | 2024-06-11 | [[CVP]]                        |                                                                                                                                   |
@@ -64,7 +64,7 @@ n:: no prefix.	Dated entries without any typing prefix
 | 2024-03-30 | [[MED Log]]                    | MISC                                                                                                                              |
 | 2024-03-29 | [[@Shreshth Saxena]]           | SOW                                                                                                                               |
 | 2024-03-29 | [[Daily Schedules]]            | Tightly scheduled morning                                                                                                         |
-| 2024-03-29 | [[RES]]                        | [[NJ24 rewrite]]                                                                                                                  |
+| 2024-03-29 | [[RES]]                        | [[NJ Rewrite]]                                                                                                                    |
 | 2024-03-24 | [[FIN Log]]                    | Financial Advisors                                                                                                                |
 | 2024-03-22 | [[QQ]]                         | Life Time                                                                                                                         |
 | 2024-03-22 | [[QQ]]                         | CONTACTS                                                                                                                          |

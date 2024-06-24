@@ -1,31 +1,31 @@
 
 .**NOW**. 
-[[Fin log]]:	Invest plan; Retire plan(spreadsheet)
+[[FIN.]]		Invest plan; Retire plan(spreadsheet)
 Assess	> Assessment plan for BB	
-R&D docs	! Briones 2023 R&D
-[[DAT|DAT]]:		newDo; lazy loading
-## Q2
-Vid assess:	^Neg entropy gallery
-GCP:			Pricing/Perf of using S3
-Minutes:		!! On production.
-[MET](spot://met):			B:min     rp?, 
-Halos:
 
 ## TOP
-[[DAT]]:		/ root repo
-GCP over:		^Juan tracking this
-SW proc:		[db](https://www.notion.so/sportsvisio/cf65339c09c6486296f8adaa084c141a?v=f8a45e385eea4c2fb590502835f4453f&pvs=4),[doc](https://docs.google.com/document/d/1aHnoqgQ3H_0abUtlVWoMPHDA7nQhzoq0JRqZLujORc0/edit?usp=drive_web&ouid=105281685541312342727)  ^Jasu 
-[RP](spot://rp):			^TestRecall; FixRecall
 [[NJ]]:			>[[War|War]], rewrite, mentor
-[[Metrics]]:		/Create money metrics page
-[[patents]]:		^M Sketches
-[Q2exp](spot://q2exp):		Halos, Shot Boxer
+## TRACK
+GCP over:		^Juan tracking this
+Halos:		Grz: Halo videos, 
+Minutes:	!! On production.
+VidQ:		^Neg entropy gallery
+GCP:		Brian plan.  Pricing/Perf of using S3
+[[DAT|DAT]]:		Mrun  Grz(OCR) Briones(Color, VidQ) Scripts
+R&D docs	! Briones 2023 R&D
+[[patents]]:		^J Provisional filed
 
+[RP](spot://rp):			^TestRecall; FixRecall
+SW proc:		[db](https://www.notion.so/sportsvisio/cf65339c09c6486296f8adaa084c141a?v=f8a45e385eea4c2fb590502835f4453f&pvs=4),[doc](https://docs.google.com/document/d/1aHnoqgQ3H_0abUtlVWoMPHDA7nQhzoq0JRqZLujORc0/edit?usp=drive_web&ouid=105281685541312342727)  ^Jasu 
+\
 ## SOON [[mgt]] [[cvp]] 
-[Belief](https://docs.google.com/document/d/1H9krXpxS2_Cr9T68pAksb6QGYqpW28DiF2OSw40g0pI/edit?usp=drive_link):		
+[[Metrics]]:		/Create money metrics page
+[[DAT]]:			Dynamic Dat loading
 [[journaling]] 
 
+
 ## PAUSE [bsheet](https://docs.google.com/spreadsheets/d/1C1eYv2Ks2GCCQ9_xZ2Pg7eEr33bX1KOdN8Xf8X6nxSY/edit#gid=0), [hi](https://software-engineering-team.atlassian.net/jira/dashboards/10022), [tst](https://docs.google.com/spreadsheets/d/1Rc07oadsjZgg6_2ZZ-qIXJ9n9ws3LT0FFraLZHnrf9w/edit?usp=sharing), [epic](https://software-engineering-team.atlassian.net/jira/software/projects/MOB/boards/24/timeline), 
+[Belief](https://docs.google.com/document/d/1H9krXpxS2_Cr9T68pAksb6QGYqpW28DiF2OSw40g0pI/edit?usp=drive_link):		
 [[@Shreshth Saxena|Saxena]]:		/Grz Results  
 Fireballs:		^Dispatcher; ^Maxim 
 [[SV]] 
@@ -35,7 +35,7 @@ Fireballs:		^Dispatcher; ^Maxim
    -- 3on3 games
 [Assess](spot://assess):		>look
 [[CV Data]]:		Pie-chart
-   -  [Cost Analysis](https://docs.google.com/document/d/1WYVwgCfHYk6wC8pGFo68t_vAju_oczbSeBTS-zba-XI/edit?usp=drive_link):	Cost Per Game Analysis
+[Cost Analysis](https://docs.google.com/document/d/1WYVwgCfHYk6wC8pGFo68t_vAju_oczbSeBTS-zba-XI/edit?usp=drive_link):	Cost Per Game Analysis
 
 
 @Scott Byers / @matias:  We are thinking of a version of halos where we would dynamically recompute the halos depending upon the roster as dynamically edit

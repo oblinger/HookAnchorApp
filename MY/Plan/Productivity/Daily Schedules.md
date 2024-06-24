@@ -4,16 +4,35 @@
 SUMMARY 2023-Q3
 
 10h			from 7:30am to 5:30pm
-- 2h - DAILY	-  Tidy+Wake(20), Nap(30), Exercise(40), Poop 
-- 2h - GAP		-	Lounge, Browse, Eat
-- 2h - CHEW 	-  Email, First, Slack, Repeat, Papers
 - 2h - COMS	-  Meetings, Zoom, Huddle, Phone
+- 2h - CHEW 	-  Email, First, Slack, Repeat, Papers
+- 2h - GAP		-	Lounge, Browse, Eat
+- 2h - DAILY	-  Tidy+Wake(20), Nap(30), Exercise(40), Poop 
 - 2h - MAIN	-  MIT, Prime, Work
   
 5h 				from 6p until 11p
-- 2h - FAM	-  Dinner, Play, Bedtime
-- 3h - EVE		-	Fried, Self, Out, Call, Learn, Q2
+- 1h - FAM	-  Dinner, Play, Bedtime
+- 4h - EVE		-	Fried, Self, Out, Call, Learn, Q2
 
+
+
+06:30	First	- Ready, Email, Plan
+07:00 Slack	- Coordinate
+08:00 Meet	- Group meetings
+09:00 B-fast	- 
+09:30 MIT	- 
+11:00 Gap	- Snack; Quick Admin
+11:30 SLOT1	- 
+01:00 Lunch	- 
+02:00 SLOT2	- 
+03:30 Run	- 
+04:30 Gap	- 
+05:30 
+
+07:30 SLOT3 	- 
+08:00 Eli		- 
+08:30 Read	-
+10:00 Bed	- 
 
 
 # LOG

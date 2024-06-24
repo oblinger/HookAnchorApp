@@ -1,15 +1,7 @@
-. [[NJ24.pptx|PPTX]], 
-
-[[NJ]]:		[[War]]: Turn around, GenAIs
-[[NJ]]:		[[2024-04-01 Resume Rewrite|Re-Res]] 
-[[NJ]]:		[[Coms]] calling plan
-[[NJ]]:		[[crm]]:  Pings
-[[NJ]]:		[[Mentor]]: 
-[[NJ]]:		Quick Apply to something???
-[[Lrn]]:		RunSys, 
+. [[NJ24.pptx|PPTX]], [[NJ.]] 
+- [[NJ Read]], [[NJ Rewrite]], 
 
 
-most stuff in [[NJ24]] 
 ## ... 
 - add leading targets to my slides
 low friction no-touch (or nearly notouch)

@@ -17,7 +17,7 @@
 - [Coursera Notes](Coursera%20Notes.md),    [@Yoshua Bengio](@Yoshua%20Bengio.md),  
 
 [[NN]],
-- [[GANs]]
+- [[GANs]], [[RAG]], 
 - [[DL]]
 
 [[DL]] - [[DL ALGS]] 
