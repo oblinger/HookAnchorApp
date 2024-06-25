@@ -1,4 +1,4 @@
-
+j
 # # STUFF # 
 ## = ELI =
 
@@ -168,6 +168,11 @@ Retina 3072x1920
 - $299 LG 350CD (no rotate)
 - $499 LG 350CD (rotates)
 - $699 LG 350nits (ergo )
+
+### Monitors
+#### 2020 -- # LG 32UK50T-W 32
+Bought two of these.
+
 
 
 ### Monitor 32" Samsung - Aeolus 2017

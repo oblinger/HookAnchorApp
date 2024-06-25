@@ -1,7 +1,7 @@
 
 - QUICK:	TidyUp, 
 - LIGHT:	[[Scrub]], 
-- FUN:		[[ToBuy]],  [[Try Foods]], 
+- FUN:		[[Set/BUY/ToBuy]],  [[Try Foods]], 
 - READ:	[[Pocket App]], [[ToRead]], [Good Reads](https://www.goodreads.com/),
 - CHECK:	[[MED.]]   
 
@@ -24,5 +24,5 @@
 - [ ] WEEKLY: 	FILE THIS * TO_BUY * TIDY * EMAIL JOY *
 - [ ] QUARTERLY:	Mint * 
 - [ ] CALLS:		Mom&Dad * Repeat * Habits
-- [ ] THINK:  [[Habit|Habits]]   [[Current|Plan]]  [[OBS.]]     [[FIN]]    [[ToBuy]]    [[ToRead]]  [[hack]]  
+- [ ] THINK:  [[Habit|Habits]]   [[Current|Plan]]  [[OBS.]]     [[FIN]]    [[Set/BUY/ToBuy]]    [[ToRead]]  [[hack]]  
 - [ ] Cleanup Todo list; Foods to Eat

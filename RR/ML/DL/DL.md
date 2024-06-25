@@ -24,6 +24,7 @@
 - [[RNN]] 
 - [[CNN]] 
 - [[DL SYStems]] 
+- [[DL PARTS]]: [[ReLU]], 
 
 [[GenAI]] 
 - [[GPT]] 

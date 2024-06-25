@@ -1,3 +1,6 @@
+- toothbrush
+- buy tooth brush
+- look at videos from Eli; consider merging apple videos
 - Research how "Creatinin" relates to logevity
 - facets for menu sub area letters (including notes)
 - [ ] budget big transfers list	

@@ -1,24 +1,39 @@
 
-- [[Rebuy Food]] 
-- [[Rebuy Clothing]] 
-- [[Rebuy Home]] 
-## === SUBSCRIPTIONS FROM AMAZON===
+
+# LOG
 
 
-- [Subscribe n save](https://www.amazon.com/gp/subscribe-and-save/manage/ref=rcxsubs_redir_newmys_change_quantity_frequency_month_success?subscriptionId=SNSD0_RJSG2KKH74AZB0GRBS82&shipId=jmploqjopikq&snsActionCompleted=changeQuantityFrequencyMonth&expiration=1570818653&ASIN=B009NKX7N0#subscriptionViewSNSD0_RJSG2KKH74AZB0GRBS82) 
-- 15% discount if we get 5 subscrip items in a month.
-- Idea: subscribe on 3mo cycle:   JAN - APR - JULY - OCT
+### Buy Dan Hudson Jeans
 
-LIST
-- Starbucks Via
-- Gillette Fusion Razors
-- Toms Toothpaste
+https://www.ebay.com/itm/NWT-Size-33X35-Men-s-HUDSON-BYRON-Straight-Stretch-Denim-Jeans/163996006934?hash=item262eec7a16:g:Q3IAAOSwIw1b36zs
 
-TO ADD
-- [Diapers](https://www.amazon.com/gp/product/B07MKYKPCK?ref=rcxsubs_myd_ct_detail_page) 
-- [Panty Liners](https://www.amazon.com/Always-Protection-Dailies-Feminine-Unscented/dp/B00ILP1LG8/ref=sr_1_17?crid=2ZXR8XQ0OWLL&keywords=panty%2Bliners&qid=1570768955&sprefix=panty%2B%2Caps%2C206&sr=8-17&th=1) 
-- [Body Wash](https://www.amazon.com/NIVEA-Men-DEEP-Active-Clean/dp/B01329XE2Q/ref=sr_1_3?keywords=body+wash&qid=1570642854&refinements=p_n_is_sns_available%3A2617006011&rnid=2617005011&sr=8-3) 
-- Simple Human Trashbags (Q) for kitchen, (r) for sm square
+
+Size 33; Byron Straight; Zip Fly
+   Style# M255ZDSS -- Deep dark blue (is my fav)
+
+NOPE
+Blake Slim Straight (ok, little too skinny in leg)
+_
+### Buying Tee Shirts
+
+https://6dollarshirts.com
+
+society6
+
+_
+### QL Shoes
+
+madden                         http://www.stevemadden.com/product/WOMENS/Flats/KLARAA/c/2163/sc/2214/229572.uts?sortByColumnName=Relevance&selectedColor=KLARAA&$MR%2DTHUMB$
+                               http://www.stevemadden.com/product/WOMENS/Flats/KLARISSA/c/2163/sc/2214/229489.uts?sortByColumnName=Relevance&selectedColor=PEWTER&$MR%2DTHUMB$
+			                                      http://www.stevemadden.com/product/WOMENS/Flats/KLARISSA/c/2163/sc/2214/229489.uts?sortByColumnName=Relevance&selectedColor=PEWTER&$MR%2DTHUMB$
+							      
+
+J.Jill
+flowy open                     http://www.jjill.com/jjillonline/product/itempage.aspx?BID=662238435&rPFID=19&item=N2040A&h=M&sk=M
+AnnTaylorLoft                  http://www.loft.com/sweaters/catl000012/?SortByFacetSelectedValue=remove&DocSortOrder=remove&catid=catl000012&question=&fRequest=true&goToPage=4&trail=&categoryType=regular&priceSort=DESC&Submit=Submit
+
+_
+
 # ### Log ###
 ### 2019-00-00 Office Drawers  (bought)
 30"w 30-36"H 20"D
@@ -156,6 +171,11 @@ MOBILE HOTSPOT $50/5-gigs AT&T / VERIZON  $35/3-Gigs Sprint w. massiver overage
 https://www.healthy-eating.com/cgi-bin/shopper.cgi
  	Web page captured and
 delivered by EmailTheWeb.com
+
+
+
+
+
 
 
 

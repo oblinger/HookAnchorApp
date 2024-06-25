@@ -5,4 +5,5 @@ JUMPS:
 - [Brain.FM 1Pass](spot://Brain.FM~1Pass): 
 - [BRAIN](spot://BRAIN): 
 - [Brain3](spot://Brain3): 
+- [brain](spot://brain): 
 

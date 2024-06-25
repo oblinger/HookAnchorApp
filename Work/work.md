@@ -1,11 +1,14 @@
 
 .**NOW**. 
+- plan for Minutes & 
 [[FIN.]]		Invest plan; Retire plan(spreadsheet)
-Assess	> Assessment plan for BB	
+Assess	> Assessment plan for BB
+Q3 Planning	
 
 ## TOP
 [[NJ]]:			>[[War|War]], rewrite, mentor
 ## TRACK
+. GCP, Halos, Minutes, Patents, 
 GCP over:		^Juan tracking this
 Halos:		Grz: Halo videos, 
 Minutes:	!! On production.

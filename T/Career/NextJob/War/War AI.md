@@ -4,9 +4,15 @@
 
 ### 2024  SV GALLERY / OCR Model
 
-- [Notes](https://www.notion.so/sportsvisio/OCR-v3-training-single-shot-person-to-jersey-number-model-d9f4c1b04b15464d951d4c333b53a5d9) 
+- [Grz Notes](https://www.notion.so/sportsvisio/OCR-v3-training-single-shot-person-to-jersey-number-model-d9f4c1b04b15464d951d4c333b53a5d9) 
 
 OCR
+- SEPARATE HEADS PER DIGIT:
+- TORSO CROPPING: crop using pose points - goldilocks amount of cropping.
+- BACKBONES: DinoV2-base fp16 is best (lg not worth it); Vision Transformer not as good.
+- GELU Head: 
+- ADD DON'T KNOW:
+
 - Use of pose to focus digit reco is crucial
 - Causes clipping bugs
 - Best to build per digit classifiers since body rounding/clipping on left and right are different.

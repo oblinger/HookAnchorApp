@@ -872,7 +872,7 @@ n:: no prefix.	Dated entries without any typing prefix
 | 2019-06-05 | [[OLD 201x Weekly]]            | JUNE - Trying 2 chunks of focus on many days                                                                                      |
 | 2019-05-29 | [[FIN Log]]                    | Kadosh Bills                                                                                                                      |
 | 2019-05-29 | [[FIN Log]]                    | Raynor Bills                                                                                                                      |
-| 2019-05-07 | [[ReBuy]]                      | Living room cabinets                                                                                                              |
+| 2019-05-07 | [[BUY Log]]                    | Living room cabinets                                                                                                              |
 | 2019-04-12 | [[FIN]]                        | Ev Notes                                                                                                                          |
 | 2019-04-03 | [[OLD 201x Weekly]]            | APRIL  MIN-JNL                                                                                                                    |
 | 2019-04-00 | [[RES Bio]]                    | AF confluence bio                                                                                                                 |
@@ -881,9 +881,9 @@ n:: no prefix.	Dated entries without any typing prefix
 | 2019-01-00 | [[FIN Log]]                    | old notes                                                                                                                         |
 | 2019-00-00 | [[Ideas]]                      | Coin thoughts - alloy???                                                                                                          |
 | 2019-00-00 | [[Journal Old]]                | Block Chain                                                                                                                       |
+| 2019-00-00 | [[BUY Log]]                    | Office Drawers  (bought)                                                                                                          |
+| 2019-00-00 | [[BUY Log]]                    | Front Door Lock                                                                                                                   |
 | 2019-00-00 | [[DYL]]                        | Block Chain                                                                                                                       |
-| 2019-00-00 | [[ReBuy]]                      | Office Drawers  (bought)                                                                                                          |
-| 2019-00-00 | [[ReBuy]]                      | Front Door Lock                                                                                                                   |
 | 2019-00-00 | [[FIN Log]]                    | AF CHARGES                                                                                                                        |
 | 2019-00-00 | [[MED Log]]                    | Ideas for QL Pregnancy Heroids                                                                                                    |
 | 2018-08-07 | [[Phone]]                      | #### starting to use Evernote ####                                                                                                |
@@ -907,8 +907,8 @@ n:: no prefix.	Dated entries without any typing prefix
 | 2016-05-25 | [[OLD 201x Weekly]]            | – Lex Ownership                                                                                                                   |
 | 2016-00-00 | [[Parents]]                    | Parents Internet speed                                                                                                            |
 | 2016-00-00 | [[Journal Old]]                | Bizzy Robotics - Early days                                                                                                       |
+| 2016-00-00 | [[BUY Log]]                    | STANDING DESK                                                                                                                     |
 | 2016-00-00 | [[DYL]]                        | Bizzy Robotics - Early days                                                                                                       |
-| 2016-00-00 | [[ReBuy]]                      | STANDING DESK                                                                                                                     |
 | 2016-00-00 | [[Phone]]                      | Aeolus notes                                                                                                                      |
 | 2016-00-00 | [[FIN Log]]                    | Bizzy Bills                                                                                                                       |
 | 2016-00-00 | [[FIN Log]]                    | Madrone / Ben                                                                                                                     |
@@ -926,15 +926,15 @@ n:: no prefix.	Dated entries without any typing prefix
 | 2014-00-00 | [[FIN Log]]                    | Rent from Peter Berger                                                                                                            |
 | 2014-00-00 | [[FIN Log]]                    | Garage Spot                                                                                                                       |
 | 2013-09-07 | [[RR PAPERS]]                  | [Efficient Estimation of Word Representations in Vector Space](https://arxiv.org/pdf/1301.3781)                                   |
-| 2013-03-03 | [[ReBuy]]                      | Standing mat                                                                                                                      |
+| 2013-03-03 | [[BUY Log]]                    | Standing mat                                                                                                                      |
 | 2013-02-00 | [[Archeology]]                 | OKC                                                                                                                               |
 | 2013-01-30 | [[Jnl]]                        | Quit working at paybygroup???                                                                                                     |
-| 2013-00-00 | [[ReBuy]]                      | Scotch                                                                                                                            |
+| 2013-00-00 | [[BUY Log]]                    | Scotch                                                                                                                            |
 | 2013-00-00 | [[FIN Log]]                    | Rent from Nick Cicero                                                                                                             |
 | 2012-09-19 | [[Meta Org (old page)]]        | Highlevel organization of Roles/Goals                                                                                             |
 | 2012-06-00 | [[Archeology]]                 | OKC                                                                                                                               |
 | 2011-04-10 | [[Journal Old]]                | – Not Energized                                                                                                                   |
-| 2011-00-00 | [[ReBuy]]                      | Wireless data                                                                                                                     |
+| 2011-00-00 | [[BUY Log]]                    | Wireless data                                                                                                                     |
 | 2010-12-17 | [[Journal Old]]                | – LESSONS FROM DATING ELAINE                                                                                                      |
 | 2010-12-17 | [[OLD 201x Weekly]]            | – LESSONS FROM DATING ELAINE                                                                                                      |
 | 2010-11-18 | [[Journal Old]]                | – A day laid waste                                                                                                                |
@@ -956,7 +956,7 @@ n:: no prefix.	Dated entries without any typing prefix
 | 2009-11-22 | [[OLD 200x Weekly]]            | – Joe Laconti                                                                                                                     |
 | 2009-11-19 | [[Journal Old]]                | – Progress                                                                                                                        |
 | 2009-11-09 | [[OLD 200x Weekly]]            | – Progress                                                                                                                        |
-| 2000-00-00 | [[ReBuy]]                      | Tofurky                                                                                                                           |
+| 2000-00-00 | [[BUY Log]]                    | Tofurky                                                                                                                           |
 | 2000-00-00 | [[MED Log]]                    | Medical.InsuranceAnalysis --                                                                                                      |
 | 2000-00-00 | [[MED Log]]                    | Medical Questions --                                                                                                              |
 | 2000-00-00 | [[MED Sleep]]                  | Sleep meds                                                                                                                        |

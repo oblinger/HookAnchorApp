@@ -221,4 +221,5 @@ JUMPS:
 - [j AWS](spot://j~AWS): 
 - [j MUSIC](spot://j~MUSIC): 
 - [j MGT](spot://j~MGT): 
+- [j NJ](spot://j~NJ): 
 

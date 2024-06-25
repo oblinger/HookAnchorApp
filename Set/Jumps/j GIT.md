@@ -5,4 +5,5 @@ JUMPS:
 - [Git Notes](spot://Git~Notes): 
 - [Git oblinger.github.io Folder](spot://Git~oblinger.github.io~Folder): 
 - [Git](spot://Git): 
+- [GIT Page](spot://GIT~Page): 
 
