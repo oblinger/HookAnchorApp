@@ -7,7 +7,7 @@ Assess	> Assessment plan for BB
 ## TOP
 [[NJ]]:		>[[War|War]], rewrite, mentor
 ## TRACK
-. 			GCP, Halos, Minutes, Patents, 
+. 			GCP, Halos, Minutes, Colors
 [Bridge](https://docs.google.com/document/d/1oaG7NB2fJ9THAtHcREX6yqrWg91wYEsof9zQNEInFFU/edit):	CrossVideos, 
 GCP:		^Juan tracking this
 Halos:		Grz: Halo videos, 

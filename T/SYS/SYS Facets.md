@@ -2,6 +2,7 @@
 - [[Hook System]] 
 
 **NAMED SUFFIX FACETS**
+- 		- Main page with jumps
 - @ent	- 
 - Doc 	- The core doc (excel, ppt, etc)
 - Log 	- Log of related content
