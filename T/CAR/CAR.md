@@ -1,4 +1,4 @@
-
+.[[Career]].
 - [[NJ]], 
 - [[MGR Log]],  
 - ap
@@ -10,7 +10,7 @@
 - https://www.linkedin.com/in/jean-yves-bouguet-63bb7/
 
 
-:: [[NextJob]],   [[RES]],  [[Career]], 
+:: [[NextJob]],   [[RES]],  [[CAR]], 
 
 - [[JOB Compensation]], 
 - [[MGR]]

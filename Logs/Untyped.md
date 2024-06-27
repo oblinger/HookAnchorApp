@@ -630,8 +630,8 @@ n:: no prefix.	Dated entries without any typing prefix
 | 2022-01-04 | [[DEEP_BOOT]]                  | WAYS TO CONTAIN IT                                                                                                                |
 | 2022-01-04 | [[DEEP_BOOT]]                  | WAYS TO BREAK FREE                                                                                                                |
 | 2022-01-04 | [[Journal Old]]                | My purpose                                                                                                                        |
-| 2022-01-04 | [[FailedMessages]]             | CTO Outreach Email                                                                                                                |
 | 2022-01-04 | [[NJ22 Paths]]                 | My purpose                                                                                                                        |
+| 2022-01-04 | [[FailedMessages]]             | CTO Outreach Email                                                                                                                |
 | 2022-01-02 | [[DEEP_BOOT]]                  | Key Capabilities                                                                                                                  |
 | 2022-00-00 | [[FailedMessages]]             | JOE Quora                                                                                                                         |
 | 2021-12-28 | [[DEEP_BOOT]]                  | Deep Introspection Claim                                                                                                          |
@@ -671,8 +671,8 @@ n:: no prefix.	Dated entries without any typing prefix
 | 2021-10-01 | [[Journal Old]]                | -- SITUATION SUMMARY --                                                                                                           |
 | 2021-10-01 | [[NJ22 Contents]]              | -- SITUATION SUMMARY --                                                                                                           |
 | 2021-09-23 | [[Journal Old]]                | WHOM IN MY NETWORK TO ASK                                                                                                         |
-| 2021-09-23 | [[COMS]]                       | WHOM IN MY NETWORK TO ASK                                                                                                         |
 | 2021-09-23 | [[RES]]                        | Resume Experience                                                                                                                 |
+| 2021-09-23 | [[COMS]]                       | WHOM IN MY NETWORK TO ASK                                                                                                         |
 | 2021-09-22 | [[Journal Old]]                | >>> WP    -- NEXT JOB ACTIVITIES <<<                                                                                              |
 | 2021-09-22 | [[NJ22 Contents]]              | >>> WP    --  ACTIVITIES <<<                                                                                                      |
 | 2021-09-22 | [[RES]]                        | RESUME OBJECTIVE                                                                                                                  |

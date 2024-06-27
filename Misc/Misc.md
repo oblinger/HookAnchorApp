@@ -1,4 +1,6 @@
 
+:: [[Untitled]]
+
 :: [[page]]
 
 :: [[Camping Lst]]
@@ -6,7 +8,7 @@
 :: [[Secure]]
 
 [[Holidays]], 
-:: [[Untitled]]
+:: [[Misc/Untitled]]
 
 :: [[Misc/Untitled]]
 
