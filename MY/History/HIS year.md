@@ -1,4 +1,5 @@
 
+[[2020-10 MedAR\|Mon Jan 23  2023]]  	[[2020-10 MedAR#=== LEAN CANVAS ===]]  
 [[2020-10 MedAR\|Mon Jan 23  2023]]  	[[2020-10 MedAR#=== GATING QUESTIONS ===]]  
 [[2020-10 MedAR\|Mon Jan 23  2023]]  	[[2020-10 MedAR#=== INFO ===]]  
 [[2020-12 SmartScale\|Mon Jan 23  2023]]  	[[2020-12 SmartScale#Basic Pitch]]  

@@ -1,4 +1,5 @@
 
+[[work\|Tue Apr 30  2024]]  	[[work#SOON [[mgt]] [[cvp]]]]  
 [[@Bryan Richard\|Mon Apr 29  2024]]  	[[@Bryan Richard#  [VP](https://www.linkedin.com/in/bryanjrichard/).         ]]  
 [[@Stripe\|Mon Apr 29  2024]]  	[[@Stripe#2024-04-29  Intro]]  
 [[@Yiftach Eisenberg\|Mon Apr 29  2024]]  	[[@Yiftach Eisenberg#2023-07-19  Cat. h Up]]  

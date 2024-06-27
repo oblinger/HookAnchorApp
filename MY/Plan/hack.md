@@ -1,3 +1,4 @@
+- auto scan for broken links in spot
 - [[PQ#^newjump]]:  
 - spot grab 1pass mastadon. (got a crash)
 - Refactor Jump screens

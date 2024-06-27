@@ -18,8 +18,8 @@ GCP:		Brian plan.  Pricing/Perf of using S3
 R&D docs	! Briones 2023 R&D
 [[patents]]:	^J Provisional filed
 
-SW proc:		[db](https://www.notion.so/sportsvisio/cf65339c09c6486296f8adaa084c141a?v=f8a45e385eea4c2fb590502835f4453f&pvs=4),[doc](https://docs.google.com/document/d/1aHnoqgQ3H_0abUtlVWoMPHDA7nQhzoq0JRqZLujORc0/edit?usp=drive_web&ouid=105281685541312342727)  ^Jasu 
-\
+SW proc:	[db](https://www.notion.so/sportsvisio/cf65339c09c6486296f8adaa084c141a?v=f8a45e385eea4c2fb590502835f4453f&pvs=4),[doc](https://docs.google.com/document/d/1aHnoqgQ3H_0abUtlVWoMPHDA7nQhzoq0JRqZLujORc0/edit?usp=drive_web&ouid=105281685541312342727)  ^Jasu 
+
 ## SOON [[mgt]] [[cvp]] 
 [[Metrics]]:		/Create money metrics page
 [[DAT]]:			Dynamic Dat loading
@@ -27,6 +27,7 @@ SW proc:		[db](https://www.notion.so/sportsvisio/cf65339c09c6486296f8adaa084c141
 
 
 ## PAUSE [bsheet](https://docs.google.com/spreadsheets/d/1C1eYv2Ks2GCCQ9_xZ2Pg7eEr33bX1KOdN8Xf8X6nxSY/edit#gid=0), [hi](https://software-engineering-team.atlassian.net/jira/dashboards/10022), [tst](https://docs.google.com/spreadsheets/d/1Rc07oadsjZgg6_2ZZ-qIXJ9n9ws3LT0FFraLZHnrf9w/edit?usp=sharing), [epic](https://software-engineering-team.atlassian.net/jira/software/projects/MOB/boards/24/timeline), 
+[AI_mat](spot://aiprodmatrix):	Populate product matrix
 [RP](spot://rp):		^TestRecall; FixRecall
 [Belief](https://docs.google.com/document/d/1H9krXpxS2_Cr9T68pAksb6QGYqpW28DiF2OSw40g0pI/edit?usp=drive_link):		
 [[@Shreshth Saxena|Saxena]]:		/Grz Results  

@@ -112,7 +112,12 @@ I would have guessed that 5 weeks would have made a bigger dent,
 - Pivo
 - Volleyball
 - Basketball
+- Halos
+
+- Tennis
+- Homography
 - Baseball
+- Minutes
 
 - Best Possible Recording Rig
 Rule Set to auto validate annotations
