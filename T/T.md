@@ -4,6 +4,11 @@
 #top
 n:: Major topic roots
 
+- [[JJ]], [[j J]], 
+
+
+
+
 #### [[T]]OPICS [[T Folder|--]] MAJOR TAXONOMIC TOPIC ROOTS. 
 ```dataviewjs
 let rows = dv.pages("")
