@@ -5,6 +5,7 @@ n:: no prefix.	Dated entries without any typing prefix
 
 | Date       | File                       | Notes                                                                                                                             |
 | ---------- | -------------------------- | --------------------------------------------------------------------------------------------------------------------------------- |
+| 2024-06-26 | [[Politics]]                   | Fixing Banking                                                                                                                    |
 | 2024-06-20 | [[trump]]                      | Trying to limit FED independence                                                                                                  |
 | 2024-06-18 | [[QQ]]                         | Lessons Learned From Minutes                                                                                                      |
 | 2024-06-17 | [[DAT]]                        | New Mount Design                                                                                                                  |

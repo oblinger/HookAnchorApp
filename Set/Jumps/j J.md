@@ -223,4 +223,5 @@ JUMPS:
 - [j MGT](spot://j~MGT): 
 - [j NJ](spot://j~NJ): 
 - [j BUY](spot://j~BUY): 
+- [j PLN](spot://j~PLN): 
 

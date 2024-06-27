@@ -5,6 +5,27 @@
   [race](race.md)  [trump](trump.md) [[Palestinians]] 
 . 
 
+### 2024-06-26  Fixing Banking
+
+Ellen,
+
+There is a clear moral hazard in having banks insured, and to me it is clear that we want Bank INVESTORS to be thinking hard about a banks solvency, but not its DEPOSITORS. Society is better off if deposits are just guaranteed.
+
+The federal gov is the only LLR that can really cover any future contingency, but using them also exposes the US taxpayer to abuse. What about the following:
+
+(1) When a bank goes into default, a US gov LRR fund steps in to provide liquidity. That liquidity is automatically paid back with a 30% per year interest or something pretty onerous. Further the gov LRR is paid BEFORE any other previous investors are paid back. Thus in most cases these liquidity crunches will be a net win for the US gov. (we want to set that rate high enough that on average in the long run this fund runs a solid profit.)
+
+(2) Second we require banks to have "collateral investors" in the bank, for example the shareholders of a business might chose to collateralize 20% of their business in return for a bank dividend each day that the bank does not go bankrupt. If the bank does go bankrupt then a fraction of the collateral is transferred to the LRR fund to cover part of the liquidity needed. We probably need the bank to have collateral covering 40-50% of their deposits.
+
+(3) Third the US gov uses the free market rate on this collateral in order to decide how much to charge a bank for being its LRR. The more expensive that collateral is, the higher the required gov insurance is. A bank that starts to look unhealthy will probably find it is better to just sell itself (at a discount to its investors) to a healthier bank early on, since its costs are creeping upward.
+
+NOW we could have a "free" market that was safe. Depositors never get screwed, the gov LRR almost never gets screwed. And savvy investors that know how to stay away from toxic banks can make a tidy profit.
+
+Bank runs would not really exist, since the US gov is promising to pay depositors dollar for dollar with no limit. if a bank is just hit a short term pinch, they would need to pay 30% interest, but mostly their collateral providers would not get hit, since the LRR need not keep possession of those assets if the bank can eventually dig its way out and pay back the 30% interest. Only when the long term value of its loans are permanently degraded then investor collateral end up loosing money.
+
+Seems like this system places all the risks and all the rewards up all on top of the investors in the banks... thus removing the moral hazard. and removing the hazard for the economy at large.
+
+Why does this not work from all angles?? (well except from the angle of the investor wanting to leverage that moral hazard)docs
 
 ### r2022-07-18  Optimal Tax Policy
 - https://scholar.harvard.edu/files/mankiw/files/optimal_taxation_in_theory.pdf
