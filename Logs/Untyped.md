@@ -11,9 +11,7 @@ n:: no prefix.	Dated entries without any typing prefix
 | 2024-06-17 | [[DAT]]                        | New Mount Design                                                                                                                  |
 | 2024-06-17 | [[PQ]]                         | ^newjump                                                                                                                          |
 | 2024-06-15 | [[@Sage Vet]]                  | Sage                                                                                                                              |
-| 2024-06-13 | [[NJ Rewrite]]                 | Sentences                                                                                                                         |
 | 2024-06-12 | [[DAT]]                        | notes                                                                                                                             |
-| 2024-06-12 | [[NJ Rewrite]]                 | Brainstorm Top Adjectives                                                                                                         |
 | 2024-06-12 | [[@Juan Barajas]]              | Discussion                                                                                                                        |
 | 2024-06-11 | [[@Merrill]]                   | Wealth planning                                                                                                                   |
 | 2024-06-11 | [[CVP]]                        |                                                                                                                                   |

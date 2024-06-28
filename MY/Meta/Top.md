@@ -1,4 +1,4 @@
-j#tag 
+#tag 
 
 #### [[Meta]]		TOP LEVEL INFO ORGANIZATIONS
 | ORG | FOLDER | META | By | Notes |
@@ -29,7 +29,7 @@ let rows = dv.pages("")
 
 dv.table(["File", "Description"], rows);
 ```
-
+[[JJ]] 
 #### [[Plan]] [[Plan Folder|--]] Short and long term planning 
 ```dataviewjs
 let rows = dv.pages("")

@@ -8,6 +8,7 @@ n::  'prj...'  Non-work, non-coding ~3mo sized projects
 PRJs
 - [[Proj Folder]], [[PP]], [[Big]], 
 
+- 2024-00 [[Spot Cmdr]]			
 - [[2023-07 Task Rabbit]] 
 - 2022-00 [[AF Wind-down]]
 - 2022-10 [[SV90]]  				[[@Sports Visio]] Plan for first 90 days 

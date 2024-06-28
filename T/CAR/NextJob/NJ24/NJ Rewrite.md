@@ -1,7 +1,10 @@
 - [[War AI]], 
 
+who? alpha? mission
 
-### 2024-06-13  Sentences
+Startup CTO experience built 40+ person Phd orgs & managing hundreds of Mill
+Looking for hands on role applying gen AI to XXXXX
+## SENTENCES 
 
 - Proven leader bridging Generative AI Research into Practical Application
 
@@ -9,11 +12,29 @@
 IDEAS: 
 - Technical (AI/ML/DL/CV), 
 - Proven Leader 
-- Bridge Research & Prototyping
+- Bridge Research & Prototypingk
 
-### 2024-06-12  Brainstorm Top Adjectives
+## CAPABILITIES I BRING
+
+### TECH AREA
+- Generative AI:  Covers CV/DL/ML/AI I want to highlight
+
+### ACTIVITY
+- Prototyping:  Reducing Research To Practice
+- Advanced R&D
+- Innovating
+
+### ROLE
+- Technical Manager / Tech Lead / Director of technical project
 
 
+### ORG
+1. Advanced Big Co
+2. Well Funded Startup
+
+
+
+### SOFT ATTRIBUTES
 
 TECHNICAL
 - Technically Deep - 
@@ -32,8 +53,21 @@ SOFT-SKILLS
 - HIGH TEMPO
 
 
-### JOB ATTRIBUTES
+### __
 
+
+## JOB ATTRIBUTES I DESIRE
+
+
+### RATIO OF TECHNICAL WORK
+- HARD TECH - Discussing/Thinking/Leading/Doing:   deep technical work
+ACTIVITES
+- DELIVERING SYSTEMS - Focused on a technically challenging working system
+- DESIGNING - APIs, Architectures, Product Features
+- TECH ADVISE - Technical advising
+
+
+### ROLE
 - ROLE: TECH LEAD 		- My ideal role is tech lead, where a significant fraction of my time is discussing / solving technical challenges
 - ROLE: PROJ MGR		- Leader of some advanced AI product.  
 - NOVEL APPLICATION	- Ideally this is focused on iterative refinement of recent research into working product prototypes
@@ -41,8 +75,12 @@ SOFT-SKILLS
 - COMPUTER VISION		- 
 
 
-ACTIVITIES
-- API / ARCHITECT - 
-- TECH ADVISE -
-- 
+### INNOVATIVE
+- Love it when NO ONE knows how to attack the problem at hand
+- Love it when one needs to quickly triage many different aspects of a problem
+
+
+
+### CLEAN
+- Carefully designed 'things'
 

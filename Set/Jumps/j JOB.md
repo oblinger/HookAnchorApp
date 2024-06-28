@@ -17,4 +17,5 @@ JUMPS:
 - [Mentor](spot://Mentor): 
 - [Mentors](spot://Mentors): 
 - [Jobs](spot://Jobs): 
+- [JOB All](spot://JOB~All): 
 

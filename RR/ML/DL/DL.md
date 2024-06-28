@@ -6,7 +6,7 @@
 
 :: [[LSTM]],  
 
-. [[Transformers]], [[LLM]], 
+ [[LLM]], 
 
 :: [[VAE - Variational Auto Encoder]],   [[Attention]],   [[Gradient Checking]],   [[NG Notation]],   [[Invertable Density Estimation]],   [[Self Supervised Learning]],   [[Activation Functions]],   [[Auto Encoders]],  [[VAE]]
 - [[DL algs]], [[DL topics]], [[DL optimization]], 
@@ -21,6 +21,7 @@
 - [[DL]]
 
 [[DL]] - [[DL ALGS]] 
+- [[Gen AI]]:	[[VAE]], [[GANs]], [[Transformers]]([[LLM]]),   
 - [[RNN]] 
 - [[CNN]] 
 - [[DL SYStems]] 

@@ -1,10 +1,13 @@
 
 [[NJ.]]		[[War]]: Turn around, Gen AIs
 [[NJ.]]		[[BOD]]: 
+[[Lrn]]:		3-papers/wk.  Code@work.	LeetCoding.
+[[NJ]]:		[[Coms]] calling plan
+
+
 
 
 [[NJ]]:		[[2024-04-01 Resume Rewrite|Re-Res]] 
-[[NJ]]:		[[Coms]] calling plan
 [[NJ]]:		[[crm]]:  Pings
 [[NJ]]:		[[Mentor]]: 
 [[NJ]]:		Quick Apply to something???

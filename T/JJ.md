@@ -1,5 +1,8 @@
 
-[[CAR]]:	[[MGR]], [[JOB]], 
+[[CAR]]:	[[MGR]], [[JOB]], [[JOB All]]([[AF]])
+. [[NJ]]:	
+[[DOC]]:
 
-
-[[JOB]]
+[[RR]]:	
+. [[DL]]:	
+[[SV]]:	
