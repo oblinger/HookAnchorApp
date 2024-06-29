@@ -1,4 +1,8 @@
 
+[[NJ24\|Tue Apr 30  2024]]  	[[NJ24#ROCKS]]  
+[[NJ24\|Tue Apr 30  2024]]  	[[NJ24#LEARNING]]  
+[[NJ24\|Tue Apr 30  2024]]  	[[NJ24#TARGETS:]]  
+[[NJ24\|Tue Apr 30  2024]]  	[[NJ24#LOG]]  
 [[work\|Tue Apr 30  2024]]  	[[work#SOON [[mgt]] [[cvp]]]]  
 [[@Bryan Richard\|Mon Apr 29  2024]]  	[[@Bryan Richard#  [VP](https://www.linkedin.com/in/bryanjrichard/).         ]]  
 [[@Stripe\|Mon Apr 29  2024]]  	[[@Stripe#2024-04-29  Intro]]  

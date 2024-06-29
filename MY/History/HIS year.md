@@ -1,4 +1,8 @@
 
+[[2020-07 Autonomy\|Mon Jan 23  2023]]  	[[2020-07 Autonomy#### TODO ###]]  
+[[2020-07 Autonomy\|Mon Jan 23  2023]]  	[[2020-07 Autonomy#### INFO ###]]  
+[[2020-07 Autonomy\|Mon Jan 23  2023]]  	[[2020-07 Autonomy#### LOG ###]]  
+[[2020-09 CtrlSaaS\|Mon Jan 23  2023]]  	[[2020-09 CtrlSaaS#=== CANVAS ===]]  
 [[2020-10 MedAR\|Mon Jan 23  2023]]  	[[2020-10 MedAR#=== LEAN CANVAS ===]]  
 [[2020-10 MedAR\|Mon Jan 23  2023]]  	[[2020-10 MedAR#=== GATING QUESTIONS ===]]  
 [[2020-10 MedAR\|Mon Jan 23  2023]]  	[[2020-10 MedAR#=== INFO ===]]  
