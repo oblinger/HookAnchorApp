@@ -8,4 +8,4 @@ ROOT JUMP PAGES:
 [[CAR]]: [[Res]],	
 [[Idea]]: [[EduCorp]],	
     [[EOC]]: [[EOCA]],	
-[[T]]: [[Eli]],	[[My]],	
+[[T]]: [[Eli]],	[[MY]],	

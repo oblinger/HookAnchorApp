@@ -1,3 +1,16 @@
+.[[MY]].
+  [[My Hacks]]:	
+  [[MyMgr]]:	
+  [MyMgr Page](spot://mymgrpage):	
+  [MY Desk Folder](spot://mydeskfolder):	
+  [[MY fo]]:	
+  [[MY Github Webpage]]:	
+  [[MY Info]]:	
+  [[MY mgr NOTES]]:	
+  [[MY Spot]]:	
+  [[MY Staff]]:	
+  [[MY Stuff]]:	
+
 
 :: [[Closet]],   [[Meta]],   [[Myfo]],   [[Pln]],   [[QUICKADD]],   [[TEMPLATER]]
 #root
