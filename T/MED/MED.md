@@ -1,12 +1,36 @@
 
-- [[MED Ref]], [[MED Doctors]],   [[MED General]],   [[MED Insurance]],  
+:: [[MED.]]
+.[[MED]].
+  [[Glycemic Index]]:	
+  [[Jet Lag]]:	
+  [[MED Blood Pressure]]:	
+  [[MED Blood Tests]]:	
+  [[MED Cholesterol]]:	
+  [[MED Doctors]]:	
+  [[MED Exercise]]:	
+  [[MED Food]]:	
+  [[MED General]]:	
+  [[MED Heart]]:	
+  [[MED History]]:	
+  [[MED Insurance]]:	
+  [[MED Log]]:	
+  [[MED Measurements]]:	
+  [[MED Pills]]:	
+  [[MED Psoriasis]]:	
+  [[MED Ref]]:	
+  [[MED Research]]:	
+  [[MED Sleep]]:	
+  [[MED Vaccinations]]:	
+  [[MED Vision]]:	
+  [[MED VO2Max]]:	
+  [[MED Weight]]:	
+
 
 [[MED]]:	Daily Exercise [[Habit]].
 
 [[MED]]:	Noom Eating
 [[MED]]:	Get TPST
 
-[[MED.]]  [[MED VO2Max]]
 
 TRACK: RestingHeartRate, HRV, Rate of Perceived Exertion (RPE)
 ## > MED

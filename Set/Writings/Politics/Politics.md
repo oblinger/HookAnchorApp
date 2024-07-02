@@ -1,3 +1,10 @@
+.[[Politics]].
+  [[Climate]]:	
+  [[Palestinians]]:	
+  [[race]]:	
+  [[__Race Pitch__]]:	
+  [[RacePitchArchive]]:	
+
 
 :: [[race]]  [[Socialism]]  [[AI HISTORY]]  
   [Climate](Climate.md)  

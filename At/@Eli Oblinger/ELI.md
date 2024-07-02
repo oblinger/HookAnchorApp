@@ -1,3 +1,8 @@
+.[[Eli]].
+  [[Babysitting]]:	
+  [[Clarendon]]:	
+  [[Daycare Applications]]:	
+
 - [[ELI Quotes]] 
 [https://youtu.be/XBxLpOvm01w](https://youtu.be/XBxLpOvm01w)
 

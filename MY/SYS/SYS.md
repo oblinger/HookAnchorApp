@@ -3,7 +3,7 @@
 
 [[SYS]] 
 - [[SYS Dashboards]]	- 
-- [[SYS Facets]]			- 
+- [[SYS Facet]]			- 
 - [[SYS Keyboard Setup]]
 - [[SYS Misc]]			- 
 - [[SYS Notations]]		- 

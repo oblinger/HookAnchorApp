@@ -1,3 +1,10 @@
+.[[Food]].
+  [[Diet]]:	
+  [[dinner]]:	
+  [[Meals]]:	
+  [[Meals Thermomix]]:	
+  [[Meals Vegetables]]:	
+
 
 :: [[qwd]]
 

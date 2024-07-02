@@ -1,3 +1,13 @@
+.[[Idea]].
+  [[EduCorp]]:	
+  [[Edu Stats w Consequences]]:	
+  [[Effective Altruism]]:	
+  [[EOC]]:	
+  [[Forwardism]]:	
+  [GHOST](spot://ghost):	
+  [[Ideas]]:	
+  [[_ideas_OLD]]:	
+
 
 :: [[2018-00 Alloy]],   [[Idea Brain]],   [[Idea Social]],   [[Life Projects]]
 #log 

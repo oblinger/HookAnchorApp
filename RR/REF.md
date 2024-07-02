@@ -10,9 +10,9 @@ LINKS:  [[RR]]   [[Refs]]
 | ----------- | --------------- | --------------------------------------------------------------------------------- |
 | r2023-08-24 | [[DL]]              | chronological summary                                                             |
 | r2022-12-08 | [[2006-12 GHOST]]   | Professor who sees the damage of corrupt judges                                   |
+| r2022-11-08 | [[DocPandas]]       | Pandas Examples                                                                   |
 | r2022-11-08 | [[2022-05 Enxt]]    | School Stats                                                                      |
 | r2022-11-08 | [[2022-05 Enxt]]    | Atlantic-Private Schools;                                                         |
-| r2022-11-08 | [[DocPandas]]       | Pandas Examples                                                                   |
 | r2022-10-14 | [[@Jason Syversen]] | Minimums for VC fundability                                                       |
 | r2022-10-06 | [[Coaches]]         | Igor Shindel (CTO Coach)                                                          |
 | r2022-10-06 | [[Coaches]]         | Plato Peer Mentoring                                                              |

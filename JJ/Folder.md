@@ -1,0 +1,5 @@
+.[[Folder]].
+  [Bin Folder](spot://binfolder):	
+  [Downloads Folder](spot://downloadsfolder):	
+  [Dropbox Folder](spot://dropboxfolder):	
+

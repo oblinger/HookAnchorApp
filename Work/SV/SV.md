@@ -1,18 +1,40 @@
 #top 
 
 .[[SV]].
-- [[SV Tasks]] - 
-- TOPS:		[[WW]],   [[QQ]],  [[Mgt]], 
-- [[SV Strat]]:	[[Reset]],  [[ROADMAP]], 
-- [[SV Ops]]:	 	[[SV Dashboards]],  [[SV Testing]], [[SV Planning]],  
+- [[SV Tasks]] -
+- TOPS:		[[WW]],   [[QQ]],  [[Mgt]],
+- [[SV Strat]]:	[[Reset]],  [[ROADMAP]],
+- [[SV Ops]]:	 	[[SV Dashboards]],  [[SV Testing]], [[SV Planning]],
 - [[SV People]]:	[[SV SW Team]],   [[CV Notes]],
-- [[SV Market]]:	[[SV Customer]],  [[SV Competitor]], [[SV Partner]], 
-- [[SV Product]]: [[SV Code]],  [[SV Apps]], [[SV System]], [[SV Data]],  
-- [[SV Software]]: 
+- [[SV Market]]:	[[SV Customer]],  [[SV Competitor]], [[SV Partner]],
+- [[SV Product]]: [[SV Code]],  [[SV Apps]], [[SV System]], [[SV Data]],
+- [[SV Software]]:
 - [[INV]]:
-- INFO:			[[SV Code]], [[SVT]], [[SV Legal]], [[SV Folder]], [[Meta SV]], 
-- ARCHIVE:		[[SV Archive]],   [[SV Wings]], 
-- [[SV Basketball Info]] 
+- INFO:			[[SV Code]], [[SVT]], [[SV Legal]], [[SV Folder]], [[Meta SV]],
+- ARCHIVE:		[[SV Archive]],   [[SV Wings]],
+- [[SV Basketball Info]]
+  [BUG](spot://bug):	
+  [[Bug.]]:	
+  [Bug Actual List Page](spot://bugactuallistpage):	
+  [Bug Board Page](spot://bugboardpage):	
+  [[Bugs]]:	
+  [Fireball](spot://fireball):	
+  [HALOS](spot://halos):	
+  [[Investor Intros]]:	
+  [Jira](spot://jira):	
+  [Jira Me Page](spot://jiramepage):	
+  [[July Hiring]]:	
+  [SV Clickup Page](spot://svclickuppage):	
+  [SV Confluence Page](spot://svconfluencepage):	
+  [SV C Root](spot://svcroot):	
+  [[SV FIN]]:	
+  [SV Google Drive Page](spot://svgoogledrivepage):	
+  [SV G Root](spot://svgroot):	
+  [[SV Individuals]]:	
+  [[SV Letter]]:	
+  [SV Log Page](spot://svlogpage):	
+  [[SV lrn]]:	
+  [[SV Roadmap]]:	
 
 
 :: [[cvt]], 

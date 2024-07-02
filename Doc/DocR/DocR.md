@@ -1,0 +1,20 @@
+  [__DocR__](__DocR__.md)
+
+
+
+DEBUG
+  help(read.csv)
+
+
+FILE
+  dir()  getwd()
+
+
+LIST
+  l <- numeric(10) // typeof(l) //
+
+
+DATA.FRAME
+  df <- read.csv(file="simple.csv",head=TRUE,sep=",")
+  df  //  summary(df)   //  df$field1  //  names(df)  // attributes(df)  //  $class  // $row.names
+

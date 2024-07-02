@@ -1,3 +1,14 @@
+.[[EOC]].
+  [[EOCA]]:	
+  [[eoc-atlas]]:	
+  [EOCB](spot://eocb):	
+  [[eoc-impl]]:	
+  [EOCK](spot://eock):	
+  [[EOC Log]]:	
+  [EOCT](spot://eoct):	
+  [[EOC IDEAS]]:	
+  [[EOC reboot]]:	
+
 
 :: [[Untitled]]
 

@@ -85,8 +85,8 @@ n:: no prefix.	Dated entries without any typing prefix
 | 2024-03-03 | [[FIN Log]]                    | Follow On Questions                                                                                                               |
 | 2024-02-18 | [[@Hoka]]                      | Exchange                                                                                                                          |
 | 2024-02-17 | [[Eli]]                        | Put on his underwear                                                                                                              |
-| 2024-02-17 | [[SYS Facets]]                 | Auto Jump pages                                                                                                                   |
-| 2024-02-17 | [[SYS Facets]]                 | EXAMPLES of facet groups                                                                                                          |
+| 2024-02-17 | [[SYS Facet]]                  | Auto Jump pages                                                                                                                   |
+| 2024-02-17 | [[SYS Facet]]                  | EXAMPLES of facet groups                                                                                                          |
 | 2024-02-12 | [[MED Log]]                    | QL DOC advice for a flu w/ cough                                                                                                  |
 | 2024-02-11 | [[Palestinians]]               | Andrew's response                                                                                                                 |
 | 2024-02-09 | [[Palestinians]]               | Try Number Three                                                                                                                  |
@@ -147,9 +147,9 @@ n:: no prefix.	Dated entries without any typing prefix
 | 2023-11-20 | [[Eli Firsts]]                 | First Crush - Babysitter                                                                                                          |
 | 2023-11-20 | [[SV Roadmap]]                 | Long Term Plan                                                                                                                    |
 | 2023-11-19 | [[GoogleJob]]                  | Uri                                                                                                                               |
+| 2023-11-17 | [[DocDocker]]                  | Docker for SV laptop setup                                                                                                        |
 | 2023-11-17 | [[MAC Setup]]                  | CONDA - I now use conda for all python builds #build                                                                              |
 | 2023-11-17 | [[CV Notes]]                   | Alg2 Build #build                                                                                                                 |
-| 2023-11-17 | [[DocDocker]]                  | Docker for SV laptop setup                                                                                                        |
 | 2023-11-16 | [[DocDocker]]                  | Creating my own docker image                                                                                                      |
 | 2023-11-13 | [[MED Heart]]                  | Dr. HUI Visit                                                                                                                     |
 | 2023-11-13 | [[Mgt]]                        | NOV MGT Meeting                                                                                                                   |
@@ -905,6 +905,7 @@ n:: no prefix.	Dated entries without any typing prefix
 | 2016-05-25 | [[Journal Old]]                | – Lex Ownership                                                                                                                   |
 | 2016-05-25 | [[OLD 201x Weekly]]            | – Lex Ownership                                                                                                                   |
 | 2016-00-00 | [[Parents]]                    | Parents Internet speed                                                                                                            |
+| 2016-00-00 | [[AWS Log]]                    | Setup Jotter backend on AWS                                                                                                       |
 | 2016-00-00 | [[Journal Old]]                | Bizzy Robotics - Early days                                                                                                       |
 | 2016-00-00 | [[BUY Log]]                    | STANDING DESK                                                                                                                     |
 | 2016-00-00 | [[DYL]]                        | Bizzy Robotics - Early days                                                                                                       |
@@ -913,7 +914,6 @@ n:: no prefix.	Dated entries without any typing prefix
 | 2016-00-00 | [[FIN Log]]                    | Madrone / Ben                                                                                                                     |
 | 2016-00-00 | [[FIN Log]]                    | NDA / AF stuff                                                                                                                    |
 | 2016-00-00 | [[FIN Log]]                    | Idea for adelec analysis                                                                                                          |
-| 2016-00-00 | [[AWS Log]]                    | Setup Jotter backend on AWS                                                                                                       |
 | 2015-07-11 | [[FIN Log]]                    | Tax consequences                                                                                                                  |
 | 2015-04-06 | [[FIN Log]]                    | Ben Ng -- Indexed Universal Life -- IRS sec 7702 section 79                                                                       |
 | 2015-03-30 | [[FIN Log]]                    | Setup SEP.  Planned 2015                                                                                                          |
