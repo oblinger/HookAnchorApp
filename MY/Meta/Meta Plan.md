@@ -1,6 +1,6 @@
 < [[Meta]] 
 
-[[Plan]] 			Planning pages
+[[Pln]] 			Planning pages
 - PERSONAL - TACTICAL
 	- [[BIG]] 
 - WORK - TACTICAL

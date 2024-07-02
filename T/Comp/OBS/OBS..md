@@ -12,7 +12,7 @@
 
  Instacart
  ## TODO
-- [ ] [[#COLON-COLON]]: Add colon-colon section with links:    :: [[todo]], [[Plan]], 
+- [ ] [[#COLON-COLON]]: Add colon-colon section with links:    :: [[todo]], [[Pln]], 
 - [ ] [[#CROSS-LINKING]]:  [[Multi-List WorkFlow]],  
 - [ ] [[#KM-T]]: 
 - [ ] [[#OBS-PUBLISH]]: 

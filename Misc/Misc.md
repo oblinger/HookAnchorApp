@@ -1,6 +1,8 @@
 
 :: [[Untitled]]
 
+:: [[Misc/Untitled]]
+
 :: [[page]]
 
 :: [[Camping Lst]]

@@ -1,9 +1,17 @@
+near colors; assume 
+- AI roster-base pronouns
+Jersey...
+
 
 .**NOW**. 
-[[FIN.]]		Invest plan; Retire plan(spreadsheet)
+CLR:	ColorT, TgtFn
+PID:	x
+INF:	GetRoster,
+[[FIN.]]	Invest plan; Retire plan(spreadsheet)
 Assess	> Assessment plan for BB
 [OKRs](https://docs.google.com/presentation/d/1v7Winy9DHxGuYh05_is8zH05ClJi0qclM698-pDXIgY/edit?pli=1#slide=id.g274b3e27e6b_0_0):		Q3 Planning	
 
+mid-color, 
 ## TOP
 [[NJ]]:		>[[War|War]], rewrite, mentor
 ## TRACK

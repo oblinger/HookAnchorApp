@@ -48,7 +48,7 @@ THREE MONITOR SETUP
 
 ## INFO TYPES
 
-- [[Plan]] - Planning LIST pages
+- [[Pln]] - Planning LIST pages
 
 
 - [[TOPIC]] - Topic type pages (may be subtopics within other topics)
@@ -59,7 +59,7 @@ THREE MONITOR SETUP
 	- [[DOC]] - Specialized doc types
 	- [[PROJ]] - Project (code) folders.  These are generally OUTSIDE the kmr tree.
 		
-	-  [[LOG]] - Chronically organized and labelled pages and folders  (Often part of a topic)
+	-  [[Log/Log/LOG]] - Chronically organized and labelled pages and folders  (Often part of a topic)
 		- [[TAGS/TEXT]] - 
 		- [[Meeting]] - 
 		- [[REF]] - Reference type info ???   (could be listed under log, or topic)

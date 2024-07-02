@@ -1,3 +1,22 @@
+.[[DL]].
+  [[Attention]]:
+  [[Auto Encoders]]:
+  [[GANs]]:
+  [[LSTM]]:
+  [[NN]]:
+  [[RNN]]:
+  [[DL Alg]]:
+  [[DL Notation]]:
+  [[DL Optimization]]:
+  [[DL Strategy]]:
+  [[DL SYS]]:
+  [[DL Topic]]:
+  [[DL algs]]:	
+  [[DL optimization]]:	
+  [[DL strategy]]:	
+  [[DL SYStems]]:	
+  [[DL topics]]:	
+
 
 - [[LoRA]] 
 :: [[KAN - Kolmogorov-Arnold Neworks]]
@@ -9,7 +28,7 @@
  [[LLM]], 
 
 :: [[VAE - Variational Auto Encoder]],   [[Attention]],   [[Gradient Checking]],   [[NG Notation]],   [[Invertable Density Estimation]],   [[Self Supervised Learning]],   [[Activation Functions]],   [[Auto Encoders]],  [[VAE]]
-- [[DL algs]], [[DL topics]], [[DL optimization]], 
+- [[DL Alg]], [[DL Topic]], [[DL Optimization]], 
   [Regularization](Regularization.md),   [GANs](GANs.md),   [NN](NN.md)
 #tag <[[ML]] 
 
@@ -20,22 +39,22 @@
 - [[GANs]], [[RAG]], 
 - [[DL]]
 
-[[DL]] - [[DL ALGS]] 
+[[DL]] - [[DL Alg]] 
 - [[Gen AI]]:	[[VAE]], [[GANs]], [[Transformers]]([[LLM]]),   
 - [[RNN]] 
 - [[CNN]] 
-- [[DL SYStems]] 
+- [[DL SYS]] 
 - [[DL PARTS]]: [[ReLU]], 
 
 [[GenAI]] 
 - [[GPT]] 
 
 
-- [[DL topics]]: 			[[RLHF Reinforcement Learning from Human Feedback]],  
+- [[DL Topic]]: 			[[RLHF Reinforcement Learning from Human Feedback]],  
 - [[DL Notation]]:		[[NG Notation]], 
-- [[DL algs]]:				[[RASA]], [[Segment Anything]], 
-- [[DL optimization]] - 
-- [[DL strategy]], 
+- [[DL Alg]]:				[[RASA]], [[Segment Anything]], 
+- [[DL Optimization]] - 
+- [[DL Strategy]], 
 
 
 

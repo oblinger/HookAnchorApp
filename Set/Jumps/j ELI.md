@@ -16,4 +16,5 @@ JUMPS:
 - [Clarendon](spot://Clarendon): 
 - [Daycare Applications](spot://Daycare~Applications): 
 - [Eli Strategy](spot://Eli~Strategy): 
+- [Babysitting](spot://Babysitting): 
 

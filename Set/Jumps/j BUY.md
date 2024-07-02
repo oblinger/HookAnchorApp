@@ -7,4 +7,5 @@ JUMPS:
 - [BUY Ideas](spot://BUY~Ideas): 
 - [BUY Log](spot://BUY~Log): 
 - [BUY Tea](spot://BUY~Tea): 
+- [BUY](spot://BUY): 
 

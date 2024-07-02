@@ -1,7 +1,7 @@
 
 
 
-(see [[Logs]], [[Meta Proj]])
+(see [[Log/Log]], [[Meta Proj]])
 
 
 

@@ -13,4 +13,7 @@ JUMPS:
 - [LSTM](spot://LSTM): 
 - [NN](spot://NN): 
 - [RNN](spot://RNN): 
+- [DL Alg](spot://DL~Alg): 
+- [DL SYS](spot://DL~SYS): 
+- [DL Topic](spot://DL~Topic): 
 

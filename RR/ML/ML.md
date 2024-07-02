@@ -1,4 +1,6 @@
 
+:: [[Stat]]
+
 :: [[DL]],   [[STATS]], [[Learning]], 
 
 :: [[ARIMA Algorithm]],  

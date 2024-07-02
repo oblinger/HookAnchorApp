@@ -1,4 +1,4 @@
 
-- [[DL algs]]
+- [[DL Alg]]
 - [[ML Alg]]
 - 

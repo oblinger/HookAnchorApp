@@ -46,7 +46,7 @@
 - [ ] 4:	[[Exercise]]  
 
 ### 2022-11-23
-- [ ] [[Plan]] - 
+- [ ] [[Pln]] - 
 - [ ] ready
 
 - [ ] [[Coursera Notes]] - 

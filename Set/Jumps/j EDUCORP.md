@@ -9,4 +9,5 @@ JUMPS:
 - [EduCorp Tweaks](spot://EduCorp~Tweaks): 
 - [EduCorp Types](spot://EduCorp~Types): 
 - [EduCorp White Paper](spot://EduCorp~White~Paper): 
+- [Bee Keeping](spot://Bee~Keeping): 
 

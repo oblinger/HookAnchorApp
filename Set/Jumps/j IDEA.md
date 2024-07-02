@@ -9,4 +9,5 @@ JUMPS:
 - [Idea Social](spot://Idea~Social): 
 - [Ideas](spot://Ideas): 
 - [_ideas_OLD](spot://_ideas_OLD): 
+- [EOC](spot://EOC): 
 

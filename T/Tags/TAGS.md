@@ -10,7 +10,7 @@
 :: [[Data Science]],  
 
 
-[[Tags]]: [[At]], [[Plan]], [[Prj]], [[REF]], 
+[[Tags]]: [[At]], [[Pln]], [[Prj]], [[REF]], 
 
 - [[At]]
 	- [[Person]]
@@ -23,7 +23,7 @@
 		- [[VC ORG]]   
 		- [[PE firm]] 
 
-- [[Plan]] 
+- [[Pln]] 
   
 - [[Prj]]  
   
@@ -31,7 +31,7 @@
 	- [[COMP]] 
 		- [[Lang]] 
 		- [[INFO_PAGE]] 
-		- [[LOG]]   
+		- [[Log/Log/LOG]]   
 		- [[Prj]] 
 		- 
 	- [[T]]
@@ -40,8 +40,8 @@
 	- [[Cmd]]
 	- [[TAG]]
 	- [[TASK]] - task list
-	- [[Set]] - 
-		- [[Logs/Quotes]] -  
+	- [[MY/Meta/Set]] - 
+		- [[Quotes]] -  
 	- [[DATED]] - 
 		- [[Day]] - 
 		- [[Journal]] - Daily Journal entries

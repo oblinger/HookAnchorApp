@@ -43,11 +43,11 @@ LEFT FOCUSED LAYOUT
 ### DAILY VIEW DASHBOARD
 
 | col-1 | col-2 | col-3  | col-4 |
-|:-----:|:-----:|:------:|:-----:|
-| quick | todo  |  Week  | Week  |
-| work  |  now  |   "    |   "   |
+| :---: | :---: | :----: | :---: |
+| work  |  now  |  Week  | Week  |
 |   "   |   "   |   "    |   "   |
-|   "   |   "   | active | wings |
+|   "   |   "   |   "    |   "   |
+| quick | todo  | active | wings |
 
 
 ### PLANNING VIEW DASHBOARD

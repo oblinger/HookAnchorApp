@@ -18,4 +18,8 @@ JUMPS:
 - [Mentors](spot://Mentors): 
 - [Jobs](spot://Jobs): 
 - [JOB All](spot://JOB~All): 
+- [JOB History](spot://JOB~History): 
+- [JOB Postings](spot://JOB~Postings): 
+- [JOB Tests](spot://JOB~Tests): 
+- [JOB Types](spot://JOB~Types): 
 

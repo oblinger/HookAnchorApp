@@ -3,7 +3,7 @@
 zzz
 [[Myfo]], 
 [[Lists]],   [[Meta]], 
-[[Plan]], 
+[[Pln]], 
 [[Myfo]], 
 
 -   [[Disks]],  

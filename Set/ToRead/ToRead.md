@@ -1,6 +1,8 @@
 
+:: [[Read]]
+
 n:: Stuff "to read"
-- [[Read]].  #set
+- [[Set/ToRead/Read/Read]].  #set
 - [read]( https://www.mckinsey.com/industries/agriculture/our-insights/winning-in-africas-agricultural-market) - africa
 - [[Set/ToRead/Read/Read]], [[Podcasts To Listen To]], 
   [[Set/ToRead/Read/Read]]

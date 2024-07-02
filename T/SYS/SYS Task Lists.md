@@ -20,7 +20,7 @@
 - M
 - N
 - O	[[OBS]]		A			Obsidian tasks
-- P	[[Plan]]		A W 		WORKSPACE showing all weekly planning lists
+- P	[[Pln]]		A W 		WORKSPACE showing all weekly planning lists
 - Q	[[quick]]		A J   		Quickly added info
 - R	[[Repeat]]					Weekly 'repeat' list
 - S	[[MY/Plan/self]]			A W		WORKSPACE of personal planning pages

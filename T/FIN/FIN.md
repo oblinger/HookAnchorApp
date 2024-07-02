@@ -1,4 +1,8 @@
 
+
+.[[FIN]].
+[[Fin log]]:	Investment plan
+[[FIN Log]]:	Retire Spreadsheet
 - [[@Merrill]],   [[@Vanguard]]
 -  [[FIN.]], [[FIN Log]], [[FIN Topics]],  [[FIN Retire]], 
 

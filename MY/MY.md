@@ -1,9 +1,9 @@
 
-:: [[Closet]],   [[Meta]],   [[Myfo]],   [[Plan]],   [[QUICKADD]],   [[TEMPLATER]]
+:: [[Closet]],   [[Meta]],   [[Myfo]],   [[Pln]],   [[QUICKADD]],   [[TEMPLATER]]
 #root
 n:: Info about me & my stuff
 
-- [[My Info]], [[MySys]], [[My Stuff]], 
+- [[My Info]], [[SYS]], [[My Stuff]], 
 
 
 :: [[My]]   

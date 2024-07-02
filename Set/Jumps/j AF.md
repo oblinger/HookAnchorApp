@@ -7,4 +7,6 @@ JUMPS:
 - [AF](spot://AF): 
 - [AF DOCS](spot://AF~DOCS): 
 - [AF PDD](spot://AF~PDD): 
+- [AF Acquisition](spot://AF~Acquisition): 
+- [AF ENG_HIRING_TESTS](spot://AF~ENG_HIRING_TESTS): 
 

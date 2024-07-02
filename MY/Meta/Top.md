@@ -4,9 +4,9 @@
 | ORG | FOLDER | META | By | Notes |
 | ---- | ---- | ---- | ---- | ---- |
 | [[Roots]] | [[Kmr Folder\|KMR]] | [[Meta Meta]] | ALL | Toplevel roots for all pages |
-| [[Plan]] | [[Plan Folder\|Plan]] | [[Meta Plan]] | By TASK | Short and long term planning |
-| [[Logs]] | [[Logs Folder\|Logs]]	 | [[Meta Logs]] | By TIME | Lists with a time-based org |
-| [[Sets]] | [[Set Folder\|Set]] | [[Meta Set]] | By TYPE | Groups of like (typed) entries |
+| [[Pln]] | [[Plan Folder\|Plan]] | [[Meta Plan]] | By TASK | Short and long term planning |
+| [[Log/Log]] | [[Logs Folder\|Logs]]	 | [[Meta Logs]] | By TIME | Lists with a time-based org |
+| [[Set/Set]] | [[Set Folder\|Set]] | [[Meta Set]] | By TYPE | Groups of like (typed) entries |
 | [[T]] | [[T Folder\|T]]	 | [[Meta Topic]] | By TOPIC | Toplevel Taxonomic Topics |
 |  |  | [[Meta Flow]] | By PROC | My data processing paths |
 |  [[SV]]	 | [[SV Folder\|SV]]	 | [[Meta SV]]  | WORK | Work related [[WW]] |
@@ -30,7 +30,7 @@ let rows = dv.pages("")
 dv.table(["File", "Description"], rows);
 ```
 [[JJ]] 
-#### [[Plan]] [[Plan Folder|--]] Short and long term planning 
+#### [[Pln]] [[Plan Folder|--]] Short and long term planning 
 ```dataviewjs
 let rows = dv.pages("")
   .where(p => {
@@ -53,7 +53,7 @@ dv.table(["File", "Description"], rows);
 ```
 
 
-#### [[Logs]] [[Logs Folder|--]] DATED, TYPED NOTES (DATED entries)
+#### [[Log/Log]] [[Logs Folder|--]] DATED, TYPED NOTES (DATED entries)
 ```dataview
 TABLE n AS Description
 FROM #log
@@ -62,7 +62,7 @@ SORT file.name
 
 
 
-#### [[Sets]] [[Set Folder|--]] GROUPS OF LIKE ENTRIES -- (UN-dated, Typed entries)
+#### [[Set/Set]] [[Set Folder|--]] GROUPS OF LIKE ENTRIES -- (UN-dated, Typed entries)
 ```dataview
 TABLE n AS Description
 FROM #set

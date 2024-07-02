@@ -1,20 +1,26 @@
 
-:: [[JOB]]
+.[[CAR]].
+- [BOD](spot://bod)
+- [COACH](spot://coach)
+- [Coaches](spot://coaches)
+- [JOB](spot://job)
+- [Mentors](spot://mentors)
+- [MGR](spot://mgr), [RES](spot://res), [CAR Coach](spot://carcoach)
+
+
+:: [[NextJob]]
+
 .[[Career]].
-- [[NJ]], 
-- [[MGR Log]],  
-- ap
+- [[CAR Coach]], 
 - [[CRM]]: Call 1-3 colleagues per week.
-- Mentors?  
+- [[JOB]]:	[[JOB Compensation]], 
+- [[MGR]]:	[[MGR Log]],
+- [[NJ]]:	[NextJob](NextJob.md), [[NJ22]], [[NJ24]], 
+- [[RES]]:	
+
 
 
 - Warm Lead
 - https://www.linkedin.com/in/jean-yves-bouguet-63bb7/
 
-
-:: [[NextJob]],   [[RES]],  [[CAR]], 
-
-- [[JOB Compensation]], 
-- [[MGR]]
--  [NextJob](NextJob.md), [[NJ22]],  [RES](RES.md) 
 

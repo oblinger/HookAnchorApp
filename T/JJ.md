@@ -1,5 +1,8 @@
+.[[JJ]].
+[JJ](jj)
 
-[[CAR]]:	[[MGR]], [[JOB]], [[JOB All]]([[AF]])
+
+[[CAR]]:	[[MGR]], [[JOB]], [[JOB History]]([[AF]])
 . [[NJ]]:	
 [[DOC]]:
 

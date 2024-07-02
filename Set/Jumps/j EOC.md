@@ -11,4 +11,5 @@ JUMPS:
 - [EOC](spot://EOC): 
 - [EOC Log](spot://EOC~Log): 
 - [EOC Ways Intelligence Will Be Super](spot://EOC~Ways~Intelligence~Will~Be~Super): 
+- [EOCA](spot://EOCA): 
 
