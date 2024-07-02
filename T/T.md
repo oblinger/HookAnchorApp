@@ -1,8 +1,16 @@
 .[[T]].
-  [[Biking]]:	
-  [[Eli]]:	
-  [[MY]]:	
-  [T Folder](spot://tfolder):	
+  [[Biking]]:
+  [[Eli]]:
+  [[MY]]:
+  [T Folder](spot://tfolder):
+  [[Food]]:	
+  [[Legal]]:	
+  [[Life]]:	
+  [[Music]]:	
+  [[Sys]]:	
+  [[Tags]]:	
+  [[Trash]]:	
+  [[Web]]:	
 
 - [[CAR]], [[Music]], 
 

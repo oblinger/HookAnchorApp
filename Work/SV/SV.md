@@ -13,28 +13,31 @@
 - INFO:			[[SV Code]], [[SVT]], [[SV Legal]], [[SV Folder]], [[Meta SV]],
 - ARCHIVE:		[[SV Archive]],   [[SV Wings]],
 - [[SV Basketball Info]]
-  [BUG](spot://bug):	
-  [[Bug.]]:	
-  [Bug Actual List Page](spot://bugactuallistpage):	
-  [Bug Board Page](spot://bugboardpage):	
-  [[Bugs]]:	
-  [Fireball](spot://fireball):	
-  [HALOS](spot://halos):	
-  [[Investor Intros]]:	
-  [Jira](spot://jira):	
-  [Jira Me Page](spot://jiramepage):	
-  [[July Hiring]]:	
-  [SV Clickup Page](spot://svclickuppage):	
-  [SV Confluence Page](spot://svconfluencepage):	
-  [SV C Root](spot://svcroot):	
-  [[SV FIN]]:	
-  [SV Google Drive Page](spot://svgoogledrivepage):	
-  [SV G Root](spot://svgroot):	
-  [[SV Individuals]]:	
-  [[SV Letter]]:	
-  [SV Log Page](spot://svlogpage):	
-  [[SV lrn]]:	
-  [[SV Roadmap]]:	
+  [BUG](spot://bug):
+  [[Bug.]]:
+  [Bug Actual List Page](spot://bugactuallistpage):
+  [Bug Board Page](spot://bugboardpage):
+  [[Bugs]]:
+  [Fireball](spot://fireball):
+  [HALOS](spot://halos):
+  [[Investor Intros]]:
+  [Jira](spot://jira):
+  [Jira Me Page](spot://jiramepage):
+  [[July Hiring]]:
+  [SV Clickup Page](spot://svclickuppage):
+  [SV Confluence Page](spot://svconfluencepage):
+  [SV C Root](spot://svcroot):
+  [[SV FIN]]:
+  [SV Google Drive Page](spot://svgoogledrivepage):
+  [SV G Root](spot://svgroot):
+  [[SV Individuals]]:
+  [[SV Letter]]:
+  [SV Log Page](spot://svlogpage):
+  [[SV lrn]]:
+  [[SV Roadmap]]:
+  [[2023 Deliverables]]:	
+  [Canva](spot://canva):	
+  [[Circle]]:	
 
 
 :: [[cvt]], 

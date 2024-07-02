@@ -2,6 +2,11 @@
 :: [['kldivergence']]
 .[[Stat]].
 [ARIMA Algorithm](arimaalgorithm), [AutoRegressive](autoregressive), [Bayes Optimal Error](bayesoptimalerror), [HarmonicMean](harmonicmean), [KL Divergence](kldivergence), [Likelihood](likelihood), [PCA](pca)
+  [[MinCalcs]]:	
+  [[Ransac]]:	
+  [[Sigmoid]]:	
+  [[Softmax]]:	
+  [[Stationary]]:	
 
 before
 stuff

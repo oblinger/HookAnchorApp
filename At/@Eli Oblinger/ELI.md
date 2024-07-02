@@ -1,7 +1,14 @@
 .[[Eli]].
-  [[Babysitting]]:	
-  [[Clarendon]]:	
-  [[Daycare Applications]]:	
+  [[Babysitting]]:
+  [[Clarendon]]:
+  [[Daycare Applications]]:
+  [[2022-05 ELI next school]]:	
+  [[2023-05 Cool Kids]]:	
+  [[Eli Activities]]:	
+  [[Eli Firsts]]:	
+  [[Eli Food]]:	
+  [[Eli Interactions]]:	
+  [[Eli Strategy]]:	
 
 - [[ELI Quotes]] 
 [https://youtu.be/XBxLpOvm01w](https://youtu.be/XBxLpOvm01w)

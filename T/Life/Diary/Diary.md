@@ -1,7 +1,8 @@
 
 :: [[Jnl]],   [[Reflections]]
 .[[Diary]].
-  [[Journal]]:	
-  [[Journaling]]:	
-  [[Journal Old]]:	
+  [[Journal]]:
+  [[Journaling]]:
+  [[Journal Old]]:
+  [[Reflections]]:	
 

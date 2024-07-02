@@ -1,29 +1,34 @@
 
 :: [[MED.]]
 .[[MED]].
-  [[Glycemic Index]]:	
-  [[Jet Lag]]:	
-  [[MED Blood Pressure]]:	
-  [[MED Blood Tests]]:	
-  [[MED Cholesterol]]:	
-  [[MED Doctors]]:	
-  [[MED Exercise]]:	
-  [[MED Food]]:	
-  [[MED General]]:	
-  [[MED Heart]]:	
-  [[MED History]]:	
-  [[MED Insurance]]:	
-  [[MED Log]]:	
-  [[MED Measurements]]:	
-  [[MED Pills]]:	
-  [[MED Psoriasis]]:	
-  [[MED Ref]]:	
-  [[MED Research]]:	
-  [[MED Sleep]]:	
-  [[MED Vaccinations]]:	
-  [[MED Vision]]:	
-  [[MED VO2Max]]:	
-  [[MED Weight]]:	
+  [[Glycemic Index]]:
+  [[Jet Lag]]:
+  [[MED Blood Pressure]]:
+  [[MED Blood Tests]]:
+  [[MED Cholesterol]]:
+  [[MED Doctors]]:
+  [[MED Exercise]]:
+  [[MED Food]]:
+  [[MED General]]:
+  [[MED Heart]]:
+  [[MED History]]:
+  [[MED Insurance]]:
+  [[MED Log]]:
+  [[MED Measurements]]:
+  [[MED Pills]]:
+  [[MED Psoriasis]]:
+  [[MED Ref]]:
+  [[MED Research]]:
+  [[MED Sleep]]:
+  [[MED Vaccinations]]:
+  [[MED Vision]]:
+  [[MED VO2Max]]:
+  [[MED Weight]]:
+  [[Exercise]]:	
+  [[Low Back Pain]]:	
+  [[Medifast]]:	
+  [[MED-Vitamins]]:	
+  [[run]]:	
 
 
 [[MED]]:	Daily Exercise [[Habit]].

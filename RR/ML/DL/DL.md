@@ -11,11 +11,23 @@
   [[DL Strategy]]:
   [[DL SYS]]:
   [[DL Topic]]:
-  [[DL algs]]:	
-  [[DL optimization]]:	
-  [[DL strategy]]:	
-  [[DL SYStems]]:	
-  [[DL topics]]:	
+  [[DL algs]]:
+  [[DL optimization]]:
+  [[DL strategy]]:
+  [[DL SYStems]]:
+  [[DL topics]]:
+  [[Activation Functions]]:	
+  [[Coursera Notes]]:	
+  [[Feed Forward Layer]]:	
+  [[GenAI]]:	
+  [[Gradient Checking]]:	
+  [[Invertable Density Estimation]]:	
+  [[LoRA]]:	
+  [[Regularization]]:	
+  [[ReLU]]:	
+  [[Segment Anything]]:	
+  [[Self Supervised Learning]]:	
+  [[Transformers]]:	
 
 
 - [[LoRA]] 

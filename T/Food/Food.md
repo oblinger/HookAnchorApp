@@ -1,9 +1,19 @@
 .[[Food]].
-  [[Diet]]:	
-  [[dinner]]:	
-  [[Meals]]:	
-  [[Meals Thermomix]]:	
-  [[Meals Vegetables]]:	
+  [[Diet]]:
+  [[dinner]]:
+  [[Meals]]:
+  [[Meals Thermomix]]:
+  [[Meals Vegetables]]:
+  [[ContainerWeights]]:	
+  [[Delivery]]:	
+  [[desserts]]:	
+  [[Entrees]]:	
+  [[FastingDiet]]:	
+  [[Food Parents]]:	
+  [[Groc]]:	
+  [[Noom Notes]]:	
+  [[Restaurants]]:	
+  [[Try Foods]]:	
 
 
 :: [[qwd]]
