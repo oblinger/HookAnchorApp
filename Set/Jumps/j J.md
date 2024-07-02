@@ -225,4 +225,5 @@ JUMPS:
 - [j BUY](spot://j~BUY): 
 - [j PLN](spot://j~PLN): 
 - [j CAR](spot://j~CAR): 
+- [j NEWS](spot://j~NEWS): 
 

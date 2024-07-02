@@ -8,6 +8,6 @@
   [[fun]]:	
   [[gap]]:	
   [[Habit]]:	
-  [[hack]]:	
+  [[Hack Todo]]:	
   [[home]]:	
 

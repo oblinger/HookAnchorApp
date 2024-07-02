@@ -8,7 +8,7 @@
 - sp grab and sp add should both add a link to clipboard
 
 - obsidian memorization cards
-- [[hack]].	km copy entries
+- [[Hack Todo]].	km copy entries
 - fix history month
 - OBS - Evernote log of dated entries
     ingest all dated entries and starred entries 

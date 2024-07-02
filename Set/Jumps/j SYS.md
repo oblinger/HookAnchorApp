@@ -9,4 +9,5 @@ JUMPS:
 - [SYS Setup](spot://SYS~Setup): 
 - [SYS Task Lists](spot://SYS~Task~Lists): 
 - [Bard Page](spot://Bard~Page): 
+- [SYS Facet](spot://SYS~Facet): 
 
