@@ -7,7 +7,17 @@
   [[SYS Notations]]:
   [[SYS Setup]]:
   [[SYS Task Lists]]:
-  [Bard Page](spot://bardpage):	
+  [Bard Page](spot://bardpage):
+  [[Action Notes]]:	
+  [[Automation]]:	
+  [[KBD Global Keys]]:	
+  [[KBD Notion]]:	
+  [[KBD Obsidian Keys]]:	
+  [[KBD Shortcuts]]:	
+  [[KM]]:	
+  [[My Android]]:	
+  [[Notifications]]:	
+  [[OBS]]:	
 
 .                 **MY PERSONAL SYSTEMS**
 

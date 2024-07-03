@@ -1,7 +1,10 @@
 .[[Closet]].
 [[Attach]]
-  [[Empty]]:	
-  [[PAGE]]:	
+  [[Empty]]:
+  [[PAGE]]:
+  [[Untitled]]:	
+  [[Untyped]]:	
+  [[UNTYPED Entry]]:	
 
 
 :: [[PAGE]]

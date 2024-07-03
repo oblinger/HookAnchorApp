@@ -35,9 +35,12 @@
   [SV Log Page](spot://svlogpage):
   [[SV lrn]]:
   [[SV Roadmap]]:
-  [[2023 Deliverables]]:	
-  [Canva](spot://canva):	
-  [[Circle]]:	
+  [[2023 Deliverables]]:
+  [Canva](spot://canva):
+  [[Circle]]:
+  [[Idea]]:	
+  [[SV90]]:	
+  [[SV90.]]:	
 
 
 :: [[cvt]], 

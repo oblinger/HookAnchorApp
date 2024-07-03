@@ -11,7 +11,10 @@
   [[Tags]]:
   [[Trash]]:
   [[Web]]:
-  [[CAR]]:	
+  [[CAR]]:
+  [[COMP]]:	
+  [[FIN]]:	
+  [[MED]]:	
 
 - [[CAR]], [[Music]], 
 

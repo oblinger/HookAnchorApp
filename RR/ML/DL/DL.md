@@ -16,18 +16,28 @@
   [[DL strategy]]:
   [[DL SYStems]]:
   [[DL topics]]:
-  [[Activation Functions]]:	
-  [[Coursera Notes]]:	
-  [[Feed Forward Layer]]:	
-  [[GenAI]]:	
-  [[Gradient Checking]]:	
-  [[Invertable Density Estimation]]:	
-  [[LoRA]]:	
-  [[Regularization]]:	
-  [[ReLU]]:	
-  [[Segment Anything]]:	
-  [[Self Supervised Learning]]:	
-  [[Transformers]]:	
+  [[Activation Functions]]:
+  [[Coursera Notes]]:
+  [[Feed Forward Layer]]:
+  [[GenAI]]:
+  [[Gradient Checking]]:
+  [[Invertable Density Estimation]]:
+  [[LoRA]]:
+  [[Regularization]]:
+  [[ReLU]]:
+  [[Segment Anything]]:
+  [[Self Supervised Learning]]:
+  [[Transformers]]:
+  [[CNN]]:	
+  [[GPT]]:	
+  [[LLM]]:	
+  [[NG Notation]]:	
+  [[ORPO Odds Ratio Preference Optimization]]:	
+  [[RAG]]:	
+  [[RASA]]:	
+  [[RLHF Reinforcement Learning from Human Feedback]]:	
+  [[VAE]]:	
+  [[VAE - Variational Auto Encoder]]:	
 
 
 - [[LoRA]] 

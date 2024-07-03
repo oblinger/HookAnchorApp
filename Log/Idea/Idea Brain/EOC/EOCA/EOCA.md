@@ -1,11 +1,26 @@
 .[[EOCA]].
-  [[End Of Man Book]]:	
-  [[EndOfMan BookOutline]]:	
-  [[EOCA Civilizing tendency]]:	
-  [[EOCA Definitions]]:	
-  [[EOCA Publish]]:	
-  [[EOCA Root]]:	
-  [[EOCA The Writing Is On The Wall]]:	
+  [[End Of Man Book]]:
+  [[EndOfMan BookOutline]]:
+  [[EOCA Civilizing tendency]]:
+  [[EOCA Definitions]]:
+  [[EOCA Publish]]:
+  [[EOCA Root]]:
+  [[EOCA The Writing Is On The Wall]]:
+  [[EOCB Book Snipits]]:	
+  [[EOCB SandboxFutility]]:	
+  [[EOCB Web]]:	
+  [[EOCI Alignment as Mind Slavery]]:	
+  [[EOCI Digital Native]]:	
+  [[EOCI Leviathan]]:	
+  [[EOCI ProblemOfQualia]]:	
+  [[EOCK Corp AI]]:	
+  [[EOC Log]]:	
+  [[EOCT Argument]]:	
+  [[EOCT Plausible Paths]]:	
+  [[EOCT Prime Path]]:	
+  [[EOCT Ways Intelligence Will Be Super]]:	
+  [[EOCT What Happens Now]]:	
+  [[Paths]]:	
 
 
 :: [[EOCA Civilizing tendency]],   [[EOCA Definitions]],   [[EOCA The Writing Is On The Wall]]

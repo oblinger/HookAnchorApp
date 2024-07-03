@@ -11,8 +11,12 @@
   [[MY Staff]]:
   [[MY Stuff]]:
   [[Closet]]:
-  [[Myfo]]:	
-  [MY Folder](spot://myfolder):	
+  [[Myfo]]:
+  [MY Folder](spot://myfolder):
+  [[Meta]]:	
+  [[QUICKADD]]:	
+  [[Sys]]:	
+  [[TEMPLATER]]:	
 
 
 :: [[Closet]],   [[Meta]],   [[Myfo]],   [[Pln]],   [[QUICKADD]],   [[TEMPLATER]]

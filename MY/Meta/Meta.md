@@ -1,3 +1,17 @@
+.[[Meta]].
+  [[Meta Flow]]:	
+  [[Meta KM]]:	
+  [[Meta List]]:	
+  [[Meta Logs]]:	
+  [[Meta Meta]]:	
+  [[Meta Meta Conept]]:	
+  [[Meta Org (old page)]]:	
+  [[Meta Plan]]:	
+  [[Meta Proj]]:	
+  [[Meta Set]]:	
+  [[Meta Tasks]]:	
+  [[Meta Topic]]:	
+
 
 :: [[Set]]
 

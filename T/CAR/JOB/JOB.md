@@ -2,11 +2,14 @@
 .[[JOB]].
 - [[Hiring]]:
 - [[JOB History]]:
-  [[JOB Compensation]]:	
-  [[JOB Postings]]:	
-  [[JOB Tests]]:	
-  [[JOB Types]]:	
+  [[JOB Compensation]]:
+  [[JOB Postings]]:
+  [[JOB Tests]]:
+  [[JOB Types]]:
+  [[Jobs]]:	
 
+
+[[JOB History]], [[Job Tests]], 
 
 JUMPS:
 - [JOB Compensation](spot://JOB~Compensation): 

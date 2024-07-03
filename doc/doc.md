@@ -52,7 +52,10 @@
   [[DocTensorFlow]]:
   [[Doctor]]:
   [[DocVagrant]]:
-  [[DocJupyter]]:	
+  [[DocJupyter]]:
+  [[AWS Log]]:	
+  [Doc Folder](spot://docfolder):	
+  [[Unix Command Line]]:	
 
 
 

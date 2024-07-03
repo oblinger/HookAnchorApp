@@ -29,7 +29,8 @@
   [Pln Personal](spot://plnpersonal):
   [Pln Work](spot://plnwork):
   [[Eat]]:
-  [[pPlan]]:	
+  [[pPlan]]:
+  [[WRM]]:	
 
 
 :: [[Friday Dates]]

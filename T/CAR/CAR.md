@@ -6,10 +6,12 @@
 - [JOB](spot://job)
 - [Mentors](spot://mentors)
 - [MGR](spot://mgr), [RES](spot://res), [CAR Coach](spot://carcoach)
-  [[Career]]:	
-  [[CRM]]:	
-  [[NextJob]]:	
-  [[NJ]]:	
+  [[Career]]:
+  [[CRM]]:
+  [[NextJob]]:
+  [[NJ]]:
+  [[JOB Compensation]]:	
+  [[MGR Log]]:	
 
 
 :: [[NextJob]]

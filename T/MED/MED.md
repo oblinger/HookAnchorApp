@@ -24,11 +24,12 @@
   [[MED Vision]]:
   [[MED VO2Max]]:
   [[MED Weight]]:
-  [[Exercise]]:	
-  [[Low Back Pain]]:	
-  [[Medifast]]:	
-  [[MED-Vitamins]]:	
-  [[run]]:	
+  [[Exercise]]:
+  [[Low Back Pain]]:
+  [[Medifast]]:
+  [[MED-Vitamins]]:
+  [[run]]:
+  [[MED.]]:	
 
 
 [[MED]]:	Daily Exercise [[Habit]].
