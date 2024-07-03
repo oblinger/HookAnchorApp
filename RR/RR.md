@@ -1,3 +1,11 @@
+.[[RR]].
+  [[RR Business]]:
+  [[RR MGR]]:
+  [[RR OKRs]]:
+  [[RR PAPERS]]:
+  [[RR Philosophy]]:
+  [[AI]]:	
+
 n:: Research Reference pages
 - [[RR MGR]], [[RR Philosophy]], [[RR PAPERS]],
 - 

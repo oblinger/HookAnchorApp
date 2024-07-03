@@ -1,3 +1,22 @@
+.[[Res]].
+  [[Bio Email]]:	
+  [[Bio Intro]]:	
+  [[Bio Verbal]]:	
+  [[Jared Master]]:	
+
+.[[RES]].
+  [[RES Bio]]:	
+  [RES Docx](spot://resdocx):	
+  [[RES Linked In]]:	
+  [RES Master](spot://resmaster):	
+  [[RES Numbers]]:	
+  [[RES Patents]]:	
+  [[RES Proof Points]]:	
+  [[RES References]]:	
+  [[RES Source Info]]:	
+  [[RES Star]]:	
+  [[RES Todo]]:	
+
  .[[Resume]].
 - [RES Docx](spot://RES~Docx) 			- 
 - [[RES Todo]] 			- 

@@ -1,13 +1,9 @@
-before
 .[[CV]].
-  111
-  222
-  333
   [CVA](spot://cva):	
-  [[CVP]]:	
-  [CVT](spot://cvt):	
   [CV Ana](spot://cvana):	
   [[CV Annotations]]:	
+  [[CVP]]:	
+  [CVT](spot://cvt):	
   [[CV Data]]:	
   [CV Docs](spot://cvdocs):	
   [CV Google Page](spot://cvgooglepage):	
@@ -19,4 +15,3 @@ before
   [[CV Roadmap]]:	
   [CV Root](spot://cvroot):	
 
-after

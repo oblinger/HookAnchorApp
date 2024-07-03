@@ -1,3 +1,14 @@
+.[[SYS]].
+  [NEU Folder](spot://neufolder):
+  [[SYS Dashboards]]:
+  [[SYS Facet]]:
+  [[SYS Keyboard Setup]]:
+  [[SYS Misc]]:
+  [[SYS Notations]]:
+  [[SYS Setup]]:
+  [[SYS Task Lists]]:
+  [Bard Page](spot://bardpage):	
+
 .                 **MY PERSONAL SYSTEMS**
 
 

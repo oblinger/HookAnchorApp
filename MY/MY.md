@@ -10,7 +10,9 @@
   [[MY Spot]]:
   [[MY Staff]]:
   [[MY Stuff]]:
-  [[Closet]]:	
+  [[Closet]]:
+  [[Myfo]]:	
+  [MY Folder](spot://myfolder):	
 
 
 :: [[Closet]],   [[Meta]],   [[Myfo]],   [[Pln]],   [[QUICKADD]],   [[TEMPLATER]]

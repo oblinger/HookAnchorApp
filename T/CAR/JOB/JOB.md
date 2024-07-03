@@ -1,7 +1,11 @@
 
 .[[JOB]].
-- [[Hiring]]: 
-- [[JOB History]]: 
+- [[Hiring]]:
+- [[JOB History]]:
+  [[JOB Compensation]]:	
+  [[JOB Postings]]:	
+  [[JOB Tests]]:	
+  [[JOB Types]]:	
 
 
 JUMPS:

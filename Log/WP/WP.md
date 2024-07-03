@@ -1,3 +1,6 @@
+.[[WP]].
+  [[WP Entry]]:	
+
 #log <[[Untyped]]  
 n:: 'wp...'	Work Product. Single documents outputs
 

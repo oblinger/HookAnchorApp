@@ -31,7 +31,7 @@
 	- [[COMP]] 
 		- [[Lang]] 
 		- [[INFO_PAGE]] 
-		- [[Log/Log/LOG]]   
+		- [[Log Log]]   
 		- [[Prj]] 
 		- 
 	- [[T]]

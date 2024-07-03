@@ -1,15 +1,15 @@
 #tag 
 
 #### [[Meta]]		TOP LEVEL INFO ORGANIZATIONS
-| ORG | FOLDER | META | By | Notes |
-| ---- | ---- | ---- | ---- | ---- |
-| [[Roots]] | [[Kmr Folder\|KMR]] | [[Meta Meta]] | ALL | Toplevel roots for all pages |
-| [[Pln]] | [[Plan Folder\|Plan]] | [[Meta Plan]] | By TASK | Short and long term planning |
-| [[Log/Log]] | [[Logs Folder\|Logs]]	 | [[Meta Logs]] | By TIME | Lists with a time-based org |
-| [[Set/Set]] | [[Set Folder\|Set]] | [[Meta Set]] | By TYPE | Groups of like (typed) entries |
-| [[T]] | [[T Folder\|T]]	 | [[Meta Topic]] | By TOPIC | Toplevel Taxonomic Topics |
-|  |  | [[Meta Flow]] | By PROC | My data processing paths |
-|  [[SV]]	 | [[SV Folder\|SV]]	 | [[Meta SV]]  | WORK | Work related [[WW]] |
+| ORG         | FOLDER                | META           | By       | Notes                          |
+| ----------- | --------------------- | -------------- | -------- | ------------------------------ |
+| [[Roots]]   | [[Kmr Folder\|KMR]]   | [[Meta Meta]]  | ALL      | Toplevel roots for all pages   |
+| [[Pln]]     | [[Plan Folder\|Plan]] | [[Meta Plan]]  | By TASK  | Short and long term planning   |
+| [[Log/Log]] | [[Log Folder\|Log]]   | [[Meta Logs]]  | By TIME  | Lists with a time-based org    |
+| [[Set/Set]] | [[Set Folder\|Set]]   | [[Meta Set]]   | By TYPE  | Groups of like (typed) entries |
+| [[T]]       | [[T Folder\|T]]       | [[Meta Topic]] | By TOPIC | Toplevel Taxonomic Topics      |
+|             |                       | [[Meta Flow]]  | By PROC  | My data processing paths       |
+| [[SV]]      | [[SV Folder\|SV]]     | [[Meta SV]]    | WORK     | Work related [[WW]]            |
 
 #### [[Roots]] [[Kmr Folder|--]] Top level roots for all pages
 ```dataviewjs

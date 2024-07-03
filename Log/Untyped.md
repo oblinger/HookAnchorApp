@@ -1,4 +1,4 @@
-#log[[Log/Log/LOG|#]] <[[Untyped]]  
+#log[[Log Log|#]] <[[Untyped]]  
 n:: no prefix.	Dated entries without any typing prefix
 
 
@@ -93,7 +93,7 @@ n:: no prefix.	Dated entries without any typing prefix
 | 2024-02-07 | [[trump]]                      | Voter fraud rarely happens                                                                                                        |
 | 2024-02-07 | [[trump]]                      | Trump is a danger -- his own aids tells us the truth                                                                              |
 | 2024-01-28 | [[Reflections]]                | Starting to feel caught up                                                                                                        |
-| 2024-01-26 | [[LOG]]                        | cookie clicker code                                                                                                               |
+| 2024-01-26 | [[Log Log]]                    | cookie clicker code                                                                                                               |
 | 2024-01-25 | [[FIN Log]]                    | Merrill Retirement Planning ^rplan                                                                                                |
 | 2024-01-23 | [[CVP]]                        | Design for Notion                                                                                                                 |
 | 2024-01-22 | [[CV Notes]]                   | Juan                                                                                                                              |
@@ -154,7 +154,7 @@ n:: no prefix.	Dated entries without any typing prefix
 | 2023-11-13 | [[MED Heart]]                  | Dr. HUI Visit                                                                                                                     |
 | 2023-11-13 | [[Mgt]]                        | NOV MGT Meeting                                                                                                                   |
 | 2023-11-09 | [[CVP]]                        | Still image Shot Analysis                                                                                                         |
-| 2023-11-07 | [[LOG Trash]]                  | Notes never sent or OBE                                                                                                           |
+| 2023-11-07 | [[Log Trash]]                  | Notes never sent or OBE                                                                                                           |
 | 2023-11-07 | [[Reflections]]                | Two Blistering Avoidance Failures:  Eating the Frog.  Exercising.                                                                 |
 | 2023-11-06 | [[CVP]]                        | Weekly Management Meeting                                                                                                         |
 | 2023-11-05 | [[Jnl]]                        | Retirement Planning                                                                                                               |
@@ -262,7 +262,7 @@ n:: no prefix.	Dated entries without any typing prefix
 | 2023-07-25 | [[@James Briones]]             | TC alternatives                                                                                                                   |
 | 2023-07-24 | [[@Isaac Cohen]]               | Post pitch discussion                                                                                                             |
 | 2023-07-19 | [[@Yiftach Eisenberg]]         | Cat. h Up                                                                                                                         |
-| 2023-07-17 | [[LOG]]                        | Einstein Puzzle                                                                                                                   |
+| 2023-07-17 | [[Log Log]]                    | Einstein Puzzle                                                                                                                   |
 | 2023-07-17 | [[QQ]]                         | Patent Thinking                                                                                                                   |
 | 2023-07-17 | [[QQ]]                         | Regression (Virtual Field Tests)                                                                                                  |
 | 2023-07-15 | [[ToBuy]]                      | Coffee Table                                                                                                                      |

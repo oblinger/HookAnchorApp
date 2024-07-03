@@ -1,3 +1,11 @@
+.[[KM]].
+  [[KM Anchors]]:	
+  [KM Folder](spot://kmfolder):	
+  [[KM Global 2 Local]]:	
+  [[KM Overview]]:	
+  [KM script](spot://kmscript):	
+  [KM Shell](spot://kmshell):	
+
 - [KM Script](http://km~script) 
 :: [[KM Anchors]],   [[KM Global 2 Local]],   [[KM Overview]],   [[KM.]]
 

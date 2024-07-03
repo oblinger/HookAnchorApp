@@ -1,13 +1,14 @@
 
-ROOT JUMP PAGES:
+ROOT JUMP PAGES::
 
-[[App]],	[[Book]],	[[Com]],	[[CV]],	[[Diary]],	[[Doc]],	[[Fin]],	[[Folder]],	
-[[JOB History]],	[[JOB Tests]],	[[Lst]],	[[Mac]],	[[MED]],	[[Mov]],	[[News]],	
-[[Plan]],	[[Pln]],	[[PLN]],	[[Politics]],	[[pPlan]],	[[pPrj]],	[[Stat]],	
-[[SV]],	
-[[AI]]: [[DL]],	
-[[CAR]]: [[NJ]],	[[Res]],	
+[[Application]],	[[Book]],	[[Com]],	[[CV]],	[[Diary]],	[[Doc]],	[[Fin]],	
+[[Folder]],	[[JOB History]],	[[JOB Tests]],	[[Lst]],	[[Mac]],	[[MED]],	[[Mov]],	
+[[News]],	[[Plan]],	[[Politics]],	[[pPrj]],	[[Stat]],	[[SV]],	
+[[RR]]: 
+    [[AI]]: [[DL]],	
+[[T]]: [[Eli]],	[[Food]],	[[SYS]],	
+    [[CAR]]: [[NJ]],	[[Res]],	
+    [[MY]]: [[Closet]],	
 [[Idea]]: [[EduCorp]],	
     [[EOC]]: [[EOCA]],	
-[[T]]: [[Eli]],	[[Food]],	[[Sys]],	
-    [[MY]]: [[Closet]],	
+[[Pln]]: [[pPlan]],	

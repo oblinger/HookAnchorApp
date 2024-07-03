@@ -1,3 +1,11 @@
+.[[BUY]].
+  [[BUY Clothing]]:	
+  [[BUY Food]]:	
+  [[BUY Home]]:	
+  [[BUY Ideas]]:	
+  [[BUY Log]]:	
+  [[BUY Tea]]:	
+
 
 :: [[ToBuy]]
 #set 

@@ -1,3 +1,9 @@
+.[[ML]].
+  [[ML Alg]]:	
+  [[ML Datasets]]:	
+  [[ML Ops]]:	
+  [[ML Tools]]:	
+
 
 :: [[Stat]]
 

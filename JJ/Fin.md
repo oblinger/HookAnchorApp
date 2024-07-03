@@ -1,4 +1,0 @@
-.[[Fin]].
-  [[BillPay]]:	
-  [[PenFed]]:	
-

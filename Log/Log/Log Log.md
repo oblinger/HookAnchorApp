@@ -1,6 +1,6 @@
 #tag [[Log/Log]] 
 
-- [[LOG Trash]] 
+- [[Log Trash]] 
 
 
 ### 2024-01-26  cookie clicker code

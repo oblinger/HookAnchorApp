@@ -1,3 +1,9 @@
+.[[OBS]].
+  [[OBS API Docs]]:	
+  [[OBS Examples]]:	
+  [[OBS Plugins]]:	
+  [[OBS Projects]]:	
+
 n:: OBSIDIAN setup details
 
 MY SETUP:	[[SYS]], [[OBS Plugins]], 

@@ -8,11 +8,11 @@
 
 
 [[Log/Log]]  	TEMPORALLY ORDERED TYPED NOTES
-. [[Log/Log/LOG]]			- The most generic log of stuff
+. [[Log Log]]			- The most generic log of stuff
 . [[AT]]			- Entity related logs
 
 BIG BUCKETS
-. [[LOG Trash]]		- 
+. [[Log Trash]]		- 
 
 
 LOGGING FOLDERS

@@ -59,7 +59,7 @@ THREE MONITOR SETUP
 	- [[Doc]] - Specialized doc types
 	- [[PROJ]] - Project (code) folders.  These are generally OUTSIDE the kmr tree.
 		
-	-  [[Log/Log/LOG]] - Chronically organized and labelled pages and folders  (Often part of a topic)
+	-  [[Log Log]] - Chronically organized and labelled pages and folders  (Often part of a topic)
 		- [[TAGS/TEXT]] - 
 		- [[Meeting]] - 
 		- [[REF]] - Reference type info ???   (could be listed under log, or topic)

@@ -3,14 +3,15 @@
   [[Eli]]:
   [[MY]]:
   [T Folder](spot://tfolder):
-  [[Food]]:	
-  [[Legal]]:	
-  [[Life]]:	
-  [[Music]]:	
-  [[Sys]]:	
-  [[Tags]]:	
-  [[Trash]]:	
-  [[Web]]:	
+  [[Food]]:
+  [[Legal]]:
+  [[Life]]:
+  [[Music]]:
+  [[Sys]]:
+  [[Tags]]:
+  [[Trash]]:
+  [[Web]]:
+  [[CAR]]:	
 
 - [[CAR]], [[Music]], 
 

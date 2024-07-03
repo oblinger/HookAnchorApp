@@ -1,4 +1,4 @@
-#log[[Log/Log/LOG|#]] <[[Untyped]] 
+#log[[Log Log|#]] <[[Untyped]] 
 n:: 't...'		Textual messages written by me   (Meta [[TXT]])
 
 :: [[Cmd Folder]]

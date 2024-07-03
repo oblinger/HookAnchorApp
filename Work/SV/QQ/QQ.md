@@ -1,3 +1,6 @@
+.[[QQ]].
+  [QQ Folder](spot://qqfolder):	
+
 # QUICK - QUICK work projects
 
 ### 2024-06-18  Lessons Learned From Minutes

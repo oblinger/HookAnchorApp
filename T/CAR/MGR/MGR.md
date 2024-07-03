@@ -1,3 +1,13 @@
+.[[MGR]].
+  [[MGR Annual Review]]:	
+  [[MGR Docs]]:	
+  [[MGR Leadership]]:	
+  [[MGR Log]]:	
+  [[MGR Meetings]]:	
+  [[MGR Negotiations]]:	
+  [[MGR Plan]]:	
+  [[MGR Product]]:	
+
 
 :: [[MGR Log]]
 

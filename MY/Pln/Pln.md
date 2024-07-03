@@ -1,30 +1,35 @@
 .[[Pln]].
   [[Big]]:
-  [[active]]:	
-  [[Actualize]]:	
-  [[archive]]:	
-  [[Dropped]]:	
-  [[external]]:	
-  [[Family]]:	
-  [[full]]:	
-  [[Mission]]:	
-  [[now]]:	
-  [[other]]:	
-  [[Ping]]:	
-  [[prime]]:	
-  [[Productivity]]:	
-  [[q2]]:	
-  [[Quarterly]]:	
-  [[quick]]:	
-  [Repeat](spot://repeat):	
-  [[Rocks]]:	
-  [[SCRatch]]:	
-  [[Social]]:	
-  [[Spirit]]:	
-  [[todo]]:	
-  [[Up All]]:	
-  [[Up Task]]:	
-  [[wings]]:	
+  [[active]]:
+  [[Actualize]]:
+  [[archive]]:
+  [[Dropped]]:
+  [[external]]:
+  [[Family]]:
+  [[full]]:
+  [[Mission]]:
+  [[now]]:
+  [[other]]:
+  [[Ping]]:
+  [[prime]]:
+  [[Productivity]]:
+  [[q2]]:
+  [[Quarterly]]:
+  [[quick]]:
+  [Repeat](spot://repeat):
+  [[Rocks]]:
+  [[SCRatch]]:
+  [[Social]]:
+  [[Spirit]]:
+  [[todo]]:
+  [[Up All]]:
+  [[Up Task]]:
+  [[wings]]:
+  [Pln Factory](spot://plnfactory):
+  [Pln Personal](spot://plnpersonal):
+  [Pln Work](spot://plnwork):
+  [[Eat]]:
+  [[pPlan]]:	
 
 
 :: [[Friday Dates]]
