@@ -1,55 +1,21 @@
 .[[Pln]].
- OVER:	[[Friday]], [[Habit]], [[Repeat]], [[Productivity]], [[Self Evergreen|Ever]] 
- LST1:	[[quick]], [[todo]], [[now]], [[active]], [[SCRatch]] 
- LST2: [[full]], [[prime]] 
- LST3:	[[Quarterly]], [[later]], [[wings]], [[Dropped]], [[archive]] 
- LONG:	[[Rocks]], [[q2]], [[Lrn]], [[Spirit]], [[Actualize]], [[Mission]], [[WRM]], 
- COM:  [[CRM]], [[Ping]], [[Mentor]] 
- FUN:	[[fun]], [[Social]], [[fried]], [[gap]], [[Hack Todo]], [[Fried Later]] 
- FAM:	[[Family]], [[EBT]] 
- ROOT:	[[BKT]], [[Meta List]], [[Up All]], [[Up Task]] 
- MISC: [[EBT]], [[external]],  [[other]] 
+  OVER:	[[Friday]], [[Habit]], [[Repeat]], [[Productivity]], [[Self Evergreen|Ever]]
+  LST1:	[[quick]], [[todo]], [[now]], [[active]], [[SCRatch]]
+  LST2: [[full]], [[prime]],  [[Big]], 
+  LST3:	[[Quarterly]], [[later]], [[wings]], [[Dropped]], [[archive]]
+  LONG:	[[Rocks]], [[q2]], [[Lrn]], [[Spirit]], [[Actualize]], [[Mission]], [[WRM]],
+  COM:  [[CRM]], [[Ping]], [[Mentor]]
+  FUN:	[[fun]], [[Social]], [[fried]], [[gap]], [[Hack Todo]], [[Fried Later]]
+  FAM:	[[Family]], [[EBT]], [[Friday Dates]], 
+  ROOT:	[[BKT]], [[Meta List]], [[Up All]], [[Up Task]]
+  MISC: [[EBT]], [[external]],  [[other]], [[Eat]], 
+  WORK:	[Pln Factory](spot://plnfactory), [Pln Work](spot://plnwork), 
+  ??		[Pln Personal](spot://plnpersonal), [[pPlan]], 
 
 
+But that is my point, that agreement would have Israel giving up this land in return for what? Sure you can say from a moral perspective they should give it up w/o nothing in return. And the USA should give all its territory back to native Americans too by the same argument. Perhaps so, but its not happening.
 
-
-  [[Big]]:
-  [[active]]:
-  [[Actualize]]:
-  [[archive]]:
-  [[Dropped]]:
-  [[external]]:
-  [[Family]]:
-  [[full]]:
-  [[Mission]]:
-  [[now]]:
-  [[other]]:
-  [[Ping]]:
-  [[prime]]:
-  [[Productivity]]:
-  [[q2]]:
-  [[Quarterly]]:
-  [[quick]]:
-  [Repeat](spot://repeat):
-  [[Rocks]]:
-  [[SCRatch]]:
-  [[Social]]:
-  [[Spirit]]:
-  [[todo]]:
-  [[Up All]]:
-  [[Up Task]]:
-  [[wings]]:
-  [Pln Factory](spot://plnfactory):
-  [Pln Personal](spot://plnpersonal):
-  [Pln Work](spot://plnwork):
-  [[Eat]]:
-  [[pPlan]]:
-  [[WRM]]:	
-
-
-:: [[Friday Dates]]
-
-**[[Pln]]:**	
+In the case of Israel the natural "give back" would be assurances they they would be safe from attack from within this new nation. This would I think it is very reasonable for Israeli's to doubt it would be safe
 
 
 #### [[Pln]] [[Plan Folder|--]] Short and long term planning 

@@ -1,4 +1,3 @@
-n:: The Jump Page Tree
 
 ROOT JUMP PAGES::
 

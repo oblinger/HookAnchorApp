@@ -11,6 +11,8 @@
   [[Meta Set]]:
   [[Meta Tasks]]:
   [[Meta Topic]]:
+  [[Meta Org (old page)]]:
+  [[Meta Org (old page)]]:
   [[Meta Org (old page)]]:	
 
 
