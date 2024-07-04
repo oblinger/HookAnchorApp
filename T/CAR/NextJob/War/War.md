@@ -803,7 +803,7 @@ OTHER IDEAS:
 	6.  How many stacked pennies would equal the height of the Empire State Building?
 
 ### TEACH - Teach me something fascinating I don't know.
-		Patterson Commitment.  Merkel Tree.  CNN.
+		Patterson Commitments.  Merkel Tree.  CNN.
 ### PITCH - Elevator pitch for Dream client
 
 ### TOMBSTONE - What do you want on your tombstone & how does this job help

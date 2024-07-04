@@ -1,5 +1,5 @@
 # Meta Proj
-- [[Meta Logs]], 
+- [[Meta Log]], 
 
 
 ## Personal "proj" tracking

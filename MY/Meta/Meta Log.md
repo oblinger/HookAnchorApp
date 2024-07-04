@@ -1,14 +1,14 @@
 
 
 
-(see [[Log/Log]], [[Meta Proj]])
+(see [[Log]], [[Meta Proj]])
 
 
 
 # META LOGS (Explanations) 
 
 ## DATED LOGS
-### D		DAY				Daily notes entry
+### D		DAY			Daily notes entry
 ### J		JOURNAL	Professional diary entries
 ### M		MEETING	Note from a face to face meeting (in person, phone, or zoom)
 ### N		NOTES		Personal notes

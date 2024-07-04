@@ -1,4 +1,6 @@
-.[[VAE]].
+n:: Variational Auto Encoders
+
+.[[VAEs]].
   [[VAE - Variational Auto Encoder]]:	
 
 ! Variational Autoencoder

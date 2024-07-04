@@ -1,6 +1,0 @@
-
-.[[GenAI]].
-- [[VAE]]
-- [[GANs]]
-- [[Transformers]]
-- 

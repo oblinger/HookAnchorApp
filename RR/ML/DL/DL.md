@@ -1,10 +1,12 @@
+
+:: [[GPT]]
 .[[DL]].
   [[Attention]]:
   [[Auto Encoders]]:
   [[GANs]]:
   [[LSTM]]:
   [[NN]]:
-  [[RNN]]:
+  [[RNNs]]:
   [[DL Alg]]:
   [[DL Notation]]:
   [[DL Optimization]]:
@@ -29,14 +31,14 @@
   [[Self Supervised Learning]]:
   [[Transformers]]:
   [[CNN]]:	
-  [[GPT]]:	
+  [[RR/ML/DL/GPT]]:	
   [[LLM]]:	
   [[NG Notation]]:	
   [[ORPO Odds Ratio Preference Optimization]]:	
   [[RAG]]:	
   [[RASA]]:	
   [[RLHF Reinforcement Learning from Human Feedback]]:	
-  [[VAE]]:	
+  [[VAEs]]:	
   [[VAE - Variational Auto Encoder]]:	
 
 
@@ -49,7 +51,7 @@
 
  [[LLM]], 
 
-:: [[VAE - Variational Auto Encoder]],   [[Attention]],   [[Gradient Checking]],   [[NG Notation]],   [[Invertable Density Estimation]],   [[Self Supervised Learning]],   [[Activation Functions]],   [[Auto Encoders]],  [[VAE]]
+:: [[VAE - Variational Auto Encoder]],   [[Attention]],   [[Gradient Checking]],   [[NG Notation]],   [[Invertable Density Estimation]],   [[Self Supervised Learning]],   [[Activation Functions]],   [[Auto Encoders]],  [[VAEs]]
 - [[DL Alg]], [[DL Topic]], [[DL Optimization]], 
   [Regularization](Regularization.md),   [GANs](GANs.md),   [NN](NN.md)
 #tag <[[ML]] 
@@ -62,14 +64,14 @@
 - [[DL]]
 
 [[DL]] - [[DL Alg]] 
-- [[Gen AI]]:	[[VAE]], [[GANs]], [[Transformers]]([[LLM]]),   
-- [[RNN]] 
+- [[GenAI]]:	[[VAEs]], [[GANs]], [[Transformers]]([[LLM]]),   
+- [[RNNs]] 
 - [[CNN]] 
 - [[DL SYS]] 
 - [[DL PARTS]]: [[ReLU]], 
 
 [[GenAI]] 
-- [[GPT]] 
+- [[RR/ML/DL/GPT]] 
 
 
 - [[DL Topic]]: 			[[RLHF Reinforcement Learning from Human Feedback]],  

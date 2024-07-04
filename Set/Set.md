@@ -1,8 +1,11 @@
-
-:: [[App]],   [[BUY]],   [[Books]],   [[Cmd]],   [[Humor]],   [[Jumps]],   [[Lang]],   [[Movies]],   [[Phone]],   [[Recipes]],   [[Returns]],   [[ToRead]],   [[Writings]]
 #top
 n:: Groupings of like (typed), undated entries. 
-- [[Log/Log]] (temporally ordered sets)
+
+- [[List]],  [[Log]] (temporally ordered sets)
+
+.[[Set]].
+- [[App]],   [[BUY]],   [[Books]],   [[Cmd]],   [[Humor]],   [[Lang]],   [[Movies]],   [[Phone]],   [[Recipes]],   [[Returns]],   [[ToRead]],   [[Writings]]
+- 
 - [[CTC]] 
 
 

@@ -30,7 +30,7 @@
 
 :: [[Startups]]
 
-:: [[Lists]]
+:: [[List]]
 
 :: [[Misc/page]]
 

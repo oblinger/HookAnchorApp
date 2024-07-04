@@ -1,4 +1,5 @@
 
+
 - [Auto Encoder](Auto%20Encoders.md) - 
 - [[VAE - Variational Auto Encoder]] - 
 - [[Invertable Density Estimation]] - 
@@ -8,6 +9,6 @@
 - [[KAN - Kolmogorov-Arnold Neworks]] - Deep net with summation nodes and non-linear, parametric (spline) weighting functions
 - 
 
-
+[[GenAI]] 
 
 - [[Segment Anything]] - 

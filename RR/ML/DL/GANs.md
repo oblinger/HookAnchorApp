@@ -1,6 +1,6 @@
 #tag <[[DL]]
 
-- [[VAE]] 
+- [[VAEs]] 
 
 
 # LOG

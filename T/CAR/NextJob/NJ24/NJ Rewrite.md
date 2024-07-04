@@ -1,20 +1,30 @@
 - [[War AI]], 
 
+- find the job posts; find people associated 
+- Ability to speak from first-person perspective about coding tasks
+- don't list before 15 years back
+## __
 who? alpha? mission
 
 Startup CTO experience built 40+ person Phd orgs & managing hundreds of Mill
 Looking for hands on role applying gen AI to XXXXX
 ## SENTENCES 
 
-- Proven leader bridging Generative AI Research into Practical Application
+Proven PhD/CTO -- built multiple 50+ person orgs, managed hundreds of millions in Research at DARPA, three exits and multiple products to market.  
+Looking for a hands-on role leading generative-AI-based innovation.
 
 
-IDEAS: 
-- Technical (AI/ML/DL/CV), 
-- Proven Leader 
-- Bridge Research & Prototypingk
+My value and love is driving the bleeding edge research into practice
+
+Proven leader bridging Generative AI Research into Practical Application
+
 
 ## CAPABILITIES I BRING
+
+IDEAS: 
+	- Technical (AI/ML/DL/CV), 
+	- Proven Leader 
+	- Bridge Research & Prototyping
 
 ### TECH AREA
 - Generative AI:  Covers CV/DL/ML/AI I want to highlight
@@ -23,8 +33,9 @@ IDEAS:
 - Prototyping:  Reducing Research To Practice
 - Advanced R&D
 - Innovating
+- Productizing
 
-### ROLE
+### ROLE - LEADER / HANDS ON
 - Technical Manager / Tech Lead / Director of technical project
 
 

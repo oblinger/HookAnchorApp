@@ -1,5 +1,5 @@
-(see [[Log/Log]] for sequential stuff in my KMR)
-(See [[Set/Set]] for groupings of similar items)
+(see [[Log]] for sequential stuff in my KMR)
+(See [[Set]] for groupings of similar items)
 # IN CONTACTS  (Master In Obsidian)
 ## - ALL Lst
 List of phone book lists

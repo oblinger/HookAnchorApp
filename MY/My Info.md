@@ -2,7 +2,7 @@
 
 zzz
 [[Myfo]], 
-[[Lists]],   [[Meta]], 
+[[List]],   [[Meta]], 
 [[Pln]], 
 [[Myfo]], 
 

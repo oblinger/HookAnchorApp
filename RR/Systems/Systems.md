@@ -2,7 +2,7 @@
 :: [[GenAI]],   [[Sora]],   [[Stable Diffusion]]
 
 - [[Pandoc]] 
-- [[GPT-4]] 
+- [[GPT]] 
 
 
 | task             | Google | Open AI  | Meta  | Other   |

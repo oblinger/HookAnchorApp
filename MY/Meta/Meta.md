@@ -1,16 +1,17 @@
 .[[Meta]].
-  [[Meta Flow]]:	
-  [[Meta KM]]:	
-  [[Meta List]]:	
-  [[Meta Logs]]:	
-  [[Meta Meta]]:	
-  [[Meta Meta Conept]]:	
+  [[Meta Flow]]:
+  [[Meta KM]]:
+  [[Meta List]]:
+  [[Meta Log]]:
+  [[Meta Meta]]:
+  [[Meta Meta Conept]]:
+  [[Meta Org (old page)]]:
+  [[Meta Plan]]:
+  [[Meta Proj]]:
+  [[Meta Set]]:
+  [[Meta Tasks]]:
+  [[Meta Topic]]:
   [[Meta Org (old page)]]:	
-  [[Meta Plan]]:	
-  [[Meta Proj]]:	
-  [[Meta Set]]:	
-  [[Meta Tasks]]:	
-  [[Meta Topic]]:	
 
 
 :: [[Set]]
@@ -23,7 +24,7 @@
 - ***ORG***		***FOLDER***	***META DOCS***
 - [[Top]]		[[Kmr Folder|KMR]]		[[Meta Meta]]	 ALL 		-	Top level of all info pages
 - [[Pln]]		[[Plan Folder|Plan]]		[[Meta Plan]]	 By TASK -	Short and long term planning. ([[meta Tasks]])
-- [[Log/Log]]		[[Logs Folder|Logs]]		[[Meta Logs]]	 By TIME -	Lists with a time-based org
+- [[Log/Log]]		[[Logs Folder|Logs]]		[[Meta Log]]	 By TIME -	Lists with a time-based org
 - [[MY/Meta/Set]]		[[Set Folder|Set]]		[[Meta Set]]	 By TYPE -	Groupings of like (typed) entries
 - [[T]]			[[T Folder|T]]			[[Meta Topic]]	 By TOPIC -	Toplevel Taxonomic Topics
 - 						[[Meta Flow]]	 By PROC	-	My data processing paths

@@ -1,4 +1,4 @@
-- [[Meta Logs]],
+- [[Meta Log]],
 - [[Meta List]], 
 
 
