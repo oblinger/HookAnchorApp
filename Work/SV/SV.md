@@ -1,18 +1,6 @@
 #top 
 
 .[[SV]].
-- [[SV Tasks]] -
-- TOPS:		[[WW]],   [[QQ]],  [[Mgt]],
-- [[SV Strat]]:	[[Reset]],  [[ROADMAP]],
-- [[SV Ops]]:	 	[[SV Dashboards]],  [[SV Testing]], [[SV Planning]],
-- [[SV People]]:	[[SV SW Team]],   [[CV Notes]],
-- [[SV Market]]:	[[SV Customer]],  [[SV Competitor]], [[SV Partner]],
-- [[SV Product]]: [[SV Code]],  [[SV Apps]], [[SV System]], [[SV Data]],
-- [[SV Software]]:
-- [[INV]]:
-- INFO:			[[SV Code]], [[SVT]], [[SV Legal]], [[SV Folder]], [[Meta SV]],
-- ARCHIVE:		[[SV Archive]],   [[SV Wings]],
-- [[SV Basketball Info]]
   [BUG](spot://bug):
   [[Bug.]]:
   [Bug Actual List Page](spot://bugactuallistpage):
@@ -41,6 +29,20 @@
   [[Idea]]:	
   [[SV90]]:	
   [[SV90.]]:	
+
+- [[SV Tasks]] -
+- TOPS:		[[WW]],   [[QQ]],  [[Mgt]],
+- [[SV Strat]]:	[[Reset]],  [[ROADMAP]],
+- [[SV Ops]]:	 	[[SV Dashboards]],  [[SV Testing]], [[SV Planning]],
+- [[SV People]]:	[[SV SW Team]],   [[Work/SV/CVT/CVT]],
+- [[SV Market]]:	[[SV Customer]],  [[SV Competitor]], [[SV Partner]],
+- [[SV Product]]: [[SV Code]],  [[SV Apps]], [[SV System]], [[SV Data]],
+- [[SV Software]]:
+- [[INV]]:
+- INFO:			[[SV Code]], [[SVT]], [[SV Legal]], [[SV Folder]], [[Meta SV]],
+- ARCHIVE:		[[SV Archive]],   [[SV Wings]],
+- [[SV Basketball Info]]
+
 
 
 :: [[cvt]], 

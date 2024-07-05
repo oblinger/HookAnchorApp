@@ -50,9 +50,9 @@ SUMMARY 2023-Q3
 03: [[run]]		.
 04: GAP		.
 05, [[FAM]]		.
-06: [[fun]]		.
+06: [[Fun]]		.
 08: [[ELI]]		.
-09	 [[fun]]		.
+09	 [[Fun]]		.
 10	 [[SLEEP]]	.
 
 
@@ -140,7 +140,7 @@ EVENING:  5:	6: - 11
 2  GAP: 	 Fried, Hack, Lounge(Browse, Eat, Fritter, Read, Watch)
 
 2  FAM:
-3  LIFT:	 Self(God,Project,Career), Call,Career(Learn), [[fun]](Out)
+3  LIFT:	 Self(God,Project,Career), Call,Career(Learn), [[Fun]](Out)
 
 DAILY TEMPLATE
 
@@ -163,7 +163,7 @@ Work 8 - 5:30 = 9.5 = 3daily + 3chew + 2.5coms + 1main
 
 DAILY:		Daily(Tidy, Wake, Nap, Exercise), Fam(Eli, Home)
 MAIN: 	Chew(First, Email, ..., Repeat, Papers), Coms(Talk, Text, Meet), Work(MIT, Prime, Secondary)
-LIFT:		Self(God, Project, Career), Call, Career(Learn), [[fun]](Out)	
+LIFT:		Self(God, Project, Career), Call, Career(Learn), [[Fun]](Out)	
 GAP: 		Fried, Hack, Lounge(Browse, Eat, Fritter, Read, Watch)
 
 

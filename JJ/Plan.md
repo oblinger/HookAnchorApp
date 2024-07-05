@@ -1,13 +1,16 @@
 .[[Plan]].
-  [[Calls]]:	
-  [[chew]]:	
-  [[Friday]]:	
-  [[Friday Dates]]:	
+  [[Calls]]:
+  [[chew]]:
+  [[Friday]]:
+  [[Friday Dates]]:
+  [[Fried]]:
+  [[Fried Later]]:
+  [[Fun]]:
+  [[Gap]]:
+  [[Habit]]:
+  [[Hack Todo]]:
+  [[home]]:
   [[fried]]:	
-  [[Fried Later]]:	
   [[fun]]:	
   [[gap]]:	
-  [[Habit]]:	
-  [[Hack Todo]]:	
-  [[home]]:	
 

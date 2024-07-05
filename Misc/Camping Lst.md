@@ -11,3 +11,10 @@ DISH:		Silverware, Plates, Bags,
 -BATH: 	Tooth brush/paste, Caramex, EarPlugs, Soap, 
 
 LEAVE:	Dry pack, 
+
+
+FOOD IDEAS: 
+S'mores:	Hershey bars; Big marshmallows; regular graham crackers
+Pasta:	Jars of red sauce w/ good stuff in them; Kid Pasta
+Snacks:  whatever we want to get 
+Drinks:

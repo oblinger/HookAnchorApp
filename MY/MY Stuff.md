@@ -1,4 +1,4 @@
-j
+
 # # STUFF # 
 ## = ELI =
 
@@ -169,16 +169,22 @@ Retina 3072x1920
 - $499 LG 350CD (rotates)
 - $699 LG 350nits (ergo )
 
+### Mac Accessories
+#### 2021 Daniel's AirPods Max
+
+AirPods Max
+Purchase Date: February 08, 2021
+Serial Number: H0YF518KP3WC
 ### Monitors
 #### 2020 -- # LG 32UK50T-W 32
 Bought two of these.
 
 
 
-### Monitor 32" Samsung - Aeolus 2017
+#### Monitor 32" Samsung - Aeolus 2017
 S32D850T  LS32D85KTSR/ZA   32"  2560x1440   300CD/M2   (3840x2400) (Aeolus 2017)
 
-### Monitor 32" LG - Aeolus 2017
+#### Monitor 32" LG - Aeolus 2017
 32UK52T  		3840x2160  	250-300CD/M2 (Aeolus 2017)
 32UN500-W.AUS 	3840x2160	350CD/M2     (2021.11 bought two)
 

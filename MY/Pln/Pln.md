@@ -1,16 +1,27 @@
 .[[Pln]].
   OVER:	[[Friday]], [[Habit]], [[Repeat]], [[Productivity]], [[Self Evergreen|Ever]]
-  LST1:	[[quick]], [[todo]], [[now]], [[active]], [[SCRatch]]
-  LST2: [[full]], [[prime]],  [[Big]], 
-  LST3:	[[Quarterly]], [[later]], [[wings]], [[Dropped]], [[archive]]
-  LONG:	[[Rocks]], [[q2]], [[Lrn]], [[Spirit]], [[Actualize]], [[Mission]], [[WRM]],
+  LST1:	[[Quick]], [[Todo]], [[Now]], [[Active]], [[SCRatch]]
+  LST2: [[Full]], [[Prime]],  [[Big]],
+  LST3:	[[Quarterly]], [[Later]], [[Wings]], [[Dropped]], [[Archive]]
+  LONG:	[[Rocks]], [[Q2]], [[Lrn]], [[Spirit]], [[Actualize]], [[Mission]], [[WRM]],
   COM:  [[CRM]], [[Ping]], [[Mentor]]
-  FUN:	[[fun]], [[Social]], [[fried]], [[gap]], [[Hack Todo]], [[Fried Later]]
-  FAM:	[[Family]], [[EBT]], [[Friday Dates]], 
+  FUN:	[[Fun]], [[Social]], [[Fried]], [[Gap]], [[Hack Todo]], [[Fried Later]]
+  FAM:	[[Family]], [[EBT]], [[Friday Dates]],
   ROOT:	[[BKT]], [[Meta List]], [[Up All]], [[Up Task]]
-  MISC: [[EBT]], [[external]],  [[other]], [[Eat]], 
-  WORK:	[Pln Factory](spot://plnfactory), [Pln Work](spot://plnwork), 
-  ??		[Pln Personal](spot://plnpersonal), [[pPlan]], 
+  MISC: [[EBT]], [[External]],  [[Other]], [[Eat]],
+  WORK:	[Pln Factory](spot://plnfactory), [Pln Work](spot://plnwork),
+  ??		[Pln Personal](spot://plnpersonal), [[pPlan]],
+  [[active]]:	
+  [[archive]]:	
+  [[external]]:	
+  [[full]]:	
+  [[now]]:	
+  [[other]]:	
+  [[prime]]:	
+  [[q2]]:	
+  [[quick]]:	
+  [[todo]]:	
+  [[wings]]:	
 
 
 But that is my point, that agreement would have Israel giving up this land in return for what? Sure you can say from a moral perspective they should give it up w/o nothing in return. And the USA should give all its territory back to native Americans too by the same argument. Perhaps so, but its not happening.

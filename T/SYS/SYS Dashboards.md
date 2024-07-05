@@ -44,10 +44,10 @@ LEFT FOCUSED LAYOUT
 
 | col-1 | col-2 | col-3  | col-4 |
 | :---: | :---: | :----: | :---: |
-| work  |  now  |  Week  | Week  |
+| Work  |  Now  |  Week  | Week  |
 |   "   |   "   |   "    |   "   |
 |   "   |   "   |   "    |   "   |
-| quick | todo  | active | wings |
+| Quick | Todo  | Active | Wings |
 
 
 ### PLANNING VIEW DASHBOARD
@@ -55,9 +55,9 @@ LEFT FOCUSED LAYOUT
 | col-1  | col-2 | col-3 | col-4 |
 |:------:|:-----:|:-----:|:-----:|
 |  Week  | Todo  | Prime |  Q2   |
-| Active |   "   |   "   | later |
-|  Work  | Wings | Full  | quick |
-|   "    |   "   |   "   | other |
+| Active |   "   |   "   | Later |
+|  Work  | Wings | Full  | Quick |
+|   "    |   "   |   "   | Other |
 
 
 ### COMMS DASHBOARD
@@ -66,7 +66,7 @@ LEFT FOCUSED LAYOUT
 |:---------:|:------------:|:--------:|
 | [[COMs]]  | [[COM Next]] | [[CRM]] |
 |     "     |      "       |    "     |
-| [[Calls]] | [[external]] |    "     |
+| [[Calls]] | [[External]] |    "     |
 |     "     |      "       |    "     |
 
 
@@ -74,22 +74,22 @@ LEFT FOCUSED LAYOUT
 
 ### SELF DASHBOARD
 
-| col-1 |  col-2   | col-3 | col-4 |
-| :---: | :------: | :---: | :---: |
-| Self  | BKT Tree | Prime |  Q2   |
-|   "   |    "     |   "   | Later |
-| Todo  |    "     | Full  | Quick |
-|   "   |    "     |   "   | other |
+| col-1 |  col-2   | col-3 |
+|:-----:|:--------:|:-----:|
+| Self  | BKT Tree |  Q2   |
+|   "   |    "     | Later |
+| Todo  |    "     | Quick |
+|   "   |    "     | other |
 
 
 
 ### GAP DASHBOARD
 
-| col-1 | col-2 | col-3 |
-|:-----:|:-----:|:-----:|
-| fried | hack  | ToBuy |
-|   "   |  fun  | empty |
-|   "   |  Gap  | quick |
+| col-1 |    col-2     | col-3 |
+| :---: | :----------: | :---: |
+| Fried | Hack<br>Todo | ToBuy |
+|   "   |     Fun      | Empty |
+|   "   |     Gap      | Quick |
 
 
 

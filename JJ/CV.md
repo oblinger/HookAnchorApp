@@ -10,7 +10,7 @@
   [CV Info](spot://cvinfo):	
   [CV Jira Page](spot://cvjirapage):	
   [CV Log](spot://cvlog):	
-  [[CV Notes]]:	
+  [[Work/SV/CVT/CVT]]:	
   [CV OKRs](spot://cvokrs):	
   [[CV Roadmap]]:	
   [CV Root](spot://cvroot):	

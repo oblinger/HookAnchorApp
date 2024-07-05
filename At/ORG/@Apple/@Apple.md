@@ -1,10 +1,14 @@
 
 800-692-7793  my apple   (luke in tech support)
+hdyf518kp3wchdyf518kp3wc
+hdyf518kp3wc
 
+H0YF518KP3WC
 
+Lookup Case
 -  [[@Alexander Toshev]], 
 
-## INFO / DEVICES
+## INFO / DEVICES / HOWTO
 ### INFO
 
  [Apple.com](https://apple.com),  
@@ -18,7 +22,8 @@ CUST SRV:	800-275-2273  Say: “Macbook Customer Service”
 SUBSCRIPTIONS:  Mac -> AppStore -> Menu -> !Store  -> 
   !View My Account ->  ! View Info -> 
   Manage Subscriptions ! Manage
-CHAT:  		Search “chat”  -> !Chat w Apple
+CHAT:  		https://support.apple.com/repair -> !start repair ->
+				! Pairing and Connectivity -> Continue -> Chat
 GENIUS:   	Search “genius” -> !HardwareHelp
 UNION SQ: 	415.486.4800
 PURCHASES: 	Mac->AppStore->Menu->Store-> View…
@@ -27,6 +32,8 @@ PURCHASES: 	iTunes->Menu->!Account->View…->
 iTunes Store -> Purchase History -> See All
 DISABLE PAY	Phone->Settings->Screen Time ->
 Content … Restrictions -> iTunes… Purchases ->
+COVERAGE		https://checkcoverage.apple.com/ 
+DEVICES		Web AppleID -> Devices
 iPhone-X		F17WK1VYJCL8
 ~
 800.275.2273 USA. (never tried)
@@ -86,6 +93,12 @@ Hardware Serial Number	C02V811RHTD9
 
 
 # LOG
+
+### 2024-07-05  Airmax repair
+
+- https://getsupport.apple.com/caselookup
+- Case #102339787985
+- 
 ### 2023-04-07  Sent in for
 
 Send in for repair. #  20000082294343

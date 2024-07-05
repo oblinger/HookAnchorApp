@@ -15,6 +15,9 @@
   [[Meta Org (old page)]]:
   [[Meta Org (old page)]]:
   [[Meta Org (old page)]]:
+  [[Meta Org (old page)]]:
+  [[Meta Org (old page)]]:
+  [[Meta Org (old page)]]:
   [[Meta Org (old page)]]:	
 
 
@@ -37,8 +40,8 @@
 
 SPECIALTY PAGES
 - [[CRM]]		[[AT Folder|CRM]]		[[Meta Coms]]	 How I track my regular pings
-- [[work]]		[work](spot://work~folder)		[[Meta Work]] 	 How I track my work
-- [[self]] 
+- [[Work]]		[work](spot://work~folder)		[[Meta Work]] 	 How I track my work
+- [[Self]] 
 
 
 

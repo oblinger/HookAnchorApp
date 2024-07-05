@@ -69,7 +69,7 @@ zzz
 
 
                [[forward]]
- [[Social]]    [[NSTR/Self]]    [[Work/Work]]
+ [[Social]]    [[NSTR/Self]]    [[Work]]
              [[Execution]]  		 
 
 

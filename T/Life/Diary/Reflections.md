@@ -106,7 +106,7 @@ Sunday was a pretty big waste.
 - Just not motivated so I kill many hours watching TV or reading/write on Medium
 - Need to organize fun into my week so I am motivated
 - Need to really organize my energies into actionable channels, so I make bite-sized progress in key areas so I feel better.
-  Adding this to [[full]] section.
+  Adding this to [[Full]] section.
 
 
 ### 2023-11-27  Obispo-Trip.  am I depressed?

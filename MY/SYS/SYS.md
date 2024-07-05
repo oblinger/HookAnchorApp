@@ -8,16 +8,17 @@
   [[SYS Setup]]:
   [[SYS Task Lists]]:
   [Bard Page](spot://bardpage):
-  [[Action Notes]]:	
-  [[Automation]]:	
-  [[KBD Global Keys]]:	
-  [[KBD Notion]]:	
-  [[KBD Obsidian Keys]]:	
-  [[KBD Shortcuts]]:	
-  [[KM]]:	
-  [[My Android]]:	
-  [[Notifications]]:	
-  [[OBS]]:	
+  [[Action Notes]]:
+  [[Automation]]:
+  [[KBD Global Keys]]:
+  [[KBD Notion]]:
+  [[KBD Obsidian Keys]]:
+  [[KBD Shortcuts]]:
+  [[KM]]:
+  [[My Android]]:
+  [[Notifications]]:
+  [[OBS]]:
+  [[Hack]]:	
 
 .                 **MY PERSONAL SYSTEMS**
 

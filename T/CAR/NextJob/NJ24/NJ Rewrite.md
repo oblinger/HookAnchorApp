@@ -1,4 +1,7 @@
+TODO
+- Toplevel - finish & feedback
 - [[War AI]], 
+- [[Res]] 
 
 - find the job posts; find people associated 
 - Ability to speak from first-person perspective about coding tasks

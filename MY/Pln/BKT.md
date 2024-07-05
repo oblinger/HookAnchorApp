@@ -1,3 +1,6 @@
+k[[MED]]:	Exercise
+[[NJ]]:	[[NJ Rewrite|Rewrite]], 
+[[Lrn]]:	
 
 ## >
 - [[Up Task]],  [[Meta Plan]],  [[Daily Schedules]], 
@@ -5,10 +8,10 @@
 
 TOP ORGANIZING VIEWS
 - [View Up Task](spot://View~up~task)	[[Up All]] 
-- [View Work](spot://view~work)		[[work]] 	[[Rocks]] 
-- [View Self](spot://view~self)		[[self]]		[[q2]]		
+- [View Work](spot://view~work)		[[Work]] 	[[Rocks]] 
+- [View Self](spot://view~self)		[[Self]]		[[Q2]]		
 - [View Planning](spot://view~planning)	[[Pln]]	
-- [View Gap](spot://view~gap) 		[[fried]] 		[[Hack Todo]]		[[gap]]
+- [View Gap](spot://view~gap) 		[[Fried]] 		[[Hack Todo]]		[[Gap]]
 
 ## BKT TREE
 ### 2021 

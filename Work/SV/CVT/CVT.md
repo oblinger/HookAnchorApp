@@ -1,4 +1,5 @@
 
+
 :: [[CV Data]]
 # Top: [[CVP]],  [SprintPlanning](https://docs.google.com/document/d/1F2hISCp9p-uvfzVt6OTclhOGswQ9EmbVwGxKk9uqJ28/edit),
 
@@ -32,9 +33,9 @@ DIR [CV Google](https://docs.google.com/document/d/1nGCRGOZVxvIzbM0MFpspTaCtF-f8
 - [ ] Visualizers:  2D.  DataCube. matrix
 - [ ] DATASETS
 
- [[CV Notes]]: Evt Datasets: format, video, annotations
-- [ ] [[CV Notes]]: Ground truth datasets
-- [ ] [[CV Notes]]: Demo (shotOrig, end2end, classes)
+ [[Work/SV/CVT/CVT]]: Evt Datasets: format, video, annotations
+- [ ] [[Work/SV/CVT/CVT]]: Ground truth datasets
+- [ ] [[Work/SV/CVT/CVT]]: Demo (shotOrig, end2end, classes)
 - [ ] Sidney (trained, docs, g-sheet)
 
 

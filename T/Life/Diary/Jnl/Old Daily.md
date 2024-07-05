@@ -41,7 +41,7 @@
 - [ ] 11	[[COMS]] 
 - [ ] 11	[[lunch]],  
 - [ ] 12:	[[War]] 
-- [ ] 2	[[gap]]  
+- [ ] 2	[[Gap]]  
 - [ ] 3:	[[@Joseph Yeh]]  
 - [ ] 4:	[[Exercise]]  
 
@@ -53,7 +53,7 @@
 - [ ] [[Exercise]] - 
 
 ### 2022-11-22
-- [x] [[todo]] -   MANY!
+- [x] [[Todo]] -   MANY!
 - [x] [[EduCorp]] close out & respond
 - [ ] [[FF-prize]] - email FF; outline cyber & oth
 - [ ] [[Coursera Notes]] - 
@@ -61,7 +61,7 @@
 
 ### 2022-11-21
 - [x] [[Repeat]] - 
-- [ ] [[todo]] - 
+- [ ] [[Todo]] - 
 - [x] [[EduCorp]] close out & respond
 - [ ] [[FF-prize]] - email FF; outline cyber & oth
 - [ ] [[Coursera Notes]] - 
@@ -74,7 +74,7 @@
 - [ ] 1	Lunch
 - [ ] 2	[[FF-prize]] Reading @ outlining
 - [ ] 4	exercise
-- [x] [[todo]] 
+- [x] [[Todo]] 
 
 ### 2022-11-15
 - [ ] 9	Edu Corp talk
@@ -83,10 +83,10 @@
 - [ ] 1	Lunch
 - [ ] 2	[[FF-prize]] Reading @ outlining
 - [ ] 4	exercise
-- [x] [[todo]] 
+- [x] [[Todo]] 
 
 ### 2022-11-14
-- [ ] 11	[[Repeat]] [[todo]] 
+- [ ] 11	[[Repeat]] [[Todo]] 
 - [ ] 12	[[@Jason Syversen]] 
 - [ ] 12:	lunch
 - [ ] 1:	[[2022-05 ELI next school]] 
@@ -98,7 +98,7 @@
 ### 2022-11-11
 - [x] 11	[[Coursera Notes]] - (food break)
 - [ ] 1	lunch
-- [x] 2	[[todo]] - Jason
+- [x] 2	[[Todo]] - Jason
 - [ ] 3	[[2022-05 ELI next school]] 
 - [ ] 4:	exercise
 
@@ -107,7 +107,7 @@
 ### 2022-11-10
 - [ ] 10	[[Coursera Notes]] - (food break)
 - [ ] 11:	lunch
-- [ ] 12:	[[todo]] 
+- [ ] 12:	[[Todo]] 
 - [ ] 2	[[2022-05 ELI next school]] 
 - [ ] 3:	exercise
 

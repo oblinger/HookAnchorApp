@@ -6,7 +6,7 @@
 | **CLEAN**     | [MyD](spot://MyDeskFolder), [D](spot://DesktopFolder), [Down](spot://DownloadsFolder),                                                                     |
 |               | [[Reflections]]                                                                                                                                            |
 | **HOUSE**     | Room: [My-]Desks/Bin/Shelf  House: Pass                                                                                                                    |
-| **TODO**      | Clean F1 page for week.  [[quick]] & [[todo]]                                                                                                              |
+| **TODO**      | Clean F1 page for week.  [[Quick]] & [[Todo]]                                                                                                              |
 | **PLAN**      | Week plan in Top                                                                                                                                           |
 | **IN2**       | Quick scrub                                                                                                                                                |
 |               |                                                                                                                                                            |
