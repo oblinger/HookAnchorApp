@@ -26,15 +26,46 @@
   [[2023 Deliverables]]:
   [Canva](spot://canva):
   [[Circle]]:
-  [[Idea]]:	
-  [[SV90]]:	
-  [[SV90.]]:	
+  [[Idea]]:
+  [[SV90]]:
+  [[SV90.]]:
+  [[INV]]:	
+  [[Meta SV]]:	
+  [[Mgt]]:	
+  [[QQ]]:	
+  [[Reset]]:	
+  [[ROADMAP]]:	
+  [[SV Apps]]:	
+  [[SV Archive]]:	
+  [[SV Basketball Info]]:	
+  [[SV Code]]:	
+  [[SV Competitor]]:	
+  [[SV Customer]]:	
+  [[SV Dashboards]]:	
+  [SV Data](spot://svdata):	
+  [SV Folder](spot://svfolder):	
+  [[SV Legal]]:	
+  [[SV Market]]:	
+  [[SV Ops]]:	
+  [[SV Partner]]:	
+  [[SV People]]:	
+  [[SV Planning]]:	
+  [[SV Product]]:	
+  [[SV Software]]:	
+  [[SV Strat]]:	
+  [[SV SW Team]]:	
+  [[SV System]]:	
+  [[SVT]]:	
+  [SV Tasks](spot://svtasks):	
+  [[SV Testing]]:	
+  [[SV Wings]]:	
+  [[WW]]:	
 
 - [[SV Tasks]] -
 - TOPS:		[[WW]],   [[QQ]],  [[Mgt]],
 - [[SV Strat]]:	[[Reset]],  [[ROADMAP]],
 - [[SV Ops]]:	 	[[SV Dashboards]],  [[SV Testing]], [[SV Planning]],
-- [[SV People]]:	[[SV SW Team]],   [[Work/SV/CVT/CVT]],
+- [[SV People]]:	[[SV SW Team]],   [[CV]],
 - [[SV Market]]:	[[SV Customer]],  [[SV Competitor]], [[SV Partner]],
 - [[SV Product]]: [[SV Code]],  [[SV Apps]], [[SV System]], [[SV Data]],
 - [[SV Software]]:
