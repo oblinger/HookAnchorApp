@@ -6,13 +6,13 @@
 ## Ptrs
 PLAN:  ,
 DIR      [[CVP]],
-  DELS: [SprintPlanning](https://docs.google.com/document/d/1F2hISCp9p-uvfzVt6OTclhOGswQ9EmbVwGxKk9uqJ28/edit), [CV Google](https://docs.google.com/document/d/1nGCRGOZVxvIzbM0MFpspTaCtF-f8hb-K7yi3T2c6h9s/edit), [[SV G Root]], [svdata](https://drive.google.com/drive/folders/10VWKl_3u0--LyLZmzgu8So7i1Jgq6HSr?usp=drive_link), 
-- [Shared Folder](https://drive.google.com/drive/u/4/folders/1GdLWPNXw6lNDp9kxLjIQsaX1zAcnszAl) - 
-- [BitBucket MVP Algos](https://bitbucket.org/SVEngineering/workspace/projects/MVPAL) - 
-- [JIRA](https://software-engineering-team.atlassian.net/jira/software/projects/AIT/boards/25) 
-- [CONFLUENCE](https://software-engineering-team.atlassian.net/wiki/spaces/SVAI/overview) 
-- [[CVP]] - 
-
+  DELS: , , , ,
+-  -
+-  -
+- 
+- 
+- [[CVP]] -
+  DELS: [SprintPlanning](https://docs.google.com/document/d/1F2hISCp9p-uvfzVt6OTclhOGswQ9EmbVwGxKk9uqJ28/edit), [CV Google](https://docs.google.com/document/d/1nGCRGOZVxvIzbM0MFpspTaCtF-f8hb-K7yi3T2c6h9s/edit), [[SV G Root]], [svdata](https://drive.google.com/drive/folders/10VWKl_3u0--LyLZmzgu8So7i1Jgq6HSr?usp=drive_link), [Shared Folder](https://drive.google.com/drive/u/4/folders/1GdLWPNXw6lNDp9kxLjIQsaX1zAcnszAl), [BitBucket MVP Algos](https://bitbucket.org/SVEngineering/workspace/projects/MVPAL), [JIRA](https://software-engineering-team.atlassian.net/jira/software/projects/AIT/boards/25), [CONFLUENCE](https://software-engineering-team.atlassian.net/wiki/spaces/SVAI/overview), 
 
 ## Foo
 
