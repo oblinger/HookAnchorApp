@@ -10,10 +10,10 @@
   [[CRM]]:
   [[NJ.]]:
   [[RES]]:
-  DELS: [[Meta Coms]], 
-. [[NJ24.pptx|PPTX]], [[NJ.]] 
-- [[NJ Read]], [[NJ Rewrite]], [[BOD]], 
-
+  DELS: ,
+. , [[NJ.]]
+- [[NJ Read]], [[NJ Rewrite]], [[BOD]],
+  DELS: [[Meta Coms]], [[NJ24.pptx|PPTX]], 
 
 ## ... 
 - add leading targets to my slides
