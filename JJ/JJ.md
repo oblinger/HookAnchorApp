@@ -2,7 +2,7 @@
 ROOT JUMP PAGES::
 
 [[Application]],	[[Book]],	[[CV]],	[[Diary]],	[[Doc]],	[[Folder]],	[[Lst]],	
-[[Mac]],	[[Mov]],	[[News]],	[[Org]],	[[Plan]],	[[pPrj]],	[[Stat]],	
+[[Mac]],	[[Mov]],	[[News]],	[[Org]],	[[Plan]],	[[pPrj]],	[[Stat]],	[[TXT]],	
 [[RR]]: 
     [[AI]]: [[DL]],	
 [[T]]: [[Eli]],	[[Fin]],	[[Food]],	[[MED]],	[[Politics]],	[[TRASH]],	
