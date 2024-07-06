@@ -159,11 +159,11 @@
   [Zettlr App](spot://zettlrapp):
   [zoom.us App](spot://zoom.usapp):
   [Zoom App](spot://zoomapp):
-  [[Karabiner Notes]]:	
-  [[MAC Apps]]:	
-  [[MAC How To]]:	
-  [[MAC Other HW]]:	
-  [[MAC Setup]]:	
+  [[Karabiner Notes]]:
+  [[MAC Apps]]:
+  [[MAC How To]]:
+  [[MAC Other HW]]:
+  [[MAC Setup]]:
 
 .[[MAC]].
   [[MAC Apps]]:	

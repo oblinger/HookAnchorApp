@@ -1,15 +1,15 @@
 .[[NJ]].
-  TOP:	 [[NJ Rewrite]], 
-  OLDER: [[NJ16]], [[NJ22]], [[NJ24]], 
+  TOP:	 [[NJ Rewrite]],
+  OLDER: [[NJ16]], [[NJ22]], [[NJ24]],
   [[NJ Read]]:
   [[GoogleJob]]:
   [[Lrn]]:
   [[Meta Coms]]:
   [[War]]:
-  [[BOD]]:	
-  [[CRM]]:	
-  [[NJ.]]:	
-  [[RES]]:	
+  [[BOD]]:
+  [[CRM]]:
+  [[NJ.]]:
+  [[RES]]:
 
 . [[NJ24.pptx|PPTX]], [[NJ.]] 
 - [[NJ Read]], [[NJ Rewrite]], [[BOD]], 

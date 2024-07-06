@@ -1,17 +1,21 @@
 .[[CV]].
-  [CVA](spot://cva):	
-  [CV Ana](spot://cvana):	
+  [CVA](spot://cva):
+  [CV Ana](spot://cvana):
   [[CV Annotations]]:
-  [[CV Data]]:	
-  [CV Docs](spot://cvdocs):	
-  [CV Info](spot://cvinfo):	
-  [CV Log](spot://cvlog):	
-  [CV OKRs](spot://cvokrs):	
-  [[CVP]]:	
-  [[CV Roadmap]]:	
-  [CV Root](spot://cvroot):	
-  [CVT](spot://cvt):	
-  [SVdata](spot://svdata):		
+  [[CV Data]]:
+  [CV Docs](spot://cvdocs):
+  [CV Info](spot://cvinfo):
+  [CV Log](spot://cvlog):
+  [CV OKRs](spot://cvokrs):
+  [[CVP]]:
+  [[CV Roadmap]]:
+  [CV Root](spot://cvroot):
+  [CVT](spot://cvt):
+  [SVdata](spot://svdata):
+  [CV Confluence](spot://cvconfluence):
+  [CV Google Page](spot://cvgooglepage):
+  [CV Jira Page](spot://cvjirapage):
+  [CV Notion](spot://cvnotion):
 
   ROOTS:	[CV Google Page](spot://cvgooglepage), [CV Confluence](spot://cvconfluence), [CV Jira Page](spot://cvjirapage),  [CV Notion](spot://cvnotion), 
   PROJ:		[Proj](spot://proj), 

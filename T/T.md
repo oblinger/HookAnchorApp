@@ -1,5 +1,5 @@
 .[[T]].
-  [[DD]], 
+  ,
   [[Biking]]:
   [[Eli]]:
   [[MY]]:
@@ -8,14 +8,15 @@
   [[Legal]]:
   [[Life]]:
   [[Music]]:
-  [[Sys]]:
+  :
   [[Tags]]:
   [[Trash]]:
   [[Web]]:
   [[CAR]]:
-  [[COMP]]:	
-  [[FIN]]:	
-  [[MED]]:	
+  [[COMP]]:
+  [[FIN]]:
+  [[MED]]:
+  DELS: [[DD]], [[Sys]], 
 
 - [[CAR]], [[Music]], 
 

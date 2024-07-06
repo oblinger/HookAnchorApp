@@ -1,7 +1,7 @@
 #top 
 
 .[[SV]].
-  [BUG](spot://bug):
+  :
   [[Bug.]]:
   [Bug Actual List Page](spot://bugactuallistpage):
   [Bug Board Page](spot://bugboardpage):
@@ -29,51 +29,51 @@
   [[Idea]]:
   [[SV90]]:
   [[SV90.]]:
-  [[INV]]:	
-  [[Meta SV]]:	
-  [[Mgt]]:	
-  [[QQ]]:	
-  [[Reset]]:	
-  [[ROADMAP]]:	
-  [[SV Apps]]:	
-  [[SV Archive]]:	
-  [[SV Basketball Info]]:	
-  [[SV Code]]:	
-  [[SV Competitor]]:	
-  [[SV Customer]]:	
-  [[SV Dashboards]]:	
-  [SV Data](spot://svdata):	
-  [SV Folder](spot://svfolder):	
-  [[SV Legal]]:	
-  [[SV Market]]:	
-  [[SV Ops]]:	
-  [[SV Partner]]:	
-  [[SV People]]:	
-  [[SV Planning]]:	
-  [[SV Product]]:	
-  [[SV Software]]:	
-  [[SV Strat]]:	
-  [[SV SW Team]]:	
-  [[SV System]]:	
-  [[SVT]]:	
-  [SV Tasks](spot://svtasks):	
-  [[SV Testing]]:	
-  [[SV Wings]]:	
-  [[WW]]:	
-
+  [[INV]]:
+  [[Meta SV]]:
+  [[Mgt]]:
+  [[QQ]]:
+  [[Reset]]:
+  [[ROADMAP]]:
+  [[SV Apps]]:
+  [[SV Archive]]:
+  [[SV Basketball Info]]:
+  [[SV Code]]:
+  [[SV Competitor]]:
+  [[SV Customer]]:
+  [[SV Dashboards]]:
+  :
+  [SV Folder](spot://svfolder):
+  [[SV Legal]]:
+  [[SV Market]]:
+  [[SV Ops]]:
+  [[SV Partner]]:
+  [[SV People]]:
+  [[SV Planning]]:
+  [[SV Product]]:
+  [[SV Software]]:
+  [[SV Strat]]:
+  [[SV SW Team]]:
+  [[SV System]]:
+  [[SVT]]:
+  [SV Tasks](spot://svtasks):
+  [[SV Testing]]:
+  [[SV Wings]]:
+  [[WW]]:
+  DELS: , ,
 - [[SV Tasks]] -
 - TOPS:		[[WW]],   [[QQ]],  [[Mgt]],
 - [[SV Strat]]:	[[Reset]],  [[ROADMAP]],
 - [[SV Ops]]:	 	[[SV Dashboards]],  [[SV Testing]], [[SV Planning]],
-- [[SV People]]:	[[SV SW Team]],   [[CV]],
+- [[SV People]]:	[[SV SW Team]],   ,
 - [[SV Market]]:	[[SV Customer]],  [[SV Competitor]], [[SV Partner]],
-- [[SV Product]]: [[SV Code]],  [[SV Apps]], [[SV System]], [[SV Data]],
+- [[SV Product]]: [[SV Code]],  [[SV Apps]], [[SV System]], ,
 - [[SV Software]]:
 - [[INV]]:
 - INFO:			[[SV Code]], [[SVT]], [[SV Legal]], [[SV Folder]], [[Meta SV]],
 - ARCHIVE:		[[SV Archive]],   [[SV Wings]],
 - [[SV Basketball Info]]
-
+  DELS: [BUG](spot://bug), [SV Data](spot://svdata), [[CV]], [[SV Data]], 
 
 
 :: [[cvt]], 

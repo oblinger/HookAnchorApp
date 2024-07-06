@@ -1,6 +1,7 @@
 
 .[[JOB History]].
-:: [[AF]]
-- [[j AF]]
-- [[SV]] 
-- [[BL]]  
+::
+-
+-
+- [[BL]]
+  DELS: [[AF]], [[j AF]], [[SV]], 

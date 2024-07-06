@@ -3,8 +3,8 @@
   [[Edu Stats w Consequences]]:
   [[Effective Altruism]]:
   [[EOC]]:
-  [[Forwardism]]:
-  [GHOST](spot://ghost):
+  :
+  :
   [[Ideas]]:
   [[_ideas_OLD]]:
   [[2000-00 Lean Canvas]]:
@@ -55,8 +55,8 @@
   [[Idea Brain]]:
   [[Idea Social]]:
   [[Life Projects]]:
-  [[UC]]:	
-
+  [[UC]]:
+  DELS: [[Forwardism]], [GHOST](spot://ghost), 
 
 :: [[2018-00 Alloy]],   [[Idea Brain]],   [[Idea Social]],   [[Life Projects]]
 #log 

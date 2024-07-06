@@ -6,18 +6,18 @@
   [[GANs]]:
   [[LSTM]]:
   [[NN]]:
-  [[RNNs]]:
+  :
   [[DL Alg]]:
   [[DL Notation]]:
-  [[DL Optimization]]:
-  [[DL Strategy]]:
+  :
+  :
   [[DL SYS]]:
   [[DL Topic]]:
-  [[DL algs]]:
+  :
   [[DL optimization]]:
   [[DL strategy]]:
-  [[DL SYStems]]:
-  [[DL topics]]:
+  :
+  :
   [[Activation Functions]]:
   [[Coursera Notes]]:
   [[Feed Forward Layer]]:
@@ -31,17 +31,17 @@
   [[Self Supervised Learning]]:
   [[Transformers]]:
   [[CNN]]:
-  [[RR/ML/DL/GPT]]:
+  :
   [[LLM]]:
   [[NG Notation]]:
   [[ORPO Odds Ratio Preference Optimization]]:
   [[RAG]]:
   [[RASA]]:
   [[RLHF Reinforcement Learning from Human Feedback]]:
-  [[VAEs]]:
+  :
   [[VAE - Variational Auto Encoder]]:
-  [[GPT]]:	
-
+  [[GPT]]:
+  DELS: [[RNNs]], [[DL Optimization]], [[DL Strategy]], [[DL algs]], [[DL SYStems]], [[DL topics]], [[RR/ML/DL/GPT]], [[VAEs]], 
 
 - [[LoRA]] 
 :: [[KAN - Kolmogorov-Arnold Neworks]]

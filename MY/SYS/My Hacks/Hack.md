@@ -6,7 +6,7 @@
   [[QUICKADD]]:
   [[TEMPLATER]]:
   [[KM]]:
-  [[Action Notes]]:	
+  [[Action Notes]]:
 
 PROJ:	[[Action Notes]], [[My Spot]], [[KM]], [[DAT]],
 JUNK:	[[Closet]],   

@@ -1,13 +1,13 @@
 
 .[[JOB]].
-- [[Hiring]]:
+- :
 - [[JOB History]]:
-  [[JOB Compensation]]:
+  :
   [[JOB Postings]]:
   [[JOB Tests]]:
   [[JOB Types]]:
-  [[Jobs]]:	
-
+  [[Jobs]]:
+  DELS: [[Hiring]], [[JOB Compensation]], 
 
 [[JOB History]], [[Job Tests]], 
 

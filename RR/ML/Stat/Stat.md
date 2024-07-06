@@ -7,8 +7,8 @@
   [[Sigmoid]]:
   [[Softmax]]:
   [[Stationary]]:
-  [[ADF - Augmented Dickey Fuller Test]]:	
-  [[Q-Q Plot]]:	
+  [[ADF - Augmented Dickey Fuller Test]]:
+  [[Q-Q Plot]]:
 
 before
 stuff

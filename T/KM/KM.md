@@ -5,7 +5,7 @@
   [[KM Overview]]:
   [KM script](spot://kmscript):
   [KM Shell](spot://kmshell):
-  [[PKM]]:	
+  [[PKM]]:
 
 - [KM Script](http://km~script) 
 :: [[KM Anchors]],   [[KM Global 2 Local]],   [[KM Overview]],   [[KM.]]

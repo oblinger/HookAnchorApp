@@ -8,7 +8,7 @@
   [[EduCorp Types]]:
   [[EduCorp White Paper]]:
   [[Greenhouse Farming]]:
-  [[Forwardism]]:	
+  [[Forwardism]]:
 
 
 :: [[Bee Keeping]]

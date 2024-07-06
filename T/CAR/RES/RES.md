@@ -3,21 +3,21 @@
   [[Bio Intro]]:
   [[Bio Verbal]]:
   [[Jared Master]]:
-  [[2024-04-01 Resume Rewrite]]:	
-  [[2024 Resume]]:	
-  [[RES Bio]]:	
-  [RES Docx](spot://resdocx):	
-  [[RES Linked In]]:	
-  [RES Master](spot://resmaster):	
-  [[RES Numbers]]:	
-  [[RES Patents]]:	
-  [[RES Proof Points]]:	
-  [[RES References]]:	
-  [[RES Source Info]]:	
-  [[RES Star]]:	
-  [[RES Todo]]:	
-  [Resume](spot://resume):	
-  [[z2 - Linked In Module]]:	
+  [[2024-04-01 Resume Rewrite]]:
+  [[2024 Resume]]:
+  [[RES Bio]]:
+  [RES Docx](spot://resdocx):
+  [[RES Linked In]]:
+  [RES Master](spot://resmaster):
+  [[RES Numbers]]:
+  [[RES Patents]]:
+  [[RES Proof Points]]:
+  [[RES References]]:
+  [[RES Source Info]]:
+  [[RES Star]]:
+  [[RES Todo]]:
+  [Resume](spot://resume):
+  [[z2 - Linked In Module]]:
 
 .[[RES]].
   [[RES Bio]]:	

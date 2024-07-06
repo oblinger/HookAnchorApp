@@ -1,31 +1,32 @@
 .[[EOC]].
   [[EOCA]]:
   [[eoc-atlas]]:
-  [EOCB](spot://eocb):
+  :
   [[eoc-impl]]:
-  [EOCK](spot://eock):
-  [[EOC Log]]:
-  [EOCT](spot://eoct):
+  :
+  :
+  :
   [[EOC IDEAS]]:
   [[EOC reboot]]:
   [[FF-prize]]:
-  [[Paths]]:
-  [[EOCB LimitsOnAlignment]]:	
-  [[EOCI]]:	
-  [[EOCI Consciousness]]:	
-  [[EOCI Corp AI]]:	
-  [[EOCK Alignment Wont Work]]:	
-  [[EOCK Apex Predator]]:	
-  [[EOCK Cannot Stop Ourselves]]:	
-  [[EOCK Last Best Hope]]:	
-  [[EOCK Loop Closing]]:	
-  [[EOCK Natural Selection]]:	
-  [[EOCK Nature of AI Progress]]:	
-  [[EOCT Argument Short]]:	
-  [[EOCT Last Best Hope]]:	
-  [[EOCT Subjective Aspects of Consciousness]]:	
+  :
+  [[EOCB LimitsOnAlignment]]:
+  [[EOCI]]:
+  [[EOCI Consciousness]]:
+  [[EOCI Corp AI]]:
+  [[EOCK Alignment Wont Work]]:
+  [[EOCK Apex Predator]]:
+  [[EOCK Cannot Stop Ourselves]]:
+  [[EOCK Last Best Hope]]:
+  [[EOCK Loop Closing]]:
+  [[EOCK Natural Selection]]:
+  [[EOCK Nature of AI Progress]]:
+  [[EOCT Argument Short]]:
+  [[EOCT Last Best Hope]]:
+  [[EOCT Subjective Aspects of Consciousness]]:
+  DELS: [EOCB](spot://eocb), [EOCK](spot://eock), [[EOC Log]], [EOCT](spot://eoct), [[Paths]], 
 
-
+[[EOCB]] 
 :: [[Untitled]]
 
 :: [[Log/Idea/Idea Brain/EOC/Untitled]]

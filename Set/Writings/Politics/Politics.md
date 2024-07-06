@@ -4,8 +4,8 @@
   [[race]]:
   [[__Race Pitch__]]:
   [[RacePitchArchive]]:
-  [[Socialism]]:	
-  [[trump]]:	
+  [[Socialism]]:
+  [[trump]]:
 
 
 :: [[race]]  [[Socialism]]  [[AI HISTORY]]  

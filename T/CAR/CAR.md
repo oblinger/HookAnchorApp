@@ -1,17 +1,14 @@
 
 .[[CAR]].
-- [BOD](spot://bod)
-- [COACH](spot://coach)
-- [Coaches](spot://coaches)
-- [JOB](spot://job)
+- [JOB](spot://job), , [[COACH]], [[Coaches]]
 - [Mentors](spot://mentors)
-- [MGR](spot://mgr), [RES](spot://res), [CAR Coach](spot://carcoach)
-  [[Career]]:
-  [[CRM]]:
-  [[NextJob]]:
+- [MGR](spot://mgr), , [CAR Coach](spot://carcoach)
+  [[Career]], [[NextJob]]:
   [[NJ]]:
-  [[JOB Compensation]]:	
-  [[MGR Log]]:	
+  [[JOB Compensation]]:
+  [[MGR Log]]:
+  ADDS:
+  DELS:  [RES](spot://res), [[CRM]],[BOD](spot://bod), 
 
 
 :: [[NextJob]]

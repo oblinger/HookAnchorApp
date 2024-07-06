@@ -1,5 +1,5 @@
 .[[Org]].
-  [[Uniting America]]:	
+  [[Uniting America]]:
 
 Organizations
 

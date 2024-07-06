@@ -1,3 +1,3 @@
 .[[Lst]].
-  [[Camping Lst]]:	
+  [[Camping Lst]]:
 

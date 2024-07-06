@@ -24,7 +24,7 @@
   [[DocHtml]]:
   [[DocJavascript]]:
   [[DocJquery]]:
-  [[Doc/DocJupyter]]:
+  :
   [[Doc Keyboard Maestro]]:
   [[DocLinux]]:
   [[DocMac]]:
@@ -53,10 +53,10 @@
   [[Doctor]]:
   [[DocVagrant]]:
   [[DocJupyter]]:
-  [[AWS Log]]:	
-  [Doc Folder](spot://docfolder):	
-  [[Unix Command Line]]:	
-
+  [[AWS Log]]:
+  [Doc Folder](spot://docfolder):
+  [[Unix Command Line]]:
+  DELS: [[Doc/DocJupyter]], 
 
 
 :: [[Doc/DocJupyter]]

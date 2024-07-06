@@ -1,5 +1,5 @@
 .[[Templater]].
-  [[NAMED sub note]]:	
+  [[NAMED sub note]]:
 
 
 :: [[QL template]]

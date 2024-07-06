@@ -1,5 +1,5 @@
 .[[pPrj]].
-  [p Prj List](spot://pprjlist):	
-  [p Proj Folder](spot://pprojfolder):	
-  [[PQ]]:	
+  [p Prj List](spot://pprjlist):
+  [p Proj Folder](spot://pprojfolder):
+  [[PQ]]:
 

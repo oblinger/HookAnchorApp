@@ -14,9 +14,9 @@
   [[Noom Notes]]:
   [[Restaurants]]:
   [[Try Foods]]:
-  [[FOOD Recipe Research]]:	
-  [[FOOD Research]]:	
-  [[MED Food]]:	
+  [[FOOD Recipe Research]]:
+  [[FOOD Research]]:
+  [[MED Food]]:
 
 
 :: [[qwd]]

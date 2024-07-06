@@ -8,7 +8,7 @@
   [[MED Cholesterol]]:
   [[MED Doctors]]:
   [[MED Exercise]]:
-  [[MED Food]]:
+  :
   [[MED General]]:
   [[MED Heart]]:
   [[MED History]]:
@@ -29,8 +29,8 @@
   [[Medifast]]:
   [[MED-Vitamins]]:
   [[run]]:
-  [[MED.]]:	
-
+  [[MED.]]:
+  DELS: [[MED Food]], 
 
 [[MED]]:	Daily Exercise [[Habit]].
 

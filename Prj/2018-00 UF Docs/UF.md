@@ -1,17 +1,17 @@
 .[[UF]].
-  [[ufAgenda]]:	
-  [[UfApps]]:	
-  [[ufElements]]:	
-  [[ufGenerality]]:	
-  [[UfGui]]:	
-  [[ufIntroduction]]:	
-  [[ufLAL]]:	
-  [[ufMarkdown]]:	
-  [[ufPublish]]:	
-  [[uniform1_vocabulary]]:	
-  [[uniform7_oblits]]:	
-  [[uniform7_sentences]]:	
-  [[_URF]]:	
+  [[ufAgenda]]:
+  [[UfApps]]:
+  [[ufElements]]:
+  [[ufGenerality]]:
+  [[UfGui]]:
+  [[ufIntroduction]]:
+  [[ufLAL]]:
+  [[ufMarkdown]]:
+  [[ufPublish]]:
+  [[uniform1_vocabulary]]:
+  [[uniform7_oblits]]:
+  [[uniform7_sentences]]:
+  [[_URF]]:
 
 
 - [[Uniform Full.pptx]]

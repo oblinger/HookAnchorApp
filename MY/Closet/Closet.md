@@ -2,9 +2,9 @@
 [[Attach]]
   [[Empty]]:
   [[PAGE]]:
-  [[Untitled]]:	
-  [[Untyped]]:	
-  [[UNTYPED Entry]]:	
+  [[Untitled]]:
+  [[Untyped]]:
+  [[UNTYPED Entry]]:
 
 
 :: [[PAGE]]

@@ -2,7 +2,7 @@
   [[Meta Flow]]:
   [[Meta KM]]:
   [[Meta List]]:
-  [[Meta Log]]:
+  :
   [[Meta Meta]]:
   [[Meta Meta Conept]]:
   [[Meta Org (old page)]]:
@@ -20,12 +20,19 @@
   [[Meta Org (old page)]]:
   [[Meta Org (old page)]]:
   [[Meta Org (old page)]]:
-  [[Meta Org (old page)]]:	
-
-
-:: [[Set]]
-
-:: [[Meta Proj]]
+  [[Meta Org (old page)]]:
+  [[Meta Org (old page)]]:
+  [[Meta Org (old page)]]:
+  [[Meta Org (old page)]]:
+  [[Meta Org (old page)]]:
+  [[Meta Org (old page)]]:
+  [[Meta Org (old page)]]:
+  [[Meta Org (old page)]]:
+  ADDS: [[Meta Org (old page)]]
+  DELS: ,
+::
+  ADDS: [[Meta Org (old page)]]
+  ADDS: [[Meta Org (old page)]]
 
 :: [[Roots]]
 

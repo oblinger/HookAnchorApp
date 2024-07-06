@@ -1,3 +1,3 @@
 .[[News]].
-  [BBC Page](spot://bbcpage):	
+  [BBC Page](spot://bbcpage):
 

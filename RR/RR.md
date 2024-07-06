@@ -5,26 +5,26 @@
   [[RR PAPERS]]:
   [[RR Philosophy]]:
   [[AI]]:
-  [[Alg]]:	
-  [[ByteTrack]]:	
-  [[Covid]]:	
-  [[Lrn it]]:	
-  [[MATERIALS]]:	
-  [[ML]]:	
-  [[ML Ops]]:	
-  [[Para]]:	
-  [[REF]]:	
-  [[RefMisc]]:	
-  [[Refs]]:	
-  [[Research]]:	
-  [[RMS]]:	
-  [[rrCV]]:	
-  [[SportsAI]]:	
-  [[Startups Note]]:	
-  [[Swearing]]:	
-  [[Systems]]:	
-  [[Trackers]]:	
-  [[Yolo]]:	
+  [[Alg]]:
+  [[ByteTrack]]:
+  [[Covid]]:
+  [[Lrn it]]:
+  [[MATERIALS]]:
+  [[ML]]:
+  [[ML Ops]]:
+  [[Para]]:
+  [[REF]]:
+  [[RefMisc]]:
+  [[Refs]]:
+  [[Research]]:
+  [[RMS]]:
+  [[rrCV]]:
+  [[SportsAI]]:
+  [[Startups Note]]:
+  [[Swearing]]:
+  [[Systems]]:
+  [[Trackers]]:
+  [[Yolo]]:
 
 n:: Research Reference pages
 - [[RR MGR]], [[RR Philosophy]], [[RR PAPERS]],

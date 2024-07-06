@@ -1,7 +1,7 @@
 .[[pPlan]].
   [[BKT]]:
   [[Jnl]]:
-  [[Later]]:
+  :
   [pPlan Page](spot://pplanpage):
-  [[later]]:	
-
+  [[later]]:
+  DELS: [[Later]], 
