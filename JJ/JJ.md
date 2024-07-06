@@ -1,6 +1,4 @@
 
-:: [[Com]]
-
 ROOT JUMP PAGES::
 
 [[Application]],	[[Book]],	[[CV]],	[[Diary]],	[[Doc]],	[[Folder]],	[[Lst]],	

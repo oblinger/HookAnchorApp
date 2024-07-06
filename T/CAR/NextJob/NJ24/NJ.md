@@ -7,13 +7,13 @@
   :
   [[War]]:
   [[BOD]]:
-  [[CRM]]:
+  :
   [[NJ.]]:
   [[RES]]:
   DELS: ,
 . , [[NJ.]]
 - [[NJ Read]], [[NJ Rewrite]], [[BOD]],
-  DELS: [[Meta Coms]], [[NJ24.pptx|PPTX]], 
+  DELS: [[Meta Coms]], [[NJ24.pptx|PPTX]],[[CRM]], 
 
 ## ... 
 - add leading targets to my slides

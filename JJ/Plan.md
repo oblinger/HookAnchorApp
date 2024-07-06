@@ -1,5 +1,5 @@
 .[[Plan]].
-  [[Calls]]:
+  :
   [[chew]]:
   [[Friday]]:
   [[Friday Dates]]:
@@ -13,4 +13,4 @@
   [[fried]]:
   [[fun]]:
   [[gap]]:
-  DELS: [[Fried]], [[Fun]], [[Gap]], [[Hacks]], 
+  DELS: [[Fried]], [[Fun]], [[Gap]], [[Hacks]],[[Calls]], 
