@@ -43,7 +43,7 @@ DATED LOG ENTRIES
 - [[Meeting]] 	- 
 - [[Note]]		- 
 - [[Prj]]			-
-- [[Text]]		- 
+- [[TXT]]		- 
 - [[Untyped]] 	- 
 - [[REF]] 		- 
 - [[WP]] 		- 

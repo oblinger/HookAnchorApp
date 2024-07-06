@@ -49,7 +49,7 @@
 		- [[Note]] - 
 		- [[Prj]] - 
 		- [[REF]] - 
-		- [[Text]] - 
+		- [[TXT]] - 
 		- [[WP]] -
 		- [[Untyped]]  - 
 
