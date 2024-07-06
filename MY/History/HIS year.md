@@ -1,4 +1,6 @@
 
+[[Bio Email\|Mon Feb 20  2023]]  	[[Bio Email#2022-10-31  Rafah - Microsoft Intro]]  
+[[Bio Email\|Mon Feb 20  2023]]  	[[Bio Email#2022-10-31  Avidan - Tessa VC]]  
 [[Bio\|Mon Feb 20  2023]]  	[[Bio#2023-02-20  SportsVisio newsletter and blog entry]]  
 [[2023-W08\|Mon Feb 20  2023]]  	[[2023-W08#2023-02-20  W08]]  
 [[2023-W08\|Mon Feb 20  2023]]  	[[2023-W08#Mon]]  

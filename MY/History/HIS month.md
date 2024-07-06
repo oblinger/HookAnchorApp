@@ -1,4 +1,6 @@
 
+[[DocRackspace\|Tue Jul 2  2024 ]]  	[[DocRackspace#http://50.57.178.83/]]  
+[[DocRackspace\|Tue Jul 2  2024 ]]  	[[DocRackspace#-> Nginx global install]]  
 [[DocRackspace\|Tue Jul 2  2024 ]]  	[[DocRackspace#-> Git checkout gpay1]]  
 [[DocRackspace\|Tue Jul 2  2024 ]]  	[[DocRackspace#gpay1 In: /var/www/beta.paybygroup/]]  
 [[DocRackspace\|Tue Jul 2  2024 ]]  	[[DocRackspace#build from beta.paybygroup (which is built from Base-2011-11]]  

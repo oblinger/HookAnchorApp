@@ -11,29 +11,13 @@
   [[Meta Set]]:
   [[Meta Tasks]]:
   [[Meta Topic]]:
-  [[Meta Org (old page)]]:
-  [[Meta Org (old page)]]:
-  [[Meta Org (old page)]]:
-  [[Meta Org (old page)]]:
-  [[Meta Org (old page)]]:
-  [[Meta Org (old page)]]:
-  [[Meta Org (old page)]]:
-  [[Meta Org (old page)]]:
-  [[Meta Org (old page)]]:
-  [[Meta Org (old page)]]:
-  [[Meta Org (old page)]]:
-  [[Meta Org (old page)]]:
-  [[Meta Org (old page)]]:
-  [[Meta Org (old page)]]:
-  [[Meta Org (old page)]]:
-  [[Meta Org (old page)]]:
-  [[Meta Org (old page)]]:
   ADDS: [[Meta Org (old page)]]
   DELS: ,
+
 ::
   ADDS: [[Meta Org (old page)]]
   ADDS: [[Meta Org (old page)]]
-
+  ADDS: [[Meta Org (old page)]]
 :: [[Roots]]
 
 [[Meta]]	TOP LEVEL INFO ORGANIZATIONS
