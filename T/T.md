@@ -16,7 +16,7 @@
   [[COMP]]:
   [[FIN]]:
   [[MED]]:
-  DELS: [[DD]], [[Sys]], 
+  ADDS:   [[Politics]]
 
 - [[CAR]], [[Music]], 
 

@@ -1,3 +1,6 @@
+.[[Obs]].
+  ADDS:   [Plugins Folder](spot://pluginsfolder)
+
 .[[OBS]].
   [[OBS API Docs]]:	
   [[OBS Examples]]:	
