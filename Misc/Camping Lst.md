@@ -1,12 +1,12 @@
 
-REDO:		Pills, Food/Snack, Paper Towels, Plates
+REDO:		Pills, Food/Snack, Paper Towels, Plates, TrashBags
 WEAR:		Hat, Hiking pants, Shoes, Sunglasses, 
-BIG:		Tent, SleepBags, Mattress, Stove/Fuel, Cooler, Chairs, Day pack, Wagon
-WHITE:	Ponchos, Filter, BugMesh, String, Binoculars, Towel, 
-LAMP:		HeadLamps, Cards, Deet, Sunscreen, 
+BIG:		Tent, SleepBags, Mattress, Stove/Fuel, Cooler, Chairs, Day Pack, Wagon
+WHITE:	Ponchos, Filter,  
+LAMP:		HeadLamps, Cards, Deet, Sunscreen, Binoculars, HandTowel, BugMesh, 
 
-DISH:		Silverware, Plates, Bags, 
--COOK: 	Knife, Lighter, CanOpener, Salt/Pepper, Pen, 
+DISH1:		Silverware, Plates, Bags, 
+-COOK: 	Knife, Lighter, CanOpener, Salt/Pepper, Pen, String
 -AID:	 	Bandaids, Tape, Ibuprofen/Tylenol, 
 -BATH: 	Tooth brush/paste, Caramex, EarPlugs, Soap, 
 

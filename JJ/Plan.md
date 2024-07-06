@@ -8,7 +8,7 @@
   [[Fun]]:
   [[Gap]]:
   [[Habit]]:
-  [[Hack Todo]]:
+  [[Hacks]]:
   [[home]]:
   [[fried]]:	
   [[fun]]:	

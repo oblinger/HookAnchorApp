@@ -1,5 +1,5 @@
 - Fix [[JJ]] tree
-- buy tooth brush
+- buy tooth brush; stop 30-sec smile subscription
 - look at videos from Eli; consider merging apple videos
 - Research how "Creatinin" relates to logevity
 - facets for menu sub area letters (including notes)

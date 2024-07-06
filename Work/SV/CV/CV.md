@@ -1,4 +1,20 @@
+.[[CV]].
+  [CVA](spot://cva):	
+  [CV Ana](spot://cvana):	
+  [[CV Annotations]]:
+  [[CV Data]]:	
+  [CV Docs](spot://cvdocs):	
+  [CV Info](spot://cvinfo):	
+  [CV Log](spot://cvlog):	
+  [CV OKRs](spot://cvokrs):	
+  [[CVP]]:	
+  [[CV Roadmap]]:	
+  [CV Root](spot://cvroot):	
+  [CVT](spot://cvt):	
+  [SVdata](spot://svdata):		
 
+  ROOTS:	[CV Google Page](spot://cvgooglepage), [CV Confluence](spot://cvconfluence), [CV Jira Page](spot://cvjirapage),  [CV Notion](spot://cvnotion), 
+  PROJ:		[Proj](spot://proj), 
 
 :: [[CV Data]]
 # Top: [[CVP]],  [SprintPlanning](https://docs.google.com/document/d/1F2hISCp9p-uvfzVt6OTclhOGswQ9EmbVwGxKk9uqJ28/edit),

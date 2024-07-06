@@ -4,7 +4,7 @@
 
 ### 2024  SV GALLERY / OCR Model
 
-- [Grz Notes](https://www.notion.so/sportsvisio/OCR-v3-training-single-shot-person-to-jersey-number-model-d9f4c1b04b15464d951d4c333b53a5d9) 
+- [Grz Notes - OCR v3](https://www.notion.so/sportsvisio/OCR-v3-training-single-shot-person-to-jersey-number-model-d9f4c1b04b15464d951d4c333b53a5d9) 
 
 OCR
 - SEPARATE HEADS PER DIGIT:
@@ -28,10 +28,12 @@ PLAYER ID
 
 POSE
 - https://arxiv.org/abs/2204.12484
+- Could we benefit from a better pose estimator? Yes.  But given potential gain vs cost I would put this very far on the list of things we could do.
 
 MADE-MISS
 - https://arxiv.org/abs/2004.04730
 - Trained on hundreds of examples
+- I haven't analyzed it yet. There are models with higher scores in benchmarks, but we care both about accuracy and computational cost. So I'm not sure I would stick to the same model or change, but we for sure need more data. Current model is trained on a couple hundreds of examples.
 
 
 ### 2024  SV Court Homography - DL & Pano

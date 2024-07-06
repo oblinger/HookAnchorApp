@@ -5,7 +5,7 @@
   LST3:	[[Quarterly]], [[Later]], [[Wings]], [[Dropped]], [[Archive]]
   LONG:	[[Rocks]], [[Q2]], [[Lrn]], [[Spirit]], [[Actualize]], [[Mission]], [[WRM]],
   COM:  [[CRM]], [[Ping]], [[Mentor]]
-  FUN:	[[Fun]], [[Social]], [[Fried]], [[Gap]], [[Hack Todo]], [[Fried Later]]
+  FUN:	[[Fun]], [[Social]], [[Fried]], [[Gap]], [[Hacks]], [[Fried Later]]
   FAM:	[[Family]], [[EBT]], [[Friday Dates]],
   ROOT:	[[BKT]], [[Meta List]], [[Up All]], [[Up Task]]
   MISC: [[EBT]], [[External]],  [[Other]], [[Eat]],

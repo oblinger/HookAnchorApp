@@ -1,3 +1,5 @@
+- change JJ-block build to provide ADDS and DELS link at bottom.
+
 - auto scan for broken links in spot
 - [[PQ#^newjump]]:  
 - spot grab 1pass mastadon. (got a crash)
@@ -8,7 +10,7 @@
 - sp grab and sp add should both add a link to clipboard
 
 - obsidian memorization cards
-- [[Hack Todo]].	km copy entries
+- [[Hacks]].	km copy entries
 - fix history month
 - OBS - Evernote log of dated entries
     ingest all dated entries and starred entries 

@@ -1,6 +1,6 @@
  [WORK](spot://view~work):	[[Work]],[[Rocks]] 
  [SELF](spot://view~self):	[[Self]],[[Q2]] 
- [GAP](spot://view~gap):	[[Gap]],[[Fried]],[[Hack Todo]] 
+ [GAP](spot://view~gap):	[[Gap]],[[Fried]],[[Hacks]] 
  [COMs](spot://view~comms): [[Coms]],[[Crm]] 
  [PLAN](spot://view~planning): [[Pln]] 
 
@@ -16,7 +16,7 @@ Per: 	[[Home]], [[Spirit]], [[Lrn]],
  **[[Later|LATR]]**:	[[Quarterly]], [[Wings]], [[Dropped]], [[Archive]] 
  **[[Q2]]**:	[[Rocks]], [[Lrn]], [[Spirit]], [[Actualize]], [[Mission]]
  **[[Coms|COM]]**:  [[CRM]], [[Ping]], [[Mentor]], [[Calls]] 
- **[[Fun]]**:	[[Social]], [[Fried]], [[Gap]], [[Hack Todo]], [[Fried Later]] 
+ **[[Fun]]**:	[[Social]], [[Fried]], [[Gap]], [[Hacks]], [[Fried Later]] 
  **[[Family|FAM]]**:	[[EBT]] 
  **[[BKT]]**:	[[Meta List]], [[Up All]], [[Up Task]] 
  MISC: [[EBT]], [[External]],  [[Other]], [[Full]], [[Prime]] 
