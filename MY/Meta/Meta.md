@@ -5,19 +5,13 @@
   :
   [[Meta Meta]]:
   [[Meta Meta Conept]]:
-  [[Meta Org (old page)]]:
+  [[Meta Org -old-page-]]:
   [[Meta Plan]]:
   [[Meta Proj]]:
   [[Meta Set]]:
   [[Meta Tasks]]:
   [[Meta Topic]]:
-  ADDS: [[Meta Org (old page)]]
-  DELS: ,
-
-::
-  ADDS: [[Meta Org (old page)]]
-  ADDS: [[Meta Org (old page)]]
-  ADDS: [[Meta Org (old page)]]
+  
 :: [[Roots]]
 
 [[Meta]]	TOP LEVEL INFO ORGANIZATIONS
@@ -39,7 +33,7 @@ SPECIALTY PAGES
 
 
 OTHER STUFF
-- [[Meta Org (old page)]] 	-  Overview of all info resources 
+- [[Meta Org -old-page-]] 	-  Overview of all info resources 
 - Others:    [Base](Base.md),    [meta Tasks](meta%20Tasks.md),   [Empty](Empty.md), 
 
 

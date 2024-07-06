@@ -931,7 +931,7 @@ n:: no prefix.	Dated entries without any typing prefix
 | 2013-01-30 | [[Jnl]]                        | Quit working at paybygroup???                                                                                                     |
 | 2013-00-00 | [[BUY Log]]                    | Scotch                                                                                                                            |
 | 2013-00-00 | [[FIN Log]]                    | Rent from Nick Cicero                                                                                                             |
-| 2012-09-19 | [[Meta Org (old page)]]        | Highlevel organization of Roles/Goals                                                                                             |
+| 2012-09-19 | [[Meta Org -old-page-]]        | Highlevel organization of Roles/Goals                                                                                             |
 | 2012-06-00 | [[Archeology]]                 | OKC                                                                                                                               |
 | 2011-04-10 | [[Journal Old]]                | – Not Energized                                                                                                                   |
 | 2011-00-00 | [[BUY Log]]                    | Wireless data                                                                                                                     |
