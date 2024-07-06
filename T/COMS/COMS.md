@@ -1,8 +1,11 @@
+
+:: [[Calls]]
 .[[COMS]].
   [[COM Campaigns OLDER]], [[COM Investor]], [[COM Msg]], [[COM Next]], [[Meta Coms]]
 - [[Meta Coms]],  [[COM Msg]],  [[COM Next]],
 
-  DELS: [[Calls]], [[CRM]], 
+
+calls crm
 
 # LOG
 
