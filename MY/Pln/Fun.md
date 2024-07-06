@@ -2,7 +2,7 @@
 - [[Friday]], 
 - [[j EOCK]] 
 ## FUN THINGS
-- [[BOOKS]] - [[ToRead]], 
+- [[Book]] - [[ToRead]], 
 - [[Friends]] 
 
 ## __

@@ -4,7 +4,7 @@ n:: Groupings of like (typed), undated entries.
 - [[List]],  [[Log]] (temporally ordered sets)
 
 .[[Set]].
-- [[App]],   [[BUY]],   [[Books]],   [[Cmd]],   [[Humor]],   [[Lang]],   [[Movies]],   [[Phone]],   [[Recipes]],   [[Returns]],   [[ToRead]],   [[Writings]]
+- [[App]],   [[BUY]],   [[Book]],   [[Cmd]],   [[Humor]],   [[Lang]],   [[Movies]],   [[Phone]],   [[Recipes]],   [[Returns]],   [[ToRead]],   [[Writings]]
 - 
 - [[CTC]] 
 

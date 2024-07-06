@@ -4,13 +4,13 @@
   [[NJ Read]]:
   [[GoogleJob]]:
   [[Lrn]]:
-  [[Meta Coms]]:
+  :
   [[War]]:
   [[BOD]]:
   [[CRM]]:
   [[NJ.]]:
   [[RES]]:
-
+  DELS: [[Meta Coms]], 
 . [[NJ24.pptx|PPTX]], [[NJ.]] 
 - [[NJ Read]], [[NJ Rewrite]], [[BOD]], 
 

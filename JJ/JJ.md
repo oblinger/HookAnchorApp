@@ -17,4 +17,4 @@ ROOT JUMP PAGES::
 [[SV]]: 
     [[Idea]]: [[EduCorp]],	
         [[EOC]]: [[EOCA]],	
-[[Pln]]: [[pPlan]],	
+[[Pln]]: [[COMS]],	[[pPlan]],	

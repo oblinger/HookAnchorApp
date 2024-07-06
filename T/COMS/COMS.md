@@ -1,5 +1,8 @@
-
+.[[COMS]].
+  [[COM Campaigns OLDER]], [[COM Investor]], [[COM Msg]], [[COM Next]], [[Meta Coms]]
 - [[Meta Coms]],  [[COM Msg]],  [[COM Next]],  [[Calls]],  [[CRM]], 
+
+
 # LOG
 
 ### 2024-05-16  Mentor's call list
