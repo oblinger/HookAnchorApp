@@ -1,8 +1,10 @@
 
+:: [[Com]]
+
 ROOT JUMP PAGES::
 
-[[Application]],	[[Book]],	[[Com]],	[[CV]],	[[Diary]],	[[Doc]],	[[Folder]],	
-[[Lst]],	[[Mac]],	[[Mov]],	[[News]],	[[Org]],	[[Plan]],	[[Politics]],	[[pPrj]],	
+[[Application]],	[[Book]],	[[CV]],	[[Diary]],	[[Doc]],	[[Folder]],	[[Lst]],	
+[[Mac]],	[[Mov]],	[[News]],	[[Org]],	[[Plan]],	[[Politics]],	[[pPrj]],	
 [[Stat]],	
 [[RR]]: 
     [[AI]]: [[DL]],	
@@ -13,8 +15,8 @@ ROOT JUMP PAGES::
     [[MY]]: [[Meta]],	
         [[SYS]]: 
             [[Hack]]: [[Closet]],	[[KM]],	[[Templater]],	
+[[PLN]]: [[COMS]],	[[pPlan]],	
 [[DD]]: [[UF]],	
 [[SV]]: 
     [[Idea]]: [[EduCorp]],	
         [[EOC]]: [[EOCA]],	
-[[Pln]]: [[COMS]],	[[pPlan]],	

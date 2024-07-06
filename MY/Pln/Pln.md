@@ -1,3 +1,6 @@
+.[[PLN]].
+  ADDS:   [[COMS]]
+
 .[[Pln]].
   [[active]]:
   [[archive]]:
