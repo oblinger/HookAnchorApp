@@ -7,10 +7,10 @@
   [[TEMPLATER]]:
   [[KM]]:
   [[Action Notes]]:
-
-PROJ:	[[Action Notes]], [[My Spot]], [[KM]], [[DAT]],
-JUNK:	[[Closet]],   
-
+  ADDS:   [[DAT]]
+PROJ:	[[Action Notes]], , [[KM]], [[DAT]],
+JUNK:	[[Closet]],
+  DELS: [[My Spot]], 
 OBS:	[[QUICKADD]]
 - [[TEMPLATER]]
 - [[DOC SYNC]]: 		[[DOC SYNC COMMANDS]], 

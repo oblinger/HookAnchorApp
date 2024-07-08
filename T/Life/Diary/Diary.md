@@ -4,6 +4,6 @@
   [[Journaling]]:
   [[Journal Old]]:
   [[Reflections]]:
-
-:: [[Jnl]],   [[Reflections]], 
+  ADDS:   [[Jnl]]
+:: [[Jnl]],   [[Reflections]],
 

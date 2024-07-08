@@ -1,6 +1,6 @@
 .[[PLN]].
-  ADDS:   [[COMS]]
-
+  ADDS:   
+  DELS: [[COMS]], 
 .[[Pln]].
   [[active]]:
   [[archive]]:
