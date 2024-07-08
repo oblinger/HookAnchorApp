@@ -1,5 +1,15 @@
 .[[My Content]].
   ADDS:   , [[Doc]], [[TXT]],
+
+
+
+
+
+
+
+
+
+
   DELS: [[Diary]], 
 
 

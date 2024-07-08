@@ -1,12 +1,8 @@
 .[[NJ]].
-  TOP:	 [[NJ Rewrite]],
-  OLDER: [[NJ16]], [[NJ22]], [[NJ24]],
-
-
-
-
-
-
+  TOP:	[[RES]], [[War]], [[Lrn]],
+  NJ:	[[NJ Rewrite]], [NJ Slide](spot://njslide),
+  OTHER:[[GoogleJob]], [[NJ.]], [[NJ Read]],
+  OLDER:[[NJ16]], [[NJ22]], [[NJ24]],
 
 
 

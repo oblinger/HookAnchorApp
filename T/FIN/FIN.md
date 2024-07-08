@@ -42,6 +42,16 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
 .[[FIN]].
 [[Fin log]]:	Investment plan
 [[FIN Log]]:	Retire Spreadsheet

@@ -1,5 +1,11 @@
 
 :: [[DD]],   [[RD]]
+.[[JJ]].
+
+
+
+
+
 
 ROOT JUMP PAGES::
 
@@ -7,7 +13,7 @@ ROOT JUMP PAGES::
 [[Org]],	
 [[Top]]: 
     [[My Content]]: [[Doc]],	[[TXT]],	
-    [[Pln]]: [[COMS]],	[[Diary]],	[[pPlan]],	
+    [[Pln]]: [[pPlan]],	[[COMS]],	[[Diary]],	
     [[Prj]]: [[pPrj]],	[[UF]],	
     [[RR]]: [[Book]],	[[Language]],	[[Stat]],	
         [[AI]]: 
