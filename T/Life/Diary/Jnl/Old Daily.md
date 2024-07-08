@@ -12,7 +12,7 @@
 
 ### 2022-12-01
 - [ ] 10:		[[EOCA]]:  Notes capture
-- [ ] 11:		[[chew]] 
+- [ ] 11:		[[Chew]] 
 - [ ] 11:	[[SV]]: summarize notes
 - [ ] 12	[[lunch]],  
 - [ ] 1	
@@ -22,18 +22,18 @@
 
 
 - [ ] 9:	[[EOCA]]:  Notes capture
-- [ ] 10:	[[chew]] 
+- [ ] 10:	[[Chew]] 
 - [ ] 11:	[[SV]]: summarize notes
 - [ ] 12	[[lunch]],  
 - [ ] 1	
 - [ ] 2	Yashin / Exercise
 
 - [ ] ### 2022-11-30
-- [ ] 7:	[[chew]]
+- [ ] 7:	[[Chew]]
 - [ ] 8:	[[Eli]]
 - [ ] 9	[[T/Food/Food]]
 - [ ] 10	[[Repeat]] 
-- [ ] 10:	[[chew]] 
+- [ ] 10:	[[Chew]] 
 - [ ] 11: ???
 - [ ] 12:	[[lunch]] 
 - [ ] 1'	[[War]]: 

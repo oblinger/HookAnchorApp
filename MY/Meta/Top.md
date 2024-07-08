@@ -29,11 +29,13 @@ let rows = dv.pages("")
       && fileNameWithoutExt === parentFolderName;
   })
   .map(p => [p.file.link, p.n]);
-  DELS: [[Meta]], [[Roots]], [[Kmr Folder\|KMR]], [[Meta Meta]], [[Plan Folder\|Plan]], [[Meta Plan]], [[Log]], [Log](spot://logfolder), [[Meta Log]], [[Set]], [[Set Folder\|Set]], [[Meta Set]], [[T Folder\|T]], [[Meta Topic]], [[Meta Flow]], [[SV]], [[SV Folder\|SV]], [[Meta SV]], [[WW]], 
+  DELS: , , , , , , , , , , , , , , , , , , ,
 dv.table(["File", "Description"], rows);
 ```
+  ADDS:   [[Prj]],
 
-#### [[Pln]] [[Plan Folder|--]] Short and long term planning 
+  DELS: [[Meta]], [[Roots]], [[Kmr Folder\|KMR]], [[Meta Meta]], [[Plan Folder\|Plan]], [[Meta Plan]], [[Log]], [Log](spot://logfolder), [[Meta Log]], [[Set]], [[Set Folder\|Set]], [[Meta Set]], [[T Folder\|T]], [[Meta Topic]], [[Meta Flow]], [[SV]], [[SV Folder\|SV]], [[Meta SV]], [[WW]], 
+
 ```dataviewjs
 let rows = dv.pages("")
   .where(p => {

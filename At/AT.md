@@ -95,7 +95,7 @@ n:: Entity pages (typically people, organizations, or collaborations)
   [[@Qingling Oblinger]],   [[@Epsilon Oblinger]],   [[People]],   [[@Eli Oblinger]]
 [[@Igor Shindel]],   [[@Sports Visio]]
   [[DEVSHOP]]
-  [chew](chew.md)
+  [Chew](Chew.md)
   [@Allison Binns](@Allison%20Binns.md)
   [@Allison Binns](@Allison%20Binns.md)
   [@Allison Binns](@Allison%20Binns.md)

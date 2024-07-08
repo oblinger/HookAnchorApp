@@ -34,7 +34,9 @@
   [vCard Editor App](spot://vcardeditorapp), [Visual Studio Code App](spot://visualstudiocodeapp), [VLC App](spot://vlcapp), [Voice Memo App](spot://voicememoapp)
   [Voice Memos App](spot://voicememosapp), [Webcam Settings App](spot://webcamsettingsapp), [WhatsApp App](spot://whatsappapp), [WhatSize App](spot://whatsizeapp), [Word App](spot://wordapp)
   [WorkFlowy App](spot://workflowyapp), [Xcode App](spot://xcodeapp), [YiHomeMacInternational App](spot://yihomemacinternationalapp), [Yoink App](spot://yoinkapp), [Zettlr App](spot://zettlrapp)
-  [zoom.us App](spot://zoom.usapp), [Zoom App](spot://zoomapp), 
+  [zoom.us App](spot://zoom.usapp), [Zoom App](spot://zoomapp),
+
+
 
   [Firefox App](spot://firefoxapp):
   [Flotato App](spot://flotatoapp):
