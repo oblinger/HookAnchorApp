@@ -1,22 +1,7 @@
 
 
 .[[Stat]].
-[ARIMA Algorithm](arimaalgorithm), [AutoRegressive](autoregressive), [Bayes Optimal Error](bayesoptimalerror), [HarmonicMean](harmonicmean), [KL Divergence](kldivergence), [Likelihood](likelihood), [PCA](pca)
-  [[MinCalcs]]:
-  [[Ransac]]:
-  [[Sigmoid]]:
-  [[Softmax]]:
-  :
-  [[ADF - Augmented Dickey Fuller Test]]:
-  [[Q-Q Plot]]:
-  DELS: [[Stationary]],
-before
-stuff
-111
-22
-333
 
-after stuff
 
 
 - [[KL Divergence]]: 

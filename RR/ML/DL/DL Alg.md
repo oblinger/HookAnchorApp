@@ -1,3 +1,6 @@
+.[[DL Alg]].
+  ADDS:   [[RNNs]]
+
 
 
 - [Auto Encoder](Auto%20Encoders.md) - 

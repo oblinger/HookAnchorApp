@@ -1,16 +1,15 @@
-.[[JJ]].
-
 
 ROOT JUMP PAGES::
 
-[[Application]],	[[Book]],	[[CV]],	[[Diary]],	[[Doc]],	[[Folder]],	[[SV]],	
-[[Lst]],	[[Mac]],	[[Mov]],	[[News]],	[[Org]],	[[pPrj]],	[[TXT]],	
+[[Application]],	[[Book]],	[[CV]],	[[Diary]],	[[Doc]],	[[Folder]],	[[Lst]],	
+[[Mac]],	[[Mov]],	[[News]],	[[Org]],	[[pPrj]],	[[SV]],	[[TXT]],	[[RD]],	
 [[RR]]: [[Stat]],	
-    [[AI]]: [[DL]],	
+    [[AI]]: 
+        [[DL]]: [[DL Alg]],	
 [[T]]: [[Eli]],	[[Fin]],	[[Food]],	[[MED]],	[[Politics]],	[[TRASH]],	
     [[CAR]]: 
         [[JOB]]: [[JOB History]],	[[JOB Tests]],	
-        [[NJ]]: [[Res]],	
+        [[NJ]]: [[NJ22]],	[[Res]],	
     [[MY]]: [[Meta]],	
         [[SYS]]: [[Obs]],	
             [[Hack]]: [[Closet]],	[[KM]],	[[QUICKADD]],	[[Templater]],	
