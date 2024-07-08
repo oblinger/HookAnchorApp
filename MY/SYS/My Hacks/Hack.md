@@ -10,11 +10,11 @@
   ADDS:   [[DAT]]
 PROJ:	[[Action Notes]], , [[KM]], [[DAT]],
 JUNK:	[[Closet]],
-  DELS: [[My Spot]], 
+  DELS: ,
 OBS:	[[QUICKADD]]
 - [[TEMPLATER]]
-- [[DOC SYNC]]: 		[[DOC SYNC COMMANDS]], 
-
+- : 		,
+  DELS: [[My Spot]], [[DOC SYNC]], [[DOC SYNC COMMANDS]], 
 
 ### --- TRACKER
 -- Want to see slices of work to see where to optimize

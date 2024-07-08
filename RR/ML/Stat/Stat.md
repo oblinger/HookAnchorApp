@@ -6,10 +6,10 @@
   [[Ransac]]:
   [[Sigmoid]]:
   [[Softmax]]:
-  [[Stationary]]:
+  :
   [[ADF - Augmented Dickey Fuller Test]]:
   [[Q-Q Plot]]:
-
+  DELS: [[Stationary]],
 before
 stuff
 111

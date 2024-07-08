@@ -26,7 +26,7 @@
   [[2023 Deliverables]]:
   [Canva](spot://canva):
   [[Circle]]:
-  [[Idea]]:
+  :
   [[SV90]]:
   [[SV90.]]:
   [[INV]]:
@@ -73,7 +73,7 @@
 - INFO:			[[SV Code]], [[SVT]], [[SV Legal]], [[SV Folder]], [[Meta SV]],
 - ARCHIVE:		[[SV Archive]],   [[SV Wings]],
 - [[SV Basketball Info]]
-  DELS: [BUG](spot://bug), [SV Data](spot://svdata), [[CV]], [[SV Data]], 
+  DELS: [BUG](spot://bug), [SV Data](spot://svdata), [[CV]], [[SV Data]],[[Idea]], 
 
 
 :: [[cvt]], 

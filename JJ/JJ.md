@@ -1,9 +1,11 @@
+.[[JJ]].
+
 
 ROOT JUMP PAGES::
 
-[[Application]],	[[Book]],	[[CV]],	[[Diary]],	[[Doc]],	[[Folder]],	[[Lst]],	
-[[Mac]],	[[Mov]],	[[News]],	[[Org]],	[[Plan]],	[[pPrj]],	[[Stat]],	[[TXT]],	
-[[RR]]: 
+[[Application]],	[[Book]],	[[CV]],	[[Diary]],	[[Doc]],	[[Folder]],	[[SV]],	
+[[Lst]],	[[Mac]],	[[Mov]],	[[News]],	[[Org]],	[[pPrj]],	[[TXT]],	
+[[RR]]: [[Stat]],	
     [[AI]]: [[DL]],	
 [[T]]: [[Eli]],	[[Fin]],	[[Food]],	[[MED]],	[[Politics]],	[[TRASH]],	
     [[CAR]]: 
@@ -12,8 +14,8 @@ ROOT JUMP PAGES::
     [[MY]]: [[Meta]],	
         [[SYS]]: [[Obs]],	
             [[Hack]]: [[Closet]],	[[KM]],	[[QUICKADD]],	[[Templater]],	
-[[PLN]]: [[COMS]],	[[pPlan]],	
+[[Pln]]: [[COMS]],	[[pPlan]],	
 [[DD]]: [[UF]],	
-[[SV]]: 
+[[MY Content]]: 
     [[Idea]]: [[EduCorp]],	
         [[EOC]]: [[EOCA]],	

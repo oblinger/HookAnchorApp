@@ -1,0 +1,3 @@
+.[[MY Content]].
+  ADDS:   [[Idea]]
+
