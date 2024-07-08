@@ -56,7 +56,7 @@
   [[Idea Social]]:
   [[Life Projects]]:
   [[UC]]:
-  DELS: [[Forwardism]], [GHOST](spot://ghost), 
+  ADDS:   [[Word_War]]
 
 :: [[2018-00 Alloy]],   [[Idea Brain]],   [[Idea Social]],   [[Life Projects]]
 #log 

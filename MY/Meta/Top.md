@@ -1,3 +1,6 @@
+.[[Top]].
+  ADDS:   [[Work]]
+
 #tag 
 
 #### [[Meta]]		TOP LEVEL INFO ORGANIZATIONS

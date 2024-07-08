@@ -15,11 +15,11 @@
 -
 :: [[()]]
   ADDS:   [[Z-Test]]
-  DELS: [[MinCalcs]], [[03-06  Basketball Stats.docx]], [[STATS]], 
+  DELS: , , ,
   [HarmonicMean](HarmonicMean.md),   [()](().md)
 [[Bayes Optimal Error]] [[HarmonicMean]]  [()](().md)
   [()](().md),   [Likelihood](Likelihood.md)
   [Softmax](Softmax.md),   [()](().md),   [Sigmoid](Sigmoid.md)
   [AutoRegressive](AutoRegressive.md),   [Stationary](Stationary.md)
-
+  DELS: [[MinCalcs]], [[03-06  Basketball Stats.docx]], [[STATS]], 
   [[Likelihood]]
