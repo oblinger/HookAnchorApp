@@ -3,13 +3,13 @@
 
 ROOT JUMP PAGES::
 
-[[Application]],	[[Book]],	[[Doc]],	[[Folder]],	[[Lst]],	[[Mac]],	[[Mov]],	
-[[News]],	[[Org]],	[[pPrj]],	[[TXT]],	
+[[Application]],	[[Folder]],	[[Lst]],	[[Mac]],	[[Mov]],	[[News]],	[[Org]],	
+[[pPrj]],	
 [[Top]]: 
-    [[My Content]]: [[Diary]],	
+    [[My Content]]: [[Diary]],	[[Doc]],	[[TXT]],	
     [[Pln]]: [[COMS]],	[[pPlan]],	
     [[Prj]]: [[UF]],	
-    [[RR]]: [[Language]],	[[Stat]],	
+    [[RR]]: [[Book]],	[[Language]],	[[Stat]],	
         [[AI]]: 
             [[DL]]: [[DL Alg]],	
     [[T]]: [[Eli]],	[[Fin]],	[[Food]],	[[MED]],	[[Politics]],	[[TRASH]],	
