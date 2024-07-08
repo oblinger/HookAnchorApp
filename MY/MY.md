@@ -16,8 +16,8 @@
   [[Meta]]:
   :
   [[Sys]]:
-  [[MY Content]],
-  DELS: [MY Desk Folder](spot://mydeskfolder), [[MY fo]], [[MY Github Webpage]], [[MY Spot]], [[Closet]], [[QUICKADD]], [[TEMPLATER]], 
+  ,
+  DELS: [MY Desk Folder](spot://mydeskfolder), [[MY fo]], [[MY Github Webpage]], [[MY Spot]], [[Closet]], [[QUICKADD]], [[TEMPLATER]],[[MY Content]], 
 
 :: [[Closet]],   [[Meta]],   [[Myfo]],   [[Pln]],   [[QUICKADD]],   [[TEMPLATER]]
 #root

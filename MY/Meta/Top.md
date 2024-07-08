@@ -3,24 +3,24 @@
   ADDS:   [[Pln]], [[T]]
 #tag
   ADDS:   [[Work Jump]]
-#### [[Meta]]		TOP LEVEL INFO ORGANIZATIONS
+#### 		TOP LEVEL INFO ORGANIZATIONS
 | ORG       | FOLDER                  | META           | By       | Notes                                |
 | --------- | ----------------------- | -------------- | -------- | ------------------------------------ |
-| [[Roots]] | [[Kmr Folder\|KMR]]     | [[Meta Meta]]  | ALL      | Toplevel roots for all pages         |
-| [[Pln]]   | [[Plan Folder\|Plan]]   | [[Meta Plan]]  | By TASK  | Short and long term planning         |
-| [[Log]]   | [Log](spot://logfolder) | [[Meta Log]]   | By TIME  | Archival lists with a time-based org |
-| [[Set]]   | [[Set Folder\|Set]]     | [[Meta Set]]   | By TYPE  | Groups of like (typed) entries       |
-| [[T]]     | [[T Folder\|T]]         | [[Meta Topic]] | By TOPIC | Toplevel Taxonomic Topics            |
-|           |                         | [[Meta Flow]]  | By PROC  | My data processing paths             |
-| [[SV]]    | [[SV Folder\|SV]]       | [[Meta SV]]    | WORK     | Work related [[WW]]                  |
-
-#### [[Roots]] [[Kmr Folder|--]] Top level roots for all pages
+|  |      |   | ALL      | Toplevel roots for all pages         |
+| [[Pln]]   |    |   | By TASK  | Short and long term planning         |
+|    |  |    | By TIME  | Archival lists with a time-based org |
+|    |      |    | By TYPE  | Groups of like (typed) entries       |
+| [[T]]     |          |  | By TOPIC | Toplevel Taxonomic Topics            |
+|           |                         |   | By PROC  | My data processing paths             |
+|     |        |     | WORK     | Work related                   |
+  ADDS:   [[My Content]]
+  DELS: , , , , , , , , , , , , , , , , , , ,
 ```dataviewjs
 let rows = dv.pages("")
   .where(p => {
     if (!p.file) return false;
-
-    let filePathParts = String(p.file.path).split("/");
+  ADDS:   [[RR]]
+  DELS: [[Meta]], [[Roots]], [[Kmr Folder\|KMR]], [[Meta Meta]], [[Plan Folder\|Plan]], [[Meta Plan]], [[Log]], [Log](spot://logfolder), [[Meta Log]], [[Set]], [[Set Folder\|Set]], [[Meta Set]], [[T Folder\|T]], [[Meta Topic]], [[Meta Flow]], [[SV]], [[SV Folder\|SV]], [[Meta SV]], [[WW]], 
     let fileNameWithoutExt = filePathParts[filePathParts.length - 1].replace('.md', '');
     let parentFolderName = filePathParts[filePathParts.length - 2];
 
