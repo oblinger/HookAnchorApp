@@ -19,6 +19,8 @@
   [Resume](spot://resume):
   [[z2 - Linked In Module]]:
 
+
+
 .[[RES]].
   [[RES Bio]]:	
   [RES Docx](spot://resdocx):	

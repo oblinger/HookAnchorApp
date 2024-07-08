@@ -1,3 +1,7 @@
-.[[MY Content]].
-  ADDS:   [[Idea]]
+.[[My Content]].
+  ADDS:   [[Diary]],
 
+
+.[[MY Content]].
+  ADDS:
+  DELS: [[Idea]], 

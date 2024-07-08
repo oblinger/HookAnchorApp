@@ -63,6 +63,8 @@
 n:: Ideas of mine
 
 
+
+
 # LINKS  [[Ideas]] 
 - 2023-01 Uniform Compute ([[UC]])		--  Provides a small seed used to define shared compute environment
 - [[2022-05 Virtual Tour Guide]] 

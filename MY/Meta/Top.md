@@ -1,26 +1,28 @@
+#tag 
 .[[Top]].
-  ADDS:   [[Work]]
-  ADDS:   [[Pln]], [[T]]
-#tag
-  ADDS:   [[Work Jump]]
-#### 		TOP LEVEL INFO ORGANIZATIONS
-| ORG       | FOLDER                  | META           | By       | Notes                                |
-| --------- | ----------------------- | -------------- | -------- | ------------------------------------ |
-|  |      |   | ALL      | Toplevel roots for all pages         |
-| [[Pln]]   |    |   | By TASK  | Short and long term planning         |
-|    |  |    | By TIME  | Archival lists with a time-based org |
-|    |      |    | By TYPE  | Groups of like (typed) entries       |
-| [[T]]     |          |  | By TOPIC | Toplevel Taxonomic Topics            |
-|           |                         |   | By PROC  | My data processing paths             |
-|     |        |     | WORK     | Work related                   |
-  ADDS:   [[My Content]]
-  DELS: , , , , , , , , , , , , , , , , , , ,
+  [[My Content]], [[Pln]], [[RR]], [[T]], [[Work]], [[Work Jump]]
+  ADDS:   [[Prj]]
+
+
+
+#### [[Meta]]		TOP LEVEL INFO ORGANIZATIONS
+| ORG       | FOLDER                   | META           | By       | Notes                          |
+| --------- | ------------------------ | -------------- | -------- | ------------------------------ |
+| [[Roots]] | [[Kmr Folder\|KMR]]      | [[Meta Meta]]  | ALL      | Toplevel roots for all pages   |
+| [[Pln]]   | [Pln](spot://pln~folder) | [[Meta Plan]]  | By TASK  | Short and long term planning   |
+| [[Log]]   | [Log](spot://logfolder)  | [[Meta Log]]   | By TIME  | Lists with a time-based org    |
+| [[Set]]   | [[Set Folder\|Set]]      | [[Meta Set]]   | By TYPE  | Groups of like (typed) entries |
+| [[T]]     | [[T Folder\|T]]          | [[Meta Topic]] | By TOPIC | Toplevel Taxonomic Topics      |
+|           |                          | [[Meta Flow]]  | By PROC  | My data processing paths       |
+| [[SV]]    | [[SV Folder\|SV]]        | [[Meta SV]]    | WORK     | Work related [[WW]]            |
+
+#### [[Roots]] [[Kmr Folder|--]] Top level roots for all pages
 ```dataviewjs
 let rows = dv.pages("")
   .where(p => {
     if (!p.file) return false;
-  ADDS:   [[RR]]
-  DELS: [[Meta]], [[Roots]], [[Kmr Folder\|KMR]], [[Meta Meta]], [[Plan Folder\|Plan]], [[Meta Plan]], [[Log]], [Log](spot://logfolder), [[Meta Log]], [[Set]], [[Set Folder\|Set]], [[Meta Set]], [[T Folder\|T]], [[Meta Topic]], [[Meta Flow]], [[SV]], [[SV Folder\|SV]], [[Meta SV]], [[WW]], 
+
+    let filePathParts = String(p.file.path).split("/");
     let fileNameWithoutExt = filePathParts[filePathParts.length - 1].replace('.md', '');
     let parentFolderName = filePathParts[filePathParts.length - 2];
 
@@ -33,7 +35,7 @@ let rows = dv.pages("")
 dv.table(["File", "Description"], rows);
 ```
 
-#### [[Pln]] [[Plan Folder|--]] Short and long term planning 
+#### [[Plan]] [[Plan Folder|--]] Short and long term planning 
 ```dataviewjs
 let rows = dv.pages("")
   .where(p => {
@@ -56,7 +58,7 @@ dv.table(["File", "Description"], rows);
 ```
 
 
-#### [[Log]] [[Logs Folder|--]] DATED, TYPED NOTES (DATED entries)
+#### [[Logs]] [[Logs Folder|--]] DATED, TYPED NOTES (DATED entries)
 ```dataview
 TABLE n AS Description
 FROM #log
@@ -65,7 +67,7 @@ SORT file.name
 
 
 
-#### [[Set/Set]] [[Set Folder|--]] GROUPS OF LIKE ENTRIES -- (UN-dated, Typed entries)
+#### [[Sets]] [[Set Folder|--]] GROUPS OF LIKE ENTRIES -- (UN-dated, Typed entries)
 ```dataview
 TABLE n AS Description
 FROM #set

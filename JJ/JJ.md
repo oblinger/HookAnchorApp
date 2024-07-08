@@ -1,14 +1,14 @@
 
+:: [[DD]],   [[RD]]
+
 ROOT JUMP PAGES::
 
-[[Application]],	[[Book]],	[[Diary]],	[[Doc]],	[[Folder]],	[[Lst]],	[[Mac]],	
-[[Mov]],	[[News]],	[[Org]],	[[pPrj]],	[[SV]],	[[TXT]],	[[RD]],	
-[[DD]]: [[UF]],	
+[[Application]],	[[Book]],	[[Doc]],	[[Folder]],	[[Lst]],	[[Mac]],	[[Mov]],	
+[[News]],	[[Org]],	[[pPrj]],	[[TXT]],	
 [[Top]]: 
-    [[MY Content]]: 
-        [[Idea]]: [[EduCorp]],	
-            [[EOC]]: [[EOCA]],	
+    [[My Content]]: [[Diary]],	
     [[Pln]]: [[COMS]],	[[pPlan]],	
+    [[Prj]]: [[UF]],	
     [[RR]]: [[Language]],	[[Stat]],	
         [[AI]]: 
             [[DL]]: [[DL Alg]],	
@@ -21,3 +21,6 @@ ROOT JUMP PAGES::
                 [[Hack]]: [[Closet]],	[[KM]],	[[QUICKADD]],	[[Templater]],	
     [[Work Jump]]: 
         [[CV]]: [[CV Log]],	
+        [[SV]]: 
+            [[Idea]]: [[EduCorp]],	
+                [[EOC]]: [[EOCA]],	

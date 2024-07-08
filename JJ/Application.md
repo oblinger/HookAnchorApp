@@ -52,7 +52,7 @@
   [SimplyToImpress 1Pass](spot://simplytoimpress1pass), [SiriusXM 1Pass](spot://siriusxm1pass), [Skype 1Pass](spot://skype1pass), [Smore 1Pass](spot://smore1pass)
   [SnapChat 1Pass](spot://snapchat1pass), [Sonic 1Pass](spot://sonic1pass), [Sophos 1Pass](spot://sophos1pass), [SouthWest 1Pass](spot://southwest1pass), [Spotify 1Pass](spot://spotify1pass)
   [Square 1Pass](spot://square1pass), [StackOverflow 1Pass](spot://stackoverflow1pass), [Starbucks 1Pass](spot://starbucks1pass), [Substack 1Pass](spot://substack1pass)
-  [SunsetScaveger 1Pass](spot://sunsetscaveger1pass), [SutterHealth 1Pass](spot://sutterhealth1pass), [SV Notion](spot://svnotion), [Target 1Pass](spot://target1pass)
+  [SunsetScaveger 1Pass](spot://sunsetscaveger1pass), [SutterHealth 1Pass](spot://sutterhealth1pass), , [Target 1Pass](spot://target1pass)
   [TaskRabbit 1Pass](spot://taskrabbit1pass), [TechCrunch 1Pass](spot://techcrunch1pass), [TheNounProject 1Pass](spot://thenounproject1pass), [Thermomix 1Pass](spot://thermomix1pass)
   [ThermomixRecipes 1Pass](spot://thermomixrecipes1pass), [Think.org 1Pass](spot://think.org1pass), [Thistle](spot://thistle), [ThumbTack 1Pass](spot://thumbtack1pass)
   [TicketFasTrak 1Pass](spot://ticketfastrak1pass), [TikTok 1Pass](spot://tiktok1pass), [Toggl 1Pass](spot://toggl1pass), [TransUnion 1Pass](spot://transunion1pass), [Trello 1Pass](spot://trello1pass)
@@ -67,3 +67,6 @@
   [Wufoo 1Pass](spot://wufoo1pass), [Xfinity 1Pass](spot://xfinity1pass), [Yahoo 1Pass](spot://yahoo1pass), [ycNews 1Pass](spot://ycnews1pass), [yCombinator 1Pass](spot://ycombinator1pass)
   [Zapier 1Pass](spot://zapier1pass), [Zazzle 1Pass](spot://zazzle1pass), [Zenefits 1Pass](spot://zenefits1pass), [Zenni 1Pass](spot://zenni1pass), [ZipCar 1Pass](spot://zipcar1pass)
   [Zoom 1Pass](spot://zoom1pass), [Zwillow 1Pass](spot://zwillow1pass)
+
+
+  DELS: [SV Notion](spot://svnotion), 

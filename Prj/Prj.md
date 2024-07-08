@@ -1,6 +1,12 @@
 .[[Prj]].
-  [[UF]]:	
+  [[UF]]:
 
+
+
+
+
+  MINE: [Proj Folder](spot://proj~folder), [Prj](spot://prj) list,  
+  WORK:	[Proj](spot://proj), 
 
 :: [[2022-05 Enxt]]
 

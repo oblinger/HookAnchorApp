@@ -6,5 +6,7 @@
   [TRASH ToTrash](spot://trashtotrash):
 
 
+
+
 - [[ToTrash Folder]]
 - [[Trash Downloads Folder]]   

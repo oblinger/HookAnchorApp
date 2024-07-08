@@ -32,8 +32,10 @@
   ADDS:   [[RD]]
   ADDS:   [[Q2]], [[Quick]]
   ADDS:   [[Hacks]]
-
+  ADDS:   [Pln Folder](spot://plnfolder)
 In the case of Israel the natural "give back" would be assurances they they would be safe from attack from within this new nation. This would I think it is very reasonable for Israeli's to doubt it would be safe
+
+
 
 
 #### [[Pln]] [[Plan Folder|--]] Short and long term planning 

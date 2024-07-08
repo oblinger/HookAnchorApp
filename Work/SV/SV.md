@@ -1,3 +1,5 @@
+
+:: [[CV]]
 #top 
 
 .[[SV]].
@@ -73,7 +75,9 @@
 - INFO:			[[SV Code]], [[SVT]], [[SV Legal]], [[SV Folder]], [[Meta SV]],
 - ARCHIVE:		[[SV Archive]],   [[SV Wings]],
 - [[SV Basketball Info]]
-  DELS: [BUG](spot://bug), [SV Data](spot://svdata), [[CV]], [[SV Data]],[[Idea]], 
+  ADDS:   [[Idea]]
+
+
 
 
 :: [[cvt]], 
