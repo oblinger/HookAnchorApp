@@ -5,7 +5,21 @@
   [[Journal Old]]:
   [[Reflections]]:
   ADDS:   [[Jnl]],
-  ADDS:   [[Daily]],
+  ADDS:   ,
+
+
+
+
+  DELS: [[Daily]], 
+
+
+
+
+
+
+
+
+
 
 
 

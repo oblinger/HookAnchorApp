@@ -18,8 +18,22 @@
   ROOT:	[[BKT]], [[Up All]], [[Up Task]],
   EXT:	[[External]], [[Other]],
   TYPE:	[[Chew]], [[Eat]],
-  ADDS:   [Pln Personal](spot://plnpersonal), 
-  DELS: 
+  ADDS:   [Pln Personal](spot://plnpersonal),
+  DELS:
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

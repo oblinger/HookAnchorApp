@@ -1,19 +1,12 @@
 
 :: [[DD]],   [[RD]]
-.[[JJ]].
-
-
-
-
-
 
 ROOT JUMP PAGES::
 
-[[Application]],	[[Folder]],	[[Lst]],	[[Mac]],	[[Mov]],	[[News]],	[[OLD]],	
-[[Org]],	
+[[Folder]],	[[Lst]],	[[Mov]],	[[News]],	[[Org]],	
 [[Top]]: 
     [[My Content]]: [[Doc]],	[[TXT]],	
-    [[Pln]]: [[pPlan]],	[[COMS]],	[[Diary]],	
+    [[Pln]]: [[COMS]],	[[Diary]],	
     [[Prj]]: [[pPrj]],	[[UF]],	
     [[RR]]: [[Book]],	[[Language]],	[[Stat]],	
         [[AI]]: 
@@ -30,3 +23,4 @@ ROOT JUMP PAGES::
         [[SV]]: 
             [[Idea]]: [[EduCorp]],	
                 [[EOC]]: [[EOCA]],	[[EOCB]],	[[EOCI]],	[[EOCK]],	[[EOCT]],	
+    [[Zap]]: [[Application]],	[[Mac]],	[[OLD]],	

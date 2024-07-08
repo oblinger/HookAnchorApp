@@ -1,6 +1,20 @@
 .[[Prj]].
   [[UF]]:
   ADDS:   [[pPrj]],
+  ADDS:   [CV Proj](spot://cvproj), 
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
