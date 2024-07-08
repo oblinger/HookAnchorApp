@@ -3,11 +3,11 @@
 
 ROOT JUMP PAGES::
 
-[[Application]],	[[Folder]],	[[Lst]],	[[Mac]],	[[Mov]],	[[News]],	[[Org]],	
-[[OLD]],	
+[[Application]],	[[Folder]],	[[Lst]],	[[Mac]],	[[Mov]],	[[News]],	[[OLD]],	
+[[Org]],	
 [[Top]]: 
-    [[My Content]]: [[Diary]],	[[Doc]],	[[TXT]],	
-    [[Pln]]: [[COMS]],	[[pPlan]],	
+    [[My Content]]: [[Doc]],	[[TXT]],	
+    [[Pln]]: [[COMS]],	[[Diary]],	[[pPlan]],	
     [[Prj]]: [[pPrj]],	[[UF]],	
     [[RR]]: [[Book]],	[[Language]],	[[Stat]],	
         [[AI]]: 

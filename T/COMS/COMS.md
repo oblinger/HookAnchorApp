@@ -1,6 +1,9 @@
 
 .[[COMS]].
-  [[COM Campaigns OLDER]], [[COM Investor]], [[COM Msg]], [[COM Next]], [[Meta Coms]], [[CRM]], [[Calls]],
+   [[CRM]], [[Calls]], ,
+   [[COM Campaigns OLDER]], [[COM Investor]], [[COM Msg]], [[COM Next]], [[Meta Coms]],
+  ADDS:   [[Ping]],
+  DELS: [[BOD]], 
 
 
 
@@ -17,11 +20,6 @@
 
 
 
-
-
-
-
-:: [[Calls]]
 
 # LOG
 

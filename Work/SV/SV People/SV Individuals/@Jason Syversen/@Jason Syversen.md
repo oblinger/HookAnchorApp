@@ -113,6 +113,8 @@ I would have guessed that 5 weeks would have made a bigger dent,
 - Volleyball
 - Basketball
 - Halos
+- - AI roster-base pronouns
+Jersey...
 
 - Tennis
 - Homography

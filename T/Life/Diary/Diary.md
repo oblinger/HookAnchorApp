@@ -4,8 +4,11 @@
   [[Journaling]]:
   [[Journal Old]]:
   [[Reflections]]:
-  ADDS:   [[Jnl]]
-:: [[Jnl]],   [[Reflections]],
+  ADDS:   [[Jnl]], 
+  ADDS:   [[Daily]],
+
+
+
 
 
 

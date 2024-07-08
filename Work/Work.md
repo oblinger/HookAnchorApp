@@ -1,20 +1,11 @@
-[[Work Jump]] 
-near colors; assume 
-- AI roster-base pronouns
-Jersey...
 
-
+:: [[Work Jump]]
 .**NOW**. 
 CLR:	ColorT, TgtFn
-PID:	x
-INF:	GetRoster,
+PID:	GetRoster,
 [[FIN.]]	Invest plan; Retire plan(spreadsheet)
-Assess	> Assessment plan for BB
-[OKRs](https://docs.google.com/presentation/d/1v7Winy9DHxGuYh05_is8zH05ClJi0qclM698-pDXIgY/edit?pli=1#slide=id.g274b3e27e6b_0_0):		Q3 Planning	
-
-mid-color, 
-## TOP
-[[NJ]]:		>[[War|War]], rewrite, mentor
+[OKRs](https://docs.google.com/presentation/d/1v7Winy9DHxGuYh05_is8zH05ClJi0qclM698-pDXIgY/edit?pli=1#slide=id.g274b3e27e6b_0_0):	Q3 Planning	
+[[NJ]]:	>[[War|War]], rewrite, mentor
 ## TRACK
 . 			GCP, Halos, Minutes, Colors
 [Bridge](https://docs.google.com/document/d/1oaG7NB2fJ9THAtHcREX6yqrWg91wYEsof9zQNEInFFU/edit):	CrossVideos, 
@@ -28,6 +19,7 @@ R&D docs	! Briones 2023 R&D
 [[patents]]:	^J Provisional filed
 
 SW proc:	[db](https://www.notion.so/sportsvisio/cf65339c09c6486296f8adaa084c141a?v=f8a45e385eea4c2fb590502835f4453f&pvs=4),[doc](https://docs.google.com/document/d/1aHnoqgQ3H_0abUtlVWoMPHDA7nQhzoq0JRqZLujORc0/edit?usp=drive_web&ouid=105281685541312342727)  ^Jasu 
+Assess	> Assessment plan for BB
 
 ## SOON [[mgt]] [[CVP]] 
 [[Metrics]]:		/Create money metrics page

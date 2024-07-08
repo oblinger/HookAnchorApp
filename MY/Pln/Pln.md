@@ -1,14 +1,26 @@
 .[[Pln]].
-  OVER:	[[Friday]], [[Habit]], [[Repeat]], [[Productivity]], [[Self Evergreen|Ever]]. 
-  LST1:	
-  z
-  ADDS:   [[Active]], [[Actualize]], [[Archive]], [[Big]], [[Chew]], [[COMS]], [[Daily]], [[Daily Schedules]], [[Dropped]], [[Eat]], [[External]], [[Family]], [[Friday Dates]], [[Fried]]
-  [[Fried Later]], [[Full]], [[Fun]], [[Gap]], [[Hacks]], [[Home]], [[Mission]], [[Now]], [[Other]], [[Ping]], [Pln Factory](spot://plnfactory), [Pln Folder](spot://plnfolder)
-  [Pln Personal](spot://plnpersonal), [Pln Work](spot://plnwork), [[pPlan]], [[Prime]], [[Q2]], [[Quarterly]], [[Quick]], [[RD]], [[Rocks]], [[SCRatch]], [[Social]]
-  [[Spirit]], [[Todo]], [[Up All]], [[Up Task]], [[Wings]], [[WRM]], 
+  WRK1:	[Pln Factory](spot://plnfactory), [Pln Folder](spot://plnfolder), [Pln Work](spot://plnwork),
+  WRK2:	[[Full]], [[Prime]],
+  WRK3:	[[RD]],
+  -
+  OVER:	[[Friday]], [[Habit]], [[Repeat]], [[Self Evergreen|Ever]].
+  LST1: [[Quick]], [[Todo]], [[Now]], [[Active]], [[SCRatch]],
+  LST2:	[[Big]],
+  LST3:	[[Quarterly]], Later, [[Wings]], [[Dropped]], [[Archive]],
+  LONG:	[[Rocks]], [[Q2]], [[Spirit]], [[Actualize]], [[Mission]], [[WRM]],
+  STRAT:[[Productivity]], [[Daily Schedules]],
+  TOPIC:	[[COMS]], [[Diary]],
+  FUN:	[[Fun]], [[Social]], [[Fried]], [[Gap]], [[Hacks]], [[Fried Later]],
+  FAM:	[[Family]], EBT,  [[Friday Dates]], [[Home]],
+  ROOT:	BKT, Meta List, [[Up All]], [[Up Task]],
+  EXT:	[[External]], [[Other]],
+  TYPE:	[[Chew]], [[Eat]],
+  ADDS:  [Pln Personal](spot://plnpersonal), [[pPlan]],
+  DELS: 
 
-
-:: [[Friday Dates]]
+  ADDS:   [[Daily]], 
+  [Pln Personal](spot://plnpersonal),  [[pPlan]],
+  
 
 **[[Pln]]:**	
  OVER:	[[Friday]], [[Habit]], [[Repeat]], [[Productivity]], [[Self Evergreen|Ever]] 

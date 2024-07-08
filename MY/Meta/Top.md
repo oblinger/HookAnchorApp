@@ -35,6 +35,10 @@ dv.table(["File", "Description"], rows);
   ADDS:   [[Prj]],
 
 
+
+
+
+
   DELS: [[Meta]], [[Roots]], [[Kmr Folder\|KMR]], [[Meta Meta]], [[Plan Folder\|Plan]], [[Meta Plan]], [[Log]], [Log](spot://logfolder), [[Meta Log]], [[Set]], [[Set Folder\|Set]], [[Meta Set]], [[T Folder\|T]], [[Meta Topic]], [[Meta Flow]], [[SV]], [[SV Folder\|SV]], [[Meta SV]], [[WW]], 
 
 ```dataviewjs
