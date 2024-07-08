@@ -38,6 +38,8 @@ In the case of Israel the natural "give back" would be assurances they they woul
 
 
 
+
+
 #### [[Pln]] [[Plan Folder|--]] Short and long term planning 
 ```dataviewjs
 let rows = dv.pages("")
