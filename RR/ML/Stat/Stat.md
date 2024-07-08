@@ -21,5 +21,6 @@
   [()](().md),   [Likelihood](Likelihood.md)
   [Softmax](Softmax.md),   [()](().md),   [Sigmoid](Sigmoid.md)
   [AutoRegressive](AutoRegressive.md),   [Stationary](Stationary.md)
-  DELS: [[MinCalcs]], [[03-06  Basketball Stats.docx]], [[STATS]], 
+  DELS: , , ,
   [[Likelihood]]
+  DELS: [[MinCalcs]], [[03-06  Basketball Stats.docx]], [[STATS]], 
