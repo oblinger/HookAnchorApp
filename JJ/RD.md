@@ -1,3 +1,3 @@
 .[[RD]].
-  ADDS:   [RD CV](spot://rdcv), [RD OKRs](spot://rdokrs)
-
+  ADDS:   ,
+  DELS: [RD CV](spot://rdcv), [RD OKRs](spot://rdokrs), 

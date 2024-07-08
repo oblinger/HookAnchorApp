@@ -1,17 +1,17 @@
 .[[Politics]].
   [[Climate]]:
   [[Palestinians]]:
-  [[race]]:
+  [[Race]]:
   [[__Race Pitch__]]:
   [[RacePitchArchive]]:
   [[Socialism]]:
-  [[trump]]:
+  [[Trump]]:
 
 
-:: [[race]]  [[Socialism]]  [[AI HISTORY]]  
+:: [[Race]]  [[Socialism]]  [[AI HISTORY]]  
   [Climate](Climate.md)  
-  [race](race.md)
-  [race](race.md)  [trump](trump.md) [[Palestinians]] 
+  [Race](Race.md)
+  [Race](Race.md)  [Trump](Trump.md) [[Palestinians]] 
 . 
 
 ### 2024-06-26  Fixing Banking

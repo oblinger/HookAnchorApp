@@ -1,8 +1,8 @@
 
 ROOT JUMP PAGES::
 
-[[Application]],	[[Book]],	[[CV]],	[[Diary]],	[[Doc]],	[[Folder]],	[[Lst]],	
-[[Mac]],	[[Mov]],	[[News]],	[[Org]],	[[pPrj]],	[[SV]],	[[TXT]],	[[RD]],	
+[[Application]],	[[Book]],	[[Diary]],	[[Doc]],	[[Folder]],	[[Lst]],	[[Mac]],	
+[[Mov]],	[[News]],	[[Org]],	[[pPrj]],	[[SV]],	[[TXT]],	[[RD]],	
 [[RR]]: [[Stat]],	
     [[AI]]: 
         [[DL]]: [[DL Alg]],	
@@ -14,6 +14,7 @@ ROOT JUMP PAGES::
         [[SYS]]: [[Obs]],	
             [[Hack]]: [[Closet]],	[[KM]],	[[QUICKADD]],	[[Templater]],	
 [[Pln]]: [[COMS]],	[[pPlan]],	
+[[CV]]: [[CV Log]],	
 [[DD]]: [[UF]],	
 [[MY Content]]: 
     [[Idea]]: [[EduCorp]],	

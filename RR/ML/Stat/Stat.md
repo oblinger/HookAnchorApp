@@ -1,12 +1,13 @@
 
+:: [[Hypothesis Testing]],   [[Stat Anomolies]],   [[Z-Test]]
+
 
 .[[Stat]].
-
-
-
+  ADDS:   [[ADF - Augmented Dickey Fuller Test]], [[ARIMA Algorithm]], [[AutoRegressive]], [[Bayes Optimal Error]], [[HarmonicMean]], [[KL Divergence]], [[Likelihood]], , [[PCA]], [[Q-Q Plot]]
+  [[Ransac]], [[Sigmoid]], [[Softmax]], [[Stationary]]
+  DELS: [[MinCalcs]], 
 - [[KL Divergence]]: 
 
-- [[MinCalcs]] 
 - [[03-06  Basketball Stats.docx]] - 
 - [[STATS]] 
 

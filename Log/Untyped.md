@@ -7,7 +7,7 @@ n:: no prefix.	Dated entries without any typing prefix
 | ---------- | -------------------------- | --------------------------------------------------------------------------------------------------------------------------------- |
 | 2024-07-05 | [[@Apple]]                     | Airmax repair                                                                                                                     |
 | 2024-06-26 | [[Politics]]                   | Fixing Banking                                                                                                                    |
-| 2024-06-20 | [[trump]]                      | Trying to limit FED independence                                                                                                  |
+| 2024-06-20 | [[Trump]]                      | Trying to limit FED independence                                                                                                  |
 | 2024-06-18 | [[QQ]]                         | Lessons Learned From Minutes                                                                                                      |
 | 2024-06-17 | [[DAT]]                        | New Mount Design                                                                                                                  |
 | 2024-06-17 | [[PQ]]                         | ^newjump                                                                                                                          |
@@ -91,8 +91,8 @@ n:: no prefix.	Dated entries without any typing prefix
 | 2024-02-12 | [[MED Log]]                    | QL DOC advice for a flu w/ cough                                                                                                  |
 | 2024-02-11 | [[Palestinians]]               | Andrew's response                                                                                                                 |
 | 2024-02-09 | [[Palestinians]]               | Try Number Three                                                                                                                  |
-| 2024-02-07 | [[trump]]                      | Voter fraud rarely happens                                                                                                        |
-| 2024-02-07 | [[trump]]                      | Trump is a danger -- his own aids tells us the truth                                                                              |
+| 2024-02-07 | [[Trump]]                      | Voter fraud rarely happens                                                                                                        |
+| 2024-02-07 | [[Trump]]                      | Trump is a danger -- his own aids tells us the truth                                                                              |
 | 2024-01-28 | [[Reflections]]                | Starting to feel caught up                                                                                                        |
 | 2024-01-26 | [[Log Log]]                    | cookie clicker code                                                                                                               |
 | 2024-01-25 | [[FIN Log]]                    | Merrill Retirement Planning ^rplan                                                                                                |
@@ -259,7 +259,7 @@ n:: no prefix.	Dated entries without any typing prefix
 | 2023-07-31 | [[CV]]                         | Color ALG                                                                                                                         |
 | 2023-07-26 | [[@Nick Allen]]                | Pitching a Business                                                                                                               |
 | 2023-07-26 | [[SNIP]]                       | Piano                                                                                                                             |
-| 2023-07-26 | [[race]]                       | black dad myth                                                                                                                    |
+| 2023-07-26 | [[Race]]                       | black dad myth                                                                                                                    |
 | 2023-07-25 | [[@James Briones]]             | TC alternatives                                                                                                                   |
 | 2023-07-24 | [[@Isaac Cohen]]               | Post pitch discussion                                                                                                             |
 | 2023-07-19 | [[@Yiftach Eisenberg]]         | Cat. h Up                                                                                                                         |
