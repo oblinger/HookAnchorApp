@@ -4,11 +4,11 @@
 ROOT JUMP PAGES::
 
 [[Application]],	[[Folder]],	[[Lst]],	[[Mac]],	[[Mov]],	[[News]],	[[Org]],	
-[[pPrj]],	
+[[OLD]],	
 [[Top]]: 
     [[My Content]]: [[Diary]],	[[Doc]],	[[TXT]],	
     [[Pln]]: [[COMS]],	[[pPlan]],	
-    [[Prj]]: [[UF]],	
+    [[Prj]]: [[pPrj]],	[[UF]],	
     [[RR]]: [[Book]],	[[Language]],	[[Stat]],	
         [[AI]]: 
             [[DL]]: [[DL Alg]],	
@@ -23,4 +23,4 @@ ROOT JUMP PAGES::
         [[CV]]: [[CV Log]],	
         [[SV]]: 
             [[Idea]]: [[EduCorp]],	
-                [[EOC]]: [[EOCA]],	
+                [[EOC]]: [[EOCA]],	[[EOCB]],	[[EOCI]],	[[EOCK]],	[[EOCT]],	

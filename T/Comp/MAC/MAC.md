@@ -1,4 +1,5 @@
 .[[Mac]].
+
   [1Password App](spot://1passwordapp):
   [1Password for Safari App](spot://1passwordforsafariapp):
   [Activity Monitor App](spot://activitymonitorapp):
@@ -164,6 +165,12 @@
   [[MAC How To]]:
   [[MAC Other HW]]:
   [[MAC Setup]]:
+
+
+
+
+
+
 
 
 

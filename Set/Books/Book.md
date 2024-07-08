@@ -6,6 +6,12 @@ n:: Books I have read
   PRODUCTIVITY / MANAGEMENT
   - [Atomic Habits](spot://atomichabits), [DYL](spot://dyl), [Getting_Things_Done](spot://gettingthingsdone),
   - [High Output Management](spot://highoutputmanagement)
+  ADDS:   [[F90]],
+
+
+
+
+
 
 
 

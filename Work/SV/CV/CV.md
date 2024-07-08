@@ -5,6 +5,12 @@
   ADDS:		[CVproj](spot://cvproj), [PROJ](spot://proj), [PROJ Gdrive](spot://projgdrive)
   ADDS:   , ,
   ADDS:   [SprintPlanning](spot://sprintplanning)
+  ADDS:   [DOCs](spot://docs), [DSET](spot://dset),
+
+
+
+
+
 
 
 
