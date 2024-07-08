@@ -1,54 +1,20 @@
 
-:: [[BKT]],   [[EBT]],   [[Hacks]],   [[Later]],   [[Lrn]],   [[Meta List]]
-.[[PLN]].
-  ADDS:   
-  DELS: [[COMS]], 
-.[[Pln]].
-  [[active]]:
-  [[archive]]:
-  [[external]]:
-  [[full]]:
-  [[now]]:
-  [[other]]:
-  [[prime]]:
-  :
-  :
-  [[todo]]:
-  [[wings]]:
-  ADDS: [[Actualize]], [[Big]], [[Dropped]], [[Eat]], [[Family]], [[Mission]], [[Ping]], [Pln Factory](spot://plnfactory), [Pln Personal](spot://plnpersonal), [Pln Work](spot://plnwork), [[pPlan]], [[Productivity]], [[Quarterly]], [Repeat](spot://repeat), [[Rocks]], [[SCRatch]], [[Social]], [[Spirit]], [[Up All]], [[Up Task]], [[WRM]]
-  ADDS:   [[chew]], [[COMS]], [[Daily]], [[Daily Schedules]], [[Friday]], [[Friday Dates]], [[fried]], [[Fried Later]], [[fun]], [[gap]], [[Habit]], [[home]]
-  OVER:	[[Friday]], [[Habit]], [[Repeat]], [[Productivity]],
-  LST1:	, , , , [[SCRatch]]
-  LST2: , ,  [[Big]],
-  LST3:	[[Quarterly]], , , [[Dropped]],
-  LONG:	[[Rocks]], , , [[Spirit]], [[Actualize]], [[Mission]], [[WRM]],
-  COM:  , [[Ping]],
-  FUN:	, [[Social]], , , , [[Fried Later]]
-  FAM:	[[Family]], , [[Friday Dates]],
-  ROOT:	, , [[Up All]], [[Up Task]]
-  MISC: , ,  , [[Eat]],
-  WORK:	[Pln Factory](spot://plnfactory), [Pln Work](spot://plnwork),
-  ??		[Pln Personal](spot://plnpersonal), [[pPlan]],
-  ADDS:   [[RD]]
-  ADDS:   [[Q2]], [[Quick]]
-  ADDS:   [[Hacks]]
-  ADDS:   [Pln Folder](spot://plnfolder)
-In the case of Israel the natural "give back" would be assurances they they would be safe from attack from within this new nation. This would I think it is very reasonable for Israeli's to doubt it would be safe
+:: [[Hacks]]
 
 
+:: [[Friday Dates]]
 
-
-
-
-
-
-
-
-
-
-
-
-
+**[[Pln]]:**	
+ OVER:	[[Friday]], [[Habit]], [[Repeat]], [[Productivity]], [[Self Evergreen|Ever]] 
+ LST1:	[[quick]], [[todo]], [[now]], [[active]], [[SCRatch]] 
+ LST2: [[full]], [[prime]] 
+ LST3:	[[Quarterly]], [[later]], [[wings]], [[Dropped]], [[archive]] 
+ LONG:	[[Rocks]], [[q2]], [[Lrn]], [[Spirit]], [[Actualize]], [[Mission]], [[WRM]], 
+ COM:  [[CRM]], [[Ping]], [[Mentor]] 
+ FUN:	[[fun]], [[Social]], [[fried]], [[gap]], [[hack]], [[Fried Later]] 
+ FAM:	[[Family]], [[EBT]] 
+ ROOT:	[[BKT]], [[Meta List]], [[Up All]], [[Up Task]] 
+ MISC: [[EBT]], [[external]],  [[other]] 
 
 
 #### [[Pln]] [[Plan Folder|--]] Short and long term planning 

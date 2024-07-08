@@ -17,21 +17,6 @@
   :
   [[Sys]]:
   ,
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
   DELS: [MY Desk Folder](spot://mydeskfolder), [[MY fo]], [[MY Github Webpage]], [[MY Spot]], [[Closet]], [[QUICKADD]], [[TEMPLATER]],[[MY Content]], 
 
 :: [[Closet]],   [[Meta]],   [[Myfo]],   [[Pln]],   [[QUICKADD]],   [[TEMPLATER]]

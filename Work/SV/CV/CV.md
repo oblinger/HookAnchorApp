@@ -1,25 +1,11 @@
 .[[CV]].
-  ROOTS:	[CV Google Page](spot://cvgooglepage), [CV Confluence](spot://cvconfluence), [CV Jira Page](spot://cvjirapage),  [CV Notion](spot://cvnotion),
-  ADDS:		[CVA](spot://cva), [CV Ana](spot://cvana), [[CV Annotations]], [[CV Data]], [CV Docs](spot://cvdocs), [CV Info](spot://cvinfo), [CV Log](spot://cvlog), [CV OKRs](spot://cvokrs),
-  x:			[[CVP]], [[CV Roadmap]], [CV Root](spot://cvroot), [CVT](spot://cvt), ,
-  ADDS:		[CVproj](spot://cvproj), [PROJ](spot://proj), [PROJ Gdrive](spot://projgdrive)
-  ADDS:   , ,
-  ADDS:   [SprintPlanning](spot://sprintplanning)
-  ADDS:   [DOCs](spot://docs), [DSET](spot://dset),
+  ROOTS:	[CV Root](spot://cvroot), [CV Confluence](spot://cvconfluence), [CV Jira Page](spot://cvjirapage),  [CV Notion](spot://cvnotion), [CVproj](spot://cvproj), [PROJ](spot://proj), 
+  DIRS:		[CV Google Page](spot://cvgooglepage), [PROJ Gdrive](spot://projgdrive),  [[CV Data]], 
+  PLAN:		[SprintPlanning](spot://sprintplanning), [[CVP]], [[CV Roadmap]],
+  ORGS:	 	[CV Docs](spot://cvdocs), [DOCs](spot://docs), [CV Info](spot://cvinfo), [CV Log](spot://cvlog),
+  ADDS:		[CVA](spot://cva), [CV Ana](spot://cvana), [[CV Annotations]], [CV OKRs](spot://cvokrs),
+  OLD:		[CVT](spot://cvt), [DSET](spot://dset),
 
-
-
-
-
-
-
-
-
-
-
-
-
-  DELS: , , ,
 
   DELS: [SprintPlanning](https://docs.google.com/document/d/1F2hISCp9p-uvfzVt6OTclhOGswQ9EmbVwGxKk9uqJ28/edit), [CV Google](https://docs.google.com/document/d/1nGCRGOZVxvIzbM0MFpspTaCtF-f8hb-K7yi3T2c6h9s/edit), [[SV G Root]], [svdata](https://drive.google.com/drive/folders/10VWKl_3u0--LyLZmzgu8So7i1Jgq6HSr?usp=drive_link), [Shared Folder](https://drive.google.com/drive/u/4/folders/1GdLWPNXw6lNDp9kxLjIQsaX1zAcnszAl), [BitBucket MVP Algos](https://bitbucket.org/SVEngineering/workspace/projects/MVPAL), [JIRA](https://software-engineering-team.atlassian.net/jira/software/projects/AIT/boards/25), [CONFLUENCE](https://software-engineering-team.atlassian.net/wiki/spaces/SVAI/overview),[SVdata](spot://svdata), [[SVCV Re-ID]], [[SVQ2]], 
 
