@@ -2,11 +2,12 @@
 :: [[DocJupyter]]
 
 .[[Doc]].
+  [[AWS Log]], [[Doc 1Password]], [[DocAPI]], [[DocApplescript]], [[DocArduino]], [[DocAWS]], [[DocBash]], [[DocCapistrano]], [[DocClojure]], [[DocConda]], [[DocCPP]], [[DocCucumber]], [[DocDanO]]
+  [[DocDelayedJob]], [[DocDocker]], [[DocEmacs]], [Doc Folder](spot://docfolder), [[DocGit]], [[DocGnome]], [[DocGolang]], [[DocGoogle]], [[DocHtml]], [[DocJavascript]], [[DocJquery]], [[DocJupyter]]
+  [[Doc Keyboard Maestro]], [[DocLinux]], [[DocMac]], [[DocMarkdown]], [[DocMatplotlib]], [[DocNumPy]], [[DocObjectiveC]], [[DocObsidian]], [[DocOSX]], [[DocPandas]], [[DocPycharm]], [[DocPyDatetime]]
+  [[DocPyML]], [[DocPython]], [[DocR]], [[DocRackspace]], [[DocRails]], [[DocRuby]], [[DocSamurai]], [[DocSciKit]], [[DocSeaborn]], [[DocSED]], [[DocSQL]], [[DocSublime]], [[DocTensorFlow]]
+  [[Doctor]], [[DocVagrant]], [[Unix Command Line]], 
 
-
-:: [[Doc/DocJupyter]]
-
-:: [[AWS Log]]
 #set 
 n:: Personal doc pages
 - [[Doc Folder]], [CV Docs](spot://cv~docs) 
