@@ -1,7 +1,11 @@
 .[[Pln]].
-
-
-:: [[Hacks]]
+  OVER:	[[Friday]], [[Habit]], [[Repeat]], [[Productivity]], [[Self Evergreen|Ever]]. 
+  LST1:	
+  z
+  ADDS:   [[Active]], [[Actualize]], [[Archive]], [[Big]], [[Chew]], [[COMS]], [[Daily]], [[Daily Schedules]], [[Dropped]], [[Eat]], [[External]], [[Family]], [[Friday Dates]], [[Fried]]
+  [[Fried Later]], [[Full]], [[Fun]], [[Gap]], [[Hacks]], [[Home]], [[Mission]], [[Now]], [[Other]], [[Ping]], [Pln Factory](spot://plnfactory), [Pln Folder](spot://plnfolder)
+  [Pln Personal](spot://plnpersonal), [Pln Work](spot://plnwork), [[pPlan]], [[Prime]], [[Q2]], [[Quarterly]], [[Quick]], [[RD]], [[Rocks]], [[SCRatch]], [[Social]]
+  [[Spirit]], [[Todo]], [[Up All]], [[Up Task]], [[Wings]], [[WRM]], 
 
 
 :: [[Friday Dates]]
