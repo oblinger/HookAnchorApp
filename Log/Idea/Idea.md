@@ -59,7 +59,7 @@
   ADDS:   [[Word_War]]
   ADDS:   [[Hook System]]
 :: [[2018-00 Alloy]],   [[Idea Brain]],   [[Idea Social]],   [[Life Projects]]
-#log 
+#log
 n:: Ideas of mine
 
 

@@ -8,7 +8,8 @@
   [[MGR Plan]]:
   [[MGR Product]]:
   ADDS:   [[Hiring]]
-  DELS: [[MGR Log]], 
-:: [[MGR Log]]
-
-:: [[Employee Notes]],   [[Hiring]],   [[MGR Docs]],   [[MgrContracts]],   [[MgrTracking]],   [[My Staff]],   [[MyMgr]]
+  DELS: ,
+::
+  DELS: , ,
+:: ,   [[Hiring]],   [[MGR Docs]],   ,   ,   ,   
+  DELS: [[MGR Log]], [[MGR Log]], [[Employee Notes]], [[MgrContracts]], [[MgrTracking]], [[My Staff]], [[MyMgr]], 
