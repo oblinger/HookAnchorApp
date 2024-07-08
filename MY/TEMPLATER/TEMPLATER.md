@@ -1,6 +1,6 @@
 .[[Templater]].
   [[NAMED sub note]]:
-
+  ADDS:   [[Z TEST TEMPLATE]]
 
 :: [[QL template]]
 
