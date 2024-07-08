@@ -1,0 +1,3 @@
+.[[Language]].
+  ADDS:   [[haskell]]
+

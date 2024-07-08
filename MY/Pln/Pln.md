@@ -31,7 +31,7 @@
   ??		[Pln Personal](spot://plnpersonal), [[pPlan]],
   ADDS:   [[RD]]
   ADDS:   [[Q2]], [[Quick]]
-  DELS: [[q2]], [[quick]], 
+  ADDS:   [[Hacks]]
 
 In the case of Israel the natural "give back" would be assurances they they would be safe from attack from within this new nation. This would I think it is very reasonable for Israeli's to doubt it would be safe
 
