@@ -6,7 +6,6 @@ ROOT JUMP PAGES::
 [[RR]]: [[Language]],	[[Stat]],	
     [[AI]]: 
         [[DL]]: [[DL Alg]],	
-[[CV]]: [[CV Log]],	
 [[DD]]: [[UF]],	
 [[MY Content]]: 
     [[Idea]]: [[EduCorp]],	
@@ -20,3 +19,5 @@ ROOT JUMP PAGES::
         [[MY]]: [[Meta]],	
             [[SYS]]: [[Obs]],	
                 [[Hack]]: [[Closet]],	[[KM]],	[[QUICKADD]],	[[Templater]],	
+    [[Work Jump]]: 
+        [[CV]]: [[CV Log]],	
