@@ -2,7 +2,7 @@
 ## = NEW COMPUTER - How to sync my setup a new system
 - PORT OB TREE TO NEW SYSTEM. (See boot_install for latest)
 - Copy ~/ob onto the new machine at /Users/oblinger/ob
-- Copy ~.config/karabiner/karabiner.json to new machine
+- Copy ~/Library/Application Support/BetterTouchTool    (ensure BTT is not running)
 - Ensure Keyboard Maestro is loading ~/ob/data/KeyboardMaestro-Master/Keyboard Maestro Macros.kmsync
 - Ensure ~.zprofile is includes "source ~/ob/bin/obrc"
 - Ensure prefs->users->login items-> /Users/oblinger/ob/bin/boot

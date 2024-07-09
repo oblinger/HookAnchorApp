@@ -107,6 +107,33 @@ I would have guessed that 5 weeks would have made a bigger dent,
 
 ## = Team velocity / distractions
 
+
+
+TL;DR.  Coming into Q3 we are a bit flatfooted on AI minutes but with good prospects for the medium term.
+
+We (almost) have an end to end system running for AI minutes, but of course the core algorithms have not been touched since Sarthi's experiments in Q1, so we are at the beginning of the path to diagnose and iterate on the issues with this system.
+
+Unlike many other aspects of Basketball where one needs to really nail player ID, minutes is a case where one can miss this quite a bit and still get good minutes.  This is a very good fact for our mid term prognosis, but it still does not overcome the fact that there will be other broken aspects of our system that will need innovation to fix.  How much is impossible to say until we get good data running the system and diagnosing failures.
+
+I think in a months time we can have done a first pass of analyzing errors and correcting some low hanging fruit.
+That may well be enough to get us a functioning system.  But depending upon that is risky.  
+
+
+
+
+
+Q2 RECAP:  In Q1 we decided on baseball, but Sarthi had done experiments showing solid progress in AI minutes.
+Thus in Q2 we decided to get two POCs up an running, to maximize safety in case something fell thru.  One in baseball and one in minutes, as well as making advancements in homography and player ID.
+
+OCR was a success; Homography was not; The baseball POC does as requested (I think); and AI-minutes is a few back and forths with SW from working.
+
+BUT there was no bandwidth in the four person team to really drive
+
+
+
+
+
+
 2021-02 [16] BB-stats - FLAKY AI
 2022-08 [06] PIVO.     - (really 11 months, but not full time)
 2023-02 [12] BallerTV  - low video quality highlights

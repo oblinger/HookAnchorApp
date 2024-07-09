@@ -157,6 +157,7 @@ RIGHT DISPLAY
 
 ## xx Better Touch Tool
 
+- Google "Better Touch Tool" -> Download
 - [license](/Users/oblinger/ob/kmr/T/Comp/MAC/MAC Apps/license.bettertouchtool) 
 
 
@@ -169,6 +170,7 @@ IDEAS:
 - HOOKS MENU:	DF		== CAPS == Hooks Menu
 - QW	
 
+- Copy ~/Library/Application Support/BetterTouchTool
 
 ## xx FoldingText    <<<<<<
 

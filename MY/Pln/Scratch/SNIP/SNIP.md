@@ -1,3 +1,16 @@
+### 2024-07-09  Chunch
+
+driving metric:  ds, report
+timeouts in prod. pano, 
+testing: end to end in QA. reg tst
+ops:  hotfix. p2p. gcp  , docker dep
+alpha
+
+speedups: 
+
+ic, 579c-a2096
+hdyf518kp3wc
+
 ### 2024-03-08  Junk to delete
 
     

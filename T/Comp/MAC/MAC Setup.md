@@ -1,4 +1,4 @@
-
+(See Mac How to for setup)
 # BUILD STEPS
 ## APP SPECIFIC SETUPS
 ### SPOTIFY
