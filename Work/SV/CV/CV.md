@@ -1,31 +1,23 @@
+
+:: [[Data]]
 .[[CV]].
-  ROOTS:[CV Root](spot://cvroot), [CV Confluence](spot://cvconfluence), [CV Jira Page](spot://cvjirapage),  [CV Notion](spot://cvnotion), , [PROJ](spot://proj),
-  DIRS:	[CV Google Page](spot://cvgooglepage), [PROJ Gdrive](spot://projgdrive),  [[CV Data]],
+  ROOTS:[CV Root](spot://cvroot), [CV Confluence](spot://cvconfluence), [CV Jira Page](spot://cvjirapage),  [CV Notion](spot://cvnotion), [Data](spot://data),
+  DIRS:	[CV Google Page](spot://cvgooglepage), ,  ,
   ORGS:	[CV Docs](spot://cvdocs), [DOCs](spot://docs), [CV Info](spot://cvinfo), [CV Log](spot://cvlog),
   ADDS:	[CVA](spot://cva), [CV Ana](spot://cvana), [[CV Annotations]],
   OLD:	[CVT](spot://cvt), [DSET](spot://dset), [CV OKRs](spot://cvokrs),
-  DELS: [CV Proj](spot://cvproj), 
-
-
-
-
-
-
-
-
-
-
 
 
 
 
 
   PLAN:	[SprintPlanning](spot://sprintplanning), [[CVP]], [[CV Roadmap]],
-
+  
+  DELS: [[Work/SV/CV/Data/Data]], 
+  DELS: [CV Proj](spot://cvproj),[PROJ](spot://proj), [PROJ Gdrive](spot://projgdrive), 
   DELS: [SprintPlanning](https://docs.google.com/document/d/1F2hISCp9p-uvfzVt6OTclhOGswQ9EmbVwGxKk9uqJ28/edit), [CV Google](https://docs.google.com/document/d/1nGCRGOZVxvIzbM0MFpspTaCtF-f8hb-K7yi3T2c6h9s/edit), [[SV G Root]], [svdata](https://drive.google.com/drive/folders/10VWKl_3u0--LyLZmzgu8So7i1Jgq6HSr?usp=drive_link), [Shared Folder](https://drive.google.com/drive/u/4/folders/1GdLWPNXw6lNDp9kxLjIQsaX1zAcnszAl), [BitBucket MVP Algos](https://bitbucket.org/SVEngineering/workspace/projects/MVPAL), [JIRA](https://software-engineering-team.atlassian.net/jira/software/projects/AIT/boards/25), [CONFLUENCE](https://software-engineering-team.atlassian.net/wiki/spaces/SVAI/overview),[SVdata](spot://svdata), [[SVCV Re-ID]], [[SVQ2]], 
 
-
-
+after
 ## Foo
 
 - Find interaction rough.  We seem to be agreeing in the end, but somehow it seems I am shoving him the whole way.

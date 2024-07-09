@@ -1,5 +1,4 @@
 
-:: [[Work Jump]]
 .**NOW**. 
 CLR:	ColorT, TgtFn
 PID:	GetRoster,
@@ -39,8 +38,9 @@ Fireballs:		^Dispatcher; ^Maxim
 [T28Enhance](https://docs.google.com/document/d/1uOdu0gDLiMXK0d_GQ7kr874PBHVgssaY8D521cvdtQw/edit):	> tell team
    -- 3on3 games
 [Assess](spot://assess):		>look
-[[CV Data]]:		Pie-chart
+[[Work/SV/CV/Data/Data]]:		Pie-chart
 [Cost Analysis](https://docs.google.com/document/d/1WYVwgCfHYk6wC8pGFo68t_vAju_oczbSeBTS-zba-XI/edit?usp=drive_link):	Cost Per Game Analysis
+[[Work Jump]]
 
 
 @Scott Byers / @matias:  We are thinking of a version of halos where we would dynamically recompute the halos depending upon the roster as dynamically edit

@@ -1,6 +1,19 @@
 .[[Work Jump]].
-  ADDS:   [[CV]]
+  ADDS:
   ADDS:   [[SV]]
+
+
+
+
+
+
+  DELS: [[CV]], 
+
+
+
+
+
+
 
 
 

@@ -9,7 +9,6 @@
 - ops execution
 - device search
 
-
 ## Feedback
 
 ### Employee Empathy
@@ -107,6 +106,40 @@ Now we have done at least 5 weeks of 100% bug fix time.
 I would have guessed that 5 weeks would have made a bigger dent,
 
 ## = Team velocity / distractions
+
+2021-02 [16] BB-stats - FLAKY AI
+2022-08 [06] PIVO.     - (really 11 months, but not full time)
+2023-02 [12] BallerTV  - low video quality highlights
+2024-02 [05] Realplay  - 
+2024-07 [   ] Minutes  - 
+
+2021-02 Michael, Vishal, Fong
+- -> Solving WHOLE basketball stats problem at once <-
+  2/3point, homography, tracking, playerID, free-throw, active hoop,
+  Jersey Color, Jersey OCR, timeouts, turnovers, rebounds, assists, ...
+  Not enough resource on any one part to even keep (except framework)
+- Solid CV Module Messaging Architecture built.
+- Very bad data collection
+- Bad "PhD-guy" eng velocity
+- Non-existent SW processes
+- Poor diagnostics on alg performance
+- just trying stuff building poorly understood code and moving on
+
+2022-08 [06] PIVO
+- Whole company focus on PIVO
+- I only listed for 6 months, but really did not put it on ice for 11 months
+
+2023-02 [12] BALLER
+- Baller TV -- low video quality based highlights
+- Introduced money metrics & enough data to actually measure them
+- Did deep error analysis on one game, but not ongoing assessment.
+
+2024-02 [05] REALPLAY
+- ...
+
+2023-07 
+- 
+
 - Tennis
 - Recording App
 - Pivo
@@ -157,6 +190,16 @@ DISCUSS
 - [ ] $1000/mo budget
 
 # LOG
+
+### 2024-07-08  Move Faster
+
+- Easier Problems First
+- Fewer: RP,Pivo,VB,BB
+  BallerHLt, Tennis,
+  BallerStats->RP->Min
+- Data/Measures
+- Infra strz
+- Close Tracking
 
 ### 2024-05-12  Slow
 

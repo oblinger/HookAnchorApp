@@ -2,7 +2,7 @@
 - [PL](https://drive.google.com/drive/folders/1P18W-qzsNCR3mrkrvAZuD6ocMmfSUu3S): [day](https://docs.google.com/document/d/1LmOhZxJAs9XCzh6SbNzZLW7oHmR_LIvveHEnZjYJwCs/edit),  [sp](https://docs.google.com/document/d/1F2hISCp9p-uvfzVt6OTclhOGswQ9EmbVwGxKk9uqJ28/edit),  [nm](https://docs.google.com/document/d/1C5YW7xad9bos_9ibw1ya3eqtnn-Z03wzXLTWIVynYmQ/edit),  [bp](https://docs.google.com/document/d/1JirdM7CLFwRdbxMn2M-6kZ11oRHe8IAh1GOAdvCbU54/edit),  
 - [[CV]]: [[CV Ana]],  [[Set/Cmd/CVT]],  
 
-:: [[CV Data]],    [[SVCV Re-ID]]
+:: [[Work/SV/CV/Data/Data]],    [[SVCV Re-ID]]
 
 
 GB: 	Finish OCR

@@ -1,25 +1,39 @@
 
-:: [[EBT]],   [[Lrn]],   [[Meta List]],   [[Ping]]
 .[[Pln]].
-  CV:	[[CVP]], [SprintPlanning](spot://sprintplanning), [OKR Q2](spot://okrq2), [OKRs](spot://okrs), [OKR Slide](spot://okrslide), [[CV Roadmap]],
+  CV:	[[CVP]], [SprintPlanning](spot://sprintplanning), [OKR Q2](spot://okrq2), [OKRs](spot://okrs), [OKR Slide](spot://okrslide), [[CV Roadmap]], [Standup](spot://standup),
   SW:	[Pln Factory](spot://plnfactory), [Pln Folder](spot://plnfolder), [Pln Work](spot://plnwork),
   WRK2:	[[Full]], [[Prime]],
   WRK3:	[[RD]],
   -
-  OVER:	[[Friday]], [[Habit]], [[Repeat]], [[Self Evergreen|Ever]].
+  OVER:	[[Friday]], [[Habit]], [[Repeat]], [[Self Evergreen]].
   LST1: [[Quick]], [[Todo]], [[Now]], [[Active]], [[SCRatch]],
   LST2:	[[Big]],
   LST3:	[[Quarterly]], [[Later]], [[Wings]], [[Dropped]], [[Archive]],
   LONG:	[[Rocks]], [[Q2]], [[Spirit]], [[Actualize]], [[Mission]], [[WRM]],
   STRAT:[[Productivity]], [[Daily Schedules]],
-  TOPIC:	[[COMS]], [[Diary]],
+  TOPIC:	[[COMS]], [[Diary]], ,
   FUN:	[[Fun]], [[Social]], [[Fried]], [[Gap]], [[Hacks]], [[Fried Later]],
   FAM:	[[Family]], [[Friday Dates]], [[Home]],
   ROOT:	[[BKT]], [[Up All]], [[Up Task]],
   EXT:	[[External]], [[Other]],
   TYPE:	[[Chew]], [[Eat]],
-  ADDS:   [Pln Personal](spot://plnpersonal),
-  DELS:
+  ADDS: [Pln Personal](spot://plnpersonal),
+  ADDS: [[Self]],
+
+  DELS: [[Lrn]], 
+
+after
+:: [[EBT]], [[Ping]]
+
+
+
+
+
+
+
+
+
+
 
 
 

@@ -5,6 +5,7 @@ n:: no prefix.	Dated entries without any typing prefix
 
 | Date       | File                       | Notes                                                                                                                             |
 | ---------- | -------------------------- | --------------------------------------------------------------------------------------------------------------------------------- |
+| 2024-07-08 | [[@Jason Syversen]]            | Move Faster                                                                                                                       |
 | 2024-07-05 | [[@Apple]]                     | Airmax repair                                                                                                                     |
 | 2024-06-26 | [[Politics]]                   | Fixing Banking                                                                                                                    |
 | 2024-06-20 | [[Trump]]                      | Trying to limit FED independence                                                                                                  |

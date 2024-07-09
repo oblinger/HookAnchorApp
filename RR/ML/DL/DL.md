@@ -1,4 +1,6 @@
 
+:: [[DSPY System]]
+
 :: [[GPT]]
 .[[DL]].
   [[Attention]]:
@@ -32,7 +34,7 @@
   [[Transformers]]:
   [[CNN]]:
   :
-  [[LLM]]:
+  :
   [[NG Notation]]:
   [[ORPO Odds Ratio Preference Optimization]]:
   [[RAG]]:
@@ -41,6 +43,19 @@
   :
   [[VAE - Variational Auto Encoder]]:
   [[GPT]]:
+
+
+
+
+
+
+
+
+
+
+
+  DELS: [[LLM]], 
+
 
 
 

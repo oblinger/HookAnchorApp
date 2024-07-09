@@ -1,10 +1,31 @@
 
-:: [[CV]]
+:: [[@SV]]
 #top 
-
 .[[SV]].
-  :
-  [[Bug.]]:
+  [[SV Tasks]] -
+  TOPS:			[[WW]],   [[QQ]],  [[Mgt]], [[CV]],
+  [[SV Strat]]:		[[Reset]],  [[ROADMAP]],
+  [[SV Ops]]:	 	[[SV Dashboards]],  [[SV Testing]], [[SV Planning]],
+  [[SV People]]:	[[SV SW Team]], [[SV Individuals]],
+  [[SV Market]]:	[[SV Customer]],  [[SV Competitor]], [[SV Partner]],
+  [[SV Product]]:	[[SV Code]],  [[SV Apps]], [[SV System]], ,
+  [[SV Software]]:
+  [[INV]]:
+  INFO:			[[SV Code]], [[SVT]], [[SV Legal]], [[SV Folder]], [[Meta SV]],
+  ARCHIVE:		[[SV Archive]],   [[SV Wings]],
+  ADDS:   [[2023 Deliverables]], [[Bug.]], [Bug Actual List Page](spot://bugactuallistpage), [Bug Board Page](spot://bugboardpage), [[Bugs]], [Canva](spot://canva), [[Circle]],
+  [Fireball](spot://fireball), [HALOS](spot://halos), [[Investor Intros]], [Jira](spot://jira), [Jira Me Page](spot://jiramepage), [[July Hiring]], [[SV90]], [[SV90.]], [[SV Basketball Info]]
+  [SV Clickup Page](spot://svclickuppage), [SV Confluence Page](spot://svconfluencepage), [SV C Root](spot://svcroot), [[SV FIN]], [SV Google Drive Page](spot://svgoogledrivepage)
+  [SV G Root](spot://svgroot), [[SV Letter]], [SV Log Page](spot://svlogpage), [[SV lrn]], [[SV Roadmap]],
+
+
+
+
+
+
+
+
+### OLD
   [Bug Actual List Page](spot://bugactuallistpage):
   [Bug Board Page](spot://bugboardpage):
   [[Bugs]]:
@@ -63,77 +84,11 @@
   [[SV Wings]]:
   [[WW]]:
   DELS: , ,
-- [[SV Tasks]] -
-- TOPS:		[[WW]],   [[QQ]],  [[Mgt]],
-- [[SV Strat]]:	[[Reset]],  [[ROADMAP]],
-- [[SV Ops]]:	 	[[SV Dashboards]],  [[SV Testing]], [[SV Planning]],
-- [[SV People]]:	[[SV SW Team]],   ,
-- [[SV Market]]:	[[SV Customer]],  [[SV Competitor]], [[SV Partner]],
-- [[SV Product]]: [[SV Code]],  [[SV Apps]], [[SV System]], ,
-- [[SV Software]]:
-- [[INV]]:
-- INFO:			[[SV Code]], [[SVT]], [[SV Legal]], [[SV Folder]], [[Meta SV]],
-- ARCHIVE:		[[SV Archive]],   [[SV Wings]],
 - [[SV Basketball Info]]
-  ADDS:   [[Idea]]
+  ADDS:   
+  DELS: [[Idea]], 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-:: [[cvt]], 
-
-:: [[Circle]],   [[SV Software]]
-
-< [[???]]   [[@Sports Visio]],  [[@Jason Syversen]], [[@SV]]
-[[Canva]]
-
-LOG
--  [[SV90]], [[SV90.]],  [[2023 Deliverables]],  
 
 
 #### [[SV]] [[SV Folder|--]] SPORTS VISIO STUFF
@@ -164,8 +119,6 @@ dv.table(["File", "Description"], rows);
 
 
 
-# TOPICS
-## = People
 # LOG
 ### 2023-03-19  hold  sports stats data
 

@@ -1,5 +1,18 @@
 .[[My Content]].
   ADDS:   , [[Doc]], [[TXT]],
+  ADDS:   [[Idea]],
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
