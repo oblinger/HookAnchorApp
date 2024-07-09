@@ -1,6 +1,6 @@
 # SETUP
-## = NEW COMPUTER - How to setup a new system
-- xx PORT OB TREE TO NEW SYSTEM. (See boot_install for latest)
+## = NEW COMPUTER - How to sync my setup a new system
+- PORT OB TREE TO NEW SYSTEM. (See boot_install for latest)
 - Copy ~/ob onto the new machine at /Users/oblinger/ob
 - Copy ~.config/karabiner/karabiner.json to new machine
 - Ensure Keyboard Maestro is loading ~/ob/data/KeyboardMaestro-Master/Keyboard Maestro Macros.kmsync
@@ -8,6 +8,7 @@
 - Ensure prefs->users->login items-> /Users/oblinger/ob/bin/boot
 
 - if 'km' script does not work, create a new github token for this machine
+
 
 
 # HOW TO

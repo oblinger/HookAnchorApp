@@ -1,4 +1,5 @@
 .[[Mac]].
+  [[MAC Apps]], [[MAC How To]], [[MAC Other HW]], [[MAC Setup]],
   [1Password App](spot://1passwordapp), [1Password for Safari App](spot://1passwordforsafariapp), [Activity Monitor App](spot://activitymonitorapp), [AppOpen App](spot://appopenapp)
   [App Store App](spot://appstoreapp), [Audio Hijack 2 App](spot://audiohijack2app), [Automator App](spot://automatorapp), [Backgrounds for Zoom App](spot://backgroundsforzoomapp)
   [Bartender 4 App](spot://bartender4app), [Be Focused Pro App](spot://befocusedproapp), [BlueJeans App](spot://bluejeansapp), [Brave Browser App](spot://bravebrowserapp)
@@ -15,8 +16,7 @@
   [Grammarly Editor App](spot://grammarlyeditorapp), [gSheets App](spot://gsheetsapp), [Home App](spot://homeapp), [hROOM](spot://hroom), [Image Capture App](spot://imagecaptureapp)
   [Importer for Contacts App](spot://importerforcontactsapp), [iStat Menus App](spot://istatmenusapp), [Joplin App](spot://joplinapp), [Karabiner-Elements App](spot://karabinerelementsapp)
   [Karabiner-EventViewer App](spot://karabinereventviewerapp), [[Karabiner Notes]], [Keyboard Maestro App](spot://keyboardmaestroapp), [Keynote App](spot://keynoteapp), [Kindle App](spot://kindleapp)
-  [Launchpad App](spot://launchpadapp), [LiquidText App](spot://liquidtextapp), [LogiOptions App](spot://logioptionsapp), [logioptionsplus App](spot://logioptionsplusapp), [[MAC Apps]], [[MAC How To]]
-  [[MAC Other HW]], [[MAC Setup]], [Magnet App](spot://magnetapp), [Mail App](spot://mailapp), [Maps App](spot://mapsapp), [Messages App](spot://messagesapp)
+  [Launchpad App](spot://launchpadapp), [LiquidText App](spot://liquidtextapp), [LogiOptions App](spot://logioptionsapp), [logioptionsplus App](spot://logioptionsplusapp), [Magnet App](spot://magnetapp), [Mail App](spot://mailapp), [Maps App](spot://mapsapp), [Messages App](spot://messagesapp)
   [Microsoft Excel App](spot://microsoftexcelapp), [Microsoft OneNote App](spot://microsoftonenoteapp), [Microsoft Outlook App](spot://microsoftoutlookapp)
   [Microsoft PowerPoint App](spot://microsoftpowerpointapp), [Microsoft Word App](spot://microsoftwordapp), [Mission Control App](spot://missioncontrolapp), [Music App](spot://musicapp)
   [Named App](spot://namedapp), [Netflix App](spot://netflixapp), [Neu App](spot://neuapp), [News App](spot://newsapp), [NOISE DarkNoise](spot://noisedarknoise), [NoSleep App](spot://nosleepapp)
