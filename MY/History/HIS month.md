@@ -1,4 +1,7 @@
 
+[[DocRackspace\|Tue Jul 2  2024 ]]  	[[DocRackspace#http://50.57.143.251/]]  
+[[DocRackspace\|Tue Jul 2  2024 ]]  	[[DocRackspace#From  Build-11-11-11-scratch-12-11-09  (note wrong scratch d]]  
+[[DocRackspace\|Tue Jul 2  2024 ]]  	[[DocRackspace#.ssh=Aq1 (dev2)]]  
 [[DocRackspace\|Tue Jul 2  2024 ]]  	[[DocRackspace#72:e2:e3:26:ec:60:61:93:f7:78:b4:ed:2f:95:4d:fa Dev2@paybygr]]  
 [[DocRackspace\|Tue Jul 2  2024 ]]  	[[DocRackspace#Base-2011-11-11]]  
 [[DocRackspace\|Tue Jul 2  2024 ]]  	[[DocRackspace#ssh root@50.57.108.157  rootpass]]  
@@ -544,7 +547,7 @@
 [[Enxt\|Wed Jan 17  2024]]  	[[Enxt#...]]  
 [[Enxt\|Wed Jan 17  2024]]  	[[Enxt#After Care]]  
 [[Enxt\|Wed Jan 17  2024]]  	[[Enxt#Transport]]  
-[[Work/SV/CV/Data/Data\|Wed Jan 17  2024]]  	[[Work/SV/CV/Data/Data#DATA SETS]]  
+[[CV Data\|Wed Jan 17  2024]]  	[[CV Data#DATA SETS]]  
 [[CV\|Wed Jan 17  2024]]  	[[CV#2024-01-12  GRZ]]  
 [[CV\|Wed Jan 17  2024]]  	[[CV#2024-01-12  Martin]]  
 [[CV\|Wed Jan 17  2024]]  	[[CV#2024-01-15  Maxim]]  
