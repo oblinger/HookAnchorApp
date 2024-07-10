@@ -90,6 +90,7 @@
 
 
 
+
 :: [[EOCA Civilizing tendency]],   [[EOCA Definitions]],   [[EOCA The Writing Is On The Wall]]
 - [[EOCA Publish]] 
 :: [[EOCB SandboxFutility]],   [[EOCI Alignment as Mind Slavery]],   [[EOCI ProblemOfQualia]],   [[EOCT Argument]]
@@ -110,7 +111,7 @@ ORG PAGES
 
 = [[EOC Log]] 
 ACTIVE
-- [[EOCB End Run (Cyber Model)]] - 
+- [[EOCB End Run -- Cyber Model]] - 
 
 [[EOCT Ways Intelligence Will Be Super]] 
 

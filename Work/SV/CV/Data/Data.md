@@ -1,7 +1,8 @@
 .[[Data]]. ([[CV]])
-  ADDS:   [CV Data Tasks](spot://cvdatatasks),
-  ADDS:   [lllDATA](spot://llldata),
+  [CV Data Tasks](spot://cvdatatasks),
+  ADDS:   ,
   ADDS:   [[Dataset]],
+  DELS: [lllDATA](spot://llldata), 
 
 
 
