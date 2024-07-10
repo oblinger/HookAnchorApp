@@ -1,11 +1,12 @@
 # SETUP
 ## = NEW COMPUTER - How to sync my setup a new system
 - PORT OB TREE TO NEW SYSTEM. (See boot_install for latest)
+  USB-C cable & "T" target mode
 - Copy ~/ob onto the new machine at /Users/oblinger/ob
 - Copy ~/Library/Application Support/BetterTouchTool    (ensure BTT is not running)
-- Copy ~/.config Karabiner...
+- Copy ~/.config/karabiner/karabiner.json to the new system
 - xcode & xcode-select --install
-- Ensure Keyboard Maestro is loading ~/ob/data/KeyboardMaestro-Master/Keyboard Maestro Macros.kmsync
+- Keyboard Maestro !file stop then start sync of ~/ob/data/KeyboardMaestro-Master/Keyboard Maestro Macros.kmsync
 - Ensure ~.zprofile is includes "source ~/ob/bin/obrc"
 - Ensure prefs->users->login items-> /Users/oblinger/ob/bin/boot
 

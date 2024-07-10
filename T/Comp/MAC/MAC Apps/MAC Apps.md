@@ -188,13 +188,16 @@ Paypal
 Tools I Never used
 https://github.com/RobTrew/txtquery-tools/tree/master/ftdoc%20url%20scheme%20and%20FTCopyAsURL
 
-## xx Karabiner-Elements  [[Karabiner Notes]].  (Now using Better Touch Tool!)
+## xx Karabiner-Elements  [[Karabiner Notes]].  (Also using Better Touch Tool!)
 
 See ~/.config/karabiner/karabiner.json
 
 INSTALL:
 - Google: Karabiner download
 - Just drag drop the ~/.config/karabiner/karabiner.json to the new system
+
+SUMMARY 2024-07-09
+- mapping tab key, caps key, and swapping alt and command
 
 NOTES:
 - I dramatically lowered:  basic.simultaneous_threshold_milliseconds: 1    (from 50 and maybe it was even larger before this)
