@@ -3,6 +3,8 @@
 - PORT OB TREE TO NEW SYSTEM. (See boot_install for latest)
 - Copy ~/ob onto the new machine at /Users/oblinger/ob
 - Copy ~/Library/Application Support/BetterTouchTool    (ensure BTT is not running)
+- Copy ~/.config Karabiner...
+- xcode & xcode-select --install
 - Ensure Keyboard Maestro is loading ~/ob/data/KeyboardMaestro-Master/Keyboard Maestro Macros.kmsync
 - Ensure ~.zprofile is includes "source ~/ob/bin/obrc"
 - Ensure prefs->users->login items-> /Users/oblinger/ob/bin/boot
