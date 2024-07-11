@@ -147,7 +147,7 @@ Dates   :  11/1/2015 - 10/25/2016   (LI: Nov-2015-oct2016)
 Salaries:  $10K / month
 Duties  :  
 _________ 
-Employer:  Jotter   (GENERALLY DONT SHOW)
+Employer:  Jotter   (GENERALLY DON'T LIST THIS)
 Address :  111 Independence Dr, Menlo Park, CA 94025
 Title   :  Consultant / Chief Science Officer
 Contact :  Sateez Kadivar

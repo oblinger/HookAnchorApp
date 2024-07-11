@@ -5,6 +5,9 @@ n:: no prefix.	Dated entries without any typing prefix
 
 | Date       | File                       | Notes                                                                                                                             |
 | ---------- | -------------------------- | --------------------------------------------------------------------------------------------------------------------------------- |
+| 2024-07-10 | [[@Sean O'Connor]]             | Pepperdine info Dump                                                                                                              |
+| 2024-07-10 | [[EOC Log]]                    | 5 kinds of people                                                                                                                 |
+| 2024-07-10 | [[@Jason Syversen]]            | Sync on team                                                                                                                      |
 | 2024-07-09 | [[SNIP]]                       | Chunch                                                                                                                            |
 | 2024-07-08 | [[@Jason Syversen]]            | Move Faster                                                                                                                       |
 | 2024-07-05 | [[@Apple]]                     | Airmax repair                                                                                                                     |

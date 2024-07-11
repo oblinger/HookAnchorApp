@@ -6,6 +6,36 @@
 # LOG
 
 
+### 2024-07-10  Pepperdine info Dump
+
+Sean Here is my Pepperdine Info Dump let me know if you need more info
+
+
+ANALYTICS FIRE
+Relevancy:  
+- PRODUCT SCALE - We developed and operationally maintained the software that controlled over multiple billions of dollars worth of clean energy hardware, and our team operationally managed the entire cloud infrastructure at scale for over 4 years until we sold the company.
+- COMPUTER VISION/AI - One of the products our team developed uses deep learned models of satellite image data and AI planning to automatically layout solar roof installations.
+Raise:  Fully bootstrapped, $0 raised
+Sold: 100% of company sold.
+
+
+MARTIAN ROBOTS (also called Bizzy Robots)
+Relevancy:
+- COMPUTER VISION/AI - Built a bathroom cleaning robot with one dexterous arm and vision sub-system capable of understanding and interacting in unstructured, unprepared, home environments.  Many of the tracking and localization algorithms used for this robot are exactly the same kinds that we use today at SportsVisio.
+Raised:  $1M in 2015
+Sold: 100% of company
+
+
+AEOLUS ROBOTICS
+Relevancy:
+- COMPUTER VISION / AI - Eldercare robot with two dexterous arms used all of the same algorithms as with Martian Robots
+Raised: $30M as of 2020
+Sold:  Company is still active
+
+
+= $10M in 2020, $11M in 2019, $9M in 2018
+
+
 ### 2024-05-21  Topics
 
 - 4 Resources = .3 mgt, 1 Ops (B), 3.0

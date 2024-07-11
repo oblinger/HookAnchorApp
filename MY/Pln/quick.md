@@ -1,7 +1,8 @@
+- look at hooper:  https://www.hooper.gg/
+plans for data
 - two paths
 - mouse
 - diffusion
-- camping trip
 
 
 - text barry

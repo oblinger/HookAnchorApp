@@ -3,7 +3,7 @@
 	Technology & Product Development
 	Robotics, Machine Learning, Computer Vision, 
 	NLP, Programming By Demonstration, and Cyber Security
-	
+
 ### - 21 AI Technologies worked on
 
 - Instant Design
@@ -49,7 +49,7 @@ _
 
 ### - 5 ORGS BUILT
 - SportsVisio CV team -- Replace entire team w: Grz/Juan/Martin/Maxim/Briones
-- Analytics Fire -- 
+- Analytics Fire -- 45+? people
 - Aeolus -- 
 - Martian -- Hired to 13 person team
 - DARPA   [4-Setas + BL & MR eval teams]
@@ -78,7 +78,7 @@ Not counted
 - Chana - executive admin, Haddick - director of product (also under TC)
 
 ### - 17 COUNTRIES SPANNED
-Counted 17 countries at Aeolus.  (many at AF)**
+Counted 17 countries at Aeolus.  (many also at AF)**
 
 ### - 3-person hiring org, 13-step process
 **HIRING TEAM: 3 James, Poland Guy, Maria  (Aeolus)**
@@ -177,19 +177,13 @@ _
 ## = NUMBERS - JOB EXPERIENCE
 ### - ANALYTICS FIRE
 #### AF WEB REFS
-Here is Sunpower describing the "Instant Design" solution that we developed and deployed:
-  https://cloud.google.com/blog/products/ai-machine-learning/how-sunpower-puts-solar-on-your-roof-with-ai-platform
+- [Here](https://cloud.google.com/blog/products/ai-machine-learning/how-sunpower-puts-solar-on-your-roof-with-ai-platform) and [Here](https://us.sunpower.com/blog/2019/04/09/home-solar-design-made-easier-google-cloud) is Sunpower describing the "Instant Design" solution that we developed and deployed.
+- Design Studio  https://www.youtube.com/watch?v=AXD2FUPkncw&feature=youtu.be
 
-https://us.sunpower.com/blog/2019/04/09/home-solar-design-made-easier-google-cloud
-
-
-Design Studio  https://www.youtube.com/watch?v=AXD2FUPkncw&feature=youtu.be
-
-_
 #### 11+ Big AF Clients
 - **Customers**:  SunPower, Enphase, Boston Scientific, Arthrex, iCracked, NovaSource, Moxion, Pythian, Blackbird, Drive Dev, Basil Health
 #### 45+ Employees  (~50+)
-(including part-time, PH team, and rebased etc. we hit 45 in 2018)
+(including part-time, PH team, and rebase etc. we hit 45 in 2018)
 #### 130+ projects
 - Standard/full project = 2 devs, 1-2 QA, fractional PM
 Small project is 1.5 devs.  Large project >2 devs.
@@ -203,7 +197,7 @@ Small project is 1.5 devs.  Large project >2 devs.
 - 2019 plateau (same or maybe little bigger than 2018)
 - 2020 slightly smaller than 2019 (was shaping to be bigger before covid)
 
-#### 20+ py over 3 years - Residential Solar
+#### 20+ FTE over 3 years - Residential Solar Project
 On the low side it was just Eddie with 3devs+1pm+1QA.  
 For a month in march2020 we hit the hight side of 13 
 Average 7py over 3 years 2018-2020
@@ -225,16 +219,18 @@ Installer stuff
 Performance monitoring stuff
 
 #### $3B+ in IoT assets controlled by AF SW
+- TMAC Project - 
+- Oasis Project - 
 
 **DETAILS ON NUMBER OF IOT DEVICES**
-- **we wrote code for hubs, multiple 100K devices controlling millions of devices**
+- **we wrote code for multiple 100K hub devices that are controlling millions of individual panel sensor devices**
 - **TMAC** - power plant controllers.   100K+  (We did not build from scratch.)
 - [Gala oregon plant](https://newsroom.sunpower.com/2017-02-27-SunPower-Starts-Construction-On-56-Megawatt-Gala-Solar-Power-Plant-in-Oregon) Big plant $300M Gala oregon plant.
 - Solar star. largest solar in world until 2016. 1.7M panels
 - **OASIS** - powerplant controllers.
-(upto 70 trackers per hub, many solar panels))
+   (upto 70 trackers per hub, many solar panels))
 - **PVS5** - residential hub  100s K connected to handful of devices.
-- **Envoy** - residential hub.  handful of devices per envoy.
+- **Envoy** - residential hub.  handful of devices per envoy. (Enphase)
 - 1M+ clean energy devices.  (these are individual sensors or panels)
   
 

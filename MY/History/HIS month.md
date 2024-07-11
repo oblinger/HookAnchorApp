@@ -270,7 +270,7 @@
 [[RES Proof Points\|Thu May 9  2024 ]]  	[[RES Proof Points#.]]  
 [[RES Proof Points\|Thu May 9  2024 ]]  	[[RES Proof Points#Served 5 advisory/board roles]]  
 [[RES Proof Points\|Thu May 9  2024 ]]  	[[RES Proof Points#.]]  
-[[RES Source Info\|Thu May 9  2024 ]]  	[[RES Source Info#RESUME SOURCE INFO]]  
+[[RES Src Info\|Thu May 9  2024 ]]  	[[RES Src Info#RESUME SOURCE INFO]]  
 [[RES Star\|Thu May 9  2024 ]]  	[[RES Star#Sports Visio Turn Around]]  
 [[RES Star\|Thu May 9  2024 ]]  	[[RES Star#AF Instant Design]]  
 [[RES Star\|Thu May 9  2024 ]]  	[[RES Star#Aeolus Bang Start]]  

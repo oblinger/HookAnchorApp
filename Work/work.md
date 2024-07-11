@@ -1,11 +1,12 @@
 
 .**NOW**. 
+[[DAT|DAT]]:	Mrun  Grz(OCR) Briones(Color, VidQ) 
+Scripts
 Max:	Roster in, 
 CLR:	ColorT, TgtFn
 [[FIN.]]	Invest plan; Retire plan(spreadsheet)
 [OKRs](https://docs.google.com/presentation/d/1v7Winy9DHxGuYh05_is8zH05ClJi0qclM698-pDXIgY/edit?pli=1#slide=id.g274b3e27e6b_0_0):	Q3 Planning	
 [[NJ]]:	>[[War|War]], rewrite, mentor
-
 
 ## TRACK
 . 			GCP, Halos, Minutes, Colors
@@ -15,7 +16,6 @@ Halos:		Grz: Halo videos,
 [Min](https://docs.google.com/document/d/1oaG7NB2fJ9THAtHcREX6yqrWg91wYEsof9zQNEInFFU/edit):		!! On production.
 VidQ:		^Neg entropy gallery
 GCP:		Brian plan.  Pricing/Perf of using S3
-[[DAT|DAT]]:		Mrun  Grz(OCR) Briones(Color, VidQ) Scripts
 R&D docs	! Briones 2023 R&D
 [[patents]]:	^J Provisional filed
 

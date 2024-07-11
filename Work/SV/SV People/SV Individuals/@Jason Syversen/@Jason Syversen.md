@@ -218,6 +218,21 @@ DISCUSS
 
 # LOG
 
+### 2024-07-10  Sync on team
+
+
+This really is an existential moment for SportsVisio
+
+Feel broadly good about Minutes; but there are a couple of new algs coming together here, and watching iteration happen on such things can be painfully slow in contexts where each week counts!
+
+
+- Couple ideas to lower our risks:
+	- Co-located 2weekend hack-a-thon
+	- Reduce burn - 
+		- Furlow 
+		- Brian post bridge
+		- 
+
 ### 2024-07-08  Move Faster
 
 - Easier Problems First
