@@ -3,6 +3,22 @@
 
 # QUICK - QUICK work projects
 
+
+### 2024-07-11  Hack-a-thon week
+
+
+Briones/James:
+I am thinking to fly myself Martin, Maxim, and Juan to a central location for a nine day hack-fest.  We just need a hotel with good internet and some modest conference room (or perhaps even a large two-room hotel room suite).
+
+Obviously this will speed our dev time, but also increase our burn so we want to keep prices low.  Still I am asking these guys to hack-code around the clock, so if prices are similar in order to get to a slightly cooler location, then I think it is money well spent.  but not if it really bumps the prices.  And of course we should consider the cost of plane travel, car travel, and food.  We probably will not have it catered, but instead will just get takeout for our meals.  And many days we will probably go out for a modest dinner,  else hacking 18 hours/day in a small room starts to feel like slavery.  ;-)
+And I think one day we might want to find a slightly unique place to eat, but still not too expensive.
+
+I know that many times Briones has prices out such a thing, so James if you want to just drop this on Briones feel free to do that.  Either way, I would like to get estimates for 4 cities, and any other if you think there are better ones:  Buenos Aries, Bariloche, and Mendoza in Argentina, and Las Condes district in Santiago de Chile.  you can see a short note from Maxim below:
+
+If it would be an entire week in some place in Argentina it could be Bariloche o Mendoza but I dont think you will find direct fligths from the US to there. Another place could be Las Condes district in Santiago de Chile. Chile has direct fligths from USA and Santiago its just 2hs from argentina by plane. And its more safest. I think Chile was ranked as the safest place in Latin America.
+
+
+
 ### 2024-06-18  Lessons Learned From Minutes
 
 - Spec FIRST: 

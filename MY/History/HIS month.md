@@ -1,4 +1,8 @@
 
+[[DocRackspace\|Tue Jul 2  2024 ]]  	[[DocRackspace#Rackspace Login details]]  
+[[DocRackspace\|Tue Jul 2  2024 ]]  	[[DocRackspace#Instances]]  
+[[DocRackspace\|Tue Jul 2  2024 ]]  	[[DocRackspace#was dev-lamp [DNS=dev] -- now has the wordpress site -om- de]]  
+[[DocRackspace\|Tue Jul 2  2024 ]]  	[[DocRackspace#Full-2011-11-11]]  
 [[DocRackspace\|Tue Jul 2  2024 ]]  	[[DocRackspace#ssh franklangston@50.57.143.251 userpass  (rootpass)]]  
 [[DocRackspace\|Tue Jul 2  2024 ]]  	[[DocRackspace#test.paybygroupG0okK7Gt7]]  
 [[DocRackspace\|Tue Jul 2  2024 ]]  	[[DocRackspace#http://test.paybygroup.com/]]  
@@ -270,7 +274,7 @@
 [[RES Proof Points\|Thu May 9  2024 ]]  	[[RES Proof Points#.]]  
 [[RES Proof Points\|Thu May 9  2024 ]]  	[[RES Proof Points#Served 5 advisory/board roles]]  
 [[RES Proof Points\|Thu May 9  2024 ]]  	[[RES Proof Points#.]]  
-[[RES Src Info\|Thu May 9  2024 ]]  	[[RES Src Info#RESUME SOURCE INFO]]  
+[[RES Source Info\|Thu May 9  2024 ]]  	[[RES Source Info#RESUME SOURCE INFO]]  
 [[RES Star\|Thu May 9  2024 ]]  	[[RES Star#Sports Visio Turn Around]]  
 [[RES Star\|Thu May 9  2024 ]]  	[[RES Star#AF Instant Design]]  
 [[RES Star\|Thu May 9  2024 ]]  	[[RES Star#Aeolus Bang Start]]  

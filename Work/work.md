@@ -1,9 +1,9 @@
 
 .**NOW**. 
-[[DAT|DAT]]:	Mrun  Grz(OCR) Briones(Color, VidQ) 
-Scripts
-Max:	Roster in, 
-CLR:	ColorT, TgtFn
+[[DAT|DAT]]:	Mrun
+X:		Roster in, 
+M:		Color in Master
+J:		V2, DebugRace, Min
 [[FIN.]]	Invest plan; Retire plan(spreadsheet)
 [OKRs](https://docs.google.com/presentation/d/1v7Winy9DHxGuYh05_is8zH05ClJi0qclM698-pDXIgY/edit?pli=1#slide=id.g274b3e27e6b_0_0):	Q3 Planning	
 [[NJ]]:	>[[War|War]], rewrite, mentor

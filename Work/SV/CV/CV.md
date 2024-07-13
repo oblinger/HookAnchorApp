@@ -1,11 +1,14 @@
 
 :: [[Data]]
 .[[CV]].
-  ROOTS:[CV Root](spot://cvroot), [CV Confluence](spot://cvconfluence), [CV Jira Page](spot://cvjirapage),  [CV Notion](spot://cvnotion), [Data](spot://data),
+  ROOTS:[CV Root](spot://cvroot), [CV Confluence](spot://cvconfluence), [CV Jira Page](spot://cvjirapage),  [CV Notion](spot://cvnotion), [Data](spot://data), ,
   DIRS:	[CV Google Page](spot://cvgooglepage), ,  ,
   ORGS:	[CV Docs](spot://cvdocs), [DOCs](spot://docs), [CV Info](spot://cvinfo), [CV Log](spot://cvlog),
   ADDS:	[CVA](spot://cva), [CV Ana](spot://cvana), [[CV Annotations]],
   OLD:	[CVT](spot://cvt), [DSET](spot://dset), [CV OKRs](spot://cvokrs),
+  DELS: [svdata](spot://svdata), 
+
+
 
 
 

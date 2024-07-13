@@ -5,6 +5,7 @@ n:: no prefix.	Dated entries without any typing prefix
 
 | Date       | File                       | Notes                                                                                                                             |
 | ---------- | -------------------------- | --------------------------------------------------------------------------------------------------------------------------------- |
+| 2024-07-11 | [[QQ]]                         | Hack-a-thon week                                                                                                                  |
 | 2024-07-10 | [[@Sean O'Connor]]             | Pepperdine info Dump                                                                                                              |
 | 2024-07-10 | [[EOC Log]]                    | 5 kinds of people                                                                                                                 |
 | 2024-07-10 | [[@Jason Syversen]]            | Sync on team                                                                                                                      |

@@ -247,9 +247,14 @@ PR about Aeolus Robot at CES
 -- quick clips showing our robot at CES https://www.youtube.com/watch?v=B8yQmPhQPBs
 -- WashPost article:  https://www.washingtonpost.com/news/innovations/wp/2018/01/11/this-robotic-maid-takes-us-one-step-closer-to-the-jetsons/?noredirect=on&utm_term=.4c2870d5f728
 -- live videos (long so jump around) https://www.youtube.com/watch?v=IzHb6G97tLw
-#### . Company size
+#### . Company size / Raise Sizes
 - ORIX: $25.86=2,949B yen — ORIX Living, 32 facilities with 2,726 rooms (2019)
 
+- Estimated:
+	- $30M total by 2020 (from Crunchbase)
+	- $10M Aug-31-2020 GigaMedia
+	- $20M Dec-13-2019 Venture round (estimated)
+	- $16M Jan-1-2018
 #### . 2,000+  CANDIDATES CONSIDERED
 - Robotics Specialist Candidates -- 447
 - C/C++ Robot Brain Engineer Candidates -- 1,353

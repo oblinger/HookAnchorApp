@@ -1,4 +1,8 @@
 
+[[Prime\|Tue Feb 28  2023]]  	[[Prime#active]]  
+[[fried\|Tue Feb 28  2023]]  	[[fried#Older]]  
+[[fried\|Tue Feb 28  2023]]  	[[fried#LATER]]  
+[[fried\|Tue Feb 28  2023]]  	[[fried#MINI PROJECTS]]  
 [[full\|Tue Feb 28  2023]]  	[[full#= [[MY/Plan/self\\|SELF]] =]]  
 [[fun\|Tue Feb 28  2023]]  	[[fun#FUN THINGS]]  
 [[gap\|Tue Feb 28  2023]]  	[[gap#= REPEAT =]]  
