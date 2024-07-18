@@ -1,7 +1,5 @@
   [Parents Gdoc](https://docs.google.com/document/d/1-RnQcbruiKJQkZIZlaMC_cEZ_Vc17_iP45RcxRSM4Os/edit#heading=h.2i45vboz1026) 
-  
 - [[Christmas Ornaments]] 
-
 - [Mom Games GDOC](https://docs.google.com/document/d/1ykFUqOhlNgQ3frW20-RB0tWdVobA0IBbvCdVGWAJaeg/edit) - 
 
 
@@ -82,6 +80,8 @@ SMALL PACKAGES:
 - Cable Box:  Amulet 756Q Cable Box
 
 # MOM
+
+- [Mom Games GDOC](https://docs.google.com/document/d/1ykFUqOhlNgQ3frW20-RB0tWdVobA0IBbvCdVGWAJaeg/edit) - 
 
 ### Groceries for her visit 
 - Grape crystal light packets
@@ -566,7 +566,7 @@ ONLINE
 
 # MISC
 
-2019.11 tasks ---
+2019.11 tasks
 - Fix something on moms phone
 - Show pictures from dads laptop to the TV
 

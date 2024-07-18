@@ -1,3 +1,4 @@
+- write to GRZ
 - james/ know what games & data we need eval minutes
 - AI story
 - look at hooper:  https://www.hooper.gg/

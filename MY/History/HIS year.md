@@ -1,4 +1,6 @@
 
+[[WP2023\|Tue Feb 28  2023]]  	[[WP2023#t2023-02-25  QL Letter to Waymo HR]]  
+[[Full\|Tue Feb 28  2023]]  	[[Full#= [[MY/Plan/self\\|SELF]] =]]  
 [[Prime\|Tue Feb 28  2023]]  	[[Prime#active]]  
 [[fried\|Tue Feb 28  2023]]  	[[fried#Older]]  
 [[fried\|Tue Feb 28  2023]]  	[[fried#LATER]]  

@@ -1,4 +1,6 @@
 
+[[DocTensorFlow\|Tue Jul 2  2024 ]]  	[[DocTensorFlow#TENSOR]]  
+[[DocTensorFlow\|Tue Jul 2  2024 ]]  	[[DocTensorFlow#GRAD TAPE]]  
 [[DocRackspace\|Tue Jul 2  2024 ]]  	[[DocRackspace#Rackspace Login details]]  
 [[DocRackspace\|Tue Jul 2  2024 ]]  	[[DocRackspace#Instances]]  
 [[DocRackspace\|Tue Jul 2  2024 ]]  	[[DocRackspace#was dev-lamp [DNS=dev] -- now has the wordpress site -om- de]]  
