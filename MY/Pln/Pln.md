@@ -19,6 +19,33 @@
   TYPE:	[[Chew]], [[Eat]],
   ADDS: [Pln Personal](spot://plnpersonal),
   ADDS: [[Self]],
+  OLD:	,
+  ADDS:   [[first]],
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  DELS: [Day](spot://day), 
+
+
+
+
+
+
 
 
 

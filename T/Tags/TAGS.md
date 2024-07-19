@@ -45,7 +45,7 @@
 	- [[DATED]] - 
 		- [[Day]] - 
 		- [[Journal]] - Daily Journal entries
-		- [[Meeting]] -
+		- [[Log/MEETING/MEET]] -
 		- [[Note]] - 
 		- [[Prj]] - 
 		- [[REF]] - 

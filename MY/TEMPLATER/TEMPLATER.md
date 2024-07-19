@@ -1,6 +1,26 @@
 .[[Templater]].
   [[NAMED sub note]]:
   ADDS:   [[Z TEST TEMPLATE]]
+  ADDS:   [[DAY Entry]],
+  ADDS:   [[AT Entry]],
+  ADDS:   [[SUB Folder Note]],
+  ADDS:   [[MEETING Entry]],
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

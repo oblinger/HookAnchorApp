@@ -1,8 +1,18 @@
 .[[CTC]].
-  [CTC Folder](spot://ctcfolder):	
-  [[CTC Network]]:	
-  [[CTC Personal]]:	
-  [[CTC SV]]:	
+  [CTC Folder](spot://ctcfolder):
+  [[CTC Network]]:
+  [[CTC Personal]]:
+  :
+
+
+
+
+
+
+
+
+
+  DELS: [[CTC SV]], 
 
 
 :: [[photos]]

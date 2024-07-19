@@ -6,7 +6,27 @@
   [[JOB Postings]]:
   [[JOB Tests]]:
   [[JOB Types]]:
-  [[Jobs]]:
+  :
+
+
+
+
+
+
+
+
+
+
+
+  DELS: [[Job Postings]], 
+
+
+
+
+
+
+
+
 
 
 

@@ -1,5 +1,6 @@
 
 .**NOW**. 
+GCP:	Get free credits enabled
 [[DAT|DAT]]:	Mrun
 X:		Roster in, 
 M:		Color Exp,
@@ -8,8 +9,12 @@ J:		GCP, V2 over First5, Debug Race, Understand Min
 [OKRs](https://docs.google.com/presentation/d/1v7Winy9DHxGuYh05_is8zH05ClJi0qclM698-pDXIgY/edit?pli=1#slide=id.g274b3e27e6b_0_0):	Q3 Planning	
 [[NJ]]:	>[[War|War]], rewrite, mentor
 
-AI-min,V2-on-first; 
-VB/BB 3
+GCP: 
+AI-min: V2-on-first; 
+CrossOver: VB/BB 3
+ShotCharts: 
+GameBreaks: 
+
 ## TRACK
 . 			GCP, Halos, Minutes, Colors
 [Bridge](https://docs.google.com/document/d/1oaG7NB2fJ9THAtHcREX6yqrWg91wYEsof9zQNEInFFU/edit):	CrossVideos, 
@@ -18,8 +23,6 @@ Halos:		Grz: Halo videos,
 [Min](https://docs.google.com/document/d/1oaG7NB2fJ9THAtHcREX6yqrWg91wYEsof9zQNEInFFU/edit):		!! On production.
 VidQ:		^Neg entropy gallery
 GCP:		Brian plan.  Pricing/Perf of using S3
-R&D docs	! Briones 2023 R&D
-[[patents]]:	^J Provisional filed
 
 SW proc:	[db](https://www.notion.so/sportsvisio/cf65339c09c6486296f8adaa084c141a?v=f8a45e385eea4c2fb590502835f4453f&pvs=4),[doc](https://docs.google.com/document/d/1aHnoqgQ3H_0abUtlVWoMPHDA7nQhzoq0JRqZLujORc0/edit?usp=drive_web&ouid=105281685541312342727)  ^Jasu 
 Assess	> Assessment plan for BB
@@ -31,6 +34,7 @@ Assess	> Assessment plan for BB
 
 
 ## PAUSE [bsheet](https://docs.google.com/spreadsheets/d/1C1eYv2Ks2GCCQ9_xZ2Pg7eEr33bX1KOdN8Xf8X6nxSY/edit#gid=0), [hi](https://software-engineering-team.atlassian.net/jira/dashboards/10022), [tst](https://docs.google.com/spreadsheets/d/1Rc07oadsjZgg6_2ZZ-qIXJ9n9ws3LT0FFraLZHnrf9w/edit?usp=sharing), [epic](https://software-engineering-team.atlassian.net/jira/software/projects/MOB/boards/24/timeline), 
+[[patents]]:	^J Provisional filed
 [AI_mat](spot://aiprodmatrix):	Populate product matrix
 [RP](spot://rp):		^TestRecall; FixRecall
 [Belief](https://docs.google.com/document/d/1H9krXpxS2_Cr9T68pAksb6QGYqpW28DiF2OSw40g0pI/edit?usp=drive_link):		

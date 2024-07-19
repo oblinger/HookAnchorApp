@@ -1,6 +1,13 @@
- $150-$180K
- $65K
+
+
 # Install
+
+### 2024-07-18  Build wiht Juan
+
+https://docs.anaconda.com/miniconda/#quick-command-line-install
+
+
+### 2024-07-18  ...
 
 - Install MiniConda: [here](https://docs.conda.io/projects/miniconda/en/latest/index.html)   # base env is created
 

@@ -1,3 +1,8 @@
+- mom Christmas
+- fix headset
+- Gordin
+
+- james email about crossover videos.
 - write to GRZ
 - james/ know what games & data we need eval minutes
 - AI story

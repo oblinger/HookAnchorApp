@@ -6,6 +6,32 @@
   ORGS:	[CV Docs](spot://cvdocs), [DOCs](spot://docs), [CV Info](spot://cvinfo), [CV Log](spot://cvlog),
   ADDS:	[CVA](spot://cva), [CV Ana](spot://cvana), [[CV Annotations]],
   OLD:	[CVT](spot://cvt), [DSET](spot://dset), [CV OKRs](spot://cvokrs),
+  ADDS:   [svdata](spot://svdata), [[SVQ2]],
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

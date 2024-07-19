@@ -4,6 +4,26 @@
   [TRASH Mac](spot://trashmac):
   [TRASH Obsidian](spot://trashobsidian):
   [TRASH ToTrash](spot://trashtotrash):
+  ADDS:   [ToTrash Folder](spot://totrashfolder),
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

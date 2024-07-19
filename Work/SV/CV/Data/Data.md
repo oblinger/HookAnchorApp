@@ -1,6 +1,8 @@
 .[[Data]]. ([[CV]])
+  [Data Tasks](spot://datatasks),
   [CV Data Tasks](spot://cvdatatasks), [[Dataset]],
-  ADDS:   [DG](spot://dg),
+  ADDS:   ,
+  ADDS:   [Data Games](spot://datagames),
 
 
 
@@ -15,5 +17,12 @@
 
 
 
+
+
+
+
+
+
+  DELS: [DG](spot://dg), 
 
 after

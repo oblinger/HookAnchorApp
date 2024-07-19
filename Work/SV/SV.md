@@ -17,6 +17,32 @@
   [Fireball](spot://fireball), [HALOS](spot://halos), [[Investor Intros]], [Jira](spot://jira), [Jira Me Page](spot://jiramepage), [[July Hiring]], [[SV90]], [[SV90.]], [[SV Basketball Info]]
   [SV Clickup Page](spot://svclickuppage), [SV Confluence Page](spot://svconfluencepage), [SV C Root](spot://svcroot), [[SV FIN]], [SV Google Drive Page](spot://svgoogledrivepage)
   [SV G Root](spot://svgroot), [[SV Letter]], [SV Log Page](spot://svlogpage), [[SV lrn]], [[SV Roadmap]],
+  ADDS:   [[CTC SV]],
+  ADDS:   [Work Folder](spot://workfolder),
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

@@ -61,6 +61,32 @@
 :: [[2018-00 Alloy]],   [[Idea Brain]],   [[Idea Social]],   [[Life Projects]]
 #log
 n:: Ideas of mine
+  ADDS:   [Forum.PPTX Doc](spot://forum.pptxdoc),
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

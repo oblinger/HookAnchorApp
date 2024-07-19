@@ -1,5 +1,5 @@
 
-- [[Hiring]], [[INTERVIEW]], [[Jobs]], 
+- [[Hiring]], [[INTERVIEW]], [[Job Postings]], 
 - [SV Hiring*](https://docs.google.com/document/d/121pZhbzvPWvymKfN48TfMxN0i_eXBrd35SxjMSGS4ls/edit) 
 	- [[2023-07 Director of SW|HeadSW]]:	[Can](https://docs.google.com/document/d/1IRmTP2eALbW2FqXlwGMtlqpeDfjyi7jX-v2Zff7M4Kg/edit) [Sheet](https://docs.google.com/spreadsheets/d/1AcxFb2U50q_HjgCOtgp_Z52938L_yqeXerKowqQ_BQ0/edit#gid=0)  [TH](https://docs.google.com/spreadsheets/d/184erF5Y7wgdxiMMnODqpTbdh89itbQZbCu5HArwLJIA/edit#gid=0)
 	- [[2023-07 Backend Architect|Back]]: [Qual](https://docs.google.com/document/d/17b6lD5zyT-axAwYwQkdXpIYtarGUJoD-L9Zl3N3luYQ/edit) [can](https://docs.google.com/spreadsheets/d/1rk01kRhNaOXcfIzf1b-LXIXsA6kKwD2B/edit#gid=1014506710), [TH-sheet](https://docs.google.com/spreadsheets/d/16zyABJ_S1lBxjuQ2Oj0Tq3iaWx0TCGCIAxbN1WBTwkE/edit#gid=0) 

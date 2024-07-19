@@ -1,4 +1,6 @@
 
+:: [[MEETING]],   [[MEET]]
+
 :: [[Log]]
 
 :: [[Recordings]]
@@ -40,7 +42,7 @@ SPECIALTY LOGS
 DATED LOG ENTRIES
 - [[Day]]		- 
 - [[Journal]]	- 
-- [[Meeting]] 	- 
+- [[Log/MEETING/MEET]] 	- 
 - [[Note]]		- 
 - [[Prj]]			-
 - [[TXT]]		- 

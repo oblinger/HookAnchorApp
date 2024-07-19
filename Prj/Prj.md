@@ -3,6 +3,26 @@
   ADDS:   [[pPrj]],
   ADDS:   [CV Proj](spot://cvproj),
   ADDS:   [PROJ](spot://proj), [PROJ Gdrive](spot://projgdrive),
+  ADDS:   [Proj Folder](spot://projfolder),
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

@@ -1,0 +1,10 @@
+.[[Photo]].
+  ADDS:   [Photo Folder](spot://photofolder), [Photo Now](spot://photonow), [[Photos Notes]],
+
+
+
+
+
+
+
+

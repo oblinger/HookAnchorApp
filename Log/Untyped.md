@@ -5,6 +5,11 @@ n:: no prefix.	Dated entries without any typing prefix
 
 | Date       | File                       | Notes                                                                                                                             |
 | ---------- | -------------------------- | --------------------------------------------------------------------------------------------------------------------------------- |
+| 2024-07-18 | [[DocGCP]]                     | Working with Juan to create new instances                                                                                         |
+| 2024-07-18 | [[DocConda]]                   | Build wiht Juan                                                                                                                   |
+| 2024-07-18 | [[DocConda]]                   | ...                                                                                                                               |
+| 2024-07-18 | [[MEETINGS]]                   | Juan GCP setup                                                                                                                    |
+| 2024-07-18 | [[Msg]]                        | Sam - GCP->AWS                                                                                                                    |
 | 2024-07-11 | [[QQ]]                         | Hack-a-thon week                                                                                                                  |
 | 2024-07-10 | [[@Sean O'Connor]]             | Pepperdine info Dump                                                                                                              |
 | 2024-07-10 | [[EOC Log]]                    | 5 kinds of people                                                                                                                 |

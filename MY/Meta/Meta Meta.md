@@ -61,6 +61,6 @@ THREE MONITOR SETUP
 		
 	-  [[Log Log]] - Chronically organized and labelled pages and folders  (Often part of a topic)
 		- [[TAGS/TEXT]] - 
-		- [[Meeting]] - 
+		- [[Log/MEETING/MEET]] - 
 		- [[REF]] - Reference type info ???   (could be listed under log, or topic)
 

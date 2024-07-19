@@ -1,15 +1,25 @@
 
-:: [[DD]],   [[RD]]
-
 ROOT JUMP PAGES::
 
-[[AI]],	[[Application]],	[[Book]],	[[CAR]],	[[Closet]],	[[COMS]],	[[CV]],	
-[[CV Log]],	[[Data]],	[[Diary]],	[[DL]],	[[DL Alg]],	[[DL Sys]],	[[Doc]],	
-[[EduCorp]],	[[Eli]],	[[EOC]],	[[EOCA]],	[[EOCB]],	[[EOCI]],	[[EOCK]],	
-[[EOCT]],	[[Fin]],	[[Folder]],	[[Food]],	[[Hack]],	[[Idea]],	[[JOB]],	
-[[JOB History]],	[[JOB Tests]],	[[KM]],	[[Language]],	[[Lst]],	[[Mac]],	
-[[MED]],	[[Meta]],	[[MGR]],	[[Mov]],	[[MY]],	[[My Content]],	[[News]],	[[NJ]],	
-[[NJ22]],	[[Obs]],	[[Old]],	[[Org]],	[[Pln]],	[[Politics]],	[[pPrj]],	[[Prj]],	
-[[QUICKADD]],	[[Res]],	[[RR]],	[[RR Med]],	[[RR Mgt]],	[[SCR]],	[[SF]],	[[SP]],	
-[[Stat]],	[[SV]],	[[SYS]],	[[T]],	[[Templater]],	[[Top]],	[[TRASH]],	[[TXT]],	
-[[UF]],	[[Work Jump]],	[[Zap]],	
+[[CTC]],	[[gDR]],	[[Lst]],	[[MEET]],	[[Mov]],	[[News]],	[[Org]],	[[Photo]],	
+[[RR Med]],	[[RR Mgt]],	[[SCR]],	
+[[SV]]: 
+    [[CV]]: [[CV Log]],	[[Data]],	
+[[Top]]: [[Dir]],	
+    [[My Content]]: [[Doc]],	[[TXT]],	
+        [[Idea]]: [[EduCorp]],	
+            [[EOC]]: [[EOCA]],	[[EOCB]],	[[EOCI]],	[[EOCK]],	[[EOCT]],	
+    [[Pln]]: [[COMS]],	[[Diary]],	
+    [[Prj]]: [[pPrj]],	[[UF]],	
+    [[RR]]: [[Book]],	[[Language]],	[[Stat]],	
+        [[AI]]: 
+            [[DL]]: [[DL Alg]],	[[DL Sys]],	
+    [[T]]: [[Eli]],	[[Fin]],	[[Food]],	[[MED]],	[[Politics]],	[[SF]],	[[TRASH]],	
+        [[CAR]]: [[MGR]],	
+            [[JOB]]: [[JOB Tests]],	
+                [[JOB History]]: [[AF]],	
+            [[NJ]]: [[NJ22]],	[[Res]],	
+        [[MY]]: [[Meta]],	
+            [[SYS]]: [[Obs]],	
+                [[Hack]]: [[Closet]],	[[KM]],	[[QUICKADD]],	[[SP]],	[[Templater]],	
+    [[Zap]]: [[Application]],	[[Mac]],	[[Old]],	
