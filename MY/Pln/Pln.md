@@ -1,9 +1,6 @@
 
 .[[Pln]].
-  CV:	[[CVP]], [SprintPlanning](spot://sprintplanning), [OKR Q2](spot://okrq2), [OKRs](spot://okrs), [OKR Slide](spot://okrslide), [[CV Roadmap]], [Standup](spot://standup),
-  SW:	[Pln Factory](spot://plnfactory), [Pln Folder](spot://plnfolder), [Pln Work](spot://plnwork),
-  WRK2:	[[Full]], [[Prime]],
-  WRK3:	[[RD]],
+  [[CVP]]:	[[Full]], [[Prime]], [[RD]],
   -
   OVER:	[[Friday]], [[Habit]], [[Repeat]], [[Self Evergreen]].
   LST1: [[Quick]], [[Todo]], [[Now]], [[Active]], [[SCRatch]],
@@ -11,17 +8,20 @@
   LST3:	[[Quarterly]], [[Later]], [[Wings]], [[Dropped]], [[Archive]],
   LONG:	[[Rocks]], [[Q2]], [[Spirit]], [[Actualize]], [[Mission]], [[WRM]],
   STRAT:[[Productivity]], [[Daily Schedules]],
-  TOPIC:	[[COMS]], [[Diary]], ,
+  TOPIC:	[[COMS]], [[Diary]],
   FUN:	[[Fun]], [[Social]], [[Fried]], [[Gap]], [[Hacks]], [[Fried Later]],
   FAM:	[[Family]], [[Friday Dates]], [[Home]],
   ROOT:	[[BKT]], [[Up All]], [[Up Task]],
   EXT:	[[External]], [[Other]],
   TYPE:	[[Chew]], [[Eat]],
-  ADDS: [Pln Personal](spot://plnpersonal),
-  ADDS: [[Self]],
-  OLD:	,
+  ADDS: [Pln Personal](spot://plnpersonal), [[Self]], , [Pln Folder](spot://plnfolder),
   ADDS:   [[first]],
 
+
+- [PL](https://drive.google.com/drive/folders/1P18W-qzsNCR3mrkrvAZuD6ocMmfSUu3S): [day](https://docs.google.com/document/d/1LmOhZxJAs9XCzh6SbNzZLW7oHmR_LIvveHEnZjYJwCs/edit),  [sp](https://docs.google.com/document/d/1F2hISCp9p-uvfzVt6OTclhOGswQ9EmbVwGxKk9uqJ28/edit),  [nm](https://docs.google.com/document/d/1C5YW7xad9bos_9ibw1ya3eqtnn-Z03wzXLTWIVynYmQ/edit),  [bp](https://docs.google.com/document/d/1JirdM7CLFwRdbxMn2M-6kZ11oRHe8IAh1GOAdvCbU54/edit),  
+- [[CV]]: [[CV Ana]],  [[Set/Cmd/CVT]],  
+
+:: [[Work/SV/CV/Data/Data]],    [[SVCV Re-ID]]
 
 
 

@@ -6,31 +6,64 @@ TODO
 - find the job posts; find people associated 
 - Ability to speak from first-person perspective about coding tasks
 - don't list before 15 years back
+
 ## __
 who? alpha? mission
 
 Startup CTO experience built 40+ person Phd orgs & managing hundreds of Mill
 Looking for hands on role applying gen AI to XXXXX
-## SENTENCES 
+## PYRAMID
 
-Proven PhD/CTO -- built multiple 50+ person orgs, managed hundreds of millions in Research at DARPA, three exits and multiple products to market.  
-Looking for a hands-on role leading generative-AI-based innovation.
+A proven PhD/CTO whose built multiple 50+ person orgs, funded hundreds of millions in AI Research at Darpa, exited three companies and brought multiple products to market.  Looking for a hands-on role leading generative-AI-based innovation.
+
+#### PhD/CTO
+- PhD in a top Engineering School: Illinois (UIUC)
+- CTO for 5 companies: 3 exits, 2 continuing
+- ???  XXXX papers at tier I conferences and journals
+- XXXX filed patents.
+
+### Built Multiple Orgs
+- Aeolus: 60+ Eng (40 having PhDs)
+- AF: 50 person team 30+ eng
+- DARPA: 5 orgs spanning 500+ faculty and researchers.   ??? numbers
+- Martian 13 person team
+
+### Funded/Lead Hundreds of Millions in Research
 
 
-My value and love is driving the bleeding edge research into practice
+### Exited Three Companies
+- Martian Robots -> Aeolus
+- Analytics Fire -> Rzero
+- PayByGroup -> FEVO
 
-Proven leader bridging Generative AI Research into Practical Application
+### Brought Multiple Products To Market
+- SV Hoops - $300K/ARR
+- Aeolus Aeo - 
+- Instant Design - 
+- Envoy - Residential hub for Enphase inverter-based systems
+- Oasis - Powerplant Controllers
+- Pvs5 - Residential hub controllers
+- TMAC - Industrial power plant controllers
+- PayByGroup - Group Payments Platform
 
 
-## CAPABILITIES I BRING
+### Hands On Generative AI
+- BB Homography - 
+- BB Jersey Reader - 
+- BB Object Detector - 
+- BOT ?
+- Instant Design - 
+- MR ???
 
-IDEAS: 
-	- Technical (AI/ML/DL/CV), 
-	- Proven Leader 
-	- Bridge Research & Prototyping
+
+## SLICES (Capabilities I bring, passions I have)
+
+### SWEET SPOT - Bridging Research and Prototyping
+- My value and love is driving the bleeding edge research into practice
+- Proven leader bridging Generative AI Research into Practical Application
 
 ### TECH AREA
-- Generative AI:  Covers CV/DL/ML/AI I want to highlight
+- Generative AI:  Covers CV/DL/ML/AI areas I want to highlight
 
 ### ACTIVITY
 - Prototyping:  Reducing Research To Practice
@@ -40,7 +73,6 @@ IDEAS:
 
 ### ROLE - LEADER / HANDS ON
 - Technical Manager / Tech Lead / Director of technical project
-
 
 ### ORG
 1. Advanced Big Co

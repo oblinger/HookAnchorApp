@@ -1,6 +1,15 @@
-  . [err](https://docs.google.com/document/d/1XSWJ_bXG5s-QAvvU50zuEMz3iTEyE-Us98QLa5g1B3M/edit#heading=h.4911qzsigtsb), [[CV]],  [[2023-12 CV Tree]], [[lcm]], 
-- [PL](https://drive.google.com/drive/folders/1P18W-qzsNCR3mrkrvAZuD6ocMmfSUu3S): [day](https://docs.google.com/document/d/1LmOhZxJAs9XCzh6SbNzZLW7oHmR_LIvveHEnZjYJwCs/edit),  [sp](https://docs.google.com/document/d/1F2hISCp9p-uvfzVt6OTclhOGswQ9EmbVwGxKk9uqJ28/edit),  [nm](https://docs.google.com/document/d/1C5YW7xad9bos_9ibw1ya3eqtnn-Z03wzXLTWIVynYmQ/edit),  [bp](https://docs.google.com/document/d/1JirdM7CLFwRdbxMn2M-6kZ11oRHe8IAh1GOAdvCbU54/edit),  
-- [[CV]]: [[CV Ana]],  [[Set/Cmd/CVT]],  
+
+:: [[2023-12 CV Tree]]
+.[[CVP]].
+  WEEKLY:		[SprintPlanning](spot://sprintplanning), [[CV Roadmap]], [Backlog Planning](spot://backlogplanning),
+  QUARTER:		[OKRs](spot://okrs), [OKR Slide](spot://okrslide),
+  DATA:			[CV Planning Folder](spot://cvplanningfolder),
+  SW TEAM:	[Pln Factory](spot://plnfactory), [Pln Work](spot://plnwork),
+  ADDS:   [JuanDaily](spot://juandaily),
+
+- [nm](https://docs.google.com/document/d/1C5YW7xad9bos_9ibw1ya3eqtnn-Z03wzXLTWIVynYmQ/edit) - Needle Movers
+- [[CV Ana]] - CV team Analysis
+- [[Set/Cmd/CVT]] - CV Team tree of tasks  
 
 :: [[Work/SV/CV/Data/Data]],    [[SVCV Re-ID]]
 
@@ -126,7 +135,7 @@ PLANNING
 - [sprint planning](https://docs.google.com/document/d/1F2hISCp9p-uvfzVt6OTclhOGswQ9EmbVwGxKk9uqJ28/edit) - 
 
 [sheet](https://docs.google.com/document/d/1XF1NfYpF7gqGBeLYZ_b-mBNkHxZgsRwW78p8ICIEHoQ/edit)	
-- [[LCM]] - 
+- [[2023 Least Commitment Model For CV Pipe]] - 
 - [[Metrics]] - 
 - [[Infra]] 
 

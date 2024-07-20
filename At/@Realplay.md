@@ -4,6 +4,18 @@
 - [[@Nick Povano]], 
 
 
+### 2024-07-19  Followup with Jason and Justin 
+
+
+- start, 
+- stop
+- noting playerID, handedness
+- result of the play
+
+Added 15 seconds, but not
+- advance
+- fill time
+
 ### 2023-09-19  Intro Discussion
 
 Framing
@@ -28,7 +40,7 @@ Downstream Problem - how do you automate the generation of the downstream produc
 
 
 **Showcase Video Task**
-- Baseball / Softball
+- Baseball / Softball7
 - Pointing single camera at station 
 - Few times repeated (per person)
 - Individualized videos per player 

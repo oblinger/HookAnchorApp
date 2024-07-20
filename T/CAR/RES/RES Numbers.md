@@ -232,7 +232,17 @@ Performance monitoring stuff
 - **PVS5** - residential hub  100s K connected to handful of devices.
 - **Envoy** - residential hub.  handful of devices per envoy. (Enphase)
 - 1M+ clean energy devices.  (these are individual sensors or panels)
-  
+
+
+#### Products
+- SV Hoops - 
+- Aeolus Aeo - 
+- Instant Design - 
+- Envoy - Residential hub for Enphase inverter-based systems
+- Oasis - Powerplant Controllers
+- Pvs5 - Residential hub controllers
+- TMAC - Industrial power plant controllers
+- PayByGroup - Group Payments Platform
 
 _
 #### OTHER AF NOTES

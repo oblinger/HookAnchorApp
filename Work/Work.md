@@ -1,9 +1,10 @@
 
 .**NOW**. 
+TRIP:	
 GCP:	Get free credits enabled
 [[DAT|DAT]]:	Mrun
-X:		Roster in, 
-M:		Color Exp,
+X:		BB xover+Color, VB cfg, Min metrics
+M:		HB, GameBreaks, Color Exp,
 J:		GCP, V2 over First5, Debug Race, Understand Min
 [[FIN.]]	Invest plan; Retire plan(spreadsheet)
 [OKRs](https://docs.google.com/presentation/d/1v7Winy9DHxGuYh05_is8zH05ClJi0qclM698-pDXIgY/edit?pli=1#slide=id.g274b3e27e6b_0_0):	Q3 Planning	
@@ -22,7 +23,7 @@ GCP:		^Juan tracking this
 Halos:		Grz: Halo videos, 
 [Min](https://docs.google.com/document/d/1oaG7NB2fJ9THAtHcREX6yqrWg91wYEsof9zQNEInFFU/edit):		!! On production.
 VidQ:		^Neg entropy gallery
-GCP:		Brian plan.  Pricing/Perf of using S3
+GCP:		[Brian plan](https://docs.google.com/spreadsheets/d/1W38uHew6aaqyeolKzbO9NbaA96Q-jzyDb7gYoUst0qw/edit?gid=0#gid=0).  Pricing/Perf of using S3
 
 SW proc:	[db](https://www.notion.so/sportsvisio/cf65339c09c6486296f8adaa084c141a?v=f8a45e385eea4c2fb590502835f4453f&pvs=4),[doc](https://docs.google.com/document/d/1aHnoqgQ3H_0abUtlVWoMPHDA7nQhzoq0JRqZLujORc0/edit?usp=drive_web&ouid=105281685541312342727)  ^Jasu 
 Assess	> Assessment plan for BB
@@ -41,7 +42,7 @@ Assess	> Assessment plan for BB
 [[@Shreshth Saxena|Saxena]]:		/Grz Results  
 Fireballs:		^Dispatcher; ^Maxim 
 [[SV]] 
-[[LCM]]:			>do & metrics
+[[2023 Least Commitment Model For CV Pipe]]:			>do & metrics
 [Pivo](https://docs.google.com/document/d/16ee8QGaTCChGW7TC3k0W0sQNyyByygOGzwIw_aUkkpU/edit):			!! timeline
 [T28Enhance](https://docs.google.com/document/d/1uOdu0gDLiMXK0d_GQ7kr874PBHVgssaY8D521cvdtQw/edit):	> tell team
    -- 3on3 games

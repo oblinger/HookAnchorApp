@@ -1,12 +1,10 @@
 .[[Res]].
-  ADDS:   [[2024-04-01 Resume Rewrite]], [[2024 Resume]], [[Bio Email]], [[Bio Intro]], [[Bio Verbal]], [[Jared Master]], [[RES Bio]], [RES Docx](spot://resdocx), [[RES Linked In]]
-  , [[RES Numbers]], [[RES Patents]], [[RES Proof Points]], [[RES References]], [[RES Star]], [[RES Todo]], [Resume](spot://resume), [[z2 - Linked In Module]],
-  ADDS:   [RES Master Folder](spot://resmasterfolder),
-
-
-
-
-
+  [RES Docx](spot://resdocx), [RES Master Folder](spot://resmasterfolder), [[Bio]],
+  [[RES Src Info]]:	 [[RES Numbers]], [[RES Patents]], [[RES Proof Points]], [[RES References]],
+  [[RES Linked In]],
+  [[2024-04-01 Resume Rewrite]], [[2024 Resume]], , , ,
+  [[Jared Master]], [[z2 - Linked In Module]],
+  ??? [[RES Star]], [[RES Todo]], [Resume](spot://resume),
 
 
   DELS: [RES Master](spot://resmaster), 
@@ -36,7 +34,7 @@
 
 
   [RES Master](spot://resmaster):	[RES Docx](spot://resdocx), 
-  [[RES Bio]]:		[[Bio Email]], [[Bio Intro]], [[Bio Verbal]],
+  [[Bio]]:		[[Bio Email]], [[Bio Intro]], [[Bio Verbal]],
   x
   [[Jared Master]]:
   [[2024-04-01 Resume Rewrite]]:
@@ -115,7 +113,7 @@
 
 
 .[[RES]].
-  [[RES Bio]]:	
+  [[Bio]]:	
   [RES Docx](spot://resdocx):	
   [[RES Linked In]]:	
   [RES Master](spot://resmaster):	
@@ -138,7 +136,7 @@
 - [RES Master](spot://RESmaster)			- 
 - [[RES Patents]]			- 
 - [[RES References]]	- 
-- [[RES Bio]]				-
+- [[Bio]]				-
 
 OTHERS:
 - [[2024-04-01 Resume Rewrite]]

@@ -1,7 +1,5 @@
-
-- [[Bio Verbal]], 
-- [[Bio Intro]],
-- [[Bio Email]],
+.[[Bio]].
+  [[Bio Email]], [[Bio Intro]], [[Bio Verbal]],
 
 
 # REVERSE ORDER LIST WRITTEN BIOS
