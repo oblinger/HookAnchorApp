@@ -4,10 +4,10 @@
 :: [[IOS guys]]
 
 - [[Hire]], 
-:: [[Employee Notes]],   [[MgrContracts]],   [[My Staff]],   [[MyMgr]],   [[leadership]]
+:: [[Employee Notes]],   [[MGR Contracts]],   [[My Staff]],   [[MyMgr]],   [[leadership]]
 
 -  [MyMgr](MyMgr.md),  [[MgrMeetings]],   [MgrTracking](MgrTracking.md)
--   [MgrContracts](MgrContracts.md) [[MgrTracking]] 
+-   [MGR Contracts](MGR%20Contracts.md) [[MgrTracking]] 
 - [Contracts](Contracts/Contracts.md) 
   
 - [[MGR Negotiations]],  

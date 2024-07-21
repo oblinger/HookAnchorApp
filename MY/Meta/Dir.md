@@ -8,10 +8,3 @@
   [Receipts Folder](spot://receiptsfolder), [Returns Folder](spot://returnsfolder), [Root Folder](spot://rootfolder), [Sensitive Folder](spot://sensitivefolder), [Set Folder](spot://setfolder)
   [Timestamps Folder](spot://timestampsfolder), [Uploads Folder](spot://uploadsfolder), [Utility App Folder](spot://utilityappfolder),
 
-
-
-
-
-
-  DELS: [Logs Folder](spot://logsfolder), 
-
