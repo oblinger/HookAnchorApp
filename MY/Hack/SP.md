@@ -1,6 +1,11 @@
 .[[SP]].
-  [SP add](spot://spadd), [SP build](spot://spbuild), [SP delete](spot://spdelete), [SP edit](spot://spedit), [SP grab](spot://spgrab),
-  [SP folder](spot://spfolder), , ,
+  [SP add](spot://spadd),
+  [SP build](spot://spbuild),
+  [SP delete](spot://spdelete),
+  [SP edit](spot://spedit),
+  [SP grab](spot://spgrab),
+  -
+  [SP folder](spot://spfolder),
 
 
 

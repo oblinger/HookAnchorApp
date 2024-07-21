@@ -1,6 +1,6 @@
 .[[Top]].
   [[Pln]], [[Prj]], [[RR]], [[Set]], [[T]], [[Work]], [[Work Jump]],
-  [GG](spot://gg), [[TT]], [WW Folder](spot://wwfolder),
+  [GG](spot://gg), , [WW Folder](spot://wwfolder),
 
 
 
@@ -9,9 +9,9 @@
 | --------- | --------------------- | -------------- | -------- | -------------------------------------- |
 | [[Roots]] | [[Kmr Folder\|KMR]]   | [[Meta Meta]]  | ALL      | Toplevel roots for all pages ([[Dir]]) |
 | [[Pln]]   | [[Plan Folder\|Plan]] | [[Meta Plan]]  | By TASK  | Short and long term planning           |
-| [[Log]]   | [[Logs Folder\|Logs]] | [[Meta Logs]]  | By TIME  | Lists with a time-based org            |
+| [[Log]]   | [[Log Folder\|Log]]   | [[Meta Log]]   | By TIME  | Lists with a time-based org            |
 | [[Set]]   | [[Set Folder\|Set]]   | [[Meta Set]]   | By TYPE  | Groups of like (typed) entries         |
-| [[TOC]]   | [[T Folder\|T]]       | [[Meta Topic]] | By TOPIC | Toplevel Taxonomic Topics              |
+| [[TOC]]   | [[JJ]]                | [[Meta Topic]] | By TOPIC | Toplevel Taxonomic Topics ([[T]])      |
 |           |                       | [[Meta Flow]]  | By PROC  | My data processing paths               |
 | [[SV]]    | [[SV Folder\|SV]]     | [[Meta SV]]    | WORK     | Work related [[WW]]                    |
 

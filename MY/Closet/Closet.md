@@ -3,7 +3,7 @@
   [[Empty]]:
   [[PAGE]]:
   :
-  [[Untyped]]:
+  :
   :
   ADDS:   ,
 

@@ -1,7 +1,9 @@
 .[[JJ]].
   ADDS:   [[Lst]], [[MOV]], [[News]], [[NOISE]], [[OKR]], [[Photo]], [[SCR]], [[TOC]],
   ADDS:   ,
-  ADDS:   [[Application]], [[Books]], [[DD]], , [[Language]], [[pPrj]], [[RD]], [[SV Competitor]], [[Zap]],
+  ADDS:   [[Application]], [[Books]], [[DD]], , , [[pPrj]], [[RD]], [[SV Competitor]], [[Zap]],
   ADDS:   ,
   ADDS:   [[JOB Tests]], [[Team Hiring]],
+  ADDS:   ,
+
 

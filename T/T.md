@@ -1,6 +1,6 @@
 .[[T]].
   ,
-  [[Biking]]:
+  :
   [[Eli]]:
   [[MY]]:
   [T Folder](spot://tfolder):
@@ -21,7 +21,7 @@
   ADDS:   ,
   ADDS:   [[Tag]],
   ADDS:   ,
-
+  ADDS:   [[Courses]],
 
 
 

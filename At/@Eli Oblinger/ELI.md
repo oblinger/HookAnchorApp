@@ -1,5 +1,5 @@
 .[[Eli]].
-  [[Babysitting]]:
+  :
   [[Clarendon]]:
   [[Daycare Applications]]:
   [[2022-05 ELI next school]]:

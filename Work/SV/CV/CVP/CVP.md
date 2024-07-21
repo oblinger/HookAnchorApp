@@ -11,7 +11,7 @@
   ADDS:   [[2023-12 CV Tree]], [[GameGraph]], [[Infra]], [[Player Tracking Problem]], [[Rpt]], [[ShotTopView]],
   ADDS:   [[CV Annotations]],
   ADDS:   [Brainstorming Q3](spot://brainstormingq3),
-
+  ADDS:   [AI TIPS](spot://aitips),
 
 
 GB: 	Finish OCR

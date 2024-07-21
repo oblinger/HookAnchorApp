@@ -14,8 +14,8 @@
   ADDS:   [[Employee Notes]],
   ADDS:   [[MGR Log]], [[My Staff]],
   ADDS:   [[MyMgr]],
-  ADDS:   [[MgrContracts]], 
-  DELS: [[MGR Contracts]], 
+  ADDS:   ,
+  ADDS:   [[MGR Contracts]],
 
 
 

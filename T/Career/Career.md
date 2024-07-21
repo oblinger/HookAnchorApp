@@ -4,8 +4,8 @@
 - [Mentors](spot://mentors)
 - [MGR](spot://mgr), , [CAR Coach](spot://carcoach)
 - [[NextJob]], :
-  [[JOB Compensation]]:
-
+  :
+  ADDS:   [[Job]],
 
 
 
@@ -122,7 +122,7 @@
 .[[Career]].
 - [[CAR Coach]], 
 - [[CRM]]: Call 1-3 colleagues per week.
-- [[JOB]]:	[[JOB Compensation]], 
+- [[Job]]:	[[JOB Compensation]], 
 - [[MGR]]:	[[MGR Log]],
 - [[NJ]]:	[NextJob](NextJob.md), [[NJ22]], [[NJ]], 
 - [[T/Career/RES/RES]]:	

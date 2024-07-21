@@ -5,7 +5,7 @@
   [[EOCK]]:	KEY Ideas
   [[EOCT]]:	Topics
   -
-  [[eoc-atlas]], [[eoc-formal]], [[eoc-impl]], [[EOC reboot]],  [[FF-prize]], [[Paths]], [[EOC Log]],
+  [[eoc-atlas]], [[eoc-formal]], [[eoc-impl]], ,  [[FF-prize]], [[Paths]], [[EOC Log]],
 
 
 

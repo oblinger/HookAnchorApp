@@ -7,7 +7,7 @@ n:: Ideas of mine
   BIG:	[[EduCorp]],
   -
   [[Edu Stats w Consequences]]:
-  [[Effective Altruism]],
+  ,
   ADDS:   [[Word_War]]
   ADDS:   [[Hook System]]
 :: [[2018-00 Alloy]],   ,   [[Idea Social]],   [[Life Projects]]

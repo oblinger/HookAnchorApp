@@ -1,5 +1,5 @@
 .[[EOCA]].
-  [[End Of Man Book]]:
+  :
   [[EndOfMan BookOutline]]:
   [[EOCA Civilizing tendency]]:
   [[EOCA Definitions]]:

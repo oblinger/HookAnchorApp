@@ -1,5 +1,5 @@
 .[[Lst]].
-  [[Camping Lst]]:
+  :
 
 
 

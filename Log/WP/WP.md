@@ -17,7 +17,6 @@ n:: 'wp...'	Work Product. Single documents outputs
 | wp2022-10-10 | [[Nanny]]        | SAVE MONEY ON AYI                                                     |
 | wp2022-06-03 | [[WP2022]]       | The Midnight Scootifier                                               |
 | wp2022-05-21 | [[Photos Notes]] | Photo Management Strategy                                             |
-| wp2022-04-17 | [[Y22]]          | just a test entry                                                     |
 | wp2022-02-25 | [[EOCA]]         | RED ALERT - THIS IS NOT A DRILL - I REPEAT THIS IS NOT A DRILL        |
 | wp2022-02-25 | [[EOCA]]         | DAG OF SCOPES / INHERENT TO SOCIETY OF AGENTS / 0-DAY-ATTACKS         |
 | wp2022-02-25 | [[EOCA]]         | INHERENT CENTRALIZATION / SUCCEPTABLE TO DEVISTATING ATTACK           |

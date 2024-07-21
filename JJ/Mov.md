@@ -1,8 +1,8 @@
 .[[MOV]].
-  ADDS:   [[Movies]],
+  ADDS:   ,
   ADDS:   [MOV ReelGood Page](spot://movreelgoodpage), [MOV Rotten Tomatos Page](spot://movrottentomatospage), [MOV Streaming Page](spot://movstreamingpage),
 
-  ADDS:   ,
+
   ADDS:   [MOV ReelGood Page](spot://movreelgoodpage), [MOV Rotten Tomatos Page](spot://movrottentomatospage), [MOV Streaming Page](spot://movstreamingpage),
   DELS: [[Movies]], 
 

@@ -7,4 +7,6 @@
   [Offload Folder](spot://offloadfolder), [Pkg Folder](spot://pkgfolder), [Public Folder](spot://publicfolder), [Public Gdrive Page](spot://publicgdrivepage), [QQ Folder](spot://qqfolder)
   [Receipts Folder](spot://receiptsfolder), [Returns Folder](spot://returnsfolder), [Root Folder](spot://rootfolder), [Sensitive Folder](spot://sensitivefolder), [Set Folder](spot://setfolder)
   [Timestamps Folder](spot://timestampsfolder), [Uploads Folder](spot://uploadsfolder), [Utility App Folder](spot://utilityappfolder),
+  ADDS:   [Upload Page](spot://uploadpage),
+  ADDS:   [ToFile Folder](spot://tofilefolder), [ToOffload Folder](spot://tooffloadfolder),
 
