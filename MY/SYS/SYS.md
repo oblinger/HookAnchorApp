@@ -21,8 +21,8 @@
   [[Hack]]:
   DELS: , ,
 .                 **MY PERSONAL SYSTEMS**
-
-
+  ADDS:   [[My Github Webpage]],
+  ADDS:   [[My Hacks]],
 
 
 

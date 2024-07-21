@@ -14,13 +14,13 @@
   [[Noom Notes]]:
   [[Restaurants]]:
   [[Try Foods]]:
-  [[FOOD Recipe Research]]:
-  [[FOOD Research]]:
-  [[MED Food]]:
-
-
-
-
+  :
+  :
+  :
+  ADDS:   [Nutrition Data Page](spot://nutritiondatapage), [Nutrition Facts Page](spot://nutritionfactspage), [Nutrition Value Page](spot://nutritionvaluepage),
+  ADDS:   [[qwd]],
+  ADDS:   [[Food Recipe Research]], [[Food Research]],
+  ADDS:   [[Eat]],
 
 
 

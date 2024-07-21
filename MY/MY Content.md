@@ -1,8 +1,8 @@
 .[[My Content]].
   ADDS:   , [[Doc]], [[TXT]],
   ADDS:   [[Idea]],
-
-
+  ADDS:   ,
+  ADDS:   ,
 
 
 
@@ -96,4 +96,5 @@
 
 .[[MY Content]].
   ADDS:
-  DELS: [[Idea]], 
+  ADDS:   [[Doc]], [[Idea]], [[TXT]],
+

@@ -1,0 +1,104 @@
+.[[Hack]].
+PROJ:	 [[KM]], [[DAT]], , [[Time Tracker]],
+JUNK:	[[Closet]],
+OBS:	, [[QUICKADD]], ,
+DIR:	, ,
+  ADDS:   [[SP]],
+  ADDS:   , [[My Spot]],
+
+
+
+:: [[Time Tracker]]
+
+:: [[DAT]],   [[DOC SYNC COMMANDS]],   [[DOC SYNC]],   [[My Spot]], 
+
+
+
+
+
+
+  DELS: [MY Desk Folder](spot://mydeskfolder), 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+OBS DOC SYNCHRONIZATION [[DOC SYNC]], [[DOC SYNC COMMANDS]], 

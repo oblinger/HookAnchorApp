@@ -9,80 +9,80 @@
   [[EduCorp White Paper]]:
   [[Greenhouse Farming]]:
   [[Forwardism]]:
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+  ADDS:   ,
+  ADDS:   ,
+  ADDS:   ,
+  ADDS:   ,
+  ADDS:   ,
+  ADDS:   ,
+  ADDS:   ,
+  ADDS:   ,
+  ADDS:   ,
+  ADDS:   ,
+  ADDS:   ,
+  ADDS:   ,
+  ADDS:   ,
+  ADDS:   ,
+  ADDS:   ,
+  ADDS:   ,
+  ADDS:   ,
+  ADDS:   , [[EduCorp Supplement Source]],
+  ADDS:   ,
+  ADDS:   ,
+  ADDS:   ,
+  ADDS:   ,
+  ADDS:   ,
+  ADDS:   ,
+  ADDS:   ,
+  ADDS:   ,
+  ADDS:   ,
+  ADDS:   ,
+  ADDS:   ,
+  ADDS:   ,
+  ADDS:   ,
+  ADDS:   ,
+  ADDS:   ,
+  ADDS:   ,
+  ADDS:   ,
+  ADDS:   ,
+  ADDS:   ,
+  ADDS:   ,
+  ADDS:   ,
+  ADDS:   ,
+  ADDS:   ,
+  ADDS:   ,
+  ADDS:   ,
+  ADDS:   ,
+  ADDS:   ,
+  ADDS:   ,
+  ADDS:   ,
+  ADDS:   ,
+  ADDS:   ,
+  ADDS:   ,
+  ADDS:   ,
+  ADDS:   ,
+  ADDS:   ,
+  ADDS:   ,
+  ADDS:   ,
+  ADDS:   ,
+  ADDS:   ,
+  ADDS:   ,
+  ADDS:   ,
+  ADDS:   ,
+  ADDS:   ,
+  ADDS:   ,
+  ADDS:   ,
+  ADDS:   [[EduCorp Billet Assessment Matrix (BAM)]],
+  ADDS:   [[EduCorp Billet Assessment Matrix (BAM)]],
+  ADDS:   [[EduCorp Billet Assessment Matrix (BAM)]],
+  ADDS:   [[EduCorp Billet Assessment Matrix (BAM)]],
+  ADDS:   [[EduCorp Billet Assessment Matrix (BAM)]],
+  ADDS:   [[EduCorp Billet Assessment Matrix (BAM)]],
+  ADDS:   [[EduCorp Billet Assessment Matrix (BAM)]],
+  ADDS:   [[EduCorp Billet Assessment Matrix (BAM)]],
+  ADDS:   [[EduCorp Billet Assessment Matrix (BAM)]],
+  ADDS:   [[EduCorp Billet Assessment Matrix (BAM)]],
+  ADDS:   [[@AugustineAntwi-Boasiako]], [[@Meredith Bates]], [[EduCorp Billet Assessment Matrix -- BAM]],
 
 
 
@@ -130,7 +130,7 @@
 
 - PAPERS
 	- [[EduCorp White Paper]],  [[Forwardism]],   [[EduCorp Supplement]],    
-	- [[EduCorp Billet Assessment Matrix (BAM)]],   
+	- [[EduCorp Billet Assessment Matrix -- BAM]],   
 	- [[EduCorp Tweaks]], 
 	- [[EduCorp Principles]],  
 

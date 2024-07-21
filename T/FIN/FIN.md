@@ -16,7 +16,7 @@
   [[FIN Topics]]:
   [[FIN Tracking]]:
   [[Taxes]]:
-
+  ADDS:   [[@Avanti Pakrasi]], [[@Gary Bladen]], [[@Merrill]], [[@Vanguard]], [[z old Bills]],
 
 
 
@@ -130,21 +130,21 @@
 
 
 .[[FIN]].
-[[Fin log]]:	Investment plan
-[[FIN Log]]:	Retire Spreadsheet
-- [[@Merrill]],   [[@Vanguard]]
--  [[FIN.]], [[FIN Log]], [[FIN Topics]],  [[FIN Retire]],
-  [[FIN Accounts]]:	
-  [[FIN Analysis]]:	
-  [[FIN Bills]]:	
-  [[FIN Budgeting]]:	
-  [[FIN Flows]]:	
-  [[FIN Macro Tracking]]:	
-  [[FIN Mint]]:	
-  [[FIN Recurring]]:	
-  [[FIN Tracking]]:	
-
-- [[FIN Tracking]]:  [[FIN Recurring]],  [[FIN Bills]],  [[FIN Budgeting]], [[FIN Flows]],  [[FIN Mint]],
+:	Investment plan
+:	Retire Spreadsheet
+- ,
+-  , , ,  ,
+  :
+  :
+  :
+  :
+  :
+  :
+  :
+  :
+  :
+  ADDS:   [[@Avanti Pakrasi]], [[@Gary Bladen]], [[@Merrill]], [[@Vanguard]], [[BillPay]], [[Expenses]], [[FIN.]], [[FIN Accounts]], [[FIN Analysis]], [[FIN Bills]], [[FIN Budgeting]], [[FIN Flows]]
+  [[FIN Log]], [[FIN Macro Tracking]], [[FIN Mint]], [[FIN Recurring]], [[FIN Retire]], [[FIN Topics]], [[FIN Tracking]], [[PenFed]], [[Taxes]], [[z old Bills]],
 
 - [[FIN Analysis]],   [[Expenses]],   [Taxes](Taxes/Taxes.md),   [@Vanguard](@Vanguard.md)
 - [[BillPay]], 

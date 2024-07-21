@@ -1,6 +1,9 @@
-(See [[Strat]])
+.[[SV Strat]].
+  ADDS:   [[SV Roadmap]],
+  ADDS:   [[2023 Four Pillars]], [[Pillars]], [[Roadmap Notes]], [[2023-06 Roadmap old]], [[Strat]],
+  ADDS:   [[2023 SV Roadmap]],
+  ADDS:   [[2023 Deliverables]],
 
-=	[[ROADMAP]]		[[2023 SV Roadmap]]
 =	[[Reset]]			[[2023-Reset-DanO-Role]] 
 
 ?					[[2023 Deliverables]],  

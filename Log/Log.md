@@ -35,7 +35,7 @@ CAPS CAT		- ALL CAPS topic areas can have a log
 SPECIALTY LOGS
 . [[Idea]] 		- 
 . [[Letters]]  - 
-. [[Quotes]]	
+. [[Quote]]	
 . [[TT]]			
 
 

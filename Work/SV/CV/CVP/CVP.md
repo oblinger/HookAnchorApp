@@ -6,12 +6,12 @@
   DATA:			[CV Planning Folder](spot://cvplanningfolder),
   SW TEAM:	[Pln Factory](spot://plnfactory), [Pln Work](spot://plnwork),
   ADDS:   [JuanDaily](spot://juandaily),
+  ADDS:   [Weekly Agenda](spot://weeklyagenda),
+  ADDS:   [tasks](spot://tasks),
+  ADDS:   [[2023-12 CV Tree]], [[GameGraph]], [[Infra]], [[Player Tracking Problem]], [[Rpt]], [[ShotTopView]],
+  ADDS:   [[CV Annotations]],
+  ADDS:   [Brainstorming Q3](spot://brainstormingq3),
 
-- [nm](https://docs.google.com/document/d/1C5YW7xad9bos_9ibw1ya3eqtnn-Z03wzXLTWIVynYmQ/edit) - Needle Movers
-- [[CV Ana]] - CV team Analysis
-- [[Set/Cmd/CVT]] - CV Team tree of tasks  
-
-:: [[Work/SV/CV/Data/Data]],    [[SVCV Re-ID]]
 
 
 GB: 	Finish OCR
@@ -136,7 +136,7 @@ PLANNING
 
 [sheet](https://docs.google.com/document/d/1XF1NfYpF7gqGBeLYZ_b-mBNkHxZgsRwW78p8ICIEHoQ/edit)	
 - [[2023 Least Commitment Model For CV Pipe]] - 
-- [[Metrics]] - 
+- [[2023 CV team new agenda metrics]] - 
 - [[Infra]] 
 
 [Metrics Folder](https://drive.google.com/drive/folders/1CO5eTdcTrUS9T8BkBcMBBE9e3B6YORvg) - 
@@ -156,7 +156,7 @@ PLANNING
 - [[GameGraph]] - 
 - [[Player Tracking Problem]] 
 - [[ShotTopView]] - 
-- [[Metrics]] - 
+- [[2023 CV team new agenda metrics]] - 
 - [[Rpt]] - 
 
 

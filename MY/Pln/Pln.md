@@ -1,6 +1,6 @@
 
 .[[Pln]].
-  [[CVP]]:	[[Full]], [[Prime]], [[RD]],
+  [[CVP]]:	[[Full]], [[Prime]], ,
   -
   OVER:	[[Friday]], [[Habit]], [[Repeat]], [[Self Evergreen]].
   LST1: [[Quick]], [[Todo]], [[Now]], [[Active]], [[SCRatch]],
@@ -13,13 +13,13 @@
   FAM:	[[Family]], [[Friday Dates]], [[Home]],
   ROOT:	[[BKT]], [[Up All]], [[Up Task]],
   EXT:	[[External]], [[Other]],
-  TYPE:	[[Chew]], [[Eat]],
+  TYPE:	[[Chew]], ,
   ADDS: [Pln Personal](spot://plnpersonal), [[Self]], , [Pln Folder](spot://plnfolder),
-  ADDS:   [[first]],
+  ADDS:   ,
+  ADDS:   [[Arc ALL]], [[Archeology]], [[bfast]], [[lunch]], , [[Tracking of Time]], [[wake]],
+  ADDS:   [[First]], [[read]],
+  ADDS:   [[EBT]], [[Ping]],
 
-
-- [PL](https://drive.google.com/drive/folders/1P18W-qzsNCR3mrkrvAZuD6ocMmfSUu3S): [day](https://docs.google.com/document/d/1LmOhZxJAs9XCzh6SbNzZLW7oHmR_LIvveHEnZjYJwCs/edit),  [sp](https://docs.google.com/document/d/1F2hISCp9p-uvfzVt6OTclhOGswQ9EmbVwGxKk9uqJ28/edit),  [nm](https://docs.google.com/document/d/1C5YW7xad9bos_9ibw1ya3eqtnn-Z03wzXLTWIVynYmQ/edit),  [bp](https://docs.google.com/document/d/1JirdM7CLFwRdbxMn2M-6kZ11oRHe8IAh1GOAdvCbU54/edit),  
-- [[CV]]: [[CV Ana]],  [[Set/Cmd/CVT]],  
 
 :: [[Work/SV/CV/Data/Data]],    [[SVCV Re-ID]]
 

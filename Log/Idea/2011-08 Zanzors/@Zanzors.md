@@ -1,4 +1,4 @@
-=[[ORG]]   [Zansors](https://www.zansors.com/)  
+=[[Org]]   [Zansors](https://www.zansors.com/)  
    [Zanzors](Zanzors.md)
 
 

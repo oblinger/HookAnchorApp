@@ -1,10 +1,10 @@
 
 .[[COMS]].
    [[CRM]], [[Calls]], ,
-   [[COM Campaigns OLDER]], [[COM Investor]], [[COM Msg]], [[COM Next]], [[Meta Coms]],
-  ADDS:   [[Ping]],
+   [[COM Campaigns OLDER]], [[COM Investor]], [[COM Msg]], [[COM Next]], ,
+  ADDS:   ,
   ADDS:   [[BOD]],
-
+  ADDS:   [[CRM_Phrases]], [[FailedMessages]], [[FirstTouch]],
 
 
 

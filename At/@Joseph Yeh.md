@@ -247,7 +247,7 @@ MRP: Eyal Amir, Dan Roth,
 	Pin some repos; should I add some more?;  Maybe some activity?; update photo
 
 ### m2022-03-21 - List of VC firms
-60m Topics: Deep  [[Crunchbase Notes|VCs]]   [[RES|RES]]   [[NSTR/Pic/Msg]] 
+60m Topics: Deep  [[Crunchbase Notes|VCs]]   [[T/Career/RES/RES|RES]]   [[NSTR/Pic/Msg]] 
 
 Jennifer Chan
 

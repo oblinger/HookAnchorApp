@@ -1,18 +1,18 @@
 .[[Prj]].
   [[UF]]:
-  ADDS:   [[pPrj]],
+  ADDS:   ,
   ADDS:   [CV Proj](spot://cvproj),
   ADDS:   [PROJ](spot://proj), [PROJ Gdrive](spot://projgdrive),
   ADDS:   [Proj Folder](spot://projfolder),
-
-
-
-
-
-
-
-
-
+  ADDS:   ,
+  ADDS:   [[2022-03 BeFAANG]], [[BeFAANG TO DO]], [[2022-04 BeMLR]], [[2022-03 BeVC]], [[2022-05 Enxt]], [[2016-00 FileThis]], [[2021-04 FindDayCare]], [[2022-05 Grandpa DJ]], [[2022-09 Mom80]], [[pointer]]
+  [[PP]], [[Searches]], , [[2018-00 Wedding]], [[2022-02 Yearbook]],
+  ADDS:   [[2023-07 Task Rabbit]],
+  ADDS:   ,
+  ADDS:   ,
+  ADDS:   [[__Race Pitch__]], [[Task Rabbit]],
+  ADDS:   [[Spot Cmdr]],
+  ADDS:   [[2020-08 Race Pitch]],
 
 
 
@@ -139,7 +139,7 @@ PRJs
 - [[2022-02 Yearbook]]  			Organize and produce BCMS Yearbook   
 - [[2021-04 FindDayCare]]  		Select day care for Eli   
 - [[2020-08 Race Pitch]] 			Project with [[@Allison Binns]] to model race and network effects
-- [[2018-00 UF Docs]]				Documentation for the Uniform language
+- [[UF]]				Documentation for the Uniform language
 - [[2018-00 Wedding]]  			Plan our wedding   
 - [[2016-00 FileThis]]				Automated script for downloading and viewing account statements 
 

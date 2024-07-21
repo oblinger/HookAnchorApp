@@ -16,8 +16,8 @@
   [[DL SYS]]:
   [[DL Topic]]:
   :
-  [[DL optimization]]:
-  [[DL strategy]]:
+  :
+  :
   :
   :
   [[Activation Functions]]:
@@ -43,9 +43,9 @@
   :
   [[VAE - Variational Auto Encoder]]:
   [[GPT]]:
-
-
-
+  ADDS:   [[KAN - Kolmogorov-Arnold Neworks]], [[VAEs]],
+  ADDS:   [[DL Optimization]], [[DL Strategy]],
+  ADDS:   [[DSPY System]], [[LLM]], [[RNNs]],
 
 
 

@@ -1,6 +1,6 @@
 .[[SF]].
   ADDS:   [[SF-Activities]], [[SF-food]], [[SF-Search]],
-
+  ADDS:   [[apartment]], [[Bache]],
 
 
 

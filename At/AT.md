@@ -86,7 +86,7 @@ n:: Entity pages (typically people, organizations, or collaborations)
 
 :: [[@Steve QJ]]
 
-:: [[ORG]],   [[VC ORG]]
+:: [[Org]],   [[VC ORG]]
 
 :: [[@Kartik Agaram]]
 
@@ -111,7 +111,7 @@ n:: Entity pages (typically people, organizations, or collaborations)
   [@Allison Binns](@Allison%20Binns.md)
   [@Allison Binns](@Allison%20Binns.md),   [COMS](COMS.md)
   [VC ORG](VC%20ORG.md),   [CRM](CRM.md)
-   [ORG](ORG.md),   [@eGenisis](@eGenisis.md),   [VC ORG](VC%20ORG.md),   [@Vikram](@Vikram.md),   [Mentors](Mentors.md),   [@Rzero](@Rzero.md)
+   [Org](Org.md),   [@eGenisis](@eGenisis.md),   [VC ORG](VC%20ORG.md),   [@Vikram](@Vikram.md),   [Mentors](Mentors.md),   [@Rzero](@Rzero.md)
 
 #tag
 

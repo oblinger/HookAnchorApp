@@ -35,7 +35,7 @@ s- get license
 [Funnel](https://docs.google.com/document/d/1pNi9MfcP7IV1RR1ECPl7FwtXKDR7vsFc4yPLjBODKEo/edit):		>Ask Jack
 [[FullAI]]:			...Spec
 [BugCk](https://docs.google.com/document/d/1eh19kxKUBvZqCyJoAsVynOHJxGibkwgzL2tEzu1UnKQ/edit?usp=drive_link):		[bb](https://docs.google.com/spreadsheets/d/1C1eYv2Ks2GCCQ9_xZ2Pg7eEr33bX1KOdN8Xf8X6nxSY/edit#gid=0), ^waiting for 20 bugs in
-[[Hire]]	    	^ [CV-test](https://docs.google.com/document/d/1iXhyfyjxna2zGiUs9bg3wmx33DFQrIowdienVyfZVD8/edit?usp=drive_link), ^Hire: Matias, Julieta,
+[[2023 Team Hiring]]	    	^ [CV-test](https://docs.google.com/document/d/1iXhyfyjxna2zGiUs9bg3wmx33DFQrIowdienVyfZVD8/edit?usp=drive_link), ^Hire: Matias, Julieta,
 [[BaseB]]:		[BBall](https://docs.google.com/document/d/1oQX5PwkUNGqQ5CCOjsiAK1hBzfY9vbG_lPUKkhYJG8M/edit):	^max building POC
 [[vball]]:			^Sarthi Vball games
 [DevSrch](https://docs.google.com/document/d/1We_9Fhc1oIUXYdEYm2DwNmIfkVpHJL3PKyuePG39Gi4/edit?usp=drive_link):
@@ -71,7 +71,7 @@ LLM-talk:	[T](https://docs.google.com/document/d/1qJrwMlrrCaXmHVjXsMGHMJ35k6EEBb
 - [x] rebuild computer
 - [x] ML hire
 - [x] branch management
-[[hire]]: 		Hiring
+[[2023 Team Hiring]]: 		Hiring
 - [x] dexafit reschsasedule
 - [x] update mgt
 - [x] contigo

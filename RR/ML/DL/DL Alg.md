@@ -1,6 +1,6 @@
 .[[DL Alg]].
-  ADDS:   [[RNNs]]
-  ADDS:   [[LLM]],
+  ADDS:
+  ADDS:   ,
   ADDS:   [[Stable Diffusion]],
 
 

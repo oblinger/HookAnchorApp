@@ -1,5 +1,8 @@
+.[[Life]].
+  ADDS:   [[Mission2024]], [[Mission Statement]],
+  ADDS:   [[Life Social]],
+  ADDS:   [[Mate]], [[_MateNote]], [[_Mates]],
 
-:: [[Diary]],   [[Mate]],   [[Mission Statement]],   [[Life Social]]
 
 :: [[Life Social]]
 

@@ -1,3 +1,5 @@
+- do some validation if spot action is not valid
+- have James create a trip page w/ all details.  figure food, transport, internet, lodging, basically everything.
 - mom Christmas
 - fix headset
 - Gordin

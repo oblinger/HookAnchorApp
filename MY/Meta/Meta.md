@@ -2,7 +2,7 @@
 :: [[Dir]]
 .[[Meta]].
   [[Meta Flow]]:
-  [[Meta KM]]:
+  :
   [[Meta List]]:
   :
   [[Meta Meta]]:
@@ -11,14 +11,14 @@
   [[Meta Plan]]:
   [[Meta Proj]]:
   [[Meta Set]]:
-  [[Meta Tasks]]:
+  :
   [[Meta Topic]]:
-
-
-
-
-
-
+  ADDS:   [[Meta Log]], [[Meta Org -old-page-]],
+  ADDS:   [[Base]],
+  ADDS:   [[Roots]], ,
+  ADDS:   ,
+  ADDS:   [[meta Tasks]],
+  ADDS:   [[Dir]], [[Meta Coms]],
 
 
 

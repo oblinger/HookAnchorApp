@@ -1,4 +1,4 @@
-=[[ORG]].   [Web](https://www.clsh.tv/) 
+=[[Org]].   [Web](https://www.clsh.tv/) 
 
 
 

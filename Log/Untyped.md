@@ -33,7 +33,7 @@ n:: no prefix.	Dated entries without any typing prefix
 | 2024-06-08 | [[Reflections]]                             | Saying Goodbye to Yoshiko                                                                                                         |
 | 2024-06-06 | [[PQ]]                                      | Faucet                                                                                                                            |
 | 2024-06-05 | [[FIN Log]]                                 | Vanguard Advising                                                                                                                 |
-| 2024-06-04 | [[EOCLog]]                                  | Ideas at Night                                                                                                                    |
+| 2024-06-04 | [[EOC Log]]                                 | Ideas at Night                                                                                                                    |
 | 2024-06-04 | [[PQ]]                                      | Hiring a new Cleaner                                                                                                              |
 | 2024-06-04 | [[QQ]]                                      | Hard Case Annotating                                                                                                              |
 | 2024-06-04 | [[QQ]]                                      | 4K videos of basketball                                                                                                           |
@@ -157,7 +157,7 @@ n:: no prefix.	Dated entries without any typing prefix
 | 2023-11-30 | [[2023 Least Commitment Model For CV Pipe]] | Visualization                                                                                                                     |
 | 2023-11-27 | [[Reflections]]                             | Obispo-Trip.  am I depressed?                                                                                                     |
 | 2023-11-21 | [[NJ]]                                      | Tasks from URI                                                                                                                    |
-| 2023-11-21 | [[NJ24]]                                    | Tasks from URI                                                                                                                    |
+| 2023-11-21 | [[NJ]]                                      | Tasks from URI                                                                                                                    |
 | 2023-11-20 | [[Eli Firsts]]                              | First Crush - Babysitter                                                                                                          |
 | 2023-11-20 | [[SV Roadmap]]                              | Long Term Plan                                                                                                                    |
 | 2023-11-19 | [[GoogleJob]]                               | Uri                                                                                                                               |
@@ -213,7 +213,7 @@ n:: no prefix.	Dated entries without any typing prefix
 | 2023-10-01 | [[Eli Firsts]]                              | Adding                                                                                                                            |
 | 2023-09-29 | [[2023-07 ML-CV Ops Job Post]]              | Mariano                                                                                                                           |
 | 2023-09-28 | [[2023-07 Director of SW]]                  | ++Raul2                                                                                                                           |
-| 2023-09-27 | [[Hire]]                                    | Luciano Start                                                                                                                     |
+| 2023-09-27 | [[2023 Team Hiring]]                        | Luciano Start                                                                                                                     |
 | 2023-09-25 | [[Mgt]]                                     | Weekly meeting.                                                                                                                   |
 | 2023-09-25 | [[@Jason Syversen]]                         | notes                                                                                                                             |
 | 2023-09-21 | [[2023-07 Backend Architect]]               | Matias                                                                                                                            |
@@ -420,7 +420,7 @@ n:: no prefix.	Dated entries without any typing prefix
 | 2023-04-11 | [[QQ]]                                      | New Ticket Flow                                                                                                                   |
 | 2023-04-10 | [[MED Log]]                                 | <<<<                                                                                                                              |
 | 2023-04-10 | [[QQ]]                                      | Pivo                                                                                                                              |
-| 2023-04-10 | [[@Achilles (Tomas Sasovsky)]]              | Intro call                                                                                                                        |
+| 2023-04-10 | [[@Achilles -- Tomas Sasovsky]]             | Intro call                                                                                                                        |
 | 2023-04-10 | [[@Jason Syversen]]                         | F90-CALL3 - Feedback Call                                                                                                         |
 | 2023-04-07 | [[@Apple]]                                  | Sent in for                                                                                                                       |
 | 2023-04-07 | [[EOCA]]                                    |                                                                                                                                   |
@@ -492,7 +492,7 @@ n:: no prefix.	Dated entries without any typing prefix
 | 2023-02-07 | [[SV SW Team]]                              | Standup                                                                                                                           |
 | 2023-02-06 | [[@Apple]]                                  | Airpod max issues                                                                                                                 |
 | 2023-02-06 | [[Phone]]                                   | Passport Renewal                                                                                                                  |
-| 2023-02-05 | [[Writings]]                                | Noom Dieting                                                                                                                      |
+| 2023-02-05 | [[Writing]]                                 | Noom Dieting                                                                                                                      |
 | 2023-02-02 | [[@Brian French]]                           | intro call                                                                                                                        |
 | 2023-02-01 | [[@Jasu Victorio]]                          |                                                                                                                                   |
 | 2023-02-01 | [[@Kate Bilodeau]]                          | Intro                                                                                                                             |
@@ -581,7 +581,7 @@ n:: no prefix.	Dated entries without any typing prefix
 | 2022-05-04 | [[ToBuy]]                                   | xSmart scale                                                                                                                      |
 | 2022-05-03 | [[Phone]]                                   | paid lung doctor                                                                                                                  |
 | 2022-05-02 | [[Phone]]                                   | Buying an office chair                                                                                                            |
-| 2022-05-02 | [[Writings]]                                | DREAM: Alien take over                                                                                                            |
+| 2022-05-02 | [[Writing]]                                 | DREAM: Alien take over                                                                                                            |
 | 2022-04-22 | [[DYL]]                                     | Innovation & Insight                                                                                                              |
 | 2022-04-20 | [[MED Log]]                                 | COVID - Test Accuracy as function of time since exposure                                                                          |
 | 2022-04-19 | [[DYL]]                                     | Design - long distance commuter train, package delivery systems,                                                                  |
@@ -622,7 +622,7 @@ n:: no prefix.	Dated entries without any typing prefix
 | 2022-03-09 | [[NJ22 Paths]]                              | Post Amy Kruse Thinking                                                                                                           |
 | 2022-03-04 | [[MKT]]                                     | From the top                                                                                                                      |
 | 2022-02-22 | [[NJ22 Paths]]                              | Latest Thinking                                                                                                                   |
-| 2022-02-16 | [[2017-01 Forum]]                           | Email based first system.                                                                                                         |
+| 2022-02-16 | [[Forum]]                                   | Email based first system.                                                                                                         |
 | 2022-02-15 | [[NJ22 Paths]]                              | Choice Space                                                                                                                      |
 | 2022-02-08 | [[COM Campaigns OLDER]]                     | Meetups to consider                                                                                                               |
 | 2022-02-00 | [[FirstTouch]]                              | Recruiter - Refer Anyone - LOW HIT RATE                                                                                           |
@@ -642,8 +642,8 @@ n:: no prefix.	Dated entries without any typing prefix
 | 2022-01-04 | [[DEEP_BOOT]]                               | WAYS TO CONTAIN IT                                                                                                                |
 | 2022-01-04 | [[DEEP_BOOT]]                               | WAYS TO BREAK FREE                                                                                                                |
 | 2022-01-04 | [[Journal Old]]                             | My purpose                                                                                                                        |
-| 2022-01-04 | [[NJ22 Paths]]                              | My purpose                                                                                                                        |
 | 2022-01-04 | [[FailedMessages]]                          | CTO Outreach Email                                                                                                                |
+| 2022-01-04 | [[NJ22 Paths]]                              | My purpose                                                                                                                        |
 | 2022-01-02 | [[DEEP_BOOT]]                               | Key Capabilities                                                                                                                  |
 | 2022-00-00 | [[FailedMessages]]                          | JOE Quora                                                                                                                         |
 | 2021-12-28 | [[DEEP_BOOT]]                               | Deep Introspection Claim                                                                                                          |
@@ -683,8 +683,8 @@ n:: no prefix.	Dated entries without any typing prefix
 | 2021-10-01 | [[Journal Old]]                             | -- SITUATION SUMMARY --                                                                                                           |
 | 2021-10-01 | [[NJ22 Contents]]                           | -- SITUATION SUMMARY --                                                                                                           |
 | 2021-09-23 | [[Journal Old]]                             | WHOM IN MY NETWORK TO ASK                                                                                                         |
-| 2021-09-23 | [[RES]]                                     | Resume Experience                                                                                                                 |
 | 2021-09-23 | [[COMS]]                                    | WHOM IN MY NETWORK TO ASK                                                                                                         |
+| 2021-09-23 | [[RES]]                                     | Resume Experience                                                                                                                 |
 | 2021-09-22 | [[Journal Old]]                             | >>> WP    -- NEXT JOB ACTIVITIES <<<                                                                                              |
 | 2021-09-22 | [[NJ22 Contents]]                           | >>> WP    --  ACTIVITIES <<<                                                                                                      |
 | 2021-09-22 | [[RES]]                                     | RESUME OBJECTIVE                                                                                                                  |
@@ -826,12 +826,12 @@ n:: no prefix.	Dated entries without any typing prefix
 | 2020-10-02 | [[Journal Old]]                             | An assessment of me                                                                                                               |
 | 2020-10-02 | [[NJ22]]                                    | An assessment of me                                                                                                               |
 | 2020-10-00 | [[Nanny]]                                   | notes from asana                                                                                                                  |
-| 2020-09-17 | [[2017-01 Forum]]                           | Police violence                                                                                                                   |
-| 2020-09-07 | [[2017-01 Forum]]                           | Shinster email                                                                                                                    |
+| 2020-09-17 | [[Forum]]                                   | Police violence                                                                                                                   |
+| 2020-09-07 | [[Forum]]                                   | Shinster email                                                                                                                    |
 | 2020-08-23 | [[Journal Old]]                             | Lost at Sea but with good provisions                                                                                              |
 | 2020-08-17 | [[FIN Log]]                                 | QL - AYI payments                                                                                                                 |
 | 2020-08-15 | [[Journal Old]]                             | My Futures                                                                                                                        |
-| 2020-07-23 | [[MAC Apps]]                                | Applications folder                                                                                                               |
+| 2020-07-23 | [[App]]                                     | Applications folder                                                                                                               |
 | 2020-07-18 | [[FIN Budgeting]]                           | Budget                                                                                                                            |
 | 2020-05-11 | [[OLD 2020 Weekly]]                         | NOW COUNTING 90 SLOTS                                                                                                             |
 | 2020-04-27 | [[MED Log]]                                 | Notes for doc meeting                                                                                                             |
@@ -846,7 +846,7 @@ n:: no prefix.	Dated entries without any typing prefix
 | 2020-01-06 | [[OLD 2020 Weekly]]                         | WEEK                                                                                                                              |
 | 2020-01-05 | [[OLD 2020 Weekly]]                         | GOALS FOR THE YEAR                                                                                                                |
 | 2020-00-00 | [[Parents]]                                 | Subscriptions that Dad might want                                                                                                 |
-| 2020-00-00 | [[2017-01 Forum]]                           | UNSORTED                                                                                                                          |
+| 2020-00-00 | [[Forum]]                                   | UNSORTED                                                                                                                          |
 | 2020-00-00 | [[Ideas]]                                   | HAND HELD PKG DIMENSIONER                                                                                                         |
 | 2020-00-00 | [[Ideas]]                                   | Room occupancy sensor - idea from AF partnership calls                                                                            |
 | 2020-00-00 | [[Ideas]]                                   | Chipstack                                                                                                                         |

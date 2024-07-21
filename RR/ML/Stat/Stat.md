@@ -3,7 +3,7 @@
 
 
 .[[Stat]].
-  ADDS:   [[ADF - Augmented Dickey Fuller Test]], [[ARIMA Algorithm]], [[AutoRegressive]], [[Bayes Optimal Error]], [[HarmonicMean]], [[KL Divergence]], [[Likelihood]], , [[PCA]], [[Q-Q Plot]]
+  ADDS:   [[ADF - Augmented Dickey Fuller Test]], , [[AutoRegressive]], [[Bayes Optimal Error]], [[HarmonicMean]], [[KL Divergence]], [[Likelihood]], , [[PCA]], [[Q-Q Plot]]
   [[Ransac]], [[Sigmoid]], [[Softmax]], [[Stationary]]
   DELS: ,
 - [[KL Divergence]]:
@@ -23,7 +23,7 @@
   [AutoRegressive](AutoRegressive.md),   [Stationary](Stationary.md)
   DELS: , , ,
   [[Likelihood]]
-
+  ADDS:   [[STATS]],
 
 
 

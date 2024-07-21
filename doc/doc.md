@@ -1,19 +1,22 @@
-
-:: [[DocGCP]]
-
-:: [[DocJupyter]]
-
-.[[Doc]].
-  [[AWS Log]], [[Doc 1Password]], [[DocAPI]], [[DocApplescript]], [[DocArduino]], [[DocAWS]], [[DocBash]], [[DocCapistrano]], [[DocClojure]], [[DocConda]], [[DocCPP]], [[DocCucumber]],
-  [[DocDelayedJob]], [[DocDocker]], [[DocEmacs]], [Doc Folder](spot://docfolder), [[DocGit]], [[DocGnome]], [[DocGolang]], [[DocGoogle]], [[DocHtml]], [[DocJavascript]], [[DocJquery]], [[DocJupyter]]
+.[[DOC]].
+  ADDS:   [[AWS Log]], [[DOC SYNC]], [[DOC SYNC COMMANDS]],
+  ADDS:   [[Doc 1Password]], [[DocAPI]], [[DocApplescript]], [[DocArduino]], [[DocAWS]], [[DocBash]], [[DocCapistrano]], [[DocClojure]], [[DocConda]], [[DocCPP]], [[DocCucumber]], [[DocDelayedJob]]
+  [[DocDocker]], [[DocEmacs]], [Doc Folder](spot://docfolder), [[DocGit]], [[DocGnome]], [[DocGolang]], [[DocGoogle]], [[DocHtml]], [[DocJavascript]], [[DocJquery]], [[DocJupyter]]
   [[Doc Keyboard Maestro]], [[DocLinux]], [[DocMac]], [[DocMarkdown]], [[DocMatplotlib]], [[DocNumPy]], [[DocObjectiveC]], [[DocObsidian]], [[DocOSX]], [[DocPandas]], [[DocPycharm]], [[DocPyDatetime]]
   [[DocPyML]], [[DocPython]], [[DocR]], [[DocRackspace]], [[DocRails]], [[DocRuby]], [[DocSamurai]], [[DocSciKit]], [[DocSeaborn]], [[DocSED]], [[DocSQL]], [[DocSublime]], [[DocTensorFlow]]
   [[Doctor]], [[DocVagrant]], [[Unix Command Line]],
 
-
-
-
-
+.[[Doc]].
+  [[AWS Log]], , , , , , , , , , , ,
+  , , , , , , , , , , ,
+  , , , , , , , , , , ,
+  , , , , , , , , , , , ,
+  , , ,
+  ADDS:   [[Dataview]], , [[DocAPI]], [[DocApplescript]], [[DocArduino]], [[DocAWS]], [[DocBash]], [[DocCapistrano]], [[DocClojure]], [[DocConda]], [[DocCPP]], [[DocCucumber]]
+  [[DocDelayedJob]], [[DocDocker]], [[DocEmacs]], [Doc Folder](spot://docfolder), [[DocGCP]], [[DocGit]], [[DocGnome]], [[DocGolang]], [[DocGoogle]], [[DocHtml]], [[DocJavascript]], [[DocJquery]]
+  [[DocJupyter]], , [[DocLinux]], , [[DocMarkdown]], [[DocMatplotlib]], [[DocNumPy]], [[DocObjectiveC]], [[DocObsidian]], [[DocOSX]], [[DocPandas]], [[DocPycharm]]
+  [[DocPyDatetime]], [[DocPyML]], [[DocPython]], [[DocR]], [[DocRackspace]], [[DocRails]], [[DocRuby]], [[DocSamurai]], [[DocSciKit]], [[DocSeaborn]], [[DocSED]], [[DocSQL]], [[DocSublime]]
+  [[DOC SYNC]], [[DOC SYNC COMMANDS]], [[DocTensorFlow]], [[Doctor]], [[DocVagrant]], [[mdfind]], [[Unix Command Line]],
 
 
 

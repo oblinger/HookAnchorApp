@@ -9,15 +9,18 @@
   [[Life]]:
   [[Music]]:
   :
-  [[Tags]]:
-  [[Trash]]:
+  :
+  :
   [[Web]]:
-  [[CAR]]:
-  [[COMP]]:
-  [[FIN]]:
+  :
+  :
+  :
   [[MED]]:
   ADDS:   [[Politics]]
   ADDS:   [[SF]],
+  ADDS:   ,
+  ADDS:   [[Tag]],
+  ADDS:   ,
 
 
 
@@ -125,12 +128,9 @@
 
 
 
+- [[Career]], [[Music]], 
 
-
-
-- [[CAR]], [[Music]], 
-
-:: [[COMS]],   [[MGR Log]],   [[Comp]],   [[EduCorp]],   [[FIN]],   [[Food]],   [[KM]],   [[Legal]],   [[Life]],   [[MED]],   [[SYS]],   [[Tags]],   [[Trash]],   [[Web]],   [[Webshare]]
+:: [[COMS]],   [[MGR Log]],   [[Comp]],   [[EduCorp]],   [[FIN]],   [[Food]],   [[KM]],   [[Legal]],   [[Life]],   [[MED]],   [[SYS]],   [[TAG]],   [[Trash]],   [[Web]],   [[Webshare]]
 #top
 n:: Major topic roots
 

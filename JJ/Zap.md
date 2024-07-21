@@ -1,9 +1,9 @@
 .[[Zap]].
-  ADDS:   [[Old]],
-  ADDS:   [[Application]],
-  ADDS:   [[Mac]],
-
-
+  ADDS:   ,
+  ADDS:   ,
+  ADDS:   ,
+  ADDS:   ,
+  DELS: [[Old]], [[MAC]], 
 
 
 

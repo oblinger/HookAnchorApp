@@ -6,21 +6,21 @@
   TOPS:			[[WW]],   [[QQ]],  [[Mgt]], [[CV]],
   [[SV Strat]]:		[[Reset]],  [[ROADMAP]],
   [[SV Ops]]:	 	[[SV Dashboards]],  [[SV Testing]], [[SV Planning]],
-  [[SV People]]:	[[SV SW Team]], [[SV Individuals]],
-  [[SV Market]]:	[[SV Customer]],  [[SV Competitor]], [[SV Partner]],
+  [[SV People]]:	, ,
+  [[SV Market]]:	[[SV Customer]],  , [[SV Partner]],
   [[SV Product]]:	[[SV Code]],  [[SV Apps]], [[SV System]], ,
   [[SV Software]]:
   [[INV]]:
   INFO:			[[SV Code]], [[SVT]], [[SV Legal]], [[SV Folder]], [[Meta SV]],
   ARCHIVE:		[[SV Archive]],   [[SV Wings]],
-  ADDS:   [[2023 Deliverables]], [[Bug.]], [Bug Actual List Page](spot://bugactuallistpage), [Bug Board Page](spot://bugboardpage), [[Bugs]], [Canva](spot://canva), [[Circle]],
-  [Fireball](spot://fireball), [HALOS](spot://halos), [[Investor Intros]], [Jira](spot://jira), [Jira Me Page](spot://jiramepage), [[July Hiring]], [[SV90]], [[SV90.]], [[SV Basketball Info]]
-  [SV Clickup Page](spot://svclickuppage), [SV Confluence Page](spot://svconfluencepage), [SV C Root](spot://svcroot), [[SV FIN]], [SV Google Drive Page](spot://svgoogledrivepage)
-  [SV G Root](spot://svgroot), [[SV Letter]], [SV Log Page](spot://svlogpage), [[SV lrn]], [[SV Roadmap]],
-  ADDS:   [[CTC SV]],
+  ADDS:   , [[Bug.]], [Bug Actual List Page](spot://bugactuallistpage), [Bug Board Page](spot://bugboardpage), [[Bugs]], [Canva](spot://canva), [[Circle]],
+  [Fireball](spot://fireball), [HALOS](spot://halos), [[Investor Intros]], [Jira](spot://jira), [Jira Me Page](spot://jiramepage), [[July Hiring]], , [[SV90.]], [[SV Basketball Info]]
+  [SV Clickup Page](spot://svclickuppage), [SV Confluence Page](spot://svconfluencepage), [SV C Root](spot://svcroot), , [SV Google Drive Page](spot://svgoogledrivepage)
+  [SV G Root](spot://svgroot), [[SV Letter]], [SV Log Page](spot://svlogpage), [[SV lrn]], ,
+  ADDS:   ,
   ADDS:   [Work Folder](spot://workfolder),
-
-
+  ADDS:   [[@Circle]], [[@StatsPerform]], [[@SV]], [[Beyondo]], [[2023-02-00 CTOs corner]], [[Hoops]], [[Scout Bot]], [[SV Org]], [[Veo]],
+  ADDS:   [[2022-10-17 SV90]],
 
 
 

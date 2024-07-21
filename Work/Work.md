@@ -29,7 +29,7 @@ SW proc:	[db](https://www.notion.so/sportsvisio/cf65339c09c6486296f8adaa084c141a
 Assess	> Assessment plan for BB
 
 ## SOON [[mgt]] [[CVP]] 
-[[Metrics]]:		/Create money metrics page
+[[2023 CV team new agenda metrics]]:		/Create money metrics page
 [[DAT]]:			Dynamic Dat loading
 [[journaling]] 
 

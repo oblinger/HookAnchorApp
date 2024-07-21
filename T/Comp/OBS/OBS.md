@@ -106,14 +106,14 @@
 
 
 .[[OBS]].
-  [[OBS API Docs]]:	
-  [[OBS Examples]]:	
-  [[OBS Plugins]]:	
-  [[OBS Projects]]:	
+  [[OBS API Docs]]:
+  [[OBS Examples]]:
+  [[OBS Plugins]]:
+  [[OBS Projects]]:
+  ADDS:   [Plugins Folder](spot://pluginsfolder),
+  ADDS:   [[OBS.]],
+  ADDS:   [[Action Notes]], [[spotlight commander]],
 
-n:: OBSIDIAN setup details
-
-MY SETUP:	[[SYS]], [[OBS Plugins]], 
 MY IDEAS:	[[Multi-List WorkFlow]],  
 HACKING:		[[Action Notes]], [[#ADD ITEM COMMAND|Add Item]],  [[#SEND ITEM COMMAND|Send Item]], [[spotlight commander]],  
 FORA:			[[Discord App]],  [Forum](https://forum.obsidian.md),   [Obsidian Website](https://obsidian.md)  [support@obsidian.md](mailto:support@obsidian.md)  

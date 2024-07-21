@@ -1,7 +1,7 @@
 .[[QQ]].
-  [QQ Folder](spot://qqfolder):	
-
-# QUICK - QUICK work projects
+  :
+  ADDS:   [[2023-10-01 Special Olympics]],
+  ADDS:   [[2024-01 Michael Rampdown]], [[2023-12 Sell Car]],
 
 
 ### 2024-07-11  Hack-a-thon week

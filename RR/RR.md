@@ -19,7 +19,7 @@
   [[Research]]:
   [[RMS]]:
   [[rrCV]]:
-  [[SportsAI]]:
+  :
   [[Startups Note]]:
   [[Swearing]]:
   [[Systems]]:
@@ -29,11 +29,11 @@
 n:: Research Reference pages
 - [[RR MGR]], [[RR Philosophy]], [[RR PAPERS]],
 -
-  ADDS:   [[Language]]
+  ADDS:
 [[ML Ops]]
   ADDS:   [[Book]],
   ADDS:   [[RR Med]], [[RR Mgt]],
-
+  ADDS:   [[Sophie's World]], [[Sora]],
 
 
 

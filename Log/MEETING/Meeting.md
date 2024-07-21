@@ -53,7 +53,7 @@ n:: 'm...'	Verbal, single-person-centered interaction.
 | m2022-09-22 | [[@Jason Syversen]]      | Joining SV as consultant                                          |
 | m2022-09-14 | [[@Joseph Yeh]]          | Jason decision                                                    |
 | m2022-09-13 | [[@Jason Syversen]]      | [[@Mike Seibert]] discussion                                      |
-| m2022-08-24 | [[2017-01 Forum]]        | Matt Pinson - Friend Christy - Friend of Yashin                   |
+| m2022-08-24 | [[Forum]]                | Matt Pinson - Friend Christy - Friend of Yashin                   |
 | m2022-08-16 | [[MEETINGS]]             | Nick - RZ share price                                             |
 | m2022-08-11 | [[@Joseph Yeh]]          | Activities                                                        |
 | m2022-08-11 | [[MEETINGS]]             | Jobot Recruiter                                                   |
@@ -61,10 +61,10 @@ n:: 'm...'	Verbal, single-person-centered interaction.
 | m2022-07-20 | [[@Rafah Hosn]]          | Reconnect                                                         |
 | m2022-06-30 | [[@Moses Baffour Awuah]] | First discussion about EduCorp                                    |
 | m2022-06-30 | [[EduCorp]]              | Moses Discussion [[@Moses Baffour Awuah]]                         |
-| m2022-06-21 | [[2017-01 Forum]]        | Joe Yeh                                                           |
+| m2022-06-21 | [[Forum]]                | Joe Yeh                                                           |
 | m2022-05-26 | [[@Dan Fine]]            | Constructive strategies forward.  Time could be short for a FAANG |
 | m2022-05-26 | [[@Joseph Yeh]]          | Prep for FAANG                                                    |
-| m2022-05-09 | [[2017-01 Forum]]        | Yashin and Phippa                                                 |
+| m2022-05-09 | [[Forum]]                | Yashin and Phippa                                                 |
 | m2022-04-29 | [[@Arkady Epshteyn]]     | FAANG ML Guy                                                      |
 | m2022-04-06 | [[@Joseph Yeh]]          | Resume;                                                           |
 | m2022-04-06 | [[2022-03 BeVC]]         | Recruiter topics                                                  |

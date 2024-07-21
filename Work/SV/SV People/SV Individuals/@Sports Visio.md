@@ -29,8 +29,8 @@ SOFTWARE TEAM
 FLUTTER DEVS
 - [[@Tomas Tisocco]] 		- (Double-T) Flutter Dev  TICKETS!
 - [[@Jorge Rincon Arias]]	- Flutter Dev
-- >[[@Achilles (Tomas Sasovsky)]]	- Flutter Dev - caring wanting more $
-- ?[[@Nazareno Cavazzon (Nasa)]]	- Flutter Dev
+- >[[@Achilles -- Tomas Sasovsky]]	- Flutter Dev - caring wanting more $
+- ?[[@Nazareno Cavazzon -- Nasa]]	- Flutter Dev
 - [[@Leonardo Almiron]] 	- Angular - doing QA???  TICKETS!
 - >[[@Roberto Daviduk]] 	- RECORD APP - Quiet
 - [[@Pablo Calofatti]] 		- Argentina - Full stack dev

@@ -1,13 +1,13 @@
 .[[BUY]].
-  [[BUY Clothing]]:	
-  [[BUY Food]]:	
-  [[BUY Home]]:	
-  [[BUY Ideas]]:	
-  [[BUY Log]]:	
-  [[BUY Tea]]:	
+  [[BUY Clothing]]:
+  :
+  :
+  :
+  :
+  :
+  ADDS:   [[BUY Food]], [[BUY Home]], [[BUY Ideas]], [[BUY Log]], [[BUY Tea]],
+  ADDS:   [[Bought]], [[SolarPanels]], [[ToBuy]],
 
-
-:: [[ToBuy]]
 #set 
 n:: Places where I like to purchase from
 
