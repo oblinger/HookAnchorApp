@@ -4,6 +4,62 @@
   ADDS:   [[2023 SV Roadmap]],
   ADDS:   [[2023 Deliverables]],
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 =	[[Reset]]			[[2023-Reset-DanO-Role]] 
 
 ?					[[2023 Deliverables]],  

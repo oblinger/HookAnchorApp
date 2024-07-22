@@ -1,19 +1,64 @@
 .[[Top]].
-  [[Pln]], [[Prj]], [[RR]], [[Set]], [[T]], [[Work]], [[Work Jump]],
-  [GG](spot://gg), , [WW Folder](spot://wwfolder),
+  [[Pln]], [[Prj]], [[Set]], [[T]], [[SV]],
+  [GG](spot://gg),  [[RR]], ,
 
 
 
-#### [[Meta]]		TOP LEVEL INFO ORGANIZATIONS
-| ORG       | FOLDER                | META           | By       | Notes                                  |
-| --------- | --------------------- | -------------- | -------- | -------------------------------------- |
-| [[Roots]] | [[Kmr Folder\|KMR]]   | [[Meta Meta]]  | ALL      | Toplevel roots for all pages ([[Dir]]) |
-| [[Pln]]   | [[Plan Folder\|Plan]] | [[Meta Plan]]  | By TASK  | Short and long term planning           |
-| [[Log]]   | [[Log Folder\|Log]]   | [[Meta Log]]   | By TIME  | Lists with a time-based org            |
-| [[Set]]   | [[Set Folder\|Set]]   | [[Meta Set]]   | By TYPE  | Groups of like (typed) entries         |
-| [[TOC]]   | [[JJ]]                | [[Meta Topic]] | By TOPIC | Toplevel Taxonomic Topics ([[T]])      |
-|           |                       | [[Meta Flow]]  | By PROC  | My data processing paths               |
-| [[SV]]    | [[SV Folder\|SV]]     | [[Meta SV]]    | WORK     | Work related [[WW]]                    |
+  DELS: [WW](spot://ww), 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   	
+| ORG       | FOLDER                  | META           | By       | Notes                                  |
+| --------- | ----------------------- | -------------- | -------- | -------------------------------------- |
+| [[Roots]] | [[Kmr Folder\|KMR]]     | [[Meta Meta]]  | ALL      | Toplevel roots for all pages ([[Dir]]) |
+| [[Pln]]   | [Pln](spot://plnfolder) | [[Meta Plan]]  | By TASK  | Short and long term planning           |
+| [[Log]]   | [Log](spot://logfolder) | [[Meta Log]]   | By TIME  | Lists with a time-based org            |
+| [[Set]]   | [[Set Folder\|Set]]     | [[Meta Set]]   | By TYPE  | Groups of like (typed) entries         |
+| [[TOC]]   | [[JJ]]                  | [[Meta Group]] | By GROUP | Taxonomy of Groups                     |
+|           |                         | [[Meta Flow]]  | By PROC  | My data processing paths               |
+| [[SV]]    | [[SV Folder\|SV]]       | [[Meta SV]]    | WORK     | Work related [[WW]]                    |
 
 #### [[Roots]] [[Kmr Folder|--]] Top level roots for all pages
 ```dataviewjs

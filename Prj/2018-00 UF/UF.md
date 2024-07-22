@@ -7,6 +7,62 @@
   ADDS:   ,
   ADDS:   [[UC]],
   ADDS:   [[_ideas_OLD]],
+  ADDS:   , [[TextPuter]],
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  DELS: [[MKT]], 
+
+
+
+
+
+
+
+
+
 
 # REF
 ### r2022-06-10  Master thesis, Code Mirror 6 editor that edits in two different languages at once

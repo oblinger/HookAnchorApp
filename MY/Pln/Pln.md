@@ -1,27 +1,24 @@
 
 .[[Pln]].
-  [[CVP]]:	[[Full]], [[Prime]], ,
+  [[CVP]]:	 	[[Now]], [[Full]], [[Prime]],
   -
-  OVER:	[[Friday]], [[Habit]], [[Repeat]], [[Self Evergreen]].
-  LST1: [[Quick]], [[Todo]], [[Now]], [[Active]], [[SCRatch]],
-  LST2:	[[Big]],
-  LST3:	[[Quarterly]], [[Later]], [[Wings]], [[Dropped]], [[Archive]],
-  LONG:	[[Rocks]], [[Q2]], [[Spirit]], [[Actualize]], [[Mission]], [[WRM]],
-  STRAT:[[Productivity]], [[Daily Schedules]],
-  TOPIC:	[[COMS]], [[Diary]],
-  FUN:	[[Fun]], [[Social]], [[Fried]], [[Gap]], [[Hacks]], [[Fried Later]],
-  FAM:	[[Family]], [[Friday Dates]], [[Home]],
-  ROOT:	[[BKT]], [[Up All]], [[Up Task]],
-  EXT:	[[External]], [[Other]],
-  TYPE:	[[Chew]], ,
-  ADDS: [Pln Personal](spot://plnpersonal), [[Self]], , [Pln Folder](spot://plnfolder),
-  ADDS:   ,
-  ADDS:   [[Arc ALL]], [[Archeology]], [[bfast]], [[lunch]], , [[Tracking of Time]], [[wake]],
-  ADDS:   [[First]], [[read]],
-  ADDS:   [[EBT]], [[Ping]],
+  OVER:		[[Friday]], [[Habit]], [[Repeat]], [[Self Evergreen]].
+  LST1:		[[Quick]], [[Todo]], [[Active]], [[SCRatch]],
+  LST2:		[[Big]], [[Quarterly]], [[Later]], [[Wings]], [[Dropped]], [[Archive]],
+  LONG:		[[Rocks]], [[Q2]], [[WRM]],
+  STRAT:	[[Productivity]], [[Daily Schedules]],
+  TOPIC:		[[COMS]],
+  SELF:		[[Self]], [[Diary]], [[Spirit]], [[Actualize]], [[Mission]],
+  FUN:		[[Fun]], [[Social]], [[Fried]], [[Gap]], [[Hacks]], [[Fried Later]],
+  FAM:		[[Family]], [[Friday Dates]], [[Home]],
+  ROOT:		[[BKT]], [[Up All]], [[Up Task]],
+  EXT:		[[External]], [[Other]],
+  ACTIONS:	[[Chew]],  , , , [[First]], ,
+  ADDS:   	[[Arc ALL]], [[Archeology]],, [[Tracking of Time]], [[EBT]], [[Ping]],
+  ADDS:   , , , ,
+  ADDS:   [[Bfast]], [[Lunch]], [[Read]], [[Wake]],
 
 
-:: [[Work/SV/CV/Data/Data]],    [[SVCV Re-ID]]
 
 
 
@@ -39,7 +36,6 @@
 
 
 
-  DELS: [Day](spot://day), 
 
 
 
@@ -69,40 +65,7 @@
 
 
 
-
-
-  DELS: [[Lrn]], 
-
-after
-:: [[EBT]], [[Ping]]
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+  DELS: [[Bfast]], [[Lunch]], [[Wake]], [[Read]],[[bfast]], [[lunch]], [[read]], [[wake]], 
 
 #### [[Pln]] [[Plan Folder|--]] Short and long term planning 
 ```dataviewjs

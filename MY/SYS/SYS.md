@@ -1,7 +1,7 @@
 .[[SYS]].
   [NEU Folder](spot://neufolder):
   [[SYS Dashboards]]:
-  [[SYS Facet]]:
+  :
   [[SYS Keyboard Setup]]:
   [[SYS Misc]]:
   [[SYS Notations]]:
@@ -23,6 +23,62 @@
 .                 **MY PERSONAL SYSTEMS**
   ADDS:   [[My Github Webpage]],
   ADDS:   [[My Hacks]],
+  ADDS:   [[SYS Facet]], 
+  DELS: [[Facet]], 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -113,7 +169,7 @@
 
 [[SYS]] 
 - [[SYS Dashboards]]	- 
-- [[SYS Facet]]			- 
+- [[Facet]]			- 
 - [[SYS Keyboard Setup]]
 - [[SYS Misc]]			- 
 - [[SYS Notations]]		- 

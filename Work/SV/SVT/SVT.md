@@ -10,6 +10,62 @@
   :
   ADDS:   [[SVT Bitbucket]], [[SVT Clickup]], [[SVT Confluence]], [[SVT Google Drive]], [[SVT Polaris]], [[SVT Sentry]], [[SVT Slack]], [[SVT Virtual Box Notes]],
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 # SV TOOLS (TARGETS)
 
 - [[SVT Bitbucket]] - 

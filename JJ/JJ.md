@@ -3,7 +3,63 @@
   ADDS:   ,
   ADDS:   [[Application]], [[Books]], [[DD]], , , [[pPrj]], [[RD]], [[SV Competitor]], [[Zap]],
   ADDS:   ,
-  ADDS:   [[JOB Tests]], [[Team Hiring]],
+  ADDS:   [[JOB Tests]], ,
   ADDS:   ,
+  ADDS:   ,
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  DELS: [[Team Hiring]], 
+
+
+
+  DELS: [[Enxt]], 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 

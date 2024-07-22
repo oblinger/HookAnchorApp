@@ -14,7 +14,7 @@
 - [ ] 10:		[[EOCA]]:  Notes capture
 - [ ] 11:		[[Chew]] 
 - [ ] 11:	[[SV]]: summarize notes
-- [ ] 12	[[lunch]],  
+- [ ] 12	[[Lunch]],  
 - [ ] 1	
 - [ ] 2	Yashin / Exercise
 - [ ] 4	QL help
@@ -24,7 +24,7 @@
 - [ ] 9:	[[EOCA]]:  Notes capture
 - [ ] 10:	[[Chew]] 
 - [ ] 11:	[[SV]]: summarize notes
-- [ ] 12	[[lunch]],  
+- [ ] 12	[[Lunch]],  
 - [ ] 1	
 - [ ] 2	Yashin / Exercise
 
@@ -35,11 +35,11 @@
 - [ ] 10	[[Repeat]] 
 - [ ] 10:	[[Chew]] 
 - [ ] 11: ???
-- [ ] 12:	[[lunch]] 
+- [ ] 12:	[[Lunch]] 
 - [ ] 1'	[[War]]: 
 - [ ] 10	[[RES Linked In]] 
 - [ ] 11	[[COMS]] 
-- [ ] 11	[[lunch]],  
+- [ ] 11	[[Lunch]],  
 - [ ] 12:	[[War]] 
 - [ ] 2	[[Gap]]  
 - [ ] 3:	[[@Joseph Yeh]]  

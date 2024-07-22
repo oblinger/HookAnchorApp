@@ -99,8 +99,8 @@ n:: no prefix.	Dated entries without any typing prefix
 | 2024-03-03 | [[FIN Log]]                                 | Follow On Questions                                                                                                               |
 | 2024-02-18 | [[@Hoka]]                                   | Exchange                                                                                                                          |
 | 2024-02-17 | [[Eli]]                                     | Put on his underwear                                                                                                              |
-| 2024-02-17 | [[SYS Facet]]                               | Auto Jump pages                                                                                                                   |
-| 2024-02-17 | [[SYS Facet]]                               | EXAMPLES of facet groups                                                                                                          |
+| 2024-02-17 | [[Facet]]                                   | Auto Jump pages                                                                                                                   |
+| 2024-02-17 | [[Facet]]                                   | EXAMPLES of facet groups                                                                                                          |
 | 2024-02-12 | [[MED Log]]                                 | QL DOC advice for a flu w/ cough                                                                                                  |
 | 2024-02-11 | [[Palestinians]]                            | Andrew's response                                                                                                                 |
 | 2024-02-09 | [[Palestinians]]                            | Try Number Three                                                                                                                  |

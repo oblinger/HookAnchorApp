@@ -1,13 +1,12 @@
 < [[KM]]
 - [[Hook System]] 
 
-**NAMED SUFFIX FACETS**
+**NAMED FACET SUFFIXES**
 - 		- Main page with jumps
-- @ent	- 
+- Jump - Page with "Jumps" on the top
 - Doc 	- The core doc (excel, ppt, etc)
 - Log 	- Log of related content
 - Notes	- 
-- Meta	- (currently a prefix)
 - Todo	- 
 - Ref 	- References
 
@@ -19,6 +18,8 @@
 - App	-
 - Web	- 
 
+- Meta	- (currently a prefix)
+- @ent	- Entity page
 
 ## FACETS
 

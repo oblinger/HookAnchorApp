@@ -1,14 +1,62 @@
 .[[NJ]].
-  TOP:	, [[War]], [[Lrn]],
-  NJ:	, [NJ Slide](spot://njslide),
-  OTHER:[[GoogleJob]], , ,
-  OLDER:[[NJ16]], [[NJ22]], ,
-  ADDS:   ,
-  ADDS:   ,
-  ADDS:   [[RES]],
-  ADDS:   ,
-  ADDS:   [[NJ.]], [[NJ24 Framing]], [[NJ Read]], [[NJ Rewrite]],
-  ADDS:   [NJ24 Slide](spot://nj24slide),
+  TOP:	[[War]], [[Lrn]], [[NJ Todo]],
+  PROD:	[[RES]], [NJ Slide](spot://njslide), [[NJ Rewrite]],
+  OTHR:	[[GoogleJob]], [[NJ24 Framing]], [[NJ Read]],
+  OLD:	[[NJ16]], [[NJ22]],
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -173,13 +221,13 @@ Technically lead prototyping/productization of advanced AI, ideally leveraging m
 .[[NJ24]].
   :
   [NJ24 Slide](spot://nj24slide):
-  ADDS:   [[NJ]], [[NJ.]], [[NJ24 Framing]], [[NJ Read]], [[NJ Rewrite]],
+  ADDS:   [[NJ]], [[NJ Todo]], [[NJ24 Framing]], [[NJ Read]], [[NJ Rewrite]],
 
 :: [[NJ Read]]
 
 :: [[NJ]]
 
-. [[NJ.]] [[Lrn]], [[NJ Rewrite]], [[War AI]], 
+. [[NJ Todo]] [[Lrn]], [[NJ Rewrite]], [[War AI]], 
 
 
 ## TODO

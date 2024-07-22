@@ -3,7 +3,7 @@
 #top 
 .[[SV]].
   [[SV Tasks]] -
-  TOPS:			[[WW]],   [[QQ]],  [[Mgt]], [[CV]],
+  TOPS:			,   [[QQ]],  [[Mgt]], [[CV]],
   [[SV Strat]]:		[[Reset]],  [[ROADMAP]],
   [[SV Ops]]:	 	[[SV Dashboards]],  [[SV Testing]], [[SV Planning]],
   [[SV People]]:	, ,
@@ -21,6 +21,62 @@
   ADDS:   [Work Folder](spot://workfolder),
   ADDS:   [[@Circle]], [[@StatsPerform]], [[@SV]], [[Beyondo]], [[2023-02-00 CTOs corner]], [[Hoops]], [[Scout Bot]], [[SV Org]], [[Veo]],
   ADDS:   [[2022-10-17 SV90]],
+  ADDS:   [[Work]],
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

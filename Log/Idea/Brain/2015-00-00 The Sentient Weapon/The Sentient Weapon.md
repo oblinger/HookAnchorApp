@@ -2,6 +2,62 @@
   ADDS:   [[The Sentient Weapon OLD]],
   ADDS:   [[brain book outline]], [[consciousness how it will happen]], [[story]], [[Sufficient Set]],
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 :: [[Log/Idea/Brain/2015-00-00 EOC-old/2015-00-00 The Sentient Weapon/Levels]]
 
 :: [[Log/Idea/Brain/2015-00-00 EOC-old/2015-00-00 The Sentient Weapon/Levels]]

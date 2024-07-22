@@ -12,6 +12,62 @@
   ADDS:   [[CV Annotations]],
   ADDS:   [Brainstorming Q3](spot://brainstormingq3),
   ADDS:   [AI TIPS](spot://aitips),
+  ADDS:   [Assess](spot://assess), [Baselines](spot://baselines), [BELIEF Gdrive](spot://beliefgdrive), [Benchmarks](spot://benchmarks),
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 GB: 	Finish OCR

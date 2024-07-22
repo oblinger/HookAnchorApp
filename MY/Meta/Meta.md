@@ -12,13 +12,69 @@
   [[Meta Proj]]:
   [[Meta Set]]:
   :
-  [[Meta Topic]]:
+  :
   ADDS:   [[Meta Log]], [[Meta Org -old-page-]],
   ADDS:   [[Base]],
   ADDS:   [[Roots]], ,
   ADDS:   ,
   ADDS:   [[meta Tasks]],
   ADDS:   [[Dir]], [[Meta Coms]],
+  ADDS:   ,
+  ADDS:   [[Meta Group]],
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  DELS: [[Meta Group]],[[Meta Topic]], 
+
+
+
+
 
 
 
@@ -112,7 +168,7 @@
 - [[Pln]]		[[Plan Folder|Plan]]		[[Meta Plan]]	 By TASK -	Short and long term planning. ([[meta Tasks]])
 - [[Log/Log]]		[[Logs Folder|Logs]]		[[Meta Log]]	 By TIME -	Lists with a time-based org
 - [[MY/Meta/Set]]		[[Set Folder|Set]]		[[Meta Set]]	 By TYPE -	Groupings of like (typed) entries
-- [[T]]			[[T Folder|T]]			[[Meta Topic]]	 By TOPIC -	Toplevel Taxonomic Topics
+- [[T]]			[[T Folder|T]]			[[Meta Group]]	 By TOPIC -	Toplevel Taxonomic Topics
 - 						[[Meta Flow]]	 By PROC	-	My data processing paths
 - [[OBS]]					[[Meta KM]] 	 OBSIDIAN -	Setup details for my info pages
 - [[MY]]		[[My Folder|MY]] 						 MYFO    -	Info about me & my stuff				 

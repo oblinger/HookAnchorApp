@@ -8,6 +8,62 @@
   ADDS:   [[BUY Food]], [[BUY Home]], [[BUY Ideas]], [[BUY Log]], [[BUY Tea]],
   ADDS:   [[Bought]], [[SolarPanels]], [[ToBuy]],
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 #set 
 n:: Places where I like to purchase from
 

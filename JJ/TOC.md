@@ -1,18 +1,16 @@
 
 ROOT JUMP PAGES::
 
-[[AMA]],	[[Application]],	[[BUY]],	[[CTC]],	[[gDR]],	[[JOB Tests]],	[[Log]],	
-[[Meet]],	[[Misc]],	[[MOV]],	[[News]],	[[NOISE]],	[[OKR]],	[[Old]],	[[Org]],	
-[[Photo]],	[[pPrj]],	[[RD]],	[[SCR]],	[[Team Hiring]],	[[TEMPLATER]],	
-[[Trash]],	
+[[AMA]],	[[Application]],	[[BUY]],	[[CTC]],	[[Enxt]],	[[gDR]],	[[JOB Tests]],	
+[[Log]],	[[Meet]],	[[Misc]],	[[MOV]],	[[News]],	[[NOISE]],	[[OKR]],	[[Old]],	
+[[Org]],	[[Photo]],	[[pPrj]],	[[RD]],	[[SCR]],	[[TEMPLATER]],	[[Trash]],	
+[[WW]],	
 [[MAC]]: [[App]],	
 [[Brain]]: [[The Sentient Weapon]],	
     [[EOC]]: [[EOCA]],	[[EOCB]],	[[EOCI]],	[[EOCK]],	[[EOCT]],	
 [[Career]]: [[MGR]],	
     [[Job]]: [[Hire]],	[[Job Post]],	[[Job Test]],	
         [[Job History]]: [[AF]],	
-[[SV]]: [[QQ]],	[[SV People]],	[[SV Strat]],	[[SVT]],	[[WW]],	
-    [[CV]]: [[CV Log]],	[[Data]],	
 [[FIN]]: [[FIN Log]],	
 [[NJ]]: [[Lrn]],	[[NJ16]],	[[NJ22]],	
     [[RES]]: [[Bio]],	
@@ -23,6 +21,8 @@ ROOT JUMP PAGES::
         [[AI]]: 
             [[DL]]: [[DL Alg]],	
     [[Set]]: [[Lang]],	
+    [[SV]]: [[QQ]],	[[SV People]],	[[SV Strat]],	[[SVT]],	
+        [[CV]]: [[CV Log]],	[[Data]],	
     [[T]]: [[Courses]],	[[Eli]],	[[Food]],	[[Legal]],	[[Life]],	[[MED]],	
         [[Politics]],	[[SF]],	[[Tag]],	
         [[MY]]: 

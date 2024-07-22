@@ -9,4 +9,60 @@
   [Timestamps Folder](spot://timestampsfolder), [Uploads Folder](spot://uploadsfolder), [Utility App Folder](spot://utilityappfolder),
   ADDS:   [Upload Page](spot://uploadpage),
   ADDS:   [ToFile Folder](spot://tofilefolder), [ToOffload Folder](spot://tooffloadfolder),
+  ADDS:   [Pln Folder](spot://plnfolder),
+  ADDS:   [WW Folder](spot://wwfolder),
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 

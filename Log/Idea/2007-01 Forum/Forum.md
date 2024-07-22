@@ -1,6 +1,62 @@
 .[[Forum]].
   ADDS:   [[2021-01-00 Short start with Yashin]],
   ADDS:   [[Truth]],
+  ADDS:   [Forum.PPTX Doc](spot://forum.pptxdoc),
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

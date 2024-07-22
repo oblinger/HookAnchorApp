@@ -1,8 +1,8 @@
 .[[Eli]].
   :
-  [[Clarendon]]:
+  :
   [[Daycare Applications]]:
-  [[2022-05 ELI next school]]:
+  :
   [[2023-05 Cool Kids]]:
   [[Eli Activities]]:
   [[Eli Firsts]]:
@@ -14,9 +14,65 @@
   :
   [[ELI Education]]:
   [[ELI Quotes]]:
-  ADDS:   , [[Eli Math]], [[Eli Schools]], [[Eli Sleep Training]],
+  ADDS:   , [[Eli Math]], , [[Eli Sleep Training]],
   ADDS:   [[Care Notes]],
   ADDS:   [[ELI Log]],
+  ADDS:   ,
+  ADDS:   [[BCMS]],
+
+
+
+
+
+  DELS: [[Clarendon]], 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  DELS: [[2022-05 ELI next school]], [[Eli Schools]], 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
