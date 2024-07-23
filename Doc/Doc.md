@@ -17,6 +17,13 @@
   [[DocJupyter]], , [[DocLinux]], , [[DocMarkdown]], [[DocMatplotlib]], [[DocNumPy]], [[DocObjectiveC]], [[DocObsidian]], [[DocOSX]], [[DocPandas]], [[DocPycharm]]
   [[DocPyDatetime]], [[DocPyML]], [[DocPython]], [[DocR]], [[DocRackspace]], [[DocRails]], [[DocRuby]], [[DocSamurai]], [[DocSciKit]], [[DocSeaborn]], [[DocSED]], [[DocSQL]], [[DocSublime]]
   [[DOC SYNC]], [[DOC SYNC COMMANDS]], [[DocTensorFlow]], [[Doctor]], [[DocVagrant]], [[mdfind]], [[Unix Command Line]],
+  ADDS:   [Game](spot://game),
+
+
+
+
+
+
 
 
 

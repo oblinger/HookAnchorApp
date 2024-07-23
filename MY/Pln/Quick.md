@@ -1,3 +1,12 @@
+- draw the parameterize template
+- Task: VB halos
+- turbo boost message
+- get docker running for me
+- get GCP instance running for me
+- task: get min metrics on LT10
+- task: crossover; drive james
+- spec of task
+- task: pano get it working
 - buy book-bag, or return it.
 - do some validation if spot action is not valid
 - have James create a trip page w/ all details.  figure food, transport, internet, lodging, basically everything.

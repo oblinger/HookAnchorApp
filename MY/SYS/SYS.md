@@ -23,8 +23,15 @@
 .                 **MY PERSONAL SYSTEMS**
   ADDS:   [[My Github Webpage]],
   ADDS:   [[My Hacks]],
-  ADDS:   [[SYS Facet]], 
-  DELS: [[Facet]], 
+  ADDS:   ,
+
+
+
+
+
+
+  DELS: [[Facet]],[[SYS Facet]], 
+
 
 
 

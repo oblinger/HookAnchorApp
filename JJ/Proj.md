@@ -1,0 +1,7 @@
+.[[Proj]].
+  ADDS:   [Shot Charts](spot://shotcharts),
+  ADDS:   [Proj Jump](spot://projjump),
+
+
+
+

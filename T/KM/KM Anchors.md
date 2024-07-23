@@ -1,3 +1,41 @@
+
+I need a better name for this system.  Its core construct could be called a jump page, a group, a bucket, an anchor, a project, a hook.  Not sure of the best metaphor.
+
+# The Hook System   (I need a better name!)
+
+
+Personally managed knowledge is usually captured, retrieved, and processed from within a specific usage context.  There are large benefits if that knowledge is organized appropriately for the context in which is it captured, retrieved and used.  This simple observation is at the heart of the jump page system.
+
+### Partitioning all activity into usage contexts (called "hooks")
+
+According to this system all activity is broken into a distinct set of distinct knowledge usage contexts (called "Hooks"):
+- Each context is associated with a distinct topic, area or task that occupies notable effort over weeks to years.  The quintessential context is a project that one is involved in over some weeks months or decades.
+- The set set of active usage contexts (Hooks) will evolve over time with older ones being archived but still available.
+- Something like 100 hooks should be active at any given time.  This is enough that is breaks all activity into manageably sized chunks while still keeping the number of hooks small enough that one can easily remember the meaning of all of them without trying.
+- Each hook has a multi-word naming phrase that is descriptive enough to be remembered decades later, 
+  and a short single word or abbreviation that is ideally 2 to 6 letters long.  (this is for quick access and because it is used as a prefix.)
+
+The key value of the hook system is that it PARTITIONS all knowledge uniquely onto a SINGLE hook.  Most of the time this is simply the hook associated with the usage context active at the time the knowledge is captured, but there are exceptions to this generality.  The main requirement is that one can instantly know which hook is relevant, and one can remember years later which hook was used.  There are some tricks to making this work in practice discussed below; in general with a bit of up-front thinking this turns out to be much easier than it sounds.
+
+The key idea is to keep these context hooks broad enough and simple enough that one can always know immediately which context a give piece of knowledge belongs in.  Usually it will simply associated with a single hook based on the relevant activity that the time the knowledge was captured.
+
+
+### The contents of a single "hook"
+
+Each usage context (hook) can now be organized appropriately for the usage context w/o any consideration for how it might relate to other hooks.  This makes its organization trivial to maintain the internal organization of the hook over time as the usage context evolves.
+
+- Each hook page must have a table of contents document (sometimes called a jump page) that helps to organize info in this hook.
+- Sometimes a dense block of links with 5-10 links per row, and 10-20 rows total allow one to see ~100 links as a group without scrolling.
+
+
+# Exceptions
+
+
+
+
+
+# ANCHORS
+
 tl;dr.  Maintain a thousand or so anchor terms as sets, streams, rocks, or topics in order to directly jump to any info in your personal knowledge store.
 
 
