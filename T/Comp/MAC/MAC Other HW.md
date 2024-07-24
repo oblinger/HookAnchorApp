@@ -50,7 +50,12 @@
 	  - iCloud sync  (Just safari, Documents, and FindMyPhone)
 	  - GMAIL  oblinger@gmail.com  !mail  !Contacts  !Calendars
 
-### - Canon iP110 (Portable Printer)  2015 (bought while at Bayside)
+
+### - Canon Pixma TS9520
+
+- google "canon TS9520 driver"
+- Run setup 
+### - [OLD] Canon iP110 (Portable Printer)  2015 (bought while at Bayside)
 
 -- Turn on printer (solid power light)
 -- Press wifi button; hold for TWO flashes of the power light.

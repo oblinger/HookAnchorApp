@@ -1,6 +1,6 @@
 < [[Person]] < 
 
-[[SERVICES]] 
+[[Cleaning Service]] 
 
 
 

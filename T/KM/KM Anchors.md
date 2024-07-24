@@ -1,10 +1,29 @@
 
-I need a better name for this system.  Its core construct could be called a jump page, a group, a bucket, an anchor, a project, a hook.  Not sure of the best metaphor.
+I need a better name for this system!  Its core construct could be called a jump page, a group, a bucket, an anchor, a project, a hook.  Not sure of the best metaphor.
 
-# The Hook System   (I need a better name!)
+# The Hook Set System   (I need a better name!)
 
 
-Personally managed knowledge is usually captured, retrieved, and processed from within a specific usage context.  There are large benefits if that knowledge is organized appropriately for the context in which is it captured, retrieved and used.  This simple observation is at the heart of the jump page system.
+Personally managed knowledge is usually (1) captured, (2) retrieved, and (3) used within a specific contexts.  
+There are large benefits if that knowledge is organized appropriately for the contexts in which is it captured, retrieved and used.
+Ensuring these contexts remain appropriately organized over time is the heart and value of the hook system.
+
+OVERVIEW
+- The core of this system is the "Hook Set" -- a series of usage contexts (called "hooks") into which information is organized.
+- At any given time up to 100 or so hook contexts will be active, gradually they fade to become passive and eventually archived.
+- Hooks are organized in a continuously evolving two-level index, one global index over active contexts and a second level index for each hook.  
+- The approach has several key benefits:
+	- One always knows where to find a given piece of knowledge
+	- Access to any given piece of knowledge can be done in at most two steps.
+	- And refactoring the index can be done incrementally and rapidly since each individual index is small.
+- There are several important "Exception" categories of info that is better handled using specialized patterns:
+	- ENTITIES - Knowledge about Entities like people or corporations (anything with a unique proper name) is handled specially.
+	- LISTS - 
+	- LOGS - 
+	- MEETINGS - Any information captured during synchronous communication (phone, chat, zoom, etc.) with entities.
+
+## The Hook Set System
+
 
 ### Partitioning all activity into usage contexts (called "hooks")
 

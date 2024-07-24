@@ -189,6 +189,9 @@ S32D850T  LS32D85KTSR/ZA   32"  2560x1440   300CD/M2   (3840x2400) (Aeolus 2017)
 32UN500-W.AUS 	3840x2160	350CD/M2     (2021.11 bought two)
 
 
+## = COMPUTER PERIPERALS = 
+### 2021 - PRINTER - Canon PIXMA TS 9520
+
 ## = OTHER =
 - FAN - [Voranado 660 AE](https://www.vornado.com/wp-content/uploads/2021/03/660AE.pdf)  
 - LOCK - 
