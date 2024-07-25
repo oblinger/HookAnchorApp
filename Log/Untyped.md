@@ -5,6 +5,8 @@ n:: no prefix.	Dated entries without any typing prefix
 
 | Date       | File                                    | Notes                                                                                                                             |
 | ---------- | --------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------- |
+| 2024-07-24 | [[@Briggs & Riley]]                         | Sending Bag In For Repair                                                                                                         |
+| 2024-07-24 | [[@Jason Syversen]]                         | Before hack week                                                                                                                  |
 | 2024-07-19 | [[@Dave Oblinger]]                          | Notes from discussion with XXX                                                                                                    |
 | 2024-07-19 | [[@Realplay]]                               | Followup with Jason and Justin                                                                                                    |
 | 2024-07-18 | [[DocGCP]]                                  | Working with Juan to create new instances                                                                                         |

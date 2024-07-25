@@ -1,4 +1,9 @@
 
+[[fried\|Mon Mar 20  2023]]  	[[fried#LATER]]  
+[[hack\|Mon Mar 20  2023]]  	[[hack#PROJ]]  
+[[wings\|Mon Mar 20  2023]]  	[[wings#[[SV Wings]]]]  
+[[wings\|Mon Mar 20  2023]]  	[[wings#__]]  
+[[Trip\|Mon Mar 20  2023]]  	[[Trip#LOG]]  
 [[ToBuy\|Mon Mar 20  2023]]  	[[ToBuy#2022-10-16  bedrm Dresser]]  
 [[ToBuy\|Mon Mar 20  2023]]  	[[ToBuy#2022-07-18  $Walnut desktop]]  
 [[ToBuy\|Mon Mar 20  2023]]  	[[ToBuy#2022-05-04  xSmart scale]]  

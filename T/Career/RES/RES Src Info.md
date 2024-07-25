@@ -517,6 +517,19 @@ Proceedings of the Twelfth Annual Conference of the Cognitive Science Society.
 Cambridge, MA. 1990. pp. 61-68. 
 _
 
+## = PUBLICATION LINKS
+
+- https://www.researchgate.net/publication/220746086_The_DARPA_Machine_Reading_Program_-_Encouraging_Linguistic_and_Reasoning_Research_with_a_Series_of_Reading_Tasks
+
+
+https://aclanthology.org/L10-1595/
+
+- [TAC NIST Conference](https://tac.nist.gov/2008/workshop/08.agenda.html) -
+- [AI Magazine](https://ojs.aaai.org/aimagazine/index.php/aimagazine/article/view/2337/2209) - 
+- Found Pub:  AAAI07 - Nectar. Learning oy combinin
+onsen mine sameera
+Vittono Cesteri Lemrenze Bertman.
+Dadial Ohier
 ## = EDUCATION
 
 Conner High School              (8/79 - 5/83) 

@@ -1,8 +1,10 @@
 .[[Data]]. ([[CV]])
   [Data Tasks](spot://datatasks),
   [CV Data Tasks](spot://cvdatatasks), [[Dataset]],
-  ADDS:   ,
-  ADDS:   [Data Games](spot://datagames),
+  [Data Games](spot://datagames),
+
+
+
 
 
 

@@ -13,6 +13,9 @@
   ADDS:   [Brainstorming Q3](spot://brainstormingq3),
   ADDS:   [AI TIPS](spot://aitips),
   ADDS:   [Assess](spot://assess), [Baselines](spot://baselines), [BELIEF Gdrive](spot://beliefgdrive), [Benchmarks](spot://benchmarks),
+  ADDS:   [CV Plan](spot://cvplan),
+  ADDS:   [Task Tree](spot://tasktree),
+
 
 
 

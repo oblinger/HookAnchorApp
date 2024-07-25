@@ -1,4 +1,5 @@
 
+
 .**NOW**. 
 TRIP:	
 GCP:	Get free credits enabled

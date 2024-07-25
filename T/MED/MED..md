@@ -4,6 +4,7 @@
 - Glucose Patch
 
 ### TODO
+- read about one and done exercise
 - [ ] Call Hassler about Gastroenterology appointment
 - [ ] Call Eyes about aug-16 @ 3:15 (what doc will I see)
 

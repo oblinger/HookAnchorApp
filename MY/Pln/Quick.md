@@ -1,3 +1,5 @@
+- Spec fireballs
+- james get shot loc data
 - draw the parameterize template
 - Task: VB halos
 - turbo boost message

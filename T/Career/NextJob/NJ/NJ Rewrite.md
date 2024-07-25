@@ -12,33 +12,41 @@ who? alpha? mission
 
 Startup CTO experience built 40+ person Phd orgs & managing hundreds of Mill
 Looking for hands on role applying gen AI to XXXXX
+
+
 ## PYRAMID
 
-A proven PhD/CTO whose built multiple 50+ person orgs, funded hundreds of millions in AI Research at Darpa, exited three companies and brought multiple products to market.  Looking for a hands-on role leading generative-AI-based innovation.
+A proven AI PhD/CTO: built multiple 50+ person orgs, funded hundreds of millions in research at DARPA, exited three companies and brought many products to market worth billions.  Looking for a hands-on role leading generative, AI-based innovation.
+
+My sweet-spot is bridging world-leading R&D into rapid productization.
 
 #### PhD/CTO
-- PhD in a top Engineering School: Illinois (UIUC)
-- CTO for 5 companies: 3 exits, 2 continuing
-- ???  XXXX papers at tier I conferences and journals
+- PhD in AI/ML from a top engineering school: Illinois (UIUC)
+- CTO for 5 companies: with 3 exits, and 2 continuing
+- ???  XXXX papers at tier 1 conferences and journals
 - XXXX filed patents.
 
-### Built Multiple Orgs
-- Aeolus: 60+ Eng (40 having PhDs)
-- AF: 50 person team 30+ eng
+### Built Multiple Engineering Orgs
+- Aeolus: 60+ Eng (40+ having PhDs)
+- AF: ~50 person team with 30+ eng
 - DARPA: 5 orgs spanning 500+ faculty and researchers.   ??? numbers
-- Martian 13 person team
+- Martian Robots 13 person team
 
 ### Funded/Lead Hundreds of Millions in Research
-
+- Funded over $200 in AI Research as a PM at DARPA
+- Created and lead Machine Reading and Bootstrapped Learning programs.
+- Lead the Transfer Learning program
 
 ### Exited Three Companies
-- Martian Robots -> Aeolus
 - Analytics Fire -> Rzero
+- Martian Robots -> Aeolus
 - PayByGroup -> FEVO
 
-### Brought Multiple Products To Market
+### Brought Multiple Products To Market Totaling More Than $3B In Value
+- Soup-to-nuts our team developed the SW and Firmware for Envoy, Oasis, and TMAC.  Together these represent more than $3B in hardware.
+
 - SV Hoops - $300K/ARR
-- Aeolus Aeo - 
+- Aeolus Aeo - Eldercare robot
 - Instant Design - 
 - Envoy - Residential hub for Enphase inverter-based systems
 - Oasis - Powerplant Controllers
@@ -48,12 +56,13 @@ A proven PhD/CTO whose built multiple 50+ person orgs, funded hundreds of millio
 
 
 ### Hands On Generative AI
-- BB Homography - 
-- BB Jersey Reader - 
-- BB Object Detector - 
-- BOT ?
-- Instant Design - 
-- MR ???
+- Worked as both an IC and Technical Lead across a range of Generative-AI / Deep-Learning based projects including:
+  CV-based sport-stats, Autonomous-dexterous robotics, Automated solar installation design, 
+
+- SPORTS VISIO BASKET BALL - Fine tuned player detection and tracking, action modeling, specially-trained printed fabric OCR, generalized court registration.
+- AEOLUS - Robot motion, vision, and grasping
+- ANALYTICS FIRE - Satellite-image-based solar-roof installation planner 
+- DARPA MACHINE READING PROGRAM - Worked with dozens of world leading in AI/ML researchers including Andrew Ng, David Ferrucci, Daphne Kohler, Stuart Russell, Dan Roth, Pedro Domingos, Leslie Kaelbing, Tom Dietterich, Chris Manning, Michael Witbrock, Doug Lenat
 
 
 ## SLICES (Capabilities I bring, passions I have)

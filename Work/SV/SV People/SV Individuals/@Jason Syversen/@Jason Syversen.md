@@ -218,6 +218,10 @@ DISCUSS
 
 # LOG
 
+### 2024-07-24  Before hack week
+
+- Trying to get things ready:  GCP, Data, 
+- 
 ### 2024-07-10  Sync on team
 
 
