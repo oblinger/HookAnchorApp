@@ -1,7 +1,8 @@
 [[Fork App]],   [[Sourcetree App]],  
 
 
-### SETUP GITHUB ON NEW COMPUTER
+# HOW TO
+## SETUP GITHUB ON NEW COMPUTER
 
 - CREATE TOKEN
   Web->Github -> ![my account picture] -> Settings -> Developer Settings -> 
@@ -28,13 +29,32 @@
         git push origin
 
 
+## USE BIT BUCKET
+
 SETUP FOR BIT BUCKET ON NEW COMPUTER
 - Login to BitBucket --> !Gear --> 
 
+### SETUP SSH
+// create SSH key on mac and share to bitbucket
+cd ~/.ssh
+ssh-keygen -t rsa -b 4096 -C "dan@sportsvisio.com"
+eval "$(ssh-agent -s)"
+ssh-add -K ~/.ssh/id_rsa
+pbcopy < ~/.ssh/id_rsa.pub
+{{Login to bitbucket}} -> !Gear -> ! Personal Settings -> ! SSH Key -> ! Add Key
+ssh -T git@bitbucket.org   # test that key works
+
+// goto repo and clone it --OR--
+
+// add remote
+git remote remove origin
+git remote add origin git@bitbucket.org:SVEngineering/algorithms2.git
+git branch --set-upstream-to=origin/master-dev master-dev
+git remove -v
 
 
 
-
+# REF
 ## QUICK REF
 	git init                     # creates .git
 	git add .                    # recursively adds files to repository
@@ -121,13 +141,13 @@ GIT MAGIC http://www-cs-students.stanford.edu/~blynn/gitmagic/
      $ git config --global github.token <API TOKEN>
 ### Setup SSH (repo/sshkeys)
 #### Create SSH keypair & register w. github
-    #   http://help.github.com/create-a-repo/
+    //   http://help.github.com/create-a-repo/
     
-    # CREATE SSH DIR
+    // CREATE SSH DIR
     $ mkdir ssh
     $ cd ssh
 
-    # Creating SSH Keypair
+    // Creating SSH Keypair
     $ ssh-keygen -t rsa -C "oblinger@gmail.com"   # I use "id_rsa" & S5 SHA256:Xp4spuOVd3VWgZh3F9KPpuw7YTqXVFrFLYt02ykv3mQ oblinger@gmail.com
       c5:1f:67:c5:02:69:49:d0:9d:ce:0c:5d:0a:fc:af:11 dan@oblinger.us
       The key's randomart image is:
@@ -227,19 +247,19 @@ The key's randomart image is:    <-- in the 11.11.10 build
 |                 |
 +-----------------
 #### Creating a new remote repository
-     # CREATE A NEW REPOSITORY
+     // CREATE A NEW REPOSITORY
      $ firefox https://github.com  # flangston@gmail.com  cm1
      ! New Repository
      ! Admin (with wrench @ top right) -> collaborators -> "oblinger
      $ firefox http://github.com   # github@oblinger.us S5 
        !  [unread message count by oblinger @ top] -> ! [allow push in message]
 #### Creating a new local repository
-     #    if needed   $ sudo apt-get install git
-     # GET API TOKEN
+     //    if needed   $ sudo apt-get install git
+     // GET API TOKEN
      $ firefox http://github.com   # github@oblinger.us S5 
        -> Accout Settings -> Account Admin -> [cut API token]
        
-     # CREATE A NEW LOCAL REPOSITORY
+     // CREATE A NEW LOCAL REPOSITORY
      $ cd ~/proj/PROJROOT         # cd to the root of the repository
      $ git init                   # creates .git
      $ git add .                  # recursively adds files to repository
@@ -347,7 +367,7 @@ git branch -r --merged | grep origin | grep -v '>' | grep -v dev | grep -v maste
 
 
 http://stackoverflow.com/questions/6089294/git-why-do-i-need-to-do-set-upstream-all-the-time
-# === OTHER STUFF ===
+# === OLDER STUFF ===
 ## git merging
    # MERGE BRANCH BACK INTO MASTER
    $ git checkout master        # Go back to "master" branch
@@ -536,7 +556,7 @@ root: 6F6TT0jeo
 SSH key:socialcrew
 azat: 6F6TT0jeo
 myPC SSH phrase: (blank)
-# Apps
+## Apps
 - git cola seems to work well for committing/pushing
 - gitk seem to work the best for examining history and
 - giggle is awesome for watching the diffs.

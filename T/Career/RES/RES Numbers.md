@@ -113,6 +113,15 @@ COUNTS AS OF Nov 2021
 - PRESENTATIONS 
 - INVITED/KEY NOTE
 
+
+KEY PUBLICATIONS
+- AAAI-07
+- IUI-06
+- IUI-04
+- SODA-2001
+- ICML-01
+- 
+
 PRESENTATIONS.   Keynote???
 - 1 Quatar workshop on ML.  (INVITED) Lockheed Martin?
 - 1 Bay Area LISP meetup

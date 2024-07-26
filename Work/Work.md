@@ -2,7 +2,6 @@
 
 .**NOW**. 
 TRIP:	
-GCP:	Get free credits enabled
 [[DAT|DAT]]:	Mrun
 X:		BB xover+Color, VB cfg, Min metrics
 M:		HB, GameBreaks, Color Exp,

@@ -9,8 +9,17 @@ FILED
 20,190,358,820	Robotic Interactions for Observable Signs of Intent (5/2019)
 20,190,358,822	Robotic Interactions for Observable Signs of Core Health (5/2019)
 
+more aeolus patents out there: [golden](https://golden.com/wiki/Aeolus_Robotics%2C_Inc.-JNGAPGR) [pitch book](https://pitchbook.com/profiles/company/221776-66#patents) 
+
+
+
+
+
 ISSUED
-9,165,280	Predictive user modeling in user interface design (10/2015)
+11,701,041	[Robotic interactions for observable signs of intent](https://patents.justia.com/patent/11701041)
+11,717,203	[Robotic interactions for observable signs of core health](https://patents.justia.com/patent/11717203)
+
+9,165,280	Predictive user. modeling in user interface design (10/2015)
 8,739,146	Systems and methods for generating and distributing executable procedures for technical desk-side support (5/2014)
 8,640,034	Remote GUI control by replication of local interactions (1/2014)
 8,607,142	Method for aligning demonstrated user actions with existing documentation (12/2013)

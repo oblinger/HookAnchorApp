@@ -1,11 +1,11 @@
-- [[Meta Coms]], [[Coms]], [[Calls]], [[Friends]], [[Mentors]], 
+- [[Meta Coms]], [[Coms]], [[Calls]], [[Friends]], [[Mentors]], [[BOD]], 
 
+[[@Uri Weiss]]		- Was @ Google, Mentors Leaders
+[[@Luis Arrellano]]	- Ex McKinsey, Very good at framing story
 
-	- Back:  Rodrigo,
-THEO
-RODRIGO: info. [[coms]]
+Later: THEO, RODRIGO, 
 
-- [[CN]], 
+-
 
 ```dataviewjs 
 let line = ""

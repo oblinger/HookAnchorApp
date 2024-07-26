@@ -15,6 +15,9 @@
   ADDS:   [Assess](spot://assess), [Baselines](spot://baselines), [BELIEF Gdrive](spot://beliefgdrive), [Benchmarks](spot://benchmarks),
   ADDS:   [CV Plan](spot://cvplan),
   ADDS:   [Task Tree](spot://tasktree),
+  ADDS:   [AI Minutes](spot://aiminutes),
+
+
 
 
 

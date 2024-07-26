@@ -5,6 +5,8 @@ n:: no prefix.	Dated entries without any typing prefix
 
 | Date       | File                                    | Notes                                                                                                                             |
 | ---------- | --------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------- |
+| 2024-07-25 | [[Cleaning Service]]                        | Progressive Grounds Bulletin Board Advert                                                                                         |
+| 2024-07-25 | [[Cleaning Service]]                        | Ask on Thumbtack                                                                                                                  |
 | 2024-07-24 | [[@Briggs & Riley]]                         | Sending Bag In For Repair                                                                                                         |
 | 2024-07-24 | [[@Jason Syversen]]                         | Before hack week                                                                                                                  |
 | 2024-07-19 | [[@Dave Oblinger]]                          | Notes from discussion with XXX                                                                                                    |

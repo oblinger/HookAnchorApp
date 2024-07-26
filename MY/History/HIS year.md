@@ -1,4 +1,9 @@
 
+[[Scrub\|Mon Mar 20  2023]]  	[[Scrub#HOUSE]]  
+[[Wings\|Mon Mar 20  2023]]  	[[Wings#[[SV Wings]]]]  
+[[Wings\|Mon Mar 20  2023]]  	[[Wings#__]]  
+[[fried\|Mon Mar 20  2023]]  	[[fried#RESEARCH]]  
+[[fried\|Mon Mar 20  2023]]  	[[fried#HOUSE]]  
 [[fried\|Mon Mar 20  2023]]  	[[fried#LATER]]  
 [[hack\|Mon Mar 20  2023]]  	[[hack#PROJ]]  
 [[wings\|Mon Mar 20  2023]]  	[[wings#[[SV Wings]]]]  

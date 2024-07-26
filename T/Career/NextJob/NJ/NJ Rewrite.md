@@ -1,7 +1,7 @@
 TODO
 - Toplevel - finish & feedback
 - [[War AI]], 
-- [[T/Career/RES/RES]] 
+- [[RES]] 
 
 - find the job posts; find people associated 
 - Ability to speak from first-person perspective about coding tasks
@@ -16,15 +16,18 @@ Looking for hands on role applying gen AI to XXXXX
 
 ## PYRAMID
 
-A proven AI PhD/CTO: built multiple 50+ person orgs, funded hundreds of millions in research at DARPA, exited three companies and brought many products to market worth billions.  Looking for a hands-on role leading generative, AI-based innovation.
+A proven AI PhD/CTO: decade+ experience in AI/ML/DL, built multiple 50+ person orgs, funded hundreds of millions in research at DARPA, exited three companies and brought many products to market worth billions.  Looking for a hands-on role leading generative, AI-based innovation.
 
 My sweet-spot is bridging world-leading R&D into rapid productization.
+
+### Decade+ Experience in AI/ML/DL
+
 
 #### PhD/CTO
 - PhD in AI/ML from a top engineering school: Illinois (UIUC)
 - CTO for 5 companies: with 3 exits, and 2 continuing
-- ???  XXXX papers at tier 1 conferences and journals
-- XXXX filed patents.
+- Dozens of peer reviewed conference and journal publications.
+- 20+ Patents Granted.
 
 ### Built Multiple Engineering Orgs
 - Aeolus: 60+ Eng (40+ having PhDs)
