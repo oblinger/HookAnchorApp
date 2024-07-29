@@ -16,6 +16,7 @@ ROOT JUMP PAGES::
     [[RES]]: [[Bio]],	
 [[Top]]: 
     [[Pln]]: [[COMS]],	[[CVP]],	[[Diary]],	
+        [[Hack]]: [[Closet]],	[[KM]],	[[QUICKADD]],	[[SP]],	
     [[Prj]]: [[Proj]],	[[UF]],	
     [[RR]]: [[Book]],	[[ML]],	[[RR Med]],	[[RR Mgt]],	[[Stat]],	
         [[AI]]: 
@@ -31,4 +32,3 @@ ROOT JUMP PAGES::
                 [[Idea]]: [[EduCorp]],	[[Forum]],	[[Hook System]],	[[Idea Social]],	
                 [[TXT]]: [[Letters]],	
             [[SYS]]: [[OBS]],	
-                [[Hack]]: [[Closet]],	[[KM]],	[[QUICKADD]],	[[SP]],	

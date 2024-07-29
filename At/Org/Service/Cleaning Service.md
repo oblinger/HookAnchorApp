@@ -1,13 +1,30 @@
 
 
+### 2024-07-26  Cleaners:  Julissa Cleaning
+
+$30/hr
+
+- 2 people for 2 hours
+
+### 2024-07-26  Cleaners:  D&E Construction
+
+$30/hr plus supplies
+
+- can send one girl for smaller jobs
+
+
 
 ### 2024-07-25  Progressive Grounds Bulletin Board Advert
 
 Janet. $15/hr
 
-Reference George Hernandez 612 moultrie. 628-758-5660. 415-824-9583
+Reference George Hernandez 612 moultrie. 628-758-5660.    415-824-9583.     Cell 628-758-5660
 Layla 621 moultrie. 718-404-4337
 
+Janet's what-app -- 415-979-3477
+
+
+Dark lake -- writghts lake
 
 ### 2024-07-25  Ask on Thumbtack
 

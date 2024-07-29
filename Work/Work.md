@@ -1,5 +1,3 @@
-
-
 .**NOW**. 
 TRIP:	
 [[DAT|DAT]]:	Mrun
@@ -15,6 +13,7 @@ AI-min: V2-on-first;
 CrossOver: VB/BB 3
 ShotCharts: 
 GameBreaks: 
+Fireball:	just runs
 
 ## TRACK
 . 			GCP, Halos, Minutes, Colors

@@ -1,3 +1,7 @@
+- deck for meeting
+- meeting with Jack and Jason
+- meeting with Jason and Jack about priorities AFTER minutes results are in
+- shared doc
 
 
 

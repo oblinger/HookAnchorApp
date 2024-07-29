@@ -1,3 +1,4 @@
+[[Perplexity]]
 
 :: [[Hypothesis Testing]],   [[Stat Anomolies]],   [[Z-Test]]
 
@@ -24,6 +25,7 @@
   DELS: , , ,
   [[Likelihood]]
   ADDS:   [[STATS]],
+
 
 
 
