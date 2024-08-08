@@ -2,13 +2,9 @@
 n:: My Website
 
 
-
-[[j EOCK]]
-- [EOCK Last Best Hope](spot://EOCK~Last~Best~Hope): 
+[[EOCK]]
 
 
-[[j EOCI]]
-- [[EOCI Natural Selection]]:
-- [[EOCK Keeping Secrets]]:
+[[EOCI]]:
 
 - the problem of delegated control will be ubiquitous

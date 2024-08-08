@@ -25,6 +25,8 @@
   DELS: , , ,
   [[Likelihood]]
   ADDS:   [[STATS]],
+  ADDS:   [[Perplexity]],
+
 
 
 

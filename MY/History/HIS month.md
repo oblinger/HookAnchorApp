@@ -1,4 +1,6 @@
 
+[[DocGit\|Tue Jul 2  2024 ]]  	[[DocGit#BUGS]]  
+[[DocGit\|Tue Jul 2  2024 ]]  	[[DocGit#=== OTHER STUFF ===]]  
 [[DocGit\|Tue Jul 2  2024 ]]  	[[DocGit#Apps]]  
 [[DocGnome\|Tue Jul 2  2024 ]]  	[[DocGnome#Keyboard Shortcuts]]  
 [[DocGnome\|Tue Jul 2  2024 ]]  	[[DocGnome#Notes key shortcuts]]  

@@ -1,12 +1,11 @@
 .[[ML]].
   [[ML Alg]]:
-  :
-  :
-  :
   ADDS:   [[ML Datasets]], [[ML Eng]], [[ML Tools]],
   ADDS:   [[Neural]],
   ADDS:   [[Learning]],
   ADDS:   [[ARIMA Algorithm]], [[BL]],
+
+
 
 
 

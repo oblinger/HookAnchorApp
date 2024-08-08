@@ -5,6 +5,8 @@ n:: no prefix.	Dated entries without any typing prefix
 
 | Date       | File                                    | Notes                                                                                                                             |
 | ---------- | --------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------- |
+| 2024-08-06 | [[@Jason Syversen]]                         | After Hack Week                                                                                                                   |
+| 2024-07-29 | [[EOC Log]]                                 | Why is it only 1 more step                                                                                                        |
 | 2024-07-26 | [[Cleaning Service]]                        | Cleaners:  Julissa Cleaning                                                                                                       |
 | 2024-07-26 | [[Cleaning Service]]                        | Cleaners:  D&E Construction                                                                                                       |
 | 2024-07-25 | [[Cleaning Service]]                        | Progressive Grounds Bulletin Board Advert                                                                                         |

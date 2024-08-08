@@ -1,9 +1,8 @@
-
+- $30/hr -- D&E (Evelyn ‭+1 (415) 990-9253‬) 
 
 ### 2024-07-26  Cleaners:  Julissa Cleaning
 
 $30/hr
-
 - 2 people for 2 hours
 
 ### 2024-07-26  Cleaners:  D&E Construction

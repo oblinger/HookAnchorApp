@@ -3,6 +3,9 @@
 
 - Glucose Patch
 
+- [ ] Ask about reducing statin:  https://pubmed.ncbi.nlm.nih.gov/25754552/
+- [ ] Do my own VO2max test:  https://medium.com/read-or-die-hq/are-you-fit-enough-to-live-longer-you-dont-need-a-lab-for-the-answer-05e365b047d2
+- [ ] 
 ### TODO
 - read about one and done exercise
 - [ ] Call Hassler about Gastroenterology appointment

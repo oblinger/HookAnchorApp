@@ -1,3 +1,8 @@
+- counting backwards from 999
+- better QA on First10 and LT10 minutes
+- AWS spend Corey
+- QL bday present
+- priority:  Represntatiove games
 - deck for meeting
 - meeting with Jack and Jason
 - meeting with Jason and Jack about priorities AFTER minutes results are in

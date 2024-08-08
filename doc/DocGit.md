@@ -74,8 +74,7 @@ git remove -v
 GIT MAGIC http://www-cs-students.stanford.edu/~blynn/gitmagic/
 ## CREATE
 ### Create New Branch
-    $ git branch experimental          # Create new branch (of current branch)
-    $ git checkout experimental        # ..and entering into it
+    $ git checkout -b experimental     # Create new branch (of current branch) & enter
     $ git push -u origin experimental  # ..setup stream, and push back git
 
 
@@ -270,12 +269,12 @@ The key's randomart image is:    <-- in the 11.11.10 build
      $ git commit -a -m "msg"     # commits files
 
      $ git remote add origin git@github.com:franklangston/REPOSTORY.git  # Tell local about the remote 'origin'
-                            # defaults to ssh   ssh://git@github...
+                            //l# defaults to ssh   ssh://git@github...
      $ git push -u origin master
 #### Creating a new checkout of an existing GitHub repository
-     # CREATE SSH KeyPair (see above)
+     ~# CREATE SSH KeyPair (see above)
 
-     # GET API TOKEN
+     ~# GET API TOKEN
      $ firefox http://github.com   # github@oblinger.us S5 
        -> Accout Settings -> Account Admin -> [cut API token later when you need it]
 
@@ -288,7 +287,7 @@ The key's randomart image is:    <-- in the 11.11.10 build
      $ git config --global github.token <API TOKEN>
      $ git commit -a -m "msg"     # commits files     # Needed?  currently fails cause no file to commit
 
-     # Note: edit 'REPOSITORY' below!
+     ~# Note: edit 'REPOSITORY' below!
      $ git remote add origin git@github.com:franklangston/REPOSTORY.git  # Tell local about the remote 'origin'
      $ git fetch                # just fetch it all
      $ git checkout master      # switch to the master branch
@@ -303,7 +302,7 @@ The key's randomart image is:    <-- in the 11.11.10 build
    $ git remote prune origin			# Removes LOCAL branches whose remote has been deleted
 
 
-   $ git push origin --delete some_branch  # {DOES NOT WARN!} Removes REMOTE branch (on GIT HUB)
+   $ git push --delete origin some_branch  # {DOES NOT WARN!} Removes REMOTE branch (on GIT HUB)
                                              // did not work 12/5/12
    $ git branch -D some_branch             #   Remove LOCAL branch. DOES NOT WARN
    $ git push origin :some_branch                        # thus this pushes "nothing" to remote branch  & deletes it

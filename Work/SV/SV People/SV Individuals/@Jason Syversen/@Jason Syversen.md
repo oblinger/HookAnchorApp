@@ -218,6 +218,16 @@ DISCUSS
 
 # LOG
 
+
+### 2024-08-06  After Hack Week
+
+- Productively used all on minutes.  I could have even used Greg
+- Need to track at a micro level
+	- Martin was going to debug even w/o ability
+	   ==> Vis tool, edits and faster
+	- Juan was going to just wait for Maixum's PR no matter how long it took
+	   ==> All branched from Maxium's branch & used it 1/2 done.
+
 ### 2024-07-24  Before hack week
 
 - Trying to get things ready:  GCP, Data, 

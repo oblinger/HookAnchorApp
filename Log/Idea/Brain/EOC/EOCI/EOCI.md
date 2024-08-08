@@ -1,22 +1,23 @@
 .[[EOCI]].
   [[EOCI Agenic Aggregation]]:
-  :
   [[EOCI Closure]]:
   [[EOCI Consciousness]]:
   [[EOCI Corp AI]]:
-  :
   [[EOCI Executive Creep]]:
   [[EOCI Hiearachicalization]]:
   [[EOCI Incomprehesibility]]:
   [[EOCI Inevitability Thesis]]:
   [[EOCI Is Alignment Possible]]:
-  :
   [[EOCI Meta Mind]]:
   [[EOCI Pax Corporana]]:
   [[EOCI Perilous Cyberspace]]:
-  :
   [[EOCI Scaled Intelligence is super-intelligence]]:
-  ADDS:   [[EOCD Agent]], [[EOCI Alignment as Mind Slavery]], [[EOCI Digital Native]], [[EOCI Leviathan]], [[EOCI ProblemOfQualia]], [[EOCK Keeping Secrets]],
+  [[EOCD Agent]],
+  [[EOCI Alignment as Mind Slavery]],
+  [[EOCI Digital Native]],
+  [[EOCI Leviathan]],
+  [[EOCI ProblemOfQualia]],
+  ADDS:   [[EOCK Keeping Secrets]], 
 
 
 

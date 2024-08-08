@@ -1,6 +1,8 @@
 
 Thesis: Within AI systems, Knowledge, Drive, and Agency can be split apart in ways that have no analog for biological systems.
 
+https://www.lesswrong.com/posts/jpGHShgevmmTqXHy5/decomposing-agency-capabilities-without-desires
+
 
 Discussion:
 

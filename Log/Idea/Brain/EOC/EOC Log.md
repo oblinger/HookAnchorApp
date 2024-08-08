@@ -1,3 +1,24 @@
+### 2024-07-29  Why is it only 1 more step
+
+not enough data at this level for any kind of empirical argument.
+
+Still, when I look at my own human reasoning it is a kind of type-2 reasoning comprised of repeated type-1 steps.
+
+e.g. I think of a thing, and then think how to think for the next steps.
+
+There is a very small bit of stack or context involved, but the real magic of type-2 reasoning is the "think next" ideas that I have are basically encoding specific patterns of reasoning that I have learned over the years.
+
+My take is that current LLMs do a good job of capturing the kinds of idea that come to my mind in a couple hundred milliseconds -- my sub-conscious thinking. Over top of this I perform various conscious reasoning patterns that I have learned over my life. But importantly:
+
+-- my thinking about what to try to think about next feels similar in nature to the raw ideas that come to me about base facts. So I suspect with proper training we can get the LLMs themselves to provide this next thought targeting, it can be learned the same way other LLM info is learned.
+
+-- building a "next word" that is at the level of reasoning goal, rather that textual word seems very plausible. Not saying I fully see how to obtain that training signal, but I have ideas. In any case it feels very achievable.
+
+-- I think type-2 reasoning will fall just as type-1 reasoning did. All at once. (its not really all at once, right, it took a couple of years after the 2017 paper before we all understood what it was. But I bet this next one will be a few years faster... every thing is so spring loaded now.
+
+And I think that is it. if we really have an AI that can perform both type-1 and type-2 reasoning, and can LEARN type-2 reasoning patterns just as humans learn type-2 reasoning patterns, I think it is game over. I think at that point, AI systems really are autonomous thinking agents on par with humans.
+
+
 ### 2024-07-10  5 kinds of people
 
 What? No one read this, or its just too abstract to comment upon?!
