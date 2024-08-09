@@ -34,11 +34,12 @@ clean email
                 (Apple ID -> MyPic -> Plan)  (!!! Used by whole family??)
 - $9/mo		xxx?  Dan's Apple iCloud
 - $7/mo		Apple TV+ 
-- $6/mo		WSJ - Wall Street Journal  (2023-02)
+- $99/yr		WSJ - Wall Street Journal  (Goes to $500/yr in Aug-2025)
 - $5/mo		Medium Monthly
 
 - $199/yr		Noom (Renews 06-27-2024)
 - $55/yr		Vorwerk Thermomix Recipes (2023-12-11.  Web -> {ChefHat} -> Account )
+- $29/yr		Blue Mountain (goes up Aug-09-2024)
 - $39/yr  		Consumer Reports Digital   2023-08-23
 - ???			CR On Health
 - $36/yr		1-Password

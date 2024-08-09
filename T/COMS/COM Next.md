@@ -1,5 +1,9 @@
+- LUNCH:	[[@Theo Enns]],
+- [[@Uri Weiss]]			- Was @ Google, Mentors Leaders
+- [[@Luis Arrellano]]	- Very good at framing story
 
--  [[@Rafah Hosn]],  ,Luis,  [[@Melanie Dumas]], 
+
+-  [[@Rafah Hosn]], [[@Melanie Dumas]], 
 -  [[@Juan Huerta]],  [[@Nick Allen]],
 
 
@@ -10,7 +14,7 @@ FAANG2:	[[@Doug Gordin]], [[@Vittorio Castelli]], [[@Rodrigo Braz]],
 TIER TWO:
 - Get Reviews:  Felipe, Nick, 
 - Rodrigo get back to him
-- LUNCH:	[[@Theo Enns]], [[@John Davis]], [[@David Israel]], [[@Jack Porter]], 
+ [[@John Davis]], [[@David Israel]], [[@Jack Porter]], 
 
 
 

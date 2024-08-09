@@ -1,8 +1,5 @@
 - [[Meta Coms]], [[Coms]], [[Calls]], [[Friends]], [[Mentors]], [[BOD]], 
 
-[[@Uri Weiss]]		- Was @ Google, Mentors Leaders
-[[@Luis Arrellano]]	- Ex McKinsey, Very good at framing story
-
 Later: THEO, RODRIGO, 
 
 -

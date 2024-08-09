@@ -1,14 +1,12 @@
 ## __
- 
- MENTORS:  [[FAANG]],  [[VC ORG]],  
-[[BOD]]:
+ (See [[BOD]],  [[FAANG]],  [[VC ORG]])
+
 ## CORE
 STRAT:	[[@Nick Allen]], 	[[@Luis Arrellano]], 
 .			[[@Uri Weiss]], 
 
 ## FRIENDS
 LUNCH:		[[@Tessa Lau]], [[@John Davis]], 
-
 
 ## MENTORS
 CORE:			[[@Nick Allen]], 

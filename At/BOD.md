@@ -5,14 +5,16 @@
 [[@Uri Weiss]]		- Was @ Google, Mentors Leaders
 [[@Luis Arrellano]]	- Ex McKinsey, Very good at framing story
 
-[[@Rafah Hosn]]		-  [[@Microsoft]] connected to [[@John Langford]] also [[@Rich Caruana]] at Microsoft
+[[@Rafah Hosn]]		-  MS w/ [[@John Langford]] also [[@Rich Caruana]]
 
 
 
 GEN AI
-[[@Dennis DeCoste]]	- Ex-Apple Research, Ex-Director of AI, GenAI consultant
+[[@Dennis DeCoste]]	- Ex-Apple Research, Ex-Director of AI, GenAI consultant.
+
 
 [[FAANG]]ISH
+[[@Theo Enns]] - 
 [[@Vittorio Castelli]] - 
 [[@Juan Huerta]]	- Ex-Amz
 [[@Melanie Dumas]]	- Waymo, 
