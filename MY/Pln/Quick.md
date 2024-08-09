@@ -1,3 +1,4 @@
+- get receipts
 - hard drive to team
 - counting backwards from 999
 - better QA on First10 and LT10 minutes

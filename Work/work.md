@@ -1,6 +1,9 @@
 .**NOW**. 
-TRIP:	
+M:
+J:  Vis Script, Ai+SW
+X: standAnneal analyze
 [[DAT|DAT]]:	Mrun
+
 X:		BB xover+Color, VB cfg, Min metrics
 M:		HB, GameBreaks, Color Exp,
 J:		GCP, V2 over First5, Debug Race, Understand Min
