@@ -1,5 +1,5 @@
 .**NOW**. 
-M:
+M:  Vis script on 
 J:  Vis Script, Ai+SW
 X: standAnneal analyze
 [[DAT|DAT]]:	Mrun
