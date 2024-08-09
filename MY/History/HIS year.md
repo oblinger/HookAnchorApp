@@ -1,4 +1,7 @@
 
+[[2023-W12\|Wed Mar 29  2023]]  	[[2023-W12#Tue]]  
+[[2023-W12\|Wed Mar 29  2023]]  	[[2023-W12#Wed]]  
+[[2023-W12\|Wed Mar 29  2023]]  	[[2023-W12#THR]]  
 [[2023-W13\|Wed Mar 29  2023]]  	[[2023-W13#2023-03-27 - W13]]  
 [[GPT Rpt\|Wed Mar 29  2023]]  	[[GPT Rpt#Sports Visio Competitive Technical Risk Analysis for GPT-4]]  
 [[GPT Rpt\|Wed Mar 29  2023]]  	[[GPT Rpt#APPENDIX A - A chat with GPT-4]]  

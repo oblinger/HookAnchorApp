@@ -1,7 +1,9 @@
 .[[Data]]. ([[CV]])
-  [Data Tasks](spot://datatasks),
+  [Data Docs](spot://datadocs), [Data Tasks](spot://datatasks),
   [CV Data Tasks](spot://cvdatatasks), [[Dataset]],
   [Data Games](spot://datagames),
+
+
 
 
 

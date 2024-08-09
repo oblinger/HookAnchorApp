@@ -1,4 +1,7 @@
 
+[[DocGit\|Tue Jul 2  2024 ]]  	[[DocGit#VIEW]]  
+[[DocGit\|Tue Jul 2  2024 ]]  	[[DocGit#UNDO]]  
+[[DocGit\|Tue Jul 2  2024 ]]  	[[DocGit#RECIPES]]  
 [[DocGit\|Tue Jul 2  2024 ]]  	[[DocGit#BUGS]]  
 [[DocGit\|Tue Jul 2  2024 ]]  	[[DocGit#=== OTHER STUFF ===]]  
 [[DocGit\|Tue Jul 2  2024 ]]  	[[DocGit#Apps]]  
