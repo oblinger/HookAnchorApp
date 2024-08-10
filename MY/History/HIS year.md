@@ -1,4 +1,9 @@
 
+[[work\|Wed Mar 29  2023]]  	[[work#DONE]]  
+[[Phone\|Wed Mar 29  2023]]  	[[Phone#2023-03-22  Food Delivery]]  
+[[Reflections\|Wed Mar 29  2023]]  	[[Reflections#2023-03-21  Back from all hands; feeling of efficiency comin]]  
+[[MED Exercise\|Wed Mar 29  2023]]  	[[MED Exercise#WEIGHTS]]  
+[[MED\|Wed Mar 29  2023]]  	[[MED#2023-03-21  Picking health insurance]]  
 [[2023-W12\|Wed Mar 29  2023]]  	[[2023-W12#Tue]]  
 [[2023-W12\|Wed Mar 29  2023]]  	[[2023-W12#Wed]]  
 [[2023-W12\|Wed Mar 29  2023]]  	[[2023-W12#THR]]  

@@ -102,14 +102,12 @@ SOFT-SKILLS
 
 ## ATTRIBUTES OF MOST DESIRABLE JOBS
 
-
 ### HIGH RATIO OF TECHNICAL WORK
 - HARD TECH - Discussing/Thinking/Leading/Doing:   deep technical work
 ACTIVITES
 - DELIVERING SYSTEMS - Focused on a technically challenging working system
 - DESIGNING - APIs, Architectures, Product Features
 - TECH ADVISE - Technical advising
-
 
 ### ROLE / PROJECT / COMPANY
 - ROLE: TECH LEAD 				- My ideal role is tech lead, where a significant fraction of my time is discussing / solving technical challenges
@@ -118,14 +116,11 @@ ACTIVITES
 - PROJ: NOVEL APPLICATION	- Ideally this is focused on iterative refinement of recent research into working product prototypes
 - PROJ: APPLYING GEN-AI 		- 
 - PROJ: COMPUTER VISION		- 
-- CORP: 
-
+- CORP: FOUNDATIONAL			- Org is building their own foundational models; FAANG-ish
 
 ### INNOVATIVE
 - Love it when NO ONE knows how to attack the problem at hand
 - Love it when one needs to quickly triage many different aspects of a problem
-
-
 
 ### CLEAN
 - Carefully designed 'things'

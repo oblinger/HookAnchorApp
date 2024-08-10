@@ -1,4 +1,9 @@
 
+[[DocGit\|Tue Jul 2  2024 ]]  	[[DocGit#SETUP GITHUB ON NEW COMPUTER]]  
+[[DocGit\|Tue Jul 2  2024 ]]  	[[DocGit#QUICK REF]]  
+[[DocGit\|Tue Jul 2  2024 ]]  	[[DocGit#DOCS]]  
+[[DocGit\|Tue Jul 2  2024 ]]  	[[DocGit#CREATE]]  
+[[DocGit\|Tue Jul 2  2024 ]]  	[[DocGit#DELETE]]  
 [[DocGit\|Tue Jul 2  2024 ]]  	[[DocGit#VIEW]]  
 [[DocGit\|Tue Jul 2  2024 ]]  	[[DocGit#UNDO]]  
 [[DocGit\|Tue Jul 2  2024 ]]  	[[DocGit#RECIPES]]  
