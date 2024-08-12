@@ -83,6 +83,7 @@
 
 
 
+
   [TRASH for Obsidian Folder](spot://trashforobsidianfolder):
   [TRASH Mac](spot://trashmac):
   [TRASH Obsidian](spot://trashobsidian):

@@ -5,6 +5,7 @@ n:: no prefix.	Dated entries without any typing prefix
 
 | Date       | File                                    | Notes                                                                                                                             |
 | ---------- | --------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------- |
+| 2024-08-11 | [[@Alexander Grosse]]                       | Veo Partnership Discussion                                                                                                        |
 | 2024-08-09 | [[Eli Firsts]]                              | Gonna get married to Zoya                                                                                                         |
 | 2024-08-09 | [[@Softbank]]                               | Prep for Softbank call                                                                                                            |
 | 2024-08-06 | [[@Jason Syversen]]                         | After Hack Week                                                                                                                   |

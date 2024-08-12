@@ -1,6 +1,6 @@
 .**NOW**. 
 [OKRs](https://docs.google.com/presentation/d/1v7Winy9DHxGuYh05_is8zH05ClJi0qclM698-pDXIgY/edit?pli=1#slide=id.g274b3e27e6b_0_0):	Q3 Planning	
-M:  Vis script on merge
+M:  	Vis script on merge
 J:  	Vis Script, Ai+SW, Briones DS
 X: 	Anneal analyze
 [[DAT|DAT]]:	Mrun

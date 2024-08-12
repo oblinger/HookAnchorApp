@@ -1,4 +1,3 @@
-.Run AWS instance
 .Traxxas 1-888-872-9927
 [[Friday]]: 
 .Clean
