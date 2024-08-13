@@ -1,4 +1,13 @@
 
+[[FIN Log\|Mon Apr 3  2023 ]]  	[[FIN Log#FIN Log]]  
+[[FIN_Budget\|Mon Apr 3  2023 ]]  	[[FIN_Budget#budget.py]]  
+[[Reflections\|Mon Apr 3  2023 ]]  	[[Reflections#2023-03-31  Week travel to Disney]]  
+[[2023-W13\|Mon Apr 3  2023 ]]  	[[2023-W13#Friday]]  
+[[2023-W14\|Mon Apr 3  2023 ]]  	[[2023-W14#2023-04-03 - W14]]  
+[[2020-12 MKT\|Wed Mar 29  2023]]  	[[2020-12 MKT#LOG]]  
+[[work\|Wed Mar 29  2023]]  	[[work#watch]]  
+[[work\|Wed Mar 29  2023]]  	[[work#soon]]  
+[[work\|Wed Mar 29  2023]]  	[[work#later]]  
 [[work\|Wed Mar 29  2023]]  	[[work#DONE]]  
 [[Phone\|Wed Mar 29  2023]]  	[[Phone#2023-03-22  Food Delivery]]  
 [[Reflections\|Wed Mar 29  2023]]  	[[Reflections#2023-03-21  Back from all hands; feeling of efficiency comin]]  

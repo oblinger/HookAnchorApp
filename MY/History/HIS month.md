@@ -1,4 +1,13 @@
 
+[[DocCPP\|Tue Jul 2  2024 ]]  	[[DocCPP#Docs]]  
+[[DocClojure\|Tue Jul 2  2024 ]]  	[[DocClojure#lein]]  
+[[DocClojure\|Tue Jul 2  2024 ]]  	[[DocClojure#DOCS]]  
+[[DocDanO\|Tue Jul 2  2024 ]]  	[[DocDanO#Cap-L commands]]  
+[[DocDocker\|Tue Jul 2  2024 ]]  	[[DocDocker#Install]]  
+[[DocDocker\|Tue Jul 2  2024 ]]  	[[DocDocker#Setup on Mac]]  
+[[DocDocker\|Tue Jul 2  2024 ]]  	[[DocDocker#LOG]]  
+[[DocEmacs\|Tue Jul 2  2024 ]]  	[[DocEmacs#Command Line]]  
+[[DocEmacs\|Tue Jul 2  2024 ]]  	[[DocEmacs#Commands]]  
 [[DocGit\|Tue Jul 2  2024 ]]  	[[DocGit#SETUP GITHUB ON NEW COMPUTER]]  
 [[DocGit\|Tue Jul 2  2024 ]]  	[[DocGit#QUICK REF]]  
 [[DocGit\|Tue Jul 2  2024 ]]  	[[DocGit#DOCS]]  
