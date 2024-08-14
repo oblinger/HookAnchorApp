@@ -1,14 +1,9 @@
-- [[@Facet]] signup
-- [[Friday]] 
-
 - Library 2928817
 - fin flow
 - Avanti
 
 - fix easy passwords
 - change PW
-- Greg's data dependency tracking
-- Michael's tracking
 - docs of saved pictures
 
 - praveen contacts for chatting
@@ -18,11 +13,6 @@
 
 
 - [ ] [[MED.]] - [[MED VO2Max]] 
-
-- [ ] Taxes underway
-- [ ] brainstorming wish list for headcount for brian and Mike
-- [ ] link up mission & write some of it
-- [ ] like SOC-2, PCI, HIPAA, etc
 - [ ] Get Receipts in to SV
 - [ ] Call vanguard to move funds to new account
 - [ ] Soccer for Eli

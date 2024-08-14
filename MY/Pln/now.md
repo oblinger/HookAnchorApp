@@ -1,9 +1,9 @@
-.Traxxas 1-888-872-9927
+
 [[Friday]]: 
 .Clean
 .Facet
-.fix bathtub
-.anniversary
+.Fix bathtub
+.Anniversary
 
 [[DocAWS]] 
 - vet email

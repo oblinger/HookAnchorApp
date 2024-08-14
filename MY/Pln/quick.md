@@ -1,9 +1,5 @@
 - get receipts
 - hard drive to team
-- better QA on First10 and LT10 minutes
-- shared doc
-
-
 
 - task: get min metrics on LT10
 - task: crossover; drive james

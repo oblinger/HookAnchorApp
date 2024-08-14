@@ -11,6 +11,8 @@ n
   ADDS:   [CAPS](spot://caps),
   ADDS:   [[SVCV Re-ID]],
   ADDS:   [Info](spot://info),
+  ADDS:   [CV Gdrive](spot://cvgdrive),
+
 
 
 
