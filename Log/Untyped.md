@@ -5,6 +5,8 @@ n:: no prefix.	Dated entries without any typing prefix
 
 | Date       | File                                    | Notes                                                                                                                             |
 | ---------- | --------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------- |
+| 2024-08-14 | [[Phone]]                                   | Sell Acura                                                                                                                        |
+| 2024-08-14 | [[Reflections]]                             | Stressed & Procrastinating                                                                                                        |
 | 2024-08-11 | [[@Alexander Grosse]]                       | Veo Partnership Discussion                                                                                                        |
 | 2024-08-09 | [[Eli Firsts]]                              | Gonna get married to Zoya                                                                                                         |
 | 2024-08-09 | [[@Softbank]]                               | Prep for Softbank call                                                                                                            |
@@ -27,7 +29,6 @@ n:: no prefix.	Dated entries without any typing prefix
 | 2024-07-10 | [[@Sean O'Connor]]                          | Pepperdine info Dump                                                                                                              |
 | 2024-07-10 | [[EOC Log]]                                 | 5 kinds of people                                                                                                                 |
 | 2024-07-10 | [[@Jason Syversen]]                         | Sync on team                                                                                                                      |
-| 2024-07-09 | [[SNIP]]                                    | Chunch                                                                                                                            |
 | 2024-07-08 | [[@Jason Syversen]]                         | Move Faster                                                                                                                       |
 | 2024-07-05 | [[@Apple]]                                  | Airmax repair                                                                                                                     |
 | 2024-06-26 | [[Politics]]                                | Fixing Banking                                                                                                                    |

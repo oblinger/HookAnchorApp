@@ -170,7 +170,13 @@ Retina 3072x1920
 - $699 LG 350nits (ergo )
 
 ### Mac Accessories
-#### 2021 Daniel's AirPods Max
+#### 2024 DO Pod Max
+
+|                                                                                                                                                                                                                                                                                        |
+| -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| \|   \|<br>\|---\|<br>\|<br>\|Thank you for purchasing AppleCare+ for AirPods Max.  <br>  <br>  <br>---  <br>**Agreement number**: 326410143940  <br>**Hardware Serial Number**: H0YMG2NV01TV  <br>**Product Description**: AIRPODS MAX  <br>**Coverage End Date**: Ends on 08/15/26\| |
+
+2021 Daniel's AirPods Max
 
 AirPods Max
 Purchase Date: February 08, 2021

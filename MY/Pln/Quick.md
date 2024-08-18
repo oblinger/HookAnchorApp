@@ -1,4 +1,4 @@
-- get receipts
+
 - hard drive to team
 
 - task: get min metrics on LT10

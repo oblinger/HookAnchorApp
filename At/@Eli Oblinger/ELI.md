@@ -1,12 +1,10 @@
 .[[Eli]].
-  :
-  :
+  [[Eli Firsts]]:
+  [[Eli Food]]:
   [[Daycare Applications]]:
   :
   [[2023-05 Cool Kids]]:
   [[Eli Activities]]:
-  [[Eli Firsts]]:
-  [[Eli Food]]:
   [[Eli Interactions]]:
   [[Eli Strategy]]:
   [[Eli Friends]]:
@@ -19,6 +17,8 @@
   ADDS:   [[ELI Log]],
   ADDS:   ,
   ADDS:   [[BCMS]],
+
+
 
 
 

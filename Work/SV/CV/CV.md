@@ -1,4 +1,4 @@
-n
+
 .[[CV]].
   ROOTS:[CV Root](spot://cvroot), [CV Confluence](spot://cvconfluence), [CV Jira Page](spot://cvjirapage),  [CV Notion](spot://cvnotion), [Data](spot://data), ,
   DIRS:	[CV Google Page](spot://cvgooglepage), ,  ,
@@ -12,6 +12,8 @@ n
   ADDS:   [[SVCV Re-ID]],
   ADDS:   [Info](spot://info),
   ADDS:   [CV Gdrive](spot://cvgdrive),
+  DELS: [[CV Hack Notes]], 
+
 
 
 

@@ -14,5 +14,3 @@
 
 
 [[Self]]. [[Per]]. [[Self Evergreen]], 
-
-[[Mentor]]:	Get them!

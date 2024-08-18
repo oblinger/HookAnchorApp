@@ -1,12 +1,11 @@
 .[[BUY]].
+  [[Bought]], [[BUY Log]], [[ToBuy]],
   [[BUY Clothing]]:
-  :
-  :
-  :
-  :
-  :
-  ADDS:   [[BUY Food]], [[BUY Home]], [[BUY Ideas]], [[BUY Log]], [[BUY Tea]],
-  ADDS:   [[Bought]], [[SolarPanels]], [[ToBuy]],
+  [[BUY Food]], [[BUY Tea]],
+  [[BUY Home]], [[BUY Ideas]],
+  [[SolarPanels]],
+
+
 
 
 

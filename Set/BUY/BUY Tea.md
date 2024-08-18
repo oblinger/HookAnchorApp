@@ -5,7 +5,7 @@ FAVS:
 - YOGI: Kava, Egyptian Licorice
 - TRAD-MED: Lemon Ginger, Peppermint(ok),
 - EQ-EXCNG: Vanilla Rooibos
-- PUKKA:  	ThreeGinger++, ThreeLicorice+
+- PUKKA:  	(amz?) ThreeGinger++, ThreeLicorice+
 - NUMI: Rooibos
 
 TEAS  http://carandafinefoods.com 

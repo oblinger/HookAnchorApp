@@ -1,3 +1,23 @@
+### 2024-08-14  Stressed & Procrastinating
+
+Well I am procrastinating right now!
+
+I am stressed that 
+- Jason does not find full value from me at Sports Visio, AND 
+- I am going to have difficulty finding a good job in this market, AND 
+- I have missed the boat in doing research which I trained for and like doing.
+
+I don't think it is as bad as all of that.  I think I am painting an overly negative picture, 
+But emotionally this is the way things feel, and there is at least some truth the picture.
+
+As a result I am pushing things off,
+not getting to the most important stuff, and
+not working enough focused hours per day.
+
+**My plan**:
+
+Each day I need to put in at least 3 hours on key activities
+Never below 2 and trying to hit 4.
 
 ### 2024-06-08  Saying Goodbye to Yoshiko
 

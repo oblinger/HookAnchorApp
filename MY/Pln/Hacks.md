@@ -1,3 +1,7 @@
+- - spot: when folder is missing either delete command, or just change the group of the command to be "broken"
+sss- spot: when folder is missing either delete command, or just change the group of the command to be "broken
+%contents%
+
 - change JJ-block build to provide ADDS and DELS link at bottom.
 
 - auto scan for broken links in spot

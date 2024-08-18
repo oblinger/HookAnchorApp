@@ -1,4 +1,5 @@
-k[[MED]]:	Exercise
+
+[[MED]]:	Exercise
 [[NJ]]:	[[NJ Rewrite|Rewrite]], 
 [[Lrn]]:	
 
