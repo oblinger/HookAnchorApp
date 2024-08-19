@@ -136,6 +136,7 @@ n:: Ideas of mine
 
 
 
+
   DELS: [[@Zanzors]], 
 
 
