@@ -218,6 +218,24 @@ DISCUSS
 
 # LOG
 
+### 2024-08-19  Plans
+
+
+
+OWNER
+- OWNER - Backend Dev w/ experience to operationally OWN stability/integrity
+- ARCHITECT - Can serve as senior architect
+- 1-LINE MANAGER - 
+
+VP-ENG
+- 
+
+
+Greg A+, Juan A-
+Saxena - 
+
+
+
 
 ### 2024-08-06  After Hack Week
 

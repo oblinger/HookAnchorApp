@@ -92,6 +92,7 @@
 
 
 
+
 :: [[2021-01-00 Short start with Yashin]]
 ## Todo  [[LOGS/Ideas/Ideas Social/Forum/Forum.pptx|Power Point]] 
 - [ ] Research prototype Forum platform

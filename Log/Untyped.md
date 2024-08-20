@@ -5,6 +5,8 @@ n:: no prefix.	Dated entries without any typing prefix
 
 | Date       | File                                    | Notes                                                                                                                             |
 | ---------- | --------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------- |
+| 2024-08-19 | [[@Alta Vista]]                             | notes when we first went                                                                                                          |
+| 2024-08-19 | [[@Jason Syversen]]                         | Plans                                                                                                                             |
 | 2024-08-14 | [[Phone]]                                   | Sell Acura                                                                                                                        |
 | 2024-08-14 | [[Reflections]]                             | Stressed & Procrastinating                                                                                                        |
 | 2024-08-11 | [[@Alexander Grosse]]                       | Veo Partnership Discussion                                                                                                        |

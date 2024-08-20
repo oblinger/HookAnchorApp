@@ -1,3 +1,5 @@
+- news letter
+- briones assets fireballs
 
 - hard drive to team
 

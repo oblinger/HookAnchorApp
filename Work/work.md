@@ -1,6 +1,6 @@
 .**NOW**. 
 Jason:	!equity 3%
-VEOef
+VEO
 [OKRs](https://docs.google.com/presentation/d/1v7Winy9DHxGuYh05_is8zH05ClJi0qclM698-pDXIgY/edit?pli=1#slide=id.g274b3e27e6b_0_0):	Q3 Planning	
 [[DAT|DAT]]:	Get PR ready
 M:  	Vis script on merge
