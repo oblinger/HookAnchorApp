@@ -5,6 +5,7 @@ n:: no prefix.	Dated entries without any typing prefix
 
 | Date       | File                                    | Notes                                                                                                                             |
 | ---------- | --------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------- |
+| 2024-08-20 | [[@Sean O'Connor]]                          | Looking to the future                                                                                                             |
 | 2024-08-19 | [[@Alta Vista]]                             | notes when we first went                                                                                                          |
 | 2024-08-19 | [[@Jason Syversen]]                         | Plans                                                                                                                             |
 | 2024-08-14 | [[Phone]]                                   | Sell Acura                                                                                                                        |

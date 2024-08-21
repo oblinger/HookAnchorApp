@@ -5,6 +5,24 @@
 
 # LOG
 
+### 2024-08-20  Looking to the future
+
+BB: (correctable stats, highlights)
+- +Player ID checked beyond LT10
+- Shot origination fixes - 2mo
+- Scrum offense-origination congestion
+- Game breaks - yes using homography
+- 2/3pt - annotator court corners, 1.5mo tuning of radius calculation
+- Derived Data: rebounds, assists, FGP
+HARDEST: ShooterID
+
+VB:
+- Serve detector / Game segmenter
+- BumpSetSpike detector - 2mo for a V1
+- deflection detection - 
+- VB PlayerID - 2mo for a V1
+HARDEST: Deflection Detection
+
 
 ### 2024-07-10  Pepperdine info Dump
 

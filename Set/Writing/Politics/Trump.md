@@ -8,6 +8,8 @@ https://medium.com/the-conversation/central-banks-face-threats-to-their-independ
 https://www.wsj.com/economy/central-banking/trump-allies-federal-reserve-independence-54423c2f?mod=hp_lead_pos2
 
 
+TRUMP LYING ABOUT INDEPENDENCE
+https://www.bbc.com/news/articles/c985enjgdy9o
 
 
 

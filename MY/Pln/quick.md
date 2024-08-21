@@ -1,3 +1,6 @@
+- ! Response to Softbank
+- James give us "good" AI-miutes games
+- error log of James errors
 - news letter
 - briones assets fireballs
 
