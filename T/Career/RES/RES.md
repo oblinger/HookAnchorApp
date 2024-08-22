@@ -2,6 +2,7 @@
   [[RES Todo]],
   [RES Folder](spot://resfolder): 	[[Bio]], [RES Docx](spot://resdocx), ,
   [[RES Src Info]]: [[RES Numbers]], [[RES Patents]], [[RES Proof Points]], [[RES References]],
+  [[RES Star]], [[RES War]], [[RES War AI]],
 - [[2023 - Resume Samples]],
 - [[2024-04-01 Resume Rewrite]],
 - [[2024 Res Rewrite At a Glance]],
@@ -9,10 +10,11 @@
 - [[Jared Master]],
 - [[RES Linked In]],
 - [RES Master Folder](spot://resmasterfolder),
-  [[RES Star]],
 - [Resume](spot://resume),
 - [[z2 - Linked In Module]],
-  DELS: [RES PDF](spot://respdf), 
+
+
+
 
 
 
