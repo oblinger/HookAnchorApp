@@ -1,3 +1,5 @@
+- fireballs
+- build stats dataset.
 - ! Response to Softbank
 - James give us "good" AI-miutes games
 - error log of James errors

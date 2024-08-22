@@ -1,3 +1,4 @@
+- plain clip
 - Fix [[JJ]] tree
 - buy tooth brush; stop 30-sec smile subscription
 - look at videos from Eli; consider merging apple videos

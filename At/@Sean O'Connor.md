@@ -1,5 +1,8 @@
 #pp  
 
+Little blur, little occlusions, (no live broadcasts)
+No two players with same jersey, or w/o jersey
+Correctly labelled colors (and standard colors) (color of jersey, not digit color)
 
 
 

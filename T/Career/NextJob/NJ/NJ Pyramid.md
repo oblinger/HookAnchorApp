@@ -2,7 +2,7 @@
 
 ## PYRAMID
 
-A proven AI PhD/CTO: decade+ experience in AI/ML/DL, built multiple 50+ person orgs, funded hundreds of millions in research at DARPA, exited three companies and brought many products to market worth billions.  Looking for a hands-on role leading generative, AI-based innovation.
+A proven AI PhD/CTO: with decade+ experience in ML/DL, built multiple 50+ person orgs, funded hundreds of millions in research at DARPA, exited three companies and brought many products to market worth billions.  Looking for a hands-on role leading generative-AI based innovation.
 
 My sweet-spot is bridging world-leading R&D into rapid productization.
 
