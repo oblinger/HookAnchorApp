@@ -1,8 +1,15 @@
 - LUNCH:	[[@Theo Enns]],
+- Doug ping
 - [[@Uri Weiss]]			- Was @ Google, Mentors Leaders
 - [[@Luis Arrellano]]	- Very good at framing story
 
+Later: THEO, RODRIGO, 
 
+- praveen contacts for chatting
+- Braz boss info
+
+- call Luis; Melanie
+-
 -  [[@Rafah Hosn]], [[@Melanie Dumas]], 
 -  [[@Juan Huerta]],  [[@Nick Allen]],
 

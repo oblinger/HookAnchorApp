@@ -1,3 +1,8 @@
+- 
+- fin flow
+- fix easy passwords
+- change PW
+- docs of saved pictures
 - plain clip
 - Fix [[JJ]] tree
 - buy tooth brush; stop 30-sec smile subscription

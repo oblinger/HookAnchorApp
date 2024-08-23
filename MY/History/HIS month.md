@@ -1,4 +1,6 @@
 
+[[work\|Fri Jul 5  2024 ]]  	[[work#SOON [[mgt]] [[CVP]]]]  
+[[Meta Log\|Wed Jul 3  2024 ]]  	[[Meta Log#D		DAY			Daily notes entry]]  
 [[Top\|Wed Jul 3  2024 ]]  	[[Top#[[Log]] [[Logs Folder\\|--]] DATED, TYPED NOTES (DATED entri]]  
 [[NJ Rewrite\|Wed Jul 3  2024 ]]  	[[NJ Rewrite#__]]  
 [[Log Trash\|Tue Jul 2  2024 ]]  	[[Log Trash#2023-11-07  Notes never sent or OBE]]  

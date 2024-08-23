@@ -1,9 +1,9 @@
 .[[Lrn]].
-  [[Lrn Mgt]],
+  [[Lrn.]],  [[Lrn Mgt]],
 
 
 
-
+- diffusion
 
 
 

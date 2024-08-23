@@ -2,14 +2,6 @@
 - Car Title
 - Avanti: 
 
-
-- fin flow
-- fix easy passwords
-- change PW
-- docs of saved pictures
-- praveen contacts for chatting
-- Braz boss info
-
 - [ ] [[MED.]] - [[MED VO2Max]] 
 - [ ] Call vanguard to move funds to new account
 - [ ] ask doctor about going above max heart rate

@@ -1,3 +1,12 @@
+### 2024-08-22  My Biggest Issue: Daily hours on MIT
+
+I am stressed on a daily basis, and I think the biggest stressor is lack of progress on my job search.  This is because I don't work on it.
+
+I really need to re-shape how I work so that I DO work on my MIT task both for work and for next job.
+
+UPSIDE: The good news is that this is an absolutely essential skill if I am to successfully make a transition to a strong next job.  
+
+DOWNSIDE:  And my big challenge is that I don't think I have ever been good at doing this
 ### 2024-08-14  Stressed & Procrastinating
 
 Well I am procrastinating right now!

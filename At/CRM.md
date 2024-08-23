@@ -1,8 +1,7 @@
-- [[Meta Coms]], [[Coms]], [[Calls]], [[Friends]], [[Mentors]], [[BOD]], 
+- [[Meta Coms]], [[Coms]], [[COM Next]], [[Calls]], [[Friends]], [[Mentors]], [[BOD]], 
 
-Later: THEO, RODRIGO, 
 
--
+
 
 ```dataviewjs 
 let line = ""

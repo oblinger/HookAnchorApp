@@ -1,7 +1,10 @@
 
-[[MED]]:	Exercise
-[[NJ]]:	[[NJ Rewrite|Rewrite]], 
-[[Lrn]]:	
+[[WORK]]:	4h
+[[MED]]:	Exercise, Cortisol
+[[NJ]]:	[[NJ Rewrite|Rewrite]], [[CN]], 
+[[Lrn]]:	Hands On, Know
+[[Fun]]:	
+
 
 ## >
 - [[Up Task]],  [[Meta Plan]],  [[Daily Schedules]], 
