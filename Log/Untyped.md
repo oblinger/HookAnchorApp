@@ -5,6 +5,7 @@ n:: no prefix.	Dated entries without any typing prefix
 
 | Date       | File                                    | Notes                                                                                                                             |
 | ---------- | --------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------- |
+| 2024-08-23 | [[@James Neilson]]                          | chat about BB power users                                                                                                         |
 | 2024-08-22 | [[Reflections]]                             | My Biggest Issue: Daily hours on MIT                                                                                              |
 | 2024-08-20 | [[@Sean O'Connor]]                          | Looking to the future                                                                                                             |
 | 2024-08-19 | [[@Alta Vista]]                             | notes when we first went                                                                                                          |

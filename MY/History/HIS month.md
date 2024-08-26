@@ -1,4 +1,6 @@
 
+[[Work\|Fri Jul 5  2024 ]]  	[[Work#PAUSE [bsheet](https://docs.google.com/spreadsheets/d/1C1eYv]]  
+[[Work\|Fri Jul 5  2024 ]]  	[[Work#_]]  
 [[work\|Fri Jul 5  2024 ]]  	[[work#SOON [[mgt]] [[CVP]]]]  
 [[Meta Log\|Wed Jul 3  2024 ]]  	[[Meta Log#D		DAY			Daily notes entry]]  
 [[Top\|Wed Jul 3  2024 ]]  	[[Top#[[Log]] [[Logs Folder\\|--]] DATED, TYPED NOTES (DATED entri]]  

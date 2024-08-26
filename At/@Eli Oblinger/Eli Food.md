@@ -15,10 +15,13 @@
 - Cauliflower, Green Peas, Celery, Edamame, Carrots, 
 - Black-Beans
 
-## Bfast - INSTANT
+## INSTANT
 - Fruit (berries, bananas, apples)
-- eggs
-- Eggo Waffles, 
+- Fridge: String Cheese, Yogurt, 
+- Freezer: ChickNuggets, Eggo Waffles, Pizza, 
+- Cook: Pancakes, Eggs, Pasta, Fried Rice
+- Buns, 
+
 
 INSTAPOT
 - Chicken Soup

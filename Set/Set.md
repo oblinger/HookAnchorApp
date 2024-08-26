@@ -108,6 +108,8 @@ n:: Groupings of like (typed), undated entries.
 
 
 
+
+
 #### [[Set/Set]] [[Set Folder|--]] GROUPS OF LIKE ENTRIES -- (UN-dated, UN-ordered, Typed)
 ```dataview
 TABLE n AS Description

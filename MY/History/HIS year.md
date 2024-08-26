@@ -1,4 +1,6 @@
 
+[[Jnl\|Fri Apr 21  2023]]  	[[Jnl#2023-04-20  Life w/o Ayi]]  
+[[Reflections\|Fri Apr 21  2023]]  	[[Reflections#2023-04-12  PIVOT - shift towards AI]]  
 [[Reflections\|Fri Apr 21  2023]]  	[[Reflections#2023-04-04  STRESS!  Feel my path AT SV is time limited]]  
 [[MED Research\|Fri Apr 21  2023]]  	[[MED Research#== MEAT]]  
 [[MED\|Fri Apr 21  2023]]  	[[MED#2023-04-10  <<<<]]  
