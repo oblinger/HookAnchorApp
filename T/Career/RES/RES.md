@@ -12,6 +12,8 @@
 - [RES Master Folder](spot://resmasterfolder),
 - [Resume](spot://resume),
 - [[z2 - Linked In Module]],
+  ADDS:   [[RES Job History]],
+
 
 
 

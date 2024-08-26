@@ -8,9 +8,10 @@ ROOT JUMP PAGES::
 [[MAC]]: [[App]],	
 [[Brain]]: [[The Sentient Weapon]],	
     [[EOC]]: [[EOCA]],	[[EOCB]],	[[EOCI]],	[[EOCK]],	[[EOCT]],	
-[[Career]]: [[MGR]],	
-    [[Job]]: [[Hire]],	[[Job Post]],	[[Job Test]],	
+[[Career]]: 
+    [[Job]]: [[Job Post]],	[[Job Test]],	
         [[Job History]]: [[AF]],	
+    [[MGR]]: [[Hire]],	
 [[FIN]]: [[FIN Log]],	
 [[NJ]]: [[Lrn]],	[[NJ16]],	[[NJ22]],	
     [[RES]]: [[Bio]],	

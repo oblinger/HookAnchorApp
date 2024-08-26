@@ -1,5 +1,7 @@
 .[[Job]].
-  [[Hire]], [[Job History]], [[Job Post]], [[Job Test]],
+  , , , ,
+  ADDS:   [[Hire Post]], [[Hire Test]], 
+  DELS: [[Hire]],[[Job History]], [[Job Post]], [[Job Test]], 
 
 
 

@@ -16,6 +16,8 @@
   ADDS:   [[MyMgr]],
   ADDS:   ,
   ADDS:   [[MGR Contracts]],
+  ADDS:   [[Hire]],
+
 
 
 
