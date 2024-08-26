@@ -13,6 +13,8 @@
 - [Resume](spot://resume),
 - [[z2 - Linked In Module]],
   ADDS:   [[RES Job History]],
+  ADDS:   ,
+  DELS: [[RES Job History! AF]], 
 
 
 

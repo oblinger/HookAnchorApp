@@ -1,6 +1,8 @@
 .[[Hire]].
-  ADDS:   [[INTERVIEW]],
-  ADDS:   [[BBI]], [[CIT]], [[Interviewing]], [[Interviews]], [[IOS guys]],
+  [[Hire Post]], [[Hire Test]], ,
+  [[INTERVIEW]], [[Interviewing]], [[Interviews]],
+  [[BBI]], [[CIT]], [[IOS guys]],
+  DELS: [[Hire Recuriters]], 
 
 
 

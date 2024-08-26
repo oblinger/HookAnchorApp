@@ -213,7 +213,7 @@ n:: no prefix.	Dated entries without any typing prefix
 | 2023-10-12 | [[@Clash.TV]]                               | Intro Call                                                                                                                        |
 | 2023-10-11 | [[Mgt]]                                     | OCT MGT MEETING                                                                                                                   |
 | 2023-10-10 | [[@Blaine Bowers]]                          | Intro Call                                                                                                                        |
-| 2023-10-09 | [[QA-hiring]]                               | Julietta                                                                                                                          |
+| 2023-10-09 | [[2023-07 QA-hiring]]                       | Julietta                                                                                                                          |
 | 2023-10-06 | [[2023 Least Commitment Model For CV Pipe]] | Pts Command                                                                                                                       |
 | 2023-10-05 | [[@Joseph Yeh]]                             | Google Director's job.  & Other stuff                                                                                             |
 | 2023-10-04 | [[2023-07 ML-CV Ops Job Post]]              | Juan                                                                                                                              |
@@ -237,6 +237,7 @@ n:: no prefix.	Dated entries without any typing prefix
 | 2023-09-25 | [[Mgt]]                                     | Weekly meeting.                                                                                                                   |
 | 2023-09-25 | [[@Jason Syversen]]                         | notes                                                                                                                             |
 | 2023-09-21 | [[2023-07 Backend Architect]]               | Matias                                                                                                                            |
+| 2023-09-21 | [[2024-08 Backend Architect]]               | Matias                                                                                                                            |
 | 2023-09-21 | [[CVP]]                                     | AI goals from Mgt meeting                                                                                                         |
 | 2023-09-21 | [[@Jasu Victorio]]                          | Review                                                                                                                            |
 | 2023-09-21 | [[Bugs]]                                    | Fellowship of the bug                                                                                                             |
@@ -248,6 +249,7 @@ n:: no prefix.	Dated entries without any typing prefix
 | 2023-09-13 | [[2023-07 Backend Architect]]               | Max                                                                                                                               |
 | 2023-09-13 | [[2023-07 Director of SW]]                  | ++Luciano B                                                                                                                       |
 | 2023-09-13 | [[2023-07 Director of SW]]                  | Mariano                                                                                                                           |
+| 2023-09-13 | [[2024-08 Backend Architect]]               | Max                                                                                                                               |
 | 2023-09-13 | [[BaseB]]                                   | Task Breakdown                                                                                                                    |
 | 2023-09-13 | [[Patents]]                                 | SheeHan                                                                                                                           |
 | 2023-09-13 | [[Patents]]                                 | Watch Tower                                                                                                                       |
@@ -260,6 +262,8 @@ n:: no prefix.	Dated entries without any typing prefix
 | 2023-09-08 | [[2023-07 ML-CV Ops Job Post]]              | Sebastian                                                                                                                         |
 | 2023-09-07 | [[2023-07 Backend Architect]]               | TH Juan                                                                                                                           |
 | 2023-09-07 | [[2023-07 Backend Architect]]               | TH Eduardo                                                                                                                        |
+| 2023-09-07 | [[2024-08 Backend Architect]]               | TH Juan                                                                                                                           |
+| 2023-09-07 | [[2024-08 Backend Architect]]               | TH Eduardo                                                                                                                        |
 | 2023-09-05 | [[Eli Firsts]]                              | Bike Riding in circles                                                                                                            |
 | 2023-09-05 | [[BBI]]                                     | SV Head SW                                                                                                                        |
 | 2023-09-05 | [[CVP]]                                     | older stuff                                                                                                                       |

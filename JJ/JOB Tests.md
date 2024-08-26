@@ -1,5 +1,7 @@
 .[[JOB Tests]].
-  ADDS:   , , [[Billionare Billy Big Boots]],
+  ADDS:   , , ,
+
+  DELS: [[Billionare Billy Big Boots]], 
 
 
 
