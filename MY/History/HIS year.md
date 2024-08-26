@@ -1,4 +1,7 @@
 
+[[Vegetables\|Fri Apr 21  2023]]  	[[Vegetables#SIDE DISHES]]  
+[[MGR\|Fri Apr 21  2023]]  	[[MGR#ADVICE]]  
+[[WarStories\|Fri Apr 21  2023]]  	[[WarStories#BEST ENV - [What is your ideal working environment\?](https:]]  
 [[WarStories\|Fri Apr 21  2023]]  	[[WarStories#MISSION - [Do you have a personal mission statement\?](https]]  
 [[WarStories\|Fri Apr 21  2023]]  	[[WarStories#SELF LIKE - What do you like most about yourself\?]]  
 [[Jnl\|Fri Apr 21  2023]]  	[[Jnl#2023-04-20  Life w/o Ayi]]  

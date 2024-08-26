@@ -1,4 +1,7 @@
 
+[[Hack\|Fri Jul 5  2024 ]]  	[[Hack#--- TRACKER]]  
+[[Hack\|Fri Jul 5  2024 ]]  	[[Hack#--- SYNC]]  
+[[Work\|Fri Jul 5  2024 ]]  	[[Work#TOP]]  
 [[Work\|Fri Jul 5  2024 ]]  	[[Work#TRACK]]  
 [[Work\|Fri Jul 5  2024 ]]  	[[Work#SOON [[mgt]] [[CVP]]]]  
 [[Work\|Fri Jul 5  2024 ]]  	[[Work#PAUSE [bsheet](https://docs.google.com/spreadsheets/d/1C1eYv]]  
