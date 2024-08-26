@@ -5,6 +5,7 @@ n:: no prefix.	Dated entries without any typing prefix
 
 | Date       | File                                    | Notes                                                                                                                             |
 | ---------- | --------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------- |
+| 2024-08-25 | [[COM Newsletter]]                          |                                                                                                                                   |
 | 2024-08-23 | [[@James Neilson]]                          | chat about BB power users                                                                                                         |
 | 2024-08-22 | [[Reflections]]                             | My Biggest Issue: Daily hours on MIT                                                                                              |
 | 2024-08-20 | [[@Sean O'Connor]]                          | Looking to the future                                                                                                             |
@@ -58,6 +59,7 @@ n:: no prefix.	Dated entries without any typing prefix
 | 2024-06-03 | [[FIN.]]                                    | Costs For Vanguard                                                                                                                |
 | 2024-06-02 | [[AWS Log]]                                 | Setup for SportsVisio                                                                                                             |
 | 2024-06-01 | [[RR PAPERS]]                               | [Attention is all you need](https://arxiv.org/pdf/1706.03762)                                                                     |
+| 2024-06-00 | [[COM Newsletter]]                          | AI and CV News Letter points                                                                                                      |
 | 2024-05-29 | [[FIN Log]]                                 | ADVICE FROM ADVISORS - Four Levels of Advice                                                                                      |
 | 2024-05-23 | [[MED Log]]                                 | EMDR                                                                                                                              |
 | 2024-05-21 | [[@Sean O'Connor]]                          | Topics                                                                                                                            |

@@ -1,9 +1,9 @@
 
 [[WORK]]:	4h
 [[MED]]:	Exercise, Cortisol
-[[NJ]]:	[[NJ Rewrite|Rewrite]], [[CN]], 
+[[NJ]]:	[[RES Star]], [[CN]],
 [[Lrn]]:	Hands On, Know
-[[Fun]]:	
+[[Fun]]:	Read, Guysj
 
 
 ## >

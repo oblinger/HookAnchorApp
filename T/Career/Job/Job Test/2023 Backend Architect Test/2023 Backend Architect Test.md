@@ -3,13 +3,9 @@
 - [[Software Architecture Challenge.docx]] -
 
 
-
-
 Please provide a design for the APIs and relational database support as needed for a basketball game scheduling system.
 
 This exercise should take 4 to 6 hours.  You are allowed to ask me any questions you wish during that period for any clarification you need.  If you find you're running out of time, don’t put the emphasis on capturing every API you need, just the major ones.
-
-
 
 This system will allow a coach to add new games associated with their teams, and provide a time and date for each added game.
 

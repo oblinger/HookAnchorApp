@@ -1,4 +1,6 @@
 
+[[WarStories\|Fri Apr 21  2023]]  	[[WarStories#MISSION - [Do you have a personal mission statement\?](https]]  
+[[WarStories\|Fri Apr 21  2023]]  	[[WarStories#SELF LIKE - What do you like most about yourself\?]]  
 [[Jnl\|Fri Apr 21  2023]]  	[[Jnl#2023-04-20  Life w/o Ayi]]  
 [[Reflections\|Fri Apr 21  2023]]  	[[Reflections#2023-04-12  PIVOT - shift towards AI]]  
 [[Reflections\|Fri Apr 21  2023]]  	[[Reflections#2023-04-04  STRESS!  Feel my path AT SV is time limited]]  

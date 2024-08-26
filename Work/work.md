@@ -1,13 +1,11 @@
 .**NOW**. 
 - staationary push today
-NwsLtr
-Softbk
 ct&up:	
 Fire:	Jack/briones
 [OKRs](https://docs.google.com/presentation/d/1v7Winy9DHxGuYh05_is8zH05ClJi0qclM698-pDXIgY/edit?pli=1#slide=id.g274b3e27e6b_0_0):	Q3 Planning	
 [[DAT|DAT]]:	Get PR ready
 M:  	Vis script on merge
-J:  	Vis Script, Ai+SW, Briones DS
+J:  	Vis Script, AI+SW, Briones DS
 .		v1 Fireballs
 X: 	Anneal analyze
 [[FIN.]]	Invest plan; Retire plan(spreadsheet)

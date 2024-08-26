@@ -1,5 +1,7 @@
 .[[Job]].
-  ADDS:   [[Hire]], [[Job History]], [[Job Post]], [[Job Test]],
+  [[Hire]], [[Job History]], [[Job Post]], [[Job Test]],
+
+
 
 
 

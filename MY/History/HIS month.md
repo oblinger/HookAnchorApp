@@ -1,4 +1,6 @@
 
+[[Work\|Fri Jul 5  2024 ]]  	[[Work#TRACK]]  
+[[Work\|Fri Jul 5  2024 ]]  	[[Work#SOON [[mgt]] [[CVP]]]]  
 [[Work\|Fri Jul 5  2024 ]]  	[[Work#PAUSE [bsheet](https://docs.google.com/spreadsheets/d/1C1eYv]]  
 [[Work\|Fri Jul 5  2024 ]]  	[[Work#_]]  
 [[work\|Fri Jul 5  2024 ]]  	[[work#SOON [[mgt]] [[CVP]]]]  

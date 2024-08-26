@@ -1,13 +1,11 @@
-.[[NJ]].
-  TOP:	, [[Lrn]], [[NJ Todo]],
+.[[NJ]].		[[NJ.]], 
+  TOP:	[[Lrn]], [[NJ Todo]],
   PROD:	[[RES]], [NJ Slide](spot://njslide), [[NJ Rewrite]], [[NJ Pyramid]],
   OTHR:	[[GoogleJob]], [[NJ24 Framing]], [[NJ Read]],
   OLD:	[[NJ16]], [[NJ22]],
+  ADDS:   [[NJ.]], 
 
 
-
-
-  DELS: [[War]], 
 
 
 

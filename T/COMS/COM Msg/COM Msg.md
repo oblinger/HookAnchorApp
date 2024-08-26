@@ -1,5 +1,5 @@
 
-:: [[2023-04 Bridge Round]],   [[COM Investor]]
+:: [[2023-04 Bridge Round]],   [[COM Investor]], [[COM Newsletter]], 
 
 
 - [[COM Campaigns OLDER]]

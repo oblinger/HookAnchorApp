@@ -1,4 +1,4 @@
-
+l
 # Info
 
 ## Teachers
@@ -20,7 +20,7 @@
 - Lila Ross				Keith & Lizette
 - Olivia Ansari			Nari & Michelle
 - Sarina Martin			Justin & Anju
-- Shiv Taal				Parag (beard) & Prerna	()
+- Shiv Taal				Parag (beard) & Prerna	(Indian)  Laksha (sister, 2.5 yo). 
 - Sophia Donovan		Cortney & Adam
 - Soren Wooley			Kevin & Elisa
 - Stella Li					Ang & Miyuan
@@ -32,7 +32,7 @@
 - Grant Savee				John & Margaux
 - Josey Schwartz		Neil & Dina (4th grade teacher)
 - Justin Pao				Mike & Tiffany
-- Landon Bridle			Nick & Mallory
+- Landon Bridle			Nick & Mallory. obFlynn (2.5 yo).
 - Louie Grosack			Michael & Lauren 
 - Phoenix Cameron		Bailey
 - Rishi Mowdhgalya		Raj? & Akshaya (a-ka-shya; co-chair parents assn)

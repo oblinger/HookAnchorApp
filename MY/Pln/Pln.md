@@ -18,7 +18,10 @@
   ADDS:   , , , ,
   ADDS:   [[Bfast]], [[Lunch]], [[Read]], [[Wake]],
   ADDS:   [[Hack]],
-  ADDS:   [[CN]], 
+  ADDS:   ,
+
+
+  DELS: [[CN]], 
 
 
 

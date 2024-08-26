@@ -1,9 +1,11 @@
-[[NJ]]:	[[RES Star]], 
+[[NJ]]:	[[RES Star]], [[CN]],
 
-- Toplevel - finish & feedback
-- [[War AI]], [[NJ Pyramid]], 
-- [[RES]] 
+[[NJ]]:	[[NJ Rewrite|Rewrite]], [[RES War]]
 
+
+
+
+[[NJ Pyramid]], [[RES]] 
 - find the job posts; find people associated 
 - Ability to speak from first-person perspective about coding tasks
 - don't list before 15 years back
