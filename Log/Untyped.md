@@ -5,6 +5,10 @@ n:: no prefix.	Dated entries without any typing prefix
 
 | Date       | File                                    | Notes                                                                                                                             |
 | ---------- | --------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------- |
+| 2024-08-27 | [[@James Neilson]]                          |                                                                                                                                   |
+| 2024-08-26 | [[@Steve Singles]]                          | AI Dash Job Posting                                                                                                               |
+| 2024-08-26 | [[2024-08 Backend Architect]]               | Salary                                                                                                                            |
+| 2024-08-26 | [[2024-08 Backend Architect]]               | Note Explaining The Job                                                                                                           |
 | 2024-08-25 | [[COM Newsletter]]                          |                                                                                                                                   |
 | 2024-08-23 | [[@James Neilson]]                          | chat about BB power users                                                                                                         |
 | 2024-08-22 | [[Reflections]]                             | My Biggest Issue: Daily hours on MIT                                                                                              |
@@ -237,7 +241,6 @@ n:: no prefix.	Dated entries without any typing prefix
 | 2023-09-25 | [[Mgt]]                                     | Weekly meeting.                                                                                                                   |
 | 2023-09-25 | [[@Jason Syversen]]                         | notes                                                                                                                             |
 | 2023-09-21 | [[2023-07 Backend Architect]]               | Matias                                                                                                                            |
-| 2023-09-21 | [[2024-08 Backend Architect]]               | Matias                                                                                                                            |
 | 2023-09-21 | [[CVP]]                                     | AI goals from Mgt meeting                                                                                                         |
 | 2023-09-21 | [[@Jasu Victorio]]                          | Review                                                                                                                            |
 | 2023-09-21 | [[Bugs]]                                    | Fellowship of the bug                                                                                                             |
@@ -249,7 +252,6 @@ n:: no prefix.	Dated entries without any typing prefix
 | 2023-09-13 | [[2023-07 Backend Architect]]               | Max                                                                                                                               |
 | 2023-09-13 | [[2023-07 Director of SW]]                  | ++Luciano B                                                                                                                       |
 | 2023-09-13 | [[2023-07 Director of SW]]                  | Mariano                                                                                                                           |
-| 2023-09-13 | [[2024-08 Backend Architect]]               | Max                                                                                                                               |
 | 2023-09-13 | [[BaseB]]                                   | Task Breakdown                                                                                                                    |
 | 2023-09-13 | [[Patents]]                                 | SheeHan                                                                                                                           |
 | 2023-09-13 | [[Patents]]                                 | Watch Tower                                                                                                                       |
@@ -262,8 +264,6 @@ n:: no prefix.	Dated entries without any typing prefix
 | 2023-09-08 | [[2023-07 ML-CV Ops Job Post]]              | Sebastian                                                                                                                         |
 | 2023-09-07 | [[2023-07 Backend Architect]]               | TH Juan                                                                                                                           |
 | 2023-09-07 | [[2023-07 Backend Architect]]               | TH Eduardo                                                                                                                        |
-| 2023-09-07 | [[2024-08 Backend Architect]]               | TH Juan                                                                                                                           |
-| 2023-09-07 | [[2024-08 Backend Architect]]               | TH Eduardo                                                                                                                        |
 | 2023-09-05 | [[Eli Firsts]]                              | Bike Riding in circles                                                                                                            |
 | 2023-09-05 | [[BBI]]                                     | SV Head SW                                                                                                                        |
 | 2023-09-05 | [[CVP]]                                     | older stuff                                                                                                                       |

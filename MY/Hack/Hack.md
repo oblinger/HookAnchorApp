@@ -1,10 +1,14 @@
 .[[Hack]].
 PROJ:	 [[KM]], [[DAT]], , [[Time Tracker]],
-JUNK:	[[Closet]],
+JUNK:	[[Closet]], [[Hack Chunch]],
 OBS:	, [[QUICKADD]], ,
 DIR:	, ,
   ADDS:   [[SP]],
   ADDS:   , [[My Spot]],
+
+
+[[CV Hack Notes]]. 
+
 
 
 

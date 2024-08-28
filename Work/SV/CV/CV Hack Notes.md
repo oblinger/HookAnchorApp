@@ -5,6 +5,8 @@ git checkout feature/stationary
 git checkout feature/scripts
 pip install --upgrade pydantic lshapely imageio
 
+cd /Users/oblinger/ob/proj/sv/ai-experimental/users/mgreyes/stationary_people
+
 ./analysis_stationary_dan.py ~/ob/proj/sv/algorithms2/data/tmp/LT10T-1-2-3/01/3/output.pickle ~/ob/proj/sv/algorithms2/data/tmp/LT10T-1-2-3/01/3/center_viz.mp4
 
 ./analysis_stationary_dan.py ~/dataf/runset/ob/proj/sv/algorithms2/data/tmp/LT10T-1-2-3/01/3/output.pickle ~/ob/proj/sv/algorithms2/data/tmp/LT10T-1-2-3/01/3/center_viz.mp4

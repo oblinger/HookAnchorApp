@@ -2,7 +2,11 @@
   [[Hire Post]], [[Hire Test]], ,
   [[INTERVIEW]], [[Interviewing]], [[Interviews]],
   [[BBI]], [[CIT]], [[IOS guys]],
-  DELS: [[Hire Recuriters]], 
+  ADDS:   [[Hire Recuriters]],
+
+
+
+
 
 
 

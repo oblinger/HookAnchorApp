@@ -1,3 +1,4 @@
+- USB camera & light
 - 
 - fin flow
 - fix easy passwords

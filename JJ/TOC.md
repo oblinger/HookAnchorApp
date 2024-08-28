@@ -1,14 +1,14 @@
 
 ROOT JUMP PAGES::
 
-[[AMA]],	[[BUY]],	[[CTC]],	[[Enxt]],	[[gDR]],	[[Log]],	[[Meet]],	[[Misc]],	
-[[Old]],	[[Org]],	[[TEMPLATER]],	[[Trash]],	[[WW]],	[[Job Post]],	[[Job Test]],	
-[[JOB Tests]],	[[Application]],	[[Mom]],	[[MOV]],	[[News]],	[[NOISE]],	[[OKR]],	
-[[Photo]],	[[pPrj]],	[[RD]],	[[SCR]],	
+[[AF]],	[[AMA]],	[[Application]],	[[BUY]],	[[CTC]],	[[Enxt]],	[[gDR]],	[[Log]],	
+[[Meet]],	[[Misc]],	[[Mom]],	[[MOV]],	[[News]],	[[NOISE]],	[[OKR]],	[[Old]],	
+[[Org]],	[[Photo]],	[[pPrj]],	[[RD]],	[[SCR]],	[[TEMPLATER]],	[[Trash]],	
+[[WW]],	
 [[MAC]]: [[App]],	
 [[Brain]]: [[The Sentient Weapon]],	
     [[EOC]]: [[EOCA]],	[[EOCB]],	[[EOCI]],	[[EOCK]],	[[EOCT]],	
-[[Career]]: [[Job]],	
+[[Career]]: 
     [[MGR]]: 
         [[Hire]]: [[Hire Post]],	[[Hire Test]],	
 [[FIN]]: [[FIN Log]],	
@@ -32,4 +32,3 @@ ROOT JUMP PAGES::
                 [[Idea]]: [[EduCorp]],	[[Forum]],	[[Hook System]],	[[Idea Social]],	
                 [[TXT]]: [[Letters]],	
             [[SYS]]: [[OBS]],	
-[[Job History]]: [[AF]],	

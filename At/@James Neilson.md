@@ -3,6 +3,34 @@
 
 # LOG
 
+### 2024-08-27  
+
+Uses Apple Home Court
+
+Now works for local 
+
+Number 23 is my power player what happens get him into the key
+
+- I am a power user
+
+- 1 our 15-20 will look at anything beyond the box score
+- mentality to use college level analytics
+
+- quickly built  highlight reel for a given player.  
+  Rapidly edit a highlight (auto gen is too long)
+
+
+- QwikCut $300/year per team 100hours.
+- $20 breakdown
+- Cant get games up on hotel internet.  
+- When I get home Sunday night upload Veo  monday morning 
+- 5 games in QwikCut on Monday by 7pm.  By 3am next moring they are broken down
+
+
+- on a VEO, 1080p, record every game.  Send to qwikcut.  28 games control set.
+- well beyond the box score...  
+- want to try out things.
+
 ### 2024-08-23  chat about BB power users
 
 Please read through for context before speaking with James, will be helpful  

@@ -5,9 +5,10 @@
   [[2023-07 Director of SW]],
   [[2023-07 ML-CV Ops Job Post]],
   [[2023 Head SW]],
-  ,
-  ADDS:   [[QA-hiring]], 
-  DELS: [[2023-07 QA-hiring]], 
+  [[2024-08 Backend Architect]],
+
+
+
 
 
 
