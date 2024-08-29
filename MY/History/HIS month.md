@@ -1,4 +1,8 @@
 
+[[Q2\|Fri Jul 5  2024 ]]  	[[Q2#= [[EduCorp]] =]]  
+[[Q2\|Fri Jul 5  2024 ]]  	[[Q2#= [[PKM]] =]]  
+[[Q2\|Fri Jul 5  2024 ]]  	[[Q2#.]]  
+[[Q2\|Fri Jul 5  2024 ]]  	[[Q2#active]]  
 [[Q2\|Fri Jul 5  2024 ]]  	[[Q2#= [[MY/Plan/self\\|SELF]] =]]  
 [[Q2\|Fri Jul 5  2024 ]]  	[[Q2#= [[Work]] =]]  
 [[Q2\|Fri Jul 5  2024 ]]  	[[Q2#= [[Social]] =]]  

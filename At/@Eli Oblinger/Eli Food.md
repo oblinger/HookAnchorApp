@@ -1,9 +1,11 @@
 
 ## **MAIN** 
+- SAUTE:
+	- Chicken-Peas-Corn-Carrots-Mushrooms, 
 - CARBS: Pasta, RiceBalls, Pizza, Pancakes, Sweet Potatoes
 	- PASTA: Ground-beef&Eggs, Marinara, VeggieRisoto
 	- RICE: Seaweed sandwich, 
-- FROZN: Dumplings, 
+- FROZN: Dumplings, Meatballs, 
 - MEATS: Chicken(sauteed, panfry), Steak, Salmon, Meatloaf??
 	- PORK: Short Ribs
 - EGG: Ground Beef
