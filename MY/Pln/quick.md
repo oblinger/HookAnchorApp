@@ -1,3 +1,6 @@
+- matrix for hiring; tell Brian; schedule with Jack
+- camera issue to bed
+- get Veo minutes games from James
 - spot: auto FOO! when in the FOO folder
 - Get games that "look like" sales targets & spec of what sales target games look like
 - AI-minutes:  valid games definition, center court, see all court, panning not hand held, 
