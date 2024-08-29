@@ -1,4 +1,4 @@
- [[RECRUITER]]  [Executive Recruiter](https://www.linkedin.com/in/melissacote1/) [[@SCGC Executive Search]] 
+ [[Recruiter]]  [Executive Recruiter](https://www.linkedin.com/in/melissacote1/) [[@SCGC Executive Search]] 
 
 
 Include as many of these as you can:

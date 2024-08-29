@@ -1,4 +1,4 @@
- [[RECRUITER]]  [Associate VP](https://www.linkedin.com/in/maryntran/) [[@Selby Jennings]] 
+ [[Recruiter]]  [Associate VP](https://www.linkedin.com/in/maryntran/) [[@Selby Jennings]] 
 
 More senior & focused on PE recruiting.
 

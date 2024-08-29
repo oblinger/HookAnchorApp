@@ -1,4 +1,4 @@
- [[COACH]], [[RECRUITER]]  [Career Coach](https://www.linkedin.com/in/josephsyeh/) [[@DotConnect]]  [D<>J](https://docs.google.com/document/d/1mksc7XIoeo6LV8eczQXi1xEDzZ-8syGoGEpJRioIXVo/edit)      
+ [[COACH]], [[Recruiter]]  [Career Coach](https://www.linkedin.com/in/josephsyeh/) [[@DotConnect]]  [D<>J](https://docs.google.com/document/d/1mksc7XIoeo6LV8eczQXi1xEDzZ-8syGoGEpJRioIXVo/edit)      
 ### __
  Career Coach -- Specializing in DeepLearning, Vision
   - [Hours](https://docs.google.com/spreadsheets/d/1MkWide1VMd0Jez3Z_Z2WIJfZdHKP7Gg2KmS0yodrZWY/edit#gid=0) -- 

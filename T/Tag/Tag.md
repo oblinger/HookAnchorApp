@@ -1,7 +1,7 @@
 .[[Tag]].
   ADDS:   [[BUILD]],
   ADDS:   [[HEAVY]],
-  ADDS:   [[ACADEMIC]], [[CONSULTANT]], [[CORE]], [[FAANG]], [[HACKERS]], [[INFO_PAGE]], [[PE firm]], [[RECRUITER]], [[RND]], [[ROBOTICS]], [[SOLID]], [[START]], [[TASK]], [[TECH]], [[VC]],
+  ADDS:   [[ACADEMIC]], [[CONSULTANT]], [[CORE]], [[FAANG]], [[HACKERS]], [[INFO_PAGE]], [[PE firm]], [[Recruiter]], [[RND]], [[ROBOTICS]], [[SOLID]], [[START]], [[TASK]], [[TECH]], [[VC]],
   ADDS:   [[COACH]], [[COMP]], [[DARPA]],
 
 
@@ -138,7 +138,7 @@
 - [[At]]
 	- [[Person]]
 		- LEVEL: [[CORE]], [[SOLID]], [[HEAVY]], [[RND]], 
-		- [[Service]]:  [[RECRUITER]],  [[COACH]],  [[Doctor]],   
+		- [[Service]]:  [[Recruiter]],  [[COACH]],  [[Doctor]],   
 		- KIND:   [[FAANG]],   [[START]],  [[TECH]], [[VC]], [[ACADEMIC]], 
 		- WHERE:  [[Tags/HACKERS]], [[DARPA]], 
 		- AREA:  [[AI]], [[ROBOTICS]], [[ML]], [[CONSULTANT]],  

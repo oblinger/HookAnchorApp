@@ -1,4 +1,4 @@
- [[RECRUITER]]  [VP](https://www.linkedin.com/in/vincent-colangelo-b6017426/) [[@Odyssey Search Partners]]  
+ [[Recruiter]]  [VP](https://www.linkedin.com/in/vincent-colangelo-b6017426/) [[@Odyssey Search Partners]]  
 
 Vice President
 Odyssey Search Partners

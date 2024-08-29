@@ -1,4 +1,4 @@
-=[[RECRUITER]].   #Role/Recruiter 
+=[[Recruiter]].   #Role/Recruiter 
 
 - [[@Javier Martinez Rubio]] 
 - [[@Silvana Oviedo]],

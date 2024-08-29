@@ -1,4 +1,4 @@
-=[[RECRUITER]]    [Executive Recruiting](https://www.linkedin.com/in/brandispaden/)  [[@Riviera Partners]]
+=[[Recruiter]]    [Executive Recruiting](https://www.linkedin.com/in/brandispaden/)  [[@Riviera Partners]]
 
 
 # LOG

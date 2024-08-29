@@ -1,4 +1,4 @@
- [[RECRUITER]]    [Senior Research Associate](https://www.linkedin.com/in/lianebcapiral/)    [Oxbridge Group](https://www.oxbridgegroup.com/)  
+ [[Recruiter]]    [Senior Research Associate](https://www.linkedin.com/in/lianebcapiral/)    [Oxbridge Group](https://www.oxbridgegroup.com/)  
    
 
 1901 Avenue of the Stars, Suite 1075  

@@ -1,3 +1,3 @@
-=[[RECRUITER]]. [[@TecHunting]] 
+=[[Recruiter]]. [[@TecHunting]] 
 
 - soviedo@techunting.net

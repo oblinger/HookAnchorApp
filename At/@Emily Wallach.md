@@ -1,4 +1,4 @@
- [[RECRUITER]]  [Director, Investment Practice at SPMB Executive Search](https://www.linkedin.com/in/emilywallach/) [[@SPMB Executive Search]]   [bio](https://spmb.com/team/emily-wallach/) 
+ [[Recruiter]]  [Director, Investment Practice at SPMB Executive Search](https://www.linkedin.com/in/emilywallach/) [[@SPMB Executive Search]]   [bio](https://spmb.com/team/emily-wallach/) 
  e: [ewallach@spmb.com](mailto:ewallach@spmb.com)   o: 646.948.1670  m: 818.822.8100
 
  SPMB - Is a leading executive search firm
