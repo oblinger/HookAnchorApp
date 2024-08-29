@@ -222,6 +222,8 @@
 
 
 
+
+
 #set 
 n:: Personal doc pages
 - [[Doc Folder]], [CV Docs](spot://cv~docs) 
