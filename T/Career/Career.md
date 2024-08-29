@@ -5,7 +5,8 @@
 - [MGR](spot://mgr), , [CAR Coach](spot://carcoach)
 - [[NextJob]], :
   :
-  ADDS:   [[Job]],
+  ADDS:   ,
+  DELS: [[Job]], 
 
 
 
