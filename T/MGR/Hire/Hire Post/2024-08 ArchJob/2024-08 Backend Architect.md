@@ -1,4 +1,4 @@
-
+- [Gdrive](https://drive.google.com/drive/folders/1YbYomol2XMu5uLMm0DRSeD_AP3AFG_az) 
 - [Backend](https://docs.google.com/document/d/17b6lD5zyT-axAwYwQkdXpIYtarGUJoD-L9Zl3N3luYQ/edit):  [can](https://docs.google.com/spreadsheets/d/1rk01kRhNaOXcfIzf1b-LXIXsA6kKwD2B/edit#gid=1014506710), [TH](https://techunting.viterbit.site/share-candidates/Xy21oouKFoxihhaOAOiB0/) 
 - Job Ad: [[2023-07 ArchJob.docx]],  out of date: [Backend Architect](https://docs.google.com/document/d/1tcWjfvBen70jcVbkQPfIsAj4Ko-PdFSZ/edit)  
 
@@ -17,7 +17,25 @@
 CONTEXT
 - Why Leave?  Looking For?  Plan over next years?
 
+
+## NOTES [[HERE]]
+
+
+
+
 # LOG
+
+
+### 2024-08-29  Spreadsheet
+
+Silvano,
+Thanks for the first candidate.  
+
+SPREADSHEET NOTES
+I took the time to create a folder for info about the candidates you find, along with a tracking spreadsheet for those candidates.  Here are some details about it:
+- I know that you may not want to share all contact info for the person until we have scheduled an interview, that is fine.  Please just be sure we have (1) Linked-In, (2) Resume, and (3) Job experience especially before we have that first interview scheduled.
+- I added some detailed fields in the document for the experience section.  A prime focus for this job search is centered on the experience in owning enterprise applications, so provide room to explain their top three enterprise apps they OWNED and the size of those apps.   Size might be number of active users, amount of revenue, or number of devs working on it (if pre-revenue). Usually these three top enterprise apps will be from three different companies, but it is also ok if the same company is listed twice if they did two large things at one place.
+- The leadership section may better apply to some candidates than others, it will include all kinds of leadership.  Scrum Master, Tech Lead, Manager, etc.  Want to capture most important two roles they have had.
 
 ### 2024-08-26  Salary
 

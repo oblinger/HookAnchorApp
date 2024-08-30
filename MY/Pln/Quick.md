@@ -1,3 +1,5 @@
+- russian river
+- Spot:   spgrab. foo!bar will not add a correct link to 'bar' in foo.  it adds a file link
 - matrix for hiring; tell Brian; schedule with Jack
 - camera issue to bed
 - get Veo minutes games from James
