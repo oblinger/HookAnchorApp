@@ -1,4 +1,7 @@
 
+[[Now\|Fri Jul 5  2024 ]]  	[[Now#Watch]]  
+[[Now\|Fri Jul 5  2024 ]]  	[[Now#Big]]  
+[[Now\|Fri Jul 5  2024 ]]  	[[Now#[[Q2]]]]  
 [[Q2\|Fri Jul 5  2024 ]]  	[[Q2#= [[EduCorp]] =]]  
 [[Q2\|Fri Jul 5  2024 ]]  	[[Q2#= [[PKM]] =]]  
 [[Q2\|Fri Jul 5  2024 ]]  	[[Q2#.]]  

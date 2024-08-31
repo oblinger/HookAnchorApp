@@ -108,10 +108,10 @@ DOES IT STILL FEEL HORRIFIC WITH THE CONTINGENT PATH TO STATEHOOD
 ### 2024-02-09  Try Number Three
 
 CONTEXT
-(1) Israel holds all the cards and will not accept any change that notably lowers their security.
-(2) A percentage of Palestinians want to wipe Israel from the map.  No matter what wealth or concessions are given, too much bad blood, too much funding from Iran, and too much of a feeling of lands stolen.  For them its nothing less than "river to sea"!
-(3) Thus a two state solution cannot work:  either (a) Palestinians must be oppressed so thoroughly that it is difficult to obtain any money or resources to launch an attack, or (b) monitored so carefully that they cannot marshal the resources they have to launch an attack.
-(4) While many argue it is a necessary evil, Israel and Egypt are guilty of meting out collective punishment against some innocents by barricading Palestinians.  Here I propose a "way out" ... it is far less than what Palestinians want, but can be offered by Israel and obtain greater security in return.
+(1) Israel holds all the cards and will not accept any change that notably risks lowering their security as they see it.  FULL STOP.
+(2) A percentage of Palestinians want to wipe Israel from the map.  No matter what wealth or concessions are given, too much bad blood, too much funding from Iran, and too much of a feeling of lands stolen.  For them its nothing less than "river to sea"!  FULL STOP.
+(3) Thus a two state solution simply cannot work.  FULL STOP.  As long at #1 and #2 are true we guaranteed that (a) Palestinians will be oppressed so thoroughly that it is difficult for them to obtain any money or resources to launch an attack, and (b) monitored so carefully that they cannot marshal the resources they do have to launch an attack.
+(4) Here I propose a "way out" and it is the ONLY way out as long at #1 and #2 are true.  Sure it is far less than what Palestinians want, but it is the only thing they can get unless they can change #1 or #2 (which I don't think they can do.)
 
 
 The key insight is to notice that the choice of peace cannot be offered to the Palestinians as a whole, rather it must be offered as an individual choice with individual consequences.  Greater freedom and prosperity cannot be offered to a people as a whole, if those people as a whole are not committed to non-violence against Israel.  Yet human population is a monolith, if given the choice some (many?) would choose Israeli security in exchange for prosperity for themselves and their children. 
