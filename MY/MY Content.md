@@ -98,7 +98,8 @@
   ADDS:
   ADDS:   , , ,
   ADDS:   , , , ,
-  ADDS:   [[Doc]], [[Idea]], [[TXT]], 
+  ADDS:   [[Doc]], [[Idea]], [[TXT]],
+
   DELS: [[MY]], [Pln Folder](spot://plnfolder), 
 
   DELS: [[Doc]], [[Idea]], [[TXT]],[[My Info]], [[My Stuff]], 

@@ -14,7 +14,8 @@
   ADDS:   [CV Gdrive](spot://cvgdrive),
   ADDS:   ,
   ADDS:   [[CV Hack Notes]], [[CV Log]], [[SVCV Re-ID]],
-  ADDS:   [[Data]], [[Info]], 
+  ADDS:   [[Data]], ,
+  DELS: [[Info]], 
 
 
 

@@ -3,8 +3,8 @@ ROOT JUMP PAGES::
 
 [[AF]],	[[AMA]],	[[Application]],	[[BUY]],	[[CTC]],	[[Enxt]],	[[gDR]],	[[Log]],	
 [[Meet]],	[[Misc]],	[[Mom]],	[[MOV]],	[[News]],	[[NOISE]],	[[OKR]],	[[Old]],	
-[[Org]],	[[Photo]],	[[pPrj]],	[[RD]],	[[SCR]],	[[TEMPLATER]],	[[Trash]],	
-[[WW]],	
+[[Org]],	[[Photo]],	[[pPrj]],	[[Proj]],	[[RD]],	[[SCR]],	[[TEMPLATER]],	
+[[Trash]],	[[WW]],	
 [[MAC]]: [[App]],	
 [[Brain]]: [[The Sentient Weapon]],	
     [[EOC]]: [[EOCA]],	[[EOCB]],	[[EOCI]],	[[EOCK]],	[[EOCT]],	
@@ -17,7 +17,7 @@ ROOT JUMP PAGES::
 [[Top]]: 
     [[Pln]]: [[COMS]],	[[CVP]],	[[Diary]],	
         [[Hack]]: [[Closet]],	[[KM]],	[[QUICKADD]],	[[SP]],	
-    [[Prj]]: [[Proj]],	[[UF]],	
+    [[Prj]]: [[UF]],	
     [[RR]]: [[Book]],	[[ML]],	[[RR Med]],	[[RR Mgt]],	[[Stat]],	
         [[AI]]: 
             [[DL]]: [[DL Alg]],	

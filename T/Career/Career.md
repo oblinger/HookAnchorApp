@@ -7,7 +7,8 @@
   :
   ADDS:   ,
   ADDS:   ,
-  ADDS:   [[MGR]], 
+  ADDS:   [[MGR]],
+
   DELS: [RES Folder](spot://resfolder), 
 
 

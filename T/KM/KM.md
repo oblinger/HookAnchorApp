@@ -12,8 +12,9 @@
   ADDS:   [[Meta KM]],
   ADDS:   ,
   ADDS:   ,
-  ADDS:   [KM Folder](spot://kmfolder), 
-  DELS: [[Zooby_do]], [[Dooby]], 
+  ADDS:   [KM Folder](spot://kmfolder),
+  ADDS:   [[Dooby]], 
+
 
 
   DELS: [KM Folder](spot://kmfolder), 

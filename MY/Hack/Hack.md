@@ -6,7 +6,8 @@ DIR:	, ,
   ADDS:   ,
   ADDS:   , ,
   ADDS:   [[DAT]], [[Hack Chunch]], [[My Spot]], [[SP]], [[Time Tracker]],
-  ADDS:   [[Closet]], [[KM]], [[QUICKADD]], 
+  ADDS:   [[Closet]], [[KM]], [[QUICKADD]],
+
 
 
 

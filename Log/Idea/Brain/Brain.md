@@ -7,7 +7,8 @@
 - [[2016-00-00 PPP]]
 - [[2021-06-00 Brain3]]
   ADDS:   [[End Of Man Book]], [[EOC reboot]], ,
-  ADDS:   [[EOC]], [[The Sentient Weapon]], 
+  ADDS:   [[EOC]], [[The Sentient Weapon]],
+
 
 
 
