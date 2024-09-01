@@ -14,6 +14,8 @@ n:: Ideas of mine
   [[2017-09 Elastic Block Chain]], [[2018-00 Alloy]], [[2018-08 Robo-Chair]], [[2020-00 ClaimsAnalyzer]], [[2020-00 FinScreener]], [[2020-00 Tableau Killer]], [[2020-06 OpenBricks]]
   [[2020-07 Autonomy]], [[2020-07 Spot Pricing]], [[2020-09 CtrlSaaS]], [[2020-10 MedAR]], [[2020-12 MKT]], [[2020-12 SmartScale]], [[2022-04 Tile Robot]], [[2022-05 Virtual Tour Guide]], [[Basket]]
   [[GHOST-Seed]], [[GuaranteedReserves]], [[Ideas]], [[MKT]], [[Rope Chain]], [[Startup Canvas copy]], [[Word_War]],
+  ADDS:   [[EduCorp]], [[Forum]], [[Hook System]], [[Idea Social]], 
+
 
 
   [[Ideas]]:

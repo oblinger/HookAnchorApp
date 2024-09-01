@@ -10,8 +10,10 @@
   ADDS:
   ADDS:   [[Multi-List WorkFlow]],
   ADDS:   [[Meta KM]],
-  ADDS:   [[Zooby_do]],
-  ADDS:   [[Dooby]],
+  ADDS:   ,
+  ADDS:   ,
+  ADDS:   [KM Folder](spot://kmfolder), 
+  DELS: [[Zooby_do]], [[Dooby]], 
 
 
   DELS: [KM Folder](spot://kmfolder), 

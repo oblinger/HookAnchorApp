@@ -1,10 +1,10 @@
 
 ROOT JUMP PAGES::
 
-[[AF]],	[[AMA]],	[[BUY]],	[[CTC]],	[[Enxt]],	[[gDR]],	[[Log]],	[[Meet]],	
-[[Misc]],	[[Old]],	[[Org]],	[[TEMPLATER]],	[[Trash]],	[[WW]],	[[Application]],	
-[[Mom]],	[[MOV]],	[[News]],	[[NOISE]],	[[OKR]],	[[Photo]],	[[pPrj]],	[[Proj]],	
-[[RD]],	[[SCR]],	
+[[AF]],	[[AMA]],	[[Application]],	[[BUY]],	[[CTC]],	[[Enxt]],	[[gDR]],	[[Log]],	
+[[Meet]],	[[Misc]],	[[Mom]],	[[MOV]],	[[News]],	[[NOISE]],	[[OKR]],	[[Old]],	
+[[Org]],	[[Photo]],	[[pPrj]],	[[RD]],	[[SCR]],	[[TEMPLATER]],	[[Trash]],	
+[[WW]],	
 [[MAC]]: [[App]],	
 [[Brain]]: [[The Sentient Weapon]],	
     [[EOC]]: [[EOCA]],	[[EOCB]],	[[EOCI]],	[[EOCK]],	[[EOCT]],	
@@ -17,18 +17,18 @@ ROOT JUMP PAGES::
 [[Top]]: 
     [[Pln]]: [[COMS]],	[[CVP]],	[[Diary]],	
         [[Hack]]: [[Closet]],	[[KM]],	[[QUICKADD]],	[[SP]],	
-    [[Prj]]: [[UF]],	
+    [[Prj]]: [[Proj]],	[[UF]],	
     [[RR]]: [[Book]],	[[ML]],	[[RR Med]],	[[RR Mgt]],	[[Stat]],	
         [[AI]]: 
             [[DL]]: [[DL Alg]],	
     [[Set]]: [[Lang]],	
     [[SV]]: [[QQ]],	[[SV People]],	[[SV Strat]],	[[SVT]],	
-        [[CV]]: [[Data]],	[[CV Log]],	
+        [[CV]]: [[CV Log]],	[[Data]],	
     [[T]]: [[Courses]],	[[Eli]],	[[Food]],	[[Legal]],	[[Life]],	[[MED]],	
         [[Politics]],	[[SF]],	[[Tag]],	
         [[MY]]: 
             [[Meta]]: [[Dir]],	
-            [[SYS]]: [[OBS]],	
             [[MY Content]]: [[Doc]],	
                 [[Idea]]: [[EduCorp]],	[[Forum]],	[[Hook System]],	[[Idea Social]],	
                 [[TXT]]: [[Letters]],	
+            [[SYS]]: [[OBS]],	

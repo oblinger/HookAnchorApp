@@ -5,7 +5,9 @@
   [[Journaling]], [[key code]], [[List]], [[meditation]], [[napa]], [[Nomad]], [[PdfInfo]], [[Player FM]], [[Presentations]], [[Publications]], [[Public Notes]], [[Record Notes]], [[Rental]], [[RJ45]]
   [[Rssfeeds]], [[SciFi]], [[Search]], [[Secure]], [[Shop]], [[Sleep]], [[Sleep With Me]], [[STARTUPS]], [[Templates]], [[test88]], [[tickets]], [[Timestamp]], [[Travel Lst]], [[xmas]],
   ADDS:   ,
-  ADDS:   [K Folder](spot://kfolder),
+  ADDS:   ,
+  DELS: [K Folder](spot://kfolder), 
+
 
 
 

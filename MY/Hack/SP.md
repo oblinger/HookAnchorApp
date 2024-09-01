@@ -6,7 +6,9 @@
   [SP grab](spot://spgrab),
   -
   [SP folder](spot://spfolder),
-  ADDS:   , [[Hack]], , , ,
+  ADDS:   , , , , ,
+  DELS: [[Hack]], 
+
 
   DELS: [[DAT]], [[Hack Chunch]], [[My Spot]], [[Time Tracker]], 
 

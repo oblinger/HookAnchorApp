@@ -22,7 +22,9 @@
   ADDS:   [[@Circle]], [[@StatsPerform]], [[@SV]], [[Beyondo]], [[2023-02-00 CTOs corner]], [[Hoops]], [[Scout Bot]], [[SV Org]], [[Veo]],
   ADDS:   [[2022-10-17 SV90]],
   ADDS:   [[Work]],
-  ADDS:   [WW Folder](spot://wwfolder),
+  ADDS:   ,
+  ADDS:   [[CV]], [[QQ]], [SV Folder](spot://svfolder), [[SV People]], [[SV Strat]], [[SVT]], [Work Folder](spot://workfolder), 
+  DELS: [WW Folder](spot://wwfolder), 
 
 
   DELS: [[QQ]], [[CV]], [[SV Strat]], [[SV People]], [[SVT]], [[SV Folder]], [Work Folder](spot://workfolder), 

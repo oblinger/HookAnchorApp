@@ -1,6 +1,8 @@
 .[[CV Log]].
   ADDS:   [[MinCalcs]]
-  ADDS:   [[CV]], , ,
+  ADDS:   , , ,
+  DELS: [[CV]], 
+
 
   DELS: [[CV Hack Notes]], [[SVCV Re-ID]], 
 

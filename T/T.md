@@ -22,7 +22,9 @@
   ADDS:   ,
   ADDS:   ,
   ADDS:   ,
-  ADDS:   [KM Folder](spot://kmfolder), [Legal Folder](spot://legalfolder),
+  ADDS:   , ,
+  ADDS:   [[Courses]], [[Eli]], [[Food]], [[Legal]], [[Life]], [[MED]], [[MY]], [[Politics]], [[SF]], [[Tag]], [T Folder](spot://tfolder), 
+  DELS: [KM Folder](spot://kmfolder), [Legal Folder](spot://legalfolder), 
 
 
   DELS: [[Eli]], [[MY]], [T Folder](spot://tfolder), [[Food]], [[Legal]], [[Life]], [[MED]], [[Politics]], [[SF]], [[Tag]], [[Courses]], 

@@ -14,6 +14,8 @@
 - [[z2 - Linked In Module]],
   ADDS:   [[RES Job History]],
   ADDS:   ,
+  ADDS:   [[Bio]], [RES Folder](spot://resfolder), 
+
 
 
   DELS: [RES Folder](spot://resfolder), [[Bio]], 

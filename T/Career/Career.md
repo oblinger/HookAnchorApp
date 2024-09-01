@@ -6,7 +6,9 @@
 - [[NextJob]], :
   :
   ADDS:   ,
-  ADDS:   [RES Folder](spot://resfolder),
+  ADDS:   ,
+  ADDS:   [[MGR]], 
+  DELS: [RES Folder](spot://resfolder), 
 
 
   DELS: [MGR](spot://mgr), 

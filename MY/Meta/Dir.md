@@ -11,10 +11,12 @@
   ADDS:   [ToFile Folder](spot://tofilefolder), [ToOffload Folder](spot://tooffloadfolder),
   ADDS:   ,
   ADDS:   ,
-  ADDS:   , [[Meta]], , , , , , , , , , ,
+  ADDS:   , , , , , , , , , , , ,
   ,
+  ADDS:   [AT Folder](spot://atfolder), [K Folder](spot://kfolder), [Legal Folder](spot://legalfolder), [Log Folder](spot://logfolder), [Pln Folder](spot://plnfolder), [Receipts Folder](spot://receiptsfolder)
+  [Returns Folder](spot://returnsfolder), [Set Folder](spot://setfolder), [WW Folder](spot://wwfolder), 
+  DELS: [[Meta]], 
 
-  DELS: [AT Folder](spot://atfolder), [K Folder](spot://kfolder), [Legal Folder](spot://legalfolder), [Log Folder](spot://logfolder), [Receipts Folder](spot://receiptsfolder), [Returns Folder](spot://returnsfolder), [Set Folder](spot://setfolder), [Pln Folder](spot://plnfolder), [WW Folder](spot://wwfolder),[[Base]], [[Meta Coms]], [[Meta Flow]], [[Meta Group]], [[Meta List]], [[Meta Log]], [[Meta Meta]], [[Meta Org -old-page-]], [[Meta Plan]], [[Meta Proj]], [[Meta Set]], [[meta Tasks]], [[Roots]], 
 
 
 

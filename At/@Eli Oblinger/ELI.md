@@ -17,7 +17,9 @@
   ADDS:   [[ELI Log]],
   ADDS:   ,
   ADDS:   [[BCMS]],
-  ADDS:   [[@Eli Oblinger]],
+  ADDS:   ,
+  DELS: [[@Eli Oblinger]], 
+
 
 
 

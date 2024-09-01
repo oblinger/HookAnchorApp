@@ -5,6 +5,8 @@
   ,
   ADDS:   ,
   ADDS:
+  ADDS:   [[Hire Post]], [[Hire Test]], 
+
 
 
   DELS: [[Hire Post]], [[Hire Test]], 
