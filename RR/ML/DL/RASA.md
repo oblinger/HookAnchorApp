@@ -1,3 +1,5 @@
+n:: framework that allows developers to build, train, and deploy conversational AI models.
+
 - [Rasa Alg](https://www.youtube.com/watch?v=yGTUuEx3GkA) whiteboard example.  
 	- Self Attention -- recurrent within
 	- https://www.youtube.com/watch?v=tIvKXrEDMhk
@@ -12,7 +14,6 @@ Analogy:
 
 
 **SINGLE ENCODER BLOCK**
-
 - POSITIONAL ENCODING - Added to each input work to "mix in" positional info
 - MULT-HEADED ATTENTION BLOCK - To add contextualization to each token
 - FEED FORWARD NET - A standard feedforward net

@@ -14,15 +14,25 @@
   [[Noom Notes]]:
   [[Restaurants]]:
   [[Try Foods]]:
-  :
-  :
-  :
   ADDS:   [Nutrition Data Page](spot://nutritiondatapage), [Nutrition Facts Page](spot://nutritionfactspage), [Nutrition Value Page](spot://nutritionvaluepage),
   ADDS:   [[qwd]],
   ADDS:   [[Food Recipe Research]], [[Food Research]],
   ADDS:   [[Eat]],
 
 
+
+chili powder; 
+
+spray it; mix it,   425  30min (check @15)
+tbsp lemon pepper, 1/4tsp little garlic, 1/4tsp toasted onion
+curry+tumeric mix
+cumin, chili powder
+taco seasoning, 
+pepper
+
+carrots, cabbage, broccoli in water
+
+zotar spice
 
 
 

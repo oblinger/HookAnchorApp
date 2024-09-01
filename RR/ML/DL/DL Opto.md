@@ -1,18 +1,4 @@
-
-
-chili powder; 
-
-
-spray it; mix it,   425  30min (check @15)
-tbsp lemon pepper, 1/4tsp little garlic, 1/4tsp toasted onion
-curry+tumeric mix
-cumin, chili powder
-taco seasoning, 
-pepper
-
-carrots, cabbage, broccoli in water
-
-zotar spice
+n:: How to optimize a deep net
 
 
 ## MINI-BATCH - Batch vs. Mini-Batch Gradient Descent

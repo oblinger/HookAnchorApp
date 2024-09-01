@@ -1,51 +1,18 @@
 
-:: [[DSPY System]]
-
-:: [[GPT]]
 .[[DL]].
-  [[Attention]]:
-  [[Auto Encoders]]:
-  [[GANs]]:
-  [[LSTM]]:
-  [[NN]]:
-  :
-  [[DL Alg]]:
-  [[DL Notation]]:
-  :
-  :
-  [[DL SYS]]:
-  [[DL Topic]]:
-  :
-  :
-  :
-  :
-  :
-  [[Activation Functions]]:
-  [[Coursera Notes]]:
-  [[Feed Forward Layer]]:
-  [[GenAI]]:
-  [[Gradient Checking]]:
-  [[Invertable Density Estimation]]:
-  [[LoRA]]:
-  [[Regularization]]:
-  [[ReLU]]:
-  [[Segment Anything]]:
-  [[Self Supervised Learning]]:
-  [[Transformers]]:
-  [[CNN]]:
-  :
-  :
-  [[NG Notation]]:
-  [[ORPO Odds Ratio Preference Optimization]]:
-  [[RAG]]:
-  [[RASA]]:
-  [[RLHF Reinforcement Learning from Human Feedback]]:
-  :
-  [[VAE - Variational Auto Encoder]]:
-  [[GPT]]:
-  ADDS:   [[KAN - Kolmogorov-Arnold Neworks]], [[VAEs]],
-  ADDS:   [[DL Optimization]], [[DL Strategy]],
-  ADDS:   [[DSPY System]], [[LLM]], [[RNNs]],
+  PARTS:	[[Attention]], [[Activation Functions]], [[Feed Forward Layer]], 
+  DETAILS:	[[Invertable Density Estimation]], [[LoRA]], [[ReLU]], 
+  .		    [[ORPO Odds Ratio Preference Optimization]], 
+  [[DL Strat]]:	[[Gradient Checking]], 
+  [[DL Topic]]:	[[GenAI]], [[Regularization]], [[Self Supervised Learning]], [[RAG]], 
+  [[DL Alg]]:	[[Auto Encoders]], [[GANs]], [[LSTM]], [[NN]], [[Transformers]], [[CNNs]], [[LLM]], [[RNNs]],
+  .			[[VAEs]], [[RLHF Reinforcement Learning from Human Feedback]], 
+  DL ALG2:	[[KAN - Kolmogorov-Arnold Neworks]], [[DSPY System]],
+  [[DL SYS]]:	[[GPT]], [[Segment Anything]], [[RASA]], 
+  [[DL Notation]]:	[[NG Notation]], [[Coursera Notes]]:
+  [[DL Opto]], 
+  
+
 
 
 
@@ -282,7 +249,7 @@
 
 
 
-  DELS: [[RNNs]], [[DL Optimization]], [[DL Strategy]], [[DL algs]], [[DL SYStems]], [[DL topics]], [[RR/ML/DL/GPT]], [[VAEs]], 
+  DELS: [[RNNs]], [[DL Opto]], [[DL Strat]], [[DL algs]], [[DL SYStems]], [[DL topics]], [[RR/ML/DL/GPT]], [[VAEs]], 
 
 - [[LoRA]] 
 :: [[KAN - Kolmogorov-Arnold Neworks]]
@@ -293,8 +260,8 @@
 
  [[LLM]], 
 
-:: [[VAE - Variational Auto Encoder]],   [[Attention]],   [[Gradient Checking]],   [[NG Notation]],   [[Invertable Density Estimation]],   [[Self Supervised Learning]],   [[Activation Functions]],   [[Auto Encoders]],  [[VAEs]]
-- [[DL Alg]], [[DL Topic]], [[DL Optimization]], 
+:: [[VAEs]],   [[Attention]],   [[Gradient Checking]],   [[NG Notation]],   [[Invertable Density Estimation]],   [[Self Supervised Learning]],   [[Activation Functions]],   [[Auto Encoders]],  [[VAEs]]
+- [[DL Alg]], [[DL Topic]], [[DL Opto]], 
   [Regularization](Regularization.md),   [GANs](GANs.md),   [NN](NN.md)
 #tag <[[ML]] 
 
@@ -308,7 +275,7 @@
 [[DL]] - [[DL Alg]] 
 - [[GenAI]]:	[[VAEs]], [[GANs]], [[Transformers]]([[LLM]]),   
 - [[RNNs]] 
-- [[CNN]] 
+- [[CNNs]] 
 - [[DL SYS]] 
 - [[DL PARTS]]: [[ReLU]], 
 
@@ -319,8 +286,8 @@
 - [[DL Topic]]: 			[[RLHF Reinforcement Learning from Human Feedback]],  
 - [[DL Notation]]:		[[NG Notation]], 
 - [[DL Alg]]:				[[RASA]], [[Segment Anything]], 
-- [[DL Optimization]] - 
-- [[DL Strategy]], 
+- [[DL Opto]] - 
+- [[DL Strat]], 
 
 
 

@@ -1,6 +1,5 @@
-.[[Lrn]].   [[Lrn.]]
-  ,  [[Lrn Mgt]],
-  ADDS:  
+.[[Lrn]].
+  [[Lrn.]],  [[Lrn Mgt]],
 
 
 
@@ -26,8 +25,6 @@
 
 
 
-
-- diffusion
 
 
 

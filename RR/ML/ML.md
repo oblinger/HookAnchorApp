@@ -129,12 +129,13 @@
 
 
 
+
 :: [[ARIMA Algorithm]],  
 - [[ML Alg]],   [[ML Tools]], [[ML Datasets]],
 
 SECTIONS:  [DL](DL.md)   [STATS](STATS.md)
-  [VAE - Variational Auto Encoder](VAE%20-%20Variational%20Auto%20Encoder.md)
-[[VAE - Variational Auto Encoder]]  [ML Eng](ML%20Eng.md)
+  [VAEs](VAEs.md)
+[[VAEs]]  [ML Eng](ML%20Eng.md)
 #tag
   - [STATS](STATS.md)  [Neural](Neural.md)  [BL](BL.md)
   - [STATS](__STATS__.md)

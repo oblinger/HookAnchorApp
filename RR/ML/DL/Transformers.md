@@ -1,6 +1,6 @@
 
 - [[DL Notation]], 
-- [[VAE - Variational Auto Encoder]], 
+- [[VAEs]], 
 - [[Activation Functions]],   [[Auto Encoders]],  [[VAEs]],
 
 

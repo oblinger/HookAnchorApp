@@ -788,7 +788,7 @@ This is my first Obsidian Day!
 
 ### d2022-08-10  VAR Autoencoders
 
-- [[VAE - Variational Auto Encoder]] 
+- [[VAEs]] 
 - 
 - [Jupyter/Python tutorial](https://www.youtube.com/watch?v=twHaVc_H7ik) - 
 - 

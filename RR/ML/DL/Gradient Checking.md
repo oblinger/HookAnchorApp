@@ -1,8 +1,6 @@
 ! Method used to debug NN implementations
 
 
-
-
 - Compute approximate gradient by merging ALL parameters into one big theta vector, then perturbed each parameter by adding and subtracting epsilon = 1e-7
        approx_grad = ( COST(theta+epsilon) - COST(theta-epsilon) )  /  (2 * epsilon)
 
