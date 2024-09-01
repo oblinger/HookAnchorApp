@@ -5,6 +5,7 @@
   [Set Folder](spot://setfolder), [SV Folder](spot://svfolder), [T Folder](spot://tfolder), [TRASH for Obsidian Folder](spot://trashforobsidianfolder), [TRASH Obsidian](spot://trashobsidian)
   [Work Folder](spot://workfolder),
 
+
   DELS: [[Pln]], [[Prj]], [[Set]], [[T]], [[SV]], [[RR]], 
 
 
