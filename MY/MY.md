@@ -1,6 +1,11 @@
 .[[MY]].
-  [[Emails]], [[HIS month]], [[HIS monthh]], [[HIS year]], [[Meta]], [[MY Content]], [[Myfo]], [MY Folder](spot://myfolder), [[My Info]], [[My mgr NOTES]], [MyMgr Page](spot://mymgrpage), [[My Stuff]]
-  [[SYS]],
+  [[Emails]], [[HIS month]], [[HIS monthh]], [[HIS year]], , , [[Myfo]], , , [[My mgr NOTES]], [MyMgr Page](spot://mymgrpage),
+  ,
+  ADDS:   [[MY Content]], [[My Info]], [[My Stuff]], 
+
+
+
+
 
 
 

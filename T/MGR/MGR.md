@@ -16,7 +16,12 @@
   ADDS:   [[MyMgr]],
   ADDS:   ,
   ADDS:   [[MGR Contracts]],
-  ADDS:   [[Hire]],
+  ADDS:   ,
+
+  DELS: [[Hire]], 
+
+
+
 
 
 

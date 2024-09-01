@@ -1,14 +1,14 @@
 
 .[[Pln]].
-  [[CVP]]:	 	[[Now]], [[Full]], [[Prime]],
+  :	 	[[Now]], [[Full]], [[Prime]],
   -
   OVER:		[[Friday]], [[Habit]], [[Repeat]], [[Self Evergreen]].
   LST1:		[[Quick]], [[Todo]], [[Active]], [[SCRatch]],
   LST2:		[[Big]], [[Quarterly]], [[Later]], [[Wings]], [[Dropped]], [[Archive]],
   LONG:		[[Rocks]], [[Q2]], [[WRM]],
   STRAT:	[[Productivity]], [[Daily Schedules]],
-  TOPIC:		[[COMS]],
-  SELF:		[[Self]], [[Diary]], [[Spirit]], [[Actualize]], [[Mission]],
+  TOPIC:		,
+  SELF:		[[Self]], , [[Spirit]], [[Actualize]], [[Mission]],
   FUN:		[[Fun]], [[Social]], [[Fried]], [[Gap]], [[Hacks]], [[Fried Later]],
   FAM:		[[Family]], [[Friday Dates]], [[Home]],
   ROOT:		[[BKT]], [[Up All]], [[Up Task]],
@@ -17,8 +17,13 @@
   ADDS:   	[[Arc ALL]], [[Archeology]],, [[Tracking of Time]], [[EBT]], [[Ping]],
   ADDS:   , , , ,
   ADDS:   [[Bfast]], [[Lunch]], [[Read]], [[Wake]],
-  ADDS:   [[Hack]],
   ADDS:   ,
+  ADDS:   ,
+
+  DELS: [[CVP]], [[COMS]], [[Diary]], [[Hack]], 
+
+
+
 
 
 

@@ -1,7 +1,7 @@
 .[[KM]].
   [[KM.]], [[KMco]],
   [[KM Anchors]]:
-  [KM Folder](spot://kmfolder):
+  :
   [[KM Global 2 Local]]:
   [[KM Overview]]:
   [KM script](spot://kmscript):
@@ -12,6 +12,11 @@
   ADDS:   [[Meta KM]],
   ADDS:   [[Zooby_do]],
   ADDS:   [[Dooby]],
+
+  DELS: [KM Folder](spot://kmfolder), 
+
+
+
 
 
 

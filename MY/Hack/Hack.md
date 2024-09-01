@@ -1,10 +1,15 @@
 .[[Hack]].
-PROJ:	 [[KM]], [[DAT]], , [[Time Tracker]],
-JUNK:	[[Closet]], [[Hack Chunch]],
-OBS:	, [[QUICKADD]], ,
+PROJ:	 , , , ,
+JUNK:	, ,
+OBS:	, , ,
 DIR:	, ,
-  ADDS:   [[SP]],
-  ADDS:   , [[My Spot]],
+  ADDS:   ,
+  ADDS:   , ,
+  ADDS:   [[DAT]], [[Hack Chunch]], [[My Spot]], [[SP]], [[Time Tracker]], 
+
+
+
+
 
 
 

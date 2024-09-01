@@ -273,7 +273,7 @@
   :
   :
   :
-  ADDS:   [1Password App](spot://1passwordapp), [1Password for Safari App](spot://1passwordforsafariapp), [Activity Monitor App](spot://activitymonitorapp), [[App]], [AppOpen App](spot://appopenapp)
+  ADDS:   [1Password App](spot://1passwordapp), [1Password for Safari App](spot://1passwordforsafariapp), [Activity Monitor App](spot://activitymonitorapp), , [AppOpen App](spot://appopenapp)
   [App Store App](spot://appstoreapp), [Audio Hijack 2 App](spot://audiohijack2app), [Automator App](spot://automatorapp), [Backgrounds for Zoom App](spot://backgroundsforzoomapp)
   [Bartender 4 App](spot://bartender4app), [Be Focused Pro App](spot://befocusedproapp), [BlueJeans App](spot://bluejeansapp), [Brave Browser App](spot://bravebrowserapp)
   [Calculator App](spot://calculatorapp), [Calendar App](spot://calendarapp), [Chrome App](spot://chromeapp), [Cisco Webex Meetings App](spot://ciscowebexmeetingsapp)
@@ -309,6 +309,11 @@
   [Voice Memos App](spot://voicememosapp), [Webcam Settings App](spot://webcamsettingsapp), [WhatsApp App](spot://whatsappapp), [WhatSize App](spot://whatsizeapp), [Word App](spot://wordapp)
   [WorkFlowy App](spot://workflowyapp), [Xcode App](spot://xcodeapp), [YiHomeMacInternational App](spot://yihomemacinternationalapp), [Yoink App](spot://yoinkapp), [Zettlr App](spot://zettlrapp)
   [zoom.us App](spot://zoom.usapp), [Zoom App](spot://zoomapp),
+
+  DELS: [[App]], 
+
+
+
 
 
 

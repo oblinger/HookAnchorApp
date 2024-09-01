@@ -1,5 +1,10 @@
 .[[Mom]].
   ADDS:   [Mom Games](spot://momgames),
+  ADDS:   , , , [[JJ]], , , , , , , , , , , , , 
+  , , ,
+  DELS: [[Application]], [[Books]], [[DD]], [[Job History]], [[Job Test]], [[JOB Tests]], [[Lst]], [[MOV]], [[News]], [[NOISE]], [[OKR]], [[Photo]], [[pPrj]], [[PROJ]], [[RD]], [[SCR]], [[SV Competitor]], [[TOC]], [[Zap]], 
+
+
 
 
 

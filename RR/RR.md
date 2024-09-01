@@ -4,13 +4,13 @@
   [[RR OKRs]]:
   [[RR PAPERS]]:
   [[RR Philosophy]]:
-  [[AI]]:
+  :
   [[Alg]]:
   [[ByteTrack]]:
   [[Covid]]:
   [[Lrn it]]:
   [[MATERIALS]]:
-  [[ML]]:
+  :
   [[ML Ops]]:
   [[Para]]:
   [[REF]]:
@@ -25,15 +25,20 @@
   [[Systems]]:
   [[Trackers]]:
   [[Yolo]]:
-  ADDS:   [[Stat]]
+  ADDS:
 n:: Research Reference pages
 - [[RR MGR]], [[RR Philosophy]], [[RR PAPERS]],
 -
   ADDS:
 [[ML Ops]]
-  ADDS:   [[Book]],
-  ADDS:   [[RR Med]], [[RR Mgt]],
+  ADDS:   ,
+  ADDS:   , ,
   ADDS:   [[Sophie's World]], [[Sora]],
+
+  DELS: [[AI]], [[ML]], [[Stat]], [[Book]], [[RR Med]], [[RR Mgt]], 
+
+
+
 
 
 

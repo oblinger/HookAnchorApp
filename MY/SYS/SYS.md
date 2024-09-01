@@ -17,13 +17,18 @@
   :
   [[My Android]]:
   [[Notifications]]:
-  [[OBS]]:
+  :
   :
   DELS: , ,
 .                 **MY PERSONAL SYSTEMS**
   ADDS:   [[My Github Webpage]],
   ADDS:   [[My Hacks]],
   ADDS:   ,
+
+  DELS: [[OBS]], 
+
+
+
 
 
 

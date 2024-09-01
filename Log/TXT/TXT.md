@@ -1,6 +1,11 @@
 .[[TXT]].
-  [[Letters]], [[Msg]]
+  , [[Msg]]
   ADDS:   [[__TXT__ Aniket Recruiters]],
+
+  DELS: [[Letters]], 
+
+
+
 
 
 

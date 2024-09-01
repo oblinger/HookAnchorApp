@@ -1,6 +1,11 @@
 .[[Log]].
   ADDS:   [[Quote]],
   ADDS:   [[Day]], [[Journal]], [[Log Log]], [[Log Trash]], [[MEETING]], [[Note]], [[Receipts]], [[Recordings]], [[TT]], [[Untyped]], [[WP]],
+  ADDS:   [Receipts Folder](spot://receiptsfolder),
+
+
+
+
 
 
 

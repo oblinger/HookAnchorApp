@@ -1,18 +1,23 @@
 
 .[[CV]].
-  ROOTS:[CV Root](spot://cvroot), [CV Confluence](spot://cvconfluence), [CV Jira Page](spot://cvjirapage),  [CV Notion](spot://cvnotion), [Data](spot://data), ,
+  ROOTS:[CV Root](spot://cvroot), [CV Confluence](spot://cvconfluence), [CV Jira Page](spot://cvjirapage),  [CV Notion](spot://cvnotion), , ,
   DIRS:	[CV Google Page](spot://cvgooglepage), ,  ,
-  ORGS:	[CV Docs](spot://cvdocs), [DOCs](spot://docs), [CV Info](spot://cvinfo), [CV Log](spot://cvlog),
+  ORGS:	[CV Docs](spot://cvdocs), [DOCs](spot://docs), [CV Info](spot://cvinfo), ,
   ADDS:	, [CV Ana](spot://cvana), ,
   OLD:	[CVT](spot://cvt), [DSET](spot://dset), ,
   ADDS:   [svdata](spot://svdata), ,
   ADDS:   [Standup](spot://standup),
   ADDS:   [APIs](spot://apis),
   ADDS:   [CAPS](spot://caps),
-  ADDS:   [[SVCV Re-ID]],
+  ADDS:   ,
   ADDS:   ,
   ADDS:   [CV Gdrive](spot://cvgdrive),
-  ADDS:   [[CV Hack Notes]],
+  ADDS:   ,
+  ADDS:   [[CV Hack Notes]], [[CV Log]], [[SVCV Re-ID]], 
+
+
+
+
 
 
 

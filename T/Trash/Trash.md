@@ -1,6 +1,11 @@
 .[[Trash]].
-  ADDS:   [ToTrash Folder](spot://totrashfolder), [TRASH Downloads Folder](spot://trashdownloadsfolder), [TRASH for Obsidian Folder](spot://trashforobsidianfolder), [TRASH Mac](spot://trashmac)
-  [TRASH Obsidian](spot://trashobsidian), [TRASH ToTrash](spot://trashtotrash),
+  ADDS:   [ToTrash Folder](spot://totrashfolder), [TRASH Downloads Folder](spot://trashdownloadsfolder), , [TRASH Mac](spot://trashmac)
+  , [TRASH ToTrash](spot://trashtotrash),
+
+  DELS: [TRASH for Obsidian Folder](spot://trashforobsidianfolder), [TRASH Obsidian](spot://trashobsidian), 
+
+
+
 
 
 

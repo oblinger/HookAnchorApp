@@ -1,11 +1,16 @@
 .[[EOC]].
-  [[EOCA]]: Agenda
-  [[EOCB]]:	Book
-  [[EOCI]]:	Ideas
-  [[EOCK]]:	KEY Ideas
-  [[EOCT]]:	Topics
+  : Agenda
+  :	Book
+  :	Ideas
+  :	KEY Ideas
+  :	Topics
   -
   [[eoc-atlas]], [[eoc-formal]], [[eoc-impl]], ,  [[FF-prize]], [[Paths]], [[EOC Log]],
+
+  DELS: [[EOCA]], [[EOCB]], [[EOCI]], [[EOCK]], [[EOCT]], 
+
+
+
 
 
 

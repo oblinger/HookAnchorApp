@@ -2,7 +2,7 @@
   WORK:	, [PROJ Gdrive](spot://projgdrive), ,
   MINE:	[PROJ Folder](spot://projfolder), [[PP]],
   -
-  [[UF]]:
+  :
   [[Spot Cmdr]]:
   -
   [[2016-00 FileThis]],
@@ -17,7 +17,12 @@
   [[2022-03 BeVC]]:  [[Searches]],
   ,
   [[2023-07 Task Rabbit]]: [[Task Rabbit]],
-  ADDS:   [[2022-05 Enxt]],
+  ADDS:   ,
+
+  DELS: [[UF]], [[2022-05 Enxt]], 
+
+
+
 
 
 

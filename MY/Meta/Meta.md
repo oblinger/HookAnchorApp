@@ -1,26 +1,31 @@
 
 :: [[Dir]]
 .[[Meta]].
-  [[Meta Flow]]:
   :
-  [[Meta List]]:
   :
-  [[Meta Meta]]:
+  :
+  :
+  :
   [[Meta Meta Conept]]:
   :
-  [[Meta Plan]]:
-  [[Meta Proj]]:
-  [[Meta Set]]:
   :
   :
-  ADDS:   [[Meta Log]], [[Meta Org -old-page-]],
-  ADDS:   [[Base]],
-  ADDS:   [[Roots]], ,
+  :
+  :
+  :
+  ADDS:   , ,
   ADDS:   ,
-  ADDS:   [[meta Tasks]],
-  ADDS:   [[Dir]], [[Meta Coms]],
+  ADDS:   , ,
   ADDS:   ,
-  ADDS:   [[Meta Group]],
+  ADDS:   ,
+  ADDS:   , ,
+  ADDS:   ,
+  ADDS:   ,
+  ADDS:   [[Base]], [[Dir]], [[Meta Coms]], [[Meta Flow]], [[Meta Group]], [[Meta List]], [[Meta Log]], [[Meta Meta]], [[Meta Org -old-page-]], [[Meta Plan]], [[Meta Proj]], [[Meta Set]], [[meta Tasks]]
+  [[Roots]], 
+
+
+
 
 
 

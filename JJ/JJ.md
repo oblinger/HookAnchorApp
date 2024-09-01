@@ -1,14 +1,19 @@
 .[[JJ]].
-  ADDS:   [[Lst]], [[MOV]], [[News]], [[NOISE]], [[OKR]], [[Photo]], [[SCR]], [[TOC]],
+  ADDS:   , , , , , , , ,
   ADDS:   ,
-  ADDS:   [[Application]], [[Books]], [[DD]], , , [[pPrj]], [[RD]], [[SV Competitor]], [[Zap]],
+  ADDS:   , , , , , , , , ,
   ADDS:   ,
-  ADDS:   [[JOB Tests]], ,
+  ADDS:   , ,
   ADDS:   ,
   ADDS:   ,
-  ADDS:   [[Mom]],
-  ADDS:   [[Job History]], , [[Job Test]],
-  ADDS:   [[PROJ]],
+  ADDS:   ,
+  ADDS:   , , ,
+  ADDS:   ,
+  ADDS:   [[Application]], [[Books]], [[DD]], [[Job History]], [[Job Test]], [[JOB Tests]], [[Lst]], [[Mom]], [[MOV]], [[News]], [[NOISE]], [[OKR]], [[Photo]], [[pPrj]], [[PROJ]], [[RD]], [[SCR]]
+  [[SV Competitor]], [[TOC]], [[Zap]], 
+
+
+
 
 
 
