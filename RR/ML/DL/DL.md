@@ -1,17 +1,18 @@
 
 .[[DL]].
-  PARTS:	[[Attention]], [[Activation Functions]], [[Feed Forward Layer]], 
-  DETAILS:	[[Invertable Density Estimation]], [[LoRA]], [[ReLU]], 
-  .		    [[ORPO Odds Ratio Preference Optimization]], 
-  [[DL Strat]]:	[[Gradient Checking]], 
-  [[DL Topic]]:	[[GenAI]], [[Regularization]], [[Self Supervised Learning]], [[RAG]], 
-  [[DL Alg]]:	[[Auto Encoders]], [[GANs]], [[LSTM]], [[NN]], [[Transformers]], [[CNNs]], [[LLM]], [[RNNs]],
-  .			[[VAEs]], [[RLHF Reinforcement Learning from Human Feedback]], 
+  PARTS:	[[Attention]], [[Activation Functions]], [[Feed Forward Layer]],
+  DETAILS:	[[Invertable Density Estimation]], [[LoRA]], [[ReLU]],
+  .		    [[ORPO Odds Ratio Preference Optimization]],
+  :	[[Gradient Checking]],
+  [[DL Topic]]:	[[GenAI]], [[Regularization]], [[Self Supervised Learning]], [[RAG]],
+  [[DL Alg]]:	[[Auto Encoders]], [[GANs]], [[LSTM]], [[NN]], [[Transformers]], , [[LLM]], [[RNNs]],
+  .			[[VAEs]], [[RLHF Reinforcement Learning from Human Feedback]],
   DL ALG2:	[[KAN - Kolmogorov-Arnold Neworks]], [[DSPY System]],
-  [[DL SYS]]:	[[GPT]], [[Segment Anything]], [[RASA]], 
+  [[DL SYS]]:	[[GPT]], [[Segment Anything]], [[RASA]],
   [[DL Notation]]:	[[NG Notation]], [[Coursera Notes]]:
-  [[DL Opto]], 
-  
+  ,
+  ADDS:   [[CNN]], [[DL Optimization]], [[DL Strategy]], [[VAE - Variational Auto Encoder]], 
+  DELS: [[DL Strat]], [[CNNs]], [[DL Opto]], 
 
 
 
