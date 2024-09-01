@@ -15,6 +15,7 @@
   ADDS:   [[CNNs]], [[DL Opto]], [[DL Strat]],
 
 
+
   DELS: [[CNN]], [[DL Optimization]], [[DL Strategy]], [[VAE - Variational Auto Encoder]], 
 
 
