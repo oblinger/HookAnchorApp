@@ -87,27 +87,39 @@ SMART - Specific, Measurable, Achievable, Relevant, Time-based
 # TOPIC STORIES
 ## = TURN AROUND
 
-### AEOLUS Turn Around
-- PERSONNEL
-	- Interview XXXX in 9 months & hired 40+ PhDs & 20 Eng
-- ARCHITECTURE
-	- 
 
 
 ## = CONFLICT
+- MAXIM; Hackathon
+- JSON SCOPE -> ShipOrdering, Moth balling, Product Matrix, 1Pager
+- Alex Scope -> ???
+- AF Equity Split
+- Pietro Firing
 
-### BOSS TASKING CONFLICTS - Jason Scattered & Tasking
-- TASKING
-	- OVER SCOPING - Startups need to do more with less and fast -- still CEO over tasking is counter productive.
+### JASON SCOPE CONFLICTS - Scattered Tasking
+
+#### Over Scoping --> Ship Date Ordering
+- Startups need to do more with less and fast -- still CEO over tasking is counter productive.
 	- ==> #1 - Agreed to 'ship date' ordering, then built schedules based on that evolving ordering.
-	- OVER SCOPING - Showed number of implicit deliverables and maintained product was too high for headcount.
-	- ==> #2 - Got multiple efforts mothballed so we could focus on our mission critical deployments.
-	- SHOOT FROM THE HIP TASKING - Give me a POC for tennis in a day or two.
-	- "this will not be a day or two it will be the better part of a week from most of the team"
-	- ==> #3 - Aggressively moved forward (did planning alone).  Then made all activity very visible on day by day basis.
-	-            He eventually shut it down after several days and accepted a smaller deliverable.
-	- ==> # 3b Extended sprint a week to accommodate, then let him see quarterly deliverables slip a week.
-	          he accepted it all, and I think it made him more appreciative of the full POC costs; mid-sprint changes costs.
+
+#### OVER SCOPING --> "Mothball" Descoping
+- OVER SCOPING - Showed number of implicit deliverables and maintained product was too high for headcount.
+- "MOTHBALLING" ==> #2 - Got multiple efforts mothballed so we could focus on our mission critical deployments.
+#### SHOOT FROM THE HIP TASKING --> Product Matrix
+**PRODUCT MATRIX** - Developed product matrix with 'shirt size' estimates of effort, risk, and impact
+- 
+
+**Tennis POC** - "Give me a POC for tennis in a day or two"
+- "this will not be a day or two it will be the better part of a week from most of the team"
+- ==> #3 - Aggressively moved forward (did planning alone).  Then made all activity very visible on day by day basis.
+- He eventually shut it down after several days and accepted a smaller deliverable.
+- ==> # 3b Extended sprint a week to accommodate, then let him see quarterly deliverables slip a week.
+		  he accepted it all, and I think it made him more appreciative of the full POC costs; mid-sprint changes costs.
+
+
+### MAXIM HACK-WEEK --> 
+
+
 
 
 ## PRODUCT DELIVERY
@@ -118,11 +130,6 @@ SMART - Specific, Measurable, Achievable, Relevant, Time-based
 ### PRODUCT DELIVERY - In The Weeds Execution - SportVisio BB
 
 
-## GENERATIVE AI - DL
-
-### SV - Court Registration
-
-### SV - 
 
 
 

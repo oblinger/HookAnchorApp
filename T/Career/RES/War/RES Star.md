@@ -1,4 +1,4 @@
-. [[S.T.A.R.]], [[RES]]
+. [[S.T.A.R.]], [[RES]], [[RES War]], 
 
 ## Sports Visio
 
@@ -83,3 +83,8 @@ Teams had not been doing any ticket tracking and were using spreadsheets
 - S: Cash rich, Short timeline, Unrealistic investors
 - A: Hiring explosion, 2 tier mgt 
 - R: 
+### AEOLUS Turn Around
+- PERSONNEL
+	- Interview XXXX in 9 months & hired 40+ PhDs & 20 Eng
+- ARCHITECTURE
+	- 

@@ -1,3 +1,4 @@
+- MoreStars -> Nick, Luis, Uri -> 
 - LUNCH:	[[@Theo Enns]],
 - Doug ping
 - [[@Uri Weiss]]			- Was @ Google, Mentors Leaders
