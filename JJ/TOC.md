@@ -1,10 +1,10 @@
 
 ROOT JUMP PAGES::
 
-[[AF]],	[[AMA]],	[[BUY]],	[[CTC]],	[[Enxt]],	[[gDR]],	[[Log]],	[[Meet]],	
-[[Misc]],	[[Old]],	[[Org]],	[[TEMPLATER]],	[[Trash]],	[[WW]],	[[Application]],	
-[[Mom]],	[[MOV]],	[[News]],	[[NOISE]],	[[OKR]],	[[Photo]],	[[pPrj]],	[[Proj]],	
-[[RD]],	[[SCR]],	
+[[AF]],	[[AMA]],	[[Application]],	[[BUY]],	[[CTC]],	[[Enxt]],	[[gDR]],	[[Log]],	
+[[Meet]],	[[Misc]],	[[Mom]],	[[MOV]],	[[News]],	[[NOISE]],	[[OKR]],	[[Old]],	
+[[Org]],	[[Photo]],	[[pPrj]],	[[Proj]],	[[RD]],	[[SCR]],	[[TEMPLATER]],	
+[[Trash]],	[[WW]],	
 [[MAC]]: [[App]],	
 [[Brain]]: [[The Sentient Weapon]],	
     [[EOC]]: [[EOCA]],	[[EOCB]],	[[EOCI]],	[[EOCK]],	[[EOCT]],	
