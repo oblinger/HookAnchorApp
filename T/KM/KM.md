@@ -1,4 +1,5 @@
 .[[KM]].
+  [[KM.]], [[KMco]],
   [[KM Anchors]]:
   [KM Folder](spot://kmfolder):
   [[KM Global 2 Local]]:
@@ -6,10 +7,11 @@
   [KM script](spot://kmscript):
   [KM Shell](spot://kmshell):
   :
-  ADDS:   [[KM.]], [[KMco]],
+  ADDS:   
   ADDS:   [[Multi-List WorkFlow]],
   ADDS:   [[Meta KM]],
   ADDS:   [[Zooby_do]],
+
 
 
 
