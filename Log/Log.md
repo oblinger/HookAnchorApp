@@ -3,6 +3,7 @@
   ADDS:   [[Day]], [[Journal]], [[Log Log]], [[Log Trash]], [[MEETING]], [[Note]], [[Receipts]], [[Recordings]], [[TT]], [[Untyped]], [[WP]],
   ADDS:   ,
 
+
   DELS: [Receipts Folder](spot://receiptsfolder), 
 
 

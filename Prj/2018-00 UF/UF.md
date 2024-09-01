@@ -9,7 +9,8 @@
   ADDS:   [[_ideas_OLD]],
   ADDS:   , [[TextPuter]],
   ADDS:   ,
-  ADDS:   [[Info]], 
+  ADDS:   [[Info]],
+
 
 
 
