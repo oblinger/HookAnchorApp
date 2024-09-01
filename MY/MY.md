@@ -3,7 +3,8 @@
   ,
   ADDS:   [[MY Content]], [[My Info]], [[My Stuff]],
   ADDS:   [[Meta]], [MY Folder](spot://myfolder), [[SYS]],
-  ADDS:   [[Closet]], [[Hack]], [[Pln]], [Pln Folder](spot://plnfolder), [[QUICKADD]], [[TEMPLATER]], 
+  ADDS:   [[Closet]], [[Hack]], [[Pln]], [Pln Folder](spot://plnfolder), [[QUICKADD]], [[TEMPLATER]],
+
 
 
 

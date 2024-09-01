@@ -4,7 +4,8 @@
   ADDS:   [[Neural]],
   ADDS:   [[Learning]],
   ADDS:   [[ARIMA Algorithm]], [[BL]],
-  ADDS:   [[DL]], [[Stat]], 
+  ADDS:   [[DL]], [[Stat]],
+
 
 
 

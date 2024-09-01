@@ -15,7 +15,8 @@ n:: Ideas of mine
   [[2020-07 Autonomy]], [[2020-07 Spot Pricing]], [[2020-09 CtrlSaaS]], [[2020-10 MedAR]], [[2020-12 MKT]], [[2020-12 SmartScale]], [[2022-04 Tile Robot]], [[2022-05 Virtual Tour Guide]], [[Basket]]
   [[GHOST-Seed]], [[GuaranteedReserves]], [[Ideas]], [[MKT]], [[Rope Chain]], [[Startup Canvas copy]], [[Word_War]],
   ADDS:   , [[Forum]], , [[Idea Social]],
-  ADDS:   [[Brain]], 
+  ADDS:   [[Brain]],
+
   DELS: [[EduCorp]], [[Hook System]], 
 
 
