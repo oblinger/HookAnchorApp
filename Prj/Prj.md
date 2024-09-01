@@ -1,5 +1,5 @@
 .[[Prj]].
-  WORK:	[PROJ](spot://proj), [PROJ Gdrive](spot://projgdrive), ,
+  WORK:	, [PROJ Gdrive](spot://projgdrive), ,
   MINE:	[PROJ Folder](spot://projfolder), [[PP]],
   -
   [[UF]]:
@@ -18,6 +18,12 @@
   ,
   [[2023-07 Task Rabbit]]: [[Task Rabbit]],
   ADDS:   [[2022-05 Enxt]],
+
+  DELS: [PROJ](spot://proj), 
+
+
+
+
 
 
 

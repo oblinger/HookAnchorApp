@@ -10,9 +10,15 @@
   ADDS:   [APIs](spot://apis),
   ADDS:   [CAPS](spot://caps),
   ADDS:   [[SVCV Re-ID]],
-  ADDS:   [Info](spot://info),
+  ADDS:   ,
   ADDS:   [CV Gdrive](spot://cvgdrive),
   ADDS:   [[CV Hack Notes]],
+
+  DELS: [Info](spot://info), 
+
+
+
+
 
 
 

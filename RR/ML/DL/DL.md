@@ -11,7 +11,13 @@
   [[DL SYS]]:	[[GPT]], [[Segment Anything]], [[RASA]],
   [[DL Notation]]:	[[NG Notation]], [[Coursera Notes]]:
   ,
-  ADDS:   [[CNN]], [[DL Optimization]], [[DL Strategy]], [[VAE - Variational Auto Encoder]], 
+  ADDS:   , , , ,
+  ADDS:   [[CNNs]], [[DL Opto]], [[DL Strat]],
+
+
+  DELS: [[CNN]], [[DL Optimization]], [[DL Strategy]], [[VAE - Variational Auto Encoder]], 
+
+
   DELS: [[DL Strat]], [[CNNs]], [[DL Opto]], 
 
 

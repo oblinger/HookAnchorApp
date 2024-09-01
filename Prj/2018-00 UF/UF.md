@@ -8,6 +8,12 @@
   ADDS:   [[UC]],
   ADDS:   [[_ideas_OLD]],
   ADDS:   , [[TextPuter]],
+  ADDS:   [[Info]],
+
+
+
+
+
 
 
 
