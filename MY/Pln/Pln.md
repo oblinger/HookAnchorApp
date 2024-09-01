@@ -19,8 +19,9 @@
   ADDS:   [[Bfast]], [[Lunch]], [[Read]], [[Wake]],
   ADDS:   ,
   ADDS:   ,
-  ADDS:   [[COMS]], [[CVP]], [[Diary]], [[Hack]],
-
+  ADDS:   , , , ,
+  ADDS:   [[Lrn]], 
+  DELS: [[COMS]], [[CVP]], [[Diary]], [[Hack]], 
 
 
 

@@ -4,7 +4,8 @@
   OTHR:	[[GoogleJob]], [[NJ24 Framing]], [[NJ Read]],
   OLD:	, ,
   ADDS:   [[NJ.]],
-  ADDS:   [[Lrn]], [[NJ16]], [[NJ22]], [[RES]],
+  ADDS:   , [[NJ16]], [[NJ22]], ,
+  DELS: [[Lrn]], [[RES]], 
 
 
 

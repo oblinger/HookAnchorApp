@@ -4,7 +4,8 @@
   ADDS:   , , , , , ,
   , , , ,
   ,
-  ADDS:   [[Pln]], [[Prj]], [[RR]], [[Set]], [[SV]], [[T]],
+  ADDS:   , [[Prj]], [[RR]], [[Set]], [[SV]], [[T]],
+  DELS: [[Pln]], 
 
 
 

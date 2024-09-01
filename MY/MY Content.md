@@ -98,7 +98,8 @@
   ADDS:
   ADDS:   , , ,
   ADDS:   , , , ,
-  ADDS:   [[Doc]], [[Idea]], [[TXT]],
+  ADDS:   [[Doc]], , ,
+  DELS: [[Idea]], [[TXT]], 
 
 
 

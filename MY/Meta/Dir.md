@@ -13,8 +13,9 @@
   ADDS:   ,
   ADDS:   , , , , , , , , , , , ,
   ,
-  ADDS:   [AT Folder](spot://atfolder), [K Folder](spot://kfolder), [Legal Folder](spot://legalfolder), [Log Folder](spot://logfolder), [Pln Folder](spot://plnfolder), [Receipts Folder](spot://receiptsfolder)
-  [Returns Folder](spot://returnsfolder), [Set Folder](spot://setfolder), [WW Folder](spot://wwfolder),
+  ADDS:   [AT Folder](spot://atfolder), , , [Log Folder](spot://logfolder), , 
+  , [Set Folder](spot://setfolder), ,
+  DELS: [K Folder](spot://kfolder), [Legal Folder](spot://legalfolder), [Pln Folder](spot://plnfolder), [Receipts Folder](spot://receiptsfolder), [Returns Folder](spot://returnsfolder), [WW Folder](spot://wwfolder), 
 
 
 
