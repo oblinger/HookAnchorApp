@@ -20,6 +20,7 @@ n:: Ideas of mine
 
 
 
+
   [[Ideas]]:
   -
   [[2000-00 Lean Canvas]]:
