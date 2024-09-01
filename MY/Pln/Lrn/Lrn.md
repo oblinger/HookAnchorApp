@@ -1,6 +1,6 @@
-.[[Lrn]].
+.[[Lrn]].   [[Lrn.]]
   ,  [[Lrn Mgt]],
-  ADDS:   [[Lrn.]],
+  ADDS:  
 
 
 

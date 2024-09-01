@@ -5,6 +5,21 @@
 
 # LOG
 
+
+### 2024-09-01  Text about SportsVisio
+
+Nick a bit of advice:  
+- Hacking trip left Jason feeling the CV team is not good enough, and maybe I am too old and "not in the code" enough.  (I have not been in the code, I could become with some time cost, but right now I am trying to prepare to leave!).  I think the CV team and I am getting some unfair blame here, and I have never addressed those 'unfair' claims with him after said in passing in one conversation.
+- We will get our bridge round, but at a lower valuation, and he wants to cut 25% of the company, along w 25% of my salary.  I would accept the cut and stay on as to grow skill (maybe even in the code), but I don't feel safe and I am struggling to do a great job search.
+- And their is a weirdly super capable guy that Jason introduced me to that w/ on Tuesday that might do some 'free' work as a test of him.
+- I could also just have a heart to heart where I do try to correct some bad assumptions he has made, but mostly just "take the temperature" on me and his plans for the AI team, and might even negotiate a light role (with light pay) until I transition out.  But it is possible he MIGHT think he need a new CTO before the A-round.  (I am really extrapolating from one sentence said once)
+Thoughts?  Maybe chat about all of this?
+
+
+In hind sight this hacking trip really worked out very badly!
+
+
+
 ### 2023-07-26  Pitching a Business
 
 - COMPANY PITCH - unique opportunity / approach

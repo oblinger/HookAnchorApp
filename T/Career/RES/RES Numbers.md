@@ -80,7 +80,7 @@ Not counted
 ### - 17 COUNTRIES SPANNED
 Counted 17 countries at Aeolus.  (many also at AF)**
 
-### - 3-person hiring org, 13-step process
+### - HIRING: 2000+ from 3-person hiring org, 13-step process
 **HIRING TEAM: 3 James, Poland Guy, Maria  (Aeolus)**
 
 **HIRING PROCESS: 13-steps at AF**
@@ -100,6 +100,13 @@ Counted 17 countries at Aeolus.  (many also at AF)**
 10. Three week task
 11. Three month (Last check 50% retained over last two checks)
 
+HIRING NUMBERS
+. 2,000+  CANDIDATES CONSIDERED for Aeolus
+- Robotics Specialist Candidates -- 447
+- C/C++ Robot Brain Engineer Candidates -- 1,353
+- Director of Software Engineering Candidates -- 123
+Total -- 1,923
+- plus hundreds interviewed by AF too
 _
 
 ### - 25Papers, 22Patents, 36+Presents 
@@ -148,7 +155,7 @@ WORKSHOPS
 
 _
 
-### - Boards & Advisorships
+### - Boards & Advisor-ships
 #### . Advisorships
 	- TECHNO-THERAPY advisor  (Jan 2014 - present)
 	- ADVISOR RULY Feb 2014 to Nov 2014 - Chad Mulder - chadmulder@gmail.com - 
@@ -261,7 +268,7 @@ _
 - Developed green-field prototypes like Sunpower's Instant Design which combine latest resarch in geometric-constraint processing, machine vision, deep learning, and GPU optomization; then translated the prototype a production system rolled out nationwide.  It is now a new key sales direct to consumer inbound sales channel for the consumer solar market.
 
 ### - AEOLUS ROBOTICS 
-#### . WEB REFS
+#### . WEB URL REFS
 PR about Aeolus Robot at CES
 -- quick clips showing our robot at CES https://www.youtube.com/watch?v=B8yQmPhQPBs
 -- WashPost article:  https://www.washingtonpost.com/news/innovations/wp/2018/01/11/this-robotic-maid-takes-us-one-step-closer-to-the-jetsons/?noredirect=on&utm_term=.4c2870d5f728
@@ -274,7 +281,7 @@ PR about Aeolus Robot at CES
 	- $10M Aug-31-2020 GigaMedia
 	- $20M Dec-13-2019 Venture round (estimated)
 	- $16M Jan-1-2018
-#### . 2,000+  CANDIDATES CONSIDERED
+#### . 2,000+  CANDIDATES CONSIDERED for Aeolus
 - Robotics Specialist Candidates -- 447
 - C/C++ Robot Brain Engineer Candidates -- 1,353
 - Director of Software Engineering Candidates -- 123
@@ -289,12 +296,13 @@ Total -- 1,923
 
 _
 #### ??? TEAM SIZE,  ??? ORG SIZE   
-I think 62 or 63 in my team  &  130 across both sides of the company
+I think 62 or 63 in my team  &  130+ across both sides of the company
 
 ### - MARTIAN ROBOTICS
 - Developed initial bathroom cleaning robot -- kinematics, sensing, haptic feedback loops, and firmware drivers.
 - Hired/lead the 8 software members of our team, and served as the archiect for development of a Robot OS specialized for household cleaning (for mapping and haptic operation with generalized effectors over arbitrary, non-parametric, surfaces.)  
 - Co-negotiated the acquisition of the Bizzy Robotics IP and team to Aeolus.
+- 13 person team total (including interns etc) 
 ### - PAY BY GROUP
 - **Technology was used** **to secure $3.2M** in funding.   (Camilo lists $5M on his web-page)
 - Serviced over 500 merchants, 100,000 users, and $10 million in sales  

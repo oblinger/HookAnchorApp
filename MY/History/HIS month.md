@@ -1,4 +1,9 @@
 
+[[Fried\|Fri Jul 5  2024 ]]  	[[Fried#MINI PROJECTS]]  
+[[Fun\|Fri Jul 5  2024 ]]  	[[Fun#FUN THINGS]]  
+[[Fun\|Fri Jul 5  2024 ]]  	[[Fun#__]]  
+[[Gap\|Fri Jul 5  2024 ]]  	[[Gap#= REPEAT =]]  
+[[Now\|Fri Jul 5  2024 ]]  	[[Now#SOON]]  
 [[Now\|Fri Jul 5  2024 ]]  	[[Now#Watch]]  
 [[Now\|Fri Jul 5  2024 ]]  	[[Now#Big]]  
 [[Now\|Fri Jul 5  2024 ]]  	[[Now#[[Q2]]]]  

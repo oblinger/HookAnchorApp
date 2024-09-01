@@ -5,6 +5,7 @@ n:: no prefix.	Dated entries without any typing prefix
 
 | Date       | File                                    | Notes                                                                                                                             |
 | ---------- | --------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------- |
+| 2024-09-01 | [[@Nick Allen]]                             | Text about SportsVisio                                                                                                            |
 | 2024-08-29 | [[2024-08 Backend Architect]]               | Spreadsheet                                                                                                                       |
 | 2024-08-27 | [[@James Neilson]]                          |                                                                                                                                   |
 | 2024-08-26 | [[@Steve Singles]]                          | AI Dash Job Posting                                                                                                               |

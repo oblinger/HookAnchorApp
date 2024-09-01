@@ -1,5 +1,4 @@
 
-
 [[WORK]]:	4h
 [[MED]]:	Exercise, Cortisol
 [[NJ]]:	[[RES Star]], [[CN]],
