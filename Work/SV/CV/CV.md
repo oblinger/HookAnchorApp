@@ -16,8 +16,10 @@
   ADDS:   [[CV Hack Notes]], [[CV Log]], [[SVCV Re-ID]],
   ADDS:   [[Data]], ,
   ADDS:   ,
-  ADDS:   [[Info]], 
-  DELS: [[CVP]], 
+  ADDS:   ,
+  ADDS:   [[CVP]],
+
+  DELS: [[CVP]],[[Info]], 
 
 
 

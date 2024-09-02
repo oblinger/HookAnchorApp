@@ -16,8 +16,10 @@ n:: Ideas of mine
   [[GHOST-Seed]], [[GuaranteedReserves]], [[Ideas]], [[MKT]], [[Rope Chain]], [[Startup Canvas copy]], [[Word_War]],
   ADDS:   , [[Forum]], , [[Idea Social]],
   ADDS:   ,
-  ADDS:   [[EduCorp]], [[Hook System]], 
-  DELS: [[Brain]], 
+  ADDS:   , ,
+  ADDS:   [[Brain]],
+
+  DELS: [[Brain]],[[EduCorp]], [[Hook System]], 
 
 
 

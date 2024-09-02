@@ -35,7 +35,9 @@ n:: Research Reference pages
   ADDS:   , ,
   ADDS:   [[Sophie's World]], [[Sora]],
   ADDS:   [[AI]], , [[ML]], [[RR Med]], [[RR Mgt]], ,
-  ADDS:   [[Book]], [[Stat]], 
+  ADDS:   , ,
+
+  DELS: [[Book]], [[Stat]], 
 
 
 

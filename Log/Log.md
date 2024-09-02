@@ -3,7 +3,9 @@
   ADDS:   [[Day]], [[Journal]], [[Log Log]], [[Log Trash]], [[MEETING]], [[Note]], [[Receipts]], [[Recordings]], [[TT]], [[Untyped]], [[WP]],
   ADDS:   ,
   ADDS:   , , , ,
-  DELS: [[Idea]], [[Meet]], [Receipts Folder](spot://receiptsfolder), [[TXT]], 
+  ADDS:   [[Idea]], [[Meet]], [Receipts Folder](spot://receiptsfolder), [[TXT]],
+
+
 
 
 

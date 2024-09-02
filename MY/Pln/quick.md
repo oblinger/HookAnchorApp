@@ -1,3 +1,8 @@
+- HIRE:  get last 5 jobs 
+- GT datas for homography
+- liat of valud contrl points from Michael
+- get control point in SW system for homogoraphy input from user
+- seibert court template choice auto
 - russian river
 - Spot:   spgrab. foo!bar will not add a correct link to 'bar' in foo.  it adds a file link
 - matrix for hiring; tell Brian; schedule with Jack

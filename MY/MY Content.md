@@ -99,7 +99,9 @@
   ADDS:   , , ,
   ADDS:   , , , ,
   ADDS:   [[Doc]], , ,
-  ADDS:   [[Idea]], [[TXT]], 
+  ADDS:   , ,
+
+  DELS: [[Idea]], [[TXT]], 
 
 
 

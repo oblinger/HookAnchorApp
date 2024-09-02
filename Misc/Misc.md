@@ -7,7 +7,9 @@
   ADDS:   ,
   ADDS:   ,
   ADDS:   , , ,
-  DELS: [K Folder](spot://kfolder), [[Old]], [[SF]], 
+  ADDS:   [K Folder](spot://kfolder), [[Old]], [[SF]],
+
+
 
 
 

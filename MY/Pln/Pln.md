@@ -21,8 +21,10 @@
   ADDS:   ,
   ADDS:   , , , ,
   ADDS:   ,
-  ADDS:   [[COMS]], [[CVP]], [[Diary]], [[Hack]], 
-  DELS: [[Lrn]], 
+  ADDS:   , , , ,
+  ADDS:   [[Lrn]],
+
+  DELS: [[Lrn]],[[COMS]], [[CVP]], [[Diary]], [[Hack]], 
 
 
 

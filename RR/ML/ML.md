@@ -5,7 +5,9 @@
   ADDS:   [[Learning]],
   ADDS:   [[ARIMA Algorithm]], [[BL]],
   ADDS:   , ,
-  DELS: [[DL]], [[Stat]], 
+  ADDS:   [[DL]], [[Stat]],
+
+
 
 
 

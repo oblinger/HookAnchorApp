@@ -10,7 +10,9 @@
   ADDS:   , [[TextPuter]],
   ADDS:   ,
   ADDS:   ,
-  DELS: [[Info]], 
+  ADDS:   [[Info]],
+
+
 
 
 
