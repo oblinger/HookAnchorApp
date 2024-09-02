@@ -1,4 +1,0 @@
-.[[SCR]].
-  ADDS:   [SCR dan](spot://scrdan), [SCR Gdrive](spot://scrgdrive), [SCR Joe<>Dan Page](spot://scrjoe<>danpage), [[SCR Note]], [SCR Qingling<>Dan Page](spot://scrqingling<>danpage)
-  [[SCR Qingling<>Dan Webpage]], [SCR Team Page](spot://scrteampage), 
-

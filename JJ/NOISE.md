@@ -1,3 +1,0 @@
-.[[NOISE]].
-  ADDS:   [NOISE Jazz](spot://noisejazz), [NOISE Jazz Autumn](spot://noisejazzautumn), [NOISE MyNoise](spot://noisemynoise), [NOISE Rain](spot://noiserain), [NOISE White](spot://noisewhite), 
-
