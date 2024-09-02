@@ -16,25 +16,6 @@
   ADDS:   [[Dooby]],
   ADDS:   [[Hook System]],
 
-  DELS: [KM Folder](spot://kmfolder), 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  DELS: [KM Folder](spot://kmfolder), 
-
 
 
 

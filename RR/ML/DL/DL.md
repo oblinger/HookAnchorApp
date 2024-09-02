@@ -56,6 +56,7 @@
 
 
 
+
   DELS: [[CNN]], [[DL Optimization]], [[DL Strategy]], [[VAE - Variational Auto Encoder]], 
 
 
