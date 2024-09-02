@@ -1,16 +1,3 @@
 .[[MY Content]].
-  ADDS:   [[Doc]],
-
-
-
-
-
-
-
-
-
-
-
-
-
+  ADDS:   [[Doc]], 
 

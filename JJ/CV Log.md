@@ -1,16 +1,3 @@
 .[[CV Log]].
-  ADDS:   [[MinCalcs]],
-
-
-
-
-
-
-
-
-
-
-
-
-
+  ADDS:   [[MinCalcs]], 
 

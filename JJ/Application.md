@@ -65,18 +65,5 @@
   [Wiggle 1Pass](spot://wiggle1pass), [Wikipedia 1Pass](spot://wikipedia1pass), [WilliamsSonoma 1Pass](spot://williamssonoma1pass), [Wise](spot://wise), [WordPress 1Pass](spot://wordpress1pass)
   [WorkFlowy 1Pass](spot://workflowy1pass), [WSJ 1Pass](spot://wsj1pass), [Wufoo 1Pass](spot://wufoo1pass), [Xfinity 1Pass](spot://xfinity1pass), [Yahoo 1Pass](spot://yahoo1pass)
   [ycNews 1Pass](spot://ycnews1pass), [yCombinator 1Pass](spot://ycombinator1pass), [Zapier 1Pass](spot://zapier1pass), [Zazzle 1Pass](spot://zazzle1pass), [Zenefits 1Pass](spot://zenefits1pass)
-  [Zenni 1Pass](spot://zenni1pass), [ZipCar 1Pass](spot://zipcar1pass), [Zoom 1Pass](spot://zoom1pass), [Zwillow 1Pass](spot://zwillow1pass),
-
-
-
-
-
-
-
-
-
-
-
-
-
+  [Zenni 1Pass](spot://zenni1pass), [ZipCar 1Pass](spot://zipcar1pass), [Zoom 1Pass](spot://zoom1pass), [Zwillow 1Pass](spot://zwillow1pass), 
 

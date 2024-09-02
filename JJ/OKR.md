@@ -1,16 +1,3 @@
 .[[OKR]].
-  ADDS:   [OKR Defintions](spot://okrdefintions), [OKR Matrix](spot://okrmatrix),
-
-
-
-
-
-
-
-
-
-
-
-
-
+  ADDS:   [OKR Defintions](spot://okrdefintions), [OKR Matrix](spot://okrmatrix), 
 

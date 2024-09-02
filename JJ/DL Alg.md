@@ -1,16 +1,3 @@
 .[[DL Alg]].
-  ADDS:   [[Stable Diffusion]],
-
-
-
-
-
-
-
-
-
-
-
-
-
+  ADDS:   [[Stable Diffusion]], 
 
