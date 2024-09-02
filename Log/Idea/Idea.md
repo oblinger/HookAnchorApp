@@ -19,6 +19,11 @@ n:: Ideas of mine
 
 
 
+
+
+
+
+
   DELS: [[EduCorp]], [[Hook System]], 
 
 
