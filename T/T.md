@@ -24,8 +24,9 @@
   ADDS:   ,
   ADDS:   , ,
   ADDS:   [[Courses]], [[Eli]], [[Food]], [[Legal]], [[Life]], [[MED]], [[MY]], [[Politics]], , [[Tag]], [T Folder](spot://tfolder),
-  ADDS:   [[Career]], [[COMS]], [[EduCorp]], [[FIN]], [[KM]], [KM Folder](spot://kmfolder), [Legal Folder](spot://legalfolder), [[MGR]], [[Trash]],
-
+  ADDS:   , , , , , , , , ,
+  ADDS:   [[SF]], 
+  DELS: [[Career]], [[COMS]], [[EduCorp]], [[FIN]], [[KM]], [KM Folder](spot://kmfolder), [Legal Folder](spot://legalfolder), [[MGR]], [[Trash]], 
 
 
 

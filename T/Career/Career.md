@@ -8,8 +8,9 @@
   ADDS:   ,
   ADDS:   ,
   ADDS:   ,
-  ADDS:   [[RES]], [RES Folder](spot://resfolder),
-
+  ADDS:   , ,
+  ADDS:   [[MGR]], 
+  DELS: [[RES]], [RES Folder](spot://resfolder), 
 
 
 

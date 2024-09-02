@@ -10,7 +10,8 @@ n:: Groupings of like (typed), undated entries.
   ADDS:   [[Humor]], , [[Movies]], [[Phone]], [[Recipe]], [[Returns]], [[Writing]],
   ADDS:   ,
   ADDS:   [[Lang]],
-  ADDS:   [[Book]], [[BUY]], [[CTC]], [Returns Folder](spot://returnsfolder),
+  ADDS:   , , , ,
+  DELS: [[Book]], [[BUY]], [[CTC]], [Returns Folder](spot://returnsfolder), 
 
 
 

@@ -24,7 +24,8 @@
   ADDS:   [[Work]],
   ADDS:   ,
   ADDS:   [[CV]], [[QQ]], [SV Folder](spot://svfolder), [[SV People]], [[SV Strat]], [[SVT]], [Work Folder](spot://workfolder),
-  ADDS:   [[WW]], [WW Folder](spot://wwfolder),
+  ADDS:   , ,
+  DELS: [[WW]], [WW Folder](spot://wwfolder), 
 
 
 

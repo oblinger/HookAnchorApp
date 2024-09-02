@@ -15,6 +15,7 @@
   ADDS:   [[RES Job History]],
   ADDS:   ,
   ADDS:   [[Bio]], ,
+  ADDS:   [RES Folder](spot://resfolder), 
 
 
 

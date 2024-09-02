@@ -1,10 +1,5 @@
-- - spot: when folder is missing either delete command, or just change the group of the command to be "broken"
-sss- spot: when folder is missing either delete command, or just change the group of the command to be "broken
-%contents%
+[[Spot]] 
 
-- change JJ-block build to provide ADDS and DELS link at bottom.
-
-- auto scan for broken links in spot
 - [[PQ#^newjump]]:  
 - spot grab 1pass mastadon. (got a crash)
 - Refactor Jump screens

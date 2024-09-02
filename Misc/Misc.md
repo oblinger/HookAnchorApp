@@ -6,7 +6,8 @@
   [[Rssfeeds]], [[SciFi]], [[Search]], [[Secure]], [[Shop]], [[Sleep]], [[Sleep With Me]], [[STARTUPS]], [[Templates]], [[test88]], [[tickets]], [[Timestamp]], [[Travel Lst]], [[xmas]],
   ADDS:   ,
   ADDS:   ,
-  ADDS:   [K Folder](spot://kfolder), [[Old]], [[SF]],
+  ADDS:   , , ,
+  DELS: [K Folder](spot://kfolder), [[Old]], [[SF]], 
 
 
 

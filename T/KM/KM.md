@@ -13,9 +13,10 @@
   ADDS:   ,
   ADDS:   ,
   ADDS:   ,
-  ADDS:   [[Dooby]],
-  ADDS:   [[Hook System]],
-
+  ADDS:   ,
+  ADDS:   ,
+  ADDS:   [KM Folder](spot://kmfolder), 
+  DELS: [[Dooby]], [[Hook System]], 
 
 
 

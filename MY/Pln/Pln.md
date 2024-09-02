@@ -20,8 +20,9 @@
   ADDS:   ,
   ADDS:   ,
   ADDS:   , , , ,
-  ADDS:   [[Lrn]],
-
+  ADDS:   ,
+  ADDS:   [[COMS]], [[CVP]], [[Diary]], [[Hack]], 
+  DELS: [[Lrn]], 
 
 
 

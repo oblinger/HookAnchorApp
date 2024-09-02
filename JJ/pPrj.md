@@ -1,0 +1,3 @@
+.[[pPrj]].
+  ADDS:   [p Prj List](spot://pprjlist), [p Proj Folder](spot://pprojfolder), [[PQ]], 
+

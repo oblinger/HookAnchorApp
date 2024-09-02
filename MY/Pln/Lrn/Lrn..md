@@ -5,3 +5,5 @@ KNOW:		100 algs
 
 
 - diffusion
+- DL Specialization: Sequence Models (not yet started)
+- Coursera: IBM PyTorch

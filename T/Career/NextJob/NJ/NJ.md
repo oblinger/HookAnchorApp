@@ -5,6 +5,7 @@
   OLD:	, ,
   ADDS:   [[NJ.]],
   ADDS:   , [[NJ16]], [[NJ22]], ,
+  ADDS:   [[Lrn]], [[RES]], 
 
 
 

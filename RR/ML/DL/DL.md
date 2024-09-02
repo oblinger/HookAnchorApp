@@ -13,7 +13,8 @@
   ,
   ADDS:   , , , ,
   ADDS:   , , ,
-  ADDS:   [[CNNs]], [[DL Opto]], [[DL Strat]],
+  ADDS:   , , ,
+  DELS: [[CNNs]], [[DL Opto]], [[DL Strat]], 
 
 
 
