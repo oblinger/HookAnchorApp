@@ -29,6 +29,7 @@
 
 
 
+
   DELS: [TRASH for Obsidian Folder](spot://trashforobsidianfolder), [TRASH Obsidian](spot://trashobsidian), 
 
 
