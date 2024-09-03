@@ -3,6 +3,8 @@ REFACTOR
   - scan_obs_files calls get anchor internally as same time, 
   - At end of inject_markdown is when all calls to set_parent are done
 
+- spot grab 1pass mastadon. (got a crash)
+- Refactor Jump screens
 - - spot: when folder is missing either delete command, or just change the group of the command to be "broken"
 sss- spot: when folder is missing either delete command, or just change the group of the command to be "broken
 %contents%

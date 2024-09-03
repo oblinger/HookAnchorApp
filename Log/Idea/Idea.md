@@ -19,6 +19,8 @@ n:: Ideas of mine
   ADDS:   , ,
   ADDS:   [[Brain]],
 
+
+
   DELS: [[Brain]],[[EduCorp]], [[Hook System]], 
 
 
