@@ -4,7 +4,7 @@
   :
   [[KM Global 2 Local]]:
   [[KM Overview]]:
-  [KM script](spot://kmscript):
+  :
   [KM Shell](spot://kmshell):
   :
   ADDS:
@@ -17,7 +17,8 @@
   ADDS:   ,
   ADDS:   ,
   ADDS:   [[Dooby]], [[Hook System]],
-
+  ADDS:   [KM script](spot://kmscript), 
+  DELS: [KM scrilpt](spot://kmscript), 
 
 
   DELS: [[Dooby]], [[Hook System]],[KM Folder](spot://kmfolder), 
