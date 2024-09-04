@@ -1,4 +1,46 @@
 [[Old Daily]] 
+
+### 2024-09-03  My Strengths
+
+-- I am probably safe for >1year; but Jason has a way of making many folks feel insecure
+-- mostly judged unfairly, but some parts parts are fair:  Not in the code, velocity, wisdom.
+-- really having difficulty putting time into job search
+-- At SV I am improving self, and could get value 'getting into code' but its hard & job search
+-- SV is not a great long term bet
+
+QL: just quit, then prep for next job
+
+
+SWEET SPOTS
+- VISIONARY - Vision creator/holder 
+- PHD HACKER - PhD hacker guy
+
+MANAGER
+A+ Technical Leadership: Quick detailed/good ideas given many problems
+A-	Prioritization & Business sense
+B-	Velocity & Stamina.  Very quick to frame and write problem up.  But fewer worked hours???
+
+C	Leadership Experience
+C	Line management
+C	Up to date tech skills
+A	Smart guy ideas, fast learning
+
+
+DARPA - Great leadership
+Martian Robots - Good leadership
+Aeolus - Not great leadership - Not in the weeds, not loving it, crazy expectations
+Sportsvisio - Good leadership, 
+
+
+CV Team 
+- Juan/Greg are quite good for the money. 
+- Better to have a CTO in the code, but have not had the time.
+- Major historic gaps:  Scope too big/hard/changing, execution too poor
+
+
+
+
+
 ### 2023-11-05  Retirement Planning
 
 2024 - Van $1,530K. 

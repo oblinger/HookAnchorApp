@@ -1,6 +1,6 @@
 .[[RES]].
   [[RES Todo]],
-  : 	, [RES Docx](spot://resdocx), ,
+  [RES Docx](spot://resdocx),
   [[RES Src Info]]: [[RES Numbers]], [[RES Patents]], [[RES Proof Points]], [[RES References]],
   [[RES Star]], [[RES War]], [[RES War AI]],
 - [[2023 - Resume Samples]],
@@ -12,15 +12,11 @@
 - [RES Master Folder](spot://resmasterfolder),
 - [Resume](spot://resume),
 - [[z2 - Linked In Module]],
-  ADDS:   [[RES Job History]],
-  ADDS:   ,
-  ADDS:   [[Bio]], ,
-  ADDS:   ,
+- [[RES Job History]],
+- [[Bio]],
 
 
-
-
-  DELS: [RES Folder](spot://resfolder), 
+[RES Folder](spot://resfolder), 
 
 
 

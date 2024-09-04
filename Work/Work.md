@@ -1,6 +1,8 @@
 .**NOW**. 
-  [[2024-08 Backend Architect|Arch]]:	New & Old
-- stationary push today
+  [[2024-08 Backend Architect|Arch]]:	Wait, Agents
+
+[[DT]]: HomoData,
+
 Fire:	Jack/briones
 [OKRs](https://docs.google.com/presentation/d/1v7Winy9DHxGuYh05_is8zH05ClJi0qclM698-pDXIgY/edit?pli=1#slide=id.g274b3e27e6b_0_0):	Q3 Planning	
 [[DAT|DAT]]:	Get PR ready
@@ -15,6 +17,7 @@ xOvr:	VB/BB 3
 Fball:	v1
 
 ## TRACK
+[[Data]]:
 Data:		Build the stats dataset
 . 			GCP, Halos, Minutes, Colors
 [Bridge](https://docs.google.com/document/d/1oaG7NB2fJ9THAtHcREX6yqrWg91wYEsof9zQNEInFFU/edit):	CrossVideos, 

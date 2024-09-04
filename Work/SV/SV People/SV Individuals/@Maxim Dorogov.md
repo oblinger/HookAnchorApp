@@ -4,6 +4,14 @@
 
 # Log
 
+### 2024-09-03  Feedback
+
+- Hands up
+- 5 months homography
+- Bugs in AI-minutes
+- Utilize rules of basketball in order to improve AI minutes (fix sim annealing)
+- Integrate Human Annotators input to improve AI-minutes.
+
 ### 2023-05-28  Money metric discussion
 
 # Money Metric

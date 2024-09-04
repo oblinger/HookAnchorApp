@@ -5,6 +5,8 @@ n:: no prefix.	Dated entries without any typing prefix
 
 | Date       | File                                    | Notes                                                                                                                             |
 | ---------- | --------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------- |
+| 2024-09-03 | [[Jnl]]                                     | My Strengths                                                                                                                      |
+| 2024-09-03 | [[@Maxim Dorogov]]                          | Feedback                                                                                                                          |
 | 2024-09-01 | [[@Nick Allen]]                             | Text about SportsVisio                                                                                                            |
 | 2024-08-29 | [[2024-08 Backend Architect]]               | Spreadsheet                                                                                                                       |
 | 2024-08-27 | [[@James Neilson]]                          |                                                                                                                                   |

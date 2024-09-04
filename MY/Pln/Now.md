@@ -1,13 +1,33 @@
+Filip, Fireballs, 
+HomoData,
+VeoData,
+EvalData,
+
+Homography
+- format
 
 [[Friday]]: 
-.Clean
-.Facet
-.Fix bathtub
-.Anniversary
+ .Clean
+ .Facet
+ .Fix bathtub
+ .Anniversary
 
-[[DocAWS]] 
-- vet email
+ [[DocAWS]] 
+ - vet email
+## TRACK
+FILIP
+ what to do
+JACK .25
+ which ones
+FIREBALL
+  X: track tail
+EVAL end2end
+  J: pick MinNorm
 
+Jira:
+- format for homo
+- pick game to eval system & doit
+- 
 ### SOON
 ### Watch
 ### Big

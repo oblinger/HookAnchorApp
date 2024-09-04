@@ -1,3 +1,6 @@
+- kalman filter
+- 24 to 30
+- veo example
 - HIRE:  get last 5 jobs 
 - GT datas for homography
 - liat of valud contrl points from Michael

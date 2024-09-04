@@ -2,6 +2,7 @@
 - [Backend](https://docs.google.com/document/d/17b6lD5zyT-axAwYwQkdXpIYtarGUJoD-L9Zl3N3luYQ/edit):  [can](https://docs.google.com/spreadsheets/d/1rk01kRhNaOXcfIzf1b-LXIXsA6kKwD2B/edit#gid=1014506710), [TH](https://techunting.viterbit.site/share-candidates/Xy21oouKFoxihhaOAOiB0/) 
 - Job Ad: [[2023-07 ArchJob.docx]],  out of date: [Backend Architect](https://docs.google.com/document/d/1tcWjfvBen70jcVbkQPfIsAj4Ko-PdFSZ/edit)  
 
+- [gdrive folder](https://drive.google.com/drive/folders/1mSM7TwDdPDWLXIGmNFmpYgI9mcnaUayP) 
 ## [[BBI]] PROMPTS
 - Largest 2-3 systems OWNED & largest two teams LEAD
 - Complex or Challenging Examples:
