@@ -1,24 +1,14 @@
 .[[KM]].
   [[KM.]], [[KMco]],
   [[KM Anchors]]:
-  :
   [[KM Global 2 Local]]:
   [[KM Overview]]:
-  :
-  :
-  :
-  ADDS:
   ADDS:   [[Multi-List WorkFlow]],
   ADDS:   [[Meta KM]],
-  ADDS:   ,
-  ADDS:   ,
-  ADDS:   ,
-  ADDS:   ,
-  ADDS:   ,
-  ADDS:   ,
   ADDS:   [[Dooby]], [[Hook System]],
   ADDS:   [KM script](spot://kmscript),
-  ADDS:   [KM Shell](spot://kmshell), 
+  ADDS:   [KM Shell](spot://kmshell),
+
   DELS: [KM lShell](spot://kmshell), 
 
 
