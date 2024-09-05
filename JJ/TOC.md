@@ -2,6 +2,12 @@
 ROOT JUMP PAGES::
 
 [[BCMS]],	[[Eli Interactions]],	[[ELI Log]],	
+[[Set]]: [[Book]],	[[CTC]],	[[Humor]],	[[Movies]],	[[Phone]],	[[Recipe]],	
+    [[Returns]],	[[ToRead]],	
+    [[BUY]]: [[Bought]],	
+    [[Lang]]: [[haskell]],	
+    [[Writing]]: [[ArmChair]],	
+        [[Politics]]: [[Palestinians]],	[[Race]],	[[RacePitchArchive]],	
 [[Work]]: 
     [[SV]]: [[2022-10-17 SV90]],	[[Circle]],	[[INV]],	[[Mgt]],	[[SV Market]],	
         [[SV Ops]],	[[SV Org]],	[[SV Software]],	[[SVT]],	[[SV Wings]],	
@@ -37,9 +43,3 @@ ROOT JUMP PAGES::
             [[2023 Team Hiring]],	[[2023 Tournament Flow]],	[[2023 Velocity]],	
             [[2023 Volleyball Product]],	[[2023 Volleyball SV Product]],	
             [[2024 AI Product Choice]],	
-[[Set]]: [[Book]],	[[CTC]],	[[Humor]],	[[Movies]],	[[Phone]],	[[Recipe]],	
-    [[Returns]],	[[ToRead]],	
-    [[BUY]]: [[Bought]],	
-    [[Lang]]: [[haskell]],	
-    [[Writing]]: [[ArmChair]],	
-        [[Politics]]: [[Palestinians]],	[[Race]],	[[RacePitchArchive]],	

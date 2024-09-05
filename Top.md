@@ -1,53 +1,5 @@
 .[[Top]].
-  , , , , ,
-  [GG](spot://gg),  , ,
-  ADDS:   , , , , , ,
-  , , , ,
-  ,
-  ADDS:   , , , [[Set]], , ,
-  ADDS:   ,
-  DELS: [[Prj]], [[RR]], [[SV]], [[T]], 
-
-
-
-
-
-
-
-
-
-  DELS: [[Pln]], 
-
-
-
-
-
-
-
-
-
-
-  DELS: [[Pln]], 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  DELS: [[2024-06-24]], [[2024-08-09]], [[2024-08-26]], [AT Folder](spot://atfolder), [Doc Folder](spot://docfolder), [Log Folder](spot://logfolder), [MY Folder](spot://myfolder), [Set Folder](spot://setfolder), [SV Folder](spot://svfolder), [T Folder](spot://tfolder), [TRASH for Obsidian Folder](spot://trashforobsidianfolder), [TRASH Obsidian](spot://trashobsidian), [Work Folder](spot://workfolder), 
-
-
-  DELS: [[Pln]], [[Prj]], [[Set]], [[T]], [[SV]], [[RR]], 
-
+  [GG](spot://gg), [[Set]],
 
 
 
