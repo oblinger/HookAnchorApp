@@ -1,10 +1,11 @@
 .[[MY]].
   [[Emails]], [[HIS month]], [[HIS monthh]], [[HIS year]], , , [[Myfo]], , , [[My mgr NOTES]], [MyMgr Page](spot://mymgrpage),
   ,
-  ADDS:   [[MY Content]], [[My Info]], [[My Stuff]],
-  ADDS:   [[Meta]], [MY Folder](spot://myfolder), [[SYS]],
+  ADDS:   , [[My Info]], [[My Stuff]],
+  ADDS:   , [MY Folder](spot://myfolder), ,
   ADDS:   , , , , , ,
-  ADDS:   [[Closet]], [[Hack]], [[Pln]], [Pln Folder](spot://plnfolder), [[QUICKADD]], [[TEMPLATER]],
+  ADDS:   , , , [Pln Folder](spot://plnfolder), , ,
+  DELS: [[MY Content]], [[Meta]], [[SYS]], [[Closet]], [[Hack]], [[Pln]], [[QUICKADD]], [[TEMPLATER]], 
 
 
 

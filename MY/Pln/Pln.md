@@ -22,7 +22,8 @@
   ADDS:   , , , ,
   ADDS:   ,
   ADDS:   , , , ,
-  ADDS:   [[Lrn]],
+  ADDS:   ,
+  DELS: [[Lrn]], 
 
 
 

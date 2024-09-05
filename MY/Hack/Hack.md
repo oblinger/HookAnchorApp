@@ -5,9 +5,10 @@ OBS:	, , ,
 DIR:	, ,
   ADDS:   ,
   ADDS:   , ,
-  ADDS:   [[DAT]], [[Hack Chunch]], [[My Spot]], [[SP]], [[Time Tracker]],
+  ADDS:   [[DAT]], [[Hack Chunch]], [[My Spot]], , [[Time Tracker]],
   ADDS:   , , ,
   ADDS:   , , ,
+  DELS: [[SP]], 
 
 
 

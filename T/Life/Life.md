@@ -3,7 +3,8 @@
   ADDS:   [[Life Social]],
   ADDS:   [[Mate]], [[_MateNote]], [[_Mates]],
   ADDS:   ,
-  ADDS:   [[Diary]],
+  ADDS:   ,
+  DELS: [[Diary]], 
 
 
 

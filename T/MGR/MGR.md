@@ -17,7 +17,8 @@
   ADDS:   ,
   ADDS:   [[MGR Contracts]],
   ADDS:   ,
-  ADDS:   [[Hire]],
+  ADDS:   ,
+  DELS: [[Hire]], 
 
 
 

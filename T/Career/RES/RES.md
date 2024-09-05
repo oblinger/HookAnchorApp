@@ -13,7 +13,8 @@
 - [Resume](spot://resume),
 - [[z2 - Linked In Module]],
 - [[RES Job History]],
-- [[Bio]],
+- ,
+  DELS: [[Bio]], 
 
 
 

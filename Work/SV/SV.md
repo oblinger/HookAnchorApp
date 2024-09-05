@@ -23,9 +23,10 @@
   ADDS:   [[2022-10-17 SV90]],
   ADDS:   [[Work]],
   ADDS:   ,
-  ADDS:   [[CV]], [[QQ]], [SV Folder](spot://svfolder), [[SV People]], [[SV Strat]], [[SVT]], [Work Folder](spot://workfolder),
+  ADDS:   , , [SV Folder](spot://svfolder), , , , [Work Folder](spot://workfolder),
   ADDS:   , ,
-  ADDS:   [[WW]], [WW Folder](spot://wwfolder),
+  ADDS:   , [WW Folder](spot://wwfolder),
+  DELS: [[CV]], [[QQ]], [[SV People]], [[SV Strat]], [[SVT]], [[WW]], 
 
 
 

@@ -1,7 +1,8 @@
 .[[TXT]].
   , [[Msg]]
   ADDS:   [[__TXT__ Aniket Recruiters]],
-  ADDS:   [[Letters]],
+  ADDS:   ,
+  DELS: [[Letters]], 
 
 
 

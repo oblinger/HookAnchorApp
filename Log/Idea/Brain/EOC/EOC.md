@@ -6,7 +6,8 @@
   :	Topics
   -
   [[eoc-atlas]], [[eoc-formal]], [[eoc-impl]], ,  [[FF-prize]], [[Paths]], [[EOC Log]],
-  ADDS:   [[EOCA]], [[EOCB]], [[EOCI]], [[EOCK]], [[EOCT]],
+  ADDS:   , , , , ,
+  DELS: [[EOCA]], [[EOCB]], [[EOCI]], [[EOCK]], [[EOCT]], 
 
 
 

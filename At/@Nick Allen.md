@@ -6,7 +6,17 @@
 # LOG
 
 
+- low level optimization
+- state of the art CV 
+
+
 ### 2024-09-01  Text about SportsVisio
+
+Nick:
+- We are cutting the team to increase runway.
+- In a very indirect way, Jason brought up the idea that since I only have 3 people reporting in on the CV side, perhaps I could go 1/2 time.  (I can tell he was nervous i would just quit.)
+- I am thinking to tell him that my wife is
+
 
 Nick a bit of advice:  
 - Hacking trip left Jason feeling the CV team is not good enough, and maybe I am too old and "not in the code" enough.  (I have not been in the code, I could become with some time cost, but right now I am trying to prepare to leave!).  I think the CV team and I am getting some unfair blame here, and I have never addressed those 'unfair' claims with him after said in passing in one conversation.
@@ -19,7 +29,17 @@ Thoughts?  Maybe chat about all of this?
 In hind sight this hacking trip really worked out very badly!
 
 
+NEXT ADVICE
 
+Nick
+- I presented my plans to cut 25% from the group to Jason and we hashed it out.  
+- During that call he talked about needing at 25% overall cut which meant cutting much more in some places and very tentatively observed that "hey you only have a small CV team you are focusing on before the A-round.  For a senior guy like you that is pretty over powered, maybe I could go 1/2 time and consult."  I am happy that he was so tentative, i think he worried i would just quit.
+- I think making this move really aims me out the door if I am not careful.  Still I think in most worlds I am already out the door before the A-round closes in 1.3 years.
+- I am thinking to tell him that the wife is frustrated that I have been AWOL with Eli because of heavy working, and she is good with me going 1/2 time, and is even pushing back against doing the consulting. (I am thinking this keeps him from worrying about me interviewing if he does not see consulting work happening)
+- I am thinking to negotiate that I work 50% days, so I either work a day, or I don't work at all.  Else I worry I will still be expected to be always available.
+- Downside:  This probably forces me out the door.  even if things are going well in 6 months, and my job search sucks.  (maybe I could also negotiate going to 50% for a calendar year, this would have me ramp back up before the A, in the case I wanted to stay.)
+
+thoughts?
 ### 2023-07-26  Pitching a Business
 
 - COMPANY PITCH - unique opportunity / approach

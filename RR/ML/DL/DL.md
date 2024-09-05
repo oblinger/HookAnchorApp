@@ -5,7 +5,7 @@
   .		    [[ORPO Odds Ratio Preference Optimization]],
   :	[[Gradient Checking]],
   [[DL Topic]]:	[[GenAI]], [[Regularization]], [[Self Supervised Learning]], [[RAG]],
-  [[DL Alg]]:	[[Auto Encoders]], [[GANs]], [[LSTM]], [[NN]], [[Transformers]], , [[LLM]], [[RNNs]],
+  :	[[Auto Encoders]], [[GANs]], [[LSTM]], [[NN]], [[Transformers]], , [[LLM]], [[RNNs]],
   .			[[VAEs]], [[RLHF Reinforcement Learning from Human Feedback]],
   DL ALG2:	[[KAN - Kolmogorov-Arnold Neworks]], [[DSPY System]],
   [[DL SYS]]:	[[GPT]], [[Segment Anything]], [[RASA]],
@@ -15,6 +15,7 @@
   ADDS:   , , ,
   ADDS:   , , ,
   ADDS:   [[CNNs]], [[DL Opto]], [[DL Strat]],
+  DELS: [[DL Alg]], 
 
 
 

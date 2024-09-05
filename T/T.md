@@ -23,10 +23,11 @@
   ADDS:   ,
   ADDS:   ,
   ADDS:   , ,
-  ADDS:   [[Courses]], [[Eli]], [[Food]], [[Legal]], [[Life]], [[MED]], [[MY]], [[Politics]], , [[Tag]], [T Folder](spot://tfolder),
+  ADDS:   , , , , , , , [[Politics]], , , [T Folder](spot://tfolder),
   ADDS:   , , , , , , , , ,
   ADDS:   ,
-  ADDS:   [[Career]], [[COMS]], [[EduCorp]], [[FIN]], [[KM]], [KM Folder](spot://kmfolder), [Legal Folder](spot://legalfolder), [[MGR]], [[Trash]],
+  ADDS:   , , , , , [KM Folder](spot://kmfolder), [Legal Folder](spot://legalfolder), , ,
+  DELS: [[Courses]], [[Eli]], [[Food]], [[Legal]], [[Life]], [[MED]], [[MY]], [[Tag]], [[Career]], [[COMS]], [[EduCorp]], [[FIN]], [[KM]], [[MGR]], [[Trash]], 
 
 
 

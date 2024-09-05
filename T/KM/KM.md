@@ -5,9 +5,10 @@
   [[KM Overview]]:
   ADDS:   [[Multi-List WorkFlow]],
   ADDS:   [[Meta KM]],
-  ADDS:   [[Dooby]], [[Hook System]],
+  ADDS:   [[Dooby]], ,
   ADDS:   [KM script](spot://kmscript),
   ADDS:   [KM Shell](spot://kmshell),
+  DELS: [[Hook System]], 
 
   DELS: [KM lShell](spot://kmshell), 
 

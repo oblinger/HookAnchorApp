@@ -13,11 +13,12 @@
   ADDS:   ,
   ADDS:   [CV Gdrive](spot://cvgdrive),
   ADDS:   ,
-  ADDS:   [[CV Hack Notes]], [[CV Log]], [[SVCV Re-ID]],
-  ADDS:   [[Data]], ,
+  ADDS:   [[CV Hack Notes]], , [[SVCV Re-ID]],
+  ADDS:   , ,
   ADDS:   ,
   ADDS:   ,
-  ADDS:   [[CVP]],
+  ADDS:   ,
+  DELS: [[CV Log]], [[Data]], [[CVP]], 
 
 
 
