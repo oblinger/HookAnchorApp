@@ -1,5 +1,4 @@
 
-:: [[2023-12 CV Tree]]
 .[[CVP]].
   WEEKLY:		[SprintPlanning](spot://sprintplanning), [[CV Roadmap]], [Backlog Planning](spot://backlogplanning),
   QUARTER:		[OKRs](spot://okrs), [OKR Slide](spot://okrslide),

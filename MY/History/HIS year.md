@@ -1,4 +1,6 @@
 
+[[MAC How To\|Thu May 4  2023 ]]  	[[MAC How To#= BLUETOOTH SWITCHING - How to prevent auto device switching]]  
+[[MAC How To\|Thu May 4  2023 ]]  	[[MAC How To#= AIRPODS MAX - How to get device switching to work]]  
 [[MAC How To\|Thu May 4  2023 ]]  	[[MAC How To#= MESSAGES (SMS) - How to fix SMS sometimes not being receiv]]  
 [[MAC How To\|Thu May 4  2023 ]]  	[[MAC How To#= BREW - How to fix a broken home brew setup]]  
 [[MAC How To\|Thu May 4  2023 ]]  	[[MAC How To#= MESSAGES - How to fix messages when they are not always re]]  
