@@ -1,21 +1,12 @@
 .**NOW**. 
   [[2024-08 Backend Architect|Arch]]:	Wait, Agents
+  [[DT]]: HomoData,
+  [OKRs](https://docs.google.com/presentation/d/1v7Winy9DHxGuYh05_is8zH05ClJi0qclM698-pDXIgY/edit?pli=1#slide=id.g274b3e27e6b_0_0):	Q3 Planning	
+  [[DAT|DAT]]:	Get PR ready
+  [[FIN.]]	Invest plan; Retire plan(spreadsheet)
+  [[NJ]]:	>[[War|War]], rewrite, mentor
 
-[[DT]]: HomoData,
-
-Fire:	Jack/briones
-[OKRs](https://docs.google.com/presentation/d/1v7Winy9DHxGuYh05_is8zH05ClJi0qclM698-pDXIgY/edit?pli=1#slide=id.g274b3e27e6b_0_0):	Q3 Planning	
-[[DAT|DAT]]:	Get PR ready
-M:  	Vis script on merge
-J:  	Vis Script, AI+SW, Briones DS
-.		v1 Fireballs
-X: 	Anneal analyze
-[[FIN.]]	Invest plan; Retire plan(spreadsheet)
-[[NJ]]:	>[[War|War]], rewrite, mentor
-
-xOvr:	VB/BB 3
-Fball:	v1
-
+recheck where we are
 ## TRACK
 [[Data]]:
 Data:		Build the stats dataset

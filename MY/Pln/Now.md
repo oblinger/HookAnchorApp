@@ -1,10 +1,3 @@
-Filip, Fireballs, 
-HomoData,
-VeoData,
-EvalData,
-
-Homography
-- format
 
 [[Friday]]: 
  .Clean
@@ -23,6 +16,8 @@ FIREBALL
   X: track tail
 EVAL end2end
   J: pick MinNorm
+HOMO 
+  format
 
 Jira:
 - format for homo

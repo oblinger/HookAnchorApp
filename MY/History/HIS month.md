@@ -1,4 +1,12 @@
 
+[[DocGit\|Fri Jul 26  2024]]  	[[DocGit#HOW TO]]  
+[[DocGit\|Fri Jul 26  2024]]  	[[DocGit#REF]]  
+[[DocGit\|Fri Jul 26  2024]]  	[[DocGit#=== OLDER STUFF ===]]  
+[[DocPycharm\|Fri Jul 26  2024]]  	[[DocPycharm#HOW TO]]  
+[[@Briggs & Riley\|Thu Jul 25  2024]]  	[[@Briggs & Riley#LOG]]  
+[[NJ Rewrite\|Thu Jul 25  2024]]  	[[NJ Rewrite#Built Multiple Engineering Orgs]]  
+[[NJ Rewrite\|Thu Jul 25  2024]]  	[[NJ Rewrite#Brought Multiple Products To Market Totaling More Than $3B I]]  
+[[RES Src Info\|Thu Jul 25  2024]]  	[[RES Src Info#= PUBLICATION LINKS]]  
 [[@Jason Syversen\|Thu Jul 25  2024]]  	[[@Jason Syversen#2024-07-24  Before hack week]]  
 [[MY Stuff\|Wed Jul 24  2024]]  	[[MY Stuff#= COMPUTER PERIPERALS =]]  
 [[My Stuff\|Wed Jul 24  2024]]  	[[My Stuff#= COMPUTER PERIPERALS =]]  

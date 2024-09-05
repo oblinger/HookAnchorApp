@@ -4,14 +4,16 @@
 Jack:  Cut backend guys.
 
 Dev Team  
-Tomas Sasovsky $3,840       MOB - Jack: 
+Tomas Sasovsky $3,840       MOB - Jack: A cut too far
 Nazareno Cavazzon $1,120  --MOB Does not really do anything.  but are best friends.
+.                                  		spiritually still with the company
 Tomas Tisocco $3,840         MOB Flutter.  Jack: highest velocity dev
-Michael Mathieu $2,700       iOS - Mgr app.  (100% equity??)
+Michael Mathieu $2,700       Android - Mgr app.  
+.                                   not essential pre-A.  keep as a contractor
 Jasu Victorio $3,200     	   Jack: hardest worker in company.  product mgr
-Leonardo Almiron $2,720      ANG: Cut. notably less value than Juan
-Juan Heber $5,331             ANG:   Jack: better than Leo.  (Admin portal & Web Mgr)
-Michael Fearnley $2,000 	   ANG:   Jack: cannot touch him, only guy (portal). ~4x leo
+Leonardo Almiron $2,720    ??ANG:  Notably less value than Juan
+Michael Fearnley $2,000 	   ANG: 10/h Jack: cannot touch him, only guy (portal). ~4x leo
+Juan Heber $5,331             ANG/B:  Jack: better than Leo.  (Admin portal & Web Mgr)
 Scott Byers $8,269           --BAK:
 Matias Montenegro $5,539  --BAK: Jack: could cut if new guy was strong as scott
 Julieta Barrionuevo $1,385  --QA:  Jack: little value now.  maybe 0% consultant. 
@@ -23,11 +25,26 @@ Subtotal $45,973
 AI Team  
 Vishal Batvia  
 Martin Reyes $5,060  
-Maxim Dorogov $5,775  
+Maxim Dorogov $5,775   		$5,775 / $26,600 = 22%
 Juan Barajas $5,800  
 Sarthi Rawat  
 Grzegorz Biziel $9,965  
 Subtotal $26,600
+
+Naza + Juli  + Mati
+1120 + 1385 + 5539 = 8044 (17%)  + 2720(leo) = 10764 (23%)    $3,040/2/$45,973 3.3%
+1120 + 5539 + 2720(leo) = 9,379 (20%)
+
+Contractor Pool:  Mathieu, Naza, Scott, Saxena, Filip
+$2,700 ~ $4,000 -->$5,000
+
+
+Now Near Zero: Scott, Naza, Julieta, Michael M.      (near zero)
+Cut Valen to 50% = $1,520 (3.3%)
+
+Cash Cuts: 5539 matias + 1120 Nasa + 1385 Juli + 2720 Leo = $10,764 (23.4%)
+Hire&Cut Later: Matias (we are saving money until then)
+
 
 
 Scott: Intuition & conviction more than Juan.

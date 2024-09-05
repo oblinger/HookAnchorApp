@@ -1,4 +1,12 @@
 
+[[MAC How To\|Thu May 4  2023 ]]  	[[MAC How To#= BREW - How to fix a broken home brew setup]]  
+[[MAC How To\|Thu May 4  2023 ]]  	[[MAC How To#= MESSAGES - How to fix messages when they are not always re]]  
+[[MAC How To\|Thu May 4  2023 ]]  	[[MAC How To#= SHARE SCREEN - How to Share Screen]]  
+[[MAC How To\|Thu May 4  2023 ]]  	[[MAC How To#= LSOpen ERROR - How to fix LSOpen related errors]]  
+[[MAC How To\|Thu May 4  2023 ]]  	[[MAC How To#= PIP - How to fix PIP]]  
+[[MAC How To\|Thu May 4  2023 ]]  	[[MAC How To#= WIFI - How to fix WIFI connectivity]]  
+[[MAC How To\|Thu May 4  2023 ]]  	[[MAC How To#= RESET MAC - How to reset many things on the mac]]  
+[[MAC How To\|Thu May 4  2023 ]]  	[[MAC How To#= LID - How to get system to sleep when lid closes]]  
 [[MAC How To\|Thu May 4  2023 ]]  	[[MAC How To#= GOOGLE DRIVE - How to fix error: cannot continue syncing .]]  
 [[ELI\|Wed May 3  2023 ]]  	[[ELI#LOG]]  
 [[2023-05 Cool Kids\|Wed May 3  2023 ]]  	[[2023-05 Cool Kids#ELI Issues]]  

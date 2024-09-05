@@ -17,6 +17,7 @@
 
 
 
+
   DELS: [[RES]], [RES Folder](spot://resfolder),[[MGR]], 
 
 

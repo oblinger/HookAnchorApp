@@ -24,6 +24,7 @@ n:: Ideas of mine
 
 
 
+
   DELS: [[Brain]],[[EduCorp]], [[Hook System]], 
 
 

@@ -1,8 +1,9 @@
 
 ROOT JUMP PAGES::
 
-[[AF]],	[[AMA]],	[[Enxt]],	[[gDR]],	[[Org]],	[[Application]],	[[Mom]],	[[MOV]],	
-[[News]],	[[NOISE]],	[[OKR]],	[[Photo]],	[[pPrj]],	[[Proj]],	[[RD]],	[[SCR]],	
+[[AF]],	[[AMA]],	[[Application]],	[[Enxt]],	[[gDR]],	[[Mom]],	[[MOV]],	
+[[News]],	[[NOISE]],	[[OKR]],	[[Org]],	[[Photo]],	[[pPrj]],	[[Proj]],	[[RD]],	
+[[SCR]],	
 [[MAC]]: [[App]],	
 [[Log]]: [[Meet]],	
     [[Idea]]: [[Forum]],	[[Idea Social]],	
