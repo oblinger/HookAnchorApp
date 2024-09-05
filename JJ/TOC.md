@@ -1,8 +1,10 @@
 
 ROOT JUMP PAGES::
 
-[[BCMS]],	[[Eli Interactions]],	[[ELI Log]],	[[Nanny]],	
+[[BCMS]],	[[Eli Interactions]],	[[ELI Log]],	
 [[Set]]: [[Book]],	[[CTC]],	[[Humor]],	[[Movies]],	[[Phone]],	[[Recipe]],	
-    [[Returns]],	[[ToRead]],	[[Writing]],	
+    [[Returns]],	[[ToRead]],	
     [[BUY]]: [[Bought]],	
     [[Lang]]: [[haskell]],	
+    [[Writing]]: [[ArmChair]],	
+        [[Politics]]: [[Palestinians]],	[[Race]],	[[RacePitchArchive]],	
