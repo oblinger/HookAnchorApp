@@ -5,7 +5,7 @@
   [[KM Global 2 Local]]:
   [[KM Overview]]:
   :
-  [KM Shell](spot://kmshell):
+  :
   :
   ADDS:
   ADDS:   [[Multi-List WorkFlow]],
@@ -18,7 +18,8 @@
   ADDS:   ,
   ADDS:   [[Dooby]], [[Hook System]],
   ADDS:   [KM script](spot://kmscript),
-
+  ADDS:   [KM Shell](spot://kmshell), 
+  DELS: [KM lShell](spot://kmshell), 
 
 
   DELS: [KM scrilpt](spot://kmscript), 
