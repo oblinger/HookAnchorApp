@@ -1,13 +1,3 @@
 .[[Proj]].
-  ADDS:   [Proj Jump](spot://projjump), [Shot Charts](spot://shotcharts),
-  ADDS:   [Proj Page](spot://projpage),
-  ADDS:   [Homography](spot://homography),
-
-
-
-
-
-
-
-
+  ADDS:   [Homography](spot://homography), [Proj Jump](spot://projjump), [Proj Page](spot://projpage), [Shot Charts](spot://shotcharts), 
 

@@ -1,13 +1,3 @@
 .[[Mom]].
-  ADDS:   [Mom Games](spot://momgames),
-
-
-
-
-
-
-
-
-
-
+  ADDS:   [Mom Games](spot://momgames), 
 
