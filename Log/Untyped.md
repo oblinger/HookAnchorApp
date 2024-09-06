@@ -7,6 +7,7 @@ n:: no prefix.	Dated entries without any typing prefix
 | ---------- | --------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------- |
 | 2024-09-05 | [[@Nick Allen]]                             | Jason Messaging                                                                                                                   |
 | 2024-09-05 | [[@Nick Allen]]                             | SportsVisio cuts                                                                                                                  |
+| 2024-09-05 | [[@Jason Syversen]]                         | Jason Messaging                                                                                                                   |
 | 2024-09-03 | [[Jnl]]                                     | My Strengths                                                                                                                      |
 | 2024-09-03 | [[@Maxim Dorogov]]                          | Feedback                                                                                                                          |
 | 2024-09-01 | [[@Nick Allen]]                             | SportsVisio cuts                                                                                                                  |

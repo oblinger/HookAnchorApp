@@ -5,8 +5,8 @@
   [[RES Star]], [[RES War]], [[RES War AI]],
 - [[2023 - Resume Samples]],
 - [[2024-04-01 Resume Rewrite]],
-- [[2024 Res Rewrite At a Glance]],
-- [[2024 Resume]],
+- ,
+- ,
 - [[Jared Master]],
 - [[RES Linked In]],
 - [RES Master Folder](spot://resmasterfolder),
@@ -14,7 +14,8 @@
 - [[z2 - Linked In Module]],
 - [[RES Job History]],
 - ,
-  DELS: [[Bio]], 
+  ,   [[Bio]], [[RES Instant Design Story]], 
+  DELS: [[Bio]],[[2024 Res Rewrite At a Glance]], [[2024 Resume]], 
 
 
 

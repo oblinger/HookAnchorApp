@@ -1,3 +1,6 @@
+.[[Hacks]].
+  ,   [[Spot]], 
+
 [[Spot]] 
 
 - [[PQ#^newjump]]:  

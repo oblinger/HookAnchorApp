@@ -1,3 +1,6 @@
+.[[Recipe]].
+  ,   [[GreenBean_HamBase]], [[GreenBean_Walnuts]], 
+
 #set 
 n:: Info about recipes (Not really a set)
 

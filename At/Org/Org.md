@@ -1,10 +1,11 @@
 .[[Org]].
-  [[Uniting America]]:
+  :
   ADDS:   [[Org Startup]],
-  ADDS:   [[@Aeolus]], [[@Amazon]], [[@Amazon as Consumer]], [[@Apple]], [[@Facebook]], [[@Facebook-Meta]], [[@Ginza Metrics]], [[@IBM]], [[@LinkedIn]], [[@Microsoft]], [[@Montessori Childrens Center]]
+  ADDS:   [[@Aeolus]], [[@Amazon]], , [[@Apple]], [[@Facebook]], [[@Facebook-Meta]], [[@Ginza Metrics]], [[@IBM]], [[@LinkedIn]], [[@Microsoft]], [[@Montessori Childrens Center]]
   [[@Netflix]], [[@PARC]], [[@PayByGroup]], [[@TecHunting]], [[@Thistle]], [[@Vmware]],
   ADDS:   [[@Citibank]],
   ADDS:   [[Service]],
+  DELS: [[Uniting America]], [[@Amazon as Consumer]], 
 
 
 

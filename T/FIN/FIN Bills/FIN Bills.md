@@ -1,3 +1,6 @@
+.[[FIN Bills]].
+  ,   [[FIN Accounts]], [[FIN Recurring]], [[PenFed]], [[z old Bills]], 
+
 
 :: [[PenFed]]
 

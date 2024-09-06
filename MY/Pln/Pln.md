@@ -4,17 +4,17 @@
   -
   OVER:		[[Friday]], [[Habit]], [[Repeat]], [[Self Evergreen]].
   LST1:		[[Quick]], [[Todo]], [[Active]], [[SCRatch]],
-  LST2:		[[Big]], [[Quarterly]], [[Later]], [[Wings]], [[Dropped]], [[Archive]],
+  LST2:		, [[Quarterly]], [[Later]], [[Wings]], [[Dropped]], [[Archive]],
   LONG:		[[Rocks]], [[Q2]], [[WRM]],
-  STRAT:	[[Productivity]], [[Daily Schedules]],
+  STRAT:	[[Productivity]], ,
   TOPIC:		,
   SELF:		[[Self]], , [[Spirit]], [[Actualize]], [[Mission]],
   FUN:		[[Fun]], [[Social]], [[Fried]], [[Gap]], [[Hacks]], [[Fried Later]],
-  FAM:		[[Family]], [[Friday Dates]], [[Home]],
+  FAM:		, [[Friday Dates]], [[Home]],
   ROOT:		[[BKT]], [[Up All]], [[Up Task]],
   EXT:		[[External]], [[Other]],
   ACTIONS:	[[Chew]],  , , , [[First]], ,
-  ADDS:   	[[Arc ALL]], [[Archeology]],, [[Tracking of Time]], [[EBT]], [[Ping]],
+  ADDS:   	[[Arc ALL]], [[Archeology]],, , [[EBT]], [[Ping]],
   ADDS:   , , , ,
   ADDS:   [[Bfast]], [[Lunch]], [[Read]], [[Wake]],
   ADDS:   ,
@@ -23,7 +23,8 @@
   ADDS:   ,
   ADDS:   , , , ,
   ADDS:   ,
-  DELS: [[Lrn]], 
+  ,   [[Hack]], [[Lrn]], 
+  DELS: [[Lrn]],[[Big]], [[Daily Schedules]], [[Family]], [[Tracking of Time]], 
 
 
 

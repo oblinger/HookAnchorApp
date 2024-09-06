@@ -1,3 +1,7 @@
+.[[VC ORG]].
+  ,   [[@Bee Partners]], [[@Blumberg Capital]], [[@Bryer Capital]], [[@Circle Up]], [[@Citizen VC]], [[@Fin]], [[@GsrVentures]], [[@Intel Capital]], [[@Njord Venture Group]], [[@Rebel Partners]]
+  [[@Sierra Ventures]], [[@Smartficial]], [[@Social Capital]], [[@Social Starts]], [[@Streamlined Ventures]], [[@Vela Partners]], [[@Zetta Venture Partners]], [[Crunchbase Notes]], 
+
 
 :: [[@Social Capital]],   [[@Citizen VC]],   [[@Intel Capital]],   [[@Circle Up]],   [[@Vela Partners]],   [[@Sierra Ventures]],   [[@Bryer Capital]],   [[@Njord Venture Group]],   [[@Social Starts]],   [[@Streamlined Ventures]],   [[Crunchbase Notes]],   [[@Rebel Partners]],   [[@Zetta Venture Partners]],   [[@Blumberg Capital]],   [[@Bee Partners]]
 #tag   <[[Org]]

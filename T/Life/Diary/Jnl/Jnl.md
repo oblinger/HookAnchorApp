@@ -1,3 +1,6 @@
+.[[Jnl]].
+  ,   [[NextCo]], [[Old Daily]], 
+
 [[Old Daily]] 
 
 ### 2024-09-03  My Strengths

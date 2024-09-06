@@ -1,9 +1,10 @@
 .[[Data]]. ([[CV]])
-  [Data Tasks](spot://datatasks) ([DT](spot://dt)),
-  rename this:   [[Dataset]],
+  [Data Tasks](spot://datatasks) (),
+  rename this:   ,
   [Data Docs](spot://datadocs),
   [CV Data Tasks](spot://cvdatatasks),
   [Data Games](spot://datagames),
+  DELS: [DT](spot://dt), [[Dataset]], 
 
 
 

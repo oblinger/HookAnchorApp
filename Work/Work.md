@@ -1,3 +1,6 @@
+.[[Work]].
+  ,   [[DT]], [[SV]], 
+
 .**NOW**. 
   [[2024-08 Backend Architect|Arch]]:	Wait, Agents
   [[DT]]: HomoData,

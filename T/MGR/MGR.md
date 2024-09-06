@@ -1,15 +1,15 @@
 .[[MGR]].
-  [[MGR Annual Review]]:
+  :
   [[MGR Docs]]:
-  [[MGR Leadership]]:
-  [[MGR Meetings]]:
-  [[MGR Negotiations]]:
-  [[MGR Plan]]:
-  [[MGR Product]]:
+  :
+  :
+  :
+  :
+  :
   :
   ,
   [[MgrTracking]],
-  [[MGR AI Planning]],
+  ,
   ADDS:   ,
   ADDS:   [[Employee Notes]],
   ADDS:   [[MGR Log]], [[My Staff]],
@@ -18,7 +18,8 @@
   ADDS:   [[MGR Contracts]],
   ADDS:   ,
   ADDS:   ,
-  DELS: [[Hire]], 
+  ,   [[Hire]], 
+  DELS: [[Hire]],[[MGR Annual Review]], [[MGR Leadership]], [[MGR Meetings]], [[MGR Negotiations]], [[MGR Plan]], [[MGR Product]], [[MGR AI Planning]], 
 
 
 

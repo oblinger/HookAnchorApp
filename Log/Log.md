@@ -4,7 +4,8 @@
   ADDS:   ,
   ADDS:   , , , ,
   ADDS:   , , [Receipts Folder](spot://receiptsfolder), ,
-  DELS: [[Idea]], [[Meet]], [[TXT]], 
+  ,   [[Idea]], [[Meet]], [[TXT]], 
+
 
 
 

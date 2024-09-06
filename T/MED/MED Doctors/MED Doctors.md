@@ -1,3 +1,6 @@
+.[[MED Doctors]].
+  ,   [[MED=]], [[MED Blood Pressure]], [[MED Cholesterol]], [[MED Research]], [[MED VO2Max]], 
+
 
 :: [[MED Blood Pressure]],   [[MED Cholesterol]]
 

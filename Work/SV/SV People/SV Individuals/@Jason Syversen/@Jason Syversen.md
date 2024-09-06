@@ -218,6 +218,15 @@ DISCUSS
 
 # LOG
 
+
+
+### 2024-09-05  Jason Messaging
+
+No question, the correct move is for us to cut our burn and I gotta do my part. 
+But reality is that my situation is closer to Sean's than Sam's, so its tricky.
+I talked to Qingling about how we can mange this and put some time on your calendar tomorrow so we can talk about it.
+
+
 ### 2024-08-19  Plans
 
 

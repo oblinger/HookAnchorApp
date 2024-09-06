@@ -1,3 +1,6 @@
+.[[Mission]].
+  ,   [[Mission2024]], 
+
 
 - [ ] >> I intend each day to be part of a fulfilled and fulfilling life focused on joy, meaning, and benefit for others.
 

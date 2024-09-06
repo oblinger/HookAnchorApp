@@ -1,3 +1,6 @@
+.[[UfApps]].
+  ,   [[Recommender]], [[ufBrick]], [[UfGui]], 
+
 
 :: [[ufBrick]]
   [ufBrick](ufBrick.md)

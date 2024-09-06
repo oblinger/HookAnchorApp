@@ -1,5 +1,5 @@
 .[[KM]].
-  [[KM.]], [[KMco]],
+  [[KM.]], ,
   [[KM Anchors]]:
   [[KM Global 2 Local]]:
   [[KM Overview]]:
@@ -8,7 +8,8 @@
   ADDS:   [[Dooby]], ,
   ADDS:   [KM script](spot://kmscript),
   ADDS:   [KM Shell](spot://kmshell),
-  DELS: [[Hook System]], 
+  ,   [[Hook System]], 
+  DELS: [[Hook System]],[[KMco]], 
 
   DELS: [KM lShell](spot://kmshell), 
 

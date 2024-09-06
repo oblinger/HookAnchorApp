@@ -1,5 +1,6 @@
 .[[RR Med]].
-  ADDS:   [[Satiety Index]],
+  ADDS:   ,
+  DELS: [[Satiety Index]], 
 
 
 

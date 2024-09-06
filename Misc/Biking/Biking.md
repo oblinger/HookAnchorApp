@@ -1,3 +1,6 @@
+.[[Biking]].
+  ,   [[Biking Notes]], 
+
 
 :: [[Biking Notes]]
   [Biking Notes](Biking%20Notes.md)

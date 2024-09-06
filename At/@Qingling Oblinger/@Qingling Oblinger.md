@@ -1,3 +1,6 @@
+.[[@Qingling Oblinger]].
+  ,   [[QL _Interviewing]], 
+
 
 :: [[QL _Interviewing]]
  [[FAANG]]    [Product Data Science Lead](https://www.linkedin.com/in/qingling-ni/)  [[@1Password]]  (Waymo)

@@ -1,8 +1,9 @@
 .[[App]].
   ADDS:   [Chat GPT Page](spot://chatgptpage),
-  ADDS:   [[Git Notes]], [[Hubspot Notes]], [[Notion]], [[Timer]],
+  ADDS:   [[Git Notes]], [[Hubspot Notes]], , [[Timer]],
   ADDS:   [[gDrive Notes]],
-
+  ,   [[notion]], 
+  DELS: [[Notion]], 
 
 
 

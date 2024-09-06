@@ -1,3 +1,6 @@
+.[[ELI Log]].
+  ,   [[2023-05 Cool Kids]], [[Eli Sleep Training]], 
+
 
 :: [[2023-05 Cool Kids]]
 

@@ -1,3 +1,6 @@
+.[[2020-07 Autonomy]].
+  ,   [[Startup Canvas copy]], 
+
 
 :: [[Startup Canvas copy]]
 

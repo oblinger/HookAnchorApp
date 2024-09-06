@@ -15,7 +15,8 @@
   ADDS:   , , ,
   ADDS:   , , ,
   ADDS:   [[CNNs]], [[DL Opto]], [[DL Strat]],
-  DELS: [[DL Alg]], 
+  ,   [[DL Alg]], 
+
 
 
 

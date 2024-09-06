@@ -8,7 +8,8 @@ DIR:	, ,
   ADDS:   [[DAT]], [[Hack Chunch]], [[My Spot]], , [[Time Tracker]],
   ADDS:   , , ,
   ADDS:   , , ,
-  DELS: [[SP]], 
+  ,   [[SP]], 
+
 
 
 

@@ -1,11 +1,12 @@
 .[[SV People]].
-  [[@Aashutosh Dhital]], , [[@Agustina Revenga]], [[@Aseem Shrestha]], [[@Brian French]], [[@Burke Griffin]], [[@Camila Morales]], [[@Charlotte Corbitt]]
-  [[@Chris Stauffer]], [[@David Ukeje]], [[@Fang Liu]], [[@Jack Potvin]], [[@James Sullivan III]], [[@Jasu Victorio]], [[@Joaquin Mano]], [[@Jorge Rincon Arias]], [[@Juan Barajas]], [[@Kate Bilodeau]]
-  [[@Leo Almiron]], [[@Leonardo Almiron]], [[@Martin Reyes]], [[@Maxim Dorogov]], [[@Michael Fearnley]], [[@Miguel Gutierrez]], [[@Mike Mathieu]], [[@Miles Drum]],
-  [[@Pablo Calofatti]], [[@Parthsarthi Rawat]], [[@Rizwan Ahmed]], [[@Roberto Daviduk]], [[@Sam Corbitt]], [[@Sayan Das]], [[@Scott Byers]], [[@Sports Visio]], [[@Vishal Batavia]], [[Team]],
+  , , , , , , , 
+  , , , , , , , , , 
+  , , , , , [[@Miguel Gutierrez]], , ,
+  , , , , , , , , , [[Team]],
   ADDS:   , , [[SV FIN]], [[SV SW Team]],
-  ADDS:   [[@Achilles -- Tomas Sasovsky]], [[@Nazareno Cavazzon -- Nasa]],
+  ADDS:   , ,
   ADDS:   [[SV Individuals]],
+  DELS: [[@Aashutosh Dhital]], [[@Agustina Revenga]], [[@Aseem Shrestha]], [[@Brian French]], [[@Burke Griffin]], [[@Camila Morales]], [[@Charlotte Corbitt]], [[@Chris Stauffer]], [[@David Ukeje]], [[@Fang Liu]], [[@Jack Potvin]], [[@James Sullivan III]], [[@Jasu Victorio]], [[@Joaquin Mano]], [[@Jorge Rincon Arias]], [[@Juan Barajas]], [[@Kate Bilodeau]], [[@Leo Almiron]], [[@Leonardo Almiron]], [[@Martin Reyes]], [[@Maxim Dorogov]], [[@Michael Fearnley]], [[@Mike Mathieu]], [[@Miles Drum]], [[@Pablo Calofatti]], [[@Parthsarthi Rawat]], [[@Rizwan Ahmed]], [[@Roberto Daviduk]], [[@Sam Corbitt]], [[@Sayan Das]], [[@Scott Byers]], [[@Sports Visio]], [[@Vishal Batavia]], [[@Achilles -- Tomas Sasovsky]], [[@Nazareno Cavazzon -- Nasa]], 
 
 
 

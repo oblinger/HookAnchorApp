@@ -1,3 +1,6 @@
+.[[test88]].
+  ,   [[dent_on]], 
+
 
 - Test
 - obsidian://advanced-uri?vault=kmr&filepath=Misc%252FTest88%252FTest88.md

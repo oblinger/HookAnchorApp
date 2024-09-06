@@ -3,11 +3,12 @@
   [[Palestinians]]:
   [[Race]]:
   :
-  [[RacePitchArchive]]:
+  :
   [[Socialism]]:
   [[Trump]]:
   ADDS:   ,
   ADDS:   [[AI HISTORY]],
+  DELS: [[RacePitchArchive]], 
 
 
 

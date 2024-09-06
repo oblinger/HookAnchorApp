@@ -1,8 +1,9 @@
 .[[SV Strat]].
   ADDS:   [[SV Roadmap]],
-  ADDS:   [[2023 Four Pillars]], [[Pillars]], [[Roadmap Notes]], [[2023-06 Roadmap old]], [[Strat]],
+  ADDS:   [[2023 Four Pillars]], , , , [[Strat]],
   ADDS:   [[2023 SV Roadmap]],
   ADDS:   [[2023 Deliverables]],
+  DELS: [[Pillars]], [[Roadmap Notes]], [[2023-06 Roadmap old]], 
 
 
 

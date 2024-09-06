@@ -1,3 +1,6 @@
+.[[Systems]].
+  ,   [[Pandoc]], [[Sora]], 
+
 
 :: [[GenAI]],   [[Sora]],   [[Stable Diffusion]]
 

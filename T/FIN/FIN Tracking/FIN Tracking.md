@@ -1,3 +1,6 @@
+.[[FIN Tracking]].
+  ,   [[FIN Macro Tracking]], 
+
 
 
 - [[FIN Recurring]]:		List of all recurring payments

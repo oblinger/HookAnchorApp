@@ -1,3 +1,6 @@
+.[[MyMgr]].
+  ,   [[Nanny]], 
+
 
 :: [[Nanny]]
   [Nanny](Nanny.md)

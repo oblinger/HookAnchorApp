@@ -143,10 +143,11 @@
   :
   :
   :
-  ADDS:   [[@Avanti Pakrasi]], [[@Gary Bladen]], [[@Merrill]], [[@Vanguard]], [[BillPay]], [[Expenses]], [[FIN.]], [[FIN Accounts]], [[FIN Analysis]], [[FIN Bills]], [[FIN Budgeting]], [[FIN Flows]]
-  , [[FIN Macro Tracking]], [[FIN Mint]], [[FIN Recurring]], [[FIN Retire]], [[FIN Topics]], [[FIN Tracking]], [[PenFed]], [[Taxes]], [[z old Bills]],
+  ADDS:   , , [[@Merrill]], [[@Vanguard]], [[BillPay]], [[Expenses]], [[FIN.]], , [[FIN Analysis]], [[FIN Bills]], [[FIN Budgeting]], [[FIN Flows]]
+  , , [[FIN Mint]], , [[FIN Retire]], [[FIN Topics]], [[FIN Tracking]], , [[Taxes]], ,
   ADDS:   ,
-  DELS: [[FIN Log]], 
+  ,   [[FIN Log]], 
+  DELS: [[FIN Log]],[[@Avanti Pakrasi]], [[@Gary Bladen]], [[FIN Accounts]], [[FIN Macro Tracking]], [[FIN Recurring]], [[PenFed]], [[z old Bills]], 
 
 
 

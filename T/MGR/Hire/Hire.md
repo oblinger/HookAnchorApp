@@ -1,12 +1,13 @@
 .[[Hire]].
   , , [[Recruiter]],
-  [[INTERVIEW]], [[Interviewing]], [[Interviews]],
-  [[BBI]], [[CIT]], [[IOS guys]],
+  [[INTERVIEW]], , ,
+  , , [[IOS guys]],
   ,
   ADDS:   ,
   ADDS:
   ADDS:   , ,
-  DELS: [[Hire Post]], [[Hire Test]], 
+  ,   [[Hire Post]], [[Hire Test]], 
+  DELS: [[Hire Post]], [[Hire Test]],[[Interviewing]], [[Interviews]], [[BBI]], [[CIT]], 
 
 
 

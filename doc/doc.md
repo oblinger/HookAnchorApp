@@ -7,13 +7,14 @@
   [[Doctor]], [[DocVagrant]], [[Unix Command Line]],
 
 .[[Doc]].
-  [[AWS Log]],  [[Dataview]], , [[DocAPI]], [[DocApplescript]], [[DocArduino]], [[DocAWS]], [[DocBash]], [[DocCapistrano]], [[DocClojure]], [[DocConda]], [[DocCPP]], [[DocCucumber]]
+  [[AWS Log]],  , , [[DocAPI]], [[DocApplescript]], [[DocArduino]], [[DocAWS]], [[DocBash]], [[DocCapistrano]], [[DocClojure]], , [[DocCPP]], [[DocCucumber]]
   [[DocDelayedJob]], [[DocDocker]], [[DocEmacs]], , [[DocGCP]], [[DocGit]], [[DocGnome]], [[DocGolang]], [[DocGoogle]], [[DocHtml]], [[DocJavascript]], [[DocJquery]]
-  [[DocJupyter]], , [[DocLinux]], , [[DocMarkdown]], [[DocMatplotlib]], [[DocNumPy]], [[DocObjectiveC]], [[DocObsidian]], [[DocOSX]], [[DocPandas]], [[DocPycharm]]
-  [[DocPyDatetime]], [[DocPyML]], [[DocPython]], [[DocR]], [[DocRackspace]], [[DocRails]], [[DocRuby]], [[DocSamurai]], [[DocSciKit]], [[DocSeaborn]], [[DocSED]], [[DocSQL]], [[DocSublime]]
-  [[DOC SYNC]], [[DOC SYNC COMMANDS]], [[DocTensorFlow]], [[Doctor]], [[DocVagrant]], [[mdfind]], [[Unix Command Line]],
+  , , [[DocLinux]], , [[DocMarkdown]], [[DocMatplotlib]], , [[DocObjectiveC]], [[DocObsidian]], [[DocOSX]], [[DocPandas]], 
+  , [[DocPyML]], [[DocPython]], [[DocR]], [[DocRackspace]], [[DocRails]], [[DocRuby]], [[DocSamurai]], [[DocSciKit]], , [[DocSED]], [[DocSQL]], [[DocSublime]]
+  , , , , [[DocVagrant]], , [[Unix Command Line]],
   ADDS:   [Game](spot://game),
   ADDS:   [Doc Folder](spot://docfolder),
+  DELS: [[Dataview]], [[DocConda]], [[DocJupyter]], [[DocNumPy]], [[DocPycharm]], [[DocPyDatetime]], [[DocSeaborn]], [[DOC SYNC]], [[DOC SYNC COMMANDS]], [[DocTensorFlow]], [[Doctor]], [[mdfind]], 
 
 
 

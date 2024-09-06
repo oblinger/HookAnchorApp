@@ -1,3 +1,6 @@
+.[[Comp]].
+  ,   [[MAC]], [[OBS]], 
+
 == [[T]]   Computer Related
 
 

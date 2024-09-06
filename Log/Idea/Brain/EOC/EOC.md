@@ -5,9 +5,10 @@
   :	KEY Ideas
   :	Topics
   -
-  [[eoc-atlas]], [[eoc-formal]], [[eoc-impl]], ,  [[FF-prize]], [[Paths]], [[EOC Log]],
+  , , , ,  [[FF-prize]], [[Paths]], [[EOC Log]],
   ADDS:   , , , , ,
-  DELS: [[EOCA]], [[EOCB]], [[EOCI]], [[EOCK]], [[EOCT]], 
+  ,   [[EOCA]], [[EOCB]], [[EOCI]], [[EOCK]], [[EOCT]], 
+  DELS: [[EOCA]], [[EOCB]], [[EOCI]], [[EOCK]], [[EOCT]],[[eoc-atlas]], [[eoc-formal]], [[eoc-impl]], 
 
 
 

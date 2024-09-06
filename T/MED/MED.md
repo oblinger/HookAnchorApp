@@ -1,11 +1,11 @@
 
 :: [[MED.]]
 .[[MED]].
-  [[Glycemic Index]]:
+  :
   [[Jet Lag]]:
-  [[MED Blood Pressure]]:
+  :
   [[MED Blood Tests]]:
-  [[MED Cholesterol]]:
+  :
   [[MED Doctors]]:
   [[MED Exercise]]:
   :
@@ -18,11 +18,11 @@
   [[MED Pills]]:
   [[MED Psoriasis]]:
   [[MED Ref]]:
-  [[MED Research]]:
+  :
   [[MED Sleep]]:
   [[MED Vaccinations]]:
   [[MED Vision]]:
-  [[MED VO2Max]]:
+  :
   [[MED Weight]]:
   [[Exercise]]:
   [[Low Back Pain]]:
@@ -30,8 +30,9 @@
   [[MED-Vitamins]]:
   [[run]]:
   [[MED.]]:
-  ADDS:   [[MED=]],
+  ADDS:   ,
   ADDS:   [[MED Food]],
+  DELS: [[Glycemic Index]], [[MED Blood Pressure]], [[MED Cholesterol]], [[MED Research]], [[MED VO2Max]], [[MED=]], 
 
 
 

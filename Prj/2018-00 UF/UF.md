@@ -1,16 +1,17 @@
 .[[UF]].
-  [[ufAgenda]], [[UfApps]], [[ufElements]], [[ufGenerality]], [[UfGui]], [[ufIntroduction]], [[ufLAL]], [[ufMarkdown]], [[ufPublish]],
+  , [[UfApps]], , , , , , , [[ufPublish]],
   [[uniform1_vocabulary]], [[uniform7_oblits]],
   [[uniform7_sentences]], [[_URF]],
-  [[2020.03 - Uniform Whitepaper]], [[_agenda]], [[_choices]], [[_code_core]], [[_code_uniform]], [[essential capture]], [[_Hayes Note]], [[_outtakes]], [[_parts]], [[Recommender]]
+  [[2020.03 - Uniform Whitepaper]], [[_agenda]], [[_choices]], [[_code_core]], [[_code_uniform]], , [[_Hayes Note]], , [[_parts]], 
   [[_society]], [[_todo_OLD]], [[_vocabulary]],
   ADDS:   ,
   ADDS:   [[UC]],
   ADDS:   [[_ideas_OLD]],
-  ADDS:   , [[TextPuter]],
+  ADDS:   , ,
   ADDS:   ,
   ADDS:   ,
   ADDS:   [[Info]],
+  DELS: [[ufAgenda]], [[ufElements]], [[ufGenerality]], [[UfGui]], [[ufIntroduction]], [[ufLAL]], [[ufMarkdown]], [[essential capture]], [[_outtakes]], [[Recommender]], [[TextPuter]], 
 
 
 

@@ -1,3 +1,6 @@
+.[[RR MGR]].
+  ,   [[RR Business]], [[RR OKRs]], [[Startups Note]], 
+
 
 :: [[S.T.A.R.]]
 

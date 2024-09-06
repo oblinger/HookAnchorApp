@@ -1,3 +1,6 @@
+.[[ToRead]].
+  ,   [[Book To Read]], [[Podcasts To Listen To]], [[ToResearch]], 
+
 
 :: [[Read]]
 

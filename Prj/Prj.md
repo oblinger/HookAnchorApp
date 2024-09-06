@@ -8,19 +8,20 @@
   [[2016-00 FileThis]],
   [[2018-00 Wedding]],
   [[2020-08 Race Pitch]], [[__Race Pitch__]],
-  [[2022-03 BeFAANG]], [[BeFAANG TO DO]],
+  [[2022-03 BeFAANG]], ,
   [[2022-04 BeMLR]],
   [[2021-04 FindDayCare]],
   [[2022-05 Grandpa DJ]],
   [[2022-09 Mom80]],
   [[2022-02 Yearbook]],
-  [[2022-03 BeVC]]:  [[Searches]],
+  [[2022-03 BeVC]]:  ,
   ,
   [[2023-07 Task Rabbit]]: [[Task Rabbit]],
   ADDS:   ,
   ADDS:   [[2022-05 Enxt]], , ,
   ADDS:   ,
-  DELS: [[UF]], 
+  ,   [[UF]], 
+  DELS: [[UF]],[[BeFAANG TO DO]], [[Searches]], 
 
 
 

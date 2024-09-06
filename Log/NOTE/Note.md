@@ -1,3 +1,6 @@
+.[[Note]].
+  ,   [[DATED]], [[Notes]], 
+
 #log 
 n:: 'n...' 	Isolated 'notes' created by me
 

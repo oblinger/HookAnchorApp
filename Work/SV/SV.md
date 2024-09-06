@@ -4,29 +4,30 @@
 .[[SV]].
   [[SV Tasks]] -
   TOPS:			,   ,  [[Mgt]], ,
-  :		[[Reset]],  [[ROADMAP]],
-  [[SV Ops]]:	 	[[SV Dashboards]],  [[SV Testing]], [[SV Planning]],
+  :		,  ,
+  [[SV Ops]]:	 	,  , ,
   :	, ,
-  [[SV Market]]:	[[SV Customer]],  , [[SV Partner]],
-  [[SV Product]]:	[[SV Code]],  [[SV Apps]], [[SV System]], ,
+  [[SV Market]]:	,  , [[SV Partner]],
+  [[SV Product]]:	,  , , ,
   [[SV Software]]:
   [[INV]]:
-  INFO:			[[SV Code]], , [[SV Legal]], , [[Meta SV]],
+  INFO:			, , , , [[Meta SV]],
   ARCHIVE:		[[SV Archive]],   [[SV Wings]],
-  ADDS:   , [[Bug.]], [Bug Actual List Page](spot://bugactuallistpage), [Bug Board Page](spot://bugboardpage), [[Bugs]], [Canva](spot://canva), [[Circle]],
-  [Fireball](spot://fireball), [HALOS](spot://halos), [[Investor Intros]], [Jira](spot://jira), [Jira Me Page](spot://jiramepage), [[July Hiring]], , [[SV90.]], [[SV Basketball Info]]
+  ADDS:   , , [Bug Actual List Page](spot://bugactuallistpage), [Bug Board Page](spot://bugboardpage), , [Canva](spot://canva), [[Circle]],
+  [Fireball](spot://fireball), [HALOS](spot://halos), , [Jira](spot://jira), [Jira Me Page](spot://jiramepage), [[July Hiring]], , , [[SV Basketball Info]]
   [SV Clickup Page](spot://svclickuppage), [SV Confluence Page](spot://svconfluencepage), [SV C Root](spot://svcroot), , [SV Google Drive Page](spot://svgoogledrivepage)
-  [SV G Root](spot://svgroot), [[SV Letter]], [SV Log Page](spot://svlogpage), [[SV lrn]], ,
+  [SV G Root](spot://svgroot), , [SV Log Page](spot://svlogpage), , ,
   ADDS:   ,
   ADDS:   ,
-  ADDS:   [[@Circle]], [[@StatsPerform]], [[@SV]], [[Beyondo]], [[2023-02-00 CTOs corner]], [[Hoops]], [[Scout Bot]], [[SV Org]], [[Veo]],
-  ADDS:   [[2022-10-17 SV90]],
-  ADDS:   [[Work]],
+  ADDS:   , , [[@SV]], , , , , [[SV Org]], ,
+  ADDS:   ,
+  ADDS:   ,
   ADDS:   ,
   ADDS:   , , [SV Folder](spot://svfolder), , , , [Work Folder](spot://workfolder),
   ADDS:   , ,
   ADDS:   , [WW Folder](spot://wwfolder),
-  DELS: [[CV]], [[QQ]], [[SV People]], [[SV Strat]], [[SVT]], [[WW]], 
+  ,   [[CV]], [[QQ]], [[SV People]], [[SV Strat]], [[SVT]], [[WW]], 
+  DELS: [[CV]], [[QQ]], [[SV People]], [[SV Strat]], [[SVT]], [[WW]],[[Reset]], [[ROADMAP]], [[SV Dashboards]], [[SV Testing]], [[SV Planning]], [[SV Customer]], [[SV Code]], [[SV Apps]], [[SV System]], [[SV Code]], [[SV Legal]], [[Bug.]], [[Bugs]], [[Investor Intros]], [[SV90.]], [[SV Letter]], [[SV lrn]], [[@Circle]], [[@StatsPerform]], [[Beyondo]], [[2023-02-00 CTOs corner]], [[Hoops]], [[Scout Bot]], [[Veo]], [[2022-10-17 SV90]], [[Work]], 
 
 
 

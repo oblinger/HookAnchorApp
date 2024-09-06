@@ -1,7 +1,7 @@
 .[[RR]].
-  [[RR Business]]:
+  :
   [[RR MGR]]:
-  [[RR OKRs]]:
+  :
   [[RR PAPERS]]:
   [[RR Philosophy]]:
   :
@@ -20,7 +20,7 @@
   [[RMS]]:
   [[rrCV]]:
   :
-  [[Startups Note]]:
+  :
   [[Swearing]]:
   [[Systems]]:
   [[Trackers]]:
@@ -33,10 +33,11 @@ n:: Research Reference pages
 [[ML Ops]]
   ADDS:   ,
   ADDS:   , ,
-  ADDS:   [[Sophie's World]], [[Sora]],
+  ADDS:   , ,
   ADDS:   , , , , , ,
   ADDS:   , ,
-  DELS: [[AI]], [[ML]], [[RR Med]], [[RR Mgt]], 
+  ,   [[AI]], [[ML]], [[RR Med]], [[RR Mgt]], 
+  DELS: [[AI]], [[ML]], [[RR Med]], [[RR Mgt]],[[RR Business]], [[RR OKRs]], [[Startups Note]], [[Sophie's World]], [[Sora]], 
 
 
 

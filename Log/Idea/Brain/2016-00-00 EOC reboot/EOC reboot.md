@@ -1,3 +1,6 @@
+.[[EOC reboot]].
+  ,   [[eoc-atlas]], [[EOCB Engines Of Control Book]], [[eoc-formal]], [[eoc-impl]], [[F-ing Safe]], 
+
 
 :: [[F-ing Safe]],   [[eoc-atlas]],   [[EOCB Engines Of Control Book]],   [[eoc-formal]],   [[eoc-impl]]
 http://edge.org/response-detail/26587   dataset are the limiting factor

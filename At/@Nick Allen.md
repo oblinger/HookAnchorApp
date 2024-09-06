@@ -12,6 +12,21 @@ But reality is that my situation is closer to Sean's than Sam's, so its tricky.
 I talked to Qingling about how we can mange this and put some time on your calendar tomorrow so we can talk about it.
 
 
+- Going cash negative is really not great...
+- Really helps this: QL is frustrated that I am pretty absorbed by my job - Eli time
+	- QL is accepting a new role at 1-password, so some data duty will really help
+
+- Her biggest fear is that she does not really get more of me.
+	- well founded, I was as 1/3 time co-founder at Martian Robotics, but had a brand new org and grew a 13 person team, I was easily 60/hr/week in my "1/3 time role"
+	- Better situation here:  help new guy - keep SW side at high level, and even focusing at a very low level w/ our guys 
+
+
+- Go down to 50% of my original 200K salary and equity.  (so 45% down from here)
+- Talk on July-1 about going back to 100% time somewhere between July1 and Oct1
+	- but it would be deferred cash 
+
+
+
 ### 2024-09-05  SportsVisio cuts
 - Family stuff is good
 - LLM course

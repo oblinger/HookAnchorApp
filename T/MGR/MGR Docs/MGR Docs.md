@@ -1,3 +1,6 @@
+.[[MGR Docs]].
+  ,   [[MGR AI Planning]], [[MGR Annual Review]], [[MGR Leadership]], [[MGR Meetings]], [[MGR Negotiations]], [[MGR Plan]], [[MGR Product]], [[My mgr NOTES]], 
+
 
 :: [[MGR Annual Review]],   [[MGR Plan]],   [[MGR Leadership]],   [[MGR Meetings]],   [[My mgr NOTES]]
 

@@ -1,3 +1,6 @@
+.[[Writing]].
+  ,   [[An_Athiests_Spiritual_Calling]], [[ArmChair]], [[Politics]], 
+
 #set
 - [[ArmChair]],   [[Politics]]
 
