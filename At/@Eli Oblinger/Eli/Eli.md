@@ -1,20 +1,13 @@
 .[[Eli]].
+  [[ELI Log]], [[Eli Food]], [[ELI Quotes]],
+  [[Eli Strategy]]:
   [[Eli Firsts]]:
-  [[Eli Food]]:
-  [[Daycare Applications]]:
   [[2023-05 Cool Kids]]:
   [[Eli Activities]]:
   [[Eli Interactions]]:
-  [[Eli Strategy]]:
   [[Eli Friends]]:
-  [[Nanny]]:
-  [[ELI Education]]:
-  [[ELI Quotes]], [[Eli Math]], , [[Eli Sleep Training]],
-  ADDS:   [[Care Notes]],
-  ADDS:   [[ELI Log]],
-  ADDS:   ,
-  ADDS:   [[BCMS]],
-  ADDS:   ,
+  OLDER: [[Nanny]], [[Care Notes]], [[Eli Sleep Training]], [[BCMS]], [[Daycare Applications]]:
+  [[ELI Education]], [[Eli Math]], 
 
 
 

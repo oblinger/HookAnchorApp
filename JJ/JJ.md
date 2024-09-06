@@ -1,12 +1,4 @@
 .[[JJ]].
-  ADDS:   [[Doc]], [[Log]], [[Misc]], [[MY]], [[Prj]], [[RR]], [[T]], [[TOC]], [[Top]],
-
-
-
-
-
-
-
-
-
+  ADDS:   , , , , , , , [[TOC]], ,
+  DELS: [[Doc]], [[Log]], [[Misc]], [[MY]], [[Prj]], [[RR]], [[T]], [[Top]], 
 

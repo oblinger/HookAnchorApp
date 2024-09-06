@@ -3,7 +3,7 @@ HANDS: 	Tensor, DL training,
 HANDS: 	Quickly build JSON endpoint
 KNOW:		100 algs
 
-
-- diffusion
+- Kalman filter
+- Diffusion
 - DL Specialization: Sequence Models (not yet started)
 - Coursera: IBM PyTorch
