@@ -5,9 +5,11 @@ n:: no prefix.	Dated entries without any typing prefix
 
 | Date       | File                                    | Notes                                                                                                                             |
 | ---------- | --------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------- |
+| 2024-09-05 | [[@Nick Allen]]                             | Jason Messaging                                                                                                                   |
+| 2024-09-05 | [[@Nick Allen]]                             | SportsVisio cuts                                                                                                                  |
 | 2024-09-03 | [[Jnl]]                                     | My Strengths                                                                                                                      |
 | 2024-09-03 | [[@Maxim Dorogov]]                          | Feedback                                                                                                                          |
-| 2024-09-01 | [[@Nick Allen]]                             | Text about SportsVisio                                                                                                            |
+| 2024-09-01 | [[@Nick Allen]]                             | SportsVisio cuts                                                                                                                  |
 | 2024-08-29 | [[2024-08 Backend Architect]]               | Spreadsheet                                                                                                                       |
 | 2024-08-27 | [[@James Neilson]]                          |                                                                                                                                   |
 | 2024-08-26 | [[@Steve Singles]]                          | AI Dash Job Posting                                                                                                               |
@@ -19,6 +21,7 @@ n:: no prefix.	Dated entries without any typing prefix
 | 2024-08-20 | [[@Sean O'Connor]]                          | Looking to the future                                                                                                             |
 | 2024-08-19 | [[@Alta Vista]]                             | notes when we first went                                                                                                          |
 | 2024-08-19 | [[@Jason Syversen]]                         | Plans                                                                                                                             |
+| 2024-08-14 | [[2024-05 Sell Acura]]                      | Sell Acura                                                                                                                        |
 | 2024-08-14 | [[Phone (old)]]                             | Sell Acura                                                                                                                        |
 | 2024-08-14 | [[Reflections]]                             | Stressed & Procrastinating                                                                                                        |
 | 2024-08-11 | [[@Alexander Grosse]]                       | Veo Partnership Discussion                                                                                                        |

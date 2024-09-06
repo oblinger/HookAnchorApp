@@ -1,7 +1,7 @@
 
 # JUMP PAGES
 
-
+[[JJ]],	
 [[Doc]]: [[DocApplescript]],	[[DocEmacs]],	[[DocJavascript]],	[[DocObsidian]],	
     [[DocPython]],	[[DocR]],	[[DocRuby]],	
 [[Log]]: [[Day]],	[[Journal]],	[[Meet]],	[[MEETING]],	[[Note]],	[[Receipts]],	
@@ -66,6 +66,13 @@
     [[ML]]: [[Stat]],	
         [[DL]]: [[DL Alg]],	
     [[Systems]]: [[Pandoc]],	
+[[Set]]: [[Book]],	[[CTC]],	[[Movies]],	[[Phone]],	[[Recipe]],	[[Returns]],	
+    [[ToRead]],	
+    [[BUY]]: [[Bought]],	
+    [[Humor]]: [[2009-09-06 Tabata]],	
+    [[Lang]]: [[haskell]],	
+    [[Writing]]: [[ArmChair]],	
+        [[Politics]]: [[Palestinians]],	[[Race]],	
 [[T]]: [[Trash]],	[[Web]],	
     [[Career]]: [[CAR Coach]],	
         [[NextJob]]: [[NJ]],	[[NJ16]],	[[NJ22]],	
@@ -105,13 +112,6 @@
     [[Tag]]: [[Hackers]],	
         [[Comp]]: [[OBS]],	
             [[MAC]]: [[App]],	
-[[Set]]: [[Book]],	[[CTC]],	[[Movies]],	[[Phone]],	[[Recipe]],	[[Returns]],	
-    [[ToRead]],	
-    [[BUY]]: [[Bought]],	
-    [[Humor]]: [[2009-09-06 Tabata]],	
-    [[Lang]]: [[haskell]],	
-    [[Writing]]: [[ArmChair]],	
-        [[Politics]]: [[Palestinians]],	[[Race]],	
 [[Work]]: 
     [[SV]]: [[Circle]],	[[INV]],	[[Mgt]],	[[SV Market]],	[[SV Ops]],	[[SV Org]],	
         [[SV Software]],	[[SVT]],	[[SV Wings]],	

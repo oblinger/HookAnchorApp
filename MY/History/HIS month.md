@@ -1,4 +1,5 @@
 
+[[DocGit\|Fri Jul 26  2024]]  	[[DocGit#REF]]  
 [[DocGit\|Fri Jul 26  2024]]  	[[DocGit#=== OLDER STUFF ===]]  
 [[DocPycharm\|Fri Jul 26  2024]]  	[[DocPycharm#HOW TO]]  
 [[NJ Rewrite\|Fri Jul 26  2024]]  	[[NJ Rewrite#Decade+ Experience in AI/ML/DL]]  
