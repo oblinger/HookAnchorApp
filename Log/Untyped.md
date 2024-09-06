@@ -559,7 +559,7 @@ n:: no prefix.	Dated entries without any typing prefix
 | 2023-01-11 | [[RES References]]                          | Grzegorz References                                                                                                               |
 | 2023-01-10 | [[FIN Budgeting]]                           | Energy Usage                                                                                                                      |
 | 2023-01-09 | [[Habit]]                                   | Wake-First-MIT                                                                                                                    |
-| 2023-01-06 | [[AMA Notes]]                               | Fake Taylor's Tea                                                                                                                 |
+| 2023-01-06 | [[AMA]]                                     | Fake Taylor's Tea                                                                                                                 |
 | 2023-01-03 | [[@Apple]]                                  | Laptop Repair                                                                                                                     |
 | 2023-01-01 | [[DYL]]                                     | Hook System                                                                                                                       |
 | 2023-01-01 | [[DYL]]                                     | Edu Corp                                                                                                                          |

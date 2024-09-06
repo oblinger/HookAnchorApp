@@ -1,4 +1,8 @@
 
+[[MAC How To\|Thu May 4  2023 ]]  	[[MAC How To#= RE-INSTALL OS - How to reinstall the OS]]  
+[[MAC How To\|Thu May 4  2023 ]]  	[[MAC How To#= RENAME APP - How to duplicate / Rename an app]]  
+[[MAC How To\|Thu May 4  2023 ]]  	[[MAC How To#= MAKE APP - How to make a new app using (using ~/bin/makeap]]  
+[[MAC How To\|Thu May 4  2023 ]]  	[[MAC How To#= CODING - How to get setup for coding]]  
 [[MAC How To\|Thu May 4  2023 ]]  	[[MAC How To#= MISC NOTES - How to do misc stuff]]  
 [[MAC How To\|Thu May 4  2023 ]]  	[[MAC How To#= BLUETOOTH SWITCHING - How to prevent auto device switching]]  
 [[MAC How To\|Thu May 4  2023 ]]  	[[MAC How To#= AIRPODS MAX - How to get device switching to work]]  

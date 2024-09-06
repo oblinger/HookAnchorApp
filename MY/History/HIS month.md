@@ -1,4 +1,8 @@
 
+[[Cleaning Service\|Mon Jul 29  2024]]  	[[Cleaning Service#2024-07-26  Cleaners:  D&E Construction]]  
+[[Cleaning Service\|Fri Jul 26  2024]]  	[[Cleaning Service#2024-07-25  Progressive Grounds Bulletin Board Advert]]  
+[[Cleaning Service\|Fri Jul 26  2024]]  	[[Cleaning Service#2024-07-25  Ask on Thumbtack]]  
+[[DocGit\|Fri Jul 26  2024]]  	[[DocGit#HOW TO]]  
 [[DocGit\|Fri Jul 26  2024]]  	[[DocGit#REF]]  
 [[DocGit\|Fri Jul 26  2024]]  	[[DocGit#=== OLDER STUFF ===]]  
 [[DocPycharm\|Fri Jul 26  2024]]  	[[DocPycharm#HOW TO]]  
