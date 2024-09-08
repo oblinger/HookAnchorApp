@@ -771,7 +771,7 @@ Still his conclusion that one cannot rely on an AI mote is still valid.  BECAUSE
 Even though the market at the bottom is the most fractured, and thus the hardest to acquire, I think direct value to player/parent/coach could be among the most sticky and valuable network available to us.  Once a parent has a year's worth of games in our system and links on their social media to our clips they are going to want to stay with our service, plus there is the HUDL-like network of AAU teams and shared games etc.  I dont see any other available space like that with such a sticky customer-base.  Still we might need to land a different kind of partnership (like Cerebro) in order to drive adoption in the ultimate target market.
 
 
-### 2023-04-24  F90-CALL2 -   [[Reset]]
+### 2023-04-24  F90-CALL2 -   [[2023-Reset-DanO-Role]]
 ### 2023-04-10  F90-CALL3 - Feedback Call
 
 - How am I doing?

@@ -3,7 +3,7 @@
 
 
 - [[Investor Intros]]
-- [[Bridge]] - 
+- [[2023 Bridge Round]] - 
 - [[INV Log]] - 
 
 

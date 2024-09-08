@@ -1,6 +1,6 @@
 
 - [[Investor Intros]],  
-- [[bridge]]
+- [[2023 Bridge Round]]
 - 
 
 

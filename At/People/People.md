@@ -1,3 +1,7 @@
+.[[PEOPLE]].
+  , [[Family]],
+  , [PEOPLE Note](spot://peoplenote), 
+
 .[[People]].
   ,   [[Family]], 
 

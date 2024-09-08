@@ -1,14 +1,6 @@
 .[[EOCB]].
-  [[EOCB End Run -- Cyber Model]],
-  ,
-  [[EOCB LimitsOnAlignment]],
-  [[EOCB SandboxFutility]],
-  [[EOCB Web]],
-  :
-  ADDS:   [[EOCB Progression]],
-  DELS: [[EOCB Engines Of Control Book]], 
-
-
+  , [[EOCB End Run -- Cyber Model]], [[EOCB LimitsOnAlignment]], [[EOCB Progression]]
+  , [[EOCB SandboxFutility]], [[EOCB Web]], 
 
 
 

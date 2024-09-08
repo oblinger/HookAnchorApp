@@ -9,13 +9,14 @@
   .			[[VAEs]], [[RLHF Reinforcement Learning from Human Feedback]],
   DL ALG2:	[[KAN - Kolmogorov-Arnold Neworks]], [[DSPY System]],
   [[DL SYS]]:	[[GPT]], [[Segment Anything]], [[RASA]],
-  [[DL Notation]]:	[[NG Notation]], [[Coursera Notes]]:
+  [[DL Notation]]:	[[NG Notation]], :
   ,
   ADDS:   , , , ,
   ADDS:   , , ,
   ADDS:   , , ,
   ADDS:   [[CNNs]], [[DL Opto]], [[DL Strat]],
-  ,   [[DL Alg]], 
+  ,   [[DL Alg]],
+  DELS: [[Coursera Notes]], 
 
 
 

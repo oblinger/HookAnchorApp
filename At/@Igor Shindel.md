@@ -13,7 +13,7 @@
 
 
 **[[SV90|90-DAY PLAN]]** - I have the beginnings of a 90-day plan.  I would love to get your thinking about my priorities and approach.  
-	- [[2023 Learning]]
+	- [[2023 SV Learning]]
 	- Job Defining Conversations
 
   

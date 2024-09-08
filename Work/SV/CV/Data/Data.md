@@ -4,7 +4,7 @@
   [Data Docs](spot://datadocs),
   [CV Data Tasks](spot://cvdatatasks),
   [Data Games](spot://datagames),
-  DELS: [DT](spot://dt), [[Dataset]], 
+  DELS: [DT](spot://dt), [[2023 Build Datasets Needed for the CV Team]], 
 
 
 

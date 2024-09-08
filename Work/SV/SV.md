@@ -14,7 +14,7 @@
   INFO:			, , , , [[Meta SV]],
   ARCHIVE:		[[SV Archive]],   [[SV Wings]],
   ADDS:   , , [Bug Actual List Page](spot://bugactuallistpage), [Bug Board Page](spot://bugboardpage), , [Canva](spot://canva), [[Circle]],
-  [Fireball](spot://fireball), [HALOS](spot://halos), , [Jira](spot://jira), [Jira Me Page](spot://jiramepage), [[July Hiring]], , , [[SV Basketball Info]]
+  [Fireball](spot://fireball), [HALOS](spot://halos), , [Jira](spot://jira), [Jira Me Page](spot://jiramepage), , , , [[SV Basketball Info]]
   [SV Clickup Page](spot://svclickuppage), [SV Confluence Page](spot://svconfluencepage), [SV C Root](spot://svcroot), , [SV Google Drive Page](spot://svgoogledrivepage)
   [SV G Root](spot://svgroot), , [SV Log Page](spot://svlogpage), , ,
   ADDS:   ,
@@ -23,11 +23,11 @@
   ADDS:   ,
   ADDS:   ,
   ADDS:   ,
-  ADDS:   , , [SV Folder](spot://svfolder), , , , [Work Folder](spot://workfolder),
+  ADDS:   , , , , , , ,
   ADDS:   , ,
   ADDS:   , [WW Folder](spot://wwfolder),
-  ,   [[CV]], [[QQ]], [[SV People]], [[SV Strat]], [[SVT]], [[WW]], 
-  DELS: [[CV]], [[QQ]], [[SV People]], [[SV Strat]], [[SVT]], [[WW]],[[Reset]], [[ROADMAP]], [[SV Dashboards]], [[SV Testing]], [[SV Planning]], [[SV Customer]], [[SV Code]], [[SV Apps]], [[SV System]], [[SV Code]], [[SV Legal]], [[Bug.]], [[Bugs]], [[Investor Intros]], [[SV90.]], [[SV Letter]], [[SV lrn]], [[@Circle]], [[@StatsPerform]], [[Beyondo]], [[2023-02-00 CTOs corner]], [[Hoops]], [[Scout Bot]], [[Veo]], [[2022-10-17 SV90]], [[Work]], 
+  ,   [[CV]], [[QQ]], [[SV People]], [[SV Strat]], [[SVT]], [[WW]],
+  DELS: [[CV]], [[QQ]], [[SV People]], [[SV Strat]], [[SVT]], [[WW]],[[2023-Reset-DanO-Role]], [[ROADMAP]], [[SV Dashboards]], [[SV Testing]], [[SV Planning]], [[SV Customer]], [[SV Code]], [[SV Apps]], [[SV System]], [[SV Code]], [[SV Legal]], [[2023 Bugs  Flow]], [[Bugs]], [[Investor Intros]], [[SV90.]], [[2023 SV Investor News Letter]], [[2023 SV Learning]], [[@Circle]], [[@StatsPerform]], [[Beyondo]], [[2023-02-00 CTOs corner]], [[Hoops]], [[Scout Bot]], [[Veo]], [[2022-10-17 SV90]], [[Work]],[[July Hiring]], [SV Folder](spot://svfolder), [Work Folder](spot://workfolder), 
 
 
 
@@ -306,9 +306,9 @@
   [SV Google Drive Page](spot://svgoogledrivepage):
   [SV G Root](spot://svgroot):
   [[SV Individuals]]:
-  [[SV Letter]]:
+  [[2023 SV Investor News Letter]]:
   [SV Log Page](spot://svlogpage):
-  [[SV lrn]]:
+  [[2023 SV Learning]]:
   [[SV Roadmap]]:
   [[2023 Deliverables]]:
   [Canva](spot://canva):
@@ -320,7 +320,7 @@
   [[Meta SV]]:
   [[Mgt]]:
   [[QQ]]:
-  [[Reset]]:
+  [[2023-Reset-DanO-Role]]:
   [[ROADMAP]]:
   [[SV Apps]]:
   [[SV Archive]]:

@@ -1,3 +1,6 @@
+.[[Journal]].
+  , [[Journal Old]], 
+
 #log <[[DATED]]
 n:: 'j...' 	Journal entries  (NOT USED)
 

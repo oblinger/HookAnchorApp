@@ -48,7 +48,7 @@
   DELS: [[Hack]], 
 
 
-  DELS: [[DAT]], [[Hack Chunch]], [[My Spot]], [[Time Tracker]], 
+  DELS: [[DAT]], [[Hack Chunch]], [[Hack Spot]], [[Time Tracker]], 
 
 
 

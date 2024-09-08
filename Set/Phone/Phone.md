@@ -1,5 +1,6 @@
 .[[Phone]].
-  ,   [[Phone (old)]], 
+  , [[Phone -old-]], 
+
 
 #set 
 n:: Administrative actions associated with accounts or such (favor using @entry instead)

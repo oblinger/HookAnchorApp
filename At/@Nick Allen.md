@@ -99,7 +99,7 @@ Narrative Adventure Game
 
 
 ### 2023-05-01  Prep for my Reset conversation
-- [[Reset]] planning
+- [[2023-Reset-DanO-Role]] planning
 
 - Think I want AI-team reporting to me, wonder if I want SW reporting to me
 - DONT want product details reporting up thru me.

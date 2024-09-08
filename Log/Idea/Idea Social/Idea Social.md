@@ -1,7 +1,8 @@
 .[[Idea Social]].
   ADDS:   [[2006-10 Emergent Good]],
-  ADDS:   [[2013-01 Better Voting]], [[2010-10 Good With Money]], [[2008-10 New Kind Of Warrant]], [[2007-08 Patent Value]], [[2007-09 Social Govenance]], [[2009-03 State Edu Testing]]
+  ADDS:   [[2013-01 Better Voting]], [[2010-10 Good With Money]], [[2008-10 New Kind Of Warrant]], [[2007-08 Patent Value]], , [[2009-03 State Edu Testing]]
   [[2021-00 Too Big To Fail]], [[2011-03 Unstoppable Consensus]], [[2007-00 Village First]],
+  DELS: [[2007-09 Social Govenance]], 
 
 
 

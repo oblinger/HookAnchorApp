@@ -33,7 +33,7 @@
 - [[Mission]]		- 
 
 #### Offload Lists
-- [[Archive]]		-  Place to retire planning items.   [[Arc ALL]].
+- [[Archive List]]		-  Place to retire planning items.   [[Arc ALL]].
 - [[Later]]			-  Tasks that have been pushed to 'later' 
 - [[Quarterly]]	-  
 - [[External]]		- ????? 
@@ -63,7 +63,7 @@ CHANGE: [[Wings]], [[Current]],
 - 
 
   [Quick](Quick.md)
-  [Quarterly](Quarterly.md)  [Archive](Archive.md)  [Work](Work.md)  [Full](Full.md)  [self](MY/Plan/self.md)  [Later](Later.md)  [Repeat](Repeat.md)  [Ping](Ping.md)  [Q2](Q2.md)  [Todo](Todo.md)  [Habit](Habit.md)  [Social](Social.md)  [SCR Note](SCR%20Note.md)  [Watching](Watching.md)  [Current](Current.md)  [L](MY/Plan/L.md)  [Hacks](Hacks.md)
+  [Quarterly](Quarterly.md)  [Archive List](Archive%20List.md)  [Work](Work.md)  [Full](Full.md)  [self](MY/Plan/self.md)  [Later](Later.md)  [Repeat](Repeat.md)  [Ping](Ping.md)  [Q2](Q2.md)  [Todo](Todo.md)  [Habit](Habit.md)  [Social](Social.md)  [SCR Note](SCR%20Note.md)  [Watching](Watching.md)  [Current](Current.md)  [L](MY/Plan/L.md)  [Hacks](Hacks.md)
   [Archive](__Archive__.md)
   [Work](__Work__.md)
   [Todo](__Todo__.md)  [Repeat](__Repeat__.md)  [Calls](AT/__Calls__.md)  [Later](__Later__.md)  [Watching](__Watching__.md)  [Habits](__Habits__.md)  [Current](__Current__.md)  [Links](__Links__.md)  [Scratch](Scratch/__Scratch__.md)  [Full](__Full__.md)  [Quarterly](__Quarterly__.md)  [Self](__Self__.md)  [Q2](__Q2__.md)  [Hack](__Hack__.md)  [Ping](__Ping__.md)  [Social](__Social__.md)  [Fried](Fried.md)
@@ -77,7 +77,7 @@ CHANGE: [[Wings]], [[Current]],
   [External](External.md)
 
   [Fun](Fun.md)
- [[Quarterly]],  [Quarterly](Quarterly.md),   [Planning](Planning.md),   [Archive](Archive.md),   [Work](Work.md),   [Full](Full.md),   [self](MY/Plan/self.md),   [Later](Later.md),   [Repeat](Repeat.md),   [Calls](Calls.md),   [Ping](Ping.md),   [Q2](Q2.md),   [Fried](Fried.md),   [Todo](Todo.md),   [Habit](Habit.md),   [Social](Social.md),   [SCR Note](SCR%20Note.md),   [COMS](COMS.md),   [Prime](Prime.md),   [Watching](Watching.md),   [Current](Current.md),   [L](MY/Plan/L.md),   [Quick](Quick.md),   [Hacks](Hacks.md),   [Active](Active.md)
+ [[Quarterly]],  [Quarterly](Quarterly.md),   [Planning](Planning.md),   [Archive List](Archive%20List.md),   [Work](Work.md),   [Full](Full.md),   [self](MY/Plan/self.md),   [Later](Later.md),   [Repeat](Repeat.md),   [Calls](Calls.md),   [Ping](Ping.md),   [Q2](Q2.md),   [Fried](Fried.md),   [Todo](Todo.md),   [Habit](Habit.md),   [Social](Social.md),   [SCR Note](SCR%20Note.md),   [COMS](COMS.md),   [Prime](Prime.md),   [Watching](Watching.md),   [Current](Current.md),   [L](MY/Plan/L.md),   [Quick](Quick.md),   [Hacks](Hacks.md),   [Active](Active.md)
 
 
 

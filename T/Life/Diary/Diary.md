@@ -2,10 +2,11 @@
 .[[Diary]].
   :
   :
-  [[Journal Old]]:
+  :
   [[Reflections]]:
   ADDS:   [[Jnl]],
   ADDS:   ,
+  DELS: [[Journal Old]], 
 
 
 

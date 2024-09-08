@@ -1,3 +1,10 @@
+.[[ORG]].
+  , [[@Amazon]], [[@Apple]], [[@Citibank]], [[@Facebook]], [[@Facebook-Meta]], [[@Ginza Metrics]]
+  , [[@IBM]], [[@LinkedIn]], [[@Microsoft]], [[@Montessori Childrens Center]], [[@Netflix]]
+  , [[@PARC]], [[@TecHunting]], [[@Thistle]], [[@Vmware]], [[Org Startup]], [[Service]],
+  , [ORG Note](spot://orgnote),
+  , [[@Merrill]], [[@Vanguard]], 
+
 .[[Org]].
   :
   ADDS:   [[Org Startup]],

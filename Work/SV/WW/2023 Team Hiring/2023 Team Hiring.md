@@ -1,24 +1,3 @@
-.[[2023 Team Hiring]].
-  ADDS:   [[Head of SW]], [[H-F90]],
-
-
-
-
-
-
-
-
-.[[Team Hiring]].
-  ADDS:   [[H-F90]],
-  ADDS:   [[Head of SW]],
-
-:: [[2023-07 QA-hiring]]
-
-:: [[H-F90]]
-
-:: [[Head of SW]]
-(See [[2023 Team Hiring]])
-
 
 
 
@@ -37,7 +16,7 @@ TODO
 - best in class 
 
 
-- [[H-F90]] -- hiring plan
+- [[2023 Team Hiring]] -- hiring plan
 - ML OPS
 - Stuff
 	-: 
@@ -65,6 +44,82 @@ TODO
 - [ ] Respond to Ignacio
 
 
+
+
+https://www.linkedin.com/in/marianocapurro/
+https://www.linkedin.com/in/iturregui/
+https://www.linkedin.com/in/sebamontini/
+
+https://www.linkedin.com/in/fernando-s-4986bb39/
+https://www.linkedin.com/in/focampo/
+https://www.linkedin.com/in/agustin-polito/
+
+https://www.linkedin.com/in/nicolassigal/
+https://www.linkedin.com/in/m-victoria-vitale/
+
+https://www.linkedin.com/in/juan-cruz-nores-213198/
+https://www.linkedin.com/in/santip/
+https://www.linkedin.com/in/marcospavelek/
+
+https://www.linkedin.com/in/estebantundidor/
+https://www.linkedin.com/in/ezegolub/
+https://www.linkedin.com/in/davidjosecohan/details/experience/
+
+
+
+
+6K/mo for senior flutter.
+
+- 75% (full delegation) / 25% time 
+  (close collab / delegate collab / peer sharing)
+
+- low
+
+- Moderate hours & High tempo
+
+
+
+- Hiring: think thru propose deltas, 
+	- interview backend person
+
+
+
+
+Lets build complete - bullet point level plans for
+- Week1, Week2, Week3  
+- Month1, Month2, Month3
+- Plan for how you will spend your time, and 
+  what your tactical & strategic aims, and 
+  how & when to get there (which steps when)
+
+- No need to be verbose.. we can talk thru items
+- But be complete, include get to know you calls etc.
+
+
+Existing and soon team:
+
+Concerns: (for each what should we do? what will you do?)
+- TESTING
+	- Our QA is not strong enough
+	- Automation?  what/when
+	- hiring approach/costs
+- CODE
+	- Our team's code quality is questionable.
+	- knowns Junior, but lower cost.  good value?  enough?
+- PRIORITIZATION
+	- might be too much for you to guess at
+- PLANNING
+	- Mid-level planning
+- FEATURE SPEC
+	- Precision of features @ higher level UX
+	- Creativity in working with product mgr
+
+
+Thoughts on all else:
+- SCRUMS
+- JIRA Planning
+- Higher planning
+- testing
 
 # BACKEND
 
@@ -174,3 +229,12 @@ Nest.js
 
 # LOG
 ### 2023-09-27  Luciano Start
+
+
+
+- [[@Agustin Polito]] 
+
+INTERVIEWING QUESTIONS:
+
+- TESTING: very little in place.  systems bricks alot.  team is overwhelmed, what order do you rollout and strengthen.
+

@@ -6,7 +6,7 @@
   ADDS:	, [CV Ana](spot://cvana), ,
   OLD:	[CVT](spot://cvt), [DSET](spot://dset), ,
   ADDS:   [svdata](spot://svdata), ,
-  ADDS:   [Standup](spot://standup),
+  ADDS:   ,
   ADDS:   [APIs](spot://apis),
   ADDS:   [CAPS](spot://caps),
   ADDS:   ,
@@ -18,7 +18,8 @@
   ADDS:   ,
   ADDS:   ,
   ADDS:   ,
-  ,   [[CV Log]], [[CVP]], [[Data]], 
+  ,   [[CV Log]], [[CVP]], [[Data]],
+  DELS: [Standup](spot://standup), 
 
 
 

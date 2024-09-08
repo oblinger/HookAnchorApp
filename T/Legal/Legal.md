@@ -1,6 +1,7 @@
 .[[Legal]].
   ADDS:   [[2017 Legal Ob Labs]],
-  ADDS:   [[2015 Legal Bizzy]], [[2023 Legal NDA - AF]], [[2023 Legal SV]], [[Legal Uniform]], [[Templates Legal]],
+  ADDS:   [[2015 Legal Bizzy]], [[2023 Legal NDA - AF]], [[2023 Legal SV]], [[Legal Uniform]], ,
+  DELS: [[Templates Legal]], 
 
 
 

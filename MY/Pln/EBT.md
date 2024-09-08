@@ -1,6 +1,0 @@
-
-- [ ] Bi-Weekly dates
-- [ ] Sleeping Eli's Room
-- [ ] Talk about issue
-- [ ] Pair tps
-- [ ] My tps

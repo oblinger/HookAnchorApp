@@ -1,6 +1,6 @@
 .[[Food]].
   [[Diet]]:
-  [[dinner]]:
+  :
   [[Meals]]:
   [[Meals Thermomix]]:
   [[Meals Vegetables]]:
@@ -11,13 +11,16 @@
   [[FastingDiet]]:
   [[Food Parents]]:
   [[Groc]]:
-  [[Noom Notes]]:
+  :
   [[Restaurants]]:
   [[Try Foods]]:
   ADDS:   [Nutrition Data Page](spot://nutritiondatapage), [Nutrition Facts Page](spot://nutritionfactspage), [Nutrition Value Page](spot://nutritionvaluepage),
   ADDS:   [[qwd]],
-  ADDS:   [[Food Recipe Research]], [[Food Research]],
+  ADDS:   [[Food Recipe Research]], ,
   ADDS:   [[Eat]],
+  , [FOOD Research Note](spot://foodresearchnote),
+  , [[FOOD Research]], 
+  DELS: [[dinner]], [[Noom Notes]], [[Food Research]],
 
 
 

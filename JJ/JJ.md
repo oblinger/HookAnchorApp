@@ -1,4 +1,5 @@
 .[[JJ]].
-  ADDS:   [[TOC]],
+  ADDS:   ,
+  DELS: [[TOC]], 
 
 

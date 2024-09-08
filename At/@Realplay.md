@@ -19,7 +19,7 @@ Added 15 seconds, but not
 ### 2023-09-19  Intro Discussion
 
 Framing
-[[BaseB]] 
+[[2023 Base Ball Product Offering]] 
 
 Questions:
 

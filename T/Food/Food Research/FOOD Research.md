@@ -1,3 +1,6 @@
+.[[FOOD Research]].
+  , [[Glycemic Index]], [[Satiety Index]], 
+
 .[[Food Research]].
   ,   [[Glycemic Index]], [[Satiety Index]], 
 

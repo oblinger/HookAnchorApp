@@ -4,12 +4,13 @@
   [[KM Global 2 Local]]:
   [[KM Overview]]:
   ADDS:   [[Multi-List WorkFlow]],
-  ADDS:   [[Meta KM]],
+  ADDS:   ,
   ADDS:   [[Dooby]], ,
   ADDS:   [KM script](spot://kmscript),
   ADDS:   [KM Shell](spot://kmshell),
-  ,   [[Hook System]], 
-  DELS: [[Hook System]],[[KMco]], 
+  ,   [[Hook System]],
+  , [[KM Meta KM]], 
+  DELS: [[Hook System]],[[KMco]],[[KM Meta KM]],
 
   DELS: [KM lShell](spot://kmshell), 
 
@@ -300,7 +301,7 @@
 (Move this to SYS or OBS, KM is for the abstract concept and/or my projects here)
 
 
-[[Meta KM]] - [[PKM]] - [[Hook System]] 
+[[KM Meta KM]] - [[PKM]] - [[Hook System]] 
 - [[Multi-List WorkFlow]] 
 - [[OBS Projects]],
 

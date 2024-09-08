@@ -316,4 +316,4 @@
 
 
 
-  DELS: [[MinCalcs]], [[03-06  Basketball Stats.docx]], [[STATS]], 
+  DELS: [[2023 Minutes Stat Calculations and Annotations]], [[03-06  Basketball Stats.docx]], [[STATS]], 

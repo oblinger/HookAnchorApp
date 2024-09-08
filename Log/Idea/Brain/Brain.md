@@ -2,14 +2,15 @@
   , , [[DEEP_BOOT]], , , , ,
 - [[2007-00-00 Brain DARPA Program]]
 - [[2009-05-00 Consciousness]]
-- 
+-
 -
 - [[2016-00-00 PPP]]
 - [[2021-06-00 Brain3]]
   ADDS:   [[End Of Man Book]], [[EOC reboot]], ,
   ADDS:   , ,
-  ,   [[EOC]], [[The Sentient Weapon]], 
-  DELS: [[EOC]], [[The Sentient Weapon]],[[BrainDomains]], [[Levels]], [[pppw]], [[Strong AI]], [[2009-06-00  PAUL NOTE]], 
+  ,   [[EOC]], ,
+  , [[2015-00-00 The Sentient Weapon]], 
+  DELS: [[EOC]], [[The Sentient Weapon]],[[2021-06-00 Brain3]], [[Levels]], [[pppw]], [[Strong AI]], [[2007-00-00 Brain DARPA Program]],[[The Sentient Weapon]],
 
 
 
@@ -230,7 +231,7 @@
 
 .[[brain]].
   ADDS:   [[brain book outline]],
-  ADDS:   [[BrainDomains]],
+  ADDS:   [[2021-06-00 Brain3]],
 
 ## Ideas
 

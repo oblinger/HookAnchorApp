@@ -1,3 +1,7 @@
+.[[LANG]].
+  , [[haskell]],
+  , [LANG Note](spot://langnote), 
+
 .[[Lang]].
   ADDS:   [[haskell]],
 

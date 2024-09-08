@@ -5,7 +5,7 @@
 - BASEMENT -- Add light controls
 - [ ] Jared:  Facial counter strain, glocose Libre (Zoe project)		
 - [ ] [[2023 Tournament Flow]]: Write it
-- [ ] [[HeadRm]]: 
+- [ ] [[2023 Headroom Analysis]]: 
 - [ ] [[2023 Competitive Analysis]]: 
 - [ ] [[2023-02-00 CTOs corner]]: 
 - [ ] [[2023 Bugs  Flow]]: -- monitor --
