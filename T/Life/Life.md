@@ -1,11 +1,11 @@
 .[[Life]].
   ADDS:   , [[Mission Statement]],
   ADDS:   [[Life Social]],
-  ADDS:   [[Mate]], , ,
+  ADDS:   , , ,
   ADDS:   ,
   ADDS:   ,
-  ,   [[Diary]], 
-  DELS: [[Diary]],[[Mission2024]], [[_MateNote]], [[_Mates]], 
+  ,   [[Diary]],
+  DELS: [[Diary]],[[Mission2024]], [[_MateNote]], [[_Mates]],[[mate]], 
 
 
 
@@ -214,7 +214,7 @@
 
 :: [[Life Social]]
 
-:: [[T/Life/Mate/Mate]]
+:: [[mate]]
   [Diary](Diary.md)
   [Mission Statement](Mission%20Statement.md)
   [Log](Log/Log.md)

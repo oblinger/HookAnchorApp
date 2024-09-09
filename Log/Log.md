@@ -2,10 +2,10 @@
   MINE:		, [[TXT]],   [[Log Log]],
   DUMP:		[[Archive]],  [[Log Trash]],
   AUTO: 	[[Journal]], [[MEETING]], [[Day]], [[Note]], [[Untyped]], [[WP]],
-  TOPIC:		[[Idea]], [[Quote]], [[Receipts]], [Receipts Folder](spot://receiptsfolder),
+  TOPIC:		[[Idea]], [[Quote]], [[Receipts]], ,
   [[Recordings]],
   [[MEET]],
-  DELS: [[TT]], 
+  DELS: [[TT]],[Receipts Folder](spot://receiptsfolder), 
 
 
 #### WORK -- [[SV]] [[SV Folder|--]]  STUFF

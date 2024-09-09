@@ -1,5 +1,0 @@
-
-spot.py
-
-(See [[SP]])
-

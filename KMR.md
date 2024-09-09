@@ -1,20 +1,19 @@
 TOPS: [[KMR]], [[Meta]], [[TOC]], 
 
 .[[KMR]].
-  [[Set]], [Set Folder](spot://setfolder),
-  [[Log]], [Log Folder](spot://logfolder),
+  [[Set]],
+  [[Log]],
   [[TOC]],
-  [[AT]], [AT Folder](spot://atfolder),
-  [[Doc]], [Doc Folder](spot://docfolder),
+  [[AT]],
   [GG](spot://gg), [[JJ]], [[RR]],
-  [[Misc]],
-  [[MY]], [MY Folder](spot://myfolder),
+  [[MY]],
   [[Prj]],
-  [SV Folder](spot://svfolder),
-  [[T]], [T Folder](spot://tfolder),
+  [[T]],
   [TRASH Obsidian](spot://trashobsidian), [TRASH for Obsidian Folder](spot://trashforobsidianfolder)
-  [[Work]], [Work Folder](spot://workfolder)
+  [[Work]],
   [[ATTACH]],  [[WEEKLY]],
+  [[SYS]],
+
 
 
 

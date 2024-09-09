@@ -1,3 +1,12 @@
+# CHEAT SHEET
+
+## Melt down - Take to a room
+I am going to pick you and take you to a room
+you are not in trouble, you are good kid, you are just having a hard time.
+
+
+
+# XXX
 ## Frustration Coping Strategies
 
 

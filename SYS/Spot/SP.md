@@ -4,9 +4,7 @@
   [SP delete](spot://spdelete),
   [SP edit](spot://spedit),
   [SP grab](spot://spgrab),
-  -
   [SP folder](spot://spfolder),
-  ADDS:   , , , , ,
 
 
 

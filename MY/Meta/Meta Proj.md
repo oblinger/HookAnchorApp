@@ -12,6 +12,7 @@
 - [[Prj]] - Non
 
 ## Work Related
+- [Proj Note](spot://projnote)	- 
 - [PROJ](spot://PROJ) 	- Notion page of all active work "projects"
 - [[WW]],  - Work projects on my local machine
 - [[QQ]] 	- "Quick" work projects (just sections with the QQ page)

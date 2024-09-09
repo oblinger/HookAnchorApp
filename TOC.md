@@ -1,29 +1,28 @@
 
 # TABLE OF CONENTS
 
-
+[[mate]],	[[Proj]],	
 [[KMR]]: [[ATTACH]],	[[WEEKLY]],	
-    [[Misc]]: [[STARTUPS]],	[[Test88]],	[[Old]],	[[SF]],	[[Biking]],	
-        [[Presentations]]: 
-        [[House]]: 
-            [[House Crime]]: 
     [[RR]]: [[AI]],	[[RR Philosophy]],	[[RR Mgt]],	[[RR MGR]],	
         [[ML]]: [[Stat]],	
             [[DL]]: [[DL Alg]],	
         [[Systems]]: 
     [[T]]: [[Trash]],	
+        [[Misc]]: [[STARTUPS]],	[[Test88]],	[[Old]],	[[SF]],	[[Biking]],	
+            [[Presentations]]: 
+            [[House]]: 
+                [[House Crime]]: 
         [[Career]]: 
             [[RES]]: [[Bio]],	[[2024-04-01 Resume Rewrite]],	
                 [[RES Job History]]: 
                     [[AF]]: 
             [[NextJob]]: [[NJ22]],	[[NJ]],	[[NJ16]],	
-        [[KM]]: [[Hook System]],	
         [[FIN]]: [[FIN Tracking]],	
             [[FIN Log]]: 
             [[FIN Bills]]: 
             [[FIN Topics]]: 
         [[EduCorp]]: 
-        [[Life]]: [[Mate]],	
+        [[Life]]: 
             [[Diary]]: 
                 [[Jnl]]: 
         [[Courses]]: [[Highbrow]],	
@@ -37,6 +36,7 @@
                     [[2019 AF Job Tests]]: 
         [[Food]]: 
             [[FOOD Research]]: 
+        [[Doc]]: [[DocObsidian]],	[[DocPython]],	
         [[Legal]]: [[2023 Legal SV]],	
             [[2017 Legal Ob Labs]]: 
             [[2023 Legal NDA - AF]]: 
@@ -44,6 +44,9 @@
         [[MED]]: [[MED Doctors]],	
         [[COMS]]: 
             [[COM Msg]]: 
+    [[SYS]]: [[Hack]],	[[SYS Misc]],	[[OBS]],	[[Closet]],	[[SYS Hacks]],	[[Spot]],	
+        [[KM]]: [[Hook System]],	
+        [[MAC]]: [[App]],	
     [[Work]]: 
         [[SV]]: [[INV]],	[[SVT]],	[[SV Wings]],	[[Circle]],	[[SV Software]],	
             [[SV Ops]],	
@@ -56,9 +59,7 @@
             [[SV Strat]]: [[SV Roadmap]],	[[2023 Four Pillars]],	
             [[CV]]: [[CVP]],	[[Data]],	
             [[QQ]]: 
-    [[MY]]: [[Meta]],	[[Hack]],	[[Myfo]],	[[TEMPLATER]],	[[QUICKADD]],	[[Closet]],	
-        [[SYS]]: [[SYS Misc]],	[[OBS]],	[[SYS Hacks]],	
-            [[MAC]]: [[App]],	
+    [[MY]]: [[Meta]],	[[Myfo]],	[[TEMPLATER]],	[[QUICKADD]],	
         [[Pln]]: [[Lrn]],	[[Mission]],	[[Productivity]],	
             [[SCRatch]]: 
     [[Prj]]: [[PP]],	[[2021-04 FindDayCare]],	[[2022-05 Enxt]],	[[2022-03 BeFAANG]],	
@@ -88,7 +89,6 @@
                 [[EOC]]: [[EOCT]],	[[EOCA]],	[[EOCI]],	[[EOCK]],	
                     [[EOCB]]: 
             [[Idea Social]]: 
-    [[Doc]]: [[DocObsidian]],	[[DocPython]],	
     [[Set]]: [[Recipe]],	[[Book]],	[[Phone]],	[[ToRead]],	[[CTC]],	
         [[LANG]]: 
         [[Humor]]: 

@@ -1,11 +1,11 @@
 .[[MY]].
   [[Meta]],
   [[Myfo]], [[MY Content]], [MyMgr Page](spot://mymgrpage), [[My Stuff]],
-  [[Pln]], [Pln Folder](spot://plnfolder),
-  CODE: [[QUICKADD]], [[SYS]], [[TEMPLATER]], [[Closet]],
+  [[Pln]], ,
+  CODE: [[QUICKADD]], , [[TEMPLATER]], ,
   , ,
-  , [[Hack]], 
-  DELS: [[My Info]],
+  , ,
+  DELS: [[My Info]],[Pln Folder](spot://plnfolder),[[SYS]], [[Closet]], [[Hack]], 
 
 - [[Sys]], [[SYS Github Webpage]] 
 

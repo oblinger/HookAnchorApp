@@ -10,8 +10,11 @@ My KBD:		[[KBD Shortcuts]], [[KBD Obsidian Keys]], [[KBD Global Keys]], [[KBD No
 - [[SYS Setup]]			-
 - [[KBD Shortcuts]]		-
 - [[SYS Task Lists]]		-
-  , [[Automation]], [Bard Page](spot://bardpage), [[Facet]], [[MAC]], [NEU Folder](spot://neufolder)
+  , [[Automation]], [Bard Page](spot://bardpage), , [[MAC]], [NEU Folder](spot://neufolder)
   , [[Notifications]], [[OBS]], [[SYS Android]], [[SYS Disks]], [[SYS Github Webpage]]
-  , [[SYS Hacks]], 
+  , [[SYS Hacks]],
+  , [[Closet]], [[Hack]],
+  , [[KM]], [[Spot]], 
+  DELS: [[Facets]],
 
 

@@ -1,34 +1,18 @@
-
-:: [[@SV]]
 #top 
-.[[SV]].
-  [[SV Tasks]] -
-  TOPS:			,   ,  [[Mgt]], ,
-  :		,  ,
-  [[SV Ops]]:	 	,  , ,
-  :	, ,
-  [[SV Market]]:	,  , [[SV Partner]],
-  [[SV Product]]:	,  , , ,
-  [[SV Software]]:
-  [[INV]]:
-  INFO:			, , , , [[Meta SV]],
-  ARCHIVE:		[[SV Archive]],   [[SV Wings]],
-  ADDS:   , , [Bug Actual List Page](spot://bugactuallistpage), [Bug Board Page](spot://bugboardpage), , [Canva](spot://canva), [[Circle]],
-  [Fireball](spot://fireball), [HALOS](spot://halos), , [Jira](spot://jira), [Jira Me Page](spot://jiramepage), , , , [[SV Basketball Info]]
-  [SV Clickup Page](spot://svclickuppage), [SV Confluence Page](spot://svconfluencepage), [SV C Root](spot://svcroot), , [SV Google Drive Page](spot://svgoogledrivepage)
-  [SV G Root](spot://svgroot), , [SV Log Page](spot://svlogpage), , ,
-  ADDS:   ,
-  ADDS:   ,
-  ADDS:   , , [[@SV]], , , , , [[SV Org]], ,
-  ADDS:   ,
-  ADDS:   ,
-  ADDS:   ,
-  ADDS:   , , , , , , ,
-  ADDS:   , ,
-  ADDS:   , [WW Folder](spot://wwfolder),
-  ,   [[CV]], [[QQ]], [[SV People]], [[SV Strat]], [[SVT]], [[WW]],
-  DELS: [[CV]], [[QQ]], [[SV People]], [[SV Strat]], [[SVT]], [[WW]],[[2023-Reset-DanO-Role]], [[ROADMAP]], [[SV Dashboards]], [[SV Testing]], [[SV Planning]], [[SV Customer]], [[SV Code]], [[SV Apps]], [[SV System]], [[SV Code]], [[SV Legal]], [[2023 Bugs  Flow]], [[Bugs]], [[Investor Intros]], [[SV90.]], [[2023 SV Investor News Letter]], [[2023 SV Learning]], [[@Circle]], [[@StatsPerform]], [[Beyondo]], [[2023-02-00 CTOs corner]], [[Hoops]], [[Scout Bot]], [[Veo]], [[2022-10-17 SV90]], [[Work]],[[July Hiring]], [SV Folder](spot://svfolder), [Work Folder](spot://workfolder), 
 
+.[[SV]].
+  , [[@SV]], [Bug Actual List Page](spot://bugactuallistpage), [Bug Board Page](spot://bugboardpage)
+  , [Canva](spot://canva), [[Circle]], [[CV]], [Fireball](spot://fireball), [HALOS](spot://halos)
+  , [[INV]], , [Jira Me Page](spot://jiramepage), [[Meta SV]], [[Mgt]], [[QQ]]
+  , [[SV Archive]], [[SV Basketball Info]], [SV Clickup Page](spot://svclickuppage)
+  , [SV Confluence Page](spot://svconfluencepage), [SV C Root](spot://svcroot)
+  , [SV Google Drive Page](spot://svgoogledrivepage), [SV G Root](spot://svgroot)
+  , [SV Log Page](spot://svlogpage), [[SV Market]], [[SV Ops]], [[SV Org]], [[SV Partner]]
+  , [[SV People]], [[SV Product]], [[SV Software]], [[SV Strat]], [[SVT]]
+  , [SV Tasks](spot://svtasks), [[SV Wings]], [[WW]],
+  DELS: [Jira](spot://jira), 
+
+[[Proj]] 
 
 
 

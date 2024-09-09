@@ -11,9 +11,9 @@ n:: Groupings of like (typed), undated entries.
   ADDS:   ,
   ADDS:   ,
   ADDS:   , , , ,
-  ADDS:   [[Book]], [[BUY]], [[CTC]], [Returns Folder](spot://returnsfolder),
-  , [[LANG]], 
-  DELS: [[Lang]],
+  ADDS:   [[Book]], [[BUY]], [[CTC]], ,
+  , [[LANG]],
+  DELS: [[Lang]],[Returns Folder](spot://returnsfolder), 
 
 
 

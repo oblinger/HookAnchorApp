@@ -1,9 +1,10 @@
 .[[CTC]].
-  [CTC Folder](spot://ctcfolder):
+  :
   [[CTC Network]]:
   [[CTC Personal]]:
   :
   ADDS:   [[CTC SV]],
+  DELS: [CTC Folder](spot://ctcfolder), 
 
 
 

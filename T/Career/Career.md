@@ -1,7 +1,7 @@
 
 .[[Career]].
 -
-- 
+-
 - , , [CAR Coach](spot://carcoach)
 - [[NextJob]], :
   :
@@ -10,9 +10,9 @@
   ADDS:   ,
   ADDS:   , ,
   ADDS:   ,
-  ADDS:   , [RES Folder](spot://resfolder),
-  ,   [[RES]], 
-  DELS: [[RES]],[Mentors](spot://mentors), 
+  ADDS:   , ,
+  ,   [[RES]],
+  DELS: [[RES]],[Mentors](spot://mentors),[RES Folder](spot://resfolder), 
 
 
 

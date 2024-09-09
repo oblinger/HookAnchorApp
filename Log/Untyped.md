@@ -53,8 +53,8 @@ n:: no prefix.	Dated entries without any typing prefix
 | 2024-06-26 | [[Politics]]                                    | Fixing Banking                                                                                                                    |
 | 2024-06-20 | [[Trump]]                                       | Trying to limit FED independence                                                                                                  |
 | 2024-06-18 | [[QQ]]                                          | Lessons Learned From Minutes                                                                                                      |
-| 2024-06-17 | [[DAT]]                                         | New Mount Design                                                                                                                  |
 | 2024-06-17 | [[PQ]]                                          | ^newjump                                                                                                                          |
+| 2024-06-17 | [[DAT]]                                         | New Mount Design                                                                                                                  |
 | 2024-06-15 | [[@Sage Vet]]                                   | Sage                                                                                                                              |
 | 2024-06-12 | [[DAT]]                                         | notes                                                                                                                             |
 | 2024-06-12 | [[@Juan Barajas]]                               | Discussion                                                                                                                        |
@@ -131,8 +131,8 @@ n:: no prefix.	Dated entries without any typing prefix
 | 2024-03-03 | [[FIN Log]]                                     | Follow On Questions                                                                                                               |
 | 2024-02-18 | [[@Hoka]]                                       | Exchange                                                                                                                          |
 | 2024-02-17 | [[Eli]]                                         | Put on his underwear                                                                                                              |
-| 2024-02-17 | [[Facet]]                                       | Auto Jump pages                                                                                                                   |
-| 2024-02-17 | [[Facet]]                                       | EXAMPLES of facet groups                                                                                                          |
+| 2024-02-17 | [[Facets]]                                      | Auto Jump pages                                                                                                                   |
+| 2024-02-17 | [[Facets]]                                      | EXAMPLES of facet groups                                                                                                          |
 | 2024-02-12 | [[MED Log]]                                     | QL DOC advice for a flu w/ cough                                                                                                  |
 | 2024-02-11 | [[Palestinians]]                                | Andrew's response                                                                                                                 |
 | 2024-02-09 | [[Palestinians]]                                | Try Number Three                                                                                                                  |

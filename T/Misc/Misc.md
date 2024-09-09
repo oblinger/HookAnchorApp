@@ -3,13 +3,13 @@
   , [[Cookie Clicker]], [[Craps]], [[Daily]], , [[Effective Altruism]], [[FasTrak]]
   , [[Gift]], [[Gifts]], [[Glossary]], [[Google Dev]], [[Gym]], [[hiking]], [[HIST]], [[Hold]]
   , [[Holidays]], [[Hotels]], [[House]], [[JOB Compensation]], [[Journaling]], [[Karaoke]]
-  , [[key code]], [K Folder](spot://kfolder), [[List]], [[meditation]], [[napa]], [[Nomad]], [[Old]]
+  , [[key code]], , [[List]], [[meditation]], [[napa]], [[Nomad]], [[Old]]
   , [[PdfInfo]], [[Player FM]], [[Presentations]], [[Publications]], [[Public Notes]]
   , [[Record Notes]], [[Rental]], [[RJ45]], [[Rssfeeds]], [[SciFi]], [[Search]], [[Secure]], [[SF]]
   , [[Shop]], [[Sleep]], [[Sleep With Me]], [[STARTUPS]], [[Templates]], [[Test88]], [[tickets]]
   , [[Timestamp]], [[Travel Lst]], [[xmas]],
   , ,
-  DELS: [[Disks]],[[SYS Disks]], 
+  DELS: [[Disks]],[[SYS Disks]],[K Folder](spot://kfolder), 
 
 
 

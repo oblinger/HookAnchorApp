@@ -1,10 +1,11 @@
 .[[Data]]. ([[CV]])
   [Data Tasks](spot://datatasks) (),
-  rename this:   ,
   [Data Docs](spot://datadocs),
   [CV Data Tasks](spot://cvdatatasks),
   [Data Games](spot://datagames),
-  DELS: [DT](spot://dt), [[2023 Build Datasets Needed for the CV Team]], 
+
+[Dataset](spot://dataset) 
+
 
 
 

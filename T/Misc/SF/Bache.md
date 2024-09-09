@@ -1,6 +1,8 @@
 BACHE END EAST
 - 103 Bache -- Jim&Lauren 23yoStepSon, Leo?5 & ???  … Spice.  (lauren social justice)
 - 105 Bache -- Kavita&Bajjie — Indian man & family that works at home
+- 107 Bache -- Kevin ; Vicki ‭(319) 325-3528‬ vickimlang@gmail.com; 
+- 109 
 - VERY END:  Cristie? & Ranger?
 
 BACHE END WEST

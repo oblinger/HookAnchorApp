@@ -1,21 +1,15 @@
 
 .[[CVP]].
+  DAILY:			[JuanDaily](spot://juandaily), [Jira](spot://jira), 
   WEEKLY:		[SprintPlanning](spot://sprintplanning), [[CV Roadmap]], [Backlog Planning](spot://backlogplanning),
-  QUARTER:		[OKRs](spot://okrs), [OKR Slide](spot://okrslide),
-  DATA:			[CV Planning Folder](spot://cvplanningfolder),
-  SW TEAM:	[Pln Factory](spot://plnfactory), [Pln Work](spot://plnwork),
-  ADDS:   [JuanDaily](spot://juandaily),
-  ADDS:   [Weekly Agenda](spot://weeklyagenda),
-  ADDS:   [tasks](spot://tasks),
-  ADDS:   [[2023-12 CV Tree]], [[GameGraph]], [[Infra]], [[Player Tracking Problem]], [[Rpt]], [[ShotTopView]],
-  ADDS:   [[CV Annotations]],
-  ADDS:   [Brainstorming Q3](spot://brainstormingq3),
-  ADDS:   [AI TIPS](spot://aitips),
-  ADDS:   [Assess](spot://assess), [Baselines](spot://baselines), [BELIEF Gdrive](spot://beliefgdrive), [Benchmarks](spot://benchmarks),
-  ADDS:   [CV Plan](spot://cvplan),
-  ADDS:   [Task Tree](spot://tasktree),
-  ADDS:   [AI Minutes](spot://aiminutes),
+  QUARTER:		[CV Plan](spot://cvplan), [OKRs](spot://okrs), [OKR Slide](spot://okrslide),
+  DATA:			[CV Planning Folder](spot://cvplanningfolder), 
+  SW TEAM:	[Weekly Agenda](spot://weeklyagenda), [Pln Factory](spot://plnfactory), [Pln Work](spot://plnwork),
+  OLD:			[[2023-12 CV Tree]], [AI TIPS](spot://aitips), [Assess](spot://assess), [Baselines](spot://baselines), [BELIEF Gdrive](spot://beliefgdrive)
+  .				[Benchmarks](spot://benchmarks), [Brainstorming Q3](spot://brainstormingq3), [[CV Annotations]], [[GameGraph]], [[Infra]],
+  .				[[Player Tracking Problem]], [[Rpt]], [[ShotTopView]], [tasks](spot://tasks), [Task Tree](spot://tasktree), 
 
+[[Proj]] 
 
 
 
