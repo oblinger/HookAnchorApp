@@ -1,4 +1,4 @@
-- [Alta Vista]()
+- [Alta Vista](https://docs.google.com/document/d/1mBquDfRIRhczSMqeDCWW-JxY8U02kA31_CU6zxLbCEc/edit) 
 # Info
 
 ## Teachers

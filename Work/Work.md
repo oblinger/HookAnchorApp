@@ -1,15 +1,11 @@
-.[[Work]].
-  ,   [[DT]], [[SV]], 
-
 .**NOW**. 
   [[2024-08 Backend Architect|Arch]]:	Wait, Agents
-  [[DT]]: HomoData,
+  [[DT]]: 	EvalGames, HomoData,
   [OKRs](https://docs.google.com/presentation/d/1v7Winy9DHxGuYh05_is8zH05ClJi0qclM698-pDXIgY/edit?pli=1#slide=id.g274b3e27e6b_0_0):	Q3 Planning	
   [[DAT|DAT]]:	Get PR ready
-  [[FIN.]]	Invest plan; Retire plan(spreadsheet)
+  [[FIN.]]	Schwab
   [[NJ]]:	>[[War|War]], rewrite, mentor
 
-recheck where we are
 ## TRACK
 [[Data]]:
 Data:		Build the stats dataset
@@ -30,6 +26,9 @@ Assess	> Assessment plan for BB
 [[journaling]] 
 
 
+.[[Work]].
+  ,   [[DT]], [[SV]], 
+  
 ## PAUSE [bsheet](https://docs.google.com/spreadsheets/d/1C1eYv2Ks2GCCQ9_xZ2Pg7eEr33bX1KOdN8Xf8X6nxSY/edit#gid=0), [hi](https://software-engineering-team.atlassian.net/jira/dashboards/10022), [tst](https://docs.google.com/spreadsheets/d/1Rc07oadsjZgg6_2ZZ-qIXJ9n9ws3LT0FFraLZHnrf9w/edit?usp=sharing), [epic](https://software-engineering-team.atlassian.net/jira/software/projects/MOB/boards/24/timeline), 
 [[patents]]:	^J Provisional filed
 [AI_mat](spot://aiprodmatrix):	Populate product matrix

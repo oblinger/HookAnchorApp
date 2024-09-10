@@ -27,7 +27,6 @@
                 [[Jnl]]: 
         [[Courses]]: [[Highbrow]],	
         [[MGR]]: [[MGR Docs]],	
-            [[MyMgr]]: [[Nanny]],	
             [[Hire]]: 
                 [[INTERVIEW]]: 
                 [[Hire Post]]: 
@@ -62,8 +61,9 @@
     [[MY]]: [[Meta]],	[[Myfo]],	[[TEMPLATER]],	[[QUICKADD]],	
         [[Pln]]: [[Lrn]],	[[Mission]],	[[Productivity]],	
             [[SCRatch]]: 
-    [[Prj]]: [[PP]],	[[2021-04 FindDayCare]],	[[2022-05 Enxt]],	[[2022-03 BeFAANG]],	
+    [[Prj]]: [[2021-04 FindDayCare]],	[[2022-05 Enxt]],	[[2022-03 BeFAANG]],	
         [[2022-03 BeVC]],	
+        [[PP]]: [[2022-01-00 Nanny]],	
         [[UF]]: [[ufPublish]],	
             [[UfApps]]: 
         [[2020-08 Race Pitch]]: 
@@ -73,7 +73,7 @@
         [[PEOPLE]]: 
             [[Family]]: [[Parents]],	
         [[@Eli Oblinger]]: 
-            [[Eli]]: [[BCMS]],	[[ELI Log]],	
+            [[Eli]]: [[BCMS]],	[[ELI Log]],	[[Eli Strategy]],	
     [[Log]]: [[Journal]],	[[Note]],	[[Archive]],	[[MEET]],	
         [[TXT]]: 
             [[Letters]]: 
@@ -89,7 +89,7 @@
                 [[EOC]]: [[EOCT]],	[[EOCA]],	[[EOCI]],	[[EOCK]],	
                     [[EOCB]]: 
             [[Idea Social]]: 
-    [[Set]]: [[Recipe]],	[[Book]],	[[Phone]],	[[ToRead]],	[[CTC]],	
+    [[Set]]: [[Recipe]],	[[Book]],	[[Phone]],	[[ToRead]],	
         [[LANG]]: 
         [[Humor]]: 
         [[BUY]]: 

@@ -1,11 +1,10 @@
-.[[Log]].  			TEMPORALLY ORDERED TYPED NOTES
-  MINE:		, [[TXT]],   [[Log Log]],
+.[[Log]].  	  TEMPORALLY ORDERED TYPED NOTES
+  MINE:		[[TXT]],   [[Log Log]],
   DUMP:		[[Archive]],  [[Log Trash]],
   AUTO: 	[[Journal]], [[MEETING]], [[Day]], [[Note]], [[Untyped]], [[WP]],
-  TOPIC:		[[Idea]], [[Quote]], [[Receipts]], ,
+  TOPIC:		[[Idea]], [[Quote]], [[Receipts]], 
   [[Recordings]],
   [[MEET]],
-  DELS: [[TT]],[Receipts Folder](spot://receiptsfolder), 
 
 
 #### WORK -- [[SV]] [[SV Folder|--]]  STUFF

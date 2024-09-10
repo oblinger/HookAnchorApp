@@ -1,5 +1,5 @@
 .AirMax
-.Traxxas 1-888-872-9927
+[[@Traxxas]] 
 - christ tree
 - [[Journaling]] 
 -  quarterly goals

@@ -1,20 +1,16 @@
 #top
 n:: Groupings of like (typed), undated entries. 
-
-- [[List]],  [[Log]] (temporally ordered sets)
+-  [[Log]] (temporally ordered sets)
 
 .[[Set]].
-- ,   ,   ,   ,   ,   ,   ,   ,   ,   ,   [[ToRead]],
--
--
-  ADDS:   [[Humor]], , [[Movies]], [[Phone]], [[Recipe]], [[Returns]], [[Writing]],
-  ADDS:   ,
-  ADDS:   ,
-  ADDS:   , , , ,
-  ADDS:   [[Book]], [[BUY]], [[CTC]], ,
-  , [[LANG]],
-  DELS: [[Lang]],[Returns Folder](spot://returnsfolder), 
-
+- TRACKING:	[[ToRead]], [[Returns]], [[Book]],
+- [[Phone]]		.
+- [[Writing]]		.
+- [[BUY]]			.
+- 			Lists for different purposes (like travel)
+- [[Humor]], [[Movies]],  [[Recipe]]
+  , , [[LANG]],
+  DELS: [[List]],[[CTC]], 
 
 
 

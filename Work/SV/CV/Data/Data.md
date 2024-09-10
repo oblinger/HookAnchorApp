@@ -1,4 +1,8 @@
-.[[Data]]. ([[CV]])
+.[[Data]].
+  , [CV Data Tasks](spot://cvdatatasks), [Data Docs](spot://datadocs)
+  , [Data Games](spot://datagames), [Data Tasks](spot://datatasks), 
+
+l.[[Data]]. ([[CV]])
   [Data Tasks](spot://datatasks) (),
   [Data Docs](spot://datadocs),
   [CV Data Tasks](spot://cvdatatasks),

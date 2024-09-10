@@ -1,3 +1,15 @@
+### 2024-09-09  Went to 1/2 time at SV
+
+The idea going 1/2 time is that 
+- I really WILL re-coup at least 1/3 time in order to job search
+- I will be able to keep Jason happy and look good
+- I will still be able to spend a bit of time getting more technical --modest time
+- I will be able to swing back to full time and stay at SV in the unlikely event that I want to do that
+
+mostly unclear if I can re-tool enough to change the kinds of jobs I can get.
+
+A little optimistic but also apprehensive about my upcoming job search
+
 ### 2024-08-22  My Biggest Issue: Daily hours on MIT
 
 I am stressed on a daily basis, and I think the biggest stressor is lack of progress on my job search.  This is because I don't work on it.

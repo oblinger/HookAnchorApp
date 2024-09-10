@@ -6,6 +6,21 @@
   DELS: [[CRM]], [[BOD]], [[COM Campaigns OLDER]], [[CRM_Phrases]], [[FailedMessages]], [[FirstTouch]], [[COM Investor]], 
 
 
+Jeremy Roth	Oysters Party
+
+
+- [[@Collette Roney]],  [[@Yashin Lin]],  
+- [[@Vikram]],  
+~~
+
+- 
+- [[@John Davis]],  [[@Michael Freed]],  
+- [[@Chuck Morefield]],  
+
+
+STARTUPS
+- [[@Nick Allen]],  
+- [[@Yannick Germain]],  
 
 
 

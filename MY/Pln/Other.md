@@ -1,5 +1,6 @@
 - QL: sell stuff
-
+- cancel paramout
+- 
 
 
 

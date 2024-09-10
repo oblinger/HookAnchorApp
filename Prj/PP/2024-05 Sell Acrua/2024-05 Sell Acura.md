@@ -23,3 +23,14 @@ CarMax Cincinnati, OH. $7,000
 Edmunds
 - $6,412 trade; $10,366 Private; $12,655 Dealer.
 
+
+Car is in very good condition, it has XXX scratches but otherwise in great shape.
+It was lightly driven by the original owner (me) until 2010 when I put it in my parents barn for storage.
+This year we took it out and did $3000 in repairs, replacing all old rubber etc. in order to get it ready for sale.
+Edmonds lists $10,366 as value for private sale, I am putting it on the market for $9,000 just to speed the sale.
+
+Please call my parents at 
+
+
+
+

@@ -2,17 +2,11 @@
   [[ELI Log]], [[Eli Food]], [[ELI Quotes]],
   [[Eli Strategy]]:
   [[Eli Firsts]]:
-  :
+  [[Eli Services]]:
   [[Eli Activities]]:
   [[Eli Interactions]]:
   [[Eli Friends]]:
-  OLDER: , , , [[BCMS]], :
-  [[ELI Education]], [[Eli Math]],
-  DELS: [[2023-05 Cool Kids]], [[Nanny]], [[Care Notes]], [[Eli Sleep Training]], [[Daycare Applications]], 
-
-
-
-
+  OLDER: [[BCMS]], [[ELI Education]], [[Eli Math]],
 
 
 

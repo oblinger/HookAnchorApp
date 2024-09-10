@@ -1,5 +1,43 @@
 # Personal "Quick" Projects
 
+
+
+### 2024-09-09  Spraying for Ants
+
+The Product: https://www.amazon.com/gp/product/B01N7KSXHX/ref=ppx_yo_dt_b_search_asin_title?ie=UTF8&th=1#customerReviews
+User Manual: https://c.media-amazon.com/images/I/A1hKxjqHJ9S.pdf
+
+• People and Pets may re-enter treated area after spray has dried. • Thoroughly wash all food processing surfaces and utensils with soap and water before reuse. • Repeat as needed. Re-treatment is recommended at least once per season (3 months) outdoors. • For long-lasting residual control leave spray undisturbed. The product will keep on killing for up to 12 months
+
+‭(415) 602-1925‬
+‭(415) 318-6712‬
+(754) 581-0698
+(319) 325-3528
+(209) 549-6229
+
+
+Clay, Kevin, Vicki, Baji, and Jim:
+I have FINALLY managed to collect contact info for our extended building (that was harder than the spraying will be!). And everyone is 'down' for try to spray our way out of the ant infestation.  Below I have the product info for the indoor/outdoor spray I intend to use.  I also have an outdoor-specific spray I can use if this one does not work, but lets try this first.
+
+Here below is the product I will use, and the info sheet that goes with it.  Also I have cut/paste the relevant part from that data sheet here too:
+• People and Pets may re-enter treated area after spray has dried. 
+• Thoroughly wash all food processing surfaces and utensils with soap and water before reuse. 
+• Repeat as needed. Re-treatment is recommended at least once per season (3 months) outdoors. 
+• For long-lasting residual control leave spray undisturbed. The product will keep on killing for up to 12 months
+
+
+I will keep my dog out of the back yard for a few hours and that is it.  Let me know if Tuesday evening can work with everyone.  My thought is to aim for about 6:30 or so in order for folks to get home and it is still light out.
+
+Down with the invasion!
+Cheers :-)
+--dan
+
+
+The Product: https://www.amazon.com/gp/product/B01N7KSXHX/ref=ppx_yo_dt_b_search_asin_title?ie=UTF8&th=1#customerReviews
+User Manual: https://c.media-amazon.com/images/I/A1hKxjqHJ9S.pdf
+
+
+
 ### 2024-06-17  ^newjump
 
 - Multiple ALL_CAPS prefixes in the spot defs file indicates a "jump" table

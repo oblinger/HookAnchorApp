@@ -1,3 +1,6 @@
+.[[Eli Strategy]].
+  , [[2023-05 Cool Kids]], 
+
 # CHEAT SHEET
 
 ## Melt down - Take to a room

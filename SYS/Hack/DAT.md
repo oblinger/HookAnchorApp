@@ -15,6 +15,7 @@
 - [ ] 
 
 # DVC DAT
+
 ## Later  
 - [ ] DVC - push, load
 - [ ] Inject indicies should not inject for degenerate indicies w/ only one value  
@@ -170,6 +171,14 @@ Dat.get(dat.get_spec(), "dotted.key")
 
 
 # LOG
+
+### 2024-09-09  New plan for integration.
+
+- Script dispatcher injected into everyone's environment w/ package
+- Unified meta-data package for runs & games
+
+1. Test upload / download script for all
+2. Multi-run w/ auto down/up
 
 ### 2024-06-17  New Mount Design
 

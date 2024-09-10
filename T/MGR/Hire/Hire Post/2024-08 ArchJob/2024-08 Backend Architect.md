@@ -1,8 +1,11 @@
 - [Gdrive](https://drive.google.com/drive/folders/1YbYomol2XMu5uLMm0DRSeD_AP3AFG_az) 
-- [Backend](https://docs.google.com/document/d/17b6lD5zyT-axAwYwQkdXpIYtarGUJoD-L9Zl3N3luYQ/edit):  [can](https://docs.google.com/spreadsheets/d/1rk01kRhNaOXcfIzf1b-LXIXsA6kKwD2B/edit#gid=1014506710), [TH](https://techunting.viterbit.site/share-candidates/Xy21oouKFoxihhaOAOiB0/) 
-- Job Ad: [[2023-07 ArchJob.docx]],  out of date: [Backend Architect](https://docs.google.com/document/d/1tcWjfvBen70jcVbkQPfIsAj4Ko-PdFSZ/edit)  
+- [Jasu Agencies](https://drive.google.com/drive/folders/1mSM7TwDdPDWLXIGmNFmpYgI9mcnaUayP) 
 
-- [gdrive folder](https://drive.google.com/drive/folders/1mSM7TwDdPDWLXIGmNFmpYgI9mcnaUayP) 
+
+- Look at existing candidates and react
+- Provide info to Prometeo and BEON.tech ask them for up to 5 candidate each.
+
+
 ## [[BBI]] PROMPTS
 - Largest 2-3 systems OWNED & largest two teams LEAD
 - Complex or Challenging Examples:
@@ -20,10 +23,6 @@ CONTEXT
 
 
 ## NOTES [[HERE]]
-
-
-
-
 # LOG
 
 

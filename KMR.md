@@ -1,18 +1,17 @@
 TOPS: [[KMR]], [[Meta]], [[TOC]], 
 
 .[[KMR]].
+  [[TOC]],
+  [[Work]],
   [[Set]],
   [[Log]],
-  [[TOC]],
   [[AT]],
-  [GG](spot://gg), [[JJ]], [[RR]],
   [[MY]],
   [[Prj]],
-  [[T]],
-  [TRASH Obsidian](spot://trashobsidian), [TRASH for Obsidian Folder](spot://trashforobsidianfolder)
-  [[Work]],
-  [[ATTACH]],  [[WEEKLY]],
   [[SYS]],
+  [[T]], [GG](spot://gg), [[JJ]], [[RR]],
+  [TRASH Obsidian](spot://trashobsidian), [TRASH for Obsidian Folder](spot://trashforobsidianfolder)
+  OTHER: [[ATTACH]],  [[WEEKLY]], [top](spot://top), 
 
 
 

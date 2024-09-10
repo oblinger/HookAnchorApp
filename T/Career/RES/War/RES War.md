@@ -1,3 +1,4 @@
+- 
 
 [[RES War AI]], [[RES Star]], 
 ## TODO
@@ -90,11 +91,14 @@ SMART - Specific, Measurable, Achievable, Relevant, Time-based
 
 
 ## = CONFLICT
-- MAXIM; Hackathon
 - JSON SCOPE -> ShipOrdering, Moth balling, Product Matrix, 1Pager
 - Alex Scope -> ???
 - AF Equity Split
 - Pietro Firing
+- Partnership splitting with Nick.  
+- Joe Aug selling the company while not being invited into the next one.
+- Mentoring: Theo Enns and Filepe @ Aeolus.
+- Hack week: asked, call-to-carpet... failed to pull Maxim.  Caved in, then led by example
 
 ### JASON SCOPE CONFLICTS - Scattered Tasking
 

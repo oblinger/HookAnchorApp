@@ -5,6 +5,9 @@ n:: no prefix.	Dated entries without any typing prefix
 
 | Date       | File                                        | Notes                                                                                                                             |
 | ---------- | ------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------- |
+| 2024-09-09 | [[PQ]]                                          | Spraying for Ants                                                                                                                 |
+| 2024-09-09 | [[DAT]]                                         | New plan for integration.                                                                                                         |
+| 2024-09-09 | [[Reflections]]                                 | Went to 1/2 time at SV                                                                                                            |
 | 2024-09-05 | [[@Nick Allen]]                                 | Jason Messaging                                                                                                                   |
 | 2024-09-05 | [[@Nick Allen]]                                 | SportsVisio cuts                                                                                                                  |
 | 2024-09-05 | [[@Jason Syversen]]                             | Jason Messaging                                                                                                                   |
@@ -617,7 +620,7 @@ n:: no prefix.	Dated entries without any typing prefix
 | 2022-10-24 | [[2022-w43]]                                    |                                                                                                                                   |
 | 2022-10-20 | [[@Apple]]                                      | Laptop Repair                                                                                                                     |
 | 2022-10-16 | [[ToBuy]]                                       | bedrm Dresser                                                                                                                     |
-| 2022-10-10 | [[Nanny]]                                       | SAVE MONEY                                                                                                                        |
+| 2022-10-10 | [[2022-01-00 Nanny]]                            | SAVE MONEY                                                                                                                        |
 | 2022-10-07 | [[Phone]]                                       | Lily - Tax Info for 2021 return                                                                                                   |
 | 2022-10-07 | [[Phone -old-]]                                 | Lily - Tax Info for 2021 return                                                                                                   |
 | 2022-10-07 | [[Phone]]                                       | Lily - Tax Info for 2021 return                                                                                                   |
@@ -929,11 +932,11 @@ n:: no prefix.	Dated entries without any typing prefix
 | 2020-11-30 | [[spirit_older_bigger]]                         | GOD THOUGHTS                                                                                                                      |
 | 2020-11-25 | [[Journal Old]]                                 | Unicore Implementation Days                                                                                                       |
 | 2020-11-19 | [[Journal Old]]                                 | AF Strategy                                                                                                                       |
-| 2020-11-00 | [[Nanny]]                                       | Job postings                                                                                                                      |
+| 2020-11-00 | [[2022-01-00 Nanny]]                            | Job postings                                                                                                                      |
 | 2020-10-08 | [[2020-07 Autonomy]]                            | Out Reach to Yoon                                                                                                                 |
 | 2020-10-02 | [[Journal Old]]                                 | An assessment of me                                                                                                               |
 | 2020-10-02 | [[NJ22]]                                        | An assessment of me                                                                                                               |
-| 2020-10-00 | [[Nanny]]                                       | notes from asana                                                                                                                  |
+| 2020-10-00 | [[2022-01-00 Nanny]]                            | notes from asana                                                                                                                  |
 | 2020-09-17 | [[Forum]]                                       | Police violence                                                                                                                   |
 | 2020-09-07 | [[Forum]]                                       | Shinster email                                                                                                                    |
 | 2020-08-23 | [[Journal Old]]                                 | Lost at Sea but with good provisions                                                                                              |
@@ -960,7 +963,7 @@ n:: no prefix.	Dated entries without any typing prefix
 | 2020-00-00 | [[Ideas]]                                       | Chipstack                                                                                                                         |
 | 2019-12-09 | [[OLD 201x Weekly]]                             | Mostly sideways week                                                                                                              |
 | 2019-12-06 | [[OLD 201x Weekly]]                             | My YES List                                                                                                                       |
-| 2019-11-00 | [[Nanny]]                                       | Notes                                                                                                                             |
+| 2019-11-00 | [[2022-01-00 Nanny]]                            | Notes                                                                                                                             |
 | 2019-10-21 | [[OLD 201x Weekly]]                             | WEEK -                                                                                                                            |
 | 2019-10-15 | [[OLD 201x Weekly]]                             | WEEK - sideways slip all week                                                                                                     |
 | 2019-10-08 | [[OLD 201x Weekly]]                             | WEEK - AI_conf                                                                                                                    |
