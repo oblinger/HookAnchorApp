@@ -219,6 +219,49 @@ DISCUSS
 # LOG
 
 
+### 2024-09-10  Text of agreement
+
+Version II:
+Sam / Jason:
+I tried to get precise in my original email, and I think it was more trouble than it was helpful.
+Here, in simple language, is the proposal that Jason and I spoke about:
+
+Relative to the salary, equity, and hours listed in my original offer letter, our aim is to go down to:
+
+1/2 hours, 1/2 equity, and 1/2 salary during this “half time” period that will end nominally July1 of next year.
+After that I will go back to full time hours and full time equity, and stay at 1/2 salary, and having an A-round bonus that will cover my lost salary during this later phase.
+
+
+Cheers, 
+Dan
+
+
+VERIONS #1 
+
+
+Jason,  
+Have a look at the bullets below and see if I missed anything.  
+  
+Sam,  
+Jason and I had a good call about how to reduce our burn rate as it relates to my salary. He asked me to write up what we discussed so we can turn it into a contract later.  The summary is below.  
+  
+Cheers!  
+--dan  
+  
+  
+HALF PAY PERIOD  
+- For a period of time I will drop down to 1/2 salary and 1/2 equity  
+- The salary is not 1/2 of my current rate, but rather 1/2 of my original $200K/yr rate.  
+- And my total equity is not adjusted, but instead my rate of vesting is slowed by 1/2, thus it will take me longer to fully vest all shares, thus my vesting period will ending will need to be recomputed once I return to normal vesting.  
+- The half pay period will begin the same time that we enact the upcoming cuts to the team.  
+- The half pay period will end with the deferred pay period (see below)  
+  
+DEFERRED PAY PERIOD  
+- On July-1 Jason and I will meet to discuss exactly when I will go back to full time status.  
+- It shouldn't be later than October-1, the exact date will be chosen based on the facts on the ground at that time.  
+- At such time I will keep my salary at $100K, but my vesting will return to my original vesting rate (when I joined the company, not the slightly higher one right now)  
+- When the A-round closes I will receive a cash bonus equalled to my missing $100K salary during this deferred pay period.
+
 
 ### 2024-09-05  Jason Messaging
 

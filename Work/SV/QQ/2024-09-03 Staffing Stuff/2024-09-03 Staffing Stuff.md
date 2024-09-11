@@ -1,5 +1,8 @@
 
-
+- Unlock new seg rev
+- Unlock upsell rev
+- Reduce Cust Churn
+- Decrease recurring cust cost
 ###  Current salaries
 Jack:  Cut backend guys.
 

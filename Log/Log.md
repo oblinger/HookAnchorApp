@@ -6,6 +6,17 @@
   [[Recordings]],
   [[MEET]],
 
+#### Personal Content Logs
+- [[Prj]]:	Personal "evergreen" projects
+- [[PP]]:	Personal Projects
+- [[PQ]]:	Personal "Quick" Projects -- notes that are appended directly into the PQ page.
+- [[SNIP]]:	"Snippets" of text that I produce for various purposes.  (maybe call this [[TT]])
+
+#### Work Content Logs
+- [[WW]]:	Work related projects spanning a month or more
+- [[QQ]]:	Work related "Quick" projects less than a month
+- [[Proj]]:	Work projects
+
 
 #### WORK -- [[SV]] [[SV Folder|--]]  STUFF
 . [[SV Log Page]]	- Gdrive Folder

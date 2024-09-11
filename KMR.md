@@ -9,9 +9,10 @@ TOPS: [[KMR]], [[Meta]], [[TOC]],
   [[MY]],
   [[Prj]],
   [[SYS]],
-  [[T]], [GG](spot://gg), [[JJ]], [[RR]],
+  [[T]], [GG](spot://gg), , [[RR]],
   [TRASH Obsidian](spot://trashobsidian), [TRASH for Obsidian Folder](spot://trashforobsidianfolder)
-  OTHER: [[ATTACH]],  [[WEEKLY]], [top](spot://top), 
+  OTHER: [[ATTACH]],  [[WEEKLY]], [top](spot://top),
+  DELS: [[JJ]], 
 
 
 

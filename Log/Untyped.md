@@ -5,6 +5,11 @@ n:: no prefix.	Dated entries without any typing prefix
 
 | Date       | File                                        | Notes                                                                                                                             |
 | ---------- | ------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------- |
+| 2024-09-10 | [[@Traxxas]]                                    | Call us                                                                                                                           |
+| 2024-09-10 | [[@Traxxas]]                                    | Earlier stuff                                                                                                                     |
+| 2024-09-10 | [[Politics From Me]]                            | Good People and Bad People                                                                                                        |
+| 2024-09-10 | [[Arch]]                                        | Hiring FAQ                                                                                                                        |
+| 2024-09-10 | [[@Jason Syversen]]                             | Text of agreement                                                                                                                 |
 | 2024-09-09 | [[PQ]]                                          | Spraying for Ants                                                                                                                 |
 | 2024-09-09 | [[DAT]]                                         | New plan for integration.                                                                                                         |
 | 2024-09-09 | [[Reflections]]                                 | Went to 1/2 time at SV                                                                                                            |
@@ -14,11 +19,13 @@ n:: no prefix.	Dated entries without any typing prefix
 | 2024-09-03 | [[Jnl]]                                         | My Strengths                                                                                                                      |
 | 2024-09-03 | [[@Maxim Dorogov]]                              | Feedback                                                                                                                          |
 | 2024-09-01 | [[@Nick Allen]]                                 | SportsVisio cuts                                                                                                                  |
-| 2024-08-29 | [[2024-08 Backend Architect]]                   | Spreadsheet                                                                                                                       |
+| 2024-08-29 | [[Arch]]                                        | Spreadsheet                                                                                                                       |
 | 2024-08-27 | [[@James Neilson]]                              |                                                                                                                                   |
 | 2024-08-26 | [[@Steve Singles]]                              | AI Dash Job Posting                                                                                                               |
-| 2024-08-26 | [[2024-08 Backend Architect]]                   | Salary                                                                                                                            |
-| 2024-08-26 | [[2024-08 Backend Architect]]                   | Note Explaining The Job                                                                                                           |
+| 2024-08-26 | [[Arch]]                                        | Salary                                                                                                                            |
+| 2024-08-26 | [[Arch]]                                        | Note Explaining The Job                                                                                                           |
+| 2024-08-26 | [[Arch]]                                        | Salary                                                                                                                            |
+| 2024-08-26 | [[Arch]]                                        | Note Explaining The Job                                                                                                           |
 | 2024-08-25 | [[COM Newsletter]]                              |                                                                                                                                   |
 | 2024-08-23 | [[@James Neilson]]                              | chat about BB power users                                                                                                         |
 | 2024-08-22 | [[Reflections]]                                 | My Biggest Issue: Daily hours on MIT                                                                                              |

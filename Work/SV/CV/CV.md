@@ -19,7 +19,8 @@
   ADDS:   ,
   ADDS:   ,
   ,   [[CV Log]], [[CVP]], [[Data]],
-  DELS: [Standup](spot://standup), 
+  , [Results](spot://results), 
+  DELS: [Standup](spot://standup),
 
 
 
