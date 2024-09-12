@@ -36,8 +36,9 @@ n:: Research Reference pages
   ADDS:   , ,
   ADDS:   , , , , , ,
   ADDS:   , ,
-  ,   [[AI]], [[ML]], [[RR Med]], [[RR Mgt]], 
-  DELS: [[AI]], [[ML]], [[RR Med]], [[RR Mgt]],[[RR Business]], [[RR OKRs]], [[Startups Note]], [[Sophie's World]], [[Sora]], 
+  ,   [[AI]], [[ML]], [[RR Med]], [[RR Mgt]],
+  , [[Comp]], 
+  DELS: [[AI]], [[ML]], [[RR Med]], [[RR Mgt]],[[RR Business]], [[RR OKRs]], [[Startups Note]], [[Sophie's World]], [[Sora]],
 
 
 

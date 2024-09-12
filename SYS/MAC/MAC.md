@@ -1,5 +1,5 @@
 .[[Mac]].
-  [[Doc]], [[MAC How To]], [[MAC Other HW]], [[MAC Setup]], [[App]],
+  [[Doc]], [[MAC How To]], [[MAC Other HW]], [[MAC Setup]], [[MAC Apps]], [[MAC Apps]], 
   -
   [1Password App](spot://1passwordapp), [1Password for Safari App](spot://1passwordforsafariapp), [Activity Monitor App](spot://activitymonitorapp), [AppOpen App](spot://appopenapp)
   [App Store App](spot://appstoreapp), [Audio Hijack 2 App](spot://audiohijack2app), [Automator App](spot://automatorapp), [Backgrounds for Zoom App](spot://backgroundsforzoomapp)
@@ -248,7 +248,7 @@
   [zoom.us App](spot://zoom.usapp):
   [Zoom App](spot://zoomapp):
   [[Karabiner Notes]]:
-  [[App]]:
+  [[MAC Apps]]:
   [[MAC How To]]:
   [[MAC Other HW]]:
   [[MAC Setup]]:
@@ -310,63 +310,65 @@
   [WorkFlowy App](spot://workflowyapp), [Xcode App](spot://xcodeapp), [YiHomeMacInternational App](spot://yihomemacinternationalapp), [Yoink App](spot://yoinkapp), [Zettlr App](spot://zettlrapp)
   [zoom.us App](spot://zoom.usapp), [Zoom App](spot://zoomapp),
   ADDS:   ,
-  ,   [[App]], [[mdfind]], 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+  ,   [[MAC Apps]], [[mdfind]],
+  , ,
   DELS: [[App]], 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  DELS: [[MAC Apps]], 
 
 
 

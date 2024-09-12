@@ -7,9 +7,3 @@
   
 
 
-### _
-
-yoink (drag and drop support)
-Virtual Box
-
-

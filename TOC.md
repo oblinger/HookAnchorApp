@@ -4,6 +4,8 @@
 [[mate]],	[[Proj]],	
 [[KMR]]: [[ATTACH]],	[[WEEKLY]],	
     [[RR]]: [[AI]],	[[RR Philosophy]],	[[RR Mgt]],	[[RR MGR]],	
+        [[Comp]]: 
+            [[LANG]]: 
         [[ML]]: [[Stat]],	
             [[DL]]: [[DL Alg]],	
         [[Systems]]: 
@@ -45,7 +47,7 @@
             [[COM Msg]]: 
     [[SYS]]: [[Hack]],	[[SYS Misc]],	[[OBS]],	[[Closet]],	[[SYS Hacks]],	[[Spot]],	
         [[KM]]: [[Hook System]],	
-        [[MAC]]: [[App]],	
+        [[MAC]]: [[MAC Apps]],	
     [[Work]]: 
         [[SV]]: [[INV]],	[[SVT]],	[[SV Wings]],	[[Circle]],	[[SV Software]],	
             [[SV Ops]],	
@@ -74,9 +76,11 @@
             [[Family]]: [[Parents]],	
         [[@Eli Oblinger]]: 
             [[Eli]]: [[BCMS]],	[[ELI Log]],	[[Eli Strategy]],	
-    [[Log]]: [[Journal]],	[[Note]],	[[Archive]],	[[MEET]],	
+    [[Log]]: [[Journal]],	[[Note]],	[[Archive]],	[[MEET]],	[[Phone]],	
         [[TXT]]: 
             [[Letters]]: 
+            [[Writing]]: [[ArmChair]],	
+                [[Politics]]: [[Race]],	
         [[WP]]: 
         [[Idea]]: [[2018-00 Alloy]],	[[2020-07 Autonomy]],	
             [[2017-09 Elastic Block Chain]],	[[Forum]],	[[2016-00 TreeSheet]],	
@@ -89,9 +93,6 @@
                 [[EOC]]: [[EOCT]],	[[EOCA]],	[[EOCI]],	[[EOCK]],	
                     [[EOCB]]: 
             [[Idea Social]]: 
-    [[Set]]: [[Recipe]],	[[Book]],	[[Phone]],	[[ToRead]],	
-        [[LANG]]: 
+    [[Set]]: [[Recipe]],	[[Book]],	[[ToRead]],	
         [[Humor]]: 
         [[BUY]]: 
-        [[Writing]]: [[ArmChair]],	
-            [[Politics]]: [[Race]],	

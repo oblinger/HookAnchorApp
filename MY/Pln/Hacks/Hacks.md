@@ -1,8 +1,8 @@
 .[[Hacks]].
-  ,   ,
-  DELS: [[Spot]], 
 
 [[Spot]] 
+
+
 
 - [[PQ#^newjump]]:  
 

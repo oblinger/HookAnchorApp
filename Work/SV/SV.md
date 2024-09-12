@@ -2,15 +2,17 @@
 
 .[[SV]].
   , [[@SV]], [Bug Actual List Page](spot://bugactuallistpage), [Bug Board Page](spot://bugboardpage)
-  , [Canva](spot://canva), [[Circle]], [[CV]], [Fireball](spot://fireball), [HALOS](spot://halos)
-  , [[INV]], , [Jira Me Page](spot://jiramepage), [[Meta SV]], [[Mgt]], [[QQ]]
-  , [[SV Archive]], [[SV Basketball Info]], [SV Clickup Page](spot://svclickuppage)
-  , [SV Confluence Page](spot://svconfluencepage), [SV C Root](spot://svcroot)
-  , [SV Google Drive Page](spot://svgoogledrivepage), [SV G Root](spot://svgroot)
-  , [SV Log Page](spot://svlogpage), [[SV Market]], [[SV Ops]], [[SV Org]], [[SV Partner]]
-  , [[SV People]], [[SV Product]], [[SV Software]], [[SV Strat]], [[SVT]]
-  , [SV Tasks](spot://svtasks), [[SV Wings]], [[WW]],
-  DELS: [Jira](spot://jira), 
+  ,  [[Circle]], [[CV]], ,
+  , [[INV]], , [Jira Me Page](spot://jiramepage), [[Meta SV]],
+  [[Mgt]]:
+  ,  
+  APPS:  [SV Confluence Page](spot://svconfluencepage), [Canva](spot://canva),
+  ROOTS: [SV C Root](spot://svcroot), [SV Google Drive Page](spot://svgoogledrivepage), [SV G Root](spot://svgroot)
+  DEPTS:	[[SV Market]], [[SV People]], [[SV Product]],
+  AREAS:	[[SV Ops]], [[SV Software]], [[SV Org]], [[SV Partner]], [[SVT]], 
+  PLAN:		[[SV Strat]],
+  LOGS: 	[[WW]],  [[QQ]], [SV Tasks](spot://svtasks), [SV Log Page](spot://svlogpage), [[SV Archive]],
+  OTHER:	[[SV Wings]], [[SV Basketball Info]], 
 
 [[Proj]] 
 

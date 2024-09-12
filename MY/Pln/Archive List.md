@@ -1,3 +1,6 @@
+- Fix [[JJ]] tree
+- plain clip
+.AirMax
 - Auto create/overwrite  XXX Folder command for every anchor file
 zzzz
 - [ ] setup blink

@@ -1,226 +1,9 @@
-.[[App]].
-  ADDS:   [Chat GPT Page](spot://chatgptpage),
-  ADDS:   [[Git Notes]], [[Hubspot Notes]], , [[Timer]],
-  ADDS:   [[gDrive Notes]],
-  ,   ,
-  , [[Notion]], 
-  DELS: [[Notion]],
-  DELS: [[Notion]],[[notion]], 
+.[[MAC Apps]].
+  , [[gDrive Notes]], [[Git Notes]], [[Hubspot Notes]], [[Notion]], [[Timer]], 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-Plain Clip 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+yoink (drag and drop support)
+Virtual Box
 
 
 # APPS (Appstore)
@@ -325,6 +108,11 @@ TO TRIGGER MENU
 
 ## xx Pocket (see Save to pocket)
 
+## xx Pure Paste
+- Free app store (replaces Plain Clip)
+
+
+
 ## xx Save To Pocket  (see pocket)
 
 ## xx Simplenote
@@ -411,7 +199,8 @@ Paypal
 Tools I Never used
 https://github.com/RobTrew/txtquery-tools/tree/master/ftdoc%20url%20scheme%20and%20FTCopyAsURL
 
-## xx Karabiner-Elements  [[Karabiner Notes]].  (Also using Better Touch Tool!)
+## xx Karabiner-Elements  [[Karabiner Notes]].  
+(Also using Better Touch Tool!)
 
 See ~/.config/karabiner/karabiner.json
 

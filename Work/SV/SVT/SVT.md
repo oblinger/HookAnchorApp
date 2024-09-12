@@ -1,14 +1,8 @@
-.[[SVT]].
-  :
-  :
-  :
-  :
-  [[SVT Jira]]:
-  :
-  :
-  :
-  :
-  ADDS:   [[SVT Bitbucket]], [[SVT Clickup]], [[SVT Confluence]], [[SVT Google Drive]], [[SVT Polaris]], [[SVT Sentry]], [[SVT Slack]], [[SVT Virtual Box Notes]],
+.[[SVT]]. SV Tooling
+  APPS:	[[SVT Jira]], [[SVT Bitbucket]], [[SVT Clickup]], [[SVT Confluence]], [[SVT Google Drive]], [[SVT Polaris]],
+  .		[[SVT Sentry]], [[SVT Slack]],
+  [[SVT Virtual Box Notes]],
+  , [SV Clickup Page](spot://svclickuppage), 
 
 
 

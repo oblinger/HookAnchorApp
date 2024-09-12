@@ -1,6 +1,6 @@
 .**NOW**. 
-  [[2024-08 Backend Architect|Arch]]:	Wait, Agents
-  [[DT]]: 	EvalGames, HomoData,
+  [[2024-08 Backend Architect|Arch]]:	Calls
+  [DT](spot://dt): 	EvalGames, HomoData,
   [OKRs](https://docs.google.com/presentation/d/1v7Winy9DHxGuYh05_is8zH05ClJi0qclM698-pDXIgY/edit?pli=1#slide=id.g274b3e27e6b_0_0):	Q3 Planning	
   [[DAT|DAT]]:	Get PR ready
   [[FIN.]]	Schwab
@@ -27,24 +27,24 @@ Assess	> Assessment plan for BB
 
 
 .[[Work]].
-  ,   [[DT]], [[SV]], 
-  
-## PAUSE [bsheet](https://docs.google.com/spreadsheets/d/1C1eYv2Ks2GCCQ9_xZ2Pg7eEr33bX1KOdN8Xf8X6nxSY/edit#gid=0), [hi](https://software-engineering-team.atlassian.net/jira/dashboards/10022), [tst](https://docs.google.com/spreadsheets/d/1Rc07oadsjZgg6_2ZZ-qIXJ9n9ws3LT0FFraLZHnrf9w/edit?usp=sharing), [epic](https://software-engineering-team.atlassian.net/jira/software/projects/MOB/boards/24/timeline), 
-[[patents]]:	^J Provisional filed
-[AI_mat](spot://aiprodmatrix):	Populate product matrix
-[RP](spot://rp):		^TestRecall; FixRecall
-[Belief](https://docs.google.com/document/d/1H9krXpxS2_Cr9T68pAksb6QGYqpW28DiF2OSw40g0pI/edit?usp=drive_link):		
-[[@Shreshth Saxena|Saxena]]:		/Grz Results  
-Fireballs:		^Dispatcher; ^Maxim 
-[[SV]] 
-[[2023 Least Commitment Model For CV Pipe]]:			>do & metrics
-[Pivo](https://docs.google.com/document/d/16ee8QGaTCChGW7TC3k0W0sQNyyByygOGzwIw_aUkkpU/edit):			!! timeline
-[T28Enhance](https://docs.google.com/document/d/1uOdu0gDLiMXK0d_GQ7kr874PBHVgssaY8D521cvdtQw/edit):	> tell team
+  [[SV]],
+## PAUSE , , , ,
+:	^J Provisional filed
+:	Populate product matrix
+:		^TestRecall; FixRecall
+:
+:		/Grz Results
+Fireballs:		^Dispatcher; ^Maxim
+[[SV]]
+:			>do & metrics
+:			!! timeline
+:	> tell team
    -- 3on3 games
-[Assess](spot://assess):		>look
-[[Work/SV/CV/Data/Data]]:		Pie-chart
-[Cost Analysis](https://docs.google.com/document/d/1WYVwgCfHYk6wC8pGFo68t_vAju_oczbSeBTS-zba-XI/edit?usp=drive_link):	Cost Per Game Analysis
-[[Work Jump]]
+:		>look
+:		Pie-chart
+:	Cost Per Game Analysis
+
+  DELS: [bsheet](https://docs.google.com/spreadsheets/d/1C1eYv2Ks2GCCQ9_xZ2Pg7eEr33bX1KOdN8Xf8X6nxSY/edit#gid=0), [hi](https://software-engineering-team.atlassian.net/jira/dashboards/10022), [tst](https://docs.google.com/spreadsheets/d/1Rc07oadsjZgg6_2ZZ-qIXJ9n9ws3LT0FFraLZHnrf9w/edit?usp=sharing), [epic](https://software-engineering-team.atlassian.net/jira/software/projects/MOB/boards/24/timeline), [[patents]], [AI_mat](spot://aiprodmatrix), [RP](spot://rp), [Belief](https://docs.google.com/document/d/1H9krXpxS2_Cr9T68pAksb6QGYqpW28DiF2OSw40g0pI/edit?usp=drive_link), [[@Shreshth Saxena|Saxena]], [[2023 Least Commitment Model For CV Pipe]], [Pivo](https://docs.google.com/document/d/16ee8QGaTCChGW7TC3k0W0sQNyyByygOGzwIw_aUkkpU/edit), [T28Enhance](https://docs.google.com/document/d/1uOdu0gDLiMXK0d_GQ7kr874PBHVgssaY8D521cvdtQw/edit), [Assess](spot://assess), [[Work/SV/CV/Data/Data]], [Cost Analysis](https://docs.google.com/document/d/1WYVwgCfHYk6wC8pGFo68t_vAju_oczbSeBTS-zba-XI/edit?usp=drive_link), [[Work Jump]], 
 
 
 @Scott Byers / @matias:  We are thinking of a version of halos where we would dynamically recompute the halos depending upon the roster as dynamically edit

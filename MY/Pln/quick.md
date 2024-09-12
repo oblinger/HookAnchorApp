@@ -1,3 +1,4 @@
+- get programming test ready
 - fix light in basement hallway; buy lights
 - spray ants
 - car call DC; get docs for mom

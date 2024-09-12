@@ -1,23 +1,11 @@
-.[[DOC]].
-  [[AWS Log]], [[DOC SYNC]], [[DOC SYNC COMMANDS]],
-  [[Doc 1Password]], [[DocAPI]], [[DocApplescript]], [[DocArduino]], [[DocAWS]], [[DocBash]], [[DocCapistrano]], [[DocClojure]], [[DocConda]], [[DocCPP]], [[DocCucumber]], [[DocDelayedJob]]
-  [[DocDocker]], [[DocEmacs]], [Doc Folder](spot://docfolder), [[DocGit]], [[DocGnome]], [[DocGolang]], [[DocGoogle]], [[DocHtml]], [[DocJavascript]], [[DocJquery]], [[DocJupyter]]
-  [[Doc Keyboard Maestro]], [[DocLinux]], [[DocMac]], [[DocMarkdown]], [[DocMatplotlib]], [[DocNumPy]], [[DocObjectiveC]], [[DocObsidian]], [[DocOSX]], [[DocPandas]], [[DocPycharm]], [[DocPyDatetime]]
-  [[DocPyML]], [[DocPython]], [[DocR]], [[DocRackspace]], [[DocRails]], [[DocRuby]], [[DocSamurai]], [[DocSciKit]], [[DocSeaborn]], [[DocSED]], [[DocSQL]], [[DocSublime]], [[DocTensorFlow]]
-  [[Doctor]], [[DocVagrant]], [[Unix Command Line]],
-
 .[[Doc]].
-  [[AWS Log]],  , , [[DocAPI]], [[DocApplescript]], [[DocArduino]], [[DocAWS]], [[DocBash]], [[DocCapistrano]], [[DocClojure]], , [[DocCPP]], [[DocCucumber]]
-  [[DocDelayedJob]], [[DocDocker]], [[DocEmacs]], , [[DocGCP]], [[DocGit]], [[DocGnome]], [[DocGolang]], [[DocGoogle]], [[DocHtml]], [[DocJavascript]], [[DocJquery]]
-  , , [[DocLinux]], , [[DocMarkdown]], [[DocMatplotlib]], , [[DocObjectiveC]], [[DocObsidian]], [[DocOSX]], [[DocPandas]],
-  , [[DocPyML]], [[DocPython]], [[DocR]], [[DocRackspace]], [[DocRails]], [[DocRuby]], [[DocSamurai]], [[DocSciKit]], , , [[DocSQL]], [[DocSublime]]
-  , , , , [[DocVagrant]], , ,
-  ADDS:   [Game](spot://game),
-  ADDS:   ,
-  DELS: [[Dataview]], [[DocConda]], [[DocJupyter]], [[DocNumPy]], [[DocPycharm]], [[DocPyDatetime]], [[DocSeaborn]], [[DOC SYNC]], [[DOC SYNC COMMANDS]], [[DocTensorFlow]], [[Doctor]], [[mdfind]],[[DocSED]], [[Unix Command Line]], [Doc Folder](spot://docfolder), 
-
-
-
+  , [[AWS Log]], [[DocAPI]], [[DocApplescript]], [[DocArduino]], [[DocAWS]], [[DocBash]]
+  , [[DocCapistrano]], [[DocClojure]], [[DocCPP]], [[DocCucumber]], [[DocDelayedJob]], [[DocDocker]]
+  , [[DocEmacs]], [[DocGCP]], [[DocGit]], [[DocGnome]], [[DocGolang]], [[DocGoogle]], [[DocHtml]]
+  , [[DocJavascript]], [[DocJquery]], [[DocLinux]], [[DocMarkdown]], [[DocMatplotlib]]
+  , [[DocObjectiveC]], [[DocObsidian]], [[DocOSX]], [[DocPandas]], [[DocPyML]], [[DocPython]]
+  , [[DocR]], [[DocRackspace]], [[DocRails]], [[DocRuby]], [[DocSamurai]], [[DocSciKit]], [[DocSQL]]
+  , [[DocSublime]], [[DocVagrant]], [Game](spot://game), 
 
 
 

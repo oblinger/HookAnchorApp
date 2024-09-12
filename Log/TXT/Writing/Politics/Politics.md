@@ -8,8 +8,10 @@
   [[Trump]]:
   ADDS:   ,
   ADDS:   [[AI HISTORY]],
-  DELS: [[RacePitchArchive]], 
+  DELS: ,
 \
+  , [[Politics From Me]], 
+  DELS: [[RacePitchArchive]],
 
   [[Politics From Me]]
   

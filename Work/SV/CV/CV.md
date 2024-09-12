@@ -19,7 +19,9 @@
   ADDS:   ,
   ADDS:   ,
   ,   [[CV Log]], [[CVP]], [[Data]],
-  , [Results](spot://results), 
+  , [Results](spot://results),
+  , [DT alias Data Tasks](spot://dtaliasdatatasks),
+  , [DT](spot://dt), 
   DELS: [Standup](spot://standup),
 
 

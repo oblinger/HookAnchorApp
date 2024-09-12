@@ -1,4 +1,3 @@
-.AirMax
 [[@Traxxas]] 
 - christ tree
 - [[Journaling]] 
