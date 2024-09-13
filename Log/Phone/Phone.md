@@ -5,6 +5,11 @@
 #set 
 n:: Administrative actions associated with accounts or such (favor using @entry instead)
 
+
+### 2024-09-12  Boost Mobile fraudulent account
+
+- Mitch - 
+
 ### 2024-05 Sell Acura
 (see [[2024-05 Sell Acura]])
 

@@ -1,3 +1,5 @@
+- urgent james only one accepted game
+- hiring
 - get programming test ready
 - fix light in basement hallway; buy lights
 - spray ants

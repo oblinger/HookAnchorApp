@@ -5,6 +5,8 @@ n:: no prefix.	Dated entries without any typing prefix
 
 | Date       | File                                        | Notes                                                                                                                             |
 | ---------- | ------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------- |
+| 2024-09-12 | [[Phone]]                                       | Boost Mobile fraudulent account                                                                                                   |
+| 2024-09-12 | [[@Brian French]]                               | Cuts affect us personally                                                                                                         |
 | 2024-09-10 | [[@Traxxas]]                                    | Call us                                                                                                                           |
 | 2024-09-10 | [[@Traxxas]]                                    | Earlier stuff                                                                                                                     |
 | 2024-09-10 | [[Politics From Me]]                            | Good People and Bad People                                                                                                        |

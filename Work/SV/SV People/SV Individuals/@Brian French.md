@@ -2,6 +2,17 @@
 
 # Log
 
+### 2024-09-12  Cuts affect us personally
+
+- Jason is playing hardball and measuring all of us against "replacement costs"
+- Can confirm that there is no job search our for your job
+- After we swap out Matias and Scott is very near zero, 
+  no one is left w/ knowledge of the backend...  
+  This has got to be worth at least be worth some equity & some salary
+- I don't think there would be a rug pull any time soon
+- And if you decided to get back into the job market and did not want Jason to know that I would keep the secret.  In any case, I stand ready now or later to provide job references.
+  (Both you and I can claim credit for all that has happened under our watch)
+
 ### 2023-08-03  update
 - arch test
 - candidates

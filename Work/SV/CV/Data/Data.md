@@ -1,6 +1,9 @@
 .[[Data]].
   , [CV Data Tasks](spot://cvdatatasks), [Data Docs](spot://datadocs)
-  , [Data Games](spot://datagames), [Data Tasks](spot://datatasks), 
+  , , [Data Tasks](spot://datatasks),
+  , [Data Game Tracking](spot://datagametracking),
+  , [Data Game Master List](spot://datagamemasterlist), 
+  DELS: [Data Games](spot://datagames), 
 
 l.[[Data]]. ([[CV]])
   [Data Tasks](spot://datatasks) (),
