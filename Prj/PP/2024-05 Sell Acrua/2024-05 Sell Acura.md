@@ -1,7 +1,15 @@
 
 (See [[Phone]] Sell Acura)
 
+### 2024-09-14  from GPT and web
 
+http://dmv.dc.gov/sites/default/files/dc/sites/dmv/publication/attachments/Title_Temporary_Tag_Application.pdf
+
+
+CAN MAIL TO:
+DC DMV Processing Center
+P.O. Box 90120
+Washington, DC 20090
 
 ### 2024-08-14  Sell Acura
 

@@ -1,3 +1,5 @@
+- fireball masking
+- fireballs
 - urgent james only one accepted game
 - hiring
 - get programming test ready

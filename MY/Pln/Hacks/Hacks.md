@@ -1,22 +1,10 @@
-.[[Hacks]].
-
+.[[Hacks]].  [[Fried Archive]] 
 [[Spot]] 
 
-
-
-- [[PQ#^newjump]]:  
-
-- make alarm show up on full screen
-- move jump pages into the main page for each topic area (in whatever folder it is in)
-
-- sp grab and sp add should both add a link to clipboard
-
 - obsidian memorization cards
+
 - [[Hacks]].	km copy entries
-- fix history month
-- OBS - Evernote log of dated entries
-    ingest all dated entries and starred entries 
-    daily run script via chron or extend alarm.py
+
 
 - [ ] email notification comes in before message!
 - [ ] Figure out notifications 

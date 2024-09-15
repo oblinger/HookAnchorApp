@@ -13,6 +13,19 @@ ask: sean, Jason, jack -- target for BB speedup
 
 # Log
 
+### 2024-09-09 Monday
+- Fireball - 2 ways
+- Assessment
+- Track stealing issue 75%
+- Homography ++
+	- Load ann ct template
+- Annealing game logic ++
+
+- Ops tasks cost/benefit
+- Camera choice
+- OpenCV.ai
+  
+
 ### 2024-01-18  FEB Meeting
 - [todos](https://docs.google.com/document/d/1wASzo79-0WP6c84z7g2xbqAhXtiOx3Ucm6BY2mDBIeg/edit) 
 

@@ -1,6 +1,14 @@
 
 - [gDoc](https://docs.google.com/document/d/1vmeBfJhZt6RLgHzQD7z5u4oGy1QDP7V7D1exwAIthSE/edit) - 
-- [[Software Architecture Challenge.docx]] -
+- [[Software  Challenge.docx]] -
+
+### Test Overview
+Design and Build a stand alone Game Scheduling System
+Deliverables:
+- System design: APIs, DB table designs, Key Classes, etc.
+
+
+### Notes
 
 
 Please provide a design for the APIs and relational database support as needed for a basketball game scheduling system.

@@ -1,21 +1,31 @@
-.**NOW**. 
+.**NOW**.  
+daruude, 
+viva la vida (dance remix), 
+Rythem is a dancer, 
+Tetris, 
+Out of reach
+make it count?, 
+
+Slim Shady, 
+Virtual Insight, 
+traffic lights, 
+
+
   [[2024-08 Backend Architect|Arch]]:	Calls
+  [SW cort](https://www.notion.so/sportsvisio/HOMO-SW-integration-plan-77fb63f7cac7433bb0d2e2cd4d374e4b?pvs=4): Get plan
   [DT](spot://dt): 	EvalGames, HomoData,
-  [OKRs](https://docs.google.com/presentation/d/1v7Winy9DHxGuYh05_is8zH05ClJi0qclM698-pDXIgY/edit?pli=1#slide=id.g274b3e27e6b_0_0):	Q3 Planning	
+  [Fball](spot://fireball):	Deploy
+  [Min](https://docs.google.com/document/d/1oaG7NB2fJ9THAtHcREX6yqrWg91wYEsof9zQNEInFFU/edit):	QAtst, Measure, 
+  
+  [OKRs](https://docs.google.com/presentation/d/1v7Winy9DHxGuYh05_is8zH05ClJi0qclM698-pDXIgY/edit?pli=1#slide=id.g274b3e27e6b_0_0):	Q3 Results	
   [[DAT|DAT]]:	Get PR ready
   [[FIN.]]	Schwab
   [[NJ]]:	>[[War|War]], rewrite, mentor
-
+  
 ## TRACK
+GCP:		[Brian plan](https://docs.google.com/spreadsheets/d/1W38uHew6aaqyeolKzbO9NbaA96Q-jzyDb7gYoUst0qw/edit?gid=0#gid=0). 
 [[Data]]:
-Data:		Build the stats dataset
-. 			GCP, Halos, Minutes, Colors
-[Bridge](https://docs.google.com/document/d/1oaG7NB2fJ9THAtHcREX6yqrWg91wYEsof9zQNEInFFU/edit):	CrossVideos, 
-GCP:		^Juan tracking this
-Halos:		Grz: Halo videos, 
-[Min](https://docs.google.com/document/d/1oaG7NB2fJ9THAtHcREX6yqrWg91wYEsof9zQNEInFFU/edit):		!! On production.
 VidQ:		^Neg entropy gallery
-GCP:		[Brian plan](https://docs.google.com/spreadsheets/d/1W38uHew6aaqyeolKzbO9NbaA96Q-jzyDb7gYoUst0qw/edit?gid=0#gid=0).  Pricing/Perf of using S3
 
 SW proc:	[db](https://www.notion.so/sportsvisio/cf65339c09c6486296f8adaa084c141a?v=f8a45e385eea4c2fb590502835f4453f&pvs=4),[doc](https://docs.google.com/document/d/1aHnoqgQ3H_0abUtlVWoMPHDA7nQhzoq0JRqZLujORc0/edit?usp=drive_web&ouid=105281685541312342727)  ^Jasu 
 Assess	> Assessment plan for BB

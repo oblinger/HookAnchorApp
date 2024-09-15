@@ -7,7 +7,8 @@
 
 .[[AMA]].
   ,   [AMA Collections Page](spot://amacollectionspage), [AMA Content Page](spot://amacontentpage), [AMA Devices](spot://amadevices), [AMA Home Page](spot://amahomepage)
-  [AMA Kindle Page](spot://amakindlepage), [AMA Video Page](spot://amavideopage), 
+  [AMA Kindle Page](spot://amakindlepage), [AMA Video Page](spot://amavideopage),
+  , [AMA Page](spot://amapage), 
 
 - AMA:                           chrome  https://www.amazon.com
 - AMA Collections Page:          chrome  https://www.amazon.com/hz/mycd/digital-console/contentlist/collection/modDateDsc/

@@ -1,3 +1,32 @@
+### 2024-09-13  Example of a 'auto scientist'
+Salvatore, my guess is that an LLM ecosystem that is trained specifically on successful experimentation can be built over years with a tight collaboration between researchers at a major Pharma and their AI.  
+
+
+
+
+Such a system could become facile with all stages of the R&D process to a point where it performed or outperformed humans.
+
+
+
+
+Then think about the situation:  If I am a shareholder, why do I want that AI to publish its work?  Indeed why allow the human researchers to even know the results of such experiments?  The humans can suggest ideas, and can critique ideas from the AI w/o ever knowing the ultimate outcomes.
+
+
+
+
+Imagine what the valuation would be for a corporation whose AI understood CRISPR, but none of it human researchers knew what it was or how it worked.  (they just knew that somehow their AI could edit genes on demand.)
+
+
+
+
+It would be worth TRILLIONS!  So I predict the "last mile" of R&D will be increasingly taken over my AI, and over time more and more aspects of the full life cycle of innovation will be "locked up" in a couple winner-take-all mega corps that have the resources to specifically train an AI on the many parts of the process.
+
+
+
+
+a scary world
+
+
 ### 2024-07-29  Why is it only 1 more step
 
 not enough data at this level for any kind of empirical argument.

@@ -5,6 +5,11 @@ n:: no prefix.	Dated entries without any typing prefix
 
 | Date       | File                                        | Notes                                                                                                                             |
 | ---------- | ------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------- |
+| 2024-09-14 | [[@Annafi Wahed]]                               | Call about Flipside                                                                                                               |
+| 2024-09-14 | [[Forum]]                                       | [[@Annafi Wahed]]                                                                                                                 |
+| 2024-09-14 | [[2024-05 Sell Acura]]                          | from GPT and web                                                                                                                  |
+| 2024-09-13 | [[@Titash Rakshit]]                             | AI Tooling discussion                                                                                                             |
+| 2024-09-13 | [[EOC Log]]                                     | Example of a 'auto scientist'                                                                                                     |
 | 2024-09-12 | [[Phone]]                                       | Boost Mobile fraudulent account                                                                                                   |
 | 2024-09-12 | [[@Brian French]]                               | Cuts affect us personally                                                                                                         |
 | 2024-09-10 | [[@Traxxas]]                                    | Call us                                                                                                                           |
@@ -15,6 +20,7 @@ n:: no prefix.	Dated entries without any typing prefix
 | 2024-09-09 | [[PQ]]                                          | Spraying for Ants                                                                                                                 |
 | 2024-09-09 | [[DAT]]                                         | New plan for integration.                                                                                                         |
 | 2024-09-09 | [[Reflections]]                                 | Went to 1/2 time at SV                                                                                                            |
+| 2024-09-09 | [[Mgt]]                                         | Monday                                                                                                                            |
 | 2024-09-05 | [[@Nick Allen]]                                 | Jason Messaging                                                                                                                   |
 | 2024-09-05 | [[@Nick Allen]]                                 | SportsVisio cuts                                                                                                                  |
 | 2024-09-05 | [[@Jason Syversen]]                             | Jason Messaging                                                                                                                   |
@@ -65,8 +71,8 @@ n:: no prefix.	Dated entries without any typing prefix
 | 2024-06-26 | [[Politics]]                                    | Fixing Banking                                                                                                                    |
 | 2024-06-20 | [[Trump]]                                       | Trying to limit FED independence                                                                                                  |
 | 2024-06-18 | [[QQ]]                                          | Lessons Learned From Minutes                                                                                                      |
-| 2024-06-17 | [[PQ]]                                          | ^newjump                                                                                                                          |
 | 2024-06-17 | [[DAT]]                                         | New Mount Design                                                                                                                  |
+| 2024-06-17 | [[Spot]]                                        | ^newjump                                                                                                                          |
 | 2024-06-15 | [[@Sage Vet]]                                   | Sage                                                                                                                              |
 | 2024-06-12 | [[DAT]]                                         | notes                                                                                                                             |
 | 2024-06-12 | [[@Juan Barajas]]                               | Discussion                                                                                                                        |

@@ -38,14 +38,6 @@ User Manual: https://c.media-amazon.com/images/I/A1hKxjqHJ9S.pdf
 
 
 
-### 2024-06-17  ^newjump
-
-- Multiple ALL_CAPS prefixes in the spot defs file indicates a "jump" table
-- Scan KMR finds definition file (error if multiple found)
-- Scan of Jump content indicates old jumps, deleted jumps (with given prefix), and new jumps to add at end.
-- Should look for suffixes as well as full entries when looking at content.  So AMA Kindle or just Kindle.
-
-- Figure out why we get repeated entries in the "::" sections of the doc
 
 ### 2024-06-06  Faucet
 
