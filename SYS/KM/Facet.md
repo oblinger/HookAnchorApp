@@ -24,7 +24,7 @@
 |     |             |                 |                                              |
 |     | **TARGET**  |                 |                                              |
 |     |             | **XXXX**        | No suffix overrides others as leading choice |
-|     | App         | **XXXX**        | Launches a Mac App (3)                       |
+|     | App         | **XXXX**        | Mac App. Launches it. (3)                    |
 |     | Page        | **XXXX Page**   | Launches a URL (7)                           |
 |     | 1Pass       | **XXXX 1pass**  | Launches from 1password (5)                  |
 |     |             |                 |                                              |

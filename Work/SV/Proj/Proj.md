@@ -7,6 +7,7 @@
   , [AI Tips](spot://aitips),
   , [PlayerID](spot://playerid),
   , [AI MIN](spot://aimin),
-  DELS: [AI Minutes](spot://aiminutes), 
+  , [[AI MIN Notes]], 
+  DELS: [AI Minutes](spot://aiminutes),
 
 [[AI MIN Notes]] 

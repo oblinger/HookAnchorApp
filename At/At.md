@@ -65,7 +65,8 @@
   , [[@Yannick Germain]], [[@Yann LeCun]], [[@Yashin Lin]], [[@Yiftach Eisenberg]]
   , [[@Yoshua Bengio]], [[AF ALUM]], [AT Note](spot://atnote), [[BOD]], [[CRM]], [[Doctor]]
   , [[Friends]], [[Graphic Designer - Ahmad Tahir]], [[Mentors]], [[ORG]], [[PEOPLE]], [[ROLODEX]]
-  , [[VC ORG]], 
+  , [[VC ORG]],
+  , [[@Annafi Wahed]], [[@Titash Rakshit]], 
 
 
 

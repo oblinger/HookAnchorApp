@@ -219,6 +219,48 @@ DISCUSS
 # LOG
 
 
+### 2024-09-16  Brain's Value
+
+Key Deliverables
+- Scrum tracking:  Jack lead w/ as team leads:  Matias, TT, Juan
+- Micro technical decision making: Ticket approach, Monitoring, Fixing
+	- ==> Basically work, will be major fuck ups
+- Epic technical planning: 
+	- ==> Jasu/Jack can handle.  Matias would be good enough, but low velocity, not innovative
+- Line management
+- 2-3 Hard cases per month
+	- ==> Not issues solved well.  Churn customers.  
+
+From Jack Value needed:
+- Definitive answers on hard things
+- Moderately Tactical hard-cases (3 per month)
+
+No improvement since cut
+- when he digs in he delivers (but he does not do it now)
+Jack is making 90% of decision, but really need more
+Bare min. we need him in at least 15% of cases need to get to understand & solve
+
+
+GREATEST VALUE BRIAN:
+- Understands full product UX & customer need
+
+
+Matias:
+- does not have the context to own these large issue
+- he falls down on customer knowledge
+- he falls down on understanding UX - app product user experience needs to go.
+	- has the app 
+
+
+NEED Curiosity about the app, and about how others deliver same.
+
+
+
+
+
+
+
+
 ### 2024-09-10  Text of agreement
 
 Version II:

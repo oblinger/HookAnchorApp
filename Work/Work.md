@@ -1,17 +1,5 @@
 .**NOW**.  
-daruude, 
-viva la vida (dance remix), 
-Rythem is a dancer, 
-Tetris, 
-Out of reach
-make it count?, 
-
-Slim Shady, 
-Virtual Insight, 
-traffic lights, 
-
-
-  [[2024-08 Backend Architect|Arch]]:	Calls
+  [[2024-08 Backend Architect|Arch]]:	JackDiscuss, Calls
   [SW cort](https://www.notion.so/sportsvisio/HOMO-SW-integration-plan-77fb63f7cac7433bb0d2e2cd4d374e4b?pvs=4): Get plan
   [DT](spot://dt): 	EvalGames, HomoData,
   [Fball](spot://fireball):	Deploy
@@ -36,8 +24,6 @@ Assess	> Assessment plan for BB
 [[journaling]] 
 
 
-.[[Work]].
-  [[SV]],
 ## PAUSE , , , ,
 :	^J Provisional filed
 :	Populate product matrix
@@ -67,6 +53,10 @@ Homography  (physics model)
 - cube construction
 
 ## _
+
+
+.[[Work]].
+  [[SV]],
 
 
 

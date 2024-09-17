@@ -1,3 +1,5 @@
+- Jack arch test
+- get spec for homography control points to Jack, and data format for control points
 - fireball masking
 - fireballs
 - urgent james only one accepted game

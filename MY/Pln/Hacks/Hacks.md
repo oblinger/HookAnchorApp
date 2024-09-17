@@ -1,5 +1,7 @@
 .[[Hacks]].  [[Fried Archive]] 
-[[Spot]] 
+  , [[Fried Archive]], 
+
+  DELS: [[Spot]], 
 
 - obsidian memorization cards
 

@@ -61,7 +61,7 @@
             [[CV]]: [[CVP]],	[[Data]],	
             [[QQ]]: 
     [[MY]]: [[Meta]],	[[Myfo]],	[[TEMPLATER]],	[[QUICKADD]],	
-        [[Pln]]: [[Lrn]],	[[Mission]],	[[Productivity]],	
+        [[Pln]]: [[Lrn]],	[[Hacks]],	[[Mission]],	[[Productivity]],	
             [[SCRatch]]: 
     [[Prj]]: [[2021-04 FindDayCare]],	[[2022-05 Enxt]],	[[2022-03 BeFAANG]],	
         [[2022-03 BeVC]],	

@@ -1,10 +1,22 @@
 
+### PETER HAMPTON - 
 
+REALITY DISFUNCTION -- 
+- bitek - biological technology - creating void hawk and polyp made "Tranquility"
+- Ione - leader daughter
+- Calvert - cowboy space captain
+
+THE NEUTRONIUM ALCHIMIST -- Weapon that reduces force repelling atoms to whole sun collapses.
+Invented by woman physicsts refugee from destroyed planet.
+
+THE NAKED GOD -- Turns out to be a tool left behind by a transcendent race, that now helps sentient races
+
+## __
 
 ### SINGULARITY TRAP
 
-nanite goo sticks to hand of space-miner and replaces him.  to tell him about others that are non-AIs (before we get to the singularity)
-
+Nanite goo sticks to hand of space-miner and replaces him.  
+this 'trap' is designed to allow the replaced version to tell all others of this trapped species to join them to fight the AIs before they hit the singularity and create their own AI.
 
 
 ### ANCILLARY - Ann Leckie
@@ -25,7 +37,7 @@ These guys can move matter with their minds.
 - Man wakes with Amnesia & dead crew mates
 	- Bacteria is consuming the sun (thin line from sun to Venus)
 	- One nearby sun is immune, so he is sent to check it out.
-	- He is in medically induced coma to avoid psychological issues on long voyage.
+	- He is in a medically induced coma to avoid psychological issues on long voyage.
 - At Tau Ceti he meets another race ALSO trying to save themselves from this plague
 
 

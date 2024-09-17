@@ -21,7 +21,8 @@
   ,   [[CV Log]], [[CVP]], [[Data]],
   , [Results](spot://results),
   , [DT alias Data Tasks](spot://dtaliasdatatasks),
-  , [DT](spot://dt), 
+  , [DT](spot://dt),
+  , [CV Page](spot://cvpage), 
   DELS: [Standup](spot://standup),
 
 

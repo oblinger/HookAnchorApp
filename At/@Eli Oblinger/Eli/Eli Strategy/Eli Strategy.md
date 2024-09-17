@@ -3,14 +3,26 @@
 
 # CHEAT SHEET
 
-## Melt down - Take to a room
+## MELT DOWN -> Take to a room
 I am going to pick you and take you to a room
 you are not in trouble, you are good kid, you are just having a hard time.
 
 
 
 # XXX
-## Frustration Coping Strategies
+## FRUSTRATION EXPLOSION
+
+
+#### LATER SELF STORY -- Frame Coping advice as stuff that was taught to oneself
+Hey remember early today. if-not-receptive:
+- wait, wait, no, no, no, that's so weird I said that.  
+  I can't believe I would think that was it, forget it....
+if-receptive:  
+- Start #1: I remember when I was 6, I XXX ...
+- Start #2: I don't know about you but when XXXX, I ....
+
+#### THUMBS UP/DOWN -- 
+Hey remember earlier today.  If-receptive:
 
 
 ### >> GROWTH MINDSET - Family Values.  In our family
@@ -32,8 +44,6 @@ you are not in trouble, you are good kid, you are just having a hard time.
 ### >> DRY RUNS
 
 ### >> DID I EVER TELL YOU WHEN
-#### SELF-LEARNING STORY -- Frame Coping advice as stuff that was taught to oneself
-- When I was six my dad told
 #### MANTRAS -- My mom told me to say:
 - Dad say when he gets frustrated he puts a hand on his heart and says:
 - This feels hard because it IS hard, not because I am doing something wrong.  So I started saying it to MY-self.  

@@ -1,8 +1,12 @@
 .[[KM]].
   [[Hook System]], [[KM Anchors]], [[KM Global 2 Local]], [[KM Meta KM]]
-  , [[KM Overview]], [KM script](spot://kmscript), 
+  , [[KM Overview]], [KM script](spot://kmscript),
   , [[Multi-List WorkFlow]],
-  , [[Facets]],
+  , ,
+  , ,
+  , [[Facet]], 
+  DELS: [[Facet]],
+  DELS: [[Facet]],[[Facets]], 
 
 
 

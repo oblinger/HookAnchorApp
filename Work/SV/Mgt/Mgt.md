@@ -1,19 +1,33 @@
 - [[MGR]], [Wk Agenda](https://docs.google.com/document/d/1E5a-4Hvj2LX9KkdSPbcblWSBs3ZwdTgBvY0FA6NKytU/edit?usp=sharing), 
 - [[ROADMAP]], 
 - [MGT Agenda](spot://mgtagenda) 
-
 ask: sean, Jason, jack -- target for BB speedup
-
 - S3
 - RP play format
 - Minute data format?
 - fusing
-
 - IO.save(path, uri)
 
 # Log
 
-### 2024-09-09 Monday
+### 2024-09-16  Weekly
+SHOW
+- IMAGE of edge case:  
+- matrix of results for min
+- Homography:  Games 10, 2, 7 (edge jersey color contrast), maybe 8, 9
+
+- Min results
+- Homography progress:  v1 UX, v1 algs, end2end
+- Annealing alg improvements
+- Fixing colors - Generating galleries 
+- New Fireballs version in.  Pushing for v2.1
+
+
+- QA minutes 
+- QA colors
+
+
+### 2024-09-09 Weekly
 - Fireball - 2 ways
 - Assessment
 - Track stealing issue 75%

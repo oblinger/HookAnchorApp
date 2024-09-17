@@ -9,33 +9,36 @@
 
 BOOKS THAT I HAVE LOVED INCLUDE
 
-1. **"The Three-Body Problem" by Liu Cixin** - A modern hard science fiction masterpiece from China, blending physics, astronomy, and complex theoretical concepts.
-2. 
+1. **"The Three-Body Problem" by Liu Cixin** 
+
 3. **"Guns, Germs, and Steel" by Jared Diamond** - Although not a science book per se, it offers a thought-provoking analysis of the factors that have shaped human history.
 
-1. **"Brave New World" by Aldous Huxley** - Explores themes of technological advancement, societal structure, and human nature.
+1. **"Brave New World" by Aldous Huxley** 
 
-1. **Greg Egan**: Known for his hard science fiction, Egan's works often explore themes of identity and consciousness in the context of advanced technology and physics. Try starting with "Diaspora" or "Permutation City."
+1. **Greg Egan**: "Diaspora" or "Permutation City."
     
-2. **Neal Stephenson**: Renowned for his detailed exposition and exploration of scientific and philosophical themes, his book "Anathem" is a particular highlight for fans of hard science fiction.
+2. **Neal Stephenson**: "Anathem" 
+
+1. **Vernor Vinge**: His Zones of Thought series, starting with "A Fire Upon the Deep"
     
 
-1. **Vernor Vinge**: His Zones of Thought series, starting with "A Fire Upon the Deep", is acclaimed for its originality and exploration of big ideas like the technological singularity.
-    
+"Uplift War": David Brin
+
+"Daemon" Daniel Suarez
+
+"Lucifer's Hammer": Niven and Pournell 
+
+"Animal Farm": George Orwell
+
+1. **Arthur C. Clarke**: "Childhood's End"
 
 
 
 
-not sorted
 
 
 
 
-
-
-
-
-1. **Arthur C. Clarke**: A classic author in the genre, Clarke's works, like "2001: A Space Odyssey" and "Childhood's End", are known for their scientific foresight and profound conceptual ideas.
     
 5. **Ted Chiang**: His collection of short stories, such as "Stories of Your Life and Others" and "Exhalation", are highly praised for their thoughtful and often philosophical exploration of scientific concepts.
     

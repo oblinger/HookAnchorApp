@@ -2,15 +2,16 @@
 n:: Books I have read
 
 .[[Book]]. 
+  [[Book Chat GPT]], 
+  BOOKS:
   - [AnthonyRobins_GetTheEdge](spot://anthonyrobinsgettheedge),  [GetTheEdge_Worksheet](spot://gettheedgeworksheet),
-  PRODUCTIVITY / MANAGEMENT
-  - [Atomic Habits](spot://atomichabits), [DYL](spot://dyl), [Getting_Things_Done](spot://gettingthingsdone),
-  - [High Output Management](spot://highoutputmanagement)
-  ADDS:   [[F90]],
-  ADDS:   [[Book Chat GPT]], ,
-  ADDS:   , [[MgrPath]],
+  - PRODUCTIVITY / MANAGEMENT
+	  - [Atomic Habits](spot://atomichabits), [DYL](spot://dyl), [Getting_Things_Done](spot://gettingthingsdone),
+	  - [High Output Management](spot://highoutputmanagement), [[F90]], [[MgrPath]],
   ADDS:   [[Agile Software Development]], [[Fundamentals of Workability Workshop]],
-  DELS: [[Book To Read]], 
+
+
+[[Book To Read]], 
 
 
 

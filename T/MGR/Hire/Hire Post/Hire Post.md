@@ -8,7 +8,8 @@
   [[2023 Head SW]],
   ,
   ADDS:   [SV Hiring](spot://svhiring),
-  DELS: [[2024-08 Backend Architect]], 
+  , [[2024-08 Backend Architect]], 
+  DELS: [[2024-08 Backend Architect]],
 
 
 

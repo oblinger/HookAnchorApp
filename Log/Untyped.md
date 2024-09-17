@@ -5,6 +5,8 @@ n:: no prefix.	Dated entries without any typing prefix
 
 | Date       | File                                        | Notes                                                                                                                             |
 | ---------- | ------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------- |
+| 2024-09-16 | [[Mgt]]                                         | Weekly                                                                                                                            |
+| 2024-09-16 | [[@Jason Syversen]]                             | Brain's Value                                                                                                                     |
 | 2024-09-14 | [[@Annafi Wahed]]                               | Call about Flipside                                                                                                               |
 | 2024-09-14 | [[Forum]]                                       | [[@Annafi Wahed]]                                                                                                                 |
 | 2024-09-14 | [[2024-05 Sell Acura]]                          | from GPT and web                                                                                                                  |
@@ -15,25 +17,25 @@ n:: no prefix.	Dated entries without any typing prefix
 | 2024-09-10 | [[@Traxxas]]                                    | Call us                                                                                                                           |
 | 2024-09-10 | [[@Traxxas]]                                    | Earlier stuff                                                                                                                     |
 | 2024-09-10 | [[Politics From Me]]                            | Good People and Bad People                                                                                                        |
-| 2024-09-10 | [[Arch]]                                        | Hiring FAQ                                                                                                                        |
+| 2024-09-10 | [[2024-08 Backend Architect]]                   | Hiring FAQ                                                                                                                        |
 | 2024-09-10 | [[@Jason Syversen]]                             | Text of agreement                                                                                                                 |
 | 2024-09-09 | [[PQ]]                                          | Spraying for Ants                                                                                                                 |
 | 2024-09-09 | [[DAT]]                                         | New plan for integration.                                                                                                         |
 | 2024-09-09 | [[Reflections]]                                 | Went to 1/2 time at SV                                                                                                            |
-| 2024-09-09 | [[Mgt]]                                         | Monday                                                                                                                            |
+| 2024-09-09 | [[Mgt]]                                         | Weekly                                                                                                                            |
 | 2024-09-05 | [[@Nick Allen]]                                 | Jason Messaging                                                                                                                   |
 | 2024-09-05 | [[@Nick Allen]]                                 | SportsVisio cuts                                                                                                                  |
 | 2024-09-05 | [[@Jason Syversen]]                             | Jason Messaging                                                                                                                   |
 | 2024-09-03 | [[Jnl]]                                         | My Strengths                                                                                                                      |
 | 2024-09-03 | [[@Maxim Dorogov]]                              | Feedback                                                                                                                          |
 | 2024-09-01 | [[@Nick Allen]]                                 | SportsVisio cuts                                                                                                                  |
-| 2024-08-29 | [[Arch]]                                        | Spreadsheet                                                                                                                       |
+| 2024-08-29 | [[2024-08 Backend Architect]]                   | Spreadsheet                                                                                                                       |
 | 2024-08-27 | [[@James Neilson]]                              |                                                                                                                                   |
 | 2024-08-26 | [[@Steve Singles]]                              | AI Dash Job Posting                                                                                                               |
-| 2024-08-26 | [[Arch]]                                        | Salary                                                                                                                            |
-| 2024-08-26 | [[Arch]]                                        | Note Explaining The Job                                                                                                           |
-| 2024-08-26 | [[Arch]]                                        | Salary                                                                                                                            |
-| 2024-08-26 | [[Arch]]                                        | Note Explaining The Job                                                                                                           |
+| 2024-08-26 | [[2024-08 Backend Architect]]                   | Salary                                                                                                                            |
+| 2024-08-26 | [[2024-08 Backend Architect]]                   | Note Explaining The Job                                                                                                           |
+| 2024-08-26 | [[2024-08 Backend Architect]]                   | Salary                                                                                                                            |
+| 2024-08-26 | [[2024-08 Backend Architect]]                   | Note Explaining The Job                                                                                                           |
 | 2024-08-25 | [[COM Newsletter]]                              |                                                                                                                                   |
 | 2024-08-23 | [[@James Neilson]]                              | chat about BB power users                                                                                                         |
 | 2024-08-22 | [[Reflections]]                                 | My Biggest Issue: Daily hours on MIT                                                                                              |
@@ -149,8 +151,8 @@ n:: no prefix.	Dated entries without any typing prefix
 | 2024-03-03 | [[FIN Log]]                                     | Follow On Questions                                                                                                               |
 | 2024-02-18 | [[@Hoka]]                                       | Exchange                                                                                                                          |
 | 2024-02-17 | [[Eli]]                                         | Put on his underwear                                                                                                              |
-| 2024-02-17 | [[Facets]]                                      | Auto Jump pages                                                                                                                   |
-| 2024-02-17 | [[Facets]]                                      | EXAMPLES of facet groups                                                                                                          |
+| 2024-02-17 | [[Facet]]                                       | Auto Jump pages                                                                                                                   |
+| 2024-02-17 | [[Facet]]                                       | EXAMPLES of facet groups                                                                                                          |
 | 2024-02-12 | [[MED Log]]                                     | QL DOC advice for a flu w/ cough                                                                                                  |
 | 2024-02-11 | [[Palestinians]]                                | Andrew's response                                                                                                                 |
 | 2024-02-09 | [[Palestinians]]                                | Try Number Three                                                                                                                  |
