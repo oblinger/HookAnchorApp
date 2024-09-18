@@ -18,7 +18,7 @@
 
 - Use existing stated games.
 - Shot Origination Problem
-- Poession near frame of the shot.
+- Possession near frame of the shot.
 - Shot Origination Coord.
 - How many Videos?
 	- 10 videos. 10 min each

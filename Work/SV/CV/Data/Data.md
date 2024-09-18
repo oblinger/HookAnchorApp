@@ -5,7 +5,7 @@
   , [Data Game Master List](spot://datagamemasterlist), 
   DELS: [Data Games](spot://datagames), 
 
-l.[[Data]]. ([[CV]])
+.[[Data]]. ([[CV]])
   [Data Tasks](spot://datatasks) (),
   [Data Docs](spot://datadocs),
   [CV Data Tasks](spot://cvdatatasks),

@@ -1,5 +1,12 @@
-.**NOW**.  
-  [[2024-08 Backend Architect|Arch]]:	JackDiscuss, Calls
+Juan. OpenCV.ai wants a short video that they can annotate for us to show their system's capability.  My 
+
+
+
+.**NOW**. 
+  CV: 
+    How much AI is helping annotators (ROI for AI saving time, and tracked over time to see how much it is improving over time (I assume to model when it will take over)
+  [[Data]]:	
+  [[2024-08 Backend Architect|Arch]]:	Jack Discuss, Calls
   [SW cort](https://www.notion.so/sportsvisio/HOMO-SW-integration-plan-77fb63f7cac7433bb0d2e2cd4d374e4b?pvs=4): Get plan
   [DT](spot://dt): 	EvalGames, HomoData,
   [Fball](spot://fireball):	Deploy
@@ -12,7 +19,6 @@
   
 ## TRACK
 GCP:		[Brian plan](https://docs.google.com/spreadsheets/d/1W38uHew6aaqyeolKzbO9NbaA96Q-jzyDb7gYoUst0qw/edit?gid=0#gid=0). 
-[[Data]]:
 VidQ:		^Neg entropy gallery
 
 SW proc:	[db](https://www.notion.so/sportsvisio/cf65339c09c6486296f8adaa084c141a?v=f8a45e385eea4c2fb590502835f4453f&pvs=4),[doc](https://docs.google.com/document/d/1aHnoqgQ3H_0abUtlVWoMPHDA7nQhzoq0JRqZLujORc0/edit?usp=drive_web&ouid=105281685541312342727)  ^Jasu 

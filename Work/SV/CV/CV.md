@@ -22,7 +22,8 @@
   , [Results](spot://results),
   , [DT alias Data Tasks](spot://dtaliasdatatasks),
   , [DT](spot://dt),
-  , [CV Page](spot://cvpage), 
+  , [CV Page](spot://cvpage),
+  , [DD](spot://dd), 
   DELS: [Standup](spot://standup),
 
 
