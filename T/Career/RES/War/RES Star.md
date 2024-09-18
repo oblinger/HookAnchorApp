@@ -82,9 +82,11 @@ Teams had not been doing any ticket tracking and were using spreadsheets
 ### Aeolus Bang Start
 - S: Cash rich, Short timeline, Unrealistic investors
 - A: Hiring explosion, 2 tier mgt 
-- R: 
+- R: Processed over 2,000 applications in 8 months & hired 40+ PhDs & 20+ Engs
+- R: Raised over $16M ???
+- R: Debuted autonomous two armed robot performing household tasks at CES
 ### AEOLUS Turn Around
 - PERSONNEL
-	- Interview XXXX in 9 months & hired 40+ PhDs & 20 Eng
+	- Interview XXXX in 8 months & hired 40+ PhDs & 20+ Eng
 - ARCHITECTURE
 	- 

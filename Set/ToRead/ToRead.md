@@ -7,7 +7,7 @@
 n:: Stuff "to read"
 -   #set
 - [read]( https://www.mckinsey.com/industries/agriculture/our-insights/winning-in-africas-agricultural-market) - africa
-- [[Set/ToRead/Read/Read]], [[Podcasts To Listen To]], 
+- [[Podcasts To Listen To]], 
   [[Set/ToRead/Read/Read]]
 - Alignment Forum, [Humane Tech](https://www.humanetech.com/podcast)  
 - Managers Path

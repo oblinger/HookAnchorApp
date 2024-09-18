@@ -1,3 +1,11 @@
+
+### 2024-09-17  If I want to get more done, I need to focus my time
+
+Each day I am planning what I will do, then tracking what I did do.
+It is surprising how small the fraction is of my day that goes to things I hope to increase.
+My idea for the next days is to track this each day and try to shift the fraction of desired ones.
+
+
 ### 2024-09-09  Went to 1/2 time at SV
 
 The idea going 1/2 time is that 

@@ -2,9 +2,9 @@
 [[FIN]]:	Open SCH; [[2024-01 Retirement Planning|Merrill]] 
 [[NJ]]:	Think
 [[Lrn]]:	Run system
-[[CRM]]: 	Sean
+[[CN]]: 	Sean
 
-[[MED]]:	Daily Exercise [[Habit]].
+[[MED]]:	Daily Xrcise [[Habit]]
 [[MED]]:	Noom Eating
 [[MED]]:	Get TPST
 [[Calls]]:	John, Dave, Ana
@@ -13,4 +13,4 @@
 [[Spirit]]: 
 
 
-[[Self]]. [[Per]]. [[Self Evergreen]], 
+[[Self]]. [[Self Evergreen]], 

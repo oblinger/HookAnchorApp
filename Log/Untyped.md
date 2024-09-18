@@ -5,6 +5,7 @@ n:: no prefix.	Dated entries without any typing prefix
 
 | Date       | File                                        | Notes                                                                                                                             |
 | ---------- | ------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------- |
+| 2024-09-17 | [[Reflections]]                                 | If I want to get more done, I need to focus my time                                                                               |
 | 2024-09-16 | [[Mgt]]                                         | Weekly                                                                                                                            |
 | 2024-09-16 | [[@Jason Syversen]]                             | Brain's Value                                                                                                                     |
 | 2024-09-14 | [[@Annafi Wahed]]                               | Call about Flipside                                                                                                               |

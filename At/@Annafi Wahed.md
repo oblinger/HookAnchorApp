@@ -10,3 +10,9 @@ Mechanical
 - how reasonable are your positions according to the spectrum of reasonable people
 
 
+Pointers:
+- https://www.kialo.com/
+- https://www.reddit.com/r/changemyview/
+- https://www.technologyreview.com/2018/08/21/240284/the-simple-but-ingenious-system-taiwan-uses-to-crowdsource-its-laws/
+- https://www.linkedin.com/in/themattharris/
+

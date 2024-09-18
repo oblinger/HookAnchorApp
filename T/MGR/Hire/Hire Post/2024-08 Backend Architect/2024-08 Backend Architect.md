@@ -1,9 +1,15 @@
-
+Fireball
 [[2024 Architect Test]] 
 
 [gdrive](https://drive.google.com/drive/folders/1YbYomol2XMu5uLMm0DRSeD_AP3AFG_az) [Arch](spot://arch) 
 
 
+## DECISION CRITERIA
+- OWNERSHIP - Experience being the "owner" of multiple, scaled, enterprise apps
+- PRODUCT - Skill and Experience in designing complex app features: UX, backend, etc.
+- ENGLISH - B2+ or better in speaking english.
+- CODE - Skill and velocity in nest.js coding
+- LEADERSHIP - Experience in leading small teams.
 
 ### __
 - What have they "owned" -- sized of enterprise app
@@ -56,7 +62,7 @@ Jasu
 
 ~~
 
-Lead Backend Developer.
+THE ROLE:  Lead Backend Developer.
 
 We have a new job requirement, and plan to begin interviewing as soon as candidates become available.  This is an important role, so we plan to perform interviewing in batches as they come in, but then hold off for some weeks in order to be sure we have found a best candidate for the role.
 

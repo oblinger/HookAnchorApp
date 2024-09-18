@@ -2,20 +2,17 @@
   [[Climate]]:
   [[Palestinians]]:
   [[Race]]:
-  :
-  :
   [[Socialism]]:
   [[Trump]]:
-  ADDS:   ,
-  ADDS:   [[AI HISTORY]],
-  DELS: ,
-\
-  , [[Politics From Me]], 
-  DELS: [[RacePitchArchive]],
+  [[AI HISTORY]],
+
 
   [[Politics From Me]]
   
 
+86.1826
+
+https://www.wsj.com/opinion/harris-is-the-safer-economic-choice-2024-presidential-election-ea06b8bf
 
 
 
