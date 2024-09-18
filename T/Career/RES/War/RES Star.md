@@ -85,6 +85,8 @@ Teams had not been doing any ticket tracking and were using spreadsheets
 - R: Processed over 2,000 applications in 8 months & hired 40+ PhDs & 20+ Engs
 - R: Raised over $16M ???
 - R: Debuted autonomous two armed robot performing household tasks at CES
+
+
 ### AEOLUS Turn Around
 - PERSONNEL
 	- Interview XXXX in 8 months & hired 40+ PhDs & 20+ Eng
