@@ -1,5 +1,4 @@
 
-
 ## PYRAMID
 
 A proven AI PhD/CTO: with decade+ experience in ML/DL, built multiple 50+ person orgs, funded hundreds of millions in research at DARPA, exited three companies and brought many products to market worth billions.  Looking for a hands-on role leading generative-AI based innovation.
@@ -125,3 +124,11 @@ ACTIVITES
 ### CLEAN
 - Carefully designed 'things'
 
+
+
+# LOG
+
+### 2024-09-19  Objective
+
+Objective: 
+Technically lead prototyping/productization of advanced AI, ideally leveraging my experience with generative models.

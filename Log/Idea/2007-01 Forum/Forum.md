@@ -1,7 +1,9 @@
-.[[Forum]].
+.[[Forum]].l
   ADDS:   [[2021-01-00 Short start with Yashin]],
   ADDS:   [[Truth]],
-  ADDS:   [Forum.PPTX Doc](spot://forum.pptxdoc),
+  ADDS:   ,
+  , [Forum.PPTX Doc](spot://forum.pptxdoc), 
+  DELS: [Foru0m.PPTX Doc](spot://forum.pptxdoc), 
 
 
 

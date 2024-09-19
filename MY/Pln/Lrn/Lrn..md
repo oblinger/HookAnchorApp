@@ -7,3 +7,6 @@ KNOW:		100 algs
 - Diffusion
 - DL Specialization: Sequence Models (not yet started)
 - Coursera: IBM PyTorch
+
+- Transformers - 
+- Family of algorithms

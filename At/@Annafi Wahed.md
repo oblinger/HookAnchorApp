@@ -2,6 +2,12 @@
 
 # LOG
 
+### 2024-09-19  W/ CTO
+
+- Paid Tier
+- Cross posting
+- Free pairs w/ high representation
+
 ### 2024-09-14  Call about Flipside
 
 Mechanical
