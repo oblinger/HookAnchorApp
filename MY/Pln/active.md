@@ -1,4 +1,3 @@
-[[@Traxxas]] 
 - christ tree
 - [[Journaling]] 
 -  quarterly goals

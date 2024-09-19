@@ -1,14 +1,14 @@
 . [[S.T.A.R.]], [[RES]], [[RES War]], 
 
-## Sports Visio
+## SPORTS VISIO
 
 Tapped by the CEO to "turn the SW and AI orgs around."  Both had personnel, quality, velocity, and delivery issues.  In response I 
 - Replaced the entire AI team
 - Hired a new QA team and developed formal processes that moved system from a nearly "unshipable" product into one that routinely had zero high severity bugs in each push.
-- Worked to stratgically reduce product scope to match dev resources while still delivering features required to drive sales.
+- Worked to strategically reduce product scope to match dev resources while still delivering features required to drive sales.
 As a result we: raised over $4M in new funding, Grew sales from thousands to hundreds of thousands, formalized bi-monthly shipping of four products typically with zero high priority bugs in production across all
 
-==> Raised $3M seed from Sapphire Ventures
+==> Raised $5M+ seed from tier 1 VCs like Sapphire Ventures
 ==> Grew sales from thousands to hundreds of thousands 
 ==> Transitioned to bi-monthly shipping of 4 products with >10x reduction in serious bugs
 
@@ -16,8 +16,9 @@ As a result we: raised over $4M in new funding, Grew sales from thousands to hun
 - S: $3M and 2years spent.  never shipped, never met deadline within factor of 2.
 - T: Right the ship, improve quality & velocity.
 - A: Layoffs, Descoping, Hires, Revamped all processes
-- R: Shipped.  Stable.  Bugs dropped immesurable > ?3? quarterly.  
+- R: Shipped.  Stable.  Bugs dropped immeasurably > ?3? quarterly.  
 
+### __
 #### SITUATION - Late joining "founder" (>2 years) w/ lg equity & turn round mandate
 - Burnt $3M - no AI product, SW product was an unusable brick. 
 - Great CEO vision and investor relations but dumpster Fires EVERYWHERE in SW team.
@@ -69,26 +70,49 @@ Teams had not been doing any ticket tracking and were using spreadsheets
 - --> Instituted 1-page sprint over view broken out by person.  This greatly helped one-sprint at a time planning abstraction.
 
 
-## Analytics Fire
+## ANALYTICS FIRE
 ### AF Instant Design
 - S: Fortune 1000 client tasked us to build a computer-vision-based solar roof installation designer tool.  Customer gave us limited rope after internal team failed at this. 
 - T:	Our task was to demonstrate "instant design" was possible
 - A: Light 1-month R&D cycle + 2-month dirty prototyping
   Won long term contract, built and operated capability
-- R:	Our solution became “the largest single driver of new revenue growth” according to our client — This enabling them to penetrate and scale in a new high-margin sub-industry.
+- R:	Our solution became “the largest single driver of new revenue growth” according to our client — This enabling them to penetrate and scale in a new high-margin market segment.
+
+### AF Residential Solar
+- S: Sunpower desired a strategic shift from commercial to residential solar
+- T: Build suite of infrastructure required for penetration into the consumer solar market.
+- A: Over 3 years, and 22 FTE we build majority of their suite of tools managing entire residential solar life cycle, including:
+- R: Sunpower transitioned from XXXX residential in 20XX upto YYYY in 20YY, and ultimately divested commercial solar in ZZZZ.
 
 
-## Aeolus
+
+
+## AEOLUS
 ### Aeolus Bang Start
 - S: Cash rich, Short timeline, Unrealistic investors
-- A: Hiring explosion, 2 tier mgt 
-- R: Processed over 2,000 applications in 8 months & hired 40+ PhDs & 20+ Engs
-- R: Raised over $16M ???
-- R: Debuted autonomous two armed robot performing household tasks at CES
+- T: Build team, Create Aeolus Robot OS, Deliver CES Prototype
+- A: Build 2 tiered mgt structure, AROS framework, and CES prototype
+- A: Processed over 2,000 applications in 8 months & 
+- ==> Hired 40+ PhDs & 20+ Eng
+- ==> Raised over $16M ???
+- ==> Debuted autonomous two armed robot performing open-ended household tasks at CES
 
 
-### AEOLUS Turn Around
-- PERSONNEL
-	- Interview XXXX in 8 months & hired 40+ PhDs & 20+ Eng
-- ARCHITECTURE
-	- 
+## MARTIAN
+
+### MARTIAN BATH BOT
+- S: Started from no robot and no team
+- T: Build team and robot for bathroom cleaning
+- A: Hired 13 person team, delivered toilet cleaning robot.
+- R: Sold company to Aeolus Robotics and became their CTO
+
+## DARPA
+
+### DARPA PM
+- S: New PM
+- T: Sell director on new programs
+- A: Sold and executed 3 DARPA programs
+- ==> Funded over $200M in 
+- 1000+ peer reviewed papers
+- drove big-data enabled text reading
+- collaborated on beginnings of generative AI revolution

@@ -1,8 +1,13 @@
-Juan. OpenCV.ai wants a short video that they can annotate for us to show their system's capability.  My 
-
-
-
 .**NOW**. 
+  Staff:	Max, Brian
+  	Scott zero
+	- nail down open tasks
+	Leo fulltime
+	Naza at zero now
+	Mike M 10hrs 
+	- five or so hours 
+	Julita
+	- buttoned up by Friday
   CV: 
     How much AI is helping annotators (ROI for AI saving time, and tracked over time to see how much it is improving over time (I assume to model when it will take over)
   [[Data]]:	

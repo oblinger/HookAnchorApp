@@ -1,3 +1,4 @@
+- ping recruit agencies
 - Jack arch test
 - get spec for homography control points to Jack, and data format for control points
 - fireball masking

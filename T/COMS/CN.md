@@ -1,5 +1,4 @@
-- MoreStars -> Nick, Luis, Uri -> 
-- LUNCH:	[[@Theo Enns]],
+- Theo, Nick, Luis, Uri -> 
 - Doug ping
 - [[@Uri Weiss]]			- Was @ Google, Mentors Leaders
 - [[@Luis Arrellano]]	- Very good at framing story

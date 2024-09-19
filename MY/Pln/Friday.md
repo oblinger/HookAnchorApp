@@ -14,6 +14,7 @@ Reviews-Isa-San_Francisco_California.html) - Cow Hallow Italian
 - Cow hallow italian
 - [Absinthe](https://www.tripadvisor.com/Restaurant_Review-g60713-d349444-Reviews-Absinthe_Brasserie_Bar-San_Francisco_California.html) - [yelp](https://www.yelp.com/biz/absinthe-brasserie-and-bar-san-francisco-2?osq=absinthe) - French not too expensive civic cntr
 - [7 Adams](https://thebolditalic.com/new-michelin-chefs-tasting-menu-for-under-100-at-7-adams-64c2138ef984) - modern looking, new from Marlena's owner - cheap michellen star
+- [Trestle](https://www.opentable.com/r/trestle-san-francisco?corrid=27de701b-a5f4-45d6-a2ed-10cf5782e1f1&avt=eyJ2IjoyLCJtIjowLCJwIjowLCJzIjowLCJuIjowfQ&p=2&sd=2024-09-18T19%3A00%3A00) - FiDi
 
 
 GLENN PARK

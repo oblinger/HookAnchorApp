@@ -1,14 +1,10 @@
-.[[ToRead]].
-  ,   [[Book To Read]], [[Podcasts To Listen To]], [[ToResearch]], 
-
-
-:: [[Read]]
-
 n:: Stuff "to read"
--   #set
+#set
+.[[ToRead]].
+  [[Read Research]], [[Book To Read]], [[Podcasts To Listen To]], [[ToResearch]], 
+
+## TO READ
 - [read]( https://www.mckinsey.com/industries/agriculture/our-insights/winning-in-africas-agricultural-market) - africa
-- [[Podcasts To Listen To]], 
-  [[Set/ToRead/Read/Read]]
 - Alignment Forum, [Humane Tech](https://www.humanetech.com/podcast)  
 - Managers Path
 - insight by tasha eurich - yashin is reading it. [Summ](/Users/oblinger/ob/kmr/Set/ToRead/2024 INSIGHT_Summary_Sheet (1).pdf) 

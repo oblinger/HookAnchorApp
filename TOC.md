@@ -31,7 +31,7 @@
         [[MGR]]: [[MGR Docs]],	
             [[Hire]]: 
                 [[INTERVIEW]]: 
-                [[Hire Post]]: [[2024-08 Backend Architect]],	
+                [[Hire Post]]: 
                 [[Hire Test]]: 
                     [[2019 ML Test - Billionaire Billy Big Boots]]: 
                     [[2019 AF Job Tests]]: 

@@ -207,28 +207,28 @@ Small project is 1.5 devs.  Large project >2 devs.
 (end-to-end product releases with defined caps delivered by AF.)
 - 2015 1
 - 2016 2
-- 2017 16proj
-- 2018 39proj 
-- On NOV 2018 we were working on 16 workstream at one moment time)
+- 2017 16-proj
+- 2018 39-proj 
+- On NOV 2018 we were working on 16 work stream at one moment time)
 - 2019 plateau (same or maybe little bigger than 2018)
 - 2020 slightly smaller than 2019 (was shaping to be bigger before covid)
 
 #### 20+ FTE over 3 years - Residential Solar Project
 On the low side it was just Eddie with 3devs+1pm+1QA.  
 For a month in march2020 we hit the hight side of 13 
-Average 7py over 3 years 2018-2020
+Average 7 py over 3 years 2018-2020
 
-**notes**
+WHAT WERE THE NAMES OF THE KEY AF SP PROJECTS:  
+Tmac - 
+Eddie - 
 
-A: Over the course of three years, we built and refined the computational infrastructure driving their rapid penetration into this key market.  This included:
-•	Workflows - Customized to scale all aspects of this new market:
-Quote generation & sales * Ordering + approval process * Order & shipment tracking * Installer workflow & portal 
-•	Analytics – To monitoring and optimize costs and time 
-•	Infrastructure – 
 
-Performance Modeling
-
-* performance modeling & performance monitoring
+A: Over the course of three years, we built and refined the computational infrastructure driving their rapid penetration into the consumer solar market.  This included:
+- Workflows - Customized to scale all aspects of this new market:
+     Quote generation & sales * Ordering + approval process * Order & shipment tracking * Installer workflow & portal 
+- Analytics – To monitoring and optimize costs and time 
+- Infrastructure – 
+- Performance Modeling & performance monitoring
 
 Design optimization stuff
 Installer stuff

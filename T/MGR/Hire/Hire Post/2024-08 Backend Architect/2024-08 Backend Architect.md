@@ -1,5 +1,6 @@
 .[[2024-08 Backend Architect]].
-  , [[2024 Architect Hire]], 
+  , ,
+  DELS: [[2024 Architect Hire]], 
 
 Fireball
 [[2024 Architect Test]] 
