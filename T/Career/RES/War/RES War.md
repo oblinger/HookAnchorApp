@@ -89,6 +89,9 @@ SMART - Specific, Measurable, Achievable, Relevant, Time-based
 ## = TURN AROUND
 
 
+## = YOUR WEAKNESS
+- Pick a understandable side-effect of something awesome
+- Then finish with how I mitigate the weakness
 
 ## = CONFLICT
 - JSON SCOPE -> ShipOrdering, Moth balling, Product Matrix, 1Pager

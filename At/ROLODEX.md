@@ -5,5 +5,7 @@ ROLODEX TAGS
 - Org/AF
 
 - [[IOS guys]] - 
-- [[Graphic Designer - Ahmad Tahir]] 
+- [[@Ahmad Tahir (Graphic Designer)]] 
+- [[@Julieta Barrionuevo]] SportsVisio QA Strategist
 
+Graphic Designer - 

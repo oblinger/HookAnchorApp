@@ -1,3 +1,3 @@
 
 
-Use [[@Facebook-Meta]] instead.
+Use [[@Meta]] instead.

@@ -1,5 +1,5 @@
 .[[NJ]].	  [[Lrn]],
-  TOP:	[[NJ.]], [[NJ Todo]],
+  TOP:	[[NJ.]], [[NJ Todo]], [[NJ Log]], 
   [[RES]]:	[NJ Slide](spot://njslide), [[NJ Rewrite]], [[NJ Pyramid]],
   OTHR:	[[NJ24 Framing]], [[NJ Read]],
 

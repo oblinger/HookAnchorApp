@@ -1,5 +1,5 @@
 .[[ORG]].
-  , [[@Amazon]], [[@Apple]], [[@Citibank]], [[@Facebook]], [[@Facebook-Meta]], [[@Ginza Metrics]]
+  , [[@Amazon]], [[@Apple]], [[@Citibank]], [[@Facebook]], [[@Meta]], [[@Ginza Metrics]]
   , [[@IBM]], [[@LinkedIn]], [[@Microsoft]], [[@Montessori Childrens Center]], [[@Netflix]]
   , [[@PARC]], [[@TecHunting]], [[@Thistle]], [[@Vmware]], [[Org Startup]], [[Service]],
   , [ORG Note](spot://orgnote),
@@ -8,7 +8,7 @@
 .[[Org]].
   :
   ADDS:   [[Org Startup]],
-  ADDS:   [[@Aeolus]], [[@Amazon]], , [[@Apple]], [[@Facebook]], [[@Facebook-Meta]], [[@Ginza Metrics]], [[@IBM]], [[@LinkedIn]], [[@Microsoft]], [[@Montessori Childrens Center]]
+  ADDS:   [[@Aeolus]], [[@Amazon]], , [[@Apple]], [[@Facebook]], [[@Meta]], [[@Ginza Metrics]], [[@IBM]], [[@LinkedIn]], [[@Microsoft]], [[@Montessori Childrens Center]]
   [[@Netflix]], [[@PARC]], [[@PayByGroup]], [[@TecHunting]], [[@Thistle]], [[@Vmware]],
   ADDS:   [[@Citibank]],
   ADDS:   [[Service]],
@@ -329,8 +329,8 @@ Organizations
 :: [[@Montessori Childrens Center]],   [[@Ginza Metrics]]
 #tag
 
-  [@Google](@Google.md)  [@Vmware](@Vmware.md)  [@PARC](@PARC.md)  [@Apple](@Apple.md)  [@Facebook-Meta](@Facebook-Meta.md)  [@IBM](@IBM.md)  [@LinkedIn](@LinkedIn.md)  [@Facebook](@Facebook.md)  [@Netflix](@Netflix.md)  [@Microsoft](@Microsoft.md)
- [[@Microsoft]],  [[@LinkedIn]], [[@IBM]], [[@Facebook-Meta]], [[@Facebook]], [[@Netflix]], [[@Apple]],  [[@Google]],   [@Amazon](@Amazon.md), [[@Vmware]] 
+  [@Google](@Google.md)  [@Vmware](@Vmware.md)  [@PARC](@PARC.md)  [@Apple](@Apple.md)  [@Meta](@Meta.md)  [@IBM](@IBM.md)  [@LinkedIn](@LinkedIn.md)  [@Facebook](@Facebook.md)  [@Netflix](@Netflix.md)  [@Microsoft](@Microsoft.md)
+ [[@Microsoft]],  [[@LinkedIn]], [[@IBM]], [[@Meta]], [[@Facebook]], [[@Netflix]], [[@Apple]],  [[@Google]],   [@Amazon](@Amazon.md), [[@Vmware]] 
 
 [[@Thistle]] 
 

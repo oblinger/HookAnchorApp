@@ -1,4 +1,4 @@
- [[FAANG]]    [VP & Chief AI Scientist](https://www.linkedin.com/in/yann-lecun/)    [[@Facebook-Meta]]
+ [[FAANG]]    [VP & Chief AI Scientist](https://www.linkedin.com/in/yann-lecun/)    [[@Meta]]
 
 
 

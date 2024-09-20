@@ -6,6 +6,8 @@ n:: no prefix.	Dated entries without any typing prefix
 | Date       | File                                        | Notes                                                                                                                             |
 | ---------- | ------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------- |
 | 2024-09-19 | [[@Annafi Wahed]]                               | W/ CTO                                                                                                                            |
+| 2024-09-19 | [[@Meta]]                                       | ML Roles                                                                                                                          |
+| 2024-09-19 | [[NJ Log]]                                      | FAANG Hiring Learning                                                                                                             |
 | 2024-09-19 | [[NJ Pyramid]]                                  | Objective                                                                                                                         |
 | 2024-09-17 | [[Reflections]]                                 | If I want to get more done, I need to focus my time                                                                               |
 | 2024-09-16 | [[Mgt]]                                         | Weekly                                                                                                                            |
