@@ -1,16 +1,13 @@
 .[[RR]].
-  :
   [[RR MGR]]:
-  :
   [[RR PAPERS]]:
   [[RR Philosophy]]:
-  :
+  .
   [[Alg]]:
   [[ByteTrack]]:
   [[Covid]]:
   [[Lrn it]]:
   [[MATERIALS]]:
-  :
   [[ML Ops]]:
   [[Para]]:
   [[REF]]:
@@ -19,8 +16,6 @@
   [[Research]]:
   [[RMS]]:
   [[rrCV]]:
-  :
-  :
   [[Swearing]]:
   [[Systems]]:
   [[Trackers]]:
@@ -29,15 +24,9 @@
 n:: Research Reference pages
 - [[RR MGR]], [[RR Philosophy]], [[RR PAPERS]],
 -
-  ADDS:
 [[ML Ops]]
-  ADDS:   ,
-  ADDS:   , ,
-  ADDS:   , ,
-  ADDS:   , , , , , ,
-  ADDS:   , ,
-  ,   [[AI]], [[ML]], [[RR Med]], [[RR Mgt]],
-  , [[Comp]], 
+  [[AI]], [[ML]], [[RR Med]], [[RR Mgt]],
+  [[Comp]], 
   DELS: [[AI]], [[ML]], [[RR Med]], [[RR Mgt]],[[RR Business]], [[RR OKRs]], [[Startups Note]], [[Sophie's World]], [[Sora]],
 
 
