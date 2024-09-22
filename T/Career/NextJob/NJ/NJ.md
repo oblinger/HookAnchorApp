@@ -1,7 +1,9 @@
 .[[NJ]].	  [[Lrn]],
-  TOP:	[[NJ.]], [[NJ Todo]], [[NJ Log]], 
-  [[RES]]:	[NJ Slide](spot://njslide), [[NJ Rewrite]], [[NJ Pyramid]],
+  TOP:	[[NJ.]], [[NJ Todo]], ,
+  :	[NJ Slide](spot://njslide), [[NJ Rewrite]], [[NJ Pyramid]],
   OTHR:	[[NJ24 Framing]], [[NJ Read]],
+  , [[NJ Log]], 
+  DELS: [[NJ Log]], [[RES]],
 
   OLD: [[NJ16]], [[NJ22]],[[GoogleJob]], [[Meta Coms]], [[NJ24.pptx|PPTX]],[[CRM]], 
 

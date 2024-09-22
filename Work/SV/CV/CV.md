@@ -24,7 +24,8 @@
   , [DT](spot://dt),
   , [CV Page](spot://cvpage),
   , ,
-  DELS: [Standup](spot://standup),[DD](spot://dd), 
+  , [[CV Alg]], 
+  DELS: [Standup](spot://standup),[DD](spot://dd),
 
 
 

@@ -391,7 +391,7 @@ Shari Sitron  <ssitron@yahoo.com>
 
 IMCW
 http://imcw.com
-Stephanie Dailey  <stephdailey@earthlink.net>   ;; Zabuton
+Stephanie Dailey  <stephdailey@earthlink.net>   ; Zabuton
 Luisa Robles      <luisa@looneylabs.com>        (301) 441-1019
 Deepening Practice
 Rimas Blekaitis  443 539 9072  Carderrock Springs Swim Club  rimasjb@yahoo.com

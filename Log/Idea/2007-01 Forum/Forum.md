@@ -441,11 +441,12 @@ PARTICIPANT METRICS
 
     alignment(participant, axis)                -- [0,1] position of a participant on a population axis
     authority(participant, axis)                -- 
-    ???
+  ????
     congeniality(participant, opinions)         -- [0,1] denoting  
     accuracy(participant, forum)                --  
     openness(participant, forum)                --  
-    expertise(participant, forum, area)         --  
+    expertise(participant, forum, area)         --
+<!--SR:!2000-01-01,1,250!2024-09-22,1,230-->
     
 
 

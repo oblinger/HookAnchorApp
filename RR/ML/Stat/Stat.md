@@ -1,32 +1,11 @@
-[[Perplexity]]
-
-:: [[Hypothesis Testing]],   [[Stat Anomolies]],   [[Z-Test]]
-
 
 .[[Stat]].
-  ADDS:   [[ADF - Augmented Dickey Fuller Test]], , [[AutoRegressive]], [[Bayes Optimal Error]], [[HarmonicMean]], [[KL Divergence]], [[Likelihood]], , [[PCA]], [[Q-Q Plot]]
-  [[Ransac]], [[Sigmoid]], [[Softmax]], [[Stationary]]
-  DELS: ,
-- [[KL Divergence]]:
-  DELS: ,
--  -
--
-  ADDS:   [[Hypothesis Testing]], [[Stat Anomolies]]
-  DELS: , , ,
--
-:: [[()]]
-  ADDS:   [[Z-Test]]
-  DELS: , , ,
-  [HarmonicMean](HarmonicMean.md),   [()](().md)
-[[Bayes Optimal Error]] [[HarmonicMean]]  [()](().md)
-  [()](().md),   [Likelihood](Likelihood.md)
-  [Softmax](Softmax.md),   [()](().md),   [Sigmoid](Sigmoid.md)
-  [AutoRegressive](AutoRegressive.md),   [Stationary](Stationary.md)
-  DELS: , , ,
-  [[Likelihood]]
-  ADDS:   [[STATS]],
-  ADDS:   [[Perplexity]],
+  [[ADF - Augmented Dickey Fuller Test]], [[AutoRegressive]], [[Bayes Optimal Error]], [[HarmonicMean]], [[KL Divergence]], [[Likelihood]], [[PCA]], [[Q-Q Plot]], 
+  [[Ransac]], [[Sigmoid]], [[Softmax]], [[Stationary]], [[KL Divergence]], 
+  [[Hypothesis Testing]], [[Stat Anomolies]],
+  [[Perplexity]], [[Hypothesis Testing]], [[Stat Anomolies]], [[Z-Test]], [[STATS]], 
 
+[[Kalman Filter]] 
 
 
 

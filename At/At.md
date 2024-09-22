@@ -66,7 +66,11 @@
   , [[@Yoshua Bengio]], [[AF ALUM]], [AT Note](spot://atnote), [[BOD]], [[CRM]], [[Doctor]]
   , [[Friends]], [[@Ahmad Tahir (Graphic Designer)]], [[Mentors]], [[ORG]], [[PEOPLE]], [[ROLODEX]]
   , [[VC ORG]],
-  , [[@Annafi Wahed]], [[@Titash Rakshit]], 
+  , [[@Annafi Wahed]], [[@Titash Rakshit]],
+  , ,
+  , [[@Ahmad Tahir (Graphic Designer)]], [[@Julieta Barrionuevo]],
+  , [[@Ahmad Tahir (Graphic Designer)]], 
+  DELS: [[Graphic Designer - Ahmad Tahir]],
 
 
 

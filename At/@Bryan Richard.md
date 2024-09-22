@@ -15,7 +15,7 @@ OWNER - Matias as the Backend
 
 
 
-- "I needed a killer who moved from project to project."  {{that was matias}}
+- "I needed a killer who moved from project to project."  (that was matias)
 - "Matias is a lot more thoughtful and senior. (than Juan)"
 - "Juan, has a bit of hair trigger.  will have temper if someone is below his level."
 - Gave Juan proj with decison making.  Got it done.  not as crisp

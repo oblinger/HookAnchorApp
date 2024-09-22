@@ -1866,7 +1866,7 @@ _
 	OUT OF BOX
 	- WATCH -- non-use of second monitor
 	- DOORWAY -- fade doorway in, when monitor not in use
-		???
+?
 	- CARTOON OP COMM
 	- CHATTER COMMS
 	- ZOOM UPGRADE

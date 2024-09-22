@@ -4,7 +4,7 @@
   [[RR Philosophy]]:
   .
   [[Alg]]:
-  [[ByteTrack]]:
+  :
   [[Covid]]:
   [[Lrn it]]:
   [[MATERIALS]]:
@@ -18,16 +18,16 @@
   [[rrCV]]:
   [[Swearing]]:
   [[Systems]]:
-  [[Trackers]]:
-  [[Yolo]]:
+  :
+  :
   ADDS:
 n:: Research Reference pages
 - [[RR MGR]], [[RR Philosophy]], [[RR PAPERS]],
 -
 [[ML Ops]]
   [[AI]], [[ML]], [[RR Med]], [[RR Mgt]],
-  [[Comp]], 
-  DELS: [[AI]], [[ML]], [[RR Med]], [[RR Mgt]],[[RR Business]], [[RR OKRs]], [[Startups Note]], [[Sophie's World]], [[Sora]],
+  [[Comp]],
+  DELS: [[AI]], [[ML]], [[RR Med]], [[RR Mgt]],[[RR Business]], [[RR OKRs]], [[Startups Note]], [[Sophie's World]], [[Sora]],[[ByteTrack]], [[Trackers]], [[Yolo]], 
 
 
 

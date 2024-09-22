@@ -11,3 +11,6 @@ KNOW:		100 algs
 
 - Transformers - 
 - Family of algorithms
+- Q-learning
+
+
