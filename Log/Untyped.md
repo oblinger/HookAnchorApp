@@ -898,7 +898,7 @@ n:: no prefix.	Dated entries without any typing prefix
 | 2021-04-29 | [[@Jason Syversen]]                             | Thumbnail Math                                                                                                                    |
 | 2021-04-27 | [[Journal Old]]                                 | INDEX CARD SUMMARY                                                                                                                |
 | 2021-04-26 | [[2021.04 Directions]]                          | Founder Profile                                                                                                                   |
-| 2021-04-21 | [[BL]]                                          | Conscious computing agenda                                                                                                        |
+| 2021-04-21 | [[Archive]]                                     | Conscious computing agenda                                                                                                        |
 | 2021-04-19 | [[Journal Old]]                                 | DANO PATHS                                                                                                                        |
 | 2021-04-19 | [[NJ22 Paths]]                                  | DANO PATHS                                                                                                                        |
 | 2021-04-14 | [[Journal Old]]                                 | Dan O Drivers & Futures                                                                                                           |

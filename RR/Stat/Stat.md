@@ -1,12 +1,17 @@
 
 .[[Stat]].
-  [[ADF - Augmented Dickey Fuller Test]], [[AutoRegressive]], [[Bayes Optimal Error]], [[HarmonicMean]], [[KL Divergence]], [[Likelihood]], [[PCA]], [[Q-Q Plot]], 
-  [[Ransac]], [[Sigmoid]], [[Softmax]], [[Stationary]], [[KL Divergence]], 
+  :
+  [[ADF - Augmented Dickey Fuller Test]], [[AutoRegressive]], [[Bayes Optimal Error]], [[HarmonicMean]], [[KL Divergence]], [[Likelihood]], [[PCA]], [[Q-Q Plot]],
+  [[Ransac]], [[Sigmoid]], [[Softmax]], [[Stationary]], [[KL Divergence]],
   [[Hypothesis Testing]], [[Stat Anomolies]],
-  [[Perplexity]], [[Hypothesis Testing]], [[Stat Anomolies]], [[Z-Test]], [[STATS]], 
+  [[Perplexity]], [[Hypothesis Testing]], [[Stat Anomolies]], [[Z-Test]], [[STATS]],
+  , ,
+  , [[RMS]],
+  , [[Stat Alg]], 
+  DELS: [[Stat Alg]],
+  DELS: [[Stat Alg]],[[Kalman Filter]], 
 
 [[Kalman Filter]] 
-
 
 
 

@@ -1,25 +1,8 @@
-.[[MGR]].
-  :
-  [[MGR Docs]]:
-  :
-  :
-  :
-  :
-  :
-  :
-  ,
-  [[MgrTracking]],
-  ,
-  ADDS:   ,
-  ADDS:   [[Employee Notes]],
-  ADDS:   [[MGR Log]], [[My Staff]],
-  ADDS:   [[MyMgr]],
-  ADDS:   ,
-  ADDS:   [[MGR Contracts]],
-  ADDS:   ,
-  ADDS:   ,
-  ,   [[Hire]], 
-  DELS: [[Hire]],[[MGR Annual Review]], [[MGR Leadership]], [[MGR Meetings]], [[MGR Negotiations]], [[MGR Plan]], [[MGR Product]], [[MGR AI Planning]], 
+.[[MGR]]. (see [[RR MGR]])
+  , [[Employee Notes]], [[Hire]], [[MGR Contracts]], [[MGR Docs]], [[MGR Log]], [[MgrTracking]]
+  , [[MyMgr]], [[My Staff]],
+  .
+  DELS: [[Hire]],[[MGR Annual Review]], [[MGR Leadership]], [[MGR Meetings]], [[MGR Negotiations]], [[MGR Plan]], [[MGR Product]], [[MGR AI Planning]],
 
 
 

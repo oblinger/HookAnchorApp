@@ -1,13 +1,8 @@
 .[[ML]].
-  [[ML Alg]]:
-  ADDS:   [[ML Datasets]], [[ML Eng]], [[ML Tools]],
-  ADDS:   [[Neural]],
-  ADDS:   [[Learning]],
-  ADDS:   [[ARIMA Algorithm]], [[BL]],
-  ADDS:   , ,
-  ADDS:   , ,
-  ,   [[DL]], [[Stat]], 
-
+  [[ML Alg]],
+  [[Learning]], [[ML Datasets]], [[ML Eng]], , [[Neural]],
+  , [[BL]], [[ML Ops]], [[ML Tools]], 
+  DELS: [[ML Op Tools]], 
 
 
 

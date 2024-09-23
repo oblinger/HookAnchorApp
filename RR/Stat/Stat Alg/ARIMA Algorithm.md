@@ -1,7 +1,14 @@
+---
+sr-due: 2024-09-23
+sr-interval: 1
+sr-ease: 230
+---
+
+#review
 
 AutoRegressive Integrated Moving Average
 
-- Predicts deltas between time steps.  (uses a moving average)
+- Predicts deltas between time steps.  (Uses a moving average)
 - [Pencil Paper Intuitive Explanation](https://www.youtube.com/watch?v=4Fiz3dQM_i8) - 
 - [Explanation](https://www.youtube.com/watch?v=3UmyHed0iYE) - 
 
@@ -18,7 +25,7 @@ ASSUMES
 - **Random Shocks** - if shocks exist they are mean of zero and constant variance
 
 
-Box-Jenkins Method (iterates these steps)
+Box-Jenkins Method (Iterates these steps)
 1. IDENTIFICATION - 
 	- Check Stationarity - If not then how many differences needed to make it stationary
 	- Identify Parameters - 

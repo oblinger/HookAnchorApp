@@ -4,12 +4,13 @@
   PER1:		[[Active]],
   PER2:		[[Quarterly]], [[Later]], [[Wings]], [[Dropped]],
   LONG:		[[Rocks]], [[Q2]], [[WRM]], [[Archive List]],
-  SELF:		[[Lrn]], [[Spirit]], [[Actualize]], [[Mission]], [[Productivity]],
+  SELF:		, [[Spirit]], [[Actualize]], [[Mission]], [[Productivity]],
   FUN:		[[Fun]], [[Social]], [[Fried]], [[Gap]], [[Hacks]], [[Fried Later]],
   FAM:		[[Friday Dates]],
   ROOT:		[[BKT]], [[Up All]], [[Up Task]],
   EXT:		[[External]], [[Other]],
   UNUSED:	[[Prime]], [[Full]], [[Ping]],
+  DELS: [[Lrn]], 
 
 
 

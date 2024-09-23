@@ -3,11 +3,12 @@
 
 [[mate]],	[[Proj]],	
 [[KMR]]: [[ATTACH]],	[[WEEKLY]],	
-    [[RR]]: [[AI]],	[[RR Philosophy]],	[[RR Mgt]],	[[RR MGR]],	
+    [[RR]]: [[Lrn]],	[[RR Philosophy]],	[[RR MGR]],	
         [[Comp]]: 
             [[LANG]]: 
-        [[ML]]: [[Stat]],	
-            [[DL]]: [[DL Alg]],	
+        [[Stat]]: [[Stat Alg]],	
+        [[ML]]: 
+        [[DL]]: [[DL Alg]],	
         [[Systems]]: 
     [[T]]: [[Trash]],	
         [[Misc]]: [[STARTUPS]],	[[Test88]],	[[Old]],	[[SF]],	[[Biking]],	
@@ -58,10 +59,11 @@
                 [[SV Individuals]]: 
             [[WW]]: [[2023 SV Roles and Responsibilities]],	[[2023 SV Patents]],	
             [[SV Strat]]: [[SV Roadmap]],	[[2023 Four Pillars]],	
-            [[CV]]: [[CV Alg]],	[[CVP]],	[[Data]],	
+            [[CV]]: [[CVP]],	[[Data]],	
+                [[CV Alg]]: 
             [[QQ]]: 
     [[MY]]: [[Meta]],	[[Myfo]],	[[TEMPLATER]],	[[QUICKADD]],	
-        [[Pln]]: [[Lrn]],	[[Hacks]],	[[Mission]],	[[Productivity]],	
+        [[Pln]]: [[Hacks]],	[[Mission]],	[[Productivity]],	
             [[SCRatch]]: 
     [[Prj]]: [[2021-04 FindDayCare]],	[[2022-05 Enxt]],	[[2022-03 BeFAANG]],	
         [[2022-03 BeVC]],	

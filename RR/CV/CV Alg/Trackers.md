@@ -1,4 +1,3 @@
-- [[ByteTrack]] - 
 ## DeAOT
 DeAOT (left) and 
 
@@ -6,5 +5,5 @@ DeAOT (left) and
 ## byte tracker (right)
 
 
-## Segment and Track Anything
-https://github.com/z-x-yang/Segment-and-Track-Anything
+- [[ByteTrack]] - 
+- [[Segment And Track Anything]] 

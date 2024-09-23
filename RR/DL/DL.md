@@ -6,7 +6,7 @@
   :	[[Gradient Checking]],
   [[DL Topic]]:	[[GenAI]], [[Regularization]], [[Self Supervised Learning]], [[RAG]],
   :	[[Auto Encoders]], [[GANs]], [[LSTM]], [[NN]], [[Transformers]], , [[LLM]], [[RNNs]],
-  .			[[VAEs]], [[RLHF Reinforcement Learning from Human Feedback]],
+  .			[[VAEs]], ,
   DL ALG2:	[[KAN - Kolmogorov-Arnold Neworks]], [[DSPY System]],
   [[DL SYS]]:	[[GPT]], [[Segment Anything]], [[RASA]],
   [[DL Notation]]:	[[NG Notation]], :
@@ -16,7 +16,9 @@
   ADDS:   , , ,
   ADDS:   [[CNNs]], [[DL Opto]], [[DL Strat]],
   ,   [[DL Alg]],
-  DELS: [[Coursera Notes]], 
+  , [[RLHF Reinforcement Learning from Human Feedback]], 
+  DELS: [[Coursera Notes]],
+  DELS: [[Coursera Notes]],[[RLHF]], 
 
 
 
@@ -368,7 +370,7 @@
 - [[RR/ML/DL/GPT]] 
 
 
-- [[DL Topic]]: 			[[RLHF Reinforcement Learning from Human Feedback]],  
+- [[DL Topic]]: 			[[RLHF]],  
 - [[DL Notation]]:		[[NG Notation]], 
 - [[DL Alg]]:				[[RASA]], [[Segment Anything]], 
 - [[DL Opto]] - 

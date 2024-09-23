@@ -2,7 +2,7 @@
 [[WORK]]:	4h
 [[MED]]:	Exercise, Cortisol
 [[NJ]]:	[[RES Star]], [[CN]],
-[[Lrn]]:	Hands On, Know
+[[Lrn]]:	[[RR]], Hands On, Know
 [[Fun]]:	Read, Guys
 
 

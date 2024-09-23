@@ -11,8 +11,6 @@
 
 == ACTIVE ==
 
-MAID - Elvin & Ingrid.  650-889-6876. $30/hr (3 hr min??)
-	Velas House Cleaning.  Ingrid very clean, little english 
 HOUSE REPAIR - Daniel. 415 272-0976
     relyserv31@gmail.com  from Jessie. [[@Daniel Handyman]]  
     Repaired exterior in 2020.  Main "large task" repair guy
