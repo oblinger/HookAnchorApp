@@ -10,7 +10,7 @@
 	- buttoned up by Friday
   CV: 
     How much AI is helping annotators (ROI for AI saving time, and tracked over time to see how much it is improving over time (I assume to model when it will take over)
-  [[Data]]:	DoubleValidation, 
+  [[Data]]:	!VB, DoubleValidation, 
   [[2024-08 Backend Architect|Arch]]:	Jack Discuss, Calls
   [SW cort](https://www.notion.so/sportsvisio/HOMO-SW-integration-plan-77fb63f7cac7433bb0d2e2cd4d374e4b?pvs=4): Get plan
   [DT](spot://dt): 	EvalGames, HomoData,

@@ -2,13 +2,14 @@ n:: Research Reference pages
 
 .[[RR]].  [[Lrn.]] 
   AREAS:	[[AI]], [[ML]], [[rrCV]], [[Stat]], [[Comp]], [[RR Philosophy]],
-  TOPICS:	[[RR Med]], [[RR MGR]], 
+  TOPICS:	[[RR Med]], [[RR MGR]],
   [[REF]]:		[[RefMisc]], [[Refs]], [[RR PAPERS]],
   CLOSET:	[[Research]], [[Lrn]],
   .
-  [[Covid]], [[MATERIALS]], [[Para]],
+  [[Covid]], [[MATERIALS]], ,
   [[Alg]],
   [[Swearing]], [[Systems]],
-  , [[DL]], 
+  , [[DL]],
+  DELS: [[Para]], 
 
 AFTER

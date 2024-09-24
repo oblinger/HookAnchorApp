@@ -1,5 +1,6 @@
 .[[CV Alg]].
   [[ByteTrack]], [[Trackers]], [[Yolo]],
-  , [[null]], 
+  , [[null]],
+  , [[Segment And Track Anything]], 
 
 [[null]] 

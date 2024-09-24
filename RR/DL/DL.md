@@ -16,9 +16,11 @@
   ADDS:   , , ,
   ADDS:   [[CNNs]], [[DL Opto]], [[DL Strat]],
   ,   [[DL Alg]],
-  , [[RLHF Reinforcement Learning from Human Feedback]], 
-  DELS: [[Coursera Notes]],
-  DELS: [[Coursera Notes]],[[RLHF]], 
+  , ,
+  DELS: ,
+  , [[RLHF]], 
+  DELS: ,[[RLHF]],
+  DELS: [[Coursera Notes]],[[RLHF]],[[RLHF Reinforcement Learning from Human Feedback]], [[Coursera Notes]], 
 
 
 

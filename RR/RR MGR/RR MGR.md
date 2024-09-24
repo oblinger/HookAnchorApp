@@ -1,6 +1,7 @@
 .[[RR MGR]].  (See [[MGR]])
   [[RR Business]], [[RR OKRs]], [[Startups Note]],
-  [[S.M.A.R.T]], [[S.T.A.R.]], 
+  [[S.M.A.R.T]], [[S.T.A.R.]],
+  , [[Para]], 
 
 
 
