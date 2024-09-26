@@ -1,4 +1,13 @@
 .**NOW**. 
+FireB:	.
+	- fix chron bug
+	- check other zones
+	- try again after period 
+	- Reserve availability ()
+	- CPU as backup
+	- Email as backup
+  might take 2min to provision on AWS, even more on Google?
+MX EL: writeLst Matrix, Nts, Prom
   Staff:	Max, Brian
   	Scott zero
 	- nail down open tasks
@@ -8,26 +17,25 @@
 	- five or so hours 
 	Julita
 	- buttoned up by Friday
-  CV: 
+  VC: 
     How much AI is helping annotators (ROI for AI saving time, and tracked over time to see how much it is improving over time (I assume to model when it will take over)
-  [[Data]]:	!VB, DoubleValidation, 
+  [[Data]]:	!alpha-games
+  [DT](spot://dt): 	!VB, !BrionesHomo
   [[2024-08 Backend Architect|Arch]]:	Jack Discuss, Calls
-  [SW cort](https://www.notion.so/sportsvisio/HOMO-SW-integration-plan-77fb63f7cac7433bb0d2e2cd4d374e4b?pvs=4): Get plan
-  [DT](spot://dt): 	EvalGames, HomoData,
-  [Fball](spot://fireball):	Deploy
-  [Min](https://docs.google.com/document/d/1oaG7NB2fJ9THAtHcREX6yqrWg91wYEsof9zQNEInFFU/edit):	QAtst, Measure, 
+  [Fball](spot://fireball):	Deploy (!matias)
+  [Min](https://docs.google.com/document/d/1oaG7NB2fJ9THAtHcREX6yqrWg91wYEsof9zQNEInFFU/edit):	Alpha Testing
   
   [OKRs](https://docs.google.com/presentation/d/1v7Winy9DHxGuYh05_is8zH05ClJi0qclM698-pDXIgY/edit?pli=1#slide=id.g274b3e27e6b_0_0):	Q3 Results	
   [[DAT|DAT]]:	Get PR ready
   [[FIN.]]	Schwab
   [[NJ]]:	>[[War|War]], rewrite, mentor
   
+  GCP:		[Brian plan](https://docs.google.com/spreadsheets/d/1W38uHew6aaqyeolKzbO9NbaA96Q-jzyDb7gYoUst0qw/edit?gid=0#gid=0). 
 ## TRACK
-GCP:		[Brian plan](https://docs.google.com/spreadsheets/d/1W38uHew6aaqyeolKzbO9NbaA96Q-jzyDb7gYoUst0qw/edit?gid=0#gid=0). 
-VidQ:		^Neg entropy gallery
-
-SW proc:	[db](https://www.notion.so/sportsvisio/cf65339c09c6486296f8adaa084c141a?v=f8a45e385eea4c2fb590502835f4453f&pvs=4),[doc](https://docs.google.com/document/d/1aHnoqgQ3H_0abUtlVWoMPHDA7nQhzoq0JRqZLujORc0/edit?usp=drive_web&ouid=105281685541312342727)  ^Jasu 
-Assess	> Assessment plan for BB
+  [SW cort](https://www.notion.so/sportsvisio/HOMO-SW-integration-plan-77fb63f7cac7433bb0d2e2cd4d374e4b?pvs=4): Get plan
+  VidQ:		^Neg entropy gallery
+  SW proc:	[db](https://www.notion.so/sportsvisio/cf65339c09c6486296f8adaa084c141a?v=f8a45e385eea4c2fb590502835f4453f&pvs=4),[doc](https://docs.google.com/document/d/1aHnoqgQ3H_0abUtlVWoMPHDA7nQhzoq0JRqZLujORc0/edit?usp=drive_web&ouid=105281685541312342727)  ^Jasu 
+  Assess	> Assess plan for BB
 
 ## SOON [[mgt]] [[CVP]] 
 [[2023 CV team new agenda metrics]]:		/Create money metrics page

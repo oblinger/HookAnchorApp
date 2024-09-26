@@ -1,3 +1,13 @@
+### 2024-09-24  My 1/2 time plan
+
+My goal is to ensure that at least my Tuesday / Thursday time is spent on my priorities:
+
+- Next Job: Learn and Ready
+- Self: many
+
+For this week, My aim is to hit 4hr per day for this.
+Aim low, but hit the target!!  :-)
+
 
 ### 2024-09-17  If I want to get more done, I need to focus my time
 

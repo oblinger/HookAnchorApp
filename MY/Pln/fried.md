@@ -1,3 +1,4 @@
+- somehow track Credit cards
 - USB camera & light
 - fin flow
 - fix easy passwords

@@ -49,6 +49,18 @@
 
 # LOG
 
+
+### 2024-09-24  Info management proposal
+
+- Create a mailing list so it is impossible to "reply" to the whole mailing list.
+- Create a unified email address for each parent.
+- Create a unified resource tree for all AVS info.
+	- manage distributed ownership of that tree.
+
+- Structure correspondence to minimize number of messages to parents and ensure that most current info is always fully contained in any message ever set.
+
+- Structure info by class, by grade, by topic, and by school so unified calendar, unified todo lists, and unified messaging exists.
+
 ### 2024-08-19  notes when we first went
 
 inquiry based learning

@@ -1,6 +1,86 @@
 
 (See [[Phone]] Sell Acura)
 
+- car call DC; get docs for mom
+
+
+### 2024-09-25  The plan
+
+My only confusion:  the limited power of attorney needs your signature too, but you cannot be in front of the notary when you sign.
+
+  
+
+  
+
+  
+
+MY PLAN:
+
+- Mom check's DC requirements (or we just take the risk)
+
+- Dan gets the notary to notarize the power of attorney
+
+- Danny mails documents:
+
+- Notarized power of attorney
+
+- Bill of sale with dates and details missing
+
+- The title itself
+
+- Dan lists car on Auto trader and on mom's facebook account in to facebook marketplace with her number as contact on both.
+
+- Once sale is agreed:
+
+- The seller brings cash or mom's goes to bank to accept cashiers check
+
+- mom fills in details on bill of sale and on the title and gives the title to the buyer.
+
+- Mom makes copies of the docs (at a copier or on her phone)
+
+- Mom sends the Bill of sale (and a copy of the signed title) to me and to DC DMV
+
+  
+
+  
+
+PRICE
+
+- [Edmonds.com](http://edmonds.com/) lists the car's value at $10,366 for private sale
+
+- I am thinking to list the car at $9,500
+
+- And if someone negotiates down we go to $9000 on the first day.
+
+- After couple of days we drop to $9000 and allow folks to negotiate down to $8,000
+
+- If we are not getting bites at all we can drop the price after a week or two.
+
+  
+
+what do you think about that plan?
+
+  
+
+  
+
+  
+
+TEXT ABOUT THE CAR
+
+  
+
+Selling a 2000 Acura for my out of state son:
+
+  
+
+The car is in good condition, it has XXX scratches but otherwise in great shape.
+
+He is the original owner; it was lightly driven until 2010 when he put it in our garage for storage.
+
+This year we took did $3000 in repairs, replacing all old rubber etc. in order to get it ready for sale (we have the receipts for you).
+
+Edmonds lists $10,366 as its value for private sale, so I am putting it on the market for $9,500 just to speed its the sale.
 ### 2024-09-14  from GPT and web
 
 http://dmv.dc.gov/sites/default/files/dc/sites/dmv/publication/attachments/Title_Temporary_Tag_Application.pdf

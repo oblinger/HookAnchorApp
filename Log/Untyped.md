@@ -5,6 +5,10 @@ n:: no prefix.	Dated entries without any typing prefix
 
 | Date       | File                                        | Notes                                                                                                                             |
 | ---------- | ------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------- |
+| 2024-09-25 | [[2024-05 Sell Acura]]                          | The plan                                                                                                                          |
+| 2024-09-25 | [[DAT]]                                         | proposed progression                                                                                                              |
+| 2024-09-24 | [[@Alta Vista]]                                 | Info management proposal                                                                                                          |
+| 2024-09-24 | [[Reflections]]                                 | My 1/2 time plan                                                                                                                  |
 | 2024-09-19 | [[@Annafi Wahed]]                               | W/ CTO                                                                                                                            |
 | 2024-09-19 | [[@Meta]]                                       | ML Roles                                                                                                                          |
 | 2024-09-19 | [[NJ Log]]                                      | FAANG Hiring Learning                                                                                                             |

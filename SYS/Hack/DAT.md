@@ -172,6 +172,17 @@ Dat.get(dat.get_spec(), "dotted.key")
 
 # LOG
 
+### 2024-09-25  proposed progression
+
+- DAT cmds
+	- gcd
+	- gload
+	- gsave
+	- gdelete
+	- gcreate
+- rpt -m metrics -i inputs -o output
+- run1 spec input
+
 ### 2024-09-09  New plan for integration.
 
 - Script dispatcher injected into everyone's environment w/ package
