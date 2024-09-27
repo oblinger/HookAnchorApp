@@ -1,3 +1,5 @@
+
+- patents
 - brian
 - null and not zero (talk w/ Jack)
 - Analysis of Variance (ANOVA) 

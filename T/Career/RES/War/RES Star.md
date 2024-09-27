@@ -2,23 +2,27 @@
 
 ## SPORTS VISIO
 
-Tapped by the CEO to "turn the SW and AI orgs around."  Both had personnel, quality, velocity, and delivery issues.  In response I 
-- Replaced the entire AI team
-- Hired a new QA team and developed formal processes that moved system from a nearly "unshipable" product into one that routinely had zero high severity bugs in each push.
+Hired to fix quality, velocity, delivery, and personnel issues across Software and AI teams.
+- Replaced the entire AI team; Hired a new QA team
+- Developed and implemented formalization SW life cycle
 - Worked to strategically reduce product scope to match dev resources while still delivering features required to drive sales.
-As a result we: raised over $4M in new funding, Grew sales from thousands to hundreds of thousands, formalized bi-monthly shipping of four products typically with zero high priority bugs in production across all
-
-==> Raised $5M+ seed from tier 1 VCs like Sapphire Ventures
+==> Went from an "unshipable" product to deployments that routinely had zero high severity bugs.
+==> Raised $5M+ seed from Tier-1 VCs including Sapphire Ventures
 ==> Grew sales from thousands to hundreds of thousands 
+
+### __
+#### __
+As a result we: raised over $4M in new funding, Grew sales from thousands to hundreds of thousands, formalized bi-monthly shipping of four products typically with zero high priority bugs in production across all
 ==> Transitioned to bi-monthly shipping of 4 products with >10x reduction in serious bugs
 
-### SPORTS VISIO Turn Around
+#### __
+SPORTS VISIO Turn Around
 - S: $3M and 2years spent.  never shipped, never met deadline within factor of 2.
 - T: Right the ship, improve quality & velocity.
 - A: Layoffs, Descoping, Hires, Revamped all processes
 - R: Shipped.  Stable.  Bugs dropped immeasurably > ?3? quarterly.  
 
-### __
+#### __
 #### SITUATION - Late joining "founder" (>2 years) w/ lg equity & turn round mandate
 - Burnt $3M - no AI product, SW product was an unusable brick. 
 - Great CEO vision and investor relations but dumpster Fires EVERYWHERE in SW team.
@@ -71,19 +75,28 @@ Teams had not been doing any ticket tracking and were using spreadsheets
 
 
 ## ANALYTICS FIRE
-### AF Instant Design
-- S: Fortune 1000 client tasked us to build a computer-vision-based solar roof installation designer tool.  Customer gave us limited rope after internal team failed at this. 
-- T:	Our task was to demonstrate "instant design" was possible
-- A: Light 1-month R&D cycle + 2-month dirty prototyping
-  Won long term contract, built and operated capability
-- R:	Our solution became “the largest single driver of new revenue growth” according to our client — This enabling them to penetrate and scale in a new high-margin market segment.
+Founded and grew 50+ person clean energy company.
+==> Developed, shipped, and managed firmware through cloud infrastructure controlling over $3B in various clean energy assets.  Projects include:
 
-### AF Residential Solar
+**Instant Design** Built a computer-vision-based solar roof installation designer tool for a Fortune 1000 customer.
+==> Solution became “the largest single driver of new revenue growth” according to client.
+
+**Residential Solar** -- Over 3 years, and 22 FTE we built majority tools managing entire residential solar life product lifecycle.
+==> Transitioned Sunpower from XXXX in residential solar in 20xx up to YYYY in 20yy, ultimately enabling sunpower to completely divest commercial solar in 20ZZ.
+
+### __
+#### Instant Design
+- S: Fortune 1000 client tasked us to build a computer-vision-based solar roof installation designer tool.  Customer gave us limited rope after internal team failed at this. 
+- T:	Initial task was to demonstrate "instant design" was possible
+- A: Light 1-month R&D cycle + 2-month dirty prototyping
+  Won long term contract, built and operated capability until we sold the company
+- R: Our solution became “the largest single driver of new revenue growth” according to our client — enabling them to penetrate and scale in a new high-margin market segment.
+
+#### Sunpower Residential Solar
 - S: Sunpower desired a strategic shift from commercial to residential solar
 - T: Build suite of infrastructure required for penetration into the consumer solar market.
 - A: Over 3 years, and 22 FTE we build majority of their suite of tools managing entire residential solar life cycle, including:
 - R: Sunpower transitioned from XXXX residential in 20XX upto YYYY in 20YY, and ultimately divested commercial solar in ZZZZ.
-
 
 
 
