@@ -1,6 +1,6 @@
+- air matress; lighter; pillows; salt/pepper; 
+- superpoint
 
-- patents
-- brian
 - null and not zero (talk w/ Jack)
 - Analysis of Variance (ANOVA) 
 - ping recruit agencies

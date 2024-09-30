@@ -1,6 +1,11 @@
 .[[Eli Strategy]].
   , [[2023-05 Cool Kids]], 
 
+# TO READ
+
+- From Arjuna:  https://www.thefp.com/raisingparents-emilyoster
+- 
+
 # CHEAT SHEET
 
 ## MELT DOWN -> Take to a room

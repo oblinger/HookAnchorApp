@@ -1,10 +1,12 @@
+(Master in Contacts)
 
 REDO:	 Pills, Food/Snack, Paper Towels, Plates, TrashBags
 WEAR:	 Hat, Hiking pants, Shoes, Sunglasses, 
-BIG:	 Tent, SleepBags, Mattress, Stove/Fuel, 
-.		 Cooler, Chairs, Day Pack, Wagon
-LAMP:	 HeadLamps, Cards, Deet, Sunscreen, Binoculars, HandTowel, BugMesh,
-DOG:	 Leash, Food
+BIG:	 Tent, SleepBags, Mattress, Stove/Fuel, Cooler, 
+.		 Chairs, Day Pack, Wagon, Pillows
+LAMP:	 HeadLamps, Cards, Deet, Sunscreen, Binoculars, 
+.		 HandTowel, BugMesh,
+DOG:	 Leash, Food, Blanket, 
 WHITE: Ponchos, Filter,  
 
 DISH1:	 Silverware, Plates, Bags, 
