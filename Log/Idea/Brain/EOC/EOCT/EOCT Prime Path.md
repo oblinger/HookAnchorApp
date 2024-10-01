@@ -1,8 +1,30 @@
 
-TOP-BOTTOM-MIDDLE
+
+# LOG
+
+### 2024-09-30  TIMELINE
+
+[[EOCK Corp AI]]: 
+- DRIVERS: High cost of training & data.  Specialization & economies of scale
+
+[[EOCK Loop Closing]]:
+- Transformative efficiency/velocity gains from automation
+- Winner take all nature of VC funding and Market setting
+
+[[EOCK Civilizing Tendency]]:
+
+
+[[EOCK Control]]: 
+
+
+
+
+
+### 2024-00-00  TOP-BOTTOM-MIDDLE
 - Most futurist analysis of AGI are top down.  Make sense since at some level such an approach can account for the broadest range of futures.
   But it eschews any causal or constructive analysis of the future.  both fuzzy in their predictions
 
+# OTHER STUFF
 ## KEY CLAIMS
 
 

@@ -1,6 +1,9 @@
 .[[EOCT]].
-  ADDS:   [[EOCT Argument Short]], [[EOCT Last Best Hope]], [[EOCT Subjective Aspects of Consciousness]],
-  ADDS:   [[EOCT Argument]], [[EOCT Plausible Paths]], [[EOCT Prime Path]], [[EOCT Ways Intelligence Will Be Super]], [[EOCT What Happens Now]],
+  [[EOCT Argument Short]], [[EOCT Last Best Hope]], [[EOCT Subjective Aspects of Consciousness]],
+  [[EOCT Argument]], [[EOCT Plausible Paths]], 
+  [[EOCT Prime Path]]:	
+  [[EOCT Ways Intelligence Will Be Super]], 
+  [[EOCT What Happens Now]],
 
 
 

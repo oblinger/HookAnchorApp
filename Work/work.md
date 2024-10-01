@@ -1,4 +1,5 @@
 .**NOW**. 
+VC Response
 GCP availability
 Preston
 look at PRs
@@ -24,6 +25,8 @@ VC:
   [[FIN.]]	Schwab
   [[NJ]]:	>[[War|War]], rewrite, mentor
   GCP:		[Brian plan](https://docs.google.com/spreadsheets/d/1W38uHew6aaqyeolKzbO9NbaA96Q-jzyDb7gYoUst0qw/edit?gid=0#gid=0). 
+TEAM
+  Color: 
 ## TRACK
  - patents
   [SW cort](https://www.notion.so/sportsvisio/HOMO-SW-integration-plan-77fb63f7cac7433bb0d2e2cd4d374e4b?pvs=4): Get plan

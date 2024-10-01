@@ -10,6 +10,18 @@ ask: sean, Jason, jack -- target for BB speedup
 
 # Log
 
+### 2024-09-30  weekly
+
+- [ ] 
+- Softbank b2b2c
+- GCP availability
+- New Color model
+- Fixed Fireball bugs
+- Homo helps minutes
+- End2End homography PR this week
+- Games for BB Testing, ground truth along many dimensions(homo, shots, trackID, bounding box).  Metrics of intermediate and final outputs
+- LLM Analysis
+
 ### 2024-09-16  Weekly
 SHOW
 - IMAGE of edge case:  

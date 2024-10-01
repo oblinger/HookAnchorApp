@@ -1,3 +1,5 @@
+- QA validate
+- loom
 - air matress; lighter; pillows; salt/pepper; 
 - superpoint
 

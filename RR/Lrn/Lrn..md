@@ -18,3 +18,10 @@ KNOW:		100 algs
 
 
 - Kalman filter
+
+llms. more then generative
+pytortch
+skills. fast moving. ml research.  
+post grad researchers summaries on papers
+practitioners blogs
+cost landscape changing hiring

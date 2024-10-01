@@ -5,6 +5,8 @@ n:: no prefix.	Dated entries without any typing prefix
 
 | Date       | File                                        | Notes                                                                                                                             |
 | ---------- | ------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------- |
+| 2024-09-30 | [[EOCT Prime Path]]                             | TIMELINE                                                                                                                          |
+| 2024-09-30 | [[Mgt]]                                         | weekly                                                                                                                            |
 | 2024-09-25 | [[2024-05 Sell Acura]]                          | The plan                                                                                                                          |
 | 2024-09-25 | [[DAT]]                                         | proposed progression                                                                                                              |
 | 2024-09-24 | [[@Alta Vista]]                                 | Info management proposal                                                                                                          |
@@ -191,6 +193,7 @@ n:: no prefix.	Dated entries without any typing prefix
 | 2024-01-02 | [[Reflections]]                                 | the 2024 life reset                                                                                                               |
 | 2024-01-02 | [[2023 Belief Propagation]]                     | test example                                                                                                                      |
 | 2024-01-02 | [[2023 Least Commitment Model For CV Pipe]]     | foo foo foo                                                                                                                       |
+| 2024-00-00 | [[EOCT Prime Path]]                             | TOP-BOTTOM-MIDDLE                                                                                                                 |
 | 2024-00-00 | [[Daily Schedules]]                             | Bucketed Day                                                                                                                      |
 | 2023-12-31 | [[@Dan Oblinger]]                               | yet another                                                                                                                       |
 | 2023-12-31 | [[@Dan Oblinger]]                               | just some info                                                                                                                    |

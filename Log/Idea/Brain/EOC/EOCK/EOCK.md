@@ -1,7 +1,12 @@
 .[[EOCK]].
   , [[EOCK AGENCY - Separation of Knowledge, Drive, and Agency]], [[EOCK Alignment Wont Work]]
-  , [[EOCK Apex Predator]], [[EOCK Cannot Stop Ourselves]], [[EOCK Corp AI]]
-  , [[EOCK Last Best Hope]], [[EOCK Loop Closing]], [[EOCK Natural Selection]]
+  , [[EOCK Apex Predator]],
+  [[EOCK Cannot Stop Ourselves]],
+  [[EOCK Corp AI]]
+  [[EOCK Loop Closing]],
+  [[EOCK Civilizing Tendency]] 
+  [[EOCK Natural Selection]]
+  , [[EOCK Last Best Hope]], 
   , [[EOCK Nature of AI Progress]], 
 
 
