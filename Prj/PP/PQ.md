@@ -1,6 +1,9 @@
 # Personal "Quick" Projects
 
 
+### 2024-10-01  Created Mix Tape for Exercise
+
+See [[music]] 
 
 ### 2024-09-09  Spraying for Ants
 
@@ -39,7 +42,7 @@ User Manual: https://c.media-amazon.com/images/I/A1hKxjqHJ9S.pdf
 
 
 
-### 2024-06-06  Faucet
+### 2024-06-06  Bathtub Faucet
 
 - 6 3/4" 
 - 

@@ -25,3 +25,7 @@ skills. fast moving. ml research.
 post grad researchers summaries on papers
 practitioners blogs
 cost landscape changing hiring
+
+- Hugging face ecosystem
+- LangChain or LlamaIndex
+

@@ -13,8 +13,8 @@ My KBD:		[[KBD Shortcuts]], [[KBD Obsidian Keys]], [[KBD Global Keys]], [[KBD No
   , [[Automation]], [Bard Page](spot://bardpage), , [[MAC]], [NEU Folder](spot://neufolder)
   , [[Notifications]], [[OBS]], [[SYS Android]], [[SYS Disks]], [[SYS Github Webpage]]
   , [[SYS Hacks]],
-  , [[Closet]], [[Hack]],
-  , [[KM]], [[Spot]], 
-  DELS: [[Facet]],
+  , [[Closet]], ,
+  , [[KM]], [[Spot]],
+  DELS: [[Facet]],[[Hack]], 
 
 

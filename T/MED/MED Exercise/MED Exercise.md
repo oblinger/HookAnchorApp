@@ -1,3 +1,6 @@
+.[[MED Exercise]].
+  , [[Exercise]], 
+
 
 
 ### WEIGHTS

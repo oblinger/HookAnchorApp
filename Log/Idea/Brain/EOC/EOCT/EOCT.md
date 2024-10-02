@@ -1,9 +1,10 @@
 .[[EOCT]].
   [[EOCT Argument Short]], [[EOCT Last Best Hope]], [[EOCT Subjective Aspects of Consciousness]],
-  [[EOCT Argument]], [[EOCT Plausible Paths]], 
-  [[EOCT Prime Path]]:	
-  [[EOCT Ways Intelligence Will Be Super]], 
+  [[EOCT Argument]], [[EOCT Plausible Paths]],
+  [[EOCT Prime Path]]:
+  [[EOCT Ways Intelligence Will Be Super]],
   [[EOCT What Happens Now]],
+  , [[EOCK Control]], 
 
 
 

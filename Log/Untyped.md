@@ -5,6 +5,12 @@ n:: no prefix.	Dated entries without any typing prefix
 
 | Date       | File                                        | Notes                                                                                                                             |
 | ---------- | ------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------- |
+| 2024-10-01 | [[@Chase Bank]]                                 | Replacing lost card.  will recieve on Thursday.                                                                                   |
+| 2024-10-01 | [[@Softbank]]                                   | Meeting #2                                                                                                                        |
+| 2024-10-01 | [[Brain Log]]                                   | Response to Ignacious about why o1 is not type-II thought                                                                         |
+| 2024-10-01 | [[PQ]]                                          | Created Mix Tape for Exercise                                                                                                     |
+| 2024-10-01 | [[Reflections]]                                 | Focus needs to be on MIT hours                                                                                                    |
+| 2024-10-01 | [[HIIT Tape1]]                                  | Created HIIT Tape 1                                                                                                               |
 | 2024-09-30 | [[EOCT Prime Path]]                             | TIMELINE                                                                                                                          |
 | 2024-09-30 | [[Mgt]]                                         | weekly                                                                                                                            |
 | 2024-09-25 | [[2024-05 Sell Acura]]                          | The plan                                                                                                                          |
@@ -93,7 +99,7 @@ n:: no prefix.	Dated entries without any typing prefix
 | 2024-06-11 | [[CVP]]                                         |                                                                                                                                   |
 | 2024-06-08 | [[DAT]]                                         | Notes on conflict                                                                                                                 |
 | 2024-06-08 | [[Reflections]]                                 | Saying Goodbye to Yoshiko                                                                                                         |
-| 2024-06-06 | [[PQ]]                                          | Faucet                                                                                                                            |
+| 2024-06-06 | [[PQ]]                                          | Bathtub Faucet                                                                                                                    |
 | 2024-06-05 | [[FIN Log]]                                     | Vanguard Advising                                                                                                                 |
 | 2024-06-04 | [[EOC Log]]                                     | Ideas at Night                                                                                                                    |
 | 2024-06-04 | [[PQ]]                                          | Hiring a new Cleaner                                                                                                              |

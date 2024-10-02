@@ -24,7 +24,7 @@
   [[MED Vision]]:
   :
   [[MED Weight]]:
-  [[Exercise]]:
+  :
   [[Low Back Pain]]:
   [[Medifast]]:
   [[MED-Vitamins]]:
@@ -32,7 +32,7 @@
   [[MED.]]:
   ADDS:   ,
   ADDS:   [[MED Food]],
-  DELS: [[Glycemic Index]], [[MED Blood Pressure]], [[MED Cholesterol]], [[MED Research]], [[MED VO2Max]], [[MED=]],[[run]], 
+  DELS: [[Glycemic Index]], [[MED Blood Pressure]], [[MED Cholesterol]], [[MED Research]], [[MED VO2Max]], [[MED=]],[[run]],[[Exercise]], 
 
 
 

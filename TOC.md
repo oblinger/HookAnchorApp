@@ -15,6 +15,7 @@
             [[Presentations]]: 
             [[House]]: 
                 [[House Crime]]: 
+        [[Music]]: 
         [[Career]]: 
             [[RES]]: [[Bio]],	[[2024-04-01 Resume Rewrite]],	
                 [[RES Job History]]: 
@@ -43,10 +44,10 @@
             [[2017 Legal Ob Labs]]: 
             [[2023 Legal NDA - AF]]: 
         [[Tag]]: 
-        [[MED]]: [[MED Doctors]],	
+        [[MED]]: [[MED Doctors]],	[[MED Exercise]],	
         [[COMS]]: 
             [[COM Msg]]: 
-    [[SYS]]: [[Hack]],	[[SYS Misc]],	[[OBS]],	[[Closet]],	[[SYS Hacks]],	[[Spot]],	
+    [[SYS]]: [[SYS Misc]],	[[OBS]],	[[Closet]],	[[SYS Hacks]],	[[Spot]],	
         [[KM]]: [[Hook System]],	
         [[MAC]]: [[MAC Apps]],	
     [[Work]]: 
@@ -63,7 +64,7 @@
                 [[CV Alg]]: 
             [[QQ]]: 
     [[MY]]: [[Meta]],	[[Myfo]],	[[TEMPLATER]],	[[QUICKADD]],	
-        [[Pln]]: [[Hacks]],	[[Mission]],	[[Productivity]],	
+        [[Pln]]: [[Hack]],	[[Hacks]],	[[Mission]],	[[Productivity]],	
             [[SCRatch]]: 
     [[Prj]]: [[2021-04 FindDayCare]],	[[2022-05 Enxt]],	[[2022-03 BeFAANG]],	
         [[2022-03 BeVC]],	

@@ -1,3 +1,6 @@
+### 2024-10-01  Focus needs to be on MIT hours
+
+just not hitting the numbers needed.
 ### 2024-09-24  My 1/2 time plan
 
 My goal is to ensure that at least my Tuesday / Thursday time is spent on my priorities:

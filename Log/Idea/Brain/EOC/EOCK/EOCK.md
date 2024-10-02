@@ -4,10 +4,13 @@
   [[EOCK Cannot Stop Ourselves]],
   [[EOCK Corp AI]]
   [[EOCK Loop Closing]],
-  [[EOCK Civilizing Tendency]] 
-  [[EOCK Natural Selection]]
-  , [[EOCK Last Best Hope]], 
+  , [[EOCK Civilizing Tendency]], [[EOCK Last Best Hope]], [[EOCK Natural Selection]]
   , [[EOCK Nature of AI Progress]], 
+
+  [[EOCK Natural Selection]]
+  , [[EOCK Last Best Hope]],
+  , [[EOCK Nature of AI Progress]],
+  DELS: [[EOCK Civilizing Tendency]], 
 
 
 

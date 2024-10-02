@@ -9,14 +9,15 @@
   ADDS:   [[End Of Man Book]], [[EOC reboot]], ,
   ADDS:   , ,
   ,   [[EOC]], ,
-  , [[2015-00-00 The Sentient Weapon]], 
+  , [[2015-00-00 The Sentient Weapon]],
+  , [[Brain Log]], 
   DELS: [[EOC]], [[The Sentient Weapon]],[[2021-06-00 Brain3]], [[Levels]], [[pppw]], [[Strong AI]], [[2007-00-00 Brain DARPA Program]],[[The Sentient Weapon]],
 
 
 
 
 
-
+[[Brain Log]] 
 
 
 

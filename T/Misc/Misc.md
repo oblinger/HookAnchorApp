@@ -9,7 +9,8 @@
   , [[Shop]], [[Sleep]], [[Sleep With Me]], [[STARTUPS]], [[Templates]], [[Test88]], [[tickets]]
   , [[Timestamp]], [[Travel Lst]], [[xmas]],
   , ,
-  , [[Cocktails]], 
+  , [[Cocktails]],
+  , [[Enneagram Test]], 
   DELS: [[Disks]],[[SYS Disks]],[K Folder](spot://kfolder),
 
 

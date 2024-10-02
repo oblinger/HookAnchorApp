@@ -1,5 +1,11 @@
 #pp  
 
+
+### 2024-10-01  Meeting #2
+
+
+
+
 ### 2024-08-09  Prep for Softbank call
 
 - Open but a little guarded too

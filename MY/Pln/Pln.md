@@ -10,7 +10,8 @@
   ROOT:		[[BKT]], [[Up All]], [[Up Task]],
   EXT:		[[External]], [[Other]],
   UNUSED:	[[Prime]], [[Full]], [[Ping]],
-  DELS: [[Lrn]], 
+  , [[Hack]], 
+  DELS: [[Lrn]],
 
 
 
