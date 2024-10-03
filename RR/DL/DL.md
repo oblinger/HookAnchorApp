@@ -18,9 +18,10 @@
   ,   [[DL Alg]],
   , ,
   DELS: ,
-  , [[RLHF]], 
+  , [[RLHF]],
   DELS: ,[[RLHF]],
-  DELS: [[Coursera Notes]],[[RLHF]],[[RLHF Reinforcement Learning from Human Feedback]], [[Coursera Notes]], 
+  , [[Tensor]], 
+  DELS: [[Coursera Notes]],[[RLHF]],[[RLHF Reinforcement Learning from Human Feedback]], [[Coursera Notes]],
 
 [[Tensor]] 
 

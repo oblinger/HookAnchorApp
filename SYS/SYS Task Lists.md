@@ -12,7 +12,7 @@
 - E	
 - F	[[Fried]]		A J   S		Things to do when 'fried'
 - G	[[Gap]]		   W			*WORKSPACE* of activities ...
-- H	[[Hacks]]		A J   S		Hacking tasks
+- H	[[MY/Pln/HACK/HACK]]		A J   S		Hacking tasks
 - I
 - J						
 - K

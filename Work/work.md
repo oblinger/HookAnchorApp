@@ -1,4 +1,5 @@
 .**NOW**. 
+QA Fireball & Minutes
 VC Response
 GCP availability
 Preston

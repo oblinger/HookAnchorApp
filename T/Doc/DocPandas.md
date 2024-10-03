@@ -12,7 +12,8 @@ df .iloc
 
 # MY NOTES
 ## DF CREATION
-- pd.DataFrame(np.random.randn(4,3), columns=list('abc'), index=['first', 'sec', 'thr', 'forth'])
+- pd.DataFrame(np.random.randn(4,3), columns=list('abc'), index=['1st', 'sec', '3rd'])
+- pd.read_csv(PATH)
 
 
 ## DF COLUMN PROCESSING

@@ -1,11 +1,4 @@
-.[[Hacks]].  [[Fried Archive]] 
-  , [[Fried Archive]], 
-
-  DELS: [[Spot]], 
-
-- obsidian memorization cards
-
-- [[Hacks]].	km copy entries
+km copy entries
 
 
 - [ ] email notification comes in before message!
@@ -57,3 +50,13 @@
 - [ ] Remove repeated stuff in email history
 - [ ] To Read  [Scripting Obsidian](https://www.thoughtasylum.com/2021/09/12/automating-your-obsidian-workspace/)  
 - [ ] https://github.com/jigish/slate  -  KICK window into position 1, 2, 3 and back  (Mess with SLATE)
+
+
+.[[Hack]].
+  , [[DAT]], [[Hack Chunch]], , , [[Time Tracker]],
+  , ,
+  DELS: [[Hack Spot]], [[SP]], [[Spot]], 
+
+
+  
+OBS DOC SYNCHRONIZATION [[DOC SYNC]], [[DOC SYNC COMMANDS]], 

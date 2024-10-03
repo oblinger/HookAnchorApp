@@ -5,7 +5,7 @@
   CODE: [[QUICKADD]], , [[TEMPLATER]], ,
   , ,
   , ,
-  DELS: [[My Info]],[Pln Folder](spot://plnfolder),[[SYS]], [[Closet]], [[Hack]], 
+  DELS: [[My Info]],[Pln Folder](spot://plnfolder),[[SYS]], [[Closet]], [[HACK.]], 
 
 - [[Sys]], [[SYS Github Webpage]] 
 

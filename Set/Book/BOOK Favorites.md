@@ -1,40 +1,87 @@
+
+
+[[BOOK]]  [[BOOK Research]] 
+
+## Directions
+
+The books listed below are favorites of mine.  Please suggest other books I might like to read.  In general I like:
+- Hard science fiction books involving stories built around novel concepts. 
+- Indeed books across other genres that involve novel concepts are of interest.
+- I enjoy shorter books that teach something about our world or society (like Guns Germs and Steel).
+
+
+BOOKS ABOUT SOCIETY THAT I HAVE LOVED INCLUDE:
+
+"Guns, Germs, and Steel" by Jared Diamond
+Although not a science book per se, it offers a thought-provoking analysis of the factors that have shaped human history.
+
+"Brave New World" by Aldous Huxley
+
+"1984" by George Orwell
+
+"Sophie's World" by Jostein Gaarder
+This novel doubles as a guide to philosophy, exploring major philosophical ideas and thinkers.
+
+
+MY FAVORITE SCIFI BOOKS INCLUDE
+
+"The Three-Body Problem", "The Dark Forest" by Liu Cixin
+
+"Enders Game" by Doug Eagen
+
+"A Desolation Called Peace", and 
+"A Memory Called Empire", by Arkady Martine
+- Because of the epic nature of the society it describes, and for the subtlety in the society that it paints for us.
+
+"Diaspora" or "Permutation City" by Greg Egan
+
+"A Fire Upon the Deep", and
+"Deepness in the Sky" (Zones of Thought series) by Vernor Vinge
+
+"Uplift War", "Startide Rising" by David Brin
+
+"Daemon", "Freedom" by Daniel Suarez
+
+"Singularity Sky" by Charles Stross
+
+"For We are Many" by Dennis Taylor
+
+"The Left Hand of Darkness" by Ursula Le Guin
+
+
+OTHER GOOD SCIFI BOOKS INCLUDE
+
+"House of Suns" by Alistar Renolds
+
+"The Forever War", "Old Man's War" by John Scalzi
+
+"Blackwing War" 
+
+"Anathem" by Neal Stephenson
+
+"Lucifer's Hammer" by Niven and Pournell
+
+"Animal Farm" by George Orwell
+
+"Childhood's End" by Arthur C. Clarke
+
+"Ancillary Justice" by Ann Leckie
+
+"Flowers For Algernon" by Daniel Keyes
+
+"Contact" by Carl Sagan
+
+"Ringworld", "Integral Trees" by Larry Niven
+
+BOOKS THAT WERE JUST OK
+
+"The Expanse" Series by James S.A. Corey
+I loved the society described and the concept of the proto-molecule, but the story had big plot holes that were frustrating.
+
+Begins with _"Leviathan Wakes,"_ this series blends space opera with hard science and complex political and societal themes, focusing on humanity's expansion into space.
 ### To Consider
 
 1. **"Red Mars" by Kim Stanley Robinson** - The first book in a trilogy about the colonization and terraforming of Mars, detailed with scientific and technical realism.
-
-
-#### NOTES:
-
-- Hard science fiction involves stories built around new concepts. I like to read books books inside or outside of science fiction should I read if I like such conceptual works.
-
-BOOKS THAT I HAVE LOVED INCLUDE
-
-1. **"The Three-Body Problem" by Liu Cixin** 
-
-3. **"Guns, Germs, and Steel" by Jared Diamond** - Although not a science book per se, it offers a thought-provoking analysis of the factors that have shaped human history.
-
-1. **"Brave New World" by Aldous Huxley** 
-
-1. **Greg Egan**: "Diaspora" or "Permutation City."
-    
-2. **Neal Stephenson**: "Anathem" 
-
-1. **Vernor Vinge**: His Zones of Thought series, starting with "A Fire Upon the Deep"
-    
-
-"Uplift War": David Brin
-
-"Daemon" Daniel Suarez
-
-"Lucifer's Hammer": Niven and Pournell 
-
-"Animal Farm": George Orwell
-
-1. **Arthur C. Clarke**: "Childhood's End"
-
-
-
-
 
 
 
@@ -151,7 +198,6 @@ Absolutely! If you're interested in conceptual and social themes similar to thos
 ### Philosophical Fiction
 
 - **"The Unbearable Lightness of Being" by Milan Kundera**: Explores existential themes, love, and politics in the backdrop of the Prague Spring.
-- **"Sophie's World" by Jostein Gaarder**: A novel that doubles as a guide to philosophy, exploring major philosophical ideas and thinkers.
 
 ### Magical Realism
 

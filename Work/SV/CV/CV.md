@@ -5,238 +5,20 @@
   ORGS:	[CV Docs](spot://cvdocs), [DOCs](spot://docs), [CV Info](spot://cvinfo), ,
   ADDS:	, [CV Ana](spot://cvana), ,
   OLD:	[CVT](spot://cvt), [DSET](spot://dset), ,
-  ADDS:   [svdata](spot://svdata), ,
-  ADDS:   ,
-  ADDS:   [APIs](spot://apis),
-  ADDS:   [CAPS](spot://caps),
-  ADDS:   ,
-  ADDS:   ,
-  ADDS:   [CV Gdrive](spot://cvgdrive),
-  ADDS:   ,
-  ADDS:   [[CV Hack Notes]], , [[SVCV Re-ID]],
-  ADDS:   , ,
-  ADDS:   ,
-  ADDS:   ,
-  ADDS:   ,
-  ,   [[CV Log]], [[CVP]], [[Data]],
-  , [Results](spot://results),
-  , [DT alias Data Tasks](spot://dtaliasdatatasks),
-  , [DT](spot://dt),
-  , [CV Page](spot://cvpage),
-  , ,
-  , [[CV Alg]], 
+  .
+  , [APIs](spot://apis), [CAPS](spot://caps), [[CV Alg]], [CV Gdrive](spot://cvgdrive)
+  , [[CV Hack Notes]], [[CV Log]], [[CVP]], [CV Page](spot://cvpage), [[Data]], [DT](spot://dt)
+  , [DT alias Data Tasks](spot://dtaliasdatatasks), [Results](spot://results), [[SVCV Re-ID]]
+  , [svdata](spot://svdata),
+  , [STORY](spot://story), 
+
   DELS: [Standup](spot://standup),[DD](spot://dd),
-
-
-
-
-
-
-
-
-
-
   DELS: [[CVP]],[[Info]], 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  DELS: [[Info]], 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  DELS: [Info](spot://info), 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-after
-
 :: [[Data]]
+
+# OLD
 ## Foo
 
 - Find interaction rough.  We seem to be agreeing in the end, but somehow it seems I am shoving him the whole way.
@@ -305,6 +87,7 @@ Execution
 - Halo pipe
 
 ## >>> Stuff <<<
+
 ## = ALGORITHMS
 DeAOT (left) and byte tracker (right)
 

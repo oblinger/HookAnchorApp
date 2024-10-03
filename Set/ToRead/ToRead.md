@@ -1,7 +1,10 @@
 n:: Stuff "to read"
 #set
+
 .[[ToRead]].
-  [[Read Research]], [[Book To Read]], [[Podcasts To Listen To]], [[ToResearch]], 
+  [[BOOK Research]], [[Book To Read]], [[Podcasts To Listen To]], [[ToResearch]], 
+
+[[Book]]: [[BOOK Summaries]], [[BOOK Favorites]],
 
 ## TO READ
 - [read]( https://www.mckinsey.com/industries/agriculture/our-insights/winning-in-africas-agricultural-market) - africa

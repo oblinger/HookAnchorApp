@@ -10,7 +10,7 @@
 - CAPS-J P  PLAN	My weekly planning workflow (F2)
 - CAPS-J S  SELF	My personal development workflow
 
-## SYSTEM WINDOWS
+## SYSTEM SCREEN LAYOUTS
 ### THREE SCREEN LAYOUT
 
 #### 6 - Far Left - Slack, Chrome, Safari(GPT), 
@@ -85,11 +85,11 @@ LEFT FOCUSED LAYOUT
 
 ### GAP DASHBOARD
 
-| col-1 |    col-2     | col-3 |
-| :---: | :----------: | :---: |
-| Fried | Hack<br>Todo | ToBuy |
-|   "   |     Fun      | Empty |
-|   "   |     Gap      | Quick |
+| col-1 | col-2 | col-3 |
+| :---: | :---: | :---: |
+| Fried | HACK. | ToBuy |
+|   "   |  Fun  | Spot  |
+|   "   |  Gap  | Quick |
 
 
 

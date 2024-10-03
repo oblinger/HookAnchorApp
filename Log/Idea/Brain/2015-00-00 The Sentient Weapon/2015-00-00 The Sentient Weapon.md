@@ -1,7 +1,8 @@
 .[[2015-00-00 The Sentient Weapon]].
-  , [[brain book outline]], [[consciousness how it will happen]], [[story]], [[Sufficient Set]]
+  , [[brain book outline]], [[consciousness how it will happen]], , [[Sufficient Set]]
   , [[The Sentient Weapon OLD]],
-  , [[Sentient Weapon - Levels]], 
+  , [[Sentient Weapon - Levels]],
+  DELS: [[story]], 
 
 .[[The Sentient Weapon]].
   ADDS:   [[The Sentient Weapon OLD]],

@@ -2,7 +2,9 @@
 n:: Books I have read
 
 .[[Book]]. 
-  [[Book Chat GPT]], 
+  [[BOOK Favorites]], 
+[[Book To Read]], 
+[[BOOK Summaries]],
   BOOKS:
   - [AnthonyRobins_GetTheEdge](spot://anthonyrobinsgettheedge),  [GetTheEdge_Worksheet](spot://gettheedgeworksheet),
   - PRODUCTIVITY / MANAGEMENT
@@ -11,7 +13,6 @@ n:: Books I have read
   ADDS:   [[Agile Software Development]], [[Fundamentals of Workability Workshop]],
 
 
-[[Book To Read]], 
 
 
 
@@ -336,7 +337,7 @@ n:: Books I have read
 
 
 
-- [[Courses]], [[LibraryThing 1Pass]], [[Book Chat GPT]], 
+- [[Courses]], [[LibraryThing 1Pass]], [[BOOK Favorites]], 
 - [[SciFi]],
 - [[Agile Software Development]], 
 

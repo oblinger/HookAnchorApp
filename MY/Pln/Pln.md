@@ -5,12 +5,12 @@
   PER2:		[[Quarterly]], [[Later]], [[Wings]], [[Dropped]],
   LONG:		[[Rocks]], [[Q2]], [[WRM]], [[Archive List]],
   SELF:		, [[Spirit]], [[Actualize]], [[Mission]], [[Productivity]],
-  FUN:		[[Fun]], [[Social]], [[Fried]], [[Gap]], [[Hacks]], [[Fried Later]],
+  FUN:		[[Fun]], [[Social]], [[Fried]], [[Gap]], [[MY/Pln/HACK/HACK]], [[Fried Later]],
   FAM:		[[Friday Dates]],
   ROOT:		[[BKT]], [[Up All]], [[Up Task]],
   EXT:		[[External]], [[Other]],
   UNUSED:	[[Prime]], [[Full]], [[Ping]],
-  , [[Hack]], 
+  , [[HACK.]], 
   DELS: [[Lrn]],
 
 

@@ -15,7 +15,7 @@ TOP ORGANIZING VIEWS
 - [View Work](spot://view~work)		[[Work]] 	[[Rocks]] 
 - [View Self](spot://view~self)		[[Self]]		[[Q2]]		
 - [View Planning](spot://view~planning)	[[Pln]]	
-- [View Gap](spot://view~gap) 		[[Fried]] 		[[Hacks]]		[[Gap]]
+- [View Gap](spot://view~gap) 		[[Fried]] 		[[MY/Pln/HACK/HACK]]		[[Gap]]
 
 ## BKT TREE
 ### 2021 

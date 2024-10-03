@@ -43,7 +43,7 @@
 
 
 
-  DELS: [[Hack]], 
+  DELS: [[HACK.]], 
 
 
   DELS: [[DAT]], [[Hack Chunch]], [[Hack Spot]], [[Time Tracker]], 

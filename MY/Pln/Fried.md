@@ -1,4 +1,4 @@
-- somehow track Credit cards
+
 - USB camera & light
 - fin flow
 - fix easy passwords
@@ -8,11 +8,11 @@
 - Research how "Creatinin" relates to logevity
 - facets for menu sub area letters (including notes)
 - [ ] budget big transfers list	
-- [ ] [[Travel Lst]]: pills; snacks
 
 
-- pp^^name-for-quickie
-	- MUSIC:  Clean up spotify; named music channels:  mus Chill mus Class 
+
+Clean up spotify
+  ; named music channels:  mus Chill mus Class 
 - Use GPT to make portrait cartoon 
   (or giphy grab)
 - Read Quadratic Funding

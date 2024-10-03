@@ -15,6 +15,6 @@ My KBD:		[[KBD Shortcuts]], [[KBD Obsidian Keys]], [[KBD Global Keys]], [[KBD No
   , [[SYS Hacks]],
   , [[Closet]], ,
   , [[KM]], [[Spot]],
-  DELS: [[Facet]],[[Hack]], 
+  DELS: [[Facet]],[[SYS/Hack/Hack]], 
 
 
