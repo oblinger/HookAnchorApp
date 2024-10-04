@@ -5,6 +5,8 @@ n:: no prefix.	Dated entries without any typing prefix
 
 | Date       | File                                        | Notes                                                                                                                             |
 | ---------- | ------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------- |
+| 2024-10-03 | [[@Google]]                                     | Matt @ Google                                                                                                                     |
+| 2024-10-03 | [[@Traxxas]]                                    | Reset controller                                                                                                                  |
 | 2024-10-01 | [[@Chase Bank]]                                 | Replacing lost card.  will recieve on Thursday.                                                                                   |
 | 2024-10-01 | [[@Softbank]]                                   | Meeting #2                                                                                                                        |
 | 2024-10-01 | [[Brain Log]]                                   | Response to Ignacious about why o1 is not type-II thought                                                                         |

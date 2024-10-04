@@ -10,7 +10,8 @@
   , [[CV Hack Notes]], [[CV Log]], [[CVP]], [CV Page](spot://cvpage), [[Data]], [DT](spot://dt)
   , [DT alias Data Tasks](spot://dtaliasdatatasks), [Results](spot://results), [[SVCV Re-ID]]
   , [svdata](spot://svdata),
-  , [STORY](spot://story), 
+  , [STORY](spot://story),
+  , [RESULT](spot://result), 
 
   DELS: [Standup](spot://standup),[DD](spot://dd),
   DELS: [[CVP]],[[Info]], 

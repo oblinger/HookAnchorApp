@@ -35,5 +35,16 @@ Regards
 
 # LOG
 
+### 2024-10-03  Matt @ Google
+
+Flexmode
+- GCE managed instance group
+
+DWS 
+GKE has less warm up time
+CloudRun
+
+
+
 
 

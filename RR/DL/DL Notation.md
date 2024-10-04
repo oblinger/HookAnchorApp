@@ -1,5 +1,6 @@
 -  [[NG Notation]], 
 - [[Transformers]],
+- [[DL Theory]], 
 
 ==> [Wiki Attention](https://en.wikipedia.org/wiki/Attention_(machine_learning)) 
 - x = input

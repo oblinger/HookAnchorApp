@@ -1,26 +1,25 @@
 .**NOW**. 
-QA Fireball & Minutes
-VC Response
-GCP availability
+!QA Fireball & Minutes
+=GCP availability
 Preston
 look at PRs
-FireB:	.
-	- fix chron bug
-	- check other zones
-	- try again after period 
-	- Reserve availability ()
-	- CPU as backup
-	- Email as backup
-  might take 2min to provision on AWS, even more on Google?
 VC: 
     How much AI is helping annotators (ROI for AI saving time, and tracked over time to see how much it is improving over time (I assume to model when it will take over)
 .
-  [[Data]]:	!alpha-games
-  [DT](spot://dt): 	!VB, !BrionesHomo
-  [[2024-08 Backend Architect|Arch]]:	Jack Discuss, Calls
-  [Fball](spot://fireball):	Deploy (!matias)
+  Eval:  stats,homo !get20>run>chk
+  [Fball](spot://fireball):	!matias
+  	- fix chron bug
+		- check other zones
+		- try again after period 
+		- Reserve availability ()
+		- CPU as backup
+		- Email as backup
+	  might take 2min to provision on AWS, even more on Google?
+  [[Data]]:	
+  [DT](spot://dt): 	>VB, !Homo
   [Min](https://docs.google.com/document/d/1oaG7NB2fJ9THAtHcREX6yqrWg91wYEsof9zQNEInFFU/edit):	Alpha Testing
   
+  [[2024-08 Backend Architect|Arch]]:	Jack Discuss
   [OKRs](https://docs.google.com/presentation/d/1v7Winy9DHxGuYh05_is8zH05ClJi0qclM698-pDXIgY/edit?pli=1#slide=id.g274b3e27e6b_0_0):	Q3 Results	
   [[DAT|DAT]]:	Get PR ready
   [[FIN.]]	Schwab

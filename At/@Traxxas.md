@@ -6,6 +6,10 @@
 - S/N.  A6304649
 - Order Number: 16610188   
 - Date: 10-08-2023
+- Traxxas TQ controller
+- Master End point reset
+
+set hold flashing turn to left
 
 - support@traxxas.com
 - 800-traxxas
@@ -24,6 +28,11 @@ Part #9779.
 Part 
 
 # LOG
+
+### 2024-10-03  Reset controller
+
+[https://youtu.be/u5H03-SDNwU](https://youtu.be/u5H03-SDNwU)
+
 
 ### 2024-09-10  Call us
 

@@ -1,6 +1,6 @@
 
 
-
+shen - Lruh Qai-Lu
 
 ```python
 
@@ -37,4 +37,12 @@ y = torch.sin(x)
 import matplotlib.pyplot as plt
 %matplotlib inline
 plt.plot(x.numpy(), y.numpy())
+
+xform = transforms.Compose([transforms.CenterCrop(20), transforms.ToTensor()])
+dataset = dsets.MNIST(root = './data', download = True, transform = xform)
+
+from torch.nn import Linear
+
+
+
 ```
