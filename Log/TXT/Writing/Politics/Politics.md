@@ -15,6 +15,15 @@
 
 https://www.wsj.com/opinion/harris-is-the-safer-economic-choice-2024-presidential-election-ea06b8bf
 
+# LOG
+
+### 2024-10-04  Conservatives/Liberal outrage/satire
+
+https://www.niemanlab.org/2019/12/why-liberal-satire-and-conservative-outrage-are-both-responses-to-mainstream-media-but-with-very-different-powers/
+
+If outrage is a well-trained attack dog that operates on command, satire is a raccoon — hard to domesticate and capable of turning on anyone at any time.
+
+Does satire have a liberal bias? Sure. Satire has a liberal psychological bias. But the only person who can successfully harness the power of satire is the satirist. Not political strategists. Not a political party. Not a presidential candidate. Outrage is the tool of conservative elites. But ironic satire is the tool of the liberal satirist alone.
 
 
 

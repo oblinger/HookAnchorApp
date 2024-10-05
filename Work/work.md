@@ -1,12 +1,10 @@
 .**NOW**. 
 !QA Fireball & Minutes
+=Run NBA game
 =GCP availability
 Preston
 look at PRs
-VC: 
-    How much AI is helping annotators (ROI for AI saving time, and tracked over time to see how much it is improving over time (I assume to model when it will take over)
-.
-  Eval:  stats,homo !get20>run>chk
+  Eval:  stats,^homo !gt20>run>chk
   [Fball](spot://fireball):	!matias
   	- fix chron bug
 		- check other zones

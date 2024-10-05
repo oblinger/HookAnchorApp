@@ -1,3 +1,4 @@
+- try Codium, Cursor, GPT alternative
 
 - USB camera & light
 - fin flow

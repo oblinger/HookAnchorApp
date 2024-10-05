@@ -1,5 +1,8 @@
 =[[Corp]]  [Web](https://traxxas.com/)
 
+1,500 pixellot.  VPU.  private distributed cloud.
+
+
 .Traxxas 1-888-872-9927
 
 - Red TRX-4M Crawler with Ford Bronco Body

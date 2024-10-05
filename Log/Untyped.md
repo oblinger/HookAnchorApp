@@ -5,6 +5,7 @@ n:: no prefix.	Dated entries without any typing prefix
 
 | Date       | File                                        | Notes                                                                                                                             |
 | ---------- | ------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------- |
+| 2024-10-04 | [[Politics]]                                    | Conservatives/Liberal outrage/satire                                                                                              |
 | 2024-10-03 | [[@Google]]                                     | Matt @ Google                                                                                                                     |
 | 2024-10-03 | [[@Traxxas]]                                    | Reset controller                                                                                                                  |
 | 2024-10-01 | [[@Chase Bank]]                                 | Replacing lost card.  will recieve on Thursday.                                                                                   |

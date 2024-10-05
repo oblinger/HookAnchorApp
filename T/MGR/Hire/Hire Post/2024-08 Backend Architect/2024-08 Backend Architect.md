@@ -1,8 +1,5 @@
 .[[2024-08 Backend Architect]].
-  , ,
-  DELS: [[2024 Architect Hire]], 
 
-Fireball
 [[2024 Architect Test]] 
 
 [gdrive](https://drive.google.com/drive/folders/1YbYomol2XMu5uLMm0DRSeD_AP3AFG_az) [Arch](spot://arch) 
