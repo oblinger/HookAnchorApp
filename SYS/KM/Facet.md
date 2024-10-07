@@ -3,31 +3,31 @@
 
 ## FACETS
 
-|     | Type        | Name            | Description                                  |
-| --- | ----------- | --------------- | -------------------------------------------- |
-|     | **TEXT**    |                 |                                              |
-|     | Notion      | **XXXX**        | Notion pages                                 |
-|     | Notes       | **XXXX**        | Background info on Keyword (8)               |
-|     |             |                 |                                              |
-|     | **FOLDER**  |                 |                                              |
-|     | Folder      | **XXXX Folder** | Launches finder on Folder (6)                |
-|     | Box         | **XXXX Box**    | Drop box folder                              |
-|     | Gdrive      | **XXXX Gdrive** | Web folder (6)                               |
-|     |             |                 |                                              |
-|     | **SPECIAL** |                 |                                              |
-|     | Doc         | **Doc XXXX**    | Documentations about some SW thing           |
-|     | RR          | **RR XXXX**     | Reference material about a thing             |
-|     | Meta XXX    | **Meta XXXX**   | Meta info about a term (could be 'about')    |
-|     | @XXX        | **@ XXXX**      | Entity page for a person, org, or "actor"    |
-|     | Log         | **XXXX Log**    | Log of related content                       |
-|     | Task        | **XXXX Task**   |                                              |
-|     |             |                 |                                              |
-|     | **TARGET**  |                 |                                              |
-|     |             | **XXXX**        | No suffix overrides others as leading choice |
-|     | App         | **XXXX**        | Mac App. Launches it. (3)                    |
-|     | Page        | **XXXX Page**   | Launches a URL (7)                           |
-|     | 1Pass       | **XXXX 1pass**  | Launches from 1password (5)                  |
-|     |             |                 |                                              |
+|       | Type        | Name            | Description                                  |
+| ----- | ----------- | --------------- | -------------------------------------------- |
+|       | **TEXT**    |                 |                                              |
+| ?M?   | Notion      | **XXXX**        | "Main" Notion pages                          |
+| **N** | Notes       | **XXXX**        | Background info on Keyword (8)               |
+|       |             |                 |                                              |
+|       | **FOLDER**  |                 |                                              |
+| **F** | Folder      | **XXXX Folder** | Launches finder on Folder (6)                |
+| **B** | Box         | **XXXX Box**    | Drop box folder                              |
+| **G** | Gdrive      | **XXXX Gdrive** | Web folder (6)                               |
+|       |             |                 |                                              |
+|       | **SPECIAL** |                 |                                              |
+| **D** | Doc         | **Doc XXXX**    | Documentations about some SW thing           |
+|       | RR          | **RR XXXX**     | Reference material about a thing             |
+|       | Meta XXX    | **Meta XXXX**   | Meta info about a term (could be 'about')    |
+|       | @XXX        | **@ XXXX**      | Entity page for a person, org, or "actor"    |
+| **L** | Log         | **XXXX Log**    | Log of related content                       |
+| **T** | Task        | **XXXX Task**   |                                              |
+|       |             |                 |                                              |
+|       | **TARGET**  |                 |                                              |
+|       |             | **XXXX**        | No suffix overrides others as leading choice |
+|       | App         | **XXXX**        | Mac App. Launches it. (3)                    |
+| **P** | Page        | **XXXX Page**   | Launches a URL (7)                           |
+| **1** | 1Pass       | **XXXX 1pass**  | Launches from 1password (5)                  |
+|       |             |                 |                                              |
 
 ### KEY FACETS FOR A TERM
 - TASK - A todo list or plan associated with this term
