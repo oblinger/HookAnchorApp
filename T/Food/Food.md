@@ -1,16 +1,13 @@
 .[[Food]].
   [[Diet]]:
-  :
-  [[Meals]]:
+  [[Meals]]:	[[Groc]], [[Entrees]]:
   [[Meals Thermomix]]:
   [[Meals Vegetables]]:
   [[ContainerWeights]]:
   [[Delivery]]:
   [[desserts]]:
-  [[Entrees]]:
   [[FastingDiet]]:
   [[Food Parents]]:
-  [[Groc]]:
   :
   [[Restaurants]]:
   [[Try Foods]]:

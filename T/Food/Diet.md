@@ -5,6 +5,14 @@
 https://www.truefood.tech/search?csrfmiddlewaretoken=g3KgNJFdRwemS9diT4iXnnvSQKUjdE81NWIp37ikRGH1ZFncgOPOY6ffDDe3N8EJ&search_text=tomatos&store=
 
 
+### 2024-10-06  Whole Food Plant Based -ish diet.
+
+- 16-8  Intermittent Fasting:  from 10-11a until 6-7pm.  (radishes later)
+- Bfast: 	Fruit,
+- Lunch:	Thistle, Beans/Tofu
+- Snack: 	Fruit
+- Dinner: 	Tofu
+
 
 ### 2022-12-12  Evening Eating - Hormones
 
