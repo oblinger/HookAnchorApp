@@ -1,70 +1,7 @@
-### 2024-10-07  Just not making my MIT hours!
-
-- Need to have list focused each day.
-- Will at least do that!
-- 
-### 2024-10-01  Focus needs to be on MIT hours
-
-just not hitting the numbers needed.
-### 2024-09-24  My 1/2 time plan
-
-My goal is to ensure that at least my Tuesday / Thursday time is spent on my priorities:
-
-- Next Job: Learn and Ready
-- Self: many
-
-For this week, My aim is to hit 4hr per day for this.
-Aim low, but hit the target!!  :-)
 
 
-### 2024-09-17  If I want to get more done, I need to focus my time
-
-Each day I am planning what I will do, then tracking what I did do.
-It is surprising how small the fraction is of my day that goes to things I hope to increase.
-My idea for the next days is to track this each day and try to shift the fraction of desired ones.
 
 
-### 2024-09-09  Went to 1/2 time at SV
-
-The idea going 1/2 time is that 
-- I really WILL re-coup at least 1/3 time in order to job search
-- I will be able to keep Jason happy and look good
-- I will still be able to spend a bit of time getting more technical --modest time
-- I will be able to swing back to full time and stay at SV in the unlikely event that I want to do that
-
-mostly unclear if I can re-tool enough to change the kinds of jobs I can get.
-
-A little optimistic but also apprehensive about my upcoming job search
-
-### 2024-08-22  My Biggest Issue: Daily hours on MIT
-
-I am stressed on a daily basis, and I think the biggest stressor is lack of progress on my job search.  This is because I don't work on it.
-
-I really need to re-shape how I work so that I DO work on my MIT task both for work and for next job.
-
-UPSIDE: The good news is that this is an absolutely essential skill if I am to successfully make a transition to a strong next job.  
-
-DOWNSIDE:  And my big challenge is that I don't think I have ever been good at doing this
-### 2024-08-14  Stressed & Procrastinating
-
-Well I am procrastinating right now!
-
-I am stressed that 
-- Jason does not find full value from me at Sports Visio, AND 
-- I am going to have difficulty finding a good job in this market, AND 
-- I have missed the boat in doing research which I trained for and like doing.
-
-I don't think it is as bad as all of that.  I think I am painting an overly negative picture, 
-But emotionally this is the way things feel, and there is at least some truth the picture.
-
-As a result I am pushing things off,
-not getting to the most important stuff, and
-not working enough focused hours per day.
-
-**My plan**:
-
-Each day I need to put in at least 3 hours on key activities
-Never below 2 and trying to hit 4.
 
 ### 2024-06-08  Saying Goodbye to Yoshiko
 
@@ -83,10 +20,8 @@ Thinking back there are alot of happy memories
 - The way you were always so so crazy happy if I would repair anything.  I think your plan was to make me feel like a complete genius... and it really kinda worked!
 - mom's wrapping
 - ashley's rememberance
-- my high school reunion
-
-
-More than any other thing, the one that I wanted to tell you these many years later is how badly I missed a most important thing about you while I was with you.  I knew it at the time, but I never really appreciated it!
+- my high sc [[Reflections]]<br>
+-                                                                                                                                                              I knew it at the time, but I never really appreciated it!
 
 You are a ray of sunshine to every person in your life.  Your smile, and your presence as soon as you would walk into a room.  everyone could feel it.
 
@@ -100,7 +35,7 @@ Lots of love always.
 
 
 
-Hey this is Dan, Yoshiko's boyfriend from years ago  (I think you will remember me from my stay at your parents house and the trip where I took you and Yoshiko to Eiheiji temple). I am so shocked to learn that Yoshiko is in hospice! so, so very sad!  I recorded a letter that I am hoping she is still able to understand.  If you think she would enjoy hearing an audio letter, it would be great if you could play it for her.  I wish I could tell her in person!  I am happy for any details if you think she was or wasn't able to hear it.  This is all so so sad!
+Hey this is Dan, Yoshiko's boyfriend from years ago  (I think you will remember me from my stay at your parents house and the trip where I took you and Yoshiko to Eiheiji temple). I am so shocked to learn that Yoshiko is                                                                                                                                                                               f you could play it for her.  I wish I could tell her in person!  I am happy for any details if you think she was or wasn't able to hear it.  This is all so so sad!
 
 Yours, 
 Dan

@@ -7,7 +7,6 @@ n:: no prefix.	Dated entries without any typing prefix
 | ---------- | ------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------- |
 | 2024-10-07 | [[Friday]]                                      | BIX                                                                                                                               |
 | 2024-10-07 | [[Friday]]                                      | Foreign Cinema                                                                                                                    |
-| 2024-10-07 | [[Reflections]]                                 | Just not making my MIT hours!                                                                                                     |
 | 2024-10-06 | [[Diet]]                                        | Whole Food Plant Based -ish diet.                                                                                                 |
 | 2024-10-04 | [[Politics]]                                    | Conservatives/Liberal outrage/satire                                                                                              |
 | 2024-10-03 | [[@Google]]                                     | Matt @ Google                                                                                                                     |
@@ -16,19 +15,16 @@ n:: no prefix.	Dated entries without any typing prefix
 | 2024-10-01 | [[@Softbank]]                                   | Meeting #2                                                                                                                        |
 | 2024-10-01 | [[Brain Log]]                                   | Response to Ignacious about why o1 is not type-II thought                                                                         |
 | 2024-10-01 | [[PQ]]                                          | Created Mix Tape for Exercise                                                                                                     |
-| 2024-10-01 | [[Reflections]]                                 | Focus needs to be on MIT hours                                                                                                    |
 | 2024-10-01 | [[HIIT Tape1]]                                  | Created HIIT Tape 1                                                                                                               |
 | 2024-09-30 | [[EOCT Prime Path]]                             | TIMELINE                                                                                                                          |
 | 2024-09-30 | [[Mgt]]                                         | weekly                                                                                                                            |
 | 2024-09-25 | [[2024-05 Sell Acura]]                          | The plan                                                                                                                          |
 | 2024-09-25 | [[DAT]]                                         | proposed progression                                                                                                              |
 | 2024-09-24 | [[@Alta Vista]]                                 | Info management proposal                                                                                                          |
-| 2024-09-24 | [[Reflections]]                                 | My 1/2 time plan                                                                                                                  |
 | 2024-09-19 | [[@Annafi Wahed]]                               | W/ CTO                                                                                                                            |
 | 2024-09-19 | [[@Meta]]                                       | ML Roles                                                                                                                          |
 | 2024-09-19 | [[NJ Log]]                                      | FAANG Hiring Learning                                                                                                             |
 | 2024-09-19 | [[NJ Pyramid]]                                  | Objective                                                                                                                         |
-| 2024-09-17 | [[Reflections]]                                 | If I want to get more done, I need to focus my time                                                                               |
 | 2024-09-16 | [[Mgt]]                                         | Weekly                                                                                                                            |
 | 2024-09-16 | [[@Jason Syversen]]                             | Brain's Value                                                                                                                     |
 | 2024-09-14 | [[@Annafi Wahed]]                               | Call about Flipside                                                                                                               |
@@ -45,7 +41,6 @@ n:: no prefix.	Dated entries without any typing prefix
 | 2024-09-10 | [[@Jason Syversen]]                             | Text of agreement                                                                                                                 |
 | 2024-09-09 | [[PQ]]                                          | Spraying for Ants                                                                                                                 |
 | 2024-09-09 | [[DAT]]                                         | New plan for integration.                                                                                                         |
-| 2024-09-09 | [[Reflections]]                                 | Went to 1/2 time at SV                                                                                                            |
 | 2024-09-09 | [[Mgt]]                                         | Weekly                                                                                                                            |
 | 2024-09-05 | [[@Nick Allen]]                                 | Jason Messaging                                                                                                                   |
 | 2024-09-05 | [[@Nick Allen]]                                 | SportsVisio cuts                                                                                                                  |
@@ -62,13 +57,11 @@ n:: no prefix.	Dated entries without any typing prefix
 | 2024-08-26 | [[2024-08 Backend Architect]]                   | Note Explaining The Job                                                                                                           |
 | 2024-08-25 | [[COM Newsletter]]                              |                                                                                                                                   |
 | 2024-08-23 | [[@James Neilson]]                              | chat about BB power users                                                                                                         |
-| 2024-08-22 | [[Reflections]]                                 | My Biggest Issue: Daily hours on MIT                                                                                              |
 | 2024-08-20 | [[@Sean O'Connor]]                              | Looking to the future                                                                                                             |
 | 2024-08-19 | [[@Alta Vista]]                                 | notes when we first went                                                                                                          |
 | 2024-08-19 | [[@Jason Syversen]]                             | Plans                                                                                                                             |
 | 2024-08-14 | [[Phone -old-]]                                 | Sell Acura                                                                                                                        |
 | 2024-08-14 | [[2024-05 Sell Acura]]                          | Sell Acura                                                                                                                        |
-| 2024-08-14 | [[Reflections]]                                 | Stressed & Procrastinating                                                                                                        |
 | 2024-08-11 | [[@Alexander Grosse]]                           | Veo Partnership Discussion                                                                                                        |
 | 2024-08-09 | [[Eli Firsts]]                                  | Gonna get married to Zoya                                                                                                         |
 | 2024-08-09 | [[@Softbank]]                                   | Prep for Softbank call                                                                                                            |

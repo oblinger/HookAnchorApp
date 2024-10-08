@@ -1,3 +1,5 @@
+I spoke with Mery on monday regarding the process we are evolving to for QA & Alpha Testing on AI minutes.  We want successful QA tests before alpha testing.  We now have 10 validation games for AI minutes, @Mery as discussed should run at least 3 of these games thru our the end to end system for QA testing of minutes.  We should verify that we obtain the good results we have seen on our test data, so we can 
+
 
 
 | WEEKLY        |                                                                                                                                                                                |

@@ -1,18 +1,10 @@
 .**NOW**. 
 !QA Fireball & Minutes
 =Run NBA game
-=GCP availability
 Preston
 look at PRs
   Eval:  stats,^homo !gt20>run>chk
-  [Fball](spot://fireball):	!matias
-  	- fix chron bug
-		- check other zones
-		- try again after period 
-		- Reserve availability ()
-		- CPU as backup
-		- Email as backup
-	  might take 2min to provision on AWS, even more on Google?
+  [Fball](spot://fireball):	>Matias DRW
   [[Data]]:	
   [DT](spot://dt): 	>VB, !Homo
   [Min](https://docs.google.com/document/d/1oaG7NB2fJ9THAtHcREX6yqrWg91wYEsof9zQNEInFFU/edit):	Alpha Testing
@@ -28,6 +20,7 @@ TEAM
   Robust Homo:
   
 ## TRACK
+=GCP availability
  - patents
   [SW cort](https://www.notion.so/sportsvisio/HOMO-SW-integration-plan-77fb63f7cac7433bb0d2e2cd4d374e4b?pvs=4): Get plan
   VidQ:		^Neg entropy gallery
