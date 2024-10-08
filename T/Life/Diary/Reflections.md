@@ -1,3 +1,8 @@
+### 2024-10-07  Just not making my MIT hours!
+
+- Need to have list focused each day.
+- Will at least do that!
+- 
 ### 2024-10-01  Focus needs to be on MIT hours
 
 just not hitting the numbers needed.

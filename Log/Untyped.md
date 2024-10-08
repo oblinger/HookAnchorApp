@@ -5,6 +5,9 @@ n:: no prefix.	Dated entries without any typing prefix
 
 | Date       | File                                        | Notes                                                                                                                             |
 | ---------- | ------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------- |
+| 2024-10-07 | [[Friday]]                                      | BIX                                                                                                                               |
+| 2024-10-07 | [[Friday]]                                      | Foreign Cinema                                                                                                                    |
+| 2024-10-07 | [[Reflections]]                                 | Just not making my MIT hours!                                                                                                     |
 | 2024-10-06 | [[Diet]]                                        | Whole Food Plant Based -ish diet.                                                                                                 |
 | 2024-10-04 | [[Politics]]                                    | Conservatives/Liberal outrage/satire                                                                                              |
 | 2024-10-03 | [[@Google]]                                     | Matt @ Google                                                                                                                     |

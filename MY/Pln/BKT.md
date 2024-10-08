@@ -6,6 +6,13 @@
 [[Fun]]:	Read, Guys
 
 
+MIT: [[SV]], [[NJ]], [[SELF]], [[Fun]], 
+[[Self]]: [[Home]]: ants, basement, liv
+[[Self]]: Sell Car
+[[Med]]: Diet
+[[Fin]]: Schwab Acct, Car
+
+
 ## >
 - [[Up Task]],  [[Meta Plan]],  [[Daily Schedules]], 
 

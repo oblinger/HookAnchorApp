@@ -1,3 +1,4 @@
+- newsletter for SV
 - Briones:  start homo data
 - QA validate
 - loom
