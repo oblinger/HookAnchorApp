@@ -1,4 +1,15 @@
 
+## Setup
+
+conda activate dvc
+
+
+cd ~/alg2
+
+## Plan 2024-10
+
+
+
 ## Todo
 - [ ] Implement Lazy Dat.loading
 - [ ] Implement multi-runner

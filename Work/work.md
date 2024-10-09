@@ -1,7 +1,6 @@
 .**NOW**. 
-!QA Fireball & Minutes
+^QA Fireball & Minutes 
 =Run NBA game
-Preston
 look at PRs
   Eval:  stats,^homo !gt20>run>chk
   [Fball](spot://fireball):	>Matias DRW
@@ -20,6 +19,7 @@ TEAM
   Robust Homo:
   
 ## TRACK
+^Preston 
 =GCP availability
  - patents
   [SW cort](https://www.notion.so/sportsvisio/HOMO-SW-integration-plan-77fb63f7cac7433bb0d2e2cd4d374e4b?pvs=4): Get plan

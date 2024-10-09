@@ -3,7 +3,7 @@
 
 - Induction
 - **Self-Supervised Learning**;;a training method where the supervisory signal, the element that tells the model if its correct or wrong, is given by the training data without requiring human labeling.
-<!--SR:!2024-09-27,3,250-->
+<!--SR:!2024-10-10,2,230-->
 - [[RLHF]] - 
 
 

@@ -47,7 +47,7 @@
         [[MED]]: [[MED Doctors]],	[[MED Exercise]],	
         [[COMS]]: 
             [[COM Msg]]: 
-    [[SYS]]: [[SYS Misc]],	[[OBS]],	[[Closet]],	[[SYS Hacks]],	[[Spot]],	
+    [[SYS]]: [[HACK]],	[[SYS Misc]],	[[OBS]],	[[Closet]],	[[SYS Hacks]],	[[Spot]],	
         [[KM]]: [[Hook System]],	
         [[MAC]]: [[MAC Apps]],	
     [[Work]]: 

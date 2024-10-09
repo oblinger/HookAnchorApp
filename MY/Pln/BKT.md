@@ -10,7 +10,7 @@ MIT: [[SV]], [[NJ]], [[SELF]], [[Fun]],
 [[Self]]: [[Home]]: ants, basement, liv
 [[Self]]: Sell Car
 [[Med]]: Diet
-[[Fin]]: Schwab Acct, Car
+[[Fin]]: Schwab Acct, Car, Margin
 
 
 ## >
