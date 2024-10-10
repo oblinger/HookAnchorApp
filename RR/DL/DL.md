@@ -20,7 +20,8 @@
   DELS: ,
   , [[RLHF]],
   DELS: ,[[RLHF]],
-  , [[Tensor]], 
+  , [[Tensor]],
+  , [[DL Strategy]], [[DL Theory]], 
   DELS: [[Coursera Notes]],[[RLHF]],[[RLHF Reinforcement Learning from Human Feedback]], [[Coursera Notes]],
 
 [[Tensor]] 
