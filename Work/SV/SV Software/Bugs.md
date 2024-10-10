@@ -1,6 +1,7 @@
+- [Bugs](https://software-engineering-team.atlassian.net/jira/dashboards/10022) 
 
-- [[Bug Board Webpage]] - 
-- [[Bug Actual List Webpage]] - 
+- [[Bug Board Webpage]] - broken
+- [[Bug Actual List Webpage]] - broken
 
 TODO
 - Jasu boards

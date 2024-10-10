@@ -1,4 +1,5 @@
 .**NOW**. 
+!newsletter show min progress
 ^QA Fireball & Minutes 
 =Run NBA game
 look at PRs
