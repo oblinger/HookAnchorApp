@@ -1,3 +1,4 @@
+- lagrangian
 - try Codium, Cursor, GPT alternative
 
 - USB camera & light

@@ -1,3 +1,4 @@
+- deep work schedule
 - christ tree
 - [[Journaling]] 
 -  quarterly goals
