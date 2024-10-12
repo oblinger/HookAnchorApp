@@ -1,7 +1,23 @@
 
-## BUCKETS
+# LOG
 
-SUMMARY 2023-Q3
+### 2024-10-11  More MIT.  Tight Day.
+
+
+07	 WAKE		Orienting my day
+07: COMS		Quick sync of slack and emails	
+08	 GROUP
+08: TOPIC		Morning Topic Discussions
+09	 CHEW		Either 1on1 discussions or work Proj
+10	 BURST	First project burst of the day
+11	 EAT		Breakfast, reading, org stuff
+12	 WORK1	First work block
+01: GAP
+02	 WORK2	Second work block
+03: RUN
+04: HOME
+
+### 2023-09-00 - SUMMARY 2023-Q3
 
 10h			from 7:30am to 5:30pm
 - 2h - COMS	-  Meetings, Zoom, Huddle, Phone
@@ -35,7 +51,7 @@ SUMMARY 2023-Q3
 10:00 Bed	- 
 
 
-# LOG
+
 
 ### 2024-03-29  Tightly scheduled morning
 

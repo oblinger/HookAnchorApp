@@ -54,8 +54,8 @@ https://www.yelp.com/biz/cotogna-san-francisco?osq=Cotogna
 - 
 
 ### Marrakech Magic Theater
-- https://www.yelp.com/biz/marrakech-magic-theater-san-francisco-5
 - https://www.sanfranciscomagictheater.com/
+- https://www.yelp.com/biz/marrakech-magic-theater-san-francisco-5
 
 ### Robin (michelin; japanese; omakase)
 - https://guide.michelin.com/us/en/california/san-francisco/restaurant/robin

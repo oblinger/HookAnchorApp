@@ -5,6 +5,7 @@ n:: no prefix.	Dated entries without any typing prefix
 
 | Date       | File                                        | Notes                                                                                                                             |
 | ---------- | ------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------- |
+| 2024-10-11 | [[Daily Schedules]]                             | More MIT.  Tight Day.                                                                                                             |
 | 2024-10-07 | [[Friday]]                                      | BIX                                                                                                                               |
 | 2024-10-07 | [[Friday]]                                      | Foreign Cinema                                                                                                                    |
 | 2024-10-06 | [[Diet]]                                        | Whole Food Plant Based -ish diet.                                                                                                 |
@@ -315,6 +316,7 @@ n:: no prefix.	Dated entries without any typing prefix
 | 2023-09-05 | [[CVP]]                                         | older stuff                                                                                                                       |
 | 2023-09-04 | [[@Circle]]                                     | Hiring Timeline                                                                                                                   |
 | 2023-09-01 | [[2023-07 Director of SW]]                      | ++Raul                                                                                                                            |
+| 2023-09-00 | [[Daily Schedules]]                             | SUMMARY 2023-Q3                                                                                                                   |
 | 2023-08-29 | [[@Jason Syversen]]                             | Velocity                                                                                                                          |
 | 2023-08-29 | [[@Jason Syversen]]                             | A-round Deliverables                                                                                                              |
 | 2023-08-25 | [[2023-07 Director of SW]]                      | Head - Nico                                                                                                                       |

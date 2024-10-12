@@ -4,11 +4,12 @@
 ```python
 
 import torch
-
-a = torch.tensor([[11, 12, 13], [21, 22, 23]]) # rows together
+t = [[11.0, 12.0, 13.0], [21.0, 22.0, 23.0]]
+a = torch.tensor(t, requires_grad=True) # rows together
 a.shape == a.size() == torch.Size(2, 3)
 a.dtype == torch.int64
 a.numel() == 6
+a.view(3, 2) # Reshape
 a[row, col] // a [row:row, col]
 
 a = torch.tensor([1,2,3])
@@ -42,6 +43,13 @@ dataset = dsets.MNIST(root = './data', download = True, transform = xform)
 
 from torch.nn import Linear
 
+class Data(Dataset):
+	def __getitem__(self, idx): ...
+	def __len__(self): ...
+
+for x,y in DataLoader(dataset = Data(), batch_size = 1):
+
+four chairs, zazie
 
 
 ```
