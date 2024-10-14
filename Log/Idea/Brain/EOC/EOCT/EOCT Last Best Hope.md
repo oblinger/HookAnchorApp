@@ -1,7 +1,7 @@
 
 
 - [[EOCT Argument Short]] 
-- [[EOCT What Happens Now]] 
+- [[EOCP What Happens Now]] 
 
 ## = Starting conclusions
 - CANNOT AVERT THE COMING OF DOMINATING-AI

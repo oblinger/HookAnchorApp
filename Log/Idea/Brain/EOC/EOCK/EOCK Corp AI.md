@@ -8,7 +8,7 @@
 
 **Corp AI** 
 
-Key corporations, following their profit motive, will grow and deeply integrate an AI into their operations such that the goals of, power of, and resources of both the corporation and the AI become completely co-mingled.
+Thesis: Key corporations, following their profit motive, will grow and deeply integrate an AI into their operations such that the goals of, power of, and resources of both the corporation and the AI become completely co-mingled.
 
 The AI has a representation of itself, its corp, and relevant goals held by itself as well as the many people in the org, especially including the goals of the CEO.
 

@@ -13,7 +13,7 @@
   DELS: [[EOCK Civilizing Tendency]], 
 
 
-
+[[EOCK Machine Centric Coms]] 
 
 
 

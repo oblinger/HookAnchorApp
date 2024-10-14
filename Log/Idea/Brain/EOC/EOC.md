@@ -3,16 +3,12 @@
   [[EOCB]]:	Books
   [[EOCI]]:	Ideas
   [[EOCK]]:	Key Ideas
+  [[EOCP]]:	Paths
   [[EOCT]]:	Topics
-  :	Book
-  :	Ideas
-  :	KEY Ideas
-  :	Topics
-  -
-  , , , ,  [[FF-prize]], [[Paths]], [[EOC Log]],
-  ADDS:   , , , , ,
-  ,   
-  DELS: [[EOCA]], [[EOCB]], [[EOCI]], [[EOCK]], [[EOCT]],[[eoc-atlas]], [[eoc-formal]], [[eoc-impl]], 
+  [[FF-prize]], [[EOC Log]],
+
+
+  DELS: [[eoc-atlas]], [[eoc-formal]], [[eoc-impl]], 
 
 
 
@@ -321,7 +317,7 @@
 
 
 
-  DELS: [EOCB](spot://eocb), [EOCK](spot://eock), [[EOC Log]], [EOCT](spot://eoct), [[Paths]], 
+  DELS: [EOCB](spot://eocb), [EOCK](spot://eock), [[EOC Log]], [EOCT](spot://eoct), [[EOCP]], 
 
 [[EOCB]] 
 :: [[Log/Idea/Brain/EOC/Untitled]]
@@ -332,7 +328,7 @@
 
 :: [[EOCA Publish]],   [[EOCI Cannot Stop Ourselves]],   [[EOCI Corp AI]],   [[EOCI Natural Selection]],   [[EOCK Alignment Wont Work]],   [[EOCK Apex Predator]],   [[EOCK Cannot Stop Ourselves]],   [[EOCK Last Best Hope]],   [[EOCK Loop Closing]],   [[EOCK Natural Selection]],   [[EOCK Nature of AI Progress]],   [[Log/Idea/Brain/EOC/Untitled]]
 
-:: [[EOC IDEAS]],   [[EOC Log]],   [[EOCT Last Best Hope]],   [[EOCA Root]],   [[EOCA]],   [[EOCB End Run -- Cyber Model]],   [[EOCB LimitsOnAlignment]],   [[EOCB SandboxFutility]],   [[EOCI Alignment as Mind Slavery]],   [[EOCI Consciousness]],   [[EOCK Corp AI]],   [[EOCI Digital Native]],   [[EOCI Leviathan]],   [[EOCI ProblemOfQualia]],   [[EOCT Argument Short]],   [[EOCT Argument]],   [[EOCT Plausible Paths]],   [[EOCT Prime Path]],   [[EOCT Subjective Aspects of Consciousness]],   [[EOCT Ways Intelligence Will Be Super]],   [[EOCT What Happens Now]],   [[FF-prize]],   [[Paths]]
+:: [[EOC IDEAS]],   [[EOC Log]],   [[EOCT Last Best Hope]],   [[EOCA Root]],   [[EOCA]],   [[EOCB End Run -- Cyber Model]],   [[EOCB LimitsOnAlignment]],   [[EOCB SandboxFutility]],   [[EOCI Alignment as Mind Slavery]],   [[EOCI Consciousness]],   [[EOCK Corp AI]],   [[EOCI Digital Native]],   [[EOCI Leviathan]],   [[EOCI ProblemOfQualia]],   [[EOCT Argument Short]],   [[EOCT Argument]],   [[EOCT Plausible Paths]],   [[EOCP Prime Path]],   [[EOCT Subjective Aspects of Consciousness]],   [[EOCT Ways Intelligence Will Be Super]],   [[EOCP What Happens Now]],   [[FF-prize]],   [[EOCP]]
 
 
 - [[j EOCI]] - Ideas

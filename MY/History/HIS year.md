@@ -2093,7 +2093,7 @@
 [[FAANG\|Fri Apr 22  2022]]  	[[FAANG#= Info]]  
 [[FAANG\|Fri Apr 22  2022]]  	[[FAANG#= People]]  
 [[@PayByGroup\|Thu Apr 21  2022]]  	[[@PayByGroup#LOG]]  
-[[Paths\|Thu Apr 21  2022]]  	[[Paths#2022-03-19 - VC Areas]]  
+[[EOCP\|Thu Apr 21  2022]]  	[[EOCP#2022-03-19 - VC Areas]]  
 [[DocMac\|Thu Apr 21  2022]]  	[[DocMac#= INFO]]  
 [[KBD Shortcuts\|Thu Apr 21  2022]]  	[[KBD Shortcuts#= OLD GLOBAL =]]  
 [[Weekly\|Thu Apr 21  2022]]  	[[Weekly#2022-04-11]]  

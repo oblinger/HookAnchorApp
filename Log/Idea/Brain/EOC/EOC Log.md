@@ -1,3 +1,9 @@
+
+### 2024-10-13  Decomposing Agency
+
+https://strangecities.substack.com/p/decomposing-agency
+
+
 ### 2024-09-13  Example of a 'auto scientist'
 Salvatore, my guess is that an LLM ecosystem that is trained specifically on successful experimentation can be built over years with a tight collaboration between researchers at a major Pharma and their AI.  
 

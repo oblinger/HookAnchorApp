@@ -1,11 +1,11 @@
 .[[EOCA]].
-  :
   [[EOCA Civilizing tendency]]:
   [[EOCA Definitions]]:
   [[EOCA Publish]]:
   [[EOCA Root]]:
   [[EOCA The Writing Is On The Wall]]:
-  :
+
+
   DELS: [[EndOfMan BookOutline]], [[EOCB Book Snipits]], 
 
 
@@ -344,11 +344,11 @@
 
 :: [[EOCK Corp AI]],   [[EOCI Digital Native]],  
 
-- [[EOCT Plausible Paths]],   [[EOCT What Happens Now]],   [[EOCT Prime Path]]
+- [[EOCT Plausible Paths]],   [[EOCP What Happens Now]],   [[EOCP Prime Path]]
 ## >
 ORG PAGES
 - [[EOCA Root]] 
-- [[Paths]] 
+- [[EOCP]] 
 
 = [[EOC Log]] 
 ACTIVE
