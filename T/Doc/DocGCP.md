@@ -1,12 +1,13 @@
 
 # HowTo
 
-## Permissions
+## Start
+
+### Setup Permissions
 https://console.cloud.google.com
 ! AI-Worker-Launcher		// Our project
 ! I AM & Admin
 
-## Setup
 ### Setting Up google-cloud-sdk
 
 
@@ -23,9 +24,13 @@ https://cloud.google.com/sdk/docs/install
 		# this only ran after removing my RJ45 cable
 
 
-## Running SV instance
+### Run an SV instance
 
-	# Run Docker instance from "base-pipeline-runner"
+
+https://console.cloud.google.com
+-> 
+
+### Run Docker instance from "base-pipeline-runner"
 
 	# on local machine w/ gcloud CLI
 	gcloud compute ssh --ssh-flag="-A" --zone "us-east1-c" --project "ai-worker-launcher" "dan-base-pipeline"

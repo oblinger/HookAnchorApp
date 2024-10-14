@@ -1,13 +1,16 @@
-.**NOW**. 
-!newsletter show min progress
+.**NOW**.
+=track datasets being collected
+stream yolo
+= P2P process
 ^QA Fireball & Minutes 
-=Run NBA game
+= Run NBA game
 look at PRs
   Eval:  stats,^homo !gt20>run>chk
   [Fball](spot://fireball):	>Matias DRW
   [[Data]]:	
-  [DT](spot://dt): 	>VB, !Homo
+  [DT](spot://dt): 	^ [Homo](https://www.notion.so/sportsvisio/STORY-Homography-Data-Martin-4ab7ed5c5a6b46b1ac7de9821b3a5c76?pvs=4) 
   [Min](https://docs.google.com/document/d/1oaG7NB2fJ9THAtHcREX6yqrWg91wYEsof9zQNEInFFU/edit):	Alpha Testing
+  QA:	[QAmin](https://software-engineering-team.atlassian.net/jira/software/projects/AIT/boards/25?selectedIssue=AIT-1069), [QAfb](https://software-engineering-team.atlassian.net/jira/software/projects/AIT/boards/25?selectedIssue=AIT-1070) 
   
   [[2024-08 Backend Architect|Arch]]:	Jack Discuss
   [OKRs](https://docs.google.com/presentation/d/1v7Winy9DHxGuYh05_is8zH05ClJi0qclM698-pDXIgY/edit?pli=1#slide=id.g274b3e27e6b_0_0):	Q3 Results	

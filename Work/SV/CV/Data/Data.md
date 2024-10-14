@@ -1,5 +1,5 @@
 .[[Data]].
-  , [CV Data Tasks](spot://cvdatatasks), [Data Docs](spot://datadocs)
+  [Stories](spot://cvdatatasks), [Data Docs](spot://datadocs)
   , , [Data Tasks](spot://datatasks),
   , [Data Game Tracking](spot://datagametracking),
   , [Data Game Master List](spot://datagamemasterlist), 

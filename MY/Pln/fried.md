@@ -1,3 +1,4 @@
+- script to delete all terminal tabs except the top one
 - lagrangian
 - try Codium, Cursor, GPT alternative
 

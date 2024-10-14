@@ -29,3 +29,4 @@ cost landscape changing hiring
 - Hugging face ecosystem
 - LangChain or LlamaIndex
 
+[https://github.com/yancie-yjr/StreamYOLO](https://github.com/yancie-yjr/StreamYOLO) 

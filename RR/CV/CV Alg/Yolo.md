@@ -12,3 +12,4 @@ Detection of bounding within single.
 - Trains bounding coordinates of a box
 
 - [Yolo-v7](https://arxiv.org/abs/2207.02696) - 
+- [Stream YOLO]([https://github.com/yancie-yjr/StreamYOLO](https://github.com/yancie-yjr/StreamYOLO)) - 
