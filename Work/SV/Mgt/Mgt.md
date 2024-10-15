@@ -10,6 +10,14 @@ ask: sean, Jason, jack -- target for BB speedup
 
 # Log
 
+### 2024-10-14  weekly (never presented)
+
+- Progress on data collect and metrics.
+- Homography on master dev
+- progress on new color model
+- Standardized data pulling/pushing by name? e.g. gameset/bb/NORM/
+
+
 ### 2024-09-30  weekly
 
 - [ ] 

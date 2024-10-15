@@ -5,6 +5,8 @@ n:: no prefix.	Dated entries without any typing prefix
 
 | Date       | File                                        | Notes                                                                                                                             |
 | ---------- | ------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------- |
+| 2024-10-14 | [[Reflections]]                                 | MY PROBLEM & AN IDEA                                                                                                              |
+| 2024-10-14 | [[Mgt]]                                         | weekly (never presented)                                                                                                          |
 | 2024-10-13 | [[EOC Log]]                                     | Decomposing Agency                                                                                                                |
 | 2024-10-11 | [[Daily Schedules]]                             | More MIT.  Tight Day.                                                                                                             |
 | 2024-10-07 | [[Friday]]                                      | BIX                                                                                                                               |
@@ -43,6 +45,7 @@ n:: no prefix.	Dated entries without any typing prefix
 | 2024-09-10 | [[@Jason Syversen]]                             | Text of agreement                                                                                                                 |
 | 2024-09-09 | [[PQ]]                                          | Spraying for Ants                                                                                                                 |
 | 2024-09-09 | [[DAT]]                                         | New plan for integration.                                                                                                         |
+| 2024-09-09 | [[Reflections]]                                 | Went to 1/2 time at SV                                                                                                            |
 | 2024-09-09 | [[Mgt]]                                         | Weekly                                                                                                                            |
 | 2024-09-05 | [[@Nick Allen]]                                 | Jason Messaging                                                                                                                   |
 | 2024-09-05 | [[@Nick Allen]]                                 | SportsVisio cuts                                                                                                                  |
@@ -59,11 +62,13 @@ n:: no prefix.	Dated entries without any typing prefix
 | 2024-08-26 | [[2024-08 Backend Architect]]                   | Note Explaining The Job                                                                                                           |
 | 2024-08-25 | [[COM Newsletter]]                              |                                                                                                                                   |
 | 2024-08-23 | [[@James Neilson]]                              | chat about BB power users                                                                                                         |
+| 2024-08-22 | [[Reflections]]                                 | My Biggest Issue: Daily hours on MIT                                                                                              |
 | 2024-08-20 | [[@Sean O'Connor]]                              | Looking to the future                                                                                                             |
 | 2024-08-19 | [[@Alta Vista]]                                 | notes when we first went                                                                                                          |
 | 2024-08-19 | [[@Jason Syversen]]                             | Plans                                                                                                                             |
 | 2024-08-14 | [[Phone -old-]]                                 | Sell Acura                                                                                                                        |
 | 2024-08-14 | [[2024-05 Sell Acura]]                          | Sell Acura                                                                                                                        |
+| 2024-08-14 | [[Reflections]]                                 | Stressed & Procrastinating                                                                                                        |
 | 2024-08-11 | [[@Alexander Grosse]]                           | Veo Partnership Discussion                                                                                                        |
 | 2024-08-09 | [[Eli Firsts]]                                  | Gonna get married to Zoya                                                                                                         |
 | 2024-08-09 | [[@Softbank]]                                   | Prep for Softbank call                                                                                                            |

@@ -8,19 +8,6 @@
  [[DocAWS]] 
  - vet email
 ## TRACK
-[R]STUDENT
-FB GIF
- alpha channel from the fireball artist
-FILIP
- what to do
-JACK .25
- which ones
-FIREBALL
-  X: track tail
-EVAL   end2end
-  J: pick MinNorm
-HOMO 
-  format
 
 ### SOON
 ### Watch

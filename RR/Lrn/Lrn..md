@@ -1,3 +1,13 @@
+Analysis of Variance (ANOVA) 
+
+llms. more then generative
+pytortch
+skills. fast moving. ml research.  
+post grad researchers summaries on papers
+practitioners blogs
+cost landscape changing hiring
+
+
 
 - Diffusion
 - DL Specialization: Sequence Models (not yet started)

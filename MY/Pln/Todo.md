@@ -1,6 +1,10 @@
 - [[2024-05 Sell Acura|Car]] 
 - Open Schwab Account
 - Avanti: 
+- ahwanee hotel brunch 
+- 
+emile oster parenting podcast
+
 
 - [ ] [[MED.]] - [[MED VO2Max]] 
 - [ ] Call vanguard to move funds to new account

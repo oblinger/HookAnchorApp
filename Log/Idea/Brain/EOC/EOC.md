@@ -3,9 +3,11 @@
   [[EOCB]]:	Books
   [[EOCI]]:	Ideas
   [[EOCK]]:	Key Ideas
-  [[EOCP]]:	Paths
+  :	Paths
   [[EOCT]]:	Topics
   [[FF-prize]], [[EOC Log]],
+  , [[Paths]], 
+  DELS: [[EOCP]], 
 
 
   DELS: [[eoc-atlas]], [[eoc-formal]], [[eoc-impl]], 

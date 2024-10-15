@@ -1,4 +1,67 @@
 
+### 2024-10-14  MY PROBLEM & AN IDEA
+
+PROBLEM: Without strong focus, i can easily:
+- Spend 4 or so hours doing shallow work & Repeated tasks (like eating)
+- And spend 4 or so hours frittered away on non work (like browsing) each day
+- These leave scant hours for IMPORTANT and DEEP work
+
+SOLUTION:
+- Contain shallow work.  Plan few bursts.  Focus on quality over quantity.  
+- Enjoy the rest of your day.
+
+ONE APPROACH
+- 8	shallow.		Contain required shallow work from 8a-10a when possible
+- 10	Burst-1.		1hr burst 'till 11am
+- 11	Rest/Eat. 	
+- 12 Burst-2.		1.5hr
+- 1:	Lunch/Chew.
+- 3	Burst-3.		1hr
+- 4	Exercise.
+
+
+### 2024-09-09  Went to 1/2 time at SV
+
+The idea going 1/2 time is that 
+- I really WILL re-coup at least 1/3 time in order to job search
+- I will be able to keep Jason happy and look good
+- I will still be able to spend a bit of time getting more technical --modest time
+- I will be able to swing back to full time and stay at SV in the unlikely event that I want to do that
+
+mostly unclear if I can re-tool enough to change the kinds of jobs I can get.
+
+A little optimistic but also apprehensive about my upcoming job search
+
+### 2024-08-22  My Biggest Issue: Daily hours on MIT
+
+I am stressed on a daily basis, and I think the biggest stressor is lack of progress on my job search.  This is because I don't work on it.
+
+I really need to re-shape how I work so that I DO work on my MIT task both for work and for next job.
+
+UPSIDE: The good news is that this is an absolutely essential skill if I am to successfully make a transition to a strong next job.  
+
+DOWNSIDE:  And my big challenge is that I don't think I have ever been good at doing this
+### 2024-08-14  Stressed & Procrastinating
+
+Well I am procrastinating right now!
+
+I am stressed that 
+- Jason does not find full value from me at Sports Visio, AND 
+- I am going to have difficulty finding a good job in this market, AND 
+- I have missed the boat in doing research which I trained for and like doing.
+
+I don't think it is as bad as all of that.  I think I am painting an overly negative picture, 
+But emotionally this is the way things feel, and there is at least some truth the picture.
+
+As a result I am pushing things off,
+not getting to the most important stuff, and
+not working enough focused hours per day.
+
+**My plan**:
+
+Each day I need to put in at least 3 hours on key activities
+Never below 2 and trying to hit 4.
+
 
 
 

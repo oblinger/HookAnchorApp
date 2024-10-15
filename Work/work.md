@@ -1,30 +1,20 @@
 .**NOW**.
-=track datasets being collected
-stream yolo
-= P2P process
-^QA Fireball & Minutes 
-= Run NBA game
-look at PRs
-  Eval:  stats,^homo !gt20>run>chk
-  [Fball](spot://fireball):	>Matias DRW
-  [[Data]]:	
-  [DT](spot://dt): 	^ [Homo](https://www.notion.so/sportsvisio/STORY-Homography-Data-Martin-4ab7ed5c5a6b46b1ac7de9821b3a5c76?pvs=4) 
-  [Min](https://docs.google.com/document/d/1oaG7NB2fJ9THAtHcREX6yqrWg91wYEsof9zQNEInFFU/edit):	Alpha Testing
+  [DT](spot://dt): 	^ [Homo](https://www.notion.so/sportsvisio/STORY-Homography-Data-Martin-4ab7ed5c5a6b46b1ac7de9821b3a5c76?pvs=4), ^ [BB](https://www.notion.so/sportsvisio/STORY-BB-Data-105719d6f2bd809d9170c84a0c8d762d?pvs=4), 
+  [Min](spot:://AImin):	[Alpha](https://www.notion.so/sportsvisio/AI-MIN-Alpha-Testing-James-118719d6f2bd80bb8280fdeafac784f3?pvs=4), 
   QA:	[QAmin](https://software-engineering-team.atlassian.net/jira/software/projects/AIT/boards/25?selectedIssue=AIT-1069), [QAfb](https://software-engineering-team.atlassian.net/jira/software/projects/AIT/boards/25?selectedIssue=AIT-1070) 
+  [Fball](spot://fireball):	>Matias DRW; recording
+  Eval:  ^VALmin, !gt20>run>chk
   
-  [[2024-08 Backend Architect|Arch]]:	Jack Discuss
-  [OKRs](https://docs.google.com/presentation/d/1v7Winy9DHxGuYh05_is8zH05ClJi0qclM698-pDXIgY/edit?pli=1#slide=id.g274b3e27e6b_0_0):	Q3 Results	
-  [[DAT|DAT]]:	Get PR ready
+  look at PRs
+  P2P process
+  [[2024-08 Backend Architect|Arch]]:	Brian
   [[FIN.]]	Schwab
   [[NJ]]:	>[[War|War]], rewrite, mentor
   GCP:		[Brian plan](https://docs.google.com/spreadsheets/d/1W38uHew6aaqyeolKzbO9NbaA96Q-jzyDb7gYoUst0qw/edit?gid=0#gid=0). 
-TEAM
-  Color: 
-  Robust Homo:
   
 ## TRACK
-^Preston 
-=GCP availability
+  ^Preston 
+  =GCP availability
  - patents
   [SW cort](https://www.notion.so/sportsvisio/HOMO-SW-integration-plan-77fb63f7cac7433bb0d2e2cd4d374e4b?pvs=4): Get plan
   VidQ:		^Neg entropy gallery
@@ -32,6 +22,7 @@ TEAM
   Assess	> Assess plan for BB
 
 ## SOON [[mgt]] [[CVP]] 
+FILIP: ask him again?
 [[2023 CV team new agenda metrics]]:		/Create money metrics page
 [[DAT]]:			Dynamic Dat loading
 [[journaling]] 

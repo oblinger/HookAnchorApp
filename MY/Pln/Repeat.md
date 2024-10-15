@@ -1,6 +1,5 @@
-I spoke with Mery on monday regarding the process we are evolving to for QA & Alpha Testing on AI minutes.  We want successful QA tests before alpha testing.  We now have 10 validation games for AI minutes, @Mery as discussed should run at least 3 of these games thru our the end to end system for QA testing of minutes.  We should verify that we obtain the good results we have seen on our test data, so we can 
 
-
+[30sec](https://www.google.com/search?q=30+second+smile+toothbrush+between+%2460+and+%24300&sca_esv=2d1a5eec44dea9ce&udm=28&ei=v8YNZ7GcIbvB0PEP8YGX0QE&ved=0ahUKEwjx96Cvn4-JAxW7IDQIHfHAJRoQ4dUDCB8&uact=5&oq=30+second+smile+toothbrush+between+%2460+and+%24300&gs_lp=Egxnd3Mtd2l6LXNlcnAiLzMwIHNlY29uZCBzbWlsZSB0b290aGJydXNoIGJldHdlZW4gJDYwIGFuZCAkMzAwSOVFUNIaWOlCcAF4AZABAJgBP6ABrQKqAQE1uAEDyAEA-AEBmAIBoAIIwgIKEAAYsAMY1gQYR5gDAIgGAZAGBJIHATGgB8AG&sclient=gws-wiz-serp#ip=1) 
 
 | WEEKLY        |                                                                                                                                                                                |
 | ------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |

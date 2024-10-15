@@ -1,14 +1,10 @@
 
 .[[Diary]].
-  :
-  :
-  :
-  [[Reflections]]:
-  ADDS:   [[Jnl]],
+  [[Reflections]], [[Jnl]],
   ADDS:   ,
   DELS: [[Journal Old]], 
 
-
+[[Daily]] 
 
 
 
