@@ -2,14 +2,13 @@ n:: Stuff "to read"
 #set
 
 .[[ToRead]].
-  , [[Book To Read]], [[Podcasts To Listen To]], [[ToResearch]],
-  , ,
+  , [[Book To Read]], [[Podcasts To Listen To]], 
   , [[BOOK Research]], 
-  DELS: [[BOOK Research]],
-  DELS: [[BOOK Research]],[[Read Research]], 
 
 [[Book]]: [[BOOK Summaries]], [[BOOK Favorites]],
 
+
+- focusing [Gendlin](https://focusing.org/sixsteps) 
 ## TO READ
 - [read]( https://www.mckinsey.com/industries/agriculture/our-insights/winning-in-africas-agricultural-market) - africa
 - Alignment Forum, [Humane Tech](https://www.humanetech.com/podcast)  
@@ -30,7 +29,7 @@ OTHER Ideas:
 -  MAIN:        [WSJ](https://wsj.com),  [Seeking Alpha](https://seekingalpha.com),   [Feedly](https://feedly.com),  
 - BLOGS:      [Future Of Coding](https://futureofcoding.org/community),  
 - OTHERS:    [BBC](https://news.bbc.co.uk/),  [NY Times](https://www.nytimes.com/),  [CNN](https://edition.cnn.com/),  
-- LINKS:        [Book To Read](Book%20To%20Read.md),   [ToResearch](ToResearch.md)
+- LINKS:        [Book To Read](Book%20To%20Read.md),   [ToRead](ToRead.md)
 
 ## = MISC
 - [ ] [Mental Models List](https://medium.com/@yegg/mental-models-i-find-repeatedly-useful-936f1cc405d)    
@@ -199,3 +198,11 @@ https://elemental.medium.com/painful-sex-is-more-common-than-you-think-is-there-
 https://medium.com/better-marketing/be-more-persuasive-with-these-9-magic-phrases-939d20075fe5
 
 https://towardsdatascience.com/microservice-architecture-a-brief-overview-and-why-you-should-use-it-in-your-next-project-a17b6e19adfd
+
+
+
+
+### --- Barney Pell --- Frogs brain and eyes paper ---
+
+https://www.google.com/url?sa=t&source=web&rct=j&url=https://neuromajor.ucr.edu/courses/WhatTheFrogsEyeTellsTheFrogsBrain.pdf&ved=2ahUKEwjPrvH03czlAhXLjp4KHSWNCp0QFjACegQIAxAB&usg=AOvVaw0p93mkGMxN1XNAUGRNBMSd
+

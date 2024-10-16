@@ -1,2 +1,2 @@
-
+- find MGR courses/books to read
 - Fin plan for Merrill

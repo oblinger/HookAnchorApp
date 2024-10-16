@@ -1,6 +1,20 @@
 
 # LOG
 
+### 2024-10-15  Three burst Day
+
+
+07	maybe
+08	Meetings		Contain required shallow work from 8a-10a when possible
+09	Chew & 1on1	
+10	Burst-1		1hr burst 'till 11am
+11	Rest/Eat. 	
+12 Burst-2		1.5hr
+01:	Lunch/Chew.
+03	Burst-3		1hr
+04	Exercise.
+
+
 ### 2024-10-11  More MIT.  Tight Day.
 
 

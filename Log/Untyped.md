@@ -5,6 +5,7 @@ n:: no prefix.	Dated entries without any typing prefix
 
 | Date       | File                                        | Notes                                                                                                                             |
 | ---------- | ------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------- |
+| 2024-10-15 | [[Daily Schedules]]                             | Three burst Day                                                                                                                   |
 | 2024-10-14 | [[Reflections]]                                 | MY PROBLEM & AN IDEA                                                                                                              |
 | 2024-10-14 | [[Mgt]]                                         | weekly (never presented)                                                                                                          |
 | 2024-10-13 | [[EOC Log]]                                     | Decomposing Agency                                                                                                                |

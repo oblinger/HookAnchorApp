@@ -345,6 +345,7 @@ Tues 3:30p -
 
 ### 2022-07-07  Setting up Sonic internet service
 
+(see [[@sonic]]). 
 - Added pre-order for service.  likely going live in 2-6 months.
 - Freedom credit card.
 
@@ -353,6 +354,8 @@ They use either the:  EERO-6   or the EERO PRO for their service
 - preorder rollout.  2-6 months.
 $29.99 basic service - text/email tech support.  no email.  VPN.
 $39.99 with VPN and phone support
+
+[888-766-4233](tel:1-888-766-4233)
 
 
 

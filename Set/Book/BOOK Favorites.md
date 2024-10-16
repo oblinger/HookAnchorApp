@@ -79,6 +79,8 @@ BOOKS THAT WERE JUST OK
 I loved the society described and the concept of the proto-molecule, but the story had big plot holes that were frustrating.
 
 Begins with _"Leviathan Wakes,"_ this series blends space opera with hard science and complex political and societal themes, focusing on humanity's expansion into space.
+
+
 ### To Consider
 
 1. **"Red Mars" by Kim Stanley Robinson** - The first book in a trilogy about the colonization and terraforming of Mars, detailed with scientific and technical realism.
