@@ -1,4 +1,11 @@
 
+### 2024-10-16  Diaper man!
+
+No he came home and told me he wanted to put diapers on his body…. He wanted 3 of them.   Not sure why!  But I helped him put them on….
+
+And he said he was “diaper man”!
+
+
 
 ### 2024-08-09  Gonna get married to Zoya
 
