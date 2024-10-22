@@ -1,3 +1,6 @@
+### 2024-10-21  Focus on deep work hours & emotional stance & fun
+
+
 
 ### 2024-10-14  MY PROBLEM & AN IDEA
 

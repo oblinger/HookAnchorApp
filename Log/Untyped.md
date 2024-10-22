@@ -5,6 +5,7 @@ n:: no prefix.	Dated entries without any typing prefix
 
 | Date       | File                                        | Notes                                                                                                                             |
 | ---------- | ------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------- |
+| 2024-10-21 | [[Reflections]]                                 | Focus on deep work hours & emotional stance & fun                                                                                 |
 | 2024-10-16 | [[Eli Firsts]]                                  | Diaper man!                                                                                                                       |
 | 2024-10-15 | [[Daily Schedules]]                             | Three burst Day                                                                                                                   |
 | 2024-10-14 | [[Reflections]]                                 | MY PROBLEM & AN IDEA                                                                                                              |

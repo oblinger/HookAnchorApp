@@ -2,8 +2,9 @@ n:: Stuff "to read"
 #set
 
 .[[ToRead]].
-  , [[Book To Read]], [[Podcasts To Listen To]], 
-  , [[BOOK Research]], 
+  , [[Book To Read]], [[Podcasts To Listen To]],
+  , [[BOOK Research]],
+  , [[ToResearch]], 
 
 [[Book]]: [[BOOK Summaries]], [[BOOK Favorites]],
 

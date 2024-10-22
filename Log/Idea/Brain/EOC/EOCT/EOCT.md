@@ -5,8 +5,10 @@
   [[EOCT Ways Intelligence Will Be Super]],
   ,
   , [[EOCK Control]],
-  , [[EOCT Prime Path]], [[EOCT What Happens Now]], 
-  DELS: [[EOCP Prime Path]], [[EOCP What Happens Now]], 
+  , , ,
+  , [[EOCP Prime Path]], [[EOCP What Happens Now]], 
+  DELS: [[EOCP Prime Path]], [[EOCP What Happens Now]],
+  DELS: [[EOCP Prime Path]], [[EOCP What Happens Now]],[[EOCT Prime Path]], [[EOCT What Happens Now]], 
 
 
 

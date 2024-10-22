@@ -1,5 +1,8 @@
 
-## Setup
+## Setup/Status
+- Using branch feat_gcp for everything right now
+- dvc-dat is sym linked into alg2 on my machine
+- Runs in 'alg2' on in conda dvc
 
 conda activate dvc
 
@@ -11,6 +14,8 @@ cd ~/alg2
 
 
 ## Todo
+
+
 - [ ] Implement Lazy Dat.loading
 - [ ] Implement multi-runner
 - [x] Update mount docs; command
