@@ -4,13 +4,17 @@
 - dvc-dat is sym linked into alg2 on my machine
 - Runs in 'alg2' on in conda dvc
 
-conda activate dvc
 
-
-cd ~/alg2
 
 ## Plan 2024-10
 
+- fixes: register abstrct class method, use fn doc string
+- [ ] = Juan assesses dat.py & metrics.py (propose edits)
+- [ ] = Fresh metric branch w/ DAT imported
+- [ ] Dan updates dat & adds metrics => Runs game metrics on Norm1
+- [ ] Juan adds shot metric types => Basic game stats
+- [ ] PR
+- [ ] Martin Homo-metric-type; Greg adds shot & game metrics
 
 
 ## Todo
