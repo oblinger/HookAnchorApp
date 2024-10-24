@@ -255,6 +255,6 @@
 
 :: [[Google Dev]]
 
-:: [[Hackers]],   [[Highbrow]],   [[Presentations]]
+:: [[@Hackers]],   [[Highbrow]],   [[Presentations]]
 
-:: [[@Citibank]],   [[Misc/AMA/AMA]],   [[Anchors]],   [[Babysitting]],   [[Biking]],   [[Blockchain]],   [[JOB Compensation]],   [[Contacts Notes]],   [[Courses]],   [[Craps]],   [[Daily]],   [[SYS Disks]],   [[Effective Altruism]],   [[Games]],   [[Gifts]],   [[Misc/Glossary/Glossary]],   [[Gym]],   [[Misc/Hackers/Hackers]],   [[Misc/Highbrow]],   [[hiking]],   [[Hotels]],   [[House]],   [[Info]],   [[Karaoke]],   [[meditation]],   [[napa]],   [[Nomad]],   [[Old]],   [[PdfInfo]],   [[Player FM]],   [[Misc/Presentations/Presentations]],   [[Publications]],   [[Rental]],   [[Rssfeeds]],   [[SF]],   [[Search]],   [[Shop]],   [[Sleep With Me]],   [[Spirit]],   [[Misc/Startups/STARTUPS]],   [[Templates]],   [[test88]],   [[tickets]],   [[Travel Lst]],   [[Trip]],   [[test88]],   [[foob3]],   [[key code]]
+:: [[@Citibank]],   [[Misc/AMA/AMA]],   [[Anchors]],   [[Babysitting]],   [[Biking]],   [[Blockchain]],   [[JOB Compensation]],   [[Contacts Notes]],   [[Courses]],   [[Craps]],   [[Daily]],   [[SYS Disks]],   [[Effective Altruism]],   [[Games]],   [[Gifts]],   [[Misc/Glossary/Glossary]],   [[Gym]],   [[@Hackers]],   [[Misc/Highbrow]],   [[hiking]],   [[Hotels]],   [[House]],   [[Info]],   [[Karaoke]],   [[meditation]],   [[napa]],   [[Nomad]],   [[Old]],   [[PdfInfo]],   [[Player FM]],   [[Misc/Presentations/Presentations]],   [[Publications]],   [[Rental]],   [[Rssfeeds]],   [[SF]],   [[Search]],   [[Shop]],   [[Sleep With Me]],   [[Spirit]],   [[Misc/Startups/STARTUPS]],   [[Templates]],   [[test88]],   [[tickets]],   [[Travel Lst]],   [[Trip]],   [[test88]],   [[foob3]],   [[key code]]

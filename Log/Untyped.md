@@ -1016,7 +1016,7 @@ n:: no prefix.	Dated entries without any typing prefix
 | 2019-10-06 | [[OLD 201x Weekly]]                             | OCT PLAN                                                                                                                          |
 | 2019-10-00 | [[Bio]]                                         | Sales Deck bio                                                                                                                    |
 | 2019-09-30 | [[OLD 201x Weekly]]                             | WEEK - Forcing: M/C/S/W/R/F                                                                                                       |
-| 2019-09-26 | [[Hackers]]                                     | Application Details                                                                                                               |
+| 2019-09-26 | [[@Hackers]]                                    | Application Details                                                                                                               |
 | 2019-09-23 | [[OLD 201x Weekly]]                             | WEEK - AIdeck_v0; SalesSync; UFprintlists  (0%)                                                                                   |
 | 2019-09-18 | [[OLD 201x Weekly]]                             | WEEK - lex/patch -> path/flatten - C not locked                                                                                   |
 | 2019-09-09 | [[OLD 201x Weekly]]                             | WEEK - UF mixins                                                                                                                  |
