@@ -1,3 +1,4 @@
+- hackers
 - find MGR courses/books to read
 - Fin plan for Merrill
 - cleaner come
