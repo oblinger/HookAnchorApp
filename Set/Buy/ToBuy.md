@@ -1,5 +1,5 @@
-https://nunatakusa.com/dogs/247-dog-bivy-v2.html#/dog_bivy_size-medium_26_wide_x_20_deep/dog_bivy_fabrics-brilliant_blue_15d_dwr_ripstop/dog_bivy_insulation-3_season/dog_bivy_winter_cover-xs/stuff_sack-yes_please_include_a_stuff_sack/dog_bivy_foam_pad-xs
 
+- [x](https://nunatakusa.com/dogs/247-dog-bivy-v2.html#/dog_bivy_size-medium_26_wide_x_20_deep/dog_bivy_fabrics-brilliant_blue_15d_dwr_ripstop/dog_bivy_insulation-3_season/dog_bivy_winter_cover-xs/stuff_sack-yes_please_include_a_stuff_sack/dog_bivy_foam_pad-xs) 
 - glasses for sleep; https://truedark.com/shop/twilights/twilights-classic/?tap_s=3574386-196b75&ref=optimize
 - https://optimizeyourbiology.com/best-blue-blocking-glasses
 - 

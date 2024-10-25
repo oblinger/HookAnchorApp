@@ -1,17 +1,12 @@
 .[[RES]].
-  	[[Bio]], [RES Docx](spot://resdocx), [RES Master Folder](spot://resmasterfolder),
+  TOP:		[[RES.]], [[Bio]], [RES Docx](spot://resdocx), [RES Master Folder](spot://resmasterfolder),
   FACTS:	[[RES Src Info]]: [[RES Numbers]], [[RES Patents]], [[RES Proof Points]], [[RES References]],
   PARTS:	[[RES Star]], [[RES War]], [[RES War AI]],
-  [[RES Instant Design Story]],
+- [[RES Instant Design Story]],
 - [[2024-04-01 Resume Rewrite]],
 - [[RES Linked In]],
 - [Resume](spot://resume),
 - [[RES Job History]],
--
-  , ,
-  , [[RES.]], 
-  DELS: [[RES.]],
-  DELS: [[RES.]],[[RES Todo]], 
 
 
   DELS: [[Bio]],[[2024 Res Rewrite At a Glance]], [[2024 Resume]],[[2023 - Resume Samples]], [[Jared Master]], [[z2 - Linked In Module]], 

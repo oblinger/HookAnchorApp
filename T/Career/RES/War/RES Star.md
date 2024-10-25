@@ -7,22 +7,26 @@ Hired to fix quality, velocity, delivery, and personnel issues across Software a
 - Developed and implemented formalization SW life cycle
 - Worked to strategically reduce product scope to match dev resources while still delivering features required to drive sales.
 ==> Went from an "unshipable" product to deployments that routinely had zero high severity bugs.
-==> Raised $5M+ seed from Tier-1 VCs including Sapphire Ventures
+==> Raised $5M+ from Tier-1 VCs including Sapphire Ventures
 ==> Grew sales from thousands to hundreds of thousands 
 
 ### __
-#### __
+#### ...
 As a result we: raised over $4M in new funding, Grew sales from thousands to hundreds of thousands, formalized bi-monthly shipping of four products typically with zero high priority bugs in production across all
 ==> Transitioned to bi-monthly shipping of 4 products with >10x reduction in serious bugs
 
-#### __
+==> Raised $3M seed from Sapphire Ventures
+==> Grew sales from x to y ARR
+==> Transitioned to bi-monthly shipping of 4 products with >10x reduction in serious bugs
+
+
+#### star
 SPORTS VISIO Turn Around
 - S: $3M and 2years spent.  never shipped, never met deadline within factor of 2.
 - T: Right the ship, improve quality & velocity.
 - A: Layoffs, Descoping, Hires, Revamped all processes
 - R: Shipped.  Stable.  Bugs dropped immeasurably > ?3? quarterly.  
 
-#### __
 #### SITUATION - Late joining "founder" (>2 years) w/ lg equity & turn round mandate
 - Burnt $3M - no AI product, SW product was an unusable brick. 
 - Great CEO vision and investor relations but dumpster Fires EVERYWHERE in SW team.
@@ -51,10 +55,7 @@ SPORTS VISIO Turn Around
 	- Quarterly OKRs, tracked monthly
 	- Ad hoc **Dev Ops** --> Push2Prod flow + Cloud Formation
 
-==> Raised $3M seed from Sapphire Ventures
-==> Grew sales from x to y ARR
-==> Transitioned to bi-monthly shipping of 4 products with >10x reduction in serious bugs
-
+##### detailed actions
 
 - STRATEGIC
 	- **Key Strategic "Ingest" Gap** --> Owned solution analysis matrix & tasked ICs under my leads.
@@ -66,7 +67,7 @@ SPORTS VISIO Turn Around
 	- Created all execution processes:  Jira, CI-testing, Regression, Collaborative API planning 
 	- Systematic 
 
-#### No Jira (Low Planning)
+###### No Jira (Low Planning)
 Teams had not been doing any ticket tracking and were using spreadsheets
 - They had just hired an junior PM as I joined.
 - We had her start attending sprint planning meetings, initially she just documented activity using JIRA
@@ -75,14 +76,14 @@ Teams had not been doing any ticket tracking and were using spreadsheets
 
 
 ## ANALYTICS FIRE
-Founded and grew 50+ person clean energy company.
+Founded and grew 50+ person clean energy company.  Our 140+ projects included:
 ==> Developed, shipped, and managed firmware through cloud infrastructure controlling over $3B in various clean energy assets.  Projects include:
 
-**Instant Design** Built a computer-vision-based solar roof installation designer tool for a Fortune 1000 customer.
-==> Solution became “the largest single driver of new revenue growth” according to client.
+- A computer-vision-based solar-roof-installation design tool for our fortune 1000 customer.
+  ==> Became their “largest single driver of new revenue growth” as they transitioned to residential solar.
 
-**Residential Solar** -- Over 3 years, and 22 FTE we built majority tools managing entire residential solar life product lifecycle.
-==> Transitioned Sunpower from XXXX in residential solar in 20xx up to YYYY in 20yy, ultimately enabling sunpower to completely divest commercial solar in 20ZZ.
+- Over 3 years and 22 FTE we built majority of Sunpower's tools managing entire residential solar life product lifecycle.
+  ==> Transitioned from XXXX in residential solar in 20xx up to YYYY in 20yy, ultimately enabling a complete commercial divestiture and transition in 20ZZ.
 
 ### __
 #### Instant Design
@@ -101,7 +102,17 @@ Founded and grew 50+ person clean energy company.
 
 
 ## AEOLUS
-### Aeolus Bang Start
+
+Tapped following the Martian Robotics acquisition to deliver a two armed eldercare assistant robot.
+
+
+- Built 60+ engineering org from scratch with 40+ PhDs across 8-robotics-related disciplines.
+- Led 13-month "Hail Mary" from-scratch build of new dexterous robotic system
+  ==> presented in CES 2017
+  ==> raised $16M in follow on investment
+==> won contract to deploy 
+engineers) remotely distributed across 6 continents.
+#### star - Aeolus Bang Start
 - S: Cash rich, Short timeline, Unrealistic investors
 - T: Build team, Create Aeolus Robot OS, Deliver CES Prototype
 - A: Build 2 tiered mgt structure, AROS framework, and CES prototype
@@ -109,7 +120,6 @@ Founded and grew 50+ person clean energy company.
 - ==> Hired 40+ PhDs & 20+ Eng
 - ==> Raised over $16M ???
 - ==> Debuted autonomous two armed robot performing open-ended household tasks at CES
-
 
 ## MARTIAN
 

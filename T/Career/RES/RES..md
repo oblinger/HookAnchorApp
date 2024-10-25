@@ -1,6 +1,7 @@
 
+- [ ] [[RES Star]]: Create stars for
+
 - [ ] WAR Stories
-- [ ] STAR report
 - [ ] One Pager Resume
 - [ ] Update Full Resume with Sports Visio entry
 - [ ] PBG - Crunchbase
