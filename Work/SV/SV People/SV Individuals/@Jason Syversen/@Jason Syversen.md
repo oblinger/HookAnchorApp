@@ -218,6 +218,15 @@ DISCUSS
 
 # LOG
 
+### 2024-10-25  Matia's Value
+
+Matias:
+- 80% of scott
+- Arch
+- Better @careful &detail
+- Ownership experience
+- Not have done it all
+
 
 ### 2024-09-16  Brain's Value
 

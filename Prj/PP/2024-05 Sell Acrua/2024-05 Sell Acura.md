@@ -49,6 +49,14 @@ This year we took did $3000 in repairs, replacing all old rubber etc. in order t
 Edmonds lists $10,366 as its value for private sale, so I am putting it on the market for $9,500 just to speed its the sale.
 
 
+FROM MOM
+- They said to sign the back of the title and get it notarized sign. 
+- you have to sign the bill of sales to give me, 
+- the ability to sell and power of attorney and get that notarized. 
+Went to the courthouse yesterday and they said that the paperwork that we have is good. 
+- Whatever you have to sign and get it notarized and send it to me and then advertise the car 
+- When we sell the car, I will go to the courthouse with them. And they will notarize everything there and if it’s Ohio, I have to go there.
+
 ### 2024-09-14  from GPT and web
 
 http://dmv.dc.gov/sites/default/files/dc/sites/dmv/publication/attachments/Title_Temporary_Tag_Application.pdf

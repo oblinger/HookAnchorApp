@@ -7,6 +7,13 @@
 
  [[DocAWS]] 
  - vet email
+
+- Mem Usage
+- Game clipping
+- info
+	- GCP template name
+	- Branch name
+	- commit number
 ## TRACK
 
 ### SOON
