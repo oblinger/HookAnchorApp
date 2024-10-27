@@ -1,5 +1,5 @@
 km copy entries
-
+- spot --delete not found as a spotlitght command.  Also it does not seem to have any effect
 
 - [ ] email notification comes in before message!
 - [ ] Figure out notifications 

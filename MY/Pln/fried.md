@@ -1,11 +1,7 @@
-- spot --delete not found as a spotlitght command.  Also it does not seem to have any effect
+
 
 - - loom
-
-
 - try Codium, Cursor, GPT alternative
-
-
 - fin flow
 - fix easy passwords
 - change PW
@@ -13,8 +9,6 @@
 - look at videos from Eli; consider merging apple videos
 - Research how "Creatinin" relates to logevity
 - [ ] budget big transfers list	
-
-
 
 Clean up spotify
   ; named music channels:  mus Chill mus Class 

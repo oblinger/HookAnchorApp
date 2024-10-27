@@ -34,7 +34,7 @@
 ## Experiment Tracking
 
 [MLflow](https://mlflow.org/);;; Experiment Tracking - an open-source tool that helps you manage core parts of the machine learning lifecycle. It is generally used for experiment tracking, but you can also use it for reproducibility, deployment, and model registry. You can manage the machine learning experiments and model metadata by using CLI, Python, R, Java, and REST API.
-<!--SR:!2024-09-27,3,250!2024-10-10,2,230-->
+<!--SR:!2024-09-27,3,250!2024-11-01,5,230-->
 
 [Comet ML](https://www.comet.com/site/);;; Experiment Tracking - a platform for tracking, comparing, explaining, and optimizing machine learning models and experiments. You can use it with any machine learning library, such as Scikit-learn, Pytorch, TensorFlow, and HuggingFace.
 <!--SR:!2024-09-25,1,230!2024-09-25,1,230-->
@@ -51,7 +51,7 @@
 <!--SR:!2024-10-10,2,230!2024-09-25,1,230-->
 
 [Kedro](https://kedro.org/);;; ML Workflow - a workflow orchestration tool based on Python. You can use it for creating reproducible, maintainable, and modular data science projects. It integrates the concepts from software engineering into machine learning, such as modularity, separation of concerns, and versioning.
-<!--SR:!2024-09-25,1,230!2024-10-09,1,210-->
+<!--SR:!2024-10-29,2,230!2024-10-09,1,210-->
 
 [Pachyderm](https://www.pachyderm.com/);;; ML Workflow - automates data transformation with data versioning, lineage, and end-to-end pipelines on Kubernetes. You can integrate with any data (Images, logs, video, CSVs), any language (Python, R, SQL, C/C++), and at any scale (Petabytes of data, thousands of jobs).
 <!--SR:!2024-10-10,2,230!2024-09-25,1,230-->
@@ -59,13 +59,13 @@
 ## Data Pipelining
 
 [Data Version Control](https://dvc.org/);;; Data Pipelining - an open-source and popular tool for machine learning projects. It works seamlessly with Git to provide you with code, data, model, metadata, and pipeline versioning.
-<!--SR:!2024-09-28,4,270!2024-09-25,1,230-->
+<!--SR:!2024-09-28,4,270!2024-10-28,1,210-->
 
 LakeFS;;; Data Pipelining -  an open-source scalable data version control tool that provides a Git-like version control interface for object storage, enabling users to manage their data lakes as they would their code. With LakeFS, users can version control data at exabyte scale, making it a highly scalable solution for managing large data lakes.
 <!--SR:!2024-09-25,1,230!2024-09-25,1,230-->
 
 [AirFlow](https://airflow.apache.org);;; Authors, Monitors, Schedules workflows
-<!--SR:!2024-09-25,1,230!2024-09-25,1,230-->
+<!--SR:!2024-10-28,1,210!2024-09-25,1,230-->
 
 ## Feature Stores
 
@@ -80,7 +80,7 @@ LakeFS;;; Data Pipelining -  an open-source scalable data version control tool t
 ## Model Deployment
 
 [Kubeflow](https://www.kubeflow.org/docs/);;; Model Deployment - makes machine learning model deployment on Kubernetes simple, portable, and scalable. You can use it for data preparation, model training, model optimization, prediction serving, and motor the model performance in production. You can deploy machine learning workflow locally, on-premises, or to the cloud. In short, it makes Kubernetes easy for data science teams.
-<!--SR:!2024-10-16,8,250!2024-09-25,1,230-->
+<!--SR:!2024-11-24,28,270!2024-09-25,1,230-->
 
 [BentoML](https://www.bentoml.com/);;; Model Deployment - makes it easy and faster to ship machine learning applications. It is a Python-first tool for deploying and maintaining APIs in production. It scales with powerful optimizations by running parallel inference and adaptive batching and provides hardware acceleration.
 <!--SR:!2024-09-27,3,250!2024-10-09,1,210-->
@@ -95,10 +95,10 @@ LakeFS;;; Data Pipelining -  an open-source scalable data version control tool t
 ## End to End ML Ops Platforms
 
 [Amazon Web Services SageMaker](https://aws.amazon.com/sagemaker/mlops/?sagemaker-data-wrangler-whats-new.sort-by=item.additionalFields.postDateTime&sagemaker-data-wrangler-whats-new.sort-order=desc);;; ML Op Framework - a one-stop solution for MLOps from Amazon. You can train and accelerate model development, track and version experiments, catalog ML artifacts, integrate CI/CD ML pipelines, and deploy, serve, and monitor models in production seamlessly.
-<!--SR:!2024-09-27,3,250!2024-09-27,3,250-->
+<!--SR:!2024-11-04,8,250!2024-09-27,3,250-->
 
 [DagsHub](https://dagshub.com/);;; ML Op Framework - a platform made for the machine learning community to track and version the data, models, experiments, ML pipelines, and code. It allows your team to build, review, and share machine-learning projects.
 <!--SR:!2024-09-25,1,230!2024-09-25,1,230-->
 
 [Iguazio MLOps Platform](https://www.iguazio.com/platform/);;; ML Op Framework - an end-to-end MLOps platform that enables organizations to automate the machine learning pipeline from data collection and preparation to training, deployment, and monitoring in production. It provides an open ([MLRun](https://github.com/mlrun/mlrun)) and managed platform.
-<!--SR:!2024-09-27,3,250!2024-09-25,1,230-->
+<!--SR:!2024-09-27,3,250!2024-10-28,1,210-->

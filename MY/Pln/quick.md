@@ -1,3 +1,4 @@
+- snack in bag
 - hackers
 - find MGR courses/books to read
 - Fin plan for Merrill
