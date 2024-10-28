@@ -4,7 +4,7 @@
    [[MGR Leadership]], [[MGR Meetings]], [[MGR Negotiations]], [[MGR Plan]], [[MGR Product]], [[My mgr NOTES]],
   , [[MGR Architecture Diagrams]], 
 
-[[MGR Architecture Diagrams]], [[test32]], 
+[[MGR Architecture Diagrams]], [[test32]], [[test33]], 
 :: [[MGR Annual Review]],   [[MGR Plan]],   [[MGR Leadership]],   [[MGR Meetings]],   [[My mgr NOTES]]
 
 :: [[IOS guys]]
