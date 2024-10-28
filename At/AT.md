@@ -95,7 +95,8 @@
   , [[@Ahmad Tahir (Graphic Designer)]],
   , [[@Ahmad Tahir (Graphic Designer)]],
   , [[@Ahmad Tahir (Graphic Designer)]],
-  , [[@Ahmad Tahir (Graphic Designer)]], 
+  , [[@Ahmad Tahir (Graphic Designer)]],
+  , [[@Ahmad Tahir (Graphic Designer)]], [[@Sonic]], 
   DELS: [[Graphic Designer - Ahmad Tahir]],
 
 

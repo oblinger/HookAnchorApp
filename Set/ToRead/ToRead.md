@@ -4,7 +4,8 @@ n:: Stuff "to read"
 .[[ToRead]].
   , [[Book To Read]], [[Podcasts To Listen To]],
   , [[BOOK Research]],
-  , [[ToResearch]], 
+  , ,
+  DELS: [[ToResearch]], 
 
 [[Book]]: [[BOOK Summaries]], [[BOOK Favorites]],
 

@@ -2,9 +2,10 @@
   [[ML Alg]],
   [[Learning]], [[ML Datasets]], [[ML Eng]], , [[Neural]],
   , , , ,
-  , [[ML Op Tools]], 
+  , [[ML Op Tools]],
   DELS: [[ML Op Tools]],
-  DELS: [[ML Op Tools]],[[BL]], [[ML Ops]], [[ML Tools]], 
+  , [[ML Notation]], 
+  DELS: [[ML Op Tools]],[[BL]], [[ML Ops]], [[ML Tools]],
 
 
 

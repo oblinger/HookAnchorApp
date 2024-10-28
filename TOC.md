@@ -10,7 +10,7 @@
         [[ML]]: 
         [[DL]]: [[DL Alg]],	
         [[Systems]]: 
-    [[T]]: [[Trash]],	
+    [[T]]: [[Trash]],	[[Tag]],	
         [[Misc]]: [[STARTUPS]],	[[Test88]],	[[Old]],	[[SF]],	[[Biking]],	
             [[Presentations]]: 
             [[House]]: 
@@ -43,7 +43,6 @@
         [[Legal]]: [[2023 Legal SV]],	
             [[2017 Legal Ob Labs]]: 
             [[2023 Legal NDA - AF]]: 
-        [[Tag]]: 
         [[MED]]: [[MED Doctors]],	[[MED Exercise]],	
         [[COMS]]: 
             [[COM Msg]]: 
