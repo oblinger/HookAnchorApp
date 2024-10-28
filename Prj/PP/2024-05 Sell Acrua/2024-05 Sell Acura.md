@@ -3,6 +3,10 @@
 
 - car call DC; get docs for mom
 
+TITLE2: Sign
+BofSale: Sign/Date
+POA: Sign/Date
+
 
 ### 2024-09-25  The plan
 

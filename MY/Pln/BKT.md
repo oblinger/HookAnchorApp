@@ -25,6 +25,13 @@ TOP ORGANIZING VIEWS
 - [View Gap](spot://view~gap) 		[[Fried]] 		[[MY/Pln/HACK/HACK]]		[[Gap]]
 
 ## BKT TREE
+### 2024-10-27  buckets
+
+[[Self]]:	Run, 
+[[Home]]:	Car, Date, Basement
+
+
+
 ### 2021 
 ##### THINKING 
 ###### DEEPDAN - What would I go deep on?
