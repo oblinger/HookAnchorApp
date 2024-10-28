@@ -30,7 +30,8 @@
             [[Diary]]: 
                 [[Jnl]]: 
         [[Courses]]: [[Highbrow]],	
-        [[MGR]]: [[MGR Docs]],	
+        [[MGR]]: 
+            [[MGR Docs]]: 
             [[Hire]]: 
                 [[INTERVIEW]]: 
                 [[Hire Post]]: 

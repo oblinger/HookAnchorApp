@@ -1,9 +1,10 @@
 .[[MGR Docs]].
   [[MGR AI Planning]],
   DOCS: [[MGR Annual Review]],
-   [[MGR Leadership]], [[MGR Meetings]], [[MGR Negotiations]], [[MGR Plan]], [[MGR Product]], [[My mgr NOTES]], 
+   [[MGR Leadership]], [[MGR Meetings]], [[MGR Negotiations]], [[MGR Plan]], [[MGR Product]], [[My mgr NOTES]],
+  , [[MGR Architecture Diagrams]], 
 
-[[MGR Architecture Diagrams]] 
+[[MGR Architecture Diagrams]], [[test32]], 
 :: [[MGR Annual Review]],   [[MGR Plan]],   [[MGR Leadership]],   [[MGR Meetings]],   [[My mgr NOTES]]
 
 :: [[IOS guys]]

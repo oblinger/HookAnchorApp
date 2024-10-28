@@ -5,9 +5,10 @@
   , [ORG Note](spot://orgnote),
   , [[@Merrill]], [[@Vanguard]],
   , ,
-  , [[@Meta]], 
+  , [[@Meta]],
   DELS: [[@Meta]],
-  DELS: [[@Meta]],[[@Facebook-Meta]], 
+  , [[@Hackers]], 
+  DELS: [[@Meta]],[[@Facebook-Meta]],
 
 .[[Org]].
   :
