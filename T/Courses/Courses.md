@@ -1,6 +1,9 @@
 .[[Courses]].
-  ADDS:   [[UX Course at 500]],
-  ADDS:   [[Highbrow]], [[Notes from 500]], [[UX]],
+  [[UX Course at 500]],
+  [[Highbrow]], [[Notes from 500]], [[UX]],
+  ,
+  , [[Never Search Alone]], 
+  DELS: [[Never Search Alone]],
 
 
 

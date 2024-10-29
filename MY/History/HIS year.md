@@ -1,4 +1,6 @@
 
+[[2023-W28\|Wed Jul 26  2023]]  	[[2023-W28#2022-W28]]  
+[[2023-W29\|Wed Jul 26  2023]]  	[[2023-W29#2023-W29]]  
 [[2023-W30\|Wed Jul 26  2023]]  	[[2023-W30#2023-W30]]  
 [[ELI\|Fri Jul 7  2023 ]]  	[[ELI#LOG]]  
 [[Eli Activities\|Fri Jul 7  2023 ]]  	[[Eli Activities#Soccer]]  

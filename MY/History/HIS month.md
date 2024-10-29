@@ -1,4 +1,6 @@
 
+[[Now\|Wed Sep 4  2024 ]]  	[[Now#TRACK]]  
+[[now\|Wed Sep 4  2024 ]]  	[[now#TRACK]]  
 [[Jnl\|Wed Sep 4  2024 ]]  	[[Jnl#2024-09-03  My Strengths]]  
 [[2024-09-03 Staffing Stuff\|Wed Sep 4  2024 ]]  	[[2024-09-03 Staffing Stuff# Current salaries]]  
 [[2024-09-03 Staffing Stuff\|Wed Sep 4  2024 ]]  	[[2024-09-03 Staffing Stuff#Deltas]]  

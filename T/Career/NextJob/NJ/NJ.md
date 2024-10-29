@@ -1,8 +1,9 @@
 .[[NJ]].	  [[Lrn]],
-  TOP:	[[NJ.]], [[NJ Todo]], [[NJ Log]], 
+  TOP:	[[NJ.]], [[NJ Todo]], [[NJ Log]],
   DOCS:	[NJ Slide](spot://njslide), [[NJ Rewrite]], [[NJ Pyramid]],
   OTHR:	[[NJ24 Framing]], [[NJ Read]],
-  
+  , [NJ Slides](spot://njslides), 
+
 
 
   DELS: [[NJ Log]], [[RES]],
