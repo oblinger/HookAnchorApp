@@ -5,6 +5,7 @@ n:: no prefix.	Dated entries without any typing prefix
 
 | Date       | File                                        | Notes                                                                                                                             |
 | ---------- | ------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------- |
+| 2024-10-28 | [[Mgt]]                                         | weekly                                                                                                                            |
 | 2024-10-27 | [[BKT]]                                         | buckets                                                                                                                           |
 | 2024-10-25 | [[@Jason Syversen]]                             | Matia's Value                                                                                                                     |
 | 2024-10-21 | [[Reflections]]                                 | Focus on deep work hours & emotional stance & fun                                                                                 |

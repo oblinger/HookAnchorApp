@@ -12,7 +12,28 @@
 I am going to pick you and take you to a room
 you are not in trouble, you are good kid, you are just having a hard time.
 
+## RESISTANCE RESPONSE
 
+### From Mamie/EDP
+- SHARE & ASK: remain calm and share what you are observing and then ask him what tool he needs to calm down
+- HUMOR:  Use humor to lighten the situation and exaggerate trying to solve a problem
+- MODEL: model, model, model. Let Eli hear you make a mistake and engage in positive self talk as you work through the problem
+- BREATHING:  breathing tools can be used to help calm breathing so a conversation can happen
+- CORNER:  a calm corner at home can be a place for Eli to go when he is upset at home
+- GIVE CHOICE:  give Eli a  structured choice, "You can either ride the bike before lunch or after lunch."
+- ACKNOWLEDGE/MUST:  acknowledge his feelings about not wanting to go to school and remind him that while we all love staying at home, going to school is a "must do" just like going to work is for you.
+
+My notes
+- humor stupid try
+- model shark fin
+- mountain breath
+- kiss my brain
+- Use a chime for mindfulness
+- Ask, what size of problem is this
+
+
+- i know u don’t want to ... AND we must
+- i  don’t either, and we can 
 
 # XXX
 ## FRUSTRATION EXPLOSION

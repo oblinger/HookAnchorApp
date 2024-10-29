@@ -1,6 +1,19 @@
 - [[MGR]], [Wk Agenda](https://docs.google.com/document/d/1E5a-4Hvj2LX9KkdSPbcblWSBs3ZwdTgBvY0FA6NKytU/edit?usp=sharing), 
 - [[ROADMAP]], 
 - [MGT Agenda](spot://mgtagenda) 
+
+# Log
+
+### 2024-10-28  weekly
+
+- Fixes, memory
+- ShotCharts
+- Softbank
+- Fast Response
+
+
+~ older stuff ~
+
 ask: sean, Jason, jack -- target for BB speedup
 - S3
 - RP play format
@@ -8,8 +21,7 @@ ask: sean, Jason, jack -- target for BB speedup
 - fusing
 - IO.save(path, uri)
 
-# Log
-
+```
 ### 2024-10-14  weekly (never presented)
 
 - Progress on data collect and metrics.
