@@ -12,7 +12,8 @@ TOPS: [[KMR]], [[Meta]], [[TOC]],
   [[T]], [GG](spot://gg), , [[RR]],
   [TRASH Obsidian](spot://trashobsidian), [TRASH for Obsidian Folder](spot://trashforobsidianfolder)
   OTHER: [[ATTACH]],  [[WEEKLY]], [top](spot://top),
-  , [KMR Gdrive](spot://kmrgdrive), 
+  , [KMR Gdrive](spot://kmrgdrive),
+  , [[2024-10-29]], 
   DELS: [[JJ]],
 
 

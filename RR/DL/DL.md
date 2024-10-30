@@ -21,7 +21,8 @@
   , [[RLHF]],
   DELS: ,[[RLHF]],
   , [[Tensor]],
-  , [[DL Strategy]], [[DL Theory]], 
+  , [[DL Strategy]], [[DL Theory]],
+  , [[Embedding]], [[Positional Encoding]], 
   DELS: [[Coursera Notes]],[[RLHF]],[[RLHF Reinforcement Learning from Human Feedback]], [[Coursera Notes]],
 
 [[Tensor]] 

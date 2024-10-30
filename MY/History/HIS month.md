@@ -1,4 +1,8 @@
 
+[[RES War AI\|Thu Sep 5  2024 ]]  	[[RES War AI#Sports Visio]]  
+[[RES War AI\|Thu Sep 5  2024 ]]  	[[RES War AI#Analytics Fire]]  
+[[2024-W36\|Wed Sep 4  2024 ]]  	[[2024-W36#W36   2024-09-02   [[2024-W35\\|<<]] [[2024-W37\\|>>]]]]  
+[[@Filip Piekniewski\|Wed Sep 4  2024 ]]  	[[@Filip Piekniewski# [Directnor of AI](https://www.linkedin.com/in/filip-pieknie]]  
 [[Now\|Wed Sep 4  2024 ]]  	[[Now#TRACK]]  
 [[now\|Wed Sep 4  2024 ]]  	[[now#TRACK]]  
 [[Jnl\|Wed Sep 4  2024 ]]  	[[Jnl#2024-09-03  My Strengths]]  

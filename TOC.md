@@ -60,8 +60,7 @@
                 [[SV Individuals]]: 
             [[WW]]: [[2023 SV Roles and Responsibilities]],	[[2023 SV Patents]],	
             [[SV Strat]]: [[SV Roadmap]],	[[2023 Four Pillars]],	
-            [[CV]]: [[CVP]],	[[Data]],	
-                [[CV Alg]]: 
+            [[CV]]: [[CV Alg]],	[[CVP]],	[[Data]],	
             [[QQ]]: 
     [[MY]]: [[Meta]],	[[Myfo]],	[[TEMPLATER]],	[[QUICKADD]],	
         [[Pln]]: [[Mission]],	[[Productivity]],	
