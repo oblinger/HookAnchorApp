@@ -1,13 +1,13 @@
+
+.[[ToRead]].
+  [[Book To Read]], [[Podcasts To Listen To]],
+  [[BOOK Research]],
+  
+[[RR Papers]] 
+[[Book]]: [[BOOK Summaries]], [[BOOK Favorites]],
 n:: Stuff "to read"
 #set
 
-.[[ToRead]].
-  , [[Book To Read]], [[Podcasts To Listen To]],
-  , [[BOOK Research]],
-  , ,
-  DELS: [[ToResearch]], 
-
-[[Book]]: [[BOOK Summaries]], [[BOOK Favorites]],
 
 
 - focusing [Gendlin](https://focusing.org/sixsteps) 

@@ -5,4 +5,10 @@
 
 #review
 
-ReLU
+ReLU 
+-??-
+Rectified Linear Unit = max(0,x)
+
+Leaky ReLU
+-??-
+Leaky Rectified Linear Unit:  F(x) = x if x>0 else alpha*x

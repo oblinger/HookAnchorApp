@@ -5,21 +5,18 @@
 - AF - Oasis/Eddie
 - PBG - Payments splitting - 
 - AE - Aeolus Elder bot - 
-### .
+#### .
 
 
 ### Commercialized across $2B+ in assets
-- SV - Hoops - 
-- SV - Vball - 
-- SV - CV minutes - 
-- AF - 
+- AF Oasis?
 
-### . 
 
 
 ### Built 5 orgs, up to 60+ employees
 
 SV: 20+ Eng.   CV 7: Dan/Mike/Juan Grz/Maxim/Martin/Sarthi
+AF: 
 ### .
 
 

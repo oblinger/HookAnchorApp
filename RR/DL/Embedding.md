@@ -1,0 +1,1 @@
+Token Embedding is the mapping of a set of tokens onto n-dimensional vector of floats

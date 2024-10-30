@@ -1,5 +1,6 @@
 
 - [ ] [[RES Star]]: Create stars for
+- [ ] [[2024-04-01 Resume Rewrite]]: 
 
 - [ ] WAR Stories
 - [ ] One Pager Resume

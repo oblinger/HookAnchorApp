@@ -1,4 +1,9 @@
-BAC
+
+
+Regularization
+-??-
+Technique to reduce overfitting
+Common Techniques: L2 (Ridge), Dropout, L1 (Lasso)
 
 
 ## L2 REGULARIZATION
@@ -17,6 +22,10 @@ L2 Regularization in a NN = "Weight Decay" Regularization
 	  (scaling helps at test time to keep expected value is the same)
   - At testing time we DONT use the dropout
   - Can't count on monotonic reduction in cost function.  (trick:  turn off dropout to verify monotonic decrease, then turn on for real run)
+
+
+## L1 (Lasso) REGULARIZATION
+- Adds penalty based on sum of absolute value of weights
 
 
 ## DATA AUGMENTATION REGULARIZATION - increasing training set size 'for free' to reduce overfit

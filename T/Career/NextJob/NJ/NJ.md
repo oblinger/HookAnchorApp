@@ -1,14 +1,12 @@
 .[[NJ]].	  [[Lrn]],
-  TOP:	[[NJ.]], [[NJ Todo]], [[NJ Log]],
+  TOP:	[[NJ.]], [[NJ Todo]], [[NJ Log]], [NJ Slides](spot://njslides),
   DOCS:	[NJ Slide](spot://njslide), [[NJ Rewrite]], [[NJ Pyramid]],
-  OTHR:	[[NJ24 Framing]], [[NJ Read]],
-  , [NJ Slides](spot://njslides), 
+  OTHR:	, [[NJ Read]],
+  , [[NJ Framing]], 
 
 
-
-  DELS: [[NJ Log]], [[RES]],
-
-  OLD: [[NJ16]], [[NJ22]],[[GoogleJob]], [[Meta Coms]], [[NJ24.pptx|PPTX]],[[CRM]], 
+- [[RES]], [[CRM]], 
+- OLD: [[NJ16]], [[NJ22]],[[GoogleJob]], [[Meta Coms]], 
 
 ## ... 
 - add leading targets to my slides

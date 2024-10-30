@@ -4,8 +4,6 @@
 - [[Activation Functions]],   [[Auto Encoders]],  [[VAEs]],
 
 
-- [[Positional Encoder]]
--   [[Attention]], [[Multi-headed Attention Block]], 
 
 
 
@@ -15,6 +13,11 @@
 - [[Seq2Seq]] - BART/T5-like (also called _sequence-to-sequence_ Transformer models)
 
 ### Key Ideas
+- Before transformers attention was used with recurrent networks
+- [[Embedding]] 
+- [[Positional Encoding]]
+- [[Attention]], [[Multi-headed Attention Block]], 
+- [[ReLU]] activation
+- [[Regularization]] 
 - Adjust parameters in parallel (unlike RNNs)
 - Positional Embeddings
-- 

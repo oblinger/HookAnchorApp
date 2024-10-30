@@ -1,4 +1,4 @@
-. [[S.T.A.R.]], [[RES]], [[RES War]], 
+. [[S.T.A.R.]], [[RES]], [[RES War]],
 
 ## SPORTS VISIO
 
