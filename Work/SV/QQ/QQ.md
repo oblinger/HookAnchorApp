@@ -1,11 +1,9 @@
 .[[QQ]].
-  , [[2023-10-01 Special Olympics]], [[2024-01 Michael Rampdown]]
-  , [[2024-08-25 Softbank SV Analysis]], [[2024-09-03 Staffing Stuff]], 
-
-  [[2024-09-03 Staffing Stuff]],
+  [[2023-10-01 Special Olympics]], 
+  [[2024-01 Michael Rampdown]]
   [[2024-08-25 Softbank SV Analysis]], 
-  [[2024-01 Michael Rampdown]],
-  [[2023-10-01 Special Olympics]],
+  [[2024-09-03 Staffing Stuff]], 
+
 
 
 

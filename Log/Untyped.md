@@ -5,6 +5,8 @@ n:: no prefix.	Dated entries without any typing prefix
 
 | Date       | File                                        | Notes                                                                                                                             |
 | ---------- | ------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------- |
+| 2024-10-30 | [[@Shawn Coe]]                                  | Intro                                                                                                                             |
+| 2024-10-30 | [[@Jason Syversen]]                             | Things are going good                                                                                                             |
 | 2024-10-28 | [[Mgt]]                                         | weekly                                                                                                                            |
 | 2024-10-27 | [[BKT]]                                         | buckets                                                                                                                           |
 | 2024-10-25 | [[@Jason Syversen]]                             | Matia's Value                                                                                                                     |

@@ -28,7 +28,7 @@ TOP ORGANIZING VIEWS
 ### 2024-10-27  buckets
 
 [[Self]]:	Run, 
-[[Home]]:	Car, Date, Basement
+[[Home]]:	Car, Date, 
 
 
 

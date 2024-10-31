@@ -218,6 +218,35 @@ DISCUSS
 
 # LOG
 
+
+### 2024-10-30  Things are going good
+
+especially as foundational CV models improve and the starting point for new entrants or incumbents to build in the space becomes narrower.
+
+- Things are going good, I would not want to alter anything in this moment.
+	- Fully subscribed quarter: Fireballs, Minutes, Shot chart, 
+	  Strongly understand BB errors & fix low fruit
+
+
+Historically Issues
+- Had wrong people.   A+/A.  A/A-.  Martin is a B
+- Working in inefficient ways. C+ --> B+
+  No driving metric, No data pipeline, Little infrastructure
+- Working on wrong problems first
+
+
+
+
+SAM-2 (August)
+- 5 players,6-sec => 3min
+
+
+especially as foundational CV models improve and the starting point for new entrants or incumbents to build in the space becomes narrower
+
+
+FROM ADIT / MILT
+>   
+> Hey Jason - thanks for the patience. Had a lengthy discussion with Milt, and while we really like you as CEO and the vision of the Company, we feel that the technology today is not where we'd like it to be, in order for us to be investors - especially as foundational CV models improve and the starting point for new entrants or incumbents to build in the space becomes narrower. I think it is a good application of AI as a productivity tool, but the end user (league) cares less so if the back-end algorithm/stats are done by a human or AI (with human in the loop). Of course, there are some cool value add AI features such as the automated video highlights.
 ### 2024-10-25  Matia's Value
 
 Matias:

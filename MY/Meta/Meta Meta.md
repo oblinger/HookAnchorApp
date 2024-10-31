@@ -1,5 +1,5 @@
 TAXONOMY:	[[Meta]]  
-VIEWS:			[[SYS Task Lists]],  
+VIEWS:		[[SYS Task Lists]],  
 
 ## THEORY
 

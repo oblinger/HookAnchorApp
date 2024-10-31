@@ -1,6 +1,13 @@
 # Meta Proj
 - [[Meta Log]], 
 
+## Root Project Folders / 
+- PrC	- Personal coding projects folder
+- PrP	- Personal projects page & folder
+
+- PrN	- Work 'Notion' root project page
+- PrG	- Work 'Gdrive' root gdrive folder
+- PrT	- Work 'Tasks' root gdrive folder for tasks
 
 ## Personal "proj" tracking
 - [[RR]] 	- Research topics
