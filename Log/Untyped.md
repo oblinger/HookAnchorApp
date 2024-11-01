@@ -5,6 +5,7 @@ n:: no prefix.	Dated entries without any typing prefix
 
 | Date       | File                                        | Notes                                                                                                                             |
 | ---------- | ------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------- |
+| 2024-10-31 | [[BKT]]                                         | Single Letter Time Codes                                                                                                          |
 | 2024-10-30 | [[@Shawn Coe]]                                  | Intro                                                                                                                             |
 | 2024-10-30 | [[@Jason Syversen]]                             | Things are going good                                                                                                             |
 | 2024-10-28 | [[Mgt]]                                         | weekly                                                                                                                            |
@@ -241,8 +242,7 @@ n:: no prefix.	Dated entries without any typing prefix
 | 2023-12-01 | [[CVP]]                                         | ideas from james                                                                                                                  |
 | 2023-11-30 | [[2023 Least Commitment Model For CV Pipe]]     | Visualization                                                                                                                     |
 | 2023-11-27 | [[Reflections]]                                 | Obispo-Trip.  am I depressed?                                                                                                     |
-| 2023-11-21 | [[NJ]]                                          | Tasks from URI                                                                                                                    |
-| 2023-11-21 | [[NJ]]                                          | Tasks from URI                                                                                                                    |
+| 2023-11-21 | [[NJ Log]]                                      | Tasks from URI                                                                                                                    |
 | 2023-11-20 | [[Eli Firsts]]                                  | First Crush - Babysitter                                                                                                          |
 | 2023-11-20 | [[SV Roadmap]]                                  | Long Term Plan                                                                                                                    |
 | 2023-11-19 | [[GoogleJob]]                                   | Uri                                                                                                                               |

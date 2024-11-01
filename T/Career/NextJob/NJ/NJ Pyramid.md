@@ -1,23 +1,27 @@
+## ...
+- built multiple 50+ person orgs,
 
 ## PYRAMID
 
-A proven AI PhD/CTO: with decade+ experience in ML/DL, built multiple 50+ person orgs, funded hundreds of millions in research at DARPA, exited three companies and brought many products to market worth billions.  Looking for a hands-on role leading generative-AI based innovation.
+A proven AI PhD/CTO: with decade+ experience in ML/DL, built 5 orgs from scratch (up to 60 engineers), funded hundreds of millions in research at DARPA, exited three companies, and brought products to market worth billions.  Looking for a hands-on role leading generative-AI based innovation.
 
 My sweet-spot is bridging world-leading R&D into rapid productization.
 
+
+(Master Versions in [[RES Proof Points]])
 #### PhD/CTO
 - PhD in AI/ML from a top engineering school: Illinois (UIUC)
 - CTO for 5 companies: with 3 exits, and 2 continuing
 - Dozens of peer reviewed conference and journal publications.
 - 20+ Patents Granted.
 
-### Decade+ Experience in AI/ML/DL
+### Decade+ Experience in AI/ML/DL/CV/Robotics
 - SportsVisio - In-the-code leading of advanced CV team
 - Martian/Aeolus Robotics - Hired 40+ AI-PhDs, chief architect for solution, managed 60+ eng team
 - DARPA PM for $200+M in AI R&D projects.  Designed 
 
 ### Built Multiple Engineering Orgs From Scratch
-- Aeolus: 60+ Eng (40+ having PhDs)
+- Aeolus: 60+ Eng (40+ with PhDs)
 - AF: ~50 person team with 30+ eng
 - DARPA: 5 orgs spanning 500+ faculty and researchers.   ??? numbers
 - Martian Robots 13 person team
@@ -40,19 +44,19 @@ My sweet-spot is bridging world-leading R&D into rapid productization.
 - Instant Design - 
 - Envoy - Residential hub for Enphase inverter-based systems
 - Oasis - Powerplant Controllers
-- Pvs5 - Residential hub controllers
+- PVS5 - Residential hub controllers
 - TMAC - Industrial power plant controllers
 - PayByGroup - Group Payments Platform
 
 
 ### Hands On Generative AI
-- Worked as both an IC and Technical Lead across a range of Generative-AI / Deep-Learning based projects including:
+- Worked as both an IC and Tech Lead on range of Gen-AI / DL based projects including:
   CV-based sport-stats, Autonomous-dexterous robotics, Automated solar installation design, 
 
 - SPORTS VISIO BASKET BALL - Fine tuned player detection and tracking, action modeling, specially-trained printed fabric OCR, generalized court registration.
-- AEOLUS - Robot motion, vision, and grasping
+- AEOLUS ROBOT - Robot motion, vision, and grasping
 - ANALYTICS FIRE - Satellite-image-based solar-roof installation planner 
-- DARPA MACHINE READING PROGRAM - Worked with dozens of world leading in AI/ML researchers including Andrew Ng, David Ferrucci, Daphne Kohler, Stuart Russell, Dan Roth, Pedro Domingos, Leslie Kaelbing, Tom Dietterich, Chris Manning, Michael Witbrock, Doug Lenat
+- DARPA MACHINE READING PROGRAM - Worked with dozens of world leading in AI/ML researchers including Andrew Ng, David Ferrucci, Daphne Kohler, Stuart Russell, Leslie Kaelbing, Pedro Domingos, Dan Roth, Tom Dietterich, Chris Manning, Michael Witbrock, Doug Lenat
 
 
 ## SLICES (Capabilities I bring, and passions I have)

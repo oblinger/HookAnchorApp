@@ -19,3 +19,20 @@
 
 ADVICE:
 - [ResumeVideo](https://www.youtube.com/watch?v=BYUy1yvjHxE), [AmzLeadership Principles](https://www.amazon.jobs/content/en-gb/our-workplace/leadership-principles), 
+
+
+### 2023-11-21  Tasks from URI
+
+
+
+.[[NJ24]].
+  :
+  [NJ24 Slide](spot://nj24slide):
+  ADDS:   [[NJ]], [[NJ.]], [[NJ24 Framing]], [[NJ Read]], [[NJ Rewrite]],
+
+:: [[NJ Read]]
+
+:: [[NJ]]
+
+. [[NJ.]] [[Lrn]], [[NJ Rewrite]], [[War AI]], 
+

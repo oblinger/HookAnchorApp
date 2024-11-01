@@ -1,22 +1,21 @@
-[[NJ]]:	[[RES Star]], [[CN]],
 
-[[NJ]]:	[[NJ Rewrite|Rewrite]], [[RES War]]
+- [[RES]]: Version complete
+- [[RES War]]: Ability to speak from first-person perspective about coding tasks
+- [[NJ Pyramid]], [[RES Proof Points]], 
 
-[[NJ Pyramid]], [[RES]] 
-- find the job posts; find people associated 
-- Ability to speak from first-person perspective about coding tasks
-- don't list before 15 years back
-## TODO
-- G-Cafe: [[@Ashwin Ram]], [[@Dan Kaufman]],  [[@Andrew Tomkins]]
-
-- [[CRM]]: 
-- Oct-12th public cafe
+- find the job posts; find people associated
 - Find few org
-- https://io.google/2023/. 
+- G-Cafe: [[@Ashwin Ram]],  [[@Dan Kaufman]],  [[@Andrew Tomkins]]
+- [[@Dan Kaufman]] - Is this [article](https://pravse.medium.com/the-maze-is-in-the-mouse-980c57cfd61a) the real culture at Google.  
+  Is it a good reason to stay away?  Can an energetic TL ship code?
 
-## ROCKS TODO
-- [[War]]: Adj/Topics
-- [[T/Career/RES/RES]]: rewrite
-- [[Resume Rewrite]] - 
-- [[Lrn]]:		]]
+## ROCKS
+- MATERIALS:	[[Res]], [[RES War]], [[RES Star]], 
+- [[RES]]: 		Get into final form.  Along with a cover letter?
+- [[NJ Help]]:	Plan
+- [[Lrn]]:		Plan
+- [[NJ Read]]	Plan
+- [[NJ Train]]	Plan
+- [[Coms]]:	Calling plan
+
 

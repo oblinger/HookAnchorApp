@@ -1,4 +1,7 @@
 
+[[Hiring\|Wed Jul 26  2023]]  	[[Hiring#ARCHITECT TEST]]  
+[[Hiring\|Wed Jul 26  2023]]  	[[Hiring#Hiring/Mgt]]  
+[[Hiring\|Wed Jul 26  2023]]  	[[Hiring#CS HIRING CRITERA]]  
 [[MED Food\|Wed Jul 26  2023]]  	[[MED Food#Health]]  
 [[MED Food\|Wed Jul 26  2023]]  	[[MED Food#OLDER STUFF]]  
 [[SYS Dashboards\|Wed Jul 26  2023]]  	[[SYS Dashboards#THREE SCREEN LAYOUT]]  

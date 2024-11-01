@@ -25,6 +25,20 @@ TOP ORGANIZING VIEWS
 - [View Gap](spot://view~gap) 		[[Fried]] 		[[MY/Pln/HACK/HACK]]		[[Gap]]
 
 ## BKT TREE
+
+### 2024-10-31  Single Letter Time Codes
+
+- a
+- c	CHEW	- Reading emails, slack.  Quick responses and task execution.
+- d	DEEP 	- Deep work.  MIT task execution
+- e	EAT	- Eating & Enjoyable activities (like reading)
+- f	FRIT	- Time frittered away
+- r	RUN	- Running and exercise
+- p	PER	- Personal tasks
+- w	WORK	- Generalized work tasks
+
+Fun/Family (maybe in E)
+
 ### 2024-10-27  buckets
 
 [[Self]]:	Run, 

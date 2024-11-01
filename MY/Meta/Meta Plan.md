@@ -1,16 +1,11 @@
 < [[Meta]] 
 
-[[Pln]] 			Planning pages
-- PERSONAL - TACTICAL
-	- [[BIG]] 
-- WORK - TACTICAL
-	- ...
-- META
-	- [[BKT]] 		- Breakdown of use of my time
+- [[Pln]] 			Project Planning pages ([[BIG]])
+- [[SV]]				WORK - TACTICAL
+- [[Mission]] 		Life Plannings (LONGER TERM PLANNING)
+- META 		META PLANNING DISCUSSION PAGES
+	- [[BKT]] 		- Breakdown of time usage into "buckets"
 	- [[WRM]]		- What Really Matters
 	- [[Meta Proj]] - Way to capture info as "projects"
-- LONGER TERM PLANNING
-	- [[Mission]] - Life Plannings
-		- [[Per]] - 
+	- [[Productivity]] 
 
-- [[Productivity]] 

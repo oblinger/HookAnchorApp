@@ -1,13 +1,7 @@
 .[[Meta]].
-  [[Dir]], [[Meta Coms]], [[Meta Flow]], [[Meta Group]], [[Meta Journaling]]
-  [[Meta Meta]], [[Meta Productivity]], [[Meta Meta Conept]], [[Meta Org -old-page-]]
-  MAIN: [[Meta List]], [[Meta Log]], [[Meta Plan]], [[Meta Proj]], [[Meta Set]], , ,
-  , [[Meta Self]], [[Meta Work]],
-  , [[Meta Sys]],
-  , [[Meta KMR]], 
-
-
-[[Meta Meta]]
-[[Meta KMR]] 
-
+  TOP:	[[Dir]], [[Meta Meta]], [[Meta List]], [[Meta Proj]], [[Meta Set]],
+  AND:	[[Meta Flow]], [[Meta Group]], [[Meta Sys]], [[Meta KMR]], 
+  LOG:	[[Meta Log]], [[Meta Journaling]],
+  PLAN:	[[Meta Plan]], [[Meta Coms]], [[Meta Self]], [[Meta Work]],
+  ...	[[Meta Productivity]], [[Meta Meta Conept]], [[Meta Org -old-page-]]
 

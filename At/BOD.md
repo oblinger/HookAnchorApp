@@ -19,6 +19,9 @@ GEN AI
 [[@Juan Huerta]]	- Ex-Amz
 [[@Melanie Dumas]]	- Waymo, 
 
+
+
+
 **BULL PEN**
 - [[@Kamran Shirazi]]	-  Sales Exec -- View into AI/ML roles
 
