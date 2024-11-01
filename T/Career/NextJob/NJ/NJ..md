@@ -1,4 +1,4 @@
-
+- find MGR courses/books to read
 - [[RES]]: Version complete
 - [[RES War]]: Ability to speak from first-person perspective about coding tasks
 - [[NJ Pyramid]], [[RES Proof Points]], 

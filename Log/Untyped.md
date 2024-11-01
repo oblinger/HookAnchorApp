@@ -5,6 +5,7 @@ n:: no prefix.	Dated entries without any typing prefix
 
 | Date       | File                                        | Notes                                                                                                                             |
 | ---------- | ------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------- |
+| 2024-11-01 | [[@Philipp Herget]]                             | Hiring                                                                                                                            |
 | 2024-10-31 | [[BKT]]                                         | Single Letter Time Codes                                                                                                          |
 | 2024-10-30 | [[@Shawn Coe]]                                  | Intro                                                                                                                             |
 | 2024-10-30 | [[@Jason Syversen]]                             | Things are going good                                                                                                             |

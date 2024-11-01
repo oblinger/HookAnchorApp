@@ -1,6 +1,4 @@
 
-- find MGR courses/books to read
-- Fin plan for Merrill
 - cleaner come
 - balcony fix
 - friday

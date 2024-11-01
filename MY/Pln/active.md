@@ -1,4 +1,5 @@
-- deep work schedule
+- Fin plan for Merrill
+- - deep work schedule
 - christ tree
 - [[Journaling]] 
 -  quarterly goals
