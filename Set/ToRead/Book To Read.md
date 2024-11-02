@@ -1,14 +1,20 @@
 [[BOOK Favorites]]
 
 
+- The Manager's Path  ???
+- Catechism
 
+OTHER Ideas:
+- HardThingAboutHardThings
+- BecomingATechMgr
+- Meditations
+- BreakAllTheRules
+- 5DisfunctionsOfTeam
+- 7HabitsOfHiEffectPeople
 
-
-## = PROFESSIONAL
 - Designing Your Life
 
 -  [Power of Full Engagement](https://www.amazon.com/Power-Full-Engagement-Managing-Performance-ebook/dp/B000FC0SWS/ref=tmm_kin_title_0?_encoding=UTF8&qid=1644162775&sr=8-1)  ????
-- The Manager's Path  ???
 
 
 ## = LIFE

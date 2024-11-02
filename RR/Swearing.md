@@ -1,9 +1,16 @@
+---
+sr-due: 2024-11-04
+sr-interval: 3
+sr-ease: 250
+---
+
 #review 
 
 FUCK
 - Fork Me
 - Shut the fuck up -->  Well shut the front door
 
+- Dumbass --> Fopdoodle
 - Holy shit -->  Holy cannoli
 - Uff da
 - Fart knocker
@@ -11,13 +18,11 @@ FUCK
 - SHIT  -->  Shoot a monkey.
 - Son of a bitch --> Sonny beaches.
 - Fucking -->  Nogwrangling
-- Dumbass --> Fopdoodle
 - Shit/Fuck --> Klingon   Ying-takh  puh-takh    
 - BLEEP yourself
 
 SHIT
-- Snap.  Oh Snap.
-- Crap.
+- Snap.  Oh Snap. Crap.
 - Horse pucky
 - Bull spit
 - Zoinks

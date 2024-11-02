@@ -1,7 +1,11 @@
 .[[NJ]].	  [[Lrn]],
   TOP:	[[NJ.]], [[NJ.]], [[NJ Log]],
-  DOCS:	[NJ Slides](spot://njslides), [[NJ Rewrite]], [[NJ Pyramid]], [[NJ Framing]], 
-  ROCKS:[[NJ Help]], [[NJ Read]], [[NJ Train]], 
+  DOCS:	[NJ Slides](spot://njslides), [[NJ Rewrite]], [[NJ Pyramid]], [[NJ Framing]],
+  ROCKS:, [[NJ Read]], ,
+  , [NJ Slide](spot://njslide), ,
+  , [[NJ Help]], [[NJ Train]], 
+  DELS: [[NJ Help]], [[NJ Train]],
+  DELS: [[NJ Help]], [[NJ Train]],[[NJ Todo]], 
 
 RELATED:	[[RES]], [[CRM]], 
 OLD:		[[NJ16]], [[NJ22]],[[GoogleJob]], [[Meta Coms]], 

@@ -9,10 +9,11 @@ n:: Books I have read
   - [High Output Management](spot://highoutputmanagement), [[F90]], [[MgrPath]],
   - [[Agile Software Development]], [[Fundamentals of Workability Workshop]],
 
+  [[Book To Read]], 
 
   , 
   DELS: [[BOOK Favorites]], , [[BOOK Summaries]],
-  DELS: [[BOOK Favorites]], [[Book To Read]], [[BOOK Summaries]],[[Book Chat GPT]],[[Book To Read]], 
+  DELS: [[BOOK Favorites]], [[Book To Read]], [[BOOK Summaries]],[[Book Chat GPT]],
 
 
 

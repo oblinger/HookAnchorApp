@@ -14,7 +14,8 @@
   , [RESULT](spot://result),
   , [docs](spot://docs),
   , [Dataset](spot://dataset),
-  DELS: [DOCs](spot://docs),[Results](spot://results), 
+  , [[CV Algs]], 
+  DELS: [DOCs](spot://docs),[Results](spot://results),
 
   DELS: [Standup](spot://standup),[DD](spot://dd),
   DELS: [[CVP]],[[Info]], 

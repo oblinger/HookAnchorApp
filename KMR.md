@@ -14,7 +14,7 @@ TOPS: [[KMR]], [[Meta]], [[TOC]],
   OTHER: [[ATTACH]],  [[WEEKLY]], [top](spot://top),
   , [KMR Gdrive](spot://kmrgdrive),
   , [[2024-10-29]], 
-  DELS: [[JJ]],
+
 
 
 

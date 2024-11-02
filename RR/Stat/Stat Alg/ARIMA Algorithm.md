@@ -4,7 +4,6 @@ sr-interval: 1
 sr-ease: 230
 ---
 
-#review
 
 AutoRegressive Integrated Moving Average
 

@@ -1,16 +1,8 @@
+[[Lrn.]]	^\ _ S
+Read:	[[RR papers]], [[Pocket App]], [[ToRead]], [Good Reads](https://www.goodreads.com/),
+Tidy:	Desk+, Email
+Plan:	[[ToBuy]], [[Try Foods]],
 
-- QUICK:	TidyUp, 
-- LIGHT:	[[Scrub]], 
-- FUN:		[[Set/BUY/ToBuy]],  [[Try Foods]], 
-- READ:	[[Pocket App]], [[ToRead]], [Good Reads](https://www.goodreads.com/),
-- CHECK:	[[MED.]]   
-
-
-- [ ] [HeavyBit](https://www.heavybit.com) 
-
-[Build systems](https://medium.com/swlh/dont-just-set-goals-build-systems-8158ac541df#ff79)  
-
-- [Happiness](https://markmanson.medium.com/how-to-be-happy-c55b1001e7ef): 
 
 
 

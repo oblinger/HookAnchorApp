@@ -1,9 +1,9 @@
 
 #### Short Term Tactical Lists
 - [[Quick]]	->			-  Quickly dropped items   (CAPS-A will ADD to this list)
-	- [[Todo]]			-  Personal tasks
-	- [[Active]]		-  Work related task  (offloaded to [[Wings]]) 
-	- [[Fried]]			-  Easy/Fun/Taking-Break tasks  (offloaded to [[Fried Later]])
+- [[Todo]]				-  Personal tasks
+- [[Active]]			-  Work related task  (offloaded to [[Wings]]) 
+- [[Fried]]				-  Easy/Fun/Taking-Break tasks  (offloaded to [[Fried Later]])
 
 #### Medium Term Project Tracking
 - [[Now]]				-  Actively tracked smaller task outputs
@@ -14,12 +14,13 @@
 #### Longer Term 
 #### Specialty List
 - [[Actualize]]	-  
-- [[BKT]]			-     ([[BKT Tree]] taxonomy of all task tracking lists)
+- [[BKT]]			-     (Taxonomy of all task tracking lists)
 - [[Dropped]]		-  
 - [[Full]]			-  
 - [[Fun]]			-  
 - [[Friday]]		-  Planning for date nights
-- [[MY/Pln/HACK/HACK]]			-  Hacking/Coding activities
+- 
+- [[HACK.]]			-  Hacking/Coding activities
 - [[Habit]]			-  Current and past habit goals
 - [[Gap]]			-  
 - [[Journal Old]]	-  

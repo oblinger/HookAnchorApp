@@ -1,9 +1,12 @@
+#dl
+
 Positional Encoding 
--??-
+-?-
 A "positional embedding" is a unique d-dimensional vector that can be added to each embedded token vector to derive a "positional encoding" of the original input.
 .
 Many choices for this.  In attention is all you need they used sine and cosine w/ different frequencies
-![[Screenshot 2024-10-29 at 9.41.23 PM.png]] 
+![[Screenshot 2024-10-29 at 9.41.23 PM.png]]
+<!--SR:!2024-11-02,1,230--> 
 
 
 Ensures that relative positions pos to pos+k will end up being a linear transform

@@ -1,5 +1,5 @@
 
-#ml #learn
+#ml2 #learn
 
 # Tools
 (From https://www.datacamp.com/blog/top-mlops-tools)
@@ -45,16 +45,16 @@
 ## ## Orchestration and Workflow Pipelines MLOps Tools
 
 [Prefect](https://www.prefect.io/);;; ML Workflow - a modern data stack for monitoring, coordinating, and orchestrating workflows between and across applications. It is an open-source, lightweight tool built for end-to-end machine-learning pipelines.
-<!--SR:!2024-10-10,2,230!2024-09-25,1,230-->
+<!--SR:!2024-10-10,2,230!2024-11-02,1,210-->
 
 [Metaflow](https://metaflow.org/);;; ML Workflow - a powerful, battle-hardened workflow management tool for data science and machine learning projects. It was built for data scientists so they can focus on building models instead of worrying about MLOps engineering.
-<!--SR:!2024-10-10,2,230!2024-09-25,1,230-->
+<!--SR:!2024-11-08,7,250!2024-09-25,1,230-->
 
 [Kedro](https://kedro.org/);;; ML Workflow - a workflow orchestration tool based on Python. You can use it for creating reproducible, maintainable, and modular data science projects. It integrates the concepts from software engineering into machine learning, such as modularity, separation of concerns, and versioning.
 <!--SR:!2024-10-29,2,230!2024-10-09,1,210-->
 
 [Pachyderm](https://www.pachyderm.com/);;; ML Workflow - automates data transformation with data versioning, lineage, and end-to-end pipelines on Kubernetes. You can integrate with any data (Images, logs, video, CSVs), any language (Python, R, SQL, C/C++), and at any scale (Petabytes of data, thousands of jobs).
-<!--SR:!2024-10-10,2,230!2024-09-25,1,230-->
+<!--SR:!2024-11-02,1,210!2024-09-25,1,230-->
 
 ## Data Pipelining
 
@@ -62,7 +62,7 @@
 <!--SR:!2024-09-28,4,270!2024-10-28,1,210-->
 
 LakeFS;;; Data Pipelining -  an open-source scalable data version control tool that provides a Git-like version control interface for object storage, enabling users to manage their data lakes as they would their code. With LakeFS, users can version control data at exabyte scale, making it a highly scalable solution for managing large data lakes.
-<!--SR:!2024-09-25,1,230!2024-09-25,1,230-->
+<!--SR:!2024-09-25,1,230!2024-11-02,1,210-->
 
 [AirFlow](https://airflow.apache.org);;; Authors, Monitors, Schedules workflows
 <!--SR:!2024-10-28,1,210!2024-09-25,1,230-->
@@ -101,4 +101,4 @@ LakeFS;;; Data Pipelining -  an open-source scalable data version control tool t
 <!--SR:!2024-09-25,1,230!2024-09-25,1,230-->
 
 [Iguazio MLOps Platform](https://www.iguazio.com/platform/);;; ML Op Framework - an end-to-end MLOps platform that enables organizations to automate the machine learning pipeline from data collection and preparation to training, deployment, and monitoring in production. It provides an open ([MLRun](https://github.com/mlrun/mlrun)) and managed platform.
-<!--SR:!2024-09-27,3,250!2024-10-28,1,210-->
+<!--SR:!2024-11-12,11,270!2024-10-28,1,210-->

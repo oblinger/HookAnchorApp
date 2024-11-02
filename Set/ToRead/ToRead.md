@@ -3,28 +3,21 @@
   [[Book To Read]], [[Podcasts To Listen To]],
   [[BOOK Research]],
   
-[[RR Papers]] 
-[[Book]]: [[BOOK Summaries]], [[BOOK Favorites]],
-n:: Stuff "to read"
-#set
+  [[RR Papers]], [[Book To Read]], 
+  
+  n:: Stuff "to read"
+  #set
 
 
-
-- focusing [Gendlin](https://focusing.org/sixsteps) 
 ## TO READ
+- focusing [Gendlin](https://focusing.org/sixsteps) 
+
+## Unsorted
 - [read]( https://www.mckinsey.com/industries/agriculture/our-insights/winning-in-africas-agricultural-market) - africa
 - Alignment Forum, [Humane Tech](https://www.humanetech.com/podcast)  
-- Managers Path
 - insight by tasha eurich - yashin is reading it. [Summ](/Users/oblinger/ob/kmr/Set/ToRead/2024 INSIGHT_Summary_Sheet (1).pdf) 
-
-OHTER MGT BOOKS TO CONSIDER (from whom??)
-OTHER Ideas:
-- HardThingAboutHardThings
-- BecomingATechMgr
-- Meditations
-- BreakAllTheRules
-- 5DisfunctionsOfTeam
-- 7HabitsOfHiEffectPeople
+[Build systems](https://medium.com/swlh/dont-just-set-goals-build-systems-8158ac541df#ff79) 
+- [Happiness](https://markmanson.medium.com/how-to-be-happy-c55b1001e7ef): 
 
 ## = REPEAT
 - >>>>>        Clean-Unsorted * Scan thru them * Do Repeats or Ref Pages

@@ -1,12 +1,14 @@
 .[[Politics]].
-  [[POL refs]]: 
+  :
   [[Climate]]:
   [[Palestinians]]:
   [[Race]]:
   [[Socialism]]:
   [[Trump]]:
   [[AI HISTORY]],
-  , [[Politics From Me]], 
+  , [[Politics From Me]],
+  , [[POL refs]], 
+  DELS: [[POL refs]],
 
 
   [[Politics From Me]]

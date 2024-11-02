@@ -1,12 +1,15 @@
 - [[Multi-headed Attention Block]]: 
 [[Self Attention]]:
 
+#dl 
+
 Self Attention
--??-
+-?-
 Self-attention weighs the importance of different words or tokens within a sequence, relative to each other. In self-attention, each token calculates its relevance to every other token, allowing the model to capture context across long distances in the sequence. This is done by creating attention scores that determine how much focus each word should have on others, enabling a model to understand dependencies and context without requiring sequential processing.
 .
 Attention accepts n tokens with d-dimensions and the same.
 It represents the CONTEXTUALIZED importance/meaning of the word
+<!--SR:!2024-11-02,1,230-->
 
 NOTATION - QKV are all trained linear transforms of input
 - Q - Query

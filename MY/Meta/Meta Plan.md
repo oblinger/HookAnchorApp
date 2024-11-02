@@ -3,9 +3,16 @@
 - [[Pln]] 			Project Planning pages ([[BIG]])
 - [[SV]]				WORK - TACTICAL
 - [[Mission]] 		Life Plannings (LONGER TERM PLANNING)
-- META 		META PLANNING DISCUSSION PAGES
-	- [[BKT]] 		- Breakdown of time usage into "buckets"
-	- [[WRM]]		- What Really Matters
-	- [[Meta Proj]] - Way to capture info as "projects"
-	- [[Productivity]] 
+- [[Meta Proj]] - Way to capture info as "projects"
+
+META 		META PLANNING DISCUSSION PAGES
+
+BUCKETS:
+  [[BKT]]		- Breakdown of time usage into "buckets"
+  [[Meta List]]	- Fixed tracking lists
+  [[WRM]]		- What Really Matters.  Quarterly big project buckets
+
+PRODUCTIVITY:
+  [[Productivity]] 
+  [[Habit]] 
 

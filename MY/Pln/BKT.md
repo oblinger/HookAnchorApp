@@ -28,13 +28,14 @@ TOP ORGANIZING VIEWS
 
 ### 2024-10-31  Single Letter Time Codes
 
-- a
+
 - c	CHEW	- Reading emails, slack.  Quick responses and task execution.
 - d	DEEP 	- Deep work.  MIT task execution
 - e	EAT	- Eating & Enjoyable activities (like reading)
-- f	FRIT	- Time frittered away
+- g	GAP	- Productive procrastination via GAP tasks
 - r	RUN	- Running and exercise
 - p	PER	- Personal tasks
+- x	FRIT	- Time frittered away
 - w	WORK	- Generalized work tasks
 
 Fun/Family (maybe in E)

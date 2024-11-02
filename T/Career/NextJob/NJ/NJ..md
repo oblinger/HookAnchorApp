@@ -2,6 +2,8 @@
 - [[RES]]: Version complete
 - [[RES War]]: Ability to speak from first-person perspective about coding tasks
 - [[NJ Pyramid]], [[RES Proof Points]], 
+- Pick [[BOD]]
+- Pick [[NJ Train]]
 
 - find the job posts; find people associated
 - Find few org
@@ -10,7 +12,7 @@
   Is it a good reason to stay away?  Can an energetic TL ship code?
 
 ## ROCKS
-- MATERIALS:	[[Res]], [[RES War]], [[RES Star]], 
+- DOCS:	[[Res]], [[RES War]], [[RES Star]], 
 - [[RES]]: 		Get into final form.  Along with a cover letter?
 - [[NJ Help]]:	Plan
 - [[Lrn]]:		Plan
