@@ -1,4 +1,5 @@
 .[[RR Philosophy]].
-  [[Sophie's World]], 
+  [[Sophie's World]],
+  , [[Albert Camus]], 
 
 [[Albert Camus]] 

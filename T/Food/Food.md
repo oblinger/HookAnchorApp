@@ -16,7 +16,8 @@
   ADDS:   [[Food Recipe Research]], ,
   ADDS:   [[Eat]],
   , [FOOD Research Note](spot://foodresearchnote),
-  , [[FOOD Research]], 
+  , [[FOOD Research]],
+  , [[Bfast]], 
   DELS: [[dinner]], [[Noom Notes]], [[Food Research]],
 
 

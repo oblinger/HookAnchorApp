@@ -7,7 +7,7 @@
   :
   :
   :
-  [[Music]]:
+  [[Mus]]:
   :
   :
   :
@@ -343,7 +343,7 @@
 
 
 
-- [[Career]], [[Music]], 
+- [[Career]], [[Mus]], 
 
 :: [[COMS]],   [[MGR Log]],   [[Comp]],   [[EduCorp]],   [[FIN]],   [[Food]],   [[KM]],   [[Legal]],   [[Life]],   [[MED]],   [[SYS]],   [[TAG]],   [[Trash]],   [[Web]],   [[Webshare]]
 #top

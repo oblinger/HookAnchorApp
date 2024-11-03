@@ -3,7 +3,7 @@
 
 ### 2024-10-01  Created Mix Tape for Exercise
 
-See [[music]] 
+See [[Mus]] 
 
 ### 2024-09-09  Spraying for Ants
 

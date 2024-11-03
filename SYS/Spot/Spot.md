@@ -1,10 +1,7 @@
 .[[Spot]].
-  , [[SP]], 
-
-Ï.[[Spot]].
   [[SP]], 
 
-- - Spot:   spgrab. foo!bar will not add a correct link to 'bar' in foo.  it adds a file link
+- Spot: spgrab. foo!bar will not add a correct link to 'bar' in foo.  it adds a file link
 - OBS - Evernote log of dated entries
     ingest all dated entries and starred entries 
     daily run script via chron or extend alarm.py

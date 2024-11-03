@@ -1,14 +1,14 @@
 
 
-- - loom
-- try Codium, Cursor, GPT alternative
+- Loom
+- Try Codium, Cursor, GPT alternative
 - fin flow
 - fix easy passwords
 - change PW
 - docs of saved pictures
 - look at videos from Eli; consider merging apple videos
-- Research how "Creatinin" relates to logevity
-- [ ] budget big transfers list	
+- Research how "Creatinin" relates to longevity
+- budget big transfers list	
 
 Clean up spotify
   ; named music channels:  mus Chill mus Class 

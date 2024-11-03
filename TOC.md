@@ -10,12 +10,11 @@
         [[ML]]: 
         [[DL]]: [[DL Alg]],	
         [[Systems]]: 
-    [[T]]: [[Trash]],	[[Tag]],	
+    [[T]]: [[Mus]],	[[Trash]],	[[Tag]],	
         [[Misc]]: [[STARTUPS]],	[[Test88]],	[[Old]],	[[SF]],	[[Biking]],	
             [[Presentations]]: 
             [[House]]: 
                 [[House Crime]]: 
-        [[Music]]: 
         [[Career]]: 
             [[RES]]: [[Bio]],	[[2024-04-01 Resume Rewrite]],	
                 [[RES Job History]]: 
