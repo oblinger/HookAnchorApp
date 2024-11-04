@@ -1,4 +1,6 @@
 
+[[2023-Reset-DanO-Role\|Sun Sep 8  2024 ]]  	[[2023-Reset-DanO-Role#2023-05-08  FRIDAY DISCUSSION - Key needs / Simple Plan]]  
+[[2023-Reset-DanO-Role\|Sun Sep 8  2024 ]]  	[[2023-Reset-DanO-Role#2023-05-06  Email to send.]]  
 [[2023-Reset-DanO-Role\|Sun Sep 8  2024 ]]  	[[2023-Reset-DanO-Role#2023-05-05  Why Change Report To]]  
 [[2023-Reset-DanO-Role\|Sun Sep 8  2024 ]]  	[[2023-Reset-DanO-Role#2023-05-03  Elbows out]]  
 [[2023-Reset-DanO-Role\|Sun Sep 8  2024 ]]  	[[2023-Reset-DanO-Role#2023-04-30  KEY TEAM GAPS]]  

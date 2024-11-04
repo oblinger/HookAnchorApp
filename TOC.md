@@ -10,7 +10,7 @@
         [[ML]]: 
         [[DL]]: [[DL Alg]],	
         [[Systems]]: 
-    [[T]]: [[Mus]],	[[Trash]],	[[Tag]],	
+    [[T]]: [[Trash]],	[[Tag]],	
         [[Misc]]: [[STARTUPS]],	[[Test88]],	[[Old]],	[[SF]],	[[Biking]],	
             [[Presentations]]: 
             [[House]]: 

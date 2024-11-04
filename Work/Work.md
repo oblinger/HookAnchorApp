@@ -13,7 +13,7 @@
   [[2024-08 Backend Architect|Arch]]:	Brian
   [[FIN.]]	Schwab
   [[NJ]]:	>[[War|War]], rewrite, mentor
-  GCP:		[Brian plan](https://docs.google.com/spreadsheets/d/1W38uHew6aaqyeolKzbO9NbaA96Q-jzyDb7gYoUst0qw/edit?gid=0#gid=0). 
+  GCP:	[Brian plan](https://docs.google.com/spreadsheets/d/1W38uHew6aaqyeolKzbO9NbaA96Q-jzyDb7gYoUst0qw/edit?gid=0#gid=0). 
 
   BUGS:
   - Shot not found

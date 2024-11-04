@@ -1,6 +1,11 @@
 ### 2024-10-21  Focus on deep work hours & emotional stance & fun
 
 
+### 2024-11-03  COMPLETION - Pick things to finish; then finish them!sh
+
+- Just finished the basement, felt pretty great.
+- I am in shooting distance to finishing my car and resume.
+- I need to pick items to 'finish' at least to some specific level of done.
 
 ### 2024-10-14  MY PROBLEM & AN IDEA
 

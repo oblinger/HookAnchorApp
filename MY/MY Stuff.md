@@ -103,6 +103,8 @@ The filter warning light can be reset by pressing, and holding, the LIGHT/FILTER
 STEALTH 0.8GPF EL UHET AIO TOILET WH  (Dan home depot Dec 2018)
 ### - Tooth Brush
 30-second smile.   30secondsmile.com   info@30secondsmile.com  888-813-6631
+
+#### Wagner B200E Toothbrush Sterilizer
 ### - Dad installed fan
 BULB - Original florecent - Maxlite MLS31GU35 - 3500K 1040Lm 13W 
 ### - Braun Shaver

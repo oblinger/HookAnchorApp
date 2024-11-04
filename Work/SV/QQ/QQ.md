@@ -1,4 +1,5 @@
 .[[QQ]].
+  [[2024-11-01 SV Pitch Deck]], 
   [[2023-10-01 Special Olympics]], 
   [[2024-01 Michael Rampdown]]
   [[2024-08-25 Softbank SV Analysis]], 
