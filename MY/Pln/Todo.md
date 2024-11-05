@@ -1,5 +1,6 @@
 - [[2024-05 Sell Acura|Car]] 
-- Open Schwab Account
+- [Liu](https://ucsfmychart.ucsfmedicalcenter.org/ucsfmychart/Home) 
+[[@schwab]] 
 - Avanti: 
 - emile oster parenting podcast
 

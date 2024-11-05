@@ -1,5 +1,4 @@
 
-[30sec](https://www.google.com/search?q=30+second+smile+toothbrush+between+%2460+and+%24300&sca_esv=2d1a5eec44dea9ce&udm=28&ei=v8YNZ7GcIbvB0PEP8YGX0QE&ved=0ahUKEwjx96Cvn4-JAxW7IDQIHfHAJRoQ4dUDCB8&uact=5&oq=30+second+smile+toothbrush+between+%2460+and+%24300&gs_lp=Egxnd3Mtd2l6LXNlcnAiLzMwIHNlY29uZCBzbWlsZSB0b290aGJydXNoIGJldHdlZW4gJDYwIGFuZCAkMzAwSOVFUNIaWOlCcAF4AZABAJgBP6ABrQKqAQE1uAEDyAEA-AEBmAIBoAIIwgIKEAAYsAMY1gQYR5gDAIgGAZAGBJIHATGgB8AG&sclient=gws-wiz-serp#ip=1) 
 
 | WEEKLY        |                                                                                                                                                                                |
 | ------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |

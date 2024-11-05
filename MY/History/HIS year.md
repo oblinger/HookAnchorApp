@@ -1,4 +1,7 @@
 
+[[EduCorp Billet Assessment Matrix (BAM)\|Wed Jul 26  2023]]  	[[EduCorp Billet Assessment Matrix (BAM)#P&L ANALYSIS - Profit and Loss Analysis]]  
+[[EduCorp Billet Assessment Matrix (BAM)\|Wed Jul 26  2023]]  	[[EduCorp Billet Assessment Matrix (BAM)#PROFIT - Products Produced]]  
+[[EduCorp Billet Assessment Matrix (BAM)\|Wed Jul 26  2023]]  	[[EduCorp Billet Assessment Matrix (BAM)#LOSS - Costs Incurred]]  
 [[EduCorp Billet Assessment Matrix (BAM)\|Wed Jul 26  2023]]  	[[EduCorp Billet Assessment Matrix (BAM)#LEVERAGE]]  
 [[EduCorp Billet Assessment Matrix (BAM)\|Wed Jul 26  2023]]  	[[EduCorp Billet Assessment Matrix (BAM)#=== QUALIFIERS ===]]  
 [[EduCorp Billet Assessment Matrix (BAM)\|Wed Jul 26  2023]]  	[[EduCorp Billet Assessment Matrix (BAM)#REQUIREMENTS]]  

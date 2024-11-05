@@ -2,6 +2,7 @@
 - [x](https://www.healthline.com/health/diabetes/dexcom-g6-cgm-product-review#1) 
 - USB camera & light
 - [x](https://nunatakusa.com/dogs/247-dog-bivy-v2.html#/dog_bivy_size-medium_26_wide_x_20_deep/dog_bivy_fabrics-brilliant_blue_15d_dwr_ripstop/dog_bivy_insulation-3_season/dog_bivy_winter_cover-xs/stuff_sack-yes_please_include_a_stuff_sack/dog_bivy_foam_pad-xs) 
+- [ ] [30sec](https://www.google.com/search?q=30+second+smile+toothbrush+between+%2460+and+%24300&sca_esv=2d1a5eec44dea9ce&udm=28&ei=v8YNZ7GcIbvB0PEP8YGX0QE&ved=0ahUKEwjx96Cvn4-JAxW7IDQIHfHAJRoQ4dUDCB8&uact=5&oq=30+second+smile+toothbrush+between+%2460+and+%24300&gs_lp=Egxnd3Mtd2l6LXNlcnAiLzMwIHNlY29uZCBzbWlsZSB0b290aGJydXNoIGJldHdlZW4gJDYwIGFuZCAkMzAwSOVFUNIaWOlCcAF4AZABAJgBP6ABrQKqAQE1uAEDyAEA-AEBmAIBoAIIwgIKEAAYsAMY1gQYR5gDAIgGAZAGBJIHATGgB8AG&sclient=gws-wiz-serp#ip=1) 
 - [glasses for sleep;](https://truedark.com/shop/twilights/twilights-classic/?tap_s=3574386-196b75&ref=optimize) [glasses](https://optimizeyourbiology.com/best-blue-blocking-glasses) 
 - water heater for drinks
 - audi chains

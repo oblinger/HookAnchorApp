@@ -1,3 +1,7 @@
+- Brian AIM auto-recompute.
+- halloween pics
+- matias UX for error reporting
+- james alert
 - R bags
 - cleaner come
 - balcony fix
