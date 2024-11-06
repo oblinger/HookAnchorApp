@@ -5,7 +5,7 @@
 
 [[Cleaning Service]] 
 
-
+$6K   6,000
 
 (Master in Obsidian)
 

@@ -6,6 +6,12 @@
   DELS: [[CRM]], [[BOD]], [[COM Campaigns OLDER]], [[CRM_Phrases]], [[FailedMessages]], [[FirstTouch]], [[COM Investor]], 
 
 
+[great-discussion-on-blind-software-engineers-talking-about-working-15-20](https://www.wallstreetoasis.com/forum/investment-banking/great-discussion-on-blind-software-engineers-talking-about-working-15-20) 
+
+  
+
+[article-networking-platform-team-blind-helps-fill-the-gap-in-salary/](https://www.theglobeandmail.com/investing/personal-finance/young-money/article-networking-platform-team-blind-helps-fill-the-gap-in-salary/)
+
 Jeremy Roth	Oysters Party
 
 

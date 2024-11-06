@@ -1,8 +1,9 @@
-- Brian AIM auto-recompute.
-- halloween pics
+- was this auto retried?  should it have been?
+- minutes final approve
+
 - matias UX for error reporting
 - james alert
-- R bags
 - cleaner come
-- balcony fix
-- friday
+ing
+
+
