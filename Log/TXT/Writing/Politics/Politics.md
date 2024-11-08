@@ -20,6 +20,101 @@ https://www.wsj.com/opinion/harris-is-the-safer-economic-choice-2024-presidentia
 
 # LOG
 
+
+### 2024-11-07  Democrats Wake Up!
+
+DEMOCRATS WAKE UP!  This loss is not about the "orange man."   The middle does not trust him either, its just that they trust you EVEN LESS!  Look to thyself for answers!
+
+Here are the "lightning rod issues" that I think cost the election:
+
+ILLEGAL IMMIGRATION, sanctuary cities, blocking ICE, using tax dollars for non citizens in any way, when they feel they are hurting.
+
+TRANS ISSUES:  Bathroom safety.  Fairness in sports.  Gender surgery.  Unease about increased cultural prominence.
+
+PARTISAN TRUMP ATTACKS:  Legal attacks on Trump have HELPED him, since they are is seen as a partisan witch hunt, since they ARE so partisan.
+
+DEI / WOKE PRONOUNS, ETC:  Some don't like this stuff, but most just view it as evidence of Dems not having eye on the ball (the economy) and instead screwing around with stuff that doesn't matter.
+
+ECONOMY:  Trump has a simple story: illegals, trade, and china.  Dems needed a incumbent to tell a simply story about how they are going to fix the economy...  not a VP saying:  "I can't thinking of anything I would change!"
+
+sure we can talk about how misguided those concerns are from the sidelines, or we can hold our nose and compromise to address the concerns.
+
+We have exactly two choices:
+(1) Move our party decisively away from these lightning rod issues, or 
+(2) Kvetch from the sidelines about how badly the other guys are running things.
+
+
+
+KEY MINDSET DIFFERENCES:    
+**ABUNDANCE VS. SCARCITY**.  Liberals come from an abundance mind set, believing one can give more to those in need w/o drastic loss for the rest.  Conservatives come from a zero-sum, scarcity mind set.  Citizens are barely hanging on, and many of our problems stem from too much "free loading" already in the system.
+**LAWLESS "RABBLE" VS POWER PLAYS.**  Liberals believe society's ills stem from the actions of the powerful over the weak.  Conservatives believe society's ills stem from lawless actions of the "rabble" against productive society.
+**HUMAN NATURE.**  Liberals believe when humans are bad its mostly from their environment.  Conservatives its mostly the nature of the bad person.  Thus liberals favors strong support while conservatives favor strong law enforcement.
+
+
+ILLEGAL IMMIGRATION
+This is of proportions far far far far far larger an any liberal can comprehend.  New York times did a great piece on "line cutting", explaining the conservative's rage when Democrats "let" or "assist" non-citizen's to access citizen benefits (roads, schools, medical, etc.).  This is a triple whammy:
+- LOSS: According to a zero-sum mindset every dollar spent is a dollar NOT available to a legitimate citizen.
+- FAIRNESS:  They say:  Hey you wanna give charity, fine.  out of YOUR pocket! get out of mine!  you have no right to squander my birth right away to a never ending sea of non-citizens.
+- RULE OF LAW: They might not be happy with LEGAL immigration of many poor from a scarcity mindset, but they go BALLISTIC when it is ILLEGAL immigration, and we are not strenuously trying to enforce rule of law.
+
+Many persuadable middle of the road blue collar Americans (of all genders and races) are outraged by "sanctuary cities".  The idea that Democrats would willing ASSIST in the committing of a crime that is hurting them personally and economically is by itself fully disqualifying by itself.  It is proof they Dems to care about them, and don't represent them.
+
+My wife is a legal immigrant, and she has bad feelings that others would get in via illegal means.  Indeed FOURTY-ONE percent of hispanics voted for Trump.   FORTY-FREAKING PERCENT!!!  Do you think they like Trump calling them rapists?  Or that they are racist against hispanics themselves??  No, but they do believe in republican-fairness, in scarcity-based zero-sum benefits, and are on the edge of making it, so they vote Trump.
+And if this can push a Mexican to vote for Trump, how much more for the rest of America.
+
+
+So what could Dems do:
+-- First don't call them "undocumented" immigrants, call them "illegal" immigrants.  Softening the language does not change facts on the ground, but it does indicate a stance.  This kind of immigration is not an existential issue to solve, it is not a catastrophically bad crime, it is more like J-walking, technically a crime, but not one of massive import.  They dramatically don't feel that way and anyone who does feel that way is disqualified from leading.
+-- Dump "sanctuary cities" from mainstream Dem thinking, and fully support the ICE's role of deporting undocumented migrants.  Either we gain support across the nation to pass laws to legally increase immigration or we just don't do it.  Using these gorilla tactics helps us to win the battle, but then loose the war.  They are a modest bandaid, but are fully disqualifying for many.
+-- Keep Trump's "remain in Mexico" policy.  Just like Trump does with Obamacare we can decry the policy but not repeal it.  We could even inject many millions of dollars to make the plight of those waiting in Mexico better.  Its not "Republican-fair" that illegals that will never get legal status access the country for years, and worse yet may well use this as a way to stay forever.  Week after week seeing videos of immigration catching illegals and then just turning them out into the streets of America based on Dem policies single handedly turned many against the party right there.
+
+
+Sure none of this not "Democrat-fair."  I am proposing we find other methods to support the desperate immigrants that might spend years more in Mexico before coming in.  This issue more than any other sank our chances.
+
+
+TRANS ISSUES
+We really hurt our electability over what we see as "obvious" choices on a collection of issues:  Bathroom safety.  Fairness in sports.  "Woke" pronoun usage.  Trans prominence within culture.
+
+Conservative 
+
+Personally I think your suspicious are also correct, many conservatives are "conservative."  They just don't like/approve of trans lifestyles and actions.  You can fret how backwards they are, but it you hope to represent them you must accommodate this.
+
+
+.  I don't think they are yet and themselves over what we see as an "obvious" but smaller
+
+Sure the USA gains many large benefits from immigration.
+
+
+
+that propelled trump both times and brexit too as in a zero-sum mindset every dollar spend is dollar 
+
+
+
+A valid response to this list is to say.  No that is too far.  I would rather loose power than do those things, but an invalid response is to explain how this thinking is "wrong" it does not matter that you think is right or wrong, it matter what that voter thinks is right or wrong.  The only way we get to retain power, AND do what we want
+
+
+
+please quit looking at the charlatan that just trounced you, look at your self that is where the problem lies.
+
+I live in SanFran but am from KY.  News flash: we Dems DON'T represent the nation.  Its not that Trump is loved, it is that the Dems are hated/not trusted.
+
+I am not arguing the list below are valid, but I AM arguing they are WIDELY believed and they cost the election.  For me, I would have been happy with a Dem party that gave dramatic ground on these issues, in order to have Harris in office right now.  Perhaps you don't agree and you think we need to remain "pure" (and out of power), but that is not my thought.
+
+
+DEMOCRATS PLEASE PLEASE WAKE UP!
+
+I reject Trump, yet am from a very Red state and i can tell you we Democrats are VERY out of touch with whats most important to much of America.  We can remain pure, mostly out of power, and console ourselves it is all the fault of those "evil" populists.  Or we can dramatically compromise on a tiny set of "lightening rod" issues and then, while in power, do great good on many others.
+
+Contrary to your thinking, a great many Trump voters are really turned off by many same things that turn you off about him, but they are turned off even more by tone-deaf or "unfair" Democrat policies.  (unfair as they define fairness, not as you define it!)
+
+
+Let me outline choices that I think would have dramatically flipped this election.
+You will hate them all.  But ask yourself, was it really worth loosing to Trump?  I assure you, as I talk with Trumpers, these ARE the issues that sank our battleship, they are not hiding their feelings about these things if we just listen!
+
+
+
+
+
 ### 2024-10-04  Conservatives/Liberal outrage/satire
 
 https://www.niemanlab.org/2019/12/why-liberal-satire-and-conservative-outrage-are-both-responses-to-mainstream-media-but-with-very-different-powers/

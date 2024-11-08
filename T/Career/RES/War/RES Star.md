@@ -85,33 +85,58 @@ Founded and grew 50+ person clean energy company.  Our 140+ projects included:
 - Over 3 years and 22 FTE we built majority of Sunpower's tools managing entire residential solar life product lifecycle.
   ==> Transitioned from XXXX in residential solar in 20xx up to YYYY in 20yy, ultimately enabling a complete commercial divestiture and transition in 20ZZ.
 
+~~
+Lead and advised 40+ member boutique workforce across **130+ software and data science projects,** including:
+
+
+- Scaled IoT & Infrastructure > Commercial Clean Energy: Shepherding the company’s greenfielding, build, launch, and operation of complex **software ecosystem** controlling **many millions in clean energy assets worth $3B+**, comprising firmware, dynamically throttled multi-layer networking.
+- Commercial Medical Device > Connected Robotic Surgery: Built software and infrastructure enabling video connectivity for a medical device company’s **telerobotically operated surgical unit.**
+~~
+
 ### __
 #### Instant Design
+
+Co-designed and lead automated solar-panel installation designer using deep learning and geometric reasoning over Google satellite image data. 
+=> First of a kind sales channel: instant online solar installation quotes
+
 - S: Fortune 1000 client tasked us to build a computer-vision-based solar roof installation designer tool.  Customer gave us limited rope after internal team failed at this. 
 - T:	Initial task was to demonstrate "instant design" was possible
 - A: Light 1-month R&D cycle + 2-month dirty prototyping
   Won long term contract, built and operated capability until we sold the company
 - R: Our solution became “the largest single driver of new revenue growth” according to our client — enabling them to penetrate and scale in a new high-margin market segment.
 
+
+- ML / Vision-based Solar Installation Designer > Automated Sales Channel: Co-designed technical solution and advised on 6-month research, creation, and **productization of custom geometric reasoning-deep learning-based solution.**
+First-of-its-kind sales tool used satellite data to construct consumer roofs and **enabled client to scale its** [**one-touch sales-and-design tool**](https://us.sunpower.com/blog/2019/04/09/home-solar-design-made-easier-google-cloud)—enabling 30-second processing of physical measurements, pricing, and consumer savings, and eliminating human-in-the-loop solar installation design.
+
 #### Sunpower Residential Solar
+
+Directed a 20+ person-year omnibus solution for residential solar (included sales tools, installation marketplaces and workflows, analytics, customer-facing control, etc.)
+=> This was “the largest single driver of new revenue growth in 2017 Q3” — enabling a Fortune 1000 client to penetrate and scale in a new high-margin industry.
+
+
 - S: Sunpower desired a strategic shift from commercial to residential solar
 - T: Build suite of infrastructure required for penetration into the consumer solar market.
 - A: Over 3 years, and 22 FTE we build majority of their suite of tools managing entire residential solar life cycle, including:
 - R: Sunpower transitioned from XXXX residential in 20XX upto YYYY in 20YY, and ultimately divested commercial solar in ZZZZ.
 
 
+Directed 20+ person-year greenfield-to-operations of a infrastructure omnibus system (sales and installation marketplaces and workflows, analytics, customer-facing interfaces, etc.)
+
+- Omnibus Solution for a New Market > Residential Solar: Directed 20+ person year project for **greenfield-to-operations of a computational infrastructure** (omnibus system), including market-specific workflows, analytics, and customer-facing interfaces.
+
+ _Å as “the largest single driver of new revenue growth in 2017 Q3”—enabling client to penetrate and scale in a high-margin industry._
 
 ## AEOLUS
 
-Tapped following the Martian Robotics acquisition to deliver a two armed eldercare assistant robot.
+Tapped to deliver a two armed eldercare assistive robot.
+- Built a 60+ engineer org from scratch with over 40 PhDs across 8 robotics-related disciplines.
+- Led 13-month custom HW/SW build for a dexterous robot from scratch.
+=> debuted in CES, and raised $16M in follow on investment
+=> deployed thru an exclusive relationship with a ¥2,950B Japanese conglomerate
+- Identified, negotiated, and awarded a $2M collaboration with University of Vienna.
+=> hired two world class PhDs in robotic grasping & collaborated top 10 lab for robotic grasping.
 
-
-- Built 60+ engineering org from scratch with 40+ PhDs across 8-robotics-related disciplines.
-- Led 13-month "Hail Mary" from-scratch build of new dexterous robotic system
-  ==> presented in CES 2017
-  ==> raised $16M in follow on investment
-==> won contract to deploy 
-engineers) remotely distributed across 6 continents.
 #### star - Aeolus Bang Start
 - S: Cash rich, Short timeline, Unrealistic investors
 - T: Build team, Create Aeolus Robot OS, Deliver CES Prototype
@@ -121,6 +146,18 @@ engineers) remotely distributed across 6 continents.
 - ==> Raised over $16M ???
 - ==> Debuted autonomous two armed robot performing open-ended household tasks at CES
 
+
+Tapped as employee #1—following Martian Robotics acquisition—to reimagine the IP as an eldercare robot, ultimately deployed through an exclusive relationship with a ¥2,950B Japanese conglomerate with 1,920 rooms.
+
+- [Human-like Elder-care Robot:](https://www.washingtonpost.com/news/innovations/wp/2018/01/11/this-robotic-maid-takes-us-one-step-closer-to-the-jetsons/?noredirect=on) Directed evolution of Martian Robotics IP, creating a dexterous robot prototype capable of manipulating human tools.
+
+-        **Led 13-month** **“Hail Mary” build** of team, robot, and technology to [**demo** **prototype at CES 2017**](https://www.youtube.com/watch?v=IzHb6G97tLw)—helping secure **$16M in follow-on funding.**
+
+-        **Built 60-member,** 8-discipline follow-the-sun HW / SW **R&D organization** (40+ PhDs, 20+ engineers) remotely distributed across 6 continents.
+
+-        **Identified, co-negotiated,** and **awarded a $2M collaboration** with **University of Vienna**—a Top 10 institution in automated robotic grasping in unconstrained (household) environments.
+
+-        **Built 3-person recruiting team** and a **scaled 13-step hiring process** to handle 2,000+ applicants, as well as targeted recruiting of university partners (e.g., University of Vienna).
 ## MARTIAN
 
 ### MARTIAN BATH BOT

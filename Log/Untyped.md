@@ -5,6 +5,8 @@ n:: no prefix.	Dated entries without any typing prefix
 
 | Date       | File                                        | Notes                                                                                                                             |
 | ---------- | ------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------- |
+| 2024-11-07 | [[Politics]]                                    | Democrats Wake Up!                                                                                                                |
+| 2024-11-07 | [[@Jason Syversen]]                             | update.  VB                                                                                                                       |
 | 2024-11-03 | [[Reflections]]                                 | COMPLETION - Pick things to finish; then finish them!sh                                                                           |
 | 2024-11-01 | [[@Philipp Herget]]                             | Hiring                                                                                                                            |
 | 2024-10-31 | [[BKT]]                                         | Single Letter Time Codes                                                                                                          |

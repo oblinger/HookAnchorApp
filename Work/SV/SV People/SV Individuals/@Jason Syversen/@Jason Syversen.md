@@ -218,8 +218,16 @@ DISCUSS
 
 # LOG
 
+### 2024-11-07  update.  VB 
+
+- player 999
+- state of AI.  bugs, slow, normalization, minutes off
+- VB
+- 
 
 ### 2024-10-30  Things are going good
+
+
 
 especially as foundational CV models improve and the starting point for new entrants or incumbents to build in the space becomes narrower.
 

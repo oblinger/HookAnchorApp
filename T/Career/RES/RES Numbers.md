@@ -1,4 +1,16 @@
 ## = NUMBERS - "AT A GLANCE" 
+
+### - BUILT AND SHIPPED 8 PRODUCTS
+- SV Hoops - 
+- Aeolus Aeo - 
+- Instant Design - 
+- Envoy - Residential hub for Enphase inverter-based systems
+- Oasis - Powerplant Controllers
+- Pvs5 - Residential hub controllers
+- TMAC - Industrial power plant controllers
+- PayByGroup - Group Payments Platform
+
+_
 ### - TECH AREAS
 	Technology & Product Development
 	Robotics, Machine Learning, Computer Vision, 
@@ -250,17 +262,6 @@ Performance monitoring stuff
 - 1M+ clean energy devices.  (these are individual sensors or panels)
 
 
-#### Products
-- SV Hoops - 
-- Aeolus Aeo - 
-- Instant Design - 
-- Envoy - Residential hub for Enphase inverter-based systems
-- Oasis - Powerplant Controllers
-- Pvs5 - Residential hub controllers
-- TMAC - Industrial power plant controllers
-- PayByGroup - Group Payments Platform
-
-_
 #### OTHER AF NOTES
 
 - Founded and grew a 50+ engineer & scientist team of AI and IoT specialists focused on clean energy.
