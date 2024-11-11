@@ -1,4 +1,8 @@
 
+[[2023 SV Mgt Meeting Slides\|Sun Sep 8  2024 ]]  	[[2023 SV Mgt Meeting Slides#ACHILLES - Pivo]]  
+[[2023 SV Mgt Meeting Slides\|Sun Sep 8  2024 ]]  	[[2023 SV Mgt Meeting Slides#Tomas - Rec App]]  
+[[2023 Sound Bites for Bridge Round Financing\|Sun Sep 8  2024 ]]  	[[2023 Sound Bites for Bridge Round Financing#Log.]]  
+[[2023 Volleyball Product\|Sun Sep 8  2024 ]]  	[[2023 Volleyball Product#LOG]]  
 [[2023 Volleyball SV Product\|Sun Sep 8  2024 ]]  	[[2023 Volleyball SV Product#LOG]]  
 [[2023-08 Ingest Alternatives Analysis\|Sun Sep 8  2024 ]]  	[[2023-08 Ingest Alternatives Analysis#LOG]]  
 [[2023-Reset-DanO-Role\|Sun Sep 8  2024 ]]  	[[2023-Reset-DanO-Role#__]]  

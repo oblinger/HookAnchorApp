@@ -5,6 +5,12 @@ n:: no prefix.	Dated entries without any typing prefix
 
 | Date       | File                                        | Notes                                                                                                                             |
 | ---------- | ------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------- |
+| 2024-11-10 | [[@Alexandra Ramadan]]                          | Hackers 2024                                                                                                                      |
+| 2024-11-10 | [[@Danny Wilson]]                               | Hackers 2024                                                                                                                      |
+| 2024-11-10 | [[@Hackers]]                                    | Hackers 2024                                                                                                                      |
+| 2024-11-10 | [[@Marita Cheng]]                               | Hackers 2024                                                                                                                      |
+| 2024-11-10 | [[@Otavio Good]]                                | Hackers 2024                                                                                                                      |
+| 2024-11-10 | [[@Pinar Stanfield]]                            | Hackers 2024                                                                                                                      |
 | 2024-11-07 | [[Politics]]                                    | Democrats Wake Up!                                                                                                                |
 | 2024-11-07 | [[@Jason Syversen]]                             | update.  VB                                                                                                                       |
 | 2024-11-03 | [[Reflections]]                                 | COMPLETION - Pick things to finish; then finish them!sh                                                                           |

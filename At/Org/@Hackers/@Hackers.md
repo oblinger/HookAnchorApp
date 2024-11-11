@@ -1,6 +1,23 @@
 
 
-[[@James Miller]] 
+### 2024-11-10  Hackers 2024
+
+
+[[@James Miller]] - drove me
+
+[[@Alexandra Ramadan]] - will show me arou. d Google X
+[[@jamie]] her hubby
+
+
+[[@Danny Wilson]] 
+
+
+[[@Marita Cheng]] - Austrailian in SF.  robots to Ed tech
+[[@Otavio Good]] - Multi-exit. The everything robot.
+
+
+[[@Pinar Stanfield]] - Apple messages
+
 
 ### 2019-09-26 - Application Details
 
