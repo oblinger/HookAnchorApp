@@ -5,6 +5,10 @@ n:: no prefix.	Dated entries without any typing prefix
 
 | Date       | File                                        | Notes                                                                                                                             |
 | ---------- | ------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------- |
+| 2024-11-11 | [[@Mark Randall]]                               | Hackers 2024                                                                                                                      |
+| 2024-11-11 | [[Politics]]                                    | short                                                                                                                             |
+| 2024-11-11 | [[Politics]]                                    | Democrats Wake Up! 2                                                                                                              |
+| 2024-11-11 | [[Mgt]]                                         | W                                                                                                                                 |
 | 2024-11-10 | [[@Alexandra Ramadan]]                          | Hackers 2024                                                                                                                      |
 | 2024-11-10 | [[@Danny Wilson]]                               | Hackers 2024                                                                                                                      |
 | 2024-11-10 | [[@Hackers]]                                    | Hackers 2024                                                                                                                      |

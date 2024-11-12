@@ -1,9 +1,14 @@
+.[[@Hackers]].
+  , [[@Danny Wilson]], [[@Marita Cheng]], [[@Otavio Good]], [[@Pinar Stanfield]], 
+
 
 
 ### 2024-11-10  Hackers 2024
 
 
 [[@James Miller]] - drove me
+
+[[@Mark Randall]] - Offered to let me drive his Mclaran
 
 [[@Alexandra Ramadan]] - will show me arou. d Google X
 [[@jamie]] her hubby

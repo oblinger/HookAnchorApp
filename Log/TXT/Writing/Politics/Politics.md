@@ -20,6 +20,74 @@ https://www.wsj.com/opinion/harris-is-the-safer-economic-choice-2024-presidentia
 
 # LOG
 
+### 2024-11-11  short
+
+No it does not! It shows we are not listening!!! They worry:
+
+-- MIGRANTS: Millions of migrants will take jobs and burden our services.
+
+-- TRANS: Bathrooms will not be safe, sports will not be fair, and taxes will be misspent on gender affirming care.
+
+-- CANDIDATES: Hillary and Biden were not broadly popular/trusted candidates by the middle, we can pick ones that are.
+
+-- SPEECH: Speech will not be free if the gov pressure twitter on what does and does not count as hate or mis-information.
+
+explaining to me how these concerns are not valid misses the point. Middle American defines what is valid, and those leaders who find the best compromises lead.
+
+WE DID NOT HEED WE DO NOT LEAD.
+
+### 2024-11-11  Democrats Wake Up! 2
+
+
+America does not deserve the consequences they are about to receive from this election.  Sure there are ardent Trump supporters that love everything he represents, but much of America simply tolerates him because IN THERE EYES he is better than Dem incompetence on key issues.
+
+A successful leader must find the compromises that allow most constituents to be mostly satisfied.  If you don't represent the interests of your constituents (as judge BY your constituents) then you don't deserve and wont to lead them.  I explain here where I think Dems lost the right to lead.
+
+As you read these, don't explain in your mind how these claims are wrong, that does not matter!  It only matter that they ARE widely believed and the Dems did little to address them.
+
+
+
+THE ECONOMY
+American's don't feel they or the economy are doing well, so leaders that actively make this worse are simply disqualified as a viable leaders, no matter what else they do.
+
+IMMIGRATION
+Most don't buy arguments that huge numbers of migrants entering our country won't take limited jobs from citizens, and they don't believe these millions won't cost more services than their low wage taxes pay for.  Thus when they see a bus-load of illegally entering migrants being openly released onto our streets BY OUR GOV makes their blood BOIL!!!   Bus loads after bus loads of society-ending mountains of Democratic failure on TV EACH WEEK for four years.  This perceived and actual failure ALONE is enough to entirely disqualify Democrats in the mind of many.
+
+FRACKING
+Most citizens view climate and environment as important but not existential.  They want compromises that protect the economy, so Fracking that replaces coal with natural gas is a trade they overwhelmingly want.  In general they want to hear hard talk about how costs are being contained, not just how many smelt are saved.
+
+
+TRANS ISSUES
+The middle want a society that is fair, safe and prosperous.
+-- They don't believe it is FAIR for biological males to compete with bio females
+-- They don't think it is SAFE to force bio females to go to the bathroom with biological males.
+-- They don't think it is right to use tax money to pay for "gender affirming care."
+-- They don't like focus on DEI, and woke pronouns etc.  They believe Republican claims that federal forcing of DEI has caused ineffective hires, and woke concerns prove that leaders don't have their eye on what is important (the economy).
+
+Dems need to just shut up about these "third rail" issues, say they are an issue for the states, and let society progress as it naturally IS progressing.  In a democracy, one group using legislation to FORCE its values on to another large group SHOULD and WILL loose its power.
+
+
+PARTISAN TRUMP ATTACKS:  Legal attacks on Trump have clearly HELPED him!!  But Why?!  Because they are (correctly) seen as a partisan.  If we cannot bring a case which a NEUTRAL or conservative federal judge will prosecute, then we should bring no case as all.  They helped Trump, and they weaken our Democracy as they normalize the use of partisan judges to bring political cases.  (Notice Biden feloniously mis-handled classified documents....   Should we now be throwing him into jail?  a partisan judge might!)
+
+
+FREE SPEECH
+A virologist was banned on twitter for claiming the Corona came from a Wuhan lab.  One politician was banned from twitter for saying "A man cannot give birth" because he was transphobic.  News about hunter-biden's laptop was blocked as mis-information, yet turned out to be true.  We later find that Biden's gov pressured Twitter and others to censure.  THE MIDDLE BELIEVES IN FREE SPEECH, and does not trust liberals to be in charge of what is an is not "mis-information" or "hate speech."
+
+
+
+BIDEN'S INFIRMITY
+The Dem's inner circle demand one of their own lead the white house, and are willing to risk the presidency to ensure this.  Hillary was KNOWN to be very unpopular, Biden in both terms was KNOWN to be frail in ways that bothered the middle.  We were simply told, "yeah, but its better than the other guys!"
+
+The Democrats lost the 2016 election, Trump did not win it, the same in 2024.
+Biden did win in 2020, but it was entirely a "not that other guy" vote!!
+
+Wow Democratic party, is this the best we can do?  You Do deserve to loose BADLY.
+But of course America does not deserve what is about to happen to it.  Very sad.
+
+
+
+(Of course America does not deserve what it about to happen, but it is entirely the Dems fault)
+
 
 ### 2024-11-07  Democrats Wake Up!
 

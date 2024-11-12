@@ -72,7 +72,7 @@
             [[UfApps]]: 
         [[2020-08 Race Pitch]]: 
     [[AT]]: [[@Qingling Oblinger]],	[[VC ORG]],	[[@Google]],	
-        [[ORG]]: [[@Merrill]],	[[Service]],	
+        [[ORG]]: [[@Merrill]],	[[@Hackers]],	[[Service]],	
             [[@Amazon]]: [[AMA]],	
         [[PEOPLE]]: 
             [[Family]]: [[Parents]],	

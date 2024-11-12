@@ -1,3 +1,5 @@
+- slow down on hire
+- james
 - xAI
 - DETER, Yolo
 - briones

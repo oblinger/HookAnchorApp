@@ -4,6 +4,18 @@
 
 # Log
 
+
+### 2024-11-11  W
+
+- Play charts
+- VB crossover experiment
+- Scripts for ball track data
+- Shooter ID
+- Shot charts
+- AI-min normalization bugs
+	- specs, code, fixes
+- fireball fixes 20% offscreen
+
 ### 2024-10-28  weekly
 
 - Fixes, memory

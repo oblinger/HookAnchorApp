@@ -1,4 +1,10 @@
 
+[[2023 Build Datasets Needed for the CV Team\|Sun Sep 8  2024 ]]  	[[2023 Build Datasets Needed for the CV Team#LOG]]  
+[[2023 Full-AI Basketball Highlights Product\|Sun Sep 8  2024 ]]  	[[2023 Full-AI Basketball Highlights Product#Todo]]  
+[[2023 Full-AI Basketball Highlights Product\|Sun Sep 8  2024 ]]  	[[2023 Full-AI Basketball Highlights Product#Breakdown]]  
+[[2023 GPT Report\|Sun Sep 8  2024 ]]  	[[2023 GPT Report#Sports Visio Competitive Technical Risk Analysis for GPT-4]]  
+[[2023 GPT Report\|Sun Sep 8  2024 ]]  	[[2023 GPT Report#APPENDIX A - A chat with GPT-4]]  
+[[2023 Headroom Analysis\|Sun Sep 8  2024 ]]  	[[2023 Headroom Analysis#Writeup]]  
 [[2023 SV Mgt Meeting Slides\|Sun Sep 8  2024 ]]  	[[2023 SV Mgt Meeting Slides#ACHILLES - Pivo]]  
 [[2023 SV Mgt Meeting Slides\|Sun Sep 8  2024 ]]  	[[2023 SV Mgt Meeting Slides#Tomas - Rec App]]  
 [[2023 Sound Bites for Bridge Round Financing\|Sun Sep 8  2024 ]]  	[[2023 Sound Bites for Bridge Round Financing#Log.]]  
