@@ -11,16 +11,10 @@
   Metrics: 
   [Fball](spot://fireball):	>Matias[DWS](https://software-engineering-team.atlassian.net/browse/WU-1946) 
   
-  Eval:  ^VALmin, !gt20>run>chk
-  - alpha testing protocol
-  
-  look at PRs
-  P2P process
   [[2024-08 Backend Architect|Arch]]:	Brian
   [[FIN.]]	Schwab
   [[NJ]]:	>[[War|War]], rewrite, mentor
   GCP:	[Brian plan](https://docs.google.com/spreadsheets/d/1W38uHew6aaqyeolKzbO9NbaA96Q-jzyDb7gYoUst0qw/edit?gid=0#gid=0). 
-- james spike
 - slow down on hire
 ## TRACK
   - heavy testing mgr app
