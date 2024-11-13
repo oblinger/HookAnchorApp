@@ -1,6 +1,7 @@
 .[[ELI Log]].
-  , [[2022-00-00 Eli Sleep Training]], 
-  DELS: [[2023-05 Cool Kids]], [[Eli Sleep Training]], 
+  , [[2022-00-00 Eli Sleep Training]],
+  , [[2024-11-08 Comet]], 
+  DELS: [[2023-05 Cool Kids]], [[Eli Sleep Training]],
 
 
 :: [[2023-05 Cool Kids]]

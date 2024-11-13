@@ -1,5 +1,8 @@
 
-### 2024-11-03  COMPLETION - Pick things to finish; then finish them!sh
+
+
+### 2024-11-12  Hackers was fun/energizing.  I am credible 4 many jobs
+### 2024-11-03  COMPLETION - Pick things to finish; then finish them!
 
 - Just finished the basement, felt pretty great.
 - I am in shooting distance to finishing my car and resume.

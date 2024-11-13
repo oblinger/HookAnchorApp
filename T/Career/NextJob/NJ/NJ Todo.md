@@ -1,4 +1,11 @@
-- find MGR courses/books to read
+
+- DETER, Yolo
+- [ ] Ideas for hiring prep:
+	- [ ] [[@Pramp]]: Practice mock interviews
+	- [ ] algo monster: practice coding tests
+- [ ] resume match sites
+
+- - find MGR courses/books to read
 - [[RES]]: Version complete
 - [[RES War]]: Ability to speak from first-person perspective about coding tasks
 - [[NJ Pyramid]], [[RES Proof Points]], 
@@ -11,7 +18,7 @@
 - [[@Dan Kaufman]] - Is this [article](https://pravse.medium.com/the-maze-is-in-the-mouse-980c57cfd61a) the real culture at Google.  
   Is it a good reason to stay away?  Can an energetic TL ship code?
 
-## ROCKS
+## ROCKS [[NJ]] 
 - DOCS:	[[Res]], [[RES War]], [[RES Star]], 
 - [[RES]]: 		Get into final form.  Along with a cover letter?
 - [[NJ Help]]:	Plan

@@ -1,4 +1,9 @@
 
+[[July Hiring\|Wed Jul 26  2023]]  	[[July Hiring#NOTE 2]]  
+[[July Hiring\|Wed Jul 26  2023]]  	[[July Hiring#NOTE 3]]  
+[[July Hiring\|Wed Jul 26  2023]]  	[[July Hiring#HIRING SUMMARY]]  
+[[Hire\|Wed Jul 26  2023]]  	[[Hire#BACKEND]]  
+[[Hire\|Wed Jul 26  2023]]  	[[Hire#ANGULAR]]  
 [[ToBuy\|Wed Jul 26  2023]]  	[[ToBuy#2023-07-15  Coffee Table]]  
 [[ToBuy\|Wed Jul 26  2023]]  	[[ToBuy#2023-07-15  Table]]  
 [[Phone\|Wed Jul 26  2023]]  	[[Phone#2023-07-14  DEXA. [[@Dexafit]]]]  

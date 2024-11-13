@@ -3,7 +3,7 @@
   [[2024 Res Rewrite At a Glance]],
   [[2024 Resume]],
 
-[[NJ.]] 
+[[NJ Todo]] 
 ## __
 who? alpha? mission
 

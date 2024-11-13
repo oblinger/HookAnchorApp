@@ -34,7 +34,7 @@ TOP ORGANIZING VIEWS
 - e	EAT	- Eating & Enjoyable activities (like reading)
 - g	GAP	- Productive procrastination via GAP tasks
 - r	RUN	- Running and exercise
-- p	PER	- Personal tasks
+- p	PER	- Personal "chew" tasks
 - x	FRIT	- Time frittered away
 - w	WORK	- Generalized work tasks
 
@@ -42,8 +42,8 @@ Fun/Family (maybe in E)
 
 ### 2024-10-27  buckets
 
-[[Self]]:	Run, 
-[[Home]]:	Car, Date, 
+[[Self]]:	Run, Med, 
+[[Per]]:	[[Home]], Car, Date, 
 
 
 

@@ -1,4 +1,5 @@
 .**NOW**.
+  [VB++](https://docs.google.com/document/d/1JNx3gS2c8qVLiiFoESU82dj_Z-xxZCgutdtSaAUqDJ4/edit?tab=t.0):	>talk james
   EXP:   [HotKey](https://software-engineering-team.atlassian.net/browse/WU-1935), J^5games 
   .		Discuss other ways
   STAT:  [WU1938](https://software-engineering-team.atlassian.net/browse/WU-1938) show err status
@@ -6,9 +7,9 @@
   [PAID](https://www.notion.so/sportsvisio/AI-MIN-Premium-Paid-Feature-128719d6f2bd80ffbb41db0441d57770?pvs=4):	.
   [DT](spot://dt): 	[Homo](https://www.notion.so/sportsvisio/STORY-Homography-Data-Martin-4ab7ed5c5a6b46b1ac7de9821b3a5c76?pvs=4)^shot  [BB](https://www.notion.so/sportsvisio/STORY-BB-Data-105719d6f2bd809d9170c84a0c8d762d?pvs=4)^
   [Min](spot:://AImin):	[Alpha](https://www.notion.so/sportsvisio/AI-MIN-Alpha-Testing-James-118719d6f2bd80bb8280fdeafac784f3?pvs=4): 
-  QA:	[QAmin](https://software-engineering-team.atlassian.net/jira/software/projects/AIT/boards/25?selectedIssue=AIT-1069), [QAfb](https://software-engineering-team.atlassian.net/jira/software/projects/AIT/boards/25?selectedIssue=AIT-1070),
+  QA:	G[QAmin](https://software-engineering-team.atlassian.net/jira/software/projects/AIT/boards/25?selectedIssue=AIT-1069)^reg  [QAfb](https://software-engineering-team.atlassian.net/jira/software/projects/AIT/boards/25?selectedIssue=AIT-1070),
   Metrics: 
-  [Fball](spot://fireball):	>Matias DRW.
+  [Fball](spot://fireball):	>Matias[DWS](https://software-engineering-team.atlassian.net/browse/WU-1946) 
   
   Eval:  ^VALmin, !gt20>run>chk
   - alpha testing protocol
@@ -19,9 +20,8 @@
   [[FIN.]]	Schwab
   [[NJ]]:	>[[War|War]], rewrite, mentor
   GCP:	[Brian plan](https://docs.google.com/spreadsheets/d/1W38uHew6aaqyeolKzbO9NbaA96Q-jzyDb7gYoUst0qw/edit?gid=0#gid=0). 
-
-
-  
+- james spike
+- slow down on hire
 ## TRACK
   - heavy testing mgr app
   - mem tracking, >

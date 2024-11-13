@@ -28,11 +28,11 @@ ADVICE:
 .[[NJ24]].
   :
   [NJ24 Slide](spot://nj24slide):
-  ADDS:   [[NJ]], [[NJ.]], [[NJ24 Framing]], [[NJ Read]], [[NJ Rewrite]],
+  ADDS:   [[NJ]], [[NJ Todo]], [[NJ24 Framing]], [[NJ Read]], [[NJ Rewrite]],
 
 :: [[NJ Read]]
 
 :: [[NJ]]
 
-. [[NJ.]] [[Lrn]], [[NJ Rewrite]], [[War AI]], 
+. [[NJ Todo]] [[Lrn]], [[NJ Rewrite]], [[War AI]], 
 

@@ -146,18 +146,18 @@ Tapped to deliver a two armed eldercare assistive robot.
 - ==> Raised over $16M ???
 - ==> Debuted autonomous two armed robot performing open-ended household tasks at CES
 
-
+JARED
 Tapped as employee #1—following Martian Robotics acquisition—to reimagine the IP as an eldercare robot, ultimately deployed through an exclusive relationship with a ¥2,950B Japanese conglomerate with 1,920 rooms.
 
 - [Human-like Elder-care Robot:](https://www.washingtonpost.com/news/innovations/wp/2018/01/11/this-robotic-maid-takes-us-one-step-closer-to-the-jetsons/?noredirect=on) Directed evolution of Martian Robotics IP, creating a dexterous robot prototype capable of manipulating human tools.
 
--        **Led 13-month** **“Hail Mary” build** of team, robot, and technology to [**demo** **prototype at CES 2017**](https://www.youtube.com/watch?v=IzHb6G97tLw)—helping secure **$16M in follow-on funding.**
+- **Led 13-month** **“Hail Mary” build** of team, robot, and technology to [**demo** **prototype at CES 2017**](https://www.youtube.com/watch?v=IzHb6G97tLw)—helping secure **$16M in follow-on funding.**
 
--        **Built 60-member,** 8-discipline follow-the-sun HW / SW **R&D organization** (40+ PhDs, 20+ engineers) remotely distributed across 6 continents.
+- **Built 60-member,** 8-discipline follow-the-sun HW / SW **R&D organization** (40+ PhDs, 20+ engineers) remotely distributed across 6 continents.
 
--        **Identified, co-negotiated,** and **awarded a $2M collaboration** with **University of Vienna**—a Top 10 institution in automated robotic grasping in unconstrained (household) environments.
+- **Identified, co-negotiated,** and **awarded a $2M collaboration** with **University of Vienna**—a Top 10 institution in automated robotic grasping in unconstrained (household) environments.
 
--        **Built 3-person recruiting team** and a **scaled 13-step hiring process** to handle 2,000+ applicants, as well as targeted recruiting of university partners (e.g., University of Vienna).
+- **Built 3-person recruiting team** and a **scaled 13-step hiring process** to handle 2,000+ applicants, as well as targeted recruiting of university partners (e.g., University of Vienna).
 ## MARTIAN
 
 ### MARTIAN BATH BOT
@@ -168,7 +168,35 @@ Tapped as employee #1—following Martian Robotics acquisition—to reimagine th
 
 ## DARPA
 
-### DARPA PM
+#### __
+Sold and led over $200M+ in advanced AI and ML programs.
+- Machine Reading Program: Aimed $125M at developing fused ML and NLP in mapping unstructured information into structured data
+- Bootstrapped Learning Program: Set the stage for ongoing transformation from statistical ML to human-like, multi-paradigm ML—closing the gap between ML and human learning.
+- Transfer Learning: Extended ML to incorporate learning from related but distinct tasks. For example, transferring learning to recognize and object into learning to manipulate it.
+- Plus 11 more early-stage AI / ML / Cyber R&D projects ($500K to $5M).
+=> fueled a field-changing revolution in NLP.
+=> IBM Watson system that beat world Jeopardy champion, Ken Jennings, using underlying tech.
+=> 1000+ papers and patents.
+
+- Appointed by office director to serve the 9-member Senior Advisory Board
+=> Formulating I2O’s cognitive / computational priorities, along with budgetary justification delivered biannually to the U.S. Congress.
+=> Hand-picked the director of DARPA as one of two PMs briefing Secretary of Defense, Robert Gates.
+
+#### $200M Portfolio
+S: New PM
+T: Sell director on new programs; Advance USA in Machine Learning and AI
+A: Sold and led over $200M+ in advanced R&D programs in Machine Learning and AI
+- Machine Reading Program: Aimed $125M at developing fused ML and NLP in mapping unstructured information into structured data
+- Bootstrapped Learning Program: Set the stage for ongoing transformation from statistical ML to human-like, multi-paradigm ML—closing the gap between ML and human learning.
+- Transfer Learning: Extended ML to incorporate learning from related but distinct tasks. For example, transferring learning to recognize and object into learning to manipulate it.
+- Plus 11 more early-stage AI / ML / Cyber R&D projects ($500K to $5M).
+=> fueled a field-changing revolution in NLP.
+=> IBM Watson system that beat world Jeopardy champion, Ken Jennings, using underlying tech.
+=> 1000+ peer-reviewed papers from more than 500 researchers in AI & ML in world-lead universities & labs.
+
+
+
+#### DARPA PM
 - S: New PM
 - T: Sell director on new programs
 - A: Sold and executed 3 DARPA programs
@@ -176,3 +204,52 @@ Tapped as employee #1—following Martian Robotics acquisition—to reimagine th
 - 1000+ peer reviewed papers
 - drove big-data enabled text reading
 - collaborated on beginnings of generative AI revolution
+
+#### My old one
+**DARPA, Program Manager**.  Action: Won and lead $200M+ technical research portfolio.
+
+Outcome:   1000+ peer-reviewed papers from more than 500 researchers in AI & ML in world-lead universities & labs.
+Outcome:  Drove the technology eventually spun out as the IBM Watson NLP software suite, and  
+            beat top human players in the game of Jeopardy.
+### JARED 
+**DARPA** (Defense Advanced Research Projects Agency), Washington, D.C………………… Aug 2005 to Oct 2011
+
+_One of the world’s innovation engines. R&D budget: $6B. Funded scientists: ~20,000._
+
+**Program Manager**
+
+**Recruited to imagine, build,** and **evolve pioneering AI and ML at the forefront of innovation**—serving as one
+
+of 130 PMs collectively adjudicating research awards and managing ~250 R&D programs.
+
+• Research Portfolio Vision, Strategy & Prioritization: **Appointed by** **IPTO****’s director** to serve on its 9-
+
+member Senior Advisory Board—formulating IPTO’s **cognitive / computational priorities,** along with
+
+budgetary justification delivered biannually to the U.S. Congress.
+
+_Hand-picked the director of DARPA as one of two PMs briefing Secretary of Defense, Robert Gates._
+
+• Global Advancement in AI & ML: **Owned a $200M+ technical research portfolio** to advance the
+
+machine learning field worldwide—funding and overseeing 100+ scientists. Examples:
+
+**Three large AI / ML innovation programs** _($50M to $125M projects):_
+
+_-_ Machine Reading Program (MRP): Aimed $125M at developing fused ML and NLP in mapping
+
+unstructured information into structured data—**fueling a field-changing revolution in NLP.** _MRP_
+
+_tech is core to the_ **_IBM Watson_** _system that beat world Jeopardy champion, Ken Jennings._
+
+_-_ Bootstrapped Learning Program: Set the stage for **ongoing transformation from statistical ML to**
+
+**human-like, multi-paradigm ML**—closing the gap between ML and human learning.
+
+_-_ Transfer Learning Program: **Extended ML to incorporate learning from related but distinct**
+
+**tasks.** For example, transferring learning to recognize and object into learning to manipulate it.
+
+**Eleven early-stage AI / ML / Cyber programs** _($500K to $5M projects),_ including **Attacking Time** (cyber
+
+program), and **Never-ending Learning** (statistical NLP program).

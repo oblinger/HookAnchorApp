@@ -1,4 +1,9 @@
 
+[[2023 Bridge Round\|Sun Sep 8  2024 ]]  	[[2023 Bridge Round#Todo]]  
+[[2023 Bridge Round\|Sun Sep 8  2024 ]]  	[[2023 Bridge Round#INFO]]  
+[[2023 Bridge Round\|Sun Sep 8  2024 ]]  	[[2023 Bridge Round#LOG]]  
+[[2023 Bugs  Flow\|Sun Sep 8  2024 ]]  	[[2023 Bugs  Flow#TODO]]  
+[[2023 Bugs  Flow\|Sun Sep 8  2024 ]]  	[[2023 Bugs  Flow#TOP]]  
 [[2023 Build Datasets Needed for the CV Team\|Sun Sep 8  2024 ]]  	[[2023 Build Datasets Needed for the CV Team#LOG]]  
 [[2023 Full-AI Basketball Highlights Product\|Sun Sep 8  2024 ]]  	[[2023 Full-AI Basketball Highlights Product#Todo]]  
 [[2023 Full-AI Basketball Highlights Product\|Sun Sep 8  2024 ]]  	[[2023 Full-AI Basketball Highlights Product#Breakdown]]  

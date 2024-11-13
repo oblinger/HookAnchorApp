@@ -36,6 +36,18 @@ explaining to me how these concerns are not valid misses the point. Middle Ameri
 
 WE DID NOT HEED WE DO NOT LEAD.
 
+~~
+
+Here is my list in order of importance:
+
+-- illegal immigration. (this ties to economy)
+
+-- trans issues: bathroom safety. sports fairness. tax dollar on surgery.
+
+-- Partisan attacks on Trump and on free speech
+
+-- Kamala is quite liberal and a less know quantity
+
 ### 2024-11-11  Democrats Wake Up! 2
 
 

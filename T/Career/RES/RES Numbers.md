@@ -314,7 +314,7 @@ JEOPARDY
 
 IBM applied the MR tech to reading and structuring humanity's 
 
-
+#### Funded Work
 •	Just under quarter billion, created, sold, and executed
 −	Won and defended just under a quarter of a billion dollars in program funding
 −	100% success in obtaining authorization for new, and 100% success in defense of existing efforts.  Notable given that the success rate in creating new programs, and defense of their budget over their lifetime both are about 50-50, and this 100% success is over a dozen Director office presentations
@@ -342,7 +342,7 @@ IBM applied the MR tech to reading and structuring humanity's
 −	Strategy document
 −	Budgetary wedge for 
 
-OFFICIAL PROGRAM NAMES
+#### OFFICIAL PROGRAM NAMES
 PROGRAMS:  Transfer Learning, Bootstrapped Learning, Machine Reading
 SEEDLINGS:  Never Ending Learning, Attacking Time, Enhanced Bootstrapping, Machine Learning on Multicore Architectures, Construction of Textual Corpora and Protocols for Assessments Seedling, Transfer Learning for Adaptive Information Extraction, Transfer Learning for Adaptive Relation Extraction
 
@@ -354,20 +354,25 @@ Universal Self-Supervising Hierarchical Learning  (1 Phase 1 and –probably –
 Next-Generation Behavior Composer for Military Simulation (1 Phase 2)
 
 
-Number of dollars and people managed
-MR: $25M/yr for 5 years.	3 teams.  $8M/prime.  13 profs.
+#### Number of dollars and people managed
+MR: $25M/yr for 5 years.	3 teams.  $8M/prime.  13 profs per prime
 BL: $15M/yr for 3 years.	2 teams + BlueTeam 
 TL:	$18M/yr for 3 years.	3 teams.  ($6M per team is a guess, remember it)
 
 
+BL
 $4m internal.  $300K/person = 12heads
 $4m / 12profs per prime = $300K per prof.
       4 people = 10% one prof.  1-postdoc.  2-grads
+      
 
+~
 MR Prime = 12 + 48 = 60people x 3 primes = 180heads for MR
 BL Prime = 50heads (little smaller). 20 on Blue = 120heads for BL
-
 I was managing ~300 heads when both BL and MR were executing.
+~
+120heads for TL since it was similar in size to BL
+11 other funded efforts 
 
 _
 ### - IBM Materials

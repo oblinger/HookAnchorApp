@@ -1,3 +1,4 @@
+- clang check it out.  maybe use it
 
 
 - Loom

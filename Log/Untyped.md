@@ -5,6 +5,8 @@ n:: no prefix.	Dated entries without any typing prefix
 
 | Date       | File                                        | Notes                                                                                                                             |
 | ---------- | ------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------- |
+| 2024-11-12 | [[@Sean O'Connor]]                              | VB                                                                                                                                |
+| 2024-11-12 | [[Reflections]]                                 | Hackers was fun/energizing.  I am credible 4 many jobs                                                                            |
 | 2024-11-11 | [[@Mark Randall]]                               | Hackers 2024                                                                                                                      |
 | 2024-11-11 | [[Politics]]                                    | short                                                                                                                             |
 | 2024-11-11 | [[Politics]]                                    | Democrats Wake Up! 2                                                                                                              |
@@ -17,7 +19,7 @@ n:: no prefix.	Dated entries without any typing prefix
 | 2024-11-10 | [[@Pinar Stanfield]]                            | Hackers 2024                                                                                                                      |
 | 2024-11-07 | [[Politics]]                                    | Democrats Wake Up!                                                                                                                |
 | 2024-11-07 | [[@Jason Syversen]]                             | update.  VB                                                                                                                       |
-| 2024-11-03 | [[Reflections]]                                 | COMPLETION - Pick things to finish; then finish them!sh                                                                           |
+| 2024-11-03 | [[Reflections]]                                 | COMPLETION - Pick things to finish; then finish them!                                                                             |
 | 2024-11-01 | [[@Philipp Herget]]                             | Hiring                                                                                                                            |
 | 2024-10-31 | [[BKT]]                                         | Single Letter Time Codes                                                                                                          |
 | 2024-10-30 | [[@Shawn Coe]]                                  | Intro                                                                                                                             |

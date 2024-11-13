@@ -8,6 +8,11 @@ Correctly labelled colors (and standard colors) (color of jersey, not digit colo
 
 # LOG
 
+### 2024-11-12  VB
+
+- Speedups: 
+- VB
+
 ### 2024-08-20  Looking to the future
 
 BB: (correctable stats, highlights)

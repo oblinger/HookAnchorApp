@@ -1,5 +1,6 @@
 .[[@Hackers]].
-  , [[@Danny Wilson]], [[@Marita Cheng]], [[@Otavio Good]], [[@Pinar Stanfield]], 
+  , [[@Danny Wilson]], [[@Marita Cheng]], [[@Otavio Good]], [[@Pinar Stanfield]],
+  , [[@Mark Randall]], 
 
 
 
