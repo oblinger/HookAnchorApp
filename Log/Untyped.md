@@ -179,7 +179,7 @@ n:: no prefix.	Dated entries without any typing prefix
 | 2024-03-30 | [[MED Log]]                                     | MISC                                                                                                                              |
 | 2024-03-29 | [[@Shreshth Saxena]]                            | SOW                                                                                                                               |
 | 2024-03-29 | [[Daily Schedules]]                             | Tightly scheduled morning                                                                                                         |
-| 2024-03-29 | [[RES]]                                         | [[NJ Rewrite]]                                                                                                                    |
+| 2024-03-29 | [[RES]]                                         | [[2024-04-01 Resume Rewrite]]                                                                                                     |
 | 2024-03-24 | [[FIN Log]]                                     | Financial Advisors                                                                                                                |
 | 2024-03-22 | [[QQ]]                                          | Life Time                                                                                                                         |
 | 2024-03-22 | [[QQ]]                                          | CONTACTS                                                                                                                          |

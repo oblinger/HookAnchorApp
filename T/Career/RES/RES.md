@@ -10,7 +10,7 @@
 
 
 
-  DELS: [[2024 Res Rewrite At a Glance]], [[2024 Resume]],[[2023 - Resume Samples]], [[Jared Master]], [[z2 - Linked In Module]], 
+  DELS: [[2024 Res Rewrite At a Glance]], [[2024-04-01 Resume Rewrite]],[[2023 - Resume Samples]], [[Jared Master]], [[z2 - Linked In Module]], 
 
 
 
@@ -218,7 +218,7 @@
 
 # # LOG
 
-### 2024-03-29  [[NJ Rewrite]]
+### 2024-03-29  [[2024-04-01 Resume Rewrite]]
 
 
 

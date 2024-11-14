@@ -1,4 +1,6 @@
 
+[[Now\|Wed Jul 26  2023]]  	[[Now#Now]]  
+[[SNIP\|Wed Jul 26  2023]]  	[[SNIP#2023-07-26  Piano]]  
 [[fried\|Wed Jul 26  2023]]  	[[fried#WAITING]]  
 [[now\|Wed Jul 26  2023]]  	[[now#Waiting]]  
 [[now\|Wed Jul 26  2023]]  	[[now#Now]]  

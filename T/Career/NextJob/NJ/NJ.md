@@ -1,9 +1,13 @@
 .[[NJ]].	  [[Lrn]],
-  TOP:	[[NJ Todo]],
-  DOCS:	[NJ Slides](spot://njslides), [[NJ Rewrite]],
+  TOP:	[NJ Slides](spot://njslides),
+  TODO:	[[NJ Todo]], [[NJ Read]],
+  DOCS: [[2024-04-01 Resume Rewrite]],
   PARTS:,
-  ROCKS:, [[NJ Read]], ,
+  ROCKS:, 
   , [NJ Slide](spot://njslide), ,
+  , , [[NJ Framing]], [[NJ Help]], [[NJ Log]]
+  , [[NJ Targets]], [[NJ Train]],
+  DELS: [NJ. alias NJ Todo](spot://nj.aliasnjtodo), 
 
 
 RELATED:	[[RES]], [[CRM]], 
