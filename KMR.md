@@ -1,19 +1,23 @@
 TOPS: [[KMR]], [[Meta]], [[TOC]], 
 
 .[[KMR]].
-  [[TOC]],
-  [[Work]],
+  ,
+  ,
   [[Set]],
   [[Log]],
   [[AT]],
   [[MY]],
   [[Prj]],
-  [[SYS]],
+  ,
   [[T]], [GG](spot://gg), , [[RR]],
   [TRASH Obsidian](spot://trashobsidian), [TRASH for Obsidian Folder](spot://trashforobsidianfolder)
-  OTHER: [[ATTACH]],  [[WEEKLY]], [top](spot://top),
+  OTHER: ,  , [top](spot://top),
   , [KMR Gdrive](spot://kmrgdrive),
-  , [[2024-10-29]], 
+  , ,
+  , , , ,
+  , [[2024-10-29]], [[ATTACH]], [[SYS]], [[TOC]], [[WEEKLY]], [[Work]], 
+  DELS: [[TOC]], [[Work]], [[SYS]], [[ATTACH]], [[WEEKLY]], [[2024-10-29]],
+  DELS: [[TOC]], [[Work]], [[SYS]], [[ATTACH]], [[WEEKLY]], [[2024-10-29]],[[JJ]], [[Misc]], [[test987]], 
 
 
 

@@ -1,11 +1,15 @@
 .[[Log]].  	  TEMPORALLY ORDERED TYPED NOTES
   MINE:		[[TXT]], [[Log Log]],
-  DUMP:		[[Archive]],  [[Log Trash]],
-  AUTO: 	[[Journal]], [[MEETING]], [[Day]], [[Note]], [[Untyped]], [[WP]],
+  DUMP:		,  [[Log Trash]],
+  AUTO: 	[[Journal]], , [[Day]], [[Note]], [[Untyped]], [[WP]],
   TOPIC:		[[Idea]], [[Quote]], [[Receipts]],
   [[Recordings]],
-  [[MEET]],
-  , [[Phone]], 
+  ,
+  , ,
+  , ,
+  , [[Archive]], [[MEET]], [[MEETING]], [[Phone]], 
+  DELS: [[Archive]], [[MEETING]], [[MEET]], [[Phone]],
+  DELS: [[Archive]], [[MEETING]], [[MEET]], [[Phone]],[[TT]], 
 
 #### Personal Content Logs
 - [[Prj]]:	Personal "evergreen" projects

@@ -1,3 +1,7 @@
+.[[2023 Bridge Round]].
+  , ,
+  DELS: [[Bridge]], 
+
 
 
 - [My LinkedIn](https://docs.google.com/spreadsheets/d/1Rpz8MfO-MN-9tAOmT8ZlXMr_5baIuHgt8iEHHdcN1o0/edit#gid=1316142108),   [[Investor Intros]],   [Jason's DB](https://www.notion.so/c2cfaeacf06344398f3a1918c5573313?v=be7e13efe9af4f32becc0138f1483b60) 

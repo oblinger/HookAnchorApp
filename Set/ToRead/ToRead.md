@@ -1,8 +1,12 @@
 
 .[[ToRead]].
   [[Book To Read]], [[Podcasts To Listen To]],
-  [[BOOK Research]],
-  
+  ,
+  , ,
+  , [[BOOK Research]], 
+  DELS: [[BOOK Research]],
+  DELS: [[BOOK Research]],[[ToResearch]], 
+
   [[RR Papers]], [[Book To Read]], 
   
   n:: Stuff "to read"

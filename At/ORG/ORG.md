@@ -2,15 +2,16 @@
   , [[@Amazon]], [[@Apple]], [[@Citibank]], [[@Facebook]], , [[@Ginza Metrics]]
   , [[@IBM]], [[@LinkedIn]], [[@Microsoft]], [[@Montessori Childrens Center]], [[@Netflix]]
   , [[@PARC]], [[@TecHunting]], [[@Thistle]], [[@Vmware]], [[Org Startup]], [[Service]],
-  , [ORG Note](spot://orgnote),
-  , [[@Merrill]], [[@Vanguard]],
   , ,
-  , [[@Meta]],
-  DELS: [[@Meta]],
-  , [[@Hackers]],
-  , [[@schwab]],
-  , [[@Aeolus]], [[@PayByGroup]], 
-  DELS: [[@Meta]],[[@Facebook-Meta]],
+  , , ,
+  , ,
+  , ,
+  DELS: ,
+  , ,
+  , ,
+  , [[@Aeolus]], [[@PayByGroup]],
+  , [[@Hackers]], [[@Merrill]], [[@Meta]], [[@schwab]], [[@Vanguard]], 
+  DELS: [[@Meta]],[[@Facebook-Meta]],[ORG Note](spot://orgnote), [[@Merrill]], [[@Vanguard]], [[@Meta]], [[@Meta]], [[@Hackers]], [[@schwab]],
 
 .[[Org]].
   :

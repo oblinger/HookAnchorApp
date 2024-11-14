@@ -15,10 +15,11 @@
   ADDS:   [[qwd]],
   ADDS:   [[Food Recipe Research]], ,
   ADDS:   [[Eat]],
-  , [FOOD Research Note](spot://foodresearchnote),
-  , [[FOOD Research]],
-  , [[Bfast]], 
-  DELS: [[dinner]], [[Noom Notes]], [[Food Research]],
+  , ,
+  , ,
+  , [[Bfast]],
+  , [[FOOD Research]], 
+  DELS: [[dinner]], [[Noom Notes]], [[Food Research]],[FOOD Research Note](spot://foodresearchnote), [[FOOD Research]],
 
 
 

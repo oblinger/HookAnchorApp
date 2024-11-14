@@ -1,6 +1,7 @@
 .[[MyMgr]].
   ,   ,
-  DELS: [[Nanny]], 
+  , ,
+  DELS: [[Nanny]],[[Nanny]], 
 
 
 :: [[Nanny]]

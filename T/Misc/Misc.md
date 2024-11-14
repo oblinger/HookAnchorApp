@@ -6,12 +6,16 @@
   , [[key code]], , [[List]], [[meditation]], [[napa]], [[Nomad]], [[Old]]
   , [[PdfInfo]], [[Player FM]], [[Presentations]], [[Publications]], [[Public Notes]]
   , [[Record Notes]], [[Rental]], [[RJ45]], [[Rssfeeds]], [[SciFi]], [[Search]], [[Secure]], [[SF]]
-  , [[Shop]], [[Sleep]], [[Sleep With Me]], [[STARTUPS]], [[Templates]], [[Test88]], [[tickets]]
+  , [[Shop]], [[Sleep]], [[Sleep With Me]], [[STARTUPS]], [[Templates]], , [[tickets]]
   , [[Timestamp]], [[Travel Lst]], [[xmas]],
   , ,
-  , [[Cocktails]],
-  , [[Enneagram Test]], 
-  DELS: [[Disks]],[[SYS Disks]],[K Folder](spot://kfolder),
+  , ,
+  , ,
+  , , ,
+  DELS: ,,,
+  , [[Cocktails]], [[Enneagram Test]], [[Test88]], 
+  DELS: ,,,[[Test88]], [[Cocktails]], [[Enneagram Test]],
+  DELS: [[Disks]],[[SYS Disks]],[K Folder](spot://kfolder),[[Test88]], [[Cocktails]], [[Enneagram Test]],[[Disks]], [[Hackers]], [[Disks]], [[SYS Disks]], [K Folder](spot://kfolder), 
 
 
 

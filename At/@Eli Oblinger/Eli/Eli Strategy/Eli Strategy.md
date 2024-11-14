@@ -1,5 +1,7 @@
 .[[Eli Strategy]].
+  , ,
   , [[2023-05 Cool Kids]], 
+  DELS: [[2023-05 Cool Kids]],
 
 # TO READ
 

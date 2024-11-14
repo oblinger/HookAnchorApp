@@ -1,7 +1,8 @@
 .[[CV Alg]].
-  [[ByteTrack]], [[Trackers]], [[Yolo]],
+  , , ,
   , ,
-  , [[Segment And Track Anything]],
-  DELS: [[null]], 
+  , ,
+  , [[ByteTrack]], [[Segment And Track Anything]], [[Trackers]], [[Yolo]], 
+  DELS: [[null]],[[ByteTrack]], [[Trackers]], [[Yolo]], [[Segment And Track Anything]],
 
 [[null]] 

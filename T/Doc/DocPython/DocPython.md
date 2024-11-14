@@ -1,8 +1,9 @@
 .[[DocPython]].
   ,   [[DocConda]], [[DocJupyter]], [[DocNumPy]], [[DocPycharm]], [[DocPyDatetime]], [[DocSeaborn]], [[DocTensorFlow]],
-  , [[DocTorch]], ,
-  , [[Torch Tensor]], 
-  DELS: [[DocMatplotlib]],
+  , , ,
+  , ,
+  , [[DocTorch]], [[Torch Tensor]], 
+  DELS: [[DocMatplotlib]],[[DocTorch]], [[Torch Tensor]],
 
 [[DocTorch]]
 

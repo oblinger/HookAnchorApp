@@ -1,19 +1,24 @@
 .[[Pln]].
-  WORK1:	[[Quick]], [[Todo]], [[Now]], [[SCRatch]],
+  WORK1:	, , , [[SCRatch]],
   OVER:		[[Friday]], [[Habit]], [[Repeat]],
-  PER1:		[[Active]],
-  PER2:		[[Quarterly]], [[Later]], [[Wings]], [[Dropped]],
-  LONG:		[[Rocks]], [[Q2]], [[WRM]], [[Archive List]],
+  PER1:		,
+  PER2:		[[Quarterly]], , [[Wings]], [[Dropped]],
+  LONG:		[[Rocks]], , [[WRM]], ,
   SELF:		, [[Spirit]], [[Actualize]], [[Mission]], [[Productivity]],
-  FUN:		[[Fun]], [[Social]], [[Fried]], [[Gap]], , [[Fried Later]],
+  FUN:		, [[Social]], , , , [[Fried Later]],
   FAM:		[[Friday Dates]],
   ROOT:		[[BKT]], [[Up All]], [[Up Task]],
-  EXT:		[[External]], [[Other]],
+  EXT:		[[External]], ,
   UNUSED:	[[Prime]], [[Full]], [[Ping]],
   , ,
   , , ,
   DELS: ,
-  DELS: [[Lrn]],[[MY/Pln/HACK/HACK]], [[HACK.]],[[Hack]], [[Hacks]], [[Lrn]], 
+  , , , ,
+  DELS: ,, ,, , ,
+  , [[Active]], [[Archive List]], [[Fried]], [[Fun]], [[Gap]], [[Later]], [[Now]], [[Other]], [[Q2]]
+  , [[Quick]], [[Todo]], 
+  DELS: ,, ,, , ,[[Quick]], [[Todo]], [[Now]], [[Active]], [[Later]], [[Q2]], [[Archive List]], [[Fun]], [[Fried]], [[Gap]], [[Other]],
+  DELS: [[Lrn]],[[MY/Pln/HACK/HACK]], [[HACK.]],[[Hack]], [[Hacks]], [[Lrn]],[[Quick]], [[Todo]], [[Now]], [[Active]], [[Later]], [[Q2]], [[Archive List]], [[Fun]], [[Fried]], [[Gap]], [[Other]],[[EBT]], [[Hacks]], [[Lrn]], [[Lrn]], [[MY/Pln/HACK/HACK]], [[HACK.]], [[Hack]], [[Hacks]], [[Lrn]], 
 
 
 

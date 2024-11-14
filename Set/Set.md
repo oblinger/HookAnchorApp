@@ -4,10 +4,14 @@ n:: Groupings of like (typed), undated entries.
 
 .[[Set]].
 - TRACKING:	[[ToRead]], [[Returns]], [[Book]],
-- [[BUY]]			.
+- 			.
 - [[Humor]], [[Movies]], [[Recipe]]
   , , , ,
-  DELS: [[LANG]], [[Phone]], [[Writing]], 
+  , , , ,
+  DELS: , , ,
+  , [[BUY]], 
+  DELS: , , ,[[BUY]],
+  DELS: [[LANG]], [[Phone]], [[Writing]],[[BUY]],[[CTC]], [[Phone]], [[Writing]], [[LANG]], [[Phone]], [[Writing]], 
 
 
 

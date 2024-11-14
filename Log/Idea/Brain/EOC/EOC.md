@@ -7,9 +7,13 @@
   [[EOCT]]:	Topics
   [[FF-prize]], [[EOC Log]],
   , ,
+  , ,
+  DELS: ,
+  , ,
+  DELS: ,,
   , [[EOCP]], 
-  DELS: [[EOCP]],
-  DELS: [[EOCP]],[[Paths]], 
+  DELS: [[EOCP]],,[[EOCP]], [[EOCP]],
+  DELS: [[EOCP]],[[Paths]],[[EOCP]], [[EOCP]],[[Paths]], [[Paths]], 
 
 
   DELS: [[eoc-atlas]], [[eoc-formal]], [[eoc-impl]], 

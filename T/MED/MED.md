@@ -32,7 +32,8 @@
   [[MED.]]:
   ADDS:   ,
   ADDS:   [[MED Food]],
-  DELS: [[Glycemic Index]], [[MED Blood Pressure]], [[MED Cholesterol]], [[MED Research]], [[MED VO2Max]], [[MED=]],[[run]],[[Exercise]], 
+  , ,
+  DELS: [[Glycemic Index]], [[MED Blood Pressure]], [[MED Cholesterol]], [[MED Research]], [[MED VO2Max]], [[MED=]],[[run]],[[Exercise]],[[Exercise]], 
 
 
 

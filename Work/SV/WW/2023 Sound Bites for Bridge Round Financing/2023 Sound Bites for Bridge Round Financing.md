@@ -1,6 +1,7 @@
 .[[2023 Sound Bites for Bridge Round Financing]].
   , ,
-  DELS: [[Bites]], 
+  , ,
+  DELS: [[Bites]],[[Bites]], 
 
 
 Deck: [https://hubs.ly/Q01R6QrK0](https://hubs.ly/Q01R6QrK0). [canva](https://www.canva.com/design/DAEy6fb_bXE/US_uxtNvfIZzKpYn624cCg/view?utm_content=DAEy6fb_bXE&utm_campaign=designshare&utm_medium=link&utm_source=publishsharelink#2) 

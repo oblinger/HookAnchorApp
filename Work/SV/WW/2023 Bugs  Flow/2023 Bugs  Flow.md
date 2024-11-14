@@ -1,6 +1,7 @@
 .[[2023 Bugs  Flow]].
   , ,
-  DELS: [[Bug.]], 
+  , ,
+  DELS: [[Bug.]],[[Bug.]], 
 
 
 ## TODO

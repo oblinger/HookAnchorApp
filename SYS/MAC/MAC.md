@@ -310,9 +310,13 @@
   [WorkFlowy App](spot://workflowyapp), [Xcode App](spot://xcodeapp), [YiHomeMacInternational App](spot://yihomemacinternationalapp), [Yoink App](spot://yoinkapp), [Zettlr App](spot://zettlrapp)
   [zoom.us App](spot://zoom.usapp), [Zoom App](spot://zoomapp),
   ADDS:   ,
-  ,   [[MAC Apps]], [[mdfind]],
+  ,   , [[mdfind]],
   , ,
-  DELS: [[App]], 
+  , ,
+  DELS: ,
+  , [[MAC Apps]], 
+  DELS: ,[[MAC Apps]],
+  DELS: [[App]],[[MAC Apps]],[[App]], [[App]], 
 
 
 

@@ -6,10 +6,11 @@
   [[Hypothesis Testing]], [[Stat Anomolies]],
   [[Perplexity]], [[Hypothesis Testing]], [[Stat Anomolies]], [[Z-Test]], [[STATS]],
   , ,
-  , [[RMS]],
-  , [[Stat Alg]], 
-  DELS: [[Stat Alg]],
-  DELS: [[Stat Alg]],[[Kalman Filter]], 
+  , ,
+  , ,
+  DELS: ,
+  , [[RMS]], [[Stat Alg]], 
+  DELS: [[Stat Alg]],[[Kalman Filter]],[[RMS]], [[Stat Alg]], [[Stat Alg]],
 
 [[Kalman Filter]] 
 

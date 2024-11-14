@@ -1,3 +1,7 @@
+.[[2023-08 Ingest Alternatives Analysis]].
+  , ,
+  DELS: [[ingest]], 
+
 
 
  - [DIR](https://drive.google.com/drive/folders/1pzCfT5pSH5FAEpjfS1Ydt--5TUcf_4pE):  [mat](https://docs.google.com/spreadsheets/d/12YnUCfj15M3ZtT5ZDWGfO-eZ5PRqoNBEt3A8oaJmlkc/edit#gid=0), [grp](https://docs.google.com/document/d/14tNaA2LooFLqdm-2zrlzRNtjAREdpWe3YBwVlOKasWE/edit#heading=h.dsf5hnrzqfc9),  [app](https://docs.google.com/spreadsheets/d/17dsPR4dunF0-oHn_NKKFt5kLbKjollQFA5SRynUH5O0/edit#gid=0), 

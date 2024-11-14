@@ -64,11 +64,11 @@
   , [[@Vince Colangelo]], [[@Vittorio Castelli]], [[@Wiktor Schmidt]], [[@William Cohen]]
   , [[@Yannick Germain]], [[@Yann LeCun]], [[@Yashin Lin]], [[@Yiftach Eisenberg]]
   , [[@Yoshua Bengio]], [[AF ALUM]], [AT Note](spot://atnote), [[BOD]], [[CRM]], [[Doctor]]
-  , [[Friends]], [[@Ahmad Tahir (Graphic Designer)]], [[Mentors]], [[ORG]], [[PEOPLE]], [[ROLODEX]]
+  , [[Friends]], [[@Ahmad Tahir (Graphic Designer)]], [[Mentors]], , , [[ROLODEX]]
   , [[VC ORG]],
-  , [[@Annafi Wahed]], [[@Titash Rakshit]],
+  , , ,
   , ,
-  , [[@Ahmad Tahir (Graphic Designer)]], [[@Julieta Barrionuevo]],
+  , [[@Ahmad Tahir (Graphic Designer)]], ,
   , [[@Ahmad Tahir (Graphic Designer)]],
   , [[@Ahmad Tahir (Graphic Designer)]],
   , [[@Ahmad Tahir (Graphic Designer)]],
@@ -96,8 +96,8 @@
   , [[@Ahmad Tahir (Graphic Designer)]],
   , [[@Ahmad Tahir (Graphic Designer)]],
   , [[@Ahmad Tahir (Graphic Designer)]],
-  , [[@Ahmad Tahir (Graphic Designer)]], [[@Sonic]],
-  , [[@Ahmad Tahir (Graphic Designer)]], [[@Shawn Coe]],
+  , [[@Ahmad Tahir (Graphic Designer)]], ,
+  , [[@Ahmad Tahir (Graphic Designer)]], ,
   , [[@Ahmad Tahir (Graphic Designer)]],
   , [[@Ahmad Tahir (Graphic Designer)]],
   , [[@Ahmad Tahir (Graphic Designer)]],
@@ -172,8 +172,13 @@
   , [[@Ahmad Tahir (Graphic Designer)]],
   , [[@Ahmad Tahir (Graphic Designer)]],
   , [[@Ahmad Tahir (Graphic Designer)]],
-  , [[@Ahmad Tahir (Graphic Designer)]], 
-  DELS: [[Graphic Designer - Ahmad Tahir]],
+  , [[@Ahmad Tahir (Graphic Designer)]],
+  , ,
+  DELS: ,
+  , [[@Ahmad Tahir (Graphic Designer)]], [[@Annafi Wahed]], [[@Julieta Barrionuevo]], [[@Shawn Coe]]
+  , [[@Sonic]], [[@Titash Rakshit]], [[ORG]], [[PEOPLE]], 
+  DELS: ,[[ORG]], [[PEOPLE]], [[@Annafi Wahed]], [[@Titash Rakshit]], [[@Julieta Barrionuevo]], [[@Sonic]], [[@Shawn Coe]],
+  DELS: [[Graphic Designer - Ahmad Tahir]],[[ORG]], [[PEOPLE]], [[@Annafi Wahed]], [[@Titash Rakshit]], [[@Julieta Barrionuevo]], [[@Sonic]], [[@Shawn Coe]],[[Graphic Designer - Ahmad Tahir]], [[Graphic Designer - Ahmad Tahir]], 
 
 
 

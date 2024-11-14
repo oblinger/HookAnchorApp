@@ -18,12 +18,16 @@
   ,   [[DL Alg]],
   , ,
   DELS: ,
-  , [[RLHF]],
-  DELS: ,[[RLHF]],
-  , [[Tensor]],
-  , [[DL Strategy]], [[DL Theory]],
-  , [[Embedding]], [[Positional Encoding]], 
-  DELS: [[Coursera Notes]],[[RLHF]],[[RLHF Reinforcement Learning from Human Feedback]], [[Coursera Notes]],
+  , ,
+  DELS: ,,
+  , ,
+  , , ,
+  , , ,
+  , ,
+  DELS: ,,, ,
+  , [[DL Strategy]], [[DL Theory]], [[Embedding]], [[Positional Encoding]], [[RLHF]], [[Tensor]], 
+  DELS: ,[[RLHF]],, ,[[RLHF]], [[RLHF]], [[Tensor]], [[DL Strategy]], [[DL Theory]], [[Embedding]], [[Positional Encoding]],
+  DELS: [[Coursera Notes]],[[RLHF]],[[RLHF Reinforcement Learning from Human Feedback]], [[Coursera Notes]],[[RLHF]], [[RLHF]], [[Tensor]], [[DL Strategy]], [[DL Theory]], [[Embedding]], [[Positional Encoding]],[[RLHF Reinforcement Learning from Human Feedback]], [[Coursera Notes]], [[RLHF Reinforcement Learning from Human Feedback]], [[Coursera Notes]], 
 
 [[Tensor]] 
 

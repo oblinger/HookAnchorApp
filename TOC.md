@@ -1,26 +1,20 @@
 
 # TABLE OF CONENTS
 
-[[mate]],	[[Proj]],	
-[[KMR]]: [[ATTACH]],	[[WEEKLY]],	
-    [[RR]]: [[Lrn]],	[[RR Philosophy]],	[[RR MGR]],	
-        [[Comp]]: 
-            [[LANG]]: 
-        [[Stat]]: [[Stat Alg]],	
-        [[ML]]: 
-        [[DL]]: [[DL Alg]],	
+[[mate]],	[[Spot]],	[[Proj]],	
+[[KMR]]: 
+    [[RR]]: [[RR Philosophy]],	[[RR MGR]],	
+        [[ML]]: [[Stat]],	
+            [[DL]]: [[DL Alg]],	
         [[Systems]]: 
-    [[T]]: [[Trash]],	[[Tag]],	
-        [[Misc]]: [[STARTUPS]],	[[Test88]],	[[Old]],	[[SF]],	[[Biking]],	
-            [[Presentations]]: 
-            [[House]]: 
-                [[House Crime]]: 
+    [[T]]: [[Trash]],	[[Food]],	[[Tag]],	
+        [[Comp]]: [[OBS]],	[[MAC]],	
         [[Career]]: 
             [[RES]]: [[Bio]],	[[2024-04-01 Resume Rewrite]],	
                 [[RES Job History]]: 
                     [[AF]]: 
             [[NextJob]]: [[NJ22]],	[[NJ]],	[[NJ16]],	
-        [[FIN]]: [[FIN Tracking]],	
+        [[FIN]]: [[FIN Tracking]],	[[@Merrill]],	
             [[FIN Log]]: 
             [[FIN Bills]]: 
             [[FIN Topics]]: 
@@ -29,73 +23,50 @@
             [[Diary]]: 
                 [[Jnl]]: 
         [[Courses]]: [[Highbrow]],	
-        [[MGR]]: 
-            [[MGR Docs]]: 
+        [[MGR]]: [[MGR Docs]],	[[MyMgr]],	
             [[Hire]]: 
                 [[INTERVIEW]]: 
                 [[Hire Post]]: 
-                [[Hire Test]]: 
-                    [[2019 ML Test - Billionaire Billy Big Boots]]: 
-                    [[2019 AF Job Tests]]: 
-        [[Food]]: 
-            [[FOOD Research]]: 
-        [[Mus]]: 
-        [[Doc]]: [[DocObsidian]],	[[DocPython]],	
+                [[Hire Test]]: [[2019 AF Job Tests]],	
         [[Legal]]: [[2023 Legal SV]],	
             [[2017 Legal Ob Labs]]: 
             [[2023 Legal NDA - AF]]: 
         [[MED]]: [[MED Doctors]],	[[MED Exercise]],	
         [[COMS]]: 
             [[COM Msg]]: 
-    [[SYS]]: [[HACK]],	[[SYS Misc]],	[[OBS]],	[[Closet]],	[[SYS Hacks]],	[[Spot]],	
         [[KM]]: [[Hook System]],	
-        [[MAC]]: [[MAC Apps]],	
-    [[Work]]: 
-        [[SV]]: [[INV]],	[[SVT]],	[[SV Wings]],	[[Circle]],	[[SV Software]],	
-            [[SV Ops]],	
-            [[SV Org]]: [[@BallerTV]],	
-            [[SV Product]]: 
-            [[SV Archive]]: [[2022-10-17 SV90]],	
-            [[SV People]]: 
-                [[SV Individuals]]: 
-            [[WW]]: [[2023 SV Roles and Responsibilities]],	[[2023 SV Patents]],	
-            [[SV Strat]]: [[SV Roadmap]],	[[2023 Four Pillars]],	
-            [[CV]]: [[CV Alg]],	[[CVP]],	[[Data]],	
-            [[QQ]]: 
-    [[MY]]: [[Meta]],	[[Myfo]],	[[TEMPLATER]],	[[QUICKADD]],	
-        [[Pln]]: [[Mission]],	[[Productivity]],	
+    [[Misc]]: [[STARTUPS]],	[[Old]],	[[SF]],	[[Biking]],	
+        [[Presentations]]: 
+        [[House]]: 
+            [[House Crime]]: 
+    [[MY]]: [[Closet]],	[[Meta]],	[[Myfo]],	[[TEMPLATER]],	[[QUICKADD]],	
+        [[SYS]]: [[SYS Misc]],	
+        [[Pln]]: [[Lrn]],	[[Mission]],	[[Productivity]],	
             [[SCRatch]]: 
-    [[Prj]]: [[2021-04 FindDayCare]],	[[2022-05 Enxt]],	[[2022-03 BeFAANG]],	
+    [[Prj]]: [[PP]],	[[2021-04 FindDayCare]],	[[2022-05 Enxt]],	[[2022-03 BeFAANG]],	
         [[2022-03 BeVC]],	
-        [[PP]]: [[2022-01-00 Nanny]],	
         [[UF]]: [[ufPublish]],	
             [[UfApps]]: 
         [[2020-08 Race Pitch]]: 
     [[AT]]: [[@Qingling Oblinger]],	[[VC ORG]],	[[@Google]],	
-        [[ORG]]: [[@Merrill]],	[[@Hackers]],	[[Service]],	
-            [[@Amazon]]: [[AMA]],	
-        [[PEOPLE]]: 
-            [[Family]]: [[Parents]],	
         [[@Eli Oblinger]]: 
-            [[Eli]]: [[BCMS]],	[[Eli Strategy]],	
-                [[ELI Log]]: 
-    [[Log]]: [[Journal]],	[[Note]],	[[Archive]],	[[MEET]],	[[Phone]],	
+            [[Eli]]: [[BCMS]],	[[ELI Log]],	[[Eli Strategy]],	
+    [[Log]]: [[Journal]],	[[Note]],	
         [[TXT]]: 
             [[Letters]]: 
-            [[Writing]]: [[ArmChair]],	
-                [[Politics]]: [[Race]],	
         [[WP]]: 
         [[Idea]]: [[2018-00 Alloy]],	[[2020-07 Autonomy]],	
             [[2017-09 Elastic Block Chain]],	[[Forum]],	[[2016-00 TreeSheet]],	
             [[2007-00 DARPA seeds]]: 
             [[2006-12 GHOST]]: 
             [[2009-03 Team Saver]]: 
-            [[Brain]]: [[2015-00-00 The Sentient Weapon]],	[[2016-00-00 PPP]],	
+            [[Brain]]: [[2007-00-00 Brain DARPA Program]],	[[2016-00-00 PPP]],	
                 [[End Of Man Book]],	[[EOC reboot]],	
-                [[2009-05-00 Consciousness]],	
-                [[EOC]]: [[EOCT]],	[[EOCA]],	[[EOCI]],	[[EOCK]],	[[EOCP]],	
+                [[2009-05-00 Consciousness]],	[[2021-06-00 Brain3]],	
+                [[EOC]]: [[EOCT]],	[[EOCA]],	[[EOCI]],	[[EOCK]],	
                     [[EOCB]]: 
-            [[Idea Social]]: 
-    [[Set]]: [[Recipe]],	[[Book]],	[[ToRead]],	
+            [[Idea Social]]: [[2009-03 State Edu Testing]],	
+    [[Set]]: [[Phone]],	[[Recipe]],	[[Book]],	[[ToRead]],	
+        [[Writing]]: [[ArmChair]],	
+            [[Politics]]: [[Race]],	
         [[Humor]]: 
-        [[BUY]]: 

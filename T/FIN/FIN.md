@@ -147,7 +147,8 @@
   , , [[FIN Mint]], , [[FIN Retire]], [[FIN Topics]], [[FIN Tracking]], , [[Taxes]], ,
   ADDS:   ,
   ,   [[FIN Log]],
-  DELS: [[FIN Log]],[[@Avanti Pakrasi]], [[@Gary Bladen]], [[FIN Accounts]], [[FIN Macro Tracking]], [[FIN Recurring]], [[PenFed]], [[z old Bills]],[[@Merrill]], [[@Vanguard]], 
+  , , ,
+  DELS: [[FIN Log]],[[@Avanti Pakrasi]], [[@Gary Bladen]], [[FIN Accounts]], [[FIN Macro Tracking]], [[FIN Recurring]], [[PenFed]], [[z old Bills]],[[@Merrill]], [[@Vanguard]],[[@Merrill]], [[@Vanguard]], 
 
 
 

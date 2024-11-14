@@ -1,3 +1,7 @@
+.[[2007-00-00 Brain DARPA Program]].
+  , ,
+  DELS: [[2009-06-00  PAUL NOTE]], 
+
 
 # PAUL NOTE  -- NEvER SENT
 

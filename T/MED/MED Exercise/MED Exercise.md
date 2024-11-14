@@ -1,5 +1,7 @@
 .[[MED Exercise]].
+  , ,
   , [[Exercise]], 
+  DELS: [[Exercise]],
 
 
 

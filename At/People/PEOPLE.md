@@ -1,6 +1,8 @@
 .[[PEOPLE]].
-  , [[Family]],
-  , [PEOPLE Note](spot://peoplenote), 
+  , ,
+  , ,
+  , [[Family]], 
+  DELS: [[Family]], [PEOPLE Note](spot://peoplenote),
 
 .[[People]].
   ,   [[Family]], 

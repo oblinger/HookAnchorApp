@@ -10,12 +10,17 @@ My KBD:		[[KBD Shortcuts]], [[KBD Obsidian Keys]], [[KBD Global Keys]], [[KBD No
 - [[SYS Setup]]			-
 - [[KBD Shortcuts]]		-
 - [[SYS Task Lists]]		-
-  , [[Automation]], [Bard Page](spot://bardpage), , [[MAC]], [NEU Folder](spot://neufolder)
-  , [[Notifications]], [[OBS]], [[SYS Android]], [[SYS Disks]], [[SYS Github Webpage]]
-  , [[SYS Hacks]],
-  , [[Closet]], ,
-  , [[KM]], [[Spot]],
-  , [[HACK]], 
-  DELS: [[Facet]],[[SYS/Hack/Hack]],
+  , [[Automation]], [Bard Page](spot://bardpage), , , [NEU Folder](spot://neufolder)
+  , [[Notifications]], , , ,
+  , ,
+  , , ,
+  , , ,
+  , ,
+  , , , ,
+  DELS: ,,
+  , [[Closet]], [[HACK]], [[KM]], [[MAC]], [[OBS]], [[Spot]], [[SYS Android]], [[SYS Disks]]
+  , [[SYS Github Webpage]], [[SYS Hacks]], 
+  DELS: ,,[[MAC]], [[OBS]], [[SYS Android]], [[SYS Disks]], [[SYS Github Webpage]], [[SYS Hacks]], [[Closet]], [[KM]], [[Spot]], [[HACK]],
+  DELS: [[Facet]],[[SYS/Hack/Hack]],[[MAC]], [[OBS]], [[SYS Android]], [[SYS Disks]], [[SYS Github Webpage]], [[SYS Hacks]], [[Closet]], [[KM]], [[Spot]], [[HACK]],[[My Android]], [[My Github Webpage]], [[My Hacks]], [[Facet]], [[SYS/Hack/Hack]], 
 
 

@@ -1,3 +1,4 @@
 .[[ATTACH]].
-  , [ATTACH Note](spot://attachnote), 
+  , ,
+  DELS: [ATTACH Note](spot://attachnote), 
 

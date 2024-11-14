@@ -1,3 +1,7 @@
+.[[2023 GPT Report]].
+  , ,
+  DELS: [[The GPT Rpt]], 
+
 
 
 ## Sports Visio Competitive Technical Risk Analysis for GPT-4

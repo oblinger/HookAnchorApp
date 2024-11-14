@@ -6,12 +6,12 @@
   , [[2023 Build Datasets Needed for the CV Team]], [[2023 Clsh.TV Partnership]]
   , [[2023 Competitive Analysis]], [[2023 CTO Corner Blog]], [[2023 Customer Acquisition]]
   , [[2023 CV team new agenda metrics]], [[2023 Full-AI Basketball Highlights Product]]
-  , [[2023 Game Management]], [[2023 GPT Report]], [[2023 Headless Record Flow]]
+  , [[2023 Game Management]], [[2023 GPT Report]],
   , [[2023 Headroom Analysis]], [[2023 Jason Tasks]], [[2023 Least Commitment Model For CV Pipe]]
-  , [[2023 Meta Thinking]], [[2023 Minutes Stat Calculations and Annotations]]
+  , [[2023 Meta Thinking]],
   , [[2023 Remote Work Guidelines]], [[2023-Reset-DanO-Role]]
   , [[2023 Sound Bites for Bridge Round Financing]], [[2023 SV CV New Agenda]]
-  , [[2023 SV Investor News Letter]], [[2023 SV Learning]], [[2023 SV Mgt Meeting Slides]]
+  , [[2023 SV Investor News Letter]], , [[2023 SV Mgt Meeting Slides]]
   , [[2023 SV Notes]], [[2023 SV Patents]], [[2023 SV Roles and Responsibilities]]
   , [[2023 SV Strategic Plan]], [[2023 SV Testing Plans]], [[2023 Team Hiring]]
   , [[2023 Tournament Flow]], [[2023 Velocity]], [[2023 Volleyball Product]]
@@ -19,7 +19,12 @@
   , [WW Gdrive Page](spot://wwgdrivepage),
   , ,
   , [Arch](spot://arch),
-  DELS: [[2024-08 Backend Architect]], 
+  , , , ,
+  DELS: ,
+  , [[2023 Headless Record Flow]], [[2023 Minutes Stat Calculations and Annotations]]
+  , [[2023 SV Learning]], 
+  DELS: ,[[2023 Headless Record Flow]], [[2023 Minutes Stat Calculations and Annotations]], [[2023 SV Learning]],
+  DELS: [[2024-08 Backend Architect]],[[2023 Headless Record Flow]], [[2023 Minutes Stat Calculations and Annotations]], [[2023 SV Learning]],[[2023 Learning]], [[2023 Record Flow]], [[2023 Stat Calculations and Annotations]], [[2024-08 Backend Architect]], 
 
 
 

@@ -1,7 +1,9 @@
 .[[TXT]].
   , [[Letters]], [[Msg]],
-  , [[TT]],
-  , [[Writing]], 
+  , ,
+  , ,
+  , [[TT]], [[Writing]], 
+  DELS: [[TT]], [[Writing]],
 
 
 

@@ -1,3 +1,7 @@
+.[[2023 CTO Corner Blog]].
+  , ,
+  DELS: [[Blog]], 
+
 
 ESPN
 read blog posts from SV
