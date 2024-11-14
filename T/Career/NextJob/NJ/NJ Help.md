@@ -1,3 +1,0 @@
-
-## TODO
-- Choose my [[BOD]]. 

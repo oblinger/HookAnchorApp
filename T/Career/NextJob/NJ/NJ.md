@@ -1,17 +1,13 @@
 .[[NJ]].	  [[Lrn]],
-  TOP:	[NJ Slides](spot://njslides),
+  TOP:	[NJ Slides](spot://njslides), [[NJ Log]], 
   TODO:	[[NJ Todo]], [[NJ Read]],
-  DOCS: [[2024-04-01 Resume Rewrite]],
-  PARTS:,
-  ROCKS:, 
-  , [NJ Slide](spot://njslide), ,
-  , , [[NJ Framing]], [[NJ Help]], [[NJ Log]]
-  , [[NJ Targets]], [[NJ Train]],
-  DELS: [NJ. alias NJ Todo](spot://nj.aliasnjtodo), 
-
+  PARTS	[[NJ Targets]],
+  ROCKS:
 
 RELATED:	[[RES]], [[CRM]], 
 OLD:		[[NJ16]], [[NJ22]],[[GoogleJob]], [[Meta Coms]], 
+
+
 
 ## ... 
 - add leading targets to my slides

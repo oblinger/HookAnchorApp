@@ -1,4 +1,7 @@
 
+[[Bkts\|Wed Jul 26  2023]]  	[[Bkts#BUCKETS TIME ALLOCATIONS]]  
+[[Fried\|Wed Jul 26  2023]]  	[[Fried#WAITING]]  
+[[Now\|Wed Jul 26  2023]]  	[[Now#Waiting]]  
 [[Now\|Wed Jul 26  2023]]  	[[Now#Now]]  
 [[SNIP\|Wed Jul 26  2023]]  	[[SNIP#2023-07-26  Piano]]  
 [[fried\|Wed Jul 26  2023]]  	[[fried#WAITING]]  

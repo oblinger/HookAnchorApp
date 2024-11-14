@@ -1,4 +1,4 @@
-[[Lrn.]]	^\ _ S
+[[LRN Todo]]	^\ _ S
 Read:	[[RR papers]], [[Pocket App]], [[ToRead]], [Good Reads](https://www.goodreads.com/),
 Tidy:	Desk+, Email
 Plan:	[[ToBuy]], [[Try Foods]],

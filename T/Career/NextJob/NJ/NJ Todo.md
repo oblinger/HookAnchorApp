@@ -1,5 +1,6 @@
 
-- DETER, Yolo
+- 
+- 
 - [ ] Ideas for hiring prep:
 	- [ ] [[@Pramp]]: Practice mock interviews
 	- [ ] algo monster: practice coding tests
@@ -25,6 +26,6 @@
 - [[Lrn]]:		Plan
 - [[NJ Read]]	Plan
 - [[NJ Train]]	Plan
-- [[Coms]]:	Calling plan
+- [[Coms]]:	Calling plan; Choose my [[BOD]]. 
 
 

@@ -1,5 +1,5 @@
 .[[2024-04-01 Resume Rewrite]].
-  ,   [[2024 Res Rewrite At a Glance]], [[2024-04-01 Resume Rewrite]], 
+  ,   [[2024 Res Rewrite At a Glance]], 
 
 TODO
 - Finish [[RES Star]]

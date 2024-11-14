@@ -1,5 +1,5 @@
 .[[Lrn]].
-  [[Lrn.]],  [[Lrn Mgt]],
+  [[LRN Todo]],  [[Lrn Mgt]],
 
 
 
