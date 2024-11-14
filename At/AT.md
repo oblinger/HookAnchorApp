@@ -176,9 +176,15 @@
   , ,
   DELS: ,
   , [[@Ahmad Tahir (Graphic Designer)]], [[@Annafi Wahed]], [[@Julieta Barrionuevo]], [[@Shawn Coe]]
-  , [[@Sonic]], [[@Titash Rakshit]], [[ORG]], [[PEOPLE]], 
+  , [[@Sonic]], [[@Titash Rakshit]], [[ORG]], [[PEOPLE]],
   DELS: ,[[ORG]], [[PEOPLE]], [[@Annafi Wahed]], [[@Titash Rakshit]], [[@Julieta Barrionuevo]], [[@Sonic]], [[@Shawn Coe]],
-  DELS: [[Graphic Designer - Ahmad Tahir]],[[ORG]], [[PEOPLE]], [[@Annafi Wahed]], [[@Titash Rakshit]], [[@Julieta Barrionuevo]], [[@Sonic]], [[@Shawn Coe]],[[Graphic Designer - Ahmad Tahir]], [[Graphic Designer - Ahmad Tahir]], 
+  , [[@Ahmad Tahir (Graphic Designer)]],
+  , [[@Ahmad Tahir (Graphic Designer)]],
+  , [[@Ahmad Tahir (Graphic Designer)]],
+  , [[@Ahmad Tahir (Graphic Designer)]],
+  , [[@Ahmad Tahir (Graphic Designer)]],
+  , [[@Ahmad Tahir (Graphic Designer)]], 
+  DELS: [[Graphic Designer - Ahmad Tahir]],[[ORG]], [[PEOPLE]], [[@Annafi Wahed]], [[@Titash Rakshit]], [[@Julieta Barrionuevo]], [[@Sonic]], [[@Shawn Coe]],[[Graphic Designer - Ahmad Tahir]], [[Graphic Designer - Ahmad Tahir]],
 
 
 
