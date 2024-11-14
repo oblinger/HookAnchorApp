@@ -41,7 +41,7 @@ ISSUED
 6,778,193	Customer self service iconic interface for portal entry and search specification (8/2004)
 6,701,311	Customer self service system for resource search and selection (3/2004)
 6,693,651	Customer self service iconic interface for resource search results display and selection (2/2004)
- [6,643,639](https://patents.google.com/patent/US6643639?oq=patent+6%2c643%2c639)    Customer self service subsystem for adaptive indexing of resource solutions and resource lookup (11/2003)
+[6,643,639](https://patents.google.com/patent/US6643639?oq=patent+6%2c643%2c639)    Customer self service subsystem for adaptive indexing of resource solutions and resource lookup (11/2003)
 
 
 

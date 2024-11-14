@@ -1,5 +1,19 @@
 ## = NUMBERS - "AT A GLANCE" 
 
+### Brought Multiple Products To Market Totaling More Than $3B In Value
+- Soup-to-nuts our team developed the SW and Firmware for Envoy, Oasis, and TMAC.  Together these represent more than $3B in hardware.
+
+- SV Hoops - $300K/ARR
+- Aeolus Aeo - Eldercare robot
+- Instant Design - 
+- Envoy - Residential hub for Enphase inverter-based systems
+- Oasis - Powerplant Controllers
+- PVS5 - Residential hub controllers
+- TMAC - Industrial power plant controllers
+- PayByGroup - Group Payments Platform
+
+(See AF section for details on dollars)
+
 ### - BUILT AND SHIPPED 8 PRODUCTS
 - SV Hoops - 
 - Aeolus Aeo - 
@@ -122,12 +136,13 @@ Total -- 1,923
 _
 
 ### - 25Papers, 22Patents, 36+Presents 
+
 Keynotes/FoundedWorkshops/ChairedWS
 
 workshop on meta learning:  russ griener??
 
-COUNTS AS OF Nov 2021
-- PAPERS 25 = 5jnl + 9Long + 11 Short
+COUNTS AS OF Nov 2024 (See Addendum)
+- PAPERS 25 = 5jnl + 10Long + 10 Short
 - PATENTS 22
 - PRESENTATIONS 
 - INVITED/KEY NOTE
@@ -246,14 +261,14 @@ Design optimization stuff
 Installer stuff
 Performance monitoring stuff
 
-#### $3B+ in IoT assets controlled by AF SW
+#### $3B+ in IoT assets controlled by AF SW. (See numbers above)
 - TMAC Project - 
 - Oasis Project - 
 
 **DETAILS ON NUMBER OF IOT DEVICES**
 - **we wrote code for multiple 100K hub devices that are controlling millions of individual panel sensor devices**
-- **TMAC** - power plant controllers.   100K+  (We did not build from scratch.)
-- [Gala oregon plant](https://newsroom.sunpower.com/2017-02-27-SunPower-Starts-Construction-On-56-Megawatt-Gala-Solar-Power-Plant-in-Oregon) Big plant $300M Gala oregon plant.
+- **TMAC** - power plant controllers.   100K+ controllers  (We did not build from scratch.)
+- [Gala oregon plant](https://newsroom.sunpower.com/2017-02-27-SunPower-Starts-Construction-On-56-Megawatt-Gala-Solar-Power-Plant-in-Oregon) Big plant $300M Gala Oregon plant.
 - Solar star. largest solar in world until 2016. 1.7M panels
 - **OASIS** - powerplant controllers.
    (upto 70 trackers per hub, many solar panels))

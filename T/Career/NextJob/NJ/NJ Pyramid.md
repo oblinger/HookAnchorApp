@@ -8,7 +8,7 @@ A proven AI PhD/CTO: with decade+ experience in ML/DL, built 5 orgs from scratch
 My sweet-spot is bridging world-leading R&D into rapid productization.
 
 
-(Master Versions in [[RES Proof Points]])
+(Master Versions in [[RES Parts]])
 #### PhD/CTO
 - PhD in AI/ML from a top engineering school: Illinois (UIUC)
 - CTO for 5 companies: with 3 exits, and 2 continuing

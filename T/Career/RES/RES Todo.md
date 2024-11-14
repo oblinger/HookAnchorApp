@@ -13,8 +13,6 @@ RES
 - [ ] Add an objectives section?
 
 CLEANUP:
-- Vet & update the "at a Glance" section claims
-- SV: "Reduce scope ..."   (pick better bullet)
 - SV: get numbers on actual growth
 - AF: total number of employees.
 - Formatting on "grey" sections.

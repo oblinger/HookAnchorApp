@@ -1,7 +1,7 @@
 .[[RES]].
   TOP:		[[RES Todo]], [[Bio]], [RES Docx](spot://resdocx), [RES Master Folder](spot://resmasterfolder),
-  FACTS:	[[RES Src Info]]: [[RES Numbers]], [[RES Proof Points]], [[RES Patents]], [[RES References]],
-  PARTS:	[[RES Star]], [[RES War]], [[RES War AI]],
+  FACTS:	[[RES Src Info]]: [[RES Numbers]], [[RES Patents]], [[RES Papers]], [[RES References]],
+  PARTS:	[[RES Parts]], [[RES Star]], [[RES War]], [[RES War AI]],
 - [[RES Instant Design Story]],
 - [[2024-04-01 Resume Rewrite]],
 - [[RES Linked In]],
