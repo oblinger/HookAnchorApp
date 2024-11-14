@@ -7,15 +7,15 @@
   OLD:	[CVT](spot://cvt), [DSET](spot://dset), ,
   .
   , [APIs](spot://apis), [CAPS](spot://caps), [[CV Alg]], [CV Gdrive](spot://cvgdrive)
-  , [[CV Hack Notes]], [[CV Log]], [[CVP]], [CV Page](spot://cvpage), [[Data]], 
+  , [[CV Hack Notes]], [[CV Log]], [[CVP]], [CV Page](spot://cvpage), [[Data]],
   , [DT alias Data Tasks](spot://dtaliasdatatasks), , [[SVCV Re-ID]]
   , [svdata](spot://svdata),
   , [STORY](spot://story),
   , [RESULT](spot://result),
   , [docs](spot://docs),
-  , [Dataset](spot://dataset),
+  , ,
   , [[CV Algs]],
-  DELS: [DOCs](spot://docs),[Results](spot://results),[DT](spot://dt), 
+  DELS: [DOCs](spot://docs),[Results](spot://results),[DT](spot://dt),[Dataset](spot://dataset), 
 
   DELS: [Standup](spot://standup),[DD](spot://dd),
   DELS: [[CVP]],[[Info]], 

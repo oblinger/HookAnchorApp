@@ -1,8 +1,7 @@
+Documents from previous jobs
+
 .[[RES Job History]].
   ,   [[AF]], 
-
-.[[Job History]].
-  ADDS:   [[AF]],
 
 
 

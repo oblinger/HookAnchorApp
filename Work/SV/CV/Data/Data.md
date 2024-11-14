@@ -1,20 +1,10 @@
 .[[Data]].
-  , [Data Docs](spot://datadocs), [Data Tasks](spot://datatasks),
-  , [Data Game Tracking](spot://datagametracking),
-  , [Data Game Master List](spot://datagamemasterlist),
-  , [CV Data Tasks](spot://cvdatatasks), [Data Games](spot://datagames), 
-  DELS: [Data Games](spot://datagames),
-  DELS: [Data Games](spot://datagames),[Stories](spot://cvdatatasks), 
-
-.[[Data]]. ([[CV]])
-  [Data Tasks](spot://datatasks) (),
-  [Data Docs](spot://datadocs),
-  [CV Data Tasks](spot://cvdatatasks),
-  [Data Games](spot://datagames),
-
-[Dataset](spot://dataset) 
-
-
+  [Data Docs](spot://datadocs):		Documentation about datasets. ([Dataset](spot://dataset))
+  [Data Games](spot://datagames): 	"G" game tracking
+  [Data Tasks](spot://datatasks):		Tasking related to datasets. ([CV Data Tasks](spot://cvdatatasks))
+  [Data Game Master List](spot://datagamemasterlist): Jame's Videos master list
+  .
+  [Data Game Tracking](spot://datagametracking): Deprecated tracking sheet
 
 
 

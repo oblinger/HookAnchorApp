@@ -1,4 +1,10 @@
 
+[[now\|Wed Jul 26  2023]]  	[[now#Waiting]]  
+[[now\|Wed Jul 26  2023]]  	[[now#Now]]  
+[[Attention\|Wed Jul 26  2023]]  	[[Attention#= [[RASA]]]]  
+[[Attention\|Wed Jul 26  2023]]  	[[Attention#= RASA]]  
+[[RASA\|Wed Jul 26  2023]]  	[[RASA#STARSPACE ALG]]  
+[[RASA\|Wed Jul 26  2023]]  	[[RASA#TED]]  
 [[@CV\|Wed Jul 26  2023]]  	[[@CV#People]]  
 [[@CV\|Wed Jul 26  2023]]  	[[@CV#Todo]]  
 [[@CV\|Wed Jul 26  2023]]  	[[@CV#Tasks]]  

@@ -1,6 +1,6 @@
 .[[NJ]].	  [[Lrn]],
   TOP:	[[NJ Todo]], [[NJ Log]],
-  DOCS:	[NJ Slides](spot://njslides), [[NJ Rewrite]], [[NJ Pyramid]], [[NJ Framing]],
+  DOCS:	[NJ Slides](spot://njslides), [[NJ Rewrite]], [[RES Pyramid]], [[NJ Framing]],
   PARTS:,
   ROCKS:, [[NJ Read]], ,
   , [NJ Slide](spot://njslide), ,
