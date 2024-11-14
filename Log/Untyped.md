@@ -5,6 +5,7 @@ n:: no prefix.	Dated entries without any typing prefix
 
 | Date       | File                                        | Notes                                                                                                                             |
 | ---------- | ------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------- |
+| 2024-11-14 | [[Palestinians]]                                | Tighter Intro                                                                                                                     |
 | 2024-11-12 | [[@Sean O'Connor]]                              | VB                                                                                                                                |
 | 2024-11-12 | [[Reflections]]                                 | Hackers was fun/energizing.  I am credible 4 many jobs                                                                            |
 | 2024-11-11 | [[@Mark Randall]]                               | Hackers 2024                                                                                                                      |

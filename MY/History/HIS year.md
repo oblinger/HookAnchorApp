@@ -1,4 +1,5 @@
 
+[[fried\|Wed Jul 26  2023]]  	[[fried#WAITING]]  
 [[now\|Wed Jul 26  2023]]  	[[now#Waiting]]  
 [[now\|Wed Jul 26  2023]]  	[[now#Now]]  
 [[Attention\|Wed Jul 26  2023]]  	[[Attention#= [[RASA]]]]  

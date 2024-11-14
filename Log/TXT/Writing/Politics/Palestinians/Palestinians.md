@@ -2,6 +2,23 @@
 
 # LOG
 
+### 2024-11-14  Tighter Intro
+
+The two state solution for Palestinian freedom simply cannot work:
+
+Israeli's will never lift their boot off the necks of the Palestinians when a percentage will immediately use those new freedoms to maximize Israeli death.
+
+And the percent of Palestinians ready to kill Israelis can't drop to zero while the Israeli boot is firmly on their neck.
+
+This is an unbreakable deadlock.  Concessions might lower the percentage, but not close enough to zero to allow lifting of the boot.  And without lifting the boot, how much concession can one make?  Not enough.
+
+
+The solution it to split Palestinians into a third group where individals can SELF SELECT to align with Israel.  Over time
+
+
+
+
+
 ### 2024-04-12  Dillion updates to the plan
 
 Dillon, your response was so good it merited my thinking before responding.  Sorry I took so long!
