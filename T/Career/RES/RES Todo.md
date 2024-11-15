@@ -1,4 +1,9 @@
 
+HandsOn Highlights.      Leadership Highlights.
+
+talk about 300+ in at a glance not
+
+
 - [ ] [[RES Star]]: Create stars for
 - [ ] [[2024-04-01 Resume Rewrite]]: 
 

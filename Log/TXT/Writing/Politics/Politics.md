@@ -1,5 +1,4 @@
 .[[Politics]].
-  :
   [[Climate]]:
   [[Palestinians]]:
   [[Race]]:
@@ -20,6 +19,23 @@
 https://www.wsj.com/opinion/harris-is-the-safer-economic-choice-2024-presidential-election-ea06b8bf
 
 # LOG
+
+### 2024-11-14  WHY TRUMP
+
+
+GAH!!!  We will never win if we cannot really understand why we lost:
+
+- Working class voters believe mass immigration harms jobs and costs more in services than it pays.
+
+- They believe the economy is worse than before Biden, so one needs to propose a compelling change we didn't and Trump did (cut 1/2 the "wasteful" gov and deport all the "freeloaders")
+
+- They believe Dems are not listening that trans-rights harms fairness in sports, safety in bathrooms, and should not be surgically fixed using tax money.
+
+- They believe legal attacks on Trump were partisan since they only came from the most liberal courts.
+
+
+I know we live in a racist/sexist country, still I am also from Trump country and I am telling you the main reasons are listed above.  No point in arguing the stupidity of the points above, one needs a compromise platform that addresses them....   Or just let the other guy run everything.
+
 
 ### 2024-11-11  short
 

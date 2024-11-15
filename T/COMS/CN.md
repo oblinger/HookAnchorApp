@@ -1,7 +1,7 @@
 - Theo, Nick, Luis, Uri -> 
 - Doug ping
 - [[@Uri Weiss]]			- Was @ Google, Mentors Leaders
-- [[@Luis Arrellano]]	- Very good at framing story
+- [[@Luis Arrellano]]	- Show: [[RES]], [Pyramid](spot://respyramid), Very good at framing story
 
 Later: THEO, RODRIGO, 
 
@@ -16,6 +16,11 @@ Later: THEO, RODRIGO,
 
 FAANG:	[[@Felipe Lavratti]], [[@Dennis DeCoste]], 
 FAANG2:	[[@Doug Gordin]], [[@Vittorio Castelli]], [[@Rodrigo Braz]], 
+
+
+- G-Cafe: [[@Ashwin Ram]],  [[@Dan Kaufman]],  [[@Andrew Tomkins]]
+- [[@Dan Kaufman]] - Is this [article](https://pravse.medium.com/the-maze-is-in-the-mouse-980c57cfd61a) the real culture at Google.  
+  Is it a good reason to stay away?  Can an energetic TL ship code?
 
 
 TIER TWO:

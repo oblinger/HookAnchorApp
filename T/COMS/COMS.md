@@ -1,8 +1,6 @@
 .[[COMS]].
-   , [[Calls]], , [[COM Msg]], [[COM Next]] ([[CN]]),
-   -
-   :  , , , ,
-  ADDS:
+   , [[Calls]], [[COM Msg]], [[COM Next]] ([[CN]]),
+
   DELS: [[CRM]], [[BOD]], [[COM Campaigns OLDER]], [[CRM_Phrases]], [[FailedMessages]], [[FirstTouch]], [[COM Investor]], 
 
 
