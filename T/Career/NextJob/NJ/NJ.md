@@ -4,7 +4,8 @@
   PARTS	[[NJ Targets]],
   ROCKS:
   , , , ,
-  DELS: [[NJ Framing]], [[NJ Help]], [[NJ Train]], 
+  , [[NJ Plan]], 
+  DELS: [[NJ Framing]], [[NJ Help]], [[NJ Train]],
 
 RELATED:	[[RES]], [[CRM]], 
 OLD:		[[NJ16]], [[NJ22]],[[GoogleJob]], [[Meta Coms]], 

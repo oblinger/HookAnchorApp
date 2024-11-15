@@ -1,4 +1,6 @@
 
+[[@Jason Syversen\|Wed Sep 11  2024]]  	[[@Jason Syversen#2024-09-10  Text of agreement]]  
+[[PQ\|Tue Sep 10  2024]]  	[[PQ#2024-09-09  Spraying for Ants]]  
 [[DAT\|Tue Sep 10  2024]]  	[[DAT#2024-09-09  New plan for integration.]]  
 [[Reflections\|Tue Sep 10  2024]]  	[[Reflections#2024-09-09  Went to 1/2 time at SV]]  
 [[2024-W37\|Tue Sep 10  2024]]  	[[2024-W37#W37   2024-09-09   [[2024-W36\\|<<]] [[2024-W38\\|>>]]]]  
