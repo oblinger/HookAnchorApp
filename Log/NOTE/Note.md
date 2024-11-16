@@ -31,7 +31,7 @@ n:: 'n...' 	Isolated 'notes' created by me
 | n2022-09-11 | [[2021-06-00 Brain3]]  | WORLD MODEL                                                                 |
 | n2022-08-23 | [[2021-06-00 Brain3]]  | ARCHITECTURE & ALGORITHM IDEAS                                              |
 | n2022-07-28 | [[@Felipe Lavratti]]   | Job pointers at Amazon                                                      |
-| n2022-07-22 | [[Politics]]           | Religious tolerance                                                         |
+| n2022-07-22 | [[POL]]                | Religious tolerance                                                         |
 | n2022-07-09 | [[EOCA]]               | Zombie Consciousness                                                        |
 | n2022-07-06 | [[EOCA]]               | Bengio's based model of consciousness                                       |
 | n2022-05-30 | [[2009-03 Team Saver]] | Compressed summary                                                          |
@@ -44,10 +44,10 @@ n:: 'n...' 	Isolated 'notes' created by me
 | n2021-05-18 | [[NJ22]]               | Who To Talk To?                                                             |
 | n2021-05-13 | [[EOCA]]               | Alg setup                                                                   |
 | n2021-05-06 | [[EOCA]]               | Disposition - Stance and Agenda                                             |
-| n2021-01-00 | [[Politics]]           | Not fact based -- trump won by a lot                                        |
-| n2021-00-00 | [[Politics]]           | ARE YOU INFORMED OR ARE YOU MANAGED?                                        |
-| n2021-00-00 | [[Politics]]           | Cheap housing idea                                                          |
+| n2021-01-00 | [[POL]]                | Not fact based -- trump won by a lot                                        |
+| n2021-00-00 | [[POL]]                | ARE YOU INFORMED OR ARE YOU MANAGED?                                        |
+| n2021-00-00 | [[POL]]                | Cheap housing idea                                                          |
 | n2021-00-00 | [[Coaches]]            | Mentor Ideas --                                                             |
-| n2019-00-00 | [[Politics]]           | CONSEQUENCES in the classroom                                               |
-| n2019-00-00 | [[Politics]]           | selection bias in science                                                   |
-| n2019-00-00 | [[Politics]]           | THE TWO CHOICES (politics)                                                  |
+| n2019-00-00 | [[POL]]                | CONSEQUENCES in the classroom                                               |
+| n2019-00-00 | [[POL]]                | selection bias in science                                                   |
+| n2019-00-00 | [[POL]]                | THE TWO CHOICES (politics)                                                  |

@@ -1,4 +1,4 @@
-.[[Politics]].
+.[[POL]].
   [[Climate]]:
   [[Palestinians]]:
   [[Race]]:

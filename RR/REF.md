@@ -21,7 +21,7 @@ LINKS:  [[RR]]   [[Refs]]
 | r2022-10-06 | [[Coaches]]          | Plato Peer Mentoring                                                              |
 | r2022-09-28 | [[MGR Docs]]         | Career COACHES                                                                    |
 | r2022-07-20 | [[MED]]              | Stomach Upset Decision Tree                                                       |
-| r2022-07-18 | [[Politics]]         | Optimal Tax Policy                                                                |
+| r2022-07-18 | [[POL]]              | Optimal Tax Policy                                                                |
 | r2022-06-10 | [[UF]]               | Master thesis, Code Mirror 6 editor that edits in two different languages at once |
 | r2022-06-01 | [[STARTUPS]]         | Term Sheets                                                                       |
 | r2022-05-14 | [[Forum]]            | Best Forum Software                                                               |

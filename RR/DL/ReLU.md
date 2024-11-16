@@ -9,10 +9,10 @@
 ReLU 
 -?-
 Rectified Linear Unit = max(0,x)
-<!--SR:!2024-11-02,1,230-->
+<!--SR:!2024-11-18,3,250-->
 
 
 Leaky ReLU
 -?-
 Leaky Rectified Linear Unit:  F(x) = x if x>0 else alpha*x
-<!--SR:!2024-11-04,3,250-->
+<!--SR:!2024-11-26,11,270-->

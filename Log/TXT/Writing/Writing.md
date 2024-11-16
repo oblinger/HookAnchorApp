@@ -1,8 +1,9 @@
 .[[Writing]].
-  ,   [[An_Athiests_Spiritual_Calling]], [[ArmChair]], [[Politics]], 
+  ,   [[An_Athiests_Spiritual_Calling]], [[ArmChair]], ,
+  DELS: [[POL]], 
 
 #set
-- [[ArmChair]],   [[Politics]]
+- [[ArmChair]],   [[POL]]
 
 - [An_Athiests_Spiritual_Calling](An_Athiests_Spiritual_Calling.md), 
 

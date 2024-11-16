@@ -40,7 +40,7 @@ O(n) tasks
 - Tree/graph traversal
 - Stack/Queue
 - Typically for `n ≤ 10⁶`
-<!--SR:!2024-11-15,1,230-->
+<!--SR:!2024-11-17,2,230-->
 
 O(K log n) tasks
 -?-

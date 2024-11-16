@@ -5,13 +5,14 @@ n:: no prefix.	Dated entries without any typing prefix
 
 | Date       | File                                        | Notes                                                                                                                             |
 | ---------- | ------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------- |
+| 2024-11-15 | [[@Alta Vista]]                                 | AI Discussion                                                                                                                     |
+| 2024-11-14 | [[POL]]                                         | WHY TRUMP                                                                                                                         |
 | 2024-11-14 | [[Palestinians]]                                | Tighter Intro                                                                                                                     |
-| 2024-11-14 | [[Politics]]                                    | WHY TRUMP                                                                                                                         |
 | 2024-11-12 | [[@Sean O'Connor]]                              | VB                                                                                                                                |
 | 2024-11-12 | [[Reflections]]                                 | Hackers was fun/energizing.  I am credible 4 many jobs                                                                            |
 | 2024-11-11 | [[@Mark Randall]]                               | Hackers 2024                                                                                                                      |
-| 2024-11-11 | [[Politics]]                                    | short                                                                                                                             |
-| 2024-11-11 | [[Politics]]                                    | Democrats Wake Up! 2                                                                                                              |
+| 2024-11-11 | [[POL]]                                         | short                                                                                                                             |
+| 2024-11-11 | [[POL]]                                         | Democrats Wake Up! 2                                                                                                              |
 | 2024-11-11 | [[Mgt]]                                         | W                                                                                                                                 |
 | 2024-11-10 | [[@Alexandra Ramadan]]                          | Hackers 2024                                                                                                                      |
 | 2024-11-10 | [[@Danny Wilson]]                               | Hackers 2024                                                                                                                      |
@@ -19,7 +20,7 @@ n:: no prefix.	Dated entries without any typing prefix
 | 2024-11-10 | [[@Marita Cheng]]                               | Hackers 2024                                                                                                                      |
 | 2024-11-10 | [[@Otavio Good]]                                | Hackers 2024                                                                                                                      |
 | 2024-11-10 | [[@Pinar Stanfield]]                            | Hackers 2024                                                                                                                      |
-| 2024-11-07 | [[Politics]]                                    | Democrats Wake Up!                                                                                                                |
+| 2024-11-07 | [[POL]]                                         | Democrats Wake Up!                                                                                                                |
 | 2024-11-07 | [[@Jason Syversen]]                             | update.  VB                                                                                                                       |
 | 2024-11-03 | [[Reflections]]                                 | COMPLETION - Pick things to finish; then finish them!                                                                             |
 | 2024-11-01 | [[@Philipp Herget]]                             | Hiring                                                                                                                            |
@@ -39,7 +40,7 @@ n:: no prefix.	Dated entries without any typing prefix
 | 2024-10-07 | [[Friday]]                                      | BIX                                                                                                                               |
 | 2024-10-07 | [[Friday]]                                      | Foreign Cinema                                                                                                                    |
 | 2024-10-06 | [[Diet]]                                        | Whole Food Plant Based -ish diet.                                                                                                 |
-| 2024-10-04 | [[Politics]]                                    | Conservatives/Liberal outrage/satire                                                                                              |
+| 2024-10-04 | [[POL]]                                         | Conservatives/Liberal outrage/satire                                                                                              |
 | 2024-10-03 | [[@Google]]                                     | Matt @ Google                                                                                                                     |
 | 2024-10-03 | [[@Traxxas]]                                    | Reset controller                                                                                                                  |
 | 2024-10-01 | [[@Chase Bank]]                                 | Replacing lost card.  will recieve on Thursday.                                                                                   |
@@ -121,7 +122,7 @@ n:: no prefix.	Dated entries without any typing prefix
 | 2024-07-09 | [[SNIP]]                                        | Chunch                                                                                                                            |
 | 2024-07-08 | [[@Jason Syversen]]                             | Move Faster                                                                                                                       |
 | 2024-07-05 | [[@Apple]]                                      | Airmax repair                                                                                                                     |
-| 2024-06-26 | [[Politics]]                                    | Fixing Banking                                                                                                                    |
+| 2024-06-26 | [[POL]]                                         | Fixing Banking                                                                                                                    |
 | 2024-06-20 | [[Trump]]                                       | Trying to limit FED independence                                                                                                  |
 | 2024-06-18 | [[QQ]]                                          | Lessons Learned From Minutes                                                                                                      |
 | 2024-06-17 | [[DAT]]                                         | New Mount Design                                                                                                                  |
@@ -149,7 +150,7 @@ n:: no prefix.	Dated entries without any typing prefix
 | 2024-05-21 | [[2024-W21]]                                    | REQ / idea                                                                                                                        |
 | 2024-05-21 | [[2024-W21]]                                    | QUESTIONS                                                                                                                         |
 | 2024-05-21 | [[2024-W21]]                                    | SW / AI                                                                                                                           |
-| 2024-05-19 | [[Politics]]                                    | UBI Cant Work - Rebuttal                                                                                                          |
+| 2024-05-19 | [[POL]]                                         | UBI Cant Work - Rebuttal                                                                                                          |
 | 2024-05-16 | [[PQ]]                                          | Replace bath faucet                                                                                                               |
 | 2024-05-16 | [[COMS]]                                        | Mentor's call list                                                                                                                |
 | 2024-05-14 | [[@StatsPerform]]                               | Talk about sports AI                                                                                                              |

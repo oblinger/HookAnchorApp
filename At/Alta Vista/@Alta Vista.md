@@ -52,6 +52,24 @@
 # LOG
 
 
+### 2024-11-15  AI Discussion
+
+- Tool that will be central for their entire life
+- 
+
+#### Understanding Who Is In The Room
+
+- What brought you to this conversation about AI in education?
+- What excites you most about the possibilities? What keeps you up at night?
+- How is AI already affecting your children's learning and development?
+
+#### Questions to Explore 
+
+- What should be the relationship between AI and learning in a JK-8 environment?
+- How do we ensure technology serves our educational values rather than reshapes them?
+- What do we mean by "AI literacy" at different developmental stages?
+- How do we balance embracing innovation with protecting childhood?
+
 ### 2024-09-24  Info management proposal
 
 - Create a mailing list so it is impossible to "reply" to the whole mailing list.

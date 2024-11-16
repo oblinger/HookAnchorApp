@@ -83,7 +83,7 @@
         [[TXT]]: 
             [[Letters]]: 
             [[Writing]]: [[ArmChair]],	
-                [[Politics]]: [[Race]],	
+                [[POL]]: [[Race]],	
         [[WP]]: 
         [[Idea]]: [[2018-00 Alloy]],	[[2020-07 Autonomy]],	
             [[2017-09 Elastic Block Chain]],	[[Forum]],	[[2016-00 TreeSheet]],	

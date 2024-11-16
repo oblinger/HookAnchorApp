@@ -7,7 +7,7 @@ S.M.A.R.T.
 - Achievable
 - Realistic
 - Time-bounded
-<!--SR:!2024-11-02,1,230-->
+<!--SR:!2024-11-17,2,230-->
 
 #card
 - https://mooncamp.com/blog/smart-goals/

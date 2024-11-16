@@ -8,6 +8,9 @@
 
 ## Plan 2024-10
 
+Make updates directly in DAT-DVC.
+- Assume dat.py is the only file baine 
+
 - fixes: register abstrct class method, use fn doc string
 - [ ] = Juan assesses dat.py & metrics.py (propose edits)
 - [ ] = Fresh metric branch w/ DAT imported
