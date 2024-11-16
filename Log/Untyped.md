@@ -6,13 +6,13 @@ n:: no prefix.	Dated entries without any typing prefix
 | Date       | File                                        | Notes                                                                                                                             |
 | ---------- | ------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------- |
 | 2024-11-15 | [[@Alta Vista]]                                 | AI Discussion                                                                                                                     |
-| 2024-11-14 | [[POL]]                                         | WHY TRUMP                                                                                                                         |
+| 2024-11-14 | [[Election2024]]                                | WHY TRUMP                                                                                                                         |
 | 2024-11-14 | [[Palestinians]]                                | Tighter Intro                                                                                                                     |
 | 2024-11-12 | [[@Sean O'Connor]]                              | VB                                                                                                                                |
 | 2024-11-12 | [[Reflections]]                                 | Hackers was fun/energizing.  I am credible 4 many jobs                                                                            |
 | 2024-11-11 | [[@Mark Randall]]                               | Hackers 2024                                                                                                                      |
-| 2024-11-11 | [[POL]]                                         | short                                                                                                                             |
-| 2024-11-11 | [[POL]]                                         | Democrats Wake Up! 2                                                                                                              |
+| 2024-11-11 | [[Election2024]]                                | short                                                                                                                             |
+| 2024-11-11 | [[Election2024]]                                | Democrats Wake Up! 2                                                                                                              |
 | 2024-11-11 | [[Mgt]]                                         | W                                                                                                                                 |
 | 2024-11-10 | [[@Alexandra Ramadan]]                          | Hackers 2024                                                                                                                      |
 | 2024-11-10 | [[@Danny Wilson]]                               | Hackers 2024                                                                                                                      |
@@ -20,7 +20,7 @@ n:: no prefix.	Dated entries without any typing prefix
 | 2024-11-10 | [[@Marita Cheng]]                               | Hackers 2024                                                                                                                      |
 | 2024-11-10 | [[@Otavio Good]]                                | Hackers 2024                                                                                                                      |
 | 2024-11-10 | [[@Pinar Stanfield]]                            | Hackers 2024                                                                                                                      |
-| 2024-11-07 | [[POL]]                                         | Democrats Wake Up!                                                                                                                |
+| 2024-11-07 | [[Election2024]]                                | Democrats Wake Up!   ((BEST ONE))                                                                                                 |
 | 2024-11-07 | [[@Jason Syversen]]                             | update.  VB                                                                                                                       |
 | 2024-11-03 | [[Reflections]]                                 | COMPLETION - Pick things to finish; then finish them!                                                                             |
 | 2024-11-01 | [[@Philipp Herget]]                             | Hiring                                                                                                                            |
