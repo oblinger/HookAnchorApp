@@ -1,4 +1,8 @@
 
+[[@Isaac Cohen\|Wed Jul 26  2023]]  	[[@Isaac Cohen#2023-07-07  Wow, quite a plane ride]]  
+[[@James Briones\|Wed Jul 26  2023]]  	[[@James Briones#2023-07-25  TC alternatives]]  
+[[@Nick Allen\|Wed Jul 26  2023]]  	[[@Nick Allen#2023-07-26  Pitching a Business]]  
+[[@Yiftach Eisenberg\|Wed Jul 26  2023]]  	[[@Yiftach Eisenberg#Log]]  
 [[EOCA What Happens Now\|Wed Jul 26  2023]]  	[[EOCA What Happens Now#xxx]]  
 [[EOCA What Happens Now\|Wed Jul 26  2023]]  	[[EOCA What Happens Now#PARTS]]  
 [[LOG\|Wed Jul 26  2023]]  	[[LOG#2023-07-17  Einstein Puzzle]]  

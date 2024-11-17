@@ -1,4 +1,8 @@
 
+[[Politics From Me\|Wed Sep 11  2024]]  	[[Politics From Me#2024-09-10  Good People and Bad People]]  
+[[Arch\|Wed Sep 11  2024]]  	[[Arch#2024-09-10  Hiring FAQ]]  
+[[Arch\|Wed Sep 11  2024]]  	[[Arch#2024-08-26  Salary]]  
+[[Arch\|Wed Sep 11  2024]]  	[[Arch#2024-08-26  Note Explaining The Job]]  
 [[Arch\|Wed Sep 11  2024]]  	[[Arch#[[BBI]] PROMPTS]]  
 [[Arch\|Wed Sep 11  2024]]  	[[Arch#NOTES [[HERE]]]]  
 [[Arch\|Wed Sep 11  2024]]  	[[Arch#LOG]]  
