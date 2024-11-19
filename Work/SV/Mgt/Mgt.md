@@ -4,7 +4,14 @@
 
 # Log
 
+### 2024-11-18  W
 
+- Object detection dataset ready, 
+- VB crossover exp
+
+- Shot origin improvements (I don't think we have numbers yet, but Greg reported something like 19 cases fixed), 
+- minutes runtime breakdown, 
+- play/shot charts integration in the pipeline and beginning of play/shot charts integration with software
 ### 2024-11-11  W
 
 - Play charts

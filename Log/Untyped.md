@@ -5,6 +5,9 @@ n:: no prefix.	Dated entries without any typing prefix
 
 | Date       | File                                        | Notes                                                                                                                             |
 | ---------- | ------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------- |
+| 2024-11-18 | [[Immigration]]                                 | Percent that are released to the streets.                                                                                         |
+| 2024-11-18 | [[Reflections]]                                 | Exercise                                                                                                                          |
+| 2024-11-18 | [[Mgt]]                                         | W                                                                                                                                 |
 | 2024-11-15 | [[@Alta Vista]]                                 | AI Discussion                                                                                                                     |
 | 2024-11-14 | [[Election2024]]                                | WHY TRUMP                                                                                                                         |
 | 2024-11-14 | [[Palestinians]]                                | Tighter Intro                                                                                                                     |

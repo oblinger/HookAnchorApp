@@ -1,4 +1,12 @@
+### 2024-11-18  Exercise
 
+It is just not happening.
+
+Rule To Try: 
+- if prior day was a miss and
+- emergency is not underway 
+- and "exercise last chance"
+- Then drop all and exercise
 
 
 ### 2024-11-12  Hackers was fun/energizing.  I am credible 4 many jobs

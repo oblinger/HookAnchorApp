@@ -1,4 +1,6 @@
 .**NOW**.
+   - Jason meeting
+   - FB alpha testing
   [VB++](https://docs.google.com/document/d/1JNx3gS2c8qVLiiFoESU82dj_Z-xxZCgutdtSaAUqDJ4/edit?tab=t.0):	>talk james
   EXP:   [HotKey](https://software-engineering-team.atlassian.net/browse/WU-1935), J^5games 
   .		Discuss other ways
