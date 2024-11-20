@@ -218,6 +218,14 @@ DISCUSS
 
 # LOG
 
+### 2024-11-19  Meet in San Bruno
+
+- FB alpha
+- VB fixes
+- Deflection Detection; Halos; Action Reco
+
+
+
 ### 2024-11-07  update.  VB 
 
 - player 999

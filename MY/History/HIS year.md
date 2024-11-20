@@ -1,4 +1,8 @@
 
+[[2023-W31\|Thu Aug 3  2023 ]]  	[[2023-W31#Tue]]  
+[[2023-W31\|Thu Aug 3  2023 ]]  	[[2023-W31#Thr]]  
+[[BCMS\|Wed Jul 26  2023]]  	[[BCMS#Movie Nite]]  
+[[@Isaac Cohen\|Wed Jul 26  2023]]  	[[@Isaac Cohen#2023-07-24  Post pitch discussion]]  
 [[@Isaac Cohen\|Wed Jul 26  2023]]  	[[@Isaac Cohen#2023-07-07  Wow, quite a plane ride]]  
 [[@James Briones\|Wed Jul 26  2023]]  	[[@James Briones#2023-07-25  TC alternatives]]  
 [[@Nick Allen\|Wed Jul 26  2023]]  	[[@Nick Allen#2023-07-26  Pitching a Business]]  

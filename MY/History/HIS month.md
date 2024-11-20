@@ -1,4 +1,8 @@
 
+[[Log\|Wed Sep 11  2024]]  	[[Log#Personal Content Logs]]  
+[[Log\|Wed Sep 11  2024]]  	[[Log#Work Content Logs]]  
+[[2024-05 Sell Acura\|Wed Sep 11  2024]]  	[[2024-05 Sell Acura#THE PLAN]]  
+[[2024-05 Sell Acura\|Wed Sep 11  2024]]  	[[2024-05 Sell Acura#Where to sell]]  
 [[Politics From Me\|Wed Sep 11  2024]]  	[[Politics From Me#2024-09-10  Good People and Bad People]]  
 [[Arch\|Wed Sep 11  2024]]  	[[Arch#2024-09-10  Hiring FAQ]]  
 [[Arch\|Wed Sep 11  2024]]  	[[Arch#2024-08-26  Salary]]  

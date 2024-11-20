@@ -5,6 +5,7 @@ n:: no prefix.	Dated entries without any typing prefix
 
 | Date       | File                                        | Notes                                                                                                                             |
 | ---------- | ------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------- |
+| 2024-11-19 | [[@Jason Syversen]]                             | Meet in San Bruno                                                                                                                 |
 | 2024-11-18 | [[Immigration]]                                 | Percent that are released to the streets.                                                                                         |
 | 2024-11-18 | [[Reflections]]                                 | Exercise                                                                                                                          |
 | 2024-11-18 | [[Mgt]]                                         | W                                                                                                                                 |

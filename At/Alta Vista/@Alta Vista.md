@@ -54,8 +54,21 @@
 
 ### 2024-11-15  AI Discussion
 
+- INNOVATOR'S MINDSET: 
+	- Entire industries will be transformed in a few years time, so being nimble will be key.
+	- When the transition happens experience with AI tools will end up essential.
+- INFO EVALUATION - STARTING 3rd or 4th grade - evaluation-based
 - Tool that will be central for their entire life
-- 
+
+
+4 grade math - 
+Bo - 1st grade - helping doctors be more cost efficient
+Nvidia - 
+Adobe - Gen AI 
+Adobe - Firefly team - sven???
+Asher - AI startup
+Na-faan
+
 
 #### Understanding Who Is In The Room
 

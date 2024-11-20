@@ -1,7 +1,13 @@
 .**NOW**.
-   - Jason meeting
-   - FB alpha testing
+   - ! Jason meeting (BB++)
+   - ! FB alpha testing
+   - ! halos - crossovers
+   - ! james status
+   - ! jack status on error codes
+   - ! jack FB fail notify
   [VB++](https://docs.google.com/document/d/1JNx3gS2c8qVLiiFoESU82dj_Z-xxZCgutdtSaAUqDJ4/edit?tab=t.0):	>talk james
+  
+  DWS:	[WU11970](https://software-engineering-team.atlassian.net/browse/WU-1970)   >Matias[DWS](https://software-engineering-team.atlassian.net/browse/WU-1946) 
   EXP:   [HotKey](https://software-engineering-team.atlassian.net/browse/WU-1935), J^5games 
   .		Discuss other ways
   STAT:  [WU1938](https://software-engineering-team.atlassian.net/browse/WU-1938) show err status
@@ -11,7 +17,7 @@
   [Min](spot:://AImin):	[Alpha](https://www.notion.so/sportsvisio/AI-MIN-Alpha-Testing-James-118719d6f2bd80bb8280fdeafac784f3?pvs=4): 
   QA:	G[QAmin](https://software-engineering-team.atlassian.net/jira/software/projects/AIT/boards/25?selectedIssue=AIT-1069)^reg  [QAfb](https://software-engineering-team.atlassian.net/jira/software/projects/AIT/boards/25?selectedIssue=AIT-1070),
   Metrics: 
-  [Fball](spot://fireball):	>Matias[DWS](https://software-engineering-team.atlassian.net/browse/WU-1946) 
+  [Fball](spot://fireball):	
   
   [[2024-08 Backend Architect|Arch]]:	Brian
   [[FIN.]]	Schwab
