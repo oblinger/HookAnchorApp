@@ -1,4 +1,5 @@
 
+### __
 (See [[Phone]] Sell Acura)
 
 - car call DC; get docs for mom
@@ -8,7 +9,7 @@ BofSale: Sign/Date
 POA: Sign/Date
 
 
-### 2024-09-25  The plan
+### The plan
 
 - Mom check's DC requirements (or we just take the risk)
 - Dan gets the notary to notarize the power of attorney
@@ -23,10 +24,11 @@ POA: Sign/Date
 	- Mom makes copies of the docs (at a copier or on her phone)
 	- Mom sends the Bill of sale (and a copy of the signed title) to me and to DC DMV
 
+PLATFORMS
+- + https://www.autotrader.com/sell-my-car. Private-Owners.
+- + https://www.cargurus.com/sell-car/. Vast. For Dealerships.
+- https://www.cars.com. Large. Private-Owners.
   
-
-  
-
 PRICE
 - [Edmonds.com](http://edmonds.com/) lists the car's value at $10,366 for private sale
 - I am thinking to list the car at $9,500
@@ -39,18 +41,17 @@ My only confusion:  the limited power of attorney needs your signature too, but
   
 
   
+### TEXT ABOUT THE CAR
 
-  
-
-TEXT ABOUT THE CAR
-
-Selling a 2000 Acura for my out of state son:
+Selling Acura Integra:
 
 The car is in good condition, it has XXX scratches but otherwise in great shape.
-He is the original owner; it was lightly driven until 2010 when he put it in our garage for storage.
-This year we took did $3000 in repairs, replacing all old rubber etc. in order to get it ready for sale (we have the receipts for you).
+I am the original owner, I drove modestly until 2010 when I moved to California and put it in my parents garage.  This year we did $3000 in repairs, replacing all old rubber etc. in order to get it ready for sale (we have the receipts for you).
 
-Edmonds lists $10,366 as its value for private sale, so I am putting it on the market for $9,500 just to speed its the sale.
+Edmonds lists this car at $10,366 as its value for private sale; I am putting it on the market for $9,500 just to speed its the sale.
+
+
+
 
 
 FROM MOM

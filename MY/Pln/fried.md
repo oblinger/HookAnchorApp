@@ -1,3 +1,7 @@
+- spot: add 'main' for every anchor (if 'main' is not defined)
+- 
+# ERROR: Cannot find cmd: spot:://AI MIN
+# ERROR: Cannot find cmd: spot:://AI MIN
 - clang check it out.  maybe use it
 
 

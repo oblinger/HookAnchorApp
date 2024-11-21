@@ -1,7 +1,7 @@
 
-HandsOn Highlights.      Leadership Highlights.
+- [ ] HandsOn Highlights.      Leadership Highlights.
 
-talk about 300+ in at a glance not
+talk about hiring 300+ in at a glance not
 
 
 - [ ] [[RES Star]]: Create stars for
@@ -13,6 +13,8 @@ talk about 300+ in at a glance not
 - [ ] PBG - Crunchbase
 - [ ] Recommendation from Nick & ?Filiepe?
 
+HIGHLIGHTS SECTION
+- [ ] Add contributor items
 
 RES
 - [ ] Add an objectives section?  (Use [[RES Pira]])
@@ -28,6 +30,17 @@ BEEF UP GEN-AI ON RESUME
 - [ ] Entry for Aeolus DL work
 
 
+### 2024-11-20  Highlights
+
+- Contributed numerous ideas and implementations 
+
+- Developed the communications and control architecture at Martian Robots that was ultimately acquired by Aeolus.
+
+- Developed and implemented novel nationally recognized programming by demonstration algorithm ultimately integrated into the Rational software suite
+
+- Shaped field
+
+### 2024-11-20  John Notes
 I'm also a big fan of having directionally consistent indentation. I just made that phrase up but basically, I wouldn't have bullets indented and then unindented outcomes. I think the simplest way to do this in your case is to shift the "Career at a glance" bullets to the left to be flush with the left margin, and to change the "Action" lines to be indentationally consistent (I'm on a roll) with the "Outcome" lines.  
   
 I'm happy to discuss late this afternoon or over the weekend.(Edited)

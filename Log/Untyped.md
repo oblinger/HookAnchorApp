@@ -5,6 +5,8 @@ n:: no prefix.	Dated entries without any typing prefix
 
 | Date       | File                                        | Notes                                                                                                                             |
 | ---------- | ------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------- |
+| 2024-11-20 | [[RES Todo]]                                    | Highlights                                                                                                                        |
+| 2024-11-20 | [[RES Todo]]                                    | John Notes                                                                                                                        |
 | 2024-11-19 | [[@Jason Syversen]]                             | Meet in San Bruno                                                                                                                 |
 | 2024-11-18 | [[Immigration]]                                 | Percent that are released to the streets.                                                                                         |
 | 2024-11-18 | [[Reflections]]                                 | Exercise                                                                                                                          |
@@ -54,7 +56,6 @@ n:: no prefix.	Dated entries without any typing prefix
 | 2024-10-01 | [[HIIT Tape1]]                                  | Created HIIT Tape 1                                                                                                               |
 | 2024-09-30 | [[EOCP Prime Path]]                             | TIMELINE                                                                                                                          |
 | 2024-09-30 | [[Mgt]]                                         | weekly                                                                                                                            |
-| 2024-09-25 | [[2024-05 Sell Acura]]                          | The plan                                                                                                                          |
 | 2024-09-25 | [[DAT]]                                         | proposed progression                                                                                                              |
 | 2024-09-24 | [[@Alta Vista]]                                 | Info management proposal                                                                                                          |
 | 2024-09-19 | [[@Annafi Wahed]]                               | W/ CTO                                                                                                                            |

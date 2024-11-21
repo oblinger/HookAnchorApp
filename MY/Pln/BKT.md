@@ -28,6 +28,7 @@ TOP ORGANIZING VIEWS
 
 ### 2024-10-31  Single Letter Time Codes
 
+(See [[Meta Time Codes]])
 
 - c	CHEW	- Reading emails, slack.  Quick responses and task execution.
 - d	DEEP 	- Deep work.  MIT task execution

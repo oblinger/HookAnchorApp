@@ -1,10 +1,8 @@
-- blood
-- fireballs.
-- james videos
+- barry
+- jason:  Magic Hour.  and Handoff.
+- retirement planning
+- blood.
 - google-x
-- spot: add 'main' for every anchor (if 'main' is not defined)
 
-- cleaner come
-ing
 
 
