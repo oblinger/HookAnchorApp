@@ -5,7 +5,8 @@
   PLAN:	[[Meta Plan]], [[Meta Coms]], , ,
   ...	, [[Meta Meta Conept]], [[Meta Org -old-page-]]
   , , , ,
-  , [[Meta KMR]], [[Meta Productivity]], [[Meta Self]], [[Meta Sys]], [[Meta Work]], 
+  , [[Meta KMR]], [[Meta Productivity]], [[Meta Self]], [[Meta Sys]], [[Meta Work]],
   DELS: [[Meta Sys]], [[Meta KMR]], [[Meta Self]], [[Meta Work]], [[Meta Productivity]],
-  DELS: [[Meta Sys]], [[Meta KMR]], [[Meta Self]], [[Meta Work]], [[Meta Productivity]],[[Base]], [[meta Tasks]], [[Roots]], 
+  , [[Meta List Codes]], [[Meta Time Codes]], 
+  DELS: [[Meta Sys]], [[Meta KMR]], [[Meta Self]], [[Meta Work]], [[Meta Productivity]],[[Base]], [[meta Tasks]], [[Roots]],
 

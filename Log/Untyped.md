@@ -5,6 +5,7 @@ n:: no prefix.	Dated entries without any typing prefix
 
 | Date       | File                                        | Notes                                                                                                                             |
 | ---------- | ------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------- |
+| 2024-11-21 | [[PQ]]                                          | 2024 Gross pay                                                                                                                    |
 | 2024-11-20 | [[RES Todo]]                                    | Highlights                                                                                                                        |
 | 2024-11-20 | [[RES Todo]]                                    | John Notes                                                                                                                        |
 | 2024-11-19 | [[@Jason Syversen]]                             | Meet in San Bruno                                                                                                                 |

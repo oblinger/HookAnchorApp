@@ -43,6 +43,8 @@ cost landscape changing hiring
 
 [https://github.com/yancie-yjr/StreamYOLO](https://github.com/yancie-yjr/StreamYOLO) 
 
+## Rocks
+- Scan cv-research and look at papers
 
 ## Sources To Read
 - [[RR PAPERS]] 

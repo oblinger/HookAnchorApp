@@ -7,3 +7,8 @@
 
 Chew Subtasks:
 - Email(Slack)
+
+
+TOOLS
+- Tracking Time
+- Harvest (heavy)

@@ -2,14 +2,11 @@
   [[ELI Log]], [[Eli Food]], [[ELI Quotes]],
   [[Eli Strategy]]:
   [[Eli Firsts]]:
-  :
   [[Eli Activities]]:
   [[Eli Interactions]]:
   [[Eli Friends]]:
   OLDER: [[BCMS]], [[ELI Education]], [[Eli Math]],
-  , [[Eli Services]], 
-  DELS: [[Eli Services]],
-
+  [[Eli Services]], [[Eli Report Cards]]
 
 
 

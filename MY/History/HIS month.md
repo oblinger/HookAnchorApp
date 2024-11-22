@@ -1,4 +1,13 @@
 
+[[Cocktails\|Sun Sep 15  2024]]  	[[Cocktails#Gin & Tonic]]  
+[[Cocktails\|Sun Sep 15  2024]]  	[[Cocktails#Cosmopolitan]]  
+[[Mgt\|Sun Sep 15  2024]]  	[[Mgt#2024-09-09 Monday]]  
+[[Phone\|Fri Sep 13  2024]]  	[[Phone#2024-09-12  Boost Mobile fraudulent account]]  
+[[@Brian French\|Fri Sep 13  2024]]  	[[@Brian French#2024-09-12  Cuts affect us personally]]  
+[[MAC Apps\|Thu Sep 12  2024]]  	[[MAC Apps#xx Pure Paste]]  
+[[MAC Apps\|Thu Sep 12  2024]]  	[[MAC Apps#xx Karabiner-Elements  [[Karabiner Notes]].]]  
+[[Work\|Thu Sep 12  2024]]  	[[Work#PAUSE , , , ,]]  
+[[work\|Thu Sep 12  2024]]  	[[work#PAUSE , , , ,]]  
 [[@Traxxas\|Wed Sep 11  2024]]  	[[@Traxxas#LOG]]  
 [[Log\|Wed Sep 11  2024]]  	[[Log#Personal Content Logs]]  
 [[Log\|Wed Sep 11  2024]]  	[[Log#Work Content Logs]]  

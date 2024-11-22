@@ -1,6 +1,14 @@
 # Personal "Quick" Projects
 
 
+### 2024-11-21  2024 Gross pay
+
+Pay Date 11/15/2024
+$153,789.82 Gross YTD
+    $3,750 Gross (for 2 weeks)
+     x 3 (three more pay periods)
+    $11,250
+$165,039.82  Estimated Gross for 2024
 ### 2024-10-01  Created Mix Tape for Exercise
 
 See [[Mus]] 

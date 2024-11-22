@@ -8,7 +8,7 @@ STAT: [WU1938](https://software-engineering-team.atlassian.net/browse/WU-1938) s
   
 DWS:	[WU11970](https://software-engineering-team.atlassian.net/browse/WU-1970)   /Matias[DWS](https://software-engineering-team.atlassian.net/browse/WU-1946) 
 CHRT:	 end2end tst
-[Min](spot:://AI~MIN):	[Alpha](https://www.notion.so/sportsvisio/AI-MIN-Alpha-Testing-James-118719d6f2bd80bb8280fdeafac784f3?pvs=4): J^  
+[Min](spot:://AI~MIN):	[Alpha](https://www.notion.so/sportsvisio/AI-MIN-Alpha-Testing-James-118719d6f2bd80bb8280fdeafac784f3?pvs=4): J^collecting 
 [PAID](https://www.notion.so/sportsvisio/AI-MIN-Premium-Paid-Feature-128719d6f2bd80ffbb41db0441d57770?pvs=4):	.
 QA:	G[QAmin](https://software-engineering-team.atlassian.net/jira/software/projects/AIT/boards/25?selectedIssue=AIT-1069)^reg  [QAfb](https://software-engineering-team.atlassian.net/jira/software/projects/AIT/boards/25?selectedIssue=AIT-1070), 
 [[2024-08 Backend Architect|Arch]]:	Brian

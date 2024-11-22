@@ -1,9 +1,6 @@
 .[[Lrn]].
-  ,  [[Lrn Mgt]],
-  , ,
-  , [[LRN Todo]], 
-  DELS: [[LRN Todo]],
-  DELS: [[LRN Todo]],[[Lrn.]], 
+  [[LRN Todo]], [[Lrn Mgt]], 
+
 
 
 

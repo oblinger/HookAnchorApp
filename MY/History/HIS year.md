@@ -1,4 +1,13 @@
 
+[[__bio__\|Thu Aug 3  2023 ]]  	[[__bio__#10.00 – Wagner Example Bio]]  
+[[__Resume__\|Thu Aug 3  2023 ]]  	[[__Resume__#Quick Points]]  
+[[__Resume__\|Thu Aug 3  2023 ]]  	[[__Resume__#Recent Job Summaries]]  
+[[__Resume__\|Thu Aug 3  2023 ]]  	[[__Resume__#Resume Source Info-]]  
+[[__Resume__\|Thu Aug 3  2023 ]]  	[[__Resume__#Bragging Materials]]  
+[[res-sup\|Thu Aug 3  2023 ]]  	[[res-sup#DARPA Materials]]  
+[[res-sup\|Thu Aug 3  2023 ]]  	[[res-sup#PUBLICATIONS]]  
+[[res-sup\|Thu Aug 3  2023 ]]  	[[res-sup#Patents]]  
+[[res-sup\|Thu Aug 3  2023 ]]  	[[res-sup#ORIGINAL SUP MATERIALS]]  
 [[INTERVIEW\|Thu Aug 3  2023 ]]  	[[INTERVIEW#Ignacio]]  
 [[2023-W31\|Thu Aug 3  2023 ]]  	[[2023-W31#Tue]]  
 [[2023-W31\|Thu Aug 3  2023 ]]  	[[2023-W31#Thr]]  
