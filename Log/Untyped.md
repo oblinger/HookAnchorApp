@@ -5,6 +5,8 @@ n:: no prefix.	Dated entries without any typing prefix
 
 | Date       | File                                        | Notes                                                                                                                             |
 | ---------- | ------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------- |
+| 2024-11-22 | [[FIN Todo]]                                    | TRACK SPENDING (my plan)                                                                                                          |
+| 2024-11-22 | [[FIN Todo]]                                    | Best Credit Cards                                                                                                                 |
 | 2024-11-21 | [[PQ]]                                          | 2024 Gross pay                                                                                                                    |
 | 2024-11-20 | [[RES Todo]]                                    | Highlights                                                                                                                        |
 | 2024-11-20 | [[RES Todo]]                                    | John Notes                                                                                                                        |
@@ -146,7 +148,7 @@ n:: no prefix.	Dated entries without any typing prefix
 | 2024-06-04 | [[PQ]]                                          | Hiring a new Cleaner                                                                                                              |
 | 2024-06-04 | [[QQ]]                                          | Hard Case Annotating                                                                                                              |
 | 2024-06-04 | [[QQ]]                                          | 4K videos of basketball                                                                                                           |
-| 2024-06-03 | [[FIN.]]                                        | Costs For Vanguard                                                                                                                |
+| 2024-06-03 | [[FIN Todo]]                                    | Costs For Vanguard                                                                                                                |
 | 2024-06-02 | [[AWS Log]]                                     | Setup for SportsVisio                                                                                                             |
 | 2024-06-01 | [[RR PAPERS]]                                   | [Attention is all you need](https://arxiv.org/pdf/1706.03762)                                                                     |
 | 2024-06-00 | [[COM Newsletter]]                              | AI and CV News Letter points                                                                                                      |

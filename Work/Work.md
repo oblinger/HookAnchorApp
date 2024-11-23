@@ -14,7 +14,7 @@ QA:	G[QAmin](https://software-engineering-team.atlassian.net/jira/software/proje
 [[2024-08 Backend Architect|Arch]]:	Brian
 Regression Testing...
   
-[[FIN.]]	Schwab
+[[FIN Todo]]	Schwab
 [[NJ]]:	>[[War|War]], rewrite, mentor
 ## TRACK
   GCP:	[Brian plan](https://docs.google.com/spreadsheets/d/1W38uHew6aaqyeolKzbO9NbaA96Q-jzyDb7gYoUst0qw/edit?gid=0#gid=0). 

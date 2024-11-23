@@ -1,8 +1,8 @@
 .[[Fin]].
+  [[FIN Todo]]:
   [[BillPay]]:
   [[PenFed]]:
   [[Expenses]]:
-  [[FIN.]]:
   [[FIN Accounts]]:
   [[FIN Analysis]]:
   [[FIN Bills]]:
@@ -143,7 +143,7 @@
   :
   :
   :
-  ADDS:   , , , , [[BillPay]], [[Expenses]], [[FIN.]], , [[FIN Analysis]], [[FIN Bills]], [[FIN Budgeting]], [[FIN Flows]]
+  ADDS:   , , , , [[BillPay]], [[Expenses]], [[FIN Todo]], , [[FIN Analysis]], [[FIN Bills]], [[FIN Budgeting]], [[FIN Flows]]
   , , [[FIN Mint]], , [[FIN Retire]], [[FIN Topics]], [[FIN Tracking]], , [[Taxes]], ,
   ADDS:   ,
   ,   [[FIN Log]],
