@@ -1,4 +1,7 @@
 
+[[__bio__\|Thu Aug 3  2023 ]]  	[[__bio__#2010.01 – Bio for IPTO]]  
+[[__bio__\|Thu Aug 3  2023 ]]  	[[__bio__#2009.12 – Award Nomination -- DARPA PM OF THE YEAR]]  
+[[__bio__\|Thu Aug 3  2023 ]]  	[[__bio__#2002.00 – BIO @ IBM 2002]]  
 [[__bio__\|Thu Aug 3  2023 ]]  	[[__bio__#2009.07 – Bio for NKU]]  
 [[__bio__\|Thu Aug 3  2023 ]]  	[[__bio__#2010.09 – Fun facts for the HACKERS CONFERENCE]]  
 [[__bio__\|Thu Aug 3  2023 ]]  	[[__bio__#10.00 – Wagner Example Bio]]  
@@ -1278,7 +1281,7 @@
 [[WarStories\|Thu Jan 5  2023 ]]  	[[WarStories#STORIES BY YEAR]]  
 [[WarStories\|Thu Jan 5  2023 ]]  	[[WarStories#REF]]  
 [[WarStories\|Thu Jan 5  2023 ]]  	[[WarStories#LOG]]  
-[[FIN Todo\|Thu Jan 5  2023 ]]  	[[FIN Todo#TODO]]  
+[[FIN.\|Thu Jan 5  2023 ]]  	[[FIN.#TODO]]  
 [[MED Doctors\|Thu Jan 5  2023 ]]  	[[MED Doctors#Medical Doctors --]]  
 [[MED-Vitamins\|Thu Jan 5  2023 ]]  	[[MED-Vitamins#B12]]  
 [[MED.\|Thu Jan 5  2023 ]]  	[[MED.#Diet & Exercise notes]]  
