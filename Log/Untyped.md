@@ -5,6 +5,7 @@ n:: no prefix.	Dated entries without any typing prefix
 
 | Date       | File                                        | Notes                                                                                                                             |
 | ---------- | ------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------- |
+| 2024-11-23 | [[Election2024]]                                | What should Democrats have done differently                                                                                       |
 | 2024-11-22 | [[FIN Todo]]                                    | TRACK SPENDING (my plan)                                                                                                          |
 | 2024-11-22 | [[FIN Todo]]                                    | Best Credit Cards                                                                                                                 |
 | 2024-11-21 | [[PQ]]                                          | 2024 Gross pay                                                                                                                    |

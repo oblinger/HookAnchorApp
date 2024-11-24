@@ -38,10 +38,10 @@ Invest plan; Retire plan(spreadsheet)
 	- New Schwab account with fixed monthly inflow and 50K standard holdings
 	- New Credit card
 
-Actions
-- Sign up for Credit Karma & verify I can see transactions
-- Open schwab spordic account; add 50K; set monthly xfr to ???; move reserve over
-- Open two Chase Preferred accounts attached to monthly spending
+ACTIONS
+- [ ] Sign up for Credit Karma & verify I can see transactions
+- [ ] Open schwab spordic account; add 50K; set monthly xfr to ???; move reserve over
+- [ ] Open two Chase Preferred accounts attached to monthly spending
 
 ### 2024-11-22  Best Credit Cards
 

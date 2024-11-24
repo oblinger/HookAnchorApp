@@ -1,4 +1,25 @@
 
+### 2024-11-23  What should Democrats have done differently
+
+You asked the right question, what should democrats do differently next time?
+
+Simple answer, dispense with the demons that the Republicans use to win the middle:
+
+~~
+Simple answer, dispense with the demons that the Republicans use to win the middle:
+
+-- CANDIDATE: Pick a candidate the is well liked/trusted by the middle: Obama, Clinton, Regan. Not Hillary, nor Biden
+
+-- IMMIGRATION: The middle worries about losses from this alot. So stop supporting sanctuary cities, even Trumps remain in mexico is worth the trade. Push quotas up, funding to speed immigration, but don't be the party of the "illegal" it kills us.
+
+-- TRANS ISSUES: They are the third rail. Don't touch them, and declare these are all "state issues". Society is progressing left already, just let nature take it course.
+
+-- CLASS WAR: Become the party of the economic underclass. (you think you are, but the middle does not believe you.). This is **ALL** you talk about, this is where your candidates should come from. You know you are 'winning' if every new cycle is about some dem attacking some law sheltering the rich with some rep trying to defend it.
+
+-- CLIMATE: As long as every time you talk about climate you also explain how fixing it will not hurt or help the disadvantaged we can win votes here. (but we need to compromise, e.g. on fracking for example... every KwH produce by natural gas does reduce coal until coal is zero, so it is a compromise we can make in order to win much larger gains in other policies that we are not going to loose!)
+
+These last two are very sellable to America, but the Reps out maneuver us, by using your STUPID words to make the news cycle about trans surgery and not about billionaire tax breaks.
+
 
 ### 2024-11-14  WHY TRUMP
 
