@@ -8,3 +8,10 @@ RLHF
 -??-
 Reinforcement Learning from Human Feedback
 <!--SR:!2024-11-29,28,270!2024-12-20,35,270-->
+
+
+RLEF
+-?-
+Reinforcement Learning from Execution Feedback
+
+

@@ -6,7 +6,9 @@
 - Stanford Preventive Cardiology -  (650) 725-5909
 
 ## TOPICS
-
+## TESTS
+### 2024-11-24  Lp(a) 
+- [Medium Article](https://medium.com/illumination-curated/the-number-one-testthat-predicts-you-will-die-suddenly-from-a-heart-attack-b38d903afa5c) 
 
 
 # LOG
