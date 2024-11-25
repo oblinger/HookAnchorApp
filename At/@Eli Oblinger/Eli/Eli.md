@@ -1,15 +1,16 @@
 .[[Eli]].
   [[ELI Log]], [[Eli Food]], [[ELI Quotes]],
   [[Eli Strategy]]:
-  [[Eli Sentimental]]:
+  :
   [[Eli Firsts]]:
   [[Eli Activities]]:
   [[Eli Interactions]]:
   [[Eli Friends]]:
   OLDER: [[BCMS]], [[ELI Education]], [[Eli Math]],
   [[Eli Services]],
-  , [[Eli Report Cards]], 
-  DELS: [[Eli Report Cards]],
+  , [[Eli Report Cards]],
+  , [[Eli Sentimental]], 
+  DELS: [[Eli Report Cards]],[[Eli Sentimental]],
 
 
 
