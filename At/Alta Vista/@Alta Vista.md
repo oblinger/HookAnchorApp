@@ -1,3 +1,4 @@
+
 - [Alta Vista](https://docs.google.com/document/d/1mBquDfRIRhczSMqeDCWW-JxY8U02kA31_CU6zxLbCEc/edit) 
 - [Login](https://accounts.veracross.com/avs/portals/login) 
 
@@ -50,6 +51,41 @@
 
 
 # LOG
+
+### 2024-11-25  Stances
+
+Note:  https://docs.google.com/document/d/1rqb1BIPfgswQn4tGkDHgE8eHPMSIFpiXHEzT3E0Xf_c/edit?tab=t.0#heading=h.hmi3gc8ybg2h
+
+https://otter.ai/all-notes?utm_source=weekly_digest_email&utm_content=cta_all_conversations
+
+# GUIDING PRINCIPLES
+
+
+## Limited at younger ages
+
+AI technology is still a digital technology, and 
+
+
+## Teaching the Fundamental AND Teaching the Tools
+
+
+
+## The Three Domain Framing
+- NO AI - 
+- CONTROLLED AI - 
+- UNFETTERED AI - 
+
+## Flexibility / Resiliency
+
+Replacement by those 
+
+
+## Skepticism
+
+The internet, social media, and AI all bring unprecidented amounts of conflicting information to our fingertips.  A cruicial skill
+
+
+
 
 
 ### 2024-11-15  AI Discussion

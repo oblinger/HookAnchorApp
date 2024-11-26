@@ -1,4 +1,5 @@
 .**NOW**.
+- get CrossOvers
 [Fball](spot://fireball):	^J Test Script
 Met:	[[Dat]]: me
 [VB](https://www.notion.so/sportsvisio/VB-Speedup-Ideas-142719d6f2bd80889ad8fc7cb2484a91?pvs=4):	J^4videos, 

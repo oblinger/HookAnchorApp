@@ -5,6 +5,7 @@ n:: no prefix.	Dated entries without any typing prefix
 
 | Date       | File                                        | Notes                                                                                                                             |
 | ---------- | ------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------- |
+| 2024-11-25 | [[@Alta Vista]]                                 | Stances                                                                                                                           |
 | 2024-11-24 | [[MED Heart]]                                   | Lp(a)                                                                                                                             |
 | 2024-11-23 | [[Election2024]]                                | What should Democrats have done differently                                                                                       |
 | 2024-11-22 | [[FIN Todo]]                                    | TRACK SPENDING (my plan)                                                                                                          |
