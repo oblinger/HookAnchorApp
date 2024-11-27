@@ -45,6 +45,14 @@ My only confusion:  the limited power of attorney needs your signature too, but
 
 Selling Acura Integra:
 
+The car is in really good condition, the interior is clean undamaged, there are a couple of small marks on the outside but otherwise is in great shape (see photos for exterior damage, a small chip in windshield not in drivers view and two fender scratches).
+I am the original owner, I drove modestly until 2010 when I moved to California and put it in my parents garage.  This year we did $3000 in repairs, replacing all old rubber etc. in order to get it ready for sale (we have the receipts for you).
+
+Edmonds lists this car at $10,366 as its value for private sale; I am putting it on the market for $9,000 just to speed its the sale.
+
+
+Selling Acura Integra:
+
 The car is in good condition, it has XXX scratches but otherwise in great shape.
 I am the original owner, I drove modestly until 2010 when I moved to California and put it in my parents garage.  This year we did $3000 in repairs, replacing all old rubber etc. in order to get it ready for sale (we have the receipts for you).
 
@@ -82,7 +90,7 @@ Fin Response
 
 - 2000 Acura Integra, GS Sport Coupe 2D
 - VIN: JH4DC4366YS010935
-- 54,405
+- 54,406
 
 
 CarMax Cincinnati, OH. $7,000

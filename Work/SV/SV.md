@@ -5,14 +5,15 @@
   ,  [[Circle]], [[CV]], ,
   , [[INV]], , [Jira Me Page](spot://jiramepage), [[Meta SV]],
   [[Mgt]]:
-  ,  
+  ,
   APPS:  [SV Confluence Page](spot://svconfluencepage), [Canva](spot://canva),
   ROOTS: [SV C Root](spot://svcroot), [SV Google Drive Page](spot://svgoogledrivepage), [SV G Root](spot://svgroot)
   DEPTS:	[[SV Market]], [[SV People]], [[SV Product]],
-  AREAS:	[[SV Ops]], [[SV Software]], [[SV Org]], [[SV Partner]], [[SVT]], 
+  AREAS:	[[SV Ops]], [[SV Software]], [[SV Org]], [[SV Partner]], [[SVT]],
   PLAN:		[[SV Strat]],
   LOGS: 	[[WW]],  [[QQ]], [SV Tasks](spot://svtasks), [SV Log Page](spot://svlogpage), [[SV Archive]],
-  OTHER:	[[SV Wings]], [[SV Basketball Info]], 
+  OTHER:	[[SV Wings]], [[SV Basketball Info]],
+  , [Game Docs](spot://gamedocs), 
 
 [[Proj]] 
 

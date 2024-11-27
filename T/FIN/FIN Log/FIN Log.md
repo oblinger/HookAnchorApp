@@ -28,7 +28,7 @@ Personal Advisor
 
 ### 2024-05-29  ADVICE FROM ADVISORS - Four Levels of Advice
 
-**  
+
 
 Four Levels of Possible Advice  
   
@@ -102,8 +102,19 @@ Assets:
     .    3,860,300
 
 
+	.      250,000 	Qingling's Personal Savings
+    .      370,000	Google Stock
+    .       25,000	Waymo 
+	.	=  645,000	QL Liquid assets
+    
+    
+	.    1,072,079	Dan's Vanguard
+    .      709,600	Dan's Merril
+    .      400,000	Dan's Schwab
+    .  = 2,181,679  Dan's liquid assets
+    
 
-### 2024-01-25  Merrill Retirement Planning ^rplan
+### 2024-01-25  Merrill Retirement Planning ^rplan 
 
 - [[2024-01 Retirement Planning]]
 - [[2024-01 Wealth Management Questionnaire.pdf]] 

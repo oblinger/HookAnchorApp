@@ -1,4 +1,7 @@
 
+[[__bio__\|Thu Aug 3  2023 ]]  	[[__bio__#2011.05 – Bio for X]]  
+[[__bio__\|Thu Aug 3  2023 ]]  	[[__bio__#2011.03 – Bio for Forum]]  
+[[__bio__\|Thu Aug 3  2023 ]]  	[[__bio__#2011.02 – Meetups]]  
 [[__bio__\|Thu Aug 3  2023 ]]  	[[__bio__#2010.12 – Bio for AI Mag]]  
 [[__bio__\|Thu Aug 3  2023 ]]  	[[__bio__#2010.07 – Bio for Linked-in]]  
 [[__bio__\|Thu Aug 3  2023 ]]  	[[__bio__#2010.01 – Bio for IPTO]]  

@@ -12,7 +12,7 @@ MIT: [[SV]], [[NJ]], [[SELF]], [[Fun]],
 [[Med]]: Diet
 [[Fin]]: Schwab Acct, Car, Margin
 
-
+[[Meta List]] [[Meta Time Codes]] 
 ## >
 - [[Up Task]],  [[Meta Plan]],  [[Daily Schedules]], 
 

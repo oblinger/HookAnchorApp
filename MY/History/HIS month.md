@@ -1,4 +1,7 @@
 
+[[@Titash Rakshit\|Sun Sep 15  2024]]  	[[@Titash Rakshit#2024-09-13  AI Tooling discussion]]  
+[[Forum\|Sun Sep 15  2024]]  	[[Forum#LOG]]  
+[[EOC Log\|Sun Sep 15  2024]]  	[[EOC Log#2024-09-13  Example of a 'auto scientist']]  
 [[2024-05 Sell Acura\|Sun Sep 15  2024]]  	[[2024-05 Sell Acura#2024-09-14  from GPT and web]]  
 [[Spot\|Sun Sep 15  2024]]  	[[Spot#2024-06-17  ^newjump]]  
 [[2023 Backend Architect Test\|Sun Sep 15  2024]]  	[[2023 Backend Architect Test#Test Overview]]  

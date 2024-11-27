@@ -17,7 +17,7 @@ HIGHLIGHTS SECTION
 - [ ] Add contributor items
 
 RES
-- [ ] Add an objectives section?  (Use [[RES Pira]])
+- [ ] Add an objectives section?  (Use [[RES Pyramid]])
 
 CLEANUP:
 - SV: get numbers on actual growth

@@ -5,6 +5,8 @@ n:: no prefix.	Dated entries without any typing prefix
 
 | Date       | File                                        | Notes                                                                                                                             |
 | ---------- | ------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------- |
+| 2024-11-26 | [[@Credit Karma]]                               | getting transaction log                                                                                                           |
+| 2024-11-26 | [[Reflections]]                                 | .                                                                                                                                 |
 | 2024-11-25 | [[@Alta Vista]]                                 | Stances                                                                                                                           |
 | 2024-11-24 | [[MED Heart]]                                   | Lp(a)                                                                                                                             |
 | 2024-11-23 | [[Election2024]]                                | What should Democrats have done differently                                                                                       |

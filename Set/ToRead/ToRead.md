@@ -15,7 +15,7 @@
 
 ## TO READ
 - focusing [Gendlin](https://focusing.org/sixsteps) 
-
+-  _There is No Antimemetics Division¹_.   from Trevor Klee
 ## Unsorted
 - [read]( https://www.mckinsey.com/industries/agriculture/our-insights/winning-in-africas-agricultural-market) - africa
 - Alignment Forum, [Humane Tech](https://www.humanetech.com/podcast)  
