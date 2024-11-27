@@ -1,7 +1,20 @@
 - [[MGR]], [Wk Agenda](https://docs.google.com/document/d/1E5a-4Hvj2LX9KkdSPbcblWSBs3ZwdTgBvY0FA6NKytU/edit?usp=sharing), 
 - [[ROADMAP]], 
+- [CV Mgt Meeting Folder](https://drive.google.com/drive/folders/1M89W2MQgTDPL8t90l_z2mo2km7-ozvuo) 
 
 # Log
+
+### 2024-11-27  Monthly Meeting
+
+- Product Velocity: alpha-testing, matias time, QA time.
+- Martin owning the relationship.
+- Docs & handling
+
+- Good progress on infrastructure.
+	- might need some annotator time.
+
+- Good progress on BB shooterID & BB stats
+	- only one person.  Focusing on core shooter stat.   (airballs, game breaks, ...)
 
 ### 2024-11-18  W
 

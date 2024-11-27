@@ -1,3 +1,7 @@
+- on the 9th we have a summary for speedups in VB
+- meeting for speedups in VB
+- vb speedups (track top four)
+- check with Jack for alpha acceptance criteria 
 - find folks at Hackers.  Sven and Alexandra
 - googleX and Jamie
 - retirement planning files

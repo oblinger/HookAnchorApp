@@ -1,4 +1,10 @@
 
+[[__bio__\|Thu Aug 3  2023 ]]  	[[__bio__#2017.03 – Aeolus Bio]]  
+[[__bio__\|Thu Aug 3  2023 ]]  	[[__bio__#2015.02 – Bio #1 for website]]  
+[[__bio__\|Thu Aug 3  2023 ]]  	[[__bio__#2014.10 – Bio for YC application]]  
+[[__bio__\|Thu Aug 3  2023 ]]  	[[__bio__#2013.07 -- Three Phrases About Me]]  
+[[__bio__\|Thu Aug 3  2023 ]]  	[[__bio__#2010.08 – Bio for Techno Therapy Advisor Position]]  
+[[__bio__\|Thu Aug 3  2023 ]]  	[[__bio__#2011.11 – Bio for PayByGroup]]  
 [[__bio__\|Thu Aug 3  2023 ]]  	[[__bio__#2011.05 – Bio for X]]  
 [[__bio__\|Thu Aug 3  2023 ]]  	[[__bio__#2011.03 – Bio for Forum]]  
 [[__bio__\|Thu Aug 3  2023 ]]  	[[__bio__#2011.02 – Meetups]]  

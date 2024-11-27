@@ -5,6 +5,8 @@ n:: no prefix.	Dated entries without any typing prefix
 
 | Date       | File                                        | Notes                                                                                                                             |
 | ---------- | ------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------- |
+| 2024-11-27 | [[Parties]]                                     | Differences between the parties                                                                                                   |
+| 2024-11-27 | [[Mgt]]                                         | Monthly Meeting                                                                                                                   |
 | 2024-11-26 | [[@Credit Karma]]                               | getting transaction log                                                                                                           |
 | 2024-11-26 | [[Reflections]]                                 | .                                                                                                                                 |
 | 2024-11-25 | [[@Alta Vista]]                                 | Stances                                                                                                                           |

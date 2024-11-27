@@ -1,4 +1,10 @@
 
+[[2024-W38\|Tue Sep 17  2024]]  	[[2024-W38#W38   2024-09-16   [[2024-W37\\|<<]] [[2024-W39\\|>>]]]]  
+[[Mgt\|Tue Sep 17  2024]]  	[[Mgt#2024-09-16  Weekly]]  
+[[Mgt\|Tue Sep 17  2024]]  	[[Mgt#2024-09-09 Weekly]]  
+[[@Jason Syversen\|Tue Sep 17  2024]]  	[[@Jason Syversen#2024-09-16  Brain's Value]]  
+[[@Annafi Wahed\|Sun Sep 15  2024]]  	[[@Annafi Wahed#  [CEO](https://www.linkedin.com/in/annafiwahed/) [[@Flipsid]]  
+[[@Annafi Wahed\|Sun Sep 15  2024]]  	[[@Annafi Wahed#LOG]]  
 [[@Titash Rakshit\|Sun Sep 15  2024]]  	[[@Titash Rakshit#2024-09-13  AI Tooling discussion]]  
 [[Forum\|Sun Sep 15  2024]]  	[[Forum#LOG]]  
 [[EOC Log\|Sun Sep 15  2024]]  	[[EOC Log#2024-09-13  Example of a 'auto scientist']]  
