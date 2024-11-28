@@ -2,31 +2,11 @@
   , [[@Amazon]], [[@Apple]], [[@Citibank]], [[@Facebook]], , [[@Ginza Metrics]]
   , [[@IBM]], [[@LinkedIn]], [[@Microsoft]], [[@Montessori Childrens Center]], [[@Netflix]]
   , [[@PARC]], [[@TecHunting]], [[@Thistle]], [[@Vmware]], [[Org Startup]], [[Service]],
-  , ,
-  , , ,
-  , ,
-  , ,
-  DELS: ,
-  , ,
-  , ,
   , [[@Aeolus]], [[@PayByGroup]],
   , [[@Hackers]], [[@Merrill]], [[@Meta]], [[@schwab]], [[@Vanguard]], 
-  DELS: [[@Meta]],[[@Facebook-Meta]],[ORG Note](spot://orgnote), [[@Merrill]], [[@Vanguard]], [[@Meta]], [[@Meta]], [[@Hackers]], [[@schwab]],
 
-.[[Org]].
-  :
-  ADDS:   [[Org Startup]],
-  ADDS:   [[@Aeolus]], [[@Amazon]], , [[@Apple]], [[@Facebook]], [[@Meta]], [[@Ginza Metrics]], [[@IBM]], [[@LinkedIn]], [[@Microsoft]], [[@Montessori Childrens Center]]
-  [[@Netflix]], [[@PARC]], [[@PayByGroup]], [[@TecHunting]], [[@Thistle]], [[@Vmware]],
-  ADDS:   [[@Citibank]],
-  ADDS:   [[Service]],
-  DELS: [[Uniting America]], [[@Amazon as Consumer]], 
-
-
-
-
-
-
+[[@Wells Fargo]] 
+[[@Rocket Money]] 
 
 
 

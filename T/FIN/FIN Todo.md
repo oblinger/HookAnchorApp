@@ -42,6 +42,8 @@ ACTIONS
 - [ ] Sign up for Credit Karma & verify I can see transactions
 - [ ] Open schwab spordic account; add 50K; set monthly xfr to ???; move reserve over
 - [ ] Open two Chase Preferred accounts attached to monthly spending
+- [ ] Get Rocket Money working; Decide if I am keeping it
+- [ ] Open two [[@Wells Fargo]] credit cards
 
 ### 2024-11-22  Best Credit Cards
 

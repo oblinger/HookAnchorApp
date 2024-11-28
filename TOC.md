@@ -16,7 +16,7 @@
             [[House]]: 
                 [[House Crime]]: 
         [[Career]]: 
-            [[RES]]: [[Bio]],	[[2024-04-01 Resume Rewrite]],	
+            [[RES]]: [[Bio]],	
                 [[RES Job History]]: 
                     [[AF]]: 
             [[NextJob]]: [[NJ22]],	[[NJ]],	[[NJ16]],	

@@ -1,4 +1,6 @@
 
+[[__bio__\|Thu Aug 3  2023 ]]  	[[__bio__#2017.06 – Aeolus Investor Extended Bio]]  
+[[__bio__\|Thu Aug 3  2023 ]]  	[[__bio__#201\?.\?\? ORIGINAL PBG stuff on Angel List]]  
 [[__bio__\|Thu Aug 3  2023 ]]  	[[__bio__#2017.03 – Aeolus Bio]]  
 [[__bio__\|Thu Aug 3  2023 ]]  	[[__bio__#2015.02 – Bio #1 for website]]  
 [[__bio__\|Thu Aug 3  2023 ]]  	[[__bio__#2014.10 – Bio for YC application]]  
