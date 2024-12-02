@@ -3,7 +3,8 @@
   , [[@IBM]], [[@LinkedIn]], [[@Microsoft]], [[@Montessori Childrens Center]], [[@Netflix]]
   , [[@PARC]], [[@TecHunting]], [[@Thistle]], [[@Vmware]], [[Org Startup]], [[Service]],
   , [[@Aeolus]], [[@PayByGroup]],
-  , [[@Hackers]], [[@Merrill]], [[@Meta]], [[@schwab]], [[@Vanguard]], 
+  , [[@Hackers]], [[@Merrill]], [[@Meta]], [[@schwab]], [[@Vanguard]],
+  , [[@Credit Karma]], [[@Rocket Money]], [[@Wells Fargo]], 
 
 [[@Wells Fargo]] 
 [[@Rocket Money]] 

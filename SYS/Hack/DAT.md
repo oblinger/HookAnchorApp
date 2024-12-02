@@ -9,7 +9,9 @@
 ## Plan 2024-10
 
 Make updates directly in DAT-DVC.
-- Assume dat.py is the only file baine 
+- Assume dat.py is pulled into our alg2
+- [ ] Use TOML file for location of data folder
+- [ ] 
 
 - fixes: register abstrct class method, use fn doc string
 - [ ] = Juan assesses dat.py & metrics.py (propose edits)
@@ -18,6 +20,7 @@ Make updates directly in DAT-DVC.
 - [ ] Juan adds shot metric types => Basic game stats
 - [ ] PR
 - [ ] Martin Homo-metric-type; Greg adds shot & game metrics
+- [ ] $ stat
 
 
 ## Todo

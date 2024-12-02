@@ -1,4 +1,5 @@
 
+[[2024 Architect Test\|Tue Sep 17  2024]]  	[[2024 Architect Test#Notes]]  
 [[SciFi\|Tue Sep 17  2024]]  	[[SciFi#PETER HAMPTON -]]  
 [[SciFi\|Tue Sep 17  2024]]  	[[SciFi#__]]  
 [[2024-W38\|Tue Sep 17  2024]]  	[[2024-W38#W38   2024-09-16   [[2024-W37\\|<<]] [[2024-W39\\|>>]]]]  

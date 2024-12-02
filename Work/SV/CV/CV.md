@@ -15,7 +15,8 @@
   , [docs](spot://docs),
   , ,
   , ,
-  , [[CV Alg]], [[CV Algs]], 
+  , [[CV Alg]], [[CV Algs]],
+  , [Docs Gdrive](spot://docsgdrive), 
   DELS: [DOCs](spot://docs),[Results](spot://results),[DT](spot://dt),[Dataset](spot://dataset),[[CV Alg]], [[CV Algs]],
 
   DELS: [Standup](spot://standup),[DD](spot://dd),

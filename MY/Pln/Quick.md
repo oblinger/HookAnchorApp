@@ -1,3 +1,5 @@
+- softbank spec
+- grz matias jack mike F.   spec of min norm
 - on the 9th we have a summary for speedups in VB
 - meeting for speedups in VB
 - vb speedups (track top four)
