@@ -1,14 +1,17 @@
 .**NOW**.
+[AWS](https://docs.google.com/document/d/1QS4081TT_Yyz1TS9GLZSfjQaczQ7ynzWTSu14waDcG0/edit?tab=t.0):	
+[Run](https://www.notion.so/sportsvisio/Game-Run-Automations-150719d6f2bd80f087b2e931ef179536?pvs=4): 
 [Fball](spot://fireball):	^J Test Script
 Met:	[[Dat]]: me
 EXP:  [HotKey](https://software-engineering-team.atlassian.net/browse/WU-1935), J^5games 
 STAT: [WU1938](https://software-engineering-team.atlassian.net/browse/WU-1938) show err status
 [DT](spot://dt): 	[Homo](https://www.notion.so/sportsvisio/STORY-Homography-Data-Martin-4ab7ed5c5a6b46b1ac7de9821b3a5c76?pvs=4)^shot  [BB](https://www.notion.so/sportsvisio/STORY-BB-Data-105719d6f2bd809d9170c84a0c8d762d?pvs=4): B^obj-det 
+ 
   
 Xovr:	^james checkin
 [VB](https://www.notion.so/sportsvisio/VB-Speedup-Ideas-142719d6f2bd80889ad8fc7cb2484a91?pvs=4):	J^4videos, 
 CHRT:	 end2end tst
-[Min](spot:://AI~MIN):	[Alpha](https://www.notion.so/sportsvisio/AI-MIN-Alpha-Testing-James-118719d6f2bd80bb8280fdeafac784f3?pvs=4): J^collecting 
+[Min](spot:://AI~MIN):	[Alpha](https://www.notion.so/sportsvisio/AI-MIN-Alpha-Testing-James-118719d6f2bd80bb8280fdeafac784f3?pvs=4): J^collecting ^ [docs](https://www.notion.so/sportsvisio/AI-MIN-Normalization-134719d6f2bd80d0ba8fcf754fc270cb?pvs=4)
 QA:	G[QAmin](https://software-engineering-team.atlassian.net/jira/software/projects/AIT/boards/25?selectedIssue=AIT-1069)^reg  [QAfb](https://software-engineering-team.atlassian.net/jira/software/projects/AIT/boards/25?selectedIssue=AIT-1070), 
 [PAID](https://www.notion.so/sportsvisio/AI-MIN-Premium-Paid-Feature-128719d6f2bd80ffbb41db0441d57770?pvs=4):	.
 [[2024-08 Backend Architect|Arch]]:	Brian
@@ -69,6 +72,35 @@ Homography  (physics model)
 ## _
 
 
+Tactical meeting:  SW / CV 
+Sales/Mkt.  Ops.
+
+
+https://www.elastic.co/blog/elastic-universal-profiling-agent-open-source
+
+
+
+CURRENT PLAN:
+- For reference, assuming that accurately detecting game breaks turns out to be relatively simple and robust, then the current plan is to work in AI minutes into production and into scaled usage before trying to push shot boxer or other AI tips into production.
+- Sometime in May/June we do anticipate testing shot boxer and shot charts as an experiment to see the value we get.
+
+
+The challenge regarding the math for shot boxer is the cost of compute in that equation.  If we go to scale with shot boxer a very very rough guess is that we are currently as $6 - $9 per game to provide tips.  Again, very rough maybe that can be brought down to $3/game.  If these very rough numbers are correct, then it seems it might eat up much of the profit we get from speeding annotators.  No longer term if we stack up many speedups we might save more money and still only cost $3/game, then it become more interesting.  But as it stands if does call the math into question.  (Still before I really believed these numbers I would want to do a real analysis of the costs... not just ask the team to spitball, which is what those numbers above are.)
+
+
+phy 
+
+In slack
+9 EST - 10 EST.
+
+Scott:
+- PRs early in morning or after 6pm EST.
+- 
+
+
+
+## Work header
+
 .[[Work]].
   [[SV]],
 
@@ -102,29 +134,3 @@ Homography  (physics model)
 
 
 
-
-phy 
-
-In slack
-9 EST - 10 EST.
-
-Scott:
-- PRs early in morning or after 6pm EST.
-- 
-
-
-
-Tactical meeting:  SW / CV 
-Sales/Mkt.  Ops.
-
-
-https://www.elastic.co/blog/elastic-universal-profiling-agent-open-source
-
-
-
-CURRENT PLAN:
-- For reference, assuming that accurately detecting game breaks turns out to be relatively simple and robust, then the current plan is to work in AI minutes into production and into scaled usage before trying to push shot boxer or other AI tips into production.
-- Sometime in May/June we do anticipate testing shot boxer and shot charts as an experiment to see the value we get.
-
-
-The challenge regarding the math for shot boxer is the cost of compute in that equation.  If we go to scale with shot boxer a very very rough guess is that we are currently as $6 - $9 per game to provide tips.  Again, very rough maybe that can be brought down to $3/game.  If these very rough numbers are correct, then it seems it might eat up much of the profit we get from speeding annotators.  No longer term if we stack up many speedups we might save more money and still only cost $3/game, then it become more interesting.  But as it stands if does call the math into question.  (Still before I really believed these numbers I would want to do a real analysis of the costs... not just ask the team to spitball, which is what those numbers above are.)

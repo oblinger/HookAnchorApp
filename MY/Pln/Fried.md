@@ -1,3 +1,5 @@
+- https://www.amazon.com/dp/B09X1XN3FZ?maas=maas_adg_api_590270312080564593_static_9_129&ref_=aa_maas&tag=pop-lift-20&aa_campaignid=lv_iA7HREICnfxKo4zx80&aa_adgroupid=lv_jmkdRp7PtJjmQYjn5Z&aa_creativeid=lv_3n0YJvJj8ZwuaptdwT&ascsubtag=%255Bartid%257C10060.g.39764820%255Bsrc%257Cmgu_ga_pop_md_dsa_comm_mix_us_19826970234%255Bch%257C565812f3d213723879f46d636b788b17%255Blt%257C%2528not%2Bset%2529%2B%257C%2B%2528not%2Bset%2529%255Bpid%257C12adb101-112b-4d6c-bb93-e6e28286061c%255Baxid%257C4f49cc4b-d90b-4480-ab6e-98ea9d8e7231%255Bofsxid%257Cjam_ab_direct_to_checkout%255Bofsvid%257Cstandard_blocker&linkCode=ogi
+- https://plutopillow.com/products/puff
 - spot: add 'main' for every anchor (if 'main' is not defined)
 - 
 # ERROR: Cannot find cmd: spot:://AI MIN

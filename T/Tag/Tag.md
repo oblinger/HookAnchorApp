@@ -1,10 +1,10 @@
 .[[Tag]].
   ADDS:   [[BUILD]],
   ADDS:   [[HEAVY]],
-  ADDS:   [[ACADEMIC]], [[CONSULTANT]], [[CORE]], [[FAANG]], , [[INFO_PAGE]], [[PE firm]], , [[RND]], [[ROBOTICS]], [[SOLID]], [[START]], [[TASK]], [[TECH]], [[VC]],
+  ADDS:   [[ACADEMIC]], [[CONSULTANT]], [[CORE]], [[FAANG]], , [[INFO_PAGE]], [[PE firm]], , [[RND]], [[ROBOTICS]], [[SOLID]], [[START]], , [[TECH]], [[VC]],
   ADDS:   [[COACH]], , [[DARPA]],
   ADDS:   ,
-  DELS: [[COMP]],[[HACKERS]], 
+  DELS: [[COMP]],[[HACKERS]],[[TASK]], 
 
 
 

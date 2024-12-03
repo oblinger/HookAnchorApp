@@ -4,6 +4,23 @@
 
 # Log
 
+### 2024-12-02  W
+
+- FANCY ALGS: SAM2 implementation for hard shot origin cases (but not integrated to the pipe yet), 
+- SHOIT CHARTS: shot charts end-to-end using data from the annotator, 
+- DATASETS: make/miss dataset collector, finished shot chart evaluation script and dataset for NORM.
+
+- Q4 Analysis deliverable
+	- BB improvements
+- Softbank BB stats deliverable
+- Dataset & Training
+
+- Analysis this week.. VB speedups.
+
+- AWS:
+- Oct 8229  
+- Nov 8851
+
 ### 2024-11-27  Monthly Meeting
 
 - Product Velocity: alpha-testing, matias time, QA time.

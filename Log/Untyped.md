@@ -5,6 +5,7 @@ n:: no prefix.	Dated entries without any typing prefix
 
 | Date       | File                                        | Notes                                                                                                                             |
 | ---------- | ------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------- |
+| 2024-12-02 | [[Mgt]]                                         | W                                                                                                                                 |
 | 2024-11-27 | [[@Wells Fargo]]                                |                                                                                                                                   |
 | 2024-11-27 | [[Parties]]                                     | Differences between the parties                                                                                                   |
 | 2024-11-27 | [[Mgt]]                                         | Monthly Meeting                                                                                                                   |

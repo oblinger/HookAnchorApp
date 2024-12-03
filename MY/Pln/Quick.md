@@ -1,3 +1,10 @@
+- credit card approval
+- okrs in this week
+- xover plan
+- simple note
+- fin text
+- camping equipment list
+- Jason: AWS costs
 - softbank spec
 - grz matias jack mike F.   spec of min norm
 - on the 9th we have a summary for speedups in VB
