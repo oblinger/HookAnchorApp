@@ -1,4 +1,8 @@
 
+[[__bio__\|Thu Aug 3  2023 ]]  	[[__bio__#2020.02 – Redis Conf Bio]]  
+[[__bio__\|Thu Aug 3  2023 ]]  	[[__bio__#2019.10 - Sales Deck bio]]  
+[[__bio__\|Thu Aug 3  2023 ]]  	[[__bio__#2019.04 - AF confluence bio]]  
+[[__bio__\|Thu Aug 3  2023 ]]  	[[__bio__#2019.03 – Verbal (Sales Call) BIO]]  
 [[__bio__\|Thu Aug 3  2023 ]]  	[[__bio__#2018.00 – Notes for Sales Calls]]  
 [[__bio__\|Thu Aug 3  2023 ]]  	[[__bio__#2017.06 – Aeolus Investor Extended Bio]]  
 [[__bio__\|Thu Aug 3  2023 ]]  	[[__bio__#201\?.\?\? ORIGINAL PBG stuff on Angel List]]  

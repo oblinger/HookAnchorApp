@@ -2,13 +2,6 @@
 ### __
 (See [[Phone]] Sell Acura)
 
-- car call DC; get docs for mom
-
-TITLE2: Sign
-BofSale: Sign/Date
-POA: Sign/Date
-
-
 ### The plan
 
 - Mom check's DC requirements (or we just take the risk)
@@ -45,10 +38,43 @@ My only confusion:  the limited power of attorney needs your signature too, but
 
 Selling Acura Integra:
 
-The car is in really good condition, the interior is clean undamaged, there are a couple of small marks on the outside but otherwise is in great shape (see photos for exterior damage, a small chip in windshield not in drivers view and two fender scratches).
-I am the original owner, I drove modestly until 2010 when I moved to California and put it in my parents garage.  This year we did $3000 in repairs, replacing all old rubber etc. in order to get it ready for sale (we have the receipts for you).
+Looking for a reliable and sporty ride? This 2000 Acura Integra GS Sport Coupe 2D might be just what you need. 
 
-Edmonds lists this car at $10,366 as its value for private sale; I am putting it on the market for $9,000 just to speed its the sale.
+The car is in great condition, the interior is clean undamaged, there are a couple of small marks on the outside but otherwise is in great shape (I took closeup photos of the scuff marks highlighted in yellow so you can see how clean the car is!)
+
+I am the original owner, I drove it modestly until 2010 when I moved to California and put it in my parents garage (54,406K total miles).  This year we did $3000 in repairs this year, replacing all old rubber etc. in order to get it ready for sale (see receipt in photos).
+
+Edmonds lists this car at $10,366 as its value for private sale; I am putting it on the market for $8,500 just to speed its the sale.
+
+Notable Features
+• Peppy 1.8-liter 4-cylinder engine paired
+• 5-speed manual transmission with front-wheel drive.
+• Moon roof for those perfect summer drives
+• CD/MP3 player and cassette deck
+• Comfortable beige interior with air conditioning
+• ABS and dual airbags for added safety
+• Sporty rear spoiler and alloy wheels
+
+Feel free to chat me if you have any questions about this Integra. It's ready for its next adventure!
+
+
+
+~~
+
+Looking for a reliable and sporty ride? This 2000 Acura Integra GS Sport Coupe 2D might be just what you need. 
+
+With only 54,406 miles on the odometer, this green beauty is in very good condition. It features a peppy 1.8-liter 4-cylinder engine paired with a smooth 5-speed manual transmission and front-wheel drive.
+
+Notable features include:
+• Moon roof for those perfect summer drives
+• CD/MP3 player and cassette deck
+• Comfortable beige interior with air conditioning
+• ABS and dual airbags for added safety
+• Sporty rear spoiler and alloy wheels
+
+Feel free to chat me if you have any questions about this Integra. It's ready for its next adventure!
+
+~~
 
 
 Selling Acura Integra:
@@ -87,10 +113,11 @@ Washington, DC 20090
 Fin Response
 
 - BlueBook:  $4,641 - 6,369
+- BlueBook:  $4,246 - $5,949
 
 - 2000 Acura Integra, GS Sport Coupe 2D
 - VIN: JH4DC4366YS010935
-- 54,406
+- Odometer 54,406
 
 
 CarMax Cincinnati, OH. $7,000
@@ -99,7 +126,7 @@ CarMax Cincinnati, OH. $7,000
 
 Edmunds
 - $6,412 trade; $10,366 Private; $12,655 Dealer.
-
+- $6,556 trade in; $10,309 private; $12,485 Dealer retail.
 
 ## THE PLAN
 

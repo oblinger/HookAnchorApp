@@ -56,7 +56,7 @@ clean email
 ### CAP ONE
 - $10/mo		xxx?  GITHUB Copilot - pr
 - $49/mo	!!	Coursera
-- $60/yr		Dec, 14th 2024
+- $60/yr		??? Dec, 14th 2024
 - $20/yr		Google Storage renews 2023-05-13
 - $43/yr		Clean Email
 - 				Obsidian Publish  (cancelled $20/mo)

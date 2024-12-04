@@ -1,4 +1,8 @@
 
+[[Eli Strategy\|Tue Sep 17  2024]]  	[[Eli Strategy#FRUSTRATION EXPLOSION]]  
+[[2024-08 Backend Architect\|Tue Sep 17  2024]]  	[[2024-08 Backend Architect#__]]  
+[[2024-08 Backend Architect\|Tue Sep 17  2024]]  	[[2024-08 Backend Architect#LOG]]  
+[[2024 Architect Test\|Tue Sep 17  2024]]  	[[2024 Architect Test#Test Overview And Approach]]  
 [[2024 Architect Test\|Tue Sep 17  2024]]  	[[2024 Architect Test#Notes]]  
 [[SciFi\|Tue Sep 17  2024]]  	[[SciFi#PETER HAMPTON -]]  
 [[SciFi\|Tue Sep 17  2024]]  	[[SciFi#__]]  

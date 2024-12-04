@@ -1,3 +1,9 @@
+- skiing trip
+- aric dad
+- paystubb
+- jason meeting this week?  AI-min ramp, shot chart ramp
+- pay stubb
+- introduce Matias
 - credit card approval
 - okrs in this week
 - xover plan

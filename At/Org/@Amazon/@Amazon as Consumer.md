@@ -1,12 +1,16 @@
 Account:	oblinger@gmail.com. 
 Email:  cs-reply@amazon.com.   # Consumer support
 
+- Amazon -> Hamburger -> (scroll down) Your Account -> customer service
+- ! {some order} -> "change delivery address" -> "I need more help"
 
 
 
 # Log
 
+### 2024-12-03  
 
+### 2024-08-00  Shutters
 Amazon,
 We returned two Vinyl shutters:  Ekena Millwork Lifetime Vinyl LP2S14X05100FG Standard Two Equal Panel...
 Below is the UPS tracking code.  

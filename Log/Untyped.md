@@ -5,6 +5,8 @@ n:: no prefix.	Dated entries without any typing prefix
 
 | Date       | File                                        | Notes                                                                                                                             |
 | ---------- | ------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------- |
+| 2024-12-03 | [[@Amazon as Consumer]]                         |                                                                                                                                   |
+| 2024-12-03 | [[@Auto Trader]]                                | Ad for Acura                                                                                                                      |
 | 2024-12-02 | [[Mgt]]                                         | W                                                                                                                                 |
 | 2024-11-27 | [[@Wells Fargo]]                                |                                                                                                                                   |
 | 2024-11-27 | [[Parties]]                                     | Differences between the parties                                                                                                   |
@@ -118,6 +120,7 @@ n:: no prefix.	Dated entries without any typing prefix
 | 2024-08-09 | [[Eli Firsts]]                                  | Gonna get married to Zoya                                                                                                         |
 | 2024-08-09 | [[@Softbank]]                                   | Prep for Softbank call                                                                                                            |
 | 2024-08-06 | [[@Jason Syversen]]                             | After Hack Week                                                                                                                   |
+| 2024-08-00 | [[@Amazon as Consumer]]                         | Shutters                                                                                                                          |
 | 2024-07-29 | [[EOC Log]]                                     | Why is it only 1 more step                                                                                                        |
 | 2024-07-26 | [[Cleaning Service]]                            | Cleaners:  Julissa Cleaning                                                                                                       |
 | 2024-07-26 | [[Cleaning Service]]                            | Cleaners:  D&E Construction                                                                                                       |
