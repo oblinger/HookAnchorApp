@@ -1,6 +1,8 @@
 .**NOW**.
-[AWS](https://docs.google.com/document/d/1QS4081TT_Yyz1TS9GLZSfjQaczQ7ynzWTSu14waDcG0/edit?tab=t.0):	
-[Run](https://www.notion.so/sportsvisio/Game-Run-Automations-150719d6f2bd80f087b2e931ef179536?pvs=4): 
+- min-normalization
+- summary for Jason
+[AWS](https://docs.google.com/document/d/1QS4081TT_Yyz1TS9GLZSfjQaczQ7ynzWTSu14waDcG0/edit?tab=t.0):	Jason - AWS costs
+[Run](https://www.notion.so/sportsvisio/Game-Run-Automations-150719d6f2bd80f087b2e931ef179536?pvs=4): 	Automation
 [Fball](spot://fireball):	^J Test Script
 Met:	[[Dat]]: me
 EXP:  [HotKey](https://software-engineering-team.atlassian.net/browse/WU-1935), J^5games 
@@ -17,6 +19,7 @@ QA:	G[QAmin](https://software-engineering-team.atlassian.net/jira/software/proje
 [[2024-08 Backend Architect|Arch]]:	Brian
 DWS:	[WU11970](https://software-engineering-team.atlassian.net/browse/WU-1970)   /Matias[DWS](https://software-engineering-team.atlassian.net/browse/WU-1946) 
 Regression Testing...
+- softbank spec
   
 [[FIN Todo]]	Schwab
 [[NJ]]:	>[[War|War]], rewrite, mentor

@@ -1,4 +1,7 @@
 
+[[__Mgt__\|Thu Aug 3  2023 ]]  	[[__Mgt__#PEP TALK]]  
+[[__Mgt__\|Thu Aug 3  2023 ]]  	[[__Mgt__#Older stuff]]  
+[[__bio__\|Thu Aug 3  2023 ]]  	[[__bio__#2020.04 - Bio Parts]]  
 [[__bio__\|Thu Aug 3  2023 ]]  	[[__bio__#2020.02 – Redis Conf Bio]]  
 [[__bio__\|Thu Aug 3  2023 ]]  	[[__bio__#2019.10 - Sales Deck bio]]  
 [[__bio__\|Thu Aug 3  2023 ]]  	[[__bio__#2019.04 - AF confluence bio]]  

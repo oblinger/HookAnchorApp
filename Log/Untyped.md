@@ -5,6 +5,7 @@ n:: no prefix.	Dated entries without any typing prefix
 
 | Date       | File                                        | Notes                                                                                                                             |
 | ---------- | ------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------- |
+| 2024-12-04 | [[Productivity]]                                | Huberman Focusing                                                                                                                 |
 | 2024-12-03 | [[@Amazon as Consumer]]                         |                                                                                                                                   |
 | 2024-12-03 | [[@Auto Trader]]                                | Ad for Acura                                                                                                                      |
 | 2024-12-02 | [[Mgt]]                                         | W                                                                                                                                 |
@@ -12,7 +13,7 @@ n:: no prefix.	Dated entries without any typing prefix
 | 2024-11-27 | [[Parties]]                                     | Differences between the parties                                                                                                   |
 | 2024-11-27 | [[Mgt]]                                         | Monthly Meeting                                                                                                                   |
 | 2024-11-26 | [[@Credit Karma]]                               | getting transaction log                                                                                                           |
-| 2024-11-26 | [[Reflections]]                                 | .                                                                                                                                 |
+| 2024-11-26 | [[Reflections]]                                 | DEEP WORK discussion w/ Yashin                                                                                                    |
 | 2024-11-25 | [[@Alta Vista]]                                 | Stances                                                                                                                           |
 | 2024-11-24 | [[MED Heart]]                                   | Lp(a)                                                                                                                             |
 | 2024-11-23 | [[Election2024]]                                | What should Democrats have done differently                                                                                       |

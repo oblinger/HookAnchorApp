@@ -5,6 +5,7 @@
 
 ### 2024-11-10  Hackers 2024
 
+[[2024-photo-roster.pdf]] 
 
 [[@James Miller]] - drove me
 

@@ -1,3 +1,4 @@
+- Skii Trip
 - [[2024-05 Sell Acura|Car]] 
 - [Liu](https://ucsfmychart.ucsfmedicalcenter.org/ucsfmychart/Home) 
 [[@schwab]] 

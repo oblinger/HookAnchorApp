@@ -1,19 +1,13 @@
-- skiing trip
-- aric dad
-- paystubb
-- jason meeting this week?  AI-min ramp, shot chart ramp
-- pay stubb
-- introduce Matias
-- credit card approval
-- okrs in this week
-- xover plan
-- simple note
-- fin text
-- camping equipment list
-- Jason: AWS costs
-- softbank spec
 - grz matias jack mike F.   spec of min norm
-- on the 9th we have a summary for speedups in VB
+- ! New Card for QL
+- ! Ski
+- ! [[@Jason Syversen]] 
+- ! introduce Matias
+- ! okrs in this week
+- ! Bloodwork
+- camping equipment list
+- ! 9th summary speedups in VB
+
 - meeting for speedups in VB
 - vb speedups (track top four)
 - check with Jack for alpha acceptance criteria 

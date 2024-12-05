@@ -1,4 +1,46 @@
-### 2024-11-26 . 
+### 2024-11-26 DEEP WORK discussion w/ Yashin
+
+In answer to your question below I will tell you what I am working on in my journey as it seems relevant for you.
+
+  
+
+  
+
+I read an article about “deep work” and in it the author claimed that your output is related to the amount of deep work you do, and the busy work can easily eclipse the deep work and you get nothing done.
+
+  
+
+I think this is true of me, so I broadly bucket work into “chew” tasks
+
+These are true work tasks, and needed for my job, but they are kind of house keeping tasks like reading emails/slacks and quick responses.
+
+  
+
+Then I have “deep” tasks, and these are:
+
+- big deliverables (couple of hours minimum) 
+
+- that require focus.  (Often they are tasks that I have been procrastinating or are mentally hard)
+
+- they are especially important relative to other ‘chew’ tasks
+
+- they represent key outputs that would cause me to say “oh I made good progress today”
+
+   (Example: Email is essential, still if I dispatch is in quick and sloppy it can be ok, so they are not deep.)
+
+  
+
+  
+
+This split is pretty clear for me.  If it is a big rock that was defined at beginning of week as a key item, then it is a “deep” task, else it is not.
+
+  
+
+Now I try to optimize my day so I can get a couple of deep hours per day.  And I take notice when other tasks are drowning out my deep tasks.  This is helpful since now it causes me to push chew tasks to the back burner, when in the past I would often do them first, and just try to move faster.  Now they start dropping of the plate, but deep tasks get done.
+
+  
+
+At least that is the theory…. And so far it is starting to work.
 ### 2024-11-18  Exercise
 
 It is just not happening.

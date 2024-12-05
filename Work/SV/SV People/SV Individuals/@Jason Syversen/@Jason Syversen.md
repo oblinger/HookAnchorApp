@@ -218,6 +218,8 @@ DISCUSS
 
 # LOG
 
+meeting this week?  AI-min ramp, shot chart ramp
+
 ### 2024-11-19  Meet in San Bruno
 
 - FB alpha

@@ -6,4 +6,5 @@
 - was in her running outfit on Sunday
 - spoke about my mom's challenges w/ screen sharing 
   (since she does messages)
-- 
+
+
