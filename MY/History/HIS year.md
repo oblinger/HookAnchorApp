@@ -1,4 +1,6 @@
 
+[[__MgtDocs__\|Thu Aug 3  2023 ]]  	[[__MgtDocs__#Security]]  
+[[__Mgt__\|Thu Aug 3  2023 ]]  	[[__Mgt__#Hiring/Mgt]]  
 [[__Mgt__\|Thu Aug 3  2023 ]]  	[[__Mgt__#PEP TALK]]  
 [[__Mgt__\|Thu Aug 3  2023 ]]  	[[__Mgt__#Older stuff]]  
 [[__bio__\|Thu Aug 3  2023 ]]  	[[__bio__#2020.04 - Bio Parts]]  

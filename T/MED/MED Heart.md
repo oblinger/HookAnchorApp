@@ -36,8 +36,8 @@ Most Important Targets:
 - Diet:  Low meat.  (how much salmon?)
 
 Measuring Progression
-- C-reactive protein -
-- homeocystein - 
+- CRP, C-reactive protein -
+- Homocysteine - 
 - apo-b - 
 
 

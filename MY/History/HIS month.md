@@ -1,4 +1,6 @@
 
+[[RES Star\|Wed Sep 18  2024]]  	[[RES Star#MARTIAN]]  
+[[RES Star\|Wed Sep 18  2024]]  	[[RES Star#DARPA]]  
 [[Reflections\|Tue Sep 17  2024]]  	[[Reflections#2024-09-17  If I want to get more done, I need to focus my t]]  
 [[2024-08 Backend Architect\|Tue Sep 17  2024]]  	[[2024-08 Backend Architect#DECISION CRITERIA]]  
 [[Eli Strategy\|Tue Sep 17  2024]]  	[[Eli Strategy#MELT DOWN -> Take to a room]]  

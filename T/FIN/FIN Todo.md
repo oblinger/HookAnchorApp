@@ -45,6 +45,7 @@ ACTIONS
 - [ ] Open two Chase Preferred accounts attached to monthly spending
 - [ ] Get Rocket Money working; Decide if I am keeping it
 - [ ] Open two [[@Wells Fargo]] credit cards
+- [ ] 
 
 ### 2024-11-22  Best Credit Cards
  getting Wells card:  

@@ -10,7 +10,7 @@
 RELATED:	[[RES]], [[CRM]], 
 OLD:		[[NJ16]], [[NJ22]],[[GoogleJob]], [[Meta Coms]], 
 
-
+[Topics — Ask a Manager](https://www.askamanager.org/topics-2) 
 
 ## ... 
 - add leading targets to my slides

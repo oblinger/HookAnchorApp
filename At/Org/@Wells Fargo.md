@@ -1,5 +1,11 @@
 
 
+### 2024-12-05  Both opening at Wells Fargo Active Cash card
+
+https://creditcards.wellsfargo.com/cards/active-cash-credit-card/?product_code=CC&subproduct_code=AC&FPID=0126D7I6F40000&vendor_code=LS&sub_channel=AFF&siteID=SWlnSnn6x54-AYTHLBTejzUCWF.aUAb30A
+
+
+
 
 ### 2024-11-27  
 

@@ -5,6 +5,7 @@ n:: no prefix.	Dated entries without any typing prefix
 
 | Date       | File                                        | Notes                                                                                                                             |
 | ---------- | ------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------- |
+| 2024-12-05 | [[@Wells Fargo]]                                | Both opening at Wells Fargo Active Cash card                                                                                      |
 | 2024-12-04 | [[Productivity]]                                | Huberman Focusing                                                                                                                 |
 | 2024-12-03 | [[@Amazon as Consumer]]                         |                                                                                                                                   |
 | 2024-12-03 | [[@Auto Trader]]                                | Ad for Acura                                                                                                                      |

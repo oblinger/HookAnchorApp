@@ -1,5 +1,5 @@
 
-- [Alta Vista](https://docs.google.com/document/d/1mBquDfRIRhczSMqeDCWW-JxY8U02kA31_CU6zxLbCEc/edit) 
+- [Alta Vista](https://docs.google.com/document/d/1mBquDfRIRhczSMqeDCWW-JxY8U02kA31_CU6zxLbCEc/edit) - Kindergarten families
 - [Login](https://accounts.veracross.com/avs/portals/login) 
 
 # Info

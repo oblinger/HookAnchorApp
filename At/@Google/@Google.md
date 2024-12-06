@@ -11,6 +11,10 @@
 ## Contacts
 ### Google Cloud Partnerships
 
+Mathew Main matthewmain@google.com
+Diksha Gulati dikshagulati@google.com
+
+
 **Ishtiaque Halde**
 [+16503324600](tel:(650)%20332-4600) 
 [ishtiaqueh@google.com](mailto:wilfredjerome@google.com)
@@ -37,6 +41,8 @@ Regards
 
 
 # LOG
+
+
 
 ### 2024-10-03  Matt @ Google
 
