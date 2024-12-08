@@ -1,4 +1,5 @@
 
+[[RES Star\|Wed Sep 18  2024]]  	[[RES Star#AEOLUS]]  
 [[RES Star\|Wed Sep 18  2024]]  	[[RES Star#MARTIAN]]  
 [[RES Star\|Wed Sep 18  2024]]  	[[RES Star#DARPA]]  
 [[Reflections\|Tue Sep 17  2024]]  	[[Reflections#2024-09-17  If I want to get more done, I need to focus my t]]  

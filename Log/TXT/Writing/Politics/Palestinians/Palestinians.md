@@ -2,6 +2,34 @@
 
 # LOG
 
+### 2024-12-06  Response to Steve
+
+I agree. I am not trying to defend Israel's actions in Gaza and West bank. I am focused on Israel's right to control the kind of country it will become.  And what responsibility does a nation have towards non-citizens.
+
+The USA has immigration caps that are set on a country by country basis.  Certainly there are cultural, economic, and racial consequences of how those caps are set.  In the USA we have prohibitions against racial biases toward citizens, but those prohibitions do not apply to non-citizens, so these caps are allowed.
+
+I have objections trying to prohibit such rules.
+
+The first is a pragmatic challenge.  Personally I think humans are extremely differentiating by nature and it would take extreme measures to beat this out of us, and i would not want to do that, even thought i acknowledge the damage done by this differentiation.  Men often are attracted to women.  Sport fans tend to aggregate, etc.  Driving differentiation and tribalism out of humanity does not seem to be the goal here.  (Managing its worst effects is a good goal).
+
+Iraq is formed 
+
+
+
+
+
+
+In the USA private clubs are given broad license to shape their membership and maintain cultural norms.
+
+
+
+Nearly any policy one adopts on most any issue, will adversely affect some population (often a minority population) in some way (e.g. an adjustment of minimum wage).  Thus I would never claim there are no losers when a Democracy makes choices.
+
+
+
+
+
+
 ### 2024-11-14  Tighter Intro
 
 The two state solution for Palestinian freedom simply cannot work:

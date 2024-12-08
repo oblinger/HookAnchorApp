@@ -1,3 +1,4 @@
+- ai-min games from james
 - ! New Card for QL
 - ! [[@Jason Syversen]] 
 - ! introduce Matias
