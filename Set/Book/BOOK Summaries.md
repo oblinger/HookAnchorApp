@@ -1,3 +1,36 @@
+### 2024 "Anthem" by Neil Stephenson
+
+Set on an Earth similar planet in the future after 3 collapses of society.
+
+As a means of controlling knowledge, monasteries are set up where the members are cut of for 1, 10, 100, or 1000 years.
+
+Turns out the 1000 year folks have a way of editing reality using their mind.
+
+Or maybe they move themselves (and us) between alternate universes.
+
+
+Their ability and the "everything killers" which are very tiny tactical nukes are the cause of these catastrophes, so society (somehow) sequesters the knowledge about these things via a rigid social order.
+
+The majority of society is kind of drugged by a naturally occurring weed "allswell" that makes you feel that all is well.
+
+
+In the story we find an alien ship in the sky with four races from four variant universes whose particles are subtly different such that they cannot breath each other's oxygen very well.
+
+They have to attack the ship with the help of one of the races on the ship.
+
+
+### 2024 "Down and Out" by Cory Doctrow
+
+Set in a post scarcity future, where all bodily needs are met w/o the need for cash.
+People can live indefinitely by being transferred into a younger body.
+
+Society has evolved a system where the instantaneous joy or frustration that you cause for others is added or deducted from a score that you hold over time.  This score becomes the new kind of money, it is coveted, and it affects your value in society.  At a low enough level you cannot even enter a place, or the car you are using could be taken by another with higher score.
+
+Main character social group wants to maintain a Disney theme park w/o in it original form, while others want to introduce modern emotional enhancements.  Outcomes in society are driven by point scores, so the battle is a kind of popularity contest.
+
+
+One character plans to end his life, but wants to end with a strong score, so he is building up his points so he can end with dignity.
+
 
 
 ### 2024 "The Expanse" Series by James S.A. Corey
@@ -6,7 +39,9 @@ I loved the society described and the concept of the proto-molecule, but the sto
 Begins with _"Leviathan Wakes,"_ this series blends space opera with hard science and complex political and societal themes, focusing on humanity's expansion into space.
 
 Story follows Holder space captain, and Miller ex-Cop chasing Julie
-Proto-molecule used to infect whole asteroid as a kind of weapon/tool
+Proto-molecule used to infect whole asteroid as a kind of weapon/tool from aliens
+
+maybe is was intended to wipe out earth, or maybe they launched it when earth did not have advanced life so it was an unintended consequence.
 
 
 ### 2024 "The Reality Dysfunction" by Peter Hamilton

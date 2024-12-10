@@ -2,13 +2,7 @@
 
 In answer to your question below I will tell you what I am working on in my journey as it seems relevant for you.
 
-  
-
-  
-
 I read an article about “deep work” and in it the author claimed that your output is related to the amount of deep work you do, and the busy work can easily eclipse the deep work and you get nothing done.
-
-  
 
 I think this is true of me, so I broadly bucket work into “chew” tasks
 

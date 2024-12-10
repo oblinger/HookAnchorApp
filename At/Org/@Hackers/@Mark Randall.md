@@ -1,4 +1,10 @@
-=[[PP]].     
+=[[PP]]. 
+
+916-206-6275
+Spoke @ hackers 2024 on first night at length.
+Was at Adobe for many years, wife insists he cannot sign an NDA nor accept a dollar.
+Owns a McLaren 
+- Recommended "Down and Out" in the Magic Kingdom by Cory Doctorow
 
 
 https://linkedin.com/in/markran/.   maybe

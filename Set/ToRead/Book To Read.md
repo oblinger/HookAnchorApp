@@ -1,6 +1,5 @@
 [[BOOK Favorites]]
 
-
 - The Manager's Path  ???
 - Catechism
 

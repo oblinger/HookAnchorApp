@@ -4,6 +4,25 @@
 
 # Log
 
+### 2024-12-09  W
+
+- Coord: Jack, James, Brian
+- Getting SAM2 in system.
+- Shot charts validation; soft bank; VB defections and actions
+- Datasets:  Shot charts, Object Detection, Minutes, 
+- Metrics: 
+- VB ann speedups
+
+
+[STORY: Complete Norm1 [Juan]](https://www.notion.so/STORY-Complete-Norm1-Juan-154719d6f2bd80afb761f62fa22a3936?pvs=21)
+[STORY: VAL24 - Validation set [Juan]](https://www.notion.so/STORY-VAL24-Validation-set-Juan-105719d6f2bd809d9170c84a0c8d762d?pvs=21)
+[STORY: Obj Detect [Briones]](https://www.notion.so/STORY-Obj-Detect-Briones-154719d6f2bd80448ce4df88b73009b5?pvs=21)
+[STORY: Make/Miss dataset](https://www.notion.so/STORY-Make-Miss-dataset-154719d6f2bd800b9179e2c89d67ac52?pvs=21)
+[TASK: VB games for Crossover [Juan]](https://www.notion.so/TASK-VB-games-for-Crossover-Juan-479e40d2950847bf8b642d2c072667ba?pvs=21)
+[STORY: VB shot annotions](https://www.notion.so/STORY-VB-shot-annotions-154719d6f2bd80e08d13dbe741bde751?pvs=21)
+- [[[AIT-1163](https://software-engineering-team.atlassian.net/browse/AIT-1163)]]. Gather AI-min data
+
+
 ### 2024-12-02  W
 
 - FANCY ALGS: SAM2 implementation for hard shot origin cases (but not integrated to the pipe yet), 

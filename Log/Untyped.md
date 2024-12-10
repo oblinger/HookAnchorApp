@@ -5,6 +5,7 @@ n:: no prefix.	Dated entries without any typing prefix
 
 | Date       | File                                        | Notes                                                                                                                             |
 | ---------- | ------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------- |
+| 2024-12-09 | [[Mgt]]                                         | W                                                                                                                                 |
 | 2024-12-06 | [[Palestinians]]                                | Response to Steve                                                                                                                 |
 | 2024-12-05 | [[@Wells Fargo]]                                | Both opening at Wells Fargo Active Cash card                                                                                      |
 | 2024-12-04 | [[Productivity]]                                | Huberman Focusing                                                                                                                 |
