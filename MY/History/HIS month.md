@@ -1,4 +1,8 @@
 
+[[NJ.\|Thu Sep 19  2024]]  	[[NJ.#TODO]]  
+[[NJ.\|Thu Sep 19  2024]]  	[[NJ.#ROCKS TODO]]  
+[[Read Research\|Wed Sep 18  2024]]  	[[Read Research#Like Books (for Chat GPT)]]  
+[[RES Star\|Wed Sep 18  2024]]  	[[RES Star#SPORTS VISIO]]  
 [[RES Star\|Wed Sep 18  2024]]  	[[RES Star#ANALYTICS FIRE]]  
 [[RES Star\|Wed Sep 18  2024]]  	[[RES Star#AEOLUS]]  
 [[RES Star\|Wed Sep 18  2024]]  	[[RES Star#MARTIAN]]  

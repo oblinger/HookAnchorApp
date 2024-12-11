@@ -1,4 +1,8 @@
 
+[[__Hiring__\|Thu Aug 3  2023 ]]  	[[__Hiring__#Pep Talk]]  
+[[__MgtDocs__\|Thu Aug 3  2023 ]]  	[[__MgtDocs__#Christina INFO]]  
+[[__MgtDocs__\|Thu Aug 3  2023 ]]  	[[__MgtDocs__#Lasca INFO]]  
+[[__MgtDocs__\|Thu Aug 3  2023 ]]  	[[__MgtDocs__#Activities]]  
 [[__MgtDocs__\|Thu Aug 3  2023 ]]  	[[__MgtDocs__#Services]]  
 [[__MgtDocs__\|Thu Aug 3  2023 ]]  	[[__MgtDocs__#Info]]  
 [[__MgtDocs__\|Thu Aug 3  2023 ]]  	[[__MgtDocs__#Security]]  
