@@ -10,7 +10,7 @@
 [[Calls]]:	John, Dave, Ana
 
 [[Fun]]: 
-[[Spirit]]: 
+[[Spirit]]: Gendlin
 
 
 [[Self]]. [[Self Evergreen]], 

@@ -2,11 +2,17 @@
 
 
 
+
   - [[spirit_older_bigger]]
 
 
-## = Reading =
- Miracolo eucaristico
+## = Todo =
+
+### Gendlin
+- [wiki](https://en.wikipedia.org/wiki/Focusing_(psychotherapy)) 
+- [SixSteps](https://focusing.org/sixsteps) 
+
+### Miracolo eucaristico
 - Enclical. Human vitae.  Vows.   Love letter.   Spiritual plan
 - 
 - Markus Aralias meditations -- have a short bit before I sleep or when I wake of uplifting or though provoking reading
@@ -37,5 +43,7 @@ Add info@catholicmarriageprep.com in the cc of your email to them if you wish to
 Our offices are open Monday through Friday 9:00 a.m. to 5:00 p.m. Mountain Time. We are closed on weekends and Holidays.
 
 For questions, click here to contact us at any time or call us toll-free at 1-866-425-7193 during business hours.
+
+
 
 
