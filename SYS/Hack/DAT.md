@@ -3,6 +3,8 @@
 - Using branch feat_gcp for everything right now
 - dvc-dat is sym linked into alg2 on my machine
 - Runs in 'alg2' on in conda dvc
+- Using 'feature_metrics2' on algorithm2 now
+
 
 
 

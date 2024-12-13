@@ -2,24 +2,28 @@
 ## = ACCOUNTS  (audit list is complete)
 ### BANK
 #### DanO - BofA (Checking&Savings)
-#### BofA Mortgage (Loans)
+#### BofA Mortgage (House Loan)
 #### DanO Checking - Schwab (Investments)
 #### Chase - Grand Central (Investments)
 #### Chase - Joint Checking (Investments)
 
 ### CREDIT CARDS
-#### Cap One - DanO
-#### Freedom - Bills
+#### Cap One - Dan Personal
+#### Wells - Utilities Card 
+2% cash back
+#### Wells - QL Spending
+2% cash back
+#### Freedom - Dan Spending
 #### Amazon - Groc
 #### Amazon - Misc
-#### Sapphire - Shared
+#### Sapphire - Travel / Sporadic Spending Card
 
 
 ### OTHER
 #### PenFed - Savings - Not Used
 #### PenFed - Money Mkt - Not Used
-#### PenFed - Card - not used
-#### CitiDouble - not used
+#### PenFed - Card - not used  (Oldest Card)
+#### CitiDouble - not used 
 
 
 ## = TRACKING

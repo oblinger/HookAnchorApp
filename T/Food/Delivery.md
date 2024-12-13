@@ -28,7 +28,7 @@ https://www.frannyskitchensf.com/
 | d???  JAPANESE(-sushi)          | Ginto Express                                                     |     |     |
 | d++~  THAI                      | Osha Thai -                                                       |     |     |
 | d+~~  THAI                      | Farm House Kitchen (expensive)                                    |     |     |
-| d???  THAI                      | Marnee Thai                                                       |     |     |
+| d4.0  THAI                      | One Waan (bit expensive)                                          |     |     |
 | d4.0 KOREAN                     | Daeho Kalbijjim                                                   |     |     |
 | <br> d3.5  KOREAN               | Namu Stonepot (veg fresh, rice not)                               |     |     |
 | d3.5  KOREAN                    | Mom's Tofu House.  Affordable/ok.                                 |     |     |

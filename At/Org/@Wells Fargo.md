@@ -1,3 +1,5 @@
+Old mortgage here new.
+, and Credit Card.  See 1password
 
 
 ### 2024-12-05  Both opening at Wells Fargo Active Cash card

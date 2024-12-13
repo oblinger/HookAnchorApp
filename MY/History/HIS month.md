@@ -1,4 +1,5 @@
 
+[[NJ Pyramid\|Thu Sep 19  2024]]  	[[NJ Pyramid#LOG]]  
 [[NJ.\|Thu Sep 19  2024]]  	[[NJ.#TODO]]  
 [[NJ.\|Thu Sep 19  2024]]  	[[NJ.#ROCKS TODO]]  
 [[Read Research\|Wed Sep 18  2024]]  	[[Read Research#Like Books (for Chat GPT)]]  

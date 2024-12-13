@@ -2,6 +2,7 @@
 	F11 [VBspeed](https://www.notion.so/sportsvisio/VB-Speedup-Analysis-152719d6f2bd80c5ab68f7e499cb4d44?pvs=4) 
     F11 [AWS](https://docs.google.com/document/d/1QS4081TT_Yyz1TS9GLZSfjQaczQ7ynzWTSu14waDcG0/edit?tab=t.0):	Jason - AWS costs
 	[DT](spot://dt): 	[Homo](https://www.notion.so/sportsvisio/STORY-Homography-Data-Martin-4ab7ed5c5a6b46b1ac7de9821b3a5c76?pvs=4)^shot  [BB](https://www.notion.so/sportsvisio/STORY-BB-Data-105719d6f2bd809d9170c84a0c8d762d?pvs=4):B^obj Q4 
+    [Min](spot:://AI~MIN):	[Alpha](https://www.notion.so/sportsvisio/AI-MIN-Alpha-Testing-James-118719d6f2bd80bb8280fdeafac784f3?pvs=4):  [docs](https://www.notion.so/sportsvisio/AI-MIN-Normalization-134719d6f2bd80d0ba8fcf754fc270cb?pvs=4) 
 - min-normalization
 [Run](https://www.notion.so/sportsvisio/Game-Run-Automations-150719d6f2bd80f087b2e931ef179536?pvs=4): 	Automation
 [Fball](spot://fireball):	^J Test Script
@@ -13,13 +14,14 @@ STAT: [WU1938](https://software-engineering-team.atlassian.net/browse/WU-1938) s
 Xovr:	^james checkin
 [VB](https://www.notion.so/sportsvisio/VB-Speedup-Ideas-142719d6f2bd80889ad8fc7cb2484a91?pvs=4):	J^4videos, 
 CHRT:	 end2end tst
-[Min](spot:://AI~MIN):	[Alpha](https://www.notion.so/sportsvisio/AI-MIN-Alpha-Testing-James-118719d6f2bd80bb8280fdeafac784f3?pvs=4): J^collecting ^ [docs](https://www.notion.so/sportsvisio/AI-MIN-Normalization-134719d6f2bd80d0ba8fcf754fc270cb?pvs=4)
 QA:	G[QAmin](https://software-engineering-team.atlassian.net/jira/software/projects/AIT/boards/25?selectedIssue=AIT-1069)^reg  [QAfb](https://software-engineering-team.atlassian.net/jira/software/projects/AIT/boards/25?selectedIssue=AIT-1070), 
 [PAID](https://www.notion.so/sportsvisio/AI-MIN-Premium-Paid-Feature-128719d6f2bd80ffbb41db0441d57770?pvs=4):	.
 [[2024-08 Backend Architect|Arch]]:	Brian
 DWS:	[WU11970](https://software-engineering-team.atlassian.net/browse/WU-1970)   /Matias[DWS](https://software-engineering-team.atlassian.net/browse/WU-1946) 
 Regression Testing...
 - softbank spec
+
+
   
 [[FIN Todo]]	Schwab
 [[NJ]]:	>[[War|War]], rewrite, mentor
