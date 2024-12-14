@@ -1,6 +1,6 @@
 
 - [Spreadsheet Budget](/Users/oblinger/ob/kmr/T/FIN/FIN_Budget/Budget.xlsx)
-
+- (See [[FIN Flows]] for coarse grained budget)
 
 
 

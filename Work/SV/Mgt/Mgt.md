@@ -4,6 +4,25 @@
 
 # Log
 
+
+### 2024-12-13  Fixing AI & SW products
+
+THE ISSUES
+- SW&AI having different ideas about how things work.
+- Next task not happening immediately
+- Issues not fully thought through early on.
+- Specs are simply not written. 
+	- Jira tix are TASKS not specs
+	- Versioned w/ change log
+	- check boxes
+	- explicit email of change
+
+
+- - Not being on the same page.
+	- Formal spec first.  
+
+
+
 ### 2024-12-09  W
 
 - Coord: Jack, James, Brian

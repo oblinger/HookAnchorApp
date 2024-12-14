@@ -5,7 +5,9 @@
 #### BofA Mortgage (House Loan)
 #### DanO Checking - Schwab (Investments)
 #### Chase - Grand Central (Investments)
-#### Chase - Joint Checking (Investments)
+#### Chase - Monthly Spending (Investments)
+#### Chase - Sporadic Spending (Investments) 
+
 
 ### CREDIT CARDS
 #### Cap One - Dan Personal

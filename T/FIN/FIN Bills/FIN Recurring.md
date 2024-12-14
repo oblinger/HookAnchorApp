@@ -3,10 +3,10 @@ clean email
 < [[FIN]]    [[FIN Budgeting]]
 
 # RECURRING BILLS
-## BIGGER BILLS - SCHWAB JOINT 6956-1345
+## BIGGER BILLS - SCHWAB MONTHLY SPENDING 6956-1345
 - $5,200/bi	House Taxes ???
 - $350/yr		Elan (Vijaya accountant)
-- $4,500?/mo House Mortgage
+- $4,500/mo BOA House Mortgage
 - $220/mo		PGandE Gas/Ele
 - $130/mo    SF PUC  (water bill)  Used to be $70 now $130  (2020.08 $321.02)
 - $130/mo?	Sunset Scavenger  (where did this bill go???)
@@ -20,72 +20,73 @@ clean email
 
 ## SMALLER
 ### CHASE FREEDOM x4654
-- $1,375/yr 	AAA Home Insurance
-- $600/bi  	Geico
-- $200/mo		AT&T  (Paid on corp SVB account)
-- $119/mo		Comcast
-- $192/mo?	Illuminata Skin Care
+- +$65/yr 		AAA Home Insurance
+- +$834/bi  	GEICO
+- +$163/mo 	AT&T
+- +$30/mo		Sonic
 
-- $20/mo		Core Power Yoga
-- $16/mo 		Netflix
-- $15/m		Spotify Premium
-- $15/mo     Audible for dad
-- $10/mo		APPLE - Apple iCloud 2TB Storage 
-                (Apple ID -> MyPic -> Plan)  (!!! Used by whole family??)
-- $9/mo		xxx?  Dan's Apple iCloud
-- $7/mo		Apple TV+ 
+- +$20/mo		Core Power Yoga
+- +$16/mo 	Netflix
+- +$15/m		Spotify Premium
+- +$5/mo		Medium Monthly
+
+- +$199/yr   	Noom (Renews 06-27-2024)
+- +$55/yr		Vorwerk Thermomix Recipes (2023-12-11.  Web -> {ChefHat} -> Account )
+- ?$29/yr		Blue Mountain (goes up Aug-09-2024)
+- +$39/yr  	Consumer Reports Digital   2023-08-23
+- +$				CR On Health
+- +$0/yr		1-Password (paid by QL's work)
 - $99/yr		WSJ - Wall Street Journal  (Goes to $500/yr in Aug-2025)
-- $5/mo		Medium Monthly
 
-- $199/yr		Noom (Renews 06-27-2024)
-- $55/yr		Vorwerk Thermomix Recipes (2023-12-11.  Web -> {ChefHat} -> Account )
-- $29/yr		Blue Mountain (goes up Aug-09-2024)
-- $39/yr  		Consumer Reports Digital   2023-08-23
-- ???			CR On Health
-- $36/yr		1-Password
-- $30/yr		APPLE - Insight Timer  (APPLE SUBSCRIPTION iPhone -> Settings -> Me -> Subscriptions)
+### +DAN APPLE (paid from Wells Utilities)
+- $26/mo		Apple iCloud 2TB Storage 
+- $150/yr		Apple Care 16" Mac Pro
+- $30/yr		Insight Timer
+- $9/mo		xxx?  Dan's Apple iCloud
+- $---			Apple TV+
+- $---			Disney+
 
 ### PAYPAL			
 	Web -> {setting gear} -> Payments -> Manage Automatic Payments
-- $239/yr	12/10/22	Seeking Alpha renews ?? 2023-12-??
-- $50/yr	6/29/22		Noom
-- $70/yr	6/28/22		Microsoft
-- $60/yr	7/19/22		Bit Defender (Avangate)
-- $5/mo					Patreon - Sleep With Me Podcast
+- $0/yr			12/10/22	Seeking Alpha renews ?? 2023-12-??
+- $50/yr		6/29/22		Noom
+- $70/yr		6/28/22		Microsoft
+- $60/yr		7/19/22		Bit Defender (Avangate)
+- $5/mo						Patreon - Sleep With Me Podcast
 
 ### CAP ONE
 - $10/mo		xxx?  GITHUB Copilot - pr
-- $49/mo	!!	Coursera
+- $49/mo		!!	Coursera
 - $60/yr		??? Dec, 14th 2024
 - $20/yr		Google Storage renews 2023-05-13
 - $43/yr		Clean Email
 - 				Obsidian Publish  (cancelled $20/mo)
 
 ### QL RECURRING
-- Apple
-- Google
+- Apple: OpenSnow $32, 
+- Google: Storage $2, 
 - 1Password
-- Yoga
+- Core Power Yoga
 
-
+### OTHER
+- $15/mo	Audible for dad (paid from Amazon)
+- vary		DOOR DASH
+- vary		GRUB HUB. (none)
 
 ## VARYING PAYMENTS
 VARYING - CHASE FREEDOM
-- vary		Uber (mostly on on this account)
-- vary		Lyft  
-- vary		Rinse
-- vary		Paperless Post
-- vary		GRUB HUB
-- vary		CAVIAR
-- vary		DOOR DASH
-- vary		FEDEX
-- vary		USPS
-- vary		FANDANGO
-- vary		Chewy
+- vary		+Uber (mostly on on this account)
+- vary		+Lyft  
+- vary		+Rinse
+- vary		+Paperless Post
+- vary		+CAVIAR
+- vary		+FEDEX
+- vary		USPS (disabled account)
+- vary		+FANDANGO
+- vary		+Chewy
 
 SAPPHIRE
-- vary   		Am Airlines
-
+- vary   	Am Airlines
 
 
 ## PAUSED

@@ -1,4 +1,12 @@
 
+[[@Jack Potvin\|Thu Aug 3  2023 ]]  	[[@Jack Potvin#2023-08-01  evaluation]]  
+[[Baseline\|Thu Aug 3  2023 ]]  	[[Baseline#ACHILLES - Pivo]]  
+[[Baseline\|Thu Aug 3  2023 ]]  	[[Baseline#Tomas - Rec App]]  
+[[Hire\|Thu Aug 3  2023 ]]  	[[Hire#TODO]]  
+[[Hire\|Thu Aug 3  2023 ]]  	[[Hire#__]]  
+[[__DeliPlanning__\|Thu Aug 3  2023 ]]  	[[__DeliPlanning__#Proj planning notes for Vik and Steph]]  
+[[Billionare Billy Big Boots\|Thu Aug 3  2023 ]]  	[[Billionare Billy Big Boots#=== THINKING ===]]  
+[[Billionare Billy Big Boots\|Thu Aug 3  2023 ]]  	[[Billionare Billy Big Boots#=== ML-TEST === BIG BOOTS WINERY ===]]  
 [[Billionare Billy Big Boots\|Thu Aug 3  2023 ]]  	[[Billionare Billy Big Boots#=== OTHER POSSIBLE TASKS ===]]  
 [[__Hiring__\|Thu Aug 3  2023 ]]  	[[__Hiring__#Pep Talk]]  
 [[__MgtDocs__\|Thu Aug 3  2023 ]]  	[[__MgtDocs__#Christina INFO]]  

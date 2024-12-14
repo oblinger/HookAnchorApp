@@ -36,6 +36,12 @@ My only confusion:  the limited power of attorney needs your signature too, but
   
 ### TEXT ABOUT THE CAR
 
+
+- 2000 Acura Integra, GS Sport Coupe 2D
+- VIN: JH4DC4366YS010935
+- Odometer 54,406
+
+
 Selling Acura Integra:
 
 Looking for a reliable and sporty ride? This 2000 Acura Integra GS Sport Coupe 2D might be just what you need. 
@@ -96,6 +102,16 @@ Went to the courthouse yesterday and they said that the paperwork that we have i
 - Whatever you have to sign and get it notarized and send it to me and then advertise the car 
 - When we sell the car, I will go to the courthouse with them. And they will notarize everything there and if it’s Ohio, I have to go there.
 
+
+
+### 2024-12-13  DC DMV
+
+- 202-737-4404  #3 
+    #3 or #0  
+
+My Tags:  CK6529
+
+![[Screenshot 2024-12-13 at 1.08.14 PM.png]
 ### 2024-09-14  from GPT and web
 
 http://dmv.dc.gov/sites/default/files/dc/sites/dmv/publication/attachments/Title_Temporary_Tag_Application.pdf

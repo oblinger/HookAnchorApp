@@ -1,4 +1,12 @@
 
+[[Archive\|Mon Sep 23  2024]]  	[[Archive#LOG]]  
+[[Segment And Track Anything\|Mon Sep 23  2024]]  	[[Segment And Track Anything#Segment and Track Anything]]  
+[[ML Op Tools\|Mon Sep 23  2024]]  	[[ML Op Tools##learn]]  
+[[ML Op Tools\|Mon Sep 23  2024]]  	[[ML Op Tools#Tools]]  
+[[@Meta\|Fri Sep 20  2024]]  	[[@Meta#LOG]]  
+[[NJ Log\|Fri Sep 20  2024]]  	[[NJ Log#2024-09-19  FAANG Hiring Learning]]  
+[[RES War\|Fri Sep 20  2024]]  	[[RES War#= YOUR WEAKNESS]]  
+[[@Annafi Wahed\|Thu Sep 19  2024]]  	[[@Annafi Wahed#2024-09-19  W/ CTO]]  
 [[NJ Pyramid\|Thu Sep 19  2024]]  	[[NJ Pyramid#LOG]]  
 [[NJ.\|Thu Sep 19  2024]]  	[[NJ.#TODO]]  
 [[NJ.\|Thu Sep 19  2024]]  	[[NJ.#ROCKS TODO]]  
