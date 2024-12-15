@@ -1,4 +1,9 @@
 
+[[2024-05 Sell Acura\|Thu Sep 26  2024]]  	[[2024-05 Sell Acura#2024-09-25  The plan]]  
+[[DAT\|Thu Sep 26  2024]]  	[[DAT#2024-09-25  proposed progression]]  
+[[Reflections\|Thu Sep 26  2024]]  	[[Reflections#2024-09-24  My 1/2 time plan]]  
+[[2024-W39\|Mon Sep 23  2024]]  	[[2024-W39#W39   2024-09-23   [[2024-W38\\|<<]] [[2024-W40\\|>>]]]]  
+[[Cleaning Service\|Mon Sep 23  2024]]  	[[Cleaning Service#2023-00-00]]  
 [[Archive\|Mon Sep 23  2024]]  	[[Archive#LOG]]  
 [[Segment And Track Anything\|Mon Sep 23  2024]]  	[[Segment And Track Anything#Segment and Track Anything]]  
 [[ML Op Tools\|Mon Sep 23  2024]]  	[[ML Op Tools##learn]]  
