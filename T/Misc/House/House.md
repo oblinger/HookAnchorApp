@@ -51,6 +51,7 @@ Terrace tan.  Morning blue
 Grafton waving wheat
 ### --- FUSE BOX ---
 
+(Master in Contacts 'circuit breakers')
 Fuses from top to bottom
 
 Blue 	furnace
