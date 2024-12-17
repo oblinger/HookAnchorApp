@@ -1,8 +1,5 @@
-.[[Spot]].
-  ,
-  , [[SP]], 
-  DELS: [[SP]],
 
+- Bug:  page w/ paren must not be printed as a wiki-link as paren cannot be parsed
 - Spot: spgrab. foo!bar will not add a correct link to 'bar' in foo.  it adds a file link
 - OBS - Evernote log of dated entries
     ingest all dated entries and starred entries 
@@ -26,6 +23,10 @@
 
 - - spot: when folder is missing either delete command, or just change the group of the command to be "broken"
 sss- spot: when folder is missing either delete command, or just change the group of the command to be "broken
-%contents%
+
+
+
+.[[Spot]].
+  , [[SP]], 
 
 
