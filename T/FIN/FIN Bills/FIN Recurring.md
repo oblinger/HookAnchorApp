@@ -52,7 +52,6 @@ clean email
 - $50/yr		6/29/22		Noom
 - $70/yr		6/28/22		Microsoft
 - $60/yr		7/19/22		Bit Defender (Avangate)
-- $5/mo						Patreon - Sleep With Me Podcast
 
 ### CAP ONE
 - $10/mo		xxx?  GITHUB Copilot - pr
@@ -60,6 +59,7 @@ clean email
 - $60/yr		??? Dec, 14th 2024
 - $20/yr		Google Storage renews 2023-05-13
 - $43/yr		Clean Email
+- $60/yr		Sleep With Me Podcast
 - 				Obsidian Publish  (cancelled $20/mo)
 
 ### QL RECURRING
