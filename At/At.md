@@ -67,6 +67,9 @@
   , [[Friends]], [[Mentors]], , , [[ROLODEX]]
   , [[VC ORG]],
   , , ,
+  , [[@Annafi Wahed]], [[@Julieta Barrionuevo]], [[@Shawn Coe]], [[@Sonic]], [[@Titash Rakshit]]
+  , [[ORG]], [[PEOPLE]],
+  , [[@Ahmad Tahir _ Graph Design]], 
 
   
 

@@ -3,9 +3,10 @@
   , [[@IBM]], [[@LinkedIn]], [[@Microsoft]], [[@Montessori Childrens Center]], [[@Netflix]]
   , [[@PARC]], [[@TecHunting]], [[@Thistle]], [[@Vmware]], [[Org Startup]], [[Service]],
   , [[@Aeolus]], [[@PayByGroup]],
-  , [[@Hackers]], [[@Merrill]], [[@Meta]], [[@schwab]], [[@Vanguard]],
+  , [[@Hackers]], [[@Merrill]], [[@Meta]], , [[@Vanguard]],
   , [[@Credit Karma]], [[@Rocket Money]], [[@Wells Fargo]],
-  , [[@Auto Trader]], 
+  , [[@Auto Trader]],
+  DELS: [[@schwab]], 
 
 [[@Wells Fargo]] 
 [[@Rocket Money]] 
