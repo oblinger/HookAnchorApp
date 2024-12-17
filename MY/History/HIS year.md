@@ -1,4 +1,7 @@
 
+[[2023-W32\|Wed Aug 23  2023]]  	[[2023-W32#2023-W32]]  
+[[2023-W34\|Wed Aug 23  2023]]  	[[2023-W34#2023-W34]]  
+[[@Agustin Polito\|Thu Aug 3  2023 ]]  	[[@Agustin Polito#Log]]  
 [[work\|Thu Aug 3  2023 ]]  	[[work#CV TEAM]]  
 [[work\|Thu Aug 3  2023 ]]  	[[work#SECONDARY]]  
 [[@CV\|Thu Aug 3  2023 ]]  	[[@CV#Foo]]  

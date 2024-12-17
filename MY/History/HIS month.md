@@ -1,4 +1,7 @@
 
+[[RES Star\|Fri Sep 27  2024]]  	[[RES Star#__]]  
+[[RES Star\|Fri Sep 27  2024]]  	[[RES Star#__]]  
+[[@Alta Vista\|Thu Sep 26  2024]]  	[[@Alta Vista#2024-09-24  Info management proposal]]  
 [[2024-05 Sell Acura\|Thu Sep 26  2024]]  	[[2024-05 Sell Acura#2024-09-25  The plan]]  
 [[DAT\|Thu Sep 26  2024]]  	[[DAT#2024-09-25  proposed progression]]  
 [[Reflections\|Thu Sep 26  2024]]  	[[Reflections#2024-09-24  My 1/2 time plan]]  
