@@ -1,6 +1,6 @@
 .STU.
-  [[FIN Todo]]: SIGNATURE CARD
-  Skii Trip
+  [[FIN Todo]]: SIG CARD
+  Ski Trip
  - [[2024-05 Sell Acura|Car]] 
  - [Liu](https://ucsfmychart.ucsfmedicalcenter.org/ucsfmychart/Home)  
  [[Friday]]: 

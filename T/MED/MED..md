@@ -1,6 +1,6 @@
  [[MED]], [[Doctor]] 
 
-
+- Check alzheimers
 - Glucose Patch
 
 - [ ] Ask about reducing statin:  https://pubmed.ncbi.nlm.nih.gov/25754552/

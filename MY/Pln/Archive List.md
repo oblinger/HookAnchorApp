@@ -73,7 +73,7 @@ LLM-talk:	[T](https://docs.google.com/document/d/1qJrwMlrrCaXmHVjXsMGHMJ35k6EEBb
 - [x] bday Dinner Anomaly
 - [x] bday Dinner Anomaly
 - [x] job ads to Jason
-- [x] [[BCMS]]: movie
+- [x] [[@BCMS]]: movie
 - [x] Paperwork for equity
 - [x] Eli's B-day (music)
 - [x] rebuild computer

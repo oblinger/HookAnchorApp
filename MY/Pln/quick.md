@@ -1,3 +1,5 @@
+- Jason note
+
 
 - ai-min games from james
 - ! New Card for QL

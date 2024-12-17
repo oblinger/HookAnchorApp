@@ -6,7 +6,8 @@
   , [[@Hackers]], [[@Merrill]], [[@Meta]], , [[@Vanguard]],
   , [[@Credit Karma]], [[@Rocket Money]], [[@Wells Fargo]],
   , [[@Auto Trader]],
-  DELS: [[@schwab]], 
+  , [[@Schwab]], 
+  DELS: [[@schwab]],
 
 [[@Wells Fargo]] 
 [[@Rocket Money]] 

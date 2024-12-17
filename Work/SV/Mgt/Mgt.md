@@ -32,6 +32,9 @@ THE ISSUES
 	- Formal spec first.  
 
 
+THE SPEC
+- Identify when we need one at least 2-3 months in advance
+
 
 ### 2024-12-09  W
 
