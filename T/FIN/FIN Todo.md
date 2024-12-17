@@ -1,6 +1,22 @@
-- Cancel Karma
-- QL get card
-- Send Schwab forms
+- Signature Card
+- Letter to Schwab
+- Wait for Schwab activation
+- Change where BOA mortgage is paid from
+- Change alta vista
+- Get QL card set up.
+- Verify Autopay: DOwells, QLwells, Sapphire, 
+- [[FIN Flows]] 
+
+
+Schwab Feedback
+
+upload logger
+
+
+Other: 
+
+
+
 
 
 ## LATER

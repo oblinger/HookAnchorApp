@@ -4,6 +4,16 @@
 
 # Log
 
+### 2024-12-16  W
+
+- Created the TopViewMapper module to produce positions for every frames, 
+- Creating softbank's stats in every AI minutes job, 
+- environment update in preparation for SAM2, 
+- VB halos produced for James, 
+- finished object detection dataset
+
+BACK
+
 
 ### 2024-12-13  Fixing AI & SW products
 

@@ -1,5 +1,8 @@
 =[[Org]] 
 
+See Legal/PayByGroup
+
+
 # MEETINGS
 
 ### m2011-00-00 - CureBit -- they connected to many shopping carts

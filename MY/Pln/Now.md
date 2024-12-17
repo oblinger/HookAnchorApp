@@ -1,10 +1,11 @@
+.STU.
+  [[FIN Todo]]: SIGNATURE CARD
+  Skii Trip
+ - [[2024-05 Sell Acura|Car]] 
+ - [Liu](https://ucsfmychart.ucsfmedicalcenter.org/ucsfmychart/Home)  
+ [[Friday]]: 
 
-[[Friday]]: 
- .Clean
- .Facet
- .Fix bathtub
- .Anniversary
-
+.WRK.
  [[DocAWS]] 
  - vet email
 
