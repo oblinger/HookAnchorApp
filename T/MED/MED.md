@@ -1,9 +1,9 @@
 
-:: [[MED.]]
+:: [[MED Todo]]
 .[[MED]].
-  :
+  TOP:		[[MED Log]], 
+  TOPICS:	
   [[Jet Lag]]:
-  :
   [[MED Blood Tests]]:
   :
   [[MED Doctors]]:
@@ -13,7 +13,6 @@
   [[MED Heart]]:
   [[MED History]]:
   [[MED Insurance]]:
-  [[MED Log]]:
   [[MED Measurements]]:
   [[MED Pills]]:
   [[MED Psoriasis]]:
@@ -29,10 +28,9 @@
   [[Medifast]]:
   [[MED-Vitamins]]:
   :
-  [[MED.]]:
-  ADDS:   ,
-  ADDS:   [[MED Food]],
-  , ,
+  [[MED Todo]], [[MED Food]],
+
+
   DELS: [[Glycemic Index]], [[MED Blood Pressure]], [[MED Cholesterol]], [[MED Research]], [[MED VO2Max]], [[MED=]],[[run]],[[Exercise]],[[Exercise]], 
 
 

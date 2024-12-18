@@ -77,7 +77,7 @@
         [[PEOPLE]]: 
             [[Family]]: [[Parents]],	
         [[@Eli Oblinger]]: 
-            [[Eli]]: [[@BCMS]],	[[Eli Strategy]],	
+            [[Eli]]: [[Eli Strategy]],	
                 [[ELI Log]]: 
     [[Log]]: [[Journal]],	[[Note]],	[[Archive]],	[[MEET]],	[[Phone]],	
         [[TXT]]: 

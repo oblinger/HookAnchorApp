@@ -1,3 +1,7 @@
+- note to Jason about Brian
+- app review
+- finish SB docs
+- update process for processing norm games
 - Jason note
 
 

@@ -1,6 +1,15 @@
-
+SalesForce, Nvidia, 
 
 # LOG
+
+
+### 2024-12-17  HUI - HEART
+
+- Reduce Lipitor
+- Worried about apparent reduction in stamina
+- Persistent upper bronchial irritation
+- Ozempic 
+- hiit 4/4/4. zone2,  weights,  
 
 ### 2024-05-23  EMDR
 Sleep advice from a (guy on Airplane) boston all hands

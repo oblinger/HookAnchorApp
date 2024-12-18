@@ -8,7 +8,7 @@ MAIN
 . [[Spirit]]:	Spending time with family;
 .			Strengthening bond w/ QL
 . [[BIG]]:		
-. [[MED.]]	
+. [[MED Todo]]	
 
 AND
 - [[Home]]:	Org basement

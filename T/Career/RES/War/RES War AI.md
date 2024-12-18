@@ -6,6 +6,9 @@
 
 - [Grz Notes - OCR v3](https://www.notion.so/sportsvisio/OCR-v3-training-single-shot-person-to-jersey-number-model-d9f4c1b04b15464d951d4c333b53a5d9) 
 
+GALLERY
+- Pose, Byte-tracker, Object-detector, DinoV2-base, court
+
 OCR
 - SEPARATE HEADS PER DIGIT:
 - TORSO CROPPING: crop using pose points - goldilocks amount of cropping.

@@ -5,6 +5,7 @@ n:: no prefix.	Dated entries without any typing prefix
 
 | Date       | File                                        | Notes                                                                                                                             |
 | ---------- | ------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------- |
+| 2024-12-17 | [[MED Log]]                                     | HUI - HEART                                                                                                                       |
 | 2024-12-16 | [[Reflections]]                                 | Need to push for specific targets for a day or period                                                                             |
 | 2024-12-16 | [[Mgt]]                                         | W                                                                                                                                 |
 | 2024-12-13 | [[2024-05 Sell Acura]]                          | DC DMV                                                                                                                            |
