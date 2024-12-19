@@ -1,11 +1,3 @@
-.[[Systems]].
-  ,   [[Pandoc]], [[Sora]], 
-
-
-:: [[GenAI]],   [[Sora]],   [[Stable Diffusion]]
-
-- [[Pandoc]] 
-- [[GPT]] 
 
 Build a table where the rows represent the major corporations and the columns represent different categories of generative AI system. in each cell is the name of that companies entry for the give type (if they have one)
 
@@ -28,4 +20,4 @@ Build a table where the rows represent the major corporations and the columns re
 | **Baidu**       | **ERNIE**                | ERNIE                | ERNIE-ViLG           | -                   | Baidu Speech                    |
 | **Tencent**     | -                        | Hunyuan              | -                    | -                   | Tencent AI Voice                |
 
-
+#dl #review 

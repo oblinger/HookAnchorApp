@@ -9,7 +9,7 @@
         [[Stat]]: [[Stat Alg]],	
         [[ML]]: 
         [[DL]]: [[DL Alg]],	
-        [[Systems]]: 
+        [[RR/Systems/RR SYSTEMS]]: 
     [[T]]: [[Trash]],	[[Tag]],	
         [[Misc]]: [[STARTUPS]],	[[Test88]],	[[Old]],	[[SF]],	[[Biking]],	
             [[Presentations]]: 
@@ -77,7 +77,7 @@
         [[PEOPLE]]: 
             [[Family]]: [[Parents]],	
         [[@Eli Oblinger]]: 
-            [[Eli]]: [[Eli Strategy]],	
+            [[Eli]]: [[@BCMS]],	[[Eli Strategy]],	
                 [[ELI Log]]: 
     [[Log]]: [[Journal]],	[[Note]],	[[Archive]],	[[MEET]],	[[Phone]],	
         [[TXT]]: 

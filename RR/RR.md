@@ -1,15 +1,15 @@
 n:: Research Reference pages
 
 .[[RR]].  [[LRN Todo]] 
-  AREAS:	[[AI]], [[ML]], [[rrCV]], , , [[RR Philosophy]],
-  TOPICS:	[[RR Med]], [[RR MGR]], ,
+  AREAS:	[[AI]], [[ML]], [[rrCV]], [[RR Philosophy]],
+  TOPICS:	[[RR Med]], [[RR MGR]],
   [[REF]]:		[[RefMisc]], [[Refs]], [[RR PAPERS]],
-  CLOSET:	[[Research]], ,
+  CLOSET:	[[Research]],
   .
-  [[Covid]], [[MATERIALS]], ,
+  [[Covid]], [[MATERIALS]],
   [[Alg]],
-  [[Swearing]], [[Systems]],
+  [[Swearing]], [[RR/Systems/RR SYSTEMS]],
   , [[Comp]], [[DL]], [[Lrn]], [[Stat]],
   , [[RR Leet]], 
-  DELS: [[RR Leet]],
+
 

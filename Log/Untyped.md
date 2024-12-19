@@ -5,6 +5,11 @@ n:: no prefix.	Dated entries without any typing prefix
 
 | Date       | File                                        | Notes                                                                                                                             |
 | ---------- | ------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------- |
+| 2024-12-18 | [[@Chang Yuan]]                                 | Meeting                                                                                                                           |
+| 2024-12-18 | [[RR DEFINITIONS]]                              | Schelling Point                                                                                                                   |
+| 2024-12-18 | [[RR PAPERS]]                                   | DETRs Beat YOLOs on real-time object detection                                                                                    |
+| 2024-12-18 | [[RR TUTORIALS]]                                | Arjan's Code Diagnosis                                                                                                            |
+| 2024-12-18 | [[RR SYSTEMS]]                                  | Lang Chain                                                                                                                        |
 | 2024-12-17 | [[MED Log]]                                     | HUI - HEART                                                                                                                       |
 | 2024-12-16 | [[Reflections]]                                 | Need to push for specific targets for a day or period                                                                             |
 | 2024-12-16 | [[Mgt]]                                         | W                                                                                                                                 |

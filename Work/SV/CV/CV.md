@@ -18,7 +18,8 @@
   , [[CV Alg]], [[CV Algs]],
   , [Docs Gdrive](spot://docsgdrive),
   , [Task](spot://task),
-  , [AIMIN](spot://aimin), 
+  , [AIMIN](spot://aimin),
+  , [Softbank](spot://softbank), 
   DELS: [DOCs](spot://docs),[Results](spot://results),[DT](spot://dt),[Dataset](spot://dataset),[[CV Alg]], [[CV Algs]],
 
   DELS: [Standup](spot://standup),[DD](spot://dd),

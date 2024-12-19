@@ -1,8 +1,8 @@
 
 :: [[MED Todo]]
 .[[MED]].
-  TOP:		[[MED Log]], 
-  TOPICS:	
+  TOP:		[[MED Log]],
+  TOPICS:
   [[Jet Lag]]:
   [[MED Blood Tests]]:
   :
@@ -28,7 +28,11 @@
   [[Medifast]]:
   [[MED-Vitamins]]:
   :
-  [[MED Todo]], [[MED Food]],
+  , [[MED Food]],
+  , ,
+  , [[MED Todo]], 
+  DELS: [[MED Todo]],
+  DELS: [[MED Todo]],[[MED.]], 
 
 
   DELS: [[Glycemic Index]], [[MED Blood Pressure]], [[MED Cholesterol]], [[MED Research]], [[MED VO2Max]], [[MED=]],[[run]],[[Exercise]],[[Exercise]], 
