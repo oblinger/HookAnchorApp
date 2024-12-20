@@ -3,11 +3,11 @@
 S.M.A.R.T.
 -?-
 - Specific - Goals should be worded as precisely as possible
-- Measurable
-- Achievable
-- Realistic
-- Time-bounded
-<!--SR:!2024-11-17,2,230-->
+- Measurable - 
+- Achievable - Capability can be achieved using existing time and resources
+- Realistic - Goal makes sense in larger context
+- Time-bounded - Goal has a well defined completion target time
+<!--SR:!2024-12-25,5,230-->
 
 #card
 - https://mooncamp.com/blog/smart-goals/

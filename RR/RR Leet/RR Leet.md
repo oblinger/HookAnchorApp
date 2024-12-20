@@ -30,7 +30,7 @@ O(log n) tasks
 - Balanced binary search tree lookup
 - Processing the digits of a number
 - Typically for `n > 10⁸`
-<!--SR:!2024-12-20,2,250-->
+<!--SR:!2024-12-25,5,250-->
 
 O(n) tasks
 -?-
@@ -54,7 +54,7 @@ O(n log n) tasks
 - Sorting. The default sorting algorithm's expected runtime in all mainstream languages is `N log(N).` For example, java uses [a variant of merge sort](https://docs.oracle.com/javase/7/docs/api/java/util/Arrays.html) for object sorting and [a variant of Quick Sort](https://docs.oracle.com/javase/7/docs/api/java/util/Arrays.html#sort(int%5B%5D)) for primitive type sorting.
 - [Divide and conquer](https://algo.monster/problems/divide_and_conquer_intro) with a linear time merge operation. Divide is normally `log(N)`, and if merge is `O(N)` then the overall runtime is `O(N log(N))`. An example problem is [smaller numbers to the right](https://algo.monster/problems/count_of_smaller_numbers_after_self).
 - Typically for `n ≤ 10⁶`
-<!--SR:!2024-12-20,2,230-->
+<!--SR:!2024-12-21,1,210-->
 
 O(n^2) tasks
 -?-
@@ -77,5 +77,5 @@ O(N!)
 - Often involves recursion and is harder to analyze time complexity at first sight
 - Detailed code examples can be found in the [backtracking](https://algo.monster/problems/backtracking) section
 - Typically for `n ≤ 12`
-<!--SR:!2024-12-20,2,250-->
+<!--SR:!2024-12-25,5,250-->
 

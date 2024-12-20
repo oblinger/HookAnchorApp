@@ -14,7 +14,8 @@
 - [ ] resume match sites
 
 ## ROCKS [[NJ]] 
-- DOCS:	[[Res]], [[RES War]], [[RES Star]], 
+- INTRV:	
+- DOCS:	[[Res]], [[RES War]], [[RES Star]], [Doc](spot://resdocx), 
 - CODE:	[[@Algo Monster]] practice for coding tests
 - [[RES]]: 		Get into final form.  Along with a cover letter?
 - [[Lrn]]:		Plan

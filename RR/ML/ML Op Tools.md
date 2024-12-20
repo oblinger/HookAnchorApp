@@ -80,7 +80,7 @@ LakeFS;;; Data Pipelining -  an open-source scalable data version control tool t
 ## Model Deployment
 
 [Kubeflow](https://www.kubeflow.org/docs/);;; Model Deployment - makes machine learning model deployment on Kubernetes simple, portable, and scalable. You can use it for data preparation, model training, model optimization, prediction serving, and motor the model performance in production. You can deploy machine learning workflow locally, on-premises, or to the cloud. In short, it makes Kubernetes easy for data science teams.
-<!--SR:!2024-11-24,28,270!2024-09-25,1,230-->
+<!--SR:!2024-11-24,28,270!2024-12-22,2,230-->
 
 [BentoML](https://www.bentoml.com/);;; Model Deployment - makes it easy and faster to ship machine learning applications. It is a Python-first tool for deploying and maintaining APIs in production. It scales with powerful optimizations by running parallel inference and adaptive batching and provides hardware acceleration.
 <!--SR:!2024-09-27,3,250!2024-10-09,1,210-->

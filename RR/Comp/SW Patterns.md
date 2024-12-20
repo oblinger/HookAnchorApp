@@ -11,17 +11,18 @@ Singleton, Factory, Abstract Factory, Builder, Prototype
 - **Abstract Factory**: Provides an interface for creating families of related or dependent objects without specifying their concrete classes. (pegboard)
 - **Builder**: Constructs a complex object step by step.
 - **Prototype**: Creates new objects by copying an existing object.
+<!--SR:!2024-12-21,1,228-->
 
 ### 2. **Structural Patterns**
 Adapter, Decorator, Facade, Proxy, Composite, Bridge
 -?-
-- **Adapter**: Bridges incompatible interfaces by wrapping an object.
+- **Adapter**: Bridges incompatible interfaces by wrapping an object. (translating)
 - **Decorator**: Adds additional functionality to an object dynamically.
 - **Facade**: Provides a simplified interface to a complex subsystem.
 - **Proxy**: Provides a placeholder or surrogate for another object to control access to it.
 - **Composite**: Composes objects into tree structures to represent part-whole hierarchies.
 - **Bridge**: Separates abstraction from implementation so they can vary independently.
-<!--SR:!2024-12-19,1,230-->
+<!--SR:!2024-12-22,2,230-->
 
 ### 3. **Behavioral Patterns**
 Observer, Strategy, Command, Iterator, State, Mediator, Chain of Responsibility
@@ -41,3 +42,4 @@ Thread Pool, Producer-Consumer, Monitor Object
 - **Thread Pool**: Manages a pool of threads for executing tasks efficiently.
 - **Producer-Consumer**: Coordinates a set of producer threads that create data and consumer threads that process it.
 - **Monitor Object**: Ensures that only one thread at a time can execute a critical section of code.
+<!--SR:!2024-12-22,2,248-->

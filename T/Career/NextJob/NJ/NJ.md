@@ -1,6 +1,6 @@
 .[[NJ]].	  [[Lrn]],
+  TODO:	[[NJ Todo]], 
   TOP:	[NJ Slides](spot://njslides), [[NJ Log]],
-  TODO:	[[NJ Todo]], [[NJ Read]],
   PARTS	[[NJ Targets]],
   ROCKS:
   , , , ,
