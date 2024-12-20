@@ -1,5 +1,7 @@
 .[[RR SYSTEMS]].
-  ,   [[Pandoc]], [[DL Systems]], [[Sora]], 
+  ,   , , ,
+  , [[DL Systems]], [[Pandoc]], [[Sora]], 
+  DELS: [[Pandoc]], [[DL Systems]], [[Sora]],
 
 
 :: [[GenAI]],   [[Sora]],   [[Stable Diffusion]]

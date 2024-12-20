@@ -3,13 +3,12 @@
 
 [[mate]],	[[Proj]],	[[Race]],	
 [[KMR]]: [[WEEKLY]],	
-    [[RR]]: [[Lrn]],	[[RR Philosophy]],	[[RR MGR]],	
+    [[RR]]: [[Lrn]],	[[RR PAPERS]],	[[RR Philosophy]],	[[RR MGR]],	
         [[Comp]]: 
             [[LANG]]: 
         [[Stat]]: [[Stat Alg]],	
-        [[ML]]: 
+        [[ML]]: [[ML Alg]],	
         [[DL]]: [[DL Alg]],	
-        [[RR/Systems/RR SYSTEMS]]: 
     [[T]]: [[Trash]],	[[Tag]],	
         [[Misc]]: [[STARTUPS]],	[[Test88]],	[[Old]],	[[SF]],	[[Biking]],	
             [[Presentations]]: 

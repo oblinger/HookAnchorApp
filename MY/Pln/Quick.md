@@ -1,8 +1,9 @@
+- remove extra charges on ATT
+- HUI billing  800 478-8837
 - note to Jason about Brian
 - app review
 - finish SB docs
 - update process for processing norm games
-- Jason note
 
 
 - ai-min games from james

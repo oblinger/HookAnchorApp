@@ -12,11 +12,12 @@
   [[Restaurants]]:
   [[Try Foods]]:
   ADDS:   [Nutrition Data Page](spot://nutritiondatapage), [Nutrition Facts Page](spot://nutritionfactspage), [Nutrition Value Page](spot://nutritionvaluepage),
-  ADDS:   [[Food Recipe Research]], 
+  ADDS:   [[Food Recipe Research]],
   ADDS:   [[Eat]],
   , [[Bfast]],
-  , [[FOOD Research]], 
-  DELS: [[dinner]], [[Noom Notes]], [[Food Research]],[FOOD Research Note](spot://foodresearchnote), [[FOOD Research]],
+  , [[FOOD Research]],
+  , ,
+  DELS: [[dinner]], [[Noom Notes]], [[Food Research]],[FOOD Research Note](spot://foodresearchnote), [[FOOD Research]],[[qwd]], 
 
 
 

@@ -1,7 +1,8 @@
 .[[Comp]].
   , ,
   , , ,
-  , [[LANG]], 
+  , [[LANG]],
   DELS: [[LANG]],
-  DELS: [[LANG]],[[MAC]], [[OBS]], 
+  , [[SW Patterns]], 
+  DELS: [[LANG]],[[MAC]], [[OBS]],
 
