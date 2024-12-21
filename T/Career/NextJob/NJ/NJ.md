@@ -1,11 +1,12 @@
 .[[NJ]].	  [[Lrn]],
-  TODO:	[[NJ Todo]], 
+  TODO:	[[NJ Todo]],
   TOP:	[NJ Slides](spot://njslides), [[NJ Log]],
   PARTS	[[NJ Targets]],
   ROCKS:
   , , , ,
-  , [[NJ Plan]], 
-  DELS: [[NJ Framing]], [[NJ Help]], [[NJ Train]],
+  , [[NJ Plan]],
+  , ,
+  DELS: [[NJ Framing]], [[NJ Help]], [[NJ Train]],[[NJ Read]], 
 
 RELATED:	[[RES]], [[CRM]], 
 OLD:		[[NJ16]], [[NJ22]],[[GoogleJob]], [[Meta Coms]], 

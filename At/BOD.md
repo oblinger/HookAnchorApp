@@ -13,7 +13,8 @@ GEN AI
 [[@Dennis DeCoste]]	- Ex-Apple Research, Ex-Director of AI, GenAI consultant.
 
 
-[[FAANG]]ISH
+[[FAANG]] 
+[[@Chang Yuan]] - 
 [[@Theo Enns]] - 
 [[@Vittorio Castelli]] - 
 [[@Juan Huerta]]	- Ex-Amz

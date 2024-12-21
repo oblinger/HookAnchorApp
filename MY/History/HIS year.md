@@ -1,4 +1,5 @@
 
+[[2023 Head SW\|Wed Aug 23  2023]]  	[[2023 Head SW#Nico Hirsch]]  
 [[2023 Head SW\|Wed Aug 23  2023]]  	[[2023 Head SW#Sebastian Rosenbolt]]  
 [[2023 Head SW\|Wed Aug 23  2023]]  	[[2023 Head SW#Augustin]]  
 [[2023 Head SW\|Wed Aug 23  2023]]  	[[2023 Head SW#Octavio]]  

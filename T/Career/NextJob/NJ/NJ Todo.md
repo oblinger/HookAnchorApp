@@ -10,16 +10,19 @@
 - find the job posts; find people associated
 - Find few org
 
+
+
 ## TODO
-- [ ] resume match sites
+- [ ] Figure out your rack and stack list
+- [ ] Resume match sites
+- [ ] Update linked in About; add sports visio
 
 ## ROCKS [[NJ]] 
-- INTRV:	
+- [[Lrn]]:		Plan
+- INTRV:	Watch linked in.
 - DOCS:	[[Res]], [[RES War]], [[RES Star]], [Doc](spot://resdocx), 
 - CODE:	[[@Algo Monster]] practice for coding tests
 - [[RES]]: 		Get into final form.  Along with a cover letter?
-- [[Lrn]]:		Plan
-- [[NJ Read]]	Plan
 - [[NJ Plan]]:	
 - [[Coms]]:	Calling plan; Choose my [[BOD]]. 
 - [[@Pramp]]: Practice mock interviews

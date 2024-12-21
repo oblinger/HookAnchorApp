@@ -1,4 +1,5 @@
 
+[[BOOK Summaries\|Thu Oct 3  2024 ]]  	[[BOOK Summaries#2024 "The Reality Dysfunction" by Peter Hamilton]]  
 [[BOOK Summaries\|Thu Oct 3  2024 ]]  	[[BOOK Summaries#2024 "Pandora's Star" by Peter Hamilton]]  
 [[CV\|Thu Oct 3  2024 ]]  	[[CV#OLD]]  
 [[@Chase Bank\|Wed Oct 2  2024 ]]  	[[@Chase Bank#2024-10-01  Replacing lost card.  will recieve on Thursday.]]  

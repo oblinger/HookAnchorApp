@@ -1,7 +1,7 @@
 
 .[[CV]].
   ROOTS:[CV Root](spot://cvroot), [CV Confluence](spot://cvconfluence), [CV Jira Page](spot://cvjirapage),  [CV Notion](spot://cvnotion), , ,
-  DIRS:	[CV Google Page](spot://cvgooglepage), ,  , [[CV HowTo]], 
+  DIRS:	[CV Google Page](spot://cvgooglepage), ,  , ,
   ORGS:	[CV Docs](spot://cvdocs), , [CV Info](spot://cvinfo), ,
   ADDS:	, [CV Ana](spot://cvana), ,
   OLD:	[CVT](spot://cvt), [DSET](spot://dset), ,
@@ -19,8 +19,9 @@
   , [Docs Gdrive](spot://docsgdrive),
   , [Task](spot://task),
   , [AIMIN](spot://aimin),
-  , [Softbank](spot://softbank), 
-  DELS: [DOCs](spot://docs),[Results](spot://results),[DT](spot://dt),[Dataset](spot://dataset),[[CV Alg]], [[CV Algs]],
+  , [Softbank](spot://softbank),
+  , [[CV HowTo]], 
+  DELS: [DOCs](spot://docs),[Results](spot://results),[DT](spot://dt),[Dataset](spot://dataset),[[CV Alg]], [[CV Algs]],[[CV HowTo]],
 
   DELS: [Standup](spot://standup),[DD](spot://dd),
   DELS: [[CVP]],[[Info]], 
