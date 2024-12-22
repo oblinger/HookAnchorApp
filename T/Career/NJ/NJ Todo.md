@@ -18,13 +18,14 @@
 - [ ] Update linked in About; add sports visio
 
 ## ROCKS [[NJ]] 
+- [[Coms]]:	Calling plan; Choose my [[BOD]]. 
 - [[Lrn]]:		Plan
 - INTRV:	Watch linked in.
 - DOCS:	[[Res]], [[RES War]], [[RES Star]], [Doc](spot://resdocx), 
 - CODE:	[[@Algo Monster]] practice for coding tests
+
 - [[RES]]: 		Get into final form.  Along with a cover letter?
 - [[NJ Plan]]:	
-- [[Coms]]:	Calling plan; Choose my [[BOD]]. 
 - [[@Pramp]]: Practice mock interviews
 
 

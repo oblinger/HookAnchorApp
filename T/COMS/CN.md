@@ -1,17 +1,13 @@
-- Theo, Nick, Luis, Uri -> 
+
+- Nick, Luis, Uri -> 
 - Doug ping
 - [[@Uri Weiss]]			- Was @ Google, Mentors Leaders
 - [[@Luis Arrellano]]	- Show: [[RES]], [Pyramid](spot://respyramid), Very good at framing story
 
-Later: THEO, RODRIGO, 
 
-- praveen contacts for chatting
-- Braz boss info
-
-- call Luis; Melanie
--
+3 MONTH PING
 -  [[@Rafah Hosn]], [[@Melanie Dumas]], 
--  [[@Juan Huerta]],  [[@Nick Allen]],
+-  [[@Juan Huerta]],  
 
 
 FAANG:	[[@Felipe Lavratti]], [[@Dennis DeCoste]], 
@@ -36,8 +32,8 @@ FOR STRATEGY
 - Michael,
  Haddick, 
 
-STRAT:	 [[@Joe Hellerstein]], 
-STRAT2: [[@Michael Freed]], [[@Ron Brachman]], 
+STRAT:	[[@Joe Hellerstein]], 
+STRAT2: 	[[@Michael Freed]], [[@Ron Brachman]], 
 
 
 FAANG:	[[@Felipe Lavratti]], [[@Rafah Hosn]], [[@Juan Huerta]], [[@Dennis DeCoste]], 

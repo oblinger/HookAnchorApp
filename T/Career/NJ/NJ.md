@@ -1,3 +1,66 @@
+.[[NJ]].	  [[Lrn]],
+  TODO:	[[NJ Todo]],
+  TOP:	[NJ Slides](spot://njslides), [[NJ Log]], [[Seeking]], 
+  PARTS	[[NJ Targets]],
+  ROKS:		
+  , [[NJ Plan]],
+
+RELATED:	[[RES]], [[CRM]], 
+OLD:		[[NJ16]], [[NJ22]],[[GoogleJob]], [[Meta Coms]], 
+
+NOW:	[[NJ Todo]], [[Seeking]], 	
+
+
+## ... 
+- add leading targets to my slides
+low friction no-touch (or nearly notouch)
+portable/no-portable
+power/batt. RJ45/wifi
+two-fix
+
+Spreadsheet with options
+- configurability
+- 
+
+By May-1
+- find interesting hangout places
+
+- Burnish DL credentials
+
+OpenAI, Microsoft, Google, Meta, Nvidia, Tesla, Apple, or Amazon’s
+
+
+- [[Meta Coms]] 
+
+	- Interview Prep
+	- xoogler
+
+
+
+---
+not the best but also not terrible.  it is really hard to be the leader of a 20-person dev team and be trying to heavily job search at the same time.
+
+  
+
+Still on the good side, I have some really GREAT turn around stories to tell.  and I really am leveling up my practical leadership
+
+
+
+# INFO
+
+## TARGETS:
+- [[@Google]]:  [[GoogleJob]] 
+- Google.   [goog Dir](https://www.linkedin.com/jobs/view/3679525602/?refId=aA3%2FXgZwQSqtNz%2BgTk%2FLCw%3D%3D&midToken=AQGyXU4GbqUJFA&midSig=1PRTWpcHmo5aY1&trkEmail=eml-jobs_jymbii_digest-job_card-0-jobcard_body-null-59hu%7Elmph8w0y%7Ei5-null-null&eid=59hu-lmph8w0y-i5&otpToken=MTAwMTFiZTUxYTI4YzNjNWIyMjcwMGVhNDExOWU0YjY4N2NhZDU0MzkzYWQ4NzYyNzdjNTA4NmU0ODU4NTZiNWI0ODg4OTg1NzhiOWNmNTA4MmVlYzlmYzJiN2FmZGIxMGMwZTllMDJlNTc2NWIsMSwx) 
+- Unknowns: NetFlix, LinkedIn, Nvidia+.  ($800K @ meta+)
+- Lessers:  Meta, Amazon+, Apple 
+
+- [[@Googl[[perso#pp]]:  [[GoogleJob]] 
+- Google.   [goog Di[[perso#pp](https://www.linkedin.com/jobs/view/3679525602/?refId=aA3%2FXgZwQSqtNz%2BgTk%2FLCw%3D%3D&midToken=AQGyXU4GbqUJFA&midSig=1PRTWpcHmo5aY1&trkEmail=eml-jobs_jymbii_digest-job_card-0-jobcard_body-null-59hu%7Elmph8w0y%7Ei5-null-null&eid=59hu-lmph8w0y-i5&otpToken=MTAwMTFiZTUxYTI4YzNjNWIyMjcwMGVhNDExOWU0YjY4N2NhZDU0MzkzYWQ4NzYyNzdjNTA4NmU0ODU4NTZiNWI0ODg4OTg1NzhiOWNmNTA4MmVlYzlmYzJiN2FmZGIxMGMwZTllMDJlNTc2NWIsMSwx) 
+- Unknowns: NetFlix, LinkedIn, Nvidia+.  ($800K @ meta+)
+- Lessers:  Meta, Amazon+, Apple 
+
+
+
 .[[NextJob]].
   ,   [[NJ]], [[NJ16]], [[NJ22]], 
 
@@ -153,7 +216,7 @@ _
 ##### PLACES -- Dominating Analysis
 
 		SRI  <-less-work-more-research--  GOOGLE  <--less-work-better-place-  FACEBOOK
-### Topics
+### 2013 Topics
 #### Negotiating Compensation
 
 		- Rates.  $150 / hr  for basic Java programmer

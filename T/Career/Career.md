@@ -1,7 +1,7 @@
 
 .[[Career]].
   [CAR Coach](spot://carcoach)
-- [[NextJob]]
+- [[NJ]]
   ,   [[RES]],
   DELS: [[[Mentors](spot://mentors),
 
@@ -322,14 +322,14 @@
   DELS:  [RES](spot://res), [[CRM]],[BOD](spot://bod), 
 
 
-:: [[NextJob]]
+:: [[NJ]]
 
 .[[Career]].
 - [[CAR Coach]], 
 - [[CRM]]: Call 1-3 colleagues per week.
 - [[Job]]:	[[JOB Compensation]], 
 - [[MGR]]:	[[MGR Log]],
-- [[NJ]]:	[NextJob](NextJob.md), [[NJ22]], [[NJ]], 
+- [[NJ]]:	[NJ](NJ.md), [[NJ22]], [[NJ]], 
 - [[T/Career/RES/RES]]:	
 
 

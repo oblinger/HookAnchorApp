@@ -19,7 +19,7 @@
             [[RES]]: [[Bio]],	
                 [[RES Job History]]: 
                     [[AF]]: 
-            [[NextJob]]: [[NJ22]],	[[NJ]],	[[NJ16]],	
+            [[NJ]]: [[NJ22]],	[[NJ]],	[[NJ16]],	
         [[FIN]]: [[FIN Tracking]],	
             [[FIN Log]]: 
             [[FIN Bills]]: 

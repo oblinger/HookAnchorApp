@@ -2,9 +2,6 @@
   ,   [[BBI]], [[CIT]], [[Interviewing]], [[Interviewing Book]], [[Interviews]], 
 
 
-:: [[Interviewing Example Materials]]
-- [[Interviewing]] - 
-- [[Interviews]] 
-
+- [[Seeking]] - 
 - [[BBI]] - Behavioral Based Interviewing
 - [[CIT]] - 

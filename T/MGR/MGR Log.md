@@ -1,5 +1,5 @@
 
-:: [[Career]],   [[NextJob]],   [[T/Career/RES/RES]]
+:: [[Career]],   [[NJ]],   [[T/Career/RES/RES]]
 
 # LOG
 ### 2023-08-03  Customer Acquisition (from nick) ---

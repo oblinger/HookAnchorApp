@@ -2,7 +2,7 @@
 :: [[MED Todo]]
 .[[MED]].
   TOP:		[[MED Log]],
-  TOPICS:
+  TOPICS:	[[MED Heart Attack]], 
   [[Jet Lag]]:
   [[MED Blood Tests]]:
   :
