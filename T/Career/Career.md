@@ -1,9 +1,13 @@
 
 .[[Career]].
   [CAR Coach](spot://carcoach)
-- [[NJ]]
+-
   ,   [[RES]],
-  DELS: [[[Mentors](spot://mentors),
+  , ,
+  DELS: ,
+  , [[NJ]], 
+  DELS: ,[[NJ]],
+  DELS: [[[Mentors](spot://mentors),[[NJ]],[[NextJob]], [[[Mentors](spot://mentors), 
 
 
 

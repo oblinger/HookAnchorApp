@@ -2,7 +2,7 @@
 :: [[MED Todo]]
 .[[MED]].
   TOP:		[[MED Log]],
-  TOPICS:	[[MED Heart Attack]], 
+  TOPICS:	,
   [[Jet Lag]]:
   [[MED Blood Tests]]:
   :
@@ -30,9 +30,10 @@
   :
   , [[MED Food]],
   , ,
-  , [[MED Todo]], 
+  , [[MED Todo]],
   DELS: [[MED Todo]],
-  DELS: [[MED Todo]],[[MED.]], 
+  , [[MED Heart Attack]], 
+  DELS: [[MED Todo]],[[MED.]],[[MED Heart Attack]],
 
 
   DELS: [[Glycemic Index]], [[MED Blood Pressure]], [[MED Cholesterol]], [[MED Research]], [[MED VO2Max]], [[MED=]],[[run]],[[Exercise]],[[Exercise]], 

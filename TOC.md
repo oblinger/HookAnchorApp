@@ -1,7 +1,7 @@
 
 # TABLE OF CONENTS
 
-[[mate]],	[[Proj]],	[[Race]],	
+[[NJ]],	[[NJ22]],	[[NJ16]],	[[mate]],	[[Proj]],	[[Race]],	
 [[KMR]]: [[WEEKLY]],	
     [[RR]]: [[Lrn]],	[[RR PAPERS]],	[[RR Philosophy]],	[[RR MGR]],	
         [[RR SYSTEMS]]: 
@@ -19,7 +19,6 @@
             [[RES]]: [[Bio]],	
                 [[RES Job History]]: 
                     [[AF]]: 
-            [[NJ]]: [[NJ22]],	[[NJ]],	[[NJ16]],	
         [[FIN]]: [[FIN Tracking]],	
             [[FIN Log]]: 
             [[FIN Bills]]: 

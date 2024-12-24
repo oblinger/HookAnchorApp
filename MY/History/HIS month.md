@@ -1,4 +1,9 @@
 
+[[DL Strategy\|Fri Oct 4  2024 ]]  	[[DL Strategy#Learning Rate]]  
+[[2024-W40\|Fri Oct 4  2024 ]]  	[[2024-W40#2547]]  
+[[SYS Dashboards\|Thu Oct 3  2024 ]]  	[[SYS Dashboards#SYSTEM SCREEN LAYOUTS]]  
+[[BOOK Favorites\|Thu Oct 3  2024 ]]  	[[BOOK Favorites#Directions]]  
+[[BOOK Summaries\|Thu Oct 3  2024 ]]  	[[BOOK Summaries#2024 "The Expanse" Series by James S.A. Corey]]  
 [[BOOK Summaries\|Thu Oct 3  2024 ]]  	[[BOOK Summaries#2024 "The Reality Dysfunction" by Peter Hamilton]]  
 [[BOOK Summaries\|Thu Oct 3  2024 ]]  	[[BOOK Summaries#2024 "Pandora's Star" by Peter Hamilton]]  
 [[CV\|Thu Oct 3  2024 ]]  	[[CV#OLD]]  

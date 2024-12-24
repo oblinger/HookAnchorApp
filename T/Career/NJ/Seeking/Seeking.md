@@ -1,7 +1,10 @@
+.[[Seeking]].
+  , [[Seeking Questions]], 
+
 INTERVIEWING PREP
 
 FINDING QUESTIONS
-- Glassdoor 
+- [GlassDoor](spot://glassdoor1pass) 
 - Teamblind and maybe 
 - Fishbowl
 
@@ -11,6 +14,5 @@ ADVICE
 - [Topics — Ask a Manager](https://www.askamanager.org/topics-2) 
 
 
-[[Seeking Questions]] 
 
 # LOG

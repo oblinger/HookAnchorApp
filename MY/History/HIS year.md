@@ -1,4 +1,9 @@
 
+[[QQ\|Wed Aug 23  2023]]  	[[QQ#2023-08-13  INJEST]]  
+[[SV Mgt\|Wed Aug 23  2023]]  	[[SV Mgt#2023-08-09  AUG MGT MEETING]]  
+[[Dataset\|Wed Aug 23  2023]]  	[[Dataset#GROUND TRUTH DATA COLLECT]]  
+[[2023 Head SW\|Wed Aug 23  2023]]  	[[2023 Head SW#QUESTIONS]]  
+[[2023 Head SW\|Wed Aug 23  2023]]  	[[2023 Head SW#PEOPLE]]  
 [[2023 Head SW\|Wed Aug 23  2023]]  	[[2023 Head SW#Nico Hirsch]]  
 [[2023 Head SW\|Wed Aug 23  2023]]  	[[2023 Head SW#Sebastian Rosenbolt]]  
 [[2023 Head SW\|Wed Aug 23  2023]]  	[[2023 Head SW#Augustin]]  

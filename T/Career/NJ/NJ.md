@@ -1,14 +1,16 @@
 .[[NJ]].	  [[Lrn]],
   TODO:	[[NJ Todo]],
-  TOP:	[NJ Slides](spot://njslides), [[NJ Log]], [[Seeking]], 
+  TOP:	[NJ Slides](spot://njslides), [[NJ Log]], ,
   PARTS	[[NJ Targets]],
-  ROKS:		
+  ROKS:
   , [[NJ Plan]],
+  , [[NJ16]], [[NJ22]], [[Seeking]], 
+  DELS: [[Seeking]],
 
 RELATED:	[[RES]], [[CRM]], 
 OLD:		[[NJ16]], [[NJ22]],[[GoogleJob]], [[Meta Coms]], 
 
-NOW:	[[NJ Todo]], [[Seeking]], 	
+NOW:	[[NJ Todo]], [[Seeking]], [[NJ Targets]], 
 
 
 ## ... 
