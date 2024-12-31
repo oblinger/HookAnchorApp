@@ -1,4 +1,5 @@
 
+[[@Traxxas\|Fri Oct 4  2024 ]]  	[[@Traxxas#2024-10-03  Reset controller]]  
 [[DL Strategy\|Fri Oct 4  2024 ]]  	[[DL Strategy#Learning Rate]]  
 [[2024-W40\|Fri Oct 4  2024 ]]  	[[2024-W40#2547]]  
 [[SYS Dashboards\|Thu Oct 3  2024 ]]  	[[SYS Dashboards#SYSTEM SCREEN LAYOUTS]]  
@@ -1412,7 +1413,7 @@
 [[MAC Setup\|Thu Dec 28  2023]]  	[[MAC Setup#2023-11-17  CONDA - I now use conda for all python builds #b]]  
 [[FIN Analysis\|Thu Dec 28  2023]]  	[[FIN Analysis#Big Transactions]]  
 [[FIN Analysis\|Thu Dec 28  2023]]  	[[FIN Analysis#Total burn analysis]]  
-[[FIN Budgeting\|Thu Dec 28  2023]]  	[[FIN Budgeting#Stuff]]  
+[[FIN Budget\|Thu Dec 28  2023]]  	[[FIN Budget#Stuff]]  
 [[FIN Macro Tracking\|Thu Dec 28  2023]]  	[[FIN Macro Tracking#Tracking Monthly Cash Flows]]  
 [[FIN Macro Tracking\|Thu Dec 28  2023]]  	[[FIN Macro Tracking#Procedures]]  
 [[FIN Macro Tracking\|Thu Dec 28  2023]]  	[[FIN Macro Tracking#LOG]]  

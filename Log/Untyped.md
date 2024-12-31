@@ -5,6 +5,11 @@ n:: no prefix.	Dated entries without any typing prefix
 
 | Date       | File                                        | Notes                                                                                                                             |
 | ---------- | ------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------- |
+| 2024-12-29 | [[@Softbank]]                                   | New Note (As Sent)                                                                                                                |
+| 2024-12-29 | [[@Softbank]]                                   | New Year Note (Never Sent)                                                                                                        |
+| 2024-12-27 | [[@Schwab]]                                     | Plaid                                                                                                                             |
+| 2024-12-27 | [[@Schwab]]                                     | Open                                                                                                                              |
+| 2024-12-24 | [[MED Exercise]]                                | Ideas                                                                                                                             |
 | 2024-12-18 | [[@Chang Yuan]]                                 | Meeting                                                                                                                           |
 | 2024-12-18 | [[RR DEFINITIONS]]                              | Schelling Point                                                                                                                   |
 | 2024-12-18 | [[RR PAPERS]]                                   | DETRs Beat YOLOs on real-time object detection                                                                                    |
@@ -665,7 +670,7 @@ n:: no prefix.	Dated entries without any typing prefix
 | 2023-01-23 | [[SV]]                                          | Prior Inventions                                                                                                                  |
 | 2023-01-19 | [[DYL]]                                         | Dan Job                                                                                                                           |
 | 2023-01-11 | [[RES References]]                              | Grzegorz References                                                                                                               |
-| 2023-01-10 | [[FIN Budgeting]]                               | Energy Usage                                                                                                                      |
+| 2023-01-10 | [[FIN Budget]]                                  | Energy Usage                                                                                                                      |
 | 2023-01-09 | [[Habit]]                                       | Wake-First-MIT                                                                                                                    |
 | 2023-01-06 | [[AMA]]                                         | Fake Taylor's Tea                                                                                                                 |
 | 2023-01-03 | [[@Apple]]                                      | Laptop Repair                                                                                                                     |
@@ -1047,7 +1052,7 @@ n:: no prefix.	Dated entries without any typing prefix
 | 2020-08-17 | [[FIN Log]]                                     | QL - AYI payments                                                                                                                 |
 | 2020-08-15 | [[Journal Old]]                                 | My Futures                                                                                                                        |
 | 2020-07-23 | [[MAC Apps]]                                    | Applications folder                                                                                                               |
-| 2020-07-18 | [[FIN Budgeting]]                               | Budget                                                                                                                            |
+| 2020-07-18 | [[FIN Budget]]                                  | Budget                                                                                                                            |
 | 2020-05-11 | [[OLD 2020 Weekly]]                             | NOW COUNTING 90 SLOTS                                                                                                             |
 | 2020-04-27 | [[MED Log]]                                     | Notes for doc meeting                                                                                                             |
 | 2020-04-14 | [[MED Log]]                                     | Stress test results                                                                                                               |

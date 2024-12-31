@@ -1,6 +1,7 @@
 
-- [Spreadsheet Budget](/Users/oblinger/ob/kmr/T/FIN/FIN_Budget/Budget.xlsx)
-- (See [[FIN Flows]] for coarse grained budget)
+- [[FIN Flows]]: coarse grained budget
+- [[T/FIN/FIN Budget/Budget.xlsx|Budget Sheet]]: 
+- [[FIN Categories]]: Budget categories
 
 
 

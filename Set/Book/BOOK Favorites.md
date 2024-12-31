@@ -48,8 +48,16 @@ MY FAVORITE SCIFI BOOKS INCLUDE
 
 "The Left Hand of Darkness" by Ursula Le Guin
 
+"The Quantum Thief" by Hannu Rajaniemi.
+- the book had so many novel ideas
 
 OTHER GOOD SCIFI BOOKS INCLUDE
+
+"Dune" by Frank Herbert
+
+"Hyperion" by Dan Simmons
+
+"The Moon is a Harsh Mistress" by Robert A. Heinlein
 
 "House of Suns" by Alistar Renolds
 
@@ -79,6 +87,8 @@ BOOKS THAT WERE JUST OK
 I loved the society described and the concept of the proto-molecule, but the story had big plot holes that were frustrating.
 
 Begins with _"Leviathan Wakes,"_ this series blends space opera with hard science and complex political and societal themes, focusing on humanity's expansion into space.
+
+"Solaris" by Stanislaw Lem
 
 
 ### To Consider

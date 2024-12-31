@@ -1,9 +1,9 @@
 
 ## = ACCOUNTS  (audit list is complete)
 ### BANK
-#### DanO - BofA (Checking&Savings)
-#### BofA Mortgage (House Loan)
-#### DanO Checking - Schwab (Investments)
+#### BofA - DanO Personal (Checking&Savings)
+#### BofA - Mortgage (House Loan)
+#### Schwab - DanO Checking -  (Investments)
 #### Chase - Grand Central (Investments)
 #### Chase - Monthly Spending (Investments)
 #### Chase - Sporadic Spending (Investments) 
@@ -13,12 +13,12 @@
 #### Cap One - Dan Personal
 #### Wells - Utilities Card 
 2% cash back
-#### Wells - QL Spending
+#### Wells - QL Spending Card
 2% cash back
-#### Freedom - Dan Spending
-#### Amazon - Groc
-#### Amazon - Misc
-#### Sapphire - Travel / Sporadic Spending Card
+#### Freedom - Dan Spending Card
+#### Amazon - Groc Card 
+#### Amazon - Misc Card
+#### Sapphire - Travel Card - / Sporadic Spending Card
 
 
 ### OTHER

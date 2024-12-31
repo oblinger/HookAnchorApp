@@ -1,7 +1,7 @@
 .[[FIN Tracking]].
   ,   [[FIN Macro Tracking]], 
 
-- [[FIN Budgeting]]:		
+- [[FIN Budget]]:		
 - [[FIN Flows]]:
 - [[FIN Recurring]]:		List of all recurring payments
 - [[FIN Mint]]:			Used for monthly tracking of transactions  (ALL CARDS)

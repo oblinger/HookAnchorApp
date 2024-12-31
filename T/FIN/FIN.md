@@ -6,7 +6,7 @@
   [[FIN Accounts]]:
   [[FIN Analysis]]:
   [[FIN Bills]]:
-  [[FIN Budgeting]]:
+  [[FIN Budget]]:
   [[FIN Flows]]:
   [[FIN Log]]:
   [[FIN Macro Tracking]]:
@@ -143,7 +143,7 @@
   :
   :
   :
-  ADDS:   , , , , [[BillPay]], [[Expenses]], , , [[FIN Analysis]], [[FIN Bills]], [[FIN Budgeting]], [[FIN Flows]]
+  ADDS:   , , , , [[BillPay]], [[Expenses]], , , [[FIN Analysis]], [[FIN Bills]], [[FIN Budget]], [[FIN Flows]]
   , , [[FIN Mint]], , [[FIN Retire]], [[FIN Topics]], [[FIN Tracking]], , [[Taxes]], ,
   ADDS:   ,
   ,   [[FIN Log]],
