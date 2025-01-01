@@ -1,6 +1,16 @@
 
-### __
-(See [[Phone]] Sell Acura)
+### INFO
+
+Ad ID: 14455624
+AutoTrader: 866-288-6872
+PSX: #3 then #3
+
+PSX: 800-736-1777
+PSX Texted me on:  ‭+1 (206) 558-6477‬
+PSXsupport@Autotrader.com
+
+Mena:  ‭+1 (781) 552-2116‬
+
 
 ### The plan
 

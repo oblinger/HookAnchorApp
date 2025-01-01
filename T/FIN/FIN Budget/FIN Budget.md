@@ -1,3 +1,6 @@
+.[[FIN Budget]].
+  , [[FIN Categories]], 
+
 
 - [[FIN Flows]]: coarse grained budget
 - [[T/FIN/FIN Budget/Budget.xlsx|Budget Sheet]]: 

@@ -20,6 +20,7 @@ clean email
 
 ## SMALLER
 ### CHASE FREEDOM x4654
+### WELLS UTILITIES
 - +$65/yr 		AAA Home Insurance
 - +$834/bi  	GEICO
 - +$163/mo 	AT&T
@@ -37,6 +38,8 @@ clean email
 - +$				CR On Health
 - +$0/yr		1-Password (paid by QL's work)
 - $99/yr		WSJ - Wall Street Journal  (Goes to $500/yr in Aug-2025)
+- $59/yr		Tangle
+- ??? 			Flipside not sure which card
 
 ### +DAN APPLE (paid from Wells Utilities)
 - $26/mo		Apple iCloud 2TB Storage 
