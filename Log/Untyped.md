@@ -5,6 +5,7 @@ n:: no prefix.	Dated entries without any typing prefix
 
 | Date       | File                                        | Notes                                                                                                                             |
 | ---------- | ------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------- |
+| 2025-01-01 | [[ELI Quotes]]                                  |                                                                                                                                   |
 | 2024-12-29 | [[@Softbank]]                                   | New Note (As Sent)                                                                                                                |
 | 2024-12-29 | [[@Softbank]]                                   | New Year Note (Never Sent)                                                                                                        |
 | 2024-12-27 | [[@Schwab]]                                     | Plaid                                                                                                                             |

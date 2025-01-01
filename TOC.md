@@ -20,7 +20,7 @@
                 [[RES Job History]]: 
                     [[AF]]: 
             [[NJ]]: [[Seeking]],	[[NJ22]],	[[NJ16]],	
-        [[FIN]]: [[FIN Tracking]],	
+        [[FIN]]: [[FIN Budget]],	[[FIN Tracking]],	
             [[FIN Log]]: 
             [[FIN Bills]]: 
             [[FIN Topics]]: 

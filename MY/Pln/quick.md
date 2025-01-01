@@ -1,3 +1,4 @@
+- delete copilot
 - check apple.com spending 9 & 13
 - adjust geico and AAA to use saphire
 - cancel "Next Up" from Qingling's phone
