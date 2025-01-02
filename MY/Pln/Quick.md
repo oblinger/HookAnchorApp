@@ -1,3 +1,4 @@
+- bronco battery
 - delete copilot
 - check apple.com spending 9 & 13
 - adjust geico and AAA to use saphire

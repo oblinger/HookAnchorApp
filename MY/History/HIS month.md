@@ -1,4 +1,5 @@
 
+[[Reflections\|Tue Oct 15  2024]]  	[[Reflections#2024-08-14  Stressed & Procrastinating]]  
 [[Mgt\|Tue Oct 15  2024]]  	[[Mgt#2024-10-14  weekly (never presented)]]  
 [[DocGCP\|Mon Oct 14  2024]]  	[[DocGCP#Start]]  
 [[2024-W42\|Mon Oct 14  2024]]  	[[2024-W42#W42   2024-10-14   [[2024-W41\\|<<]] [[2024-W43\\|>>]]]]  
