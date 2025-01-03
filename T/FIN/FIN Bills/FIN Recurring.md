@@ -19,6 +19,7 @@ clean email
 - ? NYtimes
 
 ## SMALLER
+Tangle (on Sapphire card)
 ### CHASE FREEDOM x4654
 ### WELLS UTILITIES
 - +$65/yr 		AAA Home Insurance
@@ -39,7 +40,6 @@ clean email
 - +$0/yr		1-Password (paid by QL's work)
 - $99/yr		WSJ - Wall Street Journal  (Goes to $500/yr in Aug-2025)
 - $59/yr		Tangle
-- ??? 			Flipside not sure which card
 
 ### +DAN APPLE (paid from Wells Utilities)
 - $26/mo		Apple iCloud 2TB Storage 
@@ -48,7 +48,7 @@ clean email
 - $9/mo		xxx?  Dan's Apple iCloud
 - $---			Apple TV+
 - $---			Disney+
-
+$13.99 per month and $9.99 per month what are thsese?
 ### PAYPAL			
 	Web -> {setting gear} -> Payments -> Manage Automatic Payments
 - $0/yr			12/10/22	Seeking Alpha renews ?? 2023-12-??
@@ -64,6 +64,7 @@ clean email
 - $43/yr		Clean Email
 - $60/yr		Sleep With Me Podcast
 - 				Obsidian Publish  (cancelled $20/mo)
+- ??? 			Flipside
 
 ### QL RECURRING
 - Apple: OpenSnow $32, 

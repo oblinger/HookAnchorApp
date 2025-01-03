@@ -1,3 +1,4 @@
+- QA reporting process; meeting w/ Jasu & Mery
 - bronco battery
 - delete copilot
 - check apple.com spending 9 & 13
