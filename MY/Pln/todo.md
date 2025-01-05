@@ -1,4 +1,4 @@
-- 
+
 [[@schwab]] 
 - Avanti: 
 - emile oster parenting podcast
@@ -6,7 +6,7 @@
 
 - [ ] [[MED Todo]] - [[MED VO2Max]] 
 - [ ] Call vanguard to move funds to new account
-- [ ] ask doctor about going above max heart rate
+- [ ] ask doctor about going above max heart rate.fr
 
 TRACK
 - [ ] do recalls on Audi

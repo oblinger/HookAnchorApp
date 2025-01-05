@@ -1,7 +1,7 @@
 .CHK.
 	F11 [VBspeed](https://www.notion.so/sportsvisio/VB-Speedup-Analysis-152719d6f2bd80c5ab68f7e499cb4d44?pvs=4) 
     F11 [AWS](https://docs.google.com/document/d/1QS4081TT_Yyz1TS9GLZSfjQaczQ7ynzWTSu14waDcG0/edit?tab=t.0):	Jason - AWS costs
-- grz contract extend
+- grz contract discuss
 .**NOW**.
 	[DT](spot://dt): 	[Homo](https://www.notion.so/sportsvisio/STORY-Homography-Data-Martin-4ab7ed5c5a6b46b1ac7de9821b3a5c76?pvs=4)^shot  [BB](https://www.notion.so/sportsvisio/STORY-BB-Data-105719d6f2bd809d9170c84a0c8d762d?pvs=4):B^obj Q4 
     [Min](spot:://AI~MIN):	[Alpha](https://www.notion.so/sportsvisio/AI-MIN-Alpha-Testing-James-118719d6f2bd80bb8280fdeafac784f3?pvs=4):  [docs](https://www.notion.so/sportsvisio/AI-MIN-Normalization-134719d6f2bd80d0ba8fcf754fc270cb?pvs=4) 
@@ -23,6 +23,11 @@ DWS:	[WU11970](https://software-engineering-team.atlassian.net/browse/WU-1970)  
 Regression Testing...
 - softbank spec
 
+- "Goodness" metric
+- QA reporting process; meeting w/ Jasu & Mery
+
+- Double/triple where we are today
+- what is percentage of accrate game.
 
   
 [[FIN Todo]]	Schwab

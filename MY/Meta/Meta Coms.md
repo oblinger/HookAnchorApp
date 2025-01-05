@@ -1,7 +1,7 @@
 
 PAGES:   	
 - [[COMS]] 		- Top page for communications
-- [[COM Next]]	- Rollup planning for all comm related stuff
+- [[CN]] [[COM Next]]- Rollup planning for all comm related stuff
 - [[Mentors]] 	- Tracking and planning around mentors
 - [[CRM]]			- Generated tracking page
 - [[Calls]]			- Personal calls 

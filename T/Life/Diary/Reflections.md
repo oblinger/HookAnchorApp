@@ -1,5 +1,20 @@
 
 
+### 2025-01-03  Get Serious About Interviewing
+
+- Schedule interviews
+- Schedule meetings w/ mentors
+- Train many days
+- Drop hours on SV.  Done by 12
+
+### 2025-01-03  NEW YEARS RESOLUTION -- Get Healthy!
+
+- Exercise 4 days per week at least 40 minutes
+- Strength training 1 per week
+- Max heart rate 1 per week
+
+
+
 ### 2024-12-16  Need to push for specific targets for a day or period
 
 - Had luck when I pushed to get code ready for Juan... ended work hard into the night, but was very productive

@@ -220,6 +220,18 @@ DISCUSS
 
 meeting this week?  AI-min ramp, shot chart ramp
 
+### 2025-01-03  W
+
+- Shot charts - 
+- Minutes - Normalization
+- Infrastructure -
+- Softbank - BB stats - Edits metric
+- Advanced features: 
+	- SemanticShotCharts
+	- Examples/Stats of plays & players
+		- GiveGo, Iso, Backdoor Cut
+		- Pick&Roll, Pick&Pop, Pick&Slip
+
 ### 2024-11-19  Meet in San Bruno
 
 - FB alpha

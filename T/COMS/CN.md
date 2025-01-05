@@ -3,11 +3,12 @@
 - Doug ping
 - [[@Uri Weiss]]			- Was @ Google, Mentors Leaders
 - [[@Luis Arrellano]]	- Show: [[RES]], [Pyramid](spot://respyramid), Very good at framing story
+- [[@Dennis DeCoste]]	- 
 
 
 3 MONTH PING
 -  [[@Rafah Hosn]], [[@Melanie Dumas]], 
--  [[@Juan Huerta]],  
+-  [[@Juan Huerta]],
 
 
 FAANG:	[[@Felipe Lavratti]], [[@Dennis DeCoste]], 
@@ -25,12 +26,11 @@ TIER TWO:
  [[@John Davis]], [[@David Israel]], [[@Jack Porter]], 
 
 
+## Possible Mentors
 
 FINDING GOOD MENTORS
 
-FOR STRATEGY
-- Michael,
- Haddick, 
+FOR STRATEGY: Michael, Haddick, 
 
 STRAT:	[[@Joe Hellerstein]], 
 STRAT2: 	[[@Michael Freed]], [[@Ron Brachman]], 

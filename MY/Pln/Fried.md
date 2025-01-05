@@ -1,3 +1,10 @@
+- renew oblinger.us
+- 
+
+- adjust geico and AAA to use saphire
+- cancel "Next Up" from Qingling's phone
+- remove extra charges on ATT
+- - check apple.com spending 9 & 13
 - km seem to have a broken github link
 - Get one annual payment on penfed get auto pay, get emails to oblinger???
 - https://www.amazon.com/Naturehike-YL08-Backpacking-Anti-Sinking-Lightweight/dp/B0CWG543T3/ref=sxin_16_pa_sp_search_thematic_sspa?content-id=amzn1.sym.138b1752-1feb-4f66-9678-fccc5f256ade%3Aamzn1.sym.138b1752-1feb-4f66-9678-fccc5f256ade&crid=3PQFXXJE57MH7&cv_ct_cx=camp%2Bchairs&keywords=camp%2Bchairs&pd_rd_i=B0CWG543T3&pd_rd_r=4bf74e1f-061e-4c46-9c89-aa253c1ae43f&pd_rd_w=IXv5x&pd_rd_wg=KYmda&pf_rd_p=138b1752-1feb-4f66-9678-fccc5f256ade&pf_rd_r=AJSVNREZPK8W9MYS5XCG&qid=1733453484&refinements=p_n_feature_four_browse-bin%3A69690553011&rnid=23558233011&s=sporting-goods&sbo=RZvfv%2F%2FHxDF%2BO5021pAnSA%3D%3D&sprefix=camp%2Bchairs%2Caps%2C185&sr=1-3-9428117c-b940-4daa-97e9-ad363ada7940-spons&sp_csd=d2lkZ2V0TmFtZT1zcF9zZWFyY2hfdGhlbWF0aWM&th=1

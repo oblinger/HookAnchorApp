@@ -1,6 +1,5 @@
 
 - [[NJ Targets Table.xlsx]], 
-- [[@X AI]] 
 
 
 
@@ -13,3 +12,4 @@ Microsoft	?
 Nvidia		yes	Entreprenurial, not workaholic
 Tesla		no		Toxic, slaving
 Netflix		yes
+

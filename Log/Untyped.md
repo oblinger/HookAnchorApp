@@ -5,6 +5,10 @@ n:: no prefix.	Dated entries without any typing prefix
 
 | Date       | File                                        | Notes                                                                                                                             |
 | ---------- | ------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------- |
+| 2025-01-04 | [[@Apple]]                                      | 2024-07-05  Airmax repair                                                                                                         |
+| 2025-01-03 | [[Reflections]]                                 | Get Serious About Interviewing                                                                                                    |
+| 2025-01-03 | [[Reflections]]                                 | NEW YEARS RESOLUTION -- Get Healthy!                                                                                              |
+| 2025-01-03 | [[@Jason Syversen]]                             | W                                                                                                                                 |
 | 2025-01-01 | [[ELI Quotes]]                                  |                                                                                                                                   |
 | 2024-12-29 | [[@Softbank]]                                   | New Note (As Sent)                                                                                                                |
 | 2024-12-29 | [[@Softbank]]                                   | New Year Note (Never Sent)                                                                                                        |
@@ -161,7 +165,6 @@ n:: no prefix.	Dated entries without any typing prefix
 | 2024-07-10 | [[@Jason Syversen]]                             | Sync on team                                                                                                                      |
 | 2024-07-09 | [[SNIP]]                                        | Chunch                                                                                                                            |
 | 2024-07-08 | [[@Jason Syversen]]                             | Move Faster                                                                                                                       |
-| 2024-07-05 | [[@Apple]]                                      | Airmax repair                                                                                                                     |
 | 2024-06-26 | [[POL]]                                         | Fixing Banking                                                                                                                    |
 | 2024-06-20 | [[Trump]]                                       | Trying to limit FED independence                                                                                                  |
 | 2024-06-18 | [[QQ]]                                          | Lessons Learned From Minutes                                                                                                      |

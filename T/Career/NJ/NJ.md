@@ -1,16 +1,19 @@
 .[[NJ]].	  [[Lrn]],
-  TODO:	[[NJ Todo]],
-  TOP:	[NJ Slides](spot://njslides), [[NJ Log]], ,
+  PLAN:	[[NJ Todo]], [[NJ Plan]], [[Seeking]],
+  TOP:	[NJ Slides](spot://njslides), [[NJ Log]],
   PARTS	[[NJ Targets]],
-  ROKS:
-  , [[NJ Plan]],
-  , [[NJ16]], [[NJ22]], [[Seeking]], 
-  DELS: [[Seeking]],
+  ROCKS [[Seeking]], 
+  OLD:	[[NJ16]], [[NJ22]],
 
-RELATED:	[[RES]], [[CRM]], 
-OLD:		[[NJ16]], [[NJ22]],[[GoogleJob]], [[Meta Coms]], 
+NOW:
+- [[LRN Todo]]:	
+- [[NJ Targets]]:	3 interview targets
+- [[NJ Todo]]:	[[RES]]
+- [[CN]]:			Uri, Luis, 
+- [[BOD]]:			Get Coach?
 
-NOW:	[[NJ Todo]], [[Seeking]], [[NJ Targets]], 
+RELATED:	 [[CRM]], 
+OLD:		[[GoogleJob]], [[Meta Coms]], 
 
 
 ## ... 
@@ -28,8 +31,6 @@ By May-1
 - find interesting hangout places
 
 - Burnish DL credentials
-
-OpenAI, Microsoft, Google, Meta, Nvidia, Tesla, Apple, or Amazon’s
 
 
 - [[Meta Coms]] 

@@ -8,8 +8,8 @@ H0YF518KP3WC
 Lookup Case
 -  [[@Alexander Toshev]], 
 
-## INFO / DEVICES / HOWTO
-### INFO
+
+## INFO
 
  [Apple.com](https://apple.com),  
 - 800-692-7753 Apple Repair
@@ -34,6 +34,7 @@ DISABLE PAY	Phone->Settings->Screen Time ->
 Content … Restrictions -> iTunes… Purchases ->
 COVERAGE		https://checkcoverage.apple.com/ 
 DEVICES		Web AppleID -> Devices
+-- CaseNum	https://getsupport.apple.com/caselookup
 iPhone-X		F17WK1VYJCL8
 ~
 800.275.2273 USA. (never tried)
@@ -67,6 +68,8 @@ CHAT:  http://store.apple.com/us/help/contact   (press chat bubble at top)
 
 Retina15 Serial:  C02V811RHTD9
 
+
+## DEVICES
 ### 2023 LAPTOP
 
 
@@ -94,11 +97,21 @@ Hardware Serial Number	C02V811RHTD9
 
 # LOG
 
-### 2024-07-05  Airmax repair
+### 2025-01-04 - 2024-07-05  Airmax repair
 
+- Serial:  H0YMG2NV01TV
 - https://getsupport.apple.com/caselookup
 - Case #102339787985
-- 
+
+Back in August I reported this issue (Case #102339787985). It is still not resolved!
+Once a day  the Airpod Max device locks up.  
+Noise cancelling is on, but no buttons work (e. g. to toggle noise cancelling)
+A hard reset will fix it, but the problem will recur over and over.
+
+case #102503695844 
+Order No: D653664445
+
+
 ### 2023-04-07  Sent in for
 
 Send in for repair. #  20000082294343

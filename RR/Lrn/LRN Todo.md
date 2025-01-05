@@ -1,6 +1,5 @@
 - [[CV HowTo]] - run system
 - [[CV HowTo]] - learn about system
-- 
 
 ## __
 
@@ -28,6 +27,7 @@ KNOW:		100 algs
 
 ## Rocks
 - ^ \_ S  SPACED REPETITION. (Add shift for review)
+- Train system
 - Code@work.	LeetCoding.
 - Scan cv-research and look at papers
 - DL Specialization: Sequence Models (not yet started)
