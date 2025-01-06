@@ -10,6 +10,9 @@
   DL ALG2:	[[KAN - Kolmogorov-Arnold Neworks]], [[DSPY System]],
   [[DL SYS]]:	[[GPT]], [[Segment Anything]], [[RASA]],
   [[DL Notation]]:	[[NG Notation]],
+  , [[CNNs]], [[DL Alg]], [[DL Opto]], [[DL Strat]], [[DL Strategy]], [[DL Theory]], [[Embedding]]
+  , [[Positional Encoding]], [[RLHF]], [[Tensor]],
+  , [[DL Areas]], [[Mech Interp]], 
 
 [[DL Areas]]
 

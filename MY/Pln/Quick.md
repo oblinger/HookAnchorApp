@@ -1,3 +1,4 @@
+- trajectory for AI-minutes
 
 - HUI billing  800 478-8837
 - Story for data collection; James; process for norm
