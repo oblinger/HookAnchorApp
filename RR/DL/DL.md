@@ -9,25 +9,11 @@
   .			[[VAEs]], ,
   DL ALG2:	[[KAN - Kolmogorov-Arnold Neworks]], [[DSPY System]],
   [[DL SYS]]:	[[GPT]], [[Segment Anything]], [[RASA]],
-  [[DL Notation]]:	[[NG Notation]], :
-  ,
-  ADDS:   , , , ,
-  ADDS:   , , ,
-  ADDS:   , , ,
-  ADDS:   [[CNNs]], [[DL Opto]], [[DL Strat]],
-  ,   [[DL Alg]],
-  , ,
-  DELS: ,
-  , ,
-  DELS: ,,
-  , ,
-  , , ,
-  , , ,
-  , ,
-  DELS: ,,, ,
-  , [[DL Strategy]], [[DL Theory]], [[Embedding]], [[Positional Encoding]], [[RLHF]], [[Tensor]], 
-  DELS: ,[[RLHF]],, ,[[RLHF]], [[RLHF]], [[Tensor]], [[DL Strategy]], [[DL Theory]], [[Embedding]], [[Positional Encoding]],
-  DELS: [[Coursera Notes]],[[RLHF]],[[RLHF Reinforcement Learning from Human Feedback]], [[Coursera Notes]],[[RLHF]], [[RLHF]], [[Tensor]], [[DL Strategy]], [[DL Theory]], [[Embedding]], [[Positional Encoding]],[[RLHF Reinforcement Learning from Human Feedback]], [[Coursera Notes]], [[RLHF Reinforcement Learning from Human Feedback]], [[Coursera Notes]], 
+  [[DL Notation]]:	[[NG Notation]],
+
+[[DL Areas]]
+
+
 
 [[Tensor]] 
 

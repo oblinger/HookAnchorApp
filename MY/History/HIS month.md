@@ -1,4 +1,13 @@
 
+[[@Shawn Coe\|Mon Oct 28  2024]]  	[[@Shawn Coe# [CTO](https://www.linkedin.com/in/shawncoe)]]  
+[[2024-W44\|Mon Oct 28  2024]]  	[[2024-W44#W44   2024-10-28   [[2024-W43\\|<<]] [[2024-W45\\|>>]]]]  
+[[BKT\|Mon Oct 28  2024]]  	[[BKT#2024-10-27  buckets]]  
+[[@Jason Syversen\|Sat Oct 26  2024]]  	[[@Jason Syversen#2024-10-25  Matia's Value]]  
+[[RES Star\|Fri Oct 25  2024]]  	[[RES Star#...]]  
+[[RES Star\|Fri Oct 25  2024]]  	[[RES Star#star]]  
+[[RES Star\|Fri Oct 25  2024]]  	[[RES Star#star - Aeolus Bang Start]]  
+[[DAT\|Tue Oct 22  2024]]  	[[DAT#Setup/Status]]  
+[[Reflections\|Tue Oct 22  2024]]  	[[Reflections#2024-10-21  Focus on deep work hours & emotional stance & fu]]  
 [[2024-W43\|Tue Oct 22  2024]]  	[[2024-W43#W43   2024-10-21   [[2024-W42\\|<<]] [[2024-W44\\|>>]]]]  
 [[Eli Firsts\|Sun Oct 20  2024]]  	[[Eli Firsts#2024-10-16  Diaper man!]]  
 [[2024-W42\|Sun Oct 20  2024]]  	[[2024-W42#__]]  

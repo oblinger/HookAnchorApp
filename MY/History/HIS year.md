@@ -1,4 +1,13 @@
 
+[[DocSQL\|Mon Oct 2  2023 ]]  	[[DocSQL#DB-POSTGRES]]  
+[[DocSciKit\|Mon Oct 2  2023 ]]  	[[DocSciKit#LOGISTIC REGRESSION]]  
+[[DocVagrant\|Mon Oct 2  2023 ]]  	[[DocVagrant#Dan Notes]]  
+[[DocVagrant\|Mon Oct 2  2023 ]]  	[[DocVagrant#jotter vagrant install notes]]  
+[[DocVagrant\|Mon Oct 2  2023 ]]  	[[DocVagrant#   failed to     pip install scipy]]  
+[[DocVagrant\|Mon Oct 2  2023 ]]  	[[DocVagrant#what do do with the 'forward a local port' section]]  
+[[DocVagrant\|Mon Oct 2  2023 ]]  	[[DocVagrant#Connecting to the couchbase in vagrant]]  
+[[DocVagrant\|Mon Oct 2  2023 ]]  	[[DocVagrant#Restart postgres]]  
+[[DocVagrant\|Mon Oct 2  2023 ]]  	[[DocVagrant#Add sudo users to wheel group.]]  
 [[DocVagrant\|Mon Oct 2  2023 ]]  	[[DocVagrant#Restart iptables]]  
 [[DocVagrant\|Mon Oct 2  2023 ]]  	[[DocVagrant#Reboot the VM]]  
 [[DocVagrant\|Mon Oct 2  2023 ]]  	[[DocVagrant#Virtual Box]]  
