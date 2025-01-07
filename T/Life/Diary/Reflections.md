@@ -1,4 +1,8 @@
+### 2025-01-06  Done By One
+I am working too much on SV and not on NJ
 
+- Done by one.  Includes my breakfast at 11
+- Then 30-min focused NJ work starting 12-2p
 
 ### 2025-01-03  Get Serious About Interviewing
 

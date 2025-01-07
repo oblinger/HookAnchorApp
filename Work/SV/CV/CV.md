@@ -10,7 +10,7 @@
   , [[CV Hack Notes]], [[CV Log]], [[CVP]], [CV Page](spot://cvpage), [[Data]],
   , [DT alias Data Tasks](spot://dtaliasdatatasks), , [[SVCV Re-ID]]
   , [svdata](spot://svdata),
-  , [STORY](spot://story),
+  , ,
   , [RESULT](spot://result),
   , [docs](spot://docs),
   , ,
@@ -20,8 +20,10 @@
   , [Task](spot://task),
   , [AIMIN](spot://aimin),
   , [Softbank](spot://softbank),
-  , [[CV HowTo]], 
-  DELS: [DOCs](spot://docs),[Results](spot://results),[DT](spot://dt),[Dataset](spot://dataset),[[CV Alg]], [[CV Algs]],[[CV HowTo]],
+  , [[CV HowTo]],
+  , [Story](spot://story),
+  DELS: ,,,,[[CV Alg]], [[CV Algs]],[[CV HowTo]],
+  DELS: [DOCs](spot://docs),[Results](spot://results),[DT](spot://dt),[Dataset](spot://dataset),[[CV Alg]], [[CV Algs]],[[CV HowTo]],[STORY](spot://story),[DOCs](spot://docs), [Results](spot://results), [DT](spot://dt), [Dataset](spot://dataset), 
 
   DELS: [Standup](spot://standup),[DD](spot://dd),
   DELS: [[CVP]],[[Info]], 

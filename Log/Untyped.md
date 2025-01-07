@@ -5,6 +5,8 @@ n:: no prefix.	Dated entries without any typing prefix
 
 | Date       | File                                        | Notes                                                                                                                             |
 | ---------- | ------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------- |
+| 2025-01-06 | [[@Apple]]                                      | pod pro replace bud                                                                                                               |
+| 2025-01-06 | [[Reflections]]                                 | Done By One                                                                                                                       |
 | 2025-01-04 | [[@Apple]]                                      | 2024-07-05  Airmax repair                                                                                                         |
 | 2025-01-03 | [[Reflections]]                                 | Get Serious About Interviewing                                                                                                    |
 | 2025-01-03 | [[Reflections]]                                 | NEW YEARS RESOLUTION -- Get Healthy!                                                                                              |

@@ -1,4 +1,4 @@
-
+consider TSA-pre 
 [[@schwab]] 
 - Avanti: 
 - emile oster parenting podcast

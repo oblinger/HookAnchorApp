@@ -1,3 +1,6 @@
+- get new version in production
+- write down process for collecting 50 GT games
+- R&D time spreadsheets
 - trajectory for AI-minutes
 
 - HUI billing  800 478-8837

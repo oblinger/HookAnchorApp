@@ -70,6 +70,8 @@ Retina15 Serial:  C02V811RHTD9
 
 
 ## DEVICES
+### 2024 DAN POD MAX
+
 ### 2023 LAPTOP
 
 
@@ -96,6 +98,9 @@ Hardware Serial Number	C02V811RHTD9
 
 
 # LOG
+### 2025-01-06  pod pro replace bud
+
+Ok your replacement has been set up, this is your repair ID -> D645078396
 
 ### 2025-01-04 - 2024-07-05  Airmax repair
 
