@@ -20,15 +20,16 @@ QA:	G[QAmin](https://software-engineering-team.atlassian.net/jira/software/proje
 [PAID](https://www.notion.so/sportsvisio/AI-MIN-Premium-Paid-Feature-128719d6f2bd80ffbb41db0441d57770?pvs=4):	.
 [[2024-08 Backend Architect|Arch]]:	Brian
 DWS:	[WU11970](https://software-engineering-team.atlassian.net/browse/WU-1970)   /Matias[DWS](https://software-engineering-team.atlassian.net/browse/WU-1946) 
-Regression Testing...
-- softbank spec
 
+- Data task stories
+- okrs begin Q1
 - "Goodness" metric
 - QA reporting process; meeting w/ Jasu & Mery
 
 - Double/triple where we are today
 - what is percentage of accrate game.
-
+- write down process for collecting 50 GT games
+- R&D time spreadsheets
   
 [[FIN Todo]]	Schwab
 [[NJ]]:	>[[War|War]], rewrite, mentor

@@ -1,4 +1,10 @@
 
+[[Regularization\|Tue Oct 29  2024]]  	[[Regularization#L1 (Lasso) REGULARIZATION]]  
+[[Lrn.\|Tue Oct 29  2024]]  	[[Lrn.#Sources To Read]]  
+[[2024-04-01 Resume Rewrite\|Tue Oct 29  2024]]  	[[2024-04-01 Resume Rewrite#SECTIONS]]  
+[[RES Proof Points\|Tue Oct 29  2024]]  	[[RES Proof Points#.]]  
+[[Eli Strategy\|Tue Oct 29  2024]]  	[[Eli Strategy#RESISTANCE RESPONSE]]  
+[[Mgt\|Tue Oct 29  2024]]  	[[Mgt#Log]]  
 [[@Shawn Coe\|Mon Oct 28  2024]]  	[[@Shawn Coe# [CTO](https://www.linkedin.com/in/shawncoe)]]  
 [[2024-W44\|Mon Oct 28  2024]]  	[[2024-W44#W44   2024-10-28   [[2024-W43\\|<<]] [[2024-W45\\|>>]]]]  
 [[BKT\|Mon Oct 28  2024]]  	[[BKT#2024-10-27  buckets]]  

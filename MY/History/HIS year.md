@@ -1,4 +1,10 @@
 
+[[DocRuby\|Mon Oct 2  2023 ]]  	[[DocRuby#=== RUBY SCRIPTING ===]]  
+[[DocSQL\|Mon Oct 2  2023 ]]  	[[DocSQL#LOG]]  
+[[DocSQL\|Mon Oct 2  2023 ]]  	[[DocSQL#BASIC SQL COMMANDS]]  
+[[DocSQL\|Mon Oct 2  2023 ]]  	[[DocSQL#ACTIONS]]  
+[[DocSQL\|Mon Oct 2  2023 ]]  	[[DocSQL#DB-SQLITE3]]  
+[[DocSQL\|Mon Oct 2  2023 ]]  	[[DocSQL#DB-MySQL]]  
 [[DocSQL\|Mon Oct 2  2023 ]]  	[[DocSQL#DB-POSTGRES]]  
 [[DocSciKit\|Mon Oct 2  2023 ]]  	[[DocSciKit#LOGISTIC REGRESSION]]  
 [[DocVagrant\|Mon Oct 2  2023 ]]  	[[DocVagrant#Dan Notes]]  

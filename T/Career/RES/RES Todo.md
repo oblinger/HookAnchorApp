@@ -1,7 +1,7 @@
 
+- [ ] Update Linked in about section
 - [ ] HandsOn Highlights.      Leadership Highlights.
-
-talk about hiring 300+ in at a glance not
+- [ ] talk about hiring 300+ in at a glance not
 
 
 - [ ] [[RES Star]]: Create stars for

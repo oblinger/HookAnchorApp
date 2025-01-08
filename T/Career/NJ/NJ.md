@@ -1,16 +1,9 @@
 .[[NJ]].	  [[Lrn]],
   PLAN:	[[NJ Todo]], [[NJ Plan]], [[Seeking]],
   TOP:	[NJ Slides](spot://njslides), [[NJ Log]],
-  PARTS	[[NJ Targets]],
+  PARTS	[[NJ Targets]], [[NJ Ask]],
   ROCKS [[Seeking]], 
   OLD:	[[NJ16]], [[NJ22]],
-
-NOW:
-- [[LRN Todo]]:	
-- [[NJ Targets]]:	3 interview targets
-- [[NJ Todo]]:	[[RES]]
-- [[CN]]:			Uri, Luis, 
-- [[BOD]]:			Get Coach?
 
 RELATED:	 [[CRM]], 
 OLD:		[[GoogleJob]], [[Meta Coms]], 

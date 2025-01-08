@@ -1,4 +1,12 @@
 
+[[NJ]]:
+- [[LRN Todo]]:	DL C3; \ _ S
+- [[NJ Targets]]:	3 interview targets
+- [[NJ Todo]]:	[[RES]]
+- [[CN]]:			Uri, Luis, 
+- [[BOD]]:			Get Coach?
+
+
 [[WORK]]:	4h
 [[MED]]:	Exercise, Cortisol
 [[NJ]]:	[[RES Star]], [[CN]],

@@ -102,6 +102,9 @@ Hardware Serial Number	C02V811RHTD9
 
 Ok your replacement has been set up, this is your repair ID -> D645078396
 
+fedex pickup 800-463-3339. 
+
+  # prp2887250070
 ### 2025-01-04 - 2024-07-05  Airmax repair
 
 - Serial:  H0YMG2NV01TV
