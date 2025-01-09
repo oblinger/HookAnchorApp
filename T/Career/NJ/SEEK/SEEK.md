@@ -1,12 +1,16 @@
-.[[Seeking]].
+.[[SEEK]].
   , [[Seeking Questions]], 
 
-INTERVIEWING PREP
 
-FINDING QUESTIONS
+
+JOB POSTINGS
+- Linked in easy apply
+- Pick Tier II, look at their postings
+
+FINDING INTERVIEW QUESTIONS
 - [GlassDoor](spot://glassdoor1pass) 
-- Teamblind and maybe 
-- Fishbowl
+- Team blind
+- maybe Fishbowl
 
 
 ADVICE

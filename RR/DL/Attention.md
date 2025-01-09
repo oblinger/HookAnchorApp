@@ -9,7 +9,7 @@ Self-attention weighs the importance of different words or tokens within a seque
 .
 Attention accepts n tokens with d-dimensions and the same.
 It represents the CONTEXTUALIZED importance/meaning of the word
-<!--SR:!2024-12-30,12,230-->
+<!--SR:!2025-02-05,28,230-->
 
 NOTATION - QKV are all trained linear transforms of input
 - Q - Query

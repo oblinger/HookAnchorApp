@@ -1,4 +1,5 @@
 
+[[DocRails\|Mon Oct 2  2023 ]]  	[[DocRails#Renders the same partial with a local variable.]]  
 [[DocRuby\|Mon Oct 2  2023 ]]  	[[DocRuby#=== RUBY SCRIPTING ===]]  
 [[DocSQL\|Mon Oct 2  2023 ]]  	[[DocSQL#LOG]]  
 [[DocSQL\|Mon Oct 2  2023 ]]  	[[DocSQL#BASIC SQL COMMANDS]]  

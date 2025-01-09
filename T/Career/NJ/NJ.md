@@ -1,8 +1,7 @@
 .[[NJ]].	  [[Lrn]],
-  PLAN:	[[NJ Todo]], [[NJ Plan]], [[Seeking]],
+  PLAN:	[[NJ Todo]], [[NJ Plan]], [[SEEK]],
   TOP:	[NJ Slides](spot://njslides), [[NJ Log]],
-  PARTS	[[NJ Targets]], [[NJ Ask]],
-  ROCKS [[Seeking]], 
+  PARTS	[[NJ Targets]], [[NJ Ask]], 
   OLD:	[[NJ16]], [[NJ22]],
 
 RELATED:	 [[CRM]], 

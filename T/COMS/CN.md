@@ -1,9 +1,10 @@
 
-- Nick, Luis, Uri -> 
+- [[@Dennis DeCoste]]	- 
 - Doug ping
+- Nick
+
 - [[@Uri Weiss]]			- Was @ Google, Mentors Leaders
 - [[@Luis Arrellano]]	- Show: [[RES]], [Pyramid](spot://respyramid), Very good at framing story
-- [[@Dennis DeCoste]]	- 
 
 
 

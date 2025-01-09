@@ -1,15 +1,14 @@
 .CHK.
-	F11 [VBspeed](https://www.notion.so/sportsvisio/VB-Speedup-Analysis-152719d6f2bd80c5ab68f7e499cb4d44?pvs=4) 
-    F11 [AWS](https://docs.google.com/document/d/1QS4081TT_Yyz1TS9GLZSfjQaczQ7ynzWTSu14waDcG0/edit?tab=t.0):	Jason - AWS costs
+    F11 [AWS](https://docs.google.com/document/d/1QS4081TT_Yyz1TS9GLZSfjQaczQ7ynzWTSu14waDcG0/edit?tab=t.0):	Estimate from Brian
 - grz contract discuss
 .**NOW**.
-	[DT](spot://dt): 	[Homo](https://www.notion.so/sportsvisio/STORY-Homography-Data-Martin-4ab7ed5c5a6b46b1ac7de9821b3a5c76?pvs=4)^shot  [BB](https://www.notion.so/sportsvisio/STORY-BB-Data-105719d6f2bd809d9170c84a0c8d762d?pvs=4):B^obj Q4 
-    [Min](spot:://AI~MIN):	[Alpha](https://www.notion.so/sportsvisio/AI-MIN-Alpha-Testing-James-118719d6f2bd80bb8280fdeafac784f3?pvs=4):  [docs](https://www.notion.so/sportsvisio/AI-MIN-Normalization-134719d6f2bd80d0ba8fcf754fc270cb?pvs=4) 
-    CHRT:	 Martin: end2end
-- min-normalization
-[Run](https://www.notion.so/sportsvisio/Game-Run-Automations-150719d6f2bd80f087b2e931ef179536?pvs=4): 	Automation
-[Fball](spot://fireball):	^J Test Script
-Met:	[[Dat]]: me
+	[DT](spot://dt): 	[Homo](https://www.notion.so/sportsvisio/STORY-Homography-Data-Martin-4ab7ed5c5a6b46b1ac7de9821b3a5c76?pvs=4)^shot  [BB](https://www.notion.so/sportsvisio/STORY-BB-Data-105719d6f2bd809d9170c84a0c8d762d?pvs=4):B^obj Q4   <<<<<<
+    [Min](spot:://AI~MIN): [todo](https://www.notion.so/sportsvisio/STORY-Test-AI-Min-Ready-PaidProd-173719d6f2bd80f59eb5c8d2dc1aded7?pvs=4). min-normalization verify
+	[Chrt](https://www.notion.so/sportsvisio/SHOT-CHARTS-09ee6c9400f84e2ca8bd8caf4c559f59?pvs=4):	[todo](https://www.notion.so/sportsvisio/STORY-AI-Charts-in-Paid-Production-173719d6f2bd80b2b115f289bbb68701?pvs=4) 
+	[Infr](https://www.notion.so/sportsvisio/PROJ-Infrastructure-150719d6f2bd80f087b2e931ef179536?pvs=4):	>fill this in...  [[Dat]]: me
+    [Fball](spot://fireball):	^brainstorming 
+
+
 EXP:  [HotKey](https://software-engineering-team.atlassian.net/browse/WU-1935), J^5games 
 STAT: [WU1938](https://software-engineering-team.atlassian.net/browse/WU-1938) show err status
 - playcharts

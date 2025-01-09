@@ -1,33 +1,11 @@
 
 .[[CV]].
-  ROOTS:[CV Root](spot://cvroot), [CV Confluence](spot://cvconfluence), [CV Jira Page](spot://cvjirapage),  [CV Notion](spot://cvnotion), , ,
-  DIRS:	[CV Google Page](spot://cvgooglepage), ,  , ,
-  ORGS:	[CV Docs](spot://cvdocs), , [CV Info](spot://cvinfo), ,
-  ADDS:	, [CV Ana](spot://cvana), ,
-  OLD:	[CVT](spot://cvt), [DSET](spot://dset), ,
+  ROOTS:[CV Root](spot://cvroot), [CV Confluence](spot://cvconfluence), [CV Jira Page](spot://cvjirapage),  [CV Notion](spot://cvnotion), 
+  DIRS:	[CV Google Page](spot://cvgooglepage), 
+  ORGS:	[CV Docs](spot://cvdocs), [CV Info](spot://cvinfo), 
+  ADDS:	, [CV Ana](spot://cvana), 
+  OLD:	[CVT](spot://cvt), [DSET](spot://dset), 
   .
-  , [APIs](spot://apis), [CAPS](spot://caps), , [CV Gdrive](spot://cvgdrive)
-  , [[CV Hack Notes]], [[CV Log]], [[CVP]], [CV Page](spot://cvpage), [[Data]],
-  , [DT alias Data Tasks](spot://dtaliasdatatasks), , [[SVCV Re-ID]]
-  , [svdata](spot://svdata),
-  , ,
-  , [RESULT](spot://result),
-  , [docs](spot://docs),
-  , ,
-  , ,
-  , [[CV Alg]], [[CV Algs]],
-  , [Docs Gdrive](spot://docsgdrive),
-  , [Task](spot://task),
-  , [AIMIN](spot://aimin),
-  , [Softbank](spot://softbank),
-  , [[CV HowTo]],
-  , [Story](spot://story),
-  DELS: ,,,,[[CV Alg]], [[CV Algs]],[[CV HowTo]],
-  DELS: [DOCs](spot://docs),[Results](spot://results),[DT](spot://dt),[Dataset](spot://dataset),[[CV Alg]], [[CV Algs]],[[CV HowTo]],[STORY](spot://story),[DOCs](spot://docs), [Results](spot://results), [DT](spot://dt), [Dataset](spot://dataset), 
-
-  DELS: [Standup](spot://standup),[DD](spot://dd),
-  DELS: [[CVP]],[[Info]], 
-
 
 :: [[Data]]
 

@@ -1,10 +1,12 @@
 
 [[NJ]]:
 - [[LRN Todo]]:	DL C3; \ _ S
-- [[NJ Targets]]:	3 interview targets
-- [[NJ Todo]]:	[[RES]]
+- [[SEEK]]:		Short List; 3Tgts; Listening 
 - [[CN]]:			Uri, Luis, 
 - [[BOD]]:			Get Coach?
+
+- [[NJ Targets]]:	Read glass door about them
+- [[NJ Todo]]:	[[RES]] linked in fixes
 
 
 [[WORK]]:	4h

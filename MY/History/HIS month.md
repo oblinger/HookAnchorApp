@@ -1,4 +1,5 @@
 
+[[@Jason Syversen\|Thu Oct 31  2024]]  	[[@Jason Syversen#2024-10-30  Things are going good]]  
 [[Regularization\|Tue Oct 29  2024]]  	[[Regularization#L1 (Lasso) REGULARIZATION]]  
 [[Lrn.\|Tue Oct 29  2024]]  	[[Lrn.#Sources To Read]]  
 [[2024-04-01 Resume Rewrite\|Tue Oct 29  2024]]  	[[2024-04-01 Resume Rewrite#SECTIONS]]  

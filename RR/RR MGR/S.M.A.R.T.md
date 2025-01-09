@@ -7,7 +7,7 @@ S.M.A.R.T.
 - Achievable - Capability can be achieved using existing time and resources
 - Realistic - Goal makes sense in larger context
 - Time-bounded - Goal has a well defined completion target time
-<!--SR:!2024-12-25,5,230-->
+<!--SR:!2025-01-19,11,230-->
 
 #card
 - https://mooncamp.com/blog/smart-goals/

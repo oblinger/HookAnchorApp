@@ -2,6 +2,7 @@
   ADDS:
   ADDS:   ,
   ADDS:   [[Stable Diffusion]],
+  , [[Adam Alg]], 
 
 
 

@@ -9,7 +9,7 @@
 ReLU 
 -?-
 Rectified Linear Unit = max(0,x)
-<!--SR:!2024-12-21,11,270-->
+<!--SR:!2025-02-18,41,290-->
 
 
 Leaky ReLU

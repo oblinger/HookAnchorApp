@@ -3,14 +3,12 @@
 
 [[@Nick Allen]] 		- General wisdom, committed
 [[@Uri Weiss]]		- Was @ Google, Mentors Leaders
-[[@Luis Arrellano]]	- Ex McKinsey, Very good at framing story
+[[@Luis Arrellano]]	- Ex McKinsey, Great at framing story
+[[@Dennis DeCoste]]	- Ex-Apple Rsrch, Director AI, Cnsltnt
 
 [[@Rafah Hosn]]		-  MS w/ [[@John Langford]] also [[@Rich Caruana]]
 
 
-
-GEN AI
-[[@Dennis DeCoste]]	- Ex-Apple Research, Ex-Director of AI, GenAI consultant.
 
 
 [[FAANG]] 
