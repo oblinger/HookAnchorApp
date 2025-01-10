@@ -23,6 +23,8 @@ MONTHLY SPENDING	~ $20K  +/-$5K
 	$			-->	Wells Subscriptions Card
 	$			-->	Amazon Groc
 	$			-->	Amazon Non-Groc
+	$			-->	01 Pen Fed
+	$			-->	13 Citi Double
 	$			-->	Water
 
 WELLS SUBSCRIPTIONS CARD

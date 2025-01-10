@@ -27,8 +27,7 @@ Freed.  Luis.  Rafah.  Huerta.
 | Ot  | LinkedIn [[@Sofus Macskassy]], VMware [[@Chris Ramming]],                                                |
 
 OTHERS:   [[@Dennis DeCoste]],
-RECRUITER:	[[@Kyle Langworthy]],    |
-|        |     |
+RECRUITER:	[[@Kyle Langworthy]], 
 
  GOOGLE    | [[@Google]]                                                                                                                  
  --------- | -------------------------------------------------------------------------------------

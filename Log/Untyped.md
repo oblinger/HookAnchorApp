@@ -685,6 +685,7 @@ n:: no prefix.	Dated entries without any typing prefix
 | 2023-00-00 | [[Meta Coms]]                                   | CRM FORMAT                                                                                                                        |
 | 2023-00-00 | [[Daily Schedules]]                             | buckets                                                                                                                           |
 | 2023-00-00 | [[FIN Log]]                                     | very old - CONSIDER ADDITIONS                                                                                                     |
+| 2023-00-00 | [[JOB Compensation]]                            | [[@Kyle Langworthy#^comp]],                                                                                                       |
 | 2023-00-00 | [[CV Roadmap]]                                  | FULL-AI / BALLER DELIVERABLE                                                                                                      |
 | 2023-00-00 | [[ROADMAP]]                                     | YEAR PRIORITIES                                                                                                                   |
 | 2022-12-16 | [[2022-W51]]                                    | FRI                                                                                                                               |
@@ -1042,6 +1043,7 @@ n:: no prefix.	Dated entries without any typing prefix
 | 2021-00-00 | [[SNIP]]                                        | Fox news egregious                                                                                                                |
 | 2021-00-00 | [[SNIP]]                                        | ELI music                                                                                                                         |
 | 2021-00-00 | [[Phone]]                                       | Eli's Birth Certificate                                                                                                           |
+| 2021-00-00 | [[JOB Compensation]]                            | FAANG Compensation                                                                                                                |
 | 2020-12-23 | [[SCR Note]]                                    | XMAS FAMILY ZOOM                                                                                                                  |
 | 2020-12-23 | [[SCR Note]]                                    | SHANE RESUME                                                                                                                      |
 | 2020-11-30 | [[spirit_older_bigger]]                         | GOD THOUGHTS                                                                                                                      |

@@ -1,7 +1,6 @@
 .[[SEEK]].
-  , [[Seeking Questions]], 
-
-
+  [[Seeking Questions]], 
+  [[SEEK Postings]] 
 
 JOB POSTINGS
 - Linked in easy apply

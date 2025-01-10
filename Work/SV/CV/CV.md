@@ -1,11 +1,19 @@
 
 .[[CV]].
-  ROOTS:[CV Root](spot://cvroot), [CV Confluence](spot://cvconfluence), [CV Jira Page](spot://cvjirapage),  [CV Notion](spot://cvnotion), 
-  DIRS:	[CV Google Page](spot://cvgooglepage), 
-  ORGS:	[CV Docs](spot://cvdocs), [CV Info](spot://cvinfo), 
-  ADDS:	, [CV Ana](spot://cvana), 
-  OLD:	[CVT](spot://cvt), [DSET](spot://dset), 
+  ROOTS:[CV Root](spot://cvroot), [CV Confluence](spot://cvconfluence), [CV Jira Page](spot://cvjirapage),  [CV Notion](spot://cvnotion),
+  DIRS:	[CV Google Page](spot://cvgooglepage),
+  ORGS:	[CV Docs](spot://cvdocs), [CV Info](spot://cvinfo),
+  ADDS:	, [CV Ana](spot://cvana),
+  OLD:	[CVT](spot://cvt), [DSET](spot://dset),
   .
+  , , [APIs](spot://apis), [CAPS](spot://caps), [[CV Alg]], [[CV Algs]]
+  , [CV Gdrive](spot://cvgdrive), [[CV Hack Notes]], [[CV HowTo]], [[CV Log]], [[CVP]]
+  , [CV Page](spot://cvpage), [[Data]], [docs](spot://docs), [Docs Gdrive](spot://docsgdrive)
+  , [DT alias Data Tasks](spot://dtaliasdatatasks), [RESULT](spot://result)
+  , [Softbank](spot://softbank), [Story](spot://story), [[SVCV Re-ID]], [svdata](spot://svdata)
+  , [Task](spot://task),
+  , [AI Min](spot://aimin), 
+  DELS: [AI MIN](spot://aimin), 
 
 :: [[Data]]
 

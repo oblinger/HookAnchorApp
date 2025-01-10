@@ -1,3 +1,4 @@
+
 - Signature Card
 - Letter to Schwab
 - Wait for Schwab activation

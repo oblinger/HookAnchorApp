@@ -12,6 +12,8 @@ Lookup Case
 ## INFO
 
  [Apple.com](https://apple.com),  
+ https://checkcoverage.apple.com/
+ https://getsupport.apple.com/caselookup
 - 800-692-7753 Apple Repair
 - 408-974-9604 Victoria Eaton  (Corp Executive Relations)  _[victoriae@apple.com](mailto:victoriae@apple.com)_
 
@@ -80,6 +82,10 @@ APPLE CARE
 **Hardware Serial Number** 	GXD7H6QV6Y
 **Coverage End Date**			May 02, 2024
 **Agreement Number**			5773744682
+
+### 2022 iPhone 13 (maybe 2022)
+
+  QKR698099CL
 
 ### 2020 Laptop
 

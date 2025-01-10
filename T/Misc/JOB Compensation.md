@@ -8,7 +8,20 @@
 - [[@Brandis Paden#^comp]],
 
 
-## FAANG Compensation
+
+# LOG
+
+
+### 2023-00-00 [[@Kyle Langworthy#^comp]], 
+
+
+**STARTUP COMPENSATION** #compensation ^comp
+- Typical Startup Equity for a CTO:   1.2-1.7% at the A-round.      2-2.5% Equity grant for a VC backed seed.
+- Seed stage $200K salary is inline.
+- At Series A - salary at $300K is also reasonable.
+
+### 2021-00-00 FAANG Compensation
+
 
 - [Levels.fyi](https://www.levels.fyi/?compare=Google,Facebook,Salesforce&track=Software%20Engineer) 
 
@@ -24,7 +37,6 @@ Google L8 multiplier = 3.43x = $1,125,344 total / $327,250 base
 Apple L7 multiplier = 3.35x = $1,175,000 total / $350,000 base (not enough data, this is from a single employee)
 
 
-# LOG
 
 ### 2016.08 -- Ebay details from Joe Augenbraun
 
