@@ -1,4 +1,8 @@
 
+[[DocRails\|Mon Oct 2  2023 ]]  	[[DocRails#BLAM RAILS FNs]]  
+[[DocRails\|Mon Oct 2  2023 ]]  	[[DocRails#Overview]]  
+[[DocRails\|Mon Oct 2  2023 ]]  	[[DocRails#MVC -- Routing]]  
+[[DocRails\|Mon Oct 2  2023 ]]  	[[DocRails#MVC -- Views       (.erb stuff)]]  
 [[DocRails\|Mon Oct 2  2023 ]]  	[[DocRails#Renders the same partial with a local variable.]]  
 [[DocRuby\|Mon Oct 2  2023 ]]  	[[DocRuby#=== RUBY SCRIPTING ===]]  
 [[DocSQL\|Mon Oct 2  2023 ]]  	[[DocSQL#LOG]]  

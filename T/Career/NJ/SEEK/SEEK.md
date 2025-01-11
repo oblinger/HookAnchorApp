@@ -1,6 +1,8 @@
 .[[SEEK]].
-  [[Seeking Questions]], 
-  [[SEEK Postings]] 
+  [[Seeking Questions]],
+  , [[SEEK Postings]], 
+
+  DELS: [[SEEK Postings]], 
 
 JOB POSTINGS
 - Linked in easy apply

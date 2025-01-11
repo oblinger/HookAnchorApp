@@ -1,4 +1,8 @@
 
+[[RES Proof Points\|Fri Nov 1  2024 ]]  	[[RES Proof Points#Built 5 orgs from scratch, up to 60+ employees]]  
+[[RES Proof Points\|Fri Nov 1  2024 ]]  	[[RES Proof Points#Served in 5 advisory and board roles]]  
+[[@Shawn Coe\|Thu Oct 31  2024]]  	[[@Shawn Coe#LOG]]  
+[[Meta Proj\|Thu Oct 31  2024]]  	[[Meta Proj#Root Project Folders /]]  
 [[@Jason Syversen\|Thu Oct 31  2024]]  	[[@Jason Syversen#2024-10-30  Things are going good]]  
 [[Regularization\|Tue Oct 29  2024]]  	[[Regularization#L1 (Lasso) REGULARIZATION]]  
 [[Lrn.\|Tue Oct 29  2024]]  	[[Lrn.#Sources To Read]]  
