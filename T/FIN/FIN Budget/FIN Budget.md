@@ -1,22 +1,63 @@
 .[[FIN Budget]].
   , [[FIN Categories]], 
+  - [[2025 Budget]]: 
 
 
 - [[FIN Flows]]: coarse grained budget
-- [[T/FIN/FIN Budget/Budget.xlsx|Budget Sheet]]: 
 - [[FIN Categories]]: Budget categories
 
 
+BUDGET
+- [[2024 Sporadic Spending.xlsx]]: 
+- 
 
-# Stuff
-## budget.py
+
+
+## INFO
+### Adjustments
+
+| Date       | Amount      | Investment Transfers - In/Out of Grand Central |     |
+| ---------- | ----------- | ---------------------------------------------- | --- |
+| 2021-06-21 | -100,000.00 | Bought space-X                                 |     |
+| 2021-06-25 | + 46,350.00 | Sold 1/2 space-X back                          |     |
+| 2021-07-16 | - 65,431.67 | House Refi                                     |     |
+|            |             |                                                |     |
+
+| Date       | Amount        | Spending Adjustments -- Spending occurring outside of JOINT account                |
+| ---------- | ------------- | ---------------------------------------------------------------------------------- |
+| 2022-03-22 | - 9,827.23 J* | (House Tax on 3/21/22 for $9,827.23)  * = did manual from GC to compensate 4/25    |
+| 2021-11-26 | - 9,827.23 G  | (House Tax on 11/24/2021 $9,827.23) CITY CNTY OF SF CTY SF P                       |
+| 2021-05-26 | -10,929.40 J* | (House Tax on 5/25/2021 $10,929.40) CITY CNTY OF SF CTY SF P  (* = see above) 4/25 |
+| 2020-10-21 | - 9,894.91 G  | (House Tax on 10/19/2020 for $9,894.91) CITY CNTY OF SF CTY SF P                   |
+| 2020-04-13 | - 9,532.02 G  | (House Tax on 4/10/2020 for $9,532.02)                                             |
+| 2019-12-04 | - 9,532.02 G  | (House Tax on 12/03/2019 for $9,532.02)                                            |
+| 2019-01-14 | - 2.756.87 J  | (House Tax on 1/11/2019 for $2,756.87) SAN FRANCISCO CA SAN FRA                    |
+|            |               | (House Tax on 4/18/2019 for $2,801.87)                                             |
+| 2019-06-10 | - 5,161,67 G  | (House Tax on 6/6/2019 for $5,161.67)                                              |
+| 2019-10-02 | - 5,161.67 J  | (House Tax on 9/30/2019 for $5,161.67)                                             |
+|            |               |                                                                                    |
+|            |               |  
+
+
+| Date | Irregularity |
+| ---- | ------------ |
+|      |              |
+
+
+
+# LOG
+
+### 2025-01-10  OLD MINT BUDGETING
+
+
+budget.py
 
 taxes don't come from joint
 - easier to see spending
 - taxes are not really spending
 - house is easy to remember)
 
-### How To
+#### How To
 
 **MINT**
 - VERIFY CURRENT ON:  DanO, AmzMisc, Bills(Freedom), Groc, Sapphire, timetime
@@ -27,14 +68,14 @@ taxes don't come from joint
 - Account -> Balances ! Joint Checking      (15K monthly flow starting before 2021)
 
 
-### BUDGET CROSS CHECKS
+#### BUDGET CROSS CHECKS
 - SIMILAR:  **GrandTotal** ~ **Joint_Out** 	GrandTotal sums many transactions,   JointOut sums credit card payments and outputs of Joint Checking
 - SMALL:    Transfers 					Transactions with category 'transfer'
 - SMALL:    JOINT_OTHER      			Transactions from 'Joint Checking' account that are not covered in the budget below
 - EXACT: 	  CrossCheck          			These items should exactly? match ALL_CARDS section
 
 
-### BUDGET SECTIONS EXPLANATION
+#### BUDGET SECTIONS EXPLANATION
 
 
 """
@@ -81,7 +122,7 @@ SECTIONS
 
 
 
-### BUDGET APP
+#### BUDGET APP
 - (See Pycharm -> bin)   
 - Master in budget.py
 
@@ -95,7 +136,7 @@ See Bills -> CashFlow for active accounts tracked in mint
 
 - Transactions are sorted by column K (Main)
 
-## BUDGET.PY
+#### BUDGET.PY
 
 | SECTIONS        | Begins          | Col       | Notes                                   |
 | --------------- | --------------- | --------- | --------------------------------------- |
@@ -107,39 +148,6 @@ See Bills -> CashFlow for active accounts tracked in mint
 |                 |                 |           |                                         |
 
 
-
-### Adjustments
-
-| Date       | Amount      | Investment Transfers - In/Out of Grand Central |     |
-| ---------- | ----------- | ---------------------------------------------- | --- |
-| 2021-06-21 | -100,000.00 | Bought space-X                                 |     |
-| 2021-06-25 | + 46,350.00 | Sold 1/2 space-X back                          |     |
-| 2021-07-16 | - 65,431.67 | House Refi                                     |     |
-|            |             |                                                |     |
-
-| Date       | Amount        | Spending Adjustments -- Spending occurring outside of JOINT account                |
-| ---------- | ------------- | ---------------------------------------------------------------------------------- |
-| 2022-03-22 | - 9,827.23 J* | (House Tax on 3/21/22 for $9,827.23)  * = did manual from GC to compensate 4/25    |
-| 2021-11-26 | - 9,827.23 G  | (House Tax on 11/24/2021 $9,827.23) CITY CNTY OF SF CTY SF P                       |
-| 2021-05-26 | -10,929.40 J* | (House Tax on 5/25/2021 $10,929.40) CITY CNTY OF SF CTY SF P  (* = see above) 4/25 |
-| 2020-10-21 | - 9,894.91 G  | (House Tax on 10/19/2020 for $9,894.91) CITY CNTY OF SF CTY SF P                   |
-| 2020-04-13 | - 9,532.02 G  | (House Tax on 4/10/2020 for $9,532.02)                                             |
-| 2019-12-04 | - 9,532.02 G  | (House Tax on 12/03/2019 for $9,532.02)                                            |
-| 2019-01-14 | - 2.756.87 J  | (House Tax on 1/11/2019 for $2,756.87) SAN FRANCISCO CA SAN FRA                    |
-|            |               | (House Tax on 4/18/2019 for $2,801.87)                                             |
-| 2019-06-10 | - 5,161,67 G  | (House Tax on 6/6/2019 for $5,161.67)                                              |
-| 2019-10-02 | - 5,161.67 J  | (House Tax on 9/30/2019 for $5,161.67)                                             |
-|            |               |                                                                                    |
-|            |               |  
-
-
-| Date | Irregularity |
-| ---- | ------------ |
-|      |              |
-
-
-
-# LOG
 ### 2023-01-10  Energy Usage
 
 PGE Ele:		$150/mo		Wastage: [Dishwasher]; Laundry

@@ -16,7 +16,7 @@
   [[FIN Topics]]:
   [[FIN Tracking]]:
   [[Taxes]]:
-  ADDS:   [[@Avanti Pakrasi]], [[@Gary Bladen]], [[@Merrill]], [[@Vanguard]], [[z old Bills]],
+  [[@Avanti Pakrasi]], [[@Gary Bladen]], [[@Merrill]], [[@Vanguard]], [[z old Bills]],
 
 
 

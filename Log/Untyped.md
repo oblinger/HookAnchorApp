@@ -6,6 +6,7 @@ n:: no prefix.	Dated entries without any typing prefix
 | Date       | File                                        | Notes                                                                                                                             |
 | ---------- | ------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------- |
 | 2025-01-10 | [[@Schwab]]                                     | mystery transactions                                                                                                              |
+| 2025-01-10 | [[FIN Budget]]                                  | OLD MINT BUDGETING                                                                                                                |
 | 2025-01-06 | [[@Apple]]                                      | pod pro replace bud                                                                                                               |
 | 2025-01-06 | [[Reflections]]                                 | Done By One                                                                                                                       |
 | 2025-01-04 | [[@Apple]]                                      | 2024-07-05  Airmax repair                                                                                                         |

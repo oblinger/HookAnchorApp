@@ -91,6 +91,8 @@ United States
 ## xx Kindle
 
 ## xx Neu       <<<<<<
+consider new-file-menu
+
       Copy Templates To Folder  /Users/oblinger/Library/Application Support/com.elegantchaos.neu/Templates
 
 https://elegantchaos.com/neu/

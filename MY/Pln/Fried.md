@@ -1,5 +1,7 @@
+- new File Menu app (consider downloading)
 - renew oblinger.us
-- 
+- enable siri on mac and iphone.
+- back tap for GPT
 
 - adjust geico and AAA to use saphire
 - cancel "Next Up" from Qingling's phone

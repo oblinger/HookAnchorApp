@@ -1,4 +1,5 @@
 
+[[RES Proof Points\|Fri Nov 1  2024 ]]  	[[RES Proof Points#Brought Multiple Products To Market Totaling More Than $3B I]]  
 [[RES Proof Points\|Fri Nov 1  2024 ]]  	[[RES Proof Points#Built 5 orgs from scratch, up to 60+ employees]]  
 [[RES Proof Points\|Fri Nov 1  2024 ]]  	[[RES Proof Points#Served in 5 advisory and board roles]]  
 [[@Shawn Coe\|Thu Oct 31  2024]]  	[[@Shawn Coe#LOG]]  
