@@ -1,4 +1,4 @@
-
+I guess we're just gonna do dinner tonight you can just find stuff to eat sandwich and egg salad eat eat pancakes replied to yes but I still owe him he replied to me and I reply back to him
 
 - [[2025 Sporadic Spending.xlsx]]: 
 
