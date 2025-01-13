@@ -1,31 +1,38 @@
 
 ## = ACCOUNTS  (audit list is complete)
 ### BANK
-#### BofA - DanO Personal (Checking&Savings)
-#### BofA - Mortgage (House Loan)
-#### Schwab - DanO Checking -  (Investments)
-#### Chase - Grand Central (Investments)
-#### Chase - Monthly Spending (Investments)
-#### Chase - Sporadic Spending (Investments) 
+#### x6976 BofA - DanO Personal (Checking&Savings)
+#### x1905 Schwab - DanO Checking -  (Investments)
+#### x2345 Schwab - Grand Central (Investments)
+#### x1345 Schwab - Monthly Spending (Investments)
+#### x3333 Schwab - Sporadic Spending (Investments)
+#### x7293 Schwab - Sporadic Debit Card
+#### x5911 Schwab - Monthly Debit Card
+#### x6694 Schwab - Personal Debit Card?????
+
 
 
 ### CREDIT CARDS
-#### Cap One - Dan Personal
-#### Wells - Utilities Card 
+#### x0190 CapOne - Dan Personal
+#### x0644 Wells - Utilities Card 
 2% cash back
-#### Wells - QL Spending Card
+#### x1064 Wells - QL Spending Card
 2% cash back
-#### Freedom - Dan Spending Card
-#### Amazon - Groc Card 
-#### Amazon - Misc Card
-#### Sapphire - Travel Card - / Sporadic Spending Card
+#### x6320 PenFed - Dan Spending Card - not used  (Oldest Card) x6320
+#### x4654 Freedom - Dining Card
+#### x3644 Chase Sapphire - Travel Card - / Sporadic Spending Card
+#### x8472 Amazon - Groc Card 
+#### x7970 Amazon - Misc Card
 
 
 ### OTHER
+#### x8397 Health Equity Card
+#### x2520 CitiDouble - not used 
+#### BofA - Mortgage (House Loan)
+
+
 #### PenFed - Savings - Not Used
 #### PenFed - Money Mkt - Not Used
-#### PenFed - Card - not used  (Oldest Card) x6320
-#### CitiDouble - not used 
 
 
 ## = TRACKING

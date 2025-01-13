@@ -20,10 +20,11 @@
                 [[RES Job History]]: 
                     [[AF]]: 
             [[NJ]]: [[SEEK]],	[[NJ22]],	[[NJ16]],	
-        [[FIN]]: [[FIN Budget]],	[[FIN Tracking]],	
+        [[FIN]]: [[FIN Tracking]],	
             [[FIN Log]]: 
             [[FIN Bills]]: 
             [[FIN Topics]]: 
+            [[FIN Budget]]: 
         [[EduCorp]]: 
         [[Life]]: 
             [[Diary]]: 
