@@ -1,3 +1,7 @@
+
+- Coursera DL C3 - Notes and review
+- 
+
 - [[CV HowTo]] - run system
 - [[CV HowTo]] - learn about system
 
@@ -25,20 +29,21 @@ HANDS: 	Tensor, DL training,
 HANDS: 	Quickly build JSON endpoint
 KNOW:		100 algs
 
-## Rocks
+## Rocks - Evergreen @ top
 - ^ \_ S  SPACED REPETITION. (Add shift for review)
-- To Read list below
-- Scan cv-research and look at papers
+- Read paper from 'To Read' below
 
+- Run System; Train system
 - Code@work.	LeetCoding.
 - DL Specialization: Sequence Models (not yet started)
 - Coursera: IBM PyTorch
-- Run System; Train system
 
 ## To Read
 - [[RR PAPERS]], [[RR SYSTEMS]], [[RR TUTORIALS]], 
 -  [[Coursera Deep Learning]]:  Chapter #3 - [[C3_W1.pdf]] 
 
+
+- Scan cv-research and look at papers
 - [https://arjan.codes/diagnosis](https://www.youtube.com/redirect?event=video_description&redir_token=QUFFLUhqbTFPYmY4c1VoSXZtdTNfNU56ZmFUcjRCWm9QQXxBQ3Jtc0ttalU4ZFl3UWc2Ty1NU0dvd3BiemVMb2lPZ2xGTmFWQnpUNUg3VnBrMzMtejFUdjFXUmg4OWpaSnZ1SzlqNXd5UVNSVVA3RjVvOGhnVFBJRkM1SGlpT0lseEl3cklPUjEwRGoyR2pyQ1pWNkpqUUVRMA&q=https%3A%2F%2Farjan.codes%2Fdiagnosis&v=I4mFqyqFkxg).   reading code quickly
 - Diffusion
 - Transformers

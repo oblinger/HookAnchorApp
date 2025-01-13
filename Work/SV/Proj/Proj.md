@@ -10,7 +10,7 @@
   , ,
   , [PrN](spot://prn),
   , [PrG](spot://prg),
-  , [[AI MIN Notes]], [Proj Note](spot://projnote),
-  DELS: [AI Minutes](spot://aiminutes),[Proj Note](spot://projnote), [[AI MIN Notes]],[AI MIN](spot://aimin), 
+  , , [Proj Note](spot://projnote),
+  DELS: [AI Minutes](spot://aiminutes),[Proj Note](spot://projnote), [[AI MIN Notes]],[AI MIN](spot://aimin),[[AI MIN Notes]], 
 
 [[AI MIN Notes]] 

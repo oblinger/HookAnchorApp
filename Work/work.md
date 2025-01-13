@@ -1,9 +1,8 @@
 .CHK.
     F11 [AWS](https://docs.google.com/document/d/1QS4081TT_Yyz1TS9GLZSfjQaczQ7ynzWTSu14waDcG0/edit?tab=t.0):	Estimate from Brian [[2024-08 Backend Architect|Arch]]: [r](https://docs.google.com/document/d/1gbutlP_EF-_wUdg4F3IEuw8Bhz8oET3Z/edit) 
-- grz contract discuss
 .**NOW**.
 	[DT](spot://dt): !50 games in
-    [Min](spot:://AI~MIN): [todo](https://www.notion.so/sportsvisio/STORY-Test-AI-Min-Ready-PaidProd-173719d6f2bd80f59eb5c8d2dc1aded7?pvs=4). min-normalization verify
+    [Min](spot:://AI~MIN): [todo](https://www.notion.so/sportsvisio/STORY-Test-AI-Min-Ready-PaidProd-173719d6f2bd80f59eb5c8d2dc1aded7?pvs=4). min-normalization verify [jira](https://software-engineering-team.atlassian.net/browse/AIT-1129) 
 	[Chrt](https://www.notion.so/sportsvisio/SHOT-CHARTS-09ee6c9400f84e2ca8bd8caf4c559f59?pvs=4):	[todo](https://www.notion.so/sportsvisio/STORY-AI-Charts-in-Paid-Production-173719d6f2bd80b2b115f289bbb68701?pvs=4) 
 	[Infr](https://www.notion.so/sportsvisio/PROJ-Infrastructure-150719d6f2bd80f087b2e931ef179536?pvs=4):	>fill this in...  [[Dat]]: me
     [Fball](spot://fireball):	^brainstorming 
@@ -15,6 +14,7 @@ QA:	G[QAmin](https://software-engineering-team.atlassian.net/jira/software/proje
 - okrs begin Q1
 - "Goodness" metric
 - QA reporting process; meeting w/ Jasu & Mery
+- grz contract discuss
 
 - playcharts
 - Double/triple where we are today

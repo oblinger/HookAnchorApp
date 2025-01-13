@@ -1,3 +1,9 @@
+- look at spaceX offer
+consider TSA-pre 
+[[@schwab]] 
+- Avanti: 
+- emile oster parenting podcast
+
 - new File Menu app (consider downloading)
 - renew oblinger.us
 - enable siri on mac and iphone.

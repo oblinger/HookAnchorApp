@@ -1,6 +1,6 @@
-[[MED]]:	Tread 3x Hiit x1
-[[FIN]]:	Open SCH; [[2024-01 Retirement Planning|Merrill]] 
-[[NJ]]:	Think
+[[MED]]:	150min, strength & HIIT, coach?
+[[FIN]]:	Budget; Move money; [[2024-01 Retirement Planning|Merrill]] 
+[[NJ]]:	
 [[Lrn]]:	Run system
 [[CN]]: 	Sean
 

@@ -1,3 +1,5 @@
+- do paperwork
+- get investment plan (add to 'self' list)
 - covenant of water
 
 - HUI billing  800 478-8837

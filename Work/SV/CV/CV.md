@@ -12,8 +12,12 @@
   , [DT alias Data Tasks](spot://dtaliasdatatasks), [RESULT](spot://result)
   , [Softbank](spot://softbank), [Story](spot://story), [[SVCV Re-ID]], [svdata](spot://svdata)
   , [Task](spot://task),
+  , ,
+  , ,
+  DELS: ,
   , [AI Min](spot://aimin), 
-  DELS: [AI MIN](spot://aimin), 
+  DELS: ,[AI Min](spot://aimin),
+  DELS: [AI MIN](spot://aimin),[AI Min](spot://aimin),[AI MIN](spot://aimin), [AI MIN](spot://aimin), 
 
 :: [[Data]]
 

@@ -1,15 +1,10 @@
-consider TSA-pre 
-[[@schwab]] 
-- Avanti: 
-- emile oster parenting podcast
-
 
 - [ ] [[MED Todo]] - [[MED VO2Max]] 
 - [ ] Call vanguard to move funds to new account
 - [ ] ask doctor about going above max heart rate.fr
 
 TRACK
-- [ ] do recalls on Audi
+- [ ] Fix Audi roof; do recalls on Audi
 - [ ] Review for Jessie
 
 - [ ] thanks for Eli's presents
@@ -18,11 +13,6 @@ TRACK
 - [ ] bbrugler@tiedemannadvisors.com  dwells@albionfinancial.com  albion
 - [ ] Get AF accounts cleaned:   (Find the hiring tests)
 
-WAIT
-- [ ] adolfo ladder
-- [ ] Allison restart
-- [ ] Get job application tests from James
-- [ ] Followup Yashin's conservative friend
 
 
 

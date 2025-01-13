@@ -1,8 +1,8 @@
 
 [[NJ]]:
-- [[LRN Todo]]:	DL C3; \ _ S
 - [[CN]]:			Dennis // Uri, Luis
 - [[SEEK]]:		Short List; 3Tgts; Listening 
+- [[LRN Todo]]:	DL C3; \S
 - [[BOD]]:			Get Coach?
 
 - [[NJ Targets]]:	Read glass door about them

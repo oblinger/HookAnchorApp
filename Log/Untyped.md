@@ -5,6 +5,7 @@ n:: no prefix.	Dated entries without any typing prefix
 
 | Date       | File                                        | Notes                                                                                                                             |
 | ---------- | ------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------- |
+| 2025-01-13 | [[@SpaceX]]                                     | offer                                                                                                                             |
 | 2025-01-10 | [[@Schwab]]                                     | mystery transactions                                                                                                              |
 | 2025-01-10 | [[FIN Budget]]                                  | OLD MINT BUDGETING                                                                                                                |
 | 2025-01-06 | [[@Apple]]                                      | pod pro replace bud                                                                                                               |
