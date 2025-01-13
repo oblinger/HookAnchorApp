@@ -1,4 +1,7 @@
 
+[[DocRackspace\|Mon Oct 2  2023 ]]  	[[DocRackspace#ssh root@50.57.180.189   MySQL-12-01-06Qo22tI1Ep]]  
+[[DocRackspace\|Mon Oct 2  2023 ]]  	[[DocRackspace#Ubuntu 11.04 (Natty Narwhal)]]  
+[[DocRackspace\|Mon Oct 2  2023 ]]  	[[DocRackspace#U:root   P:Build-11-11-11P3U1hb2Ru]]  
 [[DocRackspace\|Mon Oct 2  2023 ]]  	[[DocRackspace#ssh franklangston@50.57.178.83   P:userpass]]  
 [[DocRackspace\|Mon Oct 2  2023 ]]  	[[DocRackspace#http://50.57.178.83/   P:userpass]]  
 [[DocRackspace\|Mon Oct 2  2023 ]]  	[[DocRackspace#-> Nginx global install]]  

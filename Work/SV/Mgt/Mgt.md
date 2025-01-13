@@ -4,6 +4,19 @@
 
 # Log
 
+### 2025-01-13  W
+
+- Two Analysis: Min & FullStats
+- Ran Softbank game, shot charts auto-running at the end of pipe, 
+- Big run -- Min results on 
+
+Last week: 
+- Use the court annotations to filter out off-court players when court annotations are available
+- analyzed SAM2 results, analyzed metrics obtained from latest pipe run (which lead to some metric fixes), 
+- fixing bugs with pipe reading wrong FPS, shot chart arrow visualization with frame numbers, expanded NORM from 11 to 42 games (with minutes, game breaks, and court annotations), 
+
+- Implemented number of edits metric, computed new success rate of fireballs 63.33 -> 77.77%, added Dat to our codebase and adapted games/runs, ran latest pipe version on new NORM set
+
 ### 2024-12-16  W
 
 - Created the TopViewMapper module to produce positions for every frames, 

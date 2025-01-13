@@ -1,4 +1,7 @@
 
+[[@Danny Wilson\|Mon Nov 11  2024]]  	[[@Danny Wilson#2024-11-10  Hackers 2024]]  
+[[@Hackers\|Mon Nov 11  2024]]  	[[@Hackers#2024-11-10  Hackers 2024]]  
+[[@Marita Cheng\|Mon Nov 11  2024]]  	[[@Marita Cheng#2024-11-10  Hackers 2024]]  
 [[@Otavio Good\|Mon Nov 11  2024]]  	[[@Otavio Good#2024-11-10  Hackers 2024]]  
 [[@Pinar Stanfield\|Mon Nov 11  2024]]  	[[@Pinar Stanfield#2024-11-10  Hackers 2024]]  
 [[Politics\|Fri Nov 8  2024 ]]  	[[Politics#2024-11-07  Democrats Wake Up!]]  

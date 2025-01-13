@@ -2,35 +2,29 @@
     F11 [AWS](https://docs.google.com/document/d/1QS4081TT_Yyz1TS9GLZSfjQaczQ7ynzWTSu14waDcG0/edit?tab=t.0):	Estimate from Brian [[2024-08 Backend Architect|Arch]]: [r](https://docs.google.com/document/d/1gbutlP_EF-_wUdg4F3IEuw8Bhz8oET3Z/edit) 
 .**NOW**.
 	[DT](spot://dt): !50 games in
-    [Min](spot:://AI~MIN): [todo](https://www.notion.so/sportsvisio/STORY-Test-AI-Min-Ready-PaidProd-173719d6f2bd80f59eb5c8d2dc1aded7?pvs=4). min-normalization verify [jira](https://software-engineering-team.atlassian.net/browse/AIT-1129) 
-	[Chrt](https://www.notion.so/sportsvisio/SHOT-CHARTS-09ee6c9400f84e2ca8bd8caf4c559f59?pvs=4):	[todo](https://www.notion.so/sportsvisio/STORY-AI-Charts-in-Paid-Production-173719d6f2bd80b2b115f289bbb68701?pvs=4) 
+    [Min](spot:://AI~MIN): [todo](https://www.notion.so/sportsvisio/STORY-Test-AI-Min-Ready-PaidProd-173719d6f2bd80f59eb5c8d2dc1aded7?pvs=4). min-normalization verify [jira](https://software-engineering-team.atlassian.net/browse/AIT-1129) [QAmin](https://software-engineering-team.atlassian.net/jira/software/projects/AIT/boards/25?selectedIssue=AIT-1069)
 	[Infr](https://www.notion.so/sportsvisio/PROJ-Infrastructure-150719d6f2bd80f087b2e931ef179536?pvs=4):	>fill this in...  [[Dat]]: me
-    [Fball](spot://fireball):	^brainstorming 
-
-QA:	G[QAmin](https://software-engineering-team.atlassian.net/jira/software/projects/AIT/boards/25?selectedIssue=AIT-1069)^reg  [QAfb](https://software-engineering-team.atlassian.net/jira/software/projects/AIT/boards/25?selectedIssue=AIT-1070), 
-
-
-- Data task stories
+    [Fball](spot://fireball):	>brainstorming 
+- Next 'free credits' search
 - okrs begin Q1
-- "Goodness" metric
+- Data task stories
+	[Chrt](https://www.notion.so/sportsvisio/SHOT-CHARTS-09ee6c9400f84e2ca8bd8caf4c559f59?pvs=4):	W [todo](https://www.notion.so/sportsvisio/STORY-AI-Charts-in-Paid-Production-173719d6f2bd80b2b115f289bbb68701?pvs=4) 
+
 - QA reporting process; meeting w/ Jasu & Mery
 - grz contract discuss
-
-- playcharts
-- Double/triple where we are today
-- what is percentage of accrate game.
-- write down process for collecting 50 GT games
 - R&D time spreadsheets
-  
-DWS:	[WU11970](https://software-engineering-team.atlassian.net/browse/WU-1970)   /Matias[DWS](https://software-engineering-team.atlassian.net/browse/WU-1946)  icebox
-Crossover:	^james checkin
-[PAID](https://www.notion.so/sportsvisio/AI-MIN-Premium-Paid-Feature-128719d6f2bd80ffbb41db0441d57770?pvs=4):	
-[VB](https://www.notion.so/sportsvisio/VB-Speedup-Ideas-142719d6f2bd80889ad8fc7cb2484a91?pvs=4):	Speedup ideas
-STAT: [WU1938](https://software-engineering-team.atlassian.net/browse/WU-1938) show err status
-EXP:  [HotKey](https://software-engineering-team.atlassian.net/browse/WU-1935), J^5games 
-[[FIN Todo]]	Schwab
-[[NJ]]:	>[[War|War]], rewrite, mentor
-## TRACK
+
+- Double/triple speed up where we are today.
+- what is percentage of accurate game.
+- DWS:	[WU11970](https://software-engineering-team.atlassian.net/browse/WU-1970)   /Matias[DWS](https://software-engineering-team.atlassian.net/browse/WU-1946)  icebox
+
+
+
+## PAUSE / TRACK
+- playcharts
+ Crossover:	^james checkin
+  [VB](https://www.notion.so/sportsvisio/VB-Speedup-Ideas-142719d6f2bd80889ad8fc7cb2484a91?pvs=4):	Speedup ideas
+  EXP:  [HotKey](https://software-engineering-team.atlassian.net/browse/WU-1935), J^5games 
   GCP:	[Brian plan](https://docs.google.com/spreadsheets/d/1W38uHew6aaqyeolKzbO9NbaA96Q-jzyDb7gYoUst0qw/edit?gid=0#gid=0). 
   - heavy testing mgr app
   - mem tracking, >

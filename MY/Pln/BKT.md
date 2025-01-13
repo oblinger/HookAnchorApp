@@ -23,6 +23,16 @@ MIT: [[SV]], [[NJ]], [[SELF]], [[Fun]],
 [[Fin]]: Schwab Acct, Car, Margin
 
 [[Meta List]] [[Meta Time Codes]] 
+
+
+
+
+MED:  - [Liu](https://ucsfmychart.ucsfmedicalcenter.org/ucsfmychart/Home) 
+
+
+
+
+
 ## >
 - [[Up Task]],  [[Meta Plan]],  [[Daily Schedules]], 
 
@@ -132,3 +142,4 @@ Fun/Family (maybe in E)
 		- pick new lunch items to get used to.  Barley.
 
 		_
+		

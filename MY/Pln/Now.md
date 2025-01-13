@@ -1,17 +1,14 @@
 .STU.
-  [[FIN Todo]]: SIG CARD
   Ski Trip
- - [[2024-05 Sell Acura|Car]] 
- - [Liu](https://ucsfmychart.ucsfmedicalcenter.org/ucsfmychart/Home)  
+ 
  [[Friday]]: 
 
 .WRK.
  [[DocAWS]] 
- - vet email
 
-Mem Usage
 
 ## TRACK
+ - [[2024-05 Sell Acura|Car]] 
 
 ### SOON
 ### Watch
@@ -25,13 +22,4 @@ Mem Usage
 
 
 
-https://docs.google.com/document/d/1cAw5uwum8yhn_69bea4Us9XjaUVtZOApWj_gtx02S34/edit?usp=drive_link
 
-
-
-
-
-
-
-Case Studies google book
-- who I am; how I am different
