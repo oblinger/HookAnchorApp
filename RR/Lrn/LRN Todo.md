@@ -5,6 +5,9 @@
 - [[CV HowTo]] - run system
 - [[CV HowTo]] - learn about system
 
+- clang check it out.  maybe use it
+- Try Codium, Cursor, GPT alternative
+
 ## __
 
 

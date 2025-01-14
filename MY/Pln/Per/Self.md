@@ -5,4 +5,6 @@
 	- [ ] Update Sports Visio section
 	- [ ] Consider first 
 	- [ ] remove Dates from education
-- [ ] 
+
+
+- [ ] Get investment plan (add to 'self' list)

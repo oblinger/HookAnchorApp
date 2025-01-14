@@ -1,4 +1,8 @@
 
+[[DocRackspace\|Mon Oct 2  2023 ]]  	[[DocRackspace#(was prod-lamp)]]  
+[[DocRackspace\|Mon Oct 2  2023 ]]  	[[DocRackspace#Serving the homepage:      paybygroup.com]]  
+[[DocRackspace\|Mon Oct 2  2023 ]]  	[[DocRackspace#ssh root@184.106.165.117    rootpass  (Za1)]]  
+[[DocRackspace\|Mon Oct 2  2023 ]]  	[[DocRackspace#ssh sc@184.106.165.117     userpass]]  
 [[DocRackspace\|Mon Oct 2  2023 ]]  	[[DocRackspace#http://paybygroup.com/]]  
 [[DocRackspace\|Mon Oct 2  2023 ]]  	[[DocRackspace#http://184.106.165.117/]]  
 [[DocRackspace\|Mon Oct 2  2023 ]]  	[[DocRackspace#Ubuntu 11.10 (Oneric Ocelot)]]  

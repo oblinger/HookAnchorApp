@@ -1,14 +1,11 @@
 TOPS: [[KMR]], [[Meta]], [[TOC]], 
 
 .[[KMR]].
-  ,
-  ,
   [[Set]],
   [[Log]],
   [[AT]],
   [[MY]],
   [[Prj]],
-  ,
   [[T]], [GG](spot://gg), , [[RR]],
   [TRASH Obsidian](spot://trashobsidian), [TRASH for Obsidian Folder](spot://trashforobsidianfolder)
   OTHER: ,  , [top](spot://top),

@@ -1,4 +1,8 @@
 
+[[Reflections\|Wed Nov 13  2024]]  	[[Reflections#2024-11-03  COMPLETION - Pick things to finish; then finish ]]  
+[[@Mark Randall\|Tue Nov 12  2024]]  	[[@Mark Randall#2024-11-11  Hackers 2024]]  
+[[Politics\|Tue Nov 12  2024]]  	[[Politics#2024-11-11  short]]  
+[[Politics\|Tue Nov 12  2024]]  	[[Politics#2024-11-11  Democrats Wake Up! 2]]  
 [[2024-W46\|Tue Nov 12  2024]]  	[[2024-W46#W46   2024-11-11   [[2024-W45\\|<<]] [[2024-W47\\|>>]]]]  
 [[Mgt\|Tue Nov 12  2024]]  	[[Mgt#2024-11-11  W]]  
 [[@Alexandra Ramadan\|Mon Nov 11  2024]]  	[[@Alexandra Ramadan#2024-11-10  Hackers 2024]]  

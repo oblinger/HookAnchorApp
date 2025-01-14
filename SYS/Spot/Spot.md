@@ -1,4 +1,7 @@
+ERROR: Cannot find cmd: spot:://AI MIN
+  (should be compressing already???)
 
+- spot: add 'main' for every anchor (if 'main' is not defined)
 - Bug:  page w/ paren must not be printed as a wiki-link as paren cannot be parsed
 - Spot: spgrab. foo!bar will not add a correct link to 'bar' in foo.  it adds a file link
 - OBS - Evernote log of dated entries
