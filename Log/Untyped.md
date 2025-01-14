@@ -6,6 +6,8 @@ n:: no prefix.	Dated entries without any typing prefix
 | Date       | File                                        | Notes                                                                                                                             |
 | ---------- | ------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------- |
 | 2025-01-13 | [[@SpaceX]]                                     | offer                                                                                                                             |
+| 2025-01-13 | [[RES Linked In]]                               | New TOP Section                                                                                                                   |
+| 2025-01-13 | [[RES Pyramid]]                                 | Notes From Nick -- Dan's approach frame self:   to weave                                                                          |
 | 2025-01-13 | [[Mgt]]                                         | W                                                                                                                                 |
 | 2025-01-10 | [[@Schwab]]                                     | mystery transactions                                                                                                              |
 | 2025-01-10 | [[FIN Budget]]                                  | OLD MINT BUDGETING                                                                                                                |
@@ -875,6 +877,7 @@ n:: no prefix.	Dated entries without any typing prefix
 | 2022-01-04 | [[NJ22 Paths]]                                  | My purpose                                                                                                                        |
 | 2022-01-02 | [[DEEP_BOOT]]                                   | Key Capabilities                                                                                                                  |
 | 2022-00-00 | [[FailedMessages]]                              | JOE Quora                                                                                                                         |
+| 2022-00-00 | [[RES Linked In]]                               | Jared-ish Version                                                                                                                 |
 | 2021-12-28 | [[DEEP_BOOT]]                                   | Deep Introspection Claim                                                                                                          |
 | 2021-12-25 | [[Journal Old]]                                 | Friends Audit                                                                                                                     |
 | 2021-12-17 | [[COM Campaigns OLDER]]                         | RECRUITER OUTREACH                                                                                                                |

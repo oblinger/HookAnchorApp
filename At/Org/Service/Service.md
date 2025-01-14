@@ -1,6 +1,5 @@
 .[[Service]].
   ,   [[Cleaning Service]],
-  , , ,
   , [[@Algo Monster]], [[@Pramp]], 
   DELS: [[@Algo Monster]], [[@Pramp]],
 
@@ -8,12 +7,14 @@
 
 [[Cleaning Service]] 
 
-$6K   6,000
 
 (Master in Obsidian)
 
 == ACTIVE ==
 
+BABY SITTER - NANNY
+  Maria Nanny
+  Nina Nanny
 HOUSE REPAIR - Daniel. 415 272-0976
     relyserv31@gmail.com  from Jessie. [[@Daniel Handyman]]  
     Repaired exterior in 2020.  Main "large task" repair guy

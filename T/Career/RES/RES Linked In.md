@@ -13,7 +13,40 @@
 
 
 
+# PARTS
 
+## About
+
+### 2025-01-13  New TOP Section
+
+Deep Learning / Computer Vision / AI engineering leader.  I bounce between Engineering and leadership roles in scaling emerging AI technologies into 
+
+
+### 2022-00-00 Jared-ish Version
+
+As a Silicon Valley-based technology executive, machine learning technologist, AI / ML researcher, I’ve spent my career navigating the interplay between scaled science, emerging tech, and productization—working shoulder-to-shoulder with some of the world’s leading academics and business leaders to innovate at the edge of human understanding.
+
+Most recently, my work focused on commercialization, with notable early-stage examples including robotic work at Martian and Aeolus, and late-stage AI / IoT work at Analytics Fire.
+
+At Aeolus, I hired and led a 60-person, PhD-dominated team’s prototyping of a dexterous home robot capable of open-ended, complex household tasks, as showcased at CES and used to secure significant follow-on funding.
+
+As co-founder at Analytics Fire, I oversaw software development and deployment for billions in IoT assets, and creation of novel AI design-automation enabling a new sales channel for a Fortune 2000 company.
+
+Earlier, I served as a program manager at DARPA, where I managed a $200M+ R&D budget.
+
+One of my most recognized programs was Machine Reading (MR)—an approach that automated construction of high-accuracy, domain-specific text understanding systems based on fusion of statistical machine learning and natural language processing (NLP).
+
+MRP helped spawn the discipline of statistical NLP which represents the core technology underlying hundreds of the companies built around automated learning over natural text.
+
+I also led programs that ushered in early application of transfer learning from the field of psychology into AI algorithms, and created DARPA’s Bootstrapped Learning Program, which evolved the way machines learn by expanding ML from single learning paradigm into learning from 12 human-like modalities.
+
+I spent the first third of my career as an individual AI / ML researcher and team lead, generating over 20 patents and 25 peer-reviewed papers for publications such as, American Association for Artificial Intelligence, Symposium on Discrete Algorithms (SODA), as well as teaching graduate students within Columbia University’s EE department.
+
+During that time, we defined a new framework for Programming By Demonstration (PBD) that interleaves user script editing with user demonstrations thereby making large-scale PBD practical—these results were incorporated into the IBM’s Rational Software suite.
+
+I’m most at home with one foot planted in the fog surrounding cutting edge research and the other in or leading organizations focused on driving that possibility into commercial reality.
+
+## === OLDER STUFF BELOW ===
 
 ### OTHER
 
@@ -175,6 +208,8 @@ Appointed as part of IBM tenure to serve as co-instructor for “ELEN E 6880 Sta
 
 
 # LOG
+
+
 ### 2022-12-07  Framing Self
 [[DYL]] 
 

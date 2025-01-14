@@ -1,3 +1,6 @@
+
+- get investment plan (add to 'self' list)
+- note book for my audio recording of self, but also other notebooks
 - look at spaceX offer
 consider TSA-pre 
 [[@schwab]] 

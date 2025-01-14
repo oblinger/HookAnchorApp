@@ -1,4 +1,7 @@
 
+[[2024-W46\|Tue Nov 12  2024]]  	[[2024-W46#W46   2024-11-11   [[2024-W45\\|<<]] [[2024-W47\\|>>]]]]  
+[[Mgt\|Tue Nov 12  2024]]  	[[Mgt#2024-11-11  W]]  
+[[@Alexandra Ramadan\|Mon Nov 11  2024]]  	[[@Alexandra Ramadan#2024-11-10  Hackers 2024]]  
 [[@Danny Wilson\|Mon Nov 11  2024]]  	[[@Danny Wilson#2024-11-10  Hackers 2024]]  
 [[@Hackers\|Mon Nov 11  2024]]  	[[@Hackers#2024-11-10  Hackers 2024]]  
 [[@Marita Cheng\|Mon Nov 11  2024]]  	[[@Marita Cheng#2024-11-10  Hackers 2024]]  

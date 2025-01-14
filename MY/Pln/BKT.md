@@ -13,7 +13,7 @@
 [[MED]]:	Exercise, Cortisol
 [[NJ]]:	[[RES Star]], [[CN]],
 [[Lrn]]:	[[RR]], Hands On, Know
-[[Fun]]:	Read, Guys
+[[Fun]]:	Read, Guys, date
 
 
 MIT: [[SV]], [[NJ]], [[SELF]], [[Fun]], 
@@ -24,6 +24,22 @@ MIT: [[SV]], [[NJ]], [[SELF]], [[Fun]],
 
 [[Meta List]] [[Meta Time Codes]] 
 
+[[MED]]:	150min, strength & HIIT, coach?
+[[FIN]]:	Move money for good returns
+[[NJ]]:	
+[[Lrn]]:	Run system
+[[CN]]: 	Sean
+
+[[MED]]:	Daily Xrcise [[Habit]]
+[[MED]]:	Noom Eating
+[[MED]]:	Get TPST
+[[Calls]]:	John, Dave, Ana
+
+[[Fun]]: 
+[[Spirit]]: Gendlin
+
+
+[[Self]]. [[Self Evergreen]], 
 
 
 

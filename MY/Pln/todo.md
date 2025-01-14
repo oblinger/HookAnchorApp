@@ -1,7 +1,11 @@
 
-- [ ] [[MED Todo]] - [[MED VO2Max]] 
-- [ ] Call vanguard to move funds to new account
-- [ ] ask doctor about going above max heart rate.fr
+
+
+
+
+
+
+
 
 TRACK
 - [ ] Fix Audi roof; do recalls on Audi

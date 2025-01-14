@@ -132,6 +132,24 @@ ACTIVITES
 
 # LOG
 
+### 2025-01-13  Notes From Nick -- Dan's approach frame self:   to weave
+
+STORY:  Great explanation of why I want to jump into more hands on role in an area that I don't have experience.
+
+
+- train a foundational model; 
+
+
+Smooth talking alpha exec 
+- very self centered; very much a hero talking to another hero in our circle.
+
+
+With new waves of technology I flip back into IC roles and transition them into leadership on this.
+
+- in order stay on the bleeding edge I bounce from IC-tech-lead to Executive on successive AI tech waves.
+	- Statistical ML -> IoT -> Robotics -> Gen AI
+
+
 ### 2024-09-19  Objective
 
 Objective: 

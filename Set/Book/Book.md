@@ -2,21 +2,14 @@
 n:: Books I have read
 
 .[[Book]]. 
+  X [[BOOK Research]] 
   [[BOOK Favorites]], [[BOOK Summaries]], 
   PRODUCTIVITY / MANAGEMENT
   - [AnthonyRobins_GetTheEdge](spot://anthonyrobinsgettheedge),  [GetTheEdge_Worksheet](spot://gettheedgeworksheet),
   - [Atomic Habits](spot://atomichabits), [DYL](spot://dyl), [Getting_Things_Done](spot://gettingthingsdone),
   - [High Output Management](spot://highoutputmanagement), [[F90]], [[MgrPath]],
-  - [[Agile Software Development]], [[Fundamentals of Workability Workshop]],
-  , ,
-  DELS: [[BOOK Favorites]], [[BOOK Summaries]],
-  DELS: [[BOOK Favorites]], [[BOOK Summaries]],[[Book Chat GPT]], 
-
-  [[Book To Read]], 
-
-  , 
-  DELS: [[BOOK Favorites]], , [[BOOK Summaries]],
-  DELS: [[BOOK Favorites]], [[Book To Read]], [[BOOK Summaries]],[[Book Chat GPT]],
+  - [[Agile Software Development]], [[Fundamentals of Workability Workshop]], 
+  - [[Book To Read]], 
 
 
 

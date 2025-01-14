@@ -11,7 +11,7 @@
 	[Chrt](https://www.notion.so/sportsvisio/SHOT-CHARTS-09ee6c9400f84e2ca8bd8caf4c559f59?pvs=4):	W [todo](https://www.notion.so/sportsvisio/STORY-AI-Charts-in-Paid-Production-173719d6f2bd80b2b115f289bbb68701?pvs=4) 
 
 - QA reporting process; meeting w/ Jasu & Mery
-- grz contract discuss
+- Grz contract discuss
 - R&D time spreadsheets
 
 - Double/triple speed up where we are today.
@@ -45,7 +45,6 @@ FILIP: ask him again?
 [[journaling]] 
 
 
-## PAUSE , , , ,
 :	^J Provisional filed
 :	Populate product matrix
 :		^TestRecall; FixRecall

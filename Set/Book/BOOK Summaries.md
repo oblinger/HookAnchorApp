@@ -1,3 +1,5 @@
+
+
 ### 2024 "Anthem" by Neil Stephenson
 
 Set on an Earth similar planet in the future after 3 collapses of society.

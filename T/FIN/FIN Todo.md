@@ -1,4 +1,6 @@
-
+- [ ] Call vanguard to move funds to new account
+Budget; Move money; [[2024-01 Retirement Planning|Merrill]] 
+- retirement planning files
 - Signature Card
 - Letter to Schwab
 - Wait for Schwab activation
