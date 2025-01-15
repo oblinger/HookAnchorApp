@@ -64,6 +64,7 @@ bootstrap guy's.  insurance setup:  https://medium.com/@dvassallo/from-employee-
 
 Inside: 24" wide x 20" deep.        9" high (bottom)  5" high (top)  (giving about 1" clearance)
 
+Maybe this is the model number:  LG Support - LUTD4919SN
 
 ### - GE Microwave
 

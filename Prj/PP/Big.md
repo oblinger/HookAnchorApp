@@ -1,7 +1,7 @@
 
 (Listed on the [[PP]] page.)
 
-- PhotoManagement
+- [[My Photos]] 
 - [[2024-05 Sell Acura|Acura]] - 
 - [[2024-01 Retirement Planning|FinUpdate]] - 
 - Process mom's Eli educational funds.

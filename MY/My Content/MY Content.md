@@ -5,7 +5,7 @@
   ADDS:   ,
 
 
-
+[[My Photos]] 
 
 
 
@@ -98,8 +98,10 @@
   ADDS:
   ADDS:   , , ,
   ADDS:   , , , ,
-  ADDS:   [[Doc]], , ,
+  ADDS:   , , ,
   ADDS:   , ,
+  , [[My Photos]], 
+  DELS: [[Doc]],
 
 
 

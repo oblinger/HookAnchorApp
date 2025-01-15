@@ -1,4 +1,6 @@
 ## = TODO  [web](https://linkedin.com) 
+- [ ] Change the top of each entry
+
 - [ ] Top Image:  ???     
 - [ ] Headshot:  Current photo (with tee shirt?  Dress shirt? Simple headshot?)
          make it darker.
@@ -19,8 +21,40 @@
 
 ### 2025-01-13  New TOP Section
 
-Deep Learning / Computer Vision / AI engineering leader.  I bounce between Engineering and leadership roles in scaling emerging AI technologies into 
+Deep Learning / Computer Vision / AI engineering leader.  I alternate between engineering and leadership roles with each major AI revolution, beginning with classical ML/statistics based-NLP,  IoT-based ML, Deep-learning in robotics and computer vision, and finally now with generative models.
 
+I have worked shoulder-to-shoulder with some of the world’s leading academics and business leaders to innovate at the edge of human understanding.
+
+
+
+
+EXCISED
+
+I also led programs that ushered in early application of transfer learning from the field of psychology into AI algorithms, and created DARPA’s Bootstrapped Learning Program, which evolved the way machines learn by expanding ML from single learning paradigm into learning from 12 human-like modalities.
+
+### 2022-00-00 From Jared
+
+As a Silicon Valley-based technology executive, machine learning technologist, AI / ML researcher, I’ve spent my career navigating the interplay between scaled science, emerging tech, and productization—working shoulder-to-shoulder with some of the world’s leading academics and business leaders to innovate at the edge of human understanding.
+
+Most recently, my work focused on commercialization, with notable early-stage examples including robotic work at Martian and Aeolus, and late-stage AI / IoT work at Analytics Fire.
+
+At Aeolus, I hired and led a 60-person, PhD-dominated team’s prototyping of a dexterous home robot capable of open-ended, complex household tasks, as showcased at CES and used to secure significant follow-on funding.
+
+As co-founder at Analytics Fire, I oversaw software development and deployment for billions in IoT assets, and creation of novel AI design-automation enabling a new sales channel for a Fortune 2000 company.
+
+Earlier, I served as a program manager at DARPA, where I managed a $200M+ R&D budget.
+
+One of my most recognized programs was Machine Reading (MR)—an approach that automated construction of high-accuracy, domain-specific text understanding systems based on fusion of statistical machine learning and natural language processing (NLP).
+
+MRP helped spawn the discipline of statistical NLP which represents the core technology underlying hundreds of the companies built around automated learning over natural text.
+
+I also led programs that ushered in early application of transfer learning from the field of psychology into AI algorithms, and created DARPA’s Bootstrapped Learning Program, which evolved the way machines learn by expanding ML from single learning paradigm into learning from 12 human-like modalities.
+
+I spent the first third of my career as an individual AI / ML researcher and team lead, generating over 20 patents and 25 peer-reviewed papers for publications such as, American Association for Artificial Intelligence, Symposium on Discrete Algorithms (SODA), as well as teaching graduate students within Columbia University’s EE department.
+
+During that time, we defined a new framework for Programming By Demonstration (PBD) that interleaves user script editing with user demonstrations thereby making large-scale PBD practical—these results were incorporated into the IBM’s Rational Software suite.
+
+I’m most at home with one foot planted in the fog surrounding cutting edge research and the other in or leading organizations focused on driving that possibility into commercial reality.
 
 ### 2022-00-00 Jared-ish Version
 
@@ -45,6 +79,66 @@ I spent the first third of my career as an individual AI / ML researcher and tea
 During that time, we defined a new framework for Programming By Demonstration (PBD) that interleaves user script editing with user demonstrations thereby making large-scale PBD practical—these results were incorporated into the IBM’s Rational Software suite.
 
 I’m most at home with one foot planted in the fog surrounding cutting edge research and the other in or leading organizations focused on driving that possibility into commercial reality.
+
+## Experience - Sports Visio
+
+### 2025-01-14  From Resume
+Leading a 20+ Engineer/PhD team in building an automated Computer-Vision-based multi-sports products that accepts cell phone video in and automatically produces per-players stats and highlights out. Hired to fix quality, velocity, personnel, and delivery issues across the Software and AI teams.
+-- Replaced the entire AI team; Hired a new QA team.
+-- Developed and implemented dozens of SW life cycle processes to streamline team execution.
+-- Reframed product scope to match dev resources while still delivering features required to drive sales.
+Outcomes: 
+-- Went from an "unshippable" product to routinely deployed with zero high severity bugs.
+-- Raised $5M+ from Tier-1 VCs including Sapphire Ventures.
+-- Grew sales from zero to over $300K ARR with 100% sustained quarter or quarter growth.
+
+
+## Experience - Analytics Fire
+
+### 2025-01-14  Update header
+
+Founded, lead, and sold, 50+ person AI engineering org with a focus on clean-energy. Deliverables included a first-of-a-kind Deep-Learned solar installation designer based on satellite imagery of building roof structures. Our Fortune 1000 client sighted this as “their largest single driver of new revenue growth” when it was released.
+
+Tenure spans the greenfielding-to-operations of more than 45 software and analytics solutions building and operating on behalf of clients including SunPower, Enphase, Boston Scientific, and Arthrex.  Our software ecosystems controls a range of over $2B in clean energy and other hardware like a telerobotically operated surgical units.
+
+### 2022-00-00  From Jared
+
+Managed the Analytics Fire AI Practice.  Deliverables included convolutional-net-based manufacturing line optimizer, and a first-of-a-kind ML-based automation that translated satellite imagery into detailed solar installation designs.  Our Fortune 1000 client sighted this as “their largest single driver of new revenue growth” when it was released.
+
+Tenure spans the greenfielding-to-operations of more than 45 software and analytics solutions involving a 60-member workforce building and operating on behalf of clients including Arthrex, Boston Scientific, Enphase, iCracked, and SunPower.  Our software ecosystems control over $2B in clean energy and other hardware like a telerobotically operated surgical unit.
+
+
+## Experience - Aeolus Robotics
+
+### 2022-00-00 From Jared
+
+Tapped as employee #1—following Martian Robotics acquisition—to reimagine Martian IP as an eldercare robot, ultimately deployed through an exclusive relationship with a Japanese conglomerate. 
+
+Tenure included demo prototype at CES 2017, helping secure significant follow-on funding; building a 60-member, 8-discipline follow-the-sun HW / SW R&D organization (40+ PhDs, 20+ engineers) remotely distributed across 6 continents, using scaled recruiting to accommodate 2,000+ applicants.
+
+## Experience - Martian Robots
+
+
+### 2025-01-14  Topline punch
+
+Joined with former CEO of Neto Robotics to found Martian robotics with vision of bringing general purpose robots into homes worldwide. Led 13 engineers in inventing a robotic arm able to clean irregular bathroom surfaces (e. g. the under side of a toilet) using adaptive AI, advanced planning, and sensor feedback loops to create closed-in controlled bathroom scrubbing and wiping.
+
+Innovations included novel topological transform to map any 3D surface onto the 2D plane; and achieving 10x to 100x cost reduction using techniques like motion-by-feel.
+
+### 2022-00-00 From Jared
+
+Recruited by founder (former CEO of Neato Robotics) to support the vision of bringing general purpose robots into the home worldwide. (Acq. Aeolus Robotics)
+
+Led 13-member team in inventing robotic arm to “clean any bathroom surface,” using adaptive AI, advanced planning, and sensor feedback loops to create closed-in controlled bathroom wiping.
+
+Innovations included novel topological transform to map any 3D surface onto the 2D plane; and achieving 10x to 100x cost reduction using techniques like motion-by-feel.
+
+
+## Experience - PayByGroup
+- Start 2011, end 2013
+
+(Acq. by FEVO.)  Tapped to reimagined consumer transaction flow for group purchases for travel and retail.  Built the payments engine and workflow for multi-stage, contingent, group purchasing.
+
 
 ## === OLDER STUFF BELOW ===
 
