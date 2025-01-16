@@ -1,2 +1,0 @@
-
-- [[ToRead]], [[Book]], [[BOOK Summaries]], 

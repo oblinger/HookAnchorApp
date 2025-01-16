@@ -5,6 +5,26 @@
 # LOG
 
 
+### 2025-01-16  Out
+
+Martin Off
+
+
+- Our processes was poor, but got better.
+- NOT ON SAME PAGE IN JIRA
+- try to improve the process of development
+	- better use of Jira to have a "calm" experience
+	- Better relationship with other teams
+- sometimes I did not understand why we are prioritizing one task and not another 
+- Changes in definitions during task working is still happening.
+- 
+- FRUSTRATING TASKS:
+  The tasks that you had to do fit with his role.  Frustration for long period of time that there were too many low skill tasks.  (Ideal another person inside the company that is kind of like a super QA person, or maybe a test engineer.  had problems installing client for g-cloud, and credentials)
+- BAD ARCHITECTURE?
+  Have to deal with triggers and the way the messages are save in the state object and processed is too complex.
+
+
+
 
 ### 2023-04-24  intro
 

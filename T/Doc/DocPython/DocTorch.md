@@ -1,6 +1,6 @@
 
 
-#review 
+#review #dl
 [[Torch Tensor]] 
 
 ```python
@@ -34,8 +34,8 @@ class MyMod(nn.Module):
 ```
 
 
-basic torch train flow
-??
+basic PyTorch training flow
+-?-
 class Data, 
 setup: (1) MyDataset, (2) criterion, (3) model, (4) loader, (5) optimizer
 loop:  epoch; loop loader; yhat->loss->.zero->.backward->.step
@@ -61,4 +61,23 @@ Plot_2D_Plane(model1 , data_set)
 plt.plot(LOSS1)
 plt.xlabel("iterations ")
 plt.ylabel("Cost/total loss ")
+```
+
+
+## Basics
+
+```
+z = torch.arange(-100, 100, 0.1).view(-1, 1). # builds an array of values
+z = torch.tensor([[1.0]])
+```
+
+
+## Modules
+
+```
+nn.Sigmoid(), 
+nn.Linear(in_dim, out_dim)
+nn.Sequential(...), 
+
+class nn.Module(): __init__, forward
 ```

@@ -1,13 +1,4 @@
 
-.[[ToRead]].  [[BOOK Summaries]] 
-  [[Book To Read]], [[Podcasts To Listen To]],
-  , [[BOOK Research]], 
-
-  [[RR Papers]], [[Book To Read]], 
-  
-  n:: Stuff "to read"
-  #set
-
 
 ## TO READ
 - focusing [Gendlin](https://focusing.org/sixsteps) 

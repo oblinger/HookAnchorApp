@@ -3,7 +3,7 @@
 
 [[mate]],	[[Proj]],	[[Race]],	
 [[KMR]]: [[WEEKLY]],	
-    [[RR]]: [[Lrn]],	[[RR PAPERS]],	[[RR Philosophy]],	[[RR MGR]],	
+    [[RR]]: [[Lrn]],	[[RR Leet]],	[[RR PAPERS]],	[[RR Philosophy]],	[[RR MGR]],	
         [[RR SYSTEMS]]: 
         [[Comp]]: 
             [[LANG]]: 

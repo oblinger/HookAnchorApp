@@ -1,4 +1,6 @@
 
+[[RES Numbers\|Wed Nov 13  2024]]  	[[RES Numbers#OFFICIAL PROGRAM NAMES]]  
+[[RES Numbers\|Wed Nov 13  2024]]  	[[RES Numbers#Number of dollars and people managed]]  
 [[RES Star\|Wed Nov 13  2024]]  	[[RES Star#__]]  
 [[RES Star\|Wed Nov 13  2024]]  	[[RES Star#$200M Portfolio]]  
 [[RES Star\|Wed Nov 13  2024]]  	[[RES Star#DARPA PM]]  

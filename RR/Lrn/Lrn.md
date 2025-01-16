@@ -4,6 +4,20 @@
 
 
 
+## Rocks - Evergreen @ top
+- ^ \_ S  SPACED REPETITION. (Add shift for review)
+- [[NJ ToRead]] - Read paper from 'To Read'
+- [Coursera](spot://coursera~1pass) 
+
+- Run System; Train system
+- Code@work.	LeetCoding.
+- DL Specialization: Sequence Models (not yet started)
+- Coursera: IBM PyTorch
+
+
+
+
+
 
 
 
