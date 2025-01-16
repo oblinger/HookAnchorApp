@@ -1,4 +1,10 @@
 
+[[RES Star\|Wed Nov 13  2024]]  	[[RES Star#__]]  
+[[RES Star\|Wed Nov 13  2024]]  	[[RES Star#$200M Portfolio]]  
+[[RES Star\|Wed Nov 13  2024]]  	[[RES Star#DARPA PM]]  
+[[RES Star\|Wed Nov 13  2024]]  	[[RES Star#My old one]]  
+[[RES Star\|Wed Nov 13  2024]]  	[[RES Star#JARED]]  
+[[Reflections\|Wed Nov 13  2024]]  	[[Reflections#2024-11-12  Hackers was fun/energizing.  I am credible 4 man]]  
 [[Reflections\|Wed Nov 13  2024]]  	[[Reflections#2024-11-03  COMPLETION - Pick things to finish; then finish ]]  
 [[@Mark Randall\|Tue Nov 12  2024]]  	[[@Mark Randall#2024-11-11  Hackers 2024]]  
 [[Politics\|Tue Nov 12  2024]]  	[[Politics#2024-11-11  short]]  

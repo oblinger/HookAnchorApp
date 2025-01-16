@@ -1,4 +1,10 @@
 
+[[DocRackspace\|Mon Oct 2  2023 ]]  	[[DocRackspace#.ssh=Aq1 (dev2)]]  
+[[DocRackspace\|Mon Oct 2  2023 ]]  	[[DocRackspace#72:e2:e3:26:ec:60:61:93:f7:78:b4:ed:2f:95:4d:fa Dev2@paybygr]]  
+[[DocRackspace\|Mon Oct 2  2023 ]]  	[[DocRackspace#Base-2011-11-11]]  
+[[DocRackspace\|Mon Oct 2  2023 ]]  	[[DocRackspace#ssh root@50.57.108.157  rootpass]]  
+[[DocRackspace\|Mon Oct 2  2023 ]]  	[[DocRackspace#ssh franklangston@50.57.108.157  userpass]]  
+[[DocRackspace\|Mon Oct 2  2023 ]]  	[[DocRackspace#http://beta.paybygroup.com]]  
 [[DocRackspace\|Mon Oct 2  2023 ]]  	[[DocRackspace#(was prod-lamp)]]  
 [[DocRackspace\|Mon Oct 2  2023 ]]  	[[DocRackspace#Serving the homepage:      paybygroup.com]]  
 [[DocRackspace\|Mon Oct 2  2023 ]]  	[[DocRackspace#ssh root@184.106.165.117    rootpass  (Za1)]]  

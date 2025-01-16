@@ -5,6 +5,7 @@ n:: no prefix.	Dated entries without any typing prefix
 
 | Date       | File                                        | Notes                                                                                                                             |
 | ---------- | ------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------- |
+| 2025-01-15 | [[@David Hayden]]                               | Career Discussion                                                                                                                 |
 | 2025-01-14 | [[RES Linked In]]                               | From Resume                                                                                                                       |
 | 2025-01-14 | [[RES Linked In]]                               | Update header                                                                                                                     |
 | 2025-01-14 | [[RES Linked In]]                               | Topline punch                                                                                                                     |
