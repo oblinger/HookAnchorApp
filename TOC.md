@@ -1,7 +1,7 @@
 
 # TABLE OF CONENTS
 
-[[mate]],	[[Proj]],	[[Race]],	
+[[mate]],	[[Proj]],	[[Race]],	[[Read]],	
 [[KMR]]: [[WEEKLY]],	
     [[RR]]: [[Lrn]],	[[RR Leet]],	[[RR PAPERS]],	[[RR Philosophy]],	[[RR MGR]],	
         [[RR SYSTEMS]]: 
@@ -96,6 +96,6 @@
                 [[EOC]]: [[EOCT]],	[[EOCA]],	[[EOCI]],	[[EOCK]],	[[EOCP]],	
                     [[EOCB]]: 
             [[Idea Social]]: 
-    [[Set]]: [[Recipe]],	[[Book]],	[[ToRead]],	
+    [[Set]]: [[Recipe]],	[[Book]],	
         [[Humor]]: 
         [[BUY]]: 

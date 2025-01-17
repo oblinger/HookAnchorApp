@@ -1,4 +1,9 @@
 
+[[DocRackspace\|Mon Oct 2  2023 ]]  	[[DocRackspace#was dev-lamp [DNS=dev] -- now has the wordpress site -om- de]]  
+[[DocRackspace\|Mon Oct 2  2023 ]]  	[[DocRackspace#Full-2011-11-11]]  
+[[DocRackspace\|Mon Oct 2  2023 ]]  	[[DocRackspace#ssh franklangston@50.57.143.251 userpass  (rootpass)]]  
+[[DocRackspace\|Mon Oct 2  2023 ]]  	[[DocRackspace#test.paybygroupG0okK7Gt7]]  
+[[DocRackspace\|Mon Oct 2  2023 ]]  	[[DocRackspace#http://test.paybygroup.com/]]  
 [[DocRackspace\|Mon Oct 2  2023 ]]  	[[DocRackspace#http://50.57.143.251/]]  
 [[DocRackspace\|Mon Oct 2  2023 ]]  	[[DocRackspace#From  Build-11-11-11-scratch-12-11-09  (note wrong scratch d]]  
 [[DocRackspace\|Mon Oct 2  2023 ]]  	[[DocRackspace#.ssh=Aq1 (dev2)]]  

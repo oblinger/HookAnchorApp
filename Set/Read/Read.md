@@ -2,11 +2,13 @@
   #set
 
 .[[Read]].  [[BOOK Summaries]] 
-- [[ToRead]]
-- [[NJ ToRead]]:
-- [[Book To Read]]
-- [[Podcasts To Listen To]],
-- [[BOOK Research]], 
+-
+- :
+-
+- ,
+- ,
+  , [[BOOK Research]], [[Book To Read]], [[NJ ToRead]], [[Podcasts To Listen To]], [[ToRead]], 
+  DELS: [[ToRead]], [[NJ ToRead]], [[Book To Read]], [[Podcasts To Listen To]], [[BOOK Research]],
 
 
 

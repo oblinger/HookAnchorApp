@@ -3,15 +3,17 @@ n:: Groupings of like (typed), undated entries.
 -  [[Log]] (temporally ordered sets)
 
 .[[Set]].
-- TRACKING:	[[ToRead]], [[Returns]], [[Book]],
+- TRACKING:	, [[Returns]], [[Book]],
 - 			.
 - [[Humor]], [[Movies]], [[Recipe]]
   , , , ,
   , , , ,
   DELS: , , ,
-  , [[BUY]], 
+  , [[BUY]],
   DELS: , , ,[[BUY]],
-  DELS: [[LANG]], [[Phone]], [[Writing]],[[BUY]],[[CTC]], [[Phone]], [[Writing]], [[LANG]], [[Phone]], [[Writing]], 
+  , [[Read]], 
+  DELS: [[LANG]], [[Phone]], [[Writing]],[[BUY]],[[CTC]], [[Phone]], [[Writing]], [[LANG]], [[Phone]], [[Writing]],
+  DELS: [[LANG]], [[Phone]], [[Writing]],[[BUY]],[[CTC]], [[Phone]], [[Writing]], [[LANG]], [[Phone]], [[Writing]],[[ToRead]], 
 
 
 
