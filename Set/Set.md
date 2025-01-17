@@ -11,9 +11,9 @@ n:: Groupings of like (typed), undated entries.
   DELS: , , ,
   , [[BUY]],
   DELS: , , ,[[BUY]],
-  , [[Read]], 
-  DELS: [[LANG]], [[Phone]], [[Writing]],[[BUY]],[[CTC]], [[Phone]], [[Writing]], [[LANG]], [[Phone]], [[Writing]],
-  DELS: [[LANG]], [[Phone]], [[Writing]],[[BUY]],[[CTC]], [[Phone]], [[Writing]], [[LANG]], [[Phone]], [[Writing]],[[ToRead]], 
+  , [[Read]],
+  DELS: , , ,[[BUY]],, , , , , ,
+  DELS: [[LANG]], [[Phone]], [[Writing]],[[BUY]],[[CTC]], [[Phone]], [[Writing]], [[LANG]], [[Phone]], [[Writing]],[[ToRead]],[[LANG]], [[Phone]], [[Writing]], [[CTC]], [[Phone]], [[Writing]], [[LANG]], [[Phone]], [[Writing]], 
 
 
 
