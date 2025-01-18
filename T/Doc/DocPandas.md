@@ -20,11 +20,13 @@ df .iloc
     df['a'] = df['a'].apply(lambda x: x + 1)
     df['delta'] = df['col'].diff()
 
-## DF PROCESSING
+## DF MANIPULATION
 df1.join(df2)
 pd.merge(df1, df2, on = "col_a", how = "inner")
 .shuffle
 .batch ???
+data = pd.concat([X, y], axis=1)
+data_B = data_B.sample(n=200, random_state=42) # Select 200 samples from the class
 
 ## DF FILTERING
 - df = df[ df.index < '2020-03-31']
@@ -47,6 +49,7 @@ pd.merge(df1, df2, on = "col_a", how = "inner")
 ## VISUALIZATION
 df['gdp'].plot(legends=True, figsize=(16,8))
 sns.headmap()
+display(y['Diagnosis'].value_counts())   # lists counts for each value
 
 
 

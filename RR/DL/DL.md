@@ -1,6 +1,7 @@
 
 .[[DL]].
   PARTS:	[[Attention]], [[Activation Functions]], [[Feed Forward Layer]],
+  DL PARTS	[[DL Opto]], [[DL Strat]],
   DETAILS:	[[Invertable Density Estimation]], [[LoRA]], [[ReLU]],
   .		    [[ORPO Odds Ratio Preference Optimization]],
   :	[[Gradient Checking]],
@@ -10,7 +11,7 @@
   DL ALG2:	[[KAN - Kolmogorov-Arnold Neworks]], [[DSPY System]],
   [[DL SYS]]:	[[GPT]], [[Segment Anything]], [[RASA]],
   [[DL Notation]]:	[[NG Notation]],
-  , [[CNNs]], [[DL Alg]], [[DL Opto]], [[DL Strat]], [[DL Strategy]], [[DL Theory]], [[Embedding]]
+  , [[CNNs]], [[DL Alg]], [[DL Strategy]], [[DL Theory]], [[Embedding]]
   , [[Positional Encoding]], [[RLHF]], [[Tensor]],
   , [[DL Areas]], [[Mech Interp]], 
 

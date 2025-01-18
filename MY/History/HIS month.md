@@ -1,4 +1,9 @@
 
+[[RES Parts\|Thu Nov 14  2024]]  	[[RES Parts#TOP & Career At A Glance]]  
+[[RES Numbers\|Thu Nov 14  2024]]  	[[RES Numbers#Brought Multiple Products To Market Totaling More Than $3B I]]  
+[[RES Papers\|Thu Nov 14  2024]]  	[[RES Papers#VERIFIED ON ADDENDUM]]  
+[[RES Papers\|Thu Nov 14  2024]]  	[[RES Papers#TO ADD TO ADDENDUM]]  
+[[RES Papers\|Thu Nov 14  2024]]  	[[RES Papers#OLDER STUFF]]  
 [[RES Parts\|Thu Nov 14  2024]]  	[[RES Parts#Resume Sections]]  
 [[RES Parts\|Thu Nov 14  2024]]  	[[RES Parts#Older Parts]]  
 [[@Sean O'Connor\|Wed Nov 13  2024]]  	[[@Sean O'Connor#2024-11-12  VB]]  

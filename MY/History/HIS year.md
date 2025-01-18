@@ -1,4 +1,9 @@
 
+[[DocTensorFlow\|Mon Oct 2  2023 ]]  	[[DocTensorFlow#VARIABLE]]  
+[[DocTensorFlow\|Mon Oct 2  2023 ]]  	[[DocTensorFlow#TENSOR]]  
+[[DocTensorFlow\|Mon Oct 2  2023 ]]  	[[DocTensorFlow#GRAD TAPE]]  
+[[DocRackspace\|Mon Oct 2  2023 ]]  	[[DocRackspace#Rackspace Login details]]  
+[[DocRackspace\|Mon Oct 2  2023 ]]  	[[DocRackspace#Instances]]  
 [[DocRackspace\|Mon Oct 2  2023 ]]  	[[DocRackspace#was dev-lamp [DNS=dev] -- now has the wordpress site -om- de]]  
 [[DocRackspace\|Mon Oct 2  2023 ]]  	[[DocRackspace#Full-2011-11-11]]  
 [[DocRackspace\|Mon Oct 2  2023 ]]  	[[DocRackspace#ssh franklangston@50.57.143.251 userpass  (rootpass)]]  

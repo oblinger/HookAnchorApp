@@ -2,7 +2,8 @@
 
 #review #dl
 [[Torch Tensor]] 
-[[Torch Template]] 
+[[Torch Training Examples]] 
+[[Torch nn.Module]] 
 
 ```python
 

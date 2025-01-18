@@ -2,7 +2,8 @@
   ,   [[DocConda]], [[DocJupyter]], [[DocNumPy]], [[DocPycharm]], [[DocPyDatetime]], [[DocSeaborn]], [[DocTensorFlow]],
   , , ,
   , ,
-  , [[DocTorch]], [[Torch Tensor]], 
+  , [[DocTorch]], [[Torch Tensor]],
+  , [[Torch Training Examples]], 
   DELS: [[DocMatplotlib]],[[DocTorch]], [[Torch Tensor]],
 
 [[DocTorch]]

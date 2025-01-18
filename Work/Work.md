@@ -20,6 +20,18 @@
 - DWS:	[WU11970](https://software-engineering-team.atlassian.net/browse/WU-1970)   /Matias[DWS](https://software-engineering-team.atlassian.net/browse/WU-1946)  icebox
 
 
+- Slides: taxonomy; okrs; 
+- Tax doc
+- Minutes perf
+- Shot Charts perf
+- Skipping: 
+  - Seems we might be able to develop a "no shot detector"
+  - Seems percent of shots we can know with "very high confidence" is less than 1/3
+
+
+def_metric shooter_color
+   p, r, f, s = ....
+   return f"P{p} R{}
 
 ## PAUSE / TRACK
 - playcharts

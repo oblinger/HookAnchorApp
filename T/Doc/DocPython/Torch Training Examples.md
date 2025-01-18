@@ -29,6 +29,32 @@ plt.xlabel("iterations ")
 plt.ylabel("Cost/total loss ")
 ```
 
+## Examples
+
+```
+# Create dataloader object, crierion function and optimizer.
+trainloader = DataLoader(dataset=data_set, batch_size=3)
+criterion_rms = nn.MSELoss()
+learning_rate = 2
+optimizer = torch.optim.SGD(model.parameters(), lr=learning_rate)
+
+
+# Train the model
+def train_model(epochs):
+	for epoch in range(epochs):
+		for x, y in trainloader:
+			yhat = model(x)
+			loss = criterion_rms(yhat, y)
+			optimizer.zero_grad()
+			loss.backward()
+			optimizer.step()
+			get_surface.set_para_loss(model, loss.tolist())
+		if epoch % 20 == 0:
+			get_surface.plot_ps()
+
+train_model(100)
+```
+## Questions
 
 PyTorch Training Steps
 -?-

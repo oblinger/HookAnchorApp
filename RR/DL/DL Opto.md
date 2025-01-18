@@ -1,5 +1,10 @@
 n:: How to optimize a deep net
 
+#review 
+
+#dl 
+
+
 
 ## MINI-BATCH - Batch vs. Mini-Batch Gradient Descent
 - "1 epoch" - single pass thru the whole dataset
@@ -33,8 +38,9 @@ n:: How to optimize a deep net
 - W = W - alpha * V_dW     b = b - alpha * V_db
 
 
-## RMS_prop
+## RMS_propagation
 - INTUITION:  As euclidean magnitude of the gradient decreases the chances of taking a step in a 'weird direction' also decreases, so one can step 
+- INTUITION: when gradient in a direction is large, it is safer and still efficient to reduce learning rate in that dimension, thus /sqrt of avg of squared weights
 - Compute the Exponentially Weighted Moving Average of dW and db:
   S_dW := beta * S_dW + (1-beta) * dW^2    (element wise squaring; do same for S_db)
 - W := W - alpha * dW / sqrt( S_dW ) + epsilon        (epsilon=1e-8 added to ensure numerical stability in the face of )
