@@ -1,7 +1,7 @@
 
 .[[DL]].
   PARTS:	[[Attention]], [[Activation Functions]], [[Feed Forward Layer]],
-  [[DLF]]:		[[DL Optim]], [[DL Strat]],
+  :		, [[DL Strat]],
   DETAILS:	[[Invertable Density Estimation]], [[LoRA]], [[ReLU]],
   .		    [[ORPO Odds Ratio Preference Optimization]],
   :	[[Gradient Checking]],
@@ -13,7 +13,11 @@
   [[DL Notation]]:	[[NG Notation]],
   , [[CNNs]], [[DL Alg]], [[DL Strategy]], [[DL Theory]], [[Embedding]]
   , [[Positional Encoding]], [[RLHF]], [[Tensor]],
-  , [[DL Areas]], [[Mech Interp]], 
+  , [[DL Areas]], [[Mech Interp]],
+  , ,
+  , [[DL Data Loading]], [[DLF]], [[DL Optim]], [[DL torch.optim]], 
+  DELS: [[DLF]], [[DL Optim]],
+  DELS: [[DLF]], [[DL Optim]],[[DL Opto]], 
 
 [[DL Areas]]
 

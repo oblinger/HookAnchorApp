@@ -4,6 +4,7 @@ Deep Learning Framework
 - [[DL Data Loading]] 
 - [[DL Optim]] 
 - [[DL Visualize]] 
+- [[DL Analyze]] 
 
 
 Detailed Overview
