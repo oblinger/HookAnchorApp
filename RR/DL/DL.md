@@ -1,7 +1,7 @@
 
 .[[DL]].
   PARTS:	[[Attention]], [[Activation Functions]], [[Feed Forward Layer]],
-  DL PARTS	[[DL Opto]], [[DL Strat]],
+  [[DLF]]:		[[DL Optim]], [[DL Strat]],
   DETAILS:	[[Invertable Density Estimation]], [[LoRA]], [[ReLU]],
   .		    [[ORPO Odds Ratio Preference Optimization]],
   :	[[Gradient Checking]],
@@ -97,7 +97,7 @@
   DELS: [[CNN]], [[DL Optimization]], [[DL Strategy]], [[VAE - Variational Auto Encoder]], 
 
 
-  DELS: [[DL Strat]], [[CNNs]], [[DL Opto]], 
+  DELS: [[DL Strat]], [[CNNs]], [[DL Optim]], 
 
 
 
@@ -335,7 +335,7 @@
 
 
 
-  DELS: [[RNNs]], [[DL Opto]], [[DL Strat]], [[DL algs]], [[DL SYStems]], [[DL topics]], [[RR/ML/DL/GPT]], [[VAEs]], 
+  DELS: [[RNNs]], [[DL Optim]], [[DL Strat]], [[DL algs]], [[DL SYStems]], [[DL topics]], [[RR/ML/DL/GPT]], [[VAEs]], 
 
 - [[LoRA]] 
 :: [[KAN - Kolmogorov-Arnold Neworks]]
@@ -347,7 +347,7 @@
  [[LLM]], 
 
 :: [[VAEs]],   [[Attention]],   [[Gradient Checking]],   [[NG Notation]],   [[Invertable Density Estimation]],   [[Self Supervised Learning]],   [[Activation Functions]],   [[Auto Encoders]],  [[VAEs]]
-- [[DL Alg]], [[DL Topic]], [[DL Opto]], 
+- [[DL Alg]], [[DL Topic]], [[DL Optim]], 
   [Regularization](Regularization.md),   [GANs](GANs.md),   [NN](NN.md)
 #tag <[[ML]] 
 
@@ -372,7 +372,7 @@
 - [[DL Topic]]: 			[[RLHF]],  
 - [[DL Notation]]:		[[NG Notation]], 
 - [[DL Alg]]:				[[RASA]], [[Segment Anything]], 
-- [[DL Opto]] - 
+- [[DL Optim]] - 
 - [[DL Strat]], 
 
 

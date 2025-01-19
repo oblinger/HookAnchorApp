@@ -1,4 +1,9 @@
 
+[[2024-04-01 Resume Rewrite\|Thu Nov 14  2024]]  	[[2024-04-01 Resume Rewrite#__]]  
+[[2024-04-01 Resume Rewrite\|Thu Nov 14  2024]]  	[[2024-04-01 Resume Rewrite#Rewrite]]  
+[[RES\|Thu Nov 14  2024]]  	[[RES#2024-03-29  [[2024-04-01 Resume Rewrite]]]]  
+[[Palestinians\|Thu Nov 14  2024]]  	[[Palestinians#2024-11-14  Tighter Intro]]  
+[[RES Parts\|Thu Nov 14  2024]]  	[[RES Parts#One Liner]]  
 [[RES Parts\|Thu Nov 14  2024]]  	[[RES Parts#TOP & Career At A Glance]]  
 [[RES Numbers\|Thu Nov 14  2024]]  	[[RES Numbers#Brought Multiple Products To Market Totaling More Than $3B I]]  
 [[RES Papers\|Thu Nov 14  2024]]  	[[RES Papers#VERIFIED ON ADDENDUM]]  

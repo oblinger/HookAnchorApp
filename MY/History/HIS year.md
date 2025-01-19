@@ -1,4 +1,9 @@
 
+[[DocPython\|Mon Oct 2  2023 ]]  	[[DocPython#Python Topics]]  
+[[DocPython\|Mon Oct 2  2023 ]]  	[[DocPython#Python SETUP]]  
+[[DocPython\|Mon Oct 2  2023 ]]  	[[DocPython#Py Docs]]  
+[[DocTensorFlow\|Mon Oct 2  2023 ]]  	[[DocTensorFlow#MATH]]  
+[[DocTensorFlow\|Mon Oct 2  2023 ]]  	[[DocTensorFlow#COST FN]]  
 [[DocTensorFlow\|Mon Oct 2  2023 ]]  	[[DocTensorFlow#VARIABLE]]  
 [[DocTensorFlow\|Mon Oct 2  2023 ]]  	[[DocTensorFlow#TENSOR]]  
 [[DocTensorFlow\|Mon Oct 2  2023 ]]  	[[DocTensorFlow#GRAD TAPE]]  

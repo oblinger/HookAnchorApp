@@ -4,6 +4,7 @@ n:: How to optimize a deep net
 
 #dl 
 
+[[DL torch.optim]] 
 
 
 ## MINI-BATCH - Batch vs. Mini-Batch Gradient Descent

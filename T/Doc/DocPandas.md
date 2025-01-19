@@ -28,6 +28,10 @@ pd.merge(df1, df2, on = "col_a", how = "inner")
 data = pd.concat([X, y], axis=1)
 data_B = data_B.sample(n=200, random_state=42) # Select 200 samples from the class
 
+## DF SLICING
+df = df.iloc[:, 1:]  # integer location based 
+df = df.drop('col name', axis=1)
+
 ## DF FILTERING
 - df = df[ df.index < '2020-03-31']
 - df = df.dropna()   # drops empty entries

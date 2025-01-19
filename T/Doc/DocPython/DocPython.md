@@ -3,8 +3,12 @@
   , , ,
   , ,
   , [[DocTorch]], [[Torch Tensor]],
-  , [[Torch Training Examples]], 
-  DELS: [[DocMatplotlib]],[[DocTorch]], [[Torch Tensor]],
+  , ,
+  , ,
+  DELS: ,[[DocTorch]], [[Torch Tensor]],
+  , [[Torch nn.Module]], [[Torch Training Examples]], 
+  DELS: ,[[DocTorch]], [[Torch Tensor]],[[Torch Training Examples]],
+  DELS: [[DocMatplotlib]],[[DocTorch]], [[Torch Tensor]],[[Torch Training Examples]],[[Torch Template]], [[DocMatplotlib]], 
 
 [[DocTorch]]
 
