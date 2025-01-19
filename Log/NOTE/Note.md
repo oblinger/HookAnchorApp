@@ -47,7 +47,7 @@ n:: 'n...' 	Isolated 'notes' created by me
 | n2021-01-00 | [[POL]]                | Not fact based -- trump won by a lot                                        |
 | n2021-00-00 | [[POL]]                | ARE YOU INFORMED OR ARE YOU MANAGED?                                        |
 | n2021-00-00 | [[POL]]                | Cheap housing idea                                                          |
-| n2021-00-00 | [[Coaches]]            | Mentor Ideas --                                                             |
+| n2021-00-00 | [[NJ Coaches]]         | Mentor Ideas --                                                             |
 | n2019-00-00 | [[POL]]                | CONSEQUENCES in the classroom                                               |
 | n2019-00-00 | [[POL]]                | selection bias in science                                                   |
 | n2019-00-00 | [[POL]]                | THE TWO CHOICES (politics)                                                  |

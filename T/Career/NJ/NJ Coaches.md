@@ -1,6 +1,16 @@
 
 
 # LOG
+
+### 2025-01-19  GENERAL RESOURCES
+
+- Pramp - Interviewing
+- BOOK: Tech Giants Unlocked: A 2025 Guide to Cracking FAANG+ Interviews.
+- BOOK: Designing Data-Intensive Applications" by Martin Kleppmann
+
+
+
+
 ### r2022-10-06  Igor Shindel (CTO Coach)
  - [Igor Shindel](https://www.linkedin.com/in/igorshindel)  
  
