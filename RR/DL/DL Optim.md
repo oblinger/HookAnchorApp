@@ -7,6 +7,10 @@ n:: How to optimize a deep net
 [[DL torch.optim]] 
 
 
+- Mini-Batch Gradient Descent - computes gradient and step based on "mini-batches" of the data
+- Gradient Descent is mini-batch with n = whole dataset
+- Stocastic Gradient Descent is mini-batch with n=1
+
 ## MINI-BATCH - Batch vs. Mini-Batch Gradient Descent
 - "1 epoch" - single pass thru the whole dataset
 - NOTATION:      
@@ -33,7 +37,7 @@ n:: How to optimize a deep net
 
 ## MOMENTUM - Gradient descent with momentum
 - Use weighted average of the last dW and db, rather then using dW and db directly.  This imparts momentum to them.
-- Hyper parameters: alpha = learning rate, beta = dampening (often set as 0.9)
+- Hyper parameters: alpha = learning rate, beta = dampening (often set as 0.9).   beta=0 turns off momentum ???
 - Almost always will work better than w/o momentum
 - V_dW = beta * V_dW + (1-beta) * dW
 - W = W - alpha * V_dW     b = b - alpha * V_db

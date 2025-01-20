@@ -1,4 +1,6 @@
 
+[[Election2024\|Sat Nov 16  2024]]  	[[Election2024#2024-11-07  Democrats Wake Up!   ((BEST ONE))]]  
+[[@Alta Vista\|Fri Nov 15  2024]]  	[[@Alta Vista#2024-11-15  AI Discussion]]  
 [[RES Highlights\|Fri Nov 15  2024]]  	[[RES Highlights#Highlights]]  
 [[RES Highlights\|Fri Nov 15  2024]]  	[[RES Highlights#Career At A Glance]]  
 [[RES Parts\|Fri Nov 15  2024]]  	[[RES Parts#TOP]]  

@@ -15,9 +15,10 @@
   , [[Positional Encoding]], [[RLHF]], [[Tensor]],
   , [[DL Areas]], [[Mech Interp]],
   , ,
-  , [[DL Data Loading]], [[DLF]], [[DL Optim]], [[DL torch.optim]], 
+  , [[DL Data Loading]], [[DLF]], [[DL Optim]], [[DL torch.optim]],
   DELS: [[DLF]], [[DL Optim]],
-  DELS: [[DLF]], [[DL Optim]],[[DL Opto]], 
+  , [[DL Analyze]], 
+  DELS: [[DLF]], [[DL Optim]],[[DL Opto]],
 
 [[DL Areas]]
 

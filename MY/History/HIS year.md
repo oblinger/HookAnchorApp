@@ -1,4 +1,6 @@
 
+[[DocPyML\|Mon Oct 2  2023 ]]  	[[DocPyML#Blam Python]]  
+[[DocNumPy\|Mon Oct 2  2023 ]]  	[[DocNumPy#MATH]]  
 [[DocNumPy\|Mon Oct 2  2023 ]]  	[[DocNumPy#RANDOM]]  
 [[DocNumPy\|Mon Oct 2  2023 ]]  	[[DocNumPy#CREATE   .zeros(dims)  .deepcopy  .randint  .randn]]  
 [[DocNumPy\|Mon Oct 2  2023 ]]  	[[DocNumPy#SELECT X[:, 10:20]]]  

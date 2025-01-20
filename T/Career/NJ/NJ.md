@@ -1,17 +1,12 @@
 .[[NJ]].	  [[Lrn]],
-  PLAN:	[[NJ Todo]], [[NJ Plan]], ,
+  PLAN:	[[NJ Todo]], [[NJ Plan]], [[SEEK]],
   TOP:	[NJ Slides](spot://njslides), [[NJ Log]],
-  PARTS	[[NJ Targets]], [[NJ Ask]],
-  SUB:	,
+  PARTS	[[NJ Targets]], [[NJ Ask]], [[NJ Coaches]], 
+  SUB:	
   OLD:	[[NJ16]], [[NJ22]],
-  , ,
-  , [[SEEK]],
-  DELS: [[SEEK]],
-  , [[NJ Coaches]], 
-  DELS: [[SEEK]],[[Seeking]],[[NJ Coaches]],
-
+  
 RELATED:	 [[CRM]], 
-OLD:		[[GoogleJob]], [[Meta Coms]], 
+OLD:	[[Meta Coms]], 
 
 
 ## ... 

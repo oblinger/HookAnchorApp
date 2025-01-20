@@ -64,6 +64,8 @@ plt.plot(z.numpy(), yhat.numpy())
 plt.xlabel('z')
 plt.ylabel('yhat')
 
+diplay(...)  # in python notebook
+
 ```
 
 

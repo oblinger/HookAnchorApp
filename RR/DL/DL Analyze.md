@@ -3,7 +3,7 @@
 ## Pandas
 ```
 
-df.value_counts('foo').  ???
+X['mycol'].value_counts()
 df.columns .shape
 
 ```

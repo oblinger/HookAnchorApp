@@ -5,6 +5,8 @@ Deep Learning Framework
 - [[DL Optim]] 
 - [[DL Visualize]] 
 - [[DL Analyze]] 
+- [[DL Template]] 
+- [[DL Examples]] 
 
 
 Detailed Overview

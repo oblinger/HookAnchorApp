@@ -6,9 +6,7 @@
 - [[RES War]]: Ability to speak from first-person perspective about coding tasks
 - [[RES Pyramid]], [[RES Parts]], 
 - Pick [[BOD]]
-
 - find the job posts; find people associated
-- Find few org
 
 
 
