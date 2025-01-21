@@ -5,6 +5,8 @@ n:: no prefix.	Dated entries without any typing prefix
 
 | Date       | File                                        | Notes                                                                                                                             |
 | ---------- | ------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------- |
+| 2025-01-20 | [[Mgt]]                                         | W                                                                                                                                 |
+| 2025-01-20 | [[@Jason Syversen]]                             | Chat on skipped meeting                                                                                                           |
 | 2025-01-19 | [[NJ Coaches]]                                  | GENERAL RESOURCES                                                                                                                 |
 | 2025-01-16 | [[@Martin Reyes]]                               | Out                                                                                                                               |
 | 2025-01-15 | [[@David Hayden]]                               | Career Discussion                                                                                                                 |

@@ -17,7 +17,8 @@
   , ,
   , [[DL Data Loading]], [[DLF]], [[DL Optim]], [[DL torch.optim]],
   DELS: [[DLF]], [[DL Optim]],
-  , [[DL Analyze]], 
+  , [[DL Analyze]],
+  , [[DL Examples]], [[DL Template]], 
   DELS: [[DLF]], [[DL Optim]],[[DL Opto]],
 
 [[DL Areas]]

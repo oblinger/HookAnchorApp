@@ -1,6 +1,6 @@
 .[[RR Leet]].
-  , [[LEET keyword-to-algo-mapping]], 
-
+  [[LEET keyword-to-algo-mapping]], 
+  [[Algo]] 
 
 #leet
 

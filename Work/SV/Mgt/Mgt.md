@@ -4,6 +4,18 @@
 
 # Log
 
+### 2025-01-20  W
+
+The past week: 
+- Fixed 1 FPS bug in the pipeline, 
+- analyzed shooter ID/missed shots/hallucinated shots issues from a pipeline NORM run, 
+- computed shooter ID breakdown tree, 
+- computed latest pipe on NORM2 dataset, 
+- ported minutes metrics and shot metrics to new framework, 
+- computed metric matrix for minutes and shot metrics for NORM2
+
+
+
 ### 2025-01-13  W
 
 - Two Analysis: Min & FullStats

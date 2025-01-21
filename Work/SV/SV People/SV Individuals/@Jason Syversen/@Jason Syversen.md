@@ -220,6 +220,12 @@ DISCUSS
 
 meeting this week?  AI-min ramp, shot chart ramp
 
+### 2025-01-20  Chat on skipped meeting
+
+- Ivory - 
+
+
+
 ### 2025-01-03  W
 
 - Shot charts - 
