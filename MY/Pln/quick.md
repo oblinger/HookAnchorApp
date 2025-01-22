@@ -1,5 +1,7 @@
-- %item%
-- testing roof
+- sign patent form
+- look at PR.
+- patent assignment
+- make minutes run earlier.
 - bug in fireballs
 - write up AI minutes to and from AI
 - anti-virus

@@ -1,3 +1,9 @@
+### 2025-01-21  Trump calls for 'termination' of the constitution
+
+https://www.nytimes.com/2022/12/04/us/politics/trump-constitution-republicans.html
+
+“A Massive Fraud of this type and magnitude allows for the termination of all rules, regulations, and articles, even those found in the Constitution,” he wrote in a post on Saturday on his social network, Truth Social.
+
 
 
 ### 2024-06-20  Trying to limit FED independence

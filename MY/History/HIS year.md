@@ -1,4 +1,6 @@
 
+[[Dataview\|Mon Oct 2  2023 ]]  	[[Dataview#test]]  
+[[Dataview\|Mon Oct 2  2023 ]]  	[[Dataview## LOG #]]  
 [[DocObsidian\|Mon Oct 2  2023 ]]  	[[DocObsidian#LINKS]]  
 [[DocObsidian\|Mon Oct 2  2023 ]]  	[[DocObsidian#PLUGINS]]  
 [[DocObsidian\|Mon Oct 2  2023 ]]  	[[DocObsidian#TOPICS]]  

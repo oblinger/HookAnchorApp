@@ -1,10 +1,12 @@
 .[[RR Leet]].
-  [[LEET keyword-to-algo-mapping]], 
-  [[Algo]] 
+  [[LEET keyword-to-algo-mapping]],
+  , [[Algo]], [[Trees]], 
+
+  DELS: [[Algo]], 
 
 #leet
 
-[[LEET keyword-to-algo-mapping]] 
+
 
 
 ### Max Runtimes
@@ -13,8 +15,7 @@
 Solution Time Complexity by size
 O(1),  O(log n), O(n), O(K log n), O(n log n), O(n^2), O(n^2), O(N!)
 -?-
-. >10^9  >10^8   <10^6  <10^6  <10^6    <3000    <20    <12
-<!--SR:!2025-01-12,4,230-->
+. >10^9  >10^8   <10^6  <10^6  <10^6    <3000    <20    <12 <!--SR:!2025-01-23,2,210-->
 
 
 
@@ -79,6 +80,5 @@ O(N!)
 - Combinatorial problems, backtracking, e.g. [permutations](https://algo.monster/problems/permutations)
 - Often involves recursion and is harder to analyze time complexity at first sight
 - Detailed code examples can be found in the [backtracking](https://algo.monster/problems/backtracking) section
-- Typically for `n ≤ 12`
-<!--SR:!2025-01-21,13,250-->
+- Typically for `n ≤ 12` <!--SR:!2025-02-23,33,250-->
 

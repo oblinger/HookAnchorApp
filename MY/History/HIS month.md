@@ -1,4 +1,6 @@
 
+[[Fried\|Thu Nov 21  2024]]  	[[Fried#ERROR: Cannot find cmd: spot:://AI MIN]]  
+[[fried\|Thu Nov 21  2024]]  	[[fried#ERROR: Cannot find cmd: spot:://AI MIN]]  
 [[fried\|Thu Nov 21  2024]]  	[[fried#ERROR: Cannot find cmd: spot:://AI MIN]]  
 [[2024-05 Sell Acura\|Thu Nov 21  2024]]  	[[2024-05 Sell Acura#__]]  
 [[2024-05 Sell Acura\|Thu Nov 21  2024]]  	[[2024-05 Sell Acura#The plan]]  
