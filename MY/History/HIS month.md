@@ -1,4 +1,6 @@
 
+[[LRN Todo\|Fri Nov 22  2024]]  	[[LRN Todo#Rocks]]  
+[[Fried\|Thu Nov 21  2024]]  	[[Fried#ERROR: Cannot find cmd: spot:://AI MIN]]  
 [[Fried\|Thu Nov 21  2024]]  	[[Fried#ERROR: Cannot find cmd: spot:://AI MIN]]  
 [[fried\|Thu Nov 21  2024]]  	[[fried#ERROR: Cannot find cmd: spot:://AI MIN]]  
 [[fried\|Thu Nov 21  2024]]  	[[fried#ERROR: Cannot find cmd: spot:://AI MIN]]  

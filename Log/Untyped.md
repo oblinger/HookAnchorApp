@@ -5,6 +5,8 @@ n:: no prefix.	Dated entries without any typing prefix
 
 | Date       | File                                        | Notes                                                                                                                             |
 | ---------- | ------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------- |
+| 2025-01-22 | [[EOC Log]]                                     | verbal notes                                                                                                                      |
+| 2025-01-22 | [[NJ Ask]]                                      | ASK                                                                                                                               |
 | 2025-01-21 | [[Trump]]                                       | Trump calls for 'termination' of the constitution                                                                                 |
 | 2025-01-20 | [[Mgt]]                                         | W                                                                                                                                 |
 | 2025-01-20 | [[@Jason Syversen]]                             | Chat on skipped meeting                                                                                                           |

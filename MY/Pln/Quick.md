@@ -1,13 +1,9 @@
+- tetnus
 - sign patent form
 - look at PR.
-- patent assignment
-- make minutes run earlier.
-- bug in fireballs
-- write up AI minutes to and from AI
-- anti-virus
-- okrs
-- oven
-- Oven fix
 
 
+https://www.thegoodlandgroupadvisors.com/
+
+https://venturebeat.com/ai/open-source-deepseek-r1-uses-pure-reinforcement-learning-to-match-openai-o1-at-95-less-cost/
 
