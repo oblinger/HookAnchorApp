@@ -1,4 +1,6 @@
 
+[[DocOSX\|Mon Oct 2  2023 ]]  	[[DocOSX#(useful when executing time-consuming commands)]]  
+[[DocOSX\|Mon Oct 2  2023 ]]  	[[DocOSX#Stuff I never really use but cannot delete either because of]]  
 [[DocOSX\|Mon Oct 2  2023 ]]  	[[DocOSX#does not work]]  
 [[DocObjectiveC\|Mon Oct 2  2023 ]]  	[[DocObjectiveC#Docs]]  
 [[Dataview\|Mon Oct 2  2023 ]]  	[[Dataview#test]]  

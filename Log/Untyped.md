@@ -5,6 +5,7 @@ n:: no prefix.	Dated entries without any typing prefix
 
 | Date       | File                                        | Notes                                                                                                                             |
 | ---------- | ------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------- |
+| 2025-01-26 | [[Palestinians]]                                | Response to Chris                                                                                                                 |
 | 2025-01-22 | [[EOC Log]]                                     | verbal notes                                                                                                                      |
 | 2025-01-22 | [[NJ Ask]]                                      | ASK                                                                                                                               |
 | 2025-01-21 | [[Trump]]                                       | Trump calls for 'termination' of the constitution                                                                                 |
@@ -29,6 +30,7 @@ n:: no prefix.	Dated entries without any typing prefix
 | 2025-01-03 | [[Reflections]]                                 | NEW YEARS RESOLUTION -- Get Healthy!                                                                                              |
 | 2025-01-03 | [[@Jason Syversen]]                             | W                                                                                                                                 |
 | 2025-01-01 | [[ELI Quotes]]                                  |                                                                                                                                   |
+| 2025-01-00 | [[@Ian Yuan]]                                   | Intro Discussion                                                                                                                  |
 | 2024-12-29 | [[@Softbank]]                                   | New Note (As Sent)                                                                                                                |
 | 2024-12-29 | [[@Softbank]]                                   | New Year Note (Never Sent)                                                                                                        |
 | 2024-12-27 | [[@Schwab]]                                     | Plaid                                                                                                                             |

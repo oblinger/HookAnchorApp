@@ -2,6 +2,127 @@
 
 # LOG
 
+
+### 2025-01-26  Response to Chris
+
+Here's a real model of what has worked in the past: Japan after WWII. The US rebuilt the country, created an economy and bought its goods, so that they could thrive, not just survive. Now Japan is a great ally, not a feeble occupied territory.
+https://en.wikipedia.org/wiki/Japanese_economic_miracle
+I imagine that the Japanese hated the US very much during the war. At least as much as the Palestinians hate Israel. So I dispute your context #2. (Besides, every bit of it could reworded and applied to Israel, so let's hope you're open to deleting #2, to make room for workable possibilities.)
+Money makes peace happen. Not walls or checkpoints. Having something to live for replaces "something to die for." Rich societies are inherently peaceful societies, (when it's somewhat fairly distributed).
+Your solution touches upon the need for "good jobs" but that is insufficient. A thriving society needs its share of riches too. Riches that make life beautiful, not just tolerable. Riches that moderate religion and racism and nationalism. Riches that compound, fueling real hope and generational thinking, instead of desperation and reactive violence.
+So instead of building a new occupied territory, Israel should build a huge business district, with real lucrative companies, to be owned, managed, and worked by Palestinians. And Israel should be their #1 customer. Now then, that's something any Palestinian would sign up for (and defend from extremists), and Israel would finally have peace. Without checkpoints, or attacks. (No rich country would dare attack their #1 customer.)
+
+First, let me simply thank you for engagement on this topic. On both sides most entirely blame the other side and have little interest in novel solutions.  Cudos for being open to thinking about it!  I wrote this post with the Israeli reader in mind, since they must be won over in order for such an idea to be tried.  Still this cause me to leave out a final section that others have push me on.  Your push was enough for me to add it near the end:
+
+
+
+
+~~
+
+Once a self-policing Gaza has proven it can ensure the safety of Israel from attacks coming from within its borders, I believe a strong two state solution can be proposed that Israel will accept. Why not? Their security has long since been assured. But I believe Israel will never loosen the reigns of control, FIRST, but only long after their long term security has been proven IN PRACTICE, so we need to achieve that first. It not about what it right, it's about what can and cannot work.
+
+~~
+
+
+
+
+I also added the word "currently" to my claim #2.  Indeed I think you and I both hope that such sentiment might change in Gaza, here is my updated claim:
+
+
+
+
+(2) A percentage of Palestinians CURRENTLY want to wipe Israel from the map. No matter what wealth or concessions are given in the short term, too much bad blood, too much funding from Iran, and too much of a feeling of lands stolen. For them its nothing less than "river to sea"!
+
+
+
+
+~~
+
+I think you are pushing me to acknowledge that #2 is not fixed for all time, but might change over time, and like Japanese did, might radically transform over time.  Then consider me converted!!  I do agree with you that such feeling CAN change over time.  And indeed I blame Israel that current conditions in Gaza and West bank actually FOSTER rather than reduce such tensions.
+
+
+
+
+Still I think we need to acknowledge some differences with the US occupation.  The Japanese believed that God ordained that they should win that war, they believe they were in the right and might would prove them victorious.  Further, many on the islands resisted capture literally until their deaths, because they were told the American were animals that would rape and kill and plunder.  When we did not do that, it really generated quite a shift in thinking.
+
+**BUT** America was not build upon lands that Japanese thought was theirs.  We did not "steal" from them, and they "attacked us first" so a narrative of a righteous vengeance was not in the populace.
+
+
+
+
+We need to acknowledge that we are starting from a tougher spot here in Gaza.  Many DO feel lands stolen! And even with prosperity already provided by Israel (which has happened to some extent) it is not enough to shake that feeling.  My guess is that for at least one generation, there will be a significant minority that feel strongly enough that WILL act to attack Israel when given the chance.  Certainly, right now we have dramatic proof, it is true in the present.  Indeed Hamas' written manifesto is unconditional, Israel must go!
+
+
+
+
+So I am arguing that #2 is PRESENTLY true, and will be true for the immediate future.  (not sure if you accept that).  Either way, I am hopeful (like you) that this sentiment could change over time with prosperity and beauty.  And I agree with you that it is up to the rest of the world (and Israel) to provide that prosperity, at least for a period.
+
+
+
+
+The challenge is how to provide that prosperity w/o enabling immediate attacks on Israel.  This is the crux of my approach.  
+
+
+
+
+The reality is that nothing will happen that Israel does not ok first.  And even liberal Israeli's will not OK anything that does not ensure their safety in the short run.  Thus I think the only path is one that first:
+
+(1) provides solid security for Israel, 
+
+(2) then affords prosperity and beauty for Gaza and West Bank supported by the world, 
+
+(3) finally self-sufficient self-policing region negotiates for its independence while making promises of Israeli security (promises it has already proven it can keep.)
+
+
+
+
+
+
+
+I think this broad outline matches the Japanese case fairly well.  I add the last paragraph now in order to more fully show the parallel.  Still I think we cannot under-estimate the larger headwind in this case.  An entire generation has grown up dramatically oppressed by Israel.  This was not true for Japanese.  Many many would love to just kill as many Israeli's as they could, and many feel maximum death is their best chance for freedom.  I am confident this belief is wrong, still I acknowledge it is a VERY VERY strong, and wont go away quickly.
+
+
+
+
+Thoughts?
+
+
+
+
+
+
+
+
+
+I think one can only give 
+
+
+Now let me react to your post:  First I agree with a number of parallels to the Japanese situation, the US occupation offered prosperity and beauty and left the country stronger than it found it.  This had a strong favorable effect just as you suggest.
+
+Second, there had to be hate in Japan that softened over the years of prosperity with 
+
+Now to the differences:  with some justification many in Gaza feel the lands that israel are founded on were stolen from them. No one in Japan viewed US territories as stolen from them.  So getting to a place where 100% of Gazans are ok with the existence of Israel is going to be HARD HARD HARD.  We are far from such a thing.  Indeed many in the world feel it is simply not fair.  I intentionally make no comment on whether this is or is not fair, but it is a LARGE impediment to peace.  Even if Gazan's found freedom and prosperity there would be a minority who will tell you loud and clear today that this is not enough.  The lands must be returned.
+
+Now you might claim that a generation later after prosperity was achieved these folks would accept the existence of Israel.  Neither you nor I really know if this might be true, but it is far far far from true today.  Think about the attack Hamas made recently.  Everyone knew that Netanyahu would turn Gaza into a parking lot of rubble.  Indeed Hamas prepared for this by building long tunnels within the territory so they could operate even after the entire region was reduce to rubble.  That was a known consequence of this action.  Yet it was taken.
+
+So we have to acknowledge that at least presently many in Hamas (and beyond) are ready to sacrifice themselves and their citizens in order to attack Israel.  Not claiming anything about correctness of this, just the reality of this.
+
+Now I am not a fatalist.  I am hopeful that a generation of Gazans who had beauty and prosperity in their lives, the might leave this retribution thinking behind.
+But claiming that Gazans already have left this behind is willful disregard from apparent facts.
+
+This is my one-two planning.  First we have a prosperous occupied territory, THEN we have a free Palenstine as a second step.
+(I should have added this step as a one sentence at the end of my post)
+
+
+But for me the key idea is that presently #2 is true, and thus physical means would be translated into physical aggression. 
+And second Israel holds all the cards, so any planning for a way out must account for this, and be acceptable to Israel along the way.
+
+But I do agree that Israelis (e. g. settlers) sometimes translate capacity into violence.
+
+
+
+
+
 ### 2024-12-06  Response to Steve
 
 I agree. I am not trying to defend Israel's actions in Gaza and West bank. I am focused on Israel's right to control the kind of country it will become.  And what responsibility does a nation have towards non-citizens.

@@ -1,4 +1,6 @@
 
+[[FIN Todo\|Fri Nov 22  2024]]  	[[FIN Todo#LOG]]  
+[[PQ\|Fri Nov 22  2024]]  	[[PQ#2024-11-21  2024 Gross pay]]  
 [[LRN Todo\|Fri Nov 22  2024]]  	[[LRN Todo#Rocks]]  
 [[Fried\|Thu Nov 21  2024]]  	[[Fried#ERROR: Cannot find cmd: spot:://AI MIN]]  
 [[Fried\|Thu Nov 21  2024]]  	[[Fried#ERROR: Cannot find cmd: spot:://AI MIN]]  

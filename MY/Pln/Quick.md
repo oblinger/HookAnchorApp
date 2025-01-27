@@ -1,3 +1,4 @@
+- attach sliding door better
 - tetnus
 - sign patent form
 - look at PR.
