@@ -1,5 +1,4 @@
 .STU.
-  Ski Trip
  
  [[Friday]]: 
 

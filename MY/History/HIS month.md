@@ -1,4 +1,7 @@
 
+[[Election2024\|Sun Nov 24  2024]]  	[[Election2024#2024-11-23  What should Democrats have done differently]]  
+[[FIN Todo\|Fri Nov 22  2024]]  	[[FIN Todo#LATER]]  
+[[FIN Todo\|Fri Nov 22  2024]]  	[[FIN Todo#ROCKS]]  
 [[FIN Todo\|Fri Nov 22  2024]]  	[[FIN Todo#LOG]]  
 [[PQ\|Fri Nov 22  2024]]  	[[PQ#2024-11-21  2024 Gross pay]]  
 [[LRN Todo\|Fri Nov 22  2024]]  	[[LRN Todo#Rocks]]  

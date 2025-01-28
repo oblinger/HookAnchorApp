@@ -1,4 +1,7 @@
 
+[[DocMarkdown\|Mon Oct 2  2023 ]]  	[[DocMarkdown#* *]]  
+[[DocOSX\|Mon Oct 2  2023 ]]  	[[DocOSX#== HARDWARE I/O ==]]  
+[[DocOSX\|Mon Oct 2  2023 ]]  	[[DocOSX#Ring the terminal bell, and put a badge on Terminal.app’s Do]]  
 [[DocOSX\|Mon Oct 2  2023 ]]  	[[DocOSX#(useful when executing time-consuming commands)]]  
 [[DocOSX\|Mon Oct 2  2023 ]]  	[[DocOSX#Stuff I never really use but cannot delete either because of]]  
 [[DocOSX\|Mon Oct 2  2023 ]]  	[[DocOSX#does not work]]  

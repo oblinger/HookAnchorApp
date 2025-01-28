@@ -1,6 +1,8 @@
 # Personal "Quick" Projects
 
+### 2025-01-27  Oven Repair
 
+The front console for our LG SIGNATURE 7.3CuFt Dual Fuel Slide-in Gas Convection Range is not working.  I think this is possibly water damage.  The stove's electrical igniters are working, but no other electrical parts of the oven are working.  I would like to get a quote from you for replacing the front electrical console for the oven assuming that is what is wrong, as well as an hourly quote if other work needs to be done to fix the oven.
 ### 2024-11-21  2024 Gross pay
 
 Pay Date 11/15/2024

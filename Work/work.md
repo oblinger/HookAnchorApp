@@ -1,12 +1,13 @@
 .CHK.
-    F11 [AWS](https://docs.google.com/document/d/1QS4081TT_Yyz1TS9GLZSfjQaczQ7ynzWTSu14waDcG0/edit?tab=t.0):	Estimate from Brian [[2024-08 Backend Architect|Arch]]: [r](https://docs.google.com/document/d/1gbutlP_EF-_wUdg4F3IEuw8Bhz8oET3Z/edit) 
 .**NOW**.
+     Spec new work flow for AI-min
      Briones spreadsheet - tax spreadsheet
+     close loop AWS transition plan
      patents signed
      okrs
      .
 	[DT](spot://dt): !50 games in
-    [Min](spot:://AI~MIN): [todo](https://www.notion.so/sportsvisio/STORY-Test-AI-Min-Ready-PaidProd-173719d6f2bd80f59eb5c8d2dc1aded7?pvs=4). min-normalization verify [jira](https://software-engineering-team.atlassian.net/browse/AIT-1129) [QAmin](https://software-engineering-team.atlassian.net/jira/software/projects/AIT/boards/25?selectedIssue=AIT-1069)
+    [Min](spot:://AI~MIN): [todo](https://www.notion.so/sportsvisio/STORY-Test-AI-Min-Ready-PaidProd-173719d6f2bd80f59eb5c8d2dc1aded7?pvs=4).
 	[Infr](https://www.notion.so/sportsvisio/PROJ-Infrastructure-150719d6f2bd80f087b2e931ef179536?pvs=4):	>fill this in...  [[Dat]]: me
     [Fball](spot://fireball):	>brainstorming 
 - Next 'free credits' search
@@ -37,6 +38,7 @@ def_metric shooter_color
    return f"P{p} R{}
 
 ## PAUSE / TRACK
+- F11 [AWS](https://docs.google.com/document/d/1QS4081TT_Yyz1TS9GLZSfjQaczQ7ynzWTSu14waDcG0/edit?tab=t.0):	Estimate from Brian [[2024-08 Backend Architect|Arch]]: [r](https://docs.google.com/document/d/1gbutlP_EF-_wUdg4F3IEuw8Bhz8oET3Z/edit) 
 - playcharts
  Crossover:	^james checkin
   [VB](https://www.notion.so/sportsvisio/VB-Speedup-Ideas-142719d6f2bd80889ad8fc7cb2484a91?pvs=4):	Speedup ideas

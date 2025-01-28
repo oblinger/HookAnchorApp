@@ -4,6 +4,19 @@
 
 # Log
 
+### 2025-01-27  W
+
+Last week: 
+- Sent a patch for the SAM2 bug, 
+- added a filtering step for jersey color classification to clean up results, 
+- added refs back to the gallery to reduce false positive IDs on them, 
+- update minutes annealing representation to better match basketball, 
+- approximation for per-player confidence in minutes results
+
+getting Min filtering in.
+Grz & Martin info dump.
+aiming towards parallel AI and manual.
+
 ### 2025-01-20  W
 
 The past week: 

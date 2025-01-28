@@ -72,7 +72,8 @@
   , [[@Ahmad Tahir _ Graph Design]],
   , [[@Chang Yuan]],
   , [[@SpaceX]],
-  , [[@David Hayden]], 
+  , [[@David Hayden]],
+  , [[@Ian Yuan]], 
 
   
 
