@@ -1,5 +1,5 @@
 .[[DocPython]].
-  ,   [[DocConda]], [[DocJupyter]], [[DocNumPy]], [[DocPycharm]], [[DocPyDatetime]], [[DocSeaborn]], [[DocTensorFlow]],
+  ,   [[DocConda]], [[DocJupyter]], [[DocNumPy]], [[DocPycharm]], [[DocPyDatetime]], [[DocSeaborn]], [[DocTensorFlow]], [[DocPythonCards]], 
   , , ,
   , ,
   , [[DocTorch]], [[Torch Tensor]],

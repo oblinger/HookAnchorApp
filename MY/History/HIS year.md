@@ -1,4 +1,10 @@
 
+[[DocMarkdown\|Mon Oct 2  2023 ]]  	[[DocMarkdown#Outer pipes on tables are optional]]  
+[[DocMarkdown\|Mon Oct 2  2023 ]]  	[[DocMarkdown#Colon used for alignment (right versus left)]]  
+[[DocMarkdown\|Mon Oct 2  2023 ]]  	[[DocMarkdown#Multiple definitions and terms are possible]]  
+[[DocMarkdown\|Mon Oct 2  2023 ]]  	[[DocMarkdown#Definitions can include multiple paragraphs too]]  
+[[DocMarkdown\|Mon Oct 2  2023 ]]  	[[DocMarkdown#  An unordered list item.]]  
+[[DocMarkdown\|Mon Oct 2  2023 ]]  	[[DocMarkdown#  Another unordered list item]]  
 [[DocMarkdown\|Mon Oct 2  2023 ]]  	[[DocMarkdown#* *]]  
 [[DocOSX\|Mon Oct 2  2023 ]]  	[[DocOSX#== HARDWARE I/O ==]]  
 [[DocOSX\|Mon Oct 2  2023 ]]  	[[DocOSX#Ring the terminal bell, and put a badge on Terminal.app’s Do]]  

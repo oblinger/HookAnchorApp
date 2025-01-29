@@ -1,4 +1,10 @@
 
+[[FIN Log\|Wed Nov 27  2024]]  	[[FIN Log#2024-01-25  Merrill Retirement Planning ^rplan]]  
+[[Reflections\|Wed Nov 27  2024]]  	[[Reflections#2024-11-26 .]]  
+[[@Alta Vista\|Tue Nov 26  2024]]  	[[@Alta Vista#2024-11-25  Stances]]  
+[[@Alta Vista\|Tue Nov 26  2024]]  	[[@Alta Vista#GUIDING PRINCIPLES]]  
+[[2024-W48\|Tue Nov 26  2024]]  	[[2024-W48#W48   2024-11-25   [[2024-W47\\|<<]] [[2024-W49\\|>>]]]]  
+[[MED Heart\|Mon Nov 25  2024]]  	[[MED Heart#TESTS]]  
 [[Election2024\|Sun Nov 24  2024]]  	[[Election2024#2024-11-23  What should Democrats have done differently]]  
 [[FIN Todo\|Fri Nov 22  2024]]  	[[FIN Todo#LATER]]  
 [[FIN Todo\|Fri Nov 22  2024]]  	[[FIN Todo#ROCKS]]  

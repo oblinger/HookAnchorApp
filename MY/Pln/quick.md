@@ -2,6 +2,7 @@
 - tetnus
 - sign patent form
 - look at PR.
+- nick resume
 
 
 https://www.thegoodlandgroupadvisors.com/
