@@ -1,4 +1,6 @@
 - Joe Aug
+- Leet code register
+- nicks money mgr
 
 - Oven fix
 - alarm

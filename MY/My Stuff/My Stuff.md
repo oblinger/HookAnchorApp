@@ -212,6 +212,15 @@ https://www.amazon.com/gp/product/B0BX418XDF/ref=ppx_yo_dt_b_search_asin_title?i
 
  - [[Power Timer - Nearpou TS20.pdf]] 
 
+
+#### Piano
+Privia casio px130bk
+Casio PX130BK
+
+AC Adaptor: AD-A12150LW
+
+
+
 ## = OTHER =
 - FAN - [Voranado 660 AE](https://www.vornado.com/wp-content/uploads/2021/03/660AE.pdf)  
 - LOCK - 

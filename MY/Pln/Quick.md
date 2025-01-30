@@ -1,8 +1,12 @@
+- ask about roster
 - attach sliding door better
 - tetnus
 - sign patent form
 - look at PR.
 - nick resume
+- call Michael.
+
+
 
 
 https://www.thegoodlandgroupadvisors.com/
