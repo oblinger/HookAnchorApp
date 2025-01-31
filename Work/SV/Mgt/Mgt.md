@@ -4,6 +4,36 @@
 
 # Log
 
+### 2025-01-30  Investor Newsletter 2024-Q4
+
+#### Q4-2024
+
+
+**Detailed Functional Progress:**
+**AI**
+- Developed second fully-automated AI-based basketball product:
+	- Automated Shot chart generation, now in alpha testing.
+- Developed Frame-by-frame automated mapping of players onto a court top view.
+  (used for shot charts, as well as improving player minutes, game break detection and shot stats.)
+
+#### Q3-2024
+**Detailed Functional Progress:**
+**AI**
+Containerized the entire AI-compute stack, allowing us to realize a >50% cost savings by moving our most expensive compute operations over to lower cost providers.
+Developed first fully-automated AI-based basketball product:
+- per player-player minutes played with plus/minus stats.
+
+
+#### Ideas for 2025-Q1
+- Sam2 -- X% improvement for stats in hardest "scrum" contexts
+- Learned color model -- Generalized system away from fixed solid jersey colors, to per-game-trained unique and multi-color jersey.
+- Made an XXX% improvement in our Player ID and make/miss accuracy 
+
+
+
+
+
+
 ### 2025-01-27  W
 
 Last week: 

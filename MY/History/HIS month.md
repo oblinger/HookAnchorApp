@@ -1,4 +1,5 @@
 
+[[2024-04-01 Resume Rewrite\|Wed Nov 27  2024]]  	[[2024-04-01 Resume Rewrite#At a Glance]]  
 [[FIN Log\|Wed Nov 27  2024]]  	[[FIN Log#2024-01-25  Merrill Retirement Planning ^rplan]]  
 [[Reflections\|Wed Nov 27  2024]]  	[[Reflections#2024-11-26 .]]  
 [[@Alta Vista\|Tue Nov 26  2024]]  	[[@Alta Vista#2024-11-25  Stances]]  

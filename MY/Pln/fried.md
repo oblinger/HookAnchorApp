@@ -1,5 +1,4 @@
-- browersarus broken
-- renew oblinger.us
+- see if we can keep spotlight from requiring down and up before selecting the first time
 
 
 - anti-virus

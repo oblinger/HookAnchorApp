@@ -5,3 +5,15 @@
 
 HARD THINGS
 - somehow track Credit cards
+
+
+
+https://obsidianninja.com/best-obsidian-plugins/
+
+Folder Notes
+Recent Files
+Commander
+Projects
+Obsidian Memos
+Table of Contents
+Tasks plugin

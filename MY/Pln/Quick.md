@@ -1,3 +1,6 @@
+- john davis guy
+- softbank response
+- !!! BULLETS FOR Sean's news letter
 - ask about roster
 - attach sliding door better
 - tetnus

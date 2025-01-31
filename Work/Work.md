@@ -1,5 +1,6 @@
 .CHK.
 .**NOW**.
+      !!! newsletter
      Spec new work flow for AI-min
      Briones spreadsheet - tax spreadsheet
      close loop AWS transition plan

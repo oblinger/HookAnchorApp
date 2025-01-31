@@ -1,4 +1,5 @@
 
+[[DocMarkdown\|Mon Oct 2  2023 ]]  	[[DocMarkdown#Bullet lists are easy too]]  
 [[DocMarkdown\|Mon Oct 2  2023 ]]  	[[DocMarkdown#Outer pipes on tables are optional]]  
 [[DocMarkdown\|Mon Oct 2  2023 ]]  	[[DocMarkdown#Colon used for alignment (right versus left)]]  
 [[DocMarkdown\|Mon Oct 2  2023 ]]  	[[DocMarkdown#Multiple definitions and terms are possible]]  

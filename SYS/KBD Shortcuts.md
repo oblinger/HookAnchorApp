@@ -9,8 +9,8 @@
 | Ctrl               | CTRL   | A   | "CONTROL"   | App "cursor" control       |                                  |
 | Opt                | OPT    | A   |             | App "user defined" control |                                  |
 | Cmd                | CMD    | A   | "MODIFY"    | App "global" commands      |                                  |
-| Ctrl-Opt           | LEFT2  | A   |             | LEFT PAIR -                |                                  |
-| Opt-Cmd            | RIGHT2 | A   |             | RIGHT PAIR -               |                                  |
+| Ctrl-Opt           | LEFT2  | A   | "GOTO/VIEW" | LEFT PAIR -                |                                  |
+| Opt-Cmd            | RIGHT2 | A   | "CREATE"    | RIGHT PAIR -               |                                  |
 | Ctrl-Cmd           | CAPS   | G   | "PLACE"     | global "GO" / page "go"    | Dan's Global "GOTO" Destinations |
 | Ctrl-Opt-Cmd       | SLAM   | G   | global "DO" | Ctrl-Opt-Cmd -             | Dan's Global Commands            |
 | Ctrl-Opt-Cmd-Shift | TAB    | G?  | ?app "NAV"  | Dan "Cursor" commands      | Dan's Fastest Bindings           |
