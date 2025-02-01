@@ -1,13 +1,14 @@
 .[[RES]].
   TOP:		[[RES Todo]], [[Bio]], [RES Docx](spot://resdocx), [[RES Linked In]],
-  TEXT:		[[RES Star]], [[RES Parts]], [[RES Highlights]], 
+  TEXT:		[[RES Star]], [[RES Parts]], [[RES Highlights]],
   FACTS:	[[RES Src Info]], [[RES Numbers]], [[RES Patents]], [[RES Papers]],
   OTHER:	[[RES War]], [[RES War AI]], [[RES Pyramid]], [[RES References]],
   DIRS:		[[RES Job History]], [[RES Examples]], [[RES Versions]],
   .
 - [[RES Instant Design Story]],
 - [[2024-04-01 Resume Rewrite]],
-  , 
+  ,
+  , [[Resume]], 
 
 
 

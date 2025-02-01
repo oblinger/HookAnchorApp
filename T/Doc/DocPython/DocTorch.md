@@ -1,9 +1,10 @@
 
 
-#review #dl
 [[Torch Tensor]] 
 [[Torch Training Examples]] 
 [[Torch nn.Module]] 
+
+#review #dl
 
 ```python
 

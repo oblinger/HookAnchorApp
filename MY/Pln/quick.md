@@ -1,3 +1,4 @@
+- check QA with Mery
 - john davis guy
 - softbank response
 - !!! BULLETS FOR Sean's news letter

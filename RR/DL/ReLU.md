@@ -41,5 +41,4 @@ Uses mean=0 std=1 assuming expected layer by layer regularization (e.g. batch no
 
 Leaky ReLU
 -?-
-Leaky Rectified Linear Unit:  F(x) = x if x>0 else alpha*x
-<!--SR:!2025-01-09,30,270-->
+Leaky Rectified Linear Unit:  F(x) = x if x>0 else alpha*x <!--SR:!2025-04-22,81,270-->

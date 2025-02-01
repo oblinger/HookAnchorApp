@@ -12,7 +12,7 @@
   [[DL SYS]]:	[[GPT]], [[Segment Anything]], [[RASA]],
   [[DL Notation]]:	[[NG Notation]],
   , [[CNNs]], [[DL Alg]], [[DL Strategy]], [[DL Theory]], [[Embedding]]
-  , [[Positional Encoding]], [[RLHF]], [[Tensor]],
+  , [[Positional Encoding]], [[RLHF]], [[Torch Tensor]],
   , [[DL Areas]], [[Mech Interp]],
   , ,
   , [[DL Data Loading]], [[DLF]], [[DL Optim]], [[DL torch.optim]],
@@ -25,7 +25,7 @@
 
 
 
-[[Tensor]] 
+[[Torch Tensor]] 
 
 [[DL Strategy]] 
 
