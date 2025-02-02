@@ -6,7 +6,7 @@
 #dl
 #review
 
-Common Activation Functions
+Torch Activation Functions
 -?-
 ReLU (simple), Softmax (multi-class), Sigmoid (squash for bin-class), Leaky ReLU, GeLU (modern xformers), Tahn (zero centered, from -1 to 1)
 
@@ -23,7 +23,7 @@ Converts a vector of values into a probability distribution, typically used in m
 
 Sigmoid
 -?-
-Squashes input values to a range between 0 and 1, often used in binary classification.
+S-curve from -INF to +INF that squashes input values to a range between 0 and 1, often used in binary classification. <!--SR:!2025-02-02,1,237-->
 
 
 Tanh

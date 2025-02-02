@@ -3,7 +3,7 @@ n:: Books I have read
 
 .[[Book]]. 
   X 
-  [[BOOK Favorites]], [[BOOK Summaries]],
+  [[BOOK Favorites]], [[BOOK Summaries]], 
   PRODUCTIVITY / MANAGEMENT
   - [AnthonyRobins_GetTheEdge](spot://anthonyrobinsgettheedge),  [GetTheEdge_Worksheet](spot://gettheedgeworksheet),
   - [Atomic Habits](spot://atomichabits), [DYL](spot://dyl), [Getting_Things_Done](spot://gettingthingsdone),

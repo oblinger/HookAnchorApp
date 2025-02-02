@@ -33,7 +33,7 @@ MY FAVORITE SCIFI BOOKS INCLUDE
 "A Memory Called Empire", by Arkady Martine
 - Because of the epic nature of the society it describes, and for the subtlety in the society that it paints for us.
 
-"Diaspora" or "Permutation City" by Greg Egan
+"Diaspora" and "Permutation City" by Greg Egan
 
 "A Fire Upon the Deep", and
 "Deepness in the Sky" (Zones of Thought series) by Vernor Vinge
@@ -73,13 +73,19 @@ OTHER GOOD SCIFI BOOKS INCLUDE
 
 "Childhood's End" by Arthur C. Clarke
 
-"Ancillary Justice" by Ann Leckie
+"Ancillary Justice" "Provenance"  by Ann Leckie
 
 "Flowers For Algernon" by Daniel Keyes
 
 "Contact" by Carl Sagan
 
 "Ringworld", "Integral Trees" by Larry Niven
+
+
+BOOKS THAT TAUGHT ME SOMETHING
+
+"Sophie's World"
+Was great.  I found the story of sophie and this mysterious teacher to be engaging, and at the same time I really LOVED being taught so many major philosophical schools of thought in such a summarizing fashion.  I would eagerly read any other book that both taught and engaged in a similar way.
 
 BOOKS THAT WERE JUST OK
 
@@ -89,6 +95,42 @@ I loved the society described and the concept of the proto-molecule, but the sto
 Begins with _"Leviathan Wakes,"_ this series blends space opera with hard science and complex political and societal themes, focusing on humanity's expansion into space.
 
 "Solaris" by Stanislaw Lem
+
+## SUGGESTIONS
+
+
+### 2025-02-01  o3-high-mini
+
+
+Group 1 – Societal/Conceptual Explorations:
+
+Sapiens: A Brief History of Humankind by Yuval Noah Harari
+ An accessible synthesis of anthropology and history that, like Guns, Germs, and Steel, rethinks how human societies evolved.
+The Better Angels of Our Nature: Why Violence Has Declined by Steven Pinker
+ A data-driven exploration of the long‐term trends in human behavior and societal evolution.
+A Canticle for Leibowitz by Walter M. Miller Jr.
+ A post-apocalyptic narrative that meditates on the cyclical nature of civilization and the preservation of knowledge.
+OK
+Group 2 – Hard Science Fiction with Novel Scientific Concepts:
+
+Blindsight by Peter Watts
+ A cerebral encounter with alien intelligence that challenges our understanding of consciousness and perception.
+Tau Zero by Poul Anderson
+ A thought-provoking exploration of relativistic space travel that delves into the physics of near-light-speed journeys.
+Revelation Space by Alastair Reynolds
+ A dense, richly imagined universe where astrophysical phenomena and intricate plotlines interlace to form novel conceptual challenges.
+OK
+Group 3 – Additional Conceptually Rich Narratives Across Genres:
+
+Spin by Robert Charles Wilson
+ Presents a fascinating scenario where Earth’s environment is radically altered, prompting deep reflections on society and time.
+Roadside Picnic by Arkady and Boris Strugatsky
+ A compact, enigmatic tale that explores the aftermath of an inexplicable extraterrestrial visitation and its profound societal implications.
+Incandescence by Greg Egan
+ A lesser-known but intellectually rigorous novel that melds deep astrophysical and mathematical ideas into a gripping narrative.
+OK
+
+
 
 
 ### To Consider

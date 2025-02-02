@@ -1,9 +1,9 @@
 
 
-basic PyTorch training flow
+Basic PyTorch training flow
 -?-
 class Data, 
-setup: (1) MyDataset, (2) criterion, (3) model, (4) loader, (5) optimizer
+setup: (1) MyDataset, (2) DataLoader, (2) criterion, (3) model, (5) optimizer
 loop:  epoch; loop loader; yhat->loss->.zero->.backward->.step
 
 

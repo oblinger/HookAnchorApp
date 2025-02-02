@@ -17,4 +17,8 @@ plt.ylabel('value')
 plt.legend()
 plt.show()
 
+plt.plot(x_series, y_series).show()
+
+plt.semilogx(np.array(learning_rates), train_error.numpy(), label=)
+
 ```

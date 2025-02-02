@@ -1,4 +1,4 @@
-#dl #review 
+[[DocTorch]] #dl #review 
 
 
 Tensor;;a multi-dimensional array data structure optionally with a gradient for each value
@@ -23,9 +23,14 @@ t = torch.from_numpy( pd.Series([.1, .2, .3]) .values
 t[0] = t[1]
 
 torch.linspace(-2, 2, num=9)
+torch.arange(-3, 3, 0.1)
+torch.randn(size)
+torch.zeros(size)
+
+np.meshgrid(np.arange(), ...)
 
 ```
-<!--SR:!2025-02-01,1,230-->
+<!--SR:!2025-02-02,1,210-->
 
 tensor math
 -?-

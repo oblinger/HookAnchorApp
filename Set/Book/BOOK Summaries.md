@@ -1,5 +1,45 @@
 
 
+### 2024 Void Star
+
+### 2024 Revelation Space
+
+### 2024 Children of Memory
+
+### 2024 The Algebraist by Ian M Banks
+
+needs to be finished
+
+- Super advanced but bumbling and non-ambitious race live on all gas giants across the galaxy
+- The hunt their children, though adults can live billions of years
+- Human's treaty with them and lead character is a XXXXX that lives with and studies them
+- Worm holes allow faster than light travel, but they are created together and then slowly pulled to new locations at less than speed of light.
+
+- Enemy attack humanity and humans need to learn the secrets of this race in order to survive.
+
+
+
+
+### 2024 Quantum Thief by Hannu Rajaniemi
+
+QUANTUM THIEF
+
+Jean Le Flambeur
+- one version of super thief Jean is rescued from a dilemma prison to help in a heist
+- he most go to a walking city on Mars where he left memories of himself stuck inside the heads of others there.
+- His son is a super detective hunting him, and he steals quantum time from a rich dude in order to prove that 
+	people's minds are altered when they go quiet.
+- The crypt-arch is the master crypto key for everybodies exo-memories that is how they are altered.
+- This world is controlled via crypto keys, even physically seeing someone is controlled by the access they grant you.
+	all of this is controlled by some kind of super computer system underlying the society.
+
+
+
+
+
+
+
+
 ### 2024 "Anthem" by Neil Stephenson
 
 Set on an Earth similar planet in the future after 3 collapses of society.
@@ -64,6 +104,9 @@ finally meets "God" that is an AI
 
 
 - It explores themes like the afterlife, the nature of consciousness, and the impact of human colonization on the galaxy. The trilogy is known for its complex narrative and detailed world-building.
+
+
+
 
 ### 2024 "Pandora's Star" by Peter Hamilton
 "Judas Unchained"

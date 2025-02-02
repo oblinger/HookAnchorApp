@@ -1,25 +1,28 @@
 
 .[[DL]].
+  DL:		[[DL Alg]], [[DL Strategy]], [[DL Visualize]], 
+  [[DLF]]:		[[DL Optim]], [[DL torch.optim]], [[DL Data Loading]], 
+  [[DL Notation]]:	[[NG Notation]],
+  [[DL Topic]]:	[[GenAI]], [[Regularization]], [[Self Supervised Learning]], [[DL Theory]],
   PARTS:	[[Attention]], [[Activation Functions]], [[Feed Forward Layer]],
-  :		, [[DL Strat]],
+  AREAS:	[[RAG]], 
   DETAILS:	[[Invertable Density Estimation]], [[LoRA]], [[ReLU]],
   .		    [[ORPO Odds Ratio Preference Optimization]],
   :	[[Gradient Checking]],
-  [[DL Topic]]:	[[GenAI]], [[Regularization]], [[Self Supervised Learning]], [[RAG]],
   :	[[Auto Encoders]], [[GANs]], [[LSTM]], [[NN]], [[Transformers]], , [[LLM]], [[RNNs]],
   .			[[VAEs]], ,
   DL ALG2:	[[KAN - Kolmogorov-Arnold Neworks]], [[DSPY System]],
   [[DL SYS]]:	[[GPT]], [[Segment Anything]], [[RASA]],
-  [[DL Notation]]:	[[NG Notation]],
-  , [[CNNs]], [[DL Alg]], [[DL Strategy]], [[DL Theory]], [[Embedding]]
-  , [[Positional Encoding]], [[RLHF]], [[Torch Tensor]],
+  , [[CNNs]], [[Embedding]]
+  , [[Positional Encoding]], [[RLHF]], ,
   , [[DL Areas]], [[Mech Interp]],
   , ,
-  , [[DL Data Loading]], [[DLF]], [[DL Optim]], [[DL torch.optim]],
   DELS: [[DLF]], [[DL Optim]],
   , [[DL Analyze]],
-  , [[DL Examples]], [[DL Template]], 
-  DELS: [[DLF]], [[DL Optim]],[[DL Opto]],
+  , [[DL Examples]], [[DL Template]],
+  , ,
+  DELS: [[DLF]], [[DL Optim]],,
+  DELS: [[DLF]], [[DL Optim]],[[DL Opto]],[[Torch Tensor]],[[Tensor]], [[DL Opto]], 
 
 [[DL Areas]]
 
@@ -103,7 +106,7 @@
   DELS: [[CNN]], [[DL Optimization]], [[DL Strategy]], [[VAE - Variational Auto Encoder]], 
 
 
-  DELS: [[DL Strat]], [[CNNs]], [[DL Optim]], 
+  DELS: [[DL Strategy]], [[CNNs]], [[DL Optim]], 
 
 
 
@@ -341,7 +344,7 @@
 
 
 
-  DELS: [[RNNs]], [[DL Optim]], [[DL Strat]], [[DL algs]], [[DL SYStems]], [[DL topics]], [[RR/ML/DL/GPT]], [[VAEs]], 
+  DELS: [[RNNs]], [[DL Optim]], [[DL Strategy]], [[DL algs]], [[DL SYStems]], [[DL topics]], [[RR/ML/DL/GPT]], [[VAEs]], 
 
 - [[LoRA]] 
 :: [[KAN - Kolmogorov-Arnold Neworks]]
@@ -379,7 +382,7 @@
 - [[DL Notation]]:		[[NG Notation]], 
 - [[DL Alg]]:				[[RASA]], [[Segment Anything]], 
 - [[DL Optim]] - 
-- [[DL Strat]], 
+- [[DL Strategy]], 
 
 
 

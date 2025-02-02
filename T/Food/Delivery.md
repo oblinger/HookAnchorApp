@@ -4,7 +4,7 @@ ASIAN:	 Chinese, Japanese, Thai, Korean, Burmese, Vietnamese, Fusion    BOWL: Ph
 AMER:	 Seafood, American (Salad, Pizza,  Sandwich, Burger, Fast, Soul, Desert)		
 WORLD:	Italian, French, Mediterranean, German, Spanish, Mexican, Indian, African
 
-ELI:    Thai, Chinese, Korean, Pizza, Mexican, ?Seafood
+ELI:    Thai, Chinese, Korean, Pizza, Mexican, ?Seafood, Italian, pizz
 MOM:  Thai, Poki, Seafood, Japanese, Sandwich, EURO(Italian, French, German, Spanish), Salad, Pizza, Burger
 
 https://www.frannyskitchensf.com/
@@ -53,6 +53,7 @@ https://www.frannyskitchensf.com/
 | d+~~  SEAFOOD                   | Soto Mare                                                         |     |     |
 | ====  AMERICAN   ====           | > Salad, Sandwich, Pizza, Fast                                    |     |     |
 | d++~  SALADS                    | Mixt Greens                                                       |     |     |
+| d4.0 PIZZA                      | Pizza Express (3.6yelp). 415-282-2333                             |     |     |
 | d3.8  PIZZA                     | Bernal Heights Pizzeria                                           |     |     |
 | d+~~  PIZZA                     | The Pizza Shop (4.5yelp)                                          |     |     |
 | d???  PIZZA                     | Little Star Pizza (4 or 4.5yelp)                                  |     |     |

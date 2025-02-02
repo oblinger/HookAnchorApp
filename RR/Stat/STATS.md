@@ -1,4 +1,5 @@
 
+- [[STAT Distributions]] 
 
 
 ### - [[Stat Anomolies]] 

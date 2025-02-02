@@ -25,7 +25,7 @@ df1.join(df2)
 pd.merge(df1, df2, on = "col_a", how = "inner")
 .shuffle
 .batch ???
-data = pd.concat([X, y], axis=1)
+data = pd.concat([X, y], axis=1)   # concats columns; rows by default
 data_B = data_B.sample(n=200, random_state=42) # Select 200 samples from the class
 
 ## DF SLICING

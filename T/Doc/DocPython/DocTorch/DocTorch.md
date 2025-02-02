@@ -1,8 +1,12 @@
 
 
 [[Torch Tensor]] 
-[[Torch Training Examples]] 
-[[Torch nn.Module]] 
+[[Torch Examples]] 
+- [[Torch Model  nn.Module]] - Learning Model
+- [[Torch Data]] 
+- [[Torch Loss]] 
+- [[Torch Optim]] 
+
 
 #review #dl
 

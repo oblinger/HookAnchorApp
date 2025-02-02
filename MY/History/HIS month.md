@@ -1,4 +1,8 @@
 
+[[Parties\|Wed Nov 27  2024]]  	[[Parties#2024-11-27  Differences between the parties]]  
+[[Mgt\|Wed Nov 27  2024]]  	[[Mgt#2024-11-27  Monthly Meeting]]  
+[[@Credit Karma\|Wed Nov 27  2024]]  	[[@Credit Karma#2024-11-26  getting transaction log]]  
+[[AT\|Wed Nov 27  2024]]  	[[AT# LINKS]]  
 [[At\|Wed Nov 27  2024]]  	[[At# LINKS]]  
 [[2024-04-01 Resume Rewrite\|Wed Nov 27  2024]]  	[[2024-04-01 Resume Rewrite#At a Glance]]  
 [[FIN Log\|Wed Nov 27  2024]]  	[[FIN Log#2024-01-25  Merrill Retirement Planning ^rplan]]  

@@ -9,7 +9,9 @@
   , ,
   , ,
   DELS: ,
-  , [[RMS]], [[Stat Alg]], 
+  , [[RMS]], [[Stat Alg]],
+  , [[CrossEntropy Loss]], [[Logistic Regression - Logit Function]], [[Loss Functions]]
+  , [[MeanSquaredError Loss]], 
   DELS: [[Stat Alg]],[[Kalman Filter]],[[RMS]], [[Stat Alg]], [[Stat Alg]],
 
 [[Kalman Filter]] 

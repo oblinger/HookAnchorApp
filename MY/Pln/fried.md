@@ -1,7 +1,5 @@
-- see if we can keep spotlight from requiring down and up before selecting the first time
 
 
-- anti-virus
 - aziz.   https://www.vividseats.com/aziz-ansari-tickets-oakland-paramount-theatre-oakland-4-3-2025--theater-comedy/production/5413240
 - elenmind.  Elemind. https://elemindtech.com/products/elemind?srsltid=AfmBOooOTGV1dCODBmUem0XpPSRRFBmR2TkQWQT3Ji3KT-_jrgOjA8Xr
 - https://plutopillow.com/products/puff
