@@ -1,4 +1,6 @@
 
+[[Palestinians\|Sun Dec 8  2024 ]]  	[[Palestinians#2024-12-06  Response to Steve]]  
+[[@Wells Fargo\|Fri Dec 6  2024 ]]  	[[@Wells Fargo#2024-12-05  Both opening at Wells Fargo Active Cash card]]  
 [[Productivity\|Thu Dec 5  2024 ]]  	[[Productivity#2024-12-04  Huberman Focusing]]  
 [[Reflections\|Thu Dec 5  2024 ]]  	[[Reflections#2024-11-26 DEEP WORK discussion w/ Yashin]]  
 [[@Amazon as Consumer\|Wed Dec 4  2024 ]]  	[[@Amazon as Consumer#2024-12-03]]  

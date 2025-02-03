@@ -1,10 +1,12 @@
 .[[NJ]].	  [[Lrn]],
   PLAN:	[[NJ Todo]], [[NJ Plan]], [[SEEK]],
   TOP:	[NJ Slides](spot://njslides), [[NJ Log]],
-  PARTS	[[NJ Targets]], [[NJ Ask]], [[NJ Coaches]], [[NJ Blog]], 
+  PARTS	[[NJ Targets]], [[NJ Ask]], [[NJ Coaches]], ,
   SUB:
   OLD:	[[NJ16]], [[NJ22]],
-  , [[NJ Questions]], 
+  , [[NJ Questions]],
+  , [[NJ Blog]], 
+  DELS: [[NJ Blog]],
 
 RELATED:	 [[CRM]], 
 OLD:	[[Meta Coms]], 

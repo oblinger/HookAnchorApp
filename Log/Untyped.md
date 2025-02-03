@@ -5,6 +5,7 @@ n:: no prefix.	Dated entries without any typing prefix
 
 | Date       | File                                        | Notes                                                                                                                             |
 | ---------- | ------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------- |
+| 2025-02-02 | [[PODCAST To Listen To]]                        | Searching for BLOGS                                                                                                               |
 | 2025-02-02 | [[NJ Blog]]                                     |                                                                                                                                   |
 | 2025-02-01 | [[BOOK Favorites]]                              | o3-high-mini                                                                                                                      |
 | 2025-01-30 | [[Mgt]]                                         | Investor Newsletter 2024-Q4                                                                                                       |

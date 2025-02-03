@@ -1,4 +1,6 @@
 
+[[DocJquery\|Mon Oct 2  2023 ]]  	[[DocJquery#Drag, Drop, Sort, Select, Resize Accordion, Datepicker, Dial]]  
+[[DocJquery\|Mon Oct 2  2023 ]]  	[[DocJquery#New in 1.8: Button, Autocomplete]]  
 [[DocJupyter\|Mon Oct 2  2023 ]]  	[[DocJupyter#TOPICS]]  
 [[DocJupyter\|Mon Oct 2  2023 ]]  	[[DocJupyter#LOG]]  
 [[DocLinux\|Mon Oct 2  2023 ]]  	[[DocLinux#tmpnotes]]  
