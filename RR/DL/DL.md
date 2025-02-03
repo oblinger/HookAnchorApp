@@ -1,11 +1,11 @@
 
 .[[DL]].
-  DL:		[[DL Alg]], [[DL Strategy]], [[DL Visualize]], 
-  [[DLF]]:		[[DL Optim]], [[DL torch.optim]], [[DL Data Loading]], 
+  DL:		[[DL Alg]], [[DL Strategy]], ,
+  [[DLF]]:		[[DL Optim]], [[DL torch.optim]], [[DL Data Loading]],
   [[DL Notation]]:	[[NG Notation]],
   [[DL Topic]]:	[[GenAI]], [[Regularization]], [[Self Supervised Learning]], [[DL Theory]],
   PARTS:	[[Attention]], [[Activation Functions]], [[Feed Forward Layer]],
-  AREAS:	[[RAG]], 
+  AREAS:	[[RAG]],
   DETAILS:	[[Invertable Density Estimation]], [[LoRA]], [[ReLU]],
   .		    [[ORPO Odds Ratio Preference Optimization]],
   :	[[Gradient Checking]],
@@ -22,7 +22,11 @@
   , [[DL Examples]], [[DL Template]],
   , ,
   DELS: [[DLF]], [[DL Optim]],,
-  DELS: [[DLF]], [[DL Optim]],[[DL Opto]],[[Torch Tensor]],[[Tensor]], [[DL Opto]], 
+  , ,
+  DELS: [[DLF]], [[DL Optim]],,,, ,
+  , [[DL Visualize]], 
+  DELS: [[DLF]], [[DL Optim]],,,, ,[[DL Visualize]],
+  DELS: [[DLF]], [[DL Optim]],[[DL Opto]],[[Torch Tensor]],[[Tensor]], [[DL Opto]],[[DL Visualize]],[[DL Strat]], [[DL Opto]], [[Torch Tensor]], [[Tensor]], [[DL Opto]], 
 
 [[DL Areas]]
 

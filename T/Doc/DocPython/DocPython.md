@@ -2,15 +2,17 @@
   ,   [[DocConda]], [[DocJupyter]], [[DocNumPy]], [[DocPycharm]], [[DocPyDatetime]], [[DocSeaborn]], [[DocTensorFlow]], ,
   , , ,
   , ,
-  , [[DocTorch]], [[Torch Tensor]],
+  , [[DocTorch]], ,
   , ,
   , ,
-  DELS: ,[[DocTorch]], [[Torch Tensor]],
-  , [[Torch Model  nn.Module]], [[Torch Examples]],
-  DELS: ,[[DocTorch]], [[Torch Tensor]],[[Torch Examples]],
+  DELS: ,[[DocTorch]], ,
+  , , ,
+  DELS: ,[[DocTorch]], ,,
   , [[DocPythonCards]],
-  , [[null]], 
-  DELS: [[DocMatplotlib]],[[DocTorch]], [[Torch Tensor]],[[Torch Examples]],[[Torch Template]], [[DocMatplotlib]],[[DocPythonCards]],
+  , ,
+  , , ,
+  DELS: ,[[DocTorch]], ,,, ,[[DocPythonCards]],
+  DELS: [[DocMatplotlib]],[[DocTorch]], [[Torch Tensor]],[[Torch Examples]],[[Torch Template]], [[DocMatplotlib]],[[DocPythonCards]],[[Torch Model  nn.Module]], [[Torch Examples]], [[Torch Examples]],[[Torch Tensor]], [[Torch Tensor]], [[Torch Tensor]], [[null]], [[Torch nn.Module]], [[Torch Training Examples]], [[DocMatplotlib]], [[Torch Tensor]], [[Torch Template]], [[DocMatplotlib]], 
 
 [[DocTorch]]
 

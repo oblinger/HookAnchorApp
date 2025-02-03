@@ -1,3 +1,7 @@
+.[[DocTorch]].
+  , [[Torch Data]], [[Torch Examples]], [[Torch Loss]], [[Torch Model  nn.Module]], [[Torch Optim]]
+  , [[Torch Tensor]], 
+
 
 
 [[Torch Tensor]] 

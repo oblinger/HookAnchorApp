@@ -41,7 +41,8 @@
         [[Food]]: 
             [[FOOD Research]]: 
         [[Mus]]: 
-        [[Doc]]: [[DocObsidian]],	[[DocPython]],	
+        [[Doc]]: [[DocObsidian]],	
+            [[DocPython]]: [[DocTorch]],	
         [[Legal]]: [[2023 Legal SV]],	
             [[2017 Legal Ob Labs]]: 
             [[2023 Legal NDA - AF]]: 

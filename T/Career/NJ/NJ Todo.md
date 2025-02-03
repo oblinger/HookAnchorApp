@@ -1,8 +1,8 @@
 
-- [ ] Update Linked in
+- [ ] LinkedIN:  to joe; Update Linked in
+- [ ] [[NJ Targets]]: Figure out my top 20 rack and stack list.  Get list of trial interviews
 
-- - find MGR courses/books to read
-- [[RES]]: Version complete
+- Find MGR courses/books to read
 - [[RES War]]: Ability to speak from first-person perspective about coding tasks
 - [[RES Pyramid]], [[RES Parts]], 
 - Pick [[BOD]]
@@ -10,17 +10,17 @@
 
 
 
-## TODO
-- [ ] Figure out your rack and stack list
+## LATER
+- [[RES]]: Version complete
 - [ ] Resume match sites
 - [ ] Update linked in About; add sports visio
 
 ## ROCKS [[NJ]] 
+- CODE:	[[@Algo Monster]] practice for coding tests
 - [[Coms]]:	Calling plan; Choose my [[BOD]]. 
 - [[Lrn]]:		Plan
 - INTRV:	Watch linked in.
 - DOCS:	[[Res]], [[RES War]], [[RES Star]], [Doc](spot://resdocx), 
-- CODE:	[[@Algo Monster]] practice for coding tests
 
 - [[RES]]: 		Get into final form.  Along with a cover letter?
 - [[NJ Plan]]:	
