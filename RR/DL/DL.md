@@ -1,7 +1,7 @@
 
 .[[DL]].
   DL:		[[DL Alg]], [[DL Strategy]], ,
-  [[DLF]]:		[[DL Optim]], [[DL torch.optim]], [[DL Data Loading]],
+  [[DLF]]:		[[DL Optim]], [[DL Optim]], [[DL Data Loading]],
   [[DL Notation]]:	[[NG Notation]],
   [[DL Topic]]:	[[GenAI]], [[Regularization]], [[Self Supervised Learning]], [[DL Theory]],
   PARTS:	[[Attention]], [[Activation Functions]], [[Feed Forward Layer]],

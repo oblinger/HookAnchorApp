@@ -15,3 +15,8 @@ load, train_test_split, StandardScalar, tensor, TensorDataset, DataLoader
 
 .train(); .zero_grad(); outputs = model(X_train); loss=criterion(outputs, y_train); loss.backward(); optimizer.step();
 .eval(); with torch.no_grad(): out=model(X_test); loss=criterion(out, y_test)
+
+
+
+
+[[DL Foundational Model Building]] 

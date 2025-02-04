@@ -1,4 +1,8 @@
 
+[[FIN Accounts\|Fri Dec 13  2024]]  	[[FIN Accounts#CitiDouble - not used]]  
+[[Spirit\|Thu Dec 12  2024]]  	[[Spirit#= Todo =]]  
+[[BOOK Summaries\|Tue Dec 10  2024]]  	[[BOOK Summaries#2024 "Anthem" by Neil Stephenson]]  
+[[BOOK Summaries\|Tue Dec 10  2024]]  	[[BOOK Summaries#2024 "Down and Out" by Cory Doctrow]]  
 [[2024-W50\|Tue Dec 10  2024]]  	[[2024-W50#W50   2024-12-09   [[2024-W49\\|<<]] [[2024-W51\\|>>]]]]  
 [[Mgt\|Tue Dec 10  2024]]  	[[Mgt#2024-12-09  W]]  
 [[Palestinians\|Sun Dec 8  2024 ]]  	[[Palestinians#2024-12-06  Response to Steve]]  

@@ -4,7 +4,7 @@ n:: How to optimize a deep net
 
 #dl 
 
-[[DL torch.optim]] 
+[[DL Optim]] 
 
 
 - Mini-Batch Gradient Descent - computes gradient and step based on "mini-batches" of the data
@@ -101,3 +101,23 @@ STRATEGIES:
 	- COVARIANT SHIFT - Reduces damaged caused by internal covariant shift in internal layers by keeping mean and variance more constant over time.
 	- DECOUPLES PARAMETERS between layers
 	- SLIGHT REGULARIZATION - adds mini-batch noise from noise in computed mean and variance.  (this effect is tiny, and kind of like dropout)
+
+[[DL Optim]] 
+
+[[DL Optimization]] [[DL optimization]] 
+
+
+Stocastic Gradient Descent
+-?-
+nn optimization, mini-batch-size == 1
+.
+optimizer = optim.SGD(model.parameters(), lr=0.01, weight_decay=0.01)
+.
+lr == Learning Rate (0.01)
+weight_decay == L2 Regularization. Same as:
+lambda_l2 = 0.01  # L2 regularization strength
+l2_norm = sum(param.pow(2.0).sum() for param in model.parameters())
+loss = criterion(outputs, targets) + lambda_l2 * l2_norm
+
+#dl 
+
