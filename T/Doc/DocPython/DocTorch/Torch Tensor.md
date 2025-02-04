@@ -38,7 +38,7 @@ tensor math
 t + u - v + 2*t + 
 element_wise = t+1 + 2*t + u*v;  torch.sin(t); 
 dot = torch.dot(u, v)    prod = torch.mm(A, B)
-result_tensor = t.mean()  t.std()  t.max() 
+result_tensor = t.mean()  t.std()  max_,argmax = t.max(1)  torch.max(t, axis=)
 ```
 
 tensor grad

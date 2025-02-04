@@ -1,5 +1,16 @@
 
 
+
+```
+	conda create --name ENV_NAME python=13.1
+	conda activate ENV_NAME
+	conda deactive
+	conda env list
+	conda create --name new-env --clone source-env
+	
+	conda list  # packages in current env
+```
+
 # Install
 
 ### 2024-07-18  Build wiht Juan
@@ -30,12 +41,7 @@ https://docs.anaconda.com/miniconda/#quick-command-line-install
 
 ## Commands
 
-	conda list
-	conda activate <envname>
-	conda deactive
-	conda env create --name NEW-NAME
-	conda create --name new-env --clone source-env
-	conda env list
+
 
 ## Setup Commands
 

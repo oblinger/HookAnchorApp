@@ -1,3 +1,6 @@
+- patent stuff
+- eero update on phone
+- Get numbers for OKRs
 - check QA with Mery
 - john davis guy
 - softbank response
@@ -9,6 +12,7 @@
 - look at PR.
 - nick resume
 - call Michael.
+- send assignment back to lawyers
 
 
 

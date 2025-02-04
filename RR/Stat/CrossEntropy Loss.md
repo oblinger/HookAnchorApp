@@ -2,9 +2,8 @@
 
 Cross Entropy Loss
 -?-
-- sum of p * ln(yhat) + (1-p) * ln(1 - yhat)
-- nn.BCELoss()   # Binary Cross Entropy Loss
-
+- loss = sum{ y_i * log( y_hat_i ) } = nn.CrossEntropyLoss()
+- Same as nn.BCELoss() given a two class setup
 
 
 [[Logistic Regression - Logit Function]] 

@@ -1,4 +1,6 @@
 
+[[2024-W50\|Tue Dec 10  2024]]  	[[2024-W50#W50   2024-12-09   [[2024-W49\\|<<]] [[2024-W51\\|>>]]]]  
+[[Mgt\|Tue Dec 10  2024]]  	[[Mgt#2024-12-09  W]]  
 [[Palestinians\|Sun Dec 8  2024 ]]  	[[Palestinians#2024-12-06  Response to Steve]]  
 [[@Wells Fargo\|Fri Dec 6  2024 ]]  	[[@Wells Fargo#2024-12-05  Both opening at Wells Fargo Active Cash card]]  
 [[Productivity\|Thu Dec 5  2024 ]]  	[[Productivity#2024-12-04  Huberman Focusing]]  

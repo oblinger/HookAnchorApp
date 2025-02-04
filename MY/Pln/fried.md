@@ -1,3 +1,4 @@
+- log of changes to contacts.  GPT:  top-contacts, BusyCal
 
 
 - aziz.   https://www.vividseats.com/aziz-ansari-tickets-oakland-paramount-theatre-oakland-4-3-2025--theater-comedy/production/5413240

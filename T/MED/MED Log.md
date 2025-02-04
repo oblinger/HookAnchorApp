@@ -3,6 +3,17 @@ SalesForce, Nvidia,
 # LOG
 
 
+### 2025-02-03  fix billing issue
+
+800-4sutter
+800-478-8837
+
+866-681-0739 Billing issues
+
+
+submitted.  11/5/2024 (dote of service nov-13 2023)
+
+
 ### 2024-12-17  HUI - HEART
 
 - Reduce Lipitor

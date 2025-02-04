@@ -5,10 +5,11 @@
 Softmax
 -?-
 - Its n inputs are exponentiated, then normalized to sum to one.
-- By default but it can be any positive real value
+	out_i = e^(in_i) / sum( e^(in_i) for all i)
+- Can treat output as if it is a pdf over outputs.
+- Softmax is a Generalization of the Sigmoid Function (the Logistic Function) in logistic regression where the the number of classes is 2 or greater.
+- nn.Softmax(tensor_matrix_of_weighted_one_hot_multi_class_outputs) returns normalized one-hot-vector as a pdf
 .
-- Softmax is a Generalization of the LogitFunction where the the number of classes is 2 or greater.
-  softmax regression is a generalization of logistic regression w/ 2 or more classes.
 - By itself it can generate linear boundaries assuming weighted inputs
 
 

@@ -12,6 +12,7 @@ RELATED:	 [[CRM]],
 OLD:	[[Meta Coms]], 
 
 
+
 ## ... 
 - add leading targets to my slides
 low friction no-touch (or nearly notouch)
