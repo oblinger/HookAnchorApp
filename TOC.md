@@ -9,7 +9,7 @@
             [[LANG]]: 
         [[Stat]]: [[Stat Alg]],	
         [[ML]]: [[ML Alg]],	
-        [[DL]]: [[DLF]],	[[DL Alg]],	
+        [[DL]]: [[DLF]],	[[DL Alg]],	[[DL Theory]],	
     [[T]]: [[Trash]],	[[Tag]],	
         [[Misc]]: [[STARTUPS]],	[[Test88]],	[[Old]],	[[SF]],	[[Biking]],	
             [[Presentations]]: 

@@ -2,7 +2,8 @@
   ADDS:
   ADDS:   ,
   ADDS:   [[Stable Diffusion]],
-  , [[Adam Alg]], 
+  , [[Adam Alg]],
+  , [[LLM]], [[LSTM]], [[RAG]], 
 
 
 

@@ -1,4 +1,7 @@
 
+[[DocJavascript\|Mon Oct 2  2023 ]]  	[[DocJavascript#Creating a post form dynamically on button press]]  
+[[DocJavascript\|Mon Oct 2  2023 ]]  	[[DocJavascript#Underscore]]  
+[[DocJavascript\|Mon Oct 2  2023 ]]  	[[DocJavascript#jQuery]]  
 [[DocJavascript\|Mon Oct 2  2023 ]]  	[[DocJavascript#A complete set of themed, cross-browser, user interface comp]]  
 [[DocJavascript\|Mon Oct 2  2023 ]]  	[[DocJavascript#Drag, Drop, Sort, Select, Resize Accordion, Datepicker, Dial]]  
 [[DocJavascript\|Mon Oct 2  2023 ]]  	[[DocJavascript#New in 1.8: Button, Autocomplete]]  

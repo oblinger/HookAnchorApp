@@ -1,3 +1,6 @@
+.[[DL Theory]].
+  , [[DL Overfitting]], [[Dropout]], 
+
 
 #review 
 

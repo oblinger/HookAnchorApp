@@ -1,4 +1,7 @@
 
+[[FIN Accounts\|Fri Dec 13  2024]]  	[[FIN Accounts#Cap One - Dan Personal]]  
+[[FIN Accounts\|Fri Dec 13  2024]]  	[[FIN Accounts#Wells - Utilities Card]]  
+[[FIN Accounts\|Fri Dec 13  2024]]  	[[FIN Accounts#Wells - QL Spending]]  
 [[FIN Accounts\|Fri Dec 13  2024]]  	[[FIN Accounts#Freedom - Dan Spending]]  
 [[FIN Accounts\|Fri Dec 13  2024]]  	[[FIN Accounts#Sapphire - Travel / Sporadic Spending Card]]  
 [[FIN Accounts\|Fri Dec 13  2024]]  	[[FIN Accounts#PenFed - Card - not used  (Oldest Card)]]  
