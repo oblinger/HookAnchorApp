@@ -1,4 +1,7 @@
 
+[[DocJavascript\|Mon Oct 2  2023 ]]  	[[DocJavascript#A complete set of themed, cross-browser, user interface comp]]  
+[[DocJavascript\|Mon Oct 2  2023 ]]  	[[DocJavascript#Drag, Drop, Sort, Select, Resize Accordion, Datepicker, Dial]]  
+[[DocJavascript\|Mon Oct 2  2023 ]]  	[[DocJavascript#New in 1.8: Button, Autocomplete]]  
 [[DocJavascript\|Mon Oct 2  2023 ]]  	[[DocJavascript#CheatSheet]]  
 [[DocJavascript\|Mon Oct 2  2023 ]]  	[[DocJavascript#reset and serializeElements can only be]]  
 [[DocJavascript\|Mon Oct 2  2023 ]]  	[[DocJavascript#focus and select can only be]]  

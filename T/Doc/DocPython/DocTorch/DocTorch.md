@@ -1,12 +1,12 @@
 .[[DocTorch]].
-  , [[Torch Data]], [[Torch Examples]], [[Torch Loss]], [[Torch Model  nn.Module]], [[Torch Optim]]
+  , [[Torch Data]], [[Torch Examples]], [[Torch Loss]], [[Torch Module]], [[Torch Optim]]
   , [[Torch Tensor]], 
 
 
 
 [[Torch Tensor]] 
 [[Torch Examples]] 
-- [[Torch Model  nn.Module]] - Learning Model
+- [[Torch Module]] - Learning Model
 - [[Torch Data]] 
 - [[Torch Loss]] 
 - [[Torch Optim]] 

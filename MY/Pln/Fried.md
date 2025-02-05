@@ -1,5 +1,5 @@
 - log of changes to contacts.  GPT:  top-contacts, BusyCal
-
+Try [NotebookLM](https://notebooklm.google.com/?utm_source=website&utm_medium=email&utm_campaign=&utm_content=ai-demand-notebook-llm) today
 
 - aziz.   https://www.vividseats.com/aziz-ansari-tickets-oakland-paramount-theatre-oakland-4-3-2025--theater-comedy/production/5413240
 - elenmind.  Elemind. https://elemindtech.com/products/elemind?srsltid=AfmBOooOTGV1dCODBmUem0XpPSRRFBmR2TkQWQT3Ji3KT-_jrgOjA8Xr

@@ -1,4 +1,7 @@
 
+[[FIN Accounts\|Fri Dec 13  2024]]  	[[FIN Accounts#Freedom - Dan Spending]]  
+[[FIN Accounts\|Fri Dec 13  2024]]  	[[FIN Accounts#Sapphire - Travel / Sporadic Spending Card]]  
+[[FIN Accounts\|Fri Dec 13  2024]]  	[[FIN Accounts#PenFed - Card - not used  (Oldest Card)]]  
 [[FIN Accounts\|Fri Dec 13  2024]]  	[[FIN Accounts#CitiDouble - not used]]  
 [[Spirit\|Thu Dec 12  2024]]  	[[Spirit#= Todo =]]  
 [[BOOK Summaries\|Tue Dec 10  2024]]  	[[BOOK Summaries#2024 "Anthem" by Neil Stephenson]]  

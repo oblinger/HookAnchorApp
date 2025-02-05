@@ -1,3 +1,5 @@
+
+
 #dl #review
 - [[Torch Optim]] 
 - [[Torch Loss]] 
@@ -25,6 +27,8 @@ model.eval()
 model = Model(1, 1)
 model.state_dict()
 list(model.parameters())
+
+mods = nn.ModuleList(); mods.append(...)
 ```
 
 

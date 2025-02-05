@@ -1,0 +1,4 @@
+
+
+- [[Regularization]] 
+- [[Dropout]] 

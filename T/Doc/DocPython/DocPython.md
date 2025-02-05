@@ -12,7 +12,7 @@
   , ,
   , , ,
   DELS: ,[[DocTorch]], ,,, ,[[DocPythonCards]],
-  DELS: [[DocMatplotlib]],[[DocTorch]], [[Torch Tensor]],[[Torch Examples]],[[Torch Template]], [[DocMatplotlib]],[[DocPythonCards]],[[Torch Model  nn.Module]], [[Torch Examples]], [[Torch Examples]],[[Torch Tensor]], [[Torch Tensor]], [[Torch Tensor]], [[null]], [[Torch nn.Module]], [[Torch Training Examples]], [[DocMatplotlib]], [[Torch Tensor]], [[Torch Template]], [[DocMatplotlib]], 
+  DELS: [[DocMatplotlib]],[[DocTorch]], [[Torch Tensor]],[[Torch Examples]],[[Torch Template]], [[DocMatplotlib]],[[DocPythonCards]],[[Torch Module]], [[Torch Examples]], [[Torch Examples]],[[Torch Tensor]], [[Torch Tensor]], [[Torch Tensor]], [[null]], [[Torch nn.Module]], [[Torch Training Examples]], [[DocMatplotlib]], [[Torch Tensor]], [[Torch Template]], [[DocMatplotlib]], 
 
 [[DocTorch]]
 
