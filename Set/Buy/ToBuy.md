@@ -19,6 +19,9 @@
 - [ ] [10Q](https://antneygrub-store.mybigcommerce.com/instant-pot-duo-nova-10qt-multi-cooker-stainless-steel/?gclid=CjwKCAiA68ebBhB-EiwALVC-NuIDsXNcsuBgSPRdG5844ShzVztqIWPzAsg_8qHO6T8On9W5Wm_MkxoChNgQAvD_BwE) instapot  
 
 - [ ] Buy tripod. consider go-pro or other video. search best camera w/ a kid
+- [ ] 
+- https://plutopillow.com/products/puff
+- elenmind headband for sleep.  Elemind. https://elemindtech.com/products/elemind?srsltid=AfmBOooOTGV1dCODBmUem0XpPSRRFBmR2TkQWQT3Ji3KT-_jrgOjA8Xr
 ## ITEMS
 ### 2024-03-16  Tent
 

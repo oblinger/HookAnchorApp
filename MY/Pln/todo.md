@@ -1,6 +1,7 @@
-- Joe Aug
 - Leet code register
 - nicks money mgr
+
+- eero update on phone
 
 - Oven fix
 - alarm

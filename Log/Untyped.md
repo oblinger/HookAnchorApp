@@ -5,6 +5,8 @@ n:: no prefix.	Dated entries without any typing prefix
 
 | Date       | File                                        | Notes                                                                                                                             |
 | ---------- | ------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------- |
+| 2025-02-05 | [[NJ Targets]]                                  | Idea:  Use Gemini deep-study                                                                                                      |
+| 2025-02-05 | [[NJ Targets]]                                  | Nick's homework                                                                                                                   |
 | 2025-02-03 | [[MED Log]]                                     | fix billing issue                                                                                                                 |
 | 2025-02-02 | [[NJ Blog]]                                     | Searching for BLOGS                                                                                                               |
 | 2025-02-01 | [[BOOK Favorites]]                              | o3-high-mini                                                                                                                      |

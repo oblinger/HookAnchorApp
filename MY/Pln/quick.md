@@ -1,10 +1,10 @@
+
 - patent stuff
-- eero update on phone
+- okrs
+
 - Get numbers for OKRs
 - check QA with Mery
 - john davis guy
-- softbank response
-- !!! BULLETS FOR Sean's news letter
 - ask about roster
 - attach sliding door better
 - tetnus
