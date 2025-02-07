@@ -1,5 +1,7 @@
-n:: framework that allows developers to build, train, and deploy conversational AI models.
 
+RASA
+-?-
+n:: a framework that allows developers to build, train, and deploy conversational AI models.
 - [Rasa Alg](https://www.youtube.com/watch?v=yGTUuEx3GkA) whiteboard example.  
 	- Self Attention -- recurrent within
 	- https://www.youtube.com/watch?v=tIvKXrEDMhk

@@ -5,6 +5,7 @@ n:: no prefix.	Dated entries without any typing prefix
 
 | Date       | File                                        | Notes                                                                                                                             |
 | ---------- | ------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------- |
+| 2025-02-06 | [[LRN Todo]]                                    | Other IBM coursera courses                                                                                                        |
 | 2025-02-05 | [[NJ Targets]]                                  | Idea:  Use Gemini deep-study                                                                                                      |
 | 2025-02-05 | [[NJ Targets]]                                  | Nick's homework                                                                                                                   |
 | 2025-02-03 | [[MED Log]]                                     | fix billing issue                                                                                                                 |
@@ -214,7 +215,6 @@ n:: no prefix.	Dated entries without any typing prefix
 | 2024-06-04 | [[QQ]]                                          | 4K videos of basketball                                                                                                           |
 | 2024-06-03 | [[FIN Todo]]                                    | Costs For Vanguard                                                                                                                |
 | 2024-06-02 | [[AWS Log]]                                     | Setup for SportsVisio                                                                                                             |
-| 2024-06-01 | [[RR PAPERS]]                                   | [Attention is all you need](https://arxiv.org/pdf/1706.03762)                                                                     |
 | 2024-06-00 | [[COM Newsletter]]                              | AI and CV News Letter points                                                                                                      |
 | 2024-05-29 | [[FIN Log]]                                     | ADVICE FROM ADVISORS - Four Levels of Advice                                                                                      |
 | 2024-05-23 | [[MED Log]]                                     | EMDR                                                                                                                              |
@@ -226,7 +226,6 @@ n:: no prefix.	Dated entries without any typing prefix
 | 2024-05-16 | [[PQ]]                                          | Replace bath faucet                                                                                                               |
 | 2024-05-16 | [[COMS]]                                        | Mentor's call list                                                                                                                |
 | 2024-05-14 | [[@StatsPerform]]                               | Talk about sports AI                                                                                                              |
-| 2024-05-13 | [[RR PAPERS]]                                   | [The Platonic Representation Hypothesis](https://arxiv.org/abs/2405.07987)                                                        |
 | 2024-05-12 | [[@Jason Syversen]]                             | Slow                                                                                                                              |
 | 2024-05-08 | [[@Mathew Main]]                                | AI Credits                                                                                                                        |
 | 2024-05-08 | [[@Sage Vet]]                                   | Phone Numbers                                                                                                                     |
@@ -1224,7 +1223,6 @@ n:: no prefix.	Dated entries without any typing prefix
 | 2015-00-00 | [[MED Sleep]]                                   | Pill exploration                                                                                                                  |
 | 2014-00-00 | [[FIN Log]]                                     | Rent from Peter Berger                                                                                                            |
 | 2014-00-00 | [[FIN Log]]                                     | Garage Spot                                                                                                                       |
-| 2013-09-07 | [[RR PAPERS]]                                   | [Efficient Estimation of Word Representations in Vector Space](https://arxiv.org/pdf/1301.3781)                                   |
 | 2013-03-03 | [[BUY Log]]                                     | Standing mat                                                                                                                      |
 | 2013-02-00 | [[Archeology]]                                  | OKC                                                                                                                               |
 | 2013-01-30 | [[Jnl]]                                         | Quit working at paybygroup???                                                                                                     |

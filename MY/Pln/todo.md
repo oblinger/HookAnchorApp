@@ -1,8 +1,11 @@
+- Call DanRoof leak
 - Leet code register
 - nicks money mgr
-
 - eero update on phone
+- penfed closed??
+- eli original birth cirtificate
 
+https://www.thegoodlandgroupadvisors.com/
 - Oven fix
 - alarm
 - closet hooks

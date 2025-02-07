@@ -1,5 +1,5 @@
 .[[Eli]].
-  [[ELI Log]], [[Eli Food]], [[ELI Quotes]],
+  [[ELI Log]], [[Eli Food]], [[ELI Quotes]], [[Eli Movies]], 
   [[Eli Strategy]]:
   :
   [[Eli Firsts]]:

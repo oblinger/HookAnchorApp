@@ -1,4 +1,5 @@
 
+[[DocJavascript\|Mon Oct 2  2023 ]]  	[[DocJavascript#blam DATASTRUCTURES]]  
 [[DocJavascript\|Mon Oct 2  2023 ]]  	[[DocJavascript#Creating a post form dynamically on button press]]  
 [[DocJavascript\|Mon Oct 2  2023 ]]  	[[DocJavascript#Underscore]]  
 [[DocJavascript\|Mon Oct 2  2023 ]]  	[[DocJavascript#jQuery]]  

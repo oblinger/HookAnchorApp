@@ -3,11 +3,11 @@
 Regularization
 -??-
 Technique to reduce overfitting
-Common Techniques: L2 (Ridge), Dropout, L1 (Lasso)
+Common Techniques: L2 (Ridge regression), Dropout, L1 (Lasso - Least Absolute Shrinkage and Selection Operator), Early stopping, Adding data
 
 
 ## L2 REGULARIZATION
-L2 Regularization in a NN = "Weight Decay" Regularization
+L2 Regularization in a NN = "weight_decay" Regularization
 - Adds an additional 'cost' term to the measured cost of any given network's parameters...  the sum of the square of those parameters.
 - When derivative of this cost is taken it has the effect of, At each step 'decaying' all weights towards 0 in addition to back prop signal
 

@@ -17,8 +17,10 @@ resume match website
 - [ ] Update linked in About; add sports visio
 
 ## ROCKS [[NJ]] 
-- CODE:	[[@Algo Monster]] practice for coding tests
+- CODE:	[[@Algo Monster]] practice for coding tests.
+- ML:		Torch, DL, ML (courses and practice)
 - [[Coms]]:	Calling plan; Choose my [[BOD]]. 
+- PAPERS		
 - [[Lrn]]:		Plan
 - INTRV:	Watch linked in.
 - DOCS:	[[Res]], [[RES War]], [[RES Star]], [Doc](spot://resdocx), 

@@ -14,6 +14,7 @@
 - [[Torch Data]] 
 - [[Torch Loss]] 
 - [[Torch Optim]] 
+- [[Torch Initialization]] 
 
 
 #review #dl

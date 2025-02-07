@@ -1,0 +1,25 @@
+
+
+
+
+
+
+
+## DESIRED OPPORTUNITIES
+
+
+COMPANY
+- FOUNDATIONAL MODELS - 
+
+
+ROLE
+- PROTOTYPING - I am most interested and most valuable 
+- COHESIVE PRODUCT -
+
+
+
+WORK
+- TECHNICAL WORK - 
+	- COLLABORATING / MENTORING - 
+	- API work
+	- Algo work

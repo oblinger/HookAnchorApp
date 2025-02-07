@@ -219,6 +219,10 @@ Casio PX130BK
 
 AC Adaptor: AD-A12150LW
 
+### 2018 - Nanny Camera Clock
+
+Hidden Camera, Monja PRO Spy Camera Clock, Real 1080P WiFi Cameras for Home
+
 
 
 ## = OTHER =

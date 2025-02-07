@@ -1,4 +1,5 @@
 
+[[FIN Accounts\|Fri Dec 13  2024]]  	[[FIN Accounts#BofA Mortgage (House Loan)]]  
 [[FIN Accounts\|Fri Dec 13  2024]]  	[[FIN Accounts#Cap One - Dan Personal]]  
 [[FIN Accounts\|Fri Dec 13  2024]]  	[[FIN Accounts#Wells - Utilities Card]]  
 [[FIN Accounts\|Fri Dec 13  2024]]  	[[FIN Accounts#Wells - QL Spending]]  

@@ -10,9 +10,6 @@ n:: Research Reference pages
   [[Alg]],
   [[Swearing]], ,
   , [[Comp]], [[DL]], [[Lrn]], [[Stat]],
-  , ,
   , [[RR SYSTEMS]],
-  DELS: ,
-  DELS: [[RR/Systems/RR SYSTEMS]],[[Systems]],[[RR/Systems/RR SYSTEMS]], 
 
 

@@ -2,10 +2,6 @@
  
  [[Friday]]: 
 
-.WRK.
- [[DocAWS]] 
-
-
 ## TRACK
  - [[2024-05 Sell Acura|Car]] 
 

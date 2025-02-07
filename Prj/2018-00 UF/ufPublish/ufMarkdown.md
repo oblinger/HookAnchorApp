@@ -4,11 +4,11 @@
 # ### INTRODUCTION ATTEMPTS ###
 ### --- CODE MARKDOWN UNIFORM AGENDA INTRO ---
 
-The Uniform Agenda is to iteratively edit a ladder of paradigms in an attempt to "have it all" and over time to "see where you land".  Here is current formulation of "Uniform Code Markdown" after many years of iteration:
+The Uniform Agenda is to iteratively edit a ladder of paradigms to "have it all" and over time to "see where you land".  Here is the current formulation of "Uniform Code Markdown" after many years of iteration:
 
-Our aim with Uniform Code Markdown (UCM) is to simultaneously to simultaneiously achieve the following:
+Our aim with Uniform Code Markdown (UCM) is to simultaneously achieve the following:
 
-aspires towards a collection of elements to good they cannot be made better for their intended purpose.  In the case of UCM my aim was a best language writing language syntax.  On that:
+Aspires towards a collection of elements to good they cannot be made better for their intended purpose.  In the case of UCM, my aim was to write a best language writing language syntax.  On that:
 
 1. HOMOICONIC -- Supports the meta programming that is central to the language writing require in building this web of paradigms.  Ideally it is homoiconic, have a simple, LISP-reader-like semantics-free mapping from text onto AST -- so the meta programmer can effortlessly program that AST.
 2. BEAUTIFUL -- Is as apt, and looks as beautiful as any other syntax developed for any  DSLs developed for any targeted software activity.
@@ -22,7 +22,7 @@ As a motivating example imagine: one person developed a jQuery-like micro langua
 a parallel flow language designed to efficiently transpile onto Google's Tensor Processor it would be easy for a forth person to the source-code syntax of each of these langauges 
 ~-~~
 
-To even attempt such a crazy thing, one needs to identify key elements of software which can be repeatedly recombined in order to admit a close proxy for all existing (and future) software languages.  So for SW langauge parsing what are these conserved elements?
+To even attempt such a crazy thing, one needs to identify key elements of software which can be repeatedly recombined in order to admit a close proxy for all existing (and future) software languages.  So for SW language parsing what are these conserved elements?
 
 - PARSE TREE --
 - TOKENIZATION -- 

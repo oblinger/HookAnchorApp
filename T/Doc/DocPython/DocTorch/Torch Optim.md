@@ -18,3 +18,4 @@ Stocastic Gradient Descent
 	- momentum=0.9.  accelerates SGD in relevant direction and dampens oscillations???
 	- weight_decay=0.0001. is the L2 regularization penalty to prevent overfitting
 	- dampening - reduces effect of momentum
+
