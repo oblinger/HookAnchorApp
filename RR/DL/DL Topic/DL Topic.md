@@ -1,3 +1,6 @@
+.[[DL Topic]].
+  , [[DL Theory]], [[Dropout]], [[Overfitting]], [[Regularization]], 
+
 
 .[[DL Theory]].
 

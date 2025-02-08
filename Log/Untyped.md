@@ -5,6 +5,7 @@ n:: no prefix.	Dated entries without any typing prefix
 
 | Date       | File                                        | Notes                                                                                                                             |
 | ---------- | ------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------- |
+| 2025-02-07 | [[@Meta]]                                       | NJ META                                                                                                                           |
 | 2025-02-06 | [[LRN Todo]]                                    | Other IBM coursera courses                                                                                                        |
 | 2025-02-05 | [[NJ Targets]]                                  | Idea:  Use Gemini deep-study                                                                                                      |
 | 2025-02-05 | [[NJ Targets]]                                  | Nick's homework                                                                                                                   |

@@ -3,10 +3,10 @@
   DL:		[[DL Alg]], , ,
   [[DLF]]:		, , ,
   :	[[NG Notation]],
-  [[DL Topic]]:	[[GenAI]], [[Regularization]], [[Self Supervised Learning]], [[DL Theory]],
+  [[DL Topic]]:	[[GenAI]], , [[Self Supervised Learning]], ,
   PARTS:	[[Attention]], [[Activation Functions]], ,
   AREAS:	,
-  DETAILS:	[[Invertable Density Estimation]], [[LoRA]], [[ReLU]],
+  DETAILS:	[[Invertable Density Estimation]], [[LoRA]], ,
   .		    [[ORPO Odds Ratio Preference Optimization]],
   :	[[Gradient Checking]],
   :	[[Auto Encoders]], [[GANs]], , [[NN]], [[Transformers]], , , [[RNNs]],
@@ -16,7 +16,7 @@
   , [[CNNs]], [[Embedding]]
   , [[Positional Encoding]], [[RLHF]], ,
   , , [[Mech Interp]],
-  DELS: [[DLF]], [[DL Optim]],[[DL Opto]],[[Torch Tensor]],[[Tensor]], [[DL Opto]],[[DL Visualize]],[[DL Strat]], [[DL Opto]], [[Torch Tensor]], [[Tensor]], [[DL Opto]],[[DL Strategy]], [[DL Optim]], [[DL Optim]], [[DL Data Loading]], [[DL Notation]], [[DL Areas]], [[DL Optim]], [[DL Analyze]], [[DL Examples]], [[DL Template]], [[DL Optim]], [[DL Optim]], [[DL Visualize]], [[DL Optim]], [[DL Visualize]], [[DL torch.optim]],[[Feed Forward Layer]], [[RAG]], [[LSTM]], [[LLM]], 
+  DELS: [[DLF]], [[DL Optim]],[[DL Opto]],[[Torch Tensor]],[[Tensor]], [[DL Opto]],[[DL Visualize]],[[DL Strat]], [[DL Opto]], [[Torch Tensor]], [[Tensor]], [[DL Opto]],[[DL Strategy]], [[DL Optim]], [[DL Optim]], [[DL Data Loading]], [[DL Notation]], [[DL Areas]], [[DL Optim]], [[DL Analyze]], [[DL Examples]], [[DL Template]], [[DL Optim]], [[DL Optim]], [[DL Visualize]], [[DL Optim]], [[DL Visualize]], [[DL torch.optim]],[[Feed Forward Layer]], [[RAG]], [[LSTM]], [[LLM]],[[Regularization]], [[DL Theory]], [[ReLU]], 
 
 [[DL Areas]]
 

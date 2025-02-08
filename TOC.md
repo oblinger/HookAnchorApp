@@ -9,7 +9,7 @@
             [[LANG]]: 
         [[Stat]]: [[Stat Alg]],	
         [[ML]]: [[ML Alg]],	
-        [[DL]]: [[DLF]],	[[DL Alg]],	[[DL Theory]],	
+        [[DL]]: [[DLF]],	[[DL Topic]],	[[DL Alg]],	
     [[T]]: [[Trash]],	[[Tag]],	
         [[Misc]]: [[STARTUPS]],	[[Test88]],	[[Old]],	[[SF]],	[[Biking]],	
             [[Presentations]]: 
@@ -19,7 +19,7 @@
             [[RES]]: [[Bio]],	
                 [[RES Job History]]: 
                     [[AF]]: 
-            [[NJ]]: [[SEEK]],	[[NJ22]],	[[NJ16]],	
+            [[NJ]]: [[SEEK]],	[[NJ22]],	[[NJ16]],	[[NJ Targets]],	
         [[FIN]]: [[FIN Tracking]],	
             [[FIN Log]]: 
             [[FIN Bills]]: 

@@ -1,5 +1,5 @@
 .[[Eli]].
-  [[ELI Log]], [[Eli Food]], [[ELI Quotes]], [[Eli Movies]], 
+  [[ELI Log]], [[Eli Food]], [[ELI Quotes]], ,
   [[Eli Strategy]]:
   :
   [[Eli Firsts]]:
@@ -12,9 +12,10 @@
   , [[Eli Sentimental]],
   , ,
   DELS: [[Eli Report Cards]],[[Eli Sentimental]],
-  , [[@BCMS]], 
+  , [[@BCMS]],
   DELS: [[Eli Report Cards]],[[Eli Sentimental]],[[@BCMS]],
-  DELS: [[Eli Report Cards]],[[Eli Sentimental]],[[@BCMS]],[[BCMS]], 
+  , [[Eli Movies]], 
+  DELS: [[Eli Report Cards]],[[Eli Sentimental]],[[@BCMS]],[[BCMS]],[[Eli Movies]],
 
 
 

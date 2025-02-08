@@ -1,4 +1,4 @@
- #pp     [Tech Lead](https://www.linkedin.com/in/cyuan/) [[@NVIDIA]] 
+ #pp     [Tech Lead](https://www.linkedin.com/in/cyuan/) [[@Nvidia]] 
 
 408-506-1333
 

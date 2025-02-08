@@ -1,7 +1,8 @@
 .[[DLF]].
   , [[DL Analyze]], [[DL Areas]], [[DL Data Loading]], [[DL Examples]]
   , [[DL Foundational Model Building]], [[DL Notation]], [[DL Optim]], [[DL Strategy]]
-  , [[DL Template]], [[DL Visualize]], 
+  , [[DL Template]], [[DL Visualize]],
+  , [[DL Activation]], [[DL Visualization]], 
 
 
 Deep Learning Framework

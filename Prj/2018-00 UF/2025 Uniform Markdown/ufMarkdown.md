@@ -1,6 +1,4 @@
 
-(See 2025 ufMarkdown.md)
-
 [HTML docs](../../markdown/markdown.html) 
 
 # ### INTRODUCTION ATTEMPTS ###

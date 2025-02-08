@@ -1,4 +1,4 @@
-#pp   [DataScience PM](https://www.linkedin.com/in/chris-zankel-bb7756/) [[@NVIDIA]] 
+#pp   [DataScience PM](https://www.linkedin.com/in/chris-zankel-bb7756/) [[@Nvidia]] 
 
 
 - Good friend of [[@Frank Delle]] 

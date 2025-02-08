@@ -4,8 +4,9 @@
   , [[DocEmacs]], [[DocGCP]], [[DocGit]], [[DocGnome]], [[DocGolang]], [[DocGoogle]], [[DocHtml]]
   , [[DocJavascript]], [[DocJquery]], [[DocLinux]], [[DocMarkdown]], [[DocMatplotlib]]
   , [[DocObjectiveC]], [[DocObsidian]], [[DocOSX]], [[DocPandas]], [[DocPyML]], [[DocPython]]
-  , [[DocR]], [[DocRackspace]], [[DocRails]], [[DocRuby]], [[DocSamurai]], [[DocSciKit]], [[DocSQL]]
-  , [[DocSublime]], [[DocVagrant]], [Game](spot://game), 
+  , [[DocR]], [[DocRackspace]], [[DocRails]], [[DocRuby]], [[DocSamurai]], , [[DocSQL]]
+  , [[DocSublime]], [[DocVagrant]], [Game](spot://game),
+  DELS: [[DocSciKit]], 
 
 
 
