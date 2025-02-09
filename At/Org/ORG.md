@@ -7,7 +7,8 @@
   , [[@Credit Karma]], [[@Rocket Money]], [[@Wells Fargo]],
   , [[@Auto Trader]],
   , [[@Schwab]],
-  , [[@ATT]], 
+  , [[@ATT]],
+  , [[@Netflix 1]], [[@Nvidia]], [[@OpenAI]], [[@Tesla]], 
   DELS: [[@schwab]],
 
 [[@Wells Fargo]] 

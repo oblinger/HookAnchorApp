@@ -17,6 +17,7 @@ resume match website
 - [ ] Update linked in About; add sports visio
 
 ## ROCKS [[NJ]] 
+- PLACES [[NJ Targets]],  [[NJ Targets Plan]], 
 - CODE:	[[@Algo Monster]] practice for coding tests.
 - ML:		Torch, DL, ML (courses and practice)
 - [[Coms]]:	Calling plan; Choose my [[BOD]]. 

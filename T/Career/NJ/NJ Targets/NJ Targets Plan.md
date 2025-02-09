@@ -8,12 +8,12 @@
 ## CRITERIA FOR AN IDEAL COMPANY
 #### * **PAY**: Total comp above $300-500K.
 #### * **INNOVATIVE**: Has many deeply technical projects.
-#### * **ASCENDANT**: The company is poised for notable growth or is not stagnant or shrinking.
+#### * **ASCENDANT**: The company is poised for notable growth; at least it is not stagnant nor shrinking.
 
 
 ## CRITERIA FOR AN IDEAL ROLE
 #### * **TECHNICAL**:
-Might include: API work, ALG development, Mentoring, 
+Might include API work, ALG development, Mentoring, 
 #### * **MANAGER**: 
 
 

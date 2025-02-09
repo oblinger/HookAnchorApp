@@ -15,7 +15,7 @@ Torch SGD
 -?-
 Stocastic Gradient Descent
 - nn.SGD(params=, lr=, momentum=, weight_decay=, dampening=)
-	- momentum=0.9.  accelerates SGD in relevant direction and dampens oscillations???
+	- momentum=0.9.  Like a ball's weight, it keeps velocity through flat regions
 	- weight_decay=0.0001. is the L2 regularization penalty to prevent overfitting
 	- dampening - reduces effect of momentum
 

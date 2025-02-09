@@ -9,7 +9,8 @@
             [[LANG]]: 
         [[Stat]]: [[Stat Alg]],	
         [[ML]]: [[ML Alg]],	
-        [[DL]]: [[DLF]],	[[DL Topic]],	[[DL Alg]],	
+        [[DL]]: [[DL Topic]],	[[DL Alg]],	
+            [[DLF]]: [[DL Visualization]],	[[DL Activation]],	
     [[T]]: [[Trash]],	[[Tag]],	
         [[Misc]]: [[STARTUPS]],	[[Test88]],	[[Old]],	[[SF]],	[[Biking]],	
             [[Presentations]]: 
@@ -42,7 +43,7 @@
             [[FOOD Research]]: 
         [[Mus]]: 
         [[Doc]]: [[DocObsidian]],	
-            [[DocPython]]: 
+            [[DocPython]]: [[DocSklearn]],	
                 [[DocTorch]]: [[Torch Module]],	
         [[Legal]]: [[2023 Legal SV]],	
             [[2017 Legal Ob Labs]]: 
