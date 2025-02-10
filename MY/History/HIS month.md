@@ -1,4 +1,5 @@
 
+[[FIN Budget\|Sat Jan 11  2025]]  	[[FIN Budget#INFO]]  
 [[FIN Budget\|Sat Jan 11  2025]]  	[[FIN Budget#LOG]]  
 [[@Schwab\|Fri Jan 10  2025]]  	[[@Schwab#2025-01-10  mystery transactions]]  
 [[@Apple\|Fri Jan 10  2025]]  	[[@Apple#2022 iPhone 13 (maybe 2022)]]  

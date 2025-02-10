@@ -1,5 +1,26 @@
 
 
+2025 Incandescence by Greg Egan 
+
+THREE AXES
+- garm 	- sard	outward       (garm is closet to the hub, sard is furtherest)
+- shomal	- junub	inward		(above and below the orbital plane)
+- rarb 	- sharq	balanced???  (rarb is leading orbit. sharq is trailing?)
+
+Light
+- garm-sharq edge is brigher and sard+rarb edge is less bright
+
+WIND
+- Garm-side wind blows from sharq -> rarb
+- Sard-side wind blows from rarb -> sharq
+
+NULL LINES. (I think; and I think they form an X on all garm/sard junub/shomal slices)
+- from garm+shomal <--> sard+junub.  
+
+
+
+2025  Roadside Picnic
+
 ### 2024 Void Star
 
 ### 2024 Revelation Space
