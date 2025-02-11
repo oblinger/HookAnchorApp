@@ -3,8 +3,10 @@
   ADDS:   ,
   ADDS:   [[Stable Diffusion]],
   , [[Adam Alg]],
-  , [[LLM]], [[LSTM]], [[RAG]], 
-  [[DL Pretrained Models]] 
+  , [[LLM]], [[LSTM]], [[RAG]],
+  , [[DL Pretrained Models]], 
+
+  DELS: [[DL Pretrained Models]], 
 
 
 

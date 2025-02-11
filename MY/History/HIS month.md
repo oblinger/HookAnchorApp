@@ -1,4 +1,9 @@
 
+[[FIN Accounts\|Mon Jan 13  2025]]  	[[FIN Accounts#x7970 Amazon - Misc Card]]  
+[[FIN Accounts\|Mon Jan 13  2025]]  	[[FIN Accounts#x8397 Health Equity Card]]  
+[[FIN Accounts\|Mon Jan 13  2025]]  	[[FIN Accounts#x2520 CitiDouble - not used]]  
+[[FIN Accounts\|Mon Jan 13  2025]]  	[[FIN Accounts#BofA - Mortgage (House Loan)]]  
+[[2025 Budget\|Sat Jan 11  2025]]  	[[2025 Budget#2025 Budget]]  
 [[FIN Budget\|Sat Jan 11  2025]]  	[[FIN Budget#INFO]]  
 [[FIN Budget\|Sat Jan 11  2025]]  	[[FIN Budget#LOG]]  
 [[@Schwab\|Fri Jan 10  2025]]  	[[@Schwab#2025-01-10  mystery transactions]]  
