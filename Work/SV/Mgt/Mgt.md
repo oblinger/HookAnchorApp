@@ -4,6 +4,12 @@
 
 # Log
 
+### 2025-02-10  W
+
+- BAD MINUTES - Well, this week we've been looking into improving the metric that describes players with bad minutes, and finding ways to detect them during runtime using annotations.
+- SW NORMALIZATION - 
+- SHOW RESULTS
+
 ### 2025-01-30  Investor Newsletter 2024-Q4
 
 #### Q4-2024

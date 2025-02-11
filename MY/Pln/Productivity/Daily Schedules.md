@@ -1,9 +1,15 @@
 
 # LOG
 
-### 2024-10-15  Three burst Day
+### 2025-02-10  Daily Blocks
+06:	Maybe one more work session
+08	9 hours =
+		3h	2x 90min work blocks
+		4h		1: Brunch+Chew  1:Snack+Chew  1 Nap
+		2h	Work
+05
 
-
+### 2024-10-15  Three Burst Day
 07	maybe
 08	Meetings		Contain required shallow work from 8a-10a when possible
 09	Chew & 1on1	

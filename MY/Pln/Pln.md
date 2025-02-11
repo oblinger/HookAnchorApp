@@ -10,11 +10,6 @@
   ROOT:		[[BKT]], [[Up All]], [[Up Task]],
   EXT:		[[External]], ,
   UNUSED:	[[Prime]], [[Full]], [[Ping]],
-  , ,
-  , , ,
-  DELS: ,
-  , , , ,
-  DELS: ,, ,, , ,
   , [[Active]], [[Archive List]], [[Fried]], [[Fun]], [[Gap]], [[Later]], [[Now]], [[Other]], [[Q2]]
   , [[Quick]], [[Todo]], 
   DELS: ,, ,, , ,[[Quick]], [[Todo]], [[Now]], [[Active]], [[Later]], [[Q2]], [[Archive List]], [[Fun]], [[Fried]], [[Gap]], [[Other]],

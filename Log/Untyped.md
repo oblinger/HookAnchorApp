@@ -5,6 +5,8 @@ n:: no prefix.	Dated entries without any typing prefix
 
 | Date       | File                                        | Notes                                                                                                                             |
 | ---------- | ------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------- |
+| 2025-02-10 | [[Daily Schedules]]                             | Daily Blocks                                                                                                                      |
+| 2025-02-10 | [[Mgt]]                                         | W                                                                                                                                 |
 | 2025-02-07 | [[@Meta]]                                       | NJ META                                                                                                                           |
 | 2025-02-06 | [[LRN Todo]]                                    | Other IBM coursera courses                                                                                                        |
 | 2025-02-05 | [[NJ Targets]]                                  | Idea:  Use Gemini deep-study                                                                                                      |
@@ -107,7 +109,7 @@ n:: no prefix.	Dated entries without any typing prefix
 | 2024-10-25 | [[@Jason Syversen]]                             | Matia's Value                                                                                                                     |
 | 2024-10-21 | [[Reflections]]                                 | Focus on deep work hours & emotional stance & fun                                                                                 |
 | 2024-10-16 | [[Eli Firsts]]                                  | Diaper man!                                                                                                                       |
-| 2024-10-15 | [[Daily Schedules]]                             | Three burst Day                                                                                                                   |
+| 2024-10-15 | [[Daily Schedules]]                             | Three Burst Day                                                                                                                   |
 | 2024-10-14 | [[Reflections]]                                 | MY PROBLEM & AN IDEA                                                                                                              |
 | 2024-10-14 | [[Mgt]]                                         | weekly (never presented)                                                                                                          |
 | 2024-10-13 | [[EOC Log]]                                     | Decomposing Agency                                                                                                                |

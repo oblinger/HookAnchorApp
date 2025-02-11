@@ -4,6 +4,7 @@
   ADDS:   [[Stable Diffusion]],
   , [[Adam Alg]],
   , [[LLM]], [[LSTM]], [[RAG]], 
+  [[DL Pretrained Models]] 
 
 
 
