@@ -1,4 +1,6 @@
-.CHK.
+
+
+
 .**SOON**.
      Spec new work flow for AI-min (report error)
      Briones spreadsheet - tax spreadsheet

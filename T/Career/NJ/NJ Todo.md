@@ -18,7 +18,7 @@ resume match website
 
 ## ROCKS [[NJ]] 
 - PLACES [[NJ Targets]],  [[NJ Targets Plan]], 
-- CODE:	[[@Algo Monster]] practice for coding tests.
+- CODE:	[[@Algo Monster]] & [Leet](https://leetcode.com/studyplan/top-interview-150/) practice
 - ML:		Torch, DL, ML (courses and practice)
 - [[Coms]]:	Calling plan; Choose my [[BOD]]. 
 - PAPERS		
