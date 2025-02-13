@@ -8,7 +8,8 @@
   , [[@Auto Trader]],
   , [[@Schwab]],
   , [[@ATT]],
-  , [[@Netflix 1]], [[@Nvidia]], [[@OpenAI]], [[@Tesla]], 
+  , [[@Netflix 1]], [[@Nvidia]], [[@OpenAI]], [[@Tesla]],
+  , [[@Miovision]], 
   DELS: [[@schwab]],
 
 [[@Wells Fargo]] 

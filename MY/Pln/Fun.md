@@ -1,5 +1,5 @@
 
-- [[Book]] - [[ToRead]], 
+- [[Book]] - [[Read]], 
 - [[Friends]] 
 - [[Friday]], 
 

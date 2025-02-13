@@ -1,7 +1,7 @@
 
 # TABLE OF CONENTS
 
-[[mate]],	[[Proj]],	[[Race]],	
+[[mate]],	[[Race]],	
 [[KMR]]: [[WEEKLY]],	
     [[RR]]: [[Lrn]],	[[RR Leet]],	[[RR PAPERS]],	[[RR Philosophy]],	[[RR MGR]],	
         [[RR SYSTEMS]]: 

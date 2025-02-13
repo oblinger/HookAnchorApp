@@ -13,7 +13,7 @@
   , [Baseball](spot://baseball), 
   DELS: [AI TIPS](spot://aitips),
 
-[[Proj]] 
+[[SV Proj]] 
 
 
 

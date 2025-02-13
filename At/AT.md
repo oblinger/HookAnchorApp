@@ -74,7 +74,8 @@
   , [[@SpaceX]],
   , [[@David Hayden]],
   , [[@Ian Yuan]],
-  , [[@Anthropic]], 
+  , [[@Anthropic]],
+  , [[@Cat S]], [[@Jackie Lee]], 
 
   
 

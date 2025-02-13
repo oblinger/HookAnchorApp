@@ -13,9 +13,10 @@
   PLAN:		[[SV Strat]],
   LOGS: 	[[WW]],  [[QQ]], [SV Tasks](spot://svtasks), [SV Log Page](spot://svlogpage), [[SV Archive]],
   OTHER:	[[SV Wings]], [[SV Basketball Info]],
-  , [Game Docs](spot://gamedocs), 
+  , [Game Docs](spot://gamedocs),
+  , [[SV Proj]], 
 
-[[Proj]] 
+[[SV Proj]] 
 
 
 

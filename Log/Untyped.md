@@ -5,6 +5,7 @@ n:: no prefix.	Dated entries without any typing prefix
 
 | Date       | File                                        | Notes                                                                                                                             |
 | ---------- | ------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------- |
+| 2025-02-12 | [[BOOK Suggestions]]                            | suggestions                                                                                                                       |
 | 2025-02-10 | [[Daily Schedules]]                             | Daily Blocks                                                                                                                      |
 | 2025-02-10 | [[Mgt]]                                         | W                                                                                                                                 |
 | 2025-02-07 | [[@Meta]]                                       | NJ META                                                                                                                           |
@@ -13,7 +14,7 @@ n:: no prefix.	Dated entries without any typing prefix
 | 2025-02-05 | [[NJ Targets]]                                  | Nick's homework                                                                                                                   |
 | 2025-02-03 | [[MED Log]]                                     | fix billing issue                                                                                                                 |
 | 2025-02-02 | [[NJ Blog]]                                     | Searching for BLOGS                                                                                                               |
-| 2025-02-01 | [[BOOK Favorites]]                              | o3-high-mini                                                                                                                      |
+| 2025-02-01 | [[BOOK Suggestions]]                            | o3-high-mini                                                                                                                      |
 | 2025-01-30 | [[Mgt]]                                         | Investor Newsletter 2024-Q4                                                                                                       |
 | 2025-01-27 | [[PQ]]                                          | Oven Repair                                                                                                                       |
 | 2025-01-27 | [[Mgt]]                                         | W                                                                                                                                 |

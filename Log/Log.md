@@ -20,7 +20,7 @@
 #### Work Content Logs
 - [[WW]]:	Work related projects spanning a month or more
 - [[QQ]]:	Work related "Quick" projects less than a month
-- [[Proj]]:	Work projects
+- [[SV Proj]]:	Work projects
 
 
 #### WORK -- [[SV]] [[SV Folder|--]]  STUFF

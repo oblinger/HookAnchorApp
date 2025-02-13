@@ -15,18 +15,21 @@
 | **G** | Gdrive      | **XXXX Gdrive**      | Web folder (6)                               |
 |       |             |                      |                                              |
 |       | **SPECIAL** |                      |                                              |
+|       |             | **XXXX**             | No suffix overrides others as leading choice |
+| **1** | 1Pass       | **XXXX 1pass**       | Launches from 1password (5)                  |
+| **C** | Code        | **XXXX Code**        | Project's source                             |
+| **L** | Log         | **XXXX Log**         | Log of related content                       |
+| **P** | Page        | **XXXX Page**        | Launches a URL (7)                           |
+| **T** | Todo        | **XXXX Todo** or "." | Todo list for XXXX.  "XXXX." can be an alias |
+|       |             |                      |                                              |
+|       | **PREFIX**  |                      |                                              |
 |       | Doc         | **Doc XXXX**         | Documentations about some SW thing           |
 |       | RR          | **RR XXXX**          | Reference material about a thing             |
 |       | Meta XXX    | **Meta XXXX**        | Meta info about a term (could be 'about')    |
 |       | @XXX        | **@ XXXX**           | Entity page for a person, org, or "actor"    |
-| **L** | Log         | **XXXX Log**         | Log of related content                       |
-| **T** | Todo        | **XXXX Todo** or "." | Todo list for XXXX.  "XXXX." can be an alias |
 |       |             |                      |                                              |
 |       | **TARGET**  |                      |                                              |
-|       |             | **XXXX**             | No suffix overrides others as leading choice |
 | **A** | App         | **XXXX**             | Mac App. Launches it. (3)                    |
-| **P** | Page        | **XXXX Page**        | Launches a URL (7)                           |
-| **1** | 1Pass       | **XXXX 1pass**       | Launches from 1password (5)                  |
 |       |             |                      |                                              |
 a b C D E f g H I J K l M? n O p Q R S t U V W X Y Z
 
@@ -54,6 +57,11 @@ ENTITY
 - VISION	cv	-	Computer Vision team related
 
 
+
+## PERSONAL / WORK FACETS.  (for area rollups)
+- Prj / Proj  	- List of project specs
+- proj 		- Code folders
+- - Todo
 
 # LOG
 

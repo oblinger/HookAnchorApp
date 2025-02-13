@@ -1,6 +1,6 @@
 
 
-2025 Incandescence by Greg Egan 
+### 2025 Incandescence by Greg Egan 
 
 THREE AXES
 - garm 	- sard	outward       (garm is closet to the hub, sard is furtherest)
@@ -18,8 +18,7 @@ NULL LINES. (I think; and I think they form an X on all garm/sard junub/shomal s
 - from garm+shomal <--> sard+junub.  
 
 
-
-2025  Roadside Picnic
+### 2025  Roadside Picnic
 
 ### 2024 Void Star
 
@@ -53,12 +52,6 @@ Jean Le Flambeur
 - The crypt-arch is the master crypto key for everybodies exo-memories that is how they are altered.
 - This world is controlled via crypto keys, even physically seeing someone is controlled by the access they grant you.
 	all of this is controlled by some kind of super computer system underlying the society.
-
-
-
-
-
-
 
 
 ### 2024 "Anthem" by Neil Stephenson
