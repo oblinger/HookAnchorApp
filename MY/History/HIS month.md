@@ -1,4 +1,12 @@
 
+[[FIN Accounts\|Mon Jan 13  2025]]  	[[FIN Accounts#x6694 Schwab - Personal Debit Card\?\?\?\?\?]]  
+[[FIN Accounts\|Mon Jan 13  2025]]  	[[FIN Accounts#x0190 CapOne - Dan Personal]]  
+[[FIN Accounts\|Mon Jan 13  2025]]  	[[FIN Accounts#x0644 Wells - Utilities Card]]  
+[[FIN Accounts\|Mon Jan 13  2025]]  	[[FIN Accounts#x1064 Wells - QL Spending Card]]  
+[[FIN Accounts\|Mon Jan 13  2025]]  	[[FIN Accounts#x6320 PenFed - Dan Spending Card - not used  (Oldest Card) x]]  
+[[FIN Accounts\|Mon Jan 13  2025]]  	[[FIN Accounts#x4654 Freedom - Dining Card]]  
+[[FIN Accounts\|Mon Jan 13  2025]]  	[[FIN Accounts#x3644 Chase Sapphire - Travel Card - / Sporadic Spending Car]]  
+[[FIN Accounts\|Mon Jan 13  2025]]  	[[FIN Accounts#x8472 Amazon - Groc Card]]  
 [[FIN Accounts\|Mon Jan 13  2025]]  	[[FIN Accounts#x7970 Amazon - Misc Card]]  
 [[FIN Accounts\|Mon Jan 13  2025]]  	[[FIN Accounts#x8397 Health Equity Card]]  
 [[FIN Accounts\|Mon Jan 13  2025]]  	[[FIN Accounts#x2520 CitiDouble - not used]]  

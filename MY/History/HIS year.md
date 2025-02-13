@@ -1,4 +1,12 @@
 
+[[BaseB\|Mon Oct 2  2023 ]]  	[[BaseB#2023-10-02  From Nick @ Realplay]]  
+[[BaseB\|Mon Oct 2  2023 ]]  	[[BaseB#2023-10-02  notes to Aaron]]  
+[[BaseB\|Mon Oct 2  2023 ]]  	[[BaseB#2023-09-13  Task Breakdown]]  
+[[BaseB\|Mon Oct 2  2023 ]]  	[[BaseB#2023-09-14  Justin / Jason Conversation]]  
+[[Dataset\|Mon Oct 2  2023 ]]  	[[Dataset#LOG]]  
+[[CVP\|Mon Oct 2  2023 ]]  	[[CVP#Planning]]  
+[[CVP\|Mon Oct 2  2023 ]]  	[[CVP#LOG]]  
+[[Patents\|Mon Oct 2  2023 ]]  	[[Patents#PATENTS]]  
 [[Hire\|Mon Oct 2  2023 ]]  	[[Hire#LOG]]  
 [[vball\|Mon Oct 2  2023 ]]  	[[vball#LOG]]  
 [[ingest\|Mon Oct 2  2023 ]]  	[[ingest#2023-09-17  Portable Rig Parts]]  
