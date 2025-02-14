@@ -222,19 +222,16 @@ DISCUSS
 ### 2025-02-13  Proposed Changes
 
 
+
+
+
+
+
+
 We must be INCREDIBLY CONSERVATIVE with new requirements, or else this falls apart.
 
-= INPUTS =      ... mostly from sales
-- EPIC REQUIREMENTS - Copied from Jack or written by Sales (occasionally Brian/Dan)
-- BUGS - Bug tickets created with sufficient detail to debug
 
-= TRACKING =    ... focused on prioritization as specific deadlines will often slip
-- SEAN - Executive control of the backlog of epics and bugs
-- JAMES - Bird dog execution of epics.  Do they "smell" like they are going to converge
 
-= EXECUTION =    ... mostly Matias, TT, Juan
-- Create & track their own Jira tickets
-- Make their own assessment (along with James) if they will meet requirements written in epic.  
 
 
 Questions:

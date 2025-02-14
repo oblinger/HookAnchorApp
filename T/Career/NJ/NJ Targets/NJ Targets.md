@@ -1,6 +1,8 @@
 .[[NJ Targets]].
-  [[NJ Targets Plan]], 
-  [[NJ Target Queries]]	
+  [[NJ Targets Plan]],
+  , [[NJ Target Queries]], 
+
+  DELS: [[NJ Target Queries]], 
 
 
 - [[NJ Targets.numbers]]:    

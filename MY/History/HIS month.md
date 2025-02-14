@@ -1,4 +1,12 @@
 
+[[2025-W03\|Mon Jan 13  2025]]  	[[2025-W03#W3   2025-01-13   [[2025-W2\\|<<]] [[2025-W4\\|>>]]]]  
+[[FIN Accounts\|Mon Jan 13  2025]]  	[[FIN Accounts#x6976 BofA - DanO Personal (Checking&Savings)]]  
+[[FIN Accounts\|Mon Jan 13  2025]]  	[[FIN Accounts#x1905 Schwab - DanO Checking -  (Investments)]]  
+[[FIN Accounts\|Mon Jan 13  2025]]  	[[FIN Accounts#x2345 Schwab - Grand Central (Investments)]]  
+[[FIN Accounts\|Mon Jan 13  2025]]  	[[FIN Accounts#x1345 Schwab - Monthly Spending (Investments)]]  
+[[FIN Accounts\|Mon Jan 13  2025]]  	[[FIN Accounts#x3333 Schwab - Sporadic Spending (Investments)]]  
+[[FIN Accounts\|Mon Jan 13  2025]]  	[[FIN Accounts#x7293 Schwab - Sporadic Debit Card]]  
+[[FIN Accounts\|Mon Jan 13  2025]]  	[[FIN Accounts#x5911 Schwab - Monthly Debit Card]]  
 [[FIN Accounts\|Mon Jan 13  2025]]  	[[FIN Accounts#x6694 Schwab - Personal Debit Card\?\?\?\?\?]]  
 [[FIN Accounts\|Mon Jan 13  2025]]  	[[FIN Accounts#x0190 CapOne - Dan Personal]]  
 [[FIN Accounts\|Mon Jan 13  2025]]  	[[FIN Accounts#x0644 Wells - Utilities Card]]  

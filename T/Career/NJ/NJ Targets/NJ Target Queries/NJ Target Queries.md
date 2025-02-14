@@ -1,11 +1,13 @@
 
 
+# Summary
+
 I am beginning a job search and would like to build up a list of relevant companies that fit my experience (as listed in my attached resume) as well as the criteria I have listed below.  For each company you identify, please provide your assessment of each company against each criteria as well as a summary of the evidence you used to arrive at that company's score on each criteria.
 
 ## CRITERIA FOR AN IDEAL COMPANY
 #### **LOCATION**: Bay Area or Remote.  I live in the San Francisco Bay Area and want to work most days from here.  I am open to some travel but want to be based here.
 #### * **PAY**: Total comp above $300-500K.
-#### * **INNOVATIVE**: The ideal company has many deeply technical AI projects.
+#### * **INNOVATIVE PROJECTS**: The ideal company has many deeply technical AI projects.
 #### * **ASCENDANT**: The company is poised for notable growth in the next years.  At the very least, the company should not be flat, stagnant, or shrinking.
 #### * **GOOD CULTURE**:  Ideally, this company is known for having a great corporate culture that is loved by its employees.  At the very least, I would consider it a notable negative if the company had a reputation as being toxic, cutthroat, or sweatshop-like.
 
@@ -36,26 +38,25 @@ I am beginning a job search and would like to build up a list of relevant compan
 - I am interested in doing cutting-edge applied AI work.  
 - but it has been too long since I was publishing, so it may not be feasible for me to get a pure Research position.
 
-# SEARCH
+# LOG
+
+### 2025-02-14  Companies doing innovative AI work
+
+
+- I am beginning a job search and would like to build a list of relevant companies that fit my experience and interest.
+- I have a PhD in Computer Science with a specialization in AI and Machine Learning.  
+- I am interested in companies doing research extending recent algorithms in generative AI into novel application areas.
+- Since I live in San Francisco, I am only interested in companies with offices in the San Francisco Bay Area or ones that allow remote work.
+- Please compile a list of 20 to 50 companies that fit this, along with a summary of the generative AI applications each is working on.
+- I am interested in both startups and large companies; please compile these as two separate lists
+- I am more broadly interested in novel applications of generative AI than specific industries.  That said, I have experience in Robotics and do enjoy that field.
+- please format these outputs as a CSV with
+the following columns: company type(Big or
+Start), company name, company mission,
+genAl project summary, genAl project2
+summary
 
 
 
 
-## DESIRED OPPORTUNITIES
 
-
-COMPANY
-- FOUNDATIONAL MODELS - 
-
-
-ROLE
-- PROTOTYPING - I am most interested and most valuable 
-- COHESIVE PRODUCT -
-
-
-
-WORK
-- TECHNICAL WORK - 
-	- COLLABORATING / MENTORING - 
-	- API work
-	- Algo work

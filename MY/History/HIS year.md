@@ -1,4 +1,12 @@
 
+[[@Jasu Victorio\|Mon Oct 2  2023 ]]  	[[@Jasu Victorio#2023-09-21  Review]]  
+[[Bugs\|Mon Oct 2  2023 ]]  	[[Bugs#2023-09-21  Fellowship of the bug]]  
+[[2023-06 Roadmap old \|Mon Oct 2  2023 ]]  	[[2023-06 Roadmap old #Virtues of this “prime pathway”]]  
+[[2023-06 Roadmap old \|Mon Oct 2  2023 ]]  	[[2023-06 Roadmap old #Con of this “primary pathway”]]  
+[[2023-06 Roadmap old \|Mon Oct 2  2023 ]]  	[[2023-06 Roadmap old #“Prime Pathway” Strategy Summary]]  
+[[2023-06 Roadmap old \|Mon Oct 2  2023 ]]  	[[2023-06 Roadmap old #Justification for our present choice of “prime pathway”]]  
+[[2023-06 Roadmap old \|Mon Oct 2  2023 ]]  	[[2023-06 Roadmap old #Tournament-Based Product Introduction]]  
+[[SV Roadmap\|Mon Oct 2  2023 ]]  	[[SV Roadmap#LOG]]  
 [[BaseB\|Mon Oct 2  2023 ]]  	[[BaseB#2023-10-02  From Nick @ Realplay]]  
 [[BaseB\|Mon Oct 2  2023 ]]  	[[BaseB#2023-10-02  notes to Aaron]]  
 [[BaseB\|Mon Oct 2  2023 ]]  	[[BaseB#2023-09-13  Task Breakdown]]  
