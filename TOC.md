@@ -1,7 +1,7 @@
 
 # TABLE OF CONENTS
 
-[[mate]],	[[OLD-CONSTRUCTS]],	[[Race]],	
+[[mate]],	[[OLD-CONSTRUCTS]],	[[lex-lexlang]],	[[Race]],	
 [[KMR]]: [[WEEKLY]],	
     [[RR]]: [[Lrn]],	[[RR Leet]],	[[RR PAPERS]],	[[RR Philosophy]],	[[RR MGR]],	
         [[RR SYSTEMS]]: 
@@ -90,7 +90,9 @@
             [[Writing]]: [[ArmChair]],	
         [[WP]]: 
         [[Idea]]: [[2018-00 Alloy]],	[[2020-07 Autonomy]],	
-            [[2017-09 Elastic Block Chain]],	[[Forum]],	[[2016-00 TreeSheet]],	
+            [[2017-09 Elastic Block Chain]],	[[Forum]],	
+            [[2022-05 Virtual Tour Guide]],	[[2016-00 TreeSheet]],	
+            [[2022-05 Virtual Tour Guide]],	
             [[2007-00 DARPA seeds]]: 
             [[2006-12 GHOST]]: 
             [[2009-03 Team Saver]]: 
