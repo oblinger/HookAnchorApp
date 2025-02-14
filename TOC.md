@@ -2,7 +2,7 @@
 # TABLE OF CONENTS
 
 [[mate]],	[[Race]],	
-[[KMR]]: [[WEEKLY]],	
+[[kmr]]: [[WEEKLY]],	
     [[RR]]: [[Lrn]],	[[RR Leet]],	[[RR PAPERS]],	[[RR Philosophy]],	[[RR MGR]],	
         [[RR SYSTEMS]]: 
         [[Comp]]: 
@@ -17,7 +17,7 @@
             [[House]]: 
                 [[House Crime]]: 
         [[Career]]: 
-            [[RES]]: [[Bio]],	
+            [[RES]]: [[Bio]],	[[RES Examples]],	
                 [[RES Job History]]: 
                     [[AF]]: 
             [[NJ]]: [[SEEK]],	[[NJ22]],	[[NJ16]],	
@@ -93,7 +93,6 @@
         [[Idea]]: [[2018-00 Alloy]],	[[2020-07 Autonomy]],	
             [[2017-09 Elastic Block Chain]],	[[Forum]],	
             [[2022-05 Virtual Tour Guide]],	[[2016-00 TreeSheet]],	
-            [[2022-05 Virtual Tour Guide]],	
             [[2007-00 DARPA seeds]]: 
             [[2006-12 GHOST]]: 
             [[2009-03 Team Saver]]: 

@@ -1,1 +1,0 @@
-- -- Small biz for data labelling http://encord.com 

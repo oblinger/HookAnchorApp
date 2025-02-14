@@ -1,3 +1,7 @@
+.[[2022-05 Virtual Tour Guide]].
+  , ,
+  DELS: [[Virtual Tour Guide.pptx]], 
+
 # Google Search + Google Lens: Contextualized Influencer Content Platform
 
 ## **Problem**

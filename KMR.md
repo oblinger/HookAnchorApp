@@ -1,3 +1,9 @@
+.[[kmr]].
+  , [[2024-10-29]], [[AT]], [[ATTACH]], [GG](spot://gg), [KMR Gdrive](spot://kmrgdrive), [[Log]]
+  , [[MY]], [[Prj]], [[RR]], [[Set]], [[SYS]], [[T]], [[TOC]]
+  , [TRASH for Obsidian Folder](spot://trashforobsidianfolder)
+  , [TRASH Obsidian](spot://trashobsidian), [[WEEKLY]], [[Work]], 
+
 TOPS: [[KMR]], [[Meta]], [[TOC]], 
 
 .[[KMR]].
