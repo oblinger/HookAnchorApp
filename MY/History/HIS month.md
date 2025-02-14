@@ -1,4 +1,6 @@
 
+[[@SpaceX\|Mon Jan 13  2025]]  	[[@SpaceX#Log]]  
+[[LRN Todo\|Mon Jan 13  2025]]  	[[LRN Todo#Rocks - Evergreen @ top]]  
 [[2025-W03\|Mon Jan 13  2025]]  	[[2025-W03#W3   2025-01-13   [[2025-W2\\|<<]] [[2025-W4\\|>>]]]]  
 [[FIN Accounts\|Mon Jan 13  2025]]  	[[FIN Accounts#x6976 BofA - DanO Personal (Checking&Savings)]]  
 [[FIN Accounts\|Mon Jan 13  2025]]  	[[FIN Accounts#x1905 Schwab - DanO Checking -  (Investments)]]  

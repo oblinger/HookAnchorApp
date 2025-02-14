@@ -1,4 +1,6 @@
 
+[[@Jason Syversen\|Mon Oct 2  2023 ]]  	[[@Jason Syversen#= Team velocity / distractions]]  
+[[@Jason Syversen\|Mon Oct 2  2023 ]]  	[[@Jason Syversen#CALL TOPICS]]  
 [[@Jasu Victorio\|Mon Oct 2  2023 ]]  	[[@Jasu Victorio#2023-09-21  Review]]  
 [[Bugs\|Mon Oct 2  2023 ]]  	[[Bugs#2023-09-21  Fellowship of the bug]]  
 [[2023-06 Roadmap old \|Mon Oct 2  2023 ]]  	[[2023-06 Roadmap old #Virtues of this “prime pathway”]]  
