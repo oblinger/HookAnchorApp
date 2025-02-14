@@ -9,7 +9,8 @@
   , [[@Schwab]],
   , [[@ATT]],
   , [[@Netflix 1]], [[@Nvidia]], [[@OpenAI]], [[@Tesla]],
-  , [[@Miovision]], 
+  , [[@Miovision]],
+  , [[@Alta Vista]], 
   DELS: [[@schwab]],
 
 [[@Wells Fargo]] 
