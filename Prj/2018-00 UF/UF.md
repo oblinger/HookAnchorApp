@@ -5,9 +5,9 @@
   [[_society]], [[_todo_OLD]], [[_vocabulary]],
   ADDS:   [[_ideas_OLD]],
   , [[_info]],
-  , [[UF-OLD]], 
-  DELS: [[ufAgenda]], [[ufElements]], [[ufGenerality]], [[UfGui]], [[ufIntroduction]], [[ufLAL]], [[ufMarkdown]], [[essential capture]], [[_outtakes]], [[Recommender]], [[TextPuter]],[[uniform1_vocabulary]], [[uniform7_oblits]], [[uniform7_sentences]], [[UC]], [[Info]],[[ufAgenda]], [[ufElements]], [[ufGenerality]], [[UfGui]], [[ufIntroduction]], [[ufLAL]], [[ufMarkdown]], [[essential capture]], [[_outtakes]], [[Recommender]], [[TextPuter]],
-  DELS: [[ufAgenda]], [[ufElements]], [[ufGenerality]], [[UfGui]], [[ufIntroduction]], [[ufLAL]], [[ufMarkdown]], [[essential capture]], [[_outtakes]], [[Recommender]], [[TextPuter]],[[uniform1_vocabulary]], [[uniform7_oblits]], [[uniform7_sentences]], [[UC]], [[Info]],[[ufAgenda]], [[ufElements]], [[ufGenerality]], [[UfGui]], [[ufIntroduction]], [[ufLAL]], [[ufMarkdown]], [[essential capture]], [[_outtakes]], [[Recommender]], [[TextPuter]],[[_agenda]], 
+  , [[UF-OLD]],
+  DELS: , , , , , , , , , , ,, , , , ,, , , , , , , , , , ,
+  DELS: [[ufAgenda]], [[ufElements]], [[ufGenerality]], [[UfGui]], [[ufIntroduction]], [[ufLAL]], [[ufMarkdown]], [[essential capture]], [[_outtakes]], [[Recommender]], [[TextPuter]],[[uniform1_vocabulary]], [[uniform7_oblits]], [[uniform7_sentences]], [[UC]], [[Info]],[[ufAgenda]], [[ufElements]], [[ufGenerality]], [[UfGui]], [[ufIntroduction]], [[ufLAL]], [[ufMarkdown]], [[essential capture]], [[_outtakes]], [[Recommender]], [[TextPuter]],[[_agenda]],[[ufAgenda]], [[ufElements]], [[ufGenerality]], [[UfGui]], [[ufIntroduction]], [[ufLAL]], [[ufMarkdown]], [[essential capture]], [[_outtakes]], [[Recommender]], [[TextPuter]], [[uniform1_vocabulary]], [[uniform7_oblits]], [[uniform7_sentences]], [[UC]], [[Info]], [[ufAgenda]], [[ufElements]], [[ufGenerality]], [[UfGui]], [[ufIntroduction]], [[ufLAL]], [[ufMarkdown]], [[essential capture]], [[_outtakes]], [[Recommender]], [[TextPuter]], 
 
 
 

@@ -1,8 +1,8 @@
 .[[FIN Budget]].
-  , [[FIN Categories]],
+  , ,
   - :
-  , [[2025 Budget]], 
-  DELS: [[2025 Budget]],
+  , ,
+  DELS: [[2025 Budget]],[[FIN Categories]], [[2025 Budget]], 
 
 
 - [[FIN Flows]]: coarse grained budget

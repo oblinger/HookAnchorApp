@@ -1,7 +1,7 @@
 
 # TABLE OF CONENTS
 
-[[mate]],	[[OLD-CONSTRUCTS]],	[[lex-lexlang]],	[[Race]],	
+[[mate]],	[[Race]],	
 [[KMR]]: [[WEEKLY]],	
     [[RR]]: [[Lrn]],	[[RR Leet]],	[[RR PAPERS]],	[[RR Philosophy]],	[[RR MGR]],	
         [[RR SYSTEMS]]: 
@@ -22,11 +22,11 @@
                     [[AF]]: 
             [[NJ]]: [[SEEK]],	[[NJ22]],	[[NJ16]],	
                 [[NJ Targets]]: 
-        [[FIN]]: [[FIN Tracking]],	
+        [[FIN]]: [[FIN Budget]],	[[FIN Tracking]],	
             [[FIN Log]]: 
             [[FIN Bills]]: 
             [[FIN Topics]]: 
-            [[FIN Budget]]: 
+            [[FIN_Budget]]: 
         [[EduCorp]]: 
         [[Life]]: 
             [[Diary]]: 
@@ -75,6 +75,7 @@
         [[PP]]: [[2022-01-00 Nanny]],	
         [[UF]]: [[ufPublish]],	
             [[UfApps]]: 
+            [[UF-OLD]]: [[OLD-CONSTRUCTS]],	[[lex-lexlang]],	
         [[2020-08 Race Pitch]]: 
     [[AT]]: [[@Qingling Oblinger]],	[[VC ORG]],	[[@Google]],	
         [[ORG]]: [[@Merrill]],	[[@Hackers]],	[[Service]],	
