@@ -1,13 +1,9 @@
   n:: Stuff "to read"
   #set
 
-.[[Read]].  [[BOOK Summaries]] 
-  [[BOOK Research]]: 
-  [[Book To Read]]:
-  [[ToRead]]:
-  [[Podcasts]],
-  [[RR Papers]]:
-  
+.[[Read]].  
+  [[Book To Read]]:	[[BOOK Suggestions]], [[BOOK Research]],   [[ToRead]], 
+  [[Podcasts]]
 
--  [[Book]]:
-- [[BOOK Summaries]]: 
+- [[RR Papers]]	Research papers to read
+- [[Book]]		[[BOOK Summaries]], 

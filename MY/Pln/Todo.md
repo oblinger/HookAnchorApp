@@ -1,8 +1,8 @@
-- Call DanRoof leak
-- [nicks money mgr](https://www.thegoodlandgroupadvisors.com/) 
+
 - eero update on phone
 
 - Eli orig birth cert
+- [nicks money mgr](https://www.thegoodlandgroupadvisors.com/) 
 
 
 - Oven fix

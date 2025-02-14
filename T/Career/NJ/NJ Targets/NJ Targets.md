@@ -1,9 +1,9 @@
 .[[NJ Targets]].
-  , [[NJ Targets Plan]], 
+  [[NJ Targets Plan]], 
+  [[NJ Target Queries]]	
 
 
-- [[NJ Targets Plan]] 
-- [[NJ Targets Table.xlsx]], 
+- [[NJ Targets.numbers]]:    
 
 
 

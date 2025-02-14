@@ -201,9 +201,9 @@ S32D850T  LS32D85KTSR/ZA   32"  2560x1440   300CD/M2   (3840x2400) (Aeolus 2017)
 ## = COMPUTER PERIPHERALS = 
 ### 2021 - PRINTER - Canon PIXMA TS 9520
 
-## = ELECTRICAL ==
+## = ELECTRICAL GADGET ==
 
-#### Digital Temperature Controller (MakerHawk TC816)
+#### TEMPERATURE CONTROLLER - l Digital Temperature Controller (MakerHawk TC816)
 
 https://www.amazon.com/gp/product/B0BX418XDF/ref=ppx_yo_dt_b_search_asin_title?ie=UTF8&th=1
 

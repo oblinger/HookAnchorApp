@@ -5,6 +5,7 @@ n:: no prefix.	Dated entries without any typing prefix
 
 | Date       | File                                        | Notes                                                                                                                             |
 | ---------- | ------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------- |
+| 2025-02-13 | [[@Jason Syversen]]                             | Proposed Changes                                                                                                                  |
 | 2025-02-12 | [[BOOK Suggestions]]                            | suggestions                                                                                                                       |
 | 2025-02-10 | [[Daily Schedules]]                             | Daily Blocks                                                                                                                      |
 | 2025-02-10 | [[Mgt]]                                         | W                                                                                                                                 |

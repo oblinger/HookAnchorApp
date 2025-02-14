@@ -1,6 +1,6 @@
 
 - [[Book]] - [[Read]], 
-- [[Friends]] 
+- [[Friends]] - Meet
 - [[Friday]], 
 
 HARD THINGS

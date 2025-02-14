@@ -218,13 +218,42 @@ DISCUSS
 
 # LOG
 
-meeting this week?  AI-min ramp, shot chart ramp
+
+### 2025-02-13  Proposed Changes
+
+
+We must be INCREDIBLY CONSERVATIVE with new requirements, or else this falls apart.
+
+= INPUTS =      ... mostly from sales
+- EPIC REQUIREMENTS - Copied from Jack or written by Sales (occasionally Brian/Dan)
+- BUGS - Bug tickets created with sufficient detail to debug
+
+= TRACKING =    ... focused on prioritization as specific deadlines will often slip
+- SEAN - Executive control of the backlog of epics and bugs
+- JAMES - Bird dog execution of epics.  Do they "smell" like they are going to converge
+
+= EXECUTION =    ... mostly Matias, TT, Juan
+- Create & track their own Jira tickets
+- Make their own assessment (along with James) if they will meet requirements written in epic.  
+
+
+Questions:
+- Still do sprints?  Brian leads?
+
+
+
+AI OUTPUTS
+- Human-level stats are out of range in 2025 / 2026
+- Annotator speedups seem mostly about skipping, but this will have some impact on accuracy
+- Biggest areas:
+	- AI augmentations: minutes, shots, play charts, strategy analysis,
+	  Secondary stats: Drive speed, strategy outcomes, etc.
+	- Lower accuracy analysis - e. g. highlights, sharable content, user corrected content, etc.
+
 
 ### 2025-01-20  Chat on skipped meeting
 
 - Ivory - 
-
-
 
 ### 2025-01-03  W
 
@@ -1196,29 +1225,29 @@ Mark and I have been discussing random things that the product doesn't do now b
 
   
 
-1) Right now new customers are teams, which are linked to programs and programs have events. This is nice, but sometimes events are standalone things and the customer could BE the event organizer. Forcing every team into an arbitrary program doesn't always make sense. 
+2) Right now new customers are teams, which are linked to programs and programs have events. This is nice, but sometimes events are standalone things and the customer could BE the event organizer. Forcing every team into an arbitrary program doesn't always make sense. 
 
-2) Scott Byers has designed our backend systems and while he's a fast coder who can right code well and find bugs quickly, he's not in touch with users, doesn't ask for help/input, and usually makes incorrect design decisions from my experience. I've told Brian that Scott should NOT be making any design decisions without sign off from me or Mark because his approaches usually create more problems than they solve. Brian has not managed him strongly enough and it has led to numerous issues. (Database structure, authentication issues, and many others) It's annoying because he literally taught classes on programming and I've talked to people who took them, as well as a former boss and everyone ranted about how smart/good he was. 
+3) Scott Byers has designed our backend systems and while he's a fast coder who can right code well and find bugs quickly, he's not in touch with users, doesn't ask for help/input, and usually makes incorrect design decisions from my experience. I've told Brian that Scott should NOT be making any design decisions without sign off from me or Mark because his approaches usually create more problems than they solve. Brian has not managed him strongly enough and it has led to numerous issues. (Database structure, authentication issues, and many others) It's annoying because he literally taught classes on programming and I've talked to people who took them, as well as a former boss and everyone ranted about how smart/good he was. 
 
-3) We need to get the background uploader for Android in production (should be happening imminently) and iOS background uploader developed (not even started yet!) Background uploading is a key feature for customers that experience difficulty waiting for the app and interrupting it as they use the phone.
+4) We need to get the background uploader for Android in production (should be happening imminently) and iOS background uploader developed (not even started yet!) Background uploading is a key feature for customers that experience difficulty waiting for the app and interrupting it as they use the phone.
 
-4) We are going to need to support third party video sources. At a minimum a hand picked wall mounted camera that streams to our systems from a static vantage point... but possibly arbitrary platforms too. While we don't NEED to support arbitrary third party video sources, it would be amazing if we could as we have a universe of existing customers that have existing video they could upload and we could analyze. But we definitely need to move beyond just mobile phones on a tripod to something permanently installed in many venues and nobody has even started on this (other than me doing some research on camera options and Brian looking at ones that support native streaming to AWS)
+5) We are going to need to support third party video sources. At a minimum a hand picked wall mounted camera that streams to our systems from a static vantage point... but possibly arbitrary platforms too. While we don't NEED to support arbitrary third party video sources, it would be amazing if we could as we have a universe of existing customers that have existing video they could upload and we could analyze. But we definitely need to move beyond just mobile phones on a tripod to something permanently installed in many venues and nobody has even started on this (other than me doing some research on camera options and Brian looking at ones that support native streaming to AWS)
 
-5) We need to improve our QA processes. We still have WAY too many bugs slipping through into production. It appears none of the engineers actually use the product, which I get as it's a lot of moving parts and most don't apply to them. But unfortunately those pieces end up slipping through into production and create issues that we keep discovering WAY too late
+6) We need to improve our QA processes. We still have WAY too many bugs slipping through into production. It appears none of the engineers actually use the product, which I get as it's a lot of moving parts and most don't apply to them. But unfortunately those pieces end up slipping through into production and create issues that we keep discovering WAY too late
 
-6) It's too difficult to share videos onto social media. I've been told that's going to be fixed but no idea when that's happening and I strongly believe that is a critical component to creating some viral growth engines as customers share their clips with others.
+7) It's too difficult to share videos onto social media. I've been told that's going to be fixed but no idea when that's happening and I strongly believe that is a critical component to creating some viral growth engines as customers share their clips with others.
 
-7) Similarly, we still don't have a company watermark on the video clips. See #6
+8) Similarly, we still don't have a company watermark on the video clips. See #6
 
-8) We don't have enough customers using the app regularly. Mark doesn't seem to care about it but I care greatly... we need to figure out why that is. Mark has pointed out that we don't even know which customers sign up and what they experience, I think we need to add some customer tracking software into the app that tells us who signed up, who's using what, and give us feedback that allows us to improve the experience. 
+9) We don't have enough customers using the app regularly. Mark doesn't seem to care about it but I care greatly... we need to figure out why that is. Mark has pointed out that we don't even know which customers sign up and what they experience, I think we need to add some customer tracking software into the app that tells us who signed up, who's using what, and give us feedback that allows us to improve the experience. 
 
-9) We don't do a good job tracking developer productivity. Obviously stuff like LOC counting is stupid, but I'd love to learn what you did at AF to track productivity and see what we can do to better analyze performance. Obviously we see things like code check ins and stuff that works or not, but quality and design decisions and other things are harder to measure. Especially with a bunch of younger developers I think some of them are less motivated and need some focus help/training (and in some cases to be replaced.) But maybe I'm wrong and they're all amazing. Would love to get your take on productivity but also the team quality/depth across the board. 
+10) We don't do a good job tracking developer productivity. Obviously stuff like LOC counting is stupid, but I'd love to learn what you did at AF to track productivity and see what we can do to better analyze performance. Obviously we see things like code check ins and stuff that works or not, but quality and design decisions and other things are harder to measure. Especially with a bunch of younger developers I think some of them are less motivated and need some focus help/training (and in some cases to be replaced.) But maybe I'm wrong and they're all amazing. Would love to get your take on productivity but also the team quality/depth across the board. 
 
-10) We need to start doing design reviews, which have not happened (again, an issue stemming from Brian I think) I'd like to review the architecture, key design decisions and make sure that customer requirements are being properly addressed in those decisions. Right now we have Mark making complaints or he and Jack adding stuff into Jira and then we find out later if the code that's in QA solves the problems or not, and it often does or doesn't but then also introduces other issues. I guess this is restating #10... but it's more than just Scott
+11) We need to start doing design reviews, which have not happened (again, an issue stemming from Brian I think) I'd like to review the architecture, key design decisions and make sure that customer requirements are being properly addressed in those decisions. Right now we have Mark making complaints or he and Jack adding stuff into Jira and then we find out later if the code that's in QA solves the problems or not, and it often does or doesn't but then also introduces other issues. I guess this is restating #10... but it's more than just Scott
 
-11) There are a bunch of things that are supposed to be coming out but seem to be slow to get the internal wickets (and then still have bugs when they do!) A game summary page, a watch page where people can see the video, a streaming/watch live page, the aforementioned features like watermarking and sharing, the customer management page where they can manage rosters, etc.
+12) There are a bunch of things that are supposed to be coming out but seem to be slow to get the internal wickets (and then still have bugs when they do!) A game summary page, a watch page where people can see the video, a streaming/watch live page, the aforementioned features like watermarking and sharing, the customer management page where they can manage rosters, etc.
 
-12) We don't do a good job communicating with customers. Features, collaboration, community. We don't tell them when games are uploaded or available. Not strictly technical issues but sort of technical issues (as we can use the tech to communicate with people) Really want to do a better job there.
+13) We don't do a good job communicating with customers. Features, collaboration, community. We don't tell them when games are uploaded or available. Not strictly technical issues but sort of technical issues (as we can use the tech to communicate with people) Really want to do a better job there.
 
   
 
@@ -2031,11 +2060,11 @@ Enjoyed the brief discussion (Good to know we can have good BRIEF discussions to
 
 Spent some time trying to research what people say about expected returns. Included my findings below:
 
-1) They say 10x return at Series A: [https://kruzeconsulting.com/blog/what-vcs-return-expectations/](https://kruzeconsulting.com/blog/what-vcs-return-expectations/)
+14) They say 10x return at Series A: [https://kruzeconsulting.com/blog/what-vcs-return-expectations/](https://kruzeconsulting.com/blog/what-vcs-return-expectations/)
 
-2) GREAT analysis in [this one](https://www.industryventures.com/insight/the-venture-capital-risk-and-return-matrix/). My favorite section is when they pull data across actual VCs (and not one guys opinion) and come up with this: "Using this data together with an expected loss rate equal to that of individual early-stage investments, we calculated the performance of a hypothetical $100 million fund with a 2% annual management fee (in the first 10 years) and 20% carried interest. We assumed the fund would be invested in 20 companies, where 65% returned 0.5x and the balance returned 10x. We concluded that our hypothetical fund would likely yield a gross expected return multiple of 3.8x and generate a net multiple of 3.1x, or an IRR of 20%." 20% is the average IRR early stage return profile for 30 years according to Cambridge Associates.   
+15) GREAT analysis in [this one](https://www.industryventures.com/insight/the-venture-capital-risk-and-return-matrix/). My favorite section is when they pull data across actual VCs (and not one guys opinion) and come up with this: "Using this data together with an expected loss rate equal to that of individual early-stage investments, we calculated the performance of a hypothetical $100 million fund with a 2% annual management fee (in the first 10 years) and 20% carried interest. We assumed the fund would be invested in 20 companies, where 65% returned 0.5x and the balance returned 10x. We concluded that our hypothetical fund would likely yield a gross expected return multiple of 3.8x and generate a net multiple of 3.1x, or an IRR of 20%." 20% is the average IRR early stage return profile for 30 years according to Cambridge Associates.   
 
-3) Simple math (which is [mentioned here](https://www.bfp.vc/vc-performance-metrics-for-early-stage-funds-beyond-common-multiples/)) would say that if someone wants us to "return the fund" and the typical VC fund does 20x investments... that we need to shoot for a 20x return from a Series A investment (unlikely to see that later/growth stages.) If we raise at $20M for the A that's a $400M valuation in 7-8 years, and implies a $40-50M revenue run rate (conservatively). A $25M valuation would imply $500M. Again, both are in range. Now there's stuff like dilution in there potentially, but my hope is we don't need to raise again after a Series A (which again is why the math changes by investment thesis/fund type/stage/details... if you're Uber and have to raise $100M every few months you gotta have a plan to be a $100B company for any of it to make sense! But if you can be cash flow positive/growth after $3M... it's a different situation from a dilution perspective. You can then explore debt financing, or very friendly growth stage investments down the road for M&A or whatever.
+16) Simple math (which is [mentioned here](https://www.bfp.vc/vc-performance-metrics-for-early-stage-funds-beyond-common-multiples/)) would say that if someone wants us to "return the fund" and the typical VC fund does 20x investments... that we need to shoot for a 20x return from a Series A investment (unlikely to see that later/growth stages.) If we raise at $20M for the A that's a $400M valuation in 7-8 years, and implies a $40-50M revenue run rate (conservatively). A $25M valuation would imply $500M. Again, both are in range. Now there's stuff like dilution in there potentially, but my hope is we don't need to raise again after a Series A (which again is why the math changes by investment thesis/fund type/stage/details... if you're Uber and have to raise $100M every few months you gotta have a plan to be a $100B company for any of it to make sense! But if you can be cash flow positive/growth after $3M... it's a different situation from a dilution perspective. You can then explore debt financing, or very friendly growth stage investments down the road for M&A or whatever.
 
 
 
@@ -2421,14 +2450,14 @@ PRIORITIES
 
 
 
-1. 100% MANUAL GAME SCORING - Scale the fat finger workflow to the point of 
+17. 100% MANUAL GAME SCORING - Scale the fat finger workflow to the point of 
 	1. Study manual entry.  Prioritize highest ROI AI & UX actions
 	2. Being able to support PAYING customers.
 		- Can we start with a high enough price point to fully pay for and new customer support staff? (in order allow scaling w/o taxing present team)
 	3. Stressing the sales force's ability to onboard more beta/real customers.  (be careful about the operational costs of managing a large beta/real customer base.)
 	4. Getting beta customers in the AAU market - Will they pay for weekly highlight reel?
 	   
-2. OPTOMIZE ML WORKFLOW 
+18. OPTOMIZE ML WORKFLOW 
          METRIC:  Mean total time for an experimental run.  (calendar time, and run time)
 	- Testing velocity optimization - Reduce the total minutes required to test an alg change.    100K/yr = $2K/wk  = $400/day = $50/hr
 	- Dataset versioning, management, annotation flows, annotation sets
@@ -2440,7 +2469,7 @@ PRIORITIES
 	- New system configuration & running.  Devops, docker.  debugger
 	- Hey Joe, "look at this."   Run code, see outputs locally, see log/datafiles locally
 	  
-3. AI-BASED ANNOTATIONS
+19. AI-BASED ANNOTATIONS
    - SHOT DETECTION - 30% to 50% hand annotation cost reduction by limiting watched video.
    - JERSEY NUMBER TRACKING - Further reductions by providing jersey numbers.
    - VALIDATION WORK FLOW - additional 2x cost reductions
@@ -2522,7 +2551,7 @@ About $3/hr on demand or $1/hr reserved.
 
 
 
-4. ZZZ
+20. ZZZ
 ### j2022-09-09  Value of SV based on Basketball
 
 

@@ -1,5 +1,4 @@
-- look at Miovision
-- tetnus - 415. 397.0700
+
 - penfed closed??
 
 - fun list, papers list, torch practice, transformers class, book on behavioral questions

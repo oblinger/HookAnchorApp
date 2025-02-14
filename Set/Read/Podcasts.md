@@ -1,8 +1,11 @@
 
 
 
+## AI Academic Podcasts
+- [The Gradient](https://open.spotify.com/show/6onNcSqsP6hEEqmZ6TU2g8) - Daniel Bashir - more acadmeic
+- [Latent Space](https://open.spotify.com/show/2p7zZVwVF6Yk0Zsb4QmT7t) - more commercial?
 
-- [Humberman Lab](https://hubermanlab.com/toolkit-for-sleep/)  
+- [Huberman Lab](https://hubermanlab.com/toolkit-for-sleep/)  
 
   
 - [https://hubermanlab.com/teach-and-learn-better-with-a-neuroplasticity-super-protocol/](https://hubermanlab.com/teach-and-learn-better-with-a-neuroplasticity-super-protocol/)  
@@ -24,12 +27,6 @@ Very old blogs???
 - http://www.exponentialview.co/podcasts/
 
 
-
-## AI Academic Podcasts
-
-- [The Gradient](https://open.spotify.com/show/6onNcSqsP6hEEqmZ6TU2g8) - Daniel Bashir - more acadmeic
-
-- [Latent Space](https://open.spotify.com/show/2p7zZVwVF6Yk0Zsb4QmT7t) - more commercial?
 
 
 
