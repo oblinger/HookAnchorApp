@@ -42,19 +42,18 @@ I am beginning a job search and would like to build up a list of relevant compan
 
 ### 2025-02-14  Companies doing innovative AI work
 
+- TASK: Please compile a list of 20 to 50 companies that fit this, along with a summary of the generative AI applications each is working on.
+- TASK: Please expand the provided list of companies to a full list of 70 relevant companies and return the list as a CSV as indicated.
 
-- I am beginning a job search and would like to build a list of relevant companies that fit my experience and interest.
-- I have a PhD in Computer Science with a specialization in AI and Machine Learning.  
-- I am interested in companies doing research extending recent algorithms in generative AI into novel application areas.
-- Since I live in San Francisco, I am only interested in companies with offices in the San Francisco Bay Area or ones that allow remote work.
-- Please compile a list of 20 to 50 companies that fit this, along with a summary of the generative AI applications each is working on.
-- I am interested in both startups and large companies; please compile these as two separate lists
+- CONTEXT: I am beginning a job search and would like to build a list of relevant companies that fit my experience and interest.
+- ABOUT ME: I have a PhD in Computer Science with a specialization in AI / Machine Learning, and have built/lead teams of 60+ PhDs and Engineers.
+- GEN AI: I am interested in companies doing research extending recent algorithms in generative AI into novel application areas.
+- LOCATION: Since I live in San Francisco, I am only interested in companies with offices in the San Francisco Bay Area or ones that allow remote work.
+- TWO LISTS:  I am interested in both startups and large companies; please compile these as two separate lists
 - I am more broadly interested in novel applications of generative AI than specific industries.  That said, I have experience in Robotics and do enjoy that field.
-- please format these outputs as a CSV with
-the following columns: company type(Big or
-Start), company name, company mission,
-genAl project summary, genAl project2
-summary
+- FORMAT:  Please format the output as a CSV with the following columns:  
+		Company type(Big or Start), Company name, Company mission,
+		GenAI project1, GenAI project2
 
 
 
