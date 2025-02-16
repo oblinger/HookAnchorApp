@@ -5,6 +5,7 @@ n:: no prefix.	Dated entries without any typing prefix
 
 | Date       | File                                        | Notes                                                                                                                             |
 | ---------- | ------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------- |
+| 2025-02-15 | [[NJ Target Queries]]                           | Toxicity                                                                                                                          |
 | 2025-02-14 | [[NJ Target Queries]]                           | Companies doing innovative AI work                                                                                                |
 | 2025-02-13 | [[@Jason Syversen]]                             | Proposed Changes                                                                                                                  |
 | 2025-02-12 | [[BOOK Suggestions]]                            | suggestions                                                                                                                       |

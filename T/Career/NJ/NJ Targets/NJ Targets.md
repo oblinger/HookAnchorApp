@@ -1,16 +1,19 @@
 .[[NJ Targets]].
   [[NJ Targets Plan]],
-  , [[NJ Target Queries]], 
+  , [[NJ Target Queries]],
+  , [[Big Co]], [[Top Co]], 
 
 
 - [[NJ Targets.numbers]]:    
 
-- [[Targets]] 
 
+- [[NJ Considerations]] 
 
+- [[All Targets]] 
 - [[Top Co]] 
 - [[Big Co]]
 - [[Gen_AI]] 
+- [[NJ NLP]] 
 
 
 

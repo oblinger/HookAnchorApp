@@ -1,4 +1,5 @@
 
+[[work\|Mon Jan 13  2025]]  	[[work#PAUSE / TRACK]]  
 [[@SpaceX\|Mon Jan 13  2025]]  	[[@SpaceX#Log]]  
 [[LRN Todo\|Mon Jan 13  2025]]  	[[LRN Todo#Rocks - Evergreen @ top]]  
 [[2025-W03\|Mon Jan 13  2025]]  	[[2025-W03#W3   2025-01-13   [[2025-W2\\|<<]] [[2025-W4\\|>>]]]]  

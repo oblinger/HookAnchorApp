@@ -40,6 +40,17 @@ I am beginning a job search and would like to build up a list of relevant compan
 
 # LOG
 
+### 2025-02-15  Toxicity
+
+I want to look online to assess how toxic or supportive the following companies are.  both articles about the companies, reviews like on glass door and other sources should be used to provide a score from 0 to 10 indicating toxic/unsupportive at 0 and not-toxic and very supportive at 10.   Provide your output as a downloadable CSV file with four columns: company name, score, summary of score as a phrase, detailed justification and references for score.
+
+Please use the last 2 years unless you cannot find sufficient information, then you can go back further.
+
+Here is the list of companies to consider:
+Adobe, Alibaba, Apple, Baidu, Google, IBM, Meta, Microsoft, NVIDIA, Salesforce
+
+
+
 ### 2025-02-14  Companies doing innovative AI work
 
 - TASK: Please compile a list of 20 to 50 companies that fit this, along with a summary of the generative AI applications each is working on.
