@@ -1,7 +1,8 @@
 .[[NJ Targets]].
   [[NJ Targets Plan]],
   , [[NJ Target Queries]],
-  , [[Big Co]], [[Top Co]], 
+  , [[Big Co]], [[Top Co]],
+  , [[All Targets]], [[NJ Considerations]], [[NJ NLP]], 
 
 
 - [[NJ Targets.numbers]]:    

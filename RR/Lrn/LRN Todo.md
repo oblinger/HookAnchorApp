@@ -6,6 +6,10 @@
 - Try Codium, Cursor, GPT alternative
 - [Andrej Karpathy releases new 3 hour video](https://link.alphasignal.ai/q4NAum) explaining LLM training stack discussing topics like Llama 3.1 examples, Hallucinations, and RLHF.
 -  [Learn how to scale LLMs on TPUs](https://link.alphasignal.ai/EBzeFt), optimize parallelism, and efficiently manage training and inference.
+
+A strong understanding of probability distributions, Bayes' theorem, hypothesis testing, MLE, MAP, and basic causal inference (this might need to go up depending on your job).
+
+
 ## __
 
 

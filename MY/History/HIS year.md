@@ -1,4 +1,5 @@
 
+[[@Miguel Gutierrez\|Mon Oct 2  2023 ]]  	[[@Miguel Gutierrez#LOG]]  
 [[@Jason Syversen\|Mon Oct 2  2023 ]]  	[[@Jason Syversen#Timeline]]  
 [[@Jason Syversen\|Mon Oct 2  2023 ]]  	[[@Jason Syversen#= Team velocity / distractions]]  
 [[@Jason Syversen\|Mon Oct 2  2023 ]]  	[[@Jason Syversen#CALL TOPICS]]  
