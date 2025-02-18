@@ -4,9 +4,9 @@
   , [[Big Co]], [[Top Co]],
   , [[All Targets]], [[NJ Considerations]], [[NJ NLP]],
   , ,
-  , [[TGT Far]], [[TopGen]], 
-  DELS: [[NJ Queries]],
-  DELS: [[NJ Queries]],[[NJ Target Queries]], 
+  , [[TGT Far]], [[TopGen]],
+  DELS: ,
+  DELS: [[NJ Queries]],[[NJ Target Queries]],[[NJ Queries]], 
 
 
 - [[NJ Targets.numbers]]:    
