@@ -4,6 +4,13 @@
 
 # Log
 
+### 2025-02-17  W
+
+- Softbank meeting
+- Analyzed game/player flagging at different thresholds to choose the one that provided the best business value trade offs
+- Updated meta runner with Dats, re-ran NORM on patched code from previous run (which should give us the most updated results for all but 2 games), 
+- and testing deployment of flagging logic in dev
+
 ### 2025-02-10  W
 
 - BAD MINUTES - Well, this week we've been looking into improving the metric that describes players with bad minutes, and finding ways to detect them during runtime using annotations.

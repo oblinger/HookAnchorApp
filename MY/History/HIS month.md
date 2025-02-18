@@ -1,4 +1,5 @@
 
+[[Mgt\|Mon Jan 13  2025]]  	[[Mgt#2025-01-13  W]]  
 [[Work\|Mon Jan 13  2025]]  	[[Work#PAUSE / TRACK]]  
 [[work\|Mon Jan 13  2025]]  	[[work#PAUSE / TRACK]]  
 [[@SpaceX\|Mon Jan 13  2025]]  	[[@SpaceX#Log]]  

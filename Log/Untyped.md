@@ -5,8 +5,13 @@ n:: no prefix.	Dated entries without any typing prefix
 
 | Date       | File                                        | Notes                                                                                                                             |
 | ---------- | ------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------- |
-| 2025-02-15 | [[NJ Target Queries]]                           | Toxicity                                                                                                                          |
-| 2025-02-14 | [[NJ Target Queries]]                           | Companies doing innovative AI work                                                                                                |
+| 2025-02-17 | [[NJ Queries]]                                  | Jobs Search Strategy:                                                                                                             |
+| 2025-02-17 | [[NJ Queries]]                                  | Job Search                                                                                                                        |
+| 2025-02-17 | [[NJ Queries]]                                  | Have Funding                                                                                                                      |
+| 2025-02-17 | [[NJ Queries]]                                  | Are Hiring                                                                                                                        |
+| 2025-02-17 | [[Mgt]]                                         | W                                                                                                                                 |
+| 2025-02-15 | [[NJ Queries]]                                  | Toxicity                                                                                                                          |
+| 2025-02-14 | [[NJ Queries]]                                  | Companies doing innovative AI work                                                                                                |
 | 2025-02-13 | [[@Jason Syversen]]                             | Proposed Changes                                                                                                                  |
 | 2025-02-12 | [[BOOK Suggestions]]                            | suggestions                                                                                                                       |
 | 2025-02-10 | [[Daily Schedules]]                             | Daily Blocks                                                                                                                      |
