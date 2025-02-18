@@ -1,4 +1,5 @@
 
+[[SV Mgt\|Mon Oct 2  2023 ]]  	[[SV Mgt#2023-09-25 Weekly meeting.]]  
 [[SV Mgt\|Mon Oct 2  2023 ]]  	[[SV Mgt#2023-09-15  SEPT MGT MEETING]]  
 [[@Miguel Gutierrez\|Mon Oct 2  2023 ]]  	[[@Miguel Gutierrez#LOG]]  
 [[@Jason Syversen\|Mon Oct 2  2023 ]]  	[[@Jason Syversen#Timeline]]  

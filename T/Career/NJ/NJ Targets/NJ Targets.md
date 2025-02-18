@@ -1,8 +1,12 @@
 .[[NJ Targets]].
   [[NJ Targets Plan]],
-  , [[NJ Queries]],
+  , ,
   , [[Big Co]], [[Top Co]],
-  , [[All Targets]], [[NJ Considerations]], [[NJ NLP]], 
+  , [[All Targets]], [[NJ Considerations]], [[NJ NLP]],
+  , ,
+  , [[TGT Far]], [[TopGen]], 
+  DELS: [[NJ Queries]],
+  DELS: [[NJ Queries]],[[NJ Target Queries]], 
 
 
 - [[NJ Targets.numbers]]:    

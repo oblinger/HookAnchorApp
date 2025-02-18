@@ -5,7 +5,8 @@
   SUB:
   OLD:	[[NJ16]], [[NJ22]],
   , [[NJ Questions]],
-  , [[NJ Blog]], 
+  , [[NJ Blog]],
+  , [[NJ Queries]], 
   DELS: [[NJ Blog]],
 
 RELATED:	 [[CRM]], 
