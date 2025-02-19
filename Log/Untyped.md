@@ -5,6 +5,8 @@ n:: no prefix.	Dated entries without any typing prefix
 
 | Date       | File                                        | Notes                                                                                                                             |
 | ---------- | ------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------- |
+| 2025-02-18 | [[EOC Log]]                                     | How AI might take over in 2 years                                                                                                 |
+| 2025-02-18 | [[NJ Log]]                                      | CAIO roles                                                                                                                        |
 | 2025-02-17 | [[NJ Queries]]                                  | Jobs Search Strategy:                                                                                                             |
 | 2025-02-17 | [[NJ Queries]]                                  | Job Search                                                                                                                        |
 | 2025-02-17 | [[NJ Queries]]                                  | Have Funding                                                                                                                      |

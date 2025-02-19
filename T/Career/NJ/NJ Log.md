@@ -1,5 +1,11 @@
 
 
+### 2025-02-18  CAIO roles
+
+https://www.prnewswire.com/news-releases/private-sector-drives-63-of-chief-ai-officer-appointments-as-ai-influences-corporate-talent-strategy-302330112.html
+
+
+
 ### 2024-09-19  FAANG Hiring Learning 
 
 

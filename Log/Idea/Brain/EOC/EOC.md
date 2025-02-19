@@ -6,11 +6,6 @@
   :	Paths
   [[EOCT]]:	Topics
   [[FF-prize]], [[EOC Log]],
-  , ,
-  , ,
-  DELS: ,
-  , ,
-  DELS: ,,
   , [[EOCP]], 
   DELS: [[EOCP]],,[[EOCP]], [[EOCP]],
   DELS: [[EOCP]],[[Paths]],[[EOCP]], [[EOCP]],[[Paths]], [[Paths]], 

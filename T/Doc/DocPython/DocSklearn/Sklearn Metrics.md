@@ -80,3 +80,7 @@ plt.title('Feature Importance')
 plt.xticks(rotation=45)
 plt.show()
 ```
+
+
+from sklearn.metrics import average_precision_score, classification_report
+from sklearn.metrics import log_loss, matthews_corrcoef, roc_auc_score

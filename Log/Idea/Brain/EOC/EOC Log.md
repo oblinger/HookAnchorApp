@@ -1,3 +1,10 @@
+
+### 2025-02-18  How AI might take over in 2 years
+
+https://x.com/joshua_clymer/status/1887905375082656117
+
+
+
 ### 2025-01-22  verbal notes
 
 2024-05-29 03:43:
