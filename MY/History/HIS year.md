@@ -1,4 +1,6 @@
 
+[[@CV\|Mon Oct 2  2023 ]]  	[[@CV#Top]]  
+[[@Circle\|Mon Oct 2  2023 ]]  	[[@Circle#2023-09-04  Hiring Timeline]]  
 [[SV Mgt\|Mon Oct 2  2023 ]]  	[[SV Mgt#2023-09-25 Weekly meeting.]]  
 [[SV Mgt\|Mon Oct 2  2023 ]]  	[[SV Mgt#2023-09-15  SEPT MGT MEETING]]  
 [[@Miguel Gutierrez\|Mon Oct 2  2023 ]]  	[[@Miguel Gutierrez#LOG]]  
