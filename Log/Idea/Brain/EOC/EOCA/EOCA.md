@@ -1,4 +1,5 @@
 .[[EOCA]].
+  [[EOCA Agenda sketch 2025]] 
   [[EOCA Civilizing tendency]]:
   [[EOCA Definitions]]:
   [[EOCA Publish]]:

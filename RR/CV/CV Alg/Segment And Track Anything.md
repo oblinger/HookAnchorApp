@@ -13,8 +13,7 @@ https://github.com/z-x-yang/Segment-and-Track-Anything
 - The primary algorithms utilized include
   - [**SAM** (Segment Anything Models)](https://github.com/facebookresearch/segment-anything) for automatic/interactive key-frame segmentation and 
   - the [**DeAOT** (Decoupling features in Associating Objects with Transformers)](https://github.com/yoxu515/aot-benchmark) (NeurIPS2022) for efficient multi-object tracking and propagation. 
-- The SAM-Track pipeline enables dynamic and automatic detection and segmentation of new objects by SAM, while DeAOT is responsible for tracking all identified objects.
-<!--SR:!2025-01-14,6,192!2025-03-08,59,286-->
+- The SAM-Track pipeline enables dynamic and automatic detection and segmentation of new objects by SAM, while DeAOT is responsible for tracking all identified objects. <!--SR:!2025-02-22,3,172!2025-03-08,59,286-->
 
 
 [**DeAOT**](https://github.com/yoxu515/aot-benchmark)
@@ -26,8 +25,7 @@ https://github.com/z-x-yang/Segment-and-Track-Anything
 - The hierarchical propagation can gradually propagate information from past frames to the current frame and transfer the current frame feature from object-agnostic to object-specific. 
 - However, the increase of object-specific information will inevitably lead to the loss of object-agnostic visual information in deep propagation layers. To solve such a problem and further facilitate the learning of visual embeddings, this paper proposes a Decoupling Features in Hierarchical Propagation (DeAOT) approach. 
 - Firstly, DeAOT decouples the hierarchical propagation of object-agnostic and object-specific embeddings by handling them in two independent branches. 
-- Secondly, to compensate for the additional computation from dual-branch propagation, we propose an efficient module for constructing hierarchical propagation, i.e., Gated Propagation Module, which is carefully designed with single-head attention.
-<!--SR:!2025-02-09,32,232!2025-01-12,4,246--> 
+- Secondly, to compensate for the additional computation from dual-branch propagation, we propose an efficient module for constructing hierarchical propagation, i.e., Gated Propagation Module, which is carefully designed with single-head attention. <!--SR:!2025-03-07,16,212!2025-03-05,14,266--> 
 
 Extensive experiments show that DeAOT significantly outperforms AOT in both accuracy and efficiency. On YouTube-VOS, DeAOT can
 achieve 86.0% at 22.4fps and 82.0% at 53.4fps. Without test-time augmentations,

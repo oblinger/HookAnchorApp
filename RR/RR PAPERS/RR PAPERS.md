@@ -5,6 +5,10 @@
 [[RR SYSTEMS]].  [[RR TUTORIALS]], [[RR DEFINITIONS]], 
 
 
+### 2025-02-20  Verify step by step
+
+https://arxiv.org/pdf/2305.20050
+
 
 
 ### 2024-12-18  DETRs Beat YOLOs on real-time object detection

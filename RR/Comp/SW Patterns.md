@@ -3,8 +3,8 @@
 #comp
 
 **Creational Patterns**;;Singleton, Factory, Abstract Factory, Builder, Prototype <!--SR:!2025-01-10,2,248-->
-**Structural Patterns**;;Adapter, Decorator, Facade, Proxy, Composite, Bridge <!--SR:!2025-01-10,2,248-->
-**Behavioral Patterns**;;Observer, Strategy, Command, Iterator, State, Mediator, Chain of Responsibility <!--SR:!2025-01-09,1,228-->
+**Structural Patterns**;;Adapter, Decorator, Facade, Proxy, Composite, Bridge <!--SR:!2025-02-21,1,228-->
+**Behavioral Patterns**;;Observer, Strategy, Command, Iterator, State, Mediator, Chain of Responsibility <!--SR:!2025-02-21,1,208-->
 **Concurrency Patterns**;;Thread Pool, Producer-Consumer, Monitor Object <!--SR:!2025-01-10,2,248-->
 ### 1. **Creational Patterns**
 Singleton, Factory, Abstract Factory, Builder, Prototype
@@ -44,5 +44,4 @@ Thread Pool, Producer-Consumer, Monitor Object
 -?-
 - **Thread Pool**: Manages a pool of threads for executing tasks efficiently.
 - **Producer-Consumer**: Coordinates a set of producer threads that create data and consumer threads that process it.
-- **Monitor Object**: Ensures that only one thread at a time can execute a critical section of code.
-<!--SR:!2025-01-15,7,268-->
+- **Monitor Object**: Ensures that only one thread at a time can execute a critical section of code. <!--SR:!2025-03-11,19,268-->

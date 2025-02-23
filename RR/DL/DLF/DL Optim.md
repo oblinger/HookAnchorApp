@@ -119,5 +119,7 @@ lambda_l2 = 0.01  # L2 regularization strength
 l2_norm = sum(param.pow(2.0).sum() for param in model.parameters())
 loss = criterion(outputs, targets) + lambda_l2 * l2_norm
 
+blank line <!--SR:!2025-02-22,3,250-->
+
 #dl 
 
