@@ -1,10 +1,13 @@
 .[[EOCA]].
-  [[EOCA Agenda sketch 2025]] 
+  , [[EOCA Agenda sketch 2025]], [[EOCA Civilizing tendency]], [[EOCA Definitions]]
+  , [[EOCA Publish]], [[EOCA Root]], [[EOCA The Writing Is On The Wall]], 
+
   [[EOCA Civilizing tendency]]:
   [[EOCA Definitions]]:
   [[EOCA Publish]]:
   [[EOCA Root]]:
   [[EOCA The Writing Is On The Wall]]:
+  DELS: [[EOCA Agenda sketch 2025]], 
 
 
   DELS: [[EndOfMan BookOutline]], [[EOCB Book Snipits]], 

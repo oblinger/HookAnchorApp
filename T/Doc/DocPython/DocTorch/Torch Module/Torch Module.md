@@ -2,6 +2,7 @@
   , [[Feed Forward Layer]],
   :
   , [[Convolution]], [[Torch Model]], 
+  [[Recurrent Modules]], 
 
   DELS: [[Torch Model]], [[Convolution]], 
 

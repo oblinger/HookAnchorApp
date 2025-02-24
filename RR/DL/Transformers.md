@@ -21,3 +21,4 @@
 - [[Regularization]] 
 - Adjust parameters in parallel (unlike RNNs)
 - Positional Embeddings
+

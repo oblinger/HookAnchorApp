@@ -1,4 +1,5 @@
 
+[[E-nxt\|Mon Oct 2  2023 ]]  	[[E-nxt#LOG]]  
 [[@CV\|Mon Oct 2  2023 ]]  	[[@CV#Top]]  
 [[@Circle\|Mon Oct 2  2023 ]]  	[[@Circle#2023-09-04  Hiring Timeline]]  
 [[SV Mgt\|Mon Oct 2  2023 ]]  	[[SV Mgt#2023-09-25 Weekly meeting.]]  
