@@ -1,19 +1,16 @@
 .[[NJ Targets]].
   [[NJ Targets Plan]],
-  , ,
   , [[Big Co]], [[Top Co]],
   , [[All Targets]], [[NJ Considerations]], [[NJ NLP]],
-  , ,
   , [[TGT Far]], [[TopGen]],
   DELS: ,
   DELS: [[NJ Queries]],[[NJ Target Queries]],[[NJ Queries]], 
 
 
 - [[NJ Targets.numbers]]:    
-
-
 - [[NJ Considerations]] 
 
+## Target Lists
 - [[All Targets]] 
 - [[Top Co]] 
 - [[Big Co]]
@@ -68,3 +65,33 @@ TwelveLabs.com
 
 
 SSI - 
+
+
+
+### TARGETS:
+- [[@Google]]:  [[GoogleJob]] 
+- Google.   [goog Dir](https://www.linkedin.com/jobs/view/3679525602/?refId=aA3%2FXgZwQSqtNz%2BgTk%2FLCw%3D%3D&midToken=AQGyXU4GbqUJFA&midSig=1PRTWpcHmo5aY1&trkEmail=eml-jobs_jymbii_digest-job_card-0-jobcard_body-null-59hu%7Elmph8w0y%7Ei5-null-null&eid=59hu-lmph8w0y-i5&otpToken=MTAwMTFiZTUxYTI4YzNjNWIyMjcwMGVhNDExOWU0YjY4N2NhZDU0MzkzYWQ4NzYyNzdjNTA4NmU0ODU4NTZiNWI0ODg4OTg1NzhiOWNmNTA4MmVlYzlmYzJiN2FmZGIxMGMwZTllMDJlNTc2NWIsMSwx) 
+- Unknowns: NetFlix, LinkedIn, Nvidia+.  ($800K @ meta+)
+- Lessers:  Meta, Amazon+, Apple 
+
+- [[@Googl[[perso#pp]]:  [[GoogleJob]] 
+- Google.   [goog Di[[perso#pp](https://www.linkedin.com/jobs/view/3679525602/?refId=aA3%2FXgZwQSqtNz%2BgTk%2FLCw%3D%3D&midToken=AQGyXU4GbqUJFA&midSig=1PRTWpcHmo5aY1&trkEmail=eml-jobs_jymbii_digest-job_card-0-jobcard_body-null-59hu%7Elmph8w0y%7Ei5-null-null&eid=59hu-lmph8w0y-i5&otpToken=MTAwMTFiZTUxYTI4YzNjNWIyMjcwMGVhNDExOWU0YjY4N2NhZDU0MzkzYWQ4NzYyNzdjNTA4NmU0ODU4NTZiNWI0ODg4OTg1NzhiOWNmNTA4MmVlYzlmYzJiN2FmZGIxMGMwZTllMDJlNTc2NWIsMSwx) 
+- Unknowns: NetFlix, LinkedIn, Nvidia+.  ($800K @ meta+)
+- Lessers:  Meta, Amazon+, Apple 
+
+
+
+.[[NextJob]].
+  ,   [[NJ]], [[NJ16]], [[NJ22]], 
+
+.  [[NJ]],  [[War]],
+
+
+- [[NJ]], [[War]], [[NJ16]]
+
+- [[NJ22]], 
+
+:: [[2015.05 GoogleInterviewPrep]],   [[2021.04 Directions]],   [[2016.09 NextJob]]
+  [NJ22](NJ22.md)
+  [NJ22](NJ22.md)
+  [NJ22](NJ22.md)

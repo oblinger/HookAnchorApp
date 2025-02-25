@@ -2,8 +2,7 @@
 
 
 .**SOON**.
-     Spec new work flow for AI-min (report error)
-     Briones spreadsheet - tax spreadsheet
+     Parallel Ann spec agreement.
      close loop AWS transition plan
      patents signed
      okrs - Get numbers for OKRs

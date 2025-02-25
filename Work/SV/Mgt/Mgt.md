@@ -4,6 +4,17 @@
 
 # Log
 
+### 2025-02-24  W
+
+- Validated flagging logic on dev and rc1, 
+- gathered results of latest NORM, analyzed minutes errors for last NORM run, 
+- adapted shot tree breakdown logic to be computed after each metrics run on NORM
+- ==> Ready for meeting w/ Sean about alpha-testing
+- ==> Ready for meeting w/ Softbank
+
+SB Strat
+Dan Trip
+
 ### 2025-02-17  W
 
 - Softbank meeting
