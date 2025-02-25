@@ -20,7 +20,7 @@
             [[RES]]: [[Bio]],	[[RES Examples]],	
                 [[RES Job History]]: 
                     [[AF]]: 
-            [[NJ]]: [[SEEK]],	[[NJ22]],	[[NJ16]],	[[NJ Targets]],	
+            [[NJ]]: [[SEEK]],	[[NJ22]],	[[NJ Todo]],	[[NJ16]],	[[NJ Targets]],	
         [[FIN]]: [[FIN Budget]],	[[FIN Tracking]],	
             [[FIN Log]]: 
             [[FIN Bills]]: 

@@ -1,4 +1,13 @@
 
+[[WEEKLY template\|Mon Oct 2  2023 ]]  	[[WEEKLY template#<% moment(tp.file.title, 'YYYY-\WW').format('[W]W   YYYY-MM-]]  
+[[E-nxt\|Mon Oct 2  2023 ]]  	[[E-nxt#POINTERS]]  
+[[E-nxt\|Mon Oct 2  2023 ]]  	[[E-nxt#Review Sites]]  
+[[E-nxt\|Mon Oct 2  2023 ]]  	[[E-nxt#CONSIDERATIONS]]  
+[[E-nxt\|Mon Oct 2  2023 ]]  	[[E-nxt#EMPIRICAL RESULTS]]  
+[[E-nxt\|Mon Oct 2  2023 ]]  	[[E-nxt#QUESTIONS]]  
+[[E-nxt\|Mon Oct 2  2023 ]]  	[[E-nxt#FIELDS]]  
+[[E-nxt\|Mon Oct 2  2023 ]]  	[[E-nxt#SEARCH CRITERIA]]  
+[[E-nxt\|Mon Oct 2  2023 ]]  	[[E-nxt#REF]]  
 [[E-nxt\|Mon Oct 2  2023 ]]  	[[E-nxt#LOG]]  
 [[@CV\|Mon Oct 2  2023 ]]  	[[@CV#Top]]  
 [[@Circle\|Mon Oct 2  2023 ]]  	[[@Circle#2023-09-04  Hiring Timeline]]  

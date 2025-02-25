@@ -1,14 +1,11 @@
 
-:: [[MED Todo]]
+
 .[[MED]].
-  TOP:		[[MED Log]],
+  TOP:		[[MED Log]], [[MED Todo]], 
   TOPICS:	,
-  [[Jet Lag]]:
   [[MED Blood Tests]]:
-  :
   [[MED Doctors]]:
   [[MED Exercise]]:
-  :
   [[MED General]]:
   [[MED Heart]]:
   [[MED History]]:
@@ -17,26 +14,15 @@
   [[MED Pills]]:
   [[MED Psoriasis]]:
   [[MED Ref]]:
-  :
   [[MED Sleep]]:
   [[MED Vaccinations]]:
   [[MED Vision]]:
-  :
   [[MED Weight]]:
-  :
-  [[Low Back Pain]]:
-  [[Medifast]]:
+  [[MED Food]],
   [[MED-Vitamins]]:
-  :
-  , [[MED Food]],
-  , ,
-  , [[MED Todo]],
-  DELS: [[MED Todo]],
-  , [[MED Heart Attack]], 
-  DELS: [[MED Todo]],[[MED.]],[[MED Heart Attack]],
+  MISC:		[[Jet Lag]], [[Low Back Pain]], [[Medifast]], [[MED Heart Attack]], 
 
-
-  DELS: [[Glycemic Index]], [[MED Blood Pressure]], [[MED Cholesterol]], [[MED Research]], [[MED VO2Max]], [[MED=]],[[run]],[[Exercise]],[[Exercise]], 
+- [[Glycemic Index]], [[MED Blood Pressure]], [[MED Cholesterol]], [[MED Research]], [[MED VO2Max]], [[MED=]], [[run]], [[Exercise]], 
 
 
 

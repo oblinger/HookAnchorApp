@@ -4,7 +4,7 @@
   , [[All Targets]], [[NJ Considerations]], [[NJ NLP]],
   , [[TGT Far]], [[TopGen]],
   DELS: ,
-  DELS: [[NJ Queries]],[[NJ Target Queries]],[[NJ Queries]], 
+  , [[NJ Queries]], 
 
 
 - [[NJ Targets.numbers]]:    

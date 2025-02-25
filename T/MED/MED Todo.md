@@ -1,4 +1,7 @@
  [[MED]], [[Doctor]] 
+ - Get a backup plan for non exercise days
+ - Figure out daily strategy
+ - Exercise 3x this week
 
 - Check alzheimers
 - Glucose Patch

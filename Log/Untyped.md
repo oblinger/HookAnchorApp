@@ -5,6 +5,7 @@ n:: no prefix.	Dated entries without any typing prefix
 
 | Date       | File                                        | Notes                                                                                                                             |
 | ---------- | ------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------- |
+| 2025-02-24 | [[NJ Queries]]                                  | [[NJ. TierII Plan]]                                                                                                               |
 | 2025-02-24 | [[Mgt]]                                         | W                                                                                                                                 |
 | 2025-02-20 | [[RR PAPERS]]                                   | Verify step by step                                                                                                               |
 | 2025-02-18 | [[EOC Log]]                                     | How AI might take over in 2 years                                                                                                 |

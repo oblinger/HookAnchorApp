@@ -1,4 +1,13 @@
 
+[[@Martin Reyes\|Thu Jan 16  2025]]  	[[@Martin Reyes#2025-01-16  Out]]  
+[[@David Hayden\|Thu Jan 16  2025]]  	[[@David Hayden#  [DL Scientist](https://www.linkedin.com/in/david-hayden-b0]]  
+[[@David Hayden\|Thu Jan 16  2025]]  	[[@David Hayden#LOG]]  
+[[RES Linked In\|Wed Jan 15  2025]]  	[[RES Linked In#2022-00-00 From Jared]]  
+[[RES Linked In\|Wed Jan 15  2025]]  	[[RES Linked In#Experience - Sports Visio]]  
+[[RES Linked In\|Wed Jan 15  2025]]  	[[RES Linked In#Experience - Analytics Fire]]  
+[[RES Linked In\|Wed Jan 15  2025]]  	[[RES Linked In#Experience - Aeolus Robotics]]  
+[[RES Linked In\|Wed Jan 15  2025]]  	[[RES Linked In#Experience - Martian Robots]]  
+[[RES Linked In\|Wed Jan 15  2025]]  	[[RES Linked In#Experience - PayByGroup]]  
 [[MY Stuff\|Tue Jan 14  2025]]  	[[MY Stuff#= COMPUTER PERIPHERALS =]]  
 [[My Stuff\|Tue Jan 14  2025]]  	[[My Stuff#= COMPUTER PERIPHERALS =]]  
 [[RES Linked In\|Tue Jan 14  2025]]  	[[RES Linked In#PARTS]]  
