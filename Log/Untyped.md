@@ -5,6 +5,8 @@ n:: no prefix.	Dated entries without any typing prefix
 
 | Date       | File                                        | Notes                                                                                                                             |
 | ---------- | ------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------- |
+| 2025-02-25 | [[Palestinians]]                                | Newest "Catch-22" version                                                                                                         |
+| 2025-02-25 | [[Palestinians]]                                | Old 3 state                                                                                                                       |
 | 2025-02-24 | [[NJ Queries]]                                  | [[NJ. TierII Plan]]                                                                                                               |
 | 2025-02-24 | [[Mgt]]                                         | W                                                                                                                                 |
 | 2025-02-20 | [[RR PAPERS]]                                   | Verify step by step                                                                                                               |
