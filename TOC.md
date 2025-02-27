@@ -1,7 +1,7 @@
 
 # TABLE OF CONENTS
 
-[[mate]],	[[Race]],	
+[[mate]],	
 [[kmr]]: [[WEEKLY]],	
     [[RR]]: [[Lrn]],	[[RR Leet]],	[[RR PAPERS]],	[[RR Philosophy]],	[[RR MGR]],	
         [[RR SYSTEMS]]: 
@@ -20,7 +20,8 @@
             [[RES]]: [[Bio]],	[[RES Examples]],	
                 [[RES Job History]]: 
                     [[AF]]: 
-            [[NJ]]: [[SEEK]],	[[NJ22]],	[[NJ Todo]],	[[NJ16]],	[[NJ Targets]],	
+            [[NJ]]: [[SEEK]],	[[NJ22]],	[[NJ Todo]],	[[NJ16]],	
+                [[NJ Targets]]: [[NJ Queries]],	
         [[FIN]]: [[FIN Budget]],	[[FIN Tracking]],	
             [[FIN Log]]: 
             [[FIN Bills]]: 
@@ -88,6 +89,7 @@
         [[TXT]]: 
             [[Letters]]: 
             [[Writing]]: [[ArmChair]],	
+                [[POL]]: [[Race]],	
         [[WP]]: 
         [[Idea]]: [[2018-00 Alloy]],	[[2020-07 Autonomy]],	
             [[2017-09 Elastic Block Chain]],	[[Forum]],	[[2016-00 TreeSheet]],	

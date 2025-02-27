@@ -1,3 +1,4 @@
+- alan to write up req for AIM
 - response to Softbank for goals of the POC.
 - cancel service $13 on AT&T (next up)
 - oven

@@ -3,12 +3,13 @@
   , [[Big Co]], [[Top Co]],
   , [[All Targets]], [[NJ Considerations]], [[NJ NLP]],
   , [[TGT Far]], [[TopGen]],
-  DELS: ,
   , [[NJ Queries]], 
 
 
-- [[NJ Targets.numbers]]:    
 - [[NJ Considerations]] 
+
+- [[NJ. TierII Plan]] 
+- [[tgt all]], [[tgt projects]], 
 
 ## Target Lists
 - [[All Targets]] 
