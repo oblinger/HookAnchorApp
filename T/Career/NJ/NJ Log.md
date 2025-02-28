@@ -1,4 +1,101 @@
 
+### 2025-02-27  Using a cover letter
+
+- [Recruiter Searches on LinkedIn](https://grok.com/share/bGVnYWN5_9ef5eef7-3dc1-4245-bbcb-25eeedcf8f57) - 
+	- ensure your headline includes your current or target job title and key skills relevant to the roles you’re seeking
+	- pick the top five skills:  
+	- all-star profile is fully complete
+- [GPT Cover Letter](https://chatgpt.com/g/g-wRMlRcY87-hra-resume-and-cover-letter-assistant) 
+
+
+
+- How to Write a Cover Letter — Step-by-Step Tips & Examples
+- https://www.thecut.com/article/how-to-write-a-cover-letter.html
+
+Apparently didn't copy link for this one
+You're looking to personalize your cover letter generation with a custom GPT model, which is a fantastic idea! Here's a breakdown of how you can train a custom GPT to write cover letters in your specific voice and style:
+1. Data Collection and Preparation:
+Gather Your Materials: Collect all the job descriptions you're targeting, your resume, and, most importantly, all the cover letters you've previously written. The more cover letters you have, the better the model can learn your style. Aim for at least 10-15, but more is always better.
+Format Consistently: Ensure your cover letters are in a consistent format (e.g., plain text, .docx). This will make it easier for the model to process them.
+Clean and Organize: Review your past cover letters. Are there any you're not particularly happy with? Remove or revise them. Also, look for recurring phrases, sentence structures, and tone. This will help you identify your preferred style.
+Create Training Data: This is the most crucial step. You'll need to pair job descriptions with the corresponding cover letters. The custom GPT model will learn the relationship between the job requirements and how you express your qualifications in your cover letter. A simple way to organize this is:
+ 
+Job Description 1: [Text of Job Description 1]
+Cover Letter 1: [Text of Cover Letter 1]
+Job Description 2: [Text of Job Description 2]
+Cover Letter 2: [Text of Cover Letter 2]
+...and so on
+1. Choosing a Custom GPT Platform:
+Several platforms offer custom GPT training. Look for one that allows you to:
+Import your data: The platform should allow you to upload your training data in a structured format.
+Fine-tune the model: You need the ability to fine-tune a pre-trained GPT model with your specific data.
+Control the output: The platform should give you some control over the generated text, such as temperature (which affects the creativity of the output) and top-p (which controls the diversity of word choices).
+1. Training the Model:
+Upload your data: Upload the training data you prepared.
+Fine-tune: Start the fine-tuning process. This will take some time, and the cost will vary depending on the platform and the size of your data.
+Experiment with parameters: Experiment with the different parameters (temperature, top-p) to see how they affect the generated cover letters. A lower temperature will make the output more predictable and closer to your existing style, while a higher temperature will make it more creative (but potentially less consistent).
+1. Using Your Custom GPT:
+Input a new job description: When you want to generate a cover letter, simply provide the new job description as input to your custom GPT model.
+Review and edit: The generated cover letter will be a good starting point, but you'll likely still need to review and edit it. The model is learning your style, but it's not perfect. Pay attention to:
+Accuracy: Make sure the model accurately reflects your skills and experience.
+Tone: Check if the tone is consistent with your desired level of confidence (not arrogant).
+Specific details: Add any specific details about the company or the role that the model might have missed.
+Iterate: The more you use the model and edit its output, the better it will become at generating cover letters in your voice. You can even add the edited cover letters back to your training data to further improve the model.
+Tips for Success:
+Quality over quantity: Focus on providing high-quality cover letters in your training data. A few well-written examples are better than many mediocre ones.
+Be patient: Training a custom GPT model takes time and experimentation. Don't get discouraged if the initial results aren't perfect.
+Iterative improvement: Treat the model as a tool to assist you, not replace you. Review and edit its output, and use the feedback to further refine the model.
+Privacy: Be mindful of any sensitive information in your cover letters and ensure the platform you choose handles your data securely.
+By following these steps, you can leverage the power of custom GPT to create personalized cover letters that reflect your unique voice and style, saving you time and effort in the job application process.
+=================================
+Here's some of what I've learnt (want to write a Medium article eventually)
+(1) To get seen (recruiter, hiring mgr):
+- for recruiter, they need far less jargon except for key words/tech - de-jargon by getting someone outside your field to tell you what doesn't make sense
+- apply within 24-48 hour rule 
+- be active on LinkedIn -- possibly best way is to make postings that large # impressions. I believe a reposting with your comments counts (not sure if it counts for same weight though)
+- get rid of fluff in your LI profile/resume, keep it to 1 or 2 pages, focus on job titles and even change previous job titles if it helps (you need job titles that are the same as the job title you are applying for)
+- TheLadders-EyeTracking-StudyC2.pdf
+- How to Get Hired When AI Does the Screening
+- resume 
+   - at least 3 ways of finding metrics (how many you did, magnitude of project you worked on, number of things achieved/magnitude of contribution or change made as a result)
+   - use active verb of larger achievement, rather active verb of what you did (
+- pair up with someone who is working on their LinkedIn profile in similar field and read both profiles while critiquing out loud (I was surprised at how useful my JSC buddy's comments were)
+- networking - answer recruiters quickly, they have a short attention span and are overwhelmed
+
+(1.5) applications 
+- tailor resume eg 
+ 
+Dashboard - Jobscan
+https://skillsyncer.com/
+https://www.vmock.com/
+Resumeworded.com
+Free tier
+5 initial scans at signup
+2 scans with match rate calculations and keyword comparisons/mo
+Scan hx for last 20 scans
+Access to resume manager and jobscan learning center
+1 new scan credit every week
+Track 10 jobs at once
+No cc needed
+None
+ 
+Lowest paid tier
+$49.95 for unlimited scans
+$90/quarter
+$14.95/mo for unlimited scans
+$39/quarter for unlimited scans
+$19.95 for 10 + uploads/month
+$49/mo
+$99/3 months
+$299/year
+
+- cover letter (see above)
+
+(2) To convince them you have the skills (in my case)
+- projects using target skills
+- study for skill assessments 
+- tech interview skills
+
 
 ### 2025-02-18  CAIO roles
 

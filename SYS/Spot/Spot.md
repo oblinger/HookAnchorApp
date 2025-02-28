@@ -1,4 +1,4 @@
-ERROR: Cannot find cmd: spot:://AI MIN
+lERROR: Cannot find cmd: spot:://AI MIN
   (should be compressing already???)
 
 - spot: add 'main' for every anchor (if 'main' is not defined)

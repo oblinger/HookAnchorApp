@@ -21,7 +21,7 @@
                 [[RES Job History]]: 
                     [[AF]]: 
             [[NJ]]: [[SEEK]],	[[NJ22]],	[[NJ Todo]],	[[NJ16]],	
-                [[NJ Targets]]: [[NJ Queries]],	
+                [[TG]]: [[NJ Queries]],	
         [[FIN]]: [[FIN Budget]],	[[FIN Tracking]],	
             [[FIN Log]]: 
             [[FIN Bills]]: 

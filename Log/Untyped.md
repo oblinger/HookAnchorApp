@@ -5,6 +5,7 @@ n:: no prefix.	Dated entries without any typing prefix
 
 | Date       | File                                        | Notes                                                                                                                             |
 | ---------- | ------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------- |
+| 2025-02-27 | [[NJ Log]]                                      | Using a cover letter                                                                                                              |
 | 2025-02-25 | [[Palestinians]]                                | Newest "Catch-22" version                                                                                                         |
 | 2025-02-25 | [[Palestinians]]                                | Old 3 state                                                                                                                       |
 | 2025-02-24 | [[NJ Queries]]                                  | [[NJ. TierII Plan]]                                                                                                               |
@@ -25,8 +26,8 @@ n:: no prefix.	Dated entries without any typing prefix
 | 2025-02-10 | [[Mgt]]                                         | W                                                                                                                                 |
 | 2025-02-07 | [[@Meta]]                                       | NJ META                                                                                                                           |
 | 2025-02-06 | [[LRN Todo]]                                    | Other IBM coursera courses                                                                                                        |
-| 2025-02-05 | [[NJ Targets]]                                  | Idea:  Use Gemini deep-study                                                                                                      |
-| 2025-02-05 | [[NJ Targets]]                                  | Nick's homework                                                                                                                   |
+| 2025-02-05 | [[TG]]                                          | Idea:  Use Gemini deep-study                                                                                                      |
+| 2025-02-05 | [[TG]]                                          | Nick's homework                                                                                                                   |
 | 2025-02-03 | [[MED Log]]                                     | fix billing issue                                                                                                                 |
 | 2025-02-02 | [[NJ Blog]]                                     | Searching for BLOGS                                                                                                               |
 | 2025-02-01 | [[BOOK Suggestions]]                            | o3-high-mini                                                                                                                      |

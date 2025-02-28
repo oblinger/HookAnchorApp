@@ -5,7 +5,7 @@
 - [[LRN Todo]]:	DL C3; \S
 - [[BOD]]:			Get Coach?
 
-- [[NJ Targets]]:	Read glass door about them
+- [[TG]]:	Read glass door about them
 - [[NJ Todo]]:	[[RES]] linked in fixes
 
 

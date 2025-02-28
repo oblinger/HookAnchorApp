@@ -1,7 +1,7 @@
 .[[NJ]].	  [[Lrn]],
   PLAN:	[[NJ Todo]], [[NJ Plan]], [[SEEK]],
   TOP:	[NJ Slides](spot://njslides), [[NJ Log]],
-  NOW:	[[NJ Targets]],
+  NOW:	[[TG]],
   PARTS	[[NJ Ask]], [[NJ Coaches]],
   SUB:
   OLD:	[[NJ16]], [[NJ22]],
