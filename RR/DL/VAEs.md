@@ -4,13 +4,21 @@ n:: Variational Auto Encoders
   [[VAEs]]:	
 
 ! Variational Autoencoder
-- [VAE intro paper](https://towardsdatascience.com/gan-papers-to-read-in-2020-2c708af5c0a4),  [Wiki](https://en.wikipedia.org/wiki/Variational_autoencoder), 
+- [Wiki](https://en.wikipedia.org/wiki/Variational_autoencoder), 
 - 
  
 - Probabilistic version of an autoencoder.
 
 
-Varational Autoencoder
--   [[Attention]], 
 
+-   [[Attention]], 
 - [Jupyter/Python tutorial](https://www.youtube.com/watch?v=twHaVc_H7ik) - 
+
+
+#dl 
+
+VAE
+-?-
+Variational autoencoder
+Unsupervised training of a network that compresses data into a latent space and expands it back to the original data.
+![](https://upload.wikimedia.org/wikipedia/commons/thumb/4/4a/VAE_Basic.png/425px-VAE_Basic.png)

@@ -13,7 +13,7 @@
 - [[Seq2Seq]] - BART/T5-like (also called _sequence-to-sequence_ Transformer models)
 
 ### Key Ideas
-- Before transformers attention was used with recurrent networks
+- Before transformer's attention was used with recurrent networks
 - [[Embedding]] 
 - [[Positional Encoding]]
 - [[Attention]], [[Multi-headed Attention Block]], 

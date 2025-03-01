@@ -17,8 +17,8 @@
   , [[Positional Encoding]], [[RLHF]], ,
   , , [[Mech Interp]],
   , [[SFT]],
-  , [[DL proj]], 
-  DELS: [[DLF]], [[DL Optim]],[[DL Opto]],[[Torch Tensor]],[[Tensor]], [[DL Opto]],[[DL Visualize]],[[DL Strat]], [[DL Opto]], [[Torch Tensor]], [[Tensor]], [[DL Opto]],[[DL Strategy]], [[DL Optim]], [[DL Optim]], [[DL Data Loading]], [[DL Notation]], [[DL Areas]], [[DL Optim]], [[DL Analyze]], [[DL Examples]], [[DL Template]], [[DL Optim]], [[DL Optim]], [[DL Visualize]], [[DL Optim]], [[DL Visualize]], [[DL torch.optim]],[[Feed Forward Layer]], [[RAG]], [[LSTM]], [[LLM]],[[Regularization]], [[DL Theory]], [[ReLU]],
+  , ,
+  DELS: [[DLF]], [[DL Optim]],[[DL Opto]],[[Torch Tensor]],[[Tensor]], [[DL Opto]],[[DL Visualize]],[[DL Strat]], [[DL Opto]], [[Torch Tensor]], [[Tensor]], [[DL Opto]],[[DL Strategy]], [[DL Optim]], [[DL Optim]], [[DL Data Loading]], [[DL Notation]], [[DL Areas]], [[DL Optim]], [[DL Analyze]], [[DL Examples]], [[DL Template]], [[DL Optim]], [[DL Optim]], [[DL Visualize]], [[DL Optim]], [[DL Visualize]], [[DL torch.optim]],[[Feed Forward Layer]], [[RAG]], [[LSTM]], [[LLM]],[[Regularization]], [[DL Theory]], [[ReLU]],[[DL proj]], 
 
 [[DL Areas]]
 

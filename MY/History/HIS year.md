@@ -1,4 +1,5 @@
 
+[[QL template\|Mon Oct 2  2023 ]]  	[[QL template#<% moment(tp.file.title, 'YYYY-\WW').format('YYYY-[W]W') %> ]]  
 [[WEEKLY template\|Mon Oct 2  2023 ]]  	[[WEEKLY template#<% moment(tp.file.title, 'YYYY-\WW').format('[W]W   YYYY-MM-]]  
 [[E-nxt\|Mon Oct 2  2023 ]]  	[[E-nxt#POINTERS]]  
 [[E-nxt\|Mon Oct 2  2023 ]]  	[[E-nxt#Review Sites]]  

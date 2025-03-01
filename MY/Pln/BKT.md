@@ -2,7 +2,7 @@
 [[NJ]]:
 - [[CN]]:			Dennis // Uri, Luis
 - [[SEEK]]:		Short List; 3Tgts; Listening 
-- [[LRN Todo]]:	DL C3; \S
+- [[LRN.]]:	DL C3; \S
 - [[BOD]]:			Get Coach?
 
 - [[TG]]:	Read glass door about them

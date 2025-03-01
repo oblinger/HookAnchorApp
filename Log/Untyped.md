@@ -8,7 +8,7 @@ n:: no prefix.	Dated entries without any typing prefix
 | 2025-02-27 | [[NJ Log]]                                      | Using a cover letter                                                                                                              |
 | 2025-02-25 | [[Palestinians]]                                | Newest "Catch-22" version                                                                                                         |
 | 2025-02-25 | [[Palestinians]]                                | Old 3 state                                                                                                                       |
-| 2025-02-24 | [[NJ Queries]]                                  | [[NJ. TierII Plan]]                                                                                                               |
+| 2025-02-24 | [[NJ Queries]]                                  | [[NJ.1]]                                                                                                                          |
 | 2025-02-24 | [[Mgt]]                                         | W                                                                                                                                 |
 | 2025-02-20 | [[RR PAPERS]]                                   | Verify step by step                                                                                                               |
 | 2025-02-18 | [[EOC Log]]                                     | How AI might take over in 2 years                                                                                                 |
@@ -25,7 +25,7 @@ n:: no prefix.	Dated entries without any typing prefix
 | 2025-02-10 | [[Daily Schedules]]                             | Daily Blocks                                                                                                                      |
 | 2025-02-10 | [[Mgt]]                                         | W                                                                                                                                 |
 | 2025-02-07 | [[@Meta]]                                       | NJ META                                                                                                                           |
-| 2025-02-06 | [[LRN Todo]]                                    | Other IBM coursera courses                                                                                                        |
+| 2025-02-06 | [[LRN.]]                                        | Other IBM coursera courses                                                                                                        |
 | 2025-02-05 | [[TG]]                                          | Idea:  Use Gemini deep-study                                                                                                      |
 | 2025-02-05 | [[TG]]                                          | Nick's homework                                                                                                                   |
 | 2025-02-03 | [[MED Log]]                                     | fix billing issue                                                                                                                 |

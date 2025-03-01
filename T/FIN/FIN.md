@@ -10,7 +10,7 @@
   [[FIN Flows]]:
   [[FIN Log]]:
   [[FIN Macro Tracking]]:
-  [[FIN Mint]]:
+  [[FIN Net Worth]]:
   [[FIN Recurring]]:
   [[FIN Retire]]:
   [[FIN Topics]]:
@@ -144,7 +144,7 @@
   :
   :
   ADDS:   , , , , [[BillPay]], [[Expenses]], , , [[FIN Analysis]], [[FIN Bills]], , [[FIN Flows]]
-  , , [[FIN Mint]], , [[FIN Retire]], [[FIN Topics]], [[FIN Tracking]], , [[Taxes]], ,
+  , , , , [[FIN Retire]], [[FIN Topics]], [[FIN Tracking]], , [[Taxes]], ,
   ADDS:   ,
   ,   [[FIN Log]],
   , , ,
@@ -154,9 +154,11 @@
   DELS: [[FIN Log]],, , , , , , ,, ,, ,[[FIN Todo]],
   , ,
   DELS: [[FIN Log]],, , , , , , ,, ,, ,[[FIN Todo]],, , , , , , , , , , , ,
-  , [[FIN Budget]], 
+  , [[FIN Budget]],
   DELS: [[FIN Log]],, , , , , , ,, ,, ,[[FIN Todo]],, , , , , , , , , , , ,[[FIN Budget]],
-  DELS: [[FIN Log]],[[@Avanti Pakrasi]], [[@Gary Bladen]], [[FIN Accounts]], [[FIN Macro Tracking]], [[FIN Recurring]], [[PenFed]], [[z old Bills]],[[@Merrill]], [[@Vanguard]],[[@Merrill]], [[@Vanguard]],[[FIN Todo]],[[FIN.]], [[@Avanti Pakrasi]], [[@Gary Bladen]], [[FIN Accounts]], [[FIN Macro Tracking]], [[FIN Recurring]], [[PenFed]], [[z old Bills]], [[@Merrill]], [[@Vanguard]], [[@Merrill]], [[@Vanguard]],[[FIN Budget]],[[FIN Budgeting]], [[@Avanti Pakrasi]], [[@Gary Bladen]], [[FIN Accounts]], [[FIN Macro Tracking]], [[FIN Recurring]], [[PenFed]], [[z old Bills]], [[@Merrill]], [[@Vanguard]], [[@Merrill]], [[@Vanguard]], [[FIN.]], [[@Avanti Pakrasi]], [[@Gary Bladen]], [[FIN Accounts]], [[FIN Macro Tracking]], [[FIN Recurring]], [[PenFed]], [[z old Bills]], [[@Merrill]], [[@Vanguard]], [[@Merrill]], [[@Vanguard]], 
+  , [[FIN Net Worth]], 
+  DELS: [[FIN Log]],[[@Avanti Pakrasi]], [[@Gary Bladen]], [[FIN Accounts]], [[FIN Macro Tracking]], [[FIN Recurring]], [[PenFed]], [[z old Bills]],[[@Merrill]], [[@Vanguard]],[[@Merrill]], [[@Vanguard]],[[FIN Todo]],[[FIN.]], [[@Avanti Pakrasi]], [[@Gary Bladen]], [[FIN Accounts]], [[FIN Macro Tracking]], [[FIN Recurring]], [[PenFed]], [[z old Bills]], [[@Merrill]], [[@Vanguard]], [[@Merrill]], [[@Vanguard]],[[FIN Budget]],[[FIN Budgeting]], [[@Avanti Pakrasi]], [[@Gary Bladen]], [[FIN Accounts]], [[FIN Macro Tracking]], [[FIN Recurring]], [[PenFed]], [[z old Bills]], [[@Merrill]], [[@Vanguard]], [[@Merrill]], [[@Vanguard]], [[FIN.]], [[@Avanti Pakrasi]], [[@Gary Bladen]], [[FIN Accounts]], [[FIN Macro Tracking]], [[FIN Recurring]], [[PenFed]], [[z old Bills]], [[@Merrill]], [[@Vanguard]], [[@Merrill]], [[@Vanguard]],
+  DELS: [[FIN Log]],[[@Avanti Pakrasi]], [[@Gary Bladen]], [[FIN Accounts]], [[FIN Macro Tracking]], [[FIN Recurring]], [[PenFed]], [[z old Bills]],[[@Merrill]], [[@Vanguard]],[[@Merrill]], [[@Vanguard]],[[FIN Todo]],[[FIN.]], [[@Avanti Pakrasi]], [[@Gary Bladen]], [[FIN Accounts]], [[FIN Macro Tracking]], [[FIN Recurring]], [[PenFed]], [[z old Bills]], [[@Merrill]], [[@Vanguard]], [[@Merrill]], [[@Vanguard]],[[FIN Budget]],[[FIN Budgeting]], [[@Avanti Pakrasi]], [[@Gary Bladen]], [[FIN Accounts]], [[FIN Macro Tracking]], [[FIN Recurring]], [[PenFed]], [[z old Bills]], [[@Merrill]], [[@Vanguard]], [[@Merrill]], [[@Vanguard]], [[FIN.]], [[@Avanti Pakrasi]], [[@Gary Bladen]], [[FIN Accounts]], [[FIN Macro Tracking]], [[FIN Recurring]], [[PenFed]], [[z old Bills]], [[@Merrill]], [[@Vanguard]], [[@Merrill]], [[@Vanguard]],[[FIN Mint]], 
 
 
 

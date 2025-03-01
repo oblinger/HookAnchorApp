@@ -1,5 +1,7 @@
 .[[FIN Topics]].
-  ,   [[RealEstate]], 
-
+  ,   [[RealEstate]],
+  :
+  , [[FIN Mint]], 
+  DELS: [[FIN Mint]],
 
 :: [[RealEstate]]

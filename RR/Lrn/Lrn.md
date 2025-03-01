@@ -1,12 +1,15 @@
 .[[Lrn]].
-  [[LRN Todo]], [[Lrn Mgt]], 
+  , [[Lrn Mgt]],
+  , [[LRN Todo]],
+  , [[LRN.]], [[LRN ToRead]], 
+  DELS: [[LRN.]],
 
 
 
 
 ## Rocks - Evergreen @ top
 - ^ \_ S  SPACED REPETITION. (Add shift for review)
-- [[NJ ToRead]] - Read paper from 'To Read'
+- [[LRN ToRead]] - Read the paper from 'To Read'
 - [Coursera](spot://coursera~1pass) 
 
 - Run System; Train system
