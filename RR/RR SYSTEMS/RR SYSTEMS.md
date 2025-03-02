@@ -1,5 +1,7 @@
 .[[RR SYSTEMS]].
-  , [[DL Systems]], [[Pandoc]], [[Sora]], 
+  [[DL Systems]], 
+  [[Foundational Models]], 
+  [[Pandoc]], [[Sora]], 
   DELS: [[Pandoc]], [[DL Systems]], [[Sora]],
 
 

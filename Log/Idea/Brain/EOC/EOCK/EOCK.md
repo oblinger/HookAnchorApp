@@ -1,13 +1,16 @@
-.[[EOCK]].
-  , [[EOCK AGENCY - Separation of Knowledge, Drive, and Agency]], [[EOCK Alignment Wont Work]]
-  , [[EOCK Apex Predator]],
+.[[EOCK]].   [[EOCI]] 
+  [[EOCK Corp AI]] - 
+  [[EOCK Fast Takeoff]] - 
+  [[EOCK AGENCY - Separation of Knowledge, Drive, and Agency]], 
+  [[EOCK Alignment Wont Work]]
+  [[EOCK Apex Predator]],
   [[EOCK Cannot Stop Ourselves]],
-  [[EOCK Corp AI]]
   [[EOCK Loop Closing]],
-  , , [[EOCK Last Best Hope]], [[EOCK Natural Selection]]
-  , [[EOCK Nature of AI Progress]],
-  , ,
-  , [[EOCK Civilizing Tendency]], [[EOCK Machine Centric Coms]], 
+  [[EOCK Last Best Hope]], 
+  [[EOCK Natural Selection]]
+  [[EOCK Nature of AI Progress]],
+  [[EOCK Civilizing Tendency]], 
+  [[EOCK Machine Centric Coms]], 
   DELS: [[EOCK Civilizing Tendency]], [[EOCK Machine Centric Coms]],
 
   [[EOCK Natural Selection]]
@@ -152,7 +155,7 @@
 
 
 
-  DELS: [[EOCK Keeping Secrets]], [[EOCK AGENCY - Separation of Knowledge, Drive, and Agency]],[[EOCK Separation of Knowledge, Drive, and Agency]], 
+  DELS: [[EOCI Keeping Secrets]], [[EOCK AGENCY - Separation of Knowledge, Drive, and Agency]],[[EOCK Separation of Knowledge, Drive, and Agency]], 
 
 
 

@@ -6,3 +6,10 @@
 - [[POMDP]] 
 - HMM
 - RL Alg
+
+
+TYPES OF LEARNING
+- Induction
+- Deduction
+- Abduction
+- [[Contrastive Learning]] 
