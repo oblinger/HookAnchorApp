@@ -9,7 +9,7 @@ let lines = {}
 let timeframe = ""
 let when = ["ASAP", "Q2", "Q3", "Q4", "Soon", "Y24", "*", "Q1"]
 let star_idx = when.indexOf("*")
-let tags = ["Soon", "Core", "Mentor", "Lunch", "Friend", "FAANG", "Biannual", "CRM", "Startup", "VC", "NonProfit", "AI", "Calls"];
+let tags = ["Soon", "Core", "Mentor", "Lunch", "Friend", "FAANG", "Ping", "CRM", "Startup", "VC", "NonProfit", "AI", "Calls"];
 let crm_contents = await dv.io.load("At/CRM.md")
 for (let tag of tags) {
     let pages = dv.pages("#" + tag);  

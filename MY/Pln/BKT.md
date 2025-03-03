@@ -1,13 +1,18 @@
 
+- [[CN]]: 	3-5 connects (including two companies)
+- [[NJ.1]]	Tier II list with, cash, dlp, posts 
+- [[LRN.]] 	DL C3 (2 days)
+- [[LRN.]]	3 Papers
+- SV:		AI Plan
+
 [[NJ]]:
-- [[CN]]:			Dennis // Uri, Luis
-- [[SEEK]]:		Short List; 3Tgts; Listening 
-- [[LRN.]]:	DL C3; \S
-- [[BOD]]:			Get Coach?
+- [[CN]]:			Uri, Luis, Juan
+- [[SEEK]]:		[[NJ.1]]: Tier2, Short List; 3Tgts; Listening 
+- [[LRN.]]:		DL C3;
+- [[BOD]]:		Get Coach?
 
 - [[TG]]:	Read glass door about them
 - [[NJ Todo]]:	[[RES]] linked in fixes
-
 
 [[WORK]]:	4h
 [[MED]]:	Exercise, Cortisol

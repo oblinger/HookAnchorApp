@@ -1,5 +1,4 @@
 .[[SEEK]].
-  ,
   , [[SEEK Postings]],
   , ,
   DELS: [[NJ Questions]],[[Seeking Questions]], 

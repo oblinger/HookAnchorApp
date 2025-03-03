@@ -1,5 +1,6 @@
 .[[ML Alg]].
-  , [[POMDP]], 
+  , [[POMDP]],
+  , [[Contrastive Learning]], 
 
 ## TIME SERIES
 - [[ARIMA Algorithm]] - AutoRegressive Integrated Moving Average

@@ -1,8 +1,9 @@
 .[[RR SYSTEMS]].
-  [[DL Systems]], 
-  [[Foundational Models]], 
-  [[Pandoc]], [[Sora]], 
-  DELS: [[Pandoc]], [[DL Systems]], [[Sora]],
+  [[DL Systems]],
+  ,
+  [[Pandoc]], [[Sora]],
+  , [[Dino V2]], [[Foundational Models]], 
+  DELS: [[Pandoc]], [[DL Systems]], [[Sora]],[[Foundational Models]],
 
 
 :: [[GenAI]],   [[Sora]],   [[Stable Diffusion]]
