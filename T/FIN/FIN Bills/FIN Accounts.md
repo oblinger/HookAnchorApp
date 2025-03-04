@@ -1,4 +1,5 @@
 
+(See [[Fin Flows]] too)
 ## = ACCOUNTS  (audit list is complete)
 ### BANK
 #### x6976 BofA - DanO Personal (Checking&Savings)

@@ -16,6 +16,7 @@
 - Before transformer's attention was used with recurrent networks
 - [[Embedding]] 
 - [[Positional Encoding]]
+- [[Self Attention]]
 - [[Attention]], [[Multi-headed Attention Block]], 
 - [[ReLU]] activation
 - [[Regularization]] 

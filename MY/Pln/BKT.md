@@ -1,9 +1,4 @@
 
-- [[CN]]: 	3-5 connects (including two companies)
-- [[NJ.1]]	Tier II list with, cash, dlp, posts 
-- [[LRN.]] 	DL C3 (2 days)
-- [[LRN.]]	3 Papers
-- SV:		AI Plan
 
 [[NJ]]:
 - [[CN]]:			Uri, Luis, Juan

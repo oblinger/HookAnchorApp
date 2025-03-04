@@ -7,9 +7,9 @@ n:: How to optimize a deep net
 [[DL Optim]] 
 
 
-- Mini-Batch Gradient Descent - computes gradient and step based on "mini-batches" of the data
-- Gradient Descent is mini-batch with n = whole dataset
-- Stocastic Gradient Descent is mini-batch with n=1
+- **Mini-Batch Gradient Descent** - computes gradient and step based on "mini-batches" of the data
+- **Gradient Descent** == mini-batch with n = whole dataset
+- **Stocastic Gradient Descent** == mini-batch with n=1
 
 ## MINI-BATCH - Batch vs. Mini-Batch Gradient Descent
 - "1 epoch" - single pass thru the whole dataset

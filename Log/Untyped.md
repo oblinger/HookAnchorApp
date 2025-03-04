@@ -5,6 +5,8 @@ n:: no prefix.	Dated entries without any typing prefix
 
 | Date       | File                                        | Notes                                                                                                                             |
 | ---------- | ------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------- |
+| 2025-03-03 | [[Reflections]]                                 | Depressed?  Demoralized?                                                                                                          |
+| 2025-03-03 | [[Mgt]]                                         |                                                                                                                                   |
 | 2025-02-27 | [[NJ Log]]                                      | Using a cover letter                                                                                                              |
 | 2025-02-25 | [[Palestinians]]                                | Newest "Catch-22" version                                                                                                         |
 | 2025-02-25 | [[Palestinians]]                                | Old 3 state                                                                                                                       |

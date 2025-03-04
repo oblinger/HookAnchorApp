@@ -4,6 +4,20 @@
 
 # Log
 
+### 2025-03-03  
+- Tested new meta runner in dev and rc1, launched run to profile pipeline, 
+- POC implementation of remote job execution, 
+- Aggregated resources of models/repos to use for auto-labeling of objects
+
+Questions:
+- White Glove, our app.
+- The target number of alpha games.
+
+2025 AI - Roadmap 
+- Advanced product - Hard: speedup - Bugs: medium - Improvement: ???
+- Core AI - e. g. Ball tracking
+
+
 ### 2025-02-24  W
 
 - Validated flagging logic on dev and rc1, 

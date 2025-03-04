@@ -1,3 +1,27 @@
+
+### 2025-03-03  Depressed?  Demoralized?
+
+- I get so little work done in a week, but I seem to be "working" all the time.
+- When I think about my waking hours I do end up frittering away 30-50% of them.
+
+Approach this week:
+1. Have achievable goals in 4-6 key directions
+2. Figure out some 'fun' to do each day or every other day.
+3. Get MIT task going first each day
+
+
+TO NICK:
+I have a general sense that my priorities are correct and my time on task is not great.  that is my focus right now.  As far as concrete actions here are my targets this week:
+- NETWORKING - Have 3-5 networking connections/meetings setup (includes companies and people)
+- TIER II TARGETS - Finish building my tier 2 companies target list. 
+- COURSE - Finish another Andrew Ng deep learning course.
+- PAPERS - Read 3-5 AI papers/blogs
+- SPORTS VISIO - Do an all-day management meeting on Wednesday.  Prepare the 2025 AI plan for that meeting.
+
+Last week, the task of building my Tier II list grew in complexity.  it has taken longer than I initially expected to do this task.  Still, I think it is good work.  My main complaint is that time on task is not where it needed to be last week -- I think part of the issue is just life tasks taking time.  (e.g., half a day lost taking Eli around town and not being fully engaged in the task). this week, I am trying to find a couple of 'fun' activities for my week... it has been too long since I did anything that I personally wanted.  Also, I am not attending to my general health (exercise), and I think that ties to motivation too.
+
+How about you?  what are your tasks, and how do you feel about progress?
+
 ### 2025-01-06  Done By One
 I am working too much on SV and not on NJ
 

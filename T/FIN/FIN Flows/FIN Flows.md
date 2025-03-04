@@ -11,18 +11,18 @@ GRAND CENTRAL
 	$12K/mo	--> 	Sporadic spending (on 20th)
 
 SPORADIC SPENDING 	[[2024 Sporadic Spending.xlsx|SPREADSHEET]]  ~$30K  +/-$10K
-	$			--> 	Sapphire Travel Card
-	$			-->	House Mortgage
-	$1,733	-->	Property Taxes ($10,400 x2/year)
-	$			-->	Eli's schooling
-	.					DoorDash
+	$			--> 		SPOR	Sapphire Travel Card
+	$			-->		Mort	House Mortgage
+	$1,733	-->		Tax		Property Taxes ($10,400 x2/year)
+	$			-->		Eli		Eli's schooling
+	.									DoorDash
 
 MONTHLY SPENDING	~ $20K  +/-$5K
-	$xK/mo	-->	Wells QL Spend
-	$xK/mo	-->	Freedom DO Spend & dining out
-	$			-->	Wells Subscriptions Card
-	$			-->	Amazon Groc
-	$			-->	Amazon Non-Groc
+	$xK/m	-->		QL		Wells QL Spend
+	$xK/m	-->		OUT	Freedom DO Spend & dining out
+	$			-->		UTIL	Wells Subscriptions Card
+	$			-->		GROC	Amazon Groc
+	$			-->		MISC	Amazon Non-Groc
 	$			-->	01 Pen Fed
 	$			-->	13 Citi Double
 	$			-->	Water

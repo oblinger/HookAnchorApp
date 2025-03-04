@@ -1,14 +1,10 @@
 
-- eero update on phone
-
 - Eli orig birth cert
 - [nicks money mgr](https://www.thegoodlandgroupadvisors.com/) 
 
 
 - Oven fix
 - alarm
-- closet hooks
-- doggie bed timer
 
 - testing roof
 

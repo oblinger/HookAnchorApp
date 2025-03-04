@@ -1,4 +1,5 @@
 
+[[DocTorch\|Thu Jan 16  2025]]  	[[DocTorch#Basics]]  
 [[DocTorch\|Thu Jan 16  2025]]  	[[DocTorch#Modules]]  
 [[@Martin Reyes\|Thu Jan 16  2025]]  	[[@Martin Reyes#2025-01-16  Out]]  
 [[@David Hayden\|Thu Jan 16  2025]]  	[[@David Hayden#  [DL Scientist](https://www.linkedin.com/in/david-hayden-b0]]  

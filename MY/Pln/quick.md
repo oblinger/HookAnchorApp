@@ -1,8 +1,9 @@
-- lm studio (try it out)
-- alan to write up req for AIM
+- Respond to Softbank
+- Quarterly budget
+- Alan to write up req for AIM
 - response to Softbank for goals of the POC.
-- cancel service $13 on AT&T (next up)
-- oven
+- Cancel service $13 on AT&T (next up)
+- Oven
 - penfed closed??
 
 - fun list, papers list, torch practice, transformers class, book on behavioral questions

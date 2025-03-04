@@ -8,6 +8,7 @@
 Deep Learning Framework
 
 - [[DL Data Loading]] 
+- [[DL Initialization]] 
 - [[DL Optim]] 
 - [[DL Visualize]] 
 - [[DL Analyze]] 
@@ -74,6 +75,6 @@ model = League(X_train.shape[1])
 criterion = nn.BCELoss()
 optimizer = optim.SGD(model.parameters(), lr=0.01)
 
-
-
 ```
+
+

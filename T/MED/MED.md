@@ -2,7 +2,7 @@
 
 .[[MED]].
   TOP:		[[MED Log]], [[MED Todo]], 
-  TOPICS:	,
+  TOPICS:
   [[MED Blood Tests]]:
   [[MED Doctors]]:
   [[MED Exercise]]:
