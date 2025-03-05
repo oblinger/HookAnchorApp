@@ -13,7 +13,7 @@
 	[Infr](https://www.notion.so/sportsvisio/PROJ-Infrastructure-150719d6f2bd80f087b2e931ef179536?pvs=4):	multi-run ???
     [Fball](spot://fireball):	Measure effectiveness
 
-
+[[_template]] 
 ## TRACK
 - File Patent. (put note in to Mgt channel)
 

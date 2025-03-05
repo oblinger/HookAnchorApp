@@ -12,7 +12,8 @@
   , [[RMS]], [[Stat Alg]],
   , [[CrossEntropy Loss]], [[Logistic Regression - Logit Function]], [[Loss Functions]]
   , [[MeanSquaredError Loss]],
-  , [[Beroulli Distribution]], [[nn.CrossEntropyLoss]], [[nn.NLLLoss]], [[STAT Distributions]], 
+  , [[Beroulli Distribution]], [[nn.CrossEntropyLoss]], [[nn.NLLLoss]], [[STAT Distributions]],
+  , [[Measure]], 
   DELS: [[Stat Alg]],[[Kalman Filter]],[[RMS]], [[Stat Alg]], [[Stat Alg]],
 
 [[Kalman Filter]] 

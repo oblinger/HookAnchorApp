@@ -8,3 +8,4 @@ COURSES
 - [[Coursera Deep Learning]] - 
 - [[Gen AI Lang Modeling w Transformers]] - 
 
+l

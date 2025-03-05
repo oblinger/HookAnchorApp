@@ -1,4 +1,6 @@
 
+[[work\|Mon Oct 2  2023 ]]  	[[work#TOP]]  
+[[work\|Mon Oct 2  2023 ]]  	[[work#WATCH]]  
 [[work\|Mon Oct 2  2023 ]]  	[[work#PAUSE]]  
 [[QL template\|Mon Oct 2  2023 ]]  	[[QL template#<% moment(tp.file.title, 'YYYY-\WW').format('YYYY-[W]W') %> ]]  
 [[WEEKLY template\|Mon Oct 2  2023 ]]  	[[WEEKLY template#<% moment(tp.file.title, 'YYYY-\WW').format('[W]W   YYYY-MM-]]  
