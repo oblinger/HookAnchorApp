@@ -7,7 +7,7 @@
         [[RR SYSTEMS]]: 
         [[Comp]]: 
             [[LANG]]: 
-        [[Stat]]: [[Stat Alg]],	
+        [[Stat]]: [[Stat Alg]],	[[Measure]],	
         [[ML]]: [[ML Alg]],	
         [[DL]]: [[DL Topic]],	[[DL Alg]],	
             [[DLF]]: [[DL Visualization]],	[[DL Activation]],	

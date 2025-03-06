@@ -8,7 +8,8 @@ Many choices for this.  In attention is all you need they used sine and cosine w
 ![[Screenshot 2024-10-29 at 9.41.23 PM.png]] <!--SR:!2025-02-27,8,210--> 
 
 
-Ensures that relative positions pos to pos+k will end up being a linear transform
-
+- Ensures that relative positions pos to pos+k will end up being a linear transform
+- PE(pos, 0)  ==  sin(pos)  Fast wave
+- PE(pos, d_model) == sin(pos/10000)  Very slow wave
 
 Tokens Embedded as d-dimensional vectors can be summed with a "positional em"

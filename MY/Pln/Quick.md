@@ -1,3 +1,4 @@
+- todo:  make game specs quantitative, write spec for sales
 - Respond to Softbank
 - Quarterly budget
 - Alan to write up req for AIM
