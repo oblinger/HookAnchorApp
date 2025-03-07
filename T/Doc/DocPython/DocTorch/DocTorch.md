@@ -1,10 +1,10 @@
 .[[DocTorch]].
-  , [[Torch Data]], [[Torch Examples]], [[Torch Loss]], , [[Torch Optim]]
+  TOPICS: [[Torch Examples]],
   , [[Torch Tensor]],
-  , ,
-  , [[Torch Module]],
-  DELS: [[Torch Module]],
+  , [[Torch Data]], 
   , [[Torch Initialization]], 
+  , [[Torch Module]],
+  [[Torch Loss]], [[Torch Optim]]
   DELS: [[Torch Module]],[[Torch Model  nn.Module]],
 
 

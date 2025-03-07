@@ -1,4 +1,5 @@
 
+- (See Torch [[Transformer Module]])
 - [[DL Notation]], 
 - [[VAEs]], 
 - [[Activation Functions]],   [[Auto Encoders]],  [[VAEs]],

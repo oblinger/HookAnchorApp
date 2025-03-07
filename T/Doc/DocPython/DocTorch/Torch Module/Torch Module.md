@@ -1,6 +1,6 @@
 .[[Torch Module]].
   , [[Feed Forward Layer]],
-  :
+  [[Transformer Module]]:
   , [[Convolution]], [[Torch Model]],
   ,
   , [[Recurrent Modules]], 
