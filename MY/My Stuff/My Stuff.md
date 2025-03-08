@@ -40,7 +40,7 @@ Monthly costs at margin for various parts of our
 ## = KITCHEN =
 ### --- SMALL APPLIANCES ---
 
-### - Instant Pot Duo Plus
+#### - Instant Pot Duo Plus
 
 INSTANT POT DUO EVO PLUS REVIEW
 
@@ -52,11 +52,11 @@ C8 = wrong pot in unit (usually means heating plate it getting too hot too quick
 
 
 
-### - Cuisinart dgb-900bc
+#### - Cuisinart dgb-900bc
  [Cuisinart DGB-900BC Grind-and-Brew](https://www.amazon.com/gp/r.html?C=1N85WR5439VWW&K=T5ZE21I11MVB&M=urn:rtn:msg:2023061417362936865e744e4749209f3121693690p0na&R=25VEU9F4ASE72&T=C&U=https%3A%2F%2Fwww.amazon.com%2FCuisinart-DGB-900BC-Grind-Automatic-Coffeemakers%2Fdp%2FB0010XTSFO%2Fref%3Dpe_386300_442618370_ci_mcx_mi_sccl_1%2F134-8658637-7052121%2Fref%3Dci_mcx_mi%3F_encoding%3DUTF8%26pd_rd_i%3DB0010XTSFO%26psc%3D1%26pd_rd_w%3DLaVbb%26content-id%3Damzn1.sym.aa7707e8-6668-4703-8ba7-34121100333f%26pf_rd_p%3Daa7707e8-6668-4703-8ba7-34121100333f%26pf_rd_r%3DWA09EZ3QDWSX0K4BKB22%26pd_rd_wg%3D5ieDG%26pd_rd_r%3D4714af2a-8154-4e1c-baa8-191691d69c64&H=6MGT3YJQORP7YIIGZAO6IEH23JEA&ref_=pe_386300_442618370_ci_mcx_mi_sccl_1) 
  charcoal filter
 ### --- LARGE APPLIANCES ---
-### - Oven
+#### - Oven
 LG SIGNATURE 7.3CuFt Dual Fuel Slide-in Gas Convection Range with Infrared Heating in Textured Steel 
 Item # ‌1095743‌
 $ 2,999.99
@@ -66,7 +66,7 @@ Inside: 24" wide x 20" deep.        9" high (bottom)  5" high (top)  (giving abo
 
 Maybe this is the model number:  LG Support - LUTD4919SN
 
-### - GE Microwave
+#### - GE Microwave
 
 [GE Profile 2.1 cu. ft. Over the Range Microwave in Stainless Steel with Sensor Cooking](https://www.homedepot.com/p/GE-Profile-2-1-cu-ft-Over-the-Range-Microwave-in-Stainless-Steel-with-Sensor-Cooking-PVM9005SJSS/206214752) 
 Model:  PVM9005SJ8SS
@@ -78,7 +78,7 @@ Internet # 206214752
 
 
 
-### - Dishwasher
+#### - Dishwasher
 Bosch 300
 
 Home Depot - April 2, 2020 - # W949383265
@@ -87,7 +87,7 @@ Store SKU # 1003221632
 Internet # 304692302
 Model # SHXM63WS5N
 
-### - Refrigerator
+#### - Refrigerator
 
 LG Stainless Steel Counter Depth InstaView Door-In-Door Side-By-Side Refrigerator
 
@@ -96,7 +96,7 @@ Model:  LSXC22396S  (I think).   or home depot: Internet #301459556  Model # LSX
 
 The filter warning light can be reset by pressing, and holding, the LIGHT/FILTER button for at least 3 seconds.
 
-### - Smaller Freezer - Frigidaire 5.8 cu. ft. Upright Freezer
+#### - Smaller Freezer - Frigidaire 5.8 cu. ft. Upright Freezer
 
 
 ## = BATH 

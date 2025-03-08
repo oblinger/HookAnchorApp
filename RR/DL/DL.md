@@ -19,7 +19,7 @@
   , [[SFT]],
   , ,
   , [[Multi-headed Attention Block]], [[Self Attention]], 
-  DELS: [[DLF]], [[DL Optim]],[[DL Opto]],[[Torch Tensor]],[[Tensor]], [[DL Opto]],[[DL Visualize]],[[DL Strat]], [[DL Opto]], [[Torch Tensor]], [[Tensor]], [[DL Opto]],[[DL Strategy]], [[DL Optim]], [[DL Optim]], [[DL Data Loading]], [[DL Notation]], [[DL Areas]], [[DL Optim]], [[DL Analyze]], [[DL Examples]], [[DL Template]], [[DL Optim]], [[DL Optim]], [[DL Visualize]], [[DL Optim]], [[DL Visualize]], [[DL torch.optim]],[[Feed Forward Layer]], [[RAG]], [[LSTM]], [[LLM]],[[Regularization]], [[DL Theory]], [[ReLU]],[[DL proj]],
+  DELS: [[DLF]], [[DL Optim]],[[DL Opto]],[[Torch Tensor]],[[Tensor]], [[DL Opto]],[[DL Visualize]],[[DL Strat]], [[DL Opto]], [[Torch Tensor]], [[Tensor]], [[DL Opto]],[[RR/DL/DLF/DL Strategy]], [[DL Optim]], [[DL Optim]], [[DL Data Loading]], [[DL Notation]], [[DL Areas]], [[DL Optim]], [[DL Analyze]], [[DL Examples]], [[DL Template]], [[DL Optim]], [[DL Optim]], [[DL Visualize]], [[DL Optim]], [[DL Visualize]], [[DL torch.optim]],[[Feed Forward Layer]], [[RAG]], [[LSTM]], [[LLM]],[[Regularization]], [[DL Theory]], [[ReLU]],[[DL proj]],
 
 [[DL Areas]]
 
@@ -27,7 +27,7 @@
 
 [[Torch Tensor]] 
 
-[[DL Strategy]] 
+[[RR/DL/DLF/DL Strategy]] 
 
 
 
@@ -100,10 +100,10 @@
 
 
 
-  DELS: [[CNN]], [[DL Optimization]], [[DL Strategy]], [[VAE - Variational Auto Encoder]], 
+  DELS: [[CNN]], [[RR/DL/DL strategy]], [[RR/DL/DLF/DL Strategy]], [[VAE - Variational Auto Encoder]], 
 
 
-  DELS: [[DL Strategy]], [[CNNs]], [[DL Optim]], 
+  DELS: [[RR/DL/DLF/DL Strategy]], [[CNNs]], [[DL Optim]], 
 
 
 
@@ -341,7 +341,7 @@
 
 
 
-  DELS: [[RNNs]], [[DL Optim]], [[DL Strategy]], [[DL algs]], [[DL SYStems]], [[DL topics]], [[RR/ML/DL/GPT]], [[VAEs]], 
+  DELS: [[RNNs]], [[DL Optim]], [[RR/DL/DLF/DL Strategy]], [[DL algs]], [[DL SYStems]], [[DL topics]], [[RR/ML/DL/GPT]], [[VAEs]], 
 
 - [[LoRA]] 
 :: [[KAN - Kolmogorov-Arnold Neworks]]
@@ -379,7 +379,7 @@
 - [[DL Notation]]:		[[NG Notation]], 
 - [[DL Alg]]:				[[RASA]], [[Segment Anything]], 
 - [[DL Optim]] - 
-- [[DL Strategy]], 
+- [[RR/DL/DLF/DL Strategy]], 
 
 
 

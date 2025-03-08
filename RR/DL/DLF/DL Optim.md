@@ -104,7 +104,7 @@ STRATEGIES:
 
 [[DL Optim]] 
 
-[[DL Optimization]] [[DL optimization]] 
+[[RR/DL/DL strategy]] [[RR/DL/DL strategy]] 
 
 
 Stocastic Gradient Descent

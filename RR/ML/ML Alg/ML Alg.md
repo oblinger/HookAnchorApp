@@ -10,7 +10,9 @@
 
 
 TYPES OF LEARNING
+-?-
 - Induction
 - Deduction
 - Abduction
 - [[Contrastive Learning]] 
+- [[Auto Regressive Model]] 

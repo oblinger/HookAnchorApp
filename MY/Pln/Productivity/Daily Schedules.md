@@ -83,7 +83,7 @@
 11	 PROJ - 	Work project time
 01	 LUNCH 	.
 01: [[NJ]]		.
-03: [[run]]		.
+03: [[Run]]		.
 04: GAP		.
 05, [[FAM]]		.
 06: [[Fun]]		.

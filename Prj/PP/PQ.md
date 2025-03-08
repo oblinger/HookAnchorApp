@@ -2,7 +2,22 @@
 
 ### 2025-01-27  Oven Repair
 
-The front console for our LG SIGNATURE 7.3CuFt Dual Fuel Slide-in Gas Convection Range is not working.  I think this is possibly water damage.  The stove's electrical igniters are working, but no other electrical parts of the oven are working.  I would like to get a quote from you for replacing the front electrical console for the oven assuming that is what is wrong, as well as an hourly quote if other work needs to be done to fix the oven.
+I would like to get a quote for the labor component for repairing my LG oven, assuming the only thing required is to install a new front console component on the oven.  I understand the labor will be more if the repair is something more than replacing the console.  I am happy to get the labor quote as an hourly figure, or a flat rate.
+
+Here are the details of the case:  I have an LG SIGNATURE 7.3CuFt Dual Fuel Slide-in Gas Convection Range whose front console is not working.  I think this is possibly water damage.  The stove's electrical igniters are working, but no other electrical part of the oven are working.  
+
+Looking forward to learning more about your rates.
+
+Thanks,
+Dan
+
+
+My aim is to compare prices before selecting a repairman.
+
+That is why I was so specific about the assumptions for the repair.  You know the precise model and the (assumed) precise repair required.  Replacement the front console.  I assume you have done this repair before many times, and so can give me an estimate assuming console replacement is the action required.  thanks!
+
+here is the model number LUTD4919SN
+
 ### 2024-11-21  2024 Gross pay
 
 Pay Date 11/15/2024

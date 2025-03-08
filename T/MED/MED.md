@@ -22,7 +22,7 @@
   [[MED-Vitamins]]:
   MISC:		[[Jet Lag]], [[Low Back Pain]], [[Medifast]], [[MED Heart Attack]], 
 
-- [[Glycemic Index]], [[MED Blood Pressure]], [[MED Cholesterol]], [[MED Research]], [[MED VO2Max]], [[MED=]], [[run]], [[Exercise]], 
+- [[Glycemic Index]], [[MED Blood Pressure]], [[MED Cholesterol]], [[MED Research]], [[MED VO2Max]], [[MED=]], [[Run]], [[Exercise]], 
 
 
 
@@ -357,7 +357,7 @@ DIET		[[MED Food]],  [[Medifast]],
 
 # TOPICS
 - [[Low Back Pain]], 
--  [[run]], 
+-  [[Run]], 
 -  [[Jet Lag]], [[Exercise]], 
 
 # REF

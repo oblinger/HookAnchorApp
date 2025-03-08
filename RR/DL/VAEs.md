@@ -19,6 +19,7 @@ n:: Variational Auto Encoders
 
 VAE
 -?-
-Variational autoencoder
+Variational auto-encoder (used to map input into a compressed latent space)
 Unsupervised training of a network that compresses data into a latent space and expands it back to the original data.
 ![](https://upload.wikimedia.org/wikipedia/commons/thumb/4/4a/VAE_Basic.png/425px-VAE_Basic.png)
+

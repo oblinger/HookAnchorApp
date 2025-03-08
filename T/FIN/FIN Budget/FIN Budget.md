@@ -1,18 +1,12 @@
 .[[FIN Budget]].
-  , ,
-  - :
-  , ,
-  DELS: [[2025 Budget]],[[FIN Categories]], [[2025 Budget]], 
-
-
-- [[FIN Flows]]: coarse grained budget
+  [[Tracking]]
+ 
+- [[2025 Budget]]: 
+- [[FIN Flows]]: coarse-grained budget
 - [[FIN Categories]]: Budget categories
 
-
 BUDGET
-- [[2024 Sporadic Spending.xlsx]]: 
-- 
-
+- [[2025 Sporadic Spending.xlsx]]: 
 
 
 ## INFO
@@ -23,6 +17,7 @@ BUDGET
 | 2021-06-21 | -100,000.00 | Bought space-X                                 |     |
 | 2021-06-25 | + 46,350.00 | Sold 1/2 space-X back                          |     |
 | 2021-07-16 | - 65,431.67 | House Refi                                     |     |
+|            |             |                                                |     |
 |            |             |                                                |     |
 
 | Date       | Amount        | Spending Adjustments -- Spending occurring outside of JOINT account                |

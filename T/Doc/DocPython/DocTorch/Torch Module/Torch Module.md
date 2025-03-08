@@ -1,10 +1,11 @@
 .[[Torch Module]].
   , [[Feed Forward Layer]],
-  [[Transformer Module]]:
+  :
   , [[Convolution]], [[Torch Model]],
   ,
-  , [[Recurrent Modules]], 
-  DELS: [[Recurrent Modules]],
+  , [[Recurrent Modules]],
+  , [[Transformer Module]], 
+  DELS: [[Recurrent Modules]],[[Transformer Module]],
 
   DELS: [[Torch Model]], [[Convolution]], 
 

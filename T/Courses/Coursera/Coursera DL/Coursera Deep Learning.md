@@ -17,6 +17,8 @@
 
 ## COURSE 3
 
+(see [[RR/DL/DL strategy]])
+
 ### --- ML improvement strategy ---
 - General Strategy:
 	1. **Reduce removable bias**.  Fit TRAINING set well on cost function.  

@@ -1,8 +1,8 @@
 .[[FIN Tracking]].
-  ,   [[FIN Macro Tracking]], 
+  [[FIN Tracking Procedure]], 
 
 - [[FIN Budget]]:		
 - [[FIN Flows]]:
 - [[FIN Recurring]]:		List of all recurring payments
-- [[FIN Mint]]:			Used for monthly tracking of transactions  (ALL CARDS)
-- [[FIN Macro Tracking]]:	Tracking of macro cash flows
+- [[FIN Rocket]]:			Used for monthly tracking of transactions  (ALL CARDS)
+- [[FIN Tracking Procedure]]:	Tracking of macro cash flows

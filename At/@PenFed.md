@@ -2,6 +2,18 @@
 
 # LOG
 
+### 2025-03-07  Check if account is open
+
+press #3. #7. #1. 
+
+Platnuium. 6320 is still open. The account was opened in 2010.
+
+It is in good standing, and autopay is working.
+
+
+
+
+
 ### 2023-06-19  
 
 
