@@ -1,6 +1,10 @@
 .[[FIN Budget]].
-  [[Tracking]]
- 
+  , [[2024 Budget]], [[2025 Budget]], [[FIN Categories]], 
+
+  , [[2025 Budget]], [[Budget.xlsx]], [[Budget.xlsx 1]], [[Budget.xlsx 2]], [[Budget.xlsx 3]]
+  , [[FIN Categories]], 
+  DELS: [[Tracking]], 
+
 - [[2025 Budget]]: 
 - [[FIN Flows]]: coarse-grained budget
 - [[FIN Categories]]: Budget categories

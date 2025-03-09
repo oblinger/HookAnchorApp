@@ -1,9 +1,11 @@
 .[[DLF]].
   , [[DL Analyze]], [[DL Areas]], [[DL Data Loading]], [[DL Examples]]
-  , [[DL Foundational Model Building]], [[DL Notation]], [[DL Optim]], [[RR/DL/DLF/DL Strategy]]
+  , [[DL Foundational Model Building]], [[DL Notation]], [[DL Optim]], 
   , [[DL Template]], [[DL Visualize]],
   , [[DL Activation]], [[DL Visualization]],
-  , [[DL Initialization]], 
+  , [[DL Initialization]],
+  , [[DL Strategy]], 
+  DELS: [[RR/DL/DLF/DL Strategy]], 
 
 
 Deep Learning Framework
