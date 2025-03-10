@@ -1,4 +1,5 @@
 
+[[Now\|Mon Oct 2  2023 ]]  	[[Now#pay for transcriptions]]  
 [[Prime\|Mon Oct 2  2023 ]]  	[[Prime#TOP]]  
 [[Prime\|Mon Oct 2  2023 ]]  	[[Prime#Q2]]  
 [[Prime\|Mon Oct 2  2023 ]]  	[[Prime#WAITING]]  

@@ -3,6 +3,12 @@
 
 ## Directions
 
+### Other Genres
+
+Below are books I have loved, I would like to get some non-sci-fi books in other genres that I might like, first suggest genres I might like, and why? 
+
+### Standard
+
 The books listed below are favorites of mine.  Please suggest other books I might like to read.  In general I like:
 - Hard science fiction books involving stories built around novel concepts. 
 - Also books across other genres that involve novel concepts are of interest.
@@ -10,7 +16,7 @@ The books listed below are favorites of mine.  Please suggest other books I migh
 - Books from other genres that are loved by folks like me
 
 
-BOOKS ABOUT SOCIETY THAT I HAVE LOVED INCLUDE:
+## BOOKS ABOUT SOCIETY THAT I HAVE LOVED INCLUDE:
 
 "Guns, Germs, and Steel" by Jared Diamond
 Although not a science book per se, it offers a thought-provoking analysis of the factors that have shaped human history.

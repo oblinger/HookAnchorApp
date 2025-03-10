@@ -1,4 +1,5 @@
 
+[[DLF\|Sun Jan 19  2025]]  	[[DLF#Data Input]]  
 [[DLF\|Sun Jan 19  2025]]  	[[DLF#Create DataLoader for training and test sets]]  
 [[DocPandas\|Sun Jan 19  2025]]  	[[DocPandas#DF SLICING]]  
 [[DL Opto\|Sat Jan 18  2025]]  	[[DL Opto#RMS_propagation]]  
