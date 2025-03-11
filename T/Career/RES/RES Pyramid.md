@@ -62,8 +62,9 @@ My sweet-spot is bridging world-leading R&D into rapid productization.
 ## SLICES (Capabilities I bring, and passions I have)
 
 ### SWEET SPOT - Bridging Research and Prototyping
-- My value and love is driving the bleeding edge research into practice
+- My values and loves are driving the bleeding edge research into practice
 - Proven leader bridging Generative AI Research into Practical Application
+- Technical Architect Lead (overlapping w/ product and research)
 
 ### TECH AREA
 - Generative AI:  Covers CV/DL/ML/AI areas I want to highlight
@@ -74,7 +75,7 @@ My sweet-spot is bridging world-leading R&D into rapid productization.
 - Innovating
 - Productizing
 
-### ROLE - LEADER / HANDS ON
+### ROLE - LEADER / HANDS-ON
 - Technical Manager / Tech Lead / Director of technical project
 
 ### ORG

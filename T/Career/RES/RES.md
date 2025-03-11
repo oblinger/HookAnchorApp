@@ -4,13 +4,10 @@
   FACTS:	[[RES Src Info]], [[RES Numbers]], [[RES Patents]], [[RES Papers]],
   OTHER:	[[RES War]], [[RES War AI]], [[RES Pyramid]], [[RES References]],
   DIRS:		[[RES Job History]], [[RES Examples]], [[RES Versions]],
+  CLOSET	[[Resume]], 
   .
 - [[RES Instant Design Story]],
 - [[2024-04-01 Resume Rewrite]],
-  ,
-  , [[Resume]], 
-
-
 
 
 # LINKED IN PARTS

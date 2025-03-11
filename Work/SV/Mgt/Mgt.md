@@ -4,6 +4,16 @@
 
 # Log
 
+### 2025-03-10  W
+
+- Working towards simultaneous AI & manual
+- Auto-remote execution
+- 
+
+Oh yes! Weekly progress: Identified pipeline speedup areas, remote game executions on N jobs implemented and validated, executable Dats implemented, established AI-SWE flow for game flagging and annotation correction
+
+
+
 ### 2025-03-03  
 - Tested new meta runner in dev and rc1, launched run to profile pipeline, 
 - POC implementation of remote job execution, 

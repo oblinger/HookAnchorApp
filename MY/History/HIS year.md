@@ -1,4 +1,8 @@
 
+[[KBD App Keys\|Mon Oct 2  2023 ]]  	[[KBD App Keys#= OBSIDIAN APP KEYS =]]  
+[[Friday\|Mon Oct 2  2023 ]]  	[[Friday#BEEN THERE]]  
+[[Friday\|Mon Oct 2  2023 ]]  	[[Friday#DATE NIGHTS]]  
+[[Habit\|Mon Oct 2  2023 ]]  	[[Habit#- Bucketed Day]]  
 [[Now\|Mon Oct 2  2023 ]]  	[[Now#pay for transcriptions]]  
 [[Prime\|Mon Oct 2  2023 ]]  	[[Prime#TOP]]  
 [[Prime\|Mon Oct 2  2023 ]]  	[[Prime#Q2]]  
