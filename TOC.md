@@ -21,7 +21,7 @@
                 [[RES Job History]]: 
                     [[AF]]: 
             [[NJ]]: [[SEEK]],	[[NJ22]],	[[NJ Todo]],	[[NJ16]],	
-                [[TG]]: [[NJ Queries]],	
+                [[TG]]: 
         [[FIN]]: [[FIN Tracking]],	
             [[FIN Log]]: 
             [[FIN Bills]]: 
@@ -107,3 +107,4 @@
     [[Set]]: [[Recipe]],	[[Read]],	[[Book]],	
         [[Humor]]: 
         [[BUY]]: 
+[[Anyscale]]: 
