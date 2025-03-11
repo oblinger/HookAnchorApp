@@ -1,4 +1,6 @@
 
+[[DL Examples\|Mon Jan 20  2025]]  	[[DL Examples#Define the loss function and optimizer]]  
+[[DL Examples\|Mon Jan 20  2025]]  	[[DL Examples#Plot the loss curves]]  
 [[DL Analyze\|Sun Jan 19  2025]]  	[[DL Analyze#Pandas]]  
 [[DL Analyze\|Sun Jan 19  2025]]  	[[DL Analyze#Torch Model]]  
 [[NJ Coaches\|Sun Jan 19  2025]]  	[[NJ Coaches#2025-01-19  GENERAL RESOURCES]]  
