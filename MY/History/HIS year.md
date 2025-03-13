@@ -1,4 +1,5 @@
 
+[[Eli Firsts\|Mon Oct 2  2023 ]]  	[[Eli Firsts#2023-09-10  Quote]]  
 [[Eli Firsts\|Mon Oct 2  2023 ]]  	[[Eli Firsts#2023-09-05 Bike Riding in circles]]  
 [[@Realplay\|Mon Oct 2  2023 ]]  	[[@Realplay#2023-09-19  Intro Discussion]]  
 [[KBD App Keys\|Mon Oct 2  2023 ]]  	[[KBD App Keys#= OBSIDIAN APP KEYS =]]  

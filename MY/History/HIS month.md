@@ -1,4 +1,5 @@
 
+[[DL Examples\|Mon Jan 20  2025]]  	[[DL Examples#Create DataLoader for training and test sets]]  
 [[DL Examples\|Mon Jan 20  2025]]  	[[DL Examples#Define the loss function and optimizer]]  
 [[DL Examples\|Mon Jan 20  2025]]  	[[DL Examples#Plot the loss curves]]  
 [[DL Analyze\|Sun Jan 19  2025]]  	[[DL Analyze#Pandas]]  
