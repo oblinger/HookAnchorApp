@@ -1,3 +1,4 @@
+- factory item template
 - call Felipe
 
 - Quarterly budget

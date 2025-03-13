@@ -5,8 +5,8 @@ n:: no prefix.	Dated entries without any typing prefix
 
 | Date       | File                                        | Notes                                                                                                                             |
 | ---------- | ------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------- |
+| 2025-03-12 | [[Mgt]]                                         | W                                                                                                                                 |
 | 2025-03-10 | [[TG]]                                          | Old DataView Template                                                                                                             |
-| 2025-03-10 | [[Mgt]]                                         | W                                                                                                                                 |
 | 2025-03-08 | [[FIN Tracking]]                                | 2025 Q1 Analysis                                                                                                                  |
 | 2025-03-07 | [[@PenFed]]                                     | Check if account is open                                                                                                          |
 | 2025-03-03 | [[Reflections]]                                 | Depressed?  Demoralized?                                                                                                          |

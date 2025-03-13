@@ -4,13 +4,18 @@
 
 # Log
 
-### 2025-03-10  W
+### 2025-03-12  W
 
+- New Version on Prod -  (James - One time end-to-end QA)
+- Alpha testing - 
 - Working towards simultaneous AI & manual
-- Auto-remote execution
-- 
+- Dataset construction - 
 
+- Auto-remote execution -
+ 
 Oh yes! Weekly progress: Identified pipeline speedup areas, remote game executions on N jobs implemented and validated, executable Dats implemented, established AI-SWE flow for game flagging and annotation correction
+
+
 
 
 
