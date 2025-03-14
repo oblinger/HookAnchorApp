@@ -1,4 +1,34 @@
 
+
+### 2025-03-13  Relevant Job Titles
+
+- Engineering Manager
+
+- AI Research Scientist
+- ML Engineer / CV Engineer
+- AI Product Manager
+- Data Scientist
+- Prompt Engineer
+
+### 2025-03-13  Job Trends in AI in 2025
+
+#### genAI continues in SF -- What are the emerging trends in AI job market for 2025?
+https://blog.getaura.ai/ai-job-trends-2025#:~:text=What%20are%20the%20emerging%20trends,to%20succeed%20in%20the%20field.
+
+Key trends include the rise of generative AI and creative roles, increased demand for hybrid skills combining technical expertise with strategic capabilities, and the continued prominence of tech hubs like San Francisco as talent magnets for AI and machine learning engineers. These trends highlight the evolving nature of AI jobs and the skills required to succeed in the field.
+
+#### Adoption Job Trends
+https://www.intuition.com/ai-stats-every-business-must-know-in-2025/#:~:text=Voice%20AI%20Voice%20assistants%20are%20quickly%20emerging,becoming%20an%20integral%20part%20of%20professional%20settings.
+- AI has an expected annual growth rate of **36.6%** between 2024 and 2030 ([Teneo](https://www.teneo.ai/blog/ai-ascendancy-unveiling-top-ai-statistics-and-trends-for-2025)).
+- A study by [McKinsey](https://www.mckinsey.com/capabilities/quantumblack/our-insights/the-state-of-ai) shows that AI adoption amongst companies has leapt to **72%**, after hovering around 50% from 2020-2023.
+- [PWC](https://www.pwc.com/gx/en/issues/artificial-intelligence/publications/artificial-intelligence-study.html) predicts a boost in gross domestic product (GDP) of up to **26%** for local economies from AI by 2030.
+- ChatGPT had over 100 million users as of January 2023, this figure grew to more than **180 million** users by the end of 2024 ([Teneo](https://www.teneo.ai/blog/ai-ascendancy-unveiling-top-ai-statistics-and-trends-for-2025)).
+- AI could contrib up to **USD15.7** trillion to the global economy by 2030, more than the curr output of China and India combined. Of this, USD 6.6 trillion is likely to come from increased productivity and USD 9.1 trillion is likely to come from consumption-side effects ([PWC](https://www.pwc.com/gx/en/issues/artificial-intelligence/publications/artificial-intelligence-study.html)). 
+
+
+
+
+
 ### 2025-02-27  Using a cover letter
 
 - [Recruiter Searches on LinkedIn](https://grok.com/share/bGVnYWN5_9ef5eef7-3dc1-4245-bbcb-25eeedcf8f57) - 

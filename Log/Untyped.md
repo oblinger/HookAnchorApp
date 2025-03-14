@@ -5,6 +5,9 @@ n:: no prefix.	Dated entries without any typing prefix
 
 | Date       | File                                        | Notes                                                                                                                             |
 | ---------- | ------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------- |
+| 2025-03-13 | [[Cleaning Service]]                            | Cleaner: Denise                                                                                                                   |
+| 2025-03-13 | [[NJ Log]]                                      | Relevant Job Titles                                                                                                               |
+| 2025-03-13 | [[NJ Log]]                                      | Job Trends in AI in 2025                                                                                                          |
 | 2025-03-12 | [[Mgt]]                                         | W                                                                                                                                 |
 | 2025-03-10 | [[TG]]                                          | Old DataView Template                                                                                                             |
 | 2025-03-08 | [[FIN Tracking]]                                | 2025 Q1 Analysis                                                                                                                  |

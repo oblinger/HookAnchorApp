@@ -1,4 +1,9 @@
 
+### 2025-03-13  Cleaner: Denise
+
+Hey Denice, this is Dan, we met at my house next to Jim and Lauren Morales (101 Bache Street).  You said that you would be interested in doing our two bathrooms for $60 when you come to their house.  When is your next visit, maybe we can do it then?
+
+
 ### 2024-07-26  Cleaners:  Julissa Cleaning
 
 $30/hr

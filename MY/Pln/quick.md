@@ -1,3 +1,5 @@
+- end to end testin of alpha (james)
+- alpha games product msg
 - factory item template
 - call Felipe
 
