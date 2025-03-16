@@ -12,6 +12,10 @@
 
 == ACTIVE ==
 
+CLEANER
+  Denise ‭+1 (415) 571-1043‬ (also does Lauren's place)
+DOG SITTER
+  
 BABY SITTER - NANNY
   Maria Nanny
   Nina Nanny

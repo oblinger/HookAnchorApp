@@ -1,4 +1,7 @@
 
+[[DL Examples\|Mon Jan 20  2025]]  	[[DL Examples#Split the data into training and test sets]]  
+[[DL Examples\|Mon Jan 20  2025]]  	[[DL Examples#Standardize the data]]  
+[[DL Examples\|Mon Jan 20  2025]]  	[[DL Examples#Convert to PyTorch tensors]]  
 [[DL Examples\|Mon Jan 20  2025]]  	[[DL Examples#Create DataLoader for training and test sets]]  
 [[DL Examples\|Mon Jan 20  2025]]  	[[DL Examples#Define the loss function and optimizer]]  
 [[DL Examples\|Mon Jan 20  2025]]  	[[DL Examples#Plot the loss curves]]  

@@ -5,6 +5,9 @@
 
 - [ ] elevator pitch who you are (ask QL)
 
+- **A manager must also debug projects.** _“Ask the manager to describe a time when she ran a project that was behind schedule, and what she did in that scenario.”_ [page 141] However, careful with what is mentioned in point (1), managers can play the words.
+- **Interview for management philosophy.** This might take some people by surprise as it is not a typical question. However, _“If she doesn’t have one at all, that might be a red flag.”_ [page 141] If the interviewee is stuck, nudge them with questions such as how does she stay hands-on vs how does she delegate? How does she understand that something is important vs urgent? What does she think her role as a manager is?
+
 TEXECUTION
 Which (inter)
 

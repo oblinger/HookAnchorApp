@@ -1,7 +1,6 @@
 .[[Eli]].
   [[ELI Log]], [[Eli Food]], [[ELI Quotes]], ,
   [[Eli Strategy]]:
-  :
   [[Eli Firsts]]:
   [[Eli Activities]]:
   [[Eli Interactions]]:

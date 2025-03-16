@@ -5,6 +5,8 @@ n:: no prefix.	Dated entries without any typing prefix
 
 | Date       | File                                        | Notes                                                                                                                             |
 | ---------- | ------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------- |
+| 2025-03-14 | [[ELI Quotes]]                                  | Favorite Woman                                                                                                                    |
+| 2025-03-14 | [[Eli Report Cards]]                            |                                                                                                                                   |
 | 2025-03-13 | [[Cleaning Service]]                            | Cleaner: Denise                                                                                                                   |
 | 2025-03-13 | [[NJ Log]]                                      | Relevant Job Titles                                                                                                               |
 | 2025-03-13 | [[NJ Log]]                                      | Job Trends in AI in 2025                                                                                                          |

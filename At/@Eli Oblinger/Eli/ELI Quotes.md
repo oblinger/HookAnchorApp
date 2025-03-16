@@ -1,4 +1,17 @@
 
+
+### 2025-03-14  Favorite Woman
+
+**Who is an important woman in your life? Why?** 
+
+
+Here are their responses:
+
+Adrienne: My mom because she sometimes takes me to get sweets.
+Anaya: My mom because she always loves me and my sister because she makes me happy when I am sad. 
+Annie: My mom because she is a member of our family.
+Aric: My mom is important because she always makes dinner. 
+Eli: My grandma is important because she helps me by babysitting me when I was a baby to keep me safe.
 ### 2025-01-01  
 
 I am full up to here.  (pointing at his chest)  so I can't eat any more.
