@@ -1,4 +1,5 @@
 
+[[DL Examples\|Mon Jan 20  2025]]  	[[DL Examples#Extract the features and target variable]]  
 [[DL Examples\|Mon Jan 20  2025]]  	[[DL Examples#Split the data into training and test sets]]  
 [[DL Examples\|Mon Jan 20  2025]]  	[[DL Examples#Standardize the data]]  
 [[DL Examples\|Mon Jan 20  2025]]  	[[DL Examples#Convert to PyTorch tensors]]  
