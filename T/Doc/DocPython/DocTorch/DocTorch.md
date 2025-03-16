@@ -5,7 +5,7 @@
   , [[Torch Initialization]], 
   , [[Torch Module]],
   [[Torch Loss]], [[Torch Optim]]
-  DELS: [[Torch Module]],[[Torch Model  nn.Module]],
+  [[Torch Libraries]], 
 
 
 
