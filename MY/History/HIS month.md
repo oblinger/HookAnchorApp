@@ -132,7 +132,7 @@
 [[POMDP\|Thu Dec 19  2024]]  	[[POMDP#Components of a POMDP:]]  
 [[RR DEFINITIONS\|Thu Dec 19  2024]]  	[[RR DEFINITIONS#2024-12-18  Schelling Point]]  
 [[RR PAPERS\|Thu Dec 19  2024]]  	[[RR PAPERS#2024-12-18  DETRs Beat YOLOs on real-time object detection]]  
-[[RR Blogs\|Thu Dec 19  2024]]  	[[RR Blogs#2024-12-18  Arjan's Code Diagnosis]]  
+[[RR TUTORIALS\|Thu Dec 19  2024]]  	[[RR TUTORIALS#2024-12-18  Arjan's Code Diagnosis]]  
 [[DL Systems\|Thu Dec 19  2024]]  	[[DL Systems##review]]  
 [[RR SYSTEMS\|Thu Dec 19  2024]]  	[[RR SYSTEMS#2024-12-18  Lang Chain]]  
 [[RES Highlights\|Wed Dec 18  2024]]  	[[RES Highlights#Highlight Ideas]]  

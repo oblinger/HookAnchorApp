@@ -1,5 +1,9 @@
 .[[RR PAPERS]].  [[LRN.]]
-  [[RR DEFINITIONS]], [[RR Blogs]], 
+  [[RR DEFINITIONS]], ,
+  , ,
+  , [[RR Blogs]], 
+  DELS: [[RR Blogs]],
+  DELS: [[RR Blogs]],[[RR TUTORIALS]], 
 
 
 

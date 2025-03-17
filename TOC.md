@@ -1,7 +1,7 @@
 
 # TABLE OF CONENTS
 
-[[mate]],	
+[[Groq]],	[[mate]],	
 [[kmr]]: [[WEEKLY]],	
     [[RR]]: [[Lrn]],	[[RR Leet]],	[[RR PAPERS]],	[[RR Philosophy]],	[[RR MGR]],	
         [[RR SYSTEMS]]: 
@@ -45,7 +45,7 @@
         [[Mus]]: 
         [[Doc]]: [[DocObsidian]],	
             [[DocPython]]: [[DocSklearn]],	
-                [[DocTorch]]: [[Torch Module]],	
+                [[DocTorch]]: [[Torch Module]],	[[Torch Libraries]],	
         [[Legal]]: [[2023 Legal SV]],	
             [[2017 Legal Ob Labs]]: 
             [[2023 Legal NDA - AF]]: 

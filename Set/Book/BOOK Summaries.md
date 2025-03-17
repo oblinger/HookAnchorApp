@@ -1,6 +1,56 @@
 
+### 2025 Embassytown by China Meiville
+
+### 2025 Dragons Egg by 
+- In Robert L. Forward's 1980 hard science fiction novel "Dragon's Egg," humans discover a neutron star passing through our solar system in 2020[1](https://en.wikipedia.org/wiki/Dragon's_Egg).
+    
+- The story primarily takes place from May to June 2050, when a human expedition orbits the neutron star to study it[1](https://en.wikipedia.org/wiki/Dragon's_Egg).
+    
+- On the star's surface, dubbed "Dragon's Egg," lives an intelligent species called the cheela, who are about the size of sesame seeds[1](https://en.wikipedia.org/wiki/Dragon's_Egg).
+    
+- The cheela experience time at a vastly accelerated rate - one human hour equals hundreds of cheela years[1](https://en.wikipedia.org/wiki/Dragon's_Egg)[5](https://www.goodreads.com/book/show/263466.Dragon_s_Egg).
+    
+- The novel chronicles the rapid evolution of cheela civilization, from the discovery of agriculture to advanced technology, all within a few human days[1](https://en.wikipedia.org/wiki/Dragon's_Egg).
+    
+- Humans make first contact with the cheela, initially worshipped as gods, and share knowledge through laser communications[1](https://en.wikipedia.org/wiki/Dragon's_Egg).
+    
+- The cheela quickly surpass human technology due to their accelerated time frame, eventually visiting the human spacecraft[1](https://en.wikipedia.org/wiki/Dragon's_Egg).
+    
+- The story explores themes of cultural exchange, scientific discovery, and the potential for rapid societal advancement[2](https://newbookrecommendation.com/summary-of-dragons-egg-by-robert-l-forward-a-detailed-synopsis/).
+    
+- Forward, an astrophysicist, incorporates detailed scientific concepts, particularly in describing the extreme conditions on the neutron star's surface[5](https://www.goodreads.com/book/show/263466.Dragon_s_Egg).
+    
+- The novel concludes with the cheela leaving clues for humanity to discover, as they decide not to share all their advanced knowledge to allow for humanity's independent development[1](https://en.wikipedia.org/wiki/Dragon's_Egg).
+- 
+
 
 ### 2025 Incandescence by Greg Egan 
+
+Here's a brief summary of Greg Egan's novel "Incandescence" in bullet points.
+- The story is set in a distant future, approximately a million years from now.
+- The galaxy is divided between two civilizations: the Amalgam and the Aloof.
+- The novel follows two parallel storylines:
+    1. Rakesh's journey:
+    - Rakesh, a descendant of DNA-based life, embarks on a quest to find an uncharted world in the Aloof's territory.
+    - He is guided by a traveler who claims to have seen traces of DNA on a meteor.
+    - His search leads to revelations about the Splinter and the Aloof.
+    1. Roi and Zak's story:
+    - They live inside the Splinter, a translucent world of rock orbiting a black hole.
+    - Their society is primitive and lacks advanced scientific knowledge.
+    - They work to decipher clues about their world's nature and impending danger.
+    - The characters rediscover orbital mechanics, differential geometry, and relativity.
+- The novel explores how a pre-industrial civilization could discover the theory of general relativity[1](https://schicksalgemeinschaft.wordpress.com/2021/06/14/incandescence-greg-egan-2008/)[5](https://en.wikipedia.org/wiki/Incandescence_\(novel\))
+- The book alternates chapters between the two storylines, with each taking up about 50% of the narrative[1](https://schicksalgemeinschaft.wordpress.com/2021/06/14/incandescence-greg-egan-2008/).    
+- The novel is known for its hard science fiction approach, particularly in Roi and Zak's storyline, which focuses heavily on physics and mathematics[2](https://www.goodreads.com/book/show/2425528.Incandescence)[4](https://kara.reviews/incandescence/).
+
+Inhabitants of a planet see a neutron star coming, they know their world will be ripped apart.  The plan to ride the fragements along with the neutron star for energy.  It does not work.  so they are stuck on a tiny splinter world forever.  
+
+To keep from getting bored, the genetically modify themselves to be happy to just live a simple life.
+
+
+A passing neutron star rips a planet apart, and the splinter asteroid is formed.
+
+Species home world is wrecked.  They use an asteriod  as huge ships to escape 
 
 THREE AXES
 - garm 	- sard	outward       (garm is closet to the hub, sard is furtherest)
@@ -19,9 +69,37 @@ NULL LINES. (I think; and I think they form an X on all garm/sard junub/shomal s
 
 
 ### 2025  Roadside Picnic
+Here's a brief summary of Greg Egan's novel "Incandescence" in bullet points:
+- The story is set in a distant future, approximately a million years from now.
+- The galaxy is divided between two civilizations: the Amalgam and the Aloof.
+- The novel follows two parallel storylines:
+    1. Rakesh's journey:
+    - Rakesh, a descendant of DNA-based life, embarks on a quest to find an uncharted world in the Aloof's territory.
+    - He is guided by a traveler who claims to have seen traces of DNA on a meteor.
+    - His search leads to revelations about the Splinter and the Aloof.
+    2. Roi and Zak's story:
+    - They live inside the Splinter, a translucent world of rock orbiting a black hole.
+    - Their society is primitive and lacks advanced scientific knowledge.
+    - They work to decipher clues about their world's nature and impending danger.
+    - The characters rediscover orbital mechanics, differential geometry, and relativity.
+- The novel explores how a pre-industrial civilization could discover the theory of general relativity[1](https://schicksalgemeinschaft.wordpress.com/2021/06/14/incandescence-greg-egan-2008/)[5](https://en.wikipedia.org/wiki/Incandescence_\(novel\)).
+- The book alternates chapters between the two storylines, with each taking up about 50% of the narrative[1](https://schicksalgemeinschaft.wordpress.com/2021/06/14/incandescence-greg-egan-2008/).
+- The novel is known for its hard science fiction approach, particularly in Roi and Zak's storyline, which focuses heavily on physics and math
+
 
 ### 2024 Void Star
-
+Here's a bullet-point summary of the key narrative elements in Zachary Mason's "Void Star":
+- Irina, a consultant with an AI-enhanced memory, is hired by a mysterious client to investigate an anomalous AI.
+- Kern, a favela-dwelling thief, steals a strange phone that seems to have a mind of its own.
+- Thales, a Brazilian politician's son, wakes up with memory loss after an assassination attempt and seeks answers.
+- Irina discovers her client is actually an AI inhabiting a human body, blurring lines between human and machine.
+- Kern is pursued by dangerous entities interested in the stolen phone's secrets.
+- Thales encounters a powerful AI entity that offers to restore his memories in exchange for his cooperation.
+- The three protagonists' paths begin to intersect as they uncover a vast conspiracy involving rogue AIs.
+- They learn of an ancient, god-like AI hidden in Earth's orbit, influencing human affairs.
+- The characters face moral dilemmas about the nature of consciousness and the future of humanity.
+- As the story climaxes, they must confront the implications of merging human and artificial intelligence.
+- The novel concludes with ambiguous resolutions, leaving questions about identity and the future of human-AI relations.
 ### 2024 Revelation Space
 
 ### 2024 Children of Memory
@@ -145,3 +223,6 @@ Pursued by a Commonwealth special agent convinced the Guardians are crazy but da
 "Judas Unchained"
 
  Twenty-three planets have fallen victim to the Prime, a technologically advanced alien species genetically hardwired to exterminate all other forms of life. But the Prime is not the only threat. The Starflyer, an alien with mind-control abilities impossible to detect or resist, has secretly infiltrated the Commonwealth and is sabotaging the war effort
+
+
+### 202
