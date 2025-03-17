@@ -5,6 +5,7 @@ n:: no prefix.	Dated entries without any typing prefix
 
 | Date       | File                                        | Notes                                                                                                                             |
 | ---------- | ------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------- |
+| 2025-03-16 | [[Race]]                                        | Affirmative Action causing bad outcomes                                                                                           |
 | 2025-03-14 | [[ELI Quotes]]                                  | Favorite Woman                                                                                                                    |
 | 2025-03-14 | [[Eli Report Cards]]                            |                                                                                                                                   |
 | 2025-03-13 | [[Cleaning Service]]                            | Cleaner: Denise                                                                                                                   |
@@ -77,9 +78,9 @@ n:: no prefix.	Dated entries without any typing prefix
 | 2024-12-27 | [[@Schwab]]                                     | Open                                                                                                                              |
 | 2024-12-24 | [[MED Exercise]]                                | Ideas                                                                                                                             |
 | 2024-12-18 | [[@Chang Yuan]]                                 | Meeting                                                                                                                           |
+| 2024-12-18 | [[RR Blogs]]                                    | Arjan's Code Diagnosis                                                                                                            |
 | 2024-12-18 | [[RR DEFINITIONS]]                              | Schelling Point                                                                                                                   |
 | 2024-12-18 | [[RR PAPERS]]                                   | DETRs Beat YOLOs on real-time object detection                                                                                    |
-| 2024-12-18 | [[RR TUTORIALS]]                                | Arjan's Code Diagnosis                                                                                                            |
 | 2024-12-18 | [[RR SYSTEMS]]                                  | Lang Chain                                                                                                                        |
 | 2024-12-17 | [[MED Log]]                                     | HUI - HEART                                                                                                                       |
 | 2024-12-16 | [[Reflections]]                                 | Need to push for specific targets for a day or period                                                                             |

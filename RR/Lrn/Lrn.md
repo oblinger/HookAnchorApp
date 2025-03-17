@@ -1,8 +1,6 @@
-.[[Lrn]].
-  , [[Lrn Mgt]],
-  , ,
-  , [[LRN.]], [[LRN ToRead]],
-  DELS: [[LRN.]],[[LRN Todo]], 
+.[[Lrn]].     [[LRN.]]
+  [[Lrn Mgt]],
+  [[LRN.]], [[LRN ToRead]],
 
 
 

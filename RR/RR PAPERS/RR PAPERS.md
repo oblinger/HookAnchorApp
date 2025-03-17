@@ -1,5 +1,5 @@
 .[[RR PAPERS]].  [[LRN.]]
-  [[RR DEFINITIONS]], [[RR TUTORIALS]], 
+  [[RR DEFINITIONS]], [[RR Blogs]], 
 
 
 

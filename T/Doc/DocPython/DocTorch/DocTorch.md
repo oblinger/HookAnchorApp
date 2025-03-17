@@ -1,11 +1,13 @@
 .[[DocTorch]].
   TOPICS: [[Torch Examples]],
   , [[Torch Tensor]],
-  , [[Torch Data]], 
-  , [[Torch Initialization]], 
+  , [[Torch Data]],
+  , [[Torch Initialization]],
   , [[Torch Module]],
   [[Torch Loss]], [[Torch Optim]]
-  [[Torch Libraries]], 
+  ,
+  , [[Torch Libraries]], 
+  DELS: [[Torch Libraries]],
 
 
 
