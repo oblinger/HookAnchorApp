@@ -1,7 +1,8 @@
 
 .[[PP]]. <[[Prj]] 
   [[PQ]], [[Big]],
-- [[2022-01-00 Nanny]], 
+- [[2022-01-00 Nanny]],
+  , [[Measuring Intelligence]], 
 
 - [[Measuring Intelligence]] 
 - [[2024-05 Sell Acura|Acura]] - 
