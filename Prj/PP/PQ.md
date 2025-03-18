@@ -1,5 +1,8 @@
 # Personal "Quick" Projects
 
+
+### 2025-03-18  
+
 ### 2025-01-27  Oven Repair
 
 I would like to get a quote for the labor component for repairing my LG oven, assuming the only thing required is to install a new front console component on the oven.  I understand the labor will be more if the repair is something more than replacing the console.  I am happy to get the labor quote as an hourly figure, or a flat rate.

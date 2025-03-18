@@ -5,7 +5,7 @@
   [[Ransac]], [[Sigmoid]], [[Softmax]], [[Stationary]], [[KL Divergence]],
   [[Hypothesis Testing]], [[Stat Anomolies]],
   [[Perplexity]], [[Hypothesis Testing]], [[Stat Anomolies]], [[Z-Test]], [[STATS]],
-  [[Stat Terms]], 
+  ,
   , ,
   , ,
   DELS: ,
@@ -13,8 +13,9 @@
   , [[CrossEntropy Loss]], [[Logistic Regression - Logit Function]], [[Loss Functions]]
   , [[MeanSquaredError Loss]],
   , [[Beroulli Distribution]], [[nn.CrossEntropyLoss]], [[nn.NLLLoss]], [[STAT Distributions]],
-  , [[Measure]], 
-  DELS: [[Stat Alg]],[[Kalman Filter]],[[RMS]], [[Stat Alg]], [[Stat Alg]],
+  , [[Measure]],
+  , [[Stat Terms]], 
+  DELS: [[Stat Alg]],[[Kalman Filter]],[[RMS]], [[Stat Alg]], [[Stat Alg]],[[Stat Terms]],
 
 [[Kalman Filter]] 
 

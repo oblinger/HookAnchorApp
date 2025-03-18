@@ -1,4 +1,7 @@
 
+[[DocConda\|Thu Oct 12  2023]]  	[[DocConda#Install]]  
+[[DocVagrant\|Thu Oct 12  2023]]  	[[DocVagrant#Allow any IP to connect, with a password:]]  
+[[SNIP\|Tue Oct 3  2023 ]]  	[[SNIP#2023-10-03  Science vs Engineering]]  
 [[LCM\|Tue Oct 3  2023 ]]  	[[LCM#LOG]]  
 [[CVP\|Tue Oct 3  2023 ]]  	[[CVP#PTRS]]  
 [[vball\|Tue Oct 3  2023 ]]  	[[vball#LOG]]  

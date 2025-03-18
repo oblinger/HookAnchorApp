@@ -1,4 +1,7 @@
 
+[[DL Data Loading\|Mon Jan 20  2025]]  	[[DL Data Loading#Separate features and targets]]  
+[[DL Data Loading\|Mon Jan 20  2025]]  	[[DL Data Loading#Separate the two classes]]  
+[[DL Data Loading\|Mon Jan 20  2025]]  	[[DL Data Loading#Select 200 samples from each class]]  
 [[DL Data Loading\|Mon Jan 20  2025]]  	[[DL Data Loading#Combine the two classes]]  
 [[DL Data Loading\|Mon Jan 20  2025]]  	[[DL Data Loading#Convert to PyTorch tensors]]  
 [[DL Data Loading\|Mon Jan 20  2025]]  	[[DL Data Loading#Create DataLoader for training and test sets]]  
