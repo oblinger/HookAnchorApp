@@ -1,4 +1,8 @@
 
+[[LCM\|Tue Oct 3  2023 ]]  	[[LCM#LOG]]  
+[[CVP\|Tue Oct 3  2023 ]]  	[[CVP#PTRS]]  
+[[vball\|Tue Oct 3  2023 ]]  	[[vball#LOG]]  
+[[@Bryan Richard\|Mon Oct 2  2023 ]]  	[[@Bryan Richard#Log]]  
 [[@Chase Bank\|Mon Oct 2  2023 ]]  	[[@Chase Bank#LOG]]  
 [[Eli Firsts\|Mon Oct 2  2023 ]]  	[[Eli Firsts#2023-10-01  Ar-gen-tin-a]]  
 [[Eli Firsts\|Mon Oct 2  2023 ]]  	[[Eli Firsts#2023-10-01  Adding]]  

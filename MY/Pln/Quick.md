@@ -1,7 +1,10 @@
-- end to end testin of alpha (james)
+- talk w/ Google about 3 month extension
+- lean on James
+- fix deck
+- taxes & property taxes
 - alpha games product msg
 - factory item template
-- call Felipe
+- call Felipe. meet.google.com/vre-thmk-fzh
 
 - Quarterly budget
 - Pre-mortem

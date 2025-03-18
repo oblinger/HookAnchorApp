@@ -1,4 +1,16 @@
 
+### 2025-03-17  Really off track & what to do.
+
+In all areas, I think I am just demoralized.  I know that I am not making good progress. I think the wall emotionally looks too large, so I am sticking my head in the sand.
+
+Thoughts:
+
+==> BUILD SYSTEMS: I need to build systems that are self-working and cause me to get productive work done each day.  When I do get productive work done, I immediately feel more optimistic, but when I don't, it quickly collapses.
+
+==> LOWER RISK OUTCOMES: During this time, I need to build some lower-risk outcomes that are still acceptable, even if not ideal. Then, I can shoot for higher-risk ones at the same time.
+
+==> HAVE FUN:  I presently have little to look forward to each week.  Reading sci-fi is my only luxury.  That is pretty thin.  I need more.
+
 ### 2025-03-03  Depressed?  Demoralized?
 
 - I get so little work done in a week, but I seem to be "working" all the time.

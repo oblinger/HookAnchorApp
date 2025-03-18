@@ -1,4 +1,8 @@
 
+[[DL Data Loading\|Mon Jan 20  2025]]  	[[DL Data Loading#Combine the two classes]]  
+[[DL Data Loading\|Mon Jan 20  2025]]  	[[DL Data Loading#Convert to PyTorch tensors]]  
+[[DL Data Loading\|Mon Jan 20  2025]]  	[[DL Data Loading#Create DataLoader for training and test sets]]  
+[[DL Examples\|Mon Jan 20  2025]]  	[[DL Examples#Load the Iris dataset]]  
 [[DL Examples\|Mon Jan 20  2025]]  	[[DL Examples#Extract the features and target variable]]  
 [[DL Examples\|Mon Jan 20  2025]]  	[[DL Examples#Split the data into training and test sets]]  
 [[DL Examples\|Mon Jan 20  2025]]  	[[DL Examples#Standardize the data]]  

@@ -1,7 +1,7 @@
 
 # TABLE OF CONENTS
 
-[[Groq]],	[[mate]],	
+[[Google]],	[[Groq]],	[[mate]],	
 [[kmr]]: [[WEEKLY]],	
     [[RR]]: [[Lrn]],	[[RR Leet]],	[[RR PAPERS]],	[[RR Philosophy]],	[[RR MGR]],	
         [[RR SYSTEMS]]: 

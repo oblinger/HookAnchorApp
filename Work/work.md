@@ -4,16 +4,31 @@
 .**SOON**.
      Parallel Ann spec agreement.
      close loop AWS transition plan
-     patents signed
-     okrs - Get numbers for OKRs
-     - look at PR.
      .
 	[DT](spot://dt): 50 games in
-    [Min](spot:://AI~MIN): [todo](https://www.notion.so/sportsvisio/STORY-Test-AI-Min-Ready-PaidProd-173719d6f2bd80f59eb5c8d2dc1aded7?pvs=4).  Seam assess filter.
+    [Min](spot:://AI~MIN): [todo](https://www.notion.so/sportsvisio/STORY-Test-AI-Min-Ready-PaidProd-173719d6f2bd80f59eb5c8d2dc1aded7?pvs=4).  Sean assess filter.
 	[Infr](https://www.notion.so/sportsvisio/PROJ-Infrastructure-150719d6f2bd80f087b2e931ef179536?pvs=4):	multi-run ???
     [Fball](spot://fireball):	Measure effectiveness
 
-[[_template]] 
+### Q1 OKRs
+- ^ 1.1 Alpha testing
+- !! 1.2 Work w/ Matias.    (Min on Dev)
+- !^ 2.1  Push for min dataset w/ James
+- - 2.2  No bugs. (fix two bugs)
+- + 2.3. Metrics done
+- + 2.4. Automation done?
+   (showcase how easy; what left to do)
+- -  3.1. Low hanging improve.  
+    (regression test all Q since Q3 2023)
+- -  3.2  Speedups 
+
+
+Q2 
+- Speedups
+- Shot Charts
+- Stability and scaling
+- (other AI products)
+- what else????l
 ## TRACK
 - File Patent. (put note in to Mgt channel)
 

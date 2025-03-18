@@ -5,7 +5,7 @@
   [[Ransac]], [[Sigmoid]], [[Softmax]], [[Stationary]], [[KL Divergence]],
   [[Hypothesis Testing]], [[Stat Anomolies]],
   [[Perplexity]], [[Hypothesis Testing]], [[Stat Anomolies]], [[Z-Test]], [[STATS]],
-  , ,
+  [[Stat Terms]], 
   , ,
   , ,
   DELS: ,

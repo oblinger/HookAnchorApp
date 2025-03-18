@@ -1,4 +1,6 @@
 
+- https://console.cloud.google.com.    [Google Cloud Console](spot://Google~Cloud~Console) 
+
 # HowTo
 
 ## Start

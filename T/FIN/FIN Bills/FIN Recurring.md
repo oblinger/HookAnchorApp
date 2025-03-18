@@ -22,23 +22,24 @@ clean email
 Tangle (on Sapphire card)
 ### CHASE FREEDOM x4654
 ### WELLS UTILITIES
-- +$65/yr 		AAA Home Insurance
+- +$65/yr 	AAA Home Insurance
 - +$834/bi  	GEICO
 - +$163/mo 	AT&T
-- +$30/mo		Sonic
+- +$30/mo	Sonic
 
-- +$20/mo		Core Power Yoga
+- +$20/mo	Core Power Yoga
 - +$16/mo 	Netflix
 - +$15/m		Spotify Premium
 - +$6/mo		Rocket Money
 - +$5/mo		Medium Monthly
 - +$4/mo		NY Times
+- +$2/mo	 	Dan (family?) Google
 
 - +$199/yr   	Noom (Renews 06-27-2024)
 - +$55/yr		Vorwerk Thermomix Recipes (2023-12-11.  Web -> {ChefHat} -> Account )
 - ?$29/yr		Blue Mountain (goes up Aug-09-2024)
 - +$39/yr  	Consumer Reports Digital   2023-08-23
-- +$				CR On Health
+- +$			CR On Health
 - $99/yr		WSJ - Wall Street Journal  (Goes to $500/yr in Aug-2025)
 - $59/yr		Tangle
 - +$0/yr		1-Password (paid by QL's work)
