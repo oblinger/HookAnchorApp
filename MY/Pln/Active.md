@@ -1,3 +1,5 @@
+- https://www.linkedin.com/help/linkedin/answer/a569234?hcppcid=search
+- 
 - Fin plan for Merrill
 - - deep work schedule
 - [[Journaling]] 

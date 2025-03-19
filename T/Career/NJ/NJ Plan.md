@@ -9,7 +9,7 @@
 MY PLAN -- Be enough of an AI-IC to get a job as a tech manager, preferably at a FAANG, possibly as an IC
 
 LEARN
-1. PUZZLE CODING - Algo Monster, 
+1. PUZZLE CODING - Algo Monster, Leet Code
    ==> Get good at fast coding on medium and some hard Algo problems.
 2. COURSERA DL - Taking Coursera courses
 3. VIBE CODING - Make agents that do stuff
@@ -32,3 +32,15 @@ INTERVIEWING
 OTHER
 - Add to Star/War materials
 
+
+
+-- 
+Doug is in the NY office
+
+[[NJ Pyramid]]. Hack
+
+ML 
+- Look at reddit Reddit.  
+- Foundational models
+- Fine tuning
+- Prompt engineering
