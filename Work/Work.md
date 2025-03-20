@@ -57,7 +57,25 @@ FILIP: ask him again?
 
 ## __
 
+**
 
+-   
+    
+- SIZE - And not sized for regulation, but rather to the size of the gym it is in.
+    
+- HAIR - Pony tails and long hair are great… at least until your an AI trying to get a glimpse at the jersey number below it.
+    
+- SIDELINES - Players should be standing right on the sidelines to confuse our AI…. but they do.
+    
+- Multiple games in view, player practicing on the side, or with duplicate jerseys, no jerseys, refs wearing jerseys, odd numbers of players playing.
+    
+
+  
+  
+
+It all happens, and it is a fail, if our algorithms just fall over, so we need to tackle them all!
+
+**
 
 
 
