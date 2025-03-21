@@ -4,6 +4,34 @@
 
 # LOG
 
+
+### 2025-03-20  chat
+
+amazon scout
+
+Instore
+- inspection solution for wind turbine
+
+Make pytorch inference on faster
+- voice to text
+
+Sentior Principle SW  L7 L8 - 
+- Do research
+- FAIR - Special 
+- Exa-tech - directors
+
+Manager, Not TPM, 
+
+
+FAIR L8
+- how can you drive research at the edge?
+- Successful projects.
+- come with ideas
+
+
+HE IS AN L5 --  /400-500/
+
+
 ### n2022-07-28  Job pointers at Amazon
 
 Sorry for the spam!  
