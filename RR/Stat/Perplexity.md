@@ -1,4 +1,4 @@
-Perplexity;;measures the average number of choices the model has for predicting the next word (entropy of next word prediction) <!--SR:!2025-03-02,30,270-->
+Perplexity;;measures the average number of choices the model has for predicting the next word (entropy of next word prediction) <!--SR:!2025-06-10,81,270-->
 
 Perplexity Formula
 -?-

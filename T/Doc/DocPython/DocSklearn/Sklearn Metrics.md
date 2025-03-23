@@ -1,6 +1,7 @@
 
 sklearn.metrics
 -?-
+Visualizations
 ```python
 from sklearn.metrics import confusion_matrix, classification_report, roc_curve, auc
 #
@@ -15,7 +16,7 @@ roc_auc = auc(fpr, tpr)
 #
 print("Classification Report:\n", classification_report(y_test, y_pred_test_labels, target_names=['Loss', 'Win']))
 ```
-<!--SR:!2025-02-20,1,230-->
+<!--SR:!2025-03-22,1,250-->
 
 
 

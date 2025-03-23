@@ -1,7 +1,7 @@
 [[DocTorch]] #dl #review 
 
 
-Tensor;;a multi-dimensional array data structure optionally with a gradient for each value <!--SR:!2025-02-21,2,244-->
+Tensor;;a multi-dimensional array data structure optionally with a gradient for each value <!--SR:!2025-03-26,5,244-->
 
 **Tensor Rank** / Tensor Order - This is the dimensions of the num Py array need to store instances of this kind of tensor.
 
@@ -30,7 +30,7 @@ torch.zeros(size)
 np.meshgrid(np.arange(), ...)
 
 ```
-<!--SR:!2025-02-20,1,190-->
+<!--SR:!2025-03-23,2,190-->
 
 tensor math
 -?-
@@ -40,7 +40,7 @@ element_wise = t+1 + 2*t + u*v;  torch.sin(t);
 dot = torch.dot(u, v)    prod = torch.mm(A, B)
 result_tensor = t.mean()  t.std()  max_,argmax = t.max(1)  torch.max(t, axis=)
 ```
-<!--SR:!2025-02-20,1,224-->
+<!--SR:!2025-03-23,2,224-->
 
 tensor grad
 -?-

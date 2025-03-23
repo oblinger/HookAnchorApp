@@ -5,6 +5,7 @@ n:: no prefix.	Dated entries without any typing prefix
 
 | Date       | File                                        | Notes                                                                                                                             |
 | ---------- | ------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------- |
+| 2025-03-21 | [[@Jason Syversen]]                             | Suns Analytics Discussion                                                                                                         |
 | 2025-03-20 | [[@Felipe Lavratti]]                            | chat                                                                                                                              |
 | 2025-03-18 | [[PQ]]                                          |                                                                                                                                   |
 | 2025-03-17 | [[Reflections]]                                 | Really off track & what to do.                                                                                                    |

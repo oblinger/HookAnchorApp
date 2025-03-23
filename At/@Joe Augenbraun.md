@@ -1,5 +1,7 @@
 =[[START]]    [CEO](https://www.linkedin.com/in/jaugenbraun/)  [[@Peanut Robotics]]  
 
+theonash@stanford.edu, mmdrach@stanford.edu. Maximillan Drach
+
 
 # LOG
 

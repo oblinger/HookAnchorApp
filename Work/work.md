@@ -9,7 +9,6 @@
     [Min](spot:://AI~MIN): [todo](https://www.notion.so/sportsvisio/STORY-Test-AI-Min-Ready-PaidProd-173719d6f2bd80f59eb5c8d2dc1aded7?pvs=4).  Sean assess filter.
 	[Infr](https://www.notion.so/sportsvisio/PROJ-Infrastructure-150719d6f2bd80f087b2e931ef179536?pvs=4):	multi-run ???
     [Fball](spot://fireball):	Measure effectiveness
-
 ### Q1 OKRs
 - ^ 1.1 Alpha testing
 - !! 1.2 Work w/ Matias.    (Min on Dev)

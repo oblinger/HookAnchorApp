@@ -6,13 +6,12 @@
 
 RLHF
 -??-
-Reinforcement Learning from Human Feedback
-<!--SR:!2025-02-24,76,270!2025-05-01,132,290-->
+Reinforcement Learning from Human Feedback <!--SR:!2025-10-12,205,270!2025-05-01,132,290-->
 
 
 RLEF
 -?-
-Reinforcement Learning from Execution Feedback <!--SR:!2025-02-21,2,214-->
+Reinforcement Learning from Execution Feedback <!--SR:!2025-03-27,6,234-->
 
 
 [[SFT]] 

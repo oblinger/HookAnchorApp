@@ -1,4 +1,5 @@
 
+[[Mgt\|Tue Jan 21  2025]]  	[[Mgt#2025-01-20  W]]  
 [[@Jason Syversen\|Tue Jan 21  2025]]  	[[@Jason Syversen#2025-01-20  Chat on skipped meeting]]  
 [[DL Data Loading\|Mon Jan 20  2025]]  	[[DL Data Loading#Separate features and targets]]  
 [[DL Data Loading\|Mon Jan 20  2025]]  	[[DL Data Loading#Separate the two classes]]  

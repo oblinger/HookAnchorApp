@@ -219,6 +219,27 @@ DISCUSS
 # LOG
 
 
+### 2025-03-21  Suns Analytics Discussion
+
+
+
+ML Actions
+Optical data 
+convex spacing
+
+
+primary point of attack
+
+basket analytics
+scouting analytics
+pricing
+performance science
+- force, acceleration, 
+
+
+
+
+
 ### 2025-02-13  Proposed Changes
 
 

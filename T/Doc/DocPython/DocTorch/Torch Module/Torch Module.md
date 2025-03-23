@@ -47,14 +47,14 @@ mods = nn.ModuleList(); mods.append(...)
 Common FOUNDATIONAL Torch Modules
 -?-
 nn.Linear(in,out,bias=True)
-nn.Conv2d <!--SR:!2025-02-22,3,250-->
+nn.Conv2d <!--SR:!2025-03-29,8,250-->
 
 
 Common Activation/Pooling/Regularization Torch Modules
 -?-
 nn.ReLU, nn.Tanh, nn.Sigmoid
 nn.MaxPool2d, nn.AvgPoold2, 
-nn.Dropout, nn.Dropout2D, ... <!--SR:!2025-02-22,3,250-->
+nn.Dropout, nn.Dropout2D, ... <!--SR:!2025-03-23,2,230-->
 
 Common Recurrent/Container Torch Modules
 -?-
@@ -129,4 +129,4 @@ class NetBatchNorm(nn.Module):
         x = self.linear3(x)
         return x
 ```
-<!--SR:!2025-02-22,3,250-->
+<!--SR:!2025-03-29,8,250-->
