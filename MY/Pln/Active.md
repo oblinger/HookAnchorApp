@@ -4,6 +4,8 @@
 - - deep work schedule
 - [[Journaling]] 
 -  quarterly goals
+- - Eli orig birth cert
+- [nicks money mgr](https://www.thegoodlandgroupadvisors.com/) 
 
 - [Sonic](https://www.sonic.com/fiber-status?s=6873225120&h=00c64fb5ac3972130af9181f0ae33617e9adb71e9bca12fb901612972ec28613&v=2&zip=94110&city=SAN%20FRANCISCO&lat=37.7338393511404&street2=&lng=-122.41739064282&street1=101%20BACHE%20ST&state=CA) 
 - Ck SUTTERHEALTH

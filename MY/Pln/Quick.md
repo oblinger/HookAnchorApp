@@ -1,11 +1,8 @@
-- briones!
+- sony response
 - talk w/ Google about 3 month extension
 - lean on James
 - fix deck
 - taxes & property taxes
-- alpha games product msg
-- factory item template
-- call Felipe. meet.google.com/vre-thmk-fzh
 
 - Quarterly budget
 - Pre-mortem

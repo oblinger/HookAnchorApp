@@ -1,6 +1,5 @@
 
-- Eli orig birth cert
-- [nicks money mgr](https://www.thegoodlandgroupadvisors.com/) 
+
 
 
 - Oven fix

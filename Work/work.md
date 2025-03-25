@@ -13,13 +13,13 @@
 - ^ 1.1 Alpha testing
 - !! 1.2 Work w/ Matias.    (Min on Dev)
 - !^ 2.1  Push for min dataset w/ James
-- - 2.2  No bugs. (fix two bugs)
-- + 2.3. Metrics done
+- + 2.2  No bugs. (fix two bugs)
+- - 2.3. Metrics (regression)
 - + 2.4. Automation done?
    (showcase how easy; what left to do)
-- -  3.1. Low hanging improve.  
+- +  3.1. Low hanging improve.  
     (regression test all Q since Q3 2023)
-- -  3.2  Speedups 
+- +  3.2  Speedups 
 
 
 Q2 
