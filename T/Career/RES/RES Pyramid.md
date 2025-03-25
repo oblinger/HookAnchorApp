@@ -3,30 +3,32 @@
 
 ## PYRAMID
 
-A proven AI PhD/CTO: with decade+ hands on experience in ML/DL, built 5 orgs from scratch (up to 60 engineers), funded hundreds of millions in research at DARPA, exited three companies, and brought products to market worth billions.  Looking for a hands-on role leading generative-AI based innovation.
+A proven AI PhD/CTO with decade-plus hands-on experience in ML/DL.  Built 5 orgs from scratch (up to 60 engineers), funded/led hundreds of millions in research at DARPA, exited three companies, and brought products to the market worth billions.  Looking for a hands-on role leading generative-AI-based innovation.
 
-My sweet-spot is bridging world-leading R&D into rapid productization.
+My sweet spot is driving world-leading R&D into rapid productization.
 
 
-(Master Versions in [[RES Parts]])
-#### PhD/CTO
+(Details in [[RES Numbers]])
+
+### PhD/CTO
 - PhD in AI/ML from a top engineering school: Illinois (UIUC)
-- CTO for 5 companies: with 3 exits, and 2 continuing
-- Dozens of peer reviewed conference and journal publications.
+- CTO for 5 companies: with 3 exits and 2 continuing
+- Dozens of peer-reviewed conference and journal publications.
 - 20+ Patents Granted.
 
 ### Decade+ Experience in AI/ML/DL/CV/Robotics
-- SportsVisio - In-the-code leading of advanced CV team
-- Martian/Aeolus Robotics - Hired 40+ AI-PhDs, chief architect for solution, managed 60+ eng team
-- DARPA PM for $200+M in AI R&D projects.  Designed 
+- SportsVisio - In-the-code leading and coding with advanced CV team
+- Martian/Aeolus Robotics - Hired/lead 60+ eng team (with 40+ AI-PhDs), chief architect for the first solution
+- DARPA PM for $200+M in AI R&D projects.  
+  Drove early work in the Deep Learning revolution (with/ Andrew Ng, Stuart Russel, Pedro Domingos, Daphny Koler)
 
-### Built Multiple Engineering Orgs From Scratch
+### Built 5 Orgs From Scratch upto 60 Engineers
 - Aeolus: 60+ Eng (40+ with PhDs)
 - AF: ~50 person team with 30+ eng
 - DARPA: 5 orgs spanning 500+ faculty and researchers.   ??? numbers
 - Martian Robots 13 person team
 
-### Funded/Lead Hundreds of Millions in Research
+### Funded & Lead Hundreds of Millions in Advanced AI R&D
 - Funded over $200 in AI Research as a PM at DARPA
 - Created and lead Machine Reading and Bootstrapped Learning programs.
 - Lead the Transfer Learning program

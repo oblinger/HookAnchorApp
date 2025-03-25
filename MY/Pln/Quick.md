@@ -1,3 +1,5 @@
+- meeting about camera
+- jason call
 - sony response
 - talk w/ Google about 3 month extension
 - lean on James

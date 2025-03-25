@@ -4,26 +4,22 @@
 ### - 2021-10  -  from USPTO ---
 
 [My Patents](https://patents.justia.com/inventor/daniel-oblinger) (list below does not include failed applications)
+- AS OF 03/2025.   23 patents issues with 7 more filed.
 
 FILED
-20,190,358,820	Robotic Interactions for Observable Signs of Intent (5/2019)
-20,190,358,822	Robotic Interactions for Observable Signs of Core Health (5/2019)
-
-more aeolus patents out there: [golden](https://golden.com/wiki/Aeolus_Robotics%2C_Inc.-JNGAPGR) [pitch book](https://pitchbook.com/profiles/company/221776-66#patents) 
+20,240,115,174	[ROBOTIC INTERACTIONS FOR ACTION DETERMINATION](https://patents.justia.com/patent/20240115174) (6/2023)
 
 
-
-
-
-ISSUED
-11,701,041	[Robotic interactions for observable signs of intent](https://patents.justia.com/patent/11701041)
-11,717,203	[Robotic interactions for observable signs of core health](https://patents.justia.com/patent/11717203)
-
+ISSUED  (23 as of 2025/03)
+11,717,203	[Robotic interactions for observable signs of core health](https://patents.justia.com/patent/11717203) (5/2019)
+11,701,041	[Robotic interactions for observable signs of intent](https://patents.justia.com/patent/11701041) (5/2019)
 9,165,280	Predictive user. modeling in user interface design (10/2015)
+
 8,739,146	Systems and methods for generating and distributing executable procedures for technical desk-side support (5/2014)
 8,640,034	Remote GUI control by replication of local interactions (1/2014)
 8,607,142	Method for aligning demonstrated user actions with existing documentation (12/2013)
 8,595,636	Method and system for mapping GUI widgets (11/2013)
+8,307,357	[Methods and apparatus for customizing user-interface control in existing application](https://patents.justia.com/patent/8307357) (03/2008)
 
 8,250,554	.Systems and methods for generating and distributing executable procedures for technical desk-side support (8/2021)
 8,176,422	Method for aligning demonstrated user actions with existing documentation (5/2012)
@@ -39,9 +35,44 @@ ISSUED
 
 6,785,676	Customer self service subsystem for response set ordering and annotation (8/2004)
 6,778,193	Customer self service iconic interface for portal entry and search specification (8/2004)
-6,701,311	Customer self service system for resource search and selection (3/2004)
+6,701,311		Customer self service system for resource search and selection (3/2004)
 6,693,651	Customer self service iconic interface for resource search results display and selection (2/2004)
 [6,643,639](https://patents.google.com/patent/US6643639?oq=patent+6%2c643%2c639)    Customer self service subsystem for adaptive indexing of resource solutions and resource lookup (11/2003)
+
+
+OLDER PATENT APPLICATIONS. ('+' marks below indicate applications not granted)
+20,190,358,820.	Robotic Interactions for Observable Signs of Intent (5/2019)
+20,190,358,822.	Robotic Interactions for Observable Signs of Core Health (5/2019). (separate from the one below)
+
+20,080,178,083.	[Methods and Apparatus for Customizing User-Interface Control in Existing Application](https://patents.justia.com/patent/20080178083) (07/2008)
+20,080,155,410.	[METHOD FOR ALIGNING DEMONSTRATED USER ACTIONS WITH EXISTING DOCUMENTATION](https://patents.justia.com/patent/20080155410) (6/2008)
+20,080,155,395?	[METHOD FOR ALIGNING DEMONSTRATED USER ACTIONS WITH EXISTING DOCUMENTATION](https://patents.justia.com/patent/20080155395) (06/2008)
+20,080,120,553.	[REMOTE GUI CONTROL BY REPLICATION OF LOCAL INTERACTIONS](https://patents.justia.com/patent/20080120553) (11/2006)
+20,080,120,336.	[METHOD AND SYSTEM FOR MAPPING GUI WIDGETS](https://patents.justia.com/patent/20080120336) (11/2006)
+20,070,277,156.	[Systems and Methods For Generating and Distributing Executable Procedures For Technical Desk-Side Support](https://patents.justia.com/patent/20070277156) (08/2007)
+20,070,271,549.	[Methods and Apparatus for Customizing User-Interface Control in Existing Application](https://patents.justia.com/patent/20070271549) (07/2007)
+20,070,101,311+	[Method and system for generating computer-executable models using augmentations](https://patents.justia.com/patent/20070101311) (10/2005)
+20,070,094,590.	[System and method for providing dynamic process step annotations](https://patents.justia.com/patent/20070094590) (10/2005)
+20,070,038,633+	[Method and system for executing procedures in mixed-initiative mode](https://patents.justia.com/patent/20070038633) (10/2005)
+20,070,005,539.	[Method for constructing autonomic advisors and learning procedural knowledge from scored examples](https://patents.justia.com/patent/20070005539) (06/2005)
+20,060,190,822.	[Predictive user modeling in user interface design](https://patents.justia.com/patent/20060190822) (02/2005)
+20,060,112,322.		[Method for aligning demonstrated user actions with existing documentation](https://patents.justia.com/patent/20060112322) (11/2004)
+20,060,100,874+	[Method for inducing a Hidden Markov Model with a similarity metric](https://patents.justia.com/patent/20060100874) (10/2004)
+20,050,222,972+	[Computer implemented, fast, approximate clustering based on sampling](https://patents.justia.com/patent/20050222972) (5/2005)
+20,050,125,782.	[Alignment and generalization of demonstrated procedure traces](https://patents.justia.com/patent/20050125782) (12/2003)
+20,050,097,511.	[Methods and apparatus for customizing user-interface control in existing application](https://patents.justia.com/patent/20050097511) (10/2003)
+20,050,028,144.	[Systems and methods for generating and distributing executable procedures for technical desk-side support](https://patents.justia.com/patent/20050028144) (02/2005)
+20,030,131,055.	[Smart messenger](https://patents.justia.com/patent/20030131055) (02/2002)
+20,030,037,016+	[Method and apparatus for representing and generating evaluation functions in a data classification system](https://patents.justia.com/patent/20030037016) (07/2001)
+20,020,152,190.	[Customer self service subsystem for adaptive indexing of resource solutions and resource lookup](https://patents.justia.com/patent/20020152190) (02/2001)
+20,020,149,614.	[Customer self service iconic interface for portal entry and search specification](https://patents.justia.com/patent/20020149614) (02/2001)
+20,020,107,843.	[Customer self service subsystem for classifying user contexts](https://patents.justia.com/patent/20020107843) (02/2001)
+20,020,107,852.	[Customer self service subsystem for context cluster discovery and validation](https://patents.justia.com/patent/20020107852) (02/2001)
+20,020,107,842.	[Customer self service system for resource search and selection](https://patents.justia.com/patent/20020107842) (02/2001)
+20,020,105,532.	[Customer self service subsystem for response set ordering and annotation](https://patents.justia.com/patent/20020105532) (02/2001)
+20,020,105,550.	[Customer self service iconic interface for resource search results display and selection](https://patents.justia.com/patent/20020105550) (02/2001)
+
+
 
 
 

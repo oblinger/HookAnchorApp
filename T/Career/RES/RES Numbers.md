@@ -1,9 +1,16 @@
 ## = NUMBERS - "AT A GLANCE" 
 
-### Brought Multiple Products To Market Totaling More Than $3B In Value
+### - Delivered 4+ products to market
+! SV Hoops 
+! AF - Instant Design - 
+! AF - Oasis/Eddie - Omnibus sales and execution solution.
+! PBG - Payments splitting - 
+- AE - Aeolus Elder bot - 
+
+#### Brought Multiple Products To Market Totaling More Than $3B In Value
 - Soup-to-nuts our team developed the SW and Firmware for Envoy, Oasis, and TMAC.  Together these represent more than $3B in hardware.
 
-- SV Hoops - $300K/ARR
+- SV Hoops - $800K/ARR
 - Aeolus Aeo - Eldercare robot
 - Instant Design - 
 - Envoy - Residential hub for Enphase inverter-based systems
@@ -73,12 +80,15 @@ Larger exploratory DARPA efforts (1⁄2 to 5 million dollars)
 _
 ### - 4 Orgs Built, 8 Team Managed, 12 Direct Reports, 17 Countries Spanned
 
-### - 5 ORGS BUILT
-- SportsVisio CV team -- Replace entire team w: Grz/Juan/Martin/Maxim/Briones
-- Analytics Fire -- 45+? people
-- Aeolus -- 
-- Martian -- Hired to 13 person team
-- DARPA   [4-Setas + BL & MR eval teams]
+### - Build 5 ORG up to 60 engineers
+1. Sports Visio: 	20+ Eng.   CV 7 from scratch: Dan/Mike/Juan/Grz/Maxim/Martin/Sarthi
+2. Analytics Fire:	45+ Eng/Op/QA people
+3. Aeolus: 			62 engineers (40+ PhDs)
+4. Martian: 		13 person team
+5. DARPA:  		8 core.  300+? performers.  Carolyn Williams, black man, Pietro Michelluchi?, Dan Adams, 
+					 Don Jones, Terry McConnell, Brian McCune, Julie Fitzgerald, 
+	Cyc Team: 
+	Nist / SAIC Team:
 
 ### - 8  TEAMS MANAGED
 1. SportsVisio CV team
@@ -135,7 +145,7 @@ Total -- 1,923
 - plus hundreds interviewed by AF too
 _
 
-### - 25Papers, 22Patents, 36+Presents 
+### - 25Papers, 36+Presents 
 
 Keynotes/FoundedWorkshops/ChairedWS
 
@@ -182,39 +192,42 @@ WORKSHOPS
 
 _
 
-### - Boards & Advisor-ships
-#### . Advisorships
-	- TECHNO-THERAPY advisor  (Jan 2014 - present)
-	- ADVISOR RULY Feb 2014 to Nov 2014 - Chad Mulder - chadmulder@gmail.com - 
+### - Inventor on 23 issued patents
+Inventor on 30 patents (includes filed applications)
+
+### - Served in 5 advisory and board roles
+- **TechnoTherapy,** Washington, D.C., **Board Member,** Jan 2014 to present
+- **Ruly,** San Francisco, CA, **Automation & AI Advisor,** Feb 2014 to Nov 2014
+- **NIST / TREC**, Washington, D.C., **TAC-KBP Track Advisor**, Mar 2009 to Oct 2011
+- **DARPA / IPTO**, Washington, D.C., **Senior Advisory Group** (SAG) **Member**, Dec 2009 to Oct 2011
+- **Northwestern University,** Electrical & Computer Science Dept, **Advisory Board Member,** Nov 2003 to Jul 2005
+#### details
+- ADVISOR RULY Feb 2014 to Nov 2014 - Chad Mulder - chadmulder@gmail.com - 
 		Discussions start 2/18/2014 - NDA signed 3/22/2014 - 
 		10/14/2014 submitted to YC - 11/3/2014 seems over
-	_
-#### . notes
-	5
-
-	- **Northwestern**.  I when there on two different years.  
+- **Northwestern**.  I went there on two different years.  
 		I terminated when I left IBM.  Last visit in Jan 2005?
 		First visit in Aug 2003???
 
-	- Visio???
-	- Siege???
-	- Ruly, San Francisco, CA, Automation & AI Advisor, Feb 2014 to Nov 2014
-	- TechnoTherapy, Washington, D.C., Business & Technical Advisor, Jan 2014 to present
-	- NIST/TREC, Washington, D.C., TAC-KBP track Advisor, Mar 2009 to Oct 2011
-		(data posted [6/4/09](http://pmcnamee.net/kbp.html))
-	- DARPA/IPTO, Washington, D.C., Senior Advisory Group (SAG) member, Dec 2009 to Oct 2011   
-		(the beginning date is pretty made up)
-	- ??? Jotter - chief science officor.
-	- Should I count Each DARPA program
+- Visio???
+- Should I count Each DARPA program
+- ??? Jotter - chief science officer.
+- DARPA/IPTO, Washington, D.C., Senior Advisory Group (SAG) member, Dec 2009 to Oct 2011   
+	(the beginning date is pretty made up)
+- NIST/TREC, Washington, D.C., TAC-KBP track Advisor, Mar 2009 to Oct 2011
+	(data posted [6/4/09](http://pmcnamee.net/kbp.html))
+- Siege???
+- Spirit Factory ???
+- President of Math club?  & volleyball team
 
-	- Ruly
-	- Techno Therapy
-	- IPTO SAG - Senior Advisory Group
 
-	- Spirit Factory ???
-	- President of Math club?  & volleyball team
+### - Shaped National AI Roadmaps
+- NIST TREC/TAC - competition tracks
+- MR conferences
+- Hosted 20+ academic/industrial conferences for 20-120 attendees
 
-	_
+
+### .
 
 
 ## = NUMBERS - JOB EXPERIENCE

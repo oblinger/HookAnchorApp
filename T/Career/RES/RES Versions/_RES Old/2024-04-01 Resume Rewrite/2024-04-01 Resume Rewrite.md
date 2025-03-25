@@ -9,7 +9,7 @@ TODO
 .[[NJ]].
   [[2024-04-01 Resume Rewrite]],
 
-[[NJ Todo]] 
+[[NJ.]] 
 __
 	- [[2024-04-01 Resume Rewrite]] - 
 	- [[2024 Resume Rewrite Parts.docx]] - 

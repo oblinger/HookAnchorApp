@@ -1,5 +1,5 @@
 .STU.
- [[NJ Todo]]: 
+ [[NJ.]]: 
  [[Friday]]: 
 
 ## TRACK

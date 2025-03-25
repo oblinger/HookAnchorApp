@@ -7,7 +7,7 @@
 - [[BOD]]:		Get Coach?
 
 - [[TG]]:	Read glass door about them
-- [[NJ Todo]]:	[[RES]] linked in fixes
+- [[NJ.]]:	[[RES]] linked in fixes
 
 [[WORK]]:	4h
 [[MED]]:	Exercise, Cortisol
