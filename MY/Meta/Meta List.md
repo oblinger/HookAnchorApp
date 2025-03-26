@@ -2,16 +2,18 @@
 [[Meta List Codes]] 
 [[Meta Time Codes]] 
 #### Short Term Tactical Lists
-- [[Quick]]	->			-  Quickly dropped items   (CAPS-A will ADD to this list)
-- [[Todo]]				-  Personal tasks
-- [[Active]]			-  Work related task  (offloaded to [[Wings]]) 
-- [[Fried]]				-  Easy/Fun/Taking-Break tasks  (offloaded to [[Fried Later]])
+- [[Quick]]		-  Quickly dropped items   (CAPS-A will ADD to this list)
+- [[Todo]]		-  Personal tasks
+- [[Active]]		- Work-related tasks  (offloaded to [[Wings]]) 
+- [[Fried]]		-  Easy/Fun/Taking-Break tasks  (offloaded to [[Fried Later]])
 
 #### Medium Term Project Tracking
-- [[Now]]				-  Actively tracked smaller task outputs
-- [[Work]]				-  Actively tracked project outputs
-- [[Self]]				-  Active personal projects
+- [[Now]]		-  Actively tracked smaller task outputs
+- [[Work]]		-  Actively tracked project outputs
+- [[Self]]			-  Active personal projects
 
+#### Evergreen Toplevel Lists
+- [[EV Log]] 
 
 #### Longer Term 
 #### Specialty List

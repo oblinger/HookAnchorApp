@@ -1,24 +1,33 @@
 .[[RES]].
   TOP:		[[RES Todo]], [[Bio]], [RES Docx](spot://resdocx), [[RES Linked In]],
-  TEXT:		[[RES Star]], [[RES Parts]], [[RES Highlights]],
+  TOPS:		[[RES Pyramid]], [[RES Star]], [[RES War]], [[RES Parts]], [[RES Highlights]],
   FACTS:	[[RES Src Info]], [[RES Numbers]], [[RES Patents]], [[RES Papers]],
-  OTHER:	[[RES War]], [[RES War AI]], [[RES Pyramid]], [[RES References]],
+  OTHER:	 [[RES War AI]], [[RES References]],
   DIRS:		[[RES Job History]], [[RES Examples]], [[RES Versions]],
-  CLOSET	[[Resume]], 
+  CLOSET:	[[Resume]], 
   .
 - [[RES Instant Design Story]],
 - [[2024-04-01 Resume Rewrite]],
 
-
 # LINKED IN PARTS
 - [[z2 - Linked In Module]] - 
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 # # LOG
 
 ### 2024-03-29  [[2024-04-01 Resume Rewrite]]
-
-
-
 
 ### 2021-12-00  Jared Resume writing notes
 #### --- 2021-10-25 - ABOUT (FIRST LINES) ---

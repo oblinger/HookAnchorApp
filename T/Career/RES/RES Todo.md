@@ -1,4 +1,6 @@
 
+- [ ] Add details about hand-on AI
+- [ ] [[Res Star]] [[Res War]] - key entries need to be completed
 - [ ] Update Linked in about section
 - [ ] HandsOn Highlights.      Leadership Highlights.
 - [ ] talk about hiring 300+ in at a glance not

@@ -20,7 +20,7 @@
             [[RES]]: [[Bio]],	[[RES Examples]],	
                 [[RES Job History]]: 
                     [[AF]]: 
-            [[NJ]]: [[SEEK]],	[[NJ22]],	[[NJ.]],	[[NJ16]],	
+            [[NJ]]: [[SEEK]],	[[NJ22]],	[[NJ16]],	
                 [[TG]]: 
         [[FIN]]: [[FIN Tracking]],	
             [[FIN Log]]: 

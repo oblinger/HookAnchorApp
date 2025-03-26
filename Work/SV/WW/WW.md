@@ -1,4 +1,5 @@
 .[[WW]].
+  [[2025 GPU Choice]],
   , [[2023-08 Ingest Alternatives Analysis]], [[2023 Base Ball Product Offering]]
   , [[2023 Basketball Stats]], [[2023 Belief Propagation]], [[2023 Beta Testing]]
   , [[2023 Blog Announce and Bio]], [[2023 Brians Birds Eye]], [[2023 Bridge Round]]
@@ -17,10 +18,7 @@
   , [[2023 Tournament Flow]], [[2023 Velocity]], [[2023 Volleyball Product]]
   , [[2023 Volleyball SV Product]], [[2024 AI Product Choice]]
   , [WW Gdrive Page](spot://wwgdrivepage),
-  , ,
   , [Arch](spot://arch),
-  , , , ,
-  DELS: ,
   , [[2023 Headless Record Flow]], [[2023 Minutes Stat Calculations and Annotations]]
   , [[2023 SV Learning]], 
   DELS: ,[[2023 Headless Record Flow]], [[2023 Minutes Stat Calculations and Annotations]], [[2023 SV Learning]],

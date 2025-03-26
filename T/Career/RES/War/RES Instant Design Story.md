@@ -1,4 +1,5 @@
-( Cross posted to [[War]]; which is now master )
+
+# ( Cross posted to [[War]]; which is now master )
 
 
 #### Instant Design Story
@@ -10,11 +11,11 @@
 
 
 **Edge Extraction**
-- find flat planes
+- Find flat planes
 - glue together
 - derive edges
 
-**Energy based cleanup**
+**Energy-based cleanup**
 - remove small planes
 - remove super sharp corners
 - replace line pairs that are nearly 180-degrees

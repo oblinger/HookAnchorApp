@@ -1,14 +1,27 @@
 
+
 ## **MAIN** 
 - SAUTE:
-	- Chicken-Peas-Corn-Carrots-Mushrooms, 
-- CARBS: Pasta, RiceBalls, Pizza, Pancakes, Sweet Potatoes
+	- CHICKEN & Peas-Corn-Carrots-Mushrooms, 
+	- CHICKEN & Mushrooms
+- CARBS: Pasta, Pancakes, RiceBalls, 
 	- PASTA: Ground-beef&Eggs, Marinara, VeggieRisoto
 	- RICE: Seaweed sandwich, 
-- FROZN: Dumplings, Meatballs, 
+	- GLASS NOODLE &      Scallops, 
+- FROZN: Dumplings, Meatballs, Pizza, 
 - MEATS: Chicken(sauteed, panfry), Steak, Salmon, Meatloaf??
 	- PORK: Short Ribs
+	- SALMON & Tofu
 - EGG: Ground Beef
+
+
+## SIDE
+- Cauliflower & 
+
+
+
+
+
 **MAYBE**
 - Glass Noodles 
 **VEG**

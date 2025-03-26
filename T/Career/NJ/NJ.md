@@ -1,5 +1,5 @@
 .[[NJ]].	  [[Lrn]],
-  PLAN:	[[NJ.]], [[NJ Plan]], [[SEEK]],
+  PLAN:	, [[NJ Plan]], [[SEEK]],
   TOP:	[NJ Slides](spot://njslides), [[NJ Log]],
   NOW:
   PARTS	[[NJ Ask]], [[NJ Coaches]],
@@ -8,7 +8,9 @@
   , [[NJ Questions]],
   , [[NJ Blog]]
   , [[TG]],
-  , [[NJ Pyramid]], 
+  , [[NJ Pyramid]],
+  , ,
+  DELS: [[NJ.]],[[NJ Todo]], 
 
 RELATED:	 [[CRM]], 
 OLD:	[[Meta Coms]], 

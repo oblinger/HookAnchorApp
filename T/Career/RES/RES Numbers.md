@@ -21,7 +21,7 @@
 
 (See AF section for details on dollars)
 
-### - BUILT AND SHIPPED 8 PRODUCTS
+#### - BUILT AND SHIPPED 8 PRODUCTS
 - SV Hoops - 
 - Aeolus Aeo - 
 - Instant Design - 
@@ -32,55 +32,7 @@
 - PayByGroup - Group Payments Platform
 
 _
-### - TECH AREAS
-	Technology & Product Development
-	Robotics, Machine Learning, Computer Vision, 
-	NLP, Programming By Demonstration, and Cyber Security
-
-### - 21 AI Technologies worked on
-
-- Instant Design
-- Aeolus Elderbot
-- Redis Universal vision-based sensor
-- Bizzy Cleanerbot
-- Jotter - location-based pattern of life analysis
-
-- (9) other DARPA efforts
-- DARPA MR - IBM - 
-
-- DARPA MR - BBN -
-- DARPA MR - SRI - 
-- DARPA BL - BBN - 
-- DARPA BL - SRI - +
-- DARPA TL - SOAR - ??? was there a third team
-
-- DARPA TL - SRI - watching to playing football
-- DARPA TL - MIT - vision to grasping
-- IBM Personal Wizards
-- IBM Email mining - graph analysis - and auto skills builder
-- IBM Watch Me Read - speech analysis
-
-- PhD Plausible Inference applied to protein structure prediction
-
-ONLY COUNT AFTER GRAD SCHOOL, or tech build for phd?
-
-https://www.wired.com/2007/08/can-you-teach-a/
-
-Larger exploratory DARPA efforts (1⁄2 to 5 million dollars)
-1. **Attacking Time** – Pervasive, OS-level variability, inoculates systems against any fixed virus/worm.   (I am assuming ML-like adaptation, not sure that is right)
-2. **Möbius** – Self-organizing ontology acquisition system.
-3. **ML on Multi-core Architectures** – Develop primitives supporting algorithms in a shared-memory context.
-4. **Never Ending Learning** – Statistical “triangulation” to uncover latent world knowledge underling web data.
-5. **Enhanced Bootstrapping** – Precursor to BL program, developed self-extensible representations of procedural & declarative knowledge.
-6. **Textual Corpora Assessments Protocols** – Intellectual cross fertilization in field of text processing gated by availability of strong, quantitative, comparative measures.
-7. **Transfer Learning for Adaptive Information Extraction** – Series of efforts to transition base TL technology to self-adapting info extractors spanning, language task and genre.
-8. XXX Game World – US lags developed world in science education. Studies show computer games retain attention, but don’t teach. Effort enables game/scenario writers to compete on game’s teaching performance.
-9. **Latent Information in Folksonomies** – Extracting latent structure in user content tags. (e.g. flickr / delicious)
-10. **Universal Self-Supervised Hierarchical Learning** – Adaptive algorithms driven by spectrum of novel feedback signals (e.g. curiosity, drive to control, drive to mimic, etc.)
-_
-### - 4 Orgs Built, 8 Team Managed, 12 Direct Reports, 17 Countries Spanned
-
-### - Build 5 ORG up to 60 engineers
+### - Build 5 ORGs up to 60 engineers
 1. Sports Visio: 	20+ Eng.   CV 7 from scratch: Dan/Mike/Juan/Grz/Maxim/Martin/Sarthi
 2. Analytics Fire:	45+ Eng/Op/QA people
 3. Aeolus: 			62 engineers (40+ PhDs)
@@ -90,6 +42,9 @@ _
 	Cyc Team: 
 	Nist / SAIC Team:
 
+
+- Largest Report Structures:  DARPA 3 teams for each of 2 simultaneous programs
+- 8 Team Managed, 12 Direct Reports, 17 Countries Spanned
 ### - 8  TEAMS MANAGED
 1. SportsVisio CV team
 2. SportsVisio Eng
@@ -227,10 +182,61 @@ Inventor on 30 patents (includes filed applications)
 - Hosted 20+ academic/industrial conferences for 20-120 attendees
 
 
+
+### - TECH AREAS
+	Technology & Product Development
+	Robotics, Machine Learning, Computer Vision, 
+	NLP, Programming By Demonstration, and Cyber Security
+
+### - 21 AI Technologies worked on
+
+- Instant Design
+- Aeolus Elderbot
+- Redis Universal vision-based sensor
+- Bizzy Cleanerbot
+- Jotter - location-based pattern of life analysis
+
+- (9) other DARPA efforts
+- DARPA MR - IBM - 
+
+- DARPA MR - BBN -
+- DARPA MR - SRI - 
+- DARPA BL - BBN - 
+- DARPA BL - SRI - +
+- DARPA TL - SOAR - ??? was there a third team
+
+- DARPA TL - SRI - watching to playing football
+- DARPA TL - MIT - vision to grasping
+- IBM Personal Wizards
+- IBM Email mining - graph analysis - and auto skills builder
+- IBM Watch Me Read - speech analysis
+
+- PhD Plausible Inference applied to protein structure prediction
+
+ONLY COUNT AFTER GRAD SCHOOL, or tech build for phd?
+
+https://www.wired.com/2007/08/can-you-teach-a/
+
+Larger exploratory DARPA efforts (1⁄2 to 5 million dollars)
+1. **Attacking Time** – Pervasive, OS-level variability, inoculates systems against any fixed virus/worm.   (I am assuming ML-like adaptation, not sure that is right)
+2. **Möbius** – Self-organizing ontology acquisition system.
+3. **ML on Multi-core Architectures** – Develop primitives supporting algorithms in a shared-memory context.
+4. **Never Ending Learning** – Statistical “triangulation” to uncover latent world knowledge underling web data.
+5. **Enhanced Bootstrapping** – Precursor to BL program, developed self-extensible representations of procedural & declarative knowledge.
+6. **Textual Corpora Assessments Protocols** – Intellectual cross fertilization in field of text processing gated by availability of strong, quantitative, comparative measures.
+7. **Transfer Learning for Adaptive Information Extraction** – Series of efforts to transition base TL technology to self-adapting info extractors spanning, language task and genre.
+8. XXX Game World – US lags developed world in science education. Studies show computer games retain attention, but don’t teach. Effort enables game/scenario writers to compete on game’s teaching performance.
+9. **Latent Information in Folksonomies** – Extracting latent structure in user content tags. (e.g. flickr / delicious)
+10. **Universal Self-Supervised Hierarchical Learning** – Adaptive algorithms driven by spectrum of novel feedback signals (e.g. curiosity, drive to control, drive to mimic, etc.)
+_
+
+
 ### .
 
 
 ## = NUMBERS - JOB EXPERIENCE
+### - SPORTS VISIO
+- 0 to 800K in Contracted ARR
 ### - ANALYTICS FIRE
 #### AF WEB REFS
 - [Here](https://cloud.google.com/blog/products/ai-machine-learning/how-sunpower-puts-solar-on-your-roof-with-ai-platform) and [Here](https://us.sunpower.com/blog/2019/04/09/home-solar-design-made-easier-google-cloud) is Sunpower describing the "Instant Design" solution that we developed and deployed.

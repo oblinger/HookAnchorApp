@@ -1,44 +1,42 @@
-## ...
-- built multiple 50+ person orgs,
 
-## PYRAMID
+# **PYRAMID**
 
-A proven AI PhD/CTO with decade-plus hands-on experience in ML/DL.  Built 5 orgs from scratch (up to 60 engineers), funded/led hundreds of millions in research at DARPA, exited three companies, and brought products to the market worth billions.  Looking for a hands-on role leading generative-AI-based innovation.
+A proven AI PhD/CTO with decade-plus hands-on experience in ML/DL.  Built 5 orgs from scratch (up to 60 engineers), funded/led hundreds of millions in research at DARPA, exited three companies, and brought products to the market worth billions.  Looking for a hands-on, leadership role in generative-AI-based innovation.
 
 My sweet spot is driving world-leading R&D into rapid productization.
 
 
 (Details in [[RES Numbers]])
 
-### PhD/CTO
+## PhD/CTO
 - PhD in AI/ML from a top engineering school: Illinois (UIUC)
 - CTO for 5 companies: with 3 exits and 2 continuing
 - Dozens of peer-reviewed conference and journal publications.
 - 20+ Patents Granted.
 
-### Decade+ Experience in AI/ML/DL/CV/Robotics
+## Decade+ Experience in AI/ML/DL/CV/Robotics
 - SportsVisio - In-the-code leading and coding with advanced CV team
 - Martian/Aeolus Robotics - Hired/lead 60+ eng team (with 40+ AI-PhDs), chief architect for the first solution
 - DARPA PM for $200+M in AI R&D projects.  
   Drove early work in the Deep Learning revolution (with/ Andrew Ng, Stuart Russel, Pedro Domingos, Daphny Koler)
 
-### Built 5 Orgs From Scratch upto 60 Engineers
+## Built 5 Orgs From Scratch upto 60 Engineers
 - Aeolus: 60+ Eng (40+ with PhDs)
 - AF: ~50 person team with 30+ eng
 - DARPA: 5 orgs spanning 500+ faculty and researchers.   ??? numbers
 - Martian Robots 13 person team
 
-### Funded & Lead Hundreds of Millions in Advanced AI R&D
+## Funded & Lead Hundreds of Millions in Advanced AI R&D
 - Funded over $200 in AI Research as a PM at DARPA
 - Created and lead Machine Reading and Bootstrapped Learning programs.
 - Lead the Transfer Learning program
 
-### Exited Three Companies
+## Exited Three Companies
 - Analytics Fire -> Rzero
 - Martian Robots -> Aeolus
 - PayByGroup -> FEVO
 
-### Brought Multiple Products To Market Totaling More Than $3B In Value
+## Brought Multiple Products To Market Totaling More Than $3B In Value
 - Soup-to-nuts our team developed the SW and Firmware for Envoy, Oasis, and TMAC.  Together these represent more than $3B in hardware.
 
 - SV Hoops - $300K/ARR
@@ -51,17 +49,17 @@ My sweet spot is driving world-leading R&D into rapid productization.
 - PayByGroup - Group Payments Platform
 
 
-### Hands On Generative AI
-- Worked as both an IC and Tech Lead on range of Gen-AI / DL based projects including:
+## Hands-On Generative AI
+- **Worked as both an IC and Tech Lead** on a range of Gen-AI / DL-based projects, including:
   CV-based sport-stats, Autonomous-dexterous robotics, Automated solar installation design, 
 
-- SPORTS VISIO BASKET BALL - Fine tuned player detection and tracking, action modeling, specially-trained printed fabric OCR, generalized court registration.
-- AEOLUS ROBOT - Robot motion, vision, and grasping
-- ANALYTICS FIRE - Satellite-image-based solar-roof installation planner 
-- DARPA MACHINE READING PROGRAM - Worked with dozens of world leading in AI/ML researchers including Andrew Ng, David Ferrucci, Daphne Kohler, Stuart Russell, Leslie Kaelbing, Pedro Domingos, Dan Roth, Tom Dietterich, Chris Manning, Michael Witbrock, Doug Lenat
+- SPORTS VISIO BASKET BALL - Fine-tuned player detection and tracking, action modeling, specially-trained printed fabric OCR, and generalized court registration.
+- AEOLUS ROBOT - Robot motion, vision, and grasping as an elder care assistant.
+- ANALYTICS FIRE - Satellite-image-based solar-roof installation planner.
+- DARPA MACHINE READING PROGRAM - Worked with dozens of world-leading in AI/ML researchers, including Andrew Ng, David Ferrucci, Stuart Russell, Leslie Kaelbing, Pedro Domingos, Daphne Kohler, Dan Roth, Tom Dietterich, Chris Manning, Michael Witbrock, Doug Lenat
 
 
-## SLICES (Capabilities I bring, and passions I have)
+# **SLICES** (Capabilities I bring and passions I have)
 
 ### SWEET SPOT - Bridging Research and Prototyping
 - My values and loves are driving the bleeding edge research into practice

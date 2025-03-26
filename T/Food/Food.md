@@ -1,6 +1,6 @@
 .[[Food]].
   [[Diet]]:
-  [[Meals]]:	[[Groc]], [[Entrees]]:
+  [[Meals]]:	[[Groc]], [[Entrees]], [[Eli Food]], 
   [[Meals Thermomix]]:
   [[Meals Vegetables]]:
   [[ContainerWeights]]:
@@ -8,15 +8,13 @@
   [[desserts]]:
   [[FastingDiet]]:
   [[Food Parents]]:
-  :
   [[Restaurants]]:
   [[Try Foods]]:
-  ADDS:   [Nutrition Data Page](spot://nutritiondatapage), [Nutrition Facts Page](spot://nutritionfactspage), [Nutrition Value Page](spot://nutritionvaluepage),
-  ADDS:   [[Food Recipe Research]],
-  ADDS:   [[Eat]],
-  , [[Bfast]],
-  , [[FOOD Research]],
-  , ,
+  [Nutrition Data Page](spot://nutritiondatapage), [Nutrition Facts Page](spot://nutritionfactspage), [Nutrition Value Page](spot://nutritionvaluepage),
+  [[Food Recipe Research]],
+  [[Eat]],
+  [[Bfast]],
+  [[FOOD Research]],
   DELS: [[dinner]], [[Noom Notes]], [[Food Research]],[FOOD Research Note](spot://foodresearchnote), [[FOOD Research]],[[qwd]], 
 
 
