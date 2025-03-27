@@ -17,9 +17,7 @@
             [[House]]: 
                 [[House Crime]]: 
         [[Career]]: 
-            [[RES]]: [[Bio]],	[[RES Examples]],	
-                [[RES Job History]]: 
-                    [[AF]]: 
+            [[RES]]: [[RES Job History]],	[[Bio]],	[[RES Examples]],	
             [[NJ]]: [[SEEK]],	[[NJ22]],	[[NJ16]],	
                 [[TG]]: 
         [[FIN]]: [[FIN Tracking]],	
@@ -78,7 +76,7 @@
             [[UfApps]]: 
             [[UF-OLD]]: [[OLD-CONSTRUCTS]],	[[OLD-Markdown]],	[[lex-lexlang]],	
         [[2020-08 Race Pitch]]: 
-    [[AT]]: [[@Qingling Oblinger]],	[[VC ORG]],	[[@Google]],	
+    [[AT]]: [[@Qingling Oblinger]],	[[VC ORG]],	[[@Analytics Fire]],	[[@Google]],	
         [[ORG]]: [[@Merrill]],	[[@Hackers]],	[[Service]],	
             [[@Amazon]]: 
                 [[AMA]]: [[Amazon]],	

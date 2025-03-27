@@ -32,12 +32,26 @@ My sweet-spot is bridging world-leading R&D into rapid productization.
 - 
 
 
-## = YOUR WEAKNESS - Too fond of super-general, super-elegant solutions
+## = YOUR WEAKNESS 
 
-- Delay
+### - WEAKNESS:  Too fond of super-general, super-elegant solutions
+- UPSIDE: Gifted at elegant processes/architectures & getting to the heart of some complex problem.
+- DOWNSIDES: Easily can (a) impact schedule, (b) priorities, or (c) be over-engineered. 
+- PREEMPT:  Good and sensing risk.
+- LEARNED SOME TOOLS:
+	- DELAY -
+	- PIECEMEAL - Build the general solution in stages
+	- LOW-HIGH - Explicitly hack parts of the solution w/ throw away parts
+	- TIME BOX - 
 
-- Pick an understandable side-effect of something awesome
-- Then finish with how I mitigate the weakness
+#### DAT FRAMEWORK
+- Delayed -
+- Time boxed -
+=> Didn't over-engineer or waste time, but did delay too much before done
+=> Should have piecemeal & timebox
+
+
+
 
 ## = CONFLICT
 - AF Equity Split with Nick

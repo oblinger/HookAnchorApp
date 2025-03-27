@@ -8,5 +8,8 @@
   , [[Meta KMR]], [[Meta Productivity]], [[Meta Self]], [[Meta Sys]], [[Meta Work]],
   DELS: [[Meta Sys]], [[Meta KMR]], [[Meta Self]], [[Meta Work]], [[Meta Productivity]],
   , [[Meta List Codes]], [[Meta Time Codes]],
-   DELS: [[Meta Sys]], [[Meta KMR]], [[Meta Self]], [[Meta Work]], [[Meta Productivity]],[[Base]], [[meta Tasks]], [[Roots]],
+   DELS: [[Meta Sys]], [[Meta KMR]], [[Meta Self]], [[Meta Work]], [[Meta Productivity]],, , ,
+  , [[Meta (Facebook)]],
+  , [[EV Log]], [[Meta (Facebook)]], 
+  DELS: [[Base]], [[meta Tasks]], [[Roots]],
 

@@ -56,10 +56,6 @@ FILIP: ask him again?
 
 ## __
 
-**
-
--   
-    
 - SIZE - And not sized for regulation, but rather to the size of the gym it is in.
     
 - HAIR - Pony tails and long hair are great… at least until your an AI trying to get a glimpse at the jersey number below it.
@@ -74,13 +70,8 @@ FILIP: ask him again?
 
 It all happens, and it is a fail, if our algorithms just fall over, so we need to tackle them all!
 
-**
-
-
-
-
-
-
+## .
+l
 
 
 

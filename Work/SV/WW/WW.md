@@ -1,5 +1,5 @@
 .[[WW]].
-  [[2025 GPU Choice]],
+  ,
   , [[2023-08 Ingest Alternatives Analysis]], [[2023 Base Ball Product Offering]]
   , [[2023 Basketball Stats]], [[2023 Belief Propagation]], [[2023 Beta Testing]]
   , [[2023 Blog Announce and Bio]], [[2023 Brians Birds Eye]], [[2023 Bridge Round]]
@@ -20,9 +20,10 @@
   , [WW Gdrive Page](spot://wwgdrivepage),
   , [Arch](spot://arch),
   , [[2023 Headless Record Flow]], [[2023 Minutes Stat Calculations and Annotations]]
-  , [[2023 SV Learning]], 
+  , [[2023 SV Learning]],
   DELS: ,[[2023 Headless Record Flow]], [[2023 Minutes Stat Calculations and Annotations]], [[2023 SV Learning]],
-  DELS: [[2024-08 Backend Architect]],[[2023 Headless Record Flow]], [[2023 Minutes Stat Calculations and Annotations]], [[2023 SV Learning]],[[2023 Learning]], [[2023 Record Flow]], [[2023 Stat Calculations and Annotations]], [[2024-08 Backend Architect]], 
+  , [[2025 GPU Choice]], 
+  DELS: [[2024-08 Backend Architect]],[[2023 Headless Record Flow]], [[2023 Minutes Stat Calculations and Annotations]], [[2023 SV Learning]],[[2023 Learning]], [[2023 Record Flow]], [[2023 Stat Calculations and Annotations]], [[2024-08 Backend Architect]],[[2025 GPU Choice]],
 
 
 

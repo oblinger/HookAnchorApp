@@ -1,6 +1,6 @@
 .[[Food]].
   [[Diet]]:
-  [[Meals]]:	[[Groc]], [[Entrees]], [[Eli Food]], 
+  [[Meals]]:	[[Groc]], [[Entrees]], ,
   [[Meals Thermomix]]:
   [[Meals Vegetables]]:
   [[ContainerWeights]]:
@@ -15,7 +15,7 @@
   [[Eat]],
   [[Bfast]],
   [[FOOD Research]],
-  DELS: [[dinner]], [[Noom Notes]], [[Food Research]],[FOOD Research Note](spot://foodresearchnote), [[FOOD Research]],[[qwd]], 
+  DELS: [[dinner]], [[Noom Notes]], [[Food Research]],[FOOD Research Note](spot://foodresearchnote), [[FOOD Research]],[[qwd]],[[Eli Food]], 
 
 
 

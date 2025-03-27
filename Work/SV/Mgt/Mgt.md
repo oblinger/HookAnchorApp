@@ -2,6 +2,16 @@
 - [[ROADMAP]], 
 - [CV Mgt Meeting Folder](https://drive.google.com/drive/folders/1M89W2MQgTDPL8t90l_z2mo2km7-ozvuo) 
 
+
+pick adn roo
+points on turnover
+points in the paint
+points on fast break
+recognizing defense orgnanization -  2-3 zone, man defense, 
+
+
+
+
 # Log
 
 ### 2025-03-12  W

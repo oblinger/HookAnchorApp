@@ -1,7 +1,8 @@
 Documents from previous jobs
 
 .[[RES Job History]].
-  ,   [[AF]], 
+  ,   ,
+  DELS: [[AF]], 
 
 LOOK IN FOLDER
 - [[@Analytics Fire]] 
