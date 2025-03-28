@@ -16,5 +16,18 @@ New World Order
 - [[EOCK Machine Centric Coms]] 
 
 
+STEPS:
+- Generalized Type-II reasoning
+- [[EOCK Corp AI]]
+	- Role Filling
+	- Key Role Loop Closing
+	- Majority Role Loop Closing
+- [[EOCK Machine Centric Coms]] - 
 
-[[EOCK]] 
+- Autonomous AI-entities
+- Parabolic growth
+- Replication/Reinvention of the entire economic engine
+- Nation-state panic
+- Defense-centered-AI-designs
+
+- Full web loop and coms closed 

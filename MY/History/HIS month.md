@@ -1,4 +1,7 @@
 
+[[PODCAST To Listen To\|Mon Feb 3  2025 ]]  	[[PODCAST To Listen To#AI Academic Podcasts]]  
+[[PODCAST To Listen To\|Mon Feb 3  2025 ]]  	[[PODCAST To Listen To#LOG]]  
+[[NJ Blog\|Sun Feb 2  2025 ]]  	[[NJ Blog#LOG]]  
 [[NJ Todo\|Sun Feb 2  2025 ]]  	[[NJ Todo#LATER]]  
 [[DL Strategy\|Sun Feb 2  2025 ]]  	[[DL Strategy#CONSIDER]]  
 [[DL Strategy\|Sun Feb 2  2025 ]]  	[[DL Strategy#STUFF]]  

@@ -1,12 +1,15 @@
 ### BUY TEAS
 FAVS:		
-- HARNEY: &Son Paris, 
-- TWININGS:  Honey Bush, 
-- YOGI: Kava, Egyptian Licorice
-- TRAD-MED: Lemon Ginger, Peppermint(ok),
+- HARNEY: 	Paris, 
+- TWININGS:	Lemon Ginger, Honey Bush, 
+- YOGI: 		Kava, Egyptian Licorice
+- TRAD-MED: Lemon Ginger(ok), Peppermint(ok),
 - EQ-EXCNG: Vanilla Rooibos
 - PUKKA:  	(amz?) ThreeGinger++, ThreeLicorice+
-- NUMI: Rooibos
+- NUMI: 		Rooibos
+- Spearmint
+- Cinnamon
+- Chai
 
 TEAS  http://carandafinefoods.com 
 

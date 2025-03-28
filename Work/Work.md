@@ -71,12 +71,6 @@ FILIP: ask him again?
 It all happens, and it is a fail, if our algorithms just fall over, so we need to tackle them all!
 
 ## .
-l
-
-
-
-
-
 
 
 

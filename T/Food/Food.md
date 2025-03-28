@@ -1,6 +1,6 @@
-.[[Food]].
+.[[Food]].   [[BUY]] 
   [[Diet]]:
-  [[Meals]]:	[[Groc]], [[Entrees]], ,
+  [[Meals]]:	[[Groc]], [[Entrees]],
   [[Meals Thermomix]]:
   [[Meals Vegetables]]:
   [[ContainerWeights]]:
