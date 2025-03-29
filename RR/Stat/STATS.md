@@ -3,6 +3,6 @@
 
 
 ### - [[Stat Anomolies]] 
-### - [[Hypothesis Testing]] 
+### - [[Precision & Recall - Hypothesis Testing]] 
 ### - [[Z-Test]] 
 

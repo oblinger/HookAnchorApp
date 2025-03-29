@@ -822,7 +822,7 @@
 [[Top\|Sun Jul 7  2024 ]]  	[[Top#		TOP LEVEL INFO ORGANIZATIONS]]  
 [[Time Tracker\|Sun Jul 7  2024 ]]  	[[Time Tracker#--- TRACKER]]  
 [[STATS\|Sun Jul 7  2024 ]]  	[[STATS#- [[Stat Anomolies]]]]  
-[[STATS\|Sun Jul 7  2024 ]]  	[[STATS#- [[Hypothesis Testing]]]]  
+[[STATS\|Sun Jul 7  2024 ]]  	[[STATS#- [[Precision & Recall - Hypothesis Testing]]]]  
 [[STATS\|Sun Jul 7  2024 ]]  	[[STATS#- [[Z-Test]]]]  
 [[Race\|Sun Jul 7  2024 ]]  	[[Race#LOG]]  
 [[Race\|Sun Jul 7  2024 ]]  	[[Race#REST]]  

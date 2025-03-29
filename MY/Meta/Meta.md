@@ -12,6 +12,8 @@
   , [[Meta (Facebook)]],
   , [[EV Log]], [[Meta (Facebook)]],
   , [[Meta (Facebook)]],
+  , [[Meta (Facebook)]],
+  , [[Meta (Facebook)]],
   , [[Meta (Facebook)]], 
   DELS: [[Base]], [[meta Tasks]], [[Roots]],
 

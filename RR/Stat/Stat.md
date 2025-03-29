@@ -3,8 +3,8 @@
   :
   [[ADF - Augmented Dickey Fuller Test]], [[AutoRegressive]], [[Bayes Optimal Error]], [[HarmonicMean]], [[KL Divergence]], [[Likelihood]], [[PCA]], [[Q-Q Plot]],
   [[Ransac]], [[Sigmoid]], [[Softmax]], [[Stationary]], [[KL Divergence]],
-  [[Hypothesis Testing]], [[Stat Anomolies]],
-  [[Perplexity]], [[Hypothesis Testing]], [[Stat Anomolies]], [[Z-Test]], [[STATS]],
+  [[Precision & Recall - Hypothesis Testing]], [[Stat Anomolies]],
+  [[Perplexity]], [[Precision & Recall - Hypothesis Testing]], [[Stat Anomolies]], [[Z-Test]], [[STATS]],
   ,
   , ,
   , ,

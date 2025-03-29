@@ -1,5 +1,5 @@
-.[[NJ]].	  [[Lrn]],
-  PLAN:	, [[NJ Plan]], [[SEEK]],
+.[[NJ]].	   [[Lrn]],
+  PLAN:	[[NJ Plan]], [[SEEK]],
   TOP:	[NJ Slides](spot://njslides), [[NJ Log]],
   NOW:
   PARTS	[[NJ Ask]], [[NJ Coaches]],

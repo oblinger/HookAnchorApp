@@ -5,6 +5,9 @@ n:: no prefix.	Dated entries without any typing prefix
 
 | Date       | File                                        | Notes                                                                                                                             |
 | ---------- | ------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------- |
+| 2025-03-28 | [[NJ Plan]]                                     | Ideas                                                                                                                             |
+| 2025-03-28 | [[@Jason Syversen]]                             | Sony Response                                                                                                                     |
+| 2025-03-28 | [[@Jason Syversen]]                             | Chat                                                                                                                              |
 | 2025-03-25 | [[EV Log]]                                      | Call with Recruiter Brian Rife                                                                                                    |
 | 2025-03-21 | [[@Jason Syversen]]                             | Suns Analytics Discussion                                                                                                         |
 | 2025-03-20 | [[@Felipe Lavratti]]                            | chat                                                                                                                              |

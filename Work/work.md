@@ -21,13 +21,18 @@
     (regression test all Q since Q3 2023)
 - +  3.2  Speedups 
 
-
+[[@Jason Syversen]]
 Q2 
+- [AI Prod Matrix](https://docs.google.com/spreadsheets/d/1iQvOKwS09QcFTqXK1Ko0ydSgwqjXItbCRrkOMZaBj40/edit?gid=0#gid=0) possible products
+- Risk test 1-2 of AI-cam, VB speed, advB
 - Speedups
 - Shot Charts
-- Stability and scaling
-- (other AI products)
-- what else????l
+- Stability and Scaling
+- what else ???
+
+
+this or this or this I would take
+
 ## TRACK
 - File Patent. (put note in to Mgt channel)
 

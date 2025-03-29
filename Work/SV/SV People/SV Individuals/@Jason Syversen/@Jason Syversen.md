@@ -218,6 +218,99 @@ DISCUSS
 
 # LOG
 
+### 2025-03-28  Sony Response
+
+
+>   
+> On Mar 19, 2025, at 8:28 AM, Jason Syversen <jason@sportsvisio.com> wrote:
+> 
+>   
+> 
+> Dan,
+> 
+>   
+> 
+> Just got this from our POC at Sony Ventures. He's trying to prepare for pitching their IC. 
+> 
+>   
+> 
+> "It would be interesting to see a side by side why Sportsvisio is so much more ahead. The proprietary data and model aspect is a huge differentiator compared to others in the market. I know you mentioned that your concern is if ever the big LLM put resources to this it could become difficult. It is hard to see that but still why do you think that would not happen?"
+> 
+>   
+> 
+> Would appreciate your thoughts and input to provide to him.
+
+  
+
+As I said when we spoke:  "This stuff is not six months away, and I don't think it a out of the box solution will anytime in the next three years."  Well, that was two years ago.  And I still don’t think an out-of-the-box solution will drop in the next year, but the progress has been breathtaking.  Current models cannot track people well, so they are a non-starter.  But I think the risks increase that such a solution COULD drop, and then we would be competing more on market share, and end-to-end product (which I think is quite a barrier).  But we should not assume we have ANOTHER 3 years of not having an out of the box solution …. I think that is becoming more plausible.
+
+  
+
+Still I understand the objective here.  We want to tell Sony why we are great!  See my text below for a quick take on this question:
+
+  
+
+  
+
+~~~
+
+  
+
+  
+
+In the long run there is no doubt that that foundational models will continue increasing in performance allowing them to directly take on that challenge of doing stats and highlights.  These hyper scalars are putting tens or hundreds of billions of dollars into ever better models and they are making good progress in delivering these models. Still I think there is some evidence that this future is not right around the corner.  
+
+  
+
+  
+
+(1) If we look at the performance of current frontier models they are quite good at recognizing sports-relevant actions across a range of sports (like a volleyball spike, or basketball shot.) but they noticably poorer at keeping track of the relationships key to fully understanding a game.  For example tracking which player is which, and player took each action.
+
+  
+
+This is not surprising, we get our best results when we train player models on a game by game basis, but this kind of focused training per game is really different than the current up-front training models favored by current LLM architectures.  Its not to say these companies could not invest is such approaches, but the business model is quite different from the one they are currently pursuing.  It affords less ability to amortize heavy training over ever larger bodies of paid inference.
+
+  
+
+  
+
+(2) We believe that the best models will be trained (or at least fine tuned) on a sport by sport basis.  These is a great degree of commonality between scene understanding across many domains including sports.  The way that camera’s work, gravity works, occlusion works are shared broadly, and these foundational models are focused on capturing this commonality.  Still beyond these commonalities, there crucial aspects of scene understanding that are very tied to individual sports.  For example, the visual pattern used to recognize a personal foul or how dribbling looks when maintaining ball control are both very tied to basketball, and basketball alone.  In order to get best performance from a model for recognizing such patterns is to curate milions of hours of basketball footage.  There is no shortcut for curating and likely annotating this data.  The hyperscalars are investing notable money into training, still their focus is not on Basketball, nor ball sports, or even sports in general, rather they are curating data wholistically for a much much larger universe of human activity.  Thus, while surely they have basketball footage in their dataset, they quite likely have not curated basketball footage with an eye towards best models of ball control, personal founds, etc.  But this is exactly the kind of attention to data that is required, and it is the attention that a sports analytics company will ensure.
+
+  
+
+  
+
+(3) In the end, the cost of delivering AI-stats will end up being a compute dominated business.  We are already see growing sophistication in specializing model-inference towards the task being executed.  It will not be possible to have a generic video-inference solution which is optimal for each sports application as well as all of these other video applications.  It is likely that aspects of these generic models will be distilled into the data used to train a sport-specific inference model, but in the end our best performance will likely come from such specialized inference models.
+
+- fwd - backward 
+- window size - substitions
+- gallery
+- dribbling 
+- foul - 
+- distil - 
+	- not one and done
+	- control over the output
+	- if you have own local tuned copy is always better becuase of control all:  perf Tradeoffs, specialization to HW, specialization to, resource allocations towards domain apsects of interest.  Control over the data (privacy & accuracy)
+- https://vintagedata.org/blog/posts/model-is-the-product
+- Normal problems: corrupted data, missed data, world changes, model cannot be frozen
+- They don't when they don't know.  need to accout for that.
+- multi-camera input
+
+
+
+### 2025-03-28  Chat
+
+Egg on Face
+- Handled swap from BB well
+- But dropped ball in min to prod in Q4
+	- Thinking BB-stats
+	- Q1 - skeleton crew => automation
+	- Q2 - hardening stack; schart; 
+	  tiny tests
+	- Grz
+
+[Filipe](https://www.linkedin.com/search/results/all/?fetchDeterministicClustersOnly=true&heroEntityKey=urn%3Ali%3Afsd_profile%3AACoAAA2AfZQBXuiMswYV1x1b2Q1w8f-0a-lIQ2c&keywords=felipe%20lavratti&origin=RICH_QUERY_TYPEAHEAD_HISTORY&position=0&searchId=50d3da4a-9ca9-40ba-8b3f-77529f836ae3&sid=-Y9&spellCorrectionEnabled=true) 
+
 
 ### 2025-03-21  Suns Analytics Discussion
 
