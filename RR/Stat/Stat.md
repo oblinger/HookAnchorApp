@@ -3,8 +3,8 @@
   :
   [[ADF - Augmented Dickey Fuller Test]], [[AutoRegressive]], [[Bayes Optimal Error]], [[HarmonicMean]], [[KL Divergence]], [[Likelihood]], [[PCA]], [[Q-Q Plot]],
   [[Ransac]], [[Sigmoid]], [[Softmax]], [[Stationary]], [[KL Divergence]],
-  [[Precision & Recall - Hypothesis Testing]], [[Stat Anomolies]],
-  [[Perplexity]], [[Precision & Recall - Hypothesis Testing]], [[Stat Anomolies]], [[Z-Test]], [[STATS]],
+  , [[Stat Anomolies]],
+  [[Perplexity]], , [[Stat Anomolies]], [[Z-Test]], [[STATS]],
   ,
   , ,
   , ,
@@ -14,8 +14,12 @@
   , [[MeanSquaredError Loss]],
   , [[Beroulli Distribution]], [[nn.CrossEntropyLoss]], [[nn.NLLLoss]], [[STAT Distributions]],
   , [[Measure]],
-  , [[Stat Terms]], 
-  DELS: [[Stat Alg]],[[Kalman Filter]],[[RMS]], [[Stat Alg]], [[Stat Alg]],[[Stat Terms]],
+  , [[Stat Terms]],
+  , ,
+  DELS: [[Stat Alg]],,[[RMS]], [[Stat Alg]], [[Stat Alg]],[[Stat Terms]],
+  , [[Precision & Recall - Hypothesis Testing]], 
+  DELS: [[Stat Alg]],,[[RMS]], [[Stat Alg]], [[Stat Alg]],[[Stat Terms]],[[Precision & Recall - Hypothesis Testing]], [[Precision & Recall - Hypothesis Testing]],
+  DELS: [[Stat Alg]],[[Kalman Filter]],[[RMS]], [[Stat Alg]], [[Stat Alg]],[[Stat Terms]],[[Precision & Recall - Hypothesis Testing]], [[Precision & Recall - Hypothesis Testing]],[[Hypothesis Testing]], [[Kalman Filter]], 
 
 [[Kalman Filter]] 
 

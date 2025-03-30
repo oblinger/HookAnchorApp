@@ -1,13 +1,17 @@
 
-- [[NJ.]]		
+- [[NJ]] [[NJ.|.]]		
 - [[RES]]:	Get Resume & Linked into final form.
 - [[LRN]]:	Learn leet coding from Algo Monster.
-- [[CN]]:	Meet [[BOD]]. 
+- [[CN]]:		Meet [[BOD]]. 
 
 
 ## MY PLAN -- Be enough of an AI-IC to get a job as a tech manager, preferably at a FAANG, possibly as an IC
 
-### LEARN
+### READY
+1. LATER Review [Docx](spot://resdocx) 
+2. LATER Sweep [[RES War]] & [[RES Star]]
+
+### LEARNING
 1. PUZZLE CODING - Algo Monster, Leet Code
    ==> Get good at fast coding on medium and some hard Algo problems.
 2. COURSERA DL - Taking Coursera courses
@@ -18,24 +22,29 @@
    ==> Get good enough to slam a simple model in a short time & talk about 50 improvements I could make
 
 ### INTERVIEWING
-1. RESPOND - to inbound or job applications
-2. HEAD HUNTERS - 
-3. TIER II - 
-4. CLASSES - Interview Prep Classes communities
-5. Practice Interviews: 3-4  Technical AI roles
+1. [[TG]]: Find Job search sites
+2. RESPOND - to inbound or job applications
+3. HEAD HUNTERS - 
+4. TIER II - 
+5. CLASSES - Interview Prep Classes communities
+6. Practice Interviews: 3-4  Technical AI roles
 
-### OTHER???
+
+### NETWORKING
+1. [[Alien Biology]] Outreach
+
+### OTHER
 - Get Coach(es), Accountability, [[BOD]] 
 - Behavioral:  Books, Podcasts, Blogs, 
 - Add to Star/War materials
 
 
 ### META PLAN
-- READY - Get materials ready, Learn stuff, 
-- LEARNING - Interviewing, Vibe, Torch, Leet, Read
-- NETWORK - 
-- INTERVIEWING - 
-- FAANG - [[Alien Biology]] outreach, 
+0. READY - Get materials ready, Learn stuff, 
+1. LEARNING - Read, Vibe, Torch, Leet
+2. INTERVIEWING - 
+- NETWORKING - 
+- PROJ - [[Alien Biology]] outreach, 
 
 # LOG
 

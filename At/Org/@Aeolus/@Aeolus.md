@@ -16,6 +16,53 @@
 
 [Facebook](https://www.facebook.com/AeolusRobotics/) 
 
+## = TEAM
+
+Andrzej Domaradzki <i-andrzej.domaradzki@aeolusbot.com>, 
+Dan Oblinger <dan.oblinger@aeolusbot.com>, 
+Alex Huang <alex.huang@aeolusbot.com> 
+Robert Yao <robert.yao@aeolusbot.com>, 
+Patrick Tien patrick.tien@aeolusbot.com
+David Fischinger <david.fischinger@aeolusbot.com>
+
+Theo Enns <theo.enns@aeolusbot.
+Dan Haddick <daniel.haddick@aeolusbot.com>, 
+Matt Chana <matt.chana@aeolusbot.com>
+
+David Fischinger <david.fischinger@aeolusbot.com>
+Brandon Rutter-Daywater <brandon.rutter-daywater@aeolusbot.com>, 
+Bill Mather <bill.mather@aeolusbot.com
+
+NAV 		George Todoran <george.todoran@aeolusbot.com 
+VISION	Severin Fichtl <severin.fichtl@aeolusbot.com>
+ROBIO		Felipe Lavratti <felipe.lavratti@aeolusbot.com
+PLEX 		Jose Pereira <jose.pereira@aeolusbot.com>,
+RAP		Balazs Gaal <balazs.gaal@aeolusbot.com>,
+
+Milutin Nikolić <milutin.nikolic@aeolusbot.com>
+Bill Kotsias <bill.kotsias@aeolusbot.com>
+
+Bartłomiej Rynkiewicz <bartlomiej.rynkiewicz@aeolusbot.com>
+
+
+TC Huang <TC.huang@aeolusbot.com>, 
+Stephen Hsu <stephen.hsu@aeolusbot.com>
+Richard Hsueh <richard.hsueh@aeolusbot.com>
+
+
+
+NAV TEAM
+Severin Fichtl <severin.fichtl@aeolusbot.com>, 
+Dora Hsiao <dora.hsiao@aeolusbot.com>, 
+Samuel Servulo <samuel.servulo@aeolusbot.com>,
+Bill Mather <bill.mather@aeolusbot.com>, 
+Barttomiej Rynkiewicz <bartlomiej.rynkiewicz@aeolusbot.com>, 
+zukasz Juszkiewicz <lukasz.juszkiewicz@aeolusbot.com>, 
+Michat Drwiega <Michal.drwiega@aeolusbot.com>, 
+Bill Kotsias <bill.kotsias@aeolusbot.com>
+
+Mateusz Nowakowski <i-mateusz.nowakowski@aeolusbot.com>
+Jose Pereira <jose.pereira@aeolusbot.com>
 # MEETINGS
 ### [[@Theo Enns#m2022-03-03 - Aeolus research summary from Theos perspective]]
 

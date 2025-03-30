@@ -1,4 +1,9 @@
 
+[[2023-W50\|Thu Dec 28  2023]]  	[[2023-W50#W50   2023-12-11   [[2023-W49\\|<<]] [[2023-W51\\|>>]]]]  
+[[DocDocker\|Thu Dec 28  2023]]  	[[DocDocker#Install]]  
+[[DocDocker\|Thu Dec 28  2023]]  	[[DocDocker#Setup on Mac]]  
+[[DocDocker\|Thu Dec 28  2023]]  	[[DocDocker#LOG]]  
+[[DocConda\|Thu Dec 28  2023]]  	[[DocConda#Setup Commands]]  
 [[2013 Thailand\|Thu Oct 12  2023]]  	[[2013 Thailand#TASKS]]  
 [[@Clash.TV\|Thu Oct 12  2023]]  	[[@Clash.TV#LOG]]  
 [[ELI\|Thu Oct 12  2023]]  	[[ELI#Quotes]]  

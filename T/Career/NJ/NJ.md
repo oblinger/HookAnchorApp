@@ -1,4 +1,4 @@
-.[[NJ]].	   [[Lrn]],
+.[[NJ]].	   [[Lrn]], [[RES]], 
   PLAN:	[[NJ Plan]], [[SEEK]],
   TOP:	[NJ Slides](spot://njslides), [[NJ Log]],
   NOW:

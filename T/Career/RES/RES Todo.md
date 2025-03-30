@@ -1,37 +1,20 @@
 
-- [ ] Add details about hand-on AI
+- [ ] .
 - [ ] [[Res Star]] [[Res War]] - key entries need to be completed
+- [ ] [[Res War AI]] - Add details about hands-on AI
+
+- [ ] Get Recommendations:  Nick & ?Filiepe?
 - [ ] Update Linked in about section
-- [ ] HandsOn Highlights.      Leadership Highlights.
-- [ ] talk about hiring 300+ in at a glance not
-
-
-- [ ] [[RES Star]]: Create stars for
-- [ ] [[2024-04-01 Resume Rewrite]]: 
-
-- [ ] WAR Stories
-- [ ] One Pager Resume
-- [ ] Update Full Resume with Sports Visio entry
-- [ ] PBG - Crunchbase
-- [ ] Recommendation from Nick & ?Filiepe?
-
-HIGHLIGHTS SECTION
-- [ ] Add contributor items
-
-RES
-- [ ] Add an objectives section?  (Use [[RES Pyramid]])
-
-CLEANUP:
-- SV: get numbers on actual growth
-- AF: total number of employees.
-- Formatting on "grey" sections.
+- [ ] SV: get numbers on actual growth
+- [ ] AF: total number of employees.
 
 BEEF UP GEN-AI ON RESUME
 - [ ] Add SV section for DL system
-- [ ] Beef up instant design section for AF
+- [ ] Beef up ithe nstant design section for AF
 - [ ] Entry for Aeolus DL work
 
 
+# LOG
 ### 2024-11-20  Highlights
 
 - Contributed numerous ideas and implementations 

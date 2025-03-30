@@ -27,9 +27,9 @@ My sweet-spot is bridging world-leading R&D into rapid productization.
 
 
 # STORIES: KEY TOPICS
-## = TURN AROUND
+## = TURN AROUND !!!
 - [[RES Star#SPORTS VISIO - Turn Around]]
-- 
+- Aeolus??  Key algorithms (motion planning; object reco) not working 70 days from CES.
 
 
 ## = YOUR WEAKNESS 
@@ -47,19 +47,22 @@ My sweet-spot is bridging world-leading R&D into rapid productization.
 #### DAT FRAMEWORK
 - Delayed -
 - Time boxed -
-=> Didn't over-engineer or waste time, but did delay too much before done
-=> Should have piecemeal & timebox
++++	Didn't over-engineer or waste time, 
+---	But did delay too much before done
+==>	Should have piecemeal & time-box
 
 
 
 
 ## = CONFLICT
+
+### MISC CONFLICTS
 - AF Equity Split with Nick
-- Pietro Firing
 - Joe Aug selling the company while not being invited into the next one.
+- Pietro Firing
 - Hack week: asked, call-to-carpet... failed to pull Maxim.  Caved in, then led by example
 
-### SCOPING CONFLICTS - Scattered Tasking
+### SCATTERED SCOPING (CONFLICTS) 
 
 S:	Unrealistic scope & firm belief that a 'real' executor could do it.  (both Alex & Jason)
 T: Do it
@@ -75,8 +78,8 @@ R: Org shipped product & moved from $0 to $800K ARR
 - "MOTHBALLING" ==> #2 - Got multiple efforts mothballed so we could focus on our mission critical deployments.
 
 #### SHOOT FROM THE HIP TASKING --> Product Matrix & Spec driven responses
-**PRODUCT MATRIX** - Developed product matrix with 'shirt size' estimates of effort, risk, and impact
-- 
+==> **PRODUCT MATRIX** - Developed product matrix with 'shirt size' estimates of effort, risk, and impact
+
 
 **Tennis POC** - "Give me a POC for tennis in a day or two"
 - "this will not be a day or two it will be the better part of a week from most of the team"
@@ -89,15 +92,15 @@ R: Org shipped product & moved from $0 to $800K ARR
 
 
 
-### UNDERPERFORMANCE
-S:	Underperforming engineer (Jochim QA, Vishal)
-T: Resolve the situation
+### UNDERPERFORMING QA LEAD  (CONFLICT)
+S:	Rumors of "hard to work with" QA lead (Jochim);      Slow Vishal delivery
 A: Joachim QA Lead - complaints & velocity -> gave him a direct line to me -> kept arm's length via email
 	  -> supported him and made delivery clear and significant -> Second try -> Fired on third.
 A: Maxim slow delivery, low motivation -> dug in (wanted "professor" job) -> strong delivery dates (he hated it), slow -> let go
 R: The team was happier & hired better/cheaper QA later
 
 
+### UNDERPERFORMING TEAM LEAD (CONFLICT)
 S: Greek manager having trouble wanting to quit; hard worker & good technical choices; could not sleep
 	Hard worker and ran a well-organized team.  wanted to 'demote' to IC. Stressed out, paralyzed by decisions.
 A:	Gave him another manager to 'lean' on.  We turned this on more than once, but over time, he got better.
@@ -119,22 +122,18 @@ R:	Delivered into CES, raised $16M
 
 ## = PRODUCT DELIVERY
 
-### PRODUCT DELIVERY - Largest Scale -  >$3B at AF - Largest scale deployments
+### PRODUCT DELIVERY - $3B - Largest Scale -  >$3B at AF - Largest scale deployments
 S: Sunpower wanted to create a residential business from scratch.
 T:	Deliver omnibus solution
 A:	Built-in QA, what is not getting delivered, quarter-by-quarter deliverables.
 R:	The largest driver of new business across all business units for a decacorn.
 
 ### PRODUCT DELIVERY - Advanced Products - Dexterous Robot; Full-AI Solar Planner; CV BB stats
-### PRODUCT DELIVERY - In The Weeds Execution - SportVisio BB
+### PRODUCT DELIVERY - In The Weeds Execution - SportVisio BB - BB Stats & highlights
 
 ## LEADERSHIP ???
 
-
-
-
-
-# STORIES:  PEOPLE MANAGEMENT
+# === PEOPLE MANAGEMENT ===
 ## = MANAGEMENT STYLE/PHILOSOPHY
 ### MGT STYLE -  [What is your management style?](https://www.indeed.com/career-advice/career-development/what-is-my-management-style) 
 - Problem Solver
@@ -554,7 +553,7 @@ R:	The largest driver of new business across all business units for a decacorn.
 
 ## .
 
-# STORIES:  PROJECT MANAGEMENT!
+# ===  PROJECT MANAGEMENT ===
 ## = PROJECT MANAGEMENT
 ### - REMOTE WORK
 #### . ROBOTIC VIDEOING - Video surveillance system w. Tripods and canned setups.
@@ -630,7 +629,7 @@ R:	The largest driver of new business across all business units for a decacorn.
 
 
 
-# BY COMPANY
+## BY COMPANY
 ## SPORTS VISIO - Turn Around
 
 Hired to fix quality, velocity, delivery, and personnel issues across Software and AI teams.

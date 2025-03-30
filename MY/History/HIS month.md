@@ -1,4 +1,9 @@
 
+[[2025-W06\|Tue Feb 4  2025 ]]  	[[2025-W06#FOO]]  
+[[PODCAST To Listen To\|Tue Feb 4  2025 ]]  	[[PODCAST To Listen To#LOG]]  
+[[NJ Blog\|Tue Feb 4  2025 ]]  	[[NJ Blog#LOG]]  
+[[MED Log\|Tue Feb 4  2025 ]]  	[[MED Log#2025-02-03  fix billing issue]]  
+[[2025-W06\|Tue Feb 4  2025 ]]  	[[2025-W06#W6   2025-02-03   [[2025-W5\\|<<]] [[2025-W7\\|>>]]]]  
 [[PODCAST To Listen To\|Mon Feb 3  2025 ]]  	[[PODCAST To Listen To#AI Academic Podcasts]]  
 [[PODCAST To Listen To\|Mon Feb 3  2025 ]]  	[[PODCAST To Listen To#LOG]]  
 [[NJ Blog\|Sun Feb 2  2025 ]]  	[[NJ Blog#LOG]]  
@@ -822,7 +827,7 @@
 [[Top\|Sun Jul 7  2024 ]]  	[[Top#		TOP LEVEL INFO ORGANIZATIONS]]  
 [[Time Tracker\|Sun Jul 7  2024 ]]  	[[Time Tracker#--- TRACKER]]  
 [[STATS\|Sun Jul 7  2024 ]]  	[[STATS#- [[Stat Anomolies]]]]  
-[[STATS\|Sun Jul 7  2024 ]]  	[[STATS#- [[Precision & Recall - Hypothesis Testing]]]]  
+[[STATS\|Sun Jul 7  2024 ]]  	[[STATS#- [[Hypothesis Testing]]]]  
 [[STATS\|Sun Jul 7  2024 ]]  	[[STATS#- [[Z-Test]]]]  
 [[Race\|Sun Jul 7  2024 ]]  	[[Race#LOG]]  
 [[Race\|Sun Jul 7  2024 ]]  	[[Race#REST]]  

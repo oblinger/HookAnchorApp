@@ -1,14 +1,22 @@
 
-# **PYRAMID**
 
-A proven AI PhD/CTO with decade-plus hands-on experience in ML/DL.  Built 5 orgs from scratch (up to 60 engineers), funded/led hundreds of millions in research at DARPA, exited three companies, and brought products to the market worth billions.  Looking for a hands-on, leadership role in generative-AI-based innovation.
+# **PYRAMID**    [Docx](spot://resdocx) 
+
+A proven AI PhD/CTO with decade-plus hands-on experience in ML/DL.  Built five organizations from scratch (up to 60 engineers), funded/led hundreds of millions in research at DARPA, exited three companies, and brought products to the market worth billions.  
+
+Seeking a hands-on, leadership role in generative AI R&D.
+
+### __
+Seeking a hands-on, leadership, generative-AI research-related role.
+
+Seeking a hands-on leadership role as close as possible to an engineering manager in a research organization focused on developing their own generative AI models.
 
 My sweet spot is driving world-leading R&D into rapid productization.
 
 
-(Details in [[RES Numbers]])
 
-## PhD/CTO
+
+## PhD/CTO   (Details in [[RES Numbers]])
 - PhD in AI/ML from a top engineering school: Illinois (UIUC)
 - CTO for 5 companies: with 3 exits and 2 continuing
 - Dozens of peer-reviewed conference and journal publications.

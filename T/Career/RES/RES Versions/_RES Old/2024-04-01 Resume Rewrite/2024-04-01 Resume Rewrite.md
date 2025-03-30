@@ -1,19 +1,8 @@
 .[[2024-04-01 Resume Rewrite]].
-  , ,
-  DELS: [[2024 Res Rewrite At a Glance]], 
 
-TODO
-- Finish [[RES Star]]
-- 
-
-.[[NJ]].
-  [[2024-04-01 Resume Rewrite]],
-
-[[NJ.]] 
-__
-	- [[2024-04-01 Resume Rewrite]] - 
-	- [[2024 Resume Rewrite Parts.docx]] - 
-	- [[NJ22 Framing]] - 
+- [[2024-04-01 Resume Rewrite]] - 
+- [[2024 Resume Rewrite Parts.docx]] - 
+- [[NJ22 Framing]] - 
 
 
 # SECTIONS
