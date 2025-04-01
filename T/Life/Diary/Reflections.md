@@ -1,4 +1,16 @@
 
+
+### 2025-03-31  Crashing and Burning.  What may come from the ashes?
+
+- I am less and less able to accomplish anything.  Anything at all!
+- I need to make incremental progress each day on A, B, and C I this will relieve stress.  
+
+RESOLUTIONS
+- SLACK:  I need to cut myself some slack.  I have $3M in the bank and QL and I together have $5M, all will be ok.
+- FOCUS: I need to ensure key things are attended to weekly:   (a) Health, (b) Fun, (c) Job, (d) Career, Work, Home
+- SMART: I need to have s.m.a.r.t. goals in my key areas.
+- CONFIDENCE: I need to build confidence by daily progress in 
+
 ### 2025-03-17  Really off track & what to do.
 
 In all areas, I think I am just demoralized.  I know that I am not making good progress. I think the wall emotionally looks too large, so I am sticking my head in the sand.

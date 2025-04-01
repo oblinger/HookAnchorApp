@@ -1,7 +1,15 @@
 .[[SEEK]].
-  , [[SEEK Postings]],
-  , ,
-  DELS: [[NJ Questions]],[[Seeking Questions]], 
+  [[SEEK Postings]],
+  [[SEEK List]], 
+  [[SEEK Search Terms]]
+  
+
+- [[NJ Questions]], 
+
+TODO
+- Chat Abio:    [[FAANG]], Nina, Praveen, Carlos, Langford
+- 
+
 
 
 JOB POSTINGS

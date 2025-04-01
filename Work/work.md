@@ -28,7 +28,13 @@ Q2
 - Speedups
 - Shot Charts
 - Stability and Scaling
+- Improve BB-stats
+- Improve datasets
+- Workflow Infrastructure improvements
 - what else ???
+	- Metrics automation
+	- metadata per code path / regress ts
+- Patents
 
 
 this or this or this I would take

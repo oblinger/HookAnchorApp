@@ -242,45 +242,40 @@ DISCUSS
 
   
 
-As I said when we spoke:  "This stuff is not six months away, and I don't think it a out of the box solution will anytime in the next three years."  Well, that was two years ago.  And I still don’t think an out-of-the-box solution will drop in the next year, but the progress has been breathtaking.  Current models cannot track people well, so they are a non-starter.  But I think the risks increase that such a solution COULD drop, and then we would be competing more on market share, and end-to-end product (which I think is quite a barrier).  But we should not assume we have ANOTHER 3 years of not having an out of the box solution …. I think that is becoming more plausible.
+As I said when we spoke:  "This stuff is not six months away, and I don't think it an out-of-the-box solution will anytime in the next three years."  Well, that was two years ago.  And I still don’t think an out-of-the-box solution will drop in the next year, but the progress has been breathtaking.  Current models cannot track people well, so they are a non-starter.  But I think the risks increase that such a solution COULD drop, and then we would be competing more on market share and end-to-end product (which I think is quite a barrier).  But we should not assume we have ANOTHER 3 years of not having an out-of-the-box solution …. I think that is becoming more plausible.
 
-  
-
-Still I understand the objective here.  We want to tell Sony why we are great!  See my text below for a quick take on this question:
-
-  
-
-  
-
-~~~
+Still, I understand the objective here.  We want to tell Sony why we are great!  See my text below for a quick take on this question:
 
   
 
   
 
-In the long run there is no doubt that that foundational models will continue increasing in performance allowing them to directly take on that challenge of doing stats and highlights.  These hyper scalars are putting tens or hundreds of billions of dollars into ever better models and they are making good progress in delivering these models. Still I think there is some evidence that this future is not right around the corner.  
+~~
 
   
 
-  
+  > "It would be interesting to see a side by side why Sportsvisio is so much more ahead. The proprietary data and model aspect is a huge differentiator compared to others in the market. I know you mentioned that your concern is if ever the big LLM put resources to this it could become difficult. It is hard to see that but still why do you think that would not happen?"
+> 
 
-(1) If we look at the performance of current frontier models they are quite good at recognizing sports-relevant actions across a range of sports (like a volleyball spike, or basketball shot.) but they noticably poorer at keeping track of the relationships key to fully understanding a game.  For example tracking which player is which, and player took each action.
-
-  
-
-This is not surprising, we get our best results when we train player models on a game by game basis, but this kind of focused training per game is really different than the current up-front training models favored by current LLM architectures.  Its not to say these companies could not invest is such approaches, but the business model is quite different from the one they are currently pursuing.  It affords less ability to amortize heavy training over ever larger bodies of paid inference.
+In the long run, there is no doubt that foundational models will continue increasing in performance, allowing them to directly take on the challenge of doing stats and highlights. These hyper scalars are putting tens or hundreds of billions of dollars into ever-better models, and they are making good progress in delivering these models. Still, I think there is some evidence that this future is not right around the corner.  
 
   
+(1) If we look at the performance of current frontier models, they are quite good at recognizing sports-relevant actions across a range of sports (like a volleyball spike or basketball shot.), but they are noticeably poorer at keeping track of the relationships key to fully understanding a game.  For example, keeping track of which player is which over the course of a game and then tying those actions to specific players.
+
+This is not surprising; we get our best results when we train player models on a game-by-game basis, but this kind of focused training per game is really a different model than the current up-front trained LLM models favored with current architectures.  It is not to say these companies could not invest in such approaches, but that business model would be quite different from the one they are currently pursuing.  It allows less ability to amortize heavy training costs over ever larger bodies of paid inference.
 
   
-
-(2) We believe that the best models will be trained (or at least fine tuned) on a sport by sport basis.  These is a great degree of commonality between scene understanding across many domains including sports.  The way that camera’s work, gravity works, occlusion works are shared broadly, and these foundational models are focused on capturing this commonality.  Still beyond these commonalities, there crucial aspects of scene understanding that are very tied to individual sports.  For example, the visual pattern used to recognize a personal foul or how dribbling looks when maintaining ball control are both very tied to basketball, and basketball alone.  In order to get best performance from a model for recognizing such patterns is to curate milions of hours of basketball footage.  There is no shortcut for curating and likely annotating this data.  The hyperscalars are investing notable money into training, still their focus is not on Basketball, nor ball sports, or even sports in general, rather they are curating data wholistically for a much much larger universe of human activity.  Thus, while surely they have basketball footage in their dataset, they quite likely have not curated basketball footage with an eye towards best models of ball control, personal founds, etc.  But this is exactly the kind of attention to data that is required, and it is the attention that a sports analytics company will ensure.
-
+(2) We believe that the best models will be trained (or at least fine-tuned) on a sport-by-sport basis.  There is a great degree of commonality between scene understanding across many domains, including sports.  The way cameras work, gravity works, and occlusion works are all broadly shared, and these foundational models capture these commonalities very well.  Still beyond these commonalities, there are crucial aspects of scene understanding that are very tied to individual sports.  For example, the visual pattern used to recognize a personal foul or how dribbling looks when maintaining ball control are both tightly tied to basketball and basketball alone.  To get the best performance from a model for recognizing such patterns, one must curate (and likely annotate) millions of hours of purpose-captured basketball footage.  There is no shortcut for curating and likely annotating data like this.  The hyperscalars are investing notable money into training. Still, their focus is not on Basketball, ball sports, or even sports in general; rather, they are curating data holistically for a much, much larger universe of human activity.  Thus, while surely they have basketball footage in their dataset, they likely have not curated basketball footage with an eye toward the best models of ball control, personal funds, etc.  Yet this is exactly the kind of attention to data that is required, and it is the attention that a sports analytics company provides.
   
 
-  
+(3) Ultimately, the cost of delivering AI stats will be an inference-dominated business.  We are already seeing growing sophistication in specializing model inference toward the specific tasks being executed.  It will not be possible to have a generic video-inference solution that is optimal for each sports application as well as all of these other video applications at the same time.  Instead, aspects of these generic models will likely be distilled into the data used to train sport-specific inference models.  Solution providers employing such specialized models will be the ones who win, and they will have the best cost margins.
 
-(3) In the end, the cost of delivering AI-stats will end up being a compute dominated business.  We are already see growing sophistication in specializing model-inference towards the task being executed.  It will not be possible to have a generic video-inference solution which is optimal for each sports application as well as all of these other video applications.  It is likely that aspects of these generic models will be distilled into the data used to train a sport-specific inference model, but in the end our best performance will likely come from such specialized inference models.
+
+
+
+which will be the ones yielding the best cost margins obtained by winning solution providers.
+
+, but in the end, our best performance will likely come from such specialized inference models.
 
 - fwd - backward 
 - window size - substitions

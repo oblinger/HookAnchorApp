@@ -5,6 +5,8 @@ n:: no prefix.	Dated entries without any typing prefix
 
 | Date       | File                                        | Notes                                                                                                                             |
 | ---------- | ------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------- |
+| 2025-03-31 | [[SEEK List]]                                   | Search                                                                                                                            |
+| 2025-03-31 | [[Reflections]]                                 | Crashing and Burning.  What may come from the ashes?                                                                              |
 | 2025-03-28 | [[NJ Plan]]                                     | Ideas                                                                                                                             |
 | 2025-03-28 | [[@Jason Syversen]]                             | Sony Response                                                                                                                     |
 | 2025-03-28 | [[@Jason Syversen]]                             | Chat                                                                                                                              |

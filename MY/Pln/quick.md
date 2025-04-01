@@ -1,3 +1,4 @@
+- talk w/ google about this limited factor with Google
 - meeting about camera
 - jason call
 - sony response
