@@ -1,8 +1,11 @@
 .[[SEEK]].
   [[SEEK Postings]],
   [[SEEK List]], 
-  [[SEEK Search Terms]]
-  
+  [[SEEK Search Terms]], 
+  [[SEEK Cover Letter Terms]], 
+
+  DELS: [[SEEK List]], [[SEEK Search Terms]], 
+
 
 - [[NJ Questions]], 
 

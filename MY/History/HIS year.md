@@ -1,4 +1,5 @@
 
+[[Reflections\|Thu Dec 28  2023]]  	[[Reflections#2023-11-07  Two Blistering Avoidance Failures:  Eating the F]]  
 [[MED Cholesterol\|Thu Dec 28  2023]]  	[[MED Cholesterol#LDL/HDL/Triglycerides]]  
 [[MED Cholesterol\|Thu Dec 28  2023]]  	[[MED Cholesterol#A1C / Glucose - 3 Month Average Glucose Levels]]  
 [[MED Heart\|Thu Dec 28  2023]]  	[[MED Heart#2023-11-13  Dr. HUI Visit]]  
