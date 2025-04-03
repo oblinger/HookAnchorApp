@@ -1,3 +1,4 @@
+- get representative games from pro and college; overseas pro game
 - talk w/ google about this limited factor with Google
 - meeting about camera
 - jason call

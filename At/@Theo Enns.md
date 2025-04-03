@@ -1,10 +1,8 @@
-=[[FAANG]]    [[@Amazon]]   #Mentor 
-
-
+=[[FAANG]]   [Sr. ML Manager - Deep Learning Frameworks](https://www.linkedin.com/in/theodore-enns-1329633a/)  [[@Adobe]]   #Mentor 
 
 # LOG
 
-### m2023-02-27  Theo 2023 chat1
+### m2. 23-02-27  Theo 2023 chat1
 
 GETTING HIRED AT AMAZON
 

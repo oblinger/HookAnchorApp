@@ -8,6 +8,7 @@
 **Group 4 – Hard Science Fiction with Focus on Complex Environments:** 
 1. *The Quantum Garden* by Derek Künsken A gripping narrative that delves into high-concept ideas surrounding quantum physics and interstellar politics. 
 2. 2. *The Hydrogen Sonata* by Iain M. Banks Part of the Culture series, it explores the end of a civilization and the evolution of artificial superintelligences. 
+      I did not like the bland plot and slow movement of this book.
 3. 3. *The Expanse* Series by James S.A. Corey Despite earlier frustrations, if you enjoyed elements of societal development and complex political intrigue, this series might still resonate in later volumes. 
 
 **Group 5 – Deeply Conceptual Novels Exploring Humanity and Evolution:** 

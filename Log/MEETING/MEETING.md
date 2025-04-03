@@ -11,7 +11,6 @@ n:: 'm...'	Verbal, single-person-centered interaction.
 | ----------- | -------------------- | ----------------------------------------------------------------- |
 | m2023-04-11 | [[@Joseph Yeh]]          | prep for bridge                                                   |
 | m2023-03-01 | [[@Mike Seibert]]        | Hiring AI / CV guys                                               |
-| m2023-02-27 | [[@Theo Enns]]           | Theo 2023 chat1                                                   |
 | m2023-02-27 | [[@Amazon]]              | Hire related                                                      |
 | m2023-02-21 | [[@Mark Lichty]]         |                                                                   |
 | m2023-02-21 | [[@Joaquin Mano]]        | Intro call                                                        |

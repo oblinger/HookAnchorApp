@@ -5,6 +5,7 @@ n:: no prefix.	Dated entries without any typing prefix
 
 | Date       | File                                        | Notes                                                                                                                             |
 | ---------- | ------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------- |
+| 2025-04-02 | [[SEEK Cover Letter Terms]]                     | Yashin's update                                                                                                                   |
 | 2025-04-01 | [[SEEK Cover Letter Terms]]                     | Ya-Shin's Prompts                                                                                                                 |
 | 2025-04-01 | [[DD]]                                          | Using Jud Brewer's Unwinding Anxiety Book Ideas                                                                                   |
 | 2025-03-31 | [[SEEK List]]                                   | Search                                                                                                                            |
