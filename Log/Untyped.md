@@ -5,6 +5,7 @@ n:: no prefix.	Dated entries without any typing prefix
 
 | Date       | File                                        | Notes                                                                                                                             |
 | ---------- | ------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------- |
+| 2025-04-07 | [[FIN Log]]                                     | Possible Sell off                                                                                                                 |
 | 2025-04-02 | [[SEEK Cover Letter Terms]]                     | Yashin's update                                                                                                                   |
 | 2025-04-01 | [[SEEK Cover Letter Terms]]                     | Ya-Shin's Prompts                                                                                                                 |
 | 2025-04-01 | [[DD]]                                          | Using Jud Brewer's Unwinding Anxiety Book Ideas                                                                                   |
@@ -167,7 +168,7 @@ n:: no prefix.	Dated entries without any typing prefix
 | 2024-10-01 | [[Brain Log]]                                   | Response to Ignacious about why o1 is not type-II thought                                                                         |
 | 2024-10-01 | [[PQ]]                                          | Created Mix Tape for Exercise                                                                                                     |
 | 2024-10-01 | [[HIIT Tape1]]                                  | Created HIIT Tape 1                                                                                                               |
-| 2024-09-30 | [[EOCP Prime Path]]                             | TIMELINE                                                                                                                          |
+| 2024-09-30 | [[EOCP Median Path]]                            | TIMELINE                                                                                                                          |
 | 2024-09-30 | [[Mgt]]                                         | weekly                                                                                                                            |
 | 2024-09-25 | [[DAT]]                                         | proposed progression                                                                                                              |
 | 2024-09-24 | [[@Alta Vista]]                                 | Info management proposal                                                                                                          |
@@ -350,7 +351,7 @@ n:: no prefix.	Dated entries without any typing prefix
 | 2024-01-02 | [[Reflections]]                                 | the 2024 life reset                                                                                                               |
 | 2024-01-02 | [[2023 Belief Propagation]]                     | test example                                                                                                                      |
 | 2024-01-02 | [[2023 Least Commitment Model For CV Pipe]]     | foo foo foo                                                                                                                       |
-| 2024-00-00 | [[EOCP Prime Path]]                             | TOP-BOTTOM-MIDDLE                                                                                                                 |
+| 2024-00-00 | [[EOCP Median Path]]                            | TOP-BOTTOM-MIDDLE                                                                                                                 |
 | 2024-00-00 | [[Daily Schedules]]                             | Bucketed Day                                                                                                                      |
 | 2023-12-31 | [[@Dan Oblinger]]                               | yet another                                                                                                                       |
 | 2023-12-31 | [[@Dan Oblinger]]                               | just some info                                                                                                                    |

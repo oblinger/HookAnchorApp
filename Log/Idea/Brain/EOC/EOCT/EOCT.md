@@ -10,9 +10,9 @@
   DELS: , ,
   , , ,
   DELS: , ,, ,
-  , [[EOCK Control]], [[EOCP Prime Path]], [[EOCP What Happens Now]], 
-  DELS: [[EOCP Prime Path]], [[EOCP What Happens Now]],, ,[[EOCK Control]], [[EOCP Prime Path]], [[EOCP What Happens Now]], [[EOCP Prime Path]], [[EOCP What Happens Now]],
-  DELS: [[EOCP Prime Path]], [[EOCP What Happens Now]],[[EOCT Prime Path]], [[EOCT What Happens Now]],[[EOCK Control]], [[EOCP Prime Path]], [[EOCP What Happens Now]], [[EOCP Prime Path]], [[EOCP What Happens Now]],[[EOCT Prime Path]], [[EOCT What Happens Now]], [[EOCT Prime Path]], [[EOCT What Happens Now]], 
+  , [[EOCK Control]], [[EOCP Median Path]], [[EOCP What Happens Now]], 
+  DELS: [[EOCP Median Path]], [[EOCP What Happens Now]],, ,[[EOCK Control]], [[EOCP Median Path]], [[EOCP What Happens Now]], [[EOCP Median Path]], [[EOCP What Happens Now]],
+  DELS: [[EOCP Median Path]], [[EOCP What Happens Now]],[[EOCT Prime Path]], [[EOCT What Happens Now]],[[EOCK Control]], [[EOCP Median Path]], [[EOCP What Happens Now]], [[EOCP Median Path]], [[EOCP What Happens Now]],[[EOCT Prime Path]], [[EOCT What Happens Now]], [[EOCT Prime Path]], [[EOCT What Happens Now]], 
 
 
 

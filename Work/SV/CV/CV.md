@@ -1,5 +1,5 @@
 
-.[[CV]].
+.[[CV]].   (See [[RR CV]])
   ROOTS:[CV Root](spot://cvroot), [CV Confluence](spot://cvconfluence), [CV Jira Page](spot://cvjirapage),  [CV Notion](spot://cvnotion),
   DIRS:	[CV Google Page](spot://cvgooglepage),
   ORGS:	[CV Docs](spot://cvdocs), [CV Info](spot://cvinfo),
@@ -60,7 +60,7 @@ THINGS WE WANT
 
 
 
-[[rrCV]] 
+[[RR CV]] 
 
 Taxonomy of errors
 - [ ] Recall error - Just didn't see the shot

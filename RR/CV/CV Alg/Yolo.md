@@ -2,6 +2,9 @@ Yolo
 -??-
 You-Only-Look-Once
 - Many version with many different kinds of algs
+- v1 CNN based
+- Two kinds:  Anchor-free and Anchor-less
+- [[NMS]] (non-maximum suppression) post processess required
 
 
 Detection of bounding within single. 

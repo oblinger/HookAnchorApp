@@ -1,8 +1,10 @@
 .[[SEEK]].
   [[SEEK Postings]],
-  [[SEEK List]], 
-  [[SEEK Search Terms]], 
-  [[SEEK Cover Letter Terms]], 
+  [[SEEK List]],
+  [[SEEK Search Terms]],
+  ,
+  , [[SEEK Cover Letter Terms]], 
+  DELS: [[SEEK Cover Letter Terms]],
 
   DELS: [[SEEK List]], [[SEEK Search Terms]], 
 

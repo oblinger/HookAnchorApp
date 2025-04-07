@@ -14,11 +14,12 @@
 ### LEARNING
 1. PUZZLE CODING - Algo Monster, Leet Code
    ==> Get good at fast coding on medium and some hard Algo problems.
-2. COURSERA DL - Taking Coursera courses
-3. VIBE CODING - Make agents that do stuff
-4. PAPERS - Skim/Read AI papers, blogs
-5. BOOK - Management book
-6. TORCH CODING - Train some models, Download, and use the system.
+2. GREP-GRAB-n-GO - Scan for alg and quickly try it out.
+3. COURSERA DL - Taking Coursera courses
+4. VIBE CODING - Make agents that do stuff
+5. PAPERS - Skim/Read AI papers, blogs.  Flash-cards results.
+6. BOOK - Management books
+7. TORCH CODING - Train some models, Download, and use the system.
    ==> Get good enough to slam a simple model in a short time & talk about 50 improvements I could make
 
 ### INTERVIEWING

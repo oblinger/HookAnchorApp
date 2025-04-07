@@ -1,8 +1,10 @@
 
 .[[Diary]].
   [[Reflections]] 	- Weekly Reflections
-  [[DD]] 				- Daily Diary.  (currently used to track anxiety loop)
+   				- Daily Diary.  (currently used to track anxiety loop)
   [[Jnl]],
+  , [[DD]], 
+  DELS: [[DD]],
 
 [[Daily]] 
 [[Journal Old]]

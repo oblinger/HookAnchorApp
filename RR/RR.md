@@ -1,7 +1,7 @@
 n:: Research Reference pages
 
 .[[RR]].  [[LRN.]] 
-  AREAS:	[[AI]], [[ML]], [[rrCV]], [[RR Philosophy]], [[RR Leet]],
+  AREAS:	[[AI]], [[ML]], [[RR CV]], [[RR Philosophy]], [[RR Leet]],
   TOPICS:	[[RR Med]], [[RR MGR]],
   [[REF]]:		[[RefMisc]], [[Refs]], [[RR PAPERS]],
   CLOSET:	[[Research]],

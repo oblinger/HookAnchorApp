@@ -1,8 +1,5 @@
-.[[EOCP]].
-  , ,
-  , [[EOCP Summary]], 
-  DELS: [[EOCP Summary]],
-
+.[[EOCP]]. Engines Of Control - PATHS
+  [[EOCP Summary]], 
 
 [[EOCP Summary]]
 
@@ -10,4 +7,4 @@
 OLDER
 [[EOCT Plausible Paths]] 
 [[EOCP What Happens Now]] 
-[[EOCP Prime Path]]	
+[[EOCP Median Path]]	

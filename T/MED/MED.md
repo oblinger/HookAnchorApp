@@ -1,7 +1,7 @@
 
 
 .[[MED]].
-  TOP:		[[MED Log]], [[MED Todo]], 
+  TOP:		[[MED Log]], [[MED Todo]],
   TOPICS:
   [[MED Blood Tests]]:
   [[MED Doctors]]:
@@ -11,7 +11,7 @@
   [[MED History]]:
   [[MED Insurance]]:
   [[MED Measurements]]:
-  [[MED Mind]]:
+  :
   [[MED Pills]]:
   [[MED Psoriasis]]:
   [[MED Ref]]:
@@ -21,7 +21,9 @@
   [[MED Weight]]:
   [[MED Food]],
   [[MED-Vitamins]]:
-  MISC:		[[Jet Lag]], [[Low Back Pain]], [[Medifast]], [[MED Heart Attack]], 
+  MISC:		[[Jet Lag]], [[Low Back Pain]], [[Medifast]], [[MED Heart Attack]],
+  , [[MED Mind]], 
+  DELS: [[MED Mind]],
 
 - [[Glycemic Index]], [[MED Blood Pressure]], [[MED Cholesterol]], [[MED Research]], [[MED VO2Max]], [[MED=]], [[Run]], [[Exercise]], 
 

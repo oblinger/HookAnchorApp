@@ -350,7 +350,7 @@
 
 :: [[EOCK Corp AI]],   [[EOCI Digital Native]],  
 
-- [[EOCT Plausible Paths]],   [[EOCP What Happens Now]],   [[EOCP Prime Path]]
+- [[EOCT Plausible Paths]],   [[EOCP What Happens Now]],   [[EOCP Median Path]]
 ## >
 ORG PAGES
 - [[EOCA Root]] 
