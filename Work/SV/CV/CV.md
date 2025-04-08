@@ -15,9 +15,10 @@
   , ,
   , ,
   DELS: ,
-  , [AI Min](spot://aimin), 
+  , [AI Min](spot://aimin),
   DELS: ,[AI Min](spot://aimin),
-  DELS: [AI MIN](spot://aimin),[AI Min](spot://aimin),[AI MIN](spot://aimin), [AI MIN](spot://aimin), 
+  , [[CV Systems]], 
+  DELS: [AI MIN](spot://aimin),[AI Min](spot://aimin),[AI MIN](spot://aimin), [AI MIN](spot://aimin),
 
 :: [[Data]]
 

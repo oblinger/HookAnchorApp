@@ -1,7 +1,7 @@
 n:: Research Reference pages
 
 .[[RR]].  [[LRN.]] 
-  AREAS:	[[AI]], [[ML]], [[RR CV]], [[RR Philosophy]], [[RR Leet]],
+  AREAS:	[[AI]], [[ML]], , [[RR Philosophy]], [[RR Leet]],
   TOPICS:	[[RR Med]], [[RR MGR]],
   [[REF]]:		[[RefMisc]], [[Refs]], [[RR PAPERS]],
   CLOSET:	[[Research]],
@@ -11,5 +11,7 @@ n:: Research Reference pages
   [[Swearing]], ,
   , [[Comp]], [[DL]], [[Lrn]], [[Stat]],
   , [[RR SYSTEMS]],
+  , ,
+  DELS: [[RR CV]],[[rrCV]], 
 
 

@@ -1,10 +1,19 @@
 .[[EOCI]].   [[EOCK]] 
-  [[EOCI Human Reasoning Conjecture]] 
-  [[EOCI Desired Knowledge Diffusion]] 
-  [[EOCI Corp Decision Making]] 
-  [[EOCK Corp]]
-  [[EOCI Web of Winners]] 
-  [[EOCI National Decision Making]] 
+  , [[EOCD Agent]], [[EOCI Agenic Aggregation]], [[EOCI Alignment as Mind Slavery]]
+  , [[EOCI Closure]], [[EOCI Consciousness]], [[EOCI Corp AI]], [[EOCI Corp Decision Making]]
+  , [[EOCI Desired Knowledge Diffusion]], [[EOCI Digital Native]], [[EOCI Executive Creep]]
+  , [[EOCI Hiearachicalization]], [[EOCI Human Reasoning Conjecture]], [[EOCI Incomprehesibility]]
+  , [[EOCI Inevitability Thesis]], [[EOCI Is Alignment Possible]], [[EOCI Keeping Secrets]]
+  , [[EOCI Leviathan]], [[EOCI Meta Mind]], [[EOCI National Decision Making]]
+  , [[EOCI Nature of Super Intelligence]], [[EOCI Pax Corporana]], [[EOCI Perilous Cyberspace]]
+  , [[EOCI ProblemOfQualia]], [[EOCI Scaled Intelligence is super-intelligence]]
+  , [[EOCI Web of Winners]], 
+
+  
+  
+  
+  
+  
   .
   [[EOCI Agenic Aggregation]]:
   [[EOCI Closure]]:
@@ -24,6 +33,8 @@
   [[EOCI Digital Native]],
   [[EOCI Leviathan]],
   [[EOCI ProblemOfQualia]],
+  , [[EOCI Keeping Secrets]], [[EOCI Nature of Super Intelligence]], 
+  DELS: [[EOCI Human Reasoning Conjecture]], [[EOCI Desired Knowledge Diffusion]], [[EOCI Corp Decision Making]], [[EOCK Corp]], [[EOCI Web of Winners]], [[EOCI National Decision Making]], 
 
 
 
