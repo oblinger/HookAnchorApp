@@ -24,7 +24,7 @@ Please find a mission statement and area for the companies listed here:
 [[Tome]], [[Tavus]], [[Aqemia]], [[Codeium]], [[ElevenLabs]], [[Hippocratic AI]], [[Iambic Therapeutics]], [[AssemblyAI]], [[PlayHT]], [[Biomatter]], [[Colossyan]], [[DeepBrain AI]], [[Insilico Medicine]], [[Synthetaic]], [[Tabnine]], [[Etcembly]], [[Gridspace]], [[Synthesis AI]], [[Clarifai]], [[CopyAI]], [[MOSTLY AI]], [[Plask]], [[Sudowrite]], [[Syntho]], [[GenRocket]], [[LOVO (Genny)]], [[Latitude]], [[Revery AI]]
 [[Lightricks]], [[Mistral AI]], [[Paige AI]]
 [[Runway]], [[Synthesia]], [[Anyscale]], [[Inworld AI]], [[Forethought]], [[Eightfold AI]], [[Replika]], [[Symbio Robotics]]
-[[Anthropic]], [[Inflection AI]], [[Apple]], [[Google]], [[Meta (Facebook)]], [[Microsoft]], [[NVIDIA]],
+[[Anthropic]], [[Inflection AI]], [[Apple]], [[Google]], [[Meta - Facebook]], [[Microsoft]], [[NVIDIA]],
 [[Cohere]], [[Jasper]], [[Gong]], [[Stability AI]]
 [[Amazon]]
 

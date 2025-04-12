@@ -13,7 +13,7 @@
 [[Eightfold AI]], [[Symbio Robotics]]
 
 ### Top
-[[Anthropic]], [[Apple]], [[Google]], [[Inflection AI]], [[Meta (Facebook)]], [[Microsoft]], [[NVIDIA]]
+[[Anthropic]], [[Apple]], [[Google]], [[Inflection AI]], [[Meta - Facebook]], [[Microsoft]], [[NVIDIA]]
 
 ### TopGen
 [[Cohere]], [[Gong]], [[Jasper]], [[Perplexity AI]], [[Stability AI]]

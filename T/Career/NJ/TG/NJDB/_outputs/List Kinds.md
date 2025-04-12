@@ -16,7 +16,7 @@
 [[6sense]], [[Abnormal Security]], [[Adept]], [[Aisera]], [[Anyscale]], [[Arize AI]], [[Atomwise]], [[Cerebras Systems]], [[Chroma]], [[Covariant]], [[Cresta]], [[Dataiku]], [[Deepcell]], [[Deepgram]], [[Domino Data Lab]], [[Eightfold AI]], [[Fiddler AI]], [[Findem]], [[Forethought]], [[Freenome]], [[Genesis Therapeutics]], [[Glean]], [[Graphcore]], [[Groq]], [[Hive AI]], [[Hover]], [[Insitro]], [[Instabase]], [[Inworld AI]], [[Kodiak Robotics]], [[Labelbox]], [[Landing AI]], [[LangChain]], [[Lightning AI]], [[Lilt]], [[Luminous Computing]], [[Mashgin]], [[Matroid]], [[Moveworks]], [[Mythic AI]], [[Nuro]], [[Orbital Insight]], [[Osaro]], [[Pinecone]], [[Predibase]], [[Primer]], [[Rasa]], [[Replika]], [[Runway]], [[SambaNova Systems]], [[Scale AI]], [[Sift]], [[Skydio]], [[Snappr]], [[Snorkel AI]], [[Sourcegraph]], [[Standard AI]], [[Symbio Robotics]], [[Synthesia]], [[Uniphore]], [[Vectara]], [[Weights & Biases]], [[Woebot]]
 
 ### Top
-[[Anthropic]], [[Apple]], [[Google]], [[Inflection AI]], [[Meta (Facebook)]], [[Microsoft]], [[NVIDIA]]
+[[Anthropic]], [[Apple]], [[Google]], [[Inflection AI]], [[Meta - Facebook]], [[Microsoft]], [[NVIDIA]]
 
 ### TopGen
 [[Cohere]], [[Gong]], [[Jasper]], [[Perplexity AI]], [[Stability AI]]

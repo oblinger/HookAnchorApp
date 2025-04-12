@@ -47,7 +47,7 @@
 [[Mashgin\|Sat Apr 12  2025]]  	[[Mashgin#Top]]  
 [[Matroid\|Sat Apr 12  2025]]  	[[Matroid#Top]]  
 [[Matterport\|Sat Apr 12  2025]]  	[[Matterport#Top]]  
-[[Meta (Facebook)\|Sat Apr 12  2025]]  	[[Meta (Facebook)#Top]]  
+[[Meta - Facebook\|Sat Apr 12  2025]]  	[[Meta - Facebook#Top]]  
 [[Microsoft\|Sat Apr 12  2025]]  	[[Microsoft#Top]]  
 [[Midjourney\|Sat Apr 12  2025]]  	[[Midjourney#Top]]  
 [[Mistral AI\|Sat Apr 12  2025]]  	[[Mistral AI#Top]]  

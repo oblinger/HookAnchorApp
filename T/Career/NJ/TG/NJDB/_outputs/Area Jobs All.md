@@ -118,7 +118,7 @@
 | [[Lightricks]] | Far | 0 | f |  |  | To create fun and powerful tools that enable users to bring their creative visions to life ￼. |
 | [[Luminous Computing]] | StartAI | 0 | f | None currently | None currently | To create the best AI in the world, starting by building the most powerful AI accelerator on the planet ￼. |
 | [[Matterport]] | Big | 0 | f |  |  | To digitize and index the built world ￼. |
-| [[Meta (Facebook)]] | Top | 0 | f |  |  | To give people the power to build community and bring the world closer together ￼. |
+| [[Meta - Facebook]] | Top | 0 | f |  |  | To give people the power to build community and bring the world closer together ￼. |
 | [[Microsoft]] | Top | 0 | f |  |  | To empower every person and every organization on the planet to achieve more ￼. |
 | [[Mistral AI]] | Far | 0 | f |  |  | To democratize artificial intelligence through open‑source, efficient, and innovative AI models and products ￼. |
 | [[NVIDIA]] | Top | 0 | f |  |  | To solve the world’s most challenging computational problems and bring artificial intelligence to life ￼. |

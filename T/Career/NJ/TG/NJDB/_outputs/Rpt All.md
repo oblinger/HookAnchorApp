@@ -81,7 +81,7 @@
 | [[Mashgin]] | StartAI | Retail | We aim to make a frictionless checkout experience for all using advanced computer vision￼. | b+ | B+ |  |
 | [[Matroid]] | StartAI | CoreDL | To enable computers to visually understand the world ￼. | c- |  |  |
 | [[Matterport]] | Big | Spatial Computing | To digitize and index the built world ￼. | ? |  |  |
-| [[Meta (Facebook)]] | Top | CoreDL | To give people the power to build community and bring the world closer together ￼. | ? |  |  |
+| [[Meta - Facebook]] | Top | CoreDL | To give people the power to build community and bring the world closer together ￼. | ? |  |  |
 | [[Microsoft]] | Top | CoreDL | To empower every person and every organization on the planet to achieve more ￼. | ? |  |  |
 | [[Midjourney]] | BigAI | CoreDL | Midjourney is an independent research lab exploring new mediums of thought and expanding the imaginative powers of the human species ￼. | b |  |  |
 | [[Mistral AI]] | Far | CoreDL | To democratize artificial intelligence through open‑source, efficient, and innovative AI models and products ￼. | ? |  |  |

@@ -53,7 +53,7 @@
 | [[LOVO (Genny)]] | BigAI | CoreNLP | 0 |  | f | ? |  | To democratize audio content production and create brand new auditory experiences beyond the spatial and temporal limitations of the human voice ￼. | — |
 | [[Latitude]] | BigAI | CoreNLP | 0 |  | f | ? |  | We’re making AI a tool of creativity and freedom for everyone ￼. | — |
 | [[Matterport]] | Big | Spatial Computing | 0 |  | f | ? |  | To digitize and index the built world ￼. |  |
-| [[Meta (Facebook)]] | Top | CoreDL | 0 |  | f | ? |  | To give people the power to build community and bring the world closer together ￼. |  |
+| [[Meta - Facebook]] | Top | CoreDL | 0 |  | f | ? |  | To give people the power to build community and bring the world closer together ￼. |  |
 | [[Microsoft]] | Top | CoreDL | 0 |  | f | ? |  | To empower every person and every organization on the planet to achieve more ￼. |  |
 | [[NVIDIA]] | Top | CoreDL | 0 |  | f | ? |  | To solve the world’s most challenging computational problems and bring artificial intelligence to life ￼. |  |
 | [[OpenAI]] | Big | CoreDL | 0 |  | f | ? |  | To ensure that artificial general intelligence benefits all of humanity ￼. |  |

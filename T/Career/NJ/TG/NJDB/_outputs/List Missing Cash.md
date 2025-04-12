@@ -16,7 +16,7 @@
 [[Anyscale]], [[Luminous Computing]]
 
 ### Top
-[[Apple]], [[Google]], [[Meta (Facebook)]], [[Microsoft]], [[NVIDIA]]
+[[Apple]], [[Google]], [[Meta - Facebook]], [[Microsoft]], [[NVIDIA]]
 
 ### TopHard
 [[DeepMind]]
