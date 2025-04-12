@@ -11,7 +11,7 @@ Thesis:
 
 
 **Antecedents**:
-- [[EOCK Cannot Stop Ourselves]]  and  [[EOCK Apex Predator]] 
+- [[EOCK Cant Stop]]  and  [[EOCK Apex Predator]] 
 
 **Justification**:
 

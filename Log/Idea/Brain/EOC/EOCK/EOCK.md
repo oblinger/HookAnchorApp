@@ -1,26 +1,20 @@
 .[[EOCK]].   [[EOCI]] 
+  [[EOCK Cant Control]] 
   [[EOCK Corp AI]] -
+  [[EOCK Cant Stop]],
+  [[EOCK Loop Closing]] -
    -
   [[EOCK AGENCY - Separation of Knowledge, Drive, and Agency]],
   [[EOCK Alignment Wont Work]]
   [[EOCK Apex Predator]],
-  [[EOCK Cannot Stop Ourselves]],
-  [[EOCK Loop Closing]],
   [[EOCK Last Best Hope]],
   [[EOCK Natural Selection]]
   [[EOCK Nature of AI Progress]],
   [[EOCK Civilizing Tendency]],
   [[EOCK Machine Centric Coms]],
-  , [[EOCK Fast Takeoff]], [[EOCK No Fast Takeoff]], 
-  DELS: [[EOCK Civilizing Tendency]], [[EOCK Machine Centric Coms]],[[EOCK Fast Takeoff]],
+  [[EOCK Fast Takeoff]], 
+  [[EOCK No Fast Takeoff]], 
 
-  [[EOCK Natural Selection]]
-  , [[EOCK Last Best Hope]],
-  , [[EOCK Nature of AI Progress]],
-  DELS: [[EOCK Civilizing Tendency]], 
-
-
-[[EOCK Machine Centric Coms]] 
 
 
 

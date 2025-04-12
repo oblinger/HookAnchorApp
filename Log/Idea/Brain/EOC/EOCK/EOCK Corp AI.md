@@ -1,6 +1,8 @@
-- [[EOCI Corp AI]] 
+.[[EOCI Corp AI]].
 - [[EOCK Natural Selection]] 
 
+
+**Nations, Corporations, and AI-based Corporations are all profit/power maximization mechanisms.**
 
 
 

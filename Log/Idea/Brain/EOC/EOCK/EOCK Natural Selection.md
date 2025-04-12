@@ -12,7 +12,7 @@
 Several (humanly) dire consequences follow from this thesis:
 - The rise of [[EOCK Corp AI]] 
 - [[EOCK Loop Closing]] in both innovation and execution
-- We absolutely [[EOCK Cannot Stop Ourselves]] 
+- We absolutely [[EOCK Cant Stop]] 
 - Transition to a new [[EOCK Apex Predator]]
 
 **Applications**
