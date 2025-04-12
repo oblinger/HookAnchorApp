@@ -1,8 +1,8 @@
 .[[EOCK]].   [[EOCI]] 
-  [[EOCK Cant Stop]], 
-  [[EOCK Cant Control]], 
-  [[EOCK AGI Will Come]], 
-  [[EOCK AGI implies ASI]], 
+  [[EOCK Cant Stop]],
+  [[EOCK Cant Control]],
+  [[EOCK AGI Will Come]],
+  [[EOCK AGI implies ASI]],
   [[EOCK Corp AI]] -
   [[EOCK Loop Closing]] -
   [[EOCK Agentic Decompositionality]],
@@ -16,6 +16,7 @@
   [[EOCK Machine Centric Coms]],
   [[EOCK Fast Takeoff]],
   [[EOCK No Fast Takeoff]]
+  , [[EOCK AGENCY - Separation of Knowledge, Drive, and Agency]], 
 
 
 

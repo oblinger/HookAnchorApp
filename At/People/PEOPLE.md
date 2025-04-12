@@ -5,7 +5,8 @@
   DELS: [[Family]], [PEOPLE Note](spot://peoplenote),
 
 .[[People]].
-  ,   [[Family]], 
+  ,   ,
+  DELS: [[Family]], 
 
 
 - [[SV People]], 

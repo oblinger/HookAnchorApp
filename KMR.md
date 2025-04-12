@@ -9,7 +9,7 @@ TOPS: [[KMR]], [[Meta]], [[TOC]],
 .[[KMR]].
   [[Set]],
   [[Log]],
-  [[AT]],
+  ,
   [[MY]],
   [[Prj]],
   [[T]], [GG](spot://gg), , [[RR]],
@@ -18,9 +18,9 @@ TOPS: [[KMR]], [[Meta]], [[TOC]],
   , [KMR Gdrive](spot://kmrgdrive),
   , ,
   , , , ,
-  , [[2024-10-29]], [[ATTACH]], [[SYS]], [[TOC]], [[WEEKLY]], [[Work]],
-  DELS: [[TOC]], [[Work]], [[SYS]], [[ATTACH]], [[WEEKLY]], [[2024-10-29]],
-  DELS: [[TOC]], [[Work]], [[SYS]], [[ATTACH]], [[WEEKLY]], [[2024-10-29]],[[JJ]], [[Misc]], [[test987]],[top](spot://top), 
+  , [[2024-10-29]], , [[SYS]], [[TOC]], , ,
+  DELS: [[TOC]], , [[SYS]], , , [[2024-10-29]],
+  DELS: [[TOC]], [[Work]], [[SYS]], [[ATTACH]], [[WEEKLY]], [[2024-10-29]],[[JJ]], [[Misc]], [[test987]],[top](spot://top),[[AT]], [[ATTACH]], [[WEEKLY]], [[Work]], [[Work]], [[ATTACH]], [[WEEKLY]], 
 
 
 

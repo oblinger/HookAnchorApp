@@ -3,7 +3,8 @@
   [[Reflections]] 	- Weekly Reflections
    				- Daily Diary.  (currently used to track anxiety loop)
   [[Jnl]],
-  , [[DD]], 
+  , [[DD]],
+  , [[test-foo]], 
   DELS: [[DD]],
 
 [[Daily]] 

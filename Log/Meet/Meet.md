@@ -4,7 +4,9 @@
   DELS: [MEET Note](spot://meetnote), 
 
 .[[Meet]].
-  ADDS:   [[2022 CORIS]], [[2024-06-13 - Juan EC2 setup]], [CV Meetings](spot://cvmeetings), , [Meetings](spot://meetings),
+  ADDS:   [[2022 CORIS]], [[2024-06-13 - Juan EC2 setup]], [CV Meetings](spot://cvmeetings), , ,
+  , [[MEETINGS]], 
+  DELS: [Meetings](spot://meetings), 
 
 
 

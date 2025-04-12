@@ -1,3 +1,11 @@
+.[[Org]].
+  , [[@Aeolus]], [[@Alta Vista]], [[@Amazon]], [[@Apple]], [[@ATT]], [[@Auto Trader]], [[@Citibank]]
+  , [[@Credit Karma]], [[@Facebook]], [[@Ginza Metrics]], [[@Hackers]], [[@IBM]], [[@LinkedIn]]
+  , [[@Merrill]], [[@Meta]], [[@Microsoft]], [[@Miovision]], [[@Montessori Childrens Center]]
+  , [[@Netflix]], [[@Netflix 1]], [[@Nvidia]], [[@OpenAI]], [[@PARC]], [[@PayByGroup]]
+  , [[@Rocket Money]], [[@Schwab]], [[@TecHunting]], [[@Tesla]], [[@Thistle]], [[@Vanguard]]
+  , [[@Vmware]], [[@Wells Fargo]], [[Org Startup]], [[Service]], 
+
 .[[ORG]].
   , [[@Amazon]], [[@Apple]], [[@Citibank]], [[@Facebook]], , [[@Ginza Metrics]]
   , [[@IBM]], [[@LinkedIn]], [[@Microsoft]], [[@Montessori Childrens Center]], [[@Netflix]]

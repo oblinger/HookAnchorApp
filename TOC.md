@@ -2,7 +2,7 @@
 # TABLE OF CONENTS
 
 [[Google]],	[[Groq]],	[[mate]],	
-[[kmr]]: [[WEEKLY]],	
+[[KMR]]: [[Weekly]],	
     [[RR]]: [[Lrn]],	[[RR Leet]],	[[RR PAPERS]],	[[RR Philosophy]],	[[RR MGR]],	
         [[RR SYSTEMS]]: 
         [[Comp]]: 
@@ -36,10 +36,9 @@
                 [[INTERVIEW]]: 
                 [[Hire Post]]: 
                 [[Hire Test]]: 
-                    [[2019 ML Test - Billionaire Billy Big Boots]]: 
                     [[2019 AF Job Tests]]: 
         [[Food]]: 
-            [[FOOD Research]]: 
+            [[Food Research]]: 
         [[Mus]]: 
         [[Doc]]: [[DocObsidian]],	
             [[DocPython]]: [[DocSklearn]],	
@@ -50,10 +49,10 @@
         [[MED]]: [[MED Doctors]],	[[MED Exercise]],	
         [[COMS]]: 
             [[COM Msg]]: 
-    [[SYS]]: [[HACK]],	[[SYS Misc]],	[[OBS]],	[[Closet]],	[[SYS Hacks]],	[[Spot]],	
+    [[SYS]]: [[Hack]],	[[SYS Misc]],	[[OBS]],	[[Closet]],	[[SYS Hacks]],	[[Spot]],	
         [[KM]]: [[Hook System]],	
         [[MAC]]: [[MAC Apps]],	
-    [[Work]]: 
+    [[work]]: 
         [[SV]]: [[INV]],	[[SVT]],	[[SV Wings]],	[[Circle]],	[[SV Software]],	
             [[SV Ops]],	
             [[SV Org]]: [[@BallerTV]],	
@@ -76,17 +75,17 @@
             [[UfApps]]: 
             [[UF-OLD]]: [[OLD-CONSTRUCTS]],	[[OLD-Markdown]],	[[lex-lexlang]],	
         [[2020-08 Race Pitch]]: 
-    [[AT]]: [[@Qingling Oblinger]],	[[VC ORG]],	[[@Google]],	
-        [[ORG]]: [[@Merrill]],	[[@Hackers]],	[[Service]],	
+    [[At]]: [[@Qingling Oblinger]],	[[VC ORG]],	[[@Google]],	
+        [[Org]]: [[@Merrill]],	[[@Hackers]],	[[Service]],	
             [[@Amazon]]: 
                 [[AMA]]: [[Amazon]],	
         [[@Analytics Fire]]: 
-        [[PEOPLE]]: 
-            [[Family]]: [[Parents]],	
+        [[People]]: 
+            [[family]]: [[Parents]],	
         [[@Eli Oblinger]]: 
             [[Eli]]: [[@BCMS]],	[[Eli Strategy]],	
                 [[ELI Log]]: 
-    [[Log]]: [[Journal]],	[[Note]],	[[Archive]],	[[MEET]],	[[Phone]],	
+    [[Log]]: [[Journal]],	[[Note]],	[[Archive]],	[[Meet]],	[[Phone]],	
         [[TXT]]: 
             [[Letters]]: 
             [[Writing]]: [[ArmChair]],	
@@ -105,4 +104,4 @@
             [[Idea Social]]: 
     [[Set]]: [[Recipe]],	[[Read]],	[[Book]],	
         [[Humor]]: 
-        [[BUY]]: 
+        [[Buy]]: 
