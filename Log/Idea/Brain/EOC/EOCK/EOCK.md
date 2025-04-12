@@ -1,11 +1,11 @@
 .[[EOCK]].   [[EOCI]] 
-  [[EOCK AGI implies ASI]], 
-  [[EOCK Cant Control]], 
   [[EOCK Cant Stop]], 
-  [[EOCK on path to AGI]], 
+  [[EOCK Cant Control]], 
+  [[EOCK AGI Will Come]], 
+  [[EOCK AGI implies ASI]], 
   [[EOCK Corp AI]] -
   [[EOCK Loop Closing]] -
-  [[EOCK AGENCY - Separation of Knowledge, Drive, and Agency]],
+  [[EOCK Agentic Decompositionality]],
   -
   [[EOCK Alignment Wont Work]]
   [[EOCK Apex Predator]],
@@ -152,7 +152,7 @@
 
 
 
-  DELS: [[EOCI Keeping Secrets]], [[EOCK AGENCY - Separation of Knowledge, Drive, and Agency]],[[EOCK Separation of Knowledge, Drive, and Agency]], 
+  DELS: [[EOCI Keeping Secrets]], [[EOCK Agentic Decompositionality]],[[EOCK Separation of Knowledge, Drive, and Agency]], 
 
 
 
