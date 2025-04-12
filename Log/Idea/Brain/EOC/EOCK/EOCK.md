@@ -1,9 +1,6 @@
 .[[EOCK]].   [[EOCI]] 
-  [[EOCK Cant Control]] 
   [[EOCK Corp AI]] -
-  [[EOCK Cant Stop]],
   [[EOCK Loop Closing]] -
-   -
   [[EOCK AGENCY - Separation of Knowledge, Drive, and Agency]],
   [[EOCK Alignment Wont Work]]
   [[EOCK Apex Predator]],
@@ -12,8 +9,8 @@
   [[EOCK Nature of AI Progress]],
   [[EOCK Civilizing Tendency]],
   [[EOCK Machine Centric Coms]],
-  [[EOCK Fast Takeoff]], 
-  [[EOCK No Fast Takeoff]], 
+  [[EOCK Fast Takeoff]],
+  [[EOCK No Fast Takeoff]]
 
 
 
