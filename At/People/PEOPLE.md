@@ -1,22 +1,12 @@
-.[[PEOPLE]].
-  , ,
-  , ,
-  , [[Family]], 
-  DELS: [[Family]], [PEOPLE Note](spot://peoplenote),
 
 .[[People]].
-  ,   ,
-  DELS: [[Family]], 
+  [[family]] 
 
-
+- [PEOPLE Note](spot://peoplenote),
 - [[SV People]], 
 - [[CRM]],  [[Family]], [[Friends]],   
-:: [[Family]]
-  [CRM_Phrases](CRM_Phrases.md)  [Family](Family.md)  [CRM](CRM.md)
-# CALLS
-- josh
-- john C
-_
+
+
 # CONTACTS FROM
 ## FAMILY
 
@@ -70,7 +60,7 @@ James simon   <<< super quant  (any thing else here??)
 Eugene fama
 
 _
-# ### LOG ###
+# LOG
 ### MISC
 * LOG
 

@@ -67,7 +67,8 @@
   , [[@Yannick Germain]], [[@Yann LeCun]], [[@Yashin Lin]], [[@Yiftach Eisenberg]]
   , [[@Yoshua Bengio]], [[AF ALUM]], , [[BOD]], , [[Doctor]]
   , [[Friends]], [[Mentors]], , , [[ROLODEX]], [[VC ORG]],
-  DELS: [AT Note](spot://atnote), [[CRM]], [[ORG]], [[PEOPLE]], 
+  , [[Crm]], [[Org]], [[People]], 
+  DELS: [AT Note](spot://atnote), [[CRM]], [[ORG]], [[PEOPLE]],
 
 .[[AT]].
   , [[@Abhishek Kapatkar]], [[@Abhishek Verma]], [[@Acorn Pooley]], [[@Aetion]], [[@Agustin Polito]]

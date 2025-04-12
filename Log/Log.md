@@ -9,7 +9,8 @@
   , ,
   , [[Archive]], , , [[Phone]],
   DELS: [[Archive]], , , [[Phone]],
-  DELS: [[Archive]], [[MEETING]], [[MEET]], [[Phone]],[[TT]],[[MEET]], [[MEETING]], [[MEETING]], [[MEET]], 
+  , [[Meet]], [[Meeting]], 
+  DELS: [[Archive]], [[MEETING]], [[MEET]], [[Phone]],[[TT]],[[MEET]], [[MEETING]], [[MEETING]], [[MEET]],
 
 #### Personal Content Logs
 - [[Prj]]:	Personal "evergreen" projects

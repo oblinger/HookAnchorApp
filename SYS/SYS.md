@@ -21,6 +21,7 @@ My KBD:		[[KBD Shortcuts]], [[KBD Obsidian Keys]], [[KBD Global Keys]], [[KBD No
   , [[Closet]], , [[KM]], [[MAC]], [[OBS]], [[Spot]], [[SYS Android]], [[SYS Disks]]
   , [[SYS Github Webpage]], [[SYS Hacks]],
   DELS: ,,[[MAC]], [[OBS]], [[SYS Android]], [[SYS Disks]], [[SYS Github Webpage]], [[SYS Hacks]], [[Closet]], [[KM]], [[Spot]], ,
-  DELS: [[Facet]],[[SYS/Hack/Hack]],[[MAC]], [[OBS]], [[SYS Android]], [[SYS Disks]], [[SYS Github Webpage]], [[SYS Hacks]], [[Closet]], [[KM]], [[Spot]], [[HACK]],[[My Android]], [[My Github Webpage]], [[My Hacks]], [[Facet]], [[SYS/Hack/Hack]],[[HACK]], [[HACK]], 
+  , [[Hack]], 
+  DELS: [[Facet]],[[SYS/Hack/Hack]],[[MAC]], [[OBS]], [[SYS Android]], [[SYS Disks]], [[SYS Github Webpage]], [[SYS Hacks]], [[Closet]], [[KM]], [[Spot]], [[HACK]],[[My Android]], [[My Github Webpage]], [[My Hacks]], [[Facet]], [[SYS/Hack/Hack]],[[HACK]], [[HACK]],
 
 
