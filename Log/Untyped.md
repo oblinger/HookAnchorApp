@@ -214,6 +214,7 @@ n:: no prefix.	Dated entries without any typing prefix
 | 2024-08-19 | [[@Alta Vista]]                                 | notes when we first went                                                                                                          |
 | 2024-08-19 | [[@Jason Syversen]]                             | Plans                                                                                                                             |
 | 2024-08-14 | [[Phone -old-]]                                 | Sell Acura                                                                                                                        |
+| 2024-08-14 | [[Phone-old-]]                                  | Sell Acura                                                                                                                        |
 | 2024-08-14 | [[2024-05 Sell Acura]]                          | Sell Acura                                                                                                                        |
 | 2024-08-14 | [[Reflections]]                                 | Stressed & Procrastinating                                                                                                        |
 | 2024-08-11 | [[@Alexander Grosse]]                           | Veo Partnership Discussion                                                                                                        |
@@ -478,6 +479,7 @@ n:: no prefix.	Dated entries without any typing prefix
 | 2023-08-21 | [[CV]]                                          | Martin                                                                                                                            |
 | 2023-08-13 | [[QQ]]                                          | INJEST                                                                                                                            |
 | 2023-08-11 | [[Phone -old-]]                                 | Cancer Vet                                                                                                                        |
+| 2023-08-11 | [[Phone-old-]]                                  | Cancer Vet                                                                                                                        |
 | 2023-08-11 | [[Phone]]                                       | Cancer Vet                                                                                                                        |
 | 2023-08-11 | [[Phone]]                                       | Cancer Vet                                                                                                                        |
 | 2023-08-10 | [[Eli]]                                         | First Bike Ride                                                                                                                   |
@@ -506,6 +508,7 @@ n:: no prefix.	Dated entries without any typing prefix
 | 2023-07-15 | [[ToBuy]]                                       | Coffee Table                                                                                                                      |
 | 2023-07-15 | [[ToBuy]]                                       | Table                                                                                                                             |
 | 2023-07-14 | [[Phone -old-]]                                 | DEXA. [[@Dexafit]]                                                                                                                |
+| 2023-07-14 | [[Phone-old-]]                                  | DEXA. [[@Dexafit]]                                                                                                                |
 | 2023-07-14 | [[Phone]]                                       | DEXA. [[@Dexafit]]                                                                                                                |
 | 2023-07-14 | [[Phone]]                                       | DEXA. [[@Dexafit]]                                                                                                                |
 | 2023-07-13 | [[CV]]                                          | Progression of halo apps                                                                                                          |
@@ -525,6 +528,7 @@ n:: no prefix.	Dated entries without any typing prefix
 | 2023-06-29 | [[@Grzegorz Biziel]]                            | how does gallery work                                                                                                             |
 | 2023-06-29 | [[@Phillip Alvelda]]                            |                                                                                                                                   |
 | 2023-06-28 | [[Phone -old-]]                                 | Coffee usage                                                                                                                      |
+| 2023-06-28 | [[Phone-old-]]                                  | Coffee usage                                                                                                                      |
 | 2023-06-28 | [[Phone]]                                       | Coffee usage                                                                                                                      |
 | 2023-06-28 | [[Phone]]                                       | Coffee usage                                                                                                                      |
 | 2023-06-27 | [[Eli]]                                         | STEP LADDERS                                                                                                                      |
@@ -544,6 +548,7 @@ n:: no prefix.	Dated entries without any typing prefix
 | 2023-06-09 | [[@SV]]                                         | Response to Baller TV                                                                                                             |
 | 2023-06-08 | [[Eli Interactions]]                            | From sensitivity class                                                                                                            |
 | 2023-06-08 | [[Phone -old-]]                                 | 1-password ideas for QL                                                                                                           |
+| 2023-06-08 | [[Phone-old-]]                                  | 1-password ideas for QL                                                                                                           |
 | 2023-06-08 | [[Phone]]                                       | 1-password ideas for QL                                                                                                           |
 | 2023-06-08 | [[Phone]]                                       | 1-password ideas for QL                                                                                                           |
 | 2023-06-07 | [[@Jason Syversen]]                             | Xxxxx                                                                                                                             |
@@ -571,6 +576,7 @@ n:: no prefix.	Dated entries without any typing prefix
 | 2023-05-24 | [[CV]]                                          | Daily                                                                                                                             |
 | 2023-05-24 | [[@Jason Syversen]]                             | before travel discussion                                                                                                          |
 | 2023-05-23 | [[Phone -old-]]                                 |                                                                                                                                   |
+| 2023-05-23 | [[Phone-old-]]                                  |                                                                                                                                   |
 | 2023-05-23 | [[Phone]]                                       |                                                                                                                                   |
 | 2023-05-23 | [[Phone]]                                       |                                                                                                                                   |
 | 2023-05-23 | [[CV]]                                          |                                                                                                                                   |
@@ -625,6 +631,7 @@ n:: no prefix.	Dated entries without any typing prefix
 | 2023-04-24 | [[@Martin Reyes]]                               | intro                                                                                                                             |
 | 2023-04-24 | [[2023-Reset-DanO-Role]]                        | Jason Response                                                                                                                    |
 | 2023-04-23 | [[Phone -old-]]                                 | SF BAY AREA HEATED POOLS                                                                                                          |
+| 2023-04-23 | [[Phone-old-]]                                  | SF BAY AREA HEATED POOLS                                                                                                          |
 | 2023-04-23 | [[Phone]]                                       | SF BAY AREA HEATED POOLS                                                                                                          |
 | 2023-04-23 | [[Phone]]                                       | SF BAY AREA HEATED POOLS                                                                                                          |
 | 2023-04-21 | [[Eli Interactions]]                            | Ms Amanda & Ms Soumya                                                                                                             |
@@ -676,6 +683,7 @@ n:: no prefix.	Dated entries without any typing prefix
 | 2023-03-27 | [[2023-W13]]                                    | W13                                                                                                                               |
 | 2023-03-23 | [[MKT]]                                         | Yancy Comment and Response                                                                                                        |
 | 2023-03-22 | [[Phone -old-]]                                 | Food Delivery                                                                                                                     |
+| 2023-03-22 | [[Phone-old-]]                                  | Food Delivery                                                                                                                     |
 | 2023-03-22 | [[Phone]]                                       | Food Delivery                                                                                                                     |
 | 2023-03-22 | [[Phone]]                                       | Food Delivery                                                                                                                     |
 | 2023-03-22 | [[@Mike Mathieu]]                               | Intro??                                                                                                                           |
@@ -701,6 +709,7 @@ n:: no prefix.	Dated entries without any typing prefix
 | 2023-02-27 | [[Reflections]]                                 | Week 2 at SV                                                                                                                      |
 | 2023-02-27 | [[@Sam Corbitt]]                                | Intro call                                                                                                                        |
 | 2023-02-24 | [[Phone -old-]]                                 | Passport Application                                                                                                              |
+| 2023-02-24 | [[Phone-old-]]                                  | Passport Application                                                                                                              |
 | 2023-02-24 | [[Phone]]                                       | Passport Application                                                                                                              |
 | 2023-02-24 | [[Phone]]                                       | Passport Application                                                                                                              |
 | 2023-02-20 | [[Bio]]                                         | SportsVisio newsletter and blog entry                                                                                             |
@@ -719,13 +728,16 @@ n:: no prefix.	Dated entries without any typing prefix
 | 2023-02-13 | [[2023-W07]]                                    | W07                                                                                                                               |
 | 2023-02-13 | [[2023 Jason Tasks]]                            | Systematic QA processing                                                                                                          |
 | 2023-02-11 | [[Phone -old-]]                                 | Instapot                                                                                                                          |
+| 2023-02-11 | [[Phone-old-]]                                  | Instapot                                                                                                                          |
 | 2023-02-11 | [[Phone]]                                       | Instapot                                                                                                                          |
 | 2023-02-11 | [[Phone]]                                       | Instapot                                                                                                                          |
 | 2023-02-10 | [[@Tomas Tisocco]]                              | Intro                                                                                                                             |
 | 2023-02-10 | [[Phone -old-]]                                 | Pay for Ambulance                                                                                                                 |
+| 2023-02-10 | [[Phone-old-]]                                  | Pay for Ambulance                                                                                                                 |
 | 2023-02-10 | [[Phone]]                                       | Pay for Ambulance                                                                                                                 |
 | 2023-02-10 | [[Phone]]                                       | Pay for Ambulance                                                                                                                 |
 | 2023-02-09 | [[Phone -old-]]                                 | Cancel WSJ Wine.com                                                                                                               |
+| 2023-02-09 | [[Phone-old-]]                                  | Cancel WSJ Wine.com                                                                                                               |
 | 2023-02-09 | [[Phone]]                                       | Cancel WSJ Wine.com                                                                                                               |
 | 2023-02-09 | [[Phone]]                                       | Cancel WSJ Wine.com                                                                                                               |
 | 2023-02-09 | [[@James Sullivan III]]                         | Intro                                                                                                                             |
@@ -736,6 +748,7 @@ n:: no prefix.	Dated entries without any typing prefix
 | 2023-02-07 | [[SV SW Team]]                                  | Standup                                                                                                                           |
 | 2023-02-06 | [[@Apple]]                                      | Airpod max issues                                                                                                                 |
 | 2023-02-06 | [[Phone -old-]]                                 | Passport Renewal                                                                                                                  |
+| 2023-02-06 | [[Phone-old-]]                                  | Passport Renewal                                                                                                                  |
 | 2023-02-06 | [[Phone]]                                       | Passport Renewal                                                                                                                  |
 | 2023-02-06 | [[Phone]]                                       | Passport Renewal                                                                                                                  |
 | 2023-02-05 | [[Writing]]                                     | Noom Dieting                                                                                                                      |
@@ -762,6 +775,7 @@ n:: no prefix.	Dated entries without any typing prefix
 | 2023-00-00 | [[ROADMAP]]                                     | YEAR PRIORITIES                                                                                                                   |
 | 2022-12-16 | [[2022-W51]]                                    | FRI                                                                                                                               |
 | 2022-12-14 | [[Phone -old-]]                                 | Fix roof fin                                                                                                                      |
+| 2022-12-14 | [[Phone-old-]]                                  | Fix roof fin                                                                                                                      |
 | 2022-12-14 | [[Phone]]                                       | Fix roof fin                                                                                                                      |
 | 2022-12-14 | [[Phone]]                                       | Fix roof fin                                                                                                                      |
 | 2022-12-14 | [[2022-W51]]                                    | WED                                                                                                                               |
@@ -770,10 +784,12 @@ n:: no prefix.	Dated entries without any typing prefix
 | 2022-12-12 | [[Diet]]                                        | Evening Eating - Hormones                                                                                                         |
 | 2022-12-11 | [[SYS Dashboards]]                              | Daily                                                                                                                             |
 | 2022-12-08 | [[Phone -old-]]                                 | Solar Installer                                                                                                                   |
+| 2022-12-08 | [[Phone-old-]]                                  | Solar Installer                                                                                                                   |
 | 2022-12-08 | [[Phone]]                                       | Solar Installer                                                                                                                   |
 | 2022-12-08 | [[Phone]]                                       | Solar Installer                                                                                                                   |
 | 2022-12-07 | [[RES Linked In]]                               | Framing Self                                                                                                                      |
 | 2022-12-03 | [[Phone -old-]]                                 | Thumb Tack TV install                                                                                                             |
+| 2022-12-03 | [[Phone-old-]]                                  | Thumb Tack TV install                                                                                                             |
 | 2022-12-03 | [[Phone]]                                       | Thumb Tack TV install                                                                                                             |
 | 2022-12-03 | [[Phone]]                                       | Thumb Tack TV install                                                                                                             |
 | 2022-12-01 | [[2022-05 Enxt]]                                | Alta Vista                                                                                                                        |
@@ -781,6 +797,9 @@ n:: no prefix.	Dated entries without any typing prefix
 | 2022-11-29 | [[Phone -old-]]                                 | [[@Audi]]                                                                                                                         |
 | 2022-11-29 | [[Phone -old-]]                                 | Horizon 7.4AT  Treadmill                                                                                                          |
 | 2022-11-29 | [[Phone -old-]]                                 | Exercise Tracking (Horizon 7.4AT)                                                                                                 |
+| 2022-11-29 | [[Phone-old-]]                                  | [[@Audi]]                                                                                                                         |
+| 2022-11-29 | [[Phone-old-]]                                  | Horizon 7.4AT  Treadmill                                                                                                          |
+| 2022-11-29 | [[Phone-old-]]                                  | Exercise Tracking (Horizon 7.4AT)                                                                                                 |
 | 2022-11-29 | [[Phone]]                                       | [[@Audi]]                                                                                                                         |
 | 2022-11-29 | [[Phone]]                                       | Horizon 7.4AT  Treadmill                                                                                                          |
 | 2022-11-29 | [[Phone]]                                       | Exercise Tracking (Horizon 7.4AT)                                                                                                 |
@@ -791,6 +810,7 @@ n:: no prefix.	Dated entries without any typing prefix
 | 2022-11-23 | [[Eli]]                                         | QL planting ideas                                                                                                                 |
 | 2022-11-23 | [[Parents]]                                     | Mom's multiple facebook accounts                                                                                                  |
 | 2022-11-22 | [[Phone -old-]]                                 | Fire Dept response for Eli                                                                                                        |
+| 2022-11-22 | [[Phone-old-]]                                  | Fire Dept response for Eli                                                                                                        |
 | 2022-11-22 | [[Phone]]                                       | Fire Dept response for Eli                                                                                                        |
 | 2022-11-22 | [[Phone]]                                       | Fire Dept response for Eli                                                                                                        |
 | 2022-11-20 | [[ToBuy]]                                       | Big Insta-pot                                                                                                                     |
@@ -810,19 +830,23 @@ n:: no prefix.	Dated entries without any typing prefix
 | 2022-10-16 | [[ToBuy]]                                       | bedrm Dresser                                                                                                                     |
 | 2022-10-10 | [[2022-01-00 Nanny]]                            | SAVE MONEY                                                                                                                        |
 | 2022-10-07 | [[Phone -old-]]                                 | Lily - Tax Info for 2021 return                                                                                                   |
+| 2022-10-07 | [[Phone-old-]]                                  | Lily - Tax Info for 2021 return                                                                                                   |
 | 2022-10-07 | [[Phone]]                                       | Lily - Tax Info for 2021 return                                                                                                   |
 | 2022-10-07 | [[Phone]]                                       | Lily - Tax Info for 2021 return                                                                                                   |
 | 2022-10-07 | [[FIN Log]]                                     | Avanti's Plan                                                                                                                     |
 | 2022-10-03 | [[2022-W40]]                                    | fre                                                                                                                               |
 | 2022-09-30 | [[Phone -old-]]                                 | Building Work Desk in livingroom                                                                                                  |
+| 2022-09-30 | [[Phone-old-]]                                  | Building Work Desk in livingroom                                                                                                  |
 | 2022-09-30 | [[Phone]]                                       | Building Work Desk in livingroom                                                                                                  |
 | 2022-09-30 | [[Phone]]                                       | Building Work Desk in livingroom                                                                                                  |
 | 2022-09-29 | [[Old Daily]]                                   |                                                                                                                                   |
 | 2022-09-28 | [[Old Daily]]                                   |                                                                                                                                   |
 | 2022-08-17 | [[Phone -old-]]                                 | Dr Lue Urologist                                                                                                                  |
+| 2022-08-17 | [[Phone-old-]]                                  | Dr Lue Urologist                                                                                                                  |
 | 2022-08-17 | [[Phone]]                                       | Dr Lue Urologist                                                                                                                  |
 | 2022-08-17 | [[Phone]]                                       | Dr Lue Urologist                                                                                                                  |
 | 2022-08-01 | [[Phone -old-]]                                 | notes while out - about me                                                                                                        |
+| 2022-08-01 | [[Phone-old-]]                                  | notes while out - about me                                                                                                        |
 | 2022-08-01 | [[Phone]]                                       | notes while out - about me                                                                                                        |
 | 2022-08-01 | [[Phone]]                                       | notes while out - about me                                                                                                        |
 | 2022-07-19 | [[2021-06-00 Brain3]]                           | G-Flow Nets Maybe - whats my example                                                                                              |
@@ -830,6 +854,8 @@ n:: no prefix.	Dated entries without any typing prefix
 | 2022-07-18 | [[ToBuy]]                                       | $Walnut desktop                                                                                                                   |
 | 2022-07-12 | [[Phone -old-]]                                 | Eli Sand toys                                                                                                                     |
 | 2022-07-12 | [[Phone -old-]]                                 | LOWES tool rental                                                                                                                 |
+| 2022-07-12 | [[Phone-old-]]                                  | Eli Sand toys                                                                                                                     |
+| 2022-07-12 | [[Phone-old-]]                                  | LOWES tool rental                                                                                                                 |
 | 2022-07-12 | [[Phone]]                                       | Eli Sand toys                                                                                                                     |
 | 2022-07-12 | [[Phone]]                                       | LOWES tool rental                                                                                                                 |
 | 2022-07-12 | [[Phone]]                                       | Eli Sand toys                                                                                                                     |
@@ -837,16 +863,20 @@ n:: no prefix.	Dated entries without any typing prefix
 | 2022-07-11 | [[OLD 2022 Weekly]]                             | CRAP WEEK                                                                                                                         |
 | 2022-07-08 | [[MED Log]]                                     | Pain after sex - Spoke with Lucas, Hasslers PA                                                                                    |
 | 2022-07-07 | [[Phone -old-]]                                 | Setting up Sonic internet service                                                                                                 |
+| 2022-07-07 | [[Phone-old-]]                                  | Setting up Sonic internet service                                                                                                 |
 | 2022-07-07 | [[Phone]]                                       | Setting up Sonic internet service                                                                                                 |
 | 2022-07-07 | [[Phone]]                                       | Setting up Sonic internet service                                                                                                 |
 | 2022-07-02 | [[DocJupyter]]                                  | config example                                                                                                                    |
 | 2022-06-27 | [[Phone -old-]]                                 | PENFED - reset connection /                                                                                                       |
+| 2022-06-27 | [[Phone-old-]]                                  | PENFED - reset connection /                                                                                                       |
 | 2022-06-27 | [[Phone]]                                       | PENFED - reset connection /                                                                                                       |
 | 2022-06-27 | [[Phone]]                                       | PENFED - reset connection /                                                                                                       |
 | 2022-06-25 | [[@Shawn Hassler]]                              | Hassler Visit                                                                                                                     |
 | 2022-06-20 | [[MED Log]]                                     | Cough followup                                                                                                                    |
 | 2022-06-06 | [[Phone -old-]]                                 | Fix MAC mic                                                                                                                       |
 | 2022-06-06 | [[Phone -old-]]                                 | Drains Flooding                                                                                                                   |
+| 2022-06-06 | [[Phone-old-]]                                  | Fix MAC mic                                                                                                                       |
+| 2022-06-06 | [[Phone-old-]]                                  | Drains Flooding                                                                                                                   |
 | 2022-06-06 | [[Phone]]                                       | Fix MAC mic                                                                                                                       |
 | 2022-06-06 | [[Phone]]                                       | Drains Flooding                                                                                                                   |
 | 2022-06-06 | [[Phone]]                                       | Fix MAC mic                                                                                                                       |
@@ -855,10 +885,13 @@ n:: no prefix.	Dated entries without any typing prefix
 | 2022-05-24 | [[OLD 2022 Weekly]]                             | Forum presentation                                                                                                                |
 | 2022-05-21 | [[MED Log]]                                     | Joint Pain                                                                                                                        |
 | 2022-05-11 | [[Phone -old-]]                                 | American Airline                                                                                                                  |
+| 2022-05-11 | [[Phone-old-]]                                  | American Airline                                                                                                                  |
 | 2022-05-11 | [[Phone]]                                       | American Airline                                                                                                                  |
 | 2022-05-11 | [[Phone]]                                       | American Airline                                                                                                                  |
 | 2022-05-09 | [[Phone -old-]]                                 | Marriage courses to consider                                                                                                      |
 | 2022-05-09 | [[Phone -old-]]                                 | Marriage Retreats to consider                                                                                                     |
+| 2022-05-09 | [[Phone-old-]]                                  | Marriage courses to consider                                                                                                      |
+| 2022-05-09 | [[Phone-old-]]                                  | Marriage Retreats to consider                                                                                                     |
 | 2022-05-09 | [[Phone]]                                       | Marriage courses to consider                                                                                                      |
 | 2022-05-09 | [[Phone]]                                       | Marriage Retreats to consider                                                                                                     |
 | 2022-05-09 | [[Phone]]                                       | Marriage courses to consider                                                                                                      |
@@ -867,9 +900,11 @@ n:: no prefix.	Dated entries without any typing prefix
 | 2022-05-06 | [[Climate]]                                     | David response to the IPCC paper                                                                                                  |
 | 2022-05-04 | [[ToBuy]]                                       | xSmart scale                                                                                                                      |
 | 2022-05-03 | [[Phone -old-]]                                 | paid lung doctor                                                                                                                  |
+| 2022-05-03 | [[Phone-old-]]                                  | paid lung doctor                                                                                                                  |
 | 2022-05-03 | [[Phone]]                                       | paid lung doctor                                                                                                                  |
 | 2022-05-03 | [[Phone]]                                       | paid lung doctor                                                                                                                  |
 | 2022-05-02 | [[Phone -old-]]                                 | Buying an office chair                                                                                                            |
+| 2022-05-02 | [[Phone-old-]]                                  | Buying an office chair                                                                                                            |
 | 2022-05-02 | [[Phone]]                                       | Buying an office chair                                                                                                            |
 | 2022-05-02 | [[Writing]]                                     | DREAM: Alien take over                                                                                                            |
 | 2022-05-02 | [[Phone]]                                       | Buying an office chair                                                                                                            |
@@ -894,6 +929,7 @@ n:: no prefix.	Dated entries without any typing prefix
 | 2022-03-31 | [[OLD 2022 Weekly]]                             | (short week)                                                                                                                      |
 | 2022-03-25 | [[Dataview]]                                    | [templater+dataview example](https://github.com/blacksmithgu/obsidian-dataview/issues/42)                                         |
 | 2022-03-21 | [[Phone -old-]]                                 | Home Depot - replace new GE microwave                                                                                             |
+| 2022-03-21 | [[Phone-old-]]                                  | Home Depot - replace new GE microwave                                                                                             |
 | 2022-03-21 | [[Phone]]                                       | Home Depot - replace new GE microwave                                                                                             |
 | 2022-03-21 | [[Phone]]                                       | Home Depot - replace new GE microwave                                                                                             |
 | 2022-03-21 | [[OLD 2022 Weekly]]                             |                                                                                                                                   |
@@ -904,6 +940,8 @@ n:: no prefix.	Dated entries without any typing prefix
 | 2022-03-18 | [[COM Campaigns OLDER]]                         | Aniket Recruiters                                                                                                                 |
 | 2022-03-15 | [[Phone -old-]]                                 | Qingling's income and taxes                                                                                                       |
 | 2022-03-15 | [[Phone -old-]]                                 | #### STARTED USING THIS AGAIN ####                                                                                                |
+| 2022-03-15 | [[Phone-old-]]                                  | Qingling's income and taxes                                                                                                       |
+| 2022-03-15 | [[Phone-old-]]                                  | #### STARTED USING THIS AGAIN ####                                                                                                |
 | 2022-03-15 | [[Phone]]                                       | Qingling's income and taxes                                                                                                       |
 | 2022-03-15 | [[Phone]]                                       | #### STARTED USING THIS AGAIN ####                                                                                                |
 | 2022-03-15 | [[Phone]]                                       | Qingling's income and taxes                                                                                                       |
@@ -1116,6 +1154,7 @@ n:: no prefix.	Dated entries without any typing prefix
 | 2021-01-20 | [[2020-07 Autonomy]]                            | ALS forum Query                                                                                                                   |
 | 2021-00-00 | [[@Apple]]                                      | apple support chat                                                                                                                |
 | 2021-00-00 | [[Phone -old-]]                                 | Eli's Birth Certificate                                                                                                           |
+| 2021-00-00 | [[Phone-old-]]                                  | Eli's Birth Certificate                                                                                                           |
 | 2021-00-00 | [[Phone]]                                       | Eli's Birth Certificate                                                                                                           |
 | 2021-00-00 | [[SNIP]]                                        | Fox news egregious                                                                                                                |
 | 2021-00-00 | [[SNIP]]                                        | ELI music                                                                                                                         |
@@ -1205,30 +1244,39 @@ n:: no prefix.	Dated entries without any typing prefix
 | 2019-00-00 | [[FIN Log]]                                     | AF CHARGES                                                                                                                        |
 | 2019-00-00 | [[MED Log]]                                     | Ideas for QL Pregnancy Heroids                                                                                                    |
 | 2018-08-07 | [[Phone -old-]]                                 | #### starting to use Evernote ####                                                                                                |
+| 2018-08-07 | [[Phone-old-]]                                  | #### starting to use Evernote ####                                                                                                |
 | 2018-08-07 | [[Phone]]                                       | #### starting to use Evernote ####                                                                                                |
 | 2018-08-07 | [[Phone]]                                       | #### starting to use Evernote ####                                                                                                |
 | 2018-00-00 | [[Phone -old-]]                                 | coinbase                                                                                                                          |
+| 2018-00-00 | [[Phone-old-]]                                  | coinbase                                                                                                                          |
 | 2018-00-00 | [[Phone]]                                       | coinbase                                                                                                                          |
 | 2018-00-00 | [[Phone]]                                       | coinbase                                                                                                                          |
 | 2018-00-00 | [[FIN Log]]                                     | Wedding                                                                                                                           |
 | 2018-00-00 | [[FIN Log]]                                     | QL                                                                                                                                |
 | 2017-12-18 | [[Phone -old-]]                                 | Notes from HACKERS                                                                                                                |
+| 2017-12-18 | [[Phone-old-]]                                  | Notes from HACKERS                                                                                                                |
 | 2017-12-18 | [[Phone]]                                       | Notes from HACKERS                                                                                                                |
 | 2017-12-18 | [[Phone]]                                       | Notes from HACKERS                                                                                                                |
 | 2017-11-14 | [[Phone -old-]]                                 | Prenup info  -- info moved to evernote                                                                                            |
+| 2017-11-14 | [[Phone-old-]]                                  | Prenup info  -- info moved to evernote                                                                                            |
 | 2017-11-14 | [[Phone]]                                       | Prenup info  -- info moved to evernote                                                                                            |
 | 2017-11-14 | [[Phone]]                                       | Prenup info  -- info moved to evernote                                                                                            |
 | 2017-09-29 | [[Phone -old-]]                                 | Double Cash Back                                                                                                                  |
+| 2017-09-29 | [[Phone-old-]]                                  | Double Cash Back                                                                                                                  |
 | 2017-09-29 | [[Phone]]                                       | Double Cash Back                                                                                                                  |
 | 2017-09-29 | [[Phone]]                                       | Double Cash Back                                                                                                                  |
 | 2017-08-01 | [[Phone -old-]]                                 | Sutter health                                                                                                                     |
+| 2017-08-01 | [[Phone-old-]]                                  | Sutter health                                                                                                                     |
 | 2017-08-01 | [[Phone]]                                       | Sutter health                                                                                                                     |
 | 2017-08-01 | [[Phone]]                                       | Sutter health                                                                                                                     |
 | 2017-05-00 | [[Phone -old-]]                                 | Experian                                                                                                                          |
+| 2017-05-00 | [[Phone-old-]]                                  | Experian                                                                                                                          |
 | 2017-05-00 | [[Phone]]                                       | Experian                                                                                                                          |
 | 2017-05-00 | [[Phone]]                                       | Experian                                                                                                                          |
 | 2017-00-00 | [[Phone -old-]]                                 | Bought glasses                                                                                                                    |
 | 2017-00-00 | [[Phone -old-]]                                 | CREDIT CARDS                                                                                                                      |
+| 2017-00-00 | [[Phone-old-]]                                  | Bought glasses                                                                                                                    |
+| 2017-00-00 | [[Phone-old-]]                                  | CREDIT CARDS                                                                                                                      |
 | 2017-00-00 | [[Phone]]                                       | Bought glasses                                                                                                                    |
 | 2017-00-00 | [[Phone]]                                       | CREDIT CARDS                                                                                                                      |
 | 2017-00-00 | [[Phone]]                                       | Bought glasses                                                                                                                    |
@@ -1237,10 +1285,13 @@ n:: no prefix.	Dated entries without any typing prefix
 | 2017-00-00 | [[FIN Log]]                                     | Aeolus Bills                                                                                                                      |
 | 2017-00-00 | [[FIN Log]]                                     | DO NDA Personal receipts                                                                                                          |
 | 2016-11-06 | [[Phone -old-]]                                 | changed address                                                                                                                   |
+| 2016-11-06 | [[Phone-old-]]                                  | changed address                                                                                                                   |
 | 2016-11-06 | [[Phone]]                                       | changed address                                                                                                                   |
 | 2016-11-06 | [[Phone]]                                       | changed address                                                                                                                   |
 | 2016-11-04 | [[Phone -old-]]                                 | Recology Sunset Scavenger                                                                                                         |
 | 2016-11-04 | [[Phone -old-]]                                 | water power sewer                                                                                                                 |
+| 2016-11-04 | [[Phone-old-]]                                  | Recology Sunset Scavenger                                                                                                         |
+| 2016-11-04 | [[Phone-old-]]                                  | water power sewer                                                                                                                 |
 | 2016-11-04 | [[Phone]]                                       | Recology Sunset Scavenger                                                                                                         |
 | 2016-11-04 | [[Phone]]                                       | water power sewer                                                                                                                 |
 | 2016-11-04 | [[Phone]]                                       | Recology Sunset Scavenger                                                                                                         |
@@ -1249,6 +1300,7 @@ n:: no prefix.	Dated entries without any typing prefix
 | 2016-05-25 | [[OLD 201x Weekly]]                             | – Lex Ownership                                                                                                                   |
 | 2016-00-00 | [[Parents]]                                     | Parents Internet speed                                                                                                            |
 | 2016-00-00 | [[Phone -old-]]                                 | Aeolus notes                                                                                                                      |
+| 2016-00-00 | [[Phone-old-]]                                  | Aeolus notes                                                                                                                      |
 | 2016-00-00 | [[Phone]]                                       | Aeolus notes                                                                                                                      |
 | 2016-00-00 | [[Journal Old]]                                 | Bizzy Robotics - Early days                                                                                                       |
 | 2016-00-00 | [[Phone]]                                       | Aeolus notes                                                                                                                      |
