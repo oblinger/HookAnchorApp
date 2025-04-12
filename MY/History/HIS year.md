@@ -1,4 +1,6 @@
 
+[[FIN\|Sun Mar 31  2024]]  	[[FIN#Macro Investing Strat]]  
+[[work\|Sun Mar 31  2024]]  	[[work#TOP]]  
 [[Friends\|Sat Mar 30  2024]]  	[[Friends#AI-Relat]]  
 [[MED VO2Max\|Sat Mar 30  2024]]  	[[MED VO2Max#Exercise Protocols]]  
 [[MED VO2Max\|Sat Mar 30  2024]]  	[[MED VO2Max#Studies]]  

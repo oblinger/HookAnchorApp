@@ -1,4 +1,6 @@
 
+[[Deepgram\|Sat Apr 12  2025]]  	[[Deepgram#Top]]  
+[[Domino Data Lab\|Sat Apr 12  2025]]  	[[Domino Data Lab#Top]]  
 [[Eightfold AI\|Sat Apr 12  2025]]  	[[Eightfold AI#Top]]  
 [[Elai.io\|Sat Apr 12  2025]]  	[[Elai.io#Top]]  
 [[ElevenLabs\|Sat Apr 12  2025]]  	[[ElevenLabs#Top]]  
