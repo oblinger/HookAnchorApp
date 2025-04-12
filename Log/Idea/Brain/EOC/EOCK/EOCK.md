@@ -1,7 +1,12 @@
 .[[EOCK]].   [[EOCI]] 
+  [[EOCK AGI implies ASI]], 
+  [[EOCK Cant Control]], 
+  [[EOCK Cant Stop]], 
+  [[EOCK on path to AGI]], 
   [[EOCK Corp AI]] -
   [[EOCK Loop Closing]] -
   [[EOCK AGENCY - Separation of Knowledge, Drive, and Agency]],
+  -
   [[EOCK Alignment Wont Work]]
   [[EOCK Apex Predator]],
   [[EOCK Last Best Hope]],
