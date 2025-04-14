@@ -25,7 +25,7 @@ MONTHLY SPENDING	~ $20K  +/-$5K
 	$			-->		MISC	Amazon Non-Groc
 	$			-->	01 Pen Fed
 	$			-->	13 Citi Double
-	$			-->	Water
+	$			-->		Water
 
 WELLS SUBSCRIPTIONS CARD
 	$

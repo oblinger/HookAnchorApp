@@ -1,3 +1,4 @@
+- https://link.alphasignal.ai/0tlXWN
 
 - lm studio (try it out)
 - 
