@@ -7,4 +7,4 @@
 	- [ ] remove Dates from education
 
 
-- [ ] Get investment plan (add to 'self' list)
+- [ ] Get investment plan (add to 'self' list

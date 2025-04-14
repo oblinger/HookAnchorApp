@@ -42,12 +42,12 @@ LEFT FOCUSED LAYOUT
 
 ### DAILY VIEW DASHBOARD
 
-| col-1 | col-2 | col-3  | col-4 |
-| :---: | :---: | :----: | :---: |
-| Work  |  Now  |  Week  | Week  |
-|   "   |   "   |   "    |   "   |
-|   "   |   "   |   "    |   "   |
-| Quick | Todo  | Active | Wings |
+| col-1 | col-2 | col-3  | col-4  |
+| :---: | :---: | :----: | :----: |
+| Work  |  Now  |  Week  |  Week  |
+|   "   |   "   |   "    |   "    |
+|   "   |   "   |   "    |   "    |
+| Quick | Todo  | Active | Active |
 
 
 ### PLANNING VIEW DASHBOARD
@@ -62,24 +62,24 @@ LEFT FOCUSED LAYOUT
 
 ### COMMS DASHBOARD
 
-|   col-1   |    col-2     |  col-3   |
-|:---------:|:------------:|:--------:|
-| [[COMs]]  | [[COM Next]] | [[CRM]] |
-|     "     |      "       |    "     |
-| [[Calls]] | [[External]] |    "     |
-|     "     |      "       |    "     |
+|   col-1   |    col-2     |  col-3  |
+| :-------: | :----------: | :-----: |
+| [[COMs]]  |    [[CN]]    | [[CRM]] |
+|     "     |      "       |    "    |
+| [[Calls]] | [[External]] |    "    |
+|     "     |      "       |    "    |
 
 
 
 
 ### SELF DASHBOARD
 
-| col-1 |  col-2   | col-3 |
-|:-----:|:--------:|:-----:|
-| Self  | BKT Tree |  Q2   |
-|   "   |    "     | Later |
-| Todo  |    "     | Quick |
-|   "   |    "     | other |
+| col-1 | col-2 | col-3 |
+| :---: | :---: | :---: |
+| Self  |  BKT  |  Q2   |
+|   "   |   "   | Later |
+| Todo  |   "   | Quick |
+|   "   |   "   | other |
 
 
 

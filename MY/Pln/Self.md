@@ -1,2 +1,0 @@
-- dellete paramout
-%contents%

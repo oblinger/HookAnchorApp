@@ -16,7 +16,8 @@
   [[EOCK Machine Centric Coms]],
   [[EOCK Fast Takeoff]],
   [[EOCK No Fast Takeoff]]
-  , [[EOCK AGENCY - Separation of Knowledge, Drive, and Agency]], 
+  , [[EOCK AGENCY - Separation of Knowledge, Drive, and Agency]],
+  , [[EOCK Shaping The Future]], 
 
 
 

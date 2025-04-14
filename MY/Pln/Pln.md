@@ -15,9 +15,9 @@
   DELS: ,, ,, , ,, , , , , , [[Archive List]], , , , ,
   , [[Self]],
   DELS: ,, ,, , ,, , , , , , [[Archive List]], , , , ,, , , , , , , , ,
-  , [[active]], [[fried]], [[fun]], [[gap]], [[later]], [[now]], [[other]], [[q2]], [[quick]]
-  , [[todo]], 
-  DELS: [[Lrn]],[[MY/Pln/HACK/HACK]], [[HACK.]],[[Hack]], [[Hacks]], [[Lrn]],[[Quick]], [[Todo]], [[Now]], [[Active]], [[Later]], [[Q2]], [[Archive List]], [[Fun]], [[Fried]], [[Gap]], [[Other]],[[EBT]], [[Hacks]], [[Lrn]], [[Lrn]], [[MY/Pln/HACK/HACK]], [[HACK.]], [[Hack]], [[Hacks]], [[Lrn]],[[Active]], [[Fried]], [[Fun]], [[Gap]], [[Later]], [[Now]], [[Other]], [[Q2]], [[Quick]], [[Todo]], [[Quick]], [[Todo]], [[Now]], [[Active]], [[Later]], [[Q2]], [[Fun]], [[Fried]], [[Gap]], [[Other]],[[Lrn]], [[MY/Pln/HACK/HACK]], [[HACK.]], [[Hack]], [[Hacks]], [[Lrn]], [[EBT]], [[Hacks]], [[Lrn]], [[Lrn]], [[MY/Pln/HACK/HACK]], [[HACK.]], [[Hack]], [[Hacks]], [[Lrn]],
+  , [[active]], , [[fun]], [[gap]], [[later]], [[now]], [[other]], [[q2]], [[quick]]
+  , [[todo]],
+  DELS: [[Lrn]],[[MY/Pln/HACK/HACK]], [[HACK.]],[[Hack]], [[Hacks]], [[Lrn]],[[Quick]], [[Todo]], [[Now]], [[Active]], [[Later]], [[Q2]], [[Archive List]], [[Fun]], [[Fried]], [[Gap]], [[Other]],[[EBT]], [[Hacks]], [[Lrn]], [[Lrn]], [[MY/Pln/HACK/HACK]], [[HACK.]], [[Hack]], [[Hacks]], [[Lrn]],[[Active]], [[Fried]], [[Fun]], [[Gap]], [[Later]], [[Now]], [[Other]], [[Q2]], [[Quick]], [[Todo]], [[Quick]], [[Todo]], [[Now]], [[Active]], [[Later]], [[Q2]], [[Fun]], [[Fried]], [[Gap]], [[Other]],[[Lrn]], [[MY/Pln/HACK/HACK]], [[HACK.]], [[Hack]], [[Hacks]], [[Lrn]], [[EBT]], [[Hacks]], [[Lrn]], [[Lrn]], [[MY/Pln/HACK/HACK]], [[HACK.]], [[Hack]], [[Hacks]], [[Lrn]],[[fried]], 
 
 
 

@@ -1,4 +1,5 @@
 
+[[Deepcell\|Sat Apr 12  2025]]  	[[Deepcell#Top]]  
 [[Deepgram\|Sat Apr 12  2025]]  	[[Deepgram#Top]]  
 [[Domino Data Lab\|Sat Apr 12  2025]]  	[[Domino Data Lab#Top]]  
 [[Eightfold AI\|Sat Apr 12  2025]]  	[[Eightfold AI#Top]]  
