@@ -92,7 +92,7 @@ n:: no prefix.	Dated entries without any typing prefix
 | 2024-12-27 | [[@Schwab]]                                     | Open                                                                                                                              |
 | 2024-12-24 | [[MED Exercise]]                                | Ideas                                                                                                                             |
 | 2024-12-18 | [[@Chang Yuan]]                                 | Meeting                                                                                                                           |
-| 2024-12-18 | [[RR Blogs]]                                    | Arjan's Code Diagnosis                                                                                                            |
+| 2024-12-18 | [[RR Blog]]                                     | Arjan's Code Diagnosis                                                                                                            |
 | 2024-12-18 | [[RR DEFINITIONS]]                              | Schelling Point                                                                                                                   |
 | 2024-12-18 | [[RR PAPERS]]                                   | DETRs Beat YOLOs on real-time object detection                                                                                    |
 | 2024-12-18 | [[RR SYSTEMS]]                                  | Lang Chain                                                                                                                        |
