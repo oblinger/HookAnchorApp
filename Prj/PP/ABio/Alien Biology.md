@@ -1,15 +1,12 @@
-.[[Alien Biology]].
-  , [[ABio]], 
-  [[ABIO Tasks]] 
-[[ABIO Systems]] 
 
+Background: A large number of real world test for 
 
 **Problem**: Assessing LLM reasoning is challenging since nearly any complex test task is tainted by likely but unknown connections to the texts used to train the LLM.  How can one distinguish novel reasoning from sophisticated copying?
 
 **Objective for Alien Biology**: Provide a reliable measure of complex, agentic reasoning/learning that:
 1. *REAL-WORLD* - measures performance on practical, complex, real-world-relevant agentic reasoning/learning tasks.
 2. *UNTAINTED* - avoids confounding connections to LLM training corpora by drawing tests from an "Alien" universe.
-3. *GENERATIVE* - is parametrically constructed in ways that allow fine-grained analysis of the limits of agentic reasoning by creating counterfactual universes, each requiring varying levels of inferential complexity.
+3. *CONTROLLABLE* - is parametrically constructed in ways that allow fine-grained analysis of the limits of agentic reasoning by creating counterfactual universes, each requiring varying levels of inferential complexity.
 
 
 ## Introduction
@@ -19,7 +16,7 @@ If only there were some alternate universe that was as difficult to reason about
 
 The Alien Biology framework described below is designed to allow us to construct just such alternate universes for testing our agentic systems.  We aim not to recreate an accurate model of any particular universe but to build new universes simplified to target reasoning structures similar to those in our own world. This gets to the crux of the complex reasoning w/o wasting effort with needless realism.
 
-We aim not to assess the agentic system's ability to invent new reasoning paradigms.  Only a few humans throughout history have accomplished such a feat.  Indeed, we expect the agentic system to learn relevant reasoning paradigms from its training corpora and instead test its ability to apply them to an alternate universe where all the details have been changed.  This provides certainty that any details the system uncovers must have been derived entirely from its interaction with the alternate universe since none of them even exist within our universe.
+We do not aim to assess the agentic system's ability to invent new reasoning paradigms.  Only a few humans throughout history have accomplished such a feat.  Indeed, we expect the agentic system to learn relevant reasoning paradigms from its training corpora and instead test its ability to apply them to an alternate universe where all the details have been changed.  This provides certainty that any details the system uncovers must have been derived entirely from its interaction with the alternate universe since none of them even exist within our universe.
 
 Below is an idealized model of biology that we believe covers (in a simplified way) nearly any task one might undertake relative to nearly any biological.  This framework can encode low-level functioning within a cell, like the Kreb cycle, signaling pathways coordinating groups of cells, functioning of whole organs like the liver, and all the way up to the highest level of interaction patterns found between socially interacting animals.
 
@@ -47,9 +44,9 @@ Each organ contains a specific number of different types of **biomolecules** at 
 
 Organisms are recursively organized into larger biological systems, which are also encoded as DAGs. The whole structure is called an alien ecosystem or a world. The root of this ecosystem DAG is called the substrate, the environment in which the entire biosystem resides.
 
-We use the term **part** to refer generically to any (a) biological system, (b) organism, (c) organ, or (d) biomolecule.
+We use the term **biopart** to refer generically to any (a) biological system, (b) organism, (c) organ, or (d) biomolecule.
 
-This allows us to abstract the **world state** of an entire alien ecosystem into a single DAG of parts.  Each node in the DAG will have a type name ("`kind`") indicating the kind of part it is and a ("`num`") field indicating the number of this type within the parent part within the DAG.  Thus, an alien world state can be compactly expressed in JSON as:
+This allows us to abstract the **world state** of an entire alien ecosystem into a single DAG of bioparts.  Each node in the DAG will have a type name ("`kind`") indicating the kind of biopart it is and a ("`num`") field indicating the number of this type within the parent biopart within the DAG.  Thus, an alien world state can be compactly expressed in JSON as:
 
 ```json
 
@@ -58,6 +55,7 @@ This allows us to abstract the **world state** of an entire alien ecosystem into
 	{"kind": "Food5", "num": 300000, parts: [{"kind": "biomolecule_carb", "num": 100}, {...}]},
 	...
 }
+
 
 
 {
@@ -73,7 +71,7 @@ This allows us to abstract the **world state** of an entire alien ecosystem into
 ```
 
 
-**BIOPROCESS** - Each kind of part may have any number of **biological processes (bioprocess)** that operate within them.  These processes will:
+**BIOPROCESS** - Each kind of biopart may have any number of **biological processes (bioprocess)** that operate within them.  These processes will:
 (a) convert certain combinations of biomolecules into other biomolecules
 (b) move biomolecules from one organ to another, or
 (c) change the physiology of the organism by adding or removing edges (cells, organs, etc.) in its physiology DAG
@@ -82,7 +80,7 @@ Typically, the rate at which each biological process executes is called its effi
 
 **GENERATOR** or **BIOSTOCK** - In order to make observations, run experiments, etc., we need generators that will produce a repeatable sequence of substrates, organisms, etc., for testing.  Each of these generators is called a **biostock** or a **generator**; these are parameterized functions that return a state structure whose root is of a given type or set of types.  So, a substrate is a parameterized biostock generator that produces a sequence of randomized "test tubes" ready for testing, while an organism biostock is a parameterized generator that produces a sequence of instances of a given strain of some organism type.
 
-**MEASUREMENTS** - Of course, one needs to be able to take **measurements** of a biological system in order to study it.  In our case, this is simply a function that takes in a world state as input along with any parameterization required by the measurement and then returns the measurement's results.  The results might be a numeric value like the concentration of a biomolecule within a type of cell, a sequence of values (like temperature over time), or other data output.  The measurement's inputs might include a specification of what part of the system one is measuring.  
+**MEASUREMENTS** - Of course, one needs to be able to take **measurements** of a biological system in order to study it.  In our case, this is simply a function that takes in a world state as input along with any parameterization required by the measurement and then returns the measurement's results.  The results might be a numeric value like the concentration of a biomolecule within a type of cell, a sequence of values (like temperature over time), or other data output.  The measurement's inputs might include a specification of what biopart of the system one is measuring.  
 
 **ACTION**—The AI agent also needs the ability to act on the Alien Biology in some way. This is accomplished via actions. Like a bioprocess, an action accepts a world state as input along with any parameters required to fully specify the action and returns an updated world state.  The difference is that the parameters for a bioprocess are typically fixed within the subsystems they operate in.  Meanwhile, actions and action parameters are typically independent variables that are under the control of the AI agent.
 
@@ -104,13 +102,13 @@ def adp2atp(world: State, *, ...) -> State:
 
 
 @measurement
-def measure_concentration(world: State, *, part_name: str, biomolecule: str) -> int
+def measure_concentration(world: State, *, biopart: str, biomolecule: str) -> int
 	"""Returns the number of a given biomolecule within a given (or all) named parts of an ecosystem"""
 
 
 @action
-def apply_heat(world: State, *, part_name: str, duration: int, amount: int) -> State:
-	"""Applies a given level of heat to the specified part for the specified number of time steps."""
+def apply_heat(world: State, *, biopart: str, duration: int, amount: int) -> State:
+	"""Applies a given level of heat to the specified biopart for the specified number of time steps."""
 
 
 class CmdKind(Enum):
@@ -153,11 +151,11 @@ The range of biologically plausible tasks naturally fitting into this framing is
 Each basic task might be adjusted or made more complex by:
 - ALL LEVELS - Applying it at different levels within a given ecosystem, e.g., cell level, cell group, organ, organism, ecosystem, etc.
 - SPANNING LEVELS - Complex tasks may require the agent to learn and reason across multiple levels within an ecosystem.
-- HIDDEN KNOWLEDGE—The amount of information provided to the agent regarding the structure and function of the systems of alien biology can vary the tasks. At one end of the spectrum, a simple list of actions and measurements might be available as a list of symbols with a little background about them, and at the other end of the spectrum, detailed functional models connecting all of the parts, measurements, and actions might be provided.  Each of these has been generated as a JSON structure and Python function, so it is easy to supply portions of this information and natural text as hints for the agent being tested.  (See skinning in the next section for a discussion about natural text.)
+- HIDDEN KNOWLEDGE—The amount of information provided to the agent regarding the structure and function of the systems of alien biology can vary the tasks. At one end of the spectrum, a simple list of actions and measurements might be available as a list of symbols with a little background about them, and at the other end of the spectrum, detailed functional models connecting all of the bioparts, measurements, and actions might be provided.  Each of these has been generated as a JSON structure and Python function, so it is easy to supply portions of this information and natural text as hints for the agent being tested.  (See skinning in the next section for a discussion about natural text.)
 
-**SKINNING**—Up to this point, the components of alien biology have been described as symbolic or mathematical structures expressed as JSON expressions and Python functions.  This structure can be "skinned" by inventing a biological name for each of the parts of the system (the biomolecules, bioprocesses, organs, organisms, systems, and substrates of the system).  As an aid in understanding the alien system, we might adopt biologically plausible analogs for the functioning of many of the parts if we want to simulate a condition where much is understood about the functioning of the various parts.  Alternatively, just as biologists often do early on, when little is understood about a system, one can adopt generic names that give away little about the underlying functioning of the system in order to simulate the situation when a new part has been discovered but little is known about that part.  Either way, a **skin** is simply a mapping from each part identifier onto a name string that is used for describing that part in the task specifications below.
+**SKINNING**—Up to this point, the components of alien biology have been described as symbolic or mathematical structures expressed as JSON expressions and Python functions.  This structure can be "skinned" by inventing a biological name for each of the bioparts of the system (the biomolecules, bioprocesses, organs, organisms, systems, and substrates of the system).  As an aid in understanding the alien system, we might adopt biologically plausible analogs for the functioning of many of the bioparts if we want to simulate a condition where much is understood about the functioning of the various bioparts.  Alternatively, just as biologists often do early on, when little is understood about a system, one can adopt generic names that give away little about the underlying functioning of the system in order to simulate the situation when a new biopart has been discovered but little is known about that biopart.  Either way, a **skin** is simply a mapping from each biopart identifier onto a name string that is used for describing that biopart in the task specifications below.
 
-**TASK DESCRIPTION** - Using this skinning of the logical model, one can provide a **task description** in natural language using skinned terms to refer to the biology of the system.  This description may or may not describe the function of the bioprocesses, molecules, organs, etc., or these parts to be solved by that agent trying to solve the task.  The remainder of the task specification is expressed as a Python module with relevant measurements, actions, and generators defined.  We assume the contents of this model are not available to the agent being tested; the only information they have is the natural language task description.
+**TASK DESCRIPTION** - Using this skinning of the logical model, one can provide a **task description** in natural language using skinned terms to refer to the biology of the system.  This description may or may not describe the function of the bioprocesses, molecules, organs, etc., or these bioparts to be solved by that agent trying to solve the task.  The remainder of the task specification is expressed as a Python module with relevant measurements, actions, and generators defined.  We assume the contents of this model are not available to the agent being tested; the only information they have is the natural language task description.
 
 **AGENT TESTING** - Tying all of this together we can test an agent's ability to understand and control these biological systems.  They are provided:
 - A natural language task description.
@@ -168,12 +166,12 @@ Each basic task might be adjusted or made more complex by:
 ## Parametric Generation of Alien Biologies
 
 The promise of alien biology tasks over traditional agentic testing is the ability to:
-1. Test complex agentic learning and reasoning in realistic scenarios without concern that the parts of the task being learned were somehow already provided during the training of the LLM agent model itself. 
+1. Test complex agentic learning and reasoning in realistic scenarios without concern that the bioparts of the task being learned were somehow already provided during the training of the LLM agent model itself. 
 2. Control various dimensions of task complexity in a fine-grained, controlled way without requiring humans to create tens or hundreds of thousands to test tasks.
 
 We achieve both of these goals by dynamically generating new alien biologies and generating tasks within those biologies.  We can use the hundreds of thousands of understood processes, molecules, organs, and systems in order to create realistic universes and realistic tasks within that universe.  But we dramatically compress these hundreds of thousands of processes, molecules, organs, etc., into quite a small model for generation.  Thus, the nature of biological processes is retained. e. the idea of a cycle of molecules as found in the Kreb cycle without any specific information about the specifics of that cycle, which it exists within a system, what its purpose might be, etc., just the bare structural information with work from.  Thousands of measurements, actions, and processes are expressed in Python (using LLM models), and then again, these structures are distilled into generators of plausible but quite randomized processes.  The system retains the structure required to achieve some homeostatic or other goal but is divorced from any of the particulars found within Earth's biology.
 
-Model skin names are constructed in a similar fashion.  One can distill the mapping from formal function onto naming within Earth's biological systems in order to produce a generator of plausible naming for the alien biology, which may or may not tie closely to the functioning of each part within that biology.  Thus allowing us to simulate conditions of varying background knowledge available to the agent being tested.
+Model skin names are constructed in a similar fashion.  One can distill the mapping from formal function onto naming within Earth's biological systems in order to produce a generator of plausible naming for the alien biology, which may or may not tie closely to the functioning of each biopart within that biology.  Thus allowing us to simulate conditions of varying background knowledge available to the agent being tested.
 
 
 ## Parametric Construction of Agent Tests
@@ -181,9 +179,9 @@ Model skin names are constructed in a similar fashion.  One can distill the mapp
 Once distilled, parameterized generators for alien biology have been constructed; we can use them to dynamically construct test tasks of the desired complexity for our agentic system.
 
 There are many plausible measures of complexity for our generated biology:
-- Total number of parts, processes, molecules, organs, etc involved.
+- Total number of bioparts, processes, molecules, organs, etc involved.
 - The number of lines and operators in the Python code used in processes, measurements, and actions.
-- The complexity of the interacting parts within the dynamically constructed sub-systems of the larger system
+- The complexity of the interacting bioparts within the dynamically constructed sub-systems of the larger system
 - The number and complexity of the interaction between the layers of the full system.
 
 Ultimately, exploring how agent performance varies across these different measures will give us an understanding of the limits of our agentic reasoning systems, which we cannot access today since we pragmatically have no way to vary these aspects of the problems we laboriously obtain from our actual universe.  

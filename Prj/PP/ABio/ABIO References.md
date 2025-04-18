@@ -5,6 +5,9 @@
 
 ## GENERATIVE - SPECIALTY
 
+### [*](https://arxiv.org/abs/2503.13517)2025 CURIE (google sci reasoning)
+- [Google Blog Entry](https://research.google/blog/evaluating-progress-of-llms-on-scientific-problem-solving/) 
+
 ### 2025 Dynamic Code Eval - **DyCodeEval** - Code writing ability
 
 **Authors:** Simin Chen, Pranav Pusarla, Baishakhi Ray (Columbia University)  

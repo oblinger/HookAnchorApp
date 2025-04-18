@@ -1,6 +1,6 @@
 
 
-[[NJ]]:
+[[NJ]]:   (See [[Daily Schedules]])
 - [[CN]]:			Uri, Luis, Juan
 - [[SEEK]]:		[[NJ.1]]: Tier2, Short List; 3Tgts; Listening 
 - [[LRN.]]:		DL C3;
@@ -38,29 +38,11 @@ MIT: [[SV]], [[NJ]], [[SELF]], [[Fun]],
 [[Fun]]: 
 [[Spirit]]: Gendlin
 
-
 [[Self]]. [[Self Evergreen]], 
 
 
 
-MED:  - [Liu](https://ucsfmychart.ucsfmedicalcenter.org/ucsfmychart/Home) 
-
-
-
-
-## > 
-## >
-- [[Up Task]],  [[Meta Plan]],  [[Daily Schedules]], 
-
-
-TOP ORGANIZING VIEWS
-- [View Up Task](spot://View~up~task)	[[Up All]] 
-- [View Work](spot://view~work)		[[Work]] 	[[Rocks]] 
-- [View Self](spot://view~self)		[[Self]]		[[Q2]]		
-- [View Planning](spot://view~planning)	[[Pln]]	
-- [View Gap](spot://view~gap) 		[[Fried]] 		[[MY/Pln/HACK/HACK]]		[[Gap]]
-
-## BKT TREE
+# INFO
 
 ### 2024-10-31  Single Letter Time Codes
 
@@ -76,6 +58,8 @@ TOP ORGANIZING VIEWS
 - w	WORK	- Generalized work tasks
 
 Fun/Family (maybe in E)
+
+# LOG
 
 ### 2024-10-27  buckets
 

@@ -1,6 +1,40 @@
 
 # LOG
 
+### 2025-04-17  Back From China - Interviewing Rhythm
+
+07	Wake, Read, QuickScan slack/email
+07:	Block1 - Hardest (1.5)
+09	Rest
+09:	Block2 - Easy (1.5)
+11		Eat/read(1)+personal email(:)+work email(:)
+01	Block3 (1)
+02	CV team
+02'	Run
+03:	Gap
+04	Block4 (1)
+05	Eli / Dinner
+06:	Fun
+08	Eli
+08:	Fun
+10:	Read
+11		Sleep
+
+
+*BREAKDOWN*
+05	Work = Block1(1:) + Block2(1:) + Block3(1) + Block4(1)
+01 .	SV = CVteam(') + Work Email(:)
+06.
+
+00'	Run
+01:	Eat = Lunch/Read(1) + Personal Email(:)
+02	Family = Drive(:)+Play(:)+Dinner(:)+Bed(:)
+01:	Gaps = Wake(:)+Rest(:)+Gap(:)
+05'
+
+04	Fun = Fun(1:)+Fun(2)+Read(:)
+08	Sleep
+
 ### 2025-02-10  Daily Blocks
 06:	Maybe one more work session
 08	9 hours =

@@ -5,22 +5,29 @@
 - [[CN]]:		Meet [[BOD]]. 
 
 
-## MY PLAN -- Be enough of an AI-IC to get a job as a tech manager, preferably at a FAANG, possibly as an IC
+## MY PLAN -- Get a job as an ML manager, preferably at a FAANG, possibly as an IC
+(Or as a PostDoc )
+### META PLAN
+1. READY - Get materials ready, Learn stuff, 
+2. LEARNING - Read, Vibe, Torch, Leet
+3. INTERVIEWING - 
+- NETWORKING - 
+- PROJ - [[Alien Biology]] outreach, 
 
 ### READY
 1. LATER Review [Docx](spot://resdocx) 
 2. LATER Sweep [[RES War]] & [[RES Star]]
 
 ### LEARNING
-1. PUZZLE CODING - Algo Monster, Leet Code
-   ==> Get good at fast coding on medium and some hard Algo problems.
-2. GREP-GRAB-n-GO - Scan for alg and quickly try it out.
-3. COURSERA DL - Taking Coursera courses
-4. VIBE CODING - Make agents that do stuff
-5. PAPERS - Skim/Read AI papers, blogs.  Flash-cards results.
-6. BOOK - Management books
-7. TORCH CODING - Train some models, Download, and use the system.
+1. GREP-GRAB-n-GO - Scan for alg and quickly try it out.
+2. PAPERS - Skim/Read ML blogs, papers.  Flash-cards results.
+3. VIBE CODING - Make agents that do stuff
+4. COURSERA DL - Taking Coursera courses
+5. BOOK - Management books
+6. TORCH CODING - Train some models, Download, and use the system.
    ==> Get good enough to slam a simple model in a short time & talk about 50 improvements I could make
+7. PUZZLE CODING - Algo Monster, Leet Code
+   ==> Get good at fast coding on medium and some hard Algo problems.
 
 ### INTERVIEWING
 1. [[TG]]: Find Job search sites
@@ -40,12 +47,6 @@
 - Add to Star/War materials
 
 
-### META PLAN
-0. READY - Get materials ready, Learn stuff, 
-1. LEARNING - Read, Vibe, Torch, Leet
-2. INTERVIEWING - 
-- NETWORKING - 
-- PROJ - [[Alien Biology]] outreach, 
 
 # LOG
 

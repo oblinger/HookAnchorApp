@@ -1,6 +1,10 @@
 .[[RR PAPERS]].  [[LRN.]]
   [[RR DEFINITIONS]],
+  , ,
+  , ,
   , [[RR Blog]], 
+  DELS: [[RR Blog]],
+  DELS: [[RR Blog]],[[RR Blogs]], 
 
 
 mamba block

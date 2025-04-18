@@ -1,14 +1,13 @@
 .[[ABio]].
-  [[Alien Biology]],
-  ,
-  , [[ABIO CellMetabolism5]], [[ABIO Photosynthesis]], [[ABIO Queries]], [[ABIO References]]
-  , [[ABIO Systems]], [[ABIO Task Example]], [[ABIO Tasks]], 
-
-  ,
-  ,
-  [[ABIO References]],
-  , [[AB Queries]], [[ABsys]], [[Alien Biological Tasks]], 
-  DELS: [[ABIO Tasks]], [[ABIO Task Example]], [[ABIO Queries]], [[ABIO Systems]], 
+  [[Alien Biology]]					-  White paper
+  [[ABIO Queries]],
+  [[ABIO References]]	
+  [[ABIO Task Example]],
+  [[ABIO Tasks]], 
+  [[ABIO Generator]] 
+  [[ABIO Systems]]					-  EXAMPLE SYSTEMS
+  [[ABIO Photosynthesis]]		-  Example 
+  [[ABIO CellMetabolism5]]	-  Example of 5 interrelated processes
 
 
 

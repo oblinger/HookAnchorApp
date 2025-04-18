@@ -3,7 +3,7 @@ n:: Research Reference pages
 .[[RR]].  [[LRN.]] 
   AREAS:	[[AI]], [[ML]], , [[RR Philosophy]], [[RR Leet]],
   TOPICS:	[[RR Med]], [[RR MGR]],
-  [[REF]]:		[[RefMisc]], [[Refs]], [[RR PAPERS]], [[RR Web]],
+  [[REF]]:		[[RefMisc]], [[Refs]], [[RR PAPERS]], ,
   CLOSET:	[[Research]],
   .
   [[Covid]], [[MATERIALS]],
@@ -12,7 +12,8 @@ n:: Research Reference pages
   , [[Comp]], [[DL]], [[Lrn]], [[Stat]],
   , [[RR SYSTEMS]],
   , ,
-  , [[RR CV]], 
-  DELS: [[RR CV]],[[rrCV]],
+  , [[RR CV]],
+  , [[RR Web]], 
+  DELS: [[RR CV]],[[rrCV]],[[RR Web]],
 
 

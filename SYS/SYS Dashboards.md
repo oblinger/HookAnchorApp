@@ -1,6 +1,15 @@
 
 > These dashboards are optimized to support my key workflows
 
+
+
+TOP ORGANIZING VIEWS
+- [View Up Task](spot://View~up~task)	[[Up All]] 
+- [View Work](spot://view~work)		[[Work]] 	[[Rocks]] 
+- [View Self](spot://view~self)		[[Self]]		[[Q2]]		
+- [View Planning](spot://view~planning)	[[Pln]]	
+- [View Gap](spot://view~gap) 		[[Fried]] 		[[MY/Pln/HACK/HACK]]		[[Gap]]
+
 ## KEYBOARD SHORTCUTS
 
 **Accessed via the "CAPS-Jump" menu**

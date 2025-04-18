@@ -5,6 +5,8 @@ n:: no prefix.	Dated entries without any typing prefix
 
 | Date       | File                                        | Notes                                                                                                                             |
 | ---------- | ------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------- |
+| 2025-04-17 | [[Daily Schedules]]                             | Back From China - Interviewing Rhythm                                                                                             |
+| 2025-04-17 | [[Mgt]]                                         | Sean's Market Model                                                                                                               |
 | 2025-04-07 | [[FIN Log]]                                     | Possible Sell off                                                                                                                 |
 | 2025-04-02 | [[SEEK Cover Letter Terms]]                     | Yashin's update                                                                                                                   |
 | 2025-04-01 | [[SEEK Cover Letter Terms]]                     | Ya-Shin's Prompts                                                                                                                 |

@@ -14,6 +14,52 @@ recognizing defense orgnanization -  2-3 zone, man defense,
 
 # Log
 
+### 2025-04-17  Sean's Market Model
+
+Jason - here you go.  Please read/review before sending to make sure this reflects your POV as well. 
+
+  
+
+  
+
+**What does “Other Income” in the model entail?**
+
+- Other income is interest income from cash balance
+
+  
+
+**Could you just provide the background on the formula used to calculate the “Game Annotation” and “Cloud Cost”?**
+
+- This forecast has both a game credit revenue line (games), and a Premium/Cloud Storage revenue line. 
+- The Game Annotation cost is solely the human labor required to annotate games, this model is not assuming AI taking over annotation, but shows annotation cost/game going from $18 to $10 by end of 2027 (This is listed in the assumptions column to the right of FY2025 totals)
+- This model assumes some degree of AI augmentation on regular games processing, The R&D section has a Training/Dataset/Cloud section captures this cost assuming it is mainly an R&D pursuit to build better AI vs. just to process games with no improvement in model expected.
+- The Cloud Cost segment of COGS is a flat 10% of the premium/cloud storage revenue, and we are targeting a Gross Profit for Premium to be 90%. 
+
+  
+
+**Could you also explain the two revenue drivers - what does “Game Credit” and “Premium Cloud Storage” mean?**
+
+- Game credits are the per game unit cost that is the foundational element driving our subscription, season pack, league and team pricing models. 
+- Premium cloud storage is a new feature rolling out later this year which will allow us to monetize our player audience via enhanced features and the ability to save games and highlights for future viewing - opposed to them being deleted after a set period of time (3-6 months). 
+
+  
+
+**Separately, any granular data on the market size is helpful. My colleagues have concerns around how many customer can provide >$1m ACV.**
+
+On the market sizing, we would acknowledge that there are few targets at >$1M in ACV.  We will win through B2B and breadth - working to address the market via a mix of focused direct sales, partnerships and scale/automation. 
+
+  
+
+Our current pipeline reflect this: 
+
+1. We are targeting approximately $4.1M in ACV from roughly 350 unique deals. 
+
+2. ACV for our pipeline is >$11k, which maps north of our current customers ACV (reference that we are targeting higher ACV deals as we learn/grow)
+
+3. Our pipeline includes a number of low value deals that have come to us reactively and that we are managing hands off/scale/automation. 
+
+4. We don’t believe that Hudl has very many $1M deals in their client roster (this is anecdotal and we don’t have data here to validate this).  They are working the torso at a much lower ACV - high schools in for $500-$50,000 ACV. (Seattle Prep is $30k anecdotally).
+
 ### 2025-03-12  W
 
 - New Version on Prod -  (James - One time end-to-end QA)
