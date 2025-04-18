@@ -3,12 +3,13 @@
 
 [[Google]],	[[Groq]],	[[mate]],	
 [[KMR]]: [[Weekly]],	
-    [[RR]]: [[Lrn]],	[[RR Leet]],	[[RR PAPERS]],	[[RR Philosophy]],	[[RR MGR]],	
+    [[RR]]: [[Lrn]],	[[RR Leet]],	[[RR Web]],	[[RR Philosophy]],	[[RR MGR]],	
         [[RR SYSTEMS]]: 
         [[Comp]]: 
             [[LANG]]: 
         [[Stat]]: [[Stat Alg]],	[[Measure]],	
         [[ML]]: [[ML Alg]],	
+        [[RR PAPERS]]: [[RR Blog]],	
         [[DL]]: [[DL Topic]],	[[DL Alg]],	
             [[DLF]]: [[DL Visualization]],	[[DL Activation]],	
     [[T]]: [[Trash]],	[[Tag]],	

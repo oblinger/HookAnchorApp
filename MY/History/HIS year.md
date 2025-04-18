@@ -1,4 +1,10 @@
 
+[[work\|Mon Apr 1  2024 ]]  	[[work#PAUSE [bsheet](https://docs.google.com/spreadsheets/d/1C1eYv]]  
+[[WarStories\|Mon Apr 1  2024 ]]  	[[WarStories#TOPIC STORIES: LARGE]]  
+[[ELI\|Sun Mar 31  2024]]  	[[ELI#QUOTES]]  
+[[Eli\|Sun Mar 31  2024]]  	[[Eli#QUOTES]]  
+[[@Facet\|Sun Mar 31  2024]]  	[[@Facet#  [Website](https://facet.com/nerdwallet/\?utm_medium=affili]]  
+[[@Facet\|Sun Mar 31  2024]]  	[[@Facet#LOG]]  
 [[Daily Schedules\|Sun Mar 31  2024]]  	[[Daily Schedules#BUCKETS]]  
 [[FIN\|Sun Mar 31  2024]]  	[[FIN#Macro Investing Strat]]  
 [[work\|Sun Mar 31  2024]]  	[[work#TOP]]  
