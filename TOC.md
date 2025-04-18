@@ -3,7 +3,8 @@
 
 [[Google]],	[[Groq]],	[[mate]],	
 [[KMR]]: [[Weekly]],	
-    [[RR]]: [[Lrn]],	[[RR Leet]],	[[RR Web]],	[[RR Philosophy]],	[[RR MGR]],	
+    [[RR]]: [[Lrn]],	[[RR Leet]],	[[RR Philosophy]],	[[RR MGR]],	
+        [[RR Web]]: 
         [[RR SYSTEMS]]: 
         [[Comp]]: 
             [[LANG]]: 
