@@ -4,7 +4,8 @@
 
 - [ ] Build list of Tier II targets
 - [ ] Outreach
-- [ ] 
+- [ ] 	
+- fun list, papers list, torch practice, transformers class, book on behavioral questions
 
 [[NJ.1]] 
 - [ ] LinkedIn:  to joe; Update it

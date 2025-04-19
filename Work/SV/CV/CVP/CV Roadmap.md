@@ -10,6 +10,15 @@
 
 
 # LOG
+
+### 2025-04-18  Roadmap Thinking
+
+- AI-minutes & shot charts
+- Progress towards full stats basketball TODO:  Breakdown of R&D w. LOE & range of improvements.
+- AI camera
+- VB skipper
+
+
 ### 2023-00-00 - FULL-AI / BALLER DELIVERABLE
 
 ## SEEING

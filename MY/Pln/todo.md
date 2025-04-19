@@ -1,5 +1,8 @@
+- buy wok
 
-
+- Batch
+- Quarterly budget
+- Pre-mortem
 
 
 - Oven fix

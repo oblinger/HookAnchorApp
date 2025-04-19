@@ -1,5 +1,9 @@
-
-Background: A large number of real world test for 
+ 
+**Background**: Most tests of agentic AI and LLMs are drawn from various human areas of activity.  This has the advantage of testing the *breadth* of AI's learning/capabilities and is often carefully matched to problems of practical import.  But these advantages generally come at a price:
+- TAINT—It is often difficult to tell how much the AI is reasoning vs. remembering, since nearly all problems may be tainted by their relationship to materials in the training sets.
+- LEARNING DURING EXTENDED INFERENCE—Human training and inference operate using 
+- It is especially difficult to arrange extended inference tasks that are novel, and that require novel learning that is known not to occur in the training data. Such tests are typically set in complex domains where significant prior knowledge has been provided during training.
+-  NONCONTROLLABLE - 
 
 **Problem**: Assessing LLM reasoning is challenging since nearly any complex test task is tainted by likely but unknown connections to the texts used to train the LLM.  How can one distinguish novel reasoning from sophisticated copying?
 

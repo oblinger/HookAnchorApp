@@ -3,15 +3,11 @@
   DAILY:			[JuanDaily](spot://juandaily), [Jira](spot://jira),
   WEEKLY:		[SprintPlanning](spot://sprintplanning), [[CV Roadmap]], [Backlog Planning](spot://backlogplanning),
   SLOWER:		[CV Plan](spot://cvplan), [OKRs](spot://okrs), [OKR Slide](spot://okrslide), [AI Prod Matrix](spot://aiprodmatrix),
-  DATA:			[CV Planning Folder](spot://cvplanningfolder),
+  DATA:			[CV Planning Folder](spot://cvplanningfolder), [Mgt Gdrive](spot://mgtgdrive),
   SW TEAM:	[Weekly Agenda](spot://weeklyagenda), [Pln Factory](spot://plnfactory), [Pln Work](spot://plnwork),
   OLD:			[[2023-12 CV Tree]], , [Assess](spot://assess), [Baselines](spot://baselines), [BELIEF Gdrive](spot://beliefgdrive)
   .				[Benchmarks](spot://benchmarks), [Brainstorming Q3](spot://brainstormingq3), [[CV Annotations]], [[GameGraph]], [[Infra]],
-  .				[[Player Tracking Problem]], [[Rpt]], [[ShotTopView]], [tasks](spot://tasks), [Task Tree](spot://tasktree),
-  ,
-  , [Mgt Gdrive](spot://mgtgdrive),
-  , [Baseball](spot://baseball), 
-  DELS: [AI TIPS](spot://aitips),
+  .				[[Player Tracking Problem]], [[Rpt]], [[ShotTopView]], [tasks](spot://tasks), [Task Tree](spot://tasktree), [Baseball](spot://baseball), 
 
 [[SV Proj]] 
 

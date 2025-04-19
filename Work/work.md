@@ -1,6 +1,5 @@
 
 .**SOON**.
-     Parallel Ann spec agreement.
      close loop AWS transition plan
      .
 	[DT](spot://dt): 50 games in

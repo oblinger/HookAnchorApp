@@ -1,11 +1,9 @@
 
 .[[AMA]].
   [AMA Page](spot://amapage),
-  ,   [AMA Collections Page](spot://amacollectionspage), [AMA Content Page](spot://amacontentpage), [AMA Devices](spot://amadevices), 
+  [AMA Collections Page](spot://amacollectionspage), [AMA Content Page](spot://amacontentpage), [AMA Devices](spot://amadevices), 
   [AMA Kindle Page](spot://amakindlepage), [AMA Video Page](spot://amavideopage),
-  ,
-  , [Amazon](spot://amazon), 
-  DELS: [AMA Home Page](spot://amahomepage), 
+  [Amazon](spot://amazon), 
 
 
 

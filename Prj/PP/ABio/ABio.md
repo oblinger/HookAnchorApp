@@ -4,8 +4,8 @@
   [[ABIO References]]
   [[ABIO Task Example]],
   [[ABIO Tasks]],
-  , [[ABIO CellMetabolism5]], [[ABIO Generator]], [[ABIO Photosynthesis]], [[ABIO Systems]], 
-
+  [[ABIO Generator]] 				-
+   .
   [[ABIO Systems]]					-  EXAMPLE SYSTEMS
   [[ABIO Photosynthesis]]		-  Example
   [[ABIO CellMetabolism5]]	-  Example of 5 interrelated processes

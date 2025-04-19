@@ -2,7 +2,9 @@ SalesForce, Nvidia,
 
 # LOG
 
+### 2025-04-18  Data from 23 and me 
 
+[[Data 23andme]] 
 ### 2025-02-03  fix billing issue
 
 800-4sutter

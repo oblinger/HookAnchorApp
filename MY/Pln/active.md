@@ -14,3 +14,14 @@
 - reco for Joe Yeh
 - new credit card
 - c-card hard copy
+
+
+
+GROC:
+- SPLIT PEA:  	Onions, Garlic (minced), Ginger, Potatoes
+- BBEAN SALAD: 	Avocados, Tomatoes, Cilantro, Red Onion, 
+- MUSH BARLEY: 	Mushrooms, Parsley, Cabbage
+- QUINOA PEPP: 	Bell Pep, Red Onion
+- TVP CHILI: 		Onions, Celery, Carrots
+- TOFU sTATO: 	Sweet Potatoes
+- VEG SOUP: 		Carrots, Celery
