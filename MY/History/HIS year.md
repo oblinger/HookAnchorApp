@@ -1,4 +1,6 @@
 
+[[QQ\|Mon Apr 1  2024 ]]  	[[QQ#[[2024-01 Michael Rampdown]]]]  
+[[QQ\|Mon Apr 1  2024 ]]  	[[QQ# [[2023-12 Sell Car]]]]  
 [[work\|Mon Apr 1  2024 ]]  	[[work#PAUSE [bsheet](https://docs.google.com/spreadsheets/d/1C1eYv]]  
 [[WarStories\|Mon Apr 1  2024 ]]  	[[WarStories#TOPIC STORIES: LARGE]]  
 [[ELI\|Sun Mar 31  2024]]  	[[ELI#QUOTES]]  

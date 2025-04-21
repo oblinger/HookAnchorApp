@@ -1,7 +1,9 @@
 .[[POL]].
   , [[AI HISTORY]], [[Climate]], [[Cultural Progress]], [[Election2024]], [[Immigration]]
   , [[Palestinians]], [[Parties]], [[Politics]], [[Politics From Me]], [[POL refs]], [[Race]]
-  , [[Socialism]], [[Trump]], [[Voting]], 
+  , [[Socialism]], [[Trump]], ,
+  , [[Voting]], 
+  DELS: [[Voting]],
 
   :
   :

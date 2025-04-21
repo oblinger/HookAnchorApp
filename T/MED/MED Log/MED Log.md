@@ -1,3 +1,6 @@
+.[[MED Log]].
+  , [[Data 23andme]], 
+
 SalesForce, Nvidia, 
 
 # LOG

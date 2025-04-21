@@ -48,7 +48,7 @@
         [[Legal]]: [[2023 Legal SV]],	
             [[2017 Legal Ob Labs]]: 
             [[2023 Legal NDA - AF]]: 
-        [[MED]]: [[MED Doctors]],	[[MED Exercise]],	
+        [[MED]]: [[MED Doctors]],	[[MED Log]],	[[MED Exercise]],	
         [[COMS]]: 
             [[COM Msg]]: 
     [[SYS]]: [[Hack]],	[[SYS Misc]],	[[OBS]],	[[Closet]],	[[SYS Hacks]],	[[Spot]],	

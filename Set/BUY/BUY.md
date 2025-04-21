@@ -1,7 +1,7 @@
 .[[Buy]].
-  , [[Bought]], [[BUY Clothing]], [[BUY Food]], [[BUY Home]], [[BUY Ideas]], [[BUY Log]]
-  , [[BUY Tea]], [[SolarPanels]], [[ToBuy]],
-  , [[Buy2]], 
+  [[Bought]], [[BUY Clothing]], [[BUY Food]], [[BUY Home]], [[BUY Ideas]], [[BUY Log]]
+  [[BUY Tea]], [[SolarPanels]], [[ToBuy]],
+  [[Buy2]], 
 
 .[[BUY]].
   [[Bought]], [[BUY Log]], [[ToBuy]],

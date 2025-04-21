@@ -2,14 +2,13 @@
   [[Alien Biology]]					-  White paper
   [[ABIO Queries]],
   [[ABIO References]]
-  [[ABIO Task Example]],
-  [[ABIO Tasks]],
+  [[ABIO Task Example]]		-  
+  [[ABIO Tasks]]						-  
   [[ABIO Generator]] 				-
    .
   [[ABIO Systems]]					-  EXAMPLE SYSTEMS
   [[ABIO Photosynthesis]]		-  Example
   [[ABIO CellMetabolism5]]	-  Example of 5 interrelated processes
-  DELS: [[ABIO Generator]], 
 
 
 

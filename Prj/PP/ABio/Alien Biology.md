@@ -1,45 +1,58 @@
- 
-**Background**: Most tests of agentic AI and LLMs are drawn from various human areas of activity.  This has the advantage of testing the *breadth* of AI's learning/capabilities and is often carefully matched to problems of practical import.  But these advantages generally come at a price:
-- TAINT—It is often difficult to tell how much the AI is reasoning vs. remembering, since nearly all problems may be tainted by their relationship to materials in the training sets.
-- LEARNING DURING EXTENDED INFERENCE—Human training and inference operate using 
-- It is especially difficult to arrange extended inference tasks that are novel, and that require novel learning that is known not to occur in the training data. Such tests are typically set in complex domains where significant prior knowledge has been provided during training.
--  NONCONTROLLABLE - 
 
-**Problem**: Assessing LLM reasoning is challenging since nearly any complex test task is tainted by likely but unknown connections to the texts used to train the LLM.  How can one distinguish novel reasoning from sophisticated copying?
+OpenAI - 
+Anthrompic 
+Collaborate a Bioligist 
+Systems Biology
+Microsoft - 
 
-**Objective for Alien Biology**: Provide a reliable measure of complex, agentic reasoning/learning that:
-1. *REAL-WORLD* - measures performance on practical, complex, real-world-relevant agentic reasoning/learning tasks.
-2. *UNTAINTED* - avoids confounding connections to LLM training corpora by drawing tests from an "Alien" universe.
-3. *CONTROLLABLE* - is parametrically constructed in ways that allow fine-grained analysis of the limits of agentic reasoning by creating counterfactual universes, each requiring varying levels of inferential complexity.
+**Background**: Most tests of agentic AI and LLMs are drawn from various human areas of activity.  This has the advantage of testing the *breadth* of AI's learning/capabilities that are often carefully matched to problems of *practical import*.  
+But these advantages generally come at a price:
+- **TAINT**—It is often difficult to tell how much the AI is reasoning vs. remembering, since nearly all problems may be tainted by their relationship to materials in the training sets.
+- **EXTENDED INFERENCE**—Existing tests match the case where a human learns for years, then is tested on a small, hard problem.  But do not match the realistic scenario where a human spends months or years *learning* while solving a complex task, yet this is precisely where current AI systems fail.  (see METR results).
+-  **NON-GENERATIVE**—These are individually curated test problems; they are not mechanically generated. Thus, one cannot smoothly vary their complexity along various dimensions to assess small changes in system performance; it either solves the problem or it does not. Dynamic generation would allow fine control over multiple dimensions of problem complexity.
+
+**Objective for Alien Biology**: Provide a reliable measure of complex, agentic reasoning/learning that is:
+1. ***REAL-WORLD*** - measures performance on practical, complex, real-world-relevant agentic reasoning/learning tasks.
+2. ***UNTAINTED*** - avoids confounding connections to LLM training corpora by drawing tests from an "Alien" universe.
+3. ***CONTROLLABLE*** - is parametrically constructed in ways that allow fine-grained analysis of the limits of agentic reasoning by creating counterfactual universes, each requiring varying levels of inferential complexity.
+
+Existing tests verify the generality of AI system learning and capabilities across a very broad range of human-relevant domains, alien biology testing by contrast focuses on a single domain of human problem solving and tests inference time learning and reasoning over a controllable range of complexity.  We believe this covers a crucial gap in current testing paradigms.  Specifically inference-time testing of ability to handle:
+- Progressive resolution of uncertainty in the meaning of terms underling the test domain.
+- Extended inference chains over knowledge that has been derived at inference time.
+- Reasoning in representational spaces that are several levels above that which was known at training time.
+
+These are all things that humans are more than capable of doing, yet each represents hurdles that the current heavy-train-time-adaptation, light-inference-time-adaptation model of current LLM architectures seems equiped to tackle.  
+
+???>. Thus alien biology promises to shine a light on the path towards true AGI 
 
 
 ## Introduction
-Measuring the ability of today's LLM-based systems to perform complex reasoning is often confounded by potential contamination of their training data by problems related to those one is using in the testing.  This problem is especially acute when measuring complex or agentic reasoning since these both require complex background knowledge.  It's not practical to invent entirely novel contexts for each challenge that is posed.
+Measuring the ability of today's LLM-based systems to perform complex reasoning is often confounded by potential contamination of their training data by problems related to those one is using in the testing.  This problem is especially acute when measuring complex or agentic reasoning since both require complex background knowledge.  It's not practical to invent entirely novel contexts for each challenge problem.
 
 If only there were some alternate universe that was as difficult to reason about as our universe, but with all details changed such that training on text from our universe afforded no advantage in answering detailed questions drawn from this alternate universe.  Then, we could measure an agent's ability to reason about this alternate universe w/o concern that knowledge about the questions we are asking was somehow provided during the LLM construction.
 
 The Alien Biology framework described below is designed to allow us to construct just such alternate universes for testing our agentic systems.  We aim not to recreate an accurate model of any particular universe but to build new universes simplified to target reasoning structures similar to those in our own world. This gets to the crux of the complex reasoning w/o wasting effort with needless realism.
 
-We do not aim to assess the agentic system's ability to invent new reasoning paradigms.  Only a few humans throughout history have accomplished such a feat.  Indeed, we expect the agentic system to learn relevant reasoning paradigms from its training corpora and instead test its ability to apply them to an alternate universe where all the details have been changed.  This provides certainty that any details the system uncovers must have been derived entirely from its interaction with the alternate universe since none of them even exist within our universe.
+We do not aim to assess the agentic system's ability to invent new reasoning paradigms.  Only a few humans throughout history have accomplished such a feat.  Indeed, we expect the agentic system to learn relevant reasoning paradigms from its training corpora and instead test its ability to apply them to an alternate universe where all the details have been changed.  This provides certainty that any details the system uncovers must have been derived entirely from its interaction with the alternate universe, since none of them even exist within our universe.
 
-Below is an idealized model of biology that we believe covers (in a simplified way) nearly any task one might undertake relative to nearly any biological.  This framework can encode low-level functioning within a cell, like the Kreb cycle, signaling pathways coordinating groups of cells, functioning of whole organs like the liver, and all the way up to the highest level of interaction patterns found between socially interacting animals.
+Below is an idealized model of biology that we believe covers (in a simplified way) nearly any task one might undertake relative to nearly any biological.  This framework can encode low-level functioning within a cell, like the Krebs cycle, signaling pathways coordinating groups of cells, the functioning of whole organs like the liver, and all the way up to the highest level of interaction patterns found between socially interacting animals.
 
 The Alien Biology agenda is to:
-1. Capture the functional structure for the many, many bio subsystems that we understand at all levels of biology today, as well as the range of bio-relevant tasks that we consider today.  (e. g. cure an illness, predict ecosystem or cell outcome, etc.)
-2. Use a diffusion model to abstract the mathematical structure of these many subsystem models into a generator of plausible functioning biological subsystems.
-3. Use the distilled generator to construct alien biologies along with appropriate tasking over those systems.
-4. "Skin" those functional systems by attaching diffusion-generated namings for relevant components and partially explained functional descriptions of these generated systems in natural language, just as a biologist today might have a partial understanding of underlying biological processes from published background papers.
-5. One created these natural language problem descriptions are paired up with hidden executable models of the alien biology in order to provide an interactive testing environment for testing agentic reasoning over complex novel tasks.
-6. By controlling the parametric generation of these test tasks, one can map the performance of agentic systems as a function of various aspects of the complexity of the learning/reasoning task.
+1. CAPTURE: Capture the functional structure for the many bio subsystems that we understand at all levels of biology today, as well as the range of bio-relevant tasks that we consider today.  (e. g. cure an illness, predict ecosystem or cell outcome, etc.)
+2. DISTILL: Use a diffusion or other model to abstract the mathematical structure of these many subsystem models into a generator of plausible functioning biological subsystems.
+3. SKIN: "Skin" those functional systems by attaching diffusion-generated namings for relevant components and partially-explained functional descriptions of these generated systems in natural language, just as a biologist today might partially understand underlying biological processes from published background papers.
+4. WORLD:  Once an alien biology and chemistry are created and textually described, they form a test bed with a hidden executable world model that can be used as an interactive testing environment for testing agentic reasoning over complex novel tasks.
+5. TASK: Templated test tasks like "Understand and cure this disease" can be formulated within these synthetic worlds.
+6. CONTROL: By controlling the parametric generation of these worlds and tasks, one can finely tune one's testing of various aspects of the complexity of the learning/reasoning task.
 
 Because we control the generator for these ecosystems, we can control the complexity of the learning/inference tasks we generate. We can provide the AI system with as many or as few hints as we choose to test its ability to solve alien puzzles.
 
-Just as with real biology, solving the more complex versions of these tasks forces the reasoner to invent new abstraction layers one on top of another in order to address the overall task in question.  This allows us to construct tasks that might take a biologist 5 minutes or 5 years to complete.  This kind of assessment, in particular, is nearly impossible to test in an untainted way using native tasks; any naturally occurring hierarchy of abstractions is almost certainly to have been well documented within the text used to train the LLM, making it impossible to assess the system's ability to derive and use those abstractions.
+As with real biology, solving the more complex versions of these tasks forces the reasoner to invent new abstraction layers one on top of another to address the overall task in question.  This allows us to construct tasks that might take a biologist 5 minutes or 5 years to complete.  This kind of assessment, in particular, is nearly impossible to test in an untainted way using native tasks; any naturally occurring hierarchy of abstractions is almost certainly to have been well documented within the text used to train the LLM, making it impossible to assess the system's ability to derive and use those abstractions.
 
 
 ## The Formal Framework Underlying Alien Biology
 
-In this section, we define the abstract framework we will use to construct our alien biology. Ultimately, the ecosystem and contained organisms will be encoded as a large JSON structure defining its contents, along with a number of Python functions used to define the bioprocesses, measurements, and actions that operate within that universe. This formal model is not provided directly to the agentic reasoner; rather, it is used to drive the world in which the agent operates when solving the given task.
+This section defines the abstract framework we will use to construct our alien biology. Ultimately, the ecosystem and contained organisms will be encoded as a large JSON structure defining its contents, along with many Python functions used to define the bioprocesses, measurements, and actions that operate within that universe. This formal model is not provided directly to the agentic reasoner; rather, it is used to drive the world in which the agent operates when solving the given task.
 
 
 An **organism** is represented as a DAG (directed acyclic graph) of **organs** with associated metadata for each. We sometimes refer to this annotated DAG as the organism's **physiology**.
@@ -75,18 +88,18 @@ This allows us to abstract the **world state** of an entire alien ecosystem into
 ```
 
 
-**BIOPROCESS** - Each kind of biopart may have any number of **biological processes (bioprocess)** that operate within them.  These processes will:
+**BIOPROCESS** - Each kind of biopart may have any number of biological processes (**bioprocesses**) that operate within it.  These processes will:
 (a) convert certain combinations of biomolecules into other biomolecules
 (b) move biomolecules from one organ to another, or
 (c) change the physiology of the organism by adding or removing edges (cells, organs, etc.) in its physiology DAG
 
 Typically, the rate at which each biological process executes is called its efficiency, and its rate formula stochastically controls it at each moment.  But more generally, we can formulate each bioprocess as one that accepts a world state and returns an updated world state for the whole ecosystem.
 
-**GENERATOR** or **BIOSTOCK** - In order to make observations, run experiments, etc., we need generators that will produce a repeatable sequence of substrates, organisms, etc., for testing.  Each of these generators is called a **biostock** or a **generator**; these are parameterized functions that return a state structure whose root is of a given type or set of types.  So, a substrate is a parameterized biostock generator that produces a sequence of randomized "test tubes" ready for testing, while an organism biostock is a parameterized generator that produces a sequence of instances of a given strain of some organism type.
+**GENERATOR** or **BIOSTOCK** - To make observations, run experiments, etc., we need generators that will produce a repeatable sequence of substrates, organisms, etc., for testing.  Each of these generators is called a **biostock** or a **generator**; these are parameterized functions that return a state structure whose root is of a given type or set of types.  So, a substrate is a parameterized biostock generator that produces a sequence of randomized "test tubes" ready for testing. An organism biostock is a parameterized generator that produces a sequence of instances of a given strain of some organism type.
 
-**MEASUREMENTS** - Of course, one needs to be able to take **measurements** of a biological system in order to study it.  In our case, this is simply a function that takes in a world state as input along with any parameterization required by the measurement and then returns the measurement's results.  The results might be a numeric value like the concentration of a biomolecule within a type of cell, a sequence of values (like temperature over time), or other data output.  The measurement's inputs might include a specification of what biopart of the system one is measuring.  
+**MEASUREMENTS** - Of course, one needs to be able to take **measurements** of a biological system in order to study it.  In our case, this is simply a function that takes in a world state as input, along with any parameterization required by the measurement, and then returns the measurement's results.  The results might be a numeric value like the concentration of a biomolecule within a type of cell, a sequence of values (like temperature over time), or other data output.  The measurement's inputs might include a specification of what biopart of the system one is measuring.  
 
-**ACTION**—The AI agent also needs the ability to act on the Alien Biology in some way. This is accomplished via actions. Like a bioprocess, an action accepts a world state as input along with any parameters required to fully specify the action and returns an updated world state.  The difference is that the parameters for a bioprocess are typically fixed within the subsystems they operate in.  Meanwhile, actions and action parameters are typically independent variables that are under the control of the AI agent.
+**ACTION**—The AI agent also needs the ability to act on the Alien Biology in some way. This is accomplished via actions. Like a bioprocess, an action accepts a world state as input along with any parameters required to fully specify the action and returns an updated world state.  The difference is that the parameters for a bioprocess are typically fixed within the subsystems in which they operate.  Meanwhile, actions and action parameters are typically independent variables under the AI agent's control.
 
 
 We can formalize samples,  biological processes, measurements, and actions as Python functions, as shown here:
@@ -109,7 +122,7 @@ def adp2atp(world: State, *, ...) -> State:
 def measure_concentration(world: State, *, biopart: str, biomolecule: str) -> int
 	"""Returns the number of a given biomolecule within a given (or all) named parts of an ecosystem"""
 
-
+ 
 @action
 def apply_heat(world: State, *, biopart: str, duration: int, amount: int) -> State:
 	"""Applies a given level of heat to the specified biopart for the specified number of time steps."""
@@ -131,24 +144,35 @@ class Recipe:
 ```
 
 
+**SKIN** — Each of these symbolic and computational components can optionally be described textually.  Providing the AI system being tested with such textual descriptions of the bio system is equivalent to a researcher beginning a task with knowledge gleaned by others before them.  Some tests can provide significant textual descriptions, while others provide access to the world to be understood/controlled, and nothing else.  The amount of 'skin' provided to an AI agent is one of many dimensions of complexity that can be varied in testing its capabilities.
 
-## Experiments - Investigating and Controlling an Alien Biology
+**BIOSYSTEM** — A biosystem fully defines an alien world in which agentic testing may be performed. As we see above, it can be encoded as a Python module, and it is an aggregation of the aspects defined above: biomolecules, bioparts, bioprocesses, measurements, and actions.
 
-**SIMULATION** - Given the initial state of our biological system, we can move forward in time by executing all active bioprocesses in random order in order to produce the "next" state of our system.  Repeating this process can produce a timeline of plausible state transitions of that initial world. We formulate this via a simple "**next**" function, which accepts a world state and returns an updated one with all active bioprocesses run.
 
-**EXPERIMENT** — Using this framework, we can describe an **experiment** as a "script" run over some partially understood world composed of an unknown number of bioprocesses.  The script describes some particular combination of stocks added to the world over simulated time, as well as the measurements taken. Such experiments might be controlled experiments that indicate the independent variables being manipulated across the different runs of the experiment, and measurements of outcomes will drive the conclusions drawn from the experiment.
+## Execution - Investigating and Controlling Alien Biology
 
-**TASK** - Analogs for a great range of tasks that bio-researchers might take on can be succinctly expressed using this framework.  For each task:
-1. **Task setup** is the biostock used to produce the world in which the task lives.
-2. **Task score** is the measurement used to indicate how well a task has been achieved within a given world instance.
-3. **Task criteria** is a boolean function over a sequence of score results indicating if the desired capability has been achieved.
+**SIMULATION** — Given our biological system's initial state, we can move forward in time by executing all active bioprocesses in random order to produce the "next" state. Repeating this process can produce a timeline of plausible state transitions of that initial world. We formulate this via a simple "**next**" function, which accepts a world state and returns an updated one with all active bioprocesses run.
+
+**INTERVENTION**—An intervention is a goal-directed script that runs alongside a simulation. It performs measurements and actions to achieve its intended effect.
+
+**EXPERIMENT**—Using this framework, we can describe an experiment as an intervention script run over a partially understood world composed of an unknown number of bioprocesses. The script describes a combination of measurements and actions taken over simulated time. 
+- Experiments may or may not have an explicit control group.
+- Experiments may measure a given intervention's effect.
+- Experiments may model some aspects of performance as a function of their control variables.
+- Experiments may involve protocols where results from multiple runs are synthesized to produce a result or draw a conclusion.
+
+**TASK** - Analogs for many tasks that bio-researchers might take on can be succinctly expressed using this framework.  For each task:
+1. **Task world** is the biosystem to be used for this test.
+2. **Task description** is the textual description of the objective for this test. 
+3. **Task score** is the measurement used to indicate how well a task has been achieved within a given world instance.
+4. **Task criteria** is a boolean function over a sequence of score results indicating if the desired capability has been achieved.
 
 For example, consider how one might frame the task of learning how to cure a disease.  The task setup might be a generator of the world, each containing a single organism that may or may not be sick.  The task would be to maintain some measure of health across the population while bringing the sick ones back to some baseline behavior.  The scoring function would measure the treatment outcome on a single organism provided by the setup generator, and the overall task criteria would be a boolean that measures if one has achieved the desired scores over a sufficient sample of the population.
 
 The range of biologically plausible tasks naturally fitting into this framing is quite broad.  These would include the task of:
 - PREDICT - Determining how to predict the outcome of some process. e. g. Which organisms will or will not get a given disease.
-- MODEL - Modelling any desired measurement from a system.  e. g. How many calories will a cell consume as a function of nutrients provided?
-- CONTROL - Controlling some measurement of the system toward some desired value.  e. g. Increasing or decreasing a growth rate
+- MODEL - Modeling any desired measurement from a system.  e.g., How many calories will a cell consume as a function of nutrients provided?
+- CONTROL - Controlling some measurement of the system toward some desired value.  e.g., increasing or decreasing a growth rate.
 - CURE - Adjusting some biological systems to their expected (defined) baseline.
 - CREATE - Creating a new biological entity with some defined functional properties.
 
@@ -186,7 +210,7 @@ There are many plausible measures of complexity for our generated biology:
 - Total number of bioparts, processes, molecules, organs, etc involved.
 - The number of lines and operators in the Python code used in processes, measurements, and actions.
 - The complexity of the interacting bioparts within the dynamically constructed sub-systems of the larger system
-- The number and complexity of the interaction between the layers of the full system.
+- The number and complexity of the interactions between the layers of the full system.
 
 Ultimately, exploring how agent performance varies across these different measures will give us an understanding of the limits of our agentic reasoning systems, which we cannot access today since we pragmatically have no way to vary these aspects of the problems we laboriously obtain from our actual universe.  
 
@@ -203,22 +227,22 @@ Alien Biology is a unique approach for agentic testing.  We make interesting pro
 3. Testing on realistic tasks
    *But how realistic are these tasks, and in what ways are they, and are they not realistic?*
 4. Testing of generalized ability to perform complex agentic reasoning.
-   *But how generalized is this testing? It all occurs with a very tightly defined representation of biology and biological tasks.*
+   *But how generalized is this testing? It all occurs with a tightly defined representation of biology and biological tasks.*
 
 
 In answering these questions, we split the task of general-purpose learning and inference crudely into three parts:  
-(a) Obtaining knowledge from distilled into static (written) forms other agents in the world.
+(a) Obtaining knowledge from distilled into static (written) forms, other agents in the world.
 (b) Obtaining knowledge in isolation via thinking or interacting with the world.
 (c) Obtaining knowledge from dynamic interaction in the world along with other possibly collaborating (teaching) agents.
 
 We believe the first kind of learning and inference is well measured by existing agentic testing.  In this case, we *want* the agent to be exposed to static written forms and then measure the performance that results.  Alien biology is not trying to test type A. Indeed, we hope to be fairly isolated from type A knowledge and instead are focused on type B learning and inference.  Type C is out of scope for this first version of Alien Biology.
 
-Splitting the learning/inference task this way allows us to better consider these isolation and generality claims.
+Splitting the learning/inference task this way allows us to consider these isolation and generality claims better.
 Alien biology is about ***biology***!  Thus, any generalized knowledge about how processes connect to each other and how one might proceed in testing or understanding such a system is most certainly available within the training provided in constructing an agentic LLM.  Thus, assessing these systems on how well they learned, for example, to isolate the functioning of a biomolecule or its strategic approach to diagnosing and correcting an imbalance within a system, would make no sense.  Such knowledge was available during agent construction.  But notice, all of this knowledge is of type A above.  It is not the kind of knowledge that Alien Biology is designed to measure; indeed, much of that knowledge is implicitly embedded in the framing of Alien Biology itself.
 
-Instead, we take that structure as a given and then assess how well the agent can apply and reason with that knowledge over ever-increasing structural complexity.  Its a bit like the difference between being able to multiply two two-digit numbers vs being able to multiply two ten-digit numbers.  How complex can ones type-II reasoning get before the agent confuses itself and cannot proceed.
+Instead, we take that structure as a given and then assess how well the agent can apply and reason with that knowledge over ever-increasing structural complexity. It's a bit like the difference between being able to multiply two two-digit numbers and being able to multiply two ten-digit numbers. How complex can one's type-II reasoning get before the agent confuses itself and cannot proceed?
 
-It also measures the degree to which the agent can recursively build new abstractions within solving a single problem and then use those new abstractions layer by layer within that same task.  We have ample evidence that current agentic AI is not capable of this kind of generality while humans are.  Humans will be able to repeatedly apply biological strategies to incrementally uncover the functioning of even quite complex multi-layered alien systems, while (we believe) current agentic AI systems will not.
+It also measures the degree to which the agent can recursively build new abstractions while solving a single problem and then use them layer by layer within that task.  We have ample evidence that current agentic AI is incapable of this generality, while humans are.  Humans can repeatedly apply biological strategies to incrementally uncover the functioning of even quite complex, multi-layered alien systems, while (we believe) current agentic AI systems will not.
 
 If this is true, it provides a unique and parametrically controllable window into the gap between humans and current agentic AI.
 
