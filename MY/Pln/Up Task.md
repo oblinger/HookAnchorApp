@@ -12,7 +12,7 @@ Per: 	[[Home]], [[Spirit]], [[Lrn]],
 
 **[[Pln]]:**	
  **[[Repeat|REP]]**:	[[Friday]], [[Habit]], [[Productivity]], [[Self Evergreen|Ever]] 
- **[[Now]]**:	[[Quick]], [[Todo]], [[Active]], [[SCRatch]]  
+ **[[Now]]**:	[[quick]], [[todo]], [[Active]], [[SCRatch]]  
  **[[Later|LATR]]**:	[[Quarterly]], [[Wings]], [[Dropped]], [[Archive List]] 
  **[[Q2]]**:	[[Rocks]], [[Lrn]], [[Spirit]], [[Actualize]], [[Mission]]
  **[[Coms|COM]]**:  [[CRM]], [[Ping]], [[Mentor]], [[Calls]] 

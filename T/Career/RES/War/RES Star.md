@@ -1,6 +1,6 @@
 . [[S.T.A.R.]], [[RES]], [[RES War]],
 
-
+Anchor Stories: A time when you:  (a) created value,  (b) solved a messy problem,  (c) were asked to lead
 # __
 
 

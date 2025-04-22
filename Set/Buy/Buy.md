@@ -1,7 +1,8 @@
 .[[Buy]].
   [[Bought]], [[BUY Clothing]], [[BUY Food]], [[BUY Home]], [[BUY Ideas]], [[BUY Log]]
   [[BUY Tea]], [[SolarPanels]], [[ToBuy]],
-  [[Buy2]], 
+  [[Buy2]],
+  , [[@kAzure Standard]], 
 
 .[[BUY]].
   [[Bought]], [[BUY Log]], [[ToBuy]],

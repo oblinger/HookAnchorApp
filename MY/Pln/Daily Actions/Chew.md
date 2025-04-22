@@ -1,2 +1,2 @@
-(See [[Todo]])
+(See [[todo]])
 

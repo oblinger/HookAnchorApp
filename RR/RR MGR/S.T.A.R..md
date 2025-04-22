@@ -1,4 +1,6 @@
 
+(See [[RES Star]])
+
 Situation
 Task
 Action

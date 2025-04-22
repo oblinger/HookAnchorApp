@@ -5,6 +5,7 @@ n:: no prefix.	Dated entries without any typing prefix
 
 | Date       | File                                        | Notes                                                                                                                             |
 | ---------- | ------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------- |
+| 2025-04-21 | [[Mgt]]                                         | W                                                                                                                                 |
 | 2025-04-18 | [[MED Log]]                                     | Data from 23 and me                                                                                                               |
 | 2025-04-18 | [[CV Roadmap]]                                  | Roadmap Thinking                                                                                                                  |
 | 2025-04-17 | [[Daily Schedules]]                             | Back From China - Interviewing Rhythm                                                                                             |

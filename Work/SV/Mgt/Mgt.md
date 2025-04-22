@@ -14,6 +14,11 @@ recognizing defense orgnanization -  2-3 zone, man defense,
 
 # Log
 
+### 2025-04-21  W
+- Shot charts workflow working (then waiting on Matias)
+- new metrics
+- breakdown or errors
+
 ### 2025-04-17  Sean's Market Model
 
 Jason - here you go.  Please read/review before sending to make sure this reflects your POV as well. 

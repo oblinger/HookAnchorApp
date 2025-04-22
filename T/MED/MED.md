@@ -26,6 +26,7 @@
   DELS: [[MED Mind]],
 
 - [[Glycemic Index]], [[MED Blood Pressure]], [[MED Cholesterol]], [[MED Research]], [[MED VO2Max]], [[MED=]], [[Run]], [[Exercise]], 
+- [[@Dexafit]]
 
 
 

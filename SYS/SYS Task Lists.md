@@ -21,10 +21,10 @@
 - N
 - O	[[OBS]]		A			Obsidian tasks
 - P	[[Pln]]		A W 		WORKSPACE showing all weekly planning lists
-- Q	[[Quick]]		A J   		Quickly added info
+- Q	[[quick]]		A J   		Quickly added info
 - R	[[Repeat]]					Weekly 'repeat' list
 - S	[[MY/Plan/self]]			A W		WORKSPACE of personal planning pages
-- T	[[Todo]]		A J   S		Primary, unified, small-item todo list
+- T	[[todo]]		A J   S		Primary, unified, small-item todo list
 - U
 - V
 - W	[[External]]		A J   S		List of items waiting on an external action
