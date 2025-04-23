@@ -1,4 +1,4 @@
- [[FAANG]], [[@Aeolus]]    [Software Engineer](https://www.linkedin.com/in/felipelavratti/)  [[@Amazon]]   #Mentor #Q2 
+ [[FAANG]], [[@Aeolus]]    [Software Engineer](https://www.linkedin.com/in/felipelavratti/)  [[@Amazon]]   #Mentor #Soon
 
 
 

@@ -17,7 +17,7 @@
   , [[@Daniel Haddick]], [[@Daniel Handyman]], [[@Daniel W Oblinger]], [[@Dan Kaufman]]
   , [[@Dan Newcome]], [[@Dan Oblinger]], [[@Dan Roth]], [[@DARPA]], [[@Dave Oblinger]]
   , [[@Dave Whitmore]], [[@David Hayden]], [[@David Israel]], [[@Dav Zimak]], [[@Dean Allen]]
-  , [[@Dean Allenmang]], [[@Deep Sahini]], [[@Dennis DeCoste]], [[@Devansh]], [[@Dexafit]]
+  , [[@Dean Allenmang]], [[@Deep Sahini]], [[@Dennis DeCoste]], [[@Devansh]], 
   , [[@Dileep George]], [[@Doug Gordin]], [[@Doug Lenat]], [[@Doug Riecken]], [[@Drew Ackerman]]
   , [[@Drew Dean]], [[@Dung Vuong]], [[@Ed H. Chi]], [[@eGenisis]], [[@Ehsan Saeedi]]
   , [[@Eli Oblinger]], [[@Embedded Intelligence]], [[@Emily Wallach]], [[@Epsilon Oblinger]]
@@ -67,8 +67,8 @@
   , [[@Yannick Germain]], [[@Yann LeCun]], [[@Yashin Lin]], [[@Yiftach Eisenberg]]
   , [[@Yoshua Bengio]], [[AF ALUM]], , [[BOD]], , [[Doctor]]
   , [[Friends]], [[Mentors]], , , [[ROLODEX]], [[VC ORG]],
-  , [[Crm]], [[Org]], [[People]], 
-  DELS: [AT Note](spot://atnote), [[CRM]], [[ORG]], [[PEOPLE]],
+  , [[Crm]], [[Org]], [[People]],
+  DELS: [AT Note](spot://atnote), [[CRM]], [[ORG]], [[PEOPLE]],[[@Dexafit]], 
 
 .[[AT]].
   , [[@Abhishek Kapatkar]], [[@Abhishek Verma]], [[@Acorn Pooley]], [[@Aetion]], [[@Agustin Polito]]

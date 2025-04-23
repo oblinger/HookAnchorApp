@@ -4,7 +4,8 @@
   , [[@Merrill]], [[@Meta]], [[@Microsoft]], [[@Miovision]], [[@Montessori Childrens Center]]
   , [[@Netflix]], [[@Netflix 1]], [[@Nvidia]], [[@OpenAI]], [[@PARC]], [[@PayByGroup]]
   , [[@Rocket Money]], [[@Schwab]], [[@TecHunting]], [[@Tesla]], [[@Thistle]], [[@Vanguard]]
-  , [[@Vmware]], [[@Wells Fargo]], [[Org Startup]], [[Service]], 
+  , [[@Vmware]], [[@Wells Fargo]], [[Org Startup]], [[Service]],
+  , [[@Dexafit]], 
 
 .[[ORG]].
   , [[@Amazon]], [[@Apple]], [[@Citibank]], [[@Facebook]], , [[@Ginza Metrics]]

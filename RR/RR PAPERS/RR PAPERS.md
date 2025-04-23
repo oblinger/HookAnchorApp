@@ -1,14 +1,19 @@
 .[[RR PAPERS]].  [[LRN.]]
   [[RR DEFINITIONS]],
-  , ,
-  , ,
-  , [[RR Blog]], 
-  DELS: [[RR Blog]],
-  DELS: [[RR Blog]],[[RR Blogs]], 
+  [[RR Blog]], 
 
 
 mamba block
 
+
+### 2025-04-22  Code Buff
+
+[[codebuff.pdf]] 
+
+
+### 2025-04-22  Non-parametric Feature Impact and Importance
+
+[[2006.04750v1.pdf]]
 
 
 ### 2025-02-20  Verify step by step

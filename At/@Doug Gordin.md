@@ -1,4 +1,5 @@
-[[FAANG]]    [Software Engineer](https://www.linkedin.com/in/douglas-gordin-69848/)  [[@Google]]   #Friend 
+[[FAANG]]    [Software Engineer](https://www.linkedin.com/in/douglas-gordin-69848/)  [[@Google]]   #Friend #Soon 
+
 
 
 

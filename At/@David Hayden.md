@@ -3,7 +3,7 @@
 
 # LOG
 
-### 2025-01-15  Career Discussion
+### 2025-01-15  Career Discussion (Met up at Coupa)
 
 
 - Experience & Sweetspot

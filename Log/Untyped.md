@@ -5,6 +5,9 @@ n:: no prefix.	Dated entries without any typing prefix
 
 | Date       | File                                        | Notes                                                                                                                             |
 | ---------- | ------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------- |
+| 2025-04-22 | [[RR PAPERS]]                                   | Code Buff                                                                                                                         |
+| 2025-04-22 | [[RR PAPERS]]                                   | Non-parametric Feature Impact and Importance                                                                                      |
+| 2025-04-22 | [[Reflections]]                                 | .                                                                                                                                 |
 | 2025-04-21 | [[Mgt]]                                         | W                                                                                                                                 |
 | 2025-04-18 | [[MED Log]]                                     | Data from 23 and me                                                                                                               |
 | 2025-04-18 | [[CV Roadmap]]                                  | Roadmap Thinking                                                                                                                  |
@@ -73,7 +76,7 @@ n:: no prefix.	Dated entries without any typing prefix
 | 2025-01-20 | [[@Jason Syversen]]                             | Chat on skipped meeting                                                                                                           |
 | 2025-01-19 | [[NJ Coaches]]                                  | GENERAL RESOURCES                                                                                                                 |
 | 2025-01-16 | [[@Martin Reyes]]                               | Out                                                                                                                               |
-| 2025-01-15 | [[@David Hayden]]                               | Career Discussion                                                                                                                 |
+| 2025-01-15 | [[@David Hayden]]                               | Career Discussion (Met up at Coupa)                                                                                               |
 | 2025-01-14 | [[RES Linked In]]                               | From Resume                                                                                                                       |
 | 2025-01-14 | [[RES Linked In]]                               | Update header                                                                                                                     |
 | 2025-01-14 | [[RES Linked In]]                               | Topline punch                                                                                                                     |

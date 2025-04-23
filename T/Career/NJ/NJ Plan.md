@@ -1,6 +1,6 @@
 
 - [[NJ]] [[NJ.|.]]		
-- [[RES]]:	Get Resume & Linked into final form.
+- [[RES]]:	Get Resume & LinkedIn into final form.
 - [[LRN]]:	Learn leet coding from Algo Monster.
 - [[CN]]:		Meet [[BOD]]. 
 

@@ -1,43 +1,14 @@
 
-.**SOON**.
+.**Q2**.
      close loop AWS transition plan
      .
 	[DT](spot://dt): 50 games in
-    [Min](spot:://AI~MIN): [todo](https://www.notion.so/sportsvisio/STORY-Test-AI-Min-Ready-PaidProd-173719d6f2bd80f59eb5c8d2dc1aded7?pvs=4).  Sean assess filter.
-	[Infr](https://www.notion.so/sportsvisio/PROJ-Infrastructure-150719d6f2bd80f087b2e931ef179536?pvs=4):	multi-run ???
-    [Fball](spot://fireball):	Measure effectiveness
-### Q1 OKRs
-- ^ 1.1 Alpha testing
-- !! 1.2 Work w/ Matias.    (Min on Dev)
-- !^ 2.1  Push for min dataset w/ James
-- + 2.2  No bugs. (fix two bugs)
-- - 2.3. Metrics (regression)
-- + 2.4. Automation done?
-   (showcase how easy; what left to do)
-- +  3.1. Low hanging improve.  
-    (regression test all Q since Q3 2023)
-- +  3.2  Speedups 
-
-[[@Jason Syversen]]
-Q2 
-- [AI Prod Matrix](https://docs.google.com/spreadsheets/d/1iQvOKwS09QcFTqXK1Ko0ydSgwqjXItbCRrkOMZaBj40/edit?gid=0#gid=0) possible products
-- Risk test 1-2 of AI-cam, VB speed, advB
-- Speedups
-- Shot Charts
-- Stability and Scaling
-- Improve BB-stats
-- Improve datasets
-- Workflow Infrastructure improvements
-- what else ???
-	- Metrics automation
-	- metadata per code path / regress ts
-- Patents
-
-
-this or this or this I would take
-
-## TRACK
-- File Patent. (put note in to Mgt channel)
+  	[AI Prod Matrix](https://docs.google.com/spreadsheets/d/1iQvOKwS09QcFTqXK1Ko0ydSgwqjXItbCRrkOMZaBj40/edit?gid=0#gid=0) possible products
+  	End-2-End Shot Charts 
+  	Speedups
+  	Risk test 1-2 of AI-cam, VB speed, advB
+  	File Patent. (put note in to Mgt channel)
+  	DAT push
 
 ## PAUSE
 - F11 [AWS](https://docs.google.com/document/d/1QS4081TT_Yyz1TS9GLZSfjQaczQ7ynzWTSu14waDcG0/edit?tab=t.0):	Estimate from Brian [[2024-08 Backend Architect|Arch]]: [r](https://docs.google.com/document/d/1gbutlP_EF-_wUdg4F3IEuw8Bhz8oET3Z/edit) 
@@ -50,39 +21,14 @@ this or this or this I would take
   VidQ:		^Neg entropy gallery
   SW proc:	[db](https://www.notion.so/sportsvisio/cf65339c09c6486296f8adaa084c141a?v=f8a45e385eea4c2fb590502835f4453f&pvs=4),[doc](https://docs.google.com/document/d/1aHnoqgQ3H_0abUtlVWoMPHDA7nQhzoq0JRqZLujORc0/edit?usp=drive_web&ouid=105281685541312342727)  ^Jasu 
   Assess	> Assess plan for BB
- 
 .[[work]].
   , [[SV]], 
 
 
 
 ## SOON [[mgt]] [[CVP]] 
-FILIP: ask him again?
-[[2023 CV team new agenda metrics]]:		/Create money metrics page
-[[DAT]]:			Dynamic Dat loading
+
 [[journaling]] 
-
-.[[Work]].
-  [[SV]],
-
-
-
-## __
-
-- SIZE - And not sized for regulation, but rather to the size of the gym it is in.
-    
-- HAIR - Pony tails and long hair are great… at least until your an AI trying to get a glimpse at the jersey number below it.
-    
-- SIDELINES - Players should be standing right on the sidelines to confuse our AI…. but they do.
-    
-- Multiple games in view, player practicing on the side, or with duplicate jerseys, no jerseys, refs wearing jerseys, odd numbers of players playing.
-    
-
-  
-  
-
-It all happens, and it is a fail, if our algorithms just fall over, so we need to tackle them all!
-
 ## .
 
 

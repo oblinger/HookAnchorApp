@@ -1,24 +1,11 @@
+(See [[CRM]]) 
 
-- [[@Dennis DeCoste]]	- 
-	- [[@Felipe Lavratti]] - 
-- Doug ping
-- Nick
-
-- [[@Uri Weiss]]			- Was @ Google, Mentors Leaders
+- [[@Theo Enns]] 	-  
+- [[@John Langford]] -
+- [[@Rodrigo Braz]]	- 
+- [[@Uri Weiss]]		- Was @ Google, Mentors Leaders
 - [[@Luis Arrellano]]	- Show: [[RES]], [Pyramid](spot://respyramid), Very good at framing story
-
-
-
-- google-x
-
-
-3 MONTH PING
--  [[@Rafah Hosn]], [[@Melanie Dumas]], 
--  [[@Juan Huerta]],
-
-
-FAANG:	[[@Felipe Lavratti]], [[@Dennis DeCoste]], 
-FAANG2:	[[@Doug Gordin]], [[@Vittorio Castelli]], [[@Rodrigo Braz]], 
+- [[@David Hayden]] 
 
 
 - G-Cafe: [[@Ashwin Ram]],  [[@Dan Kaufman]],  [[@Andrew Tomkins]]
