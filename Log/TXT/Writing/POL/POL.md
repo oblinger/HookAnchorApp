@@ -2,8 +2,9 @@
   , [[AI HISTORY]], [[Climate]], [[Cultural Progress]], [[Election2024]], [[Immigration]]
   , [[Palestinians]], [[Parties]], [[Politics]], [[Politics From Me]], [[POL refs]], [[Race]]
   , [[Socialism]], [[Trump]], ,
-  , [[Voting]], [[Innovation]], 
-  DELS: [[Voting]],
+  , [[Voting]], ,
+  , [[Innovation]], 
+  DELS: [[Voting]],[[Innovation]],
 
   :
   :
