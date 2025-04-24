@@ -5,6 +5,8 @@ n:: no prefix.	Dated entries without any typing prefix
 
 | Date       | File                                        | Notes                                                                                                                             |
 | ---------- | ------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------- |
+| 2025-04-23 | [[Innovation]]                                  | Top cited papers by Nation over time                                                                                              |
+| 2025-04-23 | [[ABIO Prompts]]                                | Interface to multiple LLMS                                                                                                        |
 | 2025-04-22 | [[RR PAPERS]]                                   | Code Buff                                                                                                                         |
 | 2025-04-22 | [[RR PAPERS]]                                   | Non-parametric Feature Impact and Importance                                                                                      |
 | 2025-04-22 | [[Reflections]]                                 | .                                                                                                                                 |
@@ -985,15 +987,15 @@ n:: no prefix.	Dated entries without any typing prefix
 | 2022-01-04 | [[DEEP_BOOT]]                                   | WAYS TO CONTAIN IT                                                                                                                |
 | 2022-01-04 | [[DEEP_BOOT]]                                   | WAYS TO BREAK FREE                                                                                                                |
 | 2022-01-04 | [[Journal Old]]                                 | My purpose                                                                                                                        |
-| 2022-01-04 | [[FailedMessages]]                              | CTO Outreach Email                                                                                                                |
 | 2022-01-04 | [[NJ22 Paths]]                                  | My purpose                                                                                                                        |
+| 2022-01-04 | [[FailedMessages]]                              | CTO Outreach Email                                                                                                                |
 | 2022-01-02 | [[DEEP_BOOT]]                                   | Key Capabilities                                                                                                                  |
-| 2022-00-00 | [[FailedMessages]]                              | JOE Quora                                                                                                                         |
 | 2022-00-00 | [[RES Linked In]]                               | From Jared                                                                                                                        |
 | 2022-00-00 | [[RES Linked In]]                               | Jared-ish Version                                                                                                                 |
 | 2022-00-00 | [[RES Linked In]]                               | From Jared                                                                                                                        |
 | 2022-00-00 | [[RES Linked In]]                               | From Jared                                                                                                                        |
 | 2022-00-00 | [[RES Linked In]]                               | From Jared                                                                                                                        |
+| 2022-00-00 | [[FailedMessages]]                              | JOE Quora                                                                                                                         |
 | 2021-12-28 | [[DEEP_BOOT]]                                   | Deep Introspection Claim                                                                                                          |
 | 2021-12-25 | [[Journal Old]]                                 | Friends Audit                                                                                                                     |
 | 2021-12-17 | [[COM Campaigns OLDER]]                         | RECRUITER OUTREACH                                                                                                                |
@@ -1031,8 +1033,8 @@ n:: no prefix.	Dated entries without any typing prefix
 | 2021-10-01 | [[Journal Old]]                                 | -- SITUATION SUMMARY --                                                                                                           |
 | 2021-10-01 | [[NJ22 Contents]]                               | -- SITUATION SUMMARY --                                                                                                           |
 | 2021-09-23 | [[Journal Old]]                                 | WHOM IN MY NETWORK TO ASK                                                                                                         |
-| 2021-09-23 | [[COMS]]                                        | WHOM IN MY NETWORK TO ASK                                                                                                         |
 | 2021-09-23 | [[RES]]                                         | Resume Experience                                                                                                                 |
+| 2021-09-23 | [[COMS]]                                        | WHOM IN MY NETWORK TO ASK                                                                                                         |
 | 2021-09-22 | [[Journal Old]]                                 | >>> WP    -- NEXT JOB ACTIVITIES <<<                                                                                              |
 | 2021-09-22 | [[NJ22 Contents]]                               | >>> WP    --  ACTIVITIES <<<                                                                                                      |
 | 2021-09-22 | [[RES]]                                         | RESUME OBJECTIVE                                                                                                                  |
@@ -1246,9 +1248,9 @@ n:: no prefix.	Dated entries without any typing prefix
 | 2019-01-00 | [[FIN Log]]                                     | old notes                                                                                                                         |
 | 2019-00-00 | [[Ideas]]                                       | Coin thoughts - alloy???                                                                                                          |
 | 2019-00-00 | [[Journal Old]]                                 | Block Chain                                                                                                                       |
+| 2019-00-00 | [[DYL]]                                         | Block Chain                                                                                                                       |
 | 2019-00-00 | [[BUY Log]]                                     | Office Drawers  (bought)                                                                                                          |
 | 2019-00-00 | [[BUY Log]]                                     | Front Door Lock                                                                                                                   |
-| 2019-00-00 | [[DYL]]                                         | Block Chain                                                                                                                       |
 | 2019-00-00 | [[FIN Log]]                                     | AF CHARGES                                                                                                                        |
 | 2019-00-00 | [[MED Log]]                                     | Ideas for QL Pregnancy Heroids                                                                                                    |
 | 2018-08-07 | [[Phone -old-]]                                 | #### starting to use Evernote ####                                                                                                |
@@ -1312,8 +1314,8 @@ n:: no prefix.	Dated entries without any typing prefix
 | 2016-00-00 | [[Phone]]                                       | Aeolus notes                                                                                                                      |
 | 2016-00-00 | [[Journal Old]]                                 | Bizzy Robotics - Early days                                                                                                       |
 | 2016-00-00 | [[Phone]]                                       | Aeolus notes                                                                                                                      |
-| 2016-00-00 | [[BUY Log]]                                     | STANDING DESK                                                                                                                     |
 | 2016-00-00 | [[DYL]]                                         | Bizzy Robotics - Early days                                                                                                       |
+| 2016-00-00 | [[BUY Log]]                                     | STANDING DESK                                                                                                                     |
 | 2016-00-00 | [[AWS Log]]                                     | Setup Jotter backend on AWS                                                                                                       |
 | 2016-00-00 | [[FIN Log]]                                     | Bizzy Bills                                                                                                                       |
 | 2016-00-00 | [[FIN Log]]                                     | Madrone / Ben                                                                                                                     |

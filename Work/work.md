@@ -31,6 +31,38 @@
 [[journaling]] 
 ## .
 
+- 
+- AI processing 
+
+Owners:
+- First usage 
+
+Todos
+- AI-derisking activities
+- SW workflow spec
+
+
+Setup
+- One iPhone with Fish-eye
+	- Check out 2-camera stitching
+- Pan 1/2 w/ active play
+- Zoom in best
+- First customer: Volleyball
+
+
+Features
+- 1080   30fps  (desire moving to 4K)
+- remove fisheye; 
+- Streaming 3-5 min latency
+- before/with annotation
+- pan w/ fixed zoom on V1, Pan & Zoom on V2
+- Centrally controlled camera
+
+
+Performance
+- The percent of time that the action falls out of view:  2-3%   (or annotators correct it)
+- Slow, non-aggressive panning and zooming
+
 
 
 

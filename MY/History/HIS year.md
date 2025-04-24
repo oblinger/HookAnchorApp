@@ -1,4 +1,8 @@
 
+[[now\|Tue Apr 2  2024 ]]  	[[now#Next]]  
+[[now\|Tue Apr 2  2024 ]]  	[[now#Review]]  
+[[Reflections\|Tue Apr 2  2024 ]]  	[[Reflections#2024-04-01  Control from topdown lists]]  
+[[2024-W13\|Mon Apr 1  2024 ]]  	[[2024-W13#W13   2024-03-25   [[2024-W12\\|<<]] [[2024-W14\\|>>]]]]  
 [[2024-W14\|Mon Apr 1  2024 ]]  	[[2024-W14#W14   2024-04-01   [[2024-W13\\|<<]] [[2024-W15\\|>>]]]]  
 [[QQ\|Mon Apr 1  2024 ]]  	[[QQ#2024-04-01  Contact info]]  
 [[QQ\|Mon Apr 1  2024 ]]  	[[QQ#[[2024-01 Michael Rampdown]]]]  
