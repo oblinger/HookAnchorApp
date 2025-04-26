@@ -5,6 +5,7 @@ n:: no prefix.	Dated entries without any typing prefix
 
 | Date       | File                                        | Notes                                                                                                                             |
 | ---------- | ------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------- |
+| 2025-04-25 | [[ELI Quotes]]                                  | Texting w/ Mom when she had covid                                                                                                 |
 | 2025-04-23 | [[Innovation]]                                  | Top cited papers by Nation over time                                                                                              |
 | 2025-04-23 | [[ABIO Prompts]]                                | Interface to multiple LLMS                                                                                                        |
 | 2025-04-22 | [[RR PAPERS]]                                   | Code Buff                                                                                                                         |
