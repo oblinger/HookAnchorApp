@@ -4,6 +4,7 @@
   , [[Socialism]], [[Trump]], ,
   , [[Voting]], ,
   , [[Innovation]], 
+  [[Consciousness]] 
   DELS: [[Voting]],[[Innovation]],
 
   :

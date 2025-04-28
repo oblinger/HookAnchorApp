@@ -1,7 +1,7 @@
 .[[ABio]].
-  [[Alien Biology]]					-  White paper
-  								-  Todo list
-  , [[ABIO.]], [[ABIO CellMetabolism5]], [[ABIO Generator]], [[ABIO Photosynthesis]]
+   [[ABIO.]]  [[Alien Biology]]
+   [[ABIO Behavior Templates]] 
+   [[ABIO CellMetabolism5]], [[ABIO Generator]], [[ABIO Photosynthesis]]
   , [[ABIO Prompts]], [[ABIO Queries]], [[ABIO References]], [[ABIO Systems]], [[ABIO Task Example]]
   , [[ABIO Tasks]], 
 
