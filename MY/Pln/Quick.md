@@ -1,5 +1,7 @@
+- videos and calibration videos with fisheye setup. (ask james)
+- ask james to annotate ball/hoop for AI camera
 - patent
-- adam reponse brown
+- adam brown reponse 
 - matias
 - try lovable
 

@@ -9,8 +9,6 @@
   , [[NJ Blog]]
   , [[TG]],
   , [[NJ Pyramid]],
-  , ,
-  DELS: [[NJ.]],[[NJ Todo]], 
 
 RELATED:	 [[CRM]], 
 OLD:	[[Meta Coms]], 

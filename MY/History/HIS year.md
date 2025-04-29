@@ -2725,7 +2725,7 @@
 [[Jnl\|Fri Sep 9  2022 ]]  	[[Jnl#j2022-07-02  RULESET]]  
 [[Jnl\|Fri Sep 9  2022 ]]  	[[Jnl#j2022-07-02  - Begin Anew - Put your big boy pants on]]  
 [[Jnl\|Fri Sep 9  2022 ]]  	[[Jnl#j2022-06-29  What brings me joy - Breaking my holding patter]]  
-[[Quick\|Fri Sep 9  2022 ]]  	[[Quick#Africa’s Cold Rush and the Promise of Refrigeration]]  
+[[quick\|Fri Sep 9  2022 ]]  	[[quick#Africa’s Cold Rush and the Promise of Refrigeration]]  
 [[DL strategy\|Fri Sep 9  2022 ]]  	[[DL strategy#STRATEGIES]]  
 [[DYL\|Fri Sep 9  2022 ]]  	[[DYL#2021-05-06 - WORK VIEW]]  
 [[DYL\|Fri Sep 9  2022 ]]  	[[DYL#2021-05-10 - LIFE VIEW]]  

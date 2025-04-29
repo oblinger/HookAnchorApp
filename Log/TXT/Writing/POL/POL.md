@@ -3,9 +3,10 @@
   , [[Palestinians]], [[Parties]], [[Politics]], [[Politics From Me]], [[POL refs]], [[Race]]
   , [[Socialism]], [[Trump]], ,
   , [[Voting]], ,
-  , [[Innovation]], 
-  [[Consciousness]] 
-  DELS: [[Voting]],[[Innovation]],
+  , [[Innovation]],
+  , [[Consciousness]], 
+
+  DELS: [[Voting]],[[Innovation]],[[Consciousness]], 
 
   :
   :

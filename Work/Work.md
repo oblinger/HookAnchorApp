@@ -1,14 +1,16 @@
 
 .**Q2**.
-     close loop AWS transition plan
-     .
-	[DT](spot://dt): 50 games in
-  	[AI Prod Matrix](https://docs.google.com/spreadsheets/d/1iQvOKwS09QcFTqXK1Ko0ydSgwqjXItbCRrkOMZaBj40/edit?gid=0#gid=0) possible products
-  	End-2-End Shot Charts 
-  	Speedups
-  	Risk test 1-2 of AI-cam, VB speed, advB
-  	File Patent. (put note in to Mgt channel)
-  	DAT push
+  close loop AWS transition plan
+  .
+  [DT](spot://dt): 50 games in
+  GCP plan
+  End-to-End Shot Charts 
+  [AI Camera V1](https://www.notion.so/sportsvisio/AI-CAMERA-v1-1e0719d6f2bd80a3abb8eac297561b07?pvs=4) - Videos, Brainstorm
+  Speedups
+  File Patent. (put note in to Mgt channel)
+  .
+  DAT push
+  [AI Prod Matrix](https://docs.google.com/spreadsheets/d/1iQvOKwS09QcFTqXK1Ko0ydSgwqjXItbCRrkOMZaBj40/edit?gid=0#gid=0) possible products
 
 ## PAUSE
 - F11 [AWS](https://docs.google.com/document/d/1QS4081TT_Yyz1TS9GLZSfjQaczQ7ynzWTSu14waDcG0/edit?tab=t.0):	Estimate from Brian [[2024-08 Backend Architect|Arch]]: [r](https://docs.google.com/document/d/1gbutlP_EF-_wUdg4F3IEuw8Bhz8oET3Z/edit) 
@@ -30,8 +32,6 @@
 
 [[journaling]] 
 ## .
-
-- 
 - AI processing 
 
 Owners:

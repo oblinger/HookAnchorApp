@@ -3,14 +3,13 @@ PAGES:
 - [[COMS]] 		- Top page for communications
 - [[CN]] [[COM Next]]- Rollup planning for all comm related stuff
 - [[Mentors]] 	- Tracking and planning around mentors
-- [[CRM]]			- Generated tracking page
-- [[Calls]]			- Personal calls 
+- [[CRM]]		- Generated tracking page
+- [[Calls]]		- Personal calls 
 
 - [[Friends]]		- Personal friends I don't want to loose touch with
 - [[ROLODEX]] 	- Tags for relevant types of people/orgs
 - [[COM Msg]]	- Messaging used in various outbound
-- [G-dr CRM](https://docs.google.com/spreadsheets/d/166xqGspRbmUjKoRYcgGvAu-GIRsKQrKBH_GYiJAMaSs/edit#gid=0) 	- Old online CRM
-
+- [G-dr CRM](https://docs.google.com/spreadsheets/d/166xqGspRbmUjKoRYcgGvAu-GIRsKQrKBH_GYiJAMaSs/edit#gid=0) - Old online CRM
 
 
 TIME FRAMES:  * Now Soon Q1 Q2 Q3 Q4 Y24 Y25 Later
