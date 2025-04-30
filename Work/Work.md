@@ -2,7 +2,7 @@
 .**Q2**.
   close loop AWS transition plan
   .
-  [DT](spot://dt): 50 games in
+  [DT](spot://dt): Build&Test clean dataset
   GCP plan
   End-to-End Shot Charts 
   [AI Camera V1](https://www.notion.so/sportsvisio/AI-CAMERA-v1-1e0719d6f2bd80a3abb8eac297561b07?pvs=4) - Videos, Brainstorm
