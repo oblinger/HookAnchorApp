@@ -3,6 +3,7 @@ Generative Pre-Trained Transformer
 ![](https://miro.medium.com/v2/resize:fit:700/0*3W6Cg8LnN-CA1_g5)
 
 
+- [[GPT Prompting]] 
 
 - A kind of [[AutoRegressive]] Alg
 - 
@@ -10,4 +11,5 @@ Generative Pre-Trained Transformer
 
 - [[Chat GPT Webpage]] - 
 - [[2023 GPT Report]]
+- 
 

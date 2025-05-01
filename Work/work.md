@@ -1,7 +1,5 @@
 
 .**Q2**.
-  close loop AWS transition plan
-  .
   [DT](spot://dt): Build&Test clean dataset
   GCP plan
   End-to-End Shot Charts 

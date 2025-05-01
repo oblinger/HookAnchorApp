@@ -5,6 +5,7 @@ n:: no prefix.	Dated entries without any typing prefix
 
 | Date       | File                                        | Notes                                                                                                                             |
 | ---------- | ------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------- |
+| 2025-04-30 | [[@Anthropic]]                                  | Job Application                                                                                                                   |
 | 2025-04-27 | [[Consciousness]]                               | Response to Ben about Consciousness                                                                                               |
 | 2025-04-25 | [[ELI Quotes]]                                  | Texting w/ Mom when she had covid                                                                                                 |
 | 2025-04-23 | [[Innovation]]                                  | Top cited papers by Nation over time                                                                                              |
