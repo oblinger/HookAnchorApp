@@ -5,9 +5,19 @@
 
 # LOG
 
-### 2025-04-07  Possible Sell off
+### 2025-04-07  Possible Sell off -- what was the cost?
 
 Rollover - VTWAX  $484K
+
+VTWAX $550K 1/2025
+529K	10/24
+551K
+535K	12/24
+552K 	1/25
+549K	2/25
+529K	3/25
+478K 4/25
+
 
 ### 2024-06-05  Vanguard Advising
 

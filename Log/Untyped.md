@@ -18,7 +18,7 @@ n:: no prefix.	Dated entries without any typing prefix
 | 2025-04-18 | [[CV Roadmap]]                                  | Roadmap Thinking                                                                                                                  |
 | 2025-04-17 | [[Daily Schedules]]                             | Back From China - Interviewing Rhythm                                                                                             |
 | 2025-04-17 | [[Mgt]]                                         | Sean's Market Model                                                                                                               |
-| 2025-04-07 | [[FIN Log]]                                     | Possible Sell off                                                                                                                 |
+| 2025-04-07 | [[FIN Log]]                                     | Possible Sell off -- what was the cost?                                                                                           |
 | 2025-04-02 | [[SEEK Cover Letter Terms]]                     | Yashin's update                                                                                                                   |
 | 2025-04-01 | [[SEEK Cover Letter Terms]]                     | Ya-Shin's Prompts                                                                                                                 |
 | 2025-04-01 | [[DD]]                                          | Using Jud Brewer's Unwinding Anxiety Book Ideas                                                                                   |
