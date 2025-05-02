@@ -1,5 +1,4 @@
 .[[MAC Apps]].
-  , , , , , ,
   , [[gDrive Notes]], [[Git Notes]], [[Hubspot Notes]], [[Notion]], [[Timer]], 
   DELS: [[gDrive Notes]], [[Git Notes]], [[Hubspot Notes]], [[Notion]], [[Timer]],
 
@@ -585,6 +584,25 @@ URL:  about:config
 ### Installation
 - In Chrome goto https://meet.google.com 
 - In the URL bar on the right click the little install icon on right hand side inside url bar?!
+
+
+## xx Jekyll.    xx Ruby
+
+```shell
+
+brew install rbenv ruby-build
+rbenv install 3.2.2
+rbenv global 3.2.
+ruby -v   # this should show version 3.2.2
+
+sudo gem install bundler -v 2.4.22
+sudo gem install bundler jekyll
+
+```
+
+
+
+
 - 
 ## xx Obsidian
 

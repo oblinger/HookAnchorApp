@@ -3,6 +3,8 @@
   [[PQ]], [[Big]],
 - [[2022-01-00 Nanny]],
 - [[ABio]]
+  , ,
+  DELS: [[Measuring Intelligence]], 
 
 - [Yearbook](https://docs.google.com/document/d/1l6B70oTJDW29LFY4-MZFJ0-IdVufLEyJL4B59t0hpss/edit#heading=h.enksu2ju8d90): 
 - [[Alien Biology]] 

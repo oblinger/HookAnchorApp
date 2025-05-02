@@ -2,7 +2,8 @@
    [[ABIO.]]  [[Alien Biology]]
   , [[ABIO Behavior Templates]], [[ABIO CellMetabolism5]], [[ABIO Generator]]
   , [[ABIO Photosynthesis]], [[ABIO Prompts]], [[ABIO Queries]], [[ABIO References]]
-  , [[ABIO Systems]], [[ABIO Task Example]], [[ABIO Tasks]], 
+  , [[ABIO Systems]], [[ABIO Task Example]], [[ABIO Tasks]],
+  , [[Measuring Intelligence]], 
 
    [[ABIO CellMetabolism5]], [[ABIO Generator]], [[ABIO Photosynthesis]]
   , [[ABIO Prompts]], [[ABIO Queries]], [[ABIO References]], [[ABIO Systems]], [[ABIO Task Example]]

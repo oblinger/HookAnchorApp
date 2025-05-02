@@ -1,4 +1,5 @@
 
+[[Friday Dates\|Tue Apr 2  2024 ]]  	[[Friday Dates#Crazy]]  
 [[Now\|Tue Apr 2  2024 ]]  	[[Now#Next]]  
 [[Now\|Tue Apr 2  2024 ]]  	[[Now#Review]]  
 [[now\|Tue Apr 2  2024 ]]  	[[now#Next]]  
