@@ -592,15 +592,26 @@ URL:  about:config
 
 brew install rbenv ruby-build
 rbenv install 3.2.2
-rbenv global 3.2.
+rbenv global 3.2.2
 ruby -v   # this should show version 3.2.2
 
-sudo gem install bundler -v 2.4.22
-sudo gem install bundler jekyll
+gem install bundler
+gem install jekyll
+
+
+
+# build empty website
+cd ~/ob/proj/oblinger.github.io
+bundle install
+jekyll new . --force
+
+# Serve th
+bundle exec jekyll serve
+open http://localhost:4000
 
 ```
 
-
+(See [[@Github]] for details about setting up Jekyll site)
 
 
 - 
