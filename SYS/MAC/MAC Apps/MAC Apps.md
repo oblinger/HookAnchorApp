@@ -606,7 +606,7 @@ bundle install
 jekyll new . --force
 
 # Serve th
-bundle exec jekyll serve
+bundle exec jekyll serve --watch
 open http://localhost:4000
 
 ```

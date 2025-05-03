@@ -1,4 +1,6 @@
 
+[[work\|Wed Apr 3  2024 ]]  	[[work#_]]  
+[[Friday Dates\|Tue Apr 2  2024 ]]  	[[Friday Dates#Lists]]  
 [[Friday Dates\|Tue Apr 2  2024 ]]  	[[Friday Dates#Ideas]]  
 [[Friday Dates\|Tue Apr 2  2024 ]]  	[[Friday Dates#Crazy]]  
 [[Now\|Tue Apr 2  2024 ]]  	[[Now#Next]]  

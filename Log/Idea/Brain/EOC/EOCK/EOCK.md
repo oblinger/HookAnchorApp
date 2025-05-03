@@ -21,7 +21,7 @@
 
 
 
-
+[CorpAI](/Log/Idea/Brain/EOC/EOCK/EOCK%20Corp%20AI) 
 
 
 
