@@ -17,7 +17,8 @@
   [[EOCK Fast Takeoff]],
   [[EOCK No Fast Takeoff]]
   , [[EOCK AGENCY - Separation of Knowledge, Drive, and Agency]],
-  , [[EOCK Shaping The Future]], 
+  , [[EOCK Shaping The Future]],
+  , [[EOCK_Corp_AI 1]], 
 
 
 
