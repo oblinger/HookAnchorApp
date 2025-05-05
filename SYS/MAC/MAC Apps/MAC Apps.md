@@ -606,8 +606,11 @@ bundle install
 jekyll new . --force
 
 # Serve th
-bundle exec jekyll serve --watch
+bundle exec jekyll serve --watch &
 open http://localhost:4000
+
+cp -r ~/ob/kmr/ASIO  ~/ob/proj/oblinger.github.io/.
+
 
 ```
 

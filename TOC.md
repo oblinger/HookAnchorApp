@@ -73,8 +73,8 @@
             [[SCRatch]]: 
     [[Prj]]: [[2021-04 FindDayCare]],	[[2022-05 Enxt]],	[[2022-03 BeFAANG]],	
         [[2022-03 BeVC]],	
+        [[ABio]]: [[Measuring Intelligence]],	
         [[PP]]: [[2022-01-00 Nanny]],	
-            [[ABio]]: [[Measuring Intelligence]],	
         [[UF]]: [[ufPublish]],	
             [[UfApps]]: 
             [[UF-OLD]]: [[OLD-CONSTRUCTS]],	[[OLD-Markdown]],	[[lex-lexlang]],	
@@ -103,7 +103,7 @@
             [[Brain]]: [[2015-00-00 The Sentient Weapon]],	[[2016-00-00 PPP]],	
                 [[End Of Man Book]],	[[EOC reboot]],	
                 [[2009-05-00 Consciousness]],	
-                [[EOC]]: [[EOCT]],	[[EOCA]],	[[EOCI]],	[[EOCK]],	[[EOCP]],	
+                [[EOC]]: [[EOCT]],	[[EOCA]],	[[EOCI]],	[[ASIO]],	[[EOCP]],	
                     [[EOCB]]: 
             [[Idea Social]]: 
     [[Set]]: [[Recipe]],	[[Read]],	[[Book]],	
