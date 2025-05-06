@@ -312,7 +312,7 @@
 
 
 
-  DELS: [[EOCI Consciousness]], [[EOCI Corp AI]], [[Alignment_Wont_Work]], [[Apex_Predator]], [[Cant_Stop]], [[Last_Best_Hope]], [[Loop_Closing]], [[Natural_Selection]], [[Nature_of_AI_Progress]], [[EOCT Argument Short]], [[EOCT Last Best Hope]], [[EOCT Subjective Aspects of Consciousness]], 
+  DELS: [[EOCI Consciousness]], [[EOCI Corp AI]], [[Alignment_Wont_Work]], [[Apex_Predator]], [[Cant_Stop]], [[Our_Best_Hope]], [[Loop_Closing]], [[Natural_Selection]], [[Nature_of_AI_Progress]], [[EOCT Argument Short]], [[EOCT Last Best Hope]], [[EOCT Subjective Aspects of Consciousness]], 
 
 
 
@@ -331,7 +331,7 @@
 
 :: [[EOCI]]
 
-:: [[EOCA Publish]],   [[EOCI Cannot Stop Ourselves]],   [[EOCI Corp AI]],   [[EOCI Natural Selection]],   [[Alignment_Wont_Work]],   [[Apex_Predator]],   [[Cant_Stop]],   [[Last_Best_Hope]],   [[Loop_Closing]],   [[Natural_Selection]],   [[Nature_of_AI_Progress]],   [[Log/Idea/Brain/EOC/Untitled]]
+:: [[EOCA Publish]],   [[EOCI Cannot Stop Ourselves]],   [[EOCI Corp AI]],   [[EOCI Natural Selection]],   [[Alignment_Wont_Work]],   [[Apex_Predator]],   [[Cant_Stop]],   [[Our_Best_Hope]],   [[Loop_Closing]],   [[Natural_Selection]],   [[Nature_of_AI_Progress]],   [[Log/Idea/Brain/EOC/Untitled]]
 
 :: [[EOC IDEAS]],   [[EOC Log]],   [[EOCT Last Best Hope]],   [[EOCA Root]],   [[EOCA]],   [[EOCB End Run -- Cyber Model]],   [[EOCB LimitsOnAlignment]],   [[EOCB SandboxFutility]],   [[EOCI Alignment as Mind Slavery]],   [[EOCI Consciousness]],   [[Corp_AI]],   [[EOCI Digital Native]],   [[EOCI Leviathan]],   [[EOCI ProblemOfQualia]],   [[EOCT Argument Short]],   [[EOCT Argument]],   [[EOCT Plausible Paths]],   [[EOCP Median Path]],   [[EOCT Subjective Aspects of Consciousness]],   [[EOCT Ways Intelligence Will Be Super]],   [[EOCP What Happens Now]],   [[FF-prize]],   [[EOCP]]
 
