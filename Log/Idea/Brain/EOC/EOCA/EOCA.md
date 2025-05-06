@@ -348,7 +348,7 @@
 - [[j EOCI]]: Ideas
 
 
-:: [[EOCK Corp AI]],   [[EOCI Digital Native]],  
+:: [[Corp_AI]],   [[EOCI Digital Native]],  
 
 - [[EOCT Plausible Paths]],   [[EOCP What Happens Now]],   [[EOCP Median Path]]
 ## >

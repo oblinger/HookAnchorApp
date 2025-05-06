@@ -6,23 +6,23 @@ NARRATIVE PARTS
 
 
 
-[[EOCK Corp AI]]: Corp + Human + Machine
+[[Corp_AI]]: Corp + Human + Machine
  - Human and instrumental goals
  - Legislative Hegemony
 
 
 New World Order
-- [[EOCK Loop Closing]]
-- [[EOCK Machine Centric Coms]] 
+- [[Loop_Closing]]
+- [[Machine_Centric_Coms]] 
 
 
 STEPS:
 - Generalized Type-II reasoning
-- [[EOCK Corp AI]]
+- [[Corp_AI]]
 	- Role Filling
 	- Key Role Loop Closing
 	- Majority Role Loop Closing
-- [[EOCK Machine Centric Coms]] - 
+- [[Machine_Centric_Coms]] - 
 
 - Autonomous AI-entities
 - Parabolic growth

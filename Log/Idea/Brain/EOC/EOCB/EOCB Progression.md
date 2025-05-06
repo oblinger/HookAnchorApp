@@ -3,8 +3,8 @@
 TYPE-1 - LLM based AI
 
 CORP-AI - TYPE-2 - ??? based AI
-- [[EOCK Corp AI]]: 
-- [[EOCK Loop Closing]]:
+- [[Corp_AI]]: 
+- [[Loop_Closing]]:
 
 
 
@@ -20,4 +20,4 @@ For safety most agents do not maintain and set their own goals, they are "Autono
 
 
 
-[[EOCK Corp AI]]:
+[[Corp_AI]]:

@@ -5,7 +5,7 @@
 
 - [[EOCI]] 
 - [[EOCI Human Reasoning Conjecture]] - Type II reasoning is the primary missing component and it could be developed anytime in the next years
-- [[EOCK Loop Closing]] - As humans are removed from the entirety of the activity loop an iterative process that process jumps discontinuously upward in efficiency
+- [[Loop_Closing]] - As humans are removed from the entirety of the activity loop an iterative process that process jumps discontinuously upward in efficiency
 - [[EOCI Corp Decision Making]] - Corps make the choices 
 - [[EOCI National Decision Making]] - Nations are power maximizers, but not a reliably as corporations
 - 
@@ -15,14 +15,14 @@
 
 ### 2024-09-30  TIMELINE
 
-[[EOCK Corp AI]]: 
+[[Corp_AI]]: 
 - DRIVERS: High cost of training & data.  Specialization & economies of scale
 
-[[EOCK Loop Closing]]:
+[[Loop_Closing]]:
 - Transformative efficiency/velocity gains from automation
 - Winner take all nature of VC funding and Market setting
 
-[[EOCK Civilizing Tendency]]:
+[[Civilizing_Tendency]]:
 
 
 [[EOCK Control]]: 

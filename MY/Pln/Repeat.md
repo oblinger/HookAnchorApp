@@ -5,8 +5,8 @@
 |               | Bk  Nails  Nose  Groc AudioMemos [[Friday]]                                                                                              |
 | **CLEAN**     | [MyD](spot://MyDeskFolder), [DwnFdr](spot://DownloadsFolder),                                                                            |
 |               | [[Reflections]]                                                                                                                          |
-| **HOUSE**     | Room: [My-]Desks/Bin/Shelf  House: Pass                                                                                                  |
 | **TODO**      | Clean F1 page for week.  [[quick]] & [[todo]]                                                                                            |
+| **HOUSE**     | Room: [My-]Desks/Bin/Shelf  House: Pass                                                                                                  |
 | **PLAN**      | Week plan in Top                                                                                                                         |
 | **IN2**       | Quick scrub                                                                                                                              |
 |               |                                                                                                                                          |

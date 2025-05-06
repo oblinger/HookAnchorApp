@@ -5,6 +5,10 @@ n:: no prefix.	Dated entries without any typing prefix
 
 | Date       | File                                        | Notes                                                                                                                             |
 | ---------- | ------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------- |
+| 2025-05-05 | [[@Seneca]]                                     | Line of site Regs                                                                                                                 |
+| 2025-05-05 | [[@Seneca]]                                     | Questions                                                                                                                         |
+| 2025-05-05 | [[@Seneca]]                                     | Initial Discussion w/ Danny                                                                                                       |
+| 2025-05-05 | [[Reflections]]                                 | .                                                                                                                                 |
 | 2025-05-02 | [[ABIO Log]]                                    | Nina Discussion                                                                                                                   |
 | 2025-04-30 | [[@Anthropic]]                                  | Job Application                                                                                                                   |
 | 2025-04-27 | [[Consciousness]]                               | Response to Ben about Consciousness                                                                                               |

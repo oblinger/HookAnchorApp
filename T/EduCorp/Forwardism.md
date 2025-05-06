@@ -19,7 +19,8 @@ Still with this tribute in place, we are going to let's call it like we see it: 
 
 ## The promise and perils of capitalism
 
-POST CAPITALISM 
+A POST-CAPITAL QUASI-DECENTRALIZED MARKET MECHANISM
+
 - CAPITALISM 
 	- Modern corporations have a fiduciary duty to legally maximize shareholder value.
 	- Additional considerations (like benefit to the employee or society) only have value to the extent that they somehow indirectly benefit shareholder value.  

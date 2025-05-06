@@ -1,3 +1,4 @@
+- apple watch shortcut to record text to apple note
 - - [3part intro](https://medium.com/social-science-weekly/the-1-minute-introduction-that-makes-people-remember-you-forever-497cefcfdccc)
 - https://link.alphasignal.ai/0tlXWN
 

@@ -1,14 +1,16 @@
 .[[EOC]].
   [[EOCA]]:	Agenda
   [[EOCB]]:	Books
-  [[EOCI]]:	Ideas
-  [[ASIO]]:	Key Ideas
+  :	Ideas
+  :	Key Ideas
   [[EOCP]]:	Paths
   [[EOCT]]:	Topics
   [[FF-prize]], [[EOC Log]],
-  , 
+  ,
   DELS: [[EOCP]],,[[EOCP]], [[EOCP]],
-  DELS: [[EOCP]],[[Paths]],[[EOCP]], [[EOCP]],[[Paths]], [[Paths]], 
+  , ,
+  DELS: [[EOCP]],,[[EOCP]], [[EOCP]],, ,
+  DELS: [[EOCP]],[[Paths]],[[EOCP]], [[EOCP]],[[Paths]], [[Paths]],[[ASIO]],[[EOCI]], [[EOCK]], [[Paths]], [[Paths]], [[Paths]], 
 
 
   DELS: [[eoc-atlas]], [[eoc-formal]], [[eoc-impl]], 
@@ -310,7 +312,7 @@
 
 
 
-  DELS: [[EOCI Consciousness]], [[EOCI Corp AI]], [[EOCK Alignment Wont Work]], [[EOCK Apex Predator]], [[Cant_Stop]], [[EOCK Last Best Hope]], [[EOCK Loop Closing]], [[EOCK Natural Selection]], [[EOCK Nature of AI Progress]], [[EOCT Argument Short]], [[EOCT Last Best Hope]], [[EOCT Subjective Aspects of Consciousness]], 
+  DELS: [[EOCI Consciousness]], [[EOCI Corp AI]], [[Alignment_Wont_Work]], [[Apex_Predator]], [[Cant_Stop]], [[Last_Best_Hope]], [[Loop_Closing]], [[Natural_Selection]], [[Nature_of_AI_Progress]], [[EOCT Argument Short]], [[EOCT Last Best Hope]], [[EOCT Subjective Aspects of Consciousness]], 
 
 
 
@@ -329,9 +331,9 @@
 
 :: [[EOCI]]
 
-:: [[EOCA Publish]],   [[EOCI Cannot Stop Ourselves]],   [[EOCI Corp AI]],   [[EOCI Natural Selection]],   [[EOCK Alignment Wont Work]],   [[EOCK Apex Predator]],   [[Cant_Stop]],   [[EOCK Last Best Hope]],   [[EOCK Loop Closing]],   [[EOCK Natural Selection]],   [[EOCK Nature of AI Progress]],   [[Log/Idea/Brain/EOC/Untitled]]
+:: [[EOCA Publish]],   [[EOCI Cannot Stop Ourselves]],   [[EOCI Corp AI]],   [[EOCI Natural Selection]],   [[Alignment_Wont_Work]],   [[Apex_Predator]],   [[Cant_Stop]],   [[Last_Best_Hope]],   [[Loop_Closing]],   [[Natural_Selection]],   [[Nature_of_AI_Progress]],   [[Log/Idea/Brain/EOC/Untitled]]
 
-:: [[EOC IDEAS]],   [[EOC Log]],   [[EOCT Last Best Hope]],   [[EOCA Root]],   [[EOCA]],   [[EOCB End Run -- Cyber Model]],   [[EOCB LimitsOnAlignment]],   [[EOCB SandboxFutility]],   [[EOCI Alignment as Mind Slavery]],   [[EOCI Consciousness]],   [[EOCK Corp AI]],   [[EOCI Digital Native]],   [[EOCI Leviathan]],   [[EOCI ProblemOfQualia]],   [[EOCT Argument Short]],   [[EOCT Argument]],   [[EOCT Plausible Paths]],   [[EOCP Median Path]],   [[EOCT Subjective Aspects of Consciousness]],   [[EOCT Ways Intelligence Will Be Super]],   [[EOCP What Happens Now]],   [[FF-prize]],   [[EOCP]]
+:: [[EOC IDEAS]],   [[EOC Log]],   [[EOCT Last Best Hope]],   [[EOCA Root]],   [[EOCA]],   [[EOCB End Run -- Cyber Model]],   [[EOCB LimitsOnAlignment]],   [[EOCB SandboxFutility]],   [[EOCI Alignment as Mind Slavery]],   [[EOCI Consciousness]],   [[Corp_AI]],   [[EOCI Digital Native]],   [[EOCI Leviathan]],   [[EOCI ProblemOfQualia]],   [[EOCT Argument Short]],   [[EOCT Argument]],   [[EOCT Plausible Paths]],   [[EOCP Median Path]],   [[EOCT Subjective Aspects of Consciousness]],   [[EOCT Ways Intelligence Will Be Super]],   [[EOCP What Happens Now]],   [[FF-prize]],   [[EOCP]]
 
 
 - [[j EOCI]] - Ideas
