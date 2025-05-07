@@ -10,7 +10,8 @@
   DELS: [[EOCP]],,[[EOCP]], [[EOCP]],
   , ,
   DELS: [[EOCP]],,[[EOCP]], [[EOCP]],, ,
-  DELS: [[EOCP]],[[Paths]],[[EOCP]], [[EOCP]],[[Paths]], [[Paths]],[[ASIO]],[[EOCI]], [[EOCK]], [[Paths]], [[Paths]], [[Paths]], 
+  , [[EOCI]], 
+  DELS: [[EOCP]],[[Paths]],[[EOCP]], [[EOCP]],[[Paths]], [[Paths]],[[ASIO]],[[EOCI]], [[EOCK]], [[Paths]], [[Paths]], [[Paths]],
 
 
   DELS: [[eoc-atlas]], [[eoc-formal]], [[eoc-impl]], 

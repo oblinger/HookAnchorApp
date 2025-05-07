@@ -1,9 +1,11 @@
 
 .[[AMA]].
-  [AMA Pjage](spot://amapage),
-  [AMA Collections Page](spot://amacollectionspage), [AMA Content Page](spot://amacontentpage), [AMA Devices](spot://amadevices), 
+  ,
+  [AMA Collections Page](spot://amacollectionspage), [AMA Content Page](spot://amacontentpage), [AMA Devices](spot://amadevices),
   [AMA Kindle Page](spot://amakindlepage), [AMA Video Page](spot://amavideopage),
-  [Amazon](spot://amazon), 
+  [Amazon](spot://amazon),
+  , [AMA Page](spot://amapage), 
+  DELS: [AMA Pjage](spot://amapage), 
 
 
 

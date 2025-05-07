@@ -1,4 +1,5 @@
 
+[[DAILY\|Wed Apr 3  2024 ]]  	[[DAILY#2024-04-02  Equanimity]]  
 [[Daily\|Wed Apr 3  2024 ]]  	[[Daily#2024-04-02  Equanimity]]  
 [[work\|Wed Apr 3  2024 ]]  	[[work#_]]  
 [[Friday Dates\|Tue Apr 2  2024 ]]  	[[Friday Dates#Lists]]  
