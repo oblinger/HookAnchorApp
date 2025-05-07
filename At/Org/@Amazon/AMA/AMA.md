@@ -1,6 +1,6 @@
 
 .[[AMA]].
-  [AMA Page](spot://amapage),
+  [AMA Pjage](spot://amapage),
   [AMA Collections Page](spot://amacollectionspage), [AMA Content Page](spot://amacontentpage), [AMA Devices](spot://amadevices), 
   [AMA Kindle Page](spot://amakindlepage), [AMA Video Page](spot://amavideopage),
   [Amazon](spot://amazon), 

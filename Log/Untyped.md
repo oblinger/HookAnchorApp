@@ -5,6 +5,7 @@ n:: no prefix.	Dated entries without any typing prefix
 
 | Date       | File                                        | Notes                                                                                                                             |
 | ---------- | ------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------- |
+| 2025-05-06 | [[@Brian Rife]]                                 | Sully.ai                                                                                                                          |
 | 2025-05-05 | [[@Seneca]]                                     | Line of site Regs                                                                                                                 |
 | 2025-05-05 | [[@Seneca]]                                     | Questions                                                                                                                         |
 | 2025-05-05 | [[@Seneca]]                                     | Initial Discussion w/ Danny                                                                                                       |

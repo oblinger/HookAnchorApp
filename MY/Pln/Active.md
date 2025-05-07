@@ -1,5 +1,6 @@
 - https://www.linkedin.com/help/linkedin/answer/a569234?hcppcid=search
-
+- https://job-boards.greenhouse.io/anthropic/jobs/4020159008
+- 
 - Fin plan for Merrill
 - - deep work schedule
 - [[Journaling]] 

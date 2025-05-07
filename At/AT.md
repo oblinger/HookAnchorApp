@@ -1,5 +1,5 @@
 .[[At]].
-  , [[@Abhishek Kapatkar]], [[@Abhishek Verma]], [[@Acorn Pooley]], [[@Aetion]], [[@Agustin Polito]]
+  , [[@Abhishek Kapatkar]], [[@Abhishek Verma]], [[@Acorn Pooley]], [[@Aetion]], [[@Agustin Polito]], [[@Brian Rife]], 
   , [[@Ahern Knox]], [[@Ahmad Tahir _ Graph Design]], [[@AJ Forsythe]], [[@Alexander Grosse]]
   , [[@Alexander Toshev]], [[@Alex Cutting]], [[@Alia Alaoui]], [[@Allison Binns]], [[@All Sides]]
   , [[@Amanda Riccetti]], [[@Ami Kumar]], [[@Amy Kruse]], [[@Analytics Fire]], [[@Anastasia Kijono]]
