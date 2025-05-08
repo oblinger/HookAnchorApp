@@ -1,5 +1,6 @@
 # UNIFORM COMPUTATION
 
+
 ## EQUALITY / IDENTITY / HASH / CONTENTS
 
 HASH -- A hash is a large number derived 
