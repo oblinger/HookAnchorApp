@@ -27,6 +27,9 @@ PLUMBER - Drain Doctor Don
 PEST - Armada - 
     800-908-3904
     (Christopher 831-319-1458)
+PHONE REPAIR. 
+	Mr Telephone Man.  - [mrtelephoneman.biz](https://www.thumbtack.com/websites/Ukg8:CHHz9UBZA/redirect) 
+	‭(925) 384-0808‬ (Never used, but good feeling)
 
 == OK ==
 
