@@ -1,4 +1,8 @@
 
+[[Daily\|Wed Apr 3  2024 ]]  	[[Daily#Next Year]]  
+[[Daily\|Wed Apr 3  2024 ]]  	[[Daily#2024-04-03  marriage]]  
+[[Lists\|Wed Apr 3  2024 ]]  	[[Lists#IN CONTACTS  (Master In Obsidian)]]  
+[[@Sean O'Connor\|Wed Apr 3  2024 ]]  	[[@Sean O'Connor#LOG]]  
 [[DAILY\|Wed Apr 3  2024 ]]  	[[DAILY#2024-04-02  Equanimity]]  
 [[Daily\|Wed Apr 3  2024 ]]  	[[Daily#2024-04-02  Equanimity]]  
 [[work\|Wed Apr 3  2024 ]]  	[[work#_]]  

@@ -1,5 +1,6 @@
 .[[Productivity]].
-  ,   [[Daily Schedules]], [[Tracking of Time]], 
+  ,   , [[Tracking of Time]],
+  DELS: [[Daily Schedules]], 
 
 
 - [[Tracking of Time]] 
