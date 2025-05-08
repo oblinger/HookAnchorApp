@@ -21,8 +21,8 @@ TOPS: [[KMR]], [[Meta]], [[TOC]],
   , [[2024-10-29]], , [[SYS]], [[TOC]], , ,
   DELS: [[TOC]], , [[SYS]], , , [[2024-10-29]],
   , [[At]], [[Attach]], [[Weekly]], [[work]],
-  , [[AlienBiologyWhitepaper]], 
-  DELS: [[TOC]], [[Work]], [[SYS]], [[ATTACH]], [[WEEKLY]], [[2024-10-29]],[[JJ]], [[Misc]], [[test987]],[top](spot://top),[[AT]], [[ATTACH]], [[WEEKLY]], [[Work]], [[Work]], [[ATTACH]], [[WEEKLY]],
+  , ,
+  DELS: [[TOC]], [[Work]], [[SYS]], [[ATTACH]], [[WEEKLY]], [[2024-10-29]],[[JJ]], [[Misc]], [[test987]],[top](spot://top),[[AT]], [[ATTACH]], [[WEEKLY]], [[Work]], [[Work]], [[ATTACH]], [[WEEKLY]],[[AlienBiologyWhitepaper]], 
 
 
 

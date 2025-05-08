@@ -5,6 +5,7 @@ n:: no prefix.	Dated entries without any typing prefix
 
 | Date       | File                                        | Notes                                                                                                                             |
 | ---------- | ------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------- |
+| 2025-05-08 | [[Daily]]                                       | Trying to get a groove on                                                                                                         |
 | 2025-05-06 | [[@Brian Rife]]                                 | Sully.ai                                                                                                                          |
 | 2025-05-05 | [[@Seneca]]                                     | Line of site Regs                                                                                                                 |
 | 2025-05-05 | [[@Seneca]]                                     | Questions                                                                                                                         |
@@ -1192,8 +1193,10 @@ n:: no prefix.	Dated entries without any typing prefix
 | 2020-09-17 | [[Forum]]                                       | Police violence                                                                                                                   |
 | 2020-09-07 | [[Forum]]                                       | Shinster email                                                                                                                    |
 | 2020-08-23 | [[Journal Old]]                                 | Lost at Sea but with good provisions                                                                                              |
+| 2020-08-23 | [[Jnl]]                                         | Lost at Sea but with good provisions                                                                                              |
 | 2020-08-17 | [[FIN Log]]                                     | QL - AYI payments                                                                                                                 |
 | 2020-08-15 | [[Journal Old]]                                 | My Futures                                                                                                                        |
+| 2020-08-15 | [[Jnl]]                                         | My Futures                                                                                                                        |
 | 2020-07-23 | [[MAC Apps]]                                    | Applications folder                                                                                                               |
 | 2020-07-18 | [[FIN Budget]]                                  | Budget                                                                                                                            |
 | 2020-05-11 | [[OLD 2020 Weekly]]                             | NOW COUNTING 90 SLOTS                                                                                                             |
@@ -1205,6 +1208,7 @@ n:: no prefix.	Dated entries without any typing prefix
 | 2020-04-00 | [[MED Log]]                                     | Heart Disease Questions                                                                                                           |
 | 2020-03-23 | [[OLD 2020 Weekly]]                             | focus fail                                                                                                                        |
 | 2020-02-19 | [[Journal Old]]                                 | DECADE TIMELINE                                                                                                                   |
+| 2020-02-19 | [[Jnl]]                                         | DECADE TIMELINE                                                                                                                   |
 | 2020-02-00 | [[Bio]]                                         | – Redis Conf Bio                                                                                                                  |
 | 2020-01-06 | [[OLD 2020 Weekly]]                             | WEEK                                                                                                                              |
 | 2020-01-05 | [[OLD 2020 Weekly]]                             | GOALS FOR THE YEAR                                                                                                                |

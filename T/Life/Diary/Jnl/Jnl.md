@@ -993,7 +993,7 @@ _**Double down on 1/2 as much in area of Energy-Related Standards**_
 - CALL -- Ideas should move from thought to phone call w/ team effort
 
 _
-### j2020-08-15 - My Futures
+### 2020-08-15 - My Futures
 
 
 Hard Realities:
@@ -1015,7 +1015,7 @@ Hard Realities:
 	- Selling an idea, Instilling confidence
 
 _
-### j2020-08-23 - Lost at Sea but with good provisions
+### 2020-08-23 - Lost at Sea but with good provisions
 
 My Situation
 - DEMORALIZED - Not really excited about any of the directions I can push lif
@@ -1042,7 +1042,7 @@ SIDE THINGS:
 
 
 _
-### j2020-02-19 - DECADE TIMELINE
+### 2020-02-19 - DECADE TIMELINE
 
 2020   Lost at sea
 2019   Pregnant.  Getting Serious about AF.  Eli.

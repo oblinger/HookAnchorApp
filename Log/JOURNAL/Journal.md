@@ -50,10 +50,7 @@ n:: 'j...' 	Journal entries  (NOT USED)
 | j2021-01-31 | [[Jnl]]             | So what the fuck am I doing? What's my goal here?   |
 | j2020-11-25 | [[Jnl]]             | Unicore Implementation Days                         |
 | j2020-11-19 | [[Jnl]]             | AF Strategy                                         |
-| j2020-08-23 | [[Jnl]]             | Lost at Sea but with good provisions                |
-| j2020-08-15 | [[Jnl]]             | My Futures                                          |
 | j2020-03-00 | [[Jnl]]             | Siege maybe                                         |
-| j2020-02-19 | [[Jnl]]             | DECADE TIMELINE                                     |
 | j2016-05-25 | [[Jnl]]             | – Lex Ownership                                     |
 | j2011-04-10 | [[Jnl]]             | – Not Energized                                     |
 | j2010-12-17 | [[Jnl]]             | – LESSONS FROM DATING ELAINE                        |

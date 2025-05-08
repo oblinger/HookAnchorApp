@@ -1,7 +1,7 @@
 
 # TABLE OF CONENTS
 
-[[Google]],	[[Groq]],	[[mate]],	[[AlienBiology]],	
+[[Google]],	[[Groq]],	[[mate]],	
 [[KMR]]: [[Weekly]],	
     [[RR]]: [[Lrn]],	[[RR Leet]],	[[RR Philosophy]],	[[RR MGR]],	
         [[RR Web]]: 
@@ -78,6 +78,7 @@
         [[UF]]: [[ufPublish]],	
             [[UfApps]]: 
             [[UF-OLD]]: [[OLD-CONSTRUCTS]],	[[OLD-Markdown]],	[[lex-lexlang]],	
+        [[gitproj]]: [[AlienBiology]],	
         [[2020-08 Race Pitch]]: 
     [[At]]: [[@Qingling Oblinger]],	[[VC ORG]],	[[@Google]],	
         [[Org]]: [[@Merrill]],	[[@Hackers]],	[[Service]],	
