@@ -103,7 +103,7 @@
             [[Brain]]: [[2015-00-00 The Sentient Weapon]],	[[2016-00-00 PPP]],	
                 [[End Of Man Book]],	[[EOC reboot]],	
                 [[2009-05-00 Consciousness]],	
-                [[EOC]]: [[EOCT]],	[[EOCA]],	[[EOCP]],	
+                [[EOC]]: [[EOCT]],	[[EOCA]],	[[EOCI]],	[[EOCP]],	
                     [[EOCB]]: 
             [[Idea Social]]: 
     [[Set]]: [[Recipe]],	[[Read]],	[[Book]],	

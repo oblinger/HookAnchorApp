@@ -4,7 +4,8 @@
   , [[2022-02 Yearbook]], [[2022-03 BeFAANG]], [[2022-03 BeVC]], [[2022-04 BeMLR]], [[2022-05 Enxt]]
   , [[2022-05 Grandpa DJ]], [[2022-09 Mom80]], [[2023-07 Task Rabbit]], [[2025-02 Code Markdown]]
   , [PROJ Gdrive](spot://projgdrive), [[__Race Pitch__]], [[Spot Cmdr]], [[Task Rabbit]], [[UF]],
-  , [[ABio]], 
+  , [[ABio]],
+  , [[gitproj]], 
 
   [[2016-00 FileThis]],			Automated script for downloading and viewing account statements
   [[2018-00 Wedding]],   		Plan our wedding
