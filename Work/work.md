@@ -31,7 +31,7 @@
 
 ## SOON [[mgt]] [[CVP]] 
 
-[[journaling]] 
+[[Journaling]] 
 ## .
 - AI processing 
 

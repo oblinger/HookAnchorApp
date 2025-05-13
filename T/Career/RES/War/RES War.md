@@ -148,17 +148,16 @@ OTHER IDEAS:
 ## MISC STORIES
 
 ### TEAM GROWTH
-	-  [Theo](https://www.linkedin.com/in/theodore-enns-1329633a/)  - Polished Gem - Amazon SDM who led the Astro project
-	-  [Felipe](https://www.linkedin.com/in/theodore-enns-1329633a/)  - Student -> mgr of 13 person team -> Robotics Engineer @ Amazon
-	-  [Sahil](https://www.linkedin.com/in/theodore-enns-1329633a/)  -  Student to Senior Roboticist @ Agility & Osario 
-	- [Rogerio Fonteles](https://www.linkedin.com/in/rogerio-fonteles-074169b0/)  Student -> Manager? -> Senior Robotics Engineer --> Head of Engineering @ Moley Robotics
-	- [Georgios](https://www.linkedin.com/in/georgios-floros-76a3067/) - Fragile researcher --> Effective Manager
+-  [Theo](https://www.linkedin.com/in/theodore-enns-1329633a/)  - Polished Gem - Amazon SW DevMgr who led the Astro project
+-  [Felipe](https://www.linkedin.com/in/theodore-enns-1329633a/) - Student -> mgr of 13 person team -> Robotics Engineer @ Amazon
+-  [Sahil](https://www.linkedin.com/in/theodore-enns-1329633a/)  -  Student to Senior Roboticist @ Agility & Osario 
+- [Rogerio Fonteles](https://www.linkedin.com/in/rogerio-fonteles-074169b0/)  Student -> Manager? -> Senior Robotics Engineer --> Head of Engineering @ Moley Robotics
+- [Georgios](https://www.linkedin.com/in/georgios-floros-76a3067/) - Fragile researcher --> Effective Manager
 
-
-	- [Attilla Aros](https://www.linkedin.com/in/aaros/)  - Hacker -> Strongest Tech Lead --> Crypto Founder
-	- Senad - 
-	- [Krzysiek Herod](https://www.linkedin.com/in/krzysiek-herod/) - Hacker -> ML 'founder'
-	- [Ben Jacobs](https://www.linkedin.com/in/bencjacobs/) - Web dev -> Multi-Team Project Management -> Eng Mgr @ RZ  &  Founded his own company while @ AF
+- [Attilla Aros](https://www.linkedin.com/in/aaros/)  - Hacker -> Strongest Tech Lead --> Crypto Founder
+- Senad - 
+- [Krzysiek Herod](https://www.linkedin.com/in/krzysiek-herod/) - Hacker -> ML 'founder'
+- [Ben Jacobs](https://www.linkedin.com/in/bencjacobs/) - Web dev -> Multi-Team Project Management -> Eng Mgr @ RZ  &  Founded his own company while @ AF
 
 
 ##### ALEX - "Stole" Alex from Apple @ 1/3 pay...  and he did not really value equity... he valued experience.
@@ -183,21 +182,22 @@ OTHER IDEAS:
 	- RELATION W U VIENNA / SW LAB
 	- LICENCE SKELETAL TRACKING SW 
 
-### DARPA MENTORING - XXX YYY ZZZ at DARPA
-
+### DARPA PM MENTORING - Can't XXX maybe with YYY.  Benefit ZZZ
 	Today we cannot XXX, but YYY is a promising approach, and if it succeeds will mean ZZZ.
 	XXX a very basic thing that cannot be done today
 	YYY an approach that might work for XXX
 	ZZZ some transformative benefit that having XXX will achieve
 
-	_
-### --- IBM: Few shot learning ---
+	
+	
+### OLDER STORIES
+#### --- IBM: Few shot learning ---
 
 	_
-### --- IBM: Personal Wizards Algorithm - Interleaving edits and learning ---
+#### --- IBM: Personal Wizards Algorithm - Interleaving edits and learning ---
 
 	_
-### --- IBM: Email Mining - Overcoming privacy concerns ---
+#### --- IBM: Email Mining - Overcoming privacy concerns ---
 
 	_
 

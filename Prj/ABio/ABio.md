@@ -1,11 +1,12 @@
-.[[ABio]].  [[@Github]] 
-   [[ABIO.]]  ,
+.[[ABio]].  [[@Github]] [ABIO Folder](spot://ABIO~Folder) 
+   [[ABIO.]]  [[ABIO Log]],
   , [[ABIO Behavior Templates]], [[ABIO CellMetabolism5]], [[ABIO Generator]]
   , [[ABIO Photosynthesis]], [[ABIO Prompts]], [[ABIO Queries]], [[ABIO References]]
   , [[ABIO Systems]], [[ABIO Task Example]], [[ABIO Tasks]],
   , [[Measuring Intelligence]],
   , [[ABIO Log]],
-  , [[AlienBiologyWhitepaper]], 
+  , [[AlienBiologyWhitepaper]],
+  , [ABio Note](spot://abionote), 
   DELS: [[Prj/ABio/AlienBiologyWhitepaper]], [[ABIO Log]],[[Alien Biology]],[[Prj/ABio/AlienBiologyWhitepaper]],
 
    [[ABIO CellMetabolism5]], [[ABIO Generator]], [[ABIO Photosynthesis]]

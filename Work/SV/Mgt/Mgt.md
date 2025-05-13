@@ -1,6 +1,7 @@
-- [[MGR]], [Wk Agenda](https://docs.google.com/document/d/1E5a-4Hvj2LX9KkdSPbcblWSBs3ZwdTgBvY0FA6NKytU/edit?usp=sharing), 
+- [[MGR]], [Wk Agenda](https://docs.google.com/document/d/1E5a-4Hvj2LX9KkdSPbcblWSBs3ZwdTgBvY0FA6NKytU/edit?usp=sharing), [MGT Gdrive](spot://MGT~Gdrive) 
 - [[ROADMAP]], 
 - [CV Mgt Meeting Folder](https://drive.google.com/drive/folders/1M89W2MQgTDPL8t90l_z2mo2km7-ozvuo) 
+- [[RD OKRs]], 
 
 
 pick adn roo

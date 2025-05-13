@@ -1,4 +1,4 @@
-.[[MGR]]. (see [[RR MGR]])
+.[[MGR]]. (see [[RR MGR]]) [[MGT]] 
   , [[Employee Notes]], [[Hire]], [[MGR Contracts]], [[MGR Docs]], [[MGR Log]], [[MgrTracking]]
   , [[MyMgr]], [[My Staff]],
   .

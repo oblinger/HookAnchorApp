@@ -1,10 +1,9 @@
+- Sirius
+- beta testing
+- - **(415) 776-6717**. Marrakech. 7pm Friday
 
 
 - adam brown reponse 
-- matias
 - try lovable
 
 - Car title!
-- 60th b-day
-- Talk w/ Google about 3 month extension
-- Lean on James

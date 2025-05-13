@@ -1,8 +1,11 @@
+
+
+
 ### 2025-05-08  Trying to get a groove on
 - The number of quality work hours per day is not very good. My motivation and organization could be better.
 - My ability to deliver goals that are not immediately required externally is not great.  I think I am too ambitious, and too demoralized.
 - I need to put attention to my emotions, my processes, and targets.
-- 
+
 
 ## 2024-Q1
 #### Now

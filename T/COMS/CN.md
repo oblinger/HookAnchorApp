@@ -8,7 +8,7 @@
 - [[@Rodrigo Braz]]	- 
 - [[@Uri Weiss]]		- Was @ Google, Mentors Leaders
 - [[@Luis Arrellano]]	- Show: [[RES]], [Pyramid](spot://respyramid), Very good at framing story
-- [[@David Hayden]] 
+- [[@David Hayden]] 	- 
 
 - G-Cafe: [[@Ashwin Ram]],  [[@Dan Kaufman]],  [[@Andrew Tomkins]]
 - [[@Dan Kaufman]] - Is this [article](https://pravse.medium.com/the-maze-is-in-the-mouse-980c57cfd61a) the real culture at Google.  

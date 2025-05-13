@@ -1,17 +1,8 @@
 
+[[ABIO]]  [[ABIO Log]] 
+- [ ] [[ABIO Log#2025-05-12 Brainstorm behavior generators]] 
 
 
-### Fast Path
-
-- [ ] Code:  	Reactions Web Generator
-- [ ] Code:  	Behavior Generators:  (1) Energy Transport,  (2) Anabolic Pathways,  (3) Cantbolic Pathways
-- [ ] Code:	Simulators (just runs reactions and scripts)
-- [ ] Code:	World Spec Generator.  Hard-coded generator of system behavioral targets
-- [ ] Code:	Full world weaver, uses inputs above and simulator to produce full world system, and edit system until it behaves as expected.
-- [ ] Code:	Disease Generator.  Systematically damages working behaviors io induce pathologies
-- [ ] Code:	Task Generator with variable complexity
-- [ ] Experiment #1:  Compare 10 Chat systems' ability to model production rates give changes of inputs
-- [ ] Experiment #2:  Cure a disease.  Measure sthe system's performance at adjusting diseased systems to correct them.
 
 
 

@@ -1,8 +1,8 @@
 .[[Meta]].
   TOP:	[[Dir]], [[Meta Meta]], [[Meta List]], [[Meta Proj]], [[Meta Set]],
-  AND:	[[Meta Flow]], [[Meta Group]], 
+  AND:	[[Meta Flow]], [[Meta Group]],
   LOG:	[[Meta Log]], [[Meta Journaling]],
-  PLAN:	[[Meta Plan]], [[Meta Coms]], 
+  PLAN:	[[Meta Plan]], [[Meta Coms]],
   ...	, [[Meta Meta Conept]], [[Meta Org -old-page-]]
   , , , ,
   , [[Meta KMR]], [[Meta Productivity]], [[Meta Self]], [[Meta Sys]], [[Meta Work]],
@@ -10,7 +10,8 @@
   , [[Meta List Codes]], [[Meta Time Codes]],
    DELS: [[Meta Sys]], [[Meta KMR]], [[Meta Self]], [[Meta Work]], [[Meta Productivity]],
    -
-  , [[EV Log]], 
-  , [[Meta - Facebook]], 
+  , [[EV Log]],
+  , [[Meta - Facebook]],
+  , [[Journaling]], 
   DELS: [[Base]], [[meta Tasks]], [[Roots]],[[Meta - Facebook]],[[Base]], [[meta Tasks]], [[Roots]],
 

@@ -1,4 +1,4 @@
-. [[S.T.A.R.]], [[RES]], [[RES War]],
+. [[S.T.A.R.]], [[RES]], [[RES War]], [[RES War AI]]. 
 
 Anchor Stories: A time when you:  (a) created value,  (b) solved a messy problem,  (c) were asked to lead
 # __
@@ -29,6 +29,7 @@ My sweet-spot is bridging world-leading R&D into rapid productization.
 # STORIES: KEY TOPICS
 ## = TURN AROUND !!!
 - [[RES Star#SPORTS VISIO - Turn Around]]
+- [[RES Star#Aeolus Turn Around]] 
 - Aeolus??  Key algorithms (motion planning; object reco) not working 70 days from CES.
 
 
@@ -40,9 +41,9 @@ My sweet-spot is bridging world-leading R&D into rapid productization.
 - PREEMPT:  Good and sensing risk.
 - LEARNED SOME TOOLS:
 	- DELAY -
-	- PIECEMEAL - Build the general solution in stages
+	- PIECEMEAL - Build the general solution in stages.  Nearly every project.  SV Minutes, Court Homography, Halos, DAT.
 	- LOW-HIGH - Explicitly hack parts of the solution w/ throw away parts
-	- TIME BOX - 
+	- TIME BOX - Deliver "best result" / POC in a very short window
 
 #### DAT FRAMEWORK
 - Delayed -
@@ -62,22 +63,22 @@ My sweet-spot is bridging world-leading R&D into rapid productization.
 - Pietro Firing
 - Hack week: asked, call-to-carpet... failed to pull Maxim.  Caved in, then led by example
 
-### SCATTERED SCOPING (CONFLICTS) 
+### SCOPING (CONFLICTS) 
 
 S:	Unrealistic scope & firm belief that a 'real' executor could do it.  (both Alex & Jason)
 T: Do it
 A: ShipDateBasedOrdering, Moth-Balling, Product Matrix, 1Pager
 R: Org shipped product & moved from $0 to $800K ARR
 
-#### Over Scoping --> Ship Date Ordering
-- Startups need to do more with less and fast -- still CEO over tasking is counter productive.
+#### Over Scoping --> SHIP DATE ORDERING
+- Startups need to do more with less and faster - still, CEO over-tasking is counterproductive.
 	- ==> #1 - Agreed to 'ship date' ordering, then built schedules based on that evolving ordering.
 
-#### OVER SCOPING --> "Mothball" Descoping
-- OVER SCOPING - Showed number of implicit deliverables and maintained product was too high for headcount.
-- "MOTHBALLING" ==> #2 - Got multiple efforts mothballed so we could focus on our mission critical deployments.
+#### Over scoping --> "MOTHBALL" DESCOPING
+- OVER SCOPING - Showed several implicit deliverables, and the product was too high for the headcount.
+- "MOTHBALLING" ==> #2 - Got multiple efforts mothballed so we could focus on our mission-critical deployments.
 
-#### SHOOT FROM THE HIP TASKING --> Product Matrix & Spec driven responses
+#### Shoot from the hip tasking --> PRODUCT MATRIX & SPEC-DRIVEN RESPONSES
 ==> **PRODUCT MATRIX** - Developed product matrix with 'shirt size' estimates of effort, risk, and impact
 
 
@@ -122,16 +123,22 @@ R:	Delivered into CES, raised $16M
 
 ## = PRODUCT DELIVERY
 
-### PRODUCT DELIVERY - $3B - Largest Scale -  >$3B at AF - Largest scale deployments
+### PRODUCT DELIVERY:   >$3B at AF   (biggest)
+Largest scale deployments
 S: Sunpower wanted to create a residential business from scratch.
 T:	Deliver omnibus solution
 A:	Built-in QA, what is not getting delivered, quarter-by-quarter deliverables.
 R:	The largest driver of new business across all business units for a decacorn.
 
-### PRODUCT DELIVERY - Advanced Products - Dexterous Robot; Full-AI Solar Planner; CV BB stats
-### PRODUCT DELIVERY - In The Weeds Execution - SportVisio BB - BB Stats & highlights
+### PRODUCT DELIVERY: (adv) Dexterous Robot; Solar Planner; CV BB stats
+### PRODUCT DELIVERY: (execution) SportVisio BB - BB Stats & highlights
 
 ## LEADERSHIP ???
+
+### SV Roadmap - Pivot AI & team
+
+
+
 
 # === PEOPLE MANAGEMENT ===
 ## = MANAGEMENT STYLE/PHILOSOPHY
@@ -760,6 +767,7 @@ Directed 20+ person-year greenfield-to-operations of a infrastructure omnibus sy
 
 ## AEOLUS
 
+### Summary
 Tapped to deliver a two armed eldercare assistive robot.
 - Built a 60+ engineer org from scratch with over 40 PhDs across 8 robotics-related disciplines.
 - Led 13-month custom HW/SW build for a dexterous robot from scratch.
@@ -768,7 +776,8 @@ Tapped to deliver a two armed eldercare assistive robot.
 - Identified, negotiated, and awarded a $2M collaboration with University of Vienna.
 => hired two world class PhDs in robotic grasping & collaborated top 10 lab for robotic grasping.
 
-#### star - Aeolus Bang Start
+### Aeolus Turn Around
+Bang Start
 - S: Cash rich, Short timeline, Unrealistic investors
 - T: Build team, Create Aeolus Robot OS, Deliver CES Prototype
 - A: Build 2 tiered mgt structure, AROS framework, and CES prototype
@@ -777,6 +786,7 @@ Tapped to deliver a two armed eldercare assistive robot.
 - ==> Raised over $16M ???
 - ==> Debuted autonomous two armed robot performing open-ended household tasks at CES
 
+### Notes
 JARED
 Tapped as employee #1—following Martian Robotics acquisition—to reimagine the IP as an eldercare robot, ultimately deployed through an exclusive relationship with a ¥2,950B Japanese conglomerate with 1,920 rooms.
 

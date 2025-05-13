@@ -1,5 +1,6 @@
 - [Bugs](https://software-engineering-team.atlassian.net/jira/dashboards/10022) 
 
+- [Bug Board Page](spot://Bug~Board~Page) 
 - [[Bug Board Webpage]] - broken
 - [[Bug Actual List Webpage]] - broken
 

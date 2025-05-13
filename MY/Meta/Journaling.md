@@ -1,3 +1,5 @@
+
+
 - [[Daily]] 
 
 - [15 ideas to make it unstoppable](https://medium.com/@benjaminhardy/15-ways-to-use-your-journal-to-become-absolutely-unstoppable-137a6b09bd29): 

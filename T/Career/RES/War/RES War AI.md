@@ -52,7 +52,6 @@ MADE-MISS
 ## Analytics Fire
 
 ### 2019-2021 Instant Design Story
-
 1. Non-ML-based Roof Edge extraction
 2. Hand-built energy-based edge cleanup
 3. NN-based obstruction detection

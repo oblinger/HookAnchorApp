@@ -1,15 +1,9 @@
 
-- buy wok
+
 - Filepe
-- Batch
 - Quarterly budget
-- Pre-mortem
 
 
-- Oven fix
-- alarm
-
-- testing roof
 
 
 

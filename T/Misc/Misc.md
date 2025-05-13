@@ -2,7 +2,7 @@
   , [[Babysitting]], [[Bible]], [[Biking]], [[Camping Lst]], [[Christmas Cards]], [[Contacts Notes]]
   , [[Cookie Clicker]], [[Craps]], [[Daily]], , [[Effective Altruism]], [[FasTrak]]
   , [[Gift]], [[Gifts]], [[Glossary]], [[Google Dev]], [[Gym]], [[hiking]], [[HIST]], [[Hold]]
-  , [[Holidays]], [[Hotels]], [[House]], [[JOB Compensation]], [[Journaling]], [[Karaoke]]
+  , [[Holidays]], [[Hotels]], [[House]], [[JOB Compensation]], , [[Karaoke]]
   , [[key code]], , [[List]], [[meditation]], [[napa]], [[Nomad]], [[Old]]
   , [[PdfInfo]], [[Player FM]], [[Presentations]], [[Publications]], [[Public Notes]]
   , [[Record Notes]], [[Rental]], [[RJ45]], [[Rssfeeds]], [[SciFi]], [[Search]], [[Secure]], [[SF]]
@@ -13,9 +13,9 @@
   , ,
   , , ,
   DELS: ,,,
-  , [[Cocktails]], [[Enneagram Test]], [[Test88]], 
+  , [[Cocktails]], [[Enneagram Test]], [[Test88]],
   DELS: ,,,[[Test88]], [[Cocktails]], [[Enneagram Test]],
-  DELS: [[Disks]],[[SYS Disks]],[K Folder](spot://kfolder),[[Test88]], [[Cocktails]], [[Enneagram Test]],[[Disks]], [[Hackers]], [[Disks]], [[SYS Disks]], [K Folder](spot://kfolder), 
+  DELS: [[Disks]],[[SYS Disks]],[K Folder](spot://kfolder),[[Test88]], [[Cocktails]], [[Enneagram Test]],[[Disks]], [[Hackers]], [[Disks]], [[SYS Disks]], [K Folder](spot://kfolder),[[Journaling]], 
 
 
 

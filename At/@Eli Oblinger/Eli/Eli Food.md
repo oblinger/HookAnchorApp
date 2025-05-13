@@ -1,22 +1,39 @@
 
 
 ## **MAIN** 
+- TOFU:
+	- Marinated Ground Chicken, Black Bean Paste
+- FISH:
+	- Salmon, Bass, Cod
 - SAUTE:
 	- CHICKEN & Peas-Corn-Carrots-Mushrooms, 
 	- CHICKEN & Mushrooms
-- CARBS: Pasta, Pancakes, RiceBalls, 
+	- RICE: Fried Rice
+- CARBS: Pasta, 
 	- PASTA: Ground-beef&Eggs, Marinara, VeggieRisoto
 	- RICE: Seaweed sandwich, 
-	- GLASS NOODLE &      Scallops, 
-- FROZN: Dumplings, Meatballs, Pizza, 
+	- GLASS NOODLE: Scallops, Ground Chicken
+- FROZN: Meatballs, 
 - MEATS: Chicken(sauteed, panfry), Steak, Salmon, Meatloaf??
 	- PORK: Short Ribs
 	- SALMON & Tofu
 - EGG: Ground Beef
-
+- NO-PREP:
+	- Pizza, 
+- OCCASIONAL:
+	- RiceBalls, 
 
 ## SIDE
-- Cauliflower & 
+- Cauliflower, Asparagus, Sweet Potatoes
+- Edamame, Corn, Peas, 
+
+# LUNCH / BREAKFAST / SNACK
+- NO-PREP:
+	- Dumplings, 
+	- Chicken Salad
+- Pancakes, 
+
+
 
 
 

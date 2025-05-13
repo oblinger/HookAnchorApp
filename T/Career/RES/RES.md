@@ -4,10 +4,12 @@
   FACTS:	[[RES Src Info]], [[RES Numbers]], [[RES Patents]], [[RES Papers]],
   OTHER:	 [[RES War AI]], [[RES References]],
   DIRS:		[[RES Job History]], [[RES Examples]], [[RES Versions]],
-  CLOSET:	[[Resume]], 
+  CLOSET:	[[Resume]],
   .
 - [[RES Instant Design Story]],
 - [[2024-04-01 Resume Rewrite]],
+  , [[WarStories]], 
+  DELS: [[WarStories]],
 
 # LINKED IN PARTS
 - [[z2 - Linked In Module]] - 

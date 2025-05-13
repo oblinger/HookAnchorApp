@@ -5,6 +5,9 @@ SalesForce, Nvidia,
 
 # LOG
 
+### 2025-05-12  Fatty Liver assessment (see folder)
+
+
 ### 2025-04-18  Data from 23 and me 
 
 [[Data 23andme]] 

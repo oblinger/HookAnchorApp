@@ -1,4 +1,8 @@
 
+### 2025-05-12  Need to center on actionable short-term outcomes.  Need to upgrade my optimism.  Need to limit targets.
+
+Trying to implement [[SAVERS]] habit
+
 ### 2025-05-05  .
 
 ### 2025-04-22  .

@@ -1,10 +1,11 @@
 .[[SEEK]].
-  [[SEEK Postings]],
+  [[SEEK Postings]], ,
   [[SEEK List]],
   [[SEEK Search Terms]],
   ,
-  , [[SEEK Cover Letter Terms]], 
-  DELS: [[SEEK Cover Letter Terms]],
+  , [[SEEK Cover Letter Terms]],
+  , [[SEEK Interviews]], 
+  DELS: [[SEEK Cover Letter Terms]],[[SEEK Interviews]],
 
   DELS: [[SEEK List]], [[SEEK Search Terms]], 
 
