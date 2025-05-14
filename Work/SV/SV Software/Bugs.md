@@ -1,12 +1,9 @@
 - [Bugs](https://software-engineering-team.atlassian.net/jira/dashboards/10022) 
 
-- [Bug Board Page](spot://Bug~Board~Page) 
-- [[Bug Board Webpage]] - broken
-- [[Bug Actual List Webpage]] - broken
+- [Bug Board](spot://Bug~Board) 
+- https://software-engineering-team.atlassian.net/jira/dashboards/10022
 
-TODO
-- Jasu boards
-- Jack lower numbers
+
 
 
 

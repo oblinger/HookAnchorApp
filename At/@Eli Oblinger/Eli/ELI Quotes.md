@@ -1,4 +1,11 @@
 
+### 2025-05-13  When I grow up
+
+"I want to be a Scientist when I grow up"
+
+Qingling asked, "What kind of scientist?"
+
+"I want to be a physicist." 
 
 ### 2025-04-25  Texting w/ Mom when she had covid
 

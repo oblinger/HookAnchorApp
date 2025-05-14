@@ -1,7 +1,7 @@
 #top 
 
 .[[SV]].
-  , [[@SV]], [Bug Actual List Page](spot://bugactuallistpage), [Bug Board Page](spot://bugboardpage)
+  , [[@SV]], , 
   ,  [[Circle]], [[CV]], ,
   , [[INV]], , [Jira Me Page](spot://jiramepage), [[Meta SV]],
   [[Mgt]]:
@@ -14,7 +14,9 @@
   LOGS: 	[[WW]],  [[QQ]], [SV Tasks](spot://svtasks), [SV Log Page](spot://svlogpage), [[SV Archive]],
   OTHER:	[[SV Wings]], [[SV Basketball Info]],
   , [Game Docs](spot://gamedocs),
-  , [[SV Proj]], 
+  , [[SV Proj]],
+  , [Bug Board](spot://bugboard),
+  DELS: [Bug Actual List Page](spot://bugactuallistpage), [Bug Board Page](spot://bugboardpage), 
 
 [[SV Proj]] 
 

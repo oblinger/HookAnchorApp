@@ -2,6 +2,66 @@
 
 # Log
 
+### 2025-05-13  KEGG Loader
+
+yes, please provide a caching wrapper that I can re-run to retry. formulate it as a module with a main that I can run from command line to loads all required data printing basic progress. re-running should restart from where it left off.
+
+### 2025-05-13  KEGG 3
+
+Update Instructions:  
+Please use these updated classes to produce the BioMolecule/BioReaction DAG from local KEGG data, then scan that DAG to fill in bdepth and energy terms for molecules and reactions.  The idea is to produce a huge DAG over all KEGG data.
+Please output code as a single module file
+
+### 2025-05-13  KEGG 2
+
+please use these updated classes in order to produce the BioMolecule/BioReaction DAG from local KEGG data, then scan that DAG to fill in bdepth and energy terms for molecules and reactions.  The idea is to produce a very large DAG over all KEGG data.
+
+```
+
+
+```
+### 2025-05-13  KEGG Generation
+
+Produce the Python code that we can use to parse the KEGG database into a DAG of BioMolecule and BioReaction classes, as shown below.  The write a function that traverses this DAG to fill in the bdepth of all BioMolecules.  Together we will download the data and run this code.
+
+```Python
+
+class BioMolecule(BaseModel):  
+    english_name: str  
+    chemical_name: str  
+    bdepth: int  
+    produced_by: List['BioReaction']  
+    consumed_by: List['BioReaction']  
+  
+  
+"""BDEPTH  
+  
+Biosynthetic Depth (bdepth) is a measure of the complexity of a biomolecule as measured  
+by its shortest construction pathway from the organism's bio inputs.  
+  
+- All bio inputs have a bdepth of 0.  These include: Essential Nutrients, Conditional  
+  Nutrients, Exogenous Compounds (signaling molecules, exenobiotics, food bioactives,  microbial/external metabolites, opportunistic molecular cues)- Each BioReaction has a bdepth that is 1 greater than the max bdepth of all of its   
+  reactants.  
+- The bdepth for all non-input BioMolecules is minimum bdepth of all BioReactions  
+  that produce this BioMolecule."""  
+  
+
+class BioReaction(BaseModel):  
+    """A chemical reaction is a process that  
+        - consumes molecular input 'reactants' in order to        - produce the resultant molecular output 'products'.        - If multiple instances of a reactant or product are used/produced they are simply          listed repeatedly in the reactant / product lists.        - 'activation_energy' indicates the energy required to trigger the reaction        - 'net_energy' indicates the net energy produce or consumed by the reaction        - 'effectors' are not consumed in the reaction but affect its reaction rate.lower required activation energy          These include: Catalysts, Enzymes, Co-Enzymes a kind of Co-Factor,          Activators, Inhibitors, Alosteric Effectors, Co-Factors, Co-Enzyme,        - 'reaction_name' is the name typically used to refer to the reaction.        - Reactions that do not have an energy_source are typically exergonic while          those with a source are energonic.    """    reaction_name: str  
+    reactants: List[BioMolecule]        # All molecular inputs for a reaction  
+    products: List[BioMolecule]         # All molecular outputs for a reaction  
+    # solvent: List[BioMolecule]    # primary_reactants: List[BioMolecule]    # primary_products: List[BioMolecule]    # context: Temperature range, Ph range    effector: List[BioMolecule]         #  
+    activation_energy: Optional[float]  
+    delta_g: Optional[float]            # Expected negative change in gibbs free energy, Kj/mol  
+    energy_source: Optional['BioReaction']  
+    reaction_rate: Optional[ReactionRate]
+
+```
+
+
+
+
 ### 2025-05-12  Brainstorm behavior generators
 
 **Goal**:  build hard-structured behavior generators using gen-AI
