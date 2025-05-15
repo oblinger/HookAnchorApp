@@ -1,4 +1,6 @@
 
+[[RES Proof Points\|Thu May 9  2024 ]]  	[[RES Proof Points#Shaped National AI Roadmaps]]  
+[[RES Proof Points\|Thu May 9  2024 ]]  	[[RES Proof Points#.]]  
 [[RES Proof Points\|Thu May 9  2024 ]]  	[[RES Proof Points#Served 5 advisory/board roles]]  
 [[RES Proof Points\|Thu May 9  2024 ]]  	[[RES Proof Points#.]]  
 [[RES Source Info\|Thu May 9  2024 ]]  	[[RES Source Info#RESUME SOURCE INFO]]  
