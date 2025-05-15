@@ -1,10 +1,12 @@
 
 .**Q2**.
-  PATENT. (put note in to Mgt channel)
+  [**BUG**](): Beta, Board, RegTst0, Factory, 
+  **PATENT**: (put note in to Mgt channel)
+  **CAMERA**: LOE Plan, Deconvolve, PanPoc, Localization, [V1](https://www.notion.so/sportsvisio/AI-CAMERA-v1-1e0719d6f2bd80a3abb8eac297561b07?pvs=4) 
   [DT](spot://dt): Build&Test clean dataset
   GCP plan
   End-to-End Shot Charts 
-  [AI Camera V1](https://www.notion.so/sportsvisio/AI-CAMERA-v1-1e0719d6f2bd80a3abb8eac297561b07?pvs=4) - Videos, Brainstorm
+  
   Speedups
   .
   DAT push

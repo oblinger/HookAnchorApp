@@ -1,4 +1,4 @@
-.[[EOC]].
+.[[EOC]].  [[@Github]] 
   [[EOCA]]:	Agenda
   [[EOCB]]:	Books
   :	Ideas
