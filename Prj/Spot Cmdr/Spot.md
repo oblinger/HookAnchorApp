@@ -29,7 +29,7 @@ sss- spot: when folder is missing either delete command, or just change the grou
 
 
 
-.[[Spot]].
-  , [[SP]], 
+.[[Spot]].   [Spot Folder](spot://SPOT~Folder) 
+  , [[SP]], [[Spot Cmdr]] 
 
 

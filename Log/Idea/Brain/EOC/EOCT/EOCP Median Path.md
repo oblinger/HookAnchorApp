@@ -1,6 +1,18 @@
 
 
 
+
+TECHNICAL GAP
+- Current LLM tech performs learning at training time.  It does not have learning that corresponds to hippocampal-cortical transfer
+- Ability to maintain structured reasoning over extended periods (this may devolve into short term learning since it seems humans use short term learning to manage extended reasoning context)
+
+
+STEPS
+- HIPPO-CORTICAL LEARNING - Hippocampal-Cortical like learning
+- EXTENDED CONTEXT INFERENCE:  Extended context inference
+- 
+
+
 ## Summary
 
 - [[EOCI]] 
