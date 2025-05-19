@@ -52,7 +52,7 @@
             [[MED Log]]: 
         [[COMS]]: 
             [[COM Msg]]: 
-    [[SYS]]: [[Hack]],	[[SYS Misc]],	[[OBS]],	[[Closet]],	[[SYS Hacks]],	[[Spot]],	
+    [[SYS]]: [[Hack]],	[[SYS Misc]],	[[OBS]],	[[Closet]],	[[SYS Hacks]],	
         [[KM]]: [[Hook System]],	
         [[MAC]]: [[MAC Apps]],	
     [[work]]: 
@@ -71,8 +71,8 @@
         [[Meta]]: 
         [[Pln]]: [[Habit]],	[[Mission]],	[[Productivity]],	
             [[SCRatch]]: 
-    [[Prj]]: [[2021-04 FindDayCare]],	[[2022-05 Enxt]],	[[2022-03 BeFAANG]],	
-        [[2022-03 BeVC]],	
+    [[Prj]]: [[Spot Cmdr]],	[[2021-04 FindDayCare]],	[[2022-05 Enxt]],	
+        [[2022-03 BeFAANG]],	[[2022-03 BeVC]],	
         [[ABio]]: [[Measuring Intelligence]],	
         [[PP]]: [[2022-01-00 Nanny]],	
         [[UF]]: [[ufPublish]],	

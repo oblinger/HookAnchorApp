@@ -1,4 +1,21 @@
 
+### 2025-05-16  Yahin's update
+
+You are a recruiter, career counselor and certified coach with extensive experience working with and successfully placing data scientists and data analysts into well fitting positions. 
+
+Please craft a cover letter < 400 words for the attached job description based on my experience (see attached resume) using the following structure:
+
+(1) Start with a compelling hook that shows how my background is relevant to the current position.  Prioritize unorthodox, lesser known hook formulas and feel free to ask me any questions to identify the best hook.  
+
+(2) Structure the rest of the cover letter by addressing the top 2 to 3 pain points described while making a case for the top 3 competencies the hiring manager is interested in using the attached resume. Feel free to ask me any questions to clarify details about my experience to support the case you may want to make. Don't force 3 pain points if my experience cannot make a strong case (or have anything interesting to say) for any particular pain point. 
+
+(3) Please use bullets and bolding to show the pain points clearly so that recruiters and hiring managers skimming quickly can see the structure and content of the message clearly. Use this lead: My experience addresses several challenges outlined in your job description:
+
+(4) Make sure to clearly indicate the job I am applying for and any identification number
+
+(5) Where possible, incorporate details about the company, emphasising its mission or unique aspects that align with my values. 
+
+Please use job-specific terminology from the job description as much as possible and keep the tone professional and  confident yet humble--focus on contributing rather than asserting. Avoid contractions and exaggerated language (eg. how my background aligns "perfectly" with a job description or how my experience is "precisely" what the company is looking for)--a more measured tone is more credible more closely matches my voice.
 
 ### 2025-04-02  Yashin's update
 

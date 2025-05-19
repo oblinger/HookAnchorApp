@@ -1,3 +1,6 @@
+.[[Spot Cmdr]].
+  , [[SP]], [[Spot]], 
+
 
 - [SPOT Folder](spot://SPOT~Folder) 
 

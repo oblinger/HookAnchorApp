@@ -218,6 +218,13 @@ DISCUSS
 
 # LOG
 
+### 2025-05-16  Brian's equity
+
+- $130-$150/hr mark - what he got before.
+- $200/hr - Mike Mathew down to $150/hr.
+- Brian is currently billing out at $135/hr.
+- Jason offered $100/hr
+
 ### 2025-03-28  Sony Response
 
 

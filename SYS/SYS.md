@@ -18,10 +18,10 @@ My KBD:		[[KBD Shortcuts]], [[KBD Obsidian Keys]], [[KBD Global Keys]], [[KBD No
   , ,
   , , , ,
   DELS: ,,
-  , [[Closet]], , [[KM]], [[MAC]], [[OBS]], [[Spot]], [[SYS Android]], [[SYS Disks]]
+  , [[Closet]], , [[KM]], [[MAC]], [[OBS]], , [[SYS Android]], [[SYS Disks]]
   , [[SYS Github Webpage]], [[SYS Hacks]],
-  DELS: ,,[[MAC]], [[OBS]], [[SYS Android]], [[SYS Disks]], [[SYS Github Webpage]], [[SYS Hacks]], [[Closet]], [[KM]], [[Spot]], ,
-  , [[Hack]], 
-  DELS: [[Facet]],[[SYS/Hack/Hack]],[[MAC]], [[OBS]], [[SYS Android]], [[SYS Disks]], [[SYS Github Webpage]], [[SYS Hacks]], [[Closet]], [[KM]], [[Spot]], [[HACK]],[[My Android]], [[My Github Webpage]], [[My Hacks]], [[Facet]], [[SYS/Hack/Hack]],[[HACK]], [[HACK]],
+  DELS: ,,[[MAC]], [[OBS]], [[SYS Android]], [[SYS Disks]], [[SYS Github Webpage]], [[SYS Hacks]], [[Closet]], [[KM]], , ,
+  , [[Hack]],
+  DELS: [[Facet]],[[SYS/Hack/Hack]],[[MAC]], [[OBS]], [[SYS Android]], [[SYS Disks]], [[SYS Github Webpage]], [[SYS Hacks]], [[Closet]], [[KM]], [[Spot]], [[HACK]],[[My Android]], [[My Github Webpage]], [[My Hacks]], [[Facet]], [[SYS/Hack/Hack]],[[HACK]], [[HACK]],[[Spot]], [[Spot]], 
 
 - [[Spot]] 

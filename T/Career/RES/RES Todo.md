@@ -1,4 +1,11 @@
 
+- [ ] [[RES Linked In]]: 
+	- [ ] Update About 
+	- [ ] Post SV stuff
+	- [ ] Update Sports Visio section
+	- [ ] Consider first 
+	- [ ] Remove Dates from education
+
 - [ ] .
 - [ ] [[Res Star]] [[Res War]] - key entries need to be completed
 - [ ] [[Res War AI]] - Add details about hands-on AI

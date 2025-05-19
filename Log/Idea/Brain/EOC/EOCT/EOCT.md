@@ -1,6 +1,6 @@
 .[[EOCT]].
   [[EOCT Argument Short]], [[EOCT Last Best Hope]], [[EOCT Subjective Aspects of Consciousness]],
-  [[EOCT Argument]], [[EOCT Plausible Paths]],
+  [[EOCT Argument]], ,
   :
   [[EOCT Ways Intelligence Will Be Super]],
   ,
@@ -14,9 +14,9 @@
   DELS: , [[EOCP What Happens Now]],, ,[[EOCK Control]], , [[EOCP What Happens Now]], , [[EOCP What Happens Now]],
   , ,
   DELS: , [[EOCP What Happens Now]],, ,[[EOCK Control]], , [[EOCP What Happens Now]], , [[EOCP What Happens Now]],, , , ,
-  , [[EOCP Median Path]], 
+  , [[EOCP Median Path]],
   DELS: [[EOCP Median Path]], [[EOCP What Happens Now]],, ,[[EOCK Control]], [[EOCP Median Path]], [[EOCP What Happens Now]], [[EOCP Median Path]], [[EOCP What Happens Now]],, , , ,[[EOCP Median Path]], [[EOCP Median Path]], [[EOCP Median Path]], [[EOCP Median Path]],
-  DELS: [[EOCP Median Path]], [[EOCP What Happens Now]],[[EOCT Prime Path]], [[EOCT What Happens Now]],[[EOCK Control]], [[EOCP Median Path]], [[EOCP What Happens Now]], [[EOCP Median Path]], [[EOCP What Happens Now]],[[EOCT Prime Path]], [[EOCT What Happens Now]], [[EOCT Prime Path]], [[EOCT What Happens Now]],[[EOCP Median Path]], [[EOCP Median Path]], [[EOCP Median Path]], [[EOCP Median Path]],[[EOCP Prime Path]], [[EOCT Prime Path]], [[EOCT What Happens Now]], [[EOCT Prime Path]], [[EOCT What Happens Now]], [[EOCT Prime Path]], [[EOCT What Happens Now]], 
+  DELS: [[EOCP Median Path]], [[EOCP What Happens Now]],[[EOCT Prime Path]], [[EOCT What Happens Now]],[[EOCK Control]], [[EOCP Median Path]], [[EOCP What Happens Now]], [[EOCP Median Path]], [[EOCP What Happens Now]],[[EOCT Prime Path]], [[EOCT What Happens Now]], [[EOCT Prime Path]], [[EOCT What Happens Now]],[[EOCP Median Path]], [[EOCP Median Path]], [[EOCP Median Path]], [[EOCP Median Path]],[[EOCP Prime Path]], [[EOCT Prime Path]], [[EOCT What Happens Now]], [[EOCT Prime Path]], [[EOCT What Happens Now]], [[EOCT Prime Path]], [[EOCT What Happens Now]],[[EOCT Plausible Paths]], 
 
 
 
