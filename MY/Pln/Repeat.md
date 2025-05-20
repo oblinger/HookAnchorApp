@@ -10,6 +10,7 @@
 | **PLAN**      | Week plan in Top                                                                                                                         |
 | **IN2**       | Quick scrub                                                                                                                              |
 |               |                                                                                                                                          |
+|               |                                                                                                                                          |
 
 
 | MONTHLY     |                                                      |

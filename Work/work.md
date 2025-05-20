@@ -1,11 +1,11 @@
 
 .**Q2**.
-  [**BUG**](): Beta, Board, RegTst0, Factory, 
-  **PATENT**: (put note in to Mgt channel)
-  **CAMERA**: LOE Plan, Deconvolve, PanPoc, Localization, [V1](https://www.notion.so/sportsvisio/AI-CAMERA-v1-1e0719d6f2bd80a3abb8eac297561b07?pvs=4) 
-  [DT](spot://dt): Build&Test clean dataset
-  GCP plan
-  End-to-End Shot Charts 
+  [**BUG**](https://software-engineering-team.atlassian.net/jira/dashboards/10022): Beta, RegTst0, Factory, 
+  **PATENT**: (do it)
+  **CAMERA**: LOE Plan,  [V1](https://www.notion.so/sportsvisio/AI-CAMERA-v1-1e0719d6f2bd80a3abb8eac297561b07?pvs=4) 
+  [DT](spot://dt): Shots Data
+  [Schart](https://www.notion.so/sportsvisio/SHOT-CHARTS-END-2-END-1d4719d6f2bd802ca4dfc8b1e0ff1fd5?pvs=4): POC
+  Effort Analysis for BB stats
   
   Speedups
   .
@@ -35,38 +35,6 @@
 
 [[Journaling]] 
 ## .
-- AI processing 
-
-Owners:
-- First usage 
-
-Todos
-- AI-derisking activities
-- SW workflow spec
-
-
-Setup
-- One iPhone with Fish-eye
-	- Check out 2-camera stitching
-- Pan 1/2 w/ active play
-- Zoom in best
-- First customer: Volleyball
-
-
-Features
-- 1080   30fps  (desire moving to 4K)
-- remove fisheye; 
-- Streaming 3-5 min latency
-- before/with annotation
-- pan w/ fixed zoom on V1, Pan & Zoom on V2
-- Centrally controlled camera
-
-
-Performance
-- The percent of time that the action falls out of view:  2-3%   (or annotators correct it)
-- Slow, non-aggressive panning and zooming
-
-
 
 
 

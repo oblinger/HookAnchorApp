@@ -1,3 +1,6 @@
+- Sirius
+- brian compensation
+- patent ready
 - Mery Impersonation
 - mgt channel dates for testing for bugs
 - document for things to try as a beta tester

@@ -1,4 +1,5 @@
 
+### 2025-05-19  This week:  Push self on MIT time; Fun many days; Exercise
 ### 2025-05-12  Need to center on actionable short-term outcomes.  Need to upgrade my optimism.  Need to limit targets.
 
 Trying to implement [[SAVERS]] habit

@@ -15,7 +15,7 @@ Many existing large language model tests are susceptible to training set taint a
 
  <br> 
 
-[Alien Biology Whitepaper](/gitproj/AlienBiology/AlienBiologyWhitepaper.pdf) [Draft]
+[Alien Biology Whitepaper](/projects/AlienBiology/AlienBiologyWhitepaper.pdf) [Draft]
 
 <br>
 
