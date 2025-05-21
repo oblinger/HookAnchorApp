@@ -1,3 +1,4 @@
+- 3x3 planning.
 - Sirius
 - brian compensation
 - patent ready
