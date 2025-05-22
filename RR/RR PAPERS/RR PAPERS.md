@@ -1,4 +1,4 @@
-.[[RR PAPERS]].  [[LRN.]]
+.[[RR PAPERS]].  [[LRN Todo]]
   [[RR DEFINITIONS]],
   [[RR Blog]], 
 

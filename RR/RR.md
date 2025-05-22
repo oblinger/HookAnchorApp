@@ -1,6 +1,6 @@
 n:: Research Reference pages
 
-.[[RR]].  [[LRN.]] 
+.[[RR]].  [[LRN Todo]] 
   AREAS:	[[AI]], [[ML]], , [[RR Philosophy]], [[RR Leet]],
   TOPICS:	[[RR Med]], [[RR MGR]],
   [[REF]]:		[[RefMisc]], [[Refs]], [[RR PAPERS]], ,

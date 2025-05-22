@@ -1,20 +1,21 @@
-.[[Lrn]].     [[LRN.]]
-  [[Lrn Mgt]],
-  [[LRN.]], [[LRN ToRead]],
+.[[Lrn]].     [[LRN Todo]]
+  [[LRN Todo]], [[LRN Read]], [[Lrn Mgt]],
 
 
 
 
 ## Rocks - Evergreen @ top
-- ^ \_ S  SPACED REPETITION. (Add shift for review)
-- [[LRN ToRead]] - Read the paper from 'To Read'
+- ^ \ _ S  SPACED REPETITION. (Add shift for review)
+-  # R reading
+- [[LRN Read]] - Read the paper from 'To Read'
 - [Coursera](spot://coursera~1pass) 
 
 - Run System; Train system
-- Code@work.	LeetCoding.
 - DL Specialization: Sequence Models (not yet started)
 - Coursera: IBM PyTorch
 
+LATER
+- Code@work.	LeetCoding.
 
 
 

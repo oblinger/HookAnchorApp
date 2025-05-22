@@ -71,7 +71,7 @@ n:: no prefix.	Dated entries without any typing prefix
 | 2025-02-10 | [[Daily Schedules]]                             | Daily Blocks                                                                                                                      |
 | 2025-02-10 | [[Mgt]]                                         | W                                                                                                                                 |
 | 2025-02-07 | [[@Meta]]                                       | NJ META                                                                                                                           |
-| 2025-02-06 | [[LRN.]]                                        | Other IBM coursera courses                                                                                                        |
+| 2025-02-06 | [[LRN Todo]]                                        | Other IBM coursera courses                                                                                                        |
 | 2025-02-05 | [[TG]]                                          | Idea:  Use Gemini deep-study                                                                                                      |
 | 2025-02-05 | [[TG]]                                          | Nick's homework                                                                                                                   |
 | 2025-02-03 | [[MED Log]]                                     | fix billing issue                                                                                                                 |
