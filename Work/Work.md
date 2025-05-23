@@ -42,6 +42,8 @@
 - Beta Testers
 
 
+https://www.notion.so/sportsvisio/Regression-Testing-1f4719d6f2bd80ddaa0de76008e9f41b?pvs=4
+
 
 
 

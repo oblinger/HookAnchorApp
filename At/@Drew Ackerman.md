@@ -18,9 +18,52 @@ Facebook
 ### 2023-04-29  The 3am Scoot-master-2000
 
 
+LONG NOTE!! When I wake up, I notice that initially, I am sleepy, but after 3 minutes of ruminating, I am wide awake. My system described here is designed to short-circuit this thinking loop right at the front. I have fine-tuned it over a decade.
+
+The key: It can be activated in seconds without looking at a screen and it turns off automatically.
+
 THE SCOOT-MASTER 3AM BRAIN-BLASTER
 
-I am a many-year veteran with specialized sleep-with-me setup...  Thought I would share.
+- I minimize drinking in the last 1.5 hours to reduce the need to pee at night.
+- I have a blue-tooth eye mask that can be powered on via an EXTERNAL button on the forehead:
+  https://www.amazon.com/Bluetooth-Headphones-Relaxing-Playingtime-Blocking/dp/B0DJW2QJDM
+- I have a podcast that is so boring I won't pay very much attention to it:
+  https://www.sleepwithmepodcast.com/
+- I use a dedicated cheap Android tablet, always plugged in and on, so it is already set up each night.
+- I use a podcast player that has the option to play just one podcast and stop playing.
+  (Most can do this, but you need to set the option to stop EACH time you play an episode)
+  Player FM is the only player I found that can be set to stop after each episode.
+  https://player.fm/
+
+BRAIN BLASTER USAGE:
+1. At bedtime, I put on my eye mask that it !!!
+2. I have trained myself the INSTANT I realize I am awake to:  Push the button on my forehead to turn on the headset, then push the left or right button to go to the next episode.  THEN go to pee, or adjust my pillow.  I specifically attend to what the podcaster is saying during the first couple of minutes.
+
+You will be tempted to let your mind wander, but resist this temptation until a couple of minutes listening to the podcaster.  This window is your best chance to get right back to sleep; don't waste it!
+
+This setup keeps me from fiddling with my tablet and looking at a bright screen at 3am to get it working, and it requires ZERO setup each night, so even when I am busy, I always have the brain blaster ready to go at 3am.  It takes work to get all these pieces together, but it has changed my life!
+
+I also have used teachers on insight timer instead of podcasts.  For example:
+- "Seed of Sleep" by Christian
+- "Yuri and the Dragons" by Chrissy Ortner
+- But for these I must set it up each night, and insight timer will only be ready the first time you wake up.
+
+Note: "Sleep With Me" is a truly bizarre podcast. Try it a couple of times before giving up. I keep coming back to it because it has years and years of content, and my brain is best shut off by novel stuff.  I pay $5/month to get rid of ads at the beginning of the show, but the free version is pretty good too.
+
+And best luck in the deep dark night to you!
+
+
+
+
+
+
+
+
+- Focus on what the podcaster is saying a bit
+  
+
+I am a many-year veteran with a specialized sleep-with-me setup...  I thought I would share.
+
 
 I have little trouble falling asleep, but if I wake after several of sleep hours, I can easily waste HOURS trying to get BACK to sleep.
 So this setup ensures a heavy dose of scooter before I even know what hit me, often I am back to sleep in under 5 minutes.

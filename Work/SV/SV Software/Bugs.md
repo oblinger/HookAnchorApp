@@ -3,7 +3,19 @@
 - [Bug Board](spot://Bug~Board) 
 - https://software-engineering-team.atlassian.net/jira/dashboards/10022
 
+- [Historical Bugs List](https://software-engineering-team.atlassian.net/issues/?filter=10160) 
 
+
+TOPICS
+- Look at bugs in your area: were they latent for long, immediately seen regression, or feature bug.
+- Existing Bug Board: James pass.  Dev ask.
+- QA Needs standard set of regression actions.
+- QA documentation of User Stories
+- Becoming
+
+QA Fixes:
+- more time random testing
+- push less often
 
 
 
@@ -33,3 +45,4 @@ One the team is trying everything they can and they cannot find more bugs, then 
 Let me know if our mission and approach is clear, and let me know if you guys see a problem with this, or if we should hit it in a different way.
 
 
+### 2025-05-22  .
