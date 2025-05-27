@@ -1,4 +1,11 @@
-(See Mac How to for setup)
+
+
+
+(See Mac How to for setup on new computer)
+
+
+
+
 # BUILD STEPS
 ## APP SPECIFIC SETUPS
 ### SPOTIFY

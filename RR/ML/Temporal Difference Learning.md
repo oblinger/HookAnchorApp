@@ -32,4 +32,4 @@ _vs._ Monte Carlo has high variance and must see full episodes; DP needs full k
 - **n-Step** -- like Monte Carlo, it looks into the future to accumulate reward, but this just goes partway.
 - **n-Step Sarsa** -- keeps history so next time a state is updated it can update n-chain upto that state too. (I think).
 - **off-policy learning** -- Learn a target policy for optimal behavior while executing a different exploration policy for better exploration.
-- 
+- **tree backup algorithm** -- I think it considers multiple next states from multiple traces for each step rather than learning from a single trace

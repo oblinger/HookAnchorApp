@@ -1,4 +1,5 @@
-.[[Mac]].
+.[[Mac]].  [[DocMac]] 
+  -
   [[Doc]], [[MAC How To]], [[MAC Other HW]], [[MAC Setup]], [[MAC Apps]], [[MAC Apps]], 
   -
   [1Password App](spot://1passwordapp), [1Password for Safari App](spot://1passwordforsafariapp), [Activity Monitor App](spot://activitymonitorapp), [AppOpen App](spot://appopenapp)
