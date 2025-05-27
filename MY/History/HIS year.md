@@ -1,4 +1,7 @@
 
+[[RES Proof Points\|Thu May 9  2024 ]]  	[[RES Proof Points#Delivered 4 products to market]]  
+[[RES Proof Points\|Thu May 9  2024 ]]  	[[RES Proof Points#.]]  
+[[RES Proof Points\|Thu May 9  2024 ]]  	[[RES Proof Points#Commercialized across $2B+ in assets]]  
 [[RES Proof Points\|Thu May 9  2024 ]]  	[[RES Proof Points#.]]  
 [[RES Proof Points\|Thu May 9  2024 ]]  	[[RES Proof Points#Built 5 orgs, up to 60+ employees]]  
 [[RES Proof Points\|Thu May 9  2024 ]]  	[[RES Proof Points#.]]  

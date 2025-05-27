@@ -562,6 +562,40 @@ cat >/Users/oblinger/.emacs
      $ brew install --with-cocoa --srgb emacs
      $ brew services start emacs  # if you want it to launch at login
 
+### xx Finicky
+
+- Install [Finicky](https://github.com/johnste/finicky) (via Homebrew: `brew install --cask finicky`).
+    
+- Set it as your default browser.
+    
+- Create and customize `~/.finicky.js`.
+    
+- Restart Finicky.
+
+
+Example Config Filel
+```
+
+module.exports = {
+    defaultBrowser: "Safari",
+    handlers: [
+        {
+            match: () => true,
+            browser: (url, app) => {
+                if (app.name === "Slack") {
+                    return "Google Chrome";
+                } else if (app.name === "Mail") {
+                    return "Firefox";
+                }
+                return "Safari";
+            }
+        }
+    ]
+};
+```
+
+
+
 ## xx Firefox
 - 1password, AdBlocker Ultimate, Session Sync, Tree Style Tabs
 
