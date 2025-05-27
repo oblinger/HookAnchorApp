@@ -1,6 +1,6 @@
 km copy entries
 - spot --delete not found as a spotlitght command.  Also it does not seem to have any effect
-
+- SPOT: If a page is renamed the rebuild operation fails since 'update_block' fails
 - [ ] email notification comes in before message!
 - [ ] Figure out notifications 
 - [ ] email messages are repeated in archive as you type it.

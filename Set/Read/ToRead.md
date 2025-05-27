@@ -1,6 +1,7 @@
 
 
 ## TO READ. [[book]] 
+- 
 - focusing [Gendlin](https://focusing.org/sixsteps) 
 -  _There is No Antimemetics Division¹_.   from Trevor Klee
 ## Unsorted

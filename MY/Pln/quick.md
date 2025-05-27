@@ -1,3 +1,4 @@
+- MIT: 60th, Adobe, lrn
 - testing stuff
 - 3x3 planning
 - Sirius

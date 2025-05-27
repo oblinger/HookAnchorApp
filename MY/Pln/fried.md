@@ -1,11 +1,11 @@
-- Trying to implement [[SAVERS]] habit (read about it)
 
+- [SAVERS](https://experiencelife.lifetime.life/wp-content/uploads/2021/06/The-Miracle-Morning.pdf) 
 - - [3part intro](https://medium.com/social-science-weekly/the-1-minute-introduction-that-makes-people-remember-you-forever-497cefcfdccc)
 - https://link.alphasignal.ai/0tlXWN
 
 - lm studio (try it out)
 - 
-- SPOT: If a page is renamed the rebuild operation fails since 'update_block' fails
+
 - double click .md   -  https://forum.obsidian.md/t/make-obsidian-a-default-app-for-markdown-files-on-macos/22260?utm_source=chatgpt.com
 - log of changes to contacts.  GPT:  top-contacts, BusyCal
 Try [NotebookLM](https://notebooklm.google.com/?utm_source=website&utm_medium=email&utm_campaign=&utm_content=ai-demand-notebook-llm) today

@@ -1,7 +1,8 @@
 .[[ML]].
-  [[ML Alg]],
+  [[ML Alg]], [[RL]], 
   [[Learning]], [[ML Datasets]], [[ML Eng]], , [[Neural]],
   , [[ML Notation]], [[ML Op Tools]], 
+
   DELS: [[ML Op Tools]],, , ,[[ML Op Tools]], [[ML Op Tools]], [[ML Notation]],
   DELS: [[ML Op Tools]],[[BL]], [[ML Ops]], [[ML Tools]],[[ML Op Tools]], [[ML Op Tools]], [[ML Notation]],[[ARIMA Algorithm]], [[BL]], [[DL]], [[ML Tools]], [[Stat]], [[BL]], [[ML Ops]], [[ML Tools]], 
 

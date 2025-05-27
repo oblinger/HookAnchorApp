@@ -2,7 +2,7 @@
 .**Q2**.
   [**BUG**](https://software-engineering-team.atlassian.net/jira/dashboards/10022): Beta, RegTst0, Factory, 
   [**PATENT**](https://www.notion.so/sportsvisio/PATENTS-3434075a725f4997b57d9aa9bd0b818a?pvs=4): (do it)
-  **CAMERA**: LOE Plan,  [V1](https://www.notion.so/sportsvisio/AI-CAMERA-v1-1e0719d6f2bd80a3abb8eac297561b07?pvs=4) 
+  [**CAMERA**](https://www.notion.so/sportsvisio/AI-Camera-e8e5e2d211604c9cbe81ca19fa11f8cd?pvs=4): LOE Plan,  [V1](https://www.notion.so/sportsvisio/AI-CAMERA-v1-1e0719d6f2bd80a3abb8eac297561b07?pvs=4) 
   [DT](spot://dt): Shots Data
   [Schart](https://www.notion.so/sportsvisio/SHOT-CHARTS-END-2-END-1d4719d6f2bd802ca4dfc8b1e0ff1fd5?pvs=4): POC
   Effort Analysis for BB stats
@@ -35,6 +35,10 @@
 
 [[Journaling]] 
 ## .
+
+Shot Charts
+AI Camera
+BB Stats - 
 
 - Patents
 - 3x3 planning

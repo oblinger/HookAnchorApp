@@ -9,8 +9,6 @@ n:: Books I have read
   - [Atomic Habits](spot://atomichabits), [DYL](spot://dyl), [Getting_Things_Done](spot://gettingthingsdone),
   - [High Output Management](spot://highoutputmanagement), [[F90]], [[MgrPath]],
   - [[Agile Software Development]], [[Fundamentals of Workability Workshop]],
-  - ,
-  DELS: [[BOOK Research]], [[Book To Read]], 
 
 
 

@@ -1,5 +1,9 @@
 .[[Lrn]].     [[LRN Todo]]
-  [[LRN Todo]], [[LRN Read]], [[Lrn Mgt]],
+  , , [[Lrn Mgt]],
+  , , ,
+  , [[LRN Read]], [[LRN Todo]], 
+  DELS: [[LRN Todo]], [[LRN Read]],
+  DELS: [[LRN Todo]], [[LRN Read]],[[LRN.]], [[LRN ToRead]], 
 
 
 

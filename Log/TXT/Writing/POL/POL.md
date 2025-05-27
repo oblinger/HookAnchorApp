@@ -32,6 +32,12 @@ https://www.wsj.com/opinion/harris-is-the-safer-economic-choice-2024-presidentia
 
 # LOG
 
+### 2025-05-23  Both side estimate other side is less moral than they are.  easily shifted
+
+https://erman.substack.com/p/how-the-basic-morality-bias-widens?publication_id=21999&post_id=150078536&triggerShare=true&isFreemail=true&r=37dpw&triedRedirect=true&utm_source=substack&utm_medium=email
+
+
+
 ### 2024-10-04  Conservatives/Liberal outrage/satire
 
 https://www.niemanlab.org/2019/12/why-liberal-satire-and-conservative-outrage-are-both-responses-to-mainstream-media-but-with-very-different-powers/
