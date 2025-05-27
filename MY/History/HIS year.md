@@ -1,4 +1,8 @@
 
+[[ToRead\|Thu May 9  2024 ]]  	[[ToRead#[[Book To Read]]]]  
+[[MGR Meetings\|Thu May 9  2024 ]]  	[[MGR Meetings#L10 - Level-10 Meeting]]  
+[[RES Numbers\|Thu May 9  2024 ]]  	[[RES Numbers#= NUMBERS - "AT A GLANCE"]]  
+[[RES Numbers\|Thu May 9  2024 ]]  	[[RES Numbers#= NUMBERS - JOB EXPERIENCE]]  
 [[RES Proof Points\|Thu May 9  2024 ]]  	[[RES Proof Points#Delivered 4 products to market]]  
 [[RES Proof Points\|Thu May 9  2024 ]]  	[[RES Proof Points#.]]  
 [[RES Proof Points\|Thu May 9  2024 ]]  	[[RES Proof Points#Commercialized across $2B+ in assets]]  

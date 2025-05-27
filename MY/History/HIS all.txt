@@ -1,4 +1,8 @@
 
+[[Temporal Difference Learning\|Tue May 27  2025]]  	[[Temporal Difference Learning#3. Variants. (see [TDS Article](https://towardsdatascience.c]]  
+[[RR Articles\|Tue May 27  2025]]  	[[RR Articles#2025-05-27  [[Introducing n-Step Temporal-Difference Methods]]  
+[[MAC Apps\|Tue May 27  2025]]  	[[MAC Apps#xx Finicky]]  
+[[2025-W22\|Tue May 27  2025]]  	[[2025-W22#W22   2025-05-26   [[2025-W21\\|<<]] [[2025-W23\\|>>]]]]  
 [[POL\|Tue May 27  2025]]  	[[POL#2025-05-23  Both side estimate other side is less moral than]]  
 [[Temporal Difference Learning\|Tue May 27  2025]]  	[[Temporal Difference Learning#1. Core idea]]  
 [[Temporal Difference Learning\|Tue May 27  2025]]  	[[Temporal Difference Learning#2. Advantages]]  
