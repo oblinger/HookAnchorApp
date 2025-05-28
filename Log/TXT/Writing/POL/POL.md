@@ -7,19 +7,6 @@
   , [[Consciousness]], 
 
   DELS: [[Voting]],[[Innovation]],[[Consciousness]], 
-
-  :
-  :
-  :
-  :
-  :
-  :
-  :
-  ,
-  ,
-  , ,
-  , ,
-  , , ,
   DELS: [[POL refs]],[[Politics From Me]], [[POL refs]],[[Immigration]], [[Climate]], [[Palestinians]], [[Race]], [[Socialism]], [[Trump]], [[Election2024]], [[Parties]], [[AI HISTORY]], [[Cultural Progress]], [[Politics From Me]], [[POL refs]], 
 
 

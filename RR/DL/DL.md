@@ -1,9 +1,9 @@
 
-.[[DL]].
-  DL:		[[DL Alg]], , ,
-  [[DLF]]:		, , ,
+.[[DL]].  
+  DL:		[[DL Alg]], [[LRM]], [[LLM]], 
+  [[DLF]]:	
   :	[[NG Notation]],
-  [[DL Topic]]:	[[GenAI]], , [[Self Supervised Learning]], ,
+  [[DL Topic]]:	[[GenAI]], , [[Self Supervised Learning]], 
   PARTS:	[[Attention]], [[Activation Functions]], ,
   AREAS:	,
   DETAILS:	[[Invertable Density Estimation]], [[LoRA]], ,

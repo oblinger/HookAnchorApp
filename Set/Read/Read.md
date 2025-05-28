@@ -4,6 +4,8 @@
 .[[Read]].  [[RR Papers]]   
   [[Book To Read]]:	[[BOOK Suggestions]], [[BOOK Research]],   [[ToRead]], 
   [[Podcasts]]
+  [[Read Capture]] 
+  [[RIL]] 
 
 - Research papers to read
 - [[Book]]

@@ -2,6 +2,30 @@
 
 # LOG
 
+
+### 2025-05-27  Pro-Palestinian Caveats
+
+My aim is to thread the needle between two irreconcilable positions.  The only way to do this is to "piss off" both sides somewhat.  Here I explain why this path forward is still an advancement on both sides, even if it is not what either side might choose for itself:
+
+Pro-Palestinian Caveats:
+
+**NOT FAIR** - Main reaction from pro-Palestinian folks: "Hey, your plan is not fair! Why should Palestinians be asked to make all the compromises upfront with no certainty that it will ultimately lead to freedom?"
+
+I agree with the complaint, but the present path has yielded 70 years of imprisonment, and the next 200 years look to be more of the same.  So you need to ask different questions: (1) Do you have another better path that is politically workable? If not, then (2) is what I am proposing, at least a modest improvement upon Gaza's life today (or even as it was in 2023)?  
+Taking a small step forward is better than no step at all.
+
+Militarily, Israel is in the driver's seat, and there is no political will anywhere ready to challenge this; thus, we MUST satisfy Israel first... or do nothing for a few more generations and hope it fixes itself...
+
+**TWO PHASE** - All paths to Palestinian freedom must go through a two-stage process.  SAFETY - In the first phase, somehow, a large percentage (>70%) of Israeli citizens must come to feel safe that Palestinian self-rule can ensure Israeli safety.  It does not matter if YOU think they would be safe, THEY must believe this.  It will require at least a decade-plus of actively demonstrating the capacity to ensure safety, performed by a ruling group deeply dedicated to Israeli safety.  
+PRESSURE - The second phase will involve pressure both from outside and inside Israel to reward this safety with freedom.  Freedom will be given slowly, especially in the beginning.  History shows that hawk/dove political balance carefully tracks the threat of violence; it will take years for the balance to shift back.  There is little point in adding pressure to Israel now to take actions that will make many feel unsafe.  Even at significant economic cost, they will resist taking any action that THEY believe makes them unsafe.  Safety must come first, period!
+
+**NEVER WORK** - Often, I hear that this will never work.  Israelis will never bend.  Perhaps.  Still, even if true, making life better in Gaza and the West Bank is worth doing, so we can follow this plan towards that lesser goal.  But I also reject this "never" claim.  There has never been a Palestinian gov that could credibly control its population; this requires notable coordination and will.  AND there have been moments when Israel was willing to give much more than it would provide today.  So we should not say "Never," instead we should move towards more safety and more freedom, and see where this takes us.
+
+**PROVING IT** - Don't underestimate the value of simply demonstrating that many/most Palestinians would gladly give safety to Israel in return for true freedom and true prosperity.  This may be obvious to you already, but it is NOT obvious to most Israelis and many around the world today.  PROVING this to be true would remove a prime 'excuse' used to maintain the status quo.
+
+
+
+
 ### 2025-02-25  Newest "Catch-22" version
 
 TODAY’S CATCH-22
