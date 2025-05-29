@@ -1,4 +1,9 @@
 
+[[Palestinians\|Wed May 28  2025]]  	[[Palestinians#2025-05-27  Pro-Palestinian Caveats]]  
+[[Temporal Difference Learning\|Wed May 28  2025]]  	[[Temporal Difference Learning#3. Variants. (see [[2025-05-27 n-Step TD.html]])]]  
+[[RR PAPERS\|Wed May 28  2025]]  	[[RR PAPERS#! 2025-05-14  [DeepSeek-V3: Scaling & HW Architectrues](http]]  
+[[RR PAPERS\|Wed May 28  2025]]  	[[RR PAPERS#!! 2025-05-27  [Constitutional AI](https://arxiv.org/pdf/221]]  
+[[Read Capture\|Wed May 28  2025]]  	[[Read Capture#DOWNLOAD (To Read Locally)]]  
 [[RR Articles\|Tue May 27  2025]]  	[[RR Articles#[[2025-05-27 n-Step TD.html]]   ([[Temporal Difference Learn]]  
 [[Temporal Difference Learning\|Tue May 27  2025]]  	[[Temporal Difference Learning#3. Variants. (see [TDS Article](https://towardsdatascience.c]]  
 [[RR Articles\|Tue May 27  2025]]  	[[RR Articles#2025-05-27  [[Introducing n-Step Temporal-Difference Methods]]  

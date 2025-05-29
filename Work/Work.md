@@ -6,13 +6,25 @@
   [DT](spot://dt): Shots Data
   [Schart](https://www.notion.so/sportsvisio/SHOT-CHARTS-END-2-END-1d4719d6f2bd802ca4dfc8b1e0ff1fd5?pvs=4): POC
   Effort Analysis for BB stats
+  - Halo analysis
   
   Speedups
   .
   DAT push
   [AI Prod Matrix](https://docs.google.com/spreadsheets/d/1iQvOKwS09QcFTqXK1Ko0ydSgwqjXItbCRrkOMZaBj40/edit?gid=0#gid=0) possible products
 
+- % of shots attempts (recall)
+- % of shots attempts (precision)
+- % correct jersey number
 
+Highlight Reel Stats. (per player / per team)
+% shot missing for this player
+% highlights that were from another player
+% made / miss accuracy
+- self determination of our accuracy
+- Assists - Can we detect some assists?
+- Rebounds - Can
+- Steals - 
 
 
 ## PAUSE

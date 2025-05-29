@@ -1,6 +1,8 @@
 .[[DL Topic]].
-  [[DL Theory]], [[Dropout]], [[Overfitting]], [[Regularization]], 
-  [[Inference Time Learning]] 
+  [[DL Theory]], [[Dropout]], [[Overfitting]], [[Regularization]],
+  , [[Inference Time Learning]], 
+
+  DELS: [[Inference Time Learning]], 
 
 
 .[[DL Theory]].

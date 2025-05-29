@@ -1,4 +1,9 @@
 
+[[Phone-old-\|Sat Apr 12  2025]]  	[[Phone-old-#201--00-00  Garage door project]]  
+[[Phone-old-\|Sat Apr 12  2025]]  	[[Phone-old-#2018-00-00 - coinbase]]  
+[[Phone-old-\|Sat Apr 12  2025]]  	[[Phone-old-#2018-08-07 - #### starting to use Evernote ####]]  
+[[Phone-old-\|Sat Apr 12  2025]]  	[[Phone-old-#2017-12-18  Notes from HACKERS]]  
+[[Phone-old-\|Sat Apr 12  2025]]  	[[Phone-old-#2016-00-00 - Aeolus notes]]  
 [[Phone-old-\|Sat Apr 12  2025]]  	[[Phone-old-#2017-11-14 Prenup info  -- info moved to evernote]]  
 [[Phone-old-\|Sat Apr 12  2025]]  	[[Phone-old-#2017-08-01 Sutter health]]  
 [[Phone-old-\|Sat Apr 12  2025]]  	[[Phone-old-#2017-05-00  Experian]]  

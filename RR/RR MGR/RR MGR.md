@@ -1,7 +1,9 @@
 .[[RR MGR]].  (See [[MGR]])
   [[RR Business]], [[RR OKRs]], [[Startups Note]],
-  [[Project Management]], 
-  [[Para]], [[S.M.A.R.T]], [[S.T.A.R.]], 
+  ,
+  [[Para]], [[S.M.A.R.T]], [[S.T.A.R.]],
+  , [[Project Management]], 
+  DELS: [[Project Management]],
 
 
 

@@ -1,4 +1,9 @@
 
+[[WRM\|Thu May 9  2024 ]]  	[[WRM#2024-04-30]]  
+[[now\|Thu May 9  2024 ]]  	[[now#Big]]  
+[[DAILY\|Thu May 9  2024 ]]  	[[DAILY#Now]]  
+[[Daily\|Thu May 9  2024 ]]  	[[Daily#Now]]  
+[[LLM\|Thu May 9  2024 ]]  	[[LLM#The LLM Training Pipeline]]  
 [[Lang\|Thu May 9  2024 ]]  	[[Lang#Lang --]]  
 [[ToRead\|Thu May 9  2024 ]]  	[[ToRead#[[Book To Read]]]]  
 [[MGR Meetings\|Thu May 9  2024 ]]  	[[MGR Meetings#L10 - Level-10 Meeting]]  

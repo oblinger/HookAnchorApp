@@ -1,18 +1,12 @@
--serius
-- testing stuff
-- 3x3 planning
+
 - Sirius
-- brian compensation
-- patent ready
-- Mery Impersonation
-- mgt channel dates for testing for bugs
+
+- Test automation:  (1) Mery Impersonation; (2) All user testing
 - document for things to try as a beta tester
-- Sirius
-- beta testing
-- - **(415) 776-6717**. Marrakech. 7pm Friday
+- Beta Testing tracking.
+- 3x3 planning
+- patent ready
 
-
-- adam brown reponse 
+- adam brown response 
 - try lovable
-
 - Car title!

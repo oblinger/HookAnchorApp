@@ -12,6 +12,16 @@ points on fast break
 recognizing defense orgnanization -  2-3 zone, man defense, 
 
 
+- BB analysis over dozen plus games to assess long tail errors
+- >10% bump shot recall from ball tracking ()
+- Progress on shot charts, should be ready this quarter
+- AI-Camera analysis
+
+- Error Testing
+	- Bug Board
+	- Regression checklist
+	- Beta testers - Front & Back
+	- Regression test, become users
 
 
 # Log
