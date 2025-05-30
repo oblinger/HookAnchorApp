@@ -2,9 +2,11 @@
 # AI-Related War Stories
 
 ## Sports Visio
-### 2024  SV GALLERY / OCR Model
+### 2024  SV GALLERY / OCR 
+- Self-trained per-game player-detector using a DinoV2 backbone
+- Fine-tuned a "digit on fabric" DinoV2-based classifier using a large synthetically in-painted training set.
 
-- [Grz Notes - OCR v3](https://www.notion.so/sportsvisio/OCR-v3-training-single-shot-person-to-jersey-number-model-d9f4c1b04b15464d951d4c333b53a5d9) 
+- [[2024-12-00 OCRv3.pdf]]    (Notion [Grz Notes - OCR v3](https://www.notion.so/sportsvisio/OCR-v3-training-single-shot-person-to-jersey-number-model-d9f4c1b04b15464d951d4c333b53a5d9))
 
 GALLERY
 - Pose, Byte-tracker, Object-detector, DinoV2-base, court
@@ -41,7 +43,20 @@ MADE-MISS
 
 ### 2024  SV Court Homography - DL & Pano
 
+### 2024 SV Maxim Court Homography
+
+Im using a few  papers just for reference,  but my implementation is an ad hoc version made in house so there is no paper for the current architecture/algorithms Im using.
+- Segformer backbone: [https://arxiv.org/abs/2105.15203](https://arxiv.org/abs/2105.15203) 
+- CaliKalib (the idea about using a grid came from here): [https://arxiv.org/abs/2209.07795](https://arxiv.org/abs/2209.07795) 
+- The idea of UNET for kpoints prediction on non professional courts for different sports: [https://arxiv.org/pdf/2003.14109](https://arxiv.org/pdf/2003.14109)
+
+- Trained a U-Net CNN for 2D homography from diverse nonprofessional court layouts.
 ### 2024 SV Game Timeouts
+
+### 2024 SV Tracking
+
+The byte tracker: [https://arxiv.org/abs/2110.06864](https://arxiv.org/abs/2110.06864)  
+The interpolation tracker, which is used only for the ball, has no paper. It is a layer above that was implemented by me to filter wrong tracks, join and extend other ones. (edited)
 
 ### 2023  SV Object Detection
 

@@ -7,6 +7,12 @@
   [Schart](https://www.notion.so/sportsvisio/SHOT-CHARTS-END-2-END-1d4719d6f2bd802ca4dfc8b1e0ff1fd5?pvs=4): POC
   Effort Analysis for BB stats
   - Halo analysis
+  Play On
+  - Video out & explanation
+  - JSON & explanation
+  - Video 
+  - Stats
+  - Cost summary
   
   Speedups
   .
@@ -16,6 +22,7 @@
 - % of shots attempts (recall)
 - % of shots attempts (precision)
 - % correct jersey number
+
 
 Highlight Reel Stats. (per player / per team)
 % shot missing for this player

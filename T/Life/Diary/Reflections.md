@@ -1,4 +1,29 @@
 
+### 2025-05-29  No More
+No More
+- empty days
+
+How do I want to feel?
+- Alive.  At work, at home, in bed.
+- Impactful.  My actions are not hurried, or crowded, but are impactful.
+
+What do I do daily?
+- Exercise
+
+Values?
+
+
+Red Pen?
+- Free Cell, procrastination
+
+Experiment
+
+Tell a new story
+
+Build a new ecosystem
+
+
+
 ### 2025-05-19  This week:  Push self on MIT time; Fun many days; Exercise
 ### 2025-05-12  Need to center on actionable short-term outcomes.  Need to upgrade my optimism.  Need to limit targets.
 
