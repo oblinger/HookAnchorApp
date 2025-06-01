@@ -1,3 +1,4 @@
+- consider: Ladder and peloton strength+
 
 - [SAVERS](https://experiencelife.lifetime.life/wp-content/uploads/2021/06/The-Miracle-Morning.pdf) 
 - - [3part intro](https://medium.com/social-science-weekly/the-1-minute-introduction-that-makes-people-remember-you-forever-497cefcfdccc)

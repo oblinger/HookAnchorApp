@@ -1,6 +1,16 @@
 [[FAANG]], [[@IBM]]    [Senior Director at Microsoft Research](https://www.linkedin.com/in/rafahhosn/)  [[@Microsoft]]  [MS Page](https://www.microsoft.com/en-us/research/people/raaboulh/),  #Mentor 
 
 
+# LOG
+
+### 2025-05-31  Alien Biology Chat
+
+- 
+
+
+### 2025-02-00  
+
+
 -- More technical; more hands on
 
 - AI/ML Researecher / Executive / Enreprenure
@@ -33,7 +43,6 @@ Rafah wants a larger scope - so she needs to leave research -
 she is in the product management line - can't go up - 
 
 
-# LOG
 ### t2022-11-01  Intro Email for Robotics Mgr
 
 Rafah, awesome to catch up!  I am glad to hear your future plans include moving to more relaxing locations (both NH and FL fit that bill!)  

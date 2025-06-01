@@ -1,4 +1,9 @@
 
+[[Phone-old-\|Sat Apr 12  2025]]  	[[Phone-old-#201--00-00  Loan amounts]]  
+[[Phone-old-\|Sat Apr 12  2025]]  	[[Phone-old-#201--00-00  Hackers]]  
+[[Phone-old-\|Sat Apr 12  2025]]  	[[Phone-old-#201--00-00  Carolina]]  
+[[Phone-old-\|Sat Apr 12  2025]]  	[[Phone-old-#201--00-00  Eva photos]]  
+[[Phone-old-\|Sat Apr 12  2025]]  	[[Phone-old-#201--00-00  Sleep question]]  
 [[Phone-old-\|Sat Apr 12  2025]]  	[[Phone-old-#201--00-00  Garage door project]]  
 [[Phone-old-\|Sat Apr 12  2025]]  	[[Phone-old-#2018-00-00 - coinbase]]  
 [[Phone-old-\|Sat Apr 12  2025]]  	[[Phone-old-#2018-08-07 - #### starting to use Evernote ####]]  

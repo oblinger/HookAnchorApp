@@ -7,10 +7,11 @@
 
 ### EDITING MY WEBPAGE
 - [Source oblinger.github.io Folder](spot://git~oblinger.github.io~Folder)           # Webpage source
-- [[gitproj]]:  [[AlienBiology]] [[ASIO]]                        # Project sources
+- [[gitproj]]:  [[AlienBiology]] [[ASIO]]                        # Project sources (separate from webpage root's source)
   cd ~/ob/proj/oblinger.github.io
   cp -r ~/ob/kmr/Prj/gitproj ~/ob/proj/oblinger.github.io
-proj
+  git commit -a -m "."; git push
+
   export SASS_LOGGER_LEVEL=error
   bundle exec jekyll serve --watch                # Serve webpage locally
 - [Locally Hosted Landing Page](http://localhost:4000)               # View page locally

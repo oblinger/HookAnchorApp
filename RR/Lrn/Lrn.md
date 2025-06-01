@@ -7,6 +7,7 @@
 ## Rocks - Evergreen @ top
 - ^ \ _ S  SPACED REPETITION. (Add shift for review)
 -  # R reading
+- [[Read]]: [[RR Papers]], [[RR Articles]], 
 - [[LRN Read]] - Read the paper from 'To Read'
 - [Coursera](spot://coursera~1pass) 
 

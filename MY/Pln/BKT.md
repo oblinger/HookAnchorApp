@@ -1,10 +1,10 @@
 
 
 [[NJ]]:   (See [[Daily Schedules]])
-- [[CN]]:			Uri, Luis, Juan
-- [[SEEK]]:		[[NJ.1]]: Tier2, Short List; 3Tgts; Listening 
-- [[LRN Todo]]:		DL C3;
-- [[BOD]]:		Get Coach?
+- [[CN]]:		Uri, Luis, Juan, Nvidia
+- [[SEEK]]:	LI-lst
+- [[LRN]]:	DL C3;
+- [[BOD]]:	Get Coach?
 
 - [[TG]]:	Read glass door about them
 - [[NJ.]]:	[[RES]] linked in fixes

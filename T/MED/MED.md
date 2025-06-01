@@ -11,7 +11,6 @@
   [[MED History]]:
   [[MED Insurance]]:
   [[MED Measurements]]:
-  :
   [[MED Pills]]:
   [[MED Psoriasis]]:
   [[MED Ref]]:

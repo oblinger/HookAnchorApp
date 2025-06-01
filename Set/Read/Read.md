@@ -2,13 +2,11 @@
   #set
 
 .[[Read]].  [[RR Papers]]   
-  [[Book To Read]]:	[[BOOK Suggestions]], [[BOOK Research]],   [[ToRead]],
+  [[Book To Read]]:	[[BOOK Suggestions]], [[BOOK Research]], [[ToRead]],
   [[Podcasts]]
   , [[Read Capture]], [[RIL]], 
 
-  
-  DELS: [[Read Capture]], [[RIL]], 
+[[Read]]: [[RR Papers]], [[RR Articles]], [Alignment Forum](https://www.alignmentforum.org/), 
 
-- Research papers to read
 - [[Book]]
 - [[BOOK Summaries]], 

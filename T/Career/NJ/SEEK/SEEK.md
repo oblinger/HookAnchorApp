@@ -1,13 +1,10 @@
 .[[SEEK]].
-  [[SEEK Postings]], ,
+  [[SEEK Postings]],
   [[SEEK List]],
   [[SEEK Search Terms]],
-  ,
-  , [[SEEK Cover Letter Terms]],
+  [[SEEK Info]], 
+  [[SEEK Cover Letter Terms]],
   , [[SEEK Interviews]], 
-  DELS: [[SEEK Cover Letter Terms]],[[SEEK Interviews]],
-
-  DELS: [[SEEK List]], [[SEEK Search Terms]], 
 
 
 - [[NJ Questions]], 
@@ -15,7 +12,7 @@
 TODO
 - Chat Abio:    [[FAANG]], Nina, Praveen, Carlos, Langford
 - 
-
+[[NJ.1]]: Tier2, Short List; 3Tgts; Listening 
 
 
 JOB POSTINGS

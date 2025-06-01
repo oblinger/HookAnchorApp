@@ -69,7 +69,8 @@
   , [[@Yoshua Bengio]], [[AF ALUM]], , [[BOD]], , [[Doctor]]
   , [[Friends]], [[Mentors]], , , [[ROLODEX]], [[VC ORG]],
   , [[Crm]], [[Org]], [[People]],
-  , [[@Brian Rife]], 
+  , [[@Brian Rife]],
+  , [[@Adobe]], [[@Thumbtack]], 
   DELS: [AT Note](spot://atnote), [[CRM]], [[ORG]], [[PEOPLE]],[[@Dexafit]],[[@Brian Rife]],
 
 .[[AT]].
