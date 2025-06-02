@@ -2,9 +2,11 @@
   [[SEEK Postings]],
   [[SEEK List]],
   [[SEEK Search Terms]],
-  [[SEEK Info]], 
+  ,
   [[SEEK Cover Letter Terms]],
-  , [[SEEK Interviews]], 
+  , [[SEEK Interviews]],
+  , [[SEEK Info]], 
+  DELS: [[SEEK Info]],
 
 
 - [[NJ Questions]], 

@@ -1,4 +1,11 @@
 
+- 
+
+## Steps for Scanning Payments
+- ROCKET - Use rocket money to verify prior two weeks spending
+
+CHECKING RECURRING STUFF
+- APPLE - 
 
 ## Steps For Tracking Spending and Budget
 

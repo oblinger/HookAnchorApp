@@ -1,6 +1,6 @@
 clean email
 
-< [[FIN]]    [[FIN Budget]]
+< [[FIN]]    [[FIN Budget]]. (See [[FIN Tracking]])
 
 # RECURRING BILLS
 ## BIGGER BILLS - SCHWAB MONTHLY SPENDING 6956-1345

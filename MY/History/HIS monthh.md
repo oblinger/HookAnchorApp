@@ -1,5 +1,5 @@
 
-[[FIN Tracking Procedure\|Thu Dec 28  2023]]  	[[FIN Tracking Procedure#LOG]]  
+[[FIN Tracking Procedures\|Thu Dec 28  2023]]  	[[FIN Tracking Procedures#LOG]]  
 [[FIN\|Thu Dec 28  2023]]  	[[FIN#2023-12-06  Retirement Analysis]]  
 [[FIN\|Thu Dec 28  2023]]  	[[FIN#2023-00-00 very old - CONSIDER ADDITIONS]]  
 [[FIN\|Thu Dec 28  2023]]  	[[FIN#2022-10-07  Avanti's Plan]]  

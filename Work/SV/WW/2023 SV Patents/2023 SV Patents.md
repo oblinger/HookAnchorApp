@@ -1,5 +1,6 @@
 .[[2023 SV Patents]].
-  ,   [[Patents]], 
+  ,   ,
+  DELS: [[Patents]], 
 
 (See [[Patents]])
 

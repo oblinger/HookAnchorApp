@@ -63,7 +63,7 @@
             [[SV Archive]]: [[2022-10-17 SV90]],	
             [[SV People]]: 
                 [[SV Individuals]]: 
-            [[WW]]: [[2023 SV Roles and Responsibilities]],	[[2023 SV Patents]],	
+            [[WW]]: [[2023 SV Roles and Responsibilities]],	
             [[SV Strat]]: [[SV Roadmap]],	[[2023 Four Pillars]],	
             [[CV]]: [[CV Alg]],	[[CVP]],	[[Data]],	
             [[QQ]]: 

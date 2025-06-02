@@ -1,6 +1,7 @@
 .[[FIN Bills]].
-  ,   [[FIN Accounts]], [[FIN Recurring]], [[PenFed]], [[z old Bills]], 
+  [[FIN Accounts]], [[FIN Recurring]], [[PenFed]], [[z old Bills]], 
 
+- [[FIN Tracking]] 
 
 
 # SETUP

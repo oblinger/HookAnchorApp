@@ -340,6 +340,15 @@ FROM DAN NEWCOME:  2MXWR-QF9P7-PRWDT-PD7C6-8GW7P
 
 --------------
   
+## xx Modern CSV
+https://www.moderncsv.com/
+
+---------- BEGIN LICENSE ---------- 
+License Type: Personal 
+Name: Daniel Oblinger 
+Email: wef234@gmail.com 
+75771C74E81D0FEACCBF4C7623716EE2 
+----------- END LICENSE -----------
 ## xx PyCharm purchase   <<<<
 ### Installation
       (Goto https://account.jetbrains.com/licenses  W1+1pass)

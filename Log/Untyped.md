@@ -381,7 +381,7 @@ n:: no prefix.	Dated entries without any typing prefix
 | 2023-12-20 | [[QQ]]                                          | Generalize system                                                                                                                 |
 | 2023-12-20 | [[@Jason Syversen]]                             | Jason                                                                                                                             |
 | 2023-12-17 | [[Palestinians]]                                | Response to Nadav                                                                                                                 |
-| 2023-12-16 | [[FIN Tracking Procedure]]                      | Estimating our burn                                                                                                               |
+| 2023-12-16 | [[FIN Tracking Procedures]]                      | Estimating our burn                                                                                                               |
 | 2023-12-15 | [[@Chase Bank]]                                 | Opening an INK card                                                                                                               |
 | 2023-12-14 | [[CV]]                                          | Points [[@Maxim Dorogov]]                                                                                                         |
 | 2023-12-14 | [[Mgt]]                                         | Jason Talk                                                                                                                        |

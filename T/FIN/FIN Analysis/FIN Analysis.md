@@ -1,4 +1,4 @@
-(See [[FIN Tracking Procedure]])
+(See [[FIN Tracking Procedures]])
 ## Big Transactions
 
 - 2021-06-21  -100,000.00.  Bought 100K shares of space X.

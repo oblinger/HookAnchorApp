@@ -1,7 +1,7 @@
 #top 
 
 .[[SV]].
-  , [[@SV]], , 
+  , [[@SV]], ,
   ,  [[Circle]], [[CV]], ,
   , [[INV]], , [Jira Me Page](spot://jiramepage), [[Meta SV]],
   [[Mgt]]:
@@ -16,7 +16,8 @@
   , [Game Docs](spot://gamedocs),
   , [[SV Proj]],
   , [Bug Board](spot://bugboard),
-  DELS: [Bug Actual List Page](spot://bugactuallistpage), [Bug Board Page](spot://bugboardpage), 
+  , [Patents](spot://patents), 
+  DELS: [Bug Actual List Page](spot://bugactuallistpage), [Bug Board Page](spot://bugboardpage),
 
 [[SV Proj]] 
 

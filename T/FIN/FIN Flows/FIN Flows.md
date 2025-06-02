@@ -1,4 +1,4 @@
-[[FIN Tracking]] < 
+(See [[FIN Tracking]])
 - [[FIN Accounts]], [[FIN Recurring]], 
 
 DO & QL INCOME
