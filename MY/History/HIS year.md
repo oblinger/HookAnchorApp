@@ -1,4 +1,8 @@
 
+[[Eli Correct Responses\|Thu May 9  2024 ]]  	[[Eli Correct Responses#Emotional Vaccination]]  
+[[@Javier Alejandro Re\|Thu May 9  2024 ]]  	[[@Javier Alejandro Re# CEO [[@Crowdar]]. #Role/Recruiter]]  
+[[@Joseph Yeh\|Thu May 9  2024 ]]  	[[@Joseph Yeh#m2022-12-07  [[RES Linked In#2022-12-07  Framing Self]]]]  
+[[@Kamran Shirazi\|Thu May 9  2024 ]]  	[[@Kamran Shirazi#  [Sale and Marketing Exec](https://www.linkedin.com/search/]]  
 [[@Kamran Shirazi\|Thu May 9  2024 ]]  	[[@Kamran Shirazi#LOG]]  
 [[@Mathew Main\|Thu May 9  2024 ]]  	[[@Mathew Main#LOG]]  
 [[@Sage Vet\|Thu May 9  2024 ]]  	[[@Sage Vet#2024-05-08  Phone Numbers]]  

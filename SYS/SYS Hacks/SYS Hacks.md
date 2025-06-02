@@ -1,9 +1,6 @@
-.[[SYS Hacks]].
-  ,   , ,
-  , [[DOC SYNC]], [[DOC SYNC COMMANDS]], 
-  DELS: [[DOC SYNC]], [[DOC SYNC COMMANDS]],
+.[[SYS Hacks]].  (See [[HACK.]])
+  [[DOC SYNC]], [[DOC SYNC COMMANDS]]
 
 
 
-(See [[HACK.]])
 
