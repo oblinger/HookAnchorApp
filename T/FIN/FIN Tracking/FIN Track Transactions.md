@@ -1,5 +1,11 @@
 
+(See [[Budg]])
 
-## Steps
-- ROCKET - Login -> !More Transactions -> !Export  // WEF !Download File // Drag to ~/ob/data/budget/YYYY...
-- budg.py
+
+
+## Checking Transactions
+
+AMAZON
+- Amazon.com, AMAZON MKTPL -- Purchases of stuff
+- AMAZON PRIME -- Membership payment
+- Kindle -- Content purchases

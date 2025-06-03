@@ -6,8 +6,9 @@
   , [PROJ Gdrive](spot://projgdrive), [[__Race Pitch__]], [[Spot Cmdr]], [[Task Rabbit]], [[UF]],
   , ,
   , [[gitproj]],
-  , [ABIO](spot://abio), 
-  DELS: [[ABio]], 
+  , [ABIO](spot://abio),
+  , [[BinProj]], 
+  DELS: [[ABio]],
 
   [[2016-00 FileThis]],			Automated script for downloading and viewing account statements
   [[2018-00 Wedding]],   		Plan our wedding

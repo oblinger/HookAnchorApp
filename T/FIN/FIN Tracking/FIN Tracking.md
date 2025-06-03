@@ -1,7 +1,6 @@
 .[[FIN Tracking]].  [[FIN]] 
    -
-  , ,
-  , [[FIN Tracking Procedures]], [[FIN Track Transactions]], 
+  [[FIN Tracking Procedures]], [[FIN Track Transactions]], 
   DELS: [[FIN Tracking Procedures]],
   DELS: [[FIN Tracking Procedures]],[[FIN Tracking Procedure]], 
 

@@ -3,9 +3,9 @@
 
 .[[SYS]]. > [[MY]] 
   My KBD:		[[KBD Shortcuts]], [[KBD Obsidian Keys]], [[KBD Global Keys]], [[KBD Notion]],
-  SYSTEMS:	[[SYS Android]], [[SYS Disks]], [[SYS Github Webpage]], 
-  [[KM]]:				[[OBS]], 
-  [[SYS Hacks]]:	[[Hack]], [[Automation]], [NEU Folder](spot://neufolder), [[BinProj]], 
+  SYSTEMS:	[[SYS Android]], [[SYS Disks]], ,
+  [[KM]]:				[[OBS]],
+  [[SYS Hacks]]:	[[Hack]], [[Automation]], [NEU Folder](spot://neufolder), ,
 - [[SYS Dashboards]]	-
 - [[SYS Keyboard Setup]]
 - [[SYS Misc]]			-
@@ -13,9 +13,10 @@
 - [[SYS Setup]]			-
 - [[KBD Shortcuts]]		-
 - [[SYS Task Lists]]		-
-  , [Bard Page](spot://bardpage), , , 
+  , [Bard Page](spot://bardpage), , ,
   , [[Notifications]],
-  , [[Closet]],  [[MAC]],  
+  , [[Closet]],  [[MAC]],
+  DELS: [[BinProj]],[[SYS Github Webpage]], 
 
 - [[@Github]], [[Spot]], 
 
