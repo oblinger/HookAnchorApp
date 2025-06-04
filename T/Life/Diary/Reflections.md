@@ -1,4 +1,15 @@
 
+
+
+### 2025-06-03  Hitting Bottom
+
+I did nothing today, just 1/2 of repeat, and exercise.
+
+I need to climb out of this hole gently.
+get some low bar wins...
+going to bed
+
+
 ### 2025-05-29  No More
 No More
 - empty days
