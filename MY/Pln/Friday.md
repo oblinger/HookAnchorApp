@@ -20,6 +20,20 @@
  [word of mouth](https://www.worldofmouth.app/articles/best-romantic-restaurants-in-san-francisco) unusual picks
  [Wander Log](https://wanderlog.com/list/geoCategory/1571510/best-date-night-restaurants-in-san-francisco) Big List
 
+### ELI TOO
+- https://museemecanique.com
+- Aquarium of the Bay
+
+### LISTS
+- [TimeOutSF](https://www.timeout.com/san-francisco/things-to-do) 
+- [EventBright](https://www.eventbrite.com/)
+- [SFfunCheap]()
+- [RedTricycle](https://red-tri.com/)
+- [MommyNearest](https://www.mommynearest.com/edition/bay-area/category/things-to-do) 
+
+#### Mommy Nearest
+- Walt Disney Family Museum
+
 # HISTORY
 
 ### 2024-10-07  BIX

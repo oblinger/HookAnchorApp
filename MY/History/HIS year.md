@@ -1,4 +1,6 @@
 
+[[@Jason Syversen\|Sun May 12  2024]]  	[[@Jason Syversen#2024-03-19  Licensing code]]  
+[[@Chris Zankel\|Thu May 9  2024 ]]  	[[@Chris Zankel#  [DataScience PM](https://www.linkedin.com/in/chris-zankel-]]  
 [[Eli Correct Responses\|Thu May 9  2024 ]]  	[[Eli Correct Responses#Emotional Vaccination]]  
 [[@Javier Alejandro Re\|Thu May 9  2024 ]]  	[[@Javier Alejandro Re# CEO [[@Crowdar]]. #Role/Recruiter]]  
 [[@Joseph Yeh\|Thu May 9  2024 ]]  	[[@Joseph Yeh#m2022-12-07  [[RES Linked In#2022-12-07  Framing Self]]]]  

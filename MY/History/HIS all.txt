@@ -1,4 +1,6 @@
 
+[[Budg\|Tue Jun 3  2025 ]]  	[[Budg#Usage Steps]]  
+[[FIN Track Transactions\|Tue Jun 3  2025 ]]  	[[FIN Track Transactions#Checking Transactions]]  
 [[MAC Apps\|Mon Jun 2  2025 ]]  	[[MAC Apps#xx Modern CSV]]  
 [[FIN Track Transactions\|Mon Jun 2  2025 ]]  	[[FIN Track Transactions#Steps]]  
 [[FIN Tracking Procedures\|Mon Jun 2  2025 ]]  	[[FIN Tracking Procedures#Steps for Scanning Payments]]  

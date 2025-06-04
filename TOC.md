@@ -80,6 +80,7 @@
             [[UF-OLD]]: [[OLD-CONSTRUCTS]],	[[OLD-Markdown]],	[[lex-lexlang]],	
         [[gitproj]]: [[AlienBiology]],	
         [[2020-08 Race Pitch]]: 
+        [[BinProj]]: 
     [[At]]: [[@Anthropic]],	[[@Qingling Oblinger]],	[[VC ORG]],	[[@Google]],	
         [[Org]]: [[@Merrill]],	[[@Hackers]],	[[Service]],	
             [[@Amazon]]: 

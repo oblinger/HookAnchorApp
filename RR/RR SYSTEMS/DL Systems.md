@@ -1,9 +1,9 @@
 
-Build a table where the rows represent the major corporations and the columns represent different categories of generative AI system. in each cell is the name of that companies entry for the give type (if they have one)
+Build a table where the rows represent the major corporations and the columns represent different categories of generative AI systems. In each cell is the name of that company's entry for the given type (if they have one)
 
-| **Corporation** | **Multi modal**          | **Text Generation**  | **Image Generation**     | **Code Generation** | **Speech Generation**           |
+| **Corporation** | **Multi modal**          | **Text Generation**  | **Image Video**          | **Code Generation** | **Speech Generation**           |
 | --------------- | ------------------------ | -------------------- | ------------------------ | ------------------- | ------------------------------- |
-| **OpenAI**      | **GPT-4 Vision**         | GPT-4                | DALL-E                   | Codex               | Whisper                         |
+| **OpenAI**      | **GPT-4 Vision**         | GPT-4                | DALL-E<br>Sora           | Codex               | Whisper                         |
 | **Google**      | **Gemini**               | Bard                 | Imagen                   | Codey               | Speech-to-Text                  |
 | **DeepMind**    | **Gemini**               | -                    | -                        | AlphaCode           | WaveNet                         |
 | **Microsoft**   | **Azure OpenAI (GPT-4)** | Azure OpenAI Service | -                        | GitHub Copilot      | Azure Cognitive Services Speech |
@@ -21,7 +21,6 @@ Build a table where the rows represent the major corporations and the columns re
 | **Tencent**     | -                        | Hunyuan              | -                        | -                   | Tencent AI Voice                |
 |                 |                          |                      |                          |                     |                                 |
 
-dino
 
 
 #dl #review 

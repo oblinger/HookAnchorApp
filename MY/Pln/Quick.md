@@ -1,7 +1,7 @@
 
 - Sirius
 
-- Test automation:  (1) Mery Impersonation; (2) All user testing
+- Test automation:  (1) Mery Impersonation; (2) All user testing.
 - document for things to try as a beta tester
 - Beta Testing tracking.
 - 3x3 planning

@@ -35,7 +35,6 @@ Tangle (on Sapphire card)
 - +$4/mo		NY Times
 - +$2/mo	 	Dan (family?) Google
 
-- +$199/yr   	Noom (Renews 06-27-2024)
 - +$55/yr		Vorwerk Thermomix Recipes (2023-12-11.  Web -> {ChefHat} -> Account )
 - ?$29/yr		Blue Mountain (goes up Aug-09-2024)
 - +$39/yr  	Consumer Reports Digital   2023-08-23
@@ -97,6 +96,7 @@ SAPPHIRE
 
 
 ## PAUSED
+- +$0/yr   	Noom (Renews 06-27-2024). (cancelled on 6/3/2025)
 - crunch base
 - $13/m		Peloton  7/31/22
 - $50/yr		Nest Aware (Cancelled)
