@@ -1,6 +1,6 @@
 
 .**Q2**.
-  [**BUG**](https://www.notion.so/sportsvisio/SOFTWARE-STABILIZATION-1eb719d6f2bd807586afdba684e60901?pvs=4): Beta, RegTst0, Factory, 
+  [**BUG**](https://www.notion.so/sportsvisio/SOFTWARE-STABILIZATION-1eb719d6f2bd807586afdba684e60901?pvs=4): Beta, RegTst0, Factory, [R](https://www.notion.so/sportsvisio/Regression-Testing-1f4719d6f2bd80ddaa0de76008e9f41b?pvs=4) 
   [**PATENT**](https://www.notion.so/sportsvisio/PATENTS-3434075a725f4997b57d9aa9bd0b818a?pvs=4): (do it)
   [**CAMERA**](https://www.notion.so/sportsvisio/AI-Camera-e8e5e2d211604c9cbe81ca19fa11f8cd?pvs=4): LOE Plan,  [V1](https://www.notion.so/sportsvisio/AI-CAMERA-v1-1e0719d6f2bd80a3abb8eac297561b07?pvs=4) 
   [DT](spot://dt): Shots Data
@@ -15,23 +15,8 @@
   - Cost summary
   
   Speedups
-  .
   DAT push
   [AI Prod Matrix](https://docs.google.com/spreadsheets/d/1iQvOKwS09QcFTqXK1Ko0ydSgwqjXItbCRrkOMZaBj40/edit?gid=0#gid=0) possible products
-
-- % of shots attempts (recall)
-- % of shots attempts (precision)
-- % correct jersey number
-
-
-Highlight Reel Stats. (per player / per team)
-% shot missing for this player
-% highlights that were from another player
-% made / miss accuracy
-- self determination of our accuracy
-- Assists - Can we detect some assists?
-- Rebounds - Can
-- Steals - 
 
 
 ## PAUSE
@@ -56,17 +41,10 @@ Highlight Reel Stats. (per player / per team)
 ## .
 
 
-Shot Charts
-AI Camera
-BB Stats - 
-
-- Patents
-- 3x3 planning
-- Brian Compensation
-- Beta Testers
+Tom Maginuss
 
 
-https://www.notion.so/sportsvisio/Regression-Testing-1f4719d6f2bd80ddaa0de76008e9f41b?pvs=4
+
 
 
 

@@ -1,11 +1,10 @@
 #top 
 
 .[[SV]].
-  , [[@SV]], ,
-  ,  [[Circle]], [[CV]], ,
-  , [[INV]], , [Jira Me Page](spot://jiramepage), [[Meta SV]],
+  [[@SV]], [[SV Log]], 
+  [[Circle]], [[CV]],
+  [[INV]], [Jira Me Page](spot://jiramepage), [[Meta SV]],
   [[Mgt]]:
-  ,
   APPS:  [SV Confluence Page](spot://svconfluencepage), [Canva](spot://canva),
   ROOTS: [SV C Root](spot://svcroot), [SV Google Drive Page](spot://svgoogledrivepage), [SV G Root](spot://svgroot)
   DEPTS:	[[SV Market]], [[SV People]], [[SV Product]],

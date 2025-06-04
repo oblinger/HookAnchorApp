@@ -1,4 +1,5 @@
 
+[[Eli Strategy\|Sun May 12  2024]]  	[[Eli Strategy#Frustration Coping Strategies]]  
 [[Rebuy Food\|Sun May 12  2024]]  	[[Rebuy Food#[[@Azure Standard]] -]]  
 [[@Jason Syversen\|Sun May 12  2024]]  	[[@Jason Syversen#2024-05-12  Slow]]  
 [[@Jason Syversen\|Sun May 12  2024]]  	[[@Jason Syversen#2024-03-19  Licensing code]]  
