@@ -72,7 +72,7 @@ https://www.frannyskitchensf.com/
 | d~~~  SPANISH TAPAS             | Picaro                                                            |     |     |
 | d+~~  MEDITERR                  | Mediterranean Aroma                                               |     |     |
 | d??? MEXICAN                    | Nopalito (3.5Y)                                                   |     |     |
-| d++~  MEXICAN                   | Pepitos (Eli likes it)\| \| \|                                    |     |     |
+| d++~  MEXICAN                   | Papito (Eli likes it)                                             |     |     |
 | d???  MEXICAN                   | Taqueria Guadalajara (4.0Y). ELI: ChikEnchalada+Refried, LambGyro |     |     |
 | y???  MEXICAN                   | Taco Los Altos (3.5Y) seemed a little expensive                   |     |     |
 | d???  INDIAN                    |                                                                   |     |     |

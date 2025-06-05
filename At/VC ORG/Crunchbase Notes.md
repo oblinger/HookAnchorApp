@@ -1,4 +1,4 @@
-- [[Crunchbase Page]]   
+- [[Crunchbase Page]]   [Cruchbase](https://crunchbase.com)
 
 # SEARCHES
 
