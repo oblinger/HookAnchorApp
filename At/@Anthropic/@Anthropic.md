@@ -1,5 +1,5 @@
 .[[@Anthropic]].
-  , [[Claude]], 
+  [[Claude]], 
 
 #pp  
 

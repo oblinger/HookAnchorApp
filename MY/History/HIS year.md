@@ -1,4 +1,5 @@
 
+[[QQ\|Tue May 28  2024]]  	[[QQ#QUICK - QUICK work projects]]  
 [[@Azure Standard\|Sun May 12  2024]]  	[[@Azure Standard#[[@Azure Standard]] Standard]]  
 [[@Azure Standard\|Sun May 12  2024]]  	[[@Azure Standard#Teas]]  
 [[Eli Strategy\|Sun May 12  2024]]  	[[Eli Strategy#Frustration Coping Strategies]]  

@@ -8,6 +8,7 @@ This is a Dan Project (DP) documentation repository that defines a personal proj
 
 ## Project Structure
 
+- `dp` - Python executable script that launches Claude Code and optionally PyCharm
 - `dp.md` - Main documentation file describing the Dan Project methodology
 - Projects following this methodology typically have:
   - A project folder with unique filename serving as project name
@@ -15,6 +16,15 @@ This is a Dan Project (DP) documentation repository that defines a personal proj
   - Optional GitHub-linked git repo
   - Optional .claude folder for Claude configuration
   - Optional .idea folder for PyCharm configuration
+
+## Script Functionality
+
+The `dp` script is designed to:
+1. Check if the current directory contains a `.idea` folder (PyCharm project)
+2. If found, open the project in PyCharm using `open -a PyCharm .`
+3. Launch Claude Code using `claude code`
+
+This allows for seamless integration between PyCharm IDE and Claude Code for Dan Projects that use PyCharm.
 
 ## Development Context
 

@@ -1,13 +1,9 @@
 
 .[[Stat]].
-  :
   [[ADF - Augmented Dickey Fuller Test]], [[AutoRegressive]], [[Bayes Optimal Error]], [[HarmonicMean]], [[KL Divergence]], [[Likelihood]], [[PCA]], [[Q-Q Plot]],
   [[Ransac]], [[Sigmoid]], [[Softmax]], [[Stationary]], [[KL Divergence]],
   , [[Stat Anomolies]],
   [[Perplexity]], , [[Stat Anomolies]], [[Z-Test]], [[STATS]],
-  ,
-  , ,
-  , ,
   DELS: ,
   , [[RMS]], [[Stat Alg]],
   , [[CrossEntropy Loss]], [[Logistic Regression - Logit Function]], [[Loss Functions]]
