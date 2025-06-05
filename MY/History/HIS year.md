@@ -1,4 +1,5 @@
 
+[[@Azure Standard\|Sun May 12  2024]]  	[[@Azure Standard#[[@Azure Standard]] Standard]]  
 [[@Azure Standard\|Sun May 12  2024]]  	[[@Azure Standard#Teas]]  
 [[Eli Strategy\|Sun May 12  2024]]  	[[Eli Strategy#Frustration Coping Strategies]]  
 [[Rebuy Food\|Sun May 12  2024]]  	[[Rebuy Food#[[@Azure Standard]] -]]  
