@@ -1,4 +1,5 @@
 
+[[Phone-old-\|Sat Apr 12  2025]]  	[[Phone-old-#2022-08-01  notes while out - about me]]  
 [[Phone-old-\|Sat Apr 12  2025]]  	[[Phone-old-#2022-07-12  Eli Sand toys]]  
 [[Phone-old-\|Sat Apr 12  2025]]  	[[Phone-old-#2022-07-12  LOWES tool rental]]  
 [[Phone-old-\|Sat Apr 12  2025]]  	[[Phone-old-#2022-07-07  Setting up Sonic internet service]]  

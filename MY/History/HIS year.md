@@ -1,4 +1,5 @@
 
+[[2024-W22\|Tue May 28  2024]]  	[[2024-W22#W22   2024-05-27   [[2024-W21\\|<<]] [[2024-W23\\|>>]]]]  
 [[QQ\|Tue May 28  2024]]  	[[QQ#QUICK - QUICK work projects]]  
 [[@Azure Standard\|Sun May 12  2024]]  	[[@Azure Standard#[[@Azure Standard]] Standard]]  
 [[@Azure Standard\|Sun May 12  2024]]  	[[@Azure Standard#Teas]]  

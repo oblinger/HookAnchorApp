@@ -1,4 +1,5 @@
 
+[[CLAUDE\|Thu Jun 5  2025 ]]  	[[CLAUDE#Script Functionality]]  
 [[CLAUDE\|Thu Jun 5  2025 ]]  	[[CLAUDE#CLAUDE.md]]  
 [[dp\|Wed Jun 4  2025 ]]  	[[dp#Prompt]]  
 [[SV Log\|Wed Jun 4  2025 ]]  	[[SV Log#LOG]]  
