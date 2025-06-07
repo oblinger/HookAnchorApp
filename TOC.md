@@ -71,7 +71,7 @@
         [[Meta]]: 
         [[Pln]]: [[Habit]],	[[Mission]],	[[Productivity]],	
             [[SCRatch]]: 
-    [[Prj]]: [[Spot Cmdr]],	[[2021-04 FindDayCare]],	[[2022-05 Enxt]],	
+    [[prj]]: [[Spot Cmdr]],	[[2021-04 FindDayCare]],	[[2022-05 Enxt]],	
         [[2022-03 BeFAANG]],	[[2022-03 BeVC]],	
         [[ABio]]: [[Measuring Intelligence]],	
         [[PP]]: [[2022-01-00 Nanny]],	

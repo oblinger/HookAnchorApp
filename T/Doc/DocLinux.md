@@ -1,6 +1,7 @@
   [__DocLinux__](__DocLinux__.md)
 
-
+[[DocTmux]] 
+[[DocNvim]] 
 
 # tmpnotes
 

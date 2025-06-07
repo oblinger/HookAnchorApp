@@ -16,7 +16,7 @@
 - [[Phack]] 
 
 - [p Proj Folder](spot://pprojfolder) - [[Proj Folder]] - Local 
-- [[Prj]] - Non
+- [[prj]] - Non
 
 ## Work Related
 - [Proj Note](spot://projnote)	- 

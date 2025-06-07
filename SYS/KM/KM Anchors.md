@@ -1,4 +1,7 @@
 
+[[KM Anchor Implementation]] 
+
+
 I need a better name for this system!  Its core construct could be called a jump page, a group, a bucket, an anchor, a project, a hook.  Not sure of the best metaphor.
 
 # The Hook Set System   (I need a better name!)
@@ -70,7 +73,7 @@ Many will push back, "oh my thinking it too fluid in order to put into boxes lik
 - SETS -- These anchors manage collections of some common underlying type:  e.g. all people, or memorable quotes.
 - STREAMS -- These are sets that are further organized by time into a stream of items
 - ROCKS -- These are larger, time-bounded, topics or activities.  E.g. "the zzz proposal"
-- TOPICS -- These are timeless (evergreen) notes around which we have built a taxonomy of info for that topic.  e.g. finance
+- TOPICS -- These are timeless (evergreen) notes around which we have built a taxonomy of info for that topic.  e.g. finance.
 
 The arbitration rule is to always put items into SETS before STREAMS before ROCKS before TOPICS.  Important information can subsequently be put into other buckets, but it is critical that it is always associated with the earliest anchor that way it will be there when retrieval is attempted.
 

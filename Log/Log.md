@@ -13,7 +13,7 @@
   DELS: [[Archive]], [[MEETING]], [[MEET]], [[Phone]],[[TT]],[[MEET]], [[MEETING]], [[MEETING]], [[MEET]],
 
 #### Personal Content Logs
-- [[Prj]]:	Personal "evergreen" projects
+- [[prj]]:	Personal "evergreen" projects
 - [[PP]]:	Personal Projects
 - [[PQ]]:	Personal "Quick" Projects -- notes that are appended directly into the PQ page.
 - [[SNIP]]:	"Snippets" of text that I produce for various purposes.  (maybe call this [[TT]])
@@ -49,7 +49,7 @@ DATED LOG ENTRIES
 - [[Journal]]	- 
 - [[Log/MEETING/MEET]] 	- 
 - [[Note]]		- 
-- [[Prj]]			-
+- [[prj]]			-
 - [[TXT]]		- 
 - [[Untyped]] 	- 
 - [[REF]] 		- 

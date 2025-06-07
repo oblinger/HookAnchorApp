@@ -6,7 +6,7 @@
 |       | Type        | Name                 | Description                                  |
 | ----- | ----------- | -------------------- | -------------------------------------------- |
 |       | **TEXT**    |                      |                                              |
-| ?M?   | Notion      | **XXXX**             | "Main" Notion pages (in the future)          |
+| **S** | Notion      | **XXXX Shared**      | Root page in a "Shared" tool, like Notion    |
 | **N** | Notes       | **XXXX Note**        | Main page if XXXX is also a prefix           |
 |       |             |                      |                                              |
 |       | **FOLDER**  |                      |                                              |

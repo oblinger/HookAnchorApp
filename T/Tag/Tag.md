@@ -213,7 +213,7 @@
 :: [[Data Science]],  
 
 
-[[Tags]]: [[At]], [[Pln]], [[Prj]], [[REF]], 
+[[Tags]]: [[At]], [[Pln]], [[prj]], [[REF]], 
 
 - [[At]]
 	- [[Person]]
@@ -228,14 +228,14 @@
 
 - [[Pln]] 
   
-- [[Prj]]  
+- [[prj]]  
   
 - [[REF]] 
 	- [[COMP]] 
 		- [[Lang]] 
 		- [[INFO_PAGE]] 
 		- [[Log Log]]   
-		- [[Prj]] 
+		- [[prj]] 
 		- 
 	- [[T]]
  	
@@ -250,7 +250,7 @@
 		- [[Journal]] - Daily Journal entries
 		- [[Log/MEETING/MEET]] -
 		- [[Note]] - 
-		- [[Prj]] - 
+		- [[prj]] - 
 		- [[REF]] - 
 		- [[TXT]] - 
 		- [[WP]] -

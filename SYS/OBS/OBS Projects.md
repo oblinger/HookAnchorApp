@@ -7,7 +7,7 @@ PRJ - Larger efforts.
 
 
 ### ROCKS
-ROCK -- A large-ish time bounded effort.    [[Prj]] 
+ROCK -- A large-ish time bounded effort.    [[prj]] 
 - NAME -- Each rock has a shortname shows as: NNNN.  If this project will have todo items the name should be abbreviated to under 10 chars
 - FOLDER -- Each has a dedicated dated folder ROCKS/YYYY-MM NNNN
 - HEAD -- Each rock has a head file whose name is:   ROCKS/YYYY-MM NNNN/YYYY-MM NNNN
@@ -16,7 +16,7 @@ ROCK -- A large-ish time bounded effort.    [[Prj]]
 
 A rock is a time-bounded effort where the active portion of its life is between a week and a year in length
 
-- LINKED - Each must be linked from the [[Prj]] hook page.
+- LINKED - Each must be linked from the [[prj]] hook page.
 - DATED PAGE - Each must have a  "pYYYY-MM NNNN"  hook page (which often links to a short)          <--- give this a prefix!
 
 
