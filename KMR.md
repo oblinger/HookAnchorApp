@@ -11,7 +11,7 @@ TOPS: [[KMR]], [[Meta]], [[TOC]],
   [[Log]],
   ,
   [[MY]],
-  [[prj]],
+  ,
   [[T]], [GG](spot://gg), , [[RR]],
   [TRASH Obsidian](spot://trashobsidian), [TRASH for Obsidian Folder](spot://trashforobsidianfolder)
   OTHER: ,  , ,
@@ -22,7 +22,9 @@ TOPS: [[KMR]], [[Meta]], [[TOC]],
   DELS: [[TOC]], , [[SYS]], , , [[2024-10-29]],
   , [[At]], [[Attach]], [[Weekly]], [[work]],
   , ,
-  DELS: [[TOC]], [[Work]], [[SYS]], [[ATTACH]], [[WEEKLY]], [[2024-10-29]],[[JJ]], [[Misc]], [[test987]],[top](spot://top),[[AT]], [[ATTACH]], [[WEEKLY]], [[Work]], [[Work]], [[ATTACH]], [[WEEKLY]],[[AlienBiologyWhitepaper]], 
+  , ,
+  DELS: [[TOC]], , [[SYS]], , , [[2024-10-29]],, , ,,, , , , , , ,,
+  DELS: [[TOC]], [[Work]], [[SYS]], [[ATTACH]], [[WEEKLY]], [[2024-10-29]],[[JJ]], [[Misc]], [[test987]],[top](spot://top),[[AT]], [[ATTACH]], [[WEEKLY]], [[Work]], [[Work]], [[ATTACH]], [[WEEKLY]],[[AlienBiologyWhitepaper]],[[prj]],[[Prj]], [[Work]], [[ATTACH]], [[WEEKLY]], [[JJ]], [[Misc]], [[test987]], [top](spot://top), [[AT]], [[ATTACH]], [[WEEKLY]], [[Work]], [[Work]], [[ATTACH]], [[WEEKLY]], [[AlienBiologyWhitepaper]], 
 
 
 
@@ -191,7 +193,7 @@ dv.table(["File", "Description"], rows);
 | [[Set]]   | [[Set Folder\|Set]]     | [[Meta Set]]   | By TYPE  | Groups of like (typed) entries         |
 | [[TOC]]   | [[JJ]]                  | [[Meta Group]] | By GROUP | Taxonomy of Groups                     |
 |           |                         | [[Meta Flow]]  | By PROC  | My data processing paths               |
-| [[SV]]    | [[SV Folder\|SV]]       | [[Meta SV]]    | WORK     | Work related [[WW]]                    |
+| [[SV]]    | [[SV Folder\|SV]]       | [[Meta SV]]    | WORK     | Work related [[ww]]                    |
 
 #### [[Roots]] [[Kmr Folder|--]] Top level roots for all pages
 ```dataviewjs

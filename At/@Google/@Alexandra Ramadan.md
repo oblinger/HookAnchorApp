@@ -1,4 +1,4 @@
-=[[PP]]   [TPM](https://www.linkedin.com/in/alexandraramadan/) [[@Google]]-X.  
+=[[pp]]   [TPM](https://www.linkedin.com/in/alexandraramadan/) [[@Google]]-X.  
 
 alxrmdn@gmail.com. 
 

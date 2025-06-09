@@ -10,7 +10,7 @@
   DEPTS:	[[SV Market]], [[SV People]], [[SV Product]],
   AREAS:	[[SV Ops]], [[SV Software]], [[SV Org]], [[SV Partner]], [[SVT]],
   PLAN:		[[SV Strat]],
-  LOGS: 	[[WW]],  [[QQ]], [SV Tasks](spot://svtasks), [SV Log Page](spot://svlogpage), [[SV Archive]],
+  LOGS: 	[[ww]],  [[QQ]], [SV Tasks](spot://svtasks), [SV Log Page](spot://svlogpage), [[SV Archive]],
   OTHER:	[[SV Wings]], [[SV Basketball Info]],
   , [Game Docs](spot://gamedocs),
   , [[SV Proj]],
@@ -337,7 +337,7 @@
   [SV Tasks](spot://svtasks):
   [[SV Testing]]:
   [[SV Wings]]:
-  [[WW]]:
+  [[ww]]:
   DELS: , ,
 - [[SV Basketball Info]]
   ADDS:   

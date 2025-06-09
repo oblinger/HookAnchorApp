@@ -1,4 +1,4 @@
-=[[PP]].    [Eng Mgr](https://www.linkedin.com/in/pinaraybar/) [[@Apple]]
+=[[pp]].    [Eng Mgr](https://www.linkedin.com/in/pinaraybar/) [[@Apple]]
 
 ### 2024-11-10  Hackers 2024
 

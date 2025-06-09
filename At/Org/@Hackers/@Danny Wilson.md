@@ -1,4 +1,4 @@
-=[[PP]].     [CEO](https://www.linkedin.com/in/daniel-lawrence-wilson/) [[@Geocene]] 
+=[[pp]].     [CEO](https://www.linkedin.com/in/daniel-lawrence-wilson/) [[@Geocene]] 
 
 
 ### 2024-11-10  Hackers 2024

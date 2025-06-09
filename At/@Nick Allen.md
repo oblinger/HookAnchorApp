@@ -296,7 +296,7 @@ But presently I don't own the delivery of any of those things.
 
 - JAMES - 
 - Ken, Luryen, 
-- [[WW]] 
+- [[ww]] 
 
 ### t2023-01-19 Co-founder @ SV?
 

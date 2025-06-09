@@ -1,4 +1,4 @@
-=[[PP]].    [Founder](https://www.linkedin.com/in/otavio-good-4837368/) 
+=[[pp]].    [Founder](https://www.linkedin.com/in/otavio-good-4837368/) 
 
 
 

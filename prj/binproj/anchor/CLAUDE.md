@@ -39,12 +39,20 @@ Activates the project by:
 
 This allows for seamless integration between PyCharm IDE and Claude Code for Dan Projects that use PyCharm.
 
-### `anchor n` or `anchor --new <name>`
+### `anchor n` or `anchor --new <name> [--under|-u <location>]`
 Creates a new anchor folder with date prefix and activates it:
 1. Prepends current date in YYYY-MM format to the project name
-2. Creates the folder in `~/ob/kmr/prj/`
+2. Creates the folder in the specified location (default: `~/ob/kmr/prj/`)
 3. Creates an empty markdown file with the same name as the folder
 4. Changes to the new directory and runs `anchor --activate`
+
+Available locations for `--under`:
+- `prj` (default): `~/ob/kmr/prj/`
+- `proj`: `~/ob/proj/`
+- `binproj`: `~/ob/kmr/prj/binproj/`
+- `kmr`: `~/ob/kmr/`
+- `ob`: `~/ob/`
+- Or any fully qualified path
 
 ### `anchor h` or `anchor --help`
 Displays usage information and available commands.

@@ -37,7 +37,7 @@ n:: no prefix.	Dated entries without any typing prefix
 | 2025-03-25 | [[EV Log]]                                      | Call with Recruiter Brian Rife                                                                                                    |
 | 2025-03-21 | [[@Jason Syversen]]                             | Suns Analytics Discussion                                                                                                         |
 | 2025-03-20 | [[@Felipe Lavratti]]                            | chat                                                                                                                              |
-| 2025-03-18 | [[PQ]]                                          |                                                                                                                                   |
+| 2025-03-18 | [[pq]]                                          |                                                                                                                                   |
 | 2025-03-17 | [[Reflections]]                                 | Really off track & what to do.                                                                                                    |
 | 2025-03-16 | [[Race]]                                        | Affirmative Action causing bad outcomes                                                                                           |
 | 2025-03-14 | [[ELI Quotes]]                                  | Favorite Woman                                                                                                                    |
@@ -78,7 +78,7 @@ n:: no prefix.	Dated entries without any typing prefix
 | 2025-02-02 | [[NJ Blog]]                                     | Searching for BLOGS                                                                                                               |
 | 2025-02-01 | [[BOOK Suggestions]]                            | o3-high-mini                                                                                                                      |
 | 2025-01-30 | [[Mgt]]                                         | Investor Newsletter 2024-Q4                                                                                                       |
-| 2025-01-27 | [[PQ]]                                          | Oven Repair                                                                                                                       |
+| 2025-01-27 | [[pq]]                                          | Oven Repair                                                                                                                       |
 | 2025-01-27 | [[Mgt]]                                         | W                                                                                                                                 |
 | 2025-01-26 | [[Palestinians]]                                | Response to Chris                                                                                                                 |
 | 2025-01-22 | [[EOC Log]]                                     | verbal notes                                                                                                                      |
@@ -138,7 +138,7 @@ n:: no prefix.	Dated entries without any typing prefix
 | 2024-11-23 | [[Election2024]]                                | What should Democrats have done differently                                                                                       |
 | 2024-11-22 | [[FIN Todo]]                                    | TRACK SPENDING (my plan)                                                                                                          |
 | 2024-11-22 | [[FIN Todo]]                                    | Best Credit Cards                                                                                                                 |
-| 2024-11-21 | [[PQ]]                                          | 2024 Gross pay                                                                                                                    |
+| 2024-11-21 | [[pq]]                                          | 2024 Gross pay                                                                                                                    |
 | 2024-11-20 | [[RES Todo]]                                    | Highlights                                                                                                                        |
 | 2024-11-20 | [[RES Todo]]                                    | John Notes                                                                                                                        |
 | 2024-11-19 | [[@Jason Syversen]]                             | Meet in San Bruno                                                                                                                 |
@@ -186,7 +186,7 @@ n:: no prefix.	Dated entries without any typing prefix
 | 2024-10-01 | [[@Chase Bank]]                                 | Replacing lost card.  will recieve on Thursday.                                                                                   |
 | 2024-10-01 | [[@Softbank]]                                   | Meeting #2                                                                                                                        |
 | 2024-10-01 | [[Brain Log]]                                   | Response to Ignacious about why o1 is not type-II thought                                                                         |
-| 2024-10-01 | [[PQ]]                                          | Created Mix Tape for Exercise                                                                                                     |
+| 2024-10-01 | [[pq]]                                          | Created Mix Tape for Exercise                                                                                                     |
 | 2024-10-01 | [[HIIT Tape1]]                                  | Created HIIT Tape 1                                                                                                               |
 | 2024-09-30 | [[EOCP Median Path]]                            | TIMELINE                                                                                                                          |
 | 2024-09-30 | [[Mgt]]                                         | weekly                                                                                                                            |
@@ -210,7 +210,7 @@ n:: no prefix.	Dated entries without any typing prefix
 | 2024-09-10 | [[Politics From Me]]                            | Good People and Bad People                                                                                                        |
 | 2024-09-10 | [[2024-08 Backend Architect]]                   | Hiring FAQ                                                                                                                        |
 | 2024-09-10 | [[@Jason Syversen]]                             | Text of agreement                                                                                                                 |
-| 2024-09-09 | [[PQ]]                                          | Spraying for Ants                                                                                                                 |
+| 2024-09-09 | [[pq]]                                          | Spraying for Ants                                                                                                                 |
 | 2024-09-09 | [[DAT]]                                         | New plan for integration.                                                                                                         |
 | 2024-09-09 | [[Reflections]]                                 | Went to 1/2 time at SV                                                                                                            |
 | 2024-09-09 | [[Mgt]]                                         | Weekly                                                                                                                            |
@@ -274,10 +274,10 @@ n:: no prefix.	Dated entries without any typing prefix
 | 2024-06-11 | [[CVP]]                                         |                                                                                                                                   |
 | 2024-06-08 | [[DAT]]                                         | Notes on conflict                                                                                                                 |
 | 2024-06-08 | [[Reflections]]                                 | Saying Goodbye to Yoshiko                                                                                                         |
-| 2024-06-06 | [[PQ]]                                          | Bathtub Faucet                                                                                                                    |
+| 2024-06-06 | [[pq]]                                          | Bathtub Faucet                                                                                                                    |
 | 2024-06-05 | [[FIN Log]]                                     | Vanguard Advising                                                                                                                 |
 | 2024-06-04 | [[EOC Log]]                                     | Ideas at Night                                                                                                                    |
-| 2024-06-04 | [[PQ]]                                          | Hiring a new Cleaner                                                                                                              |
+| 2024-06-04 | [[pq]]                                          | Hiring a new Cleaner                                                                                                              |
 | 2024-06-04 | [[QQ]]                                          | Hard Case Annotating                                                                                                              |
 | 2024-06-04 | [[QQ]]                                          | 4K videos of basketball                                                                                                           |
 | 2024-06-03 | [[FIN Todo]]                                    | Costs For Vanguard                                                                                                                |
@@ -290,7 +290,7 @@ n:: no prefix.	Dated entries without any typing prefix
 | 2024-05-21 | [[2024-W21]]                                    | QUESTIONS                                                                                                                         |
 | 2024-05-21 | [[2024-W21]]                                    | SW / AI                                                                                                                           |
 | 2024-05-19 | [[POL]]                                         | UBI Cant Work - Rebuttal                                                                                                          |
-| 2024-05-16 | [[PQ]]                                          | Replace bath faucet                                                                                                               |
+| 2024-05-16 | [[pq]]                                          | Replace bath faucet                                                                                                               |
 | 2024-05-16 | [[COMS]]                                        | Mentor's call list                                                                                                                |
 | 2024-05-14 | [[@StatsPerform]]                               | Talk about sports AI                                                                                                              |
 | 2024-05-12 | [[@Jason Syversen]]                             | Slow                                                                                                                              |

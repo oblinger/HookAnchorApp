@@ -1,6 +1,6 @@
 
-.[[PP]]. <[[prj]] 
-  [[PQ]], [[Big]],
+.[[pp]]. <[[prj]] 
+  [[pq]], [[Big]],
 - [[2022-01-00 Nanny]],
 - ,
   DELS: [[2025-05-14 Sixtieth Bday]], 

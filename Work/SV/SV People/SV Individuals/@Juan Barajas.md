@@ -1,4 +1,4 @@
-=[[PP]]    [Computer Vision Engineer](https://www.linkedin.com/in/juanbarajas11/)   [[@SV]] 
+=[[pp]]    [Computer Vision Engineer](https://www.linkedin.com/in/juanbarajas11/)   [[@SV]] 
 
 
 

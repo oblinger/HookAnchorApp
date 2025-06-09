@@ -1,1 +1,1 @@
-=[[PP]]		 [Principle ML Eng](https://www.linkedin.com/in/soucindarhoche/)   [[@Stripe]]. 
+=[[pp]]		 [Principle ML Eng](https://www.linkedin.com/in/soucindarhoche/)   [[@Stripe]]. 

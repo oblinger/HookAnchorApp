@@ -2,10 +2,10 @@
 
 #comp
 
-**Creational Patterns**;;Singleton, Factory, Abstract Factory, Builder, Prototype <!--SR:!2025-05-31,1,228-->
-**Structural Patterns**;;Adapter, Decorator, Facade, Proxy, Composite, Bridge <!--SR:!2025-05-31,1,208-->
-**Behavioral Patterns**;;Observer, Strategy, Command, Iterator, State, Mediator, Chain of Responsibility <!--SR:!2025-05-31,1,188-->
-**Concurrency Patterns**;;Thread Pool, Producer-Consumer, Monitor Object <!--SR:!2025-05-31,1,228-->
+**Creational Patterns**;;Singleton, Factory, Abstract Factory, Builder, Prototype <!--SR:!2025-06-10,2,228-->
+**Structural Patterns**;;Adapter, Decorator, Facade, Proxy, Composite, Bridge <!--SR:!2025-06-10,2,208-->
+**Behavioral Patterns**;;Observer, Strategy, Command, Iterator, State, Mediator, Chain of Responsibility <!--SR:!2025-06-09,1,168-->
+**Concurrency Patterns**;;Thread Pool, Producer-Consumer, Monitor Object <!--SR:!2025-06-10,2,228-->
 ### 1. **Creational Patterns**
 Singleton, Factory, Abstract Factory, Builder, Prototype
 -?-
@@ -13,7 +13,7 @@ Singleton, Factory, Abstract Factory, Builder, Prototype
 - **Factory Method**: Creates objects without specifying the exact class of the object that will be created.
 - **Abstract Factory**: Provides an interface for creating families of related or dependent objects without specifying their concrete classes. (pegboard)
 - **Builder**: Constructs a complex object step by step.
-- **Prototype**: Creates new objects by copying an existing object. <!--SR:!2025-06-06,7,248-->
+- **Prototype**: Creates new objects by copying an existing object. <!--SR:!2025-06-25,17,248-->
 
 ### 2. **Structural Patterns**
 Adapter, Decorator, Facade, Proxy, Composite, Bridge
@@ -34,7 +34,7 @@ Observer, Strategy, Command, Iterator, State, Mediator, Chain of Responsibility
 - **Iterator**: Provides a way to access elements of a collection sequentially without exposing its underlying representation.
 - **State**: Allows an object to alter its behavior when its internal state changes.
 - **Mediator**: Defines an object that encapsulates how a set of objects interact.
-- **Chain of Responsibility**: Passes requests along a chain of handlers where each handler decides whether to handle the request or pass it along. <!--SR:!2025-06-04,5,230-->
+- **Chain of Responsibility**: Passes requests along a chain of handlers where each handler decides whether to handle the request or pass it along. <!--SR:!2025-06-20,12,230-->
 
 ### 4. **Concurrency Patterns**
 Thread Pool, Producer-Consumer, Monitor Object

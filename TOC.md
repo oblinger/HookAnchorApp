@@ -63,7 +63,7 @@
             [[SV Archive]]: [[2022-10-17 SV90]],	
             [[SV People]]: 
                 [[SV Individuals]]: 
-            [[WW]]: [[2023 SV Roles and Responsibilities]],	
+            [[ww]]: [[2023 SV Roles and Responsibilities]],	
             [[SV Strat]]: [[SV Roadmap]],	[[2023 Four Pillars]],	
             [[CV]]: [[CV Alg]],	[[CVP]],	[[Data]],	
             [[QQ]]: 
@@ -74,13 +74,13 @@
     [[prj]]: [[Spot Cmdr]],	[[2021-04 FindDayCare]],	[[2022-05 Enxt]],	
         [[2022-03 BeFAANG]],	[[2022-03 BeVC]],	
         [[ABio]]: [[Measuring Intelligence]],	
-        [[PP]]: [[2022-01-00 Nanny]],	
+        [[pp]]: [[2022-01-00 Nanny]],	
         [[UF]]: [[ufPublish]],	
             [[UfApps]]: 
             [[UF-OLD]]: [[OLD-CONSTRUCTS]],	[[OLD-Markdown]],	[[lex-lexlang]],	
         [[gitproj]]: [[AlienBiology]],	
         [[2020-08 Race Pitch]]: 
-        [[BinProj]]: 
+        [[BinProj]]: [[lim]],	
     [[At]]: [[@Anthropic]],	[[@Qingling Oblinger]],	[[VC ORG]],	[[@Google]],	
         [[Org]]: [[@Merrill]],	[[@Hackers]],	[[Service]],	
             [[@Amazon]]: 

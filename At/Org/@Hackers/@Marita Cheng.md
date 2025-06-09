@@ -1,4 +1,4 @@
-=[[PP]].     [Founder](https://www.linkedin.com/in/maritacheng/) [[@Aubot]] 
+=[[pp]].     [Founder](https://www.linkedin.com/in/maritacheng/) [[@Aubot]] 
 
 
 

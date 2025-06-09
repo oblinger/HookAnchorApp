@@ -1,3 +1,4 @@
+- get rid of easy code
 
 - Test automation:  (1) Mery Impersonation; (2) All user testing.
 - document for things to try as a beta tester
