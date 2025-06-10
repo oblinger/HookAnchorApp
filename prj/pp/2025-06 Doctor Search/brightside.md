@@ -1,5 +1,8 @@
 # Brightside Health - Comprehensive Research Summary
 
+888-816-6197
+
+
 ## Overview
 Brightside Health is an online mental health platform specializing in depression and anxiety treatment, offering therapy, psychiatry, and medication management through a subscription-based model.
 

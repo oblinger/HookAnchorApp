@@ -677,6 +677,14 @@ Use Amphemetifine
 
 ## xx Spotify 
 (https://www.spotify.com/us/download/mac/)
+
+## xx Tmux  xx Tmuxp
+
+pip install --user tmuxp  
+# or on macOS  
+
+	brew install tmuxp
+
 ## xx Visual Studio Code
 - Google "Visual studio download mac"
 - Choose this one:   https://code.visualstudio.com/download

@@ -4,7 +4,15 @@
 
 
 JUAN
+[c]reate window
+
+[r/R]ename Window/Session
+, .       prev/next window
+< >    prev/next session
+
 h = " = Horizontal split
 v = % = Vertical split
 
-[C]reate Pane
+<- ->  prev/next window
+
+meta -hjkl   resize pane or sent

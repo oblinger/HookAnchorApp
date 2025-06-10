@@ -10,14 +10,16 @@
   DEPTS:	[[SV Market]], [[SV People]], [[SV Product]],
   AREAS:	[[SV Ops]], [[SV Software]], [[SV Org]], [[SV Partner]], [[SVT]],
   PLAN:		[[SV Strat]],
-  LOGS: 	[[ww]],  [[QQ]], [SV Tasks](spot://svtasks), [SV Log Page](spot://svlogpage), [[SV Archive]],
+  LOGS: 	,  [[QQ]], [SV Tasks](spot://svtasks), [SV Log Page](spot://svlogpage), [[SV Archive]],
   OTHER:	[[SV Wings]], [[SV Basketball Info]],
   , [Game Docs](spot://gamedocs),
   , [[SV Proj]],
   , [Bug Board](spot://bugboard),
   , [Patents](spot://patents),
-  , [[SV Log]], 
-  DELS: [Bug Actual List Page](spot://bugactuallistpage), [Bug Board Page](spot://bugboardpage),[[SV Log]],
+  , [[SV Log]],
+  , ,
+  DELS: , ,[[SV Log]],
+  DELS: [Bug Actual List Page](spot://bugactuallistpage), [Bug Board Page](spot://bugboardpage),[[SV Log]],[[ww]],[[WW]], [Bug Actual List Page](spot://bugactuallistpage), [Bug Board Page](spot://bugboardpage), 
 
 [[SV Proj]] 
 
