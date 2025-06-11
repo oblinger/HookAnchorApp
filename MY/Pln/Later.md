@@ -1,15 +1,20 @@
+
+- [ ] Get investment plan
+
+
+
 WAIT
-- [ ] adolfo ladder
-- [ ] Allison restart
-- [ ] Get job application tests from James
-- [ ] Followup Yashin's conservative friend
+ - [ ] adolfo ladder
+ - [ ] Allison restart
+ - [ ] Get job application tests from James
+ - [ ] Followup Yashin's conservative friend
 
 
-- [ ] Evidence-based child rearing
-- [ ] play with VScode
-- [ ] DMV licence renewal.
-- [ ] slack notifications not working
-- [ ] don't forget laurette
+ - [ ] Evidence-based child rearing
+ - [ ] play with VScode
+ - [ ] DMV licence renewal.
+ - [ ] slack notifications not working
+ - [ ] don't forget laurette
 
 - [ ] Finish Atomic Habits
 - [ ] Write Love Letter

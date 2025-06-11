@@ -19,7 +19,8 @@
   , [[SV Log]],
   , ,
   DELS: , ,[[SV Log]],
-  DELS: [Bug Actual List Page](spot://bugactuallistpage), [Bug Board Page](spot://bugboardpage),[[SV Log]],[[ww]],[[WW]], [Bug Actual List Page](spot://bugactuallistpage), [Bug Board Page](spot://bugboardpage), 
+  , [[ww]], 
+  DELS: [Bug Actual List Page](spot://bugactuallistpage), [Bug Board Page](spot://bugboardpage),[[SV Log]],[[ww]],[[WW]], [Bug Actual List Page](spot://bugactuallistpage), [Bug Board Page](spot://bugboardpage),
 
 [[SV Proj]] 
 

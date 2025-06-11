@@ -1,6 +1,20 @@
 
 
 
+### 2025-06-10  Flailing
+
+Wow am I flailing.  I have very bad patterns of daily activity.
+I am procrastinating worse than I ever can remember doing.
+I am stressed that this job market is too hard and I am too misaligned.
+
+Sometimes I feel things will be ok-enough, but nearly anything can shake that confidence.
+
+in the end, I don't have clear goals for each week, and get very little done.
+I do have many goals, but they are parts of very large buckets.
+
+==> One idea is to set specific goals for each day, and push to achieve those
+maybe I will even do that for the rest of today and this week...
+
 ### 2025-06-03  Hitting Bottom
 
 I did nothing today, just 1/2 of repeat, and exercise.

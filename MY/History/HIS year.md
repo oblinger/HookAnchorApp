@@ -1,4 +1,9 @@
 
+[[KM Anchors\|Tue Jul 23  2024]]  	[[KM Anchors#ANCHORS]]  
+[[2011-08 Zanzors\|Mon Jul 22  2024]]  	[[2011-08 Zanzors#ASPECTS]]  
+[[2024-W30\|Mon Jul 22  2024]]  	[[2024-W30#W30   2024-07-22   [[2024-W29\\|<<]] [[2024-W31\\|>>]]]]  
+[[2022 CORIS\|Sun Jul 21  2024]]  	[[2022 CORIS#m2022-03-13 - TRIP CORIS Robotics Institute (OREGON STATE UN]]  
+[[2022 CORIS\|Sun Jul 21  2024]]  	[[2022 CORIS#[[PP Ross Hatton]]]]  
 [[2022 CORIS\|Sun Jul 21  2024]]  	[[2022 CORIS#[[PP ## Ravi Balasubramanian]]]]  
 [[2022 CORIS\|Sun Jul 21  2024]]  	[[2022 CORIS#[[PP Jonathan Hurst]]]]  
 [[2022 CORIS\|Sun Jul 21  2024]]  	[[2022 CORIS#[[PP Heather Knight]]]]  

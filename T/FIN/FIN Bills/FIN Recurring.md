@@ -73,6 +73,7 @@ $13.99 per month and $9.99 per month what are thsese?
 - Google: Storage $2, 
 - 1Password
 - Core Power Yoga
+- $14/mo  Audible (DO amz account)
 
 ### OTHER
 - $15/mo	Audible for dad (paid from Amazon)

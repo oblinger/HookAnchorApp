@@ -30,4 +30,13 @@ Etsy
 
 
 ### --- Hudson Jeans ---
-other info somewhere else
+- Size 33; Byron Straight; Zip Fly
+  Style# M255ZDSS -- Deep dark blue (is my fav)
+- NOPE:  Blake Slim Straight (ok, little too skinny in leg)
+
+https://www.ebay.com/itm/NWT-Size-33X35-Men-s-HUDSON-BYRON-Straight-Stretch-Denim-Jeans/163996006934?hash=item262eec7a16:g:Q3IAAOSwIw1b36zs
+
+
+
+
+NOPE

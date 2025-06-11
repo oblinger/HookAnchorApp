@@ -1,10 +1,9 @@
 
-
 [[NJ]]:   (See [[Daily Schedules]])
-- [[CN]]:		Uri, Luis, Juan, Nvidia
-- [[SEEK]]:	LI-lst
-- [[LRN]]:	DL C3;
-- [[BOD]]:	Get Coach?
+ - [[CN]]:		Uri, Luis, Juan, Nvidia
+ - [[SEEK]]:	LI-lst
+ - [[LRN]]:	DL C3;
+ - [[BOD]]:	Get Coach?
 
 - [[TG]]:	Read glass door about them
 - [[NJ.]]:	[[RES]] linked in fixes
