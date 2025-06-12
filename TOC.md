@@ -52,9 +52,9 @@
             [[MED Log]]: 
         [[COMS]]: 
             [[COM Msg]]: 
-    [[SYS]]: [[KM]],	[[Hack]],	[[SYS Misc]],	[[OBS]],	[[Closet]],	[[SYS Hacks]],	
+    [[SYS]]: [[Hack]],	[[SYS Misc]],	[[OBS]],	[[Closet]],	[[SYS Hacks]],	
+        [[KM]]: [[Hook System]],	
         [[MAC]]: [[MAC Apps]],	
-        [[km]]: [[Hook System]],	
     [[work]]: 
         [[SV]]: [[INV]],	[[SVT]],	[[SV Wings]],	[[Circle]],	[[SV Software]],	
             [[SV Ops]],	
