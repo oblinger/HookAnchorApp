@@ -42,7 +42,7 @@
         [[Food]]: 
             [[Food Research]]: 
         [[Mus]]: 
-        [[Doc]]: [[DocObsidian]],	
+        [[Doc]]: [[DocObsidian]],	[[DocTmux]],	
             [[DocPython]]: [[DocSklearn]],	
                 [[DocTorch]]: [[Torch Module]],	[[Torch Libraries]],	
         [[Legal]]: [[2023 Legal SV]],	

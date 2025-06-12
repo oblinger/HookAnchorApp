@@ -1,3 +1,6 @@
+.[[DocTmux]].
+  , [[tmux Cheatsheet]], 
+
 
 
 [[tmux Cheatsheet]] 
