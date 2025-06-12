@@ -1,4 +1,7 @@
 
+[[Reflections\|Wed Jun 11  2025]]  	[[Reflections#2025-06-10  Flailing]]  
+[[tmux-cheatsheet\|Wed Jun 11  2025]]  	[[tmux-cheatsheet#tmux Cheatsheet]]  
+[[tmux-keybindings\|Wed Jun 11  2025]]  	[[tmux-keybindings#tmux Cheat Sheet]]  
 [[@Cigna\|Tue Jun 10  2025]]  	[[@Cigna#LOG]]  
 [[MAC Apps\|Tue Jun 10  2025]]  	[[MAC Apps#xx Tmux  xx Tmuxp]]  
 [[MAC Apps\|Tue Jun 10  2025]]  	[[MAC Apps#or on macOS]]  

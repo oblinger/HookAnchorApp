@@ -1,9 +1,9 @@
 .[[BinProj]].
   ,
   , [[dp]],
-  , [[lim]],
-  , [[anchor]], 
-  DELS: [[Budg]], 
+  , ,
+  , [[anchor]],
+  DELS: [[Budg]],[[lim]], 
 
 
 

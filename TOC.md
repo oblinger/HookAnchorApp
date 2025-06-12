@@ -13,7 +13,7 @@
         [[RR PAPERS]]: [[RR Blog]],	
         [[DL]]: [[DL Topic]],	[[DL Alg]],	
             [[DLF]]: [[DL Visualization]],	[[DL Activation]],	
-    [[T]]: [[Trash]],	[[Tag]],	
+    [[T]]: [[Trash]],	[[Tag]],	[[web]],	
         [[Misc]]: [[STARTUPS]],	[[Test88]],	[[Old]],	[[SF]],	[[Biking]],	
             [[Presentations]]: 
             [[House]]: 
@@ -63,6 +63,7 @@
             [[SV Archive]]: [[2022-10-17 SV90]],	
             [[SV People]]: 
                 [[SV Individuals]]: 
+            [[ww]]: [[2023 SV Roles and Responsibilities]],	
             [[SV Strat]]: [[SV Roadmap]],	[[2023 Four Pillars]],	
             [[CV]]: [[CV Alg]],	[[CVP]],	[[Data]],	
             [[QQ]]: 
@@ -73,12 +74,13 @@
     [[prj]]: [[2025 Sports Data Search]],	[[Spot Cmdr]],	[[2021-04 FindDayCare]],	
         [[2022-05 Enxt]],	[[2022-03 BeFAANG]],	[[2022-03 BeVC]],	
         [[ABio]]: [[Measuring Intelligence]],	
+        [[pp]]: [[2022-01-00 Nanny]],	[[2025-06 Doctor Search]],	
         [[UF]]: [[ufPublish]],	
             [[UfApps]]: 
             [[UF-OLD]]: [[OLD-CONSTRUCTS]],	[[OLD-Markdown]],	[[lex-lexlang]],	
         [[gitproj]]: [[AlienBiology]],	
         [[2020-08 Race Pitch]]: 
-        [[BinProj]]: [[lim]],	
+        [[BinProj]]: 
     [[At]]: [[@Anthropic]],	[[@Qingling Oblinger]],	[[VC ORG]],	[[@Google]],	
         [[Org]]: [[@Merrill]],	[[@Hackers]],	[[Service]],	
             [[@Amazon]]: 

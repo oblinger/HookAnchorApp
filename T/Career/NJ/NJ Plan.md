@@ -50,6 +50,12 @@
 
 # LOG
 
+### 2025-06-11  .....
+
+- Easy apply.  
+- Alien Biology: Dileep, Rafah's contact
+- Alg development???
+
 ### 2025-03-28  Ideas
 Doug is in the NY office
 

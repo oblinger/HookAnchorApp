@@ -1,4 +1,7 @@
 
+[[_agenda 2\|Sat Jun 7  2025 ]]  	[[_agenda 2#=== PLAN ===]]  
+[[_agenda 2\|Sat Jun 7  2025 ]]  	[[_agenda 2#### OVERVIEWS ###]]  
+[[_agenda 2\|Sat Jun 7  2025 ]]  	[[_agenda 2#### PRINCIPLES ###]]  
 [[_agenda 2\|Sat Jun 7  2025 ]]  	[[_agenda 2#### TERMS ###]]  
 [[_agenda 2\|Sat Jun 7  2025 ]]  	[[_agenda 2#### TOPICS / LISTS ###]]  
 [[_agenda 2\|Sat Jun 7  2025 ]]  	[[_agenda 2#### FRAMING ###]]  

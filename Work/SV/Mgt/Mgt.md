@@ -26,6 +26,15 @@ recognizing defense orgnanization -  2-3 zone, man defense,
 
 # Log
 
+### 2025-06-11  W
+
+- PATENT WORK - 
+- HIGHLIGHT TOOL - Highlight creation tool from a processed game
+    - Tested it on 3 PLAYON games
+- SHOT-CHART - Adjusted pipe to adjust to latest shot charts logic
+- Testing shot charts end to end in dev
+- BALL DATASET - Building object detection dataset using our annotated GT games
+
 ### 2025-04-21  W
 - Shot charts workflow working (then waiting on Matias)
 - new metrics

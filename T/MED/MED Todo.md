@@ -13,6 +13,9 @@
 ### TODO
 - read about one and done exercise
 - [ ] Call Hassler about Gastroenterology appointment
+- [ ] Ask hassler about ACE vs ARB for my acid
+      ACE Accupril->quinapril. Capoten->captopril. Prinivil->Lisinopril
+      ARB Avapro->irbesartan. Benicar->olmesartan. Teneten->eprosartan
 - [ ] Call Eyes about aug-16 @ 3:15 (what doc will I see)
 
 - [ ] DAILY: Walking or Peleton w/ weights
