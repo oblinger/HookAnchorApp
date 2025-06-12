@@ -1,5 +1,6 @@
 .[[Hack]].
-  , [[DAT]], [[Fried Archive]], [[HACK.]], [[Hack Chunch]], [[Time Tracker]], 
+  , [[DAT]], [[Fried Archive]], [[HACK.]], [[Hack Chunch]], [[Time Tracker]],
+  , [hack Note](spot://hacknote), 
 
 .[[HACK]].
   , [[DAT]], [[Hack Chunch]], [[Time Tracker]],

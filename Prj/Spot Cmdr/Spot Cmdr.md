@@ -1,5 +1,6 @@
 .[[Spot Cmdr]].
-  , [[SP]], [[Spot]], 
+  , [[SP]], ,
+  DELS: [[Spot]], 
 
 
 - [SPOT Folder](spot://SPOT~Folder) 

@@ -1,7 +1,7 @@
 
 # TABLE OF CONENTS
 
-[[Google]],	[[Groq]],	[[mate]],	
+[[Google]],	[[Groq]],	[[mate]],	[[Spot]],	
 [[KMR]]: [[Weekly]],	
     [[RR]]: [[Lrn]],	[[RR Leet]],	[[RR Philosophy]],	[[RR MGR]],	
         [[RR Web]]: 
@@ -13,7 +13,7 @@
         [[RR PAPERS]]: [[RR Blog]],	
         [[DL]]: [[DL Topic]],	[[DL Alg]],	
             [[DLF]]: [[DL Visualization]],	[[DL Activation]],	
-    [[T]]: [[Trash]],	[[Tag]],	[[web]],	
+    [[T]]: [[Trash]],	[[Tag]],	
         [[Misc]]: [[STARTUPS]],	[[Test88]],	[[Old]],	[[SF]],	[[Biking]],	
             [[Presentations]]: 
             [[House]]: 
@@ -53,13 +53,12 @@
         [[COMS]]: 
             [[COM Msg]]: 
     [[SYS]]: [[Hack]],	[[SYS Misc]],	[[OBS]],	[[Closet]],	[[SYS Hacks]],	
-        [[KM]]: [[Hook System]],	
         [[MAC]]: [[MAC Apps]],	
     [[work]]: 
         [[SV]]: [[INV]],	[[SVT]],	[[SV Wings]],	[[Circle]],	[[SV Software]],	
             [[SV Ops]],	
             [[SV Org]]: [[@BallerTV]],	
-            [[SV Product]]: 
+            [[SV Product]]: [[SV System]],	
             [[SV Archive]]: [[2022-10-17 SV90]],	
             [[SV People]]: 
                 [[SV Individuals]]: 
@@ -72,7 +71,7 @@
         [[Pln]]: [[Habit]],	[[Mission]],	[[Productivity]],	
             [[SCRatch]]: 
     [[prj]]: [[2025 Sports Data Search]],	[[Spot Cmdr]],	[[2021-04 FindDayCare]],	
-        [[2022-05 Enxt]],	[[2022-03 BeFAANG]],	[[2022-03 BeVC]],	
+        [[2022-05 Enxt]],	[[2022-03 BeFAANG]],	[[web]],	[[2022-03 BeVC]],	
         [[ABio]]: [[Measuring Intelligence]],	
         [[pp]]: [[2025-06 LinkedIn Contacts Merge]],	[[2022-01-00 Nanny]],	
             [[2025-06 Doctor Search]],	
@@ -81,7 +80,7 @@
             [[UF-OLD]]: [[OLD-CONSTRUCTS]],	[[OLD-Markdown]],	[[lex-lexlang]],	
         [[gitproj]]: [[AlienBiology]],	
         [[2020-08 Race Pitch]]: 
-        [[BinProj]]: 
+        [[BinProj]]: [[2025-06 spot]],	
     [[At]]: [[@Anthropic]],	[[@Qingling Oblinger]],	[[VC ORG]],	[[@Google]],	
         [[Org]]: [[@Merrill]],	[[@Hackers]],	[[Service]],	
             [[@Amazon]]: 
@@ -112,3 +111,4 @@
     [[Set]]: [[Recipe]],	[[Read]],	[[Book]],	
         [[Humor]]: 
         [[Buy]]: 
+[[KM]]: [[Hook System]],	

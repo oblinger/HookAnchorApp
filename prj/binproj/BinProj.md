@@ -3,7 +3,8 @@
   , [[dp]],
   , ,
   , [[anchor]],
-  DELS: [[Budg]],[[lim]], 
+  , [[2025-06 spot]], [[km_cmd]], 
+  DELS: [[Budg]],[[lim]],
 
 
 

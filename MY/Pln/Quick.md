@@ -1,5 +1,4 @@
 - cursor positioning in iterm2
-- km was ambiguous
 - med exercise plan weights
 - mike mathew summary of use of LLM
 - get rid of easy code

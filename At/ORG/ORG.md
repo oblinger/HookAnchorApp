@@ -7,7 +7,8 @@
   , [[@Vmware]], [[@Wells Fargo]], [[Org Startup]], [[Service]],
   , [[@Dexafit]],
   , [[@Github]], [[@Seneca]],
-  , [[@Cigna]], 
+  , [[@Cigna]],
+  , [[@Humanoid]], 
 
 .[[ORG]].
   , [[@Amazon]], [[@Apple]], [[@Citibank]], [[@Facebook]], , [[@Ginza Metrics]]

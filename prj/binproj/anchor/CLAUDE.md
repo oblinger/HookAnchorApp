@@ -167,6 +167,8 @@ This is part of a larger "BinProj" collection of script projects that are linked
 ## Memories
 
 - `~/bin/ob_zshrc` contains commands that trigger anchor and folder finding utilities
+- The `ff` command in `~/bin/ob_zshrc` has tab completion that extracts all directory basenames from `~/.anchor_cache`, which can create thousands of completion options and cause shell performance issues
+- Tab completion for `ff`, `dp`, and `ana` commands uses `_describe` to show directory basenames and alias names
 - Python 3 (for all scripts)
 - `~/bin/.ff_cache` file (created by ffload, used by fflookup)
 - Base directory structure: `~/ob/kmr/`, `~/ob/proj/`
