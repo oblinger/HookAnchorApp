@@ -52,9 +52,9 @@
             [[MED Log]]: 
         [[COMS]]: 
             [[COM Msg]]: 
-    [[SYS]]: [[Hack]],	[[SYS Misc]],	[[OBS]],	[[Closet]],	[[SYS Hacks]],	
-        [[KM]]: [[Hook System]],	
+    [[SYS]]: [[KM]],	[[Hack]],	[[SYS Misc]],	[[OBS]],	[[Closet]],	[[SYS Hacks]],	
         [[MAC]]: [[MAC Apps]],	
+        [[km]]: [[Hook System]],	
     [[work]]: 
         [[SV]]: [[INV]],	[[SVT]],	[[SV Wings]],	[[Circle]],	[[SV Software]],	
             [[SV Ops]],	
@@ -74,7 +74,8 @@
     [[prj]]: [[2025 Sports Data Search]],	[[Spot Cmdr]],	[[2021-04 FindDayCare]],	
         [[2022-05 Enxt]],	[[2022-03 BeFAANG]],	[[2022-03 BeVC]],	
         [[ABio]]: [[Measuring Intelligence]],	
-        [[pp]]: [[2022-01-00 Nanny]],	[[2025-06 Doctor Search]],	
+        [[pp]]: [[2025-06 LinkedIn Contacts Merge]],	[[2022-01-00 Nanny]],	
+            [[2025-06 Doctor Search]],	
         [[UF]]: [[ufPublish]],	
             [[UfApps]]: 
             [[UF-OLD]]: [[OLD-CONSTRUCTS]],	[[OLD-Markdown]],	[[lex-lexlang]],	

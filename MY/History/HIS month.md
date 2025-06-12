@@ -1,4 +1,8 @@
 
+[[_URF-old\|Sat Jun 7  2025 ]]  	[[_URF-old#=== TRANSLATING RDF TO URF ===]]  
+[[_agenda 2\|Sat Jun 7  2025 ]]  	[[_agenda 2#PUT A HANDLE ON IT]]  
+[[_agenda 2\|Sat Jun 7  2025 ]]  	[[_agenda 2#to place]]  
+[[_agenda 2\|Sat Jun 7  2025 ]]  	[[_agenda 2#to place2]]  
 [[_agenda 2\|Sat Jun 7  2025 ]]  	[[_agenda 2#=== PLAN ===]]  
 [[_agenda 2\|Sat Jun 7  2025 ]]  	[[_agenda 2#### OVERVIEWS ###]]  
 [[_agenda 2\|Sat Jun 7  2025 ]]  	[[_agenda 2#### PRINCIPLES ###]]  

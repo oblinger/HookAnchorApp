@@ -1,3 +1,5 @@
 .[[web]].
-  , [[2025-06-11 Aggregator]], [[tmux-cheatsheet]], [[tmux-keybindings]], 
+  , [[2025-06-11 Aggregator]], , ,
+  , [[active binding]], 
+  DELS: [[tmux-cheatsheet]], [[tmux-keybindings]], 
 
