@@ -1,0 +1,15 @@
+session_name: 2025-06 anchor_selector
+start_directory: .
+windows:
+  - window_name: claude
+    panes:
+      - shell_command: claude --continue
+  - window_name: folder
+    panes:
+      - shell_command: vim
+  - window_name: zsh
+    panes:
+      - shell_command: zsh
+  - window_name: notes
+    panes:
+      - shell_command: vim "2025-06 anchor_selector.md"
