@@ -6,7 +6,6 @@
 - https://link.alphasignal.ai/0tlXWN
 
 - lm studio (try it out)
-- 
 
 - double click .md   -  https://forum.obsidian.md/t/make-obsidian-a-default-app-for-markdown-files-on-macos/22260?utm_source=chatgpt.com
 - log of changes to contacts.  GPT:  top-contacts, BusyCal

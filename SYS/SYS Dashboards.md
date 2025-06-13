@@ -99,6 +99,7 @@ LEFT FOCUSED LAYOUT
 | Fried | HACK. | ToBuy |
 |   "   |  Fun  | Spot  |
 |   "   |  Gap  | Quick |
+|       |       |       |
 
 
 
