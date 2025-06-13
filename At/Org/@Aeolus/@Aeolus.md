@@ -1,3 +1,6 @@
+.[[@Aeolus]].
+  , [@Aeolus Note](spot://@aeolusnote), 
+
 =[[Org]] 
 
 

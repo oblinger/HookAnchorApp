@@ -1,3 +1,6 @@
+.[[Search]].
+  , [Search Note](spot://searchnote), 
+
 
 
 

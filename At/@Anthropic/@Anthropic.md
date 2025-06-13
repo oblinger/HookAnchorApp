@@ -1,5 +1,6 @@
 .[[@Anthropic]].
-  [[Claude]], 
+  [[Claude]],
+  , [@Anthropic Note](spot://@anthropicnote), 
 
 #pp  
 

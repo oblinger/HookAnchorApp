@@ -1,5 +1,6 @@
 .[[Google]].
-  , [Google Cloud Console](spot://googlecloudconsole), 
+  , [Google Cloud Console](spot://googlecloudconsole),
+  , [Google Note](spot://googlenote), 
 
 (See [[@Google]]) 
 # Top

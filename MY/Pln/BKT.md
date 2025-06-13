@@ -5,6 +5,7 @@
  - [[LRN]]:	DL C3;
  - [[BOD]]:	Get Coach?
 
+- [Jobs](https://jobright.ai/jobs/recommend?pos=20) 
 - [[TG]]:	Read glass door about them
 - [[NJ.]]:	[[RES]] linked in fixes
 

@@ -1,3 +1,6 @@
+.[[OpenAI]].
+  , [OpenAI Note](spot://openainote), 
+
 # Top
 #### kind: Big
 #### area: CoreDL

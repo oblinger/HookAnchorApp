@@ -1,7 +1,8 @@
 .[[WP]].
   :
-  ,   [[2002-01-00 Procedural Knowledge-AR]], [[WP2021]], [[WP2022]], [[WP2023]], [[wp2023-01-05 Keyboard Settlement]], 
-  DELS: [[WP Entry]], 
+  ,   [[2002-01-00 Procedural Knowledge-AR]], [[WP2021]], [[WP2022]], [[WP2023]], [[wp2023-01-05 Keyboard Settlement]],
+  , [WP Note](spot://wpnote), 
+  DELS: [[WP Entry]],
 
 n:: 'wp...'	Work Product. Single documents outputs
 

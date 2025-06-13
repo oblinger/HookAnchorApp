@@ -1,3 +1,6 @@
+.[[Karaoke]].
+  , [Karaoke Note](spot://karaokenote), 
+
 
 "Freedom"              -- Tyrone Wells -- when you let it go it'll come right back to you
 Grandma's Feather Bed  -- John Denver  -- 

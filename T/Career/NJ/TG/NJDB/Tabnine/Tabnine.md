@@ -1,3 +1,6 @@
+.[[Tabnine]].
+  , [Tabnine Note](spot://tabninenote), 
+
 # Top
 #### kind: BigAI
 #### area: CoreNLP

@@ -315,9 +315,10 @@
   , ,
   , ,
   DELS: ,
-  , [[MAC Apps]], 
+  , [[MAC Apps]],
   DELS: ,[[MAC Apps]],
-  DELS: [[App]],[[MAC Apps]],[[App]], [[App]], 
+  , [MAC Apps Note](spot://macappsnote), [MAC Note](spot://macnote), 
+  DELS: [[App]],[[MAC Apps]],[[App]], [[App]],
 
 
 

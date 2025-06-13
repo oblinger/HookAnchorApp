@@ -83,7 +83,8 @@
   ADDS:   [[EduCorp Billet Assessment Matrix (BAM)]],
   ADDS:   [[EduCorp Billet Assessment Matrix (BAM)]],
   ADDS:   , , [[EduCorp Billet Assessment Matrix -- BAM]],
-  DELS: [[Greenhouse Farming]], [[@AugustineAntwi-Boasiako]], [[@Meredith Bates]], 
+  , [EduCorp Note](spot://educorpnote), 
+  DELS: [[Greenhouse Farming]], [[@AugustineAntwi-Boasiako]], [[@Meredith Bates]],
 
 
 

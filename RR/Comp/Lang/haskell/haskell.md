@@ -1,3 +1,6 @@
+.[[haskell]].
+  , [haskell Note](spot://haskellnote), 
+
  [[TAGS/LANG]]
  
 Command Line:  $ ghci

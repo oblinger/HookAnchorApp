@@ -1,3 +1,6 @@
+.[[Deepcell]].
+  , [Deepcell Note](spot://deepcellnote), 
+
 # Top
 #### kind: StartAI
 #### area: Bio

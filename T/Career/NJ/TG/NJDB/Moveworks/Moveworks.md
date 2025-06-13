@@ -1,3 +1,6 @@
+.[[Moveworks]].
+  , [Moveworks Note](spot://moveworksnote), 
+
 # Top
 #### kind: StartAI
 #### area: Retail

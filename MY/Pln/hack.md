@@ -1,3 +1,7 @@
+
+- cursor positioning in iterm2
+- med exercise plan weights
+- nicer fonts for iterm2.  see same blogger that taught us tmux/vim
 - km broken - pp sixtieth bday
 %contents%
 

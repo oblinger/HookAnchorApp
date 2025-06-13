@@ -1,3 +1,6 @@
+.[[Findem]].
+  , [Findem Note](spot://findemnote), 
+
 # Top
 #### kind: StartAI
 #### area: HR Tech

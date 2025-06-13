@@ -1,7 +1,8 @@
 .[[Test88]].
   , [[dent_on]],
   , ,
-  DELS: [Test88 Note](spot://test88note), 
+  , [Test88 Note](spot://test88note), 
+  DELS: [Test88 Note](spot://test88note),
 
 .[[test88]].
   ,   [[dent_on]], 

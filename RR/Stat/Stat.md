@@ -13,9 +13,10 @@
   , [[Stat Terms]],
   , ,
   DELS: [[Stat Alg]],,[[RMS]], [[Stat Alg]], [[Stat Alg]],[[Stat Terms]],
-  , [[Precision & Recall - Hypothesis Testing]], 
+  , [[Precision & Recall - Hypothesis Testing]],
   DELS: [[Stat Alg]],,[[RMS]], [[Stat Alg]], [[Stat Alg]],[[Stat Terms]],[[Precision & Recall - Hypothesis Testing]], [[Precision & Recall - Hypothesis Testing]],
-  DELS: [[Stat Alg]],[[Kalman Filter]],[[RMS]], [[Stat Alg]], [[Stat Alg]],[[Stat Terms]],[[Precision & Recall - Hypothesis Testing]], [[Precision & Recall - Hypothesis Testing]],[[Hypothesis Testing]], [[Kalman Filter]], 
+  , [Stat Alg Note](spot://statalgnote), [Stat Note](spot://statnote), 
+  DELS: [[Stat Alg]],[[Kalman Filter]],[[RMS]], [[Stat Alg]], [[Stat Alg]],[[Stat Terms]],[[Precision & Recall - Hypothesis Testing]], [[Precision & Recall - Hypothesis Testing]],[[Hypothesis Testing]], [[Kalman Filter]],
 
 [[Kalman Filter]] 
 

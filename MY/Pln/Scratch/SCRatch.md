@@ -1,5 +1,6 @@
 .[[SCRatch]].
-  ,   [[SCR Note]], [[SCR Qingling<>Dan Webpage]], [[SNIP]], 
+  ,   [[SCR Note]], [[SCR Qingling<>Dan Webpage]], [[SNIP]],
+  , [SCRatch Note](spot://scratchnote), 
 
 
 :: [[SCR Qingling<>Dan Webpage]]

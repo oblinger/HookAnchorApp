@@ -1,3 +1,6 @@
+.[[AssemblyAI]].
+  , [AssemblyAI Note](spot://assemblyainote), 
+
 # Top
 #### kind: BigAI
 #### area: CoreNLP

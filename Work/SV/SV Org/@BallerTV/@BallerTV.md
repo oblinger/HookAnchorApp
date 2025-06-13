@@ -1,5 +1,6 @@
 .[[@BallerTV]].
-  ,   [[@Aaron Hawkey]], [[@Ping Chen]], 
+  ,   [[@Aaron Hawkey]], [[@Ping Chen]],
+  , [@BallerTV Note](spot://@ballertvnote), 
 
 == [[Corp]]    
 - [[@Aaron Hawkey]], [[@Ping Chen]], 

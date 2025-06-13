@@ -1,3 +1,6 @@
+.[[Copy.ai]].
+  , [Copy.ai Note](spot://copy.ainote), 
+
 # Top
 ## Sections
 ### Cash

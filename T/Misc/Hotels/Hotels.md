@@ -1,3 +1,6 @@
+.[[Hotels]].
+  , [Hotels Note](spot://hotelsnote), 
+
 
 
 

@@ -2,6 +2,7 @@
   [[DL proj]],
   [[NJ.1]],
 
+- [ ] [[NJ Log]] - Sign up for 'seek' websites to get stream 
 
 
 - [ ] Build list of Tier II targets

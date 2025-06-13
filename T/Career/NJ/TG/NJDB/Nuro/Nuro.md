@@ -1,3 +1,6 @@
+.[[Nuro]].
+  , [Nuro Note](spot://nuronote), 
+
 # Top
 #### kind: StartAI
 #### area: Robotics

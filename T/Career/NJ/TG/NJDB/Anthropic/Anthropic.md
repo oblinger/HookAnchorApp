@@ -1,3 +1,6 @@
+.[[Anthropic]].
+  , [Anthropic Note](spot://anthropicnote), 
+
 # Top
 #### kind: Top
 #### area: CoreDL

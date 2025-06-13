@@ -1,3 +1,6 @@
+.[[Atomwise]].
+  , [Atomwise Note](spot://atomwisenote), 
+
 # Top
 #### kind: StartAI
 #### area: Bio

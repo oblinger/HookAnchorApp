@@ -15,7 +15,8 @@
   DELS: ,,,
   , [[Cocktails]], [[Enneagram Test]], [[Test88]],
   DELS: ,,,[[Test88]], [[Cocktails]], [[Enneagram Test]],
-  DELS: [[Disks]],[[SYS Disks]],[K Folder](spot://kfolder),[[Test88]], [[Cocktails]], [[Enneagram Test]],[[Disks]], [[Hackers]], [[Disks]], [[SYS Disks]], [K Folder](spot://kfolder),[[Journaling]], 
+  , [Misc Note](spot://miscnote), 
+  DELS: [[Disks]],[[SYS Disks]],[K Folder](spot://kfolder),[[Test88]], [[Cocktails]], [[Enneagram Test]],[[Disks]], [[Hackers]], [[Disks]], [[SYS Disks]], [K Folder](spot://kfolder),[[Journaling]],
 
 
 

@@ -1,3 +1,6 @@
+.[[Cresta]].
+  , [Cresta Note](spot://crestanote), 
+
 # Top
 #### kind: StartAI
 #### area: Retail

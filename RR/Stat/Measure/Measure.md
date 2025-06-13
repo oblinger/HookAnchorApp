@@ -1,5 +1,6 @@
 .[[Measure]].
-  , [[Levenshtein Distance]], 
+  , [[Levenshtein Distance]],
+  , [Measure Note](spot://measurenote), 
 
 
 

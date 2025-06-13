@@ -2,7 +2,8 @@
   APPS:	[[SVT Jira]], [[SVT Bitbucket]], [[SVT Clickup]], [[SVT Confluence]], [[SVT Google Drive]], [[SVT Polaris]],
   .		[[SVT Sentry]], [[SVT Slack]],
   [[SVT Virtual Box Notes]],
-  , [SV Clickup Page](spot://svclickuppage), 
+  , [SV Clickup Page](spot://svclickuppage),
+  , [SVT Note](spot://svtnote), 
 
 
 

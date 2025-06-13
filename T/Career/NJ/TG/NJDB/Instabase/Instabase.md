@@ -1,3 +1,6 @@
+.[[Instabase]].
+  , [Instabase Note](spot://instabasenote), 
+
 # Top
 #### kind: StartAI
 #### area: CoreDL

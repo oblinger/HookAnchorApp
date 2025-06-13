@@ -1,5 +1,6 @@
 .[[House]].
-  ,   [[House Crime]], [house taxes](spot://housetaxes), 
+  ,   [[House Crime]], [house taxes](spot://housetaxes),
+  , [House Crime Note](spot://housecrimenote), [House Note](spot://housenote), 
 
 
 :: [[House Crime]]

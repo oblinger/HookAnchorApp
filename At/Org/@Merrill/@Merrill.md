@@ -1,5 +1,6 @@
 .[[@Merrill]].
-  ,   [[@Avanti Pakrasi]], [[@Gary Bladen]], 
+  ,   [[@Avanti Pakrasi]], [[@Gary Bladen]],
+  , [@Merrill Note](spot://@merrillnote), 
 
 #pp  
 

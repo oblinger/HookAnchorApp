@@ -1,5 +1,6 @@
 .[[DocSklearn]].
-  , [[DocSciKit]], [[Sklearn Metrics]], 
+  , [[DocSciKit]], [[Sklearn Metrics]],
+  , [DocSklearn Note](spot://docsklearnnote), 
 
 
 

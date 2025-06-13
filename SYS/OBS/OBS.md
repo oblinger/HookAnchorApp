@@ -113,6 +113,7 @@
   ADDS:   [Plugins Folder](spot://pluginsfolder),
   ADDS:   [[OBS.]],
   ADDS:   [[Action Notes]], [[spotlight commander]],
+  , [OBS Note](spot://obsnote), 
 
 
 

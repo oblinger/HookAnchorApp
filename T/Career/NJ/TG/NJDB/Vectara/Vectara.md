@@ -1,3 +1,6 @@
+.[[Vectara]].
+  , [Vectara Note](spot://vectaranote), 
+
 # Top
 #### kind: StartAI
 #### area: CoreDL

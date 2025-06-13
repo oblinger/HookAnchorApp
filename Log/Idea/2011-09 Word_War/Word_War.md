@@ -1,3 +1,6 @@
+.[[Word_War]].
+  , [Word_War Note](spot://wordwarnote), 
+
 
 :: [[2011-09 Word_War]]
 

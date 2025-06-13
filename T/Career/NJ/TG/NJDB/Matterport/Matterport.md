@@ -1,3 +1,6 @@
+.[[Matterport]].
+  , [Matterport Note](spot://matterportnote), 
+
 # Top
 #### kind: Big
 #### area: Spatial Computing

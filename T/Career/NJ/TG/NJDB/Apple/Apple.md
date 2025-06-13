@@ -1,3 +1,6 @@
+.[[Apple]].
+  , [Apple Note](spot://applenote), 
+
 # Top
 #### kind: Top
 #### area: CoreDL

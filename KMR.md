@@ -24,7 +24,8 @@ TOPS: [[KMR]], [[Meta]], [[TOC]],
   , ,
   , ,
   DELS: [[TOC]], , [[SYS]], , , [[2024-10-29]],, , ,,, , , , , , ,,
-  , [[prj]], 
+  , [[prj]],
+  , [KMR Note](spot://kmrnote), 
   DELS: [[TOC]], [[Work]], [[SYS]], [[ATTACH]], [[WEEKLY]], [[2024-10-29]],[[JJ]], [[Misc]], [[test987]],[top](spot://top),[[AT]], [[ATTACH]], [[WEEKLY]], [[Work]], [[Work]], [[ATTACH]], [[WEEKLY]],[[AlienBiologyWhitepaper]],[[prj]],[[Prj]], [[Work]], [[ATTACH]], [[WEEKLY]], [[JJ]], [[Misc]], [[test987]], [top](spot://top), [[AT]], [[ATTACH]], [[WEEKLY]], [[Work]], [[Work]], [[ATTACH]], [[WEEKLY]], [[AlienBiologyWhitepaper]],
 
 

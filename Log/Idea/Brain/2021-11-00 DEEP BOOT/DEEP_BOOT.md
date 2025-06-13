@@ -1,3 +1,6 @@
+.[[DEEP_BOOT]].
+  , [DEEP_BOOT Note](spot://deepbootnote), 
+
 
 # ### LOG ###
 ### 2022-01-04 - MERI GUY RESPONSE

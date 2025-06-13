@@ -2,7 +2,8 @@
   , [[Career]], [[COMS]], [[Courses]], [[Doc]], [[EduCorp]], [[FIN]], [[Food]], [[Legal]], [[Life]]
   , [[MED]], [[MGR]], [[Misc]], [[Mus]], [[Tag]], [[Trash]], ,
   , [[MOV]],
-  DELS: [[Web]], 
+  , [T Note](spot://tnote), 
+  DELS: [[Web]],
 
 [[MOV]] 
 

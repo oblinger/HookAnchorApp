@@ -1,3 +1,6 @@
+.[[Labelbox]].
+  , [Labelbox Note](spot://labelboxnote), 
+
 # Top
 #### kind: StartAI
 #### area: CoreDL

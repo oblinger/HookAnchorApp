@@ -1,3 +1,6 @@
+.[[Matroid]].
+  , [Matroid Note](spot://matroidnote), 
+
 # Top
 #### kind: StartAI
 #### area: CoreDL

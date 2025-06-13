@@ -1,3 +1,6 @@
+.[[Unlearn.AI]].
+  , [Unlearn.AI Note](spot://unlearn.ainote), 
+
 # Top
 #### kind: GenAI
 ## Sections

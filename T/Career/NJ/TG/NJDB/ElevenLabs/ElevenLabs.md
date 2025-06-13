@@ -1,3 +1,6 @@
+.[[ElevenLabs]].
+  , [ElevenLabs Note](spot://elevenlabsnote), 
+
 # Top
 #### kind: BigAI
 #### area: CoreNLP

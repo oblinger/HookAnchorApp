@@ -1,3 +1,6 @@
+.[[Lightricks]].
+  , [Lightricks Note](spot://lightricksnote), 
+
 # Top
 #### kind: Far
 #### area: CoreDL

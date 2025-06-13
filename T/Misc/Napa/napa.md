@@ -1,3 +1,6 @@
+.[[napa]].
+  , [napa Note](spot://napanote), 
+
 
 
 ### 101 Coridor ###

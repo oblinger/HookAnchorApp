@@ -1,3 +1,6 @@
+.[[Snappr]].
+  , [Snappr Note](spot://snapprnote), 
+
 # Top
 #### kind: StartAI
 #### area: DL_App

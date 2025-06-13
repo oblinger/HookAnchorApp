@@ -27,7 +27,8 @@ Greg
   SW proc:	[db](https://www.notion.so/sportsvisio/cf65339c09c6486296f8adaa084c141a?v=f8a45e385eea4c2fb590502835f4453f&pvs=4),[doc](https://docs.google.com/document/d/1aHnoqgQ3H_0abUtlVWoMPHDA7nQhzoq0JRqZLujORc0/edit?usp=drive_web&ouid=105281685541312342727)  ^Jasu 
   Assess	> Assess plan for BB
 .[[work]].
-  , [[SV]], 
+  , [[SV]],
+  , [work Note](spot://worknote), 
 
 
 

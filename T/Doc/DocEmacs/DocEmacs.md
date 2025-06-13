@@ -1,3 +1,6 @@
+.[[DocEmacs]].
+  , [DocEmacs Note](spot://docemacsnote), 
+
   [__DocEmacs__](__DocEmacs__.md)
 
 

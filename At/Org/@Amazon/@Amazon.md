@@ -1,6 +1,7 @@
 .[[@Amazon]].
   ,   [[@Amazon as Consumer]], [[AMA]],
-  , [[@Audible]], 
+  , [[@Audible]],
+  , [@Amazon Note](spot://@amazonnote), 
 
  [[Org]] [[FAANG]]  [[Misc/AMA/AMA]] [[@Amazon as Consumer]] 
 

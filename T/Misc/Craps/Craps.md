@@ -1,3 +1,6 @@
+.[[Craps]].
+  , [Craps Note](spot://crapsnote), 
+
 
 
 ## Lifetime Craps Returns

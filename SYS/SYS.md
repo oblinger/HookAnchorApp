@@ -16,7 +16,9 @@
   , [Bard Page](spot://bardpage), , ,
   , [[Notifications]],
   , [[Closet]],  [[MAC]],
-  DELS: [[BinProj]],[[SYS Github Webpage]],[[KM]], 
+  , [SYS Hacks Note](spot://syshacksnote), [SYS Misc Note](spot://sysmiscnote)
+  , [SYS Note](spot://sysnote), 
+  DELS: [[BinProj]],[[SYS Github Webpage]],[[KM]],
 
 - [[@Github]], [[Spot]], 
 

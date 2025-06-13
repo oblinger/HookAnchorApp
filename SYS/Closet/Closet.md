@@ -1,5 +1,6 @@
 .[[Closet]].
-  , [[Empty]], [[PAGE]], [test 2345](spot://test2345), [test9449](spot://test9449), 
+  , [[Empty]], [[PAGE]], [test 2345](spot://test2345), [test9449](spot://test9449),
+  , [Closet Note](spot://closetnote), 
 
   [[Empty]]:
   [[PAGE]]:

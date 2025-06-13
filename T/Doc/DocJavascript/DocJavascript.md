@@ -1,3 +1,6 @@
+.[[DocJavascript]].
+  , [DocJavascript Note](spot://docjavascriptnote), 
+
   [__DocJavascript__](__DocJavascript__.md)
 
 

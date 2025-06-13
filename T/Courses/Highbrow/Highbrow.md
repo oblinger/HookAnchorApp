@@ -1,4 +1,5 @@
 .[[Highbrow]].
-  ,   [[Highbrow Productivity]], 
+  ,   [[Highbrow Productivity]],
+  , [Highbrow Note](spot://highbrownote), 
 
   [[Highbrow Productivity]]

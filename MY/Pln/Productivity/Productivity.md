@@ -1,6 +1,7 @@
 .[[Productivity]].
   ,   , [[Tracking of Time]],
-  DELS: [[Daily Schedules]], 
+  , [Productivity Note](spot://productivitynote), 
+  DELS: [[Daily Schedules]],
 
 
 - [[Tracking of Time]] 

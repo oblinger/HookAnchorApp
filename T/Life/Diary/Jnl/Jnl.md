@@ -1,5 +1,6 @@
 .[[Jnl]].
-  ,   [[NextCo]], [[Old Daily]], 
+  ,   [[NextCo]], [[Old Daily]],
+  , [Jnl Note](spot://jnlnote), 
 
 [[Old Daily]] 
 

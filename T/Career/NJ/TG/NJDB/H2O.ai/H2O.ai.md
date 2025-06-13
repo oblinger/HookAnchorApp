@@ -1,3 +1,6 @@
+.[[H2O.ai]].
+  , [H2O.ai Note](spot://h2o.ainote), 
+
 # Top
 #### kind: Big
 ## Sections

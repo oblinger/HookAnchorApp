@@ -1,3 +1,6 @@
+.[[Glossary]].
+  , [Glossary Note](spot://glossarynote), 
+
 
 
 # Financial

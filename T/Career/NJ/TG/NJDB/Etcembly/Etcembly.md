@@ -1,3 +1,6 @@
+.[[Etcembly]].
+  , [Etcembly Note](spot://etcemblynote), 
+
 # Top
 #### kind: BigAI
 #### area: Bio

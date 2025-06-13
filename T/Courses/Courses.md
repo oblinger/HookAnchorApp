@@ -3,7 +3,8 @@
   [[Highbrow]], [[Notes from 500]], [[UX]],
   ,
   , ,
-  , [[Never Search Alone]], 
+  , [[Never Search Alone]],
+  , [Courses Note](spot://coursesnote), 
   DELS: [[Never Search Alone]],[[Never Search Alone]],
 
 

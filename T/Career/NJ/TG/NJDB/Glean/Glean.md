@@ -1,3 +1,6 @@
+.[[Glean]].
+  , [Glean Note](spot://gleannote), 
+
 # Top
 #### kind: StartAI
 #### area: Retail

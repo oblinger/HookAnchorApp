@@ -1,3 +1,6 @@
+.[[Predibase]].
+  , [Predibase Note](spot://predibasenote), 
+
 # Top
 #### kind: StartAI
 #### area: CoreDL

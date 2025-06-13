@@ -1,3 +1,6 @@
+.[[Freenome]].
+  , [Freenome Note](spot://freenomenote), 
+
 # Top
 #### kind: StartAI
 #### area: Bio

@@ -1,7 +1,8 @@
 .[[Habit]].
   , [[Daily Schedules]], ,
   , ,
-  , [[SAVERS]], 
+  , [[SAVERS]],
+  , [Habit Note](spot://habitnote), 
   DELS: [[SAVERS]],[[Savers]],
 
 

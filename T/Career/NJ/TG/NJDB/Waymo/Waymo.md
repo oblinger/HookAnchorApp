@@ -1,3 +1,6 @@
+.[[Waymo]].
+  , [Waymo Note](spot://waymonote), 
+
 # Top
 #### kind: Big
 #### area: Robotics

@@ -1,3 +1,6 @@
+.[[Graphcore]].
+  , [Graphcore Note](spot://graphcorenote), 
+
 # Top
 #### kind: StartAI
 #### area: CoreDL

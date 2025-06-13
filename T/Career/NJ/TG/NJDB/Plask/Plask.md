@@ -1,3 +1,6 @@
+.[[Plask]].
+  , [Plask Note](spot://plasknote), 
+
 # Top
 #### kind: BigAI
 #### area: CoreDL

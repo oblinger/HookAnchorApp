@@ -6,7 +6,8 @@
   , [[DocObjectiveC]], [[DocObsidian]], [[DocOSX]], [[DocPandas]], [[DocPyML]], [[DocPython]]
   , [[DocR]], [[DocRackspace]], [[DocRails]], [[DocRuby]], [[DocSamurai]], , [[DocSQL]]
   , [[DocSublime]], [[DocVagrant]], [Game](spot://game),
-  , [[DocNvim]], [[DocTmux]], 
+  , [[DocNvim]], [[DocTmux]],
+  , [Doc Note](spot://docnote), 
   DELS: [[DocSciKit]],
 
 

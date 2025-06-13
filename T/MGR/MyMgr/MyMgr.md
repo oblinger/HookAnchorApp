@@ -1,7 +1,8 @@
 .[[MyMgr]].
   ,   ,
   , ,
-  DELS: [[Nanny]],[[Nanny]], 
+  , [MyMgr Note](spot://mymgrnote), 
+  DELS: [[Nanny]],[[Nanny]],
 
 
 :: [[Nanny]]

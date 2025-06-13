@@ -35,6 +35,7 @@ Dan Oblinger (c) 2025
 <!--
 
 .[[AlienBiology]].
-  , [[CellReactions]], 
+  , [[CellReactions]],
+  , [AlienBiology Note](spot://alienbiologynote), 
 
 -->

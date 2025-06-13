@@ -1,3 +1,6 @@
+.[[Forethought]].
+  , [Forethought Note](spot://forethoughtnote), 
+
 # Top
 #### kind: StartAI
 #### area: CoreNLP

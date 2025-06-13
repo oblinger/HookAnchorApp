@@ -1,3 +1,6 @@
+.[[6sense]].
+  , [6sense Note](spot://6sensenote), 
+
 Za
 # Top
 #### kind: StartAI

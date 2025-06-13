@@ -15,7 +15,8 @@
   [[Eat]],
   [[Bfast]],
   ,
-  , [[Food Research]], 
+  , [[Food Research]],
+  , [Food Note](spot://foodnote), [Food Research Note](spot://foodresearchnote), 
   DELS: [[dinner]], [[Noom Notes]], [[Food Research]],[FOOD Research Note](spot://foodresearchnote), [[FOOD Research]],[[qwd]],[[Eli Food]],[[FOOD Research]],
 
 

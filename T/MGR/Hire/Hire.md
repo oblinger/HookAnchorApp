@@ -1,7 +1,9 @@
 .[[Hire]].
-  [[Recruiter]], [[INTERVIEW]], 
-  [[Hire Post]], [[Hire Test]], 
-  [[IOS guys]], 
+  [[Recruiter]], [[INTERVIEW]],
+  [[Hire Post]], [[Hire Test]],
+  [[IOS guys]],
+  , [Hire Note](spot://hirenote), [Hire Post Note](spot://hirepostnote)
+  , [Hire Test Note](spot://hiretestnote), 
 
 
 

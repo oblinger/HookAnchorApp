@@ -12,6 +12,7 @@
    -
   , [[EV Log]],
   , [[Meta - Facebook]],
-  , [[Journaling]], 
+  , [[Journaling]],
+  , [Meta - Facebook Note](spot://metafacebooknote), [Meta Note](spot://metanote), 
   DELS: [[Base]], [[meta Tasks]], [[Roots]],[[Meta - Facebook]],[[Base]], [[meta Tasks]], [[Roots]],
 

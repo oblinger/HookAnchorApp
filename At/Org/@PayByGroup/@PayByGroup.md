@@ -1,3 +1,6 @@
+.[[@PayByGroup]].
+  , [@PayByGroup Note](spot://@paybygroupnote), 
+
 =[[Org]] 
 
 See Legal/PayByGroup

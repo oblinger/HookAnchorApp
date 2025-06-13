@@ -1,3 +1,6 @@
+.[[NVIDIA]].
+  , [NVIDIA Note](spot://nvidianote), 
+
 # Top
 #### kind: Top
 #### area: CoreDL

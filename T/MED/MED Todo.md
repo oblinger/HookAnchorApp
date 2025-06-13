@@ -1,4 +1,5 @@
  [[MED]], [[Doctor]] 
+ - Get therapist, weights starter
  - Get a backup plan for non exercise days
  - Figure out daily strategy
  - Exercise 3x this week

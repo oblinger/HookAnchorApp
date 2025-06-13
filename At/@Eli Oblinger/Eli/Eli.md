@@ -13,7 +13,11 @@
   DELS: [[Eli Report Cards]],[[Eli Sentimental]],
   , [[@BCMS]],
   DELS: [[Eli Report Cards]],[[Eli Sentimental]],[[@BCMS]],
-  , [[Eli Movies]], 
+  , [[Eli Movies]],
+  , [Eli Interactions Note](spot://eliinteractionsnote), [ELI Log Note](spot://elilognote)
+  , [Eli Note](spot://elinote), [Eli Report Cards Note](spot://elireportcardsnote)
+  , [Eli Sentimental Note](spot://elisentimentalnote), [Eli Services Note](spot://eliservicesnote)
+  , [Eli Strategy Note](spot://elistrategynote), 
   DELS: [[Eli Report Cards]],[[Eli Sentimental]],[[@BCMS]],[[BCMS]],[[Eli Movies]],
 
 

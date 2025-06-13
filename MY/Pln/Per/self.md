@@ -1,12 +1,32 @@
 
-
+# W24   2025-06-09   [[2025-W23|<<]] [[2025-W25|>>]] 
 MIT
+- [ ] [[@Humanoid]] - Ready
+- [ ] Job tracking setup 
 - [ ] Respond: Rafah, Theo
 - [ ] [[lim]]: Add actions to CN
 - [ ] Apply to something
+- [ ] [[MED Todo]]: weights
+- [ ] [[Lrn.]] Get the idea, understand it, think about it.
 
+
+
+### Mon-9
+- [ ] [[Repeat]] 
+### Tue-10
+- [ ] 
+### Wed-11
+- [ ] 
+### Thu-12
+- [ ] 1p 1c 1w
+### Fri-13
+- [ ] 
+
+
+MIT
 THIS WEEK
 - [ ] [[Lrn]]: 
+- [ ] ready for [[@Humanoid]] 
 - [ ] Setup Application tracking
 
 TODO:

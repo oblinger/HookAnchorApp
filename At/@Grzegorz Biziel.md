@@ -4,6 +4,14 @@
 
 # LOG
 
+### 2025-06-12  Paper already written
+
+Unfortunately, I was doing some research and it turns out that someone early this year released exactly the idea I was hoping to test.   [https://huggingface.co/papers/2501.08282](https://huggingface.co/papers/2501.08282)
+
+I only left myself to think that finding their paper was hard because they came with a new term "Language-Aligned Positional Embedding".
+
+The paper is going to be presented at CVPR 2025 (so like right now). The code, model and dataset are going to be released later. Their model is a fine-tuned LLaVa, so a bit older model (I was aiming on Qwen2.5-VL).
+
 ### 2024-01-11  fixing the player ID
 
 List of issues and ways to fix them

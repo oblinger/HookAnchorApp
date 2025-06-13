@@ -1,6 +1,7 @@
 .[[Circle]].
   ,   ,
-  , [[@Circle]], 
+  , [[@Circle]],
+  , [Circle Note](spot://circlenote), 
   DELS: [[@Circle]],
 
 

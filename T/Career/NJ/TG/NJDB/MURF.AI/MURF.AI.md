@@ -1,3 +1,6 @@
+.[[MURF.AI]].
+  , [MURF.AI Note](spot://murf.ainote), 
+
 # Top
 ## Sections
 ### Cash

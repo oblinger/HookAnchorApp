@@ -1,5 +1,6 @@
 .[[DocTmux]].
-  , [[tmux Cheatsheet]], 
+  , [[tmux Cheatsheet]],
+  , [DocTmux Note](spot://doctmuxnote), 
 
 
 

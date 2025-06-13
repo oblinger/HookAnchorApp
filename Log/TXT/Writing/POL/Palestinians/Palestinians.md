@@ -1,3 +1,6 @@
+.[[Palestinians]].
+  , [Palestinians Note](spot://palestiniansnote), 
+
 
 
 # LOG

@@ -1,3 +1,6 @@
+.[[SentinelOne]].
+  , [SentinelOne Note](spot://sentinelonenote), 
+
 # Top
 #### kind: Big
 #### area: Cybersecurity

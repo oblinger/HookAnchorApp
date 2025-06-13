@@ -1,5 +1,6 @@
 .[[Archive]].
-  , [[Phillipines]], 
+  , [[Phillipines]],
+  , [Archive Note](spot://archivenote), 
 
 
 # LOG

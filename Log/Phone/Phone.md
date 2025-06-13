@@ -1,9 +1,10 @@
 .[[Phone]].
   , ,
   , ,
-  , [[Phone -old-]], 
+  , [[Phone -old-]],
   DELS: [[Phone -old-]],
-  DELS: [[Phone -old-]],[[Phone -OLD-_new]], 
+  , [Phone Note](spot://phonenote), 
+  DELS: [[Phone -old-]],[[Phone -OLD-_new]],
 
 
 #set 

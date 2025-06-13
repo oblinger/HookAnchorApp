@@ -1,5 +1,6 @@
 .[[UfApps]].
-  ,   [[Recommender]], [[ufBrick]], [[UfGui]], 
+  ,   [[Recommender]], [[ufBrick]], [[UfGui]],
+  , [UfApps Note](spot://ufappsnote), 
 
 
 :: [[ufBrick]]

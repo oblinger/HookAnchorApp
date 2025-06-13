@@ -1,3 +1,6 @@
+.[[Lilt]].
+  , [Lilt Note](spot://liltnote), 
+
 # Top
 #### kind: StartAI
 #### area: CoreNLP

@@ -1,3 +1,6 @@
+.[[DocRuby]].
+  , [DocRuby Note](spot://docrubynote), 
+
   [koans](koans/koans.md)
 
 # === RUBY SCRIPTING ===

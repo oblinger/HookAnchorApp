@@ -5,9 +5,10 @@
   ,   [[RES]],
   , ,
   DELS: ,
-  , [[NJ]], 
+  , [[NJ]],
   DELS: ,[[NJ]],
-  DELS: [[[Mentors](spot://mentors),[[NJ]],[[NextJob]], [[[Mentors](spot://mentors), 
+  , [Career Note](spot://careernote), 
+  DELS: [[[Mentors](spot://mentors),[[NJ]],[[NextJob]], [[[Mentors](spot://mentors),
 
 
 

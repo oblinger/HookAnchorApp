@@ -17,7 +17,7 @@
 
 ## COURSE 3
 
-(see [[RR/DL/DL strategy]])
+(see [[DL Strategy]])
 
 ### --- ML improvement strategy ---
 - General Strategy:

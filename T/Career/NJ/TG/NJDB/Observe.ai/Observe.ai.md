@@ -1,3 +1,6 @@
+.[[Observe.ai]].
+  , [Observe.ai Note](spot://observe.ainote), 
+
 # Top
 ## Sections
 ### Cash

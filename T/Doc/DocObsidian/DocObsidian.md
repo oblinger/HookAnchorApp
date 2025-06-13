@@ -1,5 +1,6 @@
 .[[DocObsidian]].
-  ,   [[Dataview]], 
+  ,   [[Dataview]],
+  , [DocObsidian Note](spot://docobsidiannote), 
 
 
 :: [[mdfind]]

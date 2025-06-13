@@ -1,3 +1,6 @@
+.[[Baidu]].
+  , [Baidu Note](spot://baidunote), 
+
 # Top
 #### kind: Big
 #### area: CoreDL

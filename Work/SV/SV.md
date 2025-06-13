@@ -19,7 +19,14 @@
   , [[SV Log]],
   , ,
   DELS: , ,[[SV Log]],
-  , [[ww]], 
+  , [[ww]],
+  , [SV Archive Note](spot://svarchivenote), [SV Individuals Note](spot://svindividualsnote)
+  , [SV Market Note](spot://svmarketnote), [SV Note](spot://svnote), [SV Ops Note](spot://svopsnote)
+  , [SV Org Note](spot://svorgnote), [SV People Note](spot://svpeoplenote)
+  , [SV Product Note](spot://svproductnote), [SV Proj Note](spot://svprojnote)
+  , [SV Roadmap Note](spot://svroadmapnote), [SV Software Note](spot://svsoftwarenote)
+  , [SV Strat Note](spot://svstratnote), [SV System Note](spot://svsystemnote)
+  , [SV Wings Note](spot://svwingsnote), 
   DELS: [Bug Actual List Page](spot://bugactuallistpage), [Bug Board Page](spot://bugboardpage),[[SV Log]],[[ww]],[[WW]], [Bug Actual List Page](spot://bugactuallistpage), [Bug Board Page](spot://bugboardpage),
 
 [[SV Proj]] 

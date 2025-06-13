@@ -1,3 +1,6 @@
+.[[Cohere]].
+  , [Cohere Note](spot://coherenote), 
+
 # Top
 #### kind: TopGen
 #### area: CoreNLP

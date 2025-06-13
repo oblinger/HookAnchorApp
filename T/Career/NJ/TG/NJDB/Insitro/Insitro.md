@@ -1,3 +1,6 @@
+.[[Insitro]].
+  , [Insitro Note](spot://insitronote), 
+
 # Top
 #### kind: StartAI
 #### area: Bio

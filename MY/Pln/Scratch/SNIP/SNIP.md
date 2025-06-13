@@ -1,3 +1,6 @@
+.[[SNIP]].
+  , [SNIP Note](spot://snipnote), 
+
 ### 2024-07-09  Chunch
 
 driving metric:  ds, report

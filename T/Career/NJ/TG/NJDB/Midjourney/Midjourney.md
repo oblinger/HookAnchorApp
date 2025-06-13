@@ -1,3 +1,6 @@
+.[[Midjourney]].
+  , [Midjourney Note](spot://midjourneynote), 
+
 # Top
 #### kind: BigAI
 #### area: CoreDL

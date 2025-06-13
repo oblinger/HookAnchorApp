@@ -1,3 +1,6 @@
+.[[SoundHound]].
+  , [SoundHound Note](spot://soundhoundnote), 
+
 # Top
 #### kind: Big
 #### area: CoreNLP

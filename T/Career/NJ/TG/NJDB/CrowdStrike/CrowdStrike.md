@@ -1,3 +1,6 @@
+.[[CrowdStrike]].
+  , [CrowdStrike Note](spot://crowdstrikenote), 
+
 # Top
 #### kind: Big
 #### area: Cybersecurity

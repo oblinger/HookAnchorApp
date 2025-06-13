@@ -1,3 +1,6 @@
+.[[Movies]].
+  , [Movies Note](spot://moviesnote), 
+
 
 [[Eli Movies]] 
 

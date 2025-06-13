@@ -1,5 +1,6 @@
 .[[Lrn]].     [[LRN Todo]]
-  [[Lrn Mgt]], [[LRN Read]], [[LRN Todo]], 
+  [[Lrn Mgt]], [[LRN Read]], [[LRN Todo]],
+  , [Lrn Note](spot://lrnnote), 
 
 
 

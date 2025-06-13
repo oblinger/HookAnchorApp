@@ -5,7 +5,8 @@
   ,
   [[SEEK Cover Letter Terms]],
   , [[SEEK Interviews]],
-  , [[SEEK Info]], 
+  , [[SEEK Info]],
+  , [SEEK Note](spot://seeknote), 
   DELS: [[SEEK Info]],
 
 

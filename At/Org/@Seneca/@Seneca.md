@@ -1,3 +1,6 @@
+.[[@Seneca]].
+  , [@Seneca Note](spot://@senecanote), 
+
 
 Early stage startup 
 

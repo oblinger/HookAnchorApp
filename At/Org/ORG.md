@@ -8,7 +8,8 @@
   , [[@Dexafit]],
   , [[@Github]], [[@Seneca]],
   , [[@Cigna]],
-  , [[@Humanoid]], 
+  , [[@Humanoid]],
+  , [Org Note](spot://orgnote), 
 
 .[[ORG]].
   , [[@Amazon]], [[@Apple]], [[@Citibank]], [[@Facebook]], , [[@Ginza Metrics]]

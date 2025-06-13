@@ -1,5 +1,6 @@
 .[[Mission]].
-  ,   [[Mission2024]], 
+  ,   [[Mission2024]],
+  , [Mission Note](spot://missionnote), [Mission Statement Note](spot://missionstatementnote), 
 
 
 - [ ] >> I intend each day to be part of a fulfilled and fulfilling life focused on joy, meaning, and benefit for others.

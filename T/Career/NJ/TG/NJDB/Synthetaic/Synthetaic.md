@@ -1,3 +1,6 @@
+.[[Synthetaic]].
+  , [Synthetaic Note](spot://synthetaicnote), 
+
 # Top
 #### kind: BigAI
 #### area: CoreDL

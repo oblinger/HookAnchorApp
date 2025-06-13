@@ -4,7 +4,8 @@
   ADDS:   [[ACADEMIC]], [[CONSULTANT]], [[CORE]], [[FAANG]], , [[INFO_PAGE]], [[PE firm]], , [[RND]], [[ROBOTICS]], [[SOLID]], [[START]], , [[TECH]], [[VC]],
   ADDS:   [[COACH]], , [[DARPA]],
   ADDS:   ,
-  DELS: [[COMP]],[[HACKERS]],[[TASK]], 
+  , [Tag Note](spot://tagnote), 
+  DELS: [[COMP]],[[HACKERS]],[[TASK]],
 
 
 

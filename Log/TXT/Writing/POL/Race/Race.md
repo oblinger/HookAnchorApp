@@ -1,5 +1,6 @@
 .[[Race]].
-  ,   [[Uniting America]], 
+  ,   [[Uniting America]],
+  , [Race Note](spot://racenote), [__Race Pitch__ Note](spot://racepitchnote), 
 
 
 :: [[Uniting America]]

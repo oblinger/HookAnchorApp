@@ -1,3 +1,6 @@
+.[[Aqemia]].
+  , [Aqemia Note](spot://aqemianote), 
+
 # Top
 #### kind: BigAI
 #### area: Bio

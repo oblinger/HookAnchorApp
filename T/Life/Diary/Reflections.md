@@ -1,4 +1,8 @@
 
+### 2025-06-12  Tiny Step
+==> My tiny step here is to have an MIT list of time-bound activities.
+==> Each day do one 90 hit of these, and exercise as the basis of my day.  will try to add on to that to round out the day.
+
 
 
 ### 2025-06-10  Flailing

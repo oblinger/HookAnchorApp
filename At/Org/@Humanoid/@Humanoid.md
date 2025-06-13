@@ -1,3 +1,6 @@
+.[[@Humanoid]].
+  , [@Humanoid Note](spot://@humanoidnote), 
+
 #pp  					https://thehumanoid.ai/
 
 

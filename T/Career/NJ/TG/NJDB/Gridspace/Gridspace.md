@@ -1,3 +1,6 @@
+.[[Gridspace]].
+  , [Gridspace Note](spot://gridspacenote), 
+
 # Top
 #### kind: BigAI
 #### area: CoreNLP

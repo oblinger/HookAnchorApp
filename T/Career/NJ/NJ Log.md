@@ -1,5 +1,36 @@
 
 
+### 2025-06-12  JOB POSTING SITES - Signing up for job posting sites.
+- SIMPLE HIRED - wide coverage; paid
+- INDEED - 
+- JOBRIGHT.AI - 
+
+
+
+SimplyHired and Indeed are both popular job search platforms, but
+they differ in features, usability, and effectiveness for job seekers
+and employers.
+Overview of Each Platform
+• Indeed: Launched in 2004, Indeed is one of the largest job boards
+globally, with over 250 million unique visitors per month. It aggregates
+job listings from various sources, providing a vast selection of
+opportunities for job seekers. Indeed allows employers to post jobs for
+free and offers sponsored listings on a pay-per-click basis to enhance
+visibility.
+• SimplyHired: Founded in 2003, SimplyHired is a job search engine that
+aggregates listings from various job boards and company websites. It
+allows users to search for jobs and post resumes for free. However,
+SimplyHired requires employers to pay to access candidate contact
+information after narrowing down their selections.
+Key Differences
+1. Job Listings:
+• Indeed has a significantly larger number of job listings compared to
+SimplyHired, making it a better option for job seekers looking for a wide
+range of opportunities. * 2
+• SimplyHired may have fewer listings but focuses on providing detailed
+information about the hiring process and company culture, which can be
+beneficial for job seekers looking for specific roles.
+G e 2 Sources
 ### 2025-03-13  Relevant Job Titles
 
 - Engineering Manager

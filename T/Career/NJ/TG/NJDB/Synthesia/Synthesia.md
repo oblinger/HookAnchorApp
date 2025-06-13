@@ -1,3 +1,6 @@
+.[[Synthesia]].
+  , [Synthesia Note](spot://synthesianote), 
+
 # Top
 #### kind: StartAI
 #### area: CoreDL

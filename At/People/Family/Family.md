@@ -1,5 +1,6 @@
 .[[family]].
-  , [[Parents]], 
+  , [[Parents]],
+  , [family Note](spot://familynote), 
 
 .[[Family]].
   ,   [[Parents]], 

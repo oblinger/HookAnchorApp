@@ -1,5 +1,5 @@
 
-
+- respond to Grz
 - Filepe
 - Quarterly budget
 

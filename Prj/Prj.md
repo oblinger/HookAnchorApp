@@ -4,20 +4,14 @@
   , [[2022-02 Yearbook]], [[2022-03 BeFAANG]], [[2022-03 BeVC]], [[2022-04 BeMLR]], [[2022-05 Enxt]]
   , [[2022-05 Grandpa DJ]], [[2022-09 Mom80]], [[2023-07 Task Rabbit]], [[2025-02 Code Markdown]]
   , [PROJ Gdrive](spot://projgdrive), [[__Race Pitch__]], [[Spot Cmdr]], [[Task Rabbit]], [[UF]],
-  , ,
   , [[gitproj]],
   , [ABIO](spot://abio),
   , [[BinProj]],
   , [[2025 Sports Data Search]], [[Budg]],
-  , ,
-  DELS: ,
-  , ,
-  DELS: ,,
-  , [[2025-06 web]], [[pp]],
-  DELS: ,[[pp]],, ,[[pp]],
   , [[2025-06 anchor_selector]],
-  , [[web]], 
-  DELS: [[ABio]],[[pp]],[[PP]], [[ABio]],[[pp]],[[2025-06 zaaboo]],[[ABio]], [[PP]], [[ABio]],
+  , [[web]],
+  , [2025-06 web](spot://202506web), [pp](spot://pp),
+  , [prj Note](spot://prjnote), 
 
   [[2016-00 FileThis]],			Automated script for downloading and viewing account statements
   [[2018-00 Wedding]],   		Plan our wedding

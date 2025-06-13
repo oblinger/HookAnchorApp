@@ -17,7 +17,8 @@
   DELS: ,
   , [AI Min](spot://aimin),
   DELS: ,[AI Min](spot://aimin),
-  , [[CV Systems]], 
+  , [[CV Systems]],
+  , [CV Alg Note](spot://cvalgnote), [CV Note](spot://cvnote), 
   DELS: [AI MIN](spot://aimin),[AI Min](spot://aimin),[AI MIN](spot://aimin), [AI MIN](spot://aimin),
 
 :: [[Data]]

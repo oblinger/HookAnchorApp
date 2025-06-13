@@ -10,7 +10,8 @@
   DELS: [[EOCP]],,[[EOCP]], [[EOCP]],
   , ,
   DELS: [[EOCP]],,[[EOCP]], [[EOCP]],, ,
-  , [[EOCI]], 
+  , [[EOCI]],
+  , [EOC Note](spot://eocnote), [EOC reboot Note](spot://eocrebootnote), 
   DELS: [[EOCP]],[[Paths]],[[EOCP]], [[EOCP]],[[Paths]], [[Paths]],[[ASIO]],[[EOCI]], [[EOCK]], [[Paths]], [[Paths]], [[Paths]],
 
 

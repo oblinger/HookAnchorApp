@@ -1,3 +1,6 @@
+.[[WRM]].
+  , [WRM Note](spot://wrmnote), 
+
 # What Really Matters
 ## 2024 Q2
 MAIN

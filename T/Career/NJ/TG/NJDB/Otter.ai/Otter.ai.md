@@ -1,3 +1,6 @@
+.[[Otter.ai]].
+  , [Otter.ai Note](spot://otter.ainote), 
+
 # Top
 #### kind: GenAI
 ## Sections

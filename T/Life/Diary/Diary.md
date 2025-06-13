@@ -4,7 +4,8 @@
    				- Daily Diary.  (currently used to track anxiety loop)
   [[Jnl]],
   , [[DD]],
-  , [[test-foo]], 
+  , [[test-foo]],
+  , [Diary Note](spot://diarynote), 
   DELS: [[DD]],
 
 [[Daily]] 

@@ -1,3 +1,6 @@
+.[[@Schwab]].
+  , [@Schwab Note](spot://@schwabnote), 
+
 =[[Org]].   [Schwab-Site](https://client.schwab.com) 
 
 

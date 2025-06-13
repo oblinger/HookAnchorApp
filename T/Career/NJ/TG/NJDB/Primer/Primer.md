@@ -1,3 +1,6 @@
+.[[Primer]].
+  , [Primer Note](spot://primernote), 
+
 # Top
 #### kind: StartAI
 #### area: CoreNLP

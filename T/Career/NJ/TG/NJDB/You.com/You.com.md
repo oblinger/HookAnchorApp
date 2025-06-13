@@ -1,3 +1,6 @@
+.[[You.com]].
+  , [You.com Note](spot://you.comnote), 
+
 # Top
 #### kind: GenAI
 ## Sections

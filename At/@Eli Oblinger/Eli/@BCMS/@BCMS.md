@@ -1,6 +1,7 @@
 .[[@BCMS]].
   ,   ,
-  , [[BCMS 2023-2024]], 
+  , [[BCMS 2023-2024]],
+  , [@BCMS Note](spot://@bcmsnote), 
   DELS: [[BCMS 2023-2024]],
 
 

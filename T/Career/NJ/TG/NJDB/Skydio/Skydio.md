@@ -1,3 +1,6 @@
+.[[Skydio]].
+  , [Skydio Note](spot://skydionote), 
+
 # Top
 #### kind: StartAI
 #### area: Robotics

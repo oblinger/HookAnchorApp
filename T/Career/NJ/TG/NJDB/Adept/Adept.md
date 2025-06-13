@@ -1,3 +1,6 @@
+.[[Adept]].
+  , [Adept Note](spot://adeptnote), 
+
 # Top
 #### kind: StartAI
 #### area: CoreDL

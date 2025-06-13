@@ -1,3 +1,6 @@
+.[[Day]].
+  , [Day Note](spot://daynote), 
+
 #log <[[Untyped]]
 n:: 'd...'	Daily journal notes log (NOT USED)
 

@@ -1,5 +1,6 @@
 .[[Bio]].
   [[Bio Email]], [[Bio Intro]], [[Bio Verbal]],
+  , [Bio Note](spot://bionote), 
 
 
 

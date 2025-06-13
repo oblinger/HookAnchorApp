@@ -1,3 +1,6 @@
+.[[Upstart]].
+  , [Upstart Note](spot://upstartnote), 
+
 # Top
 #### kind: Big
 #### area: Finance

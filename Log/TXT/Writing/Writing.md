@@ -1,6 +1,7 @@
 .[[Writing]].
   ,   [[An_Athiests_Spiritual_Calling]], [[ArmChair]], ,
-  , [[POL]], 
+  , [[POL]],
+  , [Writing Note](spot://writingnote), 
   DELS: [[POL]],
 
 #set

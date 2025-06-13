@@ -1,3 +1,6 @@
+.[[@Cigna]].
+  , [@Cigna Note](spot://@cignanote), 
+
 #pp  
 
 [[cigna]]

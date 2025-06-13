@@ -1,5 +1,7 @@
 # tmux Cheatsheet
 
+
+BARE:   j C-[    C-]
 All tmux keybindings organized by category. Default key is prefix `C-b` (Ctrl+b).
 
 | Session & External                  | Window Management        | Pane Navigation & Resize  | Copy Mode & Buffers            | Juan                               |

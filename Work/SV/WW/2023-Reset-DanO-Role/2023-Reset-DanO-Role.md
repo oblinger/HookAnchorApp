@@ -1,6 +1,7 @@
 .[[2023-Reset-DanO-Role]].
   , ,
-  DELS: [[Reset]], 
+  , [2023-Reset-DanO-Role Note](spot://2023resetdanorolenote), 
+  DELS: [[Reset]],
 
 
 ### __

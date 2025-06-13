@@ -1,3 +1,6 @@
+.[[ABBYY]].
+  , [ABBYY Note](spot://abbyynote), 
+
 # Top
 #### kind: Big
 #### area: CoreNLP

@@ -3,6 +3,8 @@
   [[Myfo]], [[MY Content]], [MyMgr Page](spot://mymgrpage), [[My Stuff]],
   [[Pln]],
   CODE: [[QUICKADD]], , [[TEMPLATER]],
+  , [MY Content Note](spot://mycontentnote), [MY Note](spot://mynote)
+  , [My Stuff Note](spot://mystuffnote), 
   DELS: [Pln Folder](spot://plnfolder), [[Closet]], [[HACK.]],
 
 - [[Sys]], [[SYS Github Webpage]] 

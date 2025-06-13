@@ -1,3 +1,6 @@
+.[[Biomatter]].
+  , [Biomatter Note](spot://biomatternote), 
+
 # Top
 #### kind: BigAI
 #### area: Bio

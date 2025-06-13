@@ -1,3 +1,6 @@
+.[[Viz.ai]].
+  , [Viz.ai Note](spot://viz.ainote), 
+
 # Top
 #### kind: GenAI
 ## Sections

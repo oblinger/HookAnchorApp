@@ -1,3 +1,6 @@
+.[[Abacus.AI]].
+  , [Abacus.AI Note](spot://abacus.ainote), 
+
 # Top
 #### kind: GenAI
 ## Sections

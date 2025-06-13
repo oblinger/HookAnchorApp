@@ -3,6 +3,7 @@
   , , ,
   , [[LANG]],
   DELS: [[LANG]],
-  , [[SW Patterns]], 
+  , [[SW Patterns]],
+  , [Comp Note](spot://compnote), 
   DELS: [[LANG]],[[MAC]], [[OBS]],
 

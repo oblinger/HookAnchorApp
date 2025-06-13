@@ -1,3 +1,6 @@
+.[[Mashgin]].
+  , [Mashgin Note](spot://mashginnote), 
+
 # Top
 #### kind: StartAI
 #### area: Retail

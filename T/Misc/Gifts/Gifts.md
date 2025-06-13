@@ -1,3 +1,6 @@
+.[[Gifts]].
+  , [Gifts Note](spot://giftsnote), 
+
 
 ### General
 

@@ -1,4 +1,4 @@
-- prj launcher: claude code; pycharm; open finder
+
 - consider: Ladder and peloton strength+
 
 - [SAVERS](https://experiencelife.lifetime.life/wp-content/uploads/2021/06/The-Miracle-Morning.pdf) 

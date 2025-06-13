@@ -1,3 +1,6 @@
+.[[Rental]].
+  , [Rental Note](spot://rentalnote), 
+
 ==== GARAGE SPACE
 Advert for garage space
 

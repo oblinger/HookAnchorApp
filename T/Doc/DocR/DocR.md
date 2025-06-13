@@ -1,3 +1,6 @@
+.[[DocR]].
+  , [DocR Note](spot://docrnote), 
+
   [__DocR__](__DocR__.md)
 
 

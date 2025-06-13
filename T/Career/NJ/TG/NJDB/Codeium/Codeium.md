@@ -1,3 +1,6 @@
+.[[Codeium]].
+  , [Codeium Note](spot://codeiumnote), 
+
 # Top
 #### kind: BigAI
 #### area: CoreNLP

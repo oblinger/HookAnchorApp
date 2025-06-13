@@ -5,6 +5,7 @@
   [Data Game Master List](spot://datagamemasterlist): Jame's Videos master list
   .
   [Data Game Tracking](spot://datagametracking): Deprecated tracking sheet
+  , [Data 23andme Note](spot://data23andmenote), [Data Note](spot://datanote), 
 
 
 

@@ -9,7 +9,8 @@
   , ,
   , [[Archive]], , , [[Phone]],
   DELS: [[Archive]], , , [[Phone]],
-  , [[Meet]], [[Meeting]], 
+  , [[Meet]], [[Meeting]],
+  , [Log Note](spot://lognote), 
   DELS: [[Archive]], [[MEETING]], [[MEET]], [[Phone]],[[TT]],[[MEET]], [[MEETING]], [[MEETING]], [[MEET]],
 
 #### Personal Content Logs

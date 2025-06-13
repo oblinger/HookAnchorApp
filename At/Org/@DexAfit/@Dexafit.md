@@ -1,3 +1,6 @@
+.[[@Dexafit]].
+  , [@Dexafit Note](spot://@dexafitnote), 
+
 =[[Corp]]  
 
 650 394-8292

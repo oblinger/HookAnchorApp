@@ -2,7 +2,8 @@
   [[ML Alg]], ,
   [[Learning]], [[ML Datasets]], [[ML Eng]], , [[Neural]],
   , [[ML Notation]], [[ML Op Tools]],
-  , [[RL]], [[Temporal Difference Learning]], 
+  , [[RL]], [[Temporal Difference Learning]],
+  , [ML Alg Note](spot://mlalgnote), [ML Note](spot://mlnote), 
   DELS: [[RL]],
 
   DELS: [[ML Op Tools]],, , ,[[ML Op Tools]], [[ML Op Tools]], [[ML Notation]],

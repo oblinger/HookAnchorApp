@@ -1,3 +1,6 @@
+.[[Hover]].
+  , [Hover Note](spot://hovernote), 
+
 # Top
 #### kind: StartAI
 #### area: PropTech

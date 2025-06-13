@@ -1,3 +1,6 @@
+.[[DocApplescript]].
+  , [DocApplescript Note](spot://docapplescriptnote), 
+
   [__DocApplescript__](__DocApplescript__.md)
 
 

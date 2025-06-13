@@ -1,3 +1,6 @@
+.[[Zoox]].
+  , [Zoox Note](spot://zooxnote), 
+
 # Top
 #### kind: Big
 #### area: Robotics

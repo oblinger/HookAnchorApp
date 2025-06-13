@@ -1,3 +1,6 @@
+.[[GenRocket]].
+  , [GenRocket Note](spot://genrocketnote), 
+
 # Top
 #### kind: BigAI
 #### area: CoreDL

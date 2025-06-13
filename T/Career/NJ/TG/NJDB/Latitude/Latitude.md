@@ -1,3 +1,6 @@
+.[[Latitude]].
+  , [Latitude Note](spot://latitudenote), 
+
 # Top
 #### kind: BigAI
 #### area: CoreNLP

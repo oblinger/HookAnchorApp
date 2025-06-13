@@ -1,3 +1,6 @@
+.[[Aisera]].
+  , [Aisera Note](spot://aiseranote), 
+
 # Top
 #### kind: StartAI
 #### area: Retail

@@ -1,3 +1,6 @@
+.[[Aimi.fm]].
+  , [Aimi.fm Note](spot://aimi.fmnote), 
+
 # Top
 #### kind: GenAI
 ## Sections

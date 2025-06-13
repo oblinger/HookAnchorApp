@@ -1,3 +1,6 @@
+.[[@Apple]].
+  , [@Apple Note](spot://@applenote), 
+
 
 800-692-7793  my apple   (luke in tech support)
 hdyf518kp3wchdyf518kp3wc

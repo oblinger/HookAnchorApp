@@ -1,5 +1,6 @@
 .[[INV]].
-  ,   [[Investor Intros]], 
+  ,   [[Investor Intros]],
+  , [INV Note](spot://invnote), 
 
 
 - [[Investor Intros]]

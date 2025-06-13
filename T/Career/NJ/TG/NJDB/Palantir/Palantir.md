@@ -1,3 +1,6 @@
+.[[Palantir]].
+  , [Palantir Note](spot://palantirnote), 
+
 # Top
 #### kind: Big
 #### area: Analytics

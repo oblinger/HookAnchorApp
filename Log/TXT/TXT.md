@@ -1,8 +1,9 @@
 .[[TXT]].
 - [[Msg]] - Log of messages
-- [[Letters]] - 
-- [[TT]] - 
-- [[Writing]] - 
+- [[Letters]] -
+- [[TT]] -
+- [[Writing]] -
+  , [TXT Note](spot://txtnote), 
 
 
 - [[TXT|TXTS]] - Partial log of outgoing messages.    [[TXT|ALL TXT]] 

@@ -1,9 +1,10 @@
 n:: Research Reference pages
 
 .[[RR]].  [[LRN Todo]] 
-  AREAS:	[[AI]], [[ML]], , [[RR Philosophy]], [[RR Leet]],
+  AREAS:	[[AI]], [[ML]], [[RR Philosophy]], [[RR Leet]],
   TOPICS:	[[RR Med]], [[RR MGR]],
-  [[REF]]:		[[RefMisc]], [[Refs]], [[RR PAPERS]], ,
+  [[REF]]:		[[RefMisc]], [[Refs]],
+  LOGS:	 	[[RR PAPERS]], 
   CLOSET:	[[Research]],
   .
   [[Covid]], [[MATERIALS]],
@@ -15,7 +16,12 @@ n:: Research Reference pages
   , [[RR CV]],
   , [[RR Web]],
   , [[RR Articles]],
-  , [[LLM]], 
+  , [[LLM]],
+  , [RR Articles Note](spot://rrarticlesnote), [RR Blog Note](spot://rrblognote)
+  , [RR Leet Note](spot://rrleetnote), [RR Med Note](spot://rrmednote)
+  , [RR MGR Note](spot://rrmgrnote), [RR Note](spot://rrnote), [RR PAPERS Note](spot://rrpapersnote)
+  , [RR Philosophy Note](spot://rrphilosophynote), [RR SYSTEMS Note](spot://rrsystemsnote)
+  , [RR Web Note](spot://rrwebnote), 
   DELS: [[RR CV]],[[rrCV]],[[RR Web]],
 
 

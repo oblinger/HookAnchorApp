@@ -1,3 +1,6 @@
+.[[Adobe]].
+  , [Adobe Note](spot://adobenote), 
+
 # Top
 #### kind: Big
 #### area: CoreDL

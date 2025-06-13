@@ -1,5 +1,6 @@
 .[[ArmChair]].
-  ,   [[Fermi Paradox]], 
+  ,   [[Fermi Paradox]],
+  , [ArmChair Note](spot://armchairnote), 
 
 
 :: [[Fermi Paradox]]

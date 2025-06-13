@@ -1,5 +1,6 @@
 .[[Biking]].
-  ,   [[Biking Notes]], 
+  ,   [[Biking Notes]],
+  , [Biking Note](spot://bikingnote), 
 
 
 :: [[Biking Notes]]

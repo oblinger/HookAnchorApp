@@ -1,3 +1,6 @@
+.[[Character.AI]].
+  , [Character.AI Note](spot://character.ainote), 
+
 # Top
 ## Sections
 ### Cash

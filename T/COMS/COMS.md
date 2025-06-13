@@ -1,5 +1,6 @@
 .[[COMS]].
    , [[Calls]], [[COM Msg]], [[COM Next]] ([[CN]]),
+  , [COMS Note](spot://comsnote), 
 
 - [[CRM]], [[BOD]], 
 

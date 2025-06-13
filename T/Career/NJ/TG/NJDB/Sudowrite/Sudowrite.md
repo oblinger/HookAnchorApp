@@ -1,3 +1,6 @@
+.[[Sudowrite]].
+  , [Sudowrite Note](spot://sudowritenote), 
+
 # Top
 #### kind: BigAI
 #### area: CoreNLP

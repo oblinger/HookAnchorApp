@@ -1,6 +1,7 @@
 .[[TG]].
   , [[NJ Considerations]], [[NJ Queries]],
-  , [[mddb]], 
+  , [[mddb]],
+  , [TG Note](spot://tgnote), 
 
 
  [[_template]],  [[NJ Queries|Queries]], [_import dir](spot://importfolder), [[_db.xlsx|_db]],  [[NJ.1]], 

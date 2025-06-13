@@ -1,3 +1,4 @@
 .[[lex-lexlang]].
-  , [[README]], 
+  , [[README]],
+  , [lex-lexlang Note](spot://lexlexlangnote), 
 

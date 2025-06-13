@@ -1,3 +1,6 @@
+.[[Pinecone]].
+  , [Pinecone Note](spot://pineconenote), 
+
 # Top
 #### kind: StartAI
 #### area: CoreDL

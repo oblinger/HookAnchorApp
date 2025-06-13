@@ -1,3 +1,6 @@
+.[[Tavus]].
+  , [Tavus Note](spot://tavusnote), 
+
 # Top
 #### kind: BigAI
 #### area: CoreDL

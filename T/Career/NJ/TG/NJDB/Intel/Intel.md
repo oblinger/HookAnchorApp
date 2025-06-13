@@ -1,3 +1,6 @@
+.[[Intel]].
+  , [Intel Note](spot://intelnote), 
+
 # Top
 #### kind: Big
 #### area: Hardware

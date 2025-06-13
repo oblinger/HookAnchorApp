@@ -6,7 +6,8 @@
   , [[Torch Module]],
   [[Torch Loss]], [[Torch Optim]]
   ,
-  , [[Torch Libraries]], 
+  , [[Torch Libraries]],
+  , [DocTorch Note](spot://doctorchnote), 
   DELS: [[Torch Libraries]],
 
 

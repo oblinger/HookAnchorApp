@@ -1,3 +1,6 @@
+.[[Clarifai]].
+  , [Clarifai Note](spot://clarifainote), 
+
 # Top
 #### kind: BigAI
 #### area: CoreDL

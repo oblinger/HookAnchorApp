@@ -1,3 +1,6 @@
+.[[DeepMind]].
+  , [DeepMind Note](spot://deepmindnote), 
+
 # Top
 #### kind: TopHard
 #### area: CoreDL

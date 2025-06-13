@@ -1,3 +1,6 @@
+.[[Salesforce]].
+  , [Salesforce Note](spot://salesforcenote), 
+
 # Top
 #### kind: Big
 #### area: CoreDL

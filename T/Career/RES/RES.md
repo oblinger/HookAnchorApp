@@ -8,7 +8,9 @@
   .
 - [[RES Instant Design Story]],
 - [[2024-04-01 Resume Rewrite]],
-  , [[WarStories]], 
+  , [[WarStories]],
+  , [RES Examples Note](spot://resexamplesnote), [RES Job History Note](spot://resjobhistorynote)
+  , [RES Note](spot://resnote), [RES Versions Note](spot://resversionsnote), 
   DELS: [[WarStories]],
 
 # LINKED IN PARTS

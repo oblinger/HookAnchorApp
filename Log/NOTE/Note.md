@@ -1,5 +1,6 @@
 .[[Note]].
-  ,   [[DATED]], [[Notes]], 
+  ,   [[DATED]], [[Notes]],
+  , [Note Note](spot://notenote), 
 
 #log 
 n:: 'n...' 	Isolated 'notes' created by me

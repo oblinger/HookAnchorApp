@@ -1,3 +1,6 @@
+.[[@Facet]].
+  , [@Facet Note](spot://@facetnote), 
+
 #pp   [Website](https://facet.com/nerdwallet/?utm_medium=affiliate&utm_source=NerdWallet&aff_sub=2149128643984b2db20917309968d246) 
 
 

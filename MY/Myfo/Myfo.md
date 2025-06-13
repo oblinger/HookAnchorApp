@@ -1,6 +1,7 @@
 (see 1Pass Myfo)
 .[[Myfo]].
-  [[Emails]], 
+  [[Emails]],
+  , [Myfo Note](spot://myfonote), 
 
 - [[Med]] 
 - [[My Stuff]]

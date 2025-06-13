@@ -2,6 +2,9 @@
   , [[Employee Notes]], [[Hire]], [[MGR Contracts]], [[MGR Docs]], [[MGR Log]], [[MgrTracking]]
   , [[MyMgr]], [[My Staff]],
   .
+  , [MGR Architecture Diagrams Note](spot://mgrarchitecturediagramsnote)
+  , [MGR Contracts Note](spot://mgrcontractsnote), [MGR Docs Note](spot://mgrdocsnote)
+  , [MGR Note](spot://mgrnote), 
   DELS: [[Hire]],[[MGR Annual Review]], [[MGR Leadership]], [[MGR Meetings]], [[MGR Negotiations]], [[MGR Plan]], [[MGR Product]], [[MGR AI Planning]],
 
 

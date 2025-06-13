@@ -1,3 +1,6 @@
+.[[Dataiku]].
+  , [Dataiku Note](spot://dataikunote), 
+
 # Top
 #### kind: StartAI
 #### area: CoreDL

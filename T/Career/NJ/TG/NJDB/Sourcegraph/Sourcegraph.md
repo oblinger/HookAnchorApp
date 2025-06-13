@@ -1,3 +1,6 @@
+.[[Sourcegraph]].
+  , [Sourcegraph Note](spot://sourcegraphnote), 
+
 # Top
 #### kind: StartAI
 #### area: Dev Tools

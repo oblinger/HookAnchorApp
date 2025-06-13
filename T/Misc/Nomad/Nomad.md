@@ -1,3 +1,6 @@
+.[[Nomad]].
+  , [Nomad Note](spot://nomadnote), 
+
 
 # Blogs
 

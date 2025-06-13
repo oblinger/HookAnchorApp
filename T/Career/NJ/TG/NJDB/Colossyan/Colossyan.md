@@ -1,3 +1,6 @@
+.[[Colossyan]].
+  , [Colossyan Note](spot://colossyannote), 
+
 # Top
 #### kind: BigAI
 #### area: CoreDL

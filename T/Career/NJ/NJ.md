@@ -9,6 +9,7 @@
   , [[NJ Blog]]
   , [[TG]],
   , [[NJ Pyramid]],
+  , [NJ Note](spot://njnote), [NJ Queries Note](spot://njqueriesnote), 
 
 RELATED:	 [[CRM]], 
 OLD:	[[Meta Coms]], 

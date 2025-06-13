@@ -1,3 +1,6 @@
+.[[Taxes]].
+  , [Taxes Note](spot://taxesnote), 
+
 
 
    ~# L  Sensitive   -- to open Taxes folder

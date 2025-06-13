@@ -1,3 +1,6 @@
+.[[Gym]].
+  , [Gym Note](spot://gymnote), 
+
 
 
 # Ross Workouts

@@ -13,7 +13,8 @@ n:: Groupings of like (typed), undated entries.
   DELS: , , ,,
   , [[Read]],
   DELS: , , ,,, , , , , ,
-  , [[Buy]], 
+  , [[Buy]],
+  , [Set Note](spot://setnote), 
   DELS: [[LANG]], [[Phone]], [[Writing]],[[BUY]],[[CTC]], [[Phone]], [[Writing]], [[LANG]], [[Phone]], [[Writing]],[[ToRead]],[[LANG]], [[Phone]], [[Writing]], [[CTC]], [[Phone]], [[Writing]], [[LANG]], [[Phone]], [[Writing]],[[BUY]], [[BUY]], [[BUY]],
 
 

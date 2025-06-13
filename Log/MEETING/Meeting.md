@@ -1,3 +1,6 @@
+.[[Meeting]].
+  , [Meeting Note](spot://meetingnote), 
+
 
 :: [[2024-06-13 - Juan EC2 setup]]
 #log <[[Untyped]]

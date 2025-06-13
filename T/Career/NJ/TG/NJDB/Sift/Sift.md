@@ -1,3 +1,6 @@
+.[[Sift]].
+  , [Sift Note](spot://siftnote), 
+
 # Top
 #### kind: StartAI
 #### area: Cyber

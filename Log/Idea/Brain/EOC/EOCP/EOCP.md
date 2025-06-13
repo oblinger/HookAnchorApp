@@ -1,5 +1,6 @@
 .[[EOCP]]. Engines Of Control - PATHS
-  [[EOCP Summary]], 
+  [[EOCP Summary]],
+  , [EOCP Note](spot://eocpnote), 
 
 [[EOCP Summary]]
 

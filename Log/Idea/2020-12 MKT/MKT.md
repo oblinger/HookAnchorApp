@@ -1,3 +1,6 @@
+.[[MKT]].
+  , [MKT Note](spot://mktnote), 
+
 
 :: [[2020-12 MKT]]
 ### _

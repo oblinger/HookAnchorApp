@@ -5,7 +5,8 @@
   ADDS:   ,
   ADDS:   ,
   ,   [[Diary]],
-  DELS: [[Diary]],[[Mission2024]], [[_MateNote]], [[_Mates]],[[mate]], 
+  , [Life Note](spot://lifenote), 
+  DELS: [[Diary]],[[Mission2024]], [[_MateNote]], [[_Mates]],[[mate]],
 
 
 

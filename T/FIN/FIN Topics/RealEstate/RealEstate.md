@@ -1,3 +1,6 @@
+.[[RealEstate]].
+  , [RealEstate Note](spot://realestatenote), 
+
 
 
 ### Ref

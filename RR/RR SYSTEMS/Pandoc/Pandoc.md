@@ -1,3 +1,6 @@
+.[[Pandoc]].
+  , [Pandoc Note](spot://pandocnote), 
+
 
 
 

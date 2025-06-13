@@ -1,6 +1,7 @@
 .[[@Google]].
   ,   [[GoogleJob]], [[Google People]],
-  , [[@Alexandra Ramadan]], 
+  , [[@Alexandra Ramadan]],
+  , [@Google Note](spot://@googlenote), 
   DELS: [[@Alexandra Ramadan]],
 
 =[[Org]] 

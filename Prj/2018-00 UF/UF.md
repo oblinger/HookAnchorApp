@@ -7,7 +7,8 @@
   , [[_info]],
   , [[UF-OLD]],
   DELS: , , , , , , , , , , ,, , , , ,, , , , , , , , , , ,
-  DELS: [[ufAgenda]], [[ufElements]], [[ufGenerality]], [[UfGui]], [[ufIntroduction]], [[ufLAL]], [[ufMarkdown]], [[essential capture]], [[_outtakes]], [[Recommender]], [[TextPuter]],[[uniform1_vocabulary]], [[uniform7_oblits]], [[uniform7_sentences]], [[UC]], [[Info]],[[ufAgenda]], [[ufElements]], [[ufGenerality]], [[UfGui]], [[ufIntroduction]], [[ufLAL]], [[ufMarkdown]], [[essential capture]], [[_outtakes]], [[Recommender]], [[TextPuter]],[[_agenda]],[[ufAgenda]], [[ufElements]], [[ufGenerality]], [[UfGui]], [[ufIntroduction]], [[ufLAL]], [[ufMarkdown]], [[essential capture]], [[_outtakes]], [[Recommender]], [[TextPuter]], [[uniform1_vocabulary]], [[uniform7_oblits]], [[uniform7_sentences]], [[UC]], [[Info]], [[ufAgenda]], [[ufElements]], [[ufGenerality]], [[UfGui]], [[ufIntroduction]], [[ufLAL]], [[ufMarkdown]], [[essential capture]], [[_outtakes]], [[Recommender]], [[TextPuter]],[[_parts]], 
+  , [UF Note](spot://ufnote), 
+  DELS: [[ufAgenda]], [[ufElements]], [[ufGenerality]], [[UfGui]], [[ufIntroduction]], [[ufLAL]], [[ufMarkdown]], [[essential capture]], [[_outtakes]], [[Recommender]], [[TextPuter]],[[uniform1_vocabulary]], [[uniform7_oblits]], [[uniform7_sentences]], [[UC]], [[Info]],[[ufAgenda]], [[ufElements]], [[ufGenerality]], [[UfGui]], [[ufIntroduction]], [[ufLAL]], [[ufMarkdown]], [[essential capture]], [[_outtakes]], [[Recommender]], [[TextPuter]],[[_agenda]],[[ufAgenda]], [[ufElements]], [[ufGenerality]], [[UfGui]], [[ufIntroduction]], [[ufLAL]], [[ufMarkdown]], [[essential capture]], [[_outtakes]], [[Recommender]], [[TextPuter]], [[uniform1_vocabulary]], [[uniform7_oblits]], [[uniform7_sentences]], [[UC]], [[Info]], [[ufAgenda]], [[ufElements]], [[ufGenerality]], [[UfGui]], [[ufIntroduction]], [[ufLAL]], [[ufMarkdown]], [[essential capture]], [[_outtakes]], [[Recommender]], [[TextPuter]],[[_parts]],
 
 
 

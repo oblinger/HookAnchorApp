@@ -20,7 +20,10 @@
   , ,
   , [[Multi-headed Attention Block]], [[Self Attention]],
   , [[GPT Prompting]],
-  , [[LRM]], 
+  , [[LRM]],
+  , [DL Activation Note](spot://dlactivationnote), [DL Alg Note](spot://dlalgnote)
+  , [DL Note](spot://dlnote), [DL Topic Note](spot://dltopicnote)
+  , [DL Visualization Note](spot://dlvisualizationnote), 
   DELS: [[DLF]], [[DL Optim]],[[DL Opto]],[[Torch Tensor]],[[Tensor]], [[DL Opto]],[[DL Visualize]],[[DL Strat]], [[DL Opto]], [[Torch Tensor]], [[Tensor]], [[DL Opto]],[[RR/DL/DLF/DL Strategy]], [[DL Optim]], [[DL Optim]], [[DL Data Loading]], [[DL Notation]], [[DL Areas]], [[DL Optim]], [[DL Analyze]], [[DL Examples]], [[DL Template]], [[DL Optim]], [[DL Optim]], [[DL Visualize]], [[DL Optim]], [[DL Visualize]], [[DL torch.optim]],[[Feed Forward Layer]], [[RAG]], [[LSTM]], [[LLM]],[[Regularization]], [[DL Theory]], [[ReLU]],[[DL proj]],[[LRM]], [[LLM]],
 
 [[DL Areas]]
@@ -102,7 +105,7 @@
 
 
 
-  DELS: [[CNN]], [[RR/DL/DL strategy]], [[RR/DL/DLF/DL Strategy]], [[VAE - Variational Auto Encoder]], 
+  DELS: [[CNN]], [[DL Strategy]], [[RR/DL/DLF/DL Strategy]], [[VAE - Variational Auto Encoder]], 
 
 
   DELS: [[RR/DL/DLF/DL Strategy]], [[CNNs]], [[DL Optim]], 

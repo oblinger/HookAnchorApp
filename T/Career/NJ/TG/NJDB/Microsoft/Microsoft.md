@@ -1,3 +1,6 @@
+.[[Microsoft]].
+  , [Microsoft Note](spot://microsoftnote), 
+
 # Top
 #### kind: Top
 #### area: CoreDL

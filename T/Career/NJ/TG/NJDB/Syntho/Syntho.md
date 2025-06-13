@@ -1,3 +1,6 @@
+.[[Syntho]].
+  , [Syntho Note](spot://synthonote), 
+
 # Top
 #### kind: BigAI
 #### area: CoreDL

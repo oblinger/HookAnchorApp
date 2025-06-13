@@ -1,3 +1,6 @@
+.[[Helm.ai]].
+  , [Helm.ai Note](spot://helm.ainote), 
+
 # Top
 ## Sections
 ### Cash

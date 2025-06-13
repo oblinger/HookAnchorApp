@@ -3,7 +3,8 @@
   , [[dp]],
   , ,
   , [[anchor]],
-  , [[2025-06 spot]], [[km_cmd]], 
+  , [[2025-06 spot]], [[km_cmd]],
+  , [BinProj Note](spot://binprojnote), 
   DELS: [[Budg]],[[lim]],
 
 

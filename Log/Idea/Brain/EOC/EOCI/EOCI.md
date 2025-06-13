@@ -16,7 +16,8 @@
   , [[EOCI Leviathan]], [[EOCI Meta Mind]], [[EOCI National Decision Making]]
   , [[EOCI Nature of Super Intelligence]], [[EOCI Pax Corporana]], [[EOCI Perilous Cyberspace]]
   , [[EOCI ProblemOfQualia]], [[EOCI Scaled Intelligence is super-intelligence]]
-  , [[EOCI Web of Winners]], 
+  , [[EOCI Web of Winners]],
+  , [EOCI Note](spot://eocinote), 
   DELS: [[EOCD Agent]], [[EOCI Agenic Aggregation]], [[EOCI Alignment as Mind Slavery]], [[EOCI Closure]], [[EOCI Consciousness]], [[EOCI Corp AI]], [[EOCI Corp Decision Making]], [[EOCI Desired Knowledge Diffusion]], [[EOCI Digital Native]], [[EOCI Executive Creep]], [[EOCI Hiearachicalization]], [[EOCI Human Reasoning Conjecture]], [[EOCI Incomprehesibility]], [[EOCI Inevitability Thesis]], [[EOCI Is Alignment Possible]], [[EOCI Keeping Secrets]], [[EOCI Leviathan]], [[EOCI Meta Mind]], [[EOCI National Decision Making]], [[EOCI Nature of Super Intelligence]], [[EOCI Pax Corporana]], [[EOCI Perilous Cyberspace]], [[EOCI ProblemOfQualia]], [[EOCI Scaled Intelligence is super-intelligence]], [[EOCI Web of Winners]],
 
   

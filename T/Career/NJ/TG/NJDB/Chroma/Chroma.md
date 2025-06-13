@@ -1,3 +1,6 @@
+.[[Chroma]].
+  , [Chroma Note](spot://chromanote), 
+
 # Top
 #### kind: StartAI
 #### area: CoreDL

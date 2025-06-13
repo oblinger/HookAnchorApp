@@ -1,3 +1,6 @@
+.[[hiking]].
+  , [hiking Note](spot://hikingnote), 
+
 Hiking
 
 https://bahiker.com/index.html

@@ -1,5 +1,6 @@
 .[[Journal]].
-  , [[Journal Old]], 
+  , [[Journal Old]],
+  , [Journal Note](spot://journalnote), 
 
 #log <[[DATED]]
 n:: 'j...' 	Journal entries  (NOT USED)

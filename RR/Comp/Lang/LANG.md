@@ -1,7 +1,8 @@
 .[[LANG]].
   , [[haskell]],
   , ,
-  DELS: [LANG Note](spot://langnote), 
+  , [LANG Note](spot://langnote), 
+  DELS: [LANG Note](spot://langnote),
 
 
 

@@ -1,6 +1,7 @@
 .[[EOCB]].
   , [[EOCB End Run -- Cyber Model]], [[EOCB LimitsOnAlignment]], [[EOCB Progression]]
-  , [[EOCB SandboxFutility]], [[EOCB Web]], 
+  , [[EOCB SandboxFutility]], [[EOCB Web]],
+  , [EOCB Note](spot://eocbnote), [EOCB Web Note](spot://eocbwebnote), 
 
 
 

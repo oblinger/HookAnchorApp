@@ -1,3 +1,6 @@
+.[[Tome]].
+  , [Tome Note](spot://tomenote), 
+
 # Top
 #### kind: BigAI
 #### area: CoreNLP

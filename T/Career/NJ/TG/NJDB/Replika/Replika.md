@@ -1,3 +1,6 @@
+.[[Replika]].
+  , [Replika Note](spot://replikanote), 
+
 # Top
 #### kind: StartAI
 #### area: CoreNLP

@@ -1,3 +1,6 @@
+.[[Osaro]].
+  , [Osaro Note](spot://osaronote), 
+
 # Top
 #### kind: StartAI
 #### area: Robotics

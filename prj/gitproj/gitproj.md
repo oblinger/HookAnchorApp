@@ -1,4 +1,5 @@
 .[[gitproj]].
-  [[AlienBiology]], 
+  [[AlienBiology]],
+  , [gitproj Note](spot://gitprojnote), 
 
 - [[AlienBiologyWhitepaper]] 

@@ -1,3 +1,6 @@
+.[[Budg]].
+  , [Budg Note](spot://budgnote), 
+
 
 
 **Objective**: Script to process and display my financial transactions.

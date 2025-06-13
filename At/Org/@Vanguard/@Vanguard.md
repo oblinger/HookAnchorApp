@@ -1,3 +1,6 @@
+.[[@Vanguard]].
+  , [@Vanguard Note](spot://@vanguardnote), 
+
 
 ## Dean Sprague CFP - Fiduciary
 - Dean Sprague CFP; Senior Financial Advisor

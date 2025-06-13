@@ -1,5 +1,6 @@
 .[[Recipe]].
-  ,   [[GreenBean_HamBase]], [[GreenBean_Walnuts]], 
+  ,   [[GreenBean_HamBase]], [[GreenBean_Walnuts]],
+  , [Recipe Note](spot://recipenote), 
 
 #set 
 n:: Info about recipes (Not really a set)

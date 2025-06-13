@@ -1,3 +1,6 @@
+.[[LangChain]].
+  , [LangChain Note](spot://langchainnote), 
+
 # Top
 #### kind: StartAI
 #### area: CoreNLP

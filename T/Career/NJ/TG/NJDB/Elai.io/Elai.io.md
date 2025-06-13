@@ -1,3 +1,6 @@
+.[[Elai.io]].
+  , [Elai.io Note](spot://elai.ionote), 
+
 # Top
 #### kind: GenAI
 ## Sections

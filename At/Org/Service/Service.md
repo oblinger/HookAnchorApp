@@ -1,6 +1,7 @@
 .[[Service]].
   ,   [[Cleaning Service]],
-  , [[@Algo Monster]], [[@Pramp]], 
+  , [[@Algo Monster]], [[@Pramp]],
+  , [Service Note](spot://servicenote), 
   DELS: [[@Algo Monster]], [[@Pramp]],
 
 < [[Person]] < 

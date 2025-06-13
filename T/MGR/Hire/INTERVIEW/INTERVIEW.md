@@ -1,5 +1,6 @@
 .[[INTERVIEW]].
-  ,   [[BBI]], [[CIT]], [[Interviewing]], [[Interviewing Book]], [[Interviews]], 
+  ,   [[BBI]], [[CIT]], [[Interviewing]], [[Interviewing Book]], [[Interviews]],
+  , [INTERVIEW Note](spot://interviewnote), 
 
 
 - [[SEEK]] - 

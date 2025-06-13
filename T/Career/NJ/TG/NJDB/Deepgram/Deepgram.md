@@ -1,3 +1,6 @@
+.[[Deepgram]].
+  , [Deepgram Note](spot://deepgramnote), 
+
 # Top
 #### kind: StartAI
 #### area: CoreNLP

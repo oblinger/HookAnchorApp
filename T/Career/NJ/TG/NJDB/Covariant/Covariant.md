@@ -1,3 +1,6 @@
+.[[Covariant]].
+  , [Covariant Note](spot://covariantnote), 
+
 # Top
 #### kind: StartAI
 #### area: Robotics

@@ -1,3 +1,6 @@
+.[[Cruise]].
+  , [Cruise Note](spot://cruisenote), 
+
 # Top
 #### kind: Big
 #### area: Robotics

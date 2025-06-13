@@ -70,7 +70,8 @@
   , [[Friends]], [[Mentors]], , , [[ROLODEX]], [[VC ORG]],
   , [[Crm]], [[Org]], [[People]],
   , [[@Brian Rife]],
-  , [[@Adobe]], [[@Thumbtack]], 
+  , [[@Adobe]], [[@Thumbtack]],
+  , [[@JobRight.AI]], [At Note](spot://atnote), 
   DELS: [AT Note](spot://atnote), [[CRM]], [[ORG]], [[PEOPLE]],[[@Dexafit]],[[@Brian Rife]],
 
 .[[AT]].

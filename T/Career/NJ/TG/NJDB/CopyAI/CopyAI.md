@@ -1,3 +1,6 @@
+.[[CopyAI]].
+  , [CopyAI Note](spot://copyainote), 
+
 # Top
 #### kind: BigAI
 #### area: CoreNLP

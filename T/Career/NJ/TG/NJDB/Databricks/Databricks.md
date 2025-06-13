@@ -1,3 +1,6 @@
+.[[Databricks]].
+  , [Databricks Note](spot://databricksnote), 
+
 # Top
 #### kind: Big
 #### area: CoreDL

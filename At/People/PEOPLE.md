@@ -1,6 +1,7 @@
 
 .[[People]].
-  [[family]] 
+  [[family]]
+  , [People Note](spot://peoplenote), 
 
 - [PEOPLE Note](spot://peoplenote),
 - [[SV People]], 
