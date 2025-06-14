@@ -1,8 +1,9 @@
 .[[RR PAPERS]].  [[LRN Todo]]  [[RR Articles]] 
   [[RR DEFINITIONS]],
   [[RR Blog]],
-  , [[2026-06-12 LLaVA-ST - Spatio-Temporal Understanding]],
-  , [[2025-06-12 LLaVA-ST - Spatio-Temporal Understanding]], 
+  , ,
+  , [[2025-06-12 LLaVA-ST - Spatio-Temporal Understanding]],
+  DELS: [[2026-06-12 LLaVA-ST - Spatio-Temporal Understanding]], 
 
 
 mamba block

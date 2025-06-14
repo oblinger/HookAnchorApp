@@ -1,3 +1,6 @@
+.[[anchor]].
+  , [anchor Note](spot://anchornote), 
+
 		.[[anchor]].
   , [anchor Note](spot://anchornote), 
 

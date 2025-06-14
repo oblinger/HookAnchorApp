@@ -4,7 +4,7 @@
   [AMA Collections Page](spot://amacollectionspage), [AMA Content Page](spot://amacontentpage), [AMA Devices](spot://amadevices),
   [AMA Kindle Page](spot://amakindlepage), [AMA Video Page](spot://amavideopage),
   [Amazon](spot://amazon),
-  , [AMA Page](spot://amapage),
+  , [AMAl Page](spot://amapage),
   , [AMA Note](spot://amanote), 
   DELS: [AMA Pjage](spot://amapage),
 

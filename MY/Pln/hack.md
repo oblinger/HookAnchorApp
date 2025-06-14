@@ -1,3 +1,4 @@
+- ! will add priority to certain entries.  and editing from the interface
 
 - cursor positioning in iterm2
 - med exercise plan weights

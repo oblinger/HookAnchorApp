@@ -1,4 +1,7 @@
 
+[[2024-W34\|Tue Aug 20  2024]]  	[[2024-W34#W34   2024-08-19   [[2024-W33\\|<<]] [[2024-W35\\|>>]]]]  
+[[@Jason Syversen\|Tue Aug 20  2024]]  	[[@Jason Syversen#2024-08-19  Plans]]  
+[[Eli Food\|Sat Aug 17  2024]]  	[[Eli Food#**MAIN**]]  
 [[Eli Food\|Sat Aug 17  2024]]  	[[Eli Food#Bfast - INSTANT]]  
 [[MY Stuff\|Sat Aug 17  2024]]  	[[MY Stuff#2024 DO Pod Max]]  
 [[My Stuff\|Sat Aug 17  2024]]  	[[My Stuff#2024 DO Pod Max]]  

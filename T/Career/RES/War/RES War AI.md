@@ -62,9 +62,9 @@ The interpolation tracker, which is used only for the ball, has no paper. It is 
 
 ### 2023 SV Object Tracking
 
+## Analytics Fire
 ### 2018 AF Roof Modeling
 
-## Analytics Fire
 
 ### 2019-2021 Instant Design Story
 1. Non-ML-based Roof Edge extraction
@@ -119,4 +119,6 @@ OTHER IDEAS:
 	- NN for detecting obstructions
 		- then idea lets swap edges from NN into the existing pipeline for 
 
+
+## Aeolus
 
