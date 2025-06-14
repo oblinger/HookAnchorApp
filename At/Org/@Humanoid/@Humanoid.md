@@ -94,3 +94,69 @@ Olivia Ong
 **858-314-8759**
 
 [www.AscendN.com](http://www.ascendn.com/ "http://www.ascendn.com/")
+
+
+### 2025-06-13  Notes from call
+
+
+
+Ol
+
+Humaniod - 
+
+- AI / ML algs
+- autonomous driving
+- data pipelining
+- python
+- deep learning / NLP / vision / vision l
+- ML Infrastructure / best practices / 
+- Office in the UK.
+- Head of AI - 
+- Base salary:  Upto $700K   $450base
+- Report to CTO - Jared
+	- six report in to me. (and growing)
+	- 
+
+
+> summarize work in the last 10 years' on emotion detection
+
+⏺ Web Search("emotion detection research progress 2014-2024 facial expression recognition machine learning deep learning timeline")
+  ⎿  Did 1 search in 37s
+
+> please show summary
+
+⏺ Emotion Detection Progress (2014-2024)
+
+  Early Period (2014-2017)
+
+  - Foundation architectures: ResNet, VGG, Inception networks established
+  - Traditional approaches: Random forest classifiers, HOG features
+  - 3D methods: Depth cameras for expression recognition
+
+  Mid-Period (2015-2020)
+
+  - Deep learning adoption: CNNs became dominant approach
+  - Real-time systems: HOG + neural networks for live recognition
+  - 3D CNNs: Enhanced facial expression recognition
+
+  Recent Advances (2020-2024)
+
+  - Advanced architectures: Anti-aliased deep convolution networks
+  - Expanded emotion sets: 8-10 emotions vs traditional 6-7
+  - Real-time optimization: Better performance in uncontrolled environments
+
+  Key Technical Evolution
+
+  - Shift: Hand-crafted features → automatic feature learning
+  - Performance: Deep Belief Networks achieving 98.82% accuracy on controlled datasets
+  - Architecture: CNNs dominating with superior feature learning
+
+  Current State
+
+  - Strengths: Excellent lab performance, diverse applications
+  - Challenges: Real-world deployment, lighting/occlusion issues
+  - Applications: Healthcare, HCI, security, adaptive learning
+
+  Gap
+
+  Lab accuracy vs real-world performance remains the primary challenge, with ongoing research focused on robustness and generalization.

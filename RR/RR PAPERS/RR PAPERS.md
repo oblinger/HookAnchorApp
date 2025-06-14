@@ -1,14 +1,16 @@
 .[[RR PAPERS]].  [[LRN Todo]]  [[RR Articles]] 
   [[RR DEFINITIONS]],
   [[RR Blog]],
-  , [[2026-06-12 LLaVA-ST - Spatio-Temporal Understanding]], 
+  , [[2026-06-12 LLaVA-ST - Spatio-Temporal Understanding]],
+  , [[2025-06-12 LLaVA-ST - Spatio-Temporal Understanding]], 
 
 
 mamba block
 
 ### 2025-06-12  [LLaVA-ST: A Multimodal Large Language Model for Fine-Grained Spatial-Temporal Understanding](https://arxiv.org/pdf/2501.08282)
 
-[[2026-06-12 LLaVA-ST - Spatio-Temporal Understanding]]
+
+[[2025-06-12 LLaVA-ST - Spatio-Temporal Understanding]]
 
 
 ### ! 2025-05-14  [DeepSeek-V3: Scaling & HW Architectrues](https://arxiv.org/abs/2505.09343?utm_source=alphasignal) 
