@@ -3,7 +3,7 @@ use std::process;
 use std::time::Instant;
 use std::path::Path;
 use std::fs;
-use crate::{Command, filter_commands, execute_command, load_commands};
+use anchor_selector::{Command, filter_commands, execute_command, load_commands};
 
 pub struct AnchorSelector {
     commands: Vec<Command>,
@@ -78,12 +78,12 @@ impl eframe::App for AnchorSelector {
             }
         }
         
-        // Only check focus after 500ms to allow window to fully initialize
-        if self.startup_time.elapsed().as_millis() > 500 {
-            if !ctx.input(|i| i.focused) {
-                std::process::exit(0);
-            }
-        }
+        // DISABLED: Focus detection causing immediate exit
+        // if self.startup_time.elapsed().as_millis() > 500 {
+        //     if !ctx.input(|i| i.focused) {
+        //         std::process::exit(0);
+        //     }
+        // }
         
         egui::CentralPanel::default()
             .frame(
@@ -93,21 +93,24 @@ impl eframe::App for AnchorSelector {
             )
             .show(ctx, |ui| {
             ui.vertical(|ui| {
-                // Top draggable area
+                // Top draggable area (1/8 inch = ~9 pixels)
                 let top_drag = ui.allocate_response(
-                    egui::Vec2::new(ui.available_width(), 10.0),
+                    egui::Vec2::new(ui.available_width(), 9.0),
                     egui::Sense::drag()
                 );
                 if top_drag.dragged() {
                     ctx.send_viewport_cmd(egui::ViewportCommand::StartDrag);
                 }
                 
-                // Search input with larger, bold font
+                // Search input with larger, bold font (50% bigger than heading)
+                let mut font_id = ui.style().text_styles.get(&egui::TextStyle::Heading).unwrap().clone();
+                font_id.size *= 1.5; // Make 50% larger
+                
                 let response = ui.add(
                     egui::TextEdit::singleline(&mut self.search_text)
                         .desired_width(ui.available_width())
                         .hint_text("Type to search commands...")
-                        .font(egui::TextStyle::Heading)
+                        .font(font_id)
                 );
                 
                 if response.changed() {
@@ -170,9 +173,13 @@ impl eframe::App for AnchorSelector {
                                     ctx.send_viewport_cmd(egui::ViewportCommand::StartDrag);
                                 }
                                 
+                                // Use larger font for command list (50% bigger than body)
+                                let mut list_font_id = ui.style().text_styles.get(&egui::TextStyle::Body).unwrap().clone();
+                                list_font_id.size *= 1.5; // Make 50% larger
+                                
                                 let response = ui.selectable_label(
                                     is_selected,
-                                    &cmd.command
+                                    egui::RichText::new(&cmd.command).font(list_font_id)
                                 );
                                 
                                 if response.clicked() {
@@ -227,12 +234,16 @@ impl eframe::App for AnchorSelector {
     }
 }
 
-pub fn run_gui() -> Result<(), eframe::Error> {
+fn main() -> Result<(), eframe::Error> {
+    run_gui()
+}
+
+fn run_gui() -> Result<(), eframe::Error> {
     let viewport_builder = egui::ViewportBuilder::default()
         .with_inner_size([500.0, 400.0])
         .with_min_inner_size([400.0, 300.0])
         .with_resizable(true)
-        .with_decorations(false); // Remove window decorations (title bar, borders)
+        .with_decorations(false); // Remove title bar and window controls
     
     let options = eframe::NativeOptions {
         viewport: viewport_builder,

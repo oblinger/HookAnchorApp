@@ -1,7 +1,28 @@
 use std::env;
-use crate::{load_commands, filter_commands};
+use anchor_selector::{load_commands, filter_commands, execute_command};
 
-pub fn run_match_command(args: &[String]) {
+fn main() {
+    let args: Vec<String> = env::args().collect();
+    
+    if args.len() < 2 {
+        eprintln!("Usage:");
+        eprintln!("  {} match <query> [debug]  - Search and list matching commands", args[0]);
+        eprintln!("  {} exec <command>         - Execute a specific command", args[0]);
+        std::process::exit(1);
+    }
+    
+    match args[1].as_str() {
+        "match" => run_match_command(&args),
+        "exec" => run_exec_command(&args),
+        _ => {
+            eprintln!("Unknown command: {}", args[1]);
+            eprintln!("Use 'match' or 'exec'");
+            std::process::exit(1);
+        }
+    }
+}
+
+fn run_match_command(args: &[String]) {
     if args.len() < 3 {
         eprintln!("Usage: {} match <query> [debug]", args[0]);
         std::process::exit(1);
@@ -19,14 +40,12 @@ pub fn run_match_command(args: &[String]) {
     }
 }
 
-pub fn handle_command_line() -> Option<()> {
-    let args: Vec<String> = env::args().collect();
-    
-    // Check if this is command-line match mode
-    if args.len() >= 3 && args[1] == "match" {
-        run_match_command(&args);
-        return Some(());
+fn run_exec_command(args: &[String]) {
+    if args.len() < 3 {
+        eprintln!("Usage: {} exec <command>", args[0]);
+        std::process::exit(1);
     }
     
-    None // Not a command-line mode, should run GUI
+    let command = &args[2];
+    execute_command(command);
 }
