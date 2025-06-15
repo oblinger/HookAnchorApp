@@ -90,12 +90,13 @@ impl eframe::App for AnchorSelector {
                 egui::Frame::default()
                     .inner_margin(egui::Margin::same(18.0))
                     .fill(egui::Color32::from_gray(240)) // Light gray background
+                    .rounding(egui::Rounding::same(12.0)) // Rounded corners
             )
             .show(ctx, |ui| {
             ui.vertical(|ui| {
-                // Top draggable area (1/8 inch = ~9 pixels)
+                // Top draggable area (minimal padding to match input box side borders)
                 let top_drag = ui.allocate_response(
-                    egui::Vec2::new(ui.available_width(), 9.0),
+                    egui::Vec2::new(ui.available_width(), 0.0),
                     egui::Sense::drag()
                 );
                 if top_drag.dragged() {
