@@ -109,7 +109,7 @@ impl CommandEditor {
                                     ui.selectable_value(&mut self.action, "safari".to_string(), "safari");
                                     ui.selectable_value(&mut self.action, "brave".to_string(), "brave");
                                     ui.selectable_value(&mut self.action, "firefox".to_string(), "firefox");
-                                    ui.selectable_value(&mut self.action, "work".to_string(), "work");
+                                    ui.selectable_value(&mut self.action, "work".to_string(), "work");  // added comment  
                                 });
                             ui.end_row();
                             

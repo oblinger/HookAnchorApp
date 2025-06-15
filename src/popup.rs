@@ -251,18 +251,6 @@ impl eframe::App for AnchorSelector {
                     response.request_focus();
                 }
                 
-                // Add "New Command" button
-                ui.horizontal(|ui| {
-                    if ui.button("New Command").clicked() {
-                        self.command_editor.visible = true;
-                        self.command_editor.command = String::new();
-                        self.command_editor.action = String::new();
-                        self.command_editor.argument = String::new();
-                        self.command_editor.group = String::new();
-                        self.command_editor.priority = false;
-                    }
-                    ui.label("or press → on a command to edit it");
-                });
                 
                 // Draggable space between input and list
                 let mid_drag = ui.allocate_response(
