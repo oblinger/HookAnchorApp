@@ -68,14 +68,67 @@ fn load_window_position() -> Option<egui::Pos2> {
     None
 }
 
+fn get_previous_window_location(ctx: &egui::Context, window_size: egui::Vec2) -> egui::Pos2 {
+    // First try to load the previous position
+    if let Some(previous_pos) = load_window_position() {
+        // Check if this position is visible on any current display
+        if is_position_visible(previous_pos, window_size) {
+            return previous_pos;
+        }
+    }
+    
+    // If no previous position or not visible, center on main display
+    center_on_main_display(ctx, window_size)
+}
+
+fn is_position_visible(pos: egui::Pos2, window_size: egui::Vec2) -> bool {
+    // Get all available monitors/displays
+    // For now, we'll use a basic check - ensure the window isn't completely off-screen
+    // This is a simplified version - in a full implementation you'd query actual display bounds
+    
+    let window_rect = egui::Rect::from_min_size(pos, window_size);
+    
+    // Basic bounds check - assume main display is at least 1024x768
+    // In a real implementation, you'd query actual display information
+    let main_display_rect = egui::Rect::from_min_size(
+        egui::pos2(0.0, 0.0), 
+        egui::vec2(1024.0, 768.0)
+    );
+    
+    // Check if at least part of the window is visible
+    // Allow for window to be partially off-screen but require some overlap
+    let min_visible_area = window_size.x.min(window_size.y) * 0.3; // 30% of smaller dimension
+    
+    let intersection = main_display_rect.intersect(window_rect);
+    intersection.width() * intersection.height() >= min_visible_area * min_visible_area
+}
+
+fn center_on_main_display(ctx: &egui::Context, window_size: egui::Vec2) -> egui::Pos2 {
+    // Try to get screen size from context, fallback to reasonable defaults
+    let screen_size = ctx.screen_rect().size();
+    
+    // If screen size is not available or seems wrong, use reasonable defaults
+    let display_size = if screen_size.x > 800.0 && screen_size.y > 600.0 {
+        screen_size
+    } else {
+        egui::vec2(1440.0, 900.0) // Common laptop resolution
+    };
+    
+    // Center the window on the display
+    egui::pos2(
+        (display_size.x - window_size.x) / 2.0,
+        (display_size.y - window_size.y) / 2.0
+    )
+}
+
 impl eframe::App for AnchorSelector {
     fn update(&mut self, ctx: &egui::Context, _frame: &mut eframe::Frame) {
         // Set position on first frame after window is created
         if !self.position_set {
-            if let Some(pos) = load_window_position() {
-                ctx.send_viewport_cmd(egui::ViewportCommand::OuterPosition(pos));
-                self.position_set = true;
-            }
+            let window_size = egui::vec2(500.0, 400.0); // Match the size from run_gui()
+            let pos = get_previous_window_location(ctx, window_size);
+            ctx.send_viewport_cmd(egui::ViewportCommand::OuterPosition(pos));
+            self.position_set = true;
         }
         
         // DISABLED: Focus detection causing immediate exit
@@ -85,12 +138,36 @@ impl eframe::App for AnchorSelector {
         //     }
         // }
         
+        // Draw custom rounded background with heavy shadow
+        let screen_rect = ctx.screen_rect();
+        let painter = ctx.layer_painter(egui::LayerId::background());
+        
+        // Draw multiple shadow layers for a much darker shadow effect
+        let shadow_offsets = [12.0, 10.0, 8.0, 6.0, 4.0, 2.0];
+        let shadow_alphas = [50, 70, 90, 110, 130, 150];
+        
+        for (offset, alpha) in shadow_offsets.iter().zip(shadow_alphas.iter()) {
+            let shadow_rect = screen_rect.translate(egui::vec2(*offset, *offset));
+            painter.rect_filled(
+                shadow_rect,
+                egui::Rounding::same(12.0),
+                egui::Color32::from_black_alpha(*alpha)
+            );
+        }
+        
+        // Draw main background
+        painter.rect_filled(
+            screen_rect,
+            egui::Rounding::same(12.0),
+            egui::Color32::from_gray(240)
+        );
+        
         egui::CentralPanel::default()
             .frame(
                 egui::Frame::default()
                     .inner_margin(egui::Margin::same(18.0))
-                    .fill(egui::Color32::from_gray(240)) // Light gray background
-                    .rounding(egui::Rounding::same(12.0)) // Rounded corners
+                    .fill(egui::Color32::TRANSPARENT) // Transparent frame background
+                    .shadow(egui::Shadow::NONE) // Remove shadow to avoid artifacts
             )
             .show(ctx, |ui| {
             ui.vertical(|ui| {
@@ -244,7 +321,8 @@ fn run_gui() -> Result<(), eframe::Error> {
         .with_inner_size([500.0, 400.0])
         .with_min_inner_size([400.0, 300.0])
         .with_resizable(true)
-        .with_decorations(false); // Remove title bar and window controls
+        .with_decorations(false) // Remove title bar and window controls
+        .with_transparent(true); // Enable transparency for rounded corners
     
     let options = eframe::NativeOptions {
         viewport: viewport_builder,
@@ -257,6 +335,16 @@ fn run_gui() -> Result<(), eframe::Error> {
         Box::new(|cc| {
             // Set light theme
             cc.egui_ctx.set_visuals(egui::Visuals::light());
+            
+            // Set light grey background for corner areas
+            if let Some(gl) = cc.gl.as_ref() {
+                use eframe::glow::HasContext as _;
+                unsafe {
+                    // Light grey (200/255 = 0.78) with full opacity for corners
+                    gl.clear_color(0.78, 0.78, 0.78, 1.0);
+                }
+            }
+            
             Ok(Box::new(AnchorSelector::new()))
         }),
     )
