@@ -1,18 +1,20 @@
 use eframe::egui;
 use std::process;
-use std::time::Instant;
 use std::path::Path;
 use std::fs;
 use anchor_selector::{Command, filter_commands, execute_command, load_commands};
+
+mod command_editor;
+use command_editor::{CommandEditor, CommandEditorResult};
 
 pub struct AnchorSelector {
     commands: Vec<Command>,
     search_text: String,
     filtered_commands: Vec<Command>,
     selected_index: usize,
-    startup_time: Instant,
     last_saved_position: Option<egui::Pos2>,
     position_set: bool,
+    command_editor: CommandEditor,
 }
 
 impl AnchorSelector {
@@ -25,9 +27,9 @@ impl AnchorSelector {
             search_text: String::new(),
             filtered_commands,
             selected_index: 0,
-            startup_time: Instant::now(),
             last_saved_position: None,
             position_set: false,
+            command_editor: CommandEditor::new(),
         }
     }
     
@@ -123,6 +125,7 @@ fn center_on_main_display(ctx: &egui::Context, window_size: egui::Vec2) -> egui:
 
 impl eframe::App for AnchorSelector {
     fn update(&mut self, ctx: &egui::Context, _frame: &mut eframe::Frame) {
+        
         // Set position on first frame after window is created
         if !self.position_set {
             let window_size = egui::vec2(500.0, 400.0); // Match the size from run_gui()
@@ -180,6 +183,54 @@ impl eframe::App for AnchorSelector {
                     ctx.send_viewport_cmd(egui::ViewportCommand::StartDrag);
                 }
                 
+                // Handle keyboard input BEFORE text field to ensure it's not consumed
+                ctx.input(|i| {
+                    if i.key_pressed(egui::Key::Escape) {
+                        if self.command_editor.visible {
+                            self.command_editor.hide();
+                        } else {
+                            std::process::exit(0);
+                        }
+                    }
+                    if i.key_pressed(egui::Key::ArrowDown) {
+                        if !self.filtered_commands.is_empty() {
+                            self.selected_index = (self.selected_index + 1).min(self.filtered_commands.len() - 1);
+                        }
+                    }
+                    if i.key_pressed(egui::Key::ArrowUp) {
+                        if self.selected_index > 0 {
+                            self.selected_index -= 1;
+                        }
+                    }
+                    if i.key_pressed(egui::Key::ArrowRight) {
+                        self.command_editor.visible = true;
+                        
+                        if !self.filtered_commands.is_empty() && self.selected_index < self.filtered_commands.len() {
+                            // Populate with selected command data
+                            let selected_cmd = &self.filtered_commands[self.selected_index];
+                            self.command_editor.command = selected_cmd.command.clone();
+                            self.command_editor.action = selected_cmd.action.clone();
+                            self.command_editor.argument = selected_cmd.arg.clone();
+                            self.command_editor.group = selected_cmd.group.clone();
+                            self.command_editor.priority = false;
+                        } else {
+                            // No command selected - populate with blank fields
+                            self.command_editor.command = String::new();
+                            self.command_editor.action = String::new();
+                            self.command_editor.argument = String::new();
+                            self.command_editor.group = String::new();
+                            self.command_editor.priority = false;
+                        }
+                    }
+                    if i.key_pressed(egui::Key::Enter) {
+                        if !self.filtered_commands.is_empty() && self.selected_index < self.filtered_commands.len() {
+                            let selected_cmd = &self.filtered_commands[self.selected_index];
+                            execute_command(&selected_cmd.command);
+                            std::process::exit(0);
+                        }
+                    }
+                });
+                
                 // Search input with larger, bold font (50% bigger than heading)
                 let mut font_id = ui.style().text_styles.get(&egui::TextStyle::Heading).unwrap().clone();
                 font_id.size *= 1.5; // Make 50% larger
@@ -195,34 +246,23 @@ impl eframe::App for AnchorSelector {
                     self.update_filter();
                 }
                 
-                // Handle keyboard input
-                ctx.input(|i| {
-                    if i.key_pressed(egui::Key::Escape) {
-                        std::process::exit(0);
-                    }
-                    if i.key_pressed(egui::Key::ArrowDown) {
-                        if !self.filtered_commands.is_empty() {
-                            self.selected_index = (self.selected_index + 1).min(self.filtered_commands.len() - 1);
-                        }
-                    }
-                    if i.key_pressed(egui::Key::ArrowUp) {
-                        if self.selected_index > 0 {
-                            self.selected_index -= 1;
-                        }
-                    }
-                    if i.key_pressed(egui::Key::Enter) {
-                        if !self.filtered_commands.is_empty() && self.selected_index < self.filtered_commands.len() {
-                            let selected_cmd = &self.filtered_commands[self.selected_index];
-                            execute_command(&selected_cmd.command);
-                            std::process::exit(0);
-                        }
-                    }
-                });
-                
                 // Focus the text input on startup
                 if self.search_text.is_empty() {
                     response.request_focus();
                 }
+                
+                // Add "New Command" button
+                ui.horizontal(|ui| {
+                    if ui.button("New Command").clicked() {
+                        self.command_editor.visible = true;
+                        self.command_editor.command = String::new();
+                        self.command_editor.action = String::new();
+                        self.command_editor.argument = String::new();
+                        self.command_editor.group = String::new();
+                        self.command_editor.priority = false;
+                    }
+                    ui.label("or press → on a command to edit it");
+                });
                 
                 // Draggable space between input and list
                 let mid_drag = ui.allocate_response(
@@ -309,6 +349,21 @@ impl eframe::App for AnchorSelector {
                 }
             }
         }
+        
+        // Update command editor dialog
+        let editor_result = self.command_editor.update(ctx);
+        match editor_result {
+            CommandEditorResult::Cancel => {
+                self.command_editor.hide();
+            }
+            CommandEditorResult::Save => {
+                // TODO: Implement save functionality
+                self.command_editor.hide();
+            }
+            CommandEditorResult::None => {
+                // Continue normal operation
+            }
+        }
     }
 }
 
@@ -321,8 +376,8 @@ fn run_gui() -> Result<(), eframe::Error> {
         .with_inner_size([500.0, 400.0])
         .with_min_inner_size([400.0, 300.0])
         .with_resizable(true)
-        .with_decorations(false) // Remove title bar and window controls
-        .with_transparent(true); // Enable transparency for rounded corners
+        .with_decorations(false); // Remove title bar and window controls
+        // .with_transparent(true); // DISABLED: May cause hanging
     
     let options = eframe::NativeOptions {
         viewport: viewport_builder,
