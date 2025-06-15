@@ -2,7 +2,7 @@ use std::env;
 use std::fs;
 use std::path::Path;
 
-#[derive(Debug, Clone)]
+#[derive(Debug, Clone, PartialEq)]
 pub struct Command {
     pub group: String,
     pub command: String,
@@ -52,13 +52,9 @@ pub fn load_commands() -> Vec<Command> {
                 (String::new(), cmd_parts[0].trim().to_string(), cmd_parts[1].trim())
             };
             
-            let action_parts: Vec<&str> = action_arg.splitn(2, char::is_whitespace).collect();
-            let action = action_parts[0].to_string();
-            let arg = if action_parts.len() > 1 {
-                action_parts[1].to_string()
-            } else {
-                String::new()
-            };
+            let mut action_parts = action_arg.split_whitespace();
+            let action = action_parts.next().unwrap_or("").to_string();
+            let arg = action_parts.collect::<Vec<&str>>().join(" ");
             
             Some(Command {
                 group,
@@ -248,4 +244,27 @@ pub fn execute_command(command: &str) {
             eprintln!("Error writing to /tmp/cmd_file: {}", e);
         }
     }
+}
+
+pub fn save_commands(commands: &[Command]) -> Result<(), Box<dyn std::error::Error>> {
+    let home = env::var("HOME").unwrap_or_else(|_| ".".to_string());
+    let file_path = Path::new(&home).join("ob/data/spot_cmds/spot_cmds.txt");
+    
+    let contents = commands.iter()
+        .map(|cmd| cmd.full_line.clone())
+        .collect::<Vec<String>>()
+        .join("\n");
+    
+    fs::write(&file_path, contents)?;
+    Ok(())
+}
+
+pub fn update_command_list(commands: &mut Vec<Command>, new_command: Command, original_command_name: &str) {
+    // Remove the original command if it exists
+    if !original_command_name.is_empty() {
+        commands.retain(|cmd| cmd.command != original_command_name);
+    }
+    
+    // Add the new command
+    commands.push(new_command);
 }

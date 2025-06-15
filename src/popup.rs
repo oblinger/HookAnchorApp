@@ -2,7 +2,7 @@ use eframe::egui;
 use std::process;
 use std::path::Path;
 use std::fs;
-use anchor_selector::{Command, filter_commands, execute_command, load_commands};
+use anchor_selector::{Command, filter_commands, execute_command, load_commands, save_commands, update_command_list};
 
 mod command_editor;
 use command_editor::{CommandEditor, CommandEditorResult};
@@ -43,6 +43,22 @@ impl AnchorSelector {
         
         // Always reset selection to first item when filter changes
         self.selected_index = 0;
+    }
+    
+    fn save_command(&mut self, new_command: Command, original_command_name: String) {
+        // Update the command list
+        update_command_list(&mut self.commands, new_command, &original_command_name);
+        
+        // Save to file
+        if let Err(e) = save_commands(&self.commands) {
+            eprintln!("Error saving commands: {}", e);
+            return;
+        }
+        
+        // Update the filtered list if we're currently filtering
+        if !self.search_text.trim().is_empty() {
+            self.update_filter();
+        }
     }
 }
 
@@ -213,6 +229,8 @@ impl eframe::App for AnchorSelector {
                             self.command_editor.argument = selected_cmd.arg.clone();
                             self.command_editor.group = selected_cmd.group.clone();
                             self.command_editor.priority = false;
+                            self.command_editor.original_command_name = selected_cmd.command.clone();
+                            self.command_editor.original_command = Some(selected_cmd.clone());
                         } else {
                             // No command selected - populate with blank fields
                             self.command_editor.command = String::new();
@@ -220,6 +238,8 @@ impl eframe::App for AnchorSelector {
                             self.command_editor.argument = String::new();
                             self.command_editor.group = String::new();
                             self.command_editor.priority = false;
+                            self.command_editor.original_command_name = String::new();
+                            self.command_editor.original_command = None;
                         }
                     }
                     if i.key_pressed(egui::Key::Enter) {
@@ -344,8 +364,8 @@ impl eframe::App for AnchorSelector {
             CommandEditorResult::Cancel => {
                 self.command_editor.hide();
             }
-            CommandEditorResult::Save => {
-                // TODO: Implement save functionality
+            CommandEditorResult::Save(new_command, original_command_name) => {
+                self.save_command(new_command, original_command_name);
                 self.command_editor.hide();
             }
             CommandEditorResult::None => {

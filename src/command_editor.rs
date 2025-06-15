@@ -14,6 +14,7 @@ pub struct CommandEditor {
     
     // Track the original command for reference
     pub original_command: Option<Command>,
+    pub original_command_name: String,
 }
 
 impl CommandEditor {
@@ -27,10 +28,11 @@ impl CommandEditor {
             group: String::new(),
             priority: false,
             original_command: None,
+            original_command_name: String::new(),
         }
     }
     
-    pub fn show_for_command(&mut self, cmd: &Command, main_window_pos: egui::Pos2) {
+    pub fn show_for_command(&mut self, _cmd: &Command, main_window_pos: egui::Pos2) {
         println!("show_for_command called");
         self.visible = true;
         println!("set visible to true");
@@ -56,6 +58,7 @@ impl CommandEditor {
     pub fn hide(&mut self) {
         self.visible = false;
         self.original_command = None;
+        self.original_command_name = String::new();
     }
     
     pub fn update(&mut self, ctx: &egui::Context) -> CommandEditorResult {
@@ -145,7 +148,15 @@ impl CommandEditor {
                                 ui.add_space(20.0);
                                 
                                 if ui.button("Save").clicked() {
-                                    result = CommandEditorResult::Save;
+                                    // Create the new command
+                                    let new_command = Command {
+                                        group: self.group.clone(),
+                                        command: self.command.clone(),
+                                        action: self.action.clone(),
+                                        arg: self.argument.clone(),
+                                        full_line: self.format_command_line(),
+                                    };
+                                    result = CommandEditorResult::Save(new_command, self.original_command_name.clone());
                                 }
                             }
                         );
@@ -155,11 +166,25 @@ impl CommandEditor {
         
         result
     }
+    
+    fn format_command_line(&self) -> String {
+        let action_arg = if self.argument.is_empty() {
+            self.action.clone()
+        } else {
+            format!("{} {}", self.action, self.argument)
+        };
+        
+        if self.group.is_empty() {
+            format!("{} : {}", self.command, action_arg)
+        } else {
+            format!("{} ! {} : {}", self.group, self.command, action_arg)
+        }
+    }
 }
 
 #[derive(Debug, PartialEq)]
 pub enum CommandEditorResult {
     None,
     Cancel,
-    Save,
+    Save(Command, String), // (new_command, original_command_name)
 }
