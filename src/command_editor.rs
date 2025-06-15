@@ -93,7 +93,6 @@ impl CommandEditor {
                             ui.label("Action:");
                             egui::ComboBox::from_id_salt("action_combo")
                                 .selected_text(&self.action)
-                                .width(250.0) // Match text field width
                                 .show_ui(ui, |ui| {
                                     ui.selectable_value(&mut self.action, "pass".to_string(), "pass");
                                     ui.selectable_value(&mut self.action, "alias".to_string(), "alias");
@@ -109,7 +108,7 @@ impl CommandEditor {
                                     ui.selectable_value(&mut self.action, "safari".to_string(), "safari");
                                     ui.selectable_value(&mut self.action, "brave".to_string(), "brave");
                                     ui.selectable_value(&mut self.action, "firefox".to_string(), "firefox");
-                                    ui.selectable_value(&mut self.action, "work".to_string(), "work");  // added comment  
+                                    ui.selectable_value(&mut self.action, "work".to_string(), "work");
                                 });
                             ui.end_row();
                             
