@@ -1,4 +1,7 @@
 
+[[Phone\|Mon Jun 9  2025 ]]  	[[Phone#2017-11-14 Prenup info  -- info moved to evernote]]  
+[[Phone\|Mon Jun 9  2025 ]]  	[[Phone#2017-08-01 Sutter health]]  
+[[Phone\|Mon Jun 9  2025 ]]  	[[Phone#2017-05-00  Experian]]  
 [[Phone\|Mon Jun 9  2025 ]]  	[[Phone#2017-00-00 - Bought glasses]]  
 [[Phone\|Mon Jun 9  2025 ]]  	[[Phone#2017-00-00 CREDIT CARDS]]  
 [[Phone\|Mon Jun 9  2025 ]]  	[[Phone#2017-09-29 Double Cash Back]]  

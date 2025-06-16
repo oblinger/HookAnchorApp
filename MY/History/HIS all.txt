@@ -1,4 +1,7 @@
 
+[[RES War AI\|Mon Jun 16  2025]]  	[[RES War AI#Base Motion Planning.]]  
+[[RES War AI\|Mon Jun 16  2025]]  	[[RES War AI#U Vienna - Grasping]]  
+[[RES War AI\|Mon Jun 16  2025]]  	[[RES War AI#RAP - Reactive Action Planning]]  
 [[RES War AI\|Sat Jun 14  2025]]  	[[RES War AI#Analytics Fire]]  
 [[RES War AI\|Sat Jun 14  2025]]  	[[RES War AI#Aeolus]]  
 [[@Humanoid\|Sat Jun 14  2025]]  	[[@Humanoid#2025-06-13  Notes from call]]  

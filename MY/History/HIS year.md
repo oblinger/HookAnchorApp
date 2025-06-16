@@ -1,4 +1,7 @@
 
+[[RES Star\|Wed Aug 21  2024]]  	[[RES Star#Analytics Fire]]  
+[[RES Star\|Wed Aug 21  2024]]  	[[RES Star#Aeolus]]  
+[[@Sean O'Connor\|Wed Aug 21  2024]]  	[[@Sean O'Connor#2024-08-20  Looking to the future]]  
 [[@Alta Vista\|Tue Aug 20  2024]]  	[[@Alta Vista#Info]]  
 [[@Alta Vista\|Tue Aug 20  2024]]  	[[@Alta Vista#LOG]]  
 [[2024-W34\|Tue Aug 20  2024]]  	[[2024-W34#W34   2024-08-19   [[2024-W33\\|<<]] [[2024-W35\\|>>]]]]  

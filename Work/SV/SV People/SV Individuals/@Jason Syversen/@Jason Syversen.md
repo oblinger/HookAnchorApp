@@ -218,6 +218,15 @@ DISCUSS
 
 # LOG
 
+### 2025-06-16  one-on-one
+
+- Team Makeup:  Good product manager.  CV Engineer.  
+- Mery
+- Grzegorz
+- AI next -- highlights, advanced coach products: NLP, pose-based analysis
+
+
+
 ### 2025-05-16  Brian's equity
 
 - $130-$150/hr mark - what he got before.

@@ -1,5 +1,6 @@
 - [Bugs](https://software-engineering-team.atlassian.net/jira/dashboards/10022) 
 
+- [All Bugs](https://docs.google.com/spreadsheets/d/1mK8BVd0nJKx9EcHwUNGWWPZ-Pz8gmhg5VEk-5KwQq0c/edit?pli=1&gid=1921647230#gid=1921647230) 
 - [Bug Board](spot://Bug~Board) 
 - https://software-engineering-team.atlassian.net/jira/dashboards/10022
 
