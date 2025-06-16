@@ -1,3 +1,5 @@
+- sudo is not working
+Try [NbookLM](https://notebooklm.google.com/?utm_source=website&utm_medium=email&utm_campaign=&utm_content=ai-demand-notebook-llm)  lm studio
 
 - consider: Ladder and peloton strength+
 
@@ -5,11 +7,9 @@
 - - [3part intro](https://medium.com/social-science-weekly/the-1-minute-introduction-that-makes-people-remember-you-forever-497cefcfdccc)
 - https://link.alphasignal.ai/0tlXWN
 
-- lm studio (try it out)
 
 - double click .md   -  https://forum.obsidian.md/t/make-obsidian-a-default-app-for-markdown-files-on-macos/22260?utm_source=chatgpt.com
 - log of changes to contacts.  GPT:  top-contacts, BusyCal
-Try [NotebookLM](https://notebooklm.google.com/?utm_source=website&utm_medium=email&utm_campaign=&utm_content=ai-demand-notebook-llm) today
 
 
 

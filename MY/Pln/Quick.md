@@ -1,3 +1,5 @@
+- ana anchor did not find create a session when if could not find one
+- ff at does not work right
 
 - mike mathew summary of use of LLM
 

@@ -1,4 +1,4 @@
-.[[Anthropic]].
+.[[Anthropic]].  [[@Anthropic]]. 
   , [Anthropic Note](spot://anthropicnote), 
 
 # Top

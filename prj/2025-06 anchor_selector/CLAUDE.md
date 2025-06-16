@@ -17,6 +17,8 @@ source ~/.cargo/env  # if needed
 cargo run
 ```
 
+Always build using: `cargo build --release --bin popup`
+
 ### Project Structure
 - `src/main.rs` - Main application code using egui framework
 - `Cargo.toml` - Dependencies (eframe, egui)
@@ -36,4 +38,3 @@ cargo run
 ### Development Environment
 - `.tmuxp.yaml` - tmux session configuration
 - Start development session: `tmuxp load .`
-

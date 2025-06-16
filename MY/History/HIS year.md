@@ -1,4 +1,6 @@
 
+[[@Alta Vista\|Tue Aug 20  2024]]  	[[@Alta Vista#Info]]  
+[[@Alta Vista\|Tue Aug 20  2024]]  	[[@Alta Vista#LOG]]  
 [[2024-W34\|Tue Aug 20  2024]]  	[[2024-W34#W34   2024-08-19   [[2024-W33\\|<<]] [[2024-W35\\|>>]]]]  
 [[@Jason Syversen\|Tue Aug 20  2024]]  	[[@Jason Syversen#2024-08-19  Plans]]  
 [[Eli Food\|Sat Aug 17  2024]]  	[[Eli Food#**MAIN**]]  

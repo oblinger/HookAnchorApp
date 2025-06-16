@@ -122,3 +122,25 @@ OTHER IDEAS:
 
 ## Aeolus
 
+### Base Motion Planning.
+#### RRT - planning - Rapidly exploring Random Trees
+- https://www.mathworks.com/videos/autonomous-navigation-part-4-path-planning-with-a-and-rrt-1594987710455.html 
+- https://mkroehnert.gitlab.io/RRT-Visualization/ 
+- Steve LaValle
+
+#### Model Predictive Control (MPC) or Receding Horizon Control.
+
+  The key characteristics you described match MPC perfectly:
+  - Optimizes over a finite prediction horizon (your "quarter second")
+  - Uses a cost function with multiple objectives (speed changes, obstacle avoidance)
+  - Continuously replans as new information becomes available
+  - Computationally expensive optimization solved repeatedly
+
+  In robotics/SLAM context, it's often called Receding Horizon Planning or Rolling Horizon Planning.
+
+
+### U Vienna - Grasping 
+
+
+### RAP - Reactive Action Planning
+

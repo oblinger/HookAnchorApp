@@ -1,6 +1,6 @@
 
 # === DRY GOODS ===
-- [[BUY Tea]], 
+- [[BUY Tea]], [[@Azure Standard]], 
 ### Coffee/TEA
 
 ### Canned

@@ -1,9 +1,11 @@
 white S.  qinoia, bb salad
 
++++VegSoup, +++Cuban or Chili, ++Southwest, 
+
 **PAPRIKA TRY**:
-- TRY: 			+++CHIA, TVP, +++Silken Tofu, ++Riced Cauliflower
-- SOUPS: >>	White Bean, Black bean (+++chili / +++soup / +++cuban), +1+Veg
-- 				Mixed bean +++white, Split Pea, +Butternut, ??Lentil(curry,?), 
+- TRY: 			++?CHIA, TVP, +++Silken Tofu, +?Riced Cauliflower
+- SOUPS: 	+++VegSoup,  ++BeanMix.  (+++chili or +++cuban), +1+Veg
+- Mixed bean 	white, Split Pea, +Butternut, ??Lentil(curry,?), 
 - CURL:    	++Peanut Stew, ++Curry, Soup, ++Millet
 - QUINOA:  	++Southwest,  ++Peppers w/ more Quinoa, ++Kitchari (cauliflower)
 - MEAT:		>Chicken, Fish, lBeef
