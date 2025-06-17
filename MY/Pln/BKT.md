@@ -1,19 +1,22 @@
 
+[[WORK]]:	1.5 MIT, 1.5 Chew
+[[Fun]]:			FindNew, Read, Guys, date
+[[MED]]:		Walk 4x, Weights, HIIT, Cortisol??, Glucose, 
+
 [[NJ]]:   (See [[Daily Schedules]])
  - [[CN]]:		Uri, Luis, Juan, Nvidia
- - [[SEEK]]:	LI-lst
+ - [[SEEK]]:	LI-lst, [Jobs](https://jobright.ai/jobs/recommend?pos=20) 
  - [[LRN]]:	DL C3;
- - [[BOD]]:	Get Coach?
+ - [[SHOW]]:	
 
-- [Jobs](https://jobright.ai/jobs/recommend?pos=20) 
+
+
+ - [[BOD]]:	Get Coach?
 - [[TG]]:	Read glass door about them
 - [[NJ.]]:	[[RES]] linked in fixes
 
-[[WORK]]:	4h
-[[MED]]:	Exercise, Cortisol
 [[NJ]]:	[[RES Star]], [[CN]],
 [[Lrn]]:	[[RR]], Hands On, Know
-[[Fun]]:	Read, Guys, date
 
 
 MIT: [[SV]], [[NJ]], [[SELF]], [[Fun]], 

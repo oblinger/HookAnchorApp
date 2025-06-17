@@ -61,7 +61,9 @@ Next to the Ask before sending (recommended) text, click the toggle button. It s
   %admin  ALL=(ALL) NOPASSWD:ALL
 
 
-^o ^x   (this writes and exits)
+^x   y   enter   (this writes and exits)
+
+
 ## = FAST WAKE - How to setup "fast wake" on osx
   pmset -g   # To see original settings
   sudo pmset -b standbydelay 43200        # how long sleeping before switching memory to disk

@@ -1,4 +1,7 @@
 
+[[2025-W25\|Mon Jun 16  2025]]  	[[2025-W25#W25   2025-06-16   [[2025-W24\\|<<]] [[2025-W26\\|>>]]]]  
+[[@Jason Syversen\|Mon Jun 16  2025]]  	[[@Jason Syversen#2025-06-16  one-on-one]]  
+[[Additional Patent Embodiments\|Mon Jun 16  2025]]  	[[Additional Patent Embodiments#Additional Patent Embodiments]]  
 [[RES War AI\|Mon Jun 16  2025]]  	[[RES War AI#Base Motion Planning.]]  
 [[RES War AI\|Mon Jun 16  2025]]  	[[RES War AI#U Vienna - Grasping]]  
 [[RES War AI\|Mon Jun 16  2025]]  	[[RES War AI#RAP - Reactive Action Planning]]  

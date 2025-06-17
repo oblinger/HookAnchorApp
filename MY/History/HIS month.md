@@ -1,4 +1,7 @@
 
+[[Phone\|Mon Jun 9  2025 ]]  	[[Phone#2018-08-07 - #### starting to use Evernote ####]]  
+[[Phone\|Mon Jun 9  2025 ]]  	[[Phone#2017-12-18  Notes from HACKERS]]  
+[[Phone\|Mon Jun 9  2025 ]]  	[[Phone#2016-00-00 - Aeolus notes]]  
 [[Phone\|Mon Jun 9  2025 ]]  	[[Phone#2017-11-14 Prenup info  -- info moved to evernote]]  
 [[Phone\|Mon Jun 9  2025 ]]  	[[Phone#2017-08-01 Sutter health]]  
 [[Phone\|Mon Jun 9  2025 ]]  	[[Phone#2017-05-00  Experian]]  

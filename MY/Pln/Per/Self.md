@@ -1,5 +1,6 @@
 
-# W24   2025-06-09   [[2025-W23|<<]] [[2025-W25|>>]] 
+## W25   2025-06-16   [[2025-W24|<<]] [[2025-W26|>>]]
+
 MIT
 - [ ] [[@Humanoid]] - Ready
 - [ ] Job tracking setup 
@@ -8,19 +9,20 @@ MIT
 - [ ] Apply to something
 - [ ] [[MED Todo]]: weights
 - [ ] [[Lrn.]] Get the idea, understand it, think about it.
+- [ ] Online Presence
 
 
-
-### Mon-9
+### Mon-16
 - [ ] [[Repeat]] 
-### Tue-10
+### Tue-17
 - [ ] 
-### Wed-11
+### Wed-18
 - [ ] 
-### Thu-12
-- [ ] 1p 1c 1w
-### Fri-13
+### Thu-19
 - [ ] 
+### Fri-20
+- [ ] 
+
 
 
 MIT

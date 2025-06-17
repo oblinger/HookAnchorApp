@@ -3,7 +3,8 @@
 
 ## Sports Visio
 ### 2024  SV GALLERY / OCR 
-- Self-trained per-game player-detector using a DinoV2 backbone
+- [Related CVPR paper](https://lukaszgrad.github.io/jnr/) 
+- Self-trained per-game p. ayer-detector using a DinoV2 backbone
 - Fine-tuned a "digit on fabric" DinoV2-based classifier using a large synthetically in-painted training set.
 
 - [[2024-12-00 OCRv3.pdf]]    (Notion [Grz Notes - OCR v3](https://www.notion.so/sportsvisio/OCR-v3-training-single-shot-person-to-jersey-number-model-d9f4c1b04b15464d951d4c333b53a5d9))

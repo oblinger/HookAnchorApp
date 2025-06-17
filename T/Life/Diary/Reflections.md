@@ -1,4 +1,14 @@
 
+
+### 2025-06-16  steps taken
+
+- worked out on Sunday
+- broadening list of areas I am aiming to make progress in.
+- got moving quickly today
+- trying to frame small actionable items in each key area and get high efficiency in my day across 4-5 big areas.
+
+Here is the top of the [[Bkt]] list nwo
+
 ### 2025-06-12  Tiny Step
 ==> My tiny step here is to have an MIT list of time-bound activities.
 ==> Each day do one 90 hit of these, and exercise as the basis of my day.  will try to add on to that to round out the day.
@@ -17,13 +27,7 @@ in the end, I don't have clear goals for each week, and get very little done.
 I do have many goals, but they are parts of very large buckets.
 
 ==> One idea is to set specific goals for each day, and push to achieve those
-maybe I will even do that for the rest of today and this week...
-
-### 2025-06-03  Hitting Bottom
-
-I did nothing today, just 1/2 of repeat, and exercise.
-
-I need to climb out of this hole gently.
+maybe I will even do that for the rest of to [[Reflections]]<br><br><br><br><br><br><br>                                                                                              hole gently.
 get some low bar wins...
 going to bed
 

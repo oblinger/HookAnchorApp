@@ -31,6 +31,13 @@ Greg
   , [work Note](spot://worknote), 
 
 
+BUG CAPTURE
+Just for everyone's awareness.  @Mery de Jesus is the one that is ensuring that we are capturing each bug that is found in our app.  She needs to ensure that she can reporduce the bug, so it makes sense that she is capturing the ticket.
+
+@Mery de Jesus No problem at all with this workflow!  My focus is that we are capturing EVERY significant bug even if we cannot reproduce the bug we still need to track that it occurred so we can track the stability of our system.
+
+I pushed this to the software channel so everyone can see our work flow.
+
 
 ## SOON [[mgt]] [[CVP]] 
 

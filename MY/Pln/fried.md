@@ -1,3 +1,6 @@
+- weights plan
+- eye glasses
+- selecting and item now shows the finder window for some reason.  e. g.  #bugs
 - sudo is not working
 Try [NbookLM](https://notebooklm.google.com/?utm_source=website&utm_medium=email&utm_campaign=&utm_content=ai-demand-notebook-llm)  lm studio
 

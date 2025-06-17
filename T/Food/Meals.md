@@ -2,7 +2,10 @@
 
 # MEALS
 
-
+## POT LUCK
+- KFC
+- Deviled Eggs
+- 
 ## CHINESE VEGETABLES
 - GARLIC SPROUTS: PorkBelly, 
 - 

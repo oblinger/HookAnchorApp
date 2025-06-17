@@ -1,4 +1,7 @@
 
+[[RES War\|Thu Aug 22  2024]]  	[[RES War#CROSS REF]]  
+[[NJ Rewrite\|Wed Aug 21  2024]]  	[[NJ Rewrite#Rewrite]]  
+[[RES Star\|Wed Aug 21  2024]]  	[[RES Star#Sports Visio]]  
 [[RES Star\|Wed Aug 21  2024]]  	[[RES Star#Analytics Fire]]  
 [[RES Star\|Wed Aug 21  2024]]  	[[RES Star#Aeolus]]  
 [[@Sean O'Connor\|Wed Aug 21  2024]]  	[[@Sean O'Connor#2024-08-20  Looking to the future]]  
