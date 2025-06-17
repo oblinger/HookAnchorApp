@@ -9,7 +9,9 @@
   , [[@Github]], [[@Seneca]],
   , [[@Cigna]],
   , [[@Humanoid]],
-  , [Org Note](spot://orgnote), [[@RoboRock]], 
+  , [Org Note](spot://orgnote), ,
+  , [[@RoboRock]], 
+  DELS: [[@RoboRock]],
 
 .[[ORG]].
   , [[@Amazon]], [[@Apple]], [[@Citibank]], [[@Facebook]], , [[@Ginza Metrics]]

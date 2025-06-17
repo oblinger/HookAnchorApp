@@ -1,4 +1,10 @@
 
+[[Phone\|Mon Jun 9  2025 ]]  	[[Phone#201--00-00  Hackers]]  
+[[Phone\|Mon Jun 9  2025 ]]  	[[Phone#201--00-00  Carolina]]  
+[[Phone\|Mon Jun 9  2025 ]]  	[[Phone#201--00-00  Eva photos]]  
+[[Phone\|Mon Jun 9  2025 ]]  	[[Phone#201--00-00  Sleep question]]  
+[[Phone\|Mon Jun 9  2025 ]]  	[[Phone#201--00-00  Garage door project]]  
+[[Phone\|Mon Jun 9  2025 ]]  	[[Phone#2018-00-00 - coinbase]]  
 [[Phone\|Mon Jun 9  2025 ]]  	[[Phone#2018-08-07 - #### starting to use Evernote ####]]  
 [[Phone\|Mon Jun 9  2025 ]]  	[[Phone#2017-12-18  Notes from HACKERS]]  
 [[Phone\|Mon Jun 9  2025 ]]  	[[Phone#2016-00-00 - Aeolus notes]]  

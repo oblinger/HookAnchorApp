@@ -1,4 +1,10 @@
 
+[[2024-W35\|Mon Aug 26  2024]]  	[[2024-W35#W35   2024-08-26   [[2024-W34\\|<<]] [[2024-W36\\|>>]]]]  
+[[Eli Food\|Sun Aug 25  2024]]  	[[Eli Food#INSTANT]]  
+[[@James Neilson\|Sun Aug 25  2024]]  	[[@James Neilson#LOG]]  
+[[SNIP\|Fri Aug 23  2024]]  	[[SNIP#2024-07-09  Chunch]]  
+[[Reflections\|Fri Aug 23  2024]]  	[[Reflections#2024-08-22  My Biggest Issue: Daily hours on MIT]]  
+[[RES Star\|Thu Aug 22  2024]]  	[[RES Star#SPORTS VISIO Turn Around]]  
 [[RES War\|Thu Aug 22  2024]]  	[[RES War#CROSS REF]]  
 [[NJ Rewrite\|Wed Aug 21  2024]]  	[[NJ Rewrite#Rewrite]]  
 [[RES Star\|Wed Aug 21  2024]]  	[[RES Star#Sports Visio]]  
