@@ -10,7 +10,8 @@
 - [[2024-04-01 Resume Rewrite]],
   , [[WarStories]],
   , [RES Examples Note](spot://resexamplesnote), [RES Job History Note](spot://resjobhistorynote)
-  , [RES Note](spot://resnote), [RES Versions Note](spot://resversionsnote), 
+  , [RES Note](spot://resnote), [RES Versions Note](spot://resversionsnote),
+  , [[RES Todo]], 
   DELS: [[WarStories]],
 
 # LINKED IN PARTS

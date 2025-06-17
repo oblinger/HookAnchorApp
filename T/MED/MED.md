@@ -1,7 +1,7 @@
 
 
 .[[MED]]. 	[[MED Todo]],
-  TOP:	[[MED Log]], 
+  TOP:	[[MED Log]],
   TOPICS:
   [[MED Blood Tests]]:
   [[MED Doctors]]:
@@ -23,7 +23,8 @@
   MISC:		[[Jet Lag]], [[Low Back Pain]], [[Medifast]], [[MED Heart Attack]],
   , [[MED Mind]],
   , [MED Doctors Note](spot://meddoctorsnote), [MED Exercise Note](spot://medexercisenote)
-  , [MED Log Note](spot://medlognote), [MED Note](spot://mednote), 
+  , [MED Log Note](spot://medlognote), [MED Note](spot://mednote),
+  , [[MED Todo]], 
   DELS: [[MED Mind]],
 
 - [[Glycemic Index]], [[MED Blood Pressure]], [[MED Cholesterol]], [[MED Research]], [[MED VO2Max]], [[MED=]], [[Run]], [[Exercise]], 
