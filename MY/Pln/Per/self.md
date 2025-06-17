@@ -2,7 +2,7 @@
 ## W25   2025-06-16   [[2025-W24|<<]] [[2025-W26|>>]]
 
 MIT
-- [ ] [[@Humanoid]] - Ready
+- [x] [[@Humanoid]] - Ready
 - [ ] Job tracking setup 
 - [ ] Respond: Rafah, Theo
 - [ ] [[lim]]: Add actions to CN

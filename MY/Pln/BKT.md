@@ -1,47 +1,25 @@
 
-[[WORK]]:	1.5 MIT, 1.5 Chew
-[[Fun]]:			FindNew, Read, Guys, date
-[[MED]]:		Walk 4x, Weights, HIIT, Cortisol??, Glucose, 
+[[WORK]]	3h MIT & Chew
+[[Fun]]:		New, Guys, date
+[[MED]]:	Wk 4x, Wghts,HIIT
 
 [[NJ]]:   (See [[Daily Schedules]])
- - [[CN]]:		Uri, Luis, Juan, Nvidia
- - [[SEEK]]:	LI-lst, [Jobs](https://jobright.ai/jobs/recommend?pos=20) 
- - [[LRN]]:	DL C3;
- - [[SHOW]]:	
+ [[CN]]:		Uri, Luis, Juan, Nvidia
+ [[SEEK]]:	LI-lst, [Jobs](https://jobright.ai/jobs/recommend?pos=20) 
+ [[LRN]]:	DL C3;
+ [[SHOW]]:	
+
+
+[[Home]]:
 
 
 
- - [[BOD]]:	Get Coach?
-- [[TG]]:	Read glass door about them
-- [[NJ.]]:	[[RES]] linked in fixes
-
-[[NJ]]:	[[RES Star]], [[CN]],
-[[Lrn]]:	[[RR]], Hands On, Know
 
 
-MIT: [[SV]], [[NJ]], [[SELF]], [[Fun]], 
-[[Self]]: [[Home]]: ants, basement, liv
-[[Self]]: Sell Car
-[[Med]]: Diet
-[[Fin]]: Schwab Acct, Car, Margin
 
-[[Meta List]] [[Meta Time Codes]] 
 
-[[MED]]:	150min, strength & HIIT, coach?
-[[FIN]]:	Move money for good returns
-[[NJ]]:	
-[[Lrn]]:	Run system
-[[CN]]: 	Sean
 
-[[MED]]:	Daily Xrcise [[Habit]]
-[[MED]]:	Noom Eating
-[[MED]]:	Get TPST
-[[Calls]]:	John, Dave, Ana
 
-[[Fun]]: 
-[[Spirit]]: Gendlin
-
-[[Self]]. [[Self Evergreen]], 
 
 
 

@@ -1,7 +1,7 @@
 
 
-.[[MED]].
-  TOP:		[[MED Log]], [[MED Todo]],
+.[[MED]]. 	[[MED Todo]],
+  TOP:	[[MED Log]], 
   TOPICS:
   [[MED Blood Tests]]:
   [[MED Doctors]]:

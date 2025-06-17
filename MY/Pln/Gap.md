@@ -4,8 +4,8 @@ Read:	[[RR papers]], [[Pocket App]], [[ToRead]], [Good Reads](https://www.goodre
 Tidy:	Desk+, Email
 Plan:	[[ToBuy]], [[Try Foods]],
 
-
-
+[[FIN]]:
+ [[Habit]]
 
 
 

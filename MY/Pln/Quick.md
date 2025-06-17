@@ -1,4 +1,4 @@
-- onlinge presence when googling
+ when googling
 - barry
 - web-serch students and profs for sports analytics
 - ana anchor did not find create a session when if could not find one

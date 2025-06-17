@@ -1,4 +1,5 @@
 
-[[Home]]: 	Tidy, [[Fried]], 
 
-- Org basement
+[[Home]]: 	Tidy, [[Fried]], 
+  Org basement
+  

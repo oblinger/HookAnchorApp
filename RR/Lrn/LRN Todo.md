@@ -1,4 +1,10 @@
 
+
+
+[[Lrn]]:	Run system
+[[Lrn]]:	[[RR]], Hands On, Know
+
+
 - Coursera DL C3 - Notes and review
 - Learn about SV system
 - clang check it out.  maybe use it

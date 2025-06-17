@@ -1,9 +1,5 @@
-
-- [ ] Get investment plan
-
-
-
 WAIT
+  [[Self]]: Sell Car
  - [ ] adolfo ladder
  - [ ] Allison restart
  - [ ] Get job application tests from James
@@ -15,6 +11,9 @@ WAIT
  - [ ] DMV licence renewal.
  - [ ] slack notifications not working
  - [ ] don't forget laurette
+
+- [ ] Get investment plan
+
 
 - [ ] Finish Atomic Habits
 - [ ] Write Love Letter

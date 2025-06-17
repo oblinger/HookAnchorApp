@@ -1,4 +1,4 @@
-.[[Lrn]].     [[LRN Todo]]
+.[[Lrn]]. [[LRN Todo|todo]]
   [[Lrn Mgt]], [[LRN Read]], [[LRN Todo]],
   , [Lrn Note](spot://lrnnote), 
 

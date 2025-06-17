@@ -1,5 +1,5 @@
-.[[RES]].
-  TOP:		[[RES Todo]], [[Bio]], [RES Docx](spot://resdocx), [[RES Linked In]],
+.[[RES]]. [[RES Todo|todo]] 
+  TOP:	 [[Bio]], [RES Docx](spot://resdocx), [[RES Linked In]],
   TOPS:		[[RES Pyramid]], [[RES Star]], [[RES War]], [[RES Parts]], [[RES Highlights]],
   FACTS:	[[RES Src Info]], [[RES Numbers]], [[RES Patents]], [[RES Papers]],
   OTHER:	 [[RES War AI]], [[RES References]],

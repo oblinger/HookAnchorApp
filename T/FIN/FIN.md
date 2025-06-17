@@ -1,4 +1,4 @@
-.[[Fin]].
+.[[Fin]]. [[FIN Todo|>>]]
   [[FIN Todo]]:
   [[PenFed]]:
   [[FIN Accounts]]:

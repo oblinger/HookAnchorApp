@@ -1,3 +1,5 @@
+[[MED]]:	150min, strength & HIIT, coach?
+ , Cortisol??, Glucose, 
  [[MED]], [[Doctor]] 
  - Get therapist, weights starter
  - Get a backup plan for non exercise days
