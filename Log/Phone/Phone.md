@@ -3,8 +3,11 @@
   , ,
   , [[Phone -old-]],
   DELS: [[Phone -old-]],
-  , [Phone Note](spot://phonenote), 
-  DELS: [[Phone -old-]],[[Phone -OLD-_new]],
+  , [Phone Note](spot://phonenote),
+  , [Phone Google Voice](spot://phonegooglevoice),
+  , ,
+  , [phone phone](spot://phonephone), 
+  DELS: [[Phone -old-]],[[Phone -OLD-_new]],[phone phone](spot://phonephone),
 
 
 #set 

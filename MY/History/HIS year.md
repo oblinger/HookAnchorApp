@@ -1,4 +1,5 @@
 
+[[COM Newsletter\|Mon Aug 26  2024]]  	[[COM Newsletter#2024-06-00  AI and CV News Letter points]]  
 [[2024-W35\|Mon Aug 26  2024]]  	[[2024-W35#W35   2024-08-26   [[2024-W34\\|<<]] [[2024-W36\\|>>]]]]  
 [[Eli Food\|Sun Aug 25  2024]]  	[[Eli Food#INSTANT]]  
 [[@James Neilson\|Sun Aug 25  2024]]  	[[@James Neilson#LOG]]  

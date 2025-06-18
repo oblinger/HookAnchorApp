@@ -1,3 +1,4 @@
+- do we know anyone at scale
  when googling
 - barry
 - web-serch students and profs for sports analytics

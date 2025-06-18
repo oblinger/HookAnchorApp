@@ -218,6 +218,10 @@ DISCUSS
 
 # LOG
 
+### 2025-06-17  Mery one-on-one
+
+- 
+
 ### 2025-06-16  one-on-one
 
 - Team Makeup:  Good product manager.  CV Engineer.  
