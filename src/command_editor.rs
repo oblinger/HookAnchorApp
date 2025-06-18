@@ -1,5 +1,5 @@
 use eframe::egui;
-use anchor_selector::Command;
+use anchor_selector::{Command, update_command_list};
 
 pub struct CommandEditor {
     pub visible: bool,
@@ -32,33 +32,35 @@ impl CommandEditor {
         }
     }
     
-    pub fn show_for_command(&mut self, _cmd: &Command, main_window_pos: egui::Pos2) {
-        println!("show_for_command called");
-        self.visible = true;
-        println!("set visible to true");
-        
-        // SIMPLIFIED: Just set position, skip all data copying for now
-        self.position = egui::pos2(
-            main_window_pos.x + 50.0,  // Offset right
-            main_window_pos.y - 20.0   // Offset up a little
-        );
-        println!("position set");
-        
-        // Skip all string operations for now
-        // self.command = cmd.command.clone();
-        // self.action = cmd.action.clone();
-        // self.argument = cmd.arg.clone();
-        // self.group = cmd.group.clone();
-        // self.priority = false;
-        // self.original_command = Some(cmd.clone());
-        
-        println!("show_for_command completed");
-    }
-    
     pub fn hide(&mut self) {
         self.visible = false;
         self.original_command = None;
         self.original_command_name = String::new();
+    }
+    
+    pub fn edit_command(&mut self, command_to_edit: Option<&Command>) {
+        self.visible = true;
+        
+        if let Some(cmd) = command_to_edit {
+            // Populate with selected command data
+            self.command = cmd.command.clone();
+            self.action = cmd.action.clone();
+            self.argument = cmd.arg.clone();
+            self.group = cmd.group.clone();
+            self.priority = false;
+            self.original_command_name = cmd.command.clone();
+            self.original_command = Some(cmd.clone());
+            
+        } else {
+            // No command selected - populate with blank fields
+            self.command = String::new();
+            self.action = String::new();
+            self.argument = String::new();
+            self.group = String::new();
+            self.priority = false;
+            self.original_command_name = String::new();
+            self.original_command = None;
+        }
     }
     
     pub fn update(&mut self, ctx: &egui::Context) -> CommandEditorResult {
@@ -89,7 +91,9 @@ impl CommandEditor {
                         .show(ui, |ui| {
                             // Command row
                             ui.label("Command:");
-                            ui.text_edit_singleline(&mut self.command);
+                            let command_response = ui.text_edit_singleline(&mut self.command);
+                            // Request focus on the command field when dialog opens
+                            command_response.request_focus();
                             ui.end_row();
                             
                             // Action row (dropdown)
@@ -179,6 +183,28 @@ impl CommandEditor {
         } else {
             format!("{} ! {} : {}", self.group, self.command, action_arg)
         }
+    }
+    
+    pub fn save_command(&self, commands: &mut Vec<Command>) -> Result<(), String> {
+        // Create the new command
+        let new_command = Command {
+            group: self.group.clone(),
+            command: self.command.clone(),
+            action: self.action.clone(),
+            arg: self.argument.clone(),
+            full_line: self.format_command_line(),
+        };
+        
+        // Update the command list
+        update_command_list(commands, new_command, &self.original_command_name);
+        
+        // Save to file - COMMENTED OUT FOR NOW
+        // match save_commands(commands) {
+        //     Ok(_) => Ok(()),
+        //     Err(e) => Err(format!("Error saving commands: {}", e)),
+        // }
+        
+        Ok(())
     }
 }
 

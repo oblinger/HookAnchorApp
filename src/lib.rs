@@ -1,6 +1,7 @@
 use std::env;
 use std::fs;
 use std::path::Path;
+use regex::Regex;
 
 #[derive(Debug, Clone, PartialEq)]
 pub struct Command {
@@ -23,6 +24,9 @@ pub fn load_commands() -> Vec<Command> {
         }
     };
     
+    // Regex to parse: (optional GROUP !)? COMMAND : (whitespace)* ACTION (whitespace)+ ARGUMENT
+    let re = Regex::new(r"^(?:(.+?)!\s*)?(.+?):\s*(\S+)\s+(.*)$").unwrap();
+    
     contents
         .lines()
         .filter_map(|line| {
@@ -30,48 +34,49 @@ pub fn load_commands() -> Vec<Command> {
                 return None;
             }
             
-            // Parse format: GROUP ! COMMAND : ACTION ARG or COMMAND : ACTION ARG
-            let (group, command, action_arg) = if line.contains('!') {
-                let parts: Vec<&str> = line.splitn(2, '!').collect();
-                if parts.len() != 2 {
-                    return None;
-                }
-                let group = parts[0].trim().to_string();
-                let rest = parts[1].trim();
+            if let Some(captures) = re.captures(line) {
+                let group = captures.get(1).map_or(String::new(), |m| m.as_str().trim().to_string());
+                let command = captures.get(2).map_or(String::new(), |m| m.as_str().trim().to_string());
+                let action = captures.get(3).map_or(String::new(), |m| m.as_str().trim().to_string());
+                let arg = captures.get(4).map_or(String::new(), |m| m.as_str().trim().to_string());
                 
-                let cmd_parts: Vec<&str> = rest.splitn(2, ':').collect();
-                if cmd_parts.len() != 2 {
-                    return None;
-                }
-                (group, cmd_parts[0].trim().to_string(), cmd_parts[1].trim())
+                Some(Command {
+                    group,
+                    command,
+                    action,
+                    arg,
+                    full_line: line.to_string(),
+                })
             } else {
-                let cmd_parts: Vec<&str> = line.splitn(2, ':').collect();
-                if cmd_parts.len() != 2 {
-                    return None;
+                // Try to parse lines that have no argument (just action)
+                let re_no_arg = Regex::new(r"^(?:(.+?)!\s*)?(.+?):\s*(\S+)\s*$").unwrap();
+                if let Some(captures) = re_no_arg.captures(line) {
+                    let group = captures.get(1).map_or(String::new(), |m| m.as_str().trim().to_string());
+                    let command = captures.get(2).map_or(String::new(), |m| m.as_str().trim().to_string());
+                    let action = captures.get(3).map_or(String::new(), |m| m.as_str().trim().to_string());
+                    
+                    Some(Command {
+                        group,
+                        command,
+                        action,
+                        arg: String::new(),
+                        full_line: line.to_string(),
+                    })
+                } else {
+                    eprintln!("Failed to parse line: {}", line);
+                    None
                 }
-                (String::new(), cmd_parts[0].trim().to_string(), cmd_parts[1].trim())
-            };
-            
-            let mut action_parts = action_arg.split_whitespace();
-            let action = action_parts.next().unwrap_or("").to_string();
-            let arg = action_parts.collect::<Vec<&str>>().join(" ");
-            
-            Some(Command {
-                group,
-                command,
-                action,
-                arg,
-                full_line: line.to_string(),
-            })
+            }
         })
         .collect()
 }
 
 pub fn filter_commands(commands: &[Command], search_text: &str, debug: bool) -> Vec<Command> {
-    let search_no_spaces = search_text.to_lowercase().replace(' ', "");
+    let search_lower = search_text.to_lowercase();
+    let search_words: Vec<&str> = search_lower.split_whitespace().collect();
     
     if debug {
-        println!("Debug: searching for '{}' (original: '{}')", search_no_spaces, search_text);
+        println!("Debug: searching for words: {:?} (original: '{}')", search_words, search_text);
     }
     
     // Separate into 4 categories for better relevance
@@ -84,53 +89,43 @@ pub fn filter_commands(commands: &[Command], search_text: &str, debug: bool) -> 
         let cmd_lower = cmd.command.to_lowercase();
         
         // Debug specific command
-        if debug && cmd_lower.contains("prime") && search_no_spaces == "p" {
-            println!("Debug: checking '{}' against 'p'", cmd_lower);
+        if debug && cmd_lower.contains("selector") && search_words.contains(&"s") {
+            println!("Debug: checking '{}' against words: {:?}", cmd_lower, search_words);
         }
         
-        let cmd_no_spaces = cmd_lower.replace(' ', "");
-        
-        // 1. Exact match (highest priority)
-        if cmd_no_spaces == search_no_spaces {
-            exact_matches.push(cmd.clone());
-            if debug && cmd_lower.contains("prime") && search_no_spaces == "p" {
-                println!("Debug: '{}' matched exactly", cmd_lower);
-            }
-        }
-        // 2. Matches at start of command (high priority) 
-        else if matches_at_word_boundary(&cmd_lower, &search_no_spaces, 0) {
-            command_start_matches.push(cmd.clone());
-            if debug && cmd_lower.contains("prime") && search_no_spaces == "p" {
-                println!("Debug: '{}' matched at command start with spaces", cmd_lower);
-            }
-        } else {
-            // 3. Check if it matches after any space (word boundary) - medium priority
-            let mut found = false;
-            for (i, ch) in cmd_lower.char_indices() {
-                if ch == ' ' && i + 1 < cmd_lower.len() {
-                    if matches_at_word_boundary(&cmd_lower, &search_no_spaces, i + 1) {
-                        word_start_matches.push(cmd.clone());
-                        if debug && cmd_lower.contains("prime") && search_no_spaces == "p" {
-                            println!("Debug: '{}' matched after space at position {}", cmd_lower, i + 1);
-                        }
-                        found = true;
-                        break;
-                    }
+        // Check if all search words match sequentially in the command
+        if matches_word_sequence(&cmd_lower, &search_words, debug) {
+            // Determine priority based on where the match starts
+            if search_words.len() == 1 {
+                let search_word = search_words[0];
+                let cmd_no_separators = cmd_lower.replace(' ', "").replace('_', "");
+                let search_no_separators = search_word.replace(' ', "").replace('_', "");
+                
+                // 1. Exact match (highest priority)
+                if cmd_no_separators == search_no_separators {
+                    exact_matches.push(cmd.clone());
                 }
-            }
-            
-            // 4. Partial prefix matches (lowest priority)
-            if !found && cmd_lower.starts_with(&search_no_spaces) {
-                prefix_matches.push(cmd.clone());
-                if debug && cmd_lower.contains("prime") && search_no_spaces == "p" {
-                    println!("Debug: '{}' matched as prefix", cmd_lower);
+                // 2. Matches at start of command (high priority) 
+                else if cmd_lower.starts_with(search_word) {
+                    command_start_matches.push(cmd.clone());
                 }
+                // 3. Matches after word boundary
+                else if cmd_lower.contains(&format!(" {}", search_word)) || cmd_lower.contains(&format!("_{}", search_word)) {
+                    word_start_matches.push(cmd.clone());
+                }
+                // 4. Partial prefix matches (lowest priority)
+                else {
+                    prefix_matches.push(cmd.clone());
+                }
+            } else {
+                // Multi-word searches get medium priority
+                word_start_matches.push(cmd.clone());
             }
         }
     }
     
     // Sort each category - for very short searches, prefer longer, more meaningful commands
-    let prefer_longer = search_no_spaces.len() <= 2;
+    let prefer_longer = search_words.get(0).map_or(false, |w| w.len() <= 2);
     
     if prefer_longer {
         // For short searches, prefer "reasonable" length (8-30 chars) over very short or very long
@@ -164,7 +159,7 @@ pub fn filter_commands(commands: &[Command], search_text: &str, debug: bool) -> 
     
     // For short searches, interleave categories to show variety in top 10
     let mut filtered_commands = Vec::new();
-    if search_no_spaces.len() <= 2 {
+    if search_words.get(0).map_or(false, |w| w.len() <= 2) {
         // Take top items from each category to ensure variety
         let mut exact_iter = exact_matches.into_iter();
         let mut start_iter = command_start_matches.into_iter();
@@ -203,6 +198,84 @@ pub fn filter_commands(commands: &[Command], search_text: &str, debug: bool) -> 
     }
     
     filtered_commands
+}
+
+fn matches_word_sequence(cmd_text: &str, search_words: &[&str], debug: bool) -> bool {
+    if search_words.is_empty() {
+        return true;
+    }
+    
+    // Handle both space-separated search and continuous search
+    if search_words.len() == 1 {
+        // For single "word" searches, try flexible matching
+        return matches_flexible_sequence(cmd_text, search_words[0], debug);
+    } else {
+        // For multi-word searches, use exact word matching
+        let cmd_words: Vec<&str> = cmd_text.split(|c| c == ' ' || c == '_').collect();
+        
+        if debug && cmd_text.contains("selector") {
+            println!("Debug: cmd_words: {:?}, search_words: {:?}", cmd_words, search_words);
+        }
+        
+        let mut search_idx = 0;
+        for cmd_word in cmd_words {
+            if search_idx >= search_words.len() {
+                break;
+            }
+            
+            if cmd_word.starts_with(search_words[search_idx]) {
+                search_idx += 1;
+                if debug && cmd_text.contains("selector") {
+                    println!("Debug: matched '{}' with '{}', search_idx now {}", cmd_word, search_words[search_idx-1], search_idx);
+                }
+            }
+        }
+        
+        search_idx == search_words.len()
+    }
+}
+
+fn matches_flexible_sequence(cmd_text: &str, search_text: &str, debug: bool) -> bool {
+    // Split command into words using space and underscore as delimiters
+    let cmd_words: Vec<&str> = cmd_text.split(|c| c == ' ' || c == '_').collect();
+    
+    
+    // Try to match the search text by consuming characters from command words in sequence
+    let search_chars: Vec<char> = search_text.chars().collect();
+    let mut search_pos = 0;
+    let mut word_idx = 0;
+    let mut char_idx_in_word = 0;
+    
+    while search_pos < search_chars.len() && word_idx < cmd_words.len() {
+        let current_word = cmd_words[word_idx];
+        let word_chars: Vec<char> = current_word.chars().collect();
+        
+        
+        if char_idx_in_word < word_chars.len() {
+            // Try to match current character in current word
+            if word_chars[char_idx_in_word] == search_chars[search_pos] {
+                search_pos += 1;
+                char_idx_in_word += 1;
+            } else {
+                // Character doesn't match, try jumping to next word if we've matched at least one char in current word
+                if char_idx_in_word > 0 {
+                    word_idx += 1;
+                    char_idx_in_word = 0;
+                } else {
+                    // Can't match first character of word, try next word
+                    word_idx += 1;
+                    char_idx_in_word = 0;
+                }
+            }
+        } else {
+            // Reached end of current word, move to next word
+            word_idx += 1;
+            char_idx_in_word = 0;
+        }
+    }
+    
+    let result = search_pos == search_chars.len();
+    result
 }
 
 fn matches_at_word_boundary(cmd_text: &str, search_no_spaces: &str, start_pos: usize) -> bool {
