@@ -11,6 +11,10 @@ path = "src/popup.rs"
 name = "cmd"
 path = "src/cmd.rs"
 
+[[bin]]
+name = "test_roundtrip"
+path = "src/test_roundtrip.rs"
+
 [dependencies]
 eframe = "0.29"
 egui = "0.29"

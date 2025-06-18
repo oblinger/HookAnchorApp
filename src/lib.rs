@@ -235,7 +235,7 @@ fn matches_word_sequence(cmd_text: &str, search_words: &[&str], debug: bool) -> 
     }
 }
 
-fn matches_flexible_sequence(cmd_text: &str, search_text: &str, debug: bool) -> bool {
+fn matches_flexible_sequence(cmd_text: &str, search_text: &str, _debug: bool) -> bool {
     // Split command into words using space and underscore as delimiters
     let cmd_words: Vec<&str> = cmd_text.split(|c| c == ' ' || c == '_').collect();
     
@@ -278,34 +278,6 @@ fn matches_flexible_sequence(cmd_text: &str, search_text: &str, debug: bool) -> 
     result
 }
 
-fn matches_at_word_boundary(cmd_text: &str, search_no_spaces: &str, start_pos: usize) -> bool {
-    let cmd_chars = cmd_text[start_pos..].chars();
-    let mut search_chars = search_no_spaces.chars();
-    
-    let mut current_search_char = search_chars.next();
-    
-    for cmd_char in cmd_chars {
-        if let Some(search_char) = current_search_char {
-            if cmd_char == ' ' {
-                // Skip spaces in command text
-                continue;
-            } else if cmd_char == search_char {
-                // Characters match, advance search
-                current_search_char = search_chars.next();
-            } else {
-                // Characters don't match
-                return false;
-            }
-        } else {
-            // We've matched all search characters
-            return true;
-        }
-    }
-    
-    // Check if we matched all search characters
-    current_search_char.is_none()
-}
-
 pub fn execute_command(command: &str) {
     let content = format!("execute {}\n", command);
     
@@ -328,6 +300,20 @@ pub fn save_commands(commands: &[Command]) -> Result<(), Box<dyn std::error::Err
         .collect::<Vec<String>>()
         .join("\n");
     
+    fs::write(&file_path, contents)?;
+    Ok(())
+}
+
+pub fn save_commands_formatted(commands: &[Command], output_file: &str) -> Result<(), Box<dyn std::error::Error>> {
+    let home = env::var("HOME").unwrap_or_else(|_| ".".to_string());
+    let file_path = Path::new(&home).join("ob/data/spot_cmds").join(output_file);
+    
+    // Preserve the original order from the file (it's already sorted correctly)
+    let lines: Vec<String> = commands.iter()
+        .map(|cmd| cmd.full_line.clone())
+        .collect();
+    
+    let contents = lines.join("\n") + "\n";
     fs::write(&file_path, contents)?;
     Ok(())
 }
