@@ -1,4 +1,11 @@
 
+[[2023-07 Backend Architect\|Mon Aug 26  2024]]  	[[2023-07 Backend Architect#Job Ad (out of date, see docX above)]]  
+[[2023-07 Backend Architect\|Mon Aug 26  2024]]  	[[2023-07 Backend Architect#Job Ad (out of date)]]  
+[[2024-08 Backend Architect\|Mon Aug 26  2024]]  	[[2024-08 Backend Architect#[[BBI]] PROMPTS]]  
+[[2024-08 Backend Architect\|Mon Aug 26  2024]]  	[[2024-08 Backend Architect#Job Ad (out of date, see docX above)]]  
+[[2024-08 Backend Architect\|Mon Aug 26  2024]]  	[[2024-08 Backend Architect#Job Ad (out of date)]]  
+[[2024-08 Backend Architect\|Mon Aug 26  2024]]  	[[2024-08 Backend Architect#INTERVIEWS]]  
+[[COM Newsletter\|Mon Aug 26  2024]]  	[[COM Newsletter#2024-08-25]]  
 [[COM Newsletter\|Mon Aug 26  2024]]  	[[COM Newsletter#2024-06-00  AI and CV News Letter points]]  
 [[2024-W35\|Mon Aug 26  2024]]  	[[2024-W35#W35   2024-08-26   [[2024-W34\\|<<]] [[2024-W36\\|>>]]]]  
 [[Eli Food\|Sun Aug 25  2024]]  	[[Eli Food#INSTANT]]  

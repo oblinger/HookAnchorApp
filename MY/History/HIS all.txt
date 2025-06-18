@@ -1,4 +1,11 @@
 
+[[@Jason Syversen\|Wed Jun 18  2025]]  	[[@Jason Syversen#2025-06-17  Mery one-on-one]]  
+[[CLAUDE\|Wed Jun 18  2025]]  	[[CLAUDE#CLAUDE.md]]  
+[[CLAUDE\|Wed Jun 18  2025]]  	[[CLAUDE#Create environment]]  
+[[CLAUDE\|Wed Jun 18  2025]]  	[[CLAUDE#Setup PYTHONPATH and environment variables]]  
+[[CLAUDE\|Wed Jun 18  2025]]  	[[CLAUDE#List available configs]]  
+[[CLAUDE\|Wed Jun 18  2025]]  	[[CLAUDE#Run specific sport pipeline]]  
+[[CLAUDE\|Wed Jun 18  2025]]  	[[CLAUDE#Debug configuration]]  
 [[RR PAPERS\|Tue Jun 17  2025]]  	[[RR PAPERS#2025-06-17  [SAM 2: Segment Anything](https://arxiv.org/abs/]]  
 [[@RoboRock\|Mon Jun 16  2025]]  	[[@RoboRock#Log]]  
 [[Self\|Mon Jun 16  2025]]  	[[Self#W25   2025-06-16   [[2025-W24\\|<<]] [[2025-W26\\|>>]]]]  
