@@ -209,11 +209,11 @@ impl eframe::App for AnchorSelector {
                         } else {
                             None
                         };
-                        self.command_editor.edit_command(command_to_edit);
+                        self.command_editor.edit_command(command_to_edit, &self.search_text);
                     }
                     if i.key_pressed(egui::Key::Equals) || (i.modifiers.shift && i.key_pressed(egui::Key::Equals)) {
                         // = or + key (shift+=): open command editor with blank fields for new command
-                        self.command_editor.edit_command(None);
+                        self.command_editor.edit_command(None, &self.search_text);
                     }
                     if i.key_pressed(egui::Key::Enter) {
                         if !self.filtered_commands.is_empty() && self.selected_index < self.filtered_commands.len() {
@@ -342,6 +342,18 @@ impl eframe::App for AnchorSelector {
                 // Use the command editor's save method
                 if let Err(e) = self.command_editor.save_command(&mut self.commands) {
                     eprintln!("Error saving command: {}", e);
+                } else {
+                    // Update the filtered list if we're currently filtering
+                    if !self.search_text.trim().is_empty() {
+                        self.update_filter();
+                    }
+                }
+                self.command_editor.hide();
+            }
+            CommandEditorResult::Delete(_original_command_name) => {
+                // Use the command editor's delete method
+                if let Err(e) = self.command_editor.delete_original_command(&mut self.commands) {
+                    eprintln!("Error deleting command: {}", e);
                 } else {
                     // Update the filtered list if we're currently filtering
                     if !self.search_text.trim().is_empty() {

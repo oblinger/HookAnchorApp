@@ -1,5 +1,5 @@
 use eframe::egui;
-use anchor_selector::{Command, update_command_list};
+use anchor_selector::{Command, delete_command, add_command, save_commands_to_file};
 
 pub struct CommandEditor {
     pub visible: bool,
@@ -38,7 +38,7 @@ impl CommandEditor {
         self.original_command_name = String::new();
     }
     
-    pub fn edit_command(&mut self, command_to_edit: Option<&Command>) {
+    pub fn edit_command(&mut self, command_to_edit: Option<&Command>, search_text: &str) {
         self.visible = true;
         
         if let Some(cmd) = command_to_edit {
@@ -52,8 +52,8 @@ impl CommandEditor {
             self.original_command = Some(cmd.clone());
             
         } else {
-            // No command selected - populate with blank fields
-            self.command = String::new();
+            // No command selected - populate with search text as command name and blank other fields
+            self.command = search_text.to_string();
             self.action = String::new();
             self.argument = String::new();
             self.group = String::new();
@@ -115,6 +115,7 @@ impl CommandEditor {
                                     ui.selectable_value(&mut self.action, "safari".to_string(), "safari");
                                     ui.selectable_value(&mut self.action, "brave".to_string(), "brave");
                                     ui.selectable_value(&mut self.action, "firefox".to_string(), "firefox");
+                                    ui.selectable_value(&mut self.action, "url".to_string(), "url");
                                     ui.selectable_value(&mut self.action, "work".to_string(), "work");
                                 });
                             ui.end_row();
@@ -143,7 +144,13 @@ impl CommandEditor {
                             [ui.available_width(), 30.0].into(),
                             egui::Layout::left_to_right(egui::Align::Center),
                             |ui| {
-                                ui.add_space((ui.available_width() - 140.0) / 2.0); // Center the button group
+                                // Calculate centering based on whether delete button will be shown
+                                let button_group_width = if self.original_command_name.is_empty() {
+                                    140.0 // Cancel + Save
+                                } else {
+                                    180.0 // Cancel + Save + Delete
+                                };
+                                ui.add_space((ui.available_width() - button_group_width) / 2.0);
                                 
                                 if ui.button("Cancel").clicked() {
                                     result = CommandEditorResult::Cancel;
@@ -161,6 +168,15 @@ impl CommandEditor {
                                         full_line: self.format_command_line(),
                                     };
                                     result = CommandEditorResult::Save(new_command, self.original_command_name.clone());
+                                }
+                                
+                                // Only show delete button if editing an existing command
+                                if !self.original_command_name.is_empty() {
+                                    ui.add_space(10.0);
+                                    
+                                    if ui.button("🗑️").clicked() {
+                                        result = CommandEditorResult::Delete(self.original_command_name.clone());
+                                    }
                                 }
                             }
                         );
@@ -186,7 +202,15 @@ impl CommandEditor {
     }
     
     pub fn save_command(&self, commands: &mut Vec<Command>) -> Result<(), String> {
-        // Create the new command
+        // Step 1: Delete the original command if it exists
+        if !self.original_command_name.is_empty() {
+            let deleted = delete_command(commands, &self.original_command_name);
+            if !deleted {
+                eprintln!("Warning: Original command '{}' not found for deletion", self.original_command_name);
+            }
+        }
+        
+        // Step 2: Create the new command
         let new_command = Command {
             group: self.group.clone(),
             command: self.command.clone(),
@@ -195,16 +219,33 @@ impl CommandEditor {
             full_line: self.format_command_line(),
         };
         
-        // Update the command list
-        update_command_list(commands, new_command, &self.original_command_name);
+        // Step 3: Add the new command to the list
+        add_command(commands, new_command);
         
-        // Save to file - COMMENTED OUT FOR NOW
-        // match save_commands(commands) {
-        //     Ok(_) => Ok(()),
-        //     Err(e) => Err(format!("Error saving commands: {}", e)),
-        // }
-        
-        Ok(())
+        // Step 4: Save the updated command list back to spot_cmds.txt
+        match save_commands_to_file(commands) {
+            Ok(_) => Ok(()),
+            Err(e) => Err(format!("Error saving commands to file: {}", e)),
+        }
+    }
+    
+    pub fn delete_original_command(&self, commands: &mut Vec<Command>) -> Result<(), String> {
+        // Only delete if there was an original command
+        if !self.original_command_name.is_empty() {
+            let deleted = delete_command(commands, &self.original_command_name);
+            if !deleted {
+                return Err(format!("Command '{}' not found for deletion", self.original_command_name));
+            }
+            
+            // Save the updated command list back to spot_cmds.txt
+            match save_commands_to_file(commands) {
+                Ok(_) => Ok(()),
+                Err(e) => Err(format!("Error saving commands to file after deletion: {}", e)),
+            }
+        } else {
+            // Nothing to delete (this was a new command creation dialog)
+            Ok(())
+        }
     }
 }
 
@@ -213,4 +254,5 @@ pub enum CommandEditorResult {
     None,
     Cancel,
     Save(Command, String), // (new_command, original_command_name)
+    Delete(String), // original_command_name to delete
 }
