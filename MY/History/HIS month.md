@@ -1,4 +1,10 @@
 
+[[Phone\|Mon Jun 9  2025 ]]  	[[Phone#2022-07-07  Setting up Sonic internet service]]  
+[[Phone\|Mon Jun 9  2025 ]]  	[[Phone#2022-06-27  PENFED - reset connection /]]  
+[[Phone\|Mon Jun 9  2025 ]]  	[[Phone#2022-06-06  Fix MAC mic]]  
+[[Phone\|Mon Jun 9  2025 ]]  	[[Phone#2022-06-06  Drains Flooding]]  
+[[Phone\|Mon Jun 9  2025 ]]  	[[Phone#2022-05-11  American Airline]]  
+[[Phone\|Mon Jun 9  2025 ]]  	[[Phone#2022-05-03  paid lung doctor]]  
 [[Phone\|Mon Jun 9  2025 ]]  	[[Phone#2022-05-02  Buying an office chair]]  
 [[Phone\|Mon Jun 9  2025 ]]  	[[Phone#2021-00-00  Eli's Birth Certificate]]  
 [[Phone\|Mon Jun 9  2025 ]]  	[[Phone#2022-03-21  Home Depot - replace new GE microwave]]  

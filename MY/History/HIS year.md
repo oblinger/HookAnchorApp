@@ -1,4 +1,10 @@
 
+[[2024-08 Backend Architect\|Fri Aug 30  2024]]  	[[2024-08 Backend Architect#NOTES [[HERE]]]]  
+[[@James Neilson\|Wed Aug 28  2024]]  	[[@James Neilson#2024-08-27]]  
+[[@Steve Singles\|Wed Aug 28  2024]]  	[[@Steve Singles#  [Recruiter](https://www.linkedin.com/in/steve-singles/) [[]]  
+[[@Steve Singles\|Wed Aug 28  2024]]  	[[@Steve Singles#2024-08-26  AI Dash Job Posting]]  
+[[2024-08 Backend Architect\|Wed Aug 28  2024]]  	[[2024-08 Backend Architect#LOG]]  
+[[2023-07 Backend Architect\|Mon Aug 26  2024]]  	[[2023-07 Backend Architect#[[BBI]] PROMPTS]]  
 [[2023-07 Backend Architect\|Mon Aug 26  2024]]  	[[2023-07 Backend Architect#Job Ad (out of date, see docX above)]]  
 [[2023-07 Backend Architect\|Mon Aug 26  2024]]  	[[2023-07 Backend Architect#Job Ad (out of date)]]  
 [[2024-08 Backend Architect\|Mon Aug 26  2024]]  	[[2024-08 Backend Architect#[[BBI]] PROMPTS]]  
