@@ -12,7 +12,6 @@ n:: Research Reference pages
   [[Swearing]], ,
   , [[Comp]], [[DL]], [[Lrn]], [[Stat]],
   , [[RR SYSTEMS]],
-  , ,
   , [[RR CV]],
   , [[RR Web]],
   , [[RR Articles]],

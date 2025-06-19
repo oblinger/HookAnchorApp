@@ -296,8 +296,8 @@
   [Microsoft PowerPoint App](spot://microsoftpowerpointapp), [Microsoft Word App](spot://microsoftwordapp), [Mission Control App](spot://missioncontrolapp), [Music App](spot://musicapp)
   [Named App](spot://namedapp), [Netflix App](spot://netflixapp), [Neu App](spot://neuapp), [News App](spot://newsapp), [NOISE DarkNoise](spot://noisedarknoise), [NoSleep App](spot://nosleepapp)
   [Notes App](spot://notesapp), [Numbers App](spot://numbersapp), [Obsidian App](spot://obsidianapp), [OneDrive App](spot://onedriveapp), [OneNote App](spot://onenoteapp), [Opera App](spot://operaapp)
-  [OurPact Connect App](spot://ourpactconnectapp), [Pages App](spot://pagesapp), [Paintbrush App](spot://paintbrushapp), [Paprika](spot://paprika), [Paprika App](spot://paprikaapp)
-  [Paprika Recipe Manager 3 App](spot://paprikarecipemanager3app), [Paprika Recipe Manager App](spot://paprikarecipemanagerapp), [Photos App](spot://photosapp), [Plain Clip App](spot://plainclipapp)
+  [OurPact Connect App](spot://ourpactconnectapp), [Pages App](spot://pagesapp), [Paintbrush App](spot://paintbrushapp), [Paprika](spot://paprika), 
+  , , [Photos App](spot://photosapp), [Plain Clip App](spot://plainclipapp)
   [Platypus App](spot://platypusapp), [Pock App](spot://pockapp), [Pocket App](spot://pocketapp), [Podcasts App](spot://podcastsapp), [PowerPoint App](spot://powerpointapp)
   [Preferences App](spot://preferencesapp), [PST Bridge App](spot://pstbridgeapp), [PyCharm App](spot://pycharmapp), [QL Amazon App](spot://qlamazonapp), [QuickRes App](spot://quickresapp)
   [QuickTime Player App](spot://quicktimeplayerapp), [Reminder App](spot://reminderapp), [Safari App](spot://safariapp), [Save to Pocket App](spot://savetopocketapp)
@@ -317,8 +317,8 @@
   DELS: ,
   , [[MAC Apps]],
   DELS: ,[[MAC Apps]],
-  , [MAC Apps Note](spot://macappsnote), [MAC Note](spot://macnote), 
-  DELS: [[App]],[[MAC Apps]],[[App]], [[App]],
+  , [MAC Apps Note](spot://macappsnote), [MAC Note](spot://macnote),
+  DELS: [[App]],[[MAC Apps]],[[App]], [[App]],[Paprika App](spot://paprikaapp), [Paprika Recipe Manager 3 App](spot://paprikarecipemanager3app), [Paprika Recipe Manager App](spot://paprikarecipemanagerapp), 
 
 
 

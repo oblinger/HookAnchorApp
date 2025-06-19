@@ -1,3 +1,4 @@
+- vulnerabilities brian
 - do we know anyone at scale
  when googling
 - barry

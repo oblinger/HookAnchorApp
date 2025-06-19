@@ -1,7 +1,8 @@
 .[[TG]].
   , [[NJ Considerations]], [[NJ Queries]],
   , [[mddb]],
-  , [TG Note](spot://tgnote), 
+  , [TG Note](spot://tgnote),
+  , [[TG Safety]], 
 
 
  [[_template]],  [[NJ Queries|Queries]], [_import dir](spot://importfolder), [[_db.xlsx|_db]],  [[NJ.1]], 
@@ -13,6 +14,12 @@
 - REPORTS: 	[[Rpt All|All]],  [[Test]],  
 - DL Proj:		[[DLP Top]], [[DLP Big]], [[DLP GenAI]], 
 - MISSING:	[[List Missing Area|Area]], [[List Missing Cash|Cash]], [[List Missing DLP|DLP]], [[List Missing Job|Job]],
+
+
+
+
+
+- [[TG Safety]] 
 
 
 

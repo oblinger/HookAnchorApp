@@ -19,7 +19,7 @@
 [[Zoox]],	[[Salesforce]],	[[Anthropic]],	[[Covariant]],	[[DeepMind]],	
 [[Pony.ai]],	[[Copy.ai]],	[[Clarifai]],	[[Labelbox]],	[[Gong]],	[[Woebot]],	
 [[Forethought]],	[[Jasper]],	[[Unlearn.AI]],	[[Latitude]],	[[OpenAI]],	
-[[Lilt]],	[[Graphcore]],	[[Etcembly]],	[[Deepcell]],	[[mate]],	
+[[Lilt]],	[[Graphcore]],	[[Etcembly]],	[[Deepcell]],	[[mate]],	[[Alg2]],	
 [[2025-06 Sports Tracking Papers]],	[[Spot]],	
 [[KMR]]: [[Attach]],	[[Weekly]],	
     [[RR]]: [[Lrn]],	[[RR Leet]],	[[AI]],	[[RR Philosophy]],	[[Alg]],	[[RR MGR]],	
@@ -81,8 +81,7 @@
         [[SV]]: [[INV]],	[[SVT]],	[[SV Wings]],	[[Mgt]],	[[Circle]],	
             [[SV Software]],	[[SV Ops]],	
             [[SV Org]]: [[@BallerTV]],	
-            [[SV Product]]: 
-                [[SV System]]: [[Alg2]],	
+            [[SV Product]]: [[SV System]],	
             [[SV Archive]]: [[SV90]],	[[2022-10-17 SV90]],	
             [[SV People]]: 
                 [[SV Individuals]]: 
