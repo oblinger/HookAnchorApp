@@ -1,12 +1,37 @@
+#pp  			[Humanoid.ai](https://thehumanoid.ai/) 
+
 .[[@Humanoid]].
   , [@Humanoid Note](spot://@humanoidnote), 
-
-#pp  					https://thehumanoid.ai/
 
 
 
 
 # LOG
+
+
+### 2025-06-20  Questions
+
+- Report to CTO.
+- My head-count (6now) & target (???)
+- What does knocking-it out-of-the-park success look like in this role.
+- Product stage.
+- Funding to date; Recent funding; 
+- Product application area.  (intendedn product application area)
+
+
+Nancy
+Jared
+- did not have the right product.
+- 
+
+A few comments about my overlap w/ the role:
+- Hired a team of 40+ world-class PhD specialists in 9 months using a scaled recruitment team that interacted with and interviewed over 2000 candidates.
+- Surveyed the world's best talent in robotic grasping, sourced and landed a $2M engagement with U Vienna for their grasping work.
+- Presently working daily with our Computer Vision team on a range of state-of-the-art CNN and Transformer-based technologies for complex, cluttered, dynamic scene understanding.
+- Oversaw a semantic that used a combination of RRT planning and Receding Horizon Control with a generalized cost function that allowed us to inject semantic priorities into our motion planning.
+- My personal differentiation is my ability to maintain team velocity and focus on a scaled, rapidly evolving R&D productization effort. I thrive in fast-moving environments that require me to be both very high-level and very technically involved.
+
+
 
 ### 2025-06-11  Job Reqs
 

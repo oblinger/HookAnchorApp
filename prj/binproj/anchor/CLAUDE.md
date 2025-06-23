@@ -18,6 +18,14 @@ This the 'anchor' project documentation and utility repository that combines:
 - `ffload` - Python script that rebuilds the folder cache (`~/bin/.ff_cache`) for fast folder finding
 - `fflookup` - Python script providing shared folder lookup logic with alias support
 
+### Fast Completion Binaries
+- `anchor-complete/` - Rust binary for fast, case-insensitive tab completion
+  - Handles backslash escaping from shell input
+  - Supports multi-word searches with space handling
+  - Uses null-separated output for folder names with spaces
+  - Significantly faster than shell-based completion
+- `tab-completion/` - Alternative Rust binary with debug logging (experimental)
+
 ### Anchor Folder Structure
 An anchor folder is a folder containing a markdown with the same name (XXX/XXX.md).
 - Anchor folders should have a basename unique among all anchor folders serving as their anchor name
@@ -25,6 +33,16 @@ An anchor folder is a folder containing a markdown with the same name (XXX/XXX.m
 - Optional GitHub-linked git repo
 - Optional CLAUDE.md file for Claude Code configuration
 - Optional .idea folder for PyCharm configuration
+
+### Indexing Behavior
+The anchor script has configurable indexing behavior controlled by `INDEX_ANCHOR_FOLDERS_ONLY`:
+- **True** (current default): Only index anchor folders (folders with matching .md files)
+  - Significantly reduces cache size and improves completion performance
+  - Focuses on actual anchor projects rather than all directories
+  - Uses `is_anchor_folder()` to verify each folder has a matching markdown file
+- **False** (legacy behavior): Index all directories found in BASE_PATHS
+  - Includes every subdirectory regardless of whether it's an anchor folder
+  - Maintains backward compatibility with older workflows
 
 ## Script Functionality
 

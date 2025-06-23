@@ -1,2 +1,27 @@
-=[[START]]   [Founder](https://www.linkedin.com/in/ajforsythe/)  [[@Coop]]
+
+
+
+# W25   2025-06-16   [[2025-W24|<<]] [[2025-W26|>>]]
+- [ ] 
+
+### Mon-16
+- [ ] [[Repeat]] 
+### Tue-17
+- [ ] 
+### Wed-18
+- [ ] 
+### Thu-19
+- [ ] 
+### Fri-20
+- [ ] 
+
+7-9:30 Lunch
+
+12-1
+
+7am - 8pm 
+
+ICU 513-585-2311
+Unit  B715
+Patent Num H9S9N
 

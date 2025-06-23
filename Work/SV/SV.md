@@ -26,7 +26,10 @@
   , [SV Product Note](spot://svproductnote), [SV Proj Note](spot://svprojnote)
   , [SV Roadmap Note](spot://svroadmapnote), [SV Software Note](spot://svsoftwarenote)
   , [SV Strat Note](spot://svstratnote), [SV System Note](spot://svsystemnote)
-  , [SV Wings Note](spot://svwingsnote), 
+  , [SV Wings Note](spot://svwingsnote),
+  , [SV Notion](spot://svnotion),
+  , [SV Confluence](spot://svconfluence),
+  , [SV Testing Confluence](spot://svtestingconfluence), 
   DELS: [Bug Actual List Page](spot://bugactuallistpage), [Bug Board Page](spot://bugboardpage),[[SV Log]],[[ww]],[[WW]], [Bug Actual List Page](spot://bugactuallistpage), [Bug Board Page](spot://bugboardpage),
 
 [[SV Proj]] 

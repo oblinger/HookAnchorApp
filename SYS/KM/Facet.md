@@ -3,34 +3,34 @@
 
 ## FACETS
 
-|       | Type        | Name                 | Description                                  |
-| ----- | ----------- | -------------------- | -------------------------------------------- |
-|       | **TEXT**    |                      |                                              |
-| **S** | Notion      | **XXXX Shared**      | Root page in a "Shared" tool, like Notion    |
-| **N** | Notes       | **XXXX Note**        | Main page if XXXX is also a prefix           |
-|       |             |                      |                                              |
-|       | **FOLDER**  |                      |                                              |
-| **F** | Folder      | **XXXX Folder**      | Launches finder on local Folder (6)          |
-| **B** | Box         | **XXXX Box**         | Drop box folder                              |
-| **G** | Gdrive      | **XXXX Gdrive**      | Web folder (6)                               |
-|       |             |                      |                                              |
-|       | **SPECIAL** |                      |                                              |
-|       |             | **XXXX**             | No suffix overrides others as leading choice |
-| **1** | 1Pass       | **XXXX 1pass**       | Launches from 1password (5)                  |
-| **C** | Code        | **XXXX Code**        | Project's source                             |
-| **L** | Log         | **XXXX Log**         | Log of related content                       |
-| **P** | Page        | **XXXX Page**        | Launches a URL (7)                           |
-| **T** | Todo        | **XXXX Todo** or "." | Todo list for XXXX.  "XXXX." can be an alias |
-|       |             |                      |                                              |
-|       | **PREFIX**  |                      |                                              |
-|       | Doc         | **Doc XXXX**         | Documentations about some SW thing           |
-|       | RR          | **RR XXXX**          | Reference material about a thing             |
-|       | Meta XXX    | **Meta XXXX**        | Meta info about a term (could be 'about')    |
-|       | @XXX        | **@ XXXX**           | Entity page for a person, org, or "actor"    |
-|       |             |                      |                                              |
-|       | **TARGET**  |                      |                                              |
-| **A** | App         | **XXXX**             | Mac App. Launches it. (3)                    |
-|       |             |                      |                                              |
+
+|             | Type        | Name                 | Description                                                                 |
+| ----------- | ----------- | -------------------- | --------------------------------------------------------------------------- |
+|             | **DIR/DOC** |                      |                                                                             |
+| **S**       | Shared      | **XXXX Shared**      | Catch all instead of tool name.<br>External "Shared" tool, e.g. Notion, ... |
+| **F**       | Folder      | **XXXX Folder**      | Launches finder on local Folder (6)                                         |
+| **B**       | Box         | **XXXX Box**         | Drop box folder                                                             |
+| **G**       | Gdrive      | **XXXX Gdrive**      | Web folder (6)                                                              |
+| **C**       | Confluence  | **XXXX Confluence**  | Duplicates Code but maybe ok?                                               |
+| **O** **N** | Notes       | **XXXX Note**        | RENAME to "O" obsidian.  Main page if XXXX is also a prefix                 |
+|             |             |                      |                                                                             |
+|             | **SPECIAL** |                      |                                                                             |
+|             |             | **XXXX**             | No suffix overrides others as leading choice                                |
+| **1**       | 1Pass       | **XXXX 1pass**       | Launches from 1password (5)                                                 |
+| **C**       | Code        | **XXXX Code**        | Project's source                                                            |
+| **L**       | Log         | **XXXX Log**         | Log of related content                                                      |
+| **P**       | Page        | **XXXX Page**        | Launches a URL (7)                                                          |
+| **T**       | Todo        | **XXXX Todo** or "." | Todo list for XXXX.  "XXXX." can be an alias                                |
+|             |             |                      |                                                                             |
+|             | **PREFIX**  |                      |                                                                             |
+|             | Doc         | **Doc XXXX**         | Documentations about some SW thing                                          |
+|             | RR          | **RR XXXX**          | Reference material about a thing                                            |
+|             | Meta XXX    | **Meta XXXX**        | Meta info about a term (could be 'about')                                   |
+|             | @XXX        | **@ XXXX**           | Entity page for a person, org, or "actor"                                   |
+|             |             |                      |                                                                             |
+|             | **TARGET**  |                      |                                                                             |
+| **A**       | App         | **XXXX**             | Mac App. Launches it. (3)                                                   |
+|             |             |                      |                                                                             |
 a b C D E f g H I J K l M? n O p Q R S t U V W X Y Z
 
 ### KEY FACETS FOR A TERM

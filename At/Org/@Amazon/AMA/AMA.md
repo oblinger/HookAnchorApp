@@ -1,14 +1,20 @@
 
 .[[AMA]].
   ,
-  [AMA Collections Page](spot://amacollectionspage), [AMA Content Page](spot://amacontentpage), [AMA Devices](spot://amadevices),
-  [AMA Kindle Page](spot://amakindlepage), [AMA Video Page](spot://amavideopage),
+  , , ,
+  , ,
   [Amazon](spot://amazon),
   , ,
-  , [AMA Note](spot://amanote),
-  , [AMA Page](spot://amapage),
+  , ,
+  , ,
   DELS: ,
-  DELS: [AMA Pjage](spot://amapage),[AMAl Page](spot://amapage),[AMA Pjage](spot://amapage), 
+  , [AMA.Collections Page](spot://ama.collectionspage), [AMA.Content Page](spot://ama.contentpage)
+  , [AMA.Devices](spot://ama.devices), [AMA.Kindle Page](spot://ama.kindlepage)
+  , [AMA.Note](spot://ama.note), [AMA.Page](spot://ama.page), [AMA.Video Page](spot://ama.videopage),
+  DELS: ,,,
+  , [AMA Note](spot://amanote),
+  DELS: ,,,, , , , , [AMA Note](spot://amanote), ,
+  DELS: [AMA Pjage](spot://amapage),[AMAl Page](spot://amapage),[AMA Pjage](spot://amapage),[AMA Collections Page](spot://amacollectionspage), [AMA Content Page](spot://amacontentpage), [AMA Devices](spot://amadevices), [AMA Kindle Page](spot://amakindlepage), [AMA Video Page](spot://amavideopage), [AMA Note](spot://amanote), [AMA Page](spot://amapage),[AMA Pjage](spot://amapage), [AMAl Page](spot://amapage), [AMA Pjage](spot://amapage),[AMA Collections Page](spot://amacollectionspage), [AMA Content Page](spot://amacontentpage), [AMA Devices](spot://amadevices), [AMA Kindle Page](spot://amakindlepage), [AMA Video Page](spot://amavideopage), [AMA Page](spot://amapage), 
 
 
 

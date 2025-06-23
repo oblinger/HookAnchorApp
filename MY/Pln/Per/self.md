@@ -3,7 +3,7 @@
 
 MIT
 - [x] [[@Humanoid]] - Ready
-- [ ] Job tracking setup 
+- [x] Job tracking setup 
 - [ ] Respond: Rafah, Theo
 - [ ] [[lim]]: Add actions to CN
 - [ ] Apply to something

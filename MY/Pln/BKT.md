@@ -1,16 +1,50 @@
 
-[[WORK]]	3h MIT & Chew
-[[Fun]]:		New, Guys, date
-[[MED]]:	Wk 4x, Wghts,HIIT
+NOW
+  [[WORK]]	3h MIT & Chew
+  [[Fun]]:		New, Guys, date
+  [[MED]]:	Wk 4x, Wghts,HIIT
+  [[CN]]:		Uri, Luis, Juan, Nvidia
+  [[SEEK]]:	LI-lst, [Jobs](https://jobright.ai/jobs/recommend?pos=20) 
+  [[LRN]]:	DL C3;
+  
+  [[Show]]:	x	
+  [[Home]]:	
 
-[[NJ]]:   (See [[Daily Schedules]])
- [[CN]]:		Uri, Luis, Juan, Nvidia
- [[SEEK]]:	LI-lst, [Jobs](https://jobright.ai/jobs/recommend?pos=20) 
- [[LRN]]:	DL C3;
- [[SHOW]]:	
+- Jobright AI fixes
 
 
-[[Home]]:
+
+
+
+@matias, in the future, we should not set our system to the max setting as we did here. For the foreseeable future, we will find out about a problem, right at the moment it happens.  If we had set that max to 170, for example, then we would upgrade to 200 and give us a few days of breathing room.  just an idea for the future.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

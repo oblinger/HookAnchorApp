@@ -1,3 +1,6 @@
+- technical conferences:  ICML, CVPR, ICLR
+- stability:  upload stress test.
+- james test shotcharts
 - vulnerabilities brian
 - do we know anyone at scale
  when googling

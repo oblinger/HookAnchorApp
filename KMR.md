@@ -25,7 +25,8 @@ TOPS: [[KMR]], [[Meta]], [[TOC]],
   , ,
   DELS: [[TOC]], , [[SYS]], , , [[2024-10-29]],, , ,,, , , , , , ,,
   , [[prj]],
-  , [KMR Note](spot://kmrnote), 
+  , [KMR Note](spot://kmrnote),
+  , [[test_final_uri]], [[test_inside_obsidian]], [[test_inside_obsidian2]], [[test_obsidian_new]], 
   DELS: [[TOC]], [[Work]], [[SYS]], [[ATTACH]], [[WEEKLY]], [[2024-10-29]],[[JJ]], [[Misc]], [[test987]],[top](spot://top),[[AT]], [[ATTACH]], [[WEEKLY]], [[Work]], [[Work]], [[ATTACH]], [[WEEKLY]],[[AlienBiologyWhitepaper]],[[prj]],[[Prj]], [[Work]], [[ATTACH]], [[WEEKLY]], [[JJ]], [[Misc]], [[test987]], [top](spot://top), [[AT]], [[ATTACH]], [[WEEKLY]], [[Work]], [[Work]], [[ATTACH]], [[WEEKLY]], [[AlienBiologyWhitepaper]],
 
 

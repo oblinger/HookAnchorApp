@@ -1,17 +1,46 @@
 [[FAANG]], [[@IBM]]    [Senior Director at Microsoft Research](https://www.linkedin.com/in/rafahhosn/)  [[@Microsoft]]  [MS Page](https://www.microsoft.com/en-us/research/people/raaboulh/),  #Mentor 
 
+https://www.microsoft.com/en-us/research/people/raaboulh/
+
 
 # LOG
 
+
+
+Rafah, 
+Sorry for the delay in responding.  I wanted to do a bit more work on my Alien Biology idea before speaking with your colleague.  I hear you loud and clear, that really there is no direct avenue towards working with MSR (too bad), below my 'ask' is really on getting another expert's opinion about pushing the envelope on Agentic AI, and most specifically about how to best frame and test that gaps that remain based on the AI that we have today.  I provided a very specific 'ask' for discussion.  Let me know if you think diving that deep into the proposal in the ask is the best way to go, or perhaps I should let you make a higher level ask for a discussion?
+
+Either way, my thought is to not send a link to the white paper itself in the ask, but provide it as an optional read ahead if he is so inclined right before the meeting.  Let me know your thoughts!
+
+Cheers, 
+Dan
+
+
+
+
+Dimitris, 
+Rafah told me a bit about your research interests, and they overlap with a testing paradigm I have recently been investigating.  I believe the challenge in honestly testing extended LLM-based inference is the unavoidable and essentially unknowable overlap with the data that those systems have been trained on.
+
+I have an unusual end-run around this problem that involves wholesale construction of a synthetic "alien" biology built from alien molecules that behave according to an alien physics, yet still string together within alien organisms to form functional systems that can be discovered, diagnosed, and ultimately cured of synthetic alien diseases.  My focus is not on biology per se, but rather the controllable, untainted testing of extended agentic inference.  I would like your thoughts on how we might test (and develop) such agentic systems.
+
+Let me know if you have time and interest in chatting about this.
+
+Best, 
+Dan
+
+
+
 ### 2025-05-31  Alien Biology Chat
 
-- 
+PEOPLE:
+-  [Besmira Nushi](https://besmiranushi.com/)   [MSR Page](https://www.microsoft.com/en-us/research/people/benushi/) 
+-  [Dimitris Papailiopoulos](https://www.linkedin.com/in/dimitris-papailiopoulos-01133a295/)  [MSR Page](https://www.microsoft.com/en-us/research/people/dimitriosp/)  
 
 
 ### 2025-02-00  
 
 
--- More technical; more hands on
+-- More technical; more. hands. on
 
 - AI/ML Researecher / Executive / Enreprenure
 - Public repo - Obsidian plugin.
@@ -30,10 +59,10 @@ Consulting
 
 Tim Chung
 
-    [[top]]  
 
 ~~
 Chris White - he is a CVP - 
+https://www.microsoft.com/en-us/research/people/chwh/
 
 
 -- h-index (john langford)
