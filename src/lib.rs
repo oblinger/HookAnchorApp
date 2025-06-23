@@ -71,6 +71,15 @@ pub fn load_commands() -> Vec<Command> {
         .collect()
 }
 
+pub fn command_matches_query(command_name: &str, query: &str) -> bool {
+    let search_lower = query.to_lowercase();
+    let search_words: Vec<&str> = search_lower.split_whitespace().collect();
+    let cmd_lower = command_name.to_lowercase();
+    
+    // Check if all search words match sequentially in the command
+    matches_word_sequence(&cmd_lower, &search_words, false)
+}
+
 pub fn filter_commands(commands: &[Command], search_text: &str, debug: bool) -> Vec<Command> {
     let search_lower = search_text.to_lowercase();
     let search_words: Vec<&str> = search_lower.split_whitespace().collect();
@@ -93,8 +102,8 @@ pub fn filter_commands(commands: &[Command], search_text: &str, debug: bool) -> 
             println!("Debug: checking '{}' against words: {:?}", cmd_lower, search_words);
         }
         
-        // Check if all search words match sequentially in the command
-        if matches_word_sequence(&cmd_lower, &search_words, debug) {
+        // Use the new internal function to check if the command matches
+        if command_matches_query(&cmd.command, search_text) {
             // Determine priority based on where the match starts
             if search_words.len() == 1 {
                 let search_word = search_words[0];
@@ -318,12 +327,26 @@ pub fn save_commands_formatted(commands: &[Command], output_file: &str) -> Resul
     Ok(())
 }
 
+pub fn delete_command(commands: &mut Vec<Command>, command_name: &str) -> bool {
+    let original_len = commands.len();
+    commands.retain(|cmd| cmd.command != command_name);
+    commands.len() != original_len // Return true if a command was deleted
+}
+
+pub fn add_command(commands: &mut Vec<Command>, new_command: Command) {
+    commands.push(new_command);
+}
+
 pub fn update_command_list(commands: &mut Vec<Command>, new_command: Command, original_command_name: &str) {
     // Remove the original command if it exists
     if !original_command_name.is_empty() {
-        commands.retain(|cmd| cmd.command != original_command_name);
+        delete_command(commands, original_command_name);
     }
     
     // Add the new command
-    commands.push(new_command);
+    add_command(commands, new_command);
+}
+
+pub fn save_commands_to_file(commands: &[Command]) -> Result<(), Box<dyn std::error::Error>> {
+    save_commands_formatted(commands, "spot_cmds.txt")
 }

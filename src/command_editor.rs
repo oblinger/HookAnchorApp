@@ -15,6 +15,15 @@ pub struct CommandEditor {
     // Track the original command for reference
     pub original_command: Option<Command>,
     pub original_command_name: String,
+    
+    // Track focus state
+    focus_requested: bool,
+    
+    // Commands list for checking existence
+    commands: Vec<Command>,
+    
+    // Track delete button visibility to detect changes
+    delete_button_was_visible: bool,
 }
 
 impl CommandEditor {
@@ -29,6 +38,9 @@ impl CommandEditor {
             priority: false,
             original_command: None,
             original_command_name: String::new(),
+            focus_requested: false,
+            commands: Vec::new(),
+            delete_button_was_visible: false,
         }
     }
     
@@ -36,10 +48,17 @@ impl CommandEditor {
         self.visible = false;
         self.original_command = None;
         self.original_command_name = String::new();
+        self.focus_requested = false;
+        self.delete_button_was_visible = false;
+    }
+    
+    pub fn update_commands(&mut self, commands: &[Command]) {
+        self.commands = commands.to_vec();
     }
     
     pub fn edit_command(&mut self, command_to_edit: Option<&Command>, search_text: &str) {
         self.visible = true;
+        self.focus_requested = false; // Reset focus flag when opening dialog
         
         if let Some(cmd) = command_to_edit {
             // Populate with selected command data
@@ -89,17 +108,56 @@ impl CommandEditor {
                         .num_columns(2)
                         .spacing([20.0, 8.0])
                         .show(ui, |ui| {
-                            // Command row
+                            // Command row with optional delete button
                             ui.label("Command:");
-                            let command_response = ui.text_edit_singleline(&mut self.command);
-                            // Request focus on the command field when dialog opens
-                            command_response.request_focus();
+                            
+                            // Check if current command text matches an existing command
+                            let command_exists = !self.command.is_empty() && 
+                                self.commands.iter().any(|cmd| cmd.command == self.command);
+                            
+                            // Check if delete button visibility changed and request focus if so
+                            let delete_button_visibility_changed = command_exists != self.delete_button_was_visible;
+                            self.delete_button_was_visible = command_exists;
+                            
+                            if command_exists {
+                                // When delete button exists, use horizontal layout with sized text field
+                                ui.horizontal(|ui| {
+                                    let available_width = ui.available_width();
+                                    let command_width = available_width - 80.0; // Leave space for delete button
+                                    
+                                    let command_response = ui.add_sized(
+                                        [command_width, 20.0],
+                                        egui::TextEdit::singleline(&mut self.command)
+                                    );
+                                    
+                                    // Request focus when dialog opens or when delete button visibility changes
+                                    if !self.focus_requested || delete_button_visibility_changed {
+                                        command_response.request_focus();
+                                        self.focus_requested = true;
+                                    }
+                                    
+                                    // Show delete button
+                                    if ui.button("Delete").clicked() {
+                                        result = CommandEditorResult::Delete(self.command.clone());
+                                    }
+                                });
+                            } else {
+                                // When no delete button, use regular text edit that matches other fields
+                                let command_response = ui.text_edit_singleline(&mut self.command);
+                                
+                                // Request focus when dialog opens or when delete button visibility changes
+                                if !self.focus_requested || delete_button_visibility_changed {
+                                    command_response.request_focus();
+                                    self.focus_requested = true;
+                                }
+                            }
                             ui.end_row();
                             
                             // Action row (dropdown)
                             ui.label("Action:");
                             egui::ComboBox::from_id_salt("action_combo")
                                 .selected_text(&self.action)
+                                .height(400.0) // Make dropdown tall enough to show all options
                                 .show_ui(ui, |ui| {
                                     ui.selectable_value(&mut self.action, "pass".to_string(), "pass");
                                     ui.selectable_value(&mut self.action, "alias".to_string(), "alias");
@@ -138,19 +196,14 @@ impl CommandEditor {
                     
                     ui.add_space(20.0);
                     
-                    // Centered buttons
+                    // Centered buttons and delete icon
                     ui.horizontal(|ui| {
                         ui.allocate_ui_with_layout(
                             [ui.available_width(), 30.0].into(),
                             egui::Layout::left_to_right(egui::Align::Center),
                             |ui| {
-                                // Calculate centering based on whether delete button will be shown
-                                let button_group_width = if self.original_command_name.is_empty() {
-                                    140.0 // Cancel + Save
-                                } else {
-                                    180.0 // Cancel + Save + Delete
-                                };
-                                ui.add_space((ui.available_width() - button_group_width) / 2.0);
+                                // Center Cancel and Save buttons only
+                                ui.add_space((ui.available_width() - 140.0) / 2.0);
                                 
                                 if ui.button("Cancel").clicked() {
                                     result = CommandEditorResult::Cancel;
@@ -168,15 +221,6 @@ impl CommandEditor {
                                         full_line: self.format_command_line(),
                                     };
                                     result = CommandEditorResult::Save(new_command, self.original_command_name.clone());
-                                }
-                                
-                                // Only show delete button if editing an existing command
-                                if !self.original_command_name.is_empty() {
-                                    ui.add_space(10.0);
-                                    
-                                    if ui.button("🗑️").clicked() {
-                                        result = CommandEditorResult::Delete(self.original_command_name.clone());
-                                    }
                                 }
                             }
                         );
