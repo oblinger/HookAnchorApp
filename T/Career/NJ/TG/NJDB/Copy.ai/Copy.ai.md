@@ -1,5 +1,12 @@
 .[[Copy.ai]].
+  , ,
+  , ,
+  , ,
+  , [Copy.ai Obsidian](spot://copy.aiobsidian),
+  DELS: ,[Copy.ai Obsidian](spot://copy.aiobsidian),
+  , ,
   , [Copy.ai Note](spot://copy.ainote), 
+  DELS: [Copy.ai Note](spot://copy.ainote),[Copy.ai Obsidian](spot://copy.aiobsidian),[Copy.ai Note](spot://copy.ainote),[Copy.ai Note](spot://copy.ainote),
 
 # Top
 ## Sections

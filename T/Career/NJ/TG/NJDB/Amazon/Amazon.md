@@ -1,5 +1,12 @@
 .[[Amazon]].
+  , ,
+  , ,
+  , ,
+  , [Amazon Obsidian](spot://amazonobsidian),
+  DELS: ,[Amazon Obsidian](spot://amazonobsidian),
+  , ,
   , [Amazon Note](spot://amazonnote), 
+  DELS: [Amazon Note](spot://amazonnote),[Amazon Obsidian](spot://amazonobsidian),[Amazon Note](spot://amazonnote),[Amazon Note](spot://amazonnote),
 
 //amazonnote),
 # Top

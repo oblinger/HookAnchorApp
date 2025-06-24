@@ -1,6 +1,13 @@
 .[[Race]].
   ,   [[Uniting America]],
+  , , ,
+  , , ,
+  , , ,
+  , [Race Obsidian](spot://raceobsidian), [__Race Pitch__ Obsidian](spot://racepitchobsidian),
+  DELS: , ,[Race Obsidian](spot://raceobsidian), [__Race Pitch__ Obsidian](spot://racepitchobsidian),
+  , , ,
   , [Race Note](spot://racenote), [__Race Pitch__ Note](spot://racepitchnote), 
+  DELS: [Race Note](spot://racenote), [__Race Pitch__ Note](spot://racepitchnote),[Race Obsidian](spot://raceobsidian), [__Race Pitch__ Obsidian](spot://racepitchobsidian),[Race Note](spot://racenote), [__Race Pitch__ Note](spot://racepitchnote),[Race Note](spot://racenote), [__Race Pitch__ Note](spot://racepitchnote),
 
 
 :: [[Uniting America]]

@@ -1,5 +1,12 @@
 .[[Groq]].
+  , ,
+  , ,
+  , ,
+  , [Groq Obsidian](spot://groqobsidian),
+  DELS: ,[Groq Obsidian](spot://groqobsidian),
+  , ,
   , [Groq Note](spot://groqnote), 
+  DELS: [Groq Note](spot://groqnote),[Groq Obsidian](spot://groqobsidian),[Groq Note](spot://groqnote),[Groq Note](spot://groqnote),
 
 # Top
 #### kind: StartAI

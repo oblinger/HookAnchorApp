@@ -2,8 +2,14 @@
   ,   [[SV Dashboards]], [[SV Planning]], ,
   , [SV Testing Obsidian](spot://svtestingobsidian),
   , ,
-  , [[SV Testing]], 
-  DELS: [[SV Testing]],[[SV Testing]],
+  , ,
+  , ,
+  , ,
+  , ,
+  , ,
+  , ,
+  , ,
+  DELS: [[SV Testing]],[[SV Testing]],[[SV Testing]],[[SV Testing]],[[SV Testing]],[[SV Testing]],[[SV Testing]],[[SV Testing]],[[SV Testing]], 
 
 
 :: [[SV Dashboards]],   [[SV Planning]],   [[SV Testing]]

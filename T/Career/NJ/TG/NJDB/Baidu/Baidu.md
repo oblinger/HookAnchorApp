@@ -1,5 +1,12 @@
 .[[Baidu]].
+  , ,
+  , ,
+  , ,
+  , [Baidu Obsidian](spot://baiduobsidian),
+  DELS: ,[Baidu Obsidian](spot://baiduobsidian),
+  , ,
   , [Baidu Note](spot://baidunote), 
+  DELS: [Baidu Note](spot://baidunote),[Baidu Obsidian](spot://baiduobsidian),[Baidu Note](spot://baidunote),[Baidu Note](spot://baidunote),
 
 # Top
 #### kind: Big

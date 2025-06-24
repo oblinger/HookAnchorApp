@@ -1,5 +1,12 @@
 .[[IBM]].
+  , ,
+  , ,
+  , ,
+  , [IBM Obsidian](spot://ibmobsidian),
+  DELS: ,[IBM Obsidian](spot://ibmobsidian),
+  , ,
   , [IBM Note](spot://ibmnote), 
+  DELS: [IBM Note](spot://ibmnote),[IBM Obsidian](spot://ibmobsidian),[IBM Note](spot://ibmnote),[IBM Note](spot://ibmnote),
 
 # Top
 #### kind: Big

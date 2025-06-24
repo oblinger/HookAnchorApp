@@ -1,6 +1,13 @@
 .[[Note]].
   ,   [[DATED]], [[Notes]],
+  , ,
+  , ,
+  , ,
+  , [Note Obsidian](spot://noteobsidian),
+  DELS: ,[Note Obsidian](spot://noteobsidian),
+  , ,
   , [Note Note](spot://notenote), 
+  DELS: [Note Note](spot://notenote),[Note Obsidian](spot://noteobsidian),[Note Note](spot://notenote),[Note Note](spot://notenote),
 
 #log 
 n:: 'n...' 	Isolated 'notes' created by me

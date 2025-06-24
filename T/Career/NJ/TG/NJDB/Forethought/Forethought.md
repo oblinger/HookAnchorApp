@@ -1,5 +1,12 @@
 .[[Forethought]].
+  , ,
+  , ,
+  , ,
+  , [Forethought Obsidian](spot://forethoughtobsidian),
+  DELS: ,[Forethought Obsidian](spot://forethoughtobsidian),
+  , ,
   , [Forethought Note](spot://forethoughtnote), 
+  DELS: [Forethought Note](spot://forethoughtnote),[Forethought Obsidian](spot://forethoughtobsidian),[Forethought Note](spot://forethoughtnote),[Forethought Note](spot://forethoughtnote),
 
 # Top
 #### kind: StartAI

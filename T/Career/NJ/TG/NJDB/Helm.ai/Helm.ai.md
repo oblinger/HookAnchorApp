@@ -1,5 +1,12 @@
 .[[Helm.ai]].
+  , ,
+  , ,
+  , ,
+  , [Helm.ai Obsidian](spot://helm.aiobsidian),
+  DELS: ,[Helm.ai Obsidian](spot://helm.aiobsidian),
+  , ,
   , [Helm.ai Note](spot://helm.ainote), 
+  DELS: [Helm.ai Note](spot://helm.ainote),[Helm.ai Obsidian](spot://helm.aiobsidian),[Helm.ai Note](spot://helm.ainote),[Helm.ai Note](spot://helm.ainote),
 
 # Top
 ## Sections

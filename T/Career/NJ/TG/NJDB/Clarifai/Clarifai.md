@@ -1,5 +1,12 @@
 .[[Clarifai]].
+  , ,
+  , ,
+  , ,
+  , [Clarifai Obsidian](spot://clarifaiobsidian),
+  DELS: ,[Clarifai Obsidian](spot://clarifaiobsidian),
+  , ,
   , [Clarifai Note](spot://clarifainote), 
+  DELS: [Clarifai Note](spot://clarifainote),[Clarifai Obsidian](spot://clarifaiobsidian),[Clarifai Note](spot://clarifainote),[Clarifai Note](spot://clarifainote),
 
 # Top
 #### kind: BigAI

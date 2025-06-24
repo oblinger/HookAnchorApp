@@ -1,5 +1,12 @@
 .[[DocEmacs]].
+  , ,
+  , ,
+  , ,
+  , [DocEmacs Obsidian](spot://docemacsobsidian),
+  DELS: ,[DocEmacs Obsidian](spot://docemacsobsidian),
+  , ,
   , [DocEmacs Note](spot://docemacsnote), 
+  DELS: [DocEmacs Note](spot://docemacsnote),[DocEmacs Obsidian](spot://docemacsobsidian),[DocEmacs Note](spot://docemacsnote),[DocEmacs Note](spot://docemacsnote),
 
   [__DocEmacs__](__DocEmacs__.md)
 

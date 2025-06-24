@@ -1,5 +1,12 @@
 .[[NVIDIA]].
+  , ,
+  , ,
+  , ,
+  , [NVIDIA Obsidian](spot://nvidiaobsidian),
+  DELS: ,[NVIDIA Obsidian](spot://nvidiaobsidian),
+  , ,
   , [NVIDIA Note](spot://nvidianote), 
+  DELS: [NVIDIA Note](spot://nvidianote),[NVIDIA Obsidian](spot://nvidiaobsidian),[NVIDIA Note](spot://nvidianote),[NVIDIA Note](spot://nvidianote),
 
 # Top
 #### kind: Top

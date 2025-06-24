@@ -11,7 +11,14 @@
   , [[2025-06 anchor_selector]],
   , [[web]],
   , [2025-06 web](spot://202506web), [pp](spot://pp),
+  , ,
+  , ,
+  , ,
+  , [prj Obsidian](spot://prjobsidian),
+  DELS: ,[prj Obsidian](spot://prjobsidian),
+  , ,
   , [prj Note](spot://prjnote), 
+  DELS: [prj Note](spot://prjnote),[prj Obsidian](spot://prjobsidian),[prj Note](spot://prjnote),[prj Note](spot://prjnote),
 
   [[2016-00 FileThis]],			Automated script for downloading and viewing account statements
   [[2018-00 Wedding]],   		Plan our wedding

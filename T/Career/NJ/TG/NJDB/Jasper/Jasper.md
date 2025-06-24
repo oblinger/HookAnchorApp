@@ -1,5 +1,12 @@
 .[[Jasper]].
+  , ,
+  , ,
+  , ,
+  , [Jasper Obsidian](spot://jasperobsidian),
+  DELS: ,[Jasper Obsidian](spot://jasperobsidian),
+  , ,
   , [Jasper Note](spot://jaspernote), 
+  DELS: [Jasper Note](spot://jaspernote),[Jasper Obsidian](spot://jasperobsidian),[Jasper Note](spot://jaspernote),[Jasper Note](spot://jaspernote),
 
 # Top
 #### kind: TopGen

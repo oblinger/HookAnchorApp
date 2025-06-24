@@ -1,5 +1,12 @@
 .[[CopyAI]].
+  , ,
+  , ,
+  , ,
+  , [CopyAI Obsidian](spot://copyaiobsidian),
+  DELS: ,[CopyAI Obsidian](spot://copyaiobsidian),
+  , ,
   , [CopyAI Note](spot://copyainote), 
+  DELS: [CopyAI Note](spot://copyainote),[CopyAI Obsidian](spot://copyaiobsidian),[CopyAI Note](spot://copyainote),[CopyAI Note](spot://copyainote),
 
 # Top
 #### kind: BigAI

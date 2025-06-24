@@ -1,5 +1,12 @@
 .[[ufBrick]].
+  , ,
+  , ,
+  , ,
+  , [ufBrick Obsidian](spot://ufbrickobsidian),
+  DELS: ,[ufBrick Obsidian](spot://ufbrickobsidian),
+  , ,
   , [ufBrick Note](spot://ufbricknote), 
+  DELS: [ufBrick Note](spot://ufbricknote),[ufBrick Obsidian](spot://ufbrickobsidian),[ufBrick Note](spot://ufbricknote),[ufBrick Note](spot://ufbricknote),
 
 
 

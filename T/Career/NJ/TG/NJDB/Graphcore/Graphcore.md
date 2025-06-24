@@ -1,5 +1,12 @@
 .[[Graphcore]].
+  , ,
+  , ,
+  , ,
+  , [Graphcore Obsidian](spot://graphcoreobsidian),
+  DELS: ,[Graphcore Obsidian](spot://graphcoreobsidian),
+  , ,
   , [Graphcore Note](spot://graphcorenote), 
+  DELS: [Graphcore Note](spot://graphcorenote),[Graphcore Obsidian](spot://graphcoreobsidian),[Graphcore Note](spot://graphcorenote),[Graphcore Note](spot://graphcorenote),
 
 # Top
 #### kind: StartAI

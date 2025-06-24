@@ -1,5 +1,12 @@
 .[[Tome]].
+  , ,
+  , ,
+  , ,
+  , [Tome Obsidian](spot://tomeobsidian),
+  DELS: ,[Tome Obsidian](spot://tomeobsidian),
+  , ,
   , [Tome Note](spot://tomenote), 
+  DELS: [Tome Note](spot://tomenote),[Tome Obsidian](spot://tomeobsidian),[Tome Note](spot://tomenote),[Tome Note](spot://tomenote),
 
 # Top
 #### kind: BigAI

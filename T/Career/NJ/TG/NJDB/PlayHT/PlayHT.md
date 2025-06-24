@@ -1,5 +1,12 @@
 .[[PlayHT]].
+  , ,
+  , ,
+  , ,
+  , [PlayHT Obsidian](spot://playhtobsidian),
+  DELS: ,[PlayHT Obsidian](spot://playhtobsidian),
+  , ,
   , [PlayHT Note](spot://playhtnote), 
+  DELS: [PlayHT Note](spot://playhtnote),[PlayHT Obsidian](spot://playhtobsidian),[PlayHT Note](spot://playhtnote),[PlayHT Note](spot://playhtnote),
 
 # Top
 #### kind: BigAI

@@ -1,5 +1,12 @@
 .[[ABBYY]].
+  , ,
+  , ,
+  , ,
+  , [ABBYY Obsidian](spot://abbyyobsidian),
+  DELS: ,[ABBYY Obsidian](spot://abbyyobsidian),
+  , ,
   , [ABBYY Note](spot://abbyynote), 
+  DELS: [ABBYY Note](spot://abbyynote),[ABBYY Obsidian](spot://abbyyobsidian),[ABBYY Note](spot://abbyynote),[ABBYY Note](spot://abbyynote),
 
 # Top
 #### kind: Big

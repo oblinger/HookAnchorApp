@@ -1,5 +1,12 @@
 .[[WRM]].
+  , ,
+  , ,
+  , ,
+  , [WRM Obsidian](spot://wrmobsidian),
+  DELS: ,[WRM Obsidian](spot://wrmobsidian),
+  , ,
   , [WRM Note](spot://wrmnote), 
+  DELS: [WRM Note](spot://wrmnote),[WRM Obsidian](spot://wrmobsidian),[WRM Note](spot://wrmnote),[WRM Note](spot://wrmnote),
 
 # What Really Matters
 ## 2024 Q2

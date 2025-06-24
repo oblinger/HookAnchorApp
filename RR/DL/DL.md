@@ -1,9 +1,9 @@
 
 .[[DL]].  
-  DL:		[[DL Alg]], , ,
+  DL:		, , ,
   [[DLF]]:
   :	[[NG Notation]],
-  [[DL Topic]]:	[[GenAI]], , [[Self Supervised Learning]],
+  :	[[GenAI]], , [[Self Supervised Learning]],
   PARTS:	[[Attention]], [[Activation Functions]], ,
   AREAS:	,
   DETAILS:	[[Invertable Density Estimation]], [[LoRA]], ,
@@ -21,10 +21,27 @@
   , [[Multi-headed Attention Block]], [[Self Attention]],
   , [[GPT Prompting]],
   , [[LRM]],
+  , ,
+  , ,
+  , ,
+  , ,
+  , ,
+  DELS: [[DLF]], ,,,, ,,, , , , ,, , , , , , , , , , , , , , , ,, , , ,, , ,,[[LRM]], ,
+  , ,
+  , ,
+  DELS: [[DLF]], ,,,, ,,, , , , ,, , , , , , , , , , , , , , , ,, , , ,, , ,,[[LRM]], ,, , ,
+  , [DL Activation Obsidian](spot://dlactivationobsidian), [DL Alg Obsidian](spot://dlalgobsidian)
+  , [DL Obsidian](spot://dlobsidian), [DL Topic Obsidian](spot://dltopicobsidian)
+  , [DL Visualization Obsidian](spot://dlvisualizationobsidian),
+  DELS: [[DLF]], ,,,, ,,, , , , ,, , , , , , , , , , , , , , , ,, , , ,, , ,,[[LRM]], ,, , ,, , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , ,[DL Activation Obsidian](spot://dlactivationobsidian), [DL Obsidian](spot://dlobsidian), [DL Visualization Obsidian](spot://dlvisualizationobsidian),
+  , , [DL Alg](spot://dlalg),
+  , [DL Topic](spot://dltopic), ,
+  DELS: [[DLF]], ,,,, ,,, , , , ,, , , , , , , , , , , , , , , ,, , , ,, , ,,[[LRM]], ,, , ,, , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , ,[DL Activation Obsidian](spot://dlactivationobsidian), [DL Obsidian](spot://dlobsidian), [DL Visualization Obsidian](spot://dlvisualizationobsidian),[[DL Alg]], [[DL Topic]], , , , , , , , ,
+  , , ,
   , [DL Activation Note](spot://dlactivationnote), [DL Alg Note](spot://dlalgnote)
   , [DL Note](spot://dlnote), [DL Topic Note](spot://dltopicnote)
   , [DL Visualization Note](spot://dlvisualizationnote), 
-  DELS: [[DLF]], [[DL Optim]],[[DL Opto]],[[Torch Tensor]],[[Tensor]], [[DL Opto]],[[DL Visualize]],[[DL Strat]], [[DL Opto]], [[Torch Tensor]], [[Tensor]], [[DL Opto]],[[RR/DL/DLF/DL Strategy]], [[DL Optim]], [[DL Optim]], [[DL Data Loading]], [[DL Notation]], [[DL Areas]], [[DL Optim]], [[DL Analyze]], [[DL Examples]], [[DL Template]], [[DL Optim]], [[DL Optim]], [[DL Visualize]], [[DL Optim]], [[DL Visualize]], [[DL torch.optim]],[[Feed Forward Layer]], [[RAG]], [[LSTM]], [[LLM]],[[Regularization]], [[DL Theory]], [[ReLU]],[[DL proj]],[[LRM]], [[LLM]],
+  DELS: [[DLF]], [[DL Optim]],[[DL Opto]],[[Torch Tensor]],[[Tensor]], [[DL Opto]],[[DL Visualize]],[[DL Strat]], [[DL Opto]], [[Torch Tensor]], [[Tensor]], [[DL Opto]],[[RR/DL/DLF/DL Strategy]], [[DL Optim]], [[DL Optim]], [[DL Data Loading]], [[DL Notation]], [[DL Areas]], [[DL Optim]], [[DL Analyze]], [[DL Examples]], [[DL Template]], [[DL Optim]], [[DL Optim]], [[DL Visualize]], [[DL Optim]], [[DL Visualize]], [[DL torch.optim]],[[Feed Forward Layer]], [[RAG]], [[LSTM]], [[LLM]],[[Regularization]], [[DL Theory]], [[ReLU]],[[DL proj]],[[LRM]], [[LLM]],[DL Activation Note](spot://dlactivationnote), [DL Note](spot://dlnote), [DL Visualization Note](spot://dlvisualizationnote),[[DL Optim]], [[DL Opto]], [[Torch Tensor]], [[Tensor]], [[DL Opto]], [[DL Visualize]], [[DL Strat]], [[DL Opto]], [[Torch Tensor]], [[Tensor]], [[DL Opto]], [[RR/DL/DLF/DL Strategy]], [[DL Optim]], [[DL Optim]], [[DL Data Loading]], [[DL Notation]], [[DL Areas]], [[DL Optim]], [[DL Analyze]], [[DL Examples]], [[DL Template]], [[DL Optim]], [[DL Optim]], [[DL Visualize]], [[DL Optim]], [[DL Visualize]], [[DL torch.optim]], [[Feed Forward Layer]], [[RAG]], [[LSTM]], [[LLM]], [[Regularization]], [[DL Theory]], [[ReLU]], [[DL proj]], [[LLM]],[DL Activation Obsidian](spot://dlactivationobsidian), [DL Obsidian](spot://dlobsidian), [DL Visualization Obsidian](spot://dlvisualizationobsidian),[[DL Alg]], [[DL Topic]], [DL Alg Note](spot://dlalgnote), [DL Topic Note](spot://dltopicnote), [DL Activation Note](spot://dlactivationnote), [DL Note](spot://dlnote), [DL Visualization Note](spot://dlvisualizationnote), [DL Activation Note](spot://dlactivationnote), [DL Note](spot://dlnote), [DL Visualization Note](spot://dlvisualizationnote),[[DL Optim]], [[DL Opto]], [[Torch Tensor]], [[Tensor]], [[DL Opto]], [[DL Visualize]], [[DL Strat]], [[DL Opto]], [[Torch Tensor]], [[Tensor]], [[DL Opto]], [[RR/DL/DLF/DL Strategy]], [[DL Optim]], [[DL Optim]], [[DL Data Loading]], [[DL Notation]], [[DL Areas]], [[DL Optim]], [[DL Analyze]], [[DL Examples]], [[DL Template]], [[DL Optim]], [[DL Optim]], [[DL Visualize]], [[DL Optim]], [[DL Visualize]], [[DL torch.optim]], [[Feed Forward Layer]], [[RAG]], [[LSTM]], [[LLM]], [[Regularization]], [[DL Theory]], [[ReLU]], [[DL proj]], [[LLM]], [[DL Optim]], [[DL Opto]], [[Torch Tensor]], [[Tensor]], [[DL Opto]], [[DL Visualize]], [[DL Strat]], [[DL Opto]], [[Torch Tensor]], [[Tensor]], [[DL Opto]], [[RR/DL/DLF/DL Strategy]], [[DL Optim]], [[DL Optim]], [[DL Data Loading]], [[DL Notation]], [[DL Areas]], [[DL Optim]], [[DL Analyze]], [[DL Examples]], [[DL Template]], [[DL Optim]], [[DL Optim]], [[DL Visualize]], [[DL Optim]], [[DL Visualize]], [[DL torch.optim]], [[Feed Forward Layer]], [[RAG]], [[LSTM]], [[LLM]], [[Regularization]], [[DL Theory]], [[ReLU]], [[DL proj]], [[LLM]],[DL Alg Note](spot://dlalgnote), [DL Topic Note](spot://dltopicnote),[DL Activation Note](spot://dlactivationnote), [DL Note](spot://dlnote), [DL Visualization Note](spot://dlvisualizationnote), [DL Activation Note](spot://dlactivationnote), [DL Note](spot://dlnote), [DL Visualization Note](spot://dlvisualizationnote), [DL Activation Note](spot://dlactivationnote), [DL Note](spot://dlnote), [DL Visualization Note](spot://dlvisualizationnote), [DL Activation Note](spot://dlactivationnote), [DL Note](spot://dlnote), [DL Visualization Note](spot://dlvisualizationnote), [DL Alg Note](spot://dlalgnote), [DL Topic Note](spot://dltopicnote),
 
 [[DL Areas]]
 

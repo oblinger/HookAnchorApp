@@ -1,5 +1,12 @@
 .[[Runway]].
+  , ,
+  , ,
+  , ,
+  , [Runway Obsidian](spot://runwayobsidian),
+  DELS: ,[Runway Obsidian](spot://runwayobsidian),
+  , ,
   , [Runway Note](spot://runwaynote), 
+  DELS: [Runway Note](spot://runwaynote),[Runway Obsidian](spot://runwayobsidian),[Runway Note](spot://runwaynote),[Runway Note](spot://runwaynote),
 
 # Top
 #### kind: StartAI

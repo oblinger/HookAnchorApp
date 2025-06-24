@@ -1,5 +1,12 @@
 .[[Meeting]].
+  , ,
+  , ,
+  , ,
+  , [Meeting Obsidian](spot://meetingobsidian),
+  DELS: ,[Meeting Obsidian](spot://meetingobsidian),
+  , ,
   , [Meeting Note](spot://meetingnote), 
+  DELS: [Meeting Note](spot://meetingnote),[Meeting Obsidian](spot://meetingobsidian),[Meeting Note](spot://meetingnote),[Meeting Note](spot://meetingnote),
 
 
 :: [[2024-06-13 - Juan EC2 setup]]

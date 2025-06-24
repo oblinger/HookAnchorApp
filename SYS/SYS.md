@@ -5,10 +5,10 @@
   My KBD:		[[KBD Shortcuts]], [[KBD Obsidian Keys]], [[KBD Global Keys]], [[KBD Notion]],
   SYSTEMS:	[[SYS Android]], [[SYS Disks]], ,
   :				[[OBS]],
-  [[SYS Hacks]]:	[[Hack]], [[Automation]], [NEU Folder](spot://neufolder), ,
+  :	[[Hack]], [[Automation]], [NEU Folder](spot://neufolder), ,
 - [[SYS Dashboards]]	-
 - [[SYS Keyboard Setup]]
-- [[SYS Misc]]			-
+- 			-
 - [[SYS Notations]]		-
 - [[SYS Setup]]			-
 - [[KBD Shortcuts]]		-
@@ -16,9 +16,21 @@
   , [Bard Page](spot://bardpage), , ,
   , [[Notifications]],
   , [[Closet]],  [[MAC]],
+  , ,
+  , ,
+  , ,
+  DELS: ,,,
+  , ,
+  DELS: ,,,,
+  , [SYS Hacks Obsidian](spot://syshacksobsidian), [SYS Misc Obsidian](spot://sysmiscobsidian)
+  , [SYS Obsidian](spot://sysobsidian),
+  DELS: ,,,,, , ,[SYS Obsidian](spot://sysobsidian),
+  , [SYS Hacks](spot://syshacks), [SYS Misc](spot://sysmisc), ,
+  DELS: ,,,,, , ,[SYS Obsidian](spot://sysobsidian),[[SYS Hacks]], [[SYS Misc]], , , , ,
+  , , ,
   , [SYS Hacks Note](spot://syshacksnote), [SYS Misc Note](spot://sysmiscnote)
   , [SYS Note](spot://sysnote), 
-  DELS: [[BinProj]],[[SYS Github Webpage]],[[KM]],
+  DELS: [[BinProj]],[[SYS Github Webpage]],[[KM]],[SYS Note](spot://sysnote),[[BinProj]], [[SYS Github Webpage]], [[KM]],[SYS Obsidian](spot://sysobsidian),[[SYS Hacks]], [[SYS Misc]], [SYS Hacks Note](spot://syshacksnote), [SYS Misc Note](spot://sysmiscnote), [SYS Note](spot://sysnote), [SYS Note](spot://sysnote),[[BinProj]], [[SYS Github Webpage]], [[KM]], [[BinProj]], [[SYS Github Webpage]], [[KM]],[SYS Hacks Note](spot://syshacksnote), [SYS Misc Note](spot://sysmiscnote),[SYS Note](spot://sysnote), [SYS Note](spot://sysnote), [SYS Note](spot://sysnote), [SYS Note](spot://sysnote), [SYS Hacks Note](spot://syshacksnote), [SYS Misc Note](spot://sysmiscnote),
 
 - [[@Github]], [[Spot]], 
 

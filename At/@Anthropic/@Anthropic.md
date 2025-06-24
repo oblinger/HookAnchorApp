@@ -1,6 +1,13 @@
 .[[@Anthropic]].
   [[Claude]],
+  , ,
+  , ,
+  , ,
+  , [@Anthropic Obsidian](spot://@anthropicobsidian),
+  DELS: ,[@Anthropic Obsidian](spot://@anthropicobsidian),
+  , ,
   , [@Anthropic Note](spot://@anthropicnote), 
+  DELS: [@Anthropic Note](spot://@anthropicnote),[@Anthropic Obsidian](spot://@anthropicobsidian),[@Anthropic Note](spot://@anthropicnote),[@Anthropic Note](spot://@anthropicnote),
 
 #pp  
 

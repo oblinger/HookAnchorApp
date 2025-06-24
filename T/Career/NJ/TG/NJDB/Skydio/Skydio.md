@@ -1,5 +1,12 @@
 .[[Skydio]].
+  , ,
+  , ,
+  , ,
+  , [Skydio Obsidian](spot://skydioobsidian),
+  DELS: ,[Skydio Obsidian](spot://skydioobsidian),
+  , ,
   , [Skydio Note](spot://skydionote), 
+  DELS: [Skydio Note](spot://skydionote),[Skydio Obsidian](spot://skydioobsidian),[Skydio Note](spot://skydionote),[Skydio Note](spot://skydionote),
 
 # Top
 #### kind: StartAI

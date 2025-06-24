@@ -5,8 +5,17 @@
   , [[DL Activation]], [[DL Visualization]],
   , [[DL Initialization]],
   , [[DL Strategy]],
+  , ,
+  , ,
+  DELS: ,
+  , ,
+  DELS: ,,
+  , [DLF Obsidian](spot://dlfobsidian),
+  DELS: ,,,[DLF Obsidian](spot://dlfobsidian),
+  , ,
+  DELS: ,,,[DLF Obsidian](spot://dlfobsidian),, ,
   , [DLF Note](spot://dlfnote), 
-  DELS: [[RR/DL/DLF/DL Strategy]],
+  DELS: [[RR/DL/DLF/DL Strategy]],[DLF Note](spot://dlfnote),[[RR/DL/DLF/DL Strategy]],[DLF Obsidian](spot://dlfobsidian),[DLF Note](spot://dlfnote), [DLF Note](spot://dlfnote),[[RR/DL/DLF/DL Strategy]], [[RR/DL/DLF/DL Strategy]],[DLF Note](spot://dlfnote), [DLF Note](spot://dlfnote), [DLF Note](spot://dlfnote), [DLF Note](spot://dlfnote),
 
 
 Deep Learning Framework

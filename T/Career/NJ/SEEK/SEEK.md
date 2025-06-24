@@ -6,8 +6,15 @@
   [[SEEK Cover Letter Terms]],
   , [[SEEK Interviews]],
   , [[SEEK Info]],
-  , [SEEK Note](spot://seeknote), 
+  , ,
+  , ,
   DELS: [[SEEK Info]],
+  , ,
+  , [SEEK Obsidian](spot://seekobsidian),
+  DELS: [[SEEK Info]],,[SEEK Obsidian](spot://seekobsidian),
+  , ,
+  , [SEEK Note](spot://seeknote), 
+  DELS: [[SEEK Info]],[SEEK Note](spot://seeknote),[SEEK Obsidian](spot://seekobsidian),[SEEK Note](spot://seeknote),[SEEK Note](spot://seeknote),
 
 
 - [[NJ Questions]], 

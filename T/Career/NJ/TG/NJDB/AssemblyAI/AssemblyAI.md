@@ -1,5 +1,12 @@
 .[[AssemblyAI]].
+  , ,
+  , ,
+  , ,
+  , [AssemblyAI Obsidian](spot://assemblyaiobsidian),
+  DELS: ,[AssemblyAI Obsidian](spot://assemblyaiobsidian),
+  , ,
   , [AssemblyAI Note](spot://assemblyainote), 
+  DELS: [AssemblyAI Note](spot://assemblyainote),[AssemblyAI Obsidian](spot://assemblyaiobsidian),[AssemblyAI Note](spot://assemblyainote),[AssemblyAI Note](spot://assemblyainote),
 
 # Top
 #### kind: BigAI

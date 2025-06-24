@@ -1,5 +1,12 @@
 .[[SoundHound]].
+  , ,
+  , ,
+  , ,
+  , [SoundHound Obsidian](spot://soundhoundobsidian),
+  DELS: ,[SoundHound Obsidian](spot://soundhoundobsidian),
+  , ,
   , [SoundHound Note](spot://soundhoundnote), 
+  DELS: [SoundHound Note](spot://soundhoundnote),[SoundHound Obsidian](spot://soundhoundobsidian),[SoundHound Note](spot://soundhoundnote),[SoundHound Note](spot://soundhoundnote),
 
 # Top
 #### kind: Big

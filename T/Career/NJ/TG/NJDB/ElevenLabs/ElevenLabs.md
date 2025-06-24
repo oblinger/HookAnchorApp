@@ -1,5 +1,12 @@
 .[[ElevenLabs]].
+  , ,
+  , ,
+  , ,
+  , [ElevenLabs Obsidian](spot://elevenlabsobsidian),
+  DELS: ,[ElevenLabs Obsidian](spot://elevenlabsobsidian),
+  , ,
   , [ElevenLabs Note](spot://elevenlabsnote), 
+  DELS: [ElevenLabs Note](spot://elevenlabsnote),[ElevenLabs Obsidian](spot://elevenlabsobsidian),[ElevenLabs Note](spot://elevenlabsnote),[ElevenLabs Note](spot://elevenlabsnote),
 
 # Top
 #### kind: BigAI

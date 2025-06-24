@@ -1,5 +1,12 @@
 .[[Search]].
+  , ,
+  , ,
+  , ,
+  , [Search Obsidian](spot://searchobsidian),
+  DELS: ,[Search Obsidian](spot://searchobsidian),
+  , ,
   , [Search Note](spot://searchnote), 
+  DELS: [Search Note](spot://searchnote),[Search Obsidian](spot://searchobsidian),[Search Note](spot://searchnote),[Search Note](spot://searchnote),
 
 
 

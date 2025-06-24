@@ -1,5 +1,12 @@
 .[[Etcembly]].
+  , ,
+  , ,
+  , ,
+  , [Etcembly Obsidian](spot://etcemblyobsidian),
+  DELS: ,[Etcembly Obsidian](spot://etcemblyobsidian),
+  , ,
   , [Etcembly Note](spot://etcemblynote), 
+  DELS: [Etcembly Note](spot://etcemblynote),[Etcembly Obsidian](spot://etcemblyobsidian),[Etcembly Note](spot://etcemblynote),[Etcembly Note](spot://etcemblynote),
 
 # Top
 #### kind: BigAI

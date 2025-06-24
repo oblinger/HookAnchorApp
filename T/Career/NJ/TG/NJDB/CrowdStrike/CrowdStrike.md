@@ -1,5 +1,12 @@
 .[[CrowdStrike]].
+  , ,
+  , ,
+  , ,
+  , [CrowdStrike Obsidian](spot://crowdstrikeobsidian),
+  DELS: ,[CrowdStrike Obsidian](spot://crowdstrikeobsidian),
+  , ,
   , [CrowdStrike Note](spot://crowdstrikenote), 
+  DELS: [CrowdStrike Note](spot://crowdstrikenote),[CrowdStrike Obsidian](spot://crowdstrikeobsidian),[CrowdStrike Note](spot://crowdstrikenote),[CrowdStrike Note](spot://crowdstrikenote),
 
 # Top
 #### kind: Big

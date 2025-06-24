@@ -1,5 +1,12 @@
 .[[@Vanguard]].
+  , ,
+  , ,
+  , ,
+  , [@Vanguard Obsidian](spot://@vanguardobsidian),
+  DELS: ,[@Vanguard Obsidian](spot://@vanguardobsidian),
+  , ,
   , [@Vanguard Note](spot://@vanguardnote), 
+  DELS: [@Vanguard Note](spot://@vanguardnote),[@Vanguard Obsidian](spot://@vanguardobsidian),[@Vanguard Note](spot://@vanguardnote),[@Vanguard Note](spot://@vanguardnote),
 
 
 ## Dean Sprague CFP - Fiduciary
@@ -69,7 +76,7 @@ ROLLOVER IRA
 - - - - - - - - --202,718.55
 
 
-# Log  (see [[FIN Log]])
+# Log  (see [[FIN.Log]])
 
 
 

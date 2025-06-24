@@ -1,6 +1,13 @@
 .[[DocTmux]].
   , [[tmux Cheatsheet]],
+  , ,
+  , ,
+  , ,
+  , [DocTmux Obsidian](spot://doctmuxobsidian),
+  DELS: ,[DocTmux Obsidian](spot://doctmuxobsidian),
+  , ,
   , [DocTmux Note](spot://doctmuxnote), 
+  DELS: [DocTmux Note](spot://doctmuxnote),[DocTmux Obsidian](spot://doctmuxobsidian),[DocTmux Note](spot://doctmuxnote),[DocTmux Note](spot://doctmuxnote),
 
 
 

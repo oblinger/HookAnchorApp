@@ -1,5 +1,12 @@
 .[[@Dexafit]].
+  , ,
+  , ,
+  , ,
+  , [@Dexafit Obsidian](spot://@dexafitobsidian),
+  DELS: ,[@Dexafit Obsidian](spot://@dexafitobsidian),
+  , ,
   , [@Dexafit Note](spot://@dexafitnote), 
+  DELS: [@Dexafit Note](spot://@dexafitnote),[@Dexafit Obsidian](spot://@dexafitobsidian),[@Dexafit Note](spot://@dexafitnote),[@Dexafit Note](spot://@dexafitnote),
 
 =[[Corp]]  
 

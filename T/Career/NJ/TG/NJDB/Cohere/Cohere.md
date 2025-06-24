@@ -1,5 +1,12 @@
 .[[Cohere]].
+  , ,
+  , ,
+  , ,
+  , [Cohere Obsidian](spot://cohereobsidian),
+  DELS: ,[Cohere Obsidian](spot://cohereobsidian),
+  , ,
   , [Cohere Note](spot://coherenote), 
+  DELS: [Cohere Note](spot://coherenote),[Cohere Obsidian](spot://cohereobsidian),[Cohere Note](spot://coherenote),[Cohere Note](spot://coherenote),
 
 # Top
 #### kind: TopGen

@@ -1,8 +1,17 @@
 .[[MyMgr]].
   ,   ,
   , ,
+  , ,
+  , ,
+  DELS: ,,
+  , ,
+  DELS: ,,,
+  , [MyMgr Obsidian](spot://mymgrobsidian),
+  DELS: ,,,, ,[MyMgr Obsidian](spot://mymgrobsidian),
+  , ,
+  DELS: ,,,, ,[MyMgr Obsidian](spot://mymgrobsidian),, ,
   , [MyMgr Note](spot://mymgrnote), 
-  DELS: [[Nanny]],[[Nanny]],
+  DELS: [[Nanny]],[[Nanny]],[MyMgr Note](spot://mymgrnote),[[Nanny]], [[Nanny]],[MyMgr Obsidian](spot://mymgrobsidian),[MyMgr Note](spot://mymgrnote), [MyMgr Note](spot://mymgrnote),[[Nanny]], [[Nanny]], [[Nanny]], [[Nanny]],[MyMgr Note](spot://mymgrnote), [MyMgr Note](spot://mymgrnote), [MyMgr Note](spot://mymgrnote), [MyMgr Note](spot://mymgrnote),
 
 
 :: [[Nanny]]

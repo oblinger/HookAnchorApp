@@ -1,5 +1,12 @@
 .[[DEEP_BOOT]].
+  , ,
+  , ,
+  , ,
+  , [DEEP_BOOT Obsidian](spot://deepbootobsidian),
+  DELS: ,[DEEP_BOOT Obsidian](spot://deepbootobsidian),
+  , ,
   , [DEEP_BOOT Note](spot://deepbootnote), 
+  DELS: [DEEP_BOOT Note](spot://deepbootnote),[DEEP_BOOT Obsidian](spot://deepbootobsidian),[DEEP_BOOT Note](spot://deepbootnote),[DEEP_BOOT Note](spot://deepbootnote),
 
 
 # ### LOG ###

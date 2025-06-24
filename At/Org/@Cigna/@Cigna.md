@@ -1,5 +1,12 @@
 .[[@Cigna]].
+  , ,
+  , ,
+  , ,
+  , [@Cigna Obsidian](spot://@cignaobsidian),
+  DELS: ,[@Cigna Obsidian](spot://@cignaobsidian),
+  , ,
   , [@Cigna Note](spot://@cignanote), 
+  DELS: [@Cigna Note](spot://@cignanote),[@Cigna Obsidian](spot://@cignaobsidian),[@Cigna Note](spot://@cignanote),[@Cigna Note](spot://@cignanote),
 
 #pp  
 

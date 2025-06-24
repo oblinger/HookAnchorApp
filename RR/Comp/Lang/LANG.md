@@ -1,8 +1,15 @@
 .[[LANG]].
   , [[haskell]],
   , ,
+  , ,
+  , ,
+  DELS: ,
+  , ,
+  , [LANG Obsidian](spot://langobsidian),
+  DELS: ,,[LANG Obsidian](spot://langobsidian),
+  , ,
   , [LANG Note](spot://langnote), 
-  DELS: [LANG Note](spot://langnote),
+  DELS: [LANG Note](spot://langnote),[LANG Note](spot://langnote),[LANG Obsidian](spot://langobsidian),[LANG Note](spot://langnote),[LANG Note](spot://langnote),
 
 
 

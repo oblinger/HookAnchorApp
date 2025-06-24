@@ -5,9 +5,20 @@ alias: Quick Add Plugin
 
 .[[QUICKADD]].
   ADDS:   [[QuickAdd 1Pass]], [[QuickAdd App]], [[QuickAdd Doc]], , [[QuickAdd General]], [[QuickAdd Notion]], [[QuickAdd Shell]], [[QuickAdd Webpage]]
-  , [QuickAdd Folder Note](spot://quickaddfoldernote),
-  , [QUICKADD Note](spot://quickaddnote), 
-  DELS: [[QuickAdd Folder]],
+  , ,
+  , ,
+  ,
+  , ,
+  DELS: ,
+  , , ,
+  DELS: ,, ,
+  , [QuickAdd Folder Obsidian](spot://quickaddfolderobsidian)
+  , [QUICKADD Obsidian](spot://quickaddobsidian),
+  DELS: ,, ,,[QuickAdd Folder Obsidian](spot://quickaddfolderobsidian), [QUICKADD Obsidian](spot://quickaddobsidian),
+  , , ,
+  DELS: ,, ,,[QuickAdd Folder Obsidian](spot://quickaddfolderobsidian), [QUICKADD Obsidian](spot://quickaddobsidian),, , , ,
+  , [QuickAdd Folder Note](spot://quickaddfoldernote), [QUICKADD Note](spot://quickaddnote), 
+  DELS: [[QuickAdd Folder]],[QuickAdd Folder Note](spot://quickaddfoldernote), [QUICKADD Note](spot://quickaddnote),[[QuickAdd Folder]],[QuickAdd Folder Obsidian](spot://quickaddfolderobsidian), [QUICKADD Obsidian](spot://quickaddobsidian),[QuickAdd Folder Note](spot://quickaddfoldernote), [QUICKADD Note](spot://quickaddnote), [QuickAdd Folder Note](spot://quickaddfoldernote), [QUICKADD Note](spot://quickaddnote),[[QuickAdd Folder]], [[QuickAdd Folder]],[QuickAdd Folder Note](spot://quickaddfoldernote), [QUICKADD Note](spot://quickaddnote), [QuickAdd Folder Note](spot://quickaddfoldernote), [QUICKADD Note](spot://quickaddnote), [QuickAdd Folder Note](spot://quickaddfoldernote), [QUICKADD Note](spot://quickaddnote), [QuickAdd Folder Note](spot://quickaddfoldernote), [QUICKADD Note](spot://quickaddnote),
 
 
 

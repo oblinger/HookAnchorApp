@@ -1,12 +1,12 @@
-.[[FIN Tracking]].  [[FIN]] 
+.[[FIN.Tracking]].  [[FIN]] 
    -
   [[FIN Tracking Procedures]], [[FIN Track Transactions]], 
   DELS: [[FIN Tracking Procedures]],
   DELS: [[FIN Tracking Procedures]],[[FIN Tracking Procedure]], 
 
-- [[FIN Budget]]:		
-- [[FIN Flows]]:
-- [[FIN Recurring]]:		List of all recurring payments
+- [[FIN.Budget]]:		
+- [[FIN.Flows]]:
+- [[FIN.Recurring]]:		List of all recurring payments
 - [[FIN Rocket]]:			Used for monthly tracking of transactions  (ALL CARDS)
 - [[FIN Tracking Procedures]]:	Tracking of macro cash flows
 - [[FIN Track Transactions]]:	

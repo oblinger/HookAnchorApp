@@ -1,5 +1,12 @@
 .[[Chroma]].
+  , ,
+  , ,
+  , ,
+  , [Chroma Obsidian](spot://chromaobsidian),
+  DELS: ,[Chroma Obsidian](spot://chromaobsidian),
+  , ,
   , [Chroma Note](spot://chromanote), 
+  DELS: [Chroma Note](spot://chromanote),[Chroma Obsidian](spot://chromaobsidian),[Chroma Note](spot://chromanote),[Chroma Note](spot://chromanote),
 
 # Top
 #### kind: StartAI

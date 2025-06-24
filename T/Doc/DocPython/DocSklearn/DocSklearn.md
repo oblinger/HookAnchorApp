@@ -1,6 +1,13 @@
 .[[DocSklearn]].
   , [[DocSciKit]], [[Sklearn Metrics]],
+  , ,
+  , ,
+  , ,
+  , [DocSklearn Obsidian](spot://docsklearnobsidian),
+  DELS: ,[DocSklearn Obsidian](spot://docsklearnobsidian),
+  , ,
   , [DocSklearn Note](spot://docsklearnnote), 
+  DELS: [DocSklearn Note](spot://docsklearnnote),[DocSklearn Obsidian](spot://docsklearnobsidian),[DocSklearn Note](spot://docsklearnnote),[DocSklearn Note](spot://docsklearnnote),
 
 
 

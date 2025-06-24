@@ -14,7 +14,7 @@ Budget; Move money; [[2024-01 Retirement Planning|Merrill]]
 - Change alta vista
 - Get QL card set up.
 - Verify Autopay: DOwells, QLwells, Sapphire, 
-- [[FIN Flows]] 
+- [[FIN.Flows]] 
 
 
 Schwab Feedback

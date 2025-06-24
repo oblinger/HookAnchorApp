@@ -1,5 +1,12 @@
 .[[DocR]].
+  , ,
+  , ,
+  , ,
+  , [DocR Obsidian](spot://docrobsidian),
+  DELS: ,[DocR Obsidian](spot://docrobsidian),
+  , ,
   , [DocR Note](spot://docrnote), 
+  DELS: [DocR Note](spot://docrnote),[DocR Obsidian](spot://docrobsidian),[DocR Note](spot://docrnote),[DocR Note](spot://docrnote),
 
   [__DocR__](__DocR__.md)
 

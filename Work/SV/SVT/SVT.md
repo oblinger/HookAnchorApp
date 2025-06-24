@@ -3,7 +3,14 @@
   .		[[SVT Sentry]], [[SVT Slack]],
   [[SVT Virtual Box Notes]],
   , [SV Clickup Page](spot://svclickuppage),
+  , ,
+  , ,
+  , ,
+  , [SVT Obsidian](spot://svtobsidian),
+  DELS: ,[SVT Obsidian](spot://svtobsidian),
+  , ,
   , [SVT Note](spot://svtnote), 
+  DELS: [SVT Note](spot://svtnote),[SVT Obsidian](spot://svtobsidian),[SVT Note](spot://svtnote),[SVT Note](spot://svtnote),
 
 
 

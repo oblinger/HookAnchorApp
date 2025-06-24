@@ -3,8 +3,17 @@
   ADDS:   [[Truth]],
   ADDS:   ,
   , [Forum.PPTX Doc](spot://forum.pptxdoc),
+  , ,
+  , ,
+  DELS: ,
+  , ,
+  DELS: ,,
+  , [Forum Obsidian](spot://forumobsidian),
+  DELS: ,,,[Forum Obsidian](spot://forumobsidian),
+  , ,
+  DELS: ,,,[Forum Obsidian](spot://forumobsidian),, ,
   , [Forum Note](spot://forumnote), 
-  DELS: [Foru0m.PPTX Doc](spot://forum.pptxdoc),
+  DELS: [Foru0m.PPTX Doc](spot://forum.pptxdoc),[Forum Note](spot://forumnote),[Foru0m.PPTX Doc](spot://forum.pptxdoc),[Forum Obsidian](spot://forumobsidian),[Forum Note](spot://forumnote), [Forum Note](spot://forumnote),[Foru0m.PPTX Doc](spot://forum.pptxdoc), [Foru0m.PPTX Doc](spot://forum.pptxdoc),[Forum Note](spot://forumnote), [Forum Note](spot://forumnote), [Forum Note](spot://forumnote), [Forum Note](spot://forumnote),
 
 
 

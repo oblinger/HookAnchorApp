@@ -1,5 +1,12 @@
 .[[Deepcell]].
+  , ,
+  , ,
+  , ,
+  , [Deepcell Obsidian](spot://deepcellobsidian),
+  DELS: ,[Deepcell Obsidian](spot://deepcellobsidian),
+  , ,
   , [Deepcell Note](spot://deepcellnote), 
+  DELS: [Deepcell Note](spot://deepcellnote),[Deepcell Obsidian](spot://deepcellobsidian),[Deepcell Note](spot://deepcellnote),[Deepcell Note](spot://deepcellnote),
 
 # Top
 #### kind: StartAI

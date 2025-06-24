@@ -1,5 +1,12 @@
 .[[Tavus]].
+  , ,
+  , ,
+  , ,
+  , [Tavus Obsidian](spot://tavusobsidian),
+  DELS: ,[Tavus Obsidian](spot://tavusobsidian),
+  , ,
   , [Tavus Note](spot://tavusnote), 
+  DELS: [Tavus Note](spot://tavusnote),[Tavus Obsidian](spot://tavusobsidian),[Tavus Note](spot://tavusnote),[Tavus Note](spot://tavusnote),
 
 # Top
 #### kind: BigAI

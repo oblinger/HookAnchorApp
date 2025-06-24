@@ -71,8 +71,17 @@
   , [[Crm]], [[Org]], [[People]],
   , [[@Brian Rife]],
   , [[@Adobe]], [[@Thumbtack]],
-  , [[@JobRight.AI]], [At Note](spot://atnote), 
-  DELS: [AT Note](spot://atnote), [[CRM]], [[ORG]], [[PEOPLE]],[[@Dexafit]],[[@Brian Rife]],
+  , [[@JobRight.AI]], ,
+  , ,
+  DELS: , , , ,,[[@Brian Rife]],
+  , ,
+  DELS: , , , ,,[[@Brian Rife]],,
+  , [At Obsidian](spot://atobsidian),
+  DELS: , , , ,,[[@Brian Rife]],,, , , , ,[At Obsidian](spot://atobsidian),
+  , ,
+  DELS: , , , ,,[[@Brian Rife]],,, , , , ,[At Obsidian](spot://atobsidian),, ,
+  , [At Note](spot://atnote), 
+  DELS: [AT Note](spot://atnote), [[CRM]], [[ORG]], [[PEOPLE]],[[@Dexafit]],[[@Brian Rife]],[At Note](spot://atnote),[AT Note](spot://atnote), [[CRM]], [[ORG]], [[PEOPLE]], [[@Dexafit]],[At Obsidian](spot://atobsidian),[At Note](spot://atnote), [At Note](spot://atnote),[AT Note](spot://atnote), [[CRM]], [[ORG]], [[PEOPLE]], [[@Dexafit]], [AT Note](spot://atnote), [[CRM]], [[ORG]], [[PEOPLE]], [[@Dexafit]],[At Note](spot://atnote), [At Note](spot://atnote), [At Note](spot://atnote), [At Note](spot://atnote),
 
 .[[AT]].
   , [[@Abhishek Kapatkar]], [[@Abhishek Verma]], [[@Acorn Pooley]], [[@Aetion]], [[@Agustin Polito]]

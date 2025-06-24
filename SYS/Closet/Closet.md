@@ -1,6 +1,13 @@
 .[[Closet]].
   , [[Empty]], [[PAGE]], [test 2345](spot://test2345), [test9449](spot://test9449),
+  , ,
+  , ,
+  , ,
+  , [Closet Obsidian](spot://closetobsidian),
+  DELS: ,[Closet Obsidian](spot://closetobsidian),
+  , ,
   , [Closet Note](spot://closetnote), 
+  DELS: [Closet Note](spot://closetnote),[Closet Obsidian](spot://closetobsidian),[Closet Note](spot://closetnote),[Closet Note](spot://closetnote),
 
   [[Empty]]:
   [[PAGE]]:

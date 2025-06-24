@@ -1,5 +1,12 @@
 .[[DeepMind]].
+  , ,
+  , ,
+  , ,
+  , [DeepMind Obsidian](spot://deepmindobsidian),
+  DELS: ,[DeepMind Obsidian](spot://deepmindobsidian),
+  , ,
   , [DeepMind Note](spot://deepmindnote), 
+  DELS: [DeepMind Note](spot://deepmindnote),[DeepMind Obsidian](spot://deepmindobsidian),[DeepMind Note](spot://deepmindnote),[DeepMind Note](spot://deepmindnote),
 
 # Top
 #### kind: TopHard

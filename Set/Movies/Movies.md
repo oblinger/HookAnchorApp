@@ -1,5 +1,12 @@
 .[[Movies]].
+  , ,
+  , ,
+  , ,
+  , [Movies Obsidian](spot://moviesobsidian),
+  DELS: ,[Movies Obsidian](spot://moviesobsidian),
+  , ,
   , [Movies Note](spot://moviesnote), 
+  DELS: [Movies Note](spot://moviesnote),[Movies Obsidian](spot://moviesobsidian),[Movies Note](spot://moviesnote),[Movies Note](spot://moviesnote),
 
 
 [[Eli Movies]] 

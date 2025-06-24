@@ -1,5 +1,12 @@
 .[[Replika]].
+  , ,
+  , ,
+  , ,
+  , [Replika Obsidian](spot://replikaobsidian),
+  DELS: ,[Replika Obsidian](spot://replikaobsidian),
+  , ,
   , [Replika Note](spot://replikanote), 
+  DELS: [Replika Note](spot://replikanote),[Replika Obsidian](spot://replikaobsidian),[Replika Note](spot://replikanote),[Replika Note](spot://replikanote),
 
 # Top
 #### kind: StartAI

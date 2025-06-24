@@ -45,11 +45,10 @@
             [[RES]]: [[Bio]],	[[RES Examples]],	
             [[NJ]]: [[SEEK]],	[[NJ22]],	[[NJ16]],	
                 [[TG]]: 
-        [[FIN]]: [[Taxes]],	[[FIN Tracking]],	
-            [[FIN Log]]: 
+        [[FIN]]: [[Taxes]],	[[FIN.Tracking]],	
             [[FIN Bills]]: [[PenFed]],	
             [[FIN Topics]]: [[RealEstate]],	
-            [[FIN Budget]]: 
+            [[FIN.Budget]]: 
         [[EduCorp]]: 
         [[Life]]: 
             [[Diary]]: 
@@ -87,7 +86,7 @@
             [[SV People]]: 
                 [[SV Individuals]]: 
             [[ww]]: [[2023-Reset-DanO-Role]],	
-                [[2023 SV Roles and Responsibilities]],	
+                [[2023 SV Roles and Responsibilities]],	[[2023 SV Patents]],	
             [[SV Strat]]: [[SV Roadmap]],	[[2023 Four Pillars]],	
             [[CV]]: [[CV Alg]],	[[CVP]],	[[Data]],	
             [[QQ]]: 

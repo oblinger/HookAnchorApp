@@ -1,5 +1,12 @@
 .[[Karaoke]].
+  , ,
+  , ,
+  , ,
+  , [Karaoke Obsidian](spot://karaokeobsidian),
+  DELS: ,[Karaoke Obsidian](spot://karaokeobsidian),
+  , ,
   , [Karaoke Note](spot://karaokenote), 
+  DELS: [Karaoke Note](spot://karaokenote),[Karaoke Obsidian](spot://karaokeobsidian),[Karaoke Note](spot://karaokenote),[Karaoke Note](spot://karaokenote),
 
 
 "Freedom"              -- Tyrone Wells -- when you let it go it'll come right back to you

@@ -1,5 +1,12 @@
 .[[haskell]].
+  , ,
+  , ,
+  , ,
+  , [haskell Obsidian](spot://haskellobsidian),
+  DELS: ,[haskell Obsidian](spot://haskellobsidian),
+  , ,
   , [haskell Note](spot://haskellnote), 
+  DELS: [haskell Note](spot://haskellnote),[haskell Obsidian](spot://haskellobsidian),[haskell Note](spot://haskellnote),[haskell Note](spot://haskellnote),
 
  [[TAGS/LANG]]
  

@@ -1,6 +1,13 @@
 .[[COMS]].
    , [[Calls]], [[COM Msg]], [[COM Next]] ([[CN]]),
+  , ,
+  , ,
+  , ,
+  , [COMS Obsidian](spot://comsobsidian),
+  DELS: ,[COMS Obsidian](spot://comsobsidian),
+  , ,
   , [COMS Note](spot://comsnote), 
+  DELS: [COMS Note](spot://comsnote),[COMS Obsidian](spot://comsobsidian),[COMS Note](spot://comsnote),[COMS Note](spot://comsnote),
 
 - [[CRM]], [[BOD]], 
 

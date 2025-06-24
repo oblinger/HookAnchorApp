@@ -9,9 +9,16 @@
   , [[@Github]], [[@Seneca]],
   , [[@Cigna]],
   , [[@Humanoid]],
-  , [Org Note](spot://orgnote), ,
-  , [[@RoboRock]], 
+  , , ,
+  , [[@RoboRock]],
+  , ,
   DELS: [[@RoboRock]],
+  , ,
+  , [Org Obsidian](spot://orgobsidian),
+  DELS: [[@RoboRock]],,[Org Obsidian](spot://orgobsidian),
+  , ,
+  , [Org Note](spot://orgnote), 
+  DELS: [[@RoboRock]],[Org Note](spot://orgnote),[Org Obsidian](spot://orgobsidian),[Org Note](spot://orgnote),[Org Note](spot://orgnote),
 
 .[[ORG]].
   , [[@Amazon]], [[@Apple]], [[@Citibank]], [[@Facebook]], , [[@Ginza Metrics]]

@@ -1,13 +1,22 @@
 .[[RR MGR]].  (See [[MGR]])
-  [[RR Business]], [[RR OKRs]], [[Startups Note]],
+  [[RR Business]], [[RR OKRs]], ,
   ,
   [[Para]], [[S.M.A.R.T]], [[S.T.A.R.]],
   , ,
   , ,
   DELS: ,
-  , [[RR Project Management]], 
+  , [[RR Project Management]],
   DELS: [[RR Project Management]],[[RR Project Management]],
-  DELS: [[RR Project Management]],[[RR Project Management]],[[Project Management]], 
+  , ,
+  DELS: [[RR Project Management]],[[RR Project Management]],,
+  , ,
+  DELS: [[RR Project Management]],[[RR Project Management]],,,
+  , [Startups Obsidian](spot://startupsobsidian),
+  DELS: [[RR Project Management]],[[RR Project Management]],,,,[Startups Obsidian](spot://startupsobsidian),
+  , ,
+  DELS: [[RR Project Management]],[[RR Project Management]],,,,[Startups Obsidian](spot://startupsobsidian),, ,
+  , [[Startups Note]], 
+  DELS: [[RR Project Management]],[[RR Project Management]],[[Project Management]],[[Startups Note]],[[Project Management]],[Startups Obsidian](spot://startupsobsidian),[[Startups Note]], [[Startups Note]],[[Project Management]], [[Project Management]],[[Startups Note]], [[Startups Note]], [[Startups Note]], [[Startups Note]],
 
 
 

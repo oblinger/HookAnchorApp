@@ -1,5 +1,12 @@
 .[[Microsoft]].
+  , ,
+  , ,
+  , ,
+  , [Microsoft Obsidian](spot://microsoftobsidian),
+  DELS: ,[Microsoft Obsidian](spot://microsoftobsidian),
+  , ,
   , [Microsoft Note](spot://microsoftnote), 
+  DELS: [Microsoft Note](spot://microsoftnote),[Microsoft Obsidian](spot://microsoftobsidian),[Microsoft Note](spot://microsoftnote),[Microsoft Note](spot://microsoftnote),
 
 # Top
 #### kind: Top

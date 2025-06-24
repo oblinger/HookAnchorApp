@@ -5,8 +5,17 @@
   ADDS:   ,
   ADDS:   [FileThis Folder](spot://filethisfolder), [FileThis Shell](spot://filethisshell), [[OLD 200x Weekly]], [[OLD 201x Weekly]], [[OLD 2020 Weekly]], [[OLD 2022 Weekly]],
   , , , ,
+  , ,
+  , ,
+  DELS: ,
+  , ,
+  DELS: ,,
+  , [Old Obsidian](spot://oldobsidian),
+  DELS: ,,,[Old Obsidian](spot://oldobsidian),
+  , ,
+  DELS: ,,,[Old Obsidian](spot://oldobsidian),, ,
   , [Old Note](spot://oldnote), 
-  DELS: [[Old Daily]],
+  DELS: [[Old Daily]],[Old Note](spot://oldnote),[[Old Daily]],[Old Obsidian](spot://oldobsidian),[Old Note](spot://oldnote), [Old Note](spot://oldnote),[[Old Daily]], [[Old Daily]],[Old Note](spot://oldnote), [Old Note](spot://oldnote), [Old Note](spot://oldnote), [Old Note](spot://oldnote),
 
 
 

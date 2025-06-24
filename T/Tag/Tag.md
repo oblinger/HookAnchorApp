@@ -4,8 +4,17 @@
   ADDS:   [[ACADEMIC]], [[CONSULTANT]], [[CORE]], [[FAANG]], , [[INFO_PAGE]], [[PE firm]], , [[RND]], [[ROBOTICS]], [[SOLID]], [[START]], , [[TECH]], [[VC]],
   ADDS:   [[COACH]], , [[DARPA]],
   ADDS:   ,
+  , ,
+  , ,
+  DELS: ,,,
+  , ,
+  DELS: ,,,,
+  , [Tag Obsidian](spot://tagobsidian),
+  DELS: ,,,,, , ,[Tag Obsidian](spot://tagobsidian),
+  , ,
+  DELS: ,,,,, , ,[Tag Obsidian](spot://tagobsidian),, ,
   , [Tag Note](spot://tagnote), 
-  DELS: [[COMP]],[[HACKERS]],[[TASK]],
+  DELS: [[COMP]],[[HACKERS]],[[TASK]],[Tag Note](spot://tagnote),[[COMP]], [[HACKERS]], [[TASK]],[Tag Obsidian](spot://tagobsidian),[Tag Note](spot://tagnote), [Tag Note](spot://tagnote),[[COMP]], [[HACKERS]], [[TASK]], [[COMP]], [[HACKERS]], [[TASK]],[Tag Note](spot://tagnote), [Tag Note](spot://tagnote), [Tag Note](spot://tagnote), [Tag Note](spot://tagnote),
 
 
 

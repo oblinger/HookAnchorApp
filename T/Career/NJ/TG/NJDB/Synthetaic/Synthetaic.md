@@ -1,5 +1,12 @@
 .[[Synthetaic]].
+  , ,
+  , ,
+  , ,
+  , [Synthetaic Obsidian](spot://synthetaicobsidian),
+  DELS: ,[Synthetaic Obsidian](spot://synthetaicobsidian),
+  , ,
   , [Synthetaic Note](spot://synthetaicnote), 
+  DELS: [Synthetaic Note](spot://synthetaicnote),[Synthetaic Obsidian](spot://synthetaicobsidian),[Synthetaic Note](spot://synthetaicnote),[Synthetaic Note](spot://synthetaicnote),
 
 # Top
 #### kind: BigAI

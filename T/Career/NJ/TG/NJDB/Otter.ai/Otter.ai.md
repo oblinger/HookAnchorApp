@@ -1,5 +1,12 @@
 .[[Otter.ai]].
+  , ,
+  , ,
+  , ,
+  , [Otter.ai Obsidian](spot://otter.aiobsidian),
+  DELS: ,[Otter.ai Obsidian](spot://otter.aiobsidian),
+  , ,
   , [Otter.ai Note](spot://otter.ainote), 
+  DELS: [Otter.ai Note](spot://otter.ainote),[Otter.ai Obsidian](spot://otter.aiobsidian),[Otter.ai Note](spot://otter.ainote),[Otter.ai Note](spot://otter.ainote),
 
 # Top
 #### kind: GenAI

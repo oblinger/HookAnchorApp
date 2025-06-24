@@ -1,5 +1,12 @@
 .[[Adept]].
+  , ,
+  , ,
+  , ,
+  , [Adept Obsidian](spot://adeptobsidian),
+  DELS: ,[Adept Obsidian](spot://adeptobsidian),
+  , ,
   , [Adept Note](spot://adeptnote), 
+  DELS: [Adept Note](spot://adeptnote),[Adept Obsidian](spot://adeptobsidian),[Adept Note](spot://adeptnote),[Adept Note](spot://adeptnote),
 
 # Top
 #### kind: StartAI

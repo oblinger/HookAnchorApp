@@ -1,5 +1,12 @@
 .[[Glean]].
+  , ,
+  , ,
+  , ,
+  , [Glean Obsidian](spot://gleanobsidian),
+  DELS: ,[Glean Obsidian](spot://gleanobsidian),
+  , ,
   , [Glean Note](spot://gleannote), 
+  DELS: [Glean Note](spot://gleannote),[Glean Obsidian](spot://gleanobsidian),[Glean Note](spot://gleannote),[Glean Note](spot://gleannote),
 
 # Top
 #### kind: StartAI

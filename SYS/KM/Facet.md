@@ -10,7 +10,7 @@
 | **S**       | Shared      | **XXXX Shared**      | Catch all instead of tool name.<br>External "Shared" tool, e.g. Notion, ... |
 | **F**       | Folder      | **XXXX Folder**      | Launches finder on local Folder (6)                                         |
 | **B**       | Box         | **XXXX Box**         | Drop box folder                                                             |
-| **G**       | Gdrive      | **XXXX Gdrive**      | Web folder (6)                                                              |
+| **G**       | Gdrive      | **XXXX Gdrive**      | Gdrive folder, or Gdoc, Gsheet, etc. document                               |
 | **C**       | Confluence  | **XXXX Confluence**  | Duplicates Code but maybe ok?                                               |
 | **O** **N** | Notes       | **XXXX Note**        | RENAME to "O" obsidian.  Main page if XXXX is also a prefix                 |
 |             |             |                      |                                                                             |

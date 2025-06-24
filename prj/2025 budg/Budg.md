@@ -1,11 +1,18 @@
 .[[Budg]].
+  , ,
+  , ,
+  , ,
+  , [Budg Obsidian](spot://budgobsidian),
+  DELS: ,[Budg Obsidian](spot://budgobsidian),
+  , ,
   , [Budg Note](spot://budgnote), 
+  DELS: [Budg Note](spot://budgnote),[Budg Obsidian](spot://budgobsidian),[Budg Note](spot://budgnote),[Budg Note](spot://budgnote),
 
 
 
 **Objective**: Script to process and display my financial transactions.
 
-**Usage**:  (See [[FIN Track Transactions]] or [[FIN Tracking]])
+**Usage**:  (See [[FIN Track Transactions]] or [[FIN.Tracking]])
 
 
 

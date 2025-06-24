@@ -15,8 +15,17 @@
   DELS: ,,,
   , [[Cocktails]], [[Enneagram Test]], [[Test88]],
   DELS: ,,,[[Test88]], [[Cocktails]], [[Enneagram Test]],
+  , ,
+  , ,
+  DELS: ,,,[[Test88]], [[Cocktails]], [[Enneagram Test]],, , , , ,,
+  , ,
+  DELS: ,,,[[Test88]], [[Cocktails]], [[Enneagram Test]],, , , , ,,,
+  , [Misc Obsidian](spot://miscobsidian),
+  DELS: ,,,[[Test88]], [[Cocktails]], [[Enneagram Test]],, , , , ,,,, , , , , , , , ,[Misc Obsidian](spot://miscobsidian),
+  , ,
+  DELS: ,,,[[Test88]], [[Cocktails]], [[Enneagram Test]],, , , , ,,,, , , , , , , , ,[Misc Obsidian](spot://miscobsidian),, ,
   , [Misc Note](spot://miscnote), 
-  DELS: [[Disks]],[[SYS Disks]],[K Folder](spot://kfolder),[[Test88]], [[Cocktails]], [[Enneagram Test]],[[Disks]], [[Hackers]], [[Disks]], [[SYS Disks]], [K Folder](spot://kfolder),[[Journaling]],
+  DELS: [[Disks]],[[SYS Disks]],[K Folder](spot://kfolder),[[Test88]], [[Cocktails]], [[Enneagram Test]],[[Disks]], [[Hackers]], [[Disks]], [[SYS Disks]], [K Folder](spot://kfolder),[[Journaling]],[Misc Note](spot://miscnote),[[Disks]], [[SYS Disks]], [K Folder](spot://kfolder), [[Disks]], [[Hackers]], [[Disks]], [[SYS Disks]], [K Folder](spot://kfolder), [[Journaling]],[Misc Obsidian](spot://miscobsidian),[Misc Note](spot://miscnote), [Misc Note](spot://miscnote),[[Disks]], [[SYS Disks]], [K Folder](spot://kfolder), [[Disks]], [[Hackers]], [[Disks]], [[SYS Disks]], [K Folder](spot://kfolder), [[Journaling]], [[Disks]], [[SYS Disks]], [K Folder](spot://kfolder), [[Disks]], [[Hackers]], [[Disks]], [[SYS Disks]], [K Folder](spot://kfolder), [[Journaling]],[Misc Note](spot://miscnote), [Misc Note](spot://miscnote), [Misc Note](spot://miscnote), [Misc Note](spot://miscnote),
 
 
 

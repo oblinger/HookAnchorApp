@@ -1,5 +1,12 @@
 .[[Matterport]].
+  , ,
+  , ,
+  , ,
+  , [Matterport Obsidian](spot://matterportobsidian),
+  DELS: ,[Matterport Obsidian](spot://matterportobsidian),
+  , ,
   , [Matterport Note](spot://matterportnote), 
+  DELS: [Matterport Note](spot://matterportnote),[Matterport Obsidian](spot://matterportobsidian),[Matterport Note](spot://matterportnote),[Matterport Note](spot://matterportnote),
 
 # Top
 #### kind: Big

@@ -1,6 +1,13 @@
 .[[Letters]].
   ADDS:   [[2000-00-00 IBM-years]],
+  , ,
+  , ,
+  , ,
+  , [Letters Obsidian](spot://lettersobsidian),
+  DELS: ,[Letters Obsidian](spot://lettersobsidian),
+  , ,
   , [Letters Note](spot://lettersnote), 
+  DELS: [Letters Note](spot://lettersnote),[Letters Obsidian](spot://lettersobsidian),[Letters Note](spot://lettersnote),[Letters Note](spot://lettersnote),
 
 
 

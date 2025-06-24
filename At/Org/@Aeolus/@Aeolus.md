@@ -1,5 +1,12 @@
 .[[@Aeolus]].
+  , ,
+  , ,
+  , ,
+  , [@Aeolus Obsidian](spot://@aeolusobsidian),
+  DELS: ,[@Aeolus Obsidian](spot://@aeolusobsidian),
+  , ,
   , [@Aeolus Note](spot://@aeolusnote), 
+  DELS: [@Aeolus Note](spot://@aeolusnote),[@Aeolus Obsidian](spot://@aeolusobsidian),[@Aeolus Note](spot://@aeolusnote),[@Aeolus Note](spot://@aeolusnote),
 
 =[[Org]] 
 

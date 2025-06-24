@@ -1,6 +1,13 @@
 .[[family]].
   , [[Parents]],
+  , ,
+  , ,
+  , ,
+  , [family Obsidian](spot://familyobsidian),
+  DELS: ,[family Obsidian](spot://familyobsidian),
+  , ,
   , [family Note](spot://familynote), 
+  DELS: [family Note](spot://familynote),[family Obsidian](spot://familyobsidian),[family Note](spot://familynote),[family Note](spot://familynote),
 
 .[[Family]].
   ,   [[Parents]], 

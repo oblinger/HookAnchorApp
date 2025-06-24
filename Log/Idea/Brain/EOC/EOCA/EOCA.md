@@ -3,7 +3,14 @@
   [[EOCA Civilizing tendency]],
   [[EOCA Definitions]]
   , [[EOCA Publish]], [[EOCA Root]], [[EOCA The Writing Is On The Wall]],
+  , ,
+  , ,
+  , ,
+  , [EOCA Obsidian](spot://eocaobsidian),
+  DELS: ,[EOCA Obsidian](spot://eocaobsidian),
+  , ,
   , [EOCA Note](spot://eocanote), 
+  DELS: [EOCA Note](spot://eocanote),[EOCA Obsidian](spot://eocaobsidian),[EOCA Note](spot://eocanote),[EOCA Note](spot://eocanote),
 
   [[EOCA Civilizing tendency]]:
   [[EOCA Definitions]]:

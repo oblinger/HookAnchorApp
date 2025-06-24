@@ -1,5 +1,12 @@
 .[[DocApplescript]].
+  , ,
+  , ,
+  , ,
+  , [DocApplescript Obsidian](spot://docapplescriptobsidian),
+  DELS: ,[DocApplescript Obsidian](spot://docapplescriptobsidian),
+  , ,
   , [DocApplescript Note](spot://docapplescriptnote), 
+  DELS: [DocApplescript Note](spot://docapplescriptnote),[DocApplescript Obsidian](spot://docapplescriptobsidian),[DocApplescript Note](spot://docapplescriptnote),[DocApplescript Note](spot://docapplescriptnote),
 
   [__DocApplescript__](__DocApplescript__.md)
 

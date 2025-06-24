@@ -1,5 +1,12 @@
 .[[Moveworks]].
+  , ,
+  , ,
+  , ,
+  , [Moveworks Obsidian](spot://moveworksobsidian),
+  DELS: ,[Moveworks Obsidian](spot://moveworksobsidian),
+  , ,
   , [Moveworks Note](spot://moveworksnote), 
+  DELS: [Moveworks Note](spot://moveworksnote),[Moveworks Obsidian](spot://moveworksobsidian),[Moveworks Note](spot://moveworksnote),[Moveworks Note](spot://moveworksnote),
 
 # Top
 #### kind: StartAI

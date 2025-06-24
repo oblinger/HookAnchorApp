@@ -1,5 +1,12 @@
 .[[Viz.ai]].
+  , ,
+  , ,
+  , ,
+  , [Viz.ai Obsidian](spot://viz.aiobsidian),
+  DELS: ,[Viz.ai Obsidian](spot://viz.aiobsidian),
+  , ,
   , [Viz.ai Note](spot://viz.ainote), 
+  DELS: [Viz.ai Note](spot://viz.ainote),[Viz.ai Obsidian](spot://viz.aiobsidian),[Viz.ai Note](spot://viz.ainote),[Viz.ai Note](spot://viz.ainote),
 
 # Top
 #### kind: GenAI

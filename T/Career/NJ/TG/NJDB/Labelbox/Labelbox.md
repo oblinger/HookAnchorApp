@@ -1,5 +1,12 @@
 .[[Labelbox]].
+  , ,
+  , ,
+  , ,
+  , [Labelbox Obsidian](spot://labelboxobsidian),
+  DELS: ,[Labelbox Obsidian](spot://labelboxobsidian),
+  , ,
   , [Labelbox Note](spot://labelboxnote), 
+  DELS: [Labelbox Note](spot://labelboxnote),[Labelbox Obsidian](spot://labelboxobsidian),[Labelbox Note](spot://labelboxnote),[Labelbox Note](spot://labelboxnote),
 
 # Top
 #### kind: StartAI

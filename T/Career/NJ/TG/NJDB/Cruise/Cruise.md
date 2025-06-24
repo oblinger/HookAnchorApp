@@ -1,5 +1,12 @@
 .[[Cruise]].
+  , ,
+  , ,
+  , ,
+  , [Cruise Obsidian](spot://cruiseobsidian),
+  DELS: ,[Cruise Obsidian](spot://cruiseobsidian),
+  , ,
   , [Cruise Note](spot://cruisenote), 
+  DELS: [Cruise Note](spot://cruisenote),[Cruise Obsidian](spot://cruiseobsidian),[Cruise Note](spot://cruisenote),[Cruise Note](spot://cruisenote),
 
 # Top
 #### kind: Big

@@ -1,5 +1,12 @@
 .[[OpenAI]].
+  , ,
+  , ,
+  , ,
+  , [OpenAI Obsidian](spot://openaiobsidian),
+  DELS: ,[OpenAI Obsidian](spot://openaiobsidian),
+  , ,
   , [OpenAI Note](spot://openainote), 
+  DELS: [OpenAI Note](spot://openainote),[OpenAI Obsidian](spot://openaiobsidian),[OpenAI Note](spot://openainote),[OpenAI Note](spot://openainote),
 
 # Top
 #### kind: Big

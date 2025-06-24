@@ -1,5 +1,8 @@
 
 
+### 2025-06-24  Tomorrow
+I will do better tomorrow.
+
 ### 2025-06-16  steps taken
 
 - worked out on Sunday
@@ -21,10 +24,7 @@ Wow am I flailing.  I have very bad patterns of daily activity.
 I am procrastinating worse than I ever can remember doing.
 I am stressed that this job market is too hard and I am too misaligned.
 
-Sometimes I feel things will be ok-enough, but nearly anything can shake that confidence.
-
-in the end, I don't have clear goals for each week, and get very little done.
-I do have many goals, but they are parts of very large buckets.
+Sometimes I feel things will be ok-e [[Reflections]]<br><br><br><br><br><br><br><br>                                                                                          have many goals, but they are parts of very large buckets.
 
 ==> One idea is to set specific goals for each day, and push to achieve those
 maybe I will even do that for the rest of to [[Reflections]]<br><br><br><br><br><br><br>                                                                                              hole gently.

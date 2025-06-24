@@ -1,6 +1,13 @@
 .[[@BallerTV]].
   ,   [[@Aaron Hawkey]], [[@Ping Chen]],
+  , ,
+  , ,
+  , ,
+  , [@BallerTV Obsidian](spot://@ballertvobsidian),
+  DELS: ,[@BallerTV Obsidian](spot://@ballertvobsidian),
+  , ,
   , [@BallerTV Note](spot://@ballertvnote), 
+  DELS: [@BallerTV Note](spot://@ballertvnote),[@BallerTV Obsidian](spot://@ballertvobsidian),[@BallerTV Note](spot://@ballertvnote),[@BallerTV Note](spot://@ballertvnote),
 
 == [[Corp]]    
 - [[@Aaron Hawkey]], [[@Ping Chen]], 

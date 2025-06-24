@@ -1,5 +1,12 @@
 .[[Synthesia]].
+  , ,
+  , ,
+  , ,
+  , [Synthesia Obsidian](spot://synthesiaobsidian),
+  DELS: ,[Synthesia Obsidian](spot://synthesiaobsidian),
+  , ,
   , [Synthesia Note](spot://synthesianote), 
+  DELS: [Synthesia Note](spot://synthesianote),[Synthesia Obsidian](spot://synthesiaobsidian),[Synthesia Note](spot://synthesianote),[Synthesia Note](spot://synthesianote),
 
 # Top
 #### kind: StartAI

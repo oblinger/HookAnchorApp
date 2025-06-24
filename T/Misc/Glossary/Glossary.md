@@ -1,5 +1,12 @@
 .[[Glossary]].
+  , ,
+  , ,
+  , ,
+  , [Glossary Obsidian](spot://glossaryobsidian),
+  DELS: ,[Glossary Obsidian](spot://glossaryobsidian),
+  , ,
   , [Glossary Note](spot://glossarynote), 
+  DELS: [Glossary Note](spot://glossarynote),[Glossary Obsidian](spot://glossaryobsidian),[Glossary Note](spot://glossarynote),[Glossary Note](spot://glossarynote),
 
 
 

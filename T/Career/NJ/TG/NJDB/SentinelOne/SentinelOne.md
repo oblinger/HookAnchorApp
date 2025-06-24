@@ -1,5 +1,12 @@
 .[[SentinelOne]].
+  , ,
+  , ,
+  , ,
+  , [SentinelOne Obsidian](spot://sentineloneobsidian),
+  DELS: ,[SentinelOne Obsidian](spot://sentineloneobsidian),
+  , ,
   , [SentinelOne Note](spot://sentinelonenote), 
+  DELS: [SentinelOne Note](spot://sentinelonenote),[SentinelOne Obsidian](spot://sentineloneobsidian),[SentinelOne Note](spot://sentinelonenote),[SentinelOne Note](spot://sentinelonenote),
 
 # Top
 #### kind: Big

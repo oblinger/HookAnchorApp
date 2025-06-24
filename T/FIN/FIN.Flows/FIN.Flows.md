@@ -1,5 +1,5 @@
-(See [[FIN Tracking]])
-- [[FIN Accounts]], [[FIN Recurring]], 
+(See [[FIN.Tracking]])
+- [[FIN Accounts]], [[FIN.Recurring]], 
 
 DO & QL INCOME
 	--> Grand Central

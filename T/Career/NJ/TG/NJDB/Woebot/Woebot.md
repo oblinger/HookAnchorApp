@@ -1,5 +1,12 @@
 .[[Woebot]].
+  , ,
+  , ,
+  , ,
+  , [Woebot Obsidian](spot://woebotobsidian),
+  DELS: ,[Woebot Obsidian](spot://woebotobsidian),
+  , ,
   , [Woebot Note](spot://woebotnote), 
+  DELS: [Woebot Note](spot://woebotnote),[Woebot Obsidian](spot://woebotobsidian),[Woebot Note](spot://woebotnote),[Woebot Note](spot://woebotnote),
 
 # Top
 #### kind: StartAI

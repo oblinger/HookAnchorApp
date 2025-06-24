@@ -1,5 +1,12 @@
 .[[@Seneca]].
+  , ,
+  , ,
+  , ,
+  , [@Seneca Obsidian](spot://@senecaobsidian),
+  DELS: ,[@Seneca Obsidian](spot://@senecaobsidian),
+  , ,
   , [@Seneca Note](spot://@senecanote), 
+  DELS: [@Seneca Note](spot://@senecanote),[@Seneca Obsidian](spot://@senecaobsidian),[@Seneca Note](spot://@senecanote),[@Seneca Note](spot://@senecanote),
 
 
 Early stage startup 

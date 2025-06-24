@@ -1,8 +1,15 @@
 .[[Writing]].
   ,   [[An_Athiests_Spiritual_Calling]], [[ArmChair]], ,
   , [[POL]],
-  , [Writing Note](spot://writingnote), 
+  , ,
+  , ,
   DELS: [[POL]],
+  , ,
+  , [Writing Obsidian](spot://writingobsidian),
+  DELS: [[POL]],,[Writing Obsidian](spot://writingobsidian),
+  , ,
+  , [Writing Note](spot://writingnote), 
+  DELS: [[POL]],[Writing Note](spot://writingnote),[Writing Obsidian](spot://writingobsidian),[Writing Note](spot://writingnote),[Writing Note](spot://writingnote),
 
 #set
 - [[ArmChair]],   [[POL]]

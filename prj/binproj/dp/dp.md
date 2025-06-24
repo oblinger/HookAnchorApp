@@ -1,5 +1,12 @@
 .[[dp]].
+  , ,
+  , ,
+  , ,
+  , [dp Obsidian](spot://dpobsidian),
+  DELS: ,[dp Obsidian](spot://dpobsidian),
+  , ,
   , [dp Note](spot://dpnote), 
+  DELS: [dp Note](spot://dpnote),[dp Obsidian](spot://dpobsidian),[dp Note](spot://dpnote),[dp Note](spot://dpnote),
 
 
 ## Prompt

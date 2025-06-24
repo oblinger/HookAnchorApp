@@ -1,5 +1,12 @@
 .[[Hover]].
+  , ,
+  , ,
+  , ,
+  , [Hover Obsidian](spot://hoverobsidian),
+  DELS: ,[Hover Obsidian](spot://hoverobsidian),
+  , ,
   , [Hover Note](spot://hovernote), 
+  DELS: [Hover Note](spot://hovernote),[Hover Obsidian](spot://hoverobsidian),[Hover Note](spot://hovernote),[Hover Note](spot://hovernote),
 
 # Top
 #### kind: StartAI

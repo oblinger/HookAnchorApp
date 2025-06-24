@@ -1,5 +1,12 @@
 .[[Pinecone]].
+  , ,
+  , ,
+  , ,
+  , [Pinecone Obsidian](spot://pineconeobsidian),
+  DELS: ,[Pinecone Obsidian](spot://pineconeobsidian),
+  , ,
   , [Pinecone Note](spot://pineconenote), 
+  DELS: [Pinecone Note](spot://pineconenote),[Pinecone Obsidian](spot://pineconeobsidian),[Pinecone Note](spot://pineconenote),[Pinecone Note](spot://pineconenote),
 
 # Top
 #### kind: StartAI

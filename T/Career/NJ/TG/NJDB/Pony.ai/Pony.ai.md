@@ -1,5 +1,12 @@
 .[[Pony.ai]].
+  , ,
+  , ,
+  , ,
+  , [Pony.ai Obsidian](spot://pony.aiobsidian),
+  DELS: ,[Pony.ai Obsidian](spot://pony.aiobsidian),
+  , ,
   , [Pony.ai Note](spot://pony.ainote), 
+  DELS: [Pony.ai Note](spot://pony.ainote),[Pony.ai Obsidian](spot://pony.aiobsidian),[Pony.ai Note](spot://pony.ainote),[Pony.ai Note](spot://pony.ainote),
 
 # Top
 ## Sections

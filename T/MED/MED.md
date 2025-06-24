@@ -1,11 +1,11 @@
 
 
 .[[MED]]. 	[[MED Todo]],
-  TOP:	[[MED Log]],
+  TOP:	,
   TOPICS:
   [[MED Blood Tests]]:
-  [[MED Doctors]]:
-  [[MED Exercise]]:
+  :
+  :
   [[MED General]]:
   [[MED Heart]]:
   [[MED History]]:
@@ -22,10 +22,23 @@
   [[MED-Vitamins]]:
   MISC:		[[Jet Lag]], [[Low Back Pain]], [[Medifast]], [[MED Heart Attack]],
   , [[MED Mind]],
-  , [MED Doctors Note](spot://meddoctorsnote), [MED Exercise Note](spot://medexercisenote)
-  , [MED Log Note](spot://medlognote), [MED Note](spot://mednote),
-  , [[MED Todo]], 
+  , ,
+  , , ,
+  , [[MED Todo]],
+  , ,
   DELS: [[MED Mind]],
+  , ,
+  , [MED Doctors Obsidian](spot://meddoctorsobsidian)
+  , [MED Exercise Obsidian](spot://medexerciseobsidian), [MED Log Obsidian](spot://medlogobsidian)
+  , [MED Obsidian](spot://medobsidian),
+  DELS: [[MED Mind]],,[MED Obsidian](spot://medobsidian),
+  , [MED Doctors](spot://meddoctors), [MED Exercise](spot://medexercise), [MED Log](spot://medlog)
+  , ,
+  , ,
+  , ,
+  , [MED Doctors Note](spot://meddoctorsnote), [MED Exercise Note](spot://medexercisenote)
+  , [MED Log Note](spot://medlognote), [MED Note](spot://mednote), 
+  DELS: [[MED Mind]],[MED Note](spot://mednote),[MED Obsidian](spot://medobsidian),[[MED Log]], [[MED Doctors]], [[MED Exercise]], [MED Doctors Note](spot://meddoctorsnote), [MED Exercise Note](spot://medexercisenote), [MED Log Note](spot://medlognote), [MED Note](spot://mednote),[MED Note](spot://mednote), [MED Doctors Note](spot://meddoctorsnote), [MED Exercise Note](spot://medexercisenote), [MED Log Note](spot://medlognote),
 
 - [[Glycemic Index]], [[MED Blood Pressure]], [[MED Cholesterol]], [[MED Research]], [[MED VO2Max]], [[MED=]], [[Run]], [[Exercise]], 
 - [[@Dexafit]]

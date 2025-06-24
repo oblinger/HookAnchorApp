@@ -1,5 +1,12 @@
 .[[Craps]].
+  , ,
+  , ,
+  , ,
+  , [Craps Obsidian](spot://crapsobsidian),
+  DELS: ,[Craps Obsidian](spot://crapsobsidian),
+  , ,
   , [Craps Note](spot://crapsnote), 
+  DELS: [Craps Note](spot://crapsnote),[Craps Obsidian](spot://crapsobsidian),[Craps Note](spot://crapsnote),[Craps Note](spot://crapsnote),
 
 
 

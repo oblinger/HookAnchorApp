@@ -1,5 +1,12 @@
 .[[Codeium]].
+  , ,
+  , ,
+  , ,
+  , [Codeium Obsidian](spot://codeiumobsidian),
+  DELS: ,[Codeium Obsidian](spot://codeiumobsidian),
+  , ,
   , [Codeium Note](spot://codeiumnote), 
+  DELS: [Codeium Note](spot://codeiumnote),[Codeium Obsidian](spot://codeiumobsidian),[Codeium Note](spot://codeiumnote),[Codeium Note](spot://codeiumnote),
 
 # Top
 #### kind: BigAI

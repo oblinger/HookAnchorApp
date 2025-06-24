@@ -1,5 +1,12 @@
 .[[MKT]].
+  , ,
+  , ,
+  , ,
+  , [MKT Obsidian](spot://mktobsidian),
+  DELS: ,[MKT Obsidian](spot://mktobsidian),
+  , ,
   , [MKT Note](spot://mktnote), 
+  DELS: [MKT Note](spot://mktnote),[MKT Obsidian](spot://mktobsidian),[MKT Note](spot://mktnote),[MKT Note](spot://mktnote),
 
 
 :: [[2020-12 MKT]]

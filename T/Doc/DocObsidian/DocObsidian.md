@@ -1,6 +1,13 @@
 .[[DocObsidian]].
   ,   [[Dataview]],
+  , ,
+  , ,
+  , ,
+  , [DocObsidian Obsidian](spot://docobsidianobsidian),
+  DELS: ,[DocObsidian Obsidian](spot://docobsidianobsidian),
+  , ,
   , [DocObsidian Note](spot://docobsidiannote), 
+  DELS: [DocObsidian Note](spot://docobsidiannote),[DocObsidian Obsidian](spot://docobsidianobsidian),[DocObsidian Note](spot://docobsidiannote),[DocObsidian Note](spot://docobsidiannote),
 
 
 :: [[mdfind]]

@@ -1,3 +1,6 @@
+- ants
+- Barry!
+- lock down identity
 - technical conferences:  ICML, CVPR, ICLR
 - stability:  upload stress test.
 - james test shotcharts

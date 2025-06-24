@@ -1,5 +1,12 @@
 .[[Osaro]].
+  , ,
+  , ,
+  , ,
+  , [Osaro Obsidian](spot://osaroobsidian),
+  DELS: ,[Osaro Obsidian](spot://osaroobsidian),
+  , ,
   , [Osaro Note](spot://osaronote), 
+  DELS: [Osaro Note](spot://osaronote),[Osaro Obsidian](spot://osaroobsidian),[Osaro Note](spot://osaronote),[Osaro Note](spot://osaronote),
 
 # Top
 #### kind: StartAI

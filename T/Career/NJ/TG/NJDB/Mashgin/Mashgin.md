@@ -1,5 +1,12 @@
 .[[Mashgin]].
+  , ,
+  , ,
+  , ,
+  , [Mashgin Obsidian](spot://mashginobsidian),
+  DELS: ,[Mashgin Obsidian](spot://mashginobsidian),
+  , ,
   , [Mashgin Note](spot://mashginnote), 
+  DELS: [Mashgin Note](spot://mashginnote),[Mashgin Obsidian](spot://mashginobsidian),[Mashgin Note](spot://mashginnote),[Mashgin Note](spot://mashginnote),
 
 # Top
 #### kind: StartAI

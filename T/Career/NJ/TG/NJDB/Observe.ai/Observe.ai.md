@@ -1,5 +1,12 @@
 .[[Observe.ai]].
+  , ,
+  , ,
+  , ,
+  , [Observe.ai Obsidian](spot://observe.aiobsidian),
+  DELS: ,[Observe.ai Obsidian](spot://observe.aiobsidian),
+  , ,
   , [Observe.ai Note](spot://observe.ainote), 
+  DELS: [Observe.ai Note](spot://observe.ainote),[Observe.ai Obsidian](spot://observe.aiobsidian),[Observe.ai Note](spot://observe.ainote),[Observe.ai Note](spot://observe.ainote),
 
 # Top
 ## Sections

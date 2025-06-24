@@ -1,8 +1,9 @@
 ### BUY TEAS
+Green???
 FAVS:		
 - HARNEY: 	Paris, 
 - TWININGS:	Lemon Ginger, Honey Bush, 
-- YOGI: 		Kava, Egyptian Licorice
+- YOGI: 		Egyptian Licorice
 - TRAD-MED: Lemon Ginger(ok), Peppermint(ok),
 - EQ-EXCNG: Vanilla Rooibos
 - PUKKA:  	(amz?) ThreeGinger++, ThreeLicorice+
@@ -24,5 +25,6 @@ TEAS  http://carandafinefoods.com
 ++ SF Bay Coffee:  French Roast
 
 BAD
+-- Kava (not healthy)
 -- Happy Belly: Donut Shop Coffee
 -- Kirkland:  ???

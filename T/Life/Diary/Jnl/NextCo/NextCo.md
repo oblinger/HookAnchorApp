@@ -1,5 +1,12 @@
 .[[NextCo]].
+  , ,
+  , ,
+  , ,
+  , [NextCo Obsidian](spot://nextcoobsidian),
+  DELS: ,[NextCo Obsidian](spot://nextcoobsidian),
+  , ,
   , [NextCo Note](spot://nextconote), 
+  DELS: [NextCo Note](spot://nextconote),[NextCo Obsidian](spot://nextcoobsidian),[NextCo Note](spot://nextconote),[NextCo Note](spot://nextconote),
 
 
 

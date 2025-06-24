@@ -1,5 +1,12 @@
 .[[Covariant]].
+  , ,
+  , ,
+  , ,
+  , [Covariant Obsidian](spot://covariantobsidian),
+  DELS: ,[Covariant Obsidian](spot://covariantobsidian),
+  , ,
   , [Covariant Note](spot://covariantnote), 
+  DELS: [Covariant Note](spot://covariantnote),[Covariant Obsidian](spot://covariantobsidian),[Covariant Note](spot://covariantnote),[Covariant Note](spot://covariantnote),
 
 # Top
 #### kind: StartAI

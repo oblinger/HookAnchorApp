@@ -3,16 +3,29 @@
   TOPS:		[[RES Pyramid]], [[RES Star]], [[RES War]], [[RES Parts]], [[RES Highlights]],
   FACTS:	[[RES Src Info]], [[RES Numbers]], [[RES Patents]], [[RES Papers]],
   OTHER:	 [[RES War AI]], [[RES References]],
-  DIRS:		[[RES Job History]], [[RES Examples]], [[RES Versions]],
+  DIRS:		, , ,
   CLOSET:	[[Resume]],
   .
 - [[RES Instant Design Story]],
 - [[2024-04-01 Resume Rewrite]],
   , [[WarStories]],
-  , [RES Examples Note](spot://resexamplesnote), [RES Job History Note](spot://resjobhistorynote)
-  , [RES Note](spot://resnote), [RES Versions Note](spot://resversionsnote),
-  , [[RES Todo]], 
+  , ,
+  , , ,
+  , [[RES Todo]],
+  , ,
   DELS: [[WarStories]],
+  , ,
+  , [RES Examples Obsidian](spot://resexamplesobsidian)
+  , [RES Job History Obsidian](spot://resjobhistoryobsidian), [RES Obsidian](spot://resobsidian)
+  , [RES Versions Obsidian](spot://resversionsobsidian),
+  DELS: [[WarStories]],,[RES Obsidian](spot://resobsidian),
+  , [RES Examples](spot://resexamples), [RES Job History](spot://resjobhistory)
+  , , [RES Versions](spot://resversions),
+  , ,
+  , ,
+  , [RES Examples Note](spot://resexamplesnote), [RES Job History Note](spot://resjobhistorynote)
+  , [RES Note](spot://resnote), [RES Versions Note](spot://resversionsnote), 
+  DELS: [[WarStories]],[RES Note](spot://resnote),[RES Obsidian](spot://resobsidian),[[RES Job History]], [[RES Examples]], [[RES Versions]], [RES Examples Note](spot://resexamplesnote), [RES Job History Note](spot://resjobhistorynote), [RES Versions Note](spot://resversionsnote), [RES Note](spot://resnote),[RES Note](spot://resnote), [RES Examples Note](spot://resexamplesnote), [RES Job History Note](spot://resjobhistorynote), [RES Versions Note](spot://resversionsnote),
 
 # LINKED IN PARTS
 - [[z2 - Linked In Module]] - 

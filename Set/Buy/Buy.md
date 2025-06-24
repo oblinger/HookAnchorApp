@@ -3,7 +3,14 @@
   [[BUY Tea]], [[SolarPanels]], [[ToBuy]],
   [[Buy2]],
   , [[@kAzure Standard]],
+  , ,
+  , ,
+  , ,
+  , [Buy Obsidian](spot://buyobsidian),
+  DELS: ,[Buy Obsidian](spot://buyobsidian),
+  , ,
   , [Buy Note](spot://buynote), 
+  DELS: [Buy Note](spot://buynote),[Buy Obsidian](spot://buyobsidian),[Buy Note](spot://buynote),[Buy Note](spot://buynote),
 
 .[[BUY]].
   [[Bought]], [[BUY Log]], [[ToBuy]],

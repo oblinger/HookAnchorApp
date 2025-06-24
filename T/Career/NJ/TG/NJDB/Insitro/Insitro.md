@@ -1,5 +1,12 @@
 .[[Insitro]].
+  , ,
+  , ,
+  , ,
+  , [Insitro Obsidian](spot://insitroobsidian),
+  DELS: ,[Insitro Obsidian](spot://insitroobsidian),
+  , ,
   , [Insitro Note](spot://insitronote), 
+  DELS: [Insitro Note](spot://insitronote),[Insitro Obsidian](spot://insitroobsidian),[Insitro Note](spot://insitronote),[Insitro Note](spot://insitronote),
 
 # Top
 #### kind: StartAI

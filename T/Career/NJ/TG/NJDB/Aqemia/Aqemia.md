@@ -1,5 +1,12 @@
 .[[Aqemia]].
+  , ,
+  , ,
+  , ,
+  , [Aqemia Obsidian](spot://aqemiaobsidian),
+  DELS: ,[Aqemia Obsidian](spot://aqemiaobsidian),
+  , ,
   , [Aqemia Note](spot://aqemianote), 
+  DELS: [Aqemia Note](spot://aqemianote),[Aqemia Obsidian](spot://aqemiaobsidian),[Aqemia Note](spot://aqemianote),[Aqemia Note](spot://aqemianote),
 
 # Top
 #### kind: BigAI

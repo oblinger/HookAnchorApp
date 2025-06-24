@@ -1,5 +1,12 @@
 .[[SNIP]].
+  , ,
+  , ,
+  , ,
+  , [SNIP Obsidian](spot://snipobsidian),
+  DELS: ,[SNIP Obsidian](spot://snipobsidian),
+  , ,
   , [SNIP Note](spot://snipnote), 
+  DELS: [SNIP Note](spot://snipnote),[SNIP Obsidian](spot://snipobsidian),[SNIP Note](spot://snipnote),[SNIP Note](spot://snipnote),
 
 ### 2024-07-09  Chunch
 

@@ -1,5 +1,12 @@
 .[[Adobe]].
+  , ,
+  , ,
+  , ,
+  , [Adobe Obsidian](spot://adobeobsidian),
+  DELS: ,[Adobe Obsidian](spot://adobeobsidian),
+  , ,
   , [Adobe Note](spot://adobenote), 
+  DELS: [Adobe Note](spot://adobenote),[Adobe Obsidian](spot://adobeobsidian),[Adobe Note](spot://adobenote),[Adobe Note](spot://adobenote),
 
 # Top
 #### kind: Big

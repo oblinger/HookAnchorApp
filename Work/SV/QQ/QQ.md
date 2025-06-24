@@ -6,8 +6,15 @@
   [[2024-09-03 Staffing Stuff]],
   , ,
   , [[2024-08-25 Softbank SV Analysis]], [[2024-11-01 SV Pitch Deck]],
-  , [QQ Note](spot://qqnote), 
+  , ,
+  , ,
   DELS: [[2024-11-01 SV Pitch Deck]],[[2024-08-25 Softbank SV Analysis]], [[2024-11-01 SV Pitch Deck]],
+  , ,
+  , [QQ Obsidian](spot://qqobsidian),
+  DELS: [[2024-11-01 SV Pitch Deck]],[[2024-08-25 Softbank SV Analysis]], [[2024-11-01 SV Pitch Deck]],,[QQ Obsidian](spot://qqobsidian),
+  , ,
+  , [QQ Note](spot://qqnote), 
+  DELS: [[2024-11-01 SV Pitch Deck]],[[2024-08-25 Softbank SV Analysis]], [[2024-11-01 SV Pitch Deck]],[QQ Note](spot://qqnote),[QQ Obsidian](spot://qqobsidian),[QQ Note](spot://qqnote),[QQ Note](spot://qqnote),
 
 
 

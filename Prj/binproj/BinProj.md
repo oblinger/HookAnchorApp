@@ -4,8 +4,17 @@
   , ,
   , [[anchor]],
   , [[2025-06 spot]], [[km_cmd]],
+  , ,
+  , ,
+  DELS: ,,
+  , ,
+  DELS: ,,,
+  , [BinProj Obsidian](spot://binprojobsidian),
+  DELS: ,,,, ,[BinProj Obsidian](spot://binprojobsidian),
+  , ,
+  DELS: ,,,, ,[BinProj Obsidian](spot://binprojobsidian),, ,
   , [BinProj Note](spot://binprojnote), 
-  DELS: [[Budg]],[[lim]],
+  DELS: [[Budg]],[[lim]],[BinProj Note](spot://binprojnote),[[Budg]], [[lim]],[BinProj Obsidian](spot://binprojobsidian),[BinProj Note](spot://binprojnote), [BinProj Note](spot://binprojnote),[[Budg]], [[lim]], [[Budg]], [[lim]],[BinProj Note](spot://binprojnote), [BinProj Note](spot://binprojnote), [BinProj Note](spot://binprojnote), [BinProj Note](spot://binprojnote),
 
 
 

@@ -1,6 +1,13 @@
 .[[Journal]].
   , [[Journal Old]],
+  , ,
+  , ,
+  , ,
+  , [Journal Obsidian](spot://journalobsidian),
+  DELS: ,[Journal Obsidian](spot://journalobsidian),
+  , ,
   , [Journal Note](spot://journalnote), 
+  DELS: [Journal Note](spot://journalnote),[Journal Obsidian](spot://journalobsidian),[Journal Note](spot://journalnote),[Journal Note](spot://journalnote),
 
 #log <[[DATED]]
 n:: 'j...' 	Journal entries  (NOT USED)

@@ -6,7 +6,7 @@
   ADDS:	, [CV Ana](spot://cvana),
   OLD:	[CVT](spot://cvt), [DSET](spot://dset),
   .
-  , , [APIs](spot://apis), [CAPS](spot://caps), [[CV Alg]], [[CV Algs]]
+  , , [APIs](spot://apis), [CAPS](spot://caps), , [[CV Algs]]
   , [CV Gdrive](spot://cvgdrive), [[CV Hack Notes]], [[CV HowTo]], [[CV Log]], [[CVP]]
   , [CV Page](spot://cvpage), [[Data]], [docs](spot://docs), [Docs Gdrive](spot://docsgdrive)
   , [DT alias Data Tasks](spot://dtaliasdatatasks), [RESULT](spot://result)
@@ -18,8 +18,18 @@
   , [AI Min](spot://aimin),
   DELS: ,[AI Min](spot://aimin),
   , [[CV Systems]],
+  , , ,
+  , ,
+  DELS: ,[AI Min](spot://aimin),, ,
+  , ,
+  DELS: ,[AI Min](spot://aimin),, ,,
+  , [CV Alg Obsidian](spot://cvalgobsidian), [CV Obsidian](spot://cvobsidian),
+  DELS: ,[AI Min](spot://aimin),, ,,, , ,[CV Obsidian](spot://cvobsidian),
+  , [CV Alg](spot://cvalg), ,
+  DELS: ,[AI Min](spot://aimin),, ,,, , ,[CV Obsidian](spot://cvobsidian),[[CV Alg]], , , ,
+  , ,
   , [CV Alg Note](spot://cvalgnote), [CV Note](spot://cvnote), 
-  DELS: [AI MIN](spot://aimin),[AI Min](spot://aimin),[AI MIN](spot://aimin), [AI MIN](spot://aimin),
+  DELS: [AI MIN](spot://aimin),[AI Min](spot://aimin),[AI MIN](spot://aimin), [AI MIN](spot://aimin),[CV Note](spot://cvnote),[AI MIN](spot://aimin), [AI MIN](spot://aimin), [AI MIN](spot://aimin),[CV Obsidian](spot://cvobsidian),[[CV Alg]], [CV Alg Note](spot://cvalgnote), [CV Note](spot://cvnote), [CV Note](spot://cvnote),[AI MIN](spot://aimin), [AI MIN](spot://aimin), [AI MIN](spot://aimin), [AI MIN](spot://aimin), [AI MIN](spot://aimin), [AI MIN](spot://aimin),[CV Alg Note](spot://cvalgnote),[CV Note](spot://cvnote), [CV Note](spot://cvnote), [CV Note](spot://cvnote), [CV Note](spot://cvnote), [CV Alg Note](spot://cvalgnote),
 
 :: [[Data]]
 

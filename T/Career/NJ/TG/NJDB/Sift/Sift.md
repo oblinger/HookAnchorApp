@@ -1,5 +1,12 @@
 .[[Sift]].
+  , ,
+  , ,
+  , ,
+  , [Sift Obsidian](spot://siftobsidian),
+  DELS: ,[Sift Obsidian](spot://siftobsidian),
+  , ,
   , [Sift Note](spot://siftnote), 
+  DELS: [Sift Note](spot://siftnote),[Sift Obsidian](spot://siftobsidian),[Sift Note](spot://siftnote),[Sift Note](spot://siftnote),
 
 # Top
 #### kind: StartAI

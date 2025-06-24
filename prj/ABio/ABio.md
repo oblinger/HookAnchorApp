@@ -6,8 +6,17 @@
   , [[Measuring Intelligence]],
   , [[ABIO Log]],
   , [[AlienBiologyWhitepaper]],
+  , ,
+  , ,
+  DELS: , [[ABIO Log]],,,
+  , ,
+  DELS: , [[ABIO Log]],,,,
+  , [ABio Obsidian](spot://abioobsidian),
+  DELS: , [[ABIO Log]],,,,, , ,[ABio Obsidian](spot://abioobsidian),
+  , ,
+  DELS: , [[ABIO Log]],,,,, , ,[ABio Obsidian](spot://abioobsidian),, ,
   , [ABio Note](spot://abionote), 
-  DELS: [[Prj/ABio/AlienBiologyWhitepaper]], [[ABIO Log]],[[Alien Biology]],[[Prj/ABio/AlienBiologyWhitepaper]],
+  DELS: [[Prj/ABio/AlienBiologyWhitepaper]], [[ABIO Log]],[[Alien Biology]],[[Prj/ABio/AlienBiologyWhitepaper]],[ABio Note](spot://abionote),[[Prj/ABio/AlienBiologyWhitepaper]], [[Alien Biology]], [[Prj/ABio/AlienBiologyWhitepaper]],[ABio Obsidian](spot://abioobsidian),[ABio Note](spot://abionote), [ABio Note](spot://abionote),[[Prj/ABio/AlienBiologyWhitepaper]], [[Alien Biology]], [[Prj/ABio/AlienBiologyWhitepaper]], [[Prj/ABio/AlienBiologyWhitepaper]], [[Alien Biology]], [[Prj/ABio/AlienBiologyWhitepaper]],[ABio Note](spot://abionote), [ABio Note](spot://abionote), [ABio Note](spot://abionote), [ABio Note](spot://abionote),
 
    [[ABIO CellMetabolism5]], [[ABIO Generator]], [[ABIO Photosynthesis]]
   , [[ABIO Prompts]], [[ABIO Queries]], [[ABIO References]], [[ABIO Systems]], [[ABIO Task Example]]

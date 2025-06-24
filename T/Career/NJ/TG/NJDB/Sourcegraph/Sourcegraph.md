@@ -1,5 +1,12 @@
 .[[Sourcegraph]].
+  , ,
+  , ,
+  , ,
+  , [Sourcegraph Obsidian](spot://sourcegraphobsidian),
+  DELS: ,[Sourcegraph Obsidian](spot://sourcegraphobsidian),
+  , ,
   , [Sourcegraph Note](spot://sourcegraphnote), 
+  DELS: [Sourcegraph Note](spot://sourcegraphnote),[Sourcegraph Obsidian](spot://sourcegraphobsidian),[Sourcegraph Note](spot://sourcegraphnote),[Sourcegraph Note](spot://sourcegraphnote),
 
 # Top
 #### kind: StartAI

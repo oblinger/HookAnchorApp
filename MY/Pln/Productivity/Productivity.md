@@ -1,7 +1,16 @@
 .[[Productivity]].
   ,   , [[Tracking of Time]],
+  , ,
+  , ,
+  DELS: ,
+  , ,
+  DELS: ,,
+  , [Productivity Obsidian](spot://productivityobsidian),
+  DELS: ,,,[Productivity Obsidian](spot://productivityobsidian),
+  , ,
+  DELS: ,,,[Productivity Obsidian](spot://productivityobsidian),, ,
   , [Productivity Note](spot://productivitynote), 
-  DELS: [[Daily Schedules]],
+  DELS: [[Daily Schedules]],[Productivity Note](spot://productivitynote),[[Daily Schedules]],[Productivity Obsidian](spot://productivityobsidian),[Productivity Note](spot://productivitynote), [Productivity Note](spot://productivitynote),[[Daily Schedules]], [[Daily Schedules]],[Productivity Note](spot://productivitynote), [Productivity Note](spot://productivitynote), [Productivity Note](spot://productivitynote), [Productivity Note](spot://productivitynote),
 
 
 - [[Tracking of Time]] 

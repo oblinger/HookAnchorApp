@@ -1,6 +1,13 @@
 .[[INV]].
   ,   [[Investor Intros]],
+  , ,
+  , ,
+  , ,
+  , [INV Obsidian](spot://invobsidian),
+  DELS: ,[INV Obsidian](spot://invobsidian),
+  , ,
   , [INV Note](spot://invnote), 
+  DELS: [INV Note](spot://invnote),[INV Obsidian](spot://invobsidian),[INV Note](spot://invnote),[INV Note](spot://invnote),
 
 
 - [[Investor Intros]]

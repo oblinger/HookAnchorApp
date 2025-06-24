@@ -1,8 +1,15 @@
 .[[Test88]].
   , [[dent_on]],
   , ,
+  , ,
+  , ,
+  DELS: ,
+  , ,
+  , [Test88 Obsidian](spot://test88obsidian),
+  DELS: ,,[Test88 Obsidian](spot://test88obsidian),
+  , ,
   , [Test88 Note](spot://test88note), 
-  DELS: [Test88 Note](spot://test88note),
+  DELS: [Test88 Note](spot://test88note),[Test88 Note](spot://test88note),[Test88 Obsidian](spot://test88obsidian),[Test88 Note](spot://test88note),[Test88 Note](spot://test88note),
 
 .[[test88]].
   ,   [[dent_on]], 

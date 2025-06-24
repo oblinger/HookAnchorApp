@@ -7,8 +7,15 @@
   [[Torch Loss]], [[Torch Optim]]
   ,
   , [[Torch Libraries]],
-  , [DocTorch Note](spot://doctorchnote), 
+  , ,
+  , ,
   DELS: [[Torch Libraries]],
+  , ,
+  , [DocTorch Obsidian](spot://doctorchobsidian),
+  DELS: [[Torch Libraries]],,[DocTorch Obsidian](spot://doctorchobsidian),
+  , ,
+  , [DocTorch Note](spot://doctorchnote), 
+  DELS: [[Torch Libraries]],[DocTorch Note](spot://doctorchnote),[DocTorch Obsidian](spot://doctorchobsidian),[DocTorch Note](spot://doctorchnote),[DocTorch Note](spot://doctorchnote),
 
 
 

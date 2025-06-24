@@ -1,5 +1,12 @@
 .[[Aimi.fm]].
+  , ,
+  , ,
+  , ,
+  , [Aimi.fm Obsidian](spot://aimi.fmobsidian),
+  DELS: ,[Aimi.fm Obsidian](spot://aimi.fmobsidian),
+  , ,
   , [Aimi.fm Note](spot://aimi.fmnote), 
+  DELS: [Aimi.fm Note](spot://aimi.fmnote),[Aimi.fm Obsidian](spot://aimi.fmobsidian),[Aimi.fm Note](spot://aimi.fmnote),[Aimi.fm Note](spot://aimi.fmnote),
 
 # Top
 #### kind: GenAI

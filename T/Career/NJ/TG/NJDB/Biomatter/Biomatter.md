@@ -1,5 +1,12 @@
 .[[Biomatter]].
+  , ,
+  , ,
+  , ,
+  , [Biomatter Obsidian](spot://biomatterobsidian),
+  DELS: ,[Biomatter Obsidian](spot://biomatterobsidian),
+  , ,
   , [Biomatter Note](spot://biomatternote), 
+  DELS: [Biomatter Note](spot://biomatternote),[Biomatter Obsidian](spot://biomatterobsidian),[Biomatter Note](spot://biomatternote),[Biomatter Note](spot://biomatternote),
 
 # Top
 #### kind: BigAI

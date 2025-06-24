@@ -2,9 +2,18 @@
   , [[Career]], [[COMS]], [[Courses]], [[Doc]], [[EduCorp]], [[FIN]], [[Food]], [[Legal]], [[Life]]
   , [[MED]], [[MGR]], [[Misc]], [[Mus]], [[Tag]], [[Trash]], ,
   , [[MOV]],
-  , [T Note](spot://tnote),
-  , [[Date Rollup]], [[T Roll]], 
-  DELS: [[Web]],[[T Roll]],
+  , ,
+  , [[Date Rollup]], [[T Roll]],
+  , ,
+  DELS: ,[[T Roll]],
+  , ,
+  DELS: ,[[T Roll]],,
+  , [T Obsidian](spot://tobsidian),
+  DELS: ,[[T Roll]],,,[T Obsidian](spot://tobsidian),
+  , ,
+  DELS: ,[[T Roll]],,,[T Obsidian](spot://tobsidian),, ,
+  , [T Note](spot://tnote), 
+  DELS: [[Web]],[[T Roll]],[T Note](spot://tnote),[[Web]],[T Obsidian](spot://tobsidian),[T Note](spot://tnote), [T Note](spot://tnote),[[Web]], [[Web]],[T Note](spot://tnote), [T Note](spot://tnote), [T Note](spot://tnote), [T Note](spot://tnote),
 
 [[MOV]] 
 

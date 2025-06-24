@@ -1,5 +1,12 @@
 .[[6sense]].
+  , ,
+  , ,
+  , ,
+  , [6sense Obsidian](spot://6senseobsidian),
+  DELS: ,[6sense Obsidian](spot://6senseobsidian),
+  , ,
   , [6sense Note](spot://6sensenote), 
+  DELS: [6sense Note](spot://6sensenote),[6sense Obsidian](spot://6senseobsidian),[6sense Note](spot://6sensenote),[6sense Note](spot://6sensenote),
 
 Za
 # Top

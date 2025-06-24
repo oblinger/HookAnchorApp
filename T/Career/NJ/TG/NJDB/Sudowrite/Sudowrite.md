@@ -1,5 +1,12 @@
 .[[Sudowrite]].
+  , ,
+  , ,
+  , ,
+  , [Sudowrite Obsidian](spot://sudowriteobsidian),
+  DELS: ,[Sudowrite Obsidian](spot://sudowriteobsidian),
+  , ,
   , [Sudowrite Note](spot://sudowritenote), 
+  DELS: [Sudowrite Note](spot://sudowritenote),[Sudowrite Obsidian](spot://sudowriteobsidian),[Sudowrite Note](spot://sudowritenote),[Sudowrite Note](spot://sudowritenote),
 
 # Top
 #### kind: BigAI

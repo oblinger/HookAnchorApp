@@ -29,9 +29,16 @@
   , [[2025-W22]],
   , [[2025-W23]],
   , [[2025-W24]],
-  , [Weekly Note](spot://weeklynote),
+  , ,
   , [[2025-W25]],
-  , [[2025-W26]], 
+  , [[2025-W26]],
+  , ,
+  , ,
+  , [Weekly Obsidian](spot://weeklyobsidian),
+  DELS: ,[Weekly Obsidian](spot://weeklyobsidian),
+  , ,
+  , [Weekly Note](spot://weeklynote), 
+  DELS: [Weekly Note](spot://weeklynote),[Weekly Obsidian](spot://weeklyobsidian),[Weekly Note](spot://weeklynote),[Weekly Note](spot://weeklynote),
 
 .[[WEEKLY]].
   , [[2022-W30]], [[2022-W31]], [[2022-W40]], [[2022-W41]], [[2022-W42]], [[2022-w43]], [[2022-W44]]

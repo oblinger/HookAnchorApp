@@ -1,6 +1,6 @@
 
 
-
+BUGS
 - [Bug Board](spot://Bug~Board) 
 - [Non-Bug Report](https://docs.google.com/document/d/1fbsdxS6zBY0OnHMyK4bb8gvezrvf4OcqssiSVOHkJP0/edit?tab=t.0) 
 - [Mery's Bug Sheet](https://docs.google.com/spreadsheets/d/1mK8BVd0nJKx9EcHwUNGWWPZ-Pz8gmhg5VEk-5KwQq0c/edit?pli=1&gid=1921647230#gid=1921647230) 
@@ -20,7 +20,8 @@ TOPICS
 - QA documentation of User Stories
 - Becoming
 
-QA Fixes:
+
+QA FIXES
 - more time random testing
 - push less often
 

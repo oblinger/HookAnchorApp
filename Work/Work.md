@@ -28,7 +28,14 @@ Greg
   Assess	> Assess plan for BB
 .[[work]].
   , [[SV]],
+  , ,
+  , ,
+  , ,
+  , [work Obsidian](spot://workobsidian),
+  DELS: ,[work Obsidian](spot://workobsidian),
+  , ,
   , [work Note](spot://worknote), 
+  DELS: [work Note](spot://worknote),[work Obsidian](spot://workobsidian),[work Note](spot://worknote),[work Note](spot://worknote),
 
 
 BUG CAPTURE

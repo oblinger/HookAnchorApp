@@ -1,5 +1,12 @@
 .[[Nuro]].
+  , ,
+  , ,
+  , ,
+  , [Nuro Obsidian](spot://nuroobsidian),
+  DELS: ,[Nuro Obsidian](spot://nuroobsidian),
+  , ,
   , [Nuro Note](spot://nuronote), 
+  DELS: [Nuro Note](spot://nuronote),[Nuro Obsidian](spot://nuroobsidian),[Nuro Note](spot://nuronote),[Nuro Note](spot://nuronote),
 
 # Top
 #### kind: StartAI

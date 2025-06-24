@@ -1,5 +1,12 @@
 .[[Unlearn.AI]].
+  , ,
+  , ,
+  , ,
+  , [Unlearn.AI Obsidian](spot://unlearn.aiobsidian),
+  DELS: ,[Unlearn.AI Obsidian](spot://unlearn.aiobsidian),
+  , ,
   , [Unlearn.AI Note](spot://unlearn.ainote), 
+  DELS: [Unlearn.AI Note](spot://unlearn.ainote),[Unlearn.AI Obsidian](spot://unlearn.aiobsidian),[Unlearn.AI Note](spot://unlearn.ainote),[Unlearn.AI Note](spot://unlearn.ainote),
 
 # Top
 #### kind: GenAI

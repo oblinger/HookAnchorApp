@@ -1,5 +1,12 @@
 .[[Uniphore]].
+  , ,
+  , ,
+  , ,
+  , [Uniphore Obsidian](spot://uniphoreobsidian),
+  DELS: ,[Uniphore Obsidian](spot://uniphoreobsidian),
+  , ,
   , [Uniphore Note](spot://uniphorenote), 
+  DELS: [Uniphore Note](spot://uniphorenote),[Uniphore Obsidian](spot://uniphoreobsidian),[Uniphore Note](spot://uniphorenote),[Uniphore Note](spot://uniphorenote),
 
 # Top
 #### kind: StartAI

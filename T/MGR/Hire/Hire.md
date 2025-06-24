@@ -1,9 +1,19 @@
 .[[Hire]].
   [[Recruiter]], [[INTERVIEW]],
-  [[Hire Post]], [[Hire Test]],
+  , ,
   [[IOS guys]],
+  , ,
+  , ,
+  , ,
+  , ,
+  , [Hire Obsidian](spot://hireobsidian), [Hire Post Obsidian](spot://hirepostobsidian)
+  , [Hire Test Obsidian](spot://hiretestobsidian),
+  DELS: ,[Hire Obsidian](spot://hireobsidian),
+  , , [Hire Post](spot://hirepost), [Hire Test](spot://hiretest),
+  , , ,
   , [Hire Note](spot://hirenote), [Hire Post Note](spot://hirepostnote)
   , [Hire Test Note](spot://hiretestnote), 
+  DELS: [Hire Note](spot://hirenote),[Hire Obsidian](spot://hireobsidian),[[Hire Post]], [[Hire Test]], [Hire Post Note](spot://hirepostnote), [Hire Test Note](spot://hiretestnote), [Hire Note](spot://hirenote),[Hire Note](spot://hirenote), [Hire Post Note](spot://hirepostnote), [Hire Test Note](spot://hiretestnote),
 
 
 

@@ -1,5 +1,12 @@
 .[[H2O.ai]].
+  , ,
+  , ,
+  , ,
+  , [H2O.ai Obsidian](spot://h2o.aiobsidian),
+  DELS: ,[H2O.ai Obsidian](spot://h2o.aiobsidian),
+  , ,
   , [H2O.ai Note](spot://h2o.ainote), 
+  DELS: [H2O.ai Note](spot://h2o.ainote),[H2O.ai Obsidian](spot://h2o.aiobsidian),[H2O.ai Note](spot://h2o.ainote),[H2O.ai Note](spot://h2o.ainote),
 
 # Top
 #### kind: Big

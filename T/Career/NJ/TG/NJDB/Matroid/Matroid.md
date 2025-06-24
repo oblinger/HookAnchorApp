@@ -1,5 +1,12 @@
 .[[Matroid]].
+  , ,
+  , ,
+  , ,
+  , [Matroid Obsidian](spot://matroidobsidian),
+  DELS: ,[Matroid Obsidian](spot://matroidobsidian),
+  , ,
   , [Matroid Note](spot://matroidnote), 
+  DELS: [Matroid Note](spot://matroidnote),[Matroid Obsidian](spot://matroidobsidian),[Matroid Note](spot://matroidnote),[Matroid Note](spot://matroidnote),
 
 # Top
 #### kind: StartAI

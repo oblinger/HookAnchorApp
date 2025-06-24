@@ -5,8 +5,15 @@
   [[Jnl]],
   , [[DD]],
   , [[test-foo]],
-  , [Diary Note](spot://diarynote), 
+  , ,
+  , ,
   DELS: [[DD]],
+  , ,
+  , [Diary Obsidian](spot://diaryobsidian),
+  DELS: [[DD]],,[Diary Obsidian](spot://diaryobsidian),
+  , ,
+  , [Diary Note](spot://diarynote), 
+  DELS: [[DD]],[Diary Note](spot://diarynote),[Diary Obsidian](spot://diaryobsidian),[Diary Note](spot://diarynote),[Diary Note](spot://diarynote),
 
 [[Daily]] 
 [[Journal Old]]

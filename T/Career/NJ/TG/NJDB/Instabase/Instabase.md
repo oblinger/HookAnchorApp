@@ -1,5 +1,12 @@
 .[[Instabase]].
+  , ,
+  , ,
+  , ,
+  , [Instabase Obsidian](spot://instabaseobsidian),
+  DELS: ,[Instabase Obsidian](spot://instabaseobsidian),
+  , ,
   , [Instabase Note](spot://instabasenote), 
+  DELS: [Instabase Note](spot://instabasenote),[Instabase Obsidian](spot://instabaseobsidian),[Instabase Note](spot://instabasenote),[Instabase Note](spot://instabasenote),
 
 # Top
 #### kind: StartAI

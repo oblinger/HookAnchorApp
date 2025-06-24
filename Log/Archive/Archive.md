@@ -1,6 +1,13 @@
 .[[Archive]].
   , [[Phillipines]],
+  , ,
+  , ,
+  , ,
+  , [Archive Obsidian](spot://archiveobsidian),
+  DELS: ,[Archive Obsidian](spot://archiveobsidian),
+  , ,
   , [Archive Note](spot://archivenote), 
+  DELS: [Archive Note](spot://archivenote),[Archive Obsidian](spot://archiveobsidian),[Archive Note](spot://archivenote),[Archive Note](spot://archivenote),
 
 
 # LOG

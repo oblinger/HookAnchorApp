@@ -1,6 +1,13 @@
 .[[UfApps]].
   ,   [[Recommender]], [[ufBrick]], [[UfGui]],
+  , ,
+  , ,
+  , ,
+  , [UfApps Obsidian](spot://ufappsobsidian),
+  DELS: ,[UfApps Obsidian](spot://ufappsobsidian),
+  , ,
   , [UfApps Note](spot://ufappsnote), 
+  DELS: [UfApps Note](spot://ufappsnote),[UfApps Obsidian](spot://ufappsobsidian),[UfApps Note](spot://ufappsnote),[UfApps Note](spot://ufappsnote),
 
 
 :: [[ufBrick]]

@@ -1,5 +1,12 @@
 .[[@Facet]].
+  , ,
+  , ,
+  , ,
+  , [@Facet Obsidian](spot://@facetobsidian),
+  DELS: ,[@Facet Obsidian](spot://@facetobsidian),
+  , ,
   , [@Facet Note](spot://@facetnote), 
+  DELS: [@Facet Note](spot://@facetnote),[@Facet Obsidian](spot://@facetobsidian),[@Facet Note](spot://@facetnote),[@Facet Note](spot://@facetnote),
 
 #pp   [Website](https://facet.com/nerdwallet/?utm_medium=affiliate&utm_source=NerdWallet&aff_sub=2149128643984b2db20917309968d246) 
 

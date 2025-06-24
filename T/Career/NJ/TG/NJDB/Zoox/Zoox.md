@@ -1,5 +1,12 @@
 .[[Zoox]].
+  , ,
+  , ,
+  , ,
+  , [Zoox Obsidian](spot://zooxobsidian),
+  DELS: ,[Zoox Obsidian](spot://zooxobsidian),
+  , ,
   , [Zoox Note](spot://zooxnote), 
+  DELS: [Zoox Note](spot://zooxnote),[Zoox Obsidian](spot://zooxobsidian),[Zoox Note](spot://zooxnote),[Zoox Note](spot://zooxnote),
 
 # Top
 #### kind: Big

@@ -1,5 +1,12 @@
 .[[Rental]].
+  , ,
+  , ,
+  , ,
+  , [Rental Obsidian](spot://rentalobsidian),
+  DELS: ,[Rental Obsidian](spot://rentalobsidian),
+  , ,
   , [Rental Note](spot://rentalnote), 
+  DELS: [Rental Note](spot://rentalnote),[Rental Obsidian](spot://rentalobsidian),[Rental Note](spot://rentalnote),[Rental Note](spot://rentalnote),
 
 ==== GARAGE SPACE
 Advert for garage space

@@ -14,8 +14,17 @@ n:: Groupings of like (typed), undated entries.
   , [[Read]],
   DELS: , , ,,, , , , , ,
   , [[Buy]],
+  , ,
+  , ,
+  DELS: , , ,,, , , , , ,,, , , , , , , , ,, , ,
+  , ,
+  DELS: , , ,,, , , , , ,,, , , , , , , , ,, , ,,
+  , [Set Obsidian](spot://setobsidian),
+  DELS: , , ,,, , , , , ,,, , , , , , , , ,, , ,,, , , , , , , , , , , , , , , , , , , , , , ,[Set Obsidian](spot://setobsidian),
+  , ,
+  DELS: , , ,,, , , , , ,,, , , , , , , , ,, , ,,, , , , , , , , , , , , , , , , , , , , , , ,[Set Obsidian](spot://setobsidian),, ,
   , [Set Note](spot://setnote), 
-  DELS: [[LANG]], [[Phone]], [[Writing]],[[BUY]],[[CTC]], [[Phone]], [[Writing]], [[LANG]], [[Phone]], [[Writing]],[[ToRead]],[[LANG]], [[Phone]], [[Writing]], [[CTC]], [[Phone]], [[Writing]], [[LANG]], [[Phone]], [[Writing]],[[BUY]], [[BUY]], [[BUY]],
+  DELS: [[LANG]], [[Phone]], [[Writing]],[[BUY]],[[CTC]], [[Phone]], [[Writing]], [[LANG]], [[Phone]], [[Writing]],[[ToRead]],[[LANG]], [[Phone]], [[Writing]], [[CTC]], [[Phone]], [[Writing]], [[LANG]], [[Phone]], [[Writing]],[[BUY]], [[BUY]], [[BUY]],[Set Note](spot://setnote),[[LANG]], [[Phone]], [[Writing]], [[BUY]], [[CTC]], [[Phone]], [[Writing]], [[LANG]], [[Phone]], [[Writing]], [[ToRead]], [[LANG]], [[Phone]], [[Writing]], [[CTC]], [[Phone]], [[Writing]], [[LANG]], [[Phone]], [[Writing]], [[BUY]], [[BUY]], [[BUY]],[Set Obsidian](spot://setobsidian),[Set Note](spot://setnote), [Set Note](spot://setnote),[[LANG]], [[Phone]], [[Writing]], [[BUY]], [[CTC]], [[Phone]], [[Writing]], [[LANG]], [[Phone]], [[Writing]], [[ToRead]], [[LANG]], [[Phone]], [[Writing]], [[CTC]], [[Phone]], [[Writing]], [[LANG]], [[Phone]], [[Writing]], [[BUY]], [[BUY]], [[BUY]], [[LANG]], [[Phone]], [[Writing]], [[BUY]], [[CTC]], [[Phone]], [[Writing]], [[LANG]], [[Phone]], [[Writing]], [[ToRead]], [[LANG]], [[Phone]], [[Writing]], [[CTC]], [[Phone]], [[Writing]], [[LANG]], [[Phone]], [[Writing]], [[BUY]], [[BUY]], [[BUY]],[Set Note](spot://setnote), [Set Note](spot://setnote), [Set Note](spot://setnote), [Set Note](spot://setnote),
 
 
 

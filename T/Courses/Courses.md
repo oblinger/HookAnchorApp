@@ -4,8 +4,15 @@
   ,
   , ,
   , [[Never Search Alone]],
-  , [Courses Note](spot://coursesnote), 
+  , ,
+  , ,
   DELS: [[Never Search Alone]],[[Never Search Alone]],
+  , ,
+  , [Courses Obsidian](spot://coursesobsidian),
+  DELS: [[Never Search Alone]],[[Never Search Alone]],,[Courses Obsidian](spot://coursesobsidian),
+  , ,
+  , [Courses Note](spot://coursesnote), 
+  DELS: [[Never Search Alone]],[[Never Search Alone]],[Courses Note](spot://coursesnote),[Courses Obsidian](spot://coursesobsidian),[Courses Note](spot://coursesnote),[Courses Note](spot://coursesnote),
 
 
 

@@ -1,5 +1,12 @@
 .[[Latitude]].
+  , ,
+  , ,
+  , ,
+  , [Latitude Obsidian](spot://latitudeobsidian),
+  DELS: ,[Latitude Obsidian](spot://latitudeobsidian),
+  , ,
   , [Latitude Note](spot://latitudenote), 
+  DELS: [Latitude Note](spot://latitudenote),[Latitude Obsidian](spot://latitudeobsidian),[Latitude Note](spot://latitudenote),[Latitude Note](spot://latitudenote),
 
 # Top
 #### kind: BigAI

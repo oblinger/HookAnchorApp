@@ -1,5 +1,12 @@
 .[[LangChain]].
+  , ,
+  , ,
+  , ,
+  , [LangChain Obsidian](spot://langchainobsidian),
+  DELS: ,[LangChain Obsidian](spot://langchainobsidian),
+  , ,
   , [LangChain Note](spot://langchainnote), 
+  DELS: [LangChain Note](spot://langchainnote),[LangChain Obsidian](spot://langchainobsidian),[LangChain Note](spot://langchainnote),[LangChain Note](spot://langchainnote),
 
 # Top
 #### kind: StartAI

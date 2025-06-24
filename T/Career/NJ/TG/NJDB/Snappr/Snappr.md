@@ -1,5 +1,12 @@
 .[[Snappr]].
+  , ,
+  , ,
+  , ,
+  , [Snappr Obsidian](spot://snapprobsidian),
+  DELS: ,[Snappr Obsidian](spot://snapprobsidian),
+  , ,
   , [Snappr Note](spot://snapprnote), 
+  DELS: [Snappr Note](spot://snapprnote),[Snappr Obsidian](spot://snapprobsidian),[Snappr Note](spot://snapprnote),[Snappr Note](spot://snapprnote),
 
 # Top
 #### kind: StartAI

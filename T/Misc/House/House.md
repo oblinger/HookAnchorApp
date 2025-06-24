@@ -1,6 +1,14 @@
 .[[House]].
-  ,   [[House Crime]], [house taxes](spot://housetaxes),
+  ,   , [house taxes](spot://housetaxes),
+  , , ,
+  , ,
+  , ,
+  , [House Crime Obsidian](spot://housecrimeobsidian), [House Obsidian](spot://houseobsidian),
+  DELS: ,[House Obsidian](spot://houseobsidian),
+  , [House Crime](spot://housecrime), ,
+  , ,
   , [House Crime Note](spot://housecrimenote), [House Note](spot://housenote), 
+  DELS: [House Note](spot://housenote),[House Obsidian](spot://houseobsidian),[[House Crime]], [House Crime Note](spot://housecrimenote), [House Note](spot://housenote),[House Note](spot://housenote), [House Crime Note](spot://housecrimenote),
 
 
 :: [[House Crime]]

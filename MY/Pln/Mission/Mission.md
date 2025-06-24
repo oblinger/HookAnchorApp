@@ -1,6 +1,15 @@
 .[[Mission]].
   ,   [[Mission2024]],
+  , , ,
+  ,
+  , ,
+  , , ,
+  , [Mission Obsidian](spot://missionobsidian)
+  , [Mission Statement Obsidian](spot://missionstatementobsidian),
+  DELS: , ,[Mission Obsidian](spot://missionobsidian), [Mission Statement Obsidian](spot://missionstatementobsidian),
+  , , ,
   , [Mission Note](spot://missionnote), [Mission Statement Note](spot://missionstatementnote), 
+  DELS: [Mission Note](spot://missionnote), [Mission Statement Note](spot://missionstatementnote),[Mission Obsidian](spot://missionobsidian), [Mission Statement Obsidian](spot://missionstatementobsidian),[Mission Note](spot://missionnote), [Mission Statement Note](spot://missionstatementnote),[Mission Note](spot://missionnote), [Mission Statement Note](spot://missionstatementnote),
 
 
 - [ ] >> I intend each day to be part of a fulfilled and fulfilling life focused on joy, meaning, and benefit for others.

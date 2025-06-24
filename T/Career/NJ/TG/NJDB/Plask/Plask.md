@@ -1,5 +1,12 @@
 .[[Plask]].
+  , ,
+  , ,
+  , ,
+  , [Plask Obsidian](spot://plaskobsidian),
+  DELS: ,[Plask Obsidian](spot://plaskobsidian),
+  , ,
   , [Plask Note](spot://plasknote), 
+  DELS: [Plask Note](spot://plasknote),[Plask Obsidian](spot://plaskobsidian),[Plask Note](spot://plasknote),[Plask Note](spot://plasknote),
 
 # Top
 #### kind: BigAI

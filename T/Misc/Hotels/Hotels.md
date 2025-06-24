@@ -1,5 +1,12 @@
 .[[Hotels]].
+  , ,
+  , ,
+  , ,
+  , [Hotels Obsidian](spot://hotelsobsidian),
+  DELS: ,[Hotels Obsidian](spot://hotelsobsidian),
+  , ,
   , [Hotels Note](spot://hotelsnote), 
+  DELS: [Hotels Note](spot://hotelsnote),[Hotels Obsidian](spot://hotelsobsidian),[Hotels Note](spot://hotelsnote),[Hotels Note](spot://hotelsnote),
 
 
 

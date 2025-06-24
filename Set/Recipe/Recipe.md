@@ -1,6 +1,13 @@
 .[[Recipe]].
   ,   [[GreenBean_HamBase]], [[GreenBean_Walnuts]],
+  , ,
+  , ,
+  , ,
+  , [Recipe Obsidian](spot://recipeobsidian),
+  DELS: ,[Recipe Obsidian](spot://recipeobsidian),
+  , ,
   , [Recipe Note](spot://recipenote), 
+  DELS: [Recipe Note](spot://recipenote),[Recipe Obsidian](spot://recipeobsidian),[Recipe Note](spot://recipenote),[Recipe Note](spot://recipenote),
 
 #set 
 n:: Info about recipes (Not really a set)

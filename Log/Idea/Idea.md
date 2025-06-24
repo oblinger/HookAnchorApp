@@ -18,9 +18,19 @@ n:: Ideas of mine
   ADDS:   ,
   ADDS:   , ,
   ADDS:   ,
-  ,   [[Brain]], [[Forum]], [[Idea Social]],
+  ,   [[Brain]], [[Forum]], ,
+  , , ,
+  , ,
+  DELS: [[Forum]], , [[Brain]],, , , , , ,,
+  , ,
+  DELS: [[Forum]], , [[Brain]],, , , , , ,,,
+  , [Idea Obsidian](spot://ideaobsidian), [Idea Social Obsidian](spot://ideasocialobsidian),
+  DELS: [[Forum]], , [[Brain]],, , , , , ,,,, , , , , , ,[Idea Obsidian](spot://ideaobsidian),
+  , , [Idea Social](spot://ideasocial),
+  DELS: [[Forum]], [[Idea Social]], [[Brain]],, , , , , ,,,, , , , , , ,[Idea Obsidian](spot://ideaobsidian),[[Idea Social]], , [[Idea Social]], , [[Idea Social]], ,
+  , ,
   , [Idea Note](spot://ideanote), [Idea Social Note](spot://ideasocialnote), 
-  DELS: [[Forum]], [[Idea Social]], [[Brain]],[[2009-03 State Edu Testing]], [[Basket]], [[GHOST-Seed]], [[GuaranteedReserves]], [[Rope Chain]], [[Startup Canvas copy]],[[2009-05 SCATA Security]],
+  DELS: [[Forum]], [[Idea Social]], [[Brain]],[[2009-03 State Edu Testing]], [[Basket]], [[GHOST-Seed]], [[GuaranteedReserves]], [[Rope Chain]], [[Startup Canvas copy]],[[2009-05 SCATA Security]],[Idea Note](spot://ideanote),[[2009-03 State Edu Testing]], [[Basket]], [[GHOST-Seed]], [[GuaranteedReserves]], [[Rope Chain]], [[Startup Canvas copy]], [[2009-05 SCATA Security]],[Idea Obsidian](spot://ideaobsidian),[[Idea Social]], [Idea Social Note](spot://ideasocialnote), [[Idea Social]], [Idea Note](spot://ideanote), [[Idea Social]], [Idea Note](spot://ideanote),[[2009-03 State Edu Testing]], [[Basket]], [[GHOST-Seed]], [[GuaranteedReserves]], [[Rope Chain]], [[Startup Canvas copy]], [[2009-05 SCATA Security]], [[2009-03 State Edu Testing]], [[Basket]], [[GHOST-Seed]], [[GuaranteedReserves]], [[Rope Chain]], [[Startup Canvas copy]], [[2009-05 SCATA Security]],[Idea Social Note](spot://ideasocialnote),[Idea Note](spot://ideanote), [Idea Note](spot://ideanote), [Idea Note](spot://ideanote), [Idea Note](spot://ideanote), [Idea Social Note](spot://ideasocialnote),
 
 
 

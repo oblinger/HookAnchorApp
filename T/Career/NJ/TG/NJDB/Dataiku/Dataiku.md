@@ -1,5 +1,12 @@
 .[[Dataiku]].
+  , ,
+  , ,
+  , ,
+  , [Dataiku Obsidian](spot://dataikuobsidian),
+  DELS: ,[Dataiku Obsidian](spot://dataikuobsidian),
+  , ,
   , [Dataiku Note](spot://dataikunote), 
+  DELS: [Dataiku Note](spot://dataikunote),[Dataiku Obsidian](spot://dataikuobsidian),[Dataiku Note](spot://dataikunote),[Dataiku Note](spot://dataikunote),
 
 # Top
 #### kind: StartAI

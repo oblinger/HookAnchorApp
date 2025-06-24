@@ -8,7 +8,14 @@ n:: Books I have read
   - [Atomic Habits](spot://atomichabits), [DYL](spot://dyl), [Getting_Things_Done](spot://gettingthingsdone),
   - [High Output Management](spot://highoutputmanagement), [[F90]], [[MgrPath]],
   - [[Agile Software Development]], [[Fundamentals of Workability Workshop]],
+  , ,
+  , ,
+  , ,
+  , [Book Obsidian](spot://bookobsidian),
+  DELS: ,[Book Obsidian](spot://bookobsidian),
+  , ,
   , [Book Note](spot://booknote), 
+  DELS: [Book Note](spot://booknote),[Book Obsidian](spot://bookobsidian),[Book Note](spot://booknote),[Book Note](spot://booknote),
 
 
 

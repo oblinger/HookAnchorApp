@@ -1,8 +1,17 @@
 .[[WP]].
   :
   ,   [[2002-01-00 Procedural Knowledge-AR]], [[WP2021]], [[WP2022]], [[WP2023]], [[wp2023-01-05 Keyboard Settlement]],
+  , ,
+  , ,
+  DELS: ,
+  , ,
+  DELS: ,,
+  , [WP Obsidian](spot://wpobsidian),
+  DELS: ,,,[WP Obsidian](spot://wpobsidian),
+  , ,
+  DELS: ,,,[WP Obsidian](spot://wpobsidian),, ,
   , [WP Note](spot://wpnote), 
-  DELS: [[WP Entry]],
+  DELS: [[WP Entry]],[WP Note](spot://wpnote),[[WP Entry]],[WP Obsidian](spot://wpobsidian),[WP Note](spot://wpnote), [WP Note](spot://wpnote),[[WP Entry]], [[WP Entry]],[WP Note](spot://wpnote), [WP Note](spot://wpnote), [WP Note](spot://wpnote), [WP Note](spot://wpnote),
 
 n:: 'wp...'	Work Product. Single documents outputs
 

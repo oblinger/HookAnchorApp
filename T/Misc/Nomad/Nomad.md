@@ -1,5 +1,12 @@
 .[[Nomad]].
+  , ,
+  , ,
+  , ,
+  , [Nomad Obsidian](spot://nomadobsidian),
+  DELS: ,[Nomad Obsidian](spot://nomadobsidian),
+  , ,
   , [Nomad Note](spot://nomadnote), 
+  DELS: [Nomad Note](spot://nomadnote),[Nomad Obsidian](spot://nomadobsidian),[Nomad Note](spot://nomadnote),[Nomad Note](spot://nomadnote),
 
 
 # Blogs

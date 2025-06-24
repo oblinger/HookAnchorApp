@@ -1,5 +1,12 @@
 .[[DocJavascript]].
+  , ,
+  , ,
+  , ,
+  , [DocJavascript Obsidian](spot://docjavascriptobsidian),
+  DELS: ,[DocJavascript Obsidian](spot://docjavascriptobsidian),
+  , ,
   , [DocJavascript Note](spot://docjavascriptnote), 
+  DELS: [DocJavascript Note](spot://docjavascriptnote),[DocJavascript Obsidian](spot://docjavascriptobsidian),[DocJavascript Note](spot://docjavascriptnote),[DocJavascript Note](spot://docjavascriptnote),
 
   [__DocJavascript__](__DocJavascript__.md)
 

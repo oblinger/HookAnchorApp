@@ -1,7 +1,14 @@
 
 .[[People]].
   [[family]]
+  , ,
+  , ,
+  , ,
+  , [People Obsidian](spot://peopleobsidian),
+  DELS: ,[People Obsidian](spot://peopleobsidian),
+  , ,
   , [People Note](spot://peoplenote), 
+  DELS: [People Note](spot://peoplenote),[People Obsidian](spot://peopleobsidian),[People Note](spot://peoplenote),[People Note](spot://peoplenote),
 
 - [PEOPLE Note](spot://peoplenote),
 - [[SV People]], 

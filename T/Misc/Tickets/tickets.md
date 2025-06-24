@@ -1,5 +1,12 @@
 .[[tickets]].
+  , ,
+  , ,
+  , ,
+  , [tickets Obsidian](spot://ticketsobsidian),
+  DELS: ,[tickets Obsidian](spot://ticketsobsidian),
+  , ,
   , [tickets Note](spot://ticketsnote), 
+  DELS: [tickets Note](spot://ticketsnote),[tickets Obsidian](spot://ticketsobsidian),[tickets Note](spot://ticketsnote),[tickets Note](spot://ticketsnote),
 
 
 ### SFMTA 

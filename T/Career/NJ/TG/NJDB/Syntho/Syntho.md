@@ -1,5 +1,12 @@
 .[[Syntho]].
+  , ,
+  , ,
+  , ,
+  , [Syntho Obsidian](spot://synthoobsidian),
+  DELS: ,[Syntho Obsidian](spot://synthoobsidian),
+  , ,
   , [Syntho Note](spot://synthonote), 
+  DELS: [Syntho Note](spot://synthonote),[Syntho Obsidian](spot://synthoobsidian),[Syntho Note](spot://synthonote),[Syntho Note](spot://synthonote),
 
 # Top
 #### kind: BigAI

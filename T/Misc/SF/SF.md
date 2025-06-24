@@ -1,7 +1,14 @@
 .[[SF]].
   ADDS:   [[SF-Activities]], [[SF-food]], [[SF-Search]],
   ADDS:   [[apartment]], [[Bache]],
+  , ,
+  , ,
+  , ,
+  , [SF Obsidian](spot://sfobsidian),
+  DELS: ,[SF Obsidian](spot://sfobsidian),
+  , ,
   , [SF Note](spot://sfnote), 
+  DELS: [SF Note](spot://sfnote),[SF Obsidian](spot://sfobsidian),[SF Note](spot://sfnote),[SF Note](spot://sfnote),
 
 
 

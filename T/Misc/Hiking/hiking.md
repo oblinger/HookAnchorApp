@@ -1,5 +1,12 @@
 .[[hiking]].
+  , ,
+  , ,
+  , ,
+  , [hiking Obsidian](spot://hikingobsidian),
+  DELS: ,[hiking Obsidian](spot://hikingobsidian),
+  , ,
   , [hiking Note](spot://hikingnote), 
+  DELS: [hiking Note](spot://hikingnote),[hiking Obsidian](spot://hikingobsidian),[hiking Note](spot://hikingnote),[hiking Note](spot://hikingnote),
 
 Hiking
 

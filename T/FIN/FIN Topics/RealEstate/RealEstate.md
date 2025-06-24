@@ -1,5 +1,12 @@
 .[[RealEstate]].
+  , ,
+  , ,
+  , ,
+  , [RealEstate Obsidian](spot://realestateobsidian),
+  DELS: ,[RealEstate Obsidian](spot://realestateobsidian),
+  , ,
   , [RealEstate Note](spot://realestatenote), 
+  DELS: [RealEstate Note](spot://realestatenote),[RealEstate Obsidian](spot://realestateobsidian),[RealEstate Note](spot://realestatenote),[RealEstate Note](spot://realestatenote),
 
 
 

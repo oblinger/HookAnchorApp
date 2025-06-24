@@ -2,8 +2,17 @@
   , [[Daily Schedules]], ,
   , ,
   , [[SAVERS]],
+  , ,
+  , ,
+  DELS: [[SAVERS]],,
+  , ,
+  DELS: [[SAVERS]],,,
+  , [Habit Obsidian](spot://habitobsidian),
+  DELS: [[SAVERS]],,,,[Habit Obsidian](spot://habitobsidian),
+  , ,
+  DELS: [[SAVERS]],,,,[Habit Obsidian](spot://habitobsidian),, ,
   , [Habit Note](spot://habitnote), 
-  DELS: [[SAVERS]],[[Savers]],
+  DELS: [[SAVERS]],[[Savers]],[Habit Note](spot://habitnote),[[Savers]],[Habit Obsidian](spot://habitobsidian),[Habit Note](spot://habitnote), [Habit Note](spot://habitnote),[[Savers]], [[Savers]],[Habit Note](spot://habitnote), [Habit Note](spot://habitnote), [Habit Note](spot://habitnote), [Habit Note](spot://habitnote),
 
 
 ## = CURRENT FOCUS

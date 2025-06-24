@@ -1,5 +1,12 @@
 .[[Lightricks]].
+  , ,
+  , ,
+  , ,
+  , [Lightricks Obsidian](spot://lightricksobsidian),
+  DELS: ,[Lightricks Obsidian](spot://lightricksobsidian),
+  , ,
   , [Lightricks Note](spot://lightricksnote), 
+  DELS: [Lightricks Note](spot://lightricksnote),[Lightricks Obsidian](spot://lightricksobsidian),[Lightricks Note](spot://lightricksnote),[Lightricks Note](spot://lightricksnote),
 
 # Top
 #### kind: Far

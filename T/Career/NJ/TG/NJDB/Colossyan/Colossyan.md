@@ -1,5 +1,12 @@
 .[[Colossyan]].
+  , ,
+  , ,
+  , ,
+  , [Colossyan Obsidian](spot://colossyanobsidian),
+  DELS: ,[Colossyan Obsidian](spot://colossyanobsidian),
+  , ,
   , [Colossyan Note](spot://colossyannote), 
+  DELS: [Colossyan Note](spot://colossyannote),[Colossyan Obsidian](spot://colossyanobsidian),[Colossyan Note](spot://colossyannote),[Colossyan Note](spot://colossyannote),
 
 # Top
 #### kind: BigAI

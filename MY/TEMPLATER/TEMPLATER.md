@@ -1,7 +1,14 @@
 .[[TEMPLATER]].
   ADDS:   [[AT Entry]], [[DAY Entry]], [[indent IN]], [[indent OUT]], [[JOURNAL Entry]], [[LOGGED sub note]], [[MEETING Entry]], [[NAMED sub note]], [[NOTE entry]], [[PRJ Entry]], [[QL template]]
-  [[REF Entry]], [[SUB Folder Note]], [[TEXT Entry]], [[UNTYPED Entry]], [[VC Template]], [[WEEKLY template]], [[WP Entry]], [[Z Example Template]], [[Z JOURNAL header]], [[Z TEST TEMPLATE]],
-  , [TEMPLATER Note](spot://templaternote), 
+  [[REF Entry]], , [[TEXT Entry]], [[UNTYPED Entry]], [[VC Template]], [[WEEKLY template]], [[WP Entry]], [[Z Example Template]], [[Z JOURNAL header]], [[Z TEST TEMPLATE]],
+  , ,
+  , , ,
+  , , ,
+  , [SUB Folder Obsidian](spot://subfolderobsidian), [TEMPLATER Obsidian](spot://templaterobsidian),
+  DELS: , ,[SUB Folder Obsidian](spot://subfolderobsidian), [TEMPLATER Obsidian](spot://templaterobsidian),
+  , , ,
+  , [[SUB Folder Note]], [TEMPLATER Note](spot://templaternote), 
+  DELS: [[SUB Folder Note]], [TEMPLATER Note](spot://templaternote),[SUB Folder Obsidian](spot://subfolderobsidian), [TEMPLATER Obsidian](spot://templaterobsidian),[[SUB Folder Note]], [TEMPLATER Note](spot://templaternote),[[SUB Folder Note]], [TEMPLATER Note](spot://templaternote),
 
 
 

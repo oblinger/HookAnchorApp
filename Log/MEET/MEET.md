@@ -6,8 +6,17 @@
 .[[Meet]].
   ADDS:   [[2022 CORIS]], [[2024-06-13 - Juan EC2 setup]], [CV Meetings](spot://cvmeetings), , ,
   , [[MEETINGS]],
+  , ,
+  , ,
+  DELS: ,
+  , ,
+  DELS: ,,
+  , [Meet Obsidian](spot://meetobsidian),
+  DELS: ,,,[Meet Obsidian](spot://meetobsidian),
+  , ,
+  DELS: ,,,[Meet Obsidian](spot://meetobsidian),, ,
   , [Meet Note](spot://meetnote), 
-  DELS: [Meetings](spot://meetings),
+  DELS: [Meetings](spot://meetings),[Meet Note](spot://meetnote),[Meetings](spot://meetings),[Meet Obsidian](spot://meetobsidian),[Meet Note](spot://meetnote), [Meet Note](spot://meetnote),[Meetings](spot://meetings), [Meetings](spot://meetings),[Meet Note](spot://meetnote), [Meet Note](spot://meetnote), [Meet Note](spot://meetnote), [Meet Note](spot://meetnote),
 
 
 

@@ -1,6 +1,13 @@
 .[[Parents]].
   ,   [[Christmas Ornaments]],
+  , ,
+  , ,
+  , ,
+  , [Parents Obsidian](spot://parentsobsidian),
+  DELS: ,[Parents Obsidian](spot://parentsobsidian),
+  , ,
   , [Parents Note](spot://parentsnote), 
+  DELS: [Parents Note](spot://parentsnote),[Parents Obsidian](spot://parentsobsidian),[Parents Note](spot://parentsnote),[Parents Note](spot://parentsnote),
 
   [Parents Gdoc](https://docs.google.com/document/d/1-RnQcbruiKJQkZIZlaMC_cEZ_Vc17_iP45RcxRSM4Os/edit#heading=h.2i45vboz1026) 
 - [[Christmas Ornaments]] 

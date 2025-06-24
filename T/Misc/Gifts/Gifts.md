@@ -1,5 +1,12 @@
 .[[Gifts]].
+  , ,
+  , ,
+  , ,
+  , [Gifts Obsidian](spot://giftsobsidian),
+  DELS: ,[Gifts Obsidian](spot://giftsobsidian),
+  , ,
   , [Gifts Note](spot://giftsnote), 
+  DELS: [Gifts Note](spot://giftsnote),[Gifts Obsidian](spot://giftsobsidian),[Gifts Note](spot://giftsnote),[Gifts Note](spot://giftsnote),
 
 
 ### General

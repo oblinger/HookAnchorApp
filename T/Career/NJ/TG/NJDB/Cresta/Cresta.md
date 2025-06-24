@@ -1,5 +1,12 @@
 .[[Cresta]].
+  , ,
+  , ,
+  , ,
+  , [Cresta Obsidian](spot://crestaobsidian),
+  DELS: ,[Cresta Obsidian](spot://crestaobsidian),
+  , ,
   , [Cresta Note](spot://crestanote), 
+  DELS: [Cresta Note](spot://crestanote),[Cresta Obsidian](spot://crestaobsidian),[Cresta Note](spot://crestanote),[Cresta Note](spot://crestanote),
 
 # Top
 #### kind: StartAI

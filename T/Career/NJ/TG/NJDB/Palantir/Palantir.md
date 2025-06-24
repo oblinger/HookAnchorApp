@@ -1,5 +1,12 @@
 .[[Palantir]].
+  , ,
+  , ,
+  , ,
+  , [Palantir Obsidian](spot://palantirobsidian),
+  DELS: ,[Palantir Obsidian](spot://palantirobsidian),
+  , ,
   , [Palantir Note](spot://palantirnote), 
+  DELS: [Palantir Note](spot://palantirnote),[Palantir Obsidian](spot://palantirobsidian),[Palantir Note](spot://palantirnote),[Palantir Note](spot://palantirnote),
 
 # Top
 #### kind: Big

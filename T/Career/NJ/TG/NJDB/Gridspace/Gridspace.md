@@ -1,5 +1,12 @@
 .[[Gridspace]].
+  , ,
+  , ,
+  , ,
+  , [Gridspace Obsidian](spot://gridspaceobsidian),
+  DELS: ,[Gridspace Obsidian](spot://gridspaceobsidian),
+  , ,
   , [Gridspace Note](spot://gridspacenote), 
+  DELS: [Gridspace Note](spot://gridspacenote),[Gridspace Obsidian](spot://gridspaceobsidian),[Gridspace Note](spot://gridspacenote),[Gridspace Note](spot://gridspacenote),
 
 # Top
 #### kind: BigAI

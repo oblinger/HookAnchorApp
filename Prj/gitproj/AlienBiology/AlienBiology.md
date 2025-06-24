@@ -36,6 +36,13 @@ Dan Oblinger (c) 2025
 
 .[[AlienBiology]].
   , [[CellReactions]],
+  , ,
+  , ,
+  , ,
+  , [AlienBiology Obsidian](spot://alienbiologyobsidian),
+  DELS: ,[AlienBiology Obsidian](spot://alienbiologyobsidian),
+  , ,
   , [AlienBiology Note](spot://alienbiologynote), 
+  DELS: [AlienBiology Note](spot://alienbiologynote),[AlienBiology Obsidian](spot://alienbiologyobsidian),[AlienBiology Note](spot://alienbiologynote),[AlienBiology Note](spot://alienbiologynote),
 
 -->

@@ -1,6 +1,15 @@
 .[[web]].
   , [[2025-06-11 Aggregator]], , ,
   , ,
-  , [web Note](spot://webnote),
-  DELS: [[tmux-cheatsheet]], [[tmux-keybindings]],[[active binding]], 
+  , ,
+  , ,
+  DELS: , ,,
+  , ,
+  DELS: , ,,,
+  , [web Obsidian](spot://webobsidian),
+  DELS: , ,,,, , ,[web Obsidian](spot://webobsidian),
+  , ,
+  DELS: , ,,,, , ,[web Obsidian](spot://webobsidian),, ,
+  , [web Note](spot://webnote), 
+  DELS: [[tmux-cheatsheet]], [[tmux-keybindings]],[[active binding]],[web Note](spot://webnote),[[tmux-cheatsheet]], [[tmux-keybindings]], [[active binding]],[web Obsidian](spot://webobsidian),[web Note](spot://webnote), [web Note](spot://webnote),[[tmux-cheatsheet]], [[tmux-keybindings]], [[active binding]], [[tmux-cheatsheet]], [[tmux-keybindings]], [[active binding]],[web Note](spot://webnote), [web Note](spot://webnote), [web Note](spot://webnote), [web Note](spot://webnote),
 

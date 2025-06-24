@@ -2,8 +2,17 @@
   ADDS:   [ToTrash Folder](spot://totrashfolder), [TRASH Downloads Folder](spot://trashdownloadsfolder), , [TRASH Mac](spot://trashmac)
   , [TRASH ToTrash](spot://trashtotrash),
   ADDS:   , ,
+  , ,
+  , ,
+  DELS: , ,
+  , ,
+  DELS: , ,,
+  , [Trash Obsidian](spot://trashobsidian),
+  DELS: , ,,, ,[Trash Obsidian](spot://trashobsidian),
+  , ,
+  DELS: , ,,, ,[Trash Obsidian](spot://trashobsidian),, ,
   , [Trash Note](spot://trashnote), 
-  DELS: [TRASH for Obsidian Folder](spot://trashforobsidianfolder), [TRASH Obsidian](spot://trashobsidian),
+  DELS: [TRASH for Obsidian Folder](spot://trashforobsidianfolder), [TRASH Obsidian](spot://trashobsidian),[Trash Note](spot://trashnote),[TRASH for Obsidian Folder](spot://trashforobsidianfolder), [TRASH Obsidian](spot://trashobsidian),[Trash Obsidian](spot://trashobsidian),[Trash Note](spot://trashnote), [Trash Note](spot://trashnote),[TRASH for Obsidian Folder](spot://trashforobsidianfolder), [TRASH Obsidian](spot://trashobsidian), [TRASH for Obsidian Folder](spot://trashforobsidianfolder), [TRASH Obsidian](spot://trashobsidian),[Trash Note](spot://trashnote), [Trash Note](spot://trashnote), [Trash Note](spot://trashnote), [Trash Note](spot://trashnote),
 
 
 

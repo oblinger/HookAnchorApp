@@ -1,5 +1,12 @@
 .[[Elai.io]].
+  , ,
+  , ,
+  , ,
+  , [Elai.io Obsidian](spot://elai.ioobsidian),
+  DELS: ,[Elai.io Obsidian](spot://elai.ioobsidian),
+  , ,
   , [Elai.io Note](spot://elai.ionote), 
+  DELS: [Elai.io Note](spot://elai.ionote),[Elai.io Obsidian](spot://elai.ioobsidian),[Elai.io Note](spot://elai.ionote),[Elai.io Note](spot://elai.ionote),
 
 # Top
 #### kind: GenAI

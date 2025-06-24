@@ -10,8 +10,17 @@
   , [[Archive]], , , [[Phone]],
   DELS: [[Archive]], , , [[Phone]],
   , [[Meet]], [[Meeting]],
+  , ,
+  , ,
+  DELS: [[Archive]], , , [[Phone]],,, , , ,
+  , ,
+  DELS: [[Archive]], , , [[Phone]],,, , , ,,
+  , [Log Obsidian](spot://logobsidian),
+  DELS: [[Archive]], , , [[Phone]],,, , , ,,, , , , , , ,[Log Obsidian](spot://logobsidian),
+  , ,
+  DELS: [[Archive]], , , [[Phone]],,, , , ,,, , , , , , ,[Log Obsidian](spot://logobsidian),, ,
   , [Log Note](spot://lognote), 
-  DELS: [[Archive]], [[MEETING]], [[MEET]], [[Phone]],[[TT]],[[MEET]], [[MEETING]], [[MEETING]], [[MEET]],
+  DELS: [[Archive]], [[MEETING]], [[MEET]], [[Phone]],[[TT]],[[MEET]], [[MEETING]], [[MEETING]], [[MEET]],[Log Note](spot://lognote),[[MEETING]], [[MEET]], [[TT]], [[MEET]], [[MEETING]], [[MEETING]], [[MEET]],[Log Obsidian](spot://logobsidian),[Log Note](spot://lognote), [Log Note](spot://lognote),[[MEETING]], [[MEET]], [[TT]], [[MEET]], [[MEETING]], [[MEETING]], [[MEET]], [[MEETING]], [[MEET]], [[TT]], [[MEET]], [[MEETING]], [[MEETING]], [[MEET]],[Log Note](spot://lognote), [Log Note](spot://lognote), [Log Note](spot://lognote), [Log Note](spot://lognote),
 
 #### Personal Content Logs
 - [[prj]]:	Personal "evergreen" projects
@@ -39,7 +48,7 @@ LOGGING FOLDERS
 CAPS CAT		- ALL CAPS topic areas can have a log
 . [[ELI Log]]		- 
 . [[EOC Log]]		- 
-. [[FIN Log]]		- 
+. [[FIN.Log]]		- 
 . [[MED Log]]	- 
 . [[MGR Log]] 	- 
 

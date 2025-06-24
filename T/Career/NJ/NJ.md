@@ -9,7 +9,14 @@
   , [[NJ Blog]]
   , [[TG]],
   , [[NJ Pyramid]],
+  , , ,
+  , , ,
+  , , ,
+  , [NJ Obsidian](spot://njobsidian), [NJ Queries Obsidian](spot://njqueriesobsidian),
+  DELS: , ,[NJ Obsidian](spot://njobsidian), [NJ Queries Obsidian](spot://njqueriesobsidian),
+  , , ,
   , [NJ Note](spot://njnote), [NJ Queries Note](spot://njqueriesnote), 
+  DELS: [NJ Note](spot://njnote), [NJ Queries Note](spot://njqueriesnote),[NJ Obsidian](spot://njobsidian), [NJ Queries Obsidian](spot://njqueriesobsidian),[NJ Note](spot://njnote), [NJ Queries Note](spot://njqueriesnote),[NJ Note](spot://njnote), [NJ Queries Note](spot://njqueriesnote),
 
 RELATED:	 [[CRM]], 
 OLD:	[[Meta Coms]], 

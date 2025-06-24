@@ -1,5 +1,12 @@
 .[[Aisera]].
+  , ,
+  , ,
+  , ,
+  , [Aisera Obsidian](spot://aiseraobsidian),
+  DELS: ,[Aisera Obsidian](spot://aiseraobsidian),
+  , ,
   , [Aisera Note](spot://aiseranote), 
+  DELS: [Aisera Note](spot://aiseranote),[Aisera Obsidian](spot://aiseraobsidian),[Aisera Note](spot://aiseranote),[Aisera Note](spot://aiseranote),
 
 # Top
 #### kind: StartAI

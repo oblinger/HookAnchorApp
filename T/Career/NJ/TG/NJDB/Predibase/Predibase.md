@@ -1,5 +1,12 @@
 .[[Predibase]].
+  , ,
+  , ,
+  , ,
+  , [Predibase Obsidian](spot://predibaseobsidian),
+  DELS: ,[Predibase Obsidian](spot://predibaseobsidian),
+  , ,
   , [Predibase Note](spot://predibasenote), 
+  DELS: [Predibase Note](spot://predibasenote),[Predibase Obsidian](spot://predibaseobsidian),[Predibase Note](spot://predibasenote),[Predibase Note](spot://predibasenote),
 
 # Top
 #### kind: StartAI

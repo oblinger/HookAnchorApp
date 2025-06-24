@@ -1,5 +1,12 @@
 .[[Mgt]].
+  , ,
+  , ,
+  , ,
+  , [Mgt Obsidian](spot://mgtobsidian),
+  DELS: ,[Mgt Obsidian](spot://mgtobsidian),
+  , ,
   , [Mgt Note](spot://mgtnote), 
+  DELS: [Mgt Note](spot://mgtnote),[Mgt Obsidian](spot://mgtobsidian),[Mgt Note](spot://mgtnote),[Mgt Note](spot://mgtnote),
 
 
 - [[MGR]], [Wk Agenda](https://docs.google.com/document/d/1E5a-4Hvj2LX9KkdSPbcblWSBs3ZwdTgBvY0FA6NKytU/edit?usp=sharing), [MGT Gdrive](spot://MGT~Gdrive) 

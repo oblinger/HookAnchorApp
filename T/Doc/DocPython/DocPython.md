@@ -13,8 +13,17 @@
   , , ,
   DELS: ,[[DocTorch]], ,,, ,[[DocPythonCards]],
   , [[DocSklearn]],
+  , ,
+  , ,
+  DELS: ,[[DocTorch]], ,,, ,[[DocPythonCards]],, , ,, , , , , , , , , ,
+  , ,
+  DELS: ,[[DocTorch]], ,,, ,[[DocPythonCards]],, , ,, , , , , , , , , ,,
+  , [DocPython Obsidian](spot://docpythonobsidian),
+  DELS: ,[[DocTorch]], ,,, ,[[DocPythonCards]],, , ,, , , , , , , , , ,,, , , , , , , , , , , , , , , , , ,[DocPython Obsidian](spot://docpythonobsidian),
+  , ,
+  DELS: ,[[DocTorch]], ,,, ,[[DocPythonCards]],, , ,, , , , , , , , , ,,, , , , , , , , , , , , , , , , , ,[DocPython Obsidian](spot://docpythonobsidian),, ,
   , [DocPython Note](spot://docpythonnote), 
-  DELS: [[DocMatplotlib]],[[DocTorch]], [[Torch Tensor]],[[Torch Examples]],[[Torch Template]], [[DocMatplotlib]],[[DocPythonCards]],[[Torch Module]], [[Torch Examples]], [[Torch Examples]],[[Torch Tensor]], [[Torch Tensor]], [[Torch Tensor]], [[null]], [[Torch nn.Module]], [[Torch Training Examples]], [[DocMatplotlib]], [[Torch Tensor]], [[Torch Template]], [[DocMatplotlib]],
+  DELS: [[DocMatplotlib]],[[DocTorch]], [[Torch Tensor]],[[Torch Examples]],[[Torch Template]], [[DocMatplotlib]],[[DocPythonCards]],[[Torch Module]], [[Torch Examples]], [[Torch Examples]],[[Torch Tensor]], [[Torch Tensor]], [[Torch Tensor]], [[null]], [[Torch nn.Module]], [[Torch Training Examples]], [[DocMatplotlib]], [[Torch Tensor]], [[Torch Template]], [[DocMatplotlib]],[DocPython Note](spot://docpythonnote),[[DocMatplotlib]], [[Torch Tensor]], [[Torch Examples]], [[Torch Template]], [[DocMatplotlib]], [[Torch Module]], [[Torch Examples]], [[Torch Examples]], [[Torch Tensor]], [[Torch Tensor]], [[Torch Tensor]], [[null]], [[Torch nn.Module]], [[Torch Training Examples]], [[DocMatplotlib]], [[Torch Tensor]], [[Torch Template]], [[DocMatplotlib]],[DocPython Obsidian](spot://docpythonobsidian),[DocPython Note](spot://docpythonnote), [DocPython Note](spot://docpythonnote),[[DocMatplotlib]], [[Torch Tensor]], [[Torch Examples]], [[Torch Template]], [[DocMatplotlib]], [[Torch Module]], [[Torch Examples]], [[Torch Examples]], [[Torch Tensor]], [[Torch Tensor]], [[Torch Tensor]], [[null]], [[Torch nn.Module]], [[Torch Training Examples]], [[DocMatplotlib]], [[Torch Tensor]], [[Torch Template]], [[DocMatplotlib]], [[DocMatplotlib]], [[Torch Tensor]], [[Torch Examples]], [[Torch Template]], [[DocMatplotlib]], [[Torch Module]], [[Torch Examples]], [[Torch Examples]], [[Torch Tensor]], [[Torch Tensor]], [[Torch Tensor]], [[null]], [[Torch nn.Module]], [[Torch Training Examples]], [[DocMatplotlib]], [[Torch Tensor]], [[Torch Template]], [[DocMatplotlib]],[DocPython Note](spot://docpythonnote), [DocPython Note](spot://docpythonnote), [DocPython Note](spot://docpythonnote), [DocPython Note](spot://docpythonnote),
 
 [[DocTorch]]
 

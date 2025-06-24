@@ -1,5 +1,12 @@
 .[[Gym]].
+  , ,
+  , ,
+  , ,
+  , [Gym Obsidian](spot://gymobsidian),
+  DELS: ,[Gym Obsidian](spot://gymobsidian),
+  , ,
   , [Gym Note](spot://gymnote), 
+  DELS: [Gym Note](spot://gymnote),[Gym Obsidian](spot://gymobsidian),[Gym Note](spot://gymnote),[Gym Note](spot://gymnote),
 
 
 

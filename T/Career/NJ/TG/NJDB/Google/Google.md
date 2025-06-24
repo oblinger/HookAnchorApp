@@ -1,6 +1,13 @@
 .[[Google]].
   , [Google Cloud Console](spot://googlecloudconsole),
+  , ,
+  , ,
+  , ,
+  , [Google Obsidian](spot://googleobsidian),
+  DELS: ,[Google Obsidian](spot://googleobsidian),
+  , ,
   , [Google Note](spot://googlenote), 
+  DELS: [Google Note](spot://googlenote),[Google Obsidian](spot://googleobsidian),[Google Note](spot://googlenote),[Google Note](spot://googlenote),
 
 (See [[@Google]]) 
 # Top

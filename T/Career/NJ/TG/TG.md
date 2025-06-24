@@ -1,8 +1,15 @@
 .[[TG]].
   , [[NJ Considerations]], [[NJ Queries]],
   , [[mddb]],
-  , [TG Note](spot://tgnote),
-  , [[TG Safety]], 
+  , ,
+  , [[TG Safety]],
+  , ,
+  , ,
+  , [TG Obsidian](spot://tgobsidian),
+  DELS: ,[TG Obsidian](spot://tgobsidian),
+  , ,
+  , [TG Note](spot://tgnote), 
+  DELS: [TG Note](spot://tgnote),[TG Obsidian](spot://tgobsidian),[TG Note](spot://tgnote),[TG Note](spot://tgnote),
 
 
  [[_template]],  [[NJ Queries|Queries]], [_import dir](spot://importfolder), [[_db.xlsx|_db]],  [[NJ.1]], 

@@ -7,8 +7,10 @@
   , [[DocR]], [[DocRackspace]], [[DocRails]], [[DocRuby]], [[DocSamurai]], , [[DocSQL]]
   , [[DocSublime]], [[DocVagrant]], [Game](spot://game),
   , [[DocNvim]], [[DocTmux]],
+  , ,
+  , ,
   , [Doc Note](spot://docnote), 
-  DELS: [[DocSciKit]],
+  DELS: [[DocSciKit]],[Doc Note](spot://docnote),[Doc Note](spot://docnote),
 
 
 

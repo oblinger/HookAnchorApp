@@ -1,7 +1,16 @@
 .[[2023-Reset-DanO-Role]].
   , ,
+  , ,
+  , ,
+  DELS: ,
+  , ,
+  DELS: ,,
+  , [2023-Reset-DanO-Role Obsidian](spot://2023resetdanoroleobsidian),
+  DELS: ,,,[2023-Reset-DanO-Role Obsidian](spot://2023resetdanoroleobsidian),
+  , ,
+  DELS: ,,,[2023-Reset-DanO-Role Obsidian](spot://2023resetdanoroleobsidian),, ,
   , [2023-Reset-DanO-Role Note](spot://2023resetdanorolenote), 
-  DELS: [[Reset]],
+  DELS: [[Reset]],[2023-Reset-DanO-Role Note](spot://2023resetdanorolenote),[[Reset]],[2023-Reset-DanO-Role Obsidian](spot://2023resetdanoroleobsidian),[2023-Reset-DanO-Role Note](spot://2023resetdanorolenote), [2023-Reset-DanO-Role Note](spot://2023resetdanorolenote),[[Reset]], [[Reset]],[2023-Reset-DanO-Role Note](spot://2023resetdanorolenote), [2023-Reset-DanO-Role Note](spot://2023resetdanorolenote), [2023-Reset-DanO-Role Note](spot://2023resetdanorolenote), [2023-Reset-DanO-Role Note](spot://2023resetdanorolenote),
 
 
 ### __

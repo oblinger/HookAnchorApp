@@ -1,5 +1,12 @@
 .[[You.com]].
+  , ,
+  , ,
+  , ,
+  , [You.com Obsidian](spot://you.comobsidian),
+  DELS: ,[You.com Obsidian](spot://you.comobsidian),
+  , ,
   , [You.com Note](spot://you.comnote), 
+  DELS: [You.com Note](spot://you.comnote),[You.com Obsidian](spot://you.comobsidian),[You.com Note](spot://you.comnote),[You.com Note](spot://you.comnote),
 
 # Top
 #### kind: GenAI

@@ -1,3 +1,4 @@
+
 - spot: rename 'note' so it does not conflict w/ 'Notion'
 - ! will add priority to certain entries.  and editing from the interface
 

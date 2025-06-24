@@ -3,7 +3,14 @@
 - [[Letters]] -
 - [[TT]] -
 - [[Writing]] -
+  , ,
+  , ,
+  , ,
+  , [TXT Obsidian](spot://txtobsidian),
+  DELS: ,[TXT Obsidian](spot://txtobsidian),
+  , ,
   , [TXT Note](spot://txtnote), 
+  DELS: [TXT Note](spot://txtnote),[TXT Obsidian](spot://txtobsidian),[TXT Note](spot://txtnote),[TXT Note](spot://txtnote),
 
 
 - [[TXT|TXTS]] - Partial log of outgoing messages.    [[TXT|ALL TXT]] 

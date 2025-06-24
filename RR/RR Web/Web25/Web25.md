@@ -1,5 +1,12 @@
 .[[Web25]].
+  , ,
+  , ,
+  , ,
+  , [Web25 Obsidian](spot://web25obsidian),
+  DELS: ,[Web25 Obsidian](spot://web25obsidian),
+  , ,
   , [Web25 Note](spot://web25note), 
+  DELS: [Web25 Note](spot://web25note),[Web25 Obsidian](spot://web25obsidian),[Web25 Note](spot://web25note),[Web25 Note](spot://web25note),
 
 
 

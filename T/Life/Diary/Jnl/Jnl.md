@@ -1,6 +1,13 @@
 .[[Jnl]].
   ,   [[NextCo]], [[Old Daily]],
+  , ,
+  , ,
+  , ,
+  , [Jnl Obsidian](spot://jnlobsidian),
+  DELS: ,[Jnl Obsidian](spot://jnlobsidian),
+  , ,
   , [Jnl Note](spot://jnlnote), 
+  DELS: [Jnl Note](spot://jnlnote),[Jnl Obsidian](spot://jnlobsidian),[Jnl Note](spot://jnlnote),[Jnl Note](spot://jnlnote),
 
 [[Old Daily]] 
 

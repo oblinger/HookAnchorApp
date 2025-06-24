@@ -1,6 +1,13 @@
 .[[Bio]].
   [[Bio Email]], [[Bio Intro]], [[Bio Verbal]],
+  , ,
+  , ,
+  , ,
+  , [Bio Obsidian](spot://bioobsidian),
+  DELS: ,[Bio Obsidian](spot://bioobsidian),
+  , ,
   , [Bio Note](spot://bionote), 
+  DELS: [Bio Note](spot://bionote),[Bio Obsidian](spot://bioobsidian),[Bio Note](spot://bionote),[Bio Note](spot://bionote),
 
 
 

@@ -1,5 +1,12 @@
 .[[Waymo]].
+  , ,
+  , ,
+  , ,
+  , [Waymo Obsidian](spot://waymoobsidian),
+  DELS: ,[Waymo Obsidian](spot://waymoobsidian),
+  , ,
   , [Waymo Note](spot://waymonote), 
+  DELS: [Waymo Note](spot://waymonote),[Waymo Obsidian](spot://waymoobsidian),[Waymo Note](spot://waymonote),[Waymo Note](spot://waymonote),
 
 # Top
 #### kind: Big

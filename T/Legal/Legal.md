@@ -1,8 +1,18 @@
 .[[Legal]].
   ADDS:   [[2017 Legal Ob Labs]],
-  ADDS:   [[2015 Legal Bizzy]], [[2023 Legal NDA - AF]], [[2023 Legal SV]], [[Legal Uniform]], ,
+  ADDS:   [[2015 Legal Bizzy]], [[2023 Legal NDA - AF]], [[2023 Legal SV]], , ,
+  , , ,
+  , ,
+  DELS: ,
+  , ,
+  DELS: ,,
+  , [Legal Obsidian](spot://legalobsidian), [Legal Uniform Obsidian](spot://legaluniformobsidian),
+  DELS: ,,,[Legal Obsidian](spot://legalobsidian),
+  , , [Legal Uniform](spot://legaluniform),
+  DELS: ,,,[Legal Obsidian](spot://legalobsidian),[[Legal Uniform]], , , ,
+  , ,
   , [Legal Note](spot://legalnote), [Legal Uniform Note](spot://legaluniformnote), 
-  DELS: [[Templates Legal]],
+  DELS: [[Templates Legal]],[Legal Note](spot://legalnote),[[Templates Legal]],[Legal Obsidian](spot://legalobsidian),[[Legal Uniform]], [Legal Uniform Note](spot://legaluniformnote), [Legal Note](spot://legalnote), [Legal Note](spot://legalnote),[[Templates Legal]], [[Templates Legal]],[Legal Uniform Note](spot://legaluniformnote),[Legal Note](spot://legalnote), [Legal Note](spot://legalnote), [Legal Note](spot://legalnote), [Legal Note](spot://legalnote), [Legal Uniform Note](spot://legaluniformnote),
 
 
 

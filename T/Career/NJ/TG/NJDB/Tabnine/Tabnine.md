@@ -1,5 +1,12 @@
 .[[Tabnine]].
+  , ,
+  , ,
+  , ,
+  , [Tabnine Obsidian](spot://tabnineobsidian),
+  DELS: ,[Tabnine Obsidian](spot://tabnineobsidian),
+  , ,
   , [Tabnine Note](spot://tabninenote), 
+  DELS: [Tabnine Note](spot://tabninenote),[Tabnine Obsidian](spot://tabnineobsidian),[Tabnine Note](spot://tabninenote),[Tabnine Note](spot://tabninenote),
 
 # Top
 #### kind: BigAI

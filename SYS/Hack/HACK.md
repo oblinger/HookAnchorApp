@@ -1,6 +1,13 @@
 .[[Hack]].
   , [[DAT]], [[Fried Archive]], [[HACK.]], [[Hack Chunch]], [[Time Tracker]],
-  , [hack Note](spot://hacknote), 
+  , ,
+  , ,
+  , ,
+  , ,
+  DELS: ,
+  , [hack Obsidian](spot://hackobsidian), 
+  DELS: ,[hack Obsidian](spot://hackobsidian), [Hack Note](spot://hacknote),
+  DELS: [hack Note](spot://hacknote),[hack Obsidian](spot://hackobsidian), [Hack Note](spot://hacknote),[hack Note](spot://hacknote), [hack Note](spot://hacknote), 
 
 .[[HACK]].
   , [[DAT]], [[Hack Chunch]], [[Time Tracker]],

@@ -1,5 +1,12 @@
 .[[Primer]].
+  , ,
+  , ,
+  , ,
+  , [Primer Obsidian](spot://primerobsidian),
+  DELS: ,[Primer Obsidian](spot://primerobsidian),
+  , ,
   , [Primer Note](spot://primernote), 
+  DELS: [Primer Note](spot://primernote),[Primer Obsidian](spot://primerobsidian),[Primer Note](spot://primernote),[Primer Note](spot://primernote),
 
 # Top
 #### kind: StartAI

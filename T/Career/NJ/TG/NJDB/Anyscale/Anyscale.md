@@ -37,5 +37,12 @@ Consulting Engineer – https://www.google.com/search?q=Anyscale+Consulting+Engi
 #### bam:
 #### dlp_:
 ### sdfsdfsfsfds: foo
+  , ,
+  , ,
+  , ,
+  , [Anyscale Obsidian](spot://anyscaleobsidian),
+  DELS: ,[Anyscale Obsidian](spot://anyscaleobsidian),
+  , ,
   , [Anyscale Note](spot://anyscalenote), 
+  DELS: [Anyscale Note](spot://anyscalenote),[Anyscale Obsidian](spot://anyscaleobsidian),[Anyscale Note](spot://anyscalenote),[Anyscale Note](spot://anyscalenote),
 

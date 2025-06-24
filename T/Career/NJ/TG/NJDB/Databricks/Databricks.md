@@ -1,5 +1,12 @@
 .[[Databricks]].
+  , ,
+  , ,
+  , ,
+  , [Databricks Obsidian](spot://databricksobsidian),
+  DELS: ,[Databricks Obsidian](spot://databricksobsidian),
+  , ,
   , [Databricks Note](spot://databricksnote), 
+  DELS: [Databricks Note](spot://databricksnote),[Databricks Obsidian](spot://databricksobsidian),[Databricks Note](spot://databricksnote),[Databricks Note](spot://databricksnote),
 
 # Top
 #### kind: Big

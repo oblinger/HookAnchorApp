@@ -1,7 +1,14 @@
 #pp  			[Humanoid.ai](https://thehumanoid.ai/) 
 
 .[[@Humanoid]].
+  , ,
+  , ,
+  , ,
+  , [@Humanoid Obsidian](spot://@humanoidobsidian),
+  DELS: ,[@Humanoid Obsidian](spot://@humanoidobsidian),
+  , ,
   , [@Humanoid Note](spot://@humanoidnote), 
+  DELS: [@Humanoid Note](spot://@humanoidnote),[@Humanoid Obsidian](spot://@humanoidobsidian),[@Humanoid Note](spot://@humanoidnote),[@Humanoid Note](spot://@humanoidnote),
 
 
 

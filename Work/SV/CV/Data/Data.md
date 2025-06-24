@@ -5,7 +5,14 @@
   [Data Game Master List](spot://datagamemasterlist): Jame's Videos master list
   .
   [Data Game Tracking](spot://datagametracking): Deprecated tracking sheet
+  , , ,
+  , , ,
+  , , ,
+  , [Data 23andme Obsidian](spot://data23andmeobsidian), [Data Obsidian](spot://dataobsidian),
+  DELS: , ,[Data 23andme Obsidian](spot://data23andmeobsidian), [Data Obsidian](spot://dataobsidian),
+  , , ,
   , [Data 23andme Note](spot://data23andmenote), [Data Note](spot://datanote), 
+  DELS: [Data 23andme Note](spot://data23andmenote), [Data Note](spot://datanote),[Data 23andme Obsidian](spot://data23andmeobsidian), [Data Obsidian](spot://dataobsidian),[Data 23andme Note](spot://data23andmenote), [Data Note](spot://datanote),[Data 23andme Note](spot://data23andmenote), [Data Note](spot://datanote),
 
 
 

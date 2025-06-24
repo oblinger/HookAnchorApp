@@ -1,5 +1,12 @@
 .[[Atomwise]].
+  , ,
+  , ,
+  , ,
+  , [Atomwise Obsidian](spot://atomwiseobsidian),
+  DELS: ,[Atomwise Obsidian](spot://atomwiseobsidian),
+  , ,
   , [Atomwise Note](spot://atomwisenote), 
+  DELS: [Atomwise Note](spot://atomwisenote),[Atomwise Obsidian](spot://atomwiseobsidian),[Atomwise Note](spot://atomwisenote),[Atomwise Note](spot://atomwisenote),
 
 # Top
 #### kind: StartAI

@@ -1,8 +1,15 @@
 .[[@BCMS]].
   ,   ,
   , [[BCMS 2023-2024]],
-  , [@BCMS Note](spot://@bcmsnote), 
+  , ,
+  , ,
   DELS: [[BCMS 2023-2024]],
+  , ,
+  , [@BCMS Obsidian](spot://@bcmsobsidian),
+  DELS: [[BCMS 2023-2024]],,[@BCMS Obsidian](spot://@bcmsobsidian),
+  , ,
+  , [@BCMS Note](spot://@bcmsnote), 
+  DELS: [[BCMS 2023-2024]],[@BCMS Note](spot://@bcmsnote),[@BCMS Obsidian](spot://@bcmsobsidian),[@BCMS Note](spot://@bcmsnote),[@BCMS Note](spot://@bcmsnote),
 
 
 [[BCMS 2023-2024]]. https://docs.google.com/spreadsheets/d/1_dsYM363IfdmoVizAAvc4ItuVsttyOw1E1VR4QXGgXY/edit?gid=738113275#gid=738113275

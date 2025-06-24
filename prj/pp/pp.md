@@ -9,8 +9,17 @@
   DELS: ,,
   , [[pq]],
   , [[2025-06 LinkedIn Contacts Merge]],
+  , ,
+  , ,
+  DELS: ,[[pq]],, ,[[pq]],
+  , ,
+  DELS: ,[[pq]],, ,[[pq]],,
+  , [pp Obsidian](spot://ppobsidian),
+  DELS: ,[[pq]],, ,[[pq]],,, , ,[pp Obsidian](spot://ppobsidian),
+  , ,
+  DELS: ,[[pq]],, ,[[pq]],,, , ,[pp Obsidian](spot://ppobsidian),, ,
   , [pp Note](spot://ppnote), 
-  DELS: [[2025-05-14 Sixtieth Bday]],[[pq]],[[PQ]], [[2025-05-14 Sixtieth Bday]],[[pq]],
+  DELS: [[2025-05-14 Sixtieth Bday]],[[pq]],[[PQ]], [[2025-05-14 Sixtieth Bday]],[[pq]],[pp Note](spot://ppnote),[[2025-05-14 Sixtieth Bday]], [[PQ]], [[2025-05-14 Sixtieth Bday]],[pp Obsidian](spot://ppobsidian),[pp Note](spot://ppnote), [pp Note](spot://ppnote),[[2025-05-14 Sixtieth Bday]], [[PQ]], [[2025-05-14 Sixtieth Bday]], [[2025-05-14 Sixtieth Bday]], [[PQ]], [[2025-05-14 Sixtieth Bday]],[pp Note](spot://ppnote), [pp Note](spot://ppnote), [pp Note](spot://ppnote), [pp Note](spot://ppnote),
 
 - [Yearbook](https://docs.google.com/document/d/1l6B70oTJDW29LFY4-MZFJ0-IdVufLEyJL4B59t0hpss/edit#heading=h.enksu2ju8d90): 
 - [[2024-05 Sell Acura|Acura]] - 

@@ -1,5 +1,12 @@
 .[[Salesforce]].
+  , ,
+  , ,
+  , ,
+  , [Salesforce Obsidian](spot://salesforceobsidian),
+  DELS: ,[Salesforce Obsidian](spot://salesforceobsidian),
+  , ,
   , [Salesforce Note](spot://salesforcenote), 
+  DELS: [Salesforce Note](spot://salesforcenote),[Salesforce Obsidian](spot://salesforceobsidian),[Salesforce Note](spot://salesforcenote),[Salesforce Note](spot://salesforcenote),
 
 # Top
 #### kind: Big

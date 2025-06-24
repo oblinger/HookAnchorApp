@@ -1,5 +1,12 @@
 .[[Freenome]].
+  , ,
+  , ,
+  , ,
+  , [Freenome Obsidian](spot://freenomeobsidian),
+  DELS: ,[Freenome Obsidian](spot://freenomeobsidian),
+  , ,
   , [Freenome Note](spot://freenomenote), 
+  DELS: [Freenome Note](spot://freenomenote),[Freenome Obsidian](spot://freenomeobsidian),[Freenome Note](spot://freenomenote),[Freenome Note](spot://freenomenote),
 
 # Top
 #### kind: StartAI

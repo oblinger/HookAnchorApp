@@ -1,6 +1,13 @@
 .[[@Merrill]].
   ,   [[@Avanti Pakrasi]], [[@Gary Bladen]],
+  , ,
+  , ,
+  , ,
+  , [@Merrill Obsidian](spot://@merrillobsidian),
+  DELS: ,[@Merrill Obsidian](spot://@merrillobsidian),
+  , ,
   , [@Merrill Note](spot://@merrillnote), 
+  DELS: [@Merrill Note](spot://@merrillnote),[@Merrill Obsidian](spot://@merrillobsidian),[@Merrill Note](spot://@merrillnote),[@Merrill Note](spot://@merrillnote),
 
 #pp  
 

@@ -1,5 +1,12 @@
 .[[Deepgram]].
+  , ,
+  , ,
+  , ,
+  , [Deepgram Obsidian](spot://deepgramobsidian),
+  DELS: ,[Deepgram Obsidian](spot://deepgramobsidian),
+  , ,
   , [Deepgram Note](spot://deepgramnote), 
+  DELS: [Deepgram Note](spot://deepgramnote),[Deepgram Obsidian](spot://deepgramobsidian),[Deepgram Note](spot://deepgramnote),[Deepgram Note](spot://deepgramnote),
 
 # Top
 #### kind: StartAI

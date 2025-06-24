@@ -11,8 +11,17 @@
   , ,
   DELS: [[EOCP]],,[[EOCP]], [[EOCP]],, ,
   , [[EOCI]],
+  , , ,
+  , , ,
+  DELS: [[EOCP]],,[[EOCP]], [[EOCP]],, ,,[[EOCI]], , , , ,
+  , , ,
+  DELS: [[EOCP]],,[[EOCP]], [[EOCP]],, ,,[[EOCI]], , , , ,, ,
+  , [EOC Obsidian](spot://eocobsidian), [EOC reboot Obsidian](spot://eocrebootobsidian),
+  DELS: [[EOCP]],,[[EOCP]], [[EOCP]],, ,,[[EOCI]], , , , ,, ,, , , , , , , ,[EOC Obsidian](spot://eocobsidian), [EOC reboot Obsidian](spot://eocrebootobsidian),
+  , , ,
+  DELS: [[EOCP]],,[[EOCP]], [[EOCP]],, ,,[[EOCI]], , , , ,, ,, , , , , , , ,[EOC Obsidian](spot://eocobsidian), [EOC reboot Obsidian](spot://eocrebootobsidian),, , , ,
   , [EOC Note](spot://eocnote), [EOC reboot Note](spot://eocrebootnote), 
-  DELS: [[EOCP]],[[Paths]],[[EOCP]], [[EOCP]],[[Paths]], [[Paths]],[[ASIO]],[[EOCI]], [[EOCK]], [[Paths]], [[Paths]], [[Paths]],
+  DELS: [[EOCP]],[[Paths]],[[EOCP]], [[EOCP]],[[Paths]], [[Paths]],[[ASIO]],[[EOCI]], [[EOCK]], [[Paths]], [[Paths]], [[Paths]],[EOC Note](spot://eocnote), [EOC reboot Note](spot://eocrebootnote),[[Paths]], [[Paths]], [[Paths]], [[ASIO]], [[EOCK]], [[Paths]], [[Paths]], [[Paths]],[EOC Obsidian](spot://eocobsidian), [EOC reboot Obsidian](spot://eocrebootobsidian),[EOC Note](spot://eocnote), [EOC reboot Note](spot://eocrebootnote), [EOC Note](spot://eocnote), [EOC reboot Note](spot://eocrebootnote),[[Paths]], [[Paths]], [[Paths]], [[ASIO]], [[EOCK]], [[Paths]], [[Paths]], [[Paths]], [[Paths]], [[Paths]], [[Paths]], [[ASIO]], [[EOCK]], [[Paths]], [[Paths]], [[Paths]],[EOC Note](spot://eocnote), [EOC reboot Note](spot://eocrebootnote), [EOC Note](spot://eocnote), [EOC reboot Note](spot://eocrebootnote), [EOC Note](spot://eocnote), [EOC reboot Note](spot://eocrebootnote), [EOC Note](spot://eocnote), [EOC reboot Note](spot://eocrebootnote),
 
 
   DELS: [[eoc-atlas]], [[eoc-formal]], [[eoc-impl]], 

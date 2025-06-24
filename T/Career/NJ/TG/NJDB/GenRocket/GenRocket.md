@@ -1,5 +1,12 @@
 .[[GenRocket]].
+  , ,
+  , ,
+  , ,
+  , [GenRocket Obsidian](spot://genrocketobsidian),
+  DELS: ,[GenRocket Obsidian](spot://genrocketobsidian),
+  , ,
   , [GenRocket Note](spot://genrocketnote), 
+  DELS: [GenRocket Note](spot://genrocketnote),[GenRocket Obsidian](spot://genrocketobsidian),[GenRocket Note](spot://genrocketnote),[GenRocket Note](spot://genrocketnote),
 
 # Top
 #### kind: BigAI

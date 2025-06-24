@@ -1,6 +1,13 @@
 .[[@Hackers]].
   [[@Danny Wilson]], [[@Marita Cheng]], [[@Mark Randall]], [[@Otavio Good]], [[@Pinar Stanfield]],
+  , ,
+  , ,
+  , ,
+  , [@Hackers Obsidian](spot://@hackersobsidian),
+  DELS: ,[@Hackers Obsidian](spot://@hackersobsidian),
+  , ,
   , [@Hackers Note](spot://@hackersnote), 
+  DELS: [@Hackers Note](spot://@hackersnote),[@Hackers Obsidian](spot://@hackersobsidian),[@Hackers Note](spot://@hackersnote),[@Hackers Note](spot://@hackersnote),
 
 
 

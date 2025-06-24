@@ -1,5 +1,12 @@
 .[[Gong]].
+  , ,
+  , ,
+  , ,
+  , [Gong Obsidian](spot://gongobsidian),
+  DELS: ,[Gong Obsidian](spot://gongobsidian),
+  , ,
   , [Gong Note](spot://gongnote), 
+  DELS: [Gong Note](spot://gongnote),[Gong Obsidian](spot://gongobsidian),[Gong Note](spot://gongnote),[Gong Note](spot://gongnote),
 
 # Top
 #### kind: TopGen

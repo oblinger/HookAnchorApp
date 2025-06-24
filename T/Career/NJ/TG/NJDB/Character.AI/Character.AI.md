@@ -1,5 +1,12 @@
 .[[Character.AI]].
+  , ,
+  , ,
+  , ,
+  , [Character.AI Obsidian](spot://character.aiobsidian),
+  DELS: ,[Character.AI Obsidian](spot://character.aiobsidian),
+  , ,
   , [Character.AI Note](spot://character.ainote), 
+  DELS: [Character.AI Note](spot://character.ainote),[Character.AI Obsidian](spot://character.aiobsidian),[Character.AI Note](spot://character.ainote),[Character.AI Note](spot://character.ainote),
 
 # Top
 ## Sections

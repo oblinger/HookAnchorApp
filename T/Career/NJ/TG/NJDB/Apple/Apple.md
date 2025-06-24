@@ -1,5 +1,12 @@
 .[[Apple]].
+  , ,
+  , ,
+  , ,
+  , [Apple Obsidian](spot://appleobsidian),
+  DELS: ,[Apple Obsidian](spot://appleobsidian),
+  , ,
   , [Apple Note](spot://applenote), 
+  DELS: [Apple Note](spot://applenote),[Apple Obsidian](spot://appleobsidian),[Apple Note](spot://applenote),[Apple Note](spot://applenote),
 
 # Top
 #### kind: Top

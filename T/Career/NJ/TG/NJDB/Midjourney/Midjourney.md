@@ -1,5 +1,12 @@
 .[[Midjourney]].
+  , ,
+  , ,
+  , ,
+  , [Midjourney Obsidian](spot://midjourneyobsidian),
+  DELS: ,[Midjourney Obsidian](spot://midjourneyobsidian),
+  , ,
   , [Midjourney Note](spot://midjourneynote), 
+  DELS: [Midjourney Note](spot://midjourneynote),[Midjourney Obsidian](spot://midjourneyobsidian),[Midjourney Note](spot://midjourneynote),[Midjourney Note](spot://midjourneynote),
 
 # Top
 #### kind: BigAI

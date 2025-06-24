@@ -1,6 +1,13 @@
 .[[SCRatch]].
-  ,   [[SCR Note]], [[SCR Qingling<>Dan Webpage]], [[SNIP]],
-  , [SCRatch Note](spot://scratchnote), 
+  ,   , [[SCR Qingling<>Dan Webpage]], [[SNIP]],
+  , ,
+  , , ,
+  , , ,
+  , [SCRatch Obsidian](spot://scratchobsidian), [SCR Obsidian](spot://scrobsidian),
+  DELS: , ,[SCRatch Obsidian](spot://scratchobsidian), [SCR Obsidian](spot://scrobsidian),
+  , , ,
+  , [SCRatch Note](spot://scratchnote), [[SCR Note]], 
+  DELS: [[SCR Note]], [SCRatch Note](spot://scratchnote),[SCRatch Obsidian](spot://scratchobsidian), [SCR Obsidian](spot://scrobsidian),[SCRatch Note](spot://scratchnote), [[SCR Note]],[SCRatch Note](spot://scratchnote), [[SCR Note]],
 
 
 :: [[SCR Qingling<>Dan Webpage]]

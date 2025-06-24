@@ -1,5 +1,12 @@
 .[[DocRuby]].
+  , ,
+  , ,
+  , ,
+  , [DocRuby Obsidian](spot://docrubyobsidian),
+  DELS: ,[DocRuby Obsidian](spot://docrubyobsidian),
+  , ,
   , [DocRuby Note](spot://docrubynote), 
+  DELS: [DocRuby Note](spot://docrubynote),[DocRuby Obsidian](spot://docrubyobsidian),[DocRuby Note](spot://docrubynote),[DocRuby Note](spot://docrubynote),
 
   [koans](koans/koans.md)
 

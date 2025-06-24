@@ -1,5 +1,12 @@
 .[[Lilt]].
+  , ,
+  , ,
+  , ,
+  , [Lilt Obsidian](spot://liltobsidian),
+  DELS: ,[Lilt Obsidian](spot://liltobsidian),
+  , ,
   , [Lilt Note](spot://liltnote), 
+  DELS: [Lilt Note](spot://liltnote),[Lilt Obsidian](spot://liltobsidian),[Lilt Note](spot://liltnote),[Lilt Note](spot://liltnote),
 
 # Top
 #### kind: StartAI

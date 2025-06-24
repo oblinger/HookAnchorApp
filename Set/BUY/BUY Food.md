@@ -1,10 +1,10 @@
 
 # === DRY GOODS ===
-- [[BUY Tea]], [[@Azure Standard]], 
-### Coffee/TEA
+-  [[@Azure Standard]], 
+###  [[BUY Tea]]/Coffee  [[@Azure Standard]], 
+
 
 ### Canned
-
 
 _Coffee_
 - !Sardines
@@ -54,6 +54,140 @@ Salad Dressing
 Spices
 - http://www.penzeys.com/
 _
+
+### LowCarb
+
+BFAST:   Eggs, Beaters
+FROZEN:  Shrimp, Salmon, Fish, Edamame
+CANNED:  Tuna+Melba
+SNACK:   Almonds, Jerky
+         ProteinBar, Myoplex
+
+G-Beef?? Chili
+Fish???
+Pork?     PorkChop
+
+soup broth
+
+-----
+Radish,Celery,BellPep, 
+STIRFRY:   Broccoli,Gbeans,ChinVeggies,
+
+_Soup_
+Chicken: http://www.food.com/recipe/andys-south-west-chicken-soup-atkins-low-carb-394668
+Chicken:  2lbs cubed-chicken; 1C chopped-BellPep;  3ClovesGarlic;  1ChopedSweetOnion;  1.5C chickStock;  1/4C butter 
+          1chili seasoning mix;  14oz can-chopped-tomatos;  1/2C green chili
+
+
+ === DRINK ===
+  MYOPLEX              "Myoplex Carb Ready"  Low Carb + ReadyToDrink
+                       800-376-2036     http://www.supplements.net/      BEST!   805-339-9487  CustomerID# 14983
+                       877.234.7284     http://mysupplementstore.com/
+                       800-338-0139     http://store.a-z-nutrition.com/myoplex42pack.html      customerservice@worldclassnutrition.com 
+                       866 307-1641     http://www.nutricity.com/n/pc/viewPrd.asp?idproduct=8391
+                       800-875-0448     http://www.nutritional-supplements.com/
+  SOY                  http://www.healthy-eating.com/turtle.html 
+                       --> OtherMeatSubs -> ToFurky -> Jerky   PEPPERED JERKY
+                       (tofurky,edamame)
+  PUDDING (Protein)    https://www.bodybuilding.com/
+  GRITS (SOY)          https://www.bobsredmill.com/catalog/checkout/index.php
+  PROTEIN (Powdered)   https://store.a1nutrition.com/ssl/confirm.asp
+=== DRYGOOD ====
+  EDAMAME (Roasted)    http://SnackAisle.com
+  SWEETS               http://www.locarbdiner.com/   Order #1481432 and contact
+  _Canned_
+=== FREEZER ===
+  STEAKS _Omaha_       800 228-9055
+
+LOW CARB DRESSING/SNACKS    http://store.yahoo.com/lowcarboutfitters/chocolatecandy.html
+Progresso  Escarole, Chicken Barley, Chicka??
+Campbells Carb request
+Delmonte Carb Clever
+
+
+
+#### PUKKA
+- ?
+
+
+### Drinks
+
+== FANCY ALCHOL == 
+- https://caskers.com 
+
+== ALCHOL ==
+CALIFORNIA:  http://www.bevmo.com/
+FLORIDA:  http://www.sarasotaliquorlocker.com
+THOMPSON CIGAR  http://www.thompsONCIGAR.com/
+
+taste of California.  by the case.  owe me free shipping  800 615 7304
+--ordered case of six from them.
+800 205 5282
+http://4seasonswine.com/
+_
+#### TEAS
+
+_
+#### Scotch
+   Jan-1 2009  22 full bottles (or a bit less)
+    https://www.thespiritsbusiness.com/2023/06/the-scotch-whisky-masters-2023-results/
+    
+
+AREAS
+- Highlands                       Deep Flavor  (glenmorange honey heather)
+  + Speyside (on the right side, best.)  Aberlour
+  + Skey (on the left)            Talisker
+- Lowlands                        Lighter, delacate&slightly sweet ~Malty
+- (+Islay on the left)       
+
+
+- Macallan  bm iws
+- Aberlour  bm 10y$ 30  isw
+
+- Oban      b=iws
+- Glenkinchie  isw
+- Dalmore    bm isw
+
+- Glenlivet  wine globe
+- Balvenie
+- Ardbeg
+- Dalwhinnie
+
+Beverage&More  InternetWine&Spirits
+
+Park Av Liquor 212 685-2442
+  21&Madison
+
+
+
+30 Aberllur 10 year
+50 Macallan cask strength
+35 Macallan 12 year
+26 Dalmore 12 year
+32 Balvenie 10
+46 Glenlivet 18 year
+
+
+park av wines and spirits liqoro
+garnet liq
+
+
+SCOTCH     http://www.parkaveliquor.com/parkave/html/home.asp
+
+_
+### --- MEDICINE ---
+#### -- SUPPLEMENTS --
+Supplements:  USP, C...Labs
+https://www.quality-supplements.org/verified-products/verified-products-listings
+
+- [Turmeric w Meriva](https://www.costco.com/.product.1337555.html) trunature Premium Turmeric 1,000 mg., 180 Vegetarian Capsules
+
+# PET FOOD
+- [[Fromm Pet Food Dog]] 
+
+
+#  MISC - OLDER
+
 #### Salad Dressings
 
 
@@ -488,132 +622,3 @@ Herb & Balsamic Vinaigrette
 0
 	
 270
-### LowCarb
-
-BFAST:   Eggs, Beaters
-FROZEN:  Shrimp, Salmon, Fish, Edamame
-CANNED:  Tuna+Melba
-SNACK:   Almonds, Jerky
-         ProteinBar, Myoplex
-
-G-Beef?? Chili
-Fish???
-Pork?     PorkChop
-
-soup broth
-
------
-Radish,Celery,BellPep, 
-STIRFRY:   Broccoli,Gbeans,ChinVeggies,
-
-_Soup_
-Chicken: http://www.food.com/recipe/andys-south-west-chicken-soup-atkins-low-carb-394668
-Chicken:  2lbs cubed-chicken; 1C chopped-BellPep;  3ClovesGarlic;  1ChopedSweetOnion;  1.5C chickStock;  1/4C butter 
-          1chili seasoning mix;  14oz can-chopped-tomatos;  1/2C green chili
-
-
- === DRINK ===
-  MYOPLEX              "Myoplex Carb Ready"  Low Carb + ReadyToDrink
-                       800-376-2036     http://www.supplements.net/      BEST!   805-339-9487  CustomerID# 14983
-                       877.234.7284     http://mysupplementstore.com/
-                       800-338-0139     http://store.a-z-nutrition.com/myoplex42pack.html      customerservice@worldclassnutrition.com 
-                       866 307-1641     http://www.nutricity.com/n/pc/viewPrd.asp?idproduct=8391
-                       800-875-0448     http://www.nutritional-supplements.com/
-  SOY                  http://www.healthy-eating.com/turtle.html 
-                       --> OtherMeatSubs -> ToFurky -> Jerky   PEPPERED JERKY
-                       (tofurky,edamame)
-  PUDDING (Protein)    https://www.bodybuilding.com/
-  GRITS (SOY)          https://www.bobsredmill.com/catalog/checkout/index.php
-  PROTEIN (Powdered)   https://store.a1nutrition.com/ssl/confirm.asp
-=== DRYGOOD ====
-  EDAMAME (Roasted)    http://SnackAisle.com
-  SWEETS               http://www.locarbdiner.com/   Order #1481432 and contact
-  _Canned_
-=== FREEZER ===
-  STEAKS _Omaha_       800 228-9055
-
-LOW CARB DRESSING/SNACKS    http://store.yahoo.com/lowcarboutfitters/chocolatecandy.html
-Progresso  Escarole, Chicken Barley, Chicka??
-Campbells Carb request
-Delmonte Carb Clever
-
-
-
-#### PUKKA
-- ?
-
-
-### Drinks
-
-== FANCY ALCHOL == 
-- https://caskers.com 
-
-== ALCHOL ==
-CALIFORNIA:  http://www.bevmo.com/
-FLORIDA:  http://www.sarasotaliquorlocker.com
-THOMPSON CIGAR  http://www.thompsONCIGAR.com/
-
-taste of California.  by the case.  owe me free shipping  800 615 7304
---ordered case of six from them.
-800 205 5282
-http://4seasonswine.com/
-_
-#### TEAS
-
-_
-#### Scotch
-   Jan-1 2009  22 full bottles (or a bit less)
-    https://www.thespiritsbusiness.com/2023/06/the-scotch-whisky-masters-2023-results/
-    
-
-AREAS
-- Highlands                       Deep Flavor  (glenmorange honey heather)
-  + Speyside (on the right side, best.)  Aberlour
-  + Skey (on the left)            Talisker
-- Lowlands                        Lighter, delacate&slightly sweet ~Malty
-- (+Islay on the left)       
-
-
-- Macallan  bm iws
-- Aberlour  bm 10y$ 30  isw
-
-- Oban      b=iws
-- Glenkinchie  isw
-- Dalmore    bm isw
-
-- Glenlivet  wine globe
-- Balvenie
-- Ardbeg
-- Dalwhinnie
-
-Beverage&More  InternetWine&Spirits
-
-Park Av Liquor 212 685-2442
-  21&Madison
-
-
-
-30 Aberllur 10 year
-50 Macallan cask strength
-35 Macallan 12 year
-26 Dalmore 12 year
-32 Balvenie 10
-46 Glenlivet 18 year
-
-
-park av wines and spirits liqoro
-garnet liq
-
-
-SCOTCH     http://www.parkaveliquor.com/parkave/html/home.asp
-
-_
-### --- MEDICINE ---
-#### -- SUPPLEMENTS --
-Supplements:  USP, C...Labs
-https://www.quality-supplements.org/verified-products/verified-products-listings
-
-- [Turmeric w Meriva](https://www.costco.com/.product.1337555.html) trunature Premium Turmeric 1,000 mg., 180 Vegetarian Capsules
-
-# PET FOOD
-- [[Fromm Pet Food Dog]] 

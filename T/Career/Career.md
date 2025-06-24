@@ -7,8 +7,17 @@
   DELS: ,
   , [[NJ]],
   DELS: ,[[NJ]],
+  , ,
+  , ,
+  DELS: ,[[NJ]],, ,
+  , ,
+  DELS: ,[[NJ]],, ,,
+  , [Career Obsidian](spot://careerobsidian),
+  DELS: ,[[NJ]],, ,,, , ,[Career Obsidian](spot://careerobsidian),
+  , ,
+  DELS: ,[[NJ]],, ,,, , ,[Career Obsidian](spot://careerobsidian),, ,
   , [Career Note](spot://careernote), 
-  DELS: [[[Mentors](spot://mentors),[[NJ]],[[NextJob]], [[[Mentors](spot://mentors),
+  DELS: [[[Mentors](spot://mentors),[[NJ]],[[NextJob]], [[[Mentors](spot://mentors),[Career Note](spot://careernote),[[[Mentors](spot://mentors), [[NextJob]], [[[Mentors](spot://mentors),[Career Obsidian](spot://careerobsidian),[Career Note](spot://careernote), [Career Note](spot://careernote),[[[Mentors](spot://mentors), [[NextJob]], [[[Mentors](spot://mentors), [[[Mentors](spot://mentors), [[NextJob]], [[[Mentors](spot://mentors),[Career Note](spot://careernote), [Career Note](spot://careernote), [Career Note](spot://careernote), [Career Note](spot://careernote),
 
 
 

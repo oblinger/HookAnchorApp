@@ -1,5 +1,12 @@
 .[[Intel]].
+  , ,
+  , ,
+  , ,
+  , [Intel Obsidian](spot://intelobsidian),
+  DELS: ,[Intel Obsidian](spot://intelobsidian),
+  , ,
   , [Intel Note](spot://intelnote), 
+  DELS: [Intel Note](spot://intelnote),[Intel Obsidian](spot://intelobsidian),[Intel Note](spot://intelnote),[Intel Note](spot://intelnote),
 
 # Top
 #### kind: Big

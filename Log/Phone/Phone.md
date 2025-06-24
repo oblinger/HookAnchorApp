@@ -3,11 +3,20 @@
   , ,
   , [[Phone -old-]],
   DELS: [[Phone -old-]],
-  , [Phone Note](spot://phonenote),
+  , ,
   , [Phone Google Voice](spot://phonegooglevoice),
   , ,
-  , [phone phone](spot://phonephone), 
-  DELS: [[Phone -old-]],[[Phone -OLD-_new]],[phone phone](spot://phonephone),
+  , [phone phone](spot://phonephone),
+  , ,
+  DELS: [[Phone -old-]],,[phone phone](spot://phonephone),
+  , ,
+  DELS: [[Phone -old-]],,[phone phone](spot://phonephone),,
+  , [Phone Obsidian](spot://phoneobsidian),
+  DELS: [[Phone -old-]],,[phone phone](spot://phonephone),,,[Phone Obsidian](spot://phoneobsidian),
+  , ,
+  DELS: [[Phone -old-]],,[phone phone](spot://phonephone),,,[Phone Obsidian](spot://phoneobsidian),, ,
+  , [Phone Note](spot://phonenote), 
+  DELS: [[Phone -old-]],[[Phone -OLD-_new]],[phone phone](spot://phonephone),[Phone Note](spot://phonenote),[[Phone -OLD-_new]],[Phone Obsidian](spot://phoneobsidian),[Phone Note](spot://phonenote), [Phone Note](spot://phonenote),[[Phone -OLD-_new]], [[Phone -OLD-_new]],[Phone Note](spot://phonenote), [Phone Note](spot://phonenote), [Phone Note](spot://phonenote), [Phone Note](spot://phonenote),
 
 
 #set 

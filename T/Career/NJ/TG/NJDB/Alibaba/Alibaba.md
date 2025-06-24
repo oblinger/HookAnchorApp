@@ -1,5 +1,12 @@
 .[[Alibaba]].
+  , ,
+  , ,
+  , ,
+  , [Alibaba Obsidian](spot://alibabaobsidian),
+  DELS: ,[Alibaba Obsidian](spot://alibabaobsidian),
+  , ,
   , [Alibaba Note](spot://alibabanote), 
+  DELS: [Alibaba Note](spot://alibabanote),[Alibaba Obsidian](spot://alibabaobsidian),[Alibaba Note](spot://alibabanote),[Alibaba Note](spot://alibabanote),
 
 # Top
 #### kind: Big

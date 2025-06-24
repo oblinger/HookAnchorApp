@@ -1,5 +1,12 @@
 .[[Upstart]].
+  , ,
+  , ,
+  , ,
+  , [Upstart Obsidian](spot://upstartobsidian),
+  DELS: ,[Upstart Obsidian](spot://upstartobsidian),
+  , ,
   , [Upstart Note](spot://upstartnote), 
+  DELS: [Upstart Note](spot://upstartnote),[Upstart Obsidian](spot://upstartobsidian),[Upstart Note](spot://upstartnote),[Upstart Note](spot://upstartnote),
 
 # Top
 #### kind: Big

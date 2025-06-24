@@ -1,5 +1,12 @@
 .[[napa]].
+  , ,
+  , ,
+  , ,
+  , [napa Obsidian](spot://napaobsidian),
+  DELS: ,[napa Obsidian](spot://napaobsidian),
+  , ,
   , [napa Note](spot://napanote), 
+  DELS: [napa Note](spot://napanote),[napa Obsidian](spot://napaobsidian),[napa Note](spot://napanote),[napa Note](spot://napanote),
 
 
 

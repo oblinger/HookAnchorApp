@@ -1,5 +1,12 @@
 .[[Findem]].
+  , ,
+  , ,
+  , ,
+  , [Findem Obsidian](spot://findemobsidian),
+  DELS: ,[Findem Obsidian](spot://findemobsidian),
+  , ,
   , [Findem Note](spot://findemnote), 
+  DELS: [Findem Note](spot://findemnote),[Findem Obsidian](spot://findemobsidian),[Findem Note](spot://findemnote),[Findem Note](spot://findemnote),
 
 # Top
 #### kind: StartAI

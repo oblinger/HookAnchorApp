@@ -1,5 +1,12 @@
 .[[Day]].
+  , ,
+  , ,
+  , ,
+  , [Day Obsidian](spot://dayobsidian),
+  DELS: ,[Day Obsidian](spot://dayobsidian),
+  , ,
   , [Day Note](spot://daynote), 
+  DELS: [Day Note](spot://daynote),[Day Obsidian](spot://dayobsidian),[Day Note](spot://daynote),[Day Note](spot://daynote),
 
 #log <[[Untyped]]
 n:: 'd...'	Daily journal notes log (NOT USED)

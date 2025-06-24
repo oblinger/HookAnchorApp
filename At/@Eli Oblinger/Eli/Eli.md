@@ -1,24 +1,47 @@
 .[[Eli]].
-  [[ELI Log]], [[Eli Food]], [[ELI Quotes]], ,
-  [[Eli Strategy]]:
+  , [[Eli Food]], [[ELI Quotes]], ,
+  :
   [[Eli Firsts]]:
   [[Eli Activities]]:
-  [[Eli Interactions]]:
+  :
   [[Eli Friends]]:
   OLDER: , [[ELI Education]], [[Eli Math]],
-  [[Eli Services]],
-  , [[Eli Report Cards]],
-  , [[Eli Sentimental]],
+  ,
   , ,
-  DELS: [[Eli Report Cards]],[[Eli Sentimental]],
+  , ,
+  , ,
+  DELS: ,,
   , [[@BCMS]],
-  DELS: [[Eli Report Cards]],[[Eli Sentimental]],[[@BCMS]],
+  DELS: ,,[[@BCMS]],
   , [[Eli Movies]],
+  , ,
+  , ,
+  , ,
+  , ,
+  , ,
+  DELS: ,,[[@BCMS]],,[[Eli Movies]],
+  , ,
+  DELS: ,,[[@BCMS]],,[[Eli Movies]],,
+  , [Eli Interactions Obsidian](spot://eliinteractionsobsidian)
+  , [ELI Log Obsidian](spot://elilogobsidian), [Eli Obsidian](spot://eliobsidian)
+  , [Eli Report Cards Obsidian](spot://elireportcardsobsidian)
+  , [Eli Sentimental Obsidian](spot://elisentimentalobsidian)
+  , [Eli Services Obsidian](spot://eliservicesobsidian)
+  , [Eli Strategy Obsidian](spot://elistrategyobsidian),
+  DELS: ,,[[@BCMS]],,[[Eli Movies]],,,[Eli Obsidian](spot://eliobsidian),
+  , [Eli Interactions](spot://eliinteractions), [ELI Log](spot://elilog),
+  , [Eli Report Cards](spot://elireportcards), [Eli Sentimental](spot://elisentimental)
+  , [Eli Services](spot://eliservices), [Eli Strategy](spot://elistrategy),
+  DELS: [[Eli Report Cards]],[[Eli Sentimental]],[[@BCMS]],,[[Eli Movies]],,,[Eli Obsidian](spot://eliobsidian),[[ELI Log]], [[Eli Strategy]], [[Eli Interactions]], [[Eli Services]], [[Eli Report Cards]], [[Eli Sentimental]], [[Eli Report Cards]], [[Eli Sentimental]], [[Eli Report Cards]], [[Eli Sentimental]], , , , , , , [[Eli Report Cards]], [[Eli Sentimental]], , [[Eli Report Cards]], [[Eli Sentimental]], ,
+  , ,
+  ,
+  , ,
+  , ,
   , [Eli Interactions Note](spot://eliinteractionsnote), [ELI Log Note](spot://elilognote)
   , [Eli Note](spot://elinote), [Eli Report Cards Note](spot://elireportcardsnote)
   , [Eli Sentimental Note](spot://elisentimentalnote), [Eli Services Note](spot://eliservicesnote)
   , [Eli Strategy Note](spot://elistrategynote), 
-  DELS: [[Eli Report Cards]],[[Eli Sentimental]],[[@BCMS]],[[BCMS]],[[Eli Movies]],
+  DELS: [[Eli Report Cards]],[[Eli Sentimental]],[[@BCMS]],[[BCMS]],[[Eli Movies]],[Eli Note](spot://elinote),[[BCMS]],[Eli Obsidian](spot://eliobsidian),[[ELI Log]], [[Eli Strategy]], [[Eli Interactions]], [[Eli Services]], [[Eli Report Cards]], [[Eli Sentimental]], [[Eli Report Cards]], [[Eli Sentimental]], [[Eli Report Cards]], [[Eli Sentimental]], [Eli Interactions Note](spot://eliinteractionsnote), [ELI Log Note](spot://elilognote), [Eli Report Cards Note](spot://elireportcardsnote), [Eli Sentimental Note](spot://elisentimentalnote), [Eli Services Note](spot://eliservicesnote), [Eli Strategy Note](spot://elistrategynote), [[Eli Report Cards]], [[Eli Sentimental]], [Eli Note](spot://elinote), [[Eli Report Cards]], [[Eli Sentimental]], [Eli Note](spot://elinote),[[BCMS]], [[BCMS]],[Eli Interactions Note](spot://eliinteractionsnote), [ELI Log Note](spot://elilognote), [Eli Report Cards Note](spot://elireportcardsnote), [Eli Sentimental Note](spot://elisentimentalnote), [Eli Services Note](spot://eliservicesnote), [Eli Strategy Note](spot://elistrategynote),[Eli Note](spot://elinote), [Eli Note](spot://elinote), [Eli Note](spot://elinote), [Eli Note](spot://elinote), [Eli Interactions Note](spot://eliinteractionsnote), [ELI Log Note](spot://elilognote), [Eli Report Cards Note](spot://elireportcardsnote), [Eli Sentimental Note](spot://elisentimentalnote), [Eli Services Note](spot://eliservicesnote), [Eli Strategy Note](spot://elistrategynote),
 
 
 

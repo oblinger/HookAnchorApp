@@ -1,5 +1,12 @@
 .[[Vectara]].
+  , ,
+  , ,
+  , ,
+  , [Vectara Obsidian](spot://vectaraobsidian),
+  DELS: ,[Vectara Obsidian](spot://vectaraobsidian),
+  , ,
   , [Vectara Note](spot://vectaranote), 
+  DELS: [Vectara Note](spot://vectaranote),[Vectara Obsidian](spot://vectaraobsidian),[Vectara Note](spot://vectaranote),[Vectara Note](spot://vectaranote),
 
 # Top
 #### kind: StartAI

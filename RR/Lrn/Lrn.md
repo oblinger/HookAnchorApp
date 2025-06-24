@@ -1,6 +1,13 @@
 .[[Lrn]]. [[LRN Todo|todo]]
   [[Lrn Mgt]], [[LRN Read]], [[LRN Todo]],
+  , ,
+  , ,
+  , ,
+  , [Lrn Obsidian](spot://lrnobsidian),
+  DELS: ,[Lrn Obsidian](spot://lrnobsidian),
+  , ,
   , [Lrn Note](spot://lrnnote), 
+  DELS: [Lrn Note](spot://lrnnote),[Lrn Obsidian](spot://lrnobsidian),[Lrn Note](spot://lrnnote),[Lrn Note](spot://lrnnote),
 
 
 

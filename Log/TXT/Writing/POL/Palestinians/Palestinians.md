@@ -1,5 +1,12 @@
 .[[Palestinians]].
+  , ,
+  , ,
+  , ,
+  , [Palestinians Obsidian](spot://palestiniansobsidian),
+  DELS: ,[Palestinians Obsidian](spot://palestiniansobsidian),
+  , ,
   , [Palestinians Note](spot://palestiniansnote), 
+  DELS: [Palestinians Note](spot://palestiniansnote),[Palestinians Obsidian](spot://palestiniansobsidian),[Palestinians Note](spot://palestiniansnote),[Palestinians Note](spot://palestiniansnote),
 
 
 

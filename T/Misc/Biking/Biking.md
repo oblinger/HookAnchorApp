@@ -1,6 +1,13 @@
 .[[Biking]].
   ,   [[Biking Notes]],
+  , ,
+  , ,
+  , ,
+  , [Biking Obsidian](spot://bikingobsidian),
+  DELS: ,[Biking Obsidian](spot://bikingobsidian),
+  , ,
   , [Biking Note](spot://bikingnote), 
+  DELS: [Biking Note](spot://bikingnote),[Biking Obsidian](spot://bikingobsidian),[Biking Note](spot://bikingnote),[Biking Note](spot://bikingnote),
 
 
 :: [[Biking Notes]]

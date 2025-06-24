@@ -1,8 +1,15 @@
 .[[@Google]].
   ,   [[GoogleJob]], [[Google People]],
   , [[@Alexandra Ramadan]],
-  , [@Google Note](spot://@googlenote), 
+  , ,
+  , ,
   DELS: [[@Alexandra Ramadan]],
+  , ,
+  , [@Google Obsidian](spot://@googleobsidian),
+  DELS: [[@Alexandra Ramadan]],,[@Google Obsidian](spot://@googleobsidian),
+  , ,
+  , [@Google Note](spot://@googlenote), 
+  DELS: [[@Alexandra Ramadan]],[@Google Note](spot://@googlenote),[@Google Obsidian](spot://@googleobsidian),[@Google Note](spot://@googlenote),[@Google Note](spot://@googlenote),
 
 =[[Org]] 
 - [[DocGoogle]], [[DocGCP]], 

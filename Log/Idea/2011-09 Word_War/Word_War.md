@@ -1,5 +1,12 @@
 .[[Word_War]].
+  , ,
+  , ,
+  , ,
+  , [Word_War Obsidian](spot://wordwarobsidian),
+  DELS: ,[Word_War Obsidian](spot://wordwarobsidian),
+  , ,
   , [Word_War Note](spot://wordwarnote), 
+  DELS: [Word_War Note](spot://wordwarnote),[Word_War Obsidian](spot://wordwarobsidian),[Word_War Note](spot://wordwarnote),[Word_War Note](spot://wordwarnote),
 
 
 :: [[2011-09 Word_War]]

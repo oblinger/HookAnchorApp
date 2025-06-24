@@ -1,5 +1,12 @@
 .[[Taxes]].
+  , ,
+  , ,
+  , ,
+  , [Taxes Obsidian](spot://taxesobsidian),
+  DELS: ,[Taxes Obsidian](spot://taxesobsidian),
+  , ,
   , [Taxes Note](spot://taxesnote), 
+  DELS: [Taxes Note](spot://taxesnote),[Taxes Obsidian](spot://taxesobsidian),[Taxes Note](spot://taxesnote),[Taxes Note](spot://taxesnote),
 
 
 

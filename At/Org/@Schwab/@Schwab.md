@@ -1,5 +1,12 @@
 .[[@Schwab]].
+  , ,
+  , ,
+  , ,
+  , [@Schwab Obsidian](spot://@schwabobsidian),
+  DELS: ,[@Schwab Obsidian](spot://@schwabobsidian),
+  , ,
   , [@Schwab Note](spot://@schwabnote), 
+  DELS: [@Schwab Note](spot://@schwabnote),[@Schwab Obsidian](spot://@schwabobsidian),[@Schwab Note](spot://@schwabnote),[@Schwab Note](spot://@schwabnote),
 
 =[[Org]].   [Schwab-Site](https://client.schwab.com) 
 

@@ -1,8 +1,8 @@
-.[[FIN Budget]].  (See [[FIN Tracking]])
+.[[FIN.Budget]].  (See [[FIN.Tracking]])
   , [[2024 Budget]], [[2025 Budget]], [[FIN Categories]], 
 
-- [[FIN Tracking]] 
-- [[FIN Flows]]: coarse-grained budget
+- [[FIN.Tracking]] 
+- [[FIN.Flows]]: coarse-grained budget
 - [[FIN Categories]]: Budget categories
 
 BUDGET
