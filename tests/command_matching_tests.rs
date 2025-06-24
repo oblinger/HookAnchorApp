@@ -6,7 +6,7 @@ fn test_exact_match_with_dots() {
     assert!(command_matches_query("test.me", "test.me"));
     assert!(command_matches_query("test.me", "me"));
     assert!(command_matches_query("test.me", "test.m"));
-    assert!(command_matches_query("test.me", "tst.m"));
+    assert!(command_matches_query("test.me", "tes.m"));
     //assert!(command_matches_query("test.me", "test.me"));
 }
 

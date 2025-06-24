@@ -351,14 +351,22 @@ impl eframe::App for AnchorSelector {
                 }
                 self.command_editor.hide();
             }
-            CommandEditorResult::Delete(_original_command_name) => {
-                // Use the command editor's delete method
-                if let Err(e) = self.command_editor.delete_original_command(&mut self.commands) {
-                    eprintln!("Error deleting command: {}", e);
+            CommandEditorResult::Delete(command_name) => {
+                // Delete the specified command and save to file
+                use anchor_selector::{delete_command, save_commands_to_file};
+                
+                let deleted = delete_command(&mut self.commands, &command_name);
+                if !deleted {
+                    eprintln!("Warning: Command '{}' not found for deletion", command_name);
                 } else {
-                    // Update the filtered list if we're currently filtering
-                    if !self.search_text.trim().is_empty() {
-                        self.update_filter();
+                    // Save the updated command list back to spot_cmds.txt
+                    if let Err(e) = save_commands_to_file(&self.commands) {
+                        eprintln!("Error saving commands to file after deletion: {}", e);
+                    } else {
+                        // Update the filtered list if we're currently filtering
+                        if !self.search_text.trim().is_empty() {
+                            self.update_filter();
+                        }
                     }
                 }
                 self.command_editor.hide();

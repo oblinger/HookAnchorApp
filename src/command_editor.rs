@@ -138,7 +138,13 @@ impl CommandEditor {
                                     
                                     // Show delete button
                                     if ui.button("Delete").clicked() {
-                                        result = CommandEditorResult::Delete(self.command.clone());
+                                        // Use original command name for deletion, not current text
+                                        let command_to_delete = if !self.original_command_name.is_empty() {
+                                            self.original_command_name.clone()
+                                        } else {
+                                            self.command.clone()
+                                        };
+                                        result = CommandEditorResult::Delete(command_to_delete);
                                     }
                                 });
                             } else {

@@ -15,6 +15,14 @@ path = "src/cmd.rs"
 name = "test_roundtrip"
 path = "src/test_roundtrip.rs"
 
+[[bin]]
+name = "test_save"
+path = "src/test_save.rs"
+
+[[bin]]
+name = "test_delete"
+path = "src/test_delete.rs"
+
 [dependencies]
 eframe = "0.29"
 egui = "0.29"
