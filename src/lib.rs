@@ -129,43 +129,46 @@ pub fn save_commands_to_file(commands: &[Command]) -> Result<(), Box<dyn std::er
 
 /// Returns true if the command name matches the search query using flexible sequence matching
 pub fn command_matches_query(command_name: &str, query: &str) -> bool {
-    command_matches_query_with_debug(command_name, query, false)
+    command_matches_query_with_debug(command_name, query, false) >= 0
 }
 
-/// Returns true if the command name matches the search query with optional debug output
-pub fn command_matches_query_with_debug(command_name: &str, query: &str, debug: bool) -> bool {
+/// Returns match quality as integer: -1 for no match, position of first unmatched non-space/dot char, or string length for complete match
+pub fn command_matches_query_with_debug(command_name: &str, query: &str, debug: bool) -> i32 {
     let search_lower = query.to_lowercase();
     let cmd_lower = command_name.to_lowercase();
+    
+    if search_lower.is_empty() {
+        return cmd_lower.len() as i32;
+    }
     
     // For queries containing dots, try both word-separated matching and flexible character matching
     if search_lower.contains('.') {
         let search_words: Vec<&str> = search_lower.split(|c| c == ' ' || c == '_' || c == '.').filter(|s| !s.is_empty()).collect();
         
         // Try multi-word matching first
-        if search_words.len() > 1 && matches_multi_word_sequence(&cmd_lower, &search_words, debug) {
-            return true;
+        if search_words.len() > 1 {
+            let result = matches_multi_word_sequence_with_position(&cmd_lower, &search_words, debug);
+            if result >= 0 {
+                return result;
+            }
         }
         
         // Also try flexible character matching treating the whole query as one unit
-        if matches_flexible_sequence(&cmd_lower, &search_lower, debug) {
-            return true;
-        }
-        
-        return false;
+        return matches_flexible_sequence_with_position(&cmd_lower, &search_lower, debug);
     } else {
         // For regular queries, use original logic
         let search_words: Vec<&str> = search_lower.split_whitespace().collect();
         
         if search_words.is_empty() {
-            return true;
+            return cmd_lower.len() as i32;
         }
         
         if search_words.len() == 1 {
             // Single word: use flexible character-by-character matching
-            matches_flexible_sequence(&cmd_lower, search_words[0], debug)
+            matches_flexible_sequence_with_position(&cmd_lower, search_words[0], debug)
         } else {
             // Multiple words: use exact word boundary matching
-            matches_multi_word_sequence(&cmd_lower, &search_words, debug)
+            matches_multi_word_sequence_with_position(&cmd_lower, &search_words, debug)
         }
     }
 }
@@ -202,7 +205,7 @@ pub fn filter_commands(commands: &[Command], search_text: &str, debug: bool) -> 
             println!("Debug: checking '{}' against words: {:?}", cmd_lower, search_words);
         }
         
-        if command_matches_query_with_debug(&cmd.command, search_text, debug) {
+        if command_matches_query_with_debug(&cmd.command, search_text, debug) >= 0 {
             categorize_match(cmd, &cmd_lower, &search_words, &mut exact_matches, 
                            &mut command_start_matches, &mut word_start_matches, &mut prefix_matches);
         }
@@ -313,8 +316,45 @@ fn combine_and_limit_results(search_words: Vec<&str>, exact_matches: Vec<Command
 }
 
 
-/// Matches multiple search words against command words in sequence
-fn matches_multi_word_sequence(cmd_text: &str, search_words: &[&str], debug: bool) -> bool {
+
+/// Returns position of first unmatched non-space/dot char, or command length if fully matched, or -1 if no match
+fn matches_flexible_sequence_with_position(cmd_text: &str, search_text: &str, _debug: bool) -> i32 {
+    let search_chars: Vec<char> = search_text.chars().collect();
+    let cmd_chars: Vec<char> = cmd_text.chars().collect();
+    
+    if search_chars.is_empty() {
+        return cmd_text.len() as i32;
+    }
+    
+    let mut search_pos = 0;
+    let mut cmd_pos = 0;
+    
+    while search_pos < search_chars.len() && cmd_pos < cmd_chars.len() {
+        if cmd_chars[cmd_pos] == search_chars[search_pos] {
+            search_pos += 1;
+        }
+        cmd_pos += 1;
+    }
+    
+    if search_pos == search_chars.len() {
+        // All search characters matched, find first unmatched non-space/dot character
+        while cmd_pos < cmd_chars.len() {
+            let ch = cmd_chars[cmd_pos];
+            if ch != ' ' && ch != '.' && ch != '_' {
+                return cmd_pos as i32;
+            }
+            cmd_pos += 1;
+        }
+        // All remaining characters were spaces/dots/underscores, return command length
+        return cmd_text.len() as i32;
+    } else {
+        // Not all search characters matched
+        return -1;
+    }
+}
+
+/// Returns position of first unmatched non-space/dot char for multi-word matching
+fn matches_multi_word_sequence_with_position(cmd_text: &str, search_words: &[&str], debug: bool) -> i32 {
     let cmd_words: Vec<&str> = cmd_text.split(|c| c == ' ' || c == '_' || c == '.').filter(|s| !s.is_empty()).collect();
     
     if debug && cmd_text.contains("selector") {
@@ -322,7 +362,9 @@ fn matches_multi_word_sequence(cmd_text: &str, search_words: &[&str], debug: boo
     }
     
     let mut search_idx = 0;
-    for cmd_word in cmd_words {
+    let mut total_chars_processed = 0;
+    
+    for cmd_word in &cmd_words {
         if search_idx >= search_words.len() {
             break;
         }
@@ -334,46 +376,33 @@ fn matches_multi_word_sequence(cmd_text: &str, search_words: &[&str], debug: boo
                         cmd_word, search_words[search_idx-1], search_idx);
             }
         }
-    }
-    
-    search_idx == search_words.len()
-}
-
-/// Flexible character-by-character matching within and across words
-fn matches_flexible_sequence(cmd_text: &str, search_text: &str, _debug: bool) -> bool {
-    let cmd_words: Vec<&str> = cmd_text.split(|c| c == ' ' || c == '_' || c == '.').filter(|s| !s.is_empty()).collect();
-    let search_chars: Vec<char> = search_text.chars().collect();
-    
-    let mut search_pos = 0;
-    let mut word_idx = 0;
-    let mut char_idx_in_word = 0;
-    
-    while search_pos < search_chars.len() && word_idx < cmd_words.len() {
-        let current_word = cmd_words[word_idx];
-        let word_chars: Vec<char> = current_word.chars().collect();
         
-        if char_idx_in_word < word_chars.len() {
-            if word_chars[char_idx_in_word] == search_chars[search_pos] {
-                search_pos += 1;
-                char_idx_in_word += 1;
-            } else {
-                // Try next word if we've matched at least one char, otherwise advance in current word
-                if char_idx_in_word > 0 {
-                    word_idx += 1;
-                    char_idx_in_word = 0;
-                } else {
-                    word_idx += 1;
-                    char_idx_in_word = 0;
-                }
-            }
-        } else {
-            // End of current word, move to next
-            word_idx += 1;
-            char_idx_in_word = 0;
+        // Track position in original string
+        total_chars_processed += cmd_word.len();
+        // Account for separators (simplified - assumes single separator between words)
+        if total_chars_processed < cmd_text.len() {
+            total_chars_processed += 1;
         }
     }
     
-    search_pos == search_chars.len()
+    if search_idx == search_words.len() {
+        // All search words matched, find first unmatched non-space/dot character
+        let cmd_chars: Vec<char> = cmd_text.chars().collect();
+        let mut pos = total_chars_processed.min(cmd_chars.len());
+        
+        while pos < cmd_chars.len() {
+            let ch = cmd_chars[pos];
+            if ch != ' ' && ch != '.' && ch != '_' {
+                return pos as i32;
+            }
+            pos += 1;
+        }
+        // All remaining characters were spaces/dots/underscores
+        return cmd_text.len() as i32;
+    } else {
+        // Not all search words matched
+        return -1;
+    }
 }
 
 // =============================================================================

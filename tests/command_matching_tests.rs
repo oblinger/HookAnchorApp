@@ -1,4 +1,4 @@
-use anchor_selector::command_matches_query;
+use anchor_selector::{command_matches_query, command_matches_query_with_debug};
 
 // Testing for submenus
 #[test]
@@ -10,12 +10,115 @@ fn test_exact_match_with_dots() {
     //assert!(command_matches_query("test.me", "test.me"));
 }
 
+// Integer return value tests
+#[test]
+fn test_integer_return_values_exact_matches() {
+    // Complete matches should return command length
+    assert_eq!(command_matches_query_with_debug("hello", "hello", false), 5);
+    assert_eq!(command_matches_query_with_debug("test", "test", false), 4);
+    assert_eq!(command_matches_query_with_debug("a", "a", false), 1);
+}
+
+#[test]
+fn test_integer_return_values_partial_matches() {
+    // Partial matches should return position of first unmatched non-space/dot char
+    assert_eq!(command_matches_query_with_debug("hello", "h", false), 1);
+    assert_eq!(command_matches_query_with_debug("hello", "hel", false), 3);
+    assert_eq!(command_matches_query_with_debug("testing", "test", false), 4);
+    assert_eq!(command_matches_query_with_debug("application", "app", false), 3);
+}
+
+#[test]
+fn test_integer_return_values_no_matches() {
+    // No matches should return -1
+    assert_eq!(command_matches_query_with_debug("hello", "xyz", false), -1);
+    assert_eq!(command_matches_query_with_debug("test", "abc", false), -1);
+    assert_eq!(command_matches_query_with_debug("command", "zzz", false), -1);
+}
+
+#[test]
+fn test_integer_return_values_with_spaces() {
+    // Spaces should be skipped when finding first unmatched char
+    assert_eq!(command_matches_query_with_debug("hello world", "hello", false), 6); // 'w' at position 6
+    assert_eq!(command_matches_query_with_debug("my test command", "my", false), 3); // 't' at position 3
+    assert_eq!(command_matches_query_with_debug("open file", "open", false), 5); // 'f' at position 5
+}
+
+#[test]
+fn test_integer_return_values_with_underscores() {
+    // Underscores should be skipped when finding first unmatched char
+    assert_eq!(command_matches_query_with_debug("hello_world", "hello", false), 6); // 'w' at position 6
+    assert_eq!(command_matches_query_with_debug("my_test_command", "my", false), 3); // 't' at position 3
+    assert_eq!(command_matches_query_with_debug("open_file", "open", false), 5); // 'f' at position 5
+}
+
+#[test]
+fn test_integer_return_values_with_dots() {
+    // Dots should be skipped when finding first unmatched char
+    assert_eq!(command_matches_query_with_debug("test.me", "test", false), 5); // 'm' at position 5
+    assert_eq!(command_matches_query_with_debug("file.txt", "file", false), 5); // 't' at position 5
+    assert_eq!(command_matches_query_with_debug("config.json", "config", false), 7); // 'j' at position 7
+}
+
+#[test]
+fn test_integer_return_values_complete_matches_with_separators() {
+    // Complete matches with separators should return full length
+    assert_eq!(command_matches_query_with_debug("hello world", "hello world", false), 11);
+    assert_eq!(command_matches_query_with_debug("test_command", "test_command", false), 12);
+    assert_eq!(command_matches_query_with_debug("file.txt", "file.txt", false), 8);
+}
+
+#[test]
+fn test_integer_return_values_empty_query() {
+    // Empty query should return command length (matches everything)
+    assert_eq!(command_matches_query_with_debug("hello", "", false), 5);
+    assert_eq!(command_matches_query_with_debug("test command", "", false), 12);
+    assert_eq!(command_matches_query_with_debug("", "", false), 0);
+}
+
+#[test]
+fn test_integer_return_values_multi_word_scenarios() {
+    // Multi-word queries should return appropriate positions
+    assert_eq!(command_matches_query_with_debug("hello world test", "hello world", false), 12); // 't' at position 12
+    assert_eq!(command_matches_query_with_debug("my_test_command", "my test", false), 8); // 'c' at position 8
+    assert_eq!(command_matches_query_with_debug("open file manager", "open file", false), 10); // 'm' at position 10
+    
+    // Complete multi-word matches
+    assert_eq!(command_matches_query_with_debug("hello world", "hello world", false), 11);
+    assert_eq!(command_matches_query_with_debug("test_command", "test command", false), 12);
+}
+
+#[test]
+fn test_integer_return_values_flexible_matching() {
+    // Test flexible character matching across word boundaries
+    assert_eq!(command_matches_query_with_debug("hello world", "helloworld", false), 11);
+    assert_eq!(command_matches_query_with_debug("test_command", "testcommand", false), 12);
+    assert_eq!(command_matches_query_with_debug("my test app", "mytestapp", false), 11);
+}
+
+#[test]
+fn test_integer_return_values_single_characters() {
+    // Single character queries
+    assert_eq!(command_matches_query_with_debug("test", "t", false), 1); // 'e' at position 1
+    assert_eq!(command_matches_query_with_debug("hello", "h", false), 1); // 'e' at position 1
+    assert_eq!(command_matches_query_with_debug("a", "a", false), 1); // Complete match
+    
+    // Single character commands
+    assert_eq!(command_matches_query_with_debug("x", "x", false), 1); // Complete match
+    assert_eq!(command_matches_query_with_debug("a", "b", false), -1); // No match
+}
+
 // Basic matching tests
 #[test]
 fn test_exact_match() {
     assert!(command_matches_query("test", "test"));
     assert!(command_matches_query("command", "command"));
     assert!(command_matches_query("hello", "hello"));
+    
+    // Test integer return values for exact matches
+    assert_eq!(command_matches_query_with_debug("test", "test", false), 4);
+    assert_eq!(command_matches_query_with_debug("command", "command", false), 7);
+    assert_eq!(command_matches_query_with_debug("hello", "hello", false), 5);
 }
 
 #[test]
@@ -31,6 +134,11 @@ fn test_empty_inputs() {
     assert!(command_matches_query("", ""));
     assert!(command_matches_query("test", ""));
     assert!(!command_matches_query("", "test"));
+    
+    // Test integer return values for empty inputs
+    assert_eq!(command_matches_query_with_debug("", "", false), 0);
+    assert_eq!(command_matches_query_with_debug("test", "", false), 4);
+    assert_eq!(command_matches_query_with_debug("", "test", false), -1);
 }
 
 // Prefix matching tests
@@ -40,6 +148,12 @@ fn test_prefix_matching() {
     assert!(command_matches_query("application", "app"));
     assert!(command_matches_query("configuration", "config"));
     assert!(command_matches_query("development", "dev"));
+    
+    // Test integer return values for prefix matches
+    assert_eq!(command_matches_query_with_debug("testing", "test", false), 4); // 'i' at position 4
+    assert_eq!(command_matches_query_with_debug("application", "app", false), 3); // 'l' at position 3
+    assert_eq!(command_matches_query_with_debug("configuration", "config", false), 6); // 'u' at position 6
+    assert_eq!(command_matches_query_with_debug("development", "dev", false), 3); // 'e' at position 3
 }
 
 #[test]
@@ -47,6 +161,11 @@ fn test_prefix_no_match() {
     assert!(!command_matches_query("test", "testing"));
     assert!(!command_matches_query("app", "application"));
     assert!(!command_matches_query("cmd", "command"));
+    
+    // Test integer return values for no matches
+    assert_eq!(command_matches_query_with_debug("test", "testing", false), -1);
+    assert_eq!(command_matches_query_with_debug("app", "application", false), -1);
+    assert_eq!(command_matches_query_with_debug("cmd", "command", false), -1);
 }
 
 // Word boundary tests with spaces
