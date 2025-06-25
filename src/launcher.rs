@@ -6,6 +6,8 @@ use std::path::PathBuf;
 use serde::{Deserialize, Serialize};
 use std::time::{SystemTime, UNIX_EPOCH};
 
+const DEFAULT_CONFIG: &str = include_str!("default_config.yaml");
+
 #[derive(Debug, Clone, PartialEq)]
 pub enum LauncherError {
     ParseError(String),
@@ -23,8 +25,8 @@ impl From<EvalError> for LauncherError {
 
 #[derive(Debug, Clone, Serialize, Deserialize)]
 pub struct LauncherConfig {
-    pub simple_commands: HashMap<String, ActionSpec>,
-    pub scripted_commands: HashMap<String, String>,
+    pub simple_actions: HashMap<String, ActionSpec>,
+    pub js_actions: HashMap<String, String>,
     pub settings: LauncherSettings,
 }
 
@@ -91,9 +93,19 @@ fn parse_command_line(command_line: &str) -> Result<(String, String), LauncherEr
 fn load_config() -> Result<LauncherConfig, LauncherError> {
     let config_path = get_launcher_config_path();
     
-    // If config file doesn't exist, return default config
+    // If config file doesn't exist, create it from default
     if !config_path.exists() {
-        return Ok(create_default_config());
+        // Ensure config directory exists
+        if let Some(parent) = config_path.parent() {
+            fs::create_dir_all(parent)
+                .map_err(|e| LauncherError::ConfigError(format!("Failed to create config directory: {}", e)))?;
+        }
+        
+        // Write default config to file
+        fs::write(&config_path, DEFAULT_CONFIG)
+            .map_err(|e| LauncherError::ConfigError(format!("Failed to write default config: {}", e)))?;
+        
+        debug_log(&format!("Created default config at: {:?}", config_path));
     }
     
     // Read and parse YAML config
@@ -112,100 +124,15 @@ fn get_launcher_config_path() -> PathBuf {
     PathBuf::from(home).join(".config/anchor_selector/config.yaml")
 }
 
-fn create_default_config() -> LauncherConfig {
-    let mut simple_commands = HashMap::new();
-    let mut scripted_commands = HashMap::new();
-    
-    // Action types that match the Python launcher behavior
-    
-    // Basic action types
-    simple_commands.insert("app".to_string(), ActionSpec::App { name: "{{arg}}".to_string() });
-    simple_commands.insert("url".to_string(), ActionSpec::Url { url: "{{arg}}".to_string() });
-    simple_commands.insert("folder".to_string(), ActionSpec::Folder { path: "{{arg}}".to_string() });
-    simple_commands.insert("cmd".to_string(), ActionSpec::Shell { command: "{{arg}}".to_string() });
-    
-    // Browser-specific actions
-    simple_commands.insert("chrome".to_string(), ActionSpec::OpenWith { 
-        app: "Google Chrome".to_string(), 
-        arg: "{{arg}}".to_string() 
-    });
-    simple_commands.insert("safari".to_string(), ActionSpec::OpenWith { 
-        app: "Safari".to_string(), 
-        arg: "{{arg}}".to_string() 
-    });
-    simple_commands.insert("brave".to_string(), ActionSpec::OpenWith { 
-        app: "Brave Browser".to_string(), 
-        arg: "{{arg}}".to_string() 
-    });
-    simple_commands.insert("firefox".to_string(), ActionSpec::OpenWith { 
-        app: "Firefox".to_string(), 
-        arg: "{{arg}}".to_string() 
-    });
-    simple_commands.insert("work".to_string(), ActionSpec::OpenWith { 
-        app: "Google Chrome Beta".to_string(), 
-        arg: "{{arg}}".to_string() 
-    });
-    
-    // Specialized app actions
-    simple_commands.insert("notion".to_string(), ActionSpec::OpenWith { 
-        app: "Notion".to_string(), 
-        arg: "{{arg}}".to_string() 
-    });
-    simple_commands.insert("obs_url".to_string(), ActionSpec::OpenWith { 
-        app: "Obsidian".to_string(), 
-        arg: "{{arg}}".to_string() 
-    });
-    simple_commands.insert("1pass".to_string(), ActionSpec::OpenWith { 
-        app: "1Password 7 - Password Manager".to_string(), 
-        arg: "onepassword://search/{{arg}}".to_string() 
-    });
-    
-    // Document opening (let system choose default app)
-    simple_commands.insert("doc".to_string(), ActionSpec::OpenWith { 
-        app: "".to_string(),  // Empty app lets system choose
-        arg: "{{arg}}".to_string() 
-    });
-    
-    // Complex actions that need JavaScript
-    scripted_commands.insert("obs".to_string(), 
-        r#"
-        // Complex Obsidian page handling with URL encoding
-        const encoded = encodeURIComponent(arg);
-        const url = `obsidian://open?vault=MainVault&file=${encoded}`;
-        launch_app("Obsidian", url);
-        "#.to_string());
-        
-    scripted_commands.insert("alias".to_string(), 
-        r#"
-        // Recursive command calling
-        launch(arg);
-        "#.to_string());
-        
-    scripted_commands.insert("anchor".to_string(), 
-        r#"
-        // Directory change + anchor activation
-        shell(`cd '${arg}' && anchor activate`);
-        "#.to_string());
-    
-    LauncherConfig {
-        simple_commands,
-        scripted_commands,
-        settings: LauncherSettings {
-            default_browser: Some("Google Chrome".to_string()),
-            work_browser: Some("Google Chrome Beta".to_string()),
-            timeout_ms: Some(5000),
-        },
-    }
-}
 
 fn lookup_action(action: &str, config: &LauncherConfig) -> Result<ActionSpec, LauncherError> {
     // First try simple commands
-    if let Some(action_spec) = config.simple_commands.get(action) {
+    if let Some(action_spec) = config.simple_actions.get(action) {
         return Ok(action_spec.clone());
     }
     
-    // Then try scripted commands  
-    if let Some(script_code) = config.scripted_commands.get(action) {
+    // Then try JS actions  
+    if let Some(script_code) = config.js_actions.get(action) {
         return Ok(ActionSpec::JavaScript { code: script_code.clone() });
     }
     
@@ -353,8 +280,8 @@ mod tests {
     #[test]
     fn test_launcher_config_creation() {
         let config = LauncherConfig {
-            simple_commands: HashMap::new(),
-            scripted_commands: HashMap::new(),
+            simple_actions: HashMap::new(),
+            js_actions: HashMap::new(),
             settings: LauncherSettings {
                 default_browser: Some("Google Chrome".to_string()),
                 work_browser: None,
@@ -406,27 +333,29 @@ mod tests {
     }
 
     #[test]
-    fn test_default_config_has_all_action_types() {
-        let config = create_default_config();
+    fn test_default_config_loads_from_yaml() {
+        // Test that the embedded YAML config parses correctly
+        let config: LauncherConfig = serde_yaml::from_str(DEFAULT_CONFIG)
+            .expect("Default config YAML should parse correctly");
         
         // Test that all Python launcher action types are present
-        assert!(config.simple_commands.contains_key("app"));
-        assert!(config.simple_commands.contains_key("url"));
-        assert!(config.simple_commands.contains_key("folder"));
-        assert!(config.simple_commands.contains_key("cmd"));
-        assert!(config.simple_commands.contains_key("doc"));
-        assert!(config.simple_commands.contains_key("chrome"));
-        assert!(config.simple_commands.contains_key("safari"));
-        assert!(config.simple_commands.contains_key("brave"));
-        assert!(config.simple_commands.contains_key("firefox"));
-        assert!(config.simple_commands.contains_key("work"));
-        assert!(config.simple_commands.contains_key("notion"));
-        assert!(config.simple_commands.contains_key("obs_url"));
-        assert!(config.simple_commands.contains_key("1pass"));
+        assert!(config.simple_actions.contains_key("app"));
+        assert!(config.simple_actions.contains_key("url"));
+        assert!(config.simple_actions.contains_key("folder"));
+        assert!(config.simple_actions.contains_key("cmd"));
+        assert!(config.simple_actions.contains_key("doc"));
+        assert!(config.simple_actions.contains_key("chrome"));
+        assert!(config.simple_actions.contains_key("safari"));
+        assert!(config.simple_actions.contains_key("brave"));
+        assert!(config.simple_actions.contains_key("firefox"));
+        assert!(config.simple_actions.contains_key("work"));
+        assert!(config.simple_actions.contains_key("notion"));
+        assert!(config.simple_actions.contains_key("obs_url"));
+        assert!(config.simple_actions.contains_key("1pass"));
         
         // Test JavaScript actions
-        assert!(config.scripted_commands.contains_key("obs"));
-        assert!(config.scripted_commands.contains_key("alias"));
-        assert!(config.scripted_commands.contains_key("anchor"));
+        assert!(config.js_actions.contains_key("obs"));
+        assert!(config.js_actions.contains_key("alias"));
+        assert!(config.js_actions.contains_key("anchor"));
     }
 }

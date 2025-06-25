@@ -67,6 +67,10 @@ path = "src/test_action_types.rs"
 name = "test_js"
 path = "src/test_js.rs"
 
+[[bin]]
+name = "test_1pass_schemes"
+path = "src/test_1pass_schemes.rs"
+
 [dependencies]
 eframe = "0.29"
 egui = "0.29"
