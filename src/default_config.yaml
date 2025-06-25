@@ -9,19 +9,15 @@ popup_settings:
   max_columns: 3
   use_new_launcher: true  # Enable new Rust launcher (false = Python launcher)
   debug_log: "~/.anchor.log"  # Debug logging file path (empty/null to disable)
+  # Command editor dropdown actions (comma-separated list)
+  # Users can reorder, add, or remove actions to customize the dropdown
+  listed_actions: "app,url,folder,cmd,chrome,safari,brave,firefox,work,notion,obs,obs_url,1pass,1pass_robust,anchor,alias,doc"
 
 # Launcher settings
 launcher_settings:
   default_browser: "Google Chrome"
   work_browser: "Google Chrome Beta"
   timeout_ms: 5000
-
-# =================================================================
-# COMMAND EDITOR ACTIONS LIST
-# =================================================================
-# Comma-separated list of actions shown in the command editor dropdown
-# Users can reorder, add, or remove actions to customize the dropdown
-listed_actions: "app,url,folder,cmd,chrome,safari,brave,firefox,work,notion,obs,obs_url,1pass,1pass_robust,anchor,alias,doc"
 
 # =================================================================
 # LAUNCHER ACTION TYPES (when use_new_launcher: true)

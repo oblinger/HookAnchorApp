@@ -167,7 +167,7 @@ impl CommandEditor {
                                 .height(400.0) // Make dropdown tall enough to show all options
                                 .show_ui(ui, |ui| {
                                     // Parse comma-separated actions from config or use defaults
-                                    let actions = match &config.listed_actions {
+                                    let actions = match &config.popup_settings.listed_actions {
                                         Some(actions_str) => {
                                             // Split by comma and trim whitespace
                                             actions_str

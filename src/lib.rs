@@ -39,6 +39,9 @@ pub struct PopupSettings {
     pub max_columns: usize,
     pub use_new_launcher: bool,
     pub debug_log: Option<String>,
+    /// Comma-separated list of actions shown in command editor dropdown
+    /// Example: "app,url,folder,cmd,chrome,anchor"
+    pub listed_actions: Option<String>,
 }
 
 impl Default for PopupSettings {
@@ -48,6 +51,7 @@ impl Default for PopupSettings {
             max_columns: 1,
             use_new_launcher: false, // Default to old launcher for backward compatibility
             debug_log: None,
+            listed_actions: Some("app,url,folder,cmd,chrome,anchor".to_string()),
         }
     }
 }
@@ -56,9 +60,6 @@ impl Default for PopupSettings {
 #[derive(Debug, Clone, Serialize, Deserialize)]
 pub struct Config {
     pub popup_settings: PopupSettings,
-    /// Comma-separated list of actions shown in command editor dropdown
-    /// Example: "app,url,folder,cmd,chrome,anchor"
-    pub listed_actions: Option<String>,
     /// User-defined JavaScript functions that extend the global function namespace
     /// These functions are available in all JavaScript contexts (actions, business logic, etc.)
     pub js_functions: Option<std::collections::HashMap<String, String>>,
@@ -68,7 +69,6 @@ impl Default for Config {
     fn default() -> Self {
         Config {
             popup_settings: PopupSettings::default(),
-            listed_actions: Some("app,url,folder,cmd,chrome,anchor".to_string()),
             js_functions: None,
         }
     }
@@ -108,16 +108,16 @@ fn load_legacy_config(contents: &str) -> Result<Config, Box<dyn std::error::Erro
     let yaml: serde_yaml::Value = serde_yaml::from_str(contents)?;
     
     // Extract the settings section if it exists
-    let popup_settings = if let Some(settings_value) = yaml.get("settings") {
+    let mut popup_settings = if let Some(settings_value) = yaml.get("settings") {
         serde_yaml::from_value(settings_value.clone()).unwrap_or_default()
     } else {
         PopupSettings::default()
     };
     
-    // Extract listed_actions if it exists (preserve user's custom actions)
-    let listed_actions = yaml.get("listed_actions")
-        .and_then(|v| v.as_str())
-        .map(|s| s.to_string());
+    // Extract listed_actions if it exists at top level (preserve user's custom actions)
+    if let Some(listed_actions_str) = yaml.get("listed_actions").and_then(|v| v.as_str()) {
+        popup_settings.listed_actions = Some(listed_actions_str.to_string());
+    }
     
     // Extract js_functions if it exists
     let js_functions = yaml.get("js_functions")
@@ -125,7 +125,6 @@ fn load_legacy_config(contents: &str) -> Result<Config, Box<dyn std::error::Erro
     
     Ok(Config {
         popup_settings,
-        listed_actions,
         js_functions,
     })
 }
@@ -714,11 +713,11 @@ pub fn execute_command(command: &str) {
 }
 
 /// Gets the list of actions for the command editor dropdown
-/// Returns the configured actions from listed_actions, or default actions if not configured
+/// Returns the configured actions from popup_settings.listed_actions, or default actions if not configured
 pub fn get_listed_actions() -> Vec<String> {
     let config = load_config();
     
-    match config.listed_actions {
+    match config.popup_settings.listed_actions {
         Some(actions_str) => {
             // Split by comma and trim whitespace
             actions_str
