@@ -60,7 +60,7 @@ pub fn launch(command_line: &str) -> Result<(), LauncherError> {
     
     // Execute the action using eval module
     debug_log(&format!("Executing action: {:?}", action_spec));
-    let exec_result = execute(action_spec, "", &env);
+    let exec_result = execute(action_spec, command_line, &env);
     
     let duration = start_time.elapsed().unwrap_or_default();
     

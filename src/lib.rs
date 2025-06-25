@@ -2,10 +2,25 @@
 //! 
 //! A command management and filtering library that provides fuzzy matching
 //! and prioritized search for command execution.
+//!
+//! # JavaScript API for User Customization
+//!
+//! This library includes a comprehensive JavaScript runtime that allows users
+//! to customize launcher actions using rich built-in functions. See:
+//!
+//! - [`js_runtime`] module - JavaScript runtime implementation with built-ins
+//! - [`business_logic`] module - JavaScript business logic management  
+//! - `JAVASCRIPT_API.md` - Complete API reference documentation
+//! - `src/default_config.yaml` - Configuration examples with built-in function usage
+//!
+//! Available JavaScript built-ins include file operations, path utilities,
+//! shell execution, application launching, and development tool integration.
 
 // New launcher modules
 pub mod eval;
 pub mod launcher;
+pub mod js_runtime;
+pub mod business_logic;
 
 use std::env;
 use std::fs;
@@ -77,7 +92,7 @@ fn get_config_file_path() -> PathBuf {
 // =============================================================================
 
 /// Represents a parsed command with its components and original line
-#[derive(Debug, Clone, PartialEq)]
+#[derive(Debug, Clone, PartialEq, Serialize, Deserialize)]
 pub struct Command {
     pub group: String,
     pub command: String,

@@ -21,10 +21,23 @@ path = "examples/basic_launcher.rs"
 name = "test_all_actions"
 path = "examples/test_all_actions.rs"
 
+[[example]]
+name = "hybrid_js_business_logic"
+path = "examples/hybrid_js_business_logic.rs"
+
+[[example]]
+name = "markdown_scanner"
+path = "examples/markdown_scanner.rs"
+
+[[example]]
+name = "scan_markdown_commands"
+path = "examples/scan_markdown_commands.rs"
+
 [dependencies]
 eframe = "0.29"
 egui = "0.29"
 regex = "1.0"
 serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
 serde_yaml = "0.9"
 rquickjs = "0.9"

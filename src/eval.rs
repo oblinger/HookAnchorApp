@@ -73,7 +73,7 @@ impl Environment {
     }
 }
 
-pub fn execute(action_spec: ActionSpec, _args: &str, _env: &Environment) -> Result<(), EvalError> {
+pub fn execute(action_spec: ActionSpec, original_command: &str, _env: &Environment) -> Result<(), EvalError> {
     match action_spec {
         ActionSpec::App { name } => {
             debug_log(&format!("Executing App action: launching '{}'", name));
@@ -185,21 +185,71 @@ pub fn execute(action_spec: ActionSpec, _args: &str, _env: &Environment) -> Resu
             debug_log(&format!("Shell command completed successfully, output: '{}'", stdout.trim()));
             Ok(())
         }
-        ActionSpec::JavaScript { code } => {
+        ActionSpec::JavaScript { ref code } => {
             debug_log(&format!("Executing JavaScript action: '{}'", code.trim()));
-            execute_javascript(&code)
+            execute_javascript(code, original_command, &action_spec)
         }
     }
 }
 
-fn execute_javascript(code: &str) -> Result<(), EvalError> {
+fn execute_javascript(code: &str, original_command: &str, action_spec: &ActionSpec) -> Result<(), EvalError> {
     debug_log("Starting JavaScript runtime");
     
     let rt = Runtime::new().map_err(|e| EvalError::ExecutionError(format!("Failed to create JavaScript runtime: {}", e)))?;
     let ctx = Context::full(&rt).map_err(|e| EvalError::ExecutionError(format!("Failed to create JavaScript context: {}", e)))?;
     
     ctx.with(|ctx| -> Result<(), EvalError> {
-        // Add shell function
+        // Parse original command to extract parts
+        let (action_name, command_arg) = if let Some(space_pos) = original_command.find(char::is_whitespace) {
+            let action = &original_command[..space_pos];
+            let args = original_command[space_pos..].trim_start();
+            (action, args)
+        } else {
+            (original_command, "")
+        };
+        
+        // Create command context object for JavaScript
+        let command_context = format!(
+            r#"{{
+                "command": "{}",
+                "action": "{}",
+                "arg": "{}",
+                "full_command": "{}",
+                "action_type": "{}",
+                "timestamp": {}
+            }}"#,
+            original_command,
+            action_name,
+            command_arg,
+            original_command,
+            match action_spec {
+                ActionSpec::JavaScript { .. } => "javascript",
+                ActionSpec::App { .. } => "app",
+                ActionSpec::OpenWith { .. } => "open_with",
+                ActionSpec::Url { .. } => "url",
+                ActionSpec::Folder { .. } => "folder",
+                ActionSpec::Shell { .. } => "shell",
+            },
+            SystemTime::now().duration_since(UNIX_EPOCH).unwrap_or_default().as_secs()
+        );
+        
+        // Set command context as global variable
+        ctx.globals().set("COMMAND", command_context.as_str())
+            .map_err(|e| EvalError::ExecutionError(format!("Failed to set COMMAND context: {}", e)))?;
+            
+        // Set individual command parts as global variables for convenience
+        ctx.globals().set("ARG", command_arg)
+            .map_err(|e| EvalError::ExecutionError(format!("Failed to set ARG: {}", e)))?;
+        ctx.globals().set("ACTION", action_name)
+            .map_err(|e| EvalError::ExecutionError(format!("Failed to set ACTION: {}", e)))?;
+        ctx.globals().set("FULL_COMMAND", original_command)
+            .map_err(|e| EvalError::ExecutionError(format!("Failed to set FULL_COMMAND: {}", e)))?;
+        
+        // Add enhanced built-in functions (delegate to js_runtime module)
+        crate::js_runtime::setup_all_builtins(&ctx)
+            .map_err(|e| EvalError::ExecutionError(format!("Failed to setup built-ins: {}", e)))?;
+        
+        // Legacy shell function for compatibility
         let shell_fn = Function::new(ctx.clone(), js_shell_function)
             .map_err(|e| EvalError::ExecutionError(format!("Failed to create shell function: {}", e)))?;
         
