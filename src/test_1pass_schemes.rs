@@ -1,3 +1,10 @@
+//! 1Password Integration Test Binary
+//!
+//! Tests different approaches to 1Password integration:
+//! - Character injection using Quick Access (Cmd+Shift+Space)
+//! - Robust fallback approach with multiple methods
+//! - Validates that 1Password opens websites to maintain autofill context
+
 use anchor_selector::launcher::launch;
 use std::thread;
 use std::time::Duration;
@@ -22,9 +29,9 @@ fn main() {
         Err(e) => println!("   ❌ Robust approach failed: {:?}", e),
     }
     
-    println!("\nNote: Watch for:");
-    println!("- 1Password Quick Access window opening");
-    println!("- Search term being typed");
-    println!("- Entry being selected and website opening");
-    println!("- 1Password maintaining autofill context for the opened website");
+    println!("\nExpected behavior:");
+    println!("- 1Password Quick Access window opens");
+    println!("- Search term is typed automatically");
+    println!("- Entry is selected and website opens in browser");
+    println!("- 1Password maintains autofill context for the opened website");
 }

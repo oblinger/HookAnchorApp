@@ -1,3 +1,8 @@
+//! Launcher System Test Binary
+//!
+//! Validates basic launcher functionality with both unit tests and manual testing.
+//! Tests various action types to ensure they execute without errors.
+
 use anchor_selector::launcher::launch;
 
 #[cfg(test)]

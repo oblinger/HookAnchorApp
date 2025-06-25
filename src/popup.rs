@@ -225,7 +225,7 @@ fn center_on_main_display(ctx: &egui::Context, window_size: egui::Vec2) -> egui:
 }
 
 impl eframe::App for AnchorSelector {
-    fn update(&mut self, ctx: &egui::Context, frame: &mut eframe::Frame) {
+    fn update(&mut self, ctx: &egui::Context, _frame: &mut eframe::Frame) {
         
         // Set position on first frame after window is created
         if !self.position_set {

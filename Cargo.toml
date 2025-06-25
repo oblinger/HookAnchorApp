@@ -3,6 +3,7 @@ name = "anchor_selector"
 version = "0.1.0"
 edition = "2024"
 
+# Main binaries
 [[bin]]
 name = "popup"
 path = "src/popup.rs"
@@ -11,46 +12,7 @@ path = "src/popup.rs"
 name = "cmd"
 path = "src/cmd.rs"
 
-[[bin]]
-name = "test_roundtrip"
-path = "src/test_roundtrip.rs"
-
-[[bin]]
-name = "test_save"
-path = "src/test_save.rs"
-
-[[bin]]
-name = "test_delete"
-path = "src/test_delete.rs"
-
-[[bin]]
-name = "test_amap"
-path = "src/test_amap.rs"
-
-[[bin]]
-name = "test_timing"
-path = "src/test_timing.rs"
-
-[[bin]]
-name = "test_config"
-path = "src/test_config.rs"
-
-[[bin]]
-name = "debug_popup"
-path = "src/debug_popup.rs"
-
-[[bin]]
-name = "test_submenu"
-path = "src/test_submenu.rs"
-
-[[bin]]
-name = "hotkey_listener"
-path = "src/hotkey_listener.rs"
-
-[[bin]]
-name = "rdev_hotkey_listener"
-path = "src/rdev_hotkey_listener.rs"
-
+# Test binaries
 [[bin]]
 name = "test_launcher"
 path = "src/test_launcher.rs"
@@ -78,5 +40,3 @@ regex = "1.0"
 serde = { version = "1.0", features = ["derive"] }
 serde_yaml = "0.9"
 rquickjs = "0.9"
-global-hotkey = "0.6"
-rdev = "0.3"

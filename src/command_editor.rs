@@ -3,6 +3,7 @@ use anchor_selector::{Command, delete_command, add_command, save_commands_to_fil
 
 pub struct CommandEditor {
     pub visible: bool,
+    #[allow(dead_code)]
     pub position: egui::Pos2,
     
     // Editable fields
@@ -279,6 +280,7 @@ impl CommandEditor {
         }
     }
     
+    #[allow(dead_code)]
     pub fn delete_original_command(&self, commands: &mut Vec<Command>) -> Result<(), String> {
         // Only delete if there was an original command
         if !self.original_command_name.is_empty() {
