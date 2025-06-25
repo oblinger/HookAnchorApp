@@ -5,44 +5,17 @@
  * Users can customize this behavior by editing this script or providing 
  * per-directory activation scripts.
  * 
- * # Available JavaScript Built-in Functions
+ * # JavaScript API Reference
  * 
- * ## Logging Functions
- * - log(message) - General logging output
- * - debug(message) - Debug logging output
- * - error(message) - Error logging output
+ * For complete API documentation, see src/js_runtime.rs module.
  * 
- * ## File Operations
- * - readFile(path) - Read file contents as string
- * - writeFile(path, content) - Write content to file
- * - fileExists(path) - Check if file exists (returns boolean)
- * - isDirectory(path) - Check if path is directory (returns boolean)
- * - listFiles(directory, pattern) - List files in directory with optional pattern
- * 
- * ## Path Utilities
- * - joinPath(part1, part2) - Join path components
- * - dirname(path) - Get directory name from path
- * - basename(path) - Get base filename from path
- * - expandHome(path) - Expand ~ in paths to home directory
- * - getExtension(path) - Get file extension from path
- * 
- * ## Text Processing
- * - testRegex(text, pattern) - Test text against regex pattern (returns boolean)
- * 
- * ## Data Parsing
- * - parseYaml(text) - Parse YAML text to JSON string
- * 
- * ## Launcher Built-ins
- * - launch_app(app_name, arg) - Launch macOS application with optional argument
- * - open_folder(path) - Open folder in Finder (or configured folder app)
- * - open_url(url, browser) - Open URL in browser (optional browser name)
- * - shell(command) - Execute shell command and return output
- * - change_directory(path) - Change working directory
- * - launch(command_name) - Recursively call another launcher command
- * - has_tmux_session(name) - Check if tmux session exists (returns boolean)
- * - start_tmux_session(config_file) - Start tmux session from .tmuxp.yaml config
- * - activate_iterm() - Bring iTerm2 application to foreground
- * - start_claude_code() - Start Claude Code in current directory
+ * ## Most Commonly Used Functions in Activation Scripts
+ * - **Logging**: log(), debug(), error()
+ * - **File Operations**: fileExists(), isDirectory(), readFile()
+ * - **System Control**: launch_app(), shell(), open_folder(), change_directory()
+ * - **Path Utilities**: expandHome(), basename(), joinPath()
+ * - **Development Tools**: start_tmux_session(), activate_iterm(), start_claude_code()
+ * - **Tmux Integration**: has_tmux_session(), start_tmux_session()
  */
 
 // Configuration - users can customize these defaults

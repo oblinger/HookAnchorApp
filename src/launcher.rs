@@ -144,7 +144,7 @@ fn debug_log(message: &str) {
     use crate::load_config;
     
     let config = load_config();
-    if let Some(debug_path) = &config.settings.debug_log {
+    if let Some(debug_path) = &config.popup_settings.debug_log {
         let debug_path = expand_tilde(debug_path);
         
         let timestamp = SystemTime::now()

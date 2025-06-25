@@ -1,6 +1,10 @@
 # JavaScript API Reference
 
-This document lists all available JavaScript built-in functions provided by the Anchor Selector launcher for use in business logic, config files, and action customization.
+This document provides examples and usage patterns for the JavaScript built-in functions.
+
+**📋 For the complete, authoritative API specification, see [`src/js_runtime.rs`](src/js_runtime.rs) module documentation.**
+
+This file focuses on practical examples and usage patterns.
 
 ## Logging Functions
 

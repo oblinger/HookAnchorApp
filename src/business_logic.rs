@@ -3,46 +3,17 @@
 //! Manages JavaScript-based business logic scripts that can be
 //! modified without recompiling the application.
 //!
-//! # Available JavaScript Built-in Functions
+//! # JavaScript API Reference
 //!
-//! All business logic scripts have access to these built-in functions:
+//! All business logic scripts have access to comprehensive JavaScript built-in functions.
+//! For complete API documentation, see [`crate::js_runtime`] module.
 //!
-//! ## Logging Functions  
-//! - `log(message)` - General logging output
-//! - `debug(message)` - Debug logging output
-//! - `error(message)` - Error logging output
-//!
-//! ## File Operations
-//! - `readFile(path)` - Read file contents as string
-//! - `writeFile(path, content)` - Write content to file  
-//! - `fileExists(path)` - Check if file exists (returns boolean)
-//! - `isDirectory(path)` - Check if path is directory (returns boolean)
-//! - `listFiles(directory, pattern)` - List files in directory with optional pattern
-//!
-//! ## Path Utilities
-//! - `joinPath(part1, part2)` - Join path components
-//! - `dirname(path)` - Get directory name from path
-//! - `basename(path)` - Get base filename from path
-//! - `expandHome(path)` - Expand ~ in paths to home directory
-//! - `getExtension(path)` - Get file extension from path
-//!
-//! ## Text Processing
-//! - `testRegex(text, pattern)` - Test text against regex pattern (returns boolean)
-//!
-//! ## Data Parsing
-//! - `parseYaml(text)` - Parse YAML text to JSON string
-//!
-//! ## Launcher Built-ins
-//! - `launch_app(app_name, arg)` - Launch macOS application with optional argument
-//! - `open_folder(path)` - Open folder in Finder (or configured folder app)
-//! - `open_url(url, browser)` - Open URL in browser (optional browser name)  
-//! - `shell(command)` - Execute shell command and return output
-//! - `change_directory(path)` - Change working directory
-//! - `launch(command_name)` - Recursively call another launcher command
-//! - `has_tmux_session(name)` - Check if tmux session exists (returns boolean)
-//! - `start_tmux_session(config_file)` - Start tmux session from .tmuxp.yaml config
-//! - `activate_iterm()` - Bring iTerm2 application to foreground
-//! - `start_claude_code()` - Start Claude Code in current directory
+//! ## Most Commonly Used Functions
+//! - **Logging**: `log()`, `debug()`, `error()`
+//! - **File Operations**: `fileExists()`, `isDirectory()`, `readFile()`, `writeFile()`
+//! - **System Control**: `launch_app()`, `shell()`, `open_folder()`
+//! - **Path Utilities**: `expandHome()`, `basename()`, `joinPath()`
+//! - **Development Tools**: `start_tmux_session()`, `activate_iterm()`, `start_claude_code()`
 
 use crate::js_runtime::execute_business_logic;
 

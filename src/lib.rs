@@ -6,15 +6,15 @@
 //! # JavaScript API for User Customization
 //!
 //! This library includes a comprehensive JavaScript runtime that allows users
-//! to customize launcher actions using rich built-in functions. See:
+//! to customize launcher actions using rich built-in functions.
 //!
-//! - [`js_runtime`] module - JavaScript runtime implementation with built-ins
-//! - [`business_logic`] module - JavaScript business logic management  
-//! - `JAVASCRIPT_API.md` - Complete API reference documentation
-//! - `src/default_config.yaml` - Configuration examples with built-in function usage
+//! **📋 For complete JavaScript API specification, see [`js_runtime`] module documentation.**
 //!
-//! Available JavaScript built-ins include file operations, path utilities,
-//! shell execution, application launching, and development tool integration.
+//! ## Key Modules
+//! - [`js_runtime`] - JavaScript runtime with complete API specification
+//! - [`business_logic`] - JavaScript business logic management  
+//! - `JAVASCRIPT_API.md` - Usage examples and patterns
+//! - `USER_CUSTOMIZATION.md` - User guide with customization examples
 
 // New launcher modules
 pub mod eval;
@@ -32,18 +32,18 @@ use serde::{Deserialize, Serialize};
 // Configuration
 // =============================================================================
 
-/// Settings section of the configuration file
+/// Popup settings section of the configuration file
 #[derive(Debug, Clone, Serialize, Deserialize)]
-pub struct Settings {
+pub struct PopupSettings {
     pub max_rows: usize,
     pub max_columns: usize,
     pub use_new_launcher: bool,
     pub debug_log: Option<String>,
 }
 
-impl Default for Settings {
+impl Default for PopupSettings {
     fn default() -> Self {
-        Settings {
+        PopupSettings {
             max_rows: 10,
             max_columns: 1,
             use_new_launcher: false, // Default to old launcher for backward compatibility
@@ -55,13 +55,24 @@ impl Default for Settings {
 /// Application configuration loaded from YAML config file
 #[derive(Debug, Clone, Serialize, Deserialize)]
 pub struct Config {
-    pub settings: Settings,
+    pub popup_settings: PopupSettings,
+    /// Ordered list of actions shown in command editor dropdown
+    /// If None, uses default actions list
+    pub listed_actions: Option<Vec<String>>,
 }
 
 impl Default for Config {
     fn default() -> Self {
         Config {
-            settings: Settings::default(),
+            popup_settings: PopupSettings::default(),
+            listed_actions: Some(vec![
+                "app".to_string(),
+                "url".to_string(), 
+                "folder".to_string(),
+                "cmd".to_string(),
+                "chrome".to_string(),
+                "anchor".to_string(),
+            ]),
         }
     }
 }
@@ -639,7 +650,7 @@ pub fn get_submenu_prefix(commands: &[Command], search_text: &str) -> Option<Str
 pub fn execute_command(command: &str) {
     let config = load_config();
     
-    if config.settings.use_new_launcher {
+    if config.popup_settings.use_new_launcher {
         // Use new launcher system - first look up the command to get action and arg
         let commands = load_commands();
         
@@ -666,5 +677,23 @@ pub fn execute_command(command: &str) {
         if let Err(e) = fs::write("/tmp/cmd_file", content) {
             eprintln!("Error writing to /tmp/cmd_file: {}", e);
         }
+    }
+}
+
+/// Gets the list of actions for the command editor dropdown
+/// Returns the configured actions from listed_actions, or default actions if not configured
+pub fn get_listed_actions() -> Vec<String> {
+    let config = load_config();
+    
+    match config.listed_actions {
+        Some(actions) => actions,
+        None => vec![
+            "app".to_string(),
+            "url".to_string(),
+            "folder".to_string(), 
+            "cmd".to_string(),
+            "chrome".to_string(),
+            "anchor".to_string(),
+        ],
     }
 }

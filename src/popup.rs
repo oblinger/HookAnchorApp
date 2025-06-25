@@ -41,7 +41,7 @@ impl AnchorSelector {
         if self.search_text.trim().is_empty() {
             self.filtered_commands.clear();
         } else {
-            let total_limit = self.config.settings.max_rows * self.config.settings.max_columns;
+            let total_limit = self.config.popup_settings.max_rows * self.config.popup_settings.max_columns;
             self.filtered_commands = filter_commands(&self.commands, &self.search_text, total_limit, false);
         }
         
@@ -51,7 +51,7 @@ impl AnchorSelector {
     
     // Calculate if we should use multi-column layout
     fn should_use_columns(&self) -> bool {
-        self.filtered_commands.len() > self.config.settings.max_rows && self.config.settings.max_columns > 1
+        self.filtered_commands.len() > self.config.popup_settings.max_rows && self.config.popup_settings.max_columns > 1
     }
     
     // Calculate column layout (rows per column, number of columns to use)
@@ -60,8 +60,8 @@ impl AnchorSelector {
             return (self.filtered_commands.len(), 1);
         }
         
-        let max_rows = self.config.settings.max_rows;
-        let max_cols = self.config.settings.max_columns;
+        let max_rows = self.config.popup_settings.max_rows;
+        let max_cols = self.config.popup_settings.max_columns;
         let total_items = self.filtered_commands.len();
         
         // Calculate optimal number of columns needed

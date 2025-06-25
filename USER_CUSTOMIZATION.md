@@ -49,7 +49,9 @@ log("Command timestamp: " + cmd.timestamp);
 
 ### 4. Available Built-in Functions
 
-**Essential functions for customization:**
+**📋 For complete API specification, see [`src/js_runtime.rs`](src/js_runtime.rs) module documentation.**
+
+**Most commonly used functions for customization:**
 
 ```javascript
 // Logging
