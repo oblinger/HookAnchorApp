@@ -30,17 +30,19 @@
 //! ## Data Parsing
 //! - `parseYaml(text)` - Parse YAML text to JSON string
 //!
-//! ## Launcher Built-ins
+//! ## Core System Primitives
 //! - `launch_app(app_name, arg)` - Launch macOS application with optional argument
 //! - `open_folder(path)` - Open folder in Finder (or configured folder app)
 //! - `open_url(url, browser)` - Open URL in browser (optional browser name)
 //! - `shell(command)` - Execute shell command and return output
+//! - `shellWithExitCode(command)` - Execute shell command and return {stdout, stderr, exitCode}
+//! - `commandExists(command)` - Check if command is available in PATH (returns boolean)
 //! - `change_directory(path)` - Change working directory
 //! - `launch(command_name)` - Recursively call another launcher command
-//! - `has_tmux_session(name)` - Check if tmux session exists (returns boolean)
-//! - `start_tmux_session(config_file)` - Start tmux session from .tmuxp.yaml config
-//! - `activate_iterm()` - Bring iTerm2 application to foreground
-//! - `start_claude_code()` - Start Claude Code in current directory
+//! - `activateApp(app_name)` - Bring application to foreground
+//! - `runAppleScript(script)` - Execute AppleScript and return result
+//! - `spawnDetached(command, args)` - Start process without waiting for completion
+//! - `appIsRunning(app_name)` - Check if application is currently running (returns boolean)
 //!
 //! # Usage in Config Files
 //!
@@ -54,9 +56,16 @@ use rquickjs::{Context, Runtime, Function, Ctx};
 use std::path::{Path, PathBuf};
 use std::fs;
 use regex::Regex;
+use crate::Config;
 
 /// Creates a JavaScript runtime with all business logic built-ins configured
 pub fn create_business_logic_runtime() -> Result<Context, Box<dyn std::error::Error>> {
+    let config = crate::load_config();
+    create_business_logic_runtime_with_config(&config)
+}
+
+/// Creates a JavaScript runtime with built-ins and user-defined functions from config
+pub fn create_business_logic_runtime_with_config(config: &Config) -> Result<Context, Box<dyn std::error::Error>> {
     let rt = Runtime::new()?;
     let ctx = Context::full(&rt)?;
     
@@ -67,6 +76,7 @@ pub fn create_business_logic_runtime() -> Result<Context, Box<dyn std::error::Er
         setup_text_processing(&ctx)?;
         setup_data_parsing(&ctx)?;
         setup_launcher_builtins(&ctx)?;
+        setup_user_functions(&ctx, config)?;
         Ok(())
     })?;
     
@@ -356,40 +366,105 @@ fn setup_launcher_builtins(ctx: &Ctx<'_>) -> Result<(), Box<dyn std::error::Erro
         format!("Recursive launch: {}", command)
     })?)?;
     
-    // has_tmux_session(name) -> checks if tmux session exists
-    ctx.globals().set("has_tmux_session", Function::new(ctx.clone(), |session_name: String| {
-        match std::process::Command::new("tmux").args(["has-session", "-t", &session_name]).output() {
+    // shellWithExitCode(command) -> executes shell command and returns detailed result
+    ctx.globals().set("shellWithExitCode", Function::new(ctx.clone(), |command: String| {
+        match std::process::Command::new("sh").arg("-c").arg(&command).output() {
+            Ok(output) => {
+                let stdout = String::from_utf8_lossy(&output.stdout).to_string();
+                let stderr = String::from_utf8_lossy(&output.stderr).to_string();
+                let exit_code = output.status.code().unwrap_or(-1);
+                
+                // Properly escape JSON strings
+                let escaped_stdout = stdout.replace('\\', r#"\\"#).replace('"', r#"\""#).replace('\n', r#"\n"#).replace('\r', r#"\r"#).replace('\t', r#"\t"#);
+                let escaped_stderr = stderr.replace('\\', r#"\\"#).replace('"', r#"\""#).replace('\n', r#"\n"#).replace('\r', r#"\r"#).replace('\t', r#"\t"#);
+                
+                format!(r#"{{"stdout":"{}","stderr":"{}","exitCode":{}}}"#, 
+                    escaped_stdout, escaped_stderr, exit_code)
+            },
+            Err(e) => format!(r#"{{"stdout":"","stderr":"Failed to execute: {}","exitCode":-1}}"#, e),
+        }
+    })?)?;
+    
+    // commandExists(command) -> checks if command is available in PATH
+    ctx.globals().set("commandExists", Function::new(ctx.clone(), |command: String| {
+        match std::process::Command::new("which").arg(&command).output() {
             Ok(output) => output.status.success(),
             Err(_) => false,
         }
     })?)?;
     
-    // start_tmux_session(config_file) -> starts tmux session from config
-    ctx.globals().set("start_tmux_session", Function::new(ctx.clone(), |config_path: String| {
-        let expanded = expand_tilde(&config_path);
-        match std::process::Command::new("tmuxp").args(["load", &expanded, "-d"]).output() {
-            Ok(_) => format!("Started tmux session from: {}", expanded),
-            Err(e) => format!("Failed to start tmux session: {}", e),
+    // activateApp(app_name) -> brings application to foreground
+    ctx.globals().set("activateApp", Function::new(ctx.clone(), |app_name: String| {
+        let script = format!(r#"tell application "{}" to activate"#, app_name);
+        match std::process::Command::new("osascript").args(["-e", &script]).output() {
+            Ok(_) => format!("Activated {}", app_name),
+            Err(e) => format!("Failed to activate {}: {}", app_name, e),
         }
     })?)?;
     
-    // activate_iterm() -> brings iTerm2 to foreground
-    ctx.globals().set("activate_iterm", Function::new(ctx.clone(), || {
-        let script = r#"tell application "iTerm2" to activate"#;
-        match std::process::Command::new("osascript").args(["-e", script]).output() {
-            Ok(_) => "Activated iTerm2".to_string(),
-            Err(e) => format!("Failed to activate iTerm2: {}", e),
+    // runAppleScript(script) -> executes AppleScript and returns result
+    ctx.globals().set("runAppleScript", Function::new(ctx.clone(), |script: String| {
+        match std::process::Command::new("osascript").args(["-e", &script]).output() {
+            Ok(output) => {
+                let stdout = String::from_utf8_lossy(&output.stdout);
+                if output.status.success() {
+                    stdout.trim().to_string()
+                } else {
+                    let stderr = String::from_utf8_lossy(&output.stderr);
+                    format!("AppleScript error: {}", stderr.trim())
+                }
+            },
+            Err(e) => format!("Failed to execute AppleScript: {}", e),
         }
     })?)?;
     
-    // start_claude_code() -> starts Claude Code in current directory
-    ctx.globals().set("start_claude_code", Function::new(ctx.clone(), || {
-        match std::process::Command::new("claude").arg("--continue").spawn() {
-            Ok(_) => "Started Claude Code".to_string(),
-            Err(e) => format!("Failed to start Claude Code: {}", e),
+    // spawnDetached(command, args) -> starts process without waiting
+    ctx.globals().set("spawnDetached", Function::new(ctx.clone(), |command: String, args: Option<String>| {
+        let mut cmd = std::process::Command::new(&command);
+        if let Some(args_str) = args {
+            // Simple argument splitting - could be enhanced if needed
+            let args_vec: Vec<&str> = args_str.split_whitespace().collect();
+            cmd.args(args_vec);
+        }
+        match cmd.spawn() {
+            Ok(_) => format!("Started {} in background", command),
+            Err(e) => format!("Failed to start {}: {}", command, e),
         }
     })?)?;
     
+    // appIsRunning(app_name) -> checks if application is currently running
+    ctx.globals().set("appIsRunning", Function::new(ctx.clone(), |app_name: String| {
+        let script = format!(r#"tell application "System Events" to exists (processes where name is "{}")"#, app_name);
+        match std::process::Command::new("osascript").args(["-e", &script]).output() {
+            Ok(output) => {
+                let result_str = String::from_utf8_lossy(&output.stdout);
+                let result = result_str.trim();
+                result == "true"
+            },
+            Err(_) => false,
+        }
+    })?)?;
+    
+    Ok(())
+}
+
+/// Setup user-defined functions from configuration
+fn setup_user_functions(ctx: &Ctx<'_>, config: &Config) -> Result<(), Box<dyn std::error::Error>> {
+    if let Some(js_functions) = &config.js_functions {
+        for (function_name, function_body) in js_functions {
+            // Create a JavaScript function definition and evaluate it in the context
+            let function_def = format!(
+                "globalThis.{} = function() {{ {} }}",
+                function_name,
+                function_body
+            );
+            
+            // Execute the function definition
+            if let Err(e) = ctx.eval::<(), _>(function_def.as_str()) {
+                eprintln!("Warning: Failed to define user function '{}': {}", function_name, e);
+            }
+        }
+    }
     Ok(())
 }
 

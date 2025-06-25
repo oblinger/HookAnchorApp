@@ -9,13 +9,15 @@
  * 
  * For complete API documentation, see src/js_runtime.rs module.
  * 
- * ## Most Commonly Used Functions in Activation Scripts
- * - **Logging**: log(), debug(), error()
- * - **File Operations**: fileExists(), isDirectory(), readFile()
- * - **System Control**: launch_app(), shell(), open_folder(), change_directory()
+ * ## Core Primitives (available everywhere)
+ * - **System Control**: shellWithExitCode(), commandExists(), activateApp(), runAppleScript(), spawnDetached()
+ * - **File Operations**: fileExists(), isDirectory(), readFile(), writeFile()
  * - **Path Utilities**: expandHome(), basename(), joinPath()
- * - **Development Tools**: start_tmux_session(), activate_iterm(), start_claude_code()
- * - **Tmux Integration**: has_tmux_session(), start_tmux_session()
+ * - **Logging**: log(), debug(), error()
+ * 
+ * ## User-Defined Functions (from js_functions config)
+ * - **Development Tools**: activate_iterm(), start_claude_code(), has_tmux_session(), start_tmux_session()
+ * - **Custom Functions**: Users can define any additional functions in config.yaml
  */
 
 // Configuration - users can customize these defaults
@@ -66,13 +68,21 @@ function activate(anchorPath) {
     if (CONFIG.enableTmux && activateTmux(anchorPath, anchorName)) {
         // Tmux session was started/attached, bring terminal to front
         delay(() => {
-            activate_iterm();
+            activate_iterm();  // User-defined function (from config)
             log("Activated iTerm2 after tmux setup");
         });
     } else if (CONFIG.enableClaudeCode && fileExists("CLAUDE.md")) {
         // No tmux, but has Claude config - start Claude Code
-        start_claude_code();
+        start_claude_code();  // User-defined function (from config)
         log("Started Claude Code (no tmux session)");
+    }
+    
+    // Example: Use new primitives for additional functionality
+    if (commandExists("git") && fileExists(".git")) {
+        const gitStatus = JSON.parse(shellWithExitCode("git status --porcelain"));
+        if (gitStatus.stdout.trim()) {
+            log("Git repository has uncommitted changes");
+        }
     }
     
     log("=== Anchor activation complete ===");

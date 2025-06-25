@@ -195,3 +195,76 @@ js_actions:
         shell("osascript -e 'tell application \"System Events\" to key code 36'");
       }
     }
+
+# =================================================================
+# USER-DEFINED JAVASCRIPT FUNCTIONS
+# =================================================================
+# This section allows users to define custom JavaScript functions that extend
+# the global function namespace. These functions are available in all JavaScript
+# contexts (actions, business logic, etc.) and replace hardcoded app-specific functions.
+#
+# Functions are defined as function bodies (without the "function" keyword).
+# Use the new primitive functions to implement app-specific logic.
+
+js_functions:
+  # Replace hardcoded iTerm activation with user-customizable version
+  activate_iterm: |
+    return activateApp("iTerm2");
+  
+  # Replace hardcoded Claude Code launcher with flexible version
+  start_claude_code: |
+    if (commandExists("claude")) {
+      return spawnDetached("claude", "--continue");
+    } else {
+      return "Claude Code not available in PATH";
+    }
+  
+  # Replace hardcoded tmux session check with configurable version  
+  has_tmux_session: |
+    const sessionName = arguments[0];
+    if (!commandExists("tmux")) {
+      return false;
+    }
+    const result = JSON.parse(shellWithExitCode(`tmux has-session -t "${sessionName}" 2>/dev/null`));
+    return result.exitCode === 0;
+  
+  # Replace hardcoded tmux session starter with flexible version
+  start_tmux_session: |
+    const configPath = arguments[0];
+    if (!commandExists("tmuxp")) {
+      log("tmuxp not available, falling back to tmux");
+      // Could implement fallback tmux logic here
+      return "tmuxp not available";
+    }
+    const expanded = expandHome(configPath);
+    const result = JSON.parse(shellWithExitCode(`tmuxp load "${expanded}" -d`));
+    if (result.exitCode === 0) {
+      return `Started tmux session from: ${expanded}`;
+    } else {
+      return `Failed to start tmux session: ${result.stderr}`;
+    }
+  
+  # Example: Custom browser selection based on URL
+  smart_browser: |
+    const url = arguments[0];
+    if (testRegex(url, "github\\.com")) {
+      launch_app("Google Chrome", url);
+      return "Opened GitHub URL in Chrome";
+    } else if (testRegex(url, "company\\.com")) {
+      launch_app("Google Chrome Beta", url); // Work browser
+      return "Opened work URL in Chrome Beta";
+    } else {
+      open_url(url);
+      return "Opened URL in default browser";
+    }
+  
+  # Example: Environment-aware terminal activation
+  activate_terminal: |
+    if (appIsRunning("iTerm2")) {
+      return activateApp("iTerm2");
+    } else if (appIsRunning("Terminal")) {
+      return activateApp("Terminal");
+    } else {
+      launch_app("iTerm2");
+      return "Launched iTerm2";
+    }

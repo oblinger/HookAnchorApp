@@ -59,6 +59,9 @@ pub struct Config {
     /// Ordered list of actions shown in command editor dropdown
     /// If None, uses default actions list
     pub listed_actions: Option<Vec<String>>,
+    /// User-defined JavaScript functions that extend the global function namespace
+    /// These functions are available in all JavaScript contexts (actions, business logic, etc.)
+    pub js_functions: Option<std::collections::HashMap<String, String>>,
 }
 
 impl Default for Config {
@@ -73,6 +76,7 @@ impl Default for Config {
                 "chrome".to_string(),
                 "anchor".to_string(),
             ]),
+            js_functions: None,
         }
     }
 }
