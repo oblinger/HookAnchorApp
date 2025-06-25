@@ -47,7 +47,7 @@
 //! # Usage in Config Files
 //!
 //! These functions can be used in:
-//! - `js_actions` section of config.yaml
+//! - `js_functions` section of config.yaml
 //! - Embedded JavaScript business logic scripts
 //! - User-customizable action definitions
 //! - Per-directory activation scripts

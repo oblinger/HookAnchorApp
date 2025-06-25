@@ -25,8 +25,8 @@ impl From<EvalError> for LauncherError {
 
 #[derive(Debug, Clone, Serialize, Deserialize)]
 pub struct LauncherConfig {
-    pub simple_actions: HashMap<String, ActionSpec>,
-    pub js_actions: HashMap<String, String>,
+    pub simple_functions: HashMap<String, ActionSpec>,
+    pub js_functions: HashMap<String, String>,
     pub settings: LauncherSettings,
 }
 
@@ -127,12 +127,12 @@ fn get_launcher_config_path() -> PathBuf {
 
 fn lookup_action(action: &str, config: &LauncherConfig) -> Result<ActionSpec, LauncherError> {
     // First try simple commands
-    if let Some(action_spec) = config.simple_actions.get(action) {
+    if let Some(action_spec) = config.simple_functions.get(action) {
         return Ok(action_spec.clone());
     }
     
-    // Then try JS actions  
-    if let Some(script_code) = config.js_actions.get(action) {
+    // Then try JS functions  
+    if let Some(script_code) = config.js_functions.get(action) {
         return Ok(ActionSpec::JavaScript { code: script_code.clone() });
     }
     
@@ -280,8 +280,8 @@ mod tests {
     #[test]
     fn test_launcher_config_creation() {
         let config = LauncherConfig {
-            simple_actions: HashMap::new(),
-            js_actions: HashMap::new(),
+            simple_functions: HashMap::new(),
+            js_functions: HashMap::new(),
             settings: LauncherSettings {
                 default_browser: Some("Google Chrome".to_string()),
                 work_browser: None,
@@ -339,23 +339,23 @@ mod tests {
             .expect("Default config YAML should parse correctly");
         
         // Test that all Python launcher action types are present
-        assert!(config.simple_actions.contains_key("app"));
-        assert!(config.simple_actions.contains_key("url"));
-        assert!(config.simple_actions.contains_key("folder"));
-        assert!(config.simple_actions.contains_key("cmd"));
-        assert!(config.simple_actions.contains_key("doc"));
-        assert!(config.simple_actions.contains_key("chrome"));
-        assert!(config.simple_actions.contains_key("safari"));
-        assert!(config.simple_actions.contains_key("brave"));
-        assert!(config.simple_actions.contains_key("firefox"));
-        assert!(config.simple_actions.contains_key("work"));
-        assert!(config.simple_actions.contains_key("notion"));
-        assert!(config.simple_actions.contains_key("obs_url"));
-        assert!(config.simple_actions.contains_key("1pass"));
+        assert!(config.simple_functions.contains_key("app"));
+        assert!(config.simple_functions.contains_key("url"));
+        assert!(config.simple_functions.contains_key("folder"));
+        assert!(config.simple_functions.contains_key("cmd"));
+        assert!(config.simple_functions.contains_key("doc"));
+        assert!(config.simple_functions.contains_key("chrome"));
+        assert!(config.simple_functions.contains_key("safari"));
+        assert!(config.simple_functions.contains_key("brave"));
+        assert!(config.simple_functions.contains_key("firefox"));
+        assert!(config.simple_functions.contains_key("work"));
+        assert!(config.simple_functions.contains_key("notion"));
+        assert!(config.simple_functions.contains_key("obs_url"));
+        assert!(config.simple_functions.contains_key("1pass"));
         
-        // Test JavaScript actions
-        assert!(config.js_actions.contains_key("obs"));
-        assert!(config.js_actions.contains_key("alias"));
-        assert!(config.js_actions.contains_key("anchor"));
+        // Test JavaScript functions
+        assert!(config.js_functions.contains_key("obs"));
+        assert!(config.js_functions.contains_key("alias"));
+        assert!(config.js_functions.contains_key("anchor"));
     }
 }

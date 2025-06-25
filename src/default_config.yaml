@@ -24,7 +24,7 @@ launcher_settings:
 # =================================================================
 # These define how each action type behaves - equivalent to Python launcher
 
-simple_actions:
+simple_functions:
   # Basic actions
   app: !App
     name: "{{arg}}"           # app Finder -> launches Finder
@@ -99,7 +99,7 @@ simple_actions:
 #   ACTION - Action name (e.g., "anchor", "obs")
 #   FULL_COMMAND - Complete original command (e.g., "anchor /tmp")
 #   COMMAND - JSON object with all command metadata
-js_actions:
+js_functions:
   # obs NAME - Complex Obsidian page handling with URL encoding
   obs: |
     const encoded = encodeURIComponent("{{arg}}");
