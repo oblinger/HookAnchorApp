@@ -19,37 +19,9 @@ launcher_settings:
 # =================================================================
 # COMMAND EDITOR ACTIONS LIST
 # =================================================================
-# Ordered list of actions shown in the command editor dialogue selector
+# Comma-separated list of actions shown in the command editor dropdown
 # Users can reorder, add, or remove actions to customize the dropdown
-listed_actions:
-  # Basic actions (most commonly used)
-  - "app"           # Launch macOS application
-  - "url"           # Open URL in default browser
-  - "folder"        # Open folder in Finder
-  - "cmd"           # Execute shell command
-  
-  # Browser-specific actions
-  - "chrome"        # Open URL in Google Chrome
-  - "safari"        # Open URL in Safari
-  - "brave"         # Open URL in Brave Browser
-  - "firefox"       # Open URL in Firefox
-  - "work"          # Open URL in work browser (Chrome Beta)
-  
-  # Application-specific actions
-  - "notion"        # Open in Notion app
-  - "obs"           # Open Obsidian page with encoding
-  - "obs_url"       # Open Obsidian URL directly
-  
-  # Security and productivity
-  - "1pass"         # 1Password Quick Access
-  - "1pass_robust"  # 1Password with fallbacks
-  
-  # Development and project management
-  - "anchor"        # Activate anchor project
-  - "alias"         # Call another command recursively
-  
-  # File operations
-  - "doc"           # Open document with default app
+listed_actions: "app,url,folder,cmd,chrome,safari,brave,firefox,work,notion,obs,obs_url,1pass,1pass_robust,anchor,alias,doc"
 
 # =================================================================
 # LAUNCHER ACTION TYPES (when use_new_launcher: true)

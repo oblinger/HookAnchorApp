@@ -166,17 +166,25 @@ impl CommandEditor {
                                 .selected_text(&self.action)
                                 .height(400.0) // Make dropdown tall enough to show all options
                                 .show_ui(ui, |ui| {
-                                    // Use actions directly from config or fallback to defaults
-                                    let actions = config.listed_actions.as_ref().map(|a| a.clone()).unwrap_or_else(|| {
-                                        vec![
+                                    // Parse comma-separated actions from config or use defaults
+                                    let actions = match &config.listed_actions {
+                                        Some(actions_str) => {
+                                            // Split by comma and trim whitespace
+                                            actions_str
+                                                .split(',')
+                                                .map(|s| s.trim().to_string())
+                                                .filter(|s| !s.is_empty())
+                                                .collect()
+                                        },
+                                        None => vec![
                                             "app".to_string(),
                                             "url".to_string(),
                                             "folder".to_string(),
                                             "cmd".to_string(),
                                             "chrome".to_string(),
                                             "anchor".to_string(),
-                                        ]
-                                    });
+                                        ],
+                                    };
                                     for action in &actions {
                                         ui.selectable_value(&mut self.action, action.clone(), action);
                                     }

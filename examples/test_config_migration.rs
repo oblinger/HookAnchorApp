@@ -23,9 +23,14 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
     }
     
     match &config.listed_actions {
-        Some(actions) => {
-            println!("  listed_actions: {} actions", actions.len());
-            for action in actions {
+        Some(actions_str) => {
+            let actions: Vec<String> = actions_str
+                .split(',')
+                .map(|s| s.trim().to_string())
+                .filter(|s| !s.is_empty())
+                .collect();
+            println!("  listed_actions: \"{}\" -> {} actions", actions_str, actions.len());
+            for action in &actions {
                 println!("    - {}", action);
             }
         },

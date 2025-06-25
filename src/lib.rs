@@ -56,9 +56,9 @@ impl Default for PopupSettings {
 #[derive(Debug, Clone, Serialize, Deserialize)]
 pub struct Config {
     pub popup_settings: PopupSettings,
-    /// Ordered list of actions shown in command editor dropdown
-    /// If None, uses default actions list
-    pub listed_actions: Option<Vec<String>>,
+    /// Comma-separated list of actions shown in command editor dropdown
+    /// Example: "app,url,folder,cmd,chrome,anchor"
+    pub listed_actions: Option<String>,
     /// User-defined JavaScript functions that extend the global function namespace
     /// These functions are available in all JavaScript contexts (actions, business logic, etc.)
     pub js_functions: Option<std::collections::HashMap<String, String>>,
@@ -68,14 +68,7 @@ impl Default for Config {
     fn default() -> Self {
         Config {
             popup_settings: PopupSettings::default(),
-            listed_actions: Some(vec![
-                "app".to_string(),
-                "url".to_string(), 
-                "folder".to_string(),
-                "cmd".to_string(),
-                "chrome".to_string(),
-                "anchor".to_string(),
-            ]),
+            listed_actions: Some("app,url,folder,cmd,chrome,anchor".to_string()),
             js_functions: None,
         }
     }
@@ -114,17 +107,26 @@ fn load_legacy_config(contents: &str) -> Result<Config, Box<dyn std::error::Erro
     // Parse as raw YAML value first
     let yaml: serde_yaml::Value = serde_yaml::from_str(contents)?;
     
-    // Extract just the settings section if it exists
+    // Extract the settings section if it exists
     let popup_settings = if let Some(settings_value) = yaml.get("settings") {
         serde_yaml::from_value(settings_value.clone()).unwrap_or_default()
     } else {
         PopupSettings::default()
     };
     
+    // Extract listed_actions if it exists (preserve user's custom actions)
+    let listed_actions = yaml.get("listed_actions")
+        .and_then(|v| v.as_str())
+        .map(|s| s.to_string());
+    
+    // Extract js_functions if it exists
+    let js_functions = yaml.get("js_functions")
+        .and_then(|v| serde_yaml::from_value(v.clone()).ok());
+    
     Ok(Config {
         popup_settings,
-        listed_actions: None, // Use defaults for new features
-        js_functions: None,   // Use defaults for new features
+        listed_actions,
+        js_functions,
     })
 }
 
@@ -717,7 +719,14 @@ pub fn get_listed_actions() -> Vec<String> {
     let config = load_config();
     
     match config.listed_actions {
-        Some(actions) => actions,
+        Some(actions_str) => {
+            // Split by comma and trim whitespace
+            actions_str
+                .split(',')
+                .map(|s| s.trim().to_string())
+                .filter(|s| !s.is_empty())
+                .collect()
+        },
         None => vec![
             "app".to_string(),
             "url".to_string(),
