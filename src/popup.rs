@@ -599,7 +599,7 @@ impl eframe::App for AnchorSelector {
         
         // Update command editor dialog
         self.command_editor.update_commands(&self.commands);
-        let editor_result = self.command_editor.update(ctx);
+        let editor_result = self.command_editor.update(ctx, &self.config);
         match editor_result {
             CommandEditorResult::Cancel => {
                 self.command_editor.hide();

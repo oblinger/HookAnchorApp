@@ -1,5 +1,5 @@
 use eframe::egui;
-use anchor_selector::{Command, delete_command, add_command, save_commands_to_file};
+use anchor_selector::{Command, delete_command, add_command, save_commands_to_file, Config};
 
 pub struct CommandEditor {
     pub visible: bool,
@@ -83,7 +83,7 @@ impl CommandEditor {
         }
     }
     
-    pub fn update(&mut self, ctx: &egui::Context) -> CommandEditorResult {
+    pub fn update(&mut self, ctx: &egui::Context, config: &Config) -> CommandEditorResult {
         if !self.visible {
             return CommandEditorResult::None;
         }
@@ -166,22 +166,20 @@ impl CommandEditor {
                                 .selected_text(&self.action)
                                 .height(400.0) // Make dropdown tall enough to show all options
                                 .show_ui(ui, |ui| {
-                                    ui.selectable_value(&mut self.action, "pass".to_string(), "pass");
-                                    ui.selectable_value(&mut self.action, "alias".to_string(), "alias");
-                                    ui.selectable_value(&mut self.action, "anchor".to_string(), "anchor");
-                                    ui.selectable_value(&mut self.action, "app".to_string(), "app");
-                                    ui.selectable_value(&mut self.action, "cmd".to_string(), "cmd");
-                                    ui.selectable_value(&mut self.action, "folder".to_string(), "folder");
-                                    ui.selectable_value(&mut self.action, "doc".to_string(), "doc");
-                                    ui.selectable_value(&mut self.action, "notion".to_string(), "notion");
-                                    ui.selectable_value(&mut self.action, "obs".to_string(), "obs");
-                                    ui.selectable_value(&mut self.action, "obs_url".to_string(), "obs_url");
-                                    ui.selectable_value(&mut self.action, "chrome".to_string(), "chrome");
-                                    ui.selectable_value(&mut self.action, "safari".to_string(), "safari");
-                                    ui.selectable_value(&mut self.action, "brave".to_string(), "brave");
-                                    ui.selectable_value(&mut self.action, "firefox".to_string(), "firefox");
-                                    ui.selectable_value(&mut self.action, "url".to_string(), "url");
-                                    ui.selectable_value(&mut self.action, "work".to_string(), "work");
+                                    // Use actions directly from config or fallback to defaults
+                                    let actions = config.listed_actions.as_ref().map(|a| a.clone()).unwrap_or_else(|| {
+                                        vec![
+                                            "app".to_string(),
+                                            "url".to_string(),
+                                            "folder".to_string(),
+                                            "cmd".to_string(),
+                                            "chrome".to_string(),
+                                            "anchor".to_string(),
+                                        ]
+                                    });
+                                    for action in &actions {
+                                        ui.selectable_value(&mut self.action, action.clone(), action);
+                                    }
                                 });
                             ui.end_row();
                             

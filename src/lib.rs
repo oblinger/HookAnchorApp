@@ -86,9 +86,16 @@ pub fn load_config() -> Config {
     let config_path = get_config_file_path();
     
     if let Ok(contents) = fs::read_to_string(&config_path) {
+        // First try to load as new format
         match serde_yaml::from_str::<Config>(&contents) {
             Ok(config) => config,
-            Err(_) => Config::default()
+            Err(_) => {
+                // If that fails, try to load as old format and migrate
+                match load_legacy_config(&contents) {
+                    Ok(migrated_config) => migrated_config,
+                    Err(_) => Config::default()
+                }
+            }
         }
     } else {
         Config::default()
@@ -99,6 +106,26 @@ pub fn load_config() -> Config {
 fn get_config_file_path() -> PathBuf {
     let home = env::var("HOME").unwrap_or_else(|_| ".".to_string());
     Path::new(&home).join(".config/anchor_selector/config.yaml")
+}
+
+
+/// Loads and migrates configuration from legacy format (settings -> popup_settings)
+fn load_legacy_config(contents: &str) -> Result<Config, Box<dyn std::error::Error>> {
+    // Parse as raw YAML value first
+    let yaml: serde_yaml::Value = serde_yaml::from_str(contents)?;
+    
+    // Extract just the settings section if it exists
+    let popup_settings = if let Some(settings_value) = yaml.get("settings") {
+        serde_yaml::from_value(settings_value.clone()).unwrap_or_default()
+    } else {
+        PopupSettings::default()
+    };
+    
+    Ok(Config {
+        popup_settings,
+        listed_actions: None, // Use defaults for new features
+        js_functions: None,   // Use defaults for new features
+    })
 }
 
 
