@@ -12,26 +12,14 @@ path = "src/popup.rs"
 name = "cmd"
 path = "src/cmd.rs"
 
-# Test binaries
-[[bin]]
-name = "test_launcher"
-path = "src/test_launcher.rs"
+# Example binaries
+[[example]]
+name = "basic_launcher"
+path = "examples/basic_launcher.rs"
 
-[[bin]]
-name = "test_popup_integration"
-path = "src/test_popup_integration.rs"
-
-[[bin]]
-name = "test_action_types"
-path = "src/test_action_types.rs"
-
-[[bin]]
-name = "test_js"
-path = "src/test_js.rs"
-
-[[bin]]
-name = "test_1pass_schemes"
-path = "src/test_1pass_schemes.rs"
+[[example]]
+name = "test_all_actions"
+path = "examples/test_all_actions.rs"
 
 [dependencies]
 eframe = "0.29"

@@ -428,10 +428,10 @@ mod tests {
     fn test_execute_javascript_action() {
         let env = Environment::new();
         let action = ActionSpec::JavaScript { 
-            code: "console.log('Hello from JavaScript');".to_string() 
+            code: "shell('echo Hello from JavaScript');".to_string() 
         };
         let result = execute(action, "", &env);
-        assert!(result.is_ok());
+        assert!(result.is_ok(), "JavaScript action should execute successfully: {:?}", result);
     }
 
     #[test]
