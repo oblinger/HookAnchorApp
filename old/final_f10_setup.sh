@@ -1,0 +1,63 @@
+#!/bin/bash
+
+# Final F10 Setup - Multiple options for binding F10 to Anchor Selector
+echo "🎯 Final F10 Setup for Anchor Selector"
+echo "======================================"
+
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+
+echo "✅ Step 1: AnchorSelector installed to /Applications/AnchorSelector.app"
+echo "✅ Step 2: NSUserKeyEquivalents global shortcut registered"
+echo ""
+
+echo "🎯 OPTION 1: Test if F10 already works"
+echo "======================================"
+echo "Try pressing F10 now. If it launches the Anchor Selector, you're done!"
+echo ""
+
+echo "🎯 OPTION 2: Manual App Shortcut (Recommended)"
+echo "=============================================="
+echo "If F10 doesn't work automatically:"
+echo ""
+echo "1. Go to: System Settings > Keyboard > Shortcuts"
+echo "2. Click: 'App Shortcuts' in left sidebar"
+echo "3. Click: '+' button"
+echo "4. Set:"
+echo "   - Application: Choose 'AnchorSelector' (should appear in list now)"
+echo "   - Menu Title: (leave blank)"
+echo "   - Keyboard Shortcut: Press F10"
+echo "5. Click: Add"
+echo ""
+
+echo "🎯 OPTION 3: Use a different key combination"
+echo "============================================"
+echo "If F10 conflicts with system functions, try:"
+echo "- Cmd+Space (if Spotlight allows override)"
+echo "- Cmd+F10"
+echo "- Option+F10"
+echo "- Ctrl+F10"
+echo ""
+
+echo "🎯 OPTION 4: Third-party tools"
+echo "=============================="
+echo "For more reliable global hotkeys, consider:"
+echo "- BetterTouchTool (paid)"
+echo "- Karabiner-Elements (free)"
+echo "- Alfred (paid)"
+echo ""
+
+echo "🧪 TEST THE SETUP"
+echo "=================="
+echo "Manual test: open '/Applications/AnchorSelector.app'"
+echo ""
+
+echo "📋 SUMMARY"
+echo "=========="
+echo "✅ Created: /Applications/AnchorSelector.app"
+echo "✅ Set: Global NSUserKeyEquivalents shortcut"
+echo "✅ Ready: For System Settings configuration"
+echo ""
+echo "The app should now appear in the Applications dropdown"
+echo "in System Settings > Keyboard > Shortcuts > App Shortcuts"
+echo ""
+echo "🎉 Setup complete! Try pressing F10 or use Option 2 above."

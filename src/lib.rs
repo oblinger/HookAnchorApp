@@ -3,6 +3,10 @@
 //! A command management and filtering library that provides fuzzy matching
 //! and prioritized search for command execution.
 
+// New launcher modules
+pub mod eval;
+pub mod launcher;
+
 use std::env;
 use std::fs;
 use std::path::{Path, PathBuf};
@@ -18,6 +22,8 @@ use serde::{Deserialize, Serialize};
 pub struct Settings {
     pub max_rows: usize,
     pub max_columns: usize,
+    pub use_new_launcher: bool,
+    pub debug_log: Option<String>,
 }
 
 impl Default for Settings {
@@ -25,6 +31,8 @@ impl Default for Settings {
         Settings {
             max_rows: 10,
             max_columns: 1,
+            use_new_launcher: false, // Default to old launcher for backward compatibility
+            debug_log: None,
         }
     }
 }
@@ -527,14 +535,40 @@ pub fn update_command_list(commands: &mut Vec<Command>, new_command: Command, or
 /// Analyzes filtered commands to determine if they form a submenu and returns display positions
 /// 
 /// Returns:
-/// - Empty list if no submenu detected (no commands have dots before their match position)
+/// - Empty list if no submenu detected (search text doesn't exactly match any anchor entry length)
 /// - List of integers indicating where to start displaying each command's suffix
-///   - For commands with dot before match position: returns the match position
-///   - For commands without dot before match position: returns 0 (show full name)
+///   - For commands with separator before match position: returns the match position
+///   - For commands without separator before match position: returns 0 (show full name)
+/// 
+/// A submenu is only shown when the search text exactly matches the length of an anchor entry
+/// (the text before a separator like '.', ' ', or '_')
 pub fn get_submenu_display_positions(commands: &[Command], search_text: &str) -> Vec<usize> {
     let mut positions = Vec::new();
-    let mut has_submenu = false;
+    let mut has_exact_anchor_match = false;
     
+    // First pass: check if search text exactly matches any anchor length
+    for cmd in commands {
+        // Find all separators in the command
+        for (i, ch) in cmd.command.char_indices() {
+            if ch == '.' || ch == ' ' || ch == '_' {
+                let anchor = &cmd.command[..i];
+                if anchor.to_lowercase() == search_text.to_lowercase() {
+                    has_exact_anchor_match = true;
+                    break;
+                }
+            }
+        }
+        if has_exact_anchor_match {
+            break;
+        }
+    }
+    
+    // If no exact anchor match, return empty (no submenu)
+    if !has_exact_anchor_match {
+        return Vec::new();
+    }
+    
+    // Second pass: calculate display positions for all commands
     for cmd in commands {
         let match_pos = command_matches_query_with_debug(&cmd.command, search_text, false);
         
@@ -545,7 +579,6 @@ pub fn get_submenu_display_positions(commands: &[Command], search_text: &str) ->
             if match_pos > 0 {
                 if let Some(prev_char) = cmd.command.chars().nth(match_pos - 1) {
                     if prev_char == '.' || prev_char == ' ' || prev_char == '_' {
-                        has_submenu = true;
                         positions.push(match_pos);
                     } else {
                         positions.push(0); // Show full name for commands without separator before match
@@ -561,28 +594,21 @@ pub fn get_submenu_display_positions(commands: &[Command], search_text: &str) ->
         }
     }
     
-    if has_submenu {
-        positions
-    } else {
-        Vec::new() // Not a submenu
-    }
+    positions
 }
 
-/// Extracts the submenu prefix from the first command that has a separator (dot, space, or underscore) before its match position
+/// Extracts the submenu prefix when search text exactly matches an anchor entry
+/// Only returns a prefix if the search text exactly matches an anchor (text before separator)
 pub fn get_submenu_prefix(commands: &[Command], search_text: &str) -> Option<String> {
+    // First check if search text exactly matches any anchor
     for cmd in commands {
-        let match_pos = command_matches_query_with_debug(&cmd.command, search_text, false);
-        
-        if match_pos >= 0 {
-            let match_pos = match_pos as usize;
-            
-            // Check if there's a separator (dot, space, or underscore) before the match position
-            if match_pos > 0 {
-                if let Some(prev_char) = cmd.command.chars().nth(match_pos - 1) {
-                    if prev_char == '.' || prev_char == ' ' || prev_char == '_' {
-                        // Return the prefix (everything before the separator)
-                        return Some(cmd.command[..match_pos - 1].to_string());
-                    }
+        // Find all separators in the command
+        for (i, ch) in cmd.command.char_indices() {
+            if ch == '.' || ch == ' ' || ch == '_' {
+                let anchor = &cmd.command[..i];
+                if anchor.to_lowercase() == search_text.to_lowercase() {
+                    // Return the exact anchor text as the prefix
+                    return Some(anchor.to_string());
                 }
             }
         }
@@ -594,11 +620,36 @@ pub fn get_submenu_prefix(commands: &[Command], search_text: &str) -> Option<Str
 // Command Execution
 // =============================================================================
 
-/// Writes the command to /tmp/cmd_file for execution by external script
+/// Executes a command using either the new launcher system or the old temp file method
 pub fn execute_command(command: &str) {
-    let content = format!("execute {}\n", command);
+    let config = load_config();
     
-    if let Err(e) = fs::write("/tmp/cmd_file", content) {
-        eprintln!("Error writing to /tmp/cmd_file: {}", e);
+    if config.settings.use_new_launcher {
+        // Use new launcher system - first look up the command to get action and arg
+        let commands = load_commands();
+        
+        // Find the command by name
+        if let Some(cmd) = commands.iter().find(|c| c.command == command) {
+            // Construct launcher command from action and arg
+            let launcher_command = if cmd.arg.is_empty() {
+                cmd.action.clone()
+            } else {
+                format!("{} {}", cmd.action, cmd.arg)
+            };
+            
+            use crate::launcher::launch;
+            if let Err(e) = launch(&launcher_command) {
+                eprintln!("Error executing command with new launcher: {:?}", e);
+            }
+        } else {
+            eprintln!("Command '{}' not found in commands list", command);
+        }
+    } else {
+        // Use old temp file method for backward compatibility
+        let content = format!("execute {}\n", command);
+        
+        if let Err(e) = fs::write("/tmp/cmd_file", content) {
+            eprintln!("Error writing to /tmp/cmd_file: {}", e);
+        }
     }
 }

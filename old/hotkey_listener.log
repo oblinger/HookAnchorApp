@@ -1,0 +1,5 @@
+Setting up global hotkey listener for F10...
+Registered global hotkey: F10
+Press F10 to launch anchor selector
+Press Ctrl+C to exit listener
+Will launch: /Users/oblinger/ob/kmr/prj/2025-06 anchor_selector/target/release/popup

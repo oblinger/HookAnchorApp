@@ -1,0 +1,2 @@
+#!/bin/bash
+exec "/Users/oblinger/ob/kmr/prj/2025-06 anchor_selector/launch_popup.sh"
