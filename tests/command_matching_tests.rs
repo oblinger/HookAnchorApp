@@ -358,3 +358,17 @@ fn test_unicode_support() {
     assert!(command_matches_query("naïve", "naïve"));
     assert!(command_matches_query("résumé", "résumé"));
 }
+
+#[test]
+fn test_word_boundary_matching() {
+    // Test that matching only starts at word boundaries
+    // "amap" should match "ama page" but not "Roadmap"
+    assert!(command_matches_query("ama page", "amap"), "Should match: ama page -> amap");
+    assert!(!command_matches_query("Roadmap", "amap"), "Should NOT match: Roadmap -> amap");
+    assert!(command_matches_query("AMA.Page", "amap"), "Should match: AMA.Page -> amap");
+    
+    // Additional word boundary tests
+    assert!(!command_matches_query("abc defg", "bcd"), "Should NOT match: abc defg -> bcd (b not at word start)");
+    assert!(command_matches_query("abc def", "ad"), "Should match: abc def -> ad (a at start, d at word start)");
+    assert!(!command_matches_query("test app", "sta"), "Should NOT match: test app -> sta (s not at word start)");
+}

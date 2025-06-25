@@ -7,6 +7,60 @@ use std::env;
 use std::fs;
 use std::path::{Path, PathBuf};
 use regex::Regex;
+use serde::{Deserialize, Serialize};
+
+// =============================================================================
+// Configuration
+// =============================================================================
+
+/// Settings section of the configuration file
+#[derive(Debug, Clone, Serialize, Deserialize)]
+pub struct Settings {
+    pub max_rows: usize,
+}
+
+impl Default for Settings {
+    fn default() -> Self {
+        Settings {
+            max_rows: 10,
+        }
+    }
+}
+
+/// Application configuration loaded from YAML config file
+#[derive(Debug, Clone, Serialize, Deserialize)]
+pub struct Config {
+    pub settings: Settings,
+}
+
+impl Default for Config {
+    fn default() -> Self {
+        Config {
+            settings: Settings::default(),
+        }
+    }
+}
+
+/// Loads configuration from the YAML config file, returns default if file doesn't exist or is invalid
+pub fn load_config() -> Config {
+    let config_path = get_config_file_path();
+    
+    if let Ok(contents) = fs::read_to_string(&config_path) {
+        match serde_yaml::from_str::<Config>(&contents) {
+            Ok(config) => config,
+            Err(_) => Config::default()
+        }
+    } else {
+        Config::default()
+    }
+}
+
+/// Returns the path to the YAML config file
+fn get_config_file_path() -> PathBuf {
+    let home = env::var("HOME").unwrap_or_else(|_| ".".to_string());
+    Path::new(&home).join(".config/anchor_selector/config.yaml")
+}
+
 
 // =============================================================================
 // Data Structures
@@ -173,14 +227,14 @@ pub fn command_matches_query_with_debug(command_name: &str, query: &str, debug: 
     }
 }
 
-/// Filters and prioritizes commands based on search text, returning up to 10 best matches
+/// Filters and prioritizes commands based on search text, returning up to max_results best matches
 /// 
 /// Commands are ranked by relevance:
 /// 1. Exact matches (highest priority)
 /// 2. Prefix matches at start of command
 /// 3. Word boundary matches
 /// 4. Partial prefix matches (lowest priority)
-pub fn filter_commands(commands: &[Command], search_text: &str, debug: bool) -> Vec<Command> {
+pub fn filter_commands(commands: &[Command], search_text: &str, max_results: usize, debug: bool) -> Vec<Command> {
     if search_text.trim().is_empty() {
         return Vec::new();
     }
@@ -220,7 +274,7 @@ pub fn filter_commands(commands: &[Command], search_text: &str, debug: bool) -> 
     sort_matches(&mut prefix_matches, prefer_longer);
     
     combine_and_limit_results(search_words, exact_matches, command_start_matches, 
-                             word_start_matches, prefix_matches, debug)
+                             word_start_matches, prefix_matches, max_results, debug)
 }
 
 /// Categorizes a matching command into the appropriate priority bucket
@@ -270,7 +324,7 @@ fn sort_matches(matches: &mut Vec<Command>, prefer_longer: bool) {
 /// Combines and limits results based on search strategy
 fn combine_and_limit_results(search_words: Vec<&str>, exact_matches: Vec<Command>,
                             command_start_matches: Vec<Command>, word_start_matches: Vec<Command>,
-                            prefix_matches: Vec<Command>, debug: bool) -> Vec<Command> {
+                            prefix_matches: Vec<Command>, max_results: usize, debug: bool) -> Vec<Command> {
     let exact_count = exact_matches.len();
     let cmd_start_count = command_start_matches.len();
     let word_count = word_start_matches.len();
@@ -291,8 +345,8 @@ fn combine_and_limit_results(search_words: Vec<&str>, exact_matches: Vec<Command
         filtered_commands.extend(word_iter.by_ref().take(3));
         filtered_commands.extend(start_iter.by_ref().take(2));
         
-        // Fill remaining slots up to 10
-        while filtered_commands.len() < 10 {
+        // Fill remaining slots up to max_results
+        while filtered_commands.len() < max_results {
             if let Some(cmd) = word_iter.next().or_else(|| start_iter.next()).or_else(|| prefix_iter.next()) {
                 filtered_commands.push(cmd);
             } else {
@@ -305,6 +359,7 @@ fn combine_and_limit_results(search_words: Vec<&str>, exact_matches: Vec<Command
         filtered_commands.extend(command_start_matches);
         filtered_commands.extend(word_start_matches);
         filtered_commands.extend(prefix_matches);
+        filtered_commands.truncate(max_results);
     }
     
     if debug {
@@ -318,6 +373,7 @@ fn combine_and_limit_results(search_words: Vec<&str>, exact_matches: Vec<Command
 
 
 /// Returns position of first unmatched non-space/dot char, or command length if fully matched, or -1 if no match
+/// Matches characters sequentially, allowing matches to start at word boundaries or continue within words
 fn matches_flexible_sequence_with_position(cmd_text: &str, search_text: &str, _debug: bool) -> i32 {
     let search_chars: Vec<char> = search_text.chars().collect();
     let cmd_chars: Vec<char> = cmd_text.chars().collect();
@@ -328,11 +384,44 @@ fn matches_flexible_sequence_with_position(cmd_text: &str, search_text: &str, _d
     
     let mut search_pos = 0;
     let mut cmd_pos = 0;
+    let mut last_match_pos = None; // Track position of last match to detect continuous sequences
     
     while search_pos < search_chars.len() && cmd_pos < cmd_chars.len() {
-        if cmd_chars[cmd_pos] == search_chars[search_pos] {
-            search_pos += 1;
+        let cmd_char = cmd_chars[cmd_pos];
+        
+        if cmd_char == search_chars[search_pos] {
+            let can_match = if search_pos == 0 {
+                // First character - only allow at word boundaries (start of string or after separator)
+                cmd_pos == 0 || {
+                    let prev_char = cmd_chars[cmd_pos - 1];
+                    prev_char == ' ' || prev_char == '_' || prev_char == '.'
+                }
+            } else {
+                // For subsequent characters, check if we can match here
+                let continuing_sequence = if let Some(last_pos) = last_match_pos {
+                    // Check if we're continuing from the previous match (adjacent characters)
+                    cmd_pos == last_pos + 1
+                } else {
+                    false
+                };
+                
+                if continuing_sequence {
+                    true
+                } else {
+                    // Check if at word boundary
+                    cmd_pos == 0 || {
+                        let prev_char = cmd_chars[cmd_pos - 1];
+                        prev_char == ' ' || prev_char == '_' || prev_char == '.'
+                    }
+                }
+            };
+            
+            if can_match {
+                last_match_pos = Some(cmd_pos);
+                search_pos += 1;
+            }
         }
+        
         cmd_pos += 1;
     }
     
@@ -427,6 +516,76 @@ pub fn update_command_list(commands: &mut Vec<Command>, new_command: Command, or
         delete_command(commands, original_command_name);
     }
     add_command(commands, new_command);
+}
+
+// =============================================================================
+// Submenu Detection and Display
+// =============================================================================
+
+/// Analyzes filtered commands to determine if they form a submenu and returns display positions
+/// 
+/// Returns:
+/// - Empty list if no submenu detected (no commands have dots before their match position)
+/// - List of integers indicating where to start displaying each command's suffix
+///   - For commands with dot before match position: returns the match position
+///   - For commands without dot before match position: returns 0 (show full name)
+pub fn get_submenu_display_positions(commands: &[Command], search_text: &str) -> Vec<usize> {
+    let mut positions = Vec::new();
+    let mut has_submenu = false;
+    
+    for cmd in commands {
+        let match_pos = command_matches_query_with_debug(&cmd.command, search_text, false);
+        
+        if match_pos >= 0 {
+            let match_pos = match_pos as usize;
+            
+            // Check if there's a separator (dot, space, or underscore) before the match position
+            if match_pos > 0 {
+                if let Some(prev_char) = cmd.command.chars().nth(match_pos - 1) {
+                    if prev_char == '.' || prev_char == ' ' || prev_char == '_' {
+                        has_submenu = true;
+                        positions.push(match_pos);
+                    } else {
+                        positions.push(0); // Show full name for commands without separator before match
+                    }
+                } else {
+                    positions.push(0);
+                }
+            } else {
+                positions.push(0); // Show full name for commands at start
+            }
+        } else {
+            positions.push(0); // No match, show full name
+        }
+    }
+    
+    if has_submenu {
+        positions
+    } else {
+        Vec::new() // Not a submenu
+    }
+}
+
+/// Extracts the submenu prefix from the first command that has a separator (dot, space, or underscore) before its match position
+pub fn get_submenu_prefix(commands: &[Command], search_text: &str) -> Option<String> {
+    for cmd in commands {
+        let match_pos = command_matches_query_with_debug(&cmd.command, search_text, false);
+        
+        if match_pos >= 0 {
+            let match_pos = match_pos as usize;
+            
+            // Check if there's a separator (dot, space, or underscore) before the match position
+            if match_pos > 0 {
+                if let Some(prev_char) = cmd.command.chars().nth(match_pos - 1) {
+                    if prev_char == '.' || prev_char == ' ' || prev_char == '_' {
+                        // Return the prefix (everything before the separator)
+                        return Some(cmd.command[..match_pos - 1].to_string());
+                    }
+                }
+            }
+        }
+    }
+    None
 }
 
 // =============================================================================

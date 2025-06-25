@@ -2,7 +2,7 @@ use eframe::egui;
 use std::process;
 use std::path::Path;
 use std::fs;
-use anchor_selector::{Command, filter_commands, execute_command, load_commands};
+use anchor_selector::{Command, filter_commands, execute_command, load_commands, get_submenu_display_positions, get_submenu_prefix, load_config, Config};
 
 mod command_editor;
 use command_editor::{CommandEditor, CommandEditorResult};
@@ -15,12 +15,15 @@ pub struct AnchorSelector {
     last_saved_position: Option<egui::Pos2>,
     position_set: bool,
     command_editor: CommandEditor,
+    config: Config,
 }
 
 impl AnchorSelector {
     pub fn new() -> Self {
         let commands = load_commands();
         let filtered_commands = Vec::new(); // Start with empty list
+        let config = load_config();
+        
         
         Self {
             commands,
@@ -30,6 +33,7 @@ impl AnchorSelector {
             last_saved_position: None,
             position_set: false,
             command_editor: CommandEditor::new(),
+            config,
         }
     }
     
@@ -37,8 +41,7 @@ impl AnchorSelector {
         if self.search_text.trim().is_empty() {
             self.filtered_commands.clear();
         } else {
-            self.filtered_commands = filter_commands(&self.commands, &self.search_text, false);
-            self.filtered_commands.truncate(10);  // Limit to 10 results like command-line
+            self.filtered_commands = filter_commands(&self.commands, &self.search_text, self.config.settings.max_rows, false);
         }
         
         // Always reset selection to first item when filter changes
@@ -125,11 +128,12 @@ fn center_on_main_display(ctx: &egui::Context, window_size: egui::Vec2) -> egui:
 }
 
 impl eframe::App for AnchorSelector {
-    fn update(&mut self, ctx: &egui::Context, _frame: &mut eframe::Frame) {
+    fn update(&mut self, ctx: &egui::Context, frame: &mut eframe::Frame) {
         
         // Set position on first frame after window is created
         if !self.position_set {
-            let window_size = egui::vec2(500.0, 400.0); // Match the size from run_gui()
+            // Use a reasonable default window size for positioning - the actual size will be auto-calculated
+            let window_size = egui::vec2(500.0, 300.0);
             let pos = get_previous_window_location(ctx, window_size);
             ctx.send_viewport_cmd(egui::ViewportCommand::OuterPosition(pos));
             self.position_set = true;
@@ -255,10 +259,23 @@ impl eframe::App for AnchorSelector {
                     ctx.send_viewport_cmd(egui::ViewportCommand::StartDrag);
                 }
                 
-                // Command list - left justified
-                egui::ScrollArea::vertical()
-                    .max_height(300.0)
-                    .show(ui, |ui| {
+                // Command list - check for submenu and display accordingly  
+                // No scroll area - window will size to accommodate max_rows
+                if !self.filtered_commands.is_empty() {
+                    // Calculate required window height more precisely
+                    let row_height = 28.0; // Slightly larger to account for font size and spacing
+                    let input_height = 60.0; // Height for search input (accounting for larger font)
+                    let padding = 50.0; // Top and bottom margins (more generous)
+                    let required_height = input_height + padding + (self.filtered_commands.len() as f32 * row_height);
+                    let window_width = 500.0;
+                    
+                    // Resize window to accommodate content
+                    ctx.send_viewport_cmd(egui::ViewportCommand::InnerSize(egui::vec2(window_width, required_height)));
+                    
+                    let submenu_positions = get_submenu_display_positions(&self.filtered_commands, &self.search_text);
+                    
+                    if submenu_positions.is_empty() {
+                        // Regular display - show full command names
                         for (i, cmd) in self.filtered_commands.iter().enumerate() {
                             let is_selected = i == self.selected_index;
                             
@@ -298,7 +315,85 @@ impl eframe::App for AnchorSelector {
                                 }
                             });
                         }
-                    });
+                    } else {
+                        // Submenu display
+                        
+                        // First show the submenu header (prefix + arrow) - left aligned with input
+                        if let Some(prefix) = get_submenu_prefix(&self.filtered_commands, &self.search_text) {
+                            // Submenu header with larger font and left alignment
+                            let mut header_font_id = ui.style().text_styles.get(&egui::TextStyle::Heading).unwrap().clone();
+                            header_font_id.size *= 1.3; // Make larger than regular commands
+                            
+                            ui.horizontal(|ui| {
+                                // No left margin for header - align with input box
+                                ui.label(egui::RichText::new(format!("{} ->", prefix)).font(header_font_id));
+                            });
+                            
+                            ui.add_space(8.0); // Small gap between header and commands
+                        }
+                        
+                        // Then show the command suffixes with indentation
+                        for (i, (cmd, &pos)) in self.filtered_commands.iter().zip(submenu_positions.iter()).enumerate() {
+                            let is_selected = i == self.selected_index;
+                            
+                            // Determine display text based on position
+                            let display_text = if pos == 0 {
+                                // Show full command name
+                                cmd.command.clone()
+                            } else {
+                                // Show suffix starting from position
+                                if pos < cmd.command.len() {
+                                    cmd.command[pos..].to_string()
+                                } else {
+                                    cmd.command.clone()
+                                }
+                            };
+                            
+                            // Indented selectable label with draggable margins
+                            ui.horizontal(|ui| {
+                                // Left margin draggable area - larger for indentation
+                                let left_drag = ui.allocate_response(
+                                    egui::Vec2::new(20.0, ui.text_style_height(&egui::TextStyle::Body)), // Increased from 10.0 to 20.0 for indentation
+                                    egui::Sense::drag()
+                                );
+                                if left_drag.dragged() {
+                                    ctx.send_viewport_cmd(egui::ViewportCommand::StartDrag);
+                                }
+                                
+                                // Use larger font for command list (50% bigger than body)
+                                let mut list_font_id = ui.style().text_styles.get(&egui::TextStyle::Body).unwrap().clone();
+                                list_font_id.size *= 1.5; // Make 50% larger
+                                
+                                let response = ui.selectable_label(
+                                    is_selected,
+                                    egui::RichText::new(&display_text).font(list_font_id)
+                                );
+                                
+                                if response.clicked() {
+                                    self.selected_index = i;
+                                    execute_command(&cmd.command);
+                                    process::exit(0);
+                                }
+                                
+                                // Right margin draggable area
+                                let right_drag = ui.allocate_response(
+                                    egui::Vec2::new(10.0, ui.text_style_height(&egui::TextStyle::Body)),
+                                    egui::Sense::drag()
+                                );
+                                if right_drag.dragged() {
+                                    ctx.send_viewport_cmd(egui::ViewportCommand::StartDrag);
+                                }
+                            });
+                        }
+                    }
+                } else {
+                    // No commands - resize to minimal height (just input field)
+                    let input_height = 60.0;
+                    let padding = 50.0;
+                    let base_height = input_height + padding;
+                    let window_width = 500.0;
+                    ctx.send_viewport_cmd(egui::ViewportCommand::InnerSize(egui::vec2(window_width, base_height)));
+                }
                 
                 // Bottom draggable area
                 let bottom_drag = ui.allocate_response(
@@ -383,10 +478,10 @@ fn main() -> Result<(), eframe::Error> {
 }
 
 fn run_gui() -> Result<(), eframe::Error> {
+    // Manual window sizing - no auto-sizing constraints
     let viewport_builder = egui::ViewportBuilder::default()
-        .with_inner_size([500.0, 400.0])
-        .with_min_inner_size([400.0, 300.0])
-        .with_resizable(true)
+        .with_inner_size([500.0, 120.0]) // Initial size - will be dynamically resized
+        .with_resizable(false) // Disable manual resizing - we control size programmatically
         .with_decorations(false); // Remove title bar and window controls
         // .with_transparent(true); // DISABLED: May cause hanging
     

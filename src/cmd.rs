@@ -32,7 +32,7 @@ fn run_match_command(args: &[String]) {
     let debug = args.len() > 3 && args[3] == "debug";
     
     let commands = load_commands();
-    let filtered = filter_commands(&commands, query, debug);
+    let filtered = filter_commands(&commands, query, 10, debug);
     
     // Print first 10 matches (like the GUI)
     for cmd in filtered.iter().take(10) {
