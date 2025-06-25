@@ -41,11 +41,108 @@ impl AnchorSelector {
         if self.search_text.trim().is_empty() {
             self.filtered_commands.clear();
         } else {
-            self.filtered_commands = filter_commands(&self.commands, &self.search_text, self.config.settings.max_rows, false);
+            let total_limit = self.config.settings.max_rows * self.config.settings.max_columns;
+            self.filtered_commands = filter_commands(&self.commands, &self.search_text, total_limit, false);
         }
         
         // Always reset selection to first item when filter changes
         self.selected_index = 0;
+    }
+    
+    // Calculate if we should use multi-column layout
+    fn should_use_columns(&self) -> bool {
+        self.filtered_commands.len() > self.config.settings.max_rows && self.config.settings.max_columns > 1
+    }
+    
+    // Calculate column layout (rows per column, number of columns to use)
+    fn get_column_layout(&self) -> (usize, usize) {
+        if !self.should_use_columns() {
+            return (self.filtered_commands.len(), 1);
+        }
+        
+        let max_rows = self.config.settings.max_rows;
+        let max_cols = self.config.settings.max_columns;
+        let total_items = self.filtered_commands.len();
+        
+        // Calculate optimal number of columns needed
+        let cols_needed = (total_items + max_rows - 1) / max_rows; // Ceiling division
+        let cols_to_use = cols_needed.min(max_cols);
+        
+        // Calculate rows per column
+        let rows_per_col = (total_items + cols_to_use - 1) / cols_to_use; // Ceiling division
+        
+        (rows_per_col, cols_to_use)
+    }
+    
+    // Convert linear index to (column, row) coordinates
+    fn index_to_coords(&self, index: usize) -> (usize, usize) {
+        let (rows_per_col, _) = self.get_column_layout();
+        let col = index / rows_per_col;
+        let row = index % rows_per_col;
+        (col, row)
+    }
+    
+    // Convert (column, row) coordinates to linear index
+    fn coords_to_index(&self, col: usize, row: usize) -> usize {
+        let (rows_per_col, _) = self.get_column_layout();
+        col * rows_per_col + row
+    }
+    
+    // Navigate up/down in the multi-column layout
+    fn navigate_vertical(&mut self, direction: i32) {
+        if self.filtered_commands.is_empty() {
+            return;
+        }
+        
+        let (rows_per_col, cols_to_use) = self.get_column_layout();
+        let (current_col, current_row) = self.index_to_coords(self.selected_index);
+        
+        let new_row = if direction > 0 {
+            // Down: move to next row, wrapping to next column if needed
+            if current_row + 1 < rows_per_col {
+                // Stay in same column, move down
+                let new_index = self.coords_to_index(current_col, current_row + 1);
+                if new_index < self.filtered_commands.len() {
+                    current_row + 1
+                } else {
+                    current_row // Don't move if target doesn't exist
+                }
+            } else if current_col + 1 < cols_to_use {
+                // Move to top of next column
+                0
+            } else {
+                current_row // Stay at bottom of last column
+            }
+        } else {
+            // Up: move to previous row, wrapping to previous column if needed
+            if current_row > 0 {
+                current_row - 1
+            } else if current_col > 0 {
+                // Move to bottom of previous column
+                let prev_col_size = if current_col == cols_to_use - 1 && self.filtered_commands.len() % rows_per_col != 0 {
+                    // Last column might be shorter
+                    (self.filtered_commands.len() - 1) % rows_per_col
+                } else {
+                    rows_per_col - 1
+                };
+                prev_col_size
+            } else {
+                current_row // Stay at top of first column
+            }
+        };
+        
+        let new_col = if direction > 0 && current_row + 1 >= rows_per_col && current_col + 1 < cols_to_use {
+            current_col + 1
+        } else if direction < 0 && current_row == 0 && current_col > 0 {
+            current_col - 1
+        } else {
+            current_col
+        };
+        
+        let new_index = self.coords_to_index(new_col, new_row);
+        if new_index < self.filtered_commands.len() {
+            self.selected_index = new_index;
+        }
     }
     
 }
@@ -198,14 +295,10 @@ impl eframe::App for AnchorSelector {
                         }
                     }
                     if i.key_pressed(egui::Key::ArrowDown) {
-                        if !self.filtered_commands.is_empty() {
-                            self.selected_index = (self.selected_index + 1).min(self.filtered_commands.len() - 1);
-                        }
+                        self.navigate_vertical(1);
                     }
                     if i.key_pressed(egui::Key::ArrowUp) {
-                        if self.selected_index > 0 {
-                            self.selected_index -= 1;
-                        }
+                        self.navigate_vertical(-1);
                     }
                     if i.key_pressed(egui::Key::ArrowRight) {
                         let command_to_edit = if !self.filtered_commands.is_empty() && self.selected_index < self.filtered_commands.len() {
@@ -262,20 +355,97 @@ impl eframe::App for AnchorSelector {
                 // Command list - check for submenu and display accordingly  
                 // No scroll area - window will size to accommodate max_rows
                 if !self.filtered_commands.is_empty() {
-                    // Calculate required window height more precisely
+                    // Calculate required window dimensions
                     let row_height = 28.0; // Slightly larger to account for font size and spacing
                     let input_height = 60.0; // Height for search input (accounting for larger font)
                     let padding = 50.0; // Top and bottom margins (more generous)
-                    let required_height = input_height + padding + (self.filtered_commands.len() as f32 * row_height);
-                    let window_width = 500.0;
+                    
+                    let (window_width, required_height) = if self.should_use_columns() {
+                        let (rows_per_col, cols_to_use) = self.get_column_layout();
+                        let column_width = 250.0; // Width per column
+                        let total_width = (cols_to_use as f32 * column_width) + 50.0; // Add some padding
+                        let total_height = input_height + padding + (rows_per_col as f32 * row_height);
+                        (total_width, total_height)
+                    } else {
+                        let window_width = 500.0;
+                        let required_height = input_height + padding + (self.filtered_commands.len() as f32 * row_height);
+                        (window_width, required_height)
+                    };
                     
                     // Resize window to accommodate content
                     ctx.send_viewport_cmd(egui::ViewportCommand::InnerSize(egui::vec2(window_width, required_height)));
                     
                     let submenu_positions = get_submenu_display_positions(&self.filtered_commands, &self.search_text);
                     
-                    if submenu_positions.is_empty() {
-                        // Regular display - show full command names
+                    if self.should_use_columns() {
+                        // Multi-column display
+                        let (rows_per_col, cols_to_use) = self.get_column_layout();
+                        
+                        // Show submenu header if applicable (even in multi-column mode)
+                        if !submenu_positions.is_empty() {
+                            if let Some(prefix) = get_submenu_prefix(&self.filtered_commands, &self.search_text) {
+                                let mut header_font_id = ui.style().text_styles.get(&egui::TextStyle::Heading).unwrap().clone();
+                                header_font_id.size *= 1.3;
+                                
+                                ui.horizontal(|ui| {
+                                    ui.label(egui::RichText::new(format!("{} ->", prefix)).font(header_font_id));
+                                });
+                                
+                                ui.add_space(8.0);
+                            }
+                        }
+                        
+                        ui.horizontal(|ui| {
+                            for col in 0..cols_to_use {
+                                ui.vertical(|ui| {
+                                    for row in 0..rows_per_col {
+                                        let i = col * rows_per_col + row;
+                                        if i >= self.filtered_commands.len() {
+                                            break;
+                                        }
+                                        
+                                        let cmd = &self.filtered_commands[i];
+                                        let is_selected = i == self.selected_index;
+                                        
+                                        // Determine display text based on submenu positions
+                                        let display_text = if !submenu_positions.is_empty() && i < submenu_positions.len() {
+                                            let pos = submenu_positions[i];
+                                            if pos == 0 {
+                                                cmd.command.clone()
+                                            } else if pos < cmd.command.len() {
+                                                cmd.command[pos..].to_string()
+                                            } else {
+                                                cmd.command.clone()
+                                            }
+                                        } else {
+                                            cmd.command.clone()
+                                        };
+                                        
+                                        // Use larger font for command list (50% bigger than body)
+                                        let mut list_font_id = ui.style().text_styles.get(&egui::TextStyle::Body).unwrap().clone();
+                                        list_font_id.size *= 1.5; // Make 50% larger
+                                        
+                                        let response = ui.selectable_label(
+                                            is_selected,
+                                            egui::RichText::new(&display_text).font(list_font_id)
+                                        );
+                                        
+                                        if response.clicked() {
+                                            self.selected_index = i;
+                                            execute_command(&cmd.command);
+                                            process::exit(0);
+                                        }
+                                    }
+                                });
+                                
+                                // Add space between columns (except after last column)
+                                if col < cols_to_use - 1 {
+                                    ui.add_space(10.0);
+                                }
+                            }
+                        });
+                    } else if submenu_positions.is_empty() {
+                        // Single-column regular display - show full command names
                         for (i, cmd) in self.filtered_commands.iter().enumerate() {
                             let is_selected = i == self.selected_index;
                             
@@ -316,7 +486,7 @@ impl eframe::App for AnchorSelector {
                             });
                         }
                     } else {
-                        // Submenu display
+                        // Single-column submenu display
                         
                         // First show the submenu header (prefix + arrow) - left aligned with input
                         if let Some(prefix) = get_submenu_prefix(&self.filtered_commands, &self.search_text) {

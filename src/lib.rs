@@ -17,12 +17,14 @@ use serde::{Deserialize, Serialize};
 #[derive(Debug, Clone, Serialize, Deserialize)]
 pub struct Settings {
     pub max_rows: usize,
+    pub max_columns: usize,
 }
 
 impl Default for Settings {
     fn default() -> Self {
         Settings {
             max_rows: 10,
+            max_columns: 1,
         }
     }
 }
