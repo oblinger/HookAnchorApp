@@ -69,7 +69,8 @@ pub fn launch(command_line: &str) -> Result<(), LauncherError> {
     debug_log(&format!("Template substitution result: {:?}", action_spec));
     
     // Create environment
-    let env = Environment::new();
+    let env = Environment::new()
+        .map_err(|e| LauncherError::ExecutionError(format!("Failed to create environment: {}", e)))?;
     
     // Execute the action using eval module
     debug_log(&format!("Executing action: {:?}", action_spec));

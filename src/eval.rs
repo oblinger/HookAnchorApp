@@ -5,7 +5,7 @@ use std::path::PathBuf;
 use std::process::Command;
 use std::time::{SystemTime, UNIX_EPOCH};
 use serde::{Deserialize, Serialize};
-use rquickjs::{Context, Runtime, Function, Object, Value, Ctx};
+use rquickjs::{Context, Runtime, Function};
 
 #[derive(Debug, Clone, PartialEq)]
 pub enum EvalError {
@@ -62,24 +62,109 @@ fn substitute_template_string(template: &str, arg: &str) -> String {
     template.replace("{{arg}}", arg)
 }
 
-#[derive(Debug, Clone)]
 pub struct Environment {
     pub config_path: PathBuf,
     pub working_dir: PathBuf,
     pub variables: HashMap<String, String>,
+    // JavaScript runtime - created once and reused
+    runtime: Runtime,
+    context: Context,
 }
 
 impl Environment {
-    pub fn new() -> Self {
-        Self {
+    pub fn new() -> Result<Self, Box<dyn std::error::Error>> {
+        let runtime = Runtime::new()?;
+        let context = Context::full(&runtime)?;
+        
+        Ok(Self {
             config_path: PathBuf::from("config.yaml"),
-            working_dir: std::env::current_dir().unwrap_or_default(),
+            working_dir: std::env::current_dir()?,
             variables: HashMap::new(),
+            runtime,
+            context,
+        })
+    }
+    
+    /// Eval function - foundation for Lisp-like expression evaluation
+    /// For now, simplified to take a function name and arguments as strings
+    /// Reuses the single JavaScript runtime for performance
+    pub fn eval_function(&mut self, fn_name: &str, args: &HashMap<String, String>) -> Result<(), EvalError> {
+        // Set up global command context in our runtime
+        self.context.with(|ctx| -> Result<(), EvalError> {
+            // Set up global command context
+            for (key, value) in &self.variables {
+                ctx.globals().set(key, value)?;
+            }
+            ctx.globals().set("WORKING_DIR", self.working_dir.to_str().unwrap_or(""))?;
+            
+            // Dispatch to functions based on name
+            match fn_name {
+                "app" => {
+                    let name = args.get("name").ok_or_else(|| EvalError::InvalidAction("Missing 'name' argument".to_string()))?;
+                    self.execute_app_action(name)
+                },
+                "url" => {
+                    let url = args.get("url").ok_or_else(|| EvalError::InvalidAction("Missing 'url' argument".to_string()))?;
+                    self.execute_url_action(url)
+                },
+                "shell" => {
+                    let command = args.get("command").ok_or_else(|| EvalError::InvalidAction("Missing 'command' argument".to_string()))?;
+                    self.execute_shell_action(command)
+                },
+                _ => Err(EvalError::InvalidAction(format!("Unknown function: {}", fn_name)))
+            }
+        })
+    }
+    
+    // Helper methods for executing actions
+    fn execute_app_action(&self, name: &str) -> Result<(), EvalError> {
+        let output = Command::new("open")
+            .arg("-a")
+            .arg(name)
+            .output()
+            .map_err(|e| EvalError::ExecutionError(format!("Failed to launch app '{}': {}", name, e)))?;
+        
+        if !output.status.success() {
+            let stderr = String::from_utf8_lossy(&output.stderr);
+            return Err(EvalError::ExecutionError(format!("App launch failed: {}", stderr)));
         }
+        
+        Ok(())
+    }
+    
+    fn execute_url_action(&self, url: &str) -> Result<(), EvalError> {
+        let output = Command::new("open")
+            .arg(url)
+            .output()
+            .map_err(|e| EvalError::ExecutionError(format!("Failed to open URL '{}': {}", url, e)))?;
+        
+        if !output.status.success() {
+            let stderr = String::from_utf8_lossy(&output.stderr);
+            return Err(EvalError::ExecutionError(format!("URL open failed: {}", stderr)));
+        }
+        
+        Ok(())
+    }
+    
+    fn execute_shell_action(&self, command: &str) -> Result<(), EvalError> {
+        let output = Command::new("/bin/sh")
+            .arg("-c")
+            .arg(command)
+            .output()
+            .map_err(|e| EvalError::ExecutionError(format!("Failed to execute command '{}': {}", command, e)))?;
+        
+        if !output.status.success() {
+            let stderr = String::from_utf8_lossy(&output.stderr);
+            return Err(EvalError::ExecutionError(format!("Shell command failed: {}", stderr)));
+        }
+        
+        Ok(())
     }
 }
 
 pub fn execute(action_spec: ActionSpec, original_command: &str, _env: &Environment) -> Result<(), EvalError> {
+    // Note: This function still uses the old approach for backward compatibility
+    // In a full implementation, we'd use env.eval() instead
     match action_spec {
         ActionSpec::App { name } => {
             debug_log(&format!("Executing App action: launching '{}'", name));
@@ -401,7 +486,7 @@ mod tests {
 
     #[test]
     fn test_execute_app_action() {
-        let env = Environment::new();
+        let env = Environment::new().unwrap();
         let action = ActionSpec::App { name: "Finder".to_string() };
         let result = execute(action, "", &env);
         assert!(result.is_ok());
@@ -409,7 +494,7 @@ mod tests {
 
     #[test]
     fn test_execute_app_action_with_spaces() {
-        let env = Environment::new();
+        let env = Environment::new().unwrap();
         let action = ActionSpec::App { name: "Google Chrome".to_string() };
         let result = execute(action, "", &env);
         assert!(result.is_ok());
@@ -417,7 +502,7 @@ mod tests {
 
     #[test]
     fn test_execute_open_with_browser() {
-        let env = Environment::new();
+        let env = Environment::new().unwrap();
         let action = ActionSpec::OpenWith { 
             app: "Google Chrome".to_string(),
             arg: "https://github.com".to_string()
@@ -428,7 +513,7 @@ mod tests {
 
     #[test]
     fn test_execute_open_with_document() {
-        let env = Environment::new();
+        let env = Environment::new().unwrap();
         // Use TextEdit which is installed on all macOS systems and a URL instead of file path
         let action = ActionSpec::OpenWith { 
             app: "TextEdit".to_string(),
@@ -440,7 +525,7 @@ mod tests {
 
     #[test]
     fn test_execute_url_action() {
-        let env = Environment::new();
+        let env = Environment::new().unwrap();
         let action = ActionSpec::Url { url: "https://github.com".to_string() };
         let result = execute(action, "", &env);
         assert!(result.is_ok());
@@ -448,7 +533,7 @@ mod tests {
 
     #[test]
     fn test_execute_folder_action() {
-        let env = Environment::new();
+        let env = Environment::new().unwrap();
         let action = ActionSpec::Folder { path: "/Users".to_string() };
         let result = execute(action, "", &env);
         assert!(result.is_ok());
@@ -456,7 +541,7 @@ mod tests {
 
     #[test]
     fn test_execute_folder_action_with_spaces() {
-        let env = Environment::new();
+        let env = Environment::new().unwrap();
         // Use a path that exists - the current user's home directory
         let home_path = std::env::var("HOME").unwrap_or("/Users".to_string());
         let action = ActionSpec::Folder { path: home_path };
@@ -466,7 +551,7 @@ mod tests {
 
     #[test]
     fn test_execute_shell_action_simple() {
-        let env = Environment::new();
+        let env = Environment::new().unwrap();
         let action = ActionSpec::Shell { command: "echo hello".to_string() };
         let result = execute(action, "", &env);
         assert!(result.is_ok());
@@ -474,7 +559,7 @@ mod tests {
 
     #[test]
     fn test_execute_shell_action_complex() {
-        let env = Environment::new();
+        let env = Environment::new().unwrap();
         let action = ActionSpec::Shell { command: "ls -la /tmp".to_string() };
         let result = execute(action, "", &env);
         assert!(result.is_ok());
@@ -482,7 +567,7 @@ mod tests {
 
     #[test]
     fn test_execute_javascript_action() {
-        let env = Environment::new();
+        let env = Environment::new().unwrap();
         let action = ActionSpec::JavaScript { 
             code: "shell('echo Hello from JavaScript');".to_string() 
         };
@@ -492,7 +577,7 @@ mod tests {
 
     #[test]
     fn test_environment_creation() {
-        let env = Environment::new();
+        let env = Environment::new().unwrap();
         assert_eq!(env.config_path, PathBuf::from("config.yaml"));
         assert!(env.variables.is_empty());
     }
