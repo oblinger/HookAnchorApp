@@ -5,13 +5,19 @@ use std::path::PathBuf;
 use std::process::Command;
 use std::time::{SystemTime, UNIX_EPOCH};
 use serde::{Deserialize, Serialize};
-use rquickjs::{Context, Runtime, Function, Result as JsResult};
+use rquickjs::{Context, Runtime, Function, Object, Value, Ctx};
 
 #[derive(Debug, Clone, PartialEq)]
 pub enum EvalError {
     ExecutionError(String),
     InvalidAction(String),
     SystemError(String),
+}
+
+impl From<rquickjs::Error> for EvalError {
+    fn from(err: rquickjs::Error) -> Self {
+        EvalError::SystemError(format!("JS Error: {}", err))
+    }
 }
 
 #[derive(Debug, Clone, Serialize, Deserialize)]
@@ -280,7 +286,7 @@ fn execute_javascript(code: &str, original_command: &str, action_spec: &ActionSp
     })
 }
 
-fn js_shell_function(command: String) -> JsResult<()> {
+fn js_shell_function(command: String) -> rquickjs::Result<()> {
     debug_log(&format!("JavaScript calling shell: '{}'", command));
     let output = Command::new("/bin/sh")
         .arg("-c")
@@ -306,7 +312,7 @@ fn js_shell_function(command: String) -> JsResult<()> {
     }
 }
 
-fn js_launch_app_function(app: String, arg: String) -> JsResult<()> {
+fn js_launch_app_function(app: String, arg: String) -> rquickjs::Result<()> {
     debug_log(&format!("JavaScript calling launch_app: app='{}', arg='{}'", app, arg));
     let output = if arg.is_empty() {
         Command::new("open")
@@ -339,7 +345,7 @@ fn js_launch_app_function(app: String, arg: String) -> JsResult<()> {
     }
 }
 
-fn js_launch_function(command: String) -> JsResult<()> {
+fn js_launch_function(command: String) -> rquickjs::Result<()> {
     debug_log(&format!("JavaScript calling launch: '{}'", command));
     use crate::launcher::launch;
     match launch(&command) {
