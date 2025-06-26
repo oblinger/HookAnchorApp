@@ -3,24 +3,16 @@
 //! A command management and filtering library that provides fuzzy matching
 //! and prioritized search for command execution.
 //!
-//! # JavaScript API for User Customization
-//!
-//! This library includes a comprehensive JavaScript runtime that allows users
-//! to customize launcher actions using rich built-in functions.
-//!
-//! **📋 For complete JavaScript API specification, see [`js_runtime`] module documentation.**
-//!
-//! ## Key Modules
-//! - [`js_runtime`] - JavaScript runtime with complete API specification
-//! - [`business_logic`] - JavaScript business logic management  
-//! - `JAVASCRIPT_API.md` - Usage examples and patterns
-//! - `USER_CUSTOMIZATION.md` - User guide with customization examples
+//! For complete configuration documentation including JavaScript API, built-in functions,
+//! and usage examples, see `docs.md` in the project root.
 
 // New launcher modules
 pub mod eval;
 pub mod launcher;
 pub mod js_runtime;
 pub mod business_logic;
+pub mod builtin_fns;
+pub mod utils;
 
 use std::env;
 use std::fs;
@@ -151,10 +143,10 @@ pub struct Command {
 /// Returns the path to the commands file
 fn get_commands_file_path() -> PathBuf {
     let home = env::var("HOME").unwrap_or_else(|_| ".".to_string());
-    Path::new(&home).join("ob/data/spot_cmds/spot_cmds.txt")
+    Path::new(&home).join(".config/anchor_selector/commands.txt")
 }
 
-/// Loads commands from the spot_cmds.txt file and parses them into Command structs
+/// Loads commands from the commands.txt file and parses them into Command structs
 /// 
 /// # Panics
 /// Panics if the commands file cannot be read or doesn't exist
@@ -213,7 +205,7 @@ fn parse_commands(contents: &str) -> Vec<Command> {
         .collect()
 }
 
-/// Saves commands to spot_cmds.txt using their original full_line format
+/// Saves commands to commands.txt using their original full_line format
 pub fn save_commands(commands: &[Command]) -> Result<(), Box<dyn std::error::Error>> {
     let file_path = get_commands_file_path();
     
@@ -229,7 +221,7 @@ pub fn save_commands(commands: &[Command]) -> Result<(), Box<dyn std::error::Err
 /// Saves commands to a specified file with proper formatting and newline handling
 pub fn save_commands_formatted(commands: &[Command], output_file: &str) -> Result<(), Box<dyn std::error::Error>> {
     let home = env::var("HOME").unwrap_or_else(|_| ".".to_string());
-    let file_path = Path::new(&home).join("ob/data/spot_cmds").join(output_file);
+    let file_path = Path::new(&home).join(".config/anchor_selector").join(output_file);
     
     let contents = commands.iter()
         .map(|cmd| cmd.full_line.clone())
@@ -240,9 +232,9 @@ pub fn save_commands_formatted(commands: &[Command], output_file: &str) -> Resul
     Ok(())
 }
 
-/// Convenience function to save commands to the default spot_cmds.txt file
+/// Convenience function to save commands to the default commands.txt file
 pub fn save_commands_to_file(commands: &[Command]) -> Result<(), Box<dyn std::error::Error>> {
-    save_commands_formatted(commands, "spot_cmds.txt")
+    save_commands_formatted(commands, "commands.txt")
 }
 
 // =============================================================================

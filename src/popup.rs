@@ -624,7 +624,7 @@ impl eframe::App for AnchorSelector {
                 if !deleted {
                     eprintln!("Warning: Command '{}' not found for deletion", command_name);
                 } else {
-                    // Save the updated command list back to spot_cmds.txt
+                    // Save the updated command list back to commands.txt
                     if let Err(e) = save_commands_to_file(&self.commands) {
                         eprintln!("Error saving commands to file after deletion: {}", e);
                     } else {

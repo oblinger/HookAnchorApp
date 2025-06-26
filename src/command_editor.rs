@@ -279,7 +279,7 @@ impl CommandEditor {
         // Step 3: Add the new command to the list
         add_command(commands, new_command);
         
-        // Step 4: Save the updated command list back to spot_cmds.txt
+        // Step 4: Save the updated command list back to commands.txt
         match save_commands_to_file(commands) {
             Ok(_) => Ok(()),
             Err(e) => Err(format!("Error saving commands to file: {}", e)),
@@ -295,7 +295,7 @@ impl CommandEditor {
                 return Err(format!("Command '{}' not found for deletion", self.original_command_name));
             }
             
-            // Save the updated command list back to spot_cmds.txt
+            // Save the updated command list back to commands.txt
             match save_commands_to_file(commands) {
                 Ok(_) => Ok(()),
                 Err(e) => Err(format!("Error saving commands to file after deletion: {}", e)),

@@ -1,11 +1,8 @@
 use std::collections::HashMap;
-use std::fs::OpenOptions;
-use std::io::Write;
 use std::path::PathBuf;
-use std::process::Command;
-use std::time::{SystemTime, UNIX_EPOCH};
-use serde::{Deserialize, Serialize};
-use rquickjs::{Context, Runtime, Function};
+use rquickjs::{Context, Runtime};
+use serde_yaml;
+use crate::utils::debug_log;
 
 #[derive(Debug, Clone, PartialEq)]
 pub enum EvalError {
@@ -20,558 +17,211 @@ impl From<rquickjs::Error> for EvalError {
     }
 }
 
-#[derive(Debug, Clone, Serialize, Deserialize)]
-pub enum ActionSpec {
-    App { name: String },
-    OpenWith { app: String, arg: String },
-    Url { url: String },
-    Folder { path: String },
-    Shell { command: String },
-    JavaScript { code: String },
-}
-
-impl ActionSpec {
-    /// Substitute template variables like {{arg}} with actual values
-    pub fn substitute_templates(&self, arg: &str) -> Self {
-        match self {
-            ActionSpec::App { name } => ActionSpec::App {
-                name: substitute_template_string(name, arg),
-            },
-            ActionSpec::OpenWith { app, arg: template_arg } => ActionSpec::OpenWith {
-                app: substitute_template_string(app, arg),
-                arg: substitute_template_string(template_arg, arg),
-            },
-            ActionSpec::Url { url } => ActionSpec::Url {
-                url: substitute_template_string(url, arg),
-            },
-            ActionSpec::Folder { path } => ActionSpec::Folder {
-                path: substitute_template_string(path, arg),
-            },
-            ActionSpec::Shell { command } => ActionSpec::Shell {
-                command: substitute_template_string(command, arg),
-            },
-            ActionSpec::JavaScript { code } => ActionSpec::JavaScript {
-                code: substitute_template_string(code, arg),
-            },
-        }
+impl From<serde_yaml::Error> for EvalError {
+    fn from(err: serde_yaml::Error) -> Self {
+        EvalError::SystemError(format!("YAML Error: {}", err))
     }
 }
 
-/// Replace {{arg}} template with actual argument value
-fn substitute_template_string(template: &str, arg: &str) -> String {
-    template.replace("{{arg}}", arg)
-}
+// ActionSpec enum removed - now using generic serde_yaml::Value evaluation
+
 
 pub struct Environment {
     pub config_path: PathBuf,
     pub working_dir: PathBuf,
     pub variables: HashMap<String, String>,
     // JavaScript runtime - created once and reused
-    runtime: Runtime,
-    context: Context,
+    js_runtime: Runtime,
+    pub js_context: Context,
+    // Function registry for built-in functions
+    pub functions: HashMap<String, Box<dyn Fn(&mut Environment, &HashMap<String, serde_yaml::Value>) -> Result<(), EvalError> + Send + Sync>>,
 }
 
 impl Environment {
     pub fn new() -> Result<Self, Box<dyn std::error::Error>> {
-        let runtime = Runtime::new()?;
-        let context = Context::full(&runtime)?;
+        let js_runtime = Runtime::new()?;
+        let js_context = Context::full(&js_runtime)?;
         
-        Ok(Self {
+        let mut env = Self {
             config_path: PathBuf::from("config.yaml"),
             working_dir: std::env::current_dir()?,
             variables: HashMap::new(),
-            runtime,
-            context,
-        })
-    }
-    
-    /// Eval function - foundation for Lisp-like expression evaluation
-    /// For now, simplified to take a function name and arguments as strings
-    /// Reuses the single JavaScript runtime for performance
-    pub fn eval_function(&mut self, fn_name: &str, args: &HashMap<String, String>) -> Result<(), EvalError> {
-        // Set up global command context in our runtime
-        self.context.with(|ctx| -> Result<(), EvalError> {
-            // Set up global command context
-            for (key, value) in &self.variables {
-                ctx.globals().set(key, value)?;
-            }
-            ctx.globals().set("WORKING_DIR", self.working_dir.to_str().unwrap_or(""))?;
-            
-            // Dispatch to functions based on name
-            match fn_name {
-                "app" => {
-                    let name = args.get("name").ok_or_else(|| EvalError::InvalidAction("Missing 'name' argument".to_string()))?;
-                    self.execute_app_action(name)
-                },
-                "url" => {
-                    let url = args.get("url").ok_or_else(|| EvalError::InvalidAction("Missing 'url' argument".to_string()))?;
-                    self.execute_url_action(url)
-                },
-                "shell" => {
-                    let command = args.get("command").ok_or_else(|| EvalError::InvalidAction("Missing 'command' argument".to_string()))?;
-                    self.execute_shell_action(command)
-                },
-                _ => Err(EvalError::InvalidAction(format!("Unknown function: {}", fn_name)))
-            }
-        })
-    }
-    
-    // Helper methods for executing actions
-    fn execute_app_action(&self, name: &str) -> Result<(), EvalError> {
-        let output = Command::new("open")
-            .arg("-a")
-            .arg(name)
-            .output()
-            .map_err(|e| EvalError::ExecutionError(format!("Failed to launch app '{}': {}", name, e)))?;
-        
-        if !output.status.success() {
-            let stderr = String::from_utf8_lossy(&output.stderr);
-            return Err(EvalError::ExecutionError(format!("App launch failed: {}", stderr)));
-        }
-        
-        Ok(())
-    }
-    
-    fn execute_url_action(&self, url: &str) -> Result<(), EvalError> {
-        let output = Command::new("open")
-            .arg(url)
-            .output()
-            .map_err(|e| EvalError::ExecutionError(format!("Failed to open URL '{}': {}", url, e)))?;
-        
-        if !output.status.success() {
-            let stderr = String::from_utf8_lossy(&output.stderr);
-            return Err(EvalError::ExecutionError(format!("URL open failed: {}", stderr)));
-        }
-        
-        Ok(())
-    }
-    
-    fn execute_shell_action(&self, command: &str) -> Result<(), EvalError> {
-        let output = Command::new("/bin/sh")
-            .arg("-c")
-            .arg(command)
-            .output()
-            .map_err(|e| EvalError::ExecutionError(format!("Failed to execute command '{}': {}", command, e)))?;
-        
-        if !output.status.success() {
-            let stderr = String::from_utf8_lossy(&output.stderr);
-            return Err(EvalError::ExecutionError(format!("Shell command failed: {}", stderr)));
-        }
-        
-        Ok(())
-    }
-}
-
-pub fn execute(action_spec: ActionSpec, original_command: &str, _env: &Environment) -> Result<(), EvalError> {
-    // Note: This function still uses the old approach for backward compatibility
-    // In a full implementation, we'd use env.eval() instead
-    match action_spec {
-        ActionSpec::App { name } => {
-            debug_log(&format!("Executing App action: launching '{}'", name));
-            
-            // Launch app with `open -a APP_NAME`
-            let output = Command::new("open")
-                .arg("-a")
-                .arg(&name)
-                .output()
-                .map_err(|e| EvalError::ExecutionError(format!("Failed to launch app '{}': {}", name, e)))?;
-            
-            if !output.status.success() {
-                let stderr = String::from_utf8_lossy(&output.stderr);
-                debug_log(&format!("App launch failed with exit code {}: {}", output.status.code().unwrap_or(-1), stderr));
-                return Err(EvalError::ExecutionError(format!("App launch failed: {}", stderr)));
-            }
-            
-            debug_log(&format!("App '{}' launched successfully", name));
-            Ok(())
-        }
-        ActionSpec::OpenWith { app, arg } => {
-            if app.is_empty() {
-                debug_log(&format!("Executing OpenWith action: opening '{}' with system default", arg));
-            } else {
-                debug_log(&format!("Executing OpenWith action: opening '{}' with '{}'", arg, app));
-            }
-            
-            // Launch app with argument using `open -a APP ARG` or just `open ARG` if no app specified
-            let output = if app.is_empty() {
-                // Let system choose default app
-                Command::new("open")
-                    .arg(&arg)
-                    .output()
-                    .map_err(|e| EvalError::ExecutionError(format!("Failed to open '{}': {}", arg, e)))?
-            } else {
-                // Use specific app
-                Command::new("open")
-                    .arg("-a")
-                    .arg(&app)
-                    .arg(&arg)
-                    .output()
-                    .map_err(|e| EvalError::ExecutionError(format!("Failed to open '{}' with '{}': {}", arg, app, e)))?
-            };
-            
-            if !output.status.success() {
-                let stderr = String::from_utf8_lossy(&output.stderr);
-                debug_log(&format!("OpenWith failed with exit code {}: {}", output.status.code().unwrap_or(-1), stderr));
-                return Err(EvalError::ExecutionError(format!("Open with app failed: {}", stderr)));
-            }
-            
-            debug_log(&format!("OpenWith completed successfully"));
-            Ok(())
-        }
-        ActionSpec::Url { url } => {
-            debug_log(&format!("Executing Url action: opening '{}'", url));
-            
-            // Open URL with default browser using `open URL`
-            let output = Command::new("open")
-                .arg(&url)
-                .output()
-                .map_err(|e| EvalError::ExecutionError(format!("Failed to open URL '{}': {}", url, e)))?;
-            
-            if !output.status.success() {
-                let stderr = String::from_utf8_lossy(&output.stderr);
-                debug_log(&format!("URL open failed with exit code {}: {}", output.status.code().unwrap_or(-1), stderr));
-                return Err(EvalError::ExecutionError(format!("URL open failed: {}", stderr)));
-            }
-            
-            debug_log(&format!("URL '{}' opened successfully", url));
-            Ok(())
-        }
-        ActionSpec::Folder { path } => {
-            debug_log(&format!("Executing Folder action: opening '{}'", path));
-            
-            // Open folder with `open PATH`
-            let output = Command::new("open")
-                .arg(&path)
-                .output()
-                .map_err(|e| EvalError::ExecutionError(format!("Failed to open folder '{}': {}", path, e)))?;
-            
-            if !output.status.success() {
-                let stderr = String::from_utf8_lossy(&output.stderr);
-                debug_log(&format!("Folder open failed with exit code {}: {}", output.status.code().unwrap_or(-1), stderr));
-                return Err(EvalError::ExecutionError(format!("Folder open failed: {}", stderr)));
-            }
-            
-            debug_log(&format!("Folder '{}' opened successfully", path));
-            Ok(())
-        }
-        ActionSpec::Shell { command } => {
-            debug_log(&format!("Executing Shell action: running '{}'", command));
-            
-            // Execute shell command using /bin/sh
-            let output = Command::new("/bin/sh")
-                .arg("-c")
-                .arg(&command)
-                .output()
-                .map_err(|e| EvalError::ExecutionError(format!("Failed to execute command '{}': {}", command, e)))?;
-            
-            if !output.status.success() {
-                let stderr = String::from_utf8_lossy(&output.stderr);
-                let stdout = String::from_utf8_lossy(&output.stdout);
-                debug_log(&format!("Shell command failed with exit code {}: stdout='{}', stderr='{}'", 
-                    output.status.code().unwrap_or(-1), stdout.trim(), stderr.trim()));
-                return Err(EvalError::ExecutionError(format!("Shell command failed: {}", stderr)));
-            }
-            
-            let stdout = String::from_utf8_lossy(&output.stdout);
-            debug_log(&format!("Shell command completed successfully, output: '{}'", stdout.trim()));
-            Ok(())
-        }
-        ActionSpec::JavaScript { ref code } => {
-            debug_log(&format!("Executing JavaScript action: '{}'", code.trim()));
-            execute_javascript(code, original_command, &action_spec)
-        }
-    }
-}
-
-fn execute_javascript(code: &str, original_command: &str, action_spec: &ActionSpec) -> Result<(), EvalError> {
-    debug_log("Starting JavaScript runtime");
-    
-    let rt = Runtime::new().map_err(|e| EvalError::ExecutionError(format!("Failed to create JavaScript runtime: {}", e)))?;
-    let ctx = Context::full(&rt).map_err(|e| EvalError::ExecutionError(format!("Failed to create JavaScript context: {}", e)))?;
-    
-    ctx.with(|ctx| -> Result<(), EvalError> {
-        // Parse original command to extract parts
-        let (action_name, command_arg) = if let Some(space_pos) = original_command.find(char::is_whitespace) {
-            let action = &original_command[..space_pos];
-            let args = original_command[space_pos..].trim_start();
-            (action, args)
-        } else {
-            (original_command, "")
+            js_runtime,
+            js_context,
+            functions: HashMap::new(),
         };
         
-        // Create command context object for JavaScript
-        let command_context = format!(
-            r#"{{
-                "command": "{}",
-                "action": "{}",
-                "arg": "{}",
-                "full_command": "{}",
-                "action_type": "{}",
-                "timestamp": {}
-            }}"#,
-            original_command,
-            action_name,
-            command_arg,
-            original_command,
-            match action_spec {
-                ActionSpec::JavaScript { .. } => "javascript",
-                ActionSpec::App { .. } => "app",
-                ActionSpec::OpenWith { .. } => "open_with",
-                ActionSpec::Url { .. } => "url",
-                ActionSpec::Folder { .. } => "folder",
-                ActionSpec::Shell { .. } => "shell",
+        // Setup built-in function registry
+        env.setup_builtin_functions();
+        
+        Ok(env)
+    }
+    
+    /// Unified eval function - handles both YAML values and JS values uniformly
+    /// This is the core of the Lisp-like evaluation system
+    pub fn eval(&mut self, expr: serde_yaml::Value) -> Result<serde_yaml::Value, EvalError> {
+        match expr {
+            // If it's a mapping (object) with a 'fn' key, it's a function call
+            serde_yaml::Value::Mapping(ref map) => {
+                if let Some(fn_name_value) = map.get(&serde_yaml::Value::String("fn".to_string())) {
+                    if let serde_yaml::Value::String(fn_name) = fn_name_value {
+                        // Extract arguments into a HashMap (raw, no substitution)
+                        let mut args = HashMap::new();
+                        for (key, value) in map {
+                            if let serde_yaml::Value::String(key_str) = key {
+                                if key_str != "fn" {
+                                    args.insert(key_str.clone(), value.clone());
+                                }
+                            }
+                        }
+                        
+                        // Dispatch to function with raw arguments
+                        if self.functions.contains_key(fn_name) {
+                            // Extract the function and call it
+                            let func_key = fn_name.clone();
+                            if let Some(func) = self.functions.remove(&func_key) {
+                                let result = func(self, &args);
+                                // Restore the function
+                                self.functions.insert(func_key, func);
+                                debug_log("EVAL", &format!("Executed function: {}", fn_name));
+                                result?;
+                            }
+                            Ok(serde_yaml::Value::Null) // Functions return null for now
+                        } else {
+                            Err(EvalError::InvalidAction(format!("Unknown function: {}", fn_name)))
+                        }
+                    } else {
+                        Err(EvalError::InvalidAction("Function name must be a string".to_string()))
+                    }
+                } else {
+                    // Object without 'fn' key - return as-is
+                    Ok(expr)
+                }
             },
-            SystemTime::now().duration_since(UNIX_EPOCH).unwrap_or_default().as_secs()
-        );
-        
-        // Set command context as global variable
-        ctx.globals().set("COMMAND", command_context.as_str())
-            .map_err(|e| EvalError::ExecutionError(format!("Failed to set COMMAND context: {}", e)))?;
-            
-        // Set individual command parts as global variables for convenience
-        ctx.globals().set("ARG", command_arg)
-            .map_err(|e| EvalError::ExecutionError(format!("Failed to set ARG: {}", e)))?;
-        ctx.globals().set("ACTION", action_name)
-            .map_err(|e| EvalError::ExecutionError(format!("Failed to set ACTION: {}", e)))?;
-        ctx.globals().set("FULL_COMMAND", original_command)
-            .map_err(|e| EvalError::ExecutionError(format!("Failed to set FULL_COMMAND: {}", e)))?;
-        
-        // Add enhanced built-in functions (delegate to js_runtime module)
-        crate::js_runtime::setup_all_builtins(&ctx)
-            .map_err(|e| EvalError::ExecutionError(format!("Failed to setup built-ins: {}", e)))?;
-        
-        // Legacy shell function for compatibility
-        let shell_fn = Function::new(ctx.clone(), js_shell_function)
-            .map_err(|e| EvalError::ExecutionError(format!("Failed to create shell function: {}", e)))?;
-        
-        ctx.globals().set("shell", shell_fn)
-            .map_err(|e| EvalError::ExecutionError(format!("Failed to set shell function: {}", e)))?;
-        
-        // Add launch_app function
-        let launch_app_fn = Function::new(ctx.clone(), js_launch_app_function)
-            .map_err(|e| EvalError::ExecutionError(format!("Failed to create launch_app function: {}", e)))?;
-        
-        ctx.globals().set("launch_app", launch_app_fn)
-            .map_err(|e| EvalError::ExecutionError(format!("Failed to set launch_app function: {}", e)))?;
-        
-        // Add launch function for recursive command calling
-        let launch_fn = Function::new(ctx.clone(), js_launch_function)
-            .map_err(|e| EvalError::ExecutionError(format!("Failed to create launch function: {}", e)))?;
-        
-        ctx.globals().set("launch", launch_fn)
-            .map_err(|e| EvalError::ExecutionError(format!("Failed to set launch function: {}", e)))?;
-        
-        // Execute the JavaScript code
-        debug_log(&format!("Executing JavaScript: {}", code.trim()));
-        ctx.eval::<(), _>(code)
-            .map_err(|e| EvalError::ExecutionError(format!("JavaScript execution failed: {}", e)))?;
-        
-        debug_log("JavaScript execution completed successfully");
-        Ok(())
+            // Primitives evaluate to themselves
+            _ => Ok(expr)
+        }
+    }
+    
+    /// Setup built-in function registry
+    fn setup_builtin_functions(&mut self) {
+        crate::builtin_fns::setup_builtin_functions(self);
+    }
+    
+}
+
+/// Helper function to extract string arguments from YAML values
+fn get_string_arg(args: &HashMap<String, serde_yaml::Value>, key: &str) -> Option<String> {
+    args.get(key).and_then(|v| {
+        match v {
+            serde_yaml::Value::String(s) => Some(s.clone()),
+            _ => None
+        }
     })
 }
 
-fn js_shell_function(command: String) -> rquickjs::Result<()> {
-    debug_log(&format!("JavaScript calling shell: '{}'", command));
-    let output = Command::new("/bin/sh")
-        .arg("-c")
-        .arg(&command)
-        .output();
-    
-    match output {
-        Ok(result) => {
-            if result.status.success() {
-                let stdout = String::from_utf8_lossy(&result.stdout);
-                debug_log(&format!("Shell command completed: '{}'", stdout.trim()));
-                Ok(())
-            } else {
-                let stderr = String::from_utf8_lossy(&result.stderr);
-                debug_log(&format!("Shell command failed: '{}'", stderr.trim()));
-                Err(rquickjs::Error::new_from_js_message("shell", "Rust", format!("Shell command failed: {}", stderr)))
+/// Helper function for template substitution (public for tests and external use)
+pub fn substitute_template_in_args(args: &HashMap<String, serde_yaml::Value>, env: &Environment) -> HashMap<String, serde_yaml::Value> {
+    let mut result = HashMap::new();
+    for (key, value) in args {
+        let substituted = substitute_template_in_value(value, env);
+        result.insert(key.clone(), substituted);
+    }
+    result
+}
+
+/// Helper function to substitute templates in a single value (public for external use)
+pub fn substitute_template_in_value(value: &serde_yaml::Value, env: &Environment) -> serde_yaml::Value {
+    match value {
+        serde_yaml::Value::String(s) => {
+            let mut result = s.clone();
+            for (key, replacement) in &env.variables {
+                let pattern = format!("{{{{{}}}}}", key);
+                result = result.replace(&pattern, replacement);
             }
-        }
-        Err(e) => {
-            debug_log(&format!("Shell command error: {}", e));
-            Err(rquickjs::Error::new_from_js_message("shell", "Rust", format!("Shell command error: {}", e)))
-        }
+            serde_yaml::Value::String(result)
+        },
+        _ => value.clone()
     }
 }
 
-fn js_launch_app_function(app: String, arg: String) -> rquickjs::Result<()> {
-    debug_log(&format!("JavaScript calling launch_app: app='{}', arg='{}'", app, arg));
-    let output = if arg.is_empty() {
-        Command::new("open")
-            .arg("-a")
-            .arg(&app)
-            .output()
-    } else {
-        Command::new("open")
-            .arg("-a")
-            .arg(&app)
-            .arg(&arg)
-            .output()
-    };
-    
-    match output {
-        Ok(result) => {
-            if result.status.success() {
-                debug_log(&format!("App '{}' launched successfully", app));
-                Ok(())
-            } else {
-                let stderr = String::from_utf8_lossy(&result.stderr);
-                debug_log(&format!("App launch failed: '{}'", stderr.trim()));
-                Err(rquickjs::Error::new_from_js_message("launch_app", "Rust", format!("App launch failed: {}", stderr)))
-            }
-        }
-        Err(e) => {
-            debug_log(&format!("App launch error: {}", e));
-            Err(rquickjs::Error::new_from_js_message("launch_app", "Rust", format!("App launch error: {}", e)))
-        }
-    }
-}
+// Legacy JavaScript execution function removed - now handled by javascript function in registry
 
-fn js_launch_function(command: String) -> rquickjs::Result<()> {
-    debug_log(&format!("JavaScript calling launch: '{}'", command));
-    use crate::launcher::launch;
-    match launch(&command) {
-        Ok(()) => {
-            debug_log(&format!("Recursive launch completed: '{}'", command));
-            Ok(())
-        }
-        Err(e) => {
-            debug_log(&format!("Recursive launch failed: {:?}", e));
-            Err(rquickjs::Error::new_from_js_message("launch", "Rust", format!("Recursive launch failed: {:?}", e)))
-        }
-    }
-}
+// Legacy JavaScript helper functions removed - now handled by js_runtime module
 
-fn debug_log(message: &str) {
-    use crate::load_config;
-    
-    let config = load_config();
-    if let Some(debug_path) = &config.popup_settings.debug_log {
-        let debug_path = expand_tilde(debug_path);
-        
-        let timestamp = SystemTime::now()
-            .duration_since(UNIX_EPOCH)
-            .unwrap_or_default()
-            .as_secs();
-        
-        let log_entry = format!("[{}] EVAL: {}\n", timestamp, message);
-        
-        if let Ok(mut file) = OpenOptions::new()
-            .create(true)
-            .append(true)
-            .open(debug_path) {
-            let _ = file.write_all(log_entry.as_bytes());
-        }
-    }
-}
+// debug_log function moved to utils module
 
-fn expand_tilde(path: &str) -> String {
-    if path.starts_with('~') {
-        if let Ok(home) = std::env::var("HOME") {
-            path.replacen('~', &home, 1)
-        } else {
-            path.to_string()
-        }
-    } else {
-        path.to_string()
-    }
-}
+// expand_tilde function moved to utils module
 
 #[cfg(test)]
 mod tests {
     use super::*;
 
     #[test]
-    fn test_execute_app_action() {
-        let env = Environment::new().unwrap();
-        let action = ActionSpec::App { name: "Finder".to_string() };
-        let result = execute(action, "", &env);
+    fn test_eval_launch_app() {
+        let mut env = Environment::new().unwrap();
+        let mut map = serde_yaml::Mapping::new();
+        map.insert("fn".into(), "launch_app".into());
+        map.insert("name".into(), "Finder".into());
+        let action = serde_yaml::Value::Mapping(map);
+        let result = env.eval(action);
         assert!(result.is_ok());
     }
 
     #[test]
-    fn test_execute_app_action_with_spaces() {
-        let env = Environment::new().unwrap();
-        let action = ActionSpec::App { name: "Google Chrome".to_string() };
-        let result = execute(action, "", &env);
+    fn test_eval_open_with_browser() {
+        let mut env = Environment::new().unwrap();
+        env.variables.insert("arg".to_string(), "https://github.com".to_string());
+        let mut map = serde_yaml::Mapping::new();
+        map.insert("fn".into(), "open_with".into());
+        map.insert("app".into(), "Google Chrome".into());
+        map.insert("arg".into(), "{{arg}}".into());
+        let action = serde_yaml::Value::Mapping(map);
+        let result = env.eval(action);
         assert!(result.is_ok());
     }
 
     #[test]
-    fn test_execute_open_with_browser() {
-        let env = Environment::new().unwrap();
-        let action = ActionSpec::OpenWith { 
-            app: "Google Chrome".to_string(),
-            arg: "https://github.com".to_string()
-        };
-        let result = execute(action, "", &env);
+    fn test_eval_url_action() {
+        let mut env = Environment::new().unwrap();
+        let mut map = serde_yaml::Mapping::new();
+        map.insert("fn".into(), "open_url".into());
+        map.insert("url".into(), "https://github.com".into());
+        let action = serde_yaml::Value::Mapping(map);
+        let result = env.eval(action);
         assert!(result.is_ok());
     }
 
     #[test]
-    fn test_execute_open_with_document() {
-        let env = Environment::new().unwrap();
-        // Use TextEdit which is installed on all macOS systems and a URL instead of file path
-        let action = ActionSpec::OpenWith { 
-            app: "TextEdit".to_string(),
-            arg: "https://apple.com".to_string()
-        };
-        let result = execute(action, "", &env);
+    fn test_eval_folder_action() {
+        let mut env = Environment::new().unwrap();
+        let mut map = serde_yaml::Mapping::new();
+        map.insert("fn".into(), "open_folder".into());
+        map.insert("path".into(), "/Users".into());
+        let action = serde_yaml::Value::Mapping(map);
+        let result = env.eval(action);
         assert!(result.is_ok());
     }
 
     #[test]
-    fn test_execute_url_action() {
-        let env = Environment::new().unwrap();
-        let action = ActionSpec::Url { url: "https://github.com".to_string() };
-        let result = execute(action, "", &env);
+    fn test_eval_shell_action() {
+        let mut env = Environment::new().unwrap();
+        let mut map = serde_yaml::Mapping::new();
+        map.insert("fn".into(), "shell".into());
+        map.insert("command".into(), "echo hello".into());
+        let action = serde_yaml::Value::Mapping(map);
+        let result = env.eval(action);
         assert!(result.is_ok());
     }
 
     #[test]
-    fn test_execute_folder_action() {
-        let env = Environment::new().unwrap();
-        let action = ActionSpec::Folder { path: "/Users".to_string() };
-        let result = execute(action, "", &env);
-        assert!(result.is_ok());
-    }
-
-    #[test]
-    fn test_execute_folder_action_with_spaces() {
-        let env = Environment::new().unwrap();
-        // Use a path that exists - the current user's home directory
-        let home_path = std::env::var("HOME").unwrap_or("/Users".to_string());
-        let action = ActionSpec::Folder { path: home_path };
-        let result = execute(action, "", &env);
-        assert!(result.is_ok());
-    }
-
-    #[test]
-    fn test_execute_shell_action_simple() {
-        let env = Environment::new().unwrap();
-        let action = ActionSpec::Shell { command: "echo hello".to_string() };
-        let result = execute(action, "", &env);
-        assert!(result.is_ok());
-    }
-
-    #[test]
-    fn test_execute_shell_action_complex() {
-        let env = Environment::new().unwrap();
-        let action = ActionSpec::Shell { command: "ls -la /tmp".to_string() };
-        let result = execute(action, "", &env);
-        assert!(result.is_ok());
-    }
-
-    #[test]
-    fn test_execute_javascript_action() {
-        let env = Environment::new().unwrap();
-        let action = ActionSpec::JavaScript { 
-            code: "shell('echo Hello from JavaScript');".to_string() 
-        };
-        let result = execute(action, "", &env);
+    fn test_eval_javascript_action() {
+        let mut env = Environment::new().unwrap();
+        let mut map = serde_yaml::Mapping::new();
+        map.insert("fn".into(), "javascript".into());
+        map.insert("code".into(), "log('Hello from JavaScript');".into());
+        let action = serde_yaml::Value::Mapping(map);
+        let result = env.eval(action);
         assert!(result.is_ok(), "JavaScript action should execute successfully: {:?}", result);
     }
 
@@ -580,5 +230,39 @@ mod tests {
         let env = Environment::new().unwrap();
         assert_eq!(env.config_path, PathBuf::from("config.yaml"));
         assert!(env.variables.is_empty());
+    }
+
+    #[test]
+    fn test_template_substitution() {
+        let mut env = Environment::new().unwrap();
+        env.variables.insert("arg".to_string(), "TestValue".to_string());
+        
+        let args = {
+            let mut map = std::collections::HashMap::new();
+            map.insert("name".to_string(), serde_yaml::Value::String("{{arg}}".to_string()));
+            map
+        };
+        
+        let substituted = substitute_template_in_args(&args, &env);
+        if let Some(serde_yaml::Value::String(name)) = substituted.get("name") {
+            assert_eq!(name, "TestValue");
+        } else {
+            panic!("Expected substituted name to be 'TestValue'");
+        }
+    }
+
+    #[test]
+    fn test_function_mapping_structure() {
+        let mut map = serde_yaml::Mapping::new();
+        map.insert("fn".into(), "launch_app".into());
+        map.insert("name".into(), "Finder".into());
+        let app_value = serde_yaml::Value::Mapping(map);
+        
+        if let serde_yaml::Value::Mapping(map) = app_value {
+            assert_eq!(map.get("fn"), Some(&serde_yaml::Value::String("launch_app".to_string())));
+            assert_eq!(map.get("name"), Some(&serde_yaml::Value::String("Finder".to_string())));
+        } else {
+            panic!("Expected mapping for app command");
+        }
     }
 }

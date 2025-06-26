@@ -22,59 +22,31 @@ settings:
 # =================================================================
 # LAUNCHER ACTION TYPES (when use_new_launcher: true)
 # =================================================================
-# These define how each action type behaves - equivalent to Python launcher
+# All actions now use the uniform {fn: function_name} format
+# No distinction between built-in Rust functions and JavaScript functions
 
 simple_functions:
-  # Basic actions
-  app: !App
-    name: "{{arg}}"           # app Finder -> launches Finder
+  # Basic actions - implemented as Rust built-ins (single-line format)
+  app: {fn: launch_app, name: "{{arg}}"}                    # app Finder -> launches Finder
+  url: {fn: open_url, url: "{{arg}}"}                       # url https://github.com -> opens in default browser
+  folder: {fn: open_folder, path: "{{arg}}"}                # folder /Applications -> opens folder
+  cmd: {fn: shell, command: "{{arg}}"}                      # cmd echo hello -> executes shell command
+  doc: {fn: open_with, app: "", arg: "{{arg}}"}             # doc ~/file.txt -> opens with default app
   
-  url: !Url
-    url: "{{arg}}"            # url https://github.com -> opens in default browser
+  # Browser-specific actions - implemented as Rust built-ins (single-line format)
+  chrome: {fn: open_with, app: "Google Chrome", arg: "{{arg}}"}      # chrome https://github.com -> opens in Chrome
+  safari: {fn: open_with, app: "Safari", arg: "{{arg}}"}             # safari https://apple.com -> opens in Safari
+  brave: {fn: open_with, app: "Brave Browser", arg: "{{arg}}"}       # brave https://brave.com -> opens in Brave
+  firefox: {fn: open_with, app: "Firefox", arg: "{{arg}}"}           # firefox https://mozilla.org -> opens in Firefox
+  work: {fn: open_with, app: "Google Chrome Beta", arg: "{{arg}}"}   # work https://company.com -> opens in work browser
   
-  folder: !Folder
-    path: "{{arg}}"           # folder /Applications -> opens folder
+  # Specialized app actions - implemented as Rust built-ins (single-line format)  
+  notion: {fn: open_with, app: "Notion", arg: "{{arg}}"}             # notion notion://page -> opens in Notion
+  obs_url: {fn: open_with, app: "Obsidian", arg: "{{arg}}"}          # obs_url obsidian://vault -> opens in Obsidian
   
-  cmd: !Shell
-    command: "{{arg}}"        # cmd echo hello -> executes shell command
-  
-  doc: !OpenWith
-    app: ""                   # doc ~/file.txt -> opens with default app
-    arg: "{{arg}}"
-  
-  # Browser-specific actions
-  chrome: !OpenWith
-    app: "Google Chrome"      # chrome https://github.com -> opens in Chrome
-    arg: "{{arg}}"
-  
-  safari: !OpenWith
-    app: "Safari"             # safari https://apple.com -> opens in Safari
-    arg: "{{arg}}"
-  
-  brave: !OpenWith
-    app: "Brave Browser"      # brave https://brave.com -> opens in Brave
-    arg: "{{arg}}"
-  
-  firefox: !OpenWith
-    app: "Firefox"            # firefox https://mozilla.org -> opens in Firefox
-    arg: "{{arg}}"
-  
-  work: !OpenWith
-    app: "Google Chrome Beta" # work https://company.com -> opens in work browser
-    arg: "{{arg}}"
-  
-  # Specialized app actions
-  notion: !OpenWith
-    app: "Notion"             # notion notion://page -> opens in Notion
-    arg: "{{arg}}"
-  
-  obs_url: !OpenWith
-    app: "Obsidian"           # obs_url obsidian://vault -> opens in Obsidian
-    arg: "{{arg}}"
-  
-  # 1Password using Quick Access (universal character injection approach)
-  # Uses Cmd+Shift+Space to open Quick Access, types search term, presses Enter
-  1pass: !Shell
+  # 1Password using Quick Access - implemented as Rust built-in (multi-line for readability)
+  1pass:
+    fn: shell
     command: "osascript -e 'tell application \"System Events\" to keystroke \" \" using {shift down, command down}' && sleep 0.3 && osascript -e 'tell application \"System Events\" to keystroke \"{{arg}}\"' && sleep 0.2 && osascript -e 'tell application \"System Events\" to key code 36'"
 
 # =================================================================
@@ -100,15 +72,14 @@ simple_functions:
 #   FULL_COMMAND - Complete original command (e.g., "anchor /tmp")
 #   COMMAND - JSON object with all command metadata
 js_functions:
-  # obs NAME - Complex Obsidian page handling with URL encoding
+  # Simple JavaScript functions - direct code
+  alias: 'launch("{{arg}}")'
+  
+  # Complex JavaScript functions - multi-line format
   obs: |
     const encoded = encodeURIComponent("{{arg}}");
     const url = `obsidian://open?vault=kmr&file=${encoded}`;
     launch_app("Obsidian", url);
-  
-  # alias NAME - Recursive command calling
-  alias: |
-    launch("{{arg}}");
   
   # anchor PATH - User-customizable anchor activation
   anchor: |

@@ -57,6 +57,7 @@ use std::path::{Path, PathBuf};
 use std::fs;
 use regex::Regex;
 use crate::Config;
+use crate::utils::expand_tilde;
 
 /// Creates a JavaScript runtime with all business logic built-ins configured
 pub fn create_business_logic_runtime() -> Result<Context, Box<dyn std::error::Error>> {
@@ -489,17 +490,7 @@ fn js_parse_yaml(ctx: Ctx<'_>, yaml_text: String) -> rquickjs::Result<String> {
 // Helper Functions
 // =============================================================================
 
-fn expand_tilde(path: &str) -> String {
-    if path.starts_with('~') {
-        if let Ok(home) = std::env::var("HOME") {
-            path.replacen('~', &home, 1)
-        } else {
-            path.to_string()
-        }
-    } else {
-        path.to_string()
-    }
-}
+// expand_tilde function moved to utils module
 
 fn walk_directory(dir: &str, files: &mut Vec<String>) {
     if let Ok(entries) = fs::read_dir(dir) {
