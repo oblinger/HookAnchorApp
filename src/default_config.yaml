@@ -14,7 +14,7 @@ popup_settings:
   listed_actions: "app,url,folder,cmd,chrome,safari,brave,firefox,work,notion,obs,obs_url,1pass,1pass_robust,anchor,alias,doc"
 
 # Launcher settings
-launcher_settings:
+settings:
   default_browser: "Google Chrome"
   work_browser: "Google Chrome Beta"
   timeout_ms: 5000
@@ -164,17 +164,8 @@ js_functions:
       }
     }
 
-# =================================================================
-# USER-DEFINED JAVASCRIPT FUNCTIONS
-# =================================================================
-# This section allows users to define custom JavaScript functions that extend
-# the global function namespace. These functions are available in all JavaScript
-# contexts (actions, business logic, etc.) and replace hardcoded app-specific functions.
-#
-# Functions are defined as function bodies (without the "function" keyword).
-# Use the new primitive functions to implement app-specific logic.
-
-js_functions:
+  # Helper functions (shared with JavaScript actions)
+  
   # Replace hardcoded iTerm activation with user-customizable version
   activate_iterm: |
     return activateApp("iTerm2");

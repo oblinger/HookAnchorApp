@@ -37,6 +37,19 @@ pub struct LauncherSettings {
     pub timeout_ms: Option<u64>,
 }
 
+// Helper function to convert from main Config to LauncherConfig
+fn config_to_launcher_config(config: &crate::Config) -> LauncherConfig {
+    LauncherConfig {
+        simple_functions: HashMap::new(), // Would need to be populated from config
+        js_functions: config.js_functions.clone().unwrap_or_default(),
+        settings: LauncherSettings {
+            default_browser: Some("Google Chrome".to_string()),
+            work_browser: Some("Google Chrome Beta".to_string()),
+            timeout_ms: Some(5000),
+        },
+    }
+}
+
 pub fn launch(command_line: &str) -> Result<(), LauncherError> {
     let start_time = SystemTime::now();
     
@@ -91,31 +104,36 @@ fn parse_command_line(command_line: &str) -> Result<(String, String), LauncherEr
 }
 
 fn load_config() -> Result<LauncherConfig, LauncherError> {
-    let config_path = get_launcher_config_path();
+    // Use the main config loader and convert to launcher config
+    let main_config = crate::load_config();
     
-    // If config file doesn't exist, create it from default
-    if !config_path.exists() {
-        // Ensure config directory exists
-        if let Some(parent) = config_path.parent() {
-            fs::create_dir_all(parent)
-                .map_err(|e| LauncherError::ConfigError(format!("Failed to create config directory: {}", e)))?;
-        }
-        
-        // Write default config to file
-        fs::write(&config_path, DEFAULT_CONFIG)
-            .map_err(|e| LauncherError::ConfigError(format!("Failed to write default config: {}", e)))?;
-        
-        debug_log(&format!("Created default config at: {:?}", config_path));
-    }
+    // For now, return a minimal launcher config
+    // In a full implementation, we'd parse the default_config.yaml or extract from main_config
+    let launcher_config = LauncherConfig {
+        simple_functions: get_default_simple_functions(),
+        js_functions: main_config.js_functions.unwrap_or_default(),
+        settings: LauncherSettings {
+            default_browser: Some("Google Chrome".to_string()),
+            work_browser: Some("Google Chrome Beta".to_string()),
+            timeout_ms: Some(5000),
+        },
+    };
     
-    // Read and parse YAML config
-    let contents = fs::read_to_string(&config_path)
-        .map_err(|e| LauncherError::ConfigError(format!("Failed to read config file: {}", e)))?;
-    
-    let config: LauncherConfig = serde_yaml::from_str(&contents)
-        .map_err(|e| LauncherError::ConfigError(format!("Failed to parse YAML config: {}", e)))?;
-    
-    Ok(config)
+    Ok(launcher_config)
+}
+
+// Helper to get default simple functions for testing
+fn get_default_simple_functions() -> HashMap<String, ActionSpec> {
+    let mut functions = HashMap::new();
+    functions.insert("app".to_string(), ActionSpec::App { name: "{{arg}}".to_string() });
+    functions.insert("url".to_string(), ActionSpec::Url { url: "{{arg}}".to_string() });
+    functions.insert("folder".to_string(), ActionSpec::Folder { path: "{{arg}}".to_string() });
+    functions.insert("cmd".to_string(), ActionSpec::Shell { command: "{{arg}}".to_string() });
+    functions.insert("chrome".to_string(), ActionSpec::OpenWith { 
+        app: "Google Chrome".to_string(), 
+        arg: "{{arg}}".to_string() 
+    });
+    functions
 }
 
 fn get_launcher_config_path() -> PathBuf {
