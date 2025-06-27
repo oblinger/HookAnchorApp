@@ -813,6 +813,53 @@ fn remove_last_word(text: &str, separators: &str) -> Option<String> {
     }
 }
 
+/// Check if a candidate string is valid for merging based on the search text
+/// A candidate is invalid if the user has typed past a word boundary into the next word
+fn is_valid_merge_candidate(candidate: &str, search_text: &str, active_prefix: &str, separators: &str) -> bool {
+    // Candidate must be longer than active prefix
+    if candidate.len() <= active_prefix.len() {
+        return false;
+    }
+    
+    // For validation, we need to check against the actual search text, not just the submenu prefix
+    let candidate_lower = candidate.to_lowercase();
+    let search_lower = search_text.to_lowercase();
+    
+    // Find where the search text matches in the candidate
+    if let Some(search_pos) = candidate_lower.find(&search_lower) {
+        let match_end = search_pos + search_text.len();
+        
+        // If search text is empty or very short, candidate is valid
+        if search_text.is_empty() || match_end == 0 {
+            return true;
+        }
+        
+        // Check one character back from match end
+        let check_pos = match_end - 1;
+        if check_pos < candidate.len() {
+            if let Some(ch) = candidate.chars().nth(check_pos) {
+                // If we're not at a separator (i.e., we're inside a word)
+                if !is_word_separator(ch, separators) {
+                    // Check if there's any separator from match_end to end of string
+                    if match_end < candidate.len() {
+                        let remaining = &candidate[match_end..];
+                        if !remaining.chars().any(|c| is_word_separator(c, separators)) {
+                            // No separator found after match point - user has typed into a specific word
+                            // This candidate should NOT be merged
+                            return false;
+                        }
+                    }
+                }
+            }
+        }
+        
+        true
+    } else {
+        // If search text doesn't match the candidate, it's not valid for merging
+        false
+    }
+}
+
 /// New merge_similar_commands implementation based on word removal approach
 pub fn merge_similar_commands(commands: &[Command], search_text: &str) -> Vec<Command> {
     if commands.is_empty() {
@@ -838,7 +885,8 @@ pub fn merge_similar_commands(commands: &[Command], search_text: &str) -> Vec<Co
     let mut valid_candidates = std::collections::HashSet::new();
     for cmd in commands {
         if let Some(candidate) = remove_last_word(&cmd.command, separators) {
-            if candidate.len() > active_prefix.len() {
+            // Use the new validation logic to check if this candidate should be merged
+            if is_valid_merge_candidate(&candidate, search_text, &active_prefix, separators) {
                 valid_candidates.insert(candidate);
             }
         }
@@ -900,34 +948,6 @@ pub fn merge_similar_commands(commands: &[Command], search_text: &str) -> Vec<Co
     result
 }
 
-/// Finds the longest common prefix among a group of strings
-fn find_longest_common_prefix(strings: Vec<&String>) -> String {
-    if strings.is_empty() {
-        return String::new();
-    }
-    
-    if strings.len() == 1 {
-        return strings[0].clone();
-    }
-    
-    let first = strings[0];
-    let mut common_prefix = String::new();
-    
-    for (i, ch) in first.char_indices() {
-        // Check if all strings have the same character at this position
-        let all_match = strings[1..].iter().all(|s| {
-            s.chars().nth(i).map_or(false, |c| c == ch)
-        });
-        
-        if all_match {
-            common_prefix.push(ch);
-        } else {
-            break;
-        }
-    }
-    
-    common_prefix
-}
 
 // =============================================================================
 // Command Execution

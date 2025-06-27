@@ -31,6 +31,7 @@ pub struct Environment {
     pub working_dir: PathBuf,
     pub variables: HashMap<String, String>,
     // JavaScript runtime - created once and reused
+    #[allow(dead_code)]
     js_runtime: Runtime,
     pub js_context: Context,
     // Function registry for built-in functions
@@ -110,15 +111,6 @@ impl Environment {
     
 }
 
-/// Helper function to extract string arguments from YAML values
-fn get_string_arg(args: &HashMap<String, serde_yaml::Value>, key: &str) -> Option<String> {
-    args.get(key).and_then(|v| {
-        match v {
-            serde_yaml::Value::String(s) => Some(s.clone()),
-            _ => None
-        }
-    })
-}
 
 /// Helper function for template substitution (public for tests and external use)
 pub fn substitute_template_in_args(args: &HashMap<String, serde_yaml::Value>, env: &Environment) -> HashMap<String, serde_yaml::Value> {

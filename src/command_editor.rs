@@ -90,17 +90,30 @@ impl CommandEditor {
         
         let mut result = CommandEditorResult::None;
         
+        // Handle escape key
+        if ctx.input(|i| i.key_pressed(egui::Key::Escape)) {
+            result = CommandEditorResult::Cancel;
+        }
+        
+        // Handle delete key - delete the current command and close editor
+        if ctx.input(|i| i.key_pressed(egui::Key::Delete)) {
+            // Only delete if we have an original command (editing existing command, not creating new)
+            if let Some(_) = &self.original_command {
+                let command_to_delete = if !self.original_command_name.is_empty() {
+                    self.original_command_name.clone()
+                } else {
+                    self.command.clone()
+                };
+                result = CommandEditorResult::Delete(command_to_delete);
+            }
+        }
+        
+        // Render as a large modal-style window that fills more space
         egui::Window::new("Command Editor")
-            .fixed_pos([300.0, 200.0])
-            .fixed_size([400.0, 300.0])
+            .default_size([420.0, 320.0])
             .resizable(false)
             .collapsible(false)
             .show(ctx, |ui| {
-                // Handle escape key
-                if ctx.input(|i| i.key_pressed(egui::Key::Escape)) {
-                    result = CommandEditorResult::Cancel;
-                }
-                
                 ui.vertical(|ui| {
                     ui.add_space(10.0);
                     

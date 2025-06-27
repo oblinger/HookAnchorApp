@@ -70,6 +70,7 @@ pub fn activate_anchor(anchor_path: &str) -> Result<String, Box<dyn std::error::
 
 #[cfg(test)]
 mod tests {
+    #[allow(unused_imports)]
     use super::*;
 
     #[test]

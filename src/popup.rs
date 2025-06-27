@@ -2,23 +2,39 @@ use eframe::egui;
 use std::process;
 use std::path::Path;
 use std::fs;
-use anchor_selector::{Command, filter_commands, execute_command, load_commands, merge_similar_commands, load_config, Config, split_commands, get_current_submenu_prefix};
+use anchor_selector::{
+    Command, filter_commands, execute_command, load_commands, merge_similar_commands, 
+    load_config, Config, split_commands, get_current_submenu_prefix
+};
 
 mod command_editor;
 use command_editor::{CommandEditor, CommandEditorResult};
 
+/// Main application state for the Anchor Selector popup window
 pub struct AnchorSelector {
+    /// All available commands loaded from commands.txt
     commands: Vec<Command>,
+    /// Current search text entered by the user
     search_text: String,
+    /// Commands that match the current search (filtered and potentially merged)
     filtered_commands: Vec<Command>,
+    /// Index of currently selected command in the filtered list
     selected_index: usize,
+    /// Last saved window position for persistence
     last_saved_position: Option<egui::Pos2>,
+    /// Whether window position has been set on startup
     position_set: bool,
+    /// Command editor dialog state
     command_editor: CommandEditor,
+    /// Application configuration
     config: Config,
 }
 
 impl AnchorSelector {
+    // =============================================================================
+    // Initialization
+    // =============================================================================
+    
     pub fn new() -> Self {
         let commands = load_commands();
         let filtered_commands = Vec::new(); // Start with empty list
@@ -36,6 +52,10 @@ impl AnchorSelector {
             config,
         }
     }
+    
+    // =============================================================================
+    // Command Filtering and Management
+    // =============================================================================
     
     fn update_filter(&mut self) {
         if self.search_text.trim().is_empty() {
@@ -72,6 +92,10 @@ impl AnchorSelector {
         // Always reset selection to first item when filter changes
         self.selected_index = 0;
     }
+    
+    // =============================================================================
+    // Layout and Display Logic
+    // =============================================================================
     
     // Calculate if we should use multi-column layout
     fn should_use_columns(&self) -> bool {
@@ -148,6 +172,10 @@ impl AnchorSelector {
         }
     }
     
+    // =============================================================================
+    // Navigation Logic
+    // =============================================================================
+    
     // Navigate up/down in the multi-column layout
     fn navigate_vertical(&mut self, direction: i32) {
         let (display_commands, _is_submenu, _menu_prefix, _inside_count) = self.get_display_commands();
@@ -157,6 +185,7 @@ impl AnchorSelector {
         }
         
         let max_index = display_commands.len() - 1;
+        #[allow(unused_assignments)]
         let mut new_index = self.selected_index;
         
         if self.should_use_columns() {
@@ -356,6 +385,50 @@ impl eframe::App for AnchorSelector {
             egui::Color32::from_gray(240)
         );
         
+        // Update command editor dialog BEFORE the main UI so it renders as a top-level window
+        self.command_editor.update_commands(&self.commands);
+        let editor_result = self.command_editor.update(ctx, &self.config);
+        match editor_result {
+            CommandEditorResult::Cancel => {
+                self.command_editor.hide();
+            }
+            CommandEditorResult::Save(_new_command, _original_command_name) => {
+                // Use the command editor's save method
+                if let Err(e) = self.command_editor.save_command(&mut self.commands) {
+                    eprintln!("Error saving command: {}", e);
+                } else {
+                    // Update the filtered list if we're currently filtering
+                    if !self.search_text.trim().is_empty() {
+                        self.update_filter();
+                    }
+                }
+                self.command_editor.hide();
+            }
+            CommandEditorResult::Delete(command_name) => {
+                // Delete the specified command and save to file
+                use anchor_selector::{delete_command, save_commands_to_file};
+                
+                let deleted = delete_command(&mut self.commands, &command_name);
+                if !deleted {
+                    eprintln!("Warning: Command '{}' not found for deletion", command_name);
+                } else {
+                    // Save the updated command list back to commands.txt
+                    if let Err(e) = save_commands_to_file(&self.commands) {
+                        eprintln!("Error saving commands to file after deletion: {}", e);
+                    } else {
+                        // Update the filtered list if we're currently filtering
+                        if !self.search_text.trim().is_empty() {
+                            self.update_filter();
+                        }
+                    }
+                }
+                self.command_editor.hide();
+            }
+            CommandEditorResult::None => {
+                // Continue normal operation
+            }
+        }
+        
         egui::CentralPanel::default()
             .frame(
                 egui::Frame::default()
@@ -398,8 +471,19 @@ impl eframe::App for AnchorSelector {
                         self.command_editor.edit_command(command_to_edit, &self.search_text);
                     }
                     if i.key_pressed(egui::Key::Equals) || (i.modifiers.shift && i.key_pressed(egui::Key::Equals)) {
-                        // = or + key (shift+=): open command editor with blank fields for new command
-                        self.command_editor.edit_command(None, &self.search_text);
+                        // = or + key (shift+=): open command editor
+                        // Check if there's an exact match (case-insensitive) for the search text
+                        let exact_match = self.commands.iter().find(|cmd| 
+                            cmd.command.to_lowercase() == self.search_text.to_lowercase()
+                        );
+                        
+                        if let Some(matching_command) = exact_match {
+                            // Found exact match - edit the existing command
+                            self.command_editor.edit_command(Some(matching_command), &self.search_text);
+                        } else {
+                            // No exact match - create new command with search text as name
+                            self.command_editor.edit_command(None, &self.search_text);
+                        }
                     }
                     if i.key_pressed(egui::Key::Enter) {
                         if !self.filtered_commands.is_empty() {
@@ -527,8 +611,18 @@ impl eframe::App for AnchorSelector {
                         (window_width, required_height)
                     };
                     
+                    // Adjust window size if command editor is visible - make it larger to accommodate the dialog
+                    let (final_width, final_height) = if self.command_editor.visible {
+                        // Make window significantly larger when command editor is open
+                        let editor_width = 500.0f32.max(window_width); // At least 500px wide
+                        let editor_height = 400.0f32.max(required_height); // At least 400px tall
+                        (editor_width, editor_height)
+                    } else {
+                        (window_width, required_height)
+                    };
+                    
                     // Resize window to accommodate content
-                    ctx.send_viewport_cmd(egui::ViewportCommand::InnerSize(egui::vec2(window_width, required_height)));
+                    ctx.send_viewport_cmd(egui::ViewportCommand::InnerSize(egui::vec2(final_width, final_height)));
                     
                     if self.should_use_columns() {
                         // Multi-column display
@@ -746,12 +840,19 @@ impl eframe::App for AnchorSelector {
                         }
                     }
                 } else {
-                    // No commands - resize to minimal height (just input field)
+                    // No commands - resize to minimal height (just input field), but expand if command editor is open
                     let input_height = 60.0;
                     let padding = 50.0;
                     let base_height = input_height + padding;
-                    let window_width = 500.0;
-                    ctx.send_viewport_cmd(egui::ViewportCommand::InnerSize(egui::vec2(window_width, base_height)));
+                    
+                    let (final_width, final_height) = if self.command_editor.visible {
+                        // Make window larger when command editor is open, even with no commands
+                        (500.0, 400.0f32.max(base_height))
+                    } else {
+                        (500.0, base_height)
+                    };
+                    
+                    ctx.send_viewport_cmd(egui::ViewportCommand::InnerSize(egui::vec2(final_width, final_height)));
                 }
                 
                 // Bottom draggable area
@@ -783,50 +884,6 @@ impl eframe::App for AnchorSelector {
                     save_window_position(current_pos);
                     self.last_saved_position = Some(current_pos);
                 }
-            }
-        }
-        
-        // Update command editor dialog
-        self.command_editor.update_commands(&self.commands);
-        let editor_result = self.command_editor.update(ctx, &self.config);
-        match editor_result {
-            CommandEditorResult::Cancel => {
-                self.command_editor.hide();
-            }
-            CommandEditorResult::Save(_new_command, _original_command_name) => {
-                // Use the command editor's save method
-                if let Err(e) = self.command_editor.save_command(&mut self.commands) {
-                    eprintln!("Error saving command: {}", e);
-                } else {
-                    // Update the filtered list if we're currently filtering
-                    if !self.search_text.trim().is_empty() {
-                        self.update_filter();
-                    }
-                }
-                self.command_editor.hide();
-            }
-            CommandEditorResult::Delete(command_name) => {
-                // Delete the specified command and save to file
-                use anchor_selector::{delete_command, save_commands_to_file};
-                
-                let deleted = delete_command(&mut self.commands, &command_name);
-                if !deleted {
-                    eprintln!("Warning: Command '{}' not found for deletion", command_name);
-                } else {
-                    // Save the updated command list back to commands.txt
-                    if let Err(e) = save_commands_to_file(&self.commands) {
-                        eprintln!("Error saving commands to file after deletion: {}", e);
-                    } else {
-                        // Update the filtered list if we're currently filtering
-                        if !self.search_text.trim().is_empty() {
-                            self.update_filter();
-                        }
-                    }
-                }
-                self.command_editor.hide();
-            }
-            CommandEditorResult::None => {
-                // Continue normal operation
             }
         }
     }

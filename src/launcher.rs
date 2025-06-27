@@ -1,11 +1,9 @@
 use crate::eval::{Environment, EvalError};
 use crate::utils::debug_log;
 use std::collections::HashMap;
-use std::path::PathBuf;
 use std::time::SystemTime;
 use serde::{Deserialize, Serialize};
 
-const DEFAULT_CONFIG: &str = include_str!("default_config.yaml");
 
 #[derive(Debug, Clone, PartialEq)]
 pub enum LauncherError {
@@ -36,18 +34,6 @@ pub struct LauncherSettings {
     pub timeout_ms: Option<u64>,
 }
 
-// Helper function to convert from main Config to LauncherConfig
-fn config_to_launcher_config(config: &crate::Config) -> LauncherConfig {
-    LauncherConfig {
-        simple_functions: HashMap::new(), // Would need to be populated from config
-        js_functions: config.js_functions.clone().unwrap_or_default(),
-        settings: LauncherSettings {
-            default_browser: Some("Google Chrome".to_string()),
-            work_browser: Some("Google Chrome Beta".to_string()),
-            timeout_ms: Some(5000),
-        },
-    }
-}
 
 pub fn launch(command_line: &str) -> Result<(), LauncherError> {
     let start_time = SystemTime::now();
@@ -103,13 +89,42 @@ fn parse_command_line(command_line: &str) -> Result<(String, String), LauncherEr
 }
 
 fn load_config() -> Result<LauncherConfig, LauncherError> {
-    // Use the main config loader and convert to launcher config
+    // Load the main config file
+    let config_path = {
+        let home = std::env::var("HOME").unwrap_or_else(|_| ".".to_string());
+        std::path::PathBuf::from(home).join(".config/anchor_selector/config.yaml")
+    };
+    
+    // Read and parse the YAML config file
+    let simple_functions = if let Ok(contents) = std::fs::read_to_string(&config_path) {
+        if let Ok(yaml_value) = serde_yaml::from_str::<serde_yaml::Value>(&contents) {
+            if let Some(simple_funcs) = yaml_value.get("simple_functions") {
+                if let Some(mapping) = simple_funcs.as_mapping() {
+                    let mut functions = HashMap::new();
+                    for (key, value) in mapping {
+                        if let Some(key_str) = key.as_str() {
+                            functions.insert(key_str.to_string(), value.clone());
+                        }
+                    }
+                    functions
+                } else {
+                    get_default_simple_functions()
+                }
+            } else {
+                get_default_simple_functions()
+            }
+        } else {
+            get_default_simple_functions()
+        }
+    } else {
+        get_default_simple_functions()
+    };
+    
+    // Load main config for JS functions
     let main_config = crate::load_config();
     
-    // For now, return a minimal launcher config
-    // In a full implementation, we'd parse the default_config.yaml or extract from main_config
     let launcher_config = LauncherConfig {
-        simple_functions: get_default_simple_functions(),
+        simple_functions,
         js_functions: main_config.js_functions.unwrap_or_default(),
         settings: LauncherSettings {
             default_browser: Some("Google Chrome".to_string()),
@@ -155,11 +170,6 @@ fn get_default_simple_functions() -> HashMap<String, serde_yaml::Value> {
     functions
 }
 
-fn get_launcher_config_path() -> PathBuf {
-    // Use the main config file (same as popup app)
-    let home = std::env::var("HOME").unwrap_or_else(|_| ".".to_string());
-    PathBuf::from(home).join(".config/anchor_selector/config.yaml")
-}
 
 
 fn lookup_action(action: &str, config: &LauncherConfig) -> Result<serde_yaml::Value, LauncherError> {
