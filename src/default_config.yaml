@@ -11,7 +11,7 @@ popup_settings:
   debug_log: "~/.anchor.log"  # Debug logging file path (empty/null to disable)
   # Command editor dropdown actions (comma-separated list)
   # Users can reorder, add, or remove actions to customize the dropdown
-  listed_actions: "app,url,folder,cmd,chrome,safari,brave,firefox,work,notion,obs,obs_url,1pass,1pass_robust,anchor,alias,doc"
+  listed_actions: "app,url,folder,cmd,chrome,safari,brave,firefox,work,notion,obs,obs_url,1pass,1pass_old,1pass_robust,anchor,alias,doc"
   # Enable merging of similar commands (true = merge "Analysis Folder", "Analysis Note" -> "Analysis...")
   merge_similar: true
   # Characters used as word separators for command parsing and merging
@@ -48,8 +48,9 @@ simple_functions:
   notion: {fn: open_with, app: "Notion", arg: "{{arg}}"}             # notion notion://page -> opens in Notion
   obs_url: {fn: open_with, app: "Obsidian", arg: "{{arg}}"}          # obs_url obsidian://vault -> opens in Obsidian
   
-  # 1Password using Quick Access - implemented as Rust built-in (multi-line for readability)
-  1pass:
+  
+  # 1Password using simple Quick Access (original approach, kept for compatibility)
+  1pass_old:
     fn: shell
     command: "osascript -e 'tell application \"System Events\" to keystroke \" \" using {shift down, command down}' && sleep 0.3 && osascript -e 'tell application \"System Events\" to keystroke \"{{arg}}\"' && sleep 0.2 && osascript -e 'tell application \"System Events\" to key code 36'"
 
@@ -110,6 +111,33 @@ js_functions:
     } else if (fileExists("CLAUDE.md")) {
       log("Found CLAUDE.md, starting Claude Code");
       start_claude_code();
+    }
+  
+  # 1pass NAME - 1Password with multiple fallback approaches (main implementation)
+  1pass: |
+    // Try Quick Access first (most universal)
+    try {
+      shell("osascript -e 'tell application \"System Events\" to keystroke \" \" using {shift down, command down}'");
+      shell("sleep 0.3");
+      shell("osascript -e 'tell application \"System Events\" to keystroke \"{{arg}}\"'");
+      shell("sleep 0.2");
+      shell("osascript -e 'tell application \"System Events\" to key code 36'");
+    } catch (e) {
+      // Fallback 1: Try menu bar access
+      try {
+        shell("osascript -e 'tell application \"System Events\" to tell process \"1Password 7 - Password Manager\" to click menu bar item 1 of menu bar 1'");
+        shell("sleep 0.5");
+        shell("osascript -e 'tell application \"System Events\" to keystroke \"{{arg}}\"'");
+        shell("osascript -e 'tell application \"System Events\" to key code 36'");
+      } catch (e2) {
+        // Fallback 2: Open 1Password app and use search
+        shell("osascript -e 'tell application \"1Password\" to activate'");
+        shell("sleep 0.5");
+        shell("osascript -e 'tell application \"System Events\" to keystroke \"f\" using command down'");
+        shell("sleep 0.2");
+        shell("osascript -e 'tell application \"System Events\" to keystroke \"{{arg}}\"'");
+        shell("osascript -e 'tell application \"System Events\" to key code 36'");
+      }
     }
   
   # 1pass_robust NAME - 1Password with multiple fallback approaches
