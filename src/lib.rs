@@ -36,6 +36,9 @@ pub struct PopupSettings {
     pub listed_actions: Option<String>,
     /// Enable merging of similar commands (ending with "...")
     pub merge_similar: Option<bool>,
+    /// Characters used as word separators for command parsing and merging
+    /// Default: " ._-" (space, dot, underscore, dash)
+    pub word_separators: Option<String>,
 }
 
 impl Default for PopupSettings {
@@ -47,6 +50,7 @@ impl Default for PopupSettings {
             debug_log: None,
             listed_actions: Some("app,url,folder,cmd,chrome,anchor".to_string()),
             merge_similar: Some(true), // Enable merging by default
+            word_separators: Some(" ._-".to_string()), // space, dot, underscore, dash
         }
     }
 }
@@ -793,9 +797,25 @@ pub fn reorder_commands_for_submenu(commands: &[Command], positions: &[usize]) -
     }
 }
 
-/// Simple command merging: Group commands by first word after search text, then merge with "..."
+/// Helper function to check if a character is a word separator
+fn is_word_separator(ch: char, separators: &str) -> bool {
+    separators.contains(ch)
+}
+
+/// Helper function to remove the last word from a command string
+/// Returns None if the string has no separators (i.e., is a single word)
+fn remove_last_word(text: &str, separators: &str) -> Option<String> {
+    // Find the last occurrence of any separator
+    if let Some(last_sep_pos) = text.rfind(|c| is_word_separator(c, separators)) {
+        Some(text[..last_sep_pos].to_string())
+    } else {
+        None // No separators found, can't remove last word
+    }
+}
+
+/// New merge_similar_commands implementation based on word removal approach
 pub fn merge_similar_commands(commands: &[Command], search_text: &str) -> Vec<Command> {
-    if commands.is_empty() || search_text.is_empty() {
+    if commands.is_empty() {
         return commands.to_vec();
     }
     
@@ -805,118 +825,74 @@ pub fn merge_similar_commands(commands: &[Command], search_text: &str) -> Vec<Co
         return commands.to_vec();
     }
     
-    // Step 1: Group commands by first word (up to first whitespace after search text)
+    // Get word separators from config
+    let separators = config.popup_settings.word_separators
+        .as_deref()
+        .unwrap_or(" ._-");
+    
+    // Step 1: Determine active prefix
+    let active_prefix = get_current_submenu_prefix(commands, search_text)
+        .unwrap_or_default();
+    
+    // Step 2: Generate valid candidate strings by removing last word from each command
+    let mut valid_candidates = std::collections::HashSet::new();
+    for cmd in commands {
+        if let Some(candidate) = remove_last_word(&cmd.command, separators) {
+            if candidate.len() > active_prefix.len() {
+                valid_candidates.insert(candidate);
+            }
+        }
+    }
+    
+    // Step 3: Group commands by matching them against candidates
     let mut groups: std::collections::HashMap<String, Vec<&Command>> = std::collections::HashMap::new();
+    let mut unmatched_commands = Vec::new();
     
     for cmd in commands {
-        let cmd_lower = cmd.command.to_lowercase();
-        let search_lower = search_text.to_lowercase();
+        let mut matched = false;
         
-        // Find the search text in the command
-        if let Some(search_pos) = cmd_lower.find(&search_lower) {
-            // Check if this is a word boundary match (search text followed by space/punctuation or at word start)
-            let is_word_boundary_match = {
-                // Check if search text is preceded by word boundary (start of string or non-alphanumeric)
-                let starts_at_word_boundary = search_pos == 0 || 
-                    !cmd_lower.chars().nth(search_pos - 1).unwrap_or(' ').is_alphanumeric();
-                
-                // Check if search text is followed by word boundary (space, punctuation, or end of string)
-                let after_search_pos = search_pos + search_text.len();
-                let ends_at_word_boundary = after_search_pos >= cmd.command.len() ||
-                    !cmd.command.chars().nth(after_search_pos).unwrap_or(' ').is_alphanumeric();
-                
-                starts_at_word_boundary && ends_at_word_boundary
-            };
-            
-            if is_word_boundary_match {
-                // Word boundary match - use text after search for grouping
-                let after_search_pos = search_pos + search_text.len();
-                let after_search = &cmd.command[after_search_pos..];
-                
-                // Skip any whitespace immediately after the search text
-                let after_search_trimmed = after_search.trim_start();
-                
-                if !after_search_trimmed.is_empty() {
-                    // Find the first word after the search text (up to first whitespace)
-                    let group_word = if let Some(space_pos) = after_search_trimmed.find(' ') {
-                        &after_search_trimmed[..space_pos]
-                    } else {
-                        after_search_trimmed
-                    };
-                    
-                    // Use this word as the grouping key
-                    groups.entry(group_word.to_string()).or_insert_with(Vec::new).push(cmd);
-                } else {
-                    // Nothing after search text, keep as individual command
-                    groups.entry(cmd.command.clone()).or_insert_with(Vec::new).push(cmd);
-                }
-            } else {
-                // Search text is in middle of word - use the text after the search as grouping key
-                // This handles cases like "Financial Model" where "fin" is inside "Financial"
-                let after_search_pos = search_pos + search_text.len();
-                
-                // Find the next word boundary after the search text
-                let remaining_text = &cmd.command[after_search_pos..];
-                let next_space_pos = remaining_text.find(' ').unwrap_or(remaining_text.len());
-                let _current_word_remainder = &remaining_text[..next_space_pos];
-                
-                // Skip the current word and find the next word for grouping
-                let after_current_word = &remaining_text[next_space_pos..].trim_start();
-                
-                if !after_current_word.is_empty() {
-                    // Find the first complete word after the current word
-                    let group_word = if let Some(space_pos) = after_current_word.find(' ') {
-                        &after_current_word[..space_pos]
-                    } else {
-                        after_current_word
-                    };
-                    
-                    // Use this word as the grouping key
-                    groups.entry(group_word.to_string()).or_insert_with(Vec::new).push(cmd);
-                } else {
-                    // No words after current word, keep as individual command
-                    groups.entry(cmd.command.clone()).or_insert_with(Vec::new).push(cmd);
+        // Try direct match against candidates
+        if valid_candidates.contains(&cmd.command) {
+            groups.entry(cmd.command.clone()).or_insert_with(Vec::new).push(cmd);
+            matched = true;
+        } else {
+            // Try removing 1 word and matching against candidates
+            if let Some(shortened) = remove_last_word(&cmd.command, separators) {
+                if valid_candidates.contains(&shortened) {
+                    groups.entry(shortened).or_insert_with(Vec::new).push(cmd);
+                    matched = true;
                 }
             }
-        } else {
-            // Command doesn't contain search text, keep as individual
-            groups.entry(cmd.command.clone()).or_insert_with(Vec::new).push(cmd);
+        }
+        
+        if !matched {
+            unmatched_commands.push(cmd);
         }
     }
     
-    // Step 2: For each group with 2+ commands, create a merged entry with "..."
+    // Step 4: Create final result
     let mut result = Vec::new();
     
-    for (group_key, group_commands) in groups {
-        if group_commands.len() >= 2 {
-            // Create merged entry: find common prefix and add "..."
-            let first_cmd = group_commands[0];
-            
-            // Find the search text position in the first command to reconstruct the prefix
-            let cmd_lower = first_cmd.command.to_lowercase();
-            let search_lower = search_text.to_lowercase();
-            
-            if let Some(search_pos) = cmd_lower.find(&search_lower) {
-                let prefix_end = search_pos + search_text.len();
-                let prefix = &first_cmd.command[..prefix_end];
-                
-                let merged_command = Command {
-                    group: first_cmd.group.clone(),
-                    command: format!("{} {}...", prefix, group_key),
-                    action: first_cmd.action.clone(),
-                    arg: first_cmd.arg.clone(),
-                    full_line: first_cmd.full_line.clone(),
-                };
-                result.push(merged_command);
-            } else {
-                // Fallback: shouldn't happen but keep the command as-is
-                result.push(first_cmd.clone());
-            }
+    // Process groups
+    for (candidate, command_list) in groups {
+        if command_list.len() >= 2 {
+            // Create merged entry
+            let merged_command = Command {
+                group: command_list[0].group.clone(),
+                command: format!("{}...", candidate),
+                action: command_list[0].action.clone(),
+                arg: command_list[0].arg.clone(),
+                full_line: command_list[0].full_line.clone(),
+            };
+            result.push(merged_command);
         } else {
-            // Single command, keep as-is
-            result.push(group_commands[0].clone());
+            // Single command in group, keep unchanged
+            result.extend(command_list.iter().cloned().cloned());
         }
     }
+    
+    // Add unmatched commands
+    result.extend(unmatched_commands.iter().cloned().cloned());
     
     // Sort to maintain consistent order
     result.sort_by(|a, b| a.command.cmp(&b.command));

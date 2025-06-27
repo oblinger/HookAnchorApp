@@ -411,7 +411,37 @@ impl eframe::App for AnchorSelector {
                                 
                                 // Don't execute if it's a separator
                                 if !Self::is_separator_command(selected_cmd) {
-                                    execute_command(&selected_cmd.command);
+                                    // For merged commands (ending with "..."), use the action and arg directly
+                                    // instead of looking up by command name
+                                    if selected_cmd.command.ends_with("...") {
+                                        // Execute using the stored action and arg from the merged command
+                                        let launcher_command = if selected_cmd.arg.is_empty() {
+                                            selected_cmd.action.clone()
+                                        } else {
+                                            format!("{} {}", selected_cmd.action, selected_cmd.arg)
+                                        };
+                                        
+                                        // Use the same execution logic as execute_command
+                                        let config = load_config();
+                                        if config.popup_settings.use_new_launcher {
+                                            use anchor_selector::launcher::launch;
+                                            if let Err(e) = launch(&launcher_command) {
+                                                eprintln!("Error executing command with new launcher: {:?}", e);
+                                                std::process::exit(1);
+                                            }
+                                        } else {
+                                            // Use old temp file method for backward compatibility
+                                            use std::fs;
+                                            let content = format!("execute {}\n", launcher_command);
+                                            if let Err(e) = fs::write("/tmp/cmd_file", content) {
+                                                eprintln!("Error writing to /tmp/cmd_file: {}", e);
+                                                std::process::exit(1);
+                                            }
+                                        }
+                                    } else {
+                                        // For non-merged commands, use the existing lookup method
+                                        execute_command(&selected_cmd.command);
+                                    }
                                     std::process::exit(0);
                                 }
                             }

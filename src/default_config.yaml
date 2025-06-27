@@ -12,6 +12,10 @@ popup_settings:
   # Command editor dropdown actions (comma-separated list)
   # Users can reorder, add, or remove actions to customize the dropdown
   listed_actions: "app,url,folder,cmd,chrome,safari,brave,firefox,work,notion,obs,obs_url,1pass,1pass_robust,anchor,alias,doc"
+  # Enable merging of similar commands (true = merge "Analysis Folder", "Analysis Note" -> "Analysis...")
+  merge_similar: true
+  # Characters used as word separators for command parsing and merging
+  word_separators: " ._-"
 
 # Launcher settings
 settings:
