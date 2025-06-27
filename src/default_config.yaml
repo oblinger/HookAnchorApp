@@ -7,7 +7,7 @@
 popup_settings:
   max_rows: 15
   max_columns: 3
-  use_new_launcher: true  # Enable new Rust launcher (false = Python launcher)
+  use_new_launcher: false  # Enable new Rust launcher (false = Python launcher)
   debug_log: "~/.anchor.log"  # Debug logging file path (empty/null to disable)
   # Command editor dropdown actions (comma-separated list)
   # Users can reorder, add, or remove actions to customize the dropdown

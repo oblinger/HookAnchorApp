@@ -2,7 +2,7 @@ use eframe::egui;
 use std::process;
 use std::path::Path;
 use std::fs;
-use anchor_selector::{Command, filter_commands, execute_command, load_commands, get_submenu_display_positions, get_submenu_prefix, load_config, Config};
+use anchor_selector::{Command, filter_commands, execute_command, load_commands, merge_similar_commands, load_config, Config, split_commands, get_current_submenu_prefix};
 
 mod command_editor;
 use command_editor::{CommandEditor, CommandEditorResult};
@@ -42,7 +42,31 @@ impl AnchorSelector {
             self.filtered_commands.clear();
         } else {
             let total_limit = self.config.popup_settings.max_rows * self.config.popup_settings.max_columns;
-            self.filtered_commands = filter_commands(&self.commands, &self.search_text, total_limit, false);
+            let mut filtered = filter_commands(&self.commands, &self.search_text, total_limit * 2, false); // Get more to account for merging
+            
+            // Apply merge_similar only if enabled, and use split-before-merge logic
+            if self.config.popup_settings.merge_similar.unwrap_or(false) {
+                // Always check if we're in submenu mode and split before merging
+                if let Some(menu_prefix) = get_current_submenu_prefix(&filtered, &self.search_text) {
+                    let (inside_menu, outside_menu) = split_commands(&filtered, &menu_prefix);
+                    
+                    // Merge each list separately
+                    let merged_inside = merge_similar_commands(&inside_menu, &self.search_text);
+                    let merged_outside = merge_similar_commands(&outside_menu, &self.search_text);
+                    
+                    // Combine the results
+                    filtered = merged_inside;
+                    filtered.extend(merged_outside);
+                } else {
+                    // Not in submenu mode, merge normally
+                    filtered = merge_similar_commands(&filtered, &self.search_text);
+                }
+            }
+            
+            // Truncate to display limit after merging
+            filtered.truncate(total_limit);
+            
+            self.filtered_commands = filtered;
         }
         
         // Always reset selection to first item when filter changes
@@ -88,61 +112,126 @@ impl AnchorSelector {
         col * rows_per_col + row
     }
     
+    // Check if a command is a separator (for skipping during navigation)
+    fn is_separator_command(cmd: &Command) -> bool {
+        cmd.command == "---" && cmd.action == "separator"
+    }
+    
+    /// Compute the commands to display based on current menu state
+    /// Returns (commands_to_display, is_in_submenu, menu_prefix, inside_count)
+    fn get_display_commands(&self) -> (Vec<Command>, bool, Option<String>, usize) {
+        if let Some(menu_prefix) = get_current_submenu_prefix(&self.filtered_commands, &self.search_text) {
+            // Split commands to determine submenu display
+            let (inside_menu, outside_menu) = split_commands(&self.filtered_commands, &menu_prefix);
+            
+            // In submenu mode: show inside commands first, then separator, then outside commands
+            let mut display_commands = inside_menu.clone();
+            let inside_count = inside_menu.len();
+            
+            // Add separator if we have both inside and outside commands
+            if !display_commands.is_empty() && !outside_menu.is_empty() {
+                display_commands.push(Command {
+                    group: String::new(),
+                    command: "---".to_string(),
+                    action: "separator".to_string(),
+                    arg: String::new(),
+                    full_line: "---".to_string(),
+                });
+            }
+            
+            display_commands.extend(outside_menu);
+            
+            (display_commands, true, Some(menu_prefix), inside_count)
+        } else {
+            // Not in submenu mode, use filtered commands directly
+            (self.filtered_commands.clone(), false, None, 0)
+        }
+    }
+    
     // Navigate up/down in the multi-column layout
     fn navigate_vertical(&mut self, direction: i32) {
-        if self.filtered_commands.is_empty() {
+        let (display_commands, _is_submenu, _menu_prefix, _inside_count) = self.get_display_commands();
+        
+        if display_commands.is_empty() {
             return;
         }
         
-        let (rows_per_col, cols_to_use) = self.get_column_layout();
-        let (current_col, current_row) = self.index_to_coords(self.selected_index);
+        let max_index = display_commands.len() - 1;
+        let mut new_index = self.selected_index;
         
-        let new_row = if direction > 0 {
-            // Down: move to next row, wrapping to next column if needed
-            if current_row + 1 < rows_per_col {
-                // Stay in same column, move down
-                let new_index = self.coords_to_index(current_col, current_row + 1);
-                if new_index < self.filtered_commands.len() {
-                    current_row + 1
+        if self.should_use_columns() {
+            // Multi-column navigation
+            let (rows_per_col, cols_to_use) = self.get_column_layout();
+            let (current_col, current_row) = self.index_to_coords(self.selected_index);
+            
+            let new_row = if direction > 0 {
+                // Down: move to next row, wrapping to next column if needed
+                if current_row + 1 < rows_per_col {
+                    // Stay in same column, move down
+                    let test_index = self.coords_to_index(current_col, current_row + 1);
+                    if test_index < display_commands.len() {
+                        current_row + 1
+                    } else {
+                        current_row // Don't move if target doesn't exist
+                    }
+                } else if current_col + 1 < cols_to_use {
+                    // Move to top of next column
+                    0
                 } else {
-                    current_row // Don't move if target doesn't exist
+                    current_row // Stay at bottom of last column
                 }
-            } else if current_col + 1 < cols_to_use {
-                // Move to top of next column
-                0
             } else {
-                current_row // Stay at bottom of last column
-            }
-        } else {
-            // Up: move to previous row, wrapping to previous column if needed
-            if current_row > 0 {
-                current_row - 1
-            } else if current_col > 0 {
-                // Move to bottom of previous column
-                let prev_col_size = if current_col == cols_to_use - 1 && self.filtered_commands.len() % rows_per_col != 0 {
-                    // Last column might be shorter
-                    (self.filtered_commands.len() - 1) % rows_per_col
+                // Up: move to previous row, wrapping to previous column if needed
+                if current_row > 0 {
+                    current_row - 1
+                } else if current_col > 0 {
+                    // Move to bottom of previous column
+                    let prev_col_size = if current_col == cols_to_use - 1 && display_commands.len() % rows_per_col != 0 {
+                        // Last column might be shorter
+                        (display_commands.len() - 1) % rows_per_col
+                    } else {
+                        rows_per_col - 1
+                    };
+                    prev_col_size
                 } else {
-                    rows_per_col - 1
-                };
-                prev_col_size
+                    current_row // Stay at top of first column
+                }
+            };
+            
+            let new_col = if direction > 0 && current_row + 1 >= rows_per_col && current_col + 1 < cols_to_use {
+                current_col + 1
+            } else if direction < 0 && current_row == 0 && current_col > 0 {
+                current_col - 1
             } else {
-                current_row // Stay at top of first column
+                current_col
+            };
+            
+            new_index = self.coords_to_index(new_col, new_row);
+            if new_index > max_index {
+                return; // Don't move if out of bounds
             }
-        };
-        
-        let new_col = if direction > 0 && current_row + 1 >= rows_per_col && current_col + 1 < cols_to_use {
-            current_col + 1
-        } else if direction < 0 && current_row == 0 && current_col > 0 {
-            current_col - 1
         } else {
-            current_col
-        };
-        
-        let new_index = self.coords_to_index(new_col, new_row);
-        if new_index < self.filtered_commands.len() {
-            self.selected_index = new_index;
+            // Single column navigation
+            if direction > 0 {
+                new_index = (self.selected_index + 1).min(max_index);
+            } else {
+                new_index = self.selected_index.saturating_sub(1);
+            }
         }
+        
+        // Skip separator when navigating
+        if new_index < display_commands.len() && Self::is_separator_command(&display_commands[new_index]) {
+            if direction > 0 && new_index + 1 <= max_index {
+                new_index += 1;
+            } else if direction < 0 && new_index > 0 {
+                new_index -= 1;
+            } else {
+                // Can't skip separator, stay where we are
+                return;
+            }
+        }
+        
+        self.selected_index = new_index;
     }
     
 }
@@ -313,10 +402,19 @@ impl eframe::App for AnchorSelector {
                         self.command_editor.edit_command(None, &self.search_text);
                     }
                     if i.key_pressed(egui::Key::Enter) {
-                        if !self.filtered_commands.is_empty() && self.selected_index < self.filtered_commands.len() {
-                            let selected_cmd = &self.filtered_commands[self.selected_index];
-                            execute_command(&selected_cmd.command);
-                            std::process::exit(0);
+                        if !self.filtered_commands.is_empty() {
+                            // Get display commands for execution
+                            let (display_commands, _is_submenu, _menu_prefix, _inside_count) = self.get_display_commands();
+                            
+                            if self.selected_index < display_commands.len() {
+                                let selected_cmd = &display_commands[self.selected_index];
+                                
+                                // Don't execute if it's a separator
+                                if !Self::is_separator_command(selected_cmd) {
+                                    execute_command(&selected_cmd.command);
+                                    std::process::exit(0);
+                                }
+                            }
                         }
                     }
                 });
@@ -355,35 +453,59 @@ impl eframe::App for AnchorSelector {
                 // Command list - check for submenu and display accordingly  
                 // No scroll area - window will size to accommodate max_rows
                 if !self.filtered_commands.is_empty() {
-                    // Calculate required window dimensions
-                    let row_height = 28.0; // Slightly larger to account for font size and spacing
-                    let input_height = 60.0; // Height for search input (accounting for larger font)
-                    let padding = 50.0; // Top and bottom margins (more generous)
+                    // Get the display commands using our new method
+                    let (display_commands, is_submenu, menu_prefix, inside_count) = self.get_display_commands();
+                    
+                    // Calculate required window dimensions based on final display commands
+                    // Use actual font metrics for precise sizing
+                    let mut input_font_id = ui.style().text_styles.get(&egui::TextStyle::Heading).unwrap().clone();
+                    input_font_id.size *= 1.5; // Same scaling as used for input
+                    let input_height = ui.fonts(|f| f.row_height(&input_font_id)) + 20.0; // Add padding for input box
+                    
+                    let mut list_font_id = ui.style().text_styles.get(&egui::TextStyle::Body).unwrap().clone();
+                    list_font_id.size *= 1.5; // Same scaling as used for command list
+                    let row_height = ui.fonts(|f| f.row_height(&list_font_id)) + 4.0; // Add more spacing between rows
+                    
+                    let header_height = if is_submenu {
+                        let mut header_font_id = ui.style().text_styles.get(&egui::TextStyle::Heading).unwrap().clone();
+                        header_font_id.size *= 1.3; // Same scaling as used for header
+                        ui.fonts(|f| f.row_height(&header_font_id)) + 8.0 // Add the gap after header
+                    } else {
+                        0.0
+                    };
+                    
+                    let padding = 60.0; // Top and bottom margins - increased for safety
+                    let bottom_drag_height = 20.0; // Height of bottom draggable area
+                    let mid_drag_height = 18.0; // Height between input and list
                     
                     let (window_width, required_height) = if self.should_use_columns() {
-                        let (rows_per_col, cols_to_use) = self.get_column_layout();
+                        // Recalculate layout based on actual display command count
+                        let total_items = display_commands.len();
+                        let max_rows = self.config.popup_settings.max_rows;
+                        let max_cols = self.config.popup_settings.max_columns;
+                        let cols_needed = (total_items + max_rows - 1) / max_rows;
+                        let cols_to_use = cols_needed.min(max_cols);
+                        let rows_per_col = (total_items + cols_to_use - 1) / cols_to_use;
+                        
                         let column_width = 250.0; // Width per column
                         let total_width = (cols_to_use as f32 * column_width) + 50.0; // Add some padding
-                        let total_height = input_height + padding + (rows_per_col as f32 * row_height);
+                        let total_height = input_height + mid_drag_height + header_height + (rows_per_col as f32 * row_height) + bottom_drag_height + padding;
                         (total_width, total_height)
                     } else {
                         let window_width = 500.0;
-                        let required_height = input_height + padding + (self.filtered_commands.len() as f32 * row_height);
+                        let required_height = input_height + mid_drag_height + header_height + (display_commands.len() as f32 * row_height) + bottom_drag_height + padding;
                         (window_width, required_height)
                     };
                     
                     // Resize window to accommodate content
                     ctx.send_viewport_cmd(egui::ViewportCommand::InnerSize(egui::vec2(window_width, required_height)));
                     
-                    let submenu_positions = get_submenu_display_positions(&self.filtered_commands, &self.search_text);
-                    
                     if self.should_use_columns() {
                         // Multi-column display
-                        let (rows_per_col, cols_to_use) = self.get_column_layout();
                         
                         // Show submenu header if applicable (even in multi-column mode)
-                        if !submenu_positions.is_empty() {
-                            if let Some(prefix) = get_submenu_prefix(&self.filtered_commands, &self.search_text) {
+                        if is_submenu {
+                            if let Some(ref prefix) = menu_prefix {
                                 let mut header_font_id = ui.style().text_styles.get(&egui::TextStyle::Heading).unwrap().clone();
                                 header_font_id.size *= 1.3;
                                 
@@ -395,45 +517,88 @@ impl eframe::App for AnchorSelector {
                             }
                         }
                         
+                        // Use the same layout calculation as above
+                        let total_items = display_commands.len();
+                        let max_rows = self.config.popup_settings.max_rows;
+                        let max_cols = self.config.popup_settings.max_columns;
+                        let cols_needed = (total_items + max_rows - 1) / max_rows;
+                        let cols_to_use = cols_needed.min(max_cols);
+                        let rows_per_col = (total_items + cols_to_use - 1) / cols_to_use;
+                        
                         ui.horizontal(|ui| {
                             for col in 0..cols_to_use {
                                 ui.vertical(|ui| {
                                     for row in 0..rows_per_col {
                                         let i = col * rows_per_col + row;
-                                        if i >= self.filtered_commands.len() {
+                                        if i >= display_commands.len() {
                                             break;
                                         }
                                         
-                                        let cmd = &self.filtered_commands[i];
+                                        let cmd = &display_commands[i];
                                         let is_selected = i == self.selected_index;
+                                        let is_separator = Self::is_separator_command(cmd);
                                         
-                                        // Determine display text based on submenu positions
-                                        let display_text = if !submenu_positions.is_empty() && i < submenu_positions.len() {
-                                            let pos = submenu_positions[i];
-                                            if pos == 0 {
-                                                cmd.command.clone()
-                                            } else if pos < cmd.command.len() {
-                                                cmd.command[pos..].to_string()
+                                        // Determine display text based on submenu mode and position
+                                        let display_text = if is_submenu && !is_separator && i < inside_count {
+                                            // This is an inside menu command - apply trimming logic
+                                            if let Some(ref prefix) = menu_prefix {
+                                                // Check if this command should have its prefix trimmed
+                                                if cmd.command.len() > prefix.len() {
+                                                    let prefix_end = prefix.len();
+                                                    if cmd.command[..prefix_end].eq_ignore_ascii_case(prefix) {
+                                                        // Check if there's a separator right after the prefix
+                                                        if let Some(ch) = cmd.command.chars().nth(prefix_end) {
+                                                            if ch == ' ' || ch == '.' || ch == '_' {
+                                                                // Trim the prefix and separator
+                                                                cmd.command[prefix_end + 1..].to_string()
+                                                            } else {
+                                                                cmd.command.clone()
+                                                            }
+                                                        } else {
+                                                            cmd.command.clone()
+                                                        }
+                                                    } else {
+                                                        cmd.command.clone()
+                                                    }
+                                                } else {
+                                                    cmd.command.clone()
+                                                }
                                             } else {
                                                 cmd.command.clone()
                                             }
                                         } else {
+                                            // This is either not in submenu mode OR it's an outside menu command
+                                            // Always show full command name
                                             cmd.command.clone()
                                         };
                                         
-                                        // Use larger font for command list (50% bigger than body)
-                                        let mut list_font_id = ui.style().text_styles.get(&egui::TextStyle::Body).unwrap().clone();
-                                        list_font_id.size *= 1.5; // Make 50% larger
-                                        
-                                        let response = ui.selectable_label(
-                                            is_selected,
-                                            egui::RichText::new(&display_text).font(list_font_id)
-                                        );
-                                        
-                                        if response.clicked() {
-                                            self.selected_index = i;
-                                            execute_command(&cmd.command);
-                                            process::exit(0);
+                                        if is_separator {
+                                            // Separator - not selectable, different styling
+                                            let mut separator_font_id = ui.style().text_styles.get(&egui::TextStyle::Body).unwrap().clone();
+                                            separator_font_id.size *= 1.2;
+                                            ui.label(egui::RichText::new("---").font(separator_font_id).color(egui::Color32::GRAY));
+                                        } else {
+                                            // Regular command
+                                            let mut list_font_id = ui.style().text_styles.get(&egui::TextStyle::Body).unwrap().clone();
+                                            list_font_id.size *= 1.5; // Make 50% larger
+                                            
+                                            // Make merged entries (ending with "...") bold
+                                            let text = if display_text.ends_with("...") {
+                                                egui::RichText::new(&display_text).font(list_font_id.clone()).strong()
+                                            } else {
+                                                egui::RichText::new(&display_text).font(list_font_id)
+                                            };
+                                            
+                                            let response = ui.selectable_label(
+                                                is_selected,
+                                                text
+                                            );
+                                            
+                                            if response.clicked() {
+                                                self.selected_index = i;
+                                                execute_command(&cmd.command);
+                                                process::exit(0);
+                                            }
                                         }
                                     }
                                 });
@@ -444,116 +609,110 @@ impl eframe::App for AnchorSelector {
                                 }
                             }
                         });
-                    } else if submenu_positions.is_empty() {
-                        // Single-column regular display - show full command names
-                        for (i, cmd) in self.filtered_commands.iter().enumerate() {
-                            let is_selected = i == self.selected_index;
-                            
-                            // Left-justified selectable label with draggable margins
-                            ui.horizontal(|ui| {
-                                // Left margin draggable area
-                                let left_drag = ui.allocate_response(
-                                    egui::Vec2::new(10.0, ui.text_style_height(&egui::TextStyle::Body)),
-                                    egui::Sense::drag()
-                                );
-                                if left_drag.dragged() {
-                                    ctx.send_viewport_cmd(egui::ViewportCommand::StartDrag);
-                                }
-                                
-                                // Use larger font for command list (50% bigger than body)
-                                let mut list_font_id = ui.style().text_styles.get(&egui::TextStyle::Body).unwrap().clone();
-                                list_font_id.size *= 1.5; // Make 50% larger
-                                
-                                let response = ui.selectable_label(
-                                    is_selected,
-                                    egui::RichText::new(&cmd.command).font(list_font_id)
-                                );
-                                
-                                if response.clicked() {
-                                    self.selected_index = i;
-                                    execute_command(&cmd.command);
-                                    process::exit(0);
-                                }
-                                
-                                // Right margin draggable area
-                                let right_drag = ui.allocate_response(
-                                    egui::Vec2::new(10.0, ui.text_style_height(&egui::TextStyle::Body)),
-                                    egui::Sense::drag()
-                                );
-                                if right_drag.dragged() {
-                                    ctx.send_viewport_cmd(egui::ViewportCommand::StartDrag);
-                                }
-                            });
-                        }
                     } else {
-                        // Single-column submenu display
+                        // Single-column display
                         
-                        // First show the submenu header (prefix + arrow) - left aligned with input
-                        if let Some(prefix) = get_submenu_prefix(&self.filtered_commands, &self.search_text) {
-                            // Submenu header with larger font and left alignment
-                            let mut header_font_id = ui.style().text_styles.get(&egui::TextStyle::Heading).unwrap().clone();
-                            header_font_id.size *= 1.3; // Make larger than regular commands
-                            
-                            ui.horizontal(|ui| {
-                                // No left margin for header - align with input box
-                                ui.label(egui::RichText::new(format!("{} ->", prefix)).font(header_font_id));
-                            });
-                            
-                            ui.add_space(8.0); // Small gap between header and commands
+                        // Show submenu header if applicable
+                        if is_submenu {
+                            if let Some(ref prefix) = menu_prefix {
+                                let mut header_font_id = ui.style().text_styles.get(&egui::TextStyle::Heading).unwrap().clone();
+                                header_font_id.size *= 1.3;
+                                
+                                ui.horizontal(|ui| {
+                                    ui.label(egui::RichText::new(format!("{} ->", prefix)).font(header_font_id));
+                                });
+                                
+                                ui.add_space(8.0);
+                            }
                         }
                         
-                        // Then show the command suffixes with indentation
-                        for (i, (cmd, &pos)) in self.filtered_commands.iter().zip(submenu_positions.iter()).enumerate() {
+                        for (i, cmd) in display_commands.iter().enumerate() {
                             let is_selected = i == self.selected_index;
+                            let is_separator = Self::is_separator_command(cmd);
                             
-                            // Determine display text based on position
-                            let display_text = if pos == 0 {
-                                // Show full command name
-                                cmd.command.clone()
+                            if is_separator {
+                                // Separator - not selectable, different styling
+                                let mut separator_font_id = ui.style().text_styles.get(&egui::TextStyle::Body).unwrap().clone();
+                                separator_font_id.size *= 1.2;
+                                ui.label(egui::RichText::new("---").font(separator_font_id).color(egui::Color32::GRAY));
                             } else {
-                                // Show suffix starting from position
-                                if pos < cmd.command.len() {
-                                    cmd.command[pos..].to_string()
+                                // Determine display text based on submenu mode and position
+                                let display_text = if is_submenu && i < inside_count {
+                                    // This is an inside menu command - apply trimming logic
+                                    if let Some(ref prefix) = menu_prefix {
+                                        // Check if this command should have its prefix trimmed
+                                        if cmd.command.len() > prefix.len() {
+                                            let prefix_end = prefix.len();
+                                            if cmd.command[..prefix_end].eq_ignore_ascii_case(prefix) {
+                                                // Check if there's a separator right after the prefix
+                                                if let Some(ch) = cmd.command.chars().nth(prefix_end) {
+                                                    if ch == ' ' || ch == '.' || ch == '_' {
+                                                        // Trim the prefix and separator
+                                                        cmd.command[prefix_end + 1..].to_string()
+                                                    } else {
+                                                        cmd.command.clone()
+                                                    }
+                                                } else {
+                                                    cmd.command.clone()
+                                                }
+                                            } else {
+                                                cmd.command.clone()
+                                            }
+                                        } else {
+                                            cmd.command.clone()
+                                        }
+                                    } else {
+                                        cmd.command.clone()
+                                    }
                                 } else {
+                                    // This is either not in submenu mode OR it's an outside menu command
+                                    // Always show full command name
                                     cmd.command.clone()
-                                }
-                            };
-                            
-                            // Indented selectable label with draggable margins
-                            ui.horizontal(|ui| {
-                                // Left margin draggable area - larger for indentation
-                                let left_drag = ui.allocate_response(
-                                    egui::Vec2::new(20.0, ui.text_style_height(&egui::TextStyle::Body)), // Increased from 10.0 to 20.0 for indentation
-                                    egui::Sense::drag()
-                                );
-                                if left_drag.dragged() {
-                                    ctx.send_viewport_cmd(egui::ViewportCommand::StartDrag);
-                                }
+                                };
                                 
-                                // Use larger font for command list (50% bigger than body)
-                                let mut list_font_id = ui.style().text_styles.get(&egui::TextStyle::Body).unwrap().clone();
-                                list_font_id.size *= 1.5; // Make 50% larger
-                                
-                                let response = ui.selectable_label(
-                                    is_selected,
-                                    egui::RichText::new(&display_text).font(list_font_id)
-                                );
-                                
-                                if response.clicked() {
-                                    self.selected_index = i;
-                                    execute_command(&cmd.command);
-                                    process::exit(0);
-                                }
-                                
-                                // Right margin draggable area
-                                let right_drag = ui.allocate_response(
-                                    egui::Vec2::new(10.0, ui.text_style_height(&egui::TextStyle::Body)),
-                                    egui::Sense::drag()
-                                );
-                                if right_drag.dragged() {
-                                    ctx.send_viewport_cmd(egui::ViewportCommand::StartDrag);
-                                }
-                            });
+                                // Left-justified selectable label with draggable margins
+                                ui.horizontal(|ui| {
+                                    // Left margin draggable area
+                                    let left_drag = ui.allocate_response(
+                                        egui::Vec2::new(10.0, ui.text_style_height(&egui::TextStyle::Body)),
+                                        egui::Sense::drag()
+                                    );
+                                    if left_drag.dragged() {
+                                        ctx.send_viewport_cmd(egui::ViewportCommand::StartDrag);
+                                    }
+                                    
+                                    // Use larger font for command list (50% bigger than body)
+                                    let mut list_font_id = ui.style().text_styles.get(&egui::TextStyle::Body).unwrap().clone();
+                                    list_font_id.size *= 1.5; // Make 50% larger
+                                    
+                                    // Make merged entries (ending with "...") bold
+                                    let text = if display_text.ends_with("...") {
+                                        egui::RichText::new(&display_text).font(list_font_id.clone()).strong()
+                                    } else {
+                                        egui::RichText::new(&display_text).font(list_font_id)
+                                    };
+                                    
+                                    let response = ui.selectable_label(
+                                        is_selected,
+                                        text
+                                    );
+                                    
+                                    if response.clicked() {
+                                        self.selected_index = i;
+                                        execute_command(&cmd.command);
+                                        process::exit(0);
+                                    }
+                                    
+                                    // Right margin draggable area
+                                    let right_drag = ui.allocate_response(
+                                        egui::Vec2::new(10.0, ui.text_style_height(&egui::TextStyle::Body)),
+                                        egui::Sense::drag()
+                                    );
+                                    if right_drag.dragged() {
+                                        ctx.send_viewport_cmd(egui::ViewportCommand::StartDrag);
+                                    }
+                                });
+                            }
                         }
                     }
                 } else {

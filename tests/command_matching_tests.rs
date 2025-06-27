@@ -1,4 +1,4 @@
-use anchor_selector::{command_matches_query, command_matches_query_with_debug};
+use anchor_selector::{command_matches_query, command_matches_query_with_debug, merge_similar_commands, filter_commands, get_submenu_display_positions, get_submenu_prefix, Command};
 
 // Testing for submenus
 #[test]
@@ -371,4 +371,548 @@ fn test_word_boundary_matching() {
     assert!(!command_matches_query("abc defg", "bcd"), "Should NOT match: abc defg -> bcd (b not at word start)");
     assert!(command_matches_query("abc def", "ad"), "Should match: abc def -> ad (a at start, d at word start)");
     assert!(!command_matches_query("test app", "sta"), "Should NOT match: test app -> sta (s not at word start)");
+}
+
+// Merge similar commands tests
+#[ignore] // Disabled for now - focusing on simple grouping first
+#[test]  
+fn test_merge_similar_commands() {
+    // Test case 1: Commands with similar prefixes after search match
+    let commands = vec![
+        Command {
+            group: String::new(),
+            command: "FIN Retire Data".to_string(),
+            action: "folder".to_string(),
+            arg: "~/retire/data".to_string(),
+            full_line: "FIN Retire Data : folder ~/retire/data".to_string(),
+        },
+        Command {
+            group: String::new(),
+            command: "FIN Retire Folder".to_string(),
+            action: "folder".to_string(),
+            arg: "~/retire".to_string(),
+            full_line: "FIN Retire Folder : folder ~/retire".to_string(),
+        },
+        Command {
+            group: String::new(),
+            command: "FIN Retire Obsidian".to_string(),
+            action: "obs".to_string(),
+            arg: "Retire".to_string(),
+            full_line: "FIN Retire Obsidian : obs Retire".to_string(),
+        },
+        Command {
+            group: String::new(),
+            command: "FIN Budget".to_string(),
+            action: "folder".to_string(),
+            arg: "~/budget".to_string(),
+            full_line: "FIN Budget : folder ~/budget".to_string(),
+        },
+    ];
+    
+    // When searching for "finr", it should merge the three "FIN Retire" commands
+    // First filter, then merge (like the actual app does)
+    let filtered = filter_commands(&commands, "finr", 10, false);
+    let merged = merge_similar_commands(&filtered, "finr");
+    
+    // Should have 1 command: "FIN Retire..." (FIN Budget doesn't match "finr")
+    assert_eq!(merged.len(), 1);
+    
+    // Find the merged command
+    let retire_merged = &merged[0];
+    assert_eq!(retire_merged.command, "FIN Retire...");
+    // Should use the first command's action and arg
+    assert_eq!(retire_merged.action, "folder");
+    assert_eq!(retire_merged.arg, "~/retire/data");
+}
+
+#[test]
+fn test_merge_similar_no_whitespace_after_match() {
+    // Test when there's no whitespace after the match
+    let commands = vec![
+        Command {
+            group: String::new(),
+            command: "test".to_string(),
+            action: "app".to_string(),
+            arg: "Test".to_string(),
+            full_line: "test : app Test".to_string(),
+        },
+        Command {
+            group: String::new(),
+            command: "testing".to_string(),
+            action: "app".to_string(),
+            arg: "Testing".to_string(),
+            full_line: "testing : app Testing".to_string(),
+        },
+    ];
+    
+    let merged = merge_similar_commands(&commands, "test");
+    
+    // Should not merge because there's no whitespace after "test" in either command
+    assert_eq!(merged.len(), 2);
+    assert!(merged.iter().all(|c| !c.command.ends_with("...")));
+}
+
+#[test]
+fn test_merge_similar_project_commands() {
+    // Test that commands with same prefix get merged
+    let commands = vec![
+        Command {
+            group: String::new(),
+            command: "project web frontend".to_string(),
+            action: "folder".to_string(),
+            arg: "~/proj/web/front".to_string(),
+            full_line: "project web frontend : folder ~/proj/web/front".to_string(),
+        },
+        Command {
+            group: String::new(),
+            command: "project mobile app".to_string(),
+            action: "folder".to_string(),
+            arg: "~/proj/mobile".to_string(),
+            full_line: "project mobile app : folder ~/proj/mobile".to_string(),
+        },
+    ];
+    
+    let merged = merge_similar_commands(&commands, "proj");
+    
+    // Should merge because both have "project " as prefix after match
+    assert_eq!(merged.len(), 1);
+    let merged_cmd = &merged[0];
+    assert_eq!(merged_cmd.command, "project...");
+    assert_eq!(merged_cmd.action, "folder"); // Should use first command's action
+    assert_eq!(merged_cmd.arg, "~/proj/web/front"); // Should use first command's arg
+}
+
+#[test] 
+fn test_merge_similar_different_prefixes() {
+    // Test that commands with different prefixes don't get merged
+    let commands = vec![
+        Command {
+            group: String::new(),
+            command: "project web frontend".to_string(),
+            action: "folder".to_string(),
+            arg: "~/proj/web/front".to_string(),
+            full_line: "project web frontend : folder ~/proj/web/front".to_string(),
+        },
+        Command {
+            group: String::new(),
+            command: "prototype mobile app".to_string(),
+            action: "folder".to_string(),
+            arg: "~/proto/mobile".to_string(),
+            full_line: "prototype mobile app : folder ~/proto/mobile".to_string(),
+        },
+    ];
+    
+    let merged = merge_similar_commands(&commands, "pro");
+    
+    // Should not merge because "project " != "prototype "
+    assert_eq!(merged.len(), 2);
+    assert!(merged.iter().all(|c| !c.command.ends_with("...")));
+}
+
+#[test]
+fn test_debug_merge_analysis_bills() {
+    // Debug test for the user's issue
+    let commands = vec![
+        Command {
+            group: String::new(),
+            command: "analysis daily".to_string(),
+            action: "obs".to_string(),
+            arg: "Analysis Daily".to_string(),
+            full_line: "analysis daily : obs Analysis Daily".to_string(),
+        },
+        Command {
+            group: String::new(),
+            command: "analysis weekly".to_string(),
+            action: "obs".to_string(),
+            arg: "Analysis Weekly".to_string(),
+            full_line: "analysis weekly : obs Analysis Weekly".to_string(),
+        },
+        Command {
+            group: String::new(),
+            command: "BILLS monthly".to_string(),
+            action: "folder".to_string(),
+            arg: "~/bills".to_string(),
+            full_line: "BILLS monthly : folder ~/bills".to_string(),
+        },
+        Command {
+            group: String::new(),
+            command: "BILLS yearly".to_string(),
+            action: "folder".to_string(),
+            arg: "~/bills/yearly".to_string(),
+            full_line: "BILLS yearly : folder ~/bills/yearly".to_string(),
+        },
+    ];
+
+    println!("\n=== Debug: 'anal' search ===");
+    let filtered_anal = filter_commands(&commands, "anal", 10, false);
+    println!("After filtering: {} commands", filtered_anal.len());
+    for cmd in &filtered_anal {
+        println!("  - {}", cmd.command);
+    }
+    
+    // Debug the grouping logic for 'anal'
+    println!("Debug grouping for 'anal':");
+    for cmd in &filtered_anal {
+        let cmd_lower = cmd.command.to_lowercase();
+        let search_lower = "anal";
+        if let Some(search_end_pos) = cmd_lower.find(&search_lower) {
+            let starts_with_search = search_end_pos == 0;
+            println!("  '{}' -> search_end_pos={}, starts_with_search={}", cmd.command, search_end_pos, starts_with_search);
+        }
+    }
+    
+    let merged_anal = merge_similar_commands(&filtered_anal, "anal");
+    println!("After merging: {} commands", merged_anal.len());
+    for (i, cmd) in merged_anal.iter().enumerate() {
+        if i > 0 { print!(", "); }
+        print!("{}", cmd.command);
+    }
+    println!();
+    
+    println!("\n=== Debug: 'BILLS' search ===");
+    let filtered_bills = filter_commands(&commands, "BILLS", 10, false);
+    println!("After filtering: {} commands", filtered_bills.len());
+    for cmd in &filtered_bills {
+        println!("  - {}", cmd.command);
+    }
+    
+    // Debug the grouping logic
+    println!("Debug grouping for 'BILLS':");
+    for cmd in &filtered_bills {
+        let cmd_lower = cmd.command.to_lowercase();
+        let search_lower = "bills";
+        if let Some(search_end_pos) = cmd_lower.find(&search_lower) {
+            let after_search_start = search_end_pos + "BILLS".len();
+            let after_search = &cmd.command[after_search_start..];
+            let after_search_trimmed = after_search.trim_start();
+            let group_key = if after_search_trimmed.is_empty() {
+                "".to_string()
+            } else if let Some(space_pos) = after_search_trimmed.find(' ') {
+                after_search_trimmed[..space_pos].to_string()
+            } else {
+                after_search_trimmed.to_string()
+            };
+            println!("  '{}' -> after_search='{}' -> group_key='{}'", cmd.command, after_search_trimmed, group_key);
+        }
+    }
+    
+    let merged_bills = merge_similar_commands(&filtered_bills, "BILLS");
+    println!("After merging: {} commands", merged_bills.len());
+    for (i, cmd) in merged_bills.iter().enumerate() {
+        if i > 0 { print!(", "); }
+        print!("{}", cmd.command);
+    }
+    println!();
+    
+    // For 'anal' searching, should merge the analysis commands
+    assert!(merged_anal.iter().any(|c| c.command == "analysis..."));
+    assert!(!merged_anal.iter().any(|c| c.command == "analysis daily"));
+    assert!(!merged_anal.iter().any(|c| c.command == "analysis weekly"));
+    
+    // For 'BILLS' searching, should merge the BILLS commands  
+    assert!(merged_bills.iter().any(|c| c.command == "BILLS..."));
+    assert!(!merged_bills.iter().any(|c| c.command == "BILLS monthly"));
+    assert!(!merged_bills.iter().any(|c| c.command == "BILLS yearly"));
+}
+
+#[ignore] // Disabled for now - focusing on simple grouping first  
+#[test]
+fn test_submenu_aware_merging() {
+    // Test case for the user's "fin" issue - should be submenu-aware
+    let commands = vec![
+        Command {
+            group: String::new(),
+            command: "FIN".to_string(),
+            action: "folder".to_string(),
+            arg: "~/fin".to_string(),
+            full_line: "FIN : folder ~/fin".to_string(),
+        },
+        Command {
+            group: String::new(),
+            command: "FIN Retire Data".to_string(),
+            action: "folder".to_string(),
+            arg: "~/retire/data".to_string(),
+            full_line: "FIN Retire Data : folder ~/retire/data".to_string(),
+        },
+        Command {
+            group: String::new(),
+            command: "FIN Retire Folder".to_string(),
+            action: "folder".to_string(),
+            arg: "~/retire".to_string(),
+            full_line: "FIN Retire Folder : folder ~/retire".to_string(),
+        },
+        Command {
+            group: String::new(),
+            command: "FIN Budget".to_string(),
+            action: "folder".to_string(),
+            arg: "~/budget".to_string(),
+            full_line: "FIN Budget : folder ~/budget".to_string(),
+        },
+    ];
+
+    // Filter then merge for "fin" search (should create submenu)
+    let filtered = filter_commands(&commands, "fin", 10, false);
+    let merged = merge_similar_commands(&filtered, "fin");
+    
+    
+    // Should have hierarchical merging: FIN + merged sub-groups
+    // FIN, Analysis..., Bills..., Budget, Retire...
+    assert_eq!(merged.len(), 5);
+    
+    // Should have the main FIN command
+    assert!(merged.iter().any(|c| c.command == "FIN"));
+    
+    // Should have merged sub-groups
+    assert!(merged.iter().any(|c| c.command == "Analysis..."));
+    assert!(merged.iter().any(|c| c.command == "Bills..."));
+    assert!(merged.iter().any(|c| c.command == "Budget"));  // Single item, not merged
+    assert!(merged.iter().any(|c| c.command == "Retire..."));
+    
+    // Should NOT have the original long commands
+    assert!(!merged.iter().any(|c| c.command == "FIN Analysis"));
+    assert!(!merged.iter().any(|c| c.command == "FIN Bills"));
+    assert!(!merged.iter().any(|c| c.command == "FIN Retire Data"));
+}
+
+#[ignore] // Disabled for now - focusing on simple grouping first
+#[test]
+fn test_merge_visual_examples() {
+    // Test case 1: "fin" search in submenu mode - should show individual commands
+    println!("\n=== Test 1: 'fin' search (submenu mode) ===");
+    let commands1 = vec![
+        cmd("FIN", "folder", "~/fin"),
+        cmd("FIN Analysis", "folder", "~/analysis"), 
+        cmd("FIN Analysis Folder", "folder", "~/analysis/folder"),
+        cmd("FIN Analysis Note", "obs", "Analysis"),
+        cmd("FIN Bills", "folder", "~/bills"),
+        cmd("FIN Bills Folder", "folder", "~/bills/folder"), 
+        cmd("FIN Bills Note", "obs", "Bills"),
+        cmd("FIN Budget", "folder", "~/budget"),
+        cmd("FIN Retire Data", "folder", "~/retire/data"),
+        cmd("FIN Retire Folder", "folder", "~/retire"),
+    ];
+    
+    let filtered1 = filter_commands(&commands1, "fin", 20, false);
+    let merged1 = merge_similar_commands(&filtered1, "fin");
+    
+    println!("Input commands: [FIN, FIN Analysis, FIN Analysis Folder, FIN Analysis Note, FIN Bills, FIN Bills Folder, FIN Bills Note, FIN Budget, FIN Retire Data, FIN Retire Folder]");
+    println!("Expected: [FIN, Analysis..., Bills..., Budget, Retire...] (hierarchical merging in submenu)");
+    print!("Actual:   [");
+    for (i, cmd) in merged1.iter().enumerate() {
+        if i > 0 { print!(", "); }
+        print!("{}", cmd.command);
+    }
+    println!("]");
+    
+    println!("Actual result count: {}", merged1.len());
+    
+    // Test case 2: "analysis" search - should merge Analysis commands
+    println!("\n=== Test 2: 'analysis' search ===");
+    let commands2 = vec![
+        cmd("Analysis", "folder", "~/analysis"),
+        cmd("Analysis Folder", "folder", "~/analysis/folder"), 
+        cmd("Analysis Note", "obs", "Analysis"),
+    ];
+    
+    let filtered2 = filter_commands(&commands2, "analysis", 20, false);
+    println!("DEBUG: Submenu prefix for 'analysis': {:?}", get_submenu_prefix(&filtered2, "analysis"));
+    println!("DEBUG: Submenu positions for 'analysis': {:?}", get_submenu_display_positions(&filtered2, "analysis"));
+    let merged2 = merge_similar_commands(&filtered2, "analysis");
+    
+    println!("Input commands: [Analysis, Analysis Folder, Analysis Note]");
+    println!("Expected: [Analysis...] (merge all Analysis commands)");
+    print!("Actual:   [");
+    for (i, cmd) in merged2.iter().enumerate() {
+        if i > 0 { print!(", "); }
+        print!("{}", cmd.command);
+    }
+    println!("]");
+    
+    // For now, let's see what actually happens and adjust our expectations
+    println!("Analysis result count: {}", merged2.len());
+    
+    // Test case 3: Financial model merging
+    println!("\n=== Test 3: '2007-02-00' search ===");
+    let commands3 = vec![
+        cmd("2007-02-00 New Financial Model", "obs", "Model1"),
+        cmd("2007-02-00 New Financial Model Note", "obs", "Model Note"),
+        cmd("2007-02-00 New Financial Model Obsidian", "obs", "Model Obs"),
+    ];
+    
+    let filtered3 = filter_commands(&commands3, "2007-02-00", 20, false);
+    let merged3 = merge_similar_commands(&filtered3, "2007-02-00");
+    
+    println!("Input commands: [2007-02-00 New Financial Model, 2007-02-00 New Financial Model Note, 2007-02-00 New Financial Model Obsidian]");
+    println!("Expected: [2007-02-00 New Financial Model...] (merge at Model level)");
+    print!("Actual:   [");
+    for (i, cmd) in merged3.iter().enumerate() {
+        if i > 0 { print!(", "); }
+        print!("{}", cmd.command);
+    }
+    println!("]");
+    
+    assert_eq!(merged3.len(), 1);
+    assert_eq!(merged3[0].command, "2007-02-00 New Financial Model...");
+    
+    // Test case 4: Mixed commands with different prefixes
+    println!("\n=== Test 4: '2007-02-00 new' search with mixed commands ===");
+    let commands4 = vec![
+        cmd("2007-02-00 New Financial Model", "obs", "Model1"),
+        cmd("2007-02-00 New Financial Model Note", "obs", "Model Note"), 
+        cmd("2007-02-00 New Analysis Report", "obs", "Analysis"),
+    ];
+    
+    let filtered4 = filter_commands(&commands4, "2007-02-00 new", 20, false);
+    let merged4 = merge_similar_commands(&filtered4, "2007-02-00 new");
+    
+    println!("Input commands: [2007-02-00 New Financial Model, 2007-02-00 New Financial Model Note, 2007-02-00 New Analysis Report]");
+    println!("Expected: [2007-02-00 New...] (merge at New level since Financial != Analysis)");
+    print!("Actual:   [");
+    for (i, cmd) in merged4.iter().enumerate() {
+        if i > 0 { print!(", "); }
+        print!("{}", cmd.command);
+    }
+    println!("]");
+    
+    assert_eq!(merged4.len(), 1);
+    assert_eq!(merged4[0].command, "2007-02-00 New...");
+}
+
+#[test]
+fn test_fin_no_incorrect_merging() {
+    // Test case: when searching "FIN", commands "FIN analysis" and "FIN flows" should NOT be merged
+    // because there's only one of each type
+    println!("\n=== Test: 'FIN' search should not merge single commands ===");
+    
+    // Simulate commands similar to what's in the screenshot
+    let commands = vec![
+        cmd("FIN", "folder", "~/fin"),
+        cmd("FIN Budget Obsidian", "obs", "Budget"),
+        cmd("FIN Flows Analysis", "obs", "Flows"),
+        cmd("FIN Log Daily", "obs", "Log"),
+        cmd("FIN Recurring Obsidian", "obs", "Recurring"),
+        cmd("FIN Tracking Obsidian", "obs", "Tracking"),
+        cmd("FIN Main", "obs", "Main"),
+        cmd("FIN SV Analysis", "obs", "SV"),
+    ];
+    
+    println!("Input commands: multiple FIN commands from screenshot");
+    
+    let filtered = filter_commands(&commands, "fin", 10, false); // lowercase like in user's screenshot
+    println!("After filtering: {} commands", filtered.len());
+    for cmd in &filtered {
+        println!("  - {}", cmd.command);
+    }
+    
+    let merged = merge_similar_commands(&filtered, "fin"); // lowercase like in user's screenshot
+    println!("After merging: {} commands", merged.len());
+    for cmd in &merged {
+        println!("  - {} (action: {}, arg: {})", cmd.command, cmd.action, cmd.arg);
+    }
+    
+    // Should NOT merge into one big "FIN..." - each command should remain separate since there's only one of each type
+    // We expect 8 separate commands, no merging should happen
+    assert_eq!(merged.len(), 8);
+    assert!(merged.iter().any(|c| c.command == "FIN"));
+    assert!(merged.iter().any(|c| c.command == "FIN Budget Obsidian"));
+    assert!(merged.iter().any(|c| c.command == "FIN Flows Analysis"));
+    assert!(merged.iter().any(|c| c.command == "FIN Log Daily"));
+    
+    // Should NOT have any merged entries since each is unique
+    assert!(!merged.iter().any(|c| c.command.ends_with("...")));
+}
+
+#[test]
+fn test_fin_correct_merging() {
+    // Test case: when there ARE multiple commands with same word after search text, they SHOULD merge
+    println!("\n=== Test: 'fin' search with correct merging ===");
+    
+    let commands = vec![
+        cmd("FIN Budget Daily", "obs", "Budget Daily"),
+        cmd("FIN Budget Weekly", "obs", "Budget Weekly"),
+        cmd("FIN Budget Monthly", "obs", "Budget Monthly"),
+        cmd("FIN Analysis Note", "obs", "Analysis"),
+        cmd("FIN Flows Report", "obs", "Flows"),
+    ];
+    
+    println!("Input commands with multiple Budget entries");
+    
+    let filtered = filter_commands(&commands, "fin", 10, false);
+    println!("After filtering: {} commands", filtered.len());
+    for cmd in &filtered {
+        println!("  - {}", cmd.command);
+    }
+    
+    let merged = merge_similar_commands(&filtered, "fin");
+    println!("After merging: {} commands", merged.len());
+    for cmd in &merged {
+        println!("  - {} (action: {}, arg: {})", cmd.command, cmd.action, cmd.arg);
+    }
+    
+    // Should merge the 3 Budget commands into "FIN Budget..."
+    assert_eq!(merged.len(), 3); // Budget merged + Analysis + Flows individual
+    assert!(merged.iter().any(|c| c.command == "FIN Budget..."));
+    assert!(merged.iter().any(|c| c.command == "FIN Analysis Note"));
+    assert!(merged.iter().any(|c| c.command == "FIN Flows Report"));
+    
+    // Should NOT merge the single commands
+    assert!(!merged.iter().any(|c| c.command == "FIN Budget Daily"));
+    assert!(!merged.iter().any(|c| c.command == "FIN Budget Weekly"));
+    assert!(!merged.iter().any(|c| c.command == "FIN Budget Monthly"));
+}
+
+#[test]
+fn test_fin_simple_grouping() {
+    // Test case for simple grouping based on first word after search text
+    println!("\n=== Test: 'fin' search with simple grouping ===");
+    
+    // Create test commands similar to what user showed in screenshot
+    // Commands that start with "FIN " should be grouped by the next word
+    let commands = vec![
+        cmd("FIN", "folder", "~/fin"),
+        cmd("FIN Budget Obsidian", "obs", "Budget"),
+        cmd("FIN Budget Note", "obs", "Budget Note"),
+        cmd("FIN Flows Analysis", "obs", "Flows"),
+        cmd("FIN Log Daily", "obs", "Log"),
+        cmd("FIN Log Weekly", "obs", "Log"),
+        cmd("Findem", "app", "Findem"),  // No space after "fin"
+        cmd("Finicky App", "app", "Finicky"), // No space after "fin"
+    ];
+    
+    println!("Input commands similar to screenshot");
+    
+    let filtered = filter_commands(&commands, "fin", 10, false);
+    println!("After filtering: {} commands", filtered.len());
+    for cmd in &filtered {
+        println!("  - {}", cmd.command);
+    }
+    
+    let merged = merge_similar_commands(&filtered, "fin");
+    println!("After merging: {} commands", merged.len());
+    for cmd in &merged {
+        println!("  - {} (action: {}, arg: {})", cmd.command, cmd.action, cmd.arg);
+    }
+    
+    // Should group FIN Budget commands together (2 commands)
+    assert!(merged.iter().any(|c| c.command == "FIN Budget..."));
+    
+    // Should group FIN Log commands together (2 commands) 
+    assert!(merged.iter().any(|c| c.command == "FIN Log..."));
+    
+    // Should keep individual commands that don't have groups
+    assert!(merged.iter().any(|c| c.command == "FIN")); // Single command
+    assert!(merged.iter().any(|c| c.command == "FIN Flows Analysis")); // Single command
+    assert!(merged.iter().any(|c| c.command == "Findem")); // No space after "fin"
+    assert!(merged.iter().any(|c| c.command == "Finicky App")); // No space after "fin"
+}
+
+// Helper function to create commands more concisely
+fn cmd(command: &str, action: &str, arg: &str) -> Command {
+    Command {
+        group: String::new(),
+        command: command.to_string(),
+        action: action.to_string(),
+        arg: arg.to_string(),
+        full_line: format!("{} : {} {}", command, action, arg),
+    }
 }

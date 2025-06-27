@@ -34,6 +34,8 @@ pub struct PopupSettings {
     /// Comma-separated list of actions shown in command editor dropdown
     /// Example: "app,url,folder,cmd,chrome,anchor"
     pub listed_actions: Option<String>,
+    /// Enable merging of similar commands (ending with "...")
+    pub merge_similar: Option<bool>,
 }
 
 impl Default for PopupSettings {
@@ -44,6 +46,7 @@ impl Default for PopupSettings {
             use_new_launcher: false, // Default to old launcher for backward compatibility
             debug_log: None,
             listed_actions: Some("app,url,folder,cmd,chrome,anchor".to_string()),
+            merge_similar: Some(true), // Enable merging by default
         }
     }
 }
@@ -585,36 +588,44 @@ pub fn update_command_list(commands: &mut Vec<Command>, new_command: Command, or
 /// Analyzes filtered commands to determine if they form a submenu and returns display positions
 /// 
 /// Returns:
-/// - Empty list if no submenu detected (search text doesn't exactly match any anchor entry length)
+/// - Empty list if no submenu detected (no prefix of search text matches any anchor)
 /// - List of integers indicating where to start displaying each command's suffix
 ///   - For commands with separator before match position: returns the match position
 ///   - For commands without separator before match position: returns 0 (show full name)
 /// 
-/// A submenu is only shown when the search text exactly matches the length of an anchor entry
+/// A submenu is shown when any prefix of the search text matches an anchor entry
 /// (the text before a separator like '.', ' ', or '_')
 pub fn get_submenu_display_positions(commands: &[Command], search_text: &str) -> Vec<usize> {
     let mut positions = Vec::new();
-    let mut has_exact_anchor_match = false;
+    let mut submenu_anchor: Option<String> = None;
     
-    // First pass: check if search text exactly matches any anchor length
-    for cmd in commands {
-        // Find all separators in the command
-        for (i, ch) in cmd.command.char_indices() {
-            if ch == '.' || ch == ' ' || ch == '_' {
-                let anchor = &cmd.command[..i];
-                if anchor.to_lowercase() == search_text.to_lowercase() {
-                    has_exact_anchor_match = true;
-                    break;
+    // First pass: check if any prefix of search text matches any anchor
+    // Check from longest to shortest prefix to find the most specific match
+    for prefix_len in (1..=search_text.len()).rev() {
+        let prefix = &search_text[..prefix_len];
+        
+        for cmd in commands {
+            // Find all separators in the command
+            for (i, ch) in cmd.command.char_indices() {
+                if ch == '.' || ch == ' ' || ch == '_' {
+                    let anchor = &cmd.command[..i];
+                    if anchor.to_lowercase() == prefix.to_lowercase() {
+                        submenu_anchor = Some(anchor.to_string());
+                        break;
+                    }
                 }
             }
+            if submenu_anchor.is_some() {
+                break;
+            }
         }
-        if has_exact_anchor_match {
+        if submenu_anchor.is_some() {
             break;
         }
     }
     
-    // If no exact anchor match, return empty (no submenu)
-    if !has_exact_anchor_match {
+    // If no anchor prefix match, return empty (no submenu)
+    if submenu_anchor.is_none() {
         return Vec::new();
     }
     
@@ -625,19 +636,22 @@ pub fn get_submenu_display_positions(commands: &[Command], search_text: &str) ->
         if match_pos >= 0 {
             let match_pos = match_pos as usize;
             
-            // Check if there's a separator (dot, space, or underscore) before the match position
-            if match_pos > 0 {
-                if let Some(prev_char) = cmd.command.chars().nth(match_pos - 1) {
-                    if prev_char == '.' || prev_char == ' ' || prev_char == '_' {
-                        positions.push(match_pos);
+            // Check if there's a separator at the match position - this determines if it's a submenu item
+            if match_pos < cmd.command.len() {
+                if let Some(char_at_match_pos) = cmd.command.chars().nth(match_pos) {
+                    if char_at_match_pos == ' ' || char_at_match_pos == '.' || char_at_match_pos == '_' {
+                        // There's a separator at match position - this is a submenu item
+                        // Trim from position after the separator (match_pos + 1)
+                        positions.push(match_pos + 1);
                     } else {
-                        positions.push(0); // Show full name for commands without separator before match
+                        // No separator at match position - not a submenu item, show full name
+                        positions.push(0);
                     }
                 } else {
-                    positions.push(0);
+                    positions.push(0); // Beyond string length
                 }
             } else {
-                positions.push(0); // Show full name for commands at start
+                positions.push(0); // Complete match, show full name
             }
         } else {
             positions.push(0); // No match, show full name
@@ -647,23 +661,296 @@ pub fn get_submenu_display_positions(commands: &[Command], search_text: &str) ->
     positions
 }
 
-/// Extracts the submenu prefix when search text exactly matches an anchor entry
-/// Only returns a prefix if the search text exactly matches an anchor (text before separator)
-pub fn get_submenu_prefix(commands: &[Command], search_text: &str) -> Option<String> {
-    // First check if search text exactly matches any anchor
+/// Determines the current submenu prefix from the filtered commands and search text
+/// Returns None if not in a submenu
+pub fn get_current_submenu_prefix(commands: &[Command], search_text: &str) -> Option<String> {
+    // Use existing logic to find submenu prefix
+    get_submenu_prefix(commands, search_text)
+}
+
+/// Splits commands into those inside and outside the given menu
+/// Returns (inside_menu, outside_menu) vectors
+pub fn split_commands(commands: &[Command], menu_prefix: &str) -> (Vec<Command>, Vec<Command>) {
+    let mut inside_menu = Vec::new();
+    let mut outside_menu = Vec::new();
+    
     for cmd in commands {
-        // Find all separators in the command
-        for (i, ch) in cmd.command.char_indices() {
-            if ch == '.' || ch == ' ' || ch == '_' {
-                let anchor = &cmd.command[..i];
-                if anchor.to_lowercase() == search_text.to_lowercase() {
-                    // Return the exact anchor text as the prefix
-                    return Some(anchor.to_string());
+        // Check if command starts with menu_prefix followed by a separator
+        if cmd.command.len() > menu_prefix.len() {
+            let prefix_end = menu_prefix.len();
+            if cmd.command[..prefix_end].eq_ignore_ascii_case(menu_prefix) {
+                // Check if there's a separator right after the menu prefix
+                if let Some(ch) = cmd.command.chars().nth(prefix_end) {
+                    if ch == ' ' || ch == '.' || ch == '_' {
+                        inside_menu.push(cmd.clone());
+                        continue;
+                    }
+                }
+            }
+        } else if cmd.command.eq_ignore_ascii_case(menu_prefix) {
+            // Exact match with menu prefix
+            inside_menu.push(cmd.clone());
+            continue;
+        }
+        
+        // If we get here, it's outside the menu
+        outside_menu.push(cmd.clone());
+    }
+    
+    (inside_menu, outside_menu)
+}
+
+/// Extracts the submenu prefix when any prefix of search text matches an anchor entry
+/// Returns the longest matching anchor prefix found in the search text
+pub fn get_submenu_prefix(commands: &[Command], search_text: &str) -> Option<String> {
+    // Check if any prefix of search text matches any anchor
+    // Check from longest to shortest prefix to find the most specific match
+    for prefix_len in (1..=search_text.len()).rev() {
+        let prefix = &search_text[..prefix_len];
+        
+        for cmd in commands {
+            // Find all separators in the command
+            for (i, ch) in cmd.command.char_indices() {
+                if ch == '.' || ch == ' ' || ch == '_' {
+                    let anchor = &cmd.command[..i];
+                    if anchor.to_lowercase() == prefix.to_lowercase() {
+                        // Return the exact anchor text as the prefix
+                        return Some(anchor.to_string());
+                    }
                 }
             }
         }
     }
     None
+}
+
+/// Reorders commands for submenu display: suffix-only commands first, then separator, then full-name commands
+/// Returns (reordered_commands, reordered_positions, separator_index)
+/// separator_index is None if no separator was added
+pub fn reorder_commands_for_submenu(commands: &[Command], positions: &[usize]) -> (Vec<Command>, Vec<usize>, Option<usize>) {
+    if positions.is_empty() || commands.len() != positions.len() {
+        return (commands.to_vec(), positions.to_vec(), None);
+    }
+    
+    let mut suffix_commands = Vec::new();
+    let mut suffix_positions = Vec::new();
+    let mut full_commands = Vec::new();
+    let mut full_positions = Vec::new();
+    
+    // Separate commands based on display characteristics:
+    // - Suffix commands: either show suffix (pos > 0) OR are short single words that match the submenu pattern
+    // - Full commands: longer compound names that show full text (pos == 0)
+    for (cmd, &pos) in commands.iter().zip(positions.iter()) {
+        if pos > 0 {
+            // Definitely shows suffix only - these go first
+            suffix_commands.push(cmd.clone());
+            suffix_positions.push(pos);
+        } else {
+            // pos == 0 means showing full name - but we need to distinguish:
+            // - Short single words (like "FIN") that belong with submenu items
+            // - Longer compound commands (like "Findem Note") that are separate
+            
+            let cmd_words: Vec<&str> = cmd.command.split_whitespace().collect();
+            let is_single_short_word = cmd_words.len() == 1 && cmd.command.len() <= 8;
+            
+            if is_single_short_word {
+                // Short single words stay with submenu items
+                suffix_commands.push(cmd.clone());
+                suffix_positions.push(pos);
+            } else {
+                // Longer/compound commands go to full section
+                full_commands.push(cmd.clone());
+                full_positions.push(pos);
+            }
+        }
+    }
+    
+    // If we have both types, create reordered lists with separator
+    if !suffix_commands.is_empty() && !full_commands.is_empty() {
+        let mut reordered_commands = suffix_commands;
+        let mut reordered_positions = suffix_positions;
+        
+        // Add separator command
+        let separator_index = reordered_commands.len();
+        let separator_command = Command {
+            group: String::new(),
+            command: "---".to_string(),
+            action: "separator".to_string(),
+            arg: String::new(),
+            full_line: "--- : separator".to_string(),
+        };
+        reordered_commands.push(separator_command);
+        reordered_positions.push(0); // Separator shows full text
+        
+        // Add full-name commands
+        reordered_commands.extend(full_commands);
+        reordered_positions.extend(full_positions);
+        
+        (reordered_commands, reordered_positions, Some(separator_index))
+    } else {
+        // Only one type, no reordering needed
+        (commands.to_vec(), positions.to_vec(), None)
+    }
+}
+
+/// Simple command merging: Group commands by first word after search text, then merge with "..."
+pub fn merge_similar_commands(commands: &[Command], search_text: &str) -> Vec<Command> {
+    if commands.is_empty() || search_text.is_empty() {
+        return commands.to_vec();
+    }
+    
+    // Check if merging is disabled in configuration
+    let config = load_config();
+    if !config.popup_settings.merge_similar.unwrap_or(true) {
+        return commands.to_vec();
+    }
+    
+    // Step 1: Group commands by first word (up to first whitespace after search text)
+    let mut groups: std::collections::HashMap<String, Vec<&Command>> = std::collections::HashMap::new();
+    
+    for cmd in commands {
+        let cmd_lower = cmd.command.to_lowercase();
+        let search_lower = search_text.to_lowercase();
+        
+        // Find the search text in the command
+        if let Some(search_pos) = cmd_lower.find(&search_lower) {
+            // Check if this is a word boundary match (search text followed by space/punctuation or at word start)
+            let is_word_boundary_match = {
+                // Check if search text is preceded by word boundary (start of string or non-alphanumeric)
+                let starts_at_word_boundary = search_pos == 0 || 
+                    !cmd_lower.chars().nth(search_pos - 1).unwrap_or(' ').is_alphanumeric();
+                
+                // Check if search text is followed by word boundary (space, punctuation, or end of string)
+                let after_search_pos = search_pos + search_text.len();
+                let ends_at_word_boundary = after_search_pos >= cmd.command.len() ||
+                    !cmd.command.chars().nth(after_search_pos).unwrap_or(' ').is_alphanumeric();
+                
+                starts_at_word_boundary && ends_at_word_boundary
+            };
+            
+            if is_word_boundary_match {
+                // Word boundary match - use text after search for grouping
+                let after_search_pos = search_pos + search_text.len();
+                let after_search = &cmd.command[after_search_pos..];
+                
+                // Skip any whitespace immediately after the search text
+                let after_search_trimmed = after_search.trim_start();
+                
+                if !after_search_trimmed.is_empty() {
+                    // Find the first word after the search text (up to first whitespace)
+                    let group_word = if let Some(space_pos) = after_search_trimmed.find(' ') {
+                        &after_search_trimmed[..space_pos]
+                    } else {
+                        after_search_trimmed
+                    };
+                    
+                    // Use this word as the grouping key
+                    groups.entry(group_word.to_string()).or_insert_with(Vec::new).push(cmd);
+                } else {
+                    // Nothing after search text, keep as individual command
+                    groups.entry(cmd.command.clone()).or_insert_with(Vec::new).push(cmd);
+                }
+            } else {
+                // Search text is in middle of word - use the text after the search as grouping key
+                // This handles cases like "Financial Model" where "fin" is inside "Financial"
+                let after_search_pos = search_pos + search_text.len();
+                
+                // Find the next word boundary after the search text
+                let remaining_text = &cmd.command[after_search_pos..];
+                let next_space_pos = remaining_text.find(' ').unwrap_or(remaining_text.len());
+                let _current_word_remainder = &remaining_text[..next_space_pos];
+                
+                // Skip the current word and find the next word for grouping
+                let after_current_word = &remaining_text[next_space_pos..].trim_start();
+                
+                if !after_current_word.is_empty() {
+                    // Find the first complete word after the current word
+                    let group_word = if let Some(space_pos) = after_current_word.find(' ') {
+                        &after_current_word[..space_pos]
+                    } else {
+                        after_current_word
+                    };
+                    
+                    // Use this word as the grouping key
+                    groups.entry(group_word.to_string()).or_insert_with(Vec::new).push(cmd);
+                } else {
+                    // No words after current word, keep as individual command
+                    groups.entry(cmd.command.clone()).or_insert_with(Vec::new).push(cmd);
+                }
+            }
+        } else {
+            // Command doesn't contain search text, keep as individual
+            groups.entry(cmd.command.clone()).or_insert_with(Vec::new).push(cmd);
+        }
+    }
+    
+    // Step 2: For each group with 2+ commands, create a merged entry with "..."
+    let mut result = Vec::new();
+    
+    for (group_key, group_commands) in groups {
+        if group_commands.len() >= 2 {
+            // Create merged entry: find common prefix and add "..."
+            let first_cmd = group_commands[0];
+            
+            // Find the search text position in the first command to reconstruct the prefix
+            let cmd_lower = first_cmd.command.to_lowercase();
+            let search_lower = search_text.to_lowercase();
+            
+            if let Some(search_pos) = cmd_lower.find(&search_lower) {
+                let prefix_end = search_pos + search_text.len();
+                let prefix = &first_cmd.command[..prefix_end];
+                
+                let merged_command = Command {
+                    group: first_cmd.group.clone(),
+                    command: format!("{} {}...", prefix, group_key),
+                    action: first_cmd.action.clone(),
+                    arg: first_cmd.arg.clone(),
+                    full_line: first_cmd.full_line.clone(),
+                };
+                result.push(merged_command);
+            } else {
+                // Fallback: shouldn't happen but keep the command as-is
+                result.push(first_cmd.clone());
+            }
+        } else {
+            // Single command, keep as-is
+            result.push(group_commands[0].clone());
+        }
+    }
+    
+    // Sort to maintain consistent order
+    result.sort_by(|a, b| a.command.cmp(&b.command));
+    
+    result
+}
+
+/// Finds the longest common prefix among a group of strings
+fn find_longest_common_prefix(strings: Vec<&String>) -> String {
+    if strings.is_empty() {
+        return String::new();
+    }
+    
+    if strings.len() == 1 {
+        return strings[0].clone();
+    }
+    
+    let first = strings[0];
+    let mut common_prefix = String::new();
+    
+    for (i, ch) in first.char_indices() {
+        // Check if all strings have the same character at this position
+        let all_match = strings[1..].iter().all(|s| {
+            s.chars().nth(i).map_or(false, |c| c == ch)
+        });
+        
+        if all_match {
+            common_prefix.push(ch);
+        } else {
+            break;
+        }
+    }
+    
+    common_prefix
 }
 
 // =============================================================================
