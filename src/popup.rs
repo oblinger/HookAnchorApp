@@ -57,6 +57,18 @@ impl AnchorSelector {
     // Command Filtering and Management
     // =============================================================================
     
+    /// Check if the current search text exactly matches an alias command
+    /// If so, replace the search text with the alias's argument
+    fn check_and_apply_alias(&mut self) {
+        // Look for an exact match with an alias command
+        if let Some(alias_cmd) = self.commands.iter().find(|cmd| 
+            cmd.action == "alias" && cmd.command.to_lowercase() == self.search_text.to_lowercase()
+        ) {
+            // Replace search text with the alias argument
+            self.search_text = alias_cmd.arg.clone();
+        }
+    }
+    
     fn update_filter(&mut self) {
         if self.search_text.trim().is_empty() {
             self.filtered_commands.clear();
@@ -546,6 +558,8 @@ impl eframe::App for AnchorSelector {
                 );
                 
                 if response.changed() {
+                    // First check if the text matches an alias and replace if so
+                    self.check_and_apply_alias();
                     self.update_filter();
                 }
                 

@@ -78,11 +78,40 @@ pub fn open_folder(path: &str) -> Result<std::process::Output, std::io::Error> {
     Command::new("open").arg(&expanded_path).output()
 }
 
-/// Execute a shell command using `/bin/sh -c`
+/// Execute a shell command using the user's shell with proper environment
 /// 
-/// Consolidates the common pattern of shell command execution
+/// Uses the user's login shell and sources their profile to get proper PATH and environment
 pub fn execute_shell_command(command: &str) -> Result<std::process::Output, std::io::Error> {
-    Command::new("/bin/sh").arg("-c").arg(command).output()
+    execute_shell_command_with_env(command)
+}
+
+/// Core shell command execution with proper user environment
+/// 
+/// This function is shared between the utils module and JavaScript runtime
+/// to ensure consistent shell execution behavior across the application
+pub fn execute_shell_command_with_env(command: &str) -> Result<std::process::Output, std::io::Error> {
+    // Get the user's shell from SHELL environment variable, fallback to zsh
+    let user_shell = std::env::var("SHELL").unwrap_or_else(|_| "/bin/zsh".to_string());
+    
+    // Create a command that sources the user's profile first, then runs the command
+    // This ensures we get the user's full PATH and environment
+    let wrapped_command = format!(
+        "source ~/.zshrc 2>/dev/null || source ~/.bash_profile 2>/dev/null || source ~/.bashrc 2>/dev/null || true; {}",
+        command
+    );
+    
+    let mut cmd = Command::new(&user_shell);
+    cmd.arg("-c").arg(&wrapped_command);
+    
+    // Inherit environment from current process (which should have basic PATH)
+    cmd.env("HOME", std::env::var("HOME").unwrap_or_else(|_| "/Users/oblinger".to_string()));
+    
+    // Set a basic PATH in case the shell profile doesn't load properly
+    if let Ok(current_path) = std::env::var("PATH") {
+        cmd.env("PATH", current_path);
+    }
+    
+    cmd.output()
 }
 
 /// Open a file/URL with a specific app using macOS `open` command

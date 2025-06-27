@@ -4,6 +4,12 @@
 # =================================================================
 # APPLICATION SETTINGS
 # =================================================================
+# 
+# ALIAS FUNCTIONALITY:
+# Commands with action "alias" have special behavior - when the user types
+# text that exactly matches an alias command name, the input text is 
+# automatically replaced with the alias argument. This allows creating
+# shortcuts like: gh -> url https://github.com
 popup_settings:
   max_rows: 15
   max_columns: 3
@@ -77,7 +83,10 @@ simple_functions:
 #   FULL_COMMAND - Complete original command (e.g., "anchor /tmp")
 #   COMMAND - JSON object with all command metadata
 js_functions:
-  # Simple JavaScript functions - direct code
+  # alias NAME - Text replacement and recursive command calling
+  # Special behavior: When user types an exact match for an alias command name,
+  # the input text is automatically replaced with the alias argument.
+  # If executed normally, it recursively calls launch() with the argument.
   alias: 'launch("{{arg}}")'
   
   # Complex JavaScript functions - multi-line format

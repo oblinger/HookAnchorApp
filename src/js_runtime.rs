@@ -336,9 +336,9 @@ fn setup_launcher_builtins(ctx: &Ctx<'_>) -> Result<(), Box<dyn std::error::Erro
         }
     })?)?;
     
-    // shell(command) -> executes shell command
+    // shell(command) -> executes shell command with user environment
     ctx.globals().set("shell", Function::new(ctx.clone(), |command: String| {
-        match std::process::Command::new("sh").arg("-c").arg(&command).output() {
+        match crate::utils::execute_shell_command_with_env(&command) {
             Ok(output) => {
                 let stdout = String::from_utf8_lossy(&output.stdout);
                 let stderr = String::from_utf8_lossy(&output.stderr);
@@ -367,9 +367,9 @@ fn setup_launcher_builtins(ctx: &Ctx<'_>) -> Result<(), Box<dyn std::error::Erro
         format!("Recursive launch: {}", command)
     })?)?;
     
-    // shellWithExitCode(command) -> executes shell command and returns detailed result
+    // shellWithExitCode(command) -> executes shell command and returns detailed result with user environment
     ctx.globals().set("shellWithExitCode", Function::new(ctx.clone(), |command: String| {
-        match std::process::Command::new("sh").arg("-c").arg(&command).output() {
+        match crate::utils::execute_shell_command_with_env(&command) {
             Ok(output) => {
                 let stdout = String::from_utf8_lossy(&output.stdout).to_string();
                 let stderr = String::from_utf8_lossy(&output.stderr).to_string();
@@ -386,9 +386,9 @@ fn setup_launcher_builtins(ctx: &Ctx<'_>) -> Result<(), Box<dyn std::error::Erro
         }
     })?)?;
     
-    // commandExists(command) -> checks if command is available in PATH
+    // commandExists(command) -> checks if command is available in PATH with user environment
     ctx.globals().set("commandExists", Function::new(ctx.clone(), |command: String| {
-        match std::process::Command::new("which").arg(&command).output() {
+        match crate::utils::execute_shell_command_with_env(&format!("which {}", command)) {
             Ok(output) => output.status.success(),
             Err(_) => false,
         }
