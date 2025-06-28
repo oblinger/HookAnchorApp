@@ -137,7 +137,7 @@ impl CommandEditor {
                                 // When delete button exists, use horizontal layout with sized text field
                                 ui.horizontal(|ui| {
                                     let available_width = ui.available_width();
-                                    let command_width = available_width - 80.0; // Leave space for delete button
+                                    let command_width = (available_width - 80.0).max(100.0); // Leave space for delete button, ensure minimum width
                                     
                                     let command_response = ui.add_sized(
                                         [command_width, 20.0],

@@ -400,9 +400,11 @@ impl eframe::App for AnchorSelector {
         // Update command editor dialog BEFORE the main UI so it renders as a top-level window
         self.command_editor.update_commands(&self.commands);
         let editor_result = self.command_editor.update(ctx, &self.config);
+        let mut editor_handled_escape = false;
         match editor_result {
             CommandEditorResult::Cancel => {
                 self.command_editor.hide();
+                editor_handled_escape = true;
             }
             CommandEditorResult::Save(_new_command, _original_command_name) => {
                 // Use the command editor's save method
@@ -462,9 +464,7 @@ impl eframe::App for AnchorSelector {
                 // Handle keyboard input BEFORE text field to ensure it's not consumed
                 ctx.input(|i| {
                     if i.key_pressed(egui::Key::Escape) {
-                        if self.command_editor.visible {
-                            self.command_editor.hide();
-                        } else {
+                        if !editor_handled_escape {
                             std::process::exit(0);
                         }
                     }
