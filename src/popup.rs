@@ -10,6 +10,9 @@ use anchor_selector::{
 mod command_editor;
 use command_editor::{CommandEditor, CommandEditorResult};
 
+mod dialog;
+use dialog::Dialog;
+
 /// Main application state for the Anchor Selector popup window
 pub struct AnchorSelector {
     /// All available commands loaded from commands.txt
@@ -26,6 +29,8 @@ pub struct AnchorSelector {
     position_set: bool,
     /// Command editor dialog state
     command_editor: CommandEditor,
+    /// Dialog system for user input
+    dialog: Dialog,
     /// Application configuration
     config: Config,
 }
@@ -49,6 +54,7 @@ impl AnchorSelector {
             last_saved_position: None,
             position_set: false,
             command_editor: CommandEditor::new(),
+            dialog: Dialog::new(),
             config,
         }
     }
@@ -401,6 +407,13 @@ impl eframe::App for AnchorSelector {
         self.command_editor.update_commands(&self.commands);
         let editor_result = self.command_editor.update(ctx, &self.config);
         let mut editor_handled_escape = false;
+        
+        // Update dialog system
+        if self.dialog.update(ctx) {
+            if let Some(result) = self.dialog.take_result() {
+                println!("Dialog result: {:?}", result);
+            }
+        }
         match editor_result {
             CommandEditorResult::Cancel => {
                 self.command_editor.hide();
@@ -542,6 +555,18 @@ impl eframe::App for AnchorSelector {
                                 }
                             }
                         }
+                    }
+                    if i.key_pressed(egui::Key::F6) {
+                        // Test dialog functionality
+                        let test_specs = vec![
+                            "#Project Setup Dialog".to_string(),
+                            "'Welcome! Let's set up your new project.".to_string(),
+                            "$project_name,Project name (e.g. my-awesome-app)".to_string(),
+                            "$description,Brief description".to_string(),
+                            "!OK".to_string(),
+                            "!Cancel".to_string(),
+                        ];
+                        self.dialog.show(test_specs);
                     }
                 });
                 
