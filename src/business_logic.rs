@@ -39,8 +39,7 @@ pub fn scan_markdown_commands() -> Result<Vec<crate::Command>, Box<dyn std::erro
 /// Updates the command list with markdown-based commands
 pub fn update_commands_from_markdown() -> Result<usize, Box<dyn std::error::Error>> {
     // For demonstration, just run the script and print results
-    let result = run_business_script("markdown_scanner")?;
-    println!("Markdown scanner result: {}", result);
+    let _result = run_business_script("markdown_scanner")?;
     
     // In full implementation, would parse results and update commands
     Ok(0)

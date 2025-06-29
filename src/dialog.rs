@@ -19,6 +19,7 @@ pub struct Dialog {
     pub rows: Vec<DialogRow>,
     pub input_values: HashMap<String, String>,
     pub result: Option<HashMap<String, String>>,
+    pub title: String,
 }
 
 impl Dialog {
@@ -28,6 +29,7 @@ impl Dialog {
             rows: Vec::new(),
             input_values: HashMap::new(),
             result: None,
+            title: "Dialog".to_string(),
         }
     }
     
@@ -36,6 +38,7 @@ impl Dialog {
         self.rows.clear();
         self.input_values.clear();
         self.result = None;
+        self.title = "Dialog".to_string(); // Reset to default
         
         self.parse_spec_strings(spec_strings);
     }
@@ -48,6 +51,17 @@ impl Dialog {
     
     pub fn take_result(&mut self) -> Option<HashMap<String, String>> {
         self.result.take()
+    }
+    
+    pub fn calculate_required_size(&self) -> (f32, f32) {
+        // Much simpler calculation based on actual content
+        let row_count = self.rows.len() as f32;
+        
+        // Very conservative estimates based on visual inspection
+        let estimated_width = 420.0; // Fixed reasonable width
+        let estimated_height = 60.0 + (row_count * 25.0); // Base + rows * height per row
+        
+        (estimated_width, estimated_height)
     }
     
     fn parse_spec_strings(&mut self, spec_strings: Vec<String>) {
@@ -63,8 +77,13 @@ impl Dialog {
             let rest = &spec[1..];
             
             match control_char {
+                '=' => {
+                    // Sets the dialog window title (doesn't add visible content)
+                    self.title = rest.to_string();
+                    last_was_button = false;
+                }
                 '#' => {
-                    // Title - starts a new row
+                    // Large text display within the dialog - starts a new row
                     if !current_row.elements.is_empty() {
                         self.rows.push(current_row);
                         current_row = DialogRow { elements: Vec::new() };
@@ -182,7 +201,7 @@ impl Dialog {
         required_width = required_width.max(500.0).min(800.0); // clamp between 500-800
         required_height = required_height.max(200.0).min(600.0); // clamp between 200-600
 
-        egui::Window::new("Dialog")
+        egui::Window::new(&self.title)
             .default_size([required_width, required_height])
             .resizable(true)
             .collapsible(false)

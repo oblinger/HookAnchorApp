@@ -33,6 +33,10 @@ pub struct AnchorSelector {
     dialog: Dialog,
     /// Application configuration
     config: Config,
+    /// Flag to disable automatic window resizing when we want manual control
+    manual_resize_mode: bool,
+    /// Track the last manual resize request to avoid repeatedly sending commands
+    last_manual_size: Option<egui::Vec2>,
 }
 
 impl AnchorSelector {
@@ -56,6 +60,8 @@ impl AnchorSelector {
             command_editor: CommandEditor::new(),
             dialog: Dialog::new(),
             config,
+            manual_resize_mode: false,
+            last_manual_size: None,
         }
     }
     
@@ -410,8 +416,10 @@ impl eframe::App for AnchorSelector {
         
         // Update dialog system
         if self.dialog.update(ctx) {
-            if let Some(result) = self.dialog.take_result() {
-                println!("Dialog result: {:?}", result);
+            if let Some(_result) = self.dialog.take_result() {
+                // Resize back to normal when dialog closes and re-enable automatic resizing
+                self.manual_resize_mode = false;
+                ctx.send_viewport_cmd(egui::ViewportCommand::InnerSize([500.0, 300.0].into()));
             }
         }
         match editor_result {
@@ -487,29 +495,6 @@ impl eframe::App for AnchorSelector {
                     if i.key_pressed(egui::Key::ArrowUp) {
                         self.navigate_vertical(-1);
                     }
-                    if i.key_pressed(egui::Key::ArrowRight) {
-                        let command_to_edit = if !self.filtered_commands.is_empty() && self.selected_index < self.filtered_commands.len() {
-                            Some(&self.filtered_commands[self.selected_index])
-                        } else {
-                            None
-                        };
-                        self.command_editor.edit_command(command_to_edit, &self.search_text);
-                    }
-                    if i.key_pressed(egui::Key::Equals) || (i.modifiers.shift && i.key_pressed(egui::Key::Equals)) {
-                        // = or + key (shift+=): open command editor
-                        // Check if there's an exact match (case-insensitive) for the search text
-                        let exact_match = self.commands.iter().find(|cmd| 
-                            cmd.command.to_lowercase() == self.search_text.to_lowercase()
-                        );
-                        
-                        if let Some(matching_command) = exact_match {
-                            // Found exact match - edit the existing command
-                            self.command_editor.edit_command(Some(matching_command), &self.search_text);
-                        } else {
-                            // No exact match - create new command with search text as name
-                            self.command_editor.edit_command(None, &self.search_text);
-                        }
-                    }
                     if i.key_pressed(egui::Key::Enter) {
                         if !self.filtered_commands.is_empty() {
                             // Get display commands for execution
@@ -556,17 +541,58 @@ impl eframe::App for AnchorSelector {
                             }
                         }
                     }
+                    if i.key_pressed(egui::Key::F5) {
+                        // Simple resize test without dialog
+                        self.manual_resize_mode = true;
+                        self.last_manual_size = Some(egui::vec2(800.0, 600.0));
+                    }
                     if i.key_pressed(egui::Key::F6) {
-                        // Test dialog functionality
+                        // Test 1000x1000 as originally requested
+                        self.manual_resize_mode = true;
+                        self.last_manual_size = Some(egui::vec2(1000.0, 1000.0));
+                    }
+                    if i.key_pressed(egui::Key::F7) {
+                        // Test dialog functionality with calculated window size
                         let test_specs = vec![
-                            "#Project Setup Dialog".to_string(),
-                            "'Welcome! Let's set up your new project.".to_string(),
+                            "=Project Setup Dialog".to_string(),  // = sets window title
+                            "#Welcome to the Configuration Wizard".to_string(),  // # shows large text in dialog
+                            "'Please fill out the details below:".to_string(),
                             "$project_name,Project name (e.g. my-awesome-app)".to_string(),
                             "$description,Brief description".to_string(),
                             "!OK".to_string(),
                             "!Cancel".to_string(),
                         ];
                         self.dialog.show(test_specs);
+                        
+                        // Set a reasonable fixed size for dialogs (based on visual inspection)
+                        let dialog_width = 450.0;
+                        let dialog_height = 220.0;
+                        self.manual_resize_mode = true;
+                        self.last_manual_size = Some(egui::vec2(dialog_width, dialog_height));
+                    }
+                    if i.key_pressed(egui::Key::ArrowRight) {
+                        // Command Editor: Edit selected command or create new one
+                        let command_to_edit = if !self.filtered_commands.is_empty() && self.selected_index < self.filtered_commands.len() {
+                            Some(&self.filtered_commands[self.selected_index])
+                        } else {
+                            None
+                        };
+                        self.command_editor.edit_command(command_to_edit, &self.search_text);
+                    }
+                    if i.key_pressed(egui::Key::Equals) || (i.modifiers.shift && i.key_pressed(egui::Key::Equals)) {
+                        // Command Editor: = or + key (shift+=): open command editor
+                        // Check if there's an exact match (case-insensitive) for the search text
+                        let exact_match = self.commands.iter().find(|cmd| 
+                            cmd.command.to_lowercase() == self.search_text.to_lowercase()
+                        );
+                        
+                        if let Some(matching_command) = exact_match {
+                            // Found exact match - edit the existing command
+                            self.command_editor.edit_command(Some(matching_command), &self.search_text);
+                        } else {
+                            // No exact match - create new command with search text as name
+                            self.command_editor.edit_command(None, &self.search_text);
+                        }
                     }
                 });
                 
@@ -661,7 +687,15 @@ impl eframe::App for AnchorSelector {
                     };
                     
                     // Resize window to accommodate content
-                    ctx.send_viewport_cmd(egui::ViewportCommand::InnerSize(egui::vec2(final_width, final_height)));
+                    if self.manual_resize_mode {
+                        // Use manual size if set (works even when dialog is open)
+                        if let Some(manual_size) = self.last_manual_size {
+                            ctx.send_viewport_cmd(egui::ViewportCommand::InnerSize(manual_size));
+                        }
+                    } else if !self.dialog.visible {
+                        // Use automatic size only when dialog is not open
+                        ctx.send_viewport_cmd(egui::ViewportCommand::InnerSize(egui::vec2(final_width, final_height)));
+                    }
                     
                     if self.should_use_columns() {
                         // Multi-column display
@@ -891,7 +925,16 @@ impl eframe::App for AnchorSelector {
                         (500.0, base_height)
                     };
                     
-                    ctx.send_viewport_cmd(egui::ViewportCommand::InnerSize(egui::vec2(final_width, final_height)));
+                    // Resize window (same logic as when there are commands)
+                    if self.manual_resize_mode {
+                        // Use manual size if set (works even when dialog is open)
+                        if let Some(manual_size) = self.last_manual_size {
+                            ctx.send_viewport_cmd(egui::ViewportCommand::InnerSize(manual_size));
+                        }
+                    } else if !self.dialog.visible {
+                        // Use automatic size only when dialog is not open
+                        ctx.send_viewport_cmd(egui::ViewportCommand::InnerSize(egui::vec2(final_width, final_height)));
+                    }
                 }
                 
                 // Bottom draggable area

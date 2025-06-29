@@ -19,6 +19,7 @@ use std::fs;
 use std::path::{Path, PathBuf};
 use regex::Regex;
 use serde::{Deserialize, Serialize};
+use chrono::Local;
 
 // =============================================================================
 // Configuration
@@ -225,10 +226,36 @@ pub fn save_commands(commands: &[Command]) -> Result<(), Box<dyn std::error::Err
     Ok(())
 }
 
+/// Creates a backup of the existing file before overwriting
+fn backup_file_if_exists(file_path: &Path, filename: &str) -> Result<(), Box<dyn std::error::Error>> {
+    if file_path.exists() {
+        // Create backups directory
+        let backup_dir = file_path.parent()
+            .ok_or("No parent directory")?
+            .join("backups");
+        
+        if !backup_dir.exists() {
+            fs::create_dir_all(&backup_dir)?;
+        }
+        
+        // Generate timestamp
+        let timestamp = Local::now().format("%Y-%m-%d_%H-%M-%S");
+        let backup_filename = format!("{} {}", timestamp, filename);
+        let backup_path = backup_dir.join(backup_filename);
+        
+        // Copy file to backup
+        fs::copy(file_path, backup_path)?;
+    }
+    Ok(())
+}
+
 /// Saves commands to a specified file with proper formatting and newline handling
 pub fn save_commands_formatted(commands: &[Command], output_file: &str) -> Result<(), Box<dyn std::error::Error>> {
     let home = env::var("HOME").unwrap_or_else(|_| ".".to_string());
     let file_path = Path::new(&home).join(".config/anchor_selector").join(output_file);
+    
+    // Create backup before overwriting
+    backup_file_if_exists(&file_path, output_file)?;
     
     let contents = commands.iter()
         .map(|cmd| cmd.full_line.clone())
@@ -310,7 +337,6 @@ pub fn filter_commands(commands: &[Command], search_text: &str, max_results: usi
     let search_words: Vec<&str> = search_lower.split_whitespace().collect();
     
     if debug {
-        println!("Debug: searching for words: {:?} (original: '{}')", search_words, search_text);
     }
     
     // Categorize matches by relevance
@@ -323,7 +349,6 @@ pub fn filter_commands(commands: &[Command], search_text: &str, max_results: usi
         let cmd_lower = cmd.command.to_lowercase();
         
         if debug && cmd_lower.contains("selector") && search_words.contains(&"s") {
-            println!("Debug: checking '{}' against words: {:?}", cmd_lower, search_words);
         }
         
         if command_matches_query_with_debug(&cmd.command, search_text, debug) >= 0 {
@@ -392,10 +417,10 @@ fn sort_matches(matches: &mut Vec<Command>, prefer_longer: bool) {
 fn combine_and_limit_results(search_words: Vec<&str>, exact_matches: Vec<Command>,
                             command_start_matches: Vec<Command>, word_start_matches: Vec<Command>,
                             prefix_matches: Vec<Command>, max_results: usize, debug: bool) -> Vec<Command> {
-    let exact_count = exact_matches.len();
-    let cmd_start_count = command_start_matches.len();
-    let word_count = word_start_matches.len();
-    let prefix_count = prefix_matches.len();
+    let _exact_count = exact_matches.len();
+    let _cmd_start_count = command_start_matches.len();
+    let _word_count = word_start_matches.len();
+    let _prefix_count = prefix_matches.len();
     
     let mut filtered_commands = Vec::new();
     
@@ -430,8 +455,6 @@ fn combine_and_limit_results(search_words: Vec<&str>, exact_matches: Vec<Command
     }
     
     if debug {
-        println!("Debug: found {} exact, {} cmd-start, {} word-start, {} prefix matches, {} total", 
-                 exact_count, cmd_start_count, word_count, prefix_count, filtered_commands.len());
     }
     
     filtered_commands
@@ -514,7 +537,6 @@ fn matches_multi_word_sequence_with_position(cmd_text: &str, search_words: &[&st
     let cmd_words: Vec<&str> = cmd_text.split(|c| c == ' ' || c == '_' || c == '.').filter(|s| !s.is_empty()).collect();
     
     if debug && cmd_text.contains("selector") {
-        println!("Debug: cmd_words: {:?}, search_words: {:?}", cmd_words, search_words);
     }
     
     let mut search_idx = 0;
@@ -528,8 +550,6 @@ fn matches_multi_word_sequence_with_position(cmd_text: &str, search_words: &[&st
         if cmd_word.starts_with(search_words[search_idx]) {
             search_idx += 1;
             if debug && cmd_text.contains("selector") {
-                println!("Debug: matched '{}' with '{}', search_idx now {}", 
-                        cmd_word, search_words[search_idx-1], search_idx);
             }
         }
         
