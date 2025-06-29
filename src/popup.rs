@@ -552,23 +552,24 @@ impl eframe::App for AnchorSelector {
                         self.last_manual_size = Some(egui::vec2(1000.0, 1000.0));
                     }
                     if i.key_pressed(egui::Key::F7) {
-                        // Test dialog functionality with calculated window size
-                        let test_specs = vec![
-                            "=Project Setup Dialog".to_string(),  // = sets window title
-                            "#Welcome to the Configuration Wizard".to_string(),  // # shows large text in dialog
-                            "'Please fill out the details below:".to_string(),
-                            "$project_name,Project name (e.g. my-awesome-app)".to_string(),
-                            "$description,Brief description".to_string(),
-                            "!OK".to_string(),
-                            "!Cancel".to_string(),
-                        ];
-                        self.dialog.show(test_specs);
-                        
-                        // Set a reasonable fixed size for dialogs (based on visual inspection)
-                        let dialog_width = 450.0;
-                        let dialog_height = 220.0;
-                        self.manual_resize_mode = true;
-                        self.last_manual_size = Some(egui::vec2(dialog_width, dialog_height));
+                        // Scan markdown files and contacts, update commands
+                        if let Some(ref markdown_roots) = self.config.markdown_roots {
+                            use anchor_selector::scanner::scan;
+                            
+                            // Scan files and contacts, get updated command list
+                            let updated_commands = scan(self.commands.clone(), markdown_roots);
+                            
+                            // Update the commands list
+                            self.commands = updated_commands;
+                            
+                            // Re-run filtering with current search text
+                            self.filtered_commands = filter_commands(&self.commands, &self.search_text, 500, false);
+                            
+                            // Reset selection if needed
+                            if self.selected_index >= self.filtered_commands.len() && !self.filtered_commands.is_empty() {
+                                self.selected_index = 0;
+                            }
+                        }
                     }
                     if i.key_pressed(egui::Key::ArrowRight) {
                         // Command Editor: Edit selected command or create new one

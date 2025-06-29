@@ -17,11 +17,19 @@ popup_settings:
   debug_log: "~/.anchor.log"  # Debug logging file path (empty/null to disable)
   # Command editor dropdown actions (comma-separated list)
   # Users can reorder, add, or remove actions to customize the dropdown
-  listed_actions: "app,url,folder,cmd,chrome,safari,brave,firefox,work,notion,obs,obs_url,1pass,1pass_old,1pass_robust,anchor,alias,doc"
+  listed_actions: "app,url,folder,cmd,chrome,safari,brave,firefox,work,notion,obs,obs_url,1pass,1pass_old,1pass_robust,anchor,alias,doc,contact"
   # Enable merging of similar commands (true = merge "Analysis Folder", "Analysis Note" -> "Analysis...")
   merge_similar: true
   # Characters used as word separators for command parsing and merging
   word_separators: " ._-"
+
+# Markdown file scanning roots (for F7 key functionality)
+# List of directories to scan for markdown files
+# These will be added as commands with "obs" or "anchor" actions
+markdown_roots:
+  - "~/Documents"
+  - "~/Notes"
+  # Add more directories as needed
 
 # Launcher settings
 settings:
@@ -53,6 +61,9 @@ simple_functions:
   # Specialized app actions - implemented as Rust built-ins (single-line format)  
   notion: {fn: open_with, app: "Notion", arg: "{{arg}}"}             # notion notion://page -> opens in Notion
   obs_url: {fn: open_with, app: "Obsidian", arg: "{{arg}}"}          # obs_url obsidian://vault -> opens in Obsidian
+  
+  # Contact action - opens contact in Contacts app
+  contact: {fn: open_with, app: "Contacts", arg: "addressbook://{{arg}}"}  # contact <id> -> opens contact
   
   
   # 1Password using simple Quick Access (original approach, kept for compatibility)

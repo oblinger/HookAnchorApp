@@ -13,6 +13,7 @@ pub mod js_runtime;
 pub mod business_logic;
 pub mod builtin_fns;
 pub mod utils;
+pub mod scanner;
 
 use std::env;
 use std::fs;
@@ -63,6 +64,8 @@ pub struct Config {
     /// User-defined JavaScript functions that extend the global function namespace
     /// These functions are available in all JavaScript contexts (actions, business logic, etc.)
     pub js_functions: Option<std::collections::HashMap<String, String>>,
+    /// List of root directories to scan for markdown files
+    pub markdown_roots: Option<Vec<String>>,
 }
 
 impl Default for Config {
@@ -70,6 +73,7 @@ impl Default for Config {
         Config {
             popup_settings: PopupSettings::default(),
             js_functions: None,
+            markdown_roots: None,
         }
     }
 }
@@ -123,9 +127,14 @@ fn load_legacy_config(contents: &str) -> Result<Config, Box<dyn std::error::Erro
     let js_functions = yaml.get("js_functions")
         .and_then(|v| serde_yaml::from_value(v.clone()).ok());
     
+    // Extract markdown_roots if it exists
+    let markdown_roots = yaml.get("markdown_roots")
+        .and_then(|v| serde_yaml::from_value(v.clone()).ok());
+    
     Ok(Config {
         popup_settings,
         js_functions,
+        markdown_roots,
     })
 }
 
