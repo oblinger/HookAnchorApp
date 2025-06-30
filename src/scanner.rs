@@ -6,7 +6,68 @@
 use std::fs;
 use std::path::Path;
 use std::process::Command as ProcessCommand;
-use crate::Command;
+use std::collections::hash_map::DefaultHasher;
+use std::hash::{Hash, Hasher};
+use crate::{Command, load_config, load_state, save_state, save_commands_to_file};
+use chrono::Local;
+
+/// Checks if filesystem scan should be performed and executes it if needed
+/// This function should be called on every startup.
+pub fn startup_check(commands: Vec<Command>) -> Vec<Command> {
+    let config = load_config();
+    let mut state = load_state();
+    
+    let current_time = Local::now().timestamp();
+    
+    // Get scan interval from config (default to 10 seconds)
+    let scan_interval = config.popup_settings.scan_interval_seconds.unwrap_or(10) as i64;
+    
+    // Check if enough time has passed since last scan
+    let should_scan = match state.last_scan_time {
+        Some(last_time) => (current_time - last_time) >= scan_interval,
+        None => true, // Never scanned before
+    };
+    
+    if !should_scan {
+        return commands; // Not time to scan yet
+    }
+    
+    // Perform filesystem scan
+    let markdown_roots = config.markdown_roots.unwrap_or_else(|| vec![
+        "~/Documents".to_string(),
+        "~/Notes".to_string(),
+        "~/ob/kmr".to_string(),
+    ]);
+    
+    let scanned_commands = scan(commands, &markdown_roots);
+    
+    // Calculate checksum of the scan results
+    let new_checksum = calculate_commands_checksum(&scanned_commands);
+    
+    // Check if checksum has changed
+    let checksum_changed = match &state.last_scan_checksum {
+        Some(old_checksum) => old_checksum != &new_checksum,
+        None => true, // First scan
+    };
+    
+    // Update state with scan time and checksum
+    state.last_scan_time = Some(current_time);
+    state.last_scan_checksum = Some(new_checksum);
+    
+    // Save updated state
+    if let Err(e) = save_state(&state) {
+        eprintln!("Warning: Failed to save scan state: {}", e);
+    }
+    
+    // Save commands only if checksum changed
+    if checksum_changed {
+        if let Err(e) = save_commands_to_file(&scanned_commands) {
+            eprintln!("Warning: Failed to save updated commands: {}", e);
+        }
+    }
+    
+    scanned_commands
+}
 
 /// Top-level scan function that orchestrates all scanning operations
 pub fn scan(mut commands: Vec<Command>, markdown_roots: &[String]) -> Vec<Command> {
@@ -30,34 +91,36 @@ pub fn scan_files(mut commands: Vec<Command>, markdown_roots: &[String]) -> Vec<
         let root_path = Path::new(&expanded_root);
         
         if root_path.exists() && root_path.is_dir() {
-            scan_directory(&root_path, &mut commands);
+            scan_directory_with_root(&root_path, &root_path, &mut commands);
         }
     }
     
     commands
 }
 
-/// Recursively scans a directory for files and folders
-fn scan_directory(dir: &Path, commands: &mut Vec<Command>) {
+
+/// Recursively scans a directory for files and folders with vault root tracking
+fn scan_directory_with_root(dir: &Path, vault_root: &Path, commands: &mut Vec<Command>) {
     if let Ok(entries) = fs::read_dir(dir) {
         for entry in entries.filter_map(Result::ok) {
             let path = entry.path();
             
             // Process the path (file or directory)
-            if let Some(command) = process_markdown(&path) {
+            if let Some(command) = process_markdown_with_root(&path, vault_root) {
                 commands.push(command);
             }
             
             // Recursively scan subdirectories
             if path.is_dir() {
-                scan_directory(&path, commands);
+                scan_directory_with_root(&path, vault_root, commands);
             }
         }
     }
 }
 
-/// Processes a path and returns a command if it's a markdown file
-fn process_markdown(path: &Path) -> Option<Command> {
+
+/// Processes a path and returns a command if it's a markdown file with vault root for relative paths
+fn process_markdown_with_root(path: &Path, vault_root: &Path) -> Option<Command> {
     // Check if it's a file and has .md extension
     if !path.is_file() {
         return None;
@@ -81,13 +144,29 @@ fn process_markdown(path: &Path) -> Option<Command> {
     // Create command
     let command_name = format!("{} md", file_name);
     let full_path = path.to_string_lossy().to_string();
-    let full_line = format!("{} : {} {}", command_name, action, full_path);
+    
+    // Calculate the argument based on action type
+    let arg = if action == "obs" {
+        // For OBS entries, use relative path from vault root (with .md extension)
+        if let Ok(relative_path) = path.strip_prefix(vault_root) {
+            relative_path.to_string_lossy().to_string()
+        } else {
+            // Fallback to just filename with extension if we can't calculate relative path
+            format!("{}.md", file_name)
+        }
+    } else {
+        // For anchor entries, use full path as before
+        full_path.clone()
+    };
+    
+    let full_line = format!("{} : {} {};", command_name, action, arg);
     
     Some(Command {
         group: String::new(),
         command: command_name,
         action: action.to_string(),
-        arg: full_path,
+        arg,
+        flags: String::new(),
         full_line,
     })
 }
@@ -121,6 +200,26 @@ fn expand_home(path: &str) -> String {
         }
     }
     path.to_string()
+}
+
+/// Calculates a checksum from the scan results to detect changes
+fn calculate_commands_checksum(commands: &[Command]) -> String {
+    let mut hasher = DefaultHasher::new();
+    
+    // Filter only scan-generated commands (obs, anchor, contact)
+    let mut scan_commands: Vec<_> = commands.iter()
+        .filter(|cmd| cmd.action == "obs" || cmd.action == "anchor" || cmd.action == "contact")
+        .collect();
+    
+    // Sort for consistent checksum
+    scan_commands.sort_by(|a, b| a.full_line.cmp(&b.full_line));
+    
+    // Hash all scan-generated command lines
+    for cmd in scan_commands {
+        cmd.full_line.hash(&mut hasher);
+    }
+    
+    format!("{:x}", hasher.finish())
 }
 
 /// Scans macOS contacts and creates commands for contacts with phone or email
@@ -175,13 +274,14 @@ end tell
                     
                     // Create command name: @FirstName LastName ctc
                     let command_name = format!("@{} ctc", full_name);
-                    let full_line = format!("{} : contact {}", command_name, contact_id);
+                    let full_line = format!("{} : contact {};", command_name, contact_id);
                     
                     commands.push(Command {
                         group: String::new(),
                         command: command_name,
                         action: "contact".to_string(),
                         arg: contact_id.to_string(),
+                        flags: String::new(),
                         full_line,
                     });
                 }
@@ -196,13 +296,14 @@ end tell
             
             for (name, id) in sample_contacts {
                 let command_name = format!("@{} ctc", name);
-                let full_line = format!("{} : contact {}", command_name, id);
+                let full_line = format!("{} : contact {};", command_name, id);
                 
                 commands.push(Command {
                     group: String::new(),
                     command: command_name,
                     action: "contact".to_string(),
                     arg: id.to_string(),
+                    flags: String::new(),
                     full_line,
                 });
             }

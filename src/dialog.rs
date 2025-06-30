@@ -2,6 +2,7 @@ use eframe::egui;
 use std::collections::HashMap;
 
 #[derive(Debug, Clone)]
+#[allow(dead_code)]
 pub enum DialogElement {
     Title(String),
     Label(String),
@@ -33,6 +34,7 @@ impl Dialog {
         }
     }
     
+    #[allow(dead_code)]
     pub fn show(&mut self, spec_strings: Vec<String>) {
         self.visible = true;
         self.rows.clear();
@@ -53,6 +55,7 @@ impl Dialog {
         self.result.take()
     }
     
+    #[allow(dead_code)]
     pub fn calculate_required_size(&self) -> (f32, f32) {
         // Much simpler calculation based on actual content
         let row_count = self.rows.len() as f32;
@@ -64,6 +67,7 @@ impl Dialog {
         (estimated_width, estimated_height)
     }
     
+    #[allow(dead_code)]
     fn parse_spec_strings(&mut self, spec_strings: Vec<String>) {
         let mut current_row = DialogRow { elements: Vec::new() };
         let mut last_was_button = false;

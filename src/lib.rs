@@ -18,9 +18,79 @@ pub mod scanner;
 use std::env;
 use std::fs;
 use std::path::{Path, PathBuf};
-use regex::Regex;
 use serde::{Deserialize, Serialize};
 use chrono::Local;
+
+// =============================================================================
+// State Management
+// =============================================================================
+
+/// Application state that persists between runs
+#[derive(Debug, Clone, Serialize, Deserialize)]
+pub struct AppState {
+    /// Last saved window position
+    pub window_position: Option<(f32, f32)>,
+    /// Unix timestamp when this build was created
+    pub build_time: Option<i64>,
+    /// Unix timestamp when filesystem scan was last performed
+    pub last_scan_time: Option<i64>,
+    /// Checksum derived from last filesystem scan results
+    pub last_scan_checksum: Option<String>,
+}
+
+impl Default for AppState {
+    fn default() -> Self {
+        AppState {
+            window_position: None,
+            build_time: None,
+            last_scan_time: None,
+            last_scan_checksum: None,
+        }
+    }
+}
+
+/// Returns the path to the state.json file
+fn get_state_file_path() -> PathBuf {
+    let home = env::var("HOME").unwrap_or_else(|_| ".".to_string());
+    Path::new(&home).join(".config/anchor_selector/state.json")
+}
+
+/// Loads application state from state.json file, returns default if file doesn't exist or is invalid
+pub fn load_state() -> AppState {
+    let state_path = get_state_file_path();
+    
+    if let Ok(contents) = fs::read_to_string(&state_path) {
+        match serde_json::from_str::<AppState>(&contents) {
+            Ok(state) => state,
+            Err(_) => AppState::default()
+        }
+    } else {
+        AppState::default()
+    }
+}
+
+/// Saves application state to state.json file
+pub fn save_state(state: &AppState) -> Result<(), Box<dyn std::error::Error>> {
+    let state_path = get_state_file_path();
+    
+    // Ensure config directory exists
+    if let Some(parent) = state_path.parent() {
+        fs::create_dir_all(parent)?;
+    }
+    
+    // Serialize and save
+    let json_content = serde_json::to_string_pretty(state)?;
+    fs::write(&state_path, json_content)?;
+    
+    Ok(())
+}
+
+/// Updates build time in state.json file
+pub fn save_state_with_build_time() -> Result<(), Box<dyn std::error::Error>> {
+    let mut state = load_state();
+    state.build_time = Some(Local::now().timestamp());
+    save_state(&state)
+}
 
 // =============================================================================
 // Configuration
@@ -41,6 +111,32 @@ pub struct PopupSettings {
     /// Characters used as word separators for command parsing and merging
     /// Default: " ._-" (space, dot, underscore, dash)
     pub word_separators: Option<String>,
+    /// Root directory for file system scanning (F7 key functionality)
+    pub scan_root: Option<String>,
+    /// Seconds between automatic filesystem scans (default: 10)
+    pub scan_interval_seconds: Option<u64>,
+}
+
+/// Launcher settings section of the configuration file
+#[derive(Debug, Clone, Serialize, Deserialize)]
+pub struct LauncherSettings {
+    pub default_browser: Option<String>,
+    pub work_browser: Option<String>, 
+    pub timeout_ms: Option<u64>,
+    pub obsidian_app_name: Option<String>,
+    pub obsidian_vault_name: Option<String>,
+}
+
+impl Default for LauncherSettings {
+    fn default() -> Self {
+        LauncherSettings {
+            default_browser: Some("Google Chrome".to_string()),
+            work_browser: Some("Google Chrome Beta".to_string()),
+            timeout_ms: Some(5000),
+            obsidian_app_name: Some("Obsidian".to_string()),
+            obsidian_vault_name: Some("kmr".to_string()),
+        }
+    }
 }
 
 impl Default for PopupSettings {
@@ -53,6 +149,8 @@ impl Default for PopupSettings {
             listed_actions: Some("app,url,folder,cmd,chrome,anchor".to_string()),
             merge_similar: Some(true), // Enable merging by default
             word_separators: Some(" ._-".to_string()), // space, dot, underscore, dash
+            scan_root: Some("~/ob/kmr".to_string()),
+            scan_interval_seconds: Some(10), // 10 seconds default
         }
     }
 }
@@ -61,6 +159,8 @@ impl Default for PopupSettings {
 #[derive(Debug, Clone, Serialize, Deserialize)]
 pub struct Config {
     pub popup_settings: PopupSettings,
+    /// Launcher application settings
+    pub launcher_settings: Option<LauncherSettings>,
     /// User-defined JavaScript functions that extend the global function namespace
     /// These functions are available in all JavaScript contexts (actions, business logic, etc.)
     pub js_functions: Option<std::collections::HashMap<String, String>>,
@@ -72,6 +172,7 @@ impl Default for Config {
     fn default() -> Self {
         Config {
             popup_settings: PopupSettings::default(),
+            launcher_settings: Some(LauncherSettings::default()),
             js_functions: None,
             markdown_roots: None,
         }
@@ -131,8 +232,13 @@ fn load_legacy_config(contents: &str) -> Result<Config, Box<dyn std::error::Erro
     let markdown_roots = yaml.get("markdown_roots")
         .and_then(|v| serde_yaml::from_value(v.clone()).ok());
     
+    // Extract launcher_settings if it exists
+    let launcher_settings = yaml.get("launcher_settings")
+        .and_then(|v| serde_yaml::from_value(v.clone()).ok());
+    
     Ok(Config {
         popup_settings,
+        launcher_settings,
         js_functions,
         markdown_roots,
     })
@@ -150,7 +256,113 @@ pub struct Command {
     pub command: String,
     pub action: String,
     pub arg: String,
+    pub flags: String,
     pub full_line: String,
+}
+
+impl Command {
+    /// Gets the value of a flag by its key character
+    /// Returns the string after the flag key, or None if the flag doesn't exist
+    pub fn get_flag(&self, key: char) -> Option<String> {
+        if self.flags.is_empty() {
+            return None;
+        }
+        
+        // Split by commas and look for the flag
+        for flag_part in self.flags.split(',') {
+            let flag_part = flag_part.trim();
+            if flag_part.starts_with(key) && flag_part.len() > 1 {
+                return Some(flag_part[1..].to_string());
+            }
+        }
+        None
+    }
+    
+    /// Sets the value of a flag by its key character
+    /// If the flag exists, updates its value; if not, adds it
+    pub fn set_flag(&mut self, key: char, value: &str) {
+        let new_flag = format!("{}{}", key, value);
+        
+        if self.flags.is_empty() {
+            self.flags = new_flag;
+            self.update_full_line();
+            return;
+        }
+        
+        // Check if flag already exists and replace it
+        let mut flag_parts: Vec<String> = self.flags.split(',')
+            .map(|s| s.trim().to_string())
+            .collect();
+        
+        let mut found = false;
+        for part in flag_parts.iter_mut() {
+            if part.starts_with(key) {
+                *part = new_flag.clone();
+                found = true;
+                break;
+            }
+        }
+        
+        if !found {
+            flag_parts.push(new_flag);
+        }
+        
+        self.flags = flag_parts.join(",");
+        self.update_full_line();
+    }
+    
+    /// Removes a flag by its key character
+    pub fn remove_flag(&mut self, key: char) {
+        if self.flags.is_empty() {
+            return;
+        }
+        
+        let flag_parts: Vec<String> = self.flags.split(',')
+            .map(|s| s.trim().to_string())
+            .filter(|s| !s.starts_with(key))
+            .collect();
+        
+        self.flags = flag_parts.join(",");
+        self.update_full_line();
+    }
+    
+    /// Updates the full_line field to reflect current command state in new format
+    pub fn update_full_line(&mut self) {
+        self.full_line = self.to_new_format();
+    }
+    
+    /// Converts the command to new format string
+    pub fn to_new_format(&self) -> String {
+        let mut result = String::new();
+        
+        // Add group if present
+        if !self.group.is_empty() {
+            result.push_str(&self.group);
+            result.push_str("! ");
+        }
+        
+        // Add command and action
+        result.push_str(&self.command);
+        result.push_str(" : ");
+        result.push_str(&self.action);
+        
+        // Add arg if present
+        if !self.arg.is_empty() {
+            result.push(' ');
+            result.push_str(&self.arg);
+        }
+        
+        // Add flags if present
+        if !self.flags.is_empty() {
+            result.push(',');
+            result.push_str(&self.flags);
+        }
+        
+        // End with semicolon
+        result.push(';');
+        
+        result
+    }
 }
 
 // =============================================================================
@@ -180,11 +392,8 @@ pub fn load_commands() -> Vec<Command> {
 }
 
 /// Parses command text into a vector of Command structs
+/// Only supports new format: [GROUP !] COMMAND : ACTION [ARG] [,flag1,flag2...];
 fn parse_commands(contents: &str) -> Vec<Command> {
-    // Regex patterns for parsing command formats
-    let re_with_arg = Regex::new(r"^(?:(.+?)!\s*)?(.+?):\s*(\S+)\s+(.*)$").unwrap();
-    let re_no_arg = Regex::new(r"^(?:(.+?)!\s*)?(.+?):\s*(\S+)\s*$").unwrap();
-    
     contents
         .lines()
         .filter_map(|line| {
@@ -193,33 +402,78 @@ fn parse_commands(contents: &str) -> Vec<Command> {
                 return None;
             }
             
-            // Try parsing with argument first
-            if let Some(captures) = re_with_arg.captures(line) {
-                Some(Command {
-                    group: captures.get(1).map_or(String::new(), |m| m.as_str().trim().to_string()),
-                    command: captures.get(2).map_or(String::new(), |m| m.as_str().trim().to_string()),
-                    action: captures.get(3).map_or(String::new(), |m| m.as_str().trim().to_string()),
-                    arg: captures.get(4).map_or(String::new(), |m| m.as_str().trim().to_string()),
-                    full_line: line.to_string(),
-                })
-            }
-            // Try parsing without argument
-            else if let Some(captures) = re_no_arg.captures(line) {
-                Some(Command {
-                    group: captures.get(1).map_or(String::new(), |m| m.as_str().trim().to_string()),
-                    command: captures.get(2).map_or(String::new(), |m| m.as_str().trim().to_string()),
-                    action: captures.get(3).map_or(String::new(), |m| m.as_str().trim().to_string()),
-                    arg: String::new(),
-                    full_line: line.to_string(),
-                })
-            }
-            // Log and skip unparseable lines
-            else {
-                eprintln!("Warning: Failed to parse line: {}", line);
-                None
-            }
+            parse_command_line(line)
         })
         .collect()
+}
+
+/// Parses a single command line in new format
+fn parse_command_line(line: &str) -> Option<Command> {
+    // All lines must end with semicolon
+    if !line.ends_with(';') {
+        eprintln!("Warning: Line missing semicolon terminator: {}", line);
+        return None;
+    }
+    
+    parse_new_format(line)
+}
+
+/// Parses new format: [GROUP !] COMMAND : ACTION [ARG] [,flag1,flag2...];
+fn parse_new_format(line: &str) -> Option<Command> {
+    // Remove the trailing semicolon
+    let line_without_semicolon = &line[..line.len()-1];
+    
+    // Split by colon to get command part and action part
+    let colon_pos = line_without_semicolon.find(':')?;
+    let command_part = line_without_semicolon[..colon_pos].trim();
+    let action_part = line_without_semicolon[colon_pos+1..].trim();
+    
+    // Parse command part for group and command
+    let (group, command) = if let Some(excl_pos) = command_part.find('!') {
+        let group = command_part[..excl_pos].trim().to_string();
+        let command = command_part[excl_pos+1..].trim().to_string();
+        (group, command)
+    } else {
+        (String::new(), command_part.to_string())
+    };
+    
+    // Parse action part for action, arg, and flags
+    let (action, arg, flags) = parse_action_part(action_part);
+    
+    Some(Command {
+        group,
+        command,
+        action,
+        arg,
+        flags,
+        full_line: line.to_string(),
+    })
+}
+
+/// Parses the action part: ACTION [ARG] [,flag1,flag2...]
+/// Returns (action, arg, flags)
+fn parse_action_part(action_part: &str) -> (String, String, String) {
+    // Look for the first comma to separate action/arg from flags
+    if let Some(comma_pos) = action_part.find(',') {
+        let action_arg_part = action_part[..comma_pos].trim();
+        let flags_part = action_part[comma_pos+1..].trim();
+        
+        let (action, arg) = parse_action_and_arg(action_arg_part);
+        (action, arg, flags_part.to_string())
+    } else {
+        let (action, arg) = parse_action_and_arg(action_part);
+        (action, arg, String::new())
+    }
+}
+
+/// Parses action and argument from a string like "ACTION ARG"
+fn parse_action_and_arg(action_arg: &str) -> (String, String) {
+    let parts: Vec<&str> = action_arg.splitn(2, ' ').collect();
+    if parts.len() == 2 {
+        (parts[0].to_string(), parts[1].to_string())
+    } else {
+        (action_arg.to_string(), String::new())
+    }
 }
 
 /// Saves commands to commands.txt using their original full_line format
@@ -258,8 +512,34 @@ fn backup_file_if_exists(file_path: &Path, filename: &str) -> Result<(), Box<dyn
     Ok(())
 }
 
+/// Migrates commands from old format to new format and updates full_line
+pub fn migrate_commands_to_new_format(commands: &mut [Command]) {
+    for cmd in commands {
+        // Convert to new format and update full_line
+        cmd.update_full_line();
+    }
+}
+
 /// Saves commands to a specified file with proper formatting and newline handling
+/// Uses new format for all commands
 pub fn save_commands_formatted(commands: &[Command], output_file: &str) -> Result<(), Box<dyn std::error::Error>> {
+    let home = env::var("HOME").unwrap_or_else(|_| ".".to_string());
+    let file_path = Path::new(&home).join(".config/anchor_selector").join(output_file);
+    
+    // Create backup before overwriting
+    backup_file_if_exists(&file_path, output_file)?;
+    
+    let contents = commands.iter()
+        .map(|cmd| cmd.to_new_format())
+        .collect::<Vec<String>>()
+        .join("\n") + "\n";
+    
+    fs::write(&file_path, contents)?;
+    Ok(())
+}
+
+/// Saves commands to a specified file using original full_line format (backward compatibility)
+pub fn save_commands_original_format(commands: &[Command], output_file: &str) -> Result<(), Box<dyn std::error::Error>> {
     let home = env::var("HOME").unwrap_or_else(|_| ".".to_string());
     let file_path = Path::new(&home).join(".config/anchor_selector").join(output_file);
     
@@ -275,7 +555,7 @@ pub fn save_commands_formatted(commands: &[Command], output_file: &str) -> Resul
     Ok(())
 }
 
-/// Convenience function to save commands to the default commands.txt file
+/// Convenience function to save commands to the default commands.txt file using new format
 pub fn save_commands_to_file(commands: &[Command]) -> Result<(), Box<dyn std::error::Error>> {
     save_commands_formatted(commands, "commands.txt")
 }
@@ -810,7 +1090,8 @@ pub fn reorder_commands_for_submenu(commands: &[Command], positions: &[usize]) -
             command: "---".to_string(),
             action: "separator".to_string(),
             arg: String::new(),
-            full_line: "--- : separator".to_string(),
+            flags: String::new(),
+            full_line: "--- : separator;".to_string(),
         };
         reordered_commands.push(separator_command);
         reordered_positions.push(0); // Separator shows full text
@@ -959,6 +1240,7 @@ pub fn merge_similar_commands(commands: &[Command], search_text: &str) -> Vec<Co
                 command: format!("{}...", candidate),
                 action: command_list[0].action.clone(),
                 arg: command_list[0].arg.clone(),
+                flags: command_list[0].flags.clone(),
                 full_line: command_list[0].full_line.clone(),
             };
             result.push(merged_command);

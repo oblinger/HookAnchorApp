@@ -244,6 +244,7 @@ impl CommandEditor {
                                         command: self.command.clone(),
                                         action: self.action.clone(),
                                         arg: self.argument.clone(),
+                                        flags: String::new(),
                                         full_line: self.format_command_line(),
                                     };
                                     result = CommandEditorResult::Save(new_command, self.original_command_name.clone());
@@ -286,6 +287,7 @@ impl CommandEditor {
             command: self.command.clone(),
             action: self.action.clone(),
             arg: self.argument.clone(),
+            flags: String::new(),
             full_line: self.format_command_line(),
         };
         

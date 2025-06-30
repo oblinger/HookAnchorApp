@@ -1,11 +1,11 @@
 use eframe::egui;
 use std::process;
-use std::path::Path;
-use std::fs;
 use anchor_selector::{
     Command, filter_commands, execute_command, load_commands, merge_similar_commands, 
-    load_config, Config, split_commands, get_current_submenu_prefix
+    load_config, Config, split_commands, get_current_submenu_prefix,
+    load_state, save_state, AppState, scanner
 };
+use chrono::Local;
 
 mod command_editor;
 use command_editor::{CommandEditor, CommandEditorResult};
@@ -21,9 +21,11 @@ pub struct AnchorSelector {
     search_text: String,
     /// Commands that match the current search (filtered and potentially merged)
     filtered_commands: Vec<Command>,
-    /// Index of currently selected command in the filtered list
+    /// Index of currently selected command
+    /// INVARIANT: This always indexes into display_commands (from get_display_commands()),
+    /// NOT into filtered_commands or commands
     selected_index: usize,
-    /// Last saved window position for persistence
+    /// Last saved window position for change detection
     last_saved_position: Option<egui::Pos2>,
     /// Whether window position has been set on startup
     position_set: bool,
@@ -33,6 +35,8 @@ pub struct AnchorSelector {
     dialog: Dialog,
     /// Application configuration
     config: Config,
+    /// Application state (window position, build time, etc.)
+    state: AppState,
     /// Flag to disable automatic window resizing when we want manual control
     manual_resize_mode: bool,
     /// Track the last manual resize request to avoid repeatedly sending commands
@@ -46,8 +50,13 @@ impl AnchorSelector {
     
     pub fn new() -> Self {
         let commands = load_commands();
+        
+        // Perform startup scan check
+        let commands = scanner::startup_check(commands);
+        
         let filtered_commands = Vec::new(); // Start with empty list
         let config = load_config();
+        let state = load_state();
         
         
         Self {
@@ -60,8 +69,37 @@ impl AnchorSelector {
             command_editor: CommandEditor::new(),
             dialog: Dialog::new(),
             config,
+            state,
             manual_resize_mode: false,
             last_manual_size: None,
+        }
+    }
+    
+    // =============================================================================
+    // Build Time and Version Info
+    // =============================================================================
+    
+    /// Calculate seconds since build time
+    fn get_seconds_since_build(&self) -> Option<i64> {
+        if let Some(build_time) = self.state.build_time {
+            let current_time = Local::now().timestamp();
+            Some(current_time - build_time)
+        } else {
+            None
+        }
+    }
+    
+    /// Generate hint text with build version info (only for first 10 minutes)
+    fn get_hint_text(&self) -> String {
+        if let Some(seconds) = self.get_seconds_since_build() {
+            // Only show build time info for first 10 minutes (600 seconds)
+            if seconds <= 600 {
+                format!("Type to search commands... {}s", seconds)
+            } else {
+                "Type to search commands...".to_string()
+            }
+        } else {
+            "Type to search commands...".to_string()
         }
     }
     
@@ -121,20 +159,20 @@ impl AnchorSelector {
     // Layout and Display Logic
     // =============================================================================
     
-    // Calculate if we should use multi-column layout
-    fn should_use_columns(&self) -> bool {
-        self.filtered_commands.len() > self.config.popup_settings.max_rows && self.config.popup_settings.max_columns > 1
+    // Calculate if we should use multi-column layout based on display commands
+    fn should_use_columns_for_display(&self, display_commands: &[Command]) -> bool {
+        display_commands.len() > self.config.popup_settings.max_rows && self.config.popup_settings.max_columns > 1
     }
     
-    // Calculate column layout (rows per column, number of columns to use)
-    fn get_column_layout(&self) -> (usize, usize) {
-        if !self.should_use_columns() {
-            return (self.filtered_commands.len(), 1);
+    // Calculate column layout for the actual display commands
+    fn get_column_layout_for_display(&self, display_commands: &[Command]) -> (usize, usize) {
+        if !self.should_use_columns_for_display(display_commands) {
+            return (display_commands.len(), 1);
         }
         
         let max_rows = self.config.popup_settings.max_rows;
         let max_cols = self.config.popup_settings.max_columns;
-        let total_items = self.filtered_commands.len();
+        let total_items = display_commands.len();
         
         // Calculate optimal number of columns needed
         let cols_needed = (total_items + max_rows - 1) / max_rows; // Ceiling division
@@ -146,19 +184,11 @@ impl AnchorSelector {
         (rows_per_col, cols_to_use)
     }
     
-    // Convert linear index to (column, row) coordinates
-    fn index_to_coords(&self, index: usize) -> (usize, usize) {
-        let (rows_per_col, _) = self.get_column_layout();
-        let col = index / rows_per_col;
-        let row = index % rows_per_col;
-        (col, row)
+    // Legacy functions for compatibility
+    fn should_use_columns(&self) -> bool {
+        self.filtered_commands.len() > self.config.popup_settings.max_rows && self.config.popup_settings.max_columns > 1
     }
     
-    // Convert (column, row) coordinates to linear index
-    fn coords_to_index(&self, col: usize, row: usize) -> usize {
-        let (rows_per_col, _) = self.get_column_layout();
-        col * rows_per_col + row
-    }
     
     // Check if a command is a separator (for skipping during navigation)
     fn is_separator_command(cmd: &Command) -> bool {
@@ -183,7 +213,8 @@ impl AnchorSelector {
                     command: "---".to_string(),
                     action: "separator".to_string(),
                     arg: String::new(),
-                    full_line: "---".to_string(),
+                    flags: String::new(),
+                    full_line: "--- : separator;".to_string(),
                 });
             }
             
@@ -200,117 +231,148 @@ impl AnchorSelector {
     // Navigation Logic
     // =============================================================================
     
-    // Navigate up/down in the multi-column layout
-    fn navigate_vertical(&mut self, direction: i32) {
-        let (display_commands, _is_submenu, _menu_prefix, _inside_count) = self.get_display_commands();
-        
+    // Navigate left/right in the multi-column layout
+    fn navigate_horizontal(&mut self, direction: i32) {
+        let (display_commands, _, _, _) = self.get_display_commands();
         if display_commands.is_empty() {
             return;
         }
         
-        let max_index = display_commands.len() - 1;
-        #[allow(unused_assignments)]
-        let mut new_index = self.selected_index;
-        
-        if self.should_use_columns() {
-            // Multi-column navigation
-            let (rows_per_col, cols_to_use) = self.get_column_layout();
-            let (current_col, current_row) = self.index_to_coords(self.selected_index);
-            
-            let new_row = if direction > 0 {
-                // Down: move to next row, wrapping to next column if needed
-                if current_row + 1 < rows_per_col {
-                    // Stay in same column, move down
-                    let test_index = self.coords_to_index(current_col, current_row + 1);
-                    if test_index < display_commands.len() {
-                        current_row + 1
-                    } else {
-                        current_row // Don't move if target doesn't exist
-                    }
-                } else if current_col + 1 < cols_to_use {
-                    // Move to top of next column
-                    0
-                } else {
-                    current_row // Stay at bottom of last column
-                }
-            } else {
-                // Up: move to previous row, wrapping to previous column if needed
-                if current_row > 0 {
-                    current_row - 1
-                } else if current_col > 0 {
-                    // Move to bottom of previous column
-                    let prev_col_size = if current_col == cols_to_use - 1 && display_commands.len() % rows_per_col != 0 {
-                        // Last column might be shorter
-                        (display_commands.len() - 1) % rows_per_col
-                    } else {
-                        rows_per_col - 1
-                    };
-                    prev_col_size
-                } else {
-                    current_row // Stay at top of first column
-                }
-            };
-            
-            let new_col = if direction > 0 && current_row + 1 >= rows_per_col && current_col + 1 < cols_to_use {
-                current_col + 1
-            } else if direction < 0 && current_row == 0 && current_col > 0 {
-                current_col - 1
-            } else {
-                current_col
-            };
-            
-            new_index = self.coords_to_index(new_col, new_row);
-            if new_index > max_index {
-                return; // Don't move if out of bounds
-            }
-        } else {
-            // Single column navigation
-            if direction > 0 {
-                new_index = (self.selected_index + 1).min(max_index);
-            } else {
-                new_index = self.selected_index.saturating_sub(1);
-            }
+        // Check if we should use columns for these display commands
+        if !self.should_use_columns_for_display(&display_commands) {
+            return; // No horizontal navigation in single column mode
         }
         
-        // Skip separator when navigating
-        if new_index < display_commands.len() && Self::is_separator_command(&display_commands[new_index]) {
-            if direction > 0 && new_index + 1 <= max_index {
-                new_index += 1;
-            } else if direction < 0 && new_index > 0 {
-                new_index -= 1;
+        let (rows_per_col, cols_to_use) = self.get_column_layout_for_display(&display_commands);
+        
+        // Get current visual position based on actual display commands
+        let current_visual_col = self.selected_index / rows_per_col;
+        let current_visual_row = self.selected_index % rows_per_col;
+        
+        // Calculate new visual column
+        let new_visual_col = if direction > 0 {
+            // Moving right
+            if current_visual_col + 1 < cols_to_use {
+                current_visual_col + 1
             } else {
-                // Can't skip separator, stay where we are
-                return;
+                return; // Already at rightmost column
             }
+        } else {
+            // Moving left
+            if current_visual_col > 0 {
+                current_visual_col - 1
+            } else {
+                return; // Already at leftmost column
+            }
+        };
+        
+        // Calculate new index maintaining the same visual row
+        let new_index = new_visual_col * rows_per_col + current_visual_row;
+        
+        // Make sure we're not going past the end of the list
+        if new_index >= display_commands.len() {
+            return; // Can't move to non-existent item
+        }
+        
+        // Skip separator if we land on one
+        if Self::is_separator_command(&display_commands[new_index]) {
+            return; // Don't move to separator
         }
         
         self.selected_index = new_index;
     }
     
-}
-
-fn get_position_file_path() -> std::path::PathBuf {
-    let home = std::env::var("HOME").unwrap_or_else(|_| ".".to_string());
-    Path::new(&home).join(".anchor_selector_position")
+    fn navigate_vertical(&mut self, direction: i32) {
+        let (display_commands, _, _, _) = self.get_display_commands();
+        if display_commands.is_empty() {
+            return;
+        }
+        
+        let max_index = display_commands.len() - 1;
+        let new_index;
+        
+        if self.should_use_columns_for_display(&display_commands) {
+            // Multi-column navigation
+            let (rows_per_col, cols_to_use) = self.get_column_layout_for_display(&display_commands);
+            
+            // Get current visual position
+            let current_col = self.selected_index / rows_per_col;
+            let current_row = self.selected_index % rows_per_col;
+            
+            if direction > 0 {
+                // Moving down
+                if current_row + 1 < rows_per_col {
+                    // Stay in same column, move down one row
+                    let test_index = current_col * rows_per_col + (current_row + 1);
+                    if test_index < display_commands.len() {
+                        new_index = test_index;
+                    } else {
+                        return; // Can't move down, at bottom of column
+                    }
+                } else if current_col + 1 < cols_to_use {
+                    // Move to top of next column
+                    new_index = (current_col + 1) * rows_per_col;
+                    if new_index >= display_commands.len() {
+                        return; // Next column doesn't exist
+                    }
+                } else {
+                    return; // Already at bottom of last column
+                }
+            } else {
+                // Moving up
+                if current_row > 0 {
+                    // Stay in same column, move up one row
+                    new_index = current_col * rows_per_col + (current_row - 1);
+                } else if current_col > 0 {
+                    // Move to bottom of previous column
+                    let prev_col_end = current_col * rows_per_col - 1;
+                    new_index = prev_col_end.min(max_index);
+                } else {
+                    return; // Already at top of first column
+                }
+            }
+        } else {
+            // Single column navigation
+            if direction > 0 {
+                if self.selected_index < max_index {
+                    new_index = self.selected_index + 1;
+                } else {
+                    return; // Already at last item
+                }
+            } else {
+                if self.selected_index > 0 {
+                    new_index = self.selected_index - 1;
+                } else {
+                    return; // Already at first item
+                }
+            }
+        }
+        
+        // Skip separator when navigating
+        if Self::is_separator_command(&display_commands[new_index]) {
+            if direction > 0 && new_index + 1 <= max_index {
+                self.selected_index = new_index + 1;
+            } else if direction < 0 && new_index > 0 {
+                self.selected_index = new_index - 1;
+            } else {
+                return; // Can't skip separator
+            }
+        } else {
+            self.selected_index = new_index;
+        }
+    }
+    
 }
 
 fn save_window_position(pos: egui::Pos2) {
-    let file_path = get_position_file_path();
-    let content = format!("{},{}", pos.x, pos.y);
-    let _ = fs::write(file_path, content);
+    let mut state = load_state();
+    state.window_position = Some((pos.x, pos.y));
+    let _ = save_state(&state);
 }
 
 fn load_window_position() -> Option<egui::Pos2> {
-    let file_path = get_position_file_path();
-    if let Ok(content) = fs::read_to_string(&file_path) {
-        let parts: Vec<&str> = content.trim().split(',').collect();
-        if parts.len() == 2 {
-            if let (Ok(x), Ok(y)) = (parts[0].parse::<f32>(), parts[1].parse::<f32>()) {
-                return Some(egui::pos2(x, y));
-            }
-        }
-    }
-    None
+    let state = load_state();
+    state.window_position.map(|(x, y)| egui::pos2(x, y))
 }
 
 fn get_previous_window_location(ctx: &egui::Context, window_size: egui::Vec2) -> egui::Pos2 {
@@ -422,10 +484,14 @@ impl eframe::App for AnchorSelector {
                 ctx.send_viewport_cmd(egui::ViewportCommand::InnerSize([500.0, 300.0].into()));
             }
         }
+        // Track if command editor was just closed to restore focus
+        let mut command_editor_just_closed = false;
+        
         match editor_result {
             CommandEditorResult::Cancel => {
                 self.command_editor.hide();
                 editor_handled_escape = true;
+                command_editor_just_closed = true;
             }
             CommandEditorResult::Save(_new_command, _original_command_name) => {
                 // Use the command editor's save method
@@ -438,6 +504,7 @@ impl eframe::App for AnchorSelector {
                     }
                 }
                 self.command_editor.hide();
+                command_editor_just_closed = true;
             }
             CommandEditorResult::Delete(command_name) => {
                 // Delete the specified command and save to file
@@ -458,11 +525,46 @@ impl eframe::App for AnchorSelector {
                     }
                 }
                 self.command_editor.hide();
+                command_editor_just_closed = true;
             }
             CommandEditorResult::None => {
                 // Continue normal operation
             }
         }
+        
+        // FIRST: Handle navigation keys and filter them out to prevent TextEdit from seeing them
+        // This must happen before any widgets are created
+        ctx.input_mut(|input| {
+            // Handle all four arrow keys for navigation
+            if input.key_pressed(egui::Key::ArrowUp) {
+                self.navigate_vertical(-1);
+            }
+            if input.key_pressed(egui::Key::ArrowDown) {
+                self.navigate_vertical(1);
+            }
+            if input.key_pressed(egui::Key::ArrowLeft) {
+                self.navigate_horizontal(-1);
+            }
+            if input.key_pressed(egui::Key::ArrowRight) {
+                self.navigate_horizontal(1);
+            }
+            
+            // Remove ALL arrow key events completely so TextEdit never sees them
+            input.events.retain(|event| {
+                !matches!(event, 
+                    egui::Event::Key { key: egui::Key::ArrowUp, .. } |
+                    egui::Event::Key { key: egui::Key::ArrowDown, .. } |
+                    egui::Event::Key { key: egui::Key::ArrowLeft, .. } |
+                    egui::Event::Key { key: egui::Key::ArrowRight, .. }
+                )
+            });
+            
+            // Also clear the pressed state for all arrow keys
+            input.keys_down.remove(&egui::Key::ArrowUp);
+            input.keys_down.remove(&egui::Key::ArrowDown);
+            input.keys_down.remove(&egui::Key::ArrowLeft);
+            input.keys_down.remove(&egui::Key::ArrowRight);
+        });
         
         egui::CentralPanel::default()
             .frame(
@@ -482,18 +584,12 @@ impl eframe::App for AnchorSelector {
                     ctx.send_viewport_cmd(egui::ViewportCommand::StartDrag);
                 }
                 
-                // Handle keyboard input BEFORE text field to ensure it's not consumed
+                // Handle keyboard input - process some keys first
                 ctx.input(|i| {
                     if i.key_pressed(egui::Key::Escape) {
                         if !editor_handled_escape {
                             std::process::exit(0);
                         }
-                    }
-                    if i.key_pressed(egui::Key::ArrowDown) {
-                        self.navigate_vertical(1);
-                    }
-                    if i.key_pressed(egui::Key::ArrowUp) {
-                        self.navigate_vertical(-1);
                     }
                     if i.key_pressed(egui::Key::Enter) {
                         if !self.filtered_commands.is_empty() {
@@ -541,45 +637,6 @@ impl eframe::App for AnchorSelector {
                             }
                         }
                     }
-                    if i.key_pressed(egui::Key::F5) {
-                        // Simple resize test without dialog
-                        self.manual_resize_mode = true;
-                        self.last_manual_size = Some(egui::vec2(800.0, 600.0));
-                    }
-                    if i.key_pressed(egui::Key::F6) {
-                        // Test 1000x1000 as originally requested
-                        self.manual_resize_mode = true;
-                        self.last_manual_size = Some(egui::vec2(1000.0, 1000.0));
-                    }
-                    if i.key_pressed(egui::Key::F7) {
-                        // Scan markdown files and contacts, update commands
-                        if let Some(ref markdown_roots) = self.config.markdown_roots {
-                            use anchor_selector::scanner::scan;
-                            
-                            // Scan files and contacts, get updated command list
-                            let updated_commands = scan(self.commands.clone(), markdown_roots);
-                            
-                            // Update the commands list
-                            self.commands = updated_commands;
-                            
-                            // Re-run filtering with current search text
-                            self.filtered_commands = filter_commands(&self.commands, &self.search_text, 500, false);
-                            
-                            // Reset selection if needed
-                            if self.selected_index >= self.filtered_commands.len() && !self.filtered_commands.is_empty() {
-                                self.selected_index = 0;
-                            }
-                        }
-                    }
-                    if i.key_pressed(egui::Key::ArrowRight) {
-                        // Command Editor: Edit selected command or create new one
-                        let command_to_edit = if !self.filtered_commands.is_empty() && self.selected_index < self.filtered_commands.len() {
-                            Some(&self.filtered_commands[self.selected_index])
-                        } else {
-                            None
-                        };
-                        self.command_editor.edit_command(command_to_edit, &self.search_text);
-                    }
                     if i.key_pressed(egui::Key::Equals) || (i.modifiers.shift && i.key_pressed(egui::Key::Equals)) {
                         // Command Editor: = or + key (shift+=): open command editor
                         // Check if there's an exact match (case-insensitive) for the search text
@@ -601,24 +658,49 @@ impl eframe::App for AnchorSelector {
                 let mut font_id = ui.style().text_styles.get(&egui::TextStyle::Heading).unwrap().clone();
                 font_id.size *= 1.5; // Make 50% larger
                 
+                // Calculate hint text before mutable borrow
+                let hint_text = self.get_hint_text();
+                
                 let response = ui.add_enabled(
                     !self.command_editor.visible, // Disable when dialog is open
                     egui::TextEdit::singleline(&mut self.search_text)
                         .desired_width(ui.available_width())
-                        .hint_text("Type to search commands...")
+                        .hint_text(hint_text)
                         .font(font_id)
                 );
                 
                 if response.changed() {
-                    // First check if the text matches an alias and replace if so
-                    self.check_and_apply_alias();
-                    self.update_filter();
+                    // Check if user typed slash to open command editor
+                    if self.search_text.ends_with('/') {
+                        // Remove the slash from search text
+                        self.search_text.pop();
+                        
+                        // Open command editor for selected command
+                        let (display_commands, _, _, _) = self.get_display_commands();
+                        let command_to_edit = if !display_commands.is_empty() && self.selected_index < display_commands.len() {
+                            let cmd = &display_commands[self.selected_index];
+                            // Don't edit separators
+                            if !Self::is_separator_command(cmd) {
+                                Some(cmd)
+                            } else {
+                                None
+                            }
+                        } else {
+                            None
+                        };
+                        self.command_editor.edit_command(command_to_edit, &self.search_text);
+                    } else {
+                        // First check if the text matches an alias and replace if so
+                        self.check_and_apply_alias();
+                        self.update_filter();
+                    }
                 }
                 
-                // Focus the text input on startup (only when dialog is not open)
-                if self.search_text.is_empty() && !self.command_editor.visible {
+                // Focus the text input on startup or when command editor closes
+                if (self.search_text.is_empty() && !self.command_editor.visible) || command_editor_just_closed {
                     response.request_focus();
                 }
+                
                 
                 
                 // Draggable space between input and list
@@ -969,6 +1051,7 @@ impl eframe::App for AnchorSelector {
                 }
             }
         }
+        
     }
 }
 

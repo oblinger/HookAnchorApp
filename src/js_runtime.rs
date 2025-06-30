@@ -30,6 +30,10 @@
 //! ## Data Parsing
 //! - `parseYaml(text)` - Parse YAML text to JSON string
 //!
+//! ## Configuration Access
+//! - `getObsidianApp()` - Get configured Obsidian application name
+//! - `getObsidianVault()` - Get configured Obsidian vault name
+//!
 //! ## Core System Primitives
 //! - `launch_app(app_name, arg)` - Launch macOS application with optional argument
 //! - `open_folder(path)` - Open folder in Finder (or configured folder app)
@@ -77,6 +81,7 @@ pub fn create_business_logic_runtime_with_config(config: &Config) -> Result<Cont
         setup_text_processing(&ctx)?;
         setup_data_parsing(&ctx)?;
         setup_launcher_builtins(&ctx)?;
+        setup_config_access(&ctx, config)?;
         setup_user_functions(&ctx, config)?;
         Ok(())
     })?;
@@ -445,6 +450,33 @@ fn setup_launcher_builtins(ctx: &Ctx<'_>) -> Result<(), Box<dyn std::error::Erro
             Err(_) => false,
         }
     })?)?;
+    
+    Ok(())
+}
+
+/// Setup configuration access functions
+fn setup_config_access(ctx: &Ctx<'_>, config: &Config) -> Result<(), Box<dyn std::error::Error>> {
+    // Get launcher settings with defaults
+    let launcher_settings = config.launcher_settings.as_ref()
+        .cloned()
+        .unwrap_or_default();
+    
+    // Clone config values for closures
+    let obsidian_app_name = launcher_settings.obsidian_app_name
+        .unwrap_or_else(|| "Obsidian".to_string());
+    let obsidian_vault_name = launcher_settings.obsidian_vault_name
+        .unwrap_or_else(|| "kmr".to_string());
+    
+    let get_obsidian_app_fn = Function::new(ctx.clone(), move |_ctx: Ctx<'_>| -> rquickjs::Result<String> {
+        Ok(obsidian_app_name.clone())
+    })?;
+    
+    let get_obsidian_vault_fn = Function::new(ctx.clone(), move |_ctx: Ctx<'_>| -> rquickjs::Result<String> {
+        Ok(obsidian_vault_name.clone())
+    })?;
+    
+    ctx.globals().set("getObsidianApp", get_obsidian_app_fn)?;
+    ctx.globals().set("getObsidianVault", get_obsidian_vault_fn)?;
     
     Ok(())
 }
