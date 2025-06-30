@@ -23,9 +23,9 @@ pub mod scanner;
 
 // Re-export commonly used types from core modules
 pub use core::commands::{Command, CommandTarget, filter_commands, merge_similar_commands, 
-                         load_commands, save_commands_to_file, add_command, delete_command,
-                         parse_command_line, split_commands, get_current_submenu_prefix,
-                         execute_command, migrate_commands_to_new_format,
+                         merge_similar_commands_with_context, load_commands, save_commands_to_file, 
+                         add_command, delete_command, parse_command_line, split_commands, 
+                         get_current_submenu_prefix, execute_command, migrate_commands_to_new_format,
                          command_matches_query, command_matches_query_with_debug, get_command_prefix};
 pub use core::config::{Config, PopupSettings, LauncherSettings, load_config};
 pub use core::state::{AppState, load_state, save_state};

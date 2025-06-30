@@ -428,8 +428,13 @@ fn fuzzy_match(text: &str, pattern: &str) -> Option<f32> {
     None // Not all pattern characters were found
 }
 
-/// Merges similar commands based on word removal approach
+/// Merges similar commands based on word removal approach (backward compatibility)
 pub fn merge_similar_commands(commands: Vec<Command>, config: &Config) -> Vec<Command> {
+    merge_similar_commands_with_context(commands, config, "")
+}
+
+/// Merges similar commands with awareness of search context
+pub fn merge_similar_commands_with_context(commands: Vec<Command>, config: &Config, search_context: &str) -> Vec<Command> {
     if !config.popup_settings.merge_similar {
         return commands;
     }
@@ -444,10 +449,10 @@ pub fn merge_similar_commands(commands: Vec<Command>, config: &Config) -> Vec<Co
     let mut valid_candidates = std::collections::HashSet::new();
     for cmd in &commands {
         if let Some(candidate) = remove_last_word(&cmd.command, separators) {
-            // Only consider candidates that are longer than current search context
-            // Inside submenu: candidate must be longer than submenu prefix
-            // Outside submenu: candidate must be non-empty
-            valid_candidates.insert(candidate);
+            // Use position-based validation: merge only if there's a separator after the match position
+            if is_valid_merge_candidate_by_position(&candidate, search_context, separators) {
+                valid_candidates.insert(candidate);
+            }
         }
     }
     
@@ -546,6 +551,49 @@ fn remove_last_word(command: &str, separators: &str) -> Option<String> {
         // No separator found, can't remove last word
         None
     }
+}
+
+/// Counts the number of words in a string based on separators
+fn count_words(text: &str, separators: &str) -> usize {
+    if text.trim().is_empty() {
+        return 0;
+    }
+    
+    let mut word_count = 1; // Start with 1 for the first word
+    for c in text.chars() {
+        if separators.contains(c) {
+            word_count += 1;
+        }
+    }
+    word_count
+}
+
+/// Checks if a candidate is valid for merging based on match position
+/// Returns true if the candidate has at least one separator after where search_context matches
+fn is_valid_merge_candidate_by_position(candidate: &str, search_context: &str, separators: &str) -> bool {
+    if search_context.is_empty() {
+        return true; // Empty search context allows all merges
+    }
+    
+    // Find where the search context matches in the candidate using our core matching function
+    let match_end_pos = command_matches_query_with_debug(candidate, search_context, false);
+    
+    if match_end_pos < 0 {
+        return false; // Search doesn't match this candidate
+    }
+    
+    let match_end_pos = match_end_pos as usize;
+    
+    // Check if there's at least one separator after the match position
+    let remaining_text = &candidate[match_end_pos..];
+    
+    for c in remaining_text.chars() {
+        if separators.contains(c) {
+            return true; // Found at least one separator after match
+        }
+    }
+    
+    false // No separator found after match position
 }
 
 /// Adds a group of similar commands to the merged list

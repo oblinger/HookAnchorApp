@@ -3,7 +3,7 @@
 //! This module handles the core state and business logic of the popup window,
 //! separated from egui-specific rendering code.
 
-use crate::core::commands::{Command, filter_commands, merge_similar_commands};
+use crate::core::commands::{Command, filter_commands, merge_similar_commands_with_context};
 use crate::core::config::Config;
 use crate::core::state::AppState;
 use crate::ui::layout::{DisplayLayout, Selection, Direction};
@@ -135,8 +135,8 @@ impl PopupState {
             
             // Apply merging to each list separately if enabled
             if self.config.popup_settings.merge_similar {
-                inside_commands = merge_similar_commands(inside_commands, &self.config);
-                outside_commands = merge_similar_commands(outside_commands, &self.config);
+                inside_commands = merge_similar_commands_with_context(inside_commands, &self.config, &self.search_text);
+                outside_commands = merge_similar_commands_with_context(outside_commands, &self.config, "");
             }
             
             // Combine: inside + separator + outside
