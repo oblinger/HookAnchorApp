@@ -275,8 +275,8 @@ impl CommandEditor {
     pub fn save_command(&self, commands: &mut Vec<Command>) -> Result<(), String> {
         // Step 1: Delete the original command if it exists
         if !self.original_command_name.is_empty() {
-            let deleted = delete_command(commands, &self.original_command_name);
-            if !deleted {
+            let deleted = delete_command(&self.original_command_name, commands);
+            if deleted.is_err() {
                 eprintln!("Warning: Original command '{}' not found for deletion", self.original_command_name);
             }
         }
@@ -292,7 +292,7 @@ impl CommandEditor {
         };
         
         // Step 3: Add the new command to the list
-        add_command(commands, new_command);
+        let _ = add_command(new_command, commands);
         
         // Step 4: Save the updated command list back to commands.txt
         match save_commands_to_file(commands) {
@@ -305,8 +305,8 @@ impl CommandEditor {
     pub fn delete_original_command(&self, commands: &mut Vec<Command>) -> Result<(), String> {
         // Only delete if there was an original command
         if !self.original_command_name.is_empty() {
-            let deleted = delete_command(commands, &self.original_command_name);
-            if !deleted {
+            let deleted = delete_command(&self.original_command_name, commands);
+            if deleted.is_err() {
                 return Err(format!("Command '{}' not found for deletion", self.original_command_name));
             }
             

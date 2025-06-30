@@ -127,21 +127,26 @@ impl AnchorSelector {
             let mut filtered = filter_commands(&self.commands, &self.search_text, total_limit * 2, false); // Get more to account for merging
             
             // Apply merge_similar only if enabled, and use split-before-merge logic
-            if self.config.popup_settings.merge_similar.unwrap_or(false) {
+            if self.config.popup_settings.merge_similar {
                 // Always check if we're in submenu mode and split before merging
-                if let Some(menu_prefix) = get_current_submenu_prefix(&filtered, &self.search_text) {
-                    let (inside_menu, outside_menu) = split_commands(&filtered, &menu_prefix);
+                if let Some(_menu_prefix) = get_current_submenu_prefix(&self.search_text) {
+                    // Get submenu commands using split_commands
+                    let submenu_commands = split_commands(&filtered, &self.search_text, &self.config.popup_settings.word_separators);
+                    
+                    // For simplicity, just use the split commands as the filtered result
+                    let inside_menu = submenu_commands.clone();
+                    let outside_menu: Vec<Command> = Vec::new();
                     
                     // Merge each list separately
-                    let merged_inside = merge_similar_commands(&inside_menu, &self.search_text);
-                    let merged_outside = merge_similar_commands(&outside_menu, &self.search_text);
+                    let merged_inside = merge_similar_commands(inside_menu, &self.config);
+                    let merged_outside = merge_similar_commands(outside_menu, &self.config);
                     
                     // Combine the results
                     filtered = merged_inside;
                     filtered.extend(merged_outside);
                 } else {
                     // Not in submenu mode, merge normally
-                    filtered = merge_similar_commands(&filtered, &self.search_text);
+                    filtered = merge_similar_commands(filtered, &self.config);
                 }
             }
             
@@ -198,27 +203,13 @@ impl AnchorSelector {
     /// Compute the commands to display based on current menu state
     /// Returns (commands_to_display, is_in_submenu, menu_prefix, inside_count)
     fn get_display_commands(&self) -> (Vec<Command>, bool, Option<String>, usize) {
-        if let Some(menu_prefix) = get_current_submenu_prefix(&self.filtered_commands, &self.search_text) {
+        if let Some(menu_prefix) = get_current_submenu_prefix(&self.search_text) {
             // Split commands to determine submenu display
-            let (inside_menu, outside_menu) = split_commands(&self.filtered_commands, &menu_prefix);
+            let display_commands = split_commands(&self.filtered_commands, &self.search_text, &self.config.popup_settings.word_separators);
             
-            // In submenu mode: show inside commands first, then separator, then outside commands
-            let mut display_commands = inside_menu.clone();
-            let inside_count = inside_menu.len();
-            
-            // Add separator if we have both inside and outside commands
-            if !display_commands.is_empty() && !outside_menu.is_empty() {
-                display_commands.push(Command {
-                    group: String::new(),
-                    command: "---".to_string(),
-                    action: "separator".to_string(),
-                    arg: String::new(),
-                    flags: String::new(),
-                    full_line: "--- : separator;".to_string(),
-                });
-            }
-            
-            display_commands.extend(outside_menu);
+            // Find the separator to count inside commands
+            let separator_index = display_commands.iter().position(|cmd| Self::is_separator_command(cmd));
+            let inside_count = separator_index.unwrap_or(display_commands.len());
             
             (display_commands, true, Some(menu_prefix), inside_count)
         } else {
@@ -510,8 +501,8 @@ impl eframe::App for AnchorSelector {
                 // Delete the specified command and save to file
                 use anchor_selector::{delete_command, save_commands_to_file};
                 
-                let deleted = delete_command(&mut self.commands, &command_name);
-                if !deleted {
+                let deleted = delete_command(&command_name, &mut self.commands);
+                if deleted.is_err() {
                     eprintln!("Warning: Command '{}' not found for deletion", command_name);
                 } else {
                     // Save the updated command list back to commands.txt
@@ -630,7 +621,7 @@ impl eframe::App for AnchorSelector {
                                         }
                                     } else {
                                         // For non-merged commands, use the existing lookup method
-                                        execute_command(&selected_cmd.command);
+                                        execute_command(&selected_cmd);
                                     }
                                     std::process::exit(0);
                                 }
@@ -876,7 +867,7 @@ impl eframe::App for AnchorSelector {
                                             
                                             if response.clicked() {
                                                 self.selected_index = i;
-                                                execute_command(&cmd.command);
+                                                execute_command(&cmd);
                                                 process::exit(0);
                                             }
                                         }
@@ -979,7 +970,7 @@ impl eframe::App for AnchorSelector {
                                     
                                     if response.clicked() {
                                         self.selected_index = i;
-                                        execute_command(&cmd.command);
+                                        execute_command(&cmd);
                                         process::exit(0);
                                     }
                                     

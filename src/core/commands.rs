@@ -281,9 +281,9 @@ pub fn delete_command(command_to_delete: &str, commands: &mut Vec<Command>) -> R
 }
 
 /// Filters commands based on search text with fuzzy matching
-pub fn filter_commands(commands: &[Command], search_text: &str) -> Vec<Command> {
+pub fn filter_commands(commands: &[Command], search_text: &str, max_results: usize, _debug: bool) -> Vec<Command> {
     if search_text.is_empty() {
-        return commands.to_vec();
+        return Vec::new();
     }
     
     let search_lower = search_text.to_lowercase();
@@ -314,8 +314,11 @@ pub fn filter_commands(commands: &[Command], search_text: &str) -> Vec<Command> 
     // Sort by score (highest first)
     scored_commands.sort_by(|a, b| b.0.partial_cmp(&a.0).unwrap());
     
-    // Return sorted commands
-    scored_commands.into_iter().map(|(_, cmd)| cmd.clone()).collect()
+    // Return sorted commands up to max_results
+    scored_commands.into_iter()
+        .take(max_results)
+        .map(|(_, cmd)| cmd.clone())
+        .collect()
 }
 
 /// Fuzzy matching algorithm
