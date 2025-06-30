@@ -1,11 +1,10 @@
 use eframe::egui;
 use std::process;
 use anchor_selector::{
-    Command, filter_commands, execute_command, load_commands, merge_similar_commands, 
-    load_config, Config, split_commands, get_current_submenu_prefix,
-    load_state, save_state, AppState, scanner
+    Command, execute_command, load_commands, 
+    load_config, Config, load_state, save_state, scanner
 };
-use chrono::Local;
+use anchor_selector::ui::{PopupState, LayoutArrangement};
 
 mod command_editor;
 use command_editor::{CommandEditor, CommandEditorResult};
@@ -15,16 +14,8 @@ use dialog::Dialog;
 
 /// Main application state for the Anchor Selector popup window
 pub struct AnchorSelector {
-    /// All available commands loaded from commands.txt
-    commands: Vec<Command>,
-    /// Current search text entered by the user
-    search_text: String,
-    /// Commands that match the current search (filtered and potentially merged)
-    filtered_commands: Vec<Command>,
-    /// Index of currently selected command
-    /// INVARIANT: This always indexes into display_commands (from get_display_commands()),
-    /// NOT into filtered_commands or commands
-    selected_index: usize,
+    /// Core popup state (business logic)
+    popup_state: PopupState,
     /// Last saved window position for change detection
     last_saved_position: Option<egui::Pos2>,
     /// Whether window position has been set on startup
@@ -33,10 +24,6 @@ pub struct AnchorSelector {
     command_editor: CommandEditor,
     /// Dialog system for user input
     dialog: Dialog,
-    /// Application configuration
-    config: Config,
-    /// Application state (window position, build time, etc.)
-    state: AppState,
     /// Flag to disable automatic window resizing when we want manual control
     manual_resize_mode: bool,
     /// Track the last manual resize request to avoid repeatedly sending commands
@@ -54,24 +41,66 @@ impl AnchorSelector {
         // Perform startup scan check
         let commands = scanner::startup_check(commands);
         
-        let filtered_commands = Vec::new(); // Start with empty list
         let config = load_config();
         let state = load_state();
         
+        // Create popup state with business logic
+        let popup_state = PopupState::new(commands, config, state);
         
         Self {
-            commands,
-            search_text: String::new(),
-            filtered_commands,
-            selected_index: 0,
+            popup_state,
             last_saved_position: None,
             position_set: false,
             command_editor: CommandEditor::new(),
             dialog: Dialog::new(),
-            config,
-            state,
             manual_resize_mode: false,
             last_manual_size: None,
+        }
+    }
+    
+    // =============================================================================
+    // Helper Properties for Backward Compatibility
+    // =============================================================================
+    
+    /// Backward compatibility: access to commands
+    fn commands(&self) -> &Vec<Command> {
+        &self.popup_state.commands
+    }
+    
+    /// Backward compatibility: mutable access to commands
+    fn commands_mut(&mut self) -> &mut Vec<Command> {
+        &mut self.popup_state.commands
+    }
+    
+    
+    /// Backward compatibility: access to filtered commands
+    fn filtered_commands(&self) -> &Vec<Command> {
+        &self.popup_state.filtered_commands
+    }
+    
+    /// Backward compatibility: access to config
+    fn config(&self) -> &Config {
+        &self.popup_state.config
+    }
+    
+    
+    /// Backward compatibility: access to selected index
+    fn selected_index(&self) -> usize {
+        self.popup_state.selection.command_index
+    }
+    
+    /// Backward compatibility: set selected index
+    fn set_selected_index(&mut self, index: usize) {
+        // Directly set the command_index if valid
+        if index < self.popup_state.display_layout.commands.len() {
+            self.popup_state.selection.command_index = index;
+            // Update visual position based on layout
+            let (_rows, cols) = self.popup_state.get_layout_dimensions();
+            if cols > 0 {
+                let row = index / cols;
+                let col = index % cols;
+                self.popup_state.selection.visual_position = (row, col);
+            }
         }
     }
     
@@ -79,28 +108,9 @@ impl AnchorSelector {
     // Build Time and Version Info
     // =============================================================================
     
-    /// Calculate seconds since build time
-    fn get_seconds_since_build(&self) -> Option<i64> {
-        if let Some(build_time) = self.state.build_time {
-            let current_time = Local::now().timestamp();
-            Some(current_time - build_time)
-        } else {
-            None
-        }
-    }
-    
     /// Generate hint text with build version info (only for first 10 minutes)
     fn get_hint_text(&self) -> String {
-        if let Some(seconds) = self.get_seconds_since_build() {
-            // Only show build time info for first 10 minutes (600 seconds)
-            if seconds <= 600 {
-                format!("Type to search commands... {}s", seconds)
-            } else {
-                "Type to search commands...".to_string()
-            }
-        } else {
-            "Type to search commands...".to_string()
-        }
+        self.popup_state.get_hint_text()
     }
     
     // =============================================================================
@@ -110,112 +120,19 @@ impl AnchorSelector {
     /// Check if the current search text exactly matches an alias command
     /// If so, replace the search text with the alias's argument
     fn check_and_apply_alias(&mut self) {
-        // Look for an exact match with an alias command
-        if let Some(alias_cmd) = self.commands.iter().find(|cmd| 
-            cmd.action == "alias" && cmd.command.to_lowercase() == self.search_text.to_lowercase()
-        ) {
-            // Replace search text with the alias argument
-            self.search_text = alias_cmd.arg.clone();
-        }
+        self.popup_state.check_and_apply_alias();
     }
     
-    fn update_filter(&mut self) {
-        if self.search_text.trim().is_empty() {
-            self.filtered_commands.clear();
-        } else {
-            let total_limit = self.config.popup_settings.max_rows * self.config.popup_settings.max_columns;
-            let mut filtered = filter_commands(&self.commands, &self.search_text, total_limit * 2, false); // Get more to account for merging
-            
-            // Apply merge_similar only if enabled, and use split-before-merge logic
-            if self.config.popup_settings.merge_similar {
-                // Always check if we're in submenu mode and split before merging
-                if let Some(_menu_prefix) = get_current_submenu_prefix(&self.search_text) {
-                    // Get submenu commands using split_commands
-                    let submenu_commands = split_commands(&filtered, &self.search_text, &self.config.popup_settings.word_separators);
-                    
-                    // For simplicity, just use the split commands as the filtered result
-                    let inside_menu = submenu_commands.clone();
-                    let outside_menu: Vec<Command> = Vec::new();
-                    
-                    // Merge each list separately
-                    let merged_inside = merge_similar_commands(inside_menu, &self.config);
-                    let merged_outside = merge_similar_commands(outside_menu, &self.config);
-                    
-                    // Combine the results
-                    filtered = merged_inside;
-                    filtered.extend(merged_outside);
-                } else {
-                    // Not in submenu mode, merge normally
-                    filtered = merge_similar_commands(filtered, &self.config);
-                }
-            }
-            
-            // Truncate to display limit after merging
-            filtered.truncate(total_limit);
-            
-            self.filtered_commands = filtered;
-        }
-        
-        // Always reset selection to first item when filter changes
-        self.selected_index = 0;
-    }
     
     // =============================================================================
     // Layout and Display Logic
     // =============================================================================
     
-    // Calculate if we should use multi-column layout based on display commands
-    fn should_use_columns_for_display(&self, display_commands: &[Command]) -> bool {
-        display_commands.len() > self.config.popup_settings.max_rows && self.config.popup_settings.max_columns > 1
-    }
-    
-    // Calculate column layout for the actual display commands
-    fn get_column_layout_for_display(&self, display_commands: &[Command]) -> (usize, usize) {
-        if !self.should_use_columns_for_display(display_commands) {
-            return (display_commands.len(), 1);
-        }
-        
-        let max_rows = self.config.popup_settings.max_rows;
-        let max_cols = self.config.popup_settings.max_columns;
-        let total_items = display_commands.len();
-        
-        // Calculate optimal number of columns needed
-        let cols_needed = (total_items + max_rows - 1) / max_rows; // Ceiling division
-        let cols_to_use = cols_needed.min(max_cols);
-        
-        // Calculate rows per column
-        let rows_per_col = (total_items + cols_to_use - 1) / cols_to_use; // Ceiling division
-        
-        (rows_per_col, cols_to_use)
-    }
-    
-    // Legacy functions for compatibility
-    fn should_use_columns(&self) -> bool {
-        self.filtered_commands.len() > self.config.popup_settings.max_rows && self.config.popup_settings.max_columns > 1
-    }
-    
-    
-    // Check if a command is a separator (for skipping during navigation)
-    fn is_separator_command(cmd: &Command) -> bool {
-        cmd.command == "---" && cmd.action == "separator"
-    }
     
     /// Compute the commands to display based on current menu state
     /// Returns (commands_to_display, is_in_submenu, menu_prefix, inside_count)
     fn get_display_commands(&self) -> (Vec<Command>, bool, Option<String>, usize) {
-        if let Some(menu_prefix) = get_current_submenu_prefix(&self.search_text) {
-            // Split commands to determine submenu display
-            let display_commands = split_commands(&self.filtered_commands, &self.search_text, &self.config.popup_settings.word_separators);
-            
-            // Find the separator to count inside commands
-            let separator_index = display_commands.iter().position(|cmd| Self::is_separator_command(cmd));
-            let inside_count = separator_index.unwrap_or(display_commands.len());
-            
-            (display_commands, true, Some(menu_prefix), inside_count)
-        } else {
-            // Not in submenu mode, use filtered commands directly
-            (self.filtered_commands.clone(), false, None, 0)
-        }
+        self.popup_state.get_display_commands()
     }
     
     // =============================================================================
@@ -224,133 +141,11 @@ impl AnchorSelector {
     
     // Navigate left/right in the multi-column layout
     fn navigate_horizontal(&mut self, direction: i32) {
-        let (display_commands, _, _, _) = self.get_display_commands();
-        if display_commands.is_empty() {
-            return;
-        }
-        
-        // Check if we should use columns for these display commands
-        if !self.should_use_columns_for_display(&display_commands) {
-            return; // No horizontal navigation in single column mode
-        }
-        
-        let (rows_per_col, cols_to_use) = self.get_column_layout_for_display(&display_commands);
-        
-        // Get current visual position based on actual display commands
-        let current_visual_col = self.selected_index / rows_per_col;
-        let current_visual_row = self.selected_index % rows_per_col;
-        
-        // Calculate new visual column
-        let new_visual_col = if direction > 0 {
-            // Moving right
-            if current_visual_col + 1 < cols_to_use {
-                current_visual_col + 1
-            } else {
-                return; // Already at rightmost column
-            }
-        } else {
-            // Moving left
-            if current_visual_col > 0 {
-                current_visual_col - 1
-            } else {
-                return; // Already at leftmost column
-            }
-        };
-        
-        // Calculate new index maintaining the same visual row
-        let new_index = new_visual_col * rows_per_col + current_visual_row;
-        
-        // Make sure we're not going past the end of the list
-        if new_index >= display_commands.len() {
-            return; // Can't move to non-existent item
-        }
-        
-        // Skip separator if we land on one
-        if Self::is_separator_command(&display_commands[new_index]) {
-            return; // Don't move to separator
-        }
-        
-        self.selected_index = new_index;
+        self.popup_state.navigate_horizontal(direction);
     }
     
     fn navigate_vertical(&mut self, direction: i32) {
-        let (display_commands, _, _, _) = self.get_display_commands();
-        if display_commands.is_empty() {
-            return;
-        }
-        
-        let max_index = display_commands.len() - 1;
-        let new_index;
-        
-        if self.should_use_columns_for_display(&display_commands) {
-            // Multi-column navigation
-            let (rows_per_col, cols_to_use) = self.get_column_layout_for_display(&display_commands);
-            
-            // Get current visual position
-            let current_col = self.selected_index / rows_per_col;
-            let current_row = self.selected_index % rows_per_col;
-            
-            if direction > 0 {
-                // Moving down
-                if current_row + 1 < rows_per_col {
-                    // Stay in same column, move down one row
-                    let test_index = current_col * rows_per_col + (current_row + 1);
-                    if test_index < display_commands.len() {
-                        new_index = test_index;
-                    } else {
-                        return; // Can't move down, at bottom of column
-                    }
-                } else if current_col + 1 < cols_to_use {
-                    // Move to top of next column
-                    new_index = (current_col + 1) * rows_per_col;
-                    if new_index >= display_commands.len() {
-                        return; // Next column doesn't exist
-                    }
-                } else {
-                    return; // Already at bottom of last column
-                }
-            } else {
-                // Moving up
-                if current_row > 0 {
-                    // Stay in same column, move up one row
-                    new_index = current_col * rows_per_col + (current_row - 1);
-                } else if current_col > 0 {
-                    // Move to bottom of previous column
-                    let prev_col_end = current_col * rows_per_col - 1;
-                    new_index = prev_col_end.min(max_index);
-                } else {
-                    return; // Already at top of first column
-                }
-            }
-        } else {
-            // Single column navigation
-            if direction > 0 {
-                if self.selected_index < max_index {
-                    new_index = self.selected_index + 1;
-                } else {
-                    return; // Already at last item
-                }
-            } else {
-                if self.selected_index > 0 {
-                    new_index = self.selected_index - 1;
-                } else {
-                    return; // Already at first item
-                }
-            }
-        }
-        
-        // Skip separator when navigating
-        if Self::is_separator_command(&display_commands[new_index]) {
-            if direction > 0 && new_index + 1 <= max_index {
-                self.selected_index = new_index + 1;
-            } else if direction < 0 && new_index > 0 {
-                self.selected_index = new_index - 1;
-            } else {
-                return; // Can't skip separator
-            }
-        } else {
-            self.selected_index = new_index;
-        }
+        self.popup_state.navigate_vertical(direction);
     }
     
 }
@@ -421,6 +216,7 @@ fn center_on_main_display(ctx: &egui::Context, window_size: egui::Vec2) -> egui:
 
 impl eframe::App for AnchorSelector {
     fn update(&mut self, ctx: &egui::Context, _frame: &mut eframe::Frame) {
+        // DEBUG: Core search logic verified to work correctly
         
         // Set position on first frame after window is created
         if !self.position_set {
@@ -463,8 +259,10 @@ impl eframe::App for AnchorSelector {
         );
         
         // Update command editor dialog BEFORE the main UI so it renders as a top-level window
-        self.command_editor.update_commands(&self.commands);
-        let editor_result = self.command_editor.update(ctx, &self.config);
+        let commands = self.commands().clone();
+        let config = self.config().clone();
+        self.command_editor.update_commands(&commands);
+        let editor_result = self.command_editor.update(ctx, &config);
         let mut editor_handled_escape = false;
         
         // Update dialog system
@@ -485,15 +283,37 @@ impl eframe::App for AnchorSelector {
                 command_editor_just_closed = true;
             }
             CommandEditorResult::Save(_new_command, _original_command_name) => {
-                // Use the command editor's save method
-                if let Err(e) = self.command_editor.save_command(&mut self.commands) {
-                    eprintln!("Error saving command: {}", e);
-                } else {
-                    // Update the filtered list if we're currently filtering
-                    if !self.search_text.trim().is_empty() {
-                        self.update_filter();
+                // Get the save data from command editor
+                let (command_to_delete, new_command) = self.command_editor.prepare_save_command();
+                
+                // Delete original command if needed
+                if let Some(cmd_name) = command_to_delete {
+                    use anchor_selector::delete_command;
+                    let deleted = delete_command(&cmd_name, self.commands_mut());
+                    if deleted.is_err() {
+                        eprintln!("Warning: Original command '{}' not found for deletion", cmd_name);
                     }
                 }
+                
+                // Add the new command
+                use anchor_selector::{add_command, save_commands_to_file};
+                let _ = add_command(new_command, self.commands_mut());
+                
+                // Save to file
+                match save_commands_to_file(&self.commands()) {
+                    Ok(_) => {
+                        // Update the filtered list if we're currently filtering
+                        if !self.popup_state.search_text.trim().is_empty() {
+                            // Refresh the search with updated commands
+                            let current_search = self.popup_state.search_text.clone();
+                            self.popup_state.update_search(current_search);
+                        }
+                    }
+                    Err(e) => {
+                        eprintln!("Error saving commands to file: {}", e);
+                    }
+                }
+                
                 self.command_editor.hide();
                 command_editor_just_closed = true;
             }
@@ -501,17 +321,19 @@ impl eframe::App for AnchorSelector {
                 // Delete the specified command and save to file
                 use anchor_selector::{delete_command, save_commands_to_file};
                 
-                let deleted = delete_command(&command_name, &mut self.commands);
+                let deleted = delete_command(&command_name, self.commands_mut());
                 if deleted.is_err() {
                     eprintln!("Warning: Command '{}' not found for deletion", command_name);
                 } else {
                     // Save the updated command list back to commands.txt
-                    if let Err(e) = save_commands_to_file(&self.commands) {
+                    if let Err(e) = save_commands_to_file(&self.commands()) {
                         eprintln!("Error saving commands to file after deletion: {}", e);
                     } else {
                         // Update the filtered list if we're currently filtering
-                        if !self.search_text.trim().is_empty() {
-                            self.update_filter();
+                        if !self.popup_state.search_text.trim().is_empty() {
+                            // Refresh the search with updated commands
+                            let current_search = self.popup_state.search_text.clone();
+                            self.popup_state.update_search(current_search);
                         }
                     }
                 }
@@ -583,15 +405,15 @@ impl eframe::App for AnchorSelector {
                         }
                     }
                     if i.key_pressed(egui::Key::Enter) {
-                        if !self.filtered_commands.is_empty() {
+                        if !self.filtered_commands().is_empty() {
                             // Get display commands for execution
                             let (display_commands, _is_submenu, _menu_prefix, _inside_count) = self.get_display_commands();
                             
-                            if self.selected_index < display_commands.len() {
-                                let selected_cmd = &display_commands[self.selected_index];
+                            if self.selected_index() < display_commands.len() {
+                                let selected_cmd = &display_commands[self.selected_index()];
                                 
                                 // Don't execute if it's a separator
-                                if !Self::is_separator_command(selected_cmd) {
+                                if !PopupState::is_separator_command(selected_cmd) {
                                     // For merged commands (ending with "..."), use the action and arg directly
                                     // instead of looking up by command name
                                     if selected_cmd.command.ends_with("...") {
@@ -631,16 +453,18 @@ impl eframe::App for AnchorSelector {
                     if i.key_pressed(egui::Key::Equals) || (i.modifiers.shift && i.key_pressed(egui::Key::Equals)) {
                         // Command Editor: = or + key (shift+=): open command editor
                         // Check if there's an exact match (case-insensitive) for the search text
-                        let exact_match = self.commands.iter().find(|cmd| 
-                            cmd.command.to_lowercase() == self.search_text.to_lowercase()
+                        let commands = self.commands().clone();
+                        let search_text = self.popup_state.search_text.clone();
+                        let exact_match = commands.iter().find(|cmd| 
+                            cmd.command.to_lowercase() == search_text.to_lowercase()
                         );
                         
                         if let Some(matching_command) = exact_match {
                             // Found exact match - edit the existing command
-                            self.command_editor.edit_command(Some(matching_command), &self.search_text);
+                            self.command_editor.edit_command(Some(matching_command), &self.popup_state.search_text);
                         } else {
                             // No exact match - create new command with search text as name
-                            self.command_editor.edit_command(None, &self.search_text);
+                            self.command_editor.edit_command(None, &self.popup_state.search_text);
                         }
                     }
                 });
@@ -654,41 +478,49 @@ impl eframe::App for AnchorSelector {
                 
                 let response = ui.add_enabled(
                     !self.command_editor.visible, // Disable when dialog is open
-                    egui::TextEdit::singleline(&mut self.search_text)
+                    egui::TextEdit::singleline(&mut self.popup_state.search_text)
                         .desired_width(ui.available_width())
                         .hint_text(hint_text)
                         .font(font_id)
                 );
                 
+                // Always update search when text field is changed
                 if response.changed() {
-                    // Check if user typed slash to open command editor
-                    if self.search_text.ends_with('/') {
+                    
+                    // Handle slash for command editor
+                    let mut should_open_editor = false;
+                    let mut command_to_edit = None;
+                    
+                    if self.popup_state.search_text.ends_with('/') {
                         // Remove the slash from search text
-                        self.search_text.pop();
+                        self.popup_state.search_text.pop();
+                        should_open_editor = true;
                         
-                        // Open command editor for selected command
+                        // Get command to edit after updating search
                         let (display_commands, _, _, _) = self.get_display_commands();
-                        let command_to_edit = if !display_commands.is_empty() && self.selected_index < display_commands.len() {
-                            let cmd = &display_commands[self.selected_index];
-                            // Don't edit separators
-                            if !Self::is_separator_command(cmd) {
-                                Some(cmd)
-                            } else {
-                                None
+                        if !display_commands.is_empty() && self.selected_index() < display_commands.len() {
+                            let cmd = &display_commands[self.selected_index()];
+                            if !PopupState::is_separator_command(cmd) {
+                                command_to_edit = Some(cmd.clone());
                             }
-                        } else {
-                            None
-                        };
-                        self.command_editor.edit_command(command_to_edit, &self.search_text);
-                    } else {
-                        // First check if the text matches an alias and replace if so
-                        self.check_and_apply_alias();
-                        self.update_filter();
+                        }
+                    }
+                    
+                    // Check for alias replacement
+                    self.check_and_apply_alias();
+                    
+                    // ALWAYS update search results after any text change
+                    let current_search = self.popup_state.search_text.clone();
+                    self.popup_state.update_search(current_search);
+                    
+                    // Open command editor if slash was typed
+                    if should_open_editor {
+                        self.command_editor.edit_command(command_to_edit.as_ref(), &self.popup_state.search_text);
                     }
                 }
                 
                 // Focus the text input on startup or when command editor closes
-                if (self.search_text.is_empty() && !self.command_editor.visible) || command_editor_just_closed {
+                if (self.popup_state.search_text.is_empty() && !self.command_editor.visible) || command_editor_just_closed {
                     response.request_focus();
                 }
                 
@@ -705,7 +537,7 @@ impl eframe::App for AnchorSelector {
                 
                 // Command list - check for submenu and display accordingly  
                 // No scroll area - window will size to accommodate max_rows
-                if !self.filtered_commands.is_empty() {
+                if !self.filtered_commands().is_empty() {
                     // Get the display commands using our new method
                     let (display_commands, is_submenu, menu_prefix, inside_count) = self.get_display_commands();
                     
@@ -731,23 +563,21 @@ impl eframe::App for AnchorSelector {
                     let bottom_drag_height = 20.0; // Height of bottom draggable area
                     let mid_drag_height = 18.0; // Height between input and list
                     
-                    let (window_width, required_height) = if self.should_use_columns() {
-                        // Recalculate layout based on actual display command count
-                        let total_items = display_commands.len();
-                        let max_rows = self.config.popup_settings.max_rows;
-                        let max_cols = self.config.popup_settings.max_columns;
-                        let cols_needed = (total_items + max_rows - 1) / max_rows;
-                        let cols_to_use = cols_needed.min(max_cols);
-                        let rows_per_col = (total_items + cols_to_use - 1) / cols_to_use;
-                        
-                        let column_width = 250.0; // Width per column
-                        let total_width = (cols_to_use as f32 * column_width) + 50.0; // Add some padding
-                        let total_height = input_height + mid_drag_height + header_height + (rows_per_col as f32 * row_height) + bottom_drag_height + padding;
-                        (total_width, total_height)
-                    } else {
-                        let window_width = 500.0;
-                        let required_height = input_height + mid_drag_height + header_height + (display_commands.len() as f32 * row_height) + bottom_drag_height + padding;
-                        (window_width, required_height)
+                    let (window_width, required_height) = match &self.popup_state.display_layout.arrangement {
+                        LayoutArrangement::MultiColumn { rows, cols } => {
+                            let rows_per_col = *rows;
+                            let cols_to_use = *cols;
+                            
+                            let column_width = 250.0; // Width per column
+                            let total_width = (cols_to_use as f32 * column_width) + 50.0; // Add some padding
+                            let total_height = input_height + mid_drag_height + header_height + (rows_per_col as f32 * row_height) + bottom_drag_height + padding;
+                            (total_width, total_height)
+                        }
+                        LayoutArrangement::SingleColumn => {
+                            let window_width = 500.0;
+                            let required_height = input_height + mid_drag_height + header_height + (display_commands.len() as f32 * row_height) + bottom_drag_height + padding;
+                            (window_width, required_height)
+                        }
                     };
                     
                     // Adjust window size if command editor is visible - make it larger to accommodate the dialog
@@ -771,30 +601,26 @@ impl eframe::App for AnchorSelector {
                         ctx.send_viewport_cmd(egui::ViewportCommand::InnerSize(egui::vec2(final_width, final_height)));
                     }
                     
-                    if self.should_use_columns() {
-                        // Multi-column display
-                        
-                        // Show submenu header if applicable (even in multi-column mode)
-                        if is_submenu {
-                            if let Some(ref prefix) = menu_prefix {
-                                let mut header_font_id = ui.style().text_styles.get(&egui::TextStyle::Heading).unwrap().clone();
-                                header_font_id.size *= 1.3;
-                                
-                                ui.horizontal(|ui| {
-                                    ui.label(egui::RichText::new(format!("{} ->", prefix)).font(header_font_id));
-                                });
-                                
-                                ui.add_space(8.0);
+                    // Use DisplayLayout to determine arrangement
+                    match &self.popup_state.display_layout.arrangement {
+                        LayoutArrangement::MultiColumn { rows, cols } => {
+                            // Multi-column display
+                            let rows_per_col = *rows;
+                            let cols_to_use = *cols;
+                            
+                            // Show submenu header if applicable (even in multi-column mode)
+                            if is_submenu {
+                                if let Some(ref prefix) = menu_prefix {
+                                    let mut header_font_id = ui.style().text_styles.get(&egui::TextStyle::Heading).unwrap().clone();
+                                    header_font_id.size *= 1.3;
+                                    
+                                    ui.horizontal(|ui| {
+                                        ui.label(egui::RichText::new(format!("{} ->", prefix)).font(header_font_id));
+                                    });
+                                    
+                                    ui.add_space(8.0);
+                                }
                             }
-                        }
-                        
-                        // Use the same layout calculation as above
-                        let total_items = display_commands.len();
-                        let max_rows = self.config.popup_settings.max_rows;
-                        let max_cols = self.config.popup_settings.max_columns;
-                        let cols_needed = (total_items + max_rows - 1) / max_rows;
-                        let cols_to_use = cols_needed.min(max_cols);
-                        let rows_per_col = (total_items + cols_to_use - 1) / cols_to_use;
                         
                         ui.horizontal(|ui| {
                             for col in 0..cols_to_use {
@@ -806,8 +632,8 @@ impl eframe::App for AnchorSelector {
                                         }
                                         
                                         let cmd = &display_commands[i];
-                                        let is_selected = i == self.selected_index;
-                                        let is_separator = Self::is_separator_command(cmd);
+                                        let is_selected = i == self.selected_index();
+                                        let is_separator = PopupState::is_separator_command(cmd);
                                         
                                         // Determine display text based on submenu mode and position
                                         let display_text = if is_submenu && !is_separator && i < inside_count {
@@ -866,7 +692,7 @@ impl eframe::App for AnchorSelector {
                                             );
                                             
                                             if response.clicked() {
-                                                self.selected_index = i;
+                                                self.set_selected_index(i);
                                                 execute_command(&cmd);
                                                 process::exit(0);
                                             }
@@ -880,8 +706,9 @@ impl eframe::App for AnchorSelector {
                                 }
                             }
                         });
-                    } else {
-                        // Single-column display
+                        }
+                        LayoutArrangement::SingleColumn => {
+                            // Single-column display
                         
                         // Show submenu header if applicable
                         if is_submenu {
@@ -898,8 +725,8 @@ impl eframe::App for AnchorSelector {
                         }
                         
                         for (i, cmd) in display_commands.iter().enumerate() {
-                            let is_selected = i == self.selected_index;
-                            let is_separator = Self::is_separator_command(cmd);
+                            let is_selected = i == self.selected_index();
+                            let is_separator = PopupState::is_separator_command(cmd);
                             
                             if is_separator {
                                 // Separator - not selectable, different styling
@@ -969,7 +796,7 @@ impl eframe::App for AnchorSelector {
                                     );
                                     
                                     if response.clicked() {
-                                        self.selected_index = i;
+                                        self.set_selected_index(i);
                                         execute_command(&cmd);
                                         process::exit(0);
                                     }
@@ -984,6 +811,7 @@ impl eframe::App for AnchorSelector {
                                     }
                                 });
                             }
+                        }
                         }
                     }
                 } else {

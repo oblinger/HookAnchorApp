@@ -127,6 +127,9 @@ impl Command {
             result.push_str(&self.flags);
         }
         
+        // Add trailing semicolon (new format requirement)
+        result.push(';');
+        
         result
     }
 }
@@ -201,6 +204,13 @@ pub fn parse_command_line(line: &str) -> Result<Command, String> {
     if trimmed.is_empty() {
         return Err("Empty line".to_string());
     }
+    
+    // Remove trailing semicolon if present (new format compatibility)
+    let trimmed = if trimmed.ends_with(';') {
+        &trimmed[..trimmed.len() - 1]
+    } else {
+        trimmed
+    };
     
     // Check for new format: [GROUP! ]COMMAND : ACTION [ARG] [,FLAGS]
     if let Some(colon_pos) = trimmed.find(" : ") {
@@ -281,44 +291,101 @@ pub fn delete_command(command_to_delete: &str, commands: &mut Vec<Command>) -> R
 }
 
 /// Filters commands based on search text with fuzzy matching
-pub fn filter_commands(commands: &[Command], search_text: &str, max_results: usize, _debug: bool) -> Vec<Command> {
+pub fn filter_commands(commands: &[Command], search_text: &str, max_results: usize, debug: bool) -> Vec<Command> {
     if search_text.is_empty() {
         return Vec::new();
     }
     
-    let search_lower = search_text.to_lowercase();
-    let mut scored_commands: Vec<(f32, &Command)> = Vec::new();
+    let mut matched_commands: Vec<(i32, &Command)> = Vec::new(); // (match_end_index, command)
     
     for cmd in commands {
-        let cmd_lower = cmd.command.to_lowercase();
+        // Use the core matching function to get match end position
+        let match_result = command_matches_query_with_debug(&cmd.command, search_text, debug);
         
-        // Exact match gets highest score
-        if cmd_lower == search_lower {
-            scored_commands.push((1000.0, cmd));
-            continue;
-        }
-        
-        // Prefix match gets high score
-        if cmd_lower.starts_with(&search_lower) {
-            let score = 500.0 - (cmd_lower.len() - search_lower.len()) as f32;
-            scored_commands.push((score, cmd));
-            continue;
-        }
-        
-        // Smart fuzzy matching
-        if let Some(score) = fuzzy_match(&cmd_lower, &search_lower) {
-            scored_commands.push((score, cmd));
+        if match_result >= 0 {
+            matched_commands.push((match_result, cmd));
         }
     }
     
-    // Sort by score (highest first)
-    scored_commands.sort_by(|a, b| b.0.partial_cmp(&a.0).unwrap());
+    // Sort by: 1) match position (earlier matches first), 2) alphabetical order
+    matched_commands.sort_by(|a, b| {
+        match a.0.cmp(&b.0) {
+            std::cmp::Ordering::Equal => a.1.command.cmp(&b.1.command), // Alphabetical if same match length
+            other => other // Earlier match position first
+        }
+    });
     
     // Return sorted commands up to max_results
-    scored_commands.into_iter()
+    matched_commands.into_iter()
         .take(max_results)
         .map(|(_, cmd)| cmd.clone())
         .collect()
+}
+
+/// Core matching function that returns the index where the match ends
+/// Returns the position of the first unmatched character, or -1 if no match
+pub fn command_matches_query_with_debug(command: &str, query: &str, _debug: bool) -> i32 {
+    if query.is_empty() {
+        return command.len() as i32;
+    }
+    
+    let command_lower = command.to_lowercase();
+    let query_lower = query.to_lowercase();
+    let separators = " ._-";
+    
+    let cmd_chars: Vec<char> = command_lower.chars().collect();
+    let query_chars: Vec<char> = query_lower.chars().collect();
+    
+    let mut cmd_idx = 0;
+    let mut query_idx = 0;
+    let mut last_match_pos = 0;
+    
+    while cmd_idx < cmd_chars.len() && query_idx < query_chars.len() {
+        let cmd_char = cmd_chars[cmd_idx];
+        let query_char = query_chars[query_idx];
+        
+        if cmd_char == query_char {
+            // Characters match, advance both
+            cmd_idx += 1;
+            query_idx += 1;
+            last_match_pos = cmd_idx;
+        } else if separators.contains(cmd_char) {
+            // Skip separator in command
+            cmd_idx += 1;
+        } else if separators.contains(query_char) {
+            // Skip separator in query (handles "Book R" matching "Book To Read")
+            query_idx += 1;
+        } else {
+            // No match - try to find next word boundary in command
+            // This allows flexible matching across words
+            let mut found_separator = false;
+            while cmd_idx < cmd_chars.len() && !found_separator {
+                if separators.contains(cmd_chars[cmd_idx]) {
+                    found_separator = true;
+                    cmd_idx += 1; // Skip the separator
+                    break;
+                }
+                cmd_idx += 1;
+            }
+            
+            if !found_separator {
+                // No more word boundaries, no match
+                return -1;
+            }
+        }
+    }
+    
+    // If we matched all query characters, return the position
+    if query_idx == query_chars.len() {
+        last_match_pos as i32
+    } else {
+        -1
+    }
+}
+
+/// Simple boolean version of the matching function
+pub fn command_matches_query(command: &str, query: &str) -> bool {
+    command_matches_query_with_debug(command, query, false) >= 0
 }
 
 /// Fuzzy matching algorithm
@@ -361,7 +428,7 @@ fn fuzzy_match(text: &str, pattern: &str) -> Option<f32> {
     None // Not all pattern characters were found
 }
 
-/// Merges similar commands based on configuration
+/// Merges similar commands based on word removal approach
 pub fn merge_similar_commands(commands: Vec<Command>, config: &Config) -> Vec<Command> {
     if !config.popup_settings.merge_similar {
         return commands;
@@ -372,43 +439,113 @@ pub fn merge_similar_commands(commands: Vec<Command>, config: &Config) -> Vec<Co
     }
     
     let separators = &config.popup_settings.word_separators;
-    let mut merged = Vec::new();
-    let mut current_prefix: Option<String> = None;
-    let mut current_group: Vec<Command> = Vec::new();
     
-    for cmd in commands {
-        let prefix = get_command_prefix(&cmd.command, separators);
-        
-        if Some(&prefix) == current_prefix.as_ref() {
-            current_group.push(cmd);
-        } else {
-            // Process the previous group
-            if !current_group.is_empty() {
-                add_merged_group(&mut merged, current_group, separators);
-            }
-            
-            // Start new group
-            current_prefix = Some(prefix);
-            current_group = vec![cmd];
+    // Step 1: Generate valid candidate strings by removing last word from each command
+    let mut valid_candidates = std::collections::HashSet::new();
+    for cmd in &commands {
+        if let Some(candidate) = remove_last_word(&cmd.command, separators) {
+            // Only consider candidates that are longer than current search context
+            // Inside submenu: candidate must be longer than submenu prefix
+            // Outside submenu: candidate must be non-empty
+            valid_candidates.insert(candidate);
         }
     }
     
-    // Don't forget the last group
-    if !current_group.is_empty() {
-        add_merged_group(&mut merged, current_group, separators);
+    // Step 2: Group commands by matching them against candidates
+    let mut groups: std::collections::HashMap<String, Vec<Command>> = std::collections::HashMap::new();
+    let mut unmatched_commands = Vec::new();
+    
+    for cmd in commands {
+        let mut matched = false;
+        
+        // Try direct match against candidates
+        if valid_candidates.contains(&cmd.command) {
+            groups.entry(cmd.command.clone()).or_insert_with(Vec::new).push(cmd.clone());
+            matched = true;
+        } else {
+            // Try removing 1 word and matching against candidates
+            if let Some(shortened) = remove_last_word(&cmd.command, separators) {
+                if valid_candidates.contains(&shortened) {
+                    groups.entry(shortened).or_insert_with(Vec::new).push(cmd.clone());
+                    matched = true;
+                }
+            }
+        }
+        
+        if !matched {
+            unmatched_commands.push(cmd);
+        }
     }
     
-    merged
+    // Step 3: Create final result
+    let mut result = Vec::new();
+    
+    // Add merged groups (2+ commands) and single commands
+    for (candidate, mut group) in groups {
+        if group.len() >= 2 {
+            // Create merged entry with "..."
+            group.sort_by(|a, b| a.command.cmp(&b.command));
+            let base_command = &group[0];
+            result.push(Command {
+                group: base_command.group.clone(),
+                command: format!("{}...", candidate),
+                action: base_command.action.clone(),
+                arg: base_command.arg.clone(),
+                flags: base_command.flags.clone(),
+                full_line: format!("{}...", candidate),
+            });
+        } else {
+            // Single command, add as-is
+            result.extend(group);
+        }
+    }
+    
+    // Add unmatched commands
+    result.extend(unmatched_commands);
+    
+    result
 }
 
 /// Gets the prefix of a command based on word separators
-fn get_command_prefix(command: &str, separators: &str) -> String {
+pub fn get_command_prefix(command: &str, separators: &str) -> String {
     // Find the position of the first separator
     let sep_pos = command.chars()
         .position(|c| separators.contains(c))
         .unwrap_or(command.len());
     
     command[..sep_pos].to_string()
+}
+
+/// Capitalizes the first character of a string
+fn capitalize_first_char(s: &str) -> String {
+    let mut chars = s.chars();
+    match chars.next() {
+        None => String::new(),
+        Some(first) => first.to_uppercase().collect::<String>() + &chars.as_str().to_lowercase(),
+    }
+}
+
+/// Removes the last word from a command string, returning the prefix
+/// Example: "FIN Budget md" → Some("FIN Budget")
+/// Example: "FIN" → None (can't remove last word)
+fn remove_last_word(command: &str, separators: &str) -> Option<String> {
+    // Find the last separator position
+    let last_sep_pos = command.char_indices()
+        .rev()
+        .find(|(_, c)| separators.contains(*c))
+        .map(|(pos, _)| pos);
+    
+    if let Some(pos) = last_sep_pos {
+        let prefix = &command[..pos];
+        if prefix.is_empty() {
+            None
+        } else {
+            Some(prefix.to_string())
+        }
+    } else {
+        // No separator found, can't remove last word
+        None
+    }
 }
 
 /// Adds a group of similar commands to the merged list
@@ -421,19 +558,19 @@ fn add_merged_group(merged: &mut Vec<Command>, mut group: Vec<Command>, separato
     // Sort group by command name for consistent ordering
     group.sort_by(|a, b| a.command.cmp(&b.command));
     
-    // Add separator with the prefix
+    // Create a merged command with "..." representing the group
     let prefix = get_command_prefix(&group[0].command, separators);
-    merged.push(Command {
-        group: String::new(),
-        command: format!("{}---", prefix),
-        action: "separator".to_string(),
-        arg: String::new(),
-        flags: String::new(),
-        full_line: String::new(),
-    });
     
-    // Add all commands in the group
-    merged.extend(group);
+    // Use the first command as the base for the merged command
+    let base_command = &group[0];
+    merged.push(Command {
+        group: base_command.group.clone(),
+        command: format!("{}...", prefix), // This shows as "FIN.Budget..." in the UI
+        action: base_command.action.clone(),
+        arg: base_command.arg.clone(),
+        flags: base_command.flags.clone(),
+        full_line: format!("{}...", prefix),
+    });
 }
 
 /// Splits commands into submenu sections
@@ -446,7 +583,69 @@ pub fn split_commands(commands: &[Command], search_text: &str, separators: &str)
     get_submenu_commands(commands, prefix, separators)
 }
 
-/// Gets the current submenu prefix from search text
+/// Gets the current submenu prefix from search text and available commands
+pub fn get_current_submenu_prefix_from_commands(commands: &[Command], search_text: &str, separators: &str) -> Option<String> {
+    if search_text.is_empty() {
+        return None;
+    }
+    
+    // If search text contains space, use the first part as prefix
+    if search_text.contains(' ') {
+        return Some(search_text.split(' ').next().unwrap().to_string());
+    }
+    
+    // Don't auto-detect if search text is very short (causes flickering)
+    if search_text.len() < 2 {
+        return None;
+    }
+    
+    // Auto-detect submenu based on command prefixes
+    let mut prefix_counts: std::collections::HashMap<String, usize> = std::collections::HashMap::new();
+    
+    for cmd in commands {
+        if cmd.action == "separator" {
+            continue;
+        }
+        let cmd_prefix = get_command_prefix(&cmd.command, separators);
+        if cmd_prefix.to_lowercase().starts_with(&search_text.to_lowercase()) {
+            *prefix_counts.entry(cmd_prefix).or_insert(0) += 1;
+        }
+    }
+    
+    // Find the best matching prefix (exact match preferred, then longest match)
+    let mut best_prefix: Option<String> = None;
+    let mut best_count = 0;
+    
+    for (prefix, count) in prefix_counts {
+        if count >= 2 {
+            let is_exact_match = prefix.to_lowercase() == search_text.to_lowercase();
+            let should_use = best_prefix.is_none() || 
+                            is_exact_match || 
+                            (count > best_count) ||
+                            (count == best_count && prefix.len() > best_prefix.as_ref().unwrap().len());
+                            
+            if should_use {
+                // Normalize case to match search text case for consistent display
+                let normalized_prefix = if is_exact_match {
+                    search_text.to_string()
+                } else {
+                    // Use the original prefix but try to match search text case
+                    if search_text.chars().next().unwrap_or('a').is_uppercase() {
+                        capitalize_first_char(&prefix)
+                    } else {
+                        prefix.to_lowercase()
+                    }
+                };
+                best_prefix = Some(normalized_prefix);
+                best_count = count;
+            }
+        }
+    }
+    
+    best_prefix
+}
+
+/// Gets the current submenu prefix from search text (legacy function for backward compatibility)
 pub fn get_current_submenu_prefix(search_text: &str) -> Option<String> {
     if search_text.contains(' ') {
         Some(search_text.split(' ').next().unwrap().to_string())
@@ -462,19 +661,26 @@ pub fn get_submenu_commands(commands: &[Command], prefix: &str, separators: &str
     let mut outside_commands = Vec::new();
     
     for cmd in commands {
+        if cmd.action == "separator" {
+            continue; // Skip existing separators
+        }
+        
         let cmd_prefix = get_command_prefix(&cmd.command, separators);
-        if cmd_prefix == prefix && cmd.action != "separator" {
+        if cmd_prefix.eq_ignore_ascii_case(prefix) {
             inside_commands.push(cmd.clone());
-        } else if !cmd.command.starts_with(prefix) {
+        } else {
             outside_commands.push(cmd.clone());
         }
     }
     
+    // Sort inside commands by name for consistent ordering
+    inside_commands.sort_by(|a, b| a.command.cmp(&b.command));
+    
     // Add inside commands first
     result.extend(inside_commands);
     
-    // Add separator if we have both inside and outside commands
-    if !result.is_empty() && !outside_commands.is_empty() {
+    // Always add separator if we have inside commands (even if no outside commands)
+    if !result.is_empty() {
         result.push(Command {
             group: String::new(),
             command: "---".to_string(),
@@ -484,6 +690,9 @@ pub fn get_submenu_commands(commands: &[Command], prefix: &str, separators: &str
             full_line: String::new(),
         });
     }
+    
+    // Sort outside commands by name for consistent ordering
+    outside_commands.sort_by(|a, b| a.command.cmp(&b.command));
     
     // Add outside commands
     result.extend(outside_commands);

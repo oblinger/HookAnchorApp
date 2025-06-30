@@ -1,5 +1,5 @@
 use eframe::egui;
-use anchor_selector::{Command, delete_command, add_command, save_commands_to_file, Config};
+use anchor_selector::{Command, delete_command, save_commands_to_file, Config};
 
 pub struct CommandEditor {
     pub visible: bool,
@@ -272,16 +272,8 @@ impl CommandEditor {
         }
     }
     
-    pub fn save_command(&self, commands: &mut Vec<Command>) -> Result<(), String> {
-        // Step 1: Delete the original command if it exists
-        if !self.original_command_name.is_empty() {
-            let deleted = delete_command(&self.original_command_name, commands);
-            if deleted.is_err() {
-                eprintln!("Warning: Original command '{}' not found for deletion", self.original_command_name);
-            }
-        }
-        
-        // Step 2: Create the new command
+    pub fn prepare_save_command(&self) -> (Option<String>, Command) {
+        // Return the command to delete (if any) and the new command to add
         let new_command = Command {
             group: self.group.clone(),
             command: self.command.clone(),
@@ -291,14 +283,13 @@ impl CommandEditor {
             full_line: self.format_command_line(),
         };
         
-        // Step 3: Add the new command to the list
-        let _ = add_command(new_command, commands);
+        let command_to_delete = if !self.original_command_name.is_empty() {
+            Some(self.original_command_name.clone())
+        } else {
+            None
+        };
         
-        // Step 4: Save the updated command list back to commands.txt
-        match save_commands_to_file(commands) {
-            Ok(_) => Ok(()),
-            Err(e) => Err(format!("Error saving commands to file: {}", e)),
-        }
+        (command_to_delete, new_command)
     }
     
     #[allow(dead_code)]

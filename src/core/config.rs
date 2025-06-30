@@ -107,19 +107,22 @@ pub fn load_config() -> Config {
                 
                 return config;
             }
-            Err(_) => {
+            Err(_e) => {
                 // Try to load legacy format
                 if let Ok(config) = load_legacy_config(&contents) {
                     return config;
                 }
             }
         }
+    } else {
     }
     
     // Check for default config
     let default_config_content = include_str!("../default_config.yaml");
-    match serde_yaml::from_str(default_config_content) {
-        Ok(config) => config,
+    match serde_yaml::from_str::<Config>(default_config_content) {
+        Ok(config) => {
+            config
+        }
         Err(e) => {
             eprintln!("Error parsing default config: {}", e);
             create_default_config()
