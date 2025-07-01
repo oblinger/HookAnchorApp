@@ -184,16 +184,24 @@ impl AnchorSelector {
         let config = load_config();
         match grabber::grab(&config) {
             Ok((rule_name, mut command)) => {
-                // Open command editor with grabbed command
-                // Set command name to something descriptive
-                command.command = format!("Grabbed {}", rule_name);
+                // Use the current search text as the command name, or default if empty
+                let command_name = if self.popup_state.search_text.trim().is_empty() {
+                    format!("Grabbed {}", rule_name)
+                } else {
+                    self.popup_state.search_text.clone()
+                };
+                
+                // Fill in the command with all the grabbed information
+                command.command = command_name;
                 command.full_line = format!("{} : {} {}", command.command, command.action, command.arg);
                 
+                // Open command editor with the pre-filled grabbed command
                 self.command_editor.open_with_command(command);
             }
             Err(err) => {
-                // Show error in dialog
+                // Show error in dialog (rules didn't match or no rules configured)
                 eprintln!("Grabber error: {}", err);
+                // Note: Context information is still logged for rule creation
             }
         }
     }
