@@ -74,8 +74,8 @@ pub fn scan(mut commands: Vec<Command>, markdown_roots: &[String]) -> Vec<Comman
     // First scan markdown files
     commands = scan_files(commands, markdown_roots);
     
-    // Then scan contacts
-    commands = scan_contacts(commands);
+    // Then scan contacts - DISABLED for performance
+    // commands = scan_contacts(commands);
     
     commands
 }

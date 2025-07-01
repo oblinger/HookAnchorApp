@@ -28,6 +28,8 @@ pub struct AnchorSelector {
     manual_resize_mode: bool,
     /// Track the last manual resize request to avoid repeatedly sending commands
     last_manual_size: Option<egui::Vec2>,
+    /// Flag to track if scanner check is pending
+    scanner_check_pending: bool,
 }
 
 impl AnchorSelector {
@@ -37,10 +39,6 @@ impl AnchorSelector {
     
     pub fn new() -> Self {
         let commands = load_commands();
-        
-        // Perform startup scan check
-        let commands = scanner::startup_check(commands);
-        
         let config = load_config();
         let state = load_state();
         
@@ -55,6 +53,7 @@ impl AnchorSelector {
             dialog: Dialog::new(),
             manual_resize_mode: false,
             last_manual_size: None,
+            scanner_check_pending: true,
         }
     }
     
@@ -233,6 +232,16 @@ impl eframe::App for AnchorSelector {
         //         std::process::exit(0);
         //     }
         // }
+        
+        // Perform deferred scanner check after window is shown
+        if self.scanner_check_pending {
+            self.scanner_check_pending = false;
+            let updated_commands = scanner::startup_check(self.popup_state.get_commands().to_vec());
+            if updated_commands.len() != self.popup_state.get_commands().len() {
+                // Commands have changed, update the popup state
+                self.popup_state.set_commands(updated_commands);
+            }
+        }
         
         // Draw custom rounded background with heavy shadow
         let screen_rect = ctx.screen_rect();

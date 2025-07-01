@@ -77,6 +77,19 @@ impl PopupState {
         }
     }
     
+    /// Get a reference to all commands
+    pub fn get_commands(&self) -> &[Command] {
+        &self.commands
+    }
+    
+    /// Update the command list (used for deferred scanner updates)
+    pub fn set_commands(&mut self, commands: Vec<Command>) {
+        self.commands = commands;
+        self.recompute_filtered_commands();
+        self.update_display_layout();
+        self.selection.reset(&self.display_layout);
+    }
+    
     /// Get display layout dimensions
     pub fn get_layout_dimensions(&self) -> (usize, usize) {
         self.display_layout.get_dimensions()
