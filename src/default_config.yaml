@@ -22,6 +22,10 @@ popup_settings:
   merge_similar: true
   # Characters used as word separators for command parsing and merging
   word_separators: " ._-"
+  # Root directory for file system scanning (F7 key functionality)
+  scan_root: "~/"
+  # Seconds between automatic filesystem scans (default: 10)
+  scan_interval_seconds: 10
 
 # Markdown file scanning roots (for F7 key functionality)
 # List of directories to scan for markdown files
