@@ -93,12 +93,61 @@ pub fn execute_shell_command_with_env(command: &str) -> Result<std::process::Out
     // Get the user's shell from SHELL environment variable, fallback to zsh
     let user_shell = std::env::var("SHELL").unwrap_or_else(|_| "/bin/zsh".to_string());
     
+    // Add debug logging for command execution
+    debug_log("SHELL", &format!("Executing command: {}", command));
+    debug_log("SHELL", &format!("Using shell: {}", user_shell));
+    
+    // For commands starting with underscore, try to execute them directly first
+    // since zsh might interpret them as completion functions
+    if command.starts_with('_') {
+        debug_log("SHELL", "Command starts with underscore, trying direct execution");
+        
+        // Try to find the command in PATH first
+        let which_command = format!("which {}", command);
+        let wrapped_which = format!(
+            "source ~/.zshrc 2>/dev/null || source ~/.bash_profile 2>/dev/null || source ~/.bashrc 2>/dev/null || true; {}",
+            which_command
+        );
+        
+        let mut which_cmd = Command::new(&user_shell);
+        which_cmd.arg("-c").arg(&wrapped_which);
+        if let Ok(current_path) = std::env::var("PATH") {
+            which_cmd.env("PATH", current_path);
+        }
+        
+        if let Ok(which_output) = which_cmd.output() {
+            if which_output.status.success() {
+                let command_path = String::from_utf8_lossy(&which_output.stdout).trim().to_string();
+                debug_log("SHELL", &format!("Found command at: {}", command_path));
+                
+                // Execute the command directly using its full path
+                let direct_command = format!("exec '{}'", command_path);
+                let wrapped_direct = format!(
+                    "source ~/.zshrc 2>/dev/null || source ~/.bash_profile 2>/dev/null || source ~/.bashrc 2>/dev/null || true; {}",
+                    direct_command
+                );
+                
+                let mut direct_cmd = Command::new(&user_shell);
+                direct_cmd.arg("-c").arg(&wrapped_direct);
+                direct_cmd.env("HOME", std::env::var("HOME").unwrap_or_else(|_| "/Users/oblinger".to_string()));
+                if let Ok(current_path) = std::env::var("PATH") {
+                    direct_cmd.env("PATH", current_path);
+                }
+                
+                debug_log("SHELL", &format!("Executing direct command: {}", direct_command));
+                return direct_cmd.output();
+            }
+        }
+    }
+    
     // Create a command that sources the user's profile first, then runs the command
     // This ensures we get the user's full PATH and environment
     let wrapped_command = format!(
         "source ~/.zshrc 2>/dev/null || source ~/.bash_profile 2>/dev/null || source ~/.bashrc 2>/dev/null || true; {}",
         command
     );
+    
+    debug_log("SHELL", &format!("Executing wrapped command: {}", wrapped_command));
     
     let mut cmd = Command::new(&user_shell);
     cmd.arg("-c").arg(&wrapped_command);
