@@ -374,8 +374,8 @@ pub fn match_grabber_rules(
     })
 }
 
-/// Output a consistent summary block for creating grabber rules
-fn output_grabber_summary(context: &AppContext, rules: &[GrabberRule], _config: &Config) {
+/// Output the captured application context (always shown)
+fn output_grabber_context_summary(context: &AppContext) {
     crate::utils::debug_log("GRABBER", "");
     crate::utils::debug_log("GRABBER", "################################################################################");
     crate::utils::debug_log("GRABBER", "##################### GRABBER CONTEXT SUMMARY #############################");
@@ -386,6 +386,17 @@ fn output_grabber_summary(context: &AppContext, rules: &[GrabberRule], _config: 
     crate::utils::debug_log("GRABBER", &format!("Bundle ID: '{}'", context.bundle_id));
     crate::utils::debug_log("GRABBER", &format!("Window Title: '{}'", context.window_title));
     crate::utils::debug_log("GRABBER", &format!("Properties: {}", serde_json::to_string_pretty(&context.properties).unwrap_or_else(|_| "{}".to_string())));
+    crate::utils::debug_log("GRABBER", "");
+    crate::utils::debug_log("GRABBER", "################################################################################");
+    crate::utils::debug_log("GRABBER", "");
+}
+
+/// Output rule template and suggestions (always shown)  
+fn output_rule_template(context: &AppContext) {
+    crate::utils::debug_log("GRABBER", "");
+    crate::utils::debug_log("GRABBER", "################################################################################");
+    crate::utils::debug_log("GRABBER", "##################### RULE CREATION TEMPLATE ##############################");
+    crate::utils::debug_log("GRABBER", "################################################################################");
     crate::utils::debug_log("GRABBER", "");
     
     // Try to determine what the action and arg would be with a simple rule match
@@ -427,11 +438,8 @@ fn output_grabber_summary(context: &AppContext, rules: &[GrabberRule], _config: 
     
     crate::utils::debug_log("GRABBER", "      return null;");
     crate::utils::debug_log("GRABBER", &format!("    action: \"{}\"", inferred_action));
-    
-    if rules.is_empty() {
-        crate::utils::debug_log("GRABBER", "    # Optional group for organizing commands:");
-        crate::utils::debug_log("GRABBER", "    # group: \"Grabbed\"");
-    }
+    crate::utils::debug_log("GRABBER", "    # Optional group for organizing commands:");
+    crate::utils::debug_log("GRABBER", "    # group: \"Grabbed\"");
     
     crate::utils::debug_log("GRABBER", "");
     crate::utils::debug_log("GRABBER", "=== JAVASCRIPT VARIABLES AVAILABLE ===");
@@ -499,50 +507,63 @@ pub fn grab(config: &Config) -> Result<(String, Command), String> {
     let context = capture_active_app()?;
     let context = enrich_context(context);
     
-    // Get grabber rules from config
-    let rules = config.grabber_rules.as_ref()
-        .ok_or_else(|| {
-            let error_msg = "No grabber rules configured in config.yaml";
-            crate::utils::debug_log("GRABBER", &format!("ERROR: {}", error_msg));
-            crate::utils::debug_log("GRABBER", "Add a 'grabber_rules:' section to your config.yaml with rules like:");
-            crate::utils::debug_log("GRABBER", "grabber_rules:");
-            crate::utils::debug_log("GRABBER", "  - name: \"Example Rule\"");
-            crate::utils::debug_log("GRABBER", "    matcher: |");
-            crate::utils::debug_log("GRABBER", "      if (bundleId === \"com.example.app\") {");
-            crate::utils::debug_log("GRABBER", "        return title;");
-            crate::utils::debug_log("GRABBER", "      }");
-            crate::utils::debug_log("GRABBER", "      return null;");
-            crate::utils::debug_log("GRABBER", "    action: \"doc\"");
-            error_msg.to_string()
-        })?;
+    // Always output the context summary first, regardless of rules
+    output_grabber_context_summary(&context);
     
-    crate::utils::debug_log("GRABBER", &format!("Loaded {} grabber rules from config", rules.len()));
+    // Get grabber rules from config (optional)
+    let rules = config.grabber_rules.as_ref();
     
-    // Always output the summary block for rule creation
-    output_grabber_summary(&context, rules, config);
-    
-    // Match against rules
-    match match_grabber_rules(&context, rules, config) {
-        Some((rule_name, command)) => {
-            crate::utils::debug_log("GRABBER", "");
-            crate::utils::debug_log("GRABBER", "################################################################################");
-            crate::utils::debug_log("GRABBER", "##################### GRABBER SUCCESS! ####################################");
-            crate::utils::debug_log("GRABBER", "################################################################################");
-            crate::utils::debug_log("GRABBER", &format!("Matched rule: {}", rule_name));
-            crate::utils::debug_log("GRABBER", &format!("Generated command action: {}", command.action));
-            crate::utils::debug_log("GRABBER", &format!("Generated command arg: {}", command.arg));
-            crate::utils::debug_log("GRABBER", "");
-            Ok((rule_name, command))
+    match rules {
+        Some(rules_vec) => {
+            crate::utils::debug_log("GRABBER", &format!("Loaded {} grabber rules from config", rules_vec.len()));
         }
         None => {
-            let error_msg = format!("No grabber rule matched for {} ({})", context.app_name, context.bundle_id);
-            crate::utils::debug_log("GRABBER", "");
-            crate::utils::debug_log("GRABBER", "################################################################################");
-            crate::utils::debug_log("GRABBER", "##################### GRABBER NO MATCH #################################");
-            crate::utils::debug_log("GRABBER", "################################################################################");
-            crate::utils::debug_log("GRABBER", &format!("ERROR: {}", error_msg));
-            crate::utils::debug_log("GRABBER", "");
-            Err(error_msg)
+            crate::utils::debug_log("GRABBER", "No grabber_rules section found in config.yaml");
+            crate::utils::debug_log("GRABBER", "Add a 'grabber_rules:' section to your config.yaml to enable rule matching");
         }
     }
+    
+    // Try to match against rules if they exist
+    if let Some(rules_vec) = rules {
+        match match_grabber_rules(&context, rules_vec, config) {
+            Some((rule_name, command)) => {
+                crate::utils::debug_log("GRABBER", "");
+                crate::utils::debug_log("GRABBER", "################################################################################");
+                crate::utils::debug_log("GRABBER", "##################### GRABBER SUCCESS! ####################################");
+                crate::utils::debug_log("GRABBER", "################################################################################");
+                crate::utils::debug_log("GRABBER", &format!("Matched rule: {}", rule_name));
+                crate::utils::debug_log("GRABBER", &format!("Generated command action: {}", command.action));
+                crate::utils::debug_log("GRABBER", &format!("Generated command arg: {}", command.arg));
+                crate::utils::debug_log("GRABBER", "");
+                return Ok((rule_name, command));
+            }
+            None => {
+                crate::utils::debug_log("GRABBER", "");
+                crate::utils::debug_log("GRABBER", "################################################################################");
+                crate::utils::debug_log("GRABBER", "##################### GRABBER NO MATCH #################################");
+                crate::utils::debug_log("GRABBER", "################################################################################");
+                crate::utils::debug_log("GRABBER", &format!("No rule matched for {} ({})", context.app_name, context.bundle_id));
+                crate::utils::debug_log("GRABBER", "");
+            }
+        }
+    } else {
+        crate::utils::debug_log("GRABBER", "");
+        crate::utils::debug_log("GRABBER", "################################################################################");
+        crate::utils::debug_log("GRABBER", "##################### NO RULES CONFIGURED #############################");
+        crate::utils::debug_log("GRABBER", "################################################################################");
+        crate::utils::debug_log("GRABBER", "No grabber rules to match against");
+        crate::utils::debug_log("GRABBER", "");
+    }
+    
+    // Always provide the rule template regardless of outcome
+    output_rule_template(&context);
+    
+    // Return error since no command was generated
+    let error_msg = if rules.is_some() {
+        format!("No grabber rule matched for {} ({})", context.app_name, context.bundle_id)
+    } else {
+        "No grabber rules configured in config.yaml".to_string()
+    };
+    
+    Err(error_msg)
 }
