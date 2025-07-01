@@ -374,6 +374,119 @@ pub fn match_grabber_rules(
     })
 }
 
+/// Output a consistent summary block for creating grabber rules
+fn output_grabber_summary(context: &AppContext, rules: &[GrabberRule], _config: &Config) {
+    crate::utils::debug_log("GRABBER", "");
+    crate::utils::debug_log("GRABBER", "################################################################################");
+    crate::utils::debug_log("GRABBER", "##################### GRABBER CONTEXT SUMMARY #############################");
+    crate::utils::debug_log("GRABBER", "################################################################################");
+    crate::utils::debug_log("GRABBER", "");
+    crate::utils::debug_log("GRABBER", "=== CAPTURED APPLICATION CONTEXT ===");
+    crate::utils::debug_log("GRABBER", &format!("App Name: '{}'", context.app_name));
+    crate::utils::debug_log("GRABBER", &format!("Bundle ID: '{}'", context.bundle_id));
+    crate::utils::debug_log("GRABBER", &format!("Window Title: '{}'", context.window_title));
+    crate::utils::debug_log("GRABBER", &format!("Properties: {}", serde_json::to_string_pretty(&context.properties).unwrap_or_else(|_| "{}".to_string())));
+    crate::utils::debug_log("GRABBER", "");
+    
+    // Try to determine what the action and arg would be with a simple rule match
+    let (inferred_action, inferred_arg) = infer_action_and_arg(context);
+    
+    crate::utils::debug_log("GRABBER", "=== INFERRED RULE SUGGESTION ===");
+    crate::utils::debug_log("GRABBER", &format!("Suggested Action: '{}'", inferred_action));
+    crate::utils::debug_log("GRABBER", &format!("Suggested Arg: '{}'", inferred_arg.as_deref().unwrap_or("(window title or context-specific)")));
+    crate::utils::debug_log("GRABBER", "");
+    
+    crate::utils::debug_log("GRABBER", "=== RULE TEMPLATE FOR THIS APP ===");
+    crate::utils::debug_log("GRABBER", "Copy this template to your config.yaml grabber_rules section:");
+    crate::utils::debug_log("GRABBER", "");
+    crate::utils::debug_log("GRABBER", &format!("  - name: \"{} Rule\"", context.app_name));
+    crate::utils::debug_log("GRABBER", "    matcher: |");
+    
+    // Generate a smart matcher based on the context
+    if context.bundle_id.contains("chrome") || context.bundle_id.contains("brave") {
+        crate::utils::debug_log("GRABBER", &format!("      if (bundleId === \"{}\" && props.url) {{", context.bundle_id));
+        crate::utils::debug_log("GRABBER", "        return props.url;");
+        crate::utils::debug_log("GRABBER", "      }");
+    } else if context.bundle_id == "com.apple.Safari" {
+        crate::utils::debug_log("GRABBER", &format!("      if (bundleId === \"{}\" && props.url) {{", context.bundle_id));
+        crate::utils::debug_log("GRABBER", "        return props.url;");
+        crate::utils::debug_log("GRABBER", "      }");
+    } else if context.bundle_id == "com.apple.finder" {
+        crate::utils::debug_log("GRABBER", &format!("      if (bundleId === \"{}\" && props.path) {{", context.bundle_id));
+        crate::utils::debug_log("GRABBER", "        return props.path;");
+        crate::utils::debug_log("GRABBER", "      }");
+    } else if context.window_title.len() > 3 {
+        crate::utils::debug_log("GRABBER", &format!("      if (bundleId === \"{}\" && title) {{", context.bundle_id));
+        crate::utils::debug_log("GRABBER", "        return title;  // or extract what you need from title");
+        crate::utils::debug_log("GRABBER", "      }");
+    } else {
+        crate::utils::debug_log("GRABBER", &format!("      if (bundleId === \"{}\") {{", context.bundle_id));
+        crate::utils::debug_log("GRABBER", "        return app;  // or return some identifier");
+        crate::utils::debug_log("GRABBER", "      }");
+    }
+    
+    crate::utils::debug_log("GRABBER", "      return null;");
+    crate::utils::debug_log("GRABBER", &format!("    action: \"{}\"", inferred_action));
+    
+    if rules.is_empty() {
+        crate::utils::debug_log("GRABBER", "    # Optional group for organizing commands:");
+        crate::utils::debug_log("GRABBER", "    # group: \"Grabbed\"");
+    }
+    
+    crate::utils::debug_log("GRABBER", "");
+    crate::utils::debug_log("GRABBER", "=== JAVASCRIPT VARIABLES AVAILABLE ===");
+    crate::utils::debug_log("GRABBER", "In your matcher JavaScript, you can use:");
+    crate::utils::debug_log("GRABBER", &format!("  app = \"{}\"", context.app_name));
+    crate::utils::debug_log("GRABBER", &format!("  bundleId = \"{}\"", context.bundle_id));
+    crate::utils::debug_log("GRABBER", &format!("  title = \"{}\"", context.window_title));
+    crate::utils::debug_log("GRABBER", "  props = {");
+    for (key, value) in context.properties.as_object().unwrap_or(&serde_json::Map::new()) {
+        crate::utils::debug_log("GRABBER", &format!("    {}: \"{}\"", key, value.as_str().unwrap_or("(complex value)")));
+    }
+    crate::utils::debug_log("GRABBER", "  }");
+    crate::utils::debug_log("GRABBER", "");
+    crate::utils::debug_log("GRABBER", "################################################################################");
+    crate::utils::debug_log("GRABBER", "");
+}
+
+/// Infer what action and arg would be appropriate for this context
+fn infer_action_and_arg(context: &AppContext) -> (String, Option<String>) {
+    // Check for browser
+    if context.bundle_id.contains("chrome") || context.bundle_id.contains("brave") {
+        if let Some(url) = context.properties.get("url").and_then(|v| v.as_str()) {
+            return ("url".to_string(), Some(url.to_string()));
+        }
+        return ("url".to_string(), Some("props.url".to_string()));
+    }
+    
+    if context.bundle_id == "com.apple.Safari" {
+        if let Some(url) = context.properties.get("url").and_then(|v| v.as_str()) {
+            return ("safari".to_string(), Some(url.to_string()));
+        }
+        return ("safari".to_string(), Some("props.url".to_string()));
+    }
+    
+    // Check for Finder
+    if context.bundle_id == "com.apple.finder" {
+        if let Some(path) = context.properties.get("path").and_then(|v| v.as_str()) {
+            return ("folder".to_string(), Some(path.to_string()));
+        }
+        return ("folder".to_string(), Some("props.path".to_string()));
+    }
+    
+    // Check for known apps
+    if context.app_name == "Obsidian" {
+        return ("obs".to_string(), Some("(extracted from title)".to_string()));
+    }
+    
+    if context.bundle_id == "com.microsoft.VSCode" {
+        return ("doc".to_string(), Some("(extracted from title)".to_string()));
+    }
+    
+    // Default to doc action
+    ("doc".to_string(), Some(context.window_title.clone()))
+}
+
 /// Perform a grab operation: capture context and match against rules
 pub fn grab(config: &Config) -> Result<(String, Command), String> {
     crate::utils::debug_log("GRABBER", "");
@@ -405,6 +518,9 @@ pub fn grab(config: &Config) -> Result<(String, Command), String> {
     
     crate::utils::debug_log("GRABBER", &format!("Loaded {} grabber rules from config", rules.len()));
     
+    // Always output the summary block for rule creation
+    output_grabber_summary(&context, rules, config);
+    
     // Match against rules
     match match_grabber_rules(&context, rules, config) {
         Some((rule_name, command)) => {
@@ -425,13 +541,6 @@ pub fn grab(config: &Config) -> Result<(String, Command), String> {
             crate::utils::debug_log("GRABBER", "##################### GRABBER NO MATCH #################################");
             crate::utils::debug_log("GRABBER", "################################################################################");
             crate::utils::debug_log("GRABBER", &format!("ERROR: {}", error_msg));
-            crate::utils::debug_log("GRABBER", "");
-            crate::utils::debug_log("GRABBER", "COPY THE CONTEXT INFO ABOVE TO CREATE A NEW RULE!");
-            crate::utils::debug_log("GRABBER", "Check the log for the JavaScript variables you can use:");
-            crate::utils::debug_log("GRABBER", "  - app: the application name");
-            crate::utils::debug_log("GRABBER", "  - bundleId: the bundle identifier");
-            crate::utils::debug_log("GRABBER", "  - title: the window title");
-            crate::utils::debug_log("GRABBER", "  - props: object with additional properties (url, path, etc.)");
             crate::utils::debug_log("GRABBER", "");
             Err(error_msg)
         }
