@@ -29,6 +29,12 @@ pub enum CommandTarget {
     Alias(String),
 }
 
+/// Mapping from flag letters to their word descriptions
+pub const FLAG_LETTER_MAPPING: &[(&str, &str)] = &[
+    ("M", "merge"),
+    // Add more flag mappings here as needed
+];
+
 impl Command {
     /// Gets the value of a flag by its key character
     /// Returns the string after the flag key, or None if the flag doesn't exist
@@ -488,17 +494,20 @@ pub fn merge_similar_commands_with_context(commands: Vec<Command>, config: &Conf
     // Add merged groups (2+ commands) and single commands
     for (candidate, mut group) in groups {
         if group.len() >= 2 {
-            // Create merged entry with "..."
+            // Create merged entry with " ..."
             group.sort_by(|a, b| a.command.cmp(&b.command));
             let base_command = &group[0];
-            result.push(Command {
+            let mut merged_command = Command {
                 group: base_command.group.clone(),
-                command: format!("{}...", candidate),
+                command: format!("{} ...", candidate),
                 action: base_command.action.clone(),
                 arg: base_command.arg.clone(),
                 flags: base_command.flags.clone(),
-                full_line: format!("{}...", candidate),
-            });
+                full_line: format!("{} ...", candidate),
+            };
+            // Set the merge flag
+            merged_command.set_flag('M', "");
+            result.push(merged_command);
         } else {
             // Single command, add as-is
             result.extend(group);
@@ -606,19 +615,22 @@ fn add_merged_group(merged: &mut Vec<Command>, mut group: Vec<Command>, separato
     // Sort group by command name for consistent ordering
     group.sort_by(|a, b| a.command.cmp(&b.command));
     
-    // Create a merged command with "..." representing the group
+    // Create a merged command with " ..." representing the group
     let prefix = get_command_prefix(&group[0].command, separators);
     
     // Use the first command as the base for the merged command
     let base_command = &group[0];
-    merged.push(Command {
+    let mut merged_command = Command {
         group: base_command.group.clone(),
-        command: format!("{}...", prefix), // This shows as "FIN.Budget..." in the UI
+        command: format!("{} ...", prefix), // This shows as "FIN.Budget ..." in the UI
         action: base_command.action.clone(),
         arg: base_command.arg.clone(),
         flags: base_command.flags.clone(),
-        full_line: format!("{}...", prefix),
-    });
+        full_line: format!("{} ...", prefix),
+    };
+    // Set the merge flag
+    merged_command.set_flag('M', "");
+    merged.push(merged_command);
 }
 
 /// Splits commands into submenu sections

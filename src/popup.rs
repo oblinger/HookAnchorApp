@@ -500,7 +500,8 @@ impl eframe::App for AnchorSelector {
                         let (display_commands, _, _, _) = self.get_display_commands();
                         if !display_commands.is_empty() && self.selected_index() < display_commands.len() {
                             let cmd = &display_commands[self.selected_index()];
-                            if !PopupState::is_separator_command(cmd) {
+                            // Check if this is a separator or a merged command (has merge flag)
+                            if !PopupState::is_separator_command(cmd) && cmd.get_flag('M').is_none() {
                                 command_to_edit = Some(cmd.clone());
                             }
                         }
