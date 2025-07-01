@@ -177,15 +177,6 @@ impl Dialog {
             return false;
         }
         
-        // Debug: Log that we're updating the dialog
-        static mut FIRST_UPDATE: bool = true;
-        unsafe {
-            if FIRST_UPDATE {
-                println!("DEBUG: Dialog update called - dialog is visible with title: '{}'", self.title);
-                println!("DEBUG: Dialog has {} rows", self.rows.len());
-                FIRST_UPDATE = false;
-            }
-        }
         
         let mut should_close = false;
         let mut button_pressed = None;
