@@ -37,6 +37,8 @@ pub struct GrabberRule {
 
 /// Captures information about the currently focused application
 pub fn capture_active_app() -> Result<AppContext, String> {
+    crate::utils::debug_log("GRABBER", "=== Starting application capture ===");
+    
     // Use AppleScript to get information about the frontmost application
     let script = r#"
         tell application "System Events"
@@ -55,72 +57,111 @@ pub fn capture_active_app() -> Result<AppContext, String> {
         end tell
     "#;
     
+    crate::utils::debug_log("GRABBER", "Executing AppleScript to capture active application");
+    
     let output = ProcessCommand::new("osascript")
         .arg("-e")
         .arg(script)
         .output()
-        .map_err(|e| format!("Failed to run AppleScript: {}", e))?;
+        .map_err(|e| {
+            let error_msg = format!("Failed to run AppleScript: {}", e);
+            crate::utils::debug_log("GRABBER", &format!("ERROR: {}", error_msg));
+            error_msg
+        })?;
     
     if !output.status.success() {
-        return Err(format!("AppleScript failed: {}", String::from_utf8_lossy(&output.stderr)));
+        let error_msg = format!("AppleScript failed: {}", String::from_utf8_lossy(&output.stderr));
+        crate::utils::debug_log("GRABBER", &format!("ERROR: {}", error_msg));
+        return Err(error_msg);
     }
     
     let result = String::from_utf8_lossy(&output.stdout).trim().to_string();
+    crate::utils::debug_log("GRABBER", &format!("AppleScript raw output: '{}'", result));
+    
     let parts: Vec<&str> = result.split('|').collect();
     
     if parts.len() < 3 {
-        return Err("Failed to parse AppleScript output".to_string());
+        let error_msg = "Failed to parse AppleScript output".to_string();
+        crate::utils::debug_log("GRABBER", &format!("ERROR: {}", error_msg));
+        crate::utils::debug_log("GRABBER", &format!("Expected 3 parts, got {}: {:?}", parts.len(), parts));
+        return Err(error_msg);
     }
     
-    Ok(AppContext {
+    let context = AppContext {
         app_name: parts[0].to_string(),
         bundle_id: parts[1].to_string(),
         window_title: parts[2].to_string(),
         properties: serde_json::json!({}),
-    })
+    };
+    
+    crate::utils::debug_log("GRABBER", &format!("Captured basic context:"));
+    crate::utils::debug_log("GRABBER", &format!("  App Name: '{}'", context.app_name));
+    crate::utils::debug_log("GRABBER", &format!("  Bundle ID: '{}'", context.bundle_id));
+    crate::utils::debug_log("GRABBER", &format!("  Window Title: '{}'", context.window_title));
+    
+    Ok(context)
 }
 
 /// Get additional browser-specific information
 pub fn get_browser_info(bundle_id: &str) -> Option<String> {
+    crate::utils::debug_log("GRABBER", &format!("Checking for browser-specific info for bundle: '{}'", bundle_id));
+    
     let browser_script = match bundle_id {
-        "com.google.Chrome" => Some(r#"
-            tell application "Google Chrome"
-                if (count of windows) > 0 then
-                    return URL of active tab of window 1
-                else
+        "com.google.Chrome" => {
+            crate::utils::debug_log("GRABBER", "Detected Google Chrome - attempting to get URL");
+            Some(r#"
+                tell application "Google Chrome"
+                    if (count of windows) > 0 then
+                        return URL of active tab of window 1
+                    else
+                        return ""
+                    end if
+                end tell
+            "#)
+        },
+        "com.apple.Safari" => {
+            crate::utils::debug_log("GRABBER", "Detected Safari - attempting to get URL");
+            Some(r#"
+                tell application "Safari"
+                    if (count of windows) > 0 then
+                        return URL of current tab of window 1
+                    else
+                        return ""
+                    end if
+                end tell
+            "#)
+        },
+        "com.brave.Browser" => {
+            crate::utils::debug_log("GRABBER", "Detected Brave Browser - attempting to get URL");
+            Some(r#"
+                tell application "Brave Browser"
+                    if (count of windows) > 0 then
+                        return URL of active tab of window 1
+                    else
+                        return ""
+                    end if
+                end tell
+            "#)
+        },
+        "org.mozilla.firefox" => {
+            crate::utils::debug_log("GRABBER", "Detected Firefox - limited AppleScript support");
+            Some(r#"
+                tell application "Firefox"
+                    -- Firefox doesn't have good AppleScript support
+                    -- We'll use window title as a fallback
                     return ""
-                end if
-            end tell
-        "#),
-        "com.apple.Safari" => Some(r#"
-            tell application "Safari"
-                if (count of windows) > 0 then
-                    return URL of current tab of window 1
-                else
-                    return ""
-                end if
-            end tell
-        "#),
-        "com.brave.Browser" => Some(r#"
-            tell application "Brave Browser"
-                if (count of windows) > 0 then
-                    return URL of active tab of window 1
-                else
-                    return ""
-                end if
-            end tell
-        "#),
-        "org.mozilla.firefox" => Some(r#"
-            tell application "Firefox"
-                -- Firefox doesn't have good AppleScript support
-                -- We'll use window title as a fallback
-                return ""
-            end tell
-        "#),
-        _ => None,
+                end tell
+            "#)
+        },
+        _ => {
+            crate::utils::debug_log("GRABBER", &format!("No browser-specific handler for bundle: '{}'", bundle_id));
+            None
+        },
     };
     
     if let Some(script) = browser_script {
+        crate::utils::debug_log("GRABBER", "Executing browser-specific AppleScript");
+        
         if let Ok(output) = ProcessCommand::new("osascript")
             .arg("-e")
             .arg(script)
@@ -128,10 +169,19 @@ pub fn get_browser_info(bundle_id: &str) -> Option<String> {
         {
             if output.status.success() {
                 let url = String::from_utf8_lossy(&output.stdout).trim().to_string();
+                crate::utils::debug_log("GRABBER", &format!("Browser AppleScript result: '{}'", url));
                 if !url.is_empty() {
+                    crate::utils::debug_log("GRABBER", &format!("Successfully extracted URL: {}", url));
                     return Some(url);
+                } else {
+                    crate::utils::debug_log("GRABBER", "Browser returned empty URL");
                 }
+            } else {
+                let error = String::from_utf8_lossy(&output.stderr);
+                crate::utils::debug_log("GRABBER", &format!("Browser AppleScript failed: {}", error));
             }
+        } else {
+            crate::utils::debug_log("GRABBER", "Failed to execute browser AppleScript");
         }
     }
     
@@ -140,6 +190,8 @@ pub fn get_browser_info(bundle_id: &str) -> Option<String> {
 
 /// Get Finder-specific information
 pub fn get_finder_info() -> Option<String> {
+    crate::utils::debug_log("GRABBER", "Attempting to get Finder path information");
+    
     let script = r#"
         tell application "Finder"
             if (count of windows) > 0 then
@@ -151,6 +203,8 @@ pub fn get_finder_info() -> Option<String> {
         end tell
     "#;
     
+    crate::utils::debug_log("GRABBER", "Executing Finder AppleScript");
+    
     if let Ok(output) = ProcessCommand::new("osascript")
         .arg("-e")
         .arg(script)
@@ -158,10 +212,19 @@ pub fn get_finder_info() -> Option<String> {
     {
         if output.status.success() {
             let path = String::from_utf8_lossy(&output.stdout).trim().to_string();
+            crate::utils::debug_log("GRABBER", &format!("Finder AppleScript result: '{}'", path));
             if !path.is_empty() {
+                crate::utils::debug_log("GRABBER", &format!("Successfully extracted Finder path: {}", path));
                 return Some(path);
+            } else {
+                crate::utils::debug_log("GRABBER", "Finder returned empty path");
             }
+        } else {
+            let error = String::from_utf8_lossy(&output.stderr);
+            crate::utils::debug_log("GRABBER", &format!("Finder AppleScript failed: {}", error));
         }
+    } else {
+        crate::utils::debug_log("GRABBER", "Failed to execute Finder AppleScript");
     }
     
     None
@@ -169,22 +232,39 @@ pub fn get_finder_info() -> Option<String> {
 
 /// Enrich the app context with additional information based on the app
 pub fn enrich_context(mut context: AppContext) -> AppContext {
+    crate::utils::debug_log("GRABBER", "=== Starting context enrichment ===");
+    
     // Add browser URL if applicable
     if context.bundle_id.contains("Chrome") || 
        context.bundle_id.contains("Safari") || 
        context.bundle_id.contains("brave") ||
        context.bundle_id.contains("firefox") {
+        crate::utils::debug_log("GRABBER", "Bundle ID indicates browser - attempting URL extraction");
         if let Some(url) = get_browser_info(&context.bundle_id) {
-            context.properties["url"] = serde_json::Value::String(url);
+            context.properties["url"] = serde_json::Value::String(url.clone());
+            crate::utils::debug_log("GRABBER", &format!("Added URL to context: {}", url));
+        } else {
+            crate::utils::debug_log("GRABBER", "No URL extracted from browser");
         }
     }
     
     // Add Finder path if applicable
     if context.bundle_id == "com.apple.finder" {
+        crate::utils::debug_log("GRABBER", "Bundle ID indicates Finder - attempting path extraction");
         if let Some(path) = get_finder_info() {
-            context.properties["path"] = serde_json::Value::String(path);
+            context.properties["path"] = serde_json::Value::String(path.clone());
+            crate::utils::debug_log("GRABBER", &format!("Added path to context: {}", path));
+        } else {
+            crate::utils::debug_log("GRABBER", "No path extracted from Finder");
         }
     }
+    
+    // Log the final enriched context
+    crate::utils::debug_log("GRABBER", "=== Final enriched context ===");
+    crate::utils::debug_log("GRABBER", &format!("App Name: '{}'", context.app_name));
+    crate::utils::debug_log("GRABBER", &format!("Bundle ID: '{}'", context.bundle_id));
+    crate::utils::debug_log("GRABBER", &format!("Window Title: '{}'", context.window_title));
+    crate::utils::debug_log("GRABBER", &format!("Properties: {}", serde_json::to_string_pretty(&context.properties).unwrap_or_else(|_| "{}".to_string())));
     
     context
 }
@@ -195,6 +275,14 @@ pub fn match_grabber_rules(
     rules: &[GrabberRule],
     _config: &Config,
 ) -> Option<(String, Command)> {
+    crate::utils::debug_log("GRABBER", "=== Starting rule matching ===");
+    crate::utils::debug_log("GRABBER", &format!("Found {} grabber rules to evaluate", rules.len()));
+    
+    if rules.is_empty() {
+        crate::utils::debug_log("GRABBER", "ERROR: No grabber rules configured - add some to grabber_rules in config.yaml");
+        return None;
+    }
+    
     let rt = Runtime::new().ok()?;
     let ctx = Context::full(&rt).ok()?;
     
@@ -208,38 +296,79 @@ pub fn match_grabber_rules(
         const props = context.properties;
     "#, context_json);
     
+    crate::utils::debug_log("GRABBER", "Setting up JavaScript context with captured app data");
+    crate::utils::debug_log("GRABBER", &format!("JavaScript context setup script:\n{}", setup_script));
+    
     ctx.with(|ctx| {
         if ctx.eval::<(), _>(setup_script.as_bytes()).is_err() {
+            crate::utils::debug_log("GRABBER", "ERROR: Failed to setup JavaScript context");
             return None;
         }
         
+        crate::utils::debug_log("GRABBER", "JavaScript context setup successful");
+        
         // Try each rule
-        for rule in rules {
+        for (rule_index, rule) in rules.iter().enumerate() {
+            crate::utils::debug_log("GRABBER", &format!("=== Evaluating rule {} of {}: '{}' ===", rule_index + 1, rules.len(), rule.name));
+            crate::utils::debug_log("GRABBER", &format!("Rule action: '{}'", rule.action));
+            crate::utils::debug_log("GRABBER", &format!("Rule group: '{}'", rule.group.as_ref().unwrap_or(&"(none)".to_string())));
+            crate::utils::debug_log("GRABBER", &format!("Rule matcher JavaScript:\n{}", rule.matcher));
+            
             // Evaluate the matcher
             match ctx.eval::<Value, _>(rule.matcher.as_bytes()) {
                 Ok(value) => {
-                    if let Some(str_ref) = value.as_string() {
+                    crate::utils::debug_log("GRABBER", "Rule JavaScript executed successfully");
+                    
+                    // Check what type of value was returned
+                    if value.is_null() {
+                        crate::utils::debug_log("GRABBER", "Rule returned null - no match");
+                    } else if value.is_undefined() {
+                        crate::utils::debug_log("GRABBER", "Rule returned undefined - no match");
+                    } else if let Some(str_ref) = value.as_string() {
                         if let Ok(arg) = str_ref.to_string() {
+                            crate::utils::debug_log("GRABBER", &format!("*** RULE MATCHED! *** Returned arg: '{}'", arg));
+                            
                             // Rule matched and returned a string argument
                             let command = Command {
                                 group: rule.group.clone().unwrap_or_default(),
                                 command: String::new(), // Will be filled by user
                                 action: rule.action.clone(),
-                                arg,
+                                arg: arg.clone(),
                                 flags: String::new(),
                                 full_line: String::new(), // Will be computed
                             };
+                            
+                            crate::utils::debug_log("GRABBER", &format!("Created command with action='{}', arg='{}'", command.action, command.arg));
                             return Some((rule.name.clone(), command));
+                        } else {
+                            crate::utils::debug_log("GRABBER", "Rule returned string but failed to convert to String");
                         }
+                    } else if value.is_bool() {
+                        let bool_val = value.as_bool().unwrap_or(false);
+                        crate::utils::debug_log("GRABBER", &format!("Rule returned boolean: {} - no match", bool_val));
+                    } else if value.is_number() {
+                        crate::utils::debug_log("GRABBER", "Rule returned number - no match");
+                    } else {
+                        crate::utils::debug_log("GRABBER", "Rule returned unknown type - no match");
                     }
-                    // If not a string, continue to next rule
                 }
-                Err(_) => {
-                    // Error evaluating rule, skip it
-                    continue;
+                Err(err) => {
+                    crate::utils::debug_log("GRABBER", &format!("ERROR: Rule JavaScript failed to execute: {:?}", err));
+                    crate::utils::debug_log("GRABBER", "Check your JavaScript syntax in the rule matcher");
                 }
             }
         }
+        
+        crate::utils::debug_log("GRABBER", "=== No rules matched ===");
+        crate::utils::debug_log("GRABBER", "To create a new rule for this app, copy the context info above");
+        crate::utils::debug_log("GRABBER", "Example rule template:");
+        crate::utils::debug_log("GRABBER", &format!(r#"  - name: "{} Rule"
+    matcher: |
+      if (bundleId === "{}" && title) {{
+        return title; // or extract what you need
+      }}
+      return null;
+    action: "doc"  // or "url", "folder", etc."#, context.app_name, context.bundle_id));
         
         None
     })
@@ -247,15 +376,64 @@ pub fn match_grabber_rules(
 
 /// Perform a grab operation: capture context and match against rules
 pub fn grab(config: &Config) -> Result<(String, Command), String> {
+    crate::utils::debug_log("GRABBER", "");
+    crate::utils::debug_log("GRABBER", "################################################################################");
+    crate::utils::debug_log("GRABBER", "##################### GRABBER OPERATION STARTED ###########################");
+    crate::utils::debug_log("GRABBER", "################################################################################");
+    crate::utils::debug_log("GRABBER", "");
+    
     // Capture the active application context
     let context = capture_active_app()?;
     let context = enrich_context(context);
     
     // Get grabber rules from config
     let rules = config.grabber_rules.as_ref()
-        .ok_or("No grabber rules configured")?;
+        .ok_or_else(|| {
+            let error_msg = "No grabber rules configured in config.yaml";
+            crate::utils::debug_log("GRABBER", &format!("ERROR: {}", error_msg));
+            crate::utils::debug_log("GRABBER", "Add a 'grabber_rules:' section to your config.yaml with rules like:");
+            crate::utils::debug_log("GRABBER", "grabber_rules:");
+            crate::utils::debug_log("GRABBER", "  - name: \"Example Rule\"");
+            crate::utils::debug_log("GRABBER", "    matcher: |");
+            crate::utils::debug_log("GRABBER", "      if (bundleId === \"com.example.app\") {");
+            crate::utils::debug_log("GRABBER", "        return title;");
+            crate::utils::debug_log("GRABBER", "      }");
+            crate::utils::debug_log("GRABBER", "      return null;");
+            crate::utils::debug_log("GRABBER", "    action: \"doc\"");
+            error_msg.to_string()
+        })?;
+    
+    crate::utils::debug_log("GRABBER", &format!("Loaded {} grabber rules from config", rules.len()));
     
     // Match against rules
-    match_grabber_rules(&context, rules, config)
-        .ok_or_else(|| format!("No grabber rule matched for {}", context.app_name))
+    match match_grabber_rules(&context, rules, config) {
+        Some((rule_name, command)) => {
+            crate::utils::debug_log("GRABBER", "");
+            crate::utils::debug_log("GRABBER", "################################################################################");
+            crate::utils::debug_log("GRABBER", "##################### GRABBER SUCCESS! ####################################");
+            crate::utils::debug_log("GRABBER", "################################################################################");
+            crate::utils::debug_log("GRABBER", &format!("Matched rule: {}", rule_name));
+            crate::utils::debug_log("GRABBER", &format!("Generated command action: {}", command.action));
+            crate::utils::debug_log("GRABBER", &format!("Generated command arg: {}", command.arg));
+            crate::utils::debug_log("GRABBER", "");
+            Ok((rule_name, command))
+        }
+        None => {
+            let error_msg = format!("No grabber rule matched for {} ({})", context.app_name, context.bundle_id);
+            crate::utils::debug_log("GRABBER", "");
+            crate::utils::debug_log("GRABBER", "################################################################################");
+            crate::utils::debug_log("GRABBER", "##################### GRABBER NO MATCH #################################");
+            crate::utils::debug_log("GRABBER", "################################################################################");
+            crate::utils::debug_log("GRABBER", &format!("ERROR: {}", error_msg));
+            crate::utils::debug_log("GRABBER", "");
+            crate::utils::debug_log("GRABBER", "COPY THE CONTEXT INFO ABOVE TO CREATE A NEW RULE!");
+            crate::utils::debug_log("GRABBER", "Check the log for the JavaScript variables you can use:");
+            crate::utils::debug_log("GRABBER", "  - app: the application name");
+            crate::utils::debug_log("GRABBER", "  - bundleId: the bundle identifier");
+            crate::utils::debug_log("GRABBER", "  - title: the window title");
+            crate::utils::debug_log("GRABBER", "  - props: object with additional properties (url, path, etc.)");
+            crate::utils::debug_log("GRABBER", "");
+            Err(error_msg)
+        }
+    }
 }
