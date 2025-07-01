@@ -2,7 +2,7 @@ use eframe::egui;
 use std::process;
 use anchor_selector::{
     Command, execute_command, load_commands, 
-    load_config, Config, load_state, save_state, scanner, grabber, utils
+    load_config, Config, load_state, save_state, scanner, grabber
 };
 use anchor_selector::ui::{PopupState, LayoutArrangement};
 
@@ -181,12 +181,12 @@ impl AnchorSelector {
     
     /// Execute the grab operation
     fn execute_grab(&mut self) {
-        utils::debug_log("GRABBER", "=== POPUP: Starting grab execution ===");
+        anchor_selector::utils::debug_log("GRABBER", "=== POPUP: Starting grab execution ===");
         
         let config = load_config();
         match grabber::grab(&config) {
             Ok((rule_name, mut command)) => {
-                utils::debug_log("GRABBER", &format!("POPUP: Grab succeeded! Rule: '{}', Action: '{}', Arg: '{}'", 
+                anchor_selector::utils::debug_log("GRABBER", &format!("POPUP: Grab succeeded! Rule: '{}', Action: '{}', Arg: '{}'", 
                     rule_name, command.action, command.arg));
                 
                 // Use the current search text as the command name, or default if empty
@@ -196,28 +196,28 @@ impl AnchorSelector {
                     self.popup_state.search_text.clone()
                 };
                 
-                utils::debug_log("GRABBER", &format!("POPUP: Using command name: '{}'", command_name));
+                anchor_selector::utils::debug_log("GRABBER", &format!("POPUP: Using command name: '{}'", command_name));
                 
                 // Fill in the command with all the grabbed information
                 command.command = command_name;
                 command.full_line = format!("{} : {} {}", command.command, command.action, command.arg);
                 
-                utils::debug_log("GRABBER", &format!("POPUP: Opening command editor with full_line: '{}'", command.full_line));
+                anchor_selector::utils::debug_log("GRABBER", &format!("POPUP: Opening command editor with full_line: '{}'", command.full_line));
                 
                 // Open command editor with the pre-filled grabbed command
                 self.command_editor.open_with_command(command);
                 
-                utils::debug_log("GRABBER", "POPUP: Command editor opened successfully");
+                anchor_selector::utils::debug_log("GRABBER", "POPUP: Command editor opened successfully");
             }
             Err(err) => {
-                utils::debug_log("GRABBER", &format!("POPUP: Grab failed with error: {}", err));
+                anchor_selector::utils::debug_log("GRABBER", &format!("POPUP: Grab failed with error: {}", err));
                 // Show error in dialog (rules didn't match or no rules configured)
                 eprintln!("Grabber error: {}", err);
                 // Note: Context information is still logged for rule creation
             }
         }
         
-        utils::debug_log("GRABBER", "=== POPUP: Grab execution completed ===");
+        anchor_selector::utils::debug_log("GRABBER", "=== POPUP: Grab execution completed ===");
     }
     
 }
