@@ -85,8 +85,16 @@ impl CommandEditor {
     
     /// Open the command editor with a pre-filled command (for grabber functionality)
     pub fn open_with_command(&mut self, command: Command) {
+        anchor_selector::utils::debug_log("EDITOR", "=== COMMAND EDITOR: open_with_command called ===");
+        anchor_selector::utils::debug_log("EDITOR", &format!("Command: '{}'", command.command));
+        anchor_selector::utils::debug_log("EDITOR", &format!("Action: '{}'", command.action));
+        anchor_selector::utils::debug_log("EDITOR", &format!("Arg: '{}'", command.arg));
+        anchor_selector::utils::debug_log("EDITOR", &format!("Group: '{}'", command.group));
+        
         self.visible = true;
         self.focus_requested = true;
+        
+        anchor_selector::utils::debug_log("EDITOR", &format!("Set visible=true, focus_requested=true"));
         
         // Fill in the fields from the provided command
         self.command = command.command.clone();
@@ -98,11 +106,23 @@ impl CommandEditor {
         // No original command since this is a new command
         self.original_command = None;
         self.original_command_name = String::new();
+        
+        anchor_selector::utils::debug_log("EDITOR", "Command editor fields populated");
+        anchor_selector::utils::debug_log("EDITOR", "=== COMMAND EDITOR: open_with_command completed ===");
     }
     
     pub fn update(&mut self, ctx: &egui::Context, config: &Config) -> CommandEditorResult {
         if !self.visible {
             return CommandEditorResult::None;
+        }
+        
+        // Log first frame when editor becomes visible
+        static mut EDITOR_LOGGED_VISIBLE: bool = false;
+        unsafe {
+            if !EDITOR_LOGGED_VISIBLE {
+                anchor_selector::utils::debug_log("EDITOR", "=== COMMAND EDITOR: Now rendering (visible=true) ===");
+                EDITOR_LOGGED_VISIBLE = true;
+            }
         }
         
         let mut result = CommandEditorResult::None;

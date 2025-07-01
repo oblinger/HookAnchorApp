@@ -160,7 +160,7 @@ impl AnchorSelector {
     }
     
     /// Update countdown and handle grabber logic
-    fn update_grabber_countdown(&mut self) {
+    fn update_grabber_countdown(&mut self, ctx: &egui::Context) {
         if let Some(count) = self.grabber_countdown {
             if let Some(last_update) = self.countdown_last_update {
                 if last_update.elapsed().as_secs() >= 1 {
@@ -170,7 +170,7 @@ impl AnchorSelector {
                         self.countdown_last_update = Some(std::time::Instant::now());
                     } else {
                         // Countdown finished, execute grab
-                        self.execute_grab();
+                        self.execute_grab(ctx);
                         self.grabber_countdown = None;
                         self.countdown_last_update = None;
                     }
@@ -180,40 +180,72 @@ impl AnchorSelector {
     }
     
     /// Execute the grab operation
-    fn execute_grab(&mut self) {
+    fn execute_grab(&mut self, ctx: &egui::Context) {
         anchor_selector::utils::debug_log("GRABBER", "=== POPUP: Starting grab execution ===");
         
         let config = load_config();
         match grabber::grab(&config) {
-            Ok((rule_name, mut command)) => {
-                anchor_selector::utils::debug_log("GRABBER", &format!("POPUP: Grab succeeded! Rule: '{}', Action: '{}', Arg: '{}'", 
-                    rule_name, command.action, command.arg));
-                
-                // Use the current search text as the command name, or default if empty
-                let command_name = if self.popup_state.search_text.trim().is_empty() {
-                    format!("Grabbed {}", rule_name)
-                } else {
-                    self.popup_state.search_text.clone()
-                };
-                
-                anchor_selector::utils::debug_log("GRABBER", &format!("POPUP: Using command name: '{}'", command_name));
-                
-                // Fill in the command with all the grabbed information
-                command.command = command_name;
-                command.full_line = format!("{} : {} {}", command.command, command.action, command.arg);
-                
-                anchor_selector::utils::debug_log("GRABBER", &format!("POPUP: Opening command editor with full_line: '{}'", command.full_line));
-                
-                // Open command editor with the pre-filled grabbed command
-                self.command_editor.open_with_command(command);
-                
-                anchor_selector::utils::debug_log("GRABBER", "POPUP: Command editor opened successfully");
+            Ok(grab_result) => {
+                match grab_result {
+                    grabber::GrabResult::RuleMatched(rule_name, mut command) => {
+                        anchor_selector::utils::debug_log("GRABBER", &format!("POPUP: Grab succeeded! Rule: '{}', Action: '{}', Arg: '{}'", 
+                            rule_name, command.action, command.arg));
+                        
+                        // Use the current search text as the command name, or default if empty
+                        let command_name = if self.popup_state.search_text.trim().is_empty() {
+                            format!("Grabbed {}", rule_name)
+                        } else {
+                            self.popup_state.search_text.clone()
+                        };
+                        
+                        anchor_selector::utils::debug_log("GRABBER", &format!("POPUP: Using command name: '{}'", command_name));
+                        
+                        // Fill in the command with all the grabbed information
+                        command.command = command_name;
+                        command.full_line = format!("{} : {} {}", command.command, command.action, command.arg);
+                        
+                        anchor_selector::utils::debug_log("GRABBER", &format!("POPUP: Opening command editor with full_line: '{}'", command.full_line));
+                        
+                        // Open command editor with the pre-filled grabbed command
+                        self.command_editor.open_with_command(command);
+                        
+                        anchor_selector::utils::debug_log("GRABBER", "POPUP: Command editor opened successfully");
+                    }
+                    grabber::GrabResult::NoRuleMatched(context) => {
+                        anchor_selector::utils::debug_log("GRABBER", "POPUP: No rule matched - showing template dialog");
+                        
+                        // Generate the template text
+                        let template_text = grabber::generate_rule_template_text(&context);
+                        
+                        // Show template dialog using the new TextBox field type
+                        let dialog_spec = vec![
+                            format!("=Grabber Rule Template - {}", context.app_name),
+                            format!("&{}", template_text),
+                            "!OK".to_string(),
+                        ];
+                        
+                        self.dialog.show(dialog_spec);
+                        
+                        // Calculate required dialog size and resize window
+                        let (dialog_width, dialog_height) = self.dialog.calculate_required_size();
+                        let final_width = dialog_width.max(600.0); // Minimum width for readability
+                        let final_height = dialog_height.max(400.0); // Minimum height
+                        
+                        // Enable manual resize mode and set window size
+                        self.manual_resize_mode = true;
+                        self.last_manual_size = Some([final_width, final_height].into());
+                        
+                        // Actually resize the window
+                        ctx.send_viewport_cmd(egui::ViewportCommand::InnerSize([final_width, final_height].into()));
+                        
+                        anchor_selector::utils::debug_log("GRABBER", &format!("POPUP: Template dialog shown, resizing window to {}x{}", final_width, final_height));
+                    }
+                }
             }
             Err(err) => {
                 anchor_selector::utils::debug_log("GRABBER", &format!("POPUP: Grab failed with error: {}", err));
-                // Show error in dialog (rules didn't match or no rules configured)
+                // Show error in dialog
                 eprintln!("Grabber error: {}", err);
-                // Note: Context information is still logged for rule creation
             }
         }
         
@@ -317,7 +349,7 @@ impl eframe::App for AnchorSelector {
         }
         
         // Update grabber countdown
-        self.update_grabber_countdown();
+        self.update_grabber_countdown(ctx);
         
         // Draw custom rounded background with heavy shadow
         let screen_rect = ctx.screen_rect();

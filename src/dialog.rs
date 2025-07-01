@@ -7,6 +7,7 @@ pub enum DialogElement {
     Title(String),
     Label(String),
     Input { key: String, placeholder: String },
+    TextBox { content: String },
     Button { text: String },
 }
 
@@ -131,6 +132,17 @@ impl Dialog {
                     }
                     last_was_button = false;
                 }
+                '&' => {
+                    // TextBox - multi-line text display, starts a new row
+                    if !current_row.elements.is_empty() {
+                        self.rows.push(current_row);
+                        current_row = DialogRow { elements: Vec::new() };
+                    }
+                    current_row.elements.push(DialogElement::TextBox { content: rest.to_string() });
+                    self.rows.push(current_row);
+                    current_row = DialogRow { elements: Vec::new() };
+                    last_was_button = false;
+                }
                 '!' => {
                     // Button - can be on same row as previous button
                     if !last_was_button && !current_row.elements.is_empty() {
@@ -165,6 +177,16 @@ impl Dialog {
             return false;
         }
         
+        // Debug: Log that we're updating the dialog
+        static mut FIRST_UPDATE: bool = true;
+        unsafe {
+            if FIRST_UPDATE {
+                println!("DEBUG: Dialog update called - dialog is visible with title: '{}'", self.title);
+                println!("DEBUG: Dialog has {} rows", self.rows.len());
+                FIRST_UPDATE = false;
+            }
+        }
+        
         let mut should_close = false;
         let mut button_pressed = None;
         
@@ -179,7 +201,18 @@ impl Dialog {
         let mut required_height = 80.0f32; // base height for title bar and padding
         
         for row in &self.rows {
-            required_height += 35.0; // height per row
+            let mut row_height = 35.0; // default height per row
+            
+            // Check if this row contains a TextBox and adjust height
+            for element in &row.elements {
+                if let DialogElement::TextBox { .. } = element {
+                    // TextBox is always 15 lines high (15 * 16px = 240px) + padding
+                    let text_height = 15.0_f32 * 16.0_f32;
+                    row_height = (text_height + 40.0_f32).max(row_height); // text height + padding
+                }
+            }
+            
+            required_height += row_height;
             
             // Calculate width needed for this row
             let mut row_width = 40.0; // padding
@@ -193,6 +226,11 @@ impl Dialog {
                     }
                     DialogElement::Input { .. } => {
                         row_width += 220.0; // input field width + margin
+                    }
+                    DialogElement::TextBox { content } => {
+                        // Calculate based on longest line
+                        let max_line_length = content.lines().map(|line| line.len()).max().unwrap_or(0);
+                        row_width += (max_line_length as f32 * 7.0).max(400.0); // minimum 400px wide
                     }
                     DialogElement::Button { text } => {
                         row_width += (text.len() as f32 * 8.0).max(80.0) + 15.0; // button width + spacing
@@ -254,6 +292,23 @@ impl Dialog {
                                                 .desired_width(220.0)
                                                 .hint_text(egui::RichText::new(placeholder).size(13.0).color(egui::Color32::LIGHT_GRAY));
                                             ui.add(text_edit);
+                                        }
+                                        DialogElement::TextBox { content } => {
+                                            // Create a text area that's always 15 lines high with scrolling
+                                            let text_height = 15.0_f32 * 16.0_f32; // 15 lines * 16px per line for monospace
+                                            
+                                            egui::ScrollArea::vertical()
+                                                .min_scrolled_height(text_height)
+                                                .max_height(text_height)
+                                                .show(ui, |ui| {
+                                                    ui.add_sized(
+                                                        [ui.available_width() - 20.0, text_height],
+                                                        egui::TextEdit::multiline(&mut content.clone())
+                                                            .font(egui::TextStyle::Monospace)
+                                                            .text_color(egui::Color32::BLACK)
+                                                            .interactive(false) // Read-only
+                                                    );
+                                                });
                                         }
                                         DialogElement::Button { text } => {
                                             let button_width = (text.len() as f32 * 8.0).max(80.0);
