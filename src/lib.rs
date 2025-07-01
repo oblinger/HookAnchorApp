@@ -20,6 +20,7 @@ pub mod business_logic;
 pub mod builtin_fns;
 pub mod utils;
 pub mod scanner;
+pub mod grabber;
 
 // Re-export commonly used types from core modules
 pub use core::commands::{Command, CommandTarget, filter_commands, merge_similar_commands, 

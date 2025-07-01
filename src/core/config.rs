@@ -19,6 +19,8 @@ pub struct Config {
     pub js_functions: Option<HashMap<String, String>>,
     /// Markdown scanning roots
     pub markdown_roots: Option<Vec<String>>,
+    /// Grabber rules for capturing application context
+    pub grabber_rules: Option<Vec<crate::grabber::GrabberRule>>,
 }
 
 /// Popup settings section of the configuration file
@@ -159,11 +161,16 @@ fn load_legacy_config(contents: &str) -> Result<Config, Box<dyn std::error::Erro
     let launcher_settings = yaml.get("launcher_settings")
         .and_then(|v| serde_yaml::from_value(v.clone()).ok());
     
+    // Extract grabber_rules if it exists
+    let grabber_rules = yaml.get("grabber_rules")
+        .and_then(|v| serde_yaml::from_value(v.clone()).ok());
+    
     Ok(Config {
         popup_settings,
         launcher_settings,
         js_functions,
         markdown_roots,
+        grabber_rules,
     })
 }
 
@@ -174,5 +181,6 @@ fn create_default_config() -> Config {
         launcher_settings: Some(LauncherSettings::default()),
         js_functions: Some(HashMap::new()),
         markdown_roots: Some(vec![]),
+        grabber_rules: Some(vec![]),
     }
 }

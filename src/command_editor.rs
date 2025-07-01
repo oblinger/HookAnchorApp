@@ -83,6 +83,23 @@ impl CommandEditor {
         }
     }
     
+    /// Open the command editor with a pre-filled command (for grabber functionality)
+    pub fn open_with_command(&mut self, command: Command) {
+        self.visible = true;
+        self.focus_requested = true;
+        
+        // Fill in the fields from the provided command
+        self.command = command.command.clone();
+        self.action = command.action.clone();
+        self.argument = command.arg.clone();
+        self.group = command.group.clone();
+        self.priority = false; // Default to false
+        
+        // No original command since this is a new command
+        self.original_command = None;
+        self.original_command_name = String::new();
+    }
+    
     pub fn update(&mut self, ctx: &egui::Context, config: &Config) -> CommandEditorResult {
         if !self.visible {
             return CommandEditorResult::None;

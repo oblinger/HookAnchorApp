@@ -2,7 +2,7 @@ use eframe::egui;
 use std::process;
 use anchor_selector::{
     Command, execute_command, load_commands, 
-    load_config, Config, load_state, save_state, scanner
+    load_config, Config, load_state, save_state, scanner, grabber
 };
 use anchor_selector::ui::{PopupState, LayoutArrangement};
 
@@ -30,6 +30,10 @@ pub struct AnchorSelector {
     last_manual_size: Option<egui::Vec2>,
     /// Flag to track if scanner check is pending
     scanner_check_pending: bool,
+    /// Grabber countdown state (None = not active, Some(n) = countdown from n)
+    grabber_countdown: Option<u8>,
+    /// Timestamp for countdown timing
+    countdown_last_update: Option<std::time::Instant>,
 }
 
 impl AnchorSelector {
@@ -54,6 +58,8 @@ impl AnchorSelector {
             manual_resize_mode: false,
             last_manual_size: None,
             scanner_check_pending: true,
+            grabber_countdown: None,
+            countdown_last_update: None,
         }
     }
     
@@ -145,6 +151,51 @@ impl AnchorSelector {
     
     fn navigate_vertical(&mut self, direction: i32) {
         self.popup_state.navigate_vertical(direction);
+    }
+    
+    /// Start the grabber countdown (5, 4, 3, 2, 1)
+    fn start_grabber_countdown(&mut self) {
+        self.grabber_countdown = Some(5);
+        self.countdown_last_update = Some(std::time::Instant::now());
+    }
+    
+    /// Update countdown and handle grabber logic
+    fn update_grabber_countdown(&mut self) {
+        if let Some(count) = self.grabber_countdown {
+            if let Some(last_update) = self.countdown_last_update {
+                if last_update.elapsed().as_secs() >= 1 {
+                    if count > 1 {
+                        // Continue countdown
+                        self.grabber_countdown = Some(count - 1);
+                        self.countdown_last_update = Some(std::time::Instant::now());
+                    } else {
+                        // Countdown finished, execute grab
+                        self.execute_grab();
+                        self.grabber_countdown = None;
+                        self.countdown_last_update = None;
+                    }
+                }
+            }
+        }
+    }
+    
+    /// Execute the grab operation
+    fn execute_grab(&mut self) {
+        let config = load_config();
+        match grabber::grab(&config) {
+            Ok((rule_name, mut command)) => {
+                // Open command editor with grabbed command
+                // Set command name to something descriptive
+                command.command = format!("Grabbed {}", rule_name);
+                command.full_line = format!("{} : {} {}", command.command, command.action, command.arg);
+                
+                self.command_editor.open_with_command(command);
+            }
+            Err(err) => {
+                // Show error in dialog
+                eprintln!("Grabber error: {}", err);
+            }
+        }
     }
     
 }
@@ -242,6 +293,9 @@ impl eframe::App for AnchorSelector {
                 self.popup_state.set_commands(updated_commands);
             }
         }
+        
+        // Update grabber countdown
+        self.update_grabber_countdown();
         
         // Draw custom rounded background with heavy shadow
         let screen_rect = ctx.screen_rect();
@@ -371,6 +425,11 @@ impl eframe::App for AnchorSelector {
                 self.navigate_horizontal(1);
             }
             
+            // Handle Plus key for grabber functionality
+            if input.key_pressed(egui::Key::Plus) || input.key_pressed(egui::Key::Equals) {
+                self.start_grabber_countdown();
+            }
+            
             // Remove ALL arrow key events completely so TextEdit never sees them
             input.events.retain(|event| {
                 !matches!(event, 
@@ -482,11 +541,31 @@ impl eframe::App for AnchorSelector {
                 let mut font_id = ui.style().text_styles.get(&egui::TextStyle::Heading).unwrap().clone();
                 font_id.size *= 1.5; // Make 50% larger
                 
+                // Show grabber countdown if active
+                if let Some(count) = self.grabber_countdown {
+                    ui.horizontal(|ui| {
+                        ui.add_space(10.0);
+                        
+                        // Large countdown number
+                        let mut countdown_font = font_id.clone();
+                        countdown_font.size *= 2.0; // Even bigger for countdown
+                        
+                        ui.label(egui::RichText::new(format!("Grabbing in: {}", count))
+                            .font(countdown_font)
+                            .color(egui::Color32::from_rgb(255, 100, 100))); // Red color
+                    });
+                    ui.add_space(10.0);
+                }
+                
                 // Calculate hint text before mutable borrow
-                let hint_text = self.get_hint_text();
+                let hint_text = if self.grabber_countdown.is_some() {
+                    "Countdown active...".to_string()
+                } else {
+                    self.get_hint_text()
+                };
                 
                 let response = ui.add_enabled(
-                    !self.command_editor.visible, // Disable when dialog is open
+                    !self.command_editor.visible && self.grabber_countdown.is_none(), // Disable when dialog is open or countdown active
                     egui::TextEdit::singleline(&mut self.popup_state.search_text)
                         .desired_width(ui.available_width())
                         .hint_text(hint_text)

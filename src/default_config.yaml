@@ -254,3 +254,90 @@ js_functions:
       launch_app("iTerm2");
       return "Launched iTerm2";
     }
+
+# =================================================================
+# GRABBER RULES
+# =================================================================
+# Rules for capturing application context and creating commands
+# Each rule has:
+# - name: Display name for the rule
+# - matcher: JavaScript that returns arg string if matched, null if not
+# - action: Action type for the created command
+# - group: Optional group for the command
+
+grabber_rules:
+  # Chrome/Brave browser URLs
+  - name: "Chrome URL"
+    matcher: |
+      if (bundleId === "com.google.Chrome" && props.url) {
+        return props.url;
+      }
+      return null;
+    action: "url"
+    
+  - name: "Brave URL"
+    matcher: |
+      if (bundleId === "com.brave.Browser" && props.url) {
+        return props.url;
+      }
+      return null;
+    action: "url"
+    
+  # Safari URL with special handling
+  - name: "Safari URL"
+    matcher: |
+      if (bundleId === "com.apple.Safari" && props.url) {
+        return props.url;
+      }
+      return null;
+    action: "safari"
+    
+  # Finder folder
+  - name: "Finder Folder"
+    matcher: |
+      if (bundleId === "com.apple.finder" && props.path) {
+        return props.path;
+      }
+      return null;
+    action: "folder"
+    
+  # Obsidian note (based on window title)
+  - name: "Obsidian Note"
+    matcher: |
+      if (app === "Obsidian" && title) {
+        // Extract note name from window title
+        const match = title.match(/^(.+?) - Obsidian/);
+        if (match) {
+          return match[1];
+        }
+      }
+      return null;
+    action: "obs"
+    
+  # VS Code file (based on window title)
+  - name: "VS Code File"
+    matcher: |
+      if (bundleId === "com.microsoft.VSCode" && title) {
+        // Extract file path from window title
+        const match = title.match(/^(.+?) [—–] /);
+        if (match) {
+          return match[1];
+        }
+      }
+      return null;
+    action: "doc"
+    
+  # Generic document (fallback for other apps)
+  - name: "Generic Document"
+    matcher: |
+      // For apps with a window title that looks like a document
+      if (title && !title.includes("http") && title.length > 3) {
+        // Skip browser-like titles
+        if (bundleId.includes("browser") || bundleId.includes("chrome") || bundleId.includes("safari")) {
+          return null;
+        }
+        // Return the window title as a document reference
+        return title;
+      }
+      return null;
+    action: "doc"
