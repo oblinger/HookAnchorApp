@@ -230,15 +230,21 @@ impl PopupState {
         cmd.action == "separator" && (cmd.command == "---" || cmd.command.ends_with("---"))
     }
     
-    /// Check and apply alias if search text matches an alias command
+    /// Check and apply alias if search text matches a rewrite command
     pub fn check_and_apply_alias(&mut self) {
-        // Look for an exact match with an alias command
-        if let Some(alias_cmd) = self.commands.iter().find(|cmd| 
-            cmd.action == "alias" && cmd.command.to_lowercase() == self.search_text.to_lowercase()
-        ) {
-            // Replace search text with the alias argument and update
-            let new_search = alias_cmd.arg.clone();
-            self.update_search(new_search);
+        // Check if search text ends with space and the prefix matches a rewrite command
+        if self.search_text.ends_with(' ') {
+            let prefix = self.search_text.trim_end();
+            if let Some(rewrite_cmd) = self.commands.iter().find(|cmd| 
+                cmd.action == "rewrite" && cmd.command.to_lowercase() == prefix.to_lowercase()
+            ) {
+                // Replace search text with the rewrite argument followed by space
+                let new_search = format!("{} ", rewrite_cmd.arg);
+                self.search_text = new_search;
+                self.recompute_filtered_commands();
+                self.update_display_layout();
+                self.selection.reset(&self.display_layout);
+            }
         }
     }
     

@@ -22,8 +22,7 @@ impl From<EvalError> for LauncherError {
 
 #[derive(Debug, Clone, Serialize, Deserialize)]
 pub struct LauncherConfig {
-    pub simple_functions: HashMap<String, serde_yaml::Value>,
-    pub js_functions: HashMap<String, String>,
+    pub functions: HashMap<String, serde_yaml::Value>, // Unified functions section
     pub settings: LauncherSettings,
 }
 
@@ -64,7 +63,21 @@ pub fn launch(command_line: &str) -> Result<(), LauncherError> {
     
     match &exec_result {
         Ok(_) => debug_log("LAUNCHER", &format!("Command '{}' completed successfully in {:?}", command_line, duration)),
-        Err(e) => debug_log("LAUNCHER", &format!("Command '{}' failed after {:?}: {:?}", command_line, duration, e)),
+        Err(e) => {
+            // Extract simplified error message for JavaScript execution errors
+            let error_msg = match e {
+                EvalError::ExecutionError(msg) => {
+                    // Extract core error from "JavaScript execution failed: ErrorType: message"
+                    if let Some(core_error) = msg.strip_prefix("JavaScript execution failed: ") {
+                        core_error.to_string()
+                    } else {
+                        msg.clone()
+                    }
+                },
+                _ => format!("{:?}", e)
+            };
+            debug_log("LAUNCHER", &format!("Command '{}' failed after {:?}: {}", command_line, duration, error_msg))
+        },
     }
     
     exec_result.map(|_| ()).map_err(LauncherError::from)
@@ -96,36 +109,31 @@ fn load_config() -> Result<LauncherConfig, LauncherError> {
     };
     
     // Read and parse the YAML config file
-    let simple_functions = if let Ok(contents) = std::fs::read_to_string(&config_path) {
+    let functions = if let Ok(contents) = std::fs::read_to_string(&config_path) {
         if let Ok(yaml_value) = serde_yaml::from_str::<serde_yaml::Value>(&contents) {
-            if let Some(simple_funcs) = yaml_value.get("simple_functions") {
-                if let Some(mapping) = simple_funcs.as_mapping() {
-                    let mut functions = HashMap::new();
+            let mut funcs = HashMap::new();
+            
+            // Load functions section
+            if let Some(functions_section) = yaml_value.get("functions") {
+                if let Some(mapping) = functions_section.as_mapping() {
                     for (key, value) in mapping {
                         if let Some(key_str) = key.as_str() {
-                            functions.insert(key_str.to_string(), value.clone());
+                            funcs.insert(key_str.to_string(), value.clone());
                         }
                     }
-                    functions
-                } else {
-                    get_default_simple_functions()
                 }
-            } else {
-                get_default_simple_functions()
             }
+            
+            funcs
         } else {
-            get_default_simple_functions()
+            HashMap::new()
         }
     } else {
-        get_default_simple_functions()
+        HashMap::new()
     };
     
-    // Load main config for JS functions
-    let main_config = crate::load_config();
-    
     let launcher_config = LauncherConfig {
-        simple_functions,
-        js_functions: main_config.js_functions.unwrap_or_default(),
+        functions,
         settings: LauncherSettings {
             default_browser: Some("Google Chrome".to_string()),
             work_browser: Some("Google Chrome Beta".to_string()),
@@ -136,54 +144,38 @@ fn load_config() -> Result<LauncherConfig, LauncherError> {
     Ok(launcher_config)
 }
 
-// Helper to get default simple functions for testing
-fn get_default_simple_functions() -> HashMap<String, serde_yaml::Value> {
-    let mut functions = HashMap::new();
-    
-    // Create function calls using the new uniform format
-    let mut app_map = serde_yaml::Mapping::new();
-    app_map.insert("fn".into(), "launch_app".into());
-    app_map.insert("name".into(), "{{arg}}".into());
-    functions.insert("app".to_string(), serde_yaml::Value::Mapping(app_map));
-    
-    let mut url_map = serde_yaml::Mapping::new();
-    url_map.insert("fn".into(), "open_url".into());
-    url_map.insert("url".into(), "{{arg}}".into());
-    functions.insert("url".to_string(), serde_yaml::Value::Mapping(url_map));
-    
-    let mut folder_map = serde_yaml::Mapping::new();
-    folder_map.insert("fn".into(), "open_folder".into());
-    folder_map.insert("path".into(), "{{arg}}".into());
-    functions.insert("folder".to_string(), serde_yaml::Value::Mapping(folder_map));
-    
-    let mut cmd_map = serde_yaml::Mapping::new();
-    cmd_map.insert("fn".into(), "shell".into());
-    cmd_map.insert("command".into(), "{{arg}}".into());
-    functions.insert("cmd".to_string(), serde_yaml::Value::Mapping(cmd_map));
-    
-    let mut chrome_map = serde_yaml::Mapping::new();
-    chrome_map.insert("fn".into(), "open_with".into());
-    chrome_map.insert("app".into(), "Google Chrome".into());
-    chrome_map.insert("arg".into(), "{{arg}}".into());
-    functions.insert("chrome".to_string(), serde_yaml::Value::Mapping(chrome_map));
-    
-    functions
-}
-
 
 
 fn lookup_action(action: &str, config: &LauncherConfig) -> Result<serde_yaml::Value, LauncherError> {
-    // First try simple commands
-    if let Some(action_value) = config.simple_functions.get(action) {
-        return Ok(action_value.clone());
+    // Look for action with action_ prefix
+    let action_prefixed = format!("action_{}", action);
+    if let Some(func_def) = config.functions.get(&action_prefixed) {
+        // Check if it's a string (JavaScript function) or a mapping (simple function)
+        if let Some(script_code) = func_def.as_str() {
+            // It's a JavaScript function - wrap it in the expected format
+            let mut map = serde_yaml::Mapping::new();
+            map.insert("fn".into(), "javascript".into());
+            map.insert("code".into(), script_code.to_string().into());
+            return Ok(serde_yaml::Value::Mapping(map));
+        } else {
+            // It's a simple function mapping
+            return Ok(func_def.clone());
+        }
     }
     
-    // Then try JS functions  
-    if let Some(script_code) = config.js_functions.get(action) {
-        let mut map = serde_yaml::Mapping::new();
-        map.insert("fn".into(), "javascript".into());
-        map.insert("code".into(), script_code.clone().into());
-        return Ok(serde_yaml::Value::Mapping(map));
+    // Also check without prefix for helper functions
+    if let Some(func_def) = config.functions.get(action) {
+        // Check if it's a string (JavaScript function) or a mapping (simple function)
+        if let Some(script_code) = func_def.as_str() {
+            // It's a JavaScript function - wrap it in the expected format
+            let mut map = serde_yaml::Mapping::new();
+            map.insert("fn".into(), "javascript".into());
+            map.insert("code".into(), script_code.to_string().into());
+            return Ok(serde_yaml::Value::Mapping(map));
+        } else {
+            // It's a simple function mapping
+            return Ok(func_def.clone());
+        }
     }
     
     // Action not found
@@ -299,8 +291,7 @@ mod tests {
     #[test]
     fn test_launcher_config_creation() {
         let config = LauncherConfig {
-            simple_functions: HashMap::new(),
-            js_functions: HashMap::new(),
+            functions: HashMap::new(),
             settings: LauncherSettings {
                 default_browser: Some("Google Chrome".to_string()),
                 work_browser: None,

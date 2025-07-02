@@ -6,7 +6,7 @@
 use std::fs::OpenOptions;
 use std::io::Write;
 use std::process::Command;
-use std::time::{SystemTime, UNIX_EPOCH};
+use chrono::Local;
 
 /// Debug logging function used across all modules
 /// 
@@ -17,12 +17,9 @@ pub fn debug_log(module: &str, message: &str) {
     if let Some(debug_path) = &config.popup_settings.debug_log {
         let debug_path = expand_tilde(debug_path);
         
-        let timestamp = SystemTime::now()
-            .duration_since(UNIX_EPOCH)
-            .unwrap_or_default()
-            .as_secs();
+        let timestamp = Local::now().format("%Y-%m-%d %H:%M:%S");
         
-        let log_entry = format!("[{}] {}: {}\n", timestamp, module, message);
+        let log_entry = format!("{} {}: {}\n", timestamp, module, message);
         
         if let Ok(mut file) = OpenOptions::new()
             .create(true)

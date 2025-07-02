@@ -122,11 +122,50 @@ pub fn setup_builtin_functions(env: &mut Environment) {
             crate::js_runtime::setup_all_builtins(&ctx)
                 .map_err(|e| EvalError::ExecutionError(format!("Failed to setup built-ins: {}", e)))?;
             
-            // Execute the JavaScript code
-            ctx.eval::<(), _>(code.as_str())
-                .map_err(|e| EvalError::ExecutionError(format!("JavaScript execution failed: {}", e)))?;
+            // Load config and setup config access functions
+            let config = crate::load_config();
+            crate::js_runtime::setup_config_access(&ctx, &config)
+                .map_err(|e| EvalError::ExecutionError(format!("Failed to setup config access: {}", e)))?;
             
-            Ok(())
+            // Execute the JavaScript code with better error reporting
+            match ctx.eval::<rquickjs::Value, _>(code.as_str()) {
+                Ok(_) => Ok(()),
+                Err(rquickjs::Error::Exception) => {
+                    // Try to get the exception details
+                    let exception = ctx.catch();
+                    let exception_info = if let Some(message_str) = exception.as_string() {
+                        message_str.to_string().unwrap_or_else(|_| "Unknown error".to_string())
+                    } else if let Some(obj) = exception.as_object() {
+                        // Try to get error properties
+                        let message = obj.get::<_, String>("message").unwrap_or_else(|_| "No message".to_string());
+                        let name = obj.get::<_, String>("name").unwrap_or_else(|_| "Error".to_string());
+                        let stack = obj.get::<_, String>("stack").unwrap_or_else(|_| "No stack trace".to_string());
+                        
+                        // Compact format: extract just the stack lines without full stack trace formatting
+                        let stack_lines: Vec<&str> = stack.lines()
+                            .skip(1) // Skip the error message line (first line)
+                            .filter(|line| line.trim().starts_with("at "))
+                            .map(|line| line.trim().trim_start_matches("at "))
+                            .collect();
+                        
+                        if stack_lines.is_empty() {
+                            format!("{}: {}", name, message)
+                        } else {
+                            format!("{}: {}. {}", name, message, stack_lines.join(" "))
+                        }
+                    } else {
+                        format!("JavaScript exception: {:?}", exception)
+                    };
+                    
+                    debug_log("JS-ERROR", &exception_info);
+                    Err(EvalError::ExecutionError(format!("JavaScript execution failed: {}", exception_info)))
+                },
+                Err(e) => {
+                    let error_msg = format!("JavaScript execution failed: {}", e);
+                    debug_log("JS-ERROR", &error_msg);
+                    Err(EvalError::ExecutionError(error_msg))
+                }
+            }
         })?;
         
         Ok(())

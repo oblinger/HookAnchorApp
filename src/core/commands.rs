@@ -46,7 +46,8 @@ impl Command {
         // Split by commas and look for the flag
         for flag_part in self.flags.split(',') {
             let flag_part = flag_part.trim();
-            if flag_part.starts_with(key) && flag_part.len() > 1 {
+            if flag_part.starts_with(key) {
+                // Return the part after the flag key (empty string if flag is just the key)
                 return Some(flag_part[1..].to_string());
             }
         }
@@ -121,20 +122,20 @@ impl Command {
         result.push_str(" : ");
         result.push_str(&self.action);
         
-        // Add arg if present
+        // Add flags if present (before semicolon)
+        if !self.flags.is_empty() {
+            result.push(' ');
+            result.push_str(&self.flags);
+        }
+        
+        // Add semicolon to separate flags from arg
+        result.push(';');
+        
+        // Add arg if present (after semicolon)
         if !self.arg.is_empty() {
             result.push(' ');
             result.push_str(&self.arg);
         }
-        
-        // Add flags if present
-        if !self.flags.is_empty() {
-            result.push_str(" ,");
-            result.push_str(&self.flags);
-        }
-        
-        // Add trailing semicolon (new format requirement)
-        result.push(';');
         
         result
     }
@@ -211,14 +212,7 @@ pub fn parse_command_line(line: &str) -> Result<Command, String> {
         return Err("Empty line".to_string());
     }
     
-    // Remove trailing semicolon if present (new format compatibility)
-    let trimmed = if trimmed.ends_with(';') {
-        &trimmed[..trimmed.len() - 1]
-    } else {
-        trimmed
-    };
-    
-    // Check for new format: [GROUP! ]COMMAND : ACTION [ARG] [,FLAGS]
+    // Check for new format: [GROUP! ]COMMAND : ACTION FLAGS; ARG
     if let Some(colon_pos) = trimmed.find(" : ") {
         let (prefix, rest) = trimmed.split_at(colon_pos);
         let rest = &rest[3..]; // Skip " : "
@@ -231,28 +225,35 @@ pub fn parse_command_line(line: &str) -> Result<Command, String> {
             (String::new(), prefix.trim().to_string())
         };
         
-        // Parse action, arg, and flags from rest
-        let (action_arg, flags) = if let Some(comma_pos) = rest.find(" ,") {
-            let (aa, f) = rest.split_at(comma_pos);
-            (aa.trim(), f[2..].trim()) // Skip " ,"
+        // Parse action, flags, and arg from rest using semicolon separator
+        let (action_flags, arg) = if let Some(semicolon_pos) = rest.find(';') {
+            let (af, a) = rest.split_at(semicolon_pos);
+            (af.trim(), a[1..].trim()) // Skip ";"
         } else {
+            // No semicolon found - treat everything as action
             (rest.trim(), "")
         };
         
-        // Split action and arg
-        let (action, arg) = if let Some(space_pos) = action_arg.find(' ') {
-            let (a, arg_part) = action_arg.split_at(space_pos);
-            (a.trim().to_string(), arg_part.trim().to_string())
+        // Split action and flags (flags are space-separated after action)
+        let action_flags_parts: Vec<&str> = action_flags.split_whitespace().collect();
+        let action = if action_flags_parts.is_empty() {
+            String::new()
         } else {
-            (action_arg.to_string(), String::new())
+            action_flags_parts[0].to_string()
+        };
+        
+        let flags = if action_flags_parts.len() > 1 {
+            action_flags_parts[1..].join(" ")
+        } else {
+            String::new()
         };
         
         return Ok(Command {
             group,
             command,
             action,
-            arg,
-            flags: flags.to_string(),
+            arg: arg.to_string(),
+            flags,
             full_line: line.to_string(),
         });
     }
@@ -313,10 +314,18 @@ pub fn filter_commands(commands: &[Command], search_text: &str, max_results: usi
         }
     }
     
-    // Sort by: 1) match position (earlier matches first), 2) alphabetical order
+    // Sort by: 1) match position (earlier matches first), 2) word count (fewer words first), 3) alphabetical order
     matched_commands.sort_by(|a, b| {
         match a.0.cmp(&b.0) {
-            std::cmp::Ordering::Equal => a.1.command.cmp(&b.1.command), // Alphabetical if same match length
+            std::cmp::Ordering::Equal => {
+                // If match position is the same, prefer commands with fewer words first
+                let word_count_a = count_words(&a.1.command, " ._-");
+                let word_count_b = count_words(&b.1.command, " ._-");
+                match word_count_a.cmp(&word_count_b) {
+                    std::cmp::Ordering::Equal => a.1.command.cmp(&b.1.command), // Alphabetical if same word count
+                    other => other // Fewer words first
+                }
+            },
             other => other // Earlier match position first
         }
     });
@@ -394,45 +403,6 @@ pub fn command_matches_query(command: &str, query: &str) -> bool {
     command_matches_query_with_debug(command, query, false) >= 0
 }
 
-/// Fuzzy matching algorithm
-fn fuzzy_match(text: &str, pattern: &str) -> Option<f32> {
-    let mut pattern_chars = pattern.chars();
-    let mut current_pattern_char = pattern_chars.next()?;
-    let mut score = 0.0;
-    let mut consecutive_matches = 0;
-    let mut last_match_index = None;
-    
-    for (i, ch) in text.chars().enumerate() {
-        if ch == current_pattern_char {
-            // Bonus for consecutive matches
-            consecutive_matches += 1;
-            score += 10.0 * consecutive_matches as f32;
-            
-            // Bonus for match after word boundary
-            if i == 0 || text.chars().nth(i - 1).map_or(false, |c| !c.is_alphanumeric()) {
-                score += 20.0;
-            }
-            
-            // Penalty for distance from last match
-            if let Some(last_idx) = last_match_index {
-                let gap = i - last_idx - 1;
-                score -= gap as f32 * 0.5;
-            }
-            
-            last_match_index = Some(i);
-            
-            // Move to next pattern character
-            match pattern_chars.next() {
-                Some(ch) => current_pattern_char = ch,
-                None => return Some(score), // All pattern chars matched
-            }
-        } else {
-            consecutive_matches = 0;
-        }
-    }
-    
-    None // Not all pattern characters were found
-}
 
 /// Merges similar commands based on word removal approach (backward compatibility)
 pub fn merge_similar_commands(commands: Vec<Command>, config: &Config) -> Vec<Command> {
@@ -516,6 +486,15 @@ pub fn merge_similar_commands_with_context(commands: Vec<Command>, config: &Conf
     
     // Add unmatched commands
     result.extend(unmatched_commands);
+    
+    // Sort the final result to ensure stable ordering
+    result.sort_by(|a, b| {
+        // First by command length (shorter first)
+        match a.command.len().cmp(&b.command.len()) {
+            std::cmp::Ordering::Equal => a.command.cmp(&b.command), // Then alphabetically
+            other => other
+        }
+    });
     
     result
 }
@@ -605,33 +584,6 @@ fn is_valid_merge_candidate_by_position(candidate: &str, search_context: &str, s
     false // No separator found after match position
 }
 
-/// Adds a group of similar commands to the merged list
-fn add_merged_group(merged: &mut Vec<Command>, mut group: Vec<Command>, separators: &str) {
-    if group.len() == 1 {
-        merged.push(group.into_iter().next().unwrap());
-        return;
-    }
-    
-    // Sort group by command name for consistent ordering
-    group.sort_by(|a, b| a.command.cmp(&b.command));
-    
-    // Create a merged command with " ..." representing the group
-    let prefix = get_command_prefix(&group[0].command, separators);
-    
-    // Use the first command as the base for the merged command
-    let base_command = &group[0];
-    let mut merged_command = Command {
-        group: base_command.group.clone(),
-        command: format!("{} ...", prefix), // This shows as "FIN.Budget ..." in the UI
-        action: base_command.action.clone(),
-        arg: base_command.arg.clone(),
-        flags: base_command.flags.clone(),
-        full_line: format!("{} ...", prefix),
-    };
-    // Set the merge flag
-    merged_command.set_flag('M', "");
-    merged.push(merged_command);
-}
 
 /// Splits commands into submenu sections
 pub fn split_commands(commands: &[Command], search_text: &str, separators: &str) -> Vec<Command> {
@@ -667,7 +619,8 @@ pub fn get_current_submenu_prefix_from_commands(commands: &[Command], search_tex
             continue;
         }
         let cmd_prefix = get_command_prefix(&cmd.command, separators);
-        if cmd_prefix.to_lowercase().starts_with(&search_text.to_lowercase()) {
+        // Only count exact prefix matches to avoid flickering between similar prefixes
+        if cmd_prefix.to_lowercase() == search_text.to_lowercase() {
             *prefix_counts.entry(cmd_prefix).or_insert(0) += 1;
         }
     }
@@ -769,13 +722,44 @@ pub fn migrate_commands_to_new_format(commands: &mut [Command]) {
 
 /// Executes a command and returns the executed command (handling aliases)
 pub fn execute_command(command: &Command) -> CommandTarget {
+    execute_command_with_depth(command, 0)
+}
+
+/// Internal function to execute commands with recursion depth tracking
+fn execute_command_with_depth(command: &Command, depth: u32) -> CommandTarget {
+    const MAX_ALIAS_DEPTH: u32 = 10; // Prevent infinite recursion
+    
+    // Handle alias command type: execute the target command instead
+    if command.action == "alias" {
+        if depth >= MAX_ALIAS_DEPTH {
+            crate::utils::debug_log("ALIAS", &format!("Maximum alias depth ({}) exceeded for '{}'", MAX_ALIAS_DEPTH, command.command));
+            return CommandTarget::Command(command.clone());
+        }
+        
+        // Load all commands to find the target
+        let all_commands = load_commands();
+        
+        // Filter commands to find the best match for the alias target
+        let filtered = filter_commands(&all_commands, &command.arg, 1, false);
+        
+        if !filtered.is_empty() {
+            // Execute the first matching command
+            let target_command = &filtered[0];
+            crate::utils::debug_log("ALIAS", &format!("Alias '{}' executing target: {} (depth: {})", command.command, target_command.command, depth));
+            return execute_command_with_depth(target_command, depth + 1); // Recursive call with depth tracking
+        } else {
+            crate::utils::debug_log("ALIAS", &format!("Alias '{}' target '{}' not found", command.command, command.arg));
+            return CommandTarget::Command(command.clone());
+        }
+    }
+    
     let launcher_cmd = format!("{} {}", command.action, command.arg);
     
     match crate::launcher::launch(&launcher_cmd) {
         Ok(()) => {
-            // For alias commands, we need to handle the special case
-            if command.action == "alias" {
-                // The alias command should execute another command
+            // For rewrite commands, we need to handle the special case
+            if command.action == "rewrite" {
+                // The rewrite command should execute another command
                 CommandTarget::Alias(command.arg.clone())
             } else {
                 CommandTarget::Command(command.clone())
@@ -787,3 +771,165 @@ pub fn execute_command(command: &Command) -> CommandTarget {
         }
     }
 }
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn test_parse_simple_command() {
+        let line = "test : action; arg";
+        let result = parse_command_line(line).unwrap();
+        
+        assert_eq!(result.command, "test");
+        assert_eq!(result.action, "action");
+        assert_eq!(result.arg, "arg");
+        assert_eq!(result.flags, "");
+        assert_eq!(result.group, "");
+    }
+
+    #[test]
+    fn test_parse_command_with_group() {
+        let line = "Group! test command : action; argument here";
+        let result = parse_command_line(line).unwrap();
+        
+        assert_eq!(result.group, "Group");
+        assert_eq!(result.command, "test command");
+        assert_eq!(result.action, "action");
+        assert_eq!(result.arg, "argument here");
+        assert_eq!(result.flags, "");
+    }
+
+    #[test]
+    fn test_parse_command_with_flags() {
+        let line = "test : action flag1 flag2; argument";
+        let result = parse_command_line(line).unwrap();
+        
+        assert_eq!(result.command, "test");
+        assert_eq!(result.action, "action");
+        assert_eq!(result.flags, "flag1 flag2");
+        assert_eq!(result.arg, "argument");
+        assert_eq!(result.group, "");
+    }
+
+    #[test]
+    fn test_parse_command_with_group_and_flags() {
+        let line = "Application! Chrome Test : chrome --incognito; https://example.com";
+        let result = parse_command_line(line).unwrap();
+        
+        assert_eq!(result.group, "Application");
+        assert_eq!(result.command, "Chrome Test");
+        assert_eq!(result.action, "chrome");
+        assert_eq!(result.flags, "--incognito");
+        assert_eq!(result.arg, "https://example.com");
+    }
+
+    #[test]
+    fn test_parse_command_action_only() {
+        let line = "test : action;";
+        let result = parse_command_line(line).unwrap();
+        
+        assert_eq!(result.command, "test");
+        assert_eq!(result.action, "action");
+        assert_eq!(result.arg, "");
+        assert_eq!(result.flags, "");
+    }
+
+    #[test]
+    fn test_parse_command_with_flags_no_arg() {
+        let line = "test : action flag1 flag2;";
+        let result = parse_command_line(line).unwrap();
+        
+        assert_eq!(result.command, "test");
+        assert_eq!(result.action, "action");
+        assert_eq!(result.flags, "flag1 flag2");
+        assert_eq!(result.arg, "");
+    }
+
+    #[test]
+    fn test_parse_rewrite_command() {
+        let line = "zzz : rewrite; cnn";
+        let result = parse_command_line(line).unwrap();
+        
+        assert_eq!(result.command, "zzz");
+        assert_eq!(result.action, "rewrite");
+        assert_eq!(result.arg, "cnn");
+        assert_eq!(result.flags, "");
+    }
+
+    #[test]
+    fn test_parse_complex_1pass_command() {
+        let line = "Application! Netflix 1Pass : 1pass --auto-fill; Netflix Account";
+        let result = parse_command_line(line).unwrap();
+        
+        assert_eq!(result.group, "Application");
+        assert_eq!(result.command, "Netflix 1Pass");
+        assert_eq!(result.action, "1pass");
+        assert_eq!(result.flags, "--auto-fill");
+        assert_eq!(result.arg, "Netflix Account");
+    }
+
+    #[test]
+    fn test_format_generation_simple() {
+        let cmd = Command {
+            group: String::new(),
+            command: "test".to_string(),
+            action: "action".to_string(),
+            arg: "argument".to_string(),
+            flags: String::new(),
+            full_line: String::new(),
+        };
+        
+        let formatted = cmd.to_new_format();
+        assert_eq!(formatted, "test : action; argument");
+    }
+
+    #[test]
+    fn test_format_generation_with_flags() {
+        let cmd = Command {
+            group: String::new(),
+            command: "test".to_string(),
+            action: "action".to_string(),
+            arg: "argument".to_string(),
+            flags: "flag1 flag2".to_string(),
+            full_line: String::new(),
+        };
+        
+        let formatted = cmd.to_new_format();
+        assert_eq!(formatted, "test : action flag1 flag2; argument");
+    }
+
+    #[test]
+    fn test_format_generation_with_group_and_flags() {
+        let cmd = Command {
+            group: "Group".to_string(),
+            command: "test command".to_string(),
+            action: "action".to_string(),
+            arg: "argument here".to_string(),
+            flags: "--flag".to_string(),
+            full_line: String::new(),
+        };
+        
+        let formatted = cmd.to_new_format();
+        assert_eq!(formatted, "Group! test command : action --flag; argument here");
+    }
+
+    #[test]
+    fn test_roundtrip_parsing() {
+        let original = "Application! Test Command : chrome --incognito; https://example.com";
+        let parsed = parse_command_line(original).unwrap();
+        let reformatted = parsed.to_new_format();
+        let reparsed = parse_command_line(&reformatted).unwrap();
+        
+        assert_eq!(parsed.group, reparsed.group);
+        assert_eq!(parsed.command, reparsed.command);
+        assert_eq!(parsed.action, reparsed.action);
+        assert_eq!(parsed.flags, reparsed.flags);
+        assert_eq!(parsed.arg, reparsed.arg);
+    }
+}
+
+// Include merge tests module
+#[path = "commands_merge_tests.rs"]
+#[cfg(test)]
+mod merge_tests;

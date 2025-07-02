@@ -277,17 +277,29 @@ impl CommandEditor {
     }
     
     fn format_command_line(&self) -> String {
-        let action_arg = if self.argument.is_empty() {
-            self.action.clone()
-        } else {
-            format!("{} {}", self.action, self.argument)
-        };
+        let mut result = String::new();
         
-        if self.group.is_empty() {
-            format!("{} : {}", self.command, action_arg)
-        } else {
-            format!("{} ! {} : {}", self.group, self.command, action_arg)
+        // Add group if present
+        if !self.group.is_empty() {
+            result.push_str(&self.group);
+            result.push_str("! ");
         }
+        
+        // Add command and action
+        result.push_str(&self.command);
+        result.push_str(" : ");
+        result.push_str(&self.action);
+        
+        // Add semicolon to separate action from argument
+        result.push(';');
+        
+        // Add argument if present (after semicolon)
+        if !self.argument.is_empty() {
+            result.push(' ');
+            result.push_str(&self.argument);
+        }
+        
+        result
     }
     
     pub fn prepare_save_command(&self) -> (Option<String>, Command) {

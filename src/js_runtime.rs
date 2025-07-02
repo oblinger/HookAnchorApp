@@ -368,8 +368,10 @@ fn setup_launcher_builtins(ctx: &Ctx<'_>) -> Result<(), Box<dyn std::error::Erro
     
     // launch(command_name) -> recursively calls another launcher command
     ctx.globals().set("launch", Function::new(ctx.clone(), |command: String| {
-        // This will be implemented by calling back into the launcher system
-        format!("Recursive launch: {}", command)
+        match crate::launcher::launch(&command) {
+            Ok(_) => format!("Successfully launched: {}", command),
+            Err(e) => format!("Failed to launch '{}': {:?}", command, e),
+        }
     })?)?;
     
     // shellWithExitCode(command) -> executes shell command and returns detailed result with user environment
@@ -455,7 +457,7 @@ fn setup_launcher_builtins(ctx: &Ctx<'_>) -> Result<(), Box<dyn std::error::Erro
 }
 
 /// Setup configuration access functions
-fn setup_config_access(ctx: &Ctx<'_>, config: &Config) -> Result<(), Box<dyn std::error::Error>> {
+pub fn setup_config_access(ctx: &Ctx<'_>, config: &Config) -> Result<(), Box<dyn std::error::Error>> {
     // Get launcher settings with defaults
     let launcher_settings = config.launcher_settings.as_ref()
         .cloned()
@@ -483,19 +485,23 @@ fn setup_config_access(ctx: &Ctx<'_>, config: &Config) -> Result<(), Box<dyn std
 
 /// Setup user-defined functions from configuration
 fn setup_user_functions(ctx: &Ctx<'_>, config: &Config) -> Result<(), Box<dyn std::error::Error>> {
-    if let Some(js_functions) = &config.js_functions {
-        for (function_name, function_body) in js_functions {
-            // Create a JavaScript function definition and evaluate it in the context
-            let function_def = format!(
-                "globalThis.{} = function() {{ {} }}",
-                function_name,
-                function_body
-            );
-            
-            // Execute the function definition
-            if let Err(e) = ctx.eval::<(), _>(function_def.as_str()) {
-                eprintln!("Warning: Failed to define user function '{}': {}", function_name, e);
+    if let Some(functions) = &config.functions {
+        for (function_name, function_value) in functions {
+            // Check if it's a JavaScript function (string value)
+            if let Some(function_body) = function_value.as_str() {
+                // Create a JavaScript function definition and evaluate it in the context
+                let function_def = format!(
+                    "globalThis.{} = function() {{ {} }}",
+                    function_name,
+                    function_body
+                );
+                
+                // Execute the function definition
+                if let Err(e) = ctx.eval::<(), _>(function_def.as_str()) {
+                    eprintln!("Warning: Failed to define user function '{}': {}", function_name, e);
+                }
             }
+            // Simple functions (mappings) are not exposed to JavaScript runtime
         }
     }
     Ok(())

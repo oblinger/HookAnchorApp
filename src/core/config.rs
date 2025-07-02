@@ -7,6 +7,7 @@ use std::path::{Path, PathBuf};
 use std::env;
 use std::collections::HashMap;
 use serde::{Deserialize, Serialize};
+use serde_yaml;
 
 /// Main configuration structure containing all application settings
 #[derive(Debug, Clone, Serialize, Deserialize)]
@@ -15,8 +16,8 @@ pub struct Config {
     pub popup_settings: PopupSettings,
     /// Launcher behavior settings
     pub launcher_settings: Option<LauncherSettings>,
-    /// User-defined JavaScript functions for commands
-    pub js_functions: Option<HashMap<String, String>>,
+    /// Unified functions section (both simple and JavaScript)
+    pub functions: Option<HashMap<String, serde_yaml::Value>>,
     /// Markdown scanning roots
     pub markdown_roots: Option<Vec<String>>,
     /// Grabber rules for capturing application context
@@ -149,8 +150,8 @@ fn load_legacy_config(contents: &str) -> Result<Config, Box<dyn std::error::Erro
         popup_settings.listed_actions = Some(listed_actions_str.to_string());
     }
     
-    // Extract js_functions if it exists
-    let js_functions = yaml.get("js_functions")
+    // Extract functions if it exists
+    let functions = yaml.get("functions")
         .and_then(|v| serde_yaml::from_value(v.clone()).ok());
     
     // Extract markdown_roots if it exists
@@ -168,7 +169,7 @@ fn load_legacy_config(contents: &str) -> Result<Config, Box<dyn std::error::Erro
     Ok(Config {
         popup_settings,
         launcher_settings,
-        js_functions,
+        functions,
         markdown_roots,
         grabber_rules,
     })
@@ -179,7 +180,7 @@ fn create_default_config() -> Config {
     Config {
         popup_settings: PopupSettings::default(),
         launcher_settings: Some(LauncherSettings::default()),
-        js_functions: Some(HashMap::new()),
+        functions: Some(HashMap::new()),
         markdown_roots: Some(vec![]),
         grabber_rules: Some(vec![]),
     }

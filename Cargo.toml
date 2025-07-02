@@ -14,6 +14,8 @@ name = "cmd"
 path = "src/cmd.rs"
 
 
+
+
 # Example binaries
 [[example]]
 name = "basic_launcher"
