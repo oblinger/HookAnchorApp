@@ -18,6 +18,9 @@ pub mod launcher;
 pub mod js_runtime;
 pub mod business_logic;
 pub mod builtin_fns;
+
+// Command-line interface
+pub mod cmd;
 pub mod utils;
 pub mod scanner;
 pub mod grabber;
