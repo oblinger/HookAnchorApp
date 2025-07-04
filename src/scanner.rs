@@ -6,9 +6,9 @@
 use std::fs;
 use std::path::Path;
 use std::process::Command as ProcessCommand;
-use std::collections::hash_map::DefaultHasher;
+use std::collections::{hash_map::DefaultHasher, HashSet};
 use std::hash::{Hash, Hasher};
-use crate::{Command, load_config, load_state, save_state, save_commands_to_file};
+use crate::{Command, load_config, load_state, save_state, save_commands_to_file, utils::debug_log};
 use chrono::Local;
 
 /// Checks if filesystem scan should be performed and executes it if needed
@@ -32,12 +32,18 @@ pub fn startup_check(commands: Vec<Command>) -> Vec<Command> {
         return commands; // Not time to scan yet
     }
     
+    // Re-enabling scanner for debugging
+    debug_log("SCANNER", "Starting filesystem scan");
     // Perform filesystem scan
-    let markdown_roots = config.markdown_roots.unwrap_or_else(|| vec![
-        "~/Documents".to_string(),
-        "~/Notes".to_string(),
-        "~/ob/kmr".to_string(),
-    ]);
+    let markdown_roots = match config.markdown_roots {
+        Some(roots) => roots,
+        None => {
+            debug_log("SCANNER", "ERROR: No markdown_roots configured in config file");
+            return commands; // Return without scanning if no roots configured
+        }
+    };
+    
+    debug_log("SCANNER", &format!("startup_check markdown_roots: {:?}", markdown_roots));
     
     let scanned_commands = scan(commands, &markdown_roots);
     
@@ -82,37 +88,86 @@ pub fn scan(mut commands: Vec<Command>, markdown_roots: &[String]) -> Vec<Comman
 
 /// Scans the configured markdown roots and returns an updated command list
 pub fn scan_files(mut commands: Vec<Command>, markdown_roots: &[String]) -> Vec<Command> {
-    // First, remove all existing obs and anchor commands
-    commands.retain(|cmd| cmd.action != "obs" && cmd.action != "anchor");
+    // Re-enabled for debugging - adding extensive logging
+    debug_log("SCANNER", &format!("Starting scan_files with {} initial commands", commands.len()));
+    debug_log("SCANNER", &format!("Markdown roots to scan: {:?}", markdown_roots));
     
-    // Then scan for new markdown files
+    // Create a set of existing command names for collision detection
+    let mut existing_commands: HashSet<String> = commands.iter()
+        .map(|cmd| cmd.command.clone())
+        .collect();
+    
+    // Count commands before removal
+    let obs_before = commands.iter().filter(|cmd| cmd.action == "obs").count();
+    let anchor_before = commands.iter().filter(|cmd| cmd.action == "anchor").count();
+    let folder_before = commands.iter().filter(|cmd| cmd.action == "folder").count();
+    debug_log("SCANNER", &format!("Before removal: {} obs, {} anchor, {} folder", obs_before, anchor_before, folder_before));
+    
+    // Remove all existing obs, anchor, and folder commands
+    commands.retain(|cmd| {
+        let should_keep = cmd.action != "obs" && cmd.action != "anchor" && cmd.action != "folder";
+        if !should_keep {
+            // Also remove from existing_commands set
+            existing_commands.remove(&cmd.command);
+        }
+        should_keep
+    });
+    
+    debug_log("SCANNER", &format!("After removal: {} commands remaining", commands.len()));
+    
+    // Then scan for new markdown files and folders
     for root in markdown_roots {
         let expanded_root = expand_home(root);
         let root_path = Path::new(&expanded_root);
         
+        debug_log("SCANNER", &format!("Checking root: {} -> {}", root, expanded_root));
+        
         if root_path.exists() && root_path.is_dir() {
-            scan_directory_with_root(&root_path, &root_path, &mut commands);
+            let commands_before_scan = commands.len();
+            debug_log("SCANNER", &format!("Scanning directory: {}", expanded_root));
+            scan_directory_with_root(&root_path, &root_path, &mut commands, &mut existing_commands);
+            let commands_after_scan = commands.len();
+            debug_log("SCANNER", &format!("Added {} commands from {}", commands_after_scan - commands_before_scan, expanded_root));
+        } else {
+            debug_log("SCANNER", &format!("Skipping non-existent or non-directory: {}", expanded_root));
         }
     }
+    
+    // Count final results
+    let obs_after = commands.iter().filter(|cmd| cmd.action == "obs").count();
+    let anchor_after = commands.iter().filter(|cmd| cmd.action == "anchor").count();
+    let folder_after = commands.iter().filter(|cmd| cmd.action == "folder").count();
+    debug_log("SCANNER", &format!("Final scan results: {} obs, {} anchor, {} folder (total: {} commands)", 
+        obs_after, anchor_after, folder_after, commands.len()));
     
     commands
 }
 
 
 /// Recursively scans a directory for files and folders with vault root tracking
-fn scan_directory_with_root(dir: &Path, vault_root: &Path, commands: &mut Vec<Command>) {
+fn scan_directory_with_root(dir: &Path, vault_root: &Path, commands: &mut Vec<Command>, existing_commands: &mut HashSet<String>) {
     if let Ok(entries) = fs::read_dir(dir) {
         for entry in entries.filter_map(Result::ok) {
             let path = entry.path();
             
-            // Process the path (file or directory)
-            if let Some(command) = process_markdown_with_root(&path, vault_root) {
-                commands.push(command);
-            }
-            
-            // Recursively scan subdirectories
+            // Process directories first
             if path.is_dir() {
-                scan_directory_with_root(&path, vault_root, commands);
+                // Create a folder command for this directory
+                if let Some(folder_command) = process_folder(&path, existing_commands) {
+                    // No need to track folder commands in existing_commands
+                    // since they always have "folder" suffix
+                    commands.push(folder_command);
+                }
+                
+                // Recursively scan subdirectories
+                scan_directory_with_root(&path, vault_root, commands, existing_commands);
+            } else {
+                // Process files (markdown files)
+                if let Some(command) = process_markdown_with_root(&path, vault_root, existing_commands) {
+                    // Add to existing commands set to prevent future collisions
+                    existing_commands.insert(command.command.clone());
+                    commands.push(command);
+                }
             }
         }
     }
@@ -120,7 +175,7 @@ fn scan_directory_with_root(dir: &Path, vault_root: &Path, commands: &mut Vec<Co
 
 
 /// Processes a path and returns a command if it's a markdown file with vault root for relative paths
-fn process_markdown_with_root(path: &Path, vault_root: &Path) -> Option<Command> {
+fn process_markdown_with_root(path: &Path, vault_root: &Path, existing_commands: &HashSet<String>) -> Option<Command> {
     // Check if it's a file and has .md extension
     if !path.is_file() {
         return None;
@@ -141,8 +196,16 @@ fn process_markdown_with_root(path: &Path, vault_root: &Path) -> Option<Command>
         "obs"
     };
     
-    // Create command
-    let command_name = format!("{} md", file_name);
+    // Create command name without suffix, but check for collisions
+    let preferred_name = file_name.to_string();
+    let command_name = if existing_commands.contains(&preferred_name) {
+        // If collision exists, use " markdown" suffix
+        format!("{} markdown", file_name)
+    } else {
+        // Use the preferred name without suffix
+        preferred_name
+    };
+    
     let full_path = path.to_string_lossy().to_string();
     
     // Calculate the argument based on action type
@@ -166,6 +229,38 @@ fn process_markdown_with_root(path: &Path, vault_root: &Path) -> Option<Command>
         command: command_name,
         action: action.to_string(),
         arg,
+        flags: String::new(),
+        full_line,
+    })
+}
+
+/// Processes a directory and returns a folder command
+fn process_folder(path: &Path, _existing_commands: &HashSet<String>) -> Option<Command> {
+    // Get the folder name
+    let folder_name = path.file_name()?.to_str()?;
+    
+    // Skip hidden directories (starting with .)
+    if folder_name.starts_with('.') {
+        return None;
+    }
+    
+    // Skip certain system directories
+    let skip_folders = ["node_modules", "target", "__pycache__", ".git", ".svn"];
+    if skip_folders.contains(&folder_name) {
+        return None;
+    }
+    
+    // Create command name - ALL folder commands must have "folder" suffix
+    let command_name = format!("{} folder", folder_name);
+    
+    let full_path = path.to_string_lossy().to_string();
+    let full_line = format!("{} : folder {}", command_name, full_path);
+    
+    Some(Command {
+        group: String::new(),
+        command: command_name,
+        action: "folder".to_string(),
+        arg: full_path,
         flags: String::new(),
         full_line,
     })

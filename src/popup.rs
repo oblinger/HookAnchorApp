@@ -2,8 +2,10 @@ use eframe::egui;
 use std::process;
 use anchor_selector::{
     Command, execute_command, load_commands, 
-    load_config, Config, load_state, save_state, scanner, grabber
+    load_config, Config, load_state, save_state, scanner, grabber,
+    filter_commands, launcher, CommandTarget
 };
+use anchor_selector::core::config::{load_config_with_error, ConfigResult};
 use anchor_selector::ui::{PopupState, LayoutArrangement};
 
 mod command_editor;
@@ -34,6 +36,12 @@ pub struct AnchorSelector {
     grabber_countdown: Option<u8>,
     /// Timestamp for countdown timing
     countdown_last_update: Option<std::time::Instant>,
+    /// Track if focus has been successfully set on the input field
+    focus_set: bool,
+    /// Frame counter to track how many frames have passed since startup
+    frame_count: u32,
+    /// Config error to show in dialog if config loading failed
+    config_error: Option<String>,
 }
 
 impl AnchorSelector {
@@ -42,14 +50,27 @@ impl AnchorSelector {
     // =============================================================================
     
     pub fn new() -> Self {
+        Self::new_with_prompt("")
+    }
+    
+    pub fn new_with_prompt(initial_prompt: &str) -> Self {
         let commands = load_commands();
-        let config = load_config();
+        let (config, config_error) = match load_config_with_error() {
+            ConfigResult::Success(config) => (config, None),
+            ConfigResult::Error(error) => (load_config(), Some(error)), // Fall back to default config
+        };
         let state = load_state();
         
         // Create popup state with business logic
-        let popup_state = PopupState::new(commands, config, state);
+        let mut popup_state = PopupState::new(commands, config, state);
         
-        Self {
+        // Set initial prompt if provided
+        if !initial_prompt.is_empty() {
+            popup_state.search_text = initial_prompt.to_string();
+            popup_state.update_search(initial_prompt.to_string());
+        }
+        
+        let mut result = Self {
             popup_state,
             last_saved_position: None,
             position_set: false,
@@ -60,7 +81,17 @@ impl AnchorSelector {
             scanner_check_pending: true,
             grabber_countdown: None,
             countdown_last_update: None,
+            focus_set: false,
+            frame_count: 0,
+            config_error,
+        };
+        
+        // Show config error dialog if there was an error
+        if let Some(error) = &result.config_error {
+            result.dialog.show_error(error);
         }
+        
+        result
     }
     
     // =============================================================================
@@ -182,6 +213,15 @@ impl AnchorSelector {
     /// Execute the grab operation
     fn execute_grab(&mut self, ctx: &egui::Context) {
         let config = load_config();
+        
+        // Give up focus to previous application before grabbing
+        if let Err(e) = self.give_up_focus() {
+            anchor_selector::utils::debug_log("GRAB", &format!("Failed to give up focus: {}", e));
+        }
+        
+        // Wait a moment for focus to transfer completely
+        std::thread::sleep(std::time::Duration::from_millis(200));
+        
         match grabber::grab(&config) {
             Ok(grab_result) => {
                 match grab_result {
@@ -231,6 +271,77 @@ impl AnchorSelector {
                 eprintln!("Grabber error: {}", err);
             }
         }
+        
+        // Regain focus back to anchor selector after grab operation
+        if let Err(e) = self.regain_focus() {
+            anchor_selector::utils::debug_log("GRAB", &format!("Failed to regain focus: {}", e));
+        }
+    }
+    
+    /// Trigger an immediate filesystem rescan
+    fn trigger_rescan(&mut self) {
+        use crate::scanner;
+        let config = load_config();
+        
+        // Get markdown roots from config
+        if let Some(markdown_roots) = &config.markdown_roots {
+            anchor_selector::utils::debug_log("RESCAN", &format!("Force scanning markdown files, roots: {:?}", markdown_roots));
+            
+            // Force scan markdown files
+            let current_commands = self.popup_state.get_commands().to_vec();
+            let updated_commands = scanner::scan(current_commands, markdown_roots);
+            
+            // Save the updated commands to file
+            use anchor_selector::save_commands_to_file;
+            if let Err(e) = save_commands_to_file(&updated_commands) {
+                anchor_selector::utils::debug_log("RESCAN", &format!("Failed to save commands: {}", e));
+            } else {
+                anchor_selector::utils::debug_log("RESCAN", "Commands saved successfully");
+            }
+            
+            // Update commands in popup state
+            self.popup_state.set_commands(updated_commands);
+            
+            // Refresh current search results if there's an active search
+            if !self.popup_state.search_text.trim().is_empty() {
+                let current_search = self.popup_state.search_text.clone();
+                self.popup_state.update_search(current_search);
+            }
+            
+            anchor_selector::utils::debug_log("RESCAN", "Rescan completed");
+        } else {
+            anchor_selector::utils::debug_log("RESCAN", "No markdown roots configured in config file");
+        }
+    }
+    
+    /// Give up focus to the previous application
+    fn give_up_focus(&self) -> Result<(), Box<dyn std::error::Error>> {
+        use std::process::Command;
+        
+        anchor_selector::utils::debug_log("FOCUS", "Giving up focus to previous application");
+        
+        // Use Cmd+Tab to switch to previous application
+        Command::new("osascript")
+            .arg("-e")
+            .arg("tell application \"System Events\" to key code 48 using command down")
+            .output()?;
+        
+        Ok(())
+    }
+    
+    /// Regain focus back to this application
+    fn regain_focus(&self) -> Result<(), Box<dyn std::error::Error>> {
+        use std::process::Command;
+        
+        anchor_selector::utils::debug_log("FOCUS", "Regaining focus to anchor selector");
+        
+        // Activate the popup application
+        Command::new("osascript")
+            .arg("-e")
+            .arg("tell application \"popup\" to activate")
+            .output()?;
+        
+        Ok(())
     }
     
 }
@@ -303,6 +414,19 @@ impl eframe::App for AnchorSelector {
     fn update(&mut self, ctx: &egui::Context, _frame: &mut eframe::Frame) {
         // DEBUG: Core search logic verified to work correctly
         
+        // Increment frame counter for focus debugging
+        self.frame_count += 1;
+        
+        // Check for window focus state changes and log for debugging
+        if self.frame_count <= 20 {
+            let has_focus = ctx.input(|i| i.focused);
+            if self.frame_count % 5 == 0 { // Log every 5th frame for first 20 frames
+                anchor_selector::utils::debug_log("FOCUS", &format!("Frame {}: Window focused={}, input focus_set={}", 
+                    self.frame_count, has_focus, self.focus_set));
+            }
+        }
+        
+        
         // Set position on first frame after window is created
         if !self.position_set {
             // Use a reasonable default window size for positioning - the actual size will be auto-calculated
@@ -365,7 +489,14 @@ impl eframe::App for AnchorSelector {
         
         // Update dialog system
         if self.dialog.update(ctx) {
-            if let Some(_result) = self.dialog.take_result() {
+            if let Some(result) = self.dialog.take_result() {
+                // Check if the "Exit" button was clicked
+                if let Some(button_text) = result.get("exit") {
+                    if button_text == "Exit" {
+                        std::process::exit(0);
+                    }
+                }
+                
                 // Resize back to normal when dialog closes and re-enable automatic resizing
                 self.manual_resize_mode = false;
                 ctx.send_viewport_cmd(egui::ViewportCommand::InnerSize([500.0, 300.0].into()));
@@ -465,21 +596,28 @@ impl eframe::App for AnchorSelector {
                 self.start_grabber_countdown();
             }
             
-            // Remove ALL arrow key events completely so TextEdit never sees them
+            // Handle Backtick key (~) for rescan functionality
+            if input.key_pressed(egui::Key::Backtick) {
+                self.trigger_rescan();
+            }
+            
+            // Remove ALL arrow key and backtick key events completely so TextEdit never sees them
             input.events.retain(|event| {
                 !matches!(event, 
                     egui::Event::Key { key: egui::Key::ArrowUp, .. } |
                     egui::Event::Key { key: egui::Key::ArrowDown, .. } |
                     egui::Event::Key { key: egui::Key::ArrowLeft, .. } |
-                    egui::Event::Key { key: egui::Key::ArrowRight, .. }
+                    egui::Event::Key { key: egui::Key::ArrowRight, .. } |
+                    egui::Event::Key { key: egui::Key::Backtick, .. }
                 )
             });
             
-            // Also clear the pressed state for all arrow keys
+            // Also clear the pressed state for all arrow keys and backtick key
             input.keys_down.remove(&egui::Key::ArrowUp);
             input.keys_down.remove(&egui::Key::ArrowDown);
             input.keys_down.remove(&egui::Key::ArrowLeft);
             input.keys_down.remove(&egui::Key::ArrowRight);
+            input.keys_down.remove(&egui::Key::Backtick);
         });
         
         egui::CentralPanel::default()
@@ -644,7 +782,26 @@ impl eframe::App for AnchorSelector {
                 }
                 
                 // Focus the text input on startup or when command editor closes
-                if (self.popup_state.search_text.is_empty() && !self.command_editor.visible) || command_editor_just_closed {
+                let should_focus = (self.popup_state.search_text.is_empty() && !self.command_editor.visible) 
+                    || command_editor_just_closed 
+                    || !self.focus_set
+                    || self.frame_count <= 20; // Be more aggressive in first 20 frames
+                
+                if should_focus {
+                    response.request_focus();
+                    if response.gained_focus() {
+                        self.focus_set = true;
+                        anchor_selector::utils::debug_log("FOCUS", &format!("Input focus gained on frame {}", self.frame_count));
+                    } else if self.frame_count <= 20 {
+                        anchor_selector::utils::debug_log("FOCUS", &format!("Focus request on frame {} - not gained yet (has_focus: {})", 
+                            self.frame_count, response.has_focus()));
+                    }
+                }
+                
+                // Additional failsafe: Force focus with memory if input field is still not focused after reasonable time
+                if self.frame_count == 30 && !self.focus_set {
+                    anchor_selector::utils::debug_log("FOCUS", "Failsafe: Forcing focus with memory");
+                    ctx.memory_mut(|mem| mem.request_focus(response.id));
                     response.request_focus();
                 }
                 
@@ -720,8 +877,14 @@ impl eframe::App for AnchorSelector {
                         if let Some(manual_size) = self.last_manual_size {
                             ctx.send_viewport_cmd(egui::ViewportCommand::InnerSize(manual_size));
                         }
-                    } else if !self.dialog.visible {
-                        // Use automatic size only when dialog is not open
+                    } else if self.dialog.visible {
+                        // When dialog is visible, make sure main window is large enough to accommodate it
+                        let (dialog_width, dialog_height) = self.dialog.calculate_required_size();
+                        let required_width = dialog_width.max(final_width);
+                        let required_height = dialog_height.max(final_height);
+                        ctx.send_viewport_cmd(egui::ViewportCommand::InnerSize(egui::vec2(required_width, required_height)));
+                    } else {
+                        // Use automatic size when dialog is not open
                         ctx.send_viewport_cmd(egui::ViewportCommand::InnerSize(egui::vec2(final_width, final_height)));
                     }
                     
@@ -957,8 +1120,14 @@ impl eframe::App for AnchorSelector {
                         if let Some(manual_size) = self.last_manual_size {
                             ctx.send_viewport_cmd(egui::ViewportCommand::InnerSize(manual_size));
                         }
-                    } else if !self.dialog.visible {
-                        // Use automatic size only when dialog is not open
+                    } else if self.dialog.visible {
+                        // When dialog is visible, make sure main window is large enough to accommodate it
+                        let (dialog_width, dialog_height) = self.dialog.calculate_required_size();
+                        let required_width = dialog_width.max(final_width);
+                        let required_height = dialog_height.max(final_height);
+                        ctx.send_viewport_cmd(egui::ViewportCommand::InnerSize(egui::vec2(required_width, required_height)));
+                    } else {
+                        // Use automatic size when dialog is not open
                         ctx.send_viewport_cmd(egui::ViewportCommand::InnerSize(egui::vec2(final_width, final_height)));
                     }
                 }
@@ -998,11 +1167,196 @@ impl eframe::App for AnchorSelector {
     }
 }
 
-fn main() -> Result<(), eframe::Error> {
-    run_gui()
+fn run_command_line_mode(args: Vec<String>) {
+    // Check for hook:// URL as first argument
+    if args.len() >= 2 && args[1].starts_with("hook://") {
+        handle_hook_url(&args[1]);
+        return;
+    }
+    
+    // Check for help flags
+    if args.len() >= 2 && (args[1] == "--help" || args[1] == "-h" || args[1] == "help") {
+        print_help(&args[0]);
+        return;
+    }
+    
+    if args.len() < 2 {
+        print_help(&args[0]);
+        std::process::exit(1);
+    }
+    
+    match args[1].as_str() {
+        "match" => run_match_command(&args),
+        "exec" => run_exec_command(&args),
+        "-x" => run_execute_top_match(&args),
+        "-a" => run_test_action(&args),
+        _ => {
+            eprintln!("Unknown command: {}", args[1]);
+            eprintln!("Use --help for usage information");
+            std::process::exit(1);
+        }
+    }
 }
 
-fn run_gui() -> Result<(), eframe::Error> {
+fn print_help(program_name: &str) {
+    eprintln!("Anchor Selector - Universal Command Launcher");
+    eprintln!();
+    eprintln!("Usage:");
+    eprintln!("  {}                           - Run GUI mode (interactive popup)", program_name);
+    eprintln!("  {} --help, -h, help          - Show this help message", program_name);
+    eprintln!("  {} match <query> [debug]     - Search and list matching commands", program_name);
+    eprintln!("  {} exec <command>            - Execute a specific command", program_name);
+    eprintln!("  {} -x <query>                - Execute top matching command for query", program_name);
+    eprintln!("  {} -a <action> <arg>         - Test action directly with argument", program_name);
+    eprintln!("  {} hook://query              - Handle hook:// URL (execute top match)", program_name);
+    eprintln!();
+    eprintln!("Examples:");
+    eprintln!("  {}                           # Launch interactive GUI", program_name);
+    eprintln!("  {} match spot                # Find commands matching 'spot'", program_name);
+    eprintln!("  {} -x spot                   # Execute the top match for 'spot'", program_name);
+    eprintln!("  {} exec \"spot\"               # Execute the exact command 'spot'", program_name);
+}
+
+fn handle_hook_url(url: &str) {
+    // Extract the query from hook://query
+    let query = url.strip_prefix("hook://").unwrap_or("");
+    
+    // URL decode the query
+    let decoded_query = urlencoding::decode(query).unwrap_or_else(|_| query.into());
+    
+    if decoded_query.is_empty() {
+        anchor_selector::utils::debug_log("URL_HANDLER", "Empty query in hook URL");
+        return;
+    }
+    
+    anchor_selector::utils::debug_log("URL_HANDLER", &format!("Processing hook URL: {} -> query: '{}'", url, decoded_query));
+    
+    // Use the same logic as -x command
+    let commands = load_commands();
+    let filtered = filter_commands(&commands, &decoded_query, 1, false);
+    
+    if filtered.is_empty() {
+        anchor_selector::utils::debug_log("URL_HANDLER", &format!("No commands found for query: '{}'", decoded_query));
+        return;
+    }
+    
+    let top_command_obj = &filtered[0];
+    anchor_selector::utils::debug_log("URL_HANDLER", &format!("Executing command: {}", top_command_obj.command));
+    
+    // Execute the command (same as -x logic but without the verbose output)
+    let _result = anchor_selector::execute_command(top_command_obj);
+}
+
+fn run_match_command(args: &[String]) {
+    if args.len() < 3 {
+        eprintln!("Usage: {} match <query> [debug]", args[0]);
+        std::process::exit(1);
+    }
+    
+    let query = &args[2];
+    let debug = args.len() > 3 && args[3] == "debug";
+    
+    let commands = load_commands();
+    let filtered = filter_commands(&commands, query, 10, debug);
+    
+    // Print first 10 matches (like the GUI)
+    for cmd in filtered.iter().take(10) {
+        println!("{}", cmd.command);
+    }
+}
+
+fn run_exec_command(args: &[String]) {
+    if args.len() < 3 {
+        eprintln!("Usage: {} exec <command>", args[0]);
+        std::process::exit(1);
+    }
+    
+    let command = &args[2];
+    println!("Executing command: {}", command);
+    
+    // Use the new launcher system for execution
+    match launcher::launch(command) {
+        Ok(()) => {
+            println!("Command completed successfully");
+        },
+        Err(e) => {
+            eprintln!("Command failed: {:?}", e);
+            std::process::exit(1);
+        }
+    }
+}
+
+fn run_execute_top_match(args: &[String]) {
+    if args.len() < 3 {
+        eprintln!("Usage: {} -x <query>", args[0]);
+        std::process::exit(1);
+    }
+    
+    let query = &args[2];
+    let commands = load_commands();
+    let filtered = filter_commands(&commands, query, 1, false);
+    
+    if filtered.is_empty() {
+        eprintln!("No commands found matching: {}", query);
+        std::process::exit(1);
+    }
+    
+    let top_command_obj = &filtered[0];
+    println!("Executing top match: {}", top_command_obj.command);
+    
+    // Use execute_command which properly handles parsed action/arg
+    let result = anchor_selector::execute_command(top_command_obj);
+    match result {
+        CommandTarget::Command(_) => {
+            println!("Command completed successfully");
+        },
+        CommandTarget::Alias(next_cmd) => {
+            println!("Command completed successfully (alias to: {})", next_cmd);
+        }
+    }
+}
+
+fn run_test_action(args: &[String]) {
+    if args.len() < 4 {
+        eprintln!("Usage: {} -a <action> <arg>", args[0]);
+        std::process::exit(1);
+    }
+    
+    let action = &args[2];
+    let arg = &args[3];
+    let command_line = format!("{} {}", action, arg);
+    
+    println!("Testing action '{}' with arg '{}': {}", action, arg, command_line);
+    
+    // Use the new launcher system for testing actions directly
+    match launcher::launch(&command_line) {
+        Ok(()) => {
+            println!("Action completed successfully");
+        },
+        Err(e) => {
+            eprintln!("Action failed: {:?}", e);
+            std::process::exit(1);
+        }
+    }
+}
+
+fn main() -> Result<(), eframe::Error> {
+    let args: Vec<String> = std::env::args().collect();
+    
+    // If arguments are provided, run in command-line mode (no GUI)
+    if args.len() > 1 {
+        run_command_line_mode(args);
+        Ok(())
+    } else {
+        // No arguments, run GUI mode
+        run_gui_with_prompt("")
+    }
+}
+
+fn run_gui_with_prompt(initial_prompt: &str) -> Result<(), eframe::Error> {
+    // Capture the prompt for the closure
+    let prompt = initial_prompt.to_string();
+    
     // Manual window sizing - no auto-sizing constraints
     let viewport_builder = egui::ViewportBuilder::default()
         .with_inner_size([500.0, 120.0]) // Initial size - will be dynamically resized
@@ -1018,7 +1372,7 @@ fn run_gui() -> Result<(), eframe::Error> {
     eframe::run_native(
         "Anchor Selector",
         options,
-        Box::new(|cc| {
+        Box::new(move |cc| {
             // Set light theme
             cc.egui_ctx.set_visuals(egui::Visuals::light());
             
@@ -1031,7 +1385,7 @@ fn run_gui() -> Result<(), eframe::Error> {
                 }
             }
             
-            Ok(Box::new(AnchorSelector::new()))
+            Ok(Box::new(AnchorSelector::new_with_prompt(&prompt)))
         }),
     )
 }

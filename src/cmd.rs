@@ -4,12 +4,19 @@ use anchor_selector::{load_commands, filter_commands, launcher, CommandTarget};
 fn main() {
     let args: Vec<String> = env::args().collect();
     
+    // Check for hook:// URL as first argument
+    if args.len() >= 2 && args[1].starts_with("hook://") {
+        handle_hook_url(&args[1]);
+        return;
+    }
+    
     if args.len() < 2 {
         eprintln!("Usage:");
         eprintln!("  {} match <query> [debug]  - Search and list matching commands", args[0]);
         eprintln!("  {} exec <command>         - Execute a specific command", args[0]);
         eprintln!("  {} -x <query>             - Execute top matching command for query", args[0]);
         eprintln!("  {} -a <action> <arg>      - Test action directly with argument", args[0]);
+        eprintln!("  {} hook://query           - Handle hook:// URL (execute top match)", args[0]);
         std::process::exit(1);
     }
     
@@ -20,10 +27,40 @@ fn main() {
         "-a" => run_test_action(&args),
         _ => {
             eprintln!("Unknown command: {}", args[1]);
-            eprintln!("Use 'match', 'exec', '-x', or '-a'");
+            eprintln!("Use 'match', 'exec', '-x', '-a', or 'hook://...'");
             std::process::exit(1);
         }
     }
+}
+
+fn handle_hook_url(url: &str) {
+    // Extract the query from hook://query
+    let query = url.strip_prefix("hook://").unwrap_or("");
+    
+    // URL decode the query
+    let decoded_query = urlencoding::decode(query).unwrap_or_else(|_| query.into());
+    
+    if decoded_query.is_empty() {
+        anchor_selector::utils::debug_log("URL_HANDLER", "Empty query in hook URL");
+        return;
+    }
+    
+    anchor_selector::utils::debug_log("URL_HANDLER", &format!("Processing hook URL: {} -> query: '{}'", url, decoded_query));
+    
+    // Use the same logic as -x command
+    let commands = load_commands();
+    let filtered = filter_commands(&commands, &decoded_query, 1, false);
+    
+    if filtered.is_empty() {
+        anchor_selector::utils::debug_log("URL_HANDLER", &format!("No commands found for query: '{}'", decoded_query));
+        return;
+    }
+    
+    let top_command_obj = &filtered[0];
+    anchor_selector::utils::debug_log("URL_HANDLER", &format!("Executing command: {}", top_command_obj.command));
+    
+    // Execute the command (same as -x logic but without the verbose output)
+    let _result = anchor_selector::execute_command(top_command_obj);
 }
 
 fn run_match_command(args: &[String]) {

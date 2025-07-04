@@ -39,9 +39,9 @@ mod merge_tests {
         let config = create_test_config(true);
         let commands = vec![
             create_command("House Crime Folder", "folder"),
-            create_command("House Crime md", "doc"),
+            create_command("House Crime *", "doc"),
             create_command("House Folder", "folder"),
-            create_command("House md", "doc"),
+            create_command("House *", "doc"),
             create_command("house taxes", "doc"),
         ];
 
@@ -64,7 +64,7 @@ mod merge_tests {
         let config = create_test_config(true);
         let commands = vec![
             create_command("Home App", "app"),
-            create_command("Home md", "doc"),
+            create_command("Home *", "doc"),
             create_command("HomeDepot 1Pass", "1pass"),
         ];
 
@@ -84,11 +84,11 @@ mod merge_tests {
         let config = create_test_config(true);
         let commands = vec![
             create_command("Hold Folder", "folder"),
-            create_command("Hold md", "doc"),
+            create_command("Hold *", "doc"),
             create_command("Hotels Folder", "folder"),
-            create_command("Hotels md", "doc"),
+            create_command("Hotels *", "doc"),
             create_command("Hover Folder", "folder"),
-            create_command("Hover md", "doc"),
+            create_command("Hover *", "doc"),
         ];
 
         let merged = merge_similar_commands(commands.clone(), &config);
@@ -103,9 +103,9 @@ mod merge_tests {
     fn test_merge_with_search_context() {
         let config = create_test_config(true);
         let commands = vec![
-            create_command("Hook System md", "doc"),
+            create_command("Hook System *", "doc"),
             create_command("Hook System Folder", "folder"),
-            create_command("Hook Alternatives md", "doc"),
+            create_command("Hook Alternatives *", "doc"),
         ];
 
         // Test with "ho" search context
@@ -121,7 +121,7 @@ mod merge_tests {
         let config = create_test_config(false); // Merging disabled
         let commands = vec![
             create_command("House Folder", "folder"),
-            create_command("House md", "doc"),
+            create_command("House *", "doc"),
         ];
 
         let merged = merge_similar_commands(commands.clone(), &config);
@@ -152,7 +152,7 @@ mod merge_tests {
     fn test_merge_case_sensitivity() {
         let config = create_test_config(true);
         let commands = vec![
-            create_command("MAC How To md", "doc"),
+            create_command("MAC How To *", "doc"),
             create_command("MAC HOW TO folder", "folder"),  // Different case
             create_command("mac how to", "doc"),  // Exact match of prefix, different case
         ];
@@ -238,9 +238,9 @@ mod merge_tests {
         let config = create_test_config(true);
         let commands = vec![
             create_command("Home App", "app"),
-            create_command("Home md", "doc"),
+            create_command("Home *", "doc"),
             create_command("House Folder", "folder"),
-            create_command("House md", "doc"),
+            create_command("House *", "doc"),
         ];
 
         let merged = merge_similar_commands(commands.clone(), &config);
@@ -260,23 +260,23 @@ mod merge_tests {
         let commands = vec![
             // Home commands
             create_command("Home App", "app"),
-            create_command("Home md", "doc"),
+            create_command("Home *", "doc"),
             
             // House commands  
             create_command("House Crime Folder", "folder"),
-            create_command("House Crime md", "doc"),
+            create_command("House Crime *", "doc"),
             create_command("House Folder", "folder"),
-            create_command("House md", "doc"),
+            create_command("House *", "doc"),
             create_command("house taxes", "doc"),
             
             // Hook commands
-            create_command("Hook System md", "doc"),
+            create_command("Hook System *", "doc"),
             create_command("Hook System Folder", "folder"),
             create_command("Hook System !", "cmd"),
             
             // Single commands (should not merge)
-            create_command("HOTKEY ALTERNATIVES md", "doc"),
-            create_command("High Output Management md", "doc"),
+            create_command("HOTKEY ALTERNATIVES *", "doc"),
+            create_command("High Output Management *", "doc"),
         ];
 
         let merged = merge_similar_commands_with_context(commands.clone(), &config, "ho");
@@ -295,7 +295,7 @@ mod merge_tests {
         
         // Verify non-merged entries still exist
         assert!(merged.iter().any(|cmd| cmd.command == "house taxes"), "Should keep 'house taxes'");
-        assert!(merged.iter().any(|cmd| cmd.command == "HOTKEY ALTERNATIVES md"), "Should keep single command");
+        assert!(merged.iter().any(|cmd| cmd.command == "HOTKEY ALTERNATIVES *"), "Should keep single command");
     }
     
     #[test]
@@ -303,14 +303,14 @@ mod merge_tests {
         let config = create_test_config(true);
         let commands = vec![
             create_command("Home App", "app"),
-            create_command("Home md", "doc"),
+            create_command("Home *", "doc"),
             create_command("Homography", "doc"),  // Single word, shouldn't interfere
             create_command("HomeDepot", "url"),   // Single word, shouldn't interfere
         ];
 
         let merged = merge_similar_commands(commands.clone(), &config);
         
-        // Should still merge "Home App" and "Home md" into "Home ..."
+        // Should still merge "Home App" and "Home *" into "Home ..."
         assert!(merged.iter().any(|cmd| cmd.command == "Home ..."), "Should have 'Home ...' merge");
         
         // Single word commands should remain separate

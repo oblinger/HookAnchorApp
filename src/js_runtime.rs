@@ -130,9 +130,10 @@ pub fn execute_business_logic(script: &str) -> Result<String, Box<dyn std::error
 // =============================================================================
 
 fn setup_logging(ctx: &Ctx<'_>) -> Result<(), Box<dyn std::error::Error>> {
-    // log(message) - General logging
+    // log(message) - General logging to file
     ctx.globals().set("log", Function::new(ctx.clone(), |msg: String| {
-        println!("[JS] {}", msg);
+        // Use the same logging system as the rest of the application
+        crate::utils::debug_log("JS", &msg);
     })?)?;
     
     // debug(message) - Debug logging
@@ -163,6 +164,12 @@ fn setup_file_operations(ctx: &Ctx<'_>) -> Result<(), Box<dyn std::error::Error>
     
     // fileExists(path) -> boolean
     ctx.globals().set("fileExists", Function::new(ctx.clone(), |path: String| {
+        let expanded = expand_tilde(&path);
+        Path::new(&expanded).exists()
+    })?)?;
+    
+    // file_exists(path) -> boolean (alias for fileExists)
+    ctx.globals().set("file_exists", Function::new(ctx.clone(), |path: String| {
         let expanded = expand_tilde(&path);
         Path::new(&expanded).exists()
     })?)?;
@@ -355,6 +362,59 @@ fn setup_launcher_builtins(ctx: &Ctx<'_>) -> Result<(), Box<dyn std::error::Erro
             },
             Err(e) => format!("Failed to execute command '{}': {}", command, e),
         }
+    })?)?;
+    
+    // spawnDetached(command) -> spawns a completely detached process that won't block shutdown
+    ctx.globals().set("spawnDetached", Function::new(ctx.clone(), |command: String| {
+        use std::process::{Command, Stdio};
+        
+        // Use nohup to detach the process completely from the parent
+        // The & at the end runs it in background, and nohup ensures it survives parent death
+        // Redirecting all I/O to /dev/null ensures no blocking on I/O
+        let shell_cmd = format!("nohup {} >/dev/null 2>&1 & disown", command);
+        
+        match Command::new("sh")
+            .arg("-c")
+            .arg(&shell_cmd)
+            .stdin(Stdio::null())
+            .stdout(Stdio::null())
+            .stderr(Stdio::null())
+            .spawn() {
+                Ok(_) => format!("Spawned detached command: {}", command),
+                Err(e) => format!("Failed to spawn detached command '{}': {}", command, e),
+            }
+    })?)?;
+    
+    // spawnDetachedWithArgs(command, arg1, arg2, ...) -> spawns detached process with separate arguments
+    ctx.globals().set("spawnDetachedWithArgs", Function::new(ctx.clone(), |args: Vec<String>| {
+        use std::process::{Command, Stdio};
+        
+        if args.is_empty() {
+            return "Error: No command provided".to_string();
+        }
+        
+        let command = &args[0];
+        let cmd_args = &args[1..];
+        
+        // Build the command string for nohup
+        let full_command = if cmd_args.is_empty() {
+            command.clone()
+        } else {
+            format!("{} {}", command, cmd_args.join(" "))
+        };
+        
+        let shell_cmd = format!("nohup {} >/dev/null 2>&1 & disown", full_command);
+        
+        match Command::new("sh")
+            .arg("-c")
+            .arg(&shell_cmd)
+            .stdin(Stdio::null())
+            .stdout(Stdio::null())
+            .stderr(Stdio::null())
+            .spawn() {
+                Ok(_) => format!("Spawned detached: {}", full_command),
+                Err(e) => format!("Failed to spawn detached '{}': {}", full_command, e),
+            }
     })?)?;
     
     // change_directory(path) -> changes working directory

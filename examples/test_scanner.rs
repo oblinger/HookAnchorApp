@@ -73,7 +73,7 @@ fn main() {
     
     // Show some of the new commands
     let new_commands: Vec<_> = updated_commands.iter()
-        .filter(|cmd| cmd.command.ends_with(" md"))
+        .filter(|cmd| cmd.command.ends_with(" *"))
         .take(10)
         .collect();
     

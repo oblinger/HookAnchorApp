@@ -41,7 +41,7 @@ const CONFIG = {
  * Main activate function - called with the anchor path
  */
 function activate(anchorPath) {
-    log(`=== Activating Anchor: ${anchorPath} ===`);
+    log(`=== CLAUDE-MODIFIED: Activating Anchor: ${anchorPath} ===`);
     
     // Validate and change to the anchor directory
     if (!isDirectory(anchorPath)) {
@@ -67,10 +67,8 @@ function activate(anchorPath) {
     // Step 3: Handle development environment activation
     if (CONFIG.enableTmux && activateTmux(anchorPath, anchorName)) {
         // Tmux session was started/attached, bring terminal to front
-        delay(() => {
-            activate_iterm();  // User-defined function (from config)
-            log("Activated iTerm2 after tmux setup");
-        });
+        activate_iterm();  // User-defined function (from config)
+        log("Activated iTerm2 after tmux setup");
     } else if (CONFIG.enableClaudeCode && fileExists("CLAUDE.md")) {
         // No tmux, but has Claude config - start Claude Code
         start_claude_code();  // User-defined function (from config)
@@ -133,21 +131,16 @@ function activateTmux(anchorPath, anchorName) {
     
     log(`Found tmux config: ${tmuxConfig}`);
     
-    // Check if session already exists
-    if (has_tmux_session(anchorName)) {
-        log(`Tmux session '${anchorName}' already exists, attaching`);
-        // Session exists, just attach to it
-        shell(`tmux attach-session -t "${anchorName}"`);
-    } else {
-        log(`Creating new tmux session: ${anchorName}`);
-        // Create new session from config
-        start_tmux_session(tmuxConfig);
-        
-        // Give tmux a moment to fully create the session
-        delay(() => {
-            shell(`tmux attach-session -t "${anchorName}"`);
-        });
-    }
+    // Just try to attach to the session (tmux will create if not exists)
+    log(`Attaching to tmux session: ${anchorName}`);
+    
+    // Activate terminal application first
+    activateApp("iTerm2");
+    
+    // Attach to session - tmux will handle creation if needed
+    shell(`tmux attach-session -t "${anchorName}" || tmux new-session -s "${anchorName}"`);
+    
+    log(`Successfully attached to tmux session: ${anchorName}`);
     
     return true;
 }

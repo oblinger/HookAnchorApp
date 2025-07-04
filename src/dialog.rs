@@ -46,6 +46,16 @@ impl Dialog {
         self.parse_spec_strings(spec_strings);
     }
     
+    /// Shows an error dialog with the given error message
+    pub fn show_error(&mut self, error_message: &str) {
+        let spec_strings = vec![
+            "=Error".to_string(),
+            format!("#{}", error_message),
+            "!Exit".to_string(),
+        ];
+        self.show(spec_strings);
+    }
+    
     #[allow(dead_code)]
     pub fn hide(&mut self) {
         self.visible = false;

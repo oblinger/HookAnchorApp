@@ -519,7 +519,7 @@ fn capitalize_first_char(s: &str) -> String {
 }
 
 /// Removes the last word from a command string, returning the prefix
-/// Example: "FIN Budget md" → Some("FIN Budget")
+/// Example: "FIN Budget *" → Some("FIN Budget")
 /// Example: "FIN" → None (can't remove last word)
 fn remove_last_word(command: &str, separators: &str) -> Option<String> {
     // Find the last separator position
@@ -601,18 +601,21 @@ pub fn get_current_submenu_prefix_from_commands(commands: &[Command], search_tex
         return None;
     }
     
-    // If search text contains space, use the first part as prefix
-    if search_text.contains(' ') {
-        return Some(search_text.split(' ').next().unwrap().to_string());
-    }
+    // Extract the prefix to check (either the full search text or the part before space)
+    let prefix_to_check = if search_text.contains(' ') {
+        search_text.split(' ').next().unwrap()
+    } else {
+        search_text
+    };
     
-    // Don't auto-detect if search text is very short (causes flickering)
-    if search_text.len() < 2 {
+    // Don't auto-detect if prefix is very short (causes flickering)
+    if prefix_to_check.len() < 2 {
         return None;
     }
     
     // Auto-detect submenu based on command prefixes
-    let mut prefix_counts: std::collections::HashMap<String, usize> = std::collections::HashMap::new();
+    // Use case-insensitive grouping to fix the case sensitivity bug
+    let mut prefix_data: std::collections::HashMap<String, (usize, String)> = std::collections::HashMap::new();
     
     for cmd in commands {
         if cmd.action == "separator" {
@@ -620,8 +623,17 @@ pub fn get_current_submenu_prefix_from_commands(commands: &[Command], search_tex
         }
         let cmd_prefix = get_command_prefix(&cmd.command, separators);
         // Only count exact prefix matches to avoid flickering between similar prefixes
-        if cmd_prefix.to_lowercase() == search_text.to_lowercase() {
-            *prefix_counts.entry(cmd_prefix).or_insert(0) += 1;
+        if cmd_prefix.to_lowercase() == prefix_to_check.to_lowercase() {
+            let normalized_key = cmd_prefix.to_lowercase();
+            let (count, best_case) = prefix_data.entry(normalized_key).or_insert((0, cmd_prefix.clone()));
+            *count += 1;
+            
+            // Update best_case to prefer exact case match with prefix_to_check, then original case
+            if cmd_prefix == prefix_to_check {
+                *best_case = cmd_prefix;
+            } else if best_case.to_lowercase() != prefix_to_check.to_lowercase() {
+                *best_case = cmd_prefix;
+            }
         }
     }
     
@@ -629,21 +641,21 @@ pub fn get_current_submenu_prefix_from_commands(commands: &[Command], search_tex
     let mut best_prefix: Option<String> = None;
     let mut best_count = 0;
     
-    for (prefix, count) in prefix_counts {
+    for (_normalized_key, (count, prefix)) in prefix_data {
         if count >= 2 {
-            let is_exact_match = prefix.to_lowercase() == search_text.to_lowercase();
+            let is_exact_match = prefix.to_lowercase() == prefix_to_check.to_lowercase();
             let should_use = best_prefix.is_none() || 
                             is_exact_match || 
                             (count > best_count) ||
                             (count == best_count && prefix.len() > best_prefix.as_ref().unwrap().len());
                             
             if should_use {
-                // Normalize case to match search text case for consistent display
+                // Normalize case to match prefix_to_check case for consistent display
                 let normalized_prefix = if is_exact_match {
-                    search_text.to_string()
+                    prefix_to_check.to_string()
                 } else {
-                    // Use the original prefix but try to match search text case
-                    if search_text.chars().next().unwrap_or('a').is_uppercase() {
+                    // Use the original prefix but try to match prefix_to_check case
+                    if prefix_to_check.chars().next().unwrap_or('a').is_uppercase() {
                         capitalize_first_char(&prefix)
                     } else {
                         prefix.to_lowercase()

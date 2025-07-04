@@ -119,9 +119,32 @@ functions:
     const tmuxConfig = path + "/.tmuxp.yaml";
     
     if (fileExists(tmuxConfig)) {
-      log("Found tmux config, starting session");
-      start_tmux_session(tmuxConfig);
-      setTimeout(() => activate_iterm(), 500);
+      log("Found tmux config: " + tmuxConfig);
+      
+      // Try to read the session name from the tmuxp config
+      let sessionName = anchorName;
+      try {
+        const configContent = readFile(tmuxConfig);
+        // Simple regex to find session_name in YAML
+        const match = configContent.match(/session_name:\s*(.+)/);
+        if (match && match[1]) {
+          sessionName = match[1].trim();
+          // Remove quotes if present
+          sessionName = sessionName.replace(/^["']|["']$/g, '');
+          log("Using session name from config: " + sessionName);
+        } else {
+          log("No session_name found in config, using directory name: " + sessionName);
+        }
+      } catch (e) {
+        log("Could not read tmuxp config, using directory name: " + sessionName);
+      }
+      
+      // Just try to create/attach to tmux session
+      log("Working with tmux session: " + sessionName);
+      
+      // Activate iTerm and attach to session
+      activateApp("iTerm2");
+      shell("tmux attach-session -t \"" + sessionName + "\"");
     } else if (fileExists("CLAUDE.md")) {
       log("Found CLAUDE.md, starting Claude Code");
       start_claude_code();
@@ -185,7 +208,7 @@ functions:
   
   # Replace hardcoded iTerm activation with user-customizable version
   activate_iterm: |
-    return activateApp("iTerm2");
+    activateApp("iTerm2");
   
   # Replace hardcoded Claude Code launcher with flexible version
   start_claude_code: |
@@ -213,10 +236,20 @@ functions:
       return "tmuxp not available";
     }
     const expanded = expandHome(configPath);
+    log("Loading tmuxp config: " + expanded);
+    
+    // First check if the file exists
+    if (!fileExists(expanded)) {
+      return "Tmuxp config file not found: " + expanded;
+    }
+    
+    // Load the tmuxp config in detached mode
     const result = JSON.parse(shellWithExitCode(`tmuxp load "${expanded}" -d`));
     if (result.exitCode === 0) {
+      log("Tmuxp output: " + result.stdout);
       return `Started tmux session from: ${expanded}`;
     } else {
+      log("Tmuxp stderr: " + result.stderr);
       return `Failed to start tmux session: ${result.stderr}`;
     }
   

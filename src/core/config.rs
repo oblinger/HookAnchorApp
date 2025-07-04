@@ -89,8 +89,15 @@ pub fn get_config_file_path() -> PathBuf {
     Path::new(&home).join(".config/anchor_selector/config.yaml")
 }
 
-/// Loads configuration from YAML file or returns default if file doesn't exist
-pub fn load_config() -> Config {
+/// Configuration loading result
+#[derive(Debug)]
+pub enum ConfigResult {
+    Success(Config),
+    Error(String),
+}
+
+/// Loads configuration from YAML file or returns error details if parsing fails
+pub fn load_config_with_error() -> ConfigResult {
     let config_path = get_config_file_path();
     
     // Check for user config
@@ -108,26 +115,43 @@ pub fn load_config() -> Config {
                     config.popup_settings.word_separators = " ._-".to_string();
                 }
                 
-                return config;
+                return ConfigResult::Success(config);
             }
-            Err(_e) => {
-                // Try to load legacy format
+            Err(e) => {
+                // Try to load legacy format first
                 if let Ok(config) = load_legacy_config(&contents) {
-                    return config;
+                    return ConfigResult::Success(config);
                 }
+                
+                // Failed to parse - return detailed error
+                let error_message = format!(
+                    "YAML parsing error in config file:\n{}\n\n\
+                    Config file location: {}\n\n\
+                    Please check the YAML syntax. Common issues:\n\
+                    • Missing colons after keys\n\
+                    • Incorrect indentation\n\
+                    • Invalid characters or text without proper YAML structure",
+                    e, config_path.display()
+                );
+                return ConfigResult::Error(error_message);
             }
         }
     } else {
+        return ConfigResult::Error(format!(
+            "Config file not found: {}\n\n\
+            Please create a config file with markdown_roots specified.",
+            config_path.display()
+        ));
     }
-    
-    // Check for default config
-    let default_config_content = include_str!("../default_config.yaml");
-    match serde_yaml::from_str::<Config>(default_config_content) {
-        Ok(config) => {
-            config
-        }
-        Err(e) => {
-            eprintln!("Error parsing default config: {}", e);
+}
+
+/// Loads configuration from YAML file or returns default if file doesn't exist (compatibility wrapper)
+pub fn load_config() -> Config {
+    match load_config_with_error() {
+        ConfigResult::Success(config) => config,
+        ConfigResult::Error(_) => {
+            // Fall back to default config for backward compatibility
+            // The error will be shown by popup if it uses load_config_with_error
             create_default_config()
         }
     }
