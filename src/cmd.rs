@@ -24,6 +24,7 @@ pub fn run_command_line_mode(args: Vec<String>) {
         "-r" | "--run_fn" => run_exec_command(&args),
         "-x" | "--execute" => run_execute_top_match(&args),
         "-a" | "--action" => run_test_action(&args),
+        "-f" | "--folder" => run_folder_command(&args),
         _ => {
             eprintln!("Unknown command: {}", args[1]);
             eprintln!("Use -h or --help for usage information");
@@ -41,6 +42,7 @@ pub fn print_help(program_name: &str) {
     eprintln!("  {} -m, --match <query> [debug]    - Search and list matching commands", program_name);
     eprintln!("  {} -r, --run_fn <command>         - Execute a specific command function", program_name);
     eprintln!("  {} -x, --execute <query>          - Execute top matching command for query", program_name);
+    eprintln!("  {} -f, --folder <query>           - Get folder path for anchor/folder/obs command", program_name);
     eprintln!("  {} -a, --action <action> <arg>    - Test action directly with argument", program_name);
     eprintln!("  {} hook://query                   - Handle hook:// URL (execute top match)", program_name);
     eprintln!();
@@ -48,6 +50,7 @@ pub fn print_help(program_name: &str) {
     eprintln!("  {}                                # Launch interactive GUI", program_name);
     eprintln!("  {} -m spot                        # Find commands matching 'spot'", program_name);
     eprintln!("  {} -x spot                        # Execute the top match for 'spot'", program_name);
+    eprintln!("  {} -f spot                        # Get folder path for 'spot' command", program_name);
     eprintln!("  {} -r \"Spot\"                      # Execute the exact command 'Spot'", program_name);
 }
 
@@ -173,4 +176,60 @@ fn run_test_action(args: &[String]) {
             std::process::exit(1);
         }
     }
+}
+
+fn run_folder_command(args: &[String]) {
+    if args.len() < 3 {
+        eprintln!("Usage: {} -f, --folder <query>", args[0]);
+        std::process::exit(1);
+    }
+    
+    let query = &args[2];
+    let commands = load_commands();
+    let filtered = filter_commands(&commands, query, 1, false);
+    
+    if filtered.is_empty() {
+        eprintln!("No commands found matching: {}", query);
+        std::process::exit(1);
+    }
+    
+    let top_command = &filtered[0];
+    
+    // Extract folder path based on command action type
+    let folder_path = match top_command.action.as_str() {
+        "folder" => {
+            // For folder commands, the arg is already the folder path
+            top_command.arg.clone()
+        },
+        "anchor" => {
+            // For anchor commands, the arg is the full path to the .md file
+            // Return the directory containing the .md file
+            if let Some(last_slash) = top_command.arg.rfind('/') {
+                top_command.arg[..last_slash].to_string()
+            } else {
+                top_command.arg.clone()
+            }
+        },
+        "obs" => {
+            // For obs commands, need to resolve the full path and return the directory
+            // The arg format is like "T/Career/NJ/TG/TG AI Safety.md"
+            let home = std::env::var("HOME").unwrap_or_else(|_| ".".to_string());
+            let vault_path = format!("{}/ob/kmr", home); // Default vault path
+            let full_path = format!("{}/{}", vault_path, top_command.arg);
+            
+            // Return the directory containing the .md file
+            if let Some(last_slash) = full_path.rfind('/') {
+                full_path[..last_slash].to_string()
+            } else {
+                full_path
+            }
+        },
+        _ => {
+            eprintln!("Command '{}' is not a folder, anchor, or obs command (action: {})", 
+                     top_command.command, top_command.action);
+            std::process::exit(1);
+        }
+    };
+    
+    println!("{}", folder_path);
 }
