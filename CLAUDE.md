@@ -20,7 +20,7 @@ cargo run
 Always build using: `cargo build --release --bin ha`
 
 ### Project Structure
-- `src/main.rs` - Main application code using egui framework
+- `src/ha.rs` - Main application code using egui framework
 - `Cargo.toml` - Dependencies (eframe, egui)
 
 ### Dependencies

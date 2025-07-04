@@ -7,7 +7,7 @@ build = "build.rs"
 # Main binary
 [[bin]]
 name = "ha"
-path = "src/popup.rs"
+path = "src/ha.rs"
 
 [[bin]]
 name = "test_cc_debug"
