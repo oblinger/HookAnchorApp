@@ -9,7 +9,7 @@ pub fn run_command_line_mode(args: Vec<String>) {
     }
     
     // Check for help flags
-    if args.len() >= 2 && (args[1] == "--help" || args[1] == "-h" || args[1] == "help") {
+    if args.len() >= 2 && (args[1] == "-h" || args[1] == "--help") {
         print_help(&args[0]);
         return;
     }
@@ -20,13 +20,13 @@ pub fn run_command_line_mode(args: Vec<String>) {
     }
     
     match args[1].as_str() {
-        "match" => run_match_command(&args),
-        "exec" => run_exec_command(&args),
-        "-x" => run_execute_top_match(&args),
-        "-a" => run_test_action(&args),
+        "-m" | "--match" => run_match_command(&args),
+        "-r" | "--run_fn" => run_exec_command(&args),
+        "-x" | "--execute" => run_execute_top_match(&args),
+        "-a" | "--action" => run_test_action(&args),
         _ => {
             eprintln!("Unknown command: {}", args[1]);
-            eprintln!("Use --help for usage information");
+            eprintln!("Use -h or --help for usage information");
             std::process::exit(1);
         }
     }
@@ -36,19 +36,19 @@ pub fn print_help(program_name: &str) {
     eprintln!("Anchor Selector - Universal Command Launcher");
     eprintln!();
     eprintln!("Usage:");
-    eprintln!("  {}                           - Run GUI mode (interactive popup)", program_name);
-    eprintln!("  {} --help, -h, help          - Show this help message", program_name);
-    eprintln!("  {} match <query> [debug]     - Search and list matching commands", program_name);
-    eprintln!("  {} exec <command>            - Execute a specific command", program_name);
-    eprintln!("  {} -x <query>                - Execute top matching command for query", program_name);
-    eprintln!("  {} -a <action> <arg>         - Test action directly with argument", program_name);
-    eprintln!("  {} hook://query              - Handle hook:// URL (execute top match)", program_name);
+    eprintln!("  {}                                - Run GUI mode (interactive popup)", program_name);
+    eprintln!("  {} -h, --help                     - Show this help message", program_name);
+    eprintln!("  {} -m, --match <query> [debug]    - Search and list matching commands", program_name);
+    eprintln!("  {} -r, --run_fn <command>         - Execute a specific command function", program_name);
+    eprintln!("  {} -x, --execute <query>          - Execute top matching command for query", program_name);
+    eprintln!("  {} -a, --action <action> <arg>    - Test action directly with argument", program_name);
+    eprintln!("  {} hook://query                   - Handle hook:// URL (execute top match)", program_name);
     eprintln!();
     eprintln!("Examples:");
-    eprintln!("  {}                           # Launch interactive GUI", program_name);
-    eprintln!("  {} match spot                # Find commands matching 'spot'", program_name);
-    eprintln!("  {} -x spot                   # Execute the top match for 'spot'", program_name);
-    eprintln!("  {} exec \"spot\"               # Execute the exact command 'spot'", program_name);
+    eprintln!("  {}                                # Launch interactive GUI", program_name);
+    eprintln!("  {} -m spot                        # Find commands matching 'spot'", program_name);
+    eprintln!("  {} -x spot                        # Execute the top match for 'spot'", program_name);
+    eprintln!("  {} -r \"Spot\"                      # Execute the exact command 'Spot'", program_name);
 }
 
 
@@ -84,7 +84,7 @@ fn handle_hook_url(url: &str) {
 
 fn run_match_command(args: &[String]) {
     if args.len() < 3 {
-        eprintln!("Usage: {} match <query> [debug]", args[0]);
+        eprintln!("Usage: {} -m, --match <query> [debug]", args[0]);
         std::process::exit(1);
     }
     
@@ -102,12 +102,12 @@ fn run_match_command(args: &[String]) {
 
 fn run_exec_command(args: &[String]) {
     if args.len() < 3 {
-        eprintln!("Usage: {} exec <command>", args[0]);
+        eprintln!("Usage: {} -r, --run_fn <command>", args[0]);
         std::process::exit(1);
     }
     
     let command = &args[2];
-    println!("Executing command: {}", command);
+    println!("Executing command function: {}", command);
     
     // Use the new launcher system for execution
     match launcher::launch(command) {
@@ -123,7 +123,7 @@ fn run_exec_command(args: &[String]) {
 
 fn run_execute_top_match(args: &[String]) {
     if args.len() < 3 {
-        eprintln!("Usage: {} -x <query>", args[0]);
+        eprintln!("Usage: {} -x, --execute <query>", args[0]);
         std::process::exit(1);
     }
     
@@ -153,7 +153,7 @@ fn run_execute_top_match(args: &[String]) {
 
 fn run_test_action(args: &[String]) {
     if args.len() < 4 {
-        eprintln!("Usage: {} -a <action> <arg>", args[0]);
+        eprintln!("Usage: {} -a, --action <action> <arg>", args[0]);
         std::process::exit(1);
     }
     
