@@ -279,12 +279,13 @@ impl AnchorSelector {
     
     /// Trigger an immediate filesystem rescan
     fn trigger_rescan(&mut self) {
+        anchor_selector::utils::debug_log("SCANNER2", "=== TRIGGER_RESCAN FUNCTION CALLED ===");
         use crate::scanner;
         let config = load_config();
         
         // Get markdown roots from config
         if let Some(markdown_roots) = &config.markdown_roots {
-            anchor_selector::utils::debug_log("RESCAN", &format!("Force scanning markdown files, roots: {:?}", markdown_roots));
+            anchor_selector::utils::debug_log("SCANNER2", &format!("Force scanning markdown files, roots: {:?}", markdown_roots));
             
             // Force scan markdown files
             let current_commands = self.popup_state.get_commands().to_vec();
@@ -307,7 +308,7 @@ impl AnchorSelector {
                 self.popup_state.update_search(current_search);
             }
             
-            anchor_selector::utils::debug_log("RESCAN", "Rescan completed");
+            anchor_selector::utils::debug_log("SCANNER2", "Rescan completed");
         } else {
             anchor_selector::utils::debug_log("RESCAN", "No markdown roots configured in config file");
         }
@@ -315,105 +316,75 @@ impl AnchorSelector {
     
     /// Show folder functionality - launches the first folder matching current search
     fn show_folder(&mut self) {
-        use anchor_selector::{get_display_commands, launcher};
+        use anchor_selector::{launcher, utils};
         
         let search_text = &self.popup_state.search_text;
+        utils::debug_log("SHOW_FOLDER", &format!("Triggered with search text: '{}'", search_text));
         
-        // If no search text, do nothing
-        if search_text.trim().is_empty() {
-            anchor_selector::utils::debug_log("SHOW_FOLDER", "No search text provided");
-            return;
-        }
-        
-        let commands = self.popup_state.get_commands();
-        let config = &self.popup_state.config;
-        
-        // Get display commands using the same logic as -f command
-        let display_commands = get_display_commands(commands, search_text, config, 100);
+        // Get the current filtered commands from popup state
+        let display_commands = self.popup_state.filtered_commands.clone();
+        utils::debug_log("SHOW_FOLDER", &format!("Found {} filtered commands", display_commands.len()));
         
         if display_commands.is_empty() {
-            anchor_selector::utils::debug_log("SHOW_FOLDER", &format!("No commands found matching: {}", search_text));
+            utils::debug_log("SHOW_FOLDER", "No filtered commands to show folder for");
             return;
         }
         
-        // Helper function to extract folder path from a command (same as cmd.rs)
-        let extract_folder_path = |command: &anchor_selector::Command| -> Option<String> {
-            match command.action.as_str() {
-                "folder" => Some(command.arg.clone()),
-                "anchor" => {
-                    if let Some(last_slash) = command.arg.rfind('/') {
-                        Some(command.arg[..last_slash].to_string())
-                    } else {
-                        Some(command.arg.clone())
-                    }
-                },
-                "obs" => {
-                    let home = std::env::var("HOME").unwrap_or_else(|_| ".".to_string());
-                    let vault_path = format!("{}/ob/kmr", home);
-                    let full_path = format!("{}/{}", vault_path, command.arg);
-                    
-                    if let Some(last_slash) = full_path.rfind('/') {
-                        Some(full_path[..last_slash].to_string())
-                    } else {
-                        Some(full_path)
-                    }
-                },
-                _ => None,
-            }
-        };
-        
-        // Check for exact match first (same logic as cmd.rs)
-        if !display_commands.is_empty() && !anchor_selector::ui::PopupState::is_separator_command(&display_commands[0]) {
-            let first_cmd = &display_commands[0];
-            let query_lower = search_text.to_lowercase();
-            let query_folder_pattern = format!("{} folder", query_lower);
-            let cmd_lower = first_cmd.command.to_lowercase();
-            
-            if cmd_lower == query_lower || cmd_lower == query_folder_pattern {
-                // Found exact match, use that folder
-                if let Some(folder_path) = extract_folder_path(first_cmd) {
-                    anchor_selector::utils::debug_log("SHOW_FOLDER", &format!("Exact match found: {} -> {}", first_cmd.command, folder_path));
-                    
-                    // Launch with folder action
-                    match launcher::launch(&format!("folder {}", folder_path)) {
-                        Ok(()) => {
-                            anchor_selector::utils::debug_log("SHOW_FOLDER", "Folder launched successfully");
-                            std::process::exit(0);
-                        },
-                        Err(e) => {
-                            anchor_selector::utils::debug_log("SHOW_FOLDER", &format!("Failed to launch folder: {:?}", e));
-                        }
-                    }
-                    return;
-                }
-            }
+        // Log first few commands for debugging
+        for (i, cmd) in display_commands.iter().take(3).enumerate() {
+            utils::debug_log("SHOW_FOLDER", &format!("  Command {}: '{}' (action: {}, arg: {})", 
+                i, cmd.command, cmd.action, cmd.arg));
         }
         
-        // No exact match, find first folder from all matching commands
-        for command in &display_commands {
-            // Skip separator commands
-            if anchor_selector::ui::PopupState::is_separator_command(command) {
+        // Use the first non-separator command and extract its folder
+        for cmd in &display_commands {
+            if anchor_selector::ui::PopupState::is_separator_command(cmd) {
+                utils::debug_log("SHOW_FOLDER", &format!("Skipping separator: '{}'", cmd.command));
                 continue;
             }
             
-            if let Some(folder_path) = extract_folder_path(command) {
-                anchor_selector::utils::debug_log("SHOW_FOLDER", &format!("First folder found: {} -> {}", command.command, folder_path));
+            utils::debug_log("SHOW_FOLDER", &format!("Processing command: '{}' (action: {})", cmd.command, cmd.action));
+            
+            // Extract folder based on action type
+            let folder_path = match cmd.action.as_str() {
+                "folder" => {
+                    utils::debug_log("SHOW_FOLDER", &format!("Found folder action, path: {}", cmd.arg));
+                    Some(cmd.arg.clone())
+                },
+                "anchor" | "obs" => {
+                    // For anchor/obs, get the directory containing the file
+                    if let Some(idx) = cmd.arg.rfind('/') {
+                        let path = cmd.arg[..idx].to_string();
+                        utils::debug_log("SHOW_FOLDER", &format!("Found {}, extracted folder: {}", cmd.action, path));
+                        Some(path)
+                    } else {
+                        utils::debug_log("SHOW_FOLDER", &format!("Found {} but no slash in path: {}", cmd.action, cmd.arg));
+                        None
+                    }
+                },
+                other => {
+                    utils::debug_log("SHOW_FOLDER", &format!("Command '{}' has non-folder action: {}", cmd.command, other));
+                    None
+                }
+            };
+            
+            if let Some(path) = folder_path {
+                utils::debug_log("SHOW_FOLDER", &format!("Attempting to launch folder: '{}'", path));
                 
-                // Launch with folder action
-                match launcher::launch(&format!("folder {}", folder_path)) {
+                // Launch the folder (popup stays open)
+                match launcher::launch(&format!("folder {}", path)) {
                     Ok(()) => {
-                        anchor_selector::utils::debug_log("SHOW_FOLDER", "Folder launched successfully");
-                        std::process::exit(0);
+                        utils::debug_log("SHOW_FOLDER", &format!("Successfully launched folder: '{}'", path));
                     },
                     Err(e) => {
-                        anchor_selector::utils::debug_log("SHOW_FOLDER", &format!("Failed to launch folder: {:?}", e));
+                        utils::debug_log("SHOW_FOLDER", &format!("Failed to launch folder '{}': {:?}", path, e));
                     }
                 }
                 return;
             }
         }
         
-        anchor_selector::utils::debug_log("SHOW_FOLDER", "No folders found in matching commands");
+        utils::debug_log("SHOW_FOLDER", "No folder found in filtered commands");
     }
     
     /// Give up focus to the previous application
@@ -518,6 +489,11 @@ impl eframe::App for AnchorSelector {
         
         // Increment frame counter for focus debugging
         self.frame_count += 1;
+        
+        // Debug: Test if this function is being called
+        if self.frame_count % 60 == 1 { // Log once per second approximately
+            anchor_selector::utils::debug_log("UPDATE", &format!("Update function called, frame {}", self.frame_count));
+        }
         
         // Check for window focus state changes and log for debugging
         if self.frame_count <= 20 {
@@ -679,54 +655,214 @@ impl eframe::App for AnchorSelector {
         // FIRST: Handle navigation keys and filter them out to prevent TextEdit from seeing them
         // This must happen before any widgets are created
         ctx.input_mut(|input| {
-            // Handle all four arrow keys for navigation
-            if input.key_pressed(egui::Key::ArrowUp) {
-                self.navigate_vertical(-1);
-            }
-            if input.key_pressed(egui::Key::ArrowDown) {
-                self.navigate_vertical(1);
-            }
-            if input.key_pressed(egui::Key::ArrowLeft) {
-                self.navigate_horizontal(-1);
-            }
-            if input.key_pressed(egui::Key::ArrowRight) {
-                self.navigate_horizontal(1);
-            }
-            
-            // Handle Plus key for grabber functionality
-            if input.key_pressed(egui::Key::Plus) || input.key_pressed(egui::Key::Equals) {
-                self.start_grabber_countdown();
+            // Debug log all key presses
+            anchor_selector::utils::debug_log("KEY_DEBUG", &format!("Processing {} input events", input.events.len()));
+            for (i, event) in input.events.iter().enumerate() {
+                match event {
+                    egui::Event::Key { key, pressed, modifiers, .. } => {
+                        anchor_selector::utils::debug_log("KEY_DEBUG", &format!("Event {}: Key {:?}, pressed: {}, modifiers: {:?}", i, key, pressed, modifiers));
+                    },
+                    egui::Event::Text(text) => {
+                        anchor_selector::utils::debug_log("KEY_DEBUG", &format!("Event {}: Text input: '{}'", i, text));
+                    },
+                    _ => {
+                        anchor_selector::utils::debug_log("KEY_DEBUG", &format!("Event {}: Other event type", i));
+                    }
+                }
             }
             
-            // Handle Backtick key (~) for rescan functionality
-            if input.key_pressed(egui::Key::Backtick) {
-                self.trigger_rescan();
+            // Collect actions to perform to avoid borrowing conflicts
+            let mut actions_to_perform = Vec::new();
+            let mut consumed_keys = Vec::new();
+            
+            // Check each pressed key against configured keybindings
+            // IMPORTANT: We only process keys that are explicitly bound in config
+            {
+                let config = &self.popup_state.config;
+                
+                // Debug log the current keybindings config
+                if let Some(ref keybindings) = config.keybindings {
+                    anchor_selector::utils::debug_log("CONFIG_DEBUG", &format!("Keybindings config has {} entries", keybindings.len()));
+                    for (action, key) in keybindings {
+                        anchor_selector::utils::debug_log("CONFIG_DEBUG", &format!("  {} -> {}", action, key));
+                    }
+                } else {
+                    anchor_selector::utils::debug_log("CONFIG_DEBUG", "No keybindings config found!");
+                }
+                
+                for event in &input.events {
+                    if let egui::Event::Key { key, pressed, modifiers, .. } = event {
+                        if *pressed {
+                            let key_name = format!("{:?}", key);
+                            
+                            // Check what action (if any) is bound to this key
+                            if let Some(action) = config.get_action_for_key(&key_name) {
+                                anchor_selector::utils::debug_log("KEY", &format!("Found action '{}' for key '{}'", action, key_name));
+                                
+                                // Always consume the key if it's bound to any action
+                                consumed_keys.push(*key);
+                                
+                                match action {
+                                    "navigate_up" => {
+                                        actions_to_perform.push("navigate_up");
+                                    },
+                                    "navigate_down" => {
+                                        actions_to_perform.push("navigate_down");
+                                    },
+                                    "navigate_left" => {
+                                        actions_to_perform.push("navigate_left");
+                                    },
+                                    "navigate_right" => {
+                                        actions_to_perform.push("navigate_right");
+                                    },
+                                    "force_rescan" => {
+                                        actions_to_perform.push("force_rescan");
+                                    },
+                                    "start_grabber" => {
+                                        // Check for shift modifier for Plus key
+                                        if key == &egui::Key::Equals && modifiers.shift {
+                                            actions_to_perform.push("start_grabber");
+                                        } else if key != &egui::Key::Equals {
+                                            // For non-Equals keys, no modifier check needed
+                                            actions_to_perform.push("start_grabber");
+                                        }
+                                        // If Equals without shift, we still consume the key but don't perform action
+                                    },
+                                    "show_folder" => {
+                                        // For Equals key, only trigger if shift is NOT pressed
+                                        if key == &egui::Key::Equals && !modifiers.shift {
+                                            anchor_selector::utils::debug_log("KEY", "Triggering show_folder from config");
+                                            actions_to_perform.push("show_folder");
+                                        } else if key != &egui::Key::Equals {
+                                            // For non-Equals keys, no modifier check needed
+                                            anchor_selector::utils::debug_log("KEY", "Triggering show_folder from config");
+                                            actions_to_perform.push("show_folder");
+                                        }
+                                        // If Equals with shift, we still consume the key but don't perform action
+                                    },
+                                    "exit_app" => {
+                                        actions_to_perform.push("exit_app");
+                                    },
+                                    "execute_command" => {
+                                        actions_to_perform.push("execute_command");
+                                    },
+                                    "open_editor" => {
+                                        actions_to_perform.push("open_editor");
+                                    },
+                                    _ => {
+                                        // Unknown action - still consume the key
+                                    }
+                                }
+                            } else {
+                                // Key is NOT bound in config - log this for debugging
+                                anchor_selector::utils::debug_log("KEY", &format!("Key '{}' is not bound to any action - ignoring", key_name));
+                            }
+                        }
+                    }
+                }
             }
             
-            // Handle Backslash key (\) for show folder functionality
-            if input.key_pressed(egui::Key::Backslash) {
-                self.show_folder();
+            // Now perform the actions without holding the config reference
+            for action in actions_to_perform {
+                match action {
+                    "navigate_up" => self.navigate_vertical(-1),
+                    "navigate_down" => self.navigate_vertical(1),
+                    "navigate_left" => self.navigate_horizontal(-1),
+                    "navigate_right" => self.navigate_horizontal(1),
+                    "force_rescan" => self.trigger_rescan(),
+                    "start_grabber" => self.start_grabber_countdown(),
+                    "show_folder" => self.show_folder(),
+                    "exit_app" => {
+                        anchor_selector::utils::debug_log("KEY", "Exit app triggered from config");
+                        std::process::exit(0);
+                    },
+                    "execute_command" => {
+                        anchor_selector::utils::debug_log("KEY", "Execute command triggered from config");
+                        if !self.filtered_commands().is_empty() {
+                            // Get display commands for execution
+                            let (display_commands, _is_submenu, _menu_prefix, _inside_count) = self.get_display_commands();
+                            
+                            if self.selected_index() < display_commands.len() {
+                                let selected_cmd = &display_commands[self.selected_index()];
+                                
+                                // Don't execute if it's a separator
+                                if !PopupState::is_separator_command(selected_cmd) {
+                                    // For merged commands (ending with "..."), use the action and arg directly
+                                    if selected_cmd.command.ends_with("...") {
+                                        // Execute using the stored action and arg from the merged command
+                                        let launcher_command = if selected_cmd.arg.is_empty() {
+                                            selected_cmd.action.clone()
+                                        } else {
+                                            format!("{} {}", selected_cmd.action, selected_cmd.arg)
+                                        };
+                                        
+                                        // Use the same execution logic as execute_command
+                                        let config = load_config();
+                                        if config.popup_settings.use_new_launcher {
+                                            use anchor_selector::launcher::launch;
+                                            if let Err(e) = launch(&launcher_command) {
+                                                eprintln!("Error executing command with new launcher: {:?}", e);
+                                                std::process::exit(1);
+                                            }
+                                        } else {
+                                            // Use old temp file method for backward compatibility
+                                            use std::fs;
+                                            let content = format!("execute {}\n", launcher_command);
+                                            if let Err(e) = fs::write("/tmp/cmd_file", content) {
+                                                eprintln!("Error writing to /tmp/cmd_file: {}", e);
+                                                std::process::exit(1);
+                                            }
+                                        }
+                                    } else {
+                                        // For non-merged commands, use the existing lookup method
+                                        execute_command(&selected_cmd);
+                                    }
+                                    std::process::exit(0);
+                                }
+                            }
+                        }
+                    },
+                    "open_editor" => {
+                        anchor_selector::utils::debug_log("KEY", "Open editor triggered from config");
+                        // Check if there's an exact match (case-insensitive) for the search text
+                        let commands = self.commands().clone();
+                        let search_text = self.popup_state.search_text.clone();
+                        let exact_match = commands.iter().find(|cmd| 
+                            cmd.command.to_lowercase() == search_text.to_lowercase()
+                        );
+                        
+                        if let Some(matching_command) = exact_match {
+                            // Found exact match - edit the existing command
+                            self.command_editor.edit_command(Some(matching_command), &self.popup_state.search_text);
+                        } else {
+                            // No exact match - create new command with search text as name
+                            self.command_editor.edit_command(None, &self.popup_state.search_text);
+                        }
+                    },
+                    _ => {}
+                }
             }
             
-            // Remove ALL arrow key, backtick, and backslash key events completely so TextEdit never sees them
+            // Remove all consumed key events AND their text equivalents so TextEdit never sees them
             input.events.retain(|event| {
-                !matches!(event, 
-                    egui::Event::Key { key: egui::Key::ArrowUp, .. } |
-                    egui::Event::Key { key: egui::Key::ArrowDown, .. } |
-                    egui::Event::Key { key: egui::Key::ArrowLeft, .. } |
-                    egui::Event::Key { key: egui::Key::ArrowRight, .. } |
-                    egui::Event::Key { key: egui::Key::Backtick, .. } |
-                    egui::Event::Key { key: egui::Key::Backslash, .. }
-                )
+                match event {
+                    egui::Event::Key { key, .. } => !consumed_keys.contains(key),
+                    egui::Event::Text(text) => {
+                        // Filter out text that corresponds to consumed keys
+                        if consumed_keys.contains(&egui::Key::Equals) && text == "=" {
+                            false
+                        } else {
+                            true
+                        }
+                    },
+                    _ => true
+                }
             });
             
-            // Also clear the pressed state for all arrow keys, backtick, and backslash key
-            input.keys_down.remove(&egui::Key::ArrowUp);
-            input.keys_down.remove(&egui::Key::ArrowDown);
-            input.keys_down.remove(&egui::Key::ArrowLeft);
-            input.keys_down.remove(&egui::Key::ArrowRight);
-            input.keys_down.remove(&egui::Key::Backtick);
-            input.keys_down.remove(&egui::Key::Backslash);
+            // Also clear the pressed state for all consumed keys
+            for key in consumed_keys {
+                input.keys_down.remove(&key);
+            }
         });
         
         egui::CentralPanel::default()
@@ -749,13 +885,20 @@ impl eframe::App for AnchorSelector {
                 
                 // Handle keyboard input - process some keys first
                 ctx.input(|i| {
-                    if i.key_pressed(egui::Key::Escape) {
-                        if !editor_handled_escape {
-                            std::process::exit(0);
+                    // Check exit_app keybinding
+                    let config = &self.popup_state.config;
+                    if let Some(exit_key) = config.keybindings.as_ref().and_then(|kb| kb.get("exit_app")) {
+                        if i.key_pressed(egui::Key::from_name(exit_key).unwrap_or(egui::Key::Escape)) {
+                            if !editor_handled_escape {
+                                std::process::exit(0);
+                            }
                         }
                     }
-                    if i.key_pressed(egui::Key::Enter) {
-                        if !self.filtered_commands().is_empty() {
+                    
+                    // Check execute_command keybinding
+                    if let Some(execute_key) = config.keybindings.as_ref().and_then(|kb| kb.get("execute_command")) {
+                        if i.key_pressed(egui::Key::from_name(execute_key).unwrap_or(egui::Key::Enter)) {
+                            if !self.filtered_commands().is_empty() {
                             // Get display commands for execution
                             let (display_commands, _is_submenu, _menu_prefix, _inside_count) = self.get_display_commands();
                             
@@ -798,9 +941,10 @@ impl eframe::App for AnchorSelector {
                                     std::process::exit(0);
                                 }
                             }
+                            }
                         }
                     }
-                    if i.key_pressed(egui::Key::Equals) || (i.modifiers.shift && i.key_pressed(egui::Key::Equals)) {
+                    if false {  // DISABLED: Equals key now used for show_folder
                         // Command Editor: = or + key (shift+=): open command editor
                         // Check if there's an exact match (case-insensitive) for the search text
                         let commands = self.commands().clone();
@@ -856,10 +1000,17 @@ impl eframe::App for AnchorSelector {
                 
                 // Always update search when text field is changed
                 if response.changed() {
+                    anchor_selector::utils::debug_log("TEXT_CHANGE", &format!("Search text changed to: '{}'", self.popup_state.search_text));
                     
                     // Handle slash for command editor
                     let mut should_open_editor = false;
                     let mut command_to_edit = None;
+                    
+                    // Check for equals sign that shouldn't be there
+                    if self.popup_state.search_text.ends_with('=') {
+                        anchor_selector::utils::debug_log("TEXT_CHANGE", "Found equals sign in search text - removing it");
+                        self.popup_state.search_text.pop();
+                    }
                     
                     if self.popup_state.search_text.ends_with('/') {
                         // Remove the slash from search text

@@ -22,6 +22,8 @@ pub struct Config {
     pub markdown_roots: Option<Vec<String>>,
     /// Grabber rules for capturing application context
     pub grabber_rules: Option<Vec<crate::grabber::GrabberRule>>,
+    /// Key bindings for all actions
+    pub keybindings: Option<HashMap<String, String>>,
 }
 
 /// Popup settings section of the configuration file
@@ -190,12 +192,17 @@ fn load_legacy_config(contents: &str) -> Result<Config, Box<dyn std::error::Erro
     let grabber_rules = yaml.get("grabber_rules")
         .and_then(|v| serde_yaml::from_value(v.clone()).ok());
     
+    // Extract keybindings if it exists
+    let keybindings = yaml.get("keybindings")
+        .and_then(|v| serde_yaml::from_value(v.clone()).ok());
+    
     Ok(Config {
         popup_settings,
         launcher_settings,
         functions,
         markdown_roots,
         grabber_rules,
+        keybindings,
     })
 }
 
@@ -207,5 +214,32 @@ fn create_default_config() -> Config {
         functions: Some(HashMap::new()),
         markdown_roots: Some(vec![]),
         grabber_rules: Some(vec![]),
+        keybindings: None,
+    }
+}
+
+impl Config {
+    /// Check if a specific action is bound to the given key name
+    /// Returns true if the action is bound to this key, false otherwise
+    pub fn is_key_bound_to_action(&self, key_name: &str, action_name: &str) -> bool {
+        if let Some(ref keybindings) = self.keybindings {
+            if let Some(bound_key) = keybindings.get(action_name) {
+                return bound_key == key_name;
+            }
+        }
+        false
+    }
+    
+    /// Check if any action is bound to the given key name
+    /// Returns the action name if found, None otherwise
+    pub fn get_action_for_key(&self, key_name: &str) -> Option<&str> {
+        if let Some(ref keybindings) = self.keybindings {
+            for (action, bound_key) in keybindings {
+                if bound_key == key_name {
+                    return Some(action);
+                }
+            }
+        }
+        None
     }
 }

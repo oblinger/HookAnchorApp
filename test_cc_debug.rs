@@ -23,6 +23,7 @@ fn create_test_config() -> Config {
         functions: None,
         markdown_roots: None,
         grabber_rules: None,
+        keybindings: None,
     }
 }
 
