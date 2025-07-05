@@ -26,7 +26,7 @@ pub mod scanner;
 pub mod grabber;
 
 // Re-export commonly used types from core modules
-pub use core::commands::{Command, CommandTarget, filter_commands, merge_similar_commands, 
+pub use core::commands::{Command, CommandTarget, filter_commands, get_display_commands, merge_similar_commands, 
                          merge_similar_commands_with_context, load_commands, save_commands_to_file, 
                          add_command, delete_command, parse_command_line, split_commands, 
                          get_current_submenu_prefix, execute_command, migrate_commands_to_new_format,

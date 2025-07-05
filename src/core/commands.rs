@@ -784,6 +784,78 @@ fn execute_command_with_depth(command: &Command, depth: u32) -> CommandTarget {
     }
 }
 
+/// Get commands formatted for display with submenu logic and separators
+/// This is the single source of truth for how commands should be displayed
+/// in the popup, CLI tools, and other interfaces.
+pub fn get_display_commands(
+    commands: &[Command], 
+    search_text: &str, 
+    config: &crate::core::config::Config,
+    max_results: usize
+) -> Vec<Command> {
+    if search_text.is_empty() {
+        return Vec::new();
+    }
+    
+    // Apply initial filtering
+    let filtered = filter_commands(commands, search_text, max_results * 2, false);
+    
+    // Check for submenu mode
+    let final_commands = if let Some(menu_prefix) = get_current_submenu_prefix_from_commands(&filtered, search_text, &config.popup_settings.word_separators) {
+        // SUBMENU MODE: Split first, then merge and sort each list separately
+        let mut inside_commands = Vec::new();
+        let mut outside_commands = Vec::new();
+        
+        // Split into inside and outside lists
+        for cmd in filtered {
+            if cmd.action == "separator" {
+                continue; // Skip any existing separators
+            }
+            
+            let cmd_prefix = get_command_prefix(&cmd.command, &config.popup_settings.word_separators);
+            if cmd_prefix.eq_ignore_ascii_case(&menu_prefix) {
+                inside_commands.push(cmd);
+            } else {
+                outside_commands.push(cmd);
+            }
+        }
+        
+        // Apply merging to each list separately if enabled
+        if config.popup_settings.merge_similar {
+            inside_commands = merge_similar_commands_with_context(inside_commands, config, search_text);
+            outside_commands = merge_similar_commands_with_context(outside_commands, config, "");
+        }
+        
+        // Combine: inside + separator + outside
+        let mut result = inside_commands;
+        
+        if !result.is_empty() && !outside_commands.is_empty() {
+            // Add single separator between inside and outside
+            result.push(Command {
+                group: String::new(),
+                command: "---".to_string(),
+                action: "separator".to_string(),
+                arg: String::new(),
+                flags: String::new(),
+                full_line: String::new(),
+            });
+        }
+        
+        result.extend(outside_commands);
+        result
+        
+    } else {
+        // NORMAL MODE: Don't merge or create separators when not in submenu mode
+        // Just return the filtered commands sorted by our matching logic
+        filtered
+    };
+    
+    // Limit final results
+    let mut limited_commands = final_commands;
+    limited_commands.truncate(max_results);
+    limited_commands
+}
+
 #[cfg(test)]
 mod tests {
     use super::*;

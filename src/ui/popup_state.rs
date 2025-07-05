@@ -3,7 +3,7 @@
 //! This module handles the core state and business logic of the popup window,
 //! separated from egui-specific rendering code.
 
-use crate::core::commands::{Command, filter_commands, merge_similar_commands_with_context};
+use crate::core::commands::Command;
 use crate::core::config::Config;
 use crate::core::state::AppState;
 use crate::ui::layout::{DisplayLayout, Selection, Direction};
@@ -115,72 +115,10 @@ impl PopupState {
     
     /// Recompute filtered commands based on current search
     fn recompute_filtered_commands(&mut self) {
-        if self.search_text.is_empty() {
-            self.filtered_commands = Vec::new();
-            return;
-        }
+        use crate::core::commands::get_display_commands;
         
-        // Apply filtering
         let total_limit = self.config.popup_settings.max_rows * self.config.popup_settings.max_columns;
-        let filtered = filter_commands(&self.commands, &self.search_text, total_limit * 2, false);
-        
-        // Check for submenu mode first
-        use crate::core::commands::{get_current_submenu_prefix_from_commands, get_command_prefix};
-        
-        let final_commands = if let Some(menu_prefix) = get_current_submenu_prefix_from_commands(&filtered, &self.search_text, &self.config.popup_settings.word_separators) {
-            // SUBMENU MODE: Split first, then merge and sort each list separately
-            let mut inside_commands = Vec::new();
-            let mut outside_commands = Vec::new();
-            
-            // Split into inside and outside lists
-            for cmd in filtered {
-                if cmd.action == "separator" {
-                    continue; // Skip any existing separators
-                }
-                
-                let cmd_prefix = get_command_prefix(&cmd.command, &self.config.popup_settings.word_separators);
-                if cmd_prefix.eq_ignore_ascii_case(&menu_prefix) {
-                    inside_commands.push(cmd);
-                } else {
-                    outside_commands.push(cmd);
-                }
-            }
-            
-            // Apply merging to each list separately if enabled
-            if self.config.popup_settings.merge_similar {
-                inside_commands = merge_similar_commands_with_context(inside_commands, &self.config, &self.search_text);
-                outside_commands = merge_similar_commands_with_context(outside_commands, &self.config, "");
-            }
-            
-            // Combine: inside + separator + outside
-            let mut result = inside_commands;
-            
-            if !result.is_empty() && !outside_commands.is_empty() {
-                // Add single separator between inside and outside
-                result.push(Command {
-                    group: String::new(),
-                    command: "---".to_string(),
-                    action: "separator".to_string(),
-                    arg: String::new(),
-                    flags: String::new(),
-                    full_line: String::new(),
-                });
-            }
-            
-            result.extend(outside_commands);
-            result
-            
-        } else {
-            // NORMAL MODE: Don't merge or create separators when not in submenu mode
-            // Just return the filtered commands sorted by our matching logic
-            // NO MERGING
-            filtered
-        };
-        
-        // Limit final results and store
-        let mut limited_commands = final_commands;
-        limited_commands.truncate(total_limit);
-        self.filtered_commands = limited_commands;
+        self.filtered_commands = get_display_commands(&self.commands, &self.search_text, &self.config, total_limit);
     }
     
     /// Update display layout based on current filtered commands

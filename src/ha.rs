@@ -313,6 +313,109 @@ impl AnchorSelector {
         }
     }
     
+    /// Show folder functionality - launches the first folder matching current search
+    fn show_folder(&mut self) {
+        use anchor_selector::{get_display_commands, launcher};
+        
+        let search_text = &self.popup_state.search_text;
+        
+        // If no search text, do nothing
+        if search_text.trim().is_empty() {
+            anchor_selector::utils::debug_log("SHOW_FOLDER", "No search text provided");
+            return;
+        }
+        
+        let commands = self.popup_state.get_commands();
+        let config = &self.popup_state.config;
+        
+        // Get display commands using the same logic as -f command
+        let display_commands = get_display_commands(commands, search_text, config, 100);
+        
+        if display_commands.is_empty() {
+            anchor_selector::utils::debug_log("SHOW_FOLDER", &format!("No commands found matching: {}", search_text));
+            return;
+        }
+        
+        // Helper function to extract folder path from a command (same as cmd.rs)
+        let extract_folder_path = |command: &anchor_selector::Command| -> Option<String> {
+            match command.action.as_str() {
+                "folder" => Some(command.arg.clone()),
+                "anchor" => {
+                    if let Some(last_slash) = command.arg.rfind('/') {
+                        Some(command.arg[..last_slash].to_string())
+                    } else {
+                        Some(command.arg.clone())
+                    }
+                },
+                "obs" => {
+                    let home = std::env::var("HOME").unwrap_or_else(|_| ".".to_string());
+                    let vault_path = format!("{}/ob/kmr", home);
+                    let full_path = format!("{}/{}", vault_path, command.arg);
+                    
+                    if let Some(last_slash) = full_path.rfind('/') {
+                        Some(full_path[..last_slash].to_string())
+                    } else {
+                        Some(full_path)
+                    }
+                },
+                _ => None,
+            }
+        };
+        
+        // Check for exact match first (same logic as cmd.rs)
+        if !display_commands.is_empty() && !anchor_selector::ui::PopupState::is_separator_command(&display_commands[0]) {
+            let first_cmd = &display_commands[0];
+            let query_lower = search_text.to_lowercase();
+            let query_folder_pattern = format!("{} folder", query_lower);
+            let cmd_lower = first_cmd.command.to_lowercase();
+            
+            if cmd_lower == query_lower || cmd_lower == query_folder_pattern {
+                // Found exact match, use that folder
+                if let Some(folder_path) = extract_folder_path(first_cmd) {
+                    anchor_selector::utils::debug_log("SHOW_FOLDER", &format!("Exact match found: {} -> {}", first_cmd.command, folder_path));
+                    
+                    // Launch with folder action
+                    match launcher::launch(&format!("folder {}", folder_path)) {
+                        Ok(()) => {
+                            anchor_selector::utils::debug_log("SHOW_FOLDER", "Folder launched successfully");
+                            std::process::exit(0);
+                        },
+                        Err(e) => {
+                            anchor_selector::utils::debug_log("SHOW_FOLDER", &format!("Failed to launch folder: {:?}", e));
+                        }
+                    }
+                    return;
+                }
+            }
+        }
+        
+        // No exact match, find first folder from all matching commands
+        for command in &display_commands {
+            // Skip separator commands
+            if anchor_selector::ui::PopupState::is_separator_command(command) {
+                continue;
+            }
+            
+            if let Some(folder_path) = extract_folder_path(command) {
+                anchor_selector::utils::debug_log("SHOW_FOLDER", &format!("First folder found: {} -> {}", command.command, folder_path));
+                
+                // Launch with folder action
+                match launcher::launch(&format!("folder {}", folder_path)) {
+                    Ok(()) => {
+                        anchor_selector::utils::debug_log("SHOW_FOLDER", "Folder launched successfully");
+                        std::process::exit(0);
+                    },
+                    Err(e) => {
+                        anchor_selector::utils::debug_log("SHOW_FOLDER", &format!("Failed to launch folder: {:?}", e));
+                    }
+                }
+                return;
+            }
+        }
+        
+        anchor_selector::utils::debug_log("SHOW_FOLDER", "No folders found in matching commands");
+    }
+    
     /// Give up focus to the previous application
     fn give_up_focus(&self) -> Result<(), Box<dyn std::error::Error>> {
         use std::process::Command;
@@ -600,23 +703,30 @@ impl eframe::App for AnchorSelector {
                 self.trigger_rescan();
             }
             
-            // Remove ALL arrow key and backtick key events completely so TextEdit never sees them
+            // Handle Backslash key (\) for show folder functionality
+            if input.key_pressed(egui::Key::Backslash) {
+                self.show_folder();
+            }
+            
+            // Remove ALL arrow key, backtick, and backslash key events completely so TextEdit never sees them
             input.events.retain(|event| {
                 !matches!(event, 
                     egui::Event::Key { key: egui::Key::ArrowUp, .. } |
                     egui::Event::Key { key: egui::Key::ArrowDown, .. } |
                     egui::Event::Key { key: egui::Key::ArrowLeft, .. } |
                     egui::Event::Key { key: egui::Key::ArrowRight, .. } |
-                    egui::Event::Key { key: egui::Key::Backtick, .. }
+                    egui::Event::Key { key: egui::Key::Backtick, .. } |
+                    egui::Event::Key { key: egui::Key::Backslash, .. }
                 )
             });
             
-            // Also clear the pressed state for all arrow keys and backtick key
+            // Also clear the pressed state for all arrow keys, backtick, and backslash key
             input.keys_down.remove(&egui::Key::ArrowUp);
             input.keys_down.remove(&egui::Key::ArrowDown);
             input.keys_down.remove(&egui::Key::ArrowLeft);
             input.keys_down.remove(&egui::Key::ArrowRight);
             input.keys_down.remove(&egui::Key::Backtick);
+            input.keys_down.remove(&egui::Key::Backslash);
         });
         
         egui::CentralPanel::default()
