@@ -45,6 +45,228 @@ pub struct AnchorSelector {
 
 impl AnchorSelector {
     // =============================================================================
+    // Centralized Key Handling
+    // =============================================================================
+    
+    /// Centralized key handling for the main popup interface
+    /// Returns true if any keys were processed
+    fn handle_popup_keys(&mut self, ctx: &egui::Context, editor_handled_escape: bool) -> bool {
+        let mut keys_processed = false;
+        
+        ctx.input_mut(|input| {
+            // Special handling for escape key - process it first and remove it completely
+            let mut escape_pressed = false;
+            input.events.retain(|event| {
+                if let egui::Event::Key { key: egui::Key::Escape, pressed: true, .. } = event {
+                    escape_pressed = true;
+                    false // Remove escape key event completely
+                } else {
+                    true
+                }
+            });
+            
+            // Handle escape key immediately if it was pressed
+            if escape_pressed {
+                if !self.command_editor.visible {
+                    std::process::exit(0);
+                }
+            }
+            
+            // Collect actions to perform to avoid borrowing conflicts
+            let mut actions_to_perform = Vec::new();
+            let mut consumed_keys = Vec::new();
+            
+            // Check each pressed key against configured keybindings
+            {
+                let config = &self.popup_state.config;
+                
+                for event in &input.events {
+                    if let egui::Event::Key { key, pressed, modifiers, .. } = event {
+                        if *pressed {
+                            let key_name = format!("{:?}", key);
+                            
+                            // Check what action (if any) is bound to this key
+                            if let Some(action) = config.get_action_for_key(&key_name) {
+                                // Skip escape key since we handle it specially above
+                                if key_name == "Escape" {
+                                    continue;
+                                }
+                                
+                                // Always consume the key if it's bound to any action
+                                consumed_keys.push(*key);
+                                keys_processed = true;
+                                
+                                match action {
+                                    "navigate_up" => actions_to_perform.push("navigate_up"),
+                                    "navigate_down" => actions_to_perform.push("navigate_down"),
+                                    "navigate_left" => actions_to_perform.push("navigate_left"),
+                                    "navigate_right" => actions_to_perform.push("navigate_right"),
+                                    "force_rescan" => actions_to_perform.push("force_rescan"),
+                                    "start_grabber" => {
+                                        // Check for shift modifier for Plus key
+                                        if key == &egui::Key::Equals && modifiers.shift {
+                                            actions_to_perform.push("start_grabber");
+                                        } else if key != &egui::Key::Equals {
+                                            actions_to_perform.push("start_grabber");
+                                        }
+                                    },
+                                    "show_folder" => {
+                                        // For Equals key, only trigger if shift is NOT pressed
+                                        if key == &egui::Key::Equals && !modifiers.shift {
+                                            anchor_selector::utils::debug_log("KEY", "Triggering show_folder from config");
+                                            actions_to_perform.push("show_folder");
+                                        } else if key != &egui::Key::Equals {
+                                            anchor_selector::utils::debug_log("KEY", "Triggering show_folder from config");
+                                            actions_to_perform.push("show_folder");
+                                        }
+                                    },
+                                    "exit_app" => actions_to_perform.push("exit_app"),
+                                    "execute_command" => actions_to_perform.push("execute_command"),
+                                    "open_editor" => actions_to_perform.push("open_editor"),
+                                    _ => {} // Unknown action - still consume the key
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            
+            // Remove all consumed key events AND their text equivalents
+            input.events.retain(|event| {
+                match event {
+                    egui::Event::Key { key, .. } => !consumed_keys.contains(key),
+                    egui::Event::Text(text) => {
+                        // Filter out text that corresponds to consumed keys
+                        let should_filter = if consumed_keys.contains(&egui::Key::Equals) && text == "=" {
+                            true
+                        } else if consumed_keys.contains(&egui::Key::Backslash) && text == "\\" {
+                            true
+                        } else if consumed_keys.contains(&egui::Key::Backtick) && text == "`" {
+                            true
+                        } else if consumed_keys.contains(&egui::Key::Plus) && text == "+" {
+                            true
+                        } else if consumed_keys.contains(&egui::Key::ArrowUp) {
+                            // Arrow keys shouldn't generate text but filter just in case
+                            false
+                        } else if consumed_keys.contains(&egui::Key::ArrowDown) {
+                            false
+                        } else if consumed_keys.contains(&egui::Key::ArrowLeft) {
+                            false
+                        } else if consumed_keys.contains(&egui::Key::ArrowRight) {
+                            false
+                        } else if consumed_keys.contains(&egui::Key::Escape) {
+                            // Escape shouldn't generate text but filter just in case
+                            false
+                        } else if consumed_keys.contains(&egui::Key::Enter) {
+                            // Enter shouldn't generate text but filter just in case
+                            false
+                        } else if consumed_keys.contains(&egui::Key::Escape) && text.chars().any(|c| c == '\u{001b}') {
+                            // Filter escape character
+                            true
+                        } else {
+                            false
+                        };
+                        !should_filter
+                    },
+                    _ => true
+                }
+            });
+            
+            // Clear the pressed state for all consumed keys
+            for key in consumed_keys {
+                input.keys_down.remove(&key);
+            }
+            
+            
+            // Execute all actions
+            for action in actions_to_perform {
+                self.execute_key_action(action, editor_handled_escape);
+            }
+        });
+        
+        keys_processed
+    }
+    
+    /// Execute a specific key action
+    fn execute_key_action(&mut self, action: &str, _editor_handled_escape: bool) {
+        match action {
+            "navigate_up" => self.navigate_vertical(-1),
+            "navigate_down" => self.navigate_vertical(1),
+            "navigate_left" => self.navigate_horizontal(-1),
+            "navigate_right" => self.navigate_horizontal(1),
+            "force_rescan" => self.trigger_rescan(),
+            "start_grabber" => self.start_grabber_countdown(),
+            "show_folder" => self.show_folder(),
+            "exit_app" => {
+                // Only exit if the command editor is not currently visible
+                if !self.command_editor.visible {
+                    std::process::exit(0);
+                }
+            },
+            "execute_command" => self.execute_selected_command(),
+            "open_editor" => self.open_command_editor(),
+            _ => {}
+        }
+    }
+    
+    /// Execute the currently selected command
+    fn execute_selected_command(&mut self) {
+        if !self.filtered_commands().is_empty() {
+            let (display_commands, _is_submenu, _menu_prefix, _inside_count) = self.get_display_commands();
+            
+            if self.selected_index() < display_commands.len() {
+                let selected_cmd = &display_commands[self.selected_index()];
+                
+                // Don't execute if it's a separator
+                if !PopupState::is_separator_command(selected_cmd) {
+                    if selected_cmd.command.ends_with("...") {
+                        // Execute merged command directly
+                        let launcher_command = if selected_cmd.arg.is_empty() {
+                            selected_cmd.action.clone()
+                        } else {
+                            format!("{} {}", selected_cmd.action, selected_cmd.arg)
+                        };
+                        
+                        let config = load_config();
+                        if config.popup_settings.use_new_launcher {
+                            use anchor_selector::launcher::launch;
+                            if let Err(e) = launch(&launcher_command) {
+                                eprintln!("Error executing command with new launcher: {:?}", e);
+                                std::process::exit(1);
+                            }
+                        } else {
+                            use std::fs;
+                            let content = format!("execute {}\n", launcher_command);
+                            if let Err(e) = fs::write("/tmp/cmd_file", content) {
+                                eprintln!("Error writing to /tmp/cmd_file: {}", e);
+                                std::process::exit(1);
+                            }
+                        }
+                    } else {
+                        execute_command(&selected_cmd);
+                    }
+                    std::process::exit(0);
+                }
+            }
+        }
+    }
+    
+    /// Open the command editor
+    fn open_command_editor(&mut self) {
+        let commands = self.commands().clone();
+        let search_text = self.popup_state.search_text.clone();
+        let exact_match = commands.iter().find(|cmd| 
+            cmd.command.to_lowercase() == search_text.to_lowercase()
+        );
+        
+        if let Some(matching_command) = exact_match {
+            self.command_editor.edit_command(Some(matching_command), &self.popup_state.search_text);
+        } else {
+            self.command_editor.edit_command(None, &self.popup_state.search_text);
+        }
+    }
+    
+    // =============================================================================
     // Initialization
     // =============================================================================
     
@@ -391,7 +613,7 @@ impl AnchorSelector {
     fn give_up_focus(&self) -> Result<(), Box<dyn std::error::Error>> {
         use std::process::Command;
         
-        anchor_selector::utils::debug_log("FOCUS", "Giving up focus to previous application");
+        // anchor_selector::utils::debug_log("FOCUS", "Giving up focus to previous application");
         
         // Use Cmd+Tab to switch to previous application
         Command::new("osascript")
@@ -406,7 +628,7 @@ impl AnchorSelector {
     fn regain_focus(&self) -> Result<(), Box<dyn std::error::Error>> {
         use std::process::Command;
         
-        anchor_selector::utils::debug_log("FOCUS", "Regaining focus to anchor selector");
+        // anchor_selector::utils::debug_log("FOCUS", "Regaining focus to anchor selector");
         
         // Activate the popup application
         Command::new("osascript")
@@ -490,19 +712,15 @@ impl eframe::App for AnchorSelector {
         // Increment frame counter for focus debugging
         self.frame_count += 1;
         
-        // Debug: Test if this function is being called
-        if self.frame_count % 60 == 1 { // Log once per second approximately
-            anchor_selector::utils::debug_log("UPDATE", &format!("Update function called, frame {}", self.frame_count));
-        }
         
         // Check for window focus state changes and log for debugging
-        if self.frame_count <= 20 {
-            let has_focus = ctx.input(|i| i.focused);
-            if self.frame_count % 5 == 0 { // Log every 5th frame for first 20 frames
-                anchor_selector::utils::debug_log("FOCUS", &format!("Frame {}: Window focused={}, input focus_set={}", 
-                    self.frame_count, has_focus, self.focus_set));
-            }
-        }
+        // if self.frame_count <= 20 {
+        //     let has_focus = ctx.input(|i| i.focused);
+        //     if self.frame_count % 5 == 0 { // Log every 5th frame for first 20 frames
+        //         anchor_selector::utils::debug_log("FOCUS", &format!("Frame {}: Window focused={}, input focus_set={}", 
+        //             self.frame_count, has_focus, self.focus_set));
+        //     }
+        // }
         
         
         // Set position on first frame after window is created
@@ -652,219 +870,6 @@ impl eframe::App for AnchorSelector {
             }
         }
         
-        // FIRST: Handle navigation keys and filter them out to prevent TextEdit from seeing them
-        // This must happen before any widgets are created
-        ctx.input_mut(|input| {
-            // Debug log all key presses
-            anchor_selector::utils::debug_log("KEY_DEBUG", &format!("Processing {} input events", input.events.len()));
-            for (i, event) in input.events.iter().enumerate() {
-                match event {
-                    egui::Event::Key { key, pressed, modifiers, .. } => {
-                        anchor_selector::utils::debug_log("KEY_DEBUG", &format!("Event {}: Key {:?}, pressed: {}, modifiers: {:?}", i, key, pressed, modifiers));
-                    },
-                    egui::Event::Text(text) => {
-                        anchor_selector::utils::debug_log("KEY_DEBUG", &format!("Event {}: Text input: '{}'", i, text));
-                    },
-                    _ => {
-                        anchor_selector::utils::debug_log("KEY_DEBUG", &format!("Event {}: Other event type", i));
-                    }
-                }
-            }
-            
-            // Collect actions to perform to avoid borrowing conflicts
-            let mut actions_to_perform = Vec::new();
-            let mut consumed_keys = Vec::new();
-            
-            // Check each pressed key against configured keybindings
-            // IMPORTANT: We only process keys that are explicitly bound in config
-            {
-                let config = &self.popup_state.config;
-                
-                // Debug log the current keybindings config
-                if let Some(ref keybindings) = config.keybindings {
-                    anchor_selector::utils::debug_log("CONFIG_DEBUG", &format!("Keybindings config has {} entries", keybindings.len()));
-                    for (action, key) in keybindings {
-                        anchor_selector::utils::debug_log("CONFIG_DEBUG", &format!("  {} -> {}", action, key));
-                    }
-                } else {
-                    anchor_selector::utils::debug_log("CONFIG_DEBUG", "No keybindings config found!");
-                }
-                
-                for event in &input.events {
-                    if let egui::Event::Key { key, pressed, modifiers, .. } = event {
-                        if *pressed {
-                            let key_name = format!("{:?}", key);
-                            
-                            // Check what action (if any) is bound to this key
-                            if let Some(action) = config.get_action_for_key(&key_name) {
-                                anchor_selector::utils::debug_log("KEY", &format!("Found action '{}' for key '{}'", action, key_name));
-                                
-                                // Always consume the key if it's bound to any action
-                                consumed_keys.push(*key);
-                                
-                                match action {
-                                    "navigate_up" => {
-                                        actions_to_perform.push("navigate_up");
-                                    },
-                                    "navigate_down" => {
-                                        actions_to_perform.push("navigate_down");
-                                    },
-                                    "navigate_left" => {
-                                        actions_to_perform.push("navigate_left");
-                                    },
-                                    "navigate_right" => {
-                                        actions_to_perform.push("navigate_right");
-                                    },
-                                    "force_rescan" => {
-                                        actions_to_perform.push("force_rescan");
-                                    },
-                                    "start_grabber" => {
-                                        // Check for shift modifier for Plus key
-                                        if key == &egui::Key::Equals && modifiers.shift {
-                                            actions_to_perform.push("start_grabber");
-                                        } else if key != &egui::Key::Equals {
-                                            // For non-Equals keys, no modifier check needed
-                                            actions_to_perform.push("start_grabber");
-                                        }
-                                        // If Equals without shift, we still consume the key but don't perform action
-                                    },
-                                    "show_folder" => {
-                                        // For Equals key, only trigger if shift is NOT pressed
-                                        if key == &egui::Key::Equals && !modifiers.shift {
-                                            anchor_selector::utils::debug_log("KEY", "Triggering show_folder from config");
-                                            actions_to_perform.push("show_folder");
-                                        } else if key != &egui::Key::Equals {
-                                            // For non-Equals keys, no modifier check needed
-                                            anchor_selector::utils::debug_log("KEY", "Triggering show_folder from config");
-                                            actions_to_perform.push("show_folder");
-                                        }
-                                        // If Equals with shift, we still consume the key but don't perform action
-                                    },
-                                    "exit_app" => {
-                                        actions_to_perform.push("exit_app");
-                                    },
-                                    "execute_command" => {
-                                        actions_to_perform.push("execute_command");
-                                    },
-                                    "open_editor" => {
-                                        actions_to_perform.push("open_editor");
-                                    },
-                                    _ => {
-                                        // Unknown action - still consume the key
-                                    }
-                                }
-                            } else {
-                                // Key is NOT bound in config - log this for debugging
-                                anchor_selector::utils::debug_log("KEY", &format!("Key '{}' is not bound to any action - ignoring", key_name));
-                            }
-                        }
-                    }
-                }
-            }
-            
-            // Now perform the actions without holding the config reference
-            for action in actions_to_perform {
-                match action {
-                    "navigate_up" => self.navigate_vertical(-1),
-                    "navigate_down" => self.navigate_vertical(1),
-                    "navigate_left" => self.navigate_horizontal(-1),
-                    "navigate_right" => self.navigate_horizontal(1),
-                    "force_rescan" => self.trigger_rescan(),
-                    "start_grabber" => self.start_grabber_countdown(),
-                    "show_folder" => self.show_folder(),
-                    "exit_app" => {
-                        anchor_selector::utils::debug_log("KEY", "Exit app triggered from config");
-                        std::process::exit(0);
-                    },
-                    "execute_command" => {
-                        anchor_selector::utils::debug_log("KEY", "Execute command triggered from config");
-                        if !self.filtered_commands().is_empty() {
-                            // Get display commands for execution
-                            let (display_commands, _is_submenu, _menu_prefix, _inside_count) = self.get_display_commands();
-                            
-                            if self.selected_index() < display_commands.len() {
-                                let selected_cmd = &display_commands[self.selected_index()];
-                                
-                                // Don't execute if it's a separator
-                                if !PopupState::is_separator_command(selected_cmd) {
-                                    // For merged commands (ending with "..."), use the action and arg directly
-                                    if selected_cmd.command.ends_with("...") {
-                                        // Execute using the stored action and arg from the merged command
-                                        let launcher_command = if selected_cmd.arg.is_empty() {
-                                            selected_cmd.action.clone()
-                                        } else {
-                                            format!("{} {}", selected_cmd.action, selected_cmd.arg)
-                                        };
-                                        
-                                        // Use the same execution logic as execute_command
-                                        let config = load_config();
-                                        if config.popup_settings.use_new_launcher {
-                                            use anchor_selector::launcher::launch;
-                                            if let Err(e) = launch(&launcher_command) {
-                                                eprintln!("Error executing command with new launcher: {:?}", e);
-                                                std::process::exit(1);
-                                            }
-                                        } else {
-                                            // Use old temp file method for backward compatibility
-                                            use std::fs;
-                                            let content = format!("execute {}\n", launcher_command);
-                                            if let Err(e) = fs::write("/tmp/cmd_file", content) {
-                                                eprintln!("Error writing to /tmp/cmd_file: {}", e);
-                                                std::process::exit(1);
-                                            }
-                                        }
-                                    } else {
-                                        // For non-merged commands, use the existing lookup method
-                                        execute_command(&selected_cmd);
-                                    }
-                                    std::process::exit(0);
-                                }
-                            }
-                        }
-                    },
-                    "open_editor" => {
-                        anchor_selector::utils::debug_log("KEY", "Open editor triggered from config");
-                        // Check if there's an exact match (case-insensitive) for the search text
-                        let commands = self.commands().clone();
-                        let search_text = self.popup_state.search_text.clone();
-                        let exact_match = commands.iter().find(|cmd| 
-                            cmd.command.to_lowercase() == search_text.to_lowercase()
-                        );
-                        
-                        if let Some(matching_command) = exact_match {
-                            // Found exact match - edit the existing command
-                            self.command_editor.edit_command(Some(matching_command), &self.popup_state.search_text);
-                        } else {
-                            // No exact match - create new command with search text as name
-                            self.command_editor.edit_command(None, &self.popup_state.search_text);
-                        }
-                    },
-                    _ => {}
-                }
-            }
-            
-            // Remove all consumed key events AND their text equivalents so TextEdit never sees them
-            input.events.retain(|event| {
-                match event {
-                    egui::Event::Key { key, .. } => !consumed_keys.contains(key),
-                    egui::Event::Text(text) => {
-                        // Filter out text that corresponds to consumed keys
-                        if consumed_keys.contains(&egui::Key::Equals) && text == "=" {
-                            false
-                        } else {
-                            true
-                        }
-                    },
-                    _ => true
-                }
-            });
-            
-            // Also clear the pressed state for all consumed keys
-            for key in consumed_keys {
-                input.keys_down.remove(&key);
-            }
-        });
-        
         egui::CentralPanel::default()
             .frame(
                 egui::Frame::default()
@@ -874,6 +879,9 @@ impl eframe::App for AnchorSelector {
             )
             .show(ctx, |ui| {
             ui.vertical(|ui| {
+                // Handle all popup-level keyboard input in centralized location
+                let _keys_processed = self.handle_popup_keys(ctx, editor_handled_escape);
+                
                 // Top draggable area (minimal padding to match input box side borders)
                 let top_drag = ui.allocate_response(
                     egui::Vec2::new(ui.available_width(), 0.0),
@@ -882,86 +890,6 @@ impl eframe::App for AnchorSelector {
                 if top_drag.dragged() {
                     ctx.send_viewport_cmd(egui::ViewportCommand::StartDrag);
                 }
-                
-                // Handle keyboard input - process some keys first
-                ctx.input(|i| {
-                    // Check exit_app keybinding
-                    let config = &self.popup_state.config;
-                    if let Some(exit_key) = config.keybindings.as_ref().and_then(|kb| kb.get("exit_app")) {
-                        if i.key_pressed(egui::Key::from_name(exit_key).unwrap_or(egui::Key::Escape)) {
-                            if !editor_handled_escape {
-                                std::process::exit(0);
-                            }
-                        }
-                    }
-                    
-                    // Check execute_command keybinding
-                    if let Some(execute_key) = config.keybindings.as_ref().and_then(|kb| kb.get("execute_command")) {
-                        if i.key_pressed(egui::Key::from_name(execute_key).unwrap_or(egui::Key::Enter)) {
-                            if !self.filtered_commands().is_empty() {
-                            // Get display commands for execution
-                            let (display_commands, _is_submenu, _menu_prefix, _inside_count) = self.get_display_commands();
-                            
-                            if self.selected_index() < display_commands.len() {
-                                let selected_cmd = &display_commands[self.selected_index()];
-                                
-                                // Don't execute if it's a separator
-                                if !PopupState::is_separator_command(selected_cmd) {
-                                    // For merged commands (ending with "..."), use the action and arg directly
-                                    // instead of looking up by command name
-                                    if selected_cmd.command.ends_with("...") {
-                                        // Execute using the stored action and arg from the merged command
-                                        let launcher_command = if selected_cmd.arg.is_empty() {
-                                            selected_cmd.action.clone()
-                                        } else {
-                                            format!("{} {}", selected_cmd.action, selected_cmd.arg)
-                                        };
-                                        
-                                        // Use the same execution logic as execute_command
-                                        let config = load_config();
-                                        if config.popup_settings.use_new_launcher {
-                                            use anchor_selector::launcher::launch;
-                                            if let Err(e) = launch(&launcher_command) {
-                                                eprintln!("Error executing command with new launcher: {:?}", e);
-                                                std::process::exit(1);
-                                            }
-                                        } else {
-                                            // Use old temp file method for backward compatibility
-                                            use std::fs;
-                                            let content = format!("execute {}\n", launcher_command);
-                                            if let Err(e) = fs::write("/tmp/cmd_file", content) {
-                                                eprintln!("Error writing to /tmp/cmd_file: {}", e);
-                                                std::process::exit(1);
-                                            }
-                                        }
-                                    } else {
-                                        // For non-merged commands, use the existing lookup method
-                                        execute_command(&selected_cmd);
-                                    }
-                                    std::process::exit(0);
-                                }
-                            }
-                            }
-                        }
-                    }
-                    if false {  // DISABLED: Equals key now used for show_folder
-                        // Command Editor: = or + key (shift+=): open command editor
-                        // Check if there's an exact match (case-insensitive) for the search text
-                        let commands = self.commands().clone();
-                        let search_text = self.popup_state.search_text.clone();
-                        let exact_match = commands.iter().find(|cmd| 
-                            cmd.command.to_lowercase() == search_text.to_lowercase()
-                        );
-                        
-                        if let Some(matching_command) = exact_match {
-                            // Found exact match - edit the existing command
-                            self.command_editor.edit_command(Some(matching_command), &self.popup_state.search_text);
-                        } else {
-                            // No exact match - create new command with search text as name
-                            self.command_editor.edit_command(None, &self.popup_state.search_text);
-                        }
-                    }
-                });
                 
                 // Search input with larger, bold font (50% bigger than heading)
                 let mut font_id = ui.style().text_styles.get(&egui::TextStyle::Heading).unwrap().clone();
@@ -1051,16 +979,16 @@ impl eframe::App for AnchorSelector {
                     response.request_focus();
                     if response.gained_focus() {
                         self.focus_set = true;
-                        anchor_selector::utils::debug_log("FOCUS", &format!("Input focus gained on frame {}", self.frame_count));
+                        // anchor_selector::utils::debug_log("FOCUS", &format!("Input focus gained on frame {}", self.frame_count));
                     } else if self.frame_count <= 20 {
-                        anchor_selector::utils::debug_log("FOCUS", &format!("Focus request on frame {} - not gained yet (has_focus: {})", 
-                            self.frame_count, response.has_focus()));
+                        // anchor_selector::utils::debug_log("FOCUS", &format!("Focus request on frame {} - not gained yet (has_focus: {})", 
+                        //     self.frame_count, response.has_focus()));
                     }
                 }
                 
                 // Additional failsafe: Force focus with memory if input field is still not focused after reasonable time
                 if self.frame_count == 30 && !self.focus_set {
-                    anchor_selector::utils::debug_log("FOCUS", "Failsafe: Forcing focus with memory");
+                    // anchor_selector::utils::debug_log("FOCUS", "Failsafe: Forcing focus with memory");
                     ctx.memory_mut(|mem| mem.request_focus(response.id));
                     response.request_focus();
                 }
