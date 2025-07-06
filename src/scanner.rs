@@ -150,6 +150,21 @@ fn scan_directory_with_root(dir: &Path, vault_root: &Path, commands: &mut Vec<Co
         for entry in entries.filter_map(Result::ok) {
             let path = entry.path();
             
+            // Skip hidden files and directories (those starting with .)
+            if let Some(file_name) = path.file_name() {
+                if let Some(name_str) = file_name.to_str() {
+                    if name_str.starts_with('.') {
+                        continue;
+                    }
+                    
+                    // Also skip certain system directories
+                    let skip_folders = ["node_modules", "target", "__pycache__", ".git", ".svn"];
+                    if path.is_dir() && skip_folders.contains(&name_str) {
+                        continue;
+                    }
+                }
+            }
+            
             // Process directories first
             if path.is_dir() {
                 // Create a folder command for this directory
