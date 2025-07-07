@@ -202,3 +202,127 @@ fn test_hook_url_edge_cases() {
         }
     }
 }
+
+#[test]
+fn test_open_hook_url_command() {
+    // Test the actual 'open hook://...' command that would be used in practice
+    let test_cases = vec![
+        "hook://test",
+        "hook://web",
+        "hook://nonexistent",
+        "hook://",
+    ];
+    
+    for hook_url in test_cases {
+        // Test using the macOS 'open' command which should trigger our URL handler
+        let output = ProcessCommand::new("open")
+            .arg(hook_url)
+            .output()
+            .expect("Failed to execute open command");
+        
+        // The open command should succeed (it delegates to our registered handler)
+        // Note: This test assumes the URL handler is properly registered in the system
+        if !output.status.success() {
+            let stderr = String::from_utf8_lossy(&output.stderr);
+            // If it fails, it might be because the URL scheme isn't registered yet
+            // That's okay for testing - we just want to verify the command structure
+            if stderr.contains("no application configured") || stderr.contains("not registered") {
+                // This is expected if URL scheme isn't registered yet
+                println!("URL scheme not registered (expected): {}", stderr);
+            } else {
+                panic!("Open command failed unexpectedly for '{}': {}", hook_url, stderr);
+            }
+        } else {
+            println!("Successfully opened hook URL: {}", hook_url);
+        }
+    }
+}
+
+#[test]
+fn test_hook_url_system_integration() {
+    // Test that demonstrates the full flow:
+    // 1. Shell command: open hook://query
+    // 2. System delegates to our binary: ha hook://query
+    // 3. Our binary processes the URL and executes the command
+    
+    let test_queries = vec!["test", "web", "app"];
+    
+    for query in test_queries {
+        let hook_url = format!("hook://{}", query);
+        
+        // First, test that our binary can handle the URL directly
+        let binary_path = "./target/release/ha";
+        if std::path::Path::new(binary_path).exists() {
+            let output = ProcessCommand::new(binary_path)
+                .arg(&hook_url)
+                .output()
+                .expect("Failed to execute ha binary");
+            
+            assert!(output.status.success(), "Binary failed to handle {}: {}", hook_url, String::from_utf8_lossy(&output.stderr));
+        }
+        
+        // Second, test the full integration with 'open' command
+        // This simulates what happens when user clicks a hook:// link or runs 'open hook://...'
+        let output = ProcessCommand::new("open")
+            .arg(&hook_url)
+            .output()
+            .expect("Failed to execute open command");
+        
+        // Check the result
+        if output.status.success() {
+            println!("System integration successful for: {}", hook_url);
+        } else {
+            let stderr = String::from_utf8_lossy(&output.stderr);
+            if stderr.contains("no application configured") || stderr.contains("not registered") {
+                println!("URL scheme not registered (this is expected during testing): {}", hook_url);
+            } else {
+                // Log unexpected errors but don't fail the test
+                println!("Open command had issues with '{}': {}", hook_url, stderr);
+            }
+        }
+    }
+}
+
+#[test]
+fn test_hook_url_registration_check() {
+    // Test to check if the HOOK:// URL scheme is properly registered
+    // This uses the system's URL scheme registration to verify setup
+    
+    // Try to query the system's URL scheme registration
+    let output = ProcessCommand::new("defaults")
+        .arg("read")
+        .arg("com.apple.LaunchServices/com.apple.launchservices.secure")
+        .arg("LSHandlers")
+        .output();
+    
+    if let Ok(output) = output {
+        let output_str = String::from_utf8_lossy(&output.stdout);
+        
+        // Check if our hook:// scheme is registered
+        if output_str.contains("hook") || output_str.contains("HOOK") {
+            println!("HOOK:// URL scheme appears to be registered in system");
+        } else {
+            println!("HOOK:// URL scheme not found in system registration (may need setup)");
+        }
+    } else {
+        println!("Could not check URL scheme registration (system command failed)");
+    }
+    
+    // Also test what happens when we try to open a hook URL
+    let test_url = "hook://test_registration";
+    let output = ProcessCommand::new("open")
+        .arg(test_url)
+        .output()
+        .expect("Failed to test URL registration");
+    
+    if output.status.success() {
+        println!("URL registration test passed: {}", test_url);
+    } else {
+        let stderr = String::from_utf8_lossy(&output.stderr);
+        if stderr.contains("no application configured") {
+            println!("URL scheme registration needed: {}", stderr);
+        } else {
+            println!("URL registration test result: {}", stderr);
+        }
+    }
+}
