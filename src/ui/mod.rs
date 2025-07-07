@@ -14,3 +14,6 @@ pub use popup_state::PopupState;
 pub use popup::run_gui_with_prompt;
 pub use command_editor::{CommandEditor, CommandEditorResult};
 pub use dialog::Dialog;
+
+// Re-export ApplicationState from library root
+pub use crate::ApplicationState;

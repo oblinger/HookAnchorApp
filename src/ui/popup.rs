@@ -1356,8 +1356,8 @@ impl eframe::App for AnchorSelector {
     }
 }
 
-/// Run the popup GUI with an optional initial prompt
-pub fn run_gui_with_prompt(initial_prompt: &str) -> Result<(), eframe::Error> {
+/// Run the popup GUI with an optional initial prompt and application state
+pub fn run_gui_with_prompt(initial_prompt: &str, _app_state: super::ApplicationState) -> Result<(), eframe::Error> {
     // Capture the prompt for the closure
     let prompt = initial_prompt.to_string();
     
