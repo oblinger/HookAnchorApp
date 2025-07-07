@@ -9,9 +9,7 @@ build = "build.rs"
 name = "ha"
 path = "src/ha.rs"
 
-[[bin]]
-name = "test_cc_debug"
-path = "test_cc_debug.rs"
+
 
 
 
@@ -48,6 +46,7 @@ serde_yaml = "0.9"
 rquickjs = "0.9"
 chrono = "0.4"
 urlencoding = "2.1"
+dirs = "5.0"
 
 [build-dependencies]
 chrono = "0.4"

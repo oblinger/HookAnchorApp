@@ -105,7 +105,7 @@ fn load_config() -> Result<LauncherConfig, LauncherError> {
     // Load the main config file
     let config_path = {
         let home = std::env::var("HOME").unwrap_or_else(|_| ".".to_string());
-        std::path::PathBuf::from(home).join(".config/anchor_selector/config.yaml")
+        std::path::PathBuf::from(home).join(".config/hookanchor/config.yaml")
     };
     
     // Read and parse the YAML config file

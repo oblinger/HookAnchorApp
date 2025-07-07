@@ -44,14 +44,19 @@ impl ApplicationState {
         
         let app_state = load_state();
         
-        Self {
+        let application_state = Self {
             commands,
             search_text: String::new(),
             filtered_commands: Vec::new(),
             config,
             app_state,
             config_error,
-        }
+        };
+        
+        // Note: Application now uses resources from within the project directory
+        // No external data directory initialization needed
+        
+        application_state
     }
     
     /// Create new application state with initial search text
@@ -152,6 +157,9 @@ impl ApplicationState {
     pub fn get_window_position(&self) -> Option<(f32, f32)> {
         self.app_state.window_position
     }
+    
+    // Note: All application data directory functionality has been removed
+    // Resources are now kept within the project directory at resources/common/
     
     /// Recompute filtered commands based on current search
     fn recompute_filtered_commands(&mut self) {

@@ -36,7 +36,7 @@ impl Default for AppState {
 /// Returns the path to the state.json file
 pub fn get_state_file_path() -> PathBuf {
     let home = env::var("HOME").unwrap_or_else(|_| ".".to_string());
-    Path::new(&home).join(".config/anchor_selector/state.json")
+    Path::new(&home).join(".config/hookanchor/state.json")
 }
 
 /// Loads application state from state.json file, returns default if file doesn't exist or is invalid

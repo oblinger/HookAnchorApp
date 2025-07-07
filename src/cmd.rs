@@ -24,8 +24,8 @@ pub fn run_command_line_mode(args: Vec<String>) {
         "-r" | "--run_fn" => run_exec_command(&args),
         "-x" | "--execute" => run_execute_top_match(&args),
         "-a" | "--action" => run_test_action(&args),
-        "-f" | "--folder" => run_folder_command(&args),
-        "-F" | "--folder-with-commands" => run_folder_with_commands(&args),
+        "-f" | "--folders" => run_folder_command(&args),
+        "-F" | "--named-folders" => run_folder_with_commands(&args),
         _ => {
             eprintln!("Unknown command: {}", args[1]);
             eprintln!("Use -h or --help for usage information");
@@ -35,26 +35,26 @@ pub fn run_command_line_mode(args: Vec<String>) {
 }
 
 pub fn print_help(program_name: &str) {
-    eprintln!("Anchor Selector - Universal Command Launcher");
+    eprintln!("HookAnchor - Universal Command Launcher");
     eprintln!();
     eprintln!("Usage:");
-    eprintln!("  {}                                - Run GUI mode (interactive popup)", program_name);
-    eprintln!("  {} -h, --help                     - Show this help message", program_name);
-    eprintln!("  {} -m, --match <query> [debug]    - Search and list matching commands", program_name);
-    eprintln!("  {} -r, --run_fn <command>         - Execute a specific command function", program_name);
-    eprintln!("  {} -x, --execute <query>          - Execute top matching command for query", program_name);
-    eprintln!("  {} -f, --folder <query>          - Get unique folder paths for matching commands", program_name);
-    eprintln!("  {} -F, --folder-with-commands <query> - Get commands with folder paths (cmd -> path format)", program_name);
-    eprintln!("  {} -a, --action <action> <arg>    - Test action directly with argument", program_name);
-    eprintln!("  {} hook://query                   - Handle hook:// URL (execute top match)", program_name);
+    eprintln!("  {}                        - Run GUI mode", program_name);
+    eprintln!("  {} -h, --help            - Show help", program_name);
+    eprintln!("  {} -m, --match <query>   - Search CMDS", program_name);
+    eprintln!("  {} -r, --run_fn <cmd>    - Execute specific CMD", program_name);
+    eprintln!("  {} -x, --execute <query> - Execute top match", program_name);
+    eprintln!("  {} -f, --folders <query> - Get folder paths", program_name);
+    eprintln!("  {} -F, --named-folders <query> - Get CMDS->paths", program_name);
+    eprintln!("  {} -a, --action <act> <arg> - Test action", program_name);
+    eprintln!("  {} hook://query          - Handle hook URL", program_name);
     eprintln!();
     eprintln!("Examples:");
-    eprintln!("  {}                                # Launch interactive GUI", program_name);
-    eprintln!("  {} -m spot                        # Find commands matching 'spot'", program_name);
-    eprintln!("  {} -x spot                        # Execute the top match for 'spot'", program_name);
-    eprintln!("  {} -f spot                        # Get unique folder paths for 'spot'", program_name);
-    eprintln!("  {} -F spo                        # Get commands matching 'spo' with paths", program_name);
-    eprintln!("  {} -r \"Spot\"                      # Execute the exact command 'Spot'", program_name);
+    eprintln!("  {}           # Launch GUI", program_name);
+    eprintln!("  {} -m spot   # Find 'spot' CMDS", program_name);
+    eprintln!("  {} -x spot   # Execute top 'spot'", program_name);
+    eprintln!("  {} -f spot   # Get 'spot' folders", program_name);
+    eprintln!("  {} -F spo    # Get 'spo' CMDS->paths", program_name);
+    eprintln!("  {} -r Spot   # Execute 'Spot' CMD", program_name);
 }
 
 
@@ -183,7 +183,7 @@ fn run_test_action(args: &[String]) {
 
 fn run_folder_command(args: &[String]) {
     if args.len() < 3 {
-        eprintln!("Usage: {} -f, --folder <query>", args[0]);
+        eprintln!("Usage: {} -f, --folders <query>", args[0]);
         std::process::exit(1);
     }
     
@@ -278,7 +278,7 @@ fn run_folder_command(args: &[String]) {
 
 fn run_folder_with_commands(args: &[String]) {
     if args.len() < 3 {
-        eprintln!("Usage: {} -F, --folder-with-commands <query>", args[0]);
+        eprintln!("Usage: {} -F, --named-folders <query>", args[0]);
         std::process::exit(1);
     }
     

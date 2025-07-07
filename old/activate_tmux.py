@@ -38,11 +38,18 @@ def get_tmux_sessions() -> list[str]:
 def attach_to_tmux_session(session_name: str) -> None:
     """Attach to tmux session, trying switch-client first, then attach-session."""
     try:
-        # Try switch-client first (works when already inside a tmux session)
-        switch_result = subprocess.run(['/opt/homebrew/bin/tmux', 'switch-client', '-t', session_name], 
-                                     capture_output=True)
-        if switch_result.returncode != 0:
-            # Fall back to attach-session (works when not inside tmux)
+        # Check if we're inside tmux by looking for TMUX environment variable
+        if os.environ.get('TMUX'):
+            print(f"Inside tmux, switching to session '{session_name}'...")
+            # We're inside tmux - use switch-client
+            switch_result = subprocess.run(['/opt/homebrew/bin/tmux', 'switch-client', '-t', session_name])
+            if switch_result.returncode == 0:
+                print(f"Successfully switched to session '{session_name}'")
+            else:
+                print(f"Failed to switch to session '{session_name}'")
+        else:
+            print(f"Outside tmux, attaching to session '{session_name}'...")
+            # We're outside tmux - use attach-session
             subprocess.run(['/opt/homebrew/bin/tmux', 'attach-session', '-t', session_name])
     except FileNotFoundError:
         print("Error: tmux not found at /opt/homebrew/bin/tmux")
@@ -108,7 +115,14 @@ def main() -> None:
     """Main function to activate tmux for the specified or current directory."""
     # Determine target directory
     if len(sys.argv) > 1:
-        target_path = Path(sys.argv[1]).resolve()
+        arg_path = Path(sys.argv[1]).resolve()
+        
+        # If the argument is a file, use its parent directory
+        if arg_path.is_file():
+            target_path = arg_path.parent
+            print(f"File provided, using parent directory: {target_path}")
+        else:
+            target_path = arg_path
     else:
         target_path = Path.cwd()
     
@@ -126,14 +140,14 @@ def main() -> None:
     os.chdir(str(target_path))
     print(f"Changed to directory: {target_path}")
     
-    # Try to activate tmux
+    # Try to activate tmux (this is the only function of this script now)
     success = activate_tmux(target_path)
     
     if success:
         print("✓ Tmux session activated successfully!")
     else:
         print("✗ No tmux session was activated")
-        sys.exit(1)
+        # Don't exit with error - let JavaScript handle fallbacks
 
 
 if __name__ == "__main__":

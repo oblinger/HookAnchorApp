@@ -92,9 +92,11 @@ pub fn scan_files(mut commands: Vec<Command>, markdown_roots: &[String]) -> Vec<
     debug_log("SCANNER", &format!("Starting scan_files with {} initial commands", commands.len()));
     debug_log("SCANNER", &format!("Markdown roots to scan: {:?}", markdown_roots));
     
-    // Create a set of existing command names for collision detection
+    // Create a set of existing command names for collision detection (lowercase for case-insensitive comparison)
+    // Only include non-scan-generated commands to avoid false collisions
     let mut existing_commands: HashSet<String> = commands.iter()
-        .map(|cmd| cmd.command.clone())
+        .filter(|cmd| cmd.action != "obs" && cmd.action != "anchor" && cmd.action != "folder")
+        .map(|cmd| cmd.command.to_lowercase())
         .collect();
     
     // Count commands before removal
@@ -103,14 +105,10 @@ pub fn scan_files(mut commands: Vec<Command>, markdown_roots: &[String]) -> Vec<
     let folder_before = commands.iter().filter(|cmd| cmd.action == "folder").count();
     debug_log("SCANNER", &format!("Before removal: {} obs, {} anchor, {} folder", obs_before, anchor_before, folder_before));
     
-    // Remove all existing obs, anchor, and folder commands
+    // Remove all existing obs, anchor, and folder commands from the commands list
+    // but keep ALL commands in existing_commands set for collision detection
     commands.retain(|cmd| {
-        let should_keep = cmd.action != "obs" && cmd.action != "anchor" && cmd.action != "folder";
-        if !should_keep {
-            // Also remove from existing_commands set
-            existing_commands.remove(&cmd.command);
-        }
-        should_keep
+        cmd.action != "obs" && cmd.action != "anchor" && cmd.action != "folder"
     });
     
     debug_log("SCANNER", &format!("After removal: {} commands remaining", commands.len()));
@@ -141,8 +139,8 @@ pub fn scan_files(mut commands: Vec<Command>, markdown_roots: &[String]) -> Vec<
     for folder_path in found_folders {
         if let Some(folder_name) = folder_path.file_name() {
             if let Some(name_str) = folder_name.to_str() {
-                // Check if a command already exists with this name (without "folder" suffix)
-                if !existing_commands.contains(name_str) {
+                // Check if a command already exists with this name (case-insensitive)
+                if !existing_commands.contains(&name_str.to_lowercase()) {
                     // Create folder command without "folder" suffix
                     let command_name = name_str.to_string();
                     let full_path = folder_path.to_string_lossy().to_string();
@@ -158,7 +156,7 @@ pub fn scan_files(mut commands: Vec<Command>, markdown_roots: &[String]) -> Vec<
                     };
                     
                     commands.push(folder_command);
-                    existing_commands.insert(command_name);
+                    existing_commands.insert(command_name.to_lowercase());
                     debug_log("SCANNER", &format!("Added folder command: {}", name_str));
                 } else {
                     debug_log("SCANNER", &format!("Skipping folder '{}' - command already exists", name_str));
@@ -209,8 +207,8 @@ fn scan_directory_with_root(dir: &Path, vault_root: &Path, commands: &mut Vec<Co
             } else {
                 // Process files (markdown files)
                 if let Some(command) = process_markdown_with_root(&path, vault_root, existing_commands) {
-                    // Add to existing commands set to prevent future collisions
-                    existing_commands.insert(command.command.clone());
+                    // Add to existing commands set to prevent future collisions (lowercase)
+                    existing_commands.insert(command.command.to_lowercase());
                     commands.push(command);
                 }
             }
@@ -241,9 +239,9 @@ fn process_markdown_with_root(path: &Path, vault_root: &Path, existing_commands:
         "obs"
     };
     
-    // Create command name without suffix, but check for collisions
+    // Create command name without suffix, but check for collisions (case-insensitive)
     let preferred_name = file_name.to_string();
-    let command_name = if existing_commands.contains(&preferred_name) {
+    let command_name = if existing_commands.contains(&preferred_name.to_lowercase()) {
         // If collision exists, use " markdown" suffix
         format!("{} markdown", file_name)
     } else {

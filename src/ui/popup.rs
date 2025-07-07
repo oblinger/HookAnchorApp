@@ -68,7 +68,8 @@ impl AnchorSelector {
             
             // Handle escape key immediately if it was pressed
             if escape_pressed {
-                if !self.command_editor.visible {
+                // Only exit if the editor didn't already handle the escape key
+                if !self.command_editor.visible && !editor_handled_escape {
                     std::process::exit(0);
                 }
             }

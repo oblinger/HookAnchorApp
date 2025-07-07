@@ -69,6 +69,57 @@ impl Default for LauncherSettings {
     }
 }
 
+/// Copies the default config file to the user's config directory
+fn copy_default_config(target_path: &Path) -> Result<(), std::io::Error> {
+    // First try to find default config relative to the executable
+    let exe_path = env::current_exe().unwrap_or_default();
+    let exe_dir = exe_path.parent().unwrap_or(Path::new("."));
+    
+    // Look for default config in several possible locations
+    let possible_paths = vec![
+        // In the same directory as the executable
+        exe_dir.join("resources/common/default_config.yaml"),
+        // Up one level from the executable (for development)
+        exe_dir.join("../resources/common/default_config.yaml"),
+        // Up two levels (for target/release/ha structure)
+        exe_dir.join("../../resources/common/default_config.yaml"),
+        // Absolute path for development
+        PathBuf::from("/Users/oblinger/ob/kmr/prj/2025-06 HookAnchor/resources/common/default_config.yaml"),
+    ];
+    
+    for default_path in &possible_paths {
+        if default_path.exists() {
+            // Create parent directory if it doesn't exist
+            if let Some(parent) = target_path.parent() {
+                fs::create_dir_all(parent)?;
+            }
+            
+            // Read default config
+            let contents = fs::read_to_string(default_path)?;
+            
+            // Update the JavaScript file path in the default config
+            let project_root = exe_dir.join("../..").canonicalize().unwrap_or_else(|_| exe_dir.to_path_buf());
+            let updated_contents = contents.replace(
+                "resources/common/tmux_activation.js",
+                &format!("{}/resources/common/tmux_activation.js", project_root.display())
+            );
+            
+            // Write to target location
+            fs::write(target_path, updated_contents)?;
+            
+            println!("Created default config file at: {}", target_path.display());
+            println!("Please customize it with your settings.");
+            
+            return Ok(());
+        }
+    }
+    
+    Err(std::io::Error::new(
+        std::io::ErrorKind::NotFound,
+        "Default config file not found in any expected location"
+    ))
+}
+
 impl Default for PopupSettings {
     fn default() -> Self {
         PopupSettings {
@@ -88,7 +139,7 @@ impl Default for PopupSettings {
 /// Returns the path to the YAML config file
 pub fn get_config_file_path() -> PathBuf {
     let home = env::var("HOME").unwrap_or_else(|_| ".".to_string());
-    Path::new(&home).join(".config/anchor_selector/config.yaml")
+    Path::new(&home).join(".config/hookanchor/config.yaml")
 }
 
 /// Configuration loading result
@@ -101,6 +152,18 @@ pub enum ConfigResult {
 /// Loads configuration from YAML file or returns error details if parsing fails
 pub fn load_config_with_error() -> ConfigResult {
     let config_path = get_config_file_path();
+    
+    // If user config doesn't exist, try to copy from default
+    if !config_path.exists() {
+        if let Err(e) = copy_default_config(&config_path) {
+            return ConfigResult::Error(format!(
+                "Config file not found: {}\n\
+                Failed to copy default config: {}\n\n\
+                Please create a config file with your settings.",
+                config_path.display(), e
+            ));
+        }
+    }
     
     // Check for user config
     if let Ok(contents) = fs::read_to_string(&config_path) {

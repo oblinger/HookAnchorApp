@@ -38,7 +38,8 @@
 //! - `launch_app(app_name, arg)` - Launch macOS application with optional argument
 //! - `open_folder(path)` - Open folder in Finder (or configured folder app)
 //! - `open_url(url, browser)` - Open URL in browser (optional browser name)
-//! - `shell(command)` - Execute shell command and return output
+//! - `shell(command)` - Execute shell command in background (non-blocking)
+//! - `shell_sync(command)` - Execute shell command and wait for completion (blocking)
 //! - `shellWithExitCode(command)` - Execute shell command and return {stdout, stderr, exitCode}
 //! - `commandExists(command)` - Check if command is available in PATH (returns boolean)
 //! - `change_directory(path)` - Change working directory
@@ -348,8 +349,23 @@ fn setup_launcher_builtins(ctx: &Ctx<'_>) -> Result<(), Box<dyn std::error::Erro
         }
     })?)?;
     
-    // shell(command) -> executes shell command with user environment
+    // shell(command) -> executes shell command without waiting (detached)
     ctx.globals().set("shell", Function::new(ctx.clone(), |command: String| {
+        use std::process::{Command, Stdio};
+        
+        // Execute command in background without waiting
+        match Command::new("sh")
+            .arg("-c")
+            .arg(&command)
+            .stdin(Stdio::null())
+            .spawn() {
+                Ok(_) => format!("Command started: {}", command),
+                Err(e) => format!("Failed to start command '{}': {}", command, e),
+            }
+    })?)?;
+    
+    // shell_sync(command) -> executes shell command and waits for completion
+    ctx.globals().set("shell_sync", Function::new(ctx.clone(), |command: String| {
         match crate::utils::execute_shell_command_with_env(&command) {
             Ok(output) => {
                 let stdout = String::from_utf8_lossy(&output.stdout);

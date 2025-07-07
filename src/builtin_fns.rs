@@ -85,13 +85,35 @@ pub fn setup_builtin_functions(env: &mut Environment) {
         Ok(())
     }));
     
-    // shell function
+    // shell function - non-blocking execution
     env.functions.insert("shell".to_string(), Box::new(|env, args| {
         let command = get_substituted_string_arg(args, "command", env)
             .or_else(|| get_substituted_string_arg(args, "cmd", env))
             .ok_or_else(|| EvalError::InvalidAction("Missing 'command' or 'cmd' argument".to_string()))?;
         
-        debug_log("BUILTIN", &format!("Running shell command: {}", command));
+        debug_log("BUILTIN", &format!("Starting shell command (non-blocking): {}", command));
+        
+        // Execute command without waiting
+        use std::process::{Command, Stdio};
+        match Command::new("sh")
+            .arg("-c")
+            .arg(&command)
+            .stdin(Stdio::null())
+            .spawn() {
+                Ok(_) => debug_log("BUILTIN", &format!("Command started: {}", command)),
+                Err(e) => return Err(EvalError::ExecutionError(format!("Failed to start command '{}': {}", command, e))),
+            }
+        
+        Ok(())
+    }));
+    
+    // shell_sync function - blocking execution for when you need to wait
+    env.functions.insert("shell_sync".to_string(), Box::new(|env, args| {
+        let command = get_substituted_string_arg(args, "command", env)
+            .or_else(|| get_substituted_string_arg(args, "cmd", env))
+            .ok_or_else(|| EvalError::InvalidAction("Missing 'command' or 'cmd' argument".to_string()))?;
+        
+        debug_log("BUILTIN", &format!("Running shell command (blocking): {}", command));
         
         let output = execute_shell_command(&command)
             .map_err(|e| EvalError::ExecutionError(format!("Failed to execute command '{}': {}", command, e)))?;

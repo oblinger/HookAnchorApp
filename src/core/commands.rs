@@ -144,13 +144,13 @@ impl Command {
 /// Returns the path to the commands.txt file
 pub fn get_commands_file_path() -> PathBuf {
     let home = env::var("HOME").unwrap_or_else(|_| ".".to_string());
-    Path::new(&home).join(".config/anchor_selector/commands.txt")
+    Path::new(&home).join(".config/hookanchor/commands.txt")
 }
 
 /// Returns the path to the backups folder
 pub fn get_backups_folder_path() -> PathBuf {
     let home = env::var("HOME").unwrap_or_else(|_| ".".to_string());
-    Path::new(&home).join(".config/anchor_selector/backups")
+    Path::new(&home).join(".config/hookanchor/backups")
 }
 
 /// Creates a backup of the commands file before saving
@@ -314,19 +314,30 @@ pub fn filter_commands(commands: &[Command], search_text: &str, max_results: usi
         }
     }
     
-    // Sort by: 1) match position (earlier matches first), 2) word count (fewer words first), 3) alphabetical order
+    // Sort by: 1) exact match first, 2) match position (earlier matches first), 3) word count (fewer words first), 4) alphabetical order
     matched_commands.sort_by(|a, b| {
-        match a.0.cmp(&b.0) {
-            std::cmp::Ordering::Equal => {
-                // If match position is the same, prefer commands with fewer words first
-                let word_count_a = count_words(&a.1.command, " ._-");
-                let word_count_b = count_words(&b.1.command, " ._-");
-                match word_count_a.cmp(&word_count_b) {
-                    std::cmp::Ordering::Equal => a.1.command.cmp(&b.1.command), // Alphabetical if same word count
-                    other => other // Fewer words first
+        // Check for exact matches (case-insensitive)
+        let is_exact_a = a.1.command.to_lowercase() == search_text.to_lowercase();
+        let is_exact_b = b.1.command.to_lowercase() == search_text.to_lowercase();
+        
+        match (is_exact_a, is_exact_b) {
+            (true, false) => std::cmp::Ordering::Less,    // a is exact, b is not - a comes first
+            (false, true) => std::cmp::Ordering::Greater, // b is exact, a is not - b comes first
+            _ => {
+                // Both exact or both not exact - use match position
+                match a.0.cmp(&b.0) {
+                    std::cmp::Ordering::Equal => {
+                        // If match position is the same, prefer commands with fewer words first
+                        let word_count_a = count_words(&a.1.command, " ._-");
+                        let word_count_b = count_words(&b.1.command, " ._-");
+                        match word_count_a.cmp(&word_count_b) {
+                            std::cmp::Ordering::Equal => a.1.command.cmp(&b.1.command), // Alphabetical if same word count
+                            other => other // Fewer words first
+                        }
+                    },
+                    other => other // Earlier match position first
                 }
-            },
-            other => other // Earlier match position first
+            }
         }
     });
     
@@ -1010,6 +1021,193 @@ mod tests {
         assert_eq!(parsed.action, reparsed.action);
         assert_eq!(parsed.flags, reparsed.flags);
         assert_eq!(parsed.arg, reparsed.arg);
+    }
+
+    #[test]
+    fn test_filter_commands_sorting_exact_match_first() {
+        let commands = vec![
+            Command {
+                group: String::new(),
+                command: "Web25".to_string(),
+                action: "action".to_string(),
+                arg: "arg".to_string(),
+                flags: String::new(),
+                full_line: String::new(),
+            },
+            Command {
+                group: String::new(),
+                command: "web".to_string(),
+                action: "action".to_string(),
+                arg: "arg".to_string(),
+                flags: String::new(),
+                full_line: String::new(),
+            },
+            Command {
+                group: String::new(),
+                command: "Webshare".to_string(),
+                action: "action".to_string(),
+                arg: "arg".to_string(),
+                flags: String::new(),
+                full_line: String::new(),
+            },
+        ];
+
+        let result = filter_commands(&commands, "web", 10, false);
+        
+        // Exact match "web" should come first
+        assert_eq!(result[0].command, "web");
+        assert_eq!(result[1].command, "Web25");
+        assert_eq!(result[2].command, "Webshare");
+    }
+
+    #[test]
+    fn test_filter_commands_sorting_word_count_before_alphabetical() {
+        let commands = vec![
+            Command {
+                group: String::new(),
+                command: "test zebra final".to_string(), // 3 words, alphabetically first
+                action: "action".to_string(),
+                arg: "arg".to_string(),
+                flags: String::new(),
+                full_line: String::new(),
+            },
+            Command {
+                group: String::new(),
+                command: "test apple".to_string(), // 2 words, alphabetically second
+                action: "action".to_string(),
+                arg: "arg".to_string(),
+                flags: String::new(),
+                full_line: String::new(),
+            },
+            Command {
+                group: String::new(),
+                command: "testZ".to_string(), // 1 word, alphabetically last
+                action: "action".to_string(),
+                arg: "arg".to_string(),
+                flags: String::new(),
+                full_line: String::new(),
+            },
+        ];
+
+        let result = filter_commands(&commands, "test", 10, false);
+        
+        // Should be sorted by word count first (fewer words first), then alphabetical
+        assert_eq!(result[0].command, "testZ");         // 1 word comes first
+        assert_eq!(result[1].command, "test apple");    // 2 words comes second  
+        assert_eq!(result[2].command, "test zebra final"); // 3 words comes last
+    }
+
+    #[test]
+    fn test_filter_commands_sorting_alphabetical_within_same_word_count() {
+        let commands = vec![
+            Command {
+                group: String::new(),
+                command: "test zebra".to_string(),
+                action: "action".to_string(),
+                arg: "arg".to_string(),
+                flags: String::new(),
+                full_line: String::new(),
+            },
+            Command {
+                group: String::new(),
+                command: "test apple".to_string(),
+                action: "action".to_string(),
+                arg: "arg".to_string(),
+                flags: String::new(),
+                full_line: String::new(),
+            },
+            Command {
+                group: String::new(),
+                command: "test banana".to_string(),
+                action: "action".to_string(),
+                arg: "arg".to_string(),
+                flags: String::new(),
+                full_line: String::new(),
+            },
+        ];
+
+        let result = filter_commands(&commands, "test", 10, false);
+        
+        // All have same word count, should be sorted alphabetically
+        assert_eq!(result[0].command, "test apple");
+        assert_eq!(result[1].command, "test banana");
+        assert_eq!(result[2].command, "test zebra");
+    }
+
+    #[test]
+    fn test_filter_commands_sorting_match_position_priority() {
+        let commands = vec![
+            Command {
+                group: String::new(),
+                command: "some test here".to_string(), // "test" matches at position 5
+                action: "action".to_string(),
+                arg: "arg".to_string(),
+                flags: String::new(),
+                full_line: String::new(),
+            },
+            Command {
+                group: String::new(),
+                command: "test something".to_string(), // "test" matches at position 0
+                action: "action".to_string(),
+                arg: "arg".to_string(),
+                flags: String::new(),
+                full_line: String::new(),
+            },
+        ];
+
+        let result = filter_commands(&commands, "test", 10, false);
+        
+        // Earlier match position should come first
+        assert_eq!(result[0].command, "test something"); // match at position 0
+        assert_eq!(result[1].command, "some test here"); // match at position 5
+    }
+
+    #[test]
+    fn test_filter_commands_comprehensive_sorting() {
+        let commands = vec![
+            Command {
+                group: String::new(),
+                command: "Web App Store".to_string(), // 3 words, partial match
+                action: "action".to_string(),
+                arg: "arg".to_string(),
+                flags: String::new(),
+                full_line: String::new(),
+            },
+            Command {
+                group: String::new(),
+                command: "WebZ".to_string(), // 1 word, partial match
+                action: "action".to_string(),
+                arg: "arg".to_string(),
+                flags: String::new(),
+                full_line: String::new(),
+            },
+            Command {
+                group: String::new(),
+                command: "web".to_string(), // exact match
+                action: "action".to_string(),
+                arg: "arg".to_string(),
+                flags: String::new(),
+                full_line: String::new(),
+            },
+            Command {
+                group: String::new(),
+                command: "Web Browser".to_string(), // 2 words, partial match
+                action: "action".to_string(),
+                arg: "arg".to_string(),
+                flags: String::new(),
+                full_line: String::new(),
+            },
+        ];
+
+        let result = filter_commands(&commands, "web", 10, false);
+        
+        // Expected order:
+        // 1. Exact match first: "web"
+        // 2. Then by word count: 1-word "WebZ", 2-word "Web Browser", 3-word "Web App Store"
+        assert_eq!(result[0].command, "web");           // exact match
+        assert_eq!(result[1].command, "WebZ");          // 1 word
+        assert_eq!(result[2].command, "Web Browser");   // 2 words
+        assert_eq!(result[3].command, "Web App Store"); // 3 words
     }
 }
 

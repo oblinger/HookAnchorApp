@@ -1,14 +1,14 @@
 #!/bin/bash
 
-# Script to register hook:// URL handler for anchor_selector popup
+# Script to register hook:// URL handler for HookAnchor application
 
-POPUP_PATH="/Users/oblinger/ob/kmr/prj/2025-06 anchor_selector/target/release/popup"
-PLIST_PATH="$HOME/Library/LaunchAgents/com.anchor-selector.url-handler.plist"
+POPUP_PATH="/Users/oblinger/ob/kmr/prj/2025-06 HookAnchor/target/release/ha"
+PLIST_PATH="$HOME/Library/LaunchAgents/com.hookanchor.url-handler.plist"
 
 # Check if popup binary exists
 if [[ ! -f "$POPUP_PATH" ]]; then
-    echo "Error: popup binary not found at $POPUP_PATH"
-    echo "Please build the popup first with: cargo build --release --bin popup"
+    echo "Error: ha binary not found at $POPUP_PATH"
+    echo "Please build the ha binary first with: cargo build --release"
     exit 1
 fi
 
@@ -19,7 +19,7 @@ cat > "$PLIST_PATH" << EOF
 <plist version="1.0">
 <dict>
     <key>Label</key>
-    <string>com.anchor-selector.url-handler</string>
+    <string>com.hookanchor.url-handler</string>
     <key>ProgramArguments</key>
     <array>
         <string>$POPUP_PATH</string>

@@ -95,11 +95,11 @@ scripted_commands:
   command_name: "JavaScript code here"
 ```
 
-## Migration from Python Script
+## Command Types
 
-The new launcher system maps all Python script command types:
+The launcher system supports all major command types:
 
-| Python Command | New Launcher Type | Example |
+| Action Type | Launcher Implementation | Example |
 |----------------|-------------------|---------|
 | `app NAME` | `!App` | Launch applications |
 | `url URL` | `!Url` | Open URLs in default browser |
@@ -132,7 +132,7 @@ cargo run --bin test_popup_integration
 
 ## Benefits
 
-- ✅ **Faster execution** (no external Python process)
+- ✅ **Faster execution** (pure Rust/JavaScript implementation)
 - ✅ **Better error handling** (Rust error types)
 - ✅ **No external dependencies** (self-contained)
 - ✅ **Type safety** (compile-time validation)

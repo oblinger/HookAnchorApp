@@ -1,0 +1,119 @@
+# Default Anchor Selector Configuration
+# Copy this file to ~/.config/anchor_selector/config.yaml and customize as needed
+
+# =================================================================
+# APPLICATION SETTINGS
+# =================================================================
+popup_settings:
+  max_rows: 15
+  max_columns: 3
+  use_new_launcher: true      # Enable new Rust launcher (false = Python launcher)
+  debug_log: "~/.anchor.log"  # Debug logging file path (empty/null to disable)
+  merge_similar: true         # Merging similar commands in popup
+  word_separators: " ._-"     # Word separator chars for submenus and merging
+  scan_root: "~/Documents"    # Root directory for file system scanning
+  scan_interval_seconds: 3600 # Seconds between automatic filesystem scans
+  # Command editor dropdown actions (comma-separated list)
+  listed_actions: "alias,anchor,app,url,folder,cmd,chrome,safari,brave,firefox,work,notion,obs,obs_url,1pass,rewrite,doc,contact,slack,shutdown"
+
+# Markdown file scanning roots (automatic scanning enabled)
+markdown_roots:
+  - "~/Documents"
+  - "~/Notes"
+
+launcher_settings:
+  default_browser: "Google Chrome"
+  work_browser: "Google Chrome Beta"
+  timeout_ms: 5000
+  obsidian_app_name: "Obsidian"
+  obsidian_vault_name: "YourVaultName"  # CUSTOMIZE: Your Obsidian vault name
+
+# =================================================================
+# KEYBOARD SHORTCUTS
+# =================================================================
+keybindings:
+  exit_app: "Escape"           # Exit the application
+  navigate_down: "ArrowDown"   # Move selection down
+  navigate_up: "ArrowUp"       # Move selection up
+  navigate_left: "ArrowLeft"   # Move selection left (multi-column)
+  navigate_right: "ArrowRight" # Move selection right (multi-column)
+  execute_command: "Enter"     # Execute the selected command
+  show_folder: "Backslash"     # Show folder for selected command
+  delete_selected: "Delete"    # Delete selected command
+  edit_selected: "E"           # Edit selected command
+  open_editor: "N"             # Open command editor
+  open_in_editor: "O"          # Open in external editor
+  reload_commands: "R"         # Reload commands
+  paste_clipboard: "V"         # Paste from clipboard
+
+# =================================================================
+# FUNCTIONS - Action Definitions
+# =================================================================
+functions:
+  # Basic actions
+  action_app: {fn: launch_app, name: "{{arg}}"}
+  action_url: {fn: open_url, url: "{{arg}}"}
+  action_folder: {fn: open_folder, path: "{{arg}}"}
+  action_cmd: {fn: shell, command: "{{arg}}"}
+  action_doc: {fn: open_with, app: "", arg: "{{arg}}"}
+  
+  # Browser-specific actions
+  action_chrome: {fn: open_with, app: "Google Chrome", arg: "{{arg}}"}
+  action_safari: {fn: open_with, app: "Safari", arg: "{{arg}}"}
+  action_brave: {fn: open_with, app: "Brave Browser", arg: "{{arg}}"}
+  action_firefox: {fn: open_with, app: "Firefox", arg: "{{arg}}"}
+  action_work: {fn: open_with, app: "Google Chrome Beta", arg: "{{arg}}"}
+  
+  # App-specific actions
+  action_notion: {fn: open_with, app: "Notion", arg: "{{arg}}"}
+  action_obs_url: {fn: open_with, app: "Obsidian", arg: "{{arg}}"}
+  action_obs: {fn: shell, command: "open -a Obsidian && sleep 0.1 && open 'obsidian://open?vault=YourVaultName&file={{arg}}'"}
+  action_contact: {fn: open_with, app: "Contacts", arg: "addressbook://{{arg}}"}
+  
+  # Alias/rewrite - For command aliases
+  action_alias: |
+    launch("{{arg}}");
+  action_rewrite: |
+    launch("{{arg}}");
+  
+  # Shutdown - Execute shutdown script without blocking
+  action_shutdown: |
+    spawnDetached("{{arg}}");
+  
+  # Anchor - Open markdown file and activate tmux session
+  # CUSTOMIZE: Update the Python script path if needed
+  action_anchor: |
+    const fullPath = "{{arg}}";
+    const anchorDir = fullPath.substring(0, fullPath.lastIndexOf('/'));
+    
+    log(`ANCHOR: Opening anchor at: ${fullPath}`);
+    log(`ANCHOR: Directory: ${anchorDir}`);
+    
+    // Change to the anchor directory
+    change_directory(anchorDir);
+    
+    // Open the folder in Finder
+    open_folder(anchorDir);
+    
+    // Always open the markdown file in Obsidian first
+    const baseName = fullPath.split('/').pop().replace(/\.md$/, '');
+    const encoded = encodeURIComponent(baseName);
+    const vault = getObsidianVault();
+    const app = getObsidianApp();
+    const url = `obsidian://open?vault=${vault}&file=${encoded}`;
+    log(`ANCHOR: Opening in Obsidian: ${url}`);
+    launch_app(app, url);
+    
+    // Use external JavaScript file for tmux processing
+    try {
+        // Load and execute the tmux activation JavaScript
+        const jsFile = "resources/common/tmux_activation.js";
+        const tmuxScript = readFile(jsFile);
+        eval(tmuxScript);
+        log(`ANCHOR: External JavaScript tmux processing completed`);
+    } catch (error) {
+        log(`ANCHOR: External JavaScript tmux processing failed: ${error}`);
+        // Fallback to inline tmux processing
+        log(`ANCHOR: Falling back to inline tmux processing`);
+        // Add basic tmux fallback here if needed
+    }
