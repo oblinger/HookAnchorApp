@@ -4,15 +4,15 @@
 
 use eframe::egui;
 use std::process;
-use anchor_selector::{
+use crate::{
     Command, execute_command, load_commands, 
     load_config, Config, load_state, save_state, scanner, grabber
 };
-use anchor_selector::core::config::{load_config_with_error, ConfigResult};
-use anchor_selector::ui::{PopupState, LayoutArrangement};
+use crate::core::config::{load_config_with_error, ConfigResult};
+use super::{PopupState, LayoutArrangement};
 
-use crate::command_editor::{CommandEditor, CommandEditorResult};
-use crate::dialog::Dialog;
+use super::command_editor::{CommandEditor, CommandEditorResult};
+use super::dialog::Dialog;
 
 /// Main application state for the Anchor Selector popup window
 pub struct AnchorSelector {
@@ -114,10 +114,10 @@ impl AnchorSelector {
                                     "show_folder" => {
                                         // For Equals key, only trigger if shift is NOT pressed
                                         if key == &egui::Key::Equals && !modifiers.shift {
-                                            anchor_selector::utils::debug_log("KEY", "Triggering show_folder from config");
+                                            crate::utils::debug_log("KEY", "Triggering show_folder from config");
                                             actions_to_perform.push("show_folder");
                                         } else if key != &egui::Key::Equals {
-                                            anchor_selector::utils::debug_log("KEY", "Triggering show_folder from config");
+                                            crate::utils::debug_log("KEY", "Triggering show_folder from config");
                                             actions_to_perform.push("show_folder");
                                         }
                                     },
@@ -230,7 +230,7 @@ impl AnchorSelector {
                         
                         let config = load_config();
                         if config.popup_settings.use_new_launcher {
-                            use anchor_selector::launcher::launch;
+                            use crate::launcher::launch;
                             if let Err(e) = launch(&launcher_command) {
                                 eprintln!("Error executing command with new launcher: {:?}", e);
                                 std::process::exit(1);
@@ -438,7 +438,7 @@ impl AnchorSelector {
         
         // Give up focus to previous application before grabbing
         if let Err(e) = self.give_up_focus() {
-            anchor_selector::utils::debug_log("GRAB", &format!("Failed to give up focus: {}", e));
+            crate::utils::debug_log("GRAB", &format!("Failed to give up focus: {}", e));
         }
         
         // Wait a moment for focus to transfer completely
@@ -496,30 +496,30 @@ impl AnchorSelector {
         
         // Regain focus back to anchor selector after grab operation
         if let Err(e) = self.regain_focus() {
-            anchor_selector::utils::debug_log("GRAB", &format!("Failed to regain focus: {}", e));
+            crate::utils::debug_log("GRAB", &format!("Failed to regain focus: {}", e));
         }
     }
     
     /// Trigger an immediate filesystem rescan
     fn trigger_rescan(&mut self) {
-        anchor_selector::utils::debug_log("SCANNER2", "=== TRIGGER_RESCAN FUNCTION CALLED ===");
-        use anchor_selector::scanner;
+        crate::utils::debug_log("SCANNER2", "=== TRIGGER_RESCAN FUNCTION CALLED ===");
+        use crate::scanner;
         let config = load_config();
         
         // Get markdown roots from config
         if let Some(markdown_roots) = &config.markdown_roots {
-            anchor_selector::utils::debug_log("SCANNER2", &format!("Force scanning markdown files, roots: {:?}", markdown_roots));
+            crate::utils::debug_log("SCANNER2", &format!("Force scanning markdown files, roots: {:?}", markdown_roots));
             
             // Force scan markdown files
             let current_commands = self.popup_state.get_commands().to_vec();
             let updated_commands = scanner::scan(current_commands, markdown_roots);
             
             // Save the updated commands to file
-            use anchor_selector::save_commands_to_file;
+            use crate::save_commands_to_file;
             if let Err(e) = save_commands_to_file(&updated_commands) {
-                anchor_selector::utils::debug_log("RESCAN", &format!("Failed to save commands: {}", e));
+                crate::utils::debug_log("RESCAN", &format!("Failed to save commands: {}", e));
             } else {
-                anchor_selector::utils::debug_log("RESCAN", "Commands saved successfully");
+                crate::utils::debug_log("RESCAN", "Commands saved successfully");
             }
             
             // Update commands in popup state
@@ -531,15 +531,15 @@ impl AnchorSelector {
                 self.popup_state.update_search(current_search);
             }
             
-            anchor_selector::utils::debug_log("SCANNER2", "Rescan completed");
+            crate::utils::debug_log("SCANNER2", "Rescan completed");
         } else {
-            anchor_selector::utils::debug_log("RESCAN", "No markdown roots configured in config file");
+            crate::utils::debug_log("RESCAN", "No markdown roots configured in config file");
         }
     }
     
     /// Show folder functionality - launches the first folder matching current search
     fn show_folder(&mut self) {
-        use anchor_selector::{launcher, utils};
+        use crate::{launcher, utils};
         
         let search_text = &self.popup_state.search_text;
         utils::debug_log("SHOW_FOLDER", &format!("Triggered with search text: '{}'", search_text));
@@ -561,7 +561,7 @@ impl AnchorSelector {
         
         // Use the first non-separator command and extract its folder
         for cmd in &display_commands {
-            if anchor_selector::ui::PopupState::is_separator_command(cmd) {
+            if PopupState::is_separator_command(cmd) {
                 utils::debug_log("SHOW_FOLDER", &format!("Skipping separator: '{}'", cmd.command));
                 continue;
             }
@@ -614,7 +614,7 @@ impl AnchorSelector {
     fn give_up_focus(&self) -> Result<(), Box<dyn std::error::Error>> {
         use std::process::Command;
         
-        // anchor_selector::utils::debug_log("FOCUS", "Giving up focus to previous application");
+        // crate::utils::debug_log("FOCUS", "Giving up focus to previous application");
         
         // Use Cmd+Tab to switch to previous application
         Command::new("osascript")
@@ -629,7 +629,7 @@ impl AnchorSelector {
     fn regain_focus(&self) -> Result<(), Box<dyn std::error::Error>> {
         use std::process::Command;
         
-        // anchor_selector::utils::debug_log("FOCUS", "Regaining focus to anchor selector");
+        // crate::utils::debug_log("FOCUS", "Regaining focus to anchor selector");
         
         // Activate the popup application
         Command::new("osascript")
@@ -718,7 +718,7 @@ impl eframe::App for AnchorSelector {
         // if self.frame_count <= 20 {
         //     let has_focus = ctx.input(|i| i.focused);
         //     if self.frame_count % 5 == 0 { // Log every 5th frame for first 20 frames
-        //         anchor_selector::utils::debug_log("FOCUS", &format!("Frame {}: Window focused={}, input focus_set={}", 
+        //         crate::utils::debug_log("FOCUS", &format!("Frame {}: Window focused={}, input focus_set={}", 
         //             self.frame_count, has_focus, self.focus_set));
         //     }
         // }
@@ -814,7 +814,7 @@ impl eframe::App for AnchorSelector {
                 
                 // Delete original command if needed
                 if let Some(cmd_name) = command_to_delete {
-                    use anchor_selector::delete_command;
+                    use crate::delete_command;
                     let deleted = delete_command(&cmd_name, self.commands_mut());
                     if deleted.is_err() {
                         eprintln!("Warning: Original command '{}' not found for deletion", cmd_name);
@@ -822,7 +822,7 @@ impl eframe::App for AnchorSelector {
                 }
                 
                 // Add the new command
-                use anchor_selector::{add_command, save_commands_to_file};
+                use crate::{add_command, save_commands_to_file};
                 let _ = add_command(new_command, self.commands_mut());
                 
                 // Save to file
@@ -845,7 +845,7 @@ impl eframe::App for AnchorSelector {
             }
             CommandEditorResult::Delete(command_name) => {
                 // Delete the specified command and save to file
-                use anchor_selector::{delete_command, save_commands_to_file};
+                use crate::{delete_command, save_commands_to_file};
                 
                 let deleted = delete_command(&command_name, self.commands_mut());
                 if deleted.is_err() {
@@ -929,7 +929,7 @@ impl eframe::App for AnchorSelector {
                 
                 // Always update search when text field is changed
                 if response.changed() {
-                    anchor_selector::utils::debug_log("TEXT_CHANGE", &format!("Search text changed to: '{}'", self.popup_state.search_text));
+                    crate::utils::debug_log("TEXT_CHANGE", &format!("Search text changed to: '{}'", self.popup_state.search_text));
                     
                     // Handle slash for command editor
                     let mut should_open_editor = false;
@@ -937,7 +937,7 @@ impl eframe::App for AnchorSelector {
                     
                     // Check for equals sign that shouldn't be there
                     if self.popup_state.search_text.ends_with('=') {
-                        anchor_selector::utils::debug_log("TEXT_CHANGE", "Found equals sign in search text - removing it");
+                        crate::utils::debug_log("TEXT_CHANGE", "Found equals sign in search text - removing it");
                         self.popup_state.search_text.pop();
                     }
                     
@@ -980,16 +980,16 @@ impl eframe::App for AnchorSelector {
                     response.request_focus();
                     if response.gained_focus() {
                         self.focus_set = true;
-                        // anchor_selector::utils::debug_log("FOCUS", &format!("Input focus gained on frame {}", self.frame_count));
+                        // crate::utils::debug_log("FOCUS", &format!("Input focus gained on frame {}", self.frame_count));
                     } else if self.frame_count <= 20 {
-                        // anchor_selector::utils::debug_log("FOCUS", &format!("Focus request on frame {} - not gained yet (has_focus: {})", 
+                        // crate::utils::debug_log("FOCUS", &format!("Focus request on frame {} - not gained yet (has_focus: {})", 
                         //     self.frame_count, response.has_focus()));
                     }
                 }
                 
                 // Additional failsafe: Force focus with memory if input field is still not focused after reasonable time
                 if self.frame_count == 30 && !self.focus_set {
-                    // anchor_selector::utils::debug_log("FOCUS", "Failsafe: Forcing focus with memory");
+                    // crate::utils::debug_log("FOCUS", "Failsafe: Forcing focus with memory");
                     ctx.memory_mut(|mem| mem.request_focus(response.id));
                     response.request_focus();
                 }

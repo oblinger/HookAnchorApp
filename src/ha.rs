@@ -3,9 +3,6 @@
 //! This module handles global application state and dispatches to either
 //! GUI mode (popup) or CLI mode (command-line processing).
 
-mod popup;
-mod command_editor;
-mod dialog;
 
 use std::env;
 
@@ -21,6 +18,6 @@ fn main() -> Result<(), eframe::Error> {
         Ok(())
     } else {
         // No arguments, run GUI mode
-        popup::run_gui_with_prompt("")
+        anchor_selector::ui::run_gui_with_prompt("")
     }
 }

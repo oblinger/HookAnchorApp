@@ -1,5 +1,5 @@
 use eframe::egui;
-use anchor_selector::{Command, delete_command, save_commands_to_file, Config};
+use crate::{Command, delete_command, save_commands_to_file, Config};
 
 pub struct CommandEditor {
     pub visible: bool,
