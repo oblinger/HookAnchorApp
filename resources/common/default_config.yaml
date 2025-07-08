@@ -81,7 +81,7 @@ functions:
     spawnDetached("{{arg}}");
   
   # Anchor - Open markdown file and activate tmux session
-  # CUSTOMIZE: Update the Python script path if needed
+  # CUSTOMIZE: Update paths if needed (especially for non-Homebrew tmux installations)
   action_anchor: |
     const fullPath = "{{arg}}";
     const anchorDir = fullPath.substring(0, fullPath.lastIndexOf('/'));

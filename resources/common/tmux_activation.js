@@ -29,7 +29,7 @@ if (file_exists(tmuxpPath)) {
     
     try {
         // Get list of existing tmux sessions
-        const sessionsOutput = shell("/opt/homebrew/bin/tmux ls 2>/dev/null || true");
+        const sessionsOutput = shell("PATH=/opt/homebrew/bin:$PATH /opt/homebrew/bin/tmux ls 2>/dev/null || true");
         const existingSessions = sessionsOutput.split('\n')
             .filter(line => line.includes(':'))
             .map(line => line.split(':')[0].trim())
@@ -40,8 +40,8 @@ if (file_exists(tmuxpPath)) {
             log(`ANCHOR: Session '${folderName}' already exists, attaching to it`);
         } else {
             log(`ANCHOR: Creating new tmux session '${folderName}' from profile`);
-            // Create session in detached mode using tmuxp
-            shell(`/opt/homebrew/bin/tmuxp load "${tmuxpPath}" -d`);
+            // Create session in detached mode using tmuxp with explicit PATH
+            shell(`PATH=/opt/homebrew/bin:$PATH /opt/homebrew/bin/tmuxp load "${tmuxpPath}" -d`);
             log(`ANCHOR: Tmux session '${folderName}' created successfully`);
             // Give tmux a moment to fully create the session
             shell_sync("/bin/sleep 0.2");
@@ -52,14 +52,14 @@ if (file_exists(tmuxpPath)) {
         try {
             // Try switch-client first (works when already inside a tmux session)
             // Use spawnDetached for tmux commands to avoid interfering with session control
-            const switchCmd = `/opt/homebrew/bin/tmux switch-client -t "${folderName}"`;
+            const switchCmd = `PATH=/opt/homebrew/bin:$PATH /opt/homebrew/bin/tmux switch-client -t "${folderName}"`;
             try {
                 spawnDetached("bash", "-c", switchCmd);
                 log(`ANCHOR: Sent switch-client command for session '${folderName}'`);
             } catch (switchError) {
                 log(`ANCHOR: Switch-client failed, trying attach-session`);
                 // Fall back to attach-session (works when not inside tmux)
-                const attachCmd = `/opt/homebrew/bin/tmux attach-session -t "${folderName}"`;
+                const attachCmd = `PATH=/opt/homebrew/bin:$PATH /opt/homebrew/bin/tmux attach-session -t "${folderName}"`;
                 spawnDetached("bash", "-c", attachCmd);
                 log(`ANCHOR: Sent attach-session command for session '${folderName}'`);
             }
