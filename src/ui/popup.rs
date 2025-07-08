@@ -49,6 +49,60 @@ impl AnchorSelector {
     // Centralized Key Handling
     // =============================================================================
     
+    /// Check if a key press would generate the given text
+    fn key_generates_text(key: &egui::Key, text: &str) -> bool {
+        match key {
+            egui::Key::Equals => text == "=",
+            egui::Key::Plus => text == "+",
+            egui::Key::Minus => text == "-",
+            egui::Key::Backslash => text == "\\",
+            egui::Key::Slash => text == "/",
+            egui::Key::Semicolon => text == ";",
+            egui::Key::Backtick => text == "`",
+            egui::Key::Space => text == " ",
+            egui::Key::Comma => text == ",",
+            egui::Key::Period => text == ".",
+            egui::Key::A => text == "a" || text == "A",
+            egui::Key::B => text == "b" || text == "B",
+            egui::Key::C => text == "c" || text == "C",
+            egui::Key::D => text == "d" || text == "D",
+            egui::Key::E => text == "e" || text == "E",
+            egui::Key::F => text == "f" || text == "F",
+            egui::Key::G => text == "g" || text == "G",
+            egui::Key::H => text == "h" || text == "H",
+            egui::Key::I => text == "i" || text == "I",
+            egui::Key::J => text == "j" || text == "J",
+            egui::Key::K => text == "k" || text == "K",
+            egui::Key::L => text == "l" || text == "L",
+            egui::Key::M => text == "m" || text == "M",
+            egui::Key::N => text == "n" || text == "N",
+            egui::Key::O => text == "o" || text == "O",
+            egui::Key::P => text == "p" || text == "P",
+            egui::Key::Q => text == "q" || text == "Q",
+            egui::Key::R => text == "r" || text == "R",
+            egui::Key::S => text == "s" || text == "S",
+            egui::Key::T => text == "t" || text == "T",
+            egui::Key::U => text == "u" || text == "U",
+            egui::Key::V => text == "v" || text == "V",
+            egui::Key::W => text == "w" || text == "W",
+            egui::Key::X => text == "x" || text == "X",
+            egui::Key::Y => text == "y" || text == "Y",
+            egui::Key::Z => text == "z" || text == "Z",
+            egui::Key::Num0 => text == "0",
+            egui::Key::Num1 => text == "1",
+            egui::Key::Num2 => text == "2",
+            egui::Key::Num3 => text == "3",
+            egui::Key::Num4 => text == "4",
+            egui::Key::Num5 => text == "5",
+            egui::Key::Num6 => text == "6",
+            egui::Key::Num7 => text == "7",
+            egui::Key::Num8 => text == "8",
+            egui::Key::Num9 => text == "9",
+            // Arrow keys, Enter, Escape, etc. don't generate normal text
+            _ => false,
+        }
+    }
+    
     /// Centralized key handling for the main popup interface
     /// Returns true if any keys were processed
     fn handle_popup_keys(&mut self, ctx: &egui::Context, editor_handled_escape: bool) -> bool {
@@ -83,7 +137,7 @@ impl AnchorSelector {
                 let config = &self.popup_state.config;
                 
                 for event in &input.events {
-                    if let egui::Event::Key { key, pressed, modifiers, .. } = event {
+                    if let egui::Event::Key { key, pressed, .. } = event {
                         if *pressed {
                             let key_name = format!("{:?}", key);
                             
@@ -104,24 +158,8 @@ impl AnchorSelector {
                                     "navigate_left" => actions_to_perform.push("navigate_left"),
                                     "navigate_right" => actions_to_perform.push("navigate_right"),
                                     "force_rescan" => actions_to_perform.push("force_rescan"),
-                                    "start_grabber" => {
-                                        // Check for shift modifier for Plus key
-                                        if key == &egui::Key::Equals && modifiers.shift {
-                                            actions_to_perform.push("start_grabber");
-                                        } else if key != &egui::Key::Equals {
-                                            actions_to_perform.push("start_grabber");
-                                        }
-                                    },
-                                    "show_folder" => {
-                                        // For Equals key, only trigger if shift is NOT pressed
-                                        if key == &egui::Key::Equals && !modifiers.shift {
-                                            crate::utils::debug_log("KEY", "Triggering show_folder from config");
-                                            actions_to_perform.push("show_folder");
-                                        } else if key != &egui::Key::Equals {
-                                            crate::utils::debug_log("KEY", "Triggering show_folder from config");
-                                            actions_to_perform.push("show_folder");
-                                        }
-                                    },
+                                    "start_grabber" => actions_to_perform.push("start_grabber"),
+                                    "show_folder" => actions_to_perform.push("show_folder"),
                                     "exit_app" => actions_to_perform.push("exit_app"),
                                     "execute_command" => actions_to_perform.push("execute_command"),
                                     "open_editor" => actions_to_perform.push("open_editor"),
@@ -140,39 +178,10 @@ impl AnchorSelector {
                     egui::Event::Key { key, .. } => !consumed_keys.contains(key),
                     egui::Event::Text(text) => {
                         // Filter out text that corresponds to consumed keys
-                        let should_filter = if consumed_keys.contains(&egui::Key::Equals) && text == "=" {
-                            true
-                        } else if consumed_keys.contains(&egui::Key::Backslash) && text == "\\" {
-                            true
-                        } else if consumed_keys.contains(&egui::Key::Backtick) && text == "`" {
-                            true
-                        } else if consumed_keys.contains(&egui::Key::Plus) && text == "+" {
-                            true
-                        } else if consumed_keys.contains(&egui::Key::Slash) && text == "/" {
-                            true
-                        } else if consumed_keys.contains(&egui::Key::Semicolon) && text == ";" {
-                            true
-                        } else if consumed_keys.contains(&egui::Key::ArrowUp) {
-                            // Arrow keys shouldn't generate text but filter just in case
-                            false
-                        } else if consumed_keys.contains(&egui::Key::ArrowDown) {
-                            false
-                        } else if consumed_keys.contains(&egui::Key::ArrowLeft) {
-                            false
-                        } else if consumed_keys.contains(&egui::Key::ArrowRight) {
-                            false
-                        } else if consumed_keys.contains(&egui::Key::Escape) {
-                            // Escape shouldn't generate text but filter just in case
-                            false
-                        } else if consumed_keys.contains(&egui::Key::Enter) {
-                            // Enter shouldn't generate text but filter just in case
-                            false
-                        } else if consumed_keys.contains(&egui::Key::Escape) && text.chars().any(|c| c == '\u{001b}') {
-                            // Filter escape character
-                            true
-                        } else {
-                            false
-                        };
+                        // Check if any consumed key would generate this text
+                        let should_filter = consumed_keys.iter().any(|key| {
+                            Self::key_generates_text(key, text)
+                        });
                         !should_filter
                     },
                     _ => true
