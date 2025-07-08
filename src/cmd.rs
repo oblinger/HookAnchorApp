@@ -26,6 +26,7 @@ pub fn run_command_line_mode(args: Vec<String>) {
         "-a" | "--action" => run_test_action(&args),
         "-f" | "--folders" => run_folder_command(&args),
         "-F" | "--named-folders" => run_folder_with_commands(&args),
+        "--user-info" => print_user_info(),
         _ => {
             eprintln!("Unknown command: {}", args[1]);
             eprintln!("Use -h or --help for usage information");
@@ -356,6 +357,54 @@ fn run_folder_with_commands(args: &[String]) {
         
         if let Some(path) = extract_folder_path(command) {
             println!("{} -> {}", command.command, path);
+        }
+    }
+}
+
+fn print_user_info() {
+    println!("=== User Environment Information ===");
+    
+    // Environment variables
+    println!("USER: {:?}", std::env::var("USER"));
+    println!("LOGNAME: {:?}", std::env::var("LOGNAME"));
+    println!("HOME: {:?}", std::env::var("HOME"));
+    println!("SHELL: {:?}", std::env::var("SHELL"));
+    println!("PATH: {:?}", std::env::var("PATH"));
+    
+    // Try whoami command
+    use std::process::Command;
+    match Command::new("whoami").output() {
+        Ok(output) => {
+            let whoami_user = String::from_utf8_lossy(&output.stdout).trim().to_string();
+            println!("whoami: '{}'", whoami_user);
+        }
+        Err(e) => {
+            println!("whoami failed: {}", e);
+        }
+    }
+    
+    // Try id command for more user info
+    match Command::new("id").output() {
+        Ok(output) => {
+            let id_output = String::from_utf8_lossy(&output.stdout).trim().to_string();
+            println!("id: {}", id_output);
+        }
+        Err(e) => {
+            println!("id failed: {}", e);
+        }
+    }
+    
+    // Try to get user's shell profile paths
+    if let Ok(home) = std::env::var("HOME") {
+        println!("Checking shell profiles in {}", home);
+        let profiles = vec![".zshrc", ".bash_profile", ".bashrc", ".profile"];
+        for profile in profiles {
+            let path = format!("{}/{}", home, profile);
+            if std::path::Path::new(&path).exists() {
+                println!("  {} exists", path);
+            } else {
+                println!("  {} not found", path);
+            }
         }
     }
 }

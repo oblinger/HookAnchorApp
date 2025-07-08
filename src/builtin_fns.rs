@@ -95,14 +95,24 @@ pub fn setup_builtin_functions(env: &mut Environment) {
         
         // Execute command without waiting
         use std::process::{Command, Stdio};
-        match Command::new("sh")
-            .arg("-c")
-            .arg(&command)
-            .stdin(Stdio::null())
-            .spawn() {
-                Ok(_) => debug_log("BUILTIN", &format!("Command started: {}", command)),
-                Err(e) => return Err(EvalError::ExecutionError(format!("Failed to start command '{}': {}", command, e))),
-            }
+        
+        let mut cmd = Command::new("sh");
+        cmd.arg("-c")
+           .arg(&command)
+           .stdin(Stdio::null());
+           
+        // Inherit basic environment
+        if let Ok(path) = std::env::var("PATH") {
+            cmd.env("PATH", path);
+        }
+        if let Ok(home) = std::env::var("HOME") {
+            cmd.env("HOME", home);
+        }
+        
+        match cmd.spawn() {
+            Ok(_) => debug_log("BUILTIN", &format!("Command started: {}", command)),
+            Err(e) => return Err(EvalError::ExecutionError(format!("Failed to start command '{}': {}", command, e))),
+        }
         
         Ok(())
     }));

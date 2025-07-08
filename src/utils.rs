@@ -94,6 +94,21 @@ pub fn execute_shell_command_with_env(command: &str) -> Result<std::process::Out
     debug_log("SHELL", &format!("Executing command: {}", command));
     debug_log("SHELL", &format!("Using shell: {}", user_shell));
     
+    // Debug: Show user environment info
+    debug_log("SHELL", &format!("USER env var: {:?}", std::env::var("USER")));
+    debug_log("SHELL", &format!("LOGNAME env var: {:?}", std::env::var("LOGNAME")));
+    debug_log("SHELL", &format!("HOME env var: {:?}", std::env::var("HOME")));
+    debug_log("SHELL", &format!("SHELL env var: {:?}", std::env::var("SHELL")));
+    debug_log("SHELL", &format!("PATH env var: {:?}", std::env::var("PATH")));
+    
+    // Try to get current user using whoami command
+    if let Ok(whoami_output) = Command::new("whoami").output() {
+        let whoami_user = String::from_utf8_lossy(&whoami_output.stdout).trim().to_string();
+        debug_log("SHELL", &format!("whoami result: '{}'", whoami_user));
+    } else {
+        debug_log("SHELL", "whoami command failed");
+    }
+    
     // For commands starting with underscore, try to execute them directly first
     // since zsh might interpret them as completion functions
     if command.starts_with('_') {
@@ -149,10 +164,12 @@ pub fn execute_shell_command_with_env(command: &str) -> Result<std::process::Out
     let mut cmd = Command::new(&user_shell);
     cmd.arg("-c").arg(&wrapped_command);
     
-    // Inherit environment from current process (which should have basic PATH)
-    cmd.env("HOME", std::env::var("HOME").unwrap_or_else(|_| "/Users/oblinger".to_string()));
+    // Inherit environment from current process
+    if let Ok(home) = std::env::var("HOME") {
+        cmd.env("HOME", home);
+    }
     
-    // Set a basic PATH in case the shell profile doesn't load properly
+    // Set basic PATH (we'll improve this once we figure out user detection)
     if let Ok(current_path) = std::env::var("PATH") {
         cmd.env("PATH", current_path);
     }
