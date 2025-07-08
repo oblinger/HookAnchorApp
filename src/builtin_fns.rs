@@ -6,7 +6,7 @@
 
 use std::collections::HashMap;
 use crate::eval::{EvalError, Environment};
-use crate::utils::{debug_log, launch_app_with_arg, open_url, open_folder, execute_shell_command, open_with_app};
+use crate::utils::{debug_log, launch_app_with_arg, open_url, open_folder, open_with_app};
 
 /// Setup all built-in functions in the environment's function registry
 pub fn setup_builtin_functions(env: &mut Environment) {
@@ -93,26 +93,9 @@ pub fn setup_builtin_functions(env: &mut Environment) {
         
         debug_log("BUILTIN", &format!("Starting shell command (non-blocking): {}", command));
         
-        // Execute command without waiting
-        use std::process::{Command, Stdio};
-        
-        let mut cmd = Command::new("sh");
-        cmd.arg("-c")
-           .arg(&command)
-           .stdin(Stdio::null());
-           
-        // Inherit basic environment
-        if let Ok(path) = std::env::var("PATH") {
-            cmd.env("PATH", path);
-        }
-        if let Ok(home) = std::env::var("HOME") {
-            cmd.env("HOME", home);
-        }
-        
-        match cmd.spawn() {
-            Ok(_) => debug_log("BUILTIN", &format!("Command started: {}", command)),
-            Err(e) => return Err(EvalError::ExecutionError(format!("Failed to start command '{}': {}", command, e))),
-        }
+        // Use unified shell execution (non-blocking)
+        let _output = crate::utils::execute_shell_command_unified(&command, false, false)
+            .map_err(|e| EvalError::ExecutionError(format!("Failed to start shell command '{}': {}", command, e)))?;
         
         Ok(())
     }));
@@ -125,7 +108,8 @@ pub fn setup_builtin_functions(env: &mut Environment) {
         
         debug_log("BUILTIN", &format!("Running shell command (blocking): {}", command));
         
-        let output = execute_shell_command(&command)
+        // Use unified shell execution (blocking)
+        let output = crate::utils::execute_shell_command_unified(&command, true, false)
             .map_err(|e| EvalError::ExecutionError(format!("Failed to execute command '{}': {}", command, e)))?;
         
         if !output.status.success() {

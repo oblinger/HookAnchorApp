@@ -79,7 +79,24 @@ pub fn open_folder(path: &str) -> Result<std::process::Output, std::io::Error> {
 /// 
 /// Uses the user's login shell and sources their profile to get proper PATH and environment
 pub fn execute_shell_command(command: &str) -> Result<std::process::Output, std::io::Error> {
-    execute_shell_command_with_env(command)
+    execute_shell_command_unified(command, true, false)
+}
+
+#[derive(Debug, Clone)]
+pub struct ShellOptions {
+    pub blocking: bool,      // true = wait for completion, false = spawn and return
+    pub login_shell: bool,   // true = use login shell with full environment
+    pub inherit_env: bool,   // true = inherit current environment variables
+}
+
+impl Default for ShellOptions {
+    fn default() -> Self {
+        Self {
+            blocking: true,
+            login_shell: true,
+            inherit_env: true,
+        }
+    }
 }
 
 /// Core shell command execution with proper user environment
@@ -87,94 +104,199 @@ pub fn execute_shell_command(command: &str) -> Result<std::process::Output, std:
 /// This function is shared between the utils module and JavaScript runtime
 /// to ensure consistent shell execution behavior across the application
 pub fn execute_shell_command_with_env(command: &str) -> Result<std::process::Output, std::io::Error> {
-    // Get the user's shell from SHELL environment variable, fallback to zsh
-    let user_shell = std::env::var("SHELL").unwrap_or_else(|_| "/bin/zsh".to_string());
+    execute_shell_command_unified(command, true, false)
+}
+
+/// Unified shell command execution with configurable options
+/// 
+/// This replaces all the various shell execution functions with a single, 
+/// configurable approach that properly handles user environments
+pub fn execute_shell_command_unified(command: &str, blocking: bool, detached: bool) -> Result<std::process::Output, std::io::Error> {
+    let options = ShellOptions {
+        blocking,
+        login_shell: true,
+        inherit_env: true,
+    };
+    execute_shell_with_options(command, options, detached)
+}
+
+pub fn execute_shell_with_options(command: &str, options: ShellOptions, detached: bool) -> Result<std::process::Output, std::io::Error> {
+    debug_log("SHELL", &format!("Executing command with options: {:?}", options));
+    debug_log("SHELL", &format!("Command: {}", command));
     
-    // Add debug logging for command execution
-    debug_log("SHELL", &format!("Executing command: {}", command));
-    debug_log("SHELL", &format!("Using shell: {}", user_shell));
+    // Detect current user - try multiple methods for reliability
+    let current_user = detect_current_user();
+    debug_log("SHELL", &format!("Detected user: {}", current_user));
     
-    // Debug: Show user environment info
-    debug_log("SHELL", &format!("USER env var: {:?}", std::env::var("USER")));
-    debug_log("SHELL", &format!("LOGNAME env var: {:?}", std::env::var("LOGNAME")));
-    debug_log("SHELL", &format!("HOME env var: {:?}", std::env::var("HOME")));
-    debug_log("SHELL", &format!("SHELL env var: {:?}", std::env::var("SHELL")));
-    debug_log("SHELL", &format!("PATH env var: {:?}", std::env::var("PATH")));
-    
-    // Try to get current user using whoami command
-    if let Ok(whoami_output) = Command::new("whoami").output() {
-        let whoami_user = String::from_utf8_lossy(&whoami_output.stdout).trim().to_string();
-        debug_log("SHELL", &format!("whoami result: '{}'", whoami_user));
+    // Build the command based on options
+    let final_command = if options.login_shell {
+        // Use login shell to get proper environment
+        // Escape single quotes in the original command
+        let escaped_command = command.replace("'", "'\"'\"'");
+        format!("su - {} -c '{}'", current_user, escaped_command)
     } else {
-        debug_log("SHELL", "whoami command failed");
+        // Use simple shell execution
+        command.to_string()
+    };
+    
+    debug_log("SHELL", &format!("Final command: {}", final_command));
+    
+    // Execute with appropriate method
+    if detached {
+        execute_detached(&final_command, options)
+    } else if options.blocking {
+        execute_blocking(&final_command, options)
+    } else {
+        execute_non_blocking(&final_command, options)
+    }
+}
+
+fn detect_current_user() -> String {
+    // Try multiple methods to detect the current user
+    
+    // Method 1: USER environment variable
+    if let Ok(user) = std::env::var("USER") {
+        if !user.is_empty() {
+            debug_log("SHELL", &format!("Found user via USER env var: {}", user));
+            return user;
+        }
     }
     
-    // For commands starting with underscore, try to execute them directly first
-    // since zsh might interpret them as completion functions
-    if command.starts_with('_') {
-        debug_log("SHELL", "Command starts with underscore, trying direct execution");
-        
-        // Try to find the command in PATH first
-        let which_command = format!("which {}", command);
-        let wrapped_which = format!(
-            "source ~/.zshrc 2>/dev/null || source ~/.bash_profile 2>/dev/null || source ~/.bashrc 2>/dev/null || true; {}",
-            which_command
-        );
-        
-        let mut which_cmd = Command::new(&user_shell);
-        which_cmd.arg("-c").arg(&wrapped_which);
-        if let Ok(current_path) = std::env::var("PATH") {
-            which_cmd.env("PATH", current_path);
+    // Method 2: LOGNAME environment variable  
+    if let Ok(user) = std::env::var("LOGNAME") {
+        if !user.is_empty() {
+            debug_log("SHELL", &format!("Found user via LOGNAME env var: {}", user));
+            return user;
         }
-        
-        if let Ok(which_output) = which_cmd.output() {
-            if which_output.status.success() {
-                let command_path = String::from_utf8_lossy(&which_output.stdout).trim().to_string();
-                debug_log("SHELL", &format!("Found command at: {}", command_path));
-                
-                // Execute the command directly using its full path
-                let direct_command = format!("exec '{}'", command_path);
-                let wrapped_direct = format!(
-                    "source ~/.zshrc 2>/dev/null || source ~/.bash_profile 2>/dev/null || source ~/.bashrc 2>/dev/null || true; {}",
-                    direct_command
-                );
-                
-                let mut direct_cmd = Command::new(&user_shell);
-                direct_cmd.arg("-c").arg(&wrapped_direct);
-                direct_cmd.env("HOME", std::env::var("HOME").unwrap_or_else(|_| "/Users/oblinger".to_string()));
-                if let Ok(current_path) = std::env::var("PATH") {
-                    direct_cmd.env("PATH", current_path);
-                }
-                
-                debug_log("SHELL", &format!("Executing direct command: {}", direct_command));
-                return direct_cmd.output();
+    }
+    
+    // Method 3: whoami command
+    if let Ok(output) = Command::new("whoami").output() {
+        if output.status.success() {
+            let user = String::from_utf8_lossy(&output.stdout).trim().to_string();
+            if !user.is_empty() {
+                debug_log("SHELL", &format!("Found user via whoami: {}", user));
+                return user;
             }
         }
     }
     
-    // Create a command that sources the user's profile first, then runs the command
-    // This ensures we get the user's full PATH and environment
-    let wrapped_command = format!(
-        "source ~/.zshrc 2>/dev/null || source ~/.bash_profile 2>/dev/null || source ~/.bashrc 2>/dev/null || true; {}",
-        command
-    );
-    
-    debug_log("SHELL", &format!("Executing wrapped command: {}", wrapped_command));
-    
-    let mut cmd = Command::new(&user_shell);
-    cmd.arg("-c").arg(&wrapped_command);
-    
-    // Inherit environment from current process
+    // Method 4: Parse from HOME directory
     if let Ok(home) = std::env::var("HOME") {
-        cmd.env("HOME", home);
+        if let Some(user) = home.split('/').last() {
+            if !user.is_empty() {
+                debug_log("SHELL", &format!("Found user via HOME parsing: {}", user));
+                return user.to_string();
+            }
+        }
     }
     
-    // Set basic PATH (we'll improve this once we figure out user detection)
-    if let Ok(current_path) = std::env::var("PATH") {
-        cmd.env("PATH", current_path);
+    // Fallback: assume current user from id command
+    if let Ok(output) = Command::new("id").arg("-un").output() {
+        if output.status.success() {
+            let user = String::from_utf8_lossy(&output.stdout).trim().to_string();
+            if !user.is_empty() {
+                debug_log("SHELL", &format!("Found user via id -un: {}", user));
+                return user;
+            }
+        }
+    }
+    
+    // Final fallback
+    debug_log("SHELL", "Could not detect user, using fallback 'user'");
+    "user".to_string()
+}
+
+fn execute_blocking(command: &str, options: ShellOptions) -> Result<std::process::Output, std::io::Error> {
+    use std::process::Command;
+    
+    let mut cmd = Command::new("sh");
+    cmd.arg("-c").arg(command);
+    
+    if options.inherit_env {
+        // Inherit minimal environment
+        if let Ok(home) = std::env::var("HOME") {
+            cmd.env("HOME", home);
+        }
+        if let Ok(path) = std::env::var("PATH") {
+            cmd.env("PATH", path);
+        }
     }
     
     cmd.output()
+}
+
+fn execute_non_blocking(command: &str, options: ShellOptions) -> Result<std::process::Output, std::io::Error> {
+    use std::process::{Command, Stdio};
+    
+    let mut cmd = Command::new("sh");
+    cmd.arg("-c")
+       .arg(command)
+       .stdin(Stdio::null())
+       .stdout(Stdio::null())
+       .stderr(Stdio::null());
+    
+    if options.inherit_env {
+        if let Ok(home) = std::env::var("HOME") {
+            cmd.env("HOME", home);
+        }
+        if let Ok(path) = std::env::var("PATH") {
+            cmd.env("PATH", path);
+        }
+    }
+    
+    // For non-blocking, we spawn and return immediately
+    match cmd.spawn() {
+        Ok(_) => {
+            debug_log("SHELL", "Non-blocking command spawned successfully");
+            // For non-blocking commands, just run a quick successful command to get a real ExitStatus
+            let dummy_output = Command::new("true").output().unwrap_or_else(|_| {
+                std::process::Output {
+                    status: std::process::ExitStatus::default(),
+                    stdout: Vec::new(),
+                    stderr: Vec::new(),
+                }
+            });
+            Ok(dummy_output)
+        }
+        Err(e) => Err(e)
+    }
+}
+
+fn execute_detached(command: &str, options: ShellOptions) -> Result<std::process::Output, std::io::Error> {
+    use std::process::{Command, Stdio};
+    
+    let mut cmd = Command::new("sh");
+    cmd.arg("-c")
+       .arg(command)
+       .stdin(Stdio::null())
+       .stdout(Stdio::null()) 
+       .stderr(Stdio::null());
+       
+    if options.inherit_env {
+        if let Ok(home) = std::env::var("HOME") {
+            cmd.env("HOME", home);
+        }
+        if let Ok(path) = std::env::var("PATH") {
+            cmd.env("PATH", path);
+        }
+    }
+    
+    match cmd.spawn() {
+        Ok(_) => {
+            debug_log("SHELL", "Detached command spawned successfully");
+            // For detached commands, just run a quick successful command to get a real ExitStatus
+            let dummy_output = Command::new("true").output().unwrap_or_else(|_| {
+                std::process::Output {
+                    status: std::process::ExitStatus::default(),
+                    stdout: Vec::new(),
+                    stderr: Vec::new(),
+                }
+            });
+            Ok(dummy_output)
+        }
+        Err(e) => Err(e)
+    }
 }
 
 /// Open a file/URL with a specific app using macOS `open` command
