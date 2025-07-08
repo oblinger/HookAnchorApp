@@ -80,6 +80,41 @@ functions:
   action_shutdown: |
     spawnDetached("{{arg}}");
   
+  # 1Password - Character injection for passwords/credentials
+  # Opens 1Password Quick Access and injects search text
+  action_1pass: |
+    const query = "{{arg}}";
+    log(`1PASS: Searching for: ${query}`);
+    
+    // Activate 1Password via Cmd+Shift+Space (Quick Access)
+    runAppleScript(`
+      tell application "System Events"
+        key code 49 using {command down, shift down}
+      end tell
+    `);
+    
+    // Brief delay for Quick Access to open
+    shell_sync("/bin/sleep 0.3");
+    
+    // Type the search query
+    runAppleScript(\`
+      tell application "System Events"
+        keystroke "${query}"
+      end tell
+    \`);
+    
+    // Brief delay for search results
+    shell_sync("/bin/sleep 0.2");
+    
+    // Press Enter to select first result and auto-fill
+    runAppleScript(`
+      tell application "System Events"
+        key code 36
+      end tell
+    `);
+    
+    log(\`1PASS: Search completed for: \${query}\`);
+  
   # Anchor - Open markdown file and activate tmux session
   # CUSTOMIZE: Update paths if needed (especially for non-Homebrew tmux installations)
   action_anchor: |
