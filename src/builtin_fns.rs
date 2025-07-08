@@ -85,31 +85,57 @@ pub fn setup_builtin_functions(env: &mut Environment) {
         Ok(())
     }));
     
-    // shell function - non-blocking execution
+    // shell function - hybrid approach (current default)
     env.functions.insert("shell".to_string(), Box::new(|env, args| {
         let command = get_substituted_string_arg(args, "command", env)
             .or_else(|| get_substituted_string_arg(args, "cmd", env))
             .ok_or_else(|| EvalError::InvalidAction("Missing 'command' or 'cmd' argument".to_string()))?;
         
-        debug_log("BUILTIN", &format!("Starting shell command (non-blocking): {}", command));
+        debug_log("BUILTIN", &format!("Starting shell command (hybrid, non-blocking): {}", command));
         
-        // Use unified shell execution (non-blocking)
-        let _output = crate::utils::execute_shell_command_unified(&command, false, false)
+        let _output = crate::utils::shell_hybrid(&command, false)
             .map_err(|e| EvalError::ExecutionError(format!("Failed to start shell command '{}': {}", command, e)))?;
         
         Ok(())
     }));
     
-    // shell_sync function - blocking execution for when you need to wait
+    // shell_simple function - basic shell execution
+    env.functions.insert("shell_simple".to_string(), Box::new(|env, args| {
+        let command = get_substituted_string_arg(args, "command", env)
+            .or_else(|| get_substituted_string_arg(args, "cmd", env))
+            .ok_or_else(|| EvalError::InvalidAction("Missing 'command' or 'cmd' argument".to_string()))?;
+        
+        debug_log("BUILTIN", &format!("Starting shell command (simple, non-blocking): {}", command));
+        
+        let _output = crate::utils::shell_simple(&command, false)
+            .map_err(|e| EvalError::ExecutionError(format!("Failed to start shell command '{}': {}", command, e)))?;
+        
+        Ok(())
+    }));
+    
+    // shell_login function - login shell execution
+    env.functions.insert("shell_login".to_string(), Box::new(|env, args| {
+        let command = get_substituted_string_arg(args, "command", env)
+            .or_else(|| get_substituted_string_arg(args, "cmd", env))
+            .ok_or_else(|| EvalError::InvalidAction("Missing 'command' or 'cmd' argument".to_string()))?;
+        
+        debug_log("BUILTIN", &format!("Starting shell command (login, non-blocking): {}", command));
+        
+        let _output = crate::utils::shell_login(&command, false)
+            .map_err(|e| EvalError::ExecutionError(format!("Failed to start shell command '{}': {}", command, e)))?;
+        
+        Ok(())
+    }));
+    
+    // shell_sync function - blocking execution for when you need to wait (hybrid)
     env.functions.insert("shell_sync".to_string(), Box::new(|env, args| {
         let command = get_substituted_string_arg(args, "command", env)
             .or_else(|| get_substituted_string_arg(args, "cmd", env))
             .ok_or_else(|| EvalError::InvalidAction("Missing 'command' or 'cmd' argument".to_string()))?;
         
-        debug_log("BUILTIN", &format!("Running shell command (blocking): {}", command));
+        debug_log("BUILTIN", &format!("Running shell command (hybrid, blocking): {}", command));
         
-        // Use unified shell execution (blocking)
-        let output = crate::utils::execute_shell_command_unified(&command, true, false)
+        let output = crate::utils::shell_hybrid(&command, true)
             .map_err(|e| EvalError::ExecutionError(format!("Failed to execute command '{}': {}", command, e)))?;
         
         if !output.status.success() {

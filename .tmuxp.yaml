@@ -1,4 +1,4 @@
-session_name: 2025-06 anchor_selector
+session_name: 2025-06 HookAnchor
 start_directory: .
 windows:
   - window_name: claude
@@ -12,4 +12,4 @@ windows:
       - shell_command: zsh
   - window_name: notes
     panes:
-      - shell_command: vim "2025-06 anchor_selector.md"
+      - shell_command: vim "2025-06 HookAnchor.md"

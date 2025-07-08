@@ -154,14 +154,32 @@ pub fn get_browser_info(bundle_id: &str) -> Option<String> {
     None
 }
 
-/// Get Finder-specific information
-pub fn get_finder_info() -> Option<String> {
+/// Get Finder-specific information including selection
+pub fn get_finder_info() -> Option<serde_json::Value> {
     
     let script = r#"
         tell application "Finder"
             if (count of windows) > 0 then
-                set thePath to POSIX path of (target of window 1 as alias)
-                return thePath
+                set currentPath to POSIX path of (target of window 1 as alias)
+                
+                -- Get selected items
+                set selectedItems to selection
+                if (count of selectedItems) > 0 then
+                    set firstSelection to item 1 of selectedItems
+                    set selectionPath to POSIX path of (firstSelection as alias)
+                    
+                    -- Check if selection is a folder
+                    set itemClass to class of firstSelection
+                    if itemClass is folder then
+                        set isFolder to "true"
+                    else
+                        set isFolder to "false"
+                    end if
+                    
+                    return currentPath & "|" & selectionPath & "|" & isFolder
+                else
+                    return currentPath & "||"
+                end if
             else
                 return ""
             end if
@@ -175,9 +193,24 @@ pub fn get_finder_info() -> Option<String> {
         .output()
     {
         if output.status.success() {
-            let path = String::from_utf8_lossy(&output.stdout).trim().to_string();
-            if !path.is_empty() {
-                return Some(path);
+            let result = String::from_utf8_lossy(&output.stdout).trim().to_string();
+            if !result.is_empty() {
+                let parts: Vec<&str> = result.split('|').collect();
+                let mut finder_info = serde_json::json!({});
+                
+                if parts.len() >= 1 && !parts[0].is_empty() {
+                    finder_info["path"] = serde_json::Value::String(parts[0].to_string());
+                }
+                
+                if parts.len() >= 2 && !parts[1].is_empty() {
+                    finder_info["selection"] = serde_json::Value::String(parts[1].to_string());
+                }
+                
+                if parts.len() >= 3 && !parts[2].is_empty() {
+                    finder_info["selectionIsDirectory"] = serde_json::Value::Bool(parts[2] == "true");
+                }
+                
+                return Some(finder_info);
             }
         }
     }
@@ -211,10 +244,20 @@ pub fn enrich_context(mut context: AppContext) -> AppContext {
         }
     }
     
-    // Add Finder path if applicable
+    // Add Finder path and selection info if applicable
     if context.bundle_id == "com.apple.finder" {
-        if let Some(path) = get_finder_info() {
-            context.properties["path"] = serde_json::Value::String(path);
+        crate::utils::debug_log("GRABBER", "Enriching Finder context...");
+        if let Some(finder_info) = get_finder_info() {
+            crate::utils::debug_log("GRABBER", &format!("Got Finder info: {:?}", finder_info));
+            // Merge the finder info into properties
+            if let Some(obj) = finder_info.as_object() {
+                for (key, value) in obj {
+                    context.properties[key] = value.clone();
+                    crate::utils::debug_log("GRABBER", &format!("Added props.{}: {:?}", key, value));
+                }
+            }
+        } else {
+            crate::utils::debug_log("GRABBER", "Failed to get Finder info");
         }
     }
     
@@ -268,8 +311,9 @@ pub fn match_grabber_rules(
                     if value.is_null() || value.is_undefined() {
                         // Rule didn't match, continue to next rule
                     } else if let Some(str_ref) = value.as_string() {
+                        // String return - use current behavior
                         if let Ok(arg) = str_ref.to_string() {
-                            crate::utils::debug_log("GRABBER", &format!("Matched rule: '{}'", rule.name));
+                            crate::utils::debug_log("GRABBER", &format!("Matched rule '{}' with string: '{}'", rule.name, arg));
                             
                             // Rule matched and returned a string argument
                             let command = Command {
@@ -283,11 +327,41 @@ pub fn match_grabber_rules(
                             
                             return Some((rule.name.clone(), command));
                         }
+                    } else if let Some(obj) = value.as_object() {
+                        // Object return - extract command fields
+                        crate::utils::debug_log("GRABBER", &format!("Matched rule '{}' with object", rule.name));
+                        
+                        // Extract action, arg, and group from the object
+                        let action = obj.get::<_, String>("action").ok()
+                            .or_else(|| rule.action.clone().into());
+                        let arg = obj.get::<_, String>("arg").ok()
+                            .unwrap_or_default();
+                        let group = obj.get::<_, String>("group").ok()
+                            .or_else(|| rule.group.clone())
+                            .unwrap_or_default();
+                        
+                        if let Some(action) = action {
+                            crate::utils::debug_log("GRABBER", &format!("  action: '{}', arg: '{}', group: '{}'", action, arg, group));
+                            
+                            let command = Command {
+                                group,
+                                command: String::new(), // Will be filled by user
+                                action,
+                                arg,
+                                flags: String::new(),
+                                full_line: String::new(), // Will be computed
+                            };
+                            
+                            return Some((rule.name.clone(), command));
+                        } else {
+                            crate::utils::debug_log("GRABBER", "  Error: object missing 'action' field");
+                        }
                     }
                     // Other return types (bool, number) are treated as no match
                 }
-                Err(_) => {
-                    // Silently continue to next rule on JavaScript errors
+                Err(e) => {
+                    // Log JavaScript errors for debugging
+                    crate::utils::debug_log("GRABBER", &format!("Rule '{}' error: {:?}", rule.name, e));
                 }
             }
         }

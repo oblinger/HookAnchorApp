@@ -10,6 +10,9 @@ use anchor_selector::ApplicationState;
 /// 
 /// Determines whether to run in GUI mode (no arguments) or CLI mode (with arguments)
 fn main() -> Result<(), eframe::Error> {
+    // Log startup with build timestamp to verify we're running the new binary
+    anchor_selector::utils::debug_log("STARTUP", "HookAnchor starting - Build: 21:33 PM July 7, 2025");
+    
     let args: Vec<String> = env::args().collect();
     
     // If arguments are provided, run in command-line mode (no GUI)

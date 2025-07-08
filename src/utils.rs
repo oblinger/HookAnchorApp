@@ -7,6 +7,11 @@ use std::fs::OpenOptions;
 use std::io::Write;
 use std::process::Command;
 use chrono::Local;
+use std::collections::HashMap;
+use std::sync::{Mutex, OnceLock};
+
+/// Cached login shell environment variables
+static LOGIN_ENV_CACHE: OnceLock<Mutex<Option<HashMap<String, String>>>> = OnceLock::new();
 
 /// Debug logging function used across all modules
 /// 
@@ -75,11 +80,162 @@ pub fn open_folder(path: &str) -> Result<std::process::Output, std::io::Error> {
     Command::new("open").arg(&expanded_path).output()
 }
 
+/// Capture environment variables from a login shell (cached)
+fn get_login_environment() -> Result<HashMap<String, String>, std::io::Error> {
+    let cache = LOGIN_ENV_CACHE.get_or_init(|| Mutex::new(None));
+    let mut cache_guard = cache.lock().unwrap();
+    
+    if let Some(ref env) = *cache_guard {
+        debug_log("SHELL", "Using cached login environment");
+        return Ok(env.clone());
+    }
+    
+    debug_log("SHELL", "Capturing login shell environment for first time");
+    
+    // Get the user's shell
+    let shell = std::env::var("SHELL").unwrap_or_else(|_| "/bin/zsh".to_string());
+    
+    debug_log("SHELL", &format!("Using shell: {}", shell));
+    
+    // Run the login shell directly to capture environment
+    let output = Command::new(&shell)
+        .arg("-l")
+        .arg("-c")
+        .arg("env")
+        .output()?;
+    
+    if !output.status.success() {
+        let stderr = String::from_utf8_lossy(&output.stderr);
+        return Err(std::io::Error::new(
+            std::io::ErrorKind::Other,
+            format!("Failed to capture login environment: {}", stderr)
+        ));
+    }
+    
+    let env_output = String::from_utf8_lossy(&output.stdout);
+    let mut env_map = HashMap::new();
+    
+    for line in env_output.lines() {
+        if let Some((key, value)) = line.split_once('=') {
+            env_map.insert(key.to_string(), value.to_string());
+        }
+    }
+    
+    debug_log("SHELL", &format!("Captured {} environment variables", env_map.len()));
+    *cache_guard = Some(env_map.clone());
+    
+    Ok(env_map)
+}
+
+/// Shell execution with simple current environment (original approach)
+pub fn shell_simple(command: &str, blocking: bool) -> Result<std::process::Output, std::io::Error> {
+    debug_log("SHELL", &format!("SIMPLE: {}", command));
+    
+    let mut cmd = Command::new("sh");
+    cmd.arg("-c").arg(command);
+    
+    if blocking {
+        cmd.output()
+    } else {
+        match cmd.spawn() {
+            Ok(_) => {
+                // Return dummy success output for non-blocking
+                // Use a command that always succeeds to get a proper ExitStatus
+                let dummy_output = Command::new("true").output()?;
+                Ok(std::process::Output {
+                    status: dummy_output.status,
+                    stdout: Vec::new(),
+                    stderr: Vec::new(),
+                })
+            },
+            Err(e) => Err(e),
+        }
+    }
+}
+
+/// Shell execution with full login shell environment (su - approach)
+pub fn shell_login(command: &str, blocking: bool) -> Result<std::process::Output, std::io::Error> {
+    debug_log("SHELL", &format!("LOGIN: {}", command));
+    
+    let current_user = detect_current_user();
+    let escaped_command = command.replace("'", "'\"'\"'");
+    let final_command = format!("su - {} -c '{}'", current_user, escaped_command);
+    
+    let mut cmd = Command::new("sh");
+    cmd.arg("-c").arg(&final_command);
+    
+    if blocking {
+        cmd.output()
+    } else {
+        match cmd.spawn() {
+            Ok(_) => {
+                let dummy_output = Command::new("true").output()?;
+                Ok(std::process::Output {
+                    status: dummy_output.status,
+                    stdout: Vec::new(),
+                    stderr: Vec::new(),
+                })
+            },
+            Err(e) => Err(e),
+        }
+    }
+}
+
+/// Shell execution with hybrid approach: current GUI environment + login shell env vars
+pub fn shell_hybrid(command: &str, blocking: bool) -> Result<std::process::Output, std::io::Error> {
+    debug_log("SHELL", &format!("HYBRID: {}", command));
+    
+    // Check if tmux is requested
+    if command.contains("tmux") {
+        debug_log("SHELL", "tmux command detected, checking availability");
+    }
+    
+    let mut cmd = Command::new("sh");
+    cmd.arg("-c").arg(command);
+    
+    // Try to get login environment, but fall back to simple execution if it fails
+    match get_login_environment() {
+        Ok(login_env) => {
+            debug_log("SHELL", &format!("Applying {} login environment variables", login_env.len()));
+            
+            // Debug: Log PATH from login environment
+            if let Some(path) = login_env.get("PATH") {
+                debug_log("SHELL", &format!("Login PATH: {}", path));
+            }
+            
+            // Apply login environment variables to current process environment
+            for (key, value) in &login_env {
+                cmd.env(key, value);
+            }
+        },
+        Err(e) => {
+            debug_log("SHELL", &format!("Failed to get login environment ({}), falling back to simple execution", e));
+            // Continue with current environment
+        }
+    }
+    
+    if blocking {
+        cmd.output()
+    } else {
+        match cmd.spawn() {
+            Ok(_) => {
+                let dummy_output = Command::new("true").output()?;
+                Ok(std::process::Output {
+                    status: dummy_output.status,
+                    stdout: Vec::new(),
+                    stderr: Vec::new(),
+                })
+            },
+            Err(e) => Err(e),
+        }
+    }
+}
+
 /// Execute a shell command using the user's shell with proper environment
 /// 
-/// Uses the user's login shell and sources their profile to get proper PATH and environment
+/// Uses the hybrid approach by default (current GUI environment + login shell env vars)
 pub fn execute_shell_command(command: &str) -> Result<std::process::Output, std::io::Error> {
-    execute_shell_command_unified(command, true, false)
+    shell_hybrid(command, true)
 }
 
 #[derive(Debug, Clone)]
@@ -104,7 +260,7 @@ impl Default for ShellOptions {
 /// This function is shared between the utils module and JavaScript runtime
 /// to ensure consistent shell execution behavior across the application
 pub fn execute_shell_command_with_env(command: &str) -> Result<std::process::Output, std::io::Error> {
-    execute_shell_command_unified(command, true, false)
+    shell_hybrid(command, true)
 }
 
 /// Unified shell command execution with configurable options
@@ -128,14 +284,18 @@ pub fn execute_shell_with_options(command: &str, options: ShellOptions, detached
     let current_user = detect_current_user();
     debug_log("SHELL", &format!("Detected user: {}", current_user));
     
+    // Check if this is a GUI command that needs direct execution
+    let is_gui_command = is_gui_command(command);
+    debug_log("SHELL", &format!("Is GUI command: {}", is_gui_command));
+    
     // Build the command based on options
-    let final_command = if options.login_shell {
-        // Use login shell to get proper environment
+    let final_command = if options.login_shell && !is_gui_command {
+        // Use login shell to get proper environment, but not for GUI commands
         // Escape single quotes in the original command
         let escaped_command = command.replace("'", "'\"'\"'");
         format!("su - {} -c '{}'", current_user, escaped_command)
     } else {
-        // Use simple shell execution
+        // Use simple shell execution for GUI commands or when login_shell is false
         command.to_string()
     };
     
@@ -149,6 +309,27 @@ pub fn execute_shell_with_options(command: &str, options: ShellOptions, detached
     } else {
         execute_non_blocking(&final_command, options)
     }
+}
+
+/// Detects if a command is a GUI command that needs direct execution (not through su -)
+fn is_gui_command(command: &str) -> bool {
+    // List of common GUI commands that need direct execution
+    let gui_commands = [
+        "open",           // macOS open command
+        "osascript",      // AppleScript execution
+        "automator",      // Automator workflows
+        "say",            // Text-to-speech
+        "afplay",         // Audio playback
+        "qlmanage",       // Quick Look
+        "screencapture",  // Screen capture
+        "caffeinate",     // Keep system awake
+    ];
+    
+    // Extract the first word (command name) from the full command
+    let command_name = command.trim().split_whitespace().next().unwrap_or("");
+    
+    // Check if it's a known GUI command
+    gui_commands.iter().any(|&gui_cmd| command_name == gui_cmd)
 }
 
 fn detect_current_user() -> String {

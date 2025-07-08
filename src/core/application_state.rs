@@ -97,16 +97,18 @@ impl ApplicationState {
     
     /// Check and apply alias if search text matches a rewrite command
     pub fn check_and_apply_alias(&mut self) {
-        // Check if search text ends with space and the prefix matches a rewrite command
-        if self.search_text.ends_with(' ') {
-            let prefix = self.search_text.trim_end();
-            if let Some(rewrite_cmd) = self.commands.iter().find(|cmd| 
-                cmd.action == "rewrite" && cmd.command.to_lowercase() == prefix.to_lowercase()
-            ) {
-                // Replace search text with the rewrite argument followed by space
-                let new_search = format!("{} ", rewrite_cmd.arg);
-                self.search_text = new_search;
-                self.recompute_filtered_commands();
+        // Check if search text ends with any word separator and the prefix matches a rewrite command
+        if let Some(last_char) = self.search_text.chars().last() {
+            if self.config.popup_settings.word_separators.contains(last_char) {
+                let prefix = self.search_text.trim_end_matches(&self.config.popup_settings.word_separators.chars().collect::<Vec<_>>()[..]);
+                if let Some(rewrite_cmd) = self.commands.iter().find(|cmd| 
+                    cmd.action == "rewrite" && cmd.command.to_lowercase() == prefix.to_lowercase()
+                ) {
+                    // Replace search text with the rewrite argument followed by the same separator
+                    let new_search = format!("{}{}", rewrite_cmd.arg, last_char);
+                    self.search_text = new_search;
+                    self.recompute_filtered_commands();
+                }
             }
         }
     }

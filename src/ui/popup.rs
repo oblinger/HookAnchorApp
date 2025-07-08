@@ -125,6 +125,7 @@ impl AnchorSelector {
                                     "exit_app" => actions_to_perform.push("exit_app"),
                                     "execute_command" => actions_to_perform.push("execute_command"),
                                     "open_editor" => actions_to_perform.push("open_editor"),
+                                    "edit_active_command" => actions_to_perform.push("edit_active_command"),
                                     _ => {} // Unknown action - still consume the key
                                 }
                             }
@@ -146,6 +147,10 @@ impl AnchorSelector {
                         } else if consumed_keys.contains(&egui::Key::Backtick) && text == "`" {
                             true
                         } else if consumed_keys.contains(&egui::Key::Plus) && text == "+" {
+                            true
+                        } else if consumed_keys.contains(&egui::Key::Slash) && text == "/" {
+                            true
+                        } else if consumed_keys.contains(&egui::Key::Semicolon) && text == ";" {
                             true
                         } else if consumed_keys.contains(&egui::Key::ArrowUp) {
                             // Arrow keys shouldn't generate text but filter just in case
@@ -207,6 +212,7 @@ impl AnchorSelector {
             },
             "execute_command" => self.execute_selected_command(),
             "open_editor" => self.open_command_editor(),
+            "edit_active_command" => self.edit_active_command(),
             _ => {}
         }
     }
@@ -265,6 +271,22 @@ impl AnchorSelector {
             self.command_editor.edit_command(Some(matching_command), &self.popup_state.search_text);
         } else {
             self.command_editor.edit_command(None, &self.popup_state.search_text);
+        }
+    }
+    
+    fn edit_active_command(&mut self) {
+        if !self.filtered_commands().is_empty() {
+            let (display_commands, _is_submenu, _menu_prefix, _inside_count) = self.get_display_commands();
+            
+            if self.selected_index() < display_commands.len() {
+                let selected_cmd = &display_commands[self.selected_index()];
+                
+                // Don't edit if it's a separator or a merged command
+                if !PopupState::is_separator_command(selected_cmd) && selected_cmd.get_flag('M').is_none() {
+                    // Edit the selected command, ignoring the search text
+                    self.command_editor.edit_command(Some(selected_cmd), &selected_cmd.command);
+                }
+            }
         }
     }
     
@@ -932,31 +954,7 @@ impl eframe::App for AnchorSelector {
                 if response.changed() {
                     crate::utils::debug_log("TEXT_CHANGE", &format!("Search text changed to: '{}'", self.popup_state.search_text));
                     
-                    // Handle slash for command editor
-                    let mut should_open_editor = false;
-                    let mut command_to_edit = None;
-                    
-                    // Check for equals sign that shouldn't be there
-                    if self.popup_state.search_text.ends_with('=') {
-                        crate::utils::debug_log("TEXT_CHANGE", "Found equals sign in search text - removing it");
-                        self.popup_state.search_text.pop();
-                    }
-                    
-                    if self.popup_state.search_text.ends_with('/') {
-                        // Remove the slash from search text
-                        self.popup_state.search_text.pop();
-                        should_open_editor = true;
-                        
-                        // Get command to edit after updating search
-                        let (display_commands, _, _, _) = self.get_display_commands();
-                        if !display_commands.is_empty() && self.selected_index() < display_commands.len() {
-                            let cmd = &display_commands[self.selected_index()];
-                            // Check if this is a separator or a merged command (has merge flag)
-                            if !PopupState::is_separator_command(cmd) && cmd.get_flag('M').is_none() {
-                                command_to_edit = Some(cmd.clone());
-                            }
-                        }
-                    }
+                    // Removed hardcoded character handlers - these should be handled via keybindings
                     
                     // Check for alias replacement
                     self.check_and_apply_alias();
@@ -965,10 +963,7 @@ impl eframe::App for AnchorSelector {
                     let current_search = self.popup_state.search_text.clone();
                     self.popup_state.update_search(current_search);
                     
-                    // Open command editor if slash was typed
-                    if should_open_editor {
-                        self.command_editor.edit_command(command_to_edit.as_ref(), &self.popup_state.search_text);
-                    }
+                    // Removed hardcoded slash handler - editor opening now handled via keybindings
                 }
                 
                 // Focus the text input on startup or when command editor closes
@@ -1122,7 +1117,7 @@ impl eframe::App for AnchorSelector {
                                                     if cmd.command[..prefix_end].eq_ignore_ascii_case(prefix) {
                                                         // Check if there's a separator right after the prefix
                                                         if let Some(ch) = cmd.command.chars().nth(prefix_end) {
-                                                            if ch == ' ' || ch == '.' || ch == '_' {
+                                                            if self.popup_state.config.popup_settings.word_separators.contains(ch) {
                                                                 // Trim the prefix and separator
                                                                 cmd.command[prefix_end + 1..].to_string()
                                                             } else {
@@ -1221,7 +1216,7 @@ impl eframe::App for AnchorSelector {
                                             if cmd.command[..prefix_end].eq_ignore_ascii_case(prefix) {
                                                 // Check if there's a separator right after the prefix
                                                 if let Some(ch) = cmd.command.chars().nth(prefix_end) {
-                                                    if ch == ' ' || ch == '.' || ch == '_' {
+                                                    if self.popup_state.config.popup_settings.word_separators.contains(ch) {
                                                         // Trim the prefix and separator
                                                         cmd.command[prefix_end + 1..].to_string()
                                                     } else {
