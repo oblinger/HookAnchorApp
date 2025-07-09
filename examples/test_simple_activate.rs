@@ -2,7 +2,7 @@
 //!
 //! Tests a simplified version of the activate functionality.
 
-use anchor_selector::js_runtime::execute_business_logic;
+use hookanchor::js_runtime::execute_business_logic;
 
 fn main() -> Result<(), Box<dyn std::error::Error>> {
     println!("=== Testing Simple Activate ===\n");

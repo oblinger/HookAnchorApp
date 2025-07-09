@@ -1,4 +1,4 @@
-use anchor_selector::{load_commands, save_commands_to_file};
+use hookanchor::{load_commands, save_commands_to_file};
 
 fn main() {
     println!("Testing backup functionality...");
@@ -16,7 +16,7 @@ fn main() {
     // Check if backup was created
     let home = std::env::var("HOME").unwrap_or_else(|_| ".".to_string());
     let backup_dir = std::path::Path::new(&home)
-        .join(".config/anchor_selector/backups");
+        .join(".config/hookanchor/backups");
     
     if backup_dir.exists() {
         println!("Backup directory created successfully!");

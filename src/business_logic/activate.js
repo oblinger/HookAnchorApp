@@ -101,7 +101,7 @@ function openInObsidian(anchorPath, anchorName) {
     // Note: This assumes the anchor is within the Obsidian vault
     // Users can customize this logic for their setup
     
-    const vaultRoot = expandHome("~/ob/kmr");
+    const vaultRoot = getObsidianVaultPath();
     
     try {
         // Calculate relative path from vault root

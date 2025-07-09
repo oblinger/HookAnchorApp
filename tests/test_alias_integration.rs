@@ -1,4 +1,4 @@
-use anchor_selector::launcher::launch;
+use hookanchor::launcher::launch;
 
 #[test]
 fn test_alias_execution_works() {
@@ -22,7 +22,7 @@ fn test_alias_execution_works() {
 fn test_alias_in_commands_list() {
     println!("Testing alias commands in the actual commands list...");
     
-    use anchor_selector::load_commands;
+    use hookanchor::load_commands;
     let commands = load_commands();
     
     let alias_commands: Vec<_> = commands.iter()
@@ -47,7 +47,7 @@ fn test_alias_in_commands_list() {
     
     let home_alias = alias_commands.iter().find(|cmd| cmd.command == "home");
     assert!(home_alias.is_some(), "Should find 'home' alias");
-    assert_eq!(home_alias.unwrap().arg, "folder /Users/oblinger");
+    assert_eq!(home_alias.unwrap().arg, "folder /Users/testuser");
     
     println!("✅ All alias tests passed");
 }

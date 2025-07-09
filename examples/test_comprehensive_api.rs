@@ -3,7 +3,7 @@
 //! Demonstrates many of the available JavaScript built-in functions
 //! to show the full power of the user-customizable system.
 
-use anchor_selector::js_runtime::execute_business_logic;
+use hookanchor::js_runtime::execute_business_logic;
 
 fn main() -> Result<(), Box<dyn std::error::Error>> {
     println!("=== Comprehensive JavaScript API Test ===\n");

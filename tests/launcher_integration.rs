@@ -2,7 +2,7 @@
 //! 
 //! Tests the launcher with actual configuration files and command execution.
 
-use anchor_selector::launcher::launch;
+use hookanchor::launcher::launch;
 
 #[test]
 fn test_basic_app_launch() {

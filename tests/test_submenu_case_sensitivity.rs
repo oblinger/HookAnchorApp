@@ -3,7 +3,7 @@
 //! This test ensures that commands with the same prefix but different cases
 //! are properly grouped together for submenu detection.
 
-use anchor_selector::core::commands::{Command, get_current_submenu_prefix_from_commands};
+use hookanchor::core::commands::{Command, get_current_submenu_prefix_from_commands};
 
 fn create_command(command: &str, action: &str, arg: &str) -> Command {
     Command {

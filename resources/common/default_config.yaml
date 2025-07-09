@@ -1,5 +1,5 @@
-# Default Anchor Selector Configuration
-# Copy this file to ~/.config/anchor_selector/config.yaml and customize as needed
+# Default HookAnchor Configuration
+# Copy this file to ~/.config/hookanchor/config.yaml and customize as needed
 
 # =================================================================
 # APPLICATION SETTINGS
@@ -11,7 +11,6 @@ popup_settings:
   debug_log: "~/.anchor.log"  # Debug logging file path (empty/null to disable)
   merge_similar: true         # Merging similar commands in popup
   word_separators: " ._-"     # Word separator chars for submenus and merging
-  scan_root: "~/Documents"    # Root directory for file system scanning
   scan_interval_seconds: 3600 # Seconds between automatic filesystem scans
   # Command editor dropdown actions (comma-separated list)
   listed_actions: "alias,anchor,app,url,folder,cmd,chrome,safari,brave,firefox,work,notion,obs,obs_url,1pass,rewrite,doc,contact,slack,shutdown"
@@ -22,11 +21,13 @@ markdown_roots:
   - "~/Notes"
 
 launcher_settings:
+  application_folder: "/Applications/HookAnchor.app"  # Path to the installed application
   default_browser: "Google Chrome"
   work_browser: "Google Chrome Beta"
   timeout_ms: 5000
   obsidian_app_name: "Obsidian"
   obsidian_vault_name: "YourVaultName"  # CUSTOMIZE: Your Obsidian vault name
+  obsidian_vault_path: "~/Documents"    # CUSTOMIZE: Path to your Obsidian vault
 
 # =================================================================
 # KEYBOARD SHORTCUTS

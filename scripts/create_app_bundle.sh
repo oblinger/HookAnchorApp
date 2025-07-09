@@ -5,7 +5,33 @@ APP_NAME="HookAnchor"
 APP_DIR="/Applications/${APP_NAME}.app"
 CONTENTS_DIR="${APP_DIR}/Contents"
 MACOS_DIR="${CONTENTS_DIR}/MacOS"
-HA_BINARY="/Users/oblinger/ob/kmr/prj/2025-06 HookAnchor/target/release/ha"
+
+# Find the HookAnchor binary in common locations
+POSSIBLE_PATHS=(
+    "./target/release/ha"
+    "./target/debug/ha"
+    "$(which ha 2>/dev/null)"
+    "$HOME/bin/ha"
+    "/usr/local/bin/ha"
+)
+
+HA_BINARY=""
+for path in "${POSSIBLE_PATHS[@]}"; do
+    if [[ -f "$path" ]]; then
+        HA_BINARY="$path"
+        break
+    fi
+done
+
+if [[ -z "$HA_BINARY" ]]; then
+    echo "Error: HookAnchor binary not found in any of the following locations:"
+    printf "  %s\n" "${POSSIBLE_PATHS[@]}"
+    echo ""
+    echo "Please build the project first with: cargo build --release"
+    exit 1
+fi
+
+echo "Using HookAnchor binary at: $HA_BINARY"
 
 echo "Creating app bundle at ${APP_DIR}..."
 

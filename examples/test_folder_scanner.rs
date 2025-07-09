@@ -1,4 +1,4 @@
-use anchor_selector::{Command, scanner};
+use hookanchor::{Command, scanner};
 
 fn main() {
     // Create test directory structure

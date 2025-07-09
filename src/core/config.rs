@@ -41,8 +41,6 @@ pub struct PopupSettings {
     /// Characters used as word separators for command parsing and merging
     /// Default: " ._-" (space, dot, underscore, dash)
     pub word_separators: String,
-    /// Root directory for file system scanning (F7 key functionality)
-    pub scan_root: Option<String>,
     /// Seconds between automatic filesystem scans (default: 10)
     pub scan_interval_seconds: Option<u64>,
 }
@@ -55,6 +53,8 @@ pub struct LauncherSettings {
     pub timeout_ms: Option<u64>,
     pub obsidian_app_name: Option<String>,
     pub obsidian_vault_name: Option<String>,
+    pub application_folder: Option<String>,
+    pub obsidian_vault_path: Option<String>,
 }
 
 impl Default for LauncherSettings {
@@ -65,6 +65,8 @@ impl Default for LauncherSettings {
             timeout_ms: Some(5000),
             obsidian_app_name: Some("Obsidian".to_string()),
             obsidian_vault_name: Some("kmr".to_string()),
+            application_folder: Some("/Applications/HookAnchor.app".to_string()),
+            obsidian_vault_path: Some("~/Documents".to_string()),
         }
     }
 }
@@ -83,8 +85,8 @@ fn copy_default_config(target_path: &Path) -> Result<(), std::io::Error> {
         exe_dir.join("../resources/common/default_config.yaml"),
         // Up two levels (for target/release/ha structure)
         exe_dir.join("../../resources/common/default_config.yaml"),
-        // Absolute path for development
-        PathBuf::from("/Users/oblinger/ob/kmr/prj/2025-06 HookAnchor/resources/common/default_config.yaml"),
+        // Check in current working directory (for development)
+        std::env::current_dir().unwrap_or_default().join("resources/common/default_config.yaml"),
     ];
     
     for default_path in &possible_paths {
@@ -130,7 +132,6 @@ impl Default for PopupSettings {
             listed_actions: Some("app,url,folder,cmd,chrome,anchor".to_string()),
             merge_similar: true,
             word_separators: " ._-".to_string(),
-            scan_root: None,
             scan_interval_seconds: Some(10),
         }
     }

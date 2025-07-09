@@ -2,7 +2,7 @@
 //!
 //! Demonstrates the complete user-customizable anchor action system.
 
-use anchor_selector::js_runtime::execute_business_logic;
+use hookanchor::js_runtime::execute_business_logic;
 
 fn main() -> Result<(), Box<dyn std::error::Error>> {
     println!("=== Testing Complete Anchor Action System ===\n");

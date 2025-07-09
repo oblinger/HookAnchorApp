@@ -2,7 +2,7 @@
 //!
 //! Tests that the default functions from config.yaml work correctly
 
-use anchor_selector::{js_runtime, Config};
+use hookanchor::{js_runtime, Config};
 use std::collections::HashMap;
 
 fn main() -> Result<(), Box<dyn std::error::Error>> {

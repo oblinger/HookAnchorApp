@@ -33,6 +33,7 @@
 //! ## Configuration Access
 //! - `getObsidianApp()` - Get configured Obsidian application name
 //! - `getObsidianVault()` - Get configured Obsidian vault name
+//! - `getObsidianVaultPath()` - Get configured Obsidian vault path
 //!
 //! ## Core System Primitives
 //! - `launch_app(app_name, arg)` - Launch macOS application with optional argument
@@ -544,6 +545,12 @@ pub fn setup_config_access(ctx: &Ctx<'_>, config: &Config) -> Result<(), Box<dyn
         .unwrap_or_else(|| "Obsidian".to_string());
     let obsidian_vault_name = launcher_settings.obsidian_vault_name
         .unwrap_or_else(|| "kmr".to_string());
+    let obsidian_vault_path = launcher_settings.obsidian_vault_path
+        .map(|p| crate::utils::expand_tilde(&p))
+        .unwrap_or_else(|| {
+            let home = std::env::var("HOME").unwrap_or_else(|_| ".".to_string());
+            format!("{}/Documents", home)
+        });
     
     let get_obsidian_app_fn = Function::new(ctx.clone(), move |_ctx: Ctx<'_>| -> rquickjs::Result<String> {
         Ok(obsidian_app_name.clone())
@@ -553,8 +560,13 @@ pub fn setup_config_access(ctx: &Ctx<'_>, config: &Config) -> Result<(), Box<dyn
         Ok(obsidian_vault_name.clone())
     })?;
     
+    let get_obsidian_vault_path_fn = Function::new(ctx.clone(), move |_ctx: Ctx<'_>| -> rquickjs::Result<String> {
+        Ok(obsidian_vault_path.clone())
+    })?;
+    
     ctx.globals().set("getObsidianApp", get_obsidian_app_fn)?;
     ctx.globals().set("getObsidianVault", get_obsidian_vault_fn)?;
+    ctx.globals().set("getObsidianVaultPath", get_obsidian_vault_path_fn)?;
     
     Ok(())
 }

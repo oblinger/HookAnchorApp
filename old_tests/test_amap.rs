@@ -1,4 +1,4 @@
-use anchor_selector::command_matches_query;
+use hookanchor::command_matches_query;
 
 fn main() {
     println!("Testing amap matches:");

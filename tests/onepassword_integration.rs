@@ -2,7 +2,7 @@
 //! 
 //! Tests 1Password integration using Quick Access and fallback methods.
 
-use anchor_selector::launcher::launch;
+use hookanchor::launcher::launch;
 use std::{thread, time::Duration};
 
 #[test]

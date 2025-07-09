@@ -54,5 +54,5 @@ fn main() {
 
 fn get_state_file_path() -> std::path::PathBuf {
     let home = env::var("HOME").unwrap_or_else(|_| ".".to_string());
-    Path::new(&home).join(".config/anchor_selector/state.json")
+    Path::new(&home).join(".config/hookanchor/state.json")
 }

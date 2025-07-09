@@ -2,7 +2,7 @@
 //!
 //! Tests JavaScript actions with the enhanced command context.
 
-use anchor_selector::js_runtime::execute_business_logic;
+use hookanchor::js_runtime::execute_business_logic;
 
 fn main() -> Result<(), Box<dyn std::error::Error>> {
     println!("=== Testing JavaScript Command Context Integration ===\n");

@@ -1,4 +1,4 @@
-use anchor_selector::{Command, split_commands};
+use hookanchor::{Command, split_commands};
 
 fn cmd(command: &str, action: &str, arg: &str) -> Command {
     Command {

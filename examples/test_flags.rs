@@ -1,4 +1,4 @@
-use anchor_selector::Command;
+use hookanchor::Command;
 
 fn main() {
     println!("Testing flag functionality...\n");

@@ -1,4 +1,4 @@
-use anchor_selector::load_config;
+use hookanchor::load_config;
 
 #[test]
 fn test_word_separators_config_loading() {

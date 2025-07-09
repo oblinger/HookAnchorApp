@@ -2,15 +2,34 @@
 
 # Script to register hook:// URL handler for HookAnchor application
 
-POPUP_PATH="/Users/oblinger/ob/kmr/prj/2025-06 HookAnchor/target/release/ha"
-PLIST_PATH="$HOME/Library/LaunchAgents/com.hookanchor.url-handler.plist"
+# Find the HookAnchor binary in common locations
+POSSIBLE_PATHS=(
+    "./target/release/ha"
+    "./target/debug/ha"
+    "$(which ha 2>/dev/null)"
+    "$HOME/bin/ha"
+    "/usr/local/bin/ha"
+    "/Applications/HookAnchor.app/Contents/MacOS/ha"
+)
 
-# Check if popup binary exists
-if [[ ! -f "$POPUP_PATH" ]]; then
-    echo "Error: ha binary not found at $POPUP_PATH"
-    echo "Please build the ha binary first with: cargo build --release"
+POPUP_PATH=""
+for path in "${POSSIBLE_PATHS[@]}"; do
+    if [[ -f "$path" ]]; then
+        POPUP_PATH="$path"
+        break
+    fi
+done
+
+if [[ -z "$POPUP_PATH" ]]; then
+    echo "Error: HookAnchor binary not found in any of the following locations:"
+    printf "  %s\n" "${POSSIBLE_PATHS[@]}"
+    echo ""
+    echo "Please build the project first with: cargo build --release"
     exit 1
 fi
+
+echo "Using HookAnchor binary at: $POPUP_PATH"
+PLIST_PATH="$HOME/Library/LaunchAgents/com.hookanchor.url-handler.plist"
 
 # Create the Launch Agent plist
 cat > "$PLIST_PATH" << EOF

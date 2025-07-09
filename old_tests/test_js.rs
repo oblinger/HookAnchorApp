@@ -5,7 +5,7 @@
 //! - Directory navigation with anchor activation
 //! - 1Password character injection
 
-use anchor_selector::launcher::launch;
+use hookanchor::launcher::launch;
 
 fn main() {
     println!("Testing JavaScript action execution...");

@@ -3,7 +3,7 @@
 //! Tests that the new unified function namespace works correctly with both
 //! primitive functions and user-defined functions from configuration.
 
-use anchor_selector::{js_runtime, Config};
+use hookanchor::{js_runtime, Config};
 use std::collections::HashMap;
 
 fn main() -> Result<(), Box<dyn std::error::Error>> {

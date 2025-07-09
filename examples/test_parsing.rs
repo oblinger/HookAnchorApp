@@ -1,4 +1,4 @@
-use anchor_selector::load_commands;
+use hookanchor::load_commands;
 
 fn main() {
     println!("Testing command parsing...\n");

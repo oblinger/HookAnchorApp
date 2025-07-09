@@ -1,4 +1,4 @@
-use anchor_selector::load_config;
+use hookanchor::load_config;
 
 fn main() {
     let config = load_config();
@@ -9,7 +9,7 @@ fn main() {
     use std::env;
     use std::path::Path;
     let home = env::var("HOME").unwrap_or_else(|_| ".".to_string());
-    let config_path = Path::new(&home).join(".config/anchor_selector/config.yaml");
+    let config_path = Path::new(&home).join(".config/hookanchor/config.yaml");
     println!("  Expected path: {}", config_path.display());
     
     // Check if file exists

@@ -1,4 +1,4 @@
-use anchor_selector::{load_commands, save_commands_formatted};
+use hookanchor::{load_commands, save_commands_formatted};
 use std::process;
 
 fn main() {

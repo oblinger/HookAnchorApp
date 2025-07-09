@@ -1,4 +1,4 @@
-use anchor_selector::launcher::launch;
+use hookanchor::launcher::launch;
 
 #[test]
 fn test_commands_requiring_user_path() {

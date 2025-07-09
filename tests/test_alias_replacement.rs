@@ -1,4 +1,4 @@
-use anchor_selector::load_commands;
+use hookanchor::load_commands;
 
 /// Test the alias replacement logic directly
 #[test] 

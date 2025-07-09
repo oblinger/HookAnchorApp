@@ -1,4 +1,4 @@
-use anchor_selector::{load_commands, scanner::{scan, scan_contacts}};
+use hookanchor::{load_commands, scanner::{scan, scan_contacts}};
 use std::time::Instant;
 
 fn main() {
@@ -17,7 +17,7 @@ fn main() {
     // Test markdown roots - using current project directory which has markdown files
     let test_roots = vec![
         ".".to_string(),
-        "~/ob/kmr".to_string(),
+        "~/Documents".to_string(),
     ];
     
     // Test contact scanning first

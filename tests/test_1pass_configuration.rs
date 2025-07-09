@@ -1,4 +1,4 @@
-use anchor_selector::launcher::launch;
+use hookanchor::launcher::launch;
 
 #[test]
 fn test_1pass_actions_found() {

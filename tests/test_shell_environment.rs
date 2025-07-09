@@ -1,4 +1,4 @@
-use anchor_selector::utils::execute_shell_command_with_env;
+use hookanchor::utils::execute_shell_command_with_env;
 
 #[test]
 fn test_shell_command_with_user_environment() {
@@ -74,7 +74,7 @@ fn test_shell_command_with_user_environment() {
 
 #[test]
 fn test_javascript_shell_execution() {
-    use anchor_selector::launcher::launch;
+    use hookanchor::launcher::launch;
     
     println!("Testing JavaScript shell execution with user environment...");
     

@@ -3,7 +3,7 @@
 //! Tests all available action types systematically.
 //! Useful for validating configuration and system setup.
 
-use anchor_selector::launcher::launch;
+use hookanchor::launcher::launch;
 use std::{thread, time::Duration};
 
 fn main() {

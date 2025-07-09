@@ -2,7 +2,7 @@
 //!
 //! Tests the enhanced JavaScript context that provides full command data.
 
-use anchor_selector::launcher::launch;
+use hookanchor::launcher::launch;
 
 fn main() -> Result<(), Box<dyn std::error::Error>> {
     println!("=== Testing Enhanced JavaScript Command Context ===\n");

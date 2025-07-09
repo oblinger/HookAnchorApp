@@ -1,4 +1,4 @@
-use anchor_selector::{Command, get_submenu_display_positions, get_submenu_prefix};
+use hookanchor::{Command, get_submenu_display_positions, get_submenu_prefix};
 
 fn main() {
     println!("Testing new submenu logic (exact anchor match only):");

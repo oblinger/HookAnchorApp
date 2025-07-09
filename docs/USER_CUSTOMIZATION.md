@@ -8,7 +8,7 @@ The Anchor Selector launcher provides a powerful JavaScript-based customization 
 All JavaScript actions have access to 20+ built-in functions. See [`JAVASCRIPT_API.md`](JAVASCRIPT_API.md) for the complete reference.
 
 ### 2. Edit Config File
-Customize actions in `~/.config/anchor_selector/config.yaml`:
+Customize actions in `~/.config/hookanchor/config.yaml`:
 
 ```yaml
 js_actions:
@@ -284,7 +284,7 @@ try {
 
 ## File Locations
 
-- **User Config**: `~/.config/anchor_selector/config.yaml`
+- **User Config**: `~/.config/hookanchor/config.yaml`
 - **Source Code**: `src/js_runtime.rs` (built-in functions)
 - **Action Scripts**: `src/business_logic/` directory
 - **API Reference**: [`JAVASCRIPT_API.md`](JAVASCRIPT_API.md)

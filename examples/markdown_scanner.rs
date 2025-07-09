@@ -3,7 +3,7 @@
 //! Demonstrates using JavaScript business logic to scan markdown files
 //! and generate commands based on frontmatter metadata.
 
-use anchor_selector::js_runtime::execute_business_logic;
+use hookanchor::js_runtime::execute_business_logic;
 
 fn main() -> Result<(), Box<dyn std::error::Error>> {
     println!("=== Markdown Command Scanner ===\n");

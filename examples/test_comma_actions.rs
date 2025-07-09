@@ -2,7 +2,7 @@
 //!
 //! Tests that the comma-separated listed_actions parsing works correctly
 
-use anchor_selector::{get_listed_actions, Config};
+use hookanchor::{get_listed_actions, Config};
 use std::collections::HashMap;
 
 fn main() -> Result<(), Box<dyn std::error::Error>> {

@@ -1,4 +1,4 @@
-use anchor_selector::{Command, load_commands};
+use hookanchor::{Command, load_commands};
 
 #[test]
 fn test_alias_replacement_logic() {
@@ -17,8 +17,8 @@ fn test_alias_replacement_logic() {
             group: String::new(),
             command: "home".to_string(),
             action: "alias".to_string(),
-            arg: "folder /Users/oblinger".to_string(),
-            full_line: "home : alias folder /Users/oblinger".to_string(),
+            arg: "folder /Users/testuser".to_string(),
+            full_line: "home : alias folder /Users/testuser".to_string(),
         },
         Command {
             group: String::new(),

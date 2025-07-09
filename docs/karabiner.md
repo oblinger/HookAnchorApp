@@ -45,7 +45,7 @@ The installer will follow this logic:
           },
           "to": [
             {
-              "shell_command": "/path/to/anchor_selector/launch_script.sh"
+              "shell_command": "/path/to/hookanchor/launch_script.sh"
             }
           ]
         }
@@ -56,7 +56,7 @@ The installer will follow this logic:
 ```
 
 #### Installation Path
-- Configuration file: `~/.config/karabiner/assets/complex_modifications/anchor_selector.json`
+- Configuration file: `~/.config/karabiner/assets/complex_modifications/hookanchor.json`
 - Enable rule via Karabiner's Complex Modifications settings
 
 ### Benefits of Karabiner Approach

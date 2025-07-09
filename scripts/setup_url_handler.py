@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 
 """
-Setup script to register hook:// URL handler for anchor_selector popup on macOS
+Setup script to register hook:// URL handler for hookanchor popup on macOS
 """
 
 import os
@@ -40,7 +40,7 @@ def setup_url_handler():
     <key>CFBundleExecutable</key>
     <string>AnchorSelector</string>
     <key>CFBundleIdentifier</key>
-    <string>com.anchor-selector.app</string>
+    <string>com.hookanchor.app</string>
     <key>CFBundleName</key>
     <string>AnchorSelector</string>
     <key>CFBundleVersion</key>

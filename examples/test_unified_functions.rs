@@ -3,7 +3,7 @@
 //! Tests that js_functions work both as actions (when in listed_actions) 
 //! and as helper functions (callable from other functions).
 
-use anchor_selector::{js_runtime, load_config};
+use hookanchor::{js_runtime, load_config};
 
 fn main() -> Result<(), Box<dyn std::error::Error>> {
     println!("=== Testing Unified Functions Design ===\n");

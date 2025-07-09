@@ -1,4 +1,4 @@
-use anchor_selector::{load_config, core::config::get_config_file_path};
+use hookanchor::{load_config, core::config::get_config_file_path};
 use std::fs;
 
 fn main() {

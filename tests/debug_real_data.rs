@@ -1,4 +1,4 @@
-use anchor_selector::{Command, split_commands, get_current_submenu_prefix, filter_commands, merge_similar_commands, load_commands};
+use hookanchor::{Command, split_commands, get_current_submenu_prefix, filter_commands, merge_similar_commands, load_commands};
 
 fn cmd(command: &str, action: &str, arg: &str) -> Command {
     Command {

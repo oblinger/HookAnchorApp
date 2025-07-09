@@ -1,4 +1,4 @@
-use anchor_selector::load_commands;
+use hookanchor::load_commands;
 use std::process::Command as ProcessCommand;
 
 #[test]

@@ -11,7 +11,7 @@ The anchor selector now supports two execution modes:
 
 ### Enable New Launcher
 
-Add to `~/.config/anchor_selector/config.yaml`:
+Add to `~/.config/hookanchor/config.yaml`:
 
 ```yaml
 settings:
@@ -22,7 +22,7 @@ settings:
 
 ### Create Launcher Commands
 
-Create `~/.config/anchor_selector/launcher_config.yaml`:
+Create `~/.config/hookanchor/launcher_config.yaml`:
 
 ```yaml
 simple_commands:

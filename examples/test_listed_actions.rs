@@ -2,7 +2,7 @@
 //!
 //! Tests the new get_listed_actions function and configuration.
 
-use anchor_selector::get_listed_actions;
+use hookanchor::get_listed_actions;
 
 fn main() -> Result<(), Box<dyn std::error::Error>> {
     println!("=== Testing Listed Actions Functionality ===\n");

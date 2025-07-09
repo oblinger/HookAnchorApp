@@ -1,4 +1,4 @@
-use anchor_selector::launcher::launch;
+use hookanchor::launcher::launch;
 
 #[test]
 fn test_shutdown_command_execution() {
@@ -27,7 +27,7 @@ fn test_shutdown_command_execution() {
     }
     
     // Test that PATH contains the user's bin directory
-    let path_result = launch("cmd echo $PATH | grep /Users/oblinger/bin");
+    let path_result = launch("cmd echo $PATH | grep $HOME/bin");
     match path_result {
         Ok(_) => {
             println!("✅ User's bin directory is in PATH");

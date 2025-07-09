@@ -1,4 +1,4 @@
-use anchor_selector::{execute_command, load_config};
+use hookanchor::{execute_command, load_config};
 
 fn main() {
     println!("Testing popup integration with new launcher...");

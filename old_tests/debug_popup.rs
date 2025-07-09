@@ -1,4 +1,4 @@
-use anchor_selector::{load_config, filter_commands, load_commands};
+use hookanchor::{load_config, filter_commands, load_commands};
 
 fn main() {
     println!("=== Debug Popup Startup ===");

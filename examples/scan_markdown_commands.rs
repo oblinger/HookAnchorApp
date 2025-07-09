@@ -3,7 +3,7 @@
 //! Demonstrates the integrated markdown scanning functionality
 //! using JavaScript business logic.
 
-use anchor_selector::business_logic::update_commands_from_markdown;
+use hookanchor::business_logic::update_commands_from_markdown;
 
 fn main() -> Result<(), Box<dyn std::error::Error>> {
     println!("=== Markdown Command Scanner ===\n");

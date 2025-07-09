@@ -1,12 +1,12 @@
 //! Basic Launcher Usage Example
 //!
-//! Demonstrates how to use the anchor_selector launcher system
+//! Demonstrates how to use the hookanchor launcher system
 //! for executing various types of actions.
 
-use anchor_selector::launcher::launch;
+use hookanchor::launcher::launch;
 
 fn main() {
-    println!("=== Anchor Selector Launcher Examples ===\n");
+    println!("=== HookAnchor Launcher Examples ===\n");
 
     // Example 1: Launch an application
     println!("1. Launching Finder...");

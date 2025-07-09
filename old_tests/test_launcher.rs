@@ -3,7 +3,7 @@
 //! Validates basic launcher functionality with both unit tests and manual testing.
 //! Tests various action types to ensure they execute without errors.
 
-use anchor_selector::launcher::launch;
+use hookanchor::launcher::launch;
 
 #[cfg(test)]
 mod integration_tests {

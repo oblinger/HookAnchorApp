@@ -19,7 +19,7 @@ The project has been cleaned up and organized into a maintainable structure with
 
 ### Configuration
 - **`default_config.yaml`** - Embedded default configuration
-- **`~/.config/anchor_selector/config.yaml`** - User configuration (auto-created)
+- **`~/.config/hookanchor/config.yaml`** - User configuration (auto-created)
 
 ## Key Features Implemented
 

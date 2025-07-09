@@ -1,5 +1,5 @@
 use std::time::Instant;
-use anchor_selector::{load_commands, load_config};
+use hookanchor::{load_commands, load_config};
 
 fn main() {
     println!("Testing startup timing...");

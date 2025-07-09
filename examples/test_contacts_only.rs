@@ -1,4 +1,4 @@
-use anchor_selector::{load_commands, scanner::scan_contacts};
+use hookanchor::{load_commands, scanner::scan_contacts};
 use std::time::Instant;
 
 fn main() {

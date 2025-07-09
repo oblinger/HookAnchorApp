@@ -1,4 +1,4 @@
-use anchor_selector::{load_commands, filter_commands, merge_similar_commands, get_current_submenu_prefix, split_commands};
+use hookanchor::{load_commands, filter_commands, merge_similar_commands, get_current_submenu_prefix, split_commands};
 
 #[test]
 fn debug_financial_model_merging() {

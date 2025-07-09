@@ -2,7 +2,7 @@
 //!
 //! Tests the new JavaScript-based activate functionality.
 
-use anchor_selector::business_logic::activate_anchor;
+use hookanchor::business_logic::activate_anchor;
 
 fn main() -> Result<(), Box<dyn std::error::Error>> {
     println!("=== Testing Anchor Activate Functionality ===\n");

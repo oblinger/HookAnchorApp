@@ -1,5 +1,5 @@
-use anchor_selector::core::config::{Config, PopupSettings};
-use anchor_selector::core::commands::{
+use hookanchor::core::config::{Config, PopupSettings};
+use hookanchor::core::commands::{
     Command,
     get_current_submenu_prefix_from_commands, 
     get_submenu_commands, 

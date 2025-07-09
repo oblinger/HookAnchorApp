@@ -2,7 +2,7 @@
 //!
 //! Tests the anchor action with tmux session detection and creation.
 
-use anchor_selector::launcher::launch;
+use hookanchor::launcher::launch;
 use std::fs;
 use std::path::Path;
 

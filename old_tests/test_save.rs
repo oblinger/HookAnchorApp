@@ -1,4 +1,4 @@
-use anchor_selector::{load_commands, delete_command, add_command, save_commands_to_file, Command};
+use hookanchor::{load_commands, delete_command, add_command, save_commands_to_file, Command};
 
 fn main() {
     println!("Loading commands...");
@@ -36,7 +36,7 @@ fn main() {
         
         // Test 4: Save to a test file first
         println!("\nSaving to test file...");
-        match anchor_selector::save_commands_formatted(&commands, "spot_cmds_test.txt") {
+        match hookanchor::save_commands_formatted(&commands, "spot_cmds_test.txt") {
             Ok(_) => println!("Successfully saved to spot_cmds_test.txt"),
             Err(e) => println!("Error saving: {}", e),
         }

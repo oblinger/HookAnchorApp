@@ -1,4 +1,4 @@
-use anchor_selector::{load_commands, filter_commands, merge_similar_commands, get_current_submenu_prefix};
+use hookanchor::{load_commands, filter_commands, merge_similar_commands, get_current_submenu_prefix};
 
 #[test]
 fn test_fin_vs_fina_merging() {

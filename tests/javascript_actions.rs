@@ -2,7 +2,7 @@
 //! 
 //! Tests JavaScript actions including Obsidian, anchor, and complex workflows.
 
-use anchor_selector::launcher::launch;
+use hookanchor::launcher::launch;
 
 #[test]
 fn test_obsidian_javascript_action() {

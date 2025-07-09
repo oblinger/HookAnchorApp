@@ -1,4 +1,4 @@
-use anchor_selector::{load_commands, delete_command, save_commands_formatted};
+use hookanchor::{load_commands, delete_command, save_commands_formatted};
 
 fn main() {
     println!("Testing delete functionality...");

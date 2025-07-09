@@ -14,7 +14,7 @@
 
 The Anchor Selector uses configuration files located in:
 ```
-~/.config/anchor_selector/
+~/.config/hookanchor/
 ├── config.yaml      # Application settings and function definitions
 └── commands.txt     # Command definitions (one per line)
 ```
@@ -115,7 +115,7 @@ Template variables allow dynamic substitution of values at runtime:
 popup_settings:
   max_rows: 10
   use_new_launcher: true
-  debug_log: "~/anchor_selector_debug.log"
+  debug_log: "~/hookanchor_debug.log"
 
 simple_functions:
   app: {fn: launch_app, name: "{{arg}}"}
@@ -181,7 +181,7 @@ js_functions:
 ### Commands File Example
 
 ```
-# ~/.config/anchor_selector/commands.txt
+# ~/.config/hookanchor/commands.txt
 
 # Basic commands
 finder : app Finder

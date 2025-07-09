@@ -1,4 +1,4 @@
-use anchor_selector::{command_matches_query, command_matches_query_with_debug, merge_similar_commands, filter_commands, get_submenu_display_positions, get_submenu_prefix, Command};
+use hookanchor::{command_matches_query, command_matches_query_with_debug, merge_similar_commands, filter_commands, get_submenu_display_positions, get_submenu_prefix, Command};
 
 // Testing for submenus
 #[test]

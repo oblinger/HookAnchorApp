@@ -5,7 +5,7 @@
 //! - Robust fallback approach with multiple methods
 //! - Validates that 1Password opens websites to maintain autofill context
 
-use anchor_selector::launcher::launch;
+use hookanchor::launcher::launch;
 use std::thread;
 use std::time::Duration;
 

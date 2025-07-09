@@ -1,4 +1,4 @@
-use anchor_selector::{load_commands, filter_commands, merge_similar_commands, load_config};
+use hookanchor::{load_commands, filter_commands, merge_similar_commands, load_config};
 
 #[test]
 fn debug_command_loading_pipeline() {
@@ -34,8 +34,8 @@ fn debug_command_loading_pipeline() {
     }
     
     // 5. Apply merging (should be disabled)
-    let config = anchor_selector::load_config();
-    let merged = merge_similar_commands(filtered, &config);
+    let config = hookanchor::load_config();
+    let merged = merge_similar_commands(filtered.clone(), &config);
     println!("\nAfter merge_similar_commands: {} commands", merged.len());
     
     println!("Commands containing 'findem' or 'dem' after merging:");
@@ -64,7 +64,7 @@ fn debug_raw_file_reading() {
     
     // Try to read the commands file directly
     let commands_path = std::path::Path::new(&std::env::var("HOME").unwrap())
-        .join(".config/anchor_selector/commands.txt");
+        .join(".config/hookanchor/commands.txt");
     
     if let Ok(content) = std::fs::read_to_string(&commands_path) {
         println!("Commands file path: {:?}", commands_path);

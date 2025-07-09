@@ -2,7 +2,7 @@
 //!
 //! Tests that the config migration works correctly for legacy config files
 
-use anchor_selector::load_config;
+use hookanchor::load_config;
 
 fn main() -> Result<(), Box<dyn std::error::Error>> {
     println!("=== Testing Config Migration ===\n");

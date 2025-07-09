@@ -1,4 +1,4 @@
-use anchor_selector::{Command, filter_commands, get_current_submenu_prefix, split_commands};
+use hookanchor::{Command, filter_commands, get_current_submenu_prefix, split_commands};
 
 /// Helper to create a test command
 fn make_cmd(name: &str) -> Command {
@@ -161,7 +161,7 @@ fn test_submenu_with_prefix_ordering() {
     for cmd in outside_menu {
         if cmd.command.to_lowercase().starts_with("ana") {
             outside_prefix.push(cmd);
-        } else if anchor_selector::command_matches_query(&cmd.command, "ana") {
+        } else if hookanchor::command_matches_query(&cmd.command, "ana") {
             outside_other.push(cmd);
         } else {
             outside_none.push(cmd);

@@ -2,7 +2,7 @@
 //!
 //! Verifies that the API documentation consolidation is working properly.
 
-use anchor_selector::js_runtime;
+use hookanchor::js_runtime;
 
 fn main() -> Result<(), Box<dyn std::error::Error>> {
     println!("=== Testing API Documentation Consolidation ===\n");

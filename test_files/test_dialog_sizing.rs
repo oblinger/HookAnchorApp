@@ -10,7 +10,7 @@ fn main() {
     
     // Create a temporary invalid config to trigger error dialog
     let config_path = Path::new(&std::env::var("HOME").unwrap())
-        .join(".config/anchor_selector/config.yaml");
+        .join(".config/hookanchor/config.yaml");
     
     let backup_path = config_path.with_extension("yaml.test_backup");
     

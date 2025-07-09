@@ -1,4 +1,4 @@
-use anchor_selector::launcher::launch;
+use hookanchor::launcher::launch;
 
 fn main() {
     println!("Testing action-type launcher system...");

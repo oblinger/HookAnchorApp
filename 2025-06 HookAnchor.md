@@ -1,7 +1,10 @@
 
-
 [[./CLAUDE]] 
 
+[[API_REFERENCE]] 
+
+- [ ] Vault is hard coded
+- [ ] The Finder grabber is locking up
 - [ ] Grabbing in the finder does not work
 - [ ] ha -x web  fails because the path cannot file tmux
 - [ ] add flag so user edited obs, anchor, folder commands are not erased & add many defaults

@@ -1,5 +1,5 @@
-use anchor_selector::{load_commands, filter_commands, load_config};
-use anchor_selector::core::commands::{merge_similar_commands, get_current_submenu_prefix, split_commands};
+use hookanchor::{load_commands, filter_commands, load_config};
+use hookanchor::core::commands::{merge_similar_commands, get_current_submenu_prefix, split_commands};
 
 #[test]
 fn debug_ui_scenario_step_by_step() {

@@ -1,4 +1,4 @@
-use anchor_selector::{Command, get_current_submenu_prefix, split_commands, command_matches_query};
+use hookanchor::{Command, get_current_submenu_prefix, split_commands, command_matches_query};
 
 #[test]
 fn test_submenu_outside_commands_ordering() {

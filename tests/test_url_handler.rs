@@ -2,7 +2,7 @@
 
 #[cfg(test)]
 mod tests {
-    use anchor_selector::Command;
+    use hookanchor::Command;
 
     /// Test URL decoding functionality
     #[test]

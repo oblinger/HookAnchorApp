@@ -2,7 +2,7 @@
 //!
 //! Tests the updated configuration structure with popup_settings and listed_actions.
 
-use anchor_selector::{load_config, Config, PopupSettings};
+use hookanchor::{load_config, Config, PopupSettings};
 
 fn main() -> Result<(), Box<dyn std::error::Error>> {
     println!("=== Testing Updated Config Structure ===\n");

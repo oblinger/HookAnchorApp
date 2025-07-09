@@ -5,7 +5,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 ## Project Overview
 The anchor selector pops up a gooey that allows the user to type in a command. As they're typing this command in the list of commands with that prefix are listed below the input box up to 10 as the user types more characters it narrows this list down until there's only one entry when they hit. Enter the app exits and print the selected command on standard out.
 
-The commands are in the file ~/.config/anchor_selector/commands.txt and each line has one of two formats:
+The commands are in the file ~/.config/hookanchor/commands.txt and each line has one of two formats:
 - `GROUP ! COMMAND : ACTION ARG` (with group)
 - `COMMAND : ACTION ARG` (without group)
 

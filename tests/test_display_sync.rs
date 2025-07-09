@@ -1,4 +1,4 @@
-use anchor_selector::{Command, filter_commands};
+use hookanchor::{Command, filter_commands};
 
 /// Helper to create a test command
 fn make_cmd(name: &str, action: &str) -> Command {
