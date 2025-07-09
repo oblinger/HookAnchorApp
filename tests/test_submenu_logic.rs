@@ -27,6 +27,7 @@ mod submenu_tests {
             functions: None,
             markdown_roots: None,
             grabber_rules: None,
+            keybindings: None,
         }
     }
 

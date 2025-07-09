@@ -46,6 +46,23 @@ pub struct AnchorSelector {
 
 impl AnchorSelector {
     // =============================================================================
+    // Scanner Management
+    // =============================================================================
+    
+    /// Perform scanner check before exiting to update commands for next launch
+    fn perform_exit_scanner_check(&mut self) {
+        if self.scanner_check_pending {
+            self.scanner_check_pending = false;
+            let updated_commands = scanner::startup_check(self.popup_state.get_commands().to_vec());
+            if updated_commands.len() != self.popup_state.get_commands().len() {
+                // Commands have changed, update the popup state for next time
+                self.popup_state.set_commands(updated_commands);
+                crate::utils::debug_log("SCANNER", "Updated commands on exit");
+            }
+        }
+    }
+
+    // =============================================================================
     // Centralized Key Handling
     // =============================================================================
     
@@ -124,6 +141,7 @@ impl AnchorSelector {
             if escape_pressed {
                 // Only exit if the editor didn't already handle the escape key
                 if !self.command_editor.visible && !editor_handled_escape {
+                    self.perform_exit_scanner_check();
                     std::process::exit(0);
                 }
             }
@@ -196,7 +214,7 @@ impl AnchorSelector {
             
             // Execute all actions
             for action in actions_to_perform {
-                self.execute_key_action(action, editor_handled_escape);
+                self.execute_key_action(action, editor_handled_escape, ctx);
             }
         });
         
@@ -204,18 +222,19 @@ impl AnchorSelector {
     }
     
     /// Execute a specific key action
-    fn execute_key_action(&mut self, action: &str, _editor_handled_escape: bool) {
+    fn execute_key_action(&mut self, action: &str, _editor_handled_escape: bool, ctx: &egui::Context) {
         match action {
             "navigate_up" => self.navigate_vertical(-1),
             "navigate_down" => self.navigate_vertical(1),
             "navigate_left" => self.navigate_horizontal(-1),
             "navigate_right" => self.navigate_horizontal(1),
             "force_rescan" => self.trigger_rescan(),
-            "start_grabber" => self.start_grabber_countdown(),
+            "start_grabber" => self.start_grabber_countdown(ctx),
             "show_folder" => self.show_folder(),
             "exit_app" => {
                 // Only exit if the command editor is not currently visible
                 if !self.command_editor.visible {
+                    self.perform_exit_scanner_check();
                     std::process::exit(0);
                 }
             },
@@ -262,6 +281,7 @@ impl AnchorSelector {
                     } else {
                         execute_command(&selected_cmd);
                     }
+                    self.perform_exit_scanner_check();
                     std::process::exit(0);
                 }
             }
@@ -439,26 +459,35 @@ impl AnchorSelector {
     }
     
     /// Start the grabber countdown (5, 4, 3, 2, 1)
-    fn start_grabber_countdown(&mut self) {
+    fn start_grabber_countdown(&mut self, ctx: &egui::Context) {
         self.grabber_countdown = Some(5);
         self.countdown_last_update = Some(std::time::Instant::now());
+        // Request repaint in 1 second for first countdown step
+        ctx.request_repaint_after(std::time::Duration::from_secs(1));
     }
     
     /// Update countdown and handle grabber logic
     fn update_grabber_countdown(&mut self, ctx: &egui::Context) {
         if let Some(count) = self.grabber_countdown {
             if let Some(last_update) = self.countdown_last_update {
-                if last_update.elapsed().as_secs() >= 1 {
+                let elapsed = last_update.elapsed();
+                if elapsed.as_secs() >= 1 {
                     if count > 1 {
                         // Continue countdown
                         self.grabber_countdown = Some(count - 1);
                         self.countdown_last_update = Some(std::time::Instant::now());
+                        // Request repaint in 1 second for next countdown step
+                        ctx.request_repaint_after(std::time::Duration::from_secs(1));
                     } else {
                         // Countdown finished, execute grab
                         self.execute_grab(ctx);
                         self.grabber_countdown = None;
                         self.countdown_last_update = None;
                     }
+                } else {
+                    // Still counting down, request repaint when the next second arrives
+                    let remaining = std::time::Duration::from_secs(1) - elapsed;
+                    ctx.request_repaint_after(remaining);
                 }
             }
         }
@@ -585,6 +614,9 @@ impl AnchorSelector {
             return;
         }
         
+        // Get all commands for alias resolution
+        let all_commands = self.popup_state.get_commands();
+        
         // Log first few commands for debugging
         for (i, cmd) in display_commands.iter().take(3).enumerate() {
             utils::debug_log("SHOW_FOLDER", &format!("  Command {}: '{}' (action: {}, arg: {})", 
@@ -600,22 +632,43 @@ impl AnchorSelector {
             
             utils::debug_log("SHOW_FOLDER", &format!("Processing command: '{}' (action: {})", cmd.command, cmd.action));
             
-            // Extract folder based on action type
-            let folder_path = match cmd.action.as_str() {
+            // Resolve alias if needed
+            let resolved_cmd = if cmd.action == "alias" {
+                utils::debug_log("SHOW_FOLDER", &format!("Resolving alias '{}' to target '{}'", cmd.command, cmd.arg));
+                // Find the target command
+                if let Some(target) = all_commands.iter().find(|c| c.command == cmd.arg) {
+                    utils::debug_log("SHOW_FOLDER", &format!("Alias resolved to: '{}' (action: {}, arg: {})", 
+                        target.command, target.action, target.arg));
+                    target
+                } else {
+                    utils::debug_log("SHOW_FOLDER", &format!("Failed to resolve alias '{}' - target '{}' not found", cmd.command, cmd.arg));
+                    cmd
+                }
+            } else {
+                cmd
+            };
+            
+            // Extract folder based on action type (using resolved command)
+            let folder_path = match resolved_cmd.action.as_str() {
                 "folder" => {
-                    utils::debug_log("SHOW_FOLDER", &format!("Found folder action, path: {}", cmd.arg));
-                    Some(cmd.arg.clone())
+                    utils::debug_log("SHOW_FOLDER", &format!("Found folder action, path: {}", resolved_cmd.arg));
+                    Some(resolved_cmd.arg.clone())
                 },
                 "anchor" | "obs" => {
                     // For anchor/obs, get the directory containing the file
-                    if let Some(idx) = cmd.arg.rfind('/') {
-                        let path = cmd.arg[..idx].to_string();
-                        utils::debug_log("SHOW_FOLDER", &format!("Found {}, extracted folder: {}", cmd.action, path));
+                    if let Some(idx) = resolved_cmd.arg.rfind('/') {
+                        let path = resolved_cmd.arg[..idx].to_string();
+                        utils::debug_log("SHOW_FOLDER", &format!("Found {}, extracted folder: {}", resolved_cmd.action, path));
                         Some(path)
                     } else {
-                        utils::debug_log("SHOW_FOLDER", &format!("Found {} but no slash in path: {}", cmd.action, cmd.arg));
+                        utils::debug_log("SHOW_FOLDER", &format!("Found {} but no slash in path: {}", resolved_cmd.action, resolved_cmd.arg));
                         None
                     }
+                },
+                "alias" => {
+                    // This shouldn't happen since we already resolved aliases above
+                    utils::debug_log("SHOW_FOLDER", &format!("Unresolved alias found: '{}'", cmd.command));
+                    None
                 },
                 other => {
                     utils::debug_log("SHOW_FOLDER", &format!("Command '{}' has non-folder action: {}", cmd.command, other));
@@ -740,10 +793,21 @@ pub fn center_on_main_display(ctx: &egui::Context, window_size: egui::Vec2) -> e
 
 impl eframe::App for AnchorSelector {
     fn update(&mut self, ctx: &egui::Context, _frame: &mut eframe::Frame) {
-        // DEBUG: Core search logic verified to work correctly
+        // Increment frame counter for initial setup only
+        if self.frame_count < 10 {
+            self.frame_count += 1;
+        }
         
-        // Increment frame counter for focus debugging
-        self.frame_count += 1;
+        // Check if we need active updates (animations, countdowns, etc.)
+        let has_input = ctx.input(|i| !i.events.is_empty() || i.pointer.any_down() || i.keys_down.len() > 0);
+        let has_active_ui = self.command_editor.visible 
+            || self.dialog.visible 
+            || self.grabber_countdown.is_some();
+            
+        // For idle state, request slower repaints to reduce CPU usage
+        if !has_input && !has_active_ui && self.frame_count >= 10 {
+            ctx.request_repaint_after(std::time::Duration::from_millis(100));
+        }
         
         
         // Check for window focus state changes and log for debugging
@@ -772,15 +836,7 @@ impl eframe::App for AnchorSelector {
         //     }
         // }
         
-        // Perform deferred scanner check after window is shown
-        if self.scanner_check_pending {
-            self.scanner_check_pending = false;
-            let updated_commands = scanner::startup_check(self.popup_state.get_commands().to_vec());
-            if updated_commands.len() != self.popup_state.get_commands().len() {
-                // Commands have changed, update the popup state
-                self.popup_state.set_commands(updated_commands);
-            }
-        }
+        // Scanner check is now performed on exit instead of startup to avoid delays
         
         // Update grabber countdown
         self.update_grabber_countdown(ctx);
@@ -822,6 +878,7 @@ impl eframe::App for AnchorSelector {
                 // Check if the "Exit" button was clicked
                 if let Some(button_text) = result.get("exit") {
                     if button_text == "Exit" {
+                        self.perform_exit_scanner_check();
                         std::process::exit(0);
                     }
                 }
@@ -961,7 +1018,6 @@ impl eframe::App for AnchorSelector {
                 
                 // Always update search when text field is changed
                 if response.changed() {
-                    crate::utils::debug_log("TEXT_CHANGE", &format!("Search text changed to: '{}'", self.popup_state.search_text));
                     
                     // Removed hardcoded character handlers - these should be handled via keybindings
                     
@@ -976,27 +1032,16 @@ impl eframe::App for AnchorSelector {
                 }
                 
                 // Focus the text input on startup or when command editor closes
-                let should_focus = (self.popup_state.search_text.is_empty() && !self.command_editor.visible) 
-                    || command_editor_just_closed 
-                    || !self.focus_set
-                    || self.frame_count <= 20; // Be more aggressive in first 20 frames
+                // Only attempt focus for a limited number of frames to avoid continuous repainting
+                let should_focus = !self.focus_set && (
+                    self.frame_count <= 5 || command_editor_just_closed
+                );
                 
                 if should_focus {
                     response.request_focus();
-                    if response.gained_focus() {
+                    if response.has_focus() {
                         self.focus_set = true;
-                        // crate::utils::debug_log("FOCUS", &format!("Input focus gained on frame {}", self.frame_count));
-                    } else if self.frame_count <= 20 {
-                        // crate::utils::debug_log("FOCUS", &format!("Focus request on frame {} - not gained yet (has_focus: {})", 
-                        //     self.frame_count, response.has_focus()));
                     }
-                }
-                
-                // Additional failsafe: Force focus with memory if input field is still not focused after reasonable time
-                if self.frame_count == 30 && !self.focus_set {
-                    // crate::utils::debug_log("FOCUS", "Failsafe: Forcing focus with memory");
-                    ctx.memory_mut(|mem| mem.request_focus(response.id));
-                    response.request_focus();
                 }
                 
                 
@@ -1175,6 +1220,7 @@ impl eframe::App for AnchorSelector {
                                             if response.clicked() {
                                                 self.set_selected_index(i);
                                                 execute_command(&cmd);
+                                                self.perform_exit_scanner_check();
                                                 process::exit(0);
                                             }
                                         }
@@ -1279,6 +1325,7 @@ impl eframe::App for AnchorSelector {
                                     if response.clicked() {
                                         self.set_selected_index(i);
                                         execute_command(&cmd);
+                                        self.perform_exit_scanner_check();
                                         process::exit(0);
                                     }
                                     
@@ -1375,6 +1422,9 @@ pub fn run_gui_with_prompt(initial_prompt: &str, _app_state: super::ApplicationS
     
     let options = eframe::NativeOptions {
         viewport: viewport_builder,
+        renderer: eframe::Renderer::Glow,
+        run_and_return: false,
+        vsync: true, // Re-enable vsync - disabling it causes unlimited FPS
         ..Default::default()
     };
     
@@ -1384,6 +1434,12 @@ pub fn run_gui_with_prompt(initial_prompt: &str, _app_state: super::ApplicationS
         Box::new(move |cc| {
             // Set light theme
             cc.egui_ctx.set_visuals(egui::Visuals::light());
+            
+            // Configure for minimal CPU usage
+            let mut style = (*cc.egui_ctx.style()).clone();
+            style.animation_time = 0.0; // Disable animations
+            cc.egui_ctx.set_style(style);
+            
             
             // Set light grey background for corner areas
             if let Some(gl) = cc.gl.as_ref() {

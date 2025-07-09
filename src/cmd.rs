@@ -182,6 +182,7 @@ fn run_test_action(args: &[String]) {
     }
 }
 
+
 fn run_folder_command(args: &[String]) {
     if args.len() < 3 {
         eprintln!("Usage: {} -f, --folders <query>", args[0]);
@@ -229,8 +230,8 @@ fn run_folder_command(args: &[String]) {
         }
     };
     
-    // Use the same display logic as the popup
-    let display_commands = crate::get_display_commands(&commands, query, &config, 100);
+    // Use the same display logic as the popup, with aliases expanded
+    let display_commands = crate::core::commands::get_display_commands_with_options(&commands, query, &config, 100, true);
     
     if display_commands.is_empty() {
         eprintln!("No commands found matching: {}", query);
@@ -324,8 +325,8 @@ fn run_folder_with_commands(args: &[String]) {
         }
     };
     
-    // Use the same display logic as the popup
-    let display_commands = crate::get_display_commands(&commands, query, &config, 100);
+    // Use the same display logic as the popup, with aliases expanded
+    let display_commands = crate::core::commands::get_display_commands_with_options(&commands, query, &config, 100, true);
     
     if display_commands.is_empty() {
         eprintln!("No commands found matching: {}", query);

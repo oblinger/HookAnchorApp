@@ -804,6 +804,17 @@ pub fn get_display_commands(
     config: &crate::core::config::Config,
     max_results: usize
 ) -> Vec<Command> {
+    get_display_commands_with_options(commands, search_text, config, max_results, false)
+}
+
+/// Get filtered, merged, and sorted commands for display with options for alias expansion
+pub fn get_display_commands_with_options(
+    commands: &[Command], 
+    search_text: &str, 
+    config: &crate::core::config::Config,
+    max_results: usize,
+    expand_aliases: bool
+) -> Vec<Command> {
     if search_text.is_empty() {
         return Vec::new();
     }
@@ -864,6 +875,33 @@ pub fn get_display_commands(
     // Limit final results
     let mut limited_commands = final_commands;
     limited_commands.truncate(max_results);
+    
+    // If expand_aliases is true, expand alias commands while keeping their names
+    if expand_aliases {
+        limited_commands = limited_commands.into_iter().map(|cmd| {
+            if cmd.action == "alias" {
+                // Find the target command
+                if let Some(target_cmd) = commands.iter().find(|c| c.command == cmd.arg) {
+                    // Create a new command with the alias's name but the target's action/arg
+                    Command {
+                        group: cmd.group,
+                        command: cmd.command, // Keep the alias's name
+                        action: target_cmd.action.clone(), // Use target's action
+                        arg: target_cmd.arg.clone(), // Use target's arg
+                        flags: target_cmd.flags.clone(), // Use target's flags
+                        full_line: cmd.full_line, // Keep alias's full line for display
+                    }
+                } else {
+                    // Target not found, keep the alias as-is
+                    cmd
+                }
+            } else {
+                // Not an alias, return as-is
+                cmd
+            }
+        }).collect();
+    }
+    
     limited_commands
 }
 

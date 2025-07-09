@@ -34,7 +34,8 @@ fn debug_command_loading_pipeline() {
     }
     
     // 5. Apply merging (should be disabled)
-    let merged = merge_similar_commands(&filtered, "fin");
+    let config = anchor_selector::load_config();
+    let merged = merge_similar_commands(filtered, &config);
     println!("\nAfter merge_similar_commands: {} commands", merged.len());
     
     println!("Commands containing 'findem' or 'dem' after merging:");
