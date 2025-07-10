@@ -503,19 +503,6 @@ fn setup_launcher_builtins(ctx: &Ctx<'_>) -> Result<(), Box<dyn std::error::Erro
         }
     })?)?;
     
-    // spawnDetached(command, args) -> starts process without waiting
-    ctx.globals().set("spawnDetached", Function::new(ctx.clone(), |command: String, args: Option<String>| {
-        let mut cmd = std::process::Command::new(&command);
-        if let Some(args_str) = args {
-            // Simple argument splitting - could be enhanced if needed
-            let args_vec: Vec<&str> = args_str.split_whitespace().collect();
-            cmd.args(args_vec);
-        }
-        match cmd.spawn() {
-            Ok(_) => format!("Started {} in background", command),
-            Err(e) => format!("Failed to start {}: {}", command, e),
-        }
-    })?)?;
     
     // appIsRunning(app_name) -> checks if application is currently running
     ctx.globals().set("appIsRunning", Function::new(ctx.clone(), |app_name: String| {

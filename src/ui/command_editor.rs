@@ -113,6 +113,20 @@ impl CommandEditor {
             result = CommandEditorResult::Cancel;
         }
         
+        // Handle enter key - save the current command
+        if ctx.input(|i| i.key_pressed(egui::Key::Enter)) {
+            // Create the new command
+            let new_command = Command {
+                group: self.group.clone(),
+                command: self.command.clone(),
+                action: self.action.clone(),
+                arg: self.argument.clone(),
+                flags: String::new(),
+                full_line: self.format_command_line(),
+            };
+            result = CommandEditorResult::Save(new_command, self.original_command_name.clone());
+        }
+        
         // Handle delete key - delete the current command and close editor
         if ctx.input(|i| i.key_pressed(egui::Key::Delete)) {
             // Only delete if we have an original command (editing existing command, not creating new)
