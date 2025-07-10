@@ -53,7 +53,7 @@ impl AnchorSelector {
     fn perform_exit_scanner_check(&mut self) {
         if self.scanner_check_pending {
             self.scanner_check_pending = false;
-            let updated_commands = scanner::startup_check(self.popup_state.get_commands().to_vec());
+            let updated_commands = scanner::file_scan_check(self.popup_state.get_commands().to_vec());
             if updated_commands.len() != self.popup_state.get_commands().len() {
                 // Commands have changed, update the popup state for next time
                 self.popup_state.set_commands(updated_commands);
@@ -613,7 +613,7 @@ impl AnchorSelector {
             
             // Force scan markdown files
             let current_commands = self.popup_state.get_commands().to_vec();
-            let updated_commands = scanner::scan(current_commands, markdown_roots);
+            let updated_commands = scanner::scan(current_commands, markdown_roots, &config);
             
             // Save the updated commands to file
             use crate::save_commands_to_file;

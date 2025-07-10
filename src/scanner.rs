@@ -18,8 +18,8 @@ fn is_scanner_debug_enabled(config: &Config) -> bool {
 }
 
 /// Checks if filesystem scan should be performed and executes it if needed
-/// This function should be called on every startup.
-pub fn startup_check(commands: Vec<Command>) -> Vec<Command> {
+/// This function should be called on application exit, not startup.
+pub fn file_scan_check(commands: Vec<Command>) -> Vec<Command> {
     let config = load_config();
     let mut state = load_state();
     
@@ -44,7 +44,7 @@ pub fn startup_check(commands: Vec<Command>) -> Vec<Command> {
     // Re-enabling scanner for debugging
     debug_log("SCANNER", "Starting filesystem scan");
     // Perform filesystem scan
-    let markdown_roots = match config.markdown_roots {
+    let markdown_roots = match &config.markdown_roots {
         Some(roots) => roots,
         None => {
             debug_log("SCANNER", "ERROR: No markdown_roots configured in config file");
@@ -52,9 +52,9 @@ pub fn startup_check(commands: Vec<Command>) -> Vec<Command> {
         }
     };
     
-    debug_log("SCANNER", &format!("startup_check markdown_roots: {:?}", markdown_roots));
+    debug_log("SCANNER", &format!("file_scan_check markdown_roots: {:?}", markdown_roots));
     
-    let scanned_commands = scan(commands, &markdown_roots);
+    let scanned_commands = scan(commands, markdown_roots, &config);
     
     // Calculate checksum of the scan results
     let new_checksum = calculate_commands_checksum(&scanned_commands);
@@ -85,11 +85,9 @@ pub fn startup_check(commands: Vec<Command>) -> Vec<Command> {
 }
 
 /// Top-level scan function that orchestrates all scanning operations
-pub fn scan(mut commands: Vec<Command>, markdown_roots: &[String]) -> Vec<Command> {
-    let config = load_config();
-    
+pub fn scan(mut commands: Vec<Command>, markdown_roots: &[String], config: &Config) -> Vec<Command> {
     // First scan markdown files
-    commands = scan_files(commands, markdown_roots, &config);
+    commands = scan_files(commands, markdown_roots, config);
     
     // Then scan contacts - DISABLED for performance
     // commands = scan_contacts(commands);

@@ -6,7 +6,7 @@
 use super::{Command, Config};
 use super::config::{load_config_with_error, ConfigResult};
 use super::state::AppState;
-use crate::{load_commands, load_config, load_state, save_state, scanner, utils};
+use crate::{load_commands, load_config, load_state, save_state, utils};
 
 /// Global application state that spans both GUI and CLI modes
 pub struct ApplicationState {
@@ -27,7 +27,7 @@ pub struct ApplicationState {
 impl ApplicationState {
     /// Create new application state by loading from files
     pub fn new() -> Self {
-        let mut commands = load_commands();
+        let commands = load_commands();
         
         // Load config with error handling
         let config_result = load_config_with_error();
@@ -39,8 +39,8 @@ impl ApplicationState {
             }
         };
         
-        // Always run scanner startup check which handles timing internally
-        commands = scanner::startup_check(commands);
+        // Don't scan at startup - only scan at termination
+        // commands = scanner::startup_check(commands);
         
         let app_state = load_state();
         
