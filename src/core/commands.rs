@@ -778,6 +778,9 @@ fn execute_command_with_depth(command: &Command, depth: u32) -> CommandTarget {
     
     let launcher_cmd = format!("{} {}", command.action, command.arg);
     
+    // Log command execution in the requested format
+    crate::utils::debug_log("EXECUTE", &format!("'{}' AS '{}' ON '{}'", command.command, command.action, command.arg));
+    
     match crate::launcher::launch(&launcher_cmd) {
         Ok(()) => {
             // For rewrite commands, we need to handle the special case

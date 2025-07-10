@@ -39,14 +39,12 @@ pub fn launch(command_line: &str) -> Result<(), LauncherError> {
     
     // Parse command_line to extract action and arguments  
     let (action, args) = parse_command_line(command_line)?;
-    debug_log("LAUNCHER", &format!("Parsed command '{}' -> action: '{}', args: '{}'", command_line, action, args));
     
     // Load configuration from YAML
     let config = load_config()?;
     
     // Look up action value in config
     let action_value = lookup_action(&action, &config)?;
-    debug_log("LAUNCHER", &format!("Found action template for '{}': {:?}", action, action_value));
     
     // Create environment
     let mut env = Environment::new()
@@ -56,7 +54,6 @@ pub fn launch(command_line: &str) -> Result<(), LauncherError> {
     env.variables.insert("arg".to_string(), args.clone());
     
     // Execute the action using eval module
-    debug_log("LAUNCHER", &format!("Executing action: {:?}", action_value));
     let exec_result = env.eval(action_value);
     
     let duration = start_time.elapsed().unwrap_or_default();

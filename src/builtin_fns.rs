@@ -151,7 +151,7 @@ pub fn setup_builtin_functions(env: &mut Environment) {
         let code = get_substituted_string_arg(args, "code", env)
             .ok_or_else(|| EvalError::InvalidAction("Missing 'code' argument".to_string()))?;
         
-        debug_log("BUILTIN", &format!("Executing JavaScript: {}", code.trim()));
+        debug_log("BUILTIN", "Executing JavaScript function");
         
         // Set up JavaScript context with variables
         env.js_context.with(|ctx| -> Result<(), EvalError> {

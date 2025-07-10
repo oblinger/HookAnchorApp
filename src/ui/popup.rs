@@ -4,7 +4,6 @@
 
 use eframe::egui;
 use std::process;
-use std::io::Write;
 use crate::{
     Command, execute_command, load_commands, 
     load_config, Config, load_state, save_state, scanner, grabber
@@ -248,6 +247,9 @@ impl AnchorSelector {
     
     /// Execute the currently selected command
     fn execute_selected_command(&mut self) {
+        // Log what the user actually typed
+        crate::utils::debug_log("USER INPUT", &format!("'{}'", self.popup_state.search_text));
+        
         if !self.filtered_commands().is_empty() {
             let (display_commands, _is_submenu, _menu_prefix, _inside_count) = self.get_display_commands();
             
@@ -589,25 +591,8 @@ impl AnchorSelector {
                 debug_log_path.clone()
             };
             
-            // Force any pending writes to complete and give time for flush
-            std::io::stdout().flush().ok();
-            std::io::stderr().flush().ok();
-            std::thread::sleep(std::time::Duration::from_millis(10));
-            
-            // Try both approaches: truncate first, then delete
-            match std::fs::OpenOptions::new()
-                .write(true)
-                .truncate(true)
-                .open(&expanded_path) {
-                Ok(_) => {
-                    // Now try to delete it too
-                    let _ = std::fs::remove_file(&expanded_path);
-                },
-                Err(_) => {
-                    // If we can't truncate, just try to delete
-                    let _ = std::fs::remove_file(&expanded_path);
-                }
-            }
+            // Simple deletion - if it fails, it fails
+            let _ = std::fs::remove_file(&expanded_path);
         }
     }
 
