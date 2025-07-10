@@ -12,7 +12,6 @@ mod merge_tests {
                 max_columns: 1,
                 use_new_launcher: true,
                 debug_log: None,
-                scan_root: None,
                 scan_interval_seconds: None,
                 listed_actions: None,
             },

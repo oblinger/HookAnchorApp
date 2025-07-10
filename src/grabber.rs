@@ -7,6 +7,7 @@
 use std::process::Command as ProcessCommand;
 use serde::{Deserialize, Serialize};
 use crate::{Command, Config};
+use crate::core::get_action;
 use rquickjs::{Runtime, Context, Value};
 
 /// Information captured about the active application
@@ -154,38 +155,30 @@ pub fn get_browser_info(bundle_id: &str) -> Option<String> {
     None
 }
 
-/// Get Finder-specific information including selection
-pub fn get_finder_info() -> Option<serde_json::Value> {
+/// Get Obsidian active file URL by triggering copy URL shortcut
+pub fn get_obsidian_url() -> Option<String> {
     
     let script = r#"
-        tell application "Finder"
-            if (count of windows) > 0 then
-                set currentPath to POSIX path of (target of window 1 as alias)
-                
-                -- Get selected items
-                set selectedItems to selection
-                if (count of selectedItems) > 0 then
-                    set firstSelection to item 1 of selectedItems
-                    set selectionPath to POSIX path of (firstSelection as alias)
-                    
-                    -- Check if selection is a folder
-                    set itemClass to class of firstSelection
-                    if itemClass is folder then
-                        set isFolder to "true"
-                    else
-                        set isFolder to "false"
-                    end if
-                    
-                    return currentPath & "|" & selectionPath & "|" & isFolder
-                else
-                    return currentPath & "||"
-                end if
+        -- Trigger Obsidian's copy URL shortcut (Cmd+Ctrl+Option+F5)
+        tell application "System Events"
+            key code 101 using {command down, control down, option down}
+        end tell
+        
+        -- Wait for clipboard to update
+        delay 1.0
+        
+        -- Get clipboard content
+        try
+            set clipboardContent to (the clipboard)
+            if clipboardContent starts with "obsidian://" then
+                return clipboardContent
             else
                 return ""
             end if
-        end tell
+        on error
+            return ""
+        end try
     "#;
-    
     
     if let Ok(output) = ProcessCommand::new("osascript")
         .arg("-e")
@@ -193,23 +186,88 @@ pub fn get_finder_info() -> Option<serde_json::Value> {
         .output()
     {
         if output.status.success() {
+            let url = String::from_utf8_lossy(&output.stdout).trim().to_string();
+            if !url.is_empty() && url.starts_with("obsidian://") {
+                return Some(url);
+            }
+        }
+    }
+    
+    None
+}
+
+/// Get Finder-specific information including selection
+pub fn get_finder_info() -> Option<serde_json::Value> {
+    
+    // First try to get selected item (like spot Python code)
+    let selection_script = r#"
+        tell application "Finder"
+            try
+                set selectedItem to item 1 of (get selection)
+                if selectedItem is not missing value then
+                    set thePath to POSIX path of (selectedItem as alias)
+                    set itemClass to class of selectedItem
+                    if itemClass is folder then
+                        set isFolder to "true"
+                    else
+                        set isFolder to "false"
+                    end if
+                    return thePath & "|" & isFolder
+                else
+                    return "--NO-SELECTION--"
+                end if
+            on error
+                return "--NO-SELECTION--"
+            end try
+        end tell
+    "#;
+    
+    let mut finder_info = serde_json::json!({});
+    
+    if let Ok(output) = ProcessCommand::new("osascript")
+        .arg("-e")
+        .arg(selection_script)
+        .output()
+    {
+        if output.status.success() {
             let result = String::from_utf8_lossy(&output.stdout).trim().to_string();
-            if !result.is_empty() {
+            if !result.is_empty() && result != "--NO-SELECTION--" {
                 let parts: Vec<&str> = result.split('|').collect();
-                let mut finder_info = serde_json::json!({});
-                
-                if parts.len() >= 1 && !parts[0].is_empty() {
-                    finder_info["path"] = serde_json::Value::String(parts[0].to_string());
+                if parts.len() >= 2 {
+                    finder_info["selection"] = serde_json::Value::String(parts[0].to_string());
+                    finder_info["selectionIsDirectory"] = serde_json::Value::Bool(parts[1] == "true");
+                    return Some(finder_info);
                 }
-                
-                if parts.len() >= 2 && !parts[1].is_empty() {
-                    finder_info["selection"] = serde_json::Value::String(parts[1].to_string());
-                }
-                
-                if parts.len() >= 3 && !parts[2].is_empty() {
-                    finder_info["selectionIsDirectory"] = serde_json::Value::Bool(parts[2] == "true");
-                }
-                
+            }
+        }
+    }
+    
+    // No selection, get current folder path (like spot Python fallback)
+    let path_script = r#"
+        tell application "Finder"
+            try
+                if (count of windows) > 0 then
+                    set frontWindow to front window
+                    set windowPath to (POSIX path of (target of frontWindow as alias))
+                    return windowPath
+                else
+                    return "--ERROR--"
+                end if
+            on error
+                return "--ERROR--"
+            end try
+        end tell
+    "#;
+    
+    if let Ok(output) = ProcessCommand::new("osascript")
+        .arg("-e")
+        .arg(path_script)
+        .output()
+    {
+        if output.status.success() {
+            let result = String::from_utf8_lossy(&output.stdout).trim().to_string();
+            if !result.is_empty() && result != "--ERROR--" {
+                finder_info["path"] = serde_json::Value::String(result);
                 return Some(finder_info);
             }
         }
@@ -255,9 +313,30 @@ pub fn enrich_context(mut context: AppContext) -> AppContext {
                     context.properties[key] = value.clone();
                     crate::utils::debug_log("GRABBER", &format!("Added props.{}: {:?}", key, value));
                 }
+                
+                // Add recommended action based on the selected path
+                if let Some(selection_path) = obj.get("selection") {
+                    if let Some(path_str) = selection_path.as_str() {
+                        let path = std::path::Path::new(path_str);
+                        let recommended_action = get_action(path);
+                        context.properties["recommendedAction"] = serde_json::Value::String(recommended_action.clone());
+                        crate::utils::debug_log("GRABBER", &format!("Added recommended action: {}", recommended_action));
+                    }
+                }
             }
         } else {
             crate::utils::debug_log("GRABBER", "Failed to get Finder info");
+        }
+    }
+    
+    // Add Obsidian URL if applicable
+    if context.bundle_id == "md.obsidian" {
+        crate::utils::debug_log("GRABBER", "Enriching Obsidian context...");
+        if let Some(url) = get_obsidian_url() {
+            crate::utils::debug_log("GRABBER", &format!("Got Obsidian URL: {}", url));
+            context.properties["url"] = serde_json::Value::String(url);
+        } else {
+            crate::utils::debug_log("GRABBER", "Failed to get Obsidian URL");
         }
     }
     

@@ -491,10 +491,13 @@ impl AnchorSelector {
     fn execute_grab(&mut self, ctx: &egui::Context) {
         let config = load_config();
         
-        // Give up focus to previous application before grabbing
-        if let Err(e) = self.give_up_focus() {
+        // Give up focus AND properly activate the previous application window
+        if let Err(e) = self.give_up_focus_and_activate() {
             crate::utils::debug_log("GRAB", &format!("Failed to give up focus: {}", e));
         }
+        
+        // Brief delay to ensure focus change and window activation completes
+        std::thread::sleep(std::time::Duration::from_millis(200));
         
         match grabber::grab(&config) {
             Ok(grab_result) => {
@@ -709,16 +712,38 @@ impl AnchorSelector {
         utils::debug_log("SHOW_FOLDER", "No folder found in filtered commands");
     }
     
-    /// Give up focus to the previous application
-    fn give_up_focus(&self) -> Result<(), Box<dyn std::error::Error>> {
+    /// Give up focus and properly activate the previous application window
+    fn give_up_focus_and_activate(&self) -> Result<(), Box<dyn std::error::Error>> {
         use std::process::Command;
         
-        // crate::utils::debug_log("FOCUS", "Giving up focus to previous application");
+        crate::utils::debug_log("FOCUS", "Switching to previous app with Cmd+Tab");
         
-        // Use Cmd+Tab to switch to previous application
+        // Use Cmd+Tab to switch to previous application (this was working)
         Command::new("osascript")
             .arg("-e")
             .arg("tell application \"System Events\" to key code 48 using command down")
+            .output()?;
+        
+        // Brief delay to let the switch complete
+        std::thread::sleep(std::time::Duration::from_millis(300));
+        
+        crate::utils::debug_log("FOCUS", "Raising windows of frontmost application");
+        
+        // Now raise/activate all windows of the frontmost application
+        Command::new("osascript")
+            .arg("-e")
+            .arg(r#"
+                tell application "System Events"
+                    set frontApp to first application process whose frontmost is true
+                    tell frontApp
+                        set frontmost to true
+                        -- Raise all windows
+                        repeat with w in windows
+                            set index of w to 1
+                        end repeat
+                    end tell
+                end tell
+            "#)
             .output()?;
         
         Ok(())

@@ -9,6 +9,7 @@ use std::process::Command as ProcessCommand;
 use std::collections::{hash_map::DefaultHasher, HashSet};
 use std::hash::{Hash, Hasher};
 use crate::{Command, load_config, load_state, save_state, save_commands_to_file, utils::debug_log};
+use crate::core::get_action;
 use chrono::Local;
 
 /// Checks if filesystem scan should be performed and executes it if needed
@@ -232,12 +233,8 @@ fn process_markdown_with_root(path: &Path, vault_root: &Path, existing_commands:
     // Get the base name without extension
     let file_name = path.file_stem()?.to_str()?;
     
-    // Determine action type
-    let action = if is_markdown_anchor(path) {
-        "anchor"
-    } else {
-        "obs"
-    };
+    // Determine action type using the shared get_action function
+    let action = get_action(path);
     
     // Create command name without suffix, but check for collisions (case-insensitive)
     let preferred_name = file_name.to_string();
@@ -275,28 +272,6 @@ fn process_markdown_with_root(path: &Path, vault_root: &Path, existing_commands:
         flags: String::new(),
         full_line,
     })
-}
-
-
-/// Checks if a markdown file is an "anchor" (base name matches parent folder name)
-fn is_markdown_anchor(path: &Path) -> bool {
-    // Get the file stem (base name without extension)
-    let file_stem = match path.file_stem() {
-        Some(stem) => stem.to_str().unwrap_or(""),
-        None => return false,
-    };
-    
-    // Get the parent directory name
-    let parent_name = match path.parent() {
-        Some(parent) => match parent.file_name() {
-            Some(name) => name.to_str().unwrap_or(""),
-            None => return false,
-        },
-        None => return false,
-    };
-    
-    // Compare ignoring case
-    file_stem.to_lowercase() == parent_name.to_lowercase()
 }
 
 /// Expands ~ to home directory
@@ -422,8 +397,8 @@ end tell
 
 #[cfg(test)]
 mod tests {
-    use super::*;
     use std::path::PathBuf;
+    use crate::core::is_markdown_anchor;
 
     #[test]
     fn test_is_markdown_anchor() {
