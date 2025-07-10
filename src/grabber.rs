@@ -290,12 +290,12 @@ pub fn match_grabber_rules(
     // Set up the context in JavaScript
     let context_json = serde_json::to_string(context).ok()?;
     let setup_script = format!(r#"
-        const context = {};
+        const context = {json};
         const app = context.app_name;
         const bundleId = context.bundle_id;
         const title = context.window_title;
         const props = context.properties;
-    "#, context_json);
+    "#, json = context_json);
     
     ctx.with(|ctx| {
         if ctx.eval::<(), _>(setup_script.as_bytes()).is_err() {

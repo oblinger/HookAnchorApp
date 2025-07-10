@@ -1,4 +1,5 @@
-use crate::{load_commands, filter_commands, launcher, CommandTarget, execute_command, utils};
+use crate::{load_commands, filter_commands, launcher, CommandTarget, execute_command, utils, grabber, load_config};
+use std::process::Command;
 
 /// Main entry point for command-line mode
 pub fn run_command_line_mode(args: Vec<String>) {
@@ -27,6 +28,7 @@ pub fn run_command_line_mode(args: Vec<String>) {
         "-f" | "--folders" => run_folder_command(&args),
         "-F" | "--named-folders" => run_folder_with_commands(&args),
         "--user-info" => print_user_info(),
+        "--test-grabber" => run_test_grabber(),
         _ => {
             eprintln!("Unknown command: {}", args[1]);
             eprintln!("Use -h or --help for usage information");
@@ -47,6 +49,7 @@ pub fn print_help(program_name: &str) {
     eprintln!("  {} -f, --folders <query>    # Get folder paths", program_name);
     eprintln!("  {} -F, --named-folders <q>  # Get CMDS->paths", program_name);
     eprintln!("  {} -a, --action <act> <arg> # Test action", program_name);
+    eprintln!("  {} --test-grabber           # Test grabber functionality", program_name);
     eprintln!("  open 'hook://query'         # Handle hook URL");
     eprintln!();
     eprintln!("Examples:");
@@ -420,4 +423,77 @@ fn print_user_info() {
             }
         }
     }
+}
+
+/// Test the grabber functionality - capture context and try to match rules
+fn run_test_grabber() {
+    println!("Testing grabber functionality...");
+    println!("==================================");
+    
+    // Load config
+    let config = load_config();
+    println!("Loaded config with {} grabber rules", 
+        config.grabber_rules.as_ref().map(|r| r.len()).unwrap_or(0));
+    
+    // Try to capture active app context
+    println!("\nCapturing active application context...");
+    match grabber::capture_active_app() {
+        Ok(context) => {
+            println!("SUCCESS: Captured app context");
+            println!("  App: '{}'", context.app_name);
+            println!("  Bundle ID: '{}'", context.bundle_id);
+            println!("  Title: '{}'", context.window_title);
+            
+            // Show properties if any
+            if let Some(props_obj) = context.properties.as_object() {
+                if !props_obj.is_empty() {
+                    println!("  Properties:");
+                    for (key, value) in props_obj {
+                        println!("    {}: '{}'", key, value.as_str().unwrap_or("(complex value)"));
+                    }
+                }
+            }
+            
+            // Enrich the context
+            println!("\nEnriching context with app-specific information...");
+            let enriched_context = grabber::enrich_context(context);
+            
+            if let Some(enriched_props) = enriched_context.properties.as_object() {
+                if enriched_props.len() > enriched_context.properties.as_object().map(|o| o.len()).unwrap_or(0) {
+                    println!("  Added enriched properties:");
+                    for (key, value) in enriched_props {
+                        println!("    {}: '{}'", key, value.as_str().unwrap_or("(complex value)"));
+                    }
+                }
+            }
+            
+            // Try to match against grabber rules
+            println!("\nMatching against grabber rules...");
+            if let Some(rules) = &config.grabber_rules {
+                match grabber::match_grabber_rules(&enriched_context, rules, &config) {
+                    Some((rule_name, command)) => {
+                        println!("SUCCESS: Matched rule '{}'", rule_name);
+                        println!("  Action: '{}'", command.action);
+                        println!("  Arg: '{}'", command.arg);
+                        println!("  Group: '{}'", command.group);
+                        println!("  Would create command: {} : {} {}", 
+                            "[user-provided-name]", command.action, command.arg);
+                    }
+                    None => {
+                        println!("No rules matched - would show template dialog");
+                        println!("\nGenerated rule template:");
+                        println!("{}", grabber::generate_rule_template_text(&enriched_context));
+                    }
+                }
+            } else {
+                println!("No grabber rules configured in config.yaml");
+            }
+        }
+        Err(e) => {
+            println!("ERROR: Failed to capture app context: {}", e);
+            std::process::exit(1);
+        }
+    }
+    
+    println!("\nGrabber test completed successfully!");
 }
