@@ -42,16 +42,6 @@ pub struct AnchorSelector {
     frame_count: u32,
     /// Config error to show in dialog if config loading failed
     config_error: Option<String>,
-    /// Channel receiver for grabber results from background thread
-    grabber_receiver: Option<std::sync::mpsc::Receiver<GrabberResult>>,
-}
-
-/// Results from the grabber background thread
-#[derive(Debug)]
-enum GrabberResult {
-    RuleMatched(String, crate::Command),
-    NoRuleMatched(String), // Template text
-    Error(String),
 }
 
 impl AnchorSelector {
@@ -233,18 +223,13 @@ impl AnchorSelector {
     
     /// Execute a specific key action
     fn execute_key_action(&mut self, action: &str, _editor_handled_escape: bool, ctx: &egui::Context) {
-        crate::utils::debug_log("KEY", &format!("Executing key action: {}", action));
         match action {
             "navigate_up" => self.navigate_vertical(-1),
             "navigate_down" => self.navigate_vertical(1),
             "navigate_left" => self.navigate_horizontal(-1),
             "navigate_right" => self.navigate_horizontal(1),
             "force_rescan" => self.trigger_rescan(),
-            "start_grabber" => {
-                crate::utils::debug_log("KEY", "About to start grabber countdown");
-                self.start_grabber_countdown(ctx);
-                crate::utils::debug_log("KEY", "Grabber countdown started");
-            },
+            "start_grabber" => self.start_grabber_countdown(ctx),
             "show_folder" => self.show_folder(),
             "exit_app" => {
                 // Only exit if the command editor is not currently visible
@@ -373,7 +358,6 @@ impl AnchorSelector {
             focus_set: false,
             frame_count: 0,
             config_error,
-            grabber_receiver: None,
         };
         
         // Show config error dialog if there was an error
@@ -476,164 +460,98 @@ impl AnchorSelector {
     
     /// Start the grabber countdown (5, 4, 3, 2, 1)
     fn start_grabber_countdown(&mut self, _ctx: &egui::Context) {
-        crate::utils::debug_log("COUNTDOWN", "Setting grabber countdown to 5");
         self.grabber_countdown = Some(5);
         self.countdown_last_update = Some(std::time::Instant::now());
-        crate::utils::debug_log("COUNTDOWN", "Skipping request_repaint_after to avoid lockup");
-        // DON'T call ctx.request_repaint_after() as it's causing the lockup
-        // The UI update loop will handle repaints automatically
-        crate::utils::debug_log("COUNTDOWN", "Grabber countdown initialization complete");
+        // Note: Don't call ctx.request_repaint_after() as it causes UI lockup
+        // The UI update loop handles repaints automatically
     }
     
     /// Update countdown and handle grabber logic
     fn update_grabber_countdown(&mut self, ctx: &egui::Context) {
         if let Some(count) = self.grabber_countdown {
-            crate::utils::debug_log("COUNTDOWN", &format!("Updating countdown: {}", count));
             if let Some(last_update) = self.countdown_last_update {
                 let elapsed = last_update.elapsed();
-                crate::utils::debug_log("COUNTDOWN", &format!("Elapsed: {}ms", elapsed.as_millis()));
                 if elapsed.as_secs() >= 1 {
                     if count > 1 {
                         // Continue countdown
-                        crate::utils::debug_log("COUNTDOWN", &format!("Continuing countdown: {} -> {}", count, count - 1));
                         self.grabber_countdown = Some(count - 1);
                         self.countdown_last_update = Some(std::time::Instant::now());
-                        // Skip request_repaint_after to avoid lockup - UI loop handles repaints
                     } else {
                         // Countdown finished, execute grab
-                        crate::utils::debug_log("COUNTDOWN", "Countdown finished, executing grab");
                         self.execute_grab(ctx);
                         self.grabber_countdown = None;
                         self.countdown_last_update = None;
                     }
-                } else {
-                    // Still counting down - skip request_repaint_after to avoid lockup
-                    // The UI update loop will handle repaints automatically
                 }
             }
         }
     }
     
-    /// Execute the grab operation
-    fn execute_grab(&mut self, _ctx: &egui::Context) {
-        // Create a channel for the background thread to send results back
-        let (sender, receiver) = std::sync::mpsc::channel();
-        self.grabber_receiver = Some(receiver);
+    /// Execute the grab operation - simplified synchronous version
+    fn execute_grab(&mut self, ctx: &egui::Context) {
+        let config = load_config();
         
-        // Get current search text for command naming
-        let current_search = self.popup_state.search_text.clone();
+        // Give up focus to previous application before grabbing
+        if let Err(e) = self.give_up_focus() {
+            crate::utils::debug_log("GRAB", &format!("Failed to give up focus: {}", e));
+        }
         
-        // Run ALL grabber operations in background thread to avoid blocking UI
-        std::thread::spawn(move || {
-            // Give up focus to previous application before grabbing
-            crate::utils::debug_log("GRAB", "Giving up focus to previous application");
-            if let Err(e) = std::process::Command::new("osascript")
-                .arg("-e")
-                .arg("tell application \"System Events\" to key code 48 using command down")
-                .output() {
-                crate::utils::debug_log("GRAB", &format!("Failed to give up focus: {}", e));
-            }
-            
-            // Small delay to allow focus transfer
-            std::thread::sleep(std::time::Duration::from_millis(200));
-            
-            crate::utils::debug_log("GRAB", "Starting grabber in background thread");
-            let config = load_config();
-            match grabber::grab(&config) {
-                Ok(grab_result) => {
-                    match grab_result {
-                        grabber::GrabResult::RuleMatched(rule_name, mut command) => {
-                            crate::utils::debug_log("GRAB", &format!("SUCCESS: Matched rule '{}' - {} : {} {}", 
-                                rule_name, command.command, command.action, command.arg));
-                            
-                            // Fill in command name based on search text or rule name
-                            let command_name = if current_search.trim().is_empty() {
-                                format!("Grabbed {}", rule_name)
-                            } else {
-                                current_search
-                            };
-                            command.command = command_name;
-                            command.full_line = format!("{} : {} {}", command.command, command.action, command.arg);
-                            
-                            // Send result back to main thread
-                            let _ = sender.send(GrabberResult::RuleMatched(rule_name, command));
-                        }
-                        grabber::GrabResult::NoRuleMatched(context) => {
-                            crate::utils::debug_log("GRAB", &format!("No rule matched for app: {} ({})", 
-                                context.app_name, context.bundle_id));
-                            
-                            // Generate template text and send back
-                            let template_text = grabber::generate_rule_template_text(&context);
-                            let _ = sender.send(GrabberResult::NoRuleMatched(template_text));
-                        }
+        match grabber::grab(&config) {
+            Ok(grab_result) => {
+                match grab_result {
+                    grabber::GrabResult::RuleMatched(rule_name, mut command) => {
+                        // Use the current search text as the command name, or default if empty
+                        let command_name = if self.popup_state.search_text.trim().is_empty() {
+                            format!("Grabbed {}", rule_name)
+                        } else {
+                            self.popup_state.search_text.clone()
+                        };
+                        
+                        // Fill in the command with all the grabbed information
+                        command.command = command_name;
+                        command.full_line = format!("{} : {} {}", command.command, command.action, command.arg);
+                        
+                        // Open command editor with the pre-filled grabbed command
+                        self.command_editor.open_with_command(command);
+                    }
+                    grabber::GrabResult::NoRuleMatched(context) => {
+                        // Generate the template text
+                        let template_text = grabber::generate_rule_template_text(&context);
+                        
+                        // Show template dialog using the new TextBox field type
+                        let dialog_spec = vec![
+                            format!("=Grabber Rule Template - {}", context.app_name),
+                            format!("&{}", template_text),
+                            "!OK".to_string(),
+                        ];
+                        
+                        self.dialog.show(dialog_spec);
+                        
+                        // Calculate required dialog size and resize window
+                        let (dialog_width, dialog_height) = self.dialog.calculate_required_size();
+                        let final_width = dialog_width.max(600.0); // Minimum width for readability
+                        let final_height = dialog_height.max(400.0); // Minimum height
+                        
+                        // Enable manual resize mode and set window size
+                        self.manual_resize_mode = true;
+                        self.last_manual_size = Some([final_width, final_height].into());
+                        
+                        // Actually resize the window
+                        ctx.send_viewport_cmd(egui::ViewportCommand::InnerSize([final_width, final_height].into()));
                     }
                 }
-                Err(e) => {
-                    crate::utils::debug_log("GRAB", &format!("Grabber error: {}", e));
-                    let _ = sender.send(GrabberResult::Error(e));
-                }
             }
-            crate::utils::debug_log("GRAB", "Background grabber thread completed");
-        });
-    }
-    
-    /// Check for results from the grabber background thread
-    fn check_grabber_results(&mut self, ctx: &egui::Context) {
-        if let Some(receiver) = &self.grabber_receiver {
-            // Try to receive result without blocking
-            match receiver.try_recv() {
-                Ok(result) => {
-                    crate::utils::debug_log("GRAB", "Received result from background thread");
-                    // Clear the receiver since we got the result
-                    self.grabber_receiver = None;
-                    
-                    match result {
-                        GrabberResult::RuleMatched(_rule_name, command) => {
-                            crate::utils::debug_log("GRAB", "Opening command editor with grabbed command");
-                            // Open command editor with the pre-filled grabbed command
-                            self.command_editor.open_with_command(command);
-                        }
-                        GrabberResult::NoRuleMatched(template_text) => {
-                            crate::utils::debug_log("GRAB", "Showing template dialog");
-                            
-                            // Show template dialog using the new TextBox field type
-                            let dialog_spec = vec![
-                                "=Grabber Rule Template".to_string(),
-                                format!("&{}", template_text),
-                                "!OK".to_string(),
-                            ];
-                            
-                            self.dialog.show(dialog_spec);
-                            
-                            // Calculate required dialog size and resize window
-                            let (dialog_width, dialog_height) = self.dialog.calculate_required_size();
-                            let final_width = dialog_width.max(600.0); // Minimum width for readability
-                            let final_height = dialog_height.max(400.0); // Minimum height
-                            
-                            // Enable manual resize mode and set window size
-                            self.manual_resize_mode = true;
-                            self.last_manual_size = Some([final_width, final_height].into());
-                            
-                            // Actually resize the window
-                            ctx.send_viewport_cmd(egui::ViewportCommand::InnerSize([final_width, final_height].into()));
-                        }
-                        GrabberResult::Error(error) => {
-                            crate::utils::debug_log("GRAB", &format!("Grabber error: {}", error));
-                            // Could show an error dialog here if needed
-                        }
-                    }
-                }
-                Err(std::sync::mpsc::TryRecvError::Empty) => {
-                    // No result yet, keep waiting
-                }
-                Err(std::sync::mpsc::TryRecvError::Disconnected) => {
-                    // Background thread finished but didn't send result
-                    crate::utils::debug_log("GRAB", "Background thread disconnected without result");
-                    self.grabber_receiver = None;
-                }
+            Err(err) => {
+                crate::utils::debug_log("GRAB", &format!("Grabber error: {}", err));
             }
         }
+        
+        // Regain focus back to anchor selector after grab operation
+        if let Err(e) = self.regain_focus() {
+            crate::utils::debug_log("GRAB", &format!("Failed to regain focus: {}", e));
+        }
     }
+    
     
     /// Regain focus back to anchor selector after grab operation
     fn regain_focus(&self) -> Result<(), String> {
@@ -923,8 +841,6 @@ impl eframe::App for AnchorSelector {
         // Update grabber countdown
         self.update_grabber_countdown(ctx);
         
-        // Check for grabber results from background thread
-        self.check_grabber_results(ctx);
         
         // Draw custom rounded background with heavy shadow
         let screen_rect = ctx.screen_rect();

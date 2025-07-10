@@ -1,5 +1,4 @@
 use crate::{load_commands, filter_commands, launcher, CommandTarget, execute_command, utils, grabber, load_config};
-use std::process::Command;
 
 /// Main entry point for command-line mode
 pub fn run_command_line_mode(args: Vec<String>) {
