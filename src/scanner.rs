@@ -33,6 +33,9 @@ pub fn startup_check(commands: Vec<Command>) -> Vec<Command> {
         return commands; // Not time to scan yet
     }
     
+    // Clean up log file before scan to prevent it from growing too large
+    cleanup_log_file(&config);
+    
     // Re-enabling scanner for debugging
     debug_log("SCANNER", "Starting filesystem scan");
     // Perform filesystem scan
@@ -272,6 +275,33 @@ fn process_markdown_with_root(path: &Path, vault_root: &Path, existing_commands:
         flags: String::new(),
         full_line,
     })
+}
+
+/// Cleans up the debug log file before scanning to prevent it from growing too large
+pub fn cleanup_log_file(config: &crate::Config) {
+    if let Some(debug_log_path) = &config.popup_settings.debug_log {
+        let expanded_path = expand_home(debug_log_path);
+        
+        // Log before deletion to avoid recreating the file
+        debug_log("SCANNER", &format!("Attempting to clean up log file: {}", expanded_path));
+        debug_log("SCANNER", &format!("File exists before deletion: {}", std::path::Path::new(&expanded_path).exists()));
+        
+        match std::fs::remove_file(&expanded_path) {
+            Ok(()) => {
+                // File was successfully deleted
+                eprintln!("DEBUG: Successfully deleted log file: {}", expanded_path);
+            },
+            Err(e) if e.kind() == std::io::ErrorKind::NotFound => {
+                // File doesn't exist yet - this is expected on first run
+                eprintln!("DEBUG: Log file doesn't exist: {}", expanded_path);
+            },
+            Err(e) => {
+                // For errors, we can log since the file wasn't deleted
+                eprintln!("DEBUG: Failed to delete log file {}: {}", expanded_path, e);
+                debug_log("SCANNER", &format!("Warning: Failed to clean up log file {}: {}", expanded_path, e));
+            }
+        }
+    }
 }
 
 /// Expands ~ to home directory

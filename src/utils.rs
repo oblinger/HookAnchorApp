@@ -31,7 +31,9 @@ pub fn debug_log(module: &str, message: &str) {
             .append(true)
             .open(debug_path) {
             let _ = file.write_all(log_entry.as_bytes());
-        }
+            let _ = file.flush(); // Ensure data is written to disk
+            let _ = file.sync_all(); // Force OS to write to disk
+        } // File handle is dropped here, closing the file
     }
 }
 
