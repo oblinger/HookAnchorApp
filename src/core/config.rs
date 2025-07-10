@@ -33,6 +33,8 @@ pub struct PopupSettings {
     pub max_columns: usize,
     pub use_new_launcher: bool,
     pub debug_log: Option<String>,
+    /// Enable detailed scanner debug output (default: true)
+    pub debug_scanner: Option<bool>,
     /// Comma-separated list of actions shown in command editor dropdown
     /// Example: "app,url,folder,cmd,chrome,anchor"
     pub listed_actions: Option<String>,
@@ -129,6 +131,7 @@ impl Default for PopupSettings {
             max_columns: 1,
             use_new_launcher: false, // Default to old launcher for backward compatibility
             debug_log: None,
+            debug_scanner: Some(true), // Default to enabled
             listed_actions: Some("app,url,folder,cmd,chrome,anchor".to_string()),
             merge_similar: true,
             word_separators: " ._-".to_string(),

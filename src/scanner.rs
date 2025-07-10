@@ -8,9 +8,14 @@ use std::path::{Path, PathBuf};
 use std::process::Command as ProcessCommand;
 use std::collections::{hash_map::DefaultHasher, HashSet};
 use std::hash::{Hash, Hasher};
-use crate::{Command, load_config, load_state, save_state, save_commands_to_file, utils::debug_log};
+use crate::{Command, Config, load_config, load_state, save_state, save_commands_to_file, utils::debug_log};
 use crate::core::get_action;
 use chrono::Local;
+
+/// Helper function to check if detailed scanner debugging is enabled
+fn is_scanner_debug_enabled(config: &Config) -> bool {
+    config.popup_settings.debug_scanner.unwrap_or(true)
+}
 
 /// Checks if filesystem scan should be performed and executes it if needed
 /// This function should be called on every startup.
@@ -81,8 +86,10 @@ pub fn startup_check(commands: Vec<Command>) -> Vec<Command> {
 
 /// Top-level scan function that orchestrates all scanning operations
 pub fn scan(mut commands: Vec<Command>, markdown_roots: &[String]) -> Vec<Command> {
+    let config = load_config();
+    
     // First scan markdown files
-    commands = scan_files(commands, markdown_roots);
+    commands = scan_files(commands, markdown_roots, &config);
     
     // Then scan contacts - DISABLED for performance
     // commands = scan_contacts(commands);
@@ -91,7 +98,7 @@ pub fn scan(mut commands: Vec<Command>, markdown_roots: &[String]) -> Vec<Comman
 }
 
 /// Scans the configured markdown roots and returns an updated command list
-pub fn scan_files(mut commands: Vec<Command>, markdown_roots: &[String]) -> Vec<Command> {
+pub fn scan_files(mut commands: Vec<Command>, markdown_roots: &[String], config: &Config) -> Vec<Command> {
     // Re-enabled for debugging - adding extensive logging
     debug_log("SCANNER", &format!("Starting scan_files with {} initial commands", commands.len()));
     debug_log("SCANNER", &format!("Markdown roots to scan: {:?}", markdown_roots));
@@ -132,7 +139,9 @@ pub fn scan_files(mut commands: Vec<Command>, markdown_roots: &[String]) -> Vec<
             debug_log("SCANNER", &format!("Scanning directory: {}", expanded_root));
             scan_directory_with_root(&root_path, &root_path, &mut commands, &mut existing_commands, &mut found_folders);
             let commands_after_scan = commands.len();
-            debug_log("SCANNER", &format!("Added {} commands from {}", commands_after_scan - commands_before_scan, expanded_root));
+            if is_scanner_debug_enabled(config) {
+                debug_log("SCANNER", &format!("Added {} commands from {}", commands_after_scan - commands_before_scan, expanded_root));
+            }
         } else {
             debug_log("SCANNER", &format!("Skipping non-existent or non-directory: {}", expanded_root));
         }
@@ -161,9 +170,13 @@ pub fn scan_files(mut commands: Vec<Command>, markdown_roots: &[String]) -> Vec<
                     
                     commands.push(folder_command);
                     existing_commands.insert(command_name.to_lowercase());
-                    debug_log("SCANNER", &format!("Added folder command: {}", name_str));
+                    if is_scanner_debug_enabled(config) {
+                        debug_log("SCANNER", &format!("Added folder command: {}", name_str));
+                    }
                 } else {
-                    debug_log("SCANNER", &format!("Skipping folder '{}' - command already exists", name_str));
+                    if is_scanner_debug_enabled(config) {
+                        debug_log("SCANNER", &format!("Skipping folder '{}' - command already exists", name_str));
+                    }
                 }
             }
         }

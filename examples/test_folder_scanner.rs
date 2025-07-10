@@ -39,7 +39,8 @@ fn main() {
     
     // Test scanning
     let roots = vec![test_dir.to_string()];
-    let updated_commands = scanner::scan_files(existing_commands, &roots);
+    let config = hookanchor::load_config();
+    let updated_commands = scanner::scan_files(existing_commands, &roots, &config);
     
     println!("Commands after scanning:");
     
