@@ -10,7 +10,7 @@ pub struct CommandEditor {
     pub command: String,
     pub action: String,
     pub argument: String,
-    pub group: String,
+    pub patch: String,
     pub priority: bool,
     
     // Track the original command for reference
@@ -35,7 +35,7 @@ impl CommandEditor {
             command: String::new(),
             action: String::new(),
             argument: String::new(),
-            group: String::new(),
+            patch: String::new(),
             priority: false,
             original_command: None,
             original_command_name: String::new(),
@@ -66,7 +66,7 @@ impl CommandEditor {
             self.command = cmd.command.clone();
             self.action = cmd.action.clone();
             self.argument = cmd.arg.clone();
-            self.group = cmd.group.clone();
+            self.patch = cmd.patch.clone();
             self.priority = false;
             self.original_command_name = cmd.command.clone();
             self.original_command = Some(cmd.clone());
@@ -76,7 +76,7 @@ impl CommandEditor {
             self.command = search_text.to_string();
             self.action = String::new();
             self.argument = String::new();
-            self.group = String::new();
+            self.patch = String::new();
             self.priority = false;
             self.original_command_name = String::new();
             self.original_command = None;
@@ -92,7 +92,7 @@ impl CommandEditor {
         self.command = command.command.clone();
         self.action = command.action.clone();
         self.argument = command.arg.clone();
-        self.group = command.group.clone();
+        self.patch = command.patch.clone();
         self.priority = false; // Default to false
         
         // No original command since this is a new command
@@ -117,7 +117,7 @@ impl CommandEditor {
         if ctx.input(|i| i.key_pressed(egui::Key::Enter)) {
             // Create the new command
             let new_command = Command {
-                group: self.group.clone(),
+                patch: self.patch.clone(),
                 command: self.command.clone(),
                 action: self.action.clone(),
                 arg: self.argument.clone(),
@@ -241,9 +241,9 @@ impl CommandEditor {
                             ui.text_edit_singleline(&mut self.argument);
                             ui.end_row();
                             
-                            // Group row
-                            ui.label("Group:");
-                            ui.text_edit_singleline(&mut self.group);
+                            // Patch row
+                            ui.label("Patch:");
+                            ui.text_edit_singleline(&mut self.patch);
                             ui.end_row();
                             
                             // Priority row
@@ -272,7 +272,7 @@ impl CommandEditor {
                                 if ui.button("Save").clicked() {
                                     // Create the new command
                                     let new_command = Command {
-                                        group: self.group.clone(),
+                                        patch: self.patch.clone(),
                                         command: self.command.clone(),
                                         action: self.action.clone(),
                                         arg: self.argument.clone(),
@@ -294,8 +294,8 @@ impl CommandEditor {
         let mut result = String::new();
         
         // Add group if present
-        if !self.group.is_empty() {
-            result.push_str(&self.group);
+        if !self.patch.is_empty() {
+            result.push_str(&self.patch);
             result.push_str("! ");
         }
         
@@ -319,7 +319,7 @@ impl CommandEditor {
     pub fn prepare_save_command(&self) -> (Option<String>, Command) {
         // Return the command to delete (if any) and the new command to add
         let new_command = Command {
-            group: self.group.clone(),
+            patch: self.patch.clone(),
             command: self.command.clone(),
             action: self.action.clone(),
             arg: self.argument.clone(),

@@ -474,7 +474,7 @@ fn run_test_grabber() {
                         println!("SUCCESS: Matched rule '{}'", rule_name);
                         println!("  Action: '{}'", command.action);
                         println!("  Arg: '{}'", command.arg);
-                        println!("  Group: '{}'", command.group);
+                        println!("  Patch: '{}'", command.patch);
                         println!("  Would create command: {} : {} {}", 
                             "[user-provided-name]", command.action, command.arg);
                     }

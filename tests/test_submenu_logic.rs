@@ -33,7 +33,7 @@ mod submenu_tests {
 
     fn create_command(command: &str, action: &str, arg: &str) -> Command {
         Command {
-            group: "".to_string(),
+            patch: "".to_string(),
             command: command.to_string(),
             action: action.to_string(),
             arg: arg.to_string(),

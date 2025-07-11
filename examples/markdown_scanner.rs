@@ -79,7 +79,7 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
                         command: frontmatter.command,
                         action: frontmatter.action || inferAction(filepath),
                         arg: filepath,
-                        group: frontmatter.group || inferGroup(filepath),
+                        patch: frontmatter.group || inferGroup(filepath),
                         full_line: generateFullLine(frontmatter, filepath)
                     };
                     

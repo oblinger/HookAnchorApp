@@ -4,7 +4,7 @@ use hookanchor::{Command};
 fn test_merged_command_execution_logic() {
     // Create a merged command like what would be generated
     let merged_cmd = Command {
-        group: String::new(),
+        patch: String::new(),
         command: "FIN Accounts...".to_string(),
         action: "obs".to_string(),
         arg: "FIN Accounts".to_string(),

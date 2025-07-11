@@ -72,7 +72,7 @@ mod tests {
     fn test_command_matching() {
         let commands = vec![
             Command {
-                group: String::new(),
+                patch: String::new(),
                 command: "spot".to_string(),
                 action: "anchor".to_string(),
                 arg: "/Users/test/spot.md".to_string(),
@@ -80,7 +80,7 @@ mod tests {
                 full_line: "spot : anchor; /Users/test/spot.md".to_string(),
             },
             Command {
-                group: String::new(),
+                patch: String::new(),
                 command: "test command".to_string(),
                 action: "app".to_string(),
                 arg: "TestApp".to_string(),

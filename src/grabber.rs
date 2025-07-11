@@ -33,7 +33,7 @@ pub struct GrabberRule {
     /// Action type for the created command (e.g., "url", "folder", "obs")
     pub action: String,
     /// Optional group for the created command
-    pub group: Option<String>,
+    pub patch: Option<String>,
 }
 
 /// Captures information about the currently focused application
@@ -396,7 +396,7 @@ pub fn match_grabber_rules(
                             
                             // Rule matched and returned a string argument
                             let command = Command {
-                                group: rule.group.clone().unwrap_or_default(),
+                                patch: rule.patch.clone().unwrap_or_default(),
                                 command: String::new(), // Will be filled by user
                                 action: rule.action.clone(),
                                 arg: arg.clone(),
@@ -416,14 +416,14 @@ pub fn match_grabber_rules(
                         let arg = obj.get::<_, String>("arg").ok()
                             .unwrap_or_default();
                         let group = obj.get::<_, String>("group").ok()
-                            .or_else(|| rule.group.clone())
+                            .or_else(|| rule.patch.clone())
                             .unwrap_or_default();
                         
                         if let Some(action) = action {
-                            crate::utils::debug_log("GRABBER", &format!("  action: '{}', arg: '{}', group: '{}'", action, arg, group));
+                            crate::utils::debug_log("GRABBER", &format!("  action: '{}', arg: '{}', patch: '{}'", action, arg, group));
                             
                             let command = Command {
-                                group,
+                                patch: group,
                                 command: String::new(), // Will be filled by user
                                 action,
                                 arg,
@@ -504,7 +504,7 @@ pub fn generate_rule_template_text(context: &AppContext) -> String {
     
     template.push_str("    action: \"doc\"  # Change to appropriate action type\n");
     template.push_str("    # Optional group for organizing commands:\n");
-    template.push_str("    # group: \"Grabbed\"\n");
+    template.push_str("    # patch: \"Grabbed\"\n");
     
     template
 }

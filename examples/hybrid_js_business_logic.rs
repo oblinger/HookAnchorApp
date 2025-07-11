@@ -65,7 +65,7 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
                             command: command,
                             action: action,
                             arg: filepath,
-                            group: "docs"
+                            patch: "docs"
                         };
                     }
                 }

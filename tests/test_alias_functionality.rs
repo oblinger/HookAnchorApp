@@ -7,21 +7,21 @@ fn test_alias_replacement_logic() {
     // Create test commands including aliases
     let commands = vec![
         Command {
-            group: String::new(),
+            patch: String::new(),
             command: "gh".to_string(),
             action: "alias".to_string(),
             arg: "url https://github.com".to_string(),
             full_line: "gh : alias url https://github.com".to_string(),
         },
         Command {
-            group: String::new(),
+            patch: String::new(),
             command: "home".to_string(),
             action: "alias".to_string(),
             arg: "folder /Users/testuser".to_string(),
             full_line: "home : alias folder /Users/testuser".to_string(),
         },
         Command {
-            group: String::new(),
+            patch: String::new(),
             command: "github".to_string(),
             action: "url".to_string(),
             arg: "https://github.com".to_string(),

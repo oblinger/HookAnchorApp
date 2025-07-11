@@ -43,6 +43,7 @@ keybindings:
   delete_selected: "Delete"    # Delete selected command
   edit_selected: "E"           # Edit selected command
   open_editor: "N"             # Open command editor
+  add_alias: ">"               # Add alias using current input and last executed command
   open_in_editor: "O"          # Open in external editor
   reload_commands: "R"         # Reload commands
   paste_clipboard: "V"         # Paste from clipboard

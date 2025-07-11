@@ -7,14 +7,14 @@ fn test_exact_match_logic() {
     // Create some test commands
     let commands = vec![
         Command {
-            group: String::new(),
+            patch: String::new(),
             command: "Test Command".to_string(),
             action: "app".to_string(),
             arg: "TestApp".to_string(),
             full_line: "Test Command : app TestApp".to_string(),
         },
         Command {
-            group: String::new(),
+            patch: String::new(),
             command: "Another Command".to_string(),
             action: "url".to_string(),
             arg: "https://example.com".to_string(),

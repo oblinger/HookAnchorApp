@@ -3,7 +3,7 @@ use hookanchor::{Command, filter_commands, get_current_submenu_prefix, split_com
 /// Helper to create a test command
 fn make_cmd(name: &str) -> Command {
     Command {
-        group: String::new(),
+        patch: String::new(),
         command: name.to_string(),
         action: "test".to_string(),
         arg: String::new(),

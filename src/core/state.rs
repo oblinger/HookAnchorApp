@@ -20,6 +20,8 @@ pub struct AppState {
     pub last_scan_time: Option<i64>,
     /// Checksum derived from last filesystem scan results
     pub last_scan_checksum: Option<String>,
+    /// Last executed command (used for add_alias functionality)
+    pub last_executed_command: Option<String>,
 }
 
 impl Default for AppState {
@@ -29,6 +31,7 @@ impl Default for AppState {
             build_time: None,
             last_scan_time: None,
             last_scan_checksum: None,
+            last_executed_command: None,
         }
     }
 }
@@ -73,5 +76,12 @@ pub fn save_state(state: &AppState) -> Result<(), Box<dyn std::error::Error>> {
 pub fn save_state_with_build_time() -> Result<(), Box<dyn std::error::Error>> {
     let mut state = load_state();
     state.build_time = Some(Local::now().timestamp());
+    save_state(&state)
+}
+
+/// Updates last executed command in state.json file
+pub fn save_last_executed_command(command_name: &str) -> Result<(), Box<dyn std::error::Error>> {
+    let mut state = load_state();
+    state.last_executed_command = Some(command_name.to_string());
     save_state(&state)
 }

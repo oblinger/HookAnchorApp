@@ -2,7 +2,7 @@ use hookanchor::{Command, split_commands, get_current_submenu_prefix, filter_com
 
 fn cmd(command: &str, action: &str, arg: &str) -> Command {
     Command {
-        group: String::new(),
+        patch: String::new(),
         command: command.to_string(),
         action: action.to_string(),
         arg: arg.to_string(),

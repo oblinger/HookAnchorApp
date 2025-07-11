@@ -380,28 +380,28 @@ fn test_merge_similar_commands() {
     // Test case 1: Commands with similar prefixes after search match
     let commands = vec![
         Command {
-            group: String::new(),
+            patch: String::new(),
             command: "FIN Retire Data".to_string(),
             action: "folder".to_string(),
             arg: "~/retire/data".to_string(),
             full_line: "FIN Retire Data : folder ~/retire/data".to_string(),
         },
         Command {
-            group: String::new(),
+            patch: String::new(),
             command: "FIN Retire Folder".to_string(),
             action: "folder".to_string(),
             arg: "~/retire".to_string(),
             full_line: "FIN Retire Folder : folder ~/retire".to_string(),
         },
         Command {
-            group: String::new(),
+            patch: String::new(),
             command: "FIN Retire Obsidian".to_string(),
             action: "obs".to_string(),
             arg: "Retire".to_string(),
             full_line: "FIN Retire Obsidian : obs Retire".to_string(),
         },
         Command {
-            group: String::new(),
+            patch: String::new(),
             command: "FIN Budget".to_string(),
             action: "folder".to_string(),
             arg: "~/budget".to_string(),
@@ -430,14 +430,14 @@ fn test_merge_similar_no_whitespace_after_match() {
     // Test when there's no whitespace after the match
     let commands = vec![
         Command {
-            group: String::new(),
+            patch: String::new(),
             command: "test".to_string(),
             action: "app".to_string(),
             arg: "Test".to_string(),
             full_line: "test : app Test".to_string(),
         },
         Command {
-            group: String::new(),
+            patch: String::new(),
             command: "testing".to_string(),
             action: "app".to_string(),
             arg: "Testing".to_string(),
@@ -457,14 +457,14 @@ fn test_merge_similar_project_commands() {
     // Test that commands with same prefix get merged
     let commands = vec![
         Command {
-            group: String::new(),
+            patch: String::new(),
             command: "project web frontend".to_string(),
             action: "folder".to_string(),
             arg: "~/proj/web/front".to_string(),
             full_line: "project web frontend : folder ~/proj/web/front".to_string(),
         },
         Command {
-            group: String::new(),
+            patch: String::new(),
             command: "project mobile app".to_string(),
             action: "folder".to_string(),
             arg: "~/proj/mobile".to_string(),
@@ -487,14 +487,14 @@ fn test_merge_similar_different_prefixes() {
     // Test that commands with different prefixes don't get merged
     let commands = vec![
         Command {
-            group: String::new(),
+            patch: String::new(),
             command: "project web frontend".to_string(),
             action: "folder".to_string(),
             arg: "~/proj/web/front".to_string(),
             full_line: "project web frontend : folder ~/proj/web/front".to_string(),
         },
         Command {
-            group: String::new(),
+            patch: String::new(),
             command: "prototype mobile app".to_string(),
             action: "folder".to_string(),
             arg: "~/proto/mobile".to_string(),
@@ -514,28 +514,28 @@ fn test_debug_merge_analysis_bills() {
     // Debug test for the user's issue
     let commands = vec![
         Command {
-            group: String::new(),
+            patch: String::new(),
             command: "analysis daily".to_string(),
             action: "obs".to_string(),
             arg: "Analysis Daily".to_string(),
             full_line: "analysis daily : obs Analysis Daily".to_string(),
         },
         Command {
-            group: String::new(),
+            patch: String::new(),
             command: "analysis weekly".to_string(),
             action: "obs".to_string(),
             arg: "Analysis Weekly".to_string(),
             full_line: "analysis weekly : obs Analysis Weekly".to_string(),
         },
         Command {
-            group: String::new(),
+            patch: String::new(),
             command: "BILLS monthly".to_string(),
             action: "folder".to_string(),
             arg: "~/bills".to_string(),
             full_line: "BILLS monthly : folder ~/bills".to_string(),
         },
         Command {
-            group: String::new(),
+            patch: String::new(),
             command: "BILLS yearly".to_string(),
             action: "folder".to_string(),
             arg: "~/bills/yearly".to_string(),
@@ -621,28 +621,28 @@ fn test_submenu_aware_merging() {
     // Test case for the user's "fin" issue - should be submenu-aware
     let commands = vec![
         Command {
-            group: String::new(),
+            patch: String::new(),
             command: "FIN".to_string(),
             action: "folder".to_string(),
             arg: "~/fin".to_string(),
             full_line: "FIN : folder ~/fin".to_string(),
         },
         Command {
-            group: String::new(),
+            patch: String::new(),
             command: "FIN Retire Data".to_string(),
             action: "folder".to_string(),
             arg: "~/retire/data".to_string(),
             full_line: "FIN Retire Data : folder ~/retire/data".to_string(),
         },
         Command {
-            group: String::new(),
+            patch: String::new(),
             command: "FIN Retire Folder".to_string(),
             action: "folder".to_string(),
             arg: "~/retire".to_string(),
             full_line: "FIN Retire Folder : folder ~/retire".to_string(),
         },
         Command {
-            group: String::new(),
+            patch: String::new(),
             command: "FIN Budget".to_string(),
             action: "folder".to_string(),
             arg: "~/budget".to_string(),
@@ -909,7 +909,7 @@ fn test_fin_simple_grouping() {
 // Helper function to create commands more concisely
 fn cmd(command: &str, action: &str, arg: &str) -> Command {
     Command {
-        group: String::new(),
+        patch: String::new(),
         command: command.to_string(),
         action: action.to_string(),
         arg: arg.to_string(),

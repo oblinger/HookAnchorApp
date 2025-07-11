@@ -149,6 +149,21 @@ impl AnchorSelector {
             // Collect actions to perform to avoid borrowing conflicts
             let mut actions_to_perform = Vec::new();
             let mut consumed_keys = Vec::new();
+            let mut consumed_text = Vec::new();
+            
+            // Check for special text events that should trigger actions
+            for event in &input.events {
+                if let egui::Event::Text(text) = event {
+                    match text.as_str() {
+                        ">" => {
+                            actions_to_perform.push("add_alias");
+                            consumed_text.push(text.clone());
+                            keys_processed = true;
+                        },
+                        _ => {}
+                    }
+                }
+            }
             
             // Check each pressed key against configured keybindings
             {
@@ -181,6 +196,7 @@ impl AnchorSelector {
                                     "exit_app" => actions_to_perform.push("exit_app"),
                                     "execute_command" => actions_to_perform.push("execute_command"),
                                     "open_editor" => actions_to_perform.push("open_editor"),
+                                    "add_alias" => actions_to_perform.push("add_alias"),
                                     "edit_active_command" => actions_to_perform.push("edit_active_command"),
                                     _ => {} // Unknown action - still consume the key
                                 }
@@ -195,6 +211,10 @@ impl AnchorSelector {
                 match event {
                     egui::Event::Key { key, .. } => !consumed_keys.contains(key),
                     egui::Event::Text(text) => {
+                        // Filter out text that was explicitly consumed
+                        if consumed_text.contains(text) {
+                            return false;
+                        }
                         // Filter out text that corresponds to consumed keys
                         // Check if any consumed key would generate this text
                         let should_filter = consumed_keys.iter().any(|key| {
@@ -240,6 +260,7 @@ impl AnchorSelector {
             },
             "execute_command" => self.execute_selected_command(),
             "open_editor" => self.open_command_editor(),
+            "add_alias" => self.handle_add_alias(),
             "edit_active_command" => self.edit_active_command(),
             _ => {}
         }
@@ -303,6 +324,35 @@ impl AnchorSelector {
             self.command_editor.edit_command(Some(matching_command), &self.popup_state.search_text);
         } else {
             self.command_editor.edit_command(None, &self.popup_state.search_text);
+        }
+    }
+    
+    /// Handle add alias command - opens command editor with alias action and last executed command as argument
+    fn handle_add_alias(&mut self) {
+        let state = crate::core::state::load_state();
+        if let Some(last_command) = state.last_executed_command {
+            let search_text = self.popup_state.search_text.clone();
+            
+            // Create a new command with alias action
+            let alias_command = crate::Command {
+                patch: String::new(),
+                command: search_text.clone(),
+                action: "alias".to_string(),
+                arg: last_command,
+                flags: String::new(),
+                full_line: String::new(), // Will be reconstructed by the editor
+            };
+            
+            // Open command editor with the pre-filled alias command
+            self.command_editor.open_with_command(alias_command);
+        } else {
+            // If no last command available, show error dialog
+            let dialog_spec = vec![
+                "=Error".to_string(),
+                "No last executed command available for alias creation.".to_string(),
+                "!OK".to_string(),
+            ];
+            self.dialog.show(dialog_spec);
         }
     }
     

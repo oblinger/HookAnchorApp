@@ -6,13 +6,14 @@
 use std::fs;
 use std::path::{Path, PathBuf};
 use std::env;
+use std::collections::HashMap;
 use serde::{Deserialize, Serialize};
 use super::config::Config;
 
 /// Represents a parsed command with its components and original line
 #[derive(Debug, Clone, PartialEq, Serialize, Deserialize)]
 pub struct Command {
-    pub group: String,
+    pub patch: String,
     pub command: String,
     pub action: String,
     pub arg: String,
@@ -27,6 +28,15 @@ pub enum CommandTarget {
     Command(Command),
     /// A command that launches another anchor command  
     Alias(String),
+}
+
+/// Represents a Patch (Dispatcher) that associates with a command
+#[derive(Debug, Clone, PartialEq)]
+pub struct Patch {
+    /// Name of the patch (lowercase)
+    pub name: String,
+    /// The first command that matches this patch name
+    pub linked_command: Option<Command>,
 }
 
 /// Mapping from flag letters to their word descriptions
@@ -112,8 +122,8 @@ impl Command {
         let mut result = String::new();
         
         // Add group if present
-        if !self.group.is_empty() {
-            result.push_str(&self.group);
+        if !self.patch.is_empty() {
+            result.push_str(&self.patch);
             result.push_str("! ");
         }
         
@@ -174,6 +184,34 @@ pub fn backup_commands_file() -> Result<(), Box<dyn std::error::Error>> {
 }
 
 /// Loads commands from the commands.txt file
+/// Creates a hashmap from patch names to Patch structs
+/// Each patch associates with the first command whose name matches the patch name
+pub fn create_patches_hashmap(commands: &[Command]) -> HashMap<String, Patch> {
+    let mut patches = HashMap::new();
+    
+    // First, collect all unique patch names from commands
+    for command in commands {
+        if !command.patch.is_empty() {
+            let patch_name = command.patch.to_lowercase();
+            
+            // If this patch doesn't exist yet, create it
+            if !patches.contains_key(&patch_name) {
+                // Find the first command whose name matches this patch name
+                let linked_command = commands.iter()
+                    .find(|cmd| cmd.command.to_lowercase() == patch_name)
+                    .cloned();
+                
+                patches.insert(patch_name.clone(), Patch {
+                    name: patch_name,
+                    linked_command,
+                });
+            }
+        }
+    }
+    
+    patches
+}
+
 pub fn load_commands() -> Vec<Command> {
     let path = get_commands_file_path();
     
@@ -249,7 +287,7 @@ pub fn parse_command_line(line: &str) -> Result<Command, String> {
         };
         
         return Ok(Command {
-            group,
+            patch: group,
             command,
             action,
             arg: arg.to_string(),
@@ -443,7 +481,7 @@ pub fn merge_similar_commands_with_context(commands: Vec<Command>, config: &Conf
         }
     }
     
-    // Step 2: Group commands by matching them against candidates
+    // Step 2: Patch commands by matching them against candidates
     let mut groups: std::collections::HashMap<String, Vec<Command>> = std::collections::HashMap::new();
     let mut unmatched_commands = Vec::new();
     
@@ -479,7 +517,7 @@ pub fn merge_similar_commands_with_context(commands: Vec<Command>, config: &Conf
             group.sort_by(|a, b| a.command.cmp(&b.command));
             let base_command = &group[0];
             let mut merged_command = Command {
-                group: base_command.group.clone(),
+                patch: base_command.patch.clone(),
                 command: format!("{} ...", candidate),
                 action: base_command.action.clone(),
                 arg: base_command.arg.clone(),
@@ -718,7 +756,7 @@ pub fn get_submenu_commands(commands: &[Command], prefix: &str, separators: &str
     // Always add separator if we have inside commands (even if no outside commands)
     if !result.is_empty() {
         result.push(Command {
-            group: String::new(),
+            patch: String::new(),
             command: "---".to_string(),
             action: "separator".to_string(),
             arg: String::new(),
@@ -780,6 +818,10 @@ fn execute_command_with_depth(command: &Command, depth: u32) -> CommandTarget {
     
     // Log command execution in the requested format
     crate::utils::debug_log("EXECUTE", &format!("'{}' AS '{}' ON '{}'", command.command, command.action, command.arg));
+    
+    // Save the last executed command for add_alias functionality
+    use crate::core::state::save_last_executed_command;
+    let _ = save_last_executed_command(&command.command);
     
     match crate::launcher::launch(&launcher_cmd) {
         Ok(()) => {
@@ -857,7 +899,7 @@ pub fn get_display_commands_with_options(
         if !result.is_empty() && !outside_commands.is_empty() {
             // Add single separator between inside and outside
             result.push(Command {
-                group: String::new(),
+                patch: String::new(),
                 command: "---".to_string(),
                 action: "separator".to_string(),
                 arg: String::new(),
@@ -887,7 +929,7 @@ pub fn get_display_commands_with_options(
                 if let Some(target_cmd) = commands.iter().find(|c| c.command == cmd.arg) {
                     // Create a new command with the alias's name but the target's action/arg
                     Command {
-                        group: cmd.group,
+                        patch: cmd.patch,
                         command: cmd.command, // Keep the alias's name
                         action: target_cmd.action.clone(), // Use target's action
                         arg: target_cmd.arg.clone(), // Use target's arg
@@ -921,15 +963,15 @@ mod tests {
         assert_eq!(result.action, "action");
         assert_eq!(result.arg, "arg");
         assert_eq!(result.flags, "");
-        assert_eq!(result.group, "");
+        assert_eq!(result.patch, "");
     }
 
     #[test]
-    fn test_parse_command_with_group() {
-        let line = "Group! test command : action; argument here";
+    fn test_parse_command_with_patch() {
+        let line = "Patch! test command : action; argument here";
         let result = parse_command_line(line).unwrap();
         
-        assert_eq!(result.group, "Group");
+        assert_eq!(result.patch, "Patch");
         assert_eq!(result.command, "test command");
         assert_eq!(result.action, "action");
         assert_eq!(result.arg, "argument here");
@@ -945,7 +987,7 @@ mod tests {
         assert_eq!(result.action, "action");
         assert_eq!(result.flags, "flag1 flag2");
         assert_eq!(result.arg, "argument");
-        assert_eq!(result.group, "");
+        assert_eq!(result.patch, "");
     }
 
     #[test]
@@ -953,7 +995,7 @@ mod tests {
         let line = "Application! Chrome Test : chrome --incognito; https://example.com";
         let result = parse_command_line(line).unwrap();
         
-        assert_eq!(result.group, "Application");
+        assert_eq!(result.patch, "Application");
         assert_eq!(result.command, "Chrome Test");
         assert_eq!(result.action, "chrome");
         assert_eq!(result.flags, "--incognito");
@@ -998,7 +1040,7 @@ mod tests {
         let line = "Application! Netflix 1Pass : 1pass --auto-fill; Netflix Account";
         let result = parse_command_line(line).unwrap();
         
-        assert_eq!(result.group, "Application");
+        assert_eq!(result.patch, "Application");
         assert_eq!(result.command, "Netflix 1Pass");
         assert_eq!(result.action, "1pass");
         assert_eq!(result.flags, "--auto-fill");
@@ -1008,7 +1050,7 @@ mod tests {
     #[test]
     fn test_format_generation_simple() {
         let cmd = Command {
-            group: String::new(),
+            patch: String::new(),
             command: "test".to_string(),
             action: "action".to_string(),
             arg: "argument".to_string(),
@@ -1023,7 +1065,7 @@ mod tests {
     #[test]
     fn test_format_generation_with_flags() {
         let cmd = Command {
-            group: String::new(),
+            patch: String::new(),
             command: "test".to_string(),
             action: "action".to_string(),
             arg: "argument".to_string(),
@@ -1036,9 +1078,9 @@ mod tests {
     }
 
     #[test]
-    fn test_format_generation_with_group_and_flags() {
+    fn test_format_generation_with_patch_and_flags() {
         let cmd = Command {
-            group: "Group".to_string(),
+            patch: "Patch".to_string(),
             command: "test command".to_string(),
             action: "action".to_string(),
             arg: "argument here".to_string(),
@@ -1047,7 +1089,7 @@ mod tests {
         };
         
         let formatted = cmd.to_new_format();
-        assert_eq!(formatted, "Group! test command : action --flag; argument here");
+        assert_eq!(formatted, "Patch! test command : action --flag; argument here");
     }
 
     #[test]
@@ -1057,7 +1099,7 @@ mod tests {
         let reformatted = parsed.to_new_format();
         let reparsed = parse_command_line(&reformatted).unwrap();
         
-        assert_eq!(parsed.group, reparsed.group);
+        assert_eq!(parsed.patch, reparsed.patch);
         assert_eq!(parsed.command, reparsed.command);
         assert_eq!(parsed.action, reparsed.action);
         assert_eq!(parsed.flags, reparsed.flags);
@@ -1068,7 +1110,7 @@ mod tests {
     fn test_filter_commands_sorting_exact_match_first() {
         let commands = vec![
             Command {
-                group: String::new(),
+                patch: String::new(),
                 command: "Web25".to_string(),
                 action: "action".to_string(),
                 arg: "arg".to_string(),
@@ -1076,7 +1118,7 @@ mod tests {
                 full_line: String::new(),
             },
             Command {
-                group: String::new(),
+                patch: String::new(),
                 command: "web".to_string(),
                 action: "action".to_string(),
                 arg: "arg".to_string(),
@@ -1084,7 +1126,7 @@ mod tests {
                 full_line: String::new(),
             },
             Command {
-                group: String::new(),
+                patch: String::new(),
                 command: "Webshare".to_string(),
                 action: "action".to_string(),
                 arg: "arg".to_string(),
@@ -1105,7 +1147,7 @@ mod tests {
     fn test_filter_commands_sorting_word_count_before_alphabetical() {
         let commands = vec![
             Command {
-                group: String::new(),
+                patch: String::new(),
                 command: "test zebra final".to_string(), // 3 words, alphabetically first
                 action: "action".to_string(),
                 arg: "arg".to_string(),
@@ -1113,7 +1155,7 @@ mod tests {
                 full_line: String::new(),
             },
             Command {
-                group: String::new(),
+                patch: String::new(),
                 command: "test apple".to_string(), // 2 words, alphabetically second
                 action: "action".to_string(),
                 arg: "arg".to_string(),
@@ -1121,7 +1163,7 @@ mod tests {
                 full_line: String::new(),
             },
             Command {
-                group: String::new(),
+                patch: String::new(),
                 command: "testZ".to_string(), // 1 word, alphabetically last
                 action: "action".to_string(),
                 arg: "arg".to_string(),
@@ -1142,7 +1184,7 @@ mod tests {
     fn test_filter_commands_sorting_alphabetical_within_same_word_count() {
         let commands = vec![
             Command {
-                group: String::new(),
+                patch: String::new(),
                 command: "test zebra".to_string(),
                 action: "action".to_string(),
                 arg: "arg".to_string(),
@@ -1150,7 +1192,7 @@ mod tests {
                 full_line: String::new(),
             },
             Command {
-                group: String::new(),
+                patch: String::new(),
                 command: "test apple".to_string(),
                 action: "action".to_string(),
                 arg: "arg".to_string(),
@@ -1158,7 +1200,7 @@ mod tests {
                 full_line: String::new(),
             },
             Command {
-                group: String::new(),
+                patch: String::new(),
                 command: "test banana".to_string(),
                 action: "action".to_string(),
                 arg: "arg".to_string(),
@@ -1179,7 +1221,7 @@ mod tests {
     fn test_filter_commands_sorting_match_position_priority() {
         let commands = vec![
             Command {
-                group: String::new(),
+                patch: String::new(),
                 command: "some test here".to_string(), // "test" matches at position 5
                 action: "action".to_string(),
                 arg: "arg".to_string(),
@@ -1187,7 +1229,7 @@ mod tests {
                 full_line: String::new(),
             },
             Command {
-                group: String::new(),
+                patch: String::new(),
                 command: "test something".to_string(), // "test" matches at position 0
                 action: "action".to_string(),
                 arg: "arg".to_string(),
@@ -1207,7 +1249,7 @@ mod tests {
     fn test_filter_commands_comprehensive_sorting() {
         let commands = vec![
             Command {
-                group: String::new(),
+                patch: String::new(),
                 command: "Web App Store".to_string(), // 3 words, partial match
                 action: "action".to_string(),
                 arg: "arg".to_string(),
@@ -1215,7 +1257,7 @@ mod tests {
                 full_line: String::new(),
             },
             Command {
-                group: String::new(),
+                patch: String::new(),
                 command: "WebZ".to_string(), // 1 word, partial match
                 action: "action".to_string(),
                 arg: "arg".to_string(),
@@ -1223,7 +1265,7 @@ mod tests {
                 full_line: String::new(),
             },
             Command {
-                group: String::new(),
+                patch: String::new(),
                 command: "web".to_string(), // exact match
                 action: "action".to_string(),
                 arg: "arg".to_string(),
@@ -1231,7 +1273,7 @@ mod tests {
                 full_line: String::new(),
             },
             Command {
-                group: String::new(),
+                patch: String::new(),
                 command: "Web Browser".to_string(), // 2 words, partial match
                 action: "action".to_string(),
                 arg: "arg".to_string(),

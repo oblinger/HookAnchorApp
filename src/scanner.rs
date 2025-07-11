@@ -158,7 +158,7 @@ pub fn scan_files(mut commands: Vec<Command>, markdown_roots: &[String], config:
                     let full_line = format!("{} : folder {};", command_name, full_path);
                     
                     let folder_command = Command {
-                        group: String::new(),
+                        patch: String::new(),
                         command: command_name.clone(),
                         action: "folder".to_string(),
                         arg: full_path,
@@ -279,7 +279,7 @@ fn process_markdown_with_root(path: &Path, vault_root: &Path, existing_commands:
     let full_line = format!("{} : {} {};", command_name, action, arg);
     
     Some(Command {
-        group: String::new(),
+        patch: String::new(),
         command: command_name,
         action: action.to_string(),
         arg,
@@ -381,7 +381,7 @@ end tell
                     let full_line = format!("{} : contact {};", command_name, contact_id);
                     
                     commands.push(Command {
-                        group: String::new(),
+                        patch: String::new(),
                         command: command_name,
                         action: "contact".to_string(),
                         arg: contact_id.to_string(),
@@ -403,7 +403,7 @@ end tell
                 let full_line = format!("{} : contact {};", command_name, id);
                 
                 commands.push(Command {
-                    group: String::new(),
+                    patch: String::new(),
                     command: command_name,
                     action: "contact".to_string(),
                     arg: id.to_string(),

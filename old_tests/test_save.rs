@@ -22,7 +22,7 @@ fn main() {
         
         // Test 3: Create a modified command
         let modified_command = Command {
-            group: original_cmd.group.clone(),
+            patch: original_cmd.group.clone(),
             command: original_cmd.command.clone(),
             action: "obs".to_string(), // Keep same action
             arg: format!("{} - MODIFIED", original_cmd.arg), // Add MODIFIED to the arg

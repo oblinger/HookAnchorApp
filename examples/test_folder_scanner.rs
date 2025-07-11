@@ -16,7 +16,7 @@ fn main() {
     // Create some existing commands to test collision detection
     let existing_commands = vec![
         Command {
-            group: String::new(),
+            patch: String::new(),
             command: "folder1".to_string(),
             action: "app".to_string(),
             arg: "SomeApp".to_string(),

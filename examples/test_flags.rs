@@ -5,7 +5,7 @@ fn main() {
     
     // Create a command and test flag operations
     let mut cmd = Command {
-        group: String::new(),
+        patch: String::new(),
         command: "test command".to_string(),
         action: "test".to_string(),
         arg: "some argument".to_string(),

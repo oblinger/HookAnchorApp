@@ -8,14 +8,14 @@ fn test_submenu_outside_commands_ordering() {
     let commands = vec![
         // Inside submenu (Analysis commands)
         Command {
-            group: String::new(),
+            patch: String::new(),
             command: "Analysis Folder".to_string(),
             action: "folder".to_string(),
             arg: "/path/to/analysis".to_string(),
             full_line: "Analysis Folder : folder /path/to/analysis".to_string(),
         },
         Command {
-            group: String::new(),
+            patch: String::new(),
             command: "Analysis Notes".to_string(),
             action: "app".to_string(),
             arg: "Notes".to_string(),
@@ -23,28 +23,28 @@ fn test_submenu_outside_commands_ordering() {
         },
         // Outside submenu commands - some match "ana", some don't
         Command {
-            group: String::new(),
+            patch: String::new(),
             command: "Anaconda Environment".to_string(),
             action: "cmd".to_string(),
             arg: "conda activate".to_string(),
             full_line: "Anaconda Environment : cmd conda activate".to_string(),
         },
         Command {
-            group: String::new(),
+            patch: String::new(),
             command: "Analytics Dashboard".to_string(),
             action: "url".to_string(),
             arg: "https://dashboard.com".to_string(),
             full_line: "Analytics Dashboard : url https://dashboard.com".to_string(),
         },
         Command {
-            group: String::new(),
+            patch: String::new(),
             command: "GitHub Repository".to_string(),
             action: "url".to_string(),
             arg: "https://github.com".to_string(),
             full_line: "GitHub Repository : url https://github.com".to_string(),
         },
         Command {
-            group: String::new(),
+            patch: String::new(),
             command: "Terminal Window".to_string(),
             action: "app".to_string(),
             arg: "Terminal".to_string(),

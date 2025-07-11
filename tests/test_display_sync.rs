@@ -3,7 +3,7 @@ use hookanchor::{Command, filter_commands};
 /// Helper to create a test command
 fn make_cmd(name: &str, action: &str) -> Command {
     Command {
-        group: String::new(),
+        patch: String::new(),
         command: name.to_string(),
         action: action.to_string(),
         arg: String::new(),
