@@ -30,7 +30,7 @@ pub use core::commands::{Command, CommandTarget, Patch, filter_commands, get_dis
                          merge_similar_commands_with_context, load_commands, save_commands_to_file, 
                          add_command, delete_command, parse_command_line, split_commands, 
                          get_current_submenu_prefix, execute_command, migrate_commands_to_new_format,
-                         command_matches_query, command_matches_query_with_debug, get_command_prefix, create_patches_hashmap};
+                         command_matches_query, command_matches_query_with_debug, get_command_prefix, create_patches_hashmap, auto_assign_patches};
 pub use core::config::{Config, PopupSettings, LauncherSettings, load_config};
 pub use core::state::{AppState, load_state, save_state};
 pub use core::ApplicationState;

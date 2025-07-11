@@ -212,6 +212,55 @@ pub fn create_patches_hashmap(commands: &[Command]) -> HashMap<String, Patch> {
     patches
 }
 
+/// Automatically assigns patch names to commands based on shared prefixes
+/// For commands without a patch, if their name starts with a prefix (up to first space)
+/// that's shared with at least one other command, that prefix becomes the patch name.
+/// The patch name preserves the case of the first occurrence of the prefix.
+pub fn auto_assign_patches(commands: &mut Vec<Command>) {
+    use std::collections::HashMap;
+    
+    // First, collect all prefixes and count them
+    let mut prefix_counts: HashMap<String, usize> = HashMap::new();
+    let mut prefix_first_case: HashMap<String, String> = HashMap::new();
+    
+    // Scan all commands to find prefixes
+    for cmd in commands.iter() {
+        if let Some(space_idx) = cmd.command.find(' ') {
+            let prefix = &cmd.command[..space_idx];
+            let prefix_lower = prefix.to_lowercase();
+            
+            // Count this prefix
+            *prefix_counts.entry(prefix_lower.clone()).or_insert(0) += 1;
+            
+            // Store the first case we see of this prefix
+            prefix_first_case.entry(prefix_lower).or_insert_with(|| prefix.to_string());
+        }
+    }
+    
+    // Now assign patches to commands without patches
+    for cmd in commands.iter_mut() {
+        // Skip if command already has a patch
+        if !cmd.patch.is_empty() {
+            continue;
+        }
+        
+        // Check if this command has a prefix
+        if let Some(space_idx) = cmd.command.find(' ') {
+            let prefix_lower = cmd.command[..space_idx].to_lowercase();
+            
+            // If this prefix is shared by at least 2 commands, assign it as patch
+            if let Some(count) = prefix_counts.get(&prefix_lower) {
+                if *count >= 2 {
+                    // Use the first case we saw of this prefix
+                    if let Some(patch_name) = prefix_first_case.get(&prefix_lower) {
+                        cmd.patch = patch_name.clone();
+                    }
+                }
+            }
+        }
+    }
+}
+
 pub fn load_commands() -> Vec<Command> {
     let path = get_commands_file_path();
     
