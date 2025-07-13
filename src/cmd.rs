@@ -1,4 +1,4 @@
-use crate::{load_commands, filter_commands, launcher, CommandTarget, execute_command, utils, grabber, load_config};
+use crate::{load_commands, load_commands_raw, filter_commands, launcher, CommandTarget, execute_command, utils, grabber, load_config, create_patches_hashmap, infer_patch};
 
 /// Main entry point for command-line mode
 pub fn run_command_line_mode(args: Vec<String>) {
@@ -28,6 +28,7 @@ pub fn run_command_line_mode(args: Vec<String>) {
         "-F" | "--named-folders" => run_folder_with_commands(&args),
         "--user-info" => print_user_info(),
         "--test-grabber" => run_test_grabber(),
+        "--infer" => run_infer_patches(&args),
         _ => {
             eprintln!("Unknown command: {}", args[1]);
             eprintln!("Use -h or --help for usage information");
@@ -48,6 +49,7 @@ pub fn print_help(program_name: &str) {
     eprintln!("  {} -f, --folders <query>    # Get folder paths", program_name);
     eprintln!("  {} -F, --named-folders <q>  # Get CMDS->paths", program_name);
     eprintln!("  {} -a, --action <act> <arg> # Test action", program_name);
+    eprintln!("  {} --infer                  # Show patch inference changes", program_name);
     eprintln!("  {} --test-grabber           # Test grabber functionality", program_name);
     eprintln!("  open 'hook://query'         # Handle hook URL");
     eprintln!();
@@ -495,4 +497,115 @@ fn run_test_grabber() {
     }
     
     println!("\nGrabber test completed successfully!");
+}
+
+/// Checks if the new_patch is associated with a parent directory of the current_patch
+fn is_parent_directory_patch(current_patch: &str, new_patch: &str, patches: &std::collections::HashMap<String, crate::Patch>) -> bool {
+    use std::path::Path;
+    
+    // Get the linked commands for both patches
+    let current_patch_lower = current_patch.to_lowercase();
+    let new_patch_lower = new_patch.to_lowercase();
+    
+    let current_linked = patches.get(&current_patch_lower).and_then(|p| p.linked_command.as_ref());
+    let new_linked = patches.get(&new_patch_lower).and_then(|p| p.linked_command.as_ref());
+    
+    if let (Some(current_cmd), Some(new_cmd)) = (current_linked, new_linked) {
+        // Both patches have linked commands - compare their directory paths
+        if current_cmd.is_path_based() && new_cmd.is_path_based() {
+            let current_path = Path::new(&current_cmd.arg);
+            let new_path = Path::new(&new_cmd.arg);
+            
+            // Get directories containing the files
+            let current_dir = if current_path.is_file() || current_cmd.arg.contains('.') {
+                current_path.parent()
+            } else {
+                Some(current_path)
+            };
+            
+            let new_dir = if new_path.is_file() || new_cmd.arg.contains('.') {
+                new_path.parent()
+            } else {
+                Some(new_path)
+            };
+            
+            if let (Some(current_dir), Some(new_dir)) = (current_dir, new_dir) {
+                // Check if new_dir is a parent of current_dir
+                return current_dir.starts_with(new_dir) && current_dir != new_dir;
+            }
+        }
+    }
+    
+    false
+}
+
+/// Show which commands would have their patches changed by inference
+fn run_infer_patches(_args: &[String]) {
+    println!("Analyzing patch inference changes...");
+    
+    // Load current commands (without inference)
+    let commands = load_commands_raw();
+    let patches = create_patches_hashmap(&commands);
+    
+    let mut changes_found = 0;
+    let mut total_checked = 0;
+    
+    let mut skipped_user_edited = 0;
+    let mut skipped_parent_dir = 0;
+    
+    for command in &commands {
+        total_checked += 1;
+        let current_patch = &command.patch;
+        
+        // Skip if command has user edited flag (U)
+        if command.flags.contains('U') {
+            skipped_user_edited += 1;
+            continue;
+        }
+        
+        // Compute what the inferred patch would be
+        let inferred_patch = infer_patch(command, &patches);
+        
+        // Check if they're different and should be changed
+        match inferred_patch {
+            Some(new_patch) => {
+                let should_change = if current_patch.is_empty() && !new_patch.is_empty() {
+                    true // Always allow adding a patch to empty
+                } else if current_patch != &new_patch {
+                    // Check if this would be moving to a parent directory patch
+                    if is_parent_directory_patch(current_patch, &new_patch, &patches) {
+                        skipped_parent_dir += 1;
+                        false // Don't change to parent directory patch
+                    } else {
+                        true // Allow other changes
+                    }
+                } else {
+                    false // No change needed
+                };
+                
+                if should_change {
+                    if current_patch.is_empty() {
+                        println!("{}: (empty) -> {}", command.command, new_patch);
+                    } else {
+                        println!("{}: {} -> {}", command.command, current_patch, new_patch);
+                    }
+                    changes_found += 1;
+                }
+            }
+            None => {
+                // No inferred patch, no change needed
+            }
+        }
+    }
+    
+    println!("\nSummary:");
+    println!("  Commands checked: {}", total_checked);
+    println!("  Commands that would change: {}", changes_found);
+    println!("  Skipped (user edited): {}", skipped_user_edited);
+    println!("  Skipped (parent directory): {}", skipped_parent_dir);
+    if changes_found == 0 {
+        println!("  No patch changes would be made.");
+    } else {
+        println!("  Run the application normally to apply these changes.");
+    }
 }

@@ -112,18 +112,32 @@ pub fn scan_files(mut commands: Vec<Command>, markdown_roots: &[String], config:
     let obs_before = commands.iter().filter(|cmd| cmd.action == "obs").count();
     let anchor_before = commands.iter().filter(|cmd| cmd.action == "anchor").count();
     let folder_before = commands.iter().filter(|cmd| cmd.action == "folder").count();
-    debug_log("SCANNER", &format!("Before removal: {} obs, {} anchor, {} folder", obs_before, anchor_before, folder_before));
+    let user_edited_scanner_commands = commands.iter()
+        .filter(|cmd| (cmd.action == "obs" || cmd.action == "anchor" || cmd.action == "folder") && cmd.flags.contains('U'))
+        .count();
+    debug_log("SCANNER", &format!("Before removal: {} obs, {} anchor, {} folder (user edited: {})", 
+        obs_before, anchor_before, folder_before, user_edited_scanner_commands));
     
-    // Remove all existing obs, anchor, and folder commands from the commands list
+    // Remove existing obs, anchor, and folder commands from the commands list
+    // EXCEPT those with the "U" (user edited) flag - preserve those
     // but keep ALL commands in existing_commands set for collision detection
     commands.retain(|cmd| {
-        cmd.action != "obs" && cmd.action != "anchor" && cmd.action != "folder"
+        let is_scanner_generated = cmd.action == "obs" || cmd.action == "anchor" || cmd.action == "folder";
+        let is_user_edited = cmd.flags.contains('U');
+        
+        // Keep command if it's NOT scanner-generated OR if it's user-edited
+        !is_scanner_generated || is_user_edited
     });
     
-    debug_log("SCANNER", &format!("After removal: {} commands remaining", commands.len()));
+    let preserved_user_edited = commands.iter()
+        .filter(|cmd| (cmd.action == "obs" || cmd.action == "anchor" || cmd.action == "folder") && cmd.flags.contains('U'))
+        .count();
+    debug_log("SCANNER", &format!("After removal: {} commands remaining ({} user-edited preserved)", 
+        commands.len(), preserved_user_edited));
     
     // Collect folders during scanning
-    let mut found_folders: Vec<PathBuf> = Vec::new();
+    // COMMENTED OUT: Folder scanning disabled for now - only creating commands for markdown files
+    // let mut found_folders: Vec<PathBuf> = Vec::new();
     
     // Then scan for new markdown files and folders
     for root in markdown_roots {
@@ -135,7 +149,9 @@ pub fn scan_files(mut commands: Vec<Command>, markdown_roots: &[String], config:
         if root_path.exists() && root_path.is_dir() {
             let commands_before_scan = commands.len();
             debug_log("SCANNER", &format!("Scanning directory: {}", expanded_root));
-            scan_directory_with_root(&root_path, &root_path, &mut commands, &mut existing_commands, &mut found_folders);
+            // COMMENTED OUT: Passing empty Vec instead of found_folders since folder scanning is disabled
+            let mut dummy_folders = Vec::new();
+            scan_directory_with_root(&root_path, &root_path, &mut commands, &mut existing_commands, &mut dummy_folders);
             let commands_after_scan = commands.len();
             if is_scanner_debug_enabled(config) {
                 debug_log("SCANNER", &format!("Added {} commands from {}", commands_after_scan - commands_before_scan, expanded_root));
@@ -145,40 +161,40 @@ pub fn scan_files(mut commands: Vec<Command>, markdown_roots: &[String], config:
         }
     }
     
-    // Process collected folders at the end
-    debug_log("SCANNER", &format!("Processing {} collected folders", found_folders.len()));
-    for folder_path in found_folders {
-        if let Some(folder_name) = folder_path.file_name() {
-            if let Some(name_str) = folder_name.to_str() {
-                // Check if a command already exists with this name (case-insensitive)
-                if !existing_commands.contains(&name_str.to_lowercase()) {
-                    // Create folder command without "folder" suffix
-                    let command_name = name_str.to_string();
-                    let full_path = folder_path.to_string_lossy().to_string();
-                    let full_line = format!("{} : folder {};", command_name, full_path);
-                    
-                    let folder_command = Command {
-                        patch: String::new(),
-                        command: command_name.clone(),
-                        action: "folder".to_string(),
-                        arg: full_path,
-                        flags: String::new(),
-                        full_line,
-                    };
-                    
-                    commands.push(folder_command);
-                    existing_commands.insert(command_name.to_lowercase());
-                    if is_scanner_debug_enabled(config) {
-                        debug_log("SCANNER", &format!("Added folder command: {}", name_str));
-                    }
-                } else {
-                    if is_scanner_debug_enabled(config) {
-                        debug_log("SCANNER", &format!("Skipping folder '{}' - command already exists", name_str));
-                    }
-                }
-            }
-        }
-    }
+    // COMMENTED OUT: Process collected folders at the end - folder scanning disabled
+    // debug_log("SCANNER", &format!("Processing {} collected folders", found_folders.len()));
+    // for folder_path in found_folders {
+    //     if let Some(folder_name) = folder_path.file_name() {
+    //         if let Some(name_str) = folder_name.to_str() {
+    //             // Check if a command already exists with this name (case-insensitive)
+    //             if !existing_commands.contains(&name_str.to_lowercase()) {
+    //                 // Create folder command without "folder" suffix
+    //                 let command_name = name_str.to_string();
+    //                 let full_path = folder_path.to_string_lossy().to_string();
+    //                 let full_line = format!("{} : folder {};", command_name, full_path);
+    //                 
+    //                 let folder_command = Command {
+    //                     patch: String::new(),
+    //                     command: command_name.clone(),
+    //                     action: "folder".to_string(),
+    //                     arg: full_path,
+    //                     flags: String::new(),
+    //                     full_line,
+    //                 };
+    //                 
+    //                 commands.push(folder_command);
+    //                 existing_commands.insert(command_name.to_lowercase());
+    //                 if is_scanner_debug_enabled(config) {
+    //                     debug_log("SCANNER", &format!("Added folder command: {}", name_str));
+    //                 }
+    //             } else {
+    //                 if is_scanner_debug_enabled(config) {
+    //                     debug_log("SCANNER", &format!("Skipping folder '{}' - command already exists", name_str));
+    //                 }
+    //             }
+    //         }
+    //     }
+    // }
     
     // Count final results
     let obs_after = commands.iter().filter(|cmd| cmd.action == "obs").count();
@@ -214,8 +230,8 @@ fn scan_directory_with_root(dir: &Path, vault_root: &Path, commands: &mut Vec<Co
             
             // Process directories first
             if path.is_dir() {
-                // Instead of creating folder command immediately, collect the folder
-                found_folders.push(path.clone());
+                // COMMENTED OUT: Folder collection disabled - only scanning for markdown files
+                // found_folders.push(path.clone());
                 
                 // Recursively scan subdirectories
                 scan_directory_with_root(&path, vault_root, commands, existing_commands, found_folders);

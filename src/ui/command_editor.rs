@@ -11,6 +11,7 @@ pub struct CommandEditor {
     pub action: String,
     pub argument: String,
     pub patch: String,
+    pub flags: String,
     pub priority: bool,
     
     // Track the original command for reference
@@ -36,6 +37,7 @@ impl CommandEditor {
             action: String::new(),
             argument: String::new(),
             patch: String::new(),
+            flags: String::new(),
             priority: false,
             original_command: None,
             original_command_name: String::new(),
@@ -67,6 +69,7 @@ impl CommandEditor {
             self.action = cmd.action.clone();
             self.argument = cmd.arg.clone();
             self.patch = cmd.patch.clone();
+            self.flags = cmd.flags.clone();
             self.priority = false;
             self.original_command_name = cmd.command.clone();
             self.original_command = Some(cmd.clone());
@@ -77,6 +80,7 @@ impl CommandEditor {
             self.action = String::new();
             self.argument = String::new();
             self.patch = String::new();
+            self.flags = String::new();
             self.priority = false;
             self.original_command_name = String::new();
             self.original_command = None;
@@ -93,6 +97,7 @@ impl CommandEditor {
         self.action = command.action.clone();
         self.argument = command.arg.clone();
         self.patch = command.patch.clone();
+        self.flags = command.flags.clone();
         self.priority = false; // Default to false
         
         // No original command since this is a new command
@@ -246,6 +251,11 @@ impl CommandEditor {
                             ui.text_edit_singleline(&mut self.patch);
                             ui.end_row();
                             
+                            // Flags row
+                            ui.label("Flags:");
+                            ui.text_edit_singleline(&mut self.flags);
+                            ui.end_row();
+                            
                             // Priority row
                             ui.label("Priority:");
                             ui.checkbox(&mut self.priority, "");
@@ -276,7 +286,7 @@ impl CommandEditor {
                                         command: self.command.clone(),
                                         action: self.action.clone(),
                                         arg: self.argument.clone(),
-                                        flags: String::new(),
+                                        flags: self.flags.clone(),
                                         full_line: self.format_command_line(),
                                     };
                                     result = CommandEditorResult::Save(new_command, self.original_command_name.clone());
@@ -304,7 +314,13 @@ impl CommandEditor {
         result.push_str(" : ");
         result.push_str(&self.action);
         
-        // Add semicolon to separate action from argument
+        // Add flags if present (after action, before semicolon)
+        if !self.flags.is_empty() {
+            result.push(' ');
+            result.push_str(&self.flags);
+        }
+        
+        // Add semicolon to separate action/flags from argument
         result.push(';');
         
         // Add argument if present (after semicolon)

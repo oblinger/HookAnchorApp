@@ -42,10 +42,73 @@ pub struct Patch {
 /// Mapping from flag letters to their word descriptions
 pub const FLAG_LETTER_MAPPING: &[(&str, &str)] = &[
     ("M", "merge"),
+    ("U", "user edited"),
     // Add more flag mappings here as needed
 ];
 
 impl Command {
+    /// Returns the absolute file path for the command's argument
+    /// Handles relative paths, tilde expansion, and vault-relative paths
+    pub fn get_absolute_file_path(&self, config: &Config) -> Option<PathBuf> {
+        match self.action.as_str() {
+            "obs" => {
+                // Convert vault-relative path to absolute
+                let launcher_settings = config.launcher_settings.as_ref()?;
+                let vault_path = launcher_settings.obsidian_vault_path.as_ref()?;
+                let expanded_vault = crate::utils::expand_tilde(vault_path);
+                Some(Path::new(&expanded_vault).join(&self.arg))
+            }
+            "anchor" | "doc" => {
+                // Already absolute, just expand tilde
+                Some(PathBuf::from(crate::utils::expand_tilde(&self.arg)))
+            }
+            "folder" => {
+                // Handle both relative and absolute paths
+                if self.arg.starts_with('/') || self.arg.starts_with('~') {
+                    Some(PathBuf::from(crate::utils::expand_tilde(&self.arg)))
+                } else {
+                    // Relative to vault root
+                    let launcher_settings = config.launcher_settings.as_ref()?;
+                    let vault_path = launcher_settings.obsidian_vault_path.as_ref()?;
+                    let expanded_vault = crate::utils::expand_tilde(vault_path);
+                    Some(Path::new(&expanded_vault).join(&self.arg))
+                }
+            }
+            "open" => {
+                // Handle file paths (expand tilde for absolute, or assume relative to current dir)
+                if self.arg.starts_with('/') || self.arg.starts_with('~') {
+                    Some(PathBuf::from(crate::utils::expand_tilde(&self.arg)))
+                } else {
+                    // Relative to current working directory
+                    Some(env::current_dir().ok()?.join(&self.arg))
+                }
+            }
+            _ => None // Not a file-based action
+        }
+    }
+    
+    /// Returns the absolute folder path for the command
+    /// For file-based commands, returns the parent directory
+    /// For folder commands, returns the folder itself
+    pub fn get_absolute_folder_path(&self, config: &Config) -> Option<PathBuf> {
+        match self.action.as_str() {
+            "folder" => {
+                // For folder commands, return the folder itself
+                self.get_absolute_file_path(config)
+            }
+            _ => {
+                // For file-based commands, return the parent directory
+                self.get_absolute_file_path(config)
+                    .and_then(|p| p.parent().map(|parent| parent.to_path_buf()))
+            }
+        }
+    }
+    
+    /// Checks if this command refers to a file or folder
+    pub fn is_path_based(&self) -> bool {
+        matches!(self.action.as_str(), "obs" | "anchor" | "folder" | "doc" | "open")
+    }
+
     /// Gets the value of a flag by its key character
     /// Returns the string after the flag key, or None if the flag doesn't exist
     pub fn get_flag(&self, key: char) -> Option<String> {
@@ -185,31 +248,223 @@ pub fn backup_commands_file() -> Result<(), Box<dyn std::error::Error>> {
 
 /// Loads commands from the commands.txt file
 /// Creates a hashmap from patch names to Patch structs
-/// Each patch associates with the first command whose name matches the patch name
+/// Only creates patches for anchor commands where the markdown file name matches the folder name
 pub fn create_patches_hashmap(commands: &[Command]) -> HashMap<String, Patch> {
     let mut patches = HashMap::new();
     
-    // First, collect all unique patch names from commands
+    // Scan for anchor commands where file name matches containing folder name
     for command in commands {
-        if !command.patch.is_empty() {
-            let patch_name = command.patch.to_lowercase();
+        if command.action == "anchor" {
+            // Extract file path and check if file name matches folder name
+            let file_path = &command.arg;
             
-            // If this patch doesn't exist yet, create it
-            if !patches.contains_key(&patch_name) {
-                // Find the first command whose name matches this patch name
-                let linked_command = commands.iter()
-                    .find(|cmd| cmd.command.to_lowercase() == patch_name)
-                    .cloned();
+            // Get the file name without extension
+            if let Some(last_slash) = file_path.rfind('/') {
+                let file_part = &file_path[last_slash + 1..];
+                let file_name = if let Some(dot_pos) = file_part.rfind('.') {
+                    &file_part[..dot_pos]
+                } else {
+                    file_part
+                };
                 
-                patches.insert(patch_name.clone(), Patch {
-                    name: patch_name,
-                    linked_command,
-                });
+                // Get the folder name (parent directory)
+                let folder_part = &file_path[..last_slash];
+                let folder_name = if let Some(parent_slash) = folder_part.rfind('/') {
+                    &folder_part[parent_slash + 1..]
+                } else {
+                    folder_part
+                };
+                
+                // Check if file name matches folder name (case-insensitive)
+                if file_name.to_lowercase() == folder_name.to_lowercase() {
+                    let patch_name = command.command.to_lowercase();
+                    
+                    // Create patch if it doesn't exist yet
+                    if !patches.contains_key(&patch_name) {
+                        patches.insert(patch_name.clone(), Patch {
+                            name: patch_name,
+                            linked_command: Some(command.clone()),
+                        });
+                    }
+                }
             }
         }
     }
     
     patches
+}
+
+/// Infers the appropriate patch value for a command based on various heuristics
+/// 1. First checks if the first word matches any existing patch name (case-insensitive)
+/// 2. Then checks if the command refers to a file in a folder associated with a patch
+/// 3. If it's an anchor file, walks hierarchy looking for containing patch
+/// Returns None if no patch can be inferred
+/// Always analyzes the command regardless of any current patch value
+pub fn infer_patch(command: &Command, patches: &HashMap<String, Patch>) -> Option<String> {
+    // Method 1: Check if first word matches any patch name
+    if let Some(space_idx) = command.command.find(' ') {
+        let first_word = &command.command[..space_idx];
+        let first_word_lower = first_word.to_lowercase();
+        
+        // Look for exact patch name match (case-insensitive)
+        if let Some(patch) = patches.get(&first_word_lower) {
+            // Return the case from the linked command name if available
+            if let Some(ref linked_cmd) = patch.linked_command {
+                if let Some(linked_space_idx) = linked_cmd.command.find(' ') {
+                    return Some(linked_cmd.command[..linked_space_idx].to_string());
+                } else {
+                    return Some(linked_cmd.command.clone());
+                }
+            } else {
+                // Fallback to original case of first word
+                return Some(first_word.to_string());
+            }
+        }
+    }
+    
+    // Method 2: File/folder-based inference
+    // Check if the command is path-based and extract folder information
+    if command.is_path_based() {
+        if let Some(inferred_patch) = infer_patch_from_command(command, patches) {
+            return Some(inferred_patch);
+        }
+    }
+    
+    None
+}
+
+/// Infers patch from command using its path accessors
+fn infer_patch_from_command(command: &Command, patches: &HashMap<String, Patch>) -> Option<String> {
+    // First try the old file_path method for raw path analysis
+    if let Some(inferred) = infer_patch_from_file_path(&command.arg, patches) {
+        return Some(inferred);
+    }
+    
+    // TODO: Add more sophisticated inference using absolute paths
+    // This would require config access, which we can add in a future iteration
+    None
+}
+
+/// Legacy function: Infers patch from file path by checking folder associations
+/// This maintains the existing logic for raw path analysis without config dependency
+fn infer_patch_from_file_path(file_path: &str, patches: &HashMap<String, Patch>) -> Option<String> {
+    use std::path::Path;
+    
+    // Skip if not a file path (URLs, app names, etc.)
+    if file_path.starts_with("http") || file_path.starts_with("https") || !file_path.contains('/') {
+        return None;
+    }
+    
+    // Method 1: Check all path components and return the most specific (deepest) match
+    // For paths like "T/Misc/Sleep.md", prefer "Misc" over "T"
+    if !file_path.starts_with('/') {
+        // This is a relative path - check all components and find the deepest match
+        let components: Vec<&str> = file_path.split('/').collect();
+        let mut best_match: Option<(usize, String)> = None; // (depth, patch_name)
+        
+        for (depth, component) in components.iter().enumerate() {
+            let component_lower = component.to_lowercase();
+            if patches.contains_key(&component_lower) {
+                // Found a patch match - update if this is deeper than previous match
+                if best_match.is_none() || depth > best_match.as_ref().unwrap().0 {
+                    best_match = Some((depth, component.to_string()));
+                }
+            }
+        }
+        
+        if let Some((_, patch_name)) = best_match {
+            return Some(patch_name);
+        }
+    }
+    
+    let path = Path::new(file_path);
+    
+    // Get the directory containing the file
+    let dir = if path.is_file() || file_path.contains('.') {
+        path.parent()?
+    } else {
+        path
+    };
+    
+    // Method 2: Check if any patch's linked command refers to a file in the same directory or parent directory
+    for patch in patches.values() {
+        if let Some(ref linked_cmd) = patch.linked_command {
+            if linked_cmd.is_path_based() {
+                let linked_path = Path::new(&linked_cmd.arg);
+                let linked_dir = if linked_path.is_file() || linked_cmd.arg.contains('.') {
+                    linked_path.parent()
+                } else {
+                    Some(linked_path)
+                };
+                
+                if let Some(linked_dir) = linked_dir {
+                    // Check if directories match exactly
+                    if dir == linked_dir {
+                        // Check if this is an anchor file (same name as patch)
+                        if let Some(file_stem) = path.file_stem() {
+                            if file_stem.to_string_lossy().to_lowercase() == patch.name {
+                                // This is an anchor file, walk hierarchy for containing patch
+                                return infer_patch_from_hierarchy(dir, patches);
+                            }
+                        }
+                        
+                        // Not an anchor file, return this patch
+                        return Some(patch.name.clone());
+                    }
+                    
+                    // Method 3: Check if the file is in a subdirectory of the patch's directory
+                    // This handles cases like Instabase being under T/Career/NJ/...
+                    if let Ok(relative) = dir.strip_prefix(linked_dir) {
+                        if !relative.as_os_str().is_empty() {
+                            // The file is in a subdirectory of the patch's directory
+                            // Return the patch name in the correct case
+                            if let Some(ref linked_cmd) = patch.linked_command {
+                                // Extract the patch name from the linked command
+                                // For example, if linked command is "T", return "T"
+                                if linked_cmd.command.to_lowercase() == patch.name {
+                                    return Some(linked_cmd.command.clone());
+                                }
+                            }
+                            return Some(patch.name.clone());
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
+    None
+}
+
+/// Walks directory hierarchy looking for a patch that contains this folder
+fn infer_patch_from_hierarchy(dir: &Path, patches: &HashMap<String, Patch>) -> Option<String> {
+    let mut current_dir = dir.parent();
+    
+    while let Some(parent) = current_dir {
+        // Check if any patch is associated with this parent directory
+        for patch in patches.values() {
+            if let Some(ref linked_cmd) = patch.linked_command {
+                if linked_cmd.is_path_based() {
+                    let linked_path = Path::new(&linked_cmd.arg);
+                    let linked_dir = if linked_path.is_file() || linked_cmd.arg.contains('.') {
+                        linked_path.parent()
+                    } else {
+                        Some(linked_path)
+                    };
+                    
+                    if let Some(linked_dir) = linked_dir {
+                        if parent == linked_dir {
+                            return Some(patch.name.clone());
+                        }
+                    }
+                }
+            }
+        }
+        
+        current_dir = parent.parent();
+    }
+    
+    None
 }
 
 /// Automatically assigns patch names to commands based on shared prefixes
@@ -261,7 +516,70 @@ pub fn auto_assign_patches(commands: &mut Vec<Command>) {
     }
 }
 
-pub fn load_commands() -> Vec<Command> {
+/// Comprehensive data loading function that performs all necessary steps in order:
+/// 1. Loads config file
+/// 2. Loads commands from commands.txt file
+/// 3. Computes patch data structure (hashmap)
+/// 4. Infers patches for commands without patches
+/// 5. Saves commands if any patches were inferred
+pub fn load_data() -> (crate::core::config::Config, Vec<Command>, HashMap<String, Patch>) {
+    // Step 1: Load config
+    let config = crate::core::config::load_config();
+    
+    // Step 2: Load commands
+    let mut commands = load_commands_raw();
+    
+    // Step 3: Compute patch data structure
+    let mut patches = create_patches_hashmap(&commands);
+    
+    // Step 4: Infer patches for commands without patches
+    let mut patches_assigned = 0;
+    let mut new_patches_to_add = Vec::new();
+    
+    for command in commands.iter_mut() {
+        // Only apply inference if command doesn't already have a patch
+        if command.patch.is_empty() {
+            if let Some(inferred_patch) = infer_patch(command, &patches) {
+                command.patch = inferred_patch.clone();
+                patches_assigned += 1;
+                
+                // Track new patches to add later
+                let patch_key = inferred_patch.to_lowercase();
+                if !patches.contains_key(&patch_key) {
+                    new_patches_to_add.push(patch_key);
+                }
+            }
+        }
+    }
+    
+    // Add new patches to hashmap
+    for patch_key in new_patches_to_add {
+        if !patches.contains_key(&patch_key) {
+            // Find the first command whose name matches this patch name
+            let linked_command = commands.iter()
+                .find(|cmd| cmd.command.to_lowercase() == patch_key)
+                .cloned();
+            
+            patches.insert(patch_key.clone(), Patch {
+                name: patch_key,
+                linked_command,
+            });
+        }
+    }
+    
+    // Step 5: Save commands if any patches were inferred
+    if patches_assigned > 0 {
+        if let Err(e) = save_commands_to_file(&commands) {
+            eprintln!("Warning: Failed to save commands after patch inference: {}", e);
+        }
+    }
+    
+    (config, commands, patches)
+}
+
+/// Loads commands from the commands.txt file without any processing
+/// This is the raw loading function used by load_data()
+pub fn load_commands_raw() -> Vec<Command> {
     let path = get_commands_file_path();
     
     if !path.exists() {
@@ -290,6 +608,12 @@ pub fn load_commands() -> Vec<Command> {
             vec![]
         }
     }
+}
+
+/// Legacy function for backward compatibility - now uses load_data()
+pub fn load_commands() -> Vec<Command> {
+    let (_config, commands, _patches) = load_data();
+    commands
 }
 
 /// Parses a command line into a Command struct
