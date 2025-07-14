@@ -98,10 +98,14 @@ functions:
     // Brief delay for Quick Access to open
     shell_sync("/bin/sleep 0.3");
     
-    // Type the search query
+    // Type the search query character by character for better reliability
     runAppleScript(\`
       tell application "System Events"
-        keystroke "${query}"
+        repeat with i from 1 to length of "${query}"
+          set currentChar to character i of "${query}"
+          keystroke currentChar
+          delay 0.25
+        end repeat
       end tell
     \`);
     

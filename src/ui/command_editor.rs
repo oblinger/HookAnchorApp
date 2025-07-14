@@ -236,7 +236,10 @@ impl CommandEditor {
                                         ],
                                     };
                                     for action in &actions {
-                                        ui.selectable_value(&mut self.action, action.clone(), action);
+                                        if ui.selectable_value(&mut self.action, action.clone(), action).clicked() {
+                                            // Selection was made, close the combo box by losing focus
+                                            ui.memory_mut(|mem| mem.stop_text_input());
+                                        }
                                     }
                                 });
                             ui.end_row();
