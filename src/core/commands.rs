@@ -1192,6 +1192,11 @@ fn execute_command_with_depth(command: &Command, depth: u32) -> CommandTarget {
     // Log command execution in the requested format
     crate::utils::debug_log("EXECUTE", &format!("'{}' AS '{}' ON '{}'", command.command, command.action, command.arg));
     
+    // Log client environment only for actions that actually use it
+    if uses_client_environment(&command.action) {
+        log_client_environment();
+    }
+    
     // Save the last executed command for add_alias functionality
     use crate::core::state::save_last_executed_command;
     let _ = save_last_executed_command(&command.command);
@@ -1665,6 +1670,38 @@ mod tests {
         assert_eq!(result[2].command, "Web Browser");   // 2 words
         assert_eq!(result[3].command, "Web App Store"); // 3 words
     }
+}
+
+/// Helper function to determine if an action uses the client environment
+/// Returns true for actions that execute directly in the client process
+fn uses_client_environment(action: &str) -> bool {
+    match action {
+        // Actions that use direct client execution (open commands, app launching)
+        "app" | "url" | "folder" | "doc" | "chrome" | "safari" | "brave" | "firefox" | 
+        "work" | "notion" | "obs_url" | "1pass" | "contact" | "open_with" => true,
+        
+        // Actions that might use client environment through JavaScript
+        "anchor" | "slack" | "shutdown" | "rescan" => true,
+        
+        // Actions that use server environment (shell commands)
+        "cmd" | "obs" => false,
+        
+        // JavaScript actions - these could use either, but many use client operations
+        _ => true, // Default to showing client env for custom JavaScript functions
+    }
+}
+
+/// Log client environment information (only when verbose logging is enabled)
+fn log_client_environment() {
+    crate::utils::verbose_log("CLIENT_ENV", &format!("PWD: {:?}", std::env::var("PWD")));
+    crate::utils::verbose_log("CLIENT_ENV", &format!("PATH: {:?}", std::env::var("PATH")));
+    crate::utils::verbose_log("CLIENT_ENV", &format!("USER: {:?}", std::env::var("USER")));
+    crate::utils::verbose_log("CLIENT_ENV", &format!("HOME: {:?}", std::env::var("HOME")));
+    crate::utils::verbose_log("CLIENT_ENV", &format!("DISPLAY: {:?}", std::env::var("DISPLAY")));
+    crate::utils::verbose_log("CLIENT_ENV", &format!("TERM: {:?}", std::env::var("TERM")));
+    crate::utils::verbose_log("CLIENT_ENV", &format!("SHELL: {:?}", std::env::var("SHELL")));
+    crate::utils::verbose_log("CLIENT_ENV", &format!("Process ID: {}", std::process::id()));
+    crate::utils::verbose_log("CLIENT_ENV", &format!("Current exe: {:?}", std::env::current_exe()));
 }
 
 // Include merge tests module

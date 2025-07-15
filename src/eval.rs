@@ -2,7 +2,7 @@ use std::collections::HashMap;
 use std::path::PathBuf;
 use rquickjs::{Context, Runtime};
 use serde_yaml;
-use crate::utils::debug_log;
+use crate::utils::verbose_log;
 
 #[derive(Debug, Clone, PartialEq)]
 pub enum EvalError {
@@ -84,7 +84,7 @@ impl Environment {
                                 let result = func(self, &args);
                                 // Restore the function
                                 self.functions.insert(func_key, func);
-                                debug_log("EVAL", &format!("Executed function: {}", fn_name));
+                                verbose_log("EVAL", &format!("Executed function: {}", fn_name));
                                 result?;
                             }
                             Ok(serde_yaml::Value::Null) // Functions return null for now

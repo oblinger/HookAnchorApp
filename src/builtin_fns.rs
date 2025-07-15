@@ -85,18 +85,34 @@ pub fn setup_builtin_functions(env: &mut Environment) {
         Ok(())
     }));
     
-    // shell function - hybrid approach (current default)
+    // shell function - uses command server for consistent environment
     env.functions.insert("shell".to_string(), Box::new(|env, args| {
         let command = get_substituted_string_arg(args, "command", env)
             .or_else(|| get_substituted_string_arg(args, "cmd", env))
             .ok_or_else(|| EvalError::InvalidAction("Missing 'command' or 'cmd' argument".to_string()))?;
         
-        debug_log("BUILTIN", &format!("Starting shell command (hybrid, non-blocking): {}", command));
+        crate::utils::verbose_log("BUILTIN", &format!("Starting shell command via server (non-blocking): {}", command));
         
-        let _output = crate::utils::shell_hybrid(&command, false)
-            .map_err(|e| EvalError::ExecutionError(format!("Failed to start shell command '{}': {}", command, e)))?;
-        
-        Ok(())
+        // Use command server for consistent environment
+        match crate::command_server::execute_via_server(&command, None, None, false) {
+            Ok(response) => {
+                // Command server already logs stdout/stderr in verbose mode, no need to duplicate
+                
+                if !response.success {
+                    if let Some(error) = response.error {
+                        return Err(EvalError::ExecutionError(format!("Shell command failed: {}", error)));
+                    } else if !response.stderr.is_empty() {
+                        return Err(EvalError::ExecutionError(format!("Shell command failed: {}", response.stderr)));
+                    }
+                }
+                Ok(())
+            },
+            Err(e) => {
+                let error_msg = format!("Shell server unavailable for command '{}': {}", command, e);
+                crate::error_display::queue_user_error(&error_msg);
+                Err(EvalError::ExecutionError(error_msg))
+            }
+        }
     }));
     
     // shell_simple function - basic shell execution
@@ -127,23 +143,34 @@ pub fn setup_builtin_functions(env: &mut Environment) {
         Ok(())
     }));
     
-    // shell_sync function - blocking execution for when you need to wait (hybrid)
+    // shell_sync function - blocking execution via command server
     env.functions.insert("shell_sync".to_string(), Box::new(|env, args| {
         let command = get_substituted_string_arg(args, "command", env)
             .or_else(|| get_substituted_string_arg(args, "cmd", env))
             .ok_or_else(|| EvalError::InvalidAction("Missing 'command' or 'cmd' argument".to_string()))?;
         
-        debug_log("BUILTIN", &format!("Running shell command (hybrid, blocking): {}", command));
+        crate::utils::verbose_log("BUILTIN", &format!("Running shell command via server (blocking): {}", command));
         
-        let output = crate::utils::shell_hybrid(&command, true)
-            .map_err(|e| EvalError::ExecutionError(format!("Failed to execute command '{}': {}", command, e)))?;
-        
-        if !output.status.success() {
-            let stderr = String::from_utf8_lossy(&output.stderr);
-            return Err(EvalError::ExecutionError(format!("Shell command failed: {}", stderr)));
+        // Use command server for consistent environment
+        match crate::command_server::execute_via_server(&command, None, None, true) {
+            Ok(response) => {
+                // Command server already logs stdout/stderr in verbose mode, no need to duplicate
+                
+                if !response.success {
+                    if let Some(error) = response.error {
+                        return Err(EvalError::ExecutionError(format!("Shell command failed: {}", error)));
+                    } else if !response.stderr.is_empty() {
+                        return Err(EvalError::ExecutionError(format!("Shell command failed: {}", response.stderr)));
+                    }
+                }
+                Ok(())
+            },
+            Err(e) => {
+                let error_msg = format!("Shell server unavailable for command '{}': {}", command, e);
+                crate::error_display::queue_user_error(&error_msg);
+                Err(EvalError::ExecutionError(error_msg))
+            }
         }
-        
-        Ok(())
     }));
     
     // javascript function for executing JS code

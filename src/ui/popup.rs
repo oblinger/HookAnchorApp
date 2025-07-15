@@ -266,10 +266,17 @@ impl AnchorSelector {
         }
     }
     
+    /// Display an error dialog to the user
+    /// This is a generic function for showing errors in a popup dialog
+    pub fn show_error_dialog(&mut self, error_message: &str) {
+        self.dialog.show_error(error_message);
+    }
+    
     /// Execute the currently selected command
     fn execute_selected_command(&mut self) {
-        // Log what the user actually typed
-        crate::utils::debug_log("USER INPUT", &format!("'{}'", self.popup_state.search_text));
+        // Log what the user actually typed with visual separator
+        crate::utils::debug_log("", "=================================================================");
+        crate::utils::debug_log("USER INPUT", &format!("GUI: '{}'", self.popup_state.search_text));
         
         if !self.filtered_commands().is_empty() {
             let (display_commands, _is_submenu, _menu_prefix, _inside_count) = self.get_display_commands();
@@ -287,20 +294,10 @@ impl AnchorSelector {
                             format!("{} {}", selected_cmd.action, selected_cmd.arg)
                         };
                         
-                        let config = load_config();
-                        if config.popup_settings.use_new_launcher {
-                            use crate::launcher::launch;
-                            if let Err(e) = launch(&launcher_command) {
-                                eprintln!("Error executing command with new launcher: {:?}", e);
-                                std::process::exit(1);
-                            }
-                        } else {
-                            use std::fs;
-                            let content = format!("execute {}\n", launcher_command);
-                            if let Err(e) = fs::write("/tmp/cmd_file", content) {
-                                eprintln!("Error writing to /tmp/cmd_file: {}", e);
-                                std::process::exit(1);
-                            }
+                        use crate::launcher::launch;
+                        if let Err(e) = launch(&launcher_command) {
+                            eprintln!("Error executing command with launcher: {:?}", e);
+                            std::process::exit(1);
                         }
                     } else {
                         execute_command(&selected_cmd);
@@ -970,6 +967,13 @@ impl eframe::App for AnchorSelector {
         self.command_editor.update_commands(&commands);
         let editor_result = self.command_editor.update(ctx, &config);
         let mut editor_handled_escape = false;
+        
+        // Check for queued errors and display them
+        if crate::error_display::has_errors() {
+            if let Some(error_message) = crate::error_display::take_next_error() {
+                self.show_error_dialog(&error_message);
+            }
+        }
         
         // Update dialog system
         if self.dialog.update(ctx) {

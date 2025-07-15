@@ -31,8 +31,9 @@ pub struct Config {
 pub struct PopupSettings {
     pub max_rows: usize,
     pub max_columns: usize,
-    pub use_new_launcher: bool,
     pub debug_log: Option<String>,
+    /// Enable verbose debug logging for JavaScript functions and shell commands (default: false)
+    pub verbose_logging: Option<bool>,
     /// Enable detailed scanner debug output (default: true)
     pub debug_scanner: Option<bool>,
     /// Comma-separated list of actions shown in command editor dropdown
@@ -129,8 +130,8 @@ impl Default for PopupSettings {
         PopupSettings {
             max_rows: 10,
             max_columns: 1,
-            use_new_launcher: false, // Default to old launcher for backward compatibility
             debug_log: None,
+            verbose_logging: Some(false), // Default to disabled
             debug_scanner: Some(true), // Default to enabled
             listed_actions: Some("app,url,folder,cmd,chrome,anchor".to_string()),
             merge_similar: true,

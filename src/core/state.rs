@@ -22,6 +22,8 @@ pub struct AppState {
     pub last_scan_checksum: Option<String>,
     /// Last executed command (used for add_alias functionality)
     pub last_executed_command: Option<String>,
+    /// Process ID of the running command server
+    pub server_pid: Option<u32>,
 }
 
 impl Default for AppState {
@@ -32,6 +34,7 @@ impl Default for AppState {
             last_scan_time: None,
             last_scan_checksum: None,
             last_executed_command: None,
+            server_pid: None,
         }
     }
 }
@@ -83,5 +86,19 @@ pub fn save_state_with_build_time() -> Result<(), Box<dyn std::error::Error>> {
 pub fn save_last_executed_command(command_name: &str) -> Result<(), Box<dyn std::error::Error>> {
     let mut state = load_state();
     state.last_executed_command = Some(command_name.to_string());
+    save_state(&state)
+}
+
+/// Updates server PID in state.json file
+pub fn save_server_pid(pid: u32) -> Result<(), Box<dyn std::error::Error>> {
+    let mut state = load_state();
+    state.server_pid = Some(pid);
+    save_state(&state)
+}
+
+/// Clears server PID from state.json file
+pub fn clear_server_pid() -> Result<(), Box<dyn std::error::Error>> {
+    let mut state = load_state();
+    state.server_pid = None;
     save_state(&state)
 }

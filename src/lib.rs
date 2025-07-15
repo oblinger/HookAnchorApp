@@ -25,6 +25,15 @@ pub mod utils;
 pub mod scanner;
 pub mod grabber;
 
+// Background command server
+pub mod command_server;
+
+// Error display system
+pub mod error_display;
+
+// Server management
+pub mod server_management;
+
 // Re-export commonly used types from core modules
 pub use core::commands::{Command, CommandTarget, Patch, filter_commands, get_display_commands, get_display_commands_with_options, merge_similar_commands, 
                          merge_similar_commands_with_context, load_commands, load_commands_raw, save_commands_to_file, 

@@ -29,6 +29,8 @@ pub fn run_command_line_mode(args: Vec<String>) {
         "--user-info" => print_user_info(),
         "--test-grabber" => run_test_grabber(),
         "--infer" => run_infer_patches(&args),
+        "--start-server" => run_start_server(),
+        "--start-server-daemon" => run_start_server_daemon(),
         _ => {
             eprintln!("Unknown command: {}", args[1]);
             eprintln!("Use -h or --help for usage information");
@@ -51,6 +53,7 @@ pub fn print_help(program_name: &str) {
     eprintln!("  {} -a, --action <act> <arg> # Test action", program_name);
     eprintln!("  {} --infer                  # Show patch inference changes", program_name);
     eprintln!("  {} --test-grabber           # Test grabber functionality", program_name);
+    eprintln!("  {} --start-server           # Force restart command server", program_name);
     eprintln!("  open 'hook://query'         # Handle hook URL");
     eprintln!();
     eprintln!("Examples:");
@@ -75,11 +78,17 @@ fn handle_hook_url(url: &str) {
         return;
     }
     
+    // Visual separator for URL handler execution
+    utils::debug_log("", "=================================================================");
+    utils::debug_log("USER INPUT", &format!("URL: '{}'", decoded_query));
     utils::debug_log("URL_HANDLER", &format!("Processing hook URL: {} -> query: '{}'", url, decoded_query));
+    
+    // Client environment logging is now handled automatically in execute_command based on action type
     
     // Use the same logic as -x command
     let commands = load_commands();
-    let filtered = filter_commands(&commands, &decoded_query, 1, false);
+    let config = load_config();
+    let filtered = crate::core::commands::get_display_commands(&commands, &decoded_query, &config, 1);
     
     if filtered.is_empty() {
         utils::debug_log("URL_HANDLER", &format!("No commands found for query: '{}'", decoded_query));
@@ -89,7 +98,8 @@ fn handle_hook_url(url: &str) {
     let top_command_obj = &filtered[0];
     utils::debug_log("URL_HANDLER", &format!("Executing command: {}", top_command_obj.command));
     
-    // Execute the command (same as -x logic but without the verbose output)
+    // Execute the command using the same path as CLI commands
+    // The command server ensures consistent environment regardless of execution context
     let _result = execute_command(top_command_obj);
 }
 
@@ -103,7 +113,12 @@ fn run_match_command(args: &[String]) {
     let debug = args.len() > 3 && args[3] == "debug";
     
     let commands = load_commands();
-    let filtered = filter_commands(&commands, query, 10, debug);
+    let config = load_config();
+    let filtered = if debug {
+        filter_commands(&commands, query, 10, debug)  // Keep debug mode using original function
+    } else {
+        crate::core::commands::get_display_commands(&commands, query, &config, 10)
+    };
     
     // Print first 10 matches (like the GUI)
     for cmd in filtered.iter().take(10) {
@@ -118,6 +133,11 @@ fn run_exec_command(args: &[String]) {
     }
     
     let command = &args[2];
+    
+    // Visual separator for run function execution
+    utils::debug_log("", "=================================================================");
+    utils::debug_log("USER INPUT", &format!("RUN_FN: '{}'", command));
+    
     println!("Executing command function: {}", command);
     
     // Use the new launcher system for execution
@@ -139,8 +159,16 @@ fn run_execute_top_match(args: &[String]) {
     }
     
     let query = &args[2];
+    
+    // Visual separator for command execution
+    utils::debug_log("", "=================================================================");
+    utils::debug_log("USER INPUT", &format!("CLI: '{}'", query));
+    
+    // Client environment logging is now handled automatically in execute_command based on action type
+    
     let commands = load_commands();
-    let filtered = filter_commands(&commands, query, 1, false);
+    let config = load_config();
+    let filtered = crate::core::commands::get_display_commands(&commands, query, &config, 1);
     
     if filtered.is_empty() {
         eprintln!("No commands found matching: {}", query);
@@ -171,6 +199,10 @@ fn run_test_action(args: &[String]) {
     let action = &args[2];
     let arg = &args[3];
     let command_line = format!("{} {}", action, arg);
+    
+    // Visual separator for action testing
+    utils::debug_log("", "=================================================================");
+    utils::debug_log("USER INPUT", &format!("ACTION: '{}' ARG: '{}'", action, arg));
     
     println!("Testing action '{}' with arg '{}': {}", action, arg, command_line);
     
@@ -497,6 +529,71 @@ fn run_test_grabber() {
     }
     
     println!("\nGrabber test completed successfully!");
+}
+
+/// Force restart the command server
+fn run_start_server() {
+    println!("Restarting command server...");
+    
+    // Kill existing server if running
+    if let Err(e) = crate::server_management::kill_existing_server() {
+        eprintln!("Warning: Failed to kill existing server: {}", e);
+    }
+    
+    // Start new server via Terminal
+    match crate::server_management::start_server_via_terminal() {
+        Ok(()) => {
+            println!("Command server restart initiated via Terminal");
+            println!("The server will start with full shell environment in a few seconds");
+        }
+        Err(e) => {
+            eprintln!("Failed to start server: {}", e);
+            std::process::exit(1);
+        }
+    }
+}
+
+/// Internal daemon mode - starts persistent server
+fn run_start_server_daemon() {
+    use crate::core::state::save_server_pid;
+    
+    println!("Starting command server daemon...");
+    
+    // Change to home directory
+    if let Ok(home) = std::env::var("HOME") {
+        if let Err(e) = std::env::set_current_dir(&home) {
+            eprintln!("Warning: Could not change to home directory: {}", e);
+        }
+    }
+    
+    // Clean up any existing socket file
+    let socket_path = std::path::Path::new(&std::env::var("HOME").unwrap_or_else(|_| ".".to_string()))
+        .join(".config")
+        .join("hookanchor")
+        .join("command_server.sock");
+    let _ = std::fs::remove_file(&socket_path);
+    
+    // Start the persistent server
+    match crate::command_server::start_persistent_server() {
+        Ok(server_pid) => {
+            // Save PID to state
+            if let Err(e) = save_server_pid(server_pid) {
+                eprintln!("Warning: Could not save server PID: {}", e);
+            }
+            
+            println!("Command server started successfully with PID: {}", server_pid);
+            println!("Server will run persistently until killed or system restart");
+            
+            // Keep the process alive - this is the daemon
+            loop {
+                std::thread::sleep(std::time::Duration::from_secs(3600)); // Sleep 1 hour at a time
+            }
+        }
+        Err(e) => {
+            eprintln!("Failed to start persistent server: {}", e);
+            std::process::exit(1);
+        }
+    }
 }
 
 /// Checks if the new_patch is associated with a parent directory of the current_patch

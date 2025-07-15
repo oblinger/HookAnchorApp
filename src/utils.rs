@@ -35,6 +35,18 @@ pub fn debug_log(module: &str, message: &str) {
     }
 }
 
+/// Verbose debug logging function for detailed debugging
+/// 
+/// Only logs messages when verbose_logging is enabled in config.
+/// Used for shell commands, JavaScript execution, and other detailed debugging.
+pub fn verbose_log(module: &str, message: &str) {
+    let config = crate::load_config();
+    // Check if verbose logging is enabled (default to false if not set)
+    if config.popup_settings.verbose_logging.unwrap_or(false) {
+        debug_log(module, message);
+    }
+}
+
 /// Expands ~ in paths to the home directory
 /// 
 /// This is a common operation needed across multiple modules for handling
@@ -86,16 +98,16 @@ fn get_login_environment() -> Result<HashMap<String, String>, std::io::Error> {
     let mut cache_guard = cache.lock().unwrap();
     
     if let Some(ref env) = *cache_guard {
-        debug_log("SHELL", "Using cached login environment");
+        verbose_log("SHELL", "Using cached login environment");
         return Ok(env.clone());
     }
     
-    debug_log("SHELL", "Capturing login shell environment for first time");
+    verbose_log("SHELL", "Capturing login shell environment for first time");
     
     // Get the user's shell
     let shell = std::env::var("SHELL").unwrap_or_else(|_| "/bin/zsh".to_string());
     
-    debug_log("SHELL", &format!("Using shell: {}", shell));
+    verbose_log("SHELL", &format!("Using shell: {}", shell));
     
     // Run the login shell directly to capture environment
     let output = Command::new(&shell)
@@ -121,7 +133,7 @@ fn get_login_environment() -> Result<HashMap<String, String>, std::io::Error> {
         }
     }
     
-    debug_log("SHELL", &format!("Captured {} environment variables", env_map.len()));
+    verbose_log("SHELL", &format!("Captured {} environment variables", env_map.len()));
     *cache_guard = Some(env_map.clone());
     
     Ok(env_map)
@@ -129,7 +141,7 @@ fn get_login_environment() -> Result<HashMap<String, String>, std::io::Error> {
 
 /// Shell execution with simple current environment (original approach)
 pub fn shell_simple(command: &str, blocking: bool) -> Result<std::process::Output, std::io::Error> {
-    debug_log("SHELL", &format!("SIMPLE: {}", command));
+    verbose_log("SHELL", &format!("SIMPLE: {}", command));
     
     let mut cmd = Command::new("sh");
     cmd.arg("-c").arg(command);
@@ -155,7 +167,7 @@ pub fn shell_simple(command: &str, blocking: bool) -> Result<std::process::Outpu
 
 /// Shell execution with full login shell environment (su - approach)
 pub fn shell_login(command: &str, blocking: bool) -> Result<std::process::Output, std::io::Error> {
-    debug_log("SHELL", &format!("LOGIN: {}", command));
+    verbose_log("SHELL", &format!("LOGIN: {}", command));
     
     let current_user = detect_current_user();
     let escaped_command = command.replace("'", "'\"'\"'");
@@ -183,11 +195,11 @@ pub fn shell_login(command: &str, blocking: bool) -> Result<std::process::Output
 
 /// Shell execution with hybrid approach: current GUI environment + login shell env vars
 pub fn shell_hybrid(command: &str, blocking: bool) -> Result<std::process::Output, std::io::Error> {
-    debug_log("SHELL", &format!("HYBRID: {}", command));
+    verbose_log("SHELL", &format!("HYBRID: {}", command));
     
     // Check if tmux is requested
     if command.contains("tmux") {
-        debug_log("SHELL", "tmux command detected, checking availability");
+        verbose_log("SHELL", "tmux command detected, checking availability");
     }
     
     let mut cmd = Command::new("sh");
@@ -196,11 +208,11 @@ pub fn shell_hybrid(command: &str, blocking: bool) -> Result<std::process::Outpu
     // Try to get login environment, but fall back to simple execution if it fails
     match get_login_environment() {
         Ok(login_env) => {
-            debug_log("SHELL", &format!("Applying {} login environment variables", login_env.len()));
+            verbose_log("SHELL", &format!("Applying {} login environment variables", login_env.len()));
             
             // Debug: Log PATH from login environment
             if let Some(path) = login_env.get("PATH") {
-                debug_log("SHELL", &format!("Login PATH: {}", path));
+                verbose_log("SHELL", &format!("Login PATH: {}", path));
             }
             
             // Apply login environment variables to current process environment
@@ -209,7 +221,7 @@ pub fn shell_hybrid(command: &str, blocking: bool) -> Result<std::process::Outpu
             }
         },
         Err(e) => {
-            debug_log("SHELL", &format!("Failed to get login environment ({}), falling back to simple execution", e));
+            verbose_log("SHELL", &format!("Failed to get login environment ({}), falling back to simple execution", e));
             // Continue with current environment
         }
     }
@@ -277,16 +289,16 @@ pub fn execute_shell_command_unified(command: &str, blocking: bool, detached: bo
 }
 
 pub fn execute_shell_with_options(command: &str, options: ShellOptions, detached: bool) -> Result<std::process::Output, std::io::Error> {
-    debug_log("SHELL", &format!("Executing command with options: {:?}", options));
-    debug_log("SHELL", &format!("Command: {}", command));
+    verbose_log("SHELL", &format!("Executing command with options: {:?}", options));
+    verbose_log("SHELL", &format!("Command: {}", command));
     
     // Detect current user - try multiple methods for reliability
     let current_user = detect_current_user();
-    debug_log("SHELL", &format!("Detected user: {}", current_user));
+    verbose_log("SHELL", &format!("Detected user: {}", current_user));
     
     // Check if this is a GUI command that needs direct execution
     let is_gui_command = is_gui_command(command);
-    debug_log("SHELL", &format!("Is GUI command: {}", is_gui_command));
+    verbose_log("SHELL", &format!("Is GUI command: {}", is_gui_command));
     
     // Build the command based on options
     let final_command = if options.login_shell && !is_gui_command {
@@ -299,7 +311,7 @@ pub fn execute_shell_with_options(command: &str, options: ShellOptions, detached
         command.to_string()
     };
     
-    debug_log("SHELL", &format!("Final command: {}", final_command));
+    verbose_log("SHELL", &format!("Final command: {}", final_command));
     
     // Execute with appropriate method
     if detached {
@@ -338,7 +350,7 @@ fn detect_current_user() -> String {
     // Method 1: USER environment variable
     if let Ok(user) = std::env::var("USER") {
         if !user.is_empty() {
-            debug_log("SHELL", &format!("Found user via USER env var: {}", user));
+            verbose_log("SHELL", &format!("Found user via USER env var: {}", user));
             return user;
         }
     }
@@ -346,7 +358,7 @@ fn detect_current_user() -> String {
     // Method 2: LOGNAME environment variable  
     if let Ok(user) = std::env::var("LOGNAME") {
         if !user.is_empty() {
-            debug_log("SHELL", &format!("Found user via LOGNAME env var: {}", user));
+            verbose_log("SHELL", &format!("Found user via LOGNAME env var: {}", user));
             return user;
         }
     }
@@ -356,7 +368,7 @@ fn detect_current_user() -> String {
         if output.status.success() {
             let user = String::from_utf8_lossy(&output.stdout).trim().to_string();
             if !user.is_empty() {
-                debug_log("SHELL", &format!("Found user via whoami: {}", user));
+                verbose_log("SHELL", &format!("Found user via whoami: {}", user));
                 return user;
             }
         }
@@ -366,7 +378,7 @@ fn detect_current_user() -> String {
     if let Ok(home) = std::env::var("HOME") {
         if let Some(user) = home.split('/').last() {
             if !user.is_empty() {
-                debug_log("SHELL", &format!("Found user via HOME parsing: {}", user));
+                verbose_log("SHELL", &format!("Found user via HOME parsing: {}", user));
                 return user.to_string();
             }
         }
@@ -377,14 +389,14 @@ fn detect_current_user() -> String {
         if output.status.success() {
             let user = String::from_utf8_lossy(&output.stdout).trim().to_string();
             if !user.is_empty() {
-                debug_log("SHELL", &format!("Found user via id -un: {}", user));
+                verbose_log("SHELL", &format!("Found user via id -un: {}", user));
                 return user;
             }
         }
     }
     
     // Final fallback
-    debug_log("SHELL", "Could not detect user, using fallback 'user'");
+    verbose_log("SHELL", "Could not detect user, using fallback 'user'");
     "user".to_string()
 }
 
@@ -429,7 +441,7 @@ fn execute_non_blocking(command: &str, options: ShellOptions) -> Result<std::pro
     // For non-blocking, we spawn and return immediately
     match cmd.spawn() {
         Ok(_) => {
-            debug_log("SHELL", "Non-blocking command spawned successfully");
+            verbose_log("SHELL", "Non-blocking command spawned successfully");
             // For non-blocking commands, just run a quick successful command to get a real ExitStatus
             let dummy_output = Command::new("true").output().unwrap_or_else(|_| {
                 std::process::Output {
@@ -465,7 +477,7 @@ fn execute_detached(command: &str, options: ShellOptions) -> Result<std::process
     
     match cmd.spawn() {
         Ok(_) => {
-            debug_log("SHELL", "Detached command spawned successfully");
+            verbose_log("SHELL", "Detached command spawned successfully");
             // For detached commands, just run a quick successful command to get a real ExitStatus
             let dummy_output = Command::new("true").output().unwrap_or_else(|_| {
                 std::process::Output {

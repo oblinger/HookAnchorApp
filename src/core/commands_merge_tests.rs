@@ -10,7 +10,6 @@ mod merge_tests {
                 word_separators: " ._-".to_string(),
                 max_rows: 10,
                 max_columns: 1,
-                use_new_launcher: true,
                 debug_log: None,
                 scan_interval_seconds: None,
                 listed_actions: None,
