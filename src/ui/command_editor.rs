@@ -112,24 +112,16 @@ impl CommandEditor {
         
         
         let mut result = CommandEditorResult::None;
+        let mut enter_pressed = false;
         
         // Handle escape key
         if ctx.input(|i| i.key_pressed(egui::Key::Escape)) {
             result = CommandEditorResult::Cancel;
         }
         
-        // Handle enter key - save the current command
+        // Check for Enter key press globally (will work when no text field has focus)
         if ctx.input(|i| i.key_pressed(egui::Key::Enter)) {
-            // Create the new command
-            let new_command = Command {
-                patch: self.patch.clone(),
-                command: self.command.clone(),
-                action: self.action.clone(),
-                arg: self.argument.clone(),
-                flags: String::new(),
-                full_line: self.format_command_line(),
-            };
-            result = CommandEditorResult::Save(new_command, self.original_command_name.clone());
+            enter_pressed = true;
         }
         
         // Handle delete key - delete the current command and close editor
@@ -181,6 +173,11 @@ impl CommandEditor {
                                         egui::TextEdit::singleline(&mut self.command)
                                     );
                                     
+                                    // Check for Enter key in this text field
+                                    if command_response.lost_focus() && ctx.input(|i| i.key_pressed(egui::Key::Enter)) {
+                                        enter_pressed = true;
+                                    }
+                                    
                                     // Request focus when dialog opens or when delete button visibility changes
                                     if !self.focus_requested || delete_button_visibility_changed {
                                         command_response.request_focus();
@@ -201,6 +198,11 @@ impl CommandEditor {
                             } else {
                                 // When no delete button, use regular text edit that matches other fields
                                 let command_response = ui.text_edit_singleline(&mut self.command);
+                                
+                                // Check for Enter key in this text field
+                                if command_response.lost_focus() && ctx.input(|i| i.key_pressed(egui::Key::Enter)) {
+                                    enter_pressed = true;
+                                }
                                 
                                 // Request focus when dialog opens or when delete button visibility changes
                                 if !self.focus_requested || delete_button_visibility_changed {
@@ -246,17 +248,26 @@ impl CommandEditor {
                             
                             // Argument row
                             ui.label("Argument:");
-                            ui.text_edit_singleline(&mut self.argument);
+                            let arg_response = ui.text_edit_singleline(&mut self.argument);
+                            if arg_response.lost_focus() && ctx.input(|i| i.key_pressed(egui::Key::Enter)) {
+                                enter_pressed = true;
+                            }
                             ui.end_row();
                             
                             // Patch row
                             ui.label("Patch:");
-                            ui.text_edit_singleline(&mut self.patch);
+                            let patch_response = ui.text_edit_singleline(&mut self.patch);
+                            if patch_response.lost_focus() && ctx.input(|i| i.key_pressed(egui::Key::Enter)) {
+                                enter_pressed = true;
+                            }
                             ui.end_row();
                             
                             // Flags row
                             ui.label("Flags:");
-                            ui.text_edit_singleline(&mut self.flags);
+                            let flags_response = ui.text_edit_singleline(&mut self.flags);
+                            if flags_response.lost_focus() && ctx.input(|i| i.key_pressed(egui::Key::Enter)) {
+                                enter_pressed = true;
+                            }
                             ui.end_row();
                             
                             // Priority row
@@ -299,6 +310,20 @@ impl CommandEditor {
                     });
                 });
             });
+        
+        // Handle Enter key press from any text field or global context
+        if enter_pressed && result == CommandEditorResult::None {
+            // Create the new command
+            let new_command = Command {
+                patch: self.patch.clone(),
+                command: self.command.clone(),
+                action: self.action.clone(),
+                arg: self.argument.clone(),
+                flags: self.flags.clone(),
+                full_line: self.format_command_line(),
+            };
+            result = CommandEditorResult::Save(new_command, self.original_command_name.clone());
+        }
         
         result
     }

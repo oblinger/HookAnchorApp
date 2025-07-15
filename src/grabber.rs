@@ -199,50 +199,9 @@ pub fn get_obsidian_url() -> Option<String> {
 /// Get Finder-specific information including selection
 pub fn get_finder_info() -> Option<serde_json::Value> {
     
-    // First try to get selected item (like spot Python code)
-    let selection_script = r#"
-        tell application "Finder"
-            try
-                set selectedItem to item 1 of (get selection)
-                if selectedItem is not missing value then
-                    set thePath to POSIX path of (selectedItem as alias)
-                    set itemClass to class of selectedItem
-                    if itemClass is folder then
-                        set isFolder to "true"
-                    else
-                        set isFolder to "false"
-                    end if
-                    return thePath & "|" & isFolder
-                else
-                    return "--NO-SELECTION--"
-                end if
-            on error
-                return "--NO-SELECTION--"
-            end try
-        end tell
-    "#;
-    
     let mut finder_info = serde_json::json!({});
     
-    if let Ok(output) = ProcessCommand::new("osascript")
-        .arg("-e")
-        .arg(selection_script)
-        .output()
-    {
-        if output.status.success() {
-            let result = String::from_utf8_lossy(&output.stdout).trim().to_string();
-            if !result.is_empty() && result != "--NO-SELECTION--" {
-                let parts: Vec<&str> = result.split('|').collect();
-                if parts.len() >= 2 {
-                    finder_info["selection"] = serde_json::Value::String(parts[0].to_string());
-                    finder_info["selectionIsDirectory"] = serde_json::Value::Bool(parts[1] == "true");
-                    return Some(finder_info);
-                }
-            }
-        }
-    }
-    
-    // No selection, get current folder path (like spot Python fallback)
+    // First get the current folder path
     let path_script = r#"
         tell application "Finder"
             try
@@ -268,12 +227,69 @@ pub fn get_finder_info() -> Option<serde_json::Value> {
             let result = String::from_utf8_lossy(&output.stdout).trim().to_string();
             if !result.is_empty() && result != "--ERROR--" {
                 finder_info["path"] = serde_json::Value::String(result);
-                return Some(finder_info);
             }
         }
     }
     
-    None
+    // Then try to get selected item
+    let selection_script = r#"
+        tell application "Finder"
+            try
+                set selectedItems to selection
+                if (count of selectedItems) > 0 then
+                    set selectedItem to item 1 of selectedItems
+                    set thePath to POSIX path of (selectedItem as alias)
+                    set itemClass to class of selectedItem
+                    if itemClass is folder then
+                        set isFolder to "true"
+                    else
+                        set isFolder to "false"
+                    end if
+                    return thePath & "|" & isFolder
+                else
+                    return "--NO-SELECTION--"
+                end if
+            on error errorMessage
+                return "--ERROR: " & errorMessage & "--"
+            end try
+        end tell
+    "#;
+    
+    if let Ok(output) = ProcessCommand::new("osascript")
+        .arg("-e")
+        .arg(selection_script)
+        .output()
+    {
+        if output.status.success() {
+            let result = String::from_utf8_lossy(&output.stdout).trim().to_string();
+            crate::utils::debug_log("GRABBER", &format!("Selection script result: '{}'", result));
+            
+            if !result.is_empty() && result != "--NO-SELECTION--" && !result.starts_with("--ERROR:") {
+                let parts: Vec<&str> = result.split('|').collect();
+                if parts.len() >= 2 {
+                    crate::utils::debug_log("GRABBER", &format!("Found selection: '{}', isDirectory: '{}'", parts[0], parts[1]));
+                    finder_info["selection"] = serde_json::Value::String(parts[0].to_string());
+                    finder_info["selectionIsDirectory"] = serde_json::Value::Bool(parts[1] == "true");
+                } else {
+                    crate::utils::debug_log("GRABBER", &format!("Invalid selection result format: '{}'", result));
+                }
+            } else {
+                crate::utils::debug_log("GRABBER", &format!("No selection detected: '{}'", result));
+            }
+        } else {
+            let stderr = String::from_utf8_lossy(&output.stderr);
+            crate::utils::debug_log("GRABBER", &format!("Selection script failed: {}", stderr));
+        }
+    } else {
+        crate::utils::debug_log("GRABBER", "Failed to run selection script");
+    }
+    
+    // Return finder_info if we have any data
+    if !finder_info.as_object().unwrap().is_empty() {
+        Some(finder_info)
+    } else {
+        None
+    }
 }
 
 /// Extract Slack channel/DM name from window title

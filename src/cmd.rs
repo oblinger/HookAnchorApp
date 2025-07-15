@@ -28,6 +28,7 @@ pub fn run_command_line_mode(args: Vec<String>) {
         "-F" | "--named-folders" => run_folder_with_commands(&args),
         "--user-info" => print_user_info(),
         "--test-grabber" => run_test_grabber(),
+        "--grab" => run_grab_command(&args),
         "--infer" => run_infer_patches(&args),
         "--start-server" => run_start_server(),
         "--start-server-daemon" => run_start_server_daemon(),
@@ -53,6 +54,7 @@ pub fn print_help(program_name: &str) {
     eprintln!("  {} -a, --action <act> <arg> # Test action", program_name);
     eprintln!("  {} --infer                  # Show patch inference changes", program_name);
     eprintln!("  {} --test-grabber           # Test grabber functionality", program_name);
+    eprintln!("  {} --grab [delay]           # Grab active app after delay", program_name);
     eprintln!("  {} --start-server           # Force restart command server", program_name);
     eprintln!("  open 'hook://query'         # Handle hook URL");
     eprintln!();
@@ -529,6 +531,61 @@ fn run_test_grabber() {
     }
     
     println!("\nGrabber test completed successfully!");
+}
+
+/// Run grab command to capture active app and output result
+fn run_grab_command(args: &[String]) {
+    // Parse optional delay parameter (defaults to 0)
+    let delay_seconds = if args.len() > 2 {
+        match args[2].parse::<u64>() {
+            Ok(d) => d,
+            Err(_) => {
+                eprintln!("Invalid delay value: {}", args[2]);
+                eprintln!("Usage: {} --grab [delay_seconds]", args[0]);
+                std::process::exit(1);
+            }
+        }
+    } else {
+        0
+    };
+    
+    // If delay requested, sleep before capturing
+    if delay_seconds > 0 {
+        eprintln!("Waiting {} seconds before capture...", delay_seconds);
+        std::thread::sleep(std::time::Duration::from_secs(delay_seconds));
+    }
+    
+    // Load config for grabber rules
+    let config = load_config();
+    
+    // Perform the grab
+    match grabber::grab(&config) {
+        Ok(grab_result) => {
+            match grab_result {
+                grabber::GrabResult::RuleMatched(_rule_name, command) => {
+                    // Output the action and argument for easy testing
+                    println!("{} {}", command.action, command.arg);
+                }
+                grabber::GrabResult::NoRuleMatched(context) => {
+                    // No rule matched - output context information
+                    eprintln!("No grabber rule matched for:");
+                    eprintln!("  App: {}", context.app_name);
+                    eprintln!("  Bundle ID: {}", context.bundle_id);
+                    eprintln!("  Title: {}", context.window_title);
+                    if let Some(props) = context.properties.as_object() {
+                        for (key, value) in props {
+                            eprintln!("  props.{}: {}", key, value.as_str().unwrap_or("(complex)"));
+                        }
+                    }
+                    std::process::exit(1);
+                }
+            }
+        }
+        Err(e) => {
+            eprintln!("Error capturing active app: {}", e);
+            std::process::exit(1);
+        }
+    }
 }
 
 /// Force restart the command server

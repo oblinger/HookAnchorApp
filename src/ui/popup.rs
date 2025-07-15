@@ -586,14 +586,60 @@ impl AnchorSelector {
     fn execute_grab(&mut self, ctx: &egui::Context) {
         let config = load_config();
         
-        // Give up focus AND properly activate the previous application window
-        if let Err(e) = self.give_up_focus_and_activate() {
-            crate::utils::debug_log("GRAB", &format!("Failed to give up focus: {}", e));
+        // Use a more aggressive approach - directly force Finder to front across all screens
+        crate::utils::debug_log("GRAB", "Forcing Finder to front across all screens");
+        
+        let force_finder_script = r#"
+            -- First minimize HookAnchor if it exists
+            try
+                tell application "System Events"
+                    tell application process "popup"
+                        set visible to false
+                    end tell
+                end tell
+            end try
+            
+            -- Force Finder to activate across all screens
+            tell application "Finder"
+                activate
+                reopen
+            end tell
+            
+            delay 0.2
+            
+            -- Make sure Finder windows are at front on all screens
+            tell application "System Events"
+                tell application process "Finder"
+                    set frontmost to true
+                    repeat with w in windows
+                        try
+                            set frontmost of w to true
+                            set index of w to 1
+                        end try
+                    end repeat
+                end tell
+            end tell
+            
+            -- Additional step: bring the most recent Finder window to absolute front
+            tell application "Finder"
+                if (count of windows) > 0 then
+                    tell window 1 to select
+                end if
+            end tell
+        "#;
+        
+        use std::process::Command;
+        if let Err(e) = Command::new("osascript")
+            .arg("-e")
+            .arg(force_finder_script)
+            .output() {
+            crate::utils::debug_log("GRAB", &format!("Failed to force Finder focus: {}", e));
         }
         
-        // Brief delay to ensure focus change and window activation completes
-        std::thread::sleep(std::time::Duration::from_millis(200));
+        // Give extra time for Finder to come to front across screens
+        std::thread::sleep(std::time::Duration::from_millis(800));
         
+        // Now capture from the focused application
         match grabber::grab(&config) {
             Ok(grab_result) => {
                 match grab_result {
@@ -643,6 +689,26 @@ impl AnchorSelector {
                 crate::utils::debug_log("GRAB", &format!("Grabber error: {}", err));
             }
         }
+        
+        // Restore HookAnchor visibility
+        let restore_script = r#"
+            tell application "System Events"
+                tell application process "popup"
+                    set visible to true
+                    set frontmost to true
+                end tell
+            end tell
+        "#;
+        
+        if let Err(e) = Command::new("osascript")
+            .arg("-e")
+            .arg(restore_script)
+            .output() {
+            crate::utils::debug_log("GRAB", &format!("Failed to restore HookAnchor: {}", e));
+        }
+        
+        // Give time for window restoration
+        std::thread::sleep(std::time::Duration::from_millis(200));
         
         // Regain focus back to anchor selector after grab operation
         if let Err(e) = self.regain_focus() {
@@ -831,34 +897,65 @@ impl AnchorSelector {
     fn give_up_focus_and_activate(&self) -> Result<(), Box<dyn std::error::Error>> {
         use std::process::Command;
         
-        crate::utils::debug_log("FOCUS", "Switching to previous app with Cmd+Tab");
+        crate::utils::debug_log("FOCUS", "Switching to previous app with enhanced multi-screen support");
         
-        // Use Cmd+Tab to switch to previous application (this was working)
+        // First, try to get the name of the previously focused application before switching
+        let prev_app_result = Command::new("osascript")
+            .arg("-e")
+            .arg(r#"
+                tell application "System Events"
+                    set allApps to (every application process whose frontmost is false)
+                    if (count of allApps) > 0 then
+                        -- Get the most recently used non-frontmost app (usually the previous one)
+                        set prevApp to item 1 of allApps
+                        return name of prevApp
+                    else
+                        return "Finder"
+                    end if
+                end tell
+            "#)
+            .output()?;
+        
+        let prev_app_name = String::from_utf8_lossy(&prev_app_result.stdout).trim().to_string();
+        crate::utils::debug_log("FOCUS", &format!("Previous app detected: '{}'", prev_app_name));
+        
+        // Use Cmd+Tab to switch to previous application
         Command::new("osascript")
             .arg("-e")
             .arg("tell application \"System Events\" to key code 48 using command down")
             .output()?;
         
         // Brief delay to let the switch complete
-        std::thread::sleep(std::time::Duration::from_millis(300));
+        std::thread::sleep(std::time::Duration::from_millis(200));
         
-        crate::utils::debug_log("FOCUS", "Raising windows of frontmost application");
+        // Now explicitly activate the application and bring its windows to front across screens
+        let activation_script = format!(r#"
+            tell application "{}"
+                activate
+                reopen -- This helps bring windows from other screens
+            end tell
+            
+            delay 0.1
+            
+            tell application "System Events"
+                tell application process "{}"
+                    set frontmost to true
+                    -- Bring all windows to front, especially important for multi-screen
+                    repeat with w in windows
+                        try
+                            set index of w to 1
+                            set frontmost of w to true
+                        end try
+                    end repeat
+                end tell
+            end tell
+        "#, prev_app_name, prev_app_name);
         
-        // Now raise/activate all windows of the frontmost application
+        crate::utils::debug_log("FOCUS", &format!("Activating '{}' with multi-screen window raising", prev_app_name));
+        
         Command::new("osascript")
             .arg("-e")
-            .arg(r#"
-                tell application "System Events"
-                    set frontApp to first application process whose frontmost is true
-                    tell frontApp
-                        set frontmost to true
-                        -- Raise all windows
-                        repeat with w in windows
-                            set index of w to 1
-                        end repeat
-                    end tell
-                end tell
-            "#)
+            .arg(&activation_script)
             .output()?;
         
         Ok(())

@@ -1,6 +1,6 @@
 # HookAnchor Build and Test Makefile
 
-.PHONY: build test test-unit test-integration test-hook-urls commit-tests install clean help
+.PHONY: build test test-unit test-integration test-manual test-hook-urls commit-tests install clean help
 
 # Default target
 help:
@@ -12,8 +12,9 @@ help:
 	@echo "  test-hook-urls     - Test hook:// URL handling (manual)"
 	@echo ""
 	@echo "🧪 Quality Assurance (slower):"
-	@echo "  test               - Run all tests"
-	@echo "  test-integration   - Run slower integration tests"
+	@echo "  test               - Run all tests (unit + integration)"
+	@echo "  test-integration   - Run integration tests (app required)"
+	@echo "  test-manual        - Run manual/interactive tests" 
 	@echo "  commit-tests       - Pre-commit validation (2-5 sec)"
 	@echo ""
 	@echo "📦 Release:"
@@ -37,13 +38,17 @@ test-unit:
 test-integration:
 	@echo "🧪 Running integration tests..."
 	@echo "⚠️  Note: These tests require HookAnchor.app to be installed"
-	cargo test --test test_hook_url_integration
-	@echo "✅ Integration tests complete"
+	./run_integration_tests.sh
 
-# Manual URL test script
+# Run manual tests
+test-manual:
+	@echo "🧪 Running manual tests..."
+	./run_manual_tests.sh
+
+# Legacy manual URL test (for backward compatibility)
 test-hook-urls:
 	@echo "🧪 Running manual hook URL test..."
-	./scripts/test_hook_urls.sh
+	./tests/manual/test_hook_urls.sh
 
 # Run all tests (unit + integration)
 test: test-unit test-integration
@@ -64,7 +69,7 @@ install: build
 	cp target/release/ha "/Applications/HookAnchor.app/Contents/MacOS/popup"
 	@echo "✅ Installation complete"
 	@echo "🧪 Running URL handling verification (3-5 sec)..."
-	@./scripts/test_hook_urls.sh
+	@./tests/manual/test_hook_urls.sh
 
 # Create distribution packages
 package: build
