@@ -2,7 +2,7 @@
 //! 
 //! This module contains the AnchorSelector struct and all popup-specific UI logic.
 
-use eframe::egui;
+use eframe::egui::{self, IconData};
 use std::process;
 use crate::{
     Command, execute_command, load_commands, 
@@ -170,12 +170,31 @@ impl AnchorSelector {
                 let config = &self.popup_state.config;
                 
                 for event in &input.events {
-                    if let egui::Event::Key { key, pressed, .. } = event {
+                    if let egui::Event::Key { key, pressed, modifiers, .. } = event {
                         if *pressed {
                             let key_name = format!("{:?}", key);
                             
-                            // Check what action (if any) is bound to this key
-                            if let Some(action) = config.get_action_for_key(&key_name) {
+                            // Build key string with modifiers
+                            let mut key_string = String::new();
+                            if modifiers.ctrl {
+                                key_string.push_str("ctrl+");
+                            }
+                            if modifiers.alt {
+                                key_string.push_str("alt+");
+                            }
+                            if modifiers.shift {
+                                key_string.push_str("shift+");
+                            }
+                            if modifiers.command {
+                                key_string.push_str("cmd+");
+                            }
+                            key_string.push_str(&key_name.to_lowercase());
+                            
+                            // Check what action (if any) is bound to this key combination
+                            if let Some(action) = config.get_action_for_key(&key_string).or_else(|| {
+                                // Fallback to check the key name without modifiers
+                                config.get_action_for_key(&key_name)
+                            }) {
                                 // Skip escape key since we handle it specially above
                                 if key_name == "Escape" {
                                     continue;
@@ -198,6 +217,7 @@ impl AnchorSelector {
                                     "open_editor" => actions_to_perform.push("open_editor"),
                                     "add_alias" => actions_to_perform.push("add_alias"),
                                     "edit_active_command" => actions_to_perform.push("edit_active_command"),
+                                    "link_to_clipboard" => actions_to_perform.push("link_to_clipboard"),
                                     _ => {} // Unknown action - still consume the key
                                 }
                             }
@@ -262,6 +282,7 @@ impl AnchorSelector {
             "open_editor" => self.open_command_editor(),
             "add_alias" => self.handle_add_alias(),
             "edit_active_command" => self.edit_active_command(),
+            "link_to_clipboard" => self.handle_link_to_clipboard(),
             _ => {}
         }
     }
@@ -364,6 +385,30 @@ impl AnchorSelector {
                 if !PopupState::is_separator_command(selected_cmd) && selected_cmd.get_flag('M').is_none() {
                     // Edit the selected command, ignoring the search text
                     self.command_editor.edit_command(Some(selected_cmd), &selected_cmd.command);
+                }
+            }
+        }
+    }
+    
+    fn handle_link_to_clipboard(&mut self) {
+        if !self.filtered_commands().is_empty() {
+            let (display_commands, _is_submenu, _menu_prefix, _inside_count) = self.get_display_commands();
+            
+            if self.selected_index() < display_commands.len() {
+                let selected_cmd = &display_commands[self.selected_index()];
+                
+                // Don't copy link if it's a separator
+                if !PopupState::is_separator_command(selected_cmd) {
+                    // Use launcher to execute the link_to_clipboard action
+                    let command_line = format!("link_to_clipboard {}", selected_cmd.command);
+                    match crate::launcher::launch(&command_line) {
+                        Ok(()) => {
+                            crate::utils::debug_log("CLIPBOARD", &format!("Link copied for command: {}", selected_cmd.command));
+                        },
+                        Err(e) => {
+                            crate::utils::debug_log("CLIPBOARD", &format!("Failed to copy link: {:?}", e));
+                        }
+                    }
                 }
             }
         }
@@ -1512,6 +1557,186 @@ impl eframe::App for AnchorSelector {
 }
 
 /// Run the popup GUI with an optional initial prompt and application state
+fn load_app_icon() -> IconData {
+    // Try to load the icon from the app bundle
+    let icon_paths = [
+        "/Applications/HookAnchor.app/Contents/Resources/popup.icns",
+        "/Applications/HookAnchor.app/Contents/Resources/applet.icns",
+    ];
+    
+    for path in &icon_paths {
+        crate::utils::debug_log("ICON", &format!("Trying to load icon from: {}", path));
+        if let Ok(icon_data) = std::fs::read(path) {
+            crate::utils::debug_log("ICON", &format!("Read {} bytes from {}", icon_data.len(), path));
+            // Parse the ICNS file to extract PNG data
+            if let Ok(icon) = parse_icns_to_rgba(&icon_data) {
+                crate::utils::debug_log("ICON", &format!("Successfully parsed icon from {}", path));
+                return icon;
+            } else {
+                crate::utils::debug_log("ICON", &format!("Failed to parse ICNS from {}", path));
+            }
+        } else {
+            crate::utils::debug_log("ICON", &format!("Failed to read file: {}", path));
+        }
+    }
+    
+    // Fallback: create a simple colored icon
+    crate::utils::debug_log("ICON", "Using fallback icon");
+    create_fallback_icon()
+}
+
+fn parse_icns_to_rgba(icns_data: &[u8]) -> Result<IconData, Box<dyn std::error::Error>> {
+    // Simple ICNS parser to extract the largest PNG icon
+    // ICNS files contain multiple icon sizes, we want the largest one
+    
+    crate::utils::debug_log("ICON", &format!("Parsing ICNS file of {} bytes", icns_data.len()));
+    
+    if icns_data.len() < 8 || &icns_data[0..4] != b"icns" {
+        crate::utils::debug_log("ICON", "Invalid ICNS file signature");
+        return Err("Invalid ICNS file".into());
+    }
+    
+    let file_size = u32::from_be_bytes([icns_data[4], icns_data[5], icns_data[6], icns_data[7]]) as usize;
+    if file_size > icns_data.len() {
+        crate::utils::debug_log("ICON", "ICNS file size mismatch");
+        return Err("ICNS file size mismatch".into());
+    }
+    
+    crate::utils::debug_log("ICON", &format!("ICNS file size: {}", file_size));
+    
+    let mut offset = 8;
+    let mut best_icon: Option<(u32, Vec<u8>)> = None;
+    let mut icon_count = 0;
+    
+    while offset + 8 <= icns_data.len() {
+        let icon_type = &icns_data[offset..offset+4];
+        let icon_size = u32::from_be_bytes([icns_data[offset+4], icns_data[offset+5], icns_data[offset+6], icns_data[offset+7]]) as usize;
+        
+        let type_str = String::from_utf8_lossy(icon_type);
+        crate::utils::debug_log("ICON", &format!("Found icon type: '{}' size: {}", type_str, icon_size));
+        
+        if offset + icon_size > icns_data.len() {
+            crate::utils::debug_log("ICON", "Icon size exceeds file bounds");
+            break;
+        }
+        
+        // Look for PNG data (ic04, ic05, ic09, ic10, ic11, ic12, ic13, ic14)
+        if icon_type == b"ic09" || icon_type == b"ic10" || icon_type == b"ic11" || icon_type == b"ic12" || icon_type == b"ic13" || icon_type == b"ic14" {
+            let png_data = &icns_data[offset+8..offset+icon_size];
+            crate::utils::debug_log("ICON", &format!("Checking PNG data for type '{}', {} bytes", type_str, png_data.len()));
+            
+            if png_data.starts_with(&[0x89, 0x50, 0x4E, 0x47]) { // PNG signature
+                let size = match icon_type {
+                    b"ic09" => 512,
+                    b"ic10" => 1024,
+                    b"ic11" => 32,
+                    b"ic12" => 64,
+                    b"ic13" => 256,
+                    b"ic14" => 128,
+                    _ => 256,
+                };
+                
+                crate::utils::debug_log("ICON", &format!("Found PNG data for size {}", size));
+                
+                if best_icon.is_none() || best_icon.as_ref().unwrap().0 < size {
+                    best_icon = Some((size, png_data.to_vec()));
+                    crate::utils::debug_log("ICON", &format!("Set as best icon: size {}", size));
+                }
+            } else {
+                crate::utils::debug_log("ICON", &format!("Not PNG data for type '{}'", type_str));
+            }
+        }
+        
+        offset += icon_size;
+        icon_count += 1;
+    }
+    
+    crate::utils::debug_log("ICON", &format!("Processed {} icons total", icon_count));
+    
+    if let Some((size, png_data)) = best_icon {
+        crate::utils::debug_log("ICON", &format!("Decoding best icon of size {}", size));
+        // Decode PNG to RGBA
+        if let Ok(decoded) = decode_png_to_rgba(&png_data) {
+            crate::utils::debug_log("ICON", &format!("Successfully decoded PNG to {}x{}", decoded.1, decoded.2));
+            return Ok(IconData {
+                rgba: decoded.0,
+                width: decoded.1,
+                height: decoded.2,
+            });
+        } else {
+            crate::utils::debug_log("ICON", "Failed to decode PNG data");
+        }
+    } else {
+        crate::utils::debug_log("ICON", "No suitable PNG icon found in ICNS");
+    }
+    
+    Err("No suitable icon found in ICNS".into())
+}
+
+fn decode_png_to_rgba(png_data: &[u8]) -> Result<(Vec<u8>, u32, u32), Box<dyn std::error::Error>> {
+    use image::io::Reader as ImageReader;
+    use image::ImageFormat;
+    use std::io::Cursor;
+    
+    crate::utils::debug_log("ICON", &format!("Decoding PNG of {} bytes", png_data.len()));
+    
+    // Create a cursor from the PNG data
+    let cursor = Cursor::new(png_data);
+    let reader = ImageReader::with_format(cursor, ImageFormat::Png);
+    
+    // Decode the image
+    let img = reader.decode()?;
+    
+    // Convert to RGBA8
+    let rgba_img = img.to_rgba8();
+    let width = rgba_img.width();
+    let height = rgba_img.height();
+    
+    crate::utils::debug_log("ICON", &format!("Decoded PNG to {}x{}", width, height));
+    
+    // Convert to Vec<u8>
+    let rgba_data = rgba_img.into_raw();
+    
+    Ok((rgba_data, width, height))
+}
+
+fn create_fallback_icon() -> IconData {
+    // Create a simple 32x32 blue anchor icon as fallback
+    let width = 32u32;
+    let height = 32u32;
+    let mut rgba = vec![0u8; (width * height * 4) as usize];
+    
+    // Create a simple anchor shape in blue
+    for y in 0..height {
+        for x in 0..width {
+            let idx = ((y * width + x) * 4) as usize;
+            let dx = x as i32 - 16;
+            let dy = y as i32 - 16;
+            
+            // Simple anchor shape
+            let is_anchor = (dx.abs() < 2 && dy > -10 && dy < 10) || 
+                          (dy.abs() < 2 && dx.abs() < 8 && dy > 8) ||
+                          (dx * dx + (dy + 8) * (dy + 8) < 16) ||
+                          (dx * dx + (dy - 8) * (dy - 8) < 16);
+            
+            if is_anchor {
+                rgba[idx] = 0;     // R
+                rgba[idx + 1] = 100; // G
+                rgba[idx + 2] = 200; // B
+                rgba[idx + 3] = 255; // A
+            } else {
+                rgba[idx + 3] = 0; // Transparent
+            }
+        }
+    }
+    
+    IconData {
+        rgba,
+        width,
+        height,
+    }
+}
+
 pub fn run_gui_with_prompt(initial_prompt: &str, _app_state: super::ApplicationState) -> Result<(), eframe::Error> {
     // Capture the prompt for the closure
     let prompt = initial_prompt.to_string();
@@ -1520,7 +1745,8 @@ pub fn run_gui_with_prompt(initial_prompt: &str, _app_state: super::ApplicationS
     let viewport_builder = egui::ViewportBuilder::default()
         .with_inner_size([500.0, 120.0]) // Initial size - will be dynamically resized
         .with_resizable(false) // Disable manual resizing - we control size programmatically
-        .with_decorations(false); // Remove title bar and window controls
+        .with_decorations(false) // Remove title bar and window controls
+        .with_icon(load_app_icon()); // Set the app icon
         // .with_transparent(true); // DISABLED: May cause hanging
     
     let options = eframe::NativeOptions {

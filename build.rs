@@ -50,6 +50,23 @@ fn main() {
     if let Err(e) = fs::write(&state_path, serde_json::to_string_pretty(&state).unwrap_or_default()) {
         println!("cargo:warning=Failed to update build time: {}", e);
     }
+    
+    // macOS: Set up icon embedding
+    #[cfg(target_os = "macos")]
+    {
+        // Try to find the icon file in the app bundle
+        let icon_path = "/Applications/HookAnchor.app/Contents/Resources/applet.icns";
+        
+        if Path::new(icon_path).exists() {
+            println!("cargo:rustc-env=MACOS_ICON_PATH={}", icon_path);
+        } else {
+            // Fallback to source directory icon if it exists
+            let fallback_icon = "resources/applet.icns";
+            if Path::new(fallback_icon).exists() {
+                println!("cargo:rustc-env=MACOS_ICON_PATH={}", fallback_icon);
+            }
+        }
+    }
 }
 
 fn get_state_file_path() -> std::path::PathBuf {
