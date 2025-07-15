@@ -1738,6 +1738,9 @@ fn create_fallback_icon() -> IconData {
 }
 
 pub fn run_gui_with_prompt(initial_prompt: &str, _app_state: super::ApplicationState) -> Result<(), eframe::Error> {
+    // Debug: Log when popup is being opened
+    crate::utils::debug_log("POPUP_OPEN", &format!("Opening popup with initial prompt: '{}'", initial_prompt));
+    
     // Capture the prompt for the closure
     let prompt = initial_prompt.to_string();
     
