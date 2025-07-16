@@ -40,6 +40,8 @@ pub struct AnchorSelector {
     focus_set: bool,
     /// Frame counter to track how many frames have passed since startup
     frame_count: u32,
+    /// Track if window activation has been attempted
+    window_activated: bool,
     /// Config error to show in dialog if config loading failed
     config_error: Option<String>,
 }
@@ -452,6 +454,7 @@ impl AnchorSelector {
             countdown_last_update: None,
             focus_set: false,
             frame_count: 0,
+            window_activated: false,
             config_error,
         };
         
@@ -962,8 +965,22 @@ pub fn center_on_main_display(ctx: &egui::Context, window_size: egui::Vec2) -> e
 impl eframe::App for AnchorSelector {
     fn update(&mut self, ctx: &egui::Context, _frame: &mut eframe::Frame) {
         // Increment frame counter for initial setup only
-        if self.frame_count < 10 {
+        if self.frame_count < 20 {
             self.frame_count += 1;
+        }
+        
+        // On the first few frames, ensure the window is properly activated and positioned
+        if self.frame_count <= 3 {
+            ctx.send_viewport_cmd(egui::ViewportCommand::Focus);
+            ctx.request_repaint(); // Ensure continuous updates during initialization
+            
+            // Also ensure proper window positioning on startup
+            if self.frame_count == 2 && !self.position_set {
+                let window_size = egui::vec2(500.0, 120.0); // Default size
+                let position = center_on_main_display(ctx, window_size);
+                ctx.send_viewport_cmd(egui::ViewportCommand::OuterPosition(position));
+                self.position_set = true;
+            }
         }
         
         // Check if we need active updates (animations, countdowns, etc.)
@@ -1208,15 +1225,26 @@ impl eframe::App for AnchorSelector {
                 }
                 
                 // Focus the text input on startup or when command editor closes
-                // Only attempt focus for a limited number of frames to avoid continuous repainting
+                // Extended focus attempt duration and window activation for better reliability
                 let should_focus = !self.focus_set && (
-                    self.frame_count <= 5 || command_editor_just_closed
+                    self.frame_count <= 15 || command_editor_just_closed
                 );
                 
                 if should_focus {
+                    // On early frames, also try to activate the window to ensure proper focus
+                    if self.frame_count <= 10 && !self.window_activated {
+                        ctx.send_viewport_cmd(egui::ViewportCommand::Focus);
+                        self.window_activated = true;
+                    }
+                    
                     response.request_focus();
                     if response.has_focus() {
                         self.focus_set = true;
+                        crate::utils::debug_log("FOCUS", &format!("Focus successfully set on frame {}", self.frame_count));
+                    } else if self.frame_count % 5 == 0 && self.frame_count <= 15 {
+                        // Log focus attempts every 5 frames for debugging
+                        crate::utils::debug_log("FOCUS", &format!("Focus attempt on frame {} - window focused: {}", 
+                            self.frame_count, ctx.input(|i| i.focused)));
                     }
                 }
                 

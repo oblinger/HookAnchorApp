@@ -327,6 +327,25 @@ pub fn infer_patch(command: &Command, patches: &HashMap<String, Patch>) -> Optio
         }
     }
     
+    // Method 3: Default patch rules
+    
+    // Rule 3a: Alias commands inherit patch from their target
+    if command.action == "alias" {
+        if let Some(target_patch) = infer_patch_from_alias_target(command, patches) {
+            return Some(target_patch);
+        }
+    }
+    
+    // Rule 3b: Year-based patch inference (2000-3000 followed by separator)
+    if let Some(year_patch) = infer_patch_from_year_prefix(&command.command) {
+        return Some(year_patch);
+    }
+    
+    // Rule 3c: Cmd action gets "Cmd" patch
+    if command.action == "cmd" {
+        return Some("Cmd".to_string());
+    }
+    
     None
 }
 
@@ -459,6 +478,52 @@ fn infer_patch_from_hierarchy(dir: &Path, patches: &HashMap<String, Patch>) -> O
         }
         
         current_dir = parent.parent();
+    }
+    
+    None
+}
+
+/// Infers patch for alias commands by looking up the target command's patch
+fn infer_patch_from_alias_target(command: &Command, patches: &HashMap<String, Patch>) -> Option<String> {
+    // Load all commands to find the alias target
+    let all_commands = load_commands_raw();
+    
+    // Find the target command that the alias points to
+    let target_commands = filter_commands(&all_commands, &command.arg, 1, false);
+    
+    if let Some(target_command) = target_commands.first() {
+        // If target has a patch, return it
+        if !target_command.patch.is_empty() {
+            return Some(target_command.patch.clone());
+        }
+        
+        // If target doesn't have a patch, try to infer one for it
+        // (but don't recurse infinitely - only one level)
+        if target_command.action != "alias" {
+            return infer_patch(target_command, patches);
+        }
+    }
+    
+    None
+}
+
+/// Infers patch from year prefix in command name (2000-3000 followed by separator)
+fn infer_patch_from_year_prefix(command_name: &str) -> Option<String> {
+    // Check if command starts with 4-digit year between 2000 and 3000
+    if command_name.len() >= 5 {
+        let year_part = &command_name[0..4];
+        
+        // Check if it's a valid 4-digit number
+        if let Ok(year) = year_part.parse::<u32>() {
+            // Check if year is in valid range (2000-3000)
+            if year >= 2000 && year <= 3000 {
+                // Check if followed by a separator character
+                let separator_char = command_name.chars().nth(4).unwrap();
+                if separator_char == '-' || separator_char == '_' || separator_char == '.' || separator_char == ' ' {
+                    return Some(year.to_string());
+                }
+            }
+        }
     }
     
     None
@@ -681,8 +746,24 @@ pub fn save_commands_to_file(commands: &[Command]) -> Result<(), Box<dyn std::er
         fs::create_dir_all(parent)?;
     }
     
+    // Update cmd commands without patches to have "Cmd" patch
+    let mut updated_commands = commands.to_vec();
+    for cmd in &mut updated_commands {
+        if cmd.action == "cmd" && cmd.patch.is_empty() {
+            cmd.patch = "Cmd".to_string();
+        }
+    }
+    
+    // Sort commands by patch string first, then by command name before writing to file
+    updated_commands.sort_by(|a, b| {
+        match a.patch.cmp(&b.patch) {
+            std::cmp::Ordering::Equal => a.command.cmp(&b.command),
+            other => other
+        }
+    });
+    
     // Convert all commands to new format and join with newlines
-    let contents = commands.iter()
+    let contents = updated_commands.iter()
         .map(|cmd| cmd.to_new_format())
         .collect::<Vec<_>>()
         .join("\n");
