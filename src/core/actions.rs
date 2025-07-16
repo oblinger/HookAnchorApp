@@ -9,7 +9,7 @@ use std::path::Path;
 /// 
 /// Returns:
 /// - "anchor" for markdown files where filename matches parent directory name
-/// - "obs" for other markdown files  
+/// - "markdown" for other markdown files (replaces old "obs" action)
 /// - "doc" for non-markdown files
 pub fn get_action(path: &Path) -> String {
     // Check if it's a markdown file
@@ -19,7 +19,7 @@ pub fn get_action(path: &Path) -> String {
             if is_markdown_anchor(path) {
                 return "anchor".to_string();
             } else {
-                return "obs".to_string();
+                return "markdown".to_string();
             }
         }
     }
@@ -70,9 +70,9 @@ mod tests {
     }
 
     #[test]
-    fn test_get_action_obs() {
+    fn test_get_action_markdown() {
         let path = PathBuf::from("/home/user/ProjectName/readme.md");
-        assert_eq!(get_action(&path), "obs");
+        assert_eq!(get_action(&path), "markdown");
     }
 
     #[test]

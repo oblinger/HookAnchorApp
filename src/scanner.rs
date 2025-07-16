@@ -104,25 +104,25 @@ pub fn scan_files(mut commands: Vec<Command>, markdown_roots: &[String], config:
     // Create a set of existing command names for collision detection (lowercase for case-insensitive comparison)
     // Only include non-scan-generated commands to avoid false collisions
     let mut existing_commands: HashSet<String> = commands.iter()
-        .filter(|cmd| cmd.action != "obs" && cmd.action != "anchor" && cmd.action != "folder")
+        .filter(|cmd| cmd.action != "markdown" && cmd.action != "anchor" && cmd.action != "folder")
         .map(|cmd| cmd.command.to_lowercase())
         .collect();
     
     // Count commands before removal
-    let obs_before = commands.iter().filter(|cmd| cmd.action == "obs").count();
+    let markdown_before = commands.iter().filter(|cmd| cmd.action == "markdown").count();
     let anchor_before = commands.iter().filter(|cmd| cmd.action == "anchor").count();
     let folder_before = commands.iter().filter(|cmd| cmd.action == "folder").count();
     let user_edited_scanner_commands = commands.iter()
-        .filter(|cmd| (cmd.action == "obs" || cmd.action == "anchor" || cmd.action == "folder") && cmd.flags.contains('U'))
+        .filter(|cmd| (cmd.action == "markdown" || cmd.action == "anchor" || cmd.action == "folder") && cmd.flags.contains('U'))
         .count();
-    debug_log("SCANNER", &format!("Before removal: {} obs, {} anchor, {} folder (user edited: {})", 
-        obs_before, anchor_before, folder_before, user_edited_scanner_commands));
+    debug_log("SCANNER", &format!("Before removal: {} markdown, {} anchor, {} folder (user edited: {})", 
+        markdown_before, anchor_before, folder_before, user_edited_scanner_commands));
     
-    // Remove existing obs, anchor, and folder commands from the commands list
+    // Remove existing markdown, anchor, and folder commands from the commands list
     // EXCEPT those with the "U" (user edited) flag - preserve those
     // but keep ALL commands in existing_commands set for collision detection
     commands.retain(|cmd| {
-        let is_scanner_generated = cmd.action == "obs" || cmd.action == "anchor" || cmd.action == "folder";
+        let is_scanner_generated = cmd.action == "markdown" || cmd.action == "anchor" || cmd.action == "folder";
         let is_user_edited = cmd.flags.contains('U');
         
         // Keep command if it's NOT scanner-generated OR if it's user-edited
@@ -130,7 +130,7 @@ pub fn scan_files(mut commands: Vec<Command>, markdown_roots: &[String], config:
     });
     
     let preserved_user_edited = commands.iter()
-        .filter(|cmd| (cmd.action == "obs" || cmd.action == "anchor" || cmd.action == "folder") && cmd.flags.contains('U'))
+        .filter(|cmd| (cmd.action == "markdown" || cmd.action == "anchor" || cmd.action == "folder") && cmd.flags.contains('U'))
         .count();
     debug_log("SCANNER", &format!("After removal: {} commands remaining ({} user-edited preserved)", 
         commands.len(), preserved_user_edited));
@@ -197,11 +197,11 @@ pub fn scan_files(mut commands: Vec<Command>, markdown_roots: &[String], config:
     // }
     
     // Count final results
-    let obs_after = commands.iter().filter(|cmd| cmd.action == "obs").count();
+    let markdown_after = commands.iter().filter(|cmd| cmd.action == "markdown").count();
     let anchor_after = commands.iter().filter(|cmd| cmd.action == "anchor").count();
     let folder_after = commands.iter().filter(|cmd| cmd.action == "folder").count();
-    debug_log("SCANNER", &format!("Final scan results: {} obs, {} anchor, {} folder (total: {} commands)", 
-        obs_after, anchor_after, folder_after, commands.len()));
+    debug_log("SCANNER", &format!("Final scan results: {} markdown, {} anchor, {} folder (total: {} commands)", 
+        markdown_after, anchor_after, folder_after, commands.len()));
     
     commands
 }
@@ -249,7 +249,7 @@ fn scan_directory_with_root(dir: &Path, vault_root: &Path, commands: &mut Vec<Co
 
 
 /// Processes a path and returns a command if it's a markdown file with vault root for relative paths
-fn process_markdown_with_root(path: &Path, vault_root: &Path, existing_commands: &HashSet<String>) -> Option<Command> {
+fn process_markdown_with_root(path: &Path, _vault_root: &Path, existing_commands: &HashSet<String>) -> Option<Command> {
     // Check if it's a file and has .md extension
     if !path.is_file() {
         return None;
@@ -279,14 +279,9 @@ fn process_markdown_with_root(path: &Path, vault_root: &Path, existing_commands:
     let full_path = path.to_string_lossy().to_string();
     
     // Calculate the argument based on action type
-    let arg = if action == "obs" {
-        // For OBS entries, use relative path from vault root (with .md extension)
-        if let Ok(relative_path) = path.strip_prefix(vault_root) {
-            relative_path.to_string_lossy().to_string()
-        } else {
-            // Fallback to just filename with extension if we can't calculate relative path
-            format!("{}.md", file_name)
-        }
+    let arg = if action == "markdown" {
+        // For markdown entries, use absolute path (new unified approach)
+        full_path.clone()
     } else {
         // For anchor entries, use full path as before
         full_path.clone()
@@ -326,9 +321,9 @@ fn expand_home(path: &str) -> String {
 fn calculate_commands_checksum(commands: &[Command]) -> String {
     let mut hasher = DefaultHasher::new();
     
-    // Filter only scan-generated commands (obs, anchor, contact, folder)
+    // Filter only scan-generated commands (markdown, obs, anchor, contact, folder)
     let mut scan_commands: Vec<_> = commands.iter()
-        .filter(|cmd| cmd.action == "obs" || cmd.action == "anchor" || cmd.action == "contact" || cmd.action == "folder")
+        .filter(|cmd| cmd.action == "markdown" || cmd.action == "anchor" || cmd.action == "contact" || cmd.action == "folder")
         .collect();
     
     // Sort for consistent checksum

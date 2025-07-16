@@ -852,8 +852,8 @@ impl AnchorSelector {
                     utils::debug_log("SHOW_FOLDER", &format!("Found folder action, path: {}", resolved_cmd.arg));
                     Some(resolved_cmd.arg.clone())
                 },
-                "anchor" | "obs" => {
-                    // For anchor/obs, get the directory containing the file
+                "anchor" | "markdown" => {
+                    // For anchor/markdown, get the directory containing the file
                     if let Some(idx) = resolved_cmd.arg.rfind('/') {
                         let path = resolved_cmd.arg[..idx].to_string();
                         utils::debug_log("SHOW_FOLDER", &format!("Found {}, extracted folder: {}", resolved_cmd.action, path));

@@ -51,13 +51,10 @@ impl Command {
     /// Handles relative paths, tilde expansion, and vault-relative paths
     pub fn get_absolute_file_path(&self, config: &Config) -> Option<PathBuf> {
         match self.action.as_str() {
-            "obs" => {
-                // Convert vault-relative path to absolute
-                let launcher_settings = config.launcher_settings.as_ref()?;
-                let vault_path = launcher_settings.obsidian_vault_path.as_ref()?;
-                let expanded_vault = crate::utils::expand_tilde(vault_path);
-                Some(Path::new(&expanded_vault).join(&self.arg))
-            }
+            "markdown" => {
+                // Arg is already absolute path for new markdown action
+                Some(PathBuf::from(&self.arg))
+            },
             "anchor" | "doc" => {
                 // Already absolute, just expand tilde
                 Some(PathBuf::from(crate::utils::expand_tilde(&self.arg)))
@@ -106,7 +103,7 @@ impl Command {
     
     /// Checks if this command refers to a file or folder
     pub fn is_path_based(&self) -> bool {
-        matches!(self.action.as_str(), "obs" | "anchor" | "folder" | "doc" | "open")
+        matches!(self.action.as_str(), "markdown" | "anchor" | "folder" | "doc" | "open")
     }
 
     /// Gets the value of a flag by its key character
@@ -1684,7 +1681,10 @@ fn uses_client_environment(action: &str) -> bool {
         "anchor" | "slack" | "shutdown" | "rescan" => true,
         
         // Actions that use server environment (shell commands)
-        "cmd" | "obs" => false,
+        "cmd" => false,
+        
+        // New markdown action uses JavaScript environment
+        "markdown" => true,
         
         // JavaScript actions - these could use either, but many use client operations
         _ => true, // Default to showing client env for custom JavaScript functions

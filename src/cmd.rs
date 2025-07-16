@@ -247,24 +247,12 @@ fn run_folder_command(args: &[String]) {
                     Some(command.arg.clone())
                 }
             },
-            "obs" => {
-                // For obs commands, need to resolve the full path and return the directory
-                // The arg format is like "T/Career/NJ/TG/TG AI Safety.md"
-                let vault_path = config.launcher_settings
-                    .as_ref()
-                    .and_then(|s| s.obsidian_vault_path.as_ref())
-                    .map(|p| crate::utils::expand_tilde(p))
-                    .unwrap_or_else(|| {
-                        let home = std::env::var("HOME").unwrap_or_else(|_| ".".to_string());
-                        format!("{}/Documents", home)
-                    });
-                let full_path = format!("{}/{}", vault_path, command.arg);
-                
-                // Return the directory containing the .md file
-                if let Some(last_slash) = full_path.rfind('/') {
-                    Some(full_path[..last_slash].to_string())
+            "markdown" => {
+                // For markdown commands, arg is already absolute path - return the directory
+                if let Some(last_slash) = command.arg.rfind('/') {
+                    Some(command.arg[..last_slash].to_string())
                 } else {
-                    Some(full_path)
+                    Some(command.arg.clone())
                 }
             },
             _ => {
@@ -348,24 +336,12 @@ fn run_folder_with_commands(args: &[String]) {
                     Some(command.arg.clone())
                 }
             },
-            "obs" => {
-                // For obs commands, need to resolve the full path and return the directory
-                // The arg format is like "T/Career/NJ/TG/TG AI Safety.md"
-                let vault_path = config.launcher_settings
-                    .as_ref()
-                    .and_then(|s| s.obsidian_vault_path.as_ref())
-                    .map(|p| crate::utils::expand_tilde(p))
-                    .unwrap_or_else(|| {
-                        let home = std::env::var("HOME").unwrap_or_else(|_| ".".to_string());
-                        format!("{}/Documents", home)
-                    });
-                let full_path = format!("{}/{}", vault_path, command.arg);
-                
-                // Return the directory containing the .md file
-                if let Some(last_slash) = full_path.rfind('/') {
-                    Some(full_path[..last_slash].to_string())
+            "markdown" => {
+                // For markdown commands, arg is already absolute path - return the directory
+                if let Some(last_slash) = command.arg.rfind('/') {
+                    Some(command.arg[..last_slash].to_string())
                 } else {
-                    Some(full_path)
+                    Some(command.arg.clone())
                 }
             },
             _ => {

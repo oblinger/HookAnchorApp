@@ -24,6 +24,7 @@ pub mod cmd;
 pub mod utils;
 pub mod scanner;
 pub mod grabber;
+pub mod vault;
 
 // Background command server
 pub mod command_server;
