@@ -7,6 +7,7 @@ fn make_cmd(name: &str) -> Command {
         command: name.to_string(),
         action: "test".to_string(),
         arg: String::new(),
+        flags: String::new(),
         full_line: format!("{} : test", name),
     }
 }
@@ -143,13 +144,16 @@ fn test_submenu_with_prefix_ordering() {
     let filtered = filter_commands(&commands, "ana", 20, false);
     
     // Check if we're in submenu mode
-    let menu_prefix = get_current_submenu_prefix(&filtered, "ana");
+    let menu_prefix = get_current_submenu_prefix("ana");
     assert!(menu_prefix.is_some(), "Should detect submenu");
     
-    let (inside_menu, outside_menu) = split_commands(&filtered, menu_prefix.as_ref().unwrap());
+    let result = split_commands(&filtered, "ana ", " ._-");
+    let separator_index = result.iter().position(|c| c.action == "separator").unwrap();
+    let inside_menu = &result[..separator_index];
+    let outside_menu = &result[separator_index + 1..];
     
     println!("\nInside submenu:");
-    for cmd in &inside_menu {
+    for cmd in inside_menu {
         println!("  {}", cmd.command);
     }
     

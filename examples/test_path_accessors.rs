@@ -1,4 +1,4 @@
-use hookanchor::{Command, Config, load_config};
+use hookanchor::{Command, load_config};
 
 fn main() {
     println!("Testing Command path accessor methods...");

@@ -6,6 +6,7 @@ fn cmd(command: &str, action: &str, arg: &str) -> Command {
         command: command.to_string(),
         action: action.to_string(),
         arg: arg.to_string(),
+        flags: String::new(),
         full_line: format!("{} : {} {}", command, action, arg),
     }
 }
@@ -21,17 +22,21 @@ fn test_split_commands_findem_not_in_submenu() {
         cmd("Financial Report", "folder", "~/reports"),
     ];
     
-    let (inside_menu, outside_menu) = split_commands(&commands, "FIN");
+    let result = split_commands(&commands, "FIN ", " ._-");
     
     println!("=== FIN submenu test ===");
-    println!("Inside menu:");
-    for cmd in &inside_menu {
-        println!("  - {}", cmd.command);
+    println!("Result commands:");
+    for cmd in &result {
+        println!("  - {} ({})", cmd.command, cmd.action);
     }
-    println!("Outside menu:");
-    for cmd in &outside_menu {
-        println!("  - {}", cmd.command);
-    }
+    
+    // Find separator index
+    let separator_index = result.iter().position(|c| c.action == "separator");
+    assert!(separator_index.is_some(), "Should have separator");
+    
+    let sep_idx = separator_index.unwrap();
+    let inside_menu = &result[..sep_idx];
+    let outside_menu = &result[sep_idx + 1..];
     
     // Expected inside menu: FIN, FIN Budget, FIN Analysis (commands with FIN + space)
     assert_eq!(inside_menu.len(), 3);
@@ -54,17 +59,21 @@ fn test_split_commands_exact_match_in_submenu() {
         cmd("TESTING", "app", "Testing"),
     ];
     
-    let (inside_menu, outside_menu) = split_commands(&commands, "TEST");
+    let result = split_commands(&commands, "TEST ", " ._-");
     
     println!("\n=== TEST submenu test ===");
-    println!("Inside menu:");
-    for cmd in &inside_menu {
-        println!("  - {}", cmd.command);
+    println!("Result commands:");
+    for cmd in &result {
+        println!("  - {} ({})", cmd.command, cmd.action);
     }
-    println!("Outside menu:");
-    for cmd in &outside_menu {
-        println!("  - {}", cmd.command);
-    }
+    
+    // Find separator index
+    let separator_index = result.iter().position(|c| c.action == "separator");
+    assert!(separator_index.is_some(), "Should have separator");
+    
+    let sep_idx = separator_index.unwrap();
+    let inside_menu = &result[..sep_idx];
+    let outside_menu = &result[sep_idx + 1..];
     
     // Expected inside menu: TEST, TEST Case (exact match + space separator)
     assert_eq!(inside_menu.len(), 2);
@@ -88,17 +97,21 @@ fn test_split_commands_with_dots_and_underscores() {
         cmd("LOGGED", "app", "LoggedApp"),
     ];
     
-    let (inside_menu, outside_menu) = split_commands(&commands, "LOG");
+    let result = split_commands(&commands, "LOG ", " ._-");
     
     println!("\n=== LOG submenu test ===");
-    println!("Inside menu:");
-    for cmd in &inside_menu {
-        println!("  - {}", cmd.command);
+    println!("Result commands:");
+    for cmd in &result {
+        println!("  - {} ({})", cmd.command, cmd.action);
     }
-    println!("Outside menu:");
-    for cmd in &outside_menu {
-        println!("  - {}", cmd.command);
-    }
+    
+    // Find separator index
+    let separator_index = result.iter().position(|c| c.action == "separator");
+    assert!(separator_index.is_some(), "Should have separator");
+    
+    let sep_idx = separator_index.unwrap();
+    let inside_menu = &result[..sep_idx];
+    let outside_menu = &result[sep_idx + 1..];
     
     // Expected inside menu: LOG, LOG.daily, LOG_weekly, LOG error (exact + separators)
     assert_eq!(inside_menu.len(), 4);
@@ -123,17 +136,21 @@ fn test_split_commands_case_insensitive() {
         cmd("FINDEM", "app", "Findem"),
     ];
     
-    let (inside_menu, outside_menu) = split_commands(&commands, "FIN");
+    let result = split_commands(&commands, "FIN ", " ._-");
     
     println!("\n=== Case insensitive test ===");
-    println!("Inside menu:");
-    for cmd in &inside_menu {
-        println!("  - {}", cmd.command);
+    println!("Result commands:");
+    for cmd in &result {
+        println!("  - {} ({})", cmd.command, cmd.action);
     }
-    println!("Outside menu:");
-    for cmd in &outside_menu {
-        println!("  - {}", cmd.command);
-    }
+    
+    // Find separator index
+    let separator_index = result.iter().position(|c| c.action == "separator");
+    assert!(separator_index.is_some(), "Should have separator");
+    
+    let sep_idx = separator_index.unwrap();
+    let inside_menu = &result[..sep_idx];
+    let outside_menu = &result[sep_idx + 1..];
     
     // Expected inside menu: fin, FIN Budget, Fin Analysis (case insensitive + separator)
     assert_eq!(inside_menu.len(), 3);
@@ -155,18 +172,15 @@ fn test_split_commands_empty_cases() {
     ];
     
     // Empty prefix
-    let (inside_menu, outside_menu) = split_commands(&commands, "");
-    assert_eq!(inside_menu.len(), 0);
-    assert_eq!(outside_menu.len(), 2);
+    let result = split_commands(&commands, "", " ._-");
+    assert_eq!(result.len(), 2); // Should return all commands
     
     // No matching prefix
-    let (inside_menu, outside_menu) = split_commands(&commands, "NONEXISTENT");
-    assert_eq!(inside_menu.len(), 0);
-    assert_eq!(outside_menu.len(), 2);
+    let result = split_commands(&commands, "NONEXISTENT ", " ._-");
+    assert_eq!(result.len(), 2); // Should return all commands
     
     // Empty commands list
     let empty_commands = vec![];
-    let (inside_menu, outside_menu) = split_commands(&empty_commands, "TEST");
-    assert_eq!(inside_menu.len(), 0);
-    assert_eq!(outside_menu.len(), 0);
+    let result = split_commands(&empty_commands, "TEST ", " ._-");
+    assert_eq!(result.len(), 0);
 }

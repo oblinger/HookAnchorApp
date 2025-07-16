@@ -1,4 +1,4 @@
-use hookanchor::{load_commands, filter_commands, merge_similar_commands, get_current_submenu_prefix};
+use hookanchor::{load_commands, filter_commands, merge_similar_commands, get_current_submenu_prefix, load_config};
 
 #[test]
 fn test_fin_vs_fina_merging() {
@@ -18,11 +18,12 @@ fn test_search(search_text: &str) {
     let filtered = filter_commands(&all_commands, search_text, 100, false);
     
     // Check submenu prefix
-    let submenu_prefix = get_current_submenu_prefix(&filtered, search_text);
+    let submenu_prefix = get_current_submenu_prefix(search_text);
     println!("Submenu prefix: {:?}", submenu_prefix);
     
     // Apply merging
-    let merged = merge_similar_commands(&filtered, search_text);
+    let config = load_config();
+    let merged = merge_similar_commands(filtered, &config);
     
     // Look for FIN Accounts specifically
     println!("\nFIN Accounts-related commands after merging:");

@@ -12,8 +12,8 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
     let config = load_config();
     
     println!("📋 Config Structure:");
-    if let Some(functions) = &config.js_functions {
-        println!("  js_functions: {} functions", functions.len());
+    if let Some(functions) = &config.functions {
+        println!("  functions: {} functions", functions.len());
         for name in functions.keys() {
             println!("    - {}", name);
         }
@@ -82,7 +82,7 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
     
     println!("\n🚀 Unified functions design working correctly!");
     println!("\n💡 Key Benefits:");
-    println!("  ✅ Single js_functions section for all JavaScript");
+    println!("  ✅ Single functions section for all JavaScript");
     println!("  ✅ Helper functions available to all contexts");
     println!("  ✅ Action functions can call helper functions");
     println!("  ✅ listed_actions controls command availability");

@@ -46,6 +46,8 @@ pub struct PopupSettings {
     pub word_separators: String,
     /// Seconds between automatic filesystem scans (default: 10)
     pub scan_interval_seconds: Option<u64>,
+    /// Seconds of inactivity before popup automatically closes (default: 60)
+    pub idle_timeout_seconds: Option<u64>,
 }
 
 /// Launcher settings section of the configuration file
@@ -137,6 +139,7 @@ impl Default for PopupSettings {
             merge_similar: true,
             word_separators: " ._-".to_string(),
             scan_interval_seconds: Some(10),
+            idle_timeout_seconds: Some(60), // Default to 60 seconds
         }
     }
 }

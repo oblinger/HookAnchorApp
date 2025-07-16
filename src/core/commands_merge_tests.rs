@@ -13,6 +13,9 @@ mod merge_tests {
                 debug_log: None,
                 scan_interval_seconds: None,
                 listed_actions: None,
+                debug_scanner: None,
+                verbose_logging: None,
+                idle_timeout_seconds: None,
             },
             launcher_settings: None,
             functions: None,
@@ -24,7 +27,7 @@ mod merge_tests {
 
     fn create_command(name: &str, action: &str) -> Command {
         Command {
-            group: String::new(),
+            patch: String::new(),
             command: name.to_string(),
             action: action.to_string(),
             arg: String::new(),

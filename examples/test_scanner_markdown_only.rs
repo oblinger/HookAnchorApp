@@ -1,4 +1,4 @@
-use hookanchor::{Command, scan_files, load_config};
+use hookanchor::{Command, load_config, scanner};
 
 fn main() {
     println!("Testing scanner with folder processing disabled...");
@@ -46,7 +46,7 @@ fn main() {
     // Use a smaller test root instead of full scan
     let test_roots = vec!["/tmp".to_string()]; // A directory that likely has few or no markdown files
     
-    let updated_commands = scan_files(initial_commands, &test_roots, &config);
+    let updated_commands = scanner::scan_files(initial_commands, &test_roots, &config);
     
     println!("\nAfter scan: {} commands", updated_commands.len());
     

@@ -7,6 +7,7 @@ fn make_cmd(name: &str, action: &str) -> Command {
         command: name.to_string(),
         action: action.to_string(),
         arg: String::new(),
+        flags: String::new(),
         full_line: format!("{} : {}", name, action),
     }
 }

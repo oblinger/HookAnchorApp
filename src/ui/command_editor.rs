@@ -367,7 +367,7 @@ impl CommandEditor {
             command: self.command.clone(),
             action: self.action.clone(),
             arg: self.argument.clone(),
-            flags: String::new(),
+            flags: self.flags.clone(),
             full_line: self.format_command_line(),
         };
         

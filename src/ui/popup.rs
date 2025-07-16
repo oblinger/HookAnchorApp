@@ -44,6 +44,8 @@ pub struct AnchorSelector {
     window_activated: bool,
     /// Config error to show in dialog if config loading failed
     config_error: Option<String>,
+    /// Last user interaction time for idle timeout
+    last_interaction_time: std::time::Instant,
 }
 
 impl AnchorSelector {
@@ -456,6 +458,7 @@ impl AnchorSelector {
             frame_count: 0,
             window_activated: false,
             config_error,
+            last_interaction_time: std::time::Instant::now(),
         };
         
         // Show config error dialog if there was an error
@@ -988,6 +991,30 @@ impl eframe::App for AnchorSelector {
         let has_active_ui = self.command_editor.visible 
             || self.dialog.visible 
             || self.grabber_countdown.is_some();
+        
+        // Update interaction time if there's user input
+        if has_input {
+            self.last_interaction_time = std::time::Instant::now();
+        }
+        
+        // Check for idle timeout
+        if self.frame_count >= 10 { // Don't timeout during initial setup
+            let timeout_seconds = self.popup_state.config.popup_settings.idle_timeout_seconds.unwrap_or(60);
+            let idle_time = self.last_interaction_time.elapsed().as_secs();
+            
+            if idle_time >= timeout_seconds {
+                // Close command editor if open
+                if self.command_editor.visible {
+                    self.command_editor.hide();
+                }
+                // Close dialog if open  
+                if self.dialog.visible {
+                    self.dialog.hide();
+                }
+                // Exit the application
+                process::exit(0);
+            }
+        }
             
         // For idle state, request slower repaints to reduce CPU usage
         if !has_input && !has_active_ui && self.frame_count >= 10 {

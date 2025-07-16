@@ -129,7 +129,7 @@ pub enum MarkdownActionStrategy {
 #[cfg(test)]
 mod tests {
     use super::*;
-    use crate::core::config::LauncherSettings;
+    use crate::core::config::{LauncherSettings, PopupSettings};
     
     fn create_test_config(vault_path: &str, vault_name: &str) -> Config {
         Config {
@@ -138,7 +138,22 @@ mod tests {
                 obsidian_vault_name: Some(vault_name.to_string()),
                 ..Default::default()
             }),
-            ..Default::default()
+            popup_settings: PopupSettings {
+                max_rows: 10,
+                max_columns: 1,
+                debug_log: None,
+                verbose_logging: None,
+                debug_scanner: None,
+                listed_actions: None,
+                merge_similar: false,
+                word_separators: " ._-".to_string(),
+                scan_interval_seconds: None,
+                idle_timeout_seconds: None,
+            },
+            functions: None,
+            markdown_roots: None,
+            grabber_rules: None,
+            keybindings: None,
         }
     }
     

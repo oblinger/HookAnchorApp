@@ -11,6 +11,7 @@ fn test_alias_replacement_logic() {
             command: "gh".to_string(),
             action: "alias".to_string(),
             arg: "url https://github.com".to_string(),
+            flags: String::new(),
             full_line: "gh : alias url https://github.com".to_string(),
         },
         Command {
@@ -18,6 +19,7 @@ fn test_alias_replacement_logic() {
             command: "home".to_string(),
             action: "alias".to_string(),
             arg: "folder /Users/testuser".to_string(),
+            flags: String::new(),
             full_line: "home : alias folder /Users/testuser".to_string(),
         },
         Command {
@@ -25,6 +27,7 @@ fn test_alias_replacement_logic() {
             command: "github".to_string(),
             action: "url".to_string(),
             arg: "https://github.com".to_string(),
+            flags: String::new(),
             full_line: "github : url https://github.com".to_string(),
         },
     ];

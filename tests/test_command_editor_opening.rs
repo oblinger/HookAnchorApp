@@ -11,6 +11,7 @@ fn test_exact_match_logic() {
             command: "Test Command".to_string(),
             action: "app".to_string(),
             arg: "TestApp".to_string(),
+            flags: String::new(),
             full_line: "Test Command : app TestApp".to_string(),
         },
         Command {
@@ -18,6 +19,7 @@ fn test_exact_match_logic() {
             command: "Another Command".to_string(),
             action: "url".to_string(),
             arg: "https://example.com".to_string(),
+            flags: String::new(),
             full_line: "Another Command : url https://example.com".to_string(),
         },
     ];

@@ -1,4 +1,4 @@
-use hookanchor::{load_commands, filter_commands, merge_similar_commands, get_current_submenu_prefix, split_commands};
+use hookanchor::{load_commands, filter_commands, merge_similar_commands, get_current_submenu_prefix, split_commands, load_config};
 
 #[test]
 fn debug_financial_model_merging() {
@@ -21,7 +21,8 @@ fn debug_financial_model_merging() {
     // Test merging just these commands
     let financial_command_vec: Vec<_> = financial_commands.iter().map(|&c| c.clone()).collect();
     println!("\nTesting merge_similar_commands on just Financial Model commands:");
-    let merged_financial = merge_similar_commands(&financial_command_vec, "fin");
+    let config = load_config();
+    let merged_financial = merge_similar_commands(financial_command_vec, &config);
     
     println!("After merging Financial Model commands:");
     for cmd in &merged_financial {
@@ -31,10 +32,15 @@ fn debug_financial_model_merging() {
     // Now test what happens in full submenu scenario
     println!("\n=== Full Submenu Scenario ===");
     
-    if let Some(menu_prefix) = get_current_submenu_prefix(&filtered, "fin") {
+    if let Some(menu_prefix) = get_current_submenu_prefix("fin") {
         println!("Submenu prefix: '{}'", menu_prefix);
         
-        let (inside_menu, outside_menu) = split_commands(&filtered, &menu_prefix);
+        let result = split_commands(&filtered, "fin ", " ._-");
+        let separator_index = result.iter().position(|c| c.action == "separator");
+        
+        if let Some(sep_idx) = separator_index {
+            let inside_menu = &result[..sep_idx];
+            let outside_menu = &result[sep_idx + 1..];
         
         // Look for Financial Model commands in outside menu
         println!("\nFinancial Model commands in outside menu:");
@@ -44,9 +50,9 @@ fn debug_financial_model_merging() {
             }
         }
         
-        // Apply merging to outside menu
-        println!("\nAfter merging outside menu:");
-        let merged_outside = merge_similar_commands(&outside_menu, "fin");
+            // Apply merging to outside menu
+            println!("\nAfter merging outside menu:");
+            let merged_outside = merge_similar_commands(outside_menu.to_vec(), &config);
         
         println!("Financial Model commands after merging outside menu:");
         for cmd in &merged_outside {
@@ -61,9 +67,10 @@ fn debug_financial_model_merging() {
         }
         
         // Check total counts
-        println!("\nCounts:");
-        println!("  Inside menu: {}", inside_menu.len());
-        println!("  Outside menu: {}", outside_menu.len());
-        println!("  Merged outside: {}", merged_outside.len());
+            println!("\nCounts:");
+            println!("  Inside menu: {}", inside_menu.len());
+            println!("  Outside menu: {}", outside_menu.len());
+            println!("  Merged outside: {}", merged_outside.len());
+        }
     }
 }
