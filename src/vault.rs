@@ -2,6 +2,11 @@
 //! 
 //! This module provides shared logic for determining if files are within
 //! the Obsidian vault and converting between absolute and relative paths.
+//! 
+//! Note: This module was created during the obs-to-markdown refactoring to provide
+//! unified Rust-based vault logic. Currently, the JavaScript actions in config.yaml
+//! implement their own vault detection. This module remains for future use when
+//! we might want to move vault logic from JavaScript to Rust.
 
 use std::path::{Path, PathBuf};
 use crate::{Config, utils};
