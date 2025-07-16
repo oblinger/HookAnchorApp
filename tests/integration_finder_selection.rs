@@ -1,10 +1,23 @@
 use std::process::Command;
+use std::sync::Mutex;
+
+// Global mutex to ensure tests run sequentially
+static FINDER_TEST_MUTEX: Mutex<()> = Mutex::new(());
 
 #[test]
 fn test_finder_file_selection_grabber() {
-    // Create a test file in a known location
-    let test_dir = "/tmp/hookanchor_test";
+    // Lock to ensure sequential execution, handle poisoned mutex
+    let _guard = match FINDER_TEST_MUTEX.lock() {
+        Ok(guard) => guard,
+        Err(poisoned) => poisoned.into_inner(),
+    };
+    
+    // Create a test file in a known location with unique name
+    let test_dir = "/tmp/hookanchor_test_file_selection";
     let test_file = format!("{}/test_file.txt", test_dir);
+    
+    // Clean up any previous test artifacts
+    std::fs::remove_dir_all(test_dir).ok();
     
     // Create test directory and file
     std::fs::create_dir_all(test_dir).expect("Failed to create test directory");
@@ -51,10 +64,15 @@ fn test_finder_file_selection_grabber() {
     // Check if the grabber captured the correct file
     assert!(grab_output.status.success(), "Grabber should succeed");
     
-    // The output should be "doc /tmp/hookanchor_test/test_file.txt"
-    let expected_output = format!("doc {}", test_file);
-    assert_eq!(stdout.trim(), expected_output, 
-        "Grabber should output 'doc {}' but got '{}'", test_file, stdout.trim());
+    // The output should be "doc /tmp/hookanchor_test/test_file.txt" or "doc /private/tmp/hookanchor_test/test_file.txt"
+    // On macOS, /tmp is a symlink to /private/tmp
+    let expected_output1 = format!("doc {}", test_file);
+    let expected_output2 = format!("doc {}", test_file.replace("/tmp/", "/private/tmp/"));
+    assert!(
+        stdout.trim() == expected_output1 || stdout.trim() == expected_output2,
+        "Grabber should output 'doc {}' or 'doc {}' but got '{}'", 
+        test_file, test_file.replace("/tmp/", "/private/tmp/"), stdout.trim()
+    );
     
     // Clean up
     std::fs::remove_dir_all(test_dir).ok();
@@ -62,8 +80,18 @@ fn test_finder_file_selection_grabber() {
 
 #[test] 
 fn test_finder_folder_selection_grabber() {
-    // Create a test directory
-    let test_dir = "/tmp/hookanchor_test_folder";
+    // Lock to ensure sequential execution, handle poisoned mutex
+    let _guard = match FINDER_TEST_MUTEX.lock() {
+        Ok(guard) => guard,
+        Err(poisoned) => poisoned.into_inner(),
+    };
+    
+    // Create a test directory with unique name
+    let test_dir = "/tmp/hookanchor_test_folder_selection";
+    
+    // Clean up any previous test artifacts
+    std::fs::remove_dir_all(test_dir).ok();
+    
     std::fs::create_dir_all(test_dir).expect("Failed to create test directory");
     
     // AppleScript to open and select the folder
@@ -106,10 +134,18 @@ fn test_finder_folder_selection_grabber() {
     
     assert!(grab_output.status.success(), "Grabber should succeed");
     
-    // The output should be "folder /tmp/hookanchor_test_folder"
-    let expected_output = format!("folder {}", test_dir);
-    assert_eq!(stdout.trim(), expected_output,
-        "Grabber should output 'folder {}' but got '{}'", test_dir, stdout.trim());
+    // The output should be "folder /tmp/hookanchor_test_folder" or "folder /private/tmp/hookanchor_test_folder"
+    // It might have a trailing slash
+    let expected_output1 = format!("folder {}", test_dir);
+    let expected_output2 = format!("folder {}/", test_dir);
+    let expected_output3 = format!("folder {}", test_dir.replace("/tmp/", "/private/tmp/"));
+    let expected_output4 = format!("folder {}/", test_dir.replace("/tmp/", "/private/tmp/"));
+    
+    assert!(
+        stdout.trim() == expected_output1 || stdout.trim() == expected_output2 || 
+        stdout.trim() == expected_output3 || stdout.trim() == expected_output4,
+        "Grabber should output folder path but got '{}'", stdout.trim()
+    );
     
     // Clean up
     std::fs::remove_dir_all(test_dir).ok();
@@ -117,16 +153,29 @@ fn test_finder_folder_selection_grabber() {
 
 #[test]
 fn test_finder_no_selection_grabber() {
+    // Lock to ensure sequential execution, handle poisoned mutex
+    let _guard = match FINDER_TEST_MUTEX.lock() {
+        Ok(guard) => guard,
+        Err(poisoned) => poisoned.into_inner(),
+    };
+    
+    // Create a test directory for this test
+    let test_dir = "/tmp/hookanchor_test_no_selection";
+    
+    // Clean up any previous test artifacts
+    std::fs::remove_dir_all(test_dir).ok();
+    std::fs::create_dir_all(test_dir).expect("Failed to create test directory");
+    
     // AppleScript to open Finder to a folder without selecting anything
-    let open_finder_script = r#"
+    let open_finder_script = format!(r#"
         tell application "Finder"
             activate
-            open folder POSIX file "/tmp"
+            open folder POSIX file "{}"
             delay 0.5
-            set selection to {}
+            set selection to {{}}
             delay 0.5
         end tell
-    "#;
+    "#, test_dir);
     
     // Execute the AppleScript
     let setup_output = Command::new("osascript")
@@ -158,7 +207,14 @@ fn test_finder_no_selection_grabber() {
     assert!(grab_output.status.success(), "Grabber should succeed");
     
     // When no selection, it should grab the current folder
-    let expected_output = "folder /tmp/";
-    assert_eq!(stdout.trim(), expected_output,
-        "Grabber should output 'folder /tmp/' when no selection, but got '{}'", stdout.trim());
+    let expected_output1 = format!("folder {}/", test_dir);
+    let expected_output2 = format!("folder {}/", test_dir.replace("/tmp/", "/private/tmp/"));
+    assert!(
+        stdout.trim() == expected_output1 || stdout.trim() == expected_output2,
+        "Grabber should output '{}' or '{}' when no selection, but got '{}'", 
+        expected_output1, expected_output2, stdout.trim()
+    );
+    
+    // Clean up
+    std::fs::remove_dir_all(test_dir).ok();
 }

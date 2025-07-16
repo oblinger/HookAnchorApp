@@ -65,7 +65,7 @@ fn test_hook_url_does_not_open_popup() {
         .expect("Failed to read log file");
     
     // Find log entries after the test started
-    let new_entries: Vec<&str> = log_content
+    let _new_entries: Vec<&str> = log_content
         .lines()
         .skip_while(|line| {
             // Skip lines until we find entries after our test started

@@ -62,7 +62,14 @@ for test_file in "$TESTS_DIR"/integration_*.rs; do
         echo "────────────────────────────────────────"
         
         # Run cargo test with the test name
-        if cargo test --test "$test_name"; then
+        # Use single threading for Finder tests to prevent conflicts
+        if [[ "$test_name" == *"finder"* ]]; then
+            TEST_CMD="cargo test --test $test_name -- --test-threads=1"
+        else
+            TEST_CMD="cargo test --test $test_name"
+        fi
+        
+        if $TEST_CMD; then
             echo "✅ $test_name: PASSED"
         else
             echo "❌ $test_name: FAILED"
