@@ -1,7 +1,7 @@
 #[cfg(test)]
 mod merge_tests {
     use super::super::*;
-    use crate::core::config::{Config, PopupSettings};
+    use crate::core::config::{Config, PopupSettings, LauncherSettings, ScannerSettings};
 
     fn create_test_config(merge_enabled: bool) -> Config {
         Config {
@@ -16,8 +16,10 @@ mod merge_tests {
                 debug_scanner: None,
                 verbose_logging: None,
                 idle_timeout_seconds: None,
+                countdown_seconds: Some(5),
             },
-            launcher_settings: None,
+            launcher_settings: Some(LauncherSettings::default()),
+            scanner_settings: Some(ScannerSettings::default()),
             functions: None,
             markdown_roots: None,
             grabber_rules: None,

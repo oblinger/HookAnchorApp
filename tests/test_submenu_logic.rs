@@ -1,4 +1,4 @@
-use hookanchor::core::config::{Config, PopupSettings};
+use hookanchor::core::config::{Config, PopupSettings, LauncherSettings, ScannerSettings};
 use hookanchor::core::commands::{
     Command,
     get_current_submenu_prefix_from_commands, 
@@ -23,8 +23,10 @@ mod submenu_tests {
                 word_separators: " ._-".to_string(),
                 scan_interval_seconds: None,
                 idle_timeout_seconds: None,
+                countdown_seconds: Some(5),
             },
-            launcher_settings: None,
+            launcher_settings: Some(LauncherSettings::default()),
+            scanner_settings: Some(ScannerSettings::default()),
             functions: None,
             markdown_roots: None,
             grabber_rules: None,

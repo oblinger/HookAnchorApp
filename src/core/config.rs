@@ -100,6 +100,38 @@ impl Default for ScannerSettings {
     }
 }
 
+impl Default for PopupSettings {
+    fn default() -> Self {
+        PopupSettings {
+            max_rows: 20,
+            max_columns: 3,
+            debug_log: Some("~/.anchor.log".to_string()),
+            verbose_logging: Some(false),
+            debug_scanner: Some(true),
+            listed_actions: Some("app,url,folder,cmd,chrome,anchor".to_string()),
+            merge_similar: true,
+            word_separators: " ._-".to_string(),
+            scan_interval_seconds: Some(10),
+            idle_timeout_seconds: Some(60),
+            countdown_seconds: Some(5),
+        }
+    }
+}
+
+impl Default for Config {
+    fn default() -> Self {
+        Config {
+            popup_settings: PopupSettings::default(),
+            launcher_settings: Some(LauncherSettings::default()),
+            scanner_settings: Some(ScannerSettings::default()),
+            functions: None,
+            markdown_roots: None,
+            grabber_rules: None,
+            keybindings: None,
+        }
+    }
+}
+
 /// Copies the default config file to the user's config directory
 fn copy_default_config(target_path: &Path) -> Result<(), std::io::Error> {
     // First try to find default config relative to the executable
@@ -151,23 +183,6 @@ fn copy_default_config(target_path: &Path) -> Result<(), std::io::Error> {
     ))
 }
 
-impl Default for PopupSettings {
-    fn default() -> Self {
-        PopupSettings {
-            max_rows: 10,
-            max_columns: 1,
-            debug_log: None,
-            verbose_logging: Some(false), // Default to disabled
-            debug_scanner: Some(true), // Default to enabled
-            listed_actions: Some("app,url,folder,cmd,chrome,anchor".to_string()),
-            merge_similar: true,
-            word_separators: " ._-".to_string(),
-            scan_interval_seconds: Some(10),
-            idle_timeout_seconds: Some(60), // Default to 60 seconds
-            countdown_seconds: Some(5), // Default to 5 seconds
-        }
-    }
-}
 
 /// Returns the path to the YAML config file
 pub fn get_config_file_path() -> PathBuf {

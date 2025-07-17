@@ -53,3 +53,6 @@ image = "0.24"
 [build-dependencies]
 chrono = "0.4"
 serde_json = "1.0"
+
+[dev-dependencies]
+tempfile = "3.0"

@@ -174,7 +174,12 @@ impl Command {
     
     /// Updates the full_line field to reflect current command state in new format
     pub fn update_full_line(&mut self) {
-        self.full_line = self.to_new_format();
+        let new_line = self.to_new_format();
+        if new_line != self.full_line {
+            crate::utils::debug_log("AUTO_UPDATE", &format!("Updated full_line for '{}': '{}' -> '{}'", 
+                self.command, self.full_line, new_line));
+            self.full_line = new_line;
+        }
     }
     
     /// Converts the command to new format string
@@ -275,6 +280,11 @@ fn create_patches_hashmap(commands: &[Command]) -> HashMap<String, Patch> {
 /// Returns None if no patch can be inferred
 /// Always analyzes the command regardless of any current patch value
 pub fn infer_patch(command: &Command, patches: &HashMap<String, Patch>) -> Option<String> {
+    // Skip orphan anchor commands - they should always keep their "orphans" patch
+    if command.patch == "orphans" && command.flags.contains('A') {
+        return None;
+    }
+    
     // Method 1: Alias commands inherit patch from their target (HIGHEST PRIORITY)
     if command.action == "alias" {
         if let Some(target_patch) = infer_patch_from_alias_target(command, patches) {
@@ -290,30 +300,62 @@ pub fn infer_patch(command: &Command, patches: &HashMap<String, Patch>) -> Optio
         }
     }
     
-    // Method 3: Check if first word matches any patch name
-    if let Some(space_idx) = command.command.find(' ') {
-        let first_word = &command.command[..space_idx];
-        let first_word_lower = first_word.to_lowercase();
+    // Method 3: Check for progressive word matches, preferring longer matches
+    // Try to find the longest possible patch name that matches the beginning of the command
+    let words: Vec<&str> = command.command.split_whitespace().collect();
+    let mut best_match: Option<String> = None;
+    let mut best_match_length = 0;
+    
+    // Try progressively longer prefixes (from longest to shortest to prefer specificity)
+    for word_count in (1..=words.len()).rev() {
+        let prefix = words[..word_count].join(" ");
+        let prefix_lower = prefix.to_lowercase();
         
         // Look for exact patch name match (case-insensitive)
-        if let Some(patch) = patches.get(&first_word_lower) {
+        if let Some(patch) = patches.get(&prefix_lower) {
             // Check if this would create a self-assignment (command assigned to its own patch)
             let proposed_patch = if let Some(ref linked_cmd) = patch.linked_command {
-                if let Some(linked_space_idx) = linked_cmd.command.find(' ') {
-                    linked_cmd.command[..linked_space_idx].to_string()
-                } else {
-                    linked_cmd.command.clone()
-                }
+                linked_cmd.command.clone()
             } else {
-                first_word.to_string()
+                prefix.clone()
             };
             
             // Prevent self-assignment: don't assign a command to its own patch
             if proposed_patch.to_lowercase() != command.command.to_lowercase() {
-                return Some(proposed_patch);
+                // This is a valid match and longer than any previous match
+                if prefix.len() > best_match_length {
+                    best_match = Some(proposed_patch);
+                    best_match_length = prefix.len();
+                }
             }
-            // If it would be self-assignment, skip this method and try others
         }
+    }
+    
+    // If no exact match found, try to find patches that start with the command prefix
+    // This handles cases where command "2023 SV Patents" should match patch "2023 SV Patents markdown"
+    if best_match.is_none() {
+        let command_lower = command.command.to_lowercase();
+        
+        for (patch_key, patch) in patches {
+            if patch_key.starts_with(&command_lower) && patch_key != &command_lower {
+                if let Some(ref linked_cmd) = patch.linked_command {
+                    let proposed_patch = linked_cmd.command.clone();
+                    
+                    // Prevent self-assignment
+                    if proposed_patch.to_lowercase() != command.command.to_lowercase() {
+                        // Use the original command name as the patch (without the suffix)
+                        // For "2023 SV Patents" matching "2023 sv patents markdown", return "2023 SV Patents"
+                        best_match = Some(command.command.clone());
+                        break;
+                    }
+                }
+            }
+        }
+    }
+    
+    // Return the best (longest) match if found
+    if let Some(match_result) = best_match {
+        return Some(match_result);
     }
     
     // Method 4: Default patch rules
@@ -639,6 +681,75 @@ pub fn auto_assign_patches(commands: &mut Vec<Command>) {
     }
 }
 
+/// Determines if replacing current_patch with inferred_patch would be a degradation
+/// 
+/// This prevents --infer-all from replacing specific, well-organized patches with generic ones.
+/// 
+/// # Arguments
+/// * `current_patch` - The existing patch on the command
+/// * `inferred_patch` - The patch that inference wants to assign
+/// 
+/// # Returns
+/// * `true` if this would be a degradation (should be prevented)
+/// * `false` if this would be an improvement or neutral change
+fn is_patch_degradation(current_patch: &str, inferred_patch: &str) -> bool {
+    // List of generic/low-quality patches that shouldn't replace specific ones
+    let generic_patches = [
+        "old", "Old", "OLD",
+        "misc", "Misc", "MISC", 
+        "other", "Other", "OTHER",
+        "test", "Test", "TEST",
+        "temp", "Temp", "TEMP",
+        "archive", "Archive", "ARCHIVE",
+        "tmp", "Tmp", "TMP"
+    ];
+    
+    // If the inferred patch is generic, don't replace a non-generic current patch
+    if generic_patches.contains(&inferred_patch) && !generic_patches.contains(&current_patch) {
+        return true;
+    }
+    
+    // If current patch contains a year (2000-2030) and inferred doesn't, it's likely a degradation
+    let current_has_year = current_patch.chars()
+        .collect::<Vec<char>>()
+        .windows(4)
+        .any(|window| {
+            let year_str: String = window.iter().collect();
+            if let Ok(year) = year_str.parse::<u32>() {
+                year >= 2000 && year <= 2030
+            } else {
+                false
+            }
+        });
+    
+    let inferred_has_year = inferred_patch.chars()
+        .collect::<Vec<char>>()
+        .windows(4)
+        .any(|window| {
+            let year_str: String = window.iter().collect();
+            if let Ok(year) = year_str.parse::<u32>() {
+                year >= 2000 && year <= 2030
+            } else {
+                false
+            }
+        });
+    
+    if current_has_year && !inferred_has_year {
+        return true;
+    }
+    
+    // If current patch is significantly longer and more specific, prefer it
+    if current_patch.len() > inferred_patch.len() + 5 {
+        // Only consider it degradation if the current patch has multiple words/parts
+        if current_patch.contains(' ') || current_patch.contains('-') || current_patch.contains('_') {
+            return true;
+        }
+    }
+    
+    // Not a degradation
+    false
+}
+
 /// Run patch inference on commands with configurable behavior
 /// 
 /// # Arguments
@@ -667,6 +778,11 @@ pub fn run_patch_inference(
             continue;
         }
         
+        // Skip orphan anchor commands - they should always keep their "orphans" patch
+        if command.patch == "orphans" && command.flags.contains('A') {
+            continue;
+        }
+        
         // Check if we should process this command based on overwrite_patch setting
         let should_process = overwrite_patch || command.patch.is_empty();
         
@@ -677,6 +793,14 @@ pub fn run_patch_inference(
                     continue;
                 }
                 
+                // ANTI-DEGRADATION PROTECTION: Don't replace specific patches with generic ones
+                if !command.patch.is_empty() && overwrite_patch {
+                    if is_patch_degradation(&command.patch, &inferred_patch) {
+                        // Skip this change - would degrade patch quality
+                        continue;
+                    }
+                }
+                
                 let old_patch_display = if command.patch.is_empty() { "(empty)".to_string() } else { command.patch.clone() };
                 
                 // Apply changes based on the overwrite_patch setting
@@ -684,10 +808,8 @@ pub fn run_patch_inference(
                 // In --infer-all mode (overwrite_patch = true), overwrite existing patches too
                 if apply_changes && (overwrite_patch || command.patch.is_empty()) {
                     command.patch = inferred_patch.clone();
-                    if crate::core::config::load_config().popup_settings.debug_log.is_some() {
-                        eprintln!("Switched command '{}' patch: {} -> {}", 
-                                command.command, old_patch_display, inferred_patch);
-                    }
+                    crate::utils::debug_log("AUTO_PATCH", &format!("Inferred patch for '{}': {} -> {}", 
+                        command.command, old_patch_display, inferred_patch));
                 }
                 
                 if print_to_stdout {
@@ -708,6 +830,71 @@ pub fn run_patch_inference(
     (patches_assigned, new_patches_to_add)
 }
 
+/// Creates a fast lookup map from command names to their patch references
+/// This provides O(1) lookup for finding the patch associated with a command
+fn create_command_to_patch_map(commands: &[Command], patches: &HashMap<String, Patch>) -> HashMap<String, String> {
+    let mut command_to_patch_map = HashMap::new();
+    
+    for command in commands {
+        if !command.patch.is_empty() {
+            let patch_key = command.patch.to_lowercase();
+            if patches.contains_key(&patch_key) {
+                command_to_patch_map.insert(command.command.clone(), command.patch.clone());
+            }
+        }
+    }
+    
+    command_to_patch_map
+}
+
+/// Gets the patch for a command using fast lookup
+/// Returns None if the command has no patch or the patch doesn't exist
+pub fn get_patch_for_command<'a>(command_name: &str, patches: &'a HashMap<String, Patch>) -> Option<&'a Patch> {
+    // For now, fallback to the original lookup method
+    // In a full implementation, this would use a cached lookup map
+    patches.get(&command_name.to_lowercase())
+        .or_else(|| {
+            // Try to find by command name if not found by direct lookup
+            patches.values()
+                .find(|patch| patch.linked_command.as_ref()
+                    .map_or(false, |cmd| cmd.command.to_lowercase() == command_name.to_lowercase()))
+        })
+}
+
+/// Normalizes patch case in commands to match the case of their anchor commands
+/// Returns the number of patches that were normalized
+fn normalize_patch_case(commands: &mut [Command], patches: &HashMap<String, Patch>) -> usize {
+    let mut normalized_count = 0;
+    
+    for command in commands {
+        if !command.patch.is_empty() {
+            let patch_key = command.patch.to_lowercase();
+            
+            // Find the corresponding patch
+            if let Some(patch) = patches.get(&patch_key) {
+                // Check if the patch has a linked command to get the proper case
+                if let Some(ref linked_cmd) = patch.linked_command {
+                    // Get the properly cased command name from the anchor
+                    let proper_case = linked_cmd.command.clone();
+                    
+                    // IMPORTANT: Only normalize if the current patch is actually incorrect case
+                    // Don't shorten longer patch names to shorter anchor names
+                    // This prevents "2023 SV Patents" from being normalized to "2023"
+                    if command.patch != proper_case && command.patch.to_lowercase() == proper_case.to_lowercase() {
+                        crate::utils::debug_log("AUTO_NORMALIZE", &format!("Normalized patch case for '{}': '{}' -> '{}'", 
+                            command.command, command.patch, proper_case));
+                        command.patch = proper_case;
+                        command.update_full_line();
+                        normalized_count += 1;
+                    }
+                }
+            }
+        }
+    }
+    
+    normalized_count
+}
+
 /// Find patch names that are referenced by commands but don't have corresponding anchor commands
 pub fn find_orphan_patches(patches: &HashMap<String, Patch>, commands: &[Command]) -> Vec<String> {
     let mut orphan_patches = Vec::new();
@@ -722,8 +909,31 @@ pub fn find_orphan_patches(patches: &HashMap<String, Patch>, commands: &[Command
                 // Check if we haven't already marked this patch as orphaned (case-insensitive)
                 let already_exists = orphan_patches.iter().any(|existing: &String| existing.to_lowercase() == patch_name_lower);
                 if !already_exists {
-                    // Use the original mixed case from the command
-                    orphan_patches.push(command.patch.clone());
+                    // IMPORTANT: Don't create shorter patches when longer, more specific ones exist
+                    // Check if there's already a longer patch that contains this one (in orphan_patches)
+                    let should_skip_orphan = orphan_patches.iter().any(|existing| {
+                        let existing_lower = existing.to_lowercase();
+                        // Skip if existing patch starts with this patch name + space
+                        existing_lower.starts_with(&format!("{} ", patch_name_lower))
+                    });
+                    
+                    // Also check if there's already a longer patch in the existing patches hashmap
+                    let should_skip_existing = patches.iter().any(|(key, _)| {
+                        key.starts_with(&format!("{} ", patch_name_lower))
+                    });
+                    
+                    if !should_skip_orphan && !should_skip_existing {
+                        // Also check if this patch would make existing shorter patches redundant
+                        let current_patch_lower = command.patch.to_lowercase();
+                        orphan_patches.retain(|existing| {
+                            let existing_lower = existing.to_lowercase();
+                            // Remove existing patch if this one is a longer version
+                            !current_patch_lower.starts_with(&format!("{} ", existing_lower))
+                        });
+                        
+                        // Use the original mixed case from the command
+                        orphan_patches.push(command.patch.clone());
+                    }
                 }
             }
         }
@@ -772,7 +982,7 @@ fn ensure_orphans_root_patch(
     let orphans_dir = Path::new(&expanded_path);
     if !orphans_dir.exists() {
         fs::create_dir_all(orphans_dir)?;
-        eprintln!("Created orphans root directory: {}", orphans_dir.display());
+        crate::utils::debug_log("AUTO_ORPHAN", &format!("Created orphans root directory: {}", orphans_dir.display()));
     }
     
     // Create the orphans.md file
@@ -780,7 +990,7 @@ fn ensure_orphans_root_patch(
     if !orphans_file.exists() {
         let markdown_content = "# Orphans\n\nThis is the root anchor for all orphaned patches.\n\nAll patches without explicit anchors are grouped under this root.\n";
         fs::write(&orphans_file, markdown_content)?;
-        eprintln!("Created orphans root anchor file: {}", orphans_file.display());
+        crate::utils::debug_log("AUTO_ORPHAN", &format!("Created orphans root anchor file: {}", orphans_file.display()));
     }
     
     // Create the orphans anchor command (with no patch - this is the root)
@@ -802,7 +1012,7 @@ fn ensure_orphans_root_patch(
         linked_command: Some(orphans_command),
     });
     
-    eprintln!("Created orphans root patch and command");
+    crate::utils::debug_log("AUTO_ORPHAN", "Created orphans root patch and command");
     Ok(())
 }
 
@@ -837,7 +1047,7 @@ pub fn create_orphan_anchors(
         // Create the directory if it doesn't exist
         if !patch_folder.exists() {
             fs::create_dir_all(&patch_folder)?;
-            eprintln!("Created orphan patch folder: {}", patch_folder.display());
+            crate::utils::debug_log("AUTO_ORPHAN", &format!("Created orphan patch folder: {}", patch_folder.display()));
         }
         
         // Create the markdown file
@@ -850,7 +1060,7 @@ pub fn create_orphan_anchors(
             );
             
             fs::write(&markdown_file, markdown_content)?;
-            eprintln!("Created orphan anchor file: {}", markdown_file.display());
+            crate::utils::debug_log("AUTO_ORPHAN", &format!("Created orphan anchor file: {}", markdown_file.display()));
         }
         
         // Create the anchor command - all orphan anchors use "orphans" as their patch
@@ -867,7 +1077,7 @@ pub fn create_orphan_anchors(
         commands.push(anchor_command);
         created_count += 1;
         
-        eprintln!("Created orphan anchor command for patch: {}", patch_name);
+        crate::utils::debug_log("AUTO_ORPHAN", &format!("Created orphan anchor command for patch: {}", patch_name));
     }
     
     Ok(created_count)
@@ -919,6 +1129,18 @@ pub fn load_data() -> (crate::core::config::Config, Vec<Command>, HashMap<String
         }
     }
     
+    // Step 4.5: Create fast lookup structure for command-to-patch mapping
+    let command_to_patch_map = create_command_to_patch_map(&commands, &patches);
+    
+    // Log the creation of the fast lookup structure
+    eprintln!("Created fast lookup map for {} commands", command_to_patch_map.len());
+    
+    // Step 4.6: Normalize patch case to match anchor command case
+    let normalized_patches = normalize_patch_case(&mut commands, &patches);
+    if normalized_patches > 0 {
+        eprintln!("Normalized case for {} patch references", normalized_patches);
+    }
+    
     // Step 5: Create orphan anchor files and commands for patches without anchors
     let orphan_patches = find_orphan_patches(&patches, &commands);
     let orphans_created = if !orphan_patches.is_empty() {
@@ -938,7 +1160,22 @@ pub fn load_data() -> (crate::core::config::Config, Vec<Command>, HashMap<String
     };
     
     // Step 6: Save commands if any changes were made
-    if patches_assigned > 0 || orphans_created > 0 {
+    if patches_assigned > 0 || orphans_created > 0 || normalized_patches > 0 {
+        crate::utils::debug_log("SAVE_DEBUG", &format!("Saving commands after changes - patches_assigned: {}, orphans_created: {}, normalized_patches: {}", 
+            patches_assigned, orphans_created, normalized_patches));
+        
+        // Debug: Check a few commands before saving
+        for (i, cmd) in commands.iter().enumerate() {
+            if i < 5 {
+                crate::utils::debug_log("SAVE_DEBUG", &format!("Command {} before save: patch='{}', command='{}', action='{}'", 
+                    i, cmd.patch, cmd.command, cmd.action));
+            }
+            if cmd.command == "Patents" {
+                crate::utils::debug_log("SAVE_DEBUG", &format!("Patents command before save: patch='{}', command='{}', action='{}'", 
+                    cmd.patch, cmd.command, cmd.action));
+            }
+        }
+        
         if let Err(e) = save_commands_to_file(&commands) {
             eprintln!("Warning: Failed to save commands after changes: {}", e);
         }
@@ -966,7 +1203,19 @@ fn load_commands_raw() -> Vec<Command> {
                 }
                 
                 match parse_command_line(line) {
-                    Ok(command) => commands.push(command),
+                    Ok(command) => {
+                        // Debug: Log the first few commands to see if patches are being preserved
+                        if line_num < 5 {
+                            crate::utils::debug_log("PARSE_DEBUG", &format!("Parsed line {}: patch='{}', command='{}', full_line='{}'", 
+                                line_num + 1, command.patch, command.command, command.full_line));
+                        }
+                        // Also log the Patents command specifically
+                        if command.command == "Patents" {
+                            crate::utils::debug_log("PARSE_DEBUG", &format!("Found Patents command: patch='{}', command='{}', action='{}'", 
+                                command.patch, command.command, command.action));
+                        }
+                        commands.push(command);
+                    },
                     Err(e) => eprintln!("Warning: Failed to parse line {} in commands.txt: {} - Line: '{}'", 
                         line_num + 1, e, line),
                 }
@@ -1063,6 +1312,72 @@ pub fn parse_command_line(line: &str) -> Result<Command, String> {
 }
 
 /// Saves commands to file
+/// Deduplicates commands by keeping the best version of each command
+/// Priority: commands with patches > commands without patches
+/// Then by flags: commands with flags > commands without flags
+fn deduplicate_commands(commands: Vec<Command>) -> Vec<Command> {
+    use std::collections::HashMap;
+    
+    let original_count = commands.len();
+    let mut best_commands: HashMap<(String, String, String), Command> = HashMap::new();
+    
+    for command in commands {
+        // Use (command_name, action, arg) as key to identify truly identical commands
+        // This preserves different files with same base name but different paths
+        let key = (command.command.clone(), command.action.clone(), command.arg.clone());
+        
+        match best_commands.get(&key) {
+            Some(existing) => {
+                // Keep the better command based on priority
+                if is_better_command(&command, existing) {
+                    crate::utils::debug_log("AUTO_DEDUP", &format!("Replacing '{}' (patch:'{}' flags:'{}') with better version (patch:'{}' flags:'{}')", 
+                        command.command, existing.patch, existing.flags, command.patch, command.flags));
+                    best_commands.insert(key, command);
+                } else {
+                    crate::utils::debug_log("AUTO_DEDUP", &format!("Keeping existing '{}' (patch:'{}' flags:'{}') over (patch:'{}' flags:'{}')", 
+                        command.command, existing.patch, existing.flags, command.patch, command.flags));
+                }
+            }
+            None => {
+                best_commands.insert(key, command);
+            }
+        }
+    }
+    
+    let deduplicated_commands = best_commands.into_values().collect::<Vec<_>>();
+    let removed_count = original_count - deduplicated_commands.len();
+    if removed_count > 0 {
+        crate::utils::debug_log("AUTO_DEDUP", &format!("Removed {} duplicate commands ({} -> {})", removed_count, original_count, deduplicated_commands.len()));
+    }
+    deduplicated_commands
+}
+
+/// Determines if candidate is better than current command
+/// Priority: 1. Has patch > no patch, 2. Has flags > no flags, 3. Longer arg > shorter arg
+fn is_better_command(candidate: &Command, current: &Command) -> bool {
+    // Priority 1: Commands with patches are better than commands without patches
+    match (candidate.patch.is_empty(), current.patch.is_empty()) {
+        (false, true) => return true,  // candidate has patch, current doesn't
+        (true, false) => return false, // current has patch, candidate doesn't
+        _ => {} // Both have patches or both don't, continue to next criteria
+    }
+    
+    // Priority 2: Commands with flags are better than commands without flags
+    match (candidate.flags.is_empty(), current.flags.is_empty()) {
+        (false, true) => return true,  // candidate has flags, current doesn't
+        (true, false) => return false, // current has flags, candidate doesn't
+        _ => {} // Both have flags or both don't, continue to next criteria
+    }
+    
+    // Priority 3: Commands with longer args (more complete paths) are better
+    if candidate.arg.len() > current.arg.len() {
+        return true;
+    }
+    
+    // Default: keep current
+    false
+}
+
 pub fn save_commands_to_file(commands: &[Command]) -> Result<(), Box<dyn std::error::Error>> {
     // Create backup before saving
     backup_commands_file()?;
@@ -1082,6 +1397,11 @@ pub fn save_commands_to_file(commands: &[Command]) -> Result<(), Box<dyn std::er
         }
     }
     
+    // Deduplicate commands by keeping the one with the most complete information
+    // Priority: commands with patches > commands without patches
+    // Then by flags: commands with flags > commands without flags
+    updated_commands = deduplicate_commands(updated_commands);
+    
     // Sort commands by patch string first, then by command name before writing to file
     updated_commands.sort_by(|a, b| {
         match a.patch.cmp(&b.patch) {
@@ -1090,6 +1410,37 @@ pub fn save_commands_to_file(commands: &[Command]) -> Result<(), Box<dyn std::er
         }
     });
     
+    // Debug: Check what patches look like right before serialization
+    let mut empty_patch_count = 0;
+    for cmd in &updated_commands {
+        if cmd.patch.is_empty() {
+            empty_patch_count += 1;
+        }
+        // Log Patents command specifically
+        if cmd.command == "Patents" {
+            crate::utils::debug_log("SAVE_DEBUG", &format!("Patents command during save: patch='{}', to_new_format='{}'", 
+                cmd.patch, cmd.to_new_format()));
+        }
+    }
+    crate::utils::debug_log("SAVE_DEBUG", &format!("About to save {} commands, {} have empty patches", 
+        updated_commands.len(), empty_patch_count));
+
+    // SAFETY CHECKS: Prevent saving corrupted data
+    // Based on July 15th healthy baseline: 3076 total commands, 67 without patches
+    if updated_commands.len() > 3500 {
+        let error_msg = format!("CORRUPTION DETECTED: Attempting to save {} commands (> 3500 limit). This indicates command inflation. Save operation CANCELLED.", updated_commands.len());
+        eprintln!("{}", error_msg);
+        crate::utils::debug_log("CORRUPTION", &error_msg);
+        return Err("Command count exceeds safety limit".into());
+    }
+    
+    if empty_patch_count > 200 {
+        let error_msg = format!("CORRUPTION DETECTED: Attempting to save {} commands with empty patches (> 200 limit). This indicates patch stripping. Save operation CANCELLED.", empty_patch_count);
+        eprintln!("{}", error_msg);
+        crate::utils::debug_log("CORRUPTION", &error_msg);
+        return Err("Empty patch count exceeds safety limit".into());
+    }
+    
     // Convert all commands to new format and join with newlines
     let contents = updated_commands.iter()
         .map(|cmd| cmd.to_new_format())
@@ -1097,6 +1448,7 @@ pub fn save_commands_to_file(commands: &[Command]) -> Result<(), Box<dyn std::er
         .join("\n");
     
     fs::write(&path, contents)?;
+    crate::utils::debug_log("AUTO_SAVE", &format!("Saved {} commands to {}", commands.len(), path.display()));
     Ok(())
 }
 

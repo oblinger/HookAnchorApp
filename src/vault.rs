@@ -129,7 +129,7 @@ pub enum MarkdownActionStrategy {
 #[cfg(test)]
 mod tests {
     use super::*;
-    use crate::core::config::{LauncherSettings, PopupSettings};
+    use crate::core::config::{LauncherSettings, PopupSettings, ScannerSettings};
     
     fn create_test_config(vault_path: &str, vault_name: &str) -> Config {
         Config {
@@ -149,7 +149,9 @@ mod tests {
                 word_separators: " ._-".to_string(),
                 scan_interval_seconds: None,
                 idle_timeout_seconds: None,
+                countdown_seconds: Some(5),
             },
+            scanner_settings: Some(ScannerSettings::default()),
             functions: None,
             markdown_roots: None,
             grabber_rules: None,
