@@ -16,6 +16,8 @@ pub struct Config {
     pub popup_settings: PopupSettings,
     /// Launcher behavior settings
     pub launcher_settings: Option<LauncherSettings>,
+    /// Scanner behavior settings
+    pub scanner_settings: Option<ScannerSettings>,
     /// Unified functions section (both simple and JavaScript)
     pub functions: Option<HashMap<String, serde_yaml::Value>>,
     /// Markdown scanning roots
@@ -79,6 +81,21 @@ impl Default for LauncherSettings {
             application_folder: Some("/Applications/HookAnchor.app".to_string()),
             obsidian_vault_path: Some("~/Documents".to_string()),
             flip_focus: Some(false),
+        }
+    }
+}
+
+/// Scanner settings section of the configuration file
+#[derive(Debug, Clone, Serialize, Deserialize)]
+pub struct ScannerSettings {
+    /// Path where orphan anchor files are created (default: ~/ob/kmr/SYS/Closet/Orphans)
+    pub orphans_path: Option<String>,
+}
+
+impl Default for ScannerSettings {
+    fn default() -> Self {
+        ScannerSettings {
+            orphans_path: Some("/Users/oblinger/ob/kmr/SYS/Closet/Orphans".to_string()),
         }
     }
 }
@@ -271,6 +288,10 @@ fn load_legacy_config(contents: &str) -> Result<Config, Box<dyn std::error::Erro
     let grabber_rules = yaml.get("grabber_rules")
         .and_then(|v| serde_yaml::from_value(v.clone()).ok());
     
+    // Extract scanner_settings if it exists
+    let scanner_settings = yaml.get("scanner_settings")
+        .and_then(|v| serde_yaml::from_value(v.clone()).ok());
+    
     // Extract keybindings if it exists
     let keybindings = yaml.get("keybindings")
         .and_then(|v| serde_yaml::from_value(v.clone()).ok());
@@ -278,6 +299,7 @@ fn load_legacy_config(contents: &str) -> Result<Config, Box<dyn std::error::Erro
     Ok(Config {
         popup_settings,
         launcher_settings,
+        scanner_settings,
         functions,
         markdown_roots,
         grabber_rules,
@@ -290,6 +312,7 @@ fn create_default_config() -> Config {
     Config {
         popup_settings: PopupSettings::default(),
         launcher_settings: Some(LauncherSettings::default()),
+        scanner_settings: Some(ScannerSettings::default()),
         functions: Some(HashMap::new()),
         markdown_roots: Some(vec![]),
         grabber_rules: Some(vec![]),

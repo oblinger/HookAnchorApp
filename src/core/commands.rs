@@ -726,12 +726,98 @@ pub fn run_patch_inference(
     (patches_assigned, new_patches_to_add)
 }
 
+/// Find patches that don't have an associated anchor command
+pub fn find_orphan_patches(patches: &HashMap<String, Patch>, commands: &[Command]) -> Vec<String> {
+    let mut orphan_patches = Vec::new();
+    
+    for (patch_name, _patch) in patches {
+        // Check if there's any anchor command for this patch
+        let has_anchor = commands.iter().any(|cmd| {
+            cmd.action == "anchor" && cmd.patch.to_lowercase() == patch_name.to_lowercase()
+        });
+        
+        if !has_anchor {
+            orphan_patches.push(patch_name.clone());
+        }
+    }
+    
+    orphan_patches
+}
+
+/// Create orphan anchor files and commands for patches without anchors
+pub fn create_orphan_anchors(
+    config: &Config, 
+    orphan_patches: &[String], 
+    commands: &mut Vec<Command>
+) -> Result<usize, Box<dyn std::error::Error>> {
+    let orphans_path = config.scanner_settings
+        .as_ref()
+        .and_then(|s| s.orphans_path.as_ref())
+        .ok_or("orphans_path not configured")?;
+    
+    let mut created_count = 0;
+    
+    for patch_name in orphan_patches {
+        // Expand tilde in the path
+        let expanded_path = if orphans_path.starts_with("~/") {
+            if let Ok(home) = env::var("HOME") {
+                orphans_path.replace("~", &home)
+            } else {
+                orphans_path.clone()
+            }
+        } else {
+            orphans_path.clone()
+        };
+        
+        // Create the folder path for this patch
+        let patch_folder = Path::new(&expanded_path).join(patch_name);
+        
+        // Create the directory if it doesn't exist
+        if !patch_folder.exists() {
+            fs::create_dir_all(&patch_folder)?;
+            eprintln!("Created orphan patch folder: {}", patch_folder.display());
+        }
+        
+        // Create the markdown file
+        let markdown_file = patch_folder.join(format!("{}.md", patch_name));
+        
+        if !markdown_file.exists() {
+            let markdown_content = format!(
+                "# {}\n\nThis is an auto-generated anchor file for patch '{}'.\n\nAdd your content here.\n",
+                patch_name, patch_name
+            );
+            
+            fs::write(&markdown_file, markdown_content)?;
+            eprintln!("Created orphan anchor file: {}", markdown_file.display());
+        }
+        
+        // Create the anchor command
+        let anchor_command = Command {
+            patch: patch_name.clone(),
+            command: patch_name.clone(),
+            action: "anchor".to_string(),
+            arg: markdown_file.to_string_lossy().to_string(),
+            flags: "A".to_string(), // Auto-generated flag
+            full_line: format!("{} : anchor {}", patch_name, markdown_file.to_string_lossy()),
+        };
+        
+        // Add the command to the list
+        commands.push(anchor_command);
+        created_count += 1;
+        
+        eprintln!("Created orphan anchor command for patch: {}", patch_name);
+    }
+    
+    Ok(created_count)
+}
+
 /// Comprehensive data loading function that performs all necessary steps in order:
 /// 1. Loads config file
 /// 2. Loads commands from commands.txt file
 /// 3. Computes patch data structure (hashmap)
 /// 4. Infers patches for commands without patches
-/// 5. Saves commands if any patches were inferred
+/// 5. Creates orphan anchor files and commands for patches without anchors
+/// 6. Saves commands if any changes were made
 pub fn load_data() -> (crate::core::config::Config, Vec<Command>, HashMap<String, Patch>) {
     // Step 1: Load config
     let config = crate::core::config::load_config();
@@ -766,10 +852,28 @@ pub fn load_data() -> (crate::core::config::Config, Vec<Command>, HashMap<String
         }
     }
     
-    // Step 5: Save commands if any patches were inferred
-    if patches_assigned > 0 {
+    // Step 5: Create orphan anchor files and commands for patches without anchors
+    let orphan_patches = find_orphan_patches(&patches, &commands);
+    let orphans_created = if !orphan_patches.is_empty() {
+        eprintln!("Found {} orphan patches: {:?}", orphan_patches.len(), orphan_patches);
+        match create_orphan_anchors(&config, &orphan_patches, &mut commands) {
+            Ok(count) => {
+                eprintln!("Created {} orphan anchor files and commands", count);
+                count
+            }
+            Err(e) => {
+                eprintln!("Warning: Failed to create orphan anchors: {}", e);
+                0
+            }
+        }
+    } else {
+        0
+    };
+    
+    // Step 6: Save commands if any changes were made
+    if patches_assigned > 0 || orphans_created > 0 {
         if let Err(e) = save_commands_to_file(&commands) {
-            eprintln!("Warning: Failed to save commands after patch inference: {}", e);
+            eprintln!("Warning: Failed to save commands after changes: {}", e);
         }
     }
     
