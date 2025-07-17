@@ -662,6 +662,11 @@ pub fn run_patch_inference(
     let mut new_patches_to_add = Vec::new();
     
     for command in commands.iter_mut() {
+        // Skip the orphans root command - it should never have a patch
+        if command.command == "orphans" {
+            continue;
+        }
+        
         // Check if we should process this command based on overwrite_patch setting
         let should_process = overwrite_patch || command.patch.is_empty();
         
@@ -727,6 +732,80 @@ pub fn find_orphan_patches(patches: &HashMap<String, Patch>, commands: &[Command
     orphan_patches
 }
 
+/// Ensure the "orphans" root patch exists to prevent cycles in the patch graph
+/// This creates an "orphans" anchor with no patch (root of the graph)
+fn ensure_orphans_root_patch(
+    patches: &mut HashMap<String, Patch>,
+    commands: &mut Vec<Command>,
+    config: &Config
+) -> Result<(), Box<dyn std::error::Error>> {
+    let orphans_key = "orphans";
+    
+    // Check if orphans patch already exists
+    if let Some(orphans_patch) = patches.get_mut(orphans_key) {
+        // If it exists, remove its patch string to make it the root
+        if let Some(ref mut linked_cmd) = orphans_patch.linked_command {
+            linked_cmd.patch = String::new();
+            linked_cmd.update_full_line();
+        }
+        return Ok(());
+    }
+    
+    // Create orphans patch if it doesn't exist
+    let orphans_path = config.scanner_settings
+        .as_ref()
+        .and_then(|s| s.orphans_path.as_ref())
+        .ok_or("orphans_path not configured")?;
+    
+    // Expand tilde in the path
+    let expanded_path = if orphans_path.starts_with("~/") {
+        if let Ok(home) = env::var("HOME") {
+            orphans_path.replace("~", &home)
+        } else {
+            orphans_path.clone()
+        }
+    } else {
+        orphans_path.clone()
+    };
+    
+    // Create the orphans directory if it doesn't exist
+    let orphans_dir = Path::new(&expanded_path);
+    if !orphans_dir.exists() {
+        fs::create_dir_all(orphans_dir)?;
+        eprintln!("Created orphans root directory: {}", orphans_dir.display());
+    }
+    
+    // Create the orphans.md file
+    let orphans_file = orphans_dir.join("orphans.md");
+    if !orphans_file.exists() {
+        let markdown_content = "# Orphans\n\nThis is the root anchor for all orphaned patches.\n\nAll patches without explicit anchors are grouped under this root.\n";
+        fs::write(&orphans_file, markdown_content)?;
+        eprintln!("Created orphans root anchor file: {}", orphans_file.display());
+    }
+    
+    // Create the orphans anchor command (with no patch - this is the root)
+    let orphans_command = Command {
+        patch: String::new(), // NO PATCH - this is the root of the graph
+        command: "orphans".to_string(),
+        action: "anchor".to_string(),
+        arg: orphans_file.to_string_lossy().to_string(),
+        flags: "A".to_string(), // Auto-generated flag
+        full_line: format!("orphans : anchor {}", orphans_file.to_string_lossy()),
+    };
+    
+    // Add the command to the list
+    commands.push(orphans_command.clone());
+    
+    // Add the patch to the hashmap
+    patches.insert(orphans_key.to_string(), Patch {
+        name: orphans_key.to_string(),
+        linked_command: Some(orphans_command),
+    });
+    
+    eprintln!("Created orphans root patch and command");
+    Ok(())
+}
+
 /// Create orphan anchor files and commands for patches without anchors
 pub fn create_orphan_anchors(
     config: &Config, 
@@ -774,14 +853,14 @@ pub fn create_orphan_anchors(
             eprintln!("Created orphan anchor file: {}", markdown_file.display());
         }
         
-        // Create the anchor command using the patch name for both command and patch
+        // Create the anchor command - all orphan anchors use "orphans" as their patch
         let anchor_command = Command {
-            patch: patch_name.clone(),
+            patch: "orphans".to_string(), // All orphan anchors point to the orphans root
             command: patch_name.clone(),
             action: "anchor".to_string(),
             arg: markdown_file.to_string_lossy().to_string(),
             flags: "A".to_string(), // Auto-generated flag
-            full_line: format!("{} : anchor {}", patch_name, markdown_file.to_string_lossy()),
+            full_line: format!("orphans! {} : anchor {}", patch_name, markdown_file.to_string_lossy()),
         };
         
         // Add the command to the list
@@ -810,6 +889,11 @@ pub fn load_data() -> (crate::core::config::Config, Vec<Command>, HashMap<String
     
     // Step 3: Compute patch data structure
     let mut patches = create_patches_hashmap(&commands);
+    
+    // Step 3.1: Ensure "orphans" root patch exists
+    if let Err(e) = ensure_orphans_root_patch(&mut patches, &mut commands, &config) {
+        eprintln!("Warning: Failed to ensure orphans root patch: {}", e);
+    }
     
     // Step 4: Infer patches for commands without patches
     let (patches_assigned, new_patches_to_add) = run_patch_inference(
