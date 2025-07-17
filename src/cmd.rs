@@ -1,4 +1,4 @@
-use crate::{load_commands, load_commands_raw, filter_commands, launcher, CommandTarget, execute_command, utils, grabber, load_config, create_patches_hashmap, run_patch_inference, save_commands_to_file};
+use crate::{load_commands, load_commands_with_data, load_commands_for_inference, filter_commands, launcher, CommandTarget, execute_command, utils, grabber, load_config, run_patch_inference, save_commands_to_file};
 
 /// Main entry point for command-line mode
 pub fn run_command_line_mode(args: Vec<String>) {
@@ -682,9 +682,8 @@ fn run_infer_patches(args: &[String]) {
     
     println!("Analyzing patch inference changes...");
     
-    // Load current commands (without inference)
-    let mut commands = load_commands_raw();
-    let patches = create_patches_hashmap(&commands);
+    // Load current commands (without inference and orphan creation)
+    let (_config, mut commands, patches) = load_commands_for_inference();
     
     // Run inference without applying changes, but print to stdout
     let (changes_found, _) = run_patch_inference(
@@ -706,9 +705,8 @@ fn run_infer_patches(args: &[String]) {
 
 /// Show patch inference for a specific command
 fn run_infer_single_command(command_name: &str) {
-    // Load current commands (without inference)
-    let commands = load_commands_raw();
-    let patches = create_patches_hashmap(&commands);
+    // Load current commands (without inference and orphan creation)
+    let (_config, commands, patches) = load_commands_with_data();
     
     // Find the command by name
     let found_command = commands.iter().find(|cmd| cmd.command == command_name);
@@ -763,9 +761,8 @@ fn run_infer_single_command(command_name: &str) {
 fn run_infer_all_patches(_args: &[String]) {
     println!("Analyzing patch inference changes...");
     
-    // Load current commands (without inference)
-    let mut commands = load_commands_raw();
-    let patches = create_patches_hashmap(&commands);
+    // Load current commands (without inference and orphan creation)
+    let (_config, mut commands, patches) = load_commands_for_inference();
     
     // First run: Show changes without applying
     let (changes_found, _) = run_patch_inference(
@@ -793,8 +790,7 @@ fn run_infer_all_patches(_args: &[String]) {
     
     if input == "y" || input == "yes" {
         // Reload commands and apply changes
-        let mut commands = load_commands_raw();
-        let patches = create_patches_hashmap(&commands);
+        let (_config, mut commands, patches) = load_commands_with_data();
         
         // Second run: Apply changes without printing (already shown above)
         let (applied_count, _) = run_patch_inference(

@@ -245,45 +245,22 @@ pub fn backup_commands_file() -> Result<(), Box<dyn std::error::Error>> {
 
 /// Loads commands from the commands.txt file
 /// Creates a hashmap from patch names to Patch structs
-/// Only creates patches for anchor commands where the markdown file name matches the folder name
-pub fn create_patches_hashmap(commands: &[Command]) -> HashMap<String, Patch> {
+/// Creates a patch entry for every anchor command, indexed by the command's lowercase name
+fn create_patches_hashmap(commands: &[Command]) -> HashMap<String, Patch> {
     let mut patches = HashMap::new();
     
-    // Scan for anchor commands where file name matches containing folder name
+    // Create a patch for every anchor command, indexed by lowercase command name
     for command in commands {
         if command.action == "anchor" {
-            // Extract file path and check if file name matches folder name
-            let file_path = &command.arg;
+            let patch_name = command.command.to_lowercase();
             
-            // Get the file name without extension
-            if let Some(last_slash) = file_path.rfind('/') {
-                let file_part = &file_path[last_slash + 1..];
-                let file_name = if let Some(dot_pos) = file_part.rfind('.') {
-                    &file_part[..dot_pos]
-                } else {
-                    file_part
-                };
-                
-                // Get the folder name (parent directory)
-                let folder_part = &file_path[..last_slash];
-                let folder_name = if let Some(parent_slash) = folder_part.rfind('/') {
-                    &folder_part[parent_slash + 1..]
-                } else {
-                    folder_part
-                };
-                
-                // Check if file name matches folder name (case-insensitive)
-                if file_name.to_lowercase() == folder_name.to_lowercase() {
-                    let patch_name = command.command.to_lowercase();
-                    
-                    // Create patch if it doesn't exist yet
-                    if !patches.contains_key(&patch_name) {
-                        patches.insert(patch_name.clone(), Patch {
-                            name: patch_name,
-                            linked_command: Some(command.clone()),
-                        });
-                    }
-                }
+            // Create patch if it doesn't exist yet
+            // (First anchor with this name becomes the linked command)
+            if !patches.contains_key(&patch_name) {
+                patches.insert(patch_name.clone(), Patch {
+                    name: patch_name,
+                    linked_command: Some(command.clone()),
+                });
             }
         }
     }
@@ -726,18 +703,22 @@ pub fn run_patch_inference(
     (patches_assigned, new_patches_to_add)
 }
 
-/// Find patches that don't have an associated anchor command
+/// Find patch names that are referenced by commands but don't have corresponding anchor commands
 pub fn find_orphan_patches(patches: &HashMap<String, Patch>, commands: &[Command]) -> Vec<String> {
     let mut orphan_patches = Vec::new();
     
-    for (patch_name, _patch) in patches {
-        // Check if there's any anchor command for this patch
-        let has_anchor = commands.iter().any(|cmd| {
-            cmd.action == "anchor" && cmd.patch.to_lowercase() == patch_name.to_lowercase()
-        });
-        
-        if !has_anchor {
-            orphan_patches.push(patch_name.clone());
+    // Scan all commands and collect unique patch names that are referenced but don't have anchors
+    for command in commands {
+        if !command.patch.is_empty() {
+            let patch_name_lower = command.patch.to_lowercase();
+            
+            // Check if this patch name already exists in our patches hashmap
+            if !patches.contains_key(&patch_name_lower) {
+                // Check if we haven't already marked this patch as orphaned
+                if !orphan_patches.contains(&patch_name_lower) {
+                    orphan_patches.push(patch_name_lower);
+                }
+            }
         }
     }
     
@@ -791,7 +772,7 @@ pub fn create_orphan_anchors(
             eprintln!("Created orphan anchor file: {}", markdown_file.display());
         }
         
-        // Create the anchor command
+        // Create the anchor command using the patch name for both command and patch
         let anchor_command = Command {
             patch: patch_name.clone(),
             command: patch_name.clone(),
@@ -882,7 +863,7 @@ pub fn load_data() -> (crate::core::config::Config, Vec<Command>, HashMap<String
 
 /// Loads commands from the commands.txt file without any processing
 /// This is the raw loading function used by load_data()
-pub fn load_commands_raw() -> Vec<Command> {
+fn load_commands_raw() -> Vec<Command> {
     let path = get_commands_file_path();
     
     if !path.exists() {
@@ -913,10 +894,30 @@ pub fn load_commands_raw() -> Vec<Command> {
     }
 }
 
-/// Legacy function for backward compatibility - now uses load_data()
+/// Load commands with all derived data structures (patches, inference, orphan anchors)
+/// This is the main entry point for loading command data
 pub fn load_commands() -> Vec<Command> {
     let (_config, commands, _patches) = load_data();
     commands
+}
+
+/// Load commands with config and patches - main entry point for full data loading
+pub fn load_commands_with_data() -> (crate::core::config::Config, Vec<Command>, HashMap<String, Patch>) {
+    load_data()
+}
+
+/// Load commands with only patches (no inference or orphan creation) - for inference analysis
+pub fn load_commands_for_inference() -> (crate::core::config::Config, Vec<Command>, HashMap<String, Patch>) {
+    // Step 1: Load config
+    let config = crate::core::config::load_config();
+    
+    // Step 2: Load commands
+    let commands = load_commands_raw();
+    
+    // Step 3: Create patches hashmap from anchors only
+    let patches = create_patches_hashmap(&commands);
+    
+    (config, commands, patches)
 }
 
 /// Parses a command line into a Command struct

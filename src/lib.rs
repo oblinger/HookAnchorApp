@@ -37,10 +37,10 @@ pub mod server_management;
 
 // Re-export commonly used types from core modules
 pub use core::commands::{Command, CommandTarget, Patch, filter_commands, get_display_commands, get_display_commands_with_options, merge_similar_commands, 
-                         merge_similar_commands_with_context, load_commands, load_commands_raw, save_commands_to_file, 
+                         merge_similar_commands_with_context, load_commands, load_commands_with_data, load_commands_for_inference, save_commands_to_file, 
                          add_command, delete_command, parse_command_line, split_commands, 
                          get_current_submenu_prefix, execute_command, migrate_commands_to_new_format,
-                         command_matches_query, command_matches_query_with_debug, get_command_prefix, create_patches_hashmap, auto_assign_patches, load_data, infer_patch, run_patch_inference};
+                         command_matches_query, command_matches_query_with_debug, get_command_prefix, auto_assign_patches, load_data, infer_patch, run_patch_inference};
 // Note: Path accessor methods (get_absolute_file_path, get_absolute_folder_path, is_path_based) are available as Command impl methods
 pub use core::config::{Config, PopupSettings, LauncherSettings, load_config};
 pub use core::state::{AppState, load_state, save_state};
