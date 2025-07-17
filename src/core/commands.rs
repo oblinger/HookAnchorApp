@@ -714,9 +714,11 @@ pub fn find_orphan_patches(patches: &HashMap<String, Patch>, commands: &[Command
             
             // Check if this patch name already exists in our patches hashmap
             if !patches.contains_key(&patch_name_lower) {
-                // Check if we haven't already marked this patch as orphaned
-                if !orphan_patches.contains(&patch_name_lower) {
-                    orphan_patches.push(patch_name_lower);
+                // Check if we haven't already marked this patch as orphaned (case-insensitive)
+                let already_exists = orphan_patches.iter().any(|existing: &String| existing.to_lowercase() == patch_name_lower);
+                if !already_exists {
+                    // Use the original mixed case from the command
+                    orphan_patches.push(command.patch.clone());
                 }
             }
         }
