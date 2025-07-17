@@ -1,4 +1,4 @@
-use crate::{load_commands, load_commands_raw, filter_commands, launcher, CommandTarget, execute_command, utils, grabber, load_config, create_patches_hashmap, infer_patch};
+use crate::{load_commands, load_commands_raw, filter_commands, launcher, CommandTarget, execute_command, utils, grabber, load_config, create_patches_hashmap, run_patch_inference, save_commands_to_file};
 
 /// Main entry point for command-line mode
 pub fn run_command_line_mode(args: Vec<String>) {
@@ -30,6 +30,7 @@ pub fn run_command_line_mode(args: Vec<String>) {
         "--test-grabber" => run_test_grabber(),
         "--grab" => run_grab_command(&args),
         "--infer" => run_infer_patches(&args),
+        "--infer-all" => run_infer_all_patches(&args),
         "--start-server" => run_start_server(),
         "--start-server-daemon" => run_start_server_daemon(),
         _ => {
@@ -52,7 +53,8 @@ pub fn print_help(program_name: &str) {
     eprintln!("  {} -f, --folders <query>    # Get folder paths", program_name);
     eprintln!("  {} -F, --named-folders <q>  # Get CMDS->paths", program_name);
     eprintln!("  {} -a, --action <act> <arg> # Test action", program_name);
-    eprintln!("  {} --infer                  # Show patch inference changes", program_name);
+    eprintln!("  {} --infer [command]        # Show patch inference changes", program_name);
+    eprintln!("  {} --infer-all              # Show changes and prompt to apply", program_name);
     eprintln!("  {} --test-grabber           # Test grabber functionality", program_name);
     eprintln!("  {} --grab [delay]           # Grab active app after delay", program_name);
     eprintln!("  {} --start-server           # Force restart command server", program_name);
@@ -670,72 +672,153 @@ fn is_parent_directory_patch(current_patch: &str, new_patch: &str, patches: &std
 }
 
 /// Show which commands would have their patches changed by inference
-fn run_infer_patches(_args: &[String]) {
+fn run_infer_patches(args: &[String]) {
+    // Check if a specific command name was provided
+    if args.len() >= 3 {
+        let command_name = &args[2];
+        run_infer_single_command(command_name);
+        return;
+    }
+    
     println!("Analyzing patch inference changes...");
     
+    // Load current commands (without inference)
+    let mut commands = load_commands_raw();
+    let patches = create_patches_hashmap(&commands);
+    
+    // Run inference without applying changes, but print to stdout
+    let (changes_found, _) = run_patch_inference(
+        &mut commands, 
+        &patches, 
+        false, // apply_changes = false (just analyze)
+        true,  // print_to_stdout = true (show proposed changes)
+        true   // overwrite_patch = true (show all potential changes)
+    );
+    
+    println!("\nSummary:");
+    println!("  Commands that would change: {}", changes_found);
+    if changes_found == 0 {
+        println!("  No patch changes would be made.");
+    } else {
+        println!("  Use --infer-all to apply these changes (normal startup only fills empty patches).");
+    }
+}
+
+/// Show patch inference for a specific command
+fn run_infer_single_command(command_name: &str) {
     // Load current commands (without inference)
     let commands = load_commands_raw();
     let patches = create_patches_hashmap(&commands);
     
-    let mut changes_found = 0;
-    let mut total_checked = 0;
+    // Find the command by name
+    let found_command = commands.iter().find(|cmd| cmd.command == command_name);
     
-    let mut skipped_user_edited = 0;
-    let mut skipped_parent_dir = 0;
-    
-    for command in &commands {
-        total_checked += 1;
-        let current_patch = &command.patch;
-        
-        // Skip if command has user edited flag (U)
-        if command.flags.contains('U') {
-            skipped_user_edited += 1;
-            continue;
-        }
-        
-        // Compute what the inferred patch would be
-        let inferred_patch = infer_patch(command, &patches);
-        
-        // Check if they're different and should be changed
-        match inferred_patch {
-            Some(new_patch) => {
-                let should_change = if current_patch.is_empty() && !new_patch.is_empty() {
-                    true // Always allow adding a patch to empty
-                } else if current_patch != &new_patch {
-                    // Check if this would be moving to a parent directory patch
-                    if is_parent_directory_patch(current_patch, &new_patch, &patches) {
-                        skipped_parent_dir += 1;
-                        false // Don't change to parent directory patch
+    match found_command {
+        Some(command) => {
+            println!("Command: {}", command.command);
+            println!("Current patch: '{}'", command.patch);
+            
+            // Test patch inference on this specific command
+            match crate::core::commands::infer_patch(command, &patches) {
+                Some(inferred_patch) => {
+                    println!("Inferred patch: '{}'", inferred_patch);
+                    
+                    if command.patch == inferred_patch {
+                        println!("✅ No change needed - current patch matches inferred patch");
+                    } else if command.patch.is_empty() {
+                        println!("📄 Would assign patch: '{}' -> '{}'", command.patch, inferred_patch);
                     } else {
-                        true // Allow other changes
+                        println!("🔄 Would change patch: '{}' -> '{}'", command.patch, inferred_patch);
                     }
-                } else {
-                    false // No change needed
-                };
-                
-                if should_change {
-                    if current_patch.is_empty() {
-                        println!("{}: (empty) -> {}", command.command, new_patch);
+                }
+                None => {
+                    if command.patch.is_empty() {
+                        println!("No patch could be inferred (would remain empty)");
                     } else {
-                        println!("{}: {} -> {}", command.command, current_patch, new_patch);
+                        println!("No patch could be inferred (would keep current: '{}')", command.patch);
                     }
-                    changes_found += 1;
                 }
             }
-            None => {
-                // No inferred patch, no change needed
+        }
+        None => {
+            println!("Command '{}' not found.", command_name);
+            
+            // Show similar commands as suggestions
+            let similar_commands: Vec<&crate::Command> = commands.iter()
+                .filter(|cmd| cmd.command.to_lowercase().contains(&command_name.to_lowercase()))
+                .take(5)
+                .collect();
+            
+            if !similar_commands.is_empty() {
+                println!("\nSimilar commands found:");
+                for cmd in similar_commands {
+                    println!("  {}", cmd.command);
+                }
             }
         }
     }
+}
+
+/// Show patch inference changes and prompt user to apply them
+fn run_infer_all_patches(_args: &[String]) {
+    println!("Analyzing patch inference changes...");
     
-    println!("\nSummary:");
-    println!("  Commands checked: {}", total_checked);
-    println!("  Commands that would change: {}", changes_found);
-    println!("  Skipped (user edited): {}", skipped_user_edited);
-    println!("  Skipped (parent directory): {}", skipped_parent_dir);
+    // Load current commands (without inference)
+    let mut commands = load_commands_raw();
+    let patches = create_patches_hashmap(&commands);
+    
+    // First run: Show changes without applying
+    let (changes_found, _) = run_patch_inference(
+        &mut commands, 
+        &patches, 
+        false, // apply_changes = false (just analyze)
+        true,  // print_to_stdout = true (show proposed changes)
+        true   // overwrite_patch = true (show all potential changes including overwriting existing patches)
+    );
+    
     if changes_found == 0 {
-        println!("  No patch changes would be made.");
+        println!("\nNo patch changes would be made.");
+        return;
+    }
+    
+    // Prompt user for confirmation
+    println!("\nFound {} commands that would change.", changes_found);
+    print!("Apply all changes? (y/n): ");
+    use std::io::{self, Write};
+    io::stdout().flush().unwrap();
+    
+    let mut input = String::new();
+    io::stdin().read_line(&mut input).expect("Failed to read input");
+    let input = input.trim().to_lowercase();
+    
+    if input == "y" || input == "yes" {
+        // Reload commands and apply changes
+        let mut commands = load_commands_raw();
+        let patches = create_patches_hashmap(&commands);
+        
+        // Second run: Apply changes without printing (already shown above)
+        let (applied_count, _) = run_patch_inference(
+            &mut commands, 
+            &patches, 
+            true,  // apply_changes = true (apply the changes)
+            false, // print_to_stdout = false (don't print since we already showed them)
+            true   // overwrite_patch = true (apply all changes including overwriting existing patches)
+        );
+        
+        // Save the updated commands to file
+        if applied_count > 0 {
+            match save_commands_to_file(&commands) {
+                Ok(()) => {
+                    println!("Updated {} commands and saved to file.", applied_count);
+                }
+                Err(e) => {
+                    eprintln!("Updated {} commands but failed to save: {}", applied_count, e);
+                }
+            }
+        } else {
+            println!("No commands were actually updated.");
+        }
     } else {
-        println!("  Run the application normally to apply these changes.");
+        println!("No changes applied.");
     }
 }

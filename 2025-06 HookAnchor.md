@@ -2,6 +2,7 @@
 [[./CLAUDE]] 
 
 [[API_REFERENCE]] 
+[[Hook System]] 
 
 [[hack]]
 

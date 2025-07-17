@@ -46,8 +46,11 @@ pub fn start_server_if_needed() -> Result<(), Box<dyn std::error::Error>> {
     crate::utils::debug_log("SERVER_MGR", "Starting new command server via Terminal");
     start_server_via_terminal()?;
     
-    // Wait longer for startup and PID to be saved
-    std::thread::sleep(std::time::Duration::from_millis(3000));
+    // Wait for startup and PID to be saved (reduced from 3s for better UX)
+    crate::utils::debug_log("SERVER_MGR", "Waiting for server startup");
+    let sleep_start = std::time::Instant::now();
+    std::thread::sleep(std::time::Duration::from_millis(300));
+    crate::utils::debug_log("SERVER_MGR", &format!("Server startup wait completed in {}ms", sleep_start.elapsed().as_millis()));
     
     SERVER_CHECKED.store(true, Ordering::Relaxed);
     Ok(())

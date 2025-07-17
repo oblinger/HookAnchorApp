@@ -396,6 +396,7 @@ pub fn execute_via_server(
     
     // Server not available - try to start it
     verbose_log("CMD_SERVER", "Server not available, attempting to start it");
+    crate::utils::debug_log("CMD_SERVER", &format!("Starting server for command: {}", command));
     crate::server_management::reset_server_check(); // Force re-check of PID
     if let Err(e) = crate::server_management::start_server_if_needed() {
         let error_msg = format!("Failed to start command server: {}", e);
@@ -403,8 +404,8 @@ pub fn execute_via_server(
         return Err(error_msg.into());
     }
     
-    // Wait longer for server to start
-    std::thread::sleep(std::time::Duration::from_millis(4000));
+    // Wait for server to start (reduced from 4s to 100ms for better UX)
+    std::thread::sleep(std::time::Duration::from_millis(100));
     
     // Try again after starting server
     if let Ok(client) = CommandClient::new() {

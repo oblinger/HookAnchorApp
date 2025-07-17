@@ -157,6 +157,7 @@ pub fn get_browser_info(bundle_id: &str) -> Option<String> {
 
 /// Get Obsidian active file URL by triggering copy URL shortcut
 pub fn get_obsidian_url() -> Option<String> {
+    crate::utils::debug_log("GRAB", "Getting Obsidian URL (includes 300ms clipboard delay)");
     
     let script = r#"
         -- Trigger Obsidian's copy URL shortcut (Cmd+Ctrl+Option+F5)
@@ -164,8 +165,8 @@ pub fn get_obsidian_url() -> Option<String> {
             key code 101 using {command down, control down, option down}
         end tell
         
-        -- Wait for clipboard to update
-        delay 1.0
+        -- Wait for clipboard to update (reduced from 1.0s)
+        delay 0.3
         
         -- Get clipboard content
         try
@@ -538,8 +539,12 @@ pub enum GrabResult {
 
 /// Perform a grab operation: capture context and match against rules
 pub fn grab(config: &Config) -> Result<GrabResult, String> {
+    crate::utils::debug_log("GRAB", "grabber::grab() starting - capturing active app");
+    
     // Capture the active application context
+    let capture_start = std::time::Instant::now();
     let context = capture_active_app()?;
+    crate::utils::debug_log("GRAB", &format!("capture_active_app() completed in {}ms", capture_start.elapsed().as_millis()));
     let context = enrich_context(context);
     
     // Always output the context summary first, regardless of rules

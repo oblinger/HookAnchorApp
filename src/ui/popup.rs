@@ -559,9 +559,16 @@ impl AnchorSelector {
         self.popup_state.navigate_vertical(direction);
     }
     
-    /// Start the grabber countdown (5, 4, 3, 2, 1)
+    /// Start the grabber countdown
     fn start_grabber_countdown(&mut self, _ctx: &egui::Context) {
-        self.grabber_countdown = Some(5);
+        let config = load_config();
+        let countdown_seconds = config.popup_settings.countdown_seconds.unwrap_or(5);
+        let flip_focus = config.launcher_settings.as_ref().and_then(|ls| ls.flip_focus).unwrap_or(false);
+        
+        crate::utils::debug_log("GRAB", &format!("Starting grabber countdown from {} (flip_focus={})", 
+            countdown_seconds, flip_focus));
+            
+        self.grabber_countdown = Some(countdown_seconds);
         self.countdown_last_update = Some(std::time::Instant::now());
         // Note: Don't call ctx.request_repaint_after() as it causes UI lockup
         // The UI update loop handles repaints automatically
@@ -575,11 +582,28 @@ impl AnchorSelector {
                 if elapsed.as_secs() >= 1 {
                     if count > 1 {
                         // Continue countdown
-                        self.grabber_countdown = Some(count - 1);
+                        let new_count = count - 1;
+                        self.grabber_countdown = Some(new_count);
                         self.countdown_last_update = Some(std::time::Instant::now());
+                        
+                        // Handle focus flipping during countdown if enabled
+                        let config = load_config();
+                        let flip_focus = config.launcher_settings
+                            .as_ref()
+                            .and_then(|ls| ls.flip_focus)
+                            .unwrap_or(false);
+                        
+                        if flip_focus && new_count == 1 {
+                            // On count 1, flip focus away (like the old behavior)
+                            self.flip_focus_away();
+                        }
                     } else {
                         // Countdown finished, execute grab
+                        crate::utils::debug_log("GRAB", "=== STARTING GRAB EXECUTION ===");
+                        let start_time = std::time::Instant::now();
                         self.execute_grab(ctx);
+                        let total_time = start_time.elapsed().as_millis();
+                        crate::utils::debug_log("GRAB", &format!("=== GRAB EXECUTION COMPLETED in {}ms ===", total_time));
                         self.grabber_countdown = None;
                         self.countdown_last_update = None;
                     }
@@ -588,12 +612,9 @@ impl AnchorSelector {
         }
     }
     
-    /// Execute the grab operation - simplified synchronous version
-    fn execute_grab(&mut self, ctx: &egui::Context) {
-        let config = load_config();
-        
-        // Use a more aggressive approach - directly force Finder to front across all screens
-        crate::utils::debug_log("GRAB", "Forcing Finder to front across all screens");
+    /// Flip focus away from HookAnchor (used when flip_focus is enabled)
+    fn flip_focus_away(&self) {
+        crate::utils::debug_log("GRAB", "Flipping focus away from HookAnchor");
         
         let force_finder_script = r#"
             -- First minimize HookAnchor if it exists
@@ -634,22 +655,47 @@ impl AnchorSelector {
             end tell
         "#;
         
-        use std::process::Command;
-        if let Err(e) = Command::new("osascript")
+        if let Err(e) = std::process::Command::new("osascript")
             .arg("-e")
             .arg(force_finder_script)
             .output() {
-            crate::utils::debug_log("GRAB", &format!("Failed to force Finder focus: {}", e));
+            crate::utils::debug_log("GRAB", &format!("Failed to flip focus away: {}", e));
+        }
+    }
+    
+    /// Execute the grab operation - simplified synchronous version
+    fn execute_grab(&mut self, ctx: &egui::Context) {
+        let config = load_config();
+        
+        // Check if we should flip focus
+        let flip_focus = config.launcher_settings
+            .as_ref()
+            .and_then(|ls| ls.flip_focus)
+            .unwrap_or(false);
+        
+        crate::utils::debug_log("GRAB", &format!("execute_grab: flip_focus = {}", flip_focus));
+        
+        if flip_focus {
+            // Focus was already flipped during countdown, just wait briefly
+            crate::utils::debug_log("GRAB", "Focus already flipped, waiting 200ms before grab");
+            let sleep_start = std::time::Instant::now();
+            std::thread::sleep(std::time::Duration::from_millis(200));
+            crate::utils::debug_log("GRAB", &format!("Sleep completed in {}ms", sleep_start.elapsed().as_millis()));
+        } else {
+            // User is responsible for changing focus manually during countdown
+            crate::utils::debug_log("GRAB", "Manual focus mode - no pre-grab delay");
         }
         
-        // Give extra time for Finder to come to front across screens
-        std::thread::sleep(std::time::Duration::from_millis(800));
-        
         // Now capture from the focused application
+        crate::utils::debug_log("GRAB", "Starting grabber::grab()");
+        let grab_start = std::time::Instant::now();
         match grabber::grab(&config) {
             Ok(grab_result) => {
+                crate::utils::debug_log("GRAB", &format!("grabber::grab() completed in {}ms", grab_start.elapsed().as_millis()));
+                crate::utils::debug_log("GRAB", "Processing grab result...");
                 match grab_result {
                     grabber::GrabResult::RuleMatched(rule_name, mut command) => {
+                        crate::utils::debug_log("GRAB", &format!("Rule matched: {}", rule_name));
                         // Use the current search text as the command name, or default if empty
                         let command_name = if self.popup_state.search_text.trim().is_empty() {
                             format!("Grabbed {}", rule_name)
@@ -662,9 +708,12 @@ impl AnchorSelector {
                         command.full_line = format!("{} : {} {}", command.command, command.action, command.arg);
                         
                         // Open command editor with the pre-filled grabbed command
+                        crate::utils::debug_log("GRAB", "Opening command editor with grabbed command");
                         self.command_editor.open_with_command(command);
+                        crate::utils::debug_log("GRAB", "Command editor opened successfully");
                     }
                     grabber::GrabResult::NoRuleMatched(context) => {
+                        crate::utils::debug_log("GRAB", "No rule matched - showing template dialog");
                         // Generate the template text
                         let template_text = grabber::generate_rule_template_text(&context);
                         
@@ -675,10 +724,14 @@ impl AnchorSelector {
                             "!OK".to_string(),
                         ];
                         
+                        crate::utils::debug_log("GRAB", "Showing template dialog");
                         self.dialog.show(dialog_spec);
+                        crate::utils::debug_log("GRAB", "Template dialog shown, calculating size");
                         
                         // Calculate required dialog size and resize window
+                        let size_start = std::time::Instant::now();
                         let (dialog_width, dialog_height) = self.dialog.calculate_required_size();
+                        crate::utils::debug_log("GRAB", &format!("Dialog size calculation took {}ms", size_start.elapsed().as_millis()));
                         let final_width = dialog_width.max(600.0); // Minimum width for readability
                         let final_height = dialog_height.max(400.0); // Minimum height
                         
@@ -687,44 +740,80 @@ impl AnchorSelector {
                         self.last_manual_size = Some([final_width, final_height].into());
                         
                         // Actually resize the window
+                        crate::utils::debug_log("GRAB", "Resizing window for template dialog");
                         ctx.send_viewport_cmd(egui::ViewportCommand::InnerSize([final_width, final_height].into()));
+                        crate::utils::debug_log("GRAB", "Window resize command sent");
                     }
                 }
+                crate::utils::debug_log("GRAB", "Grab result processing completed");
             }
             Err(err) => {
                 crate::utils::debug_log("GRAB", &format!("Grabber error: {}", err));
             }
         }
         
-        // Restore HookAnchor visibility
-        let restore_script = r#"
-            tell application "System Events"
-                tell application process "popup"
-                    set visible to true
-                    set frontmost to true
+        // Check if we should restore HookAnchor visibility (only when flip_focus is enabled)
+        let flip_focus_for_restore = config.launcher_settings
+            .as_ref()
+            .and_then(|ls| ls.flip_focus)
+            .unwrap_or(false);
+            
+        if flip_focus_for_restore {
+            crate::utils::debug_log("GRAB", "Starting HookAnchor visibility restoration (flip_focus enabled)");
+            // Restore HookAnchor visibility
+            let restore_script = r#"
+                tell application "System Events"
+                    tell application process "popup"
+                        set visible to true
+                        set frontmost to true
+                    end tell
                 end tell
-            end tell
-        "#;
-        
-        if let Err(e) = Command::new("osascript")
-            .arg("-e")
-            .arg(restore_script)
-            .output() {
-            crate::utils::debug_log("GRAB", &format!("Failed to restore HookAnchor: {}", e));
+            "#;
+            
+            let restore_start = std::time::Instant::now();
+            if let Err(e) = std::process::Command::new("osascript")
+                .arg("-e")
+                .arg(restore_script)
+                .output() {
+                crate::utils::debug_log("GRAB", &format!("Failed to restore HookAnchor: {}", e));
+            }
+            crate::utils::debug_log("GRAB", &format!("HookAnchor visibility restoration completed in {}ms", restore_start.elapsed().as_millis()));
+        } else {
+            crate::utils::debug_log("GRAB", "Skipping HookAnchor visibility restoration (flip_focus disabled)");
         }
         
-        // Give time for window restoration
-        std::thread::sleep(std::time::Duration::from_millis(200));
+        // Regain focus back to anchor selector after grab operation (only if flip_focus is enabled)
+        let flip_focus = config.launcher_settings
+            .as_ref()
+            .and_then(|ls| ls.flip_focus)
+            .unwrap_or(false);
         
-        // Regain focus back to anchor selector after grab operation
-        if let Err(e) = self.regain_focus() {
-            crate::utils::debug_log("GRAB", &format!("Failed to regain focus: {}", e));
+        crate::utils::debug_log("GRAB", &format!("flip_focus setting: {}", flip_focus));
+        
+        let focus_start = std::time::Instant::now();
+        if flip_focus {
+            // Give time for window restoration only when flip_focus is enabled
+            crate::utils::debug_log("GRAB", "flip_focus enabled - regaining focus");
+            let sleep_start = std::time::Instant::now();
+            std::thread::sleep(std::time::Duration::from_millis(200));
+            crate::utils::debug_log("GRAB", &format!("Focus restoration sleep completed in {}ms", sleep_start.elapsed().as_millis()));
+            
+            let regain_start = std::time::Instant::now();
+            if let Err(e) = self.regain_focus() {
+                crate::utils::debug_log("GRAB", &format!("Failed to regain focus: {}", e));
+            } else {
+                crate::utils::debug_log("GRAB", &format!("regain_focus() completed in {}ms", regain_start.elapsed().as_millis()));
+            }
+        } else {
+            crate::utils::debug_log("GRAB", "Manual focus mode - skipping regain_focus entirely");
         }
+        crate::utils::debug_log("GRAB", &format!("Focus restoration phase completed in {}ms", focus_start.elapsed().as_millis()));
     }
     
     
     /// Regain focus back to anchor selector after grab operation
     fn regain_focus(&self) -> Result<(), String> {
+        crate::utils::debug_log("GRAB", "regain_focus() called - executing JavaScript");
         // Use the JavaScript function to regain focus
         let config = load_config();
         if let Some(functions) = &config.functions {

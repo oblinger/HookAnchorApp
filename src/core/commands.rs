@@ -298,28 +298,14 @@ pub fn create_patches_hashmap(commands: &[Command]) -> HashMap<String, Patch> {
 /// Returns None if no patch can be inferred
 /// Always analyzes the command regardless of any current patch value
 pub fn infer_patch(command: &Command, patches: &HashMap<String, Patch>) -> Option<String> {
-    // Method 1: Check if first word matches any patch name
-    if let Some(space_idx) = command.command.find(' ') {
-        let first_word = &command.command[..space_idx];
-        let first_word_lower = first_word.to_lowercase();
-        
-        // Look for exact patch name match (case-insensitive)
-        if let Some(patch) = patches.get(&first_word_lower) {
-            // Return the case from the linked command name if available
-            if let Some(ref linked_cmd) = patch.linked_command {
-                if let Some(linked_space_idx) = linked_cmd.command.find(' ') {
-                    return Some(linked_cmd.command[..linked_space_idx].to_string());
-                } else {
-                    return Some(linked_cmd.command.clone());
-                }
-            } else {
-                // Fallback to original case of first word
-                return Some(first_word.to_string());
-            }
+    // Method 1: Alias commands inherit patch from their target (HIGHEST PRIORITY)
+    if command.action == "alias" {
+        if let Some(target_patch) = infer_patch_from_alias_target(command, patches) {
+            return Some(target_patch);
         }
     }
     
-    // Method 2: File/folder-based inference
+    // Method 2: File/folder-based inference (HIGH PRIORITY for path-based commands)
     // Check if the command is path-based and extract folder information
     if command.is_path_based() {
         if let Some(inferred_patch) = infer_patch_from_command(command, patches) {
@@ -327,23 +313,51 @@ pub fn infer_patch(command: &Command, patches: &HashMap<String, Patch>) -> Optio
         }
     }
     
-    // Method 3: Default patch rules
-    
-    // Rule 3a: Alias commands inherit patch from their target
-    if command.action == "alias" {
-        if let Some(target_patch) = infer_patch_from_alias_target(command, patches) {
-            return Some(target_patch);
+    // Method 3: Check if first word matches any patch name
+    if let Some(space_idx) = command.command.find(' ') {
+        let first_word = &command.command[..space_idx];
+        let first_word_lower = first_word.to_lowercase();
+        
+        // Look for exact patch name match (case-insensitive)
+        if let Some(patch) = patches.get(&first_word_lower) {
+            // Check if this would create a self-assignment (command assigned to its own patch)
+            let proposed_patch = if let Some(ref linked_cmd) = patch.linked_command {
+                if let Some(linked_space_idx) = linked_cmd.command.find(' ') {
+                    linked_cmd.command[..linked_space_idx].to_string()
+                } else {
+                    linked_cmd.command.clone()
+                }
+            } else {
+                first_word.to_string()
+            };
+            
+            // Prevent self-assignment: don't assign a command to its own patch
+            if proposed_patch.to_lowercase() != command.command.to_lowercase() {
+                return Some(proposed_patch);
+            }
+            // If it would be self-assignment, skip this method and try others
         }
     }
     
-    // Rule 3b: Year-based patch inference (2000-3000 followed by separator)
-    if let Some(year_patch) = infer_patch_from_year_prefix(&command.command) {
-        return Some(year_patch);
+    // Method 4: Default patch rules
+    
+    // Rule 4a: Cmd action gets "Cmd" patch (ONLY if current patch is empty)
+    if command.action == "cmd" && command.patch.is_empty() {
+        return Some("Cmd".to_string());
     }
     
-    // Rule 3c: Cmd action gets "Cmd" patch
-    if command.action == "cmd" {
-        return Some("Cmd".to_string());
+    // Rule 4b: Browser/Web actions get "Web" patch (ONLY if current patch is empty)
+    let web_actions = ["chrome", "brave", "firefox", "url", "safari"];
+    if web_actions.contains(&command.action.as_str()) && command.patch.is_empty() {
+        return Some("Web".to_string());
+    }
+    
+    // Rule 4c: Year-based patch inference (LOWEST PRIORITY FALLBACK)
+    // Only applies when no other rule matches and current patch is empty
+    if command.patch.is_empty() {
+        if let Some(year_patch) = infer_patch_from_year_prefix(&command.command) {
+            return Some(year_patch);
+        }
     }
     
     None
@@ -351,13 +365,85 @@ pub fn infer_patch(command: &Command, patches: &HashMap<String, Patch>) -> Optio
 
 /// Infers patch from command using its path accessors
 fn infer_patch_from_command(command: &Command, patches: &HashMap<String, Patch>) -> Option<String> {
-    // First try the old file_path method for raw path analysis
-    if let Some(inferred) = infer_patch_from_file_path(&command.arg, patches) {
-        return Some(inferred);
+    // Use the file path method with self-assignment prevention
+    infer_patch_from_file_path_with_exclusion(&command.arg, patches, &command.command)
+}
+
+/// Infers patch from file path with self-assignment prevention
+fn infer_patch_from_file_path_with_exclusion(file_path: &str, patches: &HashMap<String, Patch>, exclude_command: &str) -> Option<String> {
+    use std::path::Path;
+    
+    // Skip if not a file path (URLs, app names, etc.)
+    if file_path.starts_with("http") || file_path.starts_with("https") || !file_path.contains('/') {
+        return None;
     }
     
-    // TODO: Add more sophisticated inference using absolute paths
-    // This would require config access, which we can add in a future iteration
+    // Method 1: Check all path components and return the most specific (deepest) non-self match
+    // For paths like "T/Misc/Sleep.md", prefer "Misc" over "T"
+    // This works for both relative and absolute paths
+    let components: Vec<&str> = file_path.split('/').collect();
+    let mut best_matches: Vec<(usize, String)> = Vec::new(); // (depth, patch_name)
+    
+    for (depth, component) in components.iter().enumerate() {
+        let component_lower = component.to_lowercase();
+        if patches.contains_key(&component_lower) {
+            // Found a patch match - add to list
+            best_matches.push((depth, component.to_string()));
+        }
+    }
+    
+    // Sort by depth (deepest first) and return first non-self match
+    best_matches.sort_by(|a, b| b.0.cmp(&a.0)); // Sort by depth descending
+    
+    for (_, patch_name) in best_matches {
+        if patch_name.to_lowercase() != exclude_command.to_lowercase() {
+            return Some(patch_name);
+        }
+    }
+    
+    // If no component matches found, try the directory hierarchy method
+    let path = Path::new(file_path);
+    
+    // Get the directory containing the file
+    let dir = if path.is_file() || file_path.contains('.') {
+        path.parent()?
+    } else {
+        path
+    };
+    
+    // Method 2: Check if any patch's linked command refers to a file in the same directory or parent directory
+    for patch in patches.values() {
+        if let Some(ref linked_cmd) = patch.linked_command {
+            if linked_cmd.is_path_based() {
+                let linked_path = Path::new(&linked_cmd.arg);
+                let linked_dir = if linked_path.is_file() || linked_cmd.arg.contains('.') {
+                    linked_path.parent()
+                } else {
+                    Some(linked_path)
+                };
+                
+                if let Some(linked_dir) = linked_dir {
+                    // Check if directories match exactly
+                    if dir == linked_dir {
+                        // Prevent self-assignment
+                        if patch.name.to_lowercase() != exclude_command.to_lowercase() {
+                            // Check if this is an anchor file (same name as patch)
+                            if let Some(file_stem) = path.file_stem() {
+                                if file_stem.to_string_lossy().to_lowercase() == patch.name {
+                                    // This is an anchor file, walk hierarchy for containing patch
+                                    return infer_patch_from_hierarchy(dir, patches);
+                                }
+                            }
+                            
+                            // Not an anchor file, return this patch
+                            return Some(patch.name.clone());
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
     None
 }
 
@@ -373,24 +459,22 @@ fn infer_patch_from_file_path(file_path: &str, patches: &HashMap<String, Patch>)
     
     // Method 1: Check all path components and return the most specific (deepest) match
     // For paths like "T/Misc/Sleep.md", prefer "Misc" over "T"
-    if !file_path.starts_with('/') {
-        // This is a relative path - check all components and find the deepest match
-        let components: Vec<&str> = file_path.split('/').collect();
-        let mut best_match: Option<(usize, String)> = None; // (depth, patch_name)
-        
-        for (depth, component) in components.iter().enumerate() {
-            let component_lower = component.to_lowercase();
-            if patches.contains_key(&component_lower) {
-                // Found a patch match - update if this is deeper than previous match
-                if best_match.is_none() || depth > best_match.as_ref().unwrap().0 {
-                    best_match = Some((depth, component.to_string()));
-                }
+    // This works for both relative and absolute paths
+    let components: Vec<&str> = file_path.split('/').collect();
+    let mut best_match: Option<(usize, String)> = None; // (depth, patch_name)
+    
+    for (depth, component) in components.iter().enumerate() {
+        let component_lower = component.to_lowercase();
+        if patches.contains_key(&component_lower) {
+            // Found a patch match - update if this is deeper than previous match
+            if best_match.is_none() || depth > best_match.as_ref().unwrap().0 {
+                best_match = Some((depth, component.to_string()));
             }
         }
-        
-        if let Some((_, patch_name)) = best_match {
-            return Some(patch_name);
-        }
+    }
+    
+    if let Some((_, patch_name)) = best_match {
+        return Some(patch_name);
     }
     
     let path = Path::new(file_path);
@@ -578,6 +662,70 @@ pub fn auto_assign_patches(commands: &mut Vec<Command>) {
     }
 }
 
+/// Run patch inference on commands with configurable behavior
+/// 
+/// # Arguments
+/// * `commands` - Mutable reference to commands vector
+/// * `patches` - Reference to patches hashmap for inference
+/// * `apply_changes` - If true, actually update command patches; if false, only analyze
+/// * `print_to_stdout` - If true, print change summaries to stdout
+/// * `overwrite_patch` - If true, consider all commands; if false, only process commands with empty patches
+/// 
+/// # Returns
+/// * Number of patches that were assigned/would be assigned
+/// * Vector of new patch keys that were added/would be added to hashmap
+pub fn run_patch_inference(
+    commands: &mut Vec<Command>, 
+    patches: &HashMap<String, Patch>,
+    apply_changes: bool,
+    print_to_stdout: bool,
+    overwrite_patch: bool
+) -> (usize, Vec<String>) {
+    let mut patches_assigned = 0;
+    let mut new_patches_to_add = Vec::new();
+    
+    for command in commands.iter_mut() {
+        // Check if we should process this command based on overwrite_patch setting
+        let should_process = overwrite_patch || command.patch.is_empty();
+        
+        if should_process {
+            if let Some(inferred_patch) = infer_patch(command, patches) {
+                // Skip if patch wouldn't change - always skip when values are the same
+                if command.patch == inferred_patch {
+                    continue;
+                }
+                
+                let old_patch_display = if command.patch.is_empty() { "(empty)".to_string() } else { command.patch.clone() };
+                
+                // Apply changes based on the overwrite_patch setting
+                // In normal operation (overwrite_patch = false), only fill empty patches
+                // In --infer-all mode (overwrite_patch = true), overwrite existing patches too
+                if apply_changes && (overwrite_patch || command.patch.is_empty()) {
+                    command.patch = inferred_patch.clone();
+                    if crate::core::config::load_config().popup_settings.debug_log.is_some() {
+                        eprintln!("Switched command '{}' patch: {} -> {}", 
+                                command.command, old_patch_display, inferred_patch);
+                    }
+                }
+                
+                if print_to_stdout {
+                    println!("{}: {} -> {}", command.command, old_patch_display, inferred_patch);
+                }
+                
+                patches_assigned += 1;
+                
+                // Track new patches to add later
+                let patch_key = inferred_patch.to_lowercase();
+                if !patches.contains_key(&patch_key) && !new_patches_to_add.contains(&patch_key) {
+                    new_patches_to_add.push(patch_key);
+                }
+            }
+        }
+    }
+    
+    (patches_assigned, new_patches_to_add)
+}
+
 /// Comprehensive data loading function that performs all necessary steps in order:
 /// 1. Loads config file
 /// 2. Loads commands from commands.txt file
@@ -595,24 +743,13 @@ pub fn load_data() -> (crate::core::config::Config, Vec<Command>, HashMap<String
     let mut patches = create_patches_hashmap(&commands);
     
     // Step 4: Infer patches for commands without patches
-    let mut patches_assigned = 0;
-    let mut new_patches_to_add = Vec::new();
-    
-    for command in commands.iter_mut() {
-        // Only apply inference if command doesn't already have a patch
-        if command.patch.is_empty() {
-            if let Some(inferred_patch) = infer_patch(command, &patches) {
-                command.patch = inferred_patch.clone();
-                patches_assigned += 1;
-                
-                // Track new patches to add later
-                let patch_key = inferred_patch.to_lowercase();
-                if !patches.contains_key(&patch_key) {
-                    new_patches_to_add.push(patch_key);
-                }
-            }
-        }
-    }
+    let (patches_assigned, new_patches_to_add) = run_patch_inference(
+        &mut commands, 
+        &patches, 
+        true,  // apply_changes = true (normal operation)
+        false, // print_to_stdout = false (use logging instead)
+        false  // overwrite_patch = false (only fill empty patches)
+    );
     
     // Add new patches to hashmap
     for patch_key in new_patches_to_add {

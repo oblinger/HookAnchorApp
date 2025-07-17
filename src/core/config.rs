@@ -48,6 +48,8 @@ pub struct PopupSettings {
     pub scan_interval_seconds: Option<u64>,
     /// Seconds of inactivity before popup automatically closes (default: 60)
     pub idle_timeout_seconds: Option<u64>,
+    /// Seconds for grabber countdown (default: 5)
+    pub countdown_seconds: Option<u8>,
 }
 
 /// Launcher settings section of the configuration file
@@ -60,6 +62,10 @@ pub struct LauncherSettings {
     pub obsidian_vault_name: Option<String>,
     pub application_folder: Option<String>,
     pub obsidian_vault_path: Option<String>,
+    /// Controls whether grabber flips focus during countdown (default: false)
+    /// When true: flips to previous app and back during countdown
+    /// When false: user manually changes focus during countdown
+    pub flip_focus: Option<bool>,
 }
 
 impl Default for LauncherSettings {
@@ -72,6 +78,7 @@ impl Default for LauncherSettings {
             obsidian_vault_name: Some("kmr".to_string()),
             application_folder: Some("/Applications/HookAnchor.app".to_string()),
             obsidian_vault_path: Some("~/Documents".to_string()),
+            flip_focus: Some(false),
         }
     }
 }
@@ -140,6 +147,7 @@ impl Default for PopupSettings {
             word_separators: " ._-".to_string(),
             scan_interval_seconds: Some(10),
             idle_timeout_seconds: Some(60), // Default to 60 seconds
+            countdown_seconds: Some(5), // Default to 5 seconds
         }
     }
 }
