@@ -6,7 +6,7 @@
 use super::{Command, Config};
 use super::config::{load_config_with_error, ConfigResult};
 use super::state::AppState;
-use crate::{load_commands, load_config, load_state, save_state, utils};
+use crate::{load_state, save_state, utils};
 
 /// Global application state that spans both GUI and CLI modes
 pub struct ApplicationState {
@@ -25,19 +25,33 @@ pub struct ApplicationState {
 }
 
 impl ApplicationState {
+    /// Create minimal application state for immediate GUI startup
+    pub fn minimal() -> Self {
+        Self {
+            commands: Vec::new(),
+            search_text: String::new(),
+            filtered_commands: Vec::new(),
+            config: Config::default(),
+            app_state: AppState::default(),
+            config_error: None,
+        }
+    }
+    
     /// Create new application state by loading from files
     pub fn new() -> Self {
-        let commands = load_commands();
-        
-        // Load config with error handling
+        // Load config with error handling first
         let config_result = load_config_with_error();
         let (config, config_error) = match config_result {
             ConfigResult::Success(cfg) => (cfg, None),
             ConfigResult::Error(error) => {
                 utils::debug_log("CONFIG_ERROR", &format!("Failed to load config: {}", error));
-                (load_config(), Some(error)) // Use fallback config
+                (crate::core::sys_data::get_config(), Some(error)) // Use fallback config
             }
         };
+        
+        // Load sys data once to get commands
+        let sys_data = super::sys_data::get_sys_data();
+        let commands = sys_data.commands;
         
         // Don't scan at startup - only scan at termination
         // commands = scanner::startup_check(commands);
@@ -168,6 +182,11 @@ impl ApplicationState {
         use super::commands::get_display_commands;
         
         let total_limit = self.config.popup_settings.max_rows * self.config.popup_settings.max_columns;
-        self.filtered_commands = get_display_commands(&self.commands, &self.search_text, &self.config, total_limit);
+        let sys_data = super::sys_data::SysData {
+            config: self.config.clone(),
+            commands: self.commands.clone(),
+            patches: std::collections::HashMap::new(), // Empty for filtering
+        };
+        self.filtered_commands = get_display_commands(&sys_data, &self.search_text, total_limit);
     }
 }

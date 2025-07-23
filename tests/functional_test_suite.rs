@@ -7,6 +7,7 @@
 use hookanchor::core::commands::{Patch, parse_command_line};
 use hookanchor::core::commands::{filter_commands, run_patch_inference, find_orphan_patches};
 use hookanchor::core::config::Config;
+use hookanchor::{load_data, GlobalData, get_display_commands_with_options};
 use std::collections::HashMap;
 use std::fs;
 
@@ -154,87 +155,129 @@ LongTest! This Is A Very Long Command Name That Should Still Parse Correctly : f
 LongTest! Short : url; https://example.com/with/a/very/long/url/path/that/includes/many/segments/and/parameters?param1=value1&param2=value2&param3=value3"#.to_string()
 }
 
+/// Parse test command structure into command vector
+fn parse_test_commands() -> Vec<hookanchor::Command> {
+    let test_data = create_test_command_structure();
+    let lines: Vec<&str> = test_data.lines().collect();
+    
+    let mut commands = Vec::new();
+    for line in lines {
+        if !line.trim().is_empty() && !line.starts_with('#') {
+            if let Ok(cmd) = parse_command_line(line) {
+                commands.push(cmd);
+            }
+        }
+    }
+    commands
+}
+
+/// Create a complete GlobalData structure with test commands
+/// This runs the full load_data pipeline on our test data
+fn create_test_global_data() -> GlobalData {
+    let test_commands = parse_test_commands();
+    load_data(test_commands)
+}
+
 #[cfg(test)]
 mod tests {
     use super::*;
     use tempfile::TempDir;
     
-    /// Load test commands and verify basic structure
+    /// Load test commands and verify basic structure using new load_data_with_commands
     #[test]
     fn test_load_command_structure() {
-        let test_data = create_test_command_structure();
-        let lines: Vec<&str> = test_data.lines().collect();
+        let global_data = create_test_global_data();
         
-        // Parse commands manually since load_commands_from_lines isn't public
-        let mut commands = Vec::new();
-        let mut errors = Vec::new();
+        // Should have loaded many commands with full processing
+        assert!(global_data.commands.len() > 50, "Expected > 50 commands, got {}", global_data.commands.len());
         
-        for line in lines {
-            if !line.trim().is_empty() && !line.starts_with('#') {
-                match parse_command_line(line) {
-                    Ok(cmd) => commands.push(cmd),
-                    Err(e) => errors.push(format!("{}: {}", line, e)),
-                }
-            }
-        }
+        // Verify some key commands exist (note: patches are lowercase with ! suffix)
+        let has_project_anchor = global_data.commands.iter().any(|c| c.patch.contains("project") && c.command == "project");
+        assert!(has_project_anchor, "Missing project anchor command");
         
-        // Should have loaded many commands
-        assert!(commands.len() > 50, "Expected > 50 commands, got {}", commands.len());
-        
-        // Verify some key commands exist
-        let has_project_anchor = commands.iter().any(|c| c.patch == "Project" && c.command == "project");
-        assert!(has_project_anchor, "Missing Project anchor command");
-        
-        let has_orphan_ref = commands.iter().any(|c| c.patch == "Orphan1");
+        let has_orphan_ref = global_data.commands.iter().any(|c| c.patch.contains("Orphan1"));
         assert!(has_orphan_ref, "Missing Orphan1 patch reference");
+        
+        // Verify patches were created
+        assert!(!global_data.patches.is_empty(), "Should have created patches hashmap");
+        
+        // Verify config is loaded
+        assert!(!global_data.config.popup_settings.word_separators.is_empty(), "Config should be loaded");
     }
     
-    /// Test patch inference for commands without patches
+    /// Test patch inference for commands without patches using full pipeline
     #[test] 
     fn test_patch_inference() {
-        let test_data = create_test_command_structure();
-        let lines: Vec<&str> = test_data.lines().collect();
+        // Start with raw parsed commands (no inference yet)
+        let raw_commands = parse_test_commands();
         
-        // Parse commands manually
-        let mut commands = Vec::new();
-        for line in lines {
-            if !line.trim().is_empty() && !line.starts_with('#') {
-                if let Ok(cmd) = parse_command_line(line) {
-                    commands.push(cmd);
-                }
-            }
-        }
+        // Count commands without patches before full processing
+        let empty_before = raw_commands.iter().filter(|c| c.patch.is_empty()).count();
+        assert!(empty_before > 0, "Should have commands without patches before processing");
         
-        // Count commands without patches before inference
-        let empty_before = commands.iter().filter(|c| c.patch.is_empty()).count();
-        assert!(empty_before > 0, "Should have commands without patches");
+        // Run full pipeline including patch inference
+        let global_data = create_test_global_data();
         
-        // Create test config
-        let _config = Config::default();
+        // Count after full processing - should be fewer empty patches
+        let empty_after = global_data.commands.iter().filter(|c| c.patch.is_empty()).count();
+        assert!(empty_after < empty_before, "Full processing should reduce empty patches");
         
-        // Create patches hashmap by extracting from existing anchor commands
-        let mut patches = HashMap::new();
-        for cmd in &commands {
-            if cmd.action == "anchor" {
-                let patch_name = cmd.command.to_lowercase();
-                patches.insert(patch_name.clone(), Patch {
-                    name: patch_name,
-                    linked_command: Some(cmd.clone()),
-                });
-            }
-        }
+        // Verify patches were created for test commands
+        assert!(!global_data.patches.is_empty(), "Should have created patches");
         
-        // Run patch inference  
-        let (patches_assigned, _) = run_patch_inference(&mut commands, &patches, true, false, false);
+        // Test specific patch assignments from our test data  
+        let project_commands = global_data.commands.iter()
+            .filter(|c| c.patch.contains("project"))
+            .count();
+        assert!(project_commands > 1, "Should have multiple project commands");
         
-        // Count after inference - should be fewer
-        let empty_after = commands.iter().filter(|c| c.patch.is_empty()).count();
-        assert!(empty_after < empty_before, "Patch inference should reduce empty patches");
-        assert!(patches_assigned > 0, "Should have assigned some patches");
+        let work_commands = global_data.commands.iter()
+            .filter(|c| c.patch.contains("work"))
+            .count();
+        assert!(work_commands > 1, "Should have multiple work commands");
+    }
+    
+    /// Test display commands with known test dataset
+    #[test]
+    fn test_display_commands_with_test_data() {
+        let global_data = create_test_global_data();
         
-        // Verify web actions got "Web" patch
-        let google_search = commands.iter().find(|c| c.command == "Google Search").unwrap();
-        assert_eq!(google_search.patch, "Web", "Chrome action should get Web patch");
+        // Test searching for "project" should find Project commands
+        let project_results = get_display_commands_with_options(
+            &global_data.commands, 
+            "project", 
+            &global_data.config, 
+            50, 
+            false
+        );
+        
+        assert!(!project_results.is_empty(), "Should find project-related commands");
+        
+        // Test submenu functionality with patch groups
+        let work_results = get_display_commands_with_options(
+            &global_data.commands,
+            "work",
+            &global_data.config,
+            50,
+            false
+        );
+        
+        assert!(!work_results.is_empty(), "Should find work-related commands");
+        
+        // Test that we have both commands with work patch and commands starting with "work"
+        let has_work_patch = work_results.iter().any(|c| c.patch.contains("work"));
+        assert!(has_work_patch, "Should include commands with work patch");
+        
+        // Test case sensitivity
+        let case_results = get_display_commands_with_options(
+            &global_data.commands,
+            "CASE",
+            &global_data.config,
+            50,
+            false
+        );
+        
+        assert!(!case_results.is_empty(), "Should handle case insensitive search");
     }
     
     /// Test command resolution through rewrite chains

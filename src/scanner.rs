@@ -8,7 +8,7 @@ use std::path::{Path, PathBuf};
 use std::process::Command as ProcessCommand;
 use std::collections::{hash_map::DefaultHasher, HashSet};
 use std::hash::{Hash, Hasher};
-use crate::{Command, Config, load_config, load_state, save_state, save_commands_to_file, utils::debug_log};
+use crate::{Command, Config, load_state, save_state, save_commands_to_file, utils::debug_log};
 use crate::core::get_action;
 use chrono::Local;
 
@@ -20,13 +20,13 @@ fn is_scanner_debug_enabled(config: &Config) -> bool {
 /// Checks if filesystem scan should be performed and executes it if needed
 /// This function should be called on application exit, not startup.
 pub fn file_scan_check(commands: Vec<Command>) -> Vec<Command> {
-    let config = load_config();
+    let sys_data = crate::core::sys_data::get_sys_data();
     let mut state = load_state();
     
     let current_time = Local::now().timestamp();
     
     // Get scan interval from config (default to 10 seconds)
-    let scan_interval = config.popup_settings.scan_interval_seconds.unwrap_or(10) as i64;
+    let scan_interval = sys_data.config.popup_settings.scan_interval_seconds.unwrap_or(10) as i64;
     
     // Check if enough time has passed since last scan
     let should_scan = match state.last_scan_time {
@@ -39,12 +39,12 @@ pub fn file_scan_check(commands: Vec<Command>) -> Vec<Command> {
     }
     
     // Clean up log file before scan to prevent it from growing too large
-    cleanup_log_file(&config);
+    cleanup_log_file(&sys_data.config);
     
     // Re-enabling scanner for debugging
     debug_log("SCANNER", "Starting filesystem scan");
     // Perform filesystem scan
-    let markdown_roots = match &config.markdown_roots {
+    let markdown_roots = match &sys_data.config.markdown_roots {
         Some(roots) => roots,
         None => {
             debug_log("SCANNER", "ERROR: No markdown_roots configured in config file");
@@ -54,7 +54,7 @@ pub fn file_scan_check(commands: Vec<Command>) -> Vec<Command> {
     
     debug_log("SCANNER", &format!("file_scan_check markdown_roots: {:?}", markdown_roots));
     
-    let scanned_commands = scan(commands, markdown_roots, &config);
+    let scanned_commands = scan(commands, &sys_data);
     
     // Calculate checksum of the scan results
     let new_checksum = calculate_commands_checksum(&scanned_commands);
@@ -76,23 +76,86 @@ pub fn file_scan_check(commands: Vec<Command>) -> Vec<Command> {
     
     // Save commands only if checksum changed
     if checksum_changed {
+        // Save the scanned commands directly - patch inference should already be handled by load_data()
+        // The commands passed to the scanner should already have proper patches from load_data()
         if let Err(e) = save_commands_to_file(&scanned_commands) {
             eprintln!("Warning: Failed to save updated commands: {}", e);
+        } else {
+            // Clear global cache since we've updated the commands file
+            crate::core::sys_data::clear_sys_data();
+            debug_log("SCANNER", "Cleared global cache after saving updated commands");
         }
+        
+        debug_log("SCANNER", "Scanner completed - using commands from load_data() without additional inference");
+        
+        // Return the original scanned commands (should already have patches from load_data())
+        scanned_commands
+    } else {
+        // No changes, return original commands
+        scanned_commands
     }
-    
-    scanned_commands
 }
 
 /// Top-level scan function that orchestrates all scanning operations
-pub fn scan(mut commands: Vec<Command>, markdown_roots: &[String], config: &Config) -> Vec<Command> {
+pub fn scan(commands: Vec<Command>, sys_data: &crate::core::sys_data::SysData) -> Vec<Command> {
+    scan_verbose(commands, sys_data, false)
+}
+
+/// Top-level scan function with verbose output
+pub fn scan_verbose(commands: Vec<Command>, sys_data: &crate::core::sys_data::SysData, verbose: bool) -> Vec<Command> {
+    let empty_vec = vec![];
+    let markdown_roots = sys_data.config.markdown_roots.as_ref().unwrap_or(&empty_vec);
+    
+    if verbose {
+        println!("\n🔍 Starting filesystem scan...");
+        println!("   Scanning roots: {:?}", markdown_roots);
+    }
+    
     // First scan markdown files
-    commands = scan_files(commands, markdown_roots, config);
+    let initial_count = commands.len();
+    let commands = scan_files(commands, markdown_roots, &sys_data.config);
+    
+    if verbose {
+        let files_added = commands.len().saturating_sub(initial_count);
+        println!("   Scan complete: {} commands total", commands.len());
+        if files_added > 0 {
+            println!("   Added {} new commands", files_added);
+        }
+    }
     
     // Then scan contacts - DISABLED for performance
     // commands = scan_contacts(commands);
     
-    commands
+    // Run full inference pipeline on scanned commands to ensure consistency
+    if verbose {
+        println!("\n🔄 Running inference pipeline on scanned commands...");
+    }
+    debug_log("SCANNER", "Running full inference pipeline on scanned commands");
+    let global_data = crate::core::sys_data::load_data(commands, verbose);
+    
+    // Save the processed commands to ensure persistence
+    if verbose {
+        println!("\n💾 Saving processed commands...");
+    }
+    
+    if let Err(e) = crate::core::commands::save_commands_to_file(&global_data.commands) {
+        debug_log("SCANNER", &format!("Warning: Failed to save commands after scan: {}", e));
+        if verbose {
+            println!("   ❌ Failed to save: {}", e);
+        }
+    } else {
+        debug_log("SCANNER", &format!("Successfully saved {} processed commands after scan", global_data.commands.len()));
+        if verbose {
+            println!("   ✅ Saved {} commands to disk", global_data.commands.len());
+        }
+    }
+    
+    if verbose {
+        println!("\n🎉 Scan and inference complete!");
+    }
+    
+    // Return the fully processed commands with all inference completed
+    global_data.commands
 }
 
 /// Scans the configured markdown roots and returns an updated command list
@@ -108,6 +171,14 @@ pub fn scan_files(mut commands: Vec<Command>, markdown_roots: &[String], config:
         .map(|cmd| cmd.command.to_lowercase())
         .collect();
     
+    // Create a lookup map to preserve existing patches when regenerating commands
+    let mut existing_patches: std::collections::HashMap<String, String> = std::collections::HashMap::new();
+    for cmd in &commands {
+        if (cmd.action == "markdown" || cmd.action == "anchor" || cmd.action == "folder") && !cmd.patch.is_empty() {
+            existing_patches.insert(cmd.command.clone(), cmd.patch.clone());
+        }
+    }
+    
     // Count commands before removal
     let markdown_before = commands.iter().filter(|cmd| cmd.action == "markdown").count();
     let anchor_before = commands.iter().filter(|cmd| cmd.action == "anchor").count();
@@ -120,13 +191,25 @@ pub fn scan_files(mut commands: Vec<Command>, markdown_roots: &[String], config:
     
     // Remove existing markdown, anchor, and folder commands from the commands list
     // EXCEPT those with the "U" (user edited) flag - preserve those
-    // but keep ALL commands in existing_commands set for collision detection
+    // Also validate that files actually exist for scanner-generated commands
     commands.retain(|cmd| {
         let is_scanner_generated = cmd.action == "markdown" || cmd.action == "anchor" || cmd.action == "folder";
         let is_user_edited = cmd.flags.contains('U');
         
-        // Keep command if it's NOT scanner-generated OR if it's user-edited
-        !is_scanner_generated || is_user_edited
+        // If it's scanner-generated, check if file exists (for cleanup of orphan commands)
+        if is_scanner_generated {
+            // For user-edited commands, still validate file existence to clean up orphans
+            let file_exists = std::path::Path::new(&cmd.arg).exists();
+            if !file_exists {
+                debug_log("SCANNER", &format!("Removing command '{}' - file no longer exists: {}", cmd.command, cmd.arg));
+                return false; // Remove this command
+            }
+            // Keep user-edited commands even if we're about to regenerate scanner commands
+            return is_user_edited;
+        }
+        
+        // Keep command if it's NOT scanner-generated
+        true
     });
     
     let preserved_user_edited = commands.iter()
@@ -151,7 +234,7 @@ pub fn scan_files(mut commands: Vec<Command>, markdown_roots: &[String], config:
             debug_log("SCANNER", &format!("Scanning directory: {}", expanded_root));
             // COMMENTED OUT: Passing empty Vec instead of found_folders since folder scanning is disabled
             let mut dummy_folders = Vec::new();
-            scan_directory_with_root(&root_path, &root_path, &mut commands, &mut existing_commands, &mut dummy_folders);
+            scan_directory_with_root(&root_path, &root_path, &mut commands, &mut existing_commands, &mut dummy_folders, &existing_patches, config);
             let commands_after_scan = commands.len();
             if is_scanner_debug_enabled(config) {
                 debug_log("SCANNER", &format!("Added {} commands from {}", commands_after_scan - commands_before_scan, expanded_root));
@@ -208,7 +291,7 @@ pub fn scan_files(mut commands: Vec<Command>, markdown_roots: &[String], config:
 
 
 /// Recursively scans a directory for files and folders with vault root tracking
-fn scan_directory_with_root(dir: &Path, vault_root: &Path, commands: &mut Vec<Command>, existing_commands: &mut HashSet<String>, found_folders: &mut Vec<PathBuf>) {
+fn scan_directory_with_root(dir: &Path, vault_root: &Path, commands: &mut Vec<Command>, existing_commands: &mut HashSet<String>, found_folders: &mut Vec<PathBuf>, existing_patches: &std::collections::HashMap<String, String>, config: &Config) {
     if let Ok(entries) = fs::read_dir(dir) {
         for entry in entries.filter_map(Result::ok) {
             let path = entry.path();
@@ -220,9 +303,8 @@ fn scan_directory_with_root(dir: &Path, vault_root: &Path, commands: &mut Vec<Co
                         continue;
                     }
                     
-                    // Also skip certain system directories
-                    let skip_folders = ["node_modules", "target", "__pycache__", ".git", ".svn"];
-                    if path.is_dir() && skip_folders.contains(&name_str) {
+                    // Skip directories based on config patterns
+                    if path.is_dir() && should_skip_directory(&name_str, config) {
                         continue;
                     }
                 }
@@ -234,13 +316,25 @@ fn scan_directory_with_root(dir: &Path, vault_root: &Path, commands: &mut Vec<Co
                 // found_folders.push(path.clone());
                 
                 // Recursively scan subdirectories
-                scan_directory_with_root(&path, vault_root, commands, existing_commands, found_folders);
+                scan_directory_with_root(&path, vault_root, commands, existing_commands, found_folders, existing_patches, config);
             } else {
                 // Process files (markdown files)
-                if let Some(command) = process_markdown_with_root(&path, vault_root, existing_commands) {
-                    // Add to existing commands set to prevent future collisions (lowercase)
-                    existing_commands.insert(command.command.to_lowercase());
-                    commands.push(command);
+                if let Some(command) = process_markdown_with_root(&path, vault_root, existing_commands, &existing_patches) {
+                    // Check if a command with the same name, action, and argument already exists
+                    let duplicate_exists = commands.iter().any(|existing_cmd| {
+                        existing_cmd.command.to_lowercase() == command.command.to_lowercase() &&
+                        existing_cmd.action == command.action &&
+                        existing_cmd.arg == command.arg
+                    });
+                    
+                    if duplicate_exists {
+                        debug_log("SCANNER", &format!("Skipping duplicate command: '{}' (action: {}, arg: {})", 
+                            command.command, command.action, command.arg));
+                    } else {
+                        // Add to existing commands set to prevent future collisions (lowercase)
+                        existing_commands.insert(command.command.to_lowercase());
+                        commands.push(command);
+                    }
                 }
             }
         }
@@ -249,7 +343,7 @@ fn scan_directory_with_root(dir: &Path, vault_root: &Path, commands: &mut Vec<Co
 
 
 /// Processes a path and returns a command if it's a markdown file with vault root for relative paths
-fn process_markdown_with_root(path: &Path, _vault_root: &Path, existing_commands: &HashSet<String>) -> Option<Command> {
+fn process_markdown_with_root(path: &Path, _vault_root: &Path, existing_commands: &HashSet<String>, existing_patches: &std::collections::HashMap<String, String>) -> Option<Command> {
     // Check if it's a file and has .md extension
     if !path.is_file() {
         return None;
@@ -289,8 +383,11 @@ fn process_markdown_with_root(path: &Path, _vault_root: &Path, existing_commands
     
     let full_line = format!("{} : {} {};", command_name, action, arg);
     
+    // Try to preserve existing patch if this command existed before
+    let preserved_patch = existing_patches.get(&command_name).cloned().unwrap_or_else(String::new);
+    
     Some(Command {
-        patch: String::new(),
+        patch: preserved_patch,
         command: command_name,
         action: action.to_string(),
         arg,
@@ -305,6 +402,58 @@ pub fn cleanup_log_file(config: &crate::Config) {
         let expanded_path = expand_home(debug_log_path);
         let _ = std::fs::remove_file(&expanded_path);
     }
+}
+
+/// Check if a directory should be skipped based on config patterns
+fn should_skip_directory(dir_name: &str, config: &Config) -> bool {
+    // Get skip patterns from config
+    let skip_patterns = match &config.scanner_settings {
+        Some(settings) => match &settings.skip_directory_patterns {
+            Some(patterns) => patterns,
+            None => return false,
+        },
+        None => return false,
+    };
+    
+    // Check each pattern
+    for pattern in skip_patterns {
+        // Simple glob pattern matching
+        if pattern.contains('*') {
+            // Convert glob pattern to simple regex-like matching
+            let pattern_lower = pattern.to_lowercase();
+            let dir_lower = dir_name.to_lowercase();
+            
+            // Handle patterns like "*trash*"
+            if pattern_lower.starts_with('*') && pattern_lower.ends_with('*') {
+                let inner = &pattern_lower[1..pattern_lower.len()-1];
+                if dir_lower.contains(inner) {
+                    return true;
+                }
+            }
+            // Handle patterns like "*.Trash*" 
+            else if pattern_lower.contains("*.") {
+                // For now, treat as contains match after removing asterisks
+                let cleaned = pattern_lower.replace('*', "");
+                if dir_lower.contains(&cleaned) {
+                    return true;
+                }
+            }
+            // Handle other patterns
+            else {
+                let cleaned = pattern_lower.replace('*', "");
+                if dir_lower.contains(&cleaned) {
+                    return true;
+                }
+            }
+        } else {
+            // Exact match (case-insensitive)
+            if dir_name.eq_ignore_ascii_case(pattern) {
+                return true;
+            }
+        }
+    }
+    
+    false
 }
 
 /// Expands ~ to home directory

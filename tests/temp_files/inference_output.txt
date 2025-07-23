@@ -1,0 +1,227 @@
+Analyzing patch inference changes...
+HOTKEY_ALTERNATIVES: 2025-06 HookAnchor -> old
+README_HOTKEY: 2025-06 HookAnchor -> old
+AMA markdown: @Amazon -> AMA
+Fin Main: Alias -> FIN
+Alibaba 1Pass: Application -> Alibaba
+Coursera 1Pass: Application -> Coursera
+OpenAI 1Pass: Application -> OpenAI
+Penfed 1Pass: Application -> PenFed
+CV Plan: CVP -> CV
+CV Planning Folder: CVP -> CV
+Mgt Gdrive: CVP -> Mgt
+OKR Slide: CVP -> OKR
+Pln Factory: CVP -> Pln
+Pln Work: CVP -> Pln
+Weekly Agenda: CVP -> Weekly
+Coursera Deep Learning: Courses -> Coursera
+Coursera Notes: Courses -> Coursera
+Gen AI Lang Modeling w Transformers: Courses -> Coursera
+CV Data Tasks: Data -> CV
+Greenhouse Farming Data: EduCorp -> data
+SV Hiring: Hire Post -> SV
+2022 CORIS: Log -> Meet
+2024-06-13 - Juan EC2 setup: Log -> Meet
+MEETINGS: Log -> Meet
+Meet markdown: Log -> Meet
+Phone -old-: Log -> Phone
+Phone markdown: Log -> Phone
+Phone-old-: Log -> Phone
+App Store App: MAC -> App
+Google Docs App: MAC -> Google
+Google Drive App: MAC -> Google
+Google Sheets App: MAC -> Google
+Google Slides App: MAC -> Google
+Microsoft Excel App: MAC -> Microsoft
+Microsoft OneNote App: MAC -> Microsoft
+Microsoft Outlook App: MAC -> Microsoft
+Microsoft PowerPoint App: MAC -> Microsoft
+Microsoft Word App: MAC -> Microsoft
+Mission Control App: MAC -> Mission
+NOISE DarkNoise: MAC -> NOISE
+Netflix App: MAC -> Netflix
+News App: MAC -> News
+Slack App: MAC -> Slack
+MyMgr Page: MY -> MyMgr
+CV Meetings: Meet -> CV
+SV Clickup Page: SVT -> SV
+MOV Prime Video: Web -> MOV
+QuickNews: Web -> RR DL
+2023 Base Ball Product Offering: Work -> ww
+2023 Basketball Stats: Work -> ww
+2023 Belief Propagation: Work -> ww
+2023 Beta Testing: Work -> ww
+2023 Blog Announce and Bio: Work -> ww
+2023 Brians Birds Eye: Work -> ww
+2023 Bridge Round: Work -> ww
+2023 Bridge Round AI Demo: Work -> ww
+2023 Bugs  Flow: Work -> ww
+2023 Build Datasets Needed for the CV Team: Work -> ww
+2023 CTO Corner Blog: Work -> ww
+2023 CV team new agenda metrics: Work -> ww
+2023 Clsh.TV Partnership: Work -> ww
+2023 Competitive Analysis: Work -> ww
+2023 Container Entity Permissions Data Model: Work -> ww
+2023 Customer Acquisition: Work -> ww
+2023 Full-AI Basketball Highlights Product: Work -> ww
+2023 GPT Report: Work -> ww
+2023 Game Management: Work -> ww
+2023 Headless Record Flow: Work -> ww
+2023 Headroom Analysis: Work -> ww
+2023 Jason Tasks: Work -> ww
+2023 Least Commitment Model For CV Pipe: Work -> ww
+2023 Meta Thinking: Work -> ww
+2023 Minutes Stat Calculations and Annotations: Work -> ww
+2023 Remote Work Guidelines: Work -> ww
+2023 SV CV New Agenda: Work -> ww
+2023 SV Investor News Letter: Work -> ww
+2023 SV Learning: Work -> ww
+2023 SV Mgt Meeting Slides: Work -> ww
+2023 SV Notes: Work -> ww
+2023 SV Patents markdown: Work -> 2023 SV Patents
+2023 SV Roles and Responsibilities: Work -> ww
+2023 SV Strategic Plan: Work -> ww
+2023 SV Testing Plans: Work -> ww
+2023 Sound Bites for Bridge Round Financing: Work -> ww
+2023 Team Hiring: Work -> ww
+2023 Tournament Flow: Work -> ww
+2023 Velocity: Work -> ww
+2023 Volleyball Product: Work -> ww
+2023 Volleyball SV Product: Work -> ww
+2023-08 Ingest Alternatives Analysis: Work -> ww
+2023-12 CV Tree: Work -> CVP
+2023-Reset-DanO-Role: Work -> ww
+2024 AI Product Choice: Work -> ww
+2025 GPU Choice: Work -> ww
+@SV: Work -> SV
+CV Annotations: Work -> CVP
+CV Hack Notes: Work -> CV
+CV HowTo: Work -> CV
+CV Log: Work -> CV
+CV Roadmap: Work -> CVP
+CV markdown: Work -> CV
+CVP markdown: Work -> CVP
+Circle: Work -> SV
+Container: Work -> ww
+Data markdown: Work -> Data
+GameGraph: Work -> CVP
+INV: Work -> SV
+Infra: Work -> CVP
+Meta SV: Work -> SV
+Mgt: Work -> SV
+Patents markdown: Work -> 2023 SV Patents
+Player Tracking Problem: Work -> CVP
+QQ: Work -> SV
+Rpt: Work -> CVP
+SV App: Work -> SV
+SV Archive: Work -> SV
+SV Basketball Info: Work -> SV
+SV Log: Work -> SV
+SV Market: Work -> SV
+SV Ops: Work -> SV
+SV Org: Work -> SV
+SV Page: Work -> SV
+SV Partner: Work -> SV
+SV People: Work -> SV
+SV Product: Work -> SV
+SV Proj: Work -> SV
+SV Software: Work -> SV
+SV Strat: Work -> SV
+SV Wings: Work -> SV
+SV markdown: Work -> SV
+SVCV Re-ID: Work -> CV
+SVT Bitbucket: Work -> SVT
+SVT Clickup: Work -> SVT
+SVT Confluence: Work -> SVT
+SVT Google Drive: Work -> SVT
+SVT Jira: Work -> SVT
+SVT Polaris: Work -> SVT
+SVT Sentry: Work -> SVT
+SVT Slack: Work -> SVT
+SVT Virtual Box Notes: Work -> SVT
+SVT markdown: Work -> SVT
+ShotTopView: Work -> CVP
+ww markdown: Work -> ww
+2016-00 FileThis: kmr -> prj
+2018-00 UF: kmr -> prj
+2018-00 Wedding: kmr -> prj
+2020-08 Race Pitch: kmr -> prj
+2021-04 FindDayCare: kmr -> prj
+2022-01-00 Nanny: kmr -> prj
+2022-02 Yearbook: kmr -> prj
+2022-03 BeFAANG: kmr -> prj
+2022-03 BeVC: kmr -> prj
+2022-04 BeMLR: kmr -> prj
+2022-05 Enxt: kmr -> prj
+2022-05 Grandpa DJ: kmr -> prj
+2022-09 Mom80: kmr -> prj
+2023-07 Task Rabbit: kmr -> prj
+2024-05 Sell Acura: kmr -> prj
+2025 Sports Data Search: kmr -> prj
+2025-02 Code Markdown: kmr -> prj
+2025-05-14 My 60th Birthday: kmr -> prj
+2025-06 Alg2: kmr -> prj
+2025-06 Doctor Search: kmr -> prj
+2025-06 HookAnchor: kmr -> prj
+2025-06 HookAnchor markdown: kmr -> prj
+2025-06 LinkedIn Contacts Merge: kmr -> prj
+2025-06 Sports Tracking Papers: kmr -> prj
+2025-06 sv paper: kmr -> prj
+2025-06 web: kmr -> prj
+2025-06 web2: kmr -> prj
+ABio: kmr -> prj
+ALIAS_FEATURE_SUMMARY markdown: kmr -> prj
+API_REFERENCE markdown: kmr -> prj
+Big: kmr -> prj
+Budg: kmr -> prj
+CLAUDE markdown: kmr -> prj
+CLAUDE markdown: kmr -> prj
+CLAUDE markdown: kmr -> prj
+CLAUDE markdown: kmr -> prj
+HIS month: kmr -> MY
+HIS monthh: kmr -> MY
+HIS year: kmr -> MY
+HOTKEY_ALTERNATIVES markdown: kmr -> old
+JAVASCRIPT_API markdown: kmr -> prj
+MY Content: kmr -> MY
+MY markdown: kmr -> MY
+Meta: kmr -> MY
+My Stuff: kmr -> MY
+Myfo: kmr -> MY
+NEW_LAUNCHER_INTEGRATION markdown: kmr -> prj
+Obsidian Double Click: kmr -> prj
+POLISH_SUMMARY markdown: kmr -> prj
+PROJECT_STATUS markdown: kmr -> prj
+Phone markdown: kmr -> prj
+Photos Notes: kmr -> prj
+Pln: kmr -> MY
+QUICKADD: kmr -> MY
+README markdown: kmr -> prj
+README markdown: kmr -> prj
+README markdown: kmr -> prj
+README markdown: kmr -> prj
+README_HOTKEY markdown: kmr -> old
+RUST_BEST_PRACTICES markdown: kmr -> prj
+SHELL_ENVIRONMENT_FIX markdown: kmr -> prj
+STATE_CLEANUP_PROPOSAL markdown: kmr -> prj
+Spot: kmr -> prj
+TEMPLATER: kmr -> MY
+TESTING markdown: kmr -> prj
+USER_CUSTOMIZATION markdown: kmr -> prj
+alarm: kmr -> prj
+anchor: kmr -> prj
+docs markdown: kmr -> prj
+dp: kmr -> prj
+gitproj: kmr -> prj
+karabiner markdown: kmr -> prj
+km_cmd: kmr -> prj
+launcher markdown: kmr -> prj
+mddb-module: kmr -> prj
+pq: kmr -> prj
+prj markdown: kmr -> prj
+research_methods: kmr -> prj
+sds: kmr -> prj
+PROJ Gdrive: prj -> Proj
+
+Found 223 commands that would change.
+Apply all changes? (y/n): 

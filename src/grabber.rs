@@ -7,7 +7,7 @@
 use std::process::Command as ProcessCommand;
 use serde::{Deserialize, Serialize};
 use crate::{Command, Config};
-use crate::core::get_action;
+use crate::core::{get_action, get_default_patch_for_action};
 use rquickjs::{Runtime, Context, Value};
 
 /// Information captured about the active application
@@ -32,7 +32,8 @@ pub struct GrabberRule {
     pub matcher: String,
     /// Action type for the created command (e.g., "url", "folder", "obs")
     pub action: String,
-    /// Optional group for the created command
+    /// Optional group for the created command (stored as patch in Command)
+    #[serde(alias = "group")]
     pub patch: Option<String>,
 }
 
@@ -380,6 +381,10 @@ pub fn match_grabber_rules(
     
     crate::utils::debug_log("GRABBER", &format!("Attempting {} grabber rules", rules.len()));
     
+    // Load patches data for patch inference
+    let sys_data = crate::core::sys_data::get_sys_data();
+    let patches = &sys_data.patches;
+    
     let rt = Runtime::new().ok()?;
     let ctx = Context::full(&rt).ok()?;
     
@@ -412,7 +417,7 @@ pub fn match_grabber_rules(
                             crate::utils::debug_log("GRABBER", &format!("Matched rule '{}' with string: '{}'", rule.name, arg));
                             
                             // Rule matched and returned a string argument
-                            let command = Command {
+                            let mut command = Command {
                                 patch: rule.patch.clone().unwrap_or_default(),
                                 command: String::new(), // Will be filled by user
                                 action: rule.action.clone(),
@@ -420,6 +425,20 @@ pub fn match_grabber_rules(
                                 flags: String::new(),
                                 full_line: String::new(), // Will be computed
                             };
+                            
+                            // Apply patch inference if no explicit patch was set
+                            if command.patch.is_empty() {
+                                // First try to get default patch for action type
+                                if let Some(default_patch) = crate::core::actions::get_default_patch_for_action(&command.action) {
+                                    crate::utils::debug_log("GRABBER", &format!("Using default patch '{}' for action '{}'", default_patch, command.action));
+                                    command.patch = default_patch;
+                                } else if let Some(inferred_patch) = crate::core::commands::infer_patch(&command, patches) {
+                                    crate::utils::debug_log("GRABBER", &format!("Inferred patch '{}' for grabbed command", inferred_patch));
+                                    command.patch = inferred_patch;
+                                } else {
+                                    crate::utils::debug_log("GRABBER", "No patch could be inferred for grabbed command");
+                                }
+                            }
                             
                             return Some((rule.name.clone(), command));
                         }
@@ -439,7 +458,7 @@ pub fn match_grabber_rules(
                         if let Some(action) = action {
                             crate::utils::debug_log("GRABBER", &format!("  action: '{}', arg: '{}', patch: '{}'", action, arg, group));
                             
-                            let command = Command {
+                            let mut command = Command {
                                 patch: group,
                                 command: String::new(), // Will be filled by user
                                 action,
@@ -447,6 +466,20 @@ pub fn match_grabber_rules(
                                 flags: String::new(),
                                 full_line: String::new(), // Will be computed
                             };
+                            
+                            // Apply patch inference if no explicit patch was set
+                            if command.patch.is_empty() {
+                                // First try to get default patch for action type
+                                if let Some(default_patch) = get_default_patch_for_action(&command.action) {
+                                    crate::utils::debug_log("GRABBER", &format!("Using default patch '{}' for action '{}'", default_patch, command.action));
+                                    command.patch = default_patch;
+                                } else if let Some(inferred_patch) = crate::core::commands::infer_patch(&command, patches) {
+                                    crate::utils::debug_log("GRABBER", &format!("Inferred patch '{}' for grabbed command", inferred_patch));
+                                    command.patch = inferred_patch;
+                                } else {
+                                    crate::utils::debug_log("GRABBER", "No patch could be inferred for grabbed command");
+                                }
+                            }
                             
                             return Some((rule.name.clone(), command));
                         } else {

@@ -29,6 +29,12 @@ pub mod vault;
 // Background command server
 pub mod command_server;
 
+// Setup assistant for first-run configuration
+pub mod setup_assistant;
+
+// Process monitoring for non-blocking execution
+pub mod process_monitor;
+
 // Error display system
 pub mod error_display;
 
@@ -38,11 +44,13 @@ pub mod server_management;
 // Re-export commonly used types from core modules
 pub use core::commands::{Command, CommandTarget, Patch, filter_commands, get_display_commands, get_display_commands_with_options, merge_similar_commands, 
                          merge_similar_commands_with_context, load_commands, load_commands_with_data, load_commands_for_inference, save_commands_to_file, 
-                         add_command, delete_command, parse_command_line, split_commands, 
+                         add_command, delete_command, parse_command_line, split_commands,
                          get_current_submenu_prefix, execute_command, migrate_commands_to_new_format,
-                         command_matches_query, command_matches_query_with_debug, get_command_prefix, auto_assign_patches, load_data, infer_patch, run_patch_inference};
+                         command_matches_query, command_matches_query_with_debug, get_command_prefix, auto_assign_patches, infer_patch, run_patch_inference,
+                         get_patch_for_command};
+pub use core::sys_data::{SysData, load_data, get_sys_data, get_config, clear_sys_data};
 // Note: Path accessor methods (get_absolute_file_path, get_absolute_folder_path, is_path_based) are available as Command impl methods
-pub use core::config::{Config, PopupSettings, LauncherSettings, load_config};
+pub use core::config::{Config, PopupSettings, LauncherSettings};
 pub use core::state::{AppState, load_state, save_state};
 pub use core::ApplicationState;
 
@@ -53,7 +61,7 @@ pub use core::ApplicationState;
 /// Gets the list of actions for the command editor dropdown
 /// Returns the configured actions from popup_settings.listed_actions, or default actions if not configured
 pub fn get_listed_actions() -> Vec<String> {
-    let config = load_config();
+    let config = get_config();
     
     match config.popup_settings.listed_actions {
         Some(actions_str) => {

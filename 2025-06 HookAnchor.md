@@ -1,24 +1,28 @@
+# 2025-06 HookAnchor
 
-[[./CLAUDE]] 
+## Project Overview
+Universal command launcher and anchor system for macOS.
 
-[[API_REFERENCE]] 
-[[Hook System]] 
+## Key Features
+- Popup command interface triggered by hotkeys
+- Markdown file scanning and command extraction  
+- Obsidian integration for note management
+- Configurable actions (apps, URLs, folders, etc.)
+- JavaScript function system for complex workflows
 
-[[hack]]
+## Development
+- **Language**: Rust
+- **UI Framework**: egui
+- **Config**: YAML + JavaScript functions
+- **Platform**: macOS
 
+## Quick Actions
+- Build: `cargo build --release`
+- Test: `./target/release/ha --help`
+- Install: Create DMG and drag to Applications
+- Config: `~/.config/hookanchor/config.yaml`
 
-waypoint_template 
-using entry template
-
-- keep list of groups
-- keep list of md files
-- append any missing using entry template
-
-1001 ocean avenue
-
-I want to create a new capabilities that we are going to call "patch" which stands for dispatcher.
-- Rename 'Group' in the command to be "Patch" which stands for "Dispatcher".  Be sure to update the code and GUI everywhere with this new field name.
-- After commands are loaded we should create a hashmap from each lowercase patch namestring onto a new struct called a Patch.
-- Each Patch struct has a field 'command' that points to first command whose name matches the patch name. 
-
-
+## Related
+- [docs](docs/docs.md) - Technical documentation
+- [README](README.md) - Basic setup instructions
+- [CLAUDE](CLAUDE.md) - Development guidelines

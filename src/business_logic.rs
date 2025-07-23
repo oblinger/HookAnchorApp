@@ -21,8 +21,8 @@ use crate::js_runtime::execute_business_logic;
 pub fn run_business_script(script_name: &str) -> Result<String, Box<dyn std::error::Error>> {
     // For now, use embedded scripts. Later could load from filesystem.
     let script = match script_name {
-        "markdown_scanner" => include_str!("business_logic/markdown_scanner.js"),
-        "activate" => include_str!("business_logic/activate.js"),
+        "markdown_scanner" => include_str!("js/business_logic/markdown_scanner.js"),
+        "activate" => include_str!("js/business_logic/activate.js"),
         _ => return Err(format!("Unknown business script: {}", script_name).into()),
     };
     
@@ -48,7 +48,7 @@ pub fn update_commands_from_markdown() -> Result<usize, Box<dyn std::error::Erro
 /// Activates an anchor project using JavaScript business logic
 pub fn activate_anchor(anchor_path: &str) -> Result<String, Box<dyn std::error::Error>> {
     // Load the activate script
-    let script = include_str!("business_logic/activate.js");
+    let script = include_str!("js/business_logic/activate.js");
     
     // Create JavaScript context with the activate function and call it
     let full_script = format!(

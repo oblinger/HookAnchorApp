@@ -36,25 +36,35 @@ pub struct LauncherSettings {
 
 pub fn launch(command_line: &str) -> Result<(), LauncherError> {
     let start_time = SystemTime::now();
+    crate::utils::debug_log("LAUNCHER", &format!("Starting launch for: '{}'", command_line));
     
     // Parse command_line to extract action and arguments  
     let (action, args) = parse_command_line(command_line)?;
+    crate::utils::debug_log("LAUNCHER", &format!("Parsed action: '{}', args: '{}'", action, args));
     
     // Load configuration from YAML
     let config = load_config()?;
+    crate::utils::debug_log("LAUNCHER", "Configuration loaded successfully");
     
     // Look up action value in config
     let action_value = lookup_action(&action, &config)?;
+    crate::utils::debug_log("LAUNCHER", &format!("Found action config for: '{}'", action));
     
     // Create environment
     let mut env = Environment::new()
         .map_err(|e| LauncherError::ExecutionError(format!("Failed to create environment: {}", e)))?;
+    crate::utils::debug_log("LAUNCHER", "Environment created");
     
     // Set the arg variable for template substitution
     env.variables.insert("arg".to_string(), args.clone());
+    crate::utils::debug_log("LAUNCHER", &format!("Set arg variable: '{}'", args));
     
     // Execute the action using eval module
+    crate::utils::debug_log("LAUNCHER", "About to evaluate action");
+    let exec_start_time = std::time::Instant::now();
     let exec_result = env.eval(action_value);
+    let exec_duration = exec_start_time.elapsed();
+    crate::utils::debug_log("LAUNCHER", &format!("Action evaluation completed in {:?}", exec_duration));
     
     let duration = start_time.elapsed().unwrap_or_default();
     

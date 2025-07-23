@@ -19,12 +19,28 @@ pub fn setup_builtin_functions(env: &mut Environment) {
         
         debug_log("BUILTIN", &format!("Launching app: {} with arg: {:?}", name, arg));
         
-        let output = launch_app_with_arg(&name, arg.as_deref())
-            .map_err(|e| EvalError::ExecutionError(format!("Failed to launch app '{}': {}", name, e)))?;
+        let launch_start_time = std::time::Instant::now();
+        debug_log("BUILTIN", "About to call launch_app_with_arg (non-blocking)");
+        let output_result = launch_app_with_arg(&name, arg.as_deref());
+        let launch_duration = launch_start_time.elapsed();
+        debug_log("BUILTIN", &format!("launch_app_with_arg completed in {:?}", launch_duration));
         
-        if !output.status.success() {
-            let stderr = String::from_utf8_lossy(&output.stderr);
-            return Err(EvalError::ExecutionError(format!("App launch failed: {}", stderr)));
+        match output_result {
+            Ok(output) => {
+                // Should not happen with current non-blocking implementation
+                if !output.status.success() {
+                    let stderr = String::from_utf8_lossy(&output.stderr);
+                    return Err(EvalError::ExecutionError(format!("App launch failed: {}", stderr)));
+                }
+            }
+            Err(e) => {
+                // Check if this is our "success error" from non-blocking execution
+                if e.to_string().contains("NON_BLOCKING_SUCCESS") {
+                    debug_log("BUILTIN", "Non-blocking launch successful");
+                } else {
+                    return Err(EvalError::ExecutionError(format!("Failed to launch app '{}': {}", name, e)));
+                }
+            }
         }
         
         Ok(())
@@ -38,12 +54,26 @@ pub fn setup_builtin_functions(env: &mut Environment) {
         
         debug_log("BUILTIN", &format!("Opening '{}' with app: '{}'", arg, app));
         
-        let output = open_with_app(&app, &arg)
-            .map_err(|e| EvalError::ExecutionError(format!("Failed to open '{}': {}", arg, e)))?;
+        let open_start_time = std::time::Instant::now();
+        debug_log("BUILTIN", "About to call open_with_app (non-blocking)");
+        let output_result = open_with_app(&app, &arg);
+        let open_duration = open_start_time.elapsed();
+        debug_log("BUILTIN", &format!("open_with_app completed in {:?}", open_duration));
         
-        if !output.status.success() {
-            let stderr = String::from_utf8_lossy(&output.stderr);
-            return Err(EvalError::ExecutionError(format!("Open failed: {}", stderr)));
+        match output_result {
+            Ok(output) => {
+                if !output.status.success() {
+                    let stderr = String::from_utf8_lossy(&output.stderr);
+                    return Err(EvalError::ExecutionError(format!("Open failed: {}", stderr)));
+                }
+            }
+            Err(e) => {
+                if e.to_string().contains("NON_BLOCKING_SUCCESS") {
+                    debug_log("BUILTIN", "Non-blocking open successful");
+                } else {
+                    return Err(EvalError::ExecutionError(format!("Failed to open '{}': {}", arg, e)));
+                }
+            }
         }
         
         Ok(())
@@ -56,12 +86,26 @@ pub fn setup_builtin_functions(env: &mut Environment) {
         
         debug_log("BUILTIN", &format!("Opening URL: {}", url));
         
-        let output = open_url(&url)
-            .map_err(|e| EvalError::ExecutionError(format!("Failed to open URL '{}': {}", url, e)))?;
+        let url_start_time = std::time::Instant::now();
+        debug_log("BUILTIN", "About to call open_url (non-blocking)");
+        let output_result = open_url(&url);
+        let url_duration = url_start_time.elapsed();
+        debug_log("BUILTIN", &format!("open_url completed in {:?}", url_duration));
         
-        if !output.status.success() {
-            let stderr = String::from_utf8_lossy(&output.stderr);
-            return Err(EvalError::ExecutionError(format!("URL open failed: {}", stderr)));
+        match output_result {
+            Ok(output) => {
+                if !output.status.success() {
+                    let stderr = String::from_utf8_lossy(&output.stderr);
+                    return Err(EvalError::ExecutionError(format!("URL open failed: {}", stderr)));
+                }
+            }
+            Err(e) => {
+                if e.to_string().contains("NON_BLOCKING_SUCCESS") {
+                    debug_log("BUILTIN", "Non-blocking URL open successful");
+                } else {
+                    return Err(EvalError::ExecutionError(format!("Failed to open URL '{}': {}", url, e)));
+                }
+            }
         }
         
         Ok(())
@@ -74,12 +118,26 @@ pub fn setup_builtin_functions(env: &mut Environment) {
         
         debug_log("BUILTIN", &format!("Opening folder: {}", path));
         
-        let output = open_folder(&path)
-            .map_err(|e| EvalError::ExecutionError(format!("Failed to open folder '{}': {}", path, e)))?;
+        let folder_start_time = std::time::Instant::now();
+        debug_log("BUILTIN", "About to call open_folder (non-blocking)");
+        let output_result = open_folder(&path);
+        let folder_duration = folder_start_time.elapsed();
+        debug_log("BUILTIN", &format!("open_folder completed in {:?}", folder_duration));
         
-        if !output.status.success() {
-            let stderr = String::from_utf8_lossy(&output.stderr);
-            return Err(EvalError::ExecutionError(format!("Folder open failed: {}", stderr)));
+        match output_result {
+            Ok(output) => {
+                if !output.status.success() {
+                    let stderr = String::from_utf8_lossy(&output.stderr);
+                    return Err(EvalError::ExecutionError(format!("Folder open failed: {}", stderr)));
+                }
+            }
+            Err(e) => {
+                if e.to_string().contains("NON_BLOCKING_SUCCESS") {
+                    debug_log("BUILTIN", "Non-blocking folder open successful");
+                } else {
+                    return Err(EvalError::ExecutionError(format!("Failed to open folder '{}': {}", path, e)));
+                }
+            }
         }
         
         Ok(())
@@ -192,7 +250,7 @@ pub fn setup_builtin_functions(env: &mut Environment) {
                 .map_err(|e| EvalError::ExecutionError(format!("Failed to setup built-ins: {}", e)))?;
             
             // Load config and setup config access functions
-            let config = crate::load_config();
+            let config = crate::core::sys_data::get_config();
             crate::js_runtime::setup_config_access(&ctx, &config)
                 .map_err(|e| EvalError::ExecutionError(format!("Failed to setup config access: {}", e)))?;
             

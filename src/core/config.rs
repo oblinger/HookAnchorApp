@@ -90,12 +90,25 @@ impl Default for LauncherSettings {
 pub struct ScannerSettings {
     /// Path where orphan anchor files are created (default: ~/ob/kmr/SYS/Closet/Orphans)
     pub orphans_path: Option<String>,
+    /// Directory patterns to skip during scanning (glob patterns)
+    pub skip_directory_patterns: Option<Vec<String>>,
 }
 
 impl Default for ScannerSettings {
     fn default() -> Self {
         ScannerSettings {
             orphans_path: Some("/Users/oblinger/ob/kmr/SYS/Closet/Orphans".to_string()),
+            skip_directory_patterns: Some(vec![
+                "node_modules".to_string(),
+                "target".to_string(),
+                "__pycache__".to_string(),
+                ".git".to_string(),
+                ".svn".to_string(),
+                "*[Tt]rash*".to_string(),
+                "*_TO_TRASH_*".to_string(),
+                "*.Trash*".to_string(),
+                "*[Rr]ecycle*".to_string(),
+            ]),
         }
     }
 }
@@ -259,7 +272,7 @@ pub fn load_config_with_error() -> ConfigResult {
 }
 
 /// Loads configuration from YAML file or returns default if file doesn't exist (compatibility wrapper)
-pub fn load_config() -> Config {
+pub(super) fn load_config() -> Config {
     match load_config_with_error() {
         ConfigResult::Success(config) => config,
         ConfigResult::Error(_) => {

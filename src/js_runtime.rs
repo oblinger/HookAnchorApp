@@ -67,7 +67,7 @@ use crate::utils::expand_tilde;
 
 /// Creates a JavaScript runtime with all business logic built-ins configured
 pub fn create_business_logic_runtime() -> Result<Context, Box<dyn std::error::Error>> {
-    let config = crate::load_config();
+    let config = crate::core::sys_data::get_config();
     create_business_logic_runtime_with_config(&config)
 }
 

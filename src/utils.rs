@@ -18,7 +18,7 @@ static LOGIN_ENV_CACHE: OnceLock<Mutex<Option<HashMap<String, String>>>> = OnceL
 /// Logs messages to the debug file specified in config.popup_settings.debug_log
 /// with a timestamp and module identifier.
 pub fn debug_log(module: &str, message: &str) {
-    let config = crate::load_config();
+    let config = crate::core::sys_data::get_config();
     if let Some(debug_path) = &config.popup_settings.debug_log {
         let debug_path = expand_tilde(debug_path);
         
@@ -40,7 +40,7 @@ pub fn debug_log(module: &str, message: &str) {
 /// Only logs messages when verbose_logging is enabled in config.
 /// Used for shell commands, JavaScript execution, and other detailed debugging.
 pub fn verbose_log(module: &str, message: &str) {
-    let config = crate::load_config();
+    let config = crate::core::sys_data::get_config();
     // Check if verbose logging is enabled (default to false if not set)
     if config.popup_settings.verbose_logging.unwrap_or(false) {
         debug_log(module, message);
@@ -66,7 +66,10 @@ pub fn expand_tilde(path: &str) -> String {
 /// Launch an app with optional argument using macOS `open` command
 /// 
 /// Consolidates the common pattern of launching apps with the `-a` flag
+/// Uses non-blocking spawn to prevent UI lockups
 pub fn launch_app_with_arg(app: &str, arg: Option<&str>) -> Result<std::process::Output, std::io::Error> {
+    debug_log("UTILS", &format!("launch_app_with_arg: app='{}', arg={:?}", app, arg));
+    
     let mut cmd = Command::new("open");
     cmd.arg("-a").arg(app);
     if let Some(arg_val) = arg {
@@ -74,22 +77,70 @@ pub fn launch_app_with_arg(app: &str, arg: Option<&str>) -> Result<std::process:
             cmd.arg(arg_val);
         }
     }
-    cmd.output()
+    
+    // Use spawn + detach for non-blocking execution to prevent UI lockups
+    debug_log("UTILS", "Spawning non-blocking open command");
+    let child = cmd.spawn()?;
+    
+    // Register the process for monitoring
+    let command_str = format!("open -a {} {}", app, arg.unwrap_or(""));
+    let process_id = crate::process_monitor::register_process(child, command_str);
+    
+    debug_log("UTILS", &format!("Process spawned successfully (ID: {}), returning immediate success", process_id));
+    
+    // For non-blocking execution, we don't wait for the result
+    // The application will open independently without blocking the UI
+    Err(std::io::Error::new(
+        std::io::ErrorKind::Other, 
+        "NON_BLOCKING_SUCCESS: Process spawned successfully"
+    ))
 }
 
 /// Open a URL using macOS `open` command
 /// 
-/// Consolidates the common pattern of opening URLs
+/// Consolidates the common pattern of opening URLs  
+/// Uses non-blocking spawn to prevent UI lockups
 pub fn open_url(url: &str) -> Result<std::process::Output, std::io::Error> {
-    Command::new("open").arg(url).output()
+    debug_log("UTILS", &format!("open_url: url='{}'", url));
+    
+    debug_log("UTILS", "Spawning non-blocking open command for URL");
+    let child = Command::new("open").arg(url).spawn()?;
+    
+    // Register the process for monitoring
+    let command_str = format!("open {}", url);
+    let process_id = crate::process_monitor::register_process(child, command_str);
+    
+    debug_log("UTILS", &format!("URL open process spawned successfully (ID: {})", process_id));
+    
+    // For non-blocking execution, we don't wait for the result
+    Err(std::io::Error::new(
+        std::io::ErrorKind::Other, 
+        "NON_BLOCKING_SUCCESS: URL process spawned successfully"
+    ))
 }
 
 /// Open a folder using macOS `open` command
 /// 
 /// Consolidates the common pattern of opening folders in Finder
+/// Uses non-blocking spawn to prevent UI lockups
 pub fn open_folder(path: &str) -> Result<std::process::Output, std::io::Error> {
     let expanded_path = expand_tilde(path);
-    Command::new("open").arg(&expanded_path).output()
+    debug_log("UTILS", &format!("open_folder: path='{}' -> '{}'", path, expanded_path));
+    
+    debug_log("UTILS", "Spawning non-blocking open command for folder");
+    let child = Command::new("open").arg(&expanded_path).spawn()?;
+    
+    // Register the process for monitoring
+    let command_str = format!("open {}", expanded_path);
+    let process_id = crate::process_monitor::register_process(child, command_str);
+    
+    debug_log("UTILS", &format!("Folder open process spawned successfully (ID: {})", process_id));
+    
+    // For non-blocking execution, we don't wait for the result
+    Err(std::io::Error::new(
+        std::io::ErrorKind::Other, 
+        "NON_BLOCKING_SUCCESS: Folder process spawned successfully"
+    ))
 }
 
 /// Capture environment variables from a login shell (cached)
@@ -495,10 +546,33 @@ fn execute_detached(command: &str, options: ShellOptions) -> Result<std::process
 /// Open a file/URL with a specific app using macOS `open` command
 /// 
 /// Consolidates the open-with pattern used throughout the codebase
+/// Uses non-blocking spawn to prevent UI lockups
 pub fn open_with_app(app: &str, target: &str) -> Result<std::process::Output, std::io::Error> {
+    debug_log("UTILS", &format!("open_with_app: app='{}', target='{}'", app, target));
+    
+    let mut cmd = Command::new("open");
     if app.is_empty() {
-        Command::new("open").arg(target).output()
+        cmd.arg(target);
     } else {
-        Command::new("open").arg("-a").arg(app).arg(target).output()
+        cmd.arg("-a").arg(app).arg(target);
     }
+    
+    debug_log("UTILS", "Spawning non-blocking open command with app");
+    let child = cmd.spawn()?;
+    
+    // Register the process for monitoring
+    let command_str = if app.is_empty() {
+        format!("open {}", target)
+    } else {
+        format!("open -a {} {}", app, target)
+    };
+    let process_id = crate::process_monitor::register_process(child, command_str);
+    
+    debug_log("UTILS", &format!("Open with app process spawned successfully (ID: {})", process_id));
+    
+    // For non-blocking execution, we don't wait for the result
+    Err(std::io::Error::new(
+        std::io::ErrorKind::Other, 
+        "NON_BLOCKING_SUCCESS: Open with app process spawned successfully"
+    ))
 }

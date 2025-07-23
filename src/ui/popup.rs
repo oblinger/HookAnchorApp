@@ -4,9 +4,10 @@
 
 use eframe::egui::{self, IconData};
 use std::process;
+use std::sync::OnceLock;
 use crate::{
-    Command, execute_command, load_commands, 
-    load_config, Config, load_state, save_state, scanner, grabber
+    Command, execute_command, 
+    Config, load_state, save_state, scanner, grabber
 };
 use crate::core::config::{load_config_with_error, ConfigResult};
 use super::{PopupState, LayoutArrangement};
@@ -46,6 +47,24 @@ pub struct AnchorSelector {
     config_error: Option<String>,
     /// Last user interaction time for idle timeout
     last_interaction_time: std::time::Instant,
+    /// Loading state for deferred initialization
+    loading_state: LoadingState,
+    /// Buffer for keyboard input captured before full initialization
+    pre_init_input_buffer: String,
+}
+
+/// Loading state for deferred initialization
+#[derive(Clone, Debug, PartialEq)]
+enum LoadingState {
+    /// UI is shown but data not loaded yet
+    NotLoaded,
+    /// Currently loading data in background
+    Loading,
+    /// Data loading completed
+    Loaded,
+    /// Error occurred during loading
+    #[allow(dead_code)]
+    Error(String),
 }
 
 impl AnchorSelector {
@@ -129,6 +148,20 @@ impl AnchorSelector {
     fn handle_popup_keys(&mut self, ctx: &egui::Context, editor_handled_escape: bool) -> bool {
         let mut keys_processed = false;
         
+        // If still loading, only handle escape key
+        if self.loading_state != LoadingState::Loaded {
+            ctx.input_mut(|input| {
+                // Only check for escape during loading
+                for event in &input.events {
+                    if let egui::Event::Key { key: egui::Key::Escape, pressed: true, .. } = event {
+                        self.perform_exit_scanner_check();
+                        std::process::exit(0);
+                    }
+                }
+            });
+            return false; // No other keys processed during loading
+        }
+        
         ctx.input_mut(|input| {
             // Special handling for escape key - process it first and remove it completely
             let mut escape_pressed = false;
@@ -167,6 +200,15 @@ impl AnchorSelector {
                         _ => {}
                     }
                 }
+            }
+            
+            // Check for special uninstall command
+            let search_text_lower = self.popup_state.search_text.to_lowercase();
+            if search_text_lower == "uninstall hookanchor" || search_text_lower == "!uninstall" {
+                actions_to_perform.push("uninstall_app");
+                // Clear the search text to avoid confusion
+                self.popup_state.update_search(String::new());
+                keys_processed = true;
             }
             
             // Check each pressed key against configured keybindings
@@ -222,6 +264,7 @@ impl AnchorSelector {
                                     "add_alias" => actions_to_perform.push("add_alias"),
                                     "edit_active_command" => actions_to_perform.push("edit_active_command"),
                                     "link_to_clipboard" => actions_to_perform.push("link_to_clipboard"),
+                                    "uninstall_app" => actions_to_perform.push("uninstall_app"),
                                     _ => {} // Unknown action - still consume the key
                                 }
                             }
@@ -287,6 +330,7 @@ impl AnchorSelector {
             "add_alias" => self.handle_add_alias(),
             "edit_active_command" => self.edit_active_command(),
             "link_to_clipboard" => self.handle_link_to_clipboard(),
+            "uninstall_app" => self.handle_uninstall_app(),
             _ => {}
         }
     }
@@ -418,6 +462,20 @@ impl AnchorSelector {
         }
     }
     
+    /// Handle uninstall app request
+    fn handle_uninstall_app(&mut self) {
+        // Show simple warning dialog with OK/Cancel
+        let spec_strings = vec![
+            "=Uninstall HookAnchor".to_string(),
+            "#This will remove HookAnchor app and Karabiner config.".to_string(),
+            "'⚠️  Your commands and settings will be preserved.".to_string(),
+            "!OK".to_string(),
+            "!Cancel".to_string(),
+        ];
+        
+        self.dialog.show(spec_strings);
+    }
+    
     // =============================================================================
     // Initialization
     // =============================================================================
@@ -427,23 +485,23 @@ impl AnchorSelector {
     }
     
     pub fn new_with_prompt(initial_prompt: &str) -> Self {
-        let commands = load_commands();
-        let (config, config_error) = match load_config_with_error() {
-            ConfigResult::Success(config) => (config, None),
-            ConfigResult::Error(error) => (load_config(), Some(error)), // Fall back to default config
-        };
-        let state = load_state();
+        let startup_time = std::time::Instant::now();
+        crate::utils::debug_log("STARTUP_FAST", "Creating UI with minimal initialization");
         
-        // Create popup state with business logic
-        let mut popup_state = PopupState::new(commands, config, state);
+        // Load only app state for window positioning - this is fast
+        let state = load_state();
+        crate::utils::debug_log("STARTUP_FAST", &format!("App state loaded in {:?}", startup_time.elapsed()));
+        
+        // Create minimal popup state for immediate UI display
+        let mut popup_state = PopupState::new_minimal();
+        popup_state.app_state = state; // Use loaded state for window position
         
         // Set initial prompt if provided
         if !initial_prompt.is_empty() {
             popup_state.search_text = initial_prompt.to_string();
-            popup_state.update_search(initial_prompt.to_string());
         }
         
-        let mut result = Self {
+        let result = Self {
             popup_state,
             last_saved_position: None,
             position_set: false,
@@ -457,16 +515,66 @@ impl AnchorSelector {
             focus_set: false,
             frame_count: 0,
             window_activated: false,
-            config_error,
+            config_error: None,
             last_interaction_time: std::time::Instant::now(),
+            loading_state: LoadingState::NotLoaded,
+            pre_init_input_buffer: initial_prompt.to_string(),
         };
         
-        // Show config error dialog if there was an error
-        if let Some(error) = &result.config_error {
-            result.dialog.show_error(error);
+        result
+    }
+    
+    /// Start loading data in the background after UI is shown
+    fn start_deferred_loading(&mut self) {
+        if self.loading_state != LoadingState::NotLoaded {
+            return; // Already loading or loaded
         }
         
-        result
+        self.loading_state = LoadingState::Loading;
+        let start_time = std::time::Instant::now();
+        crate::utils::debug_log("DEFERRED_LOAD", "Starting deferred data loading (without scanning)");
+        
+        // Load commands from disk only (no filesystem scanning to avoid UI blocking)
+        let commands = crate::core::commands::load_commands_raw();
+        let (config, config_error) = match load_config_with_error() {
+            ConfigResult::Success(config) => (config, None),
+            ConfigResult::Error(error) => (crate::core::sys_data::get_config(), Some(error)),
+        };
+        
+        // Create new popup state with loaded data but preserve app_state
+        let app_state = self.popup_state.app_state.clone();
+        self.popup_state = PopupState::new(commands, config, app_state);
+        
+        // Apply any buffered input
+        if !self.pre_init_input_buffer.is_empty() {
+            self.popup_state.search_text = self.pre_init_input_buffer.clone();
+            self.popup_state.update_search(self.pre_init_input_buffer.clone());
+            self.pre_init_input_buffer.clear();
+        }
+        
+        // Show config error if any
+        if let Some(error) = config_error {
+            self.config_error = Some(error.clone());
+            self.dialog.show_error(&error);
+        }
+        
+        self.loading_state = LoadingState::Loaded;
+        let elapsed = start_time.elapsed();
+        crate::utils::debug_log("DEFERRED_LOAD", &format!("Data loading completed in {:?} (disk only)", elapsed));
+        
+        // Trigger background filesystem scan after UI is responsive
+        self.trigger_background_scan();
+    }
+    
+    /// Trigger filesystem scanning in background to avoid blocking UI
+    fn trigger_background_scan(&mut self) {
+        crate::utils::debug_log("DEFERRED_LOAD", "Triggering background filesystem scan");
+        
+        // Note: For now, we'll skip automatic scanning to keep UI responsive
+        // Users can manually rescan with --rescan command if needed
+        // In the future, this could spawn a background thread for scanning
+        
+        crate::utils::debug_log("DEFERRED_LOAD", "Background scan skipped to maintain UI responsiveness");
     }
     
     // =============================================================================
@@ -561,7 +669,7 @@ impl AnchorSelector {
     
     /// Start the grabber countdown
     fn start_grabber_countdown(&mut self, _ctx: &egui::Context) {
-        let config = load_config();
+        let config = crate::core::sys_data::get_config();
         let countdown_seconds = config.popup_settings.countdown_seconds.unwrap_or(5);
         let flip_focus = config.launcher_settings.as_ref().and_then(|ls| ls.flip_focus).unwrap_or(false);
         
@@ -587,7 +695,7 @@ impl AnchorSelector {
                         self.countdown_last_update = Some(std::time::Instant::now());
                         
                         // Handle focus flipping during countdown if enabled
-                        let config = load_config();
+                        let config = crate::core::sys_data::get_config();
                         let flip_focus = config.launcher_settings
                             .as_ref()
                             .and_then(|ls| ls.flip_focus)
@@ -665,7 +773,7 @@ impl AnchorSelector {
     
     /// Execute the grab operation - simplified synchronous version
     fn execute_grab(&mut self, ctx: &egui::Context) {
-        let config = load_config();
+        let config = crate::core::sys_data::get_config();
         
         // Check if we should flip focus
         let flip_focus = config.launcher_settings
@@ -815,7 +923,7 @@ impl AnchorSelector {
     fn regain_focus(&self) -> Result<(), String> {
         crate::utils::debug_log("GRAB", "regain_focus() called - executing JavaScript");
         // Use the JavaScript function to regain focus
-        let config = load_config();
+        let config = crate::core::sys_data::get_config();
         if let Some(functions) = &config.functions {
             if let Some(regain_focus_fn) = functions.get("regain_focus") {
                 if let Some(js_code) = regain_focus_fn.as_str() {
@@ -836,7 +944,7 @@ impl AnchorSelector {
     
     /// Clean up the debug log file before starting a rescan
     fn cleanup_debug_log(&self) {
-        let config = load_config();
+        let config = crate::core::sys_data::get_config();
         if let Some(debug_log_path) = &config.popup_settings.debug_log {
             let expanded_path = if debug_log_path.starts_with("~/") {
                 debug_log_path.replacen("~", &std::env::var("HOME").unwrap_or_default(), 1)
@@ -858,23 +966,18 @@ impl AnchorSelector {
         crate::utils::debug_log("SCANNER2", "=== TRIGGER_RESCAN FUNCTION CALLED ===");
         
         use crate::scanner;
-        let config = load_config();
+        let sys_data = crate::core::sys_data::get_sys_data();
         
         // Get markdown roots from config
-        if let Some(markdown_roots) = &config.markdown_roots {
+        if let Some(markdown_roots) = &sys_data.config.markdown_roots {
             crate::utils::debug_log("SCANNER2", &format!("Force scanning markdown files, roots: {:?}", markdown_roots));
             
             // Force scan markdown files
             let current_commands = self.popup_state.get_commands().to_vec();
-            let updated_commands = scanner::scan(current_commands, markdown_roots, &config);
+            let updated_commands = scanner::scan(current_commands, &sys_data);
             
-            // Save the updated commands to file
-            use crate::save_commands_to_file;
-            if let Err(e) = save_commands_to_file(&updated_commands) {
-                crate::utils::debug_log("RESCAN", &format!("Failed to save commands: {}", e));
-            } else {
-                crate::utils::debug_log("RESCAN", "Commands saved successfully");
-            }
+            // Scanner now handles saving internally, and commands should already have proper patches from load_data()
+            crate::utils::debug_log("RESCAN", "GUI rescan completed - scanner handled saving internally");
             
             // Update commands in popup state
             self.popup_state.set_commands(updated_commands);
@@ -1061,6 +1164,12 @@ impl eframe::App for AnchorSelector {
             self.frame_count += 1;
         }
         
+        // Start deferred loading on second frame (after UI is shown)
+        if self.frame_count == 2 && self.loading_state == LoadingState::NotLoaded {
+            self.start_deferred_loading();
+            ctx.request_repaint(); // Ensure we update when loading completes
+        }
+        
         // On the first few frames, ensure the window is properly activated and positioned
         if self.frame_count <= 3 {
             ctx.send_viewport_cmd(egui::ViewportCommand::Focus);
@@ -1189,6 +1298,25 @@ impl eframe::App for AnchorSelector {
                     if button_text == "Exit" {
                         self.perform_exit_scanner_check();
                         std::process::exit(0);
+                    } else if button_text == "OK" {
+                        // Check if this is from the uninstall dialog (has the warning about Karabiner)
+                        // by looking at the dialog title or content - for simplicity, assume OK from uninstall dialog
+                        
+                        // Execute uninstall in background thread
+                        std::thread::spawn(|| {
+                            match crate::setup_assistant::uninstall_hookanchor() {
+                                Ok(()) => {
+                                    // Exit successfully - no stdout message
+                                    std::process::exit(0);
+                                },
+                                Err(e) => {
+                                    // Show error dialog instead of stderr
+                                    // Since we're in a thread, we can't easily show dialog here
+                                    // Just exit with error code
+                                    std::process::exit(1);
+                                }
+                            }
+                        });
                     }
                 }
                 
@@ -1294,6 +1422,16 @@ impl eframe::App for AnchorSelector {
                 let mut font_id = ui.style().text_styles.get(&egui::TextStyle::Heading).unwrap().clone();
                 font_id.size *= 1.5; // Make 50% larger
                 
+                // Show loading indicator if still loading
+                if self.loading_state == LoadingState::Loading {
+                    ui.horizontal(|ui| {
+                        ui.add_space(10.0);
+                        ui.spinner();
+                        ui.label("Loading commands...");
+                    });
+                    ui.add_space(10.0);
+                }
+                
                 // Show grabber countdown if active
                 if let Some(count) = self.grabber_countdown {
                     ui.horizontal(|ui| {
@@ -1317,27 +1455,39 @@ impl eframe::App for AnchorSelector {
                     self.get_hint_text()
                 };
                 
-                let response = ui.add_enabled(
-                    !self.command_editor.visible && self.grabber_countdown.is_none(), // Disable when dialog is open or countdown active
-                    egui::TextEdit::singleline(&mut self.popup_state.search_text)
-                        .desired_width(ui.available_width())
-                        .hint_text(hint_text)
-                        .font(font_id)
-                );
+                // Use different text edit based on loading state
+                let response = if self.loading_state == LoadingState::Loaded {
+                    // Normal operation - edit popup state directly
+                    ui.add_enabled(
+                        !self.command_editor.visible && self.grabber_countdown.is_none(),
+                        egui::TextEdit::singleline(&mut self.popup_state.search_text)
+                            .desired_width(ui.available_width())
+                            .hint_text(hint_text)
+                            .font(font_id)
+                    )
+                } else {
+                    // Still loading - edit the buffer instead
+                    ui.add_enabled(
+                        !self.command_editor.visible && self.grabber_countdown.is_none(),
+                        egui::TextEdit::singleline(&mut self.pre_init_input_buffer)
+                            .desired_width(ui.available_width())
+                            .hint_text(hint_text)
+                            .font(font_id)
+                    )
+                };
                 
                 // Always update search when text field is changed
                 if response.changed() {
-                    
-                    // Removed hardcoded character handlers - these should be handled via keybindings
-                    
-                    // Check for alias replacement
-                    self.check_and_apply_alias();
-                    
-                    // ALWAYS update search results after any text change
-                    let current_search = self.popup_state.search_text.clone();
-                    self.popup_state.update_search(current_search);
-                    
-                    // Removed hardcoded slash handler - editor opening now handled via keybindings
+                    if self.loading_state == LoadingState::Loaded {
+                        // Normal operation
+                        // Check for alias replacement
+                        self.check_and_apply_alias();
+                        
+                        // ALWAYS update search results after any text change
+                        let current_search = self.popup_state.search_text.clone();
+                        self.popup_state.update_search(current_search);
+                    }
+                    // If still loading, changes are captured in pre_init_input_buffer
                 }
                 
                 // Focus the text input on startup or when command editor closes
@@ -1377,7 +1527,8 @@ impl eframe::App for AnchorSelector {
                 
                 // Command list - check for submenu and display accordingly  
                 // No scroll area - window will size to accommodate max_rows
-                if !self.filtered_commands().is_empty() {
+                // Only show commands if fully loaded
+                if self.loading_state == LoadingState::Loaded && !self.filtered_commands().is_empty() {
                     // Get the display commands using our new method
                     let (display_commands, is_submenu, menu_prefix, inside_count) = self.get_display_commands();
                     
@@ -1728,129 +1879,35 @@ impl eframe::App for AnchorSelector {
     }
 }
 
-/// Run the popup GUI with an optional initial prompt and application state
-fn load_app_icon() -> IconData {
-    // Try to load the icon from the app bundle
-    let icon_paths = [
-        "/Applications/HookAnchor.app/Contents/Resources/popup.icns",
-        "/Applications/HookAnchor.app/Contents/Resources/applet.icns",
-    ];
-    
-    for path in &icon_paths {
-        crate::utils::debug_log("ICON", &format!("Trying to load icon from: {}", path));
-        if let Ok(icon_data) = std::fs::read(path) {
-            crate::utils::debug_log("ICON", &format!("Read {} bytes from {}", icon_data.len(), path));
-            // Parse the ICNS file to extract PNG data
-            if let Ok(icon) = parse_icns_to_rgba(&icon_data) {
-                crate::utils::debug_log("ICON", &format!("Successfully parsed icon from {}", path));
-                return icon;
-            } else {
-                crate::utils::debug_log("ICON", &format!("Failed to parse ICNS from {}", path));
-            }
-        } else {
-            crate::utils::debug_log("ICON", &format!("Failed to read file: {}", path));
-        }
-    }
-    
-    // Fallback: create a simple colored icon
-    crate::utils::debug_log("ICON", "Using fallback icon");
-    create_fallback_icon()
-}
+/// Embedded icon data compiled into the binary at build time
+static EMBEDDED_ICON_PNG: &[u8] = include_bytes!("../../resources/icons/popup.png");
 
-fn parse_icns_to_rgba(icns_data: &[u8]) -> Result<IconData, Box<dyn std::error::Error>> {
-    // Simple ICNS parser to extract the largest PNG icon
-    // ICNS files contain multiple icon sizes, we want the largest one
-    
-    crate::utils::debug_log("ICON", &format!("Parsing ICNS file of {} bytes", icns_data.len()));
-    
-    if icns_data.len() < 8 || &icns_data[0..4] != b"icns" {
-        crate::utils::debug_log("ICON", "Invalid ICNS file signature");
-        return Err("Invalid ICNS file".into());
-    }
-    
-    let file_size = u32::from_be_bytes([icns_data[4], icns_data[5], icns_data[6], icns_data[7]]) as usize;
-    if file_size > icns_data.len() {
-        crate::utils::debug_log("ICON", "ICNS file size mismatch");
-        return Err("ICNS file size mismatch".into());
-    }
-    
-    crate::utils::debug_log("ICON", &format!("ICNS file size: {}", file_size));
-    
-    let mut offset = 8;
-    let mut best_icon: Option<(u32, Vec<u8>)> = None;
-    let mut icon_count = 0;
-    
-    while offset + 8 <= icns_data.len() {
-        let icon_type = &icns_data[offset..offset+4];
-        let icon_size = u32::from_be_bytes([icns_data[offset+4], icns_data[offset+5], icns_data[offset+6], icns_data[offset+7]]) as usize;
-        
-        let type_str = String::from_utf8_lossy(icon_type);
-        crate::utils::debug_log("ICON", &format!("Found icon type: '{}' size: {}", type_str, icon_size));
-        
-        if offset + icon_size > icns_data.len() {
-            crate::utils::debug_log("ICON", "Icon size exceeds file bounds");
-            break;
-        }
-        
-        // Look for PNG data (ic04, ic05, ic09, ic10, ic11, ic12, ic13, ic14)
-        if icon_type == b"ic09" || icon_type == b"ic10" || icon_type == b"ic11" || icon_type == b"ic12" || icon_type == b"ic13" || icon_type == b"ic14" {
-            let png_data = &icns_data[offset+8..offset+icon_size];
-            crate::utils::debug_log("ICON", &format!("Checking PNG data for type '{}', {} bytes", type_str, png_data.len()));
-            
-            if png_data.starts_with(&[0x89, 0x50, 0x4E, 0x47]) { // PNG signature
-                let size = match icon_type {
-                    b"ic09" => 512,
-                    b"ic10" => 1024,
-                    b"ic11" => 32,
-                    b"ic12" => 64,
-                    b"ic13" => 256,
-                    b"ic14" => 128,
-                    _ => 256,
-                };
-                
-                crate::utils::debug_log("ICON", &format!("Found PNG data for size {}", size));
-                
-                if best_icon.is_none() || best_icon.as_ref().unwrap().0 < size {
-                    best_icon = Some((size, png_data.to_vec()));
-                    crate::utils::debug_log("ICON", &format!("Set as best icon: size {}", size));
-                }
-            } else {
-                crate::utils::debug_log("ICON", &format!("Not PNG data for type '{}'", type_str));
-            }
-        }
-        
-        offset += icon_size;
-        icon_count += 1;
-    }
-    
-    crate::utils::debug_log("ICON", &format!("Processed {} icons total", icon_count));
-    
-    if let Some((size, png_data)) = best_icon {
-        crate::utils::debug_log("ICON", &format!("Decoding best icon of size {}", size));
-        // Decode PNG to RGBA
-        if let Ok(decoded) = decode_png_to_rgba(&png_data) {
-            crate::utils::debug_log("ICON", &format!("Successfully decoded PNG to {}x{}", decoded.1, decoded.2));
-            return Ok(IconData {
+/// Cached icon data to avoid repeated PNG decoding
+static CACHED_ICON: OnceLock<IconData> = OnceLock::new();
+
+/// Load app icon with compile-time embedded data (no file I/O or ICNS parsing)
+fn load_app_icon() -> IconData {
+    CACHED_ICON.get_or_init(|| {
+        // Decode the embedded PNG data
+        if let Ok(decoded) = decode_png_to_rgba(EMBEDDED_ICON_PNG) {
+            IconData {
                 rgba: decoded.0,
                 width: decoded.1,
                 height: decoded.2,
-            });
+            }
         } else {
-            crate::utils::debug_log("ICON", "Failed to decode PNG data");
+            // Fallback: create a simple colored icon
+            crate::utils::debug_log("ICON", "Failed to decode embedded icon, using fallback");
+            create_fallback_icon()
         }
-    } else {
-        crate::utils::debug_log("ICON", "No suitable PNG icon found in ICNS");
-    }
-    
-    Err("No suitable icon found in ICNS".into())
+    }).clone()
 }
+
 
 fn decode_png_to_rgba(png_data: &[u8]) -> Result<(Vec<u8>, u32, u32), Box<dyn std::error::Error>> {
     use image::io::Reader as ImageReader;
     use image::ImageFormat;
     use std::io::Cursor;
-    
-    crate::utils::debug_log("ICON", &format!("Decoding PNG of {} bytes", png_data.len()));
     
     // Create a cursor from the PNG data
     let cursor = Cursor::new(png_data);
@@ -1863,8 +1920,6 @@ fn decode_png_to_rgba(png_data: &[u8]) -> Result<(Vec<u8>, u32, u32), Box<dyn st
     let rgba_img = img.to_rgba8();
     let width = rgba_img.width();
     let height = rgba_img.height();
-    
-    crate::utils::debug_log("ICON", &format!("Decoded PNG to {}x{}", width, height));
     
     // Convert to Vec<u8>
     let rgba_data = rgba_img.into_raw();
@@ -1920,8 +1975,8 @@ pub fn run_gui_with_prompt(initial_prompt: &str, _app_state: super::ApplicationS
     let viewport_builder = egui::ViewportBuilder::default()
         .with_inner_size([500.0, 120.0]) // Initial size - will be dynamically resized
         .with_resizable(false) // Disable manual resizing - we control size programmatically
-        .with_decorations(false) // Remove title bar and window controls
-        .with_icon(load_app_icon()); // Set the app icon
+        .with_decorations(false); // Remove title bar and window controls
+        // Skip icon loading for faster startup - can be added later if needed
         // .with_transparent(true); // DISABLED: May cause hanging
     
     let options = eframe::NativeOptions {

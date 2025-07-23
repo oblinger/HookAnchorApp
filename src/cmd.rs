@@ -1,4 +1,4 @@
-use crate::{load_commands, load_commands_with_data, load_commands_for_inference, filter_commands, launcher, CommandTarget, execute_command, utils, grabber, load_config, run_patch_inference, save_commands_to_file};
+use crate::{load_commands_with_data, load_commands_for_inference, filter_commands, launcher, CommandTarget, execute_command, utils, grabber, run_patch_inference, save_commands_to_file};
 
 /// Main entry point for command-line mode
 pub fn run_command_line_mode(args: Vec<String>) {
@@ -31,8 +31,12 @@ pub fn run_command_line_mode(args: Vec<String>) {
         "--grab" => run_grab_command(&args),
         "--infer" => run_infer_patches(&args),
         "--infer-all" => run_infer_all_patches(&args),
+        "--rescan" => run_rescan_command(),
         "--start-server" => run_start_server(),
         "--start-server-daemon" => run_start_server_daemon(),
+        "--process-health" => run_process_health(),
+        "--process-status" => run_process_status(),
+        "--reinstall" => run_reinstall(),
         _ => {
             eprintln!("Unknown command: {}", args[1]);
             eprintln!("Use -h or --help for usage information");
@@ -55,9 +59,13 @@ pub fn print_help(program_name: &str) {
     eprintln!("  {} -a, --action <act> <arg> # Test action", program_name);
     eprintln!("  {} --infer [command]        # Show patch inference changes", program_name);
     eprintln!("  {} --infer-all              # Show changes and prompt to apply", program_name);
+    eprintln!("  {} --rescan                 # Rescan filesystem with verbose output", program_name);
     eprintln!("  {} --test-grabber           # Test grabber functionality", program_name);
     eprintln!("  {} --grab [delay]           # Grab active app after delay", program_name);
     eprintln!("  {} --start-server           # Force restart command server", program_name);
+    eprintln!("  {} --process-health         # Check for hung processes", program_name);
+    eprintln!("  {} --process-status         # Show detailed process status", program_name);
+    eprintln!("  {} --reinstall              # Re-run setup assistant (reinstall)", program_name);
     eprintln!("  open 'hook://query'         # Handle hook URL");
     eprintln!();
     eprintln!("Examples:");
@@ -90,9 +98,8 @@ fn handle_hook_url(url: &str) {
     // Client environment logging is now handled automatically in execute_command based on action type
     
     // Use the same logic as -x command
-    let commands = load_commands();
-    let config = load_config();
-    let filtered = crate::core::commands::get_display_commands(&commands, &decoded_query, &config, 1);
+    let sys_data = crate::core::sys_data::get_sys_data();
+    let filtered = crate::core::commands::get_display_commands(&sys_data, &decoded_query, 1);
     
     if filtered.is_empty() {
         utils::debug_log("URL_HANDLER", &format!("No commands found for query: '{}'", decoded_query));
@@ -116,16 +123,15 @@ fn run_match_command(args: &[String]) {
     let query = &args[2];
     let debug = args.len() > 3 && args[3] == "debug";
     
-    let commands = load_commands();
-    let config = load_config();
+    let sys_data = crate::core::sys_data::get_sys_data();
     let filtered = if debug {
-        filter_commands(&commands, query, 10, debug)  // Keep debug mode using original function
+        filter_commands(&sys_data.commands, query, 10, debug)  // Keep debug mode using original function
     } else {
-        crate::core::commands::get_display_commands(&commands, query, &config, 10)
+        crate::core::commands::get_display_commands(&sys_data, query, 50)
     };
     
-    // Print first 10 matches (like the GUI)
-    for cmd in filtered.iter().take(10) {
+    // Print first 50 matches to see submenu results
+    for cmd in filtered.iter().take(50) {
         println!("{}", cmd.command);
     }
 }
@@ -170,9 +176,8 @@ fn run_execute_top_match(args: &[String]) {
     
     // Client environment logging is now handled automatically in execute_command based on action type
     
-    let commands = load_commands();
-    let config = load_config();
-    let filtered = crate::core::commands::get_display_commands(&commands, query, &config, 1);
+    let sys_data = crate::core::sys_data::get_sys_data();
+    let filtered = crate::core::commands::get_display_commands(&sys_data, query, 1);
     
     if filtered.is_empty() {
         eprintln!("No commands found matching: {}", query);
@@ -230,8 +235,7 @@ fn run_folder_command(args: &[String]) {
     }
     
     let query = &args[2];
-    let commands = load_commands();
-    let config = crate::load_config();
+    let sys_data = crate::core::sys_data::get_sys_data();
     
     // Helper function to extract folder path from a command
     let extract_folder_path = |command: &crate::Command| -> Option<String> {
@@ -265,7 +269,7 @@ fn run_folder_command(args: &[String]) {
     };
     
     // Use the same display logic as the popup, with aliases expanded
-    let display_commands = crate::core::commands::get_display_commands_with_options(&commands, query, &config, 100, true);
+    let display_commands = crate::core::commands::get_display_commands_with_options(&sys_data, query, 100, true);
     
     if display_commands.is_empty() {
         eprintln!("No commands found matching: {}", query);
@@ -319,8 +323,7 @@ fn run_folder_with_commands(args: &[String]) {
     }
     
     let query = &args[2];
-    let commands = load_commands();
-    let config = crate::load_config();
+    let sys_data = crate::core::sys_data::get_sys_data();
     
     // Helper function to extract folder path from a command
     let extract_folder_path = |command: &crate::Command| -> Option<String> {
@@ -354,7 +357,7 @@ fn run_folder_with_commands(args: &[String]) {
     };
     
     // Use the same display logic as the popup, with aliases expanded
-    let display_commands = crate::core::commands::get_display_commands_with_options(&commands, query, &config, 100, true);
+    let display_commands = crate::core::commands::get_display_commands_with_options(&sys_data, query, 100, true);
     
     if display_commands.is_empty() {
         eprintln!("No commands found matching: {}", query);
@@ -444,7 +447,7 @@ fn run_test_grabber() {
     println!("==================================");
     
     // Load config
-    let config = load_config();
+    let config = crate::core::sys_data::get_config();
     println!("Loaded config with {} grabber rules", 
         config.grabber_rules.as_ref().map(|r| r.len()).unwrap_or(0));
     
@@ -534,7 +537,7 @@ fn run_grab_command(args: &[String]) {
     }
     
     // Load config for grabber rules
-    let config = load_config();
+    let config = crate::core::sys_data::get_config();
     
     // Perform the grab
     match grabber::grab(&config) {
@@ -816,5 +819,99 @@ fn run_infer_all_patches(_args: &[String]) {
         }
     } else {
         println!("No changes applied.");
+    }
+}
+
+fn run_rescan_command() {
+    println!("🚀 HookAnchor Rescan - Verbose Mode");
+    println!("====================================");
+    
+    // Load configuration
+    let config = crate::core::sys_data::get_config();
+    
+    // Get markdown roots
+    let _markdown_roots = match &config.markdown_roots {
+        Some(roots) => roots.clone(),
+        None => {
+            eprintln!("❌ No markdown roots configured in config file");
+            std::process::exit(1);
+        }
+    };
+    
+    println!("\n📋 Initial data load...");
+    
+    // Load existing commands from disk first (to preserve patches), then run verbose load
+    let existing_commands = crate::load_commands();
+    let global_data = crate::core::sys_data::load_data(existing_commands, true);
+    
+    println!("\n🔍 Starting filesystem scan...");
+    
+    // Run scan with verbose output
+    let scanned_commands = crate::scanner::scan_verbose(
+        global_data.commands.clone(),
+        &global_data,
+        true
+    );
+    
+    println!("\n📊 Final Summary:");
+    println!("   Total commands after rescan: {}", scanned_commands.len());
+    
+    // Count commands by action type
+    let mut action_counts: std::collections::HashMap<String, usize> = std::collections::HashMap::new();
+    for cmd in &scanned_commands {
+        *action_counts.entry(cmd.action.clone()).or_insert(0) += 1;
+    }
+    
+    println!("\n   Commands by action type:");
+    let mut sorted_actions: Vec<_> = action_counts.iter().collect();
+    sorted_actions.sort_by_key(|(action, _)| (*action).clone());
+    
+    for (action, count) in sorted_actions {
+        println!("     {}: {}", action, count);
+    }
+    
+    println!("\n✅ Rescan complete!");
+}
+
+/// Check for hung processes
+fn run_process_health() {
+    println!("Checking process health...");
+    crate::process_monitor::check_system_health();
+    println!("Health check complete. See debug logs for details.");
+}
+
+/// Show detailed process status
+fn run_process_status() {
+    println!("Process status:");
+    crate::process_monitor::show_process_status();
+}
+
+/// Re-run the setup assistant (reinstall)
+fn run_reinstall() {
+    println!("🔄 Re-running HookAnchor setup assistant...");
+    println!("================================================");
+    println!();
+    
+    // Run the setup assistant with force flag
+    match crate::setup_assistant::SetupAssistant::new().run_setup(true) {
+        Ok(()) => {
+            println!();
+            println!("✅ Reinstallation completed successfully!");
+            println!();
+            println!("Changes made:");
+            println!("  - Karabiner configuration updated/reinstalled");
+            println!("  - Configuration files validated");
+            println!("  - Setup assistant completed");
+            println!();
+            println!("You may need to:");
+            println!("  1. Enable the HookAnchor rule in Karabiner-Elements preferences");
+            println!("  2. Restart HookAnchor if currently running");
+        },
+        Err(e) => {
+            eprintln!("❌ Reinstallation failed: {}", e);
+            eprintln!();
+            eprintln!("Please check the error message above and try again.");
+            std::process::exit(1);
+        }
     }
 }

@@ -44,6 +44,26 @@ impl PopupState {
         }
     }
     
+    /// Create minimal popup state for early UI display
+    /// Uses default config and empty commands to show UI immediately
+    pub fn new_minimal() -> Self {
+        let config = Config::default();
+        let app_state = AppState::default();
+        let filtered_commands = Vec::new();
+        let display_layout = DisplayLayout::new(Vec::new(), &config);
+        let selection = Selection::new();
+        
+        PopupState {
+            commands: Vec::new(),
+            search_text: String::new(),
+            filtered_commands,
+            display_layout,
+            selection,
+            config,
+            app_state,
+        }
+    }
+    
     /// Update search text and recompute filtered commands
     pub fn update_search(&mut self, new_search: String) {
         self.search_text = new_search;
@@ -118,7 +138,12 @@ impl PopupState {
         use crate::core::commands::get_display_commands;
         
         let total_limit = self.config.popup_settings.max_rows * self.config.popup_settings.max_columns;
-        self.filtered_commands = get_display_commands(&self.commands, &self.search_text, &self.config, total_limit);
+        let sys_data = crate::core::sys_data::SysData {
+            config: self.config.clone(),
+            commands: self.commands.clone(),
+            patches: std::collections::HashMap::new(), // Empty for filtering
+        };
+        self.filtered_commands = get_display_commands(&sys_data, &self.search_text, total_limit);
     }
     
     /// Update display layout based on current filtered commands

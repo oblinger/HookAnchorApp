@@ -1,4 +1,4 @@
-# Default HookAnchor Configuration
+# HookAnchor Default Configuration
 # Copy this file to ~/.config/hookanchor/config.yaml and customize as needed
 
 # =================================================================
@@ -7,10 +7,10 @@
 popup_settings:
   max_rows: 15
   max_columns: 3
-  use_new_launcher: true      # Enable new Rust launcher (false = Python launcher)
-  debug_log: "~/.anchor.log"  # Debug logging file path (empty/null to disable)
+  debug_log: "~/.config/hookanchor/anchor.log"  # Debug logging file path
+  debug_scanner: false
   merge_similar: true         # Merging similar commands in popup
-  word_separators: " ._-"     # Word separator chars for submenus and merging
+  word_separators: " ._-"     # Word separator chars submenus and merging
   scan_interval_seconds: 3600 # Seconds between automatic filesystem scans
   # Command editor dropdown actions (comma-separated list)
   listed_actions: "alias,anchor,app,url,folder,cmd,chrome,safari,brave,firefox,work,notion,obs,obs_url,1pass,rewrite,doc,contact,slack,shutdown"
@@ -21,16 +21,19 @@ markdown_roots:
   - "~/Notes"
 
 launcher_settings:
-  application_folder: "/Applications/HookAnchor.app"  # Path to the installed application
+  application_folder: "/Applications/HookAnchor.app"
   default_browser: "Google Chrome"
   work_browser: "Google Chrome Beta"
   timeout_ms: 5000
   obsidian_app_name: "Obsidian"
-  obsidian_vault_name: "YourVaultName"  # CUSTOMIZE: Your Obsidian vault name
-  obsidian_vault_path: "~/Documents"    # CUSTOMIZE: Path to your Obsidian vault
+  obsidian_vault_name: "YourVaultName"  # CUSTOMIZE: Change to your Obsidian vault name
+  obsidian_vault_path: "~/Documents"    # CUSTOMIZE: Change to your Obsidian vault path
+
+scanner_settings:
+  orphans_path: "~/Documents/HookAnchor/Orphans"  # CUSTOMIZE: Where orphan anchor files are created
 
 # =================================================================
-# KEYBOARD SHORTCUTS
+# KEYBOARD SHORTCUTS (Optional - uses defaults if not specified)
 # =================================================================
 keybindings:
   exit_app: "Escape"           # Exit the application
@@ -39,122 +42,115 @@ keybindings:
   navigate_left: "ArrowLeft"   # Move selection left (multi-column)
   navigate_right: "ArrowRight" # Move selection right (multi-column)
   execute_command: "Enter"     # Execute the selected command
-  show_folder: "Backslash"     # Show folder for selected command
-  delete_selected: "Delete"    # Delete selected command
-  edit_selected: "E"           # Edit selected command
-  open_editor: "N"             # Open command editor
+  force_rescan: "Backtick"     # Force rescan of markdown files (~)
+  show_folder: "Slash"         # Launch first folder matching search (=)
+  start_grabber: "Plus"        # Start grabber countdown (+)
+  open_editor: "Equals"        # Open command editor
   add_alias: ">"               # Add alias using current input and last executed command
-  open_in_editor: "O"          # Open in external editor
-  reload_commands: "R"         # Reload commands
-  paste_clipboard: "V"         # Paste from clipboard
+  edit_active_command: "Semicolon"  # Edit currently selected command
+  delete_command: "Delete"     # Delete command in editor
+  cancel_editor: "Escape"      # Cancel command editor
+  uninstall_app: "ctrl+shift+u" # Uninstall HookAnchor (requires confirmation)
 
 # =================================================================
-# FUNCTIONS - Action Definitions
+# FUNCTIONS
 # =================================================================
 functions:
-  # Basic actions
+  # === BASIC ACTIONS ===
   action_app: {fn: launch_app, name: "{{arg}}"}
   action_url: {fn: open_url, url: "{{arg}}"}
   action_folder: {fn: open_folder, path: "{{arg}}"}
   action_cmd: {fn: shell, command: "{{arg}}"}
-  action_doc: {fn: open_with, app: "", arg: "{{arg}}"}
+  action_doc: {fn: open_document, path: "{{arg}}"}
+
+# =================================================================
+# GRABBER RULES
+# =================================================================
+grabber_rules:
+  # =================================================================
+  # BROWSER APPLICATIONS
+  # =================================================================
   
-  # Browser-specific actions
-  action_chrome: {fn: open_with, app: "Google Chrome", arg: "{{arg}}"}
-  action_safari: {fn: open_with, app: "Safari", arg: "{{arg}}"}
-  action_brave: {fn: open_with, app: "Brave Browser", arg: "{{arg}}"}
-  action_firefox: {fn: open_with, app: "Firefox", arg: "{{arg}}"}
-  action_work: {fn: open_with, app: "Google Chrome Beta", arg: "{{arg}}"}
+  # Google Chrome
+  - name: "Chrome Tab"
+    matcher: "bundleId === 'com.google.Chrome' && props.url ? props.url : null"
+    action: "url"
+    
+  # Safari
+  - name: "Safari Tab"
+    matcher: "bundleId === 'com.apple.Safari' && props.url ? props.url : null"
+    action: "url"
+    
+  # Firefox
+  - name: "Firefox Tab"
+    matcher: "bundleId.includes('firefox') && props.url ? props.url : null"
+    action: "url"
+
+  # =================================================================
+  # FINDER RULES
+  # =================================================================
   
-  # App-specific actions
-  action_notion: {fn: open_with, app: "Notion", arg: "{{arg}}"}
-  action_obs_url: {fn: open_with, app: "Obsidian", arg: "{{arg}}"}
-  action_obs: {fn: shell, command: "open -a Obsidian && sleep 0.1 && open 'obsidian://open?vault=YourVaultName&file={{arg}}'"}
-  action_contact: {fn: open_with, app: "Contacts", arg: "addressbook://{{arg}}"}
+  # Finder anchor files (markdown files matching folder name)
+  - name: "Finder Anchor"
+    matcher: "bundleId === 'com.apple.finder' && props.selection && props.recommendedAction === 'anchor' ? props.selection : null"
+    action: "anchor"
+    group: "Files"
+    
+  # Finder markdown files (other markdown files)  
+  - name: "Finder Markdown"
+    matcher: "bundleId === 'com.apple.finder' && props.selection && props.recommendedAction === 'markdown' ? props.selection : null"
+    action: "markdown"
+    group: "Files"
+    
+  # Finder executables
+  - name: "Finder Executable"
+    matcher: "bundleId === 'com.apple.finder' && props.selection && props.recommendedAction === 'cmd' ? props.selection : null"
+    action: "cmd"
+    group: "Cmd"
+    
+  # Finder documents (other file types)
+  - name: "Finder Document"
+    matcher: "bundleId === 'com.apple.finder' && props.selection && props.recommendedAction === 'doc' ? props.selection : null"
+    action: "doc"
+    group: "Doc"
+    
+  # Finder selected folder
+  - name: "Finder Selected Folder"
+    matcher: "bundleId === 'com.apple.finder' && props.selection && props.recommendedAction === 'folder' ? props.selection : null"
+    action: "folder"
+    group: "Dir"
+    
+  # Finder current folder (when no selection)
+  - name: "Finder Path"  
+    matcher: "bundleId === 'com.apple.finder' && !props.selection && props.path ? props.path : null"
+    action: "folder"
+    group: "Dir"
+
+  # =================================================================
+  # CODE EDITORS
+  # =================================================================
   
-  # Alias/rewrite - For command aliases
-  action_alias: |
-    launch("{{arg}}");
-  action_rewrite: |
-    launch("{{arg}}");
+  # VS Code files
+  - name: "VS Code File"
+    matcher: "bundleId === 'com.microsoft.VSCode' && title && !title.includes('Welcome') ? title.split(' — ')[0] : null"
+    action: "doc"
+    group: "Code"
+
+  # =================================================================
+  # OBSIDIAN
+  # =================================================================
   
-  # Shutdown - Execute shutdown script without blocking
-  action_shutdown: |
-    spawnDetached("{{arg}}");
+  # Obsidian notes
+  - name: "Obsidian Note"
+    matcher: "bundleId === 'md.obsidian' && props.url ? props.url : null"
+    action: "obs"
+
+  # =================================================================
+  # GENERIC FALLBACK
+  # =================================================================
   
-  # 1Password - Character injection for passwords/credentials
-  # Opens 1Password Quick Access and injects search text
-  action_1pass: |
-    const query = "{{arg}}";
-    log(`1PASS: Searching for: ${query}`);
-    
-    // Activate 1Password via Cmd+Shift+Space (Quick Access)
-    runAppleScript(`
-      tell application "System Events"
-        key code 49 using {command down, shift down}
-      end tell
-    `);
-    
-    // Brief delay for Quick Access to open
-    shell_sync("/bin/sleep 0.3");
-    
-    // Type the search query character by character for better reliability
-    runAppleScript(\`
-      tell application "System Events"
-        repeat with i from 1 to length of "${query}"
-          set currentChar to character i of "${query}"
-          keystroke currentChar
-          delay 0.25
-        end repeat
-      end tell
-    \`);
-    
-    // Brief delay for search results
-    shell_sync("/bin/sleep 0.2");
-    
-    // Press Enter to select first result and auto-fill
-    runAppleScript(`
-      tell application "System Events"
-        key code 36
-      end tell
-    `);
-    
-    log(\`1PASS: Search completed for: \${query}\`);
-  
-  # Anchor - Open markdown file and activate tmux session
-  # CUSTOMIZE: Update paths if needed (especially for non-Homebrew tmux installations)
-  action_anchor: |
-    const fullPath = "{{arg}}";
-    const anchorDir = fullPath.substring(0, fullPath.lastIndexOf('/'));
-    
-    log(`ANCHOR: Opening anchor at: ${fullPath}`);
-    log(`ANCHOR: Directory: ${anchorDir}`);
-    
-    // Change to the anchor directory
-    change_directory(anchorDir);
-    
-    // Open the folder in Finder
-    open_folder(anchorDir);
-    
-    // Always open the markdown file in Obsidian first
-    const baseName = fullPath.split('/').pop().replace(/\.md$/, '');
-    const encoded = encodeURIComponent(baseName);
-    const vault = getObsidianVault();
-    const app = getObsidianApp();
-    const url = `obsidian://open?vault=${vault}&file=${encoded}`;
-    log(`ANCHOR: Opening in Obsidian: ${url}`);
-    launch_app(app, url);
-    
-    // Use external JavaScript file for tmux processing
-    try {
-        // Load and execute the tmux activation JavaScript
-        const jsFile = "resources/common/tmux_activation.js";
-        const tmuxScript = readFile(jsFile);
-        eval(tmuxScript);
-        log(`ANCHOR: External JavaScript tmux processing completed`);
-    } catch (error) {
-        log(`ANCHOR: External JavaScript tmux processing failed: ${error}`);
-        // Fallback to inline tmux processing
-        log(`ANCHOR: Falling back to inline tmux processing`);
-        // Add basic tmux fallback here if needed
-    }
+  # Generic application launcher (fallback)
+  - name: "Application Launcher"
+    matcher: "app"
+    action: "app"
+    group: "Apps"
