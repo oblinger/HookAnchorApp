@@ -1,5 +1,6 @@
 # 2025-06 HookAnchor
 
+
 ## Project Overview
 Universal command launcher and anchor system for macOS.
 
