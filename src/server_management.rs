@@ -61,22 +61,38 @@ pub fn start_server_via_terminal() -> Result<(), Box<dyn std::error::Error>> {
     // Check for server startup lock to prevent multiple simultaneous starts
     let lock_path = std::path::Path::new("/tmp/hookanchor_server_starting.lock");
     if lock_path.exists() {
-        crate::utils::debug_log("SERVER_MGR", "Server startup already in progress, skipping");
-        return Ok(());
+        // Check if lock is stale (older than 30 seconds)
+        if let Ok(metadata) = std::fs::metadata(lock_path) {
+            if let Ok(created) = metadata.created() {
+                let elapsed = created.elapsed().unwrap_or(std::time::Duration::from_secs(0));
+                if elapsed > std::time::Duration::from_secs(30) {
+                    crate::utils::debug_log("SERVER_MGR", "Removing stale server startup lock");
+                    let _ = std::fs::remove_file(lock_path);
+                } else {
+                    crate::utils::debug_log("SERVER_MGR", "Server startup already in progress, skipping");
+                    return Ok(());
+                }
+            }
+        }
     }
     
     // Create lock file
     std::fs::write(lock_path, std::process::id().to_string())?;
     
-    let ha_path = std::env::current_exe()?;
+    // Use global binary path to ensure we use the same binary that's currently running
+    let ha_path = crate::get_binary_path()
+        .ok_or("Binary path not initialized")?;
     
-    // AppleScript to start server in Terminal with login shell and keep alive
+    // AppleScript to start server in Terminal with login shell and keep alive  
+    // Escape quotes in the path for proper AppleScript string handling
+    let escaped_path = ha_path.display().to_string().replace("\"", "\\\"");
     let script = format!(
-        r#"tell application "Terminal" to do script "cd ~ && '{}' --start-server-daemon > ~/.config/hookanchor/server.log 2>&1""#,
-        ha_path.display()
+        r#"tell application "Terminal" to do script "cd ~ && \"{}\" --start-server-daemon""#,
+        escaped_path
     );
     
     crate::utils::debug_log("SERVER_MGR", "Starting server via Terminal with AppleScript");
+    crate::utils::debug_log("SERVER_MGR", &format!("AppleScript command: {}", script));
     
     let output = std::process::Command::new("osascript")
         .args(["-e", &script])

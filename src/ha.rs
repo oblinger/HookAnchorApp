@@ -11,6 +11,9 @@ use chrono::{Local, TimeZone};
 /// 
 /// Determines whether to run in GUI mode (no arguments) or CLI mode (with arguments)
 fn main() -> Result<(), eframe::Error> {
+    // Initialize global binary path for consistent process spawning
+    hookanchor::init_binary_path();
+    
     // Visual separator for new app launch in logs
     hookanchor::utils::debug_log("STARTUP", "════════════════════════════════════════════════════════════════");
     

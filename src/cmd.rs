@@ -34,6 +34,7 @@ pub fn run_command_line_mode(args: Vec<String>) {
         "--rescan" => run_rescan_command(),
         "--start-server" => run_start_server(),
         "--start-server-daemon" => run_start_server_daemon(),
+        "--restart" => run_restart_server(),
         "--process-health" => run_process_health(),
         "--process-status" => run_process_status(),
         "--reinstall" => run_reinstall(),
@@ -63,6 +64,7 @@ pub fn print_help(program_name: &str) {
     eprintln!("  {} --test-grabber           # Test grabber functionality", program_name);
     eprintln!("  {} --grab [delay]           # Grab active app after delay", program_name);
     eprintln!("  {} --start-server           # Force restart command server", program_name);
+    eprintln!("  {} --restart                # Kill and restart command server in new Terminal", program_name);
     eprintln!("  {} --process-health         # Check for hung processes", program_name);
     eprintln!("  {} --process-status         # Show detailed process status", program_name);
     eprintln!("  {} --reinstall              # Re-run setup assistant (reinstall)", program_name);
@@ -619,8 +621,6 @@ fn run_start_server_daemon() {
                 eprintln!("Warning: Could not save server PID: {}", e);
             }
             
-            println!("Command server started successfully with PID: {}", server_pid);
-            println!("Server will run persistently until killed or system restart");
             
             // Keep the process alive - this is the daemon
             loop {
@@ -911,6 +911,96 @@ fn run_reinstall() {
             eprintln!("❌ Reinstallation failed: {}", e);
             eprintln!();
             eprintln!("Please check the error message above and try again.");
+            std::process::exit(1);
+        }
+    }
+}
+
+/// Restart the command server - kill existing and start new one in Terminal
+fn run_restart_server() {
+    println!("🔄 Restarting command server...");
+    
+    // First, kill any existing server
+    println!("  Killing existing server...");
+    match crate::server_management::kill_existing_server() {
+        Ok(()) => println!("  ✅ Existing server killed"),
+        Err(e) => println!("  ⚠️  No existing server found or kill failed: {}", e),
+    }
+    
+    // Clear the socket file to ensure clean start
+    let socket_path = std::path::Path::new("/Users/oblinger/.config/hookanchor/command_server.sock");
+    if socket_path.exists() {
+        if let Err(e) = std::fs::remove_file(socket_path) {
+            println!("  ⚠️  Failed to remove socket file: {}", e);
+        }
+    }
+    
+    // Reset server check flag to force restart
+    crate::server_management::reset_server_check();
+    
+    // Start new server via Terminal (same method as auto-start)
+    println!("  Starting new server in Terminal...");
+    match crate::server_management::start_server_via_terminal() {
+        Ok(()) => {
+            println!("  ✅ Server restart initiated via Terminal");
+            println!("  📱 A new Terminal window should open with the server daemon");
+            println!("  📄 Server output will be logged to ~/.config/hookanchor/server.log");
+            
+            // Wait for the server to start - check multiple times
+            println!("  ⏳ Waiting for server to start...");
+            let mut server_started = false;
+            let max_attempts = 50; // 50 attempts * 200ms = 10 seconds max
+            let socket_path = std::path::Path::new("/Users/oblinger/.config/hookanchor/command_server.sock");
+            
+            for attempt in 1..=max_attempts {
+                std::thread::sleep(std::time::Duration::from_millis(200));
+                
+                // First check if socket file exists
+                if socket_path.exists() {
+                    // Give it a moment for the socket to be fully ready
+                    std::thread::sleep(std::time::Duration::from_millis(300));
+                    
+                    // Then check if server is available
+                    match crate::command_server::CommandClient::new() {
+                        Ok(client) => {
+                            if client.is_server_available() {
+                                server_started = true;
+                                break;
+                            }
+                        }
+                        Err(_) => {
+                            // Client creation failed, continue waiting
+                        }
+                    }
+                }
+                
+                // Show progress every second
+                if attempt % 5 == 0 {
+                    print!(".");
+                    use std::io::Write;
+                    std::io::stdout().flush().unwrap();
+                }
+            }
+            
+            if server_started {
+                println!("\n  ✅ Server started successfully!");
+                
+                // Also verify by checking the PID in state
+                let state = crate::core::state::load_state();
+                if let Some(pid) = state.server_pid {
+                    println!("  📊 Server running with PID: {}", pid);
+                }
+                
+                println!("  🎯 Server is ready to accept commands");
+            } else {
+                println!("\n  ❌ Server failed to start within 10 seconds");
+                println!("  💡 Check the Terminal window for error messages");
+                std::process::exit(1);
+            }
+        }
+        Err(e) => {
+            eprintln!("  ❌ Failed to start server: {}", e);
+            eprintln!("  💡 Try running manually: ha --start-server-daemon");
             std::process::exit(1);
         }
     }

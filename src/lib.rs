@@ -6,6 +6,25 @@
 //! For complete configuration documentation including JavaScript API, built-in functions,
 //! and usage examples, see `docs.md` in the project root.
 
+use std::sync::OnceLock;
+use std::path::PathBuf;
+
+/// Global static to store the path of the currently running binary
+/// This ensures all parts of the application use the same binary path for spawning processes
+static BINARY_PATH: OnceLock<PathBuf> = OnceLock::new();
+
+/// Initialize the global binary path - should be called once at application startup
+pub fn init_binary_path() {
+    if let Ok(exe_path) = std::env::current_exe() {
+        let _ = BINARY_PATH.set(exe_path);
+    }
+}
+
+/// Get the path of the currently running binary
+pub fn get_binary_path() -> Option<&'static PathBuf> {
+    BINARY_PATH.get()
+}
+
 // Core modules
 pub mod core;
 

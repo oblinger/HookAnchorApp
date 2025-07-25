@@ -853,6 +853,12 @@ pub fn create_command_to_patch_map(commands: &[Command], patches: &HashMap<Strin
     command_to_patch_map
 }
 
+/// Case-insensitive patch lookup - the canonical way to check if a patch exists
+/// Returns true if a patch with the given name exists (case-insensitive)
+pub fn patch_exists(patch_name: &str, patches: &HashMap<String, Patch>) -> bool {
+    patches.contains_key(&patch_name.to_lowercase())
+}
+
 /// Gets the patch for a command using fast lookup
 /// Returns None if the command has no patch or the patch doesn't exist
 pub fn get_patch_for_command<'a>(command_name: &str, patches: &'a HashMap<String, Patch>) -> Option<&'a Patch> {
@@ -907,13 +913,17 @@ pub fn find_orphan_patches(patches: &HashMap<String, Patch>, commands: &[Command
     
     crate::utils::debug_log("ORPHAN_DEBUG", &format!("Starting orphan detection - {} patches, {} commands", patches.len(), commands.len()));
     
+    // Debug: Show some existing patches for comparison
+    let patch_keys: Vec<String> = patches.keys().take(10).cloned().collect();
+    crate::utils::debug_log("ORPHAN_DEBUG", &format!("Sample existing patch keys: {:?}", patch_keys));
+    
     // Scan all commands and collect unique patch names that are referenced but don't have anchors
     for command in commands {
         if !command.patch.is_empty() {
-            let patch_name_lower = command.patch.to_lowercase();
-            
-            // Check if this patch name already exists in our patches hashmap
-            if !patches.contains_key(&patch_name_lower) {
+            // Use the canonical case-insensitive lookup
+            if !patch_exists(&command.patch, patches) {
+                let patch_name_lower = command.patch.to_lowercase();
+                crate::utils::debug_log("ORPHAN_DEBUG", &format!("Patch '{}' not found in patches hashmap - considering for orphan creation", command.patch));
                 // Check if we haven't already marked this patch as orphaned (case-insensitive)
                 let already_exists = orphan_patches.iter().any(|existing: &String| existing.to_lowercase() == patch_name_lower);
                 if !already_exists {
@@ -948,8 +958,10 @@ pub fn find_orphan_patches(patches: &HashMap<String, Patch>, commands: &[Command
                 } else {
                     crate::utils::debug_log("ORPHAN_DEBUG", &format!("Patch '{}' already marked as orphan", command.patch));
                 }
+            } else {
+                // Patch exists - this is the normal case
+                crate::utils::debug_log("ORPHAN_DEBUG", &format!("Patch '{}' found in patches hashmap - no orphan needed", command.patch));
             }
-            // Removed the verbose "already exists" message
         }
     }
     

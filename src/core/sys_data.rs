@@ -270,8 +270,8 @@ pub fn load_data(commands_override: Vec<Command>, verbose: bool) -> SysData {
             if verbose {
                 println!("   ✅ Saved {} commands with changes", commands.len());
             }
-            // Clear sys cache since we've updated the commands file
-            clear_sys_data();
+            // Don't clear cache here - we're already updating it
+            // clear_sys_data() would cause deadlock since we're holding the mutex
         }
     } else {
         if verbose {

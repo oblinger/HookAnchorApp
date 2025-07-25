@@ -292,6 +292,33 @@ pub fn scan_files(mut commands: Vec<Command>, markdown_roots: &[String], config:
 
 /// Recursively scans a directory for files and folders with vault root tracking
 fn scan_directory_with_root(dir: &Path, vault_root: &Path, commands: &mut Vec<Command>, existing_commands: &mut HashSet<String>, found_folders: &mut Vec<PathBuf>, existing_patches: &std::collections::HashMap<String, String>, config: &Config) {
+    scan_directory_with_root_protected(dir, vault_root, commands, existing_commands, found_folders, existing_patches, config, &mut HashSet::new(), 0)
+}
+
+/// Protected version with loop detection and depth limiting
+fn scan_directory_with_root_protected(dir: &Path, vault_root: &Path, commands: &mut Vec<Command>, existing_commands: &mut HashSet<String>, found_folders: &mut Vec<PathBuf>, existing_patches: &std::collections::HashMap<String, String>, config: &Config, visited: &mut HashSet<PathBuf>, depth: usize) {
+    // Prevent infinite loops with depth limit
+    if depth > 20 {
+        debug_log("SCANNER", &format!("Skipping directory (depth limit): {}", dir.display()));
+        return;
+    }
+    
+    // Get canonical path to detect symbolic link loops
+    let canonical_dir = match dir.canonicalize() {
+        Ok(path) => path,
+        Err(_) => {
+            debug_log("SCANNER", &format!("Cannot canonicalize path: {}", dir.display()));
+            return;
+        }
+    };
+    
+    // Check if we've already visited this directory (prevents infinite loops)
+    if visited.contains(&canonical_dir) {
+        debug_log("SCANNER", &format!("Skipping already visited directory: {}", dir.display()));
+        return;
+    }
+    visited.insert(canonical_dir.clone());
+    
     if let Ok(entries) = fs::read_dir(dir) {
         for entry in entries.filter_map(Result::ok) {
             let path = entry.path();
@@ -310,13 +337,25 @@ fn scan_directory_with_root(dir: &Path, vault_root: &Path, commands: &mut Vec<Co
                 }
             }
             
-            // Process directories first
+            // Check if it's a symlink and skip directory symlinks to prevent infinite loops
+            let metadata = match entry.metadata() {
+                Ok(metadata) => metadata,
+                Err(_) => continue, // Skip if we can't read metadata
+            };
+            
+            // Process directories first (but skip directory symlinks)
             if path.is_dir() {
+                // Skip symlinked directories to prevent infinite loops
+                if metadata.file_type().is_symlink() {
+                    debug_log("SCANNER", &format!("Skipping directory symlink: {}", path.display()));
+                    continue;
+                }
+                
                 // COMMENTED OUT: Folder collection disabled - only scanning for markdown files
                 // found_folders.push(path.clone());
                 
                 // Recursively scan subdirectories
-                scan_directory_with_root(&path, vault_root, commands, existing_commands, found_folders, existing_patches, config);
+                scan_directory_with_root_protected(&path, vault_root, commands, existing_commands, found_folders, existing_patches, config, visited, depth + 1);
             } else {
                 // Process files (markdown files)
                 if let Some(command) = process_markdown_with_root(&path, vault_root, existing_commands, &existing_patches) {

@@ -8,6 +8,7 @@ popup_settings:
   max_rows: 15
   max_columns: 3
   debug_log: "~/.config/hookanchor/anchor.log"  # Debug logging file path
+  server_log: "~/.config/hookanchor/server.log"  # Server daemon log file path (default)
   debug_scanner: false
   merge_similar: true         # Merging similar commands in popup
   word_separators: " ._-"     # Word separator chars submenus and merging

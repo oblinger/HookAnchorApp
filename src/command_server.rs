@@ -15,6 +15,13 @@ use std::path::PathBuf;
 use serde::{Serialize, Deserialize};
 use crate::utils::{debug_log, verbose_log};
 
+/// Helper function to output to both console and debug log
+fn log_and_print(prefix: &str, message: &str) {
+    let formatted = format!("{}: {}", prefix, message);
+    println!("{}", formatted);
+    debug_log(prefix, message);
+}
+
 /// Request structure for command execution
 #[derive(Debug, Serialize, Deserialize)]
 pub struct CommandRequest {
@@ -184,7 +191,8 @@ fn execute_command_with_env(
     inherited_env: HashMap<String, String>,
     base_working_dir: PathBuf,
 ) -> CommandResponse {
-    debug_log("SHELL", &request.command);
+    // Log command execution for visibility
+    log_and_print("CMD_SERVER", &format!("Executing: {}", request.command));
     
     let mut cmd = std::process::Command::new("sh");
     cmd.arg("-c").arg(&request.command);
@@ -446,7 +454,6 @@ pub fn start_persistent_server() -> Result<u32, Box<dyn std::error::Error>> {
     // Start the server (this starts a background thread)
     server.start()?;
     
-    debug_log("CMD_SERVER", "Persistent server started successfully");
     
     // Keep the server alive by preventing it from being dropped
     // We need to transfer ownership to avoid the Drop implementation

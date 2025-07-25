@@ -972,15 +972,13 @@ impl AnchorSelector {
         if let Some(markdown_roots) = &sys_data.config.markdown_roots {
             crate::utils::debug_log("SCANNER2", &format!("Force scanning markdown files, roots: {:?}", markdown_roots));
             
-            // Force scan markdown files
+            // Force scan markdown files - now safe from infinite loops due to symlink skipping
             let current_commands = self.popup_state.get_commands().to_vec();
             let updated_commands = scanner::scan(current_commands, &sys_data);
             
-            // Scanner now handles saving internally, and commands should already have proper patches from load_data()
-            crate::utils::debug_log("RESCAN", "GUI rescan completed - scanner handled saving internally");
-            
             // Update commands in popup state
             self.popup_state.set_commands(updated_commands);
+            crate::utils::debug_log("RESCAN", "GUI rescan completed successfully");
             
             // Refresh current search results if there's an active search
             if !self.popup_state.search_text.trim().is_empty() {
@@ -1019,76 +1017,82 @@ impl AnchorSelector {
                 i, cmd.command, cmd.action, cmd.arg));
         }
         
-        // Use the first non-separator command and extract its folder
-        for cmd in &display_commands {
-            if PopupState::is_separator_command(cmd) {
-                utils::debug_log("SHOW_FOLDER", &format!("Skipping separator: '{}'", cmd.command));
-                continue;
-            }
-            
-            utils::debug_log("SHOW_FOLDER", &format!("Processing command: '{}' (action: {})", cmd.command, cmd.action));
-            
-            // Resolve alias if needed
-            let resolved_cmd = if cmd.action == "alias" {
-                utils::debug_log("SHOW_FOLDER", &format!("Resolving alias '{}' to target '{}'", cmd.command, cmd.arg));
-                // Find the target command
-                if let Some(target) = all_commands.iter().find(|c| c.command == cmd.arg) {
-                    utils::debug_log("SHOW_FOLDER", &format!("Alias resolved to: '{}' (action: {}, arg: {})", 
-                        target.command, target.action, target.arg));
-                    target
-                } else {
-                    utils::debug_log("SHOW_FOLDER", &format!("Failed to resolve alias '{}' - target '{}' not found", cmd.command, cmd.arg));
-                    cmd
-                }
-            } else {
-                cmd
-            };
-            
-            // Extract folder based on action type (using resolved command)
-            let folder_path = match resolved_cmd.action.as_str() {
-                "folder" => {
-                    utils::debug_log("SHOW_FOLDER", &format!("Found folder action, path: {}", resolved_cmd.arg));
-                    Some(resolved_cmd.arg.clone())
-                },
-                "anchor" | "markdown" => {
-                    // For anchor/markdown, get the directory containing the file
-                    if let Some(idx) = resolved_cmd.arg.rfind('/') {
-                        let path = resolved_cmd.arg[..idx].to_string();
-                        utils::debug_log("SHOW_FOLDER", &format!("Found {}, extracted folder: {}", resolved_cmd.action, path));
-                        Some(path)
-                    } else {
-                        utils::debug_log("SHOW_FOLDER", &format!("Found {} but no slash in path: {}", resolved_cmd.action, resolved_cmd.arg));
-                        None
-                    }
-                },
-                "alias" => {
-                    // This shouldn't happen since we already resolved aliases above
-                    utils::debug_log("SHOW_FOLDER", &format!("Unresolved alias found: '{}'", cmd.command));
-                    None
-                },
-                other => {
-                    utils::debug_log("SHOW_FOLDER", &format!("Command '{}' has non-folder action: {}", cmd.command, other));
-                    None
-                }
-            };
-            
-            if let Some(path) = folder_path {
-                utils::debug_log("SHOW_FOLDER", &format!("Attempting to launch folder: '{}'", path));
-                
-                // Launch the folder (popup stays open)
-                match launcher::launch(&format!("folder {}", path)) {
-                    Ok(()) => {
-                        utils::debug_log("SHOW_FOLDER", &format!("Successfully launched folder: '{}'", path));
-                    },
-                    Err(e) => {
-                        utils::debug_log("SHOW_FOLDER", &format!("Failed to launch folder '{}': {:?}", path, e));
-                    }
-                }
-                return;
-            }
+        // Use the currently selected command and extract its folder
+        let selected_idx = self.selected_index();
+        if selected_idx >= display_commands.len() {
+            utils::debug_log("SHOW_FOLDER", &format!("Selected index {} is out of bounds ({})", selected_idx, display_commands.len()));
+            return;
         }
         
-        utils::debug_log("SHOW_FOLDER", "No folder found in filtered commands");
+        let cmd = &display_commands[selected_idx];
+        utils::debug_log("SHOW_FOLDER", &format!("Using selected command at index {}: '{}'", selected_idx, cmd.command));
+        
+        if PopupState::is_separator_command(cmd) {
+            utils::debug_log("SHOW_FOLDER", &format!("Selected command is a separator: '{}'", cmd.command));
+            return;
+        }
+            
+        utils::debug_log("SHOW_FOLDER", &format!("Processing command: '{}' (action: {})", cmd.command, cmd.action));
+        
+        // Resolve alias if needed
+        let resolved_cmd = if cmd.action == "alias" {
+            utils::debug_log("SHOW_FOLDER", &format!("Resolving alias '{}' to target '{}'", cmd.command, cmd.arg));
+            // Find the target command
+            if let Some(target) = all_commands.iter().find(|c| c.command == cmd.arg) {
+                utils::debug_log("SHOW_FOLDER", &format!("Alias resolved to: '{}' (action: {}, arg: {})", 
+                    target.command, target.action, target.arg));
+                target
+            } else {
+                utils::debug_log("SHOW_FOLDER", &format!("Failed to resolve alias '{}' - target '{}' not found", cmd.command, cmd.arg));
+                cmd
+            }
+        } else {
+            cmd
+        };
+        
+        // Extract folder based on action type (using resolved command)
+        let folder_path = match resolved_cmd.action.as_str() {
+            "folder" => {
+                utils::debug_log("SHOW_FOLDER", &format!("Found folder action, path: {}", resolved_cmd.arg));
+                Some(resolved_cmd.arg.clone())
+            },
+            "anchor" | "markdown" => {
+                // For anchor/markdown, get the directory containing the file
+                if let Some(idx) = resolved_cmd.arg.rfind('/') {
+                    let path = resolved_cmd.arg[..idx].to_string();
+                    utils::debug_log("SHOW_FOLDER", &format!("Found {}, extracted folder: {}", resolved_cmd.action, path));
+                    Some(path)
+                } else {
+                    utils::debug_log("SHOW_FOLDER", &format!("Found {} but no slash in path: {}", resolved_cmd.action, resolved_cmd.arg));
+                    None
+                }
+            },
+            "alias" => {
+                // This shouldn't happen since we already resolved aliases above
+                utils::debug_log("SHOW_FOLDER", &format!("Unresolved alias found: '{}'", cmd.command));
+                None
+            },
+            other => {
+                utils::debug_log("SHOW_FOLDER", &format!("Command '{}' has non-folder action: {}", cmd.command, other));
+                None
+            }
+        };
+        
+        if let Some(path) = folder_path {
+            utils::debug_log("SHOW_FOLDER", &format!("Attempting to launch folder: '{}'", path));
+            
+            // Launch the folder (popup stays open)
+            match launcher::launch(&format!("folder {}", path)) {
+                Ok(()) => {
+                    utils::debug_log("SHOW_FOLDER", &format!("Successfully launched folder: '{}'", path));
+                },
+                Err(e) => {
+                    utils::debug_log("SHOW_FOLDER", &format!("Failed to launch folder '{}': {:?}", path, e));
+                }
+            }
+        } else {
+            utils::debug_log("SHOW_FOLDER", &format!("No folder found for selected command: '{}'", cmd.command));
+        }
     }
     
 }
