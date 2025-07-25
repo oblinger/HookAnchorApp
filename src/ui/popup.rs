@@ -1363,14 +1363,16 @@ impl eframe::App for AnchorSelector {
         let painter = ctx.layer_painter(egui::LayerId::background());
         
         // Draw multiple shadow layers for a much darker shadow effect
-        let shadow_offsets = [12.0, 10.0, 8.0, 6.0, 4.0, 2.0];
-        let shadow_alphas = [50, 70, 90, 110, 130, 150];
+        // Use negative offsets to draw shadows "behind" the main rect, not extending beyond window bounds
+        let shadow_offsets = [6.0, 5.0, 4.0, 3.0, 2.0, 1.0];
+        let shadow_alphas = [20, 30, 40, 50, 60, 70];
         
         for (offset, alpha) in shadow_offsets.iter().zip(shadow_alphas.iter()) {
-            let shadow_rect = screen_rect.translate(egui::vec2(*offset, *offset));
+            // Draw shadow inward from the main rect to avoid extending beyond transparent window bounds
+            let shadow_rect = screen_rect.shrink(*offset);
             painter.rect_filled(
                 shadow_rect,
-                egui::Rounding::same(12.0),
+                egui::Rounding::same(12.0 - *offset * 0.5), // Slightly reduce rounding for inner shadows
                 egui::Color32::from_black_alpha(*alpha)
             );
         }
@@ -1558,24 +1560,33 @@ impl eframe::App for AnchorSelector {
                 };
                 
                 // Use different text edit based on loading state
-                let response = if self.loading_state == LoadingState::Loaded {
-                    // Normal operation - edit popup state directly
-                    ui.add_enabled(
-                        !self.command_editor.visible && self.grabber_countdown.is_none(),
-                        egui::TextEdit::singleline(&mut self.popup_state.search_text)
-                            .desired_width(ui.available_width())
-                            .hint_text(hint_text)
-                            .font(font_id)
-                    )
-                } else {
-                    // Still loading - edit the buffer instead
-                    ui.add_enabled(
-                        !self.command_editor.visible && self.grabber_countdown.is_none(),
-                        egui::TextEdit::singleline(&mut self.pre_init_input_buffer)
-                            .desired_width(ui.available_width())
-                            .hint_text(hint_text)
-                            .font(font_id)
-                    )
+                let response = {
+                    // Temporarily modify style for more rounded text input corners
+                    let mut style = ui.style().as_ref().clone();
+                    style.visuals.widgets.inactive.rounding = egui::Rounding::same(24.0); // Double the window corner radius
+                    style.visuals.widgets.hovered.rounding = egui::Rounding::same(24.0);
+                    style.visuals.widgets.active.rounding = egui::Rounding::same(24.0);
+                    ui.set_style(style);
+                    
+                    if self.loading_state == LoadingState::Loaded {
+                        // Normal operation - edit popup state directly
+                        ui.add_enabled(
+                            !self.command_editor.visible && self.grabber_countdown.is_none(),
+                            egui::TextEdit::singleline(&mut self.popup_state.search_text)
+                                .desired_width(ui.available_width())
+                                .hint_text(hint_text)
+                                .font(font_id)
+                        )
+                    } else {
+                        // Still loading - edit the buffer instead
+                        ui.add_enabled(
+                            !self.command_editor.visible && self.grabber_countdown.is_none(),
+                            egui::TextEdit::singleline(&mut self.pre_init_input_buffer)
+                                .desired_width(ui.available_width())
+                                .hint_text(hint_text)
+                                .font(font_id)
+                        )
+                    }
                 };
                 
                 // Always update search when text field is changed
