@@ -15,6 +15,17 @@ use super::{PopupState, LayoutArrangement};
 use super::command_editor::{CommandEditor, CommandEditorResult};
 use super::dialog::Dialog;
 
+/// Window sizing modes for different UI states
+#[derive(Clone, Debug, PartialEq)]
+enum WindowSizeMode {
+    /// Normal popup mode - sized for command list
+    Normal,
+    /// Command editor is active - sized for editor
+    Editor,
+    /// Dialog is active - sized for dialog content
+    Dialog,
+}
+
 /// Main application state for the Anchor Selector popup window
 pub struct AnchorSelector {
     /// Core popup state (business logic)
@@ -27,10 +38,12 @@ pub struct AnchorSelector {
     command_editor: CommandEditor,
     /// Dialog system for user input
     dialog: Dialog,
-    /// Flag to disable automatic window resizing when we want manual control
-    manual_resize_mode: bool,
-    /// Track the last manual resize request to avoid repeatedly sending commands
-    last_manual_size: Option<egui::Vec2>,
+    /// Current window sizing mode
+    window_size_mode: WindowSizeMode,
+    /// Track the last size for each mode to avoid unnecessary resize commands
+    last_normal_size: Option<egui::Vec2>,
+    last_editor_size: Option<egui::Vec2>,
+    last_dialog_size: Option<egui::Vec2>,
     /// Flag to track if scanner check is pending
     scanner_check_pending: bool,
     /// Grabber countdown state (None = not active, Some(n) = countdown from n)
@@ -68,6 +81,102 @@ enum LoadingState {
 }
 
 impl AnchorSelector {
+    // =============================================================================
+    // Window Size Management
+    // =============================================================================
+    
+    /// Determine the appropriate window size mode based on current UI state
+    fn determine_window_size_mode(&self) -> WindowSizeMode {
+        if self.dialog.visible {
+            WindowSizeMode::Dialog
+        } else if self.command_editor.visible {
+            WindowSizeMode::Editor
+        } else {
+            WindowSizeMode::Normal
+        }
+    }
+    
+    /// Calculate the required window size for normal mode (command list)
+    fn calculate_normal_size(&self, command_count: usize) -> egui::Vec2 {
+        let base_width = 500.0;
+        let base_height = 120.0; // Base height for input field
+        
+        // Add height for command list (approximately 30 pixels per command)
+        let command_list_height = if command_count > 0 {
+            (command_count.min(12) as f32) * 30.0 // Cap at 12 visible commands
+        } else {
+            0.0
+        };
+        
+        // Add extra height if grabber countdown is active
+        let countdown_height = if self.grabber_countdown.is_some() { 60.0 } else { 0.0 };
+        
+        egui::vec2(base_width, base_height + command_list_height + countdown_height)
+    }
+    
+    /// Calculate the required window size for editor mode
+    fn calculate_editor_size(&self) -> egui::Vec2 {
+        // Command editor needs space for all input fields
+        egui::vec2(600.0, 400.0) // Fixed size for command editor
+    }
+    
+    /// Calculate the required window size for dialog mode
+    fn calculate_dialog_size(&self) -> egui::Vec2 {
+        let (dialog_width, dialog_height) = self.dialog.calculate_required_size();
+        let required_width = dialog_width.max(500.0); // Minimum width
+        let required_height = dialog_height + 60.0; // Add padding
+        egui::vec2(required_width, required_height)
+    }
+    
+    /// Update window size based on current mode, only if mode or size changed
+    fn update_window_size(&mut self, ctx: &egui::Context) {
+        let new_mode = self.determine_window_size_mode();
+        
+        // Calculate the required size for the new mode
+        let required_size = match new_mode {
+            WindowSizeMode::Normal => {
+                let (display_commands, _, _, _) = self.get_display_commands();
+                self.calculate_normal_size(display_commands.len())
+            }
+            WindowSizeMode::Editor => self.calculate_editor_size(),
+            WindowSizeMode::Dialog => self.calculate_dialog_size(),
+        };
+        
+        // Check if we need to update the window size
+        let should_resize = match (&self.window_size_mode, &new_mode) {
+            (WindowSizeMode::Normal, WindowSizeMode::Normal) => {
+                // Check if normal mode size changed
+                self.last_normal_size.map_or(true, |last| (last - required_size).length() > 1.0)
+            }
+            (WindowSizeMode::Editor, WindowSizeMode::Editor) => {
+                // Check if editor mode size changed
+                self.last_editor_size.map_or(true, |last| (last - required_size).length() > 1.0)
+            }
+            (WindowSizeMode::Dialog, WindowSizeMode::Dialog) => {
+                // Check if dialog mode size changed
+                self.last_dialog_size.map_or(true, |last| (last - required_size).length() > 1.0)
+            }
+            _ => true, // Mode changed, definitely resize
+        };
+        
+        if should_resize {
+            ctx.send_viewport_cmd(egui::ViewportCommand::InnerSize(required_size));
+            
+            // Update the mode and cache the size
+            self.window_size_mode = new_mode.clone();
+            match new_mode {
+                WindowSizeMode::Normal => self.last_normal_size = Some(required_size),
+                WindowSizeMode::Editor => self.last_editor_size = Some(required_size),
+                WindowSizeMode::Dialog => self.last_dialog_size = Some(required_size),
+            }
+            
+            crate::utils::debug_log("WINDOW_SIZE", &format!(
+                "Window resized to {:?} mode: {}x{}", 
+                new_mode, required_size.x, required_size.y
+            ));
+        }
+    }
+
     // =============================================================================
     // Scanner Management
     // =============================================================================
@@ -507,8 +616,10 @@ impl AnchorSelector {
             position_set: false,
             command_editor: CommandEditor::new(),
             dialog: Dialog::new(),
-            manual_resize_mode: false,
-            last_manual_size: None,
+            window_size_mode: WindowSizeMode::Normal,
+            last_normal_size: None,
+            last_editor_size: None,
+            last_dialog_size: None,
             scanner_check_pending: true,
             grabber_countdown: None,
             countdown_last_update: None,
@@ -834,23 +945,7 @@ impl AnchorSelector {
                         
                         crate::utils::debug_log("GRAB", "Showing template dialog");
                         self.dialog.show(dialog_spec);
-                        crate::utils::debug_log("GRAB", "Template dialog shown, calculating size");
-                        
-                        // Calculate required dialog size and resize window
-                        let size_start = std::time::Instant::now();
-                        let (dialog_width, dialog_height) = self.dialog.calculate_required_size();
-                        crate::utils::debug_log("GRAB", &format!("Dialog size calculation took {}ms", size_start.elapsed().as_millis()));
-                        let final_width = dialog_width.max(600.0); // Minimum width for readability
-                        let final_height = dialog_height.max(400.0); // Minimum height
-                        
-                        // Enable manual resize mode and set window size
-                        self.manual_resize_mode = true;
-                        self.last_manual_size = Some([final_width, final_height].into());
-                        
-                        // Actually resize the window
-                        crate::utils::debug_log("GRAB", "Resizing window for template dialog");
-                        ctx.send_viewport_cmd(egui::ViewportCommand::InnerSize([final_width, final_height].into()));
-                        crate::utils::debug_log("GRAB", "Window resize command sent");
+                        crate::utils::debug_log("GRAB", "Template dialog shown - window size will be handled automatically");
                     }
                 }
                 crate::utils::debug_log("GRAB", "Grab result processing completed");
@@ -1162,6 +1257,11 @@ pub fn center_on_main_display(ctx: &egui::Context, window_size: egui::Vec2) -> e
 }
 
 impl eframe::App for AnchorSelector {
+    /// Return transparent clear color to enable rounded corners
+    fn clear_color(&self, _visuals: &egui::Visuals) -> [f32; 4] {
+        egui::Rgba::TRANSPARENT.to_array()
+    }
+    
     fn update(&mut self, ctx: &egui::Context, _frame: &mut eframe::Frame) {
         // Increment frame counter for initial setup only
         if self.frame_count < 20 {
@@ -1255,6 +1355,8 @@ impl eframe::App for AnchorSelector {
         // Update grabber countdown
         self.update_grabber_countdown(ctx);
         
+        // Update window size based on current UI state
+        self.update_window_size(ctx);
         
         // Draw custom rounded background with heavy shadow
         let screen_rect = ctx.screen_rect();
@@ -1323,10 +1425,6 @@ impl eframe::App for AnchorSelector {
                         });
                     }
                 }
-                
-                // Resize back to normal when dialog closes and re-enable automatic resizing
-                self.manual_resize_mode = false;
-                ctx.send_viewport_cmd(egui::ViewportCommand::InnerSize([500.0, 300.0].into()));
             }
         }
         // Track if command editor was just closed to restore focus
@@ -1585,22 +1683,7 @@ impl eframe::App for AnchorSelector {
                         (window_width, required_height)
                     };
                     
-                    // Resize window to accommodate content
-                    if self.manual_resize_mode {
-                        // Use manual size if set (works even when dialog is open)
-                        if let Some(manual_size) = self.last_manual_size {
-                            ctx.send_viewport_cmd(egui::ViewportCommand::InnerSize(manual_size));
-                        }
-                    } else if self.dialog.visible {
-                        // When dialog is visible, make sure main window is large enough to accommodate it
-                        let (dialog_width, dialog_height) = self.dialog.calculate_required_size();
-                        let required_width = dialog_width.max(final_width);
-                        let required_height = dialog_height.max(final_height);
-                        ctx.send_viewport_cmd(egui::ViewportCommand::InnerSize(egui::vec2(required_width, required_height)));
-                    } else {
-                        // Use automatic size when dialog is not open
-                        ctx.send_viewport_cmd(egui::ViewportCommand::InnerSize(egui::vec2(final_width, final_height)));
-                    }
+                    // Window sizing is now handled automatically by update_window_size()
                     
                     // Use DisplayLayout to determine arrangement
                     match &self.popup_state.display_layout.arrangement {
@@ -1818,34 +1901,7 @@ impl eframe::App for AnchorSelector {
                         }
                     }
                 } else {
-                    // No commands - resize to minimal height (just input field), but expand if command editor is open
-                    let input_height = 60.0;
-                    let padding = 50.0;
-                    let base_height = input_height + padding;
-                    
-                    let (final_width, final_height) = if self.command_editor.visible {
-                        // Make window larger when command editor is open, even with no commands
-                        (500.0, 400.0f32.max(base_height))
-                    } else {
-                        (500.0, base_height)
-                    };
-                    
-                    // Resize window (same logic as when there are commands)
-                    if self.manual_resize_mode {
-                        // Use manual size if set (works even when dialog is open)
-                        if let Some(manual_size) = self.last_manual_size {
-                            ctx.send_viewport_cmd(egui::ViewportCommand::InnerSize(manual_size));
-                        }
-                    } else if self.dialog.visible {
-                        // When dialog is visible, make sure main window is large enough to accommodate it
-                        let (dialog_width, dialog_height) = self.dialog.calculate_required_size();
-                        let required_width = dialog_width.max(final_width);
-                        let required_height = dialog_height.max(final_height);
-                        ctx.send_viewport_cmd(egui::ViewportCommand::InnerSize(egui::vec2(required_width, required_height)));
-                    } else {
-                        // Use automatic size when dialog is not open
-                        ctx.send_viewport_cmd(egui::ViewportCommand::InnerSize(egui::vec2(final_width, final_height)));
-                    }
+                    // No commands case - window sizing is handled automatically by update_window_size()
                 }
                 
                 // Bottom draggable area
@@ -1979,9 +2035,9 @@ pub fn run_gui_with_prompt(initial_prompt: &str, _app_state: super::ApplicationS
     let viewport_builder = egui::ViewportBuilder::default()
         .with_inner_size([500.0, 120.0]) // Initial size - will be dynamically resized
         .with_resizable(false) // Disable manual resizing - we control size programmatically
-        .with_decorations(false); // Remove title bar and window controls
+        .with_decorations(false) // Remove title bar and window controls
+        .with_transparent(true); // Enable transparency for rounded corners
         // Skip icon loading for faster startup - can be added later if needed
-        // .with_transparent(true); // DISABLED: May cause hanging
     
     let options = eframe::NativeOptions {
         viewport: viewport_builder,
@@ -2004,12 +2060,12 @@ pub fn run_gui_with_prompt(initial_prompt: &str, _app_state: super::ApplicationS
             cc.egui_ctx.set_style(style);
             
             
-            // Set light grey background for corner areas
+            // Set transparent background for corner areas
             if let Some(gl) = cc.gl.as_ref() {
                 use eframe::glow::HasContext as _;
                 unsafe {
-                    // Light grey (200/255 = 0.78) with full opacity for corners
-                    gl.clear_color(0.78, 0.78, 0.78, 1.0);
+                    // Transparent background to allow rounded corners
+                    gl.clear_color(0.0, 0.0, 0.0, 0.0);
                 }
             }
             
