@@ -1563,9 +1563,9 @@ impl eframe::App for AnchorSelector {
                 let response = {
                     // Temporarily modify style for more rounded text input corners
                     let mut style = ui.style().as_ref().clone();
-                    style.visuals.widgets.inactive.rounding = egui::Rounding::same(24.0); // Double the window corner radius
-                    style.visuals.widgets.hovered.rounding = egui::Rounding::same(24.0);
-                    style.visuals.widgets.active.rounding = egui::Rounding::same(24.0);
+                    style.visuals.widgets.inactive.rounding = egui::Rounding::same(6.0); // Half the window corner radius
+                    style.visuals.widgets.hovered.rounding = egui::Rounding::same(6.0);
+                    style.visuals.widgets.active.rounding = egui::Rounding::same(6.0);
                     ui.set_style(style);
                     
                     if self.loading_state == LoadingState::Loaded {
