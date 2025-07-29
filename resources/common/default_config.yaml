@@ -277,18 +277,18 @@ functions:
     // Try Quick Access first (most universal)
     try {
       shell("osascript -e 'tell application \"System Events\" to keystroke \" \" using {shift down, command down}'");
-      shell_sync("/bin/sleep 0.3");  // 0.3 Use shell_sync for timing
-      // Type character by character for better reliability
+      shell_sync("/bin/sleep 0.5");  // Increased delay for Quick Access to fully open
+      // Type character by character for better reliability - very slow to prevent overwhelming
       shell(`osascript -e 'tell application "System Events"
         repeat with i from 1 to length of "{{arg}}"
           set currentChar to character i of "{{arg}}"
           keystroke currentChar
-          delay 0.05
+          delay 1.0
         end repeat
       end tell'`);
-      shell_sync("/bin/sleep 0.5");  // Shorter delay before Enter
+      shell_sync("/bin/sleep 0.8");  // Longer delay before Enter to let typing complete
       shell("osascript -e 'tell application \"System Events\" to key code 36'");  // Press Enter to select and fill
-      shell_sync("/bin/sleep 0.2");  // 0.2 Brief delay after Enter
+      shell_sync("/bin/sleep 0.3");  // Longer delay after Enter
     } catch (e) {
       // Fallback 1: Try menu bar access
       try {
