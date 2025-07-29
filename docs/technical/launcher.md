@@ -11,7 +11,7 @@ The goal is to design a scripting layer that allows implementation of the launch
 ## Analysis Results
 
 ### Command Server Function Location
-Found in `/Users/oblinger/ob/kmr/prj/binproj/spot/spot` - the `cmd_server()` function at line 1061 and `execute()` function at line 1089.
+Found in `/Users/oblinger/ob/proj/binproj/spot/spot` - the `cmd_server()` function at line 1061 and `execute()` function at line 1089.
 
 ### Cataloged Commands (12 Total)
 

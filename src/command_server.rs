@@ -13,6 +13,7 @@ use std::thread;
 use std::sync::{Arc, Mutex};
 use std::path::PathBuf;
 use serde::{Serialize, Deserialize};
+use chrono::TimeZone;
 use crate::utils::{debug_log, verbose_log};
 
 /// Helper function to output to both console and debug log
@@ -80,7 +81,21 @@ impl CommandServer {
     /// Start the server in a background thread
     pub fn start(&mut self) -> Result<(), Box<dyn std::error::Error>> {
         let listener = UnixListener::bind(&self.socket_path)?;
-        debug_log("CMD_SERVER", &format!("Server listening on: {:?}", self.socket_path));
+        
+        // Log version and build info at server startup
+        let version = env!("CARGO_PKG_VERSION");
+        let state = crate::core::state::load_state();
+        let build_time_str = if let Some(build_time) = state.build_time {
+            let dt = chrono::Local.timestamp_opt(build_time, 0).single()
+                .unwrap_or_else(|| chrono::Local::now());
+            dt.format("%Y-%m-%d %H:%M:%S").to_string()
+        } else {
+            "Unknown".to_string()
+        };
+        
+        log_and_print("CMD_SERVER", &format!("HookAnchor Server v{} starting - Build: {}", version, build_time_str));
+        log_and_print("CMD_SERVER", &format!("Server listening on: {:?}", self.socket_path));
+        
         
         let running = Arc::clone(&self.running);
         *running.lock().unwrap() = true;
@@ -172,14 +187,38 @@ fn handle_client(
     let request: CommandRequest = serde_json::from_str(&request_line.trim())?;
     verbose_log("CMD_SERVER", &format!("Received request: {:?}", request));
     
-    // Execute command with inherited environment
-    let response = execute_command_with_env(request, inherited_env, base_working_dir);
-    
-    // Send response
-    let response_json = serde_json::to_string(&response)?;
-    stream.write_all(response_json.as_bytes())?;
-    stream.write_all(b"\n")?;
-    stream.flush()?;
+    if !request.blocking {
+        // For non-blocking requests, spawn a thread to execute the command
+        verbose_log("CMD_SERVER", "Non-blocking request: spawning thread for execution");
+        let inherited_env_clone = inherited_env.clone();
+        let base_working_dir_clone = base_working_dir.clone();
+        thread::spawn(move || {
+            let response = execute_command_with_env(request, inherited_env_clone, base_working_dir_clone);
+            verbose_log("CMD_SERVER", &format!("Non-blocking command completed: success={}", response.success));
+        });
+        
+        // Send immediate success response for non-blocking
+        let response = CommandResponse {
+            success: true,
+            exit_code: Some(0),
+            stdout: String::new(),
+            stderr: String::new(),
+            error: None,
+        };
+        let response_json = serde_json::to_string(&response)?;
+        stream.write_all(response_json.as_bytes())?;
+        stream.write_all(b"\n")?;
+        stream.flush()?;
+    } else {
+        // Execute command with inherited environment (blocking)
+        let response = execute_command_with_env(request, inherited_env, base_working_dir);
+        
+        // Send response
+        let response_json = serde_json::to_string(&response)?;
+        stream.write_all(response_json.as_bytes())?;
+        stream.write_all(b"\n")?;
+        stream.flush()?;
+    }
     
     verbose_log("CMD_SERVER", "Response sent to client");
     Ok(())
@@ -194,6 +233,52 @@ fn execute_command_with_env(
     // Log command execution for visibility
     log_and_print("CMD_SERVER", &format!("Executing: {}", request.command));
     
+    // Check if this looks like a launcher command
+    // We need to check the first word even if there are shell operators
+    let command_parts: Vec<&str> = request.command.trim().split_whitespace().collect();
+    log_and_print("CMD_SERVER", &format!("Command parts: {:?}", command_parts));
+    
+    let is_launcher_command = command_parts.len() >= 1 && 
+        matches!(
+            command_parts[0], 
+            "app" | "url" | "cmd" | "chrome" | "safari" | "brave" | "firefox" | "work" | 
+            "notion" | "obs" | "obs_url" | "1pass" | "rewrite" | "anchor" | "folder" | 
+            "doc" | "markdown" | "text" | "shutdown" | "slack" | "contact"
+        );
+    
+    log_and_print("CMD_SERVER", &format!("Is launcher command: {}", is_launcher_command));
+    
+    if is_launcher_command {
+        // Use launcher for known action types
+        log_and_print("CMD_SERVER", &format!("Detected launcher command: {}", request.command));
+        
+        // Execute launcher command directly in server context
+        match crate::launcher::launch(&request.command) {
+            Ok(()) => {
+                log_and_print("CMD_SERVER", "Launcher execution completed successfully");
+                return CommandResponse {
+                    success: true,
+                    exit_code: Some(0),
+                    stdout: String::new(),
+                    stderr: String::new(),
+                    error: None,
+                };
+            }
+            Err(e) => {
+                log_and_print("CMD_SERVER", &format!("Launcher execution failed: {:?}", e));
+                return CommandResponse {
+                    success: false,
+                    exit_code: Some(1),
+                    stdout: String::new(),
+                    stderr: format!("Launcher error: {:?}", e),
+                    error: Some(format!("Launcher error: {:?}", e)),
+                };
+            }
+        }
+    }
+    
+    // Fall back to shell execution for non-launcher commands
+    verbose_log("CMD_SERVER", &format!("Using shell execution for: {}", request.command));
     let mut cmd = std::process::Command::new("sh");
     cmd.arg("-c").arg(&request.command);
     
@@ -305,7 +390,7 @@ impl CommandClient {
         env_vars: Option<HashMap<String, String>>,
         blocking: bool,
     ) -> Result<CommandResponse, Box<dyn std::error::Error>> {
-        verbose_log("CMD_CLIENT", &format!("Sending command to server: {}", command));
+        verbose_log("CMD_CLIENT", &format!("Sending command to server: {} (blocking: {})", command, blocking));
         
         // Create request
         let request = CommandRequest {
@@ -324,7 +409,20 @@ impl CommandClient {
         stream.write_all(b"\n")?;
         stream.flush()?;
         
-        // Read response
+        if !blocking {
+            // For non-blocking mode, don't wait for response
+            verbose_log("CMD_CLIENT", "Non-blocking mode: not waiting for response");
+            // Return a synthetic success response
+            return Ok(CommandResponse {
+                success: true,
+                exit_code: Some(0),
+                stdout: String::new(),
+                stderr: String::new(),
+                error: None,
+            });
+        }
+        
+        // Read response only in blocking mode
         let mut response_data = String::new();
         stream.read_to_string(&mut response_data)?;
         

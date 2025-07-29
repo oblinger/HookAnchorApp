@@ -20,15 +20,20 @@ pub fn get_action(path: &Path) -> String {
         return "folder".to_string();
     }
     
-    // Check if it's a markdown file
+    // Check file extension for specific actions
     if let Some(extension) = path.extension() {
-        if extension.to_str().unwrap_or("").to_lowercase() == "md" {
+        let ext_str = extension.to_str().unwrap_or("").to_lowercase();
+        
+        if ext_str == "md" {
             // It's a markdown file - check if it's an anchor
             if is_markdown_anchor(path) {
                 return "anchor".to_string();
             } else {
                 return "markdown".to_string();
             }
+        } else if ext_str == "txt" {
+            // Text files use the text action for typing content
+            return "text".to_string();
         }
     }
     
@@ -90,12 +95,14 @@ pub fn is_executable(path: &Path) -> bool {
 /// - "Dir" for folder actions
 /// - "Cmd" for cmd actions  
 /// - "Doc" for doc actions
+/// - "Text" for text actions
 /// - None for other actions (will use inference)
 pub fn get_default_patch_for_action(action: &str) -> Option<String> {
     match action {
         "folder" => Some("Dir".to_string()),
         "cmd" => Some("Cmd".to_string()),
         "doc" => Some("Doc".to_string()),
+        "text" => Some("Text".to_string()),
         _ => None, // Let normal patch inference handle other types
     }
 }
@@ -118,8 +125,14 @@ mod tests {
     }
 
     #[test]
+    fn test_get_action_text() {
+        let path = PathBuf::from("/home/user/ProjectName/snippet.txt");
+        assert_eq!(get_action(&path), "text");
+    }
+
+    #[test]
     fn test_get_action_doc() {
-        let path = PathBuf::from("/home/user/ProjectName/document.txt");
+        let path = PathBuf::from("/home/user/ProjectName/document.docx");
         assert_eq!(get_action(&path), "doc");
     }
 
@@ -162,6 +175,7 @@ mod tests {
         assert_eq!(get_default_patch_for_action("folder"), Some("Dir".to_string()));
         assert_eq!(get_default_patch_for_action("cmd"), Some("Cmd".to_string()));
         assert_eq!(get_default_patch_for_action("doc"), Some("Doc".to_string()));
+        assert_eq!(get_default_patch_for_action("text"), Some("Text".to_string()));
         assert_eq!(get_default_patch_for_action("url"), None);
         assert_eq!(get_default_patch_for_action("markdown"), None);
     }

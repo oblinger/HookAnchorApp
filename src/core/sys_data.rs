@@ -207,16 +207,17 @@ pub fn load_data(commands_override: Vec<Command>, verbose: bool) -> SysData {
         println!("   Need to add {} new patches", new_patches_to_add.len());
     }
     
-    // Add new patches to hashmap
-    for patch_key in new_patches_to_add {
+    // Add new patches to hashmap (patch_key is now in original case)
+    for patch_name in new_patches_to_add {
+        let patch_key = patch_name.to_lowercase(); // Convert to lowercase for hashmap key
         if !patches.contains_key(&patch_key) {
-            // Find the first command whose name matches this patch name
+            // Find the first command whose name matches this patch name (case-insensitive)
             let matching_command = commands.iter().find(|cmd| {
                 cmd.command.to_lowercase() == patch_key
             });
             
-            patches.insert(patch_key.clone(), Patch {
-                name: patch_key.clone(),
+            patches.insert(patch_key, Patch {
+                name: patch_name.clone(), // Store original case
                 linked_command: matching_command.cloned(),
             });
         }

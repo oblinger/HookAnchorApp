@@ -5,7 +5,10 @@
 
 set -e
 
-PROJECT_ROOT="/Users/oblinger/ob/kmr/prj/2025-06 HookAnchor"
+# Get the directory where this script is located
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+# Project root is two directories up from scripts/build/
+PROJECT_ROOT="$(cd "$SCRIPT_DIR/../.." && pwd)"
 APP_BUNDLE="/Applications/HookAnchor.app"
 RESOURCES_DIR="$PROJECT_ROOT/resources"
 SOURCE_ICON="$RESOURCES_DIR/icon.icns"

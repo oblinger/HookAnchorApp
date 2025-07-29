@@ -198,6 +198,48 @@ pub fn get_obsidian_url() -> Option<String> {
     None
 }
 
+/// Get Notion page URL by triggering copy link shortcut
+pub fn get_notion_url() -> Option<String> {
+    crate::utils::debug_log("GRAB", "Getting Notion URL (includes 300ms clipboard delay)");
+    
+    let script = r#"
+        -- Trigger Notion's copy link shortcut (Cmd+L)
+        tell application "System Events"
+            key code 37 using {command down}
+        end tell
+        
+        -- Wait for clipboard to update
+        delay 0.3
+        
+        -- Get clipboard content
+        try
+            set clipboardContent to (the clipboard)
+            if clipboardContent starts with "https://www.notion.so/" then
+                return clipboardContent
+            else
+                return ""
+            end if
+        on error
+            return ""
+        end try
+    "#;
+    
+    if let Ok(output) = ProcessCommand::new("osascript")
+        .arg("-e")
+        .arg(script)
+        .output()
+    {
+        if output.status.success() {
+            let url = String::from_utf8_lossy(&output.stdout).trim().to_string();
+            if !url.is_empty() && url.starts_with("https://www.notion.so/") {
+                return Some(url);
+            }
+        }
+    }
+    
+    None
+}
+
 /// Get Finder-specific information including selection
 pub fn get_finder_info() -> Option<serde_json::Value> {
     
@@ -355,6 +397,17 @@ pub fn enrich_context(mut context: AppContext) -> AppContext {
             context.properties["url"] = serde_json::Value::String(url);
         } else {
             crate::utils::debug_log("GRABBER", "Failed to get Obsidian URL");
+        }
+    }
+    
+    // Add Notion URL if applicable
+    if context.bundle_id == "notion.id" {
+        crate::utils::debug_log("GRABBER", "Enriching Notion context...");
+        if let Some(url) = get_notion_url() {
+            crate::utils::debug_log("GRABBER", &format!("Got Notion URL: {}", url));
+            context.properties["url"] = serde_json::Value::String(url);
+        } else {
+            crate::utils::debug_log("GRABBER", "Failed to get Notion URL");
         }
     }
     

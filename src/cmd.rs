@@ -38,6 +38,7 @@ pub fn run_command_line_mode(args: Vec<String>) {
         "--process-health" => run_process_health(),
         "--process-status" => run_process_status(),
         "--reinstall" => run_reinstall(),
+        "--execute-launcher-command" => run_execute_launcher_command(&args),
         _ => {
             eprintln!("Unknown command: {}", args[1]);
             eprintln!("Use -h or --help for usage information");
@@ -111,9 +112,19 @@ fn handle_hook_url(url: &str) {
     let top_command_obj = &filtered[0];
     utils::debug_log("URL_HANDLER", &format!("Executing command: {}", top_command_obj.command));
     
-    // Execute the command using the same path as CLI commands
-    // The command server ensures consistent environment regardless of execution context
-    let _result = execute_command(top_command_obj);
+    // For URL handling, execute directly via launcher (like -a action test) to avoid GUI context
+    // This prevents the popup from showing when handling URLs
+    let launcher_cmd = format!("{} {}", top_command_obj.action, top_command_obj.arg);
+    utils::debug_log("URL_HANDLER", &format!("Launching via launcher: {}", launcher_cmd));
+    
+    match launcher::launch(&launcher_cmd) {
+        Ok(()) => {
+            utils::debug_log("URL_HANDLER", "Command executed successfully via launcher");
+        }
+        Err(e) => {
+            utils::debug_log("URL_HANDLER", &format!("Launcher execution failed: {:?}", e));
+        }
+    }
 }
 
 fn run_match_command(args: &[String]) {
@@ -639,11 +650,8 @@ fn is_parent_directory_patch(current_patch: &str, new_patch: &str, patches: &std
     use std::path::Path;
     
     // Get the linked commands for both patches
-    let current_patch_lower = current_patch.to_lowercase();
-    let new_patch_lower = new_patch.to_lowercase();
-    
-    let current_linked = patches.get(&current_patch_lower).and_then(|p| p.linked_command.as_ref());
-    let new_linked = patches.get(&new_patch_lower).and_then(|p| p.linked_command.as_ref());
+    let current_linked = crate::core::commands::get_patch(current_patch, patches).and_then(|p| p.linked_command.as_ref());
+    let new_linked = crate::core::commands::get_patch(new_patch, patches).and_then(|p| p.linked_command.as_ref());
     
     if let (Some(current_cmd), Some(new_cmd)) = (current_linked, new_linked) {
         // Both patches have linked commands - compare their directory paths
@@ -688,8 +696,10 @@ fn run_infer_patches(args: &[String]) {
     // Load current commands (without inference and orphan creation)
     let (_config, mut commands, patches) = load_commands_for_inference();
     
+    println!("\n=== COMMAND PATCH CHANGES ===");
+    
     // Run inference without applying changes, but print to stdout
-    let (changes_found, _) = run_patch_inference(
+    let (changes_found, new_patches_to_add) = run_patch_inference(
         &mut commands, 
         &patches, 
         false, // apply_changes = false (just analyze)
@@ -697,10 +707,24 @@ fn run_infer_patches(args: &[String]) {
         true   // overwrite_patch = true (show all potential changes)
     );
     
-    println!("\nSummary:");
-    println!("  Commands that would change: {}", changes_found);
     if changes_found == 0 {
-        println!("  No patch changes would be made.");
+        println!("  No commands would have their patches changed.");
+    }
+    
+    // Show orphan patches that would be created
+    if !new_patches_to_add.is_empty() {
+        println!("\n=== ORPHAN PATCHES THAT WOULD BE CREATED ===");
+        for new_patch in &new_patches_to_add {
+            println!("  New orphan patch: {}", new_patch);
+        }
+    }
+    
+    println!("\n=== SUMMARY ===");
+    println!("  Commands that would change: {}", changes_found);
+    println!("  Orphan patches that would be created: {}", new_patches_to_add.len());
+    
+    if changes_found == 0 && new_patches_to_add.is_empty() {
+        println!("  No changes would be made.");
     } else {
         println!("  Use --infer-all to apply these changes (normal startup only fills empty patches).");
     }
@@ -767,8 +791,10 @@ fn run_infer_all_patches(_args: &[String]) {
     // Load current commands (without inference and orphan creation)
     let (_config, mut commands, patches) = load_commands_for_inference();
     
+    println!("\n=== COMMAND PATCH CHANGES ===");
+    
     // First run: Show changes without applying
-    let (changes_found, _) = run_patch_inference(
+    let (changes_found, new_patches_to_add) = run_patch_inference(
         &mut commands, 
         &patches, 
         false, // apply_changes = false (just analyze)
@@ -777,13 +803,27 @@ fn run_infer_all_patches(_args: &[String]) {
     );
     
     if changes_found == 0 {
-        println!("\nNo patch changes would be made.");
+        println!("  No commands would have their patches changed.");
+    }
+    
+    // Show orphan patches that would be created
+    if !new_patches_to_add.is_empty() {
+        println!("\n=== ORPHAN PATCHES THAT WOULD BE CREATED ===");
+        for new_patch in &new_patches_to_add {
+            println!("  New orphan patch: {}", new_patch);
+        }
+    }
+    
+    if changes_found == 0 && new_patches_to_add.is_empty() {
+        println!("\nNo changes would be made.");
         return;
     }
     
     // Prompt user for confirmation
-    println!("\nFound {} commands that would change.", changes_found);
-    print!("Apply all changes? (y/n): ");
+    println!("\n=== SUMMARY ===");
+    println!("  Commands that would change: {}", changes_found);
+    println!("  Orphan patches that would be created: {}", new_patches_to_add.len());
+    print!("\nApply all changes? (y/n): ");
     use std::io::{self, Write};
     io::stdout().flush().unwrap();
     
@@ -1001,6 +1041,31 @@ fn run_restart_server() {
         Err(e) => {
             eprintln!("  ❌ Failed to start server: {}", e);
             eprintln!("  💡 Try running manually: ha --start-server-daemon");
+            std::process::exit(1);
+        }
+    }
+}
+
+/// Execute a launcher command - used by launchctl asuser to run commands in GUI session
+fn run_execute_launcher_command(args: &[String]) {
+    if args.len() < 3 {
+        eprintln!("Usage: {} --execute-launcher-command <launcher_command>", args[0]);
+        std::process::exit(1);
+    }
+    
+    let launcher_command = &args[2];
+    
+    // Visual separator for launcher command execution
+    utils::debug_log("", "=================================================================");
+    utils::debug_log("LAUNCHER_CMD", &format!("Executing in GUI session: '{}'", launcher_command));
+    
+    // Execute the launcher command directly (we're now in the user's GUI session)
+    match launcher::launch(launcher_command) {
+        Ok(()) => {
+            utils::debug_log("LAUNCHER_CMD", "Command completed successfully");
+        },
+        Err(e) => {
+            utils::debug_log("LAUNCHER_CMD", &format!("Command failed: {:?}", e));
             std::process::exit(1);
         }
     }

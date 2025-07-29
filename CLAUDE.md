@@ -14,3 +14,13 @@
 
 ## Build Process
 - Always build release versions of the code each time. This is important because I'm using keyboard maestro and it's launching the release version each time. Thus, if you only build a build release, I'll end up running Old code.
+
+## macOS URL Scheme Handling - CRITICAL KNOWLEDGE
+- **macOS does NOT pass URLs via command line arguments when handling URL schemes!**
+- **macOS uses Apple Events to pass URLs to app bundles, not command line arguments**
+- When a URL like `hook://cnnp` is opened via `open "hook://cnnp"`, macOS:
+  1. Launches the app bundle with NO arguments (args.len() == 1, just the program name)
+  2. Sends the URL via Apple Events to the running application
+- **Any attempt to handle URLs via command line argument checking will fail**
+- **URL handling must be implemented in the GUI application using Apple Event handlers**
+- This is why wrapper scripts and Info.plist CFBundleExecutable changes don't work for URL handling

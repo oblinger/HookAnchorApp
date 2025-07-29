@@ -34,10 +34,17 @@ pub enum CommandTarget {
 /// Represents a Patch (Dispatcher) that associates with a command
 #[derive(Debug, Clone, PartialEq)]
 pub struct Patch {
-    /// Name of the patch (lowercase)
+    /// Name of the patch (original case from anchor command)
     pub name: String,
     /// The first command that matches this patch name
     pub linked_command: Option<Command>,
+}
+
+/// Performs case-insensitive lookup of a patch
+/// Returns the patch object if found, None otherwise
+pub fn get_patch<'a>(patch_name: &str, patches: &'a HashMap<String, Patch>) -> Option<&'a Patch> {
+    let patch_name_lower = patch_name.to_lowercase();
+    patches.get(&patch_name_lower)
 }
 
 /// Mapping from flag letters to their word descriptions
@@ -310,10 +317,9 @@ pub fn infer_patch(command: &Command, patches: &HashMap<String, Patch>) -> Optio
     // Try progressively longer prefixes (from longest to shortest to prefer specificity)
     for word_count in (1..=words.len()).rev() {
         let prefix = words[..word_count].join(" ");
-        let prefix_lower = prefix.to_lowercase();
         
         // Look for exact patch name match (case-insensitive)
-        if let Some(patch) = patches.get(&prefix_lower) {
+        if let Some(patch) = get_patch(&prefix, patches) {
             // Check if this would create a self-assignment (command assigned to its own patch)
             let proposed_patch = if let Some(ref linked_cmd) = patch.linked_command {
                 linked_cmd.command.clone()
@@ -405,8 +411,7 @@ fn infer_patch_from_file_path_with_exclusion(file_path: &str, patches: &HashMap<
     let mut best_matches: Vec<(usize, String)> = Vec::new(); // (depth, patch_name)
     
     for (depth, component) in components.iter().enumerate() {
-        let component_lower = component.to_lowercase();
-        if patches.contains_key(&component_lower) {
+        if get_patch(component, patches).is_some() {
             // Found a patch match - add to list
             best_matches.push((depth, component.to_string()));
         }
@@ -417,7 +422,13 @@ fn infer_patch_from_file_path_with_exclusion(file_path: &str, patches: &HashMap<
     
     for (_, patch_name) in best_matches {
         if patch_name.to_lowercase() != exclude_command.to_lowercase() {
-            return Some(patch_name);
+            // Return the correct case from the patch's linked command, not the directory name
+            if let Some(patch) = get_patch(&patch_name, patches) {
+                if let Some(ref linked_cmd) = patch.linked_command {
+                    return Some(linked_cmd.command.clone());
+                }
+            }
+            return Some(patch_name); // Fallback to original if lookup fails
         }
     }
     
@@ -484,8 +495,7 @@ fn infer_patch_from_file_path(file_path: &str, patches: &HashMap<String, Patch>)
     let mut best_match: Option<(usize, String)> = None; // (depth, patch_name)
     
     for (depth, component) in components.iter().enumerate() {
-        let component_lower = component.to_lowercase();
-        if patches.contains_key(&component_lower) {
+        if get_patch(component, patches).is_some() {
             // Found a patch match - update if this is deeper than previous match
             if best_match.is_none() || depth > best_match.as_ref().unwrap().0 {
                 best_match = Some((depth, component.to_string()));
@@ -494,7 +504,13 @@ fn infer_patch_from_file_path(file_path: &str, patches: &HashMap<String, Patch>)
     }
     
     if let Some((_, patch_name)) = best_match {
-        return Some(patch_name);
+        // Return the correct case from the patch's linked command, not the directory name
+        if let Some(patch) = get_patch(&patch_name, patches) {
+            if let Some(ref linked_cmd) = patch.linked_command {
+                return Some(linked_cmd.command.clone());
+            }
+        }
+        return Some(patch_name); // Fallback to original if lookup fails
     }
     
     let path = Path::new(file_path);
@@ -824,10 +840,10 @@ pub fn run_patch_inference(
                 
                 patches_assigned += 1;
                 
-                // Track new patches to add later
-                let patch_key = inferred_patch.to_lowercase();
-                if !patches.contains_key(&patch_key) && !new_patches_to_add.contains(&patch_key) {
-                    new_patches_to_add.push(patch_key);
+                // Track new patches to add later - use original case for new patch names
+                if get_patch(&inferred_patch, patches).is_none() && !new_patches_to_add.contains(&inferred_patch) {
+                    // Store the original case for new patches, not lowercase
+                    new_patches_to_add.push(inferred_patch.clone());
                 }
             }
         }
@@ -843,8 +859,7 @@ pub fn create_command_to_patch_map(commands: &[Command], patches: &HashMap<Strin
     
     for command in commands {
         if !command.patch.is_empty() {
-            let patch_key = command.patch.to_lowercase();
-            if patches.contains_key(&patch_key) {
+            if get_patch(&command.patch, patches).is_some() {
                 command_to_patch_map.insert(command.command.clone(), command.patch.clone());
             }
         }
@@ -856,15 +871,14 @@ pub fn create_command_to_patch_map(commands: &[Command], patches: &HashMap<Strin
 /// Case-insensitive patch lookup - the canonical way to check if a patch exists
 /// Returns true if a patch with the given name exists (case-insensitive)
 pub fn patch_exists(patch_name: &str, patches: &HashMap<String, Patch>) -> bool {
-    patches.contains_key(&patch_name.to_lowercase())
+    get_patch(patch_name, patches).is_some()
 }
 
 /// Gets the patch for a command using fast lookup
 /// Returns None if the command has no patch or the patch doesn't exist
 pub fn get_patch_for_command<'a>(command_name: &str, patches: &'a HashMap<String, Patch>) -> Option<&'a Patch> {
-    // For now, fallback to the original lookup method
-    // In a full implementation, this would use a cached lookup map
-    patches.get(&command_name.to_lowercase())
+    // First try direct patch lookup
+    get_patch(command_name, patches)
         .or_else(|| {
             // Try to find by command name if not found by direct lookup
             patches.values()
@@ -880,10 +894,8 @@ pub fn normalize_patch_case(commands: &mut [Command], patches: &HashMap<String, 
     
     for command in commands {
         if !command.patch.is_empty() {
-            let patch_key = command.patch.to_lowercase();
-            
             // Find the corresponding patch
-            if let Some(patch) = patches.get(&patch_key) {
+            if let Some(patch) = get_patch(&command.patch, patches) {
                 // Check if the patch has a linked command to get the proper case
                 if let Some(ref linked_cmd) = patch.linked_command {
                     // Get the properly cased command name from the anchor
@@ -911,11 +923,10 @@ pub fn normalize_patch_case(commands: &mut [Command], patches: &HashMap<String, 
 pub fn find_orphan_patches(patches: &HashMap<String, Patch>, commands: &[Command]) -> Vec<String> {
     let mut orphan_patches = Vec::new();
     
-    crate::utils::debug_log("ORPHAN_DEBUG", &format!("Starting orphan detection - {} patches, {} commands", patches.len(), commands.len()));
+    // Starting orphan detection
     
     // Debug: Show some existing patches for comparison
-    let patch_keys: Vec<String> = patches.keys().take(10).cloned().collect();
-    crate::utils::debug_log("ORPHAN_DEBUG", &format!("Sample existing patch keys: {:?}", patch_keys));
+    let _patch_keys: Vec<String> = patches.keys().take(10).cloned().collect();
     
     // Scan all commands and collect unique patch names that are referenced but don't have anchors
     for command in commands {
@@ -923,7 +934,7 @@ pub fn find_orphan_patches(patches: &HashMap<String, Patch>, commands: &[Command
             // Use the canonical case-insensitive lookup
             if !patch_exists(&command.patch, patches) {
                 let patch_name_lower = command.patch.to_lowercase();
-                crate::utils::debug_log("ORPHAN_DEBUG", &format!("Patch '{}' not found in patches hashmap - considering for orphan creation", command.patch));
+                // Patch not found in patches hashmap - considering for orphan creation
                 // Check if we haven't already marked this patch as orphaned (case-insensitive)
                 let already_exists = orphan_patches.iter().any(|existing: &String| existing.to_lowercase() == patch_name_lower);
                 if !already_exists {
@@ -951,21 +962,21 @@ pub fn find_orphan_patches(patches: &HashMap<String, Patch>, commands: &[Command
                         
                         // Use the original mixed case from the command
                         orphan_patches.push(command.patch.clone());
-                        crate::utils::debug_log("ORPHAN_DEBUG", &format!("Added orphan patch: '{}'", command.patch));
+                        // Added orphan patch
                     } else {
-                        crate::utils::debug_log("ORPHAN_DEBUG", &format!("Skipped patch '{}' - would conflict with longer patch", command.patch));
+                        // Skipped patch - would conflict with longer patch
                     }
                 } else {
-                    crate::utils::debug_log("ORPHAN_DEBUG", &format!("Patch '{}' already marked as orphan", command.patch));
+                    // Patch already marked as orphan
                 }
             } else {
                 // Patch exists - this is the normal case
-                crate::utils::debug_log("ORPHAN_DEBUG", &format!("Patch '{}' found in patches hashmap - no orphan needed", command.patch));
+                // Patch found in patches hashmap - no orphan needed
             }
         }
     }
     
-    crate::utils::debug_log("ORPHAN_DEBUG", &format!("Found {} orphan patches: {:?}", orphan_patches.len(), orphan_patches));
+    // Found orphan patches
     orphan_patches
 }
 
@@ -1455,7 +1466,18 @@ pub fn filter_commands_with_patch_support(commands: &[Command], search_text: &st
         };
         
         // Include command if EITHER name matches OR patch matches
-        let match_result = if patch_match_result >= 0 {
+        let match_result = if patch_match_result >= 0 && name_match_result >= 0 {
+            // Both patch and command name match - highest priority
+            // Check for exact matches: both command and patch equal search text
+            if cmd.command.eq_ignore_ascii_case(search_text) && 
+               (cmd.patch.eq_ignore_ascii_case(search_text) || 
+                cmd.patch.split('!').next().unwrap_or("").eq_ignore_ascii_case(search_text)) {
+                -10 // Exact match gets highest priority
+            } else {
+                // Both match but not exact - use the better of the two scores
+                std::cmp::min(patch_match_result, name_match_result)
+            }
+        } else if patch_match_result >= 0 {
             // Patch matched - use patch match result and prioritize it
             patch_match_result
         } else if name_match_result >= 0 {
@@ -2078,6 +2100,63 @@ fn execute_command_with_depth(command: &Command, depth: u32) -> CommandTarget {
     use crate::core::state::save_last_executed_command;
     let _ = save_last_executed_command(&command.command);
     
+    // COMMENTED OUT: Windowed command detection - all commands should go through server
+    // // Check if this is a windowed command that needs GUI context
+    // crate::utils::debug_log("EXECUTE_FLOW", &format!("Command action: '{}', arg: '{}'", command.action, command.arg));
+    // let is_windowed_cmd = command.action == "cmd" && 
+    //     (command.arg.starts_with("W ") || command.arg.starts_with("W; ") || command.arg.starts_with("W;"));
+    // 
+    // crate::utils::debug_log("EXECUTE_FLOW", &format!("Is windowed command: {}", is_windowed_cmd));
+    // 
+    // if is_windowed_cmd {
+    //     crate::utils::debug_log("EXECUTE_FLOW", "Detected windowed CMD command, executing locally for GUI access");
+    //     // Execute windowed commands locally to ensure GUI access
+    //     match crate::launcher::launch(&launcher_cmd) {
+    //         Ok(()) => {
+    //             crate::utils::debug_log("EXECUTE_FLOW", "Windowed command executed successfully");
+    //             return CommandTarget::Command(command.clone());
+    //         }
+    //         Err(e) => {
+    //             crate::utils::debug_log("EXECUTE_FLOW", &format!("Failed to execute windowed command: {:?}", e));
+    //             // Fall through to try server execution as fallback
+    //         }
+    //     }
+    // }
+    
+    // Try to send command to server for async execution (non-windowed commands)
+    crate::utils::debug_log("EXECUTE_FLOW", "Attempting to send command to server for async execution");
+    
+    if let Ok(client) = crate::command_server::CommandClient::new() {
+        if client.is_server_available() {
+            crate::utils::debug_log("EXECUTE_FLOW", "Server available, sending launcher command asynchronously");
+            
+            // Send the full launcher command to server for async execution
+            match client.execute_command(&launcher_cmd, None, None, false) {
+                Ok(response) => {
+                    crate::utils::debug_log("EXECUTE_FLOW", &format!("Command sent to server successfully: {:?}", response));
+                    
+                    // Check process health after command execution
+                    crate::process_monitor::check_system_health();
+                    
+                    // For rewrite commands, we need to handle the special case
+                    if command.action == "rewrite" {
+                        // The rewrite command should execute another command
+                        return CommandTarget::Alias(command.arg.clone());
+                    } else {
+                        return CommandTarget::Command(command.clone());
+                    }
+                }
+                Err(e) => {
+                    crate::utils::debug_log("EXECUTE_FLOW", &format!("Failed to send command to server: {}", e));
+                }
+            }
+        } else {
+            crate::utils::debug_log("EXECUTE_FLOW", "Server not available");
+        }
+    }
+    
+    // Fallback to direct execution if server is not available
+    crate::utils::debug_log("EXECUTE_FLOW", "Falling back to direct launcher execution");
     crate::utils::debug_log("EXECUTE_FLOW", &format!("About to call launcher::launch with: '{}'", launcher_cmd));
     let launcher_start_time = std::time::Instant::now();
     

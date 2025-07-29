@@ -10,7 +10,7 @@ fn main() {
     
     // Find the HookAnchor command
     let hookanchor_command = commands.iter()
-        .find(|cmd| cmd.command == "2025-06 HookAnchor");
+        .find(|cmd| cmd.command == "HookAnchor");
     
     if let Some(cmd) = hookanchor_command {
         println!("Found command:");

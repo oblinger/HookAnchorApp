@@ -355,6 +355,11 @@ impl AnchorSelector {
                                     continue;
                                 }
                                 
+                                // Skip delete_command and cancel_editor actions - these are handled by the command editor
+                                if action == "delete_command" || action == "cancel_editor" {
+                                    continue;
+                                }
+                                
                                 // Always consume the key if it's bound to any action
                                 consumed_keys.push(*key);
                                 keys_processed = true;
@@ -1087,6 +1092,37 @@ impl AnchorSelector {
         }
     }
     
+    /// Recursively resolve aliases to find the final target command
+    fn resolve_aliases_recursively<'a>(&self, cmd: &'a Command, all_commands: &'a [Command]) -> &'a Command {
+        use crate::utils;
+        
+        let mut current_cmd = cmd;
+        let mut visited = std::collections::HashSet::new();
+        
+        while current_cmd.action == "alias" {
+            // Prevent infinite loops
+            if visited.contains(&current_cmd.command) {
+                utils::debug_log("SHOW_FOLDER", &format!("Circular alias detected for '{}', stopping resolution", current_cmd.command));
+                break;
+            }
+            visited.insert(current_cmd.command.clone());
+            
+            utils::debug_log("SHOW_FOLDER", &format!("Resolving alias '{}' to target '{}'", current_cmd.command, current_cmd.arg));
+            
+            // Find the target command
+            if let Some(target) = all_commands.iter().find(|c| c.command == current_cmd.arg) {
+                utils::debug_log("SHOW_FOLDER", &format!("Alias resolved to: '{}' (action: {}, arg: {})", 
+                    target.command, target.action, target.arg));
+                current_cmd = target;
+            } else {
+                utils::debug_log("SHOW_FOLDER", &format!("Failed to resolve alias '{}' - target '{}' not found", current_cmd.command, current_cmd.arg));
+                break;
+            }
+        }
+        
+        current_cmd
+    }
+    
     /// Show folder functionality - launches the first folder matching current search
     fn show_folder(&mut self) {
         use crate::{launcher, utils};
@@ -1129,48 +1165,21 @@ impl AnchorSelector {
             
         utils::debug_log("SHOW_FOLDER", &format!("Processing command: '{}' (action: {})", cmd.command, cmd.action));
         
-        // Resolve alias if needed
-        let resolved_cmd = if cmd.action == "alias" {
-            utils::debug_log("SHOW_FOLDER", &format!("Resolving alias '{}' to target '{}'", cmd.command, cmd.arg));
-            // Find the target command
-            if let Some(target) = all_commands.iter().find(|c| c.command == cmd.arg) {
-                utils::debug_log("SHOW_FOLDER", &format!("Alias resolved to: '{}' (action: {}, arg: {})", 
-                    target.command, target.action, target.arg));
-                target
-            } else {
-                utils::debug_log("SHOW_FOLDER", &format!("Failed to resolve alias '{}' - target '{}' not found", cmd.command, cmd.arg));
-                cmd
-            }
-        } else {
-            cmd
-        };
+        // Recursively resolve aliases
+        let resolved_cmd = self.resolve_aliases_recursively(cmd, &all_commands);
         
-        // Extract folder based on action type (using resolved command)
-        let folder_path = match resolved_cmd.action.as_str() {
-            "folder" => {
-                utils::debug_log("SHOW_FOLDER", &format!("Found folder action, path: {}", resolved_cmd.arg));
-                Some(resolved_cmd.arg.clone())
-            },
-            "anchor" | "markdown" => {
-                // For anchor/markdown, get the directory containing the file
-                if let Some(idx) = resolved_cmd.arg.rfind('/') {
-                    let path = resolved_cmd.arg[..idx].to_string();
-                    utils::debug_log("SHOW_FOLDER", &format!("Found {}, extracted folder: {}", resolved_cmd.action, path));
-                    Some(path)
-                } else {
-                    utils::debug_log("SHOW_FOLDER", &format!("Found {} but no slash in path: {}", resolved_cmd.action, resolved_cmd.arg));
-                    None
-                }
-            },
-            "alias" => {
-                // This shouldn't happen since we already resolved aliases above
-                utils::debug_log("SHOW_FOLDER", &format!("Unresolved alias found: '{}'", cmd.command));
-                None
-            },
-            other => {
-                utils::debug_log("SHOW_FOLDER", &format!("Command '{}' has non-folder action: {}", cmd.command, other));
-                None
-            }
+        // Extract folder path using the command's built-in method
+        let folder_path = if let Some(abs_path) = resolved_cmd.get_absolute_folder_path(&self.popup_state.config) {
+            let path_str = abs_path.to_string_lossy().to_string();
+            utils::debug_log("SHOW_FOLDER", &format!("Found {} action, extracted folder: {}", resolved_cmd.action, path_str));
+            Some(path_str)
+        } else if resolved_cmd.action == "alias" {
+            // This shouldn't happen since we recursively resolved aliases above
+            utils::debug_log("SHOW_FOLDER", &format!("Unresolved alias found: '{}'", resolved_cmd.command));
+            None
+        } else {
+            utils::debug_log("SHOW_FOLDER", &format!("Command '{}' has non-folder action: {}", resolved_cmd.command, resolved_cmd.action));
+            None
         };
         
         if let Some(path) = folder_path {
@@ -1321,6 +1330,11 @@ impl eframe::App for AnchorSelector {
         // For idle state, request slower repaints to reduce CPU usage
         if !has_input && !has_active_ui && self.frame_count >= 10 {
             ctx.request_repaint_after(std::time::Duration::from_millis(100));
+        }
+        
+        // During countdown, ensure frequent updates for smooth 1-second timing
+        if self.grabber_countdown.is_some() {
+            ctx.request_repaint_after(std::time::Duration::from_millis(50));
         }
         
         
@@ -1672,14 +1686,84 @@ impl eframe::App for AnchorSelector {
                             let rows_per_col = *rows;
                             let cols_to_use = *cols;
                             
-                            let column_width = 250.0; // Width per column
-                            let total_width = (cols_to_use as f32 * column_width) + 50.0; // Add some padding
+                            // Calculate actual column widths by measuring the text
+                            let mut column_widths = vec![0.0f32; cols_to_use];
+                            
+                            // Get display commands with same logic as rendering
+                            let (display_commands, is_submenu, menu_prefix, inside_count) = self.get_display_commands();
+                            
+                            // Measure each command's text width
+                            for col in 0..cols_to_use {
+                                for row in 0..rows_per_col {
+                                    let i = col * rows_per_col + row;
+                                    if i >= display_commands.len() {
+                                        break;
+                                    }
+                                    
+                                    let cmd = &display_commands[i];
+                                    let is_separator = PopupState::is_separator_command(cmd);
+                                    
+                                    // Determine display text with same logic as rendering
+                                    let display_text = if is_submenu && !is_separator && i < inside_count {
+                                        if let Some(ref prefix) = menu_prefix {
+                                            if cmd.command.len() > prefix.len() {
+                                                let prefix_end = prefix.len();
+                                                if cmd.command[..prefix_end].eq_ignore_ascii_case(prefix) {
+                                                    if let Some(ch) = cmd.command.chars().nth(prefix_end) {
+                                                        if self.popup_state.config.popup_settings.word_separators.contains(ch) {
+                                                            cmd.command[prefix_end + 1..].to_string()
+                                                        } else {
+                                                            cmd.command.clone()
+                                                        }
+                                                    } else {
+                                                        cmd.command.clone()
+                                                    }
+                                                } else {
+                                                    cmd.command.clone()
+                                                }
+                                            } else {
+                                                cmd.command.clone()
+                                            }
+                                        } else {
+                                            cmd.command.clone()
+                                        }
+                                    } else {
+                                        cmd.command.clone()
+                                    };
+                                    
+                                    // Measure the text width
+                                    let text_width = if is_separator {
+                                        ui.fonts(|f| f.glyph_width(&list_font_id, '—') * 3.0)
+                                    } else {
+                                        // Add some padding for selection highlight and margins
+                                        let base_width = ui.fonts(|f| {
+                                            let galley = f.layout_no_wrap(
+                                                display_text.clone(),
+                                                list_font_id.clone(),
+                                                egui::Color32::WHITE
+                                            );
+                                            galley.rect.width()
+                                        });
+                                        // Add padding for selection, bold text (if merged), and margins
+                                        base_width + 40.0
+                                    };
+                                    
+                                    column_widths[col] = column_widths[col].max(text_width);
+                                }
+                            }
+                            
+                            // Calculate total width with spacing between columns
+                            let column_spacing = 10.0;
+                            let total_columns_width: f32 = column_widths.iter().sum::<f32>() + (cols_to_use.saturating_sub(1) as f32 * column_spacing);
+                            let total_width = total_columns_width + 50.0; // Add some padding on sides
+                            
                             let total_height = input_height + mid_drag_height + header_height + (rows_per_col as f32 * row_height) + bottom_drag_height + padding;
                             (total_width, total_height)
                         }
                         LayoutArrangement::SingleColumn => {
+                            let (display_commands_single, _, _, _) = self.get_display_commands();
                             let window_width = 500.0;
-                            let required_height = input_height + mid_drag_height + header_height + (display_commands.len() as f32 * row_height) + bottom_drag_height + padding;
+                            let required_height = input_height + mid_drag_height + header_height + (display_commands_single.len() as f32 * row_height) + bottom_drag_height + padding;
                             (window_width, required_height)
                         }
                     };

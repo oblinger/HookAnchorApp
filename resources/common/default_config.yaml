@@ -1,25 +1,26 @@
-# HookAnchor Default Configuration
-# Copy this file to ~/.config/hookanchor/config.yaml and customize as needed
+# Anchor Selector Configuration
+# Main configuration file for both popup app and launcher system
 
 # =================================================================
 # APPLICATION SETTINGS
 # =================================================================
 popup_settings:
-  max_rows: 15
-  max_columns: 3
-  debug_log: "~/.config/hookanchor/anchor.log"  # Debug logging file path
+  max_rows: 25
+  max_columns: 4
+  debug_log: "~/.config/hookanchor/anchor.log"  # Debug logging file path (empty/null to disable)
   server_log: "~/.config/hookanchor/server.log"  # Server daemon log file path (default)
   debug_scanner: false
   merge_similar: true         # Merging similar commands in popup
   word_separators: " ._-"     # Word separator chars submenus and merging
-  scan_interval_seconds: 3600 # Seconds between automatic filesystem scans
+  scan_interval_seconds: 86400000 # Effectively disable auto-scan (1000 days)
+  idle_timeout_seconds: 60  # Auto-close after 60 seconds of inactivity (default)
   # Command editor dropdown actions (comma-separated list)
-  listed_actions: "alias,anchor,app,url,folder,cmd,chrome,safari,brave,firefox,work,notion,obs,obs_url,1pass,rewrite,doc,contact,slack,shutdown"
+  listed_actions: "alias,anchor,app,url,folder,cmd,chrome,safari,brave,firefox,work,notion,obs,obs_url,1pass,rewrite,doc,contact,slack,text,shutdown"
 
 # Markdown file scanning roots (automatic scanning enabled)
 markdown_roots:
-  - "~/Documents"
-  - "~/Notes"
+ - "~/Documents"
+ - "~/Notes"
 
 launcher_settings:
   application_folder: "/Applications/HookAnchor.app"
@@ -27,11 +28,11 @@ launcher_settings:
   work_browser: "Google Chrome Beta"
   timeout_ms: 5000
   obsidian_app_name: "Obsidian"
-  obsidian_vault_name: "YourVaultName"  # CUSTOMIZE: Change to your Obsidian vault name
-  obsidian_vault_path: "~/Documents"    # CUSTOMIZE: Change to your Obsidian vault path
+  obsidian_vault_name: "kmr"
+  obsidian_vault_path: "~/Documents"
 
 scanner_settings:
-  orphans_path: "~/Documents/HookAnchor/Orphans"  # CUSTOMIZE: Where orphan anchor files are created
+  orphans_path: "~/Documents/HookAnchor/Orphans"
 
 # =================================================================
 # KEYBOARD SHORTCUTS (Optional - uses defaults if not specified)
@@ -51,45 +52,350 @@ keybindings:
   edit_active_command: "Semicolon"  # Edit currently selected command
   delete_command: "Delete"     # Delete command in editor
   cancel_editor: "Escape"      # Cancel command editor
-  uninstall_app: "ctrl+shift+u" # Uninstall HookAnchor (requires confirmation)
 
 # =================================================================
 # FUNCTIONS
 # =================================================================
+# =================================================================
+# FUNCTIONS
+# =================================================================
+# Unified section for all function types:
+# - Simple functions: defined as mappings {fn: function_name, ...}
+# - JavaScript functions: defined as strings containing JS code
+#
+# The launcher automatically detects the type based on the value format.
+#
+# NAMING CONVENTION:
+# - Action functions (callable via commands) use "action_" prefix
+# - Helper functions (for internal use) use descriptive names without prefix
+# Example: "action_app" implements the "app" action, "has_tmux_session" is a helper
+
 functions:
-  # === BASIC ACTIONS ===
-  action_app: {fn: launch_app, name: "{{arg}}"}
-  action_url: {fn: open_url, url: "{{arg}}"}
-  action_folder: {fn: open_folder, path: "{{arg}}"}
-  action_cmd: {fn: shell, command: "{{arg}}"}
-  action_doc: {fn: open_document, path: "{{arg}}"}
+  # === SIMPLE FUNCTIONS (defined as mappings) ===
+  # Basic actions
+  action_app: {fn: launch_app, name: "{{arg}}"}                      # app Finder -> launches Finder
+  action_url: {fn: open_url, url: "{{arg}}"}                         # url https://github.com -> opens in default browser
+  action_folder: |
+    const folderPath = "{{arg}}";
+    log(`FOLDER: Starting with path: '${folderPath}'`);
+    
+    // Check if path is already absolute (starts with / or ~)
+    if (folderPath.startsWith('/') || folderPath.startsWith('~')) {
+      // Already absolute, use as-is
+      log(`FOLDER: Using absolute path: '${folderPath}'`);
+      try {
+        open_folder(folderPath);
+        log(`FOLDER: Successfully called open_folder for: '${folderPath}'`);
+      } catch (error) {
+        log(`FOLDER: Error opening folder: ${error}`);
+      }
+    } else {
+      // Relative path - join with vault root
+      const vaultRoot = getObsidianVaultPath();
+      const absolutePath = joinPath(vaultRoot, folderPath);
+      log(`FOLDER: Converting relative path '${folderPath}' to absolute: '${absolutePath}'`);
+      try {
+        open_folder(absolutePath);
+        log(`FOLDER: Successfully called open_folder for: '${absolutePath}'`);
+      } catch (error) {
+        log(`FOLDER: Error opening folder: ${error}`);
+      }
+    }
+  action_cmd: {fn: shell, command: "{{arg}}"}                        # cmd echo hello -> executes shell command
+  action_doc: {fn: open_with, app: "", arg: "{{arg}}"}               # doc ~/file.txt -> opens with default app
+  action_markdown: {fn: open_with, app: "", arg: "{{arg}}"}           # markdown ~/file.md -> opens markdown file with default app
+  
+  # Browser-specific actions
+  action_chrome: {fn: open_with, app: "Google Chrome", arg: "{{arg}}"}      # chrome https://github.com -> opens in Chrome
+  action_safari: {fn: open_with, app: "Safari", arg: "{{arg}}"}             # safari https://apple.com -> opens in Safari
+  action_brave: {fn: open_with, app: "Brave Browser", arg: "{{arg}}"}       # brave https://brave.com -> opens in Brave
+  action_firefox: {fn: open_with, app: "Firefox", arg: "{{arg}}"}           # firefox https://mozilla.org -> opens in Firefox
+  action_work: {fn: open_with, app: "Google Chrome Beta", arg: "{{arg}}"}   # work https://company.com -> opens in work browser
+  
+  # Specialized app actions
+  action_notion: {fn: open_with, app: "Notion", arg: "{{arg}}"}             # notion notion://page -> opens in Notion
+  action_obs_url: {fn: open_with, app: "Obsidian", arg: "{{arg}}"}          # obs_url obsidian://vault -> opens in Obsidian
+  action_obs: {fn: shell_sync, command: "open -a Obsidian && /bin/sleep 0.1 && open 'obsidian://open?vault=kmr&file={{arg}}'"}  # obs FILE -> opens in Obsidian
+  action_contact: {fn: open_with, app: "Contacts", arg: "addressbook://{{arg}}"}  # contact <id> -> opens contact
+  
+  # text FILE - Type contents of a text file into the focused application
+  action_text: |
+    const filePath = "{{arg}}";
+    log(`TEXT: Reading file: '${filePath}'`);
+    
+    // Read the file contents
+    let content;
+    try {
+      content = readFile(filePath);
+      log(`TEXT: Successfully read ${content.length} characters from file`);
+    } catch (error) {
+      log(`TEXT: Error reading file: ${error}`);
+      throw new Error(`Failed to read text file: ${error}`);
+    }
+    
+    // Give focus back to the previous application (the one that was active before popup)
+    log(`TEXT: Switching focus to previous application`);
+    shell("osascript -e 'tell application \"System Events\" to key code 48 using command down'");
+    shell_sync("/bin/sleep 0.5"); // Wait for focus switch
+    
+    // Type the content using a simpler approach
+    log(`TEXT: Typing content into focused application`);
+    
+    // Use AppleScript to type the content as a single string
+    // This is faster and should complete more reliably
+    const escapedContent = content
+      .replace(/\\/g, '\\\\')
+      .replace(/"/g, '\\"')
+      .replace(/'/g, "\\'");
+    
+    const script = `osascript -e 'tell application "System Events" to keystroke "${escapedContent}"'`;
+    
+    try {
+      shell_sync(script);
+      log(`TEXT: Successfully typed content`);
+    } catch (error) {
+      log(`TEXT: Error typing content: ${error}`);
+      throw new Error(`Failed to type text: ${error}`);
+    }
+  
+  # shutdown SCRIPT - Execute shutdown script without blocking the UI
+  action_shutdown: |
+    // Use spawnDetached to run shutdown commands that won't block the UI or system shutdown
+    spawnDetached("{{arg}}");
+  
+  # 1Password using simple Quick Access (original approach, kept for compatibility)
+  # Uses Cmd+Shift+Space to open Quick Access, types search term, presses Enter
+  action_1pass_old: {fn: shell_sync, command: "osascript -e 'tell application \"System Events\" to keystroke \" \" using {shift down, command down}' && /bin/sleep 0.3 && osascript -e 'tell application \"System Events\" to keystroke \"{{arg}}\"' && /bin/sleep 0.2 && osascript -e 'tell application \"System Events\" to key code 36'"}
+  
+  # === JAVASCRIPT FUNCTIONS (defined as strings) ===
+  # These use JavaScript with rich built-in functions.
+  # For complete API documentation, see src/js_runtime.rs module.
+  
+  # rewrite NAME - Recursive command calling
+  action_rewrite: |
+    launch("{{arg}}");
+  
+  # anchor PATH - Create a tmux script and execute it in the current session
+  action_anchor: |
+    const fullPath = "{{arg}}";
+    const anchorDir = fullPath.substring(0, fullPath.lastIndexOf('/'));
+    
+    log(`ANCHOR: Opening anchor at: ${fullPath}`);
+    log(`ANCHOR: Directory: ${anchorDir}`);
+    
+    // Change to the anchor directory
+    change_directory(anchorDir);
+    
+    // Open the folder in Finder
+    open_folder(anchorDir);
+    
+    // Always open the markdown file in Obsidian first
+    const baseName = fullPath.split('/').pop().replace(/\.md$/, '');
+    const encoded = encodeURIComponent(baseName);
+    const vault = getObsidianVault();
+    const app = getObsidianApp();
+    const url = `obsidian://open?vault=${vault}&file=${encoded}`;
+    log(`ANCHOR: Opening in Obsidian: ${url}`);
+    launch_app(app, url);
+    
+    // Handle tmux activation if .tmuxp.yaml exists
+    const tmuxpPath = joinPath(anchorDir, ".tmuxp.yaml");
+    if (file_exists(tmuxpPath)) {
+        const folderName = anchorDir.split('/').pop();
+        log(`ANCHOR: Found .tmuxp.yaml, activating tmux session '${folderName}'`);
+        
+        try {
+            // Get existing sessions
+            const sessionsOutput = shell_sync("tmux ls -F '#{session_name}' 2>/dev/null || true");
+            const existingSessions = sessionsOutput.split('\n').filter(s => s.trim().length > 0);
+            log(`ANCHOR: Existing sessions: ${existingSessions.join(', ')}`);
+            
+            // Create session if it doesn't exist
+            if (!existingSessions.includes(folderName)) {
+                log(`ANCHOR: Creating session '${folderName}'`);
+                const tmuxpResult = shell_sync(`tmuxp load "${tmuxpPath}" -d`);
+                log(`ANCHOR: tmuxp load result: ${tmuxpResult}`);
+                shell_sync("/bin/sleep 0.2");
+            }
+            
+            // Try to attach to or switch to the session (using direct tmux commands like the working Python version)
+            log(`ANCHOR: Attaching to session '${folderName}'`);
+            try {
+                // First try switch-client (works when already inside a tmux session)
+                log(`ANCHOR: Trying tmux switch-client to '${folderName}'`);
+                const switchResult = shellWithExitCode(`/opt/homebrew/bin/tmux switch-client -t "${folderName}"`);
+                const switchData = JSON.parse(switchResult);
+                
+                if (switchData.exitCode === 0) {
+                    log(`ANCHOR: Successfully switched to session '${folderName}'`);
+                } else {
+                    // switch-client failed, try attach-session (works when not inside tmux)
+                    log(`ANCHOR: Switch-client failed, trying attach-session to '${folderName}'`);
+                    const attachResult = shellWithExitCode(`/opt/homebrew/bin/tmux attach-session -t "${folderName}"`);
+                    const attachData = JSON.parse(attachResult);
+                    
+                    if (attachData.exitCode === 0) {
+                        log(`ANCHOR: Successfully attached to session '${folderName}'`);
+                    } else {
+                        log(`ANCHOR: Both switch-client and attach-session failed for '${folderName}'`);
+                        log(`ANCHOR: Switch error: ${switchData.stderr}`);
+                        log(`ANCHOR: Attach error: ${attachData.stderr}`);
+                    }
+                }
+            } catch (e) {
+                log(`ANCHOR: Tmux execution error: ${e}`);
+            }
+            
+            // Activate iTerm2
+            shell_sync("/bin/sleep 0.5");
+            shell('osascript -e \'tell application "iTerm2" to activate\'');
+            
+        } catch (error) {
+            log(`ANCHOR: Error with tmux: ${error}`);
+        }
+        
+    } else {
+        log(`ANCHOR: No .tmuxp.yaml found, checking for CLAUDE.md fallback`);
+        
+        // Check for CLAUDE.md and run claude --continue as fallback
+        const claudeMdPath = joinPath(anchorDir, "CLAUDE.md");
+        if (file_exists(claudeMdPath)) {
+            log(`ANCHOR: Found CLAUDE.md, running claude --continue`);
+            try {
+                spawnDetached("claude", "--continue");
+                log(`ANCHOR: Started claude --continue in background`);
+            } catch (claudeError) {
+                log(`ANCHOR: Failed to start claude --continue: ${claudeError}`);
+            }
+        } else {
+            log(`ANCHOR: No tmux or Claude configuration found, Obsidian only`);
+        }
+    }
+  
+  # 1pass NAME - 1Password with multiple fallback approaches (main implementation)
+  action_1pass: |
+    // Try Quick Access first (most universal)
+    try {
+      shell("osascript -e 'tell application \"System Events\" to keystroke \" \" using {shift down, command down}'");
+      shell_sync("/bin/sleep 0.3");  // 0.3 Use shell_sync for timing
+      // Type character by character for better reliability
+      shell(`osascript -e 'tell application "System Events"
+        repeat with i from 1 to length of "{{arg}}"
+          set currentChar to character i of "{{arg}}"
+          keystroke currentChar
+          delay 0.05
+        end repeat
+      end tell'`);
+      shell_sync("/bin/sleep 0.5");  // Shorter delay before Enter
+      shell("osascript -e 'tell application \"System Events\" to key code 36'");  // Press Enter to select and fill
+      shell_sync("/bin/sleep 0.2");  // 0.2 Brief delay after Enter
+    } catch (e) {
+      // Fallback 1: Try menu bar access
+      try {
+        shell("osascript -e 'tell application \"System Events\" to tell process \"1Password 7 - Password Manager\" to click menu bar item 1 of menu bar 1'");
+        shell_sync("/bin/sleep 0.5");
+        shell("osascript -e 'tell application \"System Events\" to keystroke \"{{arg}}\"'");
+        shell("osascript -e 'tell application \"System Events\" to key code 36'");
+      } catch (e2) {
+        // Fallback 2: Open 1Password app and use search
+        shell("osascript -e 'tell application \"1Password\" to activate'");
+        shell_sync("/bin/sleep 0.5");
+        shell("osascript -e 'tell application \"System Events\" to keystroke \"f\" using command down'");
+        shell_sync("/bin/sleep 0.2");
+        shell("osascript -e 'tell application \"System Events\" to keystroke \"{{arg}}\"'");
+        shell("osascript -e 'tell application \"System Events\" to key code 36'");
+      }
+    }
+  
+  # Helper functions (not directly callable as commands)
+  
+  start_claude_code: |
+    if (commandExists("claude")) {
+      return spawnDetached("claude", "--continue");
+    } else {
+      return "Claude Code not available in PATH";
+    }
+  
+  # slack CHANNEL - Navigate to a specific Slack channel/DM
+  action_slack: |
+    const channel = "{{arg}}";
+    // Use AppleScript to activate Slack and navigate to channel
+    shell(`osascript -e 'tell application "Slack" to activate'`);
+    shell_sync("/bin/sleep 0.5");
+    // Open quick switcher with Cmd+K
+    shell(`osascript -e 'tell application "System Events" to keystroke "k" using {command down}'`);
+    shell_sync("/bin/sleep 0.5");
+    // Type the channel name
+    shell(`osascript -e 'tell application "System Events" to keystroke "${channel}"'`);
+    shell_sync("/bin/sleep 0.5");
+    // Press Enter to navigate
+    shell(`osascript -e 'tell application "System Events" to keystroke return'`);
+
+  # rescan - Force rescan of markdown files and filesystem
+  action_rescan: |
+    log("Forcing rescan of markdown files and filesystem...");
+    // This will trigger a rescan in the popup application
+    return "Rescan triggered";
+    
+  # Focus management functions for grabber
+  give_up_focus: |
+    // Give focus to the previous application using Cmd+Tab
+    shell("osascript -e 'tell application \"System Events\" to key code 48 using command down'");
+    shell_sync("/bin/sleep 0.15"); // Brief delay to ensure focus transfer completes
+    
+  regain_focus: |
+    // Bring focus back to the anchor selector application
+    shell("osascript -e 'tell application \"popup\" to activate'");
+    shell_sync("/bin/sleep 0.1"); // Brief delay to ensure focus transfer completes
 
 # =================================================================
 # GRABBER RULES
 # =================================================================
+# =================================================================
+# GRABBER RULES
+# =================================================================
+# Rules for capturing application context and creating commands
+
 grabber_rules:
   # =================================================================
   # BROWSER APPLICATIONS
   # =================================================================
   
   # Google Chrome
-  - name: "Chrome Tab"
+  - name: "Chrome URL"
     matcher: "bundleId === 'com.google.Chrome' && props.url ? props.url : null"
-    action: "url"
+    action: "chrome"
+    group: "Web"
     
   # Safari
-  - name: "Safari Tab"
+  - name: "Safari URL"
     matcher: "bundleId === 'com.apple.Safari' && props.url ? props.url : null"
-    action: "url"
+    action: "safari"
+    group: "Web"
+    
+  # Brave Browser
+  - name: "Brave URL"
+    matcher: "bundleId === 'com.brave.Browser' && props.url ? props.url : null"
+    action: "brave"
+    group: "Web"
     
   # Firefox
-  - name: "Firefox Tab"
-    matcher: "bundleId.includes('firefox') && props.url ? props.url : null"
-    action: "url"
-
+  - name: "Firefox URL"
+    matcher: "bundleId === 'org.mozilla.firefox' && props.url ? props.url : null"
+    action: "firefox"
+    group: "Web"
+    
+  # Chrome Beta (work browser)
+  - name: "Chrome Beta URL"
+    matcher: "bundleId === 'com.google.Chrome.beta' && props.url ? props.url : null"
+    action: "work"
+    group: "Work"
+  
   # =================================================================
-  # FINDER RULES
+  # FILE SYSTEM & DOCUMENTS
   # =================================================================
+  
+  # Smart Finder rules using recommendedAction from get_action function
   
   # Finder anchor files (markdown files matching folder name)
   - name: "Finder Anchor"
@@ -126,32 +432,159 @@ grabber_rules:
     matcher: "bundleId === 'com.apple.finder' && !props.selection && props.path ? props.path : null"
     action: "folder"
     group: "Dir"
-
-  # =================================================================
-  # CODE EDITORS
-  # =================================================================
-  
+    
   # VS Code files
   - name: "VS Code File"
     matcher: "bundleId === 'com.microsoft.VSCode' && title && !title.includes('Welcome') ? title.split(' — ')[0] : null"
     action: "doc"
     group: "Code"
-
+    
+  # Xcode projects
+  - name: "Xcode Project"
+    matcher: "bundleId === 'com.apple.dt.Xcode' && title ? title.split(' — ')[0] : null"
+    action: "doc"
+    group: "Code"
+    
+  # Sublime Text files
+  - name: "Sublime Text File"
+    matcher: "bundleId === 'com.sublimetext.4' && title && title !== 'Sublime Text' ? title.split(' • ')[0] : null"
+    action: "doc"
+    group: "Code"
+    
+  # TextEdit documents
+  - name: "TextEdit Document"
+    matcher: "bundleId === 'com.apple.TextEdit' && title && title !== 'TextEdit' ? title : null"
+    action: "doc"
+    group: "Documents"
+  
   # =================================================================
-  # OBSIDIAN
+  # PRODUCTIVITY APPLICATIONS
   # =================================================================
   
-  # Obsidian notes
+  # Obsidian notes - gets active file URL via enriched context
   - name: "Obsidian Note"
     matcher: "bundleId === 'md.obsidian' && props.url ? props.url : null"
-    action: "obs"
-
+    action: "obs_url"
+    group: "Notes"
+    
+  # Notion pages
+  - name: "Notion Page"
+    matcher: "bundleId === 'notion.id' && props.url ? props.url : null"
+    action: "notion"
+    group: "Notes"
+    
+  # Bear notes
+  - name: "Bear Note"
+    matcher: "bundleId === 'net.shinyfrog.bear' && title && title !== 'Bear' ? title : null"
+    action: "doc"
+    group: "Notes"
+    
+  # 1Password items
+  - name: "1Password Item"
+    matcher: "bundleId.includes('1password') && title && !title.includes('1Password') ? title.split(' — ')[0] : null"
+    action: "1pass"
+    group: "Security"
+  
   # =================================================================
-  # GENERIC FALLBACK
+  # TERMINAL & DEVELOPMENT
   # =================================================================
   
-  # Generic application launcher (fallback)
+  # Terminal sessions
+  - name: "Terminal Session"
+    matcher: "bundleId === 'com.apple.Terminal' && title && title !== 'Terminal' ? title : null"
+    action: "cmd"
+    group: "Terminal"
+    
+  # iTerm2 sessions
+  - name: "iTerm2 Session"
+    matcher: "bundleId === 'com.googlecode.iterm2' && title ? title.split(' — ')[0] : null"
+    action: "cmd"
+    group: "Terminal"
+    
+  # Tmux sessions (when visible in terminal title)
+  - name: "Tmux Session"
+    matcher: "title && title.includes('tmux') ? title.match(/tmux\\[(\\w+)\\]/)?.[1] : null"
+    action: "cmd"
+    group: "Terminal"
+  
+  # =================================================================
+  # COMMUNICATION & COLLABORATION
+  # =================================================================
+  
+  # Slack channels/DMs - captures channel name and uses slack action
+  - name: "Slack Channel"
+    matcher: "bundleId === 'com.tinyspeck.slackmacgap' && props.channel ? props.channel : null"
+    action: "slack"
+    group: "Slack"
+    
+  # Discord servers
+  - name: "Discord Server"
+    matcher: "bundleId === 'com.hnc.Discord' && title && !title.includes('Discord') ? title : null"
+    action: "app"
+    group: "Communication"
+    
+  # Zoom meetings
+  - name: "Zoom Meeting"
+    matcher: "bundleId === 'us.zoom.xos' && title && title.includes('Zoom Meeting') ? 'Zoom Meeting' : null"
+    action: "app"
+    group: "Meetings"
+  
+  # =================================================================
+  # MEDIA & DESIGN
+  # =================================================================
+  
+  # Photoshop documents
+  - name: "Photoshop Document"
+    matcher: "bundleId === 'com.adobe.Photoshop' && title && !title.includes('Adobe Photoshop') ? title.split(' @ ')[0] : null"
+    action: "doc"
+    group: "Design"
+    
+  # Figma files
+  - name: "Figma File"
+    matcher: "bundleId === 'com.figma.Desktop' && title && !title.includes('Figma') ? title.split(' – ')[0] : null"
+    action: "doc"
+    group: "Design"
+    
+  # Sketch documents
+  - name: "Sketch Document"
+    matcher: "bundleId === 'com.bohemiancoding.sketch3' && title && !title.includes('Sketch') ? title : null"
+    action: "doc"
+    group: "Design"
+  
+  # =================================================================
+  # SYSTEM & UTILITIES
+  # =================================================================
+  
+  # Activity Monitor processes
+  - name: "Activity Monitor Process"
+    matcher: "bundleId === 'com.apple.ActivityMonitor' && title && title !== 'Activity Monitor' ? title : null"
+    action: "app"
+    group: "System"
+    
+  # Console logs
+  - name: "Console Log"
+    matcher: "bundleId === 'com.apple.Console' && title && title !== 'Console' ? title : null"
+    action: "app"
+    group: "System"
+    
+  # System Preferences panes
+  - name: "System Preferences"
+    matcher: "bundleId === 'com.apple.systempreferences' && title && title !== 'System Preferences' ? title : null"
+    action: "app"
+    group: "System"
+  
+  # =================================================================
+  # FALLBACK RULES
+  # =================================================================
+  
+  # # Generic application with meaningful window title
+  # - name: "Application with Document"
+  #   matcher: "title && title.length > 3 && !title.includes(app) && !title.includes('Welcome') ? title : null"
+  #   action: "doc"
+  #   group: "Documents"
+    
+  # Generic application launcher
   - name: "Application Launcher"
-    matcher: "app"
+    matcher: "app && app.length > 0 ? app : null"
     action: "app"
     group: "Apps"

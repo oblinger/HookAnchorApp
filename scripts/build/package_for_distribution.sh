@@ -5,11 +5,16 @@
 
 set -e  # Exit on any error
 
-PROJECT_ROOT="/Users/oblinger/ob/kmr/prj/2025-06 HookAnchor"
+# Get the directory where this script is located
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+# Project root is two directories up from scripts/build/
+PROJECT_ROOT="$(cd "$SCRIPT_DIR/../.." && pwd)"
 APP_NAME="HookAnchor"
 APP_BUNDLE="/Applications/$APP_NAME.app"
 DIST_DIR="$PROJECT_ROOT/dist"
-VERSION="1.0.0"
+
+# Get version from Cargo.toml
+VERSION=$(grep '^version = ' "$PROJECT_ROOT/Cargo.toml" | sed 's/version = "\(.*\)"/\1/')
 
 echo "🔨 Building HookAnchor Distribution Package v$VERSION"
 echo "================================================="
@@ -19,14 +24,38 @@ echo "📁 Setting up distribution directory..."
 rm -rf "$DIST_DIR"
 mkdir -p "$DIST_DIR"
 
-# Build the release version
-echo "🔧 Building release version..."
+# Build universal binary for both architectures
+echo "🔧 Building universal binary..."
 cd "$PROJECT_ROOT"
-cargo build --release
 
-# Update the app bundle with latest binary
+# Check if Intel target is installed
+if ! rustup target list --installed | grep -q "x86_64-apple-darwin"; then
+    echo "📥 Installing Intel target..."
+    rustup target add x86_64-apple-darwin
+fi
+
+# Build for Apple Silicon (ARM64)
+echo "🏗️  Building for Apple Silicon (ARM64)..."
+cargo build --release --target aarch64-apple-darwin
+
+# Build for Intel (x86_64)
+echo "🏗️  Building for Intel (x86_64)..."
+cargo build --release --target x86_64-apple-darwin
+
+# Create universal binary
+echo "🔗 Creating universal binary..."
+lipo -create -output target/release/ha-universal \
+    target/aarch64-apple-darwin/release/ha \
+    target/x86_64-apple-darwin/release/ha
+
+# Verify universal binary
+echo "✅ Verifying universal binary..."
+file target/release/ha-universal
+
+# Update the app bundle with universal binary
 echo "📦 Updating app bundle..."
-cp target/release/ha "$APP_BUNDLE/Contents/MacOS/popup"
+cp target/release/ha-universal "$APP_BUNDLE/Contents/MacOS/hookanchor"
+cp target/release/ha-universal "$APP_BUNDLE/Contents/MacOS/popup"
 
 # Update icon if source exists
 if [ -f "$PROJECT_ROOT/resources/icon.icns" ]; then
@@ -55,8 +84,15 @@ cat > "$DIST_DIR/README.md" << 'EOF'
 ## Installation
 
 1. **Move the app**: Drag `HookAnchor.app` to your `/Applications` folder
-2. **First run**: Double-click the app to launch it
+2. **First run security**: If you get "This app won't run on this Mac":
+   - **Right-click** the app in Applications and select "Open" (don't double-click)
+   - Or go to System Preferences → Security & Privacy → General → Click "Open Anyway"
 3. **Grant permissions**: You may need to grant accessibility permissions in System Preferences > Security & Privacy > Privacy > Accessibility
+
+## System Requirements
+
+- macOS 11.0 (Big Sur) or later
+- Works on both Intel and Apple Silicon Macs
 
 ## Configuration
 
@@ -123,25 +159,29 @@ mkdir -p "$HOME/.config/hookanchor"
 # Check if config exists, if not create default
 if [ ! -f "$HOME/.config/hookanchor/config.yaml" ]; then
     echo "Creating default configuration..."
-    cat > "$HOME/.config/hookanchor/config.yaml" << 'CONFIG_EOF'
-# HookAnchor Configuration
-# This file is automatically created on first install
-
+    # Copy the comprehensive default config from the project
+    if [ -f "$PROJECT_ROOT/resources/common/default_config.yaml" ]; then
+        cp "$PROJECT_ROOT/resources/common/default_config.yaml" "$HOME/.config/hookanchor/config.yaml"
+        echo "✅ Installed comprehensive default configuration"
+    else
+        echo "⚠️  Default config template not found, creating basic config..."
+        cat > "$HOME/.config/hookanchor/config.yaml" << 'CONFIG_EOF'
+# Basic HookAnchor Configuration
 popup_settings:
   max_rows: 15
   max_columns: 3
-  use_new_launcher: true
-  debug_log: "~/.anchor.log"
-  verbose_logging: false
+  debug_log: "~/.config/hookanchor/anchor.log"
+  server_log: "~/.config/hookanchor/server.log"
   debug_scanner: false
   merge_similar: true
-  word_separators: "_-. "
-  scan_root: "~/Documents"
-  scan_interval_seconds: 3600
-  listed_actions: "alias,anchor,app,url,folder,cmd,chrome,safari,brave,firefox,work,notion,obs,obs_url,1pass,rewrite,doc,contact,slack,shutdown"
+  word_separators: " ._-"
+  scan_interval_seconds: 86400000
+  idle_timeout_seconds: 60
+  listed_actions: "alias,anchor,app,url,folder,cmd,chrome,safari,brave,firefox,work,notion,obs,obs_url,1pass,rewrite,doc,contact,slack,text,shutdown"
 
 markdown_roots:
-  - "~/Documents"
+ - "~/Documents"
+ - "~/Notes"
 
 launcher_settings:
   application_folder: "/Applications/HookAnchor.app"
@@ -151,6 +191,9 @@ launcher_settings:
   obsidian_app_name: "Obsidian"
   obsidian_vault_name: "main"
   obsidian_vault_path: "~/Documents"
+
+scanner_settings:
+  orphans_path: "~/Documents/HookAnchor/Orphans"
 
 keybindings:
   exit_app: "Escape"
@@ -167,7 +210,6 @@ keybindings:
   edit_active_command: "Semicolon"
   delete_command: "Delete"
   cancel_editor: "Escape"
-  link_to_clipboard: "ctrl+c"
 
 functions:
   action_app: {fn: launch_app, name: "{{arg}}"}
@@ -175,36 +217,9 @@ functions:
   action_folder: {fn: open_folder, path: "{{arg}}"}
   action_cmd: {fn: shell, command: "{{arg}}"}
   action_doc: {fn: open_with, app: "", arg: "{{arg}}"}
-  action_chrome: {fn: open_with, app: "Google Chrome", arg: "{{arg}}"}
-  action_safari: {fn: open_with, app: "Safari", arg: "{{arg}}"}
-  action_brave: {fn: open_with, app: "Brave Browser", arg: "{{arg}}"}
-  action_firefox: {fn: open_with, app: "Firefox", arg: "{{arg}}"}
-  action_work: {fn: open_with, app: "Google Chrome Beta", arg: "{{arg}}"}
-  action_notion: {fn: open_with, app: "Notion", arg: "{{arg}}"}
-  action_obs_url: {fn: open_with, app: "Obsidian", arg: "{{arg}}"}
-  action_obs: {fn: shell_sync, command: "open -a Obsidian && sleep 0.1 && open 'obsidian://open?vault=main&file={{arg}}'"}
-  action_contact: {fn: open_with, app: "Contacts", arg: "addressbook://{{arg}}"}
-  
-  action_link_to_clipboard: |
-    const cmdName = "{{arg}}";
-    const wordSeparators = "_-. ";
-    let firstSeparator = null;
-    for (let i = 0; i < wordSeparators.length; i++) {
-      const char = wordSeparators[i];
-      if (char !== ' ') {
-        firstSeparator = char;
-        break;
-      }
-    }
-    if (!firstSeparator) {
-      firstSeparator = '_';
-    }
-    const urlName = cmdName.replace(/ /g, firstSeparator);
-    const markdownLink = `[${cmdName}](hook://${urlName}) `;
-    shell_sync(`echo '${markdownLink}' | pbcopy`);
-    log(`LINK_TO_CLIPBOARD: Copied to clipboard: ${markdownLink}`);
 
 CONFIG_EOF
+    fi
 fi
 
 echo ""

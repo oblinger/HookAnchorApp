@@ -550,15 +550,33 @@ fn execute_detached(command: &str, options: ShellOptions) -> Result<std::process
 pub fn open_with_app(app: &str, target: &str) -> Result<std::process::Output, std::io::Error> {
     debug_log("UTILS", &format!("open_with_app: app='{}', target='{}'", app, target));
     
+    // For browsers, add -F flag to bring app to foreground
     let mut cmd = Command::new("open");
     if app.is_empty() {
         cmd.arg(target);
     } else {
+        cmd.arg("-F"); // Bring app to foreground
         cmd.arg("-a").arg(app).arg(target);
     }
     
-    debug_log("UTILS", "Spawning non-blocking open command with app");
-    let child = cmd.spawn()?;
+    debug_log("UTILS", &format!("Spawning non-blocking open command: open -a \"{}\" \"{}\"", app, target));
+    
+    // Add environment info
+    debug_log("UTILS", &format!("Current working directory: {:?}", std::env::current_dir().ok()));
+    debug_log("UTILS", &format!("USER env var: {:?}", std::env::var("USER").ok()));
+    debug_log("UTILS", &format!("HOME env var: {:?}", std::env::var("HOME").ok()));
+    
+    // Try to spawn the command
+    let child = match cmd.spawn() {
+        Ok(child) => {
+            debug_log("UTILS", &format!("Successfully spawned process with PID: {:?}", child.id()));
+            child
+        },
+        Err(e) => {
+            debug_log("UTILS", &format!("Failed to spawn open command: {}", e));
+            return Err(e);
+        }
+    };
     
     // Register the process for monitoring
     let command_str = if app.is_empty() {
@@ -566,9 +584,13 @@ pub fn open_with_app(app: &str, target: &str) -> Result<std::process::Output, st
     } else {
         format!("open -a {} {}", app, target)
     };
-    let process_id = crate::process_monitor::register_process(child, command_str);
+    let process_id = crate::process_monitor::register_process(child, command_str.clone());
     
     debug_log("UTILS", &format!("Open with app process spawned successfully (ID: {})", process_id));
+    
+    // Check if the process is actually running
+    std::thread::sleep(std::time::Duration::from_millis(100));
+    debug_log("UTILS", &format!("Checking if '{}' process started...", command_str));
     
     // For non-blocking execution, we don't wait for the result
     Err(std::io::Error::new(
