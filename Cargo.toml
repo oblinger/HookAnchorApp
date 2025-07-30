@@ -9,6 +9,11 @@ build = "build.rs"
 name = "ha"
 path = "src/ha.rs"
 
+# URL Handler binary
+[[bin]]
+name = "hook_url_handler"
+path = "src/url_handler.rs"
+
 
 
 

@@ -242,6 +242,12 @@ def main():
         # Create DMG
         dmg_path = create_dmg(dmg_dir, version)
         
+        # Clean up DMG contents directory to prevent URL registration conflicts
+        print_colored("Cleaning up temporary DMG contents...", YELLOW)
+        if dmg_dir.exists():
+            shutil.rmtree(dmg_dir)
+            print_colored("✓ DMG contents directory cleaned up", GREEN)
+        
         # Open the output directory
         run_command(['open', str(dmg_path.parent)])
         

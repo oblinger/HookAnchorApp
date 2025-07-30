@@ -1,4 +1,4 @@
-use crate::{load_commands_with_data, load_commands_for_inference, filter_commands, command_launcher, CommandTarget, execute_via_server, utils, grabber, run_patch_inference, save_commands_to_file};
+use crate::{load_commands_with_data, load_commands_for_inference, filter_commands, execute_via_server, utils, grabber, run_patch_inference, save_commands_to_file};
 
 /// Main entry point for command-line mode
 pub fn run_command_line_mode(args: Vec<String>) {
@@ -117,12 +117,16 @@ fn handle_hook_url(url: &str) {
     let launcher_cmd = format!("{} {}", top_command_obj.action, top_command_obj.arg);
     utils::debug_log("URL_HANDLER", &format!("Launching via launcher: {}", launcher_cmd));
     
-    match command_launcher::launch(&launcher_cmd) {
-        Ok(()) => {
-            utils::debug_log("URL_HANDLER", "Command executed successfully via launcher");
+    match execute_via_server(&launcher_cmd, None, None, false) {
+        Ok(response) => {
+            if response.success {
+                utils::debug_log("URL_HANDLER", "Command executed successfully via server");
+            } else {
+                utils::debug_log("URL_HANDLER", &format!("Server execution failed: {}", response.stderr));
+            }
         }
         Err(e) => {
-            utils::debug_log("URL_HANDLER", &format!("Launcher execution failed: {:?}", e));
+            utils::debug_log("URL_HANDLER", &format!("Server communication failed: {}", e));
         }
     }
 }
@@ -163,13 +167,18 @@ fn run_exec_command(args: &[String]) {
     
     println!("Executing command function: {}", command);
     
-    // Use the new launcher system for execution
-    match command_launcher::launch(command) {
-        Ok(()) => {
-            println!("Command completed successfully");
+    // Use server-based execution for consistency
+    match execute_via_server(command, None, None, false) {
+        Ok(response) => {
+            if response.success {
+                println!("Command completed successfully");
+            } else {
+                println!("Command failed: {}", response.stderr);
+                std::process::exit(1);
+            }
         },
         Err(e) => {
-            eprintln!("Command failed: {:?}", e);
+            eprintln!("Server communication failed: {}", e);
             std::process::exit(1);
         }
     }
@@ -232,13 +241,18 @@ fn run_test_action(args: &[String]) {
     
     println!("Testing action '{}' with arg '{}': {}", action, arg, command_line);
     
-    // Use the new launcher system for testing actions directly
-    match command_launcher::launch(&command_line) {
-        Ok(()) => {
-            println!("Action completed successfully");
+    // Use server-based execution for testing actions
+    match execute_via_server(&command_line, None, None, false) {
+        Ok(response) => {
+            if response.success {
+                println!("Action completed successfully");
+            } else {
+                println!("Action failed: {}", response.stderr);
+                std::process::exit(1);
+            }
         },
         Err(e) => {
-            eprintln!("Action failed: {:?}", e);
+            eprintln!("Server communication failed: {}", e);
             std::process::exit(1);
         }
     }
@@ -1063,13 +1077,18 @@ fn run_execute_launcher_command(args: &[String]) {
     utils::debug_log("", "=================================================================");
     utils::debug_log("LAUNCHER_CMD", &format!("Executing in GUI session: '{}'", launcher_command));
     
-    // Execute the launcher command directly (we're now in the user's GUI session)
-    match command_launcher::launch(launcher_command) {
-        Ok(()) => {
-            utils::debug_log("LAUNCHER_CMD", "Command completed successfully");
+    // Execute the launcher command via server (consistent with all execution)
+    match execute_via_server(launcher_command, None, None, false) {
+        Ok(response) => {
+            if response.success {
+                utils::debug_log("LAUNCHER_CMD", "Command completed successfully");
+            } else {
+                utils::debug_log("LAUNCHER_CMD", &format!("Command failed: {}", response.stderr));
+                std::process::exit(1);
+            }
         },
         Err(e) => {
-            utils::debug_log("LAUNCHER_CMD", &format!("Command failed: {:?}", e));
+            utils::debug_log("LAUNCHER_CMD", &format!("Server communication failed: {}", e));
             std::process::exit(1);
         }
     }

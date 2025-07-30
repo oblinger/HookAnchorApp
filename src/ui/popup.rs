@@ -563,12 +563,16 @@ impl AnchorSelector {
                 if !PopupState::is_separator_command(selected_cmd) {
                     // Use launcher to execute the link_to_clipboard action
                     let command_line = format!("link_to_clipboard {}", selected_cmd.command);
-                    match crate::command_launcher::launch(&command_line) {
-                        Ok(()) => {
-                            crate::utils::debug_log("CLIPBOARD", &format!("Link copied for command: {}", selected_cmd.command));
+                    match execute_via_server(&command_line, None, None, false) {
+                        Ok(response) => {
+                            if response.success {
+                                crate::utils::debug_log("CLIPBOARD", &format!("Link copied for command: {}", selected_cmd.command));
+                            } else {
+                                crate::utils::debug_log("CLIPBOARD", &format!("Failed to copy link: {}", response.stderr));
+                            }
                         },
                         Err(e) => {
-                            crate::utils::debug_log("CLIPBOARD", &format!("Failed to copy link: {:?}", e));
+                            crate::utils::debug_log("CLIPBOARD", &format!("Server communication failed: {}", e));
                         }
                     }
                 }
@@ -1125,7 +1129,7 @@ impl AnchorSelector {
     
     /// Show folder functionality - launches the first folder matching current search
     fn show_folder(&mut self) {
-        use crate::{command_launcher, utils};
+        use crate::utils;
         
         let search_text = &self.popup_state.search_text;
         utils::debug_log("SHOW_FOLDER", &format!("Triggered with search text: '{}'", search_text));
@@ -1186,12 +1190,16 @@ impl AnchorSelector {
             utils::debug_log("SHOW_FOLDER", &format!("Attempting to launch folder: '{}'", path));
             
             // Launch the folder (popup stays open)
-            match command_launcher::launch(&format!("folder {}", path)) {
-                Ok(()) => {
-                    utils::debug_log("SHOW_FOLDER", &format!("Successfully launched folder: '{}'", path));
+            match execute_via_server(&format!("folder {}", path), None, None, false) {
+                Ok(response) => {
+                    if response.success {
+                        utils::debug_log("SHOW_FOLDER", &format!("Successfully launched folder: '{}'", path));
+                    } else {
+                        utils::debug_log("SHOW_FOLDER", &format!("Failed to launch folder '{}': {}", path, response.stderr));
+                    }
                 },
                 Err(e) => {
-                    utils::debug_log("SHOW_FOLDER", &format!("Failed to launch folder '{}': {:?}", path, e));
+                    utils::debug_log("SHOW_FOLDER", &format!("Server communication failed: {}", e));
                 }
             }
         } else {
@@ -1872,7 +1880,23 @@ impl eframe::App for AnchorSelector {
                                             
                                             if response.clicked() {
                                                 self.set_selected_index(i);
-                                                execute_command(&cmd);
+                                                // Execute command via server for consistency
+                                                let launcher_command = if cmd.arg.is_empty() {
+                                                    cmd.action.clone()
+                                                } else {
+                                                    format!("{} {}", cmd.action, cmd.arg)
+                                                };
+                                                
+                                                match execute_via_server(&launcher_command, None, None, false) {
+                                                    Ok(response) => {
+                                                        if !response.success {
+                                                            crate::utils::debug_log("EXECUTE", &format!("Command failed: {}", response.stderr));
+                                                        }
+                                                    }
+                                                    Err(e) => {
+                                                        crate::utils::debug_log("EXECUTE", &format!("Server communication failed: {}", e));
+                                                    }
+                                                }
                                                 self.perform_exit_scanner_check();
                                                 process::exit(0);
                                             }
@@ -1977,7 +2001,23 @@ impl eframe::App for AnchorSelector {
                                     
                                     if response.clicked() {
                                         self.set_selected_index(i);
-                                        execute_command(&cmd);
+                                        // Execute command via server for consistency
+                                        let launcher_command = if cmd.arg.is_empty() {
+                                            cmd.action.clone()
+                                        } else {
+                                            format!("{} {}", cmd.action, cmd.arg)
+                                        };
+                                        
+                                        match execute_via_server(&launcher_command, None, None, false) {
+                                            Ok(response) => {
+                                                if !response.success {
+                                                    crate::utils::debug_log("EXECUTE", &format!("Command failed: {}", response.stderr));
+                                                }
+                                            }
+                                            Err(e) => {
+                                                crate::utils::debug_log("EXECUTE", &format!("Server communication failed: {}", e));
+                                            }
+                                        }
                                         self.perform_exit_scanner_check();
                                         process::exit(0);
                                     }
