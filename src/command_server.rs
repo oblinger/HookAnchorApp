@@ -309,13 +309,26 @@ fn execute_command_with_env(
     inherited_env: HashMap<String, String>,
     base_working_dir: PathBuf,
 ) -> CommandResponse {
-    // Log command execution for visibility
-    log_and_print("CMD_SERVER", &format!("Executing: {}", request.command));
-    
-    // Check if this looks like a launcher command
-    // We need to check the first word even if there are shell operators
+    // Parse command to extract action and arg for clean logging
     let command_parts: Vec<&str> = request.command.trim().split_whitespace().collect();
-    log_and_print("CMD_SERVER", &format!("Command parts: {:?}", command_parts));
+    let (action, arg) = if command_parts.len() >= 2 {
+        (command_parts[0], command_parts[1..].join(" "))
+    } else if command_parts.len() == 1 {
+        (command_parts[0], String::new())
+    } else {
+        ("unknown", request.command.clone())
+    };
+    
+    // Clean command execution log
+    if arg.is_empty() {
+        log_and_print("CMD", &format!("action={}", action));
+    } else {
+        log_and_print("CMD", &format!("action={} arg={}", action, arg));
+    }
+    
+    // Detailed logging goes to debug only
+    verbose_log("CMD_SERVER", &format!("Full command: {}", request.command));
+    verbose_log("CMD_SERVER", &format!("Command parts: {:?}", command_parts));
     
     let is_launcher_command = command_parts.len() >= 1 && 
         matches!(
@@ -325,16 +338,16 @@ fn execute_command_with_env(
             "doc" | "markdown" | "text" | "shutdown" | "slack" | "contact"
         );
     
-    log_and_print("CMD_SERVER", &format!("Is launcher command: {}", is_launcher_command));
+    verbose_log("CMD_SERVER", &format!("Is launcher command: {}", is_launcher_command));
     
     if is_launcher_command {
         // Use launcher for known action types
-        log_and_print("CMD_SERVER", &format!("Detected launcher command: {}", request.command));
+        verbose_log("CMD_SERVER", &format!("Using launcher for action: {}", action));
         
         // Execute launcher command directly in server context
         match crate::command_launcher::launch(&request.command) {
             Ok(()) => {
-                log_and_print("CMD_SERVER", "Launcher execution completed successfully");
+                verbose_log("CMD_SERVER", "Launcher execution completed successfully");
                 return CommandResponse {
                     success: true,
                     exit_code: Some(0),
@@ -344,7 +357,7 @@ fn execute_command_with_env(
                 };
             }
             Err(e) => {
-                log_and_print("CMD_SERVER", &format!("Launcher execution failed: {:?}", e));
+                log_and_print("CMD", &format!("FAILED: {:?}", e));
                 return CommandResponse {
                     success: false,
                     exit_code: Some(1),

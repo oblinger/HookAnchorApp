@@ -58,14 +58,46 @@ def create_app_bundle(dmg_dir, version):
     macos_dir.mkdir(parents=True, exist_ok=True)
     resources_dir.mkdir(parents=True, exist_ok=True)
     
-    # Copy binary
-    binary_src = Path(__file__).parent.parent / "target" / "release" / "ha"
-    binary_dst = macos_dir / "hookanchor"
-    if not binary_src.exists():
-        raise FileNotFoundError(f"Binary not found at {binary_src}. Run 'cargo build --release' first.")
+    # Copy dispatcher binary
+    dispatcher_src = Path(__file__).parent.parent / "target" / "release" / "ha"
+    dispatcher_dst = macos_dir / "ha"
+    if not dispatcher_src.exists():
+        raise FileNotFoundError(f"Dispatcher binary not found at {dispatcher_src}. Run 'cargo build --release' first.")
     
-    shutil.copy2(binary_src, binary_dst)
-    os.chmod(binary_dst, 0o755)
+    shutil.copy2(dispatcher_src, dispatcher_dst)
+    os.chmod(dispatcher_dst, 0o755)
+    
+    # Copy popup binary
+    popup_src = Path(__file__).parent.parent / "target" / "release" / "popup"
+    popup_dst = macos_dir / "popup"
+    if not popup_src.exists():
+        raise FileNotFoundError(f"Popup binary not found at {popup_src}. Run 'cargo build --release' first.")
+    
+    shutil.copy2(popup_src, popup_dst)
+    os.chmod(popup_dst, 0o755)
+    
+    # Create AppleScript wrapper as main executable
+    wrapper_dst = macos_dir / "hookanchor"
+    with open(wrapper_dst, 'w') as f:
+        f.write('''#!/usr/bin/osascript
+
+-- HookAnchor AppleScript Wrapper
+-- Routes normal launches and URL schemes to the dispatcher
+
+on run
+    -- Normal app launch (no URL) - directly launch popup
+    set script_dir to (do shell script "dirname " & quoted form of POSIX path of (path to me))
+    do shell script "exec '" & script_dir & "/popup'"
+end run
+
+on open location url_string
+    -- URL scheme handler - pass to dispatcher with --hook flag
+    set script_dir to (do shell script "dirname " & quoted form of POSIX path of (path to me))
+    set quoted_url to quoted form of url_string
+    do shell script "'" & script_dir & "/ha' --hook " & quoted_url
+end open location
+''')
+    os.chmod(wrapper_dst, 0o755)
     
     # Create Info.plist
     info_plist = {

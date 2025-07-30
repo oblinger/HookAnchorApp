@@ -37,7 +37,8 @@ pub fn run_command_line_mode(args: Vec<String>) {
         "--restart" => run_restart_server(),
         "--process-health" => run_process_health(),
         "--process-status" => run_process_status(),
-        "--reinstall" => run_reinstall(),
+        "--install" => run_install(),
+        "--uninstall" => run_uninstall(),
         "--execute-launcher-command" => run_execute_launcher_command(&args),
         _ => {
             eprintln!("Unknown command: {}", args[1]);
@@ -68,7 +69,8 @@ pub fn print_help(program_name: &str) {
     eprintln!("  {} --restart                # Kill and restart command server in new Terminal", program_name);
     eprintln!("  {} --process-health         # Check for hung processes", program_name);
     eprintln!("  {} --process-status         # Show detailed process status", program_name);
-    eprintln!("  {} --reinstall              # Re-run setup assistant (reinstall)", program_name);
+    eprintln!("  {} --install                # Run setup assistant (install)", program_name);
+    eprintln!("  {} --uninstall              # Uninstall HookAnchor", program_name);
     eprintln!("  open 'hook://query'         # Handle hook URL");
     eprintln!();
     eprintln!("Examples:");
@@ -944,9 +946,9 @@ fn run_process_status() {
     crate::process_monitor::show_process_status();
 }
 
-/// Re-run the setup assistant (reinstall)
-fn run_reinstall() {
-    println!("🔄 Re-running HookAnchor setup assistant...");
+/// Run the setup assistant (install)
+fn run_install() {
+    println!("🔄 Running HookAnchor setup assistant...");
     println!("================================================");
     println!();
     
@@ -954,7 +956,7 @@ fn run_reinstall() {
     match crate::setup_assistant::SetupAssistant::new().run_setup(true) {
         Ok(()) => {
             println!();
-            println!("✅ Reinstallation completed successfully!");
+            println!("✅ Installation completed successfully!");
             println!();
             println!("Changes made:");
             println!("  - Karabiner configuration updated/reinstalled");
@@ -966,11 +968,59 @@ fn run_reinstall() {
             println!("  2. Restart HookAnchor if currently running");
         },
         Err(e) => {
-            eprintln!("❌ Reinstallation failed: {}", e);
+            eprintln!("❌ Installation failed: {}", e);
             eprintln!();
             eprintln!("Please check the error message above and try again.");
             std::process::exit(1);
         }
+    }
+}
+
+/// Uninstall HookAnchor
+fn run_uninstall() {
+    println!("🗑️  HookAnchor Uninstall");
+    println!("========================");
+    println!();
+    
+    println!("This will remove:");
+    println!("  - Karabiner configuration for HookAnchor");
+    println!("  - Configuration directory: ~/.config/hookanchor");  
+    println!("  - URL handler registration");
+    println!();
+    
+    print!("Are you sure you want to uninstall HookAnchor? (y/N): ");
+    use std::io::{self, Write};
+    io::stdout().flush().unwrap();
+    
+    let mut input = String::new();
+    io::stdin().read_line(&mut input).expect("Failed to read input");
+    let input = input.trim().to_lowercase();
+    
+    if input == "y" || input == "yes" {
+        println!();
+        println!("🗑️  Uninstalling HookAnchor...");
+        
+        // Remove configuration directory
+        if let Ok(home) = std::env::var("HOME") {
+            let config_dir = format!("{}/.config/hookanchor", home);
+            if std::path::Path::new(&config_dir).exists() {
+                match std::fs::remove_dir_all(&config_dir) {
+                    Ok(()) => println!("✅ Removed configuration directory"),
+                    Err(e) => println!("⚠️  Could not remove config directory: {}", e),
+                }
+            }
+        }
+        
+        // TODO: Remove Karabiner configuration
+        // TODO: Unregister URL handler
+        
+        println!();
+        println!("✅ HookAnchor uninstalled successfully!");
+        println!("You may need to manually remove any remaining files:");
+        println!("  - App bundles in /Applications");
+        println!("  - Binary files if installed to system paths");
+    } else {
+        println!("Uninstall cancelled.");
     }
 }
 

@@ -28,17 +28,17 @@ print_colored() {
 cd "$PROJECT_ROOT"
 
 # Check for required binaries
-HA_BINARY="./target/release/ha"
-URL_HANDLER_BINARY="./target/release/hook_url_handler"
+DISPATCHER_BINARY="./target/release/ha"
+POPUP_BINARY="./target/release/popup"
 
-if [[ ! -f "$HA_BINARY" ]]; then
-    print_colored "Error: Main binary not found at $HA_BINARY" $RED
+if [[ ! -f "$DISPATCHER_BINARY" ]]; then
+    print_colored "Error: Dispatcher binary not found at $DISPATCHER_BINARY" $RED
     print_colored "Please build first: cargo build --release" $RED
     exit 1
 fi
 
-if [[ ! -f "$URL_HANDLER_BINARY" ]]; then
-    print_colored "Error: URL handler binary not found at $URL_HANDLER_BINARY" $RED
+if [[ ! -f "$POPUP_BINARY" ]]; then
+    print_colored "Error: Popup binary not found at $POPUP_BINARY" $RED
     print_colored "Please build first: cargo build --release" $RED
     exit 1
 fi
@@ -58,34 +58,34 @@ if [[ -d "$APP_DIR" ]]; then
     mkdir -p "$RESOURCES_DIR"
 fi
 
-# Copy both binaries
-cp "$HA_BINARY" "$MACOS_DIR/ha"
-cp "$URL_HANDLER_BINARY" "$MACOS_DIR/hook_url_handler"
+# Copy binaries
+cp "$DISPATCHER_BINARY" "$MACOS_DIR/ha"
+cp "$POPUP_BINARY" "$MACOS_DIR/popup"
 
-# Create an AppleScript-based launcher that routes appropriately
+# Create an AppleScript wrapper that handles Apple Events
 cat > "$MACOS_DIR/${APP_NAME}" << 'EOF'
 #!/usr/bin/osascript
 
--- HookAnchor Smart Launcher
--- Routes normal launches to GUI, URL schemes to safe handler
+-- HookAnchor AppleScript Wrapper
+-- Routes normal launches and URL schemes to the dispatcher
 
 on run
-    -- Normal app launch (no URL) - launch GUI
+    -- Normal app launch (no URL) - directly launch popup
     set script_dir to (do shell script "dirname " & quoted form of POSIX path of (path to me))
-    do shell script "exec '" & script_dir & "/ha'"
+    do shell script "exec '" & script_dir & "/popup'"
 end run
 
 on open location url_string
-    -- URL scheme handler - use safe URL handler to prevent lockups
+    -- URL scheme handler - pass to dispatcher with --hook flag
     set script_dir to (do shell script "dirname " & quoted form of POSIX path of (path to me))
     set quoted_url to quoted form of url_string
-    do shell script "'" & script_dir & "/hook_url_handler' " & quoted_url
+    do shell script "'" & script_dir & "/ha' --hook " & quoted_url
 end open location
 EOF
 
 chmod +x "$MACOS_DIR/${APP_NAME}"
 chmod +x "$MACOS_DIR/ha"
-chmod +x "$MACOS_DIR/hook_url_handler"
+chmod +x "$MACOS_DIR/popup"
 
 # Get version from Cargo.toml
 VERSION=$(grep '^version' Cargo.toml | head -1 | sed 's/version = "\(.*\)"/\1/')
