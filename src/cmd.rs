@@ -1,4 +1,4 @@
-use crate::{load_commands_with_data, load_commands_for_inference, filter_commands, launcher, CommandTarget, execute_command, utils, grabber, run_patch_inference, save_commands_to_file};
+use crate::{load_commands_with_data, load_commands_for_inference, filter_commands, command_launcher, CommandTarget, execute_via_server, utils, grabber, run_patch_inference, save_commands_to_file};
 
 /// Main entry point for command-line mode
 pub fn run_command_line_mode(args: Vec<String>) {
@@ -117,7 +117,7 @@ fn handle_hook_url(url: &str) {
     let launcher_cmd = format!("{} {}", top_command_obj.action, top_command_obj.arg);
     utils::debug_log("URL_HANDLER", &format!("Launching via launcher: {}", launcher_cmd));
     
-    match launcher::launch(&launcher_cmd) {
+    match command_launcher::launch(&launcher_cmd) {
         Ok(()) => {
             utils::debug_log("URL_HANDLER", "Command executed successfully via launcher");
         }
@@ -164,7 +164,7 @@ fn run_exec_command(args: &[String]) {
     println!("Executing command function: {}", command);
     
     // Use the new launcher system for execution
-    match launcher::launch(command) {
+    match command_launcher::launch(command) {
         Ok(()) => {
             println!("Command completed successfully");
         },
@@ -200,14 +200,18 @@ fn run_execute_top_match(args: &[String]) {
     let top_command_obj = &filtered[0];
     println!("Executing top match: {}", top_command_obj.command);
     
-    // Use execute_command which properly handles parsed action/arg
-    let result = execute_command(top_command_obj);
-    match result {
-        CommandTarget::Command(_) => {
-            println!("Command completed successfully");
+    // Use server-based execution for consistent environment
+    let launcher_cmd = format!("{} {}", top_command_obj.action, top_command_obj.arg);
+    match execute_via_server(&launcher_cmd, None, None, false) {
+        Ok(response) => {
+            if response.success {
+                println!("Command completed successfully");
+            } else {
+                println!("Command failed: {}", response.stderr);
+            }
         },
-        CommandTarget::Alias(next_cmd) => {
-            println!("Command completed successfully (alias to: {})", next_cmd);
+        Err(e) => {
+            println!("Failed to execute command: {}", e);
         }
     }
 }
@@ -229,7 +233,7 @@ fn run_test_action(args: &[String]) {
     println!("Testing action '{}' with arg '{}': {}", action, arg, command_line);
     
     // Use the new launcher system for testing actions directly
-    match launcher::launch(&command_line) {
+    match command_launcher::launch(&command_line) {
         Ok(()) => {
             println!("Action completed successfully");
         },
@@ -587,12 +591,12 @@ fn run_start_server() {
     println!("Restarting command server...");
     
     // Kill existing server if running
-    if let Err(e) = crate::server_management::kill_existing_server() {
+    if let Err(e) = crate::command_server_management::kill_existing_server() {
         eprintln!("Warning: Failed to kill existing server: {}", e);
     }
     
     // Start new server via Terminal
-    match crate::server_management::start_server_via_terminal() {
+    match crate::command_server_management::start_server_via_terminal() {
         Ok(()) => {
             println!("Command server restart initiated via Terminal");
             println!("The server will start with full shell environment in a few seconds");
@@ -962,7 +966,7 @@ fn run_restart_server() {
     
     // First, kill any existing server
     println!("  Killing existing server...");
-    match crate::server_management::kill_existing_server() {
+    match crate::command_server_management::kill_existing_server() {
         Ok(()) => println!("  ✅ Existing server killed"),
         Err(e) => println!("  ⚠️  No existing server found or kill failed: {}", e),
     }
@@ -976,11 +980,11 @@ fn run_restart_server() {
     }
     
     // Reset server check flag to force restart
-    crate::server_management::reset_server_check();
+    crate::command_server_management::reset_server_check();
     
     // Start new server via Terminal (same method as auto-start)
     println!("  Starting new server in Terminal...");
-    match crate::server_management::start_server_via_terminal() {
+    match crate::command_server_management::start_server_via_terminal() {
         Ok(()) => {
             println!("  ✅ Server restart initiated via Terminal");
             println!("  📱 A new Terminal window should open with the server daemon");
@@ -1060,7 +1064,7 @@ fn run_execute_launcher_command(args: &[String]) {
     utils::debug_log("LAUNCHER_CMD", &format!("Executing in GUI session: '{}'", launcher_command));
     
     // Execute the launcher command directly (we're now in the user's GUI session)
-    match launcher::launch(launcher_command) {
+    match command_launcher::launch(launcher_command) {
         Ok(()) => {
             utils::debug_log("LAUNCHER_CMD", "Command completed successfully");
         },

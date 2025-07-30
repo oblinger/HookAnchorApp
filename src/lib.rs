@@ -33,7 +33,7 @@ pub mod ui;
 
 // New launcher modules
 pub mod eval;
-pub mod launcher;
+pub mod command_launcher;
 pub mod js_runtime;
 pub mod business_logic;
 pub mod builtin_fns;
@@ -47,6 +47,7 @@ pub mod vault;
 
 // Background command server
 pub mod command_server;
+pub use command_server::{CommandClient, execute_via_server};
 
 // Setup assistant for first-run configuration
 pub mod setup_assistant;
@@ -58,13 +59,13 @@ pub mod process_monitor;
 pub mod error_display;
 
 // Server management
-pub mod server_management;
+pub mod command_server_management;
 
 // Re-export commonly used types from core modules
 pub use core::commands::{Command, CommandTarget, Patch, filter_commands, get_display_commands, get_display_commands_with_options, merge_similar_commands, 
                          merge_similar_commands_with_context, load_commands, load_commands_with_data, load_commands_for_inference, save_commands_to_file, 
                          add_command, delete_command, parse_command_line, split_commands,
-                         get_current_submenu_prefix, execute_command, migrate_commands_to_new_format,
+                         get_current_submenu_prefix, migrate_commands_to_new_format,
                          command_matches_query, command_matches_query_with_debug, get_command_prefix, auto_assign_patches, infer_patch, run_patch_inference,
                          get_patch_for_command};
 pub use core::sys_data::{SysData, load_data, get_sys_data, get_config, clear_sys_data};

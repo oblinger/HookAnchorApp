@@ -6,7 +6,7 @@ use eframe::egui::{self, IconData};
 use std::process;
 use std::sync::OnceLock;
 use crate::{
-    Command, execute_command, 
+    Command, execute_via_server, 
     Config, load_state, save_state, scanner, grabber
 };
 use crate::core::config::{load_config_with_error, ConfigResult};
@@ -469,21 +469,21 @@ impl AnchorSelector {
                 
                 // Don't execute if it's a separator
                 if !PopupState::is_separator_command(selected_cmd) {
-                    if selected_cmd.command.ends_with("...") {
-                        // Execute merged command directly
-                        let launcher_command = if selected_cmd.arg.is_empty() {
-                            selected_cmd.action.clone()
-                        } else {
-                            format!("{} {}", selected_cmd.action, selected_cmd.arg)
-                        };
-                        
-                        use crate::launcher::launch;
-                        if let Err(e) = launch(&launcher_command) {
-                            eprintln!("Error executing command with launcher: {:?}", e);
+                    // Always use server-based execution for consistent environment
+                    let launcher_command = if selected_cmd.arg.is_empty() {
+                        selected_cmd.action.clone()
+                    } else {
+                        format!("{} {}", selected_cmd.action, selected_cmd.arg)
+                    };
+                    
+                    match execute_via_server(&launcher_command, None, None, false) {
+                        Ok(_) => {
+                            // Command sent to server successfully
+                        },
+                        Err(e) => {
+                            eprintln!("Error executing command via server: {:?}", e);
                             std::process::exit(1);
                         }
-                    } else {
-                        execute_command(&selected_cmd);
                     }
                     self.perform_exit_scanner_check();
                     std::process::exit(0);
@@ -563,7 +563,7 @@ impl AnchorSelector {
                 if !PopupState::is_separator_command(selected_cmd) {
                     // Use launcher to execute the link_to_clipboard action
                     let command_line = format!("link_to_clipboard {}", selected_cmd.command);
-                    match crate::launcher::launch(&command_line) {
+                    match crate::command_launcher::launch(&command_line) {
                         Ok(()) => {
                             crate::utils::debug_log("CLIPBOARD", &format!("Link copied for command: {}", selected_cmd.command));
                         },
@@ -1125,7 +1125,7 @@ impl AnchorSelector {
     
     /// Show folder functionality - launches the first folder matching current search
     fn show_folder(&mut self) {
-        use crate::{launcher, utils};
+        use crate::{command_launcher, utils};
         
         let search_text = &self.popup_state.search_text;
         utils::debug_log("SHOW_FOLDER", &format!("Triggered with search text: '{}'", search_text));
@@ -1186,7 +1186,7 @@ impl AnchorSelector {
             utils::debug_log("SHOW_FOLDER", &format!("Attempting to launch folder: '{}'", path));
             
             // Launch the folder (popup stays open)
-            match launcher::launch(&format!("folder {}", path)) {
+            match command_launcher::launch(&format!("folder {}", path)) {
                 Ok(()) => {
                     utils::debug_log("SHOW_FOLDER", &format!("Successfully launched folder: '{}'", path));
                 },

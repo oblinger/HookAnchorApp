@@ -155,6 +155,85 @@ impl CommandServer {
     pub fn is_running(&self) -> bool {
         *self.running.lock().unwrap()
     }
+    
+    /// Execute a command through the server with proper alias resolution
+    pub fn execute_command(&self, command: &crate::Command) -> crate::CommandTarget {
+        self.execute_command_with_depth(command, 0)
+    }
+    
+    /// Internal function to execute commands with recursion depth tracking
+    fn execute_command_with_depth(&self, command: &crate::Command, depth: u32) -> crate::CommandTarget {
+        const MAX_ALIAS_DEPTH: u32 = 10; // Prevent infinite recursion
+        
+        // Handle alias command type: execute the target command instead
+        if command.action == "alias" {
+            if depth >= MAX_ALIAS_DEPTH {
+                crate::utils::debug_log("ALIAS", &format!("Maximum alias depth ({}) exceeded for '{}'", MAX_ALIAS_DEPTH, command.command));
+                return crate::CommandTarget::Command(command.clone());
+            }
+            
+            // Load all commands to find the target
+            let all_commands = crate::load_commands();
+            
+            // Filter commands to find the best match for the alias target
+            let filtered = crate::filter_commands(&all_commands, &command.arg, 1, false);
+            
+            if !filtered.is_empty() {
+                // Execute the first matching command
+                let target_command = &filtered[0];
+                crate::utils::debug_log("ALIAS", &format!("Alias '{}' executing target: {} (depth: {})", command.command, target_command.command, depth));
+                return self.execute_command_with_depth(target_command, depth + 1); // Recursive call with depth tracking
+            } else {
+                crate::utils::debug_log("ALIAS", &format!("Alias '{}' target '{}' not found", command.command, command.arg));
+                return crate::CommandTarget::Command(command.clone());
+            }
+        }
+        
+        let launcher_cmd = format!("{} {}", command.action, command.arg);
+        
+        // Log command execution in the requested format
+        crate::utils::debug_log("EXECUTE", &format!("'{}' AS '{}' ON '{}'", command.command, command.action, command.arg));
+        crate::utils::debug_log("EXECUTE_FLOW", "Starting command execution process via server");
+        
+        // Save the last executed command for add_alias functionality
+        use crate::core::state::save_last_executed_command;
+        let _ = save_last_executed_command(&command.command);
+        
+        // Execute via server (always use server for consistent execution)
+        crate::utils::debug_log("EXECUTE_FLOW", "Sending command to server for execution");
+        
+        if let Ok(client) = CommandClient::new() {
+            if client.is_server_available() {
+                crate::utils::debug_log("EXECUTE_FLOW", "Server available, sending launcher command");
+                
+                // Send the full launcher command to server for execution
+                match client.execute_command(&launcher_cmd, None, None, false) {
+                    Ok(response) => {
+                        crate::utils::debug_log("EXECUTE_FLOW", &format!("Command sent to server successfully: {:?}", response));
+                        
+                        // Check process health after command execution
+                        crate::process_monitor::check_system_health();
+                        
+                        // For rewrite commands, we need to handle the special case
+                        if command.action == "rewrite" {
+                            // The rewrite command should execute another command
+                            return crate::CommandTarget::Alias(command.arg.clone());
+                        } else {
+                            return crate::CommandTarget::Command(command.clone());
+                        }
+                    }
+                    Err(e) => {
+                        crate::utils::debug_log("EXECUTE_FLOW", &format!("Failed to send command to server: {:?}", e));
+                        // Fall through to error handling
+                    }
+                }
+            }
+        }
+        
+        // If we get here, server execution failed
+        eprintln!("Failed to execute command via server");
+        crate::CommandTarget::Command(command.clone())
+    }
 }
 
 impl Drop for CommandServer {
@@ -253,7 +332,7 @@ fn execute_command_with_env(
         log_and_print("CMD_SERVER", &format!("Detected launcher command: {}", request.command));
         
         // Execute launcher command directly in server context
-        match crate::launcher::launch(&request.command) {
+        match crate::command_launcher::launch(&request.command) {
             Ok(()) => {
                 log_and_print("CMD_SERVER", "Launcher execution completed successfully");
                 return CommandResponse {
@@ -503,8 +582,8 @@ pub fn execute_via_server(
     // Server not available - try to start it
     verbose_log("CMD_SERVER", "Server not available, attempting to start it");
     crate::utils::debug_log("CMD_SERVER", &format!("Starting server for command: {}", command));
-    crate::server_management::reset_server_check(); // Force re-check of PID
-    if let Err(e) = crate::server_management::start_server_if_needed() {
+    crate::command_server_management::reset_server_check(); // Force re-check of PID
+    if let Err(e) = crate::command_server_management::start_server_if_needed() {
         let error_msg = format!("Failed to start command server: {}", e);
         verbose_log("CMD_SERVER", &error_msg);
         return Err(error_msg.into());

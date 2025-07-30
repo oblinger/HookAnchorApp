@@ -43,6 +43,10 @@ fn main() -> Result<(), eframe::Error> {
     
     let args: Vec<String> = env::args().collect();
     
+    // ⚠️ CRITICAL URL HANDLING WARNING ⚠️
+    // READ docs/URL_HANDLING.md BEFORE MODIFYING ANY URL HANDLING CODE!
+    // Incorrect URL handling has caused system-wide lockups and lost hours of work.
+    //
     // IMPORTANT: macOS does NOT pass URLs via command line arguments when handling URL schemes!
     // macOS uses Apple Events to pass URLs to app bundles, not command line arguments.
     // When a URL like "hook://cnnp" is opened, macOS launches the app with no arguments (args.len() == 1)
@@ -59,7 +63,7 @@ fn main() -> Result<(), eframe::Error> {
     // If arguments are provided, run in command-line mode (no GUI)
     if args.len() > 1 {
         // CLI mode needs server - start it here
-        if let Err(e) = hookanchor::server_management::start_server_if_needed() {
+        if let Err(e) = hookanchor::command_server_management::start_server_if_needed() {
             hookanchor::utils::debug_log("STARTUP", &format!("Failed to start command server: {}", e));
             // Continue - commands will show error dialogs when server is needed
         }

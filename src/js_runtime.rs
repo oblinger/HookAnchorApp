@@ -471,7 +471,7 @@ fn setup_launcher_builtins(ctx: &Ctx<'_>) -> Result<(), Box<dyn std::error::Erro
     
     // launch(command_name) -> recursively calls another launcher command
     ctx.globals().set("launch", Function::new(ctx.clone(), |command: String| {
-        match crate::launcher::launch(&command) {
+        match crate::command_launcher::launch(&command) {
             Ok(_) => format!("Successfully launched: {}", command),
             Err(e) => format!("Failed to launch '{}': {:?}", command, e),
         }

@@ -1,5 +1,9 @@
 #!/bin/bash
 
+# ⚠️ CRITICAL WARNING: READ docs/URL_HANDLING.md BEFORE MODIFYING URL HANDLING ⚠️
+# URL scheme registration has caused system-wide lockups and hours of downtime!
+# DO NOT add CFBundleURLTypes to Info.plist without understanding the consequences!
+
 # Create a minimal macOS app bundle for URL scheme registration
 APP_NAME="HookAnchor"
 APP_DIR="/Applications/${APP_NAME}.app"
@@ -63,6 +67,8 @@ cat > "${CONTENTS_DIR}/Info.plist" << EOF
     <string>APPL</string>
     <key>CFBundleVersion</key>
     <string>1.0</string>
+    <!-- ⚠️ WARNING: DO NOT UNCOMMENT THE FOLLOWING WITHOUT READING docs/URL_HANDLING.md ⚠️
+    CFBundleURLTypes causes the app to launch in GUI mode for URLs, which locks up Obsidian!
     <key>CFBundleURLTypes</key>
     <array>
         <dict>
@@ -76,6 +82,7 @@ cat > "${CONTENTS_DIR}/Info.plist" << EOF
             <string></string>
         </dict>
     </array>
+    -->
 </dict>
 </plist>
 EOF

@@ -15,6 +15,10 @@
 ## Build Process
 - Always build release versions of the code each time. This is important because I'm using keyboard maestro and it's launching the release version each time. Thus, if you only build a build release, I'll end up running Old code.
 
+## ⚠️ CRITICAL: URL HANDLING - READ docs/URL_HANDLING.md FIRST ⚠️
+**DO NOT modify ANY URL handling without reading docs/URL_HANDLING.md**
+**Incorrect URL handling has locked up the entire system multiple times!**
+
 ## macOS URL Scheme Handling - CRITICAL KNOWLEDGE
 - **macOS does NOT pass URLs via command line arguments when handling URL schemes!**
 - **macOS uses Apple Events to pass URLs to app bundles, not command line arguments**
