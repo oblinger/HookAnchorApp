@@ -2052,6 +2052,135 @@ pub fn migrate_commands_to_new_format(commands: &mut [Command]) {
     }
 }
 
+/// Get commands formatted for display with submenu logic and separators
+fn execute_command_with_depth(command: &Command, depth: u32) -> CommandTarget {
+    const MAX_ALIAS_DEPTH: u32 = 10; // Prevent infinite recursion
+    
+    // Handle alias command type: execute the target command instead
+    if command.action == "alias" {
+        if depth >= MAX_ALIAS_DEPTH {
+            crate::utils::debug_log("ALIAS", &format!("Maximum alias depth ({}) exceeded for '{}'", MAX_ALIAS_DEPTH, command.command));
+            return CommandTarget::Command(command.clone());
+        }
+        
+        // Load all commands to find the target
+        let all_commands = load_commands();
+        
+        // Filter commands to find the best match for the alias target
+        let filtered = filter_commands(&all_commands, &command.arg, 1, false);
+        
+        if !filtered.is_empty() {
+            // Execute the first matching command
+            let target_command = &filtered[0];
+            crate::utils::debug_log("ALIAS", &format!("Alias '{}' executing target: {} (depth: {})", command.command, target_command.command, depth));
+            return execute_command_with_depth(target_command, depth + 1); // Recursive call with depth tracking
+        } else {
+            crate::utils::debug_log("ALIAS", &format!("Alias '{}' target '{}' not found", command.command, command.arg));
+            return CommandTarget::Command(command.clone());
+        }
+    }
+    
+    let launcher_cmd = format!("{} {}", command.action, command.arg);
+    
+    // Log command execution in the requested format
+    crate::utils::debug_log("EXECUTE", &format!("'{}' AS '{}' ON '{}'", command.command, command.action, command.arg));
+    crate::utils::debug_log("EXECUTE_FLOW", "Starting command execution process");
+    
+    // Log client environment only for actions that actually use it
+    if uses_client_environment(&command.action) {
+        log_client_environment();
+    }
+    
+    // Save the last executed command for add_alias functionality
+    use crate::core::state::save_last_executed_command;
+    let _ = save_last_executed_command(&command.command);
+    
+    // COMMENTED OUT: Windowed command detection - all commands should go through server
+    // // Check if this is a windowed command that needs GUI context
+    // crate::utils::debug_log("EXECUTE_FLOW", &format!("Command action: '{}', arg: '{}'", command.action, command.arg));
+    // let is_windowed_cmd = command.action == "cmd" && 
+    //     (command.arg.starts_with("W ") || command.arg.starts_with("W; ") || command.arg.starts_with("W;"));
+    // 
+    // crate::utils::debug_log("EXECUTE_FLOW", &format!("Is windowed command: {}", is_windowed_cmd));
+    // 
+    // if is_windowed_cmd {
+    //     crate::utils::debug_log("EXECUTE_FLOW", "Detected windowed CMD command, executing locally for GUI access");
+    //     // Execute windowed commands locally to ensure GUI access
+    //     match crate::command_launcher::launch(&launcher_cmd) {
+    //         Ok(()) => {
+    //             crate::utils::debug_log("EXECUTE_FLOW", "Windowed command executed successfully");
+    //             return CommandTarget::Command(command.clone());
+    //         }
+    //         Err(e) => {
+    //             crate::utils::debug_log("EXECUTE_FLOW", &format!("Failed to execute windowed command: {:?}", e));
+    //             // Fall through to try server execution as fallback
+    //         }
+    //     }
+    // }
+    
+    // Try to send command to server for async execution (non-windowed commands)
+    crate::utils::debug_log("EXECUTE_FLOW", "Attempting to send command to server for async execution");
+    
+    if let Ok(client) = crate::command_server::CommandClient::new() {
+        if client.is_server_available() {
+            crate::utils::debug_log("EXECUTE_FLOW", "Server available, sending launcher command asynchronously");
+            
+            // Send the full launcher command to server for async execution
+            match client.execute_command(&launcher_cmd, None, None, false) {
+                Ok(response) => {
+                    crate::utils::debug_log("EXECUTE_FLOW", &format!("Command sent to server successfully: {:?}", response));
+                    
+                    // Check process health after command execution
+                    crate::process_monitor::check_system_health();
+                    
+                    // For rewrite commands, we need to handle the special case
+                    if command.action == "rewrite" {
+                        // The rewrite command should execute another command
+                        return CommandTarget::Alias(command.arg.clone());
+                    } else {
+                        return CommandTarget::Command(command.clone());
+                    }
+                }
+                Err(e) => {
+                    crate::utils::debug_log("EXECUTE_FLOW", &format!("Failed to send command to server: {}", e));
+                }
+            }
+        } else {
+            crate::utils::debug_log("EXECUTE_FLOW", "Server not available");
+        }
+    }
+    
+    // Fallback to direct execution if server is not available
+    crate::utils::debug_log("EXECUTE_FLOW", "Falling back to direct launcher execution");
+    crate::utils::debug_log("EXECUTE_FLOW", &format!("About to call command_launcher::launch with: '{}'", launcher_cmd));
+    let launcher_start_time = std::time::Instant::now();
+    
+    match crate::command_launcher::launch(&launcher_cmd) {
+        Ok(()) => {
+            let launcher_duration = launcher_start_time.elapsed();
+            crate::utils::debug_log("EXECUTE_FLOW", &format!("command_launcher::launch completed successfully in {:?}", launcher_duration));
+            
+            // Check process health after command execution
+            crate::process_monitor::check_system_health();
+            
+            // For rewrite commands, we need to handle the special case
+            if command.action == "rewrite" {
+                // The rewrite command should execute another command
+                CommandTarget::Alias(command.arg.clone())
+            } else {
+                CommandTarget::Command(command.clone())
+            }
+        }
+        Err(e) => {
+            eprintln!("Failed to execute command: {:?}", e);
+            CommandTarget::Command(command.clone())
+        }
+    }
+}
+
+/// Get commands formatted for display with submenu logic and separators
+/// This is the single source of truth for how commands should be displayed
+/// in the popup, CLI tools, and other interfaces.
 pub fn get_display_commands(
     sys_data: &crate::core::sys_data::SysData, 
     search_text: &str, 
