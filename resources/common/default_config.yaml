@@ -103,7 +103,47 @@ functions:
     }
   action_cmd: {fn: shell, command: "{{arg}}"}                        # cmd echo hello -> executes shell command
   action_doc: {fn: open_with, app: "", arg: "{{arg}}"}               # doc ~/file.txt -> opens with default app
-  action_markdown: {fn: open_with, app: "", arg: "{{arg}}"}           # markdown ~/file.md -> opens markdown file with default app
+  # markdown FILE - Open markdown files, use Obsidian if within vault
+  action_markdown: |
+    const filePath = "{{arg}}";
+    log(`MARKDOWN: Processing file: '${filePath}'`);
+    
+    // Get the Obsidian vault path and expand it
+    const vaultPath = getObsidianVaultPath();
+    log(`MARKDOWN: Obsidian vault path: '${vaultPath}'`);
+    
+    // Normalize the file path (expand ~ and resolve ..)
+    const normalizedFilePath = expandHome(filePath);
+    const normalizedVaultPath = expandHome(vaultPath);
+    
+    log(`MARKDOWN: Normalized file path: '${normalizedFilePath}'`);
+    log(`MARKDOWN: Normalized vault path: '${normalizedVaultPath}'`);
+    
+    // Check if the file is within the Obsidian vault
+    if (normalizedFilePath.startsWith(normalizedVaultPath + '/') || normalizedFilePath === normalizedVaultPath) {
+      // File is in Obsidian vault - open in Obsidian
+      log(`MARKDOWN: File is in Obsidian vault, opening in Obsidian`);
+      
+      // Get the relative path from vault root
+      const relativePath = normalizedFilePath.substring(normalizedVaultPath.length + 1);
+      log(`MARKDOWN: Relative path in vault: '${relativePath}'`);
+      
+      // Remove .md extension if present
+      const fileNameWithoutExt = relativePath.replace(/\.md$/, '');
+      
+      // Encode for URL
+      const encoded = encodeURIComponent(fileNameWithoutExt);
+      const vault = getObsidianVault();
+      const app = getObsidianApp();
+      const url = `obsidian://open?vault=${vault}&file=${encoded}`;
+      
+      log(`MARKDOWN: Opening Obsidian with URL: ${url}`);
+      launch_app(app, url);
+    } else {
+      // File is outside vault - open with default markdown editor
+      log(`MARKDOWN: File is outside Obsidian vault, opening with default app`);
+      shell(`open "${filePath}"`);
+    }
   
   # Browser-specific actions
   action_chrome: {fn: open_with, app: "Google Chrome", arg: "{{arg}}"}      # chrome https://github.com -> opens in Chrome
