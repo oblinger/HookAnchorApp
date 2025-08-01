@@ -370,6 +370,7 @@ impl AnchorSelector {
                                     "navigate_left" => actions_to_perform.push("navigate_left"),
                                     "navigate_right" => actions_to_perform.push("navigate_right"),
                                     "force_rescan" => actions_to_perform.push("force_rescan"),
+                                    "force_rebuild" => actions_to_perform.push("force_rebuild"),
                                     "start_grabber" => actions_to_perform.push("start_grabber"),
                                     "show_folder" => actions_to_perform.push("show_folder"),
                                     "exit_app" => actions_to_perform.push("exit_app"),
@@ -430,6 +431,7 @@ impl AnchorSelector {
             "navigate_left" => self.navigate_horizontal(-1),
             "navigate_right" => self.navigate_horizontal(1),
             "force_rescan" => self.trigger_rescan(),
+            "force_rebuild" => self.trigger_rebuild(),
             "start_grabber" => self.start_grabber_countdown(ctx),
             "show_folder" => self.show_folder(),
             "exit_app" => {
@@ -1093,6 +1095,67 @@ impl AnchorSelector {
             crate::utils::debug_log("SCANNER2", "Rescan completed");
         } else {
             crate::utils::debug_log("RESCAN", "No markdown roots configured in config file");
+        }
+    }
+    
+    /// Trigger rebuild: restart server and rescan filesystem (full reset)
+    fn trigger_rebuild(&mut self) {
+        crate::utils::debug_log("REBUILD", "=== TRIGGER_REBUILD FUNCTION CALLED ===");
+        
+        println!("🏗️  HookAnchor Rebuild - Clean Server Restart");
+        println!("===============================================");
+        
+        // Step 1: Server teardown using clean top-level function
+        println!("\n🔄 Step 1/3: Tearing down server...");
+        match crate::command_server_management::kill_existing_server() {
+            Ok(()) => {
+                crate::utils::debug_log("REBUILD", "Server teardown completed successfully");
+                println!("  ✅ Server teardown completed");
+            }
+            Err(e) => {
+                crate::utils::debug_log("REBUILD", &format!("Server teardown warning: {}", e));
+                println!("  ⚠️  Server teardown warning: {}", e);
+            }
+        }
+        
+        // Step 2: Server setup using clean top-level function  
+        println!("\n🚀 Step 2/3: Setting up new server...");
+        match crate::command_server_management::start_server_via_terminal() {
+            Ok(()) => {
+                crate::utils::debug_log("REBUILD", "Server setup completed successfully");
+                println!("  ✅ New server started in Terminal window");
+            }
+            Err(e) => {
+                crate::utils::debug_log("REBUILD", &format!("Server setup failed: {}", e));
+                println!("  ❌ Server setup failed: {}", e);
+                return;
+            }
+        }
+        
+        // Brief wait for server to be ready
+        println!("  ⏳ Waiting for server to initialize...");
+        std::thread::sleep(std::time::Duration::from_millis(1000));
+        
+        // Step 3: Call "ha --rescan" to let the server handle the rescan
+        println!("\n📁 Step 3/3: Triggering filesystem rescan via server...");
+        let current_exe = std::env::current_exe().unwrap_or_else(|_| "popup".into());
+        match std::process::Command::new(current_exe)
+            .arg("--rescan")
+            .status() {
+            Ok(status) => {
+                if status.success() {
+                    crate::utils::debug_log("REBUILD", "Rescan via server completed successfully");
+                    println!("  ✅ Filesystem rescan completed");
+                    println!("\n🎉 Rebuild completed successfully!");
+                } else {
+                    crate::utils::debug_log("REBUILD", "Rescan via server failed");
+                    println!("  ❌ Filesystem rescan failed");
+                }
+            }
+            Err(e) => {
+                crate::utils::debug_log("REBUILD", &format!("Failed to execute rescan: {}", e));
+                println!("  ❌ Failed to start rescan: {}", e);
+            }
         }
     }
     

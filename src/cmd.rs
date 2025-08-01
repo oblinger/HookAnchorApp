@@ -32,6 +32,7 @@ pub fn run_command_line_mode(args: Vec<String>) {
         "--infer" => run_infer_patches(&args),
         "--infer-all" => run_infer_all_patches(&args),
         "--rescan" => run_rescan_command(),
+        "--rebuild" => run_rebuild_command(),
         "--start-server" => run_start_server(),
         "--start-server-daemon" => run_start_server_daemon(),
         "--restart" => run_restart_server(),
@@ -63,6 +64,7 @@ pub fn print_help(program_name: &str) {
     eprintln!("  {} --infer [command]        # Show patch inference changes", program_name);
     eprintln!("  {} --infer-all              # Show changes and prompt to apply", program_name);
     eprintln!("  {} --rescan                 # Rescan filesystem with verbose output", program_name);
+    eprintln!("  {} --rebuild                # Rebuild: restart server and rescan filesystem", program_name);
     eprintln!("  {} --test-grabber           # Test grabber functionality", program_name);
     eprintln!("  {} --grab [delay]           # Grab active app after delay", program_name);
     eprintln!("  {} --start-server           # Force restart command server", program_name);
@@ -1142,4 +1144,49 @@ fn run_execute_launcher_command(args: &[String]) {
             std::process::exit(1);
         }
     }
+}
+
+/// Run rebuild command: restart server and rescan filesystem
+fn run_rebuild_command() {
+    println!("🏗️  HookAnchor Rebuild - Full Reset");
+    println!("===================================");
+    
+    println!("\n🔄 Step 1/2: Restarting command server...");
+    
+    // Kill existing server
+    match crate::command_server_management::kill_existing_server() {
+        Ok(()) => println!("  ✅ Existing server killed"),
+        Err(e) => println!("  ⚠️  Server kill warning: {}", e),
+    }
+    
+    // Clear the socket file to ensure clean start
+    let socket_path = std::path::Path::new("/Users/oblinger/.config/hookanchor/command_server.sock");
+    if socket_path.exists() {
+        if let Err(e) = std::fs::remove_file(socket_path) {
+            println!("  ⚠️  Failed to remove socket file: {}", e);
+        }
+    }
+    
+    // Reset server check flag to force restart
+    crate::command_server_management::reset_server_check();
+    
+    // Start new server via Terminal (same method as run_restart_server)
+    println!("  Starting new server in Terminal...");
+    match crate::command_server_management::start_server_via_terminal() {
+        Ok(()) => {
+            println!("  ✅ Server restart initiated via Terminal");
+            println!("  📱 A new Terminal window should open with the server daemon");
+        },
+        Err(e) => {
+            println!("  ❌ Failed to start server: {}", e);
+            return;
+        }
+    }
+    
+    println!("\n📁 Step 2/2: Rescanning filesystem...");
+    
+    // Run filesystem rescan
+    run_rescan_command();
+    
+    println!("\n🎉 Rebuild complete!");
 }

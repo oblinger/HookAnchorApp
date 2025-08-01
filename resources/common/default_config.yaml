@@ -44,7 +44,7 @@ keybindings:
   navigate_left: "ArrowLeft"   # Move selection left (multi-column)
   navigate_right: "ArrowRight" # Move selection right (multi-column)
   execute_command: "Enter"     # Execute the selected command
-  force_rescan: "Backtick"     # Force rescan of markdown files (~)
+  force_rebuild: "Backtick"    # Force rebuild: restart server and rescan filesystem (~)
   show_folder: "Slash"         # Launch first folder matching search (=)
   start_grabber: "Plus"        # Start grabber countdown (+)
   open_editor: "Equals"        # Open command editor
