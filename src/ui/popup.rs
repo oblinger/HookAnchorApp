@@ -1047,54 +1047,6 @@ impl AnchorSelector {
     }
     
     /// Clean up the debug log file before starting a rescan
-    fn cleanup_debug_log(&self) {
-        let config = crate::core::sys_data::get_config();
-        if let Some(debug_log_path) = &config.popup_settings.debug_log {
-            let expanded_path = if debug_log_path.starts_with("~/") {
-                debug_log_path.replacen("~", &std::env::var("HOME").unwrap_or_default(), 1)
-            } else {
-                debug_log_path.clone()
-            };
-            
-            // Simple deletion - if it fails, it fails
-            let _ = std::fs::remove_file(&expanded_path);
-        }
-    }
-
-    /// Trigger an immediate filesystem rescan
-    fn trigger_rescan(&mut self) {
-        // Clean up log file first, before any log messages
-        self.cleanup_debug_log();
-        
-        // Now this will be the first message in a fresh log file
-        crate::utils::debug_log("SCANNER2", "=== TRIGGER_RESCAN FUNCTION CALLED ===");
-        
-        use crate::scanner;
-        let sys_data = crate::core::sys_data::get_sys_data();
-        
-        // Get markdown roots from config
-        if let Some(markdown_roots) = &sys_data.config.markdown_roots {
-            crate::utils::debug_log("SCANNER2", &format!("Force scanning markdown files, roots: {:?}", markdown_roots));
-            
-            // Force scan markdown files - now safe from infinite loops due to symlink skipping
-            let current_commands = self.popup_state.get_commands().to_vec();
-            let updated_commands = scanner::scan(current_commands, &sys_data);
-            
-            // Update commands in popup state
-            self.popup_state.set_commands(updated_commands);
-            crate::utils::debug_log("RESCAN", "GUI rescan completed successfully");
-            
-            // Refresh current search results if there's an active search
-            if !self.popup_state.search_text.trim().is_empty() {
-                let current_search = self.popup_state.search_text.clone();
-                self.popup_state.update_search(current_search);
-            }
-            
-            crate::utils::debug_log("SCANNER2", "Rescan completed");
-        } else {
-            crate::utils::debug_log("RESCAN", "No markdown roots configured in config file");
-        }
-    }
     
     /// Trigger rebuild: restart server and rescan filesystem (full reset)
     fn trigger_rebuild(&mut self) {

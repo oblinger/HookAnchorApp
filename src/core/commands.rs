@@ -826,7 +826,7 @@ pub fn run_patch_inference(
                 if apply_changes && (overwrite_patch || command.patch.is_empty()) {
                     // Debug: Log when we're about to assign a patch
                     if inferred_patch.is_empty() {
-                        crate::utils::debug_log("EMPTY_PATCH_BUG", &format!("🚨 WARNING: About to assign EMPTY patch to command '{}' (was: '{}')", 
+                        crate::utils::debug_log("EMPTY_PATCH_BUG", &format!("WARNING: About to assign EMPTY patch to command '{}' (was: '{}')", 
                             command.command, old_patch_display));
                     }
                     command.patch = inferred_patch.clone();
@@ -1242,7 +1242,7 @@ pub fn parse_command_line(line: &str) -> Result<Command, String> {
         
         // Debug: Log when we parse a command with an empty patch where we might expect one
         if group.is_empty() && line.contains('!') {
-            crate::utils::debug_log("EMPTY_PATCH_BUG", &format!("🚨 WARNING: Parsed command with empty patch despite '!' in line: '{}'", line));
+            crate::utils::debug_log("EMPTY_PATCH_BUG", &format!("WARNING: Parsed command with empty patch despite '!' in line: '{}'", line));
         }
         
         return Ok(Command {
@@ -1365,7 +1365,7 @@ pub fn save_commands_to_file(commands: &[Command]) -> Result<(), Box<dyn std::er
             empty_patch_count += 1;
             empty_patch_commands.push(cmd.command.clone());
             // Log each empty patch command
-            crate::utils::debug_log("EMPTY_PATCH_BUG", &format!("🚨 Command with EMPTY patch during save: '{}' (action: {}, arg: {})", 
+            crate::utils::debug_log("EMPTY_PATCH_BUG", &format!("Command with EMPTY patch during save: '{}' (action: {}, arg: {})", 
                 cmd.command, cmd.action, cmd.arg));
         }
         // Log Patents command specifically
