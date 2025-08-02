@@ -919,6 +919,54 @@ pub fn normalize_patch_case(commands: &mut [Command], patches: &HashMap<String, 
     normalized_count
 }
 
+/// Get the patch path from a command to the orphans root
+/// Returns a vector of patch names from the given command up to the root (excluding orphans)
+/// If a cycle is detected, returns the path up to the point where the cycle would occur
+pub fn get_patch_path(command_name: &str, patches: &HashMap<String, Patch>) -> Vec<String> {
+    let mut path = Vec::new();
+    let mut current_patch = command_name.to_lowercase();
+    let mut visited = std::collections::HashSet::new();
+    
+    loop {
+        if visited.contains(&current_patch) {
+            // Cycle detected - return path up to cycle point
+            break;
+        }
+        
+        let patch = match patches.get(&current_patch) {
+            Some(p) => p,
+            None => break, // Patch not found
+        };
+        
+        visited.insert(current_patch.clone());
+        
+        // Don't include "orphans" in the path as it's the root
+        if current_patch.to_lowercase() != "orphans" {
+            // Use the original case from the patch key
+            if let Some((original_key, _)) = patches.iter().find(|(k, _)| k.to_lowercase() == current_patch) {
+                path.push(original_key.clone());
+            } else {
+                path.push(current_patch.clone());
+            }
+        }
+        
+        if let Some(ref linked_cmd) = patch.linked_command {
+            if !linked_cmd.patch.is_empty() {
+                current_patch = linked_cmd.patch.to_lowercase();
+            } else {
+                // Reached root (command with no patch)
+                break;
+            }
+        } else {
+            break;
+        }
+    }
+    
+    // Reverse the path so it goes from root to command (FOO -> BAR -> BAZ -> CMD)
+    path.reverse();
+    path
+}
+
 /// Find patch names that are referenced by commands but don't have corresponding anchor commands
 pub fn find_orphan_patches(patches: &HashMap<String, Patch>, commands: &[Command]) -> Vec<String> {
     let mut orphan_patches = Vec::new();

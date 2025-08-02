@@ -9,6 +9,7 @@ use crate::{
     Command, execute_via_server, 
     Config, load_state, save_state, scanner, grabber
 };
+use crate::core::commands::get_patch_path;
 use crate::core::config::{load_config_with_error, ConfigResult};
 use super::{PopupState, LayoutArrangement};
 
@@ -1286,6 +1287,22 @@ pub fn center_on_main_display(ctx: &egui::Context, window_size: egui::Vec2) -> e
     )
 }
 
+impl AnchorSelector {
+    /// Generate the patch path display string for submenu headers
+    /// Returns a string like "FOO > BAR > BAZ > CMD" 
+    fn get_patch_path_display(&self, command_name: &str) -> String {
+        let sys_data = crate::core::sys_data::get_sys_data();
+        let path = get_patch_path(command_name, &sys_data.patches);
+        
+        if path.is_empty() {
+            command_name.to_string()
+        } else {
+            // Just show the path - the last element should always be the command name
+            path.join(" > ")
+        }
+    }
+}
+
 impl eframe::App for AnchorSelector {
     /// Return transparent clear color to enable rounded corners
     fn clear_color(&self, _visuals: &egui::Visuals) -> [f32; 4] {
@@ -1815,7 +1832,8 @@ impl eframe::App for AnchorSelector {
                                     header_font_id.size *= 1.3;
                                     
                                     ui.horizontal(|ui| {
-                                        ui.label(egui::RichText::new(format!("{} ->", prefix)).font(header_font_id));
+                                        let patch_path_display = self.get_patch_path_display(prefix);
+                                        ui.label(egui::RichText::new(patch_path_display).font(header_font_id));
                                     });
                                     
                                     ui.add_space(8.0);
@@ -1934,7 +1952,8 @@ impl eframe::App for AnchorSelector {
                                 header_font_id.size *= 1.3;
                                 
                                 ui.horizontal(|ui| {
-                                    ui.label(egui::RichText::new(format!("{} ->", prefix)).font(header_font_id));
+                                    let patch_path_display = self.get_patch_path_display(prefix);
+                                    ui.label(egui::RichText::new(patch_path_display).font(header_font_id));
                                 });
                                 
                                 ui.add_space(8.0);
