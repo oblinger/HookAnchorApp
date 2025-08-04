@@ -156,6 +156,7 @@ mod tests {
             markdown_roots: None,
             grabber_rules: None,
             keybindings: None,
+            templates: None,
         }
     }
     

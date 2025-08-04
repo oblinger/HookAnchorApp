@@ -197,7 +197,11 @@ impl CommandServer {
         
         // Save the last executed command for add_alias functionality
         use crate::core::state::save_last_executed_command;
-        let _ = save_last_executed_command(&command.command);
+        crate::utils::debug_log("STATE_SAVE", &format!("Attempting to save last executed command: '{}'", command.command));
+        match save_last_executed_command(&command.command) {
+            Ok(_) => crate::utils::debug_log("STATE_SAVE", "Successfully saved last executed command"),
+            Err(e) => crate::utils::debug_log("STATE_SAVE", &format!("Failed to save last executed command: {}", e)),
+        }
         
         // Execute via server (always use server for consistent execution)
         crate::utils::debug_log("EXECUTE_FLOW", "Sending command to server for execution");

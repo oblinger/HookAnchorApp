@@ -50,7 +50,7 @@ impl Dialog {
     pub fn show_error(&mut self, error_message: &str) {
         let spec_strings = vec![
             "=Error".to_string(),
-            format!("#{}", error_message),
+            format!("&{}", error_message), // Use TextBox (&) instead of Label (#) for wrapping
             "!Exit".to_string(),
         ];
         self.show(spec_strings);
@@ -206,10 +206,11 @@ impl Dialog {
             
             // Check if this row contains a TextBox and adjust height
             for element in &row.elements {
-                if let DialogElement::TextBox { .. } = element {
-                    // TextBox is always 15 lines high (15 * 16px = 240px) + padding
-                    let text_height = 15.0_f32 * 16.0_f32;
-                    row_height = (text_height + 40.0_f32).max(row_height); // text height + padding
+                if let DialogElement::TextBox { content } = element {
+                    // Calculate height based on content lines, min 4, max 15
+                    let line_count = content.lines().count().max(4).min(15) as f32;
+                    let text_height = line_count * 18.0_f32; // Slightly larger line height
+                    row_height = (text_height + 60.0_f32).max(row_height); // More padding for buttons
                 }
             }
             

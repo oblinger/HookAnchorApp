@@ -213,6 +213,14 @@ fn run_execute_top_match(args: &[String]) {
     let top_command_obj = &filtered[0];
     println!("Executing top match: {}", top_command_obj.command);
     
+    // Save the last executed command for add_alias functionality
+    use crate::core::state::save_last_executed_command;
+    crate::utils::debug_log("STATE_SAVE", &format!("CLI: Attempting to save last executed command: '{}'", top_command_obj.command));
+    match save_last_executed_command(&top_command_obj.command) {
+        Ok(_) => crate::utils::debug_log("STATE_SAVE", "CLI: Successfully saved last executed command"),
+        Err(e) => crate::utils::debug_log("STATE_SAVE", &format!("CLI: Failed to save last executed command: {}", e)),
+    }
+    
     // Use server-based execution for consistent environment
     let launcher_cmd = format!("{} {}", top_command_obj.action, top_command_obj.arg);
     match execute_via_server(&launcher_cmd, None, None, false) {

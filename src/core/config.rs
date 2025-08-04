@@ -26,6 +26,8 @@ pub struct Config {
     pub grabber_rules: Option<Vec<crate::grabber::GrabberRule>>,
     /// Key bindings for all actions
     pub keybindings: Option<HashMap<String, String>>,
+    /// Templates for creating new commands
+    pub templates: Option<HashMap<String, crate::core::template_creation::Template>>,
 }
 
 /// Popup settings section of the configuration file
@@ -141,6 +143,7 @@ impl Default for Config {
             markdown_roots: None,
             grabber_rules: None,
             keybindings: None,
+            templates: None,
         }
     }
 }
@@ -324,6 +327,10 @@ fn load_legacy_config(contents: &str) -> Result<Config, Box<dyn std::error::Erro
     let keybindings = yaml.get("keybindings")
         .and_then(|v| serde_yaml::from_value(v.clone()).ok());
     
+    // Extract templates if it exists
+    let templates = yaml.get("templates")
+        .and_then(|v| serde_yaml::from_value(v.clone()).ok());
+    
     Ok(Config {
         popup_settings,
         launcher_settings,
@@ -332,6 +339,7 @@ fn load_legacy_config(contents: &str) -> Result<Config, Box<dyn std::error::Erro
         markdown_roots,
         grabber_rules,
         keybindings,
+        templates,
     })
 }
 
@@ -345,6 +353,7 @@ fn create_default_config() -> Config {
         markdown_roots: Some(vec![]),
         grabber_rules: Some(vec![]),
         keybindings: None,
+        templates: None,
     }
 }
 
@@ -363,10 +372,27 @@ impl Config {
     /// Check if any action is bound to the given key name
     /// Returns the action name if found, None otherwise
     pub fn get_action_for_key(&self, key_name: &str) -> Option<&str> {
+        // First check regular keybindings
         if let Some(ref keybindings) = self.keybindings {
             for (action, bound_key) in keybindings {
                 if bound_key == key_name {
                     return Some(action);
+                }
+            }
+        }
+        
+        None
+    }
+    
+    /// Check if the given key is bound to a template
+    /// Returns the template name if found, None otherwise
+    pub fn get_template_for_key(&self, key_name: &str) -> Option<&str> {
+        if let Some(ref templates) = self.templates {
+            for (template_name, template) in templates {
+                if let Some(ref key) = template.key {
+                    if key == key_name {
+                        return Some(template_name);
+                    }
                 }
             }
         }

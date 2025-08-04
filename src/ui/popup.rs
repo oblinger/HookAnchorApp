@@ -65,6 +65,8 @@ pub struct AnchorSelector {
     loading_state: LoadingState,
     /// Buffer for keyboard input captured before full initialization
     pre_init_input_buffer: String,
+    /// Pending template info for grab functionality (template_name, context)
+    pending_template: Option<(String, crate::core::template_creation::TemplateContext)>,
 }
 
 /// Loading state for deferred initialization
@@ -295,6 +297,7 @@ impl AnchorSelector {
             
             // Collect actions to perform to avoid borrowing conflicts
             let mut actions_to_perform = Vec::new();
+            let mut template_actions = Vec::new();
             let mut consumed_keys = Vec::new();
             let mut consumed_text = Vec::new();
             
@@ -304,6 +307,24 @@ impl AnchorSelector {
                     match text.as_str() {
                         ">" => {
                             actions_to_perform.push("add_alias");
+                            consumed_text.push(text.clone());
+                            keys_processed = true;
+                        },
+                        "$" => {
+                            crate::utils::debug_log("TEMPLATE", "Detected $ key, adding note template");
+                            template_actions.push("note".to_string());
+                            consumed_text.push(text.clone());
+                            keys_processed = true;
+                        },
+                        "%" => {
+                            crate::utils::debug_log("TEMPLATE", "Detected % key, adding grab template");
+                            template_actions.push("grab".to_string());
+                            consumed_text.push(text.clone());
+                            keys_processed = true;
+                        },
+                        "*" => {
+                            crate::utils::debug_log("TEMPLATE", "Detected * key, adding alias template");
+                            template_actions.push("alias".to_string());
                             consumed_text.push(text.clone());
                             keys_processed = true;
                         },
@@ -380,8 +401,17 @@ impl AnchorSelector {
                                     "edit_active_command" => actions_to_perform.push("edit_active_command"),
                                     "link_to_clipboard" => actions_to_perform.push("link_to_clipboard"),
                                     "uninstall_app" => actions_to_perform.push("uninstall_app"),
+                                    "template_create" => actions_to_perform.push("template_create"),
                                     _ => {} // Unknown action - still consume the key
                                 }
+                            } else if let Some(template_name) = config.get_template_for_key(&key_string).or_else(|| {
+                                // Fallback to check the key name without modifiers
+                                config.get_template_for_key(&key_name)
+                            }) {
+                                // Template keybinding found
+                                consumed_keys.push(*key);
+                                keys_processed = true;
+                                template_actions.push(template_name.to_string());
                             }
                         }
                     }
@@ -418,6 +448,11 @@ impl AnchorSelector {
             for action in actions_to_perform {
                 self.execute_key_action(action, editor_handled_escape, ctx);
             }
+            
+            // Execute template actions
+            for template_name in template_actions {
+                self.handle_template_create_named(&template_name);
+            }
         });
         
         keys_processed
@@ -446,6 +481,7 @@ impl AnchorSelector {
             "edit_active_command" => self.edit_active_command(),
             "link_to_clipboard" => self.handle_link_to_clipboard(),
             "uninstall_app" => self.handle_uninstall_app(),
+            "template_create" => self.handle_template_create(),
             _ => {}
         }
     }
@@ -595,6 +631,111 @@ impl AnchorSelector {
         self.dialog.show(spec_strings);
     }
     
+    fn handle_template_create(&mut self) {
+        self.handle_template_create_named("default");
+    }
+    
+    fn handle_template_create_named(&mut self, template_name: &str) {
+        use crate::core::template_creation::{TemplateContext, process_template};
+        
+        crate::utils::debug_log("TEMPLATE", &format!("Starting template creation for '{}'", template_name));
+        
+        // Get the current context
+        let input = self.popup_state.search_text.clone();
+        crate::utils::debug_log("TEMPLATE", &format!("Input text: '{}'", input));
+        let selected_command = if !self.filtered_commands().is_empty() {
+            let (display_commands, _, _, _) = self.get_display_commands();
+            if self.selected_index() < display_commands.len() {
+                Some(display_commands[self.selected_index()].clone())
+            } else {
+                None
+            }
+        } else {
+            None
+        };
+        
+        // Get previous command from state
+        let state = crate::core::state::load_state();
+        crate::utils::debug_log("TEMPLATE", &format!("Last executed command from state: {:?}", state.last_executed_command));
+        
+        // Load all commands to find previous command, not just filtered ones
+        let all_commands = crate::core::sys_data::get_sys_data().commands;
+        crate::utils::debug_log("TEMPLATE", &format!("Total available commands: {}", all_commands.len()));
+        
+        let previous_command = state.last_executed_command.as_ref()
+            .and_then(|name| {
+                crate::utils::debug_log("TEMPLATE", &format!("Searching for previous command: '{}'", name));
+                all_commands.iter().find(|c| c.command == *name).cloned()
+            });
+        
+        if let Some(ref prev_cmd) = previous_command {
+            crate::utils::debug_log("TEMPLATE", &format!("Found previous command: '{}'", prev_cmd.command));
+        } else {
+            crate::utils::debug_log("TEMPLATE", "No previous command found");
+        }
+        
+        // Create template context
+        let context = TemplateContext::new(&input, selected_command.as_ref(), previous_command.as_ref());
+        
+        // Get the specified template
+        let config = crate::core::sys_data::get_config();
+        crate::utils::debug_log("TEMPLATE", "Got config, checking for templates...");
+        if let Some(ref templates) = config.templates {
+            crate::utils::debug_log("TEMPLATE", &format!("Found templates, looking for '{}'", template_name));
+            if let Some(template) = templates.get(template_name) {
+                crate::utils::debug_log("TEMPLATE", &format!("Found template '{}', processing...", template_name));
+                // Check if this template requires grab functionality
+                if let Some(grab_seconds) = template.grab {
+                    // Store template info for after grab completes
+                    self.pending_template = Some((template_name.to_string(), context));
+                    
+                    // Start countdown
+                    crate::utils::debug_log("TEMPLATE", &format!("Starting grab countdown for {} seconds", grab_seconds));
+                    self.grabber_countdown = Some(grab_seconds as u8);
+                    self.countdown_last_update = Some(std::time::Instant::now());
+                } else {
+                    // Process non-grab template immediately
+                    crate::utils::debug_log("TEMPLATE", &format!("Processing non-grab template '{}'", template_name));
+                    match crate::core::template_creation::process_template(template, &context, &config) {
+                        Ok(new_command) => {
+                            if template.edit {
+                                // Open command editor with the prefilled command
+                                crate::utils::debug_log("TEMPLATE", &format!("Opening editor for '{}' template", template_name));
+                                self.command_editor.edit_command(Some(&new_command), &self.popup_state.search_text);
+                            } else {
+                                // Add the new command directly
+                                match crate::core::commands::add_command(new_command, &mut self.popup_state.commands) {
+                                    Ok(_) => {
+                                        crate::utils::debug_log("TEMPLATE", &format!("Successfully created command from '{}' template", template_name));
+                                        // Save commands to file
+                                        if let Err(e) = crate::core::commands::save_commands_to_file(&self.popup_state.commands) {
+                                            crate::utils::debug_log("TEMPLATE", &format!("Failed to save commands: {}", e));
+                                        }
+                                        // Clear search and update display
+                                        self.popup_state.search_text.clear();
+                                        self.popup_state.update_search(String::new());
+                                    }
+                                    Err(e) => {
+                                        crate::utils::debug_log("TEMPLATE", &format!("Failed to add command: {}", e));
+                                        self.show_error_dialog(&format!("Failed to add command: {}", e));
+                                    }
+                                }
+                            }
+                        }
+                        Err(e) => {
+                            crate::utils::debug_log("TEMPLATE", &format!("Failed to process '{}' template: {}", template_name, e));
+                            self.show_error_dialog(&format!("Failed to create command from '{}' template: {}", template_name, e));
+                        }
+                    }
+                }
+            } else {
+                self.show_error_dialog(&format!("Template '{}' not found in configuration", template_name));
+            }
+        } else {
+            self.show_error_dialog("No templates configured");
+        }
+    }
+    
     // =============================================================================
     // Initialization
     // =============================================================================
@@ -640,6 +781,7 @@ impl AnchorSelector {
             last_interaction_time: std::time::Instant::now(),
             loading_state: LoadingState::NotLoaded,
             pre_init_input_buffer: initial_prompt.to_string(),
+            pending_template: None,
         };
         
         result
@@ -925,37 +1067,130 @@ impl AnchorSelector {
                 match grab_result {
                     grabber::GrabResult::RuleMatched(rule_name, mut command) => {
                         crate::utils::debug_log("GRAB", &format!("Rule matched: {}", rule_name));
-                        // Use the current search text as the command name, or default if empty
-                        let command_name = if self.popup_state.search_text.trim().is_empty() {
-                            format!("Grabbed {}", rule_name)
+                        
+                        // Check if we have a pending template
+                        if let Some((template_name, mut context)) = self.pending_template.take() {
+                            crate::utils::debug_log("GRAB", &format!("Processing pending template '{}' with grabbed context", template_name));
+                            
+                            // Add grabbed variables to template context
+                            context.add_variable("grabbed_action".to_string(), command.action.clone());
+                            context.add_variable("grabbed_arg".to_string(), command.arg.clone());
+                            context.add_variable("grabbed_rule".to_string(), rule_name.clone());
+                            
+                            // Process the template with grabbed context
+                            let config = crate::core::sys_data::get_config();
+                            if let Some(ref templates) = config.templates {
+                                if let Some(template) = templates.get(&template_name) {
+                                    match crate::core::template_creation::process_template(template, &context, &config) {
+                                        Ok(new_command) => {
+                                            if template.edit {
+                                                crate::utils::debug_log("GRAB", "Opening command editor with template+grab result");
+                                                self.command_editor.edit_command(Some(&new_command), &self.popup_state.search_text);
+                                            } else {
+                                                // Add command directly
+                                                match crate::core::commands::add_command(new_command, &mut self.popup_state.commands) {
+                                                    Ok(_) => {
+                                                        crate::utils::debug_log("GRAB", "Successfully created command from template+grab");
+                                                        if let Err(e) = crate::core::commands::save_commands_to_file(&self.popup_state.commands) {
+                                                            crate::utils::debug_log("GRAB", &format!("Failed to save commands: {}", e));
+                                                        }
+                                                        self.popup_state.search_text.clear();
+                                                        self.popup_state.update_search(String::new());
+                                                    }
+                                                    Err(e) => {
+                                                        crate::utils::debug_log("GRAB", &format!("Failed to add template+grab command: {}", e));
+                                                        self.show_error_dialog(&format!("Failed to add command: {}", e));
+                                                    }
+                                                }
+                                            }
+                                        }
+                                        Err(e) => {
+                                            crate::utils::debug_log("GRAB", &format!("Failed to process template: {}", e));
+                                            self.show_error_dialog(&format!("Failed to create command from template: {}", e));
+                                        }
+                                    }
+                                }
+                            }
                         } else {
-                            self.popup_state.search_text.clone()
-                        };
-                        
-                        // Fill in the command with all the grabbed information
-                        command.command = command_name;
-                        command.full_line = format!("{} : {} {}", command.command, command.action, command.arg);
-                        
-                        // Open command editor with the pre-filled grabbed command
-                        crate::utils::debug_log("GRAB", "Opening command editor with grabbed command");
-                        self.command_editor.open_with_command(command);
-                        crate::utils::debug_log("GRAB", "Command editor opened successfully");
+                            // Normal grab behavior (no template)
+                            // Use the current search text as the command name, or default if empty
+                            let command_name = if self.popup_state.search_text.trim().is_empty() {
+                                format!("Grabbed {}", rule_name)
+                            } else {
+                                self.popup_state.search_text.clone()
+                            };
+                            
+                            // Fill in the command with all the grabbed information
+                            command.command = command_name;
+                            command.full_line = format!("{} : {} {}", command.command, command.action, command.arg);
+                            
+                            // Open command editor with the pre-filled grabbed command
+                            crate::utils::debug_log("GRAB", "Opening command editor with grabbed command");
+                            self.command_editor.open_with_command(command);
+                            crate::utils::debug_log("GRAB", "Command editor opened successfully");
+                        }
                     }
-                    grabber::GrabResult::NoRuleMatched(context) => {
-                        crate::utils::debug_log("GRAB", "No rule matched - showing template dialog");
-                        // Generate the template text
-                        let template_text = grabber::generate_rule_template_text(&context);
-                        
-                        // Show template dialog using the new TextBox field type
-                        let dialog_spec = vec![
-                            format!("=Grabber Rule Template - {}", context.app_name),
-                            format!("&{}", template_text),
-                            "!OK".to_string(),
-                        ];
-                        
-                        crate::utils::debug_log("GRAB", "Showing template dialog");
-                        self.dialog.show(dialog_spec);
-                        crate::utils::debug_log("GRAB", "Template dialog shown - window size will be handled automatically");
+                    grabber::GrabResult::NoRuleMatched(grab_context) => {
+                        // Check if we have a pending template
+                        if let Some((template_name, mut context)) = self.pending_template.take() {
+                            crate::utils::debug_log("GRAB", &format!("Processing pending template '{}' with no rule matched", template_name));
+                            
+                            // Add generic grabbed variables when no rule matched
+                            context.add_variable("grabbed_action".to_string(), "app".to_string());
+                            context.add_variable("grabbed_arg".to_string(), grab_context.app_name.clone());
+                            context.add_variable("grabbed_rule".to_string(), "NoRuleMatched".to_string());
+                            
+                            // Process the template
+                            let config = crate::core::sys_data::get_config();
+                            if let Some(ref templates) = config.templates {
+                                if let Some(template) = templates.get(&template_name) {
+                                    match crate::core::template_creation::process_template(template, &context, &config) {
+                                        Ok(new_command) => {
+                                            if template.edit {
+                                                crate::utils::debug_log("GRAB", "Opening command editor with template+grab context (no rule)");
+                                                self.command_editor.edit_command(Some(&new_command), &self.popup_state.search_text);
+                                            } else {
+                                                // Add command directly
+                                                match crate::core::commands::add_command(new_command, &mut self.popup_state.commands) {
+                                                    Ok(_) => {
+                                                        crate::utils::debug_log("GRAB", "Successfully created command from template+grab (no rule)");
+                                                        if let Err(e) = crate::core::commands::save_commands_to_file(&self.popup_state.commands) {
+                                                            crate::utils::debug_log("GRAB", &format!("Failed to save commands: {}", e));
+                                                        }
+                                                        self.popup_state.search_text.clear();
+                                                        self.popup_state.update_search(String::new());
+                                                    }
+                                                    Err(e) => {
+                                                        crate::utils::debug_log("GRAB", &format!("Failed to add template+grab command: {}", e));
+                                                        self.show_error_dialog(&format!("Failed to add command: {}", e));
+                                                    }
+                                                }
+                                            }
+                                        }
+                                        Err(e) => {
+                                            crate::utils::debug_log("GRAB", &format!("Failed to process template: {}", e));
+                                            self.show_error_dialog(&format!("Failed to create command from template: {}", e));
+                                        }
+                                    }
+                                }
+                            }
+                        } else {
+                            // Normal grab behavior (no template)
+                            crate::utils::debug_log("GRAB", "No rule matched - showing template dialog");
+                            // Generate the template text
+                            let template_text = grabber::generate_rule_template_text(&grab_context);
+                            
+                            // Show template dialog using the new TextBox field type
+                            let dialog_spec = vec![
+                                format!("=Grabber Rule Template - {}", grab_context.app_name),
+                                format!("&{}", template_text),
+                                "!OK".to_string(),
+                            ];
+                            
+                            crate::utils::debug_log("GRAB", "Showing template dialog");
+                            self.dialog.show(dialog_spec);
+                            crate::utils::debug_log("GRAB", "Template dialog shown - window size will be handled automatically");
+                        }
                     }
                 }
                 crate::utils::debug_log("GRAB", "Grab result processing completed");

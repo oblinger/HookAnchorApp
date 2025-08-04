@@ -48,6 +48,7 @@ keybindings:
   show_folder: "Slash"         # Launch first folder matching search (=)
   start_grabber: "Plus"        # Start grabber countdown (+)
   open_editor: "Equals"        # Open command editor
+  template_create: "Minus"     # Create command from template (-)
   add_alias: ">"               # Add alias using current input and last executed command
   edit_active_command: "Semicolon"  # Edit currently selected command
   delete_command: "Delete"     # Delete command in editor
@@ -627,4 +628,39 @@ grabber_rules:
   - name: "Application Launcher"
     matcher: "app && app.length > 0 ? app : null"
     action: "app"
+
+# =================================================================
+# TEMPLATES - For creating new commands
+# =================================================================
+templates:
+  # Default template - creates a basic anchor command
+  default:
+    name: "{{input}}"
+    action: "anchor"
+    arg: "/path/to/{{input}}/{{input}}.md"
+    patch: "{{selected_patch}}"
+    flags: ""
+    edit: false
+    
+  # Note template - creates dated notes
+  note:
+    name: "{{YYYY}}-{{MM}}-{{DD}} {{input}}"
+    action: "markdown"
+    arg: "/notes/{{YYYY}}/{{MM}}/{{name}}.md"
+    patch: "Notes"
+    file: "/notes/{{YYYY}}/{{MM}}"
+    contents: |
+      # {{name}}
+      
+      Created: {{YYYY}}-{{MM}}-{{DD}} {{hh}}:{{mm}}
+      
+      
+    
+  # Quick grab template - captures current window after delay
+  grab:
+    grab: 3
+    name: "{{input}}"
+    action: "{{grabbed_action}}"
+    arg: "{{grabbed_arg}}"
+    edit: true
     group: "Apps"

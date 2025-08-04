@@ -8,6 +8,7 @@ pub mod config;
 pub mod state;
 pub mod application_state;
 pub mod sys_data;
+pub mod template_creation;
 
 // Re-export commonly used types
 pub use actions::{get_action, is_markdown_anchor, get_default_patch_for_action};
