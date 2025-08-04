@@ -101,7 +101,31 @@ impl AnchorSelector {
     
     /// Calculate the required window size for normal mode (command list)
     fn calculate_normal_size(&self, command_count: usize) -> egui::Vec2 {
-        let base_width = 500.0;
+        let config = crate::core::sys_data::get_config();
+        let default_width = config.popup_settings.get_default_window_width() as f32;
+        let max_width = config.popup_settings.get_max_window_width() as f32;
+        let max_height = config.popup_settings.get_max_window_height() as f32;
+        
+        // Start with default width, but allow it to grow based on content
+        let mut calculated_width = default_width;
+        
+        // If we have commands, calculate optimal width based on content
+        if command_count > 0 {
+            let (display_commands, _, _, _) = self.get_display_commands();
+            
+            // Estimate the width needed for the longest command text
+            let mut max_text_width: f32 = 0.0;
+            for cmd in &display_commands {
+                // Rough estimation: ~8 pixels per character + padding
+                let estimated_width = (cmd.command.len() as f32 * 8.0) + 40.0;
+                max_text_width = max_text_width.max(estimated_width);
+            }
+            
+            // Choose between content-based width and default width, but don't exceed max
+            calculated_width = max_text_width.max(default_width).min(max_width);
+        }
+        
+        // Calculate height based on content
         let base_height = 120.0; // Base height for input field
         
         // Add height for command list (approximately 30 pixels per command)
@@ -114,22 +138,43 @@ impl AnchorSelector {
         // Add extra height if grabber countdown is active
         let countdown_height = if self.grabber_countdown.is_some() { 60.0 } else { 0.0 };
         
-        egui::vec2(base_width, base_height + command_list_height + countdown_height)
+        let calculated_height = base_height + command_list_height + countdown_height;
+        let final_height = calculated_height.min(max_height);
+        
+        egui::vec2(calculated_width, final_height)
     }
     
     /// Calculate the required window size for editor mode
     fn calculate_editor_size(&self) -> egui::Vec2 {
         // Command editor needs space for all input fields
-        egui::vec2(600.0, 400.0) // Fixed size for command editor
+        let config = crate::core::sys_data::get_config();
+        let default_width = config.popup_settings.get_default_window_width() as f32;
+        let default_height = config.popup_settings.get_default_window_height() as f32;
+        let max_width = config.popup_settings.get_max_window_width() as f32;
+        let max_height = config.popup_settings.get_max_window_height() as f32;
+        
+        // Calculate width needed for editor fields
+        // Editor has: Command, Action, Argument, Patch, Flags, Priority fields + labels + buttons
+        let field_width = 300.0f32; // Width for input fields
+        let label_width = 80.0f32;   // Width for field labels  
+        let button_width = 100.0f32; // Width for Delete button
+        let padding = 40.0f32;       // Left/right padding
+        
+        let calculated_width = (label_width + field_width + button_width + padding).max(default_width).min(max_width);
+        
+        // Calculate height needed for editor fields 
+        let field_height = 35.0f32;   // Height per input field
+        let field_spacing = 10.0f32;  // Spacing between fields
+        let num_fields = 6.0f32;      // Command, Action, Argument, Patch, Flags, Priority
+        let header_height = 40.0f32;  // "Command Editor" header
+        let button_row_height = 50.0f32; // Bottom button row
+        let vertical_padding = 30.0f32;  // Top/bottom padding
+        
+        let calculated_height = (header_height + (num_fields * (field_height + field_spacing)) + button_row_height + vertical_padding).max(default_height).min(max_height);
+        
+        egui::vec2(calculated_width, calculated_height)
     }
     
-    /// Calculate the required window size for dialog mode
-    fn calculate_dialog_size(&self) -> egui::Vec2 {
-        let (dialog_width, dialog_height) = self.dialog.calculate_required_size();
-        let required_width = dialog_width.max(500.0); // Minimum width
-        let required_height = dialog_height + 60.0; // Add padding
-        egui::vec2(required_width, required_height)
-    }
     
     /// Update window size based on current mode, only if mode or size changed
     fn update_window_size(&mut self, ctx: &egui::Context) {
@@ -142,7 +187,19 @@ impl AnchorSelector {
                 self.calculate_normal_size(display_commands.len())
             }
             WindowSizeMode::Editor => self.calculate_editor_size(),
-            WindowSizeMode::Dialog => self.calculate_dialog_size(),
+            WindowSizeMode::Dialog => {
+                // Get the dialog's calculated size
+                if self.dialog.visible {
+                    let (width, height) = self.dialog.calculate_required_size(ctx);
+                    egui::vec2(width, height)
+                } else {
+                    // Default reasonable size if dialog not yet visible
+                    let config = crate::core::sys_data::get_config();
+                    let width = config.popup_settings.get_default_window_width() as f32;
+                    let height = config.popup_settings.get_default_window_height() as f32;
+                    egui::vec2(width, height)
+                }
+            }
         };
         
         // Check if we need to update the window size
@@ -192,7 +249,6 @@ impl AnchorSelector {
             if updated_commands.len() != self.popup_state.get_commands().len() {
                 // Commands have changed, update the popup state for next time
                 self.popup_state.set_commands(updated_commands);
-                crate::utils::debug_log("SCANNER", "Updated commands on exit");
             }
         }
     }
@@ -310,21 +366,28 @@ impl AnchorSelector {
                             consumed_text.push(text.clone());
                             keys_processed = true;
                         },
+                        "<" => {
+                            template_actions.push("alias".to_string());
+                            consumed_text.push(text.clone());
+                            keys_processed = true;
+                        },
                         "$" => {
-                            crate::utils::debug_log("TEMPLATE", "Detected $ key, adding note template");
                             template_actions.push("note".to_string());
                             consumed_text.push(text.clone());
                             keys_processed = true;
                         },
                         "%" => {
-                            crate::utils::debug_log("TEMPLATE", "Detected % key, adding grab template");
                             template_actions.push("grab".to_string());
                             consumed_text.push(text.clone());
                             keys_processed = true;
                         },
                         "*" => {
-                            crate::utils::debug_log("TEMPLATE", "Detected * key, adding alias template");
                             template_actions.push("alias".to_string());
+                            consumed_text.push(text.clone());
+                            keys_processed = true;
+                        },
+                        "?" => {
+                            actions_to_perform.push("show_keys");
                             consumed_text.push(text.clone());
                             keys_processed = true;
                         },
@@ -351,27 +414,23 @@ impl AnchorSelector {
                         if *pressed {
                             let key_name = format!("{:?}", key);
                             
-                            // Build key string with modifiers
-                            let mut key_string = String::new();
+                            // Build modifier set for new key parsing system
+                            let mut modifier_set = std::collections::HashSet::new();
                             if modifiers.ctrl {
-                                key_string.push_str("ctrl+");
+                                modifier_set.insert("Ctrl".to_string());
                             }
                             if modifiers.alt {
-                                key_string.push_str("alt+");
+                                modifier_set.insert("Alt".to_string());
                             }
                             if modifiers.shift {
-                                key_string.push_str("shift+");
+                                modifier_set.insert("Shift".to_string());
                             }
                             if modifiers.command {
-                                key_string.push_str("cmd+");
+                                modifier_set.insert("Cmd".to_string());
                             }
-                            key_string.push_str(&key_name.to_lowercase());
                             
                             // Check what action (if any) is bound to this key combination
-                            if let Some(action) = config.get_action_for_key(&key_string).or_else(|| {
-                                // Fallback to check the key name without modifiers
-                                config.get_action_for_key(&key_name)
-                            }) {
+                            if let Some(action) = config.get_action_for_key_with_modifiers(&key_name, &modifier_set) {
                                 // Skip escape key since we handle it specially above
                                 if key_name == "Escape" {
                                     continue;
@@ -400,14 +459,12 @@ impl AnchorSelector {
                                     "add_alias" => actions_to_perform.push("add_alias"),
                                     "edit_active_command" => actions_to_perform.push("edit_active_command"),
                                     "link_to_clipboard" => actions_to_perform.push("link_to_clipboard"),
+                                    "show_keys" => actions_to_perform.push("show_keys"),
                                     "uninstall_app" => actions_to_perform.push("uninstall_app"),
                                     "template_create" => actions_to_perform.push("template_create"),
                                     _ => {} // Unknown action - still consume the key
                                 }
-                            } else if let Some(template_name) = config.get_template_for_key(&key_string).or_else(|| {
-                                // Fallback to check the key name without modifiers
-                                config.get_template_for_key(&key_name)
-                            }) {
+                            } else if let Some(template_name) = config.get_template_for_key_with_modifiers(&key_name, &modifier_set) {
                                 // Template keybinding found
                                 consumed_keys.push(*key);
                                 keys_processed = true;
@@ -480,6 +537,7 @@ impl AnchorSelector {
             "add_alias" => self.handle_add_alias(),
             "edit_active_command" => self.edit_active_command(),
             "link_to_clipboard" => self.handle_link_to_clipboard(),
+            "show_keys" => self.show_keys_dialog(),
             "uninstall_app" => self.handle_uninstall_app(),
             "template_create" => self.handle_template_create(),
             _ => {}
@@ -495,8 +553,6 @@ impl AnchorSelector {
     /// Execute the currently selected command
     fn execute_selected_command(&mut self) {
         // Log what the user actually typed with visual separator
-        crate::utils::debug_log("", "=================================================================");
-        crate::utils::debug_log("USER INPUT", &format!("GUI: '{}'", self.popup_state.search_text));
         
         if !self.filtered_commands().is_empty() {
             let (display_commands, _is_submenu, _menu_prefix, _inside_count) = self.get_display_commands();
@@ -506,22 +562,25 @@ impl AnchorSelector {
                 
                 // Don't execute if it's a separator
                 if !PopupState::is_separator_command(selected_cmd) {
-                    // Always use server-based execution for consistent environment
-                    let launcher_command = if selected_cmd.arg.is_empty() {
-                        selected_cmd.action.clone()
-                    } else {
-                        format!("{} {}", selected_cmd.action, selected_cmd.arg)
-                    };
+                    // Save the last executed command for add_alias functionality
+                    use crate::core::state::save_last_executed_command;
+                    crate::utils::debug_log("STATE_SAVE", &format!("POPUP: Attempting to save last executed command: '{}'", selected_cmd.command));
+                    match save_last_executed_command(&selected_cmd.command) {
+                        Ok(_) => crate::utils::debug_log("STATE_SAVE", "POPUP: Successfully saved last executed command"),
+                        Err(e) => crate::utils::debug_log("STATE_SAVE", &format!("POPUP: Failed to save last executed command: {}", e)),
+                    }
                     
+                    let launcher_command = format!("{} {}", selected_cmd.action, selected_cmd.arg);
                     match execute_via_server(&launcher_command, None, None, false) {
                         Ok(_) => {
-                            // Command sent to server successfully
-                        },
+                            // Command executed successfully
+                        }
                         Err(e) => {
-                            eprintln!("Error executing command via server: {:?}", e);
-                            std::process::exit(1);
+                            eprintln!("Failed to execute command: {}", e);
                         }
                     }
+                    // Note: CommandServer::execute_command handles all execution via server internally
+                    // and includes proper state saving, alias resolution, etc.
                     self.perform_exit_scanner_check();
                     std::process::exit(0);
                 }
@@ -547,6 +606,8 @@ impl AnchorSelector {
     /// Handle add alias command - opens command editor with alias action and last executed command as argument
     fn handle_add_alias(&mut self) {
         let state = crate::core::state::load_state();
+        crate::utils::debug_log("ADD_ALIAS", &format!("=== ADD ALIAS TRIGGERED ==="));
+        crate::utils::debug_log("ADD_ALIAS", &format!("Last executed command from state: {:?}", state.last_executed_command));
         if let Some(last_command) = state.last_executed_command {
             let search_text = self.popup_state.search_text.clone();
             
@@ -603,13 +664,12 @@ impl AnchorSelector {
                     match execute_via_server(&command_line, None, None, false) {
                         Ok(response) => {
                             if response.success {
-                                crate::utils::debug_log("CLIPBOARD", &format!("Link copied for command: {}", selected_cmd.command));
                             } else {
-                                crate::utils::debug_log("CLIPBOARD", &format!("Failed to copy link: {}", response.stderr));
+                                eprintln!("Warning: Failed to copy link: {}", response.stderr);
                             }
                         },
                         Err(e) => {
-                            crate::utils::debug_log("CLIPBOARD", &format!("Server communication failed: {}", e));
+                            eprintln!("Warning: Server communication failed: {}", e);
                         }
                     }
                 }
@@ -631,18 +691,132 @@ impl AnchorSelector {
         self.dialog.show(spec_strings);
     }
     
+    /// Show all available key bindings in a dialog
+    fn show_keys_dialog(&mut self) {
+        let config = crate::core::sys_data::get_config();
+        let mut key_lines = vec![];
+        
+        // Dialog title
+        key_lines.push("=Key Bindings".to_string());
+        key_lines.push("#Available keyboard shortcuts:".to_string());
+        key_lines.push("".to_string()); // Empty line for spacing
+        
+        // Define the key bindings and their descriptions
+        let key_descriptions = vec![
+            ("exit_app", "Exit the application"),
+            ("navigate_down", "Move selection down"),
+            ("navigate_up", "Move selection up"),
+            ("navigate_left", "Move selection left"),
+            ("navigate_right", "Move selection right"),
+            ("execute_command", "Execute selected command"),
+            ("force_rebuild", "Force rebuild (restart server + rescan)"),
+            ("show_folder", "Launch first folder matching search"),
+            ("start_grabber", "Start grabber countdown"),
+            ("open_editor", "Open command editor"),
+            ("add_alias", "Add alias to last executed command"),
+            ("edit_active_command", "Edit currently selected command"),
+            ("show_keys", "Show this help"),
+        ];
+        
+        // Collect all key bindings with proper formatting
+        let mut formatted_lines = vec![];
+        
+        // Get configured keybindings
+        if let Some(ref keybindings) = config.keybindings {
+            for (action, description) in key_descriptions {
+                if let Some(key) = keybindings.get(action) {
+                    let display_key = if key.len() == 1 {
+                        // Single character keys - show as-is
+                        key.clone()
+                    } else {
+                        // Word keys - keep as-is
+                        key.clone()
+                    };
+                    formatted_lines.push((display_key, description.to_string()));
+                }
+            }
+        }
+        
+        // Add template keys if any
+        if let Some(ref templates) = config.templates {
+            let mut template_keys: Vec<_> = templates.iter()
+                .filter_map(|(name, template)| {
+                    template.key.as_ref().map(|key| {
+                        let desc = template.description.as_ref()
+                            .map(|s| s.clone())
+                            .unwrap_or_else(|| format!("Template: {}", name));
+                        (key.clone(), desc)
+                    })
+                })
+                .collect();
+            
+            if !template_keys.is_empty() {
+                // Add section separator
+                if !formatted_lines.is_empty() {
+                    formatted_lines.push(("".to_string(), "".to_string())); // Empty line
+                }
+                formatted_lines.push(("Templates:".to_string(), "".to_string())); // Section header
+                
+                // Sort template keys for consistent display
+                template_keys.sort_by(|a, b| a.0.cmp(&b.0));
+                
+                for (key, desc) in template_keys {
+                    formatted_lines.push((key, desc));
+                }
+            }
+        }
+        
+        // Build the properly formatted content using TextBox for monospace alignment
+        let mut content = String::new();
+        
+        // Find the maximum key width for proper alignment
+        let max_key_width = formatted_lines.iter()
+            .map(|(key, _)| key.len())
+            .max()
+            .unwrap_or(10)
+            .max(10); // Minimum width of 10
+        
+        for (key, desc) in formatted_lines {
+            if key.is_empty() && desc.is_empty() {
+                content.push('\n'); // Empty line
+            } else if desc.is_empty() {
+                // Section header
+                content.push_str(&format!("\n{}\n", key));
+            } else {
+                // Regular key binding - use proper spacing for alignment
+                content.push_str(&format!("  {:<width$}  {}\n", key, desc, width = max_key_width));
+            }
+        }
+        
+        // Remove trailing newline
+        if content.ends_with('\n') {
+            content.pop();
+        }
+        
+        // Use TextBox for monospaced display with proper alignment
+        key_lines.push(format!("&{}", content));
+        
+        // Add some spacing before the button
+        key_lines.push("".to_string());
+        key_lines.push("".to_string());
+        
+        // Add OK button
+        key_lines.push("!OK".to_string());
+        
+        // Show the dialog
+        self.dialog.show(key_lines);
+    }
+    
     fn handle_template_create(&mut self) {
         self.handle_template_create_named("default");
     }
     
     fn handle_template_create_named(&mut self, template_name: &str) {
-        use crate::core::template_creation::{TemplateContext, process_template};
+        use crate::core::template_creation::TemplateContext;
         
-        crate::utils::debug_log("TEMPLATE", &format!("Starting template creation for '{}'", template_name));
         
         // Get the current context
         let input = self.popup_state.search_text.clone();
-        crate::utils::debug_log("TEMPLATE", &format!("Input text: '{}'", input));
         let selected_command = if !self.filtered_commands().is_empty() {
             let (display_commands, _, _, _) = self.get_display_commands();
             if self.selected_index() < display_commands.len() {
@@ -656,74 +830,66 @@ impl AnchorSelector {
         
         // Get previous command from state
         let state = crate::core::state::load_state();
-        crate::utils::debug_log("TEMPLATE", &format!("Last executed command from state: {:?}", state.last_executed_command));
+        crate::utils::debug_log("TEMPLATE", &format!("=== TEMPLATE CREATION: '{}' ===", template_name));
+        crate::utils::debug_log("TEMPLATE", &format!("State loaded - last_executed_command: {:?}", state.last_executed_command));
         
         // Load all commands to find previous command, not just filtered ones
         let all_commands = crate::core::sys_data::get_sys_data().commands;
-        crate::utils::debug_log("TEMPLATE", &format!("Total available commands: {}", all_commands.len()));
         
         let previous_command = state.last_executed_command.as_ref()
             .and_then(|name| {
-                crate::utils::debug_log("TEMPLATE", &format!("Searching for previous command: '{}'", name));
-                all_commands.iter().find(|c| c.command == *name).cloned()
+                crate::utils::debug_log("TEMPLATE", &format!("Looking for previous command: '{}'", name));
+                let found = all_commands.iter().find(|c| c.command == *name).cloned();
+                if found.is_some() {
+                    crate::utils::debug_log("TEMPLATE", &format!("Found previous command: '{}'", name));
+                } else {
+                    crate::utils::debug_log("TEMPLATE", &format!("Previous command '{}' not found in {} available commands", name, all_commands.len()));
+                }
+                found
             });
         
-        if let Some(ref prev_cmd) = previous_command {
-            crate::utils::debug_log("TEMPLATE", &format!("Found previous command: '{}'", prev_cmd.command));
-        } else {
-            crate::utils::debug_log("TEMPLATE", "No previous command found");
-        }
         
         // Create template context
         let context = TemplateContext::new(&input, selected_command.as_ref(), previous_command.as_ref());
         
         // Get the specified template
         let config = crate::core::sys_data::get_config();
-        crate::utils::debug_log("TEMPLATE", "Got config, checking for templates...");
         if let Some(ref templates) = config.templates {
-            crate::utils::debug_log("TEMPLATE", &format!("Found templates, looking for '{}'", template_name));
             if let Some(template) = templates.get(template_name) {
-                crate::utils::debug_log("TEMPLATE", &format!("Found template '{}', processing...", template_name));
                 // Check if this template requires grab functionality
                 if let Some(grab_seconds) = template.grab {
                     // Store template info for after grab completes
                     self.pending_template = Some((template_name.to_string(), context));
                     
                     // Start countdown
-                    crate::utils::debug_log("TEMPLATE", &format!("Starting grab countdown for {} seconds", grab_seconds));
                     self.grabber_countdown = Some(grab_seconds as u8);
                     self.countdown_last_update = Some(std::time::Instant::now());
                 } else {
                     // Process non-grab template immediately
-                    crate::utils::debug_log("TEMPLATE", &format!("Processing non-grab template '{}'", template_name));
                     match crate::core::template_creation::process_template(template, &context, &config) {
                         Ok(new_command) => {
                             if template.edit {
                                 // Open command editor with the prefilled command
-                                crate::utils::debug_log("TEMPLATE", &format!("Opening editor for '{}' template", template_name));
                                 self.command_editor.edit_command(Some(&new_command), &self.popup_state.search_text);
                             } else {
                                 // Add the new command directly
                                 match crate::core::commands::add_command(new_command, &mut self.popup_state.commands) {
                                     Ok(_) => {
-                                        crate::utils::debug_log("TEMPLATE", &format!("Successfully created command from '{}' template", template_name));
                                         // Save commands to file
                                         if let Err(e) = crate::core::commands::save_commands_to_file(&self.popup_state.commands) {
-                                            crate::utils::debug_log("TEMPLATE", &format!("Failed to save commands: {}", e));
+                                            eprintln!("Warning: Failed to save commands: {}", e);
                                         }
                                         // Clear search and update display
                                         self.popup_state.search_text.clear();
                                         self.popup_state.update_search(String::new());
                                     }
                                     Err(e) => {
-                                        crate::utils::debug_log("TEMPLATE", &format!("Failed to add command: {}", e));
                                         self.show_error_dialog(&format!("Failed to add command: {}", e));
                                     }
                                 }
                             }
                         }
                         Err(e) => {
-                            crate::utils::debug_log("TEMPLATE", &format!("Failed to process '{}' template: {}", template_name, e));
                             self.show_error_dialog(&format!("Failed to create command from '{}' template: {}", template_name, e));
                         }
                     }
@@ -740,17 +906,63 @@ impl AnchorSelector {
     // Initialization
     // =============================================================================
     
+    /// Redirect stdout and stderr to the anchor log file for centralized debugging
+    fn setup_log_redirection() {
+        use std::fs::OpenOptions;
+        use std::os::unix::io::AsRawFd;
+        use std::sync::OnceLock;
+        
+        static LOG_REDIRECT_SETUP: OnceLock<()> = OnceLock::new();
+        
+        // Only set up redirection once
+        LOG_REDIRECT_SETUP.get_or_init(|| {
+            if let Some(home_dir) = dirs::home_dir() {
+                let config_dir = home_dir.join(".config").join("hookanchor");
+                let log_path = config_dir.join("anchor.log");
+                
+                // Open log file in append mode
+                if let Ok(log_file) = OpenOptions::new()
+                    .create(true)
+                    .append(true)
+                    .open(&log_path) {
+                    
+                    let log_fd = log_file.as_raw_fd();
+                    
+                    // Add a separator to the log
+                    if let Ok(mut f) = std::fs::OpenOptions::new().append(true).open(&log_path) {
+                        use std::io::Write;
+                        let _ = writeln!(f, "\n=== GUI SESSION START {} ===", 
+                                       chrono::Local::now().format("%Y-%m-%d %H:%M:%S"));
+                    }
+                    
+                    unsafe {
+                        // Redirect stdout (fd 1) and stderr (fd 2) to log file
+                        libc::dup2(log_fd, 1);
+                        libc::dup2(log_fd, 2);
+                    }
+                    
+                    // Force flush stdout/stderr buffers to ensure redirection works
+                    let _ = std::io::Write::flush(&mut std::io::stdout());
+                    let _ = std::io::Write::flush(&mut std::io::stderr());
+                    
+                    // Output redirection setup completed
+                }
+            }
+        });
+    }
+    
     pub fn new() -> Self {
         Self::new_with_prompt("")
     }
     
     pub fn new_with_prompt(initial_prompt: &str) -> Self {
-        let startup_time = std::time::Instant::now();
-        crate::utils::debug_log("STARTUP_FAST", "Creating UI with minimal initialization");
+        let _startup_time = std::time::Instant::now();
+        
+        // Redirect stdout/stderr to anchor log for centralized debugging
+        Self::setup_log_redirection();
         
         // Load only app state for window positioning - this is fast
         let state = load_state();
-        crate::utils::debug_log("STARTUP_FAST", &format!("App state loaded in {:?}", startup_time.elapsed()));
         
         // Create minimal popup state for immediate UI display
         let mut popup_state = PopupState::new_minimal();
@@ -795,7 +1007,6 @@ impl AnchorSelector {
         
         self.loading_state = LoadingState::Loading;
         let start_time = std::time::Instant::now();
-        crate::utils::debug_log("DEFERRED_LOAD", "Starting deferred data loading (without scanning)");
         
         // Load commands from disk only (no filesystem scanning to avoid UI blocking)
         let commands = crate::core::commands::load_commands_raw();
@@ -822,8 +1033,7 @@ impl AnchorSelector {
         }
         
         self.loading_state = LoadingState::Loaded;
-        let elapsed = start_time.elapsed();
-        crate::utils::debug_log("DEFERRED_LOAD", &format!("Data loading completed in {:?} (disk only)", elapsed));
+        let _elapsed = start_time.elapsed();
         
         // Trigger background filesystem scan after UI is responsive
         self.trigger_background_scan();
@@ -831,13 +1041,11 @@ impl AnchorSelector {
     
     /// Trigger filesystem scanning in background to avoid blocking UI
     fn trigger_background_scan(&mut self) {
-        crate::utils::debug_log("DEFERRED_LOAD", "Triggering background filesystem scan");
         
         // Note: For now, we'll skip automatic scanning to keep UI responsive
         // Users can manually rescan with --rescan command if needed
         // In the future, this could spawn a background thread for scanning
         
-        crate::utils::debug_log("DEFERRED_LOAD", "Background scan skipped to maintain UI responsiveness");
     }
     
     // =============================================================================
@@ -970,11 +1178,7 @@ impl AnchorSelector {
                         }
                     } else {
                         // Countdown finished, execute grab
-                        crate::utils::debug_log("GRAB", "=== STARTING GRAB EXECUTION ===");
-                        let start_time = std::time::Instant::now();
                         self.execute_grab(ctx);
-                        let total_time = start_time.elapsed().as_millis();
-                        crate::utils::debug_log("GRAB", &format!("=== GRAB EXECUTION COMPLETED in {}ms ===", total_time));
                         self.grabber_countdown = None;
                         self.countdown_last_update = None;
                     }
@@ -985,7 +1189,6 @@ impl AnchorSelector {
     
     /// Flip focus away from HookAnchor (used when flip_focus is enabled)
     fn flip_focus_away(&self) {
-        crate::utils::debug_log("GRAB", "Flipping focus away from HookAnchor");
         
         let force_finder_script = r#"
             -- First minimize HookAnchor if it exists
@@ -1030,12 +1233,12 @@ impl AnchorSelector {
             .arg("-e")
             .arg(force_finder_script)
             .output() {
-            crate::utils::debug_log("GRAB", &format!("Failed to flip focus away: {}", e));
+            eprintln!("Warning: Failed to flip focus away: {}", e);
         }
     }
     
     /// Execute the grab operation - simplified synchronous version
-    fn execute_grab(&mut self, ctx: &egui::Context) {
+    fn execute_grab(&mut self, _ctx: &egui::Context) {
         let config = crate::core::sys_data::get_config();
         
         // Check if we should flip focus
@@ -1044,33 +1247,22 @@ impl AnchorSelector {
             .and_then(|ls| ls.flip_focus)
             .unwrap_or(false);
         
-        crate::utils::debug_log("GRAB", &format!("execute_grab: flip_focus = {}", flip_focus));
         
         if flip_focus {
             // Focus was already flipped during countdown, just wait briefly
-            crate::utils::debug_log("GRAB", "Focus already flipped, waiting 200ms before grab");
-            let sleep_start = std::time::Instant::now();
             std::thread::sleep(std::time::Duration::from_millis(200));
-            crate::utils::debug_log("GRAB", &format!("Sleep completed in {}ms", sleep_start.elapsed().as_millis()));
         } else {
             // User is responsible for changing focus manually during countdown
-            crate::utils::debug_log("GRAB", "Manual focus mode - no pre-grab delay");
         }
         
         // Now capture from the focused application
-        crate::utils::debug_log("GRAB", "Starting grabber::grab()");
-        let grab_start = std::time::Instant::now();
         match grabber::grab(&config) {
             Ok(grab_result) => {
-                crate::utils::debug_log("GRAB", &format!("grabber::grab() completed in {}ms", grab_start.elapsed().as_millis()));
-                crate::utils::debug_log("GRAB", "Processing grab result...");
                 match grab_result {
                     grabber::GrabResult::RuleMatched(rule_name, mut command) => {
-                        crate::utils::debug_log("GRAB", &format!("Rule matched: {}", rule_name));
                         
                         // Check if we have a pending template
                         if let Some((template_name, mut context)) = self.pending_template.take() {
-                            crate::utils::debug_log("GRAB", &format!("Processing pending template '{}' with grabbed context", template_name));
                             
                             // Add grabbed variables to template context
                             context.add_variable("grabbed_action".to_string(), command.action.clone());
@@ -1084,28 +1276,24 @@ impl AnchorSelector {
                                     match crate::core::template_creation::process_template(template, &context, &config) {
                                         Ok(new_command) => {
                                             if template.edit {
-                                                crate::utils::debug_log("GRAB", "Opening command editor with template+grab result");
                                                 self.command_editor.edit_command(Some(&new_command), &self.popup_state.search_text);
                                             } else {
                                                 // Add command directly
                                                 match crate::core::commands::add_command(new_command, &mut self.popup_state.commands) {
                                                     Ok(_) => {
-                                                        crate::utils::debug_log("GRAB", "Successfully created command from template+grab");
                                                         if let Err(e) = crate::core::commands::save_commands_to_file(&self.popup_state.commands) {
-                                                            crate::utils::debug_log("GRAB", &format!("Failed to save commands: {}", e));
+                                                            eprintln!("Warning: Failed to save commands: {}", e);
                                                         }
                                                         self.popup_state.search_text.clear();
                                                         self.popup_state.update_search(String::new());
                                                     }
                                                     Err(e) => {
-                                                        crate::utils::debug_log("GRAB", &format!("Failed to add template+grab command: {}", e));
                                                         self.show_error_dialog(&format!("Failed to add command: {}", e));
                                                     }
                                                 }
                                             }
                                         }
                                         Err(e) => {
-                                            crate::utils::debug_log("GRAB", &format!("Failed to process template: {}", e));
                                             self.show_error_dialog(&format!("Failed to create command from template: {}", e));
                                         }
                                     }
@@ -1125,15 +1313,12 @@ impl AnchorSelector {
                             command.full_line = format!("{} : {} {}", command.command, command.action, command.arg);
                             
                             // Open command editor with the pre-filled grabbed command
-                            crate::utils::debug_log("GRAB", "Opening command editor with grabbed command");
                             self.command_editor.open_with_command(command);
-                            crate::utils::debug_log("GRAB", "Command editor opened successfully");
                         }
                     }
                     grabber::GrabResult::NoRuleMatched(grab_context) => {
                         // Check if we have a pending template
                         if let Some((template_name, mut context)) = self.pending_template.take() {
-                            crate::utils::debug_log("GRAB", &format!("Processing pending template '{}' with no rule matched", template_name));
                             
                             // Add generic grabbed variables when no rule matched
                             context.add_variable("grabbed_action".to_string(), "app".to_string());
@@ -1147,28 +1332,24 @@ impl AnchorSelector {
                                     match crate::core::template_creation::process_template(template, &context, &config) {
                                         Ok(new_command) => {
                                             if template.edit {
-                                                crate::utils::debug_log("GRAB", "Opening command editor with template+grab context (no rule)");
                                                 self.command_editor.edit_command(Some(&new_command), &self.popup_state.search_text);
                                             } else {
                                                 // Add command directly
                                                 match crate::core::commands::add_command(new_command, &mut self.popup_state.commands) {
                                                     Ok(_) => {
-                                                        crate::utils::debug_log("GRAB", "Successfully created command from template+grab (no rule)");
                                                         if let Err(e) = crate::core::commands::save_commands_to_file(&self.popup_state.commands) {
-                                                            crate::utils::debug_log("GRAB", &format!("Failed to save commands: {}", e));
+                                                            eprintln!("Warning: Failed to save commands: {}", e);
                                                         }
                                                         self.popup_state.search_text.clear();
                                                         self.popup_state.update_search(String::new());
                                                     }
                                                     Err(e) => {
-                                                        crate::utils::debug_log("GRAB", &format!("Failed to add template+grab command: {}", e));
                                                         self.show_error_dialog(&format!("Failed to add command: {}", e));
                                                     }
                                                 }
                                             }
                                         }
                                         Err(e) => {
-                                            crate::utils::debug_log("GRAB", &format!("Failed to process template: {}", e));
                                             self.show_error_dialog(&format!("Failed to create command from template: {}", e));
                                         }
                                     }
@@ -1176,7 +1357,6 @@ impl AnchorSelector {
                             }
                         } else {
                             // Normal grab behavior (no template)
-                            crate::utils::debug_log("GRAB", "No rule matched - showing template dialog");
                             // Generate the template text
                             let template_text = grabber::generate_rule_template_text(&grab_context);
                             
@@ -1187,16 +1367,13 @@ impl AnchorSelector {
                                 "!OK".to_string(),
                             ];
                             
-                            crate::utils::debug_log("GRAB", "Showing template dialog");
                             self.dialog.show(dialog_spec);
-                            crate::utils::debug_log("GRAB", "Template dialog shown - window size will be handled automatically");
                         }
                     }
                 }
-                crate::utils::debug_log("GRAB", "Grab result processing completed");
             }
             Err(err) => {
-                crate::utils::debug_log("GRAB", &format!("Grabber error: {}", err));
+                eprintln!("Grabber error: {}", err);
             }
         }
         
@@ -1207,7 +1384,6 @@ impl AnchorSelector {
             .unwrap_or(false);
             
         if flip_focus_for_restore {
-            crate::utils::debug_log("GRAB", "Starting HookAnchor visibility restoration (flip_focus enabled)");
             // Restore HookAnchor visibility
             let restore_script = r#"
                 tell application "System Events"
@@ -1218,16 +1394,14 @@ impl AnchorSelector {
                 end tell
             "#;
             
-            let restore_start = std::time::Instant::now();
+            let _restore_start = std::time::Instant::now();
             if let Err(e) = std::process::Command::new("osascript")
                 .arg("-e")
                 .arg(restore_script)
                 .output() {
-                crate::utils::debug_log("GRAB", &format!("Failed to restore HookAnchor: {}", e));
+                eprintln!("Warning: Failed to restore HookAnchor: {}", e);
             }
-            crate::utils::debug_log("GRAB", &format!("HookAnchor visibility restoration completed in {}ms", restore_start.elapsed().as_millis()));
         } else {
-            crate::utils::debug_log("GRAB", "Skipping HookAnchor visibility restoration (flip_focus disabled)");
         }
         
         // Regain focus back to anchor selector after grab operation (only if flip_focus is enabled)
@@ -1236,32 +1410,21 @@ impl AnchorSelector {
             .and_then(|ls| ls.flip_focus)
             .unwrap_or(false);
         
-        crate::utils::debug_log("GRAB", &format!("flip_focus setting: {}", flip_focus));
-        
-        let focus_start = std::time::Instant::now();
+        let _focus_start = std::time::Instant::now();
         if flip_focus {
             // Give time for window restoration only when flip_focus is enabled
-            crate::utils::debug_log("GRAB", "flip_focus enabled - regaining focus");
-            let sleep_start = std::time::Instant::now();
             std::thread::sleep(std::time::Duration::from_millis(200));
-            crate::utils::debug_log("GRAB", &format!("Focus restoration sleep completed in {}ms", sleep_start.elapsed().as_millis()));
             
-            let regain_start = std::time::Instant::now();
             if let Err(e) = self.regain_focus() {
-                crate::utils::debug_log("GRAB", &format!("Failed to regain focus: {}", e));
-            } else {
-                crate::utils::debug_log("GRAB", &format!("regain_focus() completed in {}ms", regain_start.elapsed().as_millis()));
+                eprintln!("Warning: Failed to regain focus: {}", e);
             }
         } else {
-            crate::utils::debug_log("GRAB", "Manual focus mode - skipping regain_focus entirely");
         }
-        crate::utils::debug_log("GRAB", &format!("Focus restoration phase completed in {}ms", focus_start.elapsed().as_millis()));
     }
     
     
     /// Regain focus back to anchor selector after grab operation
     fn regain_focus(&self) -> Result<(), String> {
-        crate::utils::debug_log("GRAB", "regain_focus() called - executing JavaScript");
         // Use the JavaScript function to regain focus
         let config = crate::core::sys_data::get_config();
         if let Some(functions) = &config.functions {
@@ -1563,7 +1726,10 @@ impl eframe::App for AnchorSelector {
             
             // Also ensure proper window positioning on startup
             if self.frame_count == 2 && !self.position_set {
-                let window_size = egui::vec2(500.0, 120.0); // Default size
+                let config = crate::core::sys_data::get_config();
+                let width = config.popup_settings.get_default_window_width() as f32;
+                let height = config.popup_settings.get_default_window_height() as f32;
+                let window_size = egui::vec2(width, height);
                 let position = center_on_main_display(ctx, window_size);
                 ctx.send_viewport_cmd(egui::ViewportCommand::OuterPosition(position));
                 self.position_set = true;
@@ -1624,7 +1790,10 @@ impl eframe::App for AnchorSelector {
         // Set position on first frame after window is created
         if !self.position_set {
             // Use a reasonable default window size for positioning - the actual size will be auto-calculated
-            let window_size = egui::vec2(500.0, 300.0);
+            let config = crate::core::sys_data::get_config();
+            let width = config.popup_settings.get_default_window_width() as f32;
+            let height = config.popup_settings.get_default_window_height() as f32;
+            let window_size = egui::vec2(width, height);
             let pos = get_previous_window_location(ctx, window_size);
             ctx.send_viewport_cmd(egui::ViewportCommand::OuterPosition(pos));
             self.position_set = true;
@@ -1704,7 +1873,7 @@ impl eframe::App for AnchorSelector {
                                     // Exit successfully - no stdout message
                                     std::process::exit(0);
                                 },
-                                Err(e) => {
+                                Err(_e) => {
                                     // Show error dialog instead of stderr
                                     // Since we're in a thread, we can't easily show dialog here
                                     // Just exit with error code
@@ -2035,23 +2204,40 @@ impl eframe::App for AnchorSelector {
                         }
                         LayoutArrangement::SingleColumn => {
                             let (display_commands_single, _, _, _) = self.get_display_commands();
-                            let window_width = 500.0;
+                            let config = crate::core::sys_data::get_config();
+                            let window_width = config.popup_settings.get_default_window_width() as f32;
                             let required_height = input_height + mid_drag_height + header_height + (display_commands_single.len() as f32 * row_height) + bottom_drag_height + padding;
                             (window_width, required_height)
                         }
                     };
                     
-                    // Adjust window size if command editor is visible - make it larger to accommodate the dialog
+                    // Determine the correct window size based on current mode
                     let (final_width, final_height) = if self.command_editor.visible {
-                        // Make window significantly larger when command editor is open
-                        let editor_width = 500.0f32.max(window_width); // At least 500px wide
-                        let editor_height = 400.0f32.max(required_height); // At least 400px tall
-                        (editor_width, editor_height)
+                        // Use calculated editor size when command editor is open
+                        let editor_size = self.calculate_editor_size();
+                        (editor_size.x, editor_size.y)
                     } else {
                         (window_width, required_height)
                     };
                     
-                    // Window sizing is now handled automatically by update_window_size()
+                    // Apply the calculated window size to ensure it fits the content
+                    let config = crate::core::sys_data::get_config();
+                    let max_width = config.popup_settings.get_max_window_width() as f32;
+                    let max_height = config.popup_settings.get_max_window_height() as f32;
+                    let default_width = config.popup_settings.get_default_window_width() as f32;
+                    
+                    // Ensure the calculated size respects our constraints
+                    let constrained_width = final_width.max(default_width).min(max_width);
+                    let constrained_height = final_height.min(max_height);
+                    
+                    // Only resize if the size actually changed significantly to avoid constant resizing
+                    let current_size = ctx.screen_rect().size();
+                    let size_diff_width = (current_size.x - constrained_width).abs();
+                    let size_diff_height = (current_size.y - constrained_height).abs();
+                    
+                    if size_diff_width > 10.0 || size_diff_height > 10.0 {
+                        ctx.send_viewport_cmd(egui::ViewportCommand::InnerSize(egui::vec2(constrained_width, constrained_height)));
+                    }
                     
                     // Use DisplayLayout to determine arrangement
                     match &self.popup_state.display_layout.arrangement {
@@ -2146,22 +2332,19 @@ impl eframe::App for AnchorSelector {
                                             
                                             if response.clicked() {
                                                 self.set_selected_index(i);
-                                                // Execute command via server for consistency
-                                                let launcher_command = if cmd.arg.is_empty() {
-                                                    cmd.action.clone()
-                                                } else {
-                                                    format!("{} {}", cmd.action, cmd.arg)
-                                                };
                                                 
-                                                match execute_via_server(&launcher_command, None, None, false) {
-                                                    Ok(response) => {
-                                                        if !response.success {
-                                                            crate::utils::debug_log("EXECUTE", &format!("Command failed: {}", response.stderr));
-                                                        }
-                                                    }
-                                                    Err(e) => {
-                                                        crate::utils::debug_log("EXECUTE", &format!("Server communication failed: {}", e));
-                                                    }
+                                                // Save the last executed command for add_alias functionality
+                                                use crate::core::state::save_last_executed_command;
+                                                crate::utils::debug_log("STATE_SAVE", &format!("POPUP_CLICK: Attempting to save last executed command: '{}'", cmd.command));
+                                                match save_last_executed_command(&cmd.command) {
+                                                    Ok(_) => crate::utils::debug_log("STATE_SAVE", "POPUP_CLICK: Successfully saved last executed command"),
+                                                    Err(e) => crate::utils::debug_log("STATE_SAVE", &format!("POPUP_CLICK: Failed to save last executed command: {}", e)),
+                                                }
+                                                
+                                                let launcher_cmd = format!("{} {}", cmd.action, cmd.arg);
+                                                match execute_via_server(&launcher_cmd, None, None, false) {
+                                                    Ok(_) => {},
+                                                    Err(e) => eprintln!("Failed to execute command: {}", e),
                                                 }
                                                 self.perform_exit_scanner_check();
                                                 process::exit(0);
@@ -2268,22 +2451,19 @@ impl eframe::App for AnchorSelector {
                                     
                                     if response.clicked() {
                                         self.set_selected_index(i);
-                                        // Execute command via server for consistency
-                                        let launcher_command = if cmd.arg.is_empty() {
-                                            cmd.action.clone()
-                                        } else {
-                                            format!("{} {}", cmd.action, cmd.arg)
-                                        };
                                         
-                                        match execute_via_server(&launcher_command, None, None, false) {
-                                            Ok(response) => {
-                                                if !response.success {
-                                                    crate::utils::debug_log("EXECUTE", &format!("Command failed: {}", response.stderr));
-                                                }
-                                            }
-                                            Err(e) => {
-                                                crate::utils::debug_log("EXECUTE", &format!("Server communication failed: {}", e));
-                                            }
+                                        // Save the last executed command for add_alias functionality
+                                        use crate::core::state::save_last_executed_command;
+                                        crate::utils::debug_log("STATE_SAVE", &format!("POPUP_CLICK2: Attempting to save last executed command: '{}'", cmd.command));
+                                        match save_last_executed_command(&cmd.command) {
+                                            Ok(_) => crate::utils::debug_log("STATE_SAVE", "POPUP_CLICK2: Successfully saved last executed command"),
+                                            Err(e) => crate::utils::debug_log("STATE_SAVE", &format!("POPUP_CLICK2: Failed to save last executed command: {}", e)),
+                                        }
+                                        
+                                        let launcher_cmd = format!("{} {}", cmd.action, cmd.arg);
+                                        match execute_via_server(&launcher_cmd, None, None, false) {
+                                            Ok(_) => {},
+                                            Err(e) => eprintln!("Failed to execute command: {}", e),
                                         }
                                         self.perform_exit_scanner_check();
                                         process::exit(0);
@@ -2342,12 +2522,15 @@ impl eframe::App for AnchorSelector {
 }
 
 /// Embedded icon data compiled into the binary at build time
+#[allow(dead_code)]
 static EMBEDDED_ICON_PNG: &[u8] = include_bytes!("../../resources/icons/popup.png");
 
 /// Cached icon data to avoid repeated PNG decoding
+#[allow(dead_code)]
 static CACHED_ICON: OnceLock<IconData> = OnceLock::new();
 
 /// Load app icon with compile-time embedded data (no file I/O or ICNS parsing)
+#[allow(dead_code)]
 fn load_app_icon() -> IconData {
     CACHED_ICON.get_or_init(|| {
         // Decode the embedded PNG data
@@ -2366,6 +2549,7 @@ fn load_app_icon() -> IconData {
 }
 
 
+#[allow(dead_code)]
 fn decode_png_to_rgba(png_data: &[u8]) -> Result<(Vec<u8>, u32, u32), Box<dyn std::error::Error>> {
     use image::io::Reader as ImageReader;
     use image::ImageFormat;
@@ -2389,6 +2573,7 @@ fn decode_png_to_rgba(png_data: &[u8]) -> Result<(Vec<u8>, u32, u32), Box<dyn st
     Ok((rgba_data, width, height))
 }
 
+#[allow(dead_code)]
 fn create_fallback_icon() -> IconData {
     // Create a simple 32x32 blue anchor icon as fallback
     let width = 32u32;
@@ -2434,8 +2619,11 @@ pub fn run_gui_with_prompt(initial_prompt: &str, _app_state: super::ApplicationS
     let prompt = initial_prompt.to_string();
     
     // Manual window sizing - no auto-sizing constraints
+    let config = crate::core::sys_data::get_config();
+    let width = config.popup_settings.get_default_window_width() as f32;
+    let height = config.popup_settings.get_default_window_height() as f32;
     let viewport_builder = egui::ViewportBuilder::default()
-        .with_inner_size([500.0, 120.0]) // Initial size - will be dynamically resized
+        .with_inner_size([width, height]) // Initial size - will be dynamically resized
         .with_resizable(false) // Disable manual resizing - we control size programmatically
         .with_decorations(false) // Remove title bar and window controls
         .with_transparent(true); // Enable transparency for rounded corners

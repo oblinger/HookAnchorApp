@@ -676,6 +676,7 @@ fn run_start_server_daemon() {
 }
 
 /// Checks if the new_patch is associated with a parent directory of the current_patch
+#[allow(dead_code)]
 fn is_parent_directory_patch(current_patch: &str, new_patch: &str, patches: &std::collections::HashMap<String, crate::Patch>) -> bool {
     use std::path::Path;
     
