@@ -24,6 +24,14 @@ echo "📁 Setting up distribution directory..."
 rm -rf "$DIST_DIR"
 mkdir -p "$DIST_DIR"
 
+# Generate default config from personal config
+echo "📝 Generating default configuration..."
+if python3 scripts/generate_default_config.py; then
+    echo "✅ Default config generated successfully"
+else
+    echo "⚠️  Config generation failed, using existing default"
+fi
+
 # Build universal binary for both architectures
 echo "🔧 Building universal binary..."
 cd "$PROJECT_ROOT"
@@ -204,9 +212,7 @@ keybindings:
   execute_command: "Enter"
   force_rescan: "Backtick"
   show_folder: "Slash"
-  start_grabber: "Plus"
   open_editor: "Equals"
-  add_alias: ">"
   edit_active_command: "Semicolon"
   delete_command: "Delete"
   cancel_editor: "Escape"

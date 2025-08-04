@@ -115,6 +115,16 @@ update_cargo_version "$target_version"
 # Set environment
 export PATH="/opt/homebrew/bin:$PATH"
 
+# Generate default config from personal config
+echo ""
+echo "Generating default configuration..."
+echo "=================================="
+if python3 scripts/generate_default_config.py; then
+    echo "✅ Default config generated successfully"
+else
+    echo "⚠️  Config generation failed, using existing default"
+fi
+
 # Build release
 echo ""
 echo "Building release..."

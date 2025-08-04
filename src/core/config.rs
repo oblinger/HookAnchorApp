@@ -58,21 +58,17 @@ pub struct PopupSettings {
     pub max_window_size: Option<String>,
     /// Default window size for popups in "widthxheight" format (default: "600x400")
     pub default_window_size: Option<String>,
-    /// Maximum window width for dialogs and popups (default: 1700) - DEPRECATED: use max_window_size
-    pub max_window_width: Option<u32>,
-    /// Maximum window height for dialogs and popups (default: 1100) - DEPRECATED: use max_window_size
-    pub max_window_height: Option<u32>,
+    /// Maximum log file size in bytes before clearing (default: 1MB = 1,000,000 bytes)
+    pub max_log_file_size: Option<u64>,
 }
 
 /// Launcher settings section of the configuration file
 #[derive(Debug, Clone, Serialize, Deserialize)]
 pub struct LauncherSettings {
-    pub default_browser: Option<String>,
-    pub work_browser: Option<String>, 
-    pub timeout_ms: Option<u64>,
+ 
+    pub js_timeout_ms: Option<u64>,
     pub obsidian_app_name: Option<String>,
     pub obsidian_vault_name: Option<String>,
-    pub application_folder: Option<String>,
     pub obsidian_vault_path: Option<String>,
     /// Controls whether grabber flips focus during countdown (default: false)
     /// When true: flips to previous app and back during countdown
@@ -83,12 +79,9 @@ pub struct LauncherSettings {
 impl Default for LauncherSettings {
     fn default() -> Self {
         LauncherSettings {
-            default_browser: Some("Google Chrome".to_string()),
-            work_browser: Some("Google Chrome Beta".to_string()),
-            timeout_ms: Some(5000),
+            js_timeout_ms: Some(5000),
             obsidian_app_name: Some("Obsidian".to_string()),
             obsidian_vault_name: Some("kmr".to_string()),
-            application_folder: Some("/Applications/HookAnchor.app".to_string()),
             obsidian_vault_path: Some("~/Documents".to_string()),
             flip_focus: Some(false),
         }
@@ -139,8 +132,7 @@ impl Default for PopupSettings {
             countdown_seconds: Some(5),
             max_window_size: Some("1700x1100".to_string()),
             default_window_size: Some("600x400".to_string()),
-            max_window_width: Some(1700),
-            max_window_height: Some(1100),
+            max_log_file_size: Some(1_000_000), // 1MB default
         }
     }
 }
@@ -382,24 +374,24 @@ fn parse_window_size(size_str: &str) -> Option<(u32, u32)> {
 }
 
 impl PopupSettings {
-    /// Get maximum window width, parsing from max_window_size if available, falling back to max_window_width
+    /// Get maximum window width from max_window_size
     pub fn get_max_window_width(&self) -> u32 {
         if let Some(ref size_str) = self.max_window_size {
             if let Some((width, _)) = parse_window_size(size_str) {
                 return width;
             }
         }
-        self.max_window_width.unwrap_or(1700)
+        1700 // default fallback
     }
     
-    /// Get maximum window height, parsing from max_window_size if available, falling back to max_window_height
+    /// Get maximum window height from max_window_size
     pub fn get_max_window_height(&self) -> u32 {
         if let Some(ref size_str) = self.max_window_size {
             if let Some((_, height)) = parse_window_size(size_str) {
                 return height;
             }
         }
-        self.max_window_height.unwrap_or(1100)
+        1100 // default fallback
     }
     
     /// Get default window width, parsing from default_window_size

@@ -28,9 +28,7 @@ pub struct LauncherConfig {
 
 #[derive(Debug, Clone, Serialize, Deserialize)]
 pub struct LauncherSettings {
-    pub default_browser: Option<String>,
-    pub work_browser: Option<String>,
-    pub timeout_ms: Option<u64>,
+    pub js_timeout_ms: Option<u64>,
 }
 
 
@@ -142,9 +140,7 @@ fn load_config() -> Result<LauncherConfig, LauncherError> {
     let launcher_config = LauncherConfig {
         functions,
         settings: LauncherSettings {
-            default_browser: Some("Google Chrome".to_string()),
-            work_browser: Some("Google Chrome Beta".to_string()),
-            timeout_ms: Some(5000),
+            js_timeout_ms: Some(5000),
         },
     };
     
@@ -300,12 +296,9 @@ mod tests {
         let config = LauncherConfig {
             functions: HashMap::new(),
             settings: LauncherSettings {
-                default_browser: Some("Google Chrome".to_string()),
-                work_browser: None,
-                timeout_ms: Some(5000),
+                js_timeout_ms: Some(5000),
             },
         };
-        assert_eq!(config.settings.default_browser, Some("Google Chrome".to_string()));
         assert_eq!(config.settings.timeout_ms, Some(5000));
     }
 
@@ -344,7 +337,6 @@ mod tests {
         let config = load_config().expect("Should load config");
         
         // Test basic structure
-        assert!(config.settings.default_browser.is_some());
         assert!(config.settings.timeout_ms.is_some());
     }
 }
