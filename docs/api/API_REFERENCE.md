@@ -1,242 +1,360 @@
-k# API Reference
+# HookAnchor Rust API Reference
 
-## src/
+This document provides a comprehensive overview of all modules, structs, enums, and public functions in the HookAnchor Rust codebase. The codebase is well-structured with clear separation between core business logic and UI concerns.
 
-### ha.rs
-| Function | Description |
+## Core Architecture
+
+HookAnchor is organized into the following main architectural layers:
+
+1. **Core Business Logic** (`src/core/`) - Pure business logic, data models, and configuration
+2. **UI Layer** (`src/ui/`) - User interface components and rendering logic  
+3. **System Integration** (`src/`) - Command execution, scanning, grabbing, and system interaction
+4. **JavaScript Runtime** - Embedded JavaScript engine for extensible command processing
+
+## Core Modules (`src/core/`)
+
+### actions.rs
+| Function/Struct | Description |
 |---|---|
-| `main() -> Result<(), eframe::Error>` | Application entry point, routes to GUI or CLI mode |
-
-### lib.rs
-| Function | Description |
-|---|---|
-| `get_listed_actions() -> Vec<String>` | Gets configured actions for command editor dropdown |
-
-## src/core/
+| `get_action()` | Determines action type for file path based on extension and naming conventions |
+| `is_markdown_anchor()` | Checks if markdown file is an "anchor" (base name matches parent folder) |
+| `is_executable()` | Checks if file has executable permissions |
+| `get_default_patch_for_action()` | Returns default patch for a given action type |
 
 ### application_state.rs
-| Function | Description |
+| Function/Struct | Description |
 |---|---|
 | `ApplicationState` | Global application state spanning GUI and CLI modes |
-| `new() -> Self` | Create new application state by loading from files |
-| `new_with_search(String) -> Self` | Create with initial search text |
-| `update_search(String)` | Update search text and recompute filtered commands |
-| `get_commands() -> &[Command]` | Get reference to all commands |
-| `get_commands_mut() -> &mut Vec<Command>` | Get mutable reference to commands |
-| `set_commands(Vec<Command>)` | Update command list for deferred scanner updates |
-| `get_display_commands() -> (Vec<Command>, bool, Option<String>, usize)` | Get display commands with submenu information |
-| `get_hint_text() -> String` | Get hint text for search box |
-| `update_window_position((f32, f32))` | Update window position in app state |
-| `get_window_position() -> Option<(f32, f32)>` | Get saved window position |
-| `is_separator_command(&Command) -> bool` | Check if command is a separator |
-| `check_and_apply_alias()` | Apply alias if search text matches rewrite command |
+| `minimal()` | Creates minimal state for immediate GUI startup |
+| `new()` | Creates state by loading from files with error handling |
+| `new_with_search()` | Creates state with initial search text |
+| `update_search()` | Updates search text and recomputes filtered commands |
+| `check_and_apply_alias()` | Applies rewrite command aliases when word separators are used |
+| `get_display_commands()` | Gets commands with submenu information for display |
 
 ### commands.rs
-| Function | Description |
+| Function/Struct | Description |
 |---|---|
-| `Command` | Command with group, command, action, arg, flags, full_line |
-| `CommandTarget` | Command execution target (Command or Alias) |
-| `load_commands() -> Vec<Command>` | Load commands from file |
-| `save_commands_to_file(&[Command]) -> Result<(), Error>` | Save commands to file |
-| `add_command(Command, &mut Vec<Command>) -> Result<(), Error>` | Add new command to list |
-| `delete_command(&str, &mut Vec<Command>) -> Result<(), Error>` | Delete command by name |
-| `parse_command_line(&str) -> Result<Command, String>` | Parse command line to Command struct |
-| `filter_commands(&[Command], &str, usize, bool) -> Vec<Command>` | Filter commands with fuzzy matching |
-| `command_matches_query(&str, &str) -> bool` | Check if command matches query |
-| `merge_similar_commands(Vec<Command>, &Config) -> Vec<Command>` | Merge similar commands ending with ... |
-| `execute_command(&Command) -> CommandTarget` | Execute command (handles aliases) |
-| `get_display_commands(&[Command], &str, &Config, usize) -> Vec<Command>` | Get commands for display with limits |
-| `split_commands(&[Command], &str, &str) -> Vec<Command>` | Split into submenu sections |
-| `get_current_submenu_prefix_from_commands(&[Command], &str, &str) -> Option<String>` | Get submenu prefix from commands |
-| `migrate_commands_to_new_format(&mut [Command])` | Migrate commands to new format |
-| `get_command_prefix(&str, &str) -> String` | Get command prefix based on separators |
-| `get_flag(char) -> Option<String>` | Get flag value by key |
-| `set_flag(char, &str)` | Set flag value |
-| `remove_flag(char)` | Remove flag by key |
-| `update_full_line()` | Update full_line field from components |
-| `to_new_format() -> String` | Convert command to new format string |
-| `get_commands_file_path() -> PathBuf` | Get path to commands.txt |
-| `backup_commands_file() -> Result<(), Error>` | Create backup of commands file |
+| `Command` | Core data structure representing a parsed command |
+| `CommandTarget` | Enum for command execution targets (Command/Alias) |
+| `Patch` | Associates dispatcher with linked command |
+| `get_patch()` | Case-insensitive patch lookup |
+| `get_absolute_file_path()` | Returns absolute file path with tilde expansion |
+| `filter_commands()` | Filters commands based on search query with fuzzy matching |
+| `merge_similar_commands()` | Merges commands ending with "..." |
+| `load_commands_with_data()` | Comprehensive command loading with all processing steps |
+| `infer_patch()` | Infers appropriate patch for a command |
+| `get_patch_path()` | Traverses patch hierarchy from command to orphans root |
 
 ### config.rs
-| Function | Description |
+| Function/Struct | Description |
 |---|---|
-| `Config` | Main configuration structure |
-| `PopupSettings` | Popup window settings |
+| `Config` | Main configuration structure from YAML files |
+| `PopupSettings` | Popup window configuration settings |
 | `LauncherSettings` | Launcher behavior settings |
-| `load_config() -> Config` | Load configuration from file |
-| `load_config_with_error() -> ConfigResult` | Load config with error details |
-| `get_config_file_path() -> PathBuf` | Get configuration file path |
-| `is_key_bound_to_action(&str, &str) -> bool` | Check if key is bound to action |
-| `get_action_for_key(&str) -> Option<&str>` | Get action for key name |
-j
-### state.rs
-| Function | Description |
-|---|---|
-| `AppState` | Persistent application state |
-| `load_state() -> AppState` | Load state from state.json |
-| `save_state(&AppState) -> Result<(), Error>` | Save state to state.json |
-| `save_state_with_build_time() -> Result<(), Error>` | Update state with current build time |
-| `get_state_file_path() -> PathBuf` | Get path to state.json |
+| `ScannerSettings` | Scanner behavior settings |
+| `load_config_with_error()` | Loads configuration with detailed error reporting |
+| `get_config_file_path()` | Returns path to YAML config file |
+| `is_key_bound_to_action()` | Checks if key is bound to specific action |
+| `get_action_for_key()` | Gets action bound to key (simple keys) |
+| `get_action_for_key_with_modifiers()` | Gets action bound to key with modifier support |
+| `get_template_for_key()` | Gets template bound to key (simple keys) |
+| `get_template_for_key_with_modifiers()` | Gets template bound to key with modifier support |
 
-## src/ui/
-
-### popup.rs
-| Function | Description |
+### key_parsing.rs
+| Function/Struct | Description |
 |---|---|
-| `AnchorSelector` | Main popup application state |
-| `run_gui_with_prompt(&str, ApplicationState) -> Result<(), eframe::Error>` | Run GUI with initial prompt |
-| `save_window_position(egui::Pos2)` | Save window position to state |
-| `load_window_position() -> Option<egui::Pos2>` | Load saved window position |
-| `is_position_visible(egui::Pos2, egui::Vec2) -> bool` | Check if position is visible on screen |
-| `center_on_main_display(&egui::Context, egui::Vec2) -> egui::Pos2` | Center window on main display |
-| `new() -> Self` | Create new AnchorSelector |
-| `new_with_prompt(&str) -> Self` | Create with initial search prompt |
+| `KeyChord` | Represents parsed key combination with modifiers |
+| `parse_key_string()` | Parses key strings (ASCII, named keys, chords like "Cmd+C") |
+| `key_matches()` | Checks if key event matches configuration string |
+| `ascii_to_key_name()` | Converts ASCII characters to standard key names |
+| `normalize_modifier()` | Normalizes modifier names (cmd/command → Cmd) |
 
-### popup_state.rs
-| Function | Description |
+### state.rs  
+| Function/Struct | Description |
 |---|---|
-| `PopupState` | Core popup state separated from UI |
-| `new(Vec<Command>, Config, AppState) -> Self` | Create new popup state |
-| `update_search(String)` | Update search text and recompute commands |
-| `navigate(Direction) -> bool` | Navigate selection in direction |
-| `get_selected_command() -> Option<&Command>` | Get currently selected command |
-| `get_command_at_position(usize, usize) -> Option<&Command>` | Get command at grid position |
-| `set_selection_to_position(usize, usize) -> bool` | Set selection to grid position |
-| `get_commands() -> &[Command]` | Get all available commands |
-| `set_commands(Vec<Command>)` | Update command list |
-| `get_layout_dimensions() -> (usize, usize)` | Get layout dimensions (rows, cols) |
-| `should_display_command(&Command) -> bool` | Check if command should be displayed |
-| `get_submenu_info() -> Option<&SubmenuInfo>` | Get current submenu information |
-| `get_display_commands_for_rendering() -> Vec<&Command>` | Get commands for UI rendering |
-| `navigate_horizontal(i32) -> bool` | Navigate horizontally by offset |
-| `navigate_vertical(i32) -> bool` | Navigate vertically by offset |
-| `get_hint_text() -> String` | Get hint text for search input |
+| `AppState` | Persistent application state between runs |
+| `load_state()` | Loads state from JSON file |
+| `save_state()` | Saves state to JSON file |
+| `save_state_with_build_time()` | Updates build time in state |
+| `save_last_executed_command()` | Updates last executed command for template system |
+| `save_server_pid()` | Updates server PID |
+| `clear_server_pid()` | Clears server PID |
 
-### layout.rs
-| Function | Description |
+### sys_data.rs
+| Function/Struct | Description |
 |---|---|
-| `DisplayLayout` | Commands arrangement for display |
-| `LayoutArrangement` | Visual arrangement (SingleColumn or MultiColumn) |
-| `SubmenuInfo` | Submenu display information |
-| `Selection` | Selection position tracking |
-| `Direction` | Navigation directions enum |
-| `new(Vec<Command>, &Config) -> Self` | Create new display layout |
-| `get_command_at_position(usize, usize) -> Option<&Command>` | Get command at visual position |
-| `visual_to_index(usize, usize) -> Option<usize>` | Convert visual position to index |
-| `index_to_visual(usize) -> Option<(usize, usize)>` | Convert index to visual position |
-| `get_dimensions() -> (usize, usize)` | Get layout dimensions |
-| `from_index(usize, &DisplayLayout) -> Self` | Create selection from index |
-| `navigate(Direction, &DisplayLayout) -> bool` | Navigate selection in direction |
-| `get_command(&DisplayLayout) -> Option<&Command>` | Get selected command |
-| `reset(&DisplayLayout)` | Reset selection to first valid command |
+| `SysData` | System-wide data structure with config, commands, patches |
+| `get_sys_data()` | Gets cached system data, loading if necessary |
+| `get_config()` | Gets just configuration without full data loading |
+| `clear_sys_data()` | Clears cache, forcing reload from disk |
+| `load_data()` | Comprehensive data loading with caching |
+
+### template_creation.rs
+| Function/Struct | Description |
+|---|---|
+| `Template` | Template for creating new commands with variable expansion |
+| `TemplateContext` | Context for template variable expansion with 15+ variable types |
+| `create_command_from_template()` | Creates command from template and context |
+| `process_template()` | Processes template and creates associated files |
+| `extract_folder_from_path()` | Extracts folder path from file path |
+| `add_datetime_variables()` | Adds date/time variables (YYYY, MM, DD, etc.) |
+
+## UI Modules (`src/ui/`)
 
 ### command_editor.rs
-| Function | Description |
+| Function/Struct | Description |
 |---|---|
-| `CommandEditor` | Command editor dialog state |
-| `CommandEditorResult` | Editor result enum |
-| `new() -> Self` | Create new command editor |
-| `hide()` | Hide the editor dialog |
-| `update_commands(&[Command])` | Update internal commands list |
-| `edit_command(Option<&Command>, &str)` | Start editing command |
-| `open_with_command(Command)` | Open editor with pre-filled command |
-| `update(&egui::Context, &Config) -> CommandEditorResult` | Update and render editor |
-| `prepare_save_command() -> (Option<String>, Command)` | Prepare command for saving |
-| `delete_original_command(&mut Vec<Command>) -> Result<(), String>` | Delete original command from list |
+| `CommandEditor` | Dialog for editing/creating commands |
+| `CommandEditorResult` | Result enum for editor actions |
+| `edit_command()` | Opens editor with existing command or new command |
+| `open_with_command()` | Opens editor with pre-filled command |
+| `update()` | Handles UI updates and user input |
+| `prepare_save_command()` | Prepares command for saving with validation |
+| `delete_original_command()` | Deletes original command from list |
 
 ### dialog.rs
-| Function | Description |
+| Function/Struct | Description |
 |---|---|
-| `Dialog` | General dialog system |
-| `DialogElement` | Dialog element types |
-| `DialogRow` | Row of dialog elements |
-| `new() -> Self` | Create new dialog |
-| `show(Vec<String>)` | Show dialog with specification strings |
-| `show_error(&str)` | Show error message dialog |
-| `hide()` | Hide the dialog |
-| `take_result() -> Option<HashMap<String, String>>` | Take dialog input results |
-| `calculate_required_size() -> (f32, f32)` | Calculate required dialog size |
-| `update(&egui::Context) -> bool` | Update and render dialog |
+| `Dialog` | Generic dialog system with spec string parsing |
+| `DialogElement` | Enum for different dialog element types |
+| `DialogRow` | Container for dialog elements in a row |
+| `show_error()` | Shows error dialog with message |
+| `update()` | Handles dialog rendering and user interaction |
+| `take_result()` | Gets dialog result and clears internal state |
 
-## src/
-
-### cmd.rs
-| Function | Description |
+### layout.rs
+| Function/Struct | Description |
 |---|---|
-| `run_command_line_mode(Vec<String>)` | Main CLI entry point |
-| `print_help(&str)` | Print help message |
+| `DisplayLayout` | Manages command arrangement for display |
+| `LayoutArrangement` | Enum for single/multi-column arrangements |
+| `Selection` | Tracks selection position in visual and logical space |
+| `Direction` | Navigation direction enum |
+| `get_command_at_position()` | Gets command at visual position |
+| `navigate()` | Moves selection in given direction |
+| `visual_to_index()` | Converts visual position to logical index |
+| `index_to_visual()` | Converts logical index to visual position |
 
-### launcher.rs
-| Function | Description |
+### popup.rs
+| Function/Struct | Description |
 |---|---|
-| `LauncherError` | Launcher error types |
-| `LauncherConfig` | Launcher configuration |
-| `LauncherSettings` | Launcher settings |
-| `launch(&str) -> Result<(), LauncherError>` | Launch command line |
+| `AnchorSelector` | Main popup window application state |
+| `WindowSizeMode` | Enum for different window sizing modes |
+| `LoadingState` | Enum for deferred initialization states |
+| `run_gui_with_prompt()` | Main entry point for GUI mode |
+| `handle_template_create_named()` | Handles template creation with variable expansion |
+| `execute_grab()` | Executes grabber with countdown |
+| `show_error_dialog()` | Shows error dialog to user |
+| `key_generates_text()` | Checks if key press generates text |
 
-### scanner.rs
-| Function | Description |
+### popup_state.rs
+| Function/Struct | Description |
 |---|---|
-| `startup_check(Vec<Command>) -> Vec<Command>` | Check if filesystem scan needed on startup |
-| `scan(Vec<Command>, &[String]) -> Vec<Command>` | Top-level scan function |
-| `scan_files(Vec<Command>, &[String]) -> Vec<Command>` | Scan markdown files for commands |
-| `scan_contacts(Vec<Command>) -> Vec<Command>` | Scan macOS contacts |
+| `PopupState` | Core popup state separated from UI rendering |
+| `new_minimal()` | Creates minimal state for early UI display |
+| `update_search()` | Updates search and recomputes commands |
+| `navigate()` | Navigates selection |
+| `get_selected_command()` | Gets currently selected command |
+| `get_command_at_position()` | Gets command at grid position |
+| `set_selection_to_position()` | Sets selection to specific position |
 
-### utils.rs
-| Function | Description |
-|---|---|
-| `debug_log(&str, &str)` | Debug logging to file |
-| `expand_tilde(&str) -> String` | Expand ~ in file paths |
-| `launch_app_with_arg(&str, Option<&str>) -> Result<Output, Error>` | Launch app with optional argument |
-| `open_url(&str) -> Result<Output, Error>` | Open URL in default browser |
-| `open_folder(&str) -> Result<Output, Error>` | Open folder in Finder |
-| `execute_shell_command(&str) -> Result<Output, Error>` | Execute shell command |
-| `execute_shell_command_with_env(&str) -> Result<Output, Error>` | Execute shell command with environment |
-| `open_with_app(&str, &str) -> Result<Output, Error>` | Open file/URL with specific app |
-
-### eval.rs
-| Function | Description |
-|---|---|
-| `Environment` | Evaluation environment |
-| `EvalError` | Evaluation error types |
-| `substitute_template_in_args(&HashMap<String, serde_yaml::Value>, &Environment) -> HashMap<String, serde_yaml::Value>` | Template substitution in arguments |
-| `substitute_template_in_value(&serde_yaml::Value, &Environment) -> serde_yaml::Value` | Template substitution in values |
-| `new() -> Result<Self, Error>` | Create new evaluation environment |
-| `eval(serde_yaml::Value) -> Result<serde_yaml::Value, EvalError>` | Unified evaluation function |
-
-### js_runtime.rs
-| Function | Description |
-|---|---|
-| `create_business_logic_runtime() -> Result<Context, Error>` | Create JavaScript runtime |
-| `create_business_logic_runtime_with_config(&Config) -> Result<Context, Error>` | Create JS runtime with config |
-| `setup_all_builtins(&Ctx) -> Result<(), Error>` | Setup all built-in functions |
-| `execute_business_logic(&str) -> Result<String, Error>` | Execute JavaScript code |
-| `setup_config_access(&Ctx, &Config) -> Result<(), Error>` | Setup config access in JS |
-
-### business_logic.rs
-| Function | Description |
-|---|---|
-| `run_business_script(&str) -> Result<String, Error>` | Execute business logic script |
-| `scan_markdown_commands() -> Result<Vec<Command>, Error>` | Scan markdown files for commands |
-| `update_commands_from_markdown() -> Result<usize, Error>` | Update commands from markdown |
-| `activate_anchor(&str) -> Result<String, Error>` | Activate anchor project |
+## System Integration Modules (`src/`)
 
 ### builtin_fns.rs
-| Function | Description |
+| Function/Struct | Description |
 |---|---|
-| `setup_builtin_functions(&mut Environment)` | Setup all built-in functions |
+| `setup_builtin_functions()` | Registers all built-in functions in environment |
+| `launch_app` | Built-in function for launching applications |
+| `open_with` | Built-in function for opening files with specific apps |
+| `open_url` | Built-in function for opening URLs |
+| `shell` | Built-in function for shell command execution |
+| `javascript` | Built-in function for JavaScript code execution |
+
+### business_logic.rs
+| Function/Struct | Description |
+|---|---|
+| `run_business_script()` | Executes business logic script from embedded scripts |
+| `scan_markdown_commands()` | Scans for markdown-based commands |
+| `activate_anchor()` | Activates anchor project using JavaScript |
+
+### cmd.rs
+| Function/Struct | Description |
+|---|---|
+| `run_command_line_mode()` | Main entry point for CLI mode |
+| `print_help()` | Prints command-line help |
+| `handle_hook_url()` | Handles hook:// URL processing |
+| `run_match_command()` | Searches and displays matching commands |
+| `run_execute_top_match()` | Executes top matching command with state saving |
+| `run_infer_patches()` | Shows patch inference changes |
+| `run_rescan_command()` | Rescans filesystem with verbose output |
+| `run_rebuild_command()` | Full system rebuild (server restart + rescan) |
+
+### command_launcher.rs
+| Function/Struct | Description |
+|---|---|
+| `LauncherConfig` | Configuration for command launcher |
+| `LauncherSettings` | Launcher behavior settings |
+| `LauncherError` | Error types for launcher operations |
+| `launch()` | Main entry point for command launching |
+| `parse_command_line()` | Parses command line into action and arguments |
+| `load_config()` | Loads launcher configuration from YAML |
+
+### command_server.rs
+| Function/Struct | Description |
+|---|---|
+| `CommandServer` | Background server for command execution |
+| `CommandRequest` | Request structure for command execution |
+| `CommandResponse` | Response structure with execution results |
+| `CommandClient` | Client for communicating with command server |
+| `execute_via_server()` | Executes commands via background server |
+| `start_persistent_server()` | Starts long-running command server |
+| `execute_command_with_depth()` | Executes commands with alias resolution and depth tracking |
+
+### command_server_management.rs
+| Function/Struct | Description |
+|---|---|
+| `start_server_if_needed()` | Starts server with session-based caching |
+| `is_process_alive()` | Checks if process with PID is running |
+| `start_server_via_terminal()` | Starts server in Terminal window |
+| `kill_existing_server()` | Kills existing server process |
+| `reset_server_check()` | Resets server status check cache |
+
+### dispatcher.rs
+| Function/Struct | Description |
+|---|---|
+| `main()` | Main dispatcher routing execution based on launch context |
+| `launch_popup()` | Launches GUI popup mode |
+| `handle_hook_url()` | Processes hook:// URLs via server |
+
+### error_display.rs
+| Function/Struct | Description |
+|---|---|
+| `init_error_queue()` | Initializes global error queue |
+| `queue_user_error()` | Queues error for display to user |
+| `take_next_error()` | Takes next error from queue |
+| `has_errors()` | Checks if errors are queued |
+| `clear_errors()` | Clears all errors from queue |
+
+### eval.rs
+| Function/Struct | Description |
+|---|---|
+| `Environment` | JavaScript execution environment with variables |
+| `EvalError` | Error types for evaluation operations |
+| `new()` | Creates new environment with JavaScript runtime |
+| `eval()` | Evaluates YAML-defined actions |
 
 ### grabber.rs
-| Function | Description |
+| Function/Struct | Description |
 |---|---|
-| `AppContext` | Captured application information |
-| `GrabberRule` | Rule for matching context |
+| `AppContext` | Information about active application |
+| `GrabberRule` | Rule matching against app context |
 | `GrabResult` | Result of grab operation |
-| `capture_active_app() -> Result<AppContext, String>` | Capture active application context |
-| `get_browser_info(&str) -> Option<String>` | Get browser-specific information |
-| `get_finder_info() -> Option<String>` | Get Finder path information |
-| `enrich_context(AppContext) -> AppContext` | Enrich context with additional info |
-| `match_grabber_rules(&AppContext, &[GrabberRule], &Config) -> Option<(String, Command)>` | Match context against grabber rules |
-| `generate_rule_template_text(&AppContext) -> String` | Generate rule template from context |
-| `grab(&Config) -> Result<GrabResult, String>` | Perform context grab operation |
+| `capture_active_app()` | Captures active application context |
+| `match_grabber_rules()` | Matches context against rules |
+| `grab()` | Main grab function combining capture and matching |
+
+### js_runtime.rs
+| Function/Struct | Description |
+|---|---|
+| `execute_business_logic()` | Executes JavaScript in business logic context |
+| `setup_all_builtins()` | Sets up all JavaScript built-in functions |
+| `setup_config_access()` | Sets up configuration access functions |
+| Built-in JS functions | 50+ built-in functions for file ops, logging, system control |
+
+### lib.rs
+| Function/Struct | Description |
+|---|---|
+| `init_binary_path()` | Initializes global binary path for process spawning |
+| `get_binary_path()` | Gets path of currently running binary |
+| `get_listed_actions()` | Gets configured actions for command editor dropdown |
+| Module exports | Re-exports all major modules and types |
+
+### popup_main.rs
+| Function/Struct | Description |
+|---|---|
+| `main()` | Top-level application coordinator |
+| Application routing | Determines GUI vs CLI mode based on arguments |
+| Setup integration | Runs setup assistant on first launch |
+
+### process_monitor.rs
+| Function/Struct | Description |
+|---|---|
+| `check_system_health()` | Monitors system health after command execution |
+| Health monitoring | Tracks process performance and system resources |
+
+### scanner.rs
+| Function/Struct | Description |
+|---|---|
+| `scan_verbose()` | Scans filesystem with detailed output |
+| `startup_check()` | Quick startup validation of commands |
+| Filesystem scanning | Recursively scans configured roots for commands |
+
+### setup_assistant.rs
+| Function/Struct | Description |
+|---|---|
+| `SetupAssistant` | Handles installation and configuration |
+| `check_and_run_setup()` | Checks if setup needed and runs if required |
+| `run_setup()` | Executes setup process |
+| `install_hookanchor()` | Installs HookAnchor components |
+| `uninstall_hookanchor()` | Uninstalls HookAnchor components |
+
+### url_handler.rs
+| Function/Struct | Description |
+|---|---|
+| URL scheme handling | Handles hook:// URL scheme registration |
+| Apple Events | Processes URLs via Apple Events (not command line) |
+
+### utils.rs
+| Function/Struct | Description |
+|---|---|
+| `debug_log()` | Debug logging to configured file |
+| `verbose_log()` | Conditional verbose logging |
+| `expand_tilde()` | Expands ~ in paths to home directory |
+| `launch_app_with_arg()` | Launches macOS app with optional argument |
+| `open_url()` | Opens URL in default browser |
+| `shell_simple()` | Simple shell command execution |
+| `shell_login()` | Shell execution with login environment |
+
+### vault.rs
+| Function/Struct | Description |
+|---|---|
+| Obsidian integration | Functions for working with Obsidian vaults |
+| Vault operations | Opening and managing vault files |
+
+## Key Observations and Potential Redundancies
+
+### **Areas of Potential Redundancy:**
+
+1. **Command Loading:** Multiple functions load commands (`load_commands()`, `load_commands_with_data()`, `load_commands_for_inference()`) with different processing steps
+2. **Error Handling:** Multiple error types (`EvalError`, `LauncherError`) with overlapping functionality
+3. **Configuration Loading:** Config loading spread across multiple modules with different error handling approaches
+4. **Shell Execution:** Multiple shell execution functions (`shell_simple()`, `shell_login()`, `shell()`, `shell_sync()`) with different behaviors
+5. **State Management:** Both `ApplicationState` and `PopupState` manage similar command filtering and display logic
+
+### **Well-Designed Separations:**
+
+1. **Core/UI Separation:** Clean separation between business logic (`core/`) and UI (`ui/`)
+2. **Command Server:** Dedicated background server architecture for consistent command execution
+3. **Template System:** Comprehensive template creation system with variable expansion
+4. **JavaScript Integration:** Rich JavaScript runtime with 50+ built-in functions
+5. **Error Display System:** Global error queue for non-UI components to communicate with users
+6. **Key Parsing System:** Unified key parsing with chord support (simple keys + modifiers)
+
+### **Architecture Strengths:**
+
+- **Modular Design:** Clear module boundaries with specific responsibilities
+- **Extensibility:** JavaScript runtime allows user customization without recompilation
+- **Cross-Platform Considerations:** Proper tilde expansion, path handling, and environment management
+- **Robust Error Handling:** Multiple error types and comprehensive error reporting
+- **Performance:** Caching mechanisms and efficient command filtering
+- **Template System:** Rich variable expansion with 15+ variable types including previous command context
+
+### **Recent Enhancements:**
+
+- **Template Creation System:** Complete template system with variable expansion, file creation, and editor integration
+- **Previous Command Variables:** Template access to previously executed command (name, path, patch, folder)
+- **Chord Key Support:** Support for modifier key combinations like "Cmd+C", "Ctrl+Shift+A"
+- **Enhanced State Management:** Proper state persistence for template system functionality
+- **Improved Error Display:** Dynamic error dialog sizing and better user feedback
+
+This codebase demonstrates mature Rust practices with good separation of concerns, comprehensive error handling, and thoughtful architecture for a desktop application with both GUI and CLI interfaces.

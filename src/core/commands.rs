@@ -480,6 +480,7 @@ fn infer_patch_from_file_path_with_exclusion(file_path: &str, patches: &HashMap<
 
 /// Legacy function: Infers patch from file path by checking folder associations
 /// This maintains the existing logic for raw path analysis without config dependency
+#[allow(dead_code)]
 fn infer_patch_from_file_path(file_path: &str, patches: &HashMap<String, Patch>) -> Option<String> {
     use std::path::Path;
     
@@ -1473,7 +1474,7 @@ pub fn delete_command(command_to_delete: &str, commands: &mut Vec<Command>) -> R
 }
 
 /// Filters commands based on search text with fuzzy matching and patch support
-pub fn filter_commands_with_patch_support(commands: &[Command], search_text: &str, max_results: usize, word_separators: &str, debug: bool) -> Vec<Command> {
+pub fn filter_commands_with_patch_support(commands: &[Command], search_text: &str, max_results: usize, _word_separators: &str, debug: bool) -> Vec<Command> {
     if search_text.is_empty() {
         return Vec::new();
     }
@@ -2590,6 +2591,7 @@ mod tests {
 
 /// Helper function to determine if an action uses the client environment
 /// Returns true for actions that execute directly in the client process
+#[allow(dead_code)]
 fn uses_client_environment(action: &str) -> bool {
     match action {
         // Actions that use direct client execution (open commands, app launching)
@@ -2611,6 +2613,7 @@ fn uses_client_environment(action: &str) -> bool {
 }
 
 /// Log client environment information (only when verbose logging is enabled)
+#[allow(dead_code)]
 fn log_client_environment() {
     crate::utils::verbose_log("CLIENT_ENV", &format!("PWD: {:?}", std::env::var("PWD")));
     crate::utils::verbose_log("CLIENT_ENV", &format!("PATH: {:?}", std::env::var("PATH")));

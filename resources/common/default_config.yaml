@@ -16,6 +16,11 @@ popup_settings:
   idle_timeout_seconds: 60  # Auto-close after 60 seconds of inactivity (default)
   # Command editor dropdown actions (comma-separated list)
   listed_actions: "alias,anchor,app,url,folder,cmd,chrome,safari,brave,firefox,work,notion,obs,obs_url,1pass,rewrite,doc,contact,slack,text,shutdown"
+  # Maximum window/dialog sizes (adjust for your monitor)
+  max_window_size: "1700x1100"     # Maximum size for dialogs and popups in "widthxheight" format
+  default_window_size: "600x400"   # Default popup window size in "widthxheight" format
+  max_window_width: 1700            # DEPRECATED: use max_window_size instead
+  max_window_height: 1100           # DEPRECATED: use max_window_size instead
 
 # Markdown file scanning roots (automatic scanning enabled)
 markdown_roots:
@@ -53,6 +58,7 @@ keybindings:
   edit_active_command: "Semicolon"  # Edit currently selected command
   delete_command: "Delete"     # Delete command in editor
   cancel_editor: "Escape"      # Cancel command editor
+  show_keys: "Questionmark"    # Show all available key bindings
 
 # =================================================================
 # FUNCTIONS

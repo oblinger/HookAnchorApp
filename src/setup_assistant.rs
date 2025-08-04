@@ -9,6 +9,7 @@ use std::process::Command;
 use serde_json::json;
 
 const KARABINER_CLI_PATH: &str = "/Library/Application Support/org.pqrs/Karabiner-Elements/bin/karabiner_cli";
+#[allow(dead_code)]
 const KARABINER_CONFIG_DIR: &str = "~/.config/karabiner/assets/complex_modifications";
 
 pub struct SetupAssistant {
@@ -515,6 +516,7 @@ impl SetupAssistant {
     }
     
     /// Remove configuration directory (with user confirmation for data)
+    #[allow(dead_code)]
     fn remove_config_directory(&self) -> Result<(), Box<dyn std::error::Error>> {
         if !self.config_dir.exists() {
             println!("ℹ️  Configuration directory not found");
@@ -563,6 +565,7 @@ impl SetupAssistant {
     }
     
     /// Remove configuration directory (silent version without user confirmation)
+    #[allow(dead_code)]
     fn remove_config_directory_silent(&self) -> Result<(), Box<dyn std::error::Error>> {
         if self.config_dir.exists() {
             fs::remove_dir_all(&self.config_dir)?;

@@ -47,6 +47,10 @@ pub struct Template {
     /// Optional seconds to wait before grabbing window
     #[serde(skip_serializing_if = "Option::is_none")]
     pub grab: Option<u32>,
+    
+    /// Optional description of what this template does (for help display)
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub description: Option<String>,
 }
 
 /// Context for template variable expansion

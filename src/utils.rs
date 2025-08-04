@@ -68,7 +68,6 @@ pub fn expand_tilde(path: &str) -> String {
 /// Consolidates the common pattern of launching apps with the `-a` flag
 /// Uses non-blocking spawn to prevent UI lockups
 pub fn launch_app_with_arg(app: &str, arg: Option<&str>) -> Result<std::process::Output, std::io::Error> {
-    debug_log("UTILS", &format!("launch_app_with_arg: app='{}', arg={:?}", app, arg));
     
     let mut cmd = Command::new("open");
     cmd.arg("-a").arg(app);
@@ -79,14 +78,12 @@ pub fn launch_app_with_arg(app: &str, arg: Option<&str>) -> Result<std::process:
     }
     
     // Use spawn + detach for non-blocking execution to prevent UI lockups
-    debug_log("UTILS", "Spawning non-blocking open command");
     let child = cmd.spawn()?;
     
     // Register the process for monitoring
     let command_str = format!("open -a {} {}", app, arg.unwrap_or(""));
-    let process_id = crate::process_monitor::register_process(child, command_str);
+    let _process_id = crate::process_monitor::register_process(child, command_str);
     
-    debug_log("UTILS", &format!("Process spawned successfully (ID: {}), returning immediate success", process_id));
     
     // For non-blocking execution, we don't wait for the result
     // The application will open independently without blocking the UI
@@ -101,16 +98,13 @@ pub fn launch_app_with_arg(app: &str, arg: Option<&str>) -> Result<std::process:
 /// Consolidates the common pattern of opening URLs  
 /// Uses non-blocking spawn to prevent UI lockups
 pub fn open_url(url: &str) -> Result<std::process::Output, std::io::Error> {
-    debug_log("UTILS", &format!("open_url: url='{}'", url));
     
-    debug_log("UTILS", "Spawning non-blocking open command for URL");
     let child = Command::new("open").arg(url).spawn()?;
     
     // Register the process for monitoring
     let command_str = format!("open {}", url);
-    let process_id = crate::process_monitor::register_process(child, command_str);
+    let _process_id = crate::process_monitor::register_process(child, command_str);
     
-    debug_log("UTILS", &format!("URL open process spawned successfully (ID: {})", process_id));
     
     // For non-blocking execution, we don't wait for the result
     Err(std::io::Error::new(
@@ -125,16 +119,13 @@ pub fn open_url(url: &str) -> Result<std::process::Output, std::io::Error> {
 /// Uses non-blocking spawn to prevent UI lockups
 pub fn open_folder(path: &str) -> Result<std::process::Output, std::io::Error> {
     let expanded_path = expand_tilde(path);
-    debug_log("UTILS", &format!("open_folder: path='{}' -> '{}'", path, expanded_path));
     
-    debug_log("UTILS", "Spawning non-blocking open command for folder");
     let child = Command::new("open").arg(&expanded_path).spawn()?;
     
     // Register the process for monitoring
     let command_str = format!("open {}", expanded_path);
-    let process_id = crate::process_monitor::register_process(child, command_str);
+    let _process_id = crate::process_monitor::register_process(child, command_str);
     
-    debug_log("UTILS", &format!("Folder open process spawned successfully (ID: {})", process_id));
     
     // For non-blocking execution, we don't wait for the result
     Err(std::io::Error::new(
@@ -548,7 +539,6 @@ fn execute_detached(command: &str, options: ShellOptions) -> Result<std::process
 /// Consolidates the open-with pattern used throughout the codebase
 /// Uses non-blocking spawn to prevent UI lockups
 pub fn open_with_app(app: &str, target: &str) -> Result<std::process::Output, std::io::Error> {
-    debug_log("UTILS", &format!("open_with_app: app='{}', target='{}'", app, target));
     
     // For browsers, add -F flag to bring app to foreground
     let mut cmd = Command::new("open");
@@ -559,21 +549,16 @@ pub fn open_with_app(app: &str, target: &str) -> Result<std::process::Output, st
         cmd.arg("-a").arg(app).arg(target);
     }
     
-    debug_log("UTILS", &format!("Spawning non-blocking open command: open -a \"{}\" \"{}\"", app, target));
     
     // Add environment info
-    debug_log("UTILS", &format!("Current working directory: {:?}", std::env::current_dir().ok()));
-    debug_log("UTILS", &format!("USER env var: {:?}", std::env::var("USER").ok()));
-    debug_log("UTILS", &format!("HOME env var: {:?}", std::env::var("HOME").ok()));
     
     // Try to spawn the command
     let child = match cmd.spawn() {
         Ok(child) => {
-            debug_log("UTILS", &format!("Successfully spawned process with PID: {:?}", child.id()));
             child
         },
         Err(e) => {
-            debug_log("UTILS", &format!("Failed to spawn open command: {}", e));
+            eprintln!("Warning: Failed to spawn open command: {}", e);
             return Err(e);
         }
     };
@@ -584,13 +569,11 @@ pub fn open_with_app(app: &str, target: &str) -> Result<std::process::Output, st
     } else {
         format!("open -a {} {}", app, target)
     };
-    let process_id = crate::process_monitor::register_process(child, command_str.clone());
+    let _process_id = crate::process_monitor::register_process(child, command_str.clone());
     
-    debug_log("UTILS", &format!("Open with app process spawned successfully (ID: {})", process_id));
     
     // Check if the process is actually running
     std::thread::sleep(std::time::Duration::from_millis(100));
-    debug_log("UTILS", &format!("Checking if '{}' process started...", command_str));
     
     // For non-blocking execution, we don't wait for the result
     Err(std::io::Error::new(

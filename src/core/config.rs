@@ -54,6 +54,14 @@ pub struct PopupSettings {
     pub idle_timeout_seconds: Option<u64>,
     /// Seconds for grabber countdown (default: 5)
     pub countdown_seconds: Option<u8>,
+    /// Maximum window size for dialogs and popups in "widthxheight" format (default: "1700x1100")
+    pub max_window_size: Option<String>,
+    /// Default window size for popups in "widthxheight" format (default: "600x400")
+    pub default_window_size: Option<String>,
+    /// Maximum window width for dialogs and popups (default: 1700) - DEPRECATED: use max_window_size
+    pub max_window_width: Option<u32>,
+    /// Maximum window height for dialogs and popups (default: 1100) - DEPRECATED: use max_window_size
+    pub max_window_height: Option<u32>,
 }
 
 /// Launcher settings section of the configuration file
@@ -129,6 +137,10 @@ impl Default for PopupSettings {
             scan_interval_seconds: Some(10),
             idle_timeout_seconds: Some(60),
             countdown_seconds: Some(5),
+            max_window_size: Some("1700x1100".to_string()),
+            default_window_size: Some("600x400".to_string()),
+            max_window_width: Some(1700),
+            max_window_height: Some(1100),
         }
     }
 }
@@ -357,6 +369,60 @@ fn create_default_config() -> Config {
     }
 }
 
+/// Parse a window size string in "widthxheight" format (e.g., "1700x1100")
+/// Returns (width, height) or None if parsing fails
+fn parse_window_size(size_str: &str) -> Option<(u32, u32)> {
+    let parts: Vec<&str> = size_str.split('x').collect();
+    if parts.len() == 2 {
+        if let (Ok(width), Ok(height)) = (parts[0].parse::<u32>(), parts[1].parse::<u32>()) {
+            return Some((width, height));
+        }
+    }
+    None
+}
+
+impl PopupSettings {
+    /// Get maximum window width, parsing from max_window_size if available, falling back to max_window_width
+    pub fn get_max_window_width(&self) -> u32 {
+        if let Some(ref size_str) = self.max_window_size {
+            if let Some((width, _)) = parse_window_size(size_str) {
+                return width;
+            }
+        }
+        self.max_window_width.unwrap_or(1700)
+    }
+    
+    /// Get maximum window height, parsing from max_window_size if available, falling back to max_window_height
+    pub fn get_max_window_height(&self) -> u32 {
+        if let Some(ref size_str) = self.max_window_size {
+            if let Some((_, height)) = parse_window_size(size_str) {
+                return height;
+            }
+        }
+        self.max_window_height.unwrap_or(1100)
+    }
+    
+    /// Get default window width, parsing from default_window_size
+    pub fn get_default_window_width(&self) -> u32 {
+        if let Some(ref size_str) = self.default_window_size {
+            if let Some((width, _)) = parse_window_size(size_str) {
+                return width;
+            }
+        }
+        600 // hardcoded default
+    }
+    
+    /// Get default window height, parsing from default_window_size
+    pub fn get_default_window_height(&self) -> u32 {
+        if let Some(ref size_str) = self.default_window_size {
+            if let Some((_, height)) = parse_window_size(size_str) {
+                return height;
+            }
+        }
+        400 // hardcoded default
+    }
+}
+
 impl Config {
     /// Check if a specific action is bound to the given key name
     /// Returns true if the action is bound to this key, false otherwise
@@ -372,10 +438,17 @@ impl Config {
     /// Check if any action is bound to the given key name
     /// Returns the action name if found, None otherwise
     pub fn get_action_for_key(&self, key_name: &str) -> Option<&str> {
-        // First check regular keybindings
+        self.get_action_for_key_with_modifiers(key_name, &std::collections::HashSet::new())
+    }
+    
+    /// Check if any action is bound to the given key with modifiers
+    /// Returns the action name if found, None otherwise
+    pub fn get_action_for_key_with_modifiers(&self, key_name: &str, modifiers: &std::collections::HashSet<String>) -> Option<&str> {
+        use crate::core::key_parsing;
+        
         if let Some(ref keybindings) = self.keybindings {
             for (action, bound_key) in keybindings {
-                if bound_key == key_name {
+                if key_parsing::key_matches(bound_key, key_name, modifiers) {
                     return Some(action);
                 }
             }
@@ -387,10 +460,18 @@ impl Config {
     /// Check if the given key is bound to a template
     /// Returns the template name if found, None otherwise
     pub fn get_template_for_key(&self, key_name: &str) -> Option<&str> {
+        self.get_template_for_key_with_modifiers(key_name, &std::collections::HashSet::new())
+    }
+    
+    /// Check if the given key with modifiers is bound to a template
+    /// Returns the template name if found, None otherwise
+    pub fn get_template_for_key_with_modifiers(&self, key_name: &str, modifiers: &std::collections::HashSet<String>) -> Option<&str> {
+        use crate::core::key_parsing;
+        
         if let Some(ref templates) = self.templates {
             for (template_name, template) in templates {
                 if let Some(ref key) = template.key {
-                    if key == key_name {
+                    if key_parsing::key_matches(key, key_name, modifiers) {
                         return Some(template_name);
                     }
                 }

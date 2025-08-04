@@ -53,18 +53,12 @@ fn main() -> Result<(), eframe::Error> {
     // and sends the URL via Apple Events to the running application.
     // URL handling must be implemented in the GUI application using Apple Event handlers.
     
-    // Debug log all arguments and environment for URL handler debugging
-    hookanchor::utils::debug_log("MAIN_DEBUG", &format!("Arguments: {:?}", args));
-    hookanchor::utils::debug_log("MAIN_DEBUG", &format!("Args length: {}", args.len()));
-    if let Ok(pwd) = env::var("PWD") {
-        hookanchor::utils::debug_log("MAIN_DEBUG", &format!("PWD: {}", pwd));
-    }
     
     // If arguments are provided, run in command-line mode (no GUI)
     if args.len() > 1 {
         // CLI mode needs server - start it here
         if let Err(e) = hookanchor::command_server_management::start_server_if_needed() {
-            hookanchor::utils::debug_log("STARTUP", &format!("Failed to start command server: {}", e));
+            eprintln!("Warning: Failed to start command server: {}", e);
             // Continue - commands will show error dialogs when server is needed
         }
         
@@ -81,7 +75,6 @@ fn main() -> Result<(), eframe::Error> {
         
         // Check if any URL was passed via environment or if we can detect URL handling
         if let Ok(url) = env::var("HOOK_URL_HANDLER") {
-            hookanchor::utils::debug_log("URL_HANDLER", &format!("URL handler mode detected: {}", url));
             hookanchor::cmd::run_command_line_mode(vec!["ha".to_string(), url]);
             return Ok(());
         }
@@ -93,7 +86,6 @@ fn main() -> Result<(), eframe::Error> {
             if let Ok(url_content) = std::fs::read_to_string(url_marker) {
                 let url = url_content.trim();
                 if !url.is_empty() && url.starts_with("hook://") {
-                    hookanchor::utils::debug_log("URL_HANDLER", &format!("Processing URL from marker file: {}", url));
                     let _ = std::fs::remove_file(url_marker);
                     hookanchor::cmd::run_command_line_mode(vec!["ha".to_string(), url.to_string()]);
                     return Ok(());
@@ -103,7 +95,6 @@ fn main() -> Result<(), eframe::Error> {
         }
         
         // No URL detected - proceed with normal GUI mode
-        hookanchor::utils::debug_log("GUI_MODE", "No URL detected, proceeding with GUI");
         let result = hookanchor::ui::run_gui_with_prompt("", ApplicationState::minimal());
         
         result

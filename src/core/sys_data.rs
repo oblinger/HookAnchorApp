@@ -26,7 +26,7 @@ pub fn get_sys_data() -> SysData {
     
     // Try to acquire the lock without blocking to detect potential deadlock
     match sys.try_lock() {
-        Ok(mut sys_data) => {
+        Ok(sys_data) => {
             if let Some(ref data) = *sys_data {
                 crate::utils::debug_log("GET_SYS_DATA", "Returning cached sys data");
                 return data.clone();
@@ -62,7 +62,7 @@ pub fn clear_sys_data() {
 }
 
 /// Load data without caching - used as fallback when cache is locked
-fn load_data_no_cache(commands_override: Vec<Command>, verbose: bool) -> SysData {
+fn load_data_no_cache(commands_override: Vec<Command>, _verbose: bool) -> SysData {
     // Load config directly without caching
     let config = super::config::load_config();
     

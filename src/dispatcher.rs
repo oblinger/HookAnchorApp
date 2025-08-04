@@ -20,12 +20,8 @@ fn main() {
     
     // Determine execution mode based on arguments
     match args.as_slice() {
-        // No arguments - forward to CLI for help (it handles this case)
-        [] | [_] => {
-            let mut help_args = args.clone();
-            help_args.push("--help".to_string());
-            hookanchor::cmd::run_command_line_mode(help_args);
-        },
+        // No arguments - launch GUI popup (normal use case)
+        [] | [_] => launch_popup(),
         
         // GUI mode - explicitly launch popup
         [_, flag] if flag == "--gui" => launch_popup(),
