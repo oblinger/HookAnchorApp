@@ -105,36 +105,28 @@ impl CommandEditor {
         self.original_command_name = String::new();
     }
     
-    pub fn update(&mut self, ctx: &egui::Context, config: &Config) -> CommandEditorResult {
+    pub fn update(&mut self, ctx: &egui::Context, config: &Config, exit_editor_key: Option<&crate::core::key_processing::Keystroke>) -> CommandEditorResult {
         if !self.visible {
             return CommandEditorResult::None;
         }
         
-        
         let mut result = CommandEditorResult::None;
         let mut enter_pressed = false;
         
-        // Handle escape key
+        // Simple hardcoded key handling - just Escape and Enter
+        // Check for Escape key to cancel
         if ctx.input(|i| i.key_pressed(egui::Key::Escape)) {
             result = CommandEditorResult::Cancel;
+            
+            // IMPORTANT: Consume the key event to prevent it from being processed by the popup
+            ctx.input_mut(|i| {
+                i.consume_key(egui::Modifiers::NONE, egui::Key::Escape);
+            });
         }
         
         // Check for Enter key press globally (will work when no text field has focus)
         if ctx.input(|i| i.key_pressed(egui::Key::Enter)) {
             enter_pressed = true;
-        }
-        
-        // Handle delete key - delete the current command and close editor
-        if ctx.input(|i| i.key_pressed(egui::Key::Delete)) {
-            // Only delete if we have an original command (editing existing command, not creating new)
-            if let Some(_) = &self.original_command {
-                let command_to_delete = if !self.original_command_name.is_empty() {
-                    self.original_command_name.clone()
-                } else {
-                    self.command.clone()
-                };
-                result = CommandEditorResult::Delete(command_to_delete);
-            }
         }
         
         // Render as a large modal-style window that fills more space
@@ -324,6 +316,7 @@ impl CommandEditor {
             };
             result = CommandEditorResult::Save(new_command, self.original_command_name.clone());
         }
+        
         
         result
     }

@@ -438,13 +438,21 @@ impl Config {
     
     /// Check if any action is bound to the given key with modifiers (using new Modifiers struct)
     /// Returns the action name if found, None otherwise
-    pub fn get_action_for_key_with_modifiers_struct(&self, key_name: &str, modifiers: &crate::core::key_parsing::Modifiers) -> Option<&str> {
-        use crate::core::key_parsing;
+    /// NOTE: This is a legacy method - new code should use the KeyRegistry system
+    pub fn get_action_for_key_with_modifiers_struct(&self, key_name: &str, modifiers: &crate::core::key_processing::Modifiers) -> Option<&str> {
+        use crate::core::key_processing::Keystroke;
         
-        if let Some(ref keybindings) = self.keybindings {
-            for (action, bound_key) in keybindings {
-                if key_parsing::key_matches_with_modifiers(bound_key, key_name, modifiers) {
-                    return Some(action);
+        // Try to create a keystroke from the key name and modifiers
+        if let Ok(target_keystroke) = Keystroke::from_key_string(key_name) {
+            let target_with_modifiers = Keystroke::new(target_keystroke.key, modifiers.clone());
+            
+            if let Some(ref keybindings) = self.keybindings {
+                for (action, bound_key) in keybindings {
+                    if let Ok(bound_keystroke) = Keystroke::from_key_string(bound_key) {
+                        if bound_keystroke == target_with_modifiers {
+                            return Some(action);
+                        }
+                    }
                 }
             }
         }
@@ -456,7 +464,7 @@ impl Config {
     /// Returns the action name if found, None otherwise
     pub fn get_action_for_key_with_modifiers(&self, key_name: &str, modifiers: &std::collections::HashSet<String>) -> Option<&str> {
         // Convert HashSet to Modifiers struct and use new method
-        let modifiers_struct = crate::core::key_parsing::Modifiers {
+        let modifiers_struct = crate::core::key_processing::Modifiers {
             ctrl: modifiers.contains("Ctrl"),
             alt: modifiers.contains("Alt"),
             shift: modifiers.contains("Shift"),
@@ -473,20 +481,34 @@ impl Config {
     
     /// Check if the given key with modifiers is bound to a template
     /// Returns the template name if found, None otherwise
+    /// NOTE: This is a legacy method - new code should use get_template_for_keystroke
     pub fn get_template_for_key_with_modifiers(&self, key_name: &str, modifiers: &std::collections::HashSet<String>) -> Option<&str> {
-        use crate::core::key_parsing;
+        use crate::core::key_processing::{Keystroke, Modifiers};
         
-        if let Some(ref templates) = self.templates {
-            crate::utils::debug_log("TEMPLATE_BIND", &format!("Checking {} templates for key '{}' with modifiers {:?}", templates.len(), key_name, modifiers));
-            for (template_name, template) in templates {
-                if let Some(ref key) = template.key {
-                    crate::utils::debug_log("TEMPLATE_BIND", &format!("  Template '{}' has key '{}'", template_name, key));
-                    if key_parsing::key_matches(key, key_name, modifiers) {
-                        crate::utils::debug_log("TEMPLATE_BIND", &format!("✓ MATCH: Template '{}' matches key '{}'", template_name, key_name));
-                        return Some(template_name);
+        // Convert HashSet modifiers to Modifiers struct
+        let modifiers_struct = Modifiers {
+            ctrl: modifiers.contains("Ctrl"),
+            alt: modifiers.contains("Alt"),
+            shift: modifiers.contains("Shift"),
+            cmd: modifiers.contains("Cmd"),
+        };
+        
+        // Try to create a keystroke from the key name and modifiers
+        if let Ok(target_keystroke) = Keystroke::from_key_string(key_name) {
+            let target_with_modifiers = Keystroke::new(target_keystroke.key, modifiers_struct);
+            
+            if let Some(ref templates) = self.templates {
+                crate::utils::debug_log("TEMPLATE_BIND", &format!("Checking {} templates for key '{}' with modifiers {:?}", templates.len(), key_name, modifiers));
+                for (template_name, template) in templates {
+                    if let Some(ref keystroke) = template.keystroke {
+                        crate::utils::debug_log("TEMPLATE_BIND", &format!("  Template '{}' has keystroke {:?}", template_name, keystroke));
+                        if *keystroke == target_with_modifiers {
+                            crate::utils::debug_log("TEMPLATE_BIND", &format!("✓ MATCH: Template '{}' matches key '{}'", template_name, key_name));
+                            return Some(template_name);
+                        }
+                    } else {
+                        crate::utils::debug_log("TEMPLATE_BIND", &format!("  Template '{}' has no keystroke binding", template_name));
                     }
-                } else {
-                    crate::utils::debug_log("TEMPLATE_BIND", &format!("  Template '{}' has no key binding", template_name));
                 }
             }
         }
@@ -510,15 +532,13 @@ impl Config {
 }
 
 /// Convert template keys to Keystroke objects for efficient matching
-/// This converts the string-based key fields into Keystroke objects
-/// for direct equality comparison instead of complex parsing during runtime
 fn normalize_template_keys(config: &mut Config) {
-    use crate::core::key_parsing::Keystroke;
+    use crate::core::key_processing::Keystroke;
     
     if let Some(ref mut templates) = config.templates {
         for (template_name, template) in templates.iter_mut() {
             if let Some(ref key_str) = template.key {
-                match Keystroke::from_config_string(key_str) {
+                match Keystroke::from_key_string(key_str) {
                     Ok(keystroke) => {
                         template.keystroke = Some(keystroke);
                         println!("✅ Template '{}' key '{}' → {:?}", template_name, key_str, template.keystroke);
@@ -529,5 +549,6 @@ fn normalize_template_keys(config: &mut Config) {
                 }
             }
         }
+
     }
 }

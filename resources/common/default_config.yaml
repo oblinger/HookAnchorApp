@@ -55,7 +55,9 @@ markdown_roots:
 # Uncomment lines below to customize:
 
 keybindings:
-  exit_app:             "Escape"      # Exit the application
+  exit_app:             "Escape"      # Exit the application (only when no sub-interfaces are open)
+  exit_editor:          "Escape"      # Close command editor
+  exit_dialog:          "Escape"      # Close dialog
   navigate_down:        "ArrowDown"   # Move selection down
   navigate_up:          "ArrowUp"     # Move selection up
   navigate_left:        "ArrowLeft"   # Move selection left (multi-column)

@@ -51,38 +51,51 @@ pub fn check_and_clear_oversized_log() -> bool {
     false
 }
 
-/// Debug logging function used across all modules
+/// Simple logging function that checks if logging is enabled
 /// 
-/// Logs messages to the debug file specified in config.popup_settings.debug_log
-/// with a timestamp and module identifier.
-pub fn debug_log(module: &str, message: &str) {
+/// This is the primary logging function that should be used throughout the codebase.
+/// It checks if a debug log path is configured before writing.
+pub fn log(message: &str) {
     let config = crate::core::sys_data::get_config();
     if let Some(debug_path) = &config.popup_settings.debug_log {
         let debug_path = expand_tilde(debug_path);
         
         let timestamp = Local::now().format("%Y-%m-%d %H:%M:%S");
-        
-        let log_entry = format!("{} {}: {}\n", timestamp, module, message);
+        let log_entry = format!("{} {}\n", timestamp, message);
         
         if let Ok(mut file) = OpenOptions::new()
             .create(true)
             .append(true)
             .open(debug_path) {
             let _ = file.write_all(log_entry.as_bytes());
-        } // File handle is dropped here, closing the file
+        }
     }
+}
+
+/// Detailed logging function that only logs when detailed_logging is enabled
+/// 
+/// This function should be used for verbose logging that would normally be too noisy,
+/// such as logging every key press or detailed execution flow.
+pub fn detailed_log(module: &str, message: &str) {
+    let config = crate::core::sys_data::get_config();
+    // Check if detailed logging is enabled (using verbose_logging field for now)
+    if config.popup_settings.verbose_logging.unwrap_or(false) {
+        log(&format!("{}: {}", module, message));
+    }
+}
+
+/// Legacy debug log function - now just calls log() with formatted message
+/// 
+/// Kept for backward compatibility. New code should use log() or detailed_log().
+pub fn debug_log(module: &str, message: &str) {
+    log(&format!("{}: {}", module, message));
 }
 
 /// Verbose debug logging function for detailed debugging
 /// 
-/// Only logs messages when verbose_logging is enabled in config.
-/// Used for shell commands, JavaScript execution, and other detailed debugging.
+/// This is now an alias for detailed_log. Kept for backward compatibility.
 pub fn verbose_log(module: &str, message: &str) {
-    let config = crate::core::sys_data::get_config();
-    // Check if verbose logging is enabled (default to false if not set)
-    if config.popup_settings.verbose_logging.unwrap_or(false) {
-        debug_log(module, message);
-    }
+    detailed_log(module, message);
 }
 
 /// Expands ~ in paths to the home directory

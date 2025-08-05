@@ -5,11 +5,11 @@
 use eframe::egui::{self, IconData};
 use std::process;
 use std::sync::OnceLock;
-use std::collections::HashSet;
 use crate::{
     Command, execute_via_server, 
     Config, load_state, save_state, scanner, grabber
 };
+use crate::core::key_processing::{PopupInterface, KeyRegistry, create_default_key_registry};
 use crate::core::commands::get_patch_path;
 use crate::core::config::{load_config_with_error, ConfigResult};
 use super::{PopupState, LayoutArrangement};
@@ -68,6 +68,12 @@ pub struct AnchorSelector {
     pre_init_input_buffer: String,
     /// Pending template info for grab functionality (template_name, context)
     pending_template: Option<(String, crate::core::template_creation::TemplateContext)>,
+    /// Key registry for unified key processing
+    key_registry: Option<KeyRegistry>,
+    /// Configurable exit keystrokes
+    exit_app_key: Option<crate::core::key_processing::Keystroke>,
+    exit_editor_key: Option<crate::core::key_processing::Keystroke>,
+    exit_dialog_key: Option<crate::core::key_processing::Keystroke>,
 }
 
 /// Loading state for deferred initialization
@@ -260,368 +266,160 @@ impl AnchorSelector {
     
     
     /// Centralized key handling for the main popup interface
+    /// Dispatch key handling to the appropriate interface
     /// Returns true if any keys were processed
-    fn handle_popup_keys(&mut self, ctx: &egui::Context, editor_handled_escape: bool) -> bool {
-        // Write directly to a separate debug file to bypass any redirection issues
-        if let Ok(mut file) = std::fs::OpenOptions::new().create(true).append(true).open("/tmp/hookanchor_debug.log") {
-            use std::io::Write;
-            let _ = writeln!(file, "🔑 handle_popup_keys() called - loading_state: {:?}", self.loading_state);
+    fn handle_keys(&mut self, ctx: &egui::Context) -> bool {
+        // Check which interface is active first
+        if self.command_editor.visible {
+            // When command editor is visible, we don't process ANY keys here
+            // The command editor will handle its own keys in its update() method
+            return false; // No keys processed here
         }
         
-        crate::utils::debug_log("FUNCTION_CALL", "handle_popup_keys() called");
-        println!("🔑 handle_popup_keys() called - loading_state: {:?}", self.loading_state);
-        
-        let mut keys_processed = false;
-        
-        // If still loading, only handle escape key
-        if self.loading_state != LoadingState::Loaded {
-            ctx.input_mut(|input| {
-                // Only check for escape during loading
-                for event in &input.events {
-                    if let egui::Event::Key { key: egui::Key::Escape, pressed: true, .. } = event {
-                        self.perform_exit_scanner_check();
-                        std::process::exit(0);
-                    }
-                }
-            });
-            return false; // No other keys processed during loading
+        if self.dialog.visible {
+            // When dialog is visible, we don't process ANY keys here
+            // The dialog will handle its own keys in its update() method
+            return false; // No keys processed here
         }
         
-        println!("🔑 KEY PROCESSING FUNCTION CALLED");
+        // Neither command editor nor dialog is open, handle popup keys
+        // Extract events - only needed when we're actually going to process them
+        let mut events_to_process = Vec::new();
         ctx.input_mut(|input| {
-            // Write event count and details to debug file IMMEDIATELY
-            if let Ok(mut file) = std::fs::OpenOptions::new().create(true).append(true).open("/tmp/hookanchor_debug.log") {
-                use std::io::Write;
-                let _ = writeln!(file, "🔑 INPUT_MUT: {} events in input.events", input.events.len());
-                
-                // Log each event immediately
-                for (i, event) in input.events.iter().enumerate() {
-                    match event {
-                        egui::Event::Key { key, pressed, modifiers, .. } => {
-                            let _ = writeln!(file, "  [{}] KEY: {:?} pressed={} shift={} ctrl={} alt={} cmd={}", 
-                                i, key, pressed, modifiers.shift, modifiers.ctrl, modifiers.alt, modifiers.command);
-                        },
-                        egui::Event::Text(text) => {
-                            let _ = writeln!(file, "  [{}] TEXT: '{}'", i, text);
-                        },
-                        _ => {
-                            let _ = writeln!(file, "  [{}] OTHER: {:?}", i, event);
-                        }
-                    }
-                }
-            }
-            println!("🔑 INPUT_MUT CLOSURE ENTERED");
-            // Special handling for escape key - process it first and remove it completely
-            let mut escape_pressed = false;
-            input.events.retain(|event| {
-                if let egui::Event::Key { key: egui::Key::Escape, pressed: true, .. } = event {
-                    escape_pressed = true;
-                    false // Remove escape key event completely
-                } else {
-                    true
-                }
-            });
-            
-            // Handle escape key immediately if it was pressed
-            if escape_pressed {
-                // Only exit if the editor didn't already handle the escape key
-                if !self.command_editor.visible && !editor_handled_escape {
-                    self.perform_exit_scanner_check();
-                    std::process::exit(0);
-                }
-            }
-            
-            // Collect actions to perform to avoid borrowing conflicts
-            let mut actions_to_perform = Vec::new();
-            let mut template_actions: Vec<String> = Vec::new();
-            let mut consumed_keys = Vec::new();
-            let mut consumed_text = Vec::new();
-            
-            // === COMPREHENSIVE EVENT DEBUG LOGGING ===
-            if !input.events.is_empty() {
-                println!("=== PROCESSING {} EVENTS ===", input.events.len());
-                crate::utils::debug_log("RAW_EVENTS", &format!("=== PROCESSING {} EVENTS ===", input.events.len()));
-                for (i, event) in input.events.iter().enumerate() {
-                    match event {
-                        egui::Event::Key { key, pressed, modifiers, .. } => {
-                            let key_name = format!("{:?}", key);
-                            let msg = format!("[{}] KEY: '{}' pressed={} shift={} ctrl={} alt={} cmd={}", 
-                                i, key_name, pressed, modifiers.shift, modifiers.ctrl, modifiers.alt, modifiers.command);
-                            println!("{}", msg);
-                            crate::utils::debug_log("RAW_KEY", &msg);
-                        },
-                        egui::Event::Text(text) => {
-                            let msg = format!("[{}] TEXT: '{}'", i, text);
-                            println!("{}", msg);
-                            crate::utils::debug_log("RAW_TEXT", &msg);
-                        },
-                        _ => {
-                            let msg = format!("[{}] OTHER: {:?}", i, event);
-                            println!("{}", msg);
-                            crate::utils::debug_log("RAW_OTHER", &msg);
-                        }
-                    }
-                }
-                println!("=== END RAW EVENTS ===");
-                crate::utils::debug_log("RAW_EVENTS", "=== END RAW EVENTS ===");
-            }
-            
-            // Handle template matching by looking at KEY events and consuming corresponding TEXT events
-            // Build pairs of KEY and TEXT events for better matching
-            let mut key_text_pairs = Vec::new();
-            let mut unpaired_events = Vec::new();
-            
-            // First pass: pair up KEY and TEXT events
-            let mut i = 0;
-            while i < input.events.len() {
-                match &input.events[i] {
-                    egui::Event::Key { pressed: true, .. } => {
-                        // Look for a corresponding TEXT event
-                        if i + 1 < input.events.len() {
-                            if let egui::Event::Text(_) = &input.events[i + 1] {
-                                key_text_pairs.push((i, i + 1));
-                                i += 2;
-                                continue;
-                            }
-                        }
-                        unpaired_events.push(i);
-                        i += 1;
-                    }
-                    egui::Event::Text(text) => {
-                        // Handle standalone TEXT events
-                        match text.as_str() {
-                            ">" => {
-                                // Special case: > is add_alias action, not a template
-                                actions_to_perform.push("add_alias");
-                                consumed_text.push(text.clone());
-                                keys_processed = true;
-                            },
-                            "?" => {
-                                // Special case: ? is show_keys action, not a template
-                                actions_to_perform.push("show_keys");
-                                consumed_text.push(text.clone());
-                                keys_processed = true;
-                            },
-                            _ => {}
-                        }
-                        unpaired_events.push(i);
-                        i += 1;
-                    }
-                    _ => {
-                        unpaired_events.push(i);
-                        i += 1;
-                    }
-                }
-            }
-            
-            // Check KEY+TEXT pairs for template matches
-            for (key_idx, text_idx) in key_text_pairs {
-                let key_event = &input.events[key_idx];
-                let text_event = &input.events[text_idx];
-                
-                if let Some(template_name) = self.popup_state.config.get_template_for_keystroke(key_event) {
-                    // Template match found!
-                    template_actions.push(template_name.to_string());
-                    
-                    // Consume both the KEY and TEXT events
-                    if let egui::Event::Key { key, .. } = key_event {
-                        consumed_keys.push(*key);
-                    }
-                    if let egui::Event::Text(text) = text_event {
-                        consumed_text.push(text.clone());
-                    }
-                    keys_processed = true;
-                }
-            }
-            
-            // Check for special uninstall command
-            let search_text_lower = self.popup_state.search_text.to_lowercase();
-            if search_text_lower == "uninstall hookanchor" || search_text_lower == "!uninstall" {
-                actions_to_perform.push("uninstall_app");
-                // Clear the search text to avoid confusion
-                self.popup_state.update_search(String::new());
-                keys_processed = true;
-            }
-            
-            // Check each pressed key against configured keybindings
-            {
-                let config = &self.popup_state.config;
-                
-                for event in &input.events {
-                    if let egui::Event::Key { key, pressed, modifiers, .. } = event {
-                        // Log EVERY key event, pressed or not
-                        let key_name = format!("{:?}", key);
-                        if let Ok(mut file) = std::fs::OpenOptions::new().create(true).append(true).open("/tmp/hookanchor_debug.log") {
-                            use std::io::Write;
-                            let _ = writeln!(file, "🔐 KEY EVENT: key='{}' pressed={} shift={} ctrl={} alt={} cmd={}", 
-                                key_name, pressed, modifiers.shift, modifiers.ctrl, modifiers.alt, modifiers.command);
-                        }
-                        
-                        if *pressed {
-                            
-                            // Use new Modifiers struct directly (no HashSet conversion needed)
-                            let normalized_modifiers = crate::core::key_parsing::Modifiers::from_egui(&modifiers);
-                            
-                            // Check what action (if any) is bound to this key combination
-                            if let Ok(mut file) = std::fs::OpenOptions::new().create(true).append(true).open("/tmp/hookanchor_debug.log") {
-                                use std::io::Write;
-                                let _ = writeln!(file, "  🔍 Checking for action: key='{}' modifiers={:?}", key_name, normalized_modifiers);
-                            }
-                            if let Some(action) = config.get_action_for_key_with_modifiers_struct(&key_name, &normalized_modifiers) {
-                                if let Ok(mut file) = std::fs::OpenOptions::new().create(true).append(true).open("/tmp/hookanchor_debug.log") {
-                                    use std::io::Write;
-                                    let _ = writeln!(file, "  ✅ Found action: '{}'", action);
-                                }
-                                // Skip escape key since we handle it specially above
-                                if key_name == "Escape" {
-                                    continue;
-                                }
-                                
-                                // Skip delete_command and cancel_editor actions - these are handled by the command editor
-                                if action == "delete_command" || action == "cancel_editor" {
-                                    continue;
-                                }
-                                
-                                // Always consume the key if it's bound to any action
-                                consumed_keys.push(*key);
-                                keys_processed = true;
-                                
-                                match action {
-                                    "navigate_up" => actions_to_perform.push("navigate_up"),
-                                    "navigate_down" => actions_to_perform.push("navigate_down"),
-                                    "navigate_left" => actions_to_perform.push("navigate_left"),
-                                    "navigate_right" => actions_to_perform.push("navigate_right"),
-                                    "force_rebuild" => actions_to_perform.push("force_rebuild"),
-                                    "start_grabber" => actions_to_perform.push("start_grabber"),
-                                    "show_folder" => actions_to_perform.push("show_folder"),
-                                    "exit_app" => actions_to_perform.push("exit_app"),
-                                    "execute_command" => actions_to_perform.push("execute_command"),
-                                    "open_editor" => actions_to_perform.push("open_editor"),
-                                    "add_alias" => actions_to_perform.push("add_alias"),
-                                    "edit_active_command" => actions_to_perform.push("edit_active_command"),
-                                    "link_to_clipboard" => actions_to_perform.push("link_to_clipboard"),
-                                    "show_keys" => actions_to_perform.push("show_keys"),
-                                    "uninstall_app" => actions_to_perform.push("uninstall_app"),
-                                    "template_create" => actions_to_perform.push("template_create"),
-                                    _ => {} // Unknown action - still consume the key
-                                }
-                            } else if let Some(template_name) = config.get_template_for_keystroke(event) {
-                                // Template keybinding found using normalized key system
-                                if let Ok(mut file) = std::fs::OpenOptions::new().create(true).append(true).open("/tmp/hookanchor_debug.log") {
-                                    use std::io::Write;
-                                    let _ = writeln!(file, "  ✅ Found template: '{}' via normalized key", template_name);
-                                }
-                                consumed_keys.push(*key);
-                                keys_processed = true;
-                                template_actions.push(template_name.to_string());
-                            } else {
-                                // No action or template found for this key
-                                if let Ok(mut file) = std::fs::OpenOptions::new().create(true).append(true).open("/tmp/hookanchor_debug.log") {
-                                    use std::io::Write;
-                                    let _ = writeln!(file, "  ❌ No action or template found for key='{}' modifiers={:?}", key_name, normalized_modifiers);
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-            
-            // Log what we're about to consume
-            if let Ok(mut file) = std::fs::OpenOptions::new().create(true).append(true).open("/tmp/hookanchor_debug.log") {
-                use std::io::Write;
-                let _ = writeln!(file, "  🗑️ Consumed text: {:?}", consumed_text);
-                let _ = writeln!(file, "  🗑️ Consumed keys: {:?}", consumed_keys);
-            }
-            
-            // Remove all consumed key events AND their text equivalents
-            input.events.retain(|event| {
-                let retain = match event {
-                    egui::Event::Key { key, .. } => !consumed_keys.contains(key),
-                    egui::Event::Text(text) => {
-                        // Filter out text that was explicitly consumed
-                        if consumed_text.contains(text) {
-                            if let Ok(mut file) = std::fs::OpenOptions::new().create(true).append(true).open("/tmp/hookanchor_debug.log") {
-                                use std::io::Write;
-                                let _ = writeln!(file, "  🚫 Filtering consumed text: '{}'", text);
-                            }
-                            return false;
-                        }
-                        // For the new Keystroke system, consumed_text contains all text that should be filtered
-                        // No need for complex key->text mapping
-                        true // Keep all text events that aren't explicitly consumed
-                    },
-                    _ => true
-                };
-                if !retain {
-                    if let Ok(mut file) = std::fs::OpenOptions::new().create(true).append(true).open("/tmp/hookanchor_debug.log") {
-                        use std::io::Write;
-                        let _ = writeln!(file, "  ❌ Event removed: {:?}", event);
-                    }
-                } else {
-                    if let Ok(mut file) = std::fs::OpenOptions::new().create(true).append(true).open("/tmp/hookanchor_debug.log") {
-                        use std::io::Write;
-                        match event {
-                            egui::Event::Text(text) => {
-                                let _ = writeln!(file, "  ✅ Text event kept: '{}'", text);
-                            },
-                            egui::Event::Key { key, .. } => {
-                                let _ = writeln!(file, "  ✅ Key event kept: {:?}", key);
-                            },
-                            _ => {}
-                        }
-                    }
-                }
-                retain
-            });
-            
-            // Clear the pressed state for all consumed keys
-            for key in consumed_keys {
-                input.keys_down.remove(&key);
-            }
-            
-            
-            // Execute all actions
-            for action in actions_to_perform {
-                self.execute_key_action(action, editor_handled_escape, ctx);
-            }
-            
-            // Execute template actions
-            for template_name in template_actions {
-                self.handle_template_create_named(&template_name);
-            }
+            events_to_process = input.events.clone();
         });
         
-        keys_processed
+        return self.handle_popup_keys_with_events(ctx, events_to_process);
     }
     
-    /// Execute a specific key action
-    fn execute_key_action(&mut self, action: &str, _editor_handled_escape: bool, ctx: &egui::Context) {
-        match action {
-            "navigate_up" => self.navigate_vertical(-1),
-            "navigate_down" => self.navigate_vertical(1),
-            "navigate_left" => self.navigate_horizontal(-1),
-            "navigate_right" => self.navigate_horizontal(1),
-            "force_rebuild" => self.trigger_rebuild(),
-            "start_grabber" => self.start_grabber_countdown(ctx),
-            "show_folder" => self.show_folder(),
-            "exit_app" => {
-                // Only exit if the command editor is not currently visible
-                if !self.command_editor.visible {
-                    self.perform_exit_scanner_check();
-                    std::process::exit(0);
-                }
-            },
-            "execute_command" => self.execute_selected_command(),
-            "open_editor" => self.open_command_editor(),
-            "add_alias" => self.handle_add_alias(),
-            "edit_active_command" => self.edit_active_command(),
-            "link_to_clipboard" => self.handle_link_to_clipboard(),
-            "show_keys" => self.show_keys_dialog(),
-            "uninstall_app" => self.handle_uninstall_app(),
-            "template_create" => self.handle_template_create(),
-            _ => {}
+    /// Handle keys for the main popup interface using registry system
+    /// Returns true if any keys were processed
+    fn handle_popup_keys_with_events(&mut self, ctx: &egui::Context, events_to_process: Vec<egui::Event>) -> bool {
+        // If still loading, only handle escape key
+        if self.loading_state != LoadingState::Loaded {
+            return false; // No keys processed during loading
         }
+        
+        // Check if we have registry and process events
+        if self.key_registry.is_some() {
+            // Take ownership of the registry temporarily to avoid borrowing issues
+            let registry = self.key_registry.take().unwrap();
+            let handled = registry.process_events(&events_to_process, self, ctx);
+            
+            // Put the registry back
+            self.key_registry = Some(registry);
+            
+            if handled {
+                ctx.input_mut(|input| {
+                    // Clear all processed events from input
+                    input.events.clear();
+                    // Also clear key states to prevent stuck keys
+                    input.keys_down.clear();
+                });
+            }
+            
+            true // Registry was available for processing
+        } else {
+            // Fallback: registry not initialized yet
+            false
+        }
+    }}
+
+// ================================================================================================
+// POPUP INTERFACE IMPLEMENTATION FOR KEY REGISTRY
+// ================================================================================================
+
+impl PopupInterface for AnchorSelector {
+    fn navigate_vertical(&mut self, delta: i32) {
+        self.navigate_vertical(delta);
     }
+    
+    fn navigate_horizontal(&mut self, delta: i32) {
+        self.navigate_horizontal(delta);
+    }
+    
+    fn trigger_rebuild(&mut self) {
+        self.trigger_rebuild();
+    }
+    
+    fn start_grabber_countdown(&mut self, ctx: &egui::Context) {
+        self.start_grabber_countdown(ctx);
+    }
+    
+    fn show_folder(&mut self) {
+        self.show_folder();
+    }
+    
+    fn perform_exit_scanner_check(&mut self) {
+        self.perform_exit_scanner_check();
+    }
+    
+    fn execute_selected_command(&mut self) {
+        self.execute_selected_command();
+    }
+    
+    fn open_command_editor(&mut self) {
+        self.open_command_editor();
+    }
+    
+    fn handle_add_alias(&mut self) {
+        self.handle_add_alias();
+    }
+    
+    fn edit_active_command(&mut self) {
+        self.edit_active_command();
+    }
+    
+    fn handle_link_to_clipboard(&mut self) {
+        self.handle_link_to_clipboard();
+    }
+    
+    fn show_keys_dialog(&mut self) {
+        self.show_keys_dialog();
+    }
+    
+    fn handle_uninstall_app(&mut self) {
+        self.handle_uninstall_app();
+    }
+    
+    fn handle_template_create(&mut self) {
+        self.handle_template_create();
+    }
+    
+    fn handle_template_create_named(&mut self, template_name: &str) {
+        self.handle_template_create_named(template_name);
+    }
+    
+    fn is_command_editor_visible(&self) -> bool {
+        self.command_editor.visible
+    }
+    
+    fn is_dialog_visible(&self) -> bool {
+        self.dialog.visible
+    }
+    
+    fn close_command_editor(&mut self) {
+        self.command_editor.visible = false;
+        // Reset window size when closing editor
+        self.window_size_mode = WindowSizeMode::Normal;
+    }
+    
+    fn close_dialog(&mut self) {
+        self.dialog.visible = false;
+        // Reset window size when closing dialog
+        self.window_size_mode = WindowSizeMode::Normal;
+    }
+    
+    fn get_search_text(&self) -> &str {
+        &self.popup_state.search_text
+    }
+    
+    fn update_search(&mut self, text: String) {
+        self.popup_state.update_search(text);
+    }
+}
+
+impl AnchorSelector {
     
     /// Display an error dialog to the user
     /// This is a generic function for showing errors in a popup dialog
@@ -1073,6 +871,10 @@ impl AnchorSelector {
             loading_state: LoadingState::NotLoaded,
             pre_init_input_buffer: initial_prompt.to_string(),
             pending_template: None,
+            key_registry: None, // Will be initialized when config is loaded
+            exit_app_key: None, // Will be populated from config
+            exit_editor_key: None, // Will be populated from config
+            exit_dialog_key: None, // Will be populated from config
         };
         
         result
@@ -1094,6 +896,84 @@ impl AnchorSelector {
             ConfigResult::Error(error) => (crate::core::sys_data::get_config(), Some(error)),
         };
         
+        // Initialize key registry with the loaded config
+        self.key_registry = Some(create_default_key_registry(&config));
+        
+        // Populate exit keystrokes from config
+        if let Some(ref keybindings) = config.keybindings {
+            use crate::core::key_processing::Keystroke;
+            
+            // Debug log all keybindings
+            if let Ok(mut file) = std::fs::OpenOptions::new().create(true).append(true).open("/tmp/hookanchor_debug.log") {
+                use std::io::Write;
+                let _ = writeln!(file, "🔧 CONFIG: Found {} keybindings", keybindings.len());
+            }
+            
+            if let Some(exit_app_str) = keybindings.get("exit_app") {
+                match Keystroke::from_key_string(exit_app_str) {
+                    Ok(keystroke) => {
+                        self.exit_app_key = Some(keystroke);
+                        if let Ok(mut file) = std::fs::OpenOptions::new().create(true).append(true).open("/tmp/hookanchor_debug.log") {
+                            use std::io::Write;
+                            let _ = writeln!(file, "🔧 CONFIG: exit_app = '{}' -> {:?}", exit_app_str, self.exit_app_key.as_ref().unwrap().key);
+                        }
+                    }
+                    Err(e) => {
+                        if let Ok(mut file) = std::fs::OpenOptions::new().create(true).append(true).open("/tmp/hookanchor_debug.log") {
+                            use std::io::Write;
+                            let _ = writeln!(file, "🔧 CONFIG: ERROR parsing exit_app '{}': {}", exit_app_str, e);
+                        }
+                    }
+                }
+            }
+            
+            if let Some(exit_editor_str) = keybindings.get("exit_editor") {
+                match Keystroke::from_key_string(exit_editor_str) {
+                    Ok(keystroke) => {
+                        self.exit_editor_key = Some(keystroke);
+                        if let Ok(mut file) = std::fs::OpenOptions::new().create(true).append(true).open("/tmp/hookanchor_debug.log") {
+                            use std::io::Write;
+                            let _ = writeln!(file, "🔧 CONFIG: exit_editor = '{}' -> {:?}", exit_editor_str, self.exit_editor_key.as_ref().unwrap().key);
+                        }
+                    }
+                    Err(e) => {
+                        if let Ok(mut file) = std::fs::OpenOptions::new().create(true).append(true).open("/tmp/hookanchor_debug.log") {
+                            use std::io::Write;
+                            let _ = writeln!(file, "🔧 CONFIG: ERROR parsing exit_editor '{}': {}", exit_editor_str, e);
+                        }
+                    }
+                }
+            } else {
+                if let Ok(mut file) = std::fs::OpenOptions::new().create(true).append(true).open("/tmp/hookanchor_debug.log") {
+                    use std::io::Write;
+                    let _ = writeln!(file, "🔧 CONFIG: No exit_editor keybinding found in config!");
+                }
+            }
+            
+            if let Some(exit_dialog_str) = keybindings.get("exit_dialog") {
+                match Keystroke::from_key_string(exit_dialog_str) {
+                    Ok(keystroke) => {
+                        self.exit_dialog_key = Some(keystroke);
+                        if let Ok(mut file) = std::fs::OpenOptions::new().create(true).append(true).open("/tmp/hookanchor_debug.log") {
+                            use std::io::Write;
+                            let _ = writeln!(file, "🔧 CONFIG: exit_dialog = '{}' -> {:?}", exit_dialog_str, self.exit_dialog_key.as_ref().unwrap().key);
+                        }
+                    }
+                    Err(e) => {
+                        if let Ok(mut file) = std::fs::OpenOptions::new().create(true).append(true).open("/tmp/hookanchor_debug.log") {
+                            use std::io::Write;
+                            let _ = writeln!(file, "🔧 CONFIG: ERROR parsing exit_dialog '{}': {}", exit_dialog_str, e);
+                        }
+                    }
+                }
+            }
+        } else {
+            if let Ok(mut file) = std::fs::OpenOptions::new().create(true).append(true).open("/tmp/hookanchor_debug.log") {
+                use std::io::Write;
+                let _ = writeln!(file, "🔧 CONFIG: No keybindings section found in config!");
+            }
+        }
+        
         // Create new popup state with loaded data but preserve app_state
         let app_state = self.popup_state.app_state.clone();
         self.popup_state = PopupState::new(commands, config, app_state);
@@ -1114,18 +994,15 @@ impl AnchorSelector {
         self.loading_state = LoadingState::Loaded;
         let _elapsed = start_time.elapsed();
         
-        // Trigger background filesystem scan after UI is responsive
-        self.trigger_background_scan();
+        // Debug log
+        if let Ok(mut file) = std::fs::OpenOptions::new().create(true).append(true).open("/tmp/hookanchor_debug.log") {
+            use std::io::Write;
+            let _ = writeln!(file, "📦 DEFERRED LOADING: Complete! exit_editor_key = {:?}", 
+                             self.exit_editor_key.as_ref().map(|k| format!("{:?}", k.key)));
+        }
+        
     }
     
-    /// Trigger filesystem scanning in background to avoid blocking UI
-    fn trigger_background_scan(&mut self) {
-        
-        // Note: For now, we'll skip automatic scanning to keep UI responsive
-        // Users can manually rescan with --rescan command if needed
-        // In the future, this could spawn a background thread for scanning
-        
-    }
     
     // =============================================================================
     // Helper Properties for Backward Compatibility
@@ -1929,8 +1806,13 @@ impl eframe::App for AnchorSelector {
         let commands = self.commands().clone();
         let config = self.config().clone();
         self.command_editor.update_commands(&commands);
-        let editor_result = self.command_editor.update(ctx, &config);
-        let mut editor_handled_escape = false;
+        // Debug log before calling command editor update
+        if let Ok(mut file) = std::fs::OpenOptions::new().create(true).append(true).open("/tmp/hookanchor_debug.log") {
+            use std::io::Write;
+            let _ = writeln!(file, "🎯 POPUP: About to call command_editor.update(), exit_editor_key = {:?}", 
+                             self.exit_editor_key.as_ref().map(|k| format!("{:?}", k.key)));
+        }
+        let editor_result = self.command_editor.update(ctx, &config, self.exit_editor_key.as_ref());
         
         // Check for queued errors and display them
         if crate::error_display::has_errors() {
@@ -1940,7 +1822,7 @@ impl eframe::App for AnchorSelector {
         }
         
         // Update dialog system
-        if self.dialog.update(ctx) {
+        if self.dialog.update(ctx, self.exit_dialog_key.as_ref()) {
             if let Some(result) = self.dialog.take_result() {
                 // Check if the "Exit" button was clicked
                 if let Some(button_text) = result.get("exit") {
@@ -1975,9 +1857,17 @@ impl eframe::App for AnchorSelector {
         
         match editor_result {
             CommandEditorResult::Cancel => {
+                // Write debug to log file
+                if let Ok(mut file) = std::fs::OpenOptions::new().create(true).append(true).open("/tmp/hookanchor_debug.log") {
+                    use std::io::Write;
+                    let _ = writeln!(file, "🚪 POPUP: Got Cancel from command editor, hiding it");
+                }
                 self.command_editor.hide();
-                editor_handled_escape = true;
                 command_editor_just_closed = true;
+                if let Ok(mut file) = std::fs::OpenOptions::new().create(true).append(true).open("/tmp/hookanchor_debug.log") {
+                    use std::io::Write;
+                    let _ = writeln!(file, "🚪 POPUP: Command editor is now hidden, back to main popup");
+                }
             }
             CommandEditorResult::Save(_new_command, _original_command_name) => {
                 // Get the save data from command editor
@@ -2052,7 +1942,7 @@ impl eframe::App for AnchorSelector {
             .show(ctx, |ui| {
             ui.vertical(|ui| {
                 // Handle all popup-level keyboard input in centralized location
-                let _keys_processed = self.handle_popup_keys(ctx, editor_handled_escape);
+                let _keys_processed = self.handle_keys(ctx);
                 
                 // Top draggable area (minimal padding to match input box side borders)
                 let top_drag = ui.allocate_response(

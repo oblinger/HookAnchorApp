@@ -7,7 +7,7 @@ use std::collections::HashMap;
 use chrono::{Local, Datelike, Timelike};
 use serde::{Deserialize, Serialize};
 use crate::Command;
-use crate::core::key_parsing::Keystroke;
+use crate::core::key_processing::Keystroke;
 
 /// A template for creating new commands
 #[derive(Debug, Clone, Deserialize, Serialize)]

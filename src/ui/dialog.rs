@@ -265,20 +265,29 @@ impl Dialog {
         (final_width, final_height)
     }
 
-    pub fn update(&mut self, ctx: &egui::Context) -> bool {
+    pub fn update(&mut self, ctx: &egui::Context, exit_dialog_key: Option<&crate::core::key_processing::Keystroke>) -> bool {
         if !self.visible {
             return false;
         }
         
-        
-        
         let mut should_close = false;
         let mut button_pressed = None;
         
-        // Handle escape key
+        // Simple hardcoded key handling - Escape or Enter to close
         if ctx.input(|i| i.key_pressed(egui::Key::Escape)) {
             should_close = true;
             button_pressed = Some(String::new()); // Empty string for escape
+            // Consume the key event
+            ctx.input_mut(|i| {
+                i.consume_key(egui::Modifiers::NONE, egui::Key::Escape);
+            });
+        } else if ctx.input(|i| i.key_pressed(egui::Key::Enter)) {
+            should_close = true;
+            button_pressed = Some("OK".to_string()); // "OK" for enter
+            // Consume the key event
+            ctx.input_mut(|i| {
+                i.consume_key(egui::Modifiers::NONE, egui::Key::Enter);
+            });
         }
         
         // Calculate required window size by measuring actual content  

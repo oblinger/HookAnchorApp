@@ -12,9 +12,9 @@ use crate::{Command, Config, load_state, save_state, save_commands_to_file, util
 use crate::core::get_action;
 use chrono::Local;
 
-/// Helper function to check if detailed scanner debugging is enabled
-fn is_scanner_debug_enabled(config: &Config) -> bool {
-    config.popup_settings.debug_scanner.unwrap_or(true)
+/// Helper function to log scanner debug messages
+fn scanner_log(message: &str) {
+    crate::utils::detailed_log("SCANNER", message);
 }
 
 /// Checks if filesystem scan should be performed and executes it if needed
@@ -221,8 +221,6 @@ pub fn scan_files(mut commands: Vec<Command>, markdown_roots: &[String], config:
             let mut dummy_folders = Vec::new();
             scan_directory_with_root(&root_path, &root_path, &mut commands, &mut existing_commands, &mut dummy_folders, &existing_patches, config);
             let _commands_after_scan = commands.len();
-            if is_scanner_debug_enabled(config) {
-            }
         } else {
         }
     }
