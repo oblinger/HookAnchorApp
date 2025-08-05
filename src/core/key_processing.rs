@@ -151,6 +151,12 @@ impl Keystroke {
     
     /// Parse a key string into egui::Key + Modifiers
     fn parse_key_string(key_str: &str) -> Result<Self, String> {
+        // Special case: if the entire string is just "+", treat it as the plus character
+        // (Shift+Equals). Without this, it would be parsed as a chord with empty parts.
+        if key_str == "+" {
+            return Ok(Self::new(egui::Key::Equals, Modifiers { shift: true, ..Modifiers::none() }));
+        }
+        
         // Handle chord notation (contains '+')
         if key_str.contains('+') {
             let parts: Vec<&str> = key_str.split('+').collect();
