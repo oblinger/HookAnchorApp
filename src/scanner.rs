@@ -308,6 +308,10 @@ fn scan_directory_with_root_protected(dir: &Path, vault_root: &Path, commands: &
                     if path.is_dir() && should_skip_directory(&name_str, config) {
                         continue;
                     }
+                } else {
+                    // Log files with non-UTF8 names
+                    crate::utils::detailed_log("SCANNER", &format!("Skipping non-UTF8 filename: {:?}", path));
+                    continue;
                 }
             }
             
@@ -344,7 +348,13 @@ fn scan_directory_with_root_protected(dir: &Path, vault_root: &Path, commands: &
                     });
                     
                     if duplicate_exists {
+                        crate::utils::detailed_log("SCANNER", &format!("Skipping duplicate: {} ({})", 
+                            command.command, path.display()));
                     } else {
+                        // Log that we're creating a new command
+                        crate::utils::log(&format!("SCANNER: Creating new command '{}' -> {} {}", 
+                            command.command, command.action, command.arg));
+                        
                         // Add to existing commands set to prevent future collisions (lowercase)
                         existing_commands.insert(command.command.to_lowercase());
                         commands.push(command);
