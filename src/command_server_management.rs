@@ -26,6 +26,9 @@ pub fn start_server_if_needed() -> Result<(), Box<dyn std::error::Error>> {
         return Ok(());
     }
     
+    // Check log file size once per session (not every popup)
+    crate::utils::check_and_clear_oversized_log();
+    
     crate::utils::debug_log("SERVER_MGR", "Checking if command server is needed");
     
     // Check PID from state.json
@@ -46,14 +49,31 @@ pub fn start_server_if_needed() -> Result<(), Box<dyn std::error::Error>> {
     crate::utils::debug_log("SERVER_MGR", "Starting new command server via Terminal");
     start_server_via_terminal()?;
     
-    // Wait for startup and PID to be saved (reduced from 3s for better UX)
+    // Wait for startup and verify PID is saved
     crate::utils::debug_log("SERVER_MGR", "Waiting for server startup");
-    let sleep_start = std::time::Instant::now();
-    std::thread::sleep(std::time::Duration::from_millis(300));
-    crate::utils::debug_log("SERVER_MGR", &format!("Server startup wait completed in {}ms", sleep_start.elapsed().as_millis()));
+    let start_time = std::time::Instant::now();
+    let max_wait = std::time::Duration::from_secs(5);
     
-    SERVER_CHECKED.store(true, Ordering::Relaxed);
-    Ok(())
+    // Poll for server to be ready
+    loop {
+        if start_time.elapsed() > max_wait {
+            crate::utils::debug_log("SERVER_MGR", "Server startup timeout - failed to start in 5 seconds");
+            return Err("Server startup timeout".into());
+        }
+        
+        // Check if server PID is now available
+        let new_state = load_state();
+        if let Some(pid) = new_state.server_pid {
+            if is_process_alive(pid) {
+                crate::utils::debug_log("SERVER_MGR", &format!("Server started successfully with PID: {}", pid));
+                SERVER_CHECKED.store(true, Ordering::Relaxed);
+                return Ok(());
+            }
+        }
+        
+        // Brief sleep before next check
+        std::thread::sleep(std::time::Duration::from_millis(100));
+    }
 }
 
 /// Start command server via Terminal + AppleScript for proper shell environment

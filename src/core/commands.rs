@@ -1413,9 +1413,13 @@ pub fn save_commands_to_file(commands: &[Command]) -> Result<(), Box<dyn std::er
         if cmd.patch.is_empty() {
             empty_patch_count += 1;
             empty_patch_commands.push(cmd.command.clone());
-            // Log each empty patch command
-            crate::utils::debug_log("EMPTY_PATCH_BUG", &format!("Command with EMPTY patch during save: '{}' (action: {}, arg: {})", 
-                cmd.command, cmd.action, cmd.arg));
+            
+            // Only log as potential bug for actions that typically need patches
+            let actions_that_need_patches = ["anchor", "markdown", "doc", "cmd"];
+            if actions_that_need_patches.contains(&cmd.action.as_str()) {
+                crate::utils::debug_log("EMPTY_PATCH_BUG", &format!("Command with EMPTY patch during save: '{}' (action: {}, arg: {})", 
+                    cmd.command, cmd.action, cmd.arg));
+            }
         }
         // Log Patents command specifically
         if cmd.command == "Patents" {
@@ -1426,10 +1430,10 @@ pub fn save_commands_to_file(commands: &[Command]) -> Result<(), Box<dyn std::er
     crate::utils::debug_log("SAVE_DEBUG", &format!("About to save {} commands, {} have empty patches", 
         updated_commands.len(), empty_patch_count));
     
-    // Log first 10 empty patch commands for debugging
+    // Log summary of empty patch commands for debugging  
     if !empty_patch_commands.is_empty() {
-        let sample = empty_patch_commands.iter().take(10).map(|s| s.as_str()).collect::<Vec<_>>().join(", ");
-        crate::utils::debug_log("EMPTY_PATCH_BUG", &format!("Sample empty patch commands: {}", sample));
+        let sample = empty_patch_commands.iter().take(5).map(|s| s.as_str()).collect::<Vec<_>>().join(", ");
+        crate::utils::debug_log("SAVE_DEBUG", &format!("{} commands have empty patches (sample: {})", empty_patch_count, sample));
     }
 
     // SAFETY CHECKS: Prevent saving corrupted data

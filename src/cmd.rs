@@ -1157,6 +1157,10 @@ fn run_execute_launcher_command(args: &[String]) {
 
 /// Run rebuild command: restart server and rescan filesystem
 fn run_rebuild_command() {
+    // Clear log file before starting rebuild
+    crate::utils::clear_debug_log();
+    crate::utils::debug_log("REBUILD", "=== REBUILD STARTED - Log cleared for fresh start ===");
+    
     println!("🏗️  HookAnchor Rebuild - Full Reset");
     println!("===================================");
     

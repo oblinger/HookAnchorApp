@@ -478,7 +478,7 @@ impl CommandClient {
         Ok(Self { socket_path })
     }
     
-    /// Execute a command via the server
+    /// Execute a command via the server with timeout and ACK verification
     pub fn execute_command(
         &self,
         command: &str,
@@ -496,8 +496,11 @@ impl CommandClient {
             blocking,
         };
         
-        // Connect to server
+        // Connect to server with timeout
         let mut stream = UnixStream::connect(&self.socket_path)?;
+        
+        // Set read timeout for ACK verification
+        stream.set_read_timeout(Some(std::time::Duration::from_millis(1000)))?;
         
         // Send request
         let request_json = serde_json::to_string(&request)?;
@@ -505,27 +508,20 @@ impl CommandClient {
         stream.write_all(b"\n")?;
         stream.flush()?;
         
-        if !blocking {
-            // For non-blocking mode, don't wait for response
-            verbose_log("CMD_CLIENT", "Non-blocking mode: not waiting for response");
-            // Return a synthetic success response
-            return Ok(CommandResponse {
-                success: true,
-                exit_code: Some(0),
-                stdout: String::new(),
-                stderr: String::new(),
-                error: None,
-            });
-        }
-        
-        // Read response only in blocking mode
+        // Always wait for ACK/response (server sends immediate response for both modes)
         let mut response_data = String::new();
-        stream.read_to_string(&mut response_data)?;
-        
-        let response: CommandResponse = serde_json::from_str(&response_data.trim())?;
-        verbose_log("CMD_CLIENT", &format!("Received response: success={}", response.success));
-        
-        Ok(response)
+        match stream.read_to_string(&mut response_data) {
+            Ok(_) => {
+                let response: CommandResponse = serde_json::from_str(&response_data.trim())?;
+                verbose_log("CMD_CLIENT", &format!("Received ACK/response: success={}", response.success));
+                Ok(response)
+            }
+            Err(e) => {
+                // Timeout or connection error - server is not responding
+                verbose_log("CMD_CLIENT", &format!("Failed to receive ACK from server: {}", e));
+                Err(format!("Server not responding: {}", e).into())
+            }
+        }
     }
     
     /// Check if the server is available
@@ -581,47 +577,67 @@ pub fn is_global_server_running() -> bool {
     }
 }
 
-/// Execute a command using the global server (server required for consistent environment)
+/// Execute a command using the global server with retry and restart logic
 pub fn execute_via_server(
     command: &str,
     working_dir: Option<&str>,
     env_vars: Option<HashMap<String, String>>,
     blocking: bool,
 ) -> Result<CommandResponse, Box<dyn std::error::Error>> {
-    // Try to use the server
-    if let Ok(client) = CommandClient::new() {
-        if client.is_server_available() {
-            verbose_log("CMD_SERVER", "Using server for command execution");
-            return client.execute_command(command, working_dir, env_vars, blocking);
+    const MAX_RETRIES: u32 = 3;
+    const ACK_TIMEOUT_MS: u64 = 1000;
+    
+    for attempt in 1..=MAX_RETRIES {
+        verbose_log("CMD_SERVER", &format!("Command execution attempt {} of {}", attempt, MAX_RETRIES));
+        
+        // Try to execute command and get ACK
+        if let Ok(client) = CommandClient::new() {
+            match client.execute_command(command, working_dir, env_vars.clone(), blocking) {
+                Ok(response) => {
+                    verbose_log("CMD_SERVER", &format!("Command executed successfully on attempt {}", attempt));
+                    return Ok(response);
+                }
+                Err(e) => {
+                    verbose_log("CMD_SERVER", &format!("Command failed on attempt {}: {}", attempt, e));
+                    
+                    // If this was the last attempt, show error to user
+                    if attempt == MAX_RETRIES {
+                        let error_msg = format!(
+                            "Command server failed to respond after {} attempts ({}ms timeout each). \
+                            The server may be hung or experiencing issues.",
+                            MAX_RETRIES, ACK_TIMEOUT_MS
+                        );
+                        crate::error_display::queue_user_error(&error_msg);
+                        return Err(error_msg.into());
+                    }
+                }
+            }
         }
-    }
-    
-    // Server not available - try to start it
-    verbose_log("CMD_SERVER", "Server not available, attempting to start it");
-    crate::utils::debug_log("CMD_SERVER", &format!("Starting server for command: {}", command));
-    crate::command_server_management::reset_server_check(); // Force re-check of PID
-    if let Err(e) = crate::command_server_management::start_server_if_needed() {
-        let error_msg = format!("Failed to start command server: {}", e);
-        verbose_log("CMD_SERVER", &error_msg);
-        return Err(error_msg.into());
-    }
-    
-    // Wait for server to start (reduced from 4s to 100ms for better UX)
-    std::thread::sleep(std::time::Duration::from_millis(100));
-    
-    // Try again after starting server
-    if let Ok(client) = CommandClient::new() {
-        if client.is_server_available() {
-            verbose_log("CMD_SERVER", "Using newly started server for command execution");
-            return client.execute_command(command, working_dir, env_vars, blocking);
+        
+        // Server not responding - restart it for next attempt
+        verbose_log("CMD_SERVER", &format!("Restarting server for attempt {}", attempt + 1));
+        crate::utils::debug_log("CMD_SERVER", &format!("Restarting server for command: {}", command));
+        
+        // Kill existing server and reset check
+        let _ = crate::command_server_management::kill_existing_server();
+        crate::command_server_management::reset_server_check();
+        
+        // Start new server
+        if let Err(e) = crate::command_server_management::start_server_if_needed() {
+            verbose_log("CMD_SERVER", &format!("Failed to restart server: {}", e));
+            if attempt == MAX_RETRIES {
+                let error_msg = format!("Failed to restart command server: {}", e);
+                crate::error_display::queue_user_error(&error_msg);
+                return Err(error_msg.into());
+            }
         }
+        
+        // Brief delay before retry
+        std::thread::sleep(std::time::Duration::from_millis(200));
     }
     
-    // Still not available - this is an error condition
-    let error_msg = "Command server not available - cannot execute commands with proper environment";
-    verbose_log("CMD_SERVER", error_msg);
-    
-    Err(error_msg.into())
+    // Should never reach here due to MAX_RETRIES logic above
+    unreachable!()
 }
 
 /// Start a persistent command server and return its PID

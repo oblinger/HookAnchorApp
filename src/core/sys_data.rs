@@ -32,7 +32,6 @@ pub fn get_sys_data() -> SysData {
                 return data.clone();
             }
             // Not cached, need to load
-            crate::utils::debug_log("GET_SYS_DATA", "No cached data, loading from disk");
             drop(sys_data); // Release the lock before calling load_data
             load_data(Vec::new(), false)
         }
@@ -108,7 +107,6 @@ pub fn load_data(commands_override: Vec<Command>, verbose: bool) -> SysData {
             }
             return data.clone();
         }
-        crate::utils::debug_log("LOAD_DATA", "First call - loading from disk and performing full initialization");
         if verbose {
             println!("📂 Loading data from disk...");
         }

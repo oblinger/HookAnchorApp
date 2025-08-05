@@ -13,6 +13,44 @@ use std::sync::{Mutex, OnceLock};
 /// Cached login shell environment variables
 static LOGIN_ENV_CACHE: OnceLock<Mutex<Option<HashMap<String, String>>>> = OnceLock::new();
 
+/// Clear the debug log file
+/// 
+/// Removes the debug log file specified in config.popup_settings.debug_log
+/// to start fresh logging. Used before rebuilds and when log exceeds max size.
+pub fn clear_debug_log() {
+    let config = crate::core::sys_data::get_config();
+    if let Some(debug_path) = &config.popup_settings.debug_log {
+        let debug_path = expand_tilde(debug_path);
+        
+        // Remove the file if it exists  
+        if std::path::Path::new(&debug_path).exists() {
+            let _ = std::fs::remove_file(&debug_path);
+        }
+    }
+}
+
+/// Check if debug log file exceeds max size and clear if needed
+/// 
+/// Returns true if log was cleared, false otherwise
+pub fn check_and_clear_oversized_log() -> bool {
+    let config = crate::core::sys_data::get_config();
+    if let Some(debug_path) = &config.popup_settings.debug_log {
+        let debug_path = expand_tilde(debug_path);
+        let max_size = config.popup_settings.max_log_file_size.unwrap_or(1_000_000); // 1MB default
+        
+        if let Ok(metadata) = std::fs::metadata(&debug_path) {
+            let current_size = metadata.len();
+            
+            if current_size > max_size {
+                clear_debug_log();
+                debug_log("LOG_MANAGEMENT", &format!("Log file exceeded {} bytes (was {} bytes), cleared for fresh start", max_size, current_size));
+                return true;
+            }
+        }
+    }
+    false
+}
+
 /// Debug logging function used across all modules
 /// 
 /// Logs messages to the debug file specified in config.popup_settings.debug_log

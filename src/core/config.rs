@@ -248,6 +248,9 @@ pub fn load_config_with_error() -> ConfigResult {
                     config.popup_settings.word_separators = " ._-".to_string();
                 }
                 
+                // Normalize template keys for efficient matching
+                normalize_template_keys(&mut config);
+                
                 return ConfigResult::Success(config);
             }
             Err(e) => {
@@ -461,14 +464,71 @@ impl Config {
         use crate::core::key_parsing;
         
         if let Some(ref templates) = self.templates {
+            crate::utils::debug_log("TEMPLATE_BIND", &format!("Checking {} templates for key '{}' with modifiers {:?}", templates.len(), key_name, modifiers));
             for (template_name, template) in templates {
                 if let Some(ref key) = template.key {
+                    crate::utils::debug_log("TEMPLATE_BIND", &format!("  Template '{}' has key '{}'", template_name, key));
                     if key_parsing::key_matches(key, key_name, modifiers) {
+                        crate::utils::debug_log("TEMPLATE_BIND", &format!("✓ MATCH: Template '{}' matches key '{}'", template_name, key_name));
                         return Some(template_name);
+                    }
+                } else {
+                    crate::utils::debug_log("TEMPLATE_BIND", &format!("  Template '{}' has no key binding", template_name));
+                }
+            }
+        }
+        None
+    }
+    
+    /// Check if the given egui event matches any template using the new NormalizedKey system
+    /// This provides more efficient matching by using direct equality comparison
+    pub fn get_template_for_normalized_key(&self, event: &egui::Event) -> Option<&str> {
+        use crate::core::key_parsing::egui_event_to_normalized_key;
+        
+        if let Some(normalized_event) = egui_event_to_normalized_key(event) {
+            if let Some(ref templates) = self.templates {
+                if let Ok(mut file) = std::fs::OpenOptions::new().create(true).append(true).open("/tmp/hookanchor_debug.log") {
+                    use std::io::Write;
+                    let _ = writeln!(file, "🔍 NORMALIZED_MATCH: Looking for templates matching event {:?}", normalized_event);
+                }
+                
+                for (template_name, template) in templates {
+                    if let Some(ref normalized_key) = template.normalized_key {
+                        if let Ok(mut file) = std::fs::OpenOptions::new().create(true).append(true).open("/tmp/hookanchor_debug.log") {
+                            use std::io::Write;
+                            let _ = writeln!(file, "    Template '{}' has normalized key {:?}", template_name, normalized_key);
+                        }
+                        
+                        if *normalized_key == normalized_event {
+                            if let Ok(mut file) = std::fs::OpenOptions::new().create(true).append(true).open("/tmp/hookanchor_debug.log") {
+                                use std::io::Write;
+                                let _ = writeln!(file, "    ✅ DIRECT MATCH: Template '{}' matches!", template_name);
+                            }
+                            return Some(template_name);
+                        }
                     }
                 }
             }
         }
         None
+    }
+}
+
+/// Normalize template keys for efficient matching
+/// This converts the string-based key fields into NormalizedKey objects
+/// for direct equality comparison instead of complex parsing during runtime
+fn normalize_template_keys(config: &mut Config) {
+    use crate::core::key_parsing::config_string_to_normalized_key;
+    
+    if let Some(ref mut templates) = config.templates {
+        for (template_name, template) in templates.iter_mut() {
+            if let Some(ref key_str) = template.key {
+                template.normalized_key = Some(config_string_to_normalized_key(key_str));
+                if let Ok(mut file) = std::fs::OpenOptions::new().create(true).append(true).open("/tmp/hookanchor_debug.log") {
+                    use std::io::Write;
+                    let _ = writeln!(file, "🔧 NORMALIZED: Template '{}' key '{}' → {:?}", template_name, key_str, template.normalized_key);
+                }
+            }
+        }
     }
 }

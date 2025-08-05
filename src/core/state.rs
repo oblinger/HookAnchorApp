@@ -48,21 +48,12 @@ pub fn get_state_file_path() -> PathBuf {
 /// Loads application state from state.json file, returns default if file doesn't exist or is invalid
 pub fn load_state() -> AppState {
     let state_path = get_state_file_path();
-    crate::utils::debug_log("STATE_LOAD", &format!("=== LOADING STATE FROM: {} ===", state_path.display()));
-    
     if let Ok(contents) = fs::read_to_string(&state_path) {
         match serde_json::from_str::<AppState>(&contents) {
-            Ok(state) => {
-                crate::utils::debug_log("STATE_LOAD", &format!("Successfully loaded state - last_executed_command: {:?}", state.last_executed_command));
-                state
-            },
-            Err(e) => {
-                crate::utils::debug_log("STATE_LOAD", &format!("Failed to parse state JSON: {}", e));
-                AppState::default()
-            }
+            Ok(state) => state,
+            Err(_) => AppState::default()
         }
     } else {
-        crate::utils::debug_log("STATE_LOAD", "State file doesn't exist or can't be read, using default");
         AppState::default()
     }
 }
@@ -70,9 +61,6 @@ pub fn load_state() -> AppState {
 /// Saves application state to state.json file
 pub fn save_state(state: &AppState) -> Result<(), Box<dyn std::error::Error>> {
     let state_path = get_state_file_path();
-    crate::utils::debug_log("STATE_SAVE_DETAIL", &format!("=== SAVING STATE TO: {} ===", state_path.display()));
-    crate::utils::debug_log("STATE_SAVE_DETAIL", &format!("State being saved - last_executed_command: {:?}", state.last_executed_command));
-    
     // Ensure config directory exists
     if let Some(parent) = state_path.parent() {
         fs::create_dir_all(parent)?;
@@ -80,9 +68,7 @@ pub fn save_state(state: &AppState) -> Result<(), Box<dyn std::error::Error>> {
     
     // Serialize and save
     let json_content = serde_json::to_string_pretty(state)?;
-    crate::utils::debug_log("STATE_SAVE_DETAIL", &format!("JSON content to write: {}", json_content.chars().take(200).collect::<String>()));
     fs::write(&state_path, json_content)?;
-    crate::utils::debug_log("STATE_SAVE_DETAIL", "State file successfully written to disk");
     
     Ok(())
 }
@@ -96,18 +82,9 @@ pub fn save_state_with_build_time() -> Result<(), Box<dyn std::error::Error>> {
 
 /// Updates last executed command in state.json file
 pub fn save_last_executed_command(command_name: &str) -> Result<(), Box<dyn std::error::Error>> {
-    crate::utils::debug_log("STATE_SAVE", &format!("=== SAVING LAST EXECUTED COMMAND: '{}' ===", command_name));
     let mut state = load_state();
-    let old_command = state.last_executed_command.clone();
     state.last_executed_command = Some(command_name.to_string());
-    crate::utils::debug_log("STATE_SAVE", &format!("Previous command was: {:?}, new command: '{}'", old_command, command_name));
-    let result = save_state(&state);
-    if result.is_ok() {
-        crate::utils::debug_log("STATE_SAVE", "Successfully wrote state file");
-    } else {
-        crate::utils::debug_log("STATE_SAVE", &format!("Failed to write state file: {:?}", result));
-    }
-    result
+    save_state(&state)
 }
 
 /// Updates server PID in state.json file

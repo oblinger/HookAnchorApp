@@ -45,6 +45,7 @@ popup_settings:
   idle_timeout_seconds: 60        # Auto-close timeout in seconds
   countdown_seconds: 5            # Grabber countdown duration
   run_in_background: true         # Keep app running for instant popup
+  max_log_file_size: 1000000      # Maximum log file size in bytes (1MB) before clearing
   listed_actions: "alias,anchor,app,url,folder,cmd,chrome,safari,brave,firefox,work,notion,obs,obs_url,1pass,rewrite,doc,contact,slack,text,shutdown"
 ```
 
@@ -86,9 +87,7 @@ keybindings:
   execute_command: "Enter"        # Execute selected command
   force_rebuild: "`"              # Force rebuild (backtick)
   show_folder: "/"                # Launch first folder match
-  start_grabber: "+"              # Start grabber countdown
   open_editor: "="                # Open command editor
-  add_alias: ">"                  # Add alias using last executed command
   edit_active_command: ";"        # Edit currently selected command
   cancel_editor: "Escape"         # Cancel command editor
 ```
@@ -331,7 +330,6 @@ popup_settings:
 keybindings:
   exit_app: "Escape"
   execute_command: "Enter"
-  add_alias: ">"
   
 # Templates
 templates:

@@ -7,6 +7,7 @@ use std::collections::HashMap;
 use chrono::{Local, Datelike, Timelike};
 use serde::{Deserialize, Serialize};
 use crate::Command;
+use crate::core::key_parsing::NormalizedKey;
 
 /// A template for creating new commands
 #[derive(Debug, Clone, Deserialize, Serialize)]
@@ -32,6 +33,10 @@ pub struct Template {
     #[serde(skip_serializing_if = "Option::is_none")]
     pub key: Option<String>,
     
+    /// Normalized key for efficient matching (computed from key field)
+    #[serde(skip)]
+    pub normalized_key: Option<NormalizedKey>,
+    
     /// If true, open command editor before creating
     #[serde(default)]
     pub edit: bool,
@@ -51,6 +56,10 @@ pub struct Template {
     /// Optional description of what this template does (for help display)
     #[serde(skip_serializing_if = "Option::is_none")]
     pub description: Option<String>,
+    
+    /// If true, validate that previous_folder exists and is valid
+    #[serde(default)]
+    pub validate_previous_folder: bool,
 }
 
 /// Context for template variable expansion
@@ -222,6 +231,38 @@ pub fn process_template(
     context: &TemplateContext,
     _config: &crate::Config,
 ) -> Result<Command, Box<dyn std::error::Error>> {
+    // Validate previous folder if required
+    if template.validate_previous_folder {
+        let previous_folder = context.variables.get("previous_folder")
+            .ok_or("No previous command available")?;
+            
+        if previous_folder.is_empty() {
+            let error_msg = "Previous command has no associated folder. Cannot create sub-anchor.";
+            crate::error_display::queue_user_error(error_msg);
+            return Err(error_msg.into());
+        }
+        
+        // Expand tilde in path for validation
+        let expanded_folder = if previous_folder.starts_with("~/") {
+            if let Ok(home) = std::env::var("HOME") {
+                previous_folder.replacen("~/", &format!("{}/", home), 1)
+            } else {
+                previous_folder.clone()
+            }
+        } else {
+            previous_folder.clone()
+        };
+        
+        // Check if folder exists
+        if !std::path::Path::new(&expanded_folder).exists() {
+            let error_msg = format!("Previous command's folder does not exist: {}", previous_folder);
+            crate::error_display::queue_user_error(&error_msg);
+            return Err(error_msg.into());
+        }
+        
+        crate::utils::debug_log("TEMPLATE", &format!("Validated previous folder: {}", previous_folder));
+    }
+    
     // TODO: Implement grab functionality if template.grab is set
     if let Some(_grab_seconds) = template.grab {
         // This will be implemented in Phase 3
