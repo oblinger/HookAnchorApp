@@ -332,6 +332,10 @@ fn scan_directory_with_root_protected(dir: &Path, vault_root: &Path, commands: &
             } else {
                 // Process files (markdown files)
                 if let Some(command) = process_markdown_with_root(&path, vault_root, existing_commands, &existing_patches) {
+                    // Debug log for found markdown files
+                    crate::utils::detailed_log("SCANNER", &format!("Found markdown file: {} -> command: {}", 
+                        path.display(), command.command));
+                    
                     // Check if a command with the same name, action, and argument already exists
                     let duplicate_exists = commands.iter().any(|existing_cmd| {
                         existing_cmd.command.to_lowercase() == command.command.to_lowercase() &&
@@ -365,7 +369,13 @@ fn process_markdown_with_root(path: &Path, _vault_root: &Path, existing_commands
     }
     
     // Get the base name without extension
-    let file_name = path.file_stem()?.to_str()?;
+    let file_name = match path.file_stem()?.to_str() {
+        Some(name) => name,
+        None => {
+            crate::utils::detailed_log("SCANNER", &format!("Skipping file with invalid UTF-8 name: {}", path.display()));
+            return None;
+        }
+    };
     
     // Determine action type using the shared get_action function
     let action = get_action(path);
