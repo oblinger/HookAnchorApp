@@ -41,6 +41,7 @@ pub fn run_command_line_mode(args: Vec<String>) {
         "--install" => run_install(),
         "--uninstall" => run_uninstall(),
         "--execute-launcher-command" => run_execute_launcher_command(&args),
+        "--popup" => run_popup_command(&args),
         _ => {
             eprintln!("Unknown command: {}", args[1]);
             eprintln!("Use -h or --help for usage information");
@@ -73,6 +74,7 @@ pub fn print_help(program_name: &str) {
     eprintln!("  {} --process-status         # Show detailed process status", program_name);
     eprintln!("  {} --install                # Run setup assistant (install)", program_name);
     eprintln!("  {} --uninstall              # Uninstall HookAnchor", program_name);
+    eprintln!("  {} --popup [show|hide|delete|status] # Manage popup window", program_name);
     eprintln!("  open 'hook://query'         # Handle hook URL");
     eprintln!();
     eprintln!("Examples:");
@@ -1208,4 +1210,65 @@ fn run_rebuild_command() {
     run_rescan_command();
     
     println!("\n🎉 Rebuild complete!");
+}
+
+/// Run popup management command
+fn run_popup_command(args: &[String]) {
+    use std::process::Command;
+    
+    // Determine the popup action
+    let action = if args.len() >= 3 {
+        args[2].as_str()
+    } else {
+        "show"  // Default action
+    };
+    
+    utils::debug_log("POPUP_CMD", &format!("Popup action requested: {}", action));
+    
+    // Validate action
+    match action {
+        "show" | "hide" | "delete" | "status" => {},
+        _ => {
+            utils::log_error(&format!("Unknown popup action: {}", action));
+            eprintln!("Unknown popup action: {}", action);
+            eprintln!("Valid actions: show, hide, delete, status");
+            std::process::exit(1);
+        }
+    }
+    
+    // Find popup launcher binary
+    let exe_path = std::env::current_exe().unwrap_or_default();
+    let exe_dir = exe_path.parent().unwrap_or(std::path::Path::new("."));
+    let popup_path = exe_dir.join("popup");
+    
+    if !popup_path.exists() {
+        utils::log_error(&format!("Popup launcher not found at: {:?}", popup_path));
+        eprintln!("Popup launcher not found at: {:?}", popup_path);
+        std::process::exit(1);
+    }
+    
+    utils::debug_log("POPUP_CMD", &format!("Executing popup launcher: {:?} {}", popup_path, action));
+    
+    // Execute popup launcher with action
+    match Command::new(&popup_path)
+        .arg(action)
+        .output() {
+        Ok(output) => {
+            if output.status.success() {
+                let stdout = String::from_utf8_lossy(&output.stdout);
+                utils::debug_log("POPUP_CMD", &format!("Popup {} succeeded: {}", action, stdout.trim()));
+                print!("{}", stdout);
+            } else {
+                let stderr = String::from_utf8_lossy(&output.stderr);
+                utils::log_error(&format!("Popup {} failed: {}", action, stderr.trim()));
+                eprint!("{}", stderr);
+                std::process::exit(1);
+            }
+        }
+        Err(e) => {
+            utils::log_error(&format!("Failed to execute popup launcher: {}", e));
+            eprintln!("Failed to execute popup launcher: {}", e);
+            std::process::exit(1);
+        }
+    }
 }

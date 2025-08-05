@@ -11,8 +11,12 @@ path = "src/dispatcher.rs"
 
 # GUI popup binary
 [[bin]]
-name = "popup"
+name = "popup_server"
 path = "src/popup_main.rs"
+
+[[bin]]
+name = "popup"
+path = "src/popup_launcher.rs"
 
 # URL Handler binary (deprecated - functionality moved to dispatcher)
 [[bin]]

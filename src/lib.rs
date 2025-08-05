@@ -61,6 +61,9 @@ pub mod error_display;
 // Server management
 pub mod command_server_management;
 
+// Popup server control
+pub mod popup_server_control;
+
 // Re-export commonly used types from core modules
 pub use core::commands::{Command, CommandTarget, Patch, filter_commands, get_display_commands, get_display_commands_with_options, merge_similar_commands, 
                          merge_similar_commands_with_context, load_commands, load_commands_with_data, load_commands_for_inference, save_commands_to_file, 

@@ -334,6 +334,7 @@ fn execute_command_with_env(
     verbose_log("CMD_SERVER", &format!("Full command: {}", request.command));
     verbose_log("CMD_SERVER", &format!("Command parts: {:?}", command_parts));
     
+    
     let is_launcher_command = command_parts.len() >= 1 && 
         matches!(
             command_parts[0], 
@@ -465,6 +466,7 @@ fn get_socket_path() -> Result<PathBuf, Box<dyn std::error::Error>> {
     
     Ok(socket_path)
 }
+
 
 /// Client function to send commands to the server
 pub struct CommandClient {

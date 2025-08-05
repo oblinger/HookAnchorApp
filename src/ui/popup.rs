@@ -2647,6 +2647,38 @@ fn create_fallback_icon() -> IconData {
     }
 }
 
+/// Wrapper that includes popup control socket
+struct PopupWithControl {
+    popup: AnchorSelector,
+    control: crate::popup_server_control::PopupControl,
+}
+
+impl PopupWithControl {
+    fn new(initial_prompt: &str) -> Self {
+        let control = crate::popup_server_control::PopupControl::new();
+        control.start_listener();
+        
+        Self {
+            popup: AnchorSelector::new_with_prompt(initial_prompt),
+            control,
+        }
+    }
+}
+
+impl eframe::App for PopupWithControl {
+    fn clear_color(&self, visuals: &egui::Visuals) -> [f32; 4] {
+        self.popup.clear_color(visuals)
+    }
+    
+    fn update(&mut self, ctx: &egui::Context, frame: &mut eframe::Frame) {
+        // Process any control commands first
+        self.control.process_commands(ctx);
+        
+        // Then update the popup
+        self.popup.update(ctx, frame);
+    }
+}
+
 pub fn run_gui_with_prompt(initial_prompt: &str, _app_state: super::ApplicationState) -> Result<(), eframe::Error> {
     // Debug: Log when popup is being opened
     crate::utils::debug_log("POPUP_OPEN", &format!("Opening popup with initial prompt: '{}'", initial_prompt));
@@ -2695,7 +2727,7 @@ pub fn run_gui_with_prompt(initial_prompt: &str, _app_state: super::ApplicationS
                 }
             }
             
-            Ok(Box::new(AnchorSelector::new_with_prompt(&prompt)))
+            Ok(Box::new(PopupWithControl::new(&prompt)))
         }),
     )
 }
