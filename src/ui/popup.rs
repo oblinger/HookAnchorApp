@@ -239,7 +239,7 @@ impl AnchorSelector {
                 WindowSizeMode::Dialog => self.last_dialog_size = Some(required_size),
             }
             
-            crate::utils::debug_log("WINDOW_SIZE", &format!(
+            crate::utils::detailed_log("WINDOW_SIZE", &format!(
                 "Window resized to {:?} mode: {}x{}", 
                 new_mode, required_size.x, required_size.y
             ));
@@ -2095,10 +2095,10 @@ impl eframe::App for AnchorSelector {
                     if response.has_focus() {
                         self.focus_set = true;
                         self.request_focus = false;  // Clear the request
-                        crate::utils::debug_log("FOCUS", &format!("Focus successfully set on frame {}", self.frame_count));
+                        crate::utils::detailed_log("FOCUS", &format!("Focus successfully set on frame {}", self.frame_count));
                     } else if self.frame_count % 5 == 0 && self.frame_count <= 15 {
                         // Log focus attempts every 5 frames for debugging
-                        crate::utils::debug_log("FOCUS", &format!("Focus attempt on frame {} - window focused: {}", 
+                        crate::utils::detailed_log("FOCUS", &format!("Focus attempt on frame {} - window focused: {}", 
                             self.frame_count, ctx.input(|i| i.focused)));
                     }
                 }
