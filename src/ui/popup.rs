@@ -447,10 +447,10 @@ impl AnchorSelector {
                 if !PopupState::is_separator_command(selected_cmd) {
                     // Save the last executed command for add_alias functionality
                     use crate::core::state::save_last_executed_command;
-                    crate::utils::debug_log("STATE_SAVE", &format!("POPUP: Attempting to save last executed command: '{}'", selected_cmd.command));
+                    crate::utils::detailed_log("STATE_SAVE", &format!("POPUP: Attempting to save last executed command: '{}'", selected_cmd.command));
                     match save_last_executed_command(&selected_cmd.command) {
-                        Ok(_) => crate::utils::debug_log("STATE_SAVE", "POPUP: Successfully saved last executed command"),
-                        Err(e) => crate::utils::debug_log("STATE_SAVE", &format!("POPUP: Failed to save last executed command: {}", e)),
+                        Ok(_) => crate::utils::detailed_log("STATE_SAVE", "POPUP: Successfully saved last executed command"),
+                        Err(e) => crate::utils::detailed_log("STATE_SAVE", &format!("POPUP: Failed to save last executed command: {}", e)),
                     }
                     
                     let launcher_command = format!("{} {}", selected_cmd.action, selected_cmd.arg);
@@ -2358,10 +2358,10 @@ impl eframe::App for AnchorSelector {
                                                 
                                                 // Save the last executed command for add_alias functionality
                                                 use crate::core::state::save_last_executed_command;
-                                                crate::utils::debug_log("STATE_SAVE", &format!("POPUP_CLICK: Attempting to save last executed command: '{}'", cmd.command));
+                                                crate::utils::detailed_log("STATE_SAVE", &format!("POPUP_CLICK: Attempting to save last executed command: '{}'", cmd.command));
                                                 match save_last_executed_command(&cmd.command) {
-                                                    Ok(_) => crate::utils::debug_log("STATE_SAVE", "POPUP_CLICK: Successfully saved last executed command"),
-                                                    Err(e) => crate::utils::debug_log("STATE_SAVE", &format!("POPUP_CLICK: Failed to save last executed command: {}", e)),
+                                                    Ok(_) => crate::utils::detailed_log("STATE_SAVE", "POPUP_CLICK: Successfully saved last executed command"),
+                                                    Err(e) => crate::utils::detailed_log("STATE_SAVE", &format!("POPUP_CLICK: Failed to save last executed command: {}", e)),
                                                 }
                                                 
                                                 let launcher_cmd = format!("{} {}", cmd.action, cmd.arg);
@@ -2477,10 +2477,10 @@ impl eframe::App for AnchorSelector {
                                         
                                         // Save the last executed command for add_alias functionality
                                         use crate::core::state::save_last_executed_command;
-                                        crate::utils::debug_log("STATE_SAVE", &format!("POPUP_CLICK2: Attempting to save last executed command: '{}'", cmd.command));
+                                        crate::utils::detailed_log("STATE_SAVE", &format!("POPUP_CLICK2: Attempting to save last executed command: '{}'", cmd.command));
                                         match save_last_executed_command(&cmd.command) {
-                                            Ok(_) => crate::utils::debug_log("STATE_SAVE", "POPUP_CLICK2: Successfully saved last executed command"),
-                                            Err(e) => crate::utils::debug_log("STATE_SAVE", &format!("POPUP_CLICK2: Failed to save last executed command: {}", e)),
+                                            Ok(_) => crate::utils::detailed_log("STATE_SAVE", "POPUP_CLICK2: Successfully saved last executed command"),
+                                            Err(e) => crate::utils::detailed_log("STATE_SAVE", &format!("POPUP_CLICK2: Failed to save last executed command: {}", e)),
                                         }
                                         
                                         let launcher_cmd = format!("{} {}", cmd.action, cmd.arg);

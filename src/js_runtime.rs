@@ -135,7 +135,7 @@ fn setup_logging(ctx: &Ctx<'_>) -> Result<(), Box<dyn std::error::Error>> {
     // log(message) - General logging to file
     ctx.globals().set("log", Function::new(ctx.clone(), |msg: String| {
         // Use the same logging system as the rest of the application
-        crate::utils::debug_log("JS", &msg);
+        crate::utils::detailed_log("JS", &msg);
     })?)?;
     
     // debug(message) - Debug logging

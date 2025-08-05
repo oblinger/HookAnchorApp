@@ -6,7 +6,7 @@
 
 use std::collections::HashMap;
 use crate::eval::{EvalError, Environment};
-use crate::utils::{debug_log, launch_app_with_arg, open_url, open_folder, open_with_app};
+use crate::utils::{detailed_log, launch_app_with_arg, open_url, open_folder, open_with_app};
 
 /// Setup all built-in functions in the environment's function registry
 pub fn setup_builtin_functions(env: &mut Environment) {
@@ -17,13 +17,13 @@ pub fn setup_builtin_functions(env: &mut Environment) {
             .ok_or_else(|| EvalError::InvalidAction("Missing 'name' or 'app' argument".to_string()))?;
         let arg = get_substituted_string_arg(args, "arg", env);
         
-        debug_log("BUILTIN", &format!("Launching app: {} with arg: {:?}", name, arg));
+        detailed_log("BUILTIN", &format!("Launching app: {} with arg: {:?}", name, arg));
         
         let launch_start_time = std::time::Instant::now();
-        debug_log("BUILTIN", "About to call launch_app_with_arg (non-blocking)");
+        detailed_log("BUILTIN", "About to call launch_app_with_arg (non-blocking)");
         let output_result = launch_app_with_arg(&name, arg.as_deref());
         let launch_duration = launch_start_time.elapsed();
-        debug_log("BUILTIN", &format!("launch_app_with_arg completed in {:?}", launch_duration));
+        detailed_log("BUILTIN", &format!("launch_app_with_arg completed in {:?}", launch_duration));
         
         match output_result {
             Ok(output) => {
@@ -36,7 +36,7 @@ pub fn setup_builtin_functions(env: &mut Environment) {
             Err(e) => {
                 // Check if this is our "success error" from non-blocking execution
                 if e.to_string().contains("NON_BLOCKING_SUCCESS") {
-                    debug_log("BUILTIN", "Non-blocking launch successful");
+                    detailed_log("BUILTIN", "Non-blocking launch successful");
                 } else {
                     return Err(EvalError::ExecutionError(format!("Failed to launch app '{}': {}", name, e)));
                 }
@@ -52,13 +52,13 @@ pub fn setup_builtin_functions(env: &mut Environment) {
         let arg = get_substituted_string_arg(args, "arg", env)
             .ok_or_else(|| EvalError::InvalidAction("Missing 'arg' argument".to_string()))?;
         
-        debug_log("BUILTIN", &format!("Opening '{}' with app: '{}'", arg, app));
+        detailed_log("BUILTIN", &format!("Opening '{}' with app: '{}'", arg, app));
         
         let open_start_time = std::time::Instant::now();
-        debug_log("BUILTIN", "About to call open_with_app (non-blocking)");
+        detailed_log("BUILTIN", "About to call open_with_app (non-blocking)");
         let output_result = open_with_app(&app, &arg);
         let open_duration = open_start_time.elapsed();
-        debug_log("BUILTIN", &format!("open_with_app completed in {:?}", open_duration));
+        detailed_log("BUILTIN", &format!("open_with_app completed in {:?}", open_duration));
         
         match output_result {
             Ok(output) => {
@@ -69,7 +69,7 @@ pub fn setup_builtin_functions(env: &mut Environment) {
             }
             Err(e) => {
                 if e.to_string().contains("NON_BLOCKING_SUCCESS") {
-                    debug_log("BUILTIN", "Non-blocking open successful");
+                    detailed_log("BUILTIN", "Non-blocking open successful");
                 } else {
                     return Err(EvalError::ExecutionError(format!("Failed to open '{}': {}", arg, e)));
                 }
@@ -84,13 +84,13 @@ pub fn setup_builtin_functions(env: &mut Environment) {
         let url = get_substituted_string_arg(args, "url", env)
             .ok_or_else(|| EvalError::InvalidAction("Missing 'url' argument".to_string()))?;
         
-        debug_log("BUILTIN", &format!("Opening URL: {}", url));
+        detailed_log("BUILTIN", &format!("Opening URL: {}", url));
         
         let url_start_time = std::time::Instant::now();
-        debug_log("BUILTIN", "About to call open_url (non-blocking)");
+        detailed_log("BUILTIN", "About to call open_url (non-blocking)");
         let output_result = open_url(&url);
         let url_duration = url_start_time.elapsed();
-        debug_log("BUILTIN", &format!("open_url completed in {:?}", url_duration));
+        detailed_log("BUILTIN", &format!("open_url completed in {:?}", url_duration));
         
         match output_result {
             Ok(output) => {
@@ -101,7 +101,7 @@ pub fn setup_builtin_functions(env: &mut Environment) {
             }
             Err(e) => {
                 if e.to_string().contains("NON_BLOCKING_SUCCESS") {
-                    debug_log("BUILTIN", "Non-blocking URL open successful");
+                    detailed_log("BUILTIN", "Non-blocking URL open successful");
                 } else {
                     return Err(EvalError::ExecutionError(format!("Failed to open URL '{}': {}", url, e)));
                 }
@@ -116,13 +116,13 @@ pub fn setup_builtin_functions(env: &mut Environment) {
         let path = get_substituted_string_arg(args, "path", env)
             .ok_or_else(|| EvalError::InvalidAction("Missing 'path' argument".to_string()))?;
         
-        debug_log("BUILTIN", &format!("Opening folder: {}", path));
+        detailed_log("BUILTIN", &format!("Opening folder: {}", path));
         
         let folder_start_time = std::time::Instant::now();
-        debug_log("BUILTIN", "About to call open_folder (non-blocking)");
+        detailed_log("BUILTIN", "About to call open_folder (non-blocking)");
         let output_result = open_folder(&path);
         let folder_duration = folder_start_time.elapsed();
-        debug_log("BUILTIN", &format!("open_folder completed in {:?}", folder_duration));
+        detailed_log("BUILTIN", &format!("open_folder completed in {:?}", folder_duration));
         
         match output_result {
             Ok(output) => {
@@ -133,7 +133,7 @@ pub fn setup_builtin_functions(env: &mut Environment) {
             }
             Err(e) => {
                 if e.to_string().contains("NON_BLOCKING_SUCCESS") {
-                    debug_log("BUILTIN", "Non-blocking folder open successful");
+                    detailed_log("BUILTIN", "Non-blocking folder open successful");
                 } else {
                     return Err(EvalError::ExecutionError(format!("Failed to open folder '{}': {}", path, e)));
                 }
@@ -179,7 +179,7 @@ pub fn setup_builtin_functions(env: &mut Environment) {
             .or_else(|| get_substituted_string_arg(args, "cmd", env))
             .ok_or_else(|| EvalError::InvalidAction("Missing 'command' or 'cmd' argument".to_string()))?;
         
-        debug_log("BUILTIN", &format!("Starting shell command (simple, non-blocking): {}", command));
+        detailed_log("BUILTIN", &format!("Starting shell command (simple, non-blocking): {}", command));
         
         let _output = crate::utils::shell_simple(&command, false)
             .map_err(|e| EvalError::ExecutionError(format!("Failed to start shell command '{}': {}", command, e)))?;
@@ -193,7 +193,7 @@ pub fn setup_builtin_functions(env: &mut Environment) {
             .or_else(|| get_substituted_string_arg(args, "cmd", env))
             .ok_or_else(|| EvalError::InvalidAction("Missing 'command' or 'cmd' argument".to_string()))?;
         
-        debug_log("BUILTIN", &format!("Starting shell command (login, non-blocking): {}", command));
+        detailed_log("BUILTIN", &format!("Starting shell command (login, non-blocking): {}", command));
         
         let _output = crate::utils::shell_login(&command, false)
             .map_err(|e| EvalError::ExecutionError(format!("Failed to start shell command '{}': {}", command, e)))?;
@@ -236,7 +236,7 @@ pub fn setup_builtin_functions(env: &mut Environment) {
         let code = get_substituted_string_arg(args, "code", env)
             .ok_or_else(|| EvalError::InvalidAction("Missing 'code' argument".to_string()))?;
         
-        debug_log("BUILTIN", "Executing JavaScript function");
+        detailed_log("BUILTIN", "Executing JavaScript function");
         
         // Set up JavaScript context with variables
         env.js_context.with(|ctx| -> Result<(), EvalError> {
@@ -284,12 +284,12 @@ pub fn setup_builtin_functions(env: &mut Environment) {
                         format!("JavaScript exception: {:?}", exception)
                     };
                     
-                    debug_log("JS-ERROR", &exception_info);
+                    detailed_log("JS-ERROR", &exception_info);
                     Err(EvalError::ExecutionError(format!("JavaScript execution failed: {}", exception_info)))
                 },
                 Err(e) => {
                     let error_msg = format!("JavaScript execution failed: {}", e);
-                    debug_log("JS-ERROR", &error_msg);
+                    detailed_log("JS-ERROR", &error_msg);
                     Err(EvalError::ExecutionError(error_msg))
                 }
             }
