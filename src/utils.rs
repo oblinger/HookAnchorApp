@@ -18,14 +18,12 @@ static LOGIN_ENV_CACHE: OnceLock<Mutex<Option<HashMap<String, String>>>> = OnceL
 /// Removes the debug log file specified in config.popup_settings.debug_log
 /// to start fresh logging. Used before rebuilds and when log exceeds max size.
 pub fn clear_debug_log() {
-    let config = crate::core::sys_data::get_config();
-    if let Some(debug_path) = &config.popup_settings.debug_log {
-        let debug_path = expand_tilde(debug_path);
-        
-        // Remove the file if it exists  
-        if std::path::Path::new(&debug_path).exists() {
-            let _ = std::fs::remove_file(&debug_path);
-        }
+    // Use constant from sys_data
+    let debug_path = expand_tilde(crate::core::sys_data::DEFAULT_LOG_PATH);
+    
+    // Remove the file if it exists  
+    if std::path::Path::new(&debug_path).exists() {
+        let _ = std::fs::remove_file(&debug_path);
     }
 }
 
@@ -33,43 +31,52 @@ pub fn clear_debug_log() {
 /// 
 /// Returns true if log was cleared, false otherwise
 pub fn check_and_clear_oversized_log() -> bool {
-    // Can't log here - would cause infinite recursion during config loading
-    let config = crate::core::sys_data::get_config();
-    if let Some(debug_path) = &config.popup_settings.debug_log {
-        let debug_path = expand_tilde(debug_path);
-        let max_size = config.popup_settings.max_log_file_size.unwrap_or(1_000_000); // 1MB default
+    // Use constant from sys_data
+    let debug_path = expand_tilde(crate::core::sys_data::DEFAULT_LOG_PATH);
+    
+    // Get max size from config if available, otherwise use default
+    let max_size = match crate::core::sys_data::CONFIG.get() {
+        Some(cfg) => cfg.popup_settings.max_log_file_size.unwrap_or(1_000_000), // 1MB default
+        None => crate::core::sys_data::DEFAULT_MAX_LOG_SIZE,
+    };
+    
+    // Log when we check (to temp file to avoid recursion)
+    if let Ok(mut file) = OpenOptions::new()
+        .create(true)
+        .append(true)
+        .open("/tmp/hookanchor_log_checks.log") {
+        let timestamp = Local::now().format("%Y-%m-%d %H:%M:%S");
+        let _ = writeln!(file, "{} Checking log size - max_size configured: {}", timestamp, max_size);
+    }
+    
+    if let Ok(metadata) = std::fs::metadata(&debug_path) {
+        let current_size = metadata.len();
         
-        // Log when we check (to temp file to avoid recursion)
-        if let Ok(mut file) = OpenOptions::new()
-            .create(true)
-            .append(true)
-            .open("/tmp/hookanchor_log_checks.log") {
-            let timestamp = Local::now().format("%Y-%m-%d %H:%M:%S");
-            let _ = writeln!(file, "{} Checking log size - max_size configured: {}", timestamp, max_size);
-        }
-        
-        if let Ok(metadata) = std::fs::metadata(&debug_path) {
-            let current_size = metadata.len();
-            
-            if current_size > max_size {
-                // First log the truncation event to a separate file to avoid recursion
-                if let Ok(mut file) = OpenOptions::new()
-                    .create(true)
-                    .append(true)
-                    .open("/tmp/hookanchor_log_truncation.log") {
-                    let timestamp = Local::now().format("%Y-%m-%d %H:%M:%S");
-                    let _ = writeln!(file, "{} Log file exceeded {} bytes (was {} bytes), clearing log file at: {}", 
-                        timestamp, max_size, current_size, debug_path);
-                }
-                
-                clear_debug_log();
-                // Now we can safely log to the fresh file
-                log(&format!("LOG_MANAGEMENT: Log file exceeded {} bytes (was {} bytes), cleared for fresh start", max_size, current_size));
-                return true;
+        if current_size > max_size {
+            // First log the truncation event to a separate file to avoid recursion
+            if let Ok(mut file) = OpenOptions::new()
+                .create(true)
+                .append(true)
+                .open("/tmp/hookanchor_log_truncation.log") {
+                let timestamp = Local::now().format("%Y-%m-%d %H:%M:%S");
+                let _ = writeln!(file, "{} Log file exceeded {} bytes (was {} bytes), clearing log file at: {}", 
+                    timestamp, max_size, current_size, debug_path);
             }
+            
+            clear_debug_log();
+            // Now we can safely log to the fresh file
+            log(&format!("LOG_MANAGEMENT: Log file exceeded {} bytes (was {} bytes), cleared for fresh start", max_size, current_size));
+            return true;
         }
     }
     false
+}
+
+/// Clear the log file unconditionally
+/// 
+/// This is used when we want to start fresh, such as during a rebuild
+pub fn clear_log_file() {
+    clear_debug_log();
 }
 
 /// Simple logging function that checks if logging is enabled
@@ -77,23 +84,17 @@ pub fn check_and_clear_oversized_log() -> bool {
 /// This is the primary logging function that should be used throughout the codebase.
 /// It checks if a debug log path is configured before writing.
 pub fn log(message: &str) {
-    // Don't try to log if config isn't initialized yet
-    let config = match crate::core::sys_data::CONFIG.get() {
-        Some(cfg) => cfg.clone(),
-        None => return, // Config not initialized yet, skip logging
-    };
-    if let Some(debug_path) = &config.popup_settings.debug_log {
-        let debug_path = expand_tilde(debug_path);
-        
-        let timestamp = Local::now().format("%Y-%m-%d %H:%M:%S");
-        let log_entry = format!("{} {}\n", timestamp, message);
-        
-        if let Ok(mut file) = OpenOptions::new()
-            .create(true)
-            .append(true)
-            .open(debug_path) {
-            let _ = file.write_all(log_entry.as_bytes());
-        }
+    // Use constant from sys_data for consistency
+    let debug_path = expand_tilde(crate::core::sys_data::DEFAULT_LOG_PATH);
+    
+    let timestamp = Local::now().format("%Y-%m-%d %H:%M:%S");
+    let log_entry = format!("{} {}\n", timestamp, message);
+    
+    if let Ok(mut file) = OpenOptions::new()
+        .create(true)
+        .append(true)
+        .open(debug_path) {
+        let _ = file.write_all(log_entry.as_bytes());
     }
 }
 
@@ -102,13 +103,13 @@ pub fn log(message: &str) {
 /// This function should be used for verbose logging that would normally be too noisy,
 /// such as logging every key press or detailed execution flow.
 pub fn detailed_log(module: &str, message: &str) {
-    // Don't try to log if config isn't initialized yet
-    let config = match crate::core::sys_data::CONFIG.get() {
-        Some(cfg) => cfg.clone(),
-        None => return, // Config not initialized yet, skip logging
+    // Check if detailed logging is enabled
+    let verbose_enabled = match crate::core::sys_data::CONFIG.get() {
+        Some(cfg) => cfg.popup_settings.verbose_logging.unwrap_or(false),
+        None => false, // Config not loaded yet, assume verbose is off
     };
-    // Check if detailed logging is enabled (using verbose_logging field for now)
-    if config.popup_settings.verbose_logging.unwrap_or(false) {
+    
+    if verbose_enabled {
         log(&format!("{}: {}", module, message));
     }
 }

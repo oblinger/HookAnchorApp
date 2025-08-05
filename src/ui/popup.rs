@@ -1427,7 +1427,10 @@ impl AnchorSelector {
     
     /// Trigger rebuild: restart server and rescan filesystem (full reset)
     fn trigger_rebuild(&mut self) {
-        crate::utils::debug_log("REBUILD", "=== TRIGGER_REBUILD FUNCTION CALLED ===");
+        // Clear the log file before rebuild
+        crate::utils::clear_log_file();
+        
+        crate::utils::log("=== REBUILD STARTED - Log file cleared ===");
         
         println!("🏗️  HookAnchor Rebuild - Clean Server Restart");
         println!("===============================================");
