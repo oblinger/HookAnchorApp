@@ -1759,11 +1759,11 @@ impl eframe::App for AnchorSelector {
             if idle_time >= timeout_seconds {
                 // Close command editor if open
                 if self.command_editor.visible {
-                    self.command_editor.hide();
+                    self.close_command_editor();
                 }
                 // Close dialog if open  
                 if self.dialog.visible {
-                    self.dialog.hide();
+                    self.close_dialog();
                 }
                 // Exit the application
                 process::exit(0);
@@ -1865,6 +1865,8 @@ impl eframe::App for AnchorSelector {
         
         // Update dialog system
         if self.dialog.update(ctx, self.exit_dialog_key.as_ref()) {
+            // Dialog was closed, request focus on input field
+            self.request_focus = true;
             if let Some(result) = self.dialog.take_result() {
                 // Check if the "Exit" button was clicked
                 if let Some(button_text) = result.get("exit") {
@@ -1904,7 +1906,7 @@ impl eframe::App for AnchorSelector {
                     use std::io::Write;
                     let _ = writeln!(file, "🚪 POPUP: Got Cancel from command editor, hiding it");
                 }
-                self.command_editor.hide();
+                self.close_command_editor();
                 command_editor_just_closed = true;
                 if let Ok(mut file) = std::fs::OpenOptions::new().create(true).append(true).open("/tmp/hookanchor_debug.log") {
                     use std::io::Write;
@@ -1943,7 +1945,7 @@ impl eframe::App for AnchorSelector {
                     }
                 }
                 
-                self.command_editor.hide();
+                self.close_command_editor();
                 command_editor_just_closed = true;
             }
             CommandEditorResult::Delete(command_name) => {
@@ -1966,7 +1968,7 @@ impl eframe::App for AnchorSelector {
                         }
                     }
                 }
-                self.command_editor.hide();
+                self.close_command_editor();
                 command_editor_just_closed = true;
             }
             CommandEditorResult::None => {
@@ -2078,9 +2080,9 @@ impl eframe::App for AnchorSelector {
                 
                 // Focus the text input on startup or when command editor closes
                 // Extended focus attempt duration and window activation for better reliability
-                let should_focus = !self.focus_set && (
-                    self.frame_count <= 15 || command_editor_just_closed || self.request_focus
-                );
+                let should_focus = (!self.focus_set && self.frame_count <= 15) || 
+                    command_editor_just_closed || 
+                    self.request_focus;
                 
                 if should_focus {
                     // On early frames, also try to activate the window to ensure proper focus
