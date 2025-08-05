@@ -60,6 +60,10 @@ pub struct Template {
     /// If true, validate that previous_folder exists and is valid
     #[serde(default)]
     pub validate_previous_folder: bool,
+    
+    /// If true, rescan file system after creating template
+    #[serde(default)]
+    pub file_rescan: bool,
 }
 
 /// Context for template variable expansion

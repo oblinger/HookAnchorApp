@@ -759,6 +759,11 @@ impl AnchorSelector {
                                         // Clear search and update display
                                         self.popup_state.search_text.clear();
                                         self.popup_state.update_search(String::new());
+                                        
+                                        // Trigger rescan if requested
+                                        if template.file_rescan {
+                                            self.trigger_rescan();
+                                        }
                                     }
                                     Err(e) => {
                                         self.show_error_dialog(&format!("Failed to add command: {}", e));
@@ -1242,6 +1247,11 @@ impl AnchorSelector {
                                                         }
                                                         self.popup_state.search_text.clear();
                                                         self.popup_state.update_search(String::new());
+                                                        
+                                                        // Trigger rescan if requested
+                                                        if template.file_rescan {
+                                                            self.trigger_rescan();
+                                                        }
                                                     }
                                                     Err(e) => {
                                                         self.show_error_dialog(&format!("Failed to add command: {}", e));
@@ -1298,6 +1308,11 @@ impl AnchorSelector {
                                                         }
                                                         self.popup_state.search_text.clear();
                                                         self.popup_state.update_search(String::new());
+                                                        
+                                                        // Trigger rescan if requested
+                                                        if template.file_rescan {
+                                                            self.trigger_rescan();
+                                                        }
                                                     }
                                                     Err(e) => {
                                                         self.show_error_dialog(&format!("Failed to add command: {}", e));
@@ -1460,6 +1475,26 @@ impl AnchorSelector {
             Err(e) => {
                 crate::utils::debug_log("REBUILD", &format!("Failed to execute rescan: {}", e));
                 println!("  ❌ Failed to start rescan: {}", e);
+            }
+        }
+    }
+    
+    /// Trigger filesystem rescan
+    fn trigger_rescan(&mut self) {
+        crate::utils::log("Triggering filesystem rescan...");
+        let current_exe = std::env::current_exe().unwrap_or_else(|_| "popup".into());
+        match std::process::Command::new(current_exe)
+            .arg("--rescan")
+            .status() {
+            Ok(status) => {
+                if status.success() {
+                    crate::utils::detailed_log("RESCAN", "Filesystem rescan completed successfully");
+                } else {
+                    crate::utils::log_error("Filesystem rescan failed");
+                }
+            }
+            Err(e) => {
+                crate::utils::log_error(&format!("Failed to start rescan: {}", e));
             }
         }
     }

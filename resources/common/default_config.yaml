@@ -145,6 +145,21 @@ templates:
     contents: |
       .[[{{input}}]].  >[[{{previous_name}}]]
       
+  # WW template - creates work sub-anchor with YYYY-MM prefix
+  ww:
+    description: "Create work sub-anchor with YYYY-MM prefix"
+    key: "W"
+    name: "{{YYYY}}-{{MM}} {{input}}"
+    action: "anchor"
+    arg: "/Users/oblinger/ob/kmr/Work/SV/ww/{{YYYY}}-{{MM}} {{input}}/{{YYYY}}-{{MM}} {{input}}.md"
+    patch: "WW"
+    flags: ""
+    edit: true
+    file: "/Users/oblinger/ob/kmr/Work/SV/ww/{{YYYY}}-{{MM}} {{input}}"
+    file_rescan: true
+    contents: |
+      .[[{{YYYY}}-{{MM}} {{input}}]].
+      
   # TEST TEMPLATES - to debug key binding
   test_at:
     description: "Test @ key"
