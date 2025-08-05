@@ -33,17 +33,38 @@ pub fn clear_debug_log() {
 /// 
 /// Returns true if log was cleared, false otherwise
 pub fn check_and_clear_oversized_log() -> bool {
+    // Can't log here - would cause infinite recursion during config loading
     let config = crate::core::sys_data::get_config();
     if let Some(debug_path) = &config.popup_settings.debug_log {
         let debug_path = expand_tilde(debug_path);
         let max_size = config.popup_settings.max_log_file_size.unwrap_or(1_000_000); // 1MB default
         
+        // Log when we check (to temp file to avoid recursion)
+        if let Ok(mut file) = OpenOptions::new()
+            .create(true)
+            .append(true)
+            .open("/tmp/hookanchor_log_checks.log") {
+            let timestamp = Local::now().format("%Y-%m-%d %H:%M:%S");
+            let _ = writeln!(file, "{} Checking log size - max_size configured: {}", timestamp, max_size);
+        }
+        
         if let Ok(metadata) = std::fs::metadata(&debug_path) {
             let current_size = metadata.len();
             
             if current_size > max_size {
+                // First log the truncation event to a separate file to avoid recursion
+                if let Ok(mut file) = OpenOptions::new()
+                    .create(true)
+                    .append(true)
+                    .open("/tmp/hookanchor_log_truncation.log") {
+                    let timestamp = Local::now().format("%Y-%m-%d %H:%M:%S");
+                    let _ = writeln!(file, "{} Log file exceeded {} bytes (was {} bytes), clearing log file at: {}", 
+                        timestamp, max_size, current_size, debug_path);
+                }
+                
                 clear_debug_log();
-                debug_log("LOG_MANAGEMENT", &format!("Log file exceeded {} bytes (was {} bytes), cleared for fresh start", max_size, current_size));
+                // Now we can safely log to the fresh file
+                log(&format!("LOG_MANAGEMENT: Log file exceeded {} bytes (was {} bytes), cleared for fresh start", max_size, current_size));
                 return true;
             }
         }
@@ -56,7 +77,11 @@ pub fn check_and_clear_oversized_log() -> bool {
 /// This is the primary logging function that should be used throughout the codebase.
 /// It checks if a debug log path is configured before writing.
 pub fn log(message: &str) {
-    let config = crate::core::sys_data::get_config();
+    // Don't try to log if config isn't initialized yet
+    let config = match crate::core::sys_data::CONFIG.get() {
+        Some(cfg) => cfg.clone(),
+        None => return, // Config not initialized yet, skip logging
+    };
     if let Some(debug_path) = &config.popup_settings.debug_log {
         let debug_path = expand_tilde(debug_path);
         
@@ -77,11 +102,28 @@ pub fn log(message: &str) {
 /// This function should be used for verbose logging that would normally be too noisy,
 /// such as logging every key press or detailed execution flow.
 pub fn detailed_log(module: &str, message: &str) {
-    let config = crate::core::sys_data::get_config();
+    // Don't try to log if config isn't initialized yet
+    let config = match crate::core::sys_data::CONFIG.get() {
+        Some(cfg) => cfg.clone(),
+        None => return, // Config not initialized yet, skip logging
+    };
     // Check if detailed logging is enabled (using verbose_logging field for now)
     if config.popup_settings.verbose_logging.unwrap_or(false) {
         log(&format!("{}: {}", module, message));
     }
+}
+
+/// Error logging function that marks errors clearly in the log
+/// 
+/// This replaces eprintln! calls for errors that should go to the log file
+/// instead of stderr. The error is always logged (not conditional on verbose mode).
+pub fn log_error(message: &str) {
+    log(&format!("❌ ERROR: {}", message));
+}
+
+/// Error logging with module context
+pub fn log_error_module(module: &str, message: &str) {
+    log(&format!("❌ ERROR [{}]: {}", module, message));
 }
 
 /// Legacy debug log function - now just calls log() with formatted message
@@ -609,7 +651,7 @@ pub fn open_with_app(app: &str, target: &str) -> Result<std::process::Output, st
             child
         },
         Err(e) => {
-            eprintln!("Warning: Failed to spawn open command: {}", e);
+            log_error(&format!("Failed to spawn open command: {}", e));
             return Err(e);
         }
     };

@@ -182,7 +182,7 @@ fn run_exec_command(args: &[String]) {
             }
         },
         Err(e) => {
-            eprintln!("Server communication failed: {}", e);
+            utils::log_error(&format!("Server communication failed: {}", e));
             std::process::exit(1);
         }
     }
@@ -264,7 +264,7 @@ fn run_test_action(args: &[String]) {
             }
         },
         Err(e) => {
-            eprintln!("Server communication failed: {}", e);
+            utils::log_error(&format!("Server communication failed: {}", e));
             std::process::exit(1);
         }
     }
@@ -606,7 +606,7 @@ fn run_grab_command(args: &[String]) {
             }
         }
         Err(e) => {
-            eprintln!("Error capturing active app: {}", e);
+            utils::log_error(&format!("Error capturing active app: {}", e));
             std::process::exit(1);
         }
     }
@@ -614,11 +614,11 @@ fn run_grab_command(args: &[String]) {
 
 /// Force restart the command server
 fn run_start_server() {
-    println!("Restarting command server...");
+    utils::log("Restarting command server...");
     
     // Kill existing server if running
     if let Err(e) = crate::command_server_management::kill_existing_server() {
-        eprintln!("Warning: Failed to kill existing server: {}", e);
+        utils::log_error(&format!("Failed to kill existing server: {}", e));
     }
     
     // Start new server via Terminal
@@ -628,7 +628,7 @@ fn run_start_server() {
             println!("The server will start with full shell environment in a few seconds");
         }
         Err(e) => {
-            eprintln!("Failed to start server: {}", e);
+            utils::log_error(&format!("Failed to start server: {}", e));
             std::process::exit(1);
         }
     }
@@ -638,12 +638,18 @@ fn run_start_server() {
 fn run_start_server_daemon() {
     use crate::core::state::save_server_pid;
     
-    println!("Starting command server daemon...");
+    // Initialize config FIRST - this must happen before any other operations
+    if let Err(config_error) = crate::core::sys_data::initialize_config() {
+        utils::log_error(&format!("Failed to load config: {}", config_error));
+        // Continue with default config
+    }
+    
+    utils::log("Starting command server daemon...");
     
     // Change to home directory
     if let Ok(home) = std::env::var("HOME") {
         if let Err(e) = std::env::set_current_dir(&home) {
-            eprintln!("Warning: Could not change to home directory: {}", e);
+            utils::log_error(&format!("Could not change to home directory: {}", e));
         }
     }
     
@@ -659,7 +665,7 @@ fn run_start_server_daemon() {
         Ok(server_pid) => {
             // Save PID to state
             if let Err(e) = save_server_pid(server_pid) {
-                eprintln!("Warning: Could not save server PID: {}", e);
+                utils::log_error(&format!("Could not save server PID: {}", e));
             }
             
             
@@ -669,7 +675,7 @@ fn run_start_server_daemon() {
             }
         }
         Err(e) => {
-            eprintln!("Failed to start persistent server: {}", e);
+            utils::log_error(&format!("Failed to start persistent server: {}", e));
             std::process::exit(1);
         }
     }
@@ -882,7 +888,7 @@ fn run_infer_all_patches(_args: &[String]) {
                     println!("Updated {} commands and saved to file.", applied_count);
                 }
                 Err(e) => {
-                    eprintln!("Updated {} commands but failed to save: {}", applied_count, e);
+                    utils::log_error(&format!("Updated {} commands but failed to save: {}", applied_count, e));
                 }
             }
         } else {
@@ -1136,20 +1142,20 @@ fn run_execute_launcher_command(args: &[String]) {
     
     // Visual separator for launcher command execution
     utils::debug_log("", "=================================================================");
-    utils::debug_log("LAUNCHER_CMD", &format!("Executing in GUI session: '{}'", launcher_command));
+    utils::detailed_log("LAUNCHER_CMD", &format!("Executing in GUI session: '{}'", launcher_command));
     
     // Execute the launcher command via server (consistent with all execution)
     match execute_via_server(launcher_command, None, None, false) {
         Ok(response) => {
             if response.success {
-                utils::debug_log("LAUNCHER_CMD", "Command completed successfully");
+                utils::detailed_log("LAUNCHER_CMD", "Command completed successfully");
             } else {
-                utils::debug_log("LAUNCHER_CMD", &format!("Command failed: {}", response.stderr));
+                utils::log_error(&format!("Command failed: {}", response.stderr));
                 std::process::exit(1);
             }
         },
         Err(e) => {
-            utils::debug_log("LAUNCHER_CMD", &format!("Server communication failed: {}", e));
+            utils::log_error(&format!("Server communication failed: {}", e));
             std::process::exit(1);
         }
     }

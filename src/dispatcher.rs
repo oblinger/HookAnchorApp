@@ -15,6 +15,12 @@ fn main() {
     // Initialize binary path for consistent spawning
     hookanchor::init_binary_path();
     
+    // Initialize config FIRST - this must happen before any other operations
+    if let Err(config_error) = hookanchor::core::sys_data::initialize_config() {
+        hookanchor::utils::log_error(&format!("Failed to load config: {}", config_error));
+        // Continue with default config
+    }
+    
     // Get command line arguments
     let args: Vec<String> = env::args().collect();
     
@@ -61,8 +67,8 @@ fn launch_popup() {
             exit(0);
         }
         Err(e) => {
-            eprintln!("Failed to launch popup: {}", e);
-            eprintln!("Expected popup at: {}", popup_path.display());
+            hookanchor::utils::log_error(&format!("Failed to launch popup: {}", e));
+            hookanchor::utils::log_error(&format!("Expected popup at: {}", popup_path.display()));
             exit(1);
         }
     }

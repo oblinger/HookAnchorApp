@@ -460,7 +460,7 @@ impl KeyRegistry {
                         break;
                     }
                     KeyHandlerResult::Error(e) => {
-                        eprintln!("Text handler error: {}", e);
+                        crate::utils::log_error(&format!("Text handler error: {}", e));
                         handled = true;
                         break;
                     }
@@ -512,7 +512,7 @@ impl KeyRegistry {
                 }
             }
             if handled {
-                eprintln!("🛑 Event handled, stopping processing");
+                crate::utils::detailed_log("KEY_PROCESSING", "🛑 Event handled, stopping processing");
                 break; // Exit outer loop if any handler succeeded
             }
         }

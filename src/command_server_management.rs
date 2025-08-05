@@ -26,8 +26,7 @@ pub fn start_server_if_needed() -> Result<(), Box<dyn std::error::Error>> {
         return Ok(());
     }
     
-    // Check log file size once per session (not every popup)
-    crate::utils::check_and_clear_oversized_log();
+    // Log file size check is done when popup opens, not here
     
     crate::utils::debug_log("SERVER_MGR", "Checking if command server is needed");
     

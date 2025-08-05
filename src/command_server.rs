@@ -19,7 +19,7 @@ use crate::utils::{debug_log, verbose_log};
 /// Helper function to output to both console and debug log
 fn log_and_print(prefix: &str, message: &str) {
     let formatted = format!("{}: {}", prefix, message);
-    println!("{}", formatted);
+    // Only log to file, don't print to console to avoid stdout pollution
     debug_log(prefix, message);
 }
 
@@ -235,7 +235,7 @@ impl CommandServer {
         }
         
         // If we get here, server execution failed
-        eprintln!("Failed to execute command via server");
+        crate::utils::log("CMD_SERVER: Failed to execute command via server");
         crate::CommandTarget::Command(command.clone())
     }
 }

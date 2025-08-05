@@ -453,7 +453,7 @@ impl AnchorSelector {
                             // Command executed successfully
                         }
                         Err(e) => {
-                            eprintln!("Failed to execute command: {}", e);
+                            crate::utils::log_error(&format!("Failed to execute command: {}", e));
                         }
                     }
                     // Note: CommandServer::execute_command handles all execution via server internally
@@ -542,11 +542,11 @@ impl AnchorSelector {
                         Ok(response) => {
                             if response.success {
                             } else {
-                                eprintln!("Warning: Failed to copy link: {}", response.stderr);
+                                crate::utils::log_error(&format!("Failed to copy link: {}", response.stderr));
                             }
                         },
                         Err(e) => {
-                            eprintln!("Warning: Server communication failed: {}", e);
+                            crate::utils::log_error(&format!("Server communication failed: {}", e));
                         }
                     }
                 }
@@ -754,7 +754,7 @@ impl AnchorSelector {
                                     Ok(_) => {
                                         // Save commands to file
                                         if let Err(e) = crate::core::commands::save_commands_to_file(&self.popup_state.commands) {
-                                            eprintln!("Warning: Failed to save commands: {}", e);
+                                            crate::utils::log_error(&format!("Failed to save commands: {}", e));
                                         }
                                         // Clear search and update display
                                         self.popup_state.search_text.clear();
@@ -1189,7 +1189,7 @@ impl AnchorSelector {
             .arg("-e")
             .arg(force_finder_script)
             .output() {
-            eprintln!("Warning: Failed to flip focus away: {}", e);
+            crate::utils::log_error(&format!("Failed to flip focus away: {}", e));
         }
     }
     
@@ -1238,7 +1238,7 @@ impl AnchorSelector {
                                                 match crate::core::commands::add_command(new_command, &mut self.popup_state.commands) {
                                                     Ok(_) => {
                                                         if let Err(e) = crate::core::commands::save_commands_to_file(&self.popup_state.commands) {
-                                                            eprintln!("Warning: Failed to save commands: {}", e);
+                                                            crate::utils::log_error(&format!("Failed to save commands: {}", e));
                                                         }
                                                         self.popup_state.search_text.clear();
                                                         self.popup_state.update_search(String::new());
@@ -1294,7 +1294,7 @@ impl AnchorSelector {
                                                 match crate::core::commands::add_command(new_command, &mut self.popup_state.commands) {
                                                     Ok(_) => {
                                                         if let Err(e) = crate::core::commands::save_commands_to_file(&self.popup_state.commands) {
-                                                            eprintln!("Warning: Failed to save commands: {}", e);
+                                                            crate::utils::log_error(&format!("Failed to save commands: {}", e));
                                                         }
                                                         self.popup_state.search_text.clear();
                                                         self.popup_state.update_search(String::new());
@@ -1329,7 +1329,7 @@ impl AnchorSelector {
                 }
             }
             Err(err) => {
-                eprintln!("Grabber error: {}", err);
+                crate::utils::log_error(&format!("Grabber error: {}", err));
             }
         }
         
@@ -1355,7 +1355,7 @@ impl AnchorSelector {
                 .arg("-e")
                 .arg(restore_script)
                 .output() {
-                eprintln!("Warning: Failed to restore HookAnchor: {}", e);
+                crate::utils::log_error(&format!("Failed to restore HookAnchor: {}", e));
             }
         } else {
         }
@@ -1372,7 +1372,7 @@ impl AnchorSelector {
             std::thread::sleep(std::time::Duration::from_millis(200));
             
             if let Err(e) = self.regain_focus() {
-                eprintln!("Warning: Failed to regain focus: {}", e);
+                crate::utils::log_error(&format!("Failed to regain focus: {}", e));
             }
         } else {
         }
@@ -1878,7 +1878,7 @@ impl eframe::App for AnchorSelector {
                     use crate::delete_command;
                     let deleted = delete_command(&cmd_name, self.commands_mut());
                     if deleted.is_err() {
-                        eprintln!("Warning: Original command '{}' not found for deletion", cmd_name);
+                        crate::utils::log_error(&format!("Original command '{}' not found for deletion", cmd_name));
                     }
                 }
                 
@@ -1897,7 +1897,7 @@ impl eframe::App for AnchorSelector {
                         }
                     }
                     Err(e) => {
-                        eprintln!("Error saving commands to file: {}", e);
+                        crate::utils::log_error(&format!("Error saving commands to file: {}", e));
                     }
                 }
                 
@@ -1910,11 +1910,11 @@ impl eframe::App for AnchorSelector {
                 
                 let deleted = delete_command(&command_name, self.commands_mut());
                 if deleted.is_err() {
-                    eprintln!("Warning: Command '{}' not found for deletion", command_name);
+                    crate::utils::log_error(&format!("Command '{}' not found for deletion", command_name));
                 } else {
                     // Save the updated command list back to commands.txt
                     if let Err(e) = save_commands_to_file(&self.commands()) {
-                        eprintln!("Error saving commands to file after deletion: {}", e);
+                        crate::utils::log_error(&format!("Error saving commands to file after deletion: {}", e));
                     } else {
                         // Update the filtered list if we're currently filtering
                         if !self.popup_state.search_text.trim().is_empty() {
@@ -2319,7 +2319,7 @@ impl eframe::App for AnchorSelector {
                                                 let launcher_cmd = format!("{} {}", cmd.action, cmd.arg);
                                                 match execute_via_server(&launcher_cmd, None, None, false) {
                                                     Ok(_) => {},
-                                                    Err(e) => eprintln!("Failed to execute command: {}", e),
+                                                    Err(e) => crate::utils::log_error(&format!("Failed to execute command: {}", e)),
                                                 }
                                                 self.perform_exit_scanner_check();
                                                 process::exit(0);
@@ -2438,7 +2438,7 @@ impl eframe::App for AnchorSelector {
                                         let launcher_cmd = format!("{} {}", cmd.action, cmd.arg);
                                         match execute_via_server(&launcher_cmd, None, None, false) {
                                             Ok(_) => {},
-                                            Err(e) => eprintln!("Failed to execute command: {}", e),
+                                            Err(e) => crate::utils::log_error(&format!("Failed to execute command: {}", e)),
                                         }
                                         self.perform_exit_scanner_check();
                                         process::exit(0);

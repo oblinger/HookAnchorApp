@@ -234,7 +234,19 @@ pub fn load_config_with_error() -> ConfigResult {
     }
     
     // Check for user config
+    let read_start = std::time::Instant::now();
     if let Ok(contents) = fs::read_to_string(&config_path) {
+        let read_elapsed = read_start.elapsed();
+        // Direct write to avoid recursion during config loading
+        if let Ok(mut file) = std::fs::OpenOptions::new()
+            .create(true)
+            .append(true)
+            .open("/tmp/hookanchor_timing.log") {
+            use std::io::Write;
+            let _ = writeln!(file, "CONFIG_TIMING: Config file read in {:?} ({} microseconds)", read_elapsed, read_elapsed.as_micros());
+        }
+        
+        let parse_start = std::time::Instant::now();
         match serde_yaml::from_str::<Config>(&contents) {
             Ok(mut config) => {
                 // Apply defaults for optional fields
@@ -250,6 +262,16 @@ pub fn load_config_with_error() -> ConfigResult {
                 
                 // Normalize template keys for efficient matching
                 normalize_template_keys(&mut config);
+                
+                let parse_elapsed = parse_start.elapsed();
+                // Direct write to avoid recursion during config loading
+                if let Ok(mut file) = std::fs::OpenOptions::new()
+                    .create(true)
+                    .append(true)
+                    .open("/tmp/hookanchor_timing.log") {
+                    use std::io::Write;
+                    let _ = writeln!(file, "CONFIG_TIMING: Config parsed in {:?} ({} microseconds)", parse_elapsed, parse_elapsed.as_micros());
+                }
                 
                 return ConfigResult::Success(config);
             }
@@ -283,14 +305,25 @@ pub fn load_config_with_error() -> ConfigResult {
 
 /// Loads configuration from YAML file or returns default if file doesn't exist (compatibility wrapper)
 pub(super) fn load_config() -> Config {
-    match load_config_with_error() {
+    let start = std::time::Instant::now();
+    let result = match load_config_with_error() {
         ConfigResult::Success(config) => config,
         ConfigResult::Error(_) => {
             // Fall back to default config for backward compatibility
             // The error will be shown by popup if it uses load_config_with_error
             create_default_config()
         }
+    };
+    let elapsed = start.elapsed();
+    // Direct write to avoid recursion during config loading
+    if let Ok(mut file) = std::fs::OpenOptions::new()
+        .create(true)
+        .append(true)
+        .open("/tmp/hookanchor_timing.log") {
+        use std::io::Write;
+        let _ = writeln!(file, "CONFIG_TIMING: Total config load time: {:?} ({} microseconds)", elapsed, elapsed.as_micros());
     }
+    result
 }
 
 /// Loads and migrates configuration from legacy format (settings -> popup_settings)
@@ -351,7 +384,7 @@ fn load_legacy_config(contents: &str) -> Result<Config, Box<dyn std::error::Erro
 }
 
 /// Creates a default configuration
-fn create_default_config() -> Config {
+pub(crate) fn create_default_config() -> Config {
     Config {
         popup_settings: PopupSettings::default(),
         launcher_settings: Some(LauncherSettings::default()),
@@ -541,10 +574,10 @@ fn normalize_template_keys(config: &mut Config) {
                 match Keystroke::from_key_string(key_str) {
                     Ok(keystroke) => {
                         template.keystroke = Some(keystroke);
-                        println!("✅ Template '{}' key '{}' → {:?}", template_name, key_str, template.keystroke);
+                        crate::utils::detailed_log("CONFIG", &format!("✅ Template '{}' key '{}' → {:?}", template_name, key_str, template.keystroke));
                     }
                     Err(e) => {
-                        println!("❌ Failed to parse key '{}' for template '{}': {}", key_str, template_name, e);
+                        crate::utils::log_error(&format!("Failed to parse key '{}' for template '{}': {}", key_str, template_name, e));
                     }
                 }
             }

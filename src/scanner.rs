@@ -38,8 +38,7 @@ pub fn file_scan_check(commands: Vec<Command>) -> Vec<Command> {
         return commands; // Not time to scan yet
     }
     
-    // Clean up log file before scan to prevent it from growing too large
-    cleanup_log_file(&sys_data.config);
+    // Scanner should not manage log file size - that's done when popup opens
     
     // Performing filesystem scan
     // Perform filesystem scan
@@ -69,7 +68,7 @@ pub fn file_scan_check(commands: Vec<Command>) -> Vec<Command> {
     
     // Save updated state
     if let Err(e) = save_state(&state) {
-        eprintln!("Warning: Failed to save scan state: {}", e);
+        crate::utils::log_error(&format!("Failed to save scan state: {}", e));
     }
     
     // Save commands only if checksum changed
@@ -77,7 +76,7 @@ pub fn file_scan_check(commands: Vec<Command>) -> Vec<Command> {
         // Save the scanned commands directly - patch inference should already be handled by load_data()
         // The commands passed to the scanner should already have proper patches from load_data()
         if let Err(e) = save_commands_to_file(&scanned_commands) {
-            eprintln!("Warning: Failed to save updated commands: {}", e);
+            crate::utils::log_error(&format!("Failed to save updated commands: {}", e));
         } else {
             // Clear global cache since we've updated the commands file
             crate::core::sys_data::clear_sys_data();
@@ -134,7 +133,7 @@ pub fn scan_verbose(commands: Vec<Command>, sys_data: &crate::core::sys_data::Sy
     }
     
     if let Err(e) = crate::core::commands::save_commands_to_file(&global_data.commands) {
-        eprintln!("Warning: Failed to save commands after scan: {}", e);
+        crate::utils::log_error(&format!("Failed to save commands after scan: {}", e));
         if verbose {
             println!("   ❌ Failed to save: {}", e);
         }
@@ -408,13 +407,6 @@ fn process_markdown_with_root(path: &Path, _vault_root: &Path, existing_commands
     })
 }
 
-/// Cleans up the debug log file before scanning to prevent it from growing too large
-pub fn cleanup_log_file(config: &crate::Config) {
-    if let Some(debug_log_path) = &config.popup_settings.debug_log {
-        let expanded_path = expand_home(debug_log_path);
-        let _ = std::fs::remove_file(&expanded_path);
-    }
-}
 
 /// Check if a directory should be skipped based on config patterns
 fn should_skip_directory(dir_name: &str, config: &Config) -> bool {

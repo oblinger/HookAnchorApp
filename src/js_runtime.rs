@@ -140,12 +140,12 @@ fn setup_logging(ctx: &Ctx<'_>) -> Result<(), Box<dyn std::error::Error>> {
     
     // debug(message) - Debug logging
     ctx.globals().set("debug", Function::new(ctx.clone(), |msg: String| {
-        eprintln!("[JS DEBUG] {}", msg);
+        crate::utils::detailed_log("JS", &format!("[DEBUG] {}", msg));
     })?)?;
     
     // error(message) - Error logging
     ctx.globals().set("error", Function::new(ctx.clone(), |msg: String| {
-        eprintln!("[JS ERROR] {}", msg);
+        crate::utils::log_error(&format!("[JS] {}", msg));
     })?)?;
     
     Ok(())
@@ -599,7 +599,7 @@ fn setup_user_functions(ctx: &Ctx<'_>, config: &Config) -> Result<(), Box<dyn st
                 
                 // Execute the function definition
                 if let Err(e) = ctx.eval::<(), _>(function_def.as_str()) {
-                    eprintln!("Warning: Failed to define user function '{}': {}", function_name, e);
+                    crate::utils::log_error(&format!("Failed to define user function '{}': {}", function_name, e));
                 }
             }
             // Simple functions (mappings) are not exposed to JavaScript runtime

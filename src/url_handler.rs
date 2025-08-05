@@ -13,6 +13,12 @@ fn main() {
     // Initialize binary path for consistent spawning
     init_binary_path();
     
+    // Initialize config FIRST - this must happen before any other operations
+    if let Err(config_error) = sys_data::initialize_config() {
+        crate::utils::log_error(&format!("Failed to load config: {}", config_error));
+        // Continue with default config
+    }
+    
     // Get command line arguments
     let args: Vec<String> = env::args().collect();
     

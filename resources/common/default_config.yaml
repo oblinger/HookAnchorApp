@@ -16,31 +16,31 @@ popup_settings:
   max_columns:            4           # Max columns in list of matching commands
   debug_log:              "~/.config/hookanchor/anchor.log"  # Debug logging file path 
   debug_scanner:          false
-  verbose_logging:        true
+  verbose_logging:        false
   merge_similar:          true        # Merging similar commands in popup
   word_separators:        " ._-"      # Word separator chars submenus and merging
-  scan_interval_seconds:  30          # Effectively disable auto-scan (1000 days)
+  scan_interval_seconds:  30          # How many seconds between automatic rescanning of the filesystem
   idle_timeout_seconds:   60          # Auto-close after 60 seconds of inactivity (default)
   countdown_seconds:      5           # Seconds for grabber countdown (default: 5)
   run_in_background:      true        # Keep app running in background for instant popup (experimental)
   max_window_size:        "1700x1100" # Maximum size for dialogs and popups in "widthxheight" format
   default_window_size:    "600x400"   # Default popup window size in "widthxheight" format
-  max_log_file_size:      1000000     # Maximum log file size in bytes (1MB) before clearing
+  max_log_file_size:      10000000    # Maximum log file size in bytes (10MB) before clearing
   listed_actions: >
     alias,anchor,app,url,folder,cmd,chrome,safari,brave,firefox,work,
     notion,obs,obs_url,1pass,rewrite,doc,contact,slack,text,shutdown
 
 launcher_settings:
-  js_timeout_ms:          5000
-  obsidian_app_name:      "Obsidian"
-  obsidian_vault_name: "MyVault"
-  obsidian_vault_path: "~/Documents"
+  js_timeout_ms:          5000        # Max milliseconds allows for a js command execution
+  obsidian_app_name:      "Obsidian"  # Obisidian app name
+  obsidian_vault_name: "MyVault"       # Main vault used for Obsidian viewing of markdown files
+  obsidian_vault_path: "~/Documents"  # Location of the main vault
 
 scanner_settings:
   orphans_path: "~/Documents/Orphans"
 
-# Markdown file scanning roots (automatic scanning enabled)
 markdown_roots:
+ - "~/ob/kmr"                         # Markdown file scanning roots
  - "~/Documents"
  - "~/Notes"
 
@@ -128,6 +128,86 @@ templates:
     arg: "{{previous_name}}"
     patch: "{{previous_patch}}"
     flags: ""
+    edit: true
+    
+  # Sub-anchor template - creates anchor as subfolder of last command's folder
+  sub_anchor:
+    description: "Create anchor as subfolder of last command's folder"
+    key: "!"
+    name: "{{input}}"
+    action: "anchor"
+    arg: "{{previous_folder}}/{{input}}/{{input}}.md"
+    patch: "{{previous_patch}}"
+    flags: ""
+    edit: true
+    file: "{{previous_folder}}/{{input}}"
+    validate_previous_folder: true
+    contents: |
+      .[[{{input}}]].  >[[{{previous_name}}]]
+      
+  # TEST TEMPLATES - to debug key binding
+  test_at:
+    description: "Test @ key"
+    key: "@"
+    name: "TEST_AT_{{input}}"
+    action: "anchor"
+    arg: "/tmp/test_at_{{input}}.md"
+    edit: true
+    
+  test_hash:
+    description: "Test # key"
+    key: "#"
+    name: "TEST_HASH_{{input}}"
+    action: "anchor"
+    arg: "/tmp/test_hash_{{input}}.md"
+    edit: true
+    
+  test_star:
+    description: "Test * key"
+    key: "*"
+    name: "TEST_STAR_{{input}}"
+    action: "anchor"
+    arg: "/tmp/test_star_{{input}}.md"
+    edit: true
+    
+  test_ampersand:
+    description: "Test & key"
+    key: "&"
+    name: "TEST_AMP_{{input}}"
+    action: "anchor"
+    arg: "/tmp/test_amp_{{input}}.md"
+    edit: true
+    
+  test_caret:
+    description: "Test ^ key"
+    key: "^"
+    name: "TEST_CARET_{{input}}"
+    action: "anchor"
+    arg: "/tmp/test_caret_{{input}}.md"
+    edit: true
+    
+  test_tilde:
+    description: "Test ~ key"
+    key: "~"
+    name: "TEST_TILDE_{{input}}"
+    action: "anchor"
+    arg: "/tmp/test_tilde_{{input}}.md"
+    edit: true
+    
+  test_pipe:
+    description: "Test | key"
+    key: "|"
+    name: "TEST_PIPE_{{input}}"
+    action: "anchor"
+    arg: "/tmp/test_pipe_{{input}}.md"
+    edit: true
+    
+  test_f1:
+    description: "Test F1 key"
+    key: "F1"
+    name: "TEST_F1_{{input}}"
+    action: "anchor"
+    arg: "/tmp/test_f1_{{input}}.md"
     edit: true
 
 # =================================================================

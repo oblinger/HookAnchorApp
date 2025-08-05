@@ -19,6 +19,30 @@ pub struct SysData {
 // Global application data - loaded once and reused
 static SYS_DATA: OnceLock<Mutex<Option<SysData>>> = OnceLock::new();
 
+// Global config - loaded once at startup
+pub(crate) static CONFIG: OnceLock<Config> = OnceLock::new();
+
+/// Initialize the global config at application startup
+/// This MUST be called before any other operations
+pub fn initialize_config() -> Result<(), String> {
+    let start = std::time::Instant::now();
+    
+    // Load config using the existing load_config_with_error for proper error handling
+    match super::config::load_config_with_error() {
+        super::config::ConfigResult::Success(config) => {
+            CONFIG.set(config).map_err(|_| "Config already initialized".to_string())?;
+            let elapsed = start.elapsed();
+            crate::utils::log(&format!("CONFIG_INIT: Config initialized at startup in {:?} ({} microseconds)", elapsed, elapsed.as_micros()));
+            Ok(())
+        }
+        super::config::ConfigResult::Error(err) => {
+            // Use default config but return error for display
+            CONFIG.set(super::config::create_default_config()).map_err(|_| "Config already initialized".to_string())?;
+            Err(err)
+        }
+    }
+}
+
 /// Gets a reference to the sys data, loading it if necessary
 pub fn get_sys_data() -> SysData {
     // Check if we already have sys data cached
@@ -28,7 +52,7 @@ pub fn get_sys_data() -> SysData {
     match sys.try_lock() {
         Ok(sys_data) => {
             if let Some(ref data) = *sys_data {
-                crate::utils::debug_log("GET_SYS_DATA", "Returning cached sys data");
+                // Cached data found, return it
                 return data.clone();
             }
             // Not cached, need to load
@@ -45,9 +69,9 @@ pub fn get_sys_data() -> SysData {
 }
 
 /// Gets just the config for functions that only need configuration
+/// Panics if initialize_config() hasn't been called yet
 pub fn get_config() -> Config {
-    // Load config directly to avoid circular dependency
-    super::config::load_config()
+    CONFIG.get().expect("Config not initialized! Call initialize_config() at startup").clone()
 }
 
 /// Clears the sys data, forcing the next access to reload from disk
@@ -62,8 +86,8 @@ pub fn clear_sys_data() {
 
 /// Load data without caching - used as fallback when cache is locked
 fn load_data_no_cache(commands_override: Vec<Command>, _verbose: bool) -> SysData {
-    // Load config directly without caching
-    let config = super::config::load_config();
+    // Use the pre-initialized config
+    let config = get_config();
     
     // Load commands (from disk or use override)
     let commands = if !commands_override.is_empty() {
@@ -101,7 +125,7 @@ pub fn load_data(commands_override: Vec<Command>, verbose: bool) -> SysData {
     
     if !use_override {
         if let Some(ref data) = *sys_data {
-            crate::utils::debug_log("LOAD_DATA", "Returning cached sys data - no disk reads performed");
+            // Cached data available, no disk reads needed
             if verbose {
                 println!("⚡ Using cached data - no disk reads needed");
             }
@@ -117,11 +141,11 @@ pub fn load_data(commands_override: Vec<Command>, verbose: bool) -> SysData {
         }
     }
     
-    // Step 1: Load config
+    // Step 1: Get the pre-initialized config
     if verbose {
-        println!("🔧 Step 1: Loading configuration...");
+        println!("🔧 Step 1: Using pre-initialized configuration...");
     }
-    let config = super::config::load_config();
+    let config = get_config();
     
     let mut commands = if use_override {
         commands_override
@@ -151,7 +175,7 @@ pub fn load_data(commands_override: Vec<Command>, verbose: bool) -> SysData {
         println!("🌳 Step 3.1: Ensuring orphans root patch exists...");
     }
     if let Err(e) = super::commands::ensure_orphans_root_patch(&mut patches, &mut commands, &config) {
-        eprintln!("Warning: Failed to ensure orphans root patch: {}", e);
+        crate::utils::log_error(&format!("Failed to ensure orphans root patch: {}", e));
     }
     
     // Step 3.2: Create orphan anchor files and commands for patches without anchors
@@ -178,7 +202,7 @@ pub fn load_data(commands_override: Vec<Command>, verbose: bool) -> SysData {
                 count
             }
             Err(e) => {
-                eprintln!("Warning: Failed to create orphan anchors: {}", e);
+                crate::utils::log_error(&format!("Failed to create orphan anchors: {}", e));
                 0
             }
         }
@@ -248,23 +272,10 @@ pub fn load_data(commands_override: Vec<Command>, verbose: bool) -> SysData {
         println!("💾 Step 5: Saving changes if needed...");
     }
     if patches_assigned > 0 || orphans_created > 0 || normalized_patches > 0 {
-        crate::utils::debug_log("SAVE_DEBUG", &format!("Saving commands after changes - patches_assigned: {}, orphans_created: {}, normalized_patches: {}", 
-            patches_assigned, orphans_created, normalized_patches));
-        
-        // Debug: Check a few commands before saving
-        for (i, cmd) in commands.iter().enumerate() {
-            if i < 5 {
-                crate::utils::debug_log("SAVE_DEBUG", &format!("Command {} before save: patch='{}', command='{}', action='{}'", 
-                    i, cmd.patch, cmd.command, cmd.action));
-            }
-            if cmd.command == "Patents" {
-                crate::utils::debug_log("SAVE_DEBUG", &format!("Patents command before save: patch='{}', command='{}', action='{}'", 
-                    cmd.patch, cmd.command, cmd.action));
-            }
-        }
+        // Save commands with changes
         
         if let Err(e) = super::commands::save_commands_to_file(&commands) {
-            eprintln!("Warning: Failed to save commands after changes: {}", e);
+            crate::utils::log_error(&format!("Failed to save commands after changes: {}", e));
         } else {
             if verbose {
                 println!("   ✅ Saved {} commands with changes", commands.len());

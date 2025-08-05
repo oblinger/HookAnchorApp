@@ -1180,7 +1180,7 @@ pub fn load_commands_raw() -> Vec<Command> {
     let path = get_commands_file_path();
     
     if !path.exists() {
-        eprintln!("Warning: commands.txt not found at {:?}", path);
+        crate::utils::log_error(&format!("commands.txt not found at {:?}", path));
         return vec![];
     }
     
@@ -1206,14 +1206,14 @@ pub fn load_commands_raw() -> Vec<Command> {
                         }
                         commands.push(command);
                     },
-                    Err(e) => eprintln!("Warning: Failed to parse line {} in commands.txt: {} - Line: '{}'", 
-                        line_num + 1, e, line),
+                    Err(e) => crate::utils::log_error(&format!("Failed to parse line {} in commands.txt: {} - Line: '{}'", 
+                        line_num + 1, e, line)),
                 }
             }
             commands
         }
         Err(e) => {
-            eprintln!("Error reading commands.txt: {}", e);
+            crate::utils::log_error(&format!("Error reading commands.txt: {}", e));
             vec![]
         }
     }
@@ -1421,33 +1421,24 @@ pub fn save_commands_to_file(commands: &[Command]) -> Result<(), Box<dyn std::er
                     cmd.command, cmd.action, cmd.arg));
             }
         }
-        // Log Patents command specifically
-        if cmd.command == "Patents" {
-            crate::utils::debug_log("SAVE_DEBUG", &format!("Patents command during save: patch='{}', to_new_format='{}'", 
-                cmd.patch, cmd.to_new_format()));
-        }
+        // Skip logging individual commands
     }
-    crate::utils::debug_log("SAVE_DEBUG", &format!("About to save {} commands, {} have empty patches", 
-        updated_commands.len(), empty_patch_count));
+    // Commands ready to save
     
-    // Log summary of empty patch commands for debugging  
-    if !empty_patch_commands.is_empty() {
-        let sample = empty_patch_commands.iter().take(5).map(|s| s.as_str()).collect::<Vec<_>>().join(", ");
-        crate::utils::debug_log("SAVE_DEBUG", &format!("{} commands have empty patches (sample: {})", empty_patch_count, sample));
-    }
+    // Skip logging empty patch commands
 
     // SAFETY CHECKS: Prevent saving corrupted data
     // Updated based on July 16th baseline: ~3616 total commands
     if updated_commands.len() > 4000 {
         let error_msg = format!("CORRUPTION DETECTED: Attempting to save {} commands (> 4000 limit). This indicates command inflation. Save operation CANCELLED.", updated_commands.len());
-        eprintln!("{}", error_msg);
+        crate::utils::log_error(&error_msg);
         crate::utils::debug_log("CORRUPTION", &error_msg);
         return Err("Command count exceeds safety limit".into());
     }
     
     if empty_patch_count > 200 {
         let error_msg = format!("CORRUPTION DETECTED: Attempting to save {} commands with empty patches (> 200 limit). This indicates patch stripping. Save operation CANCELLED.", empty_patch_count);
-        eprintln!("{}", error_msg);
+        crate::utils::log_error(&error_msg);
         crate::utils::debug_log("CORRUPTION", &error_msg);
         return Err("Empty patch count exceeds safety limit".into());
     }
@@ -1496,7 +1487,7 @@ pub fn filter_commands_with_patch_support(commands: &[Command], search_text: &st
             if cmd.patch.eq_ignore_ascii_case(search_text) {
                 // Perfect patch match - include this command even if name doesn't match
                 if debug && search_text.eq_ignore_ascii_case("ww") {
-                    eprintln!("DEBUG: Found exact patch match: {} -> {}", cmd.patch, cmd.command);
+                    crate::utils::detailed_log("COMMANDS", &format!("Found exact patch match: {} -> {}", cmd.patch, cmd.command));
                 }
                 0
             } else if cmd.patch.contains('!') {
@@ -1505,7 +1496,7 @@ pub fn filter_commands_with_patch_support(commands: &[Command], search_text: &st
                 if patch_name.eq_ignore_ascii_case(search_text) {
                     // Perfect patch match - include this command even if name doesn't match
                     if debug && search_text.eq_ignore_ascii_case("ww") {
-                        eprintln!("DEBUG: Found exact patch match: {} -> {}", cmd.patch, cmd.command);
+                        crate::utils::detailed_log("COMMANDS", &format!("Found exact patch match: {} -> {}", cmd.patch, cmd.command));
                     }
                     0
                 } else {

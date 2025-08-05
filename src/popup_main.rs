@@ -14,6 +14,20 @@ fn main() -> Result<(), eframe::Error> {
     // Initialize global binary path for consistent process spawning
     hookanchor::init_binary_path();
     
+    // Initialize config FIRST - this must happen before any other operations
+    match hookanchor::core::sys_data::initialize_config() {
+        Ok(()) => {
+            // Config loaded successfully
+        }
+        Err(config_error) => {
+            hookanchor::utils::log_error(&format!("Failed to load config: {}", config_error));
+            // Continue with default config
+        }
+    }
+    
+    // Check and clear oversized log file now that config is loaded
+    hookanchor::utils::check_and_clear_oversized_log();
+    
     // Visual separator for new app launch in logs
     hookanchor::utils::debug_log("", "════════════════════════════════════════════════════════════════");
     
@@ -58,7 +72,7 @@ fn main() -> Result<(), eframe::Error> {
     if args.len() > 1 {
         // CLI mode needs server - start it here
         if let Err(e) = hookanchor::command_server_management::start_server_if_needed() {
-            eprintln!("Warning: Failed to start command server: {}", e);
+            hookanchor::utils::log_error(&format!("Failed to start command server: {}", e));
             // Continue - commands will show error dialogs when server is needed
         }
         
