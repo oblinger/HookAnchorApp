@@ -155,9 +155,8 @@ pub fn scan_verbose(commands: Vec<Command>, sys_data: &crate::core::sys_data::Sy
 pub fn scan_files(mut commands: Vec<Command>, markdown_roots: &[String], config: &Config) -> Vec<Command> {
     
     // Create a set of existing command names for collision detection (lowercase for case-insensitive comparison)
-    // Only include non-scan-generated commands to avoid false collisions
+    // Include ALL commands to properly detect collisions with existing anchors
     let mut existing_commands: HashSet<String> = commands.iter()
-        .filter(|cmd| cmd.action != "markdown" && cmd.action != "anchor" && cmd.action != "folder")
         .map(|cmd| cmd.command.to_lowercase())
         .collect();
     
