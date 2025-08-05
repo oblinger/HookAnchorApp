@@ -54,6 +54,8 @@ pub struct AnchorSelector {
     countdown_last_update: Option<std::time::Instant>,
     /// Track if focus has been successfully set on the input field
     focus_set: bool,
+    /// Request focus on next frame
+    request_focus: bool,
     /// Frame counter to track how many frames have passed since startup
     frame_count: u32,
     /// Track if window activation has been attempted
@@ -402,12 +404,16 @@ impl PopupInterface for AnchorSelector {
         self.command_editor.visible = false;
         // Reset window size when closing editor
         self.window_size_mode = WindowSizeMode::Normal;
+        // Request focus on input field
+        self.request_focus = true;
     }
     
     fn close_dialog(&mut self) {
         self.dialog.visible = false;
         // Reset window size when closing dialog
         self.window_size_mode = WindowSizeMode::Normal;
+        // Request focus on input field
+        self.request_focus = true;
     }
     
     fn get_search_text(&self) -> &str {
@@ -869,6 +875,7 @@ impl AnchorSelector {
             grabber_countdown: None,
             countdown_last_update: None,
             focus_set: false,
+            request_focus: false,
             frame_count: 0,
             window_activated: false,
             config_error: None,
@@ -2072,7 +2079,7 @@ impl eframe::App for AnchorSelector {
                 // Focus the text input on startup or when command editor closes
                 // Extended focus attempt duration and window activation for better reliability
                 let should_focus = !self.focus_set && (
-                    self.frame_count <= 15 || command_editor_just_closed
+                    self.frame_count <= 15 || command_editor_just_closed || self.request_focus
                 );
                 
                 if should_focus {
@@ -2085,6 +2092,7 @@ impl eframe::App for AnchorSelector {
                     response.request_focus();
                     if response.has_focus() {
                         self.focus_set = true;
+                        self.request_focus = false;  // Clear the request
                         crate::utils::debug_log("FOCUS", &format!("Focus successfully set on frame {}", self.frame_count));
                     } else if self.frame_count % 5 == 0 && self.frame_count <= 15 {
                         // Log focus attempts every 5 frames for debugging
