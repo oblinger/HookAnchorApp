@@ -635,9 +635,18 @@ impl KeyHandler for ActionHandler {
             Action::ExitApp => {
                 // Only exit if no sub-interfaces are visible
                 if !context.popup.is_command_editor_visible() && !context.popup.is_dialog_visible() {
-                    crate::utils::log("EXIT: Exiting application");
-                    context.popup.perform_exit_scanner_check();
-                    std::process::exit(0);
+                    let config = crate::core::sys_data::get_config();
+                    if config.popup_settings.run_in_background.unwrap_or(false) {
+                        crate::utils::log("EXIT: Hiding window (background mode enabled)");
+                        context.popup.perform_exit_scanner_check();
+                        // Request frame close to hide the window
+                        context.egui_ctx.send_viewport_cmd(egui::ViewportCommand::Close);
+                        KeyHandlerResult::Handled
+                    } else {
+                        crate::utils::log("EXIT: Exiting application");
+                        context.popup.perform_exit_scanner_check();
+                        std::process::exit(0);
+                    }
                 } else {
                     // If sub-interfaces are open, let their handlers take priority
                     KeyHandlerResult::NotHandled

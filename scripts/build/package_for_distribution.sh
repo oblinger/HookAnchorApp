@@ -178,8 +178,6 @@ if [ ! -f "$HOME/.config/hookanchor/config.yaml" ]; then
 popup_settings:
   max_rows: 15
   max_columns: 3
-  debug_log: "~/.config/hookanchor/anchor.log"
-  server_log: "~/.config/hookanchor/server.log"
   debug_scanner: false
   merge_similar: true
   word_separators: " ._-"

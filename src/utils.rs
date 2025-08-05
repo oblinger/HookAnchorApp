@@ -15,7 +15,7 @@ static LOGIN_ENV_CACHE: OnceLock<Mutex<Option<HashMap<String, String>>>> = OnceL
 
 /// Clear the debug log file
 /// 
-/// Removes the debug log file specified in config.popup_settings.debug_log
+/// Removes the debug log file at the hardcoded path ~/.config/hookanchor/anchor.log
 /// to start fresh logging. Used before rebuilds and when log exceeds max size.
 pub fn clear_debug_log() {
     // Use constant from sys_data

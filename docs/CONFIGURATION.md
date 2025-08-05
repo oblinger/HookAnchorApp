@@ -35,8 +35,6 @@ Controls the behavior and appearance of the popup interface:
 popup_settings:
   max_rows: 25                    # Maximum rows to display in popup
   max_columns: 4                  # Maximum columns for multi-column layout
-  debug_log: "~/.config/hookanchor/anchor.log"  # Debug log file path
-  server_log: "~/.config/hookanchor/server.log" # Server log file path
   debug_scanner: false            # Enable scanner debug logging
   verbose_logging: true           # Enable verbose debug output
   merge_similar: true             # Merge similar commands in popup
@@ -324,7 +322,6 @@ Here's a complete minimal configuration file:
 # Application Settings
 popup_settings:
   max_rows: 20
-  debug_log: "~/.config/hookanchor/anchor.log"
   
 # Keyboard Shortcuts  
 keybindings:

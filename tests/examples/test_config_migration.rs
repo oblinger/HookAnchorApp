@@ -16,12 +16,6 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
     println!("  popup_settings.max_columns: {}", config.popup_settings.max_columns);
     println!("  popup_settings.use_new_launcher: {}", config.popup_settings.use_new_launcher);
     
-    if let Some(debug_log) = &config.popup_settings.debug_log {
-        println!("  popup_settings.debug_log: {}", debug_log);
-    } else {
-        println!("  popup_settings.debug_log: None");
-    }
-    
     match &config.popup_settings.listed_actions {
         Some(actions_str) => {
             let actions: Vec<String> = actions_str

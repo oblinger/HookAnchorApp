@@ -141,7 +141,6 @@ mod tests {
             popup_settings: PopupSettings {
                 max_rows: 10,
                 max_columns: 1,
-                debug_log: None,
                 verbose_logging: None,
                 debug_scanner: None,
                 listed_actions: None,

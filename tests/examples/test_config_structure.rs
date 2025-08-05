@@ -15,7 +15,6 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
     println!("   Max rows: {}", config.popup_settings.max_rows);
     println!("   Max columns: {}", config.popup_settings.max_columns);
     println!("   Use new launcher: {}", config.popup_settings.use_new_launcher);
-    println!("   Debug log: {:?}", config.popup_settings.debug_log);
     
     // Test 2: Check listed_actions
     println!("\n2. Checking listed_actions configuration...");
@@ -47,7 +46,6 @@ popup_settings:
   max_rows: 12
   max_columns: 2
   use_new_launcher: true
-  debug_log: "~/.test.log"
 
 listed_actions:
   - "app"

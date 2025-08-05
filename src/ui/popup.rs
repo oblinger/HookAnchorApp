@@ -250,6 +250,18 @@ impl AnchorSelector {
     // Scanner Management
     // =============================================================================
     
+    /// Exit or hide the application based on background mode setting
+    fn exit_or_hide(&mut self, ctx: &egui::Context) {
+        let config = crate::core::sys_data::get_config();
+        if config.popup_settings.run_in_background.unwrap_or(false) {
+            crate::utils::log("EXIT: Hiding window (background mode enabled)");
+            ctx.send_viewport_cmd(egui::ViewportCommand::Close);
+        } else {
+            crate::utils::log("EXIT: Exiting application");
+            std::process::exit(0);
+        }
+    }
+    
     /// Perform scanner check before exiting to update commands for next launch
     fn perform_exit_scanner_check(&mut self) {
         if self.scanner_check_pending {
@@ -465,6 +477,7 @@ impl AnchorSelector {
                     // Note: CommandServer::execute_command handles all execution via server internally
                     // and includes proper state saving, alias resolution, etc.
                     self.perform_exit_scanner_check();
+                    // TODO: Implement proper background mode - for now just exit
                     std::process::exit(0);
                 }
             }
@@ -1769,7 +1782,7 @@ impl eframe::App for AnchorSelector {
                     self.close_dialog();
                 }
                 // Exit the application
-                process::exit(0);
+                self.exit_or_hide(ctx);
             }
         }
             
@@ -1875,7 +1888,7 @@ impl eframe::App for AnchorSelector {
                 if let Some(button_text) = result.get("exit") {
                     if button_text == "Exit" {
                         self.perform_exit_scanner_check();
-                        std::process::exit(0);
+                        self.exit_or_hide(ctx);
                     } else if button_text == "OK" {
                         // Check if this is from the uninstall dialog (has the warning about Karabiner)
                         // by looking at the dialog title or content - for simplicity, assume OK from uninstall dialog
@@ -2370,7 +2383,7 @@ impl eframe::App for AnchorSelector {
                                                     Err(e) => crate::utils::log_error(&format!("Failed to execute command: {}", e)),
                                                 }
                                                 self.perform_exit_scanner_check();
-                                                process::exit(0);
+                                                self.exit_or_hide(ctx);
                                             }
                                         }
                                     }
@@ -2489,7 +2502,7 @@ impl eframe::App for AnchorSelector {
                                             Err(e) => crate::utils::log_error(&format!("Failed to execute command: {}", e)),
                                         }
                                         self.perform_exit_scanner_check();
-                                        process::exit(0);
+                                        self.exit_or_hide(ctx);
                                     }
                                     
                                     // Right margin draggable area

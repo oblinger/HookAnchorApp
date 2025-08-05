@@ -14,9 +14,8 @@
 popup_settings:
   max_rows:               25          # Max number of rows in the list of matching commands
   max_columns:            4           # Max columns in list of matching commands
-  debug_log:              "~/.config/hookanchor/anchor.log"  # Debug logging file path 
   debug_scanner:          false
-  verbose_logging:        false
+  verbose_logging:        true
   merge_similar:          true        # Merging similar commands in popup
   word_separators:        " ._-"      # Word separator chars submenus and merging
   scan_interval_seconds:  30          # How many seconds between automatic rescanning of the filesystem
@@ -66,7 +65,7 @@ keybindings:
   force_rebuild:        "`"           # Force rebuild: restart server + rescan (backtick) - ASCII form works now!
   show_folder:          "/"           # Launch first folder matching search - ASCII form works now!
   open_editor:          "="           # Open command editor - ASCII form works now!
-  edit_active_command:  "Semicolon"   # Edit currently selected command - word form
+  edit_active_command:  ";"           # Edit currently selected command - word form
   cancel_editor:        "Escape"      # Cancel command editor
   show_keys:            "?"           # Show all available key bindings - ASCII form works now!
   
@@ -110,7 +109,7 @@ templates:
     description: "Create dated note in Notes folder"
   # Quick grab template - captures current window after delay
   grab:
-    key: "-"
+    key: "+"
     grab: 3
     name: "{{input}}"
     action: "{{grabbed_action}}"
@@ -122,7 +121,7 @@ templates:
   # Alias template - creates alias to previously executed command
   alias:
     description: "Create alias to last executed command"
-    key: "<"
+    key: ">"
     name: "{{input}}"
     action: "alias"
     arg: "{{previous_name}}"
@@ -148,7 +147,7 @@ templates:
   # WW template - creates work sub-anchor with YYYY-MM prefix
   ww:
     description: "Create work sub-anchor with YYYY-MM prefix"
-    key: "W"
+    key: "Ctrl+W"
     name: "{{YYYY}}-{{MM}} {{input}}"
     action: "anchor"
     arg: "/Users/oblinger/ob/kmr/Work/SV/ww/{{YYYY}}-{{MM}} {{input}}/{{YYYY}}-{{MM}} {{input}}.md"
@@ -159,71 +158,6 @@ templates:
     file_rescan: true
     contents: |
       .[[{{YYYY}}-{{MM}} {{input}}]].
-      
-  # TEST TEMPLATES - to debug key binding
-  test_at:
-    description: "Test @ key"
-    key: "@"
-    name: "TEST_AT_{{input}}"
-    action: "anchor"
-    arg: "/tmp/test_at_{{input}}.md"
-    edit: true
-    
-  test_hash:
-    description: "Test # key"
-    key: "#"
-    name: "TEST_HASH_{{input}}"
-    action: "anchor"
-    arg: "/tmp/test_hash_{{input}}.md"
-    edit: true
-    
-  test_star:
-    description: "Test * key"
-    key: "*"
-    name: "TEST_STAR_{{input}}"
-    action: "anchor"
-    arg: "/tmp/test_star_{{input}}.md"
-    edit: true
-    
-  test_ampersand:
-    description: "Test & key"
-    key: "&"
-    name: "TEST_AMP_{{input}}"
-    action: "anchor"
-    arg: "/tmp/test_amp_{{input}}.md"
-    edit: true
-    
-  test_caret:
-    description: "Test ^ key"
-    key: "^"
-    name: "TEST_CARET_{{input}}"
-    action: "anchor"
-    arg: "/tmp/test_caret_{{input}}.md"
-    edit: true
-    
-  test_tilde:
-    description: "Test ~ key"
-    key: "~"
-    name: "TEST_TILDE_{{input}}"
-    action: "anchor"
-    arg: "/tmp/test_tilde_{{input}}.md"
-    edit: true
-    
-  test_pipe:
-    description: "Test | key"
-    key: "|"
-    name: "TEST_PIPE_{{input}}"
-    action: "anchor"
-    arg: "/tmp/test_pipe_{{input}}.md"
-    edit: true
-    
-  test_f1:
-    description: "Test F1 key"
-    key: "F1"
-    name: "TEST_F1_{{input}}"
-    action: "anchor"
-    arg: "/tmp/test_f1_{{input}}.md"
-    edit: true
 
 # =================================================================
 # GRABBER RULES

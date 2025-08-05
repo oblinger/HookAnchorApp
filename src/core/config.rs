@@ -35,7 +35,6 @@ pub struct Config {
 pub struct PopupSettings {
     pub max_rows: usize,
     pub max_columns: usize,
-    pub debug_log: Option<String>,
     /// Enable verbose debug logging for JavaScript functions and shell commands (default: false)
     pub verbose_logging: Option<bool>,
     /// Enable detailed scanner debug output (default: true)
@@ -60,6 +59,8 @@ pub struct PopupSettings {
     pub default_window_size: Option<String>,
     /// Maximum log file size in bytes before clearing (default: 1MB = 1,000,000 bytes)
     pub max_log_file_size: Option<u64>,
+    /// Keep app running in background for instant popup (default: false)
+    pub run_in_background: Option<bool>,
 }
 
 /// Launcher settings section of the configuration file
@@ -121,7 +122,6 @@ impl Default for PopupSettings {
         PopupSettings {
             max_rows: 20,
             max_columns: 3,
-            debug_log: Some("~/.anchor.log".to_string()),
             verbose_logging: Some(false),
             debug_scanner: Some(true),
             listed_actions: Some("app,url,folder,cmd,chrome,anchor".to_string()),
@@ -133,6 +133,7 @@ impl Default for PopupSettings {
             max_window_size: Some("1700x1100".to_string()),
             default_window_size: Some("600x400".to_string()),
             max_log_file_size: Some(1_000_000), // 1MB default
+            run_in_background: Some(false), // Default to false for safety
         }
     }
 }

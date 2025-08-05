@@ -8,6 +8,20 @@ use std::sync::{Mutex, OnceLock};
 use super::config::Config;
 use super::commands::{Command, Patch};
 
+// =============================================================================
+// GLOBAL CONSTANTS
+// =============================================================================
+// Put all hardcoded constants here instead of scattering them throughout the codebase.
+// This makes them easy to find and modify in one place.
+
+/// Default log file path - hardcoded for reliability during early initialization
+/// Note: This is the ONLY place where the log path is defined. The debug_log config
+/// parameter has been removed as it was not being used.
+pub const DEFAULT_LOG_PATH: &str = "~/.config/hookanchor/anchor.log";
+
+/// Maximum log file size if config is not loaded (10MB)
+pub const DEFAULT_MAX_LOG_SIZE: u64 = 10_000_000;
+
 /// System application data structure containing all loaded data
 #[derive(Clone, Debug)]
 pub struct SysData {
