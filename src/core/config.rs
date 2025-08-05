@@ -436,20 +436,33 @@ impl Config {
         self.get_action_for_key_with_modifiers(key_name, &std::collections::HashSet::new())
     }
     
-    /// Check if any action is bound to the given key with modifiers
+    /// Check if any action is bound to the given key with modifiers (using new Modifiers struct)
     /// Returns the action name if found, None otherwise
-    pub fn get_action_for_key_with_modifiers(&self, key_name: &str, modifiers: &std::collections::HashSet<String>) -> Option<&str> {
+    pub fn get_action_for_key_with_modifiers_struct(&self, key_name: &str, modifiers: &crate::core::key_parsing::Modifiers) -> Option<&str> {
         use crate::core::key_parsing;
         
         if let Some(ref keybindings) = self.keybindings {
             for (action, bound_key) in keybindings {
-                if key_parsing::key_matches(bound_key, key_name, modifiers) {
+                if key_parsing::key_matches_with_modifiers(bound_key, key_name, modifiers) {
                     return Some(action);
                 }
             }
         }
         
         None
+    }
+    
+    /// Check if any action is bound to the given key with modifiers (legacy HashSet version)
+    /// Returns the action name if found, None otherwise
+    pub fn get_action_for_key_with_modifiers(&self, key_name: &str, modifiers: &std::collections::HashSet<String>) -> Option<&str> {
+        // Convert HashSet to Modifiers struct and use new method
+        let modifiers_struct = crate::core::key_parsing::Modifiers {
+            ctrl: modifiers.contains("Ctrl"),
+            alt: modifiers.contains("Alt"),
+            shift: modifiers.contains("Shift"),
+            cmd: modifiers.contains("Cmd"),
+        };
+        self.get_action_for_key_with_modifiers_struct(key_name, &modifiers_struct)
     }
     
     /// Check if the given key is bound to a template
@@ -480,32 +493,14 @@ impl Config {
         None
     }
     
-    /// Check if the given egui event matches any template using the new NormalizedKey system
-    /// This provides more efficient matching by using direct equality comparison
-    pub fn get_template_for_normalized_key(&self, event: &egui::Event) -> Option<&str> {
-        use crate::core::key_parsing::egui_event_to_normalized_key;
-        
-        if let Some(normalized_event) = egui_event_to_normalized_key(event) {
-            if let Some(ref templates) = self.templates {
-                if let Ok(mut file) = std::fs::OpenOptions::new().create(true).append(true).open("/tmp/hookanchor_debug.log") {
-                    use std::io::Write;
-                    let _ = writeln!(file, "🔍 NORMALIZED_MATCH: Looking for templates matching event {:?}", normalized_event);
-                }
-                
-                for (template_name, template) in templates {
-                    if let Some(ref normalized_key) = template.normalized_key {
-                        if let Ok(mut file) = std::fs::OpenOptions::new().create(true).append(true).open("/tmp/hookanchor_debug.log") {
-                            use std::io::Write;
-                            let _ = writeln!(file, "    Template '{}' has normalized key {:?}", template_name, normalized_key);
-                        }
-                        
-                        if *normalized_key == normalized_event {
-                            if let Ok(mut file) = std::fs::OpenOptions::new().create(true).append(true).open("/tmp/hookanchor_debug.log") {
-                                use std::io::Write;
-                                let _ = writeln!(file, "    ✅ DIRECT MATCH: Template '{}' matches!", template_name);
-                            }
-                            return Some(template_name);
-                        }
+    /// Check if the given egui event matches any template using the Keystroke system
+    /// This provides efficient matching by comparing against pre-computed keystrokes
+    pub fn get_template_for_keystroke(&self, event: &egui::Event) -> Option<&str> {
+        if let Some(ref templates) = self.templates {
+            for (template_name, template) in templates {
+                if let Some(ref keystroke) = template.keystroke {
+                    if keystroke.matches_event(event) {
+                        return Some(template_name);
                     }
                 }
             }
@@ -514,19 +509,23 @@ impl Config {
     }
 }
 
-/// Normalize template keys for efficient matching
-/// This converts the string-based key fields into NormalizedKey objects
+/// Convert template keys to Keystroke objects for efficient matching
+/// This converts the string-based key fields into Keystroke objects
 /// for direct equality comparison instead of complex parsing during runtime
 fn normalize_template_keys(config: &mut Config) {
-    use crate::core::key_parsing::config_string_to_normalized_key;
+    use crate::core::key_parsing::Keystroke;
     
     if let Some(ref mut templates) = config.templates {
         for (template_name, template) in templates.iter_mut() {
             if let Some(ref key_str) = template.key {
-                template.normalized_key = Some(config_string_to_normalized_key(key_str));
-                if let Ok(mut file) = std::fs::OpenOptions::new().create(true).append(true).open("/tmp/hookanchor_debug.log") {
-                    use std::io::Write;
-                    let _ = writeln!(file, "🔧 NORMALIZED: Template '{}' key '{}' → {:?}", template_name, key_str, template.normalized_key);
+                match Keystroke::from_config_string(key_str) {
+                    Ok(keystroke) => {
+                        template.keystroke = Some(keystroke);
+                        println!("✅ Template '{}' key '{}' → {:?}", template_name, key_str, template.keystroke);
+                    }
+                    Err(e) => {
+                        println!("❌ Failed to parse key '{}' for template '{}': {}", key_str, template_name, e);
+                    }
                 }
             }
         }

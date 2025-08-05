@@ -7,7 +7,7 @@ use std::collections::HashMap;
 use chrono::{Local, Datelike, Timelike};
 use serde::{Deserialize, Serialize};
 use crate::Command;
-use crate::core::key_parsing::NormalizedKey;
+use crate::core::key_parsing::Keystroke;
 
 /// A template for creating new commands
 #[derive(Debug, Clone, Deserialize, Serialize)]
@@ -33,9 +33,9 @@ pub struct Template {
     #[serde(skip_serializing_if = "Option::is_none")]
     pub key: Option<String>,
     
-    /// Normalized key for efficient matching (computed from key field)
+    /// Keystroke for efficient matching (computed from key field)
     #[serde(skip)]
-    pub normalized_key: Option<NormalizedKey>,
+    pub keystroke: Option<Keystroke>,
     
     /// If true, open command editor before creating
     #[serde(default)]

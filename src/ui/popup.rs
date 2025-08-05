@@ -258,59 +258,6 @@ impl AnchorSelector {
     // Centralized Key Handling
     // =============================================================================
     
-    /// Check if a key press would generate the given text
-    fn key_generates_text(key: &egui::Key, text: &str) -> bool {
-        match key {
-            egui::Key::Equals => text == "=",
-            egui::Key::Plus => text == "+",
-            egui::Key::Minus => text == "-",
-            egui::Key::Backslash => text == "\\",
-            egui::Key::Slash => text == "/",
-            egui::Key::Semicolon => text == ";",
-            egui::Key::Backtick => text == "`",
-            egui::Key::Space => text == " ",
-            egui::Key::Comma => text == ",",
-            egui::Key::Period => text == ".",
-            egui::Key::A => text == "a" || text == "A",
-            egui::Key::B => text == "b" || text == "B",
-            egui::Key::C => text == "c" || text == "C",
-            egui::Key::D => text == "d" || text == "D",
-            egui::Key::E => text == "e" || text == "E",
-            egui::Key::F => text == "f" || text == "F",
-            egui::Key::G => text == "g" || text == "G",
-            egui::Key::H => text == "h" || text == "H",
-            egui::Key::I => text == "i" || text == "I",
-            egui::Key::J => text == "j" || text == "J",
-            egui::Key::K => text == "k" || text == "K",
-            egui::Key::L => text == "l" || text == "L",
-            egui::Key::M => text == "m" || text == "M",
-            egui::Key::N => text == "n" || text == "N",
-            egui::Key::O => text == "o" || text == "O",
-            egui::Key::P => text == "p" || text == "P",
-            egui::Key::Q => text == "q" || text == "Q",
-            egui::Key::R => text == "r" || text == "R",
-            egui::Key::S => text == "s" || text == "S",
-            egui::Key::T => text == "t" || text == "T",
-            egui::Key::U => text == "u" || text == "U",
-            egui::Key::V => text == "v" || text == "V",
-            egui::Key::W => text == "w" || text == "W",
-            egui::Key::X => text == "x" || text == "X",
-            egui::Key::Y => text == "y" || text == "Y",
-            egui::Key::Z => text == "z" || text == "Z",
-            egui::Key::Num0 => text == "0",
-            egui::Key::Num1 => text == "1",
-            egui::Key::Num2 => text == "2",
-            egui::Key::Num3 => text == "3",
-            egui::Key::Num4 => text == "4",
-            egui::Key::Num5 => text == "5",
-            egui::Key::Num6 => text == "6",
-            egui::Key::Num7 => text == "7",
-            egui::Key::Num8 => text == "8",
-            egui::Key::Num9 => text == "9",
-            // Arrow keys, Enter, Escape, etc. don't generate normal text
-            _ => false,
-        }
-    }
     
     /// Centralized key handling for the main popup interface
     /// Returns true if any keys were processed
@@ -386,7 +333,7 @@ impl AnchorSelector {
             
             // Collect actions to perform to avoid borrowing conflicts
             let mut actions_to_perform = Vec::new();
-            let mut template_actions = Vec::new();
+            let mut template_actions: Vec<String> = Vec::new();
             let mut consumed_keys = Vec::new();
             let mut consumed_text = Vec::new();
             
@@ -419,65 +366,71 @@ impl AnchorSelector {
                 crate::utils::debug_log("RAW_EVENTS", "=== END RAW EVENTS ===");
             }
             
-            // Check for special text events that should trigger actions
-            for event in &input.events {
-                if let egui::Event::Text(text) = event {
-                    match text.as_str() {
-                        ">" => {
-                            actions_to_perform.push("add_alias");
-                            consumed_text.push(text.clone());
-                            keys_processed = true;
-                        },
-                        "<" => {
-                            template_actions.push("alias".to_string());
-                            consumed_text.push(text.clone());
-                            keys_processed = true;
-                        },
-                        "$" => {
-                            template_actions.push("note".to_string());
-                            consumed_text.push(text.clone());
-                            keys_processed = true;
-                        },
-                        "%" => {
-                            template_actions.push("grab".to_string());
-                            consumed_text.push(text.clone());
-                            keys_processed = true;
-                        },
-                        "*" => {
-                            template_actions.push("alias".to_string());
-                            consumed_text.push(text.clone());
-                            keys_processed = true;
-                        },
-                        "?" => {
-                            actions_to_perform.push("show_keys");
-                            consumed_text.push(text.clone());
-                            keys_processed = true;
-                        },
-                        _ => {
-                            // Check if this text character is a template key using the new normalized system
-                            if let Ok(mut file) = std::fs::OpenOptions::new().create(true).append(true).open("/tmp/hookanchor_debug.log") {
-                                use std::io::Write;
-                                let _ = writeln!(file, "  ⚡ Checking text '{}' for template using normalized key system", text);
-                            }
-                            
-                            // Create a TEXT event for the normalized key system
-                            let text_event = egui::Event::Text(text.clone());
-                            if let Some(template_name) = self.popup_state.config.get_template_for_normalized_key(&text_event) {
-                                if let Ok(mut file) = std::fs::OpenOptions::new().create(true).append(true).open("/tmp/hookanchor_debug.log") {
-                                    use std::io::Write;
-                                    let _ = writeln!(file, "  ✅ Found template '{}' for text '{}' via normalized key", template_name, text);
-                                }
-                                template_actions.push(template_name.to_string());
-                                consumed_text.push(text.clone());
-                                keys_processed = true;
-                            } else {
-                                if let Ok(mut file) = std::fs::OpenOptions::new().create(true).append(true).open("/tmp/hookanchor_debug.log") {
-                                    use std::io::Write;
-                                    let _ = writeln!(file, "  ❌ No template found for text '{}' via normalized key", text);
-                                }
+            // Handle template matching by looking at KEY events and consuming corresponding TEXT events
+            // Build pairs of KEY and TEXT events for better matching
+            let mut key_text_pairs = Vec::new();
+            let mut unpaired_events = Vec::new();
+            
+            // First pass: pair up KEY and TEXT events
+            let mut i = 0;
+            while i < input.events.len() {
+                match &input.events[i] {
+                    egui::Event::Key { pressed: true, .. } => {
+                        // Look for a corresponding TEXT event
+                        if i + 1 < input.events.len() {
+                            if let egui::Event::Text(_) = &input.events[i + 1] {
+                                key_text_pairs.push((i, i + 1));
+                                i += 2;
+                                continue;
                             }
                         }
+                        unpaired_events.push(i);
+                        i += 1;
                     }
+                    egui::Event::Text(text) => {
+                        // Handle standalone TEXT events
+                        match text.as_str() {
+                            ">" => {
+                                // Special case: > is add_alias action, not a template
+                                actions_to_perform.push("add_alias");
+                                consumed_text.push(text.clone());
+                                keys_processed = true;
+                            },
+                            "?" => {
+                                // Special case: ? is show_keys action, not a template
+                                actions_to_perform.push("show_keys");
+                                consumed_text.push(text.clone());
+                                keys_processed = true;
+                            },
+                            _ => {}
+                        }
+                        unpaired_events.push(i);
+                        i += 1;
+                    }
+                    _ => {
+                        unpaired_events.push(i);
+                        i += 1;
+                    }
+                }
+            }
+            
+            // Check KEY+TEXT pairs for template matches
+            for (key_idx, text_idx) in key_text_pairs {
+                let key_event = &input.events[key_idx];
+                let text_event = &input.events[text_idx];
+                
+                if let Some(template_name) = self.popup_state.config.get_template_for_keystroke(key_event) {
+                    // Template match found!
+                    template_actions.push(template_name.to_string());
+                    
+                    // Consume both the KEY and TEXT events
+                    if let egui::Event::Key { key, .. } = key_event {
+                        consumed_keys.push(*key);
+                    }
+                    if let egui::Event::Text(text) = text_event {
+                        consumed_text.push(text.clone());
+                    }
+                    keys_processed = true;
                 }
             }
             
@@ -506,27 +459,15 @@ impl AnchorSelector {
                         
                         if *pressed {
                             
-                            // Build modifier set for new key parsing system
-                            let mut modifier_set = std::collections::HashSet::new();
-                            if modifiers.ctrl {
-                                modifier_set.insert("Ctrl".to_string());
-                            }
-                            if modifiers.alt {
-                                modifier_set.insert("Alt".to_string());
-                            }
-                            if modifiers.shift {
-                                modifier_set.insert("Shift".to_string());
-                            }
-                            if modifiers.command {
-                                modifier_set.insert("Cmd".to_string());
-                            }
+                            // Use new Modifiers struct directly (no HashSet conversion needed)
+                            let normalized_modifiers = crate::core::key_parsing::Modifiers::from_egui(&modifiers);
                             
                             // Check what action (if any) is bound to this key combination
                             if let Ok(mut file) = std::fs::OpenOptions::new().create(true).append(true).open("/tmp/hookanchor_debug.log") {
                                 use std::io::Write;
-                                let _ = writeln!(file, "  🔍 Checking for action: key='{}' modifiers={:?}", key_name, modifier_set);
+                                let _ = writeln!(file, "  🔍 Checking for action: key='{}' modifiers={:?}", key_name, normalized_modifiers);
                             }
-                            if let Some(action) = config.get_action_for_key_with_modifiers(&key_name, &modifier_set) {
+                            if let Some(action) = config.get_action_for_key_with_modifiers_struct(&key_name, &normalized_modifiers) {
                                 if let Ok(mut file) = std::fs::OpenOptions::new().create(true).append(true).open("/tmp/hookanchor_debug.log") {
                                     use std::io::Write;
                                     let _ = writeln!(file, "  ✅ Found action: '{}'", action);
@@ -564,7 +505,7 @@ impl AnchorSelector {
                                     "template_create" => actions_to_perform.push("template_create"),
                                     _ => {} // Unknown action - still consume the key
                                 }
-                            } else if let Some(template_name) = config.get_template_for_normalized_key(event) {
+                            } else if let Some(template_name) = config.get_template_for_keystroke(event) {
                                 // Template keybinding found using normalized key system
                                 if let Ok(mut file) = std::fs::OpenOptions::new().create(true).append(true).open("/tmp/hookanchor_debug.log") {
                                     use std::io::Write;
@@ -577,7 +518,7 @@ impl AnchorSelector {
                                 // No action or template found for this key
                                 if let Ok(mut file) = std::fs::OpenOptions::new().create(true).append(true).open("/tmp/hookanchor_debug.log") {
                                     use std::io::Write;
-                                    let _ = writeln!(file, "  ❌ No action or template found for key='{}' modifiers={:?}", key_name, modifier_set);
+                                    let _ = writeln!(file, "  ❌ No action or template found for key='{}' modifiers={:?}", key_name, normalized_modifiers);
                                 }
                             }
                         }
@@ -605,18 +546,9 @@ impl AnchorSelector {
                             }
                             return false;
                         }
-                        // Filter out text that corresponds to consumed keys
-                        // Check if any consumed key would generate this text
-                        let should_filter = consumed_keys.iter().any(|key| {
-                            Self::key_generates_text(key, text)
-                        });
-                        if should_filter {
-                            if let Ok(mut file) = std::fs::OpenOptions::new().create(true).append(true).open("/tmp/hookanchor_debug.log") {
-                                use std::io::Write;
-                                let _ = writeln!(file, "  🚫 Filtering text '{}' (generated by consumed key)", text);
-                            }
-                        }
-                        !should_filter
+                        // For the new Keystroke system, consumed_text contains all text that should be filtered
+                        // No need for complex key->text mapping
+                        true // Keep all text events that aren't explicitly consumed
                     },
                     _ => true
                 };
