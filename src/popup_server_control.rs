@@ -67,10 +67,11 @@ impl PopupControl {
     }
     
     /// Process any pending commands
-    pub fn process_commands(&self, ctx: &egui::Context) {
+    /// Returns the command that was processed, if any
+    pub fn process_commands(&self, ctx: &egui::Context) -> Option<PopupCommand> {
         if let Ok(mut pending) = self.pending_command.lock() {
             if let Some(command) = pending.take() {
-                match command {
+                match &command {
                     PopupCommand::Show => {
                         crate::utils::debug_log("POPUP_SERVER", "Processing show command");
                         ctx.send_viewport_cmd(egui::ViewportCommand::Focus);
@@ -85,7 +86,12 @@ impl PopupControl {
                         crate::utils::debug_log("POPUP_SERVER", "Ping received");
                     }
                 }
+                Some(command)
+            } else {
+                None
             }
+        } else {
+            None
         }
     }
 }

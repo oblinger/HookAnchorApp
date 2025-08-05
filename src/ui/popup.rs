@@ -76,6 +76,8 @@ pub struct AnchorSelector {
     exit_app_key: Option<crate::core::key_processing::Keystroke>,
     exit_editor_key: Option<crate::core::key_processing::Keystroke>,
     exit_dialog_key: Option<crate::core::key_processing::Keystroke>,
+    /// Flag to request exit/hide on next update
+    should_exit: bool,
 }
 
 /// Loading state for deferred initialization
@@ -255,7 +257,10 @@ impl AnchorSelector {
         let config = crate::core::sys_data::get_config();
         if config.popup_settings.run_in_background.unwrap_or(false) {
             crate::utils::log("EXIT: Hiding window (background mode enabled)");
-            ctx.send_viewport_cmd(egui::ViewportCommand::Close);
+            // Clear the search input for next time
+            self.popup_state.search_text.clear();
+            self.popup_state.update_search(String::new());
+            ctx.send_viewport_cmd(egui::ViewportCommand::Visible(false));
         } else {
             crate::utils::log("EXIT: Exiting application");
             std::process::exit(0);
@@ -368,6 +373,11 @@ impl PopupInterface for AnchorSelector {
         self.perform_exit_scanner_check();
     }
     
+    fn request_exit(&mut self) {
+        self.perform_exit_scanner_check();
+        self.should_exit = true;
+    }
+    
     fn execute_selected_command(&mut self) {
         self.execute_selected_command();
     }
@@ -477,8 +487,8 @@ impl AnchorSelector {
                     // Note: CommandServer::execute_command handles all execution via server internally
                     // and includes proper state saving, alias resolution, etc.
                     self.perform_exit_scanner_check();
-                    // TODO: Implement proper background mode - for now just exit
-                    std::process::exit(0);
+                    // Request exit or hide through the proper channel
+                    self.should_exit = true;
                 }
             }
         }
@@ -900,6 +910,7 @@ impl AnchorSelector {
             exit_app_key: None, // Will be populated from config
             exit_editor_key: None, // Will be populated from config
             exit_dialog_key: None, // Will be populated from config
+            should_exit: false,
         };
         
         result
@@ -1449,7 +1460,7 @@ impl AnchorSelector {
         println!("===============================================");
         
         // Step 1: Server teardown using clean top-level function
-        println!("\n🔄 Step 1/3: Tearing down server...");
+        println!("\n🔄 Step 1/4: Tearing down server...");
         match crate::command_server_management::kill_existing_server() {
             Ok(()) => {
                 crate::utils::debug_log("REBUILD", "Server teardown completed successfully");
@@ -1462,7 +1473,7 @@ impl AnchorSelector {
         }
         
         // Step 2: Server setup using clean top-level function  
-        println!("\n🚀 Step 2/3: Setting up new server...");
+        println!("\n🚀 Step 2/4: Setting up new server...");
         match crate::command_server_management::start_server_via_terminal() {
             Ok(()) => {
                 crate::utils::debug_log("REBUILD", "Server setup completed successfully");
@@ -1480,7 +1491,7 @@ impl AnchorSelector {
         std::thread::sleep(std::time::Duration::from_millis(1000));
         
         // Step 3: Call "ha --rescan" to let the server handle the rescan
-        println!("\n📁 Step 3/3: Triggering filesystem rescan via server...");
+        println!("\n📁 Step 3/4: Triggering filesystem rescan via server...");
         let current_exe = std::env::current_exe().unwrap_or_else(|_| "popup".into());
         match std::process::Command::new(current_exe)
             .arg("--rescan")
@@ -1489,7 +1500,6 @@ impl AnchorSelector {
                 if status.success() {
                     crate::utils::debug_log("REBUILD", "Rescan via server completed successfully");
                     println!("  ✅ Filesystem rescan completed");
-                    println!("\n🎉 Rebuild completed successfully!");
                 } else {
                     crate::utils::debug_log("REBUILD", "Rescan via server failed");
                     println!("  ❌ Filesystem rescan failed");
@@ -1500,6 +1510,37 @@ impl AnchorSelector {
                 println!("  ❌ Failed to start rescan: {}", e);
             }
         }
+        
+        // Step 4: Delete popup server to force config reload
+        println!("\n🔄 Step 4/4: Restarting popup server to reload config...");
+        
+        // Get the path to the popup binary
+        let exe_dir = match std::env::current_exe() {
+            Ok(exe_path) => exe_path.parent().unwrap_or_else(|| std::path::Path::new(".")).to_path_buf(),
+            Err(_) => std::path::PathBuf::from(".")
+        };
+        let popup_path = exe_dir.join("popup");
+        
+        match std::process::Command::new(&popup_path)
+            .arg("delete")
+            .output() {
+            Ok(output) => {
+                if output.status.success() {
+                    crate::utils::debug_log("REBUILD", "Popup server deleted successfully");
+                    println!("  ✅ Popup server restarted to reload configuration");
+                } else {
+                    let error = String::from_utf8_lossy(&output.stderr);
+                    crate::utils::debug_log("REBUILD", &format!("Failed to delete popup server: {}", error));
+                    println!("  ⚠️  Popup server restart skipped: {}", error.trim());
+                }
+            }
+            Err(e) => {
+                crate::utils::debug_log("REBUILD", &format!("Failed to execute popup delete: {}", e));
+                println!("  ⚠️  Failed to restart popup server: {}", e);
+            }
+        }
+        
+        println!("\n🎉 Rebuild completed successfully!");
     }
     
     /// Trigger filesystem rescan
@@ -1784,6 +1825,12 @@ impl eframe::App for AnchorSelector {
                 // Exit the application
                 self.exit_or_hide(ctx);
             }
+        }
+        
+        // Check if exit was requested
+        if self.should_exit {
+            self.should_exit = false; // Reset flag
+            self.exit_or_hide(ctx);
         }
             
         // For idle state, request slower repaints to reduce CPU usage
@@ -2672,7 +2719,23 @@ impl eframe::App for PopupWithControl {
     
     fn update(&mut self, ctx: &egui::Context, frame: &mut eframe::Frame) {
         // Process any control commands first
-        self.control.process_commands(ctx);
+        if let Some(command) = self.control.process_commands(ctx) {
+            match command {
+                crate::popup_server_control::PopupCommand::Show => {
+                    // Clear the search input when showing the popup
+                    self.popup.popup_state.search_text.clear();
+                    self.popup.popup_state.update_search(String::new());
+                    // Request focus on the input field
+                    self.popup.request_focus = true;
+                }
+                crate::popup_server_control::PopupCommand::Hide => {
+                    // Input is already cleared in exit_or_hide
+                }
+                crate::popup_server_control::PopupCommand::Ping => {
+                    // No special handling needed
+                }
+            }
+        }
         
         // Then update the popup
         self.popup.update(ctx, frame);
