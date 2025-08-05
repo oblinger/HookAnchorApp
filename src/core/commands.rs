@@ -1196,12 +1196,12 @@ pub fn load_commands_raw() -> Vec<Command> {
                     Ok(command) => {
                         // Debug: Log the first few commands to see if patches are being preserved
                         if line_num < 5 {
-                            crate::utils::debug_log("PARSE_DEBUG", &format!("Parsed line {}: patch='{}', command='{}', full_line='{}'", 
+                            crate::utils::detailed_log("PARSE_DEBUG", &format!("Parsed line {}: patch='{}', command='{}', full_line='{}'", 
                                 line_num + 1, command.patch, command.command, command.full_line));
                         }
                         // Also log the Patents command specifically
                         if command.command == "Patents" {
-                            crate::utils::debug_log("PARSE_DEBUG", &format!("Found Patents command: patch='{}', command='{}', action='{}'", 
+                            crate::utils::detailed_log("PARSE_DEBUG", &format!("Found Patents command: patch='{}', command='{}', action='{}'", 
                                 command.patch, command.command, command.action));
                         }
                         commands.push(command);
