@@ -76,30 +76,92 @@ def create_app_bundle(dmg_dir, version):
     shutil.copy2(popup_src, popup_dst)
     os.chmod(popup_dst, 0o755)
     
-    # Create AppleScript wrapper as main executable
+    # Copy popup_server binary
+    popup_server_src = Path(__file__).parent.parent / "target" / "release" / "popup_server"
+    popup_server_dst = macos_dir / "popup_server"
+    if not popup_server_src.exists():
+        raise FileNotFoundError(f"Popup server binary not found at {popup_server_src}. Run 'cargo build --release' first.")
+    
+    shutil.copy2(popup_server_src, popup_server_dst)
+    os.chmod(popup_server_dst, 0o755)
+    
+    # Create AppleScript wrapper as main executable (no URL handling)
     wrapper_dst = macos_dir / "hookanchor"
     with open(wrapper_dst, 'w') as f:
         f.write('''#!/usr/bin/osascript
 
 -- HookAnchor AppleScript Wrapper
--- Routes normal launches and URL schemes to the dispatcher
+-- Only handles normal app launches, URL handling is delegated to URLHandler.app
 
 on run
     -- Normal app launch (no URL) - directly launch popup
     set script_dir to (do shell script "dirname " & quoted form of POSIX path of (path to me))
     do shell script "exec '" & script_dir & "/popup'"
 end run
-
-on open location url_string
-    -- URL scheme handler - pass to dispatcher with --hook flag
-    set script_dir to (do shell script "dirname " & quoted form of POSIX path of (path to me))
-    set quoted_url to quoted form of url_string
-    do shell script "'" & script_dir & "/ha' --hook " & quoted_url
-end open location
 ''')
     os.chmod(wrapper_dst, 0o755)
     
-    # Create Info.plist
+    # Create URLHandler.app sub-app for URL handling
+    print("Creating URLHandler.app sub-app...")
+    urlhandler_app = macos_dir / "URLHandler.app"
+    urlhandler_contents = urlhandler_app / "Contents"
+    urlhandler_macos = urlhandler_contents / "MacOS"
+    urlhandler_macos.mkdir(parents=True, exist_ok=True)
+    
+    # Create URLHandler AppleScript
+    urlhandler_script = urlhandler_macos / "URLHandler"
+    with open(urlhandler_script, 'w') as f:
+        f.write('''#!/usr/bin/osascript
+
+on idle
+    return 3600
+end idle
+
+on open location url_string
+    set ha_path to "/Applications/HookAnchor.app/Contents/MacOS/ha"
+    set quoted_url to quoted form of url_string
+    do shell script ha_path & " --hook " & quoted_url
+    quit
+end open location
+
+on run
+    -- Do nothing when launched directly
+end run
+
+on quit
+    continue quit
+end quit
+''')
+    os.chmod(urlhandler_script, 0o755)
+    
+    # Create URLHandler Info.plist
+    urlhandler_info = {
+        "CFBundleExecutable": "URLHandler",
+        "CFBundleIdentifier": "com.oblinger.HookAnchor.URLHandler",
+        "CFBundleName": "HookAnchor URL Handler",
+        "CFBundlePackageType": "APPL",
+        "CFBundleShortVersionString": version,
+        "CFBundleVersion": "1",
+        "LSBackgroundOnly": True,
+        "LSUIElement": True,
+        "CFBundleURLTypes": [
+            {
+                "CFBundleURLName": "HookAnchor URL",
+                "CFBundleURLSchemes": ["hook"]
+            }
+        ]
+    }
+    
+    # Write URLHandler Info.plist
+    urlhandler_plist_path = urlhandler_contents / "Info.plist"
+    with tempfile.NamedTemporaryFile(mode='w', suffix='.json', delete=False) as f:
+        json.dump(urlhandler_info, f)
+        temp_json = f.name
+    
+    run_command(['plutil', '-convert', 'xml1', '-o', str(urlhandler_plist_path), temp_json])
+    os.unlink(temp_json)
+    
+    # Create Info.plist (without URL handling - delegated to URLHandler.app)
     info_plist = {
         "CFBundleExecutable": "hookanchor",
         "CFBundleIdentifier": "com.hookanchor.app",
@@ -111,6 +173,7 @@ end open location
         "LSMinimumSystemVersion": "11.0",
         "LSUIElement": True,  # Run as menu bar app
         "NSHighResolutionCapable": True
+        # Note: URL handling removed - now handled by URLHandler.app sub-app
     }
     
     # Write Info.plist

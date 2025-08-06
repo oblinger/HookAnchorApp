@@ -74,8 +74,12 @@ impl PopupControl {
                 match &command {
                     PopupCommand::Show => {
                         crate::utils::debug_log("POPUP_SERVER", "Processing show command");
-                        ctx.send_viewport_cmd(egui::ViewportCommand::Focus);
+                        // Force the window to be visible and focused
                         ctx.send_viewport_cmd(egui::ViewportCommand::Visible(true));
+                        ctx.send_viewport_cmd(egui::ViewportCommand::Focus);
+                        crate::utils::debug_log("POPUP_SERVER", "Sent viewport commands for show");
+                        // Request a repaint to ensure the commands are processed
+                        ctx.request_repaint();
                     }
                     PopupCommand::Hide => {
                         crate::utils::debug_log("POPUP_SERVER", "Processing hide command");

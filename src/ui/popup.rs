@@ -74,10 +74,10 @@ pub struct AnchorSelector {
     key_registry: Option<KeyRegistry>,
     /// Configurable exit keystrokes
     exit_app_key: Option<crate::core::key_processing::Keystroke>,
-    exit_editor_key: Option<crate::core::key_processing::Keystroke>,
-    exit_dialog_key: Option<crate::core::key_processing::Keystroke>,
     /// Flag to request exit/hide on next update
     should_exit: bool,
+    /// Track if window is currently hidden
+    is_hidden: bool,
 }
 
 /// Loading state for deferred initialization
@@ -254,6 +254,15 @@ impl AnchorSelector {
     
     /// Exit or hide the application based on background mode setting
     fn exit_or_hide(&mut self, ctx: &egui::Context) {
+        // Prevent multiple calls in the same frame
+        static mut HIDING: bool = false;
+        unsafe {
+            if HIDING {
+                return; // Already hiding, don't call again
+            }
+            HIDING = true;
+        }
+        
         let config = crate::core::sys_data::get_config();
         if config.popup_settings.run_in_background.unwrap_or(false) {
             crate::utils::log("EXIT: Hiding window (background mode enabled)");
@@ -261,6 +270,13 @@ impl AnchorSelector {
             self.popup_state.search_text.clear();
             self.popup_state.update_search(String::new());
             ctx.send_viewport_cmd(egui::ViewportCommand::Visible(false));
+            self.is_hidden = true;
+            
+            // Reset the flag after a delay to allow for future hide operations
+            std::thread::spawn(|| {
+                std::thread::sleep(std::time::Duration::from_millis(100));
+                unsafe { HIDING = false; }
+            });
         } else {
             crate::utils::log("EXIT: Exiting application");
             std::process::exit(0);
@@ -374,7 +390,8 @@ impl PopupInterface for AnchorSelector {
     }
     
     fn request_exit(&mut self) {
-        self.perform_exit_scanner_check();
+        // Don't perform scanner check on exit - it blocks the UI
+        // Scanner checks should be done periodically in the background instead
         self.should_exit = true;
     }
     
@@ -486,7 +503,6 @@ impl AnchorSelector {
                     }
                     // Note: CommandServer::execute_command handles all execution via server internally
                     // and includes proper state saving, alias resolution, etc.
-                    self.perform_exit_scanner_check();
                     // Request exit or hide through the proper channel
                     self.should_exit = true;
                 }
@@ -908,9 +924,8 @@ impl AnchorSelector {
             pending_template: None,
             key_registry: None, // Will be initialized when config is loaded
             exit_app_key: None, // Will be populated from config
-            exit_editor_key: None, // Will be populated from config
-            exit_dialog_key: None, // Will be populated from config
             should_exit: false,
+            is_hidden: false,
         };
         
         result
@@ -963,46 +978,7 @@ impl AnchorSelector {
                 }
             }
             
-            if let Some(exit_editor_str) = keybindings.get("exit_editor") {
-                match Keystroke::from_key_string(exit_editor_str) {
-                    Ok(keystroke) => {
-                        self.exit_editor_key = Some(keystroke);
-                        if let Ok(mut file) = std::fs::OpenOptions::new().create(true).append(true).open("/tmp/hookanchor_debug.log") {
-                            use std::io::Write;
-                            let _ = writeln!(file, "🔧 CONFIG: exit_editor = '{}' -> {:?}", exit_editor_str, self.exit_editor_key.as_ref().unwrap().key);
-                        }
-                    }
-                    Err(e) => {
-                        if let Ok(mut file) = std::fs::OpenOptions::new().create(true).append(true).open("/tmp/hookanchor_debug.log") {
-                            use std::io::Write;
-                            let _ = writeln!(file, "🔧 CONFIG: ERROR parsing exit_editor '{}': {}", exit_editor_str, e);
-                        }
-                    }
-                }
-            } else {
-                if let Ok(mut file) = std::fs::OpenOptions::new().create(true).append(true).open("/tmp/hookanchor_debug.log") {
-                    use std::io::Write;
-                    let _ = writeln!(file, "🔧 CONFIG: No exit_editor keybinding found in config!");
-                }
-            }
             
-            if let Some(exit_dialog_str) = keybindings.get("exit_dialog") {
-                match Keystroke::from_key_string(exit_dialog_str) {
-                    Ok(keystroke) => {
-                        self.exit_dialog_key = Some(keystroke);
-                        if let Ok(mut file) = std::fs::OpenOptions::new().create(true).append(true).open("/tmp/hookanchor_debug.log") {
-                            use std::io::Write;
-                            let _ = writeln!(file, "🔧 CONFIG: exit_dialog = '{}' -> {:?}", exit_dialog_str, self.exit_dialog_key.as_ref().unwrap().key);
-                        }
-                    }
-                    Err(e) => {
-                        if let Ok(mut file) = std::fs::OpenOptions::new().create(true).append(true).open("/tmp/hookanchor_debug.log") {
-                            use std::io::Write;
-                            let _ = writeln!(file, "🔧 CONFIG: ERROR parsing exit_dialog '{}': {}", exit_dialog_str, e);
-                        }
-                    }
-                }
-            }
         } else {
             if let Ok(mut file) = std::fs::OpenOptions::new().create(true).append(true).open("/tmp/hookanchor_debug.log") {
                 use std::io::Write;
@@ -1033,8 +1009,7 @@ impl AnchorSelector {
         // Debug log
         if let Ok(mut file) = std::fs::OpenOptions::new().create(true).append(true).open("/tmp/hookanchor_debug.log") {
             use std::io::Write;
-            let _ = writeln!(file, "📦 DEFERRED LOADING: Complete! exit_editor_key = {:?}", 
-                             self.exit_editor_key.as_ref().map(|k| format!("{:?}", k.key)));
+            let _ = writeln!(file, "📦 DEFERRED LOADING: Complete!");
         }
         
     }
@@ -1822,8 +1797,10 @@ impl eframe::App for AnchorSelector {
                 if self.dialog.visible {
                     self.close_dialog();
                 }
-                // Exit the application
-                self.exit_or_hide(ctx);
+                // Request exit through the proper channel (only once)
+                if !self.should_exit {
+                    self.should_exit = true;
+                }
             }
         }
         
@@ -1833,15 +1810,20 @@ impl eframe::App for AnchorSelector {
             self.exit_or_hide(ctx);
         }
             
-        // For idle state, request slower repaints to reduce CPU usage
-        if !has_input && !has_active_ui && self.frame_count >= 10 {
-            ctx.request_repaint_after(std::time::Duration::from_millis(100));
+        // Only request repaints if window is not hidden
+        if !self.is_hidden {
+            // For idle state, request slower repaints to reduce CPU usage
+            if !has_input && !has_active_ui && self.frame_count >= 10 {
+                ctx.request_repaint_after(std::time::Duration::from_millis(100));
+            }
+            
+            // During countdown, ensure frequent updates for smooth 1-second timing
+            if self.grabber_countdown.is_some() {
+                ctx.request_repaint_after(std::time::Duration::from_millis(50));
+            }
         }
-        
-        // During countdown, ensure frequent updates for smooth 1-second timing
-        if self.grabber_countdown.is_some() {
-            ctx.request_repaint_after(std::time::Duration::from_millis(50));
-        }
+        // When minimized/hidden, don't request any repaints - the popup control will
+        // trigger a repaint when it receives a show command
         
         
         // Check for window focus state changes and log for debugging
@@ -1914,10 +1896,9 @@ impl eframe::App for AnchorSelector {
         // Debug log before calling command editor update
         if let Ok(mut file) = std::fs::OpenOptions::new().create(true).append(true).open("/tmp/hookanchor_debug.log") {
             use std::io::Write;
-            let _ = writeln!(file, "🎯 POPUP: About to call command_editor.update(), exit_editor_key = {:?}", 
-                             self.exit_editor_key.as_ref().map(|k| format!("{:?}", k.key)));
+            let _ = writeln!(file, "🎯 POPUP: About to call command_editor.update()");
         }
-        let editor_result = self.command_editor.update(ctx, &config, self.exit_editor_key.as_ref());
+        let editor_result = self.command_editor.update(ctx, &config, None);
         
         // Check for queued errors and display them
         if crate::error_display::has_errors() {
@@ -1927,14 +1908,14 @@ impl eframe::App for AnchorSelector {
         }
         
         // Update dialog system
-        if self.dialog.update(ctx, self.exit_dialog_key.as_ref()) {
+        if self.dialog.update(ctx, None) {
             // Dialog was closed, request focus on input field
             self.request_focus = true;
             if let Some(result) = self.dialog.take_result() {
                 // Check if the "Exit" button was clicked
                 if let Some(button_text) = result.get("exit") {
                     if button_text == "Exit" {
-                        self.perform_exit_scanner_check();
+                        // Don't perform scanner check - it blocks
                         self.exit_or_hide(ctx);
                     } else if button_text == "OK" {
                         // Check if this is from the uninstall dialog (has the warning about Karabiner)
@@ -2429,7 +2410,7 @@ impl eframe::App for AnchorSelector {
                                                     Ok(_) => {},
                                                     Err(e) => crate::utils::log_error(&format!("Failed to execute command: {}", e)),
                                                 }
-                                                self.perform_exit_scanner_check();
+                                                // Don't perform scanner check - it blocks
                                                 self.exit_or_hide(ctx);
                                             }
                                         }
@@ -2548,7 +2529,7 @@ impl eframe::App for AnchorSelector {
                                             Ok(_) => {},
                                             Err(e) => crate::utils::log_error(&format!("Failed to execute command: {}", e)),
                                         }
-                                        self.perform_exit_scanner_check();
+                                        // Don't perform scanner check - it blocks
                                         self.exit_or_hide(ctx);
                                     }
                                     
@@ -2727,6 +2708,8 @@ impl eframe::App for PopupWithControl {
                     self.popup.popup_state.update_search(String::new());
                     // Request focus on the input field
                     self.popup.request_focus = true;
+                    // Mark window as not hidden
+                    self.popup.is_hidden = false;
                 }
                 crate::popup_server_control::PopupCommand::Hide => {
                     // Input is already cleared in exit_or_hide
@@ -2753,11 +2736,16 @@ pub fn run_gui_with_prompt(initial_prompt: &str, _app_state: super::ApplicationS
     let config = crate::core::sys_data::get_config();
     let width = config.popup_settings.get_default_window_width() as f32;
     let height = config.popup_settings.get_default_window_height() as f32;
+    // Always start visible - we'll hide it later if needed
+    let start_visible = true;
+    
     let viewport_builder = egui::ViewportBuilder::default()
         .with_inner_size([width, height]) // Initial size - will be dynamically resized
         .with_resizable(false) // Disable manual resizing - we control size programmatically
         .with_decorations(false) // Remove title bar and window controls
-        .with_transparent(true); // Enable transparency for rounded corners
+        .with_transparent(true) // Enable transparency for rounded corners
+        .with_visible(start_visible) // Start visible only if not running in background
+        .with_always_on_top(); // Keep on top so it's visible
         // Skip icon loading for faster startup - can be added later if needed
     
     let options = eframe::NativeOptions {

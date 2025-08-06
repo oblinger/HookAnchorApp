@@ -19,7 +19,9 @@ use crate::utils::{debug_log, verbose_log};
 /// Helper function to output to both console and debug log
 fn log_and_print(prefix: &str, message: &str) {
     let formatted = format!("{}: {}", prefix, message);
-    // Only log to file, don't print to console to avoid stdout pollution
+    // Print to stdout so we can see what the server is doing
+    println!("{}", formatted);
+    // Also log to file for persistence
     debug_log(prefix, message);
 }
 
@@ -323,11 +325,12 @@ fn execute_command_with_env(
         ("unknown", request.command.clone())
     };
     
-    // Clean command execution log
+    // Clean command execution log with timestamp
+    let timestamp = chrono::Local::now().format("%H:%M:%S").to_string();
     if arg.is_empty() {
-        log_and_print("CMD", &format!("action={}", action));
+        log_and_print("CMD", &format!("[{}] Executing: action={}", timestamp, action));
     } else {
-        log_and_print("CMD", &format!("action={} arg={}", action, arg));
+        log_and_print("CMD", &format!("[{}] Executing: action={} arg={}", timestamp, action, arg));
     }
     
     // Detailed logging goes to debug only
@@ -353,6 +356,8 @@ fn execute_command_with_env(
         match crate::command_launcher::launch(&request.command) {
             Ok(()) => {
                 verbose_log("CMD_SERVER", "Launcher execution completed successfully");
+                let timestamp = chrono::Local::now().format("%H:%M:%S").to_string();
+                log_and_print("CMD", &format!("[{}] ✓ Completed: {}", timestamp, action));
                 return CommandResponse {
                     success: true,
                     exit_code: Some(0),
@@ -362,7 +367,8 @@ fn execute_command_with_env(
                 };
             }
             Err(e) => {
-                log_and_print("CMD", &format!("FAILED: {:?}", e));
+                let timestamp = chrono::Local::now().format("%H:%M:%S").to_string();
+                log_and_print("CMD", &format!("[{}] ✗ FAILED: {:?}", timestamp, e));
                 return CommandResponse {
                     success: false,
                     exit_code: Some(1),
