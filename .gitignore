@@ -20,3 +20,9 @@ Thumbs.db
 # Debug files
 debug/
 *.pdb
+
+# Distribution/archive files
+*.zip
+*.dmg
+*.tar.gz
+*.tar.bz2
