@@ -87,7 +87,6 @@ keybindings:
   show_folder: "/"                # Launch first folder match
   open_editor: "="                # Open command editor
   edit_active_command: ";"        # Edit currently selected command
-  cancel_editor: "Escape"         # Cancel command editor
 ```
 
 ## Key Naming Convention

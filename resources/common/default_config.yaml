@@ -64,7 +64,6 @@ keybindings:
   show_folder:          "/"           # Launch first folder matching search - ASCII form works now!
   open_editor:          "="           # Open command editor - ASCII form works now!
   edit_active_command:  ";"           # Edit currently selected command - word form
-  cancel_editor:        "Escape"      # Cancel command editor
   show_keys:            "?"           # Show all available key bindings - ASCII form works now!
   
   # Chord key examples showing both ASCII and word forms work:

@@ -213,7 +213,6 @@ keybindings:
   open_editor: "Equals"
   edit_active_command: "Semicolon"
   delete_command: "Delete"
-  cancel_editor: "Escape"
 
 functions:
   action_app: {fn: launch_app, name: "{{arg}}"}
