@@ -62,7 +62,41 @@ impl Keystroke {
     pub fn matches_event(&self, event: &egui::Event) -> bool {
         match event {
             egui::Event::Key { key, pressed, modifiers, .. } => {
-                *pressed && *key == self.key && Modifiers::from_egui(modifiers) == self.modifiers
+                if !pressed {
+                    return false;
+                }
+                
+                let modifiers_match = Modifiers::from_egui(modifiers) == self.modifiers;
+                
+                // Special cases for shifted punctuation characters
+                // Some keyboards/systems send different key codes for these
+                // egui only has certain special key variants available
+                if self.modifiers.shift && modifiers_match {
+                    match self.key {
+                        // Plus key: can come through as Plus or Equals+Shift
+                        egui::Key::Equals => {
+                            return *key == egui::Key::Equals || *key == egui::Key::Plus;
+                        }
+                        // Question mark: can come through as Questionmark or Slash+Shift
+                        egui::Key::Slash => {
+                            return *key == egui::Key::Slash || *key == egui::Key::Questionmark;
+                        }
+                        // Pipe: can come through as Pipe or Backslash+Shift
+                        egui::Key::Backslash => {
+                            return *key == egui::Key::Backslash || *key == egui::Key::Pipe;
+                        }
+                        // Colon: can come through as Colon or Semicolon+Shift
+                        egui::Key::Semicolon => {
+                            return *key == egui::Key::Semicolon || *key == egui::Key::Colon;
+                        }
+                        // For other shifted keys, just use normal matching
+                        // The numbered keys and other punctuation don't have special variants in egui
+                        _ => {}
+                    }
+                }
+                
+                // Normal key matching
+                *key == self.key && modifiers_match
             }
             _ => false
         }
@@ -484,11 +518,18 @@ impl KeyRegistry {
         
         // Then check keystroke handlers
         for event in events {
-            // Log key events when detailed logging is enabled
-            if let egui::Event::Key { key, pressed, modifiers, .. } = event {
-                if *pressed {
-                    crate::utils::detailed_log("KEY_PRESS", &format!("Key: {:?}, Modifiers: {:?}", key, modifiers));
+            // Log ALL events when detailed logging is enabled
+            match event {
+                egui::Event::Key { key, pressed, modifiers, .. } => {
+                    if *pressed {
+                        crate::utils::log(&format!("KEY_PRESS: Key={:?}, Modifiers={{shift:{}, ctrl:{}, alt:{}, cmd:{}}}", 
+                            key, modifiers.shift, modifiers.ctrl, modifiers.alt, modifiers.command));
+                    }
                 }
+                egui::Event::Text(text) => {
+                    crate::utils::detailed_log("KEY_TEXT", &format!("Text input: '{}'", text));
+                }
+                _ => {}
             }
             
             // Try all matching handlers until one succeeds
@@ -794,12 +835,20 @@ pub fn create_default_key_registry(config: &crate::Config) -> KeyRegistry {
     
     // Register template handlers
     if let Some(ref templates) = config.templates {
+        crate::utils::log(&format!("Registering {} templates", templates.len()));
         for (template_name, template) in templates {
             if let Some(ref keystroke) = template.keystroke {
+                crate::utils::log(&format!("  Template '{}': key={:?} -> keystroke={:?}", 
+                    template_name, template.key, keystroke));
                 let handler = Box::new(TemplateHandler::new(template_name.clone()));
                 registry.register_keystroke(keystroke.clone(), handler);
+            } else {
+                crate::utils::log(&format!("  Template '{}': NO KEYSTROKE (key={:?})", 
+                    template_name, template.key));
             }
         }
+    } else {
+        crate::utils::log("No templates configured");
     }
     
     // Register text handlers
