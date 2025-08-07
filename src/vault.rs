@@ -142,7 +142,6 @@ mod tests {
                 max_rows: 10,
                 max_columns: 1,
                 verbose_logging: None,
-                debug_scanner: None,
                 listed_actions: None,
                 merge_similar: false,
                 word_separators: " ._-".to_string(),

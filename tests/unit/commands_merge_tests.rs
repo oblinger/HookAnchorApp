@@ -13,7 +13,6 @@ mod merge_tests {
                 debug_log: None,
                 scan_interval_seconds: None,
                 listed_actions: None,
-                debug_scanner: None,
                 verbose_logging: None,
                 idle_timeout_seconds: None,
                 countdown_seconds: Some(5),

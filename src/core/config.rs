@@ -37,8 +37,6 @@ pub struct PopupSettings {
     pub max_columns: usize,
     /// Enable verbose debug logging for JavaScript functions and shell commands (default: false)
     pub verbose_logging: Option<bool>,
-    /// Enable detailed scanner debug output (default: true)
-    pub debug_scanner: Option<bool>,
     /// Comma-separated list of actions shown in command editor dropdown
     /// Example: "app,url,folder,cmd,chrome,anchor"
     pub listed_actions: Option<String>,
@@ -123,7 +121,6 @@ impl Default for PopupSettings {
             max_rows: 20,
             max_columns: 3,
             verbose_logging: Some(false),
-            debug_scanner: Some(true),
             listed_actions: Some("app,url,folder,cmd,chrome,anchor".to_string()),
             merge_similar: true,
             word_separators: " ._-".to_string(),

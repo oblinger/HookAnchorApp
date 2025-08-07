@@ -35,7 +35,6 @@ Controls the behavior and appearance of the popup interface:
 popup_settings:
   max_rows: 25                    # Maximum rows to display in popup
   max_columns: 4                  # Maximum columns for multi-column layout
-  debug_scanner: false            # Enable scanner debug logging
   verbose_logging: true           # Enable verbose debug output
   merge_similar: true             # Merge similar commands in popup
   word_separators: " ._-"         # Characters used for word separation

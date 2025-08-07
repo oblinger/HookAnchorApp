@@ -14,7 +14,6 @@
 popup_settings:
   max_rows:               25          # Max number of rows in the list of matching commands
   max_columns:            4           # Max columns in list of matching commands
-  debug_scanner:          false
   verbose_logging:        true
   merge_similar:          true        # Merging similar commands in popup
   word_separators:        " ._-"      # Word separator chars submenus and merging

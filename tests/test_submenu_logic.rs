@@ -17,7 +17,6 @@ mod submenu_tests {
                 max_columns: 3,
                 debug_log: None,
                 verbose_logging: None,
-                debug_scanner: None,
                 listed_actions: None,
                 merge_similar: true,
                 word_separators: " ._-".to_string(),
