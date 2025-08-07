@@ -2183,6 +2183,21 @@ fn get_display_commands_with_options_internal(
             outside_commands = merge_similar_commands_with_context(outside_commands, config, "");
         }
         
+        // For inside commands, ensure exact match stays first
+        // The filtering already sorted by match score, but we want to ensure
+        // an exact match of the menu prefix is always first
+        let exact_match_idx = inside_commands.iter().position(|cmd| 
+            cmd.command.eq_ignore_ascii_case(&menu_prefix)
+        );
+        
+        if let Some(idx) = exact_match_idx {
+            if idx != 0 {
+                // Move exact match to front
+                let exact_match = inside_commands.remove(idx);
+                inside_commands.insert(0, exact_match);
+            }
+        }
+        
         // Combine: inside + separator + outside
         let mut result = inside_commands;
         
