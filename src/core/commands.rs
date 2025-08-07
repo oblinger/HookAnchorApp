@@ -831,7 +831,7 @@ pub fn run_patch_inference(
                             command.command, old_patch_display));
                     }
                     command.patch = inferred_patch.clone();
-                    crate::utils::debug_log("AUTO_PATCH", &format!("Inferred patch for '{}': {} -> {}", 
+                    crate::utils::detailed_log("AUTO_PATCH", &format!("Inferred patch for '{}': {} -> {}", 
                         command.command, old_patch_display, inferred_patch));
                 }
                 

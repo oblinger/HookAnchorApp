@@ -108,7 +108,7 @@ pub fn scan_verbose(commands: Vec<Command>, sys_data: &crate::core::sys_data::Sy
     
     // First scan markdown files
     let initial_count = commands.len();
-    let commands = scan_files(commands, markdown_roots, &sys_data.config);
+    let mut commands = scan_files(commands, markdown_roots, &sys_data.config);
     
     if verbose {
         let files_added = commands.len().saturating_sub(initial_count);
@@ -120,6 +120,56 @@ pub fn scan_verbose(commands: Vec<Command>, sys_data: &crate::core::sys_data::Sy
     
     // Then scan contacts - DISABLED for performance
     // commands = scan_contacts(commands);
+    
+    // Process orphan merges after scanning files
+    if let Some(orphans_path_str) = &sys_data.config.scanner_settings.as_ref().and_then(|s| s.orphans_path.as_ref()) {
+        let expanded_orphans_path = expand_home(orphans_path_str);
+        let orphans_path = std::path::Path::new(&expanded_orphans_path);
+        
+        // Get vault roots to search for matching anchors
+        for root in markdown_roots {
+            let expanded_root = expand_home(root);
+            let vault_root = std::path::Path::new(&expanded_root);
+            
+            if verbose {
+                println!("\n🔄 Checking for orphan anchors to merge...");
+            }
+            
+            // Find orphan folders that should be merged
+            let merges = crate::command_operations::find_orphan_folder_merges(orphans_path, vault_root);
+            
+            if !merges.is_empty() {
+                if verbose {
+                    println!("   Found {} orphan anchors to merge", merges.len());
+                }
+                
+                // Execute each merge
+                for (source, dest) in merges {
+                    if verbose {
+                        println!("   Merging: {} -> {}", 
+                            source.file_name().unwrap_or_default().to_string_lossy(),
+                            dest.display());
+                    }
+                    
+                    if let Err(e) = crate::command_operations::merge_folders(&source, &dest) {
+                        crate::utils::log_error(&format!("Failed to merge orphan: {}", e));
+                        if verbose {
+                            println!("   ❌ Merge failed: {}", e);
+                        }
+                    }
+                }
+                
+                // After merging, we need to rescan to pick up the changes
+                // But only if we actually performed merges
+                if verbose {
+                    println!("   Rescanning after merges...");
+                }
+                commands = scan_files(commands, markdown_roots, &sys_data.config);
+            } else if verbose {
+                println!("   No orphan anchors found to merge");
+            }
+        }
+    }
     
     // Run full inference pipeline on scanned commands to ensure consistency
     if verbose {
@@ -160,6 +210,15 @@ pub fn scan_files(mut commands: Vec<Command>, markdown_roots: &[String], config:
         .map(|cmd| cmd.command.to_lowercase())
         .collect();
     
+    // Create a set of file paths that are already handled by existing commands
+    // This allows O(1) lookup to prevent creating duplicate commands for the same file
+    let mut handled_files: HashSet<String> = HashSet::new();
+    for cmd in &commands {
+        if cmd.action == "markdown" || cmd.action == "anchor" || cmd.action == "folder" {
+            handled_files.insert(cmd.arg.clone());
+        }
+    }
+    
     // Create a lookup map to preserve existing patches when regenerating commands
     let mut existing_patches: std::collections::HashMap<String, String> = std::collections::HashMap::new();
     for cmd in &commands {
@@ -176,23 +235,49 @@ pub fn scan_files(mut commands: Vec<Command>, markdown_roots: &[String], config:
         .filter(|cmd| (cmd.action == "markdown" || cmd.action == "anchor" || cmd.action == "folder") && cmd.flags.contains('U'))
         .count();
     
+    // Check if a path is within any of the scan roots
+    let is_within_scan_roots = |path: &str| -> bool {
+        for root in markdown_roots {
+            let expanded_root = expand_home(root);
+            if path.starts_with(&expanded_root) {
+                return true;
+            }
+        }
+        false
+    };
+    
     // Remove existing markdown, anchor, and folder commands from the commands list
+    // BUT ONLY for files within the directories we're about to scan
     // EXCEPT those with the "U" (user edited) flag - preserve those
     // Also validate that files actually exist for scanner-generated commands
     commands.retain(|cmd| {
         let is_scanner_generated = cmd.action == "markdown" || cmd.action == "anchor" || cmd.action == "folder";
         let is_user_edited = cmd.flags.contains('U');
         
-        // If it's scanner-generated, check if file exists (for cleanup of orphan commands)
+        // If it's scanner-generated, check if we should keep or remove it
         if is_scanner_generated {
-            // For user-edited commands, still validate file existence to clean up orphans
+            // Check if file exists (for cleanup of orphan commands)
             let file_exists = std::path::Path::new(&cmd.arg).exists();
             if !file_exists {
                 debug_log("SCANNER", &format!("Removing command '{}' - file no longer exists: {}", cmd.command, cmd.arg));
+                // Remove from handled_files too so it can be rescanned if the file is recreated
+                handled_files.remove(&cmd.arg);
                 return false; // Remove this command
             }
-            // Keep user-edited commands even if we're about to regenerate scanner commands
-            return is_user_edited;
+            
+            // If the file is within scan roots and not user-edited, remove it for rescan
+            if is_within_scan_roots(&cmd.arg) && !is_user_edited {
+                handled_files.remove(&cmd.arg);
+                crate::utils::detailed_log("SCANNER", &format!("Removing command '{}' for rescan (within scan roots)", cmd.command));
+                return false; // Remove this command so it can be rescanned
+            }
+            
+            // Keep commands that are:
+            // 1. User-edited, OR
+            // 2. Outside the scan roots (won't be rescanned)
+            crate::utils::detailed_log("SCANNER", &format!("Keeping command '{}' (user-edited: {}, outside roots: {})", 
+                cmd.command, is_user_edited, !is_within_scan_roots(&cmd.arg)));
+            return true;
         }
         
         // Keep command if it's NOT scanner-generated
@@ -217,7 +302,7 @@ pub fn scan_files(mut commands: Vec<Command>, markdown_roots: &[String], config:
             let _commands_before_scan = commands.len();
             // COMMENTED OUT: Passing empty Vec instead of found_folders since folder scanning is disabled
             let mut dummy_folders = Vec::new();
-            scan_directory_with_root(&root_path, &root_path, &mut commands, &mut existing_commands, &mut dummy_folders, &existing_patches, config);
+            scan_directory_with_root(&root_path, &root_path, &mut commands, &mut existing_commands, &mut handled_files, &mut dummy_folders, &existing_patches, config);
             let _commands_after_scan = commands.len();
         } else {
         }
@@ -268,12 +353,12 @@ pub fn scan_files(mut commands: Vec<Command>, markdown_roots: &[String], config:
 
 
 /// Recursively scans a directory for files and folders with vault root tracking
-fn scan_directory_with_root(dir: &Path, vault_root: &Path, commands: &mut Vec<Command>, existing_commands: &mut HashSet<String>, found_folders: &mut Vec<PathBuf>, existing_patches: &std::collections::HashMap<String, String>, config: &Config) {
-    scan_directory_with_root_protected(dir, vault_root, commands, existing_commands, found_folders, existing_patches, config, &mut HashSet::new(), 0)
+fn scan_directory_with_root(dir: &Path, vault_root: &Path, commands: &mut Vec<Command>, existing_commands: &mut HashSet<String>, handled_files: &mut HashSet<String>, found_folders: &mut Vec<PathBuf>, existing_patches: &std::collections::HashMap<String, String>, config: &Config) {
+    scan_directory_with_root_protected(dir, vault_root, commands, existing_commands, handled_files, found_folders, existing_patches, config, &mut HashSet::new(), 0)
 }
 
 /// Protected version with loop detection and depth limiting
-fn scan_directory_with_root_protected(dir: &Path, vault_root: &Path, commands: &mut Vec<Command>, existing_commands: &mut HashSet<String>, found_folders: &mut Vec<PathBuf>, existing_patches: &std::collections::HashMap<String, String>, config: &Config, visited: &mut HashSet<PathBuf>, depth: usize) {
+fn scan_directory_with_root_protected(dir: &Path, vault_root: &Path, commands: &mut Vec<Command>, existing_commands: &mut HashSet<String>, handled_files: &mut HashSet<String>, found_folders: &mut Vec<PathBuf>, existing_patches: &std::collections::HashMap<String, String>, config: &Config, visited: &mut HashSet<PathBuf>, depth: usize) {
     // Prevent infinite loops with depth limit
     if depth > 20 {
         return;
@@ -332,7 +417,7 @@ fn scan_directory_with_root_protected(dir: &Path, vault_root: &Path, commands: &
                 // found_folders.push(path.clone());
                 
                 // Recursively scan subdirectories
-                scan_directory_with_root_protected(&path, vault_root, commands, existing_commands, found_folders, existing_patches, config, visited, depth + 1);
+                scan_directory_with_root_protected(&path, vault_root, commands, existing_commands, handled_files, found_folders, existing_patches, config, visited, depth + 1);
             } else {
                 // Process files (markdown files)
                 if let Some(command) = process_markdown_with_root(&path, vault_root, existing_commands, &existing_patches) {
@@ -340,23 +425,19 @@ fn scan_directory_with_root_protected(dir: &Path, vault_root: &Path, commands: &
                     crate::utils::detailed_log("SCANNER", &format!("Found markdown file: {} -> command: {}", 
                         path.display(), command.command));
                     
-                    // Check if a command with the same name, action, and argument already exists
-                    let duplicate_exists = commands.iter().any(|existing_cmd| {
-                        existing_cmd.command.to_lowercase() == command.command.to_lowercase() &&
-                        existing_cmd.action == command.action &&
-                        existing_cmd.arg == command.arg
-                    });
-                    
-                    if duplicate_exists {
-                        crate::utils::detailed_log("SCANNER", &format!("Skipping duplicate: {} ({})", 
+                    // Check if this file is already handled by an existing command (O(1) lookup)
+                    if handled_files.contains(&command.arg) {
+                        crate::utils::detailed_log("SCANNER", &format!("Skipping '{}' - file already handled: {}", 
                             command.command, path.display()));
                     } else {
-                        // Log that we're creating a new command
-                        crate::utils::log(&format!("SCANNER: Creating new command '{}' -> {} {}", 
+                        // Log that we're creating a new command (detailed log to avoid clutter)
+                        crate::utils::detailed_log("SCANNER", &format!("Creating new command '{}' -> {} {}", 
                             command.command, command.action, command.arg));
                         
                         // Add to existing commands set to prevent future collisions (lowercase)
                         existing_commands.insert(command.command.to_lowercase());
+                        // Add to handled files set to prevent creating duplicate commands for this file
+                        handled_files.insert(command.arg.clone());
                         commands.push(command);
                     }
                 }
