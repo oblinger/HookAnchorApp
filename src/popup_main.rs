@@ -28,8 +28,15 @@ fn main() -> Result<(), eframe::Error> {
     // Check and clear oversized log file now that config is loaded
     hookanchor::utils::check_and_clear_oversized_log();
     
-    // Visual separator for new app launch in logs
-    hookanchor::utils::debug_log("", "════════════════════════════════════════════════════════════════");
+    // Generate session ID for this popup instance
+    let session_timestamp = Local::now();
+    let session_id = session_timestamp.format("%Y%m%d_%H%M%S").to_string();
+    
+    // Visual separator and session header for new app launch in logs
+    hookanchor::utils::log(&"=".repeat(80));
+    hookanchor::utils::log(&format!("POPUP SESSION: {}", session_id));
+    hookanchor::utils::log(&format!("TIMESTAMP: {}", session_timestamp.format("%Y-%m-%d %H:%M:%S%.3f")));
+    hookanchor::utils::log(&"=".repeat(80));
     
     // Load state to get build time
     let state = hookanchor::core::state::load_state();

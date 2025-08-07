@@ -44,6 +44,7 @@ pub mod utils;
 pub mod scanner;
 pub mod grabber;
 pub mod vault;
+pub mod command_operations;
 
 // Background command server
 pub mod command_server;

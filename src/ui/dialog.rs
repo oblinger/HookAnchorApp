@@ -265,7 +265,7 @@ impl Dialog {
         (final_width, final_height)
     }
 
-    pub fn update(&mut self, ctx: &egui::Context, exit_dialog_key: Option<&crate::core::key_processing::Keystroke>) -> bool {
+    pub fn update(&mut self, ctx: &egui::Context) -> bool {
         if !self.visible {
             return false;
         }

@@ -1167,7 +1167,17 @@ fn run_execute_launcher_command(args: &[String]) {
 fn run_rebuild_command() {
     // Clear log file before starting rebuild
     crate::utils::clear_debug_log();
-    crate::utils::debug_log("REBUILD", "=== REBUILD STARTED - Log cleared for fresh start ===");
+    
+    // Generate a unique build identifier (timestamp-based)
+    let build_timestamp = chrono::Local::now();
+    let build_id = build_timestamp.format("%Y%m%d_%H%M%S").to_string();
+    
+    // Log the rebuild header with timestamp and build ID
+    crate::utils::log(&"=".repeat(80));
+    crate::utils::log(&format!("REBUILD SESSION: {}", build_id));
+    crate::utils::log(&format!("TIMESTAMP: {}", build_timestamp.format("%Y-%m-%d %H:%M:%S%.3f")));
+    crate::utils::log(&"=".repeat(80));
+    crate::utils::debug_log("REBUILD", &format!("Starting rebuild session {}", build_id));
     
     println!("🏗️  HookAnchor Rebuild - Full Reset");
     println!("===================================");

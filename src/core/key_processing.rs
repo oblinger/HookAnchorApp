@@ -816,7 +816,6 @@ pub fn create_default_key_registry(config: &crate::Config) -> KeyRegistry {
                     "start_grabber" => Box::new(ActionHandler::new(Action::StartGrabber)),
                     "show_folder" => Box::new(ActionHandler::new(Action::ShowFolder)),
                     "exit_app" => Box::new(ActionHandler::new(Action::ExitApp)),
-                    // "exit_editor" and "exit_dialog" removed - handled directly in popup.rs
                     "execute_command" => Box::new(ActionHandler::new(Action::ExecuteCommand)),
                     "open_editor" => Box::new(ActionHandler::new(Action::OpenEditor)),
                     "add_alias" => Box::new(ActionHandler::new(Action::AddAlias)),

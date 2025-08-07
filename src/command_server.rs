@@ -325,12 +325,12 @@ fn execute_command_with_env(
         ("unknown", request.command.clone())
     };
     
-    // Clean command execution log with timestamp
-    let timestamp = chrono::Local::now().format("%H:%M:%S").to_string();
+    // Add a separator and clean command execution log
+    crate::utils::log("------");
     if arg.is_empty() {
-        log_and_print("CMD", &format!("[{}] Executing: action={}", timestamp, action));
+        log_and_print("CMD", &format!("Executing: {}", action));
     } else {
-        log_and_print("CMD", &format!("[{}] Executing: action={} arg={}", timestamp, action, arg));
+        log_and_print("CMD", &format!("Executing: {} {}", action, arg));
     }
     
     // Detailed logging goes to debug only
@@ -356,8 +356,7 @@ fn execute_command_with_env(
         match crate::command_launcher::launch(&request.command) {
             Ok(()) => {
                 verbose_log("CMD_SERVER", "Launcher execution completed successfully");
-                let timestamp = chrono::Local::now().format("%H:%M:%S").to_string();
-                log_and_print("CMD", &format!("[{}] ✓ Completed: {}", timestamp, action));
+                log_and_print("CMD", &format!("✓ Completed: {}", action));
                 return CommandResponse {
                     success: true,
                     exit_code: Some(0),

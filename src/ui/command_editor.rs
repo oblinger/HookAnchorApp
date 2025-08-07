@@ -105,7 +105,7 @@ impl CommandEditor {
         self.original_command_name = String::new();
     }
     
-    pub fn update(&mut self, ctx: &egui::Context, config: &Config, exit_editor_key: Option<&crate::core::key_processing::Keystroke>) -> CommandEditorResult {
+    pub fn update(&mut self, ctx: &egui::Context, config: &Config) -> CommandEditorResult {
         if !self.visible {
             return CommandEditorResult::None;
         }

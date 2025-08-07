@@ -263,13 +263,41 @@ impl AnchorSelector {
             HIDING = true;
         }
         
-        let config = crate::core::sys_data::get_config();
-        if config.popup_settings.run_in_background.unwrap_or(false) {
-            crate::utils::log("EXIT: Hiding window (background mode enabled)");
+        // Check if we're in direct mode (set by launcher via environment variable)
+        let direct_mode = std::env::var("HOOKANCHOR_DIRECT_MODE").is_ok();
+        
+        if !direct_mode {
+            // Server mode - hide window using AppleScript
+            crate::utils::log("EXIT: Hiding window (server mode)");
             // Clear the search input for next time
             self.popup_state.search_text.clear();
             self.popup_state.update_search(String::new());
-            ctx.send_viewport_cmd(egui::ViewportCommand::Visible(false));
+            
+            // Use AppleScript to hide the window
+            #[cfg(target_os = "macos")]
+            {
+                let pid = std::process::id();
+                std::thread::spawn(move || {
+                    let script = format!(
+                        "tell application \"System Events\"\n\
+                         if exists (first process whose unix id is {}) then\n\
+                           tell (first process whose unix id is {})\n\
+                             set visible to false\n\
+                           end tell\n\
+                         end if\n\
+                         end tell",
+                        pid, pid
+                    );
+                    
+                    let _ = std::process::Command::new("osascript")
+                        .arg("-e")
+                        .arg(&script)
+                        .output();
+                    
+                    crate::utils::log("Window hidden via AppleScript");
+                });
+            }
+            
             self.is_hidden = true;
             
             // Reset the flag after a delay to allow for future hide operations
@@ -278,7 +306,8 @@ impl AnchorSelector {
                 unsafe { HIDING = false; }
             });
         } else {
-            crate::utils::log("EXIT: Exiting application");
+            // Direct mode - exit the application
+            crate::utils::log("EXIT: Exiting application (direct mode)");
             std::process::exit(0);
         }
     }
@@ -1429,7 +1458,15 @@ impl AnchorSelector {
         // Clear the log file before rebuild
         crate::utils::clear_log_file();
         
-        crate::utils::log("=== REBUILD STARTED - Log file cleared ===");
+        // Generate a unique build identifier (timestamp-based)
+        let build_timestamp = chrono::Local::now();
+        let build_id = build_timestamp.format("%Y%m%d_%H%M%S").to_string();
+        
+        // Log the rebuild header with timestamp and build ID
+        crate::utils::log(&"=".repeat(80));
+        crate::utils::log(&format!("REBUILD SESSION: {}", build_id));
+        crate::utils::log(&format!("TIMESTAMP: {}", build_timestamp.format("%Y-%m-%d %H:%M:%S%.3f")));
+        crate::utils::log(&"=".repeat(80));
         
         println!("🏗️  HookAnchor Rebuild - Clean Server Restart");
         println!("===============================================");
@@ -1789,6 +1826,11 @@ impl eframe::App for AnchorSelector {
             let idle_time = self.last_interaction_time.elapsed().as_secs();
             
             if idle_time >= timeout_seconds {
+                // Check if we're the primary popup instance
+                let is_primary = crate::popup_server_control::is_primary_popup_instance();
+                
+                crate::utils::log(&format!("TIMEOUT: Idle for {} seconds (primary: {})", idle_time, is_primary));
+                
                 // Close command editor if open
                 if self.command_editor.visible {
                     self.close_command_editor();
@@ -1797,9 +1839,17 @@ impl eframe::App for AnchorSelector {
                 if self.dialog.visible {
                     self.close_dialog();
                 }
-                // Request exit through the proper channel (only once)
-                if !self.should_exit {
-                    self.should_exit = true;
+                
+                if is_primary {
+                    // We're the primary instance - hide but stay alive for quick reactivation
+                    crate::utils::log("TIMEOUT: Primary instance - hiding window but staying alive");
+                    if !self.should_exit {
+                        self.should_exit = true; // This will trigger exit_or_hide
+                    }
+                } else {
+                    // We're a duplicate instance - terminate to free memory
+                    crate::utils::log("TIMEOUT: Duplicate instance - terminating to free memory");
+                    std::process::exit(0);
                 }
             }
         }
@@ -1898,7 +1948,7 @@ impl eframe::App for AnchorSelector {
             use std::io::Write;
             let _ = writeln!(file, "🎯 POPUP: About to call command_editor.update()");
         }
-        let editor_result = self.command_editor.update(ctx, &config, None);
+        let editor_result = self.command_editor.update(ctx, &config);
         
         // Check for queued errors and display them
         if crate::error_display::has_errors() {
@@ -1908,7 +1958,7 @@ impl eframe::App for AnchorSelector {
         }
         
         // Update dialog system
-        if self.dialog.update(ctx, None) {
+        if self.dialog.update(ctx) {
             // Dialog was closed, request focus on input field
             self.request_focus = true;
             if let Some(result) = self.dialog.take_result() {
