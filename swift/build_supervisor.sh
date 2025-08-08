@@ -27,5 +27,17 @@ echo "HookAnchor supervisor built at: $BUILD_DIR/HookAnchor"
 # Make it executable
 chmod +x "$BUILD_DIR/HookAnchor"
 
+# If app bundle exists, update the binary inside it
+APP_BUNDLE="$BUILD_DIR/HookAnchor.app"
+if [ -d "$APP_BUNDLE" ]; then
+    echo "Updating app bundle..."
+    cp "$BUILD_DIR/HookAnchor" "$APP_BUNDLE/Contents/MacOS/HookAnchor"
+    # Also ensure popup_server is there
+    if [ -f "$BUILD_DIR/popup_server" ]; then
+        cp "$BUILD_DIR/popup_server" "$APP_BUNDLE/Contents/MacOS/popup_server"
+    fi
+    echo "✅ App bundle updated: $APP_BUNDLE"
+fi
+
 echo "Build complete!"
 echo "To test, run: $BUILD_DIR/HookAnchor"

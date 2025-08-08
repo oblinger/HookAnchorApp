@@ -273,32 +273,15 @@ impl AnchorSelector {
             self.popup_state.search_text.clear();
             self.popup_state.update_search(String::new());
             
-            // Use AppleScript to hide the window
-            #[cfg(target_os = "macos")]
-            {
-                let pid = std::process::id();
-                std::thread::spawn(move || {
-                    let script = format!(
-                        "tell application \"System Events\"\n\
-                         if exists (first process whose unix id is {}) then\n\
-                           tell (first process whose unix id is {})\n\
-                             set visible to false\n\
-                           end tell\n\
-                         end if\n\
-                         end tell",
-                        pid, pid
-                    );
-                    
-                    let _ = std::process::Command::new("osascript")
-                        .arg("-e")
-                        .arg(&script)
-                        .output();
-                    
-                    crate::utils::log("Window hidden via AppleScript");
-                });
-            }
+            // Hide the window using egui's viewport command
+            ctx.send_viewport_cmd(egui::ViewportCommand::Visible(false));
             
             self.is_hidden = true;
+            
+            // Reset interaction time to prevent timeout loop
+            self.last_interaction_time = std::time::Instant::now();
+            
+            crate::utils::log("Window hidden via viewport commands");
             
             // Reset the flag after a delay to allow for future hide operations
             std::thread::spawn(|| {
@@ -425,39 +408,48 @@ impl PopupInterface for AnchorSelector {
     }
     
     fn execute_selected_command(&mut self) {
-        self.execute_selected_command();
+        // Call the real implementation at line 456
+        self.execute_selected_command_impl();
     }
     
     fn open_command_editor(&mut self) {
-        self.open_command_editor();
+        // Call the real implementation
+        self.open_command_editor_impl();
     }
     
     fn handle_add_alias(&mut self) {
-        self.handle_add_alias();
+        // Call the real implementation
+        self.handle_add_alias_impl();
     }
     
     fn edit_active_command(&mut self) {
-        self.edit_active_command();
+        // Call the real implementation
+        self.edit_active_command_impl();
     }
     
     fn handle_link_to_clipboard(&mut self) {
-        self.handle_link_to_clipboard();
+        // Call the real implementation
+        self.handle_link_to_clipboard_impl();
     }
     
     fn show_keys_dialog(&mut self) {
-        self.show_keys_dialog();
+        // Call the real implementation
+        self.show_keys_dialog_impl();
     }
     
     fn handle_uninstall_app(&mut self) {
-        self.handle_uninstall_app();
+        // Call the real implementation
+        self.handle_uninstall_app_impl();
     }
     
     fn handle_template_create(&mut self) {
-        self.handle_template_create();
+        // Call the real implementation
+        self.handle_template_create_impl();
     }
     
     fn handle_template_create_named(&mut self, template_name: &str) {
-        self.handle_template_create_named(template_name);
+        // Call the real implementation
+        self.handle_template_create_named_impl(template_name);
     }
     
     fn is_command_editor_visible(&self) -> bool {
@@ -502,7 +494,7 @@ impl AnchorSelector {
     }
     
     /// Execute the currently selected command
-    fn execute_selected_command(&mut self) {
+    fn execute_selected_command_impl(&mut self) {
         // Log what the user actually typed with visual separator
         
         if !self.filtered_commands().is_empty() {
@@ -540,7 +532,7 @@ impl AnchorSelector {
     }
     
     /// Open the command editor
-    fn open_command_editor(&mut self) {
+    fn open_command_editor_impl(&mut self) {
         let commands = self.commands().clone();
         let search_text = self.popup_state.search_text.clone();
         let exact_match = commands.iter().find(|cmd| 
@@ -555,7 +547,7 @@ impl AnchorSelector {
     }
     
     /// Handle add alias command - opens command editor with alias action and last executed command as argument
-    fn handle_add_alias(&mut self) {
+    fn handle_add_alias_impl(&mut self) {
         let state = crate::core::state::load_state();
         crate::utils::debug_log("ADD_ALIAS", &format!("=== ADD ALIAS TRIGGERED ==="));
         crate::utils::debug_log("ADD_ALIAS", &format!("Last executed command from state: {:?}", state.last_executed_command));
@@ -585,7 +577,7 @@ impl AnchorSelector {
         }
     }
     
-    fn edit_active_command(&mut self) {
+    fn edit_active_command_impl(&mut self) {
         if !self.filtered_commands().is_empty() {
             let (display_commands, _is_submenu, _menu_prefix, _inside_count) = self.get_display_commands();
             
@@ -601,7 +593,7 @@ impl AnchorSelector {
         }
     }
     
-    fn handle_link_to_clipboard(&mut self) {
+    fn handle_link_to_clipboard_impl(&mut self) {
         if !self.filtered_commands().is_empty() {
             let (display_commands, _is_submenu, _menu_prefix, _inside_count) = self.get_display_commands();
             
@@ -629,7 +621,7 @@ impl AnchorSelector {
     }
     
     /// Handle uninstall app request
-    fn handle_uninstall_app(&mut self) {
+    fn handle_uninstall_app_impl(&mut self) {
         // Show simple warning dialog with OK/Cancel
         let spec_strings = vec![
             "=Uninstall HookAnchor".to_string(),
@@ -643,7 +635,7 @@ impl AnchorSelector {
     }
     
     /// Show all available key bindings in a dialog
-    fn show_keys_dialog(&mut self) {
+    fn show_keys_dialog_impl(&mut self) {
         let config = crate::core::sys_data::get_config();
         let mut key_lines = vec![];
         
@@ -758,11 +750,11 @@ impl AnchorSelector {
         self.dialog.show(key_lines);
     }
     
-    fn handle_template_create(&mut self) {
+    fn handle_template_create_impl(&mut self) {
         self.handle_template_create_named("default");
     }
     
-    fn handle_template_create_named(&mut self, template_name: &str) {
+    fn handle_template_create_named_impl(&mut self, template_name: &str) {
         use crate::core::template_creation::TemplateContext;
         
         
@@ -1820,8 +1812,8 @@ impl eframe::App for AnchorSelector {
             self.last_interaction_time = std::time::Instant::now();
         }
         
-        // Check for idle timeout
-        if self.frame_count >= 10 { // Don't timeout during initial setup
+        // Check for idle timeout (but not if already hidden or already triggered)
+        if self.frame_count >= 10 && !self.is_hidden && !self.should_exit { // Don't timeout during initial setup, when hidden, or if already triggered
             let timeout_seconds = self.popup_state.config.popup_settings.idle_timeout_seconds.unwrap_or(60);
             let idle_time = self.last_interaction_time.elapsed().as_secs();
             
@@ -1843,9 +1835,7 @@ impl eframe::App for AnchorSelector {
                 if is_primary {
                     // We're the primary instance - hide but stay alive for quick reactivation
                     crate::utils::log("TIMEOUT: Primary instance - hiding window but staying alive");
-                    if !self.should_exit {
-                        self.should_exit = true; // This will trigger exit_or_hide
-                    }
+                    self.should_exit = true; // This will trigger exit_or_hide (only once)
                 } else {
                     // We're a duplicate instance - terminate to free memory
                     crate::utils::log("TIMEOUT: Duplicate instance - terminating to free memory");
@@ -1860,8 +1850,11 @@ impl eframe::App for AnchorSelector {
             self.exit_or_hide(ctx);
         }
             
-        // Only request repaints if window is not hidden
-        if !self.is_hidden {
+        // When hidden, still request occasional repaints to check for show commands
+        if self.is_hidden {
+            // Request slower repaints when hidden to check for commands
+            ctx.request_repaint_after(std::time::Duration::from_millis(500));
+        } else {
             // For idle state, request slower repaints to reduce CPU usage
             if !has_input && !has_active_ui && self.frame_count >= 10 {
                 ctx.request_repaint_after(std::time::Duration::from_millis(100));
@@ -1872,8 +1865,6 @@ impl eframe::App for AnchorSelector {
                 ctx.request_repaint_after(std::time::Duration::from_millis(50));
             }
         }
-        // When minimized/hidden, don't request any repaints - the popup control will
-        // trigger a repaint when it receives a show command
         
         
         // Check for window focus state changes and log for debugging
@@ -2758,8 +2749,10 @@ impl eframe::App for PopupWithControl {
                     self.popup.popup_state.update_search(String::new());
                     // Request focus on the input field
                     self.popup.request_focus = true;
-                    // Mark window as not hidden
+                    // Mark window as not hidden and reset interaction time
                     self.popup.is_hidden = false;
+                    self.popup.should_exit = false;  // Reset exit flag so timeout works again
+                    self.popup.last_interaction_time = std::time::Instant::now();
                 }
                 crate::popup_server_control::PopupCommand::Hide => {
                     // Input is already cleared in exit_or_hide
