@@ -13,16 +13,16 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         // Set up as background app (no dock icon)
         NSApp.setActivationPolicy(.accessory)
         
-        // Determine popup path
+        // Determine popup_server path (the actual Rust GUI)
         if let bundlePath = Bundle.main.resourcePath {
             // When running as app bundle
-            popupPath = "\(bundlePath)/popup"
+            popupPath = "\(bundlePath)/popup_server"
         } else {
             // When running as standalone script during development
             if let execPath = ProcessInfo.processInfo.arguments.first {
                 let execURL = URL(fileURLWithPath: execPath)
                 let parentDir = execURL.deletingLastPathComponent().deletingLastPathComponent()
-                popupPath = parentDir.appendingPathComponent("target/release/popup").path
+                popupPath = parentDir.appendingPathComponent("target/release/popup_server").path
             }
         }
         
@@ -33,7 +33,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             if let execPath = ProcessInfo.processInfo.arguments.first {
                 let execURL = URL(fileURLWithPath: execPath)
                 let projectRoot = execURL.deletingLastPathComponent().deletingLastPathComponent().deletingLastPathComponent()
-                popupPath = projectRoot.appendingPathComponent("target/release/popup").path
+                popupPath = projectRoot.appendingPathComponent("target/release/popup_server").path
                 if !FileManager.default.fileExists(atPath: popupPath) {
                     NSLog("HookAnchor Supervisor: Also cannot find popup at \(popupPath)")
                     NSApplication.shared.terminate(self)
@@ -76,7 +76,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         
         let task = Process()
         task.executableURL = URL(fileURLWithPath: popupPath)
-        task.arguments = ["--server"] // Run in server mode
+        // No arguments needed - popup_server runs directly
         
         // Set up environment
         var environment = ProcessInfo.processInfo.environment

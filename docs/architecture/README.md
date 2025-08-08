@@ -53,19 +53,21 @@ HookAnchor is a high-performance command launcher and automation system for macO
 **[→ Detailed Documentation](supervisor.md)**
 
 The Swift supervisor is a lightweight native macOS application that provides instant window control:
-- Launches and manages the Rust popup process
+- Launches and manages the popup_server process (via `popup --server`)
 - Uses native Cocoa APIs for sub-10ms window visibility
 - Handles system events (reopen, URL schemes)
-- Monitors and restarts popup if needed
+- Monitors and restarts popup_server if needed
 
 ### 2. Rust Popup Application
 **[→ Detailed Documentation](popup-system.md)**
 
 The main application logic written in Rust for performance and cross-platform potential:
-- Renders UI using egui framework
-- Processes user input and searches
-- Executes commands and actions
-- Manages application state
+- **popup**: Lightweight launcher that starts popup_server
+- **popup_server**: The actual GUI application
+  - Renders UI using egui framework
+  - Processes user input and searches
+  - Executes commands and actions
+  - Manages application state
 
 ### 3. Command System
 **[→ Detailed Documentation](command-system.md)**

@@ -105,7 +105,7 @@ AXUIElementPerformAction(windows[0], kAXRaiseAction)
    - Start monitoring timer
 
 2. **Popup Launch**
-   - Execute: `popup --server`
+   - Execute: `popup --server` (which internally launches `popup_server`)
    - Capture process ID
    - Wait for initialization (~500ms)
    - Initial window show
