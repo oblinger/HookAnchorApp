@@ -50,20 +50,41 @@ cargo build --release --target aarch64-apple-darwin
 echo "🏗️  Building for Intel (x86_64)..."
 cargo build --release --target x86_64-apple-darwin
 
-# Create universal binary
-echo "🔗 Creating universal binary..."
+# Create universal binaries
+echo "🔗 Creating universal binaries..."
 lipo -create -output target/release/ha-universal \
     target/aarch64-apple-darwin/release/ha \
     target/x86_64-apple-darwin/release/ha
 
-# Verify universal binary
-echo "✅ Verifying universal binary..."
-file target/release/ha-universal
+lipo -create -output target/release/popup-universal \
+    target/aarch64-apple-darwin/release/popup \
+    target/x86_64-apple-darwin/release/popup
 
-# Update the app bundle with universal binary
+lipo -create -output target/release/popup_server-universal \
+    target/aarch64-apple-darwin/release/popup_server \
+    target/x86_64-apple-darwin/release/popup_server
+
+# Build Swift supervisor if not already built
+if [ ! -f target/release/supervisor ]; then
+    echo "🏗️  Building Swift supervisor..."
+    if [ -f "$PROJECT_ROOT/swift/build_supervisor.sh" ]; then
+        "$PROJECT_ROOT/swift/build_supervisor.sh"
+    fi
+fi
+
+# Verify universal binaries
+echo "✅ Verifying universal binaries..."
+file target/release/ha-universal
+file target/release/popup-universal
+file target/release/popup_server-universal
+
+# Update the app bundle with binaries
 echo "📦 Updating app bundle..."
+cp target/release/ha-universal "$APP_BUNDLE/Contents/MacOS/ha"
 cp target/release/ha-universal "$APP_BUNDLE/Contents/MacOS/hookanchor"
-cp target/release/ha-universal "$APP_BUNDLE/Contents/MacOS/popup"
+cp target/release/popup-universal "$APP_BUNDLE/Contents/MacOS/popup"
+cp target/release/popup_server-universal "$APP_BUNDLE/Contents/MacOS/popup_server"
+cp target/release/supervisor "$APP_BUNDLE/Contents/MacOS/supervisor"
 
 # Update icon if source exists
 if [ -f "$PROJECT_ROOT/resources/icon.icns" ]; then

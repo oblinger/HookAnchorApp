@@ -4,6 +4,7 @@
 //! Designed for minimal startup time when triggered by keyboard shortcuts.
 
 use std::os::unix::net::UnixStream;
+use std::os::unix::process::CommandExt;
 use std::io::{Write, Read};
 use std::process::{Command, exit};
 use std::time::Duration;
@@ -96,11 +97,45 @@ fn start_popup_server() -> Result<(), String> {
 }
 
 fn main() {
+    // Get command from args
+    let args: Vec<String> = env::args().collect();
+    
+    // Check for --server flag (used by Swift supervisor)
+    if args.len() > 1 && args[1] == "--server" {
+        // Run popup_server directly in server mode
+        let exe_path = env::current_exe().unwrap_or_else(|e| {
+            eprintln!("Failed to get current exe: {}", e);
+            exit(1);
+        });
+        let exe_dir = exe_path.parent().unwrap_or_else(|| {
+            eprintln!("Failed to get exe directory");
+            exit(1);
+        });
+        let popup_server_path = exe_dir.join("popup_server");
+        
+        // Execute popup_server, replacing this process
+        let err = Command::new(&popup_server_path)
+            .env("HOOKANCHOR_SERVER_MODE", "1")
+            .exec();
+        
+        // If exec fails, fall back to spawn
+        eprintln!("Failed to exec popup_server: {:?}, trying spawn", err);
+        let status = Command::new(&popup_server_path)
+            .env("HOOKANCHOR_SERVER_MODE", "1")
+            .status();
+        
+        match status {
+            Ok(s) => exit(s.code().unwrap_or(1)),
+            Err(e) => {
+                eprintln!("Failed to launch popup_server: {}", e);
+                exit(1);
+            }
+        }
+    }
+    
     // Check if we should use server mode
     let use_server_mode = check_run_in_background();
     
-    // Get command from args
-    let args: Vec<String> = env::args().collect();
     let command = if args.len() > 1 {
         args[1].as_str()
     } else {
