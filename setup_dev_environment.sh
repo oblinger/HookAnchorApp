@@ -51,13 +51,16 @@ echo ""
 # 2. Build the project if needed
 echo "🔨 Building HookAnchor..."
 
-if [ ! -f "$RELEASE_DIR/HookAnchor" ] || [ ! -f "$RELEASE_DIR/popup_server" ] || [ ! -f "$RELEASE_DIR/ha" ]; then
+if [ ! -f "$RELEASE_DIR/HookAnchor" ] || [ ! -f "$RELEASE_DIR/popup_server" ] || [ ! -f "$RELEASE_DIR/ha" ] || [ ! -f "$RELEASE_DIR/url_launcher" ]; then
     echo "   Building Rust components..."
     cd "$PROJECT_DIR"
     cargo build --release
     
     echo "   Building Swift supervisor..."
     "$PROJECT_DIR/swift/build_supervisor.sh"
+    
+    echo "   Building URL handler..."
+    "$PROJECT_DIR/swift/URLHandler/build_url_handler.sh"
 else
     echo "   Binaries already exist, skipping build"
     echo "   (Run 'cargo build --release' to rebuild)"
@@ -155,6 +158,65 @@ PLIST
 echo -e "${GREEN}✅ HookAnchor.app created${NC}"
 echo ""
 
+# 4.5. Create embedded URLHandler.app for hook:// URL handling
+echo "🔗 Setting up URL handler..."
+
+RESOURCES_DIR="$CONTENTS_DIR/Resources"
+URL_HANDLER_DIR="$RESOURCES_DIR/URLHandler.app"
+URL_HANDLER_CONTENTS="$URL_HANDLER_DIR/Contents"
+URL_HANDLER_MACOS="$URL_HANDLER_CONTENTS/MacOS"
+
+# Create URLHandler.app structure
+echo "   Creating URLHandler.app in Resources..."
+$SUDO mkdir -p "$URL_HANDLER_MACOS"
+
+# Symlink url_launcher binary (NEVER COPY!)
+echo "   Creating symlink to url_launcher..."
+$SUDO ln -sf "$RELEASE_DIR/url_launcher" "$URL_HANDLER_MACOS/url_launcher"
+
+# Create Info.plist for URL handler (this registers hook:// URLs)
+echo "   Creating URLHandler Info.plist with hook:// registration..."
+$SUDO tee "$URL_HANDLER_CONTENTS/Info.plist" > /dev/null << 'URLPLIST'
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>CFBundleExecutable</key>
+    <string>url_launcher</string>
+    <key>CFBundleIdentifier</key>
+    <string>com.hookanchor.urlhandler</string>
+    <key>CFBundleName</key>
+    <string>HookAnchor URL Handler</string>
+    <key>CFBundlePackageType</key>
+    <string>APPL</string>
+    <key>CFBundleVersion</key>
+    <string>1.0</string>
+    <key>LSBackgroundOnly</key>
+    <true/>
+    <key>LSUIElement</key>
+    <true/>
+    <key>CFBundleURLTypes</key>
+    <array>
+        <dict>
+            <key>CFBundleURLName</key>
+            <string>HookAnchor URL</string>
+            <key>CFBundleURLSchemes</key>
+            <array>
+                <string>hook</string>
+            </array>
+        </dict>
+    </array>
+</dict>
+</plist>
+URLPLIST
+
+# Register the URL handler with Launch Services
+echo "   Registering URLHandler.app for hook:// URLs..."
+/System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/LaunchServices.framework/Versions/A/Support/lsregister -f "$URL_HANDLER_DIR" 2>/dev/null || true
+
+echo -e "${GREEN}✅ URL handler configured${NC}"
+echo ""
+
 # 5. Create convenience symlink in ~/bin if desired
 echo "🔗 Setting up command line access..."
 
@@ -227,9 +289,10 @@ echo "=================================="
 echo -e "${GREEN}✅ Setup Complete!${NC}"
 echo ""
 echo "Next steps:"
-echo "1. Configure Keyboard Maestro to trigger HookAnchor.app with caps lock"
+echo "1. Configure Karabiner-Elements to trigger HookAnchor.app with caps lock"
 echo "2. Test by pressing caps lock key"
 echo "3. Run 'ha --help' for command line options"
+echo "4. Test URL handling with: open 'hook://test'"
 echo ""
 echo "If HookAnchor doesn't appear:"
 echo "- Check Activity Monitor for HookAnchor/popup_server processes"

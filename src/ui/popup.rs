@@ -1734,15 +1734,20 @@ impl AnchorSelector {
         let launcher_command = format!("{} {}", tmux_cmd.action, tmux_cmd.arg);
         utils::debug_log("TMUX_ACTIVATE", &format!("Executing through launcher: {}", launcher_command));
         
-        // Use the launcher directly to execute JavaScript actions
-        match crate::command_launcher::launch(&launcher_command) {
-            Ok(_) => {
-                utils::debug_log("TMUX_ACTIVATE", "Successfully executed tmux_activate");
-                // Close the popup after successful execution
-                self.should_exit = true;
+        // Use the server for consistent execution (like all other commands)
+        match crate::execute_via_server(&launcher_command, None, None, false) {
+            Ok(response) => {
+                if response.success {
+                    utils::debug_log("TMUX_ACTIVATE", "Successfully executed tmux_activate via server");
+                    // Close the popup after successful execution
+                    self.should_exit = true;
+                } else {
+                    utils::debug_log("TMUX_ACTIVATE", &format!("Server execution failed: {}", response.stderr));
+                    self.show_error_dialog(&format!("Failed to start tmux session: {}", response.stderr));
+                }
             }
             Err(e) => {
-                utils::debug_log("TMUX_ACTIVATE", &format!("Failed to execute tmux command: {:?}", e));
+                utils::debug_log("TMUX_ACTIVATE", &format!("Failed to communicate with server: {:?}", e));
                 self.show_error_dialog(&format!("Failed to start tmux session: {:?}", e));
             }
         }

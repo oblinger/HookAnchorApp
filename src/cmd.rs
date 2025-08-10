@@ -26,6 +26,7 @@ pub fn run_command_line_mode(args: Vec<String>) {
         "-a" | "--action" => run_test_action(&args),
         "-f" | "--folders" => run_folder_command(&args),
         "-F" | "--named-folders" => run_folder_with_commands(&args),
+        "--hook" => handle_hook_option(&args),
         "--user-info" => print_user_info(),
         "--test-grabber" => run_test_grabber(),
         "--grab" => run_grab_command(&args),
@@ -75,7 +76,8 @@ pub fn print_help(program_name: &str) {
     eprintln!("  {} --install                # Run setup assistant (install)", program_name);
     eprintln!("  {} --uninstall              # Uninstall HookAnchor", program_name);
     eprintln!("  {} --popup [show|hide|delete|status] # Manage popup window", program_name);
-    eprintln!("  open 'hook://query'         # Handle hook URL");
+    eprintln!("  {} --hook <url>             # Handle hook:// URL (for URL handler)", program_name);
+    eprintln!("  open 'hook://query'         # Handle hook URL via URL handler");
     eprintln!();
     eprintln!("Examples:");
     eprintln!("  {}           # Launch GUI", program_name);
@@ -86,6 +88,15 @@ pub fn print_help(program_name: &str) {
     eprintln!("  {} -r Spot   # Execute 'Spot' CMD", program_name);
 }
 
+
+fn handle_hook_option(args: &[String]) {
+    if args.len() < 3 {
+        eprintln!("Usage: {} --hook <url>", args[0]);
+        std::process::exit(1);
+    }
+    
+    handle_hook_url(&args[2]);
+}
 
 fn handle_hook_url(url: &str) {
     // Extract the query from hook://query
@@ -1047,7 +1058,22 @@ fn run_uninstall() {
 fn run_restart_server() {
     println!("🔄 Restarting command server...");
     
-    // First, kill any existing server
+    // First, hide the popup if it's visible by sending command to socket
+    println!("  Hiding popup window...");
+    use std::os::unix::net::UnixStream;
+    use std::io::Write;
+    
+    if let Ok(mut stream) = UnixStream::connect("/tmp/hookanchor_popup.sock") {
+        if let Err(e) = stream.write_all(b"hide") {
+            println!("  ⚠️  Could not send hide command to popup: {}", e);
+        } else {
+            println!("  ✅ Popup window hidden");
+        }
+    } else {
+        println!("  ⚠️  Popup server not running (window may already be hidden)");
+    }
+    
+    // Kill any existing server
     println!("  Killing existing server...");
     match crate::command_server_management::kill_existing_server() {
         Ok(()) => println!("  ✅ Existing server killed"),

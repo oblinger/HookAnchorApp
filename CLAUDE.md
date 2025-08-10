@@ -1,3 +1,11 @@
+## ⚠️⚠️⚠️ CRITICAL: NEVER COPY BINARIES ⚠️⚠️⚠️
+**THERE MUST BE ONLY ONE COPY OF EACH BINARY ON THE ENTIRE SYSTEM**
+- The ONLY binaries are in: `/Users/oblinger/ob/proj/HookAnchor/target/release/`
+- `/Applications/HookAnchor.app` contains SYMLINKS, not copies
+- NEVER use `cp` to copy HookAnchor or popup_server binaries
+- If symlinks are broken, recreate them - DO NOT COPY BINARIES
+- Read the DO_NOT_COPY_BINARIES.md files before doing anything with binaries
+
 ## Configuration
 - `~/.config/hookanchor` is where the config info is stored
 - It's important that we're not hard coding keys into the application, instead all control keys should be specified in the key binding section in the config file

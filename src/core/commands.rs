@@ -88,6 +88,24 @@ impl Command {
                     Some(env::current_dir().ok()?.join(&self.arg))
                 }
             }
+            "cmd" => {
+                // For cmd actions, try to extract directory from cd commands
+                // Look for patterns like "cd /path" or "cd ~/path" or "cd path"
+                if let Some(cd_pos) = self.arg.find("cd ") {
+                    let after_cd = &self.arg[cd_pos + 3..];
+                    // Find the path - it ends at && or ; or end of string
+                    let path_end = after_cd.find(" &&")
+                        .or_else(|| after_cd.find(" ;"))
+                        .or_else(|| after_cd.find(';'))
+                        .unwrap_or(after_cd.len());
+                    
+                    let path_str = after_cd[..path_end].trim().trim_matches('"');
+                    if !path_str.is_empty() {
+                        return Some(PathBuf::from(crate::utils::expand_tilde(path_str)));
+                    }
+                }
+                None
+            }
             _ => None // Not a file-based action
         }
     }

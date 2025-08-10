@@ -392,6 +392,9 @@ pub trait PopupInterface {
     /// Show the folder of the selected command
     fn show_folder(&mut self);
     
+    /// Start tmux session in selected anchor folder
+    fn tmux_activate(&mut self);
+    
     /// Exit the application
     fn perform_exit_scanner_check(&mut self);
     
@@ -650,6 +653,7 @@ pub enum Action {
     ShowKeys,
     UninstallApp,
     TemplateCreate,
+    TmuxActivate,
 }
 
 impl ActionHandler {
@@ -658,6 +662,7 @@ impl ActionHandler {
             Action::ForceRebuild => "Force rebuild command list",
             Action::StartGrabber => "Start grabber countdown",
             Action::ShowFolder => "Show folder of selected command",
+            Action::TmuxActivate => "Start tmux session in anchor folder",
             Action::ExitApp => "Exit application",
             Action::ExecuteCommand => "Execute selected command",
             Action::OpenEditor => "Open command editor",
@@ -697,6 +702,10 @@ impl KeyHandler for ActionHandler {
             },
             Action::ShowFolder => {
                 context.popup.show_folder();
+                KeyHandlerResult::Handled
+            },
+            Action::TmuxActivate => {
+                context.popup.tmux_activate();
                 KeyHandlerResult::Handled
             },
             Action::ExecuteCommand => {
@@ -815,6 +824,7 @@ pub fn create_default_key_registry(config: &crate::Config) -> KeyRegistry {
                     "force_rebuild" => Box::new(ActionHandler::new(Action::ForceRebuild)),
                     "start_grabber" => Box::new(ActionHandler::new(Action::StartGrabber)),
                     "show_folder" => Box::new(ActionHandler::new(Action::ShowFolder)),
+                    "tmux_activate" => Box::new(ActionHandler::new(Action::TmuxActivate)),
                     "exit_app" => Box::new(ActionHandler::new(Action::ExitApp)),
                     "execute_command" => Box::new(ActionHandler::new(Action::ExecuteCommand)),
                     "open_editor" => Box::new(ActionHandler::new(Action::OpenEditor)),

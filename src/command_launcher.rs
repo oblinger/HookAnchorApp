@@ -151,9 +151,8 @@ fn load_config() -> Result<LauncherConfig, LauncherError> {
 fn lookup_action(action: &str, config: &LauncherConfig) -> Result<serde_yaml::Value, LauncherError> {
     // Check if this is a builtin action that should be handled directly
     // These actions are registered as builtin functions in the eval environment
-    let builtin_actions = ["cmd", "shell", "shell_sync", "app", "chrome", "brave", "firefox", 
-                          "safari", "folder", "markdown", "anchor", "alias", "doc", "text", 
-                          "open", "url", "shutdown", "rescan", "slack"];
+    // NOTE: Only include actions that are ACTUALLY implemented as Rust builtin functions
+    let builtin_actions = ["cmd", "shell", "shell_sync", "app", "folder", "open", "shutdown"];
     
     if builtin_actions.contains(&action) {
         // Return a function call to the builtin

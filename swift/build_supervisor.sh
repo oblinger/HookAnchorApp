@@ -14,30 +14,26 @@ echo "Building Swift Supervisor..."
 # Create build directory if it doesn't exist
 mkdir -p "$BUILD_DIR"
 
+# Build to a temporary file first
+TEMP_BINARY="$BUILD_DIR/HookAnchor.tmp"
+
 # Compile HookAnchor (Swift supervisor)
 swiftc -O \
     -parse-as-library \
-    -o "$BUILD_DIR/HookAnchor" \
+    -o "$TEMP_BINARY" \
     "$SWIFT_DIR/HookAnchor.swift" \
     -framework Cocoa \
     -framework Foundation
+
+# Move the temporary binary to the final location
+mv "$TEMP_BINARY" "$BUILD_DIR/HookAnchor"
 
 echo "HookAnchor supervisor built at: $BUILD_DIR/HookAnchor"
 
 # Make it executable
 chmod +x "$BUILD_DIR/HookAnchor"
 
-# If app bundle exists, update the binary inside it
-APP_BUNDLE="$BUILD_DIR/HookAnchor.app"
-if [ -d "$APP_BUNDLE" ]; then
-    echo "Updating app bundle..."
-    cp "$BUILD_DIR/HookAnchor" "$APP_BUNDLE/Contents/MacOS/HookAnchor"
-    # Also ensure popup_server is there
-    if [ -f "$BUILD_DIR/popup_server" ]; then
-        cp "$BUILD_DIR/popup_server" "$APP_BUNDLE/Contents/MacOS/popup_server"
-    fi
-    echo "✅ App bundle updated: $APP_BUNDLE"
-fi
-
-echo "Build complete!"
+# IMPORTANT: Never copy binaries! The app bundle uses symlinks
+echo "✅ Build complete!"
+echo "Note: /Applications/HookAnchor.app uses symlinks to this binary"
 echo "To test, run: $BUILD_DIR/HookAnchor"
