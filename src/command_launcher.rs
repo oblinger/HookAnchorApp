@@ -149,6 +149,20 @@ fn load_config() -> Result<LauncherConfig, LauncherError> {
 
 
 fn lookup_action(action: &str, config: &LauncherConfig) -> Result<serde_yaml::Value, LauncherError> {
+    // Check if this is a builtin action that should be handled directly
+    // These actions are registered as builtin functions in the eval environment
+    let builtin_actions = ["cmd", "shell", "shell_sync", "app", "chrome", "brave", "firefox", 
+                          "safari", "folder", "markdown", "anchor", "alias", "doc", "text", 
+                          "open", "url", "shutdown", "rescan", "slack"];
+    
+    if builtin_actions.contains(&action) {
+        // Return a function call to the builtin
+        let mut map = serde_yaml::Mapping::new();
+        map.insert("fn".into(), action.into());
+        // The arg will be passed via the environment variables
+        return Ok(serde_yaml::Value::Mapping(map));
+    }
+    
     // Look for action with action_ prefix
     let action_prefixed = format!("action_{}", action);
     if let Some(func_def) = config.functions.get(&action_prefixed) {

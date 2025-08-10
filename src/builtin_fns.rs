@@ -143,6 +143,38 @@ pub fn setup_builtin_functions(env: &mut Environment) {
         Ok(())
     }));
     
+    // cmd function - alias for shell, uses command server for consistent environment
+    // This handles the "cmd" action from commands.txt
+    env.functions.insert("cmd".to_string(), Box::new(|env, args| {
+        // The argument is the shell command to execute
+        let command = env.variables.get("arg")
+            .cloned()
+            .or_else(|| get_substituted_string_arg(args, "command", env))
+            .or_else(|| get_substituted_string_arg(args, "cmd", env))
+            .ok_or_else(|| EvalError::InvalidAction("Missing command argument".to_string()))?;
+        
+        crate::utils::verbose_log("BUILTIN", &format!("CMD: Executing shell command via server: {}", command));
+        
+        // Use command server for consistent environment
+        match crate::command_server::execute_via_server(&command, None, None, true) {
+            Ok(response) => {
+                if !response.success {
+                    if let Some(error) = response.error {
+                        return Err(EvalError::ExecutionError(format!("CMD command failed: {}", error)));
+                    } else if !response.stderr.is_empty() {
+                        return Err(EvalError::ExecutionError(format!("CMD command failed: {}", response.stderr)));
+                    }
+                }
+                Ok(())
+            },
+            Err(e) => {
+                let error_msg = format!("CMD: Shell server unavailable for command '{}': {}", command, e);
+                crate::utils::log_error(&error_msg);
+                Err(EvalError::ExecutionError(error_msg))
+            }
+        }
+    }));
+    
     // shell function - uses command server for consistent environment
     env.functions.insert("shell".to_string(), Box::new(|env, args| {
         let command = get_substituted_string_arg(args, "command", env)
@@ -236,6 +268,16 @@ pub fn setup_builtin_functions(env: &mut Environment) {
         let code = get_substituted_string_arg(args, "code", env)
             .ok_or_else(|| EvalError::InvalidAction("Missing 'code' argument".to_string()))?;
         
+        // Enhanced debugging for JavaScript execution
+        detailed_log("JS-DEBUG", "=== JavaScript Execution Debug ===");
+        detailed_log("JS-DEBUG", &format!("Code to execute: {}", code));
+        detailed_log("JS-DEBUG", &format!("Code length: {} chars", code.len()));
+        
+        // Check for common problematic patterns
+        if code.contains("sub ") || code.contains("sub\"") {
+            detailed_log("JS-DEBUG", "WARNING: Code contains 'sub' which might be a shell alias");
+        }
+        
         detailed_log("BUILTIN", "Executing JavaScript function");
         
         // Set up JavaScript context with variables
@@ -260,6 +302,11 @@ pub fn setup_builtin_functions(env: &mut Environment) {
                 Err(rquickjs::Error::Exception) => {
                     // Try to get the exception details
                     let exception = ctx.catch();
+                    
+                    // Enhanced error logging
+                    detailed_log("JS-ERROR", "=== JavaScript Exception Details ===");
+                    detailed_log("JS-ERROR", &format!("Failed code: {}", code));
+                    
                     let exception_info = if let Some(message_str) = exception.as_string() {
                         message_str.to_string().unwrap_or_else(|_| "Unknown error".to_string())
                     } else if let Some(obj) = exception.as_object() {
@@ -267,6 +314,21 @@ pub fn setup_builtin_functions(env: &mut Environment) {
                         let message = obj.get::<_, String>("message").unwrap_or_else(|_| "No message".to_string());
                         let name = obj.get::<_, String>("name").unwrap_or_else(|_| "Error".to_string());
                         let stack = obj.get::<_, String>("stack").unwrap_or_else(|_| "No stack trace".to_string());
+                        
+                        detailed_log("JS-ERROR", &format!("Error Type: {}", name));
+                        detailed_log("JS-ERROR", &format!("Message: {}", message));
+                        
+                        // Try to identify the problematic part of the code
+                        if message.contains("expecting ';'") {
+                            detailed_log("JS-ERROR", "Syntax error: Missing semicolon or invalid JavaScript syntax");
+                            // Try to find where the issue might be
+                            if code.contains(" cd ") {
+                                detailed_log("JS-ERROR", "Found 'cd' command - this is a shell command, not JavaScript!");
+                            }
+                            if code.contains(" && ") {
+                                detailed_log("JS-ERROR", "Found '&&' operator - mixing shell and JavaScript syntax?");
+                            }
+                        }
                         
                         // Compact format: extract just the stack lines without full stack trace formatting
                         let stack_lines: Vec<&str> = stack.lines()
