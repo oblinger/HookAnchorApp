@@ -279,7 +279,7 @@ Configuration is stored in `~/.config/hookanchor/config.yaml`
 
 ## Support
 
-Report issues at: https://github.com/yourusername/hookanchor
+Report issues at: https://github.com/oblinger/hookanchor
 EOF
 
 # 11. Create DMG
