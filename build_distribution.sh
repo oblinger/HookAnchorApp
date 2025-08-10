@@ -319,12 +319,35 @@ if ls /tmp/*URLHandler* /tmp/*HookAnchor* 2>/dev/null | grep -q .; then
     exit 1
 fi
 
+# 14. Archive to versions folder
+echo -e "${BLUE}📚 Archiving to versions folder...${NC}"
+VERSIONS_DIR="$PROJECT_ROOT/versions/$VERSION"
+mkdir -p "$VERSIONS_DIR"
+
+# Copy distribution files to versions folder
+cp "$DIST_DIR/$DMG_NAME" "$VERSIONS_DIR/"
+cp "$DIST_DIR/HookAnchor-$VERSION.zip" "$VERSIONS_DIR/"
+cp "$DIST_DIR/README.md" "$VERSIONS_DIR/"
+
+# Create a build info file
+cat > "$VERSIONS_DIR/BUILD_INFO.txt" << EOF
+HookAnchor Version $VERSION
+Built: $(date)
+Git Commit: $(git rev-parse HEAD 2>/dev/null || echo "unknown")
+Branch: $(git branch --show-current 2>/dev/null || echo "unknown")
+Builder: $(whoami)@$(hostname)
+Architecture: Universal (x86_64 + arm64)
+EOF
+
+echo "   Archived to: $VERSIONS_DIR"
+
 # Success!
 echo ""
 echo -e "${GREEN}✅ Distribution build complete!${NC}"
 echo "================================================="
 echo -e "📦 Package: ${BLUE}$DIST_DIR/$DMG_NAME${NC}"
 echo -e "📦 Archive: ${BLUE}$DIST_DIR/HookAnchor-$VERSION.zip${NC}"
+echo -e "📚 Versions: ${BLUE}$VERSIONS_DIR${NC}"
 echo ""
 echo "The distribution package includes:"
 echo "  • Universal binaries (Intel + Apple Silicon)"
