@@ -1,0 +1,237 @@
+#!/bin/bash
+
+# HookAnchor Development Environment Setup Script
+# This script is idempotent - safe to run multiple times
+# It ensures the development environment is properly configured
+
+set -e
+
+# Colors for output
+RED='\033[0;31m'
+GREEN='\033[0;32m'
+YELLOW='\033[1;33m'
+NC='\033[0m' # No Color
+
+# Project paths
+PROJECT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+RELEASE_DIR="$PROJECT_DIR/target/release"
+APP_DIR="/Applications/HookAnchor.app"
+CONTENTS_DIR="$APP_DIR/Contents"
+MACOS_DIR="$CONTENTS_DIR/MacOS"
+CONFIG_DIR="$HOME/.config/hookanchor"
+
+echo "🚀 HookAnchor Development Environment Setup"
+echo "==========================================="
+echo "Project dir: $PROJECT_DIR"
+echo ""
+
+# Function to check if a command exists
+command_exists() {
+    command -v "$1" >/dev/null 2>&1
+}
+
+# 1. Check prerequisites
+echo "📋 Checking prerequisites..."
+
+if ! command_exists cargo; then
+    echo -e "${RED}❌ Rust/Cargo not installed${NC}"
+    echo "   Please install Rust: curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh"
+    exit 1
+fi
+
+if ! command_exists swift; then
+    echo -e "${RED}❌ Swift not installed${NC}"
+    echo "   Please install Xcode command line tools: xcode-select --install"
+    exit 1
+fi
+
+echo -e "${GREEN}✅ Prerequisites satisfied${NC}"
+echo ""
+
+# 2. Build the project if needed
+echo "🔨 Building HookAnchor..."
+
+if [ ! -f "$RELEASE_DIR/HookAnchor" ] || [ ! -f "$RELEASE_DIR/popup_server" ] || [ ! -f "$RELEASE_DIR/ha" ]; then
+    echo "   Building Rust components..."
+    cd "$PROJECT_DIR"
+    cargo build --release
+    
+    echo "   Building Swift supervisor..."
+    "$PROJECT_DIR/swift/build_supervisor.sh"
+else
+    echo "   Binaries already exist, skipping build"
+    echo "   (Run 'cargo build --release' to rebuild)"
+fi
+
+echo -e "${GREEN}✅ Build complete${NC}"
+echo ""
+
+# 3. Create config directory if needed
+echo "📁 Setting up configuration..."
+
+if [ ! -d "$CONFIG_DIR" ]; then
+    mkdir -p "$CONFIG_DIR"
+    echo "   Created config directory: $CONFIG_DIR"
+fi
+
+# Ensure config.yaml exists with minimal defaults
+if [ ! -f "$CONFIG_DIR/config.yaml" ]; then
+    echo "   Creating default config.yaml..."
+    cat > "$CONFIG_DIR/config.yaml" << 'EOF'
+# HookAnchor Configuration
+keybindings:
+  exit_app:             "Escape"
+  navigate_down:        "ArrowDown"
+  navigate_up:          "ArrowUp"
+  navigate_left:        "ArrowLeft"
+  navigate_right:       "ArrowRight"
+  execute_command:      "Enter"
+  force_rebuild:        "`"
+  show_folder:          "/"
+  open_editor:          "="
+  edit_active_command:  ";"
+  show_keys:            "?"
+EOF
+    echo "   Created default config"
+else
+    echo "   Config already exists"
+fi
+
+echo -e "${GREEN}✅ Configuration ready${NC}"
+echo ""
+
+# 4. Create/Update Application Bundle
+echo "📦 Setting up HookAnchor.app..."
+
+# Check if we need sudo
+if [ -w "/Applications" ]; then
+    SUDO=""
+else
+    SUDO="sudo"
+    echo "   Need sudo access to create app in /Applications"
+fi
+
+# Remove old app if it exists and recreate
+if [ -d "$APP_DIR" ]; then
+    echo "   Removing existing app bundle..."
+    $SUDO rm -rf "$APP_DIR"
+fi
+
+echo "   Creating app bundle structure..."
+$SUDO mkdir -p "$MACOS_DIR"
+
+# Create symlinks to binaries (NEVER COPY!)
+echo "   Creating symlinks to binaries..."
+$SUDO ln -sf "$RELEASE_DIR/HookAnchor" "$MACOS_DIR/HookAnchor"
+$SUDO ln -sf "$RELEASE_DIR/popup_server" "$MACOS_DIR/popup_server"
+$SUDO ln -sf "$RELEASE_DIR/ha" "$MACOS_DIR/ha"
+$SUDO ln -sf "$RELEASE_DIR/popup" "$MACOS_DIR/popup"
+
+# Create Info.plist
+echo "   Creating Info.plist..."
+$SUDO tee "$CONTENTS_DIR/Info.plist" > /dev/null << 'PLIST'
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>CFBundleExecutable</key>
+    <string>HookAnchor</string>
+    <key>CFBundleIdentifier</key>
+    <string>com.hookanchor.app</string>
+    <key>CFBundleName</key>
+    <string>HookAnchor</string>
+    <key>CFBundlePackageType</key>
+    <string>APPL</string>
+    <key>CFBundleVersion</key>
+    <string>1.0</string>
+    <key>LSUIElement</key>
+    <true/>
+    <key>LSMultipleInstancesProhibited</key>
+    <true/>
+</dict>
+</plist>
+PLIST
+
+echo -e "${GREEN}✅ HookAnchor.app created${NC}"
+echo ""
+
+# 5. Create convenience symlink in ~/bin if desired
+echo "🔗 Setting up command line access..."
+
+if [ ! -d "$HOME/bin" ]; then
+    mkdir -p "$HOME/bin"
+    echo "   Created ~/bin directory"
+fi
+
+if [ ! -L "$HOME/bin/ha" ] || [ "$(readlink "$HOME/bin/ha")" != "$RELEASE_DIR/ha" ]; then
+    ln -sf "$RELEASE_DIR/ha" "$HOME/bin/ha"
+    echo "   Created symlink: ~/bin/ha -> $RELEASE_DIR/ha"
+else
+    echo "   Symlink ~/bin/ha already correct"
+fi
+
+# Check if ~/bin is in PATH
+if [[ ":$PATH:" != *":$HOME/bin:"* ]]; then
+    echo -e "${YELLOW}   ⚠️  ~/bin is not in your PATH${NC}"
+    echo "   Add this to your shell profile (.zshrc or .bash_profile):"
+    echo "   export PATH=\"\$HOME/bin:\$PATH\""
+fi
+
+echo -e "${GREEN}✅ Command line access configured${NC}"
+echo ""
+
+# 6. Clean up any stale sockets
+echo "🧹 Cleaning up..."
+
+if [ -S "/tmp/hookanchor_popup.sock" ]; then
+    rm -f "/tmp/hookanchor_popup.sock"
+    echo "   Removed stale popup socket"
+fi
+
+if [ -S "$HOME/.config/hookanchor/command_server.sock" ]; then
+    rm -f "$HOME/.config/hookanchor/command_server.sock"
+    echo "   Removed stale command server socket"
+fi
+
+echo -e "${GREEN}✅ Cleanup complete${NC}"
+echo ""
+
+# 7. Test the installation
+echo "🧪 Testing installation..."
+
+# Kill any running instances
+pkill -f HookAnchor 2>/dev/null || true
+pkill -f popup_server 2>/dev/null || true
+/bin/sleep 1
+
+# Try to start the app
+echo "   Starting HookAnchor.app..."
+open "$APP_DIR"
+/bin/sleep 2
+
+# Check if processes are running
+if pgrep -f "HookAnchor" > /dev/null && pgrep -f "popup_server" > /dev/null; then
+    echo -e "${GREEN}✅ HookAnchor is running!${NC}"
+    
+    # Try to show the popup
+    echo "   Testing popup display..."
+    "$MACOS_DIR/popup" show
+    echo -e "${GREEN}✅ Popup command sent${NC}"
+else
+    echo -e "${YELLOW}⚠️  HookAnchor didn't start automatically${NC}"
+    echo "   This might be normal. Try pressing your caps lock key."
+fi
+
+echo ""
+echo "=================================="
+echo -e "${GREEN}✅ Setup Complete!${NC}"
+echo ""
+echo "Next steps:"
+echo "1. Configure Keyboard Maestro to trigger HookAnchor.app with caps lock"
+echo "2. Test by pressing caps lock key"
+echo "3. Run 'ha --help' for command line options"
+echo ""
+echo "If HookAnchor doesn't appear:"
+echo "- Check Activity Monitor for HookAnchor/popup_server processes"
+echo "- Check ~/.config/hookanchor/anchor.log for errors"
+echo "- Run this script again to reset everything"

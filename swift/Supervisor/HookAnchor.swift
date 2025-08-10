@@ -26,6 +26,13 @@ struct HookAnchorApp {
 
 class AppDelegate: NSObject, NSApplicationDelegate {
     
+    // Store any URL that arrives before we're ready to handle it
+    var pendingURL: String?
+    
+    // Track URL event frequency for debugging
+    var recentURLEvents: [Date] = []
+    var lastURLEventLog: Date = Date.distantPast
+    
     // Unified logging to anchor.log
     func log(_ message: String) {
         // Format timestamp to match Rust format: "2025-08-07 21:48:38"
@@ -68,23 +75,23 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     var lastShowTime: Date = Date.distantPast
     // Removed timer - no need for continuous monitoring
     
-    func applicationDidFinishLaunching(_ notification: Notification) {
-        // Register for URL events (for hook:// URLs)
+    func applicationWillFinishLaunching(_ notification: Notification) {
+        // Register for URL events BEFORE launch completes - this is critical!
         NSAppleEventManager.shared().setEventHandler(
             self,
             andSelector: #selector(handleURLEvent(_:withReplyEvent:)),
             forEventClass: AEEventClass(kInternetEventClass),
             andEventID: AEEventID(kAEGetURL)
         )
-        // Immediate test - write to file directly with matching timestamp format
-        let testPath = "/tmp/hookanchor_supervisor_test.log"
-        let formatter = DateFormatter()
-        formatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
-        formatter.timeZone = TimeZone.current
-        let timestamp = formatter.string(from: Date())
-        try? "SUPERVISOR STARTED at \(timestamp)\n".write(toFile: testPath, atomically: true, encoding: .utf8)
-        
+        log("Early URL handler registration complete")
+    }
+    
+    func applicationDidFinishLaunching(_ notification: Notification) {
         log("Starting up...")
+        log("URL event handler already registered")
+        
+        // Ensure command server is running before we do anything else
+        startCommandServerIfNeeded()
         
         // Set up as background app (no dock icon)
         NSApp.setActivationPolicy(.accessory)
@@ -131,45 +138,160 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         
         log(" Starting with popup at \(popupPath)")
         
-        // Launch Rust popup and show window on initial start
-        launchRustPopup(showOnStart: true)
+        // Launch Rust popup but DON'T show window immediately
+        // We'll wait briefly to see if we were launched by a URL
+        launchRustPopup(showOnStart: false)
         
         // No continuous monitoring needed - we'll check when showing
         
         log(" Setup complete, waiting for events...")
+        
+        // Wait a moment to see if a URL event arrives (cold launch URL handling)
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) { [weak self] in
+            guard let self = self else { return }
+            
+            // Check if we have a pending URL
+            if let url = self.pendingURL {
+                self.log("Processing pending URL from launch: \(url)")
+                self.processURL(url)
+                self.pendingURL = nil
+            } else {
+                // No URL received, show the window (normal launch)
+                self.log("No URL received at launch, showing window")
+                self.showRustWindow()
+            }
+        }
     }
     
     func applicationShouldHandleReopen(_ sender: NSApplication, hasVisibleWindows flag: Bool) -> Bool {
-        // Called when app is "launched" while already running
+        // Called when app is "launched" while already running (e.g., from caps lock)
+        NSLog("HookAnchor: ===== CAPS LOCK TRIGGER CHAIN START =====")
         NSLog("HookAnchor: applicationShouldHandleReopen called")
-        log(" Reopen event received")
+        log(" [CAPS LOCK] Reopen event received - starting popup display chain")
         showRustWindow()
+        NSLog("HookAnchor: ===== CAPS LOCK TRIGGER CHAIN END =====")
         return true
     }
     
     @objc func handleURLEvent(_ event: NSAppleEventDescriptor, withReplyEvent replyEvent: NSAppleEventDescriptor) {
-        // Handle hook:// URLs
-        NSLog("HookAnchor: URL event received")
-        showRustWindow()
+        let startTime = Date()
+        
+        // Track event frequency
+        recentURLEvents.append(startTime)
+        // Keep only events from last 5 seconds
+        let fiveSecondsAgo = Date().addingTimeInterval(-5)
+        recentURLEvents = recentURLEvents.filter { $0 > fiveSecondsAgo }
+        
+        // Log warning if we're getting bombarded with events
+        if recentURLEvents.count > 10 {
+            let timeSinceLastLog = startTime.timeIntervalSince(lastURLEventLog)
+            if timeSinceLastLog > 1.0 { // Only log this warning once per second
+                log("⚠️ URL_EVENT_FLOOD: \(recentURLEvents.count) events in last 5 seconds!")
+                lastURLEventLog = startTime
+            }
+        }
+        
+        // Handle hook:// URLs by extracting the command and executing it
+        guard let urlString = event.paramDescriptor(forKeyword: keyDirectObject)?.stringValue else {
+            log("URL_EVENT: Received but no URL found")
+            return
+        }
+        
+        // Log with timestamp and caller info if possible
+        let processName = ProcessInfo.processInfo.processName
+        let callerPID = event.attributeDescriptor(forKeyword: keySenderPIDAttr)?.int32Value ?? -1
+        
+        log("URL_EVENT_START: '\(urlString)' from PID:\(callerPID)")
+        
+        // If we're not fully initialized yet, store the URL for later
+        if rustPopupProcess == nil {
+            log("URL_EVENT: App not ready, storing URL for later processing")
+            pendingURL = urlString
+            let elapsed = Date().timeIntervalSince(startTime) * 1000
+            log("URL_EVENT_END: Deferred in \(String(format: "%.2f", elapsed))ms")
+            return
+        }
+        
+        // Process the URL immediately
+        processURL(urlString)
+        
+        let elapsed = Date().timeIntervalSince(startTime) * 1000
+        log("URL_EVENT_END: Processed in \(String(format: "%.2f", elapsed))ms")
+    }
+    
+    func processURL(_ urlString: String) {
+        // Extract the command from hook://command format
+        if urlString.hasPrefix("hook://") {
+            let command = String(urlString.dropFirst(7)) // Remove "hook://"
+            
+            log("Processing hook URL with command: '\(command)'")
+            
+            // Pass the command to the ha CLI for execution
+            // Using -x to execute the top match for the command
+            let haPath = "/Users/oblinger/ob/proj/HookAnchor/target/release/ha"
+            
+            // Check if ha binary exists
+            if FileManager.default.fileExists(atPath: haPath) {
+                // Execute ha with the -x option to execute the command
+                let task = Process()
+                task.executableURL = URL(fileURLWithPath: haPath)
+                task.arguments = ["-x", command]
+                
+                // Don't wait for output or termination - fire and forget
+                task.standardOutput = nil
+                task.standardError = nil
+                task.terminationHandler = nil
+                
+                // Run in background - we don't need to wait for completion
+                do {
+                    try task.run()
+                    log("Dispatched command '\(command)' to ha CLI (async)")
+                    // Don't wait for the process to complete - return immediately
+                } catch {
+                    log("Failed to dispatch command to ha CLI: \(error)")
+                    // Don't show window on error - just log it
+                }
+            } else {
+                log("ha CLI not found at \(haPath), falling back to show window")
+                // Fallback: show the window if ha isn't available
+                showRustWindow()
+            }
+        } else {
+            log("URL doesn't start with hook://, ignoring: \(urlString)")
+        }
     }
     
     func applicationDidBecomeActive(_ notification: Notification) {
         // Called when app becomes active (including via open -a)
         NSLog("HookAnchor: applicationDidBecomeActive")
         
-        // Only show window if popup is already running (not on initial launch)
-        if rustPopupProcess != nil && rustPopupProcess!.isRunning {
-            NSLog("HookAnchor: Popup already running, showing window")
-            showRustWindow()
-        } else {
-            NSLog("HookAnchor: Initial activation, not showing (will be handled by launch)")
-        }
+        // Don't show window on activation - this gets called for URL events too!
+        // The window should only be shown explicitly via:
+        // 1. Initial launch (handled in applicationDidFinishLaunching)
+        // 2. Reopen event (handled in applicationShouldHandleReopen)
+        // 3. Direct user action (not just becoming active)
+        
+        // Just log that we became active
+        NSLog("HookAnchor: App became active (no action taken)")
     }
     
     func applicationWillTerminate(_ notification: Notification) {
         // Clean up child process
         if let process = rustPopupProcess, process.isRunning {
             process.terminate()
+        }
+    }
+    
+    // Alternative URL handling method - some macOS versions use this
+    func application(_ application: NSApplication, open urls: [URL]) {
+        log("application:open:urls called with \(urls.count) URLs")
+        for url in urls {
+            log("Received URL via application:open: \(url.absoluteString)")
+            if rustPopupProcess == nil {
+                pendingURL = url.absoluteString
+            } else {
+                processURL(url.absoluteString)
+            }
         }
     }
     
@@ -196,29 +318,29 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             rustPopupProcess = task
             log(" Launched popup with PID \(rustPopupPID)")
             
-            // Only show window if explicitly requested (e.g., on initial app launch)
-            if showOnStart {
-                DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) { [weak self] in
-                    self?.log("Showing initial window...")
-                    self?.showRustWindow()
-                }
-            }
+            // Note: Window showing is now handled separately in applicationDidFinishLaunching
+            // to allow checking for URL events first
         } catch {
             log(" Failed to launch popup: \(error)")
         }
     }
     
     func showRustWindow() {
-        NSLog("HookAnchor: showRustWindow called")
+        NSLog("HookAnchor: [SHOW CHAIN] Step 1: showRustWindow() called")
+        log("[SHOW] Initiating popup display sequence")
+        
         // Prevent too-rapid repeated shows
         let now = Date()
-        if now.timeIntervalSince(lastShowTime) < 0.1 {
-            NSLog("HookAnchor: Skipping show - too rapid")
+        let timeSinceLast = now.timeIntervalSince(lastShowTime)
+        if timeSinceLast < 0.1 {
+            NSLog("HookAnchor: [SHOW CHAIN] BLOCKED: Too rapid (\(timeSinceLast)s < 0.1s)")
+            log("[SHOW] Skipped - too rapid trigger")
             return
         }
         lastShowTime = now
         
-        NSLog("HookAnchor: Ensuring popup is running")
+        NSLog("HookAnchor: [SHOW CHAIN] Step 2: Checking popup_server process")
+        log("[SHOW] Ensuring popup_server is running")
         // First ensure the popup is running
         ensurePopupRunning()
         
@@ -263,14 +385,17 @@ class AppDelegate: NSObject, NSApplicationDelegate {
                             self?.verifyWindowVisible()
                         }
                     } else {
-                        self.log(" Failed to connect to popup socket")
+                        let error = String(cString: strerror(errno))
+                        NSLog("HookAnchor: [SOCKET] ERROR: Connection failed - \(error)")
+                        self.log(" [ERROR] Failed to connect to popup socket: \(error)")
                     }
                     
                     // Close the socket
                     close(sock)
                 }
             } else {
-                self.log(" Popup socket not found at \(socketPath)")
+                NSLog("HookAnchor: [SOCKET] ERROR: Socket file not found at \(socketPath)")
+                self.log(" [ERROR] Popup socket not found at \(socketPath)")
             }
         }
         
@@ -374,6 +499,43 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         // Process has died, restart it (but don't show window)
         log(" Popup process died, restarting...")
         launchRustPopup(showOnStart: false)
+    }
+    
+    func startCommandServerIfNeeded() {
+        // Check if command server is already running
+        let checkTask = Process()
+        checkTask.executableURL = URL(fileURLWithPath: "/bin/sh")
+        checkTask.arguments = ["-c", "pgrep -f 'ha --start-server-daemon' > /dev/null 2>&1"]
+        
+        do {
+            try checkTask.run()
+            checkTask.waitUntilExit()
+            
+            if checkTask.terminationStatus != 0 {
+                // Server not running, start it
+                log("Command server not running, starting it...")
+                
+                let haPath = "/Users/oblinger/ob/proj/HookAnchor/target/release/ha"
+                if FileManager.default.fileExists(atPath: haPath) {
+                    let startTask = Process()
+                    startTask.executableURL = URL(fileURLWithPath: haPath)
+                    startTask.arguments = ["--start-server"]
+                    
+                    do {
+                        try startTask.run()
+                        log("Started command server")
+                    } catch {
+                        log("Failed to start command server: \(error)")
+                    }
+                } else {
+                    log("ha binary not found, cannot start command server")
+                }
+            } else {
+                log("Command server already running")
+            }
+        } catch {
+            log("Error checking command server status: \(error)")
+        }
     }
 }
 

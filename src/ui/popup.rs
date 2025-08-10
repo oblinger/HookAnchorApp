@@ -3,7 +3,6 @@
 //! This module contains the AnchorSelector struct and all popup-specific UI logic.
 
 use eframe::egui::{self, IconData};
-use std::process;
 use std::sync::OnceLock;
 use crate::{
     Command, execute_via_server, 
@@ -274,6 +273,7 @@ impl AnchorSelector {
             self.popup_state.update_search(String::new());
             
             // Hide the window using egui's viewport command
+            crate::utils::log("[HIDE] Sending ViewportCommand::Visible(false)");
             ctx.send_viewport_cmd(egui::ViewportCommand::Visible(false));
             
             self.is_hidden = true;
@@ -281,7 +281,13 @@ impl AnchorSelector {
             // Reset interaction time to prevent timeout loop
             self.last_interaction_time = std::time::Instant::now();
             
-            crate::utils::log("Window hidden via viewport commands");
+            let viewport_info = ctx.input(|i| {
+                format!("Viewport after hide: focused={}",
+                    i.focused
+                )
+            });
+            crate::utils::log(&format!("[HIDE] {}", viewport_info));
+            crate::utils::log("[HIDE] Window hidden via viewport commands");
             
             // Reset the flag after a delay to allow for future hide operations
             std::thread::spawn(|| {
@@ -395,6 +401,10 @@ impl PopupInterface for AnchorSelector {
     
     fn show_folder(&mut self) {
         self.show_folder();
+    }
+    
+    fn tmux_activate(&mut self) {
+        self.tmux_activate();
     }
     
     fn perform_exit_scanner_check(&mut self) {
@@ -1678,6 +1688,65 @@ impl AnchorSelector {
         }
     }
     
+    /// Start tmux session for selected anchor
+    fn tmux_activate(&mut self) {
+        use crate::utils;
+        
+        // Get selected command index
+        let selected_index = self.selected_index();
+        
+        // Get the current filtered commands  
+        let display_commands = self.popup_state.filtered_commands.clone();
+        
+        if display_commands.is_empty() || selected_index >= display_commands.len() {
+            utils::debug_log("TMUX_ACTIVATE", "No commands available or invalid selection");
+            return;
+        }
+        
+        // Get the selected command
+        let selected_command = &display_commands[selected_index];
+        
+        // Check if it's an anchor
+        if selected_command.action != "anchor" {
+            utils::debug_log("TMUX_ACTIVATE", &format!("Selected command is not an anchor: {}", selected_command.action));
+            return;
+        }
+        
+        utils::debug_log("TMUX_ACTIVATE", &format!("Processing anchor: {} ({})", selected_command.command, selected_command.arg));
+        
+        // Create a synthetic command to execute through the launcher
+        // This will be recognized as a JavaScript action because tmux_activate is in listed_actions
+        let tmux_cmd = crate::core::commands::Command {
+            command: format!("TMUX: {}", selected_command.command),
+            action: "tmux_activate".to_string(),
+            arg: selected_command.arg.clone(),
+            patch: selected_command.patch.clone(),
+            flags: String::new(),
+            full_line: String::new(),
+        };
+        
+        // Save as last executed for potential alias creation
+        use crate::core::state::save_last_executed_command;
+        let _ = save_last_executed_command(&tmux_cmd.command);
+        
+        // Execute using the same path as normal command execution
+        // This will go through the launcher which recognizes JavaScript actions
+        let launcher_command = format!("{} {}", tmux_cmd.action, tmux_cmd.arg);
+        utils::debug_log("TMUX_ACTIVATE", &format!("Executing through launcher: {}", launcher_command));
+        
+        // Use the launcher directly to execute JavaScript actions
+        match crate::command_launcher::launch(&launcher_command) {
+            Ok(_) => {
+                utils::debug_log("TMUX_ACTIVATE", "Successfully executed tmux_activate");
+                // Close the popup after successful execution
+                self.should_exit = true;
+            }
+            Err(e) => {
+                utils::debug_log("TMUX_ACTIVATE", &format!("Failed to execute tmux command: {:?}", e));
+                self.show_error_dialog(&format!("Failed to start tmux session: {:?}", e));
+            }
+        }
+    }
 }
 
 pub fn save_window_position(pos: egui::Pos2) {
@@ -1767,6 +1836,20 @@ impl eframe::App for AnchorSelector {
     }
     
     fn update(&mut self, ctx: &egui::Context, _frame: &mut eframe::Frame) {
+        // Enhanced debugging for visibility issues
+        if self.frame_count < 10 || self.frame_count % 60 == 0 {  // Log first 10 frames and then every second
+            let viewport_info = ctx.input(|i| {
+                format!("Frame {}: focused={}, pos={:?}, is_hidden={}, should_exit={}",
+                    self.frame_count,
+                    i.focused,
+                    i.viewport().outer_rect,
+                    self.is_hidden,
+                    self.should_exit
+                )
+            });
+            crate::utils::debug_log("POPUP_UPDATE", &viewport_info);
+        }
+        
         // Write to debug file to see if update() is being called at all
         if let Ok(mut file) = std::fs::OpenOptions::new().create(true).append(true).open("/tmp/hookanchor_debug.log") {
             use std::io::Write;
@@ -1812,39 +1895,7 @@ impl eframe::App for AnchorSelector {
             self.last_interaction_time = std::time::Instant::now();
         }
         
-        // Check for idle timeout (but not if already hidden or already triggered)
-        if self.frame_count >= 10 && !self.is_hidden && !self.should_exit { // Don't timeout during initial setup, when hidden, or if already triggered
-            let timeout_seconds = self.popup_state.config.popup_settings.idle_timeout_seconds.unwrap_or(60);
-            let idle_time = self.last_interaction_time.elapsed().as_secs();
-            
-            if idle_time >= timeout_seconds {
-                // Check if we're the primary popup instance
-                let is_primary = crate::popup_server_control::is_primary_popup_instance();
-                
-                crate::utils::log(&format!("TIMEOUT: Idle for {} seconds (primary: {})", idle_time, is_primary));
-                
-                // Close command editor if open
-                if self.command_editor.visible {
-                    self.close_command_editor();
-                }
-                // Close dialog if open  
-                if self.dialog.visible {
-                    self.close_dialog();
-                }
-                
-                if is_primary {
-                    // We're the primary instance - hide but stay alive for quick reactivation
-                    crate::utils::log("TIMEOUT: Primary instance - hiding window but staying alive");
-                    self.should_exit = true; // This will trigger exit_or_hide (only once)
-                } else {
-                    // We're a duplicate instance - terminate to free memory
-                    crate::utils::log("TIMEOUT: Duplicate instance - terminating to free memory");
-                    std::process::exit(0);
-                }
-            }
-        }
-        
-        // Check if exit was requested
+        // Check if exit was requested by user action
         if self.should_exit {
             self.should_exit = false; // Reset flag
             self.exit_or_hide(ctx);
@@ -2744,6 +2795,49 @@ impl eframe::App for PopupWithControl {
         if let Some(command) = self.control.process_commands(ctx) {
             match command {
                 crate::popup_server_control::PopupCommand::Show => {
+                    crate::utils::log("===== SHOW COMMAND RECEIVED =====");
+                    crate::utils::log(&format!("[SHOW] is_hidden={}, should_exit={}", 
+                        self.popup.is_hidden, self.popup.should_exit));
+                    
+                    // Get current window state
+                    let viewport_info = ctx.input(|i| {
+                        format!("Viewport: focused={}, position={:?}",
+                            i.focused,
+                            i.viewport().outer_rect
+                        )
+                    });
+                    crate::utils::log(&format!("[SHOW] Before: {}", viewport_info));
+                    
+                    // Make the window visible again if it was hidden
+                    crate::utils::log("[SHOW] Sending ViewportCommand::Visible(true)");
+                    ctx.send_viewport_cmd(egui::ViewportCommand::Visible(true));
+                    
+                    crate::utils::log("[SHOW] Sending ViewportCommand::Focus");
+                    ctx.send_viewport_cmd(egui::ViewportCommand::Focus);
+                    
+                    // Also try to bring to front
+                    crate::utils::log("[SHOW] Sending ViewportCommand::Fullscreen(false) to ensure windowed mode");
+                    ctx.send_viewport_cmd(egui::ViewportCommand::Fullscreen(false));
+                    
+                    crate::utils::log("[SHOW] Sending ViewportCommand::Minimized(false)");
+                    ctx.send_viewport_cmd(egui::ViewportCommand::Minimized(false));
+                    
+                    // CRITICAL: Position window on screen if it's off-screen
+                    let current_pos = ctx.input(|i| i.viewport().outer_rect);
+                    if let Some(rect) = current_pos {
+                        if rect.min.x < 0.0 || rect.min.y < 0.0 {
+                            crate::utils::log(&format!("[SHOW] Window is off-screen at {:?}, centering on main display", rect.min));
+                            // Center on main display
+                            let screen_rect = ctx.screen_rect();
+                            let window_size = rect.size();
+                            let center_x = (screen_rect.width() - window_size.x) / 2.0;
+                            let center_y = (screen_rect.height() - window_size.y) / 2.0;
+                            let center_pos = egui::pos2(center_x.max(0.0), center_y.max(0.0));
+                            ctx.send_viewport_cmd(egui::ViewportCommand::OuterPosition(center_pos));
+                            crate::utils::log(&format!("[SHOW] Repositioned window to {:?}", center_pos));
+                        }
+                    }
+                    
                     // Clear the search input when showing the popup
                     self.popup.popup_state.search_text.clear();
                     self.popup.popup_state.update_search(String::new());
@@ -2751,8 +2845,15 @@ impl eframe::App for PopupWithControl {
                     self.popup.request_focus = true;
                     // Mark window as not hidden and reset interaction time
                     self.popup.is_hidden = false;
-                    self.popup.should_exit = false;  // Reset exit flag so timeout works again
+                    self.popup.should_exit = false;  // Reset exit flag
                     self.popup.last_interaction_time = std::time::Instant::now();
+                    
+                    // Force a repaint
+                    ctx.request_repaint();
+                    
+                    crate::utils::log(&format!("[SHOW] After: is_hidden={}, should_exit={}", 
+                        self.popup.is_hidden, self.popup.should_exit));
+                    crate::utils::log("===== SHOW COMMAND COMPLETE =====");
                 }
                 crate::popup_server_control::PopupCommand::Hide => {
                     // Input is already cleared in exit_or_hide
@@ -2770,6 +2871,7 @@ impl eframe::App for PopupWithControl {
 
 pub fn run_gui_with_prompt(initial_prompt: &str, _app_state: super::ApplicationState) -> Result<(), eframe::Error> {
     // Debug: Log when popup is being opened
+    crate::utils::log("===== POPUP GUI STARTING =====");
     crate::utils::debug_log("POPUP_OPEN", &format!("Opening popup with initial prompt: '{}'", initial_prompt));
     
     // Capture the prompt for the closure
@@ -2781,6 +2883,8 @@ pub fn run_gui_with_prompt(initial_prompt: &str, _app_state: super::ApplicationS
     let height = config.popup_settings.get_default_window_height() as f32;
     // Always start visible - we'll hide it later if needed
     let start_visible = true;
+    
+    crate::utils::log(&format!("[POPUP_INIT] Window size: {}x{}, start_visible: {}", width, height, start_visible));
     
     let viewport_builder = egui::ViewportBuilder::default()
         .with_inner_size([width, height]) // Initial size - will be dynamically resized
