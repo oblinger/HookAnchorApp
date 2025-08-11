@@ -153,26 +153,44 @@ pub fn setup_builtin_functions(env: &mut Environment) {
             .or_else(|| get_substituted_string_arg(args, "cmd", env))
             .ok_or_else(|| EvalError::InvalidAction("Missing command argument".to_string()))?;
         
-        crate::utils::verbose_log("BUILTIN", &format!("CMD: Executing shell command via server: {}", command));
+        // Check if this is a GUI command that needs blocking execution
+        // GUI commands are marked with "G; " prefix in the argument
+        let (actual_command, flags) = if command.starts_with("G; ") {
+            (&command[3..], "G")
+        } else {
+            (command.as_str(), "")
+        };
         
-        // Use command server for consistent environment
-        match crate::command_server::execute_via_server(&command, None, None, true) {
-            Ok(response) => {
-                if !response.success {
-                    if let Some(error) = response.error {
-                        return Err(EvalError::ExecutionError(format!("CMD command failed: {}", error)));
-                    } else if !response.stderr.is_empty() {
-                        return Err(EvalError::ExecutionError(format!("CMD command failed: {}", response.stderr)));
-                    }
-                }
-                Ok(())
-            },
-            Err(e) => {
-                let error_msg = format!("CMD: Shell server unavailable for command '{}': {}", command, e);
-                crate::utils::log_error(&error_msg);
-                Err(EvalError::ExecutionError(error_msg))
-            }
+        // Always log for EC command debugging
+        if actual_command.contains("ec") {
+            eprintln!("[CMD BUILTIN] EC command detected: '{}'", actual_command);
+            eprintln!("[CMD BUILTIN] flags: '{}'", flags);
         }
+        
+        crate::utils::verbose_log("BUILTIN", &format!("CMD: Executing shell command directly: {} (flags: {})", actual_command, flags));
+        
+        // Execute the command directly using shell
+        // For GUI commands (G flag), use blocking execution
+        if flags.contains("G") {
+            // Blocking execution for GUI commands
+            crate::utils::verbose_log("BUILTIN", "Using blocking shell execution for GUI command");
+            let output = crate::utils::shell_simple(actual_command, true)
+                .map_err(|e| EvalError::ExecutionError(format!("Failed to execute command '{}': {}", actual_command, e)))?;
+            
+            if !output.status.success() {
+                let stderr = String::from_utf8_lossy(&output.stderr);
+                return Err(EvalError::ExecutionError(format!("Command failed: {}", stderr)));
+            }
+        } else {
+            // Non-blocking execution for regular commands
+            crate::utils::verbose_log("BUILTIN", "Using non-blocking shell execution");
+            crate::utils::log(&format!("CMD BUILTIN: Executing non-blocking command: '{}'", actual_command));
+            let _output = crate::utils::shell_simple(actual_command, false)
+                .map_err(|e| EvalError::ExecutionError(format!("Failed to start command '{}': {}", actual_command, e)))?;
+            crate::utils::log("CMD BUILTIN: Command spawned successfully");
+        }
+        
+        Ok(())
     }));
     
     // shell function - uses command server for consistent environment
@@ -183,8 +201,11 @@ pub fn setup_builtin_functions(env: &mut Environment) {
         
         crate::utils::verbose_log("BUILTIN", &format!("Starting shell command via server (non-blocking): {}", command));
         
+        // Create a Command object for this shell command (non-blocking)
+        let cmd_obj = crate::command_server::shell_command(&command, "");
+        
         // Use command server for consistent environment
-        match crate::command_server::execute_via_server(&command, None, None, false) {
+        match crate::command_server::execute_via_server(&cmd_obj) {
             Ok(response) => {
                 // Command server already logs stdout/stderr in verbose mode, no need to duplicate
                 
@@ -241,8 +262,11 @@ pub fn setup_builtin_functions(env: &mut Environment) {
         
         crate::utils::verbose_log("BUILTIN", &format!("Running shell command via server (blocking): {}", command));
         
+        // Create a Command object for this shell command (blocking via G flag)
+        let cmd_obj = crate::command_server::shell_command(&command, "G");
+        
         // Use command server for consistent environment
-        match crate::command_server::execute_via_server(&command, None, None, true) {
+        match crate::command_server::execute_via_server(&cmd_obj) {
             Ok(response) => {
                 // Command server already logs stdout/stderr in verbose mode, no need to duplicate
                 

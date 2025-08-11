@@ -131,10 +131,9 @@ fn handle_hook_url(url: &str) {
     
     // For URL handling, execute directly via launcher (like -a action test) to avoid GUI context
     // This prevents the popup from showing when handling URLs
-    let launcher_cmd = format!("{} {}", top_command_obj.action, top_command_obj.arg);
-    utils::debug_log("URL_HANDLER", &format!("Launching via launcher: {}", launcher_cmd));
+    utils::debug_log("URL_HANDLER", &format!("Launching via launcher: {} {}", top_command_obj.action, top_command_obj.arg));
     
-    match execute_via_server(&launcher_cmd, None, None, false) {
+    match execute_via_server(&top_command_obj) {
         Ok(response) => {
             if response.success {
                 utils::debug_log("URL_HANDLER", "Command executed successfully via server");
@@ -184,20 +183,32 @@ fn run_exec_command(args: &[String]) {
     
     println!("Executing command function: {}", command);
     
-    // Use server-based execution for consistency
-    match execute_via_server(command, None, None, false) {
-        Ok(response) => {
-            if response.success {
-                println!("Command completed successfully");
-            } else {
-                println!("Command failed: {}", response.stderr);
+    // Load system data to find the actual command
+    let sys_data = crate::core::sys_data::get_sys_data();
+    
+    // Find the command by name (case-insensitive)
+    let matching_cmd = sys_data.commands.iter()
+        .find(|cmd| cmd.command.to_lowercase() == command.to_lowercase());
+    
+    if let Some(cmd) = matching_cmd {
+        // Execute the actual Command object via server
+        match execute_via_server(&cmd) {
+            Ok(response) => {
+                if response.success {
+                    println!("Command completed successfully");
+                } else {
+                    println!("Command failed: {}", response.stderr);
+                    std::process::exit(1);
+                }
+            },
+            Err(e) => {
+                utils::log_error(&format!("Server communication failed: {}", e));
                 std::process::exit(1);
             }
-        },
-        Err(e) => {
-            utils::log_error(&format!("Server communication failed: {}", e));
-            std::process::exit(1);
         }
+    } else {
+        eprintln!("Command '{}' not found", command);
+        std::process::exit(1);
     }
 }
 
@@ -235,8 +246,7 @@ fn run_execute_top_match(args: &[String]) {
     }
     
     // Use server-based execution for consistent environment
-    let launcher_cmd = format!("{} {}", top_command_obj.action, top_command_obj.arg);
-    match execute_via_server(&launcher_cmd, None, None, false) {
+    match execute_via_server(&top_command_obj) {
         Ok(response) => {
             if response.success {
                 println!("Command completed successfully");
@@ -251,23 +261,112 @@ fn run_execute_top_match(args: &[String]) {
 }
 
 fn run_test_action(args: &[String]) {
-    if args.len() < 4 {
-        eprintln!("Usage: {} -a, --action <action> <arg>", args[0]);
+    if args.len() < 3 {
+        eprintln!("Usage: {} -a, --action <action_name> [--arg <value>] [--input <value>] [--param key=value]...", args[0]);
+        eprintln!("Examples:");
+        eprintln!("  {} -a open_url --arg https://github.com", args[0]);
+        eprintln!("  {} -a template --input \"My Note\" --param action=markdown", args[0]);
+        eprintln!("  {} -a popup --param popup_action=navigate --param dx=0 --param dy=1", args[0]);
         std::process::exit(1);
     }
     
-    let action = &args[2];
-    let arg = &args[3];
-    let command_line = format!("{} {}", action, arg);
+    let action_name = &args[2];
+    
+    // Parse additional parameters
+    let mut arg_value = String::new();
+    let mut input_value = String::new();
+    let mut extra_params = std::collections::HashMap::new();
+    
+    let mut i = 3;
+    while i < args.len() {
+        match args[i].as_str() {
+            "--arg" => {
+                if i + 1 < args.len() {
+                    arg_value = args[i + 1].clone();
+                    i += 2;
+                } else {
+                    eprintln!("--arg requires a value");
+                    std::process::exit(1);
+                }
+            }
+            "--input" => {
+                if i + 1 < args.len() {
+                    input_value = args[i + 1].clone();
+                    i += 2;
+                } else {
+                    eprintln!("--input requires a value");
+                    std::process::exit(1);
+                }
+            }
+            "--param" => {
+                if i + 1 < args.len() {
+                    // Parse key=value
+                    if let Some((key, value)) = args[i + 1].split_once('=') {
+                        extra_params.insert(key.to_string(), serde_json::Value::String(value.to_string()));
+                    } else {
+                        eprintln!("--param requires key=value format");
+                        std::process::exit(1);
+                    }
+                    i += 2;
+                } else {
+                    eprintln!("--param requires a value");
+                    std::process::exit(1);
+                }
+            }
+            _ => {
+                // For backward compatibility, treat as arg if no flag
+                if i == 3 && !args[i].starts_with("--") {
+                    arg_value = args[i].clone();
+                }
+                i += 1;
+            }
+        }
+    }
     
     // Visual separator for action testing
     utils::debug_log("", "=================================================================");
-    utils::debug_log("USER INPUT", &format!("ACTION: '{}' ARG: '{}'", action, arg));
+    utils::debug_log("USER INPUT", &format!("ACTION: '{}' ARG: '{}' INPUT: '{}'", action_name, arg_value, input_value));
     
-    println!("Testing action '{}' with arg '{}': {}", action, arg, command_line);
+    // Try to execute as a unified action first
+    let config = crate::core::sys_data::get_config();
+    if let Some(actions) = &config.actions {
+        if let Some(action) = actions.get(action_name) {
+            println!("Testing unified action '{}' (type: {})", action_name, action.action_type);
+            
+            // Create action context
+            let mut context = crate::core::unified_actions::ActionContext::new(input_value);
+            if !arg_value.is_empty() {
+                context = context.with_arg(arg_value);
+            }
+            
+            // Add extra parameters to context
+            for (key, value) in extra_params {
+                if let serde_json::Value::String(s) = value {
+                    context.add_variable(key, s);
+                }
+            }
+            
+            // Execute the action
+            match crate::core::unified_actions::execute_action(action, &context) {
+                Ok(result) => {
+                    println!("Action completed successfully: {}", result);
+                }
+                Err(e) => {
+                    println!("Action failed: {}", e);
+                    std::process::exit(1);
+                }
+            }
+            return;
+        }
+    }
+    
+    // Fall back to legacy action testing (for backward compatibility)
+    let command_line = format!("{} {}", action_name, arg_value);
+    println!("Testing legacy action '{}' with arg '{}': {}", action_name, arg_value, command_line);
     
     // Use server-based execution for testing actions
-    match execute_via_server(&command_line, None, None, false) {
+    let cmd_obj = crate::command_server::make_command(&action_name, &arg_value);
+    match execute_via_server(&cmd_obj) {
         Ok(response) => {
             if response.success {
                 println!("Action completed successfully");
@@ -1173,7 +1272,16 @@ fn run_execute_launcher_command(args: &[String]) {
     utils::detailed_log("LAUNCHER_CMD", &format!("Executing in GUI session: '{}'", launcher_command));
     
     // Execute the launcher command via server (consistent with all execution)
-    match execute_via_server(launcher_command, None, None, false) {
+    // Parse the launcher command to create a Command object
+    let parts: Vec<&str> = launcher_command.split_whitespace().collect();
+    let (action, arg) = if parts.len() > 1 {
+        (parts[0], parts[1..].join(" "))
+    } else {
+        (launcher_command.as_str(), String::new())
+    };
+    
+    let cmd_obj = crate::command_server::make_command(action, &arg);
+    match execute_via_server(&cmd_obj) {
         Ok(response) => {
             if response.success {
                 utils::detailed_log("LAUNCHER_CMD", "Command completed successfully");
@@ -1208,7 +1316,38 @@ fn run_rebuild_command() {
     println!("🏗️  HookAnchor Rebuild - Full Reset");
     println!("===================================");
     
-    println!("\n🔄 Step 1/2: Restarting command server...");
+    // Step 1: Build the release binary
+    println!("\n🔨 Step 1/3: Building release binary...");
+    let build_start = std::time::Instant::now();
+    
+    // Run cargo build --release
+    let build_output = std::process::Command::new("cargo")
+        .arg("build")
+        .arg("--release")
+        .current_dir("/Users/oblinger/ob/proj/HookAnchor")
+        .output();
+    
+    match build_output {
+        Ok(output) => {
+            if output.status.success() {
+                let build_time = build_start.elapsed();
+                println!("  ✅ Build successful ({:.1}s)", build_time.as_secs_f32());
+            } else {
+                let stderr = String::from_utf8_lossy(&output.stderr);
+                println!("  ❌ Build failed:");
+                println!("{}", stderr);
+                println!("\n⚠️  Cannot proceed with rebuild due to compilation errors");
+                std::process::exit(1);
+            }
+        }
+        Err(e) => {
+            println!("  ❌ Failed to run cargo build: {}", e);
+            println!("\n⚠️  Make sure cargo is installed and in PATH");
+            std::process::exit(1);
+        }
+    }
+    
+    println!("\n🔄 Step 2/3: Restarting command server...");
     
     // Kill existing server
     match crate::command_server_management::kill_existing_server() {
@@ -1240,7 +1379,7 @@ fn run_rebuild_command() {
         }
     }
     
-    println!("\n📁 Step 2/2: Rescanning filesystem...");
+    println!("\n📁 Step 3/3: Rescanning filesystem...");
     
     // Run filesystem rescan
     run_rescan_command();
