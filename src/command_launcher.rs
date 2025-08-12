@@ -342,7 +342,7 @@ mod tests {
                 js_timeout_ms: Some(5000),
             },
         };
-        assert_eq!(config.settings.timeout_ms, Some(5000));
+        assert_eq!(config.settings.js_timeout_ms, Some(5000));
     }
 
     #[test]
@@ -380,6 +380,6 @@ mod tests {
         let config = load_config().expect("Should load config");
         
         // Test basic structure
-        assert!(config.settings.timeout_ms.is_some());
+        assert!(config.settings.js_timeout_ms.is_some());
     }
 }

@@ -71,6 +71,28 @@ impl Keystroke {
                 // Special cases for shifted punctuation characters
                 // Some keyboards/systems send different key codes for these
                 // egui only has certain special key variants available
+                
+                // First check if the incoming key is one of the special variants
+                // and map it back to the base key + shift
+                if modifiers_match {
+                    // If we receive Questionmark, check if we're looking for Slash+Shift
+                    if *key == egui::Key::Questionmark && self.key == egui::Key::Slash && self.modifiers.shift {
+                        return true;
+                    }
+                    // If we receive Plus, check if we're looking for Equals+Shift
+                    if *key == egui::Key::Plus && self.key == egui::Key::Equals && self.modifiers.shift {
+                        return true;
+                    }
+                    // If we receive Pipe, check if we're looking for Backslash+Shift
+                    if *key == egui::Key::Pipe && self.key == egui::Key::Backslash && self.modifiers.shift {
+                        return true;
+                    }
+                    // If we receive Colon, check if we're looking for Semicolon+Shift
+                    if *key == egui::Key::Colon && self.key == egui::Key::Semicolon && self.modifiers.shift {
+                        return true;
+                    }
+                }
+                
                 if self.modifiers.shift && modifiers_match {
                     match self.key {
                         // Plus key: can come through as Plus or Equals+Shift
@@ -535,10 +557,35 @@ impl KeyRegistry {
                 _ => {}
             }
             
+            // Debug: log how many handlers we're checking
+            if let egui::Event::Key { key, pressed, .. } = event {
+                if *pressed && *key == egui::Key::Escape {
+                    crate::utils::log(&format!("Checking {} handlers for Escape key", self.handlers.len()));
+                    for (ks, h) in &self.handlers {
+                        crate::utils::log(&format!("  Handler: {:?} -> {}", ks, h.description()));
+                    }
+                }
+            }
+            
             // Try all matching handlers until one succeeds
             for (keystroke, handler) in &self.handlers {
+                // Debug logging for Enter key
+                if let egui::Event::Key { key, pressed, .. } = event {
+                    if *key == egui::Key::Enter && *pressed {
+                        crate::utils::log(&format!("🔵 ENTER KEY: Checking handler: {} (keystroke: {:?})", 
+                            handler.description(), keystroke));
+                    }
+                }
+                
                 if keystroke.matches_event(event) {
-                    crate::utils::detailed_log("KEY_HANDLER", &format!("Handler matched: {}", handler.description()));
+                    crate::utils::log(&format!("KEY_HANDLER: Handler matched: {}", handler.description()));
+                    
+                    // Special logging for Enter key
+                    if let egui::Event::Key { key, .. } = event {
+                        if *key == egui::Key::Enter {
+                            crate::utils::log(&format!("🔵 ENTER KEY: Handler '{}' matched for Enter key!", handler.description()));
+                        }
+                    }
                     
                     let mut context = KeyHandlerContext {
                         event,
@@ -548,7 +595,15 @@ impl KeyRegistry {
                     
                     match handler.execute(&mut context) {
                         KeyHandlerResult::Handled => {
-                            crate::utils::detailed_log("KEY_HANDLER", &format!("Handler HANDLED: {}", handler.description()));
+                            crate::utils::log(&format!("KEY_HANDLER: Handler HANDLED: {}", handler.description()));
+                            
+                            // Special logging for Enter key
+                            if let egui::Event::Key { key, .. } = event {
+                                if *key == egui::Key::Enter {
+                                    crate::utils::log("🔵 ENTER KEY: ✅ Handler successfully executed for Enter key!");
+                                }
+                            }
+                            
                             handled = true;
                             break; // Exit inner loop for this event
                         }
@@ -810,6 +865,7 @@ impl TextHandler for ShowKeysTextHandler {
 
 /// Factory function to create a fully configured key registry
 pub fn create_default_key_registry(config: &crate::Config) -> KeyRegistry {
+    crate::utils::log("KEY_REGISTRY: Creating default key registry");
     let mut registry = KeyRegistry::new();
     
     // Register keybinding-based handlers
@@ -853,13 +909,68 @@ pub fn create_default_key_registry(config: &crate::Config) -> KeyRegistry {
                 // Parse the key string into a keystroke
                 if let Ok(keystroke) = Keystroke::from_key_string(key_str) {
                     actions_with_keys += 1;
-                    crate::utils::log(&format!("  Action '{}': key={} -> keystroke={:?}", 
+                    // Only log in detailed mode
+                    crate::utils::detailed_log("KEY_REGISTRY", &format!("  Action '{}': key={} -> keystroke={:?}", 
                         action_name, key_str, keystroke));
                     
                     // For template actions, use TemplateHandler
                     if action.action_type == "template" {
                         let handler = Box::new(TemplateHandler::new(action_name.clone()));
                         registry.register_keystroke(keystroke, handler);
+                    } else if action.action_type == "popup" {
+                        // Handle popup actions (navigation, exit, etc.)
+                        if let Some(popup_action) = action.params.get("popup_action")
+                            .and_then(|v| v.as_str()) {
+                            let handler: Box<dyn KeyHandler> = match popup_action {
+                                "navigate" => {
+                                    // Check dx and dy parameters to determine direction
+                                    let dx = action.params.get("dx")
+                                        .and_then(|v| v.as_i64())
+                                        .unwrap_or(0);
+                                    let dy = action.params.get("dy")
+                                        .and_then(|v| v.as_i64())
+                                        .unwrap_or(0);
+                                    
+                                    let dir_name = if dy < 0 {
+                                        "Up"
+                                    } else if dy > 0 {
+                                        "Down"
+                                    } else if dx < 0 {
+                                        "Left"
+                                    } else if dx > 0 {
+                                        "Right"
+                                    } else {
+                                        continue; // No direction specified
+                                    };
+                                    
+                                    crate::utils::log(&format!("  Registering navigation handler: {} (dx={}, dy={})", 
+                                        dir_name, dx, dy));
+                                    
+                                    if dy < 0 {
+                                        Box::new(NavigationHandler::new(NavigationDirection::Up))
+                                    } else if dy > 0 {
+                                        Box::new(NavigationHandler::new(NavigationDirection::Down))
+                                    } else if dx < 0 {
+                                        Box::new(NavigationHandler::new(NavigationDirection::Left))
+                                    } else if dx > 0 {
+                                        Box::new(NavigationHandler::new(NavigationDirection::Right))
+                                    } else {
+                                        continue; // No direction specified
+                                    }
+                                }
+                                "exit" => Box::new(ActionHandler::new(Action::ExitApp)),
+                                "execute_command" => Box::new(ActionHandler::new(Action::ExecuteCommand)),
+                                "force_rebuild" => Box::new(ActionHandler::new(Action::ForceRebuild)),
+                                "show_folder" => Box::new(ActionHandler::new(Action::ShowFolder)),
+                                "show_keys" => Box::new(ActionHandler::new(Action::ShowKeys)),
+                                "edit_active_command" => Box::new(ActionHandler::new(Action::EditActiveCommand)),
+                                "open_editor" => Box::new(ActionHandler::new(Action::OpenEditor)),
+                                "add_alias" => Box::new(ActionHandler::new(Action::AddAlias)),
+                                "tmux_activate" => Box::new(ActionHandler::new(Action::TmuxActivate)),
+                                _ => continue, // Skip unknown popup actions
+                            };
+                            registry.register_keystroke(keystroke, handler);
+                        }
                     }
                     // Add handlers for other action types as needed
                 }

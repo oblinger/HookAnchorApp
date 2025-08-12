@@ -143,6 +143,41 @@ pub fn setup_builtin_functions(env: &mut Environment) {
         Ok(())
     }));
     
+    // folder function - alias for open_folder (for backward compatibility)
+    env.functions.insert("folder".to_string(), Box::new(|env, args| {
+        // When launcher calls "folder /path", it becomes {fn: "folder", arg: "/path"}
+        // We need to map this to {fn: "open_folder", path: "/path"}
+        let path = get_substituted_string_arg(args, "arg", env)  // Try "arg" first (from launcher)
+            .or_else(|| get_substituted_string_arg(args, "path", env))  // Fall back to "path"
+            .ok_or_else(|| EvalError::InvalidAction("Missing 'arg' or 'path' argument".to_string()))?;
+        
+        detailed_log("BUILTIN", &format!("Opening folder (via folder alias): {}", path));
+        
+        let folder_start_time = std::time::Instant::now();
+        detailed_log("BUILTIN", "About to call open_folder (non-blocking)");
+        let output_result = open_folder(&path);
+        let folder_duration = folder_start_time.elapsed();
+        detailed_log("BUILTIN", &format!("open_folder completed in {:?}", folder_duration));
+        
+        match output_result {
+            Ok(output) => {
+                if !output.status.success() {
+                    let stderr = String::from_utf8_lossy(&output.stderr);
+                    return Err(EvalError::ExecutionError(format!("Folder open failed: {}", stderr)));
+                }
+            }
+            Err(e) => {
+                if e.to_string().contains("NON_BLOCKING_SUCCESS") {
+                    detailed_log("BUILTIN", "Non-blocking folder open successful");
+                } else {
+                    return Err(EvalError::ExecutionError(format!("Failed to open folder '{}': {}", path, e)));
+                }
+            }
+        }
+        
+        Ok(())
+    }));
+    
     // cmd function - alias for shell, uses command server for consistent environment
     // This handles the "cmd" action from commands.txt
     env.functions.insert("cmd".to_string(), Box::new(|env, args| {

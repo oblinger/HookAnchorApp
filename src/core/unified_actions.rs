@@ -464,7 +464,7 @@ pub fn execute_action(
         "open_app" => execute_open_app_action(&expanded_params),
         "open_folder" => execute_open_folder_action(&expanded_params),
         "open_file" => execute_open_file_action(&expanded_params),
-        "shell" => execute_shell_action(&expanded_params),
+        "shell" | "cmd" => execute_shell_action(&expanded_params),
         "javascript" => execute_javascript_action(&expanded_params),
         "obsidian" => execute_obsidian_action(&expanded_params),
         "1password" => execute_1password_action(&expanded_params),
@@ -646,24 +646,35 @@ fn execute_open_file_action(
 fn execute_shell_action(
     params: &HashMap<String, String>,
 ) -> Result<String, Box<dyn std::error::Error>> {
+    // For "cmd" actions from commands.txt, the command is in "arg"
+    // For "shell" actions, it's in "command"
     let command = params.get("command")
-        .ok_or("shell action requires command parameter")?;
+        .or_else(|| params.get("arg"))
+        .ok_or("shell/cmd action requires command or arg parameter")?;
     
     let windowed = params.get("windowed")
         .map(|s| s == "true")
         .unwrap_or(false);
     
-    debug_log("ACTION", &format!("Executing shell command: {} (windowed: {})", command, windowed));
+    // Check for GUI flag (commands that start with "G; ")
+    let (actual_command, is_gui) = if command.starts_with("G; ") {
+        (&command[3..], true)
+    } else {
+        (command.as_str(), false)
+    };
+    
+    debug_log("ACTION", &format!("Executing shell command: {} (windowed: {}, gui: {})", actual_command, windowed, is_gui));
     
     if windowed {
         // Open in terminal window
         let script = format!(
             "tell application \"Terminal\" to do script \"{}\"",
-            command.replace("\"", "\\\"")
+            actual_command.replace("\"", "\\\"")
         );
         crate::utils::shell_simple(&format!("osascript -e '{}'", script), false)?;
     } else {
-        crate::utils::shell_simple(command, false)?;
+        // Use blocking execution for GUI commands (G flag)
+        crate::utils::shell_simple(actual_command, is_gui)?;
     }
     
     Ok(format!("Executed shell command"))
@@ -675,29 +686,32 @@ fn execute_javascript_action(
     let function_name = params.get("code")
         .ok_or("javascript action requires code parameter")?;
     
-    debug_log("ACTION", &format!("Looking up JavaScript function: {}", function_name));
+    debug_log("ACTION", &format!("Executing JavaScript function: {}", function_name));
     
-    // Get the JavaScript code from the functions section
-    let config = crate::core::sys_data::get_config();
-    let js_code = config.functions
-        .as_ref()
-        .and_then(|funcs| funcs.get(function_name))
-        .and_then(|v| v.as_str())
-        .ok_or_else(|| format!("JavaScript function '{}' not found in config", function_name))?;
+    // Get parameters that will be passed to the JavaScript function
+    let arg = params.get("arg").unwrap_or(&String::new()).clone();
+    let input = params.get("input").unwrap_or(&String::new()).clone();
     
-    debug_log("ACTION", &format!("Found JavaScript function, length: {} chars", js_code.len()));
+    // Simply call the function that's already loaded in the JavaScript runtime
+    // The function is registered as a global and expects the arguments directly
+    let js_code = format!(r#"
+        // Check if function exists
+        if (typeof {func} === 'undefined') {{
+            throw new Error('JavaScript function "{func}" not found. Make sure it is exported from config.js');
+        }}
+        
+        // Call the function with simple arguments
+        // The wrapper in js_runtime.rs will create the context object
+        {func}('{arg}', '{input}', null, null, null);
+    "#, 
+        func = function_name,
+        arg = arg.replace("\\", "\\\\").replace("'", "\\'").replace("\n", "\\n").replace("\"", "\\\""),
+        input = input.replace("\\", "\\\\").replace("'", "\\'").replace("\n", "\\n").replace("\"", "\\\"")
+    );
     
-    // Replace template variables in the JavaScript code
-    let mut expanded_code = js_code.to_string();
-    for (key, value) in params.iter() {
-        let placeholder = format!("{{{{{}}}}}", key);
-        debug_log("ACTION", &format!("Replacing {} with '{}'", placeholder, value));
-        expanded_code = expanded_code.replace(&placeholder, value);
-    }
+    debug_log("ACTION", &format!("Calling JavaScript: {}", js_code));
     
-    debug_log("ACTION", &format!("Executing JavaScript with {} params, code length: {} chars", params.len(), expanded_code.len()));
-    
-    crate::js_runtime::execute_business_logic(&expanded_code)
+    crate::js_runtime::execute_business_logic(&js_code)
 }
 
 fn execute_obsidian_action(

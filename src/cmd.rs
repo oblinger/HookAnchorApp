@@ -981,7 +981,7 @@ fn run_rescan_command() {
     let config = crate::core::sys_data::get_config();
     
     // Get markdown roots
-    let _markdown_roots = match &config.markdown_roots {
+    let _markdown_roots = match &config.popup_settings.markdown_roots {
         Some(roots) => roots.clone(),
         None => {
             eprintln!("❌ No markdown roots configured in config file");

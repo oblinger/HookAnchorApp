@@ -253,10 +253,6 @@ impl AnchorSelector {
     
     /// Exit or hide the application based on background mode setting
     fn exit_or_hide(&mut self, ctx: &egui::Context) {
-        crate::utils::log("===== EXIT_OR_HIDE CALLED =====");
-        crate::utils::log(&format!("[EXIT_OR_HIDE] Current state: is_hidden={}, should_exit={}", 
-            self.is_hidden, self.should_exit));
-        
         // Prevent multiple calls in the same frame
         static mut HIDING: bool = false;
         unsafe {
@@ -297,9 +293,6 @@ impl AnchorSelector {
             });
             crate::utils::log(&format!("[EXIT_OR_HIDE] {}", viewport_info));
             crate::utils::log("[EXIT_OR_HIDE] Window hidden via viewport commands");
-            crate::utils::log(&format!("[EXIT_OR_HIDE] Final state: is_hidden={}, should_exit={}", 
-                self.is_hidden, self.should_exit));
-            
             // Reset the flag after a delay to allow for future hide operations
             std::thread::spawn(|| {
                 std::thread::sleep(std::time::Duration::from_millis(100));
@@ -308,7 +301,6 @@ impl AnchorSelector {
                     crate::utils::log("[EXIT_OR_HIDE] HIDING flag reset to false");
                 }
             });
-            crate::utils::log("===== EXIT_OR_HIDE COMPLETE =====");
         } else {
             // Direct mode - exit the application
             crate::utils::log("EXIT: Exiting application (direct mode)");
@@ -365,6 +357,7 @@ impl AnchorSelector {
     fn handle_popup_keys_with_events(&mut self, ctx: &egui::Context, events_to_process: Vec<egui::Event>) -> bool {
         // If still loading, only handle escape key
         if self.loading_state != LoadingState::Loaded {
+            crate::utils::detailed_log("KEY_REGISTRY", &format!("Cannot process keys, loading_state = {:?}", self.loading_state));
             return false; // No keys processed during loading
         }
         
@@ -433,10 +426,7 @@ impl PopupInterface for AnchorSelector {
     }
     
     fn execute_selected_command(&mut self) {
-        crate::utils::log("===== EXECUTE_SELECTED_COMMAND CALLED =====");
-        crate::utils::log(&format!("[EXECUTE] Current state: is_hidden={}, should_exit={}", 
-            self.is_hidden, self.should_exit));
-        // Call the real implementation at line 456
+        // Call the real implementation
         self.execute_selected_command_impl();
     }
     
@@ -523,8 +513,6 @@ impl AnchorSelector {
     
     /// Execute the currently selected command
     fn execute_selected_command_impl(&mut self) {
-        crate::utils::log("[EXECUTE_IMPL] Starting command execution");
-        // Log what the user actually typed with visual separator
         
         if !self.filtered_commands().is_empty() {
             let (display_commands, _is_submenu, _menu_prefix, _inside_count) = self.get_display_commands();
@@ -536,25 +524,21 @@ impl AnchorSelector {
                 if !PopupState::is_separator_command(selected_cmd) {
                     // Save the last executed command for add_alias functionality
                     use crate::core::state::save_last_executed_command;
-                    crate::utils::detailed_log("STATE_SAVE", &format!("POPUP: Attempting to save last executed command: '{}'", selected_cmd.command));
-                    match save_last_executed_command(&selected_cmd.command) {
-                        Ok(_) => crate::utils::detailed_log("STATE_SAVE", "POPUP: Successfully saved last executed command"),
-                        Err(e) => crate::utils::detailed_log("STATE_SAVE", &format!("POPUP: Failed to save last executed command: {}", e)),
-                    }
+                    let _ = save_last_executed_command(&selected_cmd.command);
                     
-                    // execute_via_server now returns void and handles all retries internally
                     execute_via_server(&selected_cmd);
-                    // Note: CommandServer::execute_command handles all execution via server internally
-                    // and includes proper state saving, alias resolution, etc.
+                    
                     // Request exit or hide through the proper channel
-                    crate::utils::log(&format!("[EXECUTE_IMPL] Setting should_exit=true (was {})", self.should_exit));
                     self.should_exit = true;
-                    crate::utils::log(&format!("[EXECUTE_IMPL] After execution: is_hidden={}, should_exit={}", 
-                        self.is_hidden, self.should_exit));
+                } else {
+                    // Command is a separator, not executing
                 }
+            } else {
+                // Index out of bounds
             }
+        } else {
+            // No filtered commands available
         }
-        crate::utils::log("===== EXECUTE_SELECTED_COMMAND COMPLETE =====");
     }
     
     /// Open the command editor
@@ -660,67 +644,65 @@ impl AnchorSelector {
         key_lines.push("#Available keyboard shortcuts:".to_string());
         key_lines.push("".to_string()); // Empty line for spacing
         
-        // Define the key bindings and their descriptions
-        let key_descriptions = vec![
-            ("exit_app", "Exit the application"),
-            ("navigate_down", "Move selection down"),
-            ("navigate_up", "Move selection up"),
-            ("navigate_left", "Move selection left"),
-            ("navigate_right", "Move selection right"),
-            ("execute_command", "Execute selected command"),
-            ("force_rebuild", "Force rebuild (restart server + rescan)"),
-            ("show_folder", "Launch first folder matching search"),
-            ("start_grabber", "Start grabber countdown"),
-            ("open_editor", "Open command editor"),
-            ("add_alias", "Add alias to last executed command"),
-            ("edit_active_command", "Edit currently selected command"),
-            ("show_keys", "Show this help"),
-        ];
-        
         // Collect all key bindings with proper formatting
         let mut formatted_lines = vec![];
         
-        // Get configured keybindings
-        if let Some(ref keybindings) = config.keybindings {
-            for (action, description) in key_descriptions {
-                if let Some(key) = keybindings.get(action) {
-                    let display_key = if key.len() == 1 {
-                        // Single character keys - show as-is
-                        key.clone()
-                    } else {
-                        // Word keys - keep as-is
-                        key.clone()
-                    };
-                    formatted_lines.push((display_key, description.to_string()));
+        // Get actions with keyboard bindings from the unified actions system
+        if let Some(ref actions) = config.actions {
+            // Separate actions by type for organized display
+            let mut popup_actions = vec![];
+            let mut template_actions = vec![];
+            let mut other_actions = vec![];
+            
+            // Sort actions by key for consistent display
+            for (name, action) in actions {
+                if let Some(ref key) = action.key {
+                    let desc = action.description.as_ref()
+                        .map(|s| s.clone())
+                        .unwrap_or_else(|| name.clone());
+                    
+                    let entry = (key.clone(), desc);
+                    
+                    match action.action_type.as_str() {
+                        "popup" => popup_actions.push(entry),
+                        "template" => template_actions.push(entry),
+                        _ => other_actions.push(entry),
+                    }
                 }
             }
-        }
-        
-        // Add template keys if any
-        if let Some(ref templates) = config.templates {
-            let mut template_keys: Vec<_> = templates.iter()
-                .filter_map(|(name, template)| {
-                    template.key.as_ref().map(|key| {
-                        let desc = template.description.as_ref()
-                            .map(|s| s.clone())
-                            .unwrap_or_else(|| format!("Template: {}", name));
-                        (key.clone(), desc)
-                    })
-                })
-                .collect();
             
-            if !template_keys.is_empty() {
-                // Add section separator
+            // Sort each group
+            popup_actions.sort_by(|a, b| a.0.cmp(&b.0));
+            template_actions.sort_by(|a, b| a.0.cmp(&b.0));
+            other_actions.sort_by(|a, b| a.0.cmp(&b.0));
+            
+            // Add popup actions
+            if !popup_actions.is_empty() {
+                formatted_lines.push(("Navigation & Control:".to_string(), "".to_string()));
+                for entry in popup_actions {
+                    formatted_lines.push(entry);
+                }
+            }
+            
+            // Add template actions
+            if !template_actions.is_empty() {
                 if !formatted_lines.is_empty() {
                     formatted_lines.push(("".to_string(), "".to_string())); // Empty line
                 }
-                formatted_lines.push(("Templates:".to_string(), "".to_string())); // Section header
-                
-                // Sort template keys for consistent display
-                template_keys.sort_by(|a, b| a.0.cmp(&b.0));
-                
-                for (key, desc) in template_keys {
-                    formatted_lines.push((key, desc));
+                formatted_lines.push(("Templates:".to_string(), "".to_string()));
+                for entry in template_actions {
+                    formatted_lines.push(entry);
+                }
+            }
+            
+            // Add other actions
+            if !other_actions.is_empty() {
+                if !formatted_lines.is_empty() {
+                    formatted_lines.push(("".to_string(), "".to_string())); // Empty line
+                }
+                formatted_lines.push(("Other Actions:".to_string(), "".to_string()));
+                for entry in other_actions {
+                    formatted_lines.push(entry);
                 }
             }
         }
@@ -1733,13 +1715,15 @@ impl AnchorSelector {
         };
         
         if let Some(path) = folder_path {
-            utils::debug_log("SHOW_FOLDER", &format!("Attempting to launch folder: '{}'", path));
+            utils::log(&format!("SHOW_FOLDER: Attempting to launch folder: '{}'", path));
             
             // Launch the folder (popup stays open)
             let folder_cmd = crate::command_server::make_command("folder", &path);
+            utils::log(&format!("SHOW_FOLDER: Created command with action='{}', arg='{}'", 
+                folder_cmd.action, folder_cmd.arg));
             // execute_via_server now returns void and handles all retries internally
             execute_via_server(&folder_cmd);
-            utils::debug_log("SHOW_FOLDER", &format!("Launched folder: '{}'", path));
+            utils::log(&format!("SHOW_FOLDER: Sent folder command to server"));
         } else {
             utils::debug_log("SHOW_FOLDER", &format!("No folder found for selected command: '{}'", cmd.command));
         }
@@ -1912,6 +1896,7 @@ impl eframe::App for AnchorSelector {
         
         // Start deferred loading on second frame (after UI is shown)
         if self.frame_count == 2 && self.loading_state == LoadingState::NotLoaded {
+            crate::utils::log("POPUP: Starting deferred loading on frame 2");
             self.start_deferred_loading();
             ctx.request_repaint(); // Ensure we update when loading completes
         }
@@ -2225,6 +2210,11 @@ impl eframe::App for AnchorSelector {
                 };
                 
                 // Use different text edit based on loading state
+                // Check for Enter key BEFORE creating the TextEdit widget
+                let enter_pressed = ctx.input(|i| i.key_pressed(egui::Key::Enter));
+                if enter_pressed {
+                }
+                
                 let response = {
                     // Temporarily modify style for more rounded text input corners
                     let mut style = ui.style().as_ref().clone();
@@ -2254,8 +2244,13 @@ impl eframe::App for AnchorSelector {
                     }
                 };
                 
-                // Always update search when text field is changed
-                if response.changed() {
+                // Check if Enter was pressed (checked before TextEdit could consume it)
+                if enter_pressed && response.has_focus() && !self.filtered_commands().is_empty() {
+                    self.execute_selected_command();
+                    // Clear the Enter key from input to prevent double processing
+                    ctx.input_mut(|i| i.consume_key(egui::Modifiers::NONE, egui::Key::Enter));
+                } else if response.changed() {
+                    // Always update search when text field is changed
                     if self.loading_state == LoadingState::Loaded {
                         // Normal operation
                         // Check for alias replacement

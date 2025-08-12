@@ -12,16 +12,12 @@ use serde_yaml;
 /// Main configuration structure containing all application settings
 #[derive(Debug, Clone, Serialize, Deserialize)]
 pub struct Config {
-    /// Popup window settings
+    /// Popup window settings (includes scanner settings now)
     pub popup_settings: PopupSettings,
     /// Launcher behavior settings
     pub launcher_settings: Option<LauncherSettings>,
-    /// Scanner behavior settings
-    pub scanner_settings: Option<ScannerSettings>,
     /// Unified functions section (both simple and JavaScript)
     pub functions: Option<HashMap<String, serde_yaml::Value>>,
-    /// Markdown scanning roots
-    pub markdown_roots: Option<Vec<String>>,
     /// Grabber rules for capturing application context
     pub grabber_rules: Option<Vec<crate::grabber::GrabberRule>>,
     /// Key bindings for all actions (legacy)
@@ -61,6 +57,12 @@ pub struct PopupSettings {
     pub max_log_file_size: Option<u64>,
     /// Keep app running in background for instant popup (default: false)
     pub run_in_background: Option<bool>,
+    /// Markdown scanning roots - directories to scan for markdown files
+    pub markdown_roots: Option<Vec<String>>,
+    /// Path where orphan anchor files are created (default: ~/ob/kmr/SYS/Closet/Orphans)
+    pub orphans_path: Option<String>,
+    /// Directory patterns to skip during scanning (glob patterns)
+    pub skip_directory_patterns: Option<Vec<String>>,
 }
 
 /// Launcher settings section of the configuration file
@@ -89,33 +91,6 @@ impl Default for LauncherSettings {
     }
 }
 
-/// Scanner settings section of the configuration file
-#[derive(Debug, Clone, Serialize, Deserialize)]
-pub struct ScannerSettings {
-    /// Path where orphan anchor files are created (default: ~/ob/kmr/SYS/Closet/Orphans)
-    pub orphans_path: Option<String>,
-    /// Directory patterns to skip during scanning (glob patterns)
-    pub skip_directory_patterns: Option<Vec<String>>,
-}
-
-impl Default for ScannerSettings {
-    fn default() -> Self {
-        ScannerSettings {
-            orphans_path: Some("/Users/oblinger/ob/kmr/SYS/Closet/Orphans".to_string()),
-            skip_directory_patterns: Some(vec![
-                "node_modules".to_string(),
-                "target".to_string(),
-                "__pycache__".to_string(),
-                ".git".to_string(),
-                ".svn".to_string(),
-                "*[Tt]rash*".to_string(),
-                "*_TO_TRASH_*".to_string(),
-                "*.Trash*".to_string(),
-                "*[Rr]ecycle*".to_string(),
-            ]),
-        }
-    }
-}
 
 impl Default for PopupSettings {
     fn default() -> Self {
@@ -133,6 +108,19 @@ impl Default for PopupSettings {
             default_window_size: Some("600x400".to_string()),
             max_log_file_size: Some(1_000_000), // 1MB default
             run_in_background: Some(false), // Default to false for safety
+            markdown_roots: None,
+            orphans_path: Some("/Users/oblinger/ob/kmr/SYS/Closet/Orphans".to_string()),
+            skip_directory_patterns: Some(vec![
+                "node_modules".to_string(),
+                "target".to_string(),
+                "__pycache__".to_string(),
+                ".git".to_string(),
+                ".svn".to_string(),
+                "*[Tt]rash*".to_string(),
+                "*_TO_TRASH_*".to_string(),
+                "*.Trash*".to_string(),
+                "*[Rr]ecycle*".to_string(),
+            ]),
         }
     }
 }
@@ -142,9 +130,7 @@ impl Default for Config {
         Config {
             popup_settings: PopupSettings::default(),
             launcher_settings: Some(LauncherSettings::default()),
-            scanner_settings: Some(ScannerSettings::default()),
             functions: None,
-            markdown_roots: None,
             grabber_rules: None,
             keybindings: None,
             templates: None,
@@ -348,9 +334,22 @@ fn load_legacy_config(contents: &str) -> Result<Config, Box<dyn std::error::Erro
     let functions = yaml.get("functions")
         .and_then(|v| serde_yaml::from_value(v.clone()).ok());
     
-    // Extract markdown_roots if it exists
-    let markdown_roots = yaml.get("markdown_roots")
-        .and_then(|v| serde_yaml::from_value(v.clone()).ok());
+    // Handle legacy markdown_roots at top level - migrate to popup_settings
+    if let Some(roots) = yaml.get("markdown_roots")
+        .and_then(|v| serde_yaml::from_value::<Vec<String>>(v.clone()).ok()) {
+        popup_settings.markdown_roots = Some(roots);
+    }
+    
+    // Handle legacy scanner_settings - migrate to popup_settings
+    if let Some(scanner) = yaml.get("scanner_settings") {
+        if let Some(orphans_path) = scanner.get("orphans_path").and_then(|v| v.as_str()) {
+            popup_settings.orphans_path = Some(orphans_path.to_string());
+        }
+        if let Some(patterns) = scanner.get("skip_directory_patterns")
+            .and_then(|v| serde_yaml::from_value::<Vec<String>>(v.clone()).ok()) {
+            popup_settings.skip_directory_patterns = Some(patterns);
+        }
+    }
     
     // Extract launcher_settings if it exists
     let launcher_settings = yaml.get("launcher_settings")
@@ -358,10 +357,6 @@ fn load_legacy_config(contents: &str) -> Result<Config, Box<dyn std::error::Erro
     
     // Extract grabber_rules if it exists
     let grabber_rules = yaml.get("grabber_rules")
-        .and_then(|v| serde_yaml::from_value(v.clone()).ok());
-    
-    // Extract scanner_settings if it exists
-    let scanner_settings = yaml.get("scanner_settings")
         .and_then(|v| serde_yaml::from_value(v.clone()).ok());
     
     // Extract keybindings if it exists
@@ -392,9 +387,7 @@ fn load_legacy_config(contents: &str) -> Result<Config, Box<dyn std::error::Erro
     Ok(Config {
         popup_settings,
         launcher_settings,
-        scanner_settings,
         functions,
-        markdown_roots,
         grabber_rules,
         keybindings,
         templates,
@@ -407,9 +400,7 @@ pub(crate) fn create_default_config() -> Config {
     Config {
         popup_settings: PopupSettings::default(),
         launcher_settings: Some(LauncherSettings::default()),
-        scanner_settings: Some(ScannerSettings::default()),
         functions: Some(HashMap::new()),
-        markdown_roots: Some(vec![]),
         grabber_rules: Some(vec![]),
         keybindings: None,
         templates: None,

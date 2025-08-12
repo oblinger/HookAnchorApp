@@ -1063,9 +1063,8 @@ pub fn ensure_orphans_root_patch(
     }
     
     // Create orphans patch if it doesn't exist
-    let orphans_path = config.scanner_settings
+    let orphans_path = config.popup_settings.orphans_path
         .as_ref()
-        .and_then(|s| s.orphans_path.as_ref())
         .ok_or("orphans_path not configured")?;
     
     // Expand tilde in the path
@@ -1122,9 +1121,8 @@ pub fn create_orphan_anchors(
     orphan_patches: &[String], 
     commands: &mut Vec<Command>
 ) -> Result<usize, Box<dyn std::error::Error>> {
-    let orphans_path = config.scanner_settings
+    let orphans_path = config.popup_settings.orphans_path
         .as_ref()
-        .and_then(|s| s.orphans_path.as_ref())
         .ok_or("orphans_path not configured")?;
     
     crate::utils::debug_log("ORPHAN_CREATE", &format!("Creating orphan anchors for {} patches at path: {}", orphan_patches.len(), orphans_path));

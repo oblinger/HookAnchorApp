@@ -598,6 +598,100 @@ pub fn setup_config_access(ctx: &Ctx<'_>, config: &Config) -> Result<(), Box<dyn
 
 /// Setup user-defined functions from configuration
 fn setup_user_functions(ctx: &Ctx<'_>, config: &Config) -> Result<(), Box<dyn std::error::Error>> {
+    // First, load functions from config.js if it exists
+    let config_js_path = expand_tilde("~/.config/hookanchor/config.js");
+    crate::utils::detailed_log("JS", &format!("Looking for config.js at: {}", config_js_path));
+    if Path::new(&config_js_path).exists() {
+        match fs::read_to_string(&config_js_path) {
+            Ok(config_js_content) => {
+                crate::utils::detailed_log("JS", &format!("Loading config.js, {} bytes", config_js_content.len()));
+                // Create a wrapper that loads the module and exposes functions globally
+                let wrapper = format!(r#"
+                    (function() {{
+                        // Create a module.exports object
+                        const module = {{ exports: {{}} }};
+                        
+                        // Execute the config.js content
+                        {}
+                        
+                        // Create a context object with all builtins
+                        const createContext = function(arg, input, previous, grabbed, date) {{
+                            return {{
+                                arg: arg || '',
+                                input: input || '',
+                                previous: previous || {{ name: '', folder: '', patch: '' }},
+                                grabbed: grabbed || {{ action: '', arg: '' }},
+                                date: date || {{ YYYY: '', MM: '', DD: '' }},
+                                builtins: {{
+                                    log: log,
+                                    debug: debug,
+                                    error: error,
+                                    readFile: readFile,
+                                    writeFile: writeFile,
+                                    file_exists: fileExists,
+                                    isDirectory: isDirectory,
+                                    listFiles: listFiles,
+                                    joinPath: joinPath,
+                                    dirname: dirname,
+                                    basename: basename,
+                                    expandHome: expandHome,
+                                    getExtension: getExtension,
+                                    testRegex: testRegex,
+                                    parseYaml: parseYaml,
+                                    getObsidianApp: getObsidianApp,
+                                    getObsidianVault: getObsidianVault,
+                                    getObsidianVaultPath: getObsidianVaultPath,
+                                    launch_app: launch_app,
+                                    open_folder: open_folder,
+                                    open_url: open_url,
+                                    shell: shell,
+                                    shell_sync: shell_sync,
+                                    shellWithExitCode: shellWithExitCode,
+                                    commandExists: commandExists,
+                                    change_directory: change_directory,
+                                    launch: launch,
+                                    activateApp: activateApp,
+                                    runAppleScript: runAppleScript,
+                                    spawnDetached: spawnDetached,
+                                    appIsRunning: appIsRunning,
+                                    encodeURIComponent: encodeURIComponent
+                                }}
+                            }};
+                        }};
+                        
+                        // Expose each function globally with a wrapper that creates the context
+                        let functionCount = 0;
+                        for (const [name, func] of Object.entries(module.exports)) {{
+                            if (typeof func === 'function') {{
+                                globalThis[name] = function(arg, input, previous, grabbed, date) {{
+                                    const ctx = createContext(arg, input, previous, grabbed, date);
+                                    return func(ctx);
+                                }};
+                                functionCount++;
+                                log('JS: Registered function: ' + name);
+                            }}
+                        }}
+                        log('JS: Total functions registered: ' + functionCount);
+                    }})();
+                "#, config_js_content);
+                
+                // Execute the wrapper to define all functions
+                match ctx.eval::<(), _>(wrapper.as_str()) {
+                    Ok(_) => {
+                        crate::utils::detailed_log("JS", "Successfully loaded functions from config.js");
+                    }
+                    Err(e) => {
+                        crate::utils::log_error(&format!("Failed to load functions from config.js: {}", e));
+                    }
+                }
+            }
+            Err(e) => {
+                crate::utils::detailed_log("JS", &format!("config.js not found or not readable: {}", e));
+            }
+        }
+    }
+    
+    // Then load any functions from YAML config (for backward compatibility)
     if let Some(functions) = &config.functions {
         for (function_name, function_value) in functions {
             // Check if it's a JavaScript function (string value)

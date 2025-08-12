@@ -42,7 +42,7 @@ pub fn file_scan_check(commands: Vec<Command>) -> Vec<Command> {
     
     // Performing filesystem scan
     // Perform filesystem scan
-    let _markdown_roots = match &sys_data.config.markdown_roots {
+    let _markdown_roots = match &sys_data.config.popup_settings.markdown_roots {
         Some(roots) => roots,
         None => {
             debug_log("SCANNER", "ERROR: No markdown_roots configured in config file");
@@ -99,7 +99,7 @@ pub fn scan(commands: Vec<Command>, sys_data: &crate::core::sys_data::SysData) -
 /// Top-level scan function with verbose output
 pub fn scan_verbose(commands: Vec<Command>, sys_data: &crate::core::sys_data::SysData, verbose: bool) -> Vec<Command> {
     let empty_vec = vec![];
-    let markdown_roots = sys_data.config.markdown_roots.as_ref().unwrap_or(&empty_vec);
+    let markdown_roots = sys_data.config.popup_settings.markdown_roots.as_ref().unwrap_or(&empty_vec);
     
     if verbose {
         println!("\n🔍 Starting filesystem scan...");
@@ -122,7 +122,7 @@ pub fn scan_verbose(commands: Vec<Command>, sys_data: &crate::core::sys_data::Sy
     // commands = scan_contacts(commands);
     
     // Process orphan merges after scanning files
-    if let Some(orphans_path_str) = &sys_data.config.scanner_settings.as_ref().and_then(|s| s.orphans_path.as_ref()) {
+    if let Some(orphans_path_str) = &sys_data.config.popup_settings.orphans_path {
         let expanded_orphans_path = expand_home(orphans_path_str);
         let orphans_path = std::path::Path::new(&expanded_orphans_path);
         
@@ -508,11 +508,8 @@ fn process_markdown_with_root(path: &Path, _vault_root: &Path, existing_commands
 /// Check if a directory should be skipped based on config patterns
 fn should_skip_directory(dir_name: &str, config: &Config) -> bool {
     // Get skip patterns from config
-    let skip_patterns = match &config.scanner_settings {
-        Some(settings) => match &settings.skip_directory_patterns {
-            Some(patterns) => patterns,
-            None => return false,
-        },
+    let skip_patterns = match &config.popup_settings.skip_directory_patterns {
+        Some(patterns) => patterns,
         None => return false,
     };
     
