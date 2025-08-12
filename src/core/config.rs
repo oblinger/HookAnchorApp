@@ -24,10 +24,12 @@ pub struct Config {
     pub markdown_roots: Option<Vec<String>>,
     /// Grabber rules for capturing application context
     pub grabber_rules: Option<Vec<crate::grabber::GrabberRule>>,
-    /// Key bindings for all actions
+    /// Key bindings for all actions (legacy)
     pub keybindings: Option<HashMap<String, String>>,
-    /// Templates for creating new commands
+    /// Templates for creating new commands (legacy - migrated to actions)
     pub templates: Option<HashMap<String, crate::core::template_creation::Template>>,
+    /// Unified actions section (new)
+    pub actions: Option<HashMap<String, crate::core::unified_actions::Action>>,
 }
 
 /// Popup settings section of the configuration file
@@ -146,6 +148,7 @@ impl Default for Config {
             grabber_rules: None,
             keybindings: None,
             templates: None,
+            actions: None,
         }
     }
 }
@@ -365,9 +368,26 @@ fn load_legacy_config(contents: &str) -> Result<Config, Box<dyn std::error::Erro
     let keybindings = yaml.get("keybindings")
         .and_then(|v| serde_yaml::from_value(v.clone()).ok());
     
-    // Extract templates if it exists
+    // Extract templates if it exists (legacy)
     let templates = yaml.get("templates")
         .and_then(|v| serde_yaml::from_value(v.clone()).ok());
+    
+    // Extract actions if it exists (new unified system)
+    let mut actions: Option<HashMap<String, crate::core::unified_actions::Action>> = 
+        yaml.get("actions")
+            .and_then(|v| serde_yaml::from_value(v.clone()).ok());
+    
+    // If we have templates but no actions, migrate templates to actions
+    if actions.is_none() && templates.is_some() {
+        actions = migrate_templates_to_actions(&templates);
+    }
+    
+    // If we have keybindings but no corresponding actions, migrate them
+    if let Some(ref mut action_map) = actions {
+        if let Some(ref kb) = keybindings {
+            migrate_keybindings_to_actions(kb, action_map);
+        }
+    }
     
     Ok(Config {
         popup_settings,
@@ -378,6 +398,7 @@ fn load_legacy_config(contents: &str) -> Result<Config, Box<dyn std::error::Erro
         grabber_rules,
         keybindings,
         templates,
+        actions,
     })
 }
 
@@ -392,6 +413,7 @@ pub(crate) fn create_default_config() -> Config {
         grabber_rules: Some(vec![]),
         keybindings: None,
         templates: None,
+        actions: None,
     }
 }
 
@@ -405,6 +427,118 @@ fn parse_window_size(size_str: &str) -> Option<(u32, u32)> {
         }
     }
     None
+}
+
+/// Migrate templates to unified actions
+fn migrate_templates_to_actions(
+    templates: &Option<HashMap<String, crate::core::template_creation::Template>>
+) -> Option<HashMap<String, crate::core::unified_actions::Action>> {
+    let templates = templates.as_ref()?;
+    let mut actions = HashMap::new();
+    
+    for (name, template) in templates {
+        let mut params = HashMap::new();
+        
+        // Core template fields
+        params.insert("name".to_string(), serde_json::Value::String(template.name.clone()));
+        params.insert("action".to_string(), serde_json::Value::String(template.action.clone()));
+        params.insert("arg".to_string(), serde_json::Value::String(template.arg.clone()));
+        params.insert("patch".to_string(), serde_json::Value::String(template.patch.clone()));
+        params.insert("flags".to_string(), serde_json::Value::String(template.flags.clone()));
+        
+        // Optional fields
+        if template.edit {
+            params.insert("edit".to_string(), serde_json::Value::Bool(true));
+        }
+        if let Some(ref file) = template.file {
+            params.insert("file".to_string(), serde_json::Value::String(file.clone()));
+        }
+        if let Some(ref contents) = template.contents {
+            params.insert("contents".to_string(), serde_json::Value::String(contents.clone()));
+        }
+        if let Some(grab) = template.grab {
+            params.insert("grab".to_string(), serde_json::Value::Number(grab.into()));
+        }
+        if template.validate_previous_folder {
+            params.insert("validate_previous_folder".to_string(), serde_json::Value::Bool(true));
+        }
+        if template.file_rescan {
+            params.insert("file_rescan".to_string(), serde_json::Value::Bool(true));
+        }
+        
+        let action = crate::core::unified_actions::Action {
+            action_type: "template".to_string(),
+            description: template.description.clone(),
+            key: template.key.clone(),
+            keystroke: None, // Will be computed later
+            params,
+        };
+        
+        actions.insert(name.clone(), action);
+    }
+    
+    Some(actions)
+}
+
+/// Migrate keybindings to popup actions
+fn migrate_keybindings_to_actions(
+    keybindings: &HashMap<String, String>,
+    actions: &mut HashMap<String, crate::core::unified_actions::Action>,
+) {
+    for (action_name, key) in keybindings {
+        // Skip if this action already exists (e.g., from templates)
+        if actions.contains_key(action_name) {
+            continue;
+        }
+        
+        // Create a popup action based on the keybinding name
+        let mut params = HashMap::new();
+        
+        let (action_type, popup_action) = match action_name.as_str() {
+            "exit_app" => ("popup", Some("exit")),
+            "navigate_down" => {
+                params.insert("dx".to_string(), serde_json::Value::Number(0.into()));
+                params.insert("dy".to_string(), serde_json::Value::Number(1.into()));
+                ("popup", Some("navigate"))
+            },
+            "navigate_up" => {
+                params.insert("dx".to_string(), serde_json::Value::Number(0.into()));
+                params.insert("dy".to_string(), serde_json::Value::Number((-1).into()));
+                ("popup", Some("navigate"))
+            },
+            "navigate_left" => {
+                params.insert("dx".to_string(), serde_json::Value::Number((-1).into()));
+                params.insert("dy".to_string(), serde_json::Value::Number(0.into()));
+                ("popup", Some("navigate"))
+            },
+            "navigate_right" => {
+                params.insert("dx".to_string(), serde_json::Value::Number(1.into()));
+                params.insert("dy".to_string(), serde_json::Value::Number(0.into()));
+                ("popup", Some("navigate"))
+            },
+            "execute_command" => ("popup", Some("execute")),
+            "force_rebuild" => ("popup", Some("rebuild")),
+            "show_folder" => ("popup", Some("show_folder")),
+            "open_editor" | "edit_active_command" => ("popup", Some("edit_command")),
+            "show_keys" => ("popup", Some("show_help")),
+            "tmux_activate" => ("tmux", None),
+            _ => continue, // Skip unknown keybindings
+        };
+        
+        if let Some(popup_action_name) = popup_action {
+            params.insert("popup_action".to_string(), serde_json::Value::String(popup_action_name.to_string()));
+        }
+        
+        let action = crate::core::unified_actions::Action {
+            action_type: action_type.to_string(),
+            description: Some(format!("Keyboard action: {}", action_name)),
+            key: Some(key.clone()),
+            keystroke: None, // Will be computed later
+            params,
+        };
+        
+        actions.insert(action_name.clone(), action);
+    }
 }
 
 impl PopupSettings {

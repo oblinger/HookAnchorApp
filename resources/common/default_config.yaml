@@ -4,6 +4,11 @@
 # Personal paths have been replaced with generic defaults suitable for new users.
 # 
 # Copy this to ~/.config/hookanchor/config.yaml and customize as needed.
+#
+# UNIFIED ACTIONS SYSTEM:
+# All behaviors (templates, keyboard bindings, command actions) are now defined
+# in the 'actions:' section. Each action has a 'type' that determines its behavior,
+# and can optionally be bound to a keyboard key via the 'key' field.
 
 # Anchor Selector Configuration.
 # Main configuration file for both popup app and launcher system
@@ -14,33 +19,35 @@
 popup_settings:
   max_rows:               25          # Max number of rows in the list of matching commands
   max_columns:            4           # Max columns in list of matching commands
-  verbose_logging:        true
+  verbose_logging:        false       # Controls if detailed logging messages are printed
   merge_similar:          true        # Merging similar commands in popup
   word_separators:        " ._-"      # Word separator chars submenus and merging
   scan_interval_seconds:  30          # How many seconds between automatic rescanning of the filesystem
-  idle_timeout_seconds:   60          # Auto-close after 60 seconds of inactivity (default)
+  idle_timeout_seconds:   3600          # Auto-close after 60 seconds of inactivity (default)
   countdown_seconds:      5           # Seconds for grabber countdown (default: 5)
   run_in_background:      true        # Keep app running in background for instant popup (experimental)
+  popup_server_retries:   3           # Number of times to retry showing the popup before rebuilding
   max_window_size:        "1700x1100" # Maximum size for dialogs and popups in "widthxheight" format
   default_window_size:    "600x400"   # Default popup window size in "widthxheight" format
   max_log_file_size:      10000000    # Maximum log file size in bytes (10MB) before clearing
   listed_actions: >
     alias,anchor,app,url,folder,cmd,chrome,safari,brave,firefox,work,
-    notion,obs,obs_url,1pass,rewrite,doc,contact,slack,text,shutdown
+    notion,obs,obs_url,1pass,rewrite,doc,contact,slack,text,shutdown,tmux_activate
 
 launcher_settings:
   js_timeout_ms:          5000        # Max milliseconds allows for a js command execution
   obsidian_app_name:      "Obsidian"  # Obisidian app name
-  obsidian_vault_name: "MyVault"       # Main vault used for Obsidian viewing of markdown files
-  obsidian_vault_path: "~/Documents"  # Location of the main vault
+  obsidian_vault_name:    "MyVault"       # Main vault used for Obsidian viewing of markdown files
+  obsidian_vault_path:    "~/Documents/Notes"  # Location of the main vault
 
 scanner_settings:
-  orphans_path: "~/Documents/Orphans"
+  orphans_path:           "~/Documents/Orphans"
 
 markdown_roots:
- - "~/ob/kmr"                         # Markdown file scanning roots
+ - "~/Documents/Notes"                         # Markdown file scanning roots
  - "~/Documents"
  - "~/Notes"
+
 
 # =================================================================
 # KEYBOARD SHORTCUTS 
@@ -64,6 +71,7 @@ keybindings:
   open_editor:          "="           # Open command editor - ASCII form works now!
   edit_active_command:  ";"           # Edit currently selected command - word form
   show_keys:            "?"           # Show all available key bindings - ASCII form works now!
+  tmux_activate:        "Cmd+T"       # Start tmux session in selected anchor's folder
   
   # Chord key examples showing both ASCII and word forms work:
   # copy_selection: "Cmd+C"    # Copy selected command
@@ -72,6 +80,7 @@ keybindings:
   # find_command: "Ctrl+Slash" # Focus search field - word form in chord
   # new_template: "Cmd+-"      # Create new template - ASCII form in chord
   # quick_action: "Cmd+Shift+Plus" # Quick action menu - word form in chord
+
 
 # =================================================================
 # TEMPLATES - For creating new commands & files
@@ -90,6 +99,7 @@ templates:
     
   # Note template - creates dated notes
   note:
+    description: "Create dated note in Notes folder"
     key: "$"
     name: "{{YYYY}}-{{MM}}-{{DD}} {{input}}"
     action: "markdown"
@@ -101,10 +111,11 @@ templates:
       # {{YYYY}}-{{MM}}-{{DD}} {{input}}
       
       Created: {{YYYY}}-{{MM}}-{{DD}} {{hh}}:{{mm}}
-
-    description: "Create dated note in Notes folder"
+      
+      
   # Quick grab template - captures current window after delay
   grab:
+    description: "Capture window/app after 3 second countdown"
     key: "+"
     grab: 3
     name: "{{input}}"
@@ -112,7 +123,6 @@ templates:
     arg: "{{grabbed_arg}}"
     edit: true
     group: "Apps"
-    description: "Capture window/app after 3 second countdown"
     
   # Alias template - creates alias to previously executed command
   alias:
@@ -142,23 +152,42 @@ templates:
       
   # WW template - creates work sub-anchor with YYYY-MM prefix
   ww:
-    description: "Create work sub-anchor with YYYY-MM prefix"
+    description: "Creates a ww subfolder with YYYY prefix"
     key: "Ctrl+W"
-    name: "{{YYYY}}-{{MM}} {{input}}"
+    name: "{{YYYY}} {{input}}"
     action: "anchor"
-    arg: "/Users/oblinger/ob/kmr/Work/SV/ww/{{YYYY}}-{{MM}} {{input}}/{{YYYY}}-{{MM}} {{input}}.md"
+    arg: "~/Work/{{YYYY}} {{input}}/{{YYYY}} {{input}}.md"
     patch: "WW"
     flags: ""
     edit: true
-    file: "/Users/oblinger/ob/kmr/Work/SV/ww/{{YYYY}}-{{MM}} {{input}}"
+    file: "~/Work/{{YYYY}} {{input}}.md"
     file_rescan: true
     contents: |
       .[[{{YYYY}}-{{MM}} {{input}}]].
+      
+      
+  # Prj template - creates work sub-anchor with YYYY-MM prefix
+  prj:
+    description: "Create work sub-anchor with YYYY-MM prefix"
+    key: "Ctrl+P"
+    name: "{{YYYY}} {{input}}"
+    action: "anchor"
+    arg: "~/Projects/{{YYYY}} {{input}}/{{YYYY}} {{input}}.md"
+    patch: "WW"
+    flags: ""
+    edit: true
+    file: "~/Projects/{{YYYY}} {{input}}.md"
+    file_rescan: true
+    contents: |
+      .[[{{YYYY}}-{{MM}} {{input}}]].
+      
+      
+
 
 # =================================================================
 # GRABBER RULES
 # =================================================================
-# Rules for capturing application context and creating commands
+# Rules for capturing application context and creating new commands
 
 grabber_rules:
   # =================================================================
@@ -399,6 +428,7 @@ grabber_rules:
     action: "app"
     group: "Apps"
 
+
 # =================================================================
 # FUNCTIONS
 # =================================================================
@@ -425,8 +455,9 @@ functions:
   # Specialized app actions
   action_notion: {fn: open_with, app: "Notion", arg: "{{arg}}"}             # notion notion://page -> opens in Notion
   action_obs_url: {fn: open_with, app: "Obsidian", arg: "{{arg}}"}          # obs_url obsidian://vault -> opens in Obsidian
-  action_obs: {fn: shell_sync, command: "open -a Obsidian && /bin/sleep 0.1 && open 'obsidian://open?vault=MyVault&file={{arg}}'"}  # obs FILE -> opens in Obsidian
+  action_obs: {fn: shell_sync, command: "open -a Obsidian && /bin/sleep 0.1 && open 'obsidian://open?vault=kmr&file={{arg}}'"}  # obs FILE -> opens in Obsidian
   action_contact: {fn: open_with, app: "Contacts", arg: "addressbook://{{arg}}"}  # contact <id> -> opens contact
+  
 
   # === SIMPLE FUNCTIONS (defined as mappings) ===
   # Basic actions
@@ -550,6 +581,7 @@ functions:
       log(`MARKDOWN: File is outside Obsidian vault, opening with default app`);
       shell(`open "${filePath}"`);
     }
+  
 
   # text FILE - Type contents of a text file into the focused application
   action_text: |
@@ -608,7 +640,7 @@ functions:
   action_rewrite: |
     launch("{{arg}}");
   
-  # anchor PATH - Create a tmux script and execute it in the current session
+  # anchor PATH - Open anchor markdown file in Obsidian (simplified like markdown action)
   action_anchor: |
     const fullPath = "{{arg}}";
     const anchorDir = fullPath.substring(0, fullPath.lastIndexOf('/'));
@@ -616,13 +648,10 @@ functions:
     log(`ANCHOR: Opening anchor at: ${fullPath}`);
     log(`ANCHOR: Directory: ${anchorDir}`);
     
-    // Change to the anchor directory
+    // Change to the anchor directory (keeping this for context)
     change_directory(anchorDir);
     
-    // Open the folder in Finder
-    open_folder(anchorDir);
-    
-    // Always open the markdown file in Obsidian first
+    // Just open the markdown file in Obsidian - no folder browsing or tmux activation
     const baseName = fullPath.split('/').pop().replace(/\.md$/, '');
     const encoded = encodeURIComponent(baseName);
     const vault = getObsidianVault();
@@ -630,80 +659,6 @@ functions:
     const url = `obsidian://open?vault=${vault}&file=${encoded}`;
     log(`ANCHOR: Opening in Obsidian: ${url}`);
     launch_app(app, url);
-    
-    // Handle tmux activation if .tmuxp.yaml exists
-    const tmuxpPath = joinPath(anchorDir, ".tmuxp.yaml");
-    if (file_exists(tmuxpPath)) {
-        const folderName = anchorDir.split('/').pop();
-        log(`ANCHOR: Found .tmuxp.yaml, activating tmux session '${folderName}'`);
-        
-        try {
-            // Get existing sessions
-            const sessionsOutput = shell_sync("tmux ls -F '#{session_name}' 2>/dev/null || true");
-            const existingSessions = sessionsOutput.split('\n').filter(s => s.trim().length > 0);
-            log(`ANCHOR: Existing sessions: ${existingSessions.join(', ')}`);
-            
-            // Create session if it doesn't exist
-            if (!existingSessions.includes(folderName)) {
-                log(`ANCHOR: Creating session '${folderName}'`);
-                const tmuxpResult = shell_sync(`tmuxp load "${tmuxpPath}" -d`);
-                log(`ANCHOR: tmuxp load result: ${tmuxpResult}`);
-                shell_sync("/bin/sleep 0.2");
-            }
-            
-            // Try to attach to or switch to the session (using direct tmux commands like the working Python version)
-            log(`ANCHOR: Attaching to session '${folderName}'`);
-            try {
-                // First try switch-client (works when already inside a tmux session)
-                log(`ANCHOR: Trying tmux switch-client to '${folderName}'`);
-                const switchResult = shellWithExitCode(`/opt/homebrew/bin/tmux switch-client -t "${folderName}"`);
-                const switchData = JSON.parse(switchResult);
-                
-                if (switchData.exitCode === 0) {
-                    log(`ANCHOR: Successfully switched to session '${folderName}'`);
-                } else {
-                    // switch-client failed, try attach-session (works when not inside tmux)
-                    log(`ANCHOR: Switch-client failed, trying attach-session to '${folderName}'`);
-                    const attachResult = shellWithExitCode(`/opt/homebrew/bin/tmux attach-session -t "${folderName}"`);
-                    const attachData = JSON.parse(attachResult);
-                    
-                    if (attachData.exitCode === 0) {
-                        log(`ANCHOR: Successfully attached to session '${folderName}'`);
-                    } else {
-                        log(`ANCHOR: Both switch-client and attach-session failed for '${folderName}'`);
-                        log(`ANCHOR: Switch error: ${switchData.stderr}`);
-                        log(`ANCHOR: Attach error: ${attachData.stderr}`);
-                    }
-                }
-            } catch (e) {
-                log(`ANCHOR: Tmux execution error: ${e}`);
-            }
-            
-            // Activate iTerm2
-            shell_sync("/bin/sleep 0.5");
-            shell('osascript -e \'tell application "iTerm2" to activate\'');
-            
-        } catch (error) {
-            log(`ANCHOR: Error with tmux: ${error}`);
-        }
-        
-    } else {
-        log(`ANCHOR: No .tmuxp.yaml found, checking for CLAUDE.md fallback`);
-        
-        // Check for CLAUDE.md and run claude --continue as fallback
-        const claudeMdPath = joinPath(anchorDir, "CLAUDE.md");
-        if (file_exists(claudeMdPath)) {
-            log(`ANCHOR: Found CLAUDE.md, running claude --continue`);
-            try {
-                spawnDetached("claude", "--continue");
-                log(`ANCHOR: Started claude --continue in background`);
-            } catch (claudeError) {
-                log(`ANCHOR: Failed to start claude --continue: ${claudeError}`);
-            }
-        } else {
-            log(`ANCHOR: No tmux or Claude configuration found, Obsidian only`);
-        }
-    }
   
   # 1pass NAME - 1Password with multiple fallback approaches (main implementation)
   action_1pass: |
@@ -780,3 +735,99 @@ functions:
     // Bring focus back to the anchor selector application
     shell("osascript -e 'tell application \"popup\" to activate'");
     shell_sync("/bin/sleep 0.1"); // Brief delay to ensure focus transfer completes
+    
+  # tmux_activate - Start tmux session in the selected anchor's folder (same as anchor command)
+  action_tmux_activate: |
+    // The arg contains the full path to the anchor markdown file
+    const fullPath = "{{arg}}";
+    const anchorDir = fullPath.substring(0, fullPath.lastIndexOf('/'));
+    
+    log(`TMUX_ACTIVATE: Checking for tmux session in: ${anchorDir}`);
+    
+    // Check if .tmuxp.yaml exists
+    const tmuxpPath = joinPath(anchorDir, ".tmuxp.yaml");
+    if (file_exists(tmuxpPath)) {
+      log(`TMUX_ACTIVATE: Found .tmuxp.yaml at ${tmuxpPath}`);
+      
+      // Change to the anchor directory
+      change_directory(anchorDir);
+      
+      const folderName = anchorDir.split('/').pop();
+      log(`TMUX_ACTIVATE: Activating tmux session '${folderName}'`);
+      
+      try {
+        // Get existing tmux sessions
+        const sessionsResult = shellWithExitCode('/opt/homebrew/bin/tmux ls -F "#{session_name}" 2>/dev/null');
+        const sessionsData = JSON.parse(sessionsResult);
+        const existingSessions = sessionsData.exitCode === 0 ? 
+            sessionsData.stdout.trim().split('\n').filter(s => s) : [];
+        
+        // Create session if it doesn't exist
+        if (!existingSessions.includes(folderName)) {
+          log(`TMUX_ACTIVATE: Creating session '${folderName}'`);
+          const tmuxpResult = shell_sync(`tmuxp load "${tmuxpPath}" -d`);
+          log(`TMUX_ACTIVATE: tmuxp load result: ${tmuxpResult}`);
+          shell_sync("/bin/sleep 0.2");
+        }
+        
+        // Try to attach to or switch to the session (same as anchor command)
+        log(`TMUX_ACTIVATE: Attaching to session '${folderName}'`);
+        try {
+          // First try switch-client (works when already inside a tmux session)
+          log(`TMUX_ACTIVATE: Trying tmux switch-client to '${folderName}'`);
+          const switchResult = shellWithExitCode(`/opt/homebrew/bin/tmux switch-client -t "${folderName}"`);
+          const switchData = JSON.parse(switchResult);
+          
+          if (switchData.exitCode === 0) {
+            log(`TMUX_ACTIVATE: Successfully switched to session '${folderName}'`);
+          } else {
+            // switch-client failed, try attach-session (works when not inside tmux)
+            log(`TMUX_ACTIVATE: Switch-client failed, trying attach-session to '${folderName}'`);
+            const attachResult = shellWithExitCode(`/opt/homebrew/bin/tmux attach-session -t "${folderName}"`);
+            const attachData = JSON.parse(attachResult);
+            
+            if (attachData.exitCode === 0) {
+              log(`TMUX_ACTIVATE: Successfully attached to session '${folderName}'`);
+            } else {
+              log(`TMUX_ACTIVATE: Both switch-client and attach-session failed for '${folderName}'`);
+              log(`TMUX_ACTIVATE: Switch error: ${switchData.stderr}`);
+              log(`TMUX_ACTIVATE: Attach error: ${attachData.stderr}`);
+            }
+          }
+        } catch (e) {
+          log(`TMUX_ACTIVATE: Tmux execution error: ${e}`);
+        }
+        
+        // Activate iTerm2 (same as anchor command)
+        shell_sync("/bin/sleep 0.5");
+        shell('osascript -e \'tell application "iTerm2" to activate\'');
+        
+      } catch (error) {
+        log(`TMUX_ACTIVATE: Error with tmux session: ${error}`);
+      }
+    } else {
+      log(`TMUX_ACTIVATE: No .tmuxp.yaml found at ${tmuxpPath}, skipping`);
+    }
+
+# Test unified actions
+actions:
+  test_url:
+    type: "open_url"
+    description: "Test opening URL"
+    url: "https://github.com"
+    
+  test_folder:
+    type: "open_folder"
+    description: "Test opening folder"
+    path: "/tmp"
+    
+  test_template:
+    type: "template"
+    description: "Test template action"
+    name: "Test {{input}}"
+    action: "test"
+    arg: "/tmp/test_{{input}}.txt"
+    patch: "Test"
+    contents: |
+      Test file for {{input}}
+      Created at {{YYYY}}-{{MM}}-{{DD}}

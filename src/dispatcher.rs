@@ -114,15 +114,9 @@ fn handle_hook_url(url: &str) {
     utils::debug_log("DISPATCHER", &format!("Executing command: {}", top_command_obj.command));
     
     // Execute via server to avoid GUI context and ensure consistent execution
-    let launcher_cmd = if top_command_obj.arg.is_empty() {
-        top_command_obj.action.clone()
-    } else {
-        format!("{} {}", top_command_obj.action, top_command_obj.arg)
-    };
+    utils::debug_log("DISPATCHER", &format!("Launching via server: {} ({})", top_command_obj.command, top_command_obj.action));
     
-    utils::debug_log("DISPATCHER", &format!("Launching via server: {}", launcher_cmd));
-    
-    match execute_via_server(&launcher_cmd, None, None, false) {
+    match execute_via_server(&top_command_obj) {
         Ok(response) => {
             if response.success {
                 utils::debug_log("DISPATCHER", "Command executed successfully via server");

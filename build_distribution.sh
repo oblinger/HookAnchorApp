@@ -230,9 +230,25 @@ elif [ -f "$PROJECT_ROOT/resources/icon.icns" ]; then
     cp "$PROJECT_ROOT/resources/icon.icns" "$RESOURCES_DIR/AppIcon.icns"
 fi
 
-# Copy default config
-if [ -f "$PROJECT_ROOT/resources/common/default_config.yaml" ]; then
-    cp "$PROJECT_ROOT/resources/common/default_config.yaml" "$RESOURCES_DIR/default_config.yaml"
+# Generate default config from personal config
+echo "   Generating default config from personal config..."
+if [ -f "$HOME/.config/hookanchor/config.yaml" ]; then
+    python3 "$PROJECT_ROOT/scripts/generate_default_config.py" "$RESOURCES_DIR/default_config.yaml"
+else
+    echo "   Warning: Personal config not found, creating minimal default"
+    # Fallback to a minimal config if personal config doesn't exist
+    cat > "$RESOURCES_DIR/default_config.yaml" << 'EOF'
+# HookAnchor Default Configuration
+popup_settings:
+  max_rows: 25
+  max_columns: 4
+  run_in_background: true
+launcher_settings:
+  obsidian_vault_name: "MyVault"
+  obsidian_vault_path: "~/Documents"
+markdown_roots:
+  - "~/Documents"
+EOF
 fi
 
 # 9. Sign the app (optional, requires developer certificate)

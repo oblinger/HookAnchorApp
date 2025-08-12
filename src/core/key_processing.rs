@@ -842,9 +842,37 @@ pub fn create_default_key_registry(config: &crate::Config) -> KeyRegistry {
         }
     }
     
-    // Register template handlers
+    // Register handlers for unified actions with keys
+    crate::utils::log(&format!("Config has actions field: {}", config.actions.is_some()));
+    if let Some(ref actions) = config.actions {
+        crate::utils::log(&format!("Checking {} unified actions for keyboard shortcuts", actions.len()));
+        let mut actions_with_keys = 0;
+        for (action_name, action) in actions {
+            // Check if this action has a key field
+            if let Some(ref key_str) = action.key {
+                // Parse the key string into a keystroke
+                if let Ok(keystroke) = Keystroke::from_key_string(key_str) {
+                    actions_with_keys += 1;
+                    crate::utils::log(&format!("  Action '{}': key={} -> keystroke={:?}", 
+                        action_name, key_str, keystroke));
+                    
+                    // For template actions, use TemplateHandler
+                    if action.action_type == "template" {
+                        let handler = Box::new(TemplateHandler::new(action_name.clone()));
+                        registry.register_keystroke(keystroke, handler);
+                    }
+                    // Add handlers for other action types as needed
+                }
+            }
+        }
+        if actions_with_keys > 0 {
+            crate::utils::log(&format!("Registered {} actions with keys", actions_with_keys));
+        }
+    }
+    
+    // Keep backward compatibility: check if old templates field still exists
     if let Some(ref templates) = config.templates {
-        crate::utils::log(&format!("Registering {} templates", templates.len()));
+        crate::utils::log(&format!("Registering {} legacy templates", templates.len()));
         for (template_name, template) in templates {
             if let Some(ref keystroke) = template.keystroke {
                 crate::utils::log(&format!("  Template '{}': key={:?} -> keystroke={:?}", 
@@ -857,7 +885,7 @@ pub fn create_default_key_registry(config: &crate::Config) -> KeyRegistry {
             }
         }
     } else {
-        crate::utils::log("No templates configured");
+        crate::utils::log("No templates configured (checking unified actions instead)");
     }
     
     // Register text handlers

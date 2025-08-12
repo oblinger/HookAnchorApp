@@ -1,3 +1,4 @@
+use std::collections::HashMap;
 use crate::{load_commands_with_data, load_commands_for_inference, filter_commands, execute_via_server, utils, grabber, run_patch_inference, save_commands_to_file};
 
 /// Main entry point for command-line mode
@@ -333,21 +334,22 @@ fn run_test_action(args: &[String]) {
         if let Some(action) = actions.get(action_name) {
             println!("Testing unified action '{}' (type: {})", action_name, action.action_type);
             
-            // Create action context
-            let mut context = crate::core::unified_actions::ActionContext::new(input_value);
-            if !arg_value.is_empty() {
-                context = context.with_arg(arg_value);
+            // Prepare variables for action execution
+            let mut variables = HashMap::new();
+            if !input_value.is_empty() {
+                variables.insert("input".to_string(), input_value);
             }
             
-            // Add extra parameters to context
+            // Add extra parameters to variables
             for (key, value) in extra_params {
                 if let serde_json::Value::String(s) = value {
-                    context.add_variable(key, s);
+                    variables.insert(key, s);
                 }
             }
             
-            // Execute the action
-            match crate::core::unified_actions::execute_action(action, &context) {
+            // Execute the action with simplified parameters
+            let arg = if !arg_value.is_empty() { Some(arg_value.as_str()) } else { None };
+            match crate::core::unified_actions::execute_action(action, arg, Some(variables)) {
                 Ok(result) => {
                     println!("Action completed successfully: {}", result);
                 }

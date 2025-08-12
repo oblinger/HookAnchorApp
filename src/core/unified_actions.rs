@@ -95,64 +95,143 @@ impl ActionContext {
     }
 }
 
-/// Expand all {{...}} expressions in a string using JavaScript evaluation
+/// Expand all parameters that contain {{...}} JavaScript expressions
+fn expand_parameters(
+    params: &HashMap<String, String>,
+) -> Result<HashMap<String, String>, Box<dyn std::error::Error>> {
+    let mut expanded = HashMap::new();
+    
+    // Check if any parameter needs expansion
+    let needs_expansion = params.values().any(|v| v.contains("{{"));
+    
+    if !needs_expansion {
+        // No expansion needed, return as-is
+        return Ok(params.clone());
+    }
+    
+    // Create JavaScript context with all parameters as variables
+    let js_ctx = create_js_context_with_params(params)?;
+    
+    js_ctx.with(|ctx| {
+        for (key, value) in params {
+            if value.contains("{{") {
+                // Expand this parameter
+                let expanded_value = expand_template_string(&ctx, value)?;
+                expanded.insert(key.clone(), expanded_value);
+            } else {
+                // No expansion needed
+                expanded.insert(key.clone(), value.clone());
+            }
+        }
+        Ok(expanded)
+    })
+}
+
+/// Expand a single template string with {{...}} expressions
+fn expand_template_string(
+    ctx: &Ctx<'_>,
+    template: &str,
+) -> Result<String, Box<dyn std::error::Error>> {
+    let mut result = template.to_string();
+    let mut last_pos = 0;
+    
+    // Process all {{...}} expressions
+    while let Some(start) = result[last_pos..].find("{{") {
+        let start = last_pos + start;
+        if let Some(end) = result[start..].find("}}") {
+            let end = start + end + 2;
+            let expr = result[start + 2..end - 2].trim();
+            
+            debug_log("EXPAND", &format!("Evaluating expression: {}", expr));
+            
+            // Evaluate the JavaScript expression
+            match ctx.eval::<rquickjs::Value, _>(expr) {
+                Ok(value) => {
+                    let expanded = js_value_to_string(&value);
+                    debug_log("EXPAND", &format!("Expression '{}' expanded to: '{}'", expr, expanded));
+                    result.replace_range(start..end, &expanded);
+                    last_pos = start + expanded.len();
+                }
+                Err(e) => {
+                    // On error, show dialog and terminate
+                    let error_msg = format!(
+                        "Couldn't execute this action because of an error in expansion:\n\
+                        Expression: {}\n\
+                        Error: {}",
+                        expr, e
+                    );
+                    log_error(&error_msg);
+                    crate::error_display::queue_user_error(&error_msg);
+                    return Err(error_msg.into());
+                }
+            }
+        } else {
+            // No matching }} found
+            break;
+        }
+    }
+    
+    Ok(result)
+}
+
+/// Keep the old function for backward compatibility temporarily
+/// TODO: Remove after all callers are updated
 pub fn expand_string(
     template: &str,
     context: &ActionContext,
 ) -> Result<String, Box<dyn std::error::Error>> {
-    // If no expansion markers, return as-is
-    if !template.contains("{{") {
-        return Ok(template.to_string());
+    // Convert context to params
+    let mut params = HashMap::new();
+    params.insert("input".to_string(), context.input.clone());
+    if let Some(arg) = &context.arg {
+        params.insert("arg".to_string(), arg.clone());
+    }
+    for (k, v) in &context.variables {
+        params.insert(k.clone(), v.clone());
     }
     
-    // Create JavaScript runtime with context
-    let js_ctx = create_action_js_context(context)?;
-    
-    js_ctx.with(|ctx| {
-        let mut result = template.to_string();
-        let mut last_pos = 0;
-        
-        // Process all {{...}} expressions
-        while let Some(start) = result[last_pos..].find("{{") {
-            let start = last_pos + start;
-            if let Some(end) = result[start..].find("}}") {
-                let end = start + end + 2;
-                let expr = result[start + 2..end - 2].trim();
-                
-                debug_log("EXPAND", &format!("Evaluating expression: {}", expr));
-                
-                // Evaluate the JavaScript expression
-                match ctx.eval::<rquickjs::Value, _>(expr) {
-                    Ok(value) => {
-                        let expanded = js_value_to_string(&value);
-                        debug_log("EXPAND", &format!("Expression '{}' expanded to: '{}'", expr, expanded));
-                        result.replace_range(start..end, &expanded);
-                        last_pos = start + expanded.len();
-                    }
-                    Err(e) => {
-                        // On error, show dialog and terminate
-                        let error_msg = format!(
-                            "Couldn't execute this action because of an error in expansion:\n\
-                            Expression: {}\n\
-                            Error: {}",
-                            expr, e
-                        );
-                        log_error(&error_msg);
-                        crate::error_display::queue_user_error(&error_msg);
-                        return Err(error_msg.into());
-                    }
-                }
-            } else {
-                // No matching }} found
-                break;
-            }
-        }
-        
-        Ok(result)
-    })
+    // Use the new expansion
+    let expanded_params = expand_parameters(&params)?;
+    expanded_params.get(template)
+        .cloned()
+        .ok_or_else(|| "Template not found in expanded params".into())
 }
 
-/// Create a JavaScript context with action-specific variables
+/// Create a JavaScript context with parameters as variables
+fn create_js_context_with_params(
+    params: &HashMap<String, String>,
+) -> Result<Context, Box<dyn std::error::Error>> {
+    let config = crate::core::sys_data::get_config();
+    let rt = rquickjs::Runtime::new()?;
+    let ctx = Context::full(&rt)?;
+    
+    ctx.with(|ctx| -> Result<(), Box<dyn std::error::Error>> {
+        // Setup all standard built-in functions
+        crate::js_runtime::setup_all_builtins(&ctx)?;
+        
+        // Add all parameters as global variables
+        let globals = ctx.globals();
+        for (key, value) in params {
+            globals.set(key.as_str(), value.clone())?;
+        }
+        
+        // Add date/time variables
+        let mut date_vars = HashMap::new();
+        add_datetime_variables(&mut date_vars);
+        for (key, value) in date_vars {
+            globals.set(key.as_str(), value)?;
+        }
+        
+        // Setup user-defined functions from config
+        setup_user_functions(&ctx, &config)?;
+        
+        Ok(())
+    })?;
+    
+    Ok(ctx)
+}
+
+/// Create a JavaScript context with action-specific variables (deprecated)
 fn create_action_js_context(
     context: &ActionContext,
 ) -> Result<Context, Box<dyn std::error::Error>> {
@@ -335,15 +414,35 @@ fn add_datetime_variables(variables: &mut HashMap<String, String>) {
     variables.insert("ss".to_string(), format!("{:02}", now.second()));
 }
 
-/// Execute an action with the given context
+/// Execute an action with the given parameters
+/// 
+/// # Parameters
+/// - `action`: The action definition containing type and static parameters
+/// - `arg`: Optional primary argument (typically from user input or command)
+/// - `variables`: Optional additional variables for template expansion
 pub fn execute_action(
     action: &Action,
-    context: &ActionContext,
+    arg: Option<&str>,
+    variables: Option<HashMap<String, String>>,
 ) -> Result<String, Box<dyn std::error::Error>> {
     debug_log("ACTION", &format!("Executing action type: {}", action.action_type));
     
-    // Expand all parameters
-    let mut expanded_params = HashMap::new();
+    // Merge all parameters into a single HashMap
+    let mut params = HashMap::new();
+    
+    // Add the primary argument if present
+    if let Some(arg_value) = arg {
+        params.insert("arg".to_string(), arg_value.to_string());
+    }
+    
+    // Add any additional variables
+    if let Some(vars) = variables {
+        for (key, value) in vars {
+            params.insert(key, value);
+        }
+    }
+    
+    // Add action's static parameters
     for (key, value) in &action.params {
         let value_str = match value {
             JsonValue::String(s) => s.clone(),
@@ -351,15 +450,16 @@ pub fn execute_action(
             JsonValue::Number(n) => n.to_string(),
             _ => continue, // Skip complex values for now
         };
-        
-        let expanded = expand_string(&value_str, context)?;
-        expanded_params.insert(key.clone(), expanded);
+        params.insert(key.clone(), value_str);
     }
+    
+    // Expand all parameters that contain {{...}} expressions
+    let expanded_params = expand_parameters(&params)?;
     
     // Dispatch based on action type
     match action.action_type.as_str() {
-        "template" => execute_template_action(action, &expanded_params, context),
-        "popup" => execute_popup_action(action, &expanded_params, context),
+        "template" => execute_template_action(action, &expanded_params),
+        "popup" => execute_popup_action(action, &expanded_params),
         "open_url" => execute_open_url_action(&expanded_params),
         "open_app" => execute_open_app_action(&expanded_params),
         "open_folder" => execute_open_folder_action(&expanded_params),
@@ -372,10 +472,10 @@ pub fn execute_action(
         "tmux" => execute_tmux_action(&expanded_params),
         "type_text" => execute_type_text_action(&expanded_params),
         "alias" => execute_alias_action(&expanded_params),
-        "builtin" => execute_builtin_action(action, &expanded_params, context),
+        "builtin" => execute_builtin_action(action, &expanded_params),
         _ => {
             // Try to find a user-defined action handler
-            execute_custom_action(&action.action_type, &expanded_params, context)
+            execute_custom_action(&action.action_type, &expanded_params)
         }
     }
 }
@@ -385,7 +485,6 @@ pub fn execute_action(
 fn execute_template_action(
     action: &Action,
     params: &HashMap<String, String>,
-    context: &ActionContext,
 ) -> Result<String, Box<dyn std::error::Error>> {
     debug_log("ACTION", "Executing template action");
     
@@ -432,7 +531,6 @@ fn execute_template_action(
 fn execute_popup_action(
     _action: &Action,
     params: &HashMap<String, String>,
-    _context: &ActionContext,
 ) -> Result<String, Box<dyn std::error::Error>> {
     let popup_action = params.get("popup_action")
         .ok_or("popup action requires popup_action parameter")?;
@@ -575,12 +673,32 @@ fn execute_shell_action(
 fn execute_javascript_action(
     params: &HashMap<String, String>,
 ) -> Result<String, Box<dyn std::error::Error>> {
-    let code = params.get("code")
+    let function_name = params.get("code")
         .ok_or("javascript action requires code parameter")?;
     
-    debug_log("ACTION", "Executing JavaScript code");
+    debug_log("ACTION", &format!("Looking up JavaScript function: {}", function_name));
     
-    crate::js_runtime::execute_business_logic(code)
+    // Get the JavaScript code from the functions section
+    let config = crate::core::sys_data::get_config();
+    let js_code = config.functions
+        .as_ref()
+        .and_then(|funcs| funcs.get(function_name))
+        .and_then(|v| v.as_str())
+        .ok_or_else(|| format!("JavaScript function '{}' not found in config", function_name))?;
+    
+    debug_log("ACTION", &format!("Found JavaScript function, length: {} chars", js_code.len()));
+    
+    // Replace template variables in the JavaScript code
+    let mut expanded_code = js_code.to_string();
+    for (key, value) in params.iter() {
+        let placeholder = format!("{{{{{}}}}}", key);
+        debug_log("ACTION", &format!("Replacing {} with '{}'", placeholder, value));
+        expanded_code = expanded_code.replace(&placeholder, value);
+    }
+    
+    debug_log("ACTION", &format!("Executing JavaScript with {} params, code length: {} chars", params.len(), expanded_code.len()));
+    
+    crate::js_runtime::execute_business_logic(&expanded_code)
 }
 
 fn execute_obsidian_action(
@@ -722,8 +840,7 @@ fn execute_alias_action(
 
 fn execute_builtin_action(
     action: &Action,
-    _params: &HashMap<String, String>,
-    context: &ActionContext,
+    params: &HashMap<String, String>,
 ) -> Result<String, Box<dyn std::error::Error>> {
     debug_log("ACTION", &format!("Executing builtin action"));
     
@@ -737,8 +854,13 @@ fn execute_builtin_action(
         .map_err(|e| format!("Failed to create environment: {}", e))?;
     
     // Set the arg variable if we have one
-    if let Some(arg) = &context.arg {
+    if let Some(arg) = params.get("arg") {
         env.variables.insert("arg".to_string(), arg.clone());
+    }
+    
+    // Add other params as variables
+    for (key, value) in params {
+        env.variables.insert(key.clone(), value.clone());
     }
     
     // Create a function call to the builtin
@@ -755,15 +877,14 @@ fn execute_builtin_action(
 fn execute_custom_action(
     action_type: &str,
     params: &HashMap<String, String>,
-    context: &ActionContext,
 ) -> Result<String, Box<dyn std::error::Error>> {
     debug_log("ACTION", &format!("Looking for custom action handler: action_{}", action_type));
     
     // Look for action_<type> function in JavaScript
     let function_name = format!("action_{}", action_type);
     
-    // Create JS context and call the function
-    let js_ctx = create_action_js_context(context)?;
+    // Create JS context with parameters
+    let js_ctx = create_js_context_with_params(params)?;
     
     js_ctx.with(|ctx| {
         // Check if function exists

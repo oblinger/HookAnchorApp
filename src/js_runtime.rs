@@ -353,7 +353,8 @@ fn setup_launcher_builtins(ctx: &Ctx<'_>) -> Result<(), Box<dyn std::error::Erro
     // shell(command) -> executes shell command without waiting (detached)
     ctx.globals().set("shell", Function::new(ctx.clone(), |command: String| {
         // Use command server for consistent environment
-        match crate::command_server::execute_via_server(&command, None, None, false) {
+        let cmd_obj = crate::command_server::shell_command(&command, "");
+        match crate::command_server::execute_via_server(&cmd_obj) {
             Ok(response) => {
                 // Log stdout/stderr for verbose debugging
                 crate::utils::verbose_log("JS_SHELL", &format!("Command: {}", command));
@@ -382,7 +383,8 @@ fn setup_launcher_builtins(ctx: &Ctx<'_>) -> Result<(), Box<dyn std::error::Erro
     // shell_sync(command) -> executes shell command and waits for completion
     ctx.globals().set("shell_sync", Function::new(ctx.clone(), |command: String| {
         // Use command server for consistent environment
-        match crate::command_server::execute_via_server(&command, None, None, true) {
+        let cmd_obj = crate::command_server::shell_command(&command, "G");
+        match crate::command_server::execute_via_server(&cmd_obj) {
             Ok(response) => {
                 // Log stdout/stderr for verbose debugging
                 crate::utils::verbose_log("JS_SHELL_SYNC", &format!("Command: {}", command));
@@ -480,7 +482,8 @@ fn setup_launcher_builtins(ctx: &Ctx<'_>) -> Result<(), Box<dyn std::error::Erro
     // shellWithExitCode(command) -> executes shell command and returns detailed result with user environment
     ctx.globals().set("shellWithExitCode", Function::new(ctx.clone(), |command: String| {
         // Use command server for consistent environment
-        match crate::command_server::execute_via_server(&command, None, None, true) {
+        let cmd_obj = crate::command_server::shell_command(&command, "G");
+        match crate::command_server::execute_via_server(&cmd_obj) {
             Ok(response) => {
                 let exit_code = response.exit_code.unwrap_or(-1);
                 
@@ -498,7 +501,9 @@ fn setup_launcher_builtins(ctx: &Ctx<'_>) -> Result<(), Box<dyn std::error::Erro
     // commandExists(command) -> checks if command is available in PATH with user environment
     ctx.globals().set("commandExists", Function::new(ctx.clone(), |command: String| {
         // Use command server for consistent environment
-        match crate::command_server::execute_via_server(&format!("which {}", command), None, None, true) {
+        let which_cmd = format!("which {}", command);
+        let cmd_obj = crate::command_server::shell_command(&which_cmd, "G");
+        match crate::command_server::execute_via_server(&cmd_obj) {
             Ok(response) => response.success,
             Err(_) => false,
         }

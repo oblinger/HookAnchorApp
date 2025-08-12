@@ -633,43 +633,94 @@ fn execute_detached(command: &str, options: ShellOptions) -> Result<std::process
 /// Consolidates the open-with pattern used throughout the codebase
 /// Uses non-blocking spawn to prevent UI lockups
 pub fn open_with_app(app: &str, target: &str) -> Result<std::process::Output, std::io::Error> {
+    log(&format!("OPEN_WITH_APP: app='{}', target='{}'", app, target));
     
-    // For browsers, add -F flag to bring app to foreground
-    let mut cmd = Command::new("open");
-    if app.is_empty() {
-        cmd.arg(target);
+    // Check if this is a browser and we're opening a URL
+    let is_browser = matches!(app.to_lowercase().as_str(), 
+        "google chrome" | "chrome" | "safari" | "firefox" | "brave" | "brave browser" | "microsoft edge" | "edge");
+    let is_url = target.starts_with("http://") || target.starts_with("https://");
+    
+    if is_browser && is_url {
+        // Use AppleScript for browsers to ensure they come to foreground
+        log(&format!("OPEN_WITH_APP: Using AppleScript for browser: {}", app));
+        
+        let applescript = format!(
+            "tell application \"{}\" to activate\ntell application \"{}\" to open location \"{}\"",
+            app, app, target
+        );
+        
+        let mut cmd = Command::new("osascript");
+        cmd.arg("-e").arg(&applescript);
+        
+        // Log the command
+        log(&format!("OPEN_WITH_APP: Executing AppleScript for browser activation"));
+        
+        // Try to spawn the command
+        let child = match cmd.spawn() {
+            Ok(child) => {
+                log(&format!("OPEN_WITH_APP: Successfully spawned AppleScript process with PID: {:?}", child.id()));
+                child
+            },
+            Err(e) => {
+                log_error(&format!("OPEN_WITH_APP: Failed to spawn AppleScript command: {}", e));
+                // Fall back to regular open command
+                log(&format!("OPEN_WITH_APP: Falling back to regular open command"));
+                let mut fallback_cmd = Command::new("open");
+                fallback_cmd.arg("-F").arg("-a").arg(app).arg(target);
+                match fallback_cmd.spawn() {
+                    Ok(child) => child,
+                    Err(e) => return Err(e),
+                }
+            }
+        };
+        
+        // Register the process for monitoring
+        let command_str = format!("osascript -e 'activate {}' -e 'open location {}'", app, target);
+        let _process_id = crate::process_monitor::register_process(child, command_str);
+        log(&format!("OPEN_WITH_APP: Process registered for monitoring"));
+        
     } else {
-        cmd.arg("-F"); // Bring app to foreground
-        cmd.arg("-a").arg(app).arg(target);
-    }
-    
-    
-    // Add environment info
-    
-    // Try to spawn the command
-    let child = match cmd.spawn() {
-        Ok(child) => {
-            child
-        },
-        Err(e) => {
-            log_error(&format!("Failed to spawn open command: {}", e));
-            return Err(e);
+        // For non-browsers or non-URLs, use the regular open command
+        log(&format!("OPEN_WITH_APP: Using regular open command"));
+        
+        let mut cmd = Command::new("open");
+        if app.is_empty() {
+            cmd.arg(target);
+        } else {
+            cmd.arg("-F"); // Bring app to foreground
+            cmd.arg("-a").arg(app).arg(target);
         }
-    };
-    
-    // Register the process for monitoring
-    let command_str = if app.is_empty() {
-        format!("open {}", target)
-    } else {
-        format!("open -a {} {}", app, target)
-    };
-    let _process_id = crate::process_monitor::register_process(child, command_str.clone());
-    
+        
+        // Log the full command that will be executed
+        let command_str = if app.is_empty() {
+            format!("open {}", target)
+        } else {
+            format!("open -F -a \"{}\" \"{}\"", app, target)
+        };
+        log(&format!("OPEN_WITH_APP: Executing command: {}", command_str));
+        
+        // Try to spawn the command
+        let child = match cmd.spawn() {
+            Ok(child) => {
+                log(&format!("OPEN_WITH_APP: Successfully spawned process with PID: {:?}", child.id()));
+                child
+            },
+            Err(e) => {
+                log_error(&format!("OPEN_WITH_APP: Failed to spawn open command: {}", e));
+                return Err(e);
+            }
+        };
+        
+        // Register the process for monitoring
+        let _process_id = crate::process_monitor::register_process(child, command_str);
+        log(&format!("OPEN_WITH_APP: Process registered for monitoring"));
+    }
     
     // Check if the process is actually running
     std::thread::sleep(std::time::Duration::from_millis(100));
     
     // For non-blocking execution, we don't wait for the result
+    log(&format!("OPEN_WITH_APP: Returning NON_BLOCKING_SUCCESS"));
     Err(std::io::Error::new(
         std::io::ErrorKind::Other, 
         "NON_BLOCKING_SUCCESS: Open with app process spawned successfully"

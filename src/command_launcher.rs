@@ -34,6 +34,7 @@ pub struct LauncherSettings {
 
 pub fn launch(command_line: &str) -> Result<(), LauncherError> {
     let start_time = SystemTime::now();
+    crate::utils::log(&format!("LAUNCHER: Starting launch for command_line: '{}'", command_line));
     crate::utils::detailed_log("LAUNCHER", &format!("Starting launch for: '{}'", command_line));
     
     // Parse command_line to extract action and arguments  
@@ -44,8 +45,8 @@ pub fn launch(command_line: &str) -> Result<(), LauncherError> {
     let config = load_config()?;
     // Config loaded successfully - no need to log
     
-    // Look up action value in config
-    let action_value = lookup_action(&action, &config)?;
+    // Look up action value in config (pass args for unified actions)
+    let action_value = lookup_action(&action, &args, &config)?;
     // Found action config - proceed with execution
     
     // Create environment
@@ -60,7 +61,12 @@ pub fn launch(command_line: &str) -> Result<(), LauncherError> {
     // Execute the action using eval module
     // Execute the action
     let exec_start_time = std::time::Instant::now();
-    let exec_result = env.eval(action_value);
+    let exec_result = if action_value == serde_yaml::Value::Null {
+        // Action was already executed by unified actions system
+        Ok(serde_yaml::Value::Null)
+    } else {
+        env.eval(action_value)
+    };
     let _exec_duration = exec_start_time.elapsed();
     
     let duration = start_time.elapsed().unwrap_or_default();
@@ -148,7 +154,32 @@ fn load_config() -> Result<LauncherConfig, LauncherError> {
 
 
 
-fn lookup_action(action: &str, config: &LauncherConfig) -> Result<serde_yaml::Value, LauncherError> {
+fn lookup_action(action: &str, args: &str, config: &LauncherConfig) -> Result<serde_yaml::Value, LauncherError> {
+    // First, check if action is defined in the unified actions section
+    let full_config = crate::core::sys_data::get_config();
+    crate::utils::detailed_log("LAUNCHER", &format!("Looking up action: '{}'", action));
+    if let Some(actions) = &full_config.actions {
+        if let Some(action_def) = actions.get(action) {
+            crate::utils::detailed_log("LAUNCHER", &format!("Found action '{}' in unified actions (type: {})", action, action_def.action_type));
+            
+            // Execute the unified action directly with simplified parameters
+            match crate::core::unified_actions::execute_action(
+                action_def, 
+                Some(args),
+                None
+            ) {
+                Ok(result) => {
+                    crate::utils::detailed_log("LAUNCHER", &format!("Unified action completed: {}", result));
+                    // Action already executed, return empty to signal completion
+                    return Ok(serde_yaml::Value::Null);
+                }
+                Err(e) => {
+                    return Err(LauncherError::ExecutionError(format!("Action execution failed: {}", e)));
+                }
+            }
+        }
+    }
+    
     // Check if this is a builtin action that should be handled directly
     // These actions are registered as builtin functions in the eval environment
     // NOTE: Only include actions that are ACTUALLY implemented as Rust builtin functions
@@ -162,7 +193,7 @@ fn lookup_action(action: &str, config: &LauncherConfig) -> Result<serde_yaml::Va
         return Ok(serde_yaml::Value::Mapping(map));
     }
     
-    // Look for action with action_ prefix
+    // Look for action with action_ prefix in functions (legacy)
     let action_prefixed = format!("action_{}", action);
     if let Some(func_def) = config.functions.get(&action_prefixed) {
         // Check if it's a string (JavaScript function) or a mapping (simple function)

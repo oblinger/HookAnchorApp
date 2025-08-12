@@ -25,15 +25,6 @@ fn log_and_print(prefix: &str, message: &str) {
     debug_log(prefix, message);
 }
 
-/// Request structure for command execution
-#[derive(Debug, Serialize, Deserialize)]
-pub struct CommandRequest {
-    pub command: String,
-    pub working_dir: Option<String>,
-    pub env_vars: Option<HashMap<String, String>>,
-    pub blocking: bool,
-}
-
 /// Response structure for command execution
 #[derive(Debug, Serialize, Deserialize)]
 pub struct CommandResponse {
@@ -191,8 +182,6 @@ impl CommandServer {
             }
         }
         
-        let launcher_cmd = format!("{} {}", command.action, command.arg);
-        
         // Log command execution in the requested format
         crate::utils::debug_log("EXECUTE", &format!("'{}' AS '{}' ON '{}'", command.command, command.action, command.arg));
         crate::utils::debug_log("EXECUTE_FLOW", "Starting command execution process via server");
@@ -210,10 +199,10 @@ impl CommandServer {
         
         if let Ok(client) = CommandClient::new() {
             if client.is_server_available() {
-                crate::utils::debug_log("EXECUTE_FLOW", "Server available, sending launcher command");
+                crate::utils::debug_log("EXECUTE_FLOW", "Server available, sending command object");
                 
-                // Send the full launcher command to server for execution
-                match client.execute_command(&launcher_cmd, None, None, false) {
+                // Send the command object to server for execution
+                match client.execute_command(command) {
                     Ok(response) => {
                         crate::utils::debug_log("EXECUTE_FLOW", &format!("Command sent to server successfully: {:?}", response));
                         
@@ -269,37 +258,48 @@ fn handle_client(
     
     verbose_log("CMD_SERVER", &format!("Read {} bytes: '{}'", bytes_read, request_line.trim()));
     
-    let request: CommandRequest = serde_json::from_str(&request_line.trim())?;
-    verbose_log("CMD_SERVER", &format!("Received request: {:?}", request));
+    let command: crate::Command = serde_json::from_str(&request_line.trim())?;
+    verbose_log("CMD_SERVER", &format!("Received command: {:?}", command));
     
-    if !request.blocking {
-        // For non-blocking requests, spawn a thread to execute the command
-        verbose_log("CMD_SERVER", "Non-blocking request: spawning thread for execution");
-        let inherited_env_clone = inherited_env.clone();
-        let base_working_dir_clone = base_working_dir.clone();
+    // Check if this is a GUI command that needs blocking execution
+    // GUI commands have "G" in their flags field
+    let needs_blocking = command.flags.contains("G");
+    
+    if needs_blocking {
+        // For blocking commands (shell_sync), execute synchronously and wait for result
+        verbose_log("CMD_SERVER", &format!("Executing blocking command: {:?}", command));
+        let result = execute_command_with_env(command.clone(), inherited_env.clone(), base_working_dir.clone());
+        verbose_log("CMD_SERVER", &format!("Blocking command completed: {:?}", result));
+        
+        // Send the actual result back
+        let response_json = serde_json::to_string(&result)?;
+        stream.write_all(response_json.as_bytes())?;
+        stream.write_all(b"\n")?;
+        stream.flush()?;
+    } else {
+        // Spawn command execution in a separate thread for async commands
+        // This allows us to send immediate ACK while command runs
+        let command_clone = command.clone();
+        let env_clone = inherited_env.clone();
+        let dir_clone = base_working_dir.clone();
+        
         thread::spawn(move || {
-            let response = execute_command_with_env(request, inherited_env_clone, base_working_dir_clone);
-            verbose_log("CMD_SERVER", &format!("Non-blocking command completed: success={}", response.success));
+            verbose_log("CMD_SERVER", &format!("Executing command in background: {:?}", command_clone));
+            let result = execute_command_with_env(command_clone, env_clone, dir_clone);
+            verbose_log("CMD_SERVER", &format!("Command execution result: {:?}", result));
         });
         
-        // Send immediate success response for non-blocking
-        let response = CommandResponse {
+        // Send immediate success ACK for async commands
+        // The command is now running in background
+        verbose_log("CMD_SERVER", "Sending immediate ACK (command spawned in background)");
+        let ack_response = CommandResponse {
             success: true,
             exit_code: Some(0),
             stdout: String::new(),
             stderr: String::new(),
             error: None,
         };
-        let response_json = serde_json::to_string(&response)?;
-        stream.write_all(response_json.as_bytes())?;
-        stream.write_all(b"\n")?;
-        stream.flush()?;
-    } else {
-        // Execute command with inherited environment (blocking)
-        let response = execute_command_with_env(request, inherited_env, base_working_dir);
-        
-        // Send response
-        let response_json = serde_json::to_string(&response)?;
+        let response_json = serde_json::to_string(&ack_response)?;
         stream.write_all(response_json.as_bytes())?;
         stream.write_all(b"\n")?;
         stream.flush()?;
@@ -311,100 +311,146 @@ fn handle_client(
 
 /// Execute a command with the inherited environment
 fn execute_command_with_env(
-    request: CommandRequest,
+    command: crate::Command,
     inherited_env: HashMap<String, String>,
     base_working_dir: PathBuf,
 ) -> CommandResponse {
-    // Parse command to extract action and arg for clean logging
-    let command_parts: Vec<&str> = request.command.trim().split_whitespace().collect();
-    let (action, arg) = if command_parts.len() >= 2 {
-        (command_parts[0], command_parts[1..].join(" "))
-    } else if command_parts.len() == 1 {
-        (command_parts[0], String::new())
-    } else {
-        ("unknown", request.command.clone())
-    };
-    
     // Add a separator and clean command execution log
     crate::utils::log("------");
-    if arg.is_empty() {
-        log_and_print("CMD", &format!("Executing: {}", action));
-    } else {
-        log_and_print("CMD", &format!("Executing: {} {}", action, arg));
+    
+    // Format: CMD  name:XXXX  action:XXXX  flags:XXX  arg:XXX
+    // (no space after colon, two spaces between fields)
+    let mut log_msg = format!("name:{}  action:{}", command.command, command.action);
+    
+    // Only include flags if not empty
+    if !command.flags.is_empty() {
+        log_msg.push_str(&format!("  flags:{}", command.flags));
     }
     
+    // Include arg if not empty
+    if !command.arg.is_empty() {
+        log_msg.push_str(&format!("  arg:{}", command.arg));
+    }
+    
+    log_and_print("CMD", &log_msg);
+    
     // Detailed logging goes to debug only
-    verbose_log("CMD_SERVER", &format!("Full command: {}", request.command));
-    verbose_log("CMD_SERVER", &format!("Command parts: {:?}", command_parts));
+    verbose_log("CMD_SERVER", &format!("Command object: {:?}", command));
     
-    
-    let is_launcher_command = command_parts.len() >= 1 && 
-        matches!(
-            command_parts[0], 
-            "app" | "url" | "cmd" | "chrome" | "safari" | "brave" | "firefox" | "work" | 
-            "notion" | "obs" | "obs_url" | "1pass" | "rewrite" | "anchor" | "folder" | 
-            "doc" | "markdown" | "text" | "shutdown" | "slack" | "contact"
-        );
+    // Check if we should use the launcher system for this action
+    let is_launcher_command = matches!(
+        command.action.as_str(),
+        "app" | "url" | "cmd" | "chrome" | "safari" | "brave" | "firefox" | "work" | 
+        "notion" | "obs" | "obs_url" | "1pass" | "rewrite" | "anchor" | "folder" | 
+        "doc" | "markdown" | "text" | "shutdown" | "slack" | "contact"
+    );
     
     verbose_log("CMD_SERVER", &format!("Is launcher command: {}", is_launcher_command));
     
     if is_launcher_command {
         // Use launcher for known action types
-        verbose_log("CMD_SERVER", &format!("Using launcher for action: {}", action));
+        verbose_log("CMD_SERVER", &format!("Using launcher for action: {}", command.action));
         
-        // Execute launcher command directly in server context
-        match crate::command_launcher::launch(&request.command) {
-            Ok(()) => {
-                verbose_log("CMD_SERVER", "Launcher execution completed successfully");
-                log_and_print("CMD", &format!("✓ Completed: {}", action));
-                return CommandResponse {
-                    success: true,
-                    exit_code: Some(0),
-                    stdout: String::new(),
-                    stderr: String::new(),
-                    error: None,
-                };
+        // Check if this is a GUI command that needs blocking execution
+        // GUI commands have "G" in their flags field
+        let needs_blocking = command.flags.contains("G");
+        
+        if command.arg.contains("ec") {
+            eprintln!("[CMD_SERVER LAUNCHER] EC command in launcher path");
+            eprintln!("[CMD_SERVER LAUNCHER] Command object: {:?}", command);
+            eprintln!("[CMD_SERVER LAUNCHER] needs_blocking: {} (flags: '{}')", needs_blocking, command.flags);
+        }
+        
+        // Build the launcher command string (action + arg)
+        let launcher_cmd = if command.arg.is_empty() {
+            command.action.clone()
+        } else {
+            format!("{} {}", command.action, command.arg)
+        };
+        
+        if needs_blocking {
+            // Execute launcher synchronously for GUI commands
+            verbose_log("CMD_SERVER", "Executing launcher synchronously (blocking)");
+            match crate::command_launcher::launch(&launcher_cmd) {
+                Ok(()) => {
+                    verbose_log("CMD_SERVER", "Launcher execution completed successfully");
+                    log_and_print("CMD", &format!("✓ Completed: {}", command.action));
+                    return CommandResponse {
+                        success: true,
+                        exit_code: Some(0),
+                        stdout: String::new(),
+                        stderr: String::new(),
+                        error: None,
+                    };
+                }
+                Err(e) => {
+                    let timestamp = chrono::Local::now().format("%H:%M:%S").to_string();
+                    crate::utils::log_error(&format!("[{}] Launcher failed: {:?}", timestamp, e));
+                    return CommandResponse {
+                        success: false,
+                        exit_code: Some(1),
+                        stdout: String::new(),
+                        stderr: format!("Launcher failed: {:?}", e),
+                        error: Some(format!("{:?}", e)),
+                    };
+                }
             }
-            Err(e) => {
-                let timestamp = chrono::Local::now().format("%H:%M:%S").to_string();
-                log_and_print("CMD", &format!("[{}] ✗ FAILED: {:?}", timestamp, e));
-                return CommandResponse {
-                    success: false,
-                    exit_code: Some(1),
-                    stdout: String::new(),
-                    stderr: format!("Launcher error: {:?}", e),
-                    error: Some(format!("Launcher error: {:?}", e)),
-                };
-            }
+        } else {
+            // Spawn launcher execution in a separate thread for non-blocking commands
+            let launcher_cmd_clone = launcher_cmd.clone();
+            thread::spawn(move || {
+                match crate::command_launcher::launch(&launcher_cmd_clone) {
+                    Ok(()) => {
+                        verbose_log("CMD_SERVER", "Launcher execution completed successfully");
+                        crate::utils::log(&format!("✓ Launcher completed: {}", launcher_cmd_clone));
+                    }
+                    Err(e) => {
+                        let timestamp = chrono::Local::now().format("%H:%M:%S").to_string();
+                        crate::utils::log_error(&format!("[{}] Launcher failed: {:?}", timestamp, e));
+                    }
+                }
+            });
+            
+            // Return immediate success for spawning the launcher
+            log_and_print("CMD", &format!("✓ Spawned: {}", command.action));
+            return CommandResponse {
+                success: true,
+                exit_code: Some(0),
+                stdout: String::new(),
+                stderr: String::new(),
+                error: None,
+            };
         }
     }
     
     // Fall back to shell execution for non-launcher commands
-    verbose_log("CMD_SERVER", &format!("Using shell execution for: {}", request.command));
+    // This shouldn't happen with the new Command object approach, but keep as fallback
+    verbose_log("CMD_SERVER", &format!("Non-launcher command, using shell execution for: {} {}", command.action, command.arg));
+    
+    // Check if this is a GUI command that needs blocking execution
+    let needs_blocking = command.flags.contains("G");
+    
+    // For shell execution, just use the arg as the command
+    let shell_command = &command.arg;
+    
+    if needs_blocking {
+        verbose_log("CMD_SERVER", &format!("Using blocking execution (flags='{}')", command.flags));
+    } else {
+        verbose_log("CMD_SERVER", "Using non-blocking execution (spawn)");
+    }
+    
     let mut cmd = std::process::Command::new("sh");
-    cmd.arg("-c").arg(&request.command);
+    cmd.arg("-c").arg(shell_command);
     
     // Set working directory
-    let working_dir = if let Some(ref wd) = request.working_dir {
-        PathBuf::from(wd)
-    } else {
-        base_working_dir
-    };
-    cmd.current_dir(&working_dir);
+    cmd.current_dir(&base_working_dir);
     
     // Apply inherited environment
     for (key, value) in &inherited_env {
         cmd.env(key, value);
     }
     
-    // Apply any additional environment variables from request
-    if let Some(ref env_vars) = request.env_vars {
-        for (key, value) in env_vars {
-            cmd.env(key, value);
-        }
-    }
-    
-    verbose_log("CMD_SERVER", &format!("Working directory: {:?}", working_dir));
+    verbose_log("CMD_SERVER", &format!("Working directory: {:?}", base_working_dir));
     verbose_log("CMD_SERVER", &format!("Environment variables: {}", inherited_env.len()));
     
     // Log the PATH specifically for debugging
@@ -414,36 +460,25 @@ fn execute_command_with_env(
         verbose_log("CMD_SERVER", "PATH: Not found in environment");
     }
     
-    // Execute command
-    match cmd.output() {
-        Ok(output) => {
-            let success = output.status.success();
-            let exit_code = output.status.code();
-            let stdout = String::from_utf8_lossy(&output.stdout).to_string();
-            let stderr = String::from_utf8_lossy(&output.stderr).to_string();
+    // Always spawn commands - GUI or not
+    // The difference is that GUI commands (G flag) get reported as "blocking" 
+    // so the popup knows to wait/hide, but we still spawn them
+    verbose_log("CMD_SERVER", &format!("Spawning command (GUI={})", needs_blocking));
+    match cmd.spawn() {
+        Ok(mut child) => {
+            verbose_log("CMD_SERVER", &format!("Command spawned with PID: {:?}", child.id()));
             
-            // Always log stdout/stderr for shell commands with indented format
-            if !stdout.is_empty() {
-                for line in stdout.lines() {
-                    debug_log("", &format!("  | {}", line));
-                }
-            }
-            if !stderr.is_empty() {
-                for line in stderr.lines() {
-                    debug_log("", &format!("  | {}", line));
-                }
-            }
-            
+            // Return success immediately for all spawned commands
             CommandResponse {
-                success,
-                exit_code,
-                stdout,
-                stderr,
+                success: true,
+                exit_code: Some(0),
+                stdout: String::new(),
+                stderr: String::new(),
                 error: None,
             }
         }
         Err(e) => {
-            verbose_log("CMD_SERVER", &format!("Command execution failed: {}", e));
+            verbose_log("CMD_SERVER", &format!("Command spawn failed: {}", e));
             
             CommandResponse {
                 success: false,
@@ -488,20 +523,9 @@ impl CommandClient {
     /// Execute a command via the server with timeout and ACK verification
     pub fn execute_command(
         &self,
-        command: &str,
-        working_dir: Option<&str>,
-        env_vars: Option<HashMap<String, String>>,
-        blocking: bool,
+        command: &crate::Command,
     ) -> Result<CommandResponse, Box<dyn std::error::Error>> {
-        verbose_log("CMD_CLIENT", &format!("Sending command to server: {} (blocking: {})", command, blocking));
-        
-        // Create request
-        let request = CommandRequest {
-            command: command.to_string(),
-            working_dir: working_dir.map(|s| s.to_string()),
-            env_vars,
-            blocking,
-        };
+        verbose_log("CMD_CLIENT", &format!("Sending command to server: {:?}", command));
         
         // Connect to server with timeout
         let mut stream = UnixStream::connect(&self.socket_path)?;
@@ -509,9 +533,9 @@ impl CommandClient {
         // Set read timeout for ACK verification
         stream.set_read_timeout(Some(std::time::Duration::from_millis(1000)))?;
         
-        // Send request
-        let request_json = serde_json::to_string(&request)?;
-        stream.write_all(request_json.as_bytes())?;
+        // Send command as JSON
+        let command_json = serde_json::to_string(&command)?;
+        stream.write_all(command_json.as_bytes())?;
         stream.write_all(b"\n")?;
         stream.flush()?;
         
@@ -584,12 +608,34 @@ pub fn is_global_server_running() -> bool {
     }
 }
 
+/// Simple helper to create a Command from action and arg (covers 90% of cases)
+pub fn make_command(action: &str, arg: &str) -> crate::Command {
+    crate::Command {
+        patch: String::new(),
+        command: if arg.is_empty() { action.to_string() } else { format!("{}: {}", action, arg) },
+        action: action.to_string(),
+        arg: arg.to_string(),
+        flags: String::new(),
+        full_line: format!("{} {}", action, arg).trim().to_string(),
+    }
+}
+
+/// Helper for shell commands with optional flags
+pub fn shell_command(cmd: &str, flags: &str) -> crate::Command {
+    make_command("shell", cmd).with_flags(flags)
+}
+
+// Extension trait to add flags to a Command
+impl crate::Command {
+    pub fn with_flags(mut self, flags: &str) -> Self {
+        self.flags = flags.to_string();
+        self
+    }
+}
+
 /// Execute a command using the global server with retry and restart logic
 pub fn execute_via_server(
-    command: &str,
-    working_dir: Option<&str>,
-    env_vars: Option<HashMap<String, String>>,
-    blocking: bool,
+    command: &crate::Command,
 ) -> Result<CommandResponse, Box<dyn std::error::Error>> {
     const MAX_RETRIES: u32 = 3;
     const ACK_TIMEOUT_MS: u64 = 1000;
@@ -599,7 +645,7 @@ pub fn execute_via_server(
         
         // Try to execute command and get ACK
         if let Ok(client) = CommandClient::new() {
-            match client.execute_command(command, working_dir, env_vars.clone(), blocking) {
+            match client.execute_command(command) {
                 Ok(response) => {
                     verbose_log("CMD_SERVER", &format!("Command executed successfully on attempt {}", attempt));
                     return Ok(response);
@@ -623,7 +669,7 @@ pub fn execute_via_server(
         
         // Server not responding - restart it for next attempt
         verbose_log("CMD_SERVER", &format!("Restarting server for attempt {}", attempt + 1));
-        crate::utils::debug_log("CMD_SERVER", &format!("Restarting server for command: {}", command));
+        crate::utils::debug_log("CMD_SERVER", &format!("Restarting server for command: {}", command.command));
         
         // Kill existing server and reset check
         let _ = crate::command_server_management::kill_existing_server();

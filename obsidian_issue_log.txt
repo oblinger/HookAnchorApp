@@ -1,0 +1,6 @@
+Pre-shutdown state Fri Aug  8 23:14:03 PDT 2025:
+- HookAnchor moved to: ~/Desktop/HookAnchor.app.backup
+- Info.plist CFBundleURLTypes: REMOVED
+- Launch Services hook:// count:       23
+- Obsidian issue: Spinning ball even with plugins disabled
+---

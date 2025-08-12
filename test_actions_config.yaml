@@ -1,0 +1,40 @@
+# Test configuration for unified actions system
+
+# New unified actions section
+actions:
+  # Simple action to test
+  test_url:
+    type: "open_url"
+    description: "Test opening a URL"
+    url: "https://github.com"
+    
+  # Test template action with expansion
+  test_template:
+    type: "template"
+    description: "Test template creation"
+    name: "Test {{input}}"
+    action: "doc"
+    arg: "/tmp/test_{{input}}.txt"
+    patch: "Test"
+    flags: ""
+    
+  # Test JavaScript expansion
+  test_js:
+    type: "javascript"
+    description: "Test JavaScript execution"
+    code: "log('Testing JS: ' + '{{input}}'); 'Result: ' + '{{input}}'.toUpperCase()"
+    
+  # Test popup action
+  test_popup:
+    type: "popup"
+    description: "Test popup navigation"
+    popup_action: "navigate"
+    dx: 0
+    dy: 1
+
+# Keep minimal config for other sections
+popup_settings:
+  max_rows: 20
+  max_columns: 3
+  merge_similar: true
+  word_separators: " ._-"

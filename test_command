@@ -1,0 +1,360 @@
+#!/usr/bin/env python3
+"""
+Functional test suite for HookAnchor
+Tests command execution and verifies correct window focus using the grabber
+"""
+
+import argparse
+import subprocess
+import time
+import sys
+import os
+from typing import List, Tuple, Optional
+from dataclasses import dataclass
+from enum import Enum
+
+# Colors for terminal output
+class Colors:
+    RED = '\033[0;31m'
+    GREEN = '\033[0;32m'
+    YELLOW = '\033[1;33m'
+    BLUE = '\033[0;34m'
+    NC = '\033[0m'  # No Color
+
+class TestResult(Enum):
+    PASSED = "PASSED"
+    FAILED = "FAILED"
+    SKIPPED = "SKIPPED"
+    WARNING = "WARNING"
+
+@dataclass
+class TestCase:
+    """Represents a single test case"""
+    command: str
+    expected_app: Optional[str] = None
+    expected_action: Optional[str] = None
+    expected_arg: Optional[str] = None
+    wait_time: float = 2.0
+    description: Optional[str] = None
+
+class HookAnchorTester:
+    def __init__(self, ha_path: str = "~/bin/ha", verbose: bool = False):
+        self.ha_path = os.path.expanduser(ha_path)
+        self.verbose = verbose
+        self.passed = 0
+        self.failed = 0
+        self.skipped = 0
+        self.results = []
+        
+    def log(self, message: str, color: str = Colors.NC):
+        """Print a colored log message"""
+        print(f"{color}{message}{Colors.NC}")
+        
+    def debug(self, message: str):
+        """Print debug message if verbose mode is on"""
+        if self.verbose:
+            self.log(f"[DEBUG] {message}", Colors.BLUE)
+    
+    def run_command(self, command: str) -> Tuple[bool, str, str]:
+        """Execute a shell command and return success, stdout, stderr"""
+        try:
+            result = subprocess.run(
+                command,
+                shell=True,
+                capture_output=True,
+                text=True,
+                timeout=10
+            )
+            return result.returncode == 0, result.stdout.strip(), result.stderr.strip()
+        except subprocess.TimeoutExpired:
+            return False, "", "Command timed out"
+        except Exception as e:
+            return False, "", str(e)
+    
+    def execute_ha_command(self, command: str) -> Tuple[bool, str]:
+        """Execute a HookAnchor command"""
+        # Execute command via -r flag
+        cmd = f'{self.ha_path} -r "{command}"'
+        self.debug(f"Executing: {cmd}")
+        success, stdout, stderr = self.run_command(cmd)
+        
+        if not success and stderr:
+            self.debug(f"Error output: {stderr}")
+            
+        return success, stdout or stderr
+    
+    def grab_active_window(self, delay: float = 0) -> Tuple[Optional[str], Optional[str], Optional[str]]:
+        """
+        Use HookAnchor's grabber to get the active window
+        Returns (action, arg, raw_output) tuple
+        """
+        cmd = f'{self.ha_path} --grab {int(delay)}'
+        self.debug(f"Grabbing with: {cmd}")
+        success, stdout, stderr = self.run_command(cmd)
+        
+        # Always show the raw output for debugging
+        raw_output = stdout if success else stderr
+        self.debug(f"Raw grab output: {raw_output}")
+        
+        if success and stdout:
+            parts = stdout.split(' ', 1)
+            action = parts[0] if parts else None
+            arg = parts[1] if len(parts) > 1 else ""
+            return action, arg, raw_output
+        else:
+            # Check stderr for context info
+            if "No grabber rule matched" in stderr:
+                # Extract app name from stderr
+                app_name = None
+                window_title = None
+                for line in stderr.split('\n'):
+                    if "App:" in line:
+                        app_name = line.split("App:")[1].strip()
+                    if "Title:" in line:
+                        window_title = line.split("Title:")[1].strip()
+                self.debug(f"Active app (no rule): {app_name}, Title: {window_title}")
+                return None, app_name, stderr
+            return None, None, stderr
+    
+    def test_1password_command(self, test_case: TestCase) -> TestResult:
+        """Test 1Password commands specifically"""
+        self.log(f"Testing 1Password: {test_case.command}")
+        
+        # Execute the command
+        success, output = self.execute_ha_command(test_case.command)
+        self.log(f"  Command output: {output}", Colors.BLUE if success else Colors.RED)
+        if not success:
+            return TestResult.FAILED
+        
+        # For 1Password, we need to wait for the webpage to open after selection
+        # Check at multiple intervals (longer delays for webpage loading)
+        checks = [1.0, 2.0, 3.0, 4.0, 5.0]  # Check at these intervals
+        found_target = False
+        expected_in_arg = test_case.command.split()[0].lower()  # e.g., "simplenote" from "SimpleNote 1Pass"
+        
+        for check_time in checks:
+            self.log(f"  Checking at {check_time}s...", Colors.BLUE)
+            time.sleep(check_time if check_time == checks[0] else check_time - checks[checks.index(check_time) - 1])
+            
+            # Check what's in focus
+            action, arg, raw_output = self.grab_active_window()
+            
+            self.log(f"    Grabber at {check_time}s:", Colors.YELLOW)
+            self.log(f"      Action: {action}", Colors.YELLOW)
+            self.log(f"      Arg: {arg}", Colors.YELLOW)
+            
+            # Check if the expected webpage/app opened
+            if arg and expected_in_arg in arg.lower():
+                found_target = True
+                self.log(f"  ✓ Target '{expected_in_arg}' found in window at {check_time}s!", Colors.GREEN)
+                break
+        
+        if found_target:
+            self.log(f"  ✓ 1Password successfully opened {expected_in_arg}", Colors.GREEN)
+            return TestResult.PASSED
+        else:
+            self.log(f"  ✗ 1Password did not open the expected target", Colors.RED)
+            self.log(f"    Expected: window/page containing '{expected_in_arg}'", Colors.RED)
+            self.log(f"    Last seen: action='{action}', arg='{arg}'", Colors.RED)
+            return TestResult.FAILED
+    
+    def test_app_launch_command(self, test_case: TestCase) -> TestResult:
+        """Test commands that launch applications"""
+        self.log(f"Testing app launch: {test_case.command}")
+        
+        # Execute the command
+        success, output = self.execute_ha_command(test_case.command)
+        self.log(f"  Command output: {output}", Colors.BLUE if success else Colors.RED)
+        if not success:
+            return TestResult.FAILED
+        
+        # Wait for app to launch
+        self.log(f"  Waiting {test_case.wait_time}s for app to launch...", Colors.BLUE)
+        time.sleep(test_case.wait_time)
+        
+        # Check what's in focus
+        action, arg, raw_output = self.grab_active_window()
+        
+        # Always show what we actually found
+        self.log(f"  Grabber result:", Colors.YELLOW)
+        self.log(f"    Action: {action}", Colors.YELLOW)
+        self.log(f"    Arg: {arg}", Colors.YELLOW)
+        self.log(f"    Raw output: {raw_output}", Colors.YELLOW)
+        
+        # Check if expected app is in focus
+        if test_case.expected_action and action == test_case.expected_action:
+            self.log(f"  ✓ Correct action grabbed: {action}", Colors.GREEN)
+            return TestResult.PASSED
+        elif test_case.expected_app and arg and test_case.expected_app in arg:
+            self.log(f"  ✓ Expected app in focus: {arg}", Colors.GREEN)
+            return TestResult.PASSED
+        else:
+            self.log(f"  ✗ Test failed", Colors.RED)
+            self.log(f"    Expected: app='{test_case.expected_app}' or action='{test_case.expected_action}'", Colors.RED)
+            self.log(f"    Got: action='{action}', arg='{arg}'", Colors.RED)
+            return TestResult.FAILED
+    
+    def test_command(self, test_case: TestCase) -> TestResult:
+        """Route to appropriate test method based on command type"""
+        command_lower = test_case.command.lower()
+        
+        # Determine test type based on command
+        if "1pass" in command_lower:
+            return self.test_1password_command(test_case)
+        elif any(keyword in command_lower for keyword in ["app", "config", "sublime"]):
+            return self.test_app_launch_command(test_case)
+        else:
+            self.log(f"⚠ Warning: No test implementation for command type: {test_case.command}", Colors.YELLOW)
+            return TestResult.WARNING
+    
+    def run_test(self, test_case: TestCase):
+        """Run a single test case"""
+        print(f"\n{'='*60}")
+        if test_case.description:
+            print(f"Test: {test_case.description}")
+        else:
+            print(f"Test: {test_case.command}")
+        print(f"{'='*60}")
+        
+        result = self.test_command(test_case)
+        
+        # Update counters
+        if result == TestResult.PASSED:
+            self.passed += 1
+        elif result == TestResult.FAILED:
+            self.failed += 1
+        elif result == TestResult.SKIPPED:
+            self.skipped += 1
+        
+        self.results.append((test_case, result))
+        return result
+    
+    def print_summary(self):
+        """Print test summary"""
+        print(f"\n{'='*60}")
+        print("TEST SUMMARY")
+        print(f"{'='*60}")
+        
+        total = self.passed + self.failed + self.skipped
+        print(f"Total tests: {total}")
+        print(f"{Colors.GREEN}Passed: {self.passed}{Colors.NC}")
+        print(f"{Colors.RED}Failed: {self.failed}{Colors.NC}")
+        if self.skipped > 0:
+            print(f"{Colors.YELLOW}Skipped: {self.skipped}{Colors.NC}")
+        
+        # Print failed tests for review
+        if self.failed > 0:
+            print(f"\n{Colors.RED}Failed tests:{Colors.NC}")
+            for test_case, result in self.results:
+                if result == TestResult.FAILED:
+                    print(f"  - {test_case.command}")
+        
+        # Exit with appropriate code
+        sys.exit(0 if self.failed == 0 else 1)
+
+def parse_commands(command_str: str) -> List[TestCase]:
+    """Parse comma-separated command string into test cases"""
+    test_cases = []
+    
+    # Define known test cases with expected results
+    known_tests = {
+        "simplenote1pass": TestCase(
+            command="SimpleNote 1Pass",
+            expected_app="1Password",
+            description="SimpleNote 1Password search",
+            wait_time=2.0
+        ),
+        "1pass": TestCase(
+            command="1Pass",
+            expected_app="1Password",
+            description="1Password Quick Access",
+            wait_time=2.0
+        ),
+        "haconfig": TestCase(
+            command="ha Config",
+            expected_app="Sublime Text",
+            expected_action="doc",
+            description="Open HookAnchor config in Sublime",
+            wait_time=2.0
+        ),
+        "calculator": TestCase(
+            command="Calculator App",
+            expected_app="Calculator",
+            description="Launch Calculator app",
+            wait_time=1.5
+        ),
+    }
+    
+    # Parse command string
+    commands = [cmd.strip().lower() for cmd in command_str.split(',')]
+    
+    for cmd in commands:
+        if cmd in known_tests:
+            test_cases.append(known_tests[cmd])
+        else:
+            # Create generic test case for unknown commands
+            test_cases.append(TestCase(
+                command=cmd,
+                description=f"Generic test for: {cmd}"
+            ))
+    
+    return test_cases
+
+def main():
+    parser = argparse.ArgumentParser(
+        description='Functional testing for HookAnchor commands',
+        formatter_class=argparse.RawDescriptionHelpFormatter,
+        epilog="""
+Examples:
+  %(prog)s -c simplenote1pass
+  %(prog)s -c 1pass,haconfig,calculator
+  %(prog)s --command simplenote1pass --verbose
+  
+Known test commands:
+  simplenote1pass  - Test SimpleNote 1Password search
+  1pass           - Test 1Password Quick Access  
+  haconfig        - Test opening config in Sublime
+  calculator      - Test Calculator app launch
+        """
+    )
+    
+    parser.add_argument(
+        '-c', '--command',
+        required=True,
+        help='Comma-separated list of commands to test'
+    )
+    
+    parser.add_argument(
+        '-v', '--verbose',
+        action='store_true',
+        help='Enable verbose debug output'
+    )
+    
+    parser.add_argument(
+        '--ha-path',
+        default='~/bin/ha',
+        help='Path to HookAnchor executable (default: ~/bin/ha)'
+    )
+    
+    args = parser.parse_args()
+    
+    # Create tester instance
+    tester = HookAnchorTester(ha_path=args.ha_path, verbose=args.verbose)
+    
+    # Parse and run tests
+    test_cases = parse_commands(args.command)
+    
+    if not test_cases:
+        print("No test cases specified")
+        sys.exit(1)
+    
+    print(f"Running {len(test_cases)} test(s)...")
+    
+    for test_case in test_cases:
+        tester.run_test(test_case)
+    
+    # Print summary
+    tester.print_summary()
+
+if __name__ == "__main__":
+    main()
