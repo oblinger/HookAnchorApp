@@ -492,8 +492,6 @@ fn process_markdown_with_root(path: &Path, _vault_root: &Path, existing_commands
         full_path.clone()
     };
     
-    let full_line = format!("{} : {} {};", command_name, action, arg);
-    
     // Try to preserve existing patch if this command existed before
     let preserved_patch = existing_patches.get(&command_name).cloned().unwrap_or_else(String::new);
     
@@ -503,7 +501,6 @@ fn process_markdown_with_root(path: &Path, _vault_root: &Path, existing_commands
         action: action.to_string(),
         arg,
         flags: String::new(),
-        full_line,
     })
 }
 
@@ -579,12 +576,12 @@ fn calculate_commands_checksum(commands: &[Command]) -> String {
         .filter(|cmd| cmd.action == "markdown" || cmd.action == "anchor" || cmd.action == "contact" || cmd.action == "folder")
         .collect();
     
-    // Sort for consistent checksum
-    scan_commands.sort_by(|a, b| a.full_line.cmp(&b.full_line));
+    // Sort for consistent checksum - use to_new_format() for comparison
+    scan_commands.sort_by(|a, b| a.to_new_format().cmp(&b.to_new_format()));
     
     // Hash all scan-generated command lines
     for cmd in scan_commands {
-        cmd.full_line.hash(&mut hasher);
+        cmd.to_new_format().hash(&mut hasher);
     }
     
     format!("{:x}", hasher.finish())
@@ -642,7 +639,6 @@ end tell
                     
                     // Create command name: @FirstName LastName ctc
                     let command_name = format!("@{} ctc", full_name);
-                    let full_line = format!("{} : contact {};", command_name, contact_id);
                     
                     commands.push(Command {
                         patch: String::new(),
@@ -650,7 +646,6 @@ end tell
                         action: "contact".to_string(),
                         arg: contact_id.to_string(),
                         flags: String::new(),
-                        full_line,
                     });
                 }
             }
@@ -664,15 +659,12 @@ end tell
             
             for (name, id) in sample_contacts {
                 let command_name = format!("@{} ctc", name);
-                let full_line = format!("{} : contact {};", command_name, id);
-                
                 commands.push(Command {
                     patch: String::new(),
                     command: command_name,
                     action: "contact".to_string(),
                     arg: id.to_string(),
                     flags: String::new(),
-                    full_line,
                 });
             }
         }

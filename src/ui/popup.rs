@@ -542,14 +542,8 @@ impl AnchorSelector {
                         Err(e) => crate::utils::detailed_log("STATE_SAVE", &format!("POPUP: Failed to save last executed command: {}", e)),
                     }
                     
-                    match execute_via_server(&selected_cmd) {
-                        Ok(_) => {
-                            // Command executed successfully
-                        }
-                        Err(e) => {
-                            crate::utils::log_error(&format!("Failed to execute command: {}", e));
-                        }
-                    }
+                    // execute_via_server now returns void and handles all retries internally
+                    execute_via_server(&selected_cmd);
                     // Note: CommandServer::execute_command handles all execution via server internally
                     // and includes proper state saving, alias resolution, etc.
                     // Request exit or hide through the proper channel
@@ -593,7 +587,6 @@ impl AnchorSelector {
                 action: "alias".to_string(),
                 arg: last_command,
                 flags: String::new(),
-                full_line: String::new(), // Will be reconstructed by the editor
             };
             
             // Open command editor with the pre-filled alias command
@@ -636,17 +629,8 @@ impl AnchorSelector {
                 if !PopupState::is_separator_command(selected_cmd) {
                     // Use launcher to execute the link_to_clipboard action
                     let link_cmd = crate::command_server::make_command("link_to_clipboard", &selected_cmd.command);
-                    match execute_via_server(&link_cmd) {
-                        Ok(response) => {
-                            if response.success {
-                            } else {
-                                crate::utils::log_error(&format!("Failed to copy link: {}", response.stderr));
-                            }
-                        },
-                        Err(e) => {
-                            crate::utils::log_error(&format!("Server communication failed: {}", e));
-                        }
-                    }
+                    // execute_via_server now returns void and handles all retries internally
+                    execute_via_server(&link_cmd);
                 }
             }
         }
@@ -1395,7 +1379,6 @@ impl AnchorSelector {
                             
                             // Fill in the command with all the grabbed information
                             command.command = command_name;
-                            command.full_line = format!("{} : {} {}", command.command, command.action, command.arg);
                             
                             // Open command editor with the pre-filled grabbed command
                             self.command_editor.open_with_command(command);
@@ -1754,18 +1737,9 @@ impl AnchorSelector {
             
             // Launch the folder (popup stays open)
             let folder_cmd = crate::command_server::make_command("folder", &path);
-            match execute_via_server(&folder_cmd) {
-                Ok(response) => {
-                    if response.success {
-                        utils::debug_log("SHOW_FOLDER", &format!("Successfully launched folder: '{}'", path));
-                    } else {
-                        utils::debug_log("SHOW_FOLDER", &format!("Failed to launch folder '{}': {}", path, response.stderr));
-                    }
-                },
-                Err(e) => {
-                    utils::debug_log("SHOW_FOLDER", &format!("Server communication failed: {}", e));
-                }
-            }
+            // execute_via_server now returns void and handles all retries internally
+            execute_via_server(&folder_cmd);
+            utils::debug_log("SHOW_FOLDER", &format!("Launched folder: '{}'", path));
         } else {
             utils::debug_log("SHOW_FOLDER", &format!("No folder found for selected command: '{}'", cmd.command));
         }
@@ -1805,7 +1779,6 @@ impl AnchorSelector {
             arg: selected_command.arg.clone(),
             patch: selected_command.patch.clone(),
             flags: String::new(),
-            full_line: String::new(),
         };
         
         // Save as last executed for potential alias creation
@@ -1817,22 +1790,11 @@ impl AnchorSelector {
         utils::debug_log("TMUX_ACTIVATE", &format!("Executing through launcher: {} {}", tmux_cmd.action, tmux_cmd.arg));
         
         // Use the server for consistent execution (like all other commands)
-        match crate::execute_via_server(&tmux_cmd) {
-            Ok(response) => {
-                if response.success {
-                    utils::debug_log("TMUX_ACTIVATE", "Successfully executed tmux_activate via server");
-                    // Close the popup after successful execution
-                    self.should_exit = true;
-                } else {
-                    utils::debug_log("TMUX_ACTIVATE", &format!("Server execution failed: {}", response.stderr));
-                    self.show_error_dialog(&format!("Failed to start tmux session: {}", response.stderr));
-                }
-            }
-            Err(e) => {
-                utils::debug_log("TMUX_ACTIVATE", &format!("Failed to communicate with server: {:?}", e));
-                self.show_error_dialog(&format!("Failed to start tmux session: {:?}", e));
-            }
-        }
+        // execute_via_server now returns void and handles all retries internally
+        crate::execute_via_server(&tmux_cmd);
+        utils::debug_log("TMUX_ACTIVATE", "Executed tmux_activate via server");
+        // Close the popup after successful execution
+        self.should_exit = true;
     }
 }
 

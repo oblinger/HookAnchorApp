@@ -1,0 +1,207 @@
+/// Simplified unified execution system per PRD
+/// This replaces launcher::launch and execute_action with a single execute() function
+
+use std::collections::HashMap;
+use crate::Command;
+use crate::utils::{log_error, debug_log};
+
+/// Execute a command with the given parameters
+/// This is THE execution function that replaces launcher::launch and execute_action
+pub fn execute(command: &Command, mut params: HashMap<String, String>) -> Option<String> {
+    // Add command.arg to params
+    params.insert("arg".to_string(), command.arg.clone());
+    
+    // Add other command fields that might be useful
+    params.insert("patch".to_string(), command.patch.clone());
+    params.insert("command".to_string(), command.command.clone());
+    
+    // Get the function name for this action
+    let function_name = format!("action_{}", command.action);
+    debug_log("EXECUTE", &format!("Executing function: {}", function_name));
+    
+    // Execute via unified function registry
+    match execute_function(&function_name, &params) {
+        Ok(result) => {
+            debug_log("EXECUTE", &format!("Function {} completed: {}", function_name, result));
+            Some(result)
+        },
+        Err(e) => {
+            log_error(&format!("Function {} failed: {}", function_name, e));
+            None
+        }
+    }
+}
+
+/// Execute a function from the unified registry
+/// All functions (builtin and JavaScript) have the same signature
+fn execute_function(
+    name: &str, 
+    params: &HashMap<String, String>
+) -> Result<String, Box<dyn std::error::Error>> {
+    debug_log("EXECUTE", &format!("Looking up function: {}", name));
+    
+    // Check builtin functions first
+    if let Some(func) = get_builtin_function(name) {
+        debug_log("EXECUTE", &format!("Found builtin function: {}", name));
+        return func(params);
+    }
+    
+    // Check JavaScript functions from config
+    let config = crate::core::sys_data::get_config();
+    if let Some(functions) = &config.functions {
+        if let Some(js_code) = functions.get(name).and_then(|v| v.as_str()) {
+            debug_log("EXECUTE", &format!("Found JavaScript function: {}", name));
+            return execute_javascript(js_code, params);
+        }
+    }
+    
+    // Try legacy action lookup for backward compatibility
+    if name.starts_with("action_") {
+        let action_type = &name[7..]; // Remove "action_" prefix
+        if let Some(actions) = &config.actions {
+            if let Some(action) = actions.get(action_type) {
+                debug_log("EXECUTE", &format!("Found legacy action: {}", action_type));
+                return execute_legacy_action(action, params);
+            }
+        }
+    }
+    
+    Err(format!("Function '{}' not found", name).into())
+}
+
+/// Get a builtin function by name
+fn get_builtin_function(name: &str) -> Option<fn(&HashMap<String, String>) -> Result<String, Box<dyn std::error::Error>>> {
+    match name {
+        "action_shell" => Some(builtin_shell),
+        "action_cmd" => Some(builtin_cmd),
+        "action_app" => Some(builtin_app),
+        "action_folder" => Some(builtin_folder),
+        "action_open_url" => Some(builtin_open_url),
+        "action_template" => Some(builtin_template),
+        _ => None,
+    }
+}
+
+/// Execute JavaScript code with parameters
+fn execute_javascript(
+    code: &str, 
+    params: &HashMap<String, String>
+) -> Result<String, Box<dyn std::error::Error>> {
+    // Replace template variables in the JavaScript code
+    let mut expanded_code = code.to_string();
+    for (key, value) in params.iter() {
+        let placeholder = format!("{{{{{}}}}}", key);
+        expanded_code = expanded_code.replace(&placeholder, value);
+    }
+    
+    // Execute the JavaScript
+    crate::js_runtime::execute_business_logic(&expanded_code)
+}
+
+/// Execute a legacy action (for backward compatibility)
+fn execute_legacy_action(
+    action: &crate::core::unified_actions::Action,
+    params: &HashMap<String, String>
+) -> Result<String, Box<dyn std::error::Error>> {
+    // Convert params to the format expected by the old system
+    let arg = params.get("arg").map(|s| s.as_str());
+    let mut variables = params.clone();
+    variables.remove("arg"); // Remove arg since it's passed separately
+    
+    // Call the old execute_action function which now returns Result
+    crate::core::unified_actions::execute_action(action, arg, Some(variables))
+}
+
+// Builtin action implementations
+
+fn builtin_shell(params: &HashMap<String, String>) -> Result<String, Box<dyn std::error::Error>> {
+    let cmd = params.get("arg").ok_or("Missing command")?;
+    let windowed = params.get("windowed").map(|s| s == "true").unwrap_or(false);
+    
+    if windowed {
+        // Open in terminal window
+        let script = format!(
+            "tell application \"Terminal\" to do script \"{}\"",
+            cmd.replace("\"", "\\\"")
+        );
+        crate::utils::shell_simple(&format!("osascript -e '{}'", script), false)?;
+    } else {
+        crate::utils::shell_simple(cmd, false)?;
+    }
+    
+    Ok("Command executed".to_string())
+}
+
+fn builtin_cmd(params: &HashMap<String, String>) -> Result<String, Box<dyn std::error::Error>> {
+    // For cmd, we execute via the command server
+    let cmd_text = params.get("arg").ok_or("Missing command")?;
+    
+    // Parse the command format (could be "W command" for windowed)
+    if cmd_text.starts_with("W ") {
+        let actual_cmd = &cmd_text[2..];
+        let mut windowed_params = params.clone();
+        windowed_params.insert("arg".to_string(), actual_cmd.to_string());
+        windowed_params.insert("windowed".to_string(), "true".to_string());
+        return builtin_shell(&windowed_params);
+    }
+    
+    // Regular command execution
+    builtin_shell(params)
+}
+
+fn builtin_app(params: &HashMap<String, String>) -> Result<String, Box<dyn std::error::Error>> {
+    let app = params.get("arg").ok_or("Missing app name")?;
+    let args = params.get("args");
+    
+    let result = crate::utils::launch_app_with_arg(app, args.as_ref().map(|s| s.as_str()));
+    
+    // Handle NON_BLOCKING_SUCCESS as success
+    match result {
+        Ok(_) => Ok(format!("Launched app: {}", app)),
+        Err(e) if e.to_string().contains("NON_BLOCKING_SUCCESS") => {
+            Ok(format!("Launched app: {}", app))
+        }
+        Err(e) => Err(e.into())
+    }
+}
+
+fn builtin_folder(params: &HashMap<String, String>) -> Result<String, Box<dyn std::error::Error>> {
+    let path = params.get("arg").ok_or("Missing folder path")?;
+    
+    let result = crate::utils::open_folder(path);
+    
+    // Handle NON_BLOCKING_SUCCESS as success
+    match result {
+        Ok(_) => Ok(format!("Opened folder: {}", path)),
+        Err(e) if e.to_string().contains("NON_BLOCKING_SUCCESS") => {
+            Ok(format!("Opened folder: {}", path))
+        }
+        Err(e) => Err(e.into())
+    }
+}
+
+fn builtin_open_url(params: &HashMap<String, String>) -> Result<String, Box<dyn std::error::Error>> {
+    let url = params.get("arg").ok_or("Missing URL")?;
+    let browser = params.get("browser");
+    
+    let result = if let Some(browser_name) = browser {
+        crate::utils::open_with_app(browser_name, url)
+    } else {
+        crate::utils::open_url(url)
+    };
+    
+    // Handle NON_BLOCKING_SUCCESS as success
+    match result {
+        Ok(_) => Ok(format!("Opened URL: {}", url)),
+        Err(e) if e.to_string().contains("NON_BLOCKING_SUCCESS") => {
+            Ok(format!("Opened URL: {}", url))
+        }
+        Err(e) => Err(e.into())
+    }
+}
+
+fn builtin_template(params: &HashMap<String, String>) -> Result<String, Box<dyn std::error::Error>> {
+    // Templates create commands, they don't execute directly
+    // This would be handled by the template action type
+    Ok("Template action not implemented in simplified system".to_string())
+}

@@ -223,7 +223,6 @@ pub fn create_command_from_template(
         arg: context.expand(&template.arg),
         patch: context.expand(&template.patch),
         flags: context.expand(&template.flags),
-        full_line: String::new(),
     };
     command.update_full_line();
     command
@@ -387,7 +386,6 @@ mod tests {
             arg: "/Users/test/Documents/notes/test.md".to_string(),
             patch: "TestPatch".to_string(),
             flags: String::new(),
-            full_line: String::new(),
         };
         
         let context = TemplateContext::new("input", None, Some(&previous_command));

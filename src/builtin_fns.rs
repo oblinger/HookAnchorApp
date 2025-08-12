@@ -202,27 +202,10 @@ pub fn setup_builtin_functions(env: &mut Environment) {
         crate::utils::verbose_log("BUILTIN", &format!("Starting shell command via server (non-blocking): {}", command));
         
         // Create a Command object for this shell command (non-blocking)
-        let cmd_obj = crate::command_server::shell_command(&command, "");
-        
-        // Use command server for consistent environment
-        match crate::command_server::execute_via_server(&cmd_obj) {
-            Ok(response) => {
-                // Command server already logs stdout/stderr in verbose mode, no need to duplicate
-                
-                if !response.success {
-                    if let Some(error) = response.error {
-                        return Err(EvalError::ExecutionError(format!("Shell command failed: {}", error)));
-                    } else if !response.stderr.is_empty() {
-                        return Err(EvalError::ExecutionError(format!("Shell command failed: {}", response.stderr)));
-                    }
-                }
-                Ok(())
-            },
-            Err(e) => {
-                let error_msg = format!("Shell server unavailable for command '{}': {}", command, e);
-                crate::error_display::queue_user_error(&error_msg);
-                Err(EvalError::ExecutionError(error_msg))
-            }
+        // Execute directly since we're already on the server
+        match crate::utils::shell_simple(&command, false) {
+            Ok(_) => Ok(()),
+            Err(e) => Err(EvalError::ExecutionError(format!("Shell command failed: {}", e)))
         }
     }));
     
@@ -266,25 +249,10 @@ pub fn setup_builtin_functions(env: &mut Environment) {
         let cmd_obj = crate::command_server::shell_command(&command, "G");
         
         // Use command server for consistent environment
-        match crate::command_server::execute_via_server(&cmd_obj) {
-            Ok(response) => {
-                // Command server already logs stdout/stderr in verbose mode, no need to duplicate
-                
-                if !response.success {
-                    if let Some(error) = response.error {
-                        return Err(EvalError::ExecutionError(format!("Shell command failed: {}", error)));
-                    } else if !response.stderr.is_empty() {
-                        return Err(EvalError::ExecutionError(format!("Shell command failed: {}", response.stderr)));
-                    }
-                }
-                Ok(())
-            },
-            Err(e) => {
-                let error_msg = format!("Shell server unavailable for command '{}': {}", command, e);
-                crate::error_display::queue_user_error(&error_msg);
-                Err(EvalError::ExecutionError(error_msg))
-            }
-        }
+        // Note: With void execute_via_server, we can't check for errors
+        // This is a limitation of the simplified PRD architecture
+        crate::command_server::execute_via_server(&cmd_obj);
+        Ok(())
     }));
     
     // javascript function for executing JS code

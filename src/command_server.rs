@@ -57,7 +57,18 @@ impl CommandServer {
         
         // Capture current environment
         let inherited_env: HashMap<String, String> = std::env::vars().collect();
-        let base_working_dir = std::env::current_dir()?;
+        
+        // Set working directory to ~/.config/hookanchor per PRD
+        let home = std::env::var("HOME").unwrap_or_else(|_| ".".to_string());
+        let base_working_dir = PathBuf::from(home).join(".config/hookanchor");
+        
+        // Ensure the directory exists
+        if !base_working_dir.exists() {
+            std::fs::create_dir_all(&base_working_dir)?;
+        }
+        
+        // Change to that directory
+        std::env::set_current_dir(&base_working_dir)?;
         
         debug_log("CMD_SERVER", &format!("Creating server with socket: {:?}", socket_path));
         debug_log("CMD_SERVER", &format!("Captured {} environment variables", inherited_env.len()));
@@ -616,7 +627,6 @@ pub fn make_command(action: &str, arg: &str) -> crate::Command {
         action: action.to_string(),
         arg: arg.to_string(),
         flags: String::new(),
-        full_line: format!("{} {}", action, arg).trim().to_string(),
     }
 }
 

@@ -293,7 +293,6 @@ impl CommandEditor {
                                         action: self.action.clone(),
                                         arg: self.argument.clone(),
                                         flags: self.flags.clone(),
-                                        full_line: self.format_command_line(),
                                     };
                                     result = CommandEditorResult::Save(new_command, self.original_command_name.clone());
                                 }
@@ -312,7 +311,6 @@ impl CommandEditor {
                 action: self.action.clone(),
                 arg: self.argument.clone(),
                 flags: self.flags.clone(),
-                full_line: self.format_command_line(),
             };
             result = CommandEditorResult::Save(new_command, self.original_command_name.clone());
         }
@@ -361,7 +359,6 @@ impl CommandEditor {
             action: self.action.clone(),
             arg: self.argument.clone(),
             flags: self.flags.clone(),
-            full_line: self.format_command_line(),
         };
         
         let command_to_delete = if !self.original_command_name.is_empty() {

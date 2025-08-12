@@ -62,6 +62,7 @@ use rquickjs::{Context, Runtime, Function, Ctx};
 use std::path::{Path, PathBuf};
 use std::fs;
 use regex::Regex;
+use std::os::unix::process::ExitStatusExt;
 use crate::Config;
 use crate::utils::expand_tilde;
 
@@ -352,60 +353,47 @@ fn setup_launcher_builtins(ctx: &Ctx<'_>) -> Result<(), Box<dyn std::error::Erro
     
     // shell(command) -> executes shell command without waiting (detached)
     ctx.globals().set("shell", Function::new(ctx.clone(), |command: String| {
-        // Use command server for consistent environment
-        let cmd_obj = crate::command_server::shell_command(&command, "");
-        match crate::command_server::execute_via_server(&cmd_obj) {
-            Ok(response) => {
-                // Log stdout/stderr for verbose debugging
-                crate::utils::verbose_log("JS_SHELL", &format!("Command: {}", command));
-                if !response.stdout.is_empty() {
-                    crate::utils::verbose_log("JS_SHELL", &format!("STDOUT: {}", response.stdout.trim()));
-                }
-                if !response.stderr.is_empty() {
-                    crate::utils::verbose_log("JS_SHELL", &format!("STDERR: {}", response.stderr.trim()));
-                }
-                
-                if response.success {
-                    format!("Command started: {}", command)
-                } else {
-                    format!("Failed to start command '{}': {}", command, 
-                        response.error.unwrap_or_else(|| response.stderr))
-                }
+        // Execute directly since we're already on the server
+        match crate::utils::shell_simple(&command, false) {
+            Ok(_) => {
+                crate::utils::verbose_log("JS_SHELL", &format!("Command started: {}", command));
+                format!("Command started: {}", command)
             },
             Err(e) => {
-                let error_msg = format!("Shell server unavailable for command '{}': {}", command, e);
-                crate::error_display::queue_user_error(&error_msg);
+                let error_msg = format!("Failed to start command '{}': {}", command, e);
+                crate::utils::verbose_log("JS_SHELL", &error_msg);
                 error_msg
-            },
+            }
         }
     })?)?;
     
     // shell_sync(command) -> executes shell command and waits for completion
     ctx.globals().set("shell_sync", Function::new(ctx.clone(), |command: String| {
-        // Use command server for consistent environment
-        let cmd_obj = crate::command_server::shell_command(&command, "G");
-        match crate::command_server::execute_via_server(&cmd_obj) {
-            Ok(response) => {
-                // Log stdout/stderr for verbose debugging
+        // Execute directly since we're already on the server
+        match crate::utils::shell_simple(&command, true) {
+            Ok(output) => {
+                let stdout = String::from_utf8_lossy(&output.stdout);
+                let stderr = String::from_utf8_lossy(&output.stderr);
+                
                 crate::utils::verbose_log("JS_SHELL_SYNC", &format!("Command: {}", command));
-                if !response.stdout.is_empty() {
-                    crate::utils::verbose_log("JS_SHELL_SYNC", &format!("STDOUT: {}", response.stdout.trim()));
+                if !stdout.is_empty() {
+                    crate::utils::verbose_log("JS_SHELL_SYNC", &format!("STDOUT: {}", stdout.trim()));
                 }
-                if !response.stderr.is_empty() {
-                    crate::utils::verbose_log("JS_SHELL_SYNC", &format!("STDERR: {}", response.stderr.trim()));
+                if !stderr.is_empty() {
+                    crate::utils::verbose_log("JS_SHELL_SYNC", &format!("STDERR: {}", stderr.trim()));
                 }
                 
-                if !response.stderr.is_empty() {
-                    format!("Command executed with stderr: {}", response.stderr)
+                if !stderr.is_empty() {
+                    format!("Command executed with stderr: {}", stderr)
                 } else {
-                    format!("Command executed: {}", response.stdout.trim())
+                    format!("Command executed: {}", stdout.trim())
                 }
             },
             Err(e) => {
-                let error_msg = format!("Shell server unavailable for command '{}': {}", command, e);
-                crate::error_display::queue_user_error(&error_msg);
+                let error_msg = format!("Command failed '{}': {}", command, e);
+                crate::utils::verbose_log("JS_SHELL_SYNC", &error_msg);
                 error_msg
-            },
+            }
         }
     })?)?;
     
@@ -479,34 +467,53 @@ fn setup_launcher_builtins(ctx: &Ctx<'_>) -> Result<(), Box<dyn std::error::Erro
         }
     })?)?;
     
-    // shellWithExitCode(command) -> executes shell command and returns detailed result with user environment
+    // shellWithExitCode(command) -> executes shell command and returns detailed result
     ctx.globals().set("shellWithExitCode", Function::new(ctx.clone(), |command: String| {
-        // Use command server for consistent environment
-        let cmd_obj = crate::command_server::shell_command(&command, "G");
-        match crate::command_server::execute_via_server(&cmd_obj) {
-            Ok(response) => {
-                let exit_code = response.exit_code.unwrap_or(-1);
-                
-                // Properly escape JSON strings
-                let escaped_stdout = response.stdout.replace('\\', r#"\\"#).replace('"', r#"\""#).replace('\n', r#"\n"#).replace('\r', r#"\r"#).replace('\t', r#"\t"#);
-                let escaped_stderr = response.stderr.replace('\\', r#"\\"#).replace('"', r#"\""#).replace('\n', r#"\n"#).replace('\r', r#"\r"#).replace('\t', r#"\t"#);
-                
-                format!(r#"{{"stdout":"{}","stderr":"{}","exitCode":{}}}"#, 
-                    escaped_stdout, escaped_stderr, exit_code)
-            },
-            Err(e) => format!(r#"{{"stdout":"","stderr":"Failed to execute: {}","exitCode":-1}}"#, e),
-        }
+        // Execute directly since we're already on the server
+        use std::process::Command;
+        
+        let output = Command::new("sh")
+            .arg("-c")
+            .arg(&command)
+            .output()
+            .unwrap_or_else(|e| {
+                // Return a fake output with error
+                std::process::Output {
+                    status: std::process::ExitStatus::from_raw(1),
+                    stdout: Vec::new(),
+                    stderr: format!("Failed to execute: {}", e).into_bytes(),
+                }
+            });
+        
+        let exit_code = output.status.code().unwrap_or(-1);
+        let stdout = String::from_utf8_lossy(&output.stdout);
+        let stderr = String::from_utf8_lossy(&output.stderr);
+        
+        // Properly escape JSON strings
+        let escaped_stdout = stdout.replace('\\', r#"\\"#).replace('"', r#"\""#).replace('\n', r#"\n"#).replace('\r', r#"\r"#).replace('\t', r#"\t"#);
+        let escaped_stderr = stderr.replace('\\', r#"\\"#).replace('"', r#"\""#).replace('\n', r#"\n"#).replace('\r', r#"\r"#).replace('\t', r#"\t"#);
+        
+        format!(r#"{{"stdout":"{}","stderr":"{}","exitCode":{}}}"#, 
+            escaped_stdout, escaped_stderr, exit_code)
     })?)?;
     
-    // commandExists(command) -> checks if command is available in PATH with user environment
+    // commandExists(command) -> checks if command is available in PATH
     ctx.globals().set("commandExists", Function::new(ctx.clone(), |command: String| {
-        // Use command server for consistent environment
-        let which_cmd = format!("which {}", command);
-        let cmd_obj = crate::command_server::shell_command(&which_cmd, "G");
-        match crate::command_server::execute_via_server(&cmd_obj) {
-            Ok(response) => response.success,
-            Err(_) => false,
-        }
+        // Execute directly since we're already on the server
+        use std::process::Command;
+        
+        let output = Command::new("which")
+            .arg(&command)
+            .output()
+            .unwrap_or_else(|_| {
+                std::process::Output {
+                    status: std::process::ExitStatus::from_raw(1),
+                    stdout: Vec::new(),
+                    stderr: Vec::new(),
+                }
+            });
+        
+        output.status.success()
     })?)?;
     
     // activateApp(app_name) -> brings application to foreground

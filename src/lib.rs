@@ -38,6 +38,9 @@ pub mod js_runtime;
 pub mod business_logic;
 pub mod builtin_fns;
 
+// Simplified execution system (PRD)
+pub mod execute;
+
 // Command-line interface
 pub mod cmd;
 pub mod utils;

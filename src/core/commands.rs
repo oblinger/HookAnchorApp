@@ -11,7 +11,7 @@ use std::collections::HashMap;
 use serde::{Deserialize, Serialize};
 use super::config::Config;
 
-/// Represents a parsed command with its components and original line
+/// Represents a parsed command with its components
 #[derive(Debug, Clone, PartialEq, Serialize, Deserialize)]
 pub struct  Command {
     pub patch: String,
@@ -19,7 +19,7 @@ pub struct  Command {
     pub action: String,
     pub arg: String,
     pub flags: String,
-    pub full_line: String,
+    // full_line removed per PRD - reconstructed when needed via to_new_format()
 }
 
 /// Represents the target of a command execution
@@ -199,13 +199,9 @@ impl Command {
     }
     
     /// Updates the full_line field to reflect current command state in new format
+    /// NOTE: With full_line removed from struct, this is now a no-op
     pub fn update_full_line(&mut self) {
-        let new_line = self.to_new_format();
-        if new_line != self.full_line {
-            crate::utils::debug_log("AUTO_UPDATE", &format!("Updated full_line for '{}': '{}' -> '{}'", 
-                self.command, self.full_line, new_line));
-            self.full_line = new_line;
-        }
+        // No-op: full_line is reconstructed on demand via to_new_format()
     }
     
     /// Converts the command to new format string
@@ -1105,7 +1101,6 @@ pub fn ensure_orphans_root_patch(
         action: "anchor".to_string(),
         arg: orphans_file.to_string_lossy().to_string(),
         flags: "A".to_string(), // Auto-generated flag
-        full_line: format!("orphans : anchor {}", orphans_file.to_string_lossy()),
     };
     
     // Add the command to the list
@@ -1177,7 +1172,6 @@ pub fn create_orphan_anchors(
             action: "anchor".to_string(),
             arg: markdown_file.to_string_lossy().to_string(),
             flags: "A".to_string(), // Auto-generated flag
-            full_line: format!("{}! {} : anchor A; {}", patch_name, patch_name, markdown_file.to_string_lossy()),
         };
         
         // Add the command to the list
@@ -1214,8 +1208,8 @@ pub fn load_commands_raw() -> Vec<Command> {
                     Ok(command) => {
                         // Debug: Log the first few commands to see if patches are being preserved
                         if line_num < 5 {
-                            crate::utils::detailed_log("PARSE_DEBUG", &format!("Parsed line {}: patch='{}', command='{}', full_line='{}'", 
-                                line_num + 1, command.patch, command.command, command.full_line));
+                            crate::utils::detailed_log("PARSE_DEBUG", &format!("Parsed line {}: patch='{}', command='{}'", 
+                                line_num + 1, command.patch, command.command));
                         }
                         // Also log the Patents command specifically
                         if command.command == "Patents" {
@@ -1318,7 +1312,6 @@ pub fn parse_command_line(line: &str) -> Result<Command, String> {
             action,
             arg: arg.to_string(),
             flags,
-            full_line: line.to_string(),
         });
     }
     
@@ -1796,7 +1789,6 @@ pub fn merge_similar_commands_with_context(commands: Vec<Command>, config: &Conf
                 action: base_command.action.clone(),
                 arg: base_command.arg.clone(),
                 flags: base_command.flags.clone(),
-                full_line: format!("{} ...", candidate),
             };
             // Set the merge flag
             merged_command.set_flag('M', "");
@@ -2094,7 +2086,6 @@ pub fn get_submenu_commands(commands: &[Command], prefix: &str, separators: &str
             action: "separator".to_string(),
             arg: String::new(),
             flags: String::new(),
-            full_line: String::new(),
         });
     }
     
@@ -2227,7 +2218,6 @@ fn get_display_commands_with_options_internal(
                 action: "separator".to_string(),
                 arg: String::new(),
                 flags: String::new(),
-                full_line: String::new(),
             });
         }
         
@@ -2257,7 +2247,6 @@ fn get_display_commands_with_options_internal(
                         action: target_cmd.action.clone(), // Use target's action
                         arg: target_cmd.arg.clone(), // Use target's arg
                         flags: target_cmd.flags.clone(), // Use target's flags
-                        full_line: cmd.full_line, // Keep alias's full line for display
                     }
                 } else {
                     // Target not found, keep the alias as-is
@@ -2378,7 +2367,6 @@ mod tests {
             action: "action".to_string(),
             arg: "argument".to_string(),
             flags: String::new(),
-            full_line: String::new(),
         };
         
         let formatted = cmd.to_new_format();
@@ -2393,7 +2381,6 @@ mod tests {
             action: "action".to_string(),
             arg: "argument".to_string(),
             flags: "flag1 flag2".to_string(),
-            full_line: String::new(),
         };
         
         let formatted = cmd.to_new_format();
@@ -2408,7 +2395,6 @@ mod tests {
             action: "action".to_string(),
             arg: "argument here".to_string(),
             flags: "--flag".to_string(),
-            full_line: String::new(),
         };
         
         let formatted = cmd.to_new_format();
@@ -2438,24 +2424,21 @@ mod tests {
                 action: "action".to_string(),
                 arg: "arg".to_string(),
                 flags: String::new(),
-                full_line: String::new(),
-            },
+                },
             Command {
                 patch: String::new(),
                 command: "web".to_string(),
                 action: "action".to_string(),
                 arg: "arg".to_string(),
                 flags: String::new(),
-                full_line: String::new(),
-            },
+                },
             Command {
                 patch: String::new(),
                 command: "Webshare".to_string(),
                 action: "action".to_string(),
                 arg: "arg".to_string(),
                 flags: String::new(),
-                full_line: String::new(),
-            },
+                },
         ];
 
         let result = filter_commands(&commands, "web", 10, false);
@@ -2475,24 +2458,21 @@ mod tests {
                 action: "action".to_string(),
                 arg: "arg".to_string(),
                 flags: String::new(),
-                full_line: String::new(),
-            },
+                },
             Command {
                 patch: String::new(),
                 command: "test apple".to_string(), // 2 words, alphabetically second
                 action: "action".to_string(),
                 arg: "arg".to_string(),
                 flags: String::new(),
-                full_line: String::new(),
-            },
+                },
             Command {
                 patch: String::new(),
                 command: "testZ".to_string(), // 1 word, alphabetically last
                 action: "action".to_string(),
                 arg: "arg".to_string(),
                 flags: String::new(),
-                full_line: String::new(),
-            },
+                },
         ];
 
         let result = filter_commands(&commands, "test", 10, false);
@@ -2512,24 +2492,21 @@ mod tests {
                 action: "action".to_string(),
                 arg: "arg".to_string(),
                 flags: String::new(),
-                full_line: String::new(),
-            },
+                },
             Command {
                 patch: String::new(),
                 command: "test apple".to_string(),
                 action: "action".to_string(),
                 arg: "arg".to_string(),
                 flags: String::new(),
-                full_line: String::new(),
-            },
+                },
             Command {
                 patch: String::new(),
                 command: "test banana".to_string(),
                 action: "action".to_string(),
                 arg: "arg".to_string(),
                 flags: String::new(),
-                full_line: String::new(),
-            },
+                },
         ];
 
         let result = filter_commands(&commands, "test", 10, false);
@@ -2549,16 +2526,14 @@ mod tests {
                 action: "action".to_string(),
                 arg: "arg".to_string(),
                 flags: String::new(),
-                full_line: String::new(),
-            },
+                },
             Command {
                 patch: String::new(),
                 command: "test something".to_string(), // "test" matches at position 0
                 action: "action".to_string(),
                 arg: "arg".to_string(),
                 flags: String::new(),
-                full_line: String::new(),
-            },
+                },
         ];
 
         let result = filter_commands(&commands, "test", 10, false);
@@ -2577,32 +2552,28 @@ mod tests {
                 action: "action".to_string(),
                 arg: "arg".to_string(),
                 flags: String::new(),
-                full_line: String::new(),
-            },
+                },
             Command {
                 patch: String::new(),
                 command: "WebZ".to_string(), // 1 word, partial match
                 action: "action".to_string(),
                 arg: "arg".to_string(),
                 flags: String::new(),
-                full_line: String::new(),
-            },
+                },
             Command {
                 patch: String::new(),
                 command: "web".to_string(), // exact match
                 action: "action".to_string(),
                 arg: "arg".to_string(),
                 flags: String::new(),
-                full_line: String::new(),
-            },
+                },
             Command {
                 patch: String::new(),
                 command: "Web Browser".to_string(), // 2 words, partial match
                 action: "action".to_string(),
                 arg: "arg".to_string(),
                 flags: String::new(),
-                full_line: String::new(),
-            },
+                },
         ];
 
         let result = filter_commands(&commands, "web", 10, false);

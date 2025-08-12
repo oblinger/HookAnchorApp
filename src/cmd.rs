@@ -134,18 +134,9 @@ fn handle_hook_url(url: &str) {
     // This prevents the popup from showing when handling URLs
     utils::debug_log("URL_HANDLER", &format!("Launching via launcher: {} {}", top_command_obj.action, top_command_obj.arg));
     
-    match execute_via_server(&top_command_obj) {
-        Ok(response) => {
-            if response.success {
-                utils::debug_log("URL_HANDLER", "Command executed successfully via server");
-            } else {
-                utils::debug_log("URL_HANDLER", &format!("Server execution failed: {}", response.stderr));
-            }
-        }
-        Err(e) => {
-            utils::debug_log("URL_HANDLER", &format!("Server communication failed: {}", e));
-        }
-    }
+    // execute_via_server now returns void and handles all retries internally
+    execute_via_server(&top_command_obj);
+    utils::debug_log("URL_HANDLER", "Command executed via server");
 }
 
 fn run_match_command(args: &[String]) {
@@ -193,20 +184,9 @@ fn run_exec_command(args: &[String]) {
     
     if let Some(cmd) = matching_cmd {
         // Execute the actual Command object via server
-        match execute_via_server(&cmd) {
-            Ok(response) => {
-                if response.success {
-                    println!("Command completed successfully");
-                } else {
-                    println!("Command failed: {}", response.stderr);
-                    std::process::exit(1);
-                }
-            },
-            Err(e) => {
-                utils::log_error(&format!("Server communication failed: {}", e));
-                std::process::exit(1);
-            }
-        }
+        // execute_via_server now returns void and handles all retries internally
+        execute_via_server(&cmd);
+        println!("Command completed");
     } else {
         eprintln!("Command '{}' not found", command);
         std::process::exit(1);
@@ -247,18 +227,9 @@ fn run_execute_top_match(args: &[String]) {
     }
     
     // Use server-based execution for consistent environment
-    match execute_via_server(&top_command_obj) {
-        Ok(response) => {
-            if response.success {
-                println!("Command completed successfully");
-            } else {
-                println!("Command failed: {}", response.stderr);
-            }
-        },
-        Err(e) => {
-            println!("Failed to execute command: {}", e);
-        }
-    }
+    // execute_via_server now returns void and handles all retries internally
+    execute_via_server(&top_command_obj);
+    println!("Command completed");
 }
 
 fn run_test_action(args: &[String]) {
@@ -368,20 +339,9 @@ fn run_test_action(args: &[String]) {
     
     // Use server-based execution for testing actions
     let cmd_obj = crate::command_server::make_command(&action_name, &arg_value);
-    match execute_via_server(&cmd_obj) {
-        Ok(response) => {
-            if response.success {
-                println!("Action completed successfully");
-            } else {
-                println!("Action failed: {}", response.stderr);
-                std::process::exit(1);
-            }
-        },
-        Err(e) => {
-            utils::log_error(&format!("Server communication failed: {}", e));
-            std::process::exit(1);
-        }
-    }
+    // execute_via_server now returns void and handles all retries internally
+    execute_via_server(&cmd_obj);
+    println!("Action completed");
 }
 
 
@@ -1283,20 +1243,9 @@ fn run_execute_launcher_command(args: &[String]) {
     };
     
     let cmd_obj = crate::command_server::make_command(action, &arg);
-    match execute_via_server(&cmd_obj) {
-        Ok(response) => {
-            if response.success {
-                utils::detailed_log("LAUNCHER_CMD", "Command completed successfully");
-            } else {
-                utils::log_error(&format!("Command failed: {}", response.stderr));
-                std::process::exit(1);
-            }
-        },
-        Err(e) => {
-            utils::log_error(&format!("Server communication failed: {}", e));
-            std::process::exit(1);
-        }
-    }
+    // execute_via_server now returns void and handles all retries internally
+    execute_via_server(&cmd_obj);
+    utils::detailed_log("LAUNCHER_CMD", "Command completed");
 }
 
 /// Run rebuild command: restart server and rescan filesystem

@@ -476,7 +476,6 @@ pub fn match_grabber_rules(
                                 action: rule.action.clone(),
                                 arg: arg.clone(),
                                 flags: String::new(),
-                                full_line: String::new(), // Will be computed
                             };
                             
                             // Apply patch inference if no explicit patch was set
@@ -517,7 +516,6 @@ pub fn match_grabber_rules(
                                 action,
                                 arg,
                                 flags: String::new(),
-                                full_line: String::new(), // Will be computed
                             };
                             
                             // Apply patch inference if no explicit patch was set

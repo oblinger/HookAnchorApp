@@ -495,7 +495,6 @@ fn execute_template_action(
         arg: params.get("arg").cloned().unwrap_or_default(),
         patch: params.get("patch").cloned().unwrap_or_default(),
         flags: params.get("flags").cloned().unwrap_or_default(),
-        full_line: String::new(),
     };
     command.update_full_line();
     
@@ -944,7 +943,6 @@ mod tests {
             arg: "/path/to/file.md".to_string(),
             patch: "TestPatch".to_string(),
             flags: String::new(),
-            full_line: String::new(),
         });
         
         let result = expand_string("Previous: {{previous.name}}", &context).unwrap();
