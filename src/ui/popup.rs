@@ -2589,10 +2589,8 @@ impl eframe::App for AnchorSelector {
                                                     Err(e) => crate::utils::detailed_log("STATE_SAVE", &format!("POPUP_CLICK: Failed to save last executed command: {}", e)),
                                                 }
                                                 
-                                                match execute_via_server(&cmd) {
-                                                    Ok(_) => {},
-                                                    Err(e) => crate::utils::log_error(&format!("Failed to execute command: {}", e)),
-                                                }
+                                                // Execute command - handles all retries internally
+                                                execute_via_server(&cmd);
                                                 // Don't perform scanner check - it blocks
                                                 self.exit_or_hide(ctx);
                                             }
@@ -2707,10 +2705,8 @@ impl eframe::App for AnchorSelector {
                                             Err(e) => crate::utils::detailed_log("STATE_SAVE", &format!("POPUP_CLICK2: Failed to save last executed command: {}", e)),
                                         }
                                         
-                                        match execute_via_server(&cmd) {
-                                            Ok(_) => {},
-                                            Err(e) => crate::utils::log_error(&format!("Failed to execute command: {}", e)),
-                                        }
+                                        // Execute command - handles all retries internally
+                                        execute_via_server(&cmd);
                                         // Don't perform scanner check - it blocks
                                         self.exit_or_hide(ctx);
                                     }

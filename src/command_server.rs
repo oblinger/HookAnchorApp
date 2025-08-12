@@ -634,10 +634,13 @@ impl crate::Command {
 }
 
 /// Execute a command using the global server with retry and restart logic
-pub fn execute_via_server(
-    command: &crate::Command,
-) -> Result<CommandResponse, Box<dyn std::error::Error>> {
-    const MAX_RETRIES: u32 = 3;
+/// This function NEVER fails from the caller's perspective - it handles all retries internally
+/// If the server can't be started after MAX_RETRIES attempts:
+///   - Shows error dialog to user
+///   - Exits popup if in GUI mode
+/// Otherwise guarantees command delivery
+pub fn execute_via_server(command: &crate::Command) {
+    const MAX_RETRIES: u32 = 5;  // Increased for better resilience
     const ACK_TIMEOUT_MS: u64 = 1000;
     
     for attempt in 1..=MAX_RETRIES {
@@ -646,25 +649,38 @@ pub fn execute_via_server(
         // Try to execute command and get ACK
         if let Ok(client) = CommandClient::new() {
             match client.execute_command(command) {
-                Ok(response) => {
+                Ok(_response) => {
+                    // Success! Command was delivered
                     verbose_log("CMD_SERVER", &format!("Command executed successfully on attempt {}", attempt));
-                    return Ok(response);
+                    return;  // Done - command delivered
                 }
                 Err(e) => {
                     verbose_log("CMD_SERVER", &format!("Command failed on attempt {}: {}", attempt, e));
-                    
-                    // If this was the last attempt, show error to user
-                    if attempt == MAX_RETRIES {
-                        let error_msg = format!(
-                            "Command server failed to respond after {} attempts ({}ms timeout each). \
-                            The server may be hung or experiencing issues.",
-                            MAX_RETRIES, ACK_TIMEOUT_MS
-                        );
-                        crate::error_display::queue_user_error(&error_msg);
-                        return Err(error_msg.into());
-                    }
                 }
             }
+        }
+        
+        // If we've exhausted all retries, show error and exit
+        if attempt == MAX_RETRIES {
+            let error_msg = format!(
+                "Critical Error: Command server is completely unresponsive after {} attempts.\n\n\
+                The server cannot be started or is experiencing critical issues.\n\
+                Please restart HookAnchor manually.",
+                MAX_RETRIES
+            );
+            
+            // Show error to user
+            crate::error_display::queue_user_error(&error_msg);
+            crate::utils::log_error(&error_msg);
+            
+            // If we're in popup mode, exit gracefully
+            #[cfg(feature = "gui")]
+            {
+                std::thread::sleep(std::time::Duration::from_secs(2)); // Let user see the error
+                std::process::exit(1);
+            }
+            
+            return;  // Give up - server is truly broken
         }
         
         // Server not responding - restart it for next attempt
@@ -678,19 +694,12 @@ pub fn execute_via_server(
         // Start new server
         if let Err(e) = crate::command_server_management::start_server_if_needed() {
             verbose_log("CMD_SERVER", &format!("Failed to restart server: {}", e));
-            if attempt == MAX_RETRIES {
-                let error_msg = format!("Failed to restart command server: {}", e);
-                crate::error_display::queue_user_error(&error_msg);
-                return Err(error_msg.into());
-            }
+            // Continue trying - don't give up yet
         }
         
         // Brief delay before retry
         std::thread::sleep(std::time::Duration::from_millis(200));
     }
-    
-    // Should never reach here due to MAX_RETRIES logic above
-    unreachable!()
 }
 
 /// Start a persistent command server and return its PID

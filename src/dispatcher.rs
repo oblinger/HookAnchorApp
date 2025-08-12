@@ -116,16 +116,7 @@ fn handle_hook_url(url: &str) {
     // Execute via server to avoid GUI context and ensure consistent execution
     utils::debug_log("DISPATCHER", &format!("Launching via server: {} ({})", top_command_obj.command, top_command_obj.action));
     
-    match execute_via_server(&top_command_obj) {
-        Ok(response) => {
-            if response.success {
-                utils::debug_log("DISPATCHER", "Command executed successfully via server");
-            } else {
-                utils::debug_log("DISPATCHER", &format!("Server execution failed: {}", response.stderr));
-            }
-        }
-        Err(e) => {
-            utils::debug_log("DISPATCHER", &format!("Server communication failed: {}", e));
-        }
-    }
+    // Execute command - handles all retries internally
+    execute_via_server(&top_command_obj);
+    utils::debug_log("DISPATCHER", "Command sent to server");
 }
