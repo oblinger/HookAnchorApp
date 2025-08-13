@@ -257,7 +257,7 @@ impl AnchorSelector {
         static mut HIDING: bool = false;
         unsafe {
             if HIDING {
-                crate::utils::log("[EXIT_OR_HIDE] Already hiding, returning early");
+                crate::utils::verbose_log("EXIT_OR_HIDE", "Already hiding, returning early");
                 return; // Already hiding, don't call again
             }
             HIDING = true;
@@ -265,20 +265,20 @@ impl AnchorSelector {
         
         // Check if we're in direct mode (set by launcher via environment variable)
         let direct_mode = std::env::var("HOOKANCHOR_DIRECT_MODE").is_ok();
-        crate::utils::log(&format!("[EXIT_OR_HIDE] Direct mode: {}", direct_mode));
+        crate::utils::verbose_log("EXIT_OR_HIDE", &format!("Direct mode: {}", direct_mode));
         
         if !direct_mode {
             // Server mode - hide window using AppleScript
-            crate::utils::log("[EXIT_OR_HIDE] Server mode - hiding window");
+            crate::utils::verbose_log("EXIT_OR_HIDE", "Server mode - hiding window");
             // Clear the search input for next time
             self.popup_state.search_text.clear();
             self.popup_state.update_search(String::new());
             
             // Hide the window using egui's viewport command
-            crate::utils::log("[EXIT_OR_HIDE] Sending ViewportCommand::Visible(false)");
+            crate::utils::verbose_log("EXIT_OR_HIDE", "Sending ViewportCommand::Visible(false)");
             ctx.send_viewport_cmd(egui::ViewportCommand::Visible(false));
             
-            crate::utils::log(&format!("[EXIT_OR_HIDE] Setting is_hidden=true (was {})", self.is_hidden));
+            crate::utils::verbose_log("EXIT_OR_HIDE", &format!("Setting is_hidden=true (was {})", self.is_hidden));
             self.is_hidden = true;
             
             // Reset interaction time to prevent timeout loop
@@ -291,14 +291,14 @@ impl AnchorSelector {
                     i.viewport().outer_rect
                 )
             });
-            crate::utils::log(&format!("[EXIT_OR_HIDE] {}", viewport_info));
-            crate::utils::log("[EXIT_OR_HIDE] Window hidden via viewport commands");
+            crate::utils::verbose_log("EXIT_OR_HIDE", &viewport_info);
+            crate::utils::verbose_log("EXIT_OR_HIDE", "Window hidden via viewport commands");
             // Reset the flag after a delay to allow for future hide operations
             std::thread::spawn(|| {
                 std::thread::sleep(std::time::Duration::from_millis(100));
                 unsafe { 
                     HIDING = false;
-                    crate::utils::log("[EXIT_OR_HIDE] HIDING flag reset to false");
+                    crate::utils::verbose_log("EXIT_OR_HIDE", "HIDING flag reset to false");
                 }
             });
         } else {
@@ -379,7 +379,7 @@ impl AnchorSelector {
                 });
             }
             
-            true // Registry was available for processing
+            handled // Return whether any keys were actually handled
         } else {
             // Fallback: registry not initialized yet
             false
@@ -413,6 +413,10 @@ impl PopupInterface for AnchorSelector {
     
     fn tmux_activate(&mut self) {
         self.tmux_activate();
+    }
+    
+    fn activate_anchor(&mut self) {
+        self.activate_anchor();
     }
     
     fn perform_exit_scanner_check(&mut self) {
@@ -1012,10 +1016,13 @@ impl AnchorSelector {
     
     /// Start loading data in the background after UI is shown
     fn start_deferred_loading(&mut self) {
+        crate::utils::log("DEFERRED_LOADING: start_deferred_loading called");
         if self.loading_state != LoadingState::NotLoaded {
+            crate::utils::log(&format!("DEFERRED_LOADING: Already loading or loaded, state={:?}", self.loading_state));
             return; // Already loading or loaded
         }
         
+        crate::utils::log("DEFERRED_LOADING: Starting to load");
         self.loading_state = LoadingState::Loading;
         let start_time = std::time::Instant::now();
         
@@ -1778,6 +1785,51 @@ impl AnchorSelector {
         crate::execute_via_server(&tmux_cmd);
         utils::debug_log("TMUX_ACTIVATE", "Executed tmux_activate via server");
         // Close the popup after successful execution
+        self.should_exit = true;
+    }
+    
+    fn activate_anchor(&mut self) {
+        use crate::utils;
+        
+        // Get selected command index
+        let selected_index = self.selected_index();
+        
+        // Get the current filtered commands  
+        let display_commands = self.popup_state.filtered_commands.clone();
+        
+        if display_commands.is_empty() || selected_index >= display_commands.len() {
+            utils::debug_log("ACTIVATE_ANCHOR", "No commands available or invalid selection");
+            return;
+        }
+        
+        // Get the selected command and resolve aliases
+        let all_commands = self.popup_state.get_commands();
+        let selected_command = &display_commands[selected_index];
+        let resolved_cmd = self.resolve_aliases_recursively(selected_command, &all_commands);
+        
+        // Extract folder path
+        let folder_path = if let Some(abs_path) = resolved_cmd.get_absolute_folder_path(&self.popup_state.config) {
+            abs_path.to_string_lossy().to_string()
+        } else {
+            utils::debug_log("ACTIVATE_ANCHOR", &format!("Could not extract folder path from command: {}", resolved_cmd.command));
+            return;
+        };
+        
+        utils::debug_log("ACTIVATE_ANCHOR", &format!("Activating anchor at: {}", folder_path));
+        
+        // Create a synthetic command to execute through the launcher
+        let activate_cmd = crate::core::commands::Command {
+            command: format!("ACTIVATE: {}", resolved_cmd.command),
+            action: "activate_anchor".to_string(),
+            arg: folder_path,
+            patch: resolved_cmd.patch.clone(),
+            flags: resolved_cmd.flags.clone(),
+        };
+        
+        // Execute through launcher
+        crate::execute_via_server(&activate_cmd);
+        
+        // Request exit after activation
         self.should_exit = true;
     }
 }

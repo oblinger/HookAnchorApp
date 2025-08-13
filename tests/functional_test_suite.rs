@@ -40,9 +40,9 @@ Dev! Docker : shell; docker ps -a
 # Test multi-level patch structures
 
 Apps! apps : anchor; /Users/test/apps/apps.md
-Apps! Browsers : rewrite; browsers
-Apps! Editors : rewrite; editors
-Apps! Utilities : rewrite; utilities
+Apps! Browsers : alias; browsers
+Apps! Editors : alias; editors
+Apps! Utilities : alias; utilities
 
 Browsers! browsers : anchor; /Users/test/apps/browsers.md
 Browsers! Chrome : app; Google Chrome
@@ -72,16 +72,16 @@ README : markdown; /Users/test/README.md
 Notes : doc; ~/notes.txt
 Config : open; ~/.config/hookanchor/config.yaml
 
-# === ALIASES AND REWRITE CHAINS ===
+# === ALIASES AND CHAINS ===
 # Test command resolution through aliases
 
-web : rewrite; Google Search
-search : rewrite; web
-g : rewrite; search
+web : alias; Google Search
+search : alias; web
+g : alias; search
 
-code : rewrite; VS Code
-editor : rewrite; code
-e : rewrite; editor
+code : alias; VS Code
+editor : alias; code
+e : alias; editor
 
 # === SPECIAL CHARACTERS AND EDGE CASES ===
 
@@ -113,9 +113,9 @@ CASESENSITIVE! MixedCase : chrome; https://mixed.com
 
 # === CIRCULAR REFERENCES (should handle gracefully) ===
 
-circular1 : rewrite; circular2
-circular2 : rewrite; circular3  
-circular3 : rewrite; circular1
+circular1 : alias; circular2
+circular2 : alias; circular3  
+circular3 : alias; circular1
 
 # === DUPLICATE COMMANDS (test merging) ===
 
@@ -141,7 +141,7 @@ Actions! Work Test : work; https://work.com
 Actions! 1Pass Test : 1pass; Test Account
 Actions! Doc Test : doc; /test/doc.txt
 Actions! Open Test : open; /test/file.txt
-Actions! Rewrite Test : rewrite; Anchor Test
+Actions! Alias Test : alias; Anchor Test
 
 # === EMPTY/MINIMAL COMMANDS ===
 
@@ -280,9 +280,9 @@ mod tests {
         assert!(!case_results.is_empty(), "Should handle case insensitive search");
     }
     
-    /// Test command resolution through rewrite chains
+    /// Test command resolution through alias chains
     #[test]
-    fn test_rewrite_resolution() {
+    fn test_alias_resolution() {
         let test_data = create_test_command_structure();
         let lines: Vec<&str> = test_data.lines().collect();
         
@@ -298,16 +298,16 @@ mod tests {
         
         // Test simple alias
         let web_cmd = commands.iter().find(|c| c.command == "web").unwrap();
-        assert_eq!(web_cmd.action, "rewrite");
+        assert_eq!(web_cmd.action, "alias");
         assert_eq!(web_cmd.arg, "Google Search");
         
         // Test chained aliases (g -> search -> web -> Google Search)
         let g_cmd = commands.iter().find(|c| c.command == "g").unwrap();
-        assert_eq!(g_cmd.action, "rewrite");
+        assert_eq!(g_cmd.action, "alias");
         
         // Verify circular reference exists (should handle gracefully in real usage)
         let circular1 = commands.iter().find(|c| c.command == "circular1").unwrap();
-        assert_eq!(circular1.action, "rewrite");
+        assert_eq!(circular1.action, "alias");
         assert_eq!(circular1.arg, "circular2");
     }
     

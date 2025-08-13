@@ -133,13 +133,13 @@ pub fn execute_business_logic(script: &str) -> Result<String, Box<dyn std::error
 // =============================================================================
 
 fn setup_logging(ctx: &Ctx<'_>) -> Result<(), Box<dyn std::error::Error>> {
-    // log(message) - General logging to file
+    // log(message) - General logging to file (always logs, not just in verbose mode)
     ctx.globals().set("log", Function::new(ctx.clone(), |msg: String| {
-        // Use the same logging system as the rest of the application
-        crate::utils::detailed_log("JS", &msg);
+        // Use regular log for JavaScript - these are important user-defined logs
+        crate::utils::log(&msg);
     })?)?;
     
-    // debug(message) - Debug logging
+    // debug(message) - Debug logging (only in verbose mode)
     ctx.globals().set("debug", Function::new(ctx.clone(), |msg: String| {
         crate::utils::detailed_log("JS", &format!("[DEBUG] {}", msg));
     })?)?;
@@ -597,8 +597,8 @@ pub fn setup_config_access(ctx: &Ctx<'_>, config: &Config) -> Result<(), Box<dyn
 }
 
 /// Setup user-defined functions from configuration
-fn setup_user_functions(ctx: &Ctx<'_>, config: &Config) -> Result<(), Box<dyn std::error::Error>> {
-    // First, load functions from config.js if it exists
+/// Load JavaScript functions from config.js file
+pub fn load_config_js_functions(ctx: &Ctx<'_>) -> Result<(), Box<dyn std::error::Error>> {
     let config_js_path = expand_tilde("~/.config/hookanchor/config.js");
     crate::utils::detailed_log("JS", &format!("Looking for config.js at: {}", config_js_path));
     if Path::new(&config_js_path).exists() {
@@ -690,6 +690,14 @@ fn setup_user_functions(ctx: &Ctx<'_>, config: &Config) -> Result<(), Box<dyn st
             }
         }
     }
+    
+    Ok(())
+}
+
+/// Setup user-defined functions from configuration (includes both config.js and YAML)
+fn setup_user_functions(ctx: &Ctx<'_>, config: &Config) -> Result<(), Box<dyn std::error::Error>> {
+    // First load functions from config.js
+    load_config_js_functions(ctx)?;
     
     // Then load any functions from YAML config (for backward compatibility)
     if let Some(functions) = &config.functions {

@@ -2335,13 +2335,13 @@ mod tests {
     }
 
     #[test]
-    fn test_parse_rewrite_command() {
-        let line = "zzz : rewrite; cnn";
+    fn test_parse_cmd_action_command() {
+        let line = "zzz : cmd; echo test";
         let result = parse_command_line(line).unwrap();
         
         assert_eq!(result.command, "zzz");
-        assert_eq!(result.action, "rewrite");
-        assert_eq!(result.arg, "cnn");
+        assert_eq!(result.action, "cmd");
+        assert_eq!(result.arg, "echo test");
         assert_eq!(result.flags, "");
     }
 

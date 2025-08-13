@@ -417,6 +417,9 @@ pub trait PopupInterface {
     /// Start tmux session in selected anchor folder
     fn tmux_activate(&mut self);
     
+    /// Activate anchor - open folder, tmux session, and Obsidian
+    fn activate_anchor(&mut self);
+    
     /// Exit the application
     fn perform_exit_scanner_check(&mut self);
     
@@ -510,6 +513,25 @@ impl KeyRegistry {
     
     /// Process key events using registered handlers
     pub fn process_events(&self, events: &[egui::Event], popup: &mut dyn PopupInterface, egui_ctx: &egui::Context) -> bool {
+        // Log EVERY incoming event
+        for event in events {
+            match event {
+                egui::Event::Key { key, pressed, modifiers, .. } => {
+                    crate::utils::detailed_log("KEYSTROKE", &format!(
+                        "Key event: key={:?}, pressed={}, modifiers={:?}", 
+                        key, pressed, modifiers
+                    ));
+                },
+                egui::Event::Text(text) => {
+                    crate::utils::detailed_log("KEYSTROKE", &format!("Text event: '{}'", text));
+                },
+                _ => {
+                    // Log other events too for completeness
+                    crate::utils::detailed_log("KEYSTROKE", &format!("Other event: {:?}", event));
+                }
+            }
+        }
+        
         let mut handled = false;
         
         // First check text-based handlers
@@ -569,11 +591,16 @@ impl KeyRegistry {
             
             // Try all matching handlers until one succeeds
             for (keystroke, handler) in &self.handlers {
-                // Debug logging for Enter key
+                // Debug logging for specific keys
                 if let egui::Event::Key { key, pressed, .. } = event {
-                    if *key == egui::Key::Enter && *pressed {
-                        crate::utils::log(&format!("🔵 ENTER KEY: Checking handler: {} (keystroke: {:?})", 
-                            handler.description(), keystroke));
+                    if *pressed {
+                        if *key == egui::Key::Enter {
+                            crate::utils::log(&format!("🔵 ENTER KEY: Checking handler: {} (keystroke: {:?})", 
+                                handler.description(), keystroke));
+                        } else if *key == egui::Key::Backtick {
+                            crate::utils::log(&format!("⚡ BACKTICK KEY: Checking handler: {} (keystroke: {:?})", 
+                                handler.description(), keystroke));
+                        }
                     }
                 }
                 
@@ -584,6 +611,10 @@ impl KeyRegistry {
                     if let egui::Event::Key { key, .. } = event {
                         if *key == egui::Key::Enter {
                             crate::utils::log(&format!("🔵 ENTER KEY: Handler '{}' matched for Enter key!", handler.description()));
+                        }
+                        // Also log Backtick key
+                        if *key == egui::Key::Backtick {
+                            crate::utils::log(&format!("⚡ BACKTICK KEY: Handler '{}' matched for Backtick key!", handler.description()));
                         }
                     }
                     
@@ -601,6 +632,10 @@ impl KeyRegistry {
                             if let egui::Event::Key { key, .. } = event {
                                 if *key == egui::Key::Enter {
                                     crate::utils::log("🔵 ENTER KEY: ✅ Handler successfully executed for Enter key!");
+                                }
+                                // Also log Backtick key
+                                if *key == egui::Key::Backtick {
+                                    crate::utils::log("⚡ BACKTICK KEY: ✅ Handler successfully executed for Backtick key!");
                                 }
                             }
                             
@@ -709,6 +744,7 @@ pub enum Action {
     UninstallApp,
     TemplateCreate,
     TmuxActivate,
+    ActivateAnchor,
 }
 
 impl ActionHandler {
@@ -727,6 +763,7 @@ impl ActionHandler {
             Action::ShowKeys => "Show key bindings",
             Action::UninstallApp => "Uninstall application",
             Action::TemplateCreate => "Create template",
+            Action::ActivateAnchor => "Activate anchor (folder, tmux, Obsidian)",
         }.to_string();
         
         Self { action, description }
@@ -761,6 +798,10 @@ impl KeyHandler for ActionHandler {
             },
             Action::TmuxActivate => {
                 context.popup.tmux_activate();
+                KeyHandlerResult::Handled
+            },
+            Action::ActivateAnchor => {
+                context.popup.activate_anchor();
                 KeyHandlerResult::Handled
             },
             Action::ExecuteCommand => {
@@ -866,6 +907,7 @@ impl TextHandler for ShowKeysTextHandler {
 /// Factory function to create a fully configured key registry
 pub fn create_default_key_registry(config: &crate::Config) -> KeyRegistry {
     crate::utils::log("KEY_REGISTRY: Creating default key registry");
+    crate::utils::log(&format!("KEY_REGISTRY: Config has {} actions", config.actions.as_ref().map(|a| a.len()).unwrap_or(0)));
     let mut registry = KeyRegistry::new();
     
     // Register keybinding-based handlers
@@ -906,6 +948,7 @@ pub fn create_default_key_registry(config: &crate::Config) -> KeyRegistry {
         for (action_name, action) in actions {
             // Check if this action has a key field
             if let Some(ref key_str) = action.key {
+                crate::utils::log(&format!("KEY_REGISTRY: Action '{}' has key '{}'", action_name, key_str));
                 // Parse the key string into a keystroke
                 if let Ok(keystroke) = Keystroke::from_key_string(key_str) {
                     actions_with_keys += 1;
@@ -921,6 +964,7 @@ pub fn create_default_key_registry(config: &crate::Config) -> KeyRegistry {
                         // Handle popup actions (navigation, exit, etc.)
                         if let Some(popup_action) = action.params.get("popup_action")
                             .and_then(|v| v.as_str()) {
+                            crate::utils::log(&format!("KEY_REGISTRY: Processing popup action '{}' with key '{}'", popup_action, key_str));
                             let handler: Box<dyn KeyHandler> = match popup_action {
                                 "navigate" => {
                                     // Check dx and dy parameters to determine direction
@@ -967,6 +1011,7 @@ pub fn create_default_key_registry(config: &crate::Config) -> KeyRegistry {
                                 "open_editor" => Box::new(ActionHandler::new(Action::OpenEditor)),
                                 "add_alias" => Box::new(ActionHandler::new(Action::AddAlias)),
                                 "tmux_activate" => Box::new(ActionHandler::new(Action::TmuxActivate)),
+                                "activate_anchor" => Box::new(ActionHandler::new(Action::ActivateAnchor)),
                                 _ => continue, // Skip unknown popup actions
                             };
                             registry.register_keystroke(keystroke, handler);

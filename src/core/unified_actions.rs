@@ -326,7 +326,10 @@ fn setup_user_functions(
     ctx: &Ctx<'_>,
     config: &crate::Config,
 ) -> Result<(), Box<dyn std::error::Error>> {
-    // Load functions from config
+    // First, load functions from config.js (just like js_runtime does)
+    crate::js_runtime::load_config_js_functions(ctx)?;
+    
+    // Then load any additional functions from YAML config
     if let Some(functions) = &config.functions {
         for (name, value) in functions {
         if let Some(js_code) = value.as_str() {
@@ -841,14 +844,44 @@ fn execute_type_text_action(
 fn execute_alias_action(
     params: &HashMap<String, String>,
 ) -> Result<String, Box<dyn std::error::Error>> {
-    let target = params.get("target_command")
-        .ok_or("alias action requires target_command parameter")?;
+    let target = params.get("target")
+        .or_else(|| params.get("target_command"))
+        .or_else(|| params.get("arg"))
+        .ok_or("alias action requires target parameter")?;
     
-    debug_log("ACTION", &format!("Creating alias to: {}", target));
+    debug_log("ACTION", &format!("Resolving alias to: {}", target));
     
-    // TODO: Implement alias creation in commands.txt
+    // Find and execute the target command
+    let commands = crate::core::commands::load_commands_raw();
     
-    Ok(format!("Created alias to: {}", target))
+    // Look for the target command (case-insensitive)
+    // First try exact match, then try without patch prefix
+    let target_lower = target.to_lowercase();
+    let target_cmd = commands.iter()
+        .find(|cmd| {
+            // Try exact match first
+            if cmd.command.to_lowercase() == target_lower {
+                return true;
+            }
+            // If command has a patch (contains '!'), try matching just the part after the patch
+            if let Some(exclaim_pos) = cmd.command.find('!') {
+                let cmd_without_patch = cmd.command[exclaim_pos + 1..].trim();
+                if cmd_without_patch.to_lowercase() == target_lower {
+                    return true;
+                }
+            }
+            false
+        })
+        .ok_or_else(|| format!("Alias target '{}' not found", target))?;
+    
+    // Execute the target command
+    debug_log("ACTION", &format!("Executing aliased command: {} (action: {})", 
+        target_cmd.command, target_cmd.action));
+    
+    // Use execute_via_server to run the resolved command
+    crate::execute_via_server(&target_cmd);
+    
+    Ok(format!("Executed alias to: {}", target))
 }
 
 fn execute_builtin_action(

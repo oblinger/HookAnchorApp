@@ -220,13 +220,7 @@ impl CommandServer {
                         // Check process health after command execution
                         crate::process_monitor::check_system_health();
                         
-                        // For rewrite commands, we need to handle the special case
-                        if command.action == "rewrite" {
-                            // The rewrite command should execute another command
-                            return crate::CommandTarget::Alias(command.arg.clone());
-                        } else {
-                            return crate::CommandTarget::Command(command.clone());
-                        }
+                        return crate::CommandTarget::Command(command.clone());
                     }
                     Err(e) => {
                         crate::utils::debug_log("EXECUTE_FLOW", &format!("Failed to send command to server: {:?}", e));
@@ -352,8 +346,8 @@ fn execute_command_with_env(
     let is_launcher_command = matches!(
         command.action.as_str(),
         "app" | "url" | "cmd" | "chrome" | "safari" | "brave" | "firefox" | "work" | 
-        "notion" | "obs" | "obs_url" | "1pass" | "rewrite" | "anchor" | "folder" | 
-        "doc" | "markdown" | "text" | "shutdown" | "slack" | "contact"
+        "notion" | "obs" | "obs_url" | "1pass" | "anchor" | "folder" | 
+        "doc" | "markdown" | "text" | "slack" | "contact" | "alias"
     );
     
     verbose_log("CMD_SERVER", &format!("Is launcher command: {}", is_launcher_command));
