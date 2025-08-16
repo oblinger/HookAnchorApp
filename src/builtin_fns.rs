@@ -189,24 +189,28 @@ pub fn setup_builtin_functions(env: &mut Environment) {
             .ok_or_else(|| EvalError::InvalidAction("Missing command argument".to_string()))?;
         
         // Check if this is a GUI command that needs blocking execution
-        // GUI commands are marked with "G; " prefix in the argument
-        let (actual_command, flags) = if command.starts_with("G; ") {
-            (&command[3..], "G")
+        // GUI commands have "G" in their flags field OR "G; " prefix in the argument (legacy)
+        let flags = env.variables.get("flags").map(|s| s.as_str()).unwrap_or("");
+        let (actual_command, has_g_flag) = if command.starts_with("G; ") {
+            // Legacy format: "G; " prefix in the command itself
+            (&command[3..], true)
         } else {
-            (command.as_str(), "")
+            // Modern format: check flags variable for G flag
+            (command.as_str(), flags.contains("G"))
         };
         
         // Always log for EC command debugging
         if actual_command.contains("ec") {
             eprintln!("[CMD BUILTIN] EC command detected: '{}'", actual_command);
-            eprintln!("[CMD BUILTIN] flags: '{}'", flags);
+            eprintln!("[CMD BUILTIN] flags from env: '{}'", flags);
+            eprintln!("[CMD BUILTIN] has_g_flag: {}", has_g_flag);
         }
         
-        crate::utils::verbose_log("BUILTIN", &format!("CMD: Executing shell command directly: {} (flags: {})", actual_command, flags));
+        crate::utils::verbose_log("BUILTIN", &format!("CMD: Executing shell command directly: {} (flags: {}, has_g: {})", actual_command, flags, has_g_flag));
         
         // Execute the command directly using shell
         // For GUI commands (G flag), use blocking execution
-        if flags.contains("G") {
+        if has_g_flag {
             // Blocking execution for GUI commands
             crate::utils::verbose_log("BUILTIN", "Using blocking shell execution for GUI command");
             let output = crate::utils::shell_simple(actual_command, true)

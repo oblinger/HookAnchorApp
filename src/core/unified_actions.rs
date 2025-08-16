@@ -36,6 +36,74 @@ pub struct Action {
     pub params: HashMap<String, JsonValue>,
 }
 
+impl Action {
+    /// Convert this action to a Template if it's a template action
+    pub fn to_template(&self) -> Option<crate::core::template_creation::Template> {
+        if self.action_type != "template" {
+            return None;
+        }
+        
+        // Extract template fields from params
+        let name = self.params.get("name")
+            .and_then(|v| v.as_str())
+            .unwrap_or("{{input}}")
+            .to_string();
+            
+        let action = self.params.get("action")
+            .and_then(|v| v.as_str())
+            .unwrap_or("app")
+            .to_string();
+            
+        let arg = self.params.get("arg")
+            .and_then(|v| v.as_str())
+            .unwrap_or("")
+            .to_string();
+            
+        let patch = self.params.get("patch")
+            .and_then(|v| v.as_str())
+            .unwrap_or("")
+            .to_string();
+            
+        let flags = self.params.get("flags")
+            .and_then(|v| v.as_str())
+            .unwrap_or("")
+            .to_string();
+            
+        let grab = self.params.get("grab")
+            .and_then(|v| v.as_u64())
+            .map(|v| v as u32);
+            
+        let edit = self.params.get("edit")
+            .and_then(|v| v.as_bool())
+            .unwrap_or(false);
+            
+        let file = self.params.get("file")
+            .and_then(|v| v.as_str())
+            .map(|s| s.to_string());
+            
+        let file_rescan = self.params.get("file_rescan")
+            .and_then(|v| v.as_bool())
+            .unwrap_or(false);
+        
+        Some(crate::core::template_creation::Template {
+            name,
+            action,
+            arg,
+            patch,
+            flags,
+            key: self.key.clone(),
+            keystroke: None,  // Will be computed if needed
+            grab,
+            edit,
+            file,
+            contents: None,  // Not used in unified actions
+            description: self.description.clone(),
+            validate_previous_folder: false,  // Not used in unified actions
+            file_rescan,
+        })
+    }
+}
+
 /// Context for action execution with JavaScript variable expansion
 pub struct ActionContext {
     /// Input text from user

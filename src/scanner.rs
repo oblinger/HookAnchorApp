@@ -204,12 +204,6 @@ pub fn scan_verbose(commands: Vec<Command>, sys_data: &crate::core::sys_data::Sy
 /// Scans the configured markdown roots and returns an updated command list
 pub fn scan_files(mut commands: Vec<Command>, markdown_roots: &[String], config: &Config) -> Vec<Command> {
     
-    // Create a set of existing command names for collision detection (lowercase for case-insensitive comparison)
-    // Include ALL commands to properly detect collisions with existing anchors
-    let mut existing_commands: HashSet<String> = commands.iter()
-        .map(|cmd| cmd.command.to_lowercase())
-        .collect();
-    
     // Create a set of file paths that are already handled by existing commands
     // This allows O(1) lookup to prevent creating duplicate commands for the same file
     let mut handled_files: HashSet<String> = HashSet::new();
@@ -287,6 +281,13 @@ pub fn scan_files(mut commands: Vec<Command>, markdown_roots: &[String], config:
     let _preserved_user_edited = commands.iter()
         .filter(|cmd| (cmd.action == "markdown" || cmd.action == "anchor" || cmd.action == "folder") && cmd.flags.contains('U'))
         .count();
+    
+    // Create a set of existing command names for collision detection (lowercase for case-insensitive comparison)
+    // This is done AFTER removing old scanner-generated commands to avoid false collisions
+    // Include ALL remaining commands to properly detect collisions with user commands and non-scanner commands
+    let mut existing_commands: HashSet<String> = commands.iter()
+        .map(|cmd| cmd.command.to_lowercase())
+        .collect();
     
     // Collect folders during scanning
     // COMMENTED OUT: Folder scanning disabled for now - only creating commands for markdown files

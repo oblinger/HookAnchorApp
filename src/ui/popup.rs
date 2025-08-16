@@ -408,7 +408,7 @@ impl PopupInterface for AnchorSelector {
     }
     
     fn show_folder(&mut self) {
-        self.show_folder();
+        self.show_folder_impl();
     }
     
     fn tmux_activate(&mut self) {
@@ -757,11 +757,13 @@ impl AnchorSelector {
     }
     
     fn handle_template_create_named_impl(&mut self, template_name: &str) {
+        crate::utils::log(&format!("TEMPLATE: === ENTER handle_template_create_named_impl('{}') ===", template_name));
         use crate::core::template_creation::TemplateContext;
         
-        
+        crate::utils::log("TEMPLATE: DEBUG 0 - About to get current context");
         // Get the current context
         let input = self.popup_state.search_text.clone();
+        crate::utils::log(&format!("TEMPLATE: DEBUG 0.1 - input = '{}'", input));
         let selected_command = if !self.filtered_commands().is_empty() {
             let (display_commands, _, _, _) = self.get_display_commands();
             if self.selected_index() < display_commands.len() {
@@ -795,27 +797,40 @@ impl AnchorSelector {
         
         
         // Create template context
+        crate::utils::log("TEMPLATE: DEBUG 1 - About to create TemplateContext");
         let context = TemplateContext::new(&input, selected_command.as_ref(), previous_command.as_ref());
         
+        crate::utils::log("TEMPLATE: DEBUG 2 - TemplateContext created, about to get config");
         // Get the specified template/action
         let config = crate::core::sys_data::get_config();
         
+        crate::utils::log("TEMPLATE: DEBUG 3 - Config retrieved successfully");
         // First try to find in unified actions
+        crate::utils::log(&format!("TEMPLATE: Looking for action '{}'", template_name));
         let found_action = if let Some(ref actions) = config.actions {
+            crate::utils::log(&format!("TEMPLATE: DEBUG 4 - config.actions is Some, Found {} actions in config", actions.len()));
             if let Some(action) = actions.get(template_name) {
+                crate::utils::log(&format!("TEMPLATE: DEBUG 5 - Found action '{}', type='{}'", template_name, action.action_type));
                 if action.action_type == "template" {
+                    crate::utils::log("TEMPLATE: DEBUG 6 - Action type is 'template'");
                     // Extract grab parameter if present
+                    crate::utils::log("TEMPLATE: DEBUG 7 - About to extract grab parameter");
                     let grab_seconds = action.params.get("grab")
                         .and_then(|v| v.as_u64())
                         .map(|v| v as u32);
                     
+                    crate::utils::log(&format!("TEMPLATE: DEBUG 8 - grab_seconds = {:?}", grab_seconds));
                     if let Some(grab_secs) = grab_seconds {
+                        crate::utils::log(&format!("TEMPLATE: DEBUG 9 - grab_secs = {}", grab_secs));
                         // Store template info for after grab completes
+                        crate::utils::log(&format!("GRAB: Setting pending_template to '{}' with context", template_name));
                         self.pending_template = Some((template_name.to_string(), context));
+                        crate::utils::log(&format!("GRAB: pending_template is now Some"));
                         
                         // Start countdown
                         self.grabber_countdown = Some(grab_secs as u8);
                         self.countdown_last_update = Some(std::time::Instant::now());
+                        crate::utils::log(&format!("GRAB: Started countdown for template '{}' with {} seconds", template_name, grab_secs));
                         return; // Early return for grab templates
                     }
                     
@@ -823,9 +838,11 @@ impl AnchorSelector {
                     // This is a temporary compatibility layer
                     true
                 } else {
+                    crate::utils::log(&format!("TEMPLATE: Action '{}' is not a template (type='{}')", template_name, action.action_type));
                     false
                 }
             } else {
+                crate::utils::log(&format!("TEMPLATE: Action '{}' not found in actions", template_name));
                 false
             }
         } else {
@@ -851,6 +868,7 @@ impl AnchorSelector {
                                 if template.edit {
                                     // Open command editor with the prefilled command
                                     self.command_editor.edit_command(Some(&new_command), &self.popup_state.search_text);
+                                    // Don't clear search text when opening editor - preserve input
                                 } else {
                                     // Add the new command directly
                                     match crate::core::commands::add_command(new_command, &mut self.popup_state.commands) {
@@ -885,26 +903,65 @@ impl AnchorSelector {
             self.show_error_dialog(&format!("Template/Action '{}' not found in configuration", template_name));
         } else {
             // Process the unified action as a template
-            // For now, show a message that unified action templates are being processed
             crate::utils::log(&format!("Processing unified action template: {}", template_name));
             
-            // Execute the template action through unified actions
+            // Convert unified action to template and process it
             if let Some(ref actions) = config.actions {
                 if let Some(action) = actions.get(template_name) {
-                    // Execute the action with context variables
-                    match crate::core::unified_actions::execute_action(
-                        action, 
-                        None,  // No primary arg for templates
-                        Some(context.variables.clone())
-                    ) {
-                        Ok(result) => {
-                            crate::utils::log(&format!("Template action completed: {}", result));
-                            // Clear search and update display
-                            self.popup_state.search_text.clear();
-                            self.popup_state.update_search(String::new());
+                    if let Some(template) = action.to_template() {
+                        crate::utils::log(&format!("TEMPLATE: Converted action to template, edit={}", template.edit));
+                        
+                        // Process template to create command
+                        match crate::core::template_creation::process_template(&template, &context, &config) {
+                            Ok(new_command) => {
+                                if template.edit {
+                                    crate::utils::log("TEMPLATE: Opening command editor for sub_anchor template");
+                                    // Open command editor with the prefilled command
+                                    self.command_editor.edit_command(Some(&new_command), &self.popup_state.search_text);
+                                    // Don't clear search text when opening editor - preserve input
+                                } else {
+                                    // Add the new command directly
+                                    match crate::core::commands::add_command(new_command, &mut self.popup_state.commands) {
+                                        Ok(_) => {
+                                            // Save commands to file
+                                            if let Err(e) = crate::core::commands::save_commands_to_file(&self.popup_state.commands) {
+                                                crate::utils::log_error(&format!("Failed to save commands: {}", e));
+                                            }
+                                            // Clear search and update display
+                                            self.popup_state.search_text.clear();
+                                            self.popup_state.update_search(String::new());
+                                            
+                                            // Trigger rescan if requested
+                                            if template.file_rescan {
+                                                self.trigger_rescan();
+                                            }
+                                        }
+                                        Err(e) => {
+                                            self.show_error_dialog(&format!("Failed to add command: {}", e));
+                                        }
+                                    }
+                                }
+                            }
+                            Err(e) => {
+                                self.show_error_dialog(&format!("Failed to create command from '{}' template: {}", template_name, e));
+                            }
                         }
-                        Err(e) => {
-                            self.show_error_dialog(&format!("Failed to execute template action '{}': {}", template_name, e));
+                    } else {
+                        // Not a template action, execute directly
+                        match crate::core::unified_actions::execute_action(
+                            action, 
+                            None,  // No primary arg for templates
+                            Some(context.variables.clone())
+                        ) {
+                            Ok(result) => {
+                                crate::utils::log(&format!("Template action completed: {}", result));
+                                // Clear search and update display
+                                self.popup_state.search_text.clear();
+                                self.popup_state.update_search(String::new());
+                            }
+                            Err(e) => {
+                                self.show_error_dialog(&format!("Failed to execute template action '{}': {}", template_name, e));
+                            }
                         }
                     }
                 }
@@ -1209,8 +1266,10 @@ impl AnchorSelector {
     /// Update countdown and handle grabber logic
     fn update_grabber_countdown(&mut self, ctx: &egui::Context) {
         if let Some(count) = self.grabber_countdown {
+            crate::utils::verbose_log("GRAB", &format!("update_grabber_countdown: count={}", count));
             if let Some(last_update) = self.countdown_last_update {
                 let elapsed = last_update.elapsed();
+                crate::utils::verbose_log("GRAB", &format!("Elapsed: {}ms", elapsed.as_millis()));
                 if elapsed.as_secs() >= 1 {
                     if count > 1 {
                         // Continue countdown
@@ -1231,6 +1290,7 @@ impl AnchorSelector {
                         }
                     } else {
                         // Countdown finished, execute grab
+                        crate::utils::log("GRAB: Countdown reached 0, calling execute_grab");
                         self.execute_grab(ctx);
                         self.grabber_countdown = None;
                         self.countdown_last_update = None;
@@ -1292,6 +1352,7 @@ impl AnchorSelector {
     
     /// Execute the grab operation - simplified synchronous version
     fn execute_grab(&mut self, _ctx: &egui::Context) {
+        crate::utils::log("GRAB: execute_grab() called");
         let config = crate::core::sys_data::get_config();
         
         // Check if we should flip focus
@@ -1309,13 +1370,18 @@ impl AnchorSelector {
         }
         
         // Now capture from the focused application
+        crate::utils::log(&format!("GRAB: Calling grabber::grab, pending_template={:?}", 
+            self.pending_template.as_ref().map(|(name, _)| name)));
         match grabber::grab(&config) {
             Ok(grab_result) => {
+                crate::utils::log(&format!("GRAB: grabber::grab returned result"));
                 match grab_result {
                     grabber::GrabResult::RuleMatched(rule_name, mut command) => {
+                        crate::utils::log(&format!("GRAB: RuleMatched - rule='{}', command.action='{}', command.arg='{}'", rule_name, command.action, command.arg));
                         
                         // Check if we have a pending template
                         if let Some((template_name, mut context)) = self.pending_template.take() {
+                            crate::utils::log(&format!("GRAB: Found pending template '{}' - will process it", template_name));
                             
                             // Add grabbed variables to template context
                             context.add_variable("grabbed_action".to_string(), command.action.clone());
@@ -1324,40 +1390,120 @@ impl AnchorSelector {
                             
                             // Process the template with grabbed context
                             let config = crate::core::sys_data::get_config();
-                            if let Some(ref templates) = config.templates {
-                                if let Some(template) = templates.get(&template_name) {
-                                    match crate::core::template_creation::process_template(template, &context, &config) {
-                                        Ok(new_command) => {
-                                            if template.edit {
-                                                self.command_editor.edit_command(Some(&new_command), &self.popup_state.search_text);
-                                            } else {
-                                                // Add command directly
-                                                match crate::core::commands::add_command(new_command, &mut self.popup_state.commands) {
-                                                    Ok(_) => {
-                                                        if let Err(e) = crate::core::commands::save_commands_to_file(&self.popup_state.commands) {
-                                                            crate::utils::log_error(&format!("Failed to save commands: {}", e));
-                                                        }
-                                                        self.popup_state.search_text.clear();
-                                                        self.popup_state.update_search(String::new());
-                                                        
-                                                        // Trigger rescan if requested
-                                                        if template.file_rescan {
-                                                            self.trigger_rescan();
+                            
+                            // Try to find template in unified actions first
+                            let template_found = if let Some(ref actions) = config.actions {
+                                if let Some(action) = actions.get(&template_name) {
+                                    crate::utils::log(&format!("GRAB: Found action '{}' in unified actions", template_name));
+                                    if action.action_type == "template" {
+                                        crate::utils::log(&format!("GRAB: Action type is 'template'"));
+                                        // Convert action to Template for processing
+                                        if let Some(template) = action.to_template() {
+                                            crate::utils::log(&format!("GRAB: Successfully converted action to template"));
+                                            crate::utils::log(&format!("GRAB: Calling process_template"));
+                                            match crate::core::template_creation::process_template(&template, &context, &config) {
+                                                Ok(new_command) => {
+                                                    crate::utils::log(&format!("GRAB: process_template succeeded, command='{}'\n", new_command.command));
+                                                    // Check edit flag from action params
+                                                    let should_edit = action.params.get("edit")
+                                                        .and_then(|v| v.as_bool())
+                                                        .unwrap_or(false);
+                                                    
+                                                    crate::utils::log(&format!("GRAB: Template created command '{}', should_edit={}", 
+                                                        new_command.command, should_edit));
+                                                    
+                                                    if should_edit {
+                                                        crate::utils::log("GRAB: Opening command editor for template (should_edit=true)");
+                                                        crate::utils::log(&format!("GRAB: command_editor.visible before={}", self.command_editor.visible));
+                                                        self.command_editor.edit_command(Some(&new_command), &self.popup_state.search_text);
+                                                        crate::utils::log(&format!("GRAB: command_editor.visible after={}", self.command_editor.visible));
+                                                    } else {
+                                                        crate::utils::log("GRAB: Not opening editor (should_edit=false)");
+                                                        // Add command directly
+                                                        match crate::core::commands::add_command(new_command, &mut self.popup_state.commands) {
+                                                            Ok(_) => {
+                                                                if let Err(e) = crate::core::commands::save_commands_to_file(&self.popup_state.commands) {
+                                                                    crate::utils::log_error(&format!("Failed to save commands: {}", e));
+                                                                }
+                                                                self.popup_state.search_text.clear();
+                                                                self.popup_state.update_search(String::new());
+                                                                
+                                                                // Trigger rescan if requested
+                                                                let file_rescan = action.params.get("file_rescan")
+                                                                    .and_then(|v| v.as_bool())
+                                                                    .unwrap_or(false);
+                                                                if file_rescan {
+                                                                    self.trigger_rescan();
+                                                                }
+                                                            }
+                                                            Err(e) => {
+                                                                self.show_error_dialog(&format!("Failed to add command: {}", e));
+                                                            }
                                                         }
                                                     }
-                                                    Err(e) => {
-                                                        self.show_error_dialog(&format!("Failed to add command: {}", e));
+                                                }
+                                                Err(e) => {
+                                                    crate::utils::log(&format!("GRAB: process_template failed: {}", e));
+                                                    self.show_error_dialog(&format!("Failed to create command from template: {}", e));
+                                                }
+                                            }
+                                            true
+                                        } else {
+                                            crate::utils::log(&format!("GRAB: Failed to convert action '{}' to template", template_name));
+                                            false
+                                        }
+                                    } else {
+                                        crate::utils::log(&format!("GRAB: Action '{}' is not a template type (type={})", template_name, action.action_type));
+                                        false
+                                    }
+                                } else {
+                                    crate::utils::log(&format!("GRAB: Action '{}' not found in unified actions", template_name));
+                                    false
+                                }
+                            } else {
+                                crate::utils::log("GRAB: No unified actions configured");
+                                false
+                            };
+                            
+                            // Fall back to old templates if not found in actions
+                            if !template_found {
+                                crate::utils::log(&format!("GRAB: Template '{}' not found in actions, checking old templates", template_name));
+                                if let Some(ref templates) = config.templates {
+                                    if let Some(template) = templates.get(&template_name) {
+                                        match crate::core::template_creation::process_template(template, &context, &config) {
+                                            Ok(new_command) => {
+                                                if template.edit {
+                                                    self.command_editor.edit_command(Some(&new_command), &self.popup_state.search_text);
+                                                } else {
+                                                    // Add command directly
+                                                    match crate::core::commands::add_command(new_command, &mut self.popup_state.commands) {
+                                                        Ok(_) => {
+                                                            if let Err(e) = crate::core::commands::save_commands_to_file(&self.popup_state.commands) {
+                                                                crate::utils::log_error(&format!("Failed to save commands: {}", e));
+                                                            }
+                                                            self.popup_state.search_text.clear();
+                                                            self.popup_state.update_search(String::new());
+                                                            
+                                                            // Trigger rescan if requested
+                                                            if template.file_rescan {
+                                                                self.trigger_rescan();
+                                                            }
+                                                        }
+                                                        Err(e) => {
+                                                            self.show_error_dialog(&format!("Failed to add command: {}", e));
+                                                        }
                                                     }
                                                 }
                                             }
-                                        }
-                                        Err(e) => {
-                                            self.show_error_dialog(&format!("Failed to create command from template: {}", e));
+                                            Err(e) => {
+                                                self.show_error_dialog(&format!("Failed to create command from template: {}", e));
+                                            }
                                         }
                                     }
                                 }
                             }
                         } else {
+                            crate::utils::log("GRAB: No pending template - using normal grab behavior");
                             // Normal grab behavior (no template)
                             // Use the current search text as the command name, or default if empty
                             let command_name = if self.popup_state.search_text.trim().is_empty() {
@@ -1384,35 +1530,113 @@ impl AnchorSelector {
                             
                             // Process the template
                             let config = crate::core::sys_data::get_config();
-                            if let Some(ref templates) = config.templates {
-                                if let Some(template) = templates.get(&template_name) {
-                                    match crate::core::template_creation::process_template(template, &context, &config) {
-                                        Ok(new_command) => {
-                                            if template.edit {
-                                                self.command_editor.edit_command(Some(&new_command), &self.popup_state.search_text);
-                                            } else {
-                                                // Add command directly
-                                                match crate::core::commands::add_command(new_command, &mut self.popup_state.commands) {
-                                                    Ok(_) => {
-                                                        if let Err(e) = crate::core::commands::save_commands_to_file(&self.popup_state.commands) {
-                                                            crate::utils::log_error(&format!("Failed to save commands: {}", e));
-                                                        }
-                                                        self.popup_state.search_text.clear();
-                                                        self.popup_state.update_search(String::new());
-                                                        
-                                                        // Trigger rescan if requested
-                                                        if template.file_rescan {
-                                                            self.trigger_rescan();
+                            
+                            // Try to find template in unified actions first
+                            let template_found = if let Some(ref actions) = config.actions {
+                                if let Some(action) = actions.get(&template_name) {
+                                    if action.action_type == "template" {
+                                        crate::utils::log(&format!("GRAB: Action type is 'template'"));
+                                        // Convert action to Template for processing
+                                        if let Some(template) = action.to_template() {
+                                            crate::utils::log(&format!("GRAB: Successfully converted action to template"));
+                                            crate::utils::log(&format!("GRAB: Calling process_template"));
+                                            match crate::core::template_creation::process_template(&template, &context, &config) {
+                                                Ok(new_command) => {
+                                                    crate::utils::log(&format!("GRAB: process_template succeeded, command='{}'\n", new_command.command));
+                                                    // Check edit flag from action params
+                                                    let should_edit = action.params.get("edit")
+                                                        .and_then(|v| v.as_bool())
+                                                        .unwrap_or(false);
+                                                    
+                                                    crate::utils::log(&format!("GRAB: Template created command '{}', should_edit={}", 
+                                                        new_command.command, should_edit));
+                                                    
+                                                    if should_edit {
+                                                        crate::utils::log("GRAB: Opening command editor for template (should_edit=true)");
+                                                        crate::utils::log(&format!("GRAB: command_editor.visible before={}", self.command_editor.visible));
+                                                        self.command_editor.edit_command(Some(&new_command), &self.popup_state.search_text);
+                                                        crate::utils::log(&format!("GRAB: command_editor.visible after={}", self.command_editor.visible));
+                                                    } else {
+                                                        crate::utils::log("GRAB: Not opening editor (should_edit=false)");
+                                                        // Add command directly
+                                                        match crate::core::commands::add_command(new_command, &mut self.popup_state.commands) {
+                                                            Ok(_) => {
+                                                                if let Err(e) = crate::core::commands::save_commands_to_file(&self.popup_state.commands) {
+                                                                    crate::utils::log_error(&format!("Failed to save commands: {}", e));
+                                                                }
+                                                                self.popup_state.search_text.clear();
+                                                                self.popup_state.update_search(String::new());
+                                                                
+                                                                // Trigger rescan if requested
+                                                                let file_rescan = action.params.get("file_rescan")
+                                                                    .and_then(|v| v.as_bool())
+                                                                    .unwrap_or(false);
+                                                                if file_rescan {
+                                                                    self.trigger_rescan();
+                                                                }
+                                                            }
+                                                            Err(e) => {
+                                                                self.show_error_dialog(&format!("Failed to add command: {}", e));
+                                                            }
                                                         }
                                                     }
-                                                    Err(e) => {
-                                                        self.show_error_dialog(&format!("Failed to add command: {}", e));
+                                                }
+                                                Err(e) => {
+                                                    crate::utils::log(&format!("GRAB: process_template failed: {}", e));
+                                                    self.show_error_dialog(&format!("Failed to create command from template: {}", e));
+                                                }
+                                            }
+                                            true
+                                        } else {
+                                            crate::utils::log(&format!("GRAB: Failed to convert action '{}' to template", template_name));
+                                            false
+                                        }
+                                    } else {
+                                        crate::utils::log(&format!("GRAB: Action '{}' is not a template type (type={})", template_name, action.action_type));
+                                        false
+                                    }
+                                } else {
+                                    crate::utils::log(&format!("GRAB: Action '{}' not found in unified actions", template_name));
+                                    false
+                                }
+                            } else {
+                                crate::utils::log("GRAB: No unified actions configured");
+                                false
+                            };
+                            
+                            // Fall back to old templates if not found in actions
+                            if !template_found {
+                                crate::utils::log(&format!("GRAB: Template '{}' not found in actions, checking old templates", template_name));
+                                if let Some(ref templates) = config.templates {
+                                    if let Some(template) = templates.get(&template_name) {
+                                        match crate::core::template_creation::process_template(template, &context, &config) {
+                                            Ok(new_command) => {
+                                                if template.edit {
+                                                    self.command_editor.edit_command(Some(&new_command), &self.popup_state.search_text);
+                                                } else {
+                                                    // Add command directly
+                                                    match crate::core::commands::add_command(new_command, &mut self.popup_state.commands) {
+                                                        Ok(_) => {
+                                                            if let Err(e) = crate::core::commands::save_commands_to_file(&self.popup_state.commands) {
+                                                                crate::utils::log_error(&format!("Failed to save commands: {}", e));
+                                                            }
+                                                            self.popup_state.search_text.clear();
+                                                            self.popup_state.update_search(String::new());
+                                                            
+                                                            // Trigger rescan if requested
+                                                            if template.file_rescan {
+                                                                self.trigger_rescan();
+                                                            }
+                                                        }
+                                                        Err(e) => {
+                                                            self.show_error_dialog(&format!("Failed to add command: {}", e));
+                                                        }
                                                     }
                                                 }
                                             }
-                                        }
-                                        Err(e) => {
-                                            self.show_error_dialog(&format!("Failed to create command from template: {}", e));
+                                            Err(e) => {
+                                                self.show_error_dialog(&format!("Failed to create command from template: {}", e));
+                                            }
                                         }
                                     }
                                 }
@@ -1663,7 +1887,7 @@ impl AnchorSelector {
     }
     
     /// Show folder functionality - launches the first folder matching current search
-    fn show_folder(&mut self) {
+    fn show_folder_impl(&mut self) {
         use crate::utils;
         
         let search_text = &self.popup_state.search_text;
@@ -2041,6 +2265,9 @@ impl eframe::App for AnchorSelector {
         // Scanner check is now performed on exit instead of startup to avoid delays
         
         // Update grabber countdown
+        if self.grabber_countdown.is_some() {
+            crate::utils::verbose_log("GRAB", "Calling update_grabber_countdown from main update");
+        }
         self.update_grabber_countdown(ctx);
         
         // Update window size based on current UI state

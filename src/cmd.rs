@@ -1134,7 +1134,18 @@ fn run_restart_server() {
         println!("  ⚠️  Popup server not running (window may already be hidden)");
     }
     
-    // Kill any existing server
+    // Kill any existing popup_server first
+    println!("  Killing existing popup_server...");
+    use std::process::Command;
+    match Command::new("pkill")
+        .arg("-f")
+        .arg("popup_server")
+        .output() {
+        Ok(_) => println!("  ✅ Existing popup_server killed"),
+        Err(e) => println!("  ⚠️  Failed to kill popup_server: {}", e),
+    }
+    
+    // Kill any existing command server
     println!("  Killing existing server...");
     match crate::command_server_management::kill_existing_server() {
         Ok(()) => println!("  ✅ Existing server killed"),

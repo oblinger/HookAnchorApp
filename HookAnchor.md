@@ -1,6 +1,13 @@
 # HookAnchor
 
 
+
+
+
+
+VLM 
+Digital Twin
+
 ## Project Overview
 Universal command launcher and anchor system for macOS.
 
