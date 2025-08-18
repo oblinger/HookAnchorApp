@@ -2205,6 +2205,20 @@ impl eframe::App for AnchorSelector {
             self.last_interaction_time = std::time::Instant::now();
         }
         
+        // Check for idle timeout - only when visible and not showing dialogs/editor
+        if !self.is_hidden && !self.command_editor.visible && !self.dialog.visible {
+            let config = crate::core::sys_data::get_config();
+            if let Some(timeout_seconds) = config.popup_settings.idle_timeout_seconds {
+                let idle_duration = self.last_interaction_time.elapsed();
+                if idle_duration.as_secs() >= timeout_seconds {
+                    crate::utils::log(&format!("IDLE_TIMEOUT: Hiding popup after {} seconds of inactivity", timeout_seconds));
+                    self.exit_or_hide(ctx);
+                    // Reset interaction time to prevent immediate re-triggering
+                    self.last_interaction_time = std::time::Instant::now();
+                }
+            }
+        }
+        
         // Check if exit was requested by user action
         if self.should_exit {
             self.should_exit = false; // Reset flag
