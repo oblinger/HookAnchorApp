@@ -438,6 +438,9 @@ pub trait PopupInterface {
     /// Edit the active command
     fn edit_active_command(&mut self);
     
+    /// Edit/create command from input text
+    fn edit_input_command(&mut self);
+    
     /// Handle link to clipboard
     fn handle_link_to_clipboard(&mut self);
     
@@ -739,6 +742,7 @@ pub enum Action {
     OpenEditor,
     AddAlias,
     EditActiveCommand,
+    EditInputCommand,
     LinkToClipboard,
     ShowKeys,
     UninstallApp,
@@ -759,6 +763,7 @@ impl ActionHandler {
             Action::OpenEditor => "Open command editor",
             Action::AddAlias => "Add alias for last command",
             Action::EditActiveCommand => "Edit active command",
+            Action::EditInputCommand => "Create new command from input",
             Action::LinkToClipboard => "Link to clipboard",
             Action::ShowKeys => "Show key bindings",
             Action::UninstallApp => "Uninstall application",
@@ -818,6 +823,10 @@ impl KeyHandler for ActionHandler {
             },
             Action::EditActiveCommand => {
                 context.popup.edit_active_command();
+                KeyHandlerResult::Handled
+            },
+            Action::EditInputCommand => {
+                context.popup.edit_input_command();
                 KeyHandlerResult::Handled
             },
             Action::LinkToClipboard => {
@@ -1008,6 +1017,7 @@ pub fn create_default_key_registry(config: &crate::Config) -> KeyRegistry {
                                 "show_folder" => Box::new(ActionHandler::new(Action::ShowFolder)),
                                 "show_keys" => Box::new(ActionHandler::new(Action::ShowKeys)),
                                 "edit_active_command" => Box::new(ActionHandler::new(Action::EditActiveCommand)),
+                                "edit_input_command" => Box::new(ActionHandler::new(Action::EditInputCommand)),
                                 "open_editor" => Box::new(ActionHandler::new(Action::OpenEditor)),
                                 "add_alias" => Box::new(ActionHandler::new(Action::AddAlias)),
                                 "tmux_activate" => Box::new(ActionHandler::new(Action::TmuxActivate)),

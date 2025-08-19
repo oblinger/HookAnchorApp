@@ -12,6 +12,10 @@ use crate::{Command, Config, load_state, save_state, save_commands_to_file, util
 use crate::core::get_action;
 use chrono::Local;
 
+/// Action types that are automatically generated and removed by the scanner
+/// These commands will be removed during rescanning unless they have the 'U' (user-edited) flag
+pub const SCANNER_GENERATED_ACTIONS: &[&str] = &["markdown", "anchor", "folder"];
+
 /// Helper function to log scanner debug messages
 fn scanner_log(message: &str) {
     crate::utils::detailed_log("SCANNER", message);
@@ -245,7 +249,7 @@ pub fn scan_files(mut commands: Vec<Command>, markdown_roots: &[String], config:
     // EXCEPT those with the "U" (user edited) flag - preserve those
     // Also validate that files actually exist for scanner-generated commands
     commands.retain(|cmd| {
-        let is_scanner_generated = cmd.action == "markdown" || cmd.action == "anchor" || cmd.action == "folder";
+        let is_scanner_generated = SCANNER_GENERATED_ACTIONS.contains(&cmd.action.as_str());
         let is_user_edited = cmd.flags.contains('U');
         
         // If it's scanner-generated, check if we should keep or remove it

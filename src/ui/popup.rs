@@ -449,6 +449,11 @@ impl PopupInterface for AnchorSelector {
         self.edit_active_command_impl();
     }
     
+    fn edit_input_command(&mut self) {
+        // Call the real implementation
+        self.edit_input_command_impl();
+    }
+    
     fn handle_link_to_clipboard(&mut self) {
         // Call the real implementation
         self.handle_link_to_clipboard_impl();
@@ -603,6 +608,25 @@ impl AnchorSelector {
                     self.command_editor.edit_command(Some(selected_cmd), &selected_cmd.command);
                 }
             }
+        }
+    }
+    
+    fn edit_input_command_impl(&mut self) {
+        // Create a new blank command with the input text as the name
+        let input_text = self.popup_state.search_text.clone();
+        
+        if !input_text.is_empty() {
+            // Create a new command with the input as the name
+            let new_command = crate::core::commands::Command {
+                command: input_text.clone(),
+                action: String::new(),  // Blank action for user to fill
+                arg: String::new(),     // Blank arg for user to fill
+                patch: String::new(),   // Blank patch
+                flags: String::new(),   // No flags
+            };
+            
+            // Open the command editor with this new command
+            self.command_editor.edit_command(Some(&new_command), &input_text);
         }
     }
     

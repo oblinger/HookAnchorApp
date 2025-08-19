@@ -352,13 +352,25 @@ impl CommandEditor {
     }
     
     pub fn prepare_save_command(&self) -> (Option<String>, Command) {
+        // Check if this is a scanner-generated action type
+        let is_scanner_generated = crate::scanner::SCANNER_GENERATED_ACTIONS.contains(&self.action.as_str());
+        
+        // Add 'U' flag if it's a scanner-generated action type to prevent removal during rescan
+        let mut flags = self.flags.clone();
+        if is_scanner_generated && !flags.contains('U') {
+            if !flags.is_empty() {
+                flags.push(' ');
+            }
+            flags.push('U');
+        }
+        
         // Return the command to delete (if any) and the new command to add
         let new_command = Command {
             patch: self.patch.clone(),
             command: self.command.clone(),
             action: self.action.clone(),
             arg: self.argument.clone(),
-            flags: self.flags.clone(),
+            flags,
         };
         
         let command_to_delete = if !self.original_command_name.is_empty() {
