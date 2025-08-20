@@ -1546,6 +1546,10 @@ pub fn filter_commands_with_patch_support(commands: &[Command], search_text: &st
             if cmd.command.eq_ignore_ascii_case(search_text) && 
                (cmd.patch.eq_ignore_ascii_case(search_text) || 
                 cmd.patch.split('!').next().unwrap_or("").eq_ignore_ascii_case(search_text)) {
+                // Debug logging for AT command specifically
+                if search_text.eq_ignore_ascii_case("AT") && cmd.command.eq_ignore_ascii_case("At") {
+                    crate::utils::debug_log("AT_MATCH", &format!("Found exact AT match: cmd={}, patch={}", cmd.command, cmd.patch));
+                }
                 -10 // Exact match gets highest priority
             } else {
                 // Both match but not exact - use the better of the two scores
@@ -1563,12 +1567,26 @@ pub fn filter_commands_with_patch_support(commands: &[Command], search_text: &st
         };
         
         if match_result >= 0 {
+            // Debug logging for AT command specifically
+            if search_text.eq_ignore_ascii_case("AT") && cmd.command.eq_ignore_ascii_case("At") {
+                crate::utils::debug_log("AT_MATCH", &format!("Adding At command with score {}: cmd='{}', patch='{}', action='{}'", match_result, cmd.command, cmd.patch, cmd.action));
+            }
             matched_commands.push((match_result, cmd));
         }
     }
     
     // Sort by match quality (earlier match end = better match)
     matched_commands.sort_by(|(a_end, a_cmd), (b_end, b_cmd)| {
+        // Special case: prioritize exact name matches
+        let a_exact = a_cmd.command.eq_ignore_ascii_case(search_text);
+        let b_exact = b_cmd.command.eq_ignore_ascii_case(search_text);
+        if a_exact && !b_exact {
+            return std::cmp::Ordering::Less;
+        }
+        if !a_exact && b_exact {
+            return std::cmp::Ordering::Greater;
+        }
+        
         // Primary sort: match end position (earlier is better)
         let end_cmp = a_end.cmp(b_end);
         if end_cmp != std::cmp::Ordering::Equal {
@@ -1586,10 +1604,23 @@ pub fn filter_commands_with_patch_support(commands: &[Command], search_text: &st
     });
     
     // Return sorted commands up to max_results
-    matched_commands.into_iter()
+    let results: Vec<Command> = matched_commands.into_iter()
         .take(max_results)
-        .map(|(_, cmd)| cmd.clone())
-        .collect()
+        .map(|(score, cmd)| {
+            // Debug logging for AT search results
+            if search_text.eq_ignore_ascii_case("AT") && score <= 0 {
+                crate::utils::debug_log("AT_RESULTS", &format!("Result with score {}: cmd={}, patch={}", score, cmd.command, cmd.patch));
+            }
+            cmd.clone()
+        })
+        .collect();
+    
+    // Log if At command is missing from results
+    if search_text.eq_ignore_ascii_case("AT") && !results.iter().any(|c| c.command.eq_ignore_ascii_case("At")) {
+        crate::utils::debug_log("AT_MISSING", "At command not in final results!");
+    }
+    
+    results
 }
 
 /// Filters commands based on search text with fuzzy matching (legacy function)
@@ -1634,6 +1665,10 @@ pub fn filter_commands(commands: &[Command], search_text: &str, max_results: usi
         };
         
         if match_result >= 0 {
+            // Debug logging for AT command specifically
+            if search_text.eq_ignore_ascii_case("AT") && cmd.command.eq_ignore_ascii_case("At") {
+                crate::utils::debug_log("AT_MATCH", &format!("Adding At command with score {}: cmd='{}', patch='{}', action='{}'", match_result, cmd.command, cmd.patch, cmd.action));
+            }
             matched_commands.push((match_result, cmd));
         }
     }
@@ -2217,6 +2252,20 @@ fn get_display_commands_with_options_internal(
         let exact_match_idx = inside_commands.iter().position(|cmd| 
             cmd.command.eq_ignore_ascii_case(&menu_prefix)
         );
+        
+        // Debug logging for AT search
+        if menu_prefix.eq_ignore_ascii_case("AT") {
+            crate::utils::debug_log("AT_SUBMENU", &format!("Looking for exact match of '{}' in {} inside commands", menu_prefix, inside_commands.len()));
+            if let Some(idx) = exact_match_idx {
+                crate::utils::debug_log("AT_SUBMENU", &format!("Found exact match at index {}: '{}'", idx, inside_commands[idx].command));
+            } else {
+                crate::utils::debug_log("AT_SUBMENU", "No exact match found!");
+                // Log first few inside commands
+                for (i, cmd) in inside_commands.iter().take(5).enumerate() {
+                    crate::utils::debug_log("AT_SUBMENU", &format!("  [{}] '{}'", i, cmd.command));
+                }
+            }
+        }
         
         if let Some(idx) = exact_match_idx {
             if idx != 0 {
