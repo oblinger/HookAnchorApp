@@ -458,7 +458,10 @@ impl PopupInterface for AnchorSelector {
     }
     
     fn edit_input_command(&mut self) {
-        // Call the real implementation
+        // NOTE: This is now handled by template with edit:true flag in config.yaml
+        // The "=" key is configured as a template that creates a new command
+        // with the input text as the name and opens the editor (edit: true)
+        // This method is kept for backward compatibility with old configs
         self.edit_input_command_impl();
     }
     

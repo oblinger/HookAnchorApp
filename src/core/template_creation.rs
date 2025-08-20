@@ -464,10 +464,11 @@ pub fn process_template(
         }
     }
     
-    // TODO: Implement edit functionality if template.edit is true
+    // If edit flag is set, return the command for editing
     if template.edit {
-        // This will be implemented in Phase 3
-        // For now, we'll skip the editor
+        crate::utils::debug_log("TEMPLATE", "Template has edit flag set - command will be opened in editor");
+        // Return a special marker in the flags to indicate this should open the editor
+        command.flags = format!("{}__EDIT__", command.flags);
     }
     
     // Update the full_line
