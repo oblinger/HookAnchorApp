@@ -25,7 +25,6 @@ pub struct CommandEditor {
     commands: Vec<Command>,
     
     // Track delete button visibility to detect changes
-    delete_button_was_visible: bool,
 }
 
 impl CommandEditor {
@@ -43,7 +42,6 @@ impl CommandEditor {
             original_command_name: String::new(),
             focus_requested: false,
             commands: Vec::new(),
-            delete_button_was_visible: false,
         }
     }
     
@@ -52,7 +50,6 @@ impl CommandEditor {
         self.original_command = None;
         self.original_command_name = String::new();
         self.focus_requested = false;
-        self.delete_button_was_visible = false;
     }
     
     pub fn update_commands(&mut self, commands: &[Command]) {
@@ -150,33 +147,29 @@ impl CommandEditor {
                             let command_exists = !self.command.is_empty() && 
                                 self.commands.iter().any(|cmd| cmd.command == self.command);
                             
-                            // Check if delete button visibility changed and request focus if so
-                            let delete_button_visibility_changed = command_exists != self.delete_button_was_visible;
-                            self.delete_button_was_visible = command_exists;
-                            
-                            if command_exists {
-                                // When delete button exists, use horizontal layout with sized text field
-                                ui.horizontal(|ui| {
-                                    let available_width = ui.available_width();
-                                    let command_width = (available_width - 80.0).max(100.0); // Leave space for delete button, ensure minimum width
-                                    
-                                    let command_response = ui.add_sized(
-                                        [command_width, 20.0],
-                                        egui::TextEdit::singleline(&mut self.command)
-                                    );
-                                    
-                                    // Check for Enter key in this text field
-                                    if command_response.lost_focus() && ctx.input(|i| i.key_pressed(egui::Key::Enter)) {
-                                        enter_pressed = true;
-                                    }
-                                    
-                                    // Request focus when dialog opens or when delete button visibility changes
-                                    if !self.focus_requested || delete_button_visibility_changed {
-                                        command_response.request_focus();
-                                        self.focus_requested = true;
-                                    }
-                                    
-                                    // Show delete button
+                            // Always use the same horizontal layout to prevent focus issues
+                            ui.horizontal(|ui| {
+                                let available_width = ui.available_width();
+                                let command_width = (available_width - 80.0).max(100.0); // Leave space for delete button
+                                
+                                let command_response = ui.add_sized(
+                                    [command_width, 20.0],
+                                    egui::TextEdit::singleline(&mut self.command)
+                                );
+                                
+                                // Check for Enter key in this text field
+                                if command_response.lost_focus() && ctx.input(|i| i.key_pressed(egui::Key::Enter)) {
+                                    enter_pressed = true;
+                                }
+                                
+                                // Request focus only when dialog first opens
+                                if !self.focus_requested {
+                                    command_response.request_focus();
+                                    self.focus_requested = true;
+                                }
+                                
+                                // Always show delete button, but enable/disable based on command existence
+                                ui.add_enabled_ui(command_exists, |ui| {
                                     if ui.button("Delete").clicked() {
                                         // Use original command name for deletion, not current text
                                         let command_to_delete = if !self.original_command_name.is_empty() {
@@ -187,21 +180,7 @@ impl CommandEditor {
                                         result = CommandEditorResult::Delete(command_to_delete);
                                     }
                                 });
-                            } else {
-                                // When no delete button, use regular text edit that matches other fields
-                                let command_response = ui.text_edit_singleline(&mut self.command);
-                                
-                                // Check for Enter key in this text field
-                                if command_response.lost_focus() && ctx.input(|i| i.key_pressed(egui::Key::Enter)) {
-                                    enter_pressed = true;
-                                }
-                                
-                                // Request focus when dialog opens or when delete button visibility changes
-                                if !self.focus_requested || delete_button_visibility_changed {
-                                    command_response.request_focus();
-                                    self.focus_requested = true;
-                                }
-                            }
+                            });
                             ui.end_row();
                             
                             // Action row (dropdown)
