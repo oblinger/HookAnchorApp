@@ -334,6 +334,44 @@ fn handle_client(
     Ok(())
 }
 
+/// Execute an action locally within the server process
+pub fn execute_locally(action: &crate::core::unified_actions::Action) -> Result<String, String> {
+    verbose_log("CMD_SERVER", &format!("Executing action locally: type={}", action.action_type()));
+    
+    match action.action_type() {
+        "template" => {
+            // Templates are popup-only, shouldn't reach here
+            Err("Template actions must be executed in popup".to_string())
+        }
+        "popup" => {
+            // Popup actions are popup-only, shouldn't reach here
+            Err("Popup actions must be executed in popup".to_string())
+        }
+        _ => {
+            // For other actions, convert to command and execute
+            // This is a temporary measure until we fully migrate to Actions
+            let cmd = crate::Command {
+                patch: action.get_string("patch").unwrap_or("").to_string(),
+                command: action.get_string("command_name").unwrap_or("").to_string(),
+                action: action.action_type().to_string(),
+                arg: action.get_string("arg").unwrap_or("").to_string(),
+                flags: action.get_string("flags").unwrap_or("").to_string(),
+            };
+            
+            // Get environment from server
+            let env = std::env::vars().collect();
+            let working_dir = std::env::current_dir().unwrap_or_else(|_| PathBuf::from("/"));
+            
+            let response = execute_command_with_env(cmd, env, working_dir);
+            if response.success {
+                Ok(format!("Action executed successfully"))
+            } else {
+                Err(response.error.unwrap_or_else(|| "Unknown error".to_string()))
+            }
+        }
+    }
+}
+
 /// Execute a command with the inherited environment
 fn execute_command_with_env(
     command: crate::Command,
@@ -698,19 +736,27 @@ pub fn execute_via_server(command: &crate::Command) {
     const MAX_RETRIES: u32 = 5;  // Increased for better resilience
     const ACK_TIMEOUT_MS: u64 = 1000;
     
+    // Convert Command to Action for the new protocol
+    let action = crate::core::unified_actions::command_to_action(command);
+    let action_json = serde_json::to_string(&action).unwrap_or_else(|e| {
+        verbose_log("CMD_SERVER", &format!("Failed to serialize action: {}", e));
+        // Fall back to old protocol
+        serde_json::to_string(command).unwrap()
+    });
+    
     for attempt in 1..=MAX_RETRIES {
         verbose_log("CMD_SERVER", &format!("Command execution attempt {} of {}", attempt, MAX_RETRIES));
         
-        // Try to execute command and get ACK
+        // Try to send action and get ACK
         if let Ok(client) = CommandClient::new() {
-            match client.execute_command(command) {
+            match client.send_json(&action_json) {
                 Ok(_response) => {
                     // Success! Command was delivered
-                    verbose_log("CMD_SERVER", &format!("Command executed successfully on attempt {}", attempt));
+                    verbose_log("CMD_SERVER", &format!("Action executed successfully on attempt {}", attempt));
                     return;  // Done - command delivered
                 }
                 Err(e) => {
-                    verbose_log("CMD_SERVER", &format!("Command failed on attempt {}: {}", attempt, e));
+                    verbose_log("CMD_SERVER", &format!("Action failed on attempt {}: {}", attempt, e));
                 }
             }
         }
