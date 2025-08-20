@@ -90,6 +90,16 @@ impl TemplateContext {
         // Basic variables
         variables.insert("input".to_string(), input.to_string());
         
+        // Last executed command from state
+        let state = crate::core::state::load_state();
+        if let Some(last_executed) = state.last_executed_command {
+            variables.insert("last_executed".to_string(), last_executed.clone());
+            variables.insert("last_executed_name".to_string(), last_executed);
+        } else {
+            variables.insert("last_executed".to_string(), String::new());
+            variables.insert("last_executed_name".to_string(), String::new());
+        }
+        
         // Selected command variables
         if let Some(cmd) = selected_command {
             variables.insert("selected_name".to_string(), cmd.command.clone());
@@ -296,6 +306,11 @@ impl TemplateContext {
         context.push_str(&format!("  hostname: {:?},\n", "localhost"));
         context.push_str(&format!("  os: {:?},\n", std::env::consts::OS));
         context.push_str(&format!("  config_dir: {:?}\n", format!("{}/.config/hookanchor", home)));
+        context.push_str("};\n");
+        
+        // Create last_executed object  
+        context.push_str("const last_executed = {\n");
+        context.push_str(&format!("  name: {:?}\n", self.variables.get("last_executed_name").unwrap_or(&String::new())));
         context.push_str("};\n");
         
         // Add backward compatibility aliases for old variable names
