@@ -1525,9 +1525,6 @@ pub fn filter_commands_with_patch_support(commands: &[Command], search_text: &st
                 let patch_name = cmd.patch.split('!').next().unwrap_or("");
                 if patch_name.eq_ignore_ascii_case(search_text) {
                     // Perfect patch match - include this command even if name doesn't match
-                    if debug && search_text.eq_ignore_ascii_case("ww") {
-                        crate::utils::detailed_log("COMMANDS", &format!("Found exact patch match: {} -> {}", cmd.patch, cmd.command));
-                    }
                     0
                 } else {
                     command_matches_query_with_debug(patch_name, search_text, debug)
@@ -1546,10 +1543,6 @@ pub fn filter_commands_with_patch_support(commands: &[Command], search_text: &st
             if cmd.command.eq_ignore_ascii_case(search_text) && 
                (cmd.patch.eq_ignore_ascii_case(search_text) || 
                 cmd.patch.split('!').next().unwrap_or("").eq_ignore_ascii_case(search_text)) {
-                // Debug logging for AT command specifically
-                if search_text.eq_ignore_ascii_case("AT") && cmd.command.eq_ignore_ascii_case("At") {
-                    crate::utils::debug_log("AT_MATCH", &format!("Found exact AT match: cmd={}, patch={}", cmd.command, cmd.patch));
-                }
                 -10 // Exact match gets highest priority
             } else {
                 // Both match but not exact - use the better of the two scores
@@ -1567,10 +1560,6 @@ pub fn filter_commands_with_patch_support(commands: &[Command], search_text: &st
         };
         
         if match_result >= 0 {
-            // Debug logging for AT command specifically
-            if search_text.eq_ignore_ascii_case("AT") && cmd.command.eq_ignore_ascii_case("At") {
-                crate::utils::debug_log("AT_MATCH", &format!("Adding At command with score {}: cmd='{}', patch='{}', action='{}'", match_result, cmd.command, cmd.patch, cmd.action));
-            }
             matched_commands.push((match_result, cmd));
         }
     }
@@ -2189,22 +2178,35 @@ fn get_display_commands_with_options_internal(
         return Vec::new();
     }
     
-    // Apply initial filtering with more generous limit for submenu mode
-    // Use a larger multiplier to ensure we get all relevant commands for patch-based submenus
-    let initial_limit = if search_text.len() <= 3 {
-        // For short searches that might be patch names, be more generous
-        max_results * 10
-    } else {
-        max_results * 2
-    };
-    let filtered = filter_commands_with_patch_support(commands, search_text, initial_limit, &config.popup_settings.word_separators, false);
+    // First, find exact matches (both by name and by patch)
+    let mut exact_matches: Vec<Command> = Vec::new();
+    for cmd in commands {
+        // Check for exact command name match
+        if cmd.command.eq_ignore_ascii_case(search_text) {
+            exact_matches.push(cmd.clone());
+        }
+        // Also check for exact patch match (for patch-based commands like "At!")
+        else if search_text.len() <= 3 && cmd.patch.contains('!') {
+            let patch_name = cmd.patch.split('!').next().unwrap_or("");
+            if patch_name.eq_ignore_ascii_case(search_text) && cmd.command.eq_ignore_ascii_case(search_text) {
+                exact_matches.push(cmd.clone());
+            }
+        }
+    }
+    
+    // Apply initial filtering - use reasonable limits since exact matches are handled separately
+    let initial_limit = max_results * 3;
+    let mut filtered = filter_commands_with_patch_support(commands, search_text, initial_limit, &config.popup_settings.word_separators, false);
+    
+    // Remove any exact matches from filtered list to avoid duplicates
+    filtered.retain(|cmd| !exact_matches.iter().any(|exact| exact.command == cmd.command && exact.action == cmd.action));
     
     // Check for submenu mode - use full command set to detect patch-based submenus
     let final_commands = if let Some(menu_prefix) = get_current_submenu_prefix_from_commands_full(commands, &filtered, search_text, &config.popup_settings.word_separators) {
         // SUBMENU MODE: If this is a patch-based submenu, we need to include ALL patch commands
         // Re-filter with a much higher limit to capture all patch matches
         let submenu_filtered = if menu_prefix.len() <= 3 {
-            filter_commands_with_patch_support(commands, search_text, max_results * 20, &config.popup_settings.word_separators, false)
+            filter_commands_with_patch_support(commands, search_text, 1000, &config.popup_settings.word_separators, false)
         } else {
             filtered
         };
@@ -2212,10 +2214,15 @@ fn get_display_commands_with_options_internal(
         let mut inside_commands = Vec::new();
         let mut outside_commands = Vec::new();
         
-        // Split into inside and outside lists
+        // Split into inside and outside lists, excluding exact matches
         for cmd in submenu_filtered {
             if cmd.action == "separator" {
                 continue; // Skip any existing separators
+            }
+            
+            // Skip if this is already in exact_matches
+            if exact_matches.iter().any(|exact| exact.command == cmd.command && exact.action == cmd.action) {
+                continue;
             }
             
             let cmd_prefix = get_command_prefix(&cmd.command, &config.popup_settings.word_separators);
@@ -2253,20 +2260,6 @@ fn get_display_commands_with_options_internal(
             cmd.command.eq_ignore_ascii_case(&menu_prefix)
         );
         
-        // Debug logging for AT search
-        if menu_prefix.eq_ignore_ascii_case("AT") {
-            crate::utils::debug_log("AT_SUBMENU", &format!("Looking for exact match of '{}' in {} inside commands", menu_prefix, inside_commands.len()));
-            if let Some(idx) = exact_match_idx {
-                crate::utils::debug_log("AT_SUBMENU", &format!("Found exact match at index {}: '{}'", idx, inside_commands[idx].command));
-            } else {
-                crate::utils::debug_log("AT_SUBMENU", "No exact match found!");
-                // Log first few inside commands
-                for (i, cmd) in inside_commands.iter().take(5).enumerate() {
-                    crate::utils::debug_log("AT_SUBMENU", &format!("  [{}] '{}'", i, cmd.command));
-                }
-            }
-        }
-        
         if let Some(idx) = exact_match_idx {
             if idx != 0 {
                 // Move exact match to front
@@ -2298,13 +2291,18 @@ fn get_display_commands_with_options_internal(
         filtered
     };
     
+    // Prepend exact matches to the beginning of results
+    let mut final_result = exact_matches;
+    
+    // Add the filtered/submenu commands after exact matches
+    final_result.extend(final_commands);
+    
     // Limit final results
-    let mut limited_commands = final_commands;
-    limited_commands.truncate(max_results);
+    final_result.truncate(max_results);
     
     // If expand_aliases is true, expand alias commands while keeping their names
     if expand_aliases {
-        limited_commands = limited_commands.into_iter().map(|cmd| {
+        final_result = final_result.into_iter().map(|cmd| {
             if cmd.action == "alias" {
                 // Find the target command
                 if let Some(target_cmd) = commands.iter().find(|c| c.command == cmd.arg) {
@@ -2327,7 +2325,7 @@ fn get_display_commands_with_options_internal(
         }).collect();
     }
     
-    limited_commands
+    final_result
 }
 
 #[cfg(test)]
