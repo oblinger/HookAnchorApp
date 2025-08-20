@@ -1473,7 +1473,13 @@ pub fn save_commands_to_file(commands: &[Command]) -> Result<(), Box<dyn std::er
         .collect::<Vec<_>>()
         .join("\n");
     
-    fs::write(&path, contents)?;
+    // Write with better error handling that includes the file path
+    if let Err(e) = fs::write(&path, contents) {
+        let error_msg = format!("Cannot write to file '{}': {}", path.display(), e);
+        crate::utils::log_error(&error_msg);
+        return Err(error_msg.into());
+    }
+    
     crate::utils::debug_log("AUTO_SAVE", &format!("Saved {} commands to {}", commands.len(), path.display()));
     Ok(())
 }

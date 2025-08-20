@@ -3307,18 +3307,38 @@ impl eframe::App for PopupWithControl {
                     // CRITICAL: Position window on screen if it's off-screen
                     let current_pos = ctx.input(|i| i.viewport().outer_rect);
                     if let Some(rect) = current_pos {
-                        // Check if window is off-screen (including too far down or right)
-                        // Typical screen height is ~1000-1400px, width ~1920-2560px
-                        if rect.min.x < 0.0 || rect.min.y < 0.0 || rect.min.y > 1200.0 || rect.min.x > 2000.0 {
-                            crate::utils::log(&format!("[SHOW] Window is off-screen at {:?}, centering on main display", rect.min));
+                        // Get the actual screen dimensions from the context
+                        let screen_rect = ctx.screen_rect();
+                        let screen_width = screen_rect.width();
+                        let screen_height = screen_rect.height();
+                        
+                        // Check if window is truly off-screen using actual screen dimensions
+                        // Allow some margin (50 pixels) for window decorations
+                        let margin = 50.0;
+                        let is_offscreen = rect.min.x < -margin || 
+                                          rect.min.y < -margin || 
+                                          rect.min.x > screen_width - margin ||
+                                          rect.min.y > screen_height - margin;
+                        
+                        if is_offscreen {
+                            crate::utils::log(&format!("[SHOW] Window is off-screen at {:?} (screen: {}x{}), centering on main display", 
+                                rect.min, screen_width, screen_height));
                             // Center on main display
-                            let screen_rect = ctx.screen_rect();
                             let window_size = rect.size();
-                            let center_x = (screen_rect.width() - window_size.x) / 2.0;
-                            let center_y = (screen_rect.height() - window_size.y) / 2.0;
+                            let center_x = (screen_width - window_size.x) / 2.0;
+                            let center_y = (screen_height - window_size.y) / 2.0;
                             let center_pos = egui::pos2(center_x.max(0.0), center_y.max(0.0));
                             ctx.send_viewport_cmd(egui::ViewportCommand::OuterPosition(center_pos));
                             crate::utils::log(&format!("[SHOW] Repositioned window to {:?}", center_pos));
+                        } else {
+                            // Window is on-screen, restore saved position if different
+                            if let Some(saved_pos) = load_window_position() {
+                                let pos_diff = (rect.min.x - saved_pos.x).abs() + (rect.min.y - saved_pos.y).abs();
+                                if pos_diff > 5.0 {  // Only restore if significantly different
+                                    crate::utils::log(&format!("[SHOW] Restoring saved position {:?} (current: {:?})", saved_pos, rect.min));
+                                    ctx.send_viewport_cmd(egui::ViewportCommand::OuterPosition(saved_pos));
+                                }
+                            }
                         }
                     } else {
                         // No position available, center the window
