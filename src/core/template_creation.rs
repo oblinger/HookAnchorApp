@@ -42,6 +42,11 @@ pub struct Template {
     #[serde(default)]
     pub edit: bool,
     
+    /// If true, use existing command with same name if it exists (case-insensitive)
+    /// If false or if no matching command exists, create a new command
+    #[serde(default)]
+    pub use_existing: bool,
+    
     /// Optional folder path to create (supports variable expansion)
     #[serde(skip_serializing_if = "Option::is_none")]
     pub file: Option<String>,

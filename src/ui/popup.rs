@@ -984,13 +984,32 @@ impl AnchorSelector {
                         self.grabber_countdown = Some(grab_seconds as u8);
                         self.countdown_last_update = Some(std::time::Instant::now());
                     } else {
-                        // Process non-grab template immediately
-                        match crate::core::template_creation::process_template(template, &context, &config) {
-                            Ok(new_command) => {
-                                if template.edit {
-                                    // Open command editor with the prefilled command
-                                    self.command_editor.edit_command(Some(&new_command), &self.popup_state.search_text);
-                                    // Don't clear search text when opening editor - preserve input
+                        // Check for existing command if use_existing is true
+                        let existing_command = if template.use_existing {
+                            // Look for a command with the same name (case-insensitive)
+                            let expanded_name = context.expand(&template.name);
+                            self.popup_state.commands.iter().find(|cmd| 
+                                cmd.command.eq_ignore_ascii_case(&expanded_name)
+                            ).cloned()
+                        } else {
+                            None
+                        };
+                        
+                        if let Some(existing) = existing_command {
+                            // Edit the existing command
+                            if template.edit {
+                                self.command_editor.edit_command(Some(&existing), &existing.command);
+                                // Don't clear search text when opening editor - preserve input
+                            }
+                            // If edit is false with use_existing, do nothing (command already exists)
+                        } else {
+                            // Process template to create new command
+                            match crate::core::template_creation::process_template(template, &context, &config) {
+                                Ok(new_command) => {
+                                    if template.edit {
+                                        // Open command editor with the prefilled command
+                                        self.command_editor.edit_command(Some(&new_command), &self.popup_state.search_text);
+                                        // Don't clear search text when opening editor - preserve input
                                 } else {
                                     // Add the new command directly
                                     match crate::core::commands::add_command(new_command, &mut self.popup_state.commands) {
@@ -1018,6 +1037,7 @@ impl AnchorSelector {
                                 self.show_error_dialog(&format!("Failed to create command from '{}' template: {}", template_name, e));
                             }
                         }
+                        }
                     }
                     return; // Early return after processing old template
                 }
@@ -1033,14 +1053,31 @@ impl AnchorSelector {
                     if let Some(template) = action.to_template() {
                         crate::utils::log(&format!("TEMPLATE: Converted action to template, edit={}", template.edit));
                         
-                        // Process template to create command
-                        match crate::core::template_creation::process_template(&template, &context, &config) {
-                            Ok(new_command) => {
-                                if template.edit {
-                                    crate::utils::log("TEMPLATE: Opening command editor for sub_anchor template");
-                                    // Open command editor with the prefilled command
-                                    self.command_editor.edit_command(Some(&new_command), &self.popup_state.search_text);
-                                    // Don't clear search text when opening editor - preserve input
+                        // Check for existing command if use_existing is true
+                        let existing_command = if template.use_existing {
+                            let expanded_name = context.expand(&template.name);
+                            self.popup_state.commands.iter().find(|cmd| 
+                                cmd.command.eq_ignore_ascii_case(&expanded_name)
+                            ).cloned()
+                        } else {
+                            None
+                        };
+                        
+                        if let Some(existing) = existing_command {
+                            // Edit the existing command
+                            if template.edit {
+                                self.command_editor.edit_command(Some(&existing), &existing.command);
+                                // Don't clear search text when opening editor - preserve input
+                            }
+                        } else {
+                            // Process template to create new command
+                            match crate::core::template_creation::process_template(&template, &context, &config) {
+                                Ok(new_command) => {
+                                    if template.edit {
+                                        crate::utils::log("TEMPLATE: Opening command editor for sub_anchor template");
+                                        // Open command editor with the prefilled command
+                                        self.command_editor.edit_command(Some(&new_command), &self.popup_state.search_text);
+                                        // Don't clear search text when opening editor - preserve input
                                 } else {
                                     // Add the new command directly
                                     match crate::core::commands::add_command(new_command, &mut self.popup_state.commands) {
@@ -1067,6 +1104,7 @@ impl AnchorSelector {
                             Err(e) => {
                                 self.show_error_dialog(&format!("Failed to create command from '{}' template: {}", template_name, e));
                             }
+                        }
                         }
                     } else {
                         // Not a template action, execute directly

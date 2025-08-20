@@ -105,6 +105,10 @@ impl Action {
             .and_then(|v| v.as_bool())
             .unwrap_or(false);
         
+        let use_existing = self.params.get("use_existing")
+            .and_then(|v| v.as_bool())
+            .unwrap_or(false);
+        
         Some(crate::core::template_creation::Template {
             name,
             action,
@@ -115,6 +119,7 @@ impl Action {
             keystroke: None,  // Will be computed if needed
             grab,
             edit,
+            use_existing,
             file,
             contents: None,  // Not used in unified actions
             description: self.description.clone(),
