@@ -448,13 +448,20 @@ pub fn process_template(
         }
         
         crate::utils::debug_log("TEMPLATE", &format!("Writing file: {}", file_path.display()));
-        std::fs::write(&file_path, contents)?;
+        if let Err(e) = std::fs::write(&file_path, contents) {
+            let error_msg = format!("Cannot write to file '{}': {}", file_path.display(), e);
+            crate::utils::log_error(&error_msg);
+            return Err(error_msg.into());
+        }
     }
     
     // Create additional folder if specified (for cases where file and contents point to different things)
     if let Some(folder_template) = &template.file {
         let folder_path = context.expand(folder_template);
-        create_folder_if_needed(&folder_path)?;
+        if let Err(e) = create_folder_if_needed(&folder_path) {
+            // Error already logged in create_folder_if_needed
+            return Err(e);
+        }
     }
     
     // TODO: Implement edit functionality if template.edit is true
@@ -495,8 +502,10 @@ fn create_folder_if_needed(path: &str) -> Result<(), Box<dyn std::error::Error>>
         match std::fs::create_dir_all(path) {
             Ok(_) => crate::utils::debug_log("TEMPLATE", "Successfully created directory"),
             Err(e) => {
-                crate::utils::debug_log("TEMPLATE", &format!("Failed to create directory: {}", e));
-                return Err(e.into());
+                let error_msg = format!("Cannot create directory '{}': {}", path.display(), e);
+                crate::utils::log_error(&error_msg);
+                crate::utils::debug_log("TEMPLATE", &error_msg);
+                return Err(error_msg.into());
             }
         }
     } else {
