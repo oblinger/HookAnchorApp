@@ -270,6 +270,14 @@ impl AnchorSelector {
         if !direct_mode {
             // Server mode - hide window using AppleScript
             crate::utils::verbose_log("EXIT_OR_HIDE", "Server mode - hiding window");
+            
+            // Save current position before hiding
+            if let Some(current_pos) = ctx.input(|i| i.viewport().outer_rect.map(|r| r.min)) {
+                crate::utils::log(&format!("[EXIT_OR_HIDE] Saving position before hide: {:?}", current_pos));
+                save_window_position(current_pos);
+                self.last_saved_position = Some(current_pos);
+            }
+            
             // Clear the search input for next time
             self.popup_state.search_text.clear();
             self.popup_state.update_search(String::new());
@@ -3274,6 +3282,12 @@ impl eframe::App for PopupWithControl {
                     });
                     crate::utils::log(&format!("[SHOW] Before: {}", viewport_info));
                     
+                    // Restore saved position BEFORE making window visible to avoid flashing at (0,0)
+                    if let Some(saved_pos) = load_window_position() {
+                        crate::utils::log(&format!("[SHOW] Pre-setting saved position: {:?}", saved_pos));
+                        ctx.send_viewport_cmd(egui::ViewportCommand::OuterPosition(saved_pos));
+                    }
+                    
                     // Make the window visible again if it was hidden
                     crate::utils::log("[SHOW] Sending ViewportCommand::Visible(true)");
                     ctx.send_viewport_cmd(egui::ViewportCommand::Visible(true));
@@ -3334,10 +3348,15 @@ impl eframe::App for PopupWithControl {
                             // Window is on-screen, restore saved position if different
                             if let Some(saved_pos) = load_window_position() {
                                 let pos_diff = (rect.min.x - saved_pos.x).abs() + (rect.min.y - saved_pos.y).abs();
+                                crate::utils::log(&format!("[SHOW] Current position: {:?}, Saved position: {:?}, Diff: {}", rect.min, saved_pos, pos_diff));
                                 if pos_diff > 5.0 {  // Only restore if significantly different
                                     crate::utils::log(&format!("[SHOW] Restoring saved position {:?} (current: {:?})", saved_pos, rect.min));
                                     ctx.send_viewport_cmd(egui::ViewportCommand::OuterPosition(saved_pos));
+                                } else {
+                                    crate::utils::log("[SHOW] Position is close to saved, not restoring");
                                 }
+                            } else {
+                                crate::utils::log("[SHOW] No saved position available");
                             }
                         }
                     } else {
