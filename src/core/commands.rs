@@ -54,11 +54,22 @@ pub const FLAG_LETTER_MAPPING: &[(&str, &str)] = &[
     // Add more flag mappings here as needed
 ];
 
+/// Normalize a path by removing trailing slashes (except for root "/")
+fn normalize_path(path: PathBuf) -> PathBuf {
+    let path_str = path.to_string_lossy();
+    if path_str.len() > 1 && path_str.ends_with('/') {
+        // Remove trailing slash(es) except for root "/"
+        PathBuf::from(path_str.trim_end_matches('/'))
+    } else {
+        path
+    }
+}
+
 impl Command {
     /// Returns the absolute file path for the command's argument
     /// Handles relative paths, tilde expansion, and vault-relative paths
     pub fn get_absolute_file_path(&self, config: &Config) -> Option<PathBuf> {
-        match self.action.as_str() {
+        let path = match self.action.as_str() {
             "markdown" => {
                 // Arg is already absolute path for new markdown action
                 Some(PathBuf::from(&self.arg))
@@ -101,13 +112,16 @@ impl Command {
                     
                     let path_str = after_cd[..path_end].trim().trim_matches('"');
                     if !path_str.is_empty() {
-                        return Some(PathBuf::from(crate::utils::expand_tilde(path_str)));
+                        return Some(normalize_path(PathBuf::from(crate::utils::expand_tilde(path_str))));
                     }
                 }
                 None
             }
             _ => None // Not a file-based action
-        }
+        };
+        
+        // Normalize all paths to remove trailing slashes
+        path.map(normalize_path)
     }
     
     /// Returns the absolute folder path for the command
@@ -116,13 +130,14 @@ impl Command {
     pub fn get_absolute_folder_path(&self, config: &Config) -> Option<PathBuf> {
         match self.action.as_str() {
             "folder" => {
-                // For folder commands, return the folder itself
+                // For folder commands, return the folder itself (already normalized)
                 self.get_absolute_file_path(config)
             }
             _ => {
                 // For file-based commands, return the parent directory
+                // Parent path shouldn't have trailing slashes, but normalize just in case
                 self.get_absolute_file_path(config)
-                    .and_then(|p| p.parent().map(|parent| parent.to_path_buf()))
+                    .and_then(|p| p.parent().map(|parent| normalize_path(parent.to_path_buf())))
             }
         }
     }

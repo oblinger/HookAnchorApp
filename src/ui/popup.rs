@@ -2046,24 +2046,41 @@ impl AnchorSelector {
         let display_commands = self.popup_state.filtered_commands.clone();
         
         if display_commands.is_empty() || selected_index >= display_commands.len() {
-            utils::debug_log("ACTIVATE_ANCHOR", "No commands available or invalid selection");
+            utils::log("ACTIVATE_ANCHOR: No commands available or invalid selection");
             return;
         }
         
         // Get the selected command and resolve aliases
         let all_commands = self.popup_state.get_commands();
         let selected_command = &display_commands[selected_index];
+        
+        // DEBUG: Log the selected command details
+        utils::log(&format!("ACTIVATE_ANCHOR: Selected command: '{}'", selected_command.command));
+        utils::log(&format!("ACTIVATE_ANCHOR: Selected action: '{}'", selected_command.action));
+        utils::log(&format!("ACTIVATE_ANCHOR: Selected arg: '{}'", selected_command.arg));
+        utils::log(&format!("ACTIVATE_ANCHOR: Selected patch: '{}'", selected_command.patch));
+        utils::log(&format!("ACTIVATE_ANCHOR: Selected flags: '{}'", selected_command.flags));
+        
         let resolved_cmd = self.resolve_aliases_recursively(selected_command, &all_commands);
         
+        // DEBUG: Log resolved command if different
+        if resolved_cmd.command != selected_command.command {
+            utils::log(&format!("ACTIVATE_ANCHOR: Resolved to: '{}'", resolved_cmd.command));
+            utils::log(&format!("ACTIVATE_ANCHOR: Resolved action: '{}'", resolved_cmd.action));
+            utils::log(&format!("ACTIVATE_ANCHOR: Resolved arg: '{}'", resolved_cmd.arg));
+        }
+        
         // Extract folder path
+        utils::log("ACTIVATE_ANCHOR: Attempting to extract folder path...");
         let folder_path = if let Some(abs_path) = resolved_cmd.get_absolute_folder_path(&self.popup_state.config) {
             abs_path.to_string_lossy().to_string()
         } else {
-            utils::debug_log("ACTIVATE_ANCHOR", &format!("Could not extract folder path from command: {}", resolved_cmd.command));
+            utils::log(&format!("ACTIVATE_ANCHOR: ERROR - Could not extract folder path from command: '{}'", resolved_cmd.command));
+            utils::log(&format!("ACTIVATE_ANCHOR: Command details - action: '{}', arg: '{}'", resolved_cmd.action, resolved_cmd.arg));
             return;
         };
         
-        utils::debug_log("ACTIVATE_ANCHOR", &format!("Activating anchor at: {}", folder_path));
+        utils::log(&format!("ACTIVATE_ANCHOR: Successfully extracted folder path: '{}'", folder_path));
         
         // Create a synthetic command to execute through the launcher
         let activate_cmd = crate::core::commands::Command {
