@@ -3428,8 +3428,23 @@ pub fn run_gui_with_prompt(initial_prompt: &str, _app_state: super::ApplicationS
     
     crate::utils::log(&format!("[POPUP_INIT] Window size: {}x{}, start_visible: {}", width, height, start_visible));
     
+    // Load saved position or use centered position
+    let initial_position = if let Some(saved_pos) = load_window_position() {
+        crate::utils::log(&format!("[STARTUP] Using saved window position: {:?}", saved_pos));
+        [saved_pos.x, saved_pos.y]
+    } else {
+        // Center on screen
+        let screen_width = 1920.0; // Default fallback
+        let screen_height = 1080.0; // Default fallback
+        let x = (screen_width - width) / 2.0;
+        let y = (screen_height - height) / 2.0;
+        crate::utils::log(&format!("[STARTUP] No saved position, centering at: [{}, {}]", x, y));
+        [x, y]
+    };
+    
     let viewport_builder = egui::ViewportBuilder::default()
         .with_inner_size([width, height]) // Initial size - will be dynamically resized
+        .with_position(initial_position) // Set initial position from saved state
         .with_resizable(false) // Disable manual resizing - we control size programmatically
         .with_decorations(false) // Remove title bar and window controls
         .with_transparent(true) // Enable transparency for rounded corners
