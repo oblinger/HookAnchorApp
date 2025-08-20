@@ -334,6 +334,23 @@ fn handle_client(
     Ok(())
 }
 
+/// Main entry point for executing actions in the server - routes based on action type
+pub fn execute(action: &crate::core::unified_actions::Action) -> Result<String, String> {
+    verbose_log("CMD_SERVER", &format!("Server execute: type={}", action.action_type()));
+    
+    match action.action_type() {
+        // Server-only actions (or actions that should always run in server context)
+        "template" | "popup" => {
+            // These should not reach the server
+            Err(format!("{} actions must be executed in popup", action.action_type()))
+        }
+        _ => {
+            // All other actions execute locally in server
+            execute_locally(action)
+        }
+    }
+}
+
 /// Execute an action locally within the server process
 pub fn execute_locally(action: &crate::core::unified_actions::Action) -> Result<String, String> {
     verbose_log("CMD_SERVER", &format!("Executing action locally: type={}", action.action_type()));
