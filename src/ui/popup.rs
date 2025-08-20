@@ -573,24 +573,30 @@ impl AnchorSelector {
     /// Send an action to the server for execution
     fn send_action_to_server(&mut self, action: &crate::core::unified_actions::Action) {
         use crate::utils::{debug_log, log_error};
+        use crate::command_server::CommandClient;
         
         // Serialize action to JSON
         match serde_json::to_string(action) {
             Ok(action_json) => {
                 debug_log("ACTION_SERVER", &format!("Sending action JSON: {}", action_json));
                 
-                // For now, convert back to Command for compatibility
-                // This will be replaced when server is updated to accept Actions
-                let cmd = crate::Command {
-                    patch: action.get_string("patch").unwrap_or("").to_string(),
-                    command: action.get_string("command_name").unwrap_or("").to_string(),
-                    action: action.action_type().to_string(),
-                    arg: action.get_string("arg").unwrap_or("").to_string(),
-                    flags: action.get_string("flags").unwrap_or("").to_string(),
-                };
-                
-                execute_via_server(&cmd);
-                self.should_exit = true;
+                // Send Action directly to server (new protocol)
+                match CommandClient::new() {
+                    Ok(client) => {
+                        match client.send_json(&action_json) {
+                            Ok(_response) => {
+                                debug_log("ACTION_SERVER", "Action sent successfully");
+                                self.should_exit = true;
+                            }
+                            Err(e) => {
+                                log_error(&format!("Failed to send action to server: {}", e));
+                            }
+                        }
+                    }
+                    Err(e) => {
+                        log_error(&format!("Failed to connect to command server: {}", e));
+                    }
+                }
             }
             Err(e) => {
                 log_error(&format!("Failed to serialize action: {}", e));

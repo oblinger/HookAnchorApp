@@ -263,8 +263,28 @@ fn handle_client(
     
     verbose_log("CMD_SERVER", &format!("Read {} bytes: '{}'", bytes_read, request_line.trim()));
     
-    let command: crate::Command = serde_json::from_str(&request_line.trim())?;
-    verbose_log("CMD_SERVER", &format!("Received command: {:?}", command));
+    // Try to parse as Action first (new protocol), fall back to Command (old protocol)
+    let (is_action, command) = if let Ok(action) = serde_json::from_str::<crate::core::unified_actions::Action>(&request_line.trim()) {
+        verbose_log("CMD_SERVER", &format!("Received action: type={}", action.action_type()));
+        // Convert Action to Command for now (until we fully migrate execute_command_with_env)
+        let cmd = crate::Command {
+            patch: action.get_string("patch").unwrap_or("").to_string(),
+            command: action.get_string("command_name").unwrap_or("").to_string(),
+            action: action.action_type().to_string(),
+            arg: action.get_string("arg").unwrap_or("").to_string(),
+            flags: action.get_string("flags").unwrap_or("").to_string(),
+        };
+        (true, cmd)
+    } else {
+        // Fall back to old Command protocol
+        let command: crate::Command = serde_json::from_str(&request_line.trim())?;
+        verbose_log("CMD_SERVER", &format!("Received command (legacy): {:?}", command));
+        (false, command)
+    };
+    
+    if is_action {
+        verbose_log("CMD_SERVER", "Using new Action protocol");
+    }
     
     // Check if this is a GUI command that needs blocking execution
     // GUI commands have "G" in their flags field
@@ -556,6 +576,36 @@ impl CommandClient {
             Err(e) => {
                 // Timeout or connection error - server is not responding
                 verbose_log("CMD_CLIENT", &format!("Failed to receive ACK from server: {}", e));
+                Err(format!("Server not responding: {}", e).into())
+            }
+        }
+    }
+    
+    /// Send raw JSON to the server (for Actions)
+    pub fn send_json(&self, json: &str) -> Result<CommandResponse, Box<dyn std::error::Error>> {
+        verbose_log("CMD_CLIENT", &format!("Sending JSON to server: {}", json));
+        
+        // Connect to server
+        let mut stream = UnixStream::connect(&self.socket_path)?;
+        
+        // Set read timeout for response
+        stream.set_read_timeout(Some(std::time::Duration::from_millis(1000)))?;
+        
+        // Send JSON
+        stream.write_all(json.as_bytes())?;
+        stream.write_all(b"\n")?;
+        stream.flush()?;
+        
+        // Wait for response
+        let mut response_data = String::new();
+        match stream.read_to_string(&mut response_data) {
+            Ok(_) => {
+                let response: CommandResponse = serde_json::from_str(&response_data.trim())?;
+                verbose_log("CMD_CLIENT", &format!("Received response: success={}", response.success));
+                Ok(response)
+            }
+            Err(e) => {
+                verbose_log("CMD_CLIENT", &format!("Failed to receive response from server: {}", e));
                 Err(format!("Server not responding: {}", e).into())
             }
         }
