@@ -6,6 +6,7 @@
 use std::collections::HashMap;
 use chrono::{Local, Datelike, Timelike};
 use serde::{Deserialize, Serialize};
+use serde_json::json;
 use crate::Command;
 use crate::core::key_processing::Keystroke;
 
@@ -89,6 +90,8 @@ impl TemplateContext {
             variables.insert("selected_name".to_string(), cmd.command.clone());
             variables.insert("selected_path".to_string(), cmd.arg.clone());
             variables.insert("selected_patch".to_string(), cmd.patch.clone());
+            variables.insert("selected_action".to_string(), cmd.action.clone());
+            variables.insert("selected_flags".to_string(), cmd.flags.clone());
             
             // Extract folder from path if it's a file path
             if let Some(folder) = extract_folder_from_path(&cmd.arg) {
@@ -100,6 +103,8 @@ impl TemplateContext {
             variables.insert("selected_path".to_string(), String::new());
             variables.insert("selected_patch".to_string(), String::new());
             variables.insert("selected_folder".to_string(), String::new());
+            variables.insert("selected_action".to_string(), String::new());
+            variables.insert("selected_flags".to_string(), String::new());
         }
         
         // Previous command variables
@@ -107,6 +112,8 @@ impl TemplateContext {
             variables.insert("previous_name".to_string(), cmd.command.clone());
             variables.insert("previous_path".to_string(), cmd.arg.clone());
             variables.insert("previous_patch".to_string(), cmd.patch.clone());
+            variables.insert("previous_action".to_string(), cmd.action.clone());
+            variables.insert("previous_flags".to_string(), cmd.flags.clone());
             
             // Extract folder from path if it's a file path
             if let Some(folder) = extract_folder_from_path(&cmd.arg) {
@@ -125,6 +132,8 @@ impl TemplateContext {
             variables.insert("previous_path".to_string(), String::new());
             variables.insert("previous_patch".to_string(), String::new());
             variables.insert("previous_folder".to_string(), String::new());
+            variables.insert("previous_action".to_string(), String::new());
+            variables.insert("previous_flags".to_string(), String::new());
         }
         
         // Add date/time variables
@@ -142,7 +151,7 @@ impl TemplateContext {
         self.variables.insert(name, value);
     }
     
-    /// Expand variables in a string
+    /// Expand variables in a string using JavaScript evaluation
     pub fn expand(&self, template: &str) -> String {
         let mut result = template.to_string();
         let mut last_pos = 0;
@@ -152,15 +161,26 @@ impl TemplateContext {
             let start = last_pos + start;
             if let Some(end) = result[start..].find("}}") {
                 let end = start + end + 2;
-                let var_name = &result[start + 2..end - 2].trim();
+                let expr = result[start + 2..end - 2].trim();
                 
-                if let Some(value) = self.variables.get(*var_name) {
-                    result.replace_range(start..end, value);
-                    // Move position to after the replacement
-                    last_pos = start + value.len();
-                } else {
-                    // Unknown variable - skip past it to avoid infinite loop
-                    last_pos = end;
+                // Evaluate the JavaScript expression
+                match self.eval_js_expression(expr) {
+                    Ok(value) => {
+                        result.replace_range(start..end, &value);
+                        // Move position to after the replacement
+                        last_pos = start + value.len();
+                    }
+                    Err(e) => {
+                        crate::utils::debug_log("TEMPLATE_JS", &format!("Failed to evaluate '{}': {}", expr, e));
+                        // If evaluation fails, try simple variable lookup for backward compatibility
+                        if let Some(value) = self.variables.get(expr) {
+                            result.replace_range(start..end, value);
+                            last_pos = start + value.len();
+                        } else {
+                            // Unknown variable - skip past it to avoid infinite loop
+                            last_pos = end;
+                        }
+                    }
                 }
             } else {
                 // No matching }} found, break to avoid infinite loop
@@ -169,6 +189,130 @@ impl TemplateContext {
         }
         
         result
+    }
+    
+    /// Evaluate a JavaScript expression with template context
+    fn eval_js_expression(&self, expr: &str) -> Result<String, Box<dyn std::error::Error>> {
+        // Create JavaScript objects from template context
+        let js_code = self.build_js_context() + &format!(
+            r#"
+            // Evaluate the expression
+            (function() {{
+                try {{
+                    let result = {};
+                    // Convert undefined/null to empty string
+                    if (result === undefined || result === null) {{
+                        return '';
+                    }}
+                    return String(result);
+                }} catch(e) {{
+                    log('Template JS error: ' + e.toString());
+                    return '';
+                }}
+            }})();
+            "#,
+            expr
+        );
+        
+        // Execute the JavaScript code
+        crate::js_runtime::execute_business_logic(&js_code)
+    }
+    
+    /// Build JavaScript context with all template variables as objects
+    fn build_js_context(&self) -> String {
+        let mut context = String::new();
+        
+        // Create input variable (string)
+        if let Some(input) = self.variables.get("input") {
+            context.push_str(&format!("const input = {:?};\n", input));
+        } else {
+            context.push_str("const input = '';\n");
+        }
+        
+        // Create previous object
+        context.push_str("const previous = {\n");
+        context.push_str(&format!("  name: {:?},\n", self.variables.get("previous_name").unwrap_or(&String::new())));
+        context.push_str(&format!("  path: {:?},\n", self.variables.get("previous_path").unwrap_or(&String::new())));
+        context.push_str(&format!("  arg: {:?},\n", self.variables.get("previous_path").unwrap_or(&String::new())));
+        context.push_str(&format!("  patch: {:?},\n", self.variables.get("previous_patch").unwrap_or(&String::new())));
+        context.push_str(&format!("  folder: {:?},\n", self.variables.get("previous_folder").unwrap_or(&String::new())));
+        context.push_str(&format!("  action: {:?},\n", self.variables.get("previous_action").unwrap_or(&String::new())));
+        context.push_str(&format!("  flags: {:?}\n", self.variables.get("previous_flags").unwrap_or(&String::new())));
+        context.push_str("};\n");
+        
+        // Create selected object
+        context.push_str("const selected = {\n");
+        context.push_str(&format!("  name: {:?},\n", self.variables.get("selected_name").unwrap_or(&String::new())));
+        context.push_str(&format!("  path: {:?},\n", self.variables.get("selected_path").unwrap_or(&String::new())));
+        context.push_str(&format!("  arg: {:?},\n", self.variables.get("selected_path").unwrap_or(&String::new())));
+        context.push_str(&format!("  patch: {:?},\n", self.variables.get("selected_patch").unwrap_or(&String::new())));
+        context.push_str(&format!("  folder: {:?},\n", self.variables.get("selected_folder").unwrap_or(&String::new())));
+        context.push_str(&format!("  action: {:?},\n", self.variables.get("selected_action").unwrap_or(&String::new())));
+        context.push_str(&format!("  flags: {:?}\n", self.variables.get("selected_flags").unwrap_or(&String::new())));
+        context.push_str("};\n");
+        
+        // Create date object
+        let now = Local::now();
+        context.push_str("const date = {\n");
+        context.push_str(&format!("  year: {:?},\n", format!("{:04}", now.year())));
+        context.push_str(&format!("  year2: {:?},\n", format!("{:02}", now.year() % 100)));
+        context.push_str(&format!("  month: {:?},\n", format!("{:02}", now.month())));
+        context.push_str(&format!("  month_short: {:?},\n", format!("{}", now.month())));
+        context.push_str(&format!("  month_name: {:?},\n", now.format("%B").to_string()));
+        context.push_str(&format!("  month_abbr: {:?},\n", now.format("%b").to_string()));
+        context.push_str(&format!("  day: {:?},\n", format!("{:02}", now.day())));
+        context.push_str(&format!("  day_short: {:?},\n", format!("{}", now.day())));
+        context.push_str(&format!("  weekday: {:?},\n", now.format("%A").to_string()));
+        context.push_str(&format!("  weekday_abbr: {:?},\n", now.format("%a").to_string()));
+        context.push_str(&format!("  hour: {:?},\n", format!("{:02}", now.hour())));
+        context.push_str(&format!("  hour12: {:?},\n", format!("{}", if now.hour() == 0 { 12 } else if now.hour() > 12 { now.hour() - 12 } else { now.hour() })));
+        context.push_str(&format!("  minute: {:?},\n", format!("{:02}", now.minute())));
+        context.push_str(&format!("  second: {:?},\n", format!("{:02}", now.second())));
+        context.push_str(&format!("  ampm: {:?},\n", if now.hour() < 12 { "AM" } else { "PM" }));
+        context.push_str(&format!("  timestamp: {},\n", now.timestamp()));
+        context.push_str(&format!("  iso: {:?}\n", now.format("%Y-%m-%dT%H:%M:%S").to_string()));
+        context.push_str("};\n");
+        
+        // Create grabbed object
+        context.push_str("const grabbed = {\n");
+        context.push_str(&format!("  action: {:?},\n", self.variables.get("grabbed_action").unwrap_or(&String::new())));
+        context.push_str(&format!("  arg: {:?},\n", self.variables.get("grabbed_arg").unwrap_or(&String::new())));
+        context.push_str(&format!("  app: {:?},\n", self.variables.get("grabbed_app").unwrap_or(&String::new())));
+        context.push_str(&format!("  title: {:?},\n", self.variables.get("grabbed_title").unwrap_or(&String::new())));
+        context.push_str(&format!("  text: {:?}\n", self.variables.get("grabbed_text").unwrap_or(&String::new())));
+        context.push_str("};\n");
+        
+        // Create env object
+        let home = std::env::var("HOME").unwrap_or_else(|_| "/Users/unknown".to_string());
+        let user = std::env::var("USER").unwrap_or_else(|_| "unknown".to_string());
+        context.push_str("const env = {\n");
+        context.push_str(&format!("  home: {:?},\n", home));
+        context.push_str(&format!("  user: {:?},\n", user));
+        context.push_str(&format!("  hostname: {:?},\n", "localhost"));
+        context.push_str(&format!("  os: {:?},\n", std::env::consts::OS));
+        context.push_str(&format!("  config_dir: {:?}\n", format!("{}/.config/hookanchor", home)));
+        context.push_str("};\n");
+        
+        // Add backward compatibility aliases for old variable names
+        context.push_str("\n// Backward compatibility aliases\n");
+        context.push_str(&format!("const previous_name = {:?};\n", self.variables.get("previous_name").unwrap_or(&String::new())));
+        context.push_str(&format!("const previous_folder = {:?};\n", self.variables.get("previous_folder").unwrap_or(&String::new())));
+        context.push_str(&format!("const previous_patch = {:?};\n", self.variables.get("previous_patch").unwrap_or(&String::new())));
+        context.push_str(&format!("const previous_path = {:?};\n", self.variables.get("previous_path").unwrap_or(&String::new())));
+        context.push_str(&format!("const selected_name = {:?};\n", self.variables.get("selected_name").unwrap_or(&String::new())));
+        context.push_str(&format!("const selected_folder = {:?};\n", self.variables.get("selected_folder").unwrap_or(&String::new())));
+        context.push_str(&format!("const selected_patch = {:?};\n", self.variables.get("selected_patch").unwrap_or(&String::new())));
+        context.push_str(&format!("const grabbed_action = {:?};\n", self.variables.get("grabbed_action").unwrap_or(&String::new())));
+        context.push_str(&format!("const grabbed_arg = {:?};\n", self.variables.get("grabbed_arg").unwrap_or(&String::new())));
+        context.push_str(&format!("const YYYY = {:?};\n", format!("{:04}", now.year())));
+        context.push_str(&format!("const YY = {:?};\n", format!("{:02}", now.year() % 100)));
+        context.push_str(&format!("const MM = {:?};\n", format!("{:02}", now.month())));
+        context.push_str(&format!("const DD = {:?};\n", format!("{:02}", now.day())));
+        context.push_str(&format!("const hh = {:?};\n", format!("{:02}", now.hour())));
+        context.push_str(&format!("const mm = {:?};\n", format!("{:02}", now.minute())));
+        context.push_str(&format!("const ss = {:?};\n", format!("{:02}", now.second())));
+        
+        context
     }
 }
 
