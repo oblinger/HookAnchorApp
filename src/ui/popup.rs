@@ -520,6 +520,84 @@ impl AnchorSelector {
         self.dialog.show_error(error_message);
     }
     
+    // =============================================================================
+    // Unified Action Execution System
+    // =============================================================================
+    
+    /// Main entry point for executing actions - routes based on action type
+    fn execute(&mut self, action: &crate::core::unified_actions::Action) {
+        use crate::utils::debug_log;
+        
+        debug_log("ACTION_EXEC", &format!("Executing action type: {}", action.action_type()));
+        
+        match action.action_type() {
+            // Actions that require UI interaction stay in popup
+            "template" | "popup" => {
+                debug_log("ACTION_EXEC", "Executing locally (UI action)");
+                self.execute_locally(action);
+            }
+            // Everything else goes to server
+            _ => {
+                debug_log("ACTION_EXEC", "Sending to server for execution");
+                self.send_action_to_server(action);
+            }
+        }
+    }
+    
+    /// Execute an action locally in the popup context
+    fn execute_locally(&mut self, action: &crate::core::unified_actions::Action) {
+        use crate::utils::{debug_log, log_error};
+        
+        debug_log("ACTION_LOCAL", &format!("Executing {} locally", action.action_type()));
+        
+        match action.action_type() {
+            "template" => {
+                // Get template name from action or use default
+                let template_name = action.get_string("name").unwrap_or("default");
+                debug_log("ACTION_LOCAL", &format!("Processing template: {}", template_name));
+                
+                // Use existing template handling
+                self.handle_template_create_named_impl(template_name);
+            }
+            "popup" => {
+                // Handle popup-specific actions
+                debug_log("ACTION_LOCAL", "Processing popup action");
+                // TODO: Implement popup-specific actions
+            }
+            _ => {
+                log_error(&format!("Unknown local action type: {}", action.action_type()));
+            }
+        }
+    }
+    
+    /// Send an action to the server for execution
+    fn send_action_to_server(&mut self, action: &crate::core::unified_actions::Action) {
+        use crate::utils::{debug_log, log_error};
+        
+        // Serialize action to JSON
+        match serde_json::to_string(action) {
+            Ok(action_json) => {
+                debug_log("ACTION_SERVER", &format!("Sending action JSON: {}", action_json));
+                
+                // For now, convert back to Command for compatibility
+                // This will be replaced when server is updated to accept Actions
+                let cmd = crate::Command {
+                    patch: action.get_string("patch").unwrap_or("").to_string(),
+                    command: action.get_string("command_name").unwrap_or("").to_string(),
+                    action: action.action_type().to_string(),
+                    arg: action.get_string("arg").unwrap_or("").to_string(),
+                    flags: action.get_string("flags").unwrap_or("").to_string(),
+                };
+                
+                execute_via_server(&cmd);
+                self.should_exit = true;
+            }
+            Err(e) => {
+                log_error(&format!("Failed to serialize action: {}", e));
+            }
+        }
+    }
+    
     /// Execute the currently selected command
     fn execute_selected_command_impl(&mut self) {
         
@@ -535,10 +613,13 @@ impl AnchorSelector {
                     use crate::core::state::save_last_executed_command;
                     let _ = save_last_executed_command(&selected_cmd.command);
                     
-                    execute_via_server(&selected_cmd);
-                    
-                    // Request exit or hide through the proper channel
-                    self.should_exit = true;
+                    // Convert command to action and execute through unified system
+                    crate::utils::log("=== UNIFIED ACTION SYSTEM: Converting command to action ===");
+                    use crate::core::unified_actions::command_to_action;
+                    let action = command_to_action(selected_cmd);
+                    crate::utils::log(&format!("UNIFIED ACTION: Created action type='{}' from command='{}'", 
+                        action.action_type(), selected_cmd.command));
+                    self.execute(&action);
                 } else {
                     // Command is a separator, not executing
                 }

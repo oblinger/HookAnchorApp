@@ -37,6 +37,26 @@ pub struct Action {
 }
 
 impl Action {
+    /// Get the action type
+    pub fn action_type(&self) -> &str {
+        &self.action_type
+    }
+    
+    /// Get a parameter value
+    pub fn get(&self, key: &str) -> Option<&JsonValue> {
+        self.params.get(key)
+    }
+    
+    /// Get a string parameter
+    pub fn get_string(&self, key: &str) -> Option<&str> {
+        self.params.get(key)?.as_str()
+    }
+    
+    /// Get all parameters
+    pub fn params(&self) -> &HashMap<String, JsonValue> {
+        &self.params
+    }
+    
     /// Convert this action to a Template if it's a template action
     pub fn to_template(&self) -> Option<crate::core::template_creation::Template> {
         if self.action_type != "template" {
@@ -101,6 +121,25 @@ impl Action {
             validate_previous_folder: false,  // Not used in unified actions
             file_rescan,
         })
+    }
+}
+
+/// Convert a Command to an Action
+pub fn command_to_action(cmd: &Command) -> Action {
+    let mut params = HashMap::new();
+    
+    // Add command fields as parameters
+    params.insert("arg".to_string(), JsonValue::String(cmd.arg.clone()));
+    params.insert("command_name".to_string(), JsonValue::String(cmd.command.clone()));
+    params.insert("patch".to_string(), JsonValue::String(cmd.patch.clone()));
+    params.insert("flags".to_string(), JsonValue::String(cmd.flags.clone()));
+    
+    Action {
+        action_type: cmd.action.clone(),
+        description: None,
+        key: None,
+        keystroke: None,
+        params,
     }
 }
 
