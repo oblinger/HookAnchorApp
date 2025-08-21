@@ -2139,11 +2139,15 @@ impl AnchorSelector {
         
         utils::debug_log("SHOW_CONTACT", &format!("Processing command: {}", selected_command.command));
         
-        // Strip @ prefix from the command name if present
-        let contact_name = if selected_command.command.starts_with("@") {
-            selected_command.command[1..].to_string()
+        // Resolve aliases to get the actual command
+        let all_commands = self.popup_state.get_commands();
+        let resolved_cmd = self.resolve_aliases_recursively(selected_command, &all_commands);
+        
+        // Strip @ prefix from the resolved command name if present
+        let contact_name = if resolved_cmd.command.starts_with("@") {
+            resolved_cmd.command[1..].to_string()
         } else {
-            selected_command.command.clone()
+            resolved_cmd.command.clone()
         };
         
         utils::debug_log("SHOW_CONTACT", &format!("Contact name after stripping @: {}", contact_name));
@@ -2182,21 +2186,25 @@ impl AnchorSelector {
         // Get the selected command
         let selected_command = &display_commands[selected_index];
         
+        // Resolve aliases to get the actual command
+        let all_commands = self.popup_state.get_commands();
+        let resolved_cmd = self.resolve_aliases_recursively(selected_command, &all_commands);
+        
         // Check if it's an anchor
-        if selected_command.action != "anchor" {
-            utils::debug_log("TMUX_ACTIVATE", &format!("Selected command is not an anchor: {}", selected_command.action));
+        if resolved_cmd.action != "anchor" {
+            utils::debug_log("TMUX_ACTIVATE", &format!("Resolved command is not an anchor: {}", resolved_cmd.action));
             return;
         }
         
-        utils::debug_log("TMUX_ACTIVATE", &format!("Processing anchor: {} ({})", selected_command.command, selected_command.arg));
+        utils::debug_log("TMUX_ACTIVATE", &format!("Processing anchor: {} ({})", resolved_cmd.command, resolved_cmd.arg));
         
         // Create a synthetic command to execute through the launcher
         // This will be recognized as a JavaScript action because tmux_activate is in listed_actions
         let tmux_cmd = crate::core::commands::Command {
-            command: format!("TMUX: {}", selected_command.command),
+            command: format!("TMUX: {}", resolved_cmd.command),
             action: "tmux_activate".to_string(),
-            arg: selected_command.arg.clone(),
-            patch: selected_command.patch.clone(),
+            arg: resolved_cmd.arg.clone(),
+            patch: resolved_cmd.patch.clone(),
             flags: String::new(),
         };
         
