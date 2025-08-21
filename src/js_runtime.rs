@@ -47,7 +47,7 @@
 //! - `launch(command_name)` - Recursively call another launcher command
 //! - `activateApp(app_name)` - Bring application to foreground
 //! - `runAppleScript(script)` - Execute AppleScript and return result
-//! - `spawnDetached(command, args)` - Start process without waiting for completion
+//! - [REMOVED] spawnDetached - use shell("command &") for background processes
 //! - `appIsRunning(app_name)` - Check if application is currently running (returns boolean)
 //!
 //! # Usage in Config Files
@@ -499,24 +499,8 @@ fn setup_launcher_builtins(ctx: &Ctx<'_>) -> Result<(), Box<dyn std::error::Erro
     })?)?;
     */
     
-    // Keep spawnDetached active for now since it's used in config.js
-    // Will be replaced by unified spawn() function
-    ctx.globals().set("spawnDetached", Function::new(ctx.clone(), |command: String| {
-        use std::process::{Command, Stdio};
-        
-        let shell_cmd = format!("nohup {} >/dev/null 2>&1 & disown", command);
-        
-        match Command::new("sh")
-            .arg("-c")
-            .arg(&shell_cmd)
-            .stdin(Stdio::null())
-            .stdout(Stdio::null())
-            .stderr(Stdio::null())
-            .spawn() {
-                Ok(_) => format!("Spawned detached command: {}", command),
-                Err(e) => format!("Failed to spawn detached command '{}': {}", command, e),
-            }
-    })?)?;
+    // REMOVED: spawnDetached - not needed, can use shell() with & for background processes
+    // Example: shell("command &") or shell("nohup command >/dev/null 2>&1 & disown")
     
     // ============================================================================
     // END SHELL EXECUTION FUNCTIONS
@@ -715,7 +699,7 @@ pub fn load_config_js_functions(ctx: &Ctx<'_>) -> Result<(), Box<dyn std::error:
                                     launch: launch,
                                     activateApp: activateApp,
                                     runAppleScript: runAppleScript,
-                                    spawnDetached: spawnDetached,
+                                    // spawnDetached removed - use shell("command &") instead
                                     appIsRunning: appIsRunning,
                                     encodeURIComponent: encodeURIComponent
                                 }}
