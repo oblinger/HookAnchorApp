@@ -351,6 +351,21 @@ fn setup_launcher_builtins(ctx: &Ctx<'_>) -> Result<(), Box<dyn std::error::Erro
         }
     })?)?;
     
+    // ============================================================================
+    // SHELL EXECUTION FUNCTIONS
+    // ============================================================================
+    // All shell execution functions are consolidated here for easier maintenance
+    // We're keeping the old functions commented for reference while refactoring
+    
+    // error(message) -> displays an error to the user
+    ctx.globals().set("error", Function::new(ctx.clone(), |message: String| {
+        // Queue the error for display in the UI
+        crate::error_display::queue_user_error(&message);
+        crate::utils::log(&format!("JS_ERROR: {}", message));
+        // Return empty string since this is a void function
+        String::new()
+    })?)?;
+    
     // shell(command) -> executes shell command without waiting (detached)
     ctx.globals().set("shell", Function::new(ctx.clone(), |command: String| {
         // Execute directly since we're already on the server
@@ -397,6 +412,39 @@ fn setup_launcher_builtins(ctx: &Ctx<'_>) -> Result<(), Box<dyn std::error::Erro
         }
     })?)?;
     
+    // shellWithExitCode(command) -> executes shell command and returns detailed result
+    ctx.globals().set("shellWithExitCode", Function::new(ctx.clone(), |command: String| {
+        // Execute directly since we're already on the server
+        use std::process::Command;
+        
+        let output = Command::new("sh")
+            .arg("-c")
+            .arg(&command)
+            .output()
+            .unwrap_or_else(|e| {
+                // Return a fake output with error
+                std::process::Output {
+                    status: std::process::ExitStatus::from_raw(1),
+                    stdout: Vec::new(),
+                    stderr: format!("Failed to execute: {}", e).into_bytes(),
+                }
+            });
+        
+        let exit_code = output.status.code().unwrap_or(-1);
+        let stdout = String::from_utf8_lossy(&output.stdout);
+        let stderr = String::from_utf8_lossy(&output.stderr);
+        
+        // Properly escape JSON strings
+        let escaped_stdout = stdout.replace('\\', r#"\\"#).replace('"', r#"\""#).replace('\n', r#"\n"#).replace('\r', r#"\r"#).replace('\t', r#"\t"#);
+        let escaped_stderr = stderr.replace('\\', r#"\\"#).replace('"', r#"\""#).replace('\n', r#"\n"#).replace('\r', r#"\r"#).replace('\t', r#"\t"#);
+        
+        format!(r#"{{"stdout":"{}","stderr":"{}","exitCode":{}}}"#, 
+            escaped_stdout, escaped_stderr, exit_code)
+    })?)?;
+    
+    // OLD FUNCTIONS - COMMENTED OUT FOR REFERENCE DURING REFACTORING
+    // These will be replaced by the unified shell API
+    /*
     // spawnDetached(command) -> spawns a completely detached process that won't block shutdown
     ctx.globals().set("spawnDetached", Function::new(ctx.clone(), |command: String| {
         use std::process::{Command, Stdio};
@@ -449,6 +497,30 @@ fn setup_launcher_builtins(ctx: &Ctx<'_>) -> Result<(), Box<dyn std::error::Erro
                 Err(e) => format!("Failed to spawn detached '{}': {}", full_command, e),
             }
     })?)?;
+    */
+    
+    // Keep spawnDetached active for now since it's used in config.js
+    // Will be replaced by unified spawn() function
+    ctx.globals().set("spawnDetached", Function::new(ctx.clone(), |command: String| {
+        use std::process::{Command, Stdio};
+        
+        let shell_cmd = format!("nohup {} >/dev/null 2>&1 & disown", command);
+        
+        match Command::new("sh")
+            .arg("-c")
+            .arg(&shell_cmd)
+            .stdin(Stdio::null())
+            .stdout(Stdio::null())
+            .stderr(Stdio::null())
+            .spawn() {
+                Ok(_) => format!("Spawned detached command: {}", command),
+                Err(e) => format!("Failed to spawn detached command '{}': {}", command, e),
+            }
+    })?)?;
+    
+    // ============================================================================
+    // END SHELL EXECUTION FUNCTIONS
+    // ============================================================================
     
     // change_directory(path) -> changes working directory
     ctx.globals().set("change_directory", Function::new(ctx.clone(), |path: String| {
@@ -459,43 +531,34 @@ fn setup_launcher_builtins(ctx: &Ctx<'_>) -> Result<(), Box<dyn std::error::Erro
         }
     })?)?;
     
-    // launch(command_name) -> recursively calls another launcher command
+    // launch(command_name) -> recursively calls another command
     ctx.globals().set("launch", Function::new(ctx.clone(), |command: String| {
-        match crate::command_launcher::launch(&command) {
-            Ok(_) => format!("Successfully launched: {}", command),
-            Err(e) => format!("Failed to launch '{}': {:?}", command, e),
+        // Parse command into action and args
+        let parts: Vec<&str> = command.splitn(2, ' ').collect();
+        let action_name = parts[0];
+        let args = parts.get(1).copied().unwrap_or("");
+        
+        // Look up action in config
+        let config = crate::core::sys_data::get_config();
+        if let Some(actions) = &config.actions {
+            if let Some(action_def) = actions.get(action_name) {
+                match crate::core::unified_actions::execute_action(
+                    action_def,
+                    Some(args),
+                    None
+                ) {
+                    Ok(result) => format!("Successfully launched: {} - {}", command, result),
+                    Err(e) => format!("Failed to launch '{}': {}", command, e),
+                }
+            } else {
+                format!("Action '{}' not found in configuration", action_name)
+            }
+        } else {
+            format!("No actions configured")
         }
     })?)?;
     
-    // shellWithExitCode(command) -> executes shell command and returns detailed result
-    ctx.globals().set("shellWithExitCode", Function::new(ctx.clone(), |command: String| {
-        // Execute directly since we're already on the server
-        use std::process::Command;
-        
-        let output = Command::new("sh")
-            .arg("-c")
-            .arg(&command)
-            .output()
-            .unwrap_or_else(|e| {
-                // Return a fake output with error
-                std::process::Output {
-                    status: std::process::ExitStatus::from_raw(1),
-                    stdout: Vec::new(),
-                    stderr: format!("Failed to execute: {}", e).into_bytes(),
-                }
-            });
-        
-        let exit_code = output.status.code().unwrap_or(-1);
-        let stdout = String::from_utf8_lossy(&output.stdout);
-        let stderr = String::from_utf8_lossy(&output.stderr);
-        
-        // Properly escape JSON strings
-        let escaped_stdout = stdout.replace('\\', r#"\\"#).replace('"', r#"\""#).replace('\n', r#"\n"#).replace('\r', r#"\r"#).replace('\t', r#"\t"#);
-        let escaped_stderr = stderr.replace('\\', r#"\\"#).replace('"', r#"\""#).replace('\n', r#"\n"#).replace('\r', r#"\r"#).replace('\t', r#"\t"#);
-        
-        format!(r#"{{"stdout":"{}","stderr":"{}","exitCode":{}}}"#, 
-            escaped_stdout, escaped_stderr, exit_code)
-    })?)?;
+    // DUPLICATE REMOVED - shellWithExitCode is now in the consolidated section above
     
     // commandExists(command) -> checks if command is available in PATH
     ctx.globals().set("commandExists", Function::new(ctx.clone(), |command: String| {
@@ -695,30 +758,9 @@ pub fn load_config_js_functions(ctx: &Ctx<'_>) -> Result<(), Box<dyn std::error:
 }
 
 /// Setup user-defined functions from configuration (includes both config.js and YAML)
-fn setup_user_functions(ctx: &Ctx<'_>, config: &Config) -> Result<(), Box<dyn std::error::Error>> {
-    // First load functions from config.js
+fn setup_user_functions(ctx: &Ctx<'_>, _config: &Config) -> Result<(), Box<dyn std::error::Error>> {
+    // Load functions from config.js only
     load_config_js_functions(ctx)?;
-    
-    // Then load any functions from YAML config (for backward compatibility)
-    if let Some(functions) = &config.functions {
-        for (function_name, function_value) in functions {
-            // Check if it's a JavaScript function (string value)
-            if let Some(function_body) = function_value.as_str() {
-                // Create a JavaScript function definition and evaluate it in the context
-                let function_def = format!(
-                    "globalThis.{} = function() {{ {} }}",
-                    function_name,
-                    function_body
-                );
-                
-                // Execute the function definition
-                if let Err(e) = ctx.eval::<(), _>(function_def.as_str()) {
-                    crate::utils::log_error(&format!("Failed to define user function '{}': {}", function_name, e));
-                }
-            }
-            // Simple functions (mappings) are not exposed to JavaScript runtime
-        }
-    }
     Ok(())
 }
 
