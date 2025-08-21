@@ -414,6 +414,9 @@ pub trait PopupInterface {
     /// Show the folder of the selected command
     fn show_folder(&mut self);
     
+    /// Show contact for selected command (strips @ prefix)
+    fn show_contact(&mut self);
+    
     /// Start tmux session in selected anchor folder
     fn tmux_activate(&mut self);
     
@@ -574,6 +577,11 @@ impl KeyRegistry {
                     if *pressed {
                         crate::utils::log(&format!("KEY_PRESS: Key={:?}, Modifiers={{shift:{}, ctrl:{}, alt:{}, cmd:{}}}", 
                             key, modifiers.shift, modifiers.ctrl, modifiers.alt, modifiers.command));
+                        
+                        // Special logging for > key (Period with Shift)
+                        if *key == egui::Key::Period && modifiers.shift {
+                            crate::utils::log(">>> GREATER-THAN KEY DETECTED! Period + Shift pressed");
+                        }
                     }
                 }
                 egui::Event::Text(text) => {
@@ -611,13 +619,17 @@ impl KeyRegistry {
                     crate::utils::log(&format!("KEY_HANDLER: Handler matched: {}", handler.description()));
                     
                     // Special logging for Enter key
-                    if let egui::Event::Key { key, .. } = event {
+                    if let egui::Event::Key { key, modifiers, .. } = event {
                         if *key == egui::Key::Enter {
                             crate::utils::log(&format!("🔵 ENTER KEY: Handler '{}' matched for Enter key!", handler.description()));
                         }
                         // Also log Backtick key
                         if *key == egui::Key::Backtick {
                             crate::utils::log(&format!("⚡ BACKTICK KEY: Handler '{}' matched for Backtick key!", handler.description()));
+                        }
+                        // Log > key (Period with Shift)
+                        if *key == egui::Key::Period && modifiers.shift {
+                            crate::utils::log(&format!(">>> ALIAS KEY: Handler '{}' matched for > key!", handler.description()));
                         }
                     }
                     
@@ -737,6 +749,7 @@ pub enum Action {
     ForceRebuild,
     StartGrabber,
     ShowFolder,
+    ShowContact,
     ExitApp,
     ExecuteCommand,
     OpenEditor,
@@ -757,6 +770,7 @@ impl ActionHandler {
             Action::ForceRebuild => "Force rebuild command list",
             Action::StartGrabber => "Start grabber countdown",
             Action::ShowFolder => "Show folder of selected command",
+            Action::ShowContact => "Show contact (strips @ prefix)",
             Action::TmuxActivate => "Start tmux session in anchor folder",
             Action::ExitApp => "Exit application",
             Action::ExecuteCommand => "Execute selected command",
@@ -799,6 +813,10 @@ impl KeyHandler for ActionHandler {
             },
             Action::ShowFolder => {
                 context.popup.show_folder();
+                KeyHandlerResult::Handled
+            },
+            Action::ShowContact => {
+                context.popup.show_contact();
                 KeyHandlerResult::Handled
             },
             Action::TmuxActivate => {
@@ -868,7 +886,9 @@ impl TemplateHandler {
 
 impl KeyHandler for TemplateHandler {
     fn execute(&self, context: &mut KeyHandlerContext) -> KeyHandlerResult {
+        crate::utils::log(&format!(">>> TEMPLATE_HANDLER: Executing template '{}'", self.template_name));
         context.popup.handle_template_create_named(&self.template_name);
+        crate::utils::log(&format!(">>> TEMPLATE_HANDLER: Template '{}' execution completed", self.template_name));
         KeyHandlerResult::Handled
     }
     
@@ -918,6 +938,7 @@ pub fn create_default_key_registry(config: &crate::Config) -> KeyRegistry {
     crate::utils::log("KEY_REGISTRY: Creating default key registry");
     crate::utils::log(&format!("KEY_REGISTRY: Config has {} actions", config.actions.as_ref().map(|a| a.len()).unwrap_or(0)));
     let mut registry = KeyRegistry::new();
+    let mut registered_count = 0;
     
     // Register keybinding-based handlers
     if let Some(ref keybindings) = config.keybindings {
@@ -968,7 +989,14 @@ pub fn create_default_key_registry(config: &crate::Config) -> KeyRegistry {
                     // For template actions, use TemplateHandler
                     if action.action_type == "template" {
                         let handler = Box::new(TemplateHandler::new(action_name.clone()));
-                        registry.register_keystroke(keystroke, handler);
+                        registry.register_keystroke(keystroke.clone(), handler);
+                        registered_count += 1;
+                        crate::utils::log(&format!("KEY_REGISTRY: Registered template '{}' to key '{}'", action_name, key_str));
+                        // Special logging for > key
+                        if key_str == ">" {
+                            crate::utils::log(&format!(">>> ALIAS REGISTRATION: Template '{}' registered to '>' key", action_name));
+                            crate::utils::log(&format!(">>> ALIAS REGISTRATION: Keystroke details: {:?}", keystroke));
+                        }
                     } else if action.action_type == "popup" {
                         // Handle popup actions (navigation, exit, etc.)
                         if let Some(popup_action) = action.params.get("popup_action")
@@ -1015,6 +1043,7 @@ pub fn create_default_key_registry(config: &crate::Config) -> KeyRegistry {
                                 "execute_command" => Box::new(ActionHandler::new(Action::ExecuteCommand)),
                                 "force_rebuild" => Box::new(ActionHandler::new(Action::ForceRebuild)),
                                 "show_folder" => Box::new(ActionHandler::new(Action::ShowFolder)),
+                                "show_contact" => Box::new(ActionHandler::new(Action::ShowContact)),
                                 "show_keys" => Box::new(ActionHandler::new(Action::ShowKeys)),
                                 "edit_active_command" => Box::new(ActionHandler::new(Action::EditActiveCommand)),
                                 "edit_input_command" => Box::new(ActionHandler::new(Action::EditInputCommand)),
@@ -1056,6 +1085,9 @@ pub fn create_default_key_registry(config: &crate::Config) -> KeyRegistry {
     
     // Register text handlers
     registry.register_text_handler(Box::new(UninstallTextHandler));
+    
+    crate::utils::log(&format!("KEY_REGISTRY: Total handlers registered: {}", registered_count));
+    crate::utils::log(&format!("KEY_REGISTRY: Registry has {} keystroke handlers", registry.handlers.len()));
     
     registry
 }

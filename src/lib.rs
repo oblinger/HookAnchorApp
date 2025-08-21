@@ -31,12 +31,9 @@ pub mod core;
 // UI modules  
 pub mod ui;
 
-// New launcher modules
-pub mod eval;
-pub mod command_launcher;
+// JavaScript runtime for executing business logic
 pub mod js_runtime;
 pub mod business_logic;
-pub mod builtin_fns;
 
 // Simplified execution system (PRD)
 pub mod execute;

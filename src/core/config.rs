@@ -16,8 +16,6 @@ pub struct Config {
     pub popup_settings: PopupSettings,
     /// Launcher behavior settings
     pub launcher_settings: Option<LauncherSettings>,
-    /// Unified functions section (both simple and JavaScript)
-    pub functions: Option<HashMap<String, serde_yaml::Value>>,
     /// Grabber rules for capturing application context
     pub grabber_rules: Option<Vec<crate::grabber::GrabberRule>>,
     /// Key bindings for all actions (legacy)
@@ -77,6 +75,8 @@ pub struct LauncherSettings {
     /// When true: flips to previous app and back during countdown
     /// When false: user manually changes focus during countdown
     pub flip_focus: Option<bool>,
+    /// Enable JavaScript TMUX activation instead of Rust
+    pub use_javascript_tmux_activation: Option<String>,
 }
 
 impl Default for LauncherSettings {
@@ -87,6 +87,7 @@ impl Default for LauncherSettings {
             obsidian_vault_name: Some("kmr".to_string()),
             obsidian_vault_path: Some("~/Documents".to_string()),
             flip_focus: Some(false),
+            use_javascript_tmux_activation: None,
         }
     }
 }
@@ -130,7 +131,6 @@ impl Default for Config {
         Config {
             popup_settings: PopupSettings::default(),
             launcher_settings: Some(LauncherSettings::default()),
-            functions: None,
             grabber_rules: None,
             keybindings: None,
             templates: None,
@@ -330,10 +330,6 @@ fn load_legacy_config(contents: &str) -> Result<Config, Box<dyn std::error::Erro
         popup_settings.listed_actions = Some(listed_actions_str.to_string());
     }
     
-    // Extract functions if it exists
-    let functions = yaml.get("functions")
-        .and_then(|v| serde_yaml::from_value(v.clone()).ok());
-    
     // Handle legacy markdown_roots at top level - migrate to popup_settings
     if let Some(roots) = yaml.get("markdown_roots")
         .and_then(|v| serde_yaml::from_value::<Vec<String>>(v.clone()).ok()) {
@@ -387,7 +383,6 @@ fn load_legacy_config(contents: &str) -> Result<Config, Box<dyn std::error::Erro
     Ok(Config {
         popup_settings,
         launcher_settings,
-        functions,
         grabber_rules,
         keybindings,
         templates,
@@ -400,7 +395,6 @@ pub(crate) fn create_default_config() -> Config {
     Config {
         popup_settings: PopupSettings::default(),
         launcher_settings: Some(LauncherSettings::default()),
-        functions: Some(HashMap::new()),
         grabber_rules: Some(vec![]),
         keybindings: None,
         templates: None,

@@ -2229,6 +2229,51 @@ impl AnchorSelector {
         use std::process::Command;
         use std::path::Path;
         
+        // Check if we should use JavaScript version (via config option)
+        if let Some(settings) = &self.popup_state.config.launcher_settings {
+            if let Some(use_js) = &settings.use_javascript_tmux_activation {
+                if use_js == "true" {
+                    utils::log("🚀 ACTIVATE_ANCHOR: Using JavaScript TMUX implementation");
+                    
+                    // Get selected command index
+                    let selected_index = self.selected_index();
+                    let display_commands = self.popup_state.filtered_commands.clone();
+                    
+                    if display_commands.is_empty() || selected_index >= display_commands.len() {
+                        utils::log("❌ ACTIVATE_ANCHOR: No commands available for JavaScript");
+                        return;
+                    }
+                    
+                    // Get the selected command and resolve aliases
+                    let all_commands = self.popup_state.get_commands();
+                    let selected_command = &display_commands[selected_index];
+                    let resolved_cmd = self.resolve_aliases_recursively(selected_command, &all_commands);
+                    
+                    utils::log(&format!("📋 ACTIVATE_ANCHOR: Selected: '{}', Resolved: '{}'", 
+                        selected_command.command, resolved_cmd.command));
+                    
+                    // Create command to execute JavaScript action
+                    let js_cmd = crate::core::commands::Command {
+                        command: format!("JS_TMUX: {}", resolved_cmd.command),
+                        action: "activate_anchor".to_string(),
+                        arg: resolved_cmd.arg.clone(),
+                        patch: resolved_cmd.patch.clone(),
+                        flags: String::new(),
+                    };
+                    
+                    utils::log(&format!("🎯 ACTIVATE_ANCHOR: Executing JavaScript action with arg: {}", js_cmd.arg));
+                    crate::execute_via_server(&js_cmd);
+                    
+                    // Request exit after triggering
+                    self.should_exit = true;
+                    return;
+                }
+            }
+        }
+        
+        // Original Rust implementation
+        utils::log("🦀 ACTIVATE_ANCHOR: Using Rust implementation");
+        
         // Get selected command index
         let selected_index = self.selected_index();
         

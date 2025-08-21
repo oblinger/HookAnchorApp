@@ -26,3 +26,7 @@ debug/
 *.dmg
 *.tar.gz
 *.tar.bz2
+
+# Old/archived files
+old/
+OLD/

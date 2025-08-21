@@ -121,7 +121,9 @@ impl Action {
             edit,
             use_existing,
             file,
-            contents: None,  // Not used in unified actions
+            contents: self.params.get("contents")
+                .and_then(|v| v.as_str())
+                .map(|s| s.to_string()),
             description: self.description.clone(),
             validate_previous_folder: false,  // Not used in unified actions
             file_rescan,
@@ -433,31 +435,13 @@ fn setup_action_variables(
     Ok(())
 }
 
-/// Setup user-defined functions from config
+/// Setup user-defined functions from config.js
 fn setup_user_functions(
     ctx: &Ctx<'_>,
-    config: &crate::Config,
+    _config: &crate::Config,
 ) -> Result<(), Box<dyn std::error::Error>> {
-    // First, load functions from config.js (just like js_runtime does)
+    // Load functions from config.js only
     crate::js_runtime::load_config_js_functions(ctx)?;
-    
-    // Then load any additional functions from YAML config
-    if let Some(functions) = &config.functions {
-        for (name, value) in functions {
-        if let Some(js_code) = value.as_str() {
-            // It's a JavaScript function definition
-            let func_code = format!("(function() {{ {} }})", js_code);
-            match ctx.eval::<rquickjs::Value, _>(func_code.as_str()) {
-                Ok(func) => {
-                    ctx.globals().set(name.as_str(), func)?;
-                }
-                Err(e) => {
-                    log_error(&format!("Failed to load function '{}': {}", name, e));
-                }
-            }
-        }
-        }
-    }
     
     Ok(())
 }
@@ -579,15 +563,26 @@ pub fn execute_action(
         "open_app" => execute_open_app_action(&expanded_params),
         "open_folder" => execute_open_folder_action(&expanded_params),
         "open_file" => execute_open_file_action(&expanded_params),
-        "shell" | "cmd" => execute_shell_action(&expanded_params),
-        "javascript" => execute_javascript_action(&expanded_params),
+        "shell" => execute_shell_action(&expanded_params),
         "obsidian" => execute_obsidian_action(&expanded_params),
-        "1password" => execute_1password_action(&expanded_params),
-        "slack" => execute_slack_action(&expanded_params),
-        "tmux" => execute_tmux_action(&expanded_params),
-        "type_text" => execute_type_text_action(&expanded_params),
         "alias" => execute_alias_action(&expanded_params),
-        "builtin" => execute_builtin_action(action, &expanded_params),
+        
+        // First-class action types that call JavaScript implementations
+        "doc" => execute_js_function_action("action_doc", &expanded_params),
+        "folder" => execute_js_function_action("action_folder", &expanded_params),
+        "cmd" => execute_js_function_action("action_cmd", &expanded_params),
+        "markdown" => execute_js_function_action("action_markdown", &expanded_params),
+        "anchor" => execute_js_function_action("action_anchor", &expanded_params),
+        "text" => execute_js_function_action("action_text", &expanded_params),
+        "contact" => execute_js_function_action("action_contact", &expanded_params),
+        "1pass" => execute_js_function_action("action_1pass", &expanded_params),
+        "slack" => execute_js_function_action("action_slack", &expanded_params),
+        "rescan" => execute_js_function_action("action_rescan", &expanded_params),
+        
+        // Use JavaScript functions for tmux/anchor activation
+        "activate_anchor" => execute_js_function_action("action_activate_tmux", &expanded_params),
+        "tmux_activate" => execute_js_function_action("action_activate_tmux", &expanded_params),
+        
         _ => {
             // Try to find a user-defined action handler
             execute_custom_action(&action.action_type, &expanded_params)
@@ -598,7 +593,7 @@ pub fn execute_action(
 // Action type implementations
 
 fn execute_template_action(
-    action: &Action,
+    _action: &Action,
     params: &HashMap<String, String>,
 ) -> Result<String, Box<dyn std::error::Error>> {
     debug_log("ACTION", "Executing template action");
@@ -795,12 +790,11 @@ fn execute_shell_action(
     Ok(format!("Executed shell command"))
 }
 
-fn execute_javascript_action(
+
+fn execute_js_function_action(
+    function_name: &str,
     params: &HashMap<String, String>,
 ) -> Result<String, Box<dyn std::error::Error>> {
-    let function_name = params.get("code")
-        .ok_or("javascript action requires code parameter")?;
-    
     debug_log("ACTION", &format!("Executing JavaScript function: {}", function_name));
     
     // Get parameters that will be passed to the JavaScript function
@@ -860,6 +854,12 @@ fn execute_obsidian_action(
     Ok(format!("Opened in Obsidian: {}", file))
 }
 
+// ============================================================================
+// OLD/UNUSED NATIVE IMPLEMENTATIONS 
+// Kept for reference - these have been replaced by JavaScript implementations
+// ============================================================================
+
+#[allow(dead_code)]
 fn execute_1password_action(
     params: &HashMap<String, String>,
 ) -> Result<String, Box<dyn std::error::Error>> {
@@ -883,6 +883,7 @@ fn execute_1password_action(
     Ok(format!("Searched 1Password for: {}", query))
 }
 
+#[allow(dead_code)]
 fn execute_slack_action(
     params: &HashMap<String, String>,
 ) -> Result<String, Box<dyn std::error::Error>> {
@@ -908,6 +909,7 @@ fn execute_slack_action(
     Ok(format!("Navigated to Slack channel: {}", channel))
 }
 
+#[allow(dead_code)]
 fn execute_tmux_action(
     params: &HashMap<String, String>,
 ) -> Result<String, Box<dyn std::error::Error>> {
@@ -923,6 +925,7 @@ fn execute_tmux_action(
     Ok(format!("Activated tmux at: {}", path))
 }
 
+#[allow(dead_code)]
 fn execute_type_text_action(
     params: &HashMap<String, String>,
 ) -> Result<String, Box<dyn std::error::Error>> {
@@ -996,41 +999,6 @@ fn execute_alias_action(
     Ok(format!("Executed alias to: {}", target))
 }
 
-fn execute_builtin_action(
-    action: &Action,
-    params: &HashMap<String, String>,
-) -> Result<String, Box<dyn std::error::Error>> {
-    debug_log("ACTION", &format!("Executing builtin action"));
-    
-    // Get the builtin name from the action params
-    let builtin_name = action.params.get("builtin")
-        .and_then(|v| v.as_str())
-        .ok_or("builtin action missing 'builtin' parameter")?;
-    
-    // Create an eval environment and execute the builtin
-    let mut env = crate::eval::Environment::new()
-        .map_err(|e| format!("Failed to create environment: {}", e))?;
-    
-    // Set the arg variable if we have one
-    if let Some(arg) = params.get("arg") {
-        env.variables.insert("arg".to_string(), arg.clone());
-    }
-    
-    // Add other params as variables
-    for (key, value) in params {
-        env.variables.insert(key.clone(), value.clone());
-    }
-    
-    // Create a function call to the builtin
-    let mut func_call = serde_yaml::Mapping::new();
-    func_call.insert("fn".into(), builtin_name.into());
-    
-    // Execute the builtin function
-    match env.eval(serde_yaml::Value::Mapping(func_call)) {
-        Ok(_) => Ok(format!("Builtin '{}' executed", builtin_name)),
-        Err(e) => Err(format!("Failed to execute builtin '{}': {:?}", builtin_name, e).into())
-    }
-}
 
 fn execute_custom_action(
     action_type: &str,

@@ -429,33 +429,80 @@ fn execute_command_with_env(
     verbose_log("CMD_SERVER", &format!("Is launcher command: {}", is_launcher_command));
     
     if is_launcher_command {
-        // Use launcher for known action types
-        verbose_log("CMD_SERVER", &format!("Using launcher for action: {}", command.action));
+        // Use unified actions for known action types
+        verbose_log("CMD_SERVER", &format!("Using unified actions for action: {}", command.action));
         
         // Check if this is a GUI command that needs blocking execution
         // GUI commands have "G" in their flags field
         let needs_blocking = command.flags.contains("G");
         
         if command.arg.contains("ec") {
-            eprintln!("[CMD_SERVER LAUNCHER] EC command in launcher path");
-            eprintln!("[CMD_SERVER LAUNCHER] Command object: {:?}", command);
-            eprintln!("[CMD_SERVER LAUNCHER] needs_blocking: {} (flags: '{}')", needs_blocking, command.flags);
+            eprintln!("[CMD_SERVER ACTIONS] EC command in actions path");
+            eprintln!("[CMD_SERVER ACTIONS] Command object: {:?}", command);
+            eprintln!("[CMD_SERVER ACTIONS] needs_blocking: {} (flags: '{}')", needs_blocking, command.flags);
         }
         
-        // Build the launcher command string (action + arg)
-        let launcher_cmd = if command.arg.is_empty() {
-            command.action.clone()
-        } else {
-            format!("{} {}", command.action, command.arg)
-        };
-        
-        if needs_blocking {
-            // Execute launcher synchronously for GUI commands
-            verbose_log("CMD_SERVER", "Executing launcher synchronously (blocking)");
-            match crate::command_launcher::launch(&launcher_cmd) {
-                Ok(()) => {
-                    verbose_log("CMD_SERVER", "Launcher execution completed successfully");
-                    log_and_print("CMD", &format!("✓ Completed: {}", command.action));
+        // Look up the action in config
+        let full_config = crate::core::sys_data::get_config();
+        if let Some(actions) = &full_config.actions {
+            if let Some(action_def) = actions.get(&command.action) {
+                verbose_log("CMD_SERVER", &format!("Found action '{}' in config (type: {})", command.action, action_def.action_type));
+                
+                if needs_blocking {
+                    // Execute action synchronously for GUI commands
+                    verbose_log("CMD_SERVER", "Executing action synchronously (blocking)");
+                    match crate::core::unified_actions::execute_action(
+                        action_def,
+                        Some(&command.arg),
+                        None
+                    ) {
+                        Ok(result) => {
+                            verbose_log("CMD_SERVER", &format!("Action completed: {}", result));
+                            log_and_print("CMD", &format!("✓ Completed: {}", command.action));
+                            return CommandResponse {
+                                success: true,
+                                exit_code: Some(0),
+                                stdout: String::new(),
+                                stderr: String::new(),
+                                error: None,
+                            };
+                        }
+                        Err(e) => {
+                            let timestamp = chrono::Local::now().format("%H:%M:%S").to_string();
+                            crate::utils::log_error(&format!("[{}] Action failed: {}", timestamp, e));
+                            return CommandResponse {
+                                success: false,
+                                exit_code: Some(1),
+                                stdout: String::new(),
+                                stderr: format!("Action failed: {}", e),
+                                error: Some(e.to_string()),
+                            };
+                        }
+                    }
+                } else {
+                    // Spawn action execution in a separate thread for non-blocking commands
+                    let action_clone = action_def.clone();
+                    let arg_clone = command.arg.clone();
+                    let action_name = command.action.clone();
+                    thread::spawn(move || {
+                        match crate::core::unified_actions::execute_action(
+                            &action_clone,
+                            Some(&arg_clone),
+                            None
+                        ) {
+                            Ok(result) => {
+                                verbose_log("CMD_SERVER", &format!("Action completed: {}", result));
+                                crate::utils::log(&format!("✓ Action completed: {}", action_name));
+                            }
+                            Err(e) => {
+                                let timestamp = chrono::Local::now().format("%H:%M:%S").to_string();
+                                crate::utils::log_error(&format!("[{}] Action failed: {}", timestamp, e));
+                            }
+                        }
+                    });
+                    
+                    // Return immediate success for spawning the action
+                    log_and_print("CMD", &format!("✓ Spawned: {}", command.action));
                     return CommandResponse {
                         success: true,
                         exit_code: Some(0),
@@ -464,43 +511,10 @@ fn execute_command_with_env(
                         error: None,
                     };
                 }
-                Err(e) => {
-                    let timestamp = chrono::Local::now().format("%H:%M:%S").to_string();
-                    crate::utils::log_error(&format!("[{}] Launcher failed: {:?}", timestamp, e));
-                    return CommandResponse {
-                        success: false,
-                        exit_code: Some(1),
-                        stdout: String::new(),
-                        stderr: format!("Launcher failed: {:?}", e),
-                        error: Some(format!("{:?}", e)),
-                    };
-                }
+            } else {
+                // Action not found in config, fall through to shell execution
+                verbose_log("CMD_SERVER", &format!("Action '{}' not found in config, falling back to shell", command.action));
             }
-        } else {
-            // Spawn launcher execution in a separate thread for non-blocking commands
-            let launcher_cmd_clone = launcher_cmd.clone();
-            thread::spawn(move || {
-                match crate::command_launcher::launch(&launcher_cmd_clone) {
-                    Ok(()) => {
-                        verbose_log("CMD_SERVER", "Launcher execution completed successfully");
-                        crate::utils::log(&format!("✓ Launcher completed: {}", launcher_cmd_clone));
-                    }
-                    Err(e) => {
-                        let timestamp = chrono::Local::now().format("%H:%M:%S").to_string();
-                        crate::utils::log_error(&format!("[{}] Launcher failed: {:?}", timestamp, e));
-                    }
-                }
-            });
-            
-            // Return immediate success for spawning the launcher
-            log_and_print("CMD", &format!("✓ Spawned: {}", command.action));
-            return CommandResponse {
-                success: true,
-                exit_code: Some(0),
-                stdout: String::new(),
-                stderr: String::new(),
-                error: None,
-            };
         }
     }
     

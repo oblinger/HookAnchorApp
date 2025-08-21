@@ -46,16 +46,8 @@ fn execute_function(
         return func(params);
     }
     
-    // Check JavaScript functions from config
-    let config = crate::core::sys_data::get_config();
-    if let Some(functions) = &config.functions {
-        if let Some(js_code) = functions.get(name).and_then(|v| v.as_str()) {
-            debug_log("EXECUTE", &format!("Found JavaScript function: {}", name));
-            return execute_javascript(js_code, params);
-        }
-    }
-    
     // Try legacy action lookup for backward compatibility
+    let config = crate::core::sys_data::get_config();
     if name.starts_with("action_") {
         let action_type = &name[7..]; // Remove "action_" prefix
         if let Some(actions) = &config.actions {
@@ -200,7 +192,7 @@ fn builtin_open_url(params: &HashMap<String, String>) -> Result<String, Box<dyn 
     }
 }
 
-fn builtin_template(params: &HashMap<String, String>) -> Result<String, Box<dyn std::error::Error>> {
+fn builtin_template(_params: &HashMap<String, String>) -> Result<String, Box<dyn std::error::Error>> {
     // Templates create commands, they don't execute directly
     // This would be handled by the template action type
     Ok("Template action not implemented in simplified system".to_string())

@@ -6,7 +6,6 @@
 use std::collections::HashMap;
 use chrono::{Local, Datelike, Timelike};
 use serde::{Deserialize, Serialize};
-use serde_json::json;
 use crate::Command;
 use crate::core::key_processing::Keystroke;
 
@@ -73,6 +72,7 @@ pub struct Template {
 }
 
 /// Context for template variable expansion
+#[derive(Clone)]
 pub struct TemplateContext {
     /// Variables available for expansion
     pub variables: HashMap<String, String>,
@@ -83,73 +83,92 @@ impl TemplateContext {
     pub fn new(
         input: &str,
         selected_command: Option<&Command>,
-        previous_command: Option<&Command>,
+        _previous_command: Option<&Command>, // Kept for compatibility but unused
     ) -> Self {
         let mut variables = HashMap::new();
         
         // Basic variables
         variables.insert("input".to_string(), input.to_string());
         
-        // Last executed command from state
+        // Last executed command from state - stored as object fields for JavaScript access
         let state = crate::core::state::load_state();
-        if let Some(last_executed) = state.last_executed_command {
-            variables.insert("last_executed".to_string(), last_executed.clone());
-            variables.insert("last_executed_name".to_string(), last_executed);
+        if let Some(last_executed_name) = state.last_executed_command {
+            // Try to find the full command details
+            let commands = crate::core::commands::load_commands();
+            if let Some(cmd) = commands.iter().find(|c| c.command == last_executed_name) {
+                // Store last_executed command details
+                // Only extract folder for commands that have a folder context
+                let folder = if cmd.action == "cmd" && cmd.arg.trim().starts_with("cd ") {
+                    // For cd commands, extract the folder after "cd "
+                    cmd.arg.trim().strip_prefix("cd ").unwrap_or("").trim().to_string()
+                } else if cmd.action == "folder" || cmd.action == "markdown" || cmd.action == "anchor" {
+                    // For file-based actions, get the parent folder
+                    extract_folder_from_path(&cmd.arg).unwrap_or_else(|| "/INVALID_FOLDER_NO_PATH".to_string())
+                } else {
+                    // For other actions (like "sub file"), there's no folder context
+                    // Return a clear error indicator
+                    "/INVALID_FOLDER_NO_CD".to_string()
+                };
+                
+                // We store these for JavaScript object creation later
+                variables.insert("_last_executed_name".to_string(), cmd.command.clone());
+                variables.insert("_last_executed_path".to_string(), cmd.arg.clone());
+                variables.insert("_last_executed_patch".to_string(), cmd.patch.clone());
+                variables.insert("_last_executed_action".to_string(), cmd.action.clone());
+                variables.insert("_last_executed_flags".to_string(), cmd.flags.clone());
+                variables.insert("_last_executed_folder".to_string(), folder);
+            } else {
+                // Command not found, just use the name
+                variables.insert("_last_executed_name".to_string(), last_executed_name);
+                variables.insert("_last_executed_path".to_string(), String::new());
+                variables.insert("_last_executed_patch".to_string(), String::new());
+                variables.insert("_last_executed_folder".to_string(), String::new());
+                variables.insert("_last_executed_action".to_string(), String::new());
+                variables.insert("_last_executed_flags".to_string(), String::new());
+            }
         } else {
-            variables.insert("last_executed".to_string(), String::new());
-            variables.insert("last_executed_name".to_string(), String::new());
+            // No last executed command
+            variables.insert("_last_executed_name".to_string(), String::new());
+            variables.insert("_last_executed_path".to_string(), String::new());
+            variables.insert("_last_executed_patch".to_string(), String::new());
+            variables.insert("_last_executed_folder".to_string(), String::new());
+            variables.insert("_last_executed_action".to_string(), String::new());
+            variables.insert("_last_executed_flags".to_string(), String::new());
         }
         
-        // Selected command variables
+        // Selected command - stored as object fields for JavaScript access
         if let Some(cmd) = selected_command {
-            variables.insert("selected_name".to_string(), cmd.command.clone());
-            variables.insert("selected_path".to_string(), cmd.arg.clone());
-            variables.insert("selected_patch".to_string(), cmd.patch.clone());
-            variables.insert("selected_action".to_string(), cmd.action.clone());
-            variables.insert("selected_flags".to_string(), cmd.flags.clone());
+            // Only extract folder for commands that have a folder context
+            let folder = if cmd.action == "cmd" && cmd.arg.trim().starts_with("cd ") {
+                // For cd commands, extract the folder after "cd "
+                cmd.arg.trim().strip_prefix("cd ").unwrap_or("").trim().to_string()
+            } else if cmd.action == "folder" || cmd.action == "markdown" || cmd.action == "anchor" {
+                // For file-based actions, get the parent folder
+                extract_folder_from_path(&cmd.arg).unwrap_or_else(|| String::new())
+            } else {
+                // For other actions (like "subl file"), there's no folder context
+                String::new()
+            };
             
-            // Extract folder from path if it's a file path
-            if let Some(folder) = extract_folder_from_path(&cmd.arg) {
-                variables.insert("selected_folder".to_string(), folder);
-            }
+            variables.insert("_selected_name".to_string(), cmd.command.clone());
+            variables.insert("_selected_path".to_string(), cmd.arg.clone());
+            variables.insert("_selected_patch".to_string(), cmd.patch.clone());
+            variables.insert("_selected_action".to_string(), cmd.action.clone());
+            variables.insert("_selected_flags".to_string(), cmd.flags.clone());
+            variables.insert("_selected_folder".to_string(), folder);
         } else {
             // Provide empty defaults for when no command is selected
-            variables.insert("selected_name".to_string(), String::new());
-            variables.insert("selected_path".to_string(), String::new());
-            variables.insert("selected_patch".to_string(), String::new());
-            variables.insert("selected_folder".to_string(), String::new());
-            variables.insert("selected_action".to_string(), String::new());
-            variables.insert("selected_flags".to_string(), String::new());
+            variables.insert("_selected_name".to_string(), String::new());
+            variables.insert("_selected_path".to_string(), String::new());
+            variables.insert("_selected_patch".to_string(), String::new());
+            variables.insert("_selected_folder".to_string(), String::new());
+            variables.insert("_selected_action".to_string(), String::new());
+            variables.insert("_selected_flags".to_string(), String::new());
         }
         
-        // Previous command variables
-        if let Some(cmd) = previous_command {
-            variables.insert("previous_name".to_string(), cmd.command.clone());
-            variables.insert("previous_path".to_string(), cmd.arg.clone());
-            variables.insert("previous_patch".to_string(), cmd.patch.clone());
-            variables.insert("previous_action".to_string(), cmd.action.clone());
-            variables.insert("previous_flags".to_string(), cmd.flags.clone());
-            
-            // Extract folder from path if it's a file path
-            if let Some(folder) = extract_folder_from_path(&cmd.arg) {
-                variables.insert("previous_folder".to_string(), folder);
-            } else {
-                variables.insert("previous_folder".to_string(), String::new());
-            }
-            
-            crate::utils::debug_log("TEMPLATE_CONTEXT", &format!("Set previous_name to: '{}'", cmd.command));
-            crate::utils::debug_log("TEMPLATE_CONTEXT", &format!("Set previous_path to: '{}'", cmd.arg));
-            crate::utils::debug_log("TEMPLATE_CONTEXT", &format!("Set previous_patch to: '{}'", cmd.patch));
-        } else {
-            crate::utils::debug_log("TEMPLATE_CONTEXT", "No previous command provided to context");
-            // Provide empty defaults for when no command is available
-            variables.insert("previous_name".to_string(), String::new());
-            variables.insert("previous_path".to_string(), String::new());
-            variables.insert("previous_patch".to_string(), String::new());
-            variables.insert("previous_folder".to_string(), String::new());
-            variables.insert("previous_action".to_string(), String::new());
-            variables.insert("previous_flags".to_string(), String::new());
-        }
+        // Note: We no longer track "previous" command as it was volatile and unreliable
+        // Instead, use last_executed which tracks the actually executed command
+        // The _previous_command parameter is kept for compatibility but unused
         
         // Add date/time variables
         add_datetime_variables(&mut variables);
@@ -244,26 +263,15 @@ impl TemplateContext {
             context.push_str("const input = '';\n");
         }
         
-        // Create previous object
-        context.push_str("const previous = {\n");
-        context.push_str(&format!("  name: {:?},\n", self.variables.get("previous_name").unwrap_or(&String::new())));
-        context.push_str(&format!("  path: {:?},\n", self.variables.get("previous_path").unwrap_or(&String::new())));
-        context.push_str(&format!("  arg: {:?},\n", self.variables.get("previous_path").unwrap_or(&String::new())));
-        context.push_str(&format!("  patch: {:?},\n", self.variables.get("previous_patch").unwrap_or(&String::new())));
-        context.push_str(&format!("  folder: {:?},\n", self.variables.get("previous_folder").unwrap_or(&String::new())));
-        context.push_str(&format!("  action: {:?},\n", self.variables.get("previous_action").unwrap_or(&String::new())));
-        context.push_str(&format!("  flags: {:?}\n", self.variables.get("previous_flags").unwrap_or(&String::new())));
-        context.push_str("};\n");
-        
         // Create selected object
         context.push_str("const selected = {\n");
-        context.push_str(&format!("  name: {:?},\n", self.variables.get("selected_name").unwrap_or(&String::new())));
-        context.push_str(&format!("  path: {:?},\n", self.variables.get("selected_path").unwrap_or(&String::new())));
-        context.push_str(&format!("  arg: {:?},\n", self.variables.get("selected_path").unwrap_or(&String::new())));
-        context.push_str(&format!("  patch: {:?},\n", self.variables.get("selected_patch").unwrap_or(&String::new())));
-        context.push_str(&format!("  folder: {:?},\n", self.variables.get("selected_folder").unwrap_or(&String::new())));
-        context.push_str(&format!("  action: {:?},\n", self.variables.get("selected_action").unwrap_or(&String::new())));
-        context.push_str(&format!("  flags: {:?}\n", self.variables.get("selected_flags").unwrap_or(&String::new())));
+        context.push_str(&format!("  name: {:?},\n", self.variables.get("_selected_name").unwrap_or(&String::new())));
+        context.push_str(&format!("  path: {:?},\n", self.variables.get("_selected_path").unwrap_or(&String::new())));
+        context.push_str(&format!("  arg: {:?},\n", self.variables.get("_selected_path").unwrap_or(&String::new())));
+        context.push_str(&format!("  patch: {:?},\n", self.variables.get("_selected_patch").unwrap_or(&String::new())));
+        context.push_str(&format!("  folder: {:?},\n", self.variables.get("_selected_folder").unwrap_or(&String::new())));
+        context.push_str(&format!("  action: {:?},\n", self.variables.get("_selected_action").unwrap_or(&String::new())));
+        context.push_str(&format!("  flags: {:?}\n", self.variables.get("_selected_flags").unwrap_or(&String::new())));
         context.push_str("};\n");
         
         // Create date object
@@ -310,27 +318,19 @@ impl TemplateContext {
         
         // Create last_executed object  
         context.push_str("const last_executed = {\n");
-        context.push_str(&format!("  name: {:?}\n", self.variables.get("last_executed_name").unwrap_or(&String::new())));
+        context.push_str(&format!("  name: {:?},\n", self.variables.get("_last_executed_name").unwrap_or(&String::new())));
+        context.push_str(&format!("  path: {:?},\n", self.variables.get("_last_executed_path").unwrap_or(&String::new())));
+        context.push_str(&format!("  arg: {:?},\n", self.variables.get("_last_executed_path").unwrap_or(&String::new())));
+        context.push_str(&format!("  patch: {:?},\n", self.variables.get("_last_executed_patch").unwrap_or(&String::new())));
+        context.push_str(&format!("  folder: {:?},\n", self.variables.get("_last_executed_folder").unwrap_or(&String::new())));
+        context.push_str(&format!("  action: {:?},\n", self.variables.get("_last_executed_action").unwrap_or(&String::new())));
+        context.push_str(&format!("  flags: {:?}\n", self.variables.get("_last_executed_flags").unwrap_or(&String::new())));
         context.push_str("};\n");
         
-        // Add backward compatibility aliases for old variable names
-        context.push_str("\n// Backward compatibility aliases\n");
-        context.push_str(&format!("const previous_name = {:?};\n", self.variables.get("previous_name").unwrap_or(&String::new())));
-        context.push_str(&format!("const previous_folder = {:?};\n", self.variables.get("previous_folder").unwrap_or(&String::new())));
-        context.push_str(&format!("const previous_patch = {:?};\n", self.variables.get("previous_patch").unwrap_or(&String::new())));
-        context.push_str(&format!("const previous_path = {:?};\n", self.variables.get("previous_path").unwrap_or(&String::new())));
-        context.push_str(&format!("const selected_name = {:?};\n", self.variables.get("selected_name").unwrap_or(&String::new())));
-        context.push_str(&format!("const selected_folder = {:?};\n", self.variables.get("selected_folder").unwrap_or(&String::new())));
-        context.push_str(&format!("const selected_patch = {:?};\n", self.variables.get("selected_patch").unwrap_or(&String::new())));
-        context.push_str(&format!("const grabbed_action = {:?};\n", self.variables.get("grabbed_action").unwrap_or(&String::new())));
-        context.push_str(&format!("const grabbed_arg = {:?};\n", self.variables.get("grabbed_arg").unwrap_or(&String::new())));
-        context.push_str(&format!("const YYYY = {:?};\n", format!("{:04}", now.year())));
-        context.push_str(&format!("const YY = {:?};\n", format!("{:02}", now.year() % 100)));
-        context.push_str(&format!("const MM = {:?};\n", format!("{:02}", now.month())));
-        context.push_str(&format!("const DD = {:?};\n", format!("{:02}", now.day())));
-        context.push_str(&format!("const hh = {:?};\n", format!("{:02}", now.hour())));
-        context.push_str(&format!("const mm = {:?};\n", format!("{:02}", now.minute())));
-        context.push_str(&format!("const ss = {:?};\n", format!("{:02}", now.second())));
+        // Alias previous to last_executed for migration period
+        context.push_str("const previous = last_executed; // Aliased to last_executed for compatibility\n");
+        
+        // No backward compatibility variables - we're using clean object-based approach only
         
         context
     }
@@ -392,7 +392,7 @@ pub fn create_command_from_template(
     command
 }
 
-/// Process a template and create the command and any associated files
+/// Process a template and create the command (but NOT files - use process_template_files for that)
 pub fn process_template(
     template: &Template,
     context: &TemplateContext,
@@ -439,24 +439,58 @@ pub fn process_template(
     // Create the command
     let mut command = create_command_from_template(template, context);
     
+    // NOTE: File creation is now handled in process_template_files() which should be called
+    // after the user saves in the command editor
+    
+    // Update the full_line
+    command.update_full_line();
+    
+    // Log if template has edit flag (but don't modify the command)
+    if template.edit {
+        crate::utils::debug_log("TEMPLATE", "Template has edit flag set - command will be opened in editor");
+    }
+    
+    Ok(command)
+}
+
+/// Process template file creation after save (called when user saves in command editor)
+pub fn process_template_files(
+    template: &Template,
+    context: &TemplateContext,
+    saved_command: &Command,
+) -> Result<(), Box<dyn std::error::Error>> {
     // Create file with contents if specified
     if let Some(contents_template) = &template.contents {
         let contents = context.expand(contents_template);
-        let expanded_arg = context.expand(&command.arg);
         
-        // Debug logging
-        crate::utils::debug_log("TEMPLATE", &format!("Original arg: {}", command.arg));
-        crate::utils::debug_log("TEMPLATE", &format!("Expanded arg: {}", expanded_arg));
-        
-        // Expand tilde in the file path
-        let expanded_path = if expanded_arg.starts_with("~/") {
-            if let Ok(home) = std::env::var("HOME") {
-                expanded_arg.replacen("~/", &format!("{}/", home), 1)
+        // Determine file path based on template.file setting
+        let file_path_str = if let Some(ref file_template) = template.file {
+            // Check for special "true" value to use saved command's arg
+            if file_template == "true" {
+                // Use the saved command's arg as the file path
+                crate::utils::debug_log("TEMPLATE", "Using saved command arg as file path (file: \"true\")");
+                saved_command.arg.clone()
             } else {
-                expanded_arg.clone()
+                // Use the expanded file template
+                context.expand(file_template)
             }
         } else {
-            expanded_arg.clone()
+            // No file field specified, use the saved command's arg
+            saved_command.arg.clone()
+        };
+        
+        // Debug logging
+        crate::utils::debug_log("TEMPLATE", &format!("File path from template: {}", file_path_str));
+        
+        // Expand tilde in the file path
+        let expanded_path = if file_path_str.starts_with("~/") {
+            if let Ok(home) = std::env::var("HOME") {
+                file_path_str.replacen("~/", &format!("{}/", home), 1)
+            } else {
+                file_path_str.clone()
+            }
+        } else {
+            file_path_str.clone()
         };
         
         let file_path = std::path::Path::new(&expanded_path);
@@ -468,33 +502,95 @@ pub fn process_template(
         }
         
         crate::utils::debug_log("TEMPLATE", &format!("Writing file: {}", file_path.display()));
-        if let Err(e) = std::fs::write(&file_path, contents) {
-            let error_msg = format!("Cannot write to file '{}': {}", file_path.display(), e);
-            crate::utils::log_error(&error_msg);
-            return Err(error_msg.into());
+        
+        // Check if file exists and might be read-only
+        if file_path.exists() {
+            if let Ok(metadata) = std::fs::metadata(&file_path) {
+                if metadata.permissions().readonly() {
+                    crate::utils::log(&format!("File '{}' is read-only, attempting to make it writable", file_path.display()));
+                    // Try to make the file writable
+                    let mut perms = metadata.permissions();
+                    perms.set_readonly(false);
+                    if let Err(e) = std::fs::set_permissions(&file_path, perms) {
+                        crate::utils::log_error(&format!("Failed to remove read-only flag from '{}': {}", file_path.display(), e));
+                        // Continue anyway - the write might still work on some systems
+                    } else {
+                        crate::utils::log(&format!("Successfully removed read-only flag from '{}'", file_path.display()));
+                    }
+                }
+            }
+        }
+        
+        // Write the file
+        match std::fs::write(&file_path, &contents) {
+            Ok(_) => {
+                crate::utils::log(&format!("TEMPLATE: Created file '{}' ({} bytes)", file_path.display(), contents.len()));
+            }
+            Err(e) => {
+                let error_msg = format!("Cannot write to file '{}': {}", file_path.display(), e);
+                crate::utils::log_error(&error_msg);
+                
+                // Check if it's a permission error and provide a more helpful message
+                if e.kind() == std::io::ErrorKind::PermissionDenied {
+                    let help_msg = format!(
+                        "Permission denied writing to '{}'. Try:\n  • Check file permissions with: ls -la {}\n  • Remove read-only flag with: chmod u+w {}",
+                        file_path.display(), file_path.display(), file_path.display()
+                    );
+                    crate::utils::log_error(&help_msg);
+                    return Err(format!("{}\n\n{}", error_msg, help_msg).into());
+                }
+                
+                return Err(error_msg.into());
+            }
         }
     }
     
-    // Create additional folder if specified (for cases where file and contents point to different things)
-    if let Some(folder_template) = &template.file {
-        let folder_path = context.expand(folder_template);
-        if let Err(e) = create_folder_if_needed(&folder_path) {
-            // Error already logged in create_folder_if_needed
-            return Err(e);
+    // Create file if specified but contents wasn't provided
+    // The 'file' field should always create a file, not a folder
+    if template.contents.is_none() && template.file.is_some() {
+        let file_path_str = if let Some(ref file_template) = template.file {
+            // Check for special "true" value to use saved command's arg
+            if file_template == "true" {
+                saved_command.arg.clone()
+            } else {
+                context.expand(file_template)
+            }
+        } else {
+            saved_command.arg.clone()
+        };
+        
+        // Expand tilde in the file path
+        let expanded_path = if file_path_str.starts_with("~/") {
+            if let Ok(home) = std::env::var("HOME") {
+                file_path_str.replacen("~/", &format!("{}/", home), 1)
+            } else {
+                file_path_str.clone()
+            }
+        } else {
+            file_path_str.clone()
+        };
+        
+        let file_path = std::path::Path::new(&expanded_path);
+        
+        // Create parent directory if it doesn't exist
+        if let Some(parent) = file_path.parent() {
+            crate::utils::debug_log("TEMPLATE", &format!("Creating parent dir for file: {}", parent.display()));
+            create_folder_if_needed(&parent.to_string_lossy())?;
+        }
+        
+        // Create an empty file if it doesn't exist
+        if !file_path.exists() {
+            if let Err(e) = std::fs::write(&file_path, "") {
+                let error_msg = format!("Cannot create file '{}': {}", file_path.display(), e);
+                crate::utils::log_error(&error_msg);
+                return Err(error_msg.into());
+            } else {
+                crate::utils::log(&format!("TEMPLATE: Created empty file '{}'", file_path.display()));
+            }
         }
     }
     
-    // If edit flag is set, return the command for editing
-    if template.edit {
-        crate::utils::debug_log("TEMPLATE", "Template has edit flag set - command will be opened in editor");
-        // Return a special marker in the flags to indicate this should open the editor
-        command.flags = format!("{}__EDIT__", command.flags);
-    }
-    
-    // Update the full_line
-    command.update_full_line();
-    
-    Ok(command)
+    Ok(())
 }
 
 /// Create a folder if it doesn't exist
@@ -553,8 +649,8 @@ mod tests {
     }
     
     #[test]
-    fn test_previous_command_variables() {
-        let previous_command = Command {
+    fn test_selected_command_variables() {
+        let selected_command = Command {
             command: "test_cmd".to_string(),
             action: "markdown".to_string(),
             arg: "/Users/test/Documents/notes/test.md".to_string(),
@@ -562,32 +658,38 @@ mod tests {
             flags: String::new(),
         };
         
-        let context = TemplateContext::new("input", None, Some(&previous_command));
+        let context = TemplateContext::new("input", Some(&selected_command), None);
         
-        assert_eq!(context.expand("{{previous_name}}"), "test_cmd");
-        assert_eq!(context.expand("{{previous_path}}"), "/Users/test/Documents/notes/test.md");
-        assert_eq!(context.expand("{{previous_patch}}"), "TestPatch");
-        assert_eq!(context.expand("{{previous_folder}}"), "/Users/test/Documents/notes");
+        // Test object-based access
+        assert_eq!(context.expand("{{selected.name}}"), "test_cmd");
+        assert_eq!(context.expand("{{selected.path}}"), "/Users/test/Documents/notes/test.md");
+        assert_eq!(context.expand("{{selected.patch}}"), "TestPatch");
+        assert_eq!(context.expand("{{selected.folder}}"), "/Users/test/Documents/notes");
+        assert_eq!(context.expand("{{selected.action}}"), "markdown");
     }
     
     #[test]
     fn test_datetime_variables() {
         let context = TemplateContext::new("", None, None);
         
-        // Test that date variables exist and have correct format
-        let year = context.expand("{{YYYY}}");
+        // Test object-based date variables
+        let year = context.expand("{{date.year}}");
         assert_eq!(year.len(), 4);
         assert!(year.parse::<u32>().is_ok());
         
-        let month = context.expand("{{MM}}");
+        let month = context.expand("{{date.month}}");
         assert_eq!(month.len(), 2);
         let month_num = month.parse::<u32>().unwrap();
         assert!(month_num >= 1 && month_num <= 12);
         
-        let day = context.expand("{{DD}}");
+        let day = context.expand("{{date.day}}");
         assert_eq!(day.len(), 2);
         let day_num = day.parse::<u32>().unwrap();
         assert!(day_num >= 1 && day_num <= 31);
+        
+        // Test year formats
+        assert_eq!(context.expand("{{date.year}}").len(), 4);
+        assert_eq!(context.expand("{{date.year2}}").len(), 2);
     }
     
     #[test]
@@ -595,7 +697,7 @@ mod tests {
         let template = Template {
             name: "{{input}} Note".to_string(),
             action: "markdown".to_string(),
-            arg: "/notes/{{YYYY}}/{{MM}}/{{input}}.md".to_string(),
+            arg: "/notes/{{date.year}}/{{date.month}}/{{input}}.md".to_string(),
             patch: "Notes".to_string(),
             flags: String::new(),
             key: None,
@@ -603,6 +705,10 @@ mod tests {
             file: None,
             contents: None,
             grab: None,
+            description: None,
+            use_existing: false,
+            keystroke: None,
+            file_rescan: false,
         };
         
         let context = TemplateContext::new("Test", None, None);

@@ -1,5 +1,6 @@
 use eframe::egui;
 use crate::{Command, delete_command, save_commands_to_file, Config};
+use crate::core::template_creation::{Template, TemplateContext};
 
 pub struct CommandEditor {
     pub visible: bool,
@@ -25,6 +26,10 @@ pub struct CommandEditor {
     commands: Vec<Command>,
     
     // Track delete button visibility to detect changes
+    
+    // Store template for post-save processing
+    pub(crate) pending_template: Option<Template>,
+    pub(crate) template_context: Option<TemplateContext>,
 }
 
 impl CommandEditor {
@@ -42,6 +47,8 @@ impl CommandEditor {
             original_command_name: String::new(),
             focus_requested: false,
             commands: Vec::new(),
+            pending_template: None,
+            template_context: None,
         }
     }
     
@@ -50,15 +57,27 @@ impl CommandEditor {
         self.original_command = None;
         self.original_command_name = String::new();
         self.focus_requested = false;
+        self.pending_template = None;
+        self.template_context = None;
     }
     
     pub fn update_commands(&mut self, commands: &[Command]) {
         self.commands = commands.to_vec();
     }
     
+    /// Set the pending template for post-save processing
+    pub fn set_pending_template(&mut self, template: Template, context: TemplateContext) {
+        self.pending_template = Some(template);
+        self.template_context = Some(context);
+    }
+    
     pub fn edit_command(&mut self, command_to_edit: Option<&Command>, search_text: &str) {
         self.visible = true;
         self.focus_requested = false; // Reset focus flag when opening dialog
+        
+        // Clear any pending template (this is for normal editing, not template processing)
+        self.pending_template = None;
+        self.template_context = None;
         
         if let Some(cmd) = command_to_edit {
             // Populate with selected command data

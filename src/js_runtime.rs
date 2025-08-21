@@ -368,15 +368,19 @@ fn setup_launcher_builtins(ctx: &Ctx<'_>) -> Result<(), Box<dyn std::error::Erro
     
     // shell(command) -> executes shell command without waiting (detached)
     ctx.globals().set("shell", Function::new(ctx.clone(), |command: String| {
+        // ALWAYS log shell commands for debugging
+        crate::utils::log(&format!("🐚 JS_SHELL: Executing async command: {}", command));
+        
         // Execute directly since we're already on the server
         match crate::utils::shell_simple(&command, false) {
             Ok(_) => {
-                crate::utils::verbose_log("JS_SHELL", &format!("Command started: {}", command));
-                format!("Command started: {}", command)
+                let msg = format!("Command started: {}", command);
+                crate::utils::log(&format!("✅ JS_SHELL: {}", msg));
+                msg
             },
             Err(e) => {
                 let error_msg = format!("Failed to start command '{}': {}", command, e);
-                crate::utils::verbose_log("JS_SHELL", &error_msg);
+                crate::utils::log(&format!("❌ JS_SHELL: {}", error_msg));
                 error_msg
             }
         }
@@ -384,18 +388,22 @@ fn setup_launcher_builtins(ctx: &Ctx<'_>) -> Result<(), Box<dyn std::error::Erro
     
     // shell_sync(command) -> executes shell command and waits for completion
     ctx.globals().set("shell_sync", Function::new(ctx.clone(), |command: String| {
+        // ALWAYS log shell commands for debugging
+        crate::utils::log(&format!("🐚 JS_SHELL_SYNC: Executing sync command: {}", command));
+        
         // Execute directly since we're already on the server
         match crate::utils::shell_simple(&command, true) {
             Ok(output) => {
                 let stdout = String::from_utf8_lossy(&output.stdout);
                 let stderr = String::from_utf8_lossy(&output.stderr);
+                let exit_code = output.status.code().unwrap_or(-1);
                 
-                crate::utils::verbose_log("JS_SHELL_SYNC", &format!("Command: {}", command));
+                crate::utils::log(&format!("✅ JS_SHELL_SYNC: Command completed with exit code: {}", exit_code));
                 if !stdout.is_empty() {
-                    crate::utils::verbose_log("JS_SHELL_SYNC", &format!("STDOUT: {}", stdout.trim()));
+                    crate::utils::log(&format!("📤 JS_SHELL_SYNC STDOUT: {}", stdout.trim()));
                 }
                 if !stderr.is_empty() {
-                    crate::utils::verbose_log("JS_SHELL_SYNC", &format!("STDERR: {}", stderr.trim()));
+                    crate::utils::log(&format!("⚠️ JS_SHELL_SYNC STDERR: {}", stderr.trim()));
                 }
                 
                 if !stderr.is_empty() {
@@ -406,7 +414,7 @@ fn setup_launcher_builtins(ctx: &Ctx<'_>) -> Result<(), Box<dyn std::error::Erro
             },
             Err(e) => {
                 let error_msg = format!("Command failed '{}': {}", command, e);
-                crate::utils::verbose_log("JS_SHELL_SYNC", &error_msg);
+                crate::utils::log(&format!("❌ JS_SHELL_SYNC: {}", error_msg));
                 error_msg
             }
         }
@@ -414,6 +422,9 @@ fn setup_launcher_builtins(ctx: &Ctx<'_>) -> Result<(), Box<dyn std::error::Erro
     
     // shellWithExitCode(command) -> executes shell command and returns detailed result
     ctx.globals().set("shellWithExitCode", Function::new(ctx.clone(), |command: String| {
+        // ALWAYS log shell commands for debugging
+        crate::utils::log(&format!("🐚 JS_SHELL_EXIT_CODE: Executing command: {}", command));
+        
         // Execute directly since we're already on the server
         use std::process::Command;
         
@@ -422,6 +433,7 @@ fn setup_launcher_builtins(ctx: &Ctx<'_>) -> Result<(), Box<dyn std::error::Erro
             .arg(&command)
             .output()
             .unwrap_or_else(|e| {
+                crate::utils::log(&format!("❌ JS_SHELL_EXIT_CODE: Failed to execute command: {}", e));
                 // Return a fake output with error
                 std::process::Output {
                     status: std::process::ExitStatus::from_raw(1),
@@ -434,12 +446,28 @@ fn setup_launcher_builtins(ctx: &Ctx<'_>) -> Result<(), Box<dyn std::error::Erro
         let stdout = String::from_utf8_lossy(&output.stdout);
         let stderr = String::from_utf8_lossy(&output.stderr);
         
+        // Log the results
+        crate::utils::log(&format!("📊 JS_SHELL_EXIT_CODE: Exit code: {}", exit_code));
+        if !stdout.is_empty() && stdout.len() < 500 {
+            crate::utils::log(&format!("📤 JS_SHELL_EXIT_CODE STDOUT: {}", stdout.trim()));
+        } else if !stdout.is_empty() {
+            crate::utils::log(&format!("📤 JS_SHELL_EXIT_CODE STDOUT: {} bytes", stdout.len()));
+        }
+        if !stderr.is_empty() && stderr.len() < 500 {
+            crate::utils::log(&format!("⚠️ JS_SHELL_EXIT_CODE STDERR: {}", stderr.trim()));
+        } else if !stderr.is_empty() {
+            crate::utils::log(&format!("⚠️ JS_SHELL_EXIT_CODE STDERR: {} bytes", stderr.len()));
+        }
+        
         // Properly escape JSON strings
         let escaped_stdout = stdout.replace('\\', r#"\\"#).replace('"', r#"\""#).replace('\n', r#"\n"#).replace('\r', r#"\r"#).replace('\t', r#"\t"#);
         let escaped_stderr = stderr.replace('\\', r#"\\"#).replace('"', r#"\""#).replace('\n', r#"\n"#).replace('\r', r#"\r"#).replace('\t', r#"\t"#);
         
-        format!(r#"{{"stdout":"{}","stderr":"{}","exitCode":{}}}"#, 
-            escaped_stdout, escaped_stderr, exit_code)
+        let result = format!(r#"{{"stdout":"{}","stderr":"{}","exitCode":{}}}"#, 
+            escaped_stdout, escaped_stderr, exit_code);
+        
+        crate::utils::log(&format!("📦 JS_SHELL_EXIT_CODE: Returning JSON result ({} bytes)", result.len()));
+        result
     })?)?;
     
     // OLD FUNCTIONS - COMMENTED OUT FOR REFERENCE DURING REFACTORING

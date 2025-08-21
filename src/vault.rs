@@ -149,7 +149,6 @@ mod tests {
                 idle_timeout_seconds: None,
                 countdown_seconds: Some(5),
             },
-            functions: None,
             grabber_rules: None,
             keybindings: None,
             templates: None,

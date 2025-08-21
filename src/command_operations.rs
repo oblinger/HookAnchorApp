@@ -205,7 +205,21 @@ fn merge_markdown_files(
     let dest_content = fs::read_to_string(dest_md)
         .map_err(|e| format!("Failed to read destination markdown: {}", e))?;
     
-    // Merge with a separator
+    // Check if source content is just auto-generated template
+    let is_auto_generated = source_content.contains("This is an auto-generated anchor file");
+    
+    // Check if destination already contains the auto-generated text
+    let dest_has_auto_generated = dest_content.contains("This is an auto-generated anchor file");
+    
+    // If both source and destination have auto-generated content, or if source is just
+    // auto-generated and destination already has content, skip the merge
+    if is_auto_generated && (dest_has_auto_generated || !dest_content.trim().is_empty()) {
+        log(&format!("MERGE: Skipping merge of auto-generated content into {}", 
+            dest_md.display()));
+        return Ok(());
+    }
+    
+    // Otherwise, merge with a separator
     let merged_content = format!("{}\n\n---\n\n{}", dest_content, source_content);
     
     fs::write(dest_md, merged_content)
