@@ -10,6 +10,9 @@ use crate::{
 };
 use crate::core::key_processing::{PopupInterface, KeyRegistry, create_default_key_registry};
 use crate::core::commands::get_patch_path;
+
+#[cfg(target_os = "macos")]
+use core_graphics::display::CGDisplay;
 use crate::core::config::{load_config_with_error, ConfigResult};
 use super::{PopupState, LayoutArrangement};
 
@@ -417,6 +420,10 @@ impl PopupInterface for AnchorSelector {
     
     fn show_folder(&mut self) {
         self.show_folder_impl();
+    }
+    
+    fn show_contact(&mut self) {
+        self.show_contact_impl();
     }
     
     fn tmux_activate(&mut self) {
@@ -1009,6 +1016,8 @@ impl AnchorSelector {
                                     if template.edit {
                                         // Open command editor with the prefilled command
                                         self.command_editor.edit_command(Some(&new_command), &self.popup_state.search_text);
+                                        // Store template for post-save file creation
+                                        self.command_editor.set_pending_template(template.clone(), context.clone());
                                         // Don't clear search text when opening editor - preserve input
                                 } else {
                                     // Add the new command directly
@@ -1077,6 +1086,8 @@ impl AnchorSelector {
                                         crate::utils::log("TEMPLATE: Opening command editor for sub_anchor template");
                                         // Open command editor with the prefilled command
                                         self.command_editor.edit_command(Some(&new_command), &self.popup_state.search_text);
+                                        // Store template for post-save file creation
+                                        self.command_editor.set_pending_template(template.clone(), context.clone());
                                         // Don't clear search text when opening editor - preserve input
                                 } else {
                                     // Add the new command directly
@@ -1871,23 +1882,11 @@ impl AnchorSelector {
     
     /// Regain focus back to anchor selector after grab operation
     fn regain_focus(&self) -> Result<(), String> {
-        // Use the JavaScript function to regain focus
-        let config = crate::core::sys_data::get_config();
-        if let Some(functions) = &config.functions {
-            if let Some(regain_focus_fn) = functions.get("regain_focus") {
-                if let Some(js_code) = regain_focus_fn.as_str() {
-                    match crate::js_runtime::execute_business_logic(js_code) {
-                        Ok(_) => Ok(()),
-                        Err(e) => Err(format!("Failed to execute regain_focus function: {}", e))
-                    }
-                } else {
-                    Err("regain_focus function is not a JavaScript function".to_string())
-                }
-            } else {
-                Err("regain_focus function not found in config".to_string())
-            }
-        } else {
-            Err("No functions defined in config".to_string())
+        // Call the regain_focus function from config.js
+        let js_code = "regain_focus({})";
+        match crate::js_runtime::execute_business_logic(js_code) {
+            Ok(_) => Ok(()),
+            Err(e) => Err(format!("Failed to execute regain_focus function: {}", e))
         }
     }
     
@@ -2120,6 +2119,51 @@ impl AnchorSelector {
         }
     }
     
+    /// Show contact for selected command (strips @ prefix if present)
+    fn show_contact_impl(&mut self) {
+        use crate::utils;
+        
+        // Get selected command index
+        let selected_index = self.selected_index();
+        
+        // Get the current filtered commands  
+        let display_commands = self.popup_state.filtered_commands.clone();
+        
+        if display_commands.is_empty() || selected_index >= display_commands.len() {
+            utils::debug_log("SHOW_CONTACT", "No commands available or invalid selection");
+            return;
+        }
+        
+        // Get the selected command
+        let selected_command = &display_commands[selected_index];
+        
+        utils::debug_log("SHOW_CONTACT", &format!("Processing command: {}", selected_command.command));
+        
+        // Strip @ prefix from the command name if present
+        let contact_name = if selected_command.command.starts_with("@") {
+            selected_command.command[1..].to_string()
+        } else {
+            selected_command.command.clone()
+        };
+        
+        utils::debug_log("SHOW_CONTACT", &format!("Contact name after stripping @: {}", contact_name));
+        
+        // Execute the contact action through the command server
+        // Create a command object to send to the server
+        let contact_cmd = crate::Command {
+            patch: String::new(),
+            command: format!("Show contact: {}", contact_name),
+            action: "contact".to_string(),
+            arg: contact_name.clone(),
+            flags: String::new(),
+        };
+        
+        utils::log(&format!("SHOW_CONTACT: Opening contact: {}", contact_name));
+        
+        // Execute via server
+        crate::execute_via_server(&contact_cmd);
+    }
+    
     /// Start tmux session for selected anchor
     fn tmux_activate(&mut self) {
         use crate::utils;
@@ -2174,6 +2218,8 @@ impl AnchorSelector {
     
     fn activate_anchor(&mut self) {
         use crate::utils;
+        use std::process::Command;
+        use std::path::Path;
         
         // Get selected command index
         let selected_index = self.selected_index();
@@ -2218,17 +2264,208 @@ impl AnchorSelector {
         
         utils::log(&format!("ACTIVATE_ANCHOR: Successfully extracted folder path: '{}'", folder_path));
         
-        // Create a synthetic command to execute through the launcher
-        let activate_cmd = crate::core::commands::Command {
-            command: format!("ACTIVATE: {}", resolved_cmd.command),
-            action: "activate_anchor".to_string(),
-            arg: folder_path,
-            patch: resolved_cmd.patch.clone(),
-            flags: resolved_cmd.flags.clone(),
-        };
+        // Direct Rust implementation of TMUX activation (temporary - will be replaced with JavaScript)
+        // This is based on the working Python anchor script logic
         
-        // Execute through launcher
-        crate::execute_via_server(&activate_cmd);
+        // 1. Open folder in Finder
+        if let Err(e) = Command::new("open").arg(&folder_path).spawn() {
+            utils::log(&format!("ACTIVATE_ANCHOR: Failed to open folder: {}", e));
+        }
+        
+        // 2. Open in Obsidian if it's in the vault
+        let vault_path = self.popup_state.config.launcher_settings.as_ref()
+            .and_then(|ls| ls.obsidian_vault_path.as_ref())
+            .map(|p| utils::expand_tilde(p))
+            .unwrap_or_else(|| "/Users/oblinger/ob/kmr".to_string());
+            
+        if Path::new(&folder_path).starts_with(&vault_path) {
+            if let Some(vault_name) = self.popup_state.config.launcher_settings.as_ref()
+                .and_then(|ls| ls.obsidian_vault_name.as_ref()) {
+                // TODO: Open in Obsidian
+                utils::log(&format!("ACTIVATE_ANCHOR: Would open in Obsidian vault: {}", vault_name));
+            }
+        }
+        
+        // 3. Check for .tmuxp.yaml and activate TMUX session
+        let tmuxp_path = Path::new(&folder_path).join(".tmuxp.yaml");
+        if tmuxp_path.exists() {
+            utils::log(&format!("ACTIVATE_ANCHOR: Found .tmuxp.yaml at {:?}", tmuxp_path));
+            
+            // Use the folder name as the session name, sanitized for tmux
+            // We ignore what's in the .tmuxp.yaml file because it might have spaces
+            let folder_name = Path::new(&folder_path)
+                .file_name()
+                .and_then(|n| n.to_str())
+                .unwrap_or("session");
+            
+            // IMPORTANT: Sanitize the session name for tmux compatibility
+            // Replace spaces and other problematic characters with underscores
+            let session_name = folder_name
+                .replace(' ', "_")
+                .replace(':', "_")
+                .replace('.', "_")
+                .replace('[', "_")
+                .replace(']', "_");
+            
+            utils::log(&format!("ACTIVATE_ANCHOR: Folder name: '{}'", folder_name));
+            utils::log(&format!("ACTIVATE_ANCHOR: Sanitized session name: '{}'", session_name));
+            
+            // Check if session exists
+            let check_session = Command::new("/opt/homebrew/bin/tmux")
+                .args(&["has-session", "-t", &session_name])
+                .output();
+                
+            let session_exists = check_session.map(|o| o.status.success()).unwrap_or(false);
+            
+            if !session_exists {
+                utils::log(&format!("ACTIVATE_ANCHOR: Creating new tmux session '{}'", session_name));
+                // Create session with tmuxp
+                // Since we expect the .tmuxp.yaml to have the correct session name (with underscores),
+                // we don't use -s flag which seems to cause issues
+                match Command::new("/opt/homebrew/bin/tmuxp")
+                    .args(&["load", tmuxp_path.to_str().unwrap_or(""), "-d"])
+                    .current_dir(&folder_path)
+                    .output() {
+                    Ok(output) => {
+                        let stdout = String::from_utf8_lossy(&output.stdout);
+                        let stderr = String::from_utf8_lossy(&output.stderr);
+                        
+                        if !output.status.success() {
+                            utils::log(&format!("ACTIVATE_ANCHOR: tmuxp failed with exit code {:?}", output.status.code()));
+                            utils::log(&format!("ACTIVATE_ANCHOR: tmuxp stderr: {}", stderr));
+                            utils::log(&format!("ACTIVATE_ANCHOR: tmuxp stdout: {}", stdout));
+                            return;
+                        }
+                        
+                        // Log output even on success to debug issues
+                        utils::log(&format!("ACTIVATE_ANCHOR: tmuxp completed with exit code 0"));
+                        if !stdout.is_empty() {
+                            utils::log(&format!("ACTIVATE_ANCHOR: tmuxp stdout: {}", stdout));
+                        }
+                        if !stderr.is_empty() {
+                            utils::log(&format!("ACTIVATE_ANCHOR: tmuxp stderr: {}", stderr));
+                        }
+                        
+                        // Verify the session was actually created
+                        std::thread::sleep(std::time::Duration::from_millis(200));
+                        let verify = Command::new("/opt/homebrew/bin/tmux")
+                            .args(&["has-session", "-t", &session_name])
+                            .output();
+                        
+                        if let Ok(v) = verify {
+                            if v.status.success() {
+                                utils::log(&format!("ACTIVATE_ANCHOR: Verified session '{}' exists", session_name));
+                            } else {
+                                utils::log(&format!("ACTIVATE_ANCHOR: WARNING: Session '{}' was NOT created despite tmuxp success", session_name));
+                                utils::log(&format!("ACTIVATE_ANCHOR: tmux has-session stderr: {}", String::from_utf8_lossy(&v.stderr)));
+                                
+                                // Try creating a simple tmux session as fallback
+                                utils::log(&format!("ACTIVATE_ANCHOR: Falling back to basic tmux new-session"));
+                                let basic_create = Command::new("/opt/homebrew/bin/tmux")
+                                    .args(&["new-session", "-d", "-s", &session_name, "-c", &folder_path])
+                                    .output();
+                                
+                                if let Ok(basic) = basic_create {
+                                    if basic.status.success() {
+                                        utils::log(&format!("ACTIVATE_ANCHOR: Basic tmux session created successfully"));
+                                    } else {
+                                        utils::log(&format!("ACTIVATE_ANCHOR: Basic tmux failed: {}", String::from_utf8_lossy(&basic.stderr)));
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    Err(e) => {
+                        utils::log(&format!("ACTIVATE_ANCHOR: Failed to run tmuxp: {}", e));
+                        return;
+                    }
+                }
+                // Give tmux a moment to stabilize
+                std::thread::sleep(std::time::Duration::from_millis(100));
+            } else {
+                utils::log(&format!("ACTIVATE_ANCHOR: Session '{}' already exists", session_name));
+            }
+            
+            // Now we need to switch to the session in an existing TMUX client
+            // First check if there's a TMUX client running anywhere
+            utils::log(&format!("ACTIVATE_ANCHOR: Checking for existing TMUX clients"));
+            
+            // Check if any tmux clients are attached
+            let list_clients = Command::new("/opt/homebrew/bin/tmux")
+                .args(&["list-clients"])
+                .output();
+                
+            let has_clients = match list_clients {
+                Ok(output) => {
+                    let stdout = String::from_utf8_lossy(&output.stdout);
+                    let has = output.status.success() && !stdout.trim().is_empty();
+                    if has {
+                        utils::log(&format!("ACTIVATE_ANCHOR: Found TMUX clients: {}", stdout.trim()));
+                    } else {
+                        utils::log("ACTIVATE_ANCHOR: No TMUX clients found");
+                    }
+                    has
+                }
+                Err(e) => {
+                    utils::log(&format!("ACTIVATE_ANCHOR: Failed to list clients: {}", e));
+                    false
+                }
+            };
+            
+            if !has_clients {
+                // No TMUX client running - show error to user
+                let error_msg = format!(
+                    "Cannot switch to TMUX session '{}': No TMUX client is running.\n\n\
+                    Please open a terminal and run:\n\
+                    tmux attach-session -t '{}'",
+                    session_name, session_name
+                );
+                utils::log(&format!("ACTIVATE_ANCHOR: {}", error_msg));
+                self.show_error_dialog(&error_msg);
+                return;
+            }
+            
+            // There are TMUX clients, so we can switch
+            utils::log(&format!("ACTIVATE_ANCHOR: Switching to session '{}' in existing client", session_name));
+            
+            // Use switch-client which will switch in any attached client
+            match Command::new("/opt/homebrew/bin/tmux")
+                .args(&["switch-client", "-t", &session_name])
+                .output() {
+                Ok(output) => {
+                    if output.status.success() {
+                        utils::log(&format!("ACTIVATE_ANCHOR: Successfully switched to session '{}'", session_name));
+                    } else {
+                        let stderr = String::from_utf8_lossy(&output.stderr);
+                        utils::log(&format!("ACTIVATE_ANCHOR: Failed to switch: {}", stderr));
+                        self.show_error_dialog(&format!(
+                            "Failed to switch to TMUX session '{}': {}",
+                            session_name, stderr
+                        ));
+                    }
+                }
+                Err(e) => {
+                    utils::log(&format!("ACTIVATE_ANCHOR: Failed to run switch-client: {}", e));
+                    self.show_error_dialog(&format!(
+                        "Failed to switch to TMUX session '{}': {}",
+                        session_name, e
+                    ));
+                }
+            }
+                
+        } else {
+            utils::log("ACTIVATE_ANCHOR: No .tmuxp.yaml found");
+            
+            // Check for CLAUDE.md as fallback
+            let claude_path = Path::new(&folder_path).join("CLAUDE.md");
+            if claude_path.exists() {
+                utils::log("ACTIVATE_ANCHOR: Found CLAUDE.md, launching Claude Code");
+                let _ = Command::new("/opt/homebrew/bin/claude")
+                    .arg("--continue")
+                    .current_dir(&folder_path)
+                    .spawn();
+            }
+        }
         
         // Request exit after activation
         self.should_exit = true;
@@ -2236,35 +2473,59 @@ impl AnchorSelector {
 }
 
 pub fn save_window_position(pos: egui::Pos2) {
+    crate::utils::log(&format!("🔵 WINDOW_POS: save_window_position called with pos: ({}, {})", pos.x, pos.y));
     let mut state = load_state();
+    let old_pos = state.window_position;
     state.window_position = Some((pos.x, pos.y));
-    let _ = save_state(&state);
+    match save_state(&state) {
+        Ok(_) => {
+            crate::utils::log(&format!("🔵 WINDOW_POS: Successfully saved position from {:?} to ({}, {})", old_pos, pos.x, pos.y));
+        }
+        Err(e) => {
+            crate::utils::log(&format!("🔴 WINDOW_POS: Failed to save position: {}", e));
+        }
+    }
 }
 
 pub fn load_window_position() -> Option<egui::Pos2> {
     let state = load_state();
-    state.window_position.map(|(x, y)| egui::pos2(x, y))
+    let result = state.window_position.map(|(x, y)| egui::pos2(x, y));
+    crate::utils::log(&format!("🔵 WINDOW_POS: load_window_position returned {:?}", result));
+    result
 }
 
 pub fn get_previous_window_location(ctx: &egui::Context, window_size: egui::Vec2) -> egui::Pos2 {
+    crate::utils::log(&format!("🔵 WINDOW_POS: get_previous_window_location called with window_size: {:?}", window_size));
+    
     // First try to load the previous position
     if let Some(previous_pos) = load_window_position() {
+        crate::utils::log(&format!("🔵 WINDOW_POS: Loaded previous position: {:?}", previous_pos));
         // Check if this position is visible on any current display
         if is_position_visible(previous_pos, window_size) {
+            crate::utils::log(&format!("🔵 WINDOW_POS: Position is visible, returning it"));
             return previous_pos;
+        } else {
+            crate::utils::log(&format!("🔴 WINDOW_POS: Position NOT visible, will center instead"));
         }
+    } else {
+        crate::utils::log("🔴 WINDOW_POS: No previous position found in state");
     }
     
     // If no previous position or not visible, center on main display
-    center_on_main_display(ctx, window_size)
+    let centered = center_on_main_display(ctx, window_size);
+    crate::utils::log(&format!("🔵 WINDOW_POS: Centering on main display at: {:?}", centered));
+    centered
 }
 
 pub fn is_position_visible(pos: egui::Pos2, window_size: egui::Vec2) -> bool {
+    crate::utils::log(&format!("🔵 WINDOW_POS: is_position_visible checking pos: {:?}, window_size: {:?}", pos, window_size));
+    
     // Get all available monitors/displays
     // For now, we'll use a basic check - ensure the window isn't completely off-screen
     // This is a simplified version - in a full implementation you'd query actual display bounds
     
     let window_rect = egui::Rect::from_min_size(pos, window_size);
+    crate::utils::log(&format!("🔵 WINDOW_POS: Window rect: {:?}", window_rect));
     
     // Basic bounds check - assume main display is at least 1024x768
     // In a real implementation, you'd query actual display information
@@ -2272,6 +2533,7 @@ pub fn is_position_visible(pos: egui::Pos2, window_size: egui::Vec2) -> bool {
         egui::pos2(0.0, 0.0), 
         egui::vec2(1024.0, 768.0)
     );
+    crate::utils::log(&format!("🔵 WINDOW_POS: Main display rect: {:?}", main_display_rect));
     
     // Check if at least part of the window is visible
     // Allow for window to be partially off-screen but require some overlap
@@ -2281,16 +2543,28 @@ pub fn is_position_visible(pos: egui::Pos2, window_size: egui::Vec2) -> bool {
     intersection.width() * intersection.height() >= min_visible_area * min_visible_area
 }
 
-pub fn center_on_main_display(ctx: &egui::Context, window_size: egui::Vec2) -> egui::Pos2 {
-    // Try to get screen size from context, fallback to reasonable defaults
-    let screen_size = ctx.screen_rect().size();
+/// Get the actual screen dimensions (not window dimensions)
+pub fn get_actual_screen_dimensions() -> (f32, f32) {
+    #[cfg(target_os = "macos")]
+    {
+        let display = CGDisplay::main();
+        let width = display.pixels_wide() as f32;
+        let height = display.pixels_high() as f32;
+        crate::utils::log(&format!("🔵 SCREEN: Got actual screen dimensions from CoreGraphics: {}x{}", width, height));
+        (width, height)
+    }
     
-    // If screen size is not available or seems wrong, use reasonable defaults
-    let display_size = if screen_size.x > 800.0 && screen_size.y > 600.0 {
-        screen_size
-    } else {
-        egui::vec2(1440.0, 900.0) // Common laptop resolution
-    };
+    #[cfg(not(target_os = "macos"))]
+    {
+        crate::utils::log("🔵 SCREEN: Using default screen dimensions (not macOS)");
+        (1920.0, 1080.0)
+    }
+}
+
+pub fn center_on_main_display(_ctx: &egui::Context, window_size: egui::Vec2) -> egui::Pos2 {
+    // Get actual screen dimensions
+    let (screen_width, screen_height) = get_actual_screen_dimensions();
+    let display_size = egui::vec2(screen_width, screen_height);
     
     // Center the window on the display
     egui::pos2(
@@ -2571,6 +2845,9 @@ impl eframe::App for AnchorSelector {
                     }
                 }
                 
+                // Clone the new command for template processing before adding it
+                let saved_command = new_command.clone();
+                
                 // Add the new command
                 use crate::{add_command, save_commands_to_file};
                 let _ = add_command(new_command, self.commands_mut());
@@ -2578,6 +2855,27 @@ impl eframe::App for AnchorSelector {
                 // Save to file
                 match save_commands_to_file(&self.commands()) {
                     Ok(_) => {
+                        // Process template files if there was a pending template
+                        if let (Some(template), Some(context)) = (
+                            self.command_editor.pending_template.as_ref(),
+                            self.command_editor.template_context.as_ref()
+                        ) {
+                            crate::utils::log("TEMPLATE: Processing template files after save");
+                            if let Err(e) = crate::core::template_creation::process_template_files(
+                                template,
+                                context,
+                                &saved_command
+                            ) {
+                                self.show_error_dialog(&format!("Failed to create template files: {}", e));
+                            } else {
+                                crate::utils::log("TEMPLATE: Successfully created template files");
+                                // Trigger rescan if requested
+                                if template.file_rescan {
+                                    self.trigger_rescan();
+                                }
+                            }
+                        }
+                        
                         // Update the filtered list if we're currently filtering
                         if !self.popup_state.search_text.trim().is_empty() {
                             // Refresh the search with updated commands
@@ -2589,6 +2887,10 @@ impl eframe::App for AnchorSelector {
                         crate::utils::log_error(&format!("Error saving commands to file: {}", e));
                     }
                 }
+                
+                // Clear the pending template now that it's been processed
+                self.command_editor.pending_template = None;
+                self.command_editor.template_context = None;
                 
                 self.close_command_editor();
                 command_editor_just_closed = true;
@@ -3176,15 +3478,19 @@ impl eframe::App for AnchorSelector {
         // Save window position immediately when it changes
         if let Some(current_pos) = ctx.input(|i| i.viewport().outer_rect.map(|r| r.min)) {
             if self.last_saved_position.is_none() {
+                crate::utils::log(&format!("🔵 WINDOW_POS: First position detection: {:?}", current_pos));
                 save_window_position(current_pos);
                 self.last_saved_position = Some(current_pos);
             } else if let Some(last_pos) = self.last_saved_position {
                 let moved = (current_pos.x - last_pos.x).abs() > 1.0 || (current_pos.y - last_pos.y).abs() > 1.0;
                 if moved {
+                    crate::utils::log(&format!("🔵 WINDOW_POS: Window moved from {:?} to {:?}", last_pos, current_pos));
                     save_window_position(current_pos);
                     self.last_saved_position = Some(current_pos);
                 }
             }
+        } else {
+            crate::utils::log("🔴 WINDOW_POS: Could not get current position from viewport");
         }
         
     }
@@ -3362,10 +3668,12 @@ impl eframe::App for PopupWithControl {
                     // CRITICAL: Position window on screen if it's off-screen
                     let current_pos = ctx.input(|i| i.viewport().outer_rect);
                     if let Some(rect) = current_pos {
-                        // Get the actual screen dimensions from the context
-                        let screen_rect = ctx.screen_rect();
-                        let screen_width = screen_rect.width();
-                        let screen_height = screen_rect.height();
+                        // Get actual screen dimensions using CoreGraphics on macOS
+                        let (screen_width, screen_height) = get_actual_screen_dimensions();
+                        
+                        crate::utils::log(&format!("🔵 WINDOW_POS [SHOW]: Actual screen dimensions: {}x{}", 
+                            screen_width, screen_height));
+                        crate::utils::log(&format!("🔵 WINDOW_POS [SHOW]: Current window rect: {:?}", rect));
                         
                         // Check if window is truly off-screen using actual screen dimensions
                         // Allow some margin (50 pixels) for window decorations
@@ -3374,6 +3682,10 @@ impl eframe::App for PopupWithControl {
                                           rect.min.y < -margin || 
                                           rect.min.x > screen_width - margin ||
                                           rect.min.y > screen_height - margin;
+                        
+                        crate::utils::log(&format!("🔵 WINDOW_POS [SHOW]: Off-screen check: x={} < {} OR y={} < {} OR x={} > {} OR y={} > {} = {}", 
+                            rect.min.x, -margin, rect.min.y, -margin, 
+                            rect.min.x, screen_width - margin, rect.min.y, screen_height - margin, is_offscreen));
                         
                         if is_offscreen {
                             crate::utils::log(&format!("[SHOW] Window is off-screen at {:?} (screen: {}x{}), centering on main display", 
@@ -3407,9 +3719,10 @@ impl eframe::App for PopupWithControl {
                         let width = config.popup_settings.get_default_window_width() as f32;
                         let height = config.popup_settings.get_default_window_height() as f32;
                         let window_size = egui::vec2(width, height);
-                        let screen_rect = ctx.screen_rect();
-                        let center_x = (screen_rect.width() - window_size.x) / 2.0;
-                        let center_y = (screen_rect.height() - window_size.y) / 2.0;
+                        // Get actual screen dimensions
+                        let (screen_width, screen_height) = get_actual_screen_dimensions();
+                        let center_x = (screen_width - window_size.x) / 2.0;
+                        let center_y = (screen_height - window_size.y) / 2.0;
                         let center_pos = egui::pos2(center_x.max(0.0), center_y.max(0.0));
                         ctx.send_viewport_cmd(egui::ViewportCommand::OuterPosition(center_pos));
                         crate::utils::log(&format!("[SHOW] Positioned new window to {:?}", center_pos));
@@ -3471,7 +3784,7 @@ pub fn run_gui_with_prompt(initial_prompt: &str, _app_state: super::ApplicationS
     
     // Load saved position or use centered position
     let initial_position = if let Some(saved_pos) = load_window_position() {
-        crate::utils::log(&format!("[STARTUP] Using saved window position: {:?}", saved_pos));
+        crate::utils::log(&format!("🔵 WINDOW_POS [STARTUP]: Using saved window position: {:?}", saved_pos));
         [saved_pos.x, saved_pos.y]
     } else {
         // Center on screen
@@ -3479,7 +3792,7 @@ pub fn run_gui_with_prompt(initial_prompt: &str, _app_state: super::ApplicationS
         let screen_height = 1080.0; // Default fallback
         let x = (screen_width - width) / 2.0;
         let y = (screen_height - height) / 2.0;
-        crate::utils::log(&format!("[STARTUP] No saved position, centering at: [{}, {}]", x, y));
+        crate::utils::log(&format!("🔴 WINDOW_POS [STARTUP]: No saved position, centering at: [{}, {}]", x, y));
         [x, y]
     };
     
@@ -3492,6 +3805,8 @@ pub fn run_gui_with_prompt(initial_prompt: &str, _app_state: super::ApplicationS
         .with_visible(start_visible) // Start visible only if not running in background
         .with_always_on_top(); // Keep on top so it's visible
         // Skip icon loading for faster startup - can be added later if needed
+    
+    crate::utils::log(&format!("🔵 WINDOW_POS [VIEWPORT]: ViewportBuilder configured with position: {:?}", initial_position));
     
     let options = eframe::NativeOptions {
         viewport: viewport_builder,
