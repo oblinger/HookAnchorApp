@@ -2661,7 +2661,7 @@ fn uses_client_environment(action: &str) -> bool {
     match action {
         // Actions that use direct client execution (open commands, app launching)
         "app" | "url" | "folder" | "doc" | "chrome" | "safari" | "brave" | "firefox" | 
-        "work" | "notion" | "obs_url" | "1pass" | "contact" | "open_with" => true,
+        "work" | "obs_url" | "1pass" | "contact" | "open_with" => true,
         
         // Actions that might use client environment through JavaScript
         "anchor" | "slack" | "shutdown" | "rescan" => true,

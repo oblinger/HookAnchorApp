@@ -421,7 +421,7 @@ fn execute_command_with_env(
     let is_launcher_command = matches!(
         command.action.as_str(),
         "app" | "url" | "cmd" | "chrome" | "safari" | "brave" | "firefox" | "work" | 
-        "notion" | "obs" | "obs_url" | "1pass" | "anchor" | "folder" | 
+        "obs" | "obs_url" | "1pass" | "anchor" | "folder" | 
         "doc" | "markdown" | "text" | "slack" | "contact" | "alias" |
         "activate_anchor" | "tmux_activate"
     );

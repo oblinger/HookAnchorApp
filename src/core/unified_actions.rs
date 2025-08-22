@@ -577,6 +577,7 @@ pub fn execute_action(
         "contact" => execute_js_function_action("action_contact", &expanded_params),
         "1pass" => execute_js_function_action("action_1pass", &expanded_params),
         "slack" => execute_js_function_action("action_slack", &expanded_params),
+        "notion" => execute_js_function_action("action_notion", &expanded_params),
         "rescan" => execute_js_function_action("action_rescan", &expanded_params),
         
         // Use JavaScript functions for tmux/anchor activation
@@ -795,6 +796,7 @@ fn execute_js_function_action(
     function_name: &str,
     params: &HashMap<String, String>,
 ) -> Result<String, Box<dyn std::error::Error>> {
+    println!("*** EXECUTING JAVASCRIPT FUNCTION: {} ***", function_name);
     debug_log("ACTION", &format!("Executing JavaScript function: {}", function_name));
     
     // Get parameters that will be passed to the JavaScript function
@@ -820,7 +822,16 @@ fn execute_js_function_action(
     
     debug_log("ACTION", &format!("Calling JavaScript: {}", js_code));
     
-    crate::js_runtime::execute_business_logic(&js_code)
+    match crate::js_runtime::execute_business_logic(&js_code) {
+        Ok(result) => {
+            debug_log("ACTION", &format!("JavaScript execution succeeded: {}", result));
+            Ok(result)
+        }
+        Err(e) => {
+            debug_log("ACTION", &format!("JavaScript execution failed: {}", e));
+            Err(e)
+        }
+    }
 }
 
 fn execute_obsidian_action(
