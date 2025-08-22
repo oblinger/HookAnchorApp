@@ -2654,43 +2654,6 @@ mod tests {
     }
 }
 
-/// Helper function to determine if an action uses the client environment
-/// Returns true for actions that execute directly in the client process
-#[allow(dead_code)]
-fn uses_client_environment(action: &str) -> bool {
-    match action {
-        // Actions that use direct client execution (open commands, app launching)
-        "app" | "url" | "folder" | "doc" | "chrome" | "safari" | "brave" | "firefox" | 
-        "work" | "obs_url" | "1pass" | "contact" | "open_with" => true,
-        
-        // Actions that might use client environment through JavaScript
-        "anchor" | "slack" | "shutdown" | "rescan" => true,
-        
-        // Actions that use server environment (shell commands)
-        "cmd" => false,
-        
-        // New markdown action uses JavaScript environment
-        "markdown" => true,
-        
-        // JavaScript actions - these could use either, but many use client operations
-        _ => true, // Default to showing client env for custom JavaScript functions
-    }
-}
-
-/// Log client environment information (only when verbose logging is enabled)
-#[allow(dead_code)]
-fn log_client_environment() {
-    crate::utils::verbose_log("CLIENT_ENV", &format!("PWD: {:?}", std::env::var("PWD")));
-    crate::utils::verbose_log("CLIENT_ENV", &format!("PATH: {:?}", std::env::var("PATH")));
-    crate::utils::verbose_log("CLIENT_ENV", &format!("USER: {:?}", std::env::var("USER")));
-    crate::utils::verbose_log("CLIENT_ENV", &format!("HOME: {:?}", std::env::var("HOME")));
-    crate::utils::verbose_log("CLIENT_ENV", &format!("DISPLAY: {:?}", std::env::var("DISPLAY")));
-    crate::utils::verbose_log("CLIENT_ENV", &format!("TERM: {:?}", std::env::var("TERM")));
-    crate::utils::verbose_log("CLIENT_ENV", &format!("SHELL: {:?}", std::env::var("SHELL")));
-    crate::utils::verbose_log("CLIENT_ENV", &format!("Process ID: {}", std::process::id()));
-    crate::utils::verbose_log("CLIENT_ENV", &format!("Current exe: {:?}", std::env::current_exe()));
-}
-
 // Include merge tests module
 // #[path = "commands_merge_tests.rs"]
 // #[cfg(test)]

@@ -92,7 +92,7 @@ fn execute_javascript(
 
 /// Execute a legacy action (for backward compatibility)
 fn execute_legacy_action(
-    action: &crate::core::unified_actions::Action,
+    action: &crate::core::actions::Action,
     params: &HashMap<String, String>
 ) -> Result<String, Box<dyn std::error::Error>> {
     // Convert params to the format expected by the old system
@@ -101,7 +101,7 @@ fn execute_legacy_action(
     variables.remove("arg"); // Remove arg since it's passed separately
     
     // Call the old execute_action function which now returns Result
-    crate::core::unified_actions::execute_action(action, arg, Some(variables))
+    crate::core::actions::execute_locally(action, arg, Some(variables))
 }
 
 // Builtin action implementations

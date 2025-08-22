@@ -320,7 +320,7 @@ fn run_test_action(args: &[String]) {
             
             // Execute the action with simplified parameters
             let arg = if !arg_value.is_empty() { Some(arg_value.as_str()) } else { None };
-            match crate::core::unified_actions::execute_action(action, arg, Some(variables)) {
+            match crate::core::actions::execute_locally(action, arg, Some(variables)) {
                 Ok(result) => {
                     println!("Action completed successfully: {}", result);
                 }
@@ -338,7 +338,7 @@ fn run_test_action(args: &[String]) {
     println!("Testing legacy action '{}' with arg '{}': {}", action_name, arg_value, command_line);
     
     // Use server-based execution for testing actions
-    let cmd_obj = crate::command_server::make_command(&action_name, &arg_value);
+    let cmd_obj = crate::execution_server::make_command(&action_name, &arg_value);
     // execute_via_server now returns void and handles all retries internally
     execute_via_server(&cmd_obj);
     println!("Action completed");
@@ -691,12 +691,12 @@ fn run_start_server() {
     utils::log("Restarting command server...");
     
     // Kill existing server if running
-    if let Err(e) = crate::command_server_management::kill_existing_server() {
+    if let Err(e) = crate::execution_server_management::kill_existing_server() {
         utils::log_error(&format!("Failed to kill existing server: {}", e));
     }
     
     // Start new server via Terminal
-    match crate::command_server_management::start_server_via_terminal() {
+    match crate::execution_server_management::start_server_via_terminal() {
         Ok(()) => {
             println!("Command server restart initiated via Terminal");
             println!("The server will start with full shell environment in a few seconds");
@@ -731,11 +731,11 @@ fn run_start_server_daemon() {
     let socket_path = std::path::Path::new(&std::env::var("HOME").unwrap_or_else(|_| ".".to_string()))
         .join(".config")
         .join("hookanchor")
-        .join("command_server.sock");
+        .join("execution_server.sock");
     let _ = std::fs::remove_file(&socket_path);
     
     // Start the persistent server
-    match crate::command_server::start_persistent_server() {
+    match crate::execution_server::start_persistent_server() {
         Ok(server_pid) => {
             // Save PID to state
             if let Err(e) = save_server_pid(server_pid) {
@@ -1147,13 +1147,13 @@ fn run_restart_server() {
     
     // Kill any existing command server
     println!("  Killing existing server...");
-    match crate::command_server_management::kill_existing_server() {
+    match crate::execution_server_management::kill_existing_server() {
         Ok(()) => println!("  ✅ Existing server killed"),
         Err(e) => println!("  ⚠️  No existing server found or kill failed: {}", e),
     }
     
     // Clear the socket file to ensure clean start
-    let socket_path = std::path::Path::new("/Users/oblinger/.config/hookanchor/command_server.sock");
+    let socket_path = std::path::Path::new("/Users/oblinger/.config/hookanchor/execution_server.sock");
     if socket_path.exists() {
         if let Err(e) = std::fs::remove_file(socket_path) {
             println!("  ⚠️  Failed to remove socket file: {}", e);
@@ -1161,11 +1161,11 @@ fn run_restart_server() {
     }
     
     // Reset server check flag to force restart
-    crate::command_server_management::reset_server_check();
+    crate::execution_server_management::reset_server_check();
     
     // Start new server via Terminal (same method as auto-start)
     println!("  Starting new server in Terminal...");
-    match crate::command_server_management::start_server_via_terminal() {
+    match crate::execution_server_management::start_server_via_terminal() {
         Ok(()) => {
             println!("  ✅ Server restart initiated via Terminal");
             println!("  📱 A new Terminal window should open with the server daemon");
@@ -1175,7 +1175,7 @@ fn run_restart_server() {
             println!("  ⏳ Waiting for server to start...");
             let mut server_started = false;
             let max_attempts = 50; // 50 attempts * 200ms = 10 seconds max
-            let socket_path = std::path::Path::new("/Users/oblinger/.config/hookanchor/command_server.sock");
+            let socket_path = std::path::Path::new("/Users/oblinger/.config/hookanchor/execution_server.sock");
             
             for attempt in 1..=max_attempts {
                 std::thread::sleep(std::time::Duration::from_millis(200));
@@ -1186,16 +1186,9 @@ fn run_restart_server() {
                     std::thread::sleep(std::time::Duration::from_millis(300));
                     
                     // Then check if server is available
-                    match crate::command_server::CommandClient::new() {
-                        Ok(client) => {
-                            if client.is_server_available() {
-                                server_started = true;
-                                break;
-                            }
-                        }
-                        Err(_) => {
-                            // Client creation failed, continue waiting
-                        }
+                    if crate::execution_server::is_server_available() {
+                        server_started = true;
+                        break;
                     }
                 }
                 
@@ -1253,7 +1246,7 @@ fn run_execute_launcher_command(args: &[String]) {
         (launcher_command.as_str(), String::new())
     };
     
-    let cmd_obj = crate::command_server::make_command(action, &arg);
+    let cmd_obj = crate::execution_server::make_command(action, &arg);
     // execute_via_server now returns void and handles all retries internally
     execute_via_server(&cmd_obj);
     utils::detailed_log("LAUNCHER_CMD", "Command completed");
@@ -1312,13 +1305,13 @@ fn run_rebuild_command() {
     println!("\n🔄 Step 2/3: Restarting command server...");
     
     // Kill existing server
-    match crate::command_server_management::kill_existing_server() {
+    match crate::execution_server_management::kill_existing_server() {
         Ok(()) => println!("  ✅ Existing server killed"),
         Err(e) => println!("  ⚠️  Server kill warning: {}", e),
     }
     
     // Clear the socket file to ensure clean start
-    let socket_path = std::path::Path::new("/Users/oblinger/.config/hookanchor/command_server.sock");
+    let socket_path = std::path::Path::new("/Users/oblinger/.config/hookanchor/execution_server.sock");
     if socket_path.exists() {
         if let Err(e) = std::fs::remove_file(socket_path) {
             println!("  ⚠️  Failed to remove socket file: {}", e);
@@ -1326,11 +1319,11 @@ fn run_rebuild_command() {
     }
     
     // Reset server check flag to force restart
-    crate::command_server_management::reset_server_check();
+    crate::execution_server_management::reset_server_check();
     
     // Start new server via Terminal (same method as run_restart_server)
     println!("  Starting new server in Terminal...");
-    match crate::command_server_management::start_server_via_terminal() {
+    match crate::execution_server_management::start_server_via_terminal() {
         Ok(()) => {
             println!("  ✅ Server restart initiated via Terminal");
             println!("  📱 A new Terminal window should open with the server daemon");

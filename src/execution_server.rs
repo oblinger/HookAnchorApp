@@ -161,7 +161,7 @@ impl CommandServer {
     }
     
     /// Execute a command through the server with proper alias resolution
-    pub fn execute_command(&self, command: &crate::Command) -> crate::CommandTarget {
+    fn execute_command(&self, command: &crate::Command) -> crate::CommandTarget {
         self.execute_command_with_depth(command, 0)
     }
     
@@ -264,7 +264,7 @@ fn handle_client(
     verbose_log("CMD_SERVER", &format!("Read {} bytes: '{}'", bytes_read, request_line.trim()));
     
     // Try to parse as Action first (new protocol), fall back to Command (old protocol)
-    let (is_action, command) = if let Ok(action) = serde_json::from_str::<crate::core::unified_actions::Action>(&request_line.trim()) {
+    let (is_action, command) = if let Ok(action) = serde_json::from_str::<crate::core::actions::Action>(&request_line.trim()) {
         verbose_log("CMD_SERVER", &format!("Received action: type={}", action.action_type()));
         // Convert Action to Command for now (until we fully migrate execute_command_with_env)
         let cmd = crate::Command {
@@ -335,7 +335,7 @@ fn handle_client(
 }
 
 /// Main entry point for executing actions in the server - routes based on action type
-pub fn execute(action: &crate::core::unified_actions::Action) -> Result<String, String> {
+pub fn execute(action: &crate::core::actions::Action) -> Result<String, String> {
     verbose_log("CMD_SERVER", &format!("Server execute: type={}", action.action_type()));
     
     match action.action_type() {
@@ -352,7 +352,7 @@ pub fn execute(action: &crate::core::unified_actions::Action) -> Result<String, 
 }
 
 /// Execute an action locally within the server process
-pub fn execute_locally(action: &crate::core::unified_actions::Action) -> Result<String, String> {
+pub fn execute_locally(action: &crate::core::actions::Action) -> Result<String, String> {
     verbose_log("CMD_SERVER", &format!("Executing action locally: type={}", action.action_type()));
     
     match action.action_type() {
@@ -417,171 +417,74 @@ fn execute_command_with_env(
     // Detailed logging goes to debug only
     verbose_log("CMD_SERVER", &format!("Command object: {:?}", command));
     
-    // Check if we should use the launcher system for this action
-    let is_launcher_command = matches!(
-        command.action.as_str(),
-        "app" | "url" | "cmd" | "chrome" | "safari" | "brave" | "firefox" | "work" | 
-        "obs" | "obs_url" | "1pass" | "anchor" | "folder" | 
-        "doc" | "markdown" | "text" | "slack" | "contact" | "alias" |
-        "activate_anchor" | "tmux_activate"
-    );
-    
-    verbose_log("CMD_SERVER", &format!("Is launcher command: {}", is_launcher_command));
-    
-    if is_launcher_command {
-        // Use unified actions for known action types
-        verbose_log("CMD_SERVER", &format!("Using unified actions for action: {}", command.action));
-        
-        // Check if this is a GUI command that needs blocking execution
-        // GUI commands have "G" in their flags field
-        let needs_blocking = command.flags.contains("G");
-        
-        if command.arg.contains("ec") {
-            eprintln!("[CMD_SERVER ACTIONS] EC command in actions path");
-            eprintln!("[CMD_SERVER ACTIONS] Command object: {:?}", command);
-            eprintln!("[CMD_SERVER ACTIONS] needs_blocking: {} (flags: '{}')", needs_blocking, command.flags);
-        }
-        
-        // Look up the action in config
-        let full_config = crate::core::sys_data::get_config();
-        if let Some(actions) = &full_config.actions {
-            if let Some(action_def) = actions.get(&command.action) {
-                verbose_log("CMD_SERVER", &format!("Found action '{}' in config (type: {})", command.action, action_def.action_type));
-                
-                if needs_blocking {
-                    // Execute action synchronously for GUI commands
-                    verbose_log("CMD_SERVER", "Executing action synchronously (blocking)");
-                    match crate::core::unified_actions::execute_action(
-                        action_def,
-                        Some(&command.arg),
-                        None
-                    ) {
-                        Ok(result) => {
-                            verbose_log("CMD_SERVER", &format!("Action completed: {}", result));
-                            log_and_print("CMD", &format!("✓ Completed: {}", command.action));
-                            return CommandResponse {
-                                success: true,
-                                exit_code: Some(0),
-                                stdout: String::new(),
-                                stderr: String::new(),
-                                error: None,
-                            };
-                        }
-                        Err(e) => {
-                            let timestamp = chrono::Local::now().format("%H:%M:%S").to_string();
-                            crate::utils::log_error(&format!("[{}] Action failed: {}", timestamp, e));
-                            return CommandResponse {
-                                success: false,
-                                exit_code: Some(1),
-                                stdout: String::new(),
-                                stderr: format!("Action failed: {}", e),
-                                error: Some(e.to_string()),
-                            };
-                        }
-                    }
-                } else {
-                    // Spawn action execution in a separate thread for non-blocking commands
-                    let action_clone = action_def.clone();
-                    let arg_clone = command.arg.clone();
-                    let action_name = command.action.clone();
-                    thread::spawn(move || {
-                        match crate::core::unified_actions::execute_action(
-                            &action_clone,
-                            Some(&arg_clone),
-                            None
-                        ) {
-                            Ok(result) => {
-                                verbose_log("CMD_SERVER", &format!("Action completed: {}", result));
-                                crate::utils::log(&format!("✓ Action completed: {}", action_name));
-                            }
-                            Err(e) => {
-                                let timestamp = chrono::Local::now().format("%H:%M:%S").to_string();
-                                crate::utils::log_error(&format!("[{}] Action failed: {}", timestamp, e));
-                            }
-                        }
-                    });
-                    
-                    // Return immediate success for spawning the action
-                    log_and_print("CMD", &format!("✓ Spawned: {}", command.action));
-                    return CommandResponse {
-                        success: true,
-                        exit_code: Some(0),
-                        stdout: String::new(),
-                        stderr: String::new(),
-                        error: None,
-                    };
-                }
-            } else {
-                // Action not found in config, fall through to shell execution
-                verbose_log("CMD_SERVER", &format!("Action '{}' not found in config, falling back to shell", command.action));
-            }
-        }
-    }
-    
-    // Fall back to shell execution for non-launcher commands
-    // This shouldn't happen with the new Command object approach, but keep as fallback
-    verbose_log("CMD_SERVER", &format!("Non-launcher command, using shell execution for: {} {}", command.action, command.arg));
+    // Convert Command to Action
+    let action = crate::core::actions::command_to_action(&command);
+    verbose_log("CMD_SERVER", &format!("Converted to action type: {}", action.action_type()));
     
     // Check if this is a GUI command that needs blocking execution
+    // GUI commands have "G" in their flags field
     let needs_blocking = command.flags.contains("G");
     
-    // For shell execution, just use the arg as the command
-    let shell_command = &command.arg;
-    
+    // Always go through actions::execute_locally
     if needs_blocking {
-        verbose_log("CMD_SERVER", &format!("Using blocking execution (flags='{}')", command.flags));
-    } else {
-        verbose_log("CMD_SERVER", "Using non-blocking execution (spawn)");
-    }
-    
-    let mut cmd = std::process::Command::new("sh");
-    cmd.arg("-c").arg(shell_command);
-    
-    // Set working directory
-    cmd.current_dir(&base_working_dir);
-    
-    // Apply inherited environment
-    for (key, value) in &inherited_env {
-        cmd.env(key, value);
-    }
-    
-    verbose_log("CMD_SERVER", &format!("Working directory: {:?}", base_working_dir));
-    verbose_log("CMD_SERVER", &format!("Environment variables: {}", inherited_env.len()));
-    
-    // Log the PATH specifically for debugging
-    if let Some(path) = inherited_env.get("PATH") {
-        verbose_log("CMD_SERVER", &format!("PATH: {}", path));
-    } else {
-        verbose_log("CMD_SERVER", "PATH: Not found in environment");
-    }
-    
-    // Always spawn commands - GUI or not
-    // The difference is that GUI commands (G flag) get reported as "blocking" 
-    // so the popup knows to wait/hide, but we still spawn them
-    verbose_log("CMD_SERVER", &format!("Spawning command (GUI={})", needs_blocking));
-    match cmd.spawn() {
-        Ok(mut child) => {
-            verbose_log("CMD_SERVER", &format!("Command spawned with PID: {:?}", child.id()));
-            
-            // Return success immediately for all spawned commands
-            CommandResponse {
-                success: true,
-                exit_code: Some(0),
-                stdout: String::new(),
-                stderr: String::new(),
-                error: None,
+        // Execute action synchronously for GUI commands
+        verbose_log("CMD_SERVER", "Executing action synchronously (blocking)");
+        match crate::core::actions::execute_locally(
+            &action,
+            None,  // arg is already in the action
+            None   // no additional variables
+        ) {
+            Ok(result) => {
+                verbose_log("CMD_SERVER", &format!("Action completed: {}", result));
+                log_and_print("CMD", &format!("✓ Completed: {}", command.action));
+                CommandResponse {
+                    success: true,
+                    exit_code: Some(0),
+                    stdout: String::new(),
+                    stderr: String::new(),
+                    error: None,
+                }
+            }
+            Err(e) => {
+                let timestamp = chrono::Local::now().format("%H:%M:%S").to_string();
+                crate::utils::log_error(&format!("[{}] Action failed: {}", timestamp, e));
+                CommandResponse {
+                    success: false,
+                    exit_code: Some(1),
+                    stdout: String::new(),
+                    stderr: format!("Action failed: {}", e),
+                    error: Some(e.to_string()),
+                }
             }
         }
-        Err(e) => {
-            verbose_log("CMD_SERVER", &format!("Command spawn failed: {}", e));
-            
-            CommandResponse {
-                success: false,
-                exit_code: None,
-                stdout: String::new(),
-                stderr: String::new(),
-                error: Some(e.to_string()),
+    } else {
+        // Spawn action execution in a separate thread for non-blocking commands
+        let action_name = command.action.clone();
+        thread::spawn(move || {
+            match crate::core::actions::execute_locally(
+                &action,
+                None,  // arg is already in the action
+                None   // no additional variables
+            ) {
+                Ok(result) => {
+                    verbose_log("CMD_SERVER", &format!("Action completed: {}", result));
+                    crate::utils::log(&format!("✓ Action completed: {}", action_name));
+                }
+                Err(e) => {
+                    let timestamp = chrono::Local::now().format("%H:%M:%S").to_string();
+                    crate::utils::log_error(&format!("[{}] Action failed: {}", timestamp, e));
+                }
             }
+        });
+        
+        // Return immediate success for spawning the action
+        log_and_print("CMD", &format!("✓ Spawned: {}", command.action));
+        CommandResponse {
+            success: true,
+            exit_code: Some(0),
+            stdout: String::new(),
+            stderr: String::new(),
+            error: None,
         }
     }
 }
@@ -592,7 +495,7 @@ fn get_socket_path() -> Result<PathBuf, Box<dyn std::error::Error>> {
     let socket_path = PathBuf::from(home)
         .join(".config")
         .join("hookanchor")
-        .join("command_server.sock");
+        .join("execution_server.sock");
     
     // Ensure directory exists
     if let Some(parent) = socket_path.parent() {
@@ -603,20 +506,45 @@ fn get_socket_path() -> Result<PathBuf, Box<dyn std::error::Error>> {
 }
 
 
-/// Client function to send commands to the server
-pub struct CommandClient {
+/// Check if the execution server is available
+pub fn is_server_available() -> bool {
+    match CommandClient::new() {
+        Ok(client) => client.is_server_available(),
+        Err(_) => false,
+    }
+}
+
+/// Send an action to the execution server for execution
+/// This is the main public entry point for executing actions via the server
+pub fn send_for_execution(action: &crate::core::actions::Action) -> Result<(), Box<dyn std::error::Error>> {
+    use crate::utils::debug_log;
+    
+    // Serialize action to JSON
+    let action_json = serde_json::to_string(action)?;
+    debug_log("EXEC_SERVER", &format!("Sending action for execution: {}", action_json));
+    
+    // Send to server
+    let client = CommandClient::new()?;
+    client.send_json(&action_json)?;
+    
+    debug_log("EXEC_SERVER", "Action sent successfully");
+    Ok(())
+}
+
+/// Client function to send commands to the server (internal use only)
+struct CommandClient {
     socket_path: PathBuf,
 }
 
 impl CommandClient {
     /// Create a new command client
-    pub fn new() -> Result<Self, Box<dyn std::error::Error>> {
+    fn new() -> Result<Self, Box<dyn std::error::Error>> {
         let socket_path = get_socket_path()?;
         Ok(Self { socket_path })
     }
     
     /// Execute a command via the server with timeout and ACK verification
-    pub fn execute_command(
+    fn execute_command(
         &self,
         command: &crate::Command,
     ) -> Result<CommandResponse, Box<dyn std::error::Error>> {
@@ -651,7 +579,7 @@ impl CommandClient {
     }
     
     /// Send raw JSON to the server (for Actions)
-    pub fn send_json(&self, json: &str) -> Result<CommandResponse, Box<dyn std::error::Error>> {
+    fn send_json(&self, json: &str) -> Result<CommandResponse, Box<dyn std::error::Error>> {
         verbose_log("CMD_CLIENT", &format!("Sending JSON to server: {}", json));
         
         // Connect to server
@@ -681,7 +609,7 @@ impl CommandClient {
     }
     
     /// Check if the server is available
-    pub fn is_server_available(&self) -> bool {
+    fn is_server_available(&self) -> bool {
         UnixStream::connect(&self.socket_path).is_ok()
     }
 }
@@ -768,7 +696,7 @@ pub fn execute_via_server(command: &crate::Command) {
     const ACK_TIMEOUT_MS: u64 = 1000;
     
     // Convert Command to Action for the new protocol
-    let action = crate::core::unified_actions::command_to_action(command);
+    let action = crate::core::actions::command_to_action(command);
     let action_json = serde_json::to_string(&action).unwrap_or_else(|e| {
         verbose_log("CMD_SERVER", &format!("Failed to serialize action: {}", e));
         // Fall back to old protocol
@@ -820,11 +748,11 @@ pub fn execute_via_server(command: &crate::Command) {
         crate::utils::debug_log("CMD_SERVER", &format!("Restarting server for command: {}", command.command));
         
         // Kill existing server and reset check
-        let _ = crate::command_server_management::kill_existing_server();
-        crate::command_server_management::reset_server_check();
+        let _ = crate::execution_server_management::kill_existing_server();
+        crate::execution_server_management::reset_server_check();
         
         // Start new server
-        if let Err(e) = crate::command_server_management::start_server_if_needed() {
+        if let Err(e) = crate::execution_server_management::start_server_if_needed() {
             verbose_log("CMD_SERVER", &format!("Failed to restart server: {}", e));
             // Continue trying - don't give up yet
         }

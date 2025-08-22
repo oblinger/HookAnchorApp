@@ -23,7 +23,7 @@ pub struct Config {
     /// Templates for creating new commands (legacy - migrated to actions)
     pub templates: Option<HashMap<String, crate::core::template_creation::Template>>,
     /// Unified actions section (new)
-    pub actions: Option<HashMap<String, crate::core::unified_actions::Action>>,
+    pub actions: Option<HashMap<String, crate::core::actions::Action>>,
 }
 
 /// Popup settings section of the configuration file
@@ -364,7 +364,7 @@ fn load_legacy_config(contents: &str) -> Result<Config, Box<dyn std::error::Erro
         .and_then(|v| serde_yaml::from_value(v.clone()).ok());
     
     // Extract actions if it exists (new unified system)
-    let mut actions: Option<HashMap<String, crate::core::unified_actions::Action>> = 
+    let mut actions: Option<HashMap<String, crate::core::actions::Action>> = 
         yaml.get("actions")
             .and_then(|v| serde_yaml::from_value(v.clone()).ok());
     
@@ -417,7 +417,7 @@ fn parse_window_size(size_str: &str) -> Option<(u32, u32)> {
 /// Migrate templates to unified actions
 fn migrate_templates_to_actions(
     templates: &Option<HashMap<String, crate::core::template_creation::Template>>
-) -> Option<HashMap<String, crate::core::unified_actions::Action>> {
+) -> Option<HashMap<String, crate::core::actions::Action>> {
     let templates = templates.as_ref()?;
     let mut actions = HashMap::new();
     
@@ -451,7 +451,7 @@ fn migrate_templates_to_actions(
             params.insert("file_rescan".to_string(), serde_json::Value::Bool(true));
         }
         
-        let action = crate::core::unified_actions::Action {
+        let action = crate::core::actions::Action {
             action_type: "template".to_string(),
             description: template.description.clone(),
             key: template.key.clone(),
@@ -468,7 +468,7 @@ fn migrate_templates_to_actions(
 /// Migrate keybindings to popup actions
 fn migrate_keybindings_to_actions(
     keybindings: &HashMap<String, String>,
-    actions: &mut HashMap<String, crate::core::unified_actions::Action>,
+    actions: &mut HashMap<String, crate::core::actions::Action>,
 ) {
     for (action_name, key) in keybindings {
         // Skip if this action already exists (e.g., from templates)
@@ -514,7 +514,7 @@ fn migrate_keybindings_to_actions(
             params.insert("popup_action".to_string(), serde_json::Value::String(popup_action_name.to_string()));
         }
         
-        let action = crate::core::unified_actions::Action {
+        let action = crate::core::actions::Action {
             action_type: action_type.to_string(),
             description: Some(format!("Keyboard action: {}", action_name)),
             key: Some(key.clone()),

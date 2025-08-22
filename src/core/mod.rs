@@ -3,7 +3,6 @@
 //! This module contains the core application logic separated from UI concerns.
 
 pub mod actions;
-pub mod unified_actions;
 pub mod commands;
 pub mod config;
 pub mod state;
@@ -13,8 +12,7 @@ pub mod template_creation;
 pub mod key_processing;
 
 // Re-export commonly used types
-pub use actions::{get_action, is_markdown_anchor, get_default_patch_for_action};
-pub use unified_actions::{Action, ActionContext, expand_string, execute_action};
+pub use actions::{Action, ActionContext, expand_string, get_action, is_markdown_file, is_anchor_file, get_default_patch_for_action};
 pub use commands::{Command, CommandTarget, Patch, filter_commands, merge_similar_commands, load_commands_with_data, infer_patch};
 pub use config::{Config, PopupSettings, LauncherSettings};
 pub use state::{AppState, load_state, save_state};

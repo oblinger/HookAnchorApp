@@ -78,7 +78,7 @@ fn main() -> Result<(), eframe::Error> {
     // If arguments are provided, run in command-line mode (no GUI)
     if args.len() > 1 {
         // CLI mode needs server - start it here
-        if let Err(e) = hookanchor::command_server_management::start_server_if_needed() {
+        if let Err(e) = hookanchor::execution_server_management::start_server_if_needed() {
             hookanchor::utils::log_error(&format!("Failed to start command server: {}", e));
             // Continue - commands will show error dialogs when server is needed
         }

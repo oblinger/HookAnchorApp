@@ -678,20 +678,20 @@ end tell
 #[cfg(test)]
 mod tests {
     use std::path::PathBuf;
-    use crate::core::is_markdown_anchor;
+    use crate::core::is_anchor_file;
 
     #[test]
-    fn test_is_markdown_anchor() {
+    fn test_is_anchor_file() {
         // Test case: ProjectName/ProjectName.md (should be anchor)
         let path = PathBuf::from("/home/user/ProjectName/ProjectName.md");
-        assert!(is_markdown_anchor(&path));
+        assert!(is_anchor_file(&path));
         
         // Test case: ProjectName/readme.md (should not be anchor)
         let path = PathBuf::from("/home/user/ProjectName/readme.md");
-        assert!(!is_markdown_anchor(&path));
+        assert!(!is_anchor_file(&path));
         
         // Test case: projectname/PROJECTNAME.md (should be anchor - case insensitive)
         let path = PathBuf::from("/home/user/projectname/PROJECTNAME.md");
-        assert!(is_markdown_anchor(&path));
+        assert!(is_anchor_file(&path));
     }
 }

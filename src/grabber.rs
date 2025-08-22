@@ -379,7 +379,7 @@ pub fn enrich_context(mut context: AppContext) -> AppContext {
                     if let Some(path_str) = selection_path.as_str() {
                         let path = std::path::Path::new(path_str);
                         let recommended_action = get_action(path);
-                        context.properties["recommendedAction"] = serde_json::Value::String(recommended_action.clone());
+                        context.properties["recommendedAction"] = serde_json::Value::String(recommended_action.to_string());
                         crate::utils::debug_log("GRABBER", &format!("Added recommended action: {}", recommended_action));
                     }
                 }
@@ -483,7 +483,7 @@ pub fn match_grabber_rules(
                                 // First try to get default patch for action type
                                 if let Some(default_patch) = crate::core::actions::get_default_patch_for_action(&command.action) {
                                     crate::utils::debug_log("GRABBER", &format!("Using default patch '{}' for action '{}'", default_patch, command.action));
-                                    command.patch = default_patch;
+                                    command.patch = default_patch.to_string();
                                 } else if let Some(inferred_patch) = crate::core::commands::infer_patch(&command, patches) {
                                     crate::utils::debug_log("GRABBER", &format!("Inferred patch '{}' for grabbed command", inferred_patch));
                                     command.patch = inferred_patch;
@@ -523,7 +523,7 @@ pub fn match_grabber_rules(
                                 // First try to get default patch for action type
                                 if let Some(default_patch) = get_default_patch_for_action(&command.action) {
                                     crate::utils::debug_log("GRABBER", &format!("Using default patch '{}' for action '{}'", default_patch, command.action));
-                                    command.patch = default_patch;
+                                    command.patch = default_patch.to_string();
                                 } else if let Some(inferred_patch) = crate::core::commands::infer_patch(&command, patches) {
                                     crate::utils::debug_log("GRABBER", &format!("Inferred patch '{}' for grabbed command", inferred_patch));
                                     command.patch = inferred_patch;

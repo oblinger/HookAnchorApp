@@ -371,14 +371,46 @@ fn setup_launcher_builtins(ctx: &Ctx<'_>) -> Result<(), Box<dyn std::error::Erro
         // ALWAYS log shell commands for debugging
         crate::utils::log(&format!("🐚 JS_SHELL: Executing async command: {}", command));
         
+        // Detailed logging for debugging (only when verbose_logging is enabled)
+        crate::utils::detailed_log("JS_SHELL", "===========================================");
+        crate::utils::detailed_log("JS_SHELL", "SHELL FUNCTION CALLED (ASYNC/NON-BLOCKING)");
+        crate::utils::detailed_log("JS_SHELL", &format!("Command: '{}'", command));
+        crate::utils::detailed_log("JS_SHELL", &format!("Command length: {} chars", command.len()));
+        crate::utils::detailed_log("JS_SHELL", &format!("Current directory: {:?}", std::env::current_dir()));
+        crate::utils::detailed_log("JS_SHELL", "About to call shell_simple with blocking=false");
+        
         // Execute directly since we're already on the server
         match crate::utils::shell_simple(&command, false) {
-            Ok(_) => {
+            Ok(output) => {
+                crate::utils::detailed_log("JS_SHELL", "shell_simple returned Ok");
+                crate::utils::detailed_log("JS_SHELL", &format!("Exit status: {:?}", output.status));
+                crate::utils::detailed_log("JS_SHELL", &format!("Exit code: {:?}", output.status.code()));
+                
+                let stdout = String::from_utf8_lossy(&output.stdout);
+                let stderr = String::from_utf8_lossy(&output.stderr);
+                
+                if !stdout.is_empty() {
+                    crate::utils::detailed_log("JS_SHELL", &format!("STDOUT ({}b): {}", stdout.len(), stdout.trim()));
+                } else {
+                    crate::utils::detailed_log("JS_SHELL", "STDOUT: (empty)");
+                }
+                
+                if !stderr.is_empty() {
+                    crate::utils::detailed_log("JS_SHELL", &format!("STDERR ({}b): {}", stderr.len(), stderr.trim()));
+                } else {
+                    crate::utils::detailed_log("JS_SHELL", "STDERR: (empty)");
+                }
+                
                 let msg = format!("Command started: {}", command);
                 crate::utils::log(&format!("✅ JS_SHELL: {}", msg));
+                crate::utils::detailed_log("JS_SHELL", "===========================================");
                 msg
             },
             Err(e) => {
+                crate::utils::detailed_log("JS_SHELL", &format!("shell_simple returned Err: {}", e));
+                crate::utils::detailed_log("JS_SHELL", &format!("Error kind: {:?}", e.kind()));
+                crate::utils::detailed_log("JS_SHELL", "===========================================");
+                
                 let error_msg = format!("Failed to start command '{}': {}", command, e);
                 crate::utils::log(&format!("❌ JS_SHELL: {}", error_msg));
                 error_msg
@@ -554,7 +586,7 @@ fn setup_launcher_builtins(ctx: &Ctx<'_>) -> Result<(), Box<dyn std::error::Erro
         let config = crate::core::sys_data::get_config();
         if let Some(actions) = &config.actions {
             if let Some(action_def) = actions.get(action_name) {
-                match crate::core::unified_actions::execute_action(
+                match crate::core::actions::execute_locally(
                     action_def,
                     Some(args),
                     None

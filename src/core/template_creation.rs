@@ -97,17 +97,16 @@ impl TemplateContext {
             let commands = crate::core::commands::load_commands();
             if let Some(cmd) = commands.iter().find(|c| c.command == last_executed_name) {
                 // Store last_executed command details
-                // Only extract folder for commands that have a folder context
-                let folder = if cmd.action == "cmd" && cmd.arg.trim().starts_with("cd ") {
-                    // For cd commands, extract the folder after "cd "
-                    cmd.arg.trim().strip_prefix("cd ").unwrap_or("").trim().to_string()
-                } else if cmd.action == "folder" || cmd.action == "markdown" || cmd.action == "anchor" {
-                    // For file-based actions, get the parent folder
-                    extract_folder_from_path(&cmd.arg).unwrap_or_else(|| "/INVALID_FOLDER_NO_PATH".to_string())
-                } else {
-                    // For other actions (like "sub file"), there's no folder context
-                    // Return a clear error indicator
-                    "/INVALID_FOLDER_NO_CD".to_string()
+                // Extract and validate folder, or use empty string if extraction fails
+                let folder = match extract_and_validate_folder(&cmd) {
+                    Ok(f) => {
+                        crate::utils::log(&format!("TEMPLATE_FOLDER: Extracted valid folder from '{}': {}", cmd.command, f));
+                        f
+                    },
+                    Err(e) => {
+                        crate::utils::log(&format!("TEMPLATE_FOLDER: Failed to extract folder from '{}' (action={}): {}", cmd.command, cmd.action, e));
+                        String::new() // Use empty string for invalid folder
+                    }
                 };
                 
                 // We store these for JavaScript object creation later
@@ -138,16 +137,16 @@ impl TemplateContext {
         
         // Selected command - stored as object fields for JavaScript access
         if let Some(cmd) = selected_command {
-            // Only extract folder for commands that have a folder context
-            let folder = if cmd.action == "cmd" && cmd.arg.trim().starts_with("cd ") {
-                // For cd commands, extract the folder after "cd "
-                cmd.arg.trim().strip_prefix("cd ").unwrap_or("").trim().to_string()
-            } else if cmd.action == "folder" || cmd.action == "markdown" || cmd.action == "anchor" {
-                // For file-based actions, get the parent folder
-                extract_folder_from_path(&cmd.arg).unwrap_or_else(|| String::new())
-            } else {
-                // For other actions (like "subl file"), there's no folder context
-                String::new()
+            // Extract and validate folder, or use empty string if extraction fails
+            let folder = match extract_and_validate_folder(cmd) {
+                Ok(f) => {
+                    crate::utils::detailed_log("TEMPLATE", &format!("Selected command folder: {}", f));
+                    f
+                },
+                Err(e) => {
+                    crate::utils::detailed_log("TEMPLATE", &format!("Selected command folder error: {}", e));
+                    String::new()
+                }
             };
             
             variables.insert("_selected_name".to_string(), cmd.command.clone());
@@ -200,13 +199,18 @@ impl TemplateContext {
                 // Evaluate the JavaScript expression
                 match self.eval_js_expression(expr) {
                     Ok(value) => {
+                        // Check if an error was queued during JS execution
+                        if crate::error_display::has_errors() {
+                            // Return what we have so far - error will be displayed later
+                            return result;
+                        }
                         result.replace_range(start..end, &value);
                         // Move position to after the replacement
                         last_pos = start + value.len();
                     }
                     Err(e) => {
                         crate::utils::debug_log("TEMPLATE_JS", &format!("Failed to evaluate '{}': {}", expr, e));
-                        // If evaluation fails, try simple variable lookup for backward compatibility
+                        // For backward compatibility, try simple variable lookup
                         if let Some(value) = self.variables.get(expr) {
                             result.replace_range(start..end, value);
                             last_pos = start + value.len();
@@ -230,7 +234,7 @@ impl TemplateContext {
         // Create JavaScript objects from template context
         let js_code = self.build_js_context() + &format!(
             r#"
-            // Evaluate the expression
+            // Evaluate the expression with error handling
             (function() {{
                 try {{
                     let result = {};
@@ -240,7 +244,9 @@ impl TemplateContext {
                     }}
                     return String(result);
                 }} catch(e) {{
-                    log('Template JS error: ' + e.toString());
+                    // Queue the error for user display
+                    error(e.toString());
+                    // Return empty string as safe default
                     return '';
                 }}
             }})();
@@ -263,16 +269,31 @@ impl TemplateContext {
             context.push_str("const input = '';\n");
         }
         
-        // Create selected object
-        context.push_str("const selected = {\n");
-        context.push_str(&format!("  name: {:?},\n", self.variables.get("_selected_name").unwrap_or(&String::new())));
-        context.push_str(&format!("  path: {:?},\n", self.variables.get("_selected_path").unwrap_or(&String::new())));
-        context.push_str(&format!("  arg: {:?},\n", self.variables.get("_selected_path").unwrap_or(&String::new())));
-        context.push_str(&format!("  patch: {:?},\n", self.variables.get("_selected_patch").unwrap_or(&String::new())));
-        context.push_str(&format!("  folder: {:?},\n", self.variables.get("_selected_folder").unwrap_or(&String::new())));
-        context.push_str(&format!("  action: {:?},\n", self.variables.get("_selected_action").unwrap_or(&String::new())));
-        context.push_str(&format!("  flags: {:?}\n", self.variables.get("_selected_flags").unwrap_or(&String::new())));
-        context.push_str("};\n");
+        // Create selected object with getter for folder that throws on empty
+        let selected_name = self.variables.get("_selected_name").cloned().unwrap_or_else(String::new);
+        let selected_folder = self.variables.get("_selected_folder").cloned().unwrap_or_else(String::new);
+        
+        context.push_str("const selected = Object.create(null, {\n");
+        context.push_str(&format!("  name: {{ value: {:?}, enumerable: true }},\n", selected_name));
+        context.push_str(&format!("  path: {{ value: {:?}, enumerable: true }},\n", self.variables.get("_selected_path").unwrap_or(&String::new())));
+        context.push_str(&format!("  arg: {{ value: {:?}, enumerable: true }},\n", self.variables.get("_selected_path").unwrap_or(&String::new())));
+        context.push_str(&format!("  patch: {{ value: {:?}, enumerable: true }},\n", self.variables.get("_selected_patch").unwrap_or(&String::new())));
+        
+        // Add folder with getter that throws error if empty
+        context.push_str("  folder: {\n");
+        context.push_str("    enumerable: true,\n");
+        context.push_str("    get: function() {\n");
+        context.push_str(&format!("      const folderValue = {:?};\n", selected_folder));
+        context.push_str("      if (!folderValue || folderValue === '') {\n");
+        context.push_str(&format!("        throw new Error('Selected command \"' + {:?} + '\" does not have a folder context');\n", selected_name));
+        context.push_str("      }\n");
+        context.push_str("      return folderValue;\n");
+        context.push_str("    }\n");
+        context.push_str("  },\n");
+        
+        context.push_str(&format!("  action: {{ value: {:?}, enumerable: true }},\n", self.variables.get("_selected_action").unwrap_or(&String::new())));
+        context.push_str(&format!("  flags: {{ value: {:?}, enumerable: true }}\n", self.variables.get("_selected_flags").unwrap_or(&String::new())));
+        context.push_str("});\n");
         
         // Create date object
         let now = Local::now();
@@ -316,16 +337,31 @@ impl TemplateContext {
         context.push_str(&format!("  config_dir: {:?}\n", format!("{}/.config/hookanchor", home)));
         context.push_str("};\n");
         
-        // Create last_executed object  
-        context.push_str("const last_executed = {\n");
-        context.push_str(&format!("  name: {:?},\n", self.variables.get("_last_executed_name").unwrap_or(&String::new())));
-        context.push_str(&format!("  path: {:?},\n", self.variables.get("_last_executed_path").unwrap_or(&String::new())));
-        context.push_str(&format!("  arg: {:?},\n", self.variables.get("_last_executed_path").unwrap_or(&String::new())));
-        context.push_str(&format!("  patch: {:?},\n", self.variables.get("_last_executed_patch").unwrap_or(&String::new())));
-        context.push_str(&format!("  folder: {:?},\n", self.variables.get("_last_executed_folder").unwrap_or(&String::new())));
-        context.push_str(&format!("  action: {:?},\n", self.variables.get("_last_executed_action").unwrap_or(&String::new())));
-        context.push_str(&format!("  flags: {:?}\n", self.variables.get("_last_executed_flags").unwrap_or(&String::new())));
-        context.push_str("};\n");
+        // Create last_executed object with getter for folder that throws on empty
+        let last_name = self.variables.get("_last_executed_name").cloned().unwrap_or_else(String::new);
+        let last_folder = self.variables.get("_last_executed_folder").cloned().unwrap_or_else(String::new);
+        
+        context.push_str("const last_executed = Object.create(null, {\n");
+        context.push_str(&format!("  name: {{ value: {:?}, enumerable: true }},\n", last_name));
+        context.push_str(&format!("  path: {{ value: {:?}, enumerable: true }},\n", self.variables.get("_last_executed_path").unwrap_or(&String::new())));
+        context.push_str(&format!("  arg: {{ value: {:?}, enumerable: true }},\n", self.variables.get("_last_executed_path").unwrap_or(&String::new())));
+        context.push_str(&format!("  patch: {{ value: {:?}, enumerable: true }},\n", self.variables.get("_last_executed_patch").unwrap_or(&String::new())));
+        
+        // Add folder with getter that throws error if empty
+        context.push_str("  folder: {\n");
+        context.push_str("    enumerable: true,\n");
+        context.push_str("    get: function() {\n");
+        context.push_str(&format!("      const folderValue = {:?};\n", last_folder));
+        context.push_str("      if (!folderValue || folderValue === '') {\n");
+        context.push_str(&format!("        throw new Error('Last executed command \"' + {:?} + '\" does not have a folder context');\n", last_name));
+        context.push_str("      }\n");
+        context.push_str("      return folderValue;\n");
+        context.push_str("    }\n");
+        context.push_str("  },\n");
+        
+        context.push_str(&format!("  action: {{ value: {:?}, enumerable: true }},\n", self.variables.get("_last_executed_action").unwrap_or(&String::new())));
+        context.push_str(&format!("  flags: {{ value: {:?}, enumerable: true }}\n", self.variables.get("_last_executed_flags").unwrap_or(&String::new())));
+        context.push_str("});\n");
         
         // Alias previous to last_executed for migration period
         context.push_str("const previous = last_executed; // Aliased to last_executed for compatibility\n");
@@ -344,6 +380,73 @@ fn extract_folder_from_path(path: &str) -> Option<String> {
     path.parent()
         .and_then(|p| p.to_str())
         .map(|s| s.to_string())
+}
+
+/// Extract folder from cmd command with cd
+fn extract_folder_from_cd_command(arg: &str) -> Result<String, String> {
+    let trimmed = arg.trim();
+    
+    // Check if it starts with cd
+    if !trimmed.starts_with("cd ") {
+        return Err("Command does not start with 'cd'".to_string());
+    }
+    
+    // Find the && terminator
+    let cd_part = if let Some(idx) = trimmed.find(" &&") {
+        &trimmed[3..idx] // Skip "cd " and take up to " &&"
+    } else {
+        return Err("No && found after cd command".to_string());
+    };
+    
+    // Trim and remove quotes
+    let folder = cd_part.trim();
+    let folder = if (folder.starts_with('"') && folder.ends_with('"')) ||
+                    (folder.starts_with('\'') && folder.ends_with('\'')) {
+        &folder[1..folder.len()-1]
+    } else {
+        folder
+    };
+    
+    Ok(folder.to_string())
+}
+
+/// Extract and validate folder from command
+fn extract_and_validate_folder(cmd: &crate::Command) -> Result<String, String> {
+    use std::path::Path;
+    
+    let folder = match cmd.action.as_str() {
+        "cmd" => {
+            // Special handling for cmd - look for cd command
+            extract_folder_from_cd_command(&cmd.arg)?
+        },
+        "folder" => {
+            // For folder action, the arg is the folder itself
+            cmd.arg.clone()
+        },
+        "markdown" | "anchor" | "doc" | "text" => {
+            // For file-based actions, extract parent folder
+            extract_folder_from_path(&cmd.arg)
+                .ok_or_else(|| format!("Could not extract folder from path: {}", cmd.arg))?
+        },
+        _ => {
+            // Other actions don't have folder context
+            return Err(format!("Action '{}' does not provide folder context", cmd.action));
+        }
+    };
+    
+    // Expand tilde if present
+    let expanded = if folder.starts_with("~/") {
+        folder.replacen("~", &std::env::var("HOME").unwrap_or_default(), 1)
+    } else {
+        folder.clone()
+    };
+    
+    // Verify folder exists
+    if !Path::new(&expanded).exists() {
+        return Err(format!("Folder does not exist: {}", expanded));
+    }
+    
+    Ok(expanded)
 }
 
 /// Add date/time variables to the context
@@ -438,6 +541,12 @@ pub fn process_template(
     
     // Create the command
     let mut command = create_command_from_template(template, context);
+    
+    // Check if any errors were queued during template expansion
+    if crate::error_display::has_errors() {
+        // Return an error - the queued error will be displayed by the UI
+        return Err("Template expansion failed due to errors".into());
+    }
     
     // NOTE: File creation is now handled in process_template_files() which should be called
     // after the user saves in the command editor

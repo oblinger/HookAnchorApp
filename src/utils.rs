@@ -279,24 +279,69 @@ fn get_login_environment() -> Result<HashMap<String, String>, std::io::Error> {
 pub fn shell_simple(command: &str, blocking: bool) -> Result<std::process::Output, std::io::Error> {
     verbose_log("SHELL", &format!("SIMPLE: {}", command));
     
+    // Detailed logging
+    detailed_log("SHELL_SIMPLE", "===========================================");
+    detailed_log("SHELL_SIMPLE", &format!("Command: '{}'", command));
+    detailed_log("SHELL_SIMPLE", &format!("Blocking: {}", blocking));
+    detailed_log("SHELL_SIMPLE", &format!("Current dir: {:?}", std::env::current_dir()));
+    
     let mut cmd = Command::new("sh");
     cmd.arg("-c").arg(command);
     
+    detailed_log("SHELL_SIMPLE", "Created Command object with sh -c");
+    detailed_log("SHELL_SIMPLE", &format!("Full command: sh -c '{}'", command));
+    
     if blocking {
-        cmd.output()
+        detailed_log("SHELL_SIMPLE", "Executing in BLOCKING mode (waiting for completion)");
+        let result = cmd.output();
+        
+        match &result {
+            Ok(output) => {
+                detailed_log("SHELL_SIMPLE", &format!("Command completed with exit status: {:?}", output.status));
+                detailed_log("SHELL_SIMPLE", &format!("Exit code: {:?}", output.status.code()));
+                detailed_log("SHELL_SIMPLE", &format!("STDOUT length: {} bytes", output.stdout.len()));
+                detailed_log("SHELL_SIMPLE", &format!("STDERR length: {} bytes", output.stderr.len()));
+                
+                if !output.stdout.is_empty() {
+                    let stdout_str = String::from_utf8_lossy(&output.stdout);
+                    detailed_log("SHELL_SIMPLE", &format!("STDOUT content: {}", stdout_str.trim()));
+                }
+                if !output.stderr.is_empty() {
+                    let stderr_str = String::from_utf8_lossy(&output.stderr);
+                    detailed_log("SHELL_SIMPLE", &format!("STDERR content: {}", stderr_str.trim()));
+                }
+            },
+            Err(e) => {
+                detailed_log("SHELL_SIMPLE", &format!("Command FAILED with error: {}", e));
+                detailed_log("SHELL_SIMPLE", &format!("Error kind: {:?}", e.kind()));
+            }
+        }
+        
+        detailed_log("SHELL_SIMPLE", "===========================================");
+        result
     } else {
+        detailed_log("SHELL_SIMPLE", "Executing in NON-BLOCKING mode (spawn and return)");
         match cmd.spawn() {
-            Ok(_) => {
+            Ok(child) => {
+                detailed_log("SHELL_SIMPLE", &format!("Process spawned successfully with PID: {:?}", child.id()));
+                detailed_log("SHELL_SIMPLE", "Returning dummy success output for non-blocking call");
+                
                 // Return dummy success output for non-blocking
                 // Use a command that always succeeds to get a proper ExitStatus
                 let dummy_output = Command::new("true").output()?;
+                detailed_log("SHELL_SIMPLE", "===========================================");
                 Ok(std::process::Output {
                     status: dummy_output.status,
                     stdout: Vec::new(),
                     stderr: Vec::new(),
                 })
             },
-            Err(e) => Err(e),
+            Err(e) => {
+                detailed_log("SHELL_SIMPLE", &format!("Failed to spawn process: {}", e));
+                detailed_log("SHELL_SIMPLE", &format!("Error kind: {:?}", e.kind()));
+                detailed_log("SHELL_SIMPLE", "===========================================");
+                Err(e)
+            },
         }
     }
 }

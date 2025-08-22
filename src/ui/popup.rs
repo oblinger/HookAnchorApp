@@ -534,7 +534,9 @@ impl AnchorSelector {
     
     /// Display an error dialog to the user
     /// This is a generic function for showing errors in a popup dialog
-    pub fn show_error_dialog(&mut self, error_message: &str) {
+    /// This is private - errors should be queued via queue_user_error() 
+    /// and displayed automatically by the UI
+    fn show_error_dialog(&mut self, error_message: &str) {
         self.dialog.show_error(error_message);
     }
     
@@ -543,7 +545,7 @@ impl AnchorSelector {
     // =============================================================================
     
     /// Main entry point for executing actions - routes based on action type
-    fn execute(&mut self, action: &crate::core::unified_actions::Action) {
+    fn execute(&mut self, action: &crate::core::actions::Action) {
         use crate::utils::debug_log;
         
         debug_log("ACTION_EXEC", &format!("Executing action type: {}", action.action_type()));
@@ -563,61 +565,47 @@ impl AnchorSelector {
     }
     
     /// Execute an action locally in the popup context
-    fn execute_locally(&mut self, action: &crate::core::unified_actions::Action) {
+    fn execute_locally(&mut self, action: &crate::core::actions::Action) {
         use crate::utils::{debug_log, log_error};
         
         debug_log("ACTION_LOCAL", &format!("Executing {} locally", action.action_type()));
         
-        match action.action_type() {
-            "template" => {
-                // Get template name from action or use default
-                let template_name = action.get_string("name").unwrap_or("default");
-                debug_log("ACTION_LOCAL", &format!("Processing template: {}", template_name));
-                
-                // Use existing template handling
-                self.handle_template_create_named_impl(template_name);
-            }
-            "popup" => {
-                // Handle popup-specific actions
-                debug_log("ACTION_LOCAL", "Processing popup action");
-                // TODO: Implement popup-specific actions
-            }
-            _ => {
-                log_error(&format!("Unknown local action type: {}", action.action_type()));
+        // For template actions, we need special UI handling
+        if action.action_type() == "template" {
+            // Get template name from action or use default
+            let template_name = action.get_string("name").unwrap_or("default");
+            debug_log("ACTION_LOCAL", &format!("Processing template UI: {}", template_name));
+            
+            // Use existing template UI handling
+            self.handle_template_create_named_impl(template_name);
+        } else {
+            // All other actions go through the unified actions::execute_locally
+            match crate::core::actions::execute_locally(action, None, None) {
+                Ok(result) => {
+                    debug_log("ACTION_LOCAL", &format!("Action executed successfully: {}", result));
+                    self.should_exit = true;
+                }
+                Err(e) => {
+                    log_error(&format!("Failed to execute action locally: {}", e));
+                }
             }
         }
     }
     
     /// Send an action to the server for execution
-    fn send_action_to_server(&mut self, action: &crate::core::unified_actions::Action) {
+    fn send_action_to_server(&mut self, action: &crate::core::actions::Action) {
         use crate::utils::{debug_log, log_error};
-        use crate::command_server::CommandClient;
         
-        // Serialize action to JSON
-        match serde_json::to_string(action) {
-            Ok(action_json) => {
-                debug_log("ACTION_SERVER", &format!("Sending action JSON: {}", action_json));
-                
-                // Send Action directly to server (new protocol)
-                match CommandClient::new() {
-                    Ok(client) => {
-                        match client.send_json(&action_json) {
-                            Ok(_response) => {
-                                debug_log("ACTION_SERVER", "Action sent successfully");
-                                self.should_exit = true;
-                            }
-                            Err(e) => {
-                                log_error(&format!("Failed to send action to server: {}", e));
-                            }
-                        }
-                    }
-                    Err(e) => {
-                        log_error(&format!("Failed to connect to command server: {}", e));
-                    }
-                }
+        debug_log("ACTION_SERVER", &format!("Sending action to server: {:?}", action));
+        
+        // Use the new unified send_for_execution function
+        match crate::execution_server::send_for_execution(action) {
+            Ok(()) => {
+                debug_log("ACTION_SERVER", "Action sent successfully");
+                self.should_exit = true;
             }
             Err(e) => {
-                log_error(&format!("Failed to serialize action: {}", e));
+                log_error(&format!("Failed to send action to server: {}", e));
             }
         }
     }
@@ -639,7 +627,7 @@ impl AnchorSelector {
                     
                     // Convert command to action and execute through unified system
                     crate::utils::log("=== UNIFIED ACTION SYSTEM: Converting command to action ===");
-                    use crate::core::unified_actions::command_to_action;
+                    use crate::core::actions::command_to_action;
                     let action = command_to_action(selected_cmd);
                     crate::utils::log(&format!("UNIFIED ACTION: Created action type='{}' from command='{}'", 
                         action.action_type(), selected_cmd.command));
@@ -745,7 +733,7 @@ impl AnchorSelector {
                 // Don't copy link if it's a separator
                 if !PopupState::is_separator_command(selected_cmd) {
                     // Use launcher to execute the link_to_clipboard action
-                    let link_cmd = crate::command_server::make_command("link_to_clipboard", &selected_cmd.command);
+                    let link_cmd = crate::execution_server::make_command("link_to_clipboard", &selected_cmd.command);
                     // execute_via_server now returns void and handles all retries internally
                     execute_via_server(&link_cmd);
                 }
@@ -1119,7 +1107,7 @@ impl AnchorSelector {
                         }
                     } else {
                         // Not a template action, execute directly
-                        match crate::core::unified_actions::execute_action(
+                        match crate::core::actions::execute_locally(
                             action, 
                             None,  // No primary arg for templates
                             Some(context.variables.clone())
@@ -1912,7 +1900,7 @@ impl AnchorSelector {
         
         // Step 1: Server teardown using clean top-level function
         println!("\n🔄 Step 1/4: Tearing down server...");
-        match crate::command_server_management::kill_existing_server() {
+        match crate::execution_server_management::kill_existing_server() {
             Ok(()) => {
                 crate::utils::debug_log("REBUILD", "Server teardown completed successfully");
                 println!("  ✅ Server teardown completed");
@@ -1925,7 +1913,7 @@ impl AnchorSelector {
         
         // Step 2: Server setup using clean top-level function  
         println!("\n🚀 Step 2/4: Setting up new server...");
-        match crate::command_server_management::start_server_via_terminal() {
+        match crate::execution_server_management::start_server_via_terminal() {
             Ok(()) => {
                 crate::utils::debug_log("REBUILD", "Server setup completed successfully");
                 println!("  ✅ New server started in Terminal window");
@@ -2108,7 +2096,7 @@ impl AnchorSelector {
             utils::log(&format!("SHOW_FOLDER: Attempting to launch folder: '{}'", path));
             
             // Launch the folder (popup stays open)
-            let folder_cmd = crate::command_server::make_command("folder", &path);
+            let folder_cmd = crate::execution_server::make_command("folder", &path);
             utils::log(&format!("SHOW_FOLDER: Created command with action='{}', arg='{}'", 
                 folder_cmd.action, folder_cmd.arg));
             // execute_via_server now returns void and handles all retries internally
@@ -3743,16 +3731,27 @@ impl eframe::App for PopupWithControl {
                         if is_offscreen {
                             crate::utils::log(&format!("[SHOW] Window is off-screen at {:?} (screen: {}x{}), centering on main display", 
                                 rect.min, screen_width, screen_height));
-                            // Center on main display
+                            // Center on main display but ensure it's not too close to bottom
                             let window_size = rect.size();
                             let center_x = (screen_width - window_size.x) / 2.0;
-                            let center_y = (screen_height - window_size.y) / 2.0;
+                            let center_y = (screen_height - window_size.y) / 3.0;
+                            // Ensure window is at least 100 pixels from bottom
+                            let max_y = (screen_height - window_size.y - 100.0).max(0.0);
+                            let center_y = center_y.min(max_y);
                             let center_pos = egui::pos2(center_x.max(0.0), center_y.max(0.0));
                             ctx.send_viewport_cmd(egui::ViewportCommand::OuterPosition(center_pos));
                             crate::utils::log(&format!("[SHOW] Repositioned window to {:?}", center_pos));
                         } else {
                             // Window is on-screen, restore saved position if different
-                            if let Some(saved_pos) = load_window_position() {
+                            if let Some(mut saved_pos) = load_window_position() {
+                                // Ensure saved position is not too close to bottom
+                                let window_size = rect.size();
+                                let max_y = (screen_height - window_size.y - 100.0).max(0.0);
+                                if saved_pos.y > max_y {
+                                    crate::utils::log(&format!("[SHOW] Adjusting saved position from y={} to y={} (too close to bottom)", saved_pos.y, max_y));
+                                    saved_pos.y = max_y;
+                                }
+                                
                                 let pos_diff = (rect.min.x - saved_pos.x).abs() + (rect.min.y - saved_pos.y).abs();
                                 crate::utils::log(&format!("[SHOW] Current position: {:?}, Saved position: {:?}, Diff: {}", rect.min, saved_pos, pos_diff));
                                 if pos_diff > 5.0 {  // Only restore if significantly different
@@ -3775,7 +3774,10 @@ impl eframe::App for PopupWithControl {
                         // Get actual screen dimensions
                         let (screen_width, screen_height) = get_actual_screen_dimensions();
                         let center_x = (screen_width - window_size.x) / 2.0;
-                        let center_y = (screen_height - window_size.y) / 2.0;
+                        let center_y = (screen_height - window_size.y) / 3.0;
+                        // Ensure window is at least 100 pixels from bottom
+                        let max_y = (screen_height - window_size.y - 100.0).max(0.0);
+                        let center_y = center_y.min(max_y);
                         let center_pos = egui::pos2(center_x.max(0.0), center_y.max(0.0));
                         ctx.send_viewport_cmd(egui::ViewportCommand::OuterPosition(center_pos));
                         crate::utils::log(&format!("[SHOW] Positioned new window to {:?}", center_pos));

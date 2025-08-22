@@ -47,8 +47,8 @@ pub mod vault;
 pub mod command_operations;
 
 // Background command server
-pub mod command_server;
-pub use command_server::{CommandClient, execute_via_server};
+pub mod execution_server;
+pub use execution_server::{send_for_execution, is_server_available, execute_via_server};
 
 // Setup assistant for first-run configuration
 pub mod setup_assistant;
@@ -60,7 +60,7 @@ pub mod process_monitor;
 pub mod error_display;
 
 // Server management
-pub mod command_server_management;
+pub mod execution_server_management;
 
 // Popup server control
 pub mod popup_server_control;
