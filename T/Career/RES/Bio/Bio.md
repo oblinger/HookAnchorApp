@@ -6,10 +6,12 @@
   , [Bio Obsidian](spot://bioobsidian),
   DELS: ,[Bio Obsidian](spot://bioobsidian),
   , ,
-  , [Bio Note](spot://bionote), 
+  , [Bio Note](spot://bionote),
+  , [Bio Email Obsidian](spot://bioemailobsidian), [Bio Intro Obsidian](spot://biointroobsidian)
+  , [Bio Verbal Obsidian](spot://bioverbalobsidian), 
   DELS: [Bio Note](spot://bionote),[Bio Obsidian](spot://bioobsidian),[Bio Note](spot://bionote),[Bio Note](spot://bionote),
 
-
+d
 
 
 

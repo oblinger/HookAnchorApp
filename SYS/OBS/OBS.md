@@ -119,7 +119,11 @@
   , [OBS Obsidian](spot://obsobsidian),
   DELS: ,[OBS Obsidian](spot://obsobsidian),
   , ,
-  , [OBS Note](spot://obsnote), 
+  , [OBS Note](spot://obsnote),
+  , [OBS API Docs Obsidian](spot://obsapidocsobsidian)
+  , [OBS Examples Obsidian](spot://obsexamplesobsidian)
+  , [OBS Plugins Obsidian](spot://obspluginsobsidian)
+  , [OBS Projects Obsidian](spot://obsprojectsobsidian), 
   DELS: [OBS Note](spot://obsnote),[OBS Obsidian](spot://obsobsidian),[OBS Note](spot://obsnote),[OBS Note](spot://obsnote),
 
 

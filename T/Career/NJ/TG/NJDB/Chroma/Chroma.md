@@ -1,18 +1,14 @@
 .[[Chroma]].
-  , ,
-  , ,
-  , ,
-  , [Chroma Obsidian](spot://chromaobsidian),
-  DELS: ,[Chroma Obsidian](spot://chromaobsidian),
-  , ,
-  , [Chroma Note](spot://chromanote), 
-  DELS: [Chroma Note](spot://chromanote),[Chroma Obsidian](spot://chromaobsidian),[Chroma Note](spot://chromanote),[Chroma Note](spot://chromanote),
-
 # Top
 #### kind: StartAI
 #### area: CoreDL
 #### stance: 
 ## Sections
+### LAMP
+#### pri: C-
+#### contacts: 
+#### cool: C+
+#### job: 
 ### Cash
 #### cash_trend: upward
 #### cash: 
@@ -20,7 +16,6 @@
 #### funding: 
 Secured $18M in seed funding (Apr 2023) led by Quiet Capital ￼ to build its open-source AI-native database
 ### Coolness
-#### cool: C+
 #### cool_why: 
 #### cool_mission: 
 #### cool_balance: 
@@ -36,7 +31,6 @@ Chroma Cloud – a forthcoming fully serverless, elastic cloud platform for Chro
 #### dlproj3: 
 Ecosystem Integrations – deep integration of Chroma with AI dev tools (e.g. LangChain and even a .NET SDK by Microsoft) to accelerate GenAI app development by storing and querying domain-specific context embeddings ￼ ￼.
 ### Job Postings
-#### job: 
 #### job_why: 
 #### job_bay: 
 Member of the Technical Staff – Applied Research – https://www.google.com/search?q=%22Applied+Research%22+ChromaDB 

@@ -6,7 +6,9 @@
   , [Journal Obsidian](spot://journalobsidian),
   DELS: ,[Journal Obsidian](spot://journalobsidian),
   , ,
-  , [Journal Note](spot://journalnote), 
+  , [Journal Note](spot://journalnote),
+  , [JOURNAL Entry Obsidian](spot://journalentryobsidian)
+  , [Journal Old Obsidian](spot://journaloldobsidian), 
   DELS: [Journal Note](spot://journalnote),[Journal Obsidian](spot://journalobsidian),[Journal Note](spot://journalnote),[Journal Note](spot://journalnote),
 
 #log <[[DATED]]

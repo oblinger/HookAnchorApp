@@ -7,12 +7,16 @@
   , ,
   , [Sourcegraph Note](spot://sourcegraphnote), 
   DELS: [Sourcegraph Note](spot://sourcegraphnote),[Sourcegraph Obsidian](spot://sourcegraphobsidian),[Sourcegraph Note](spot://sourcegraphnote),[Sourcegraph Note](spot://sourcegraphnote),
-
 # Top
 #### kind: StartAI
 #### area: Dev Tools
 #### stance: 
 ## Sections
+### LAMP
+#### pri: 
+#### contacts: 
+#### cool: 
+#### job: 
 ### Cash
 #### cash_trend: down
 #### cash: 
@@ -20,7 +24,6 @@
 #### funding: 
 Raised $50M in 2023 at a sharply lower valuation (~80% drop from its 2021 unicorn valuation) – reflecting a broader “valuation reset” in late-stage startups ￼
 ### Coolness
-#### cool: 
 #### cool_why: 
 #### cool_mission: 
 #### cool_balance: 
@@ -35,7 +38,6 @@ Cody Open Source – In late 2023, Sourcegraph open-sourced Cody (v1.0) under an
 #### dlproj3: 
 Semantic Code Graph – Sourcegraph’s backend builds a “code graph” by indexing repositories and understanding definitions and references (who calls what, etc.). Cody leverages this semantic graph: for example, it can retrieve all usages of a function or the documentation of an API to ground its answers. This approach provides deeper context than plain text search, improving the relevance of Cody’s suggestions and plans (e.g. it can outline an implementation by finding related code patterns) ￼. Sourcegraph plans to integrate this more tightly so Cody’s autocompletions and refactoring advice become even more aware of project-wide code structure.
 ### Job Postings
-#### job: 
 #### job_why: 
 #### job_bay: Senior AI Engineer | San Francisco
 #### job_remote: Director of Machine Learning | Remote

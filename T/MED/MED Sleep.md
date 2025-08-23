@@ -1,7 +1,9 @@
 ## Medical Sleeping Meds --
 ## Strategies
 - counting backwards from 999
-
+## INFO 
+### Sleep Medications
+[[Med Sleep ambien]] 
 # LOG
 ### 2022-03-13 - Frequent Sleeping Pills
 

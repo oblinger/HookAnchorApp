@@ -7,19 +7,22 @@
   , ,
   , [Clarifai Note](spot://clarifainote), 
   DELS: [Clarifai Note](spot://clarifainote),[Clarifai Obsidian](spot://clarifaiobsidian),[Clarifai Note](spot://clarifainote),[Clarifai Note](spot://clarifainote),
-
 # Top
 #### kind: BigAI
 #### area: CoreDL
 #### stance: 
 ## Sections
+### LAMP
+#### pri: ?
+#### contacts: 
+#### cool: 
+#### job: 
 ### Cash
 #### cash_trend: flat
 #### cash: 
 #### cash_available: 17
 #### funding: 1.46
 ### Coolness
-#### cool: 
 #### cool_why: 
 #### cool_mission: 
 #### cool_balance: 
@@ -31,7 +34,6 @@
 #### dlproj2: 
 Stable Diffusion XL integration [https://www.clarifai.com/blog/clarifai-integrates-stable-diffusion-xl]
 ### Job Postings
-#### job: 
 #### job_why: 
 #### job_bay: None
 #### job_remote: Senior Research Scientist, Machine Learning

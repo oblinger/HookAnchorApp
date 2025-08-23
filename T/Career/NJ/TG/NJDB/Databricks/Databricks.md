@@ -1,4 +1,7 @@
 .[[Databricks]].
+[LinkedIn Connections](https://www.linkedin.com/search/results/people/?currentCompany=%5B%223477522%22%5D&network=%5B%22F%22%5D)
+
+[[@Databricks.md]]
   , ,
   , ,
   , ,
@@ -7,16 +10,19 @@
   , ,
   , [Databricks Note](spot://databricksnote), 
   DELS: [Databricks Note](spot://databricksnote),[Databricks Obsidian](spot://databricksobsidian),[Databricks Note](spot://databricksnote),[Databricks Note](spot://databricksnote),
-
 # Top
 #### kind: Big
 #### area: CoreDL
 #### stance: 
 ## Sections
+### LAMP
+#### pri: 
+#### contacts: [[@Jonathan DeVito.md]]
+#### cool: 
+#### job: 
 ### Cash
 #### cash: 
 ### Coolness
-#### cool: 
 #### cool_why: 
 #### cool_mission: 
 #### cool_balance: 
@@ -39,7 +45,6 @@ LLM Foundry (2023) – An open-source library by Databricks for training, fine-t
 #### dlproj8: —
 #### dlproj9: —
 ### Job Postings
-#### job: 
 #### job_why: 
 #### job_bay: 
 ALSO Remote. GenAI Senior Staff Machine Learning Engineer, Platform https://www.databricks.com/company/careers/engineering/genai-senior-staff-machine-learning-engineer-platform-6954411002

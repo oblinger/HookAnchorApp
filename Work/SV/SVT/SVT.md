@@ -9,7 +9,14 @@
   , [SVT Obsidian](spot://svtobsidian),
   DELS: ,[SVT Obsidian](spot://svtobsidian),
   , ,
-  , [SVT Note](spot://svtnote), 
+  , [SVT Note](spot://svtnote),
+  , [SVT Bitbucket Obsidian](spot://svtbitbucketobsidian)
+  , [SVT Clickup Obsidian](spot://svtclickupobsidian)
+  , [SVT Confluence Obsidian](spot://svtconfluenceobsidian)
+  , [SVT Google Drive Obsidian](spot://svtgoogledriveobsidian)
+  , [SVT Jira Obsidian](spot://svtjiraobsidian), [SVT Polaris Obsidian](spot://svtpolarisobsidian)
+  , [SVT Sentry Obsidian](spot://svtsentryobsidian), [SVT Slack Obsidian](spot://svtslackobsidian)
+  , [SVT Virtual Box Notes Obsidian](spot://svtvirtualboxnotesobsidian), 
   DELS: [SVT Note](spot://svtnote),[SVT Obsidian](spot://svtobsidian),[SVT Note](spot://svtnote),[SVT Note](spot://svtnote),
 
 

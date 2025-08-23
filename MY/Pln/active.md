@@ -2,7 +2,7 @@
 - https://job-boards.greenhouse.io/anthropic/jobs/4020159008
 
 - Fin plan for Merrill
-- - deep work schedule
+- Deep work schedule
 - [[Journaling]] 
 -  quarterly goals
 - - Eli orig birth cert

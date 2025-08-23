@@ -1,12 +1,20 @@
 # Top
+[LinkedIn Connections](https://www.linkedin.com/search/results/people/?currentCompany=%5B%225266%22%5D&network=%5B%22F%22%5D)
+
+[[@SRI International.md]]
 #### kind: Big
 #### area: CoreDL
 #### stance: 
 ## Sections
+### LAMP
+#### pri: B
+#### contacts: 
+[[@Deborah Shands.md]], [[@Ken Murray.md]], [[@Patrick Lincoln.md]], [[@Raymond Perrault.md]], [[@Vijay Jaswal.md]]
+#### cool: 
+#### job: 
 ### Cash
 #### cash: 
 ### Coolness
-#### cool: 
 #### cool_why: 
 #### cool_mission: 
 #### cool_balance: 
@@ -29,7 +37,6 @@ TrinityAI (Neuro-Symbolic) – under DARPA’s ANSR program, SRI leads TrinityAI
 #### dlproj8: —
 #### dlproj9: —
 ### Job Postings
-#### job: 
 #### job_why: 
 #### job_bay: 
 #### job_remote: 

@@ -8,7 +8,7 @@
   , [@Schwab Note](spot://@schwabnote), 
   DELS: [@Schwab Note](spot://@schwabnote),[@Schwab Obsidian](spot://@schwabobsidian),[@Schwab Note](spot://@schwabnote),[@Schwab Note](spot://@schwabnote),
 
-=[[Org]].   [Schwab-Site](https://client.schwab.com) 
+=[[_Org]].   [Schwab-Site](https://client.schwab.com) 
 
 
 

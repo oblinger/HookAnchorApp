@@ -7,18 +7,21 @@
   , ,
   , [Findem Note](spot://findemnote), 
   DELS: [Findem Note](spot://findemnote),[Findem Obsidian](spot://findemobsidian),[Findem Note](spot://findemnote),[Findem Note](spot://findemnote),
-
 # Top
 #### kind: StartAI
 #### area: HR Tech
 #### stance: 
 ## Sections
+### LAMP
+#### pri: 
+#### contacts: 
+#### cool: 
+#### job: 
 ### Cash
 #### cash_trend: flat
 #### cash: 
 #### cash_available: 10
 ### Coolness
-#### cool: 
 #### cool_why: 
 #### cool_mission: 
 #### cool_balance: 
@@ -34,7 +37,6 @@ Conversational Talent Assistant – Findem integrated Generative AI (ChatGPT) in
 #### dlproj3: 
 Findem–HireBrain Workflow – Findem partnered with HireBrain (a hiring platform using neuroscience and generative AI) to streamline the hiring process end-to-end ￼. In this collaborative solution, a HireBrain AI Intake Assistant first captures requirements from hiring managers via a conversation and automatically generates a well-defined job description. That job description feeds into Findem’s AI sourcing engine (the Findem Copilot), which immediately searches for candidates matching the specified attributes ￼. This integration of generative AI in job scoping with deep AI search in sourcing allows companies to go from initial role definition to a slate of quality candidates in a fraction of the time, with the AI handling the heavy lifting of both understanding needs and finding talent.
 ### Job Postings
-#### job: 
 #### job_why: 
 #### job_bay: Principal Product Manager – Google search
 #### job_remote: Director, Product Management – Google search

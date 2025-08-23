@@ -12,3 +12,5 @@ How about having lunch together at Nvidia HQ in Santa Clara on Wed (12/18)? If i
   
 Chang
 
+
+#pp    [Distinguished Engineer / Chief Architect](https://www.linkedin.com/in/cyuan)  [NVIDIA](./_Org/@NVIDIA.md)  

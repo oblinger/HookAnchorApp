@@ -1,21 +1,39 @@
 
-.**Q2**.
+.**TODO**.
+  re-reun softbank stuff
+  [[2025 AI Codeing Brainstorm|AI-code]]  
+  Baseball opportunity
+  [Schart](https://www.notion.so/sportsvisio/SHOT-CHARTS-END-2-END-1d4719d6f2bd802ca4dfc8b1e0ff1fd5?pvs=4): POC
+  [AI Prod Matrix](https://docs.google.com/spreadsheets/d/1iQvOKwS09QcFTqXK1Ko0ydSgwqjXItbCRrkOMZaBj40/edit?gid=0#gid=0) possible products
+  Effort Analysis for BB stats
+  [DT](spot://dt): Shots Data
+  Halo analysis
+  Fireball analysis
+  Fernley Projects Locked Down
+  [PlayOn](hook://playon): Timeline.  [[@Jason Syversen]] 
+	  - Get access to games
+	  - Get contract spec
+  MGT
+    - Patent Restart
+    + Refine/decide on an all-encompassing BB AI accuracy metric
+    + Followup with Softbank with new accuracy numbers given recent improvement
+    + turn on AI Fireballs/AR by next management meeting in app
+    - Followup with Playon about raw data and establish a regular tempo for communication (Note: I have 3 touch points planned.
+    - talks to mike F about surging up to add web manager features
+    - Pursues beta testing in app
+    - AI-code brainstorm
+ SOON
+    Beta tester stuff
+    [[@Google]] GPU  answers
+    rerun softbank; send email 
+    spotlight effect (fireball++)
+    stability:  upload stress test
+    Test automation:  (1) Mery Impersonation; (2) API testing.
+    Top of mind from Jason; ask for topics before (for mgt meeting)
+## PAUSE
   [**BUG**](https://www.notion.so/sportsvisio/SOFTWARE-STABILIZATION-1eb719d6f2bd807586afdba684e60901?pvs=4): Beta, RegTst0, Factory, [R](https://www.notion.so/sportsvisio/Regression-Testing-1f4719d6f2bd80ddaa0de76008e9f41b?pvs=4) 
   [**PATENT**](https://www.notion.so/sportsvisio/PATENTS-3434075a725f4997b57d9aa9bd0b818a?pvs=4): (do it)
   [**CAMERA**](https://www.notion.so/sportsvisio/AI-Camera-e8e5e2d211604c9cbe81ca19fa11f8cd?pvs=4): LOE Plan,  [V1](https://www.notion.so/sportsvisio/AI-CAMERA-v1-1e0719d6f2bd80a3abb8eac297561b07?pvs=4) 
-  [DT](spot://dt): Shots Data
-  [Schart](https://www.notion.so/sportsvisio/SHOT-CHARTS-END-2-END-1d4719d6f2bd802ca4dfc8b1e0ff1fd5?pvs=4): POC
-  Effort Analysis for BB stats
-  - Halo analysis
-  
-  Speedups
-  DAT push
-  [AI Prod Matrix](https://docs.google.com/spreadsheets/d/1iQvOKwS09QcFTqXK1Ko0ydSgwqjXItbCRrkOMZaBj40/edit?gid=0#gid=0) possible products
-
-Greg
-
-
-## PAUSE
 - F11 [AWS](https://docs.google.com/document/d/1QS4081TT_Yyz1TS9GLZSfjQaczQ7ynzWTSu14waDcG0/edit?tab=t.0):	Estimate from Brian [[2024-08 Backend Architect|Arch]]: [r](https://docs.google.com/document/d/1gbutlP_EF-_wUdg4F3IEuw8Bhz8oET3Z/edit) 
 - playcharts
  Crossover:	^james checkin
@@ -27,45 +45,24 @@ Greg
   SW proc:	[db](https://www.notion.so/sportsvisio/cf65339c09c6486296f8adaa084c141a?v=f8a45e385eea4c2fb590502835f4453f&pvs=4),[doc](https://docs.google.com/document/d/1aHnoqgQ3H_0abUtlVWoMPHDA7nQhzoq0JRqZLujORc0/edit?usp=drive_web&ouid=105281685541312342727)  ^Jasu 
   Assess	> Assess plan for BB
 .[[work]].
-  , [[SV]],
-  , ,
-  , ,
-  , ,
+  , [[SV]],    
   , [work Obsidian](spot://workobsidian),
   DELS: ,[work Obsidian](spot://workobsidian),
-  , ,
+  , ,  
   , [work Note](spot://worknote), 
   DELS: [work Note](spot://worknote),[work Obsidian](spot://workobsidian),[work Note](spot://worknote),[work Note](spot://worknote),
-
-
-BUG CAPTURE
-Just for everyone's awareness.  @Mery de Jesus is the one that is ensuring that we are capturing each bug that is found in our app.  She needs to ensure that she can reporduce the bug, so it makes sense that she is capturing the ticket.
-
-@Mery de Jesus No problem at all with this workflow!  My focus is that we are capturing EVERY significant bug even if we cannot reproduce the bug we still need to track that it occurred so we can track the stability of our system.
-
-I pushed this to the software channel so everyone can see our work flow.
-
-
-## SOON [[mgt]] [[CVP]] 
-
+ SOON [[mgt]] [[CVP]] 
 [[Journaling]] 
-## .
-
-
-Tom Maginuss
-
-
-bad outcome on the 3x3
 
 
 
-
-
-
-
-
-
-
-
-
-
+  1. CLI: ha -x "2024 AI Product Choice"
+  2. cmd.rs: run_execute_top_match() → finds command with action="anchor"
+  3. execute.rs: command_to_action() → creates Action with action_type="anchor"
+  4. execute.rs: execute() → checks is_server_executed()
+  5. execute.rs: is_server_executed() → sends to server via send_for_execution()
+  6. execution_server.rs: Server receives Action, converts to Command, then back to Action
+  7. execution_server.rs: execute_command_with_env() → calls actions::execute_locally()
+  8. actions.rs: execute_locally() → matches on action_type="anchor"
+  9. actions.rs: Falls to default case → calls JavaScript action_anchor function
+  10. config.js: action_anchor opens the folder (not the markdown file)

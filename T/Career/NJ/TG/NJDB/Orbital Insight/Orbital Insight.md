@@ -3,13 +3,17 @@
 #### area: Geospatial
 #### stance: 
 ## Sections
+### LAMP
+#### pri: 
+#### contacts: 
+#### cool: 
+#### job: 
 ### Cash
 #### cash_trend: down
 #### cash: 
 #### cash_available: 8
 #### funding: Raised $50M Series D in Nov 2019 ￼
 ### Coolness
-#### cool: 
 #### cool_why: 
 #### cool_mission: 
 #### cool_balance: 
@@ -24,7 +28,6 @@ Synthetic data for NGA – In a project with NGA, Orbital Insight is developing 
 #### dlproj3: 
 Supply chain monitoring – Deployed AI to track infrastructure and supply chain activity worldwide. Orbital’s algorithms (accelerated by GPU clusters) can count cars in parking lots, measure oil storage via tank shadows, and generally detect patterns in geospatial data for economic or real-estate indicators ￼.
 ### Job Postings
-#### job: 
 #### job_why: 
 #### job_bay: 
 #### job_remote: Computer Vision Scientist, Federal – Google Search​

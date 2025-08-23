@@ -7,12 +7,16 @@
   , ,
   , [LangChain Note](spot://langchainnote), 
   DELS: [LangChain Note](spot://langchainnote),[LangChain Obsidian](spot://langchainobsidian),[LangChain Note](spot://langchainnote),[LangChain Note](spot://langchainnote),
-
 # Top
 #### kind: StartAI
 #### area: CoreNLP
 #### stance: 
 ## Sections
+### LAMP
+#### pri: 
+#### contacts: 
+#### cool: 
+#### job: 
 ### Cash
 #### cash_trend: upward
 #### cash: 
@@ -20,7 +24,6 @@
 #### funding: 
 Landed a $25M Series A led by Sequoia (June 2023), bringing total funding to $35M ￼ ￼
 ### Coolness
-#### cool: 
 #### cool_why: 
 #### cool_mission: 
 #### cool_balance: 
@@ -35,7 +38,6 @@ LangChain Hub – a community hub for sharing and discovering prompts, chains, a
 #### dlproj3: 
 LangSmith – a unified platform for debugging, testing, and monitoring LLM apps built with LangChain. LangSmith (introduced 2023) provides tools to trace chain executions, evaluate output quality, and catch errors, helping move LLM applications from prototype to production reliably ￼.
 ### Job Postings
-#### job: 
 #### job_why: 
 #### job_bay: Forward Deployed Engineer – Google Search​
 #### job_remote: None currently

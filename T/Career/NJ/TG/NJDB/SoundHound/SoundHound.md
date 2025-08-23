@@ -7,16 +7,19 @@
   , ,
   , [SoundHound Note](spot://soundhoundnote), 
   DELS: [SoundHound Note](spot://soundhoundnote),[SoundHound Obsidian](spot://soundhoundobsidian),[SoundHound Note](spot://soundhoundnote),[SoundHound Note](spot://soundhoundnote),
-
 # Top
 #### kind: Big
 #### area: CoreNLP
 #### stance: 
 ## Sections
+### LAMP
+#### pri: 
+#### contacts: 
+#### cool: 
+#### job: 
 ### Cash
 #### cash: 
 ### Coolness
-#### cool: 
 #### cool_why: 
 #### cool_mission: 
 #### cool_balance: 
@@ -38,7 +41,6 @@ Chat AI for Automotive – an in-vehicle voice assistant that integrates generat
 #### dlproj8: —
 #### dlproj9: —
 ### Job Postings
-#### job: 
 #### job_why: 
 #### job_bay: 
 #### job_remote: 

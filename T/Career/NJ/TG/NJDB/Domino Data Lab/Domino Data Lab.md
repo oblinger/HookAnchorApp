@@ -3,6 +3,11 @@
 #### area: CoreDL
 #### stance: 
 ## Sections
+### LAMP
+#### pri: 
+#### contacts: 
+#### cool: 
+#### job: 
 ### Cash
 #### cash_trend: flat
 #### cash: 
@@ -10,7 +15,6 @@
 #### funding: 
 Raised $100M Series F (Oct 2021) led by Great Hill (with Coatue, Highland, Sequoia, NVIDIA) ￼ ￼
 ### Coolness
-#### cool: 
 #### cool_why: 
 #### cool_mission: 
 #### cool_balance: 
@@ -25,7 +29,6 @@ Vector DB Integration – Domino’s platform added native connectors for vector
 #### dlproj3: 
 AI Project Hub Templates – Domino’s AI Hub provides pre-built generative AI reference projects and templates (chatbots, summarization tools, LLM fine-tuning examples like LLaMA-2 and Falcon, etc.) using its Contextual AI platform, so enterprises can jumpstart GenAI use cases with best practices and minimal setup ￼ ￼.
 ### Job Postings
-#### job: 
 #### job_why: 
 #### job_bay: (No SF Bay Area-specific openings – roles are remote)
 #### job_remote: 

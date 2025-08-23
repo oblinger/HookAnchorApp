@@ -34,3 +34,6 @@ not app dept, this is card services????
 
 800-967-9521 Applications department (until 6pm)
 - 
+
+#pp    [Wells Fargo](https://www.wellsfargo.com)  
+# LOG

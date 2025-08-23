@@ -1,3 +1,7 @@
+- [x] Job tracking setup
+- [x] [[@Humanoid]] - Ready
+- [x] Create corp entries for all contacts
+- [x] White paper complete & Meet David.
 MX EL: writeLst Matrix, Nts,
 
 
@@ -54,7 +58,7 @@ s- get license
 [[2023-08 Ingest Alternatives Analysis]]:		Write up Q about portable devices
 [Reo-T09](https://docs.google.com/document/d/1kpvym1pJ
 - [ ] [[2023 SV Learning]]: 	RunApps; Call All; [[SV90.]]
-- [ ] [[COMS]]: 	Julian
+- [ ] [[COM]]: 	Julian
 - [ ] [[RNR]], [[Rpt]],
 - [ ] CV - Run config file execution
 - [ ] [Tix Flow](https://software-engineering-team.atlassian.net/wiki/spaces/SPORTSVISI1/pages/edit-v2/74678280)

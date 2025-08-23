@@ -13,3 +13,30 @@
 :: [[Fermi Paradox]]
 
 
+
+
+---
+
+# ArmChair
+
+This is an auto-generated anchor file for patch 'ArmChair'.
+
+Add your content here.
+
+
+---
+
+# ArmChair
+
+This is an auto-generated anchor file for patch 'ArmChair'.
+
+Add your content here.
+
+
+---
+
+# ArmChair
+
+This is an auto-generated anchor file for patch 'ArmChair'.
+
+Add your content here.

@@ -7,19 +7,22 @@
   , ,
   , [Colossyan Note](spot://colossyannote), 
   DELS: [Colossyan Note](spot://colossyannote),[Colossyan Obsidian](spot://colossyanobsidian),[Colossyan Note](spot://colossyannote),[Colossyan Note](spot://colossyannote),
-
 # Top
 #### kind: BigAI
 #### area: CoreDL
 #### stance: 
 ## Sections
+### LAMP
+#### pri: 
+#### contacts: 
+#### cool: 
+#### job: 
 ### Cash
 #### cash_trend: upward
 #### cash: 
 #### cash_available: 22
 #### funding: 0.16
 ### Coolness
-#### cool: 
 #### cool_why: 
 #### cool_mission: 
 #### cool_balance: 
@@ -31,7 +34,6 @@ Our mission is to push the boundaries of what’s possible in creating photoreal
 #### dlproj1: Colossyan Creator (AI avatars) [https://www.colossyan.com/]
 #### dlproj2: Multi-avatar scenes [*no direct link available*]
 ### Job Postings
-#### job: 
 #### job_why: 
 #### job_bay: None
 #### job_remote: Senior Machine Learning Engineer - Data

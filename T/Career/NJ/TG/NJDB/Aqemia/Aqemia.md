@@ -7,19 +7,22 @@
   , ,
   , [Aqemia Note](spot://aqemianote), 
   DELS: [Aqemia Note](spot://aqemianote),[Aqemia Obsidian](spot://aqemiaobsidian),[Aqemia Note](spot://aqemianote),[Aqemia Note](spot://aqemianote),
-
 # Top
 #### kind: BigAI
 #### area: Bio
 #### stance: 
 ## Sections
+### LAMP
+#### pri: 
+#### contacts: 
+#### cool: 
+#### job: 
 ### Cash
 #### cash_trend: upward
 #### cash: 
 #### cash_available: 190
 #### funding: 1.33
 ### Coolness
-#### cool: 
 #### cool_why: 
 #### cool_mission: 
 #### cool_balance: 
@@ -33,7 +36,6 @@ Our mission is to scale the drug discovery process by leveraging a unique-in-the
 Sanofi-Aqemia AI drug discovery partnership [https://www.sanofi.com/en/media-room/press-releases/2021/2021-10-19-07-00-00-2346697]
 #### dlproj3: AI-designed preclinical oncology pipeline [*no direct link available*]
 ### Job Postings
-#### job: 
 #### job_why: 
 #### job_bay: None
 #### job_remote: None

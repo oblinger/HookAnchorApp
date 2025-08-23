@@ -1,22 +1,18 @@
 .[[Zoox]].
-  , ,
-  , ,
-  , ,
-  , [Zoox Obsidian](spot://zooxobsidian),
-  DELS: ,[Zoox Obsidian](spot://zooxobsidian),
-  , ,
-  , [Zoox Note](spot://zooxnote), 
-  DELS: [Zoox Note](spot://zooxnote),[Zoox Obsidian](spot://zooxobsidian),[Zoox Note](spot://zooxnote),[Zoox Note](spot://zooxnote),
-
+[LinkedIn Connections](https://www.linkedin.com/search/results/people/?currentCompany=%5B%227597308%22%5D&network=%5B%22F%22%5D)
 # Top
 #### kind: Big
 #### area: Robotics
 #### stance: 
 ## Sections
+### LAMP
+#### pri: C
+#### contacts: 
+#### cool: 
+#### job: 
 ### Cash
 #### cash: 
 ### Coolness
-#### cool: 
 #### cool_why: 
 #### cool_mission: 
 #### cool_balance: 
@@ -38,7 +34,6 @@ CLAMS (Calibration & Localization Mapping Simultaneously) – ML-driven system f
 #### dlproj8: —
 #### dlproj9: —
 ### Job Postings
-#### job: 
 #### job_why: 
 #### job_bay: 
 #### job_remote: 

@@ -11,6 +11,50 @@
 
 
 # LOG
+
+### 2025-08-18  Huberman Ideas
+
+
+  Huberman's Foundational Fitness Protocol for Men
+
+  Weekly Schedule:
+  - Monday: Legs (Quads, Hamstrings, Calves)
+  - Tuesday: Heat/Cold Exposure + 35 min Zone 2 Cardio
+  - Wednesday: Torso (Chest, Back, Shoulders)
+  - Thursday: 35-60 min Zone 2 Cardio
+  - Friday: High-Intensity Interval Training (HIIT)
+  - Saturday: Arms, Neck, Abs
+  - Sunday: Long Zone 2 Cardio (60-90 min) or Rest
+
+  Strength Training Protocol:
+  - Month 1-2: Heavy (3-4 sets × 5-8 reps, 2-4 min rest)
+  - Month 3-4: Moderate (2-3 sets × 8-15 reps, 90 sec rest)
+  - Alternate monthly between strength and hypertrophy focus
+  - 2 exercises per muscle group, different ranges of motion
+
+  Protein & Nutrition Timing:
+  - Daily: 1g protein per lb body weight
+  - Post-workout: 40g whey protein (within 30-60 min optimal, up to 3 hours acceptable)
+  - Leucine: 700-3000mg per meal for muscle synthesis
+  - Carbs: 0.3g/kg body weight within 2 hours post-workout
+
+  Key Supplements:
+  - Creatine: 5g daily
+  - Whey protein powder
+  - Consider: Vitamin D, Omega-3s, Magnesium
+
+  Training Tips:
+  - Train 30 min, 3 hours, or 11 hours after waking
+  - Men can tolerate fasted training better than women
+  - 3-hour protein window gives flexibility
+  - Zone 2 cardio: Can hold conversation, nasal breathing
+
+  Progressive Overload:
+  - Increase weight 5-10% when hitting upper rep range
+  - Track workouts for consistent progress
+  - Deload week every 4-6 weeks
+
+
 ### 2024-12-24  Ideas
 
 Sum Up

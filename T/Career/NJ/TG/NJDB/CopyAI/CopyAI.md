@@ -1,25 +1,20 @@
 .[[CopyAI]].
-  , ,
-  , ,
-  , ,
-  , [CopyAI Obsidian](spot://copyaiobsidian),
-  DELS: ,[CopyAI Obsidian](spot://copyaiobsidian),
-  , ,
-  , [CopyAI Note](spot://copyainote), 
-  DELS: [CopyAI Note](spot://copyainote),[CopyAI Obsidian](spot://copyaiobsidian),[CopyAI Note](spot://copyainote),[CopyAI Note](spot://copyainote),
-
 # Top
 #### kind: BigAI
 #### area: CoreNLP
 #### stance: 
 ## Sections
+### LAMP
+#### pri: ?
+#### contacts: 
+#### cool: 
+#### job: 
 ### Cash
 #### cash_trend: flat
 #### cash: 
 #### cash_available: 3
 #### funding: 0.23
 ### Coolness
-#### cool: 
 #### cool_why: 
 #### cool_mission: 
 #### cool_balance: 
@@ -31,7 +26,6 @@ To empower people to be strategic and creative with AI, so their businesses can 
 #### dlproj1: Copy.ai (GPT-powered copywriting) [https://www.copy.ai/]
 #### dlproj2: LLM-based content generator [*no direct link available*]
 ### Job Postings
-#### job: 
 #### job_why: 
 #### job_bay: None
 #### job_remote: Senior AI Solutions Consultant; Staff Engineer

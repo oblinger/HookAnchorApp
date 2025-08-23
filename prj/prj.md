@@ -1,5 +1,4 @@
 .[[prj]].
-  , , ,  <-- remove PP??? ???  ???
   , [[2016-00 FileThis]], [[2018-00 Wedding]], [[2020-08 Race Pitch]], [[2021-04 FindDayCare]]
   , [[2022-02 Yearbook]], [[2022-03 BeFAANG]], [[2022-03 BeVC]], [[2022-04 BeMLR]], [[2022-05 Enxt]]
   , [[2022-05 Grandpa DJ]], [[2022-09 Mom80]], [[2023-07 Task Rabbit]], [[2025-02 Code Markdown]]
@@ -9,15 +8,13 @@
   , [[BinProj]],
   , [[2025 Sports Data Search]], [[Budg]],
   , [[2025-06 anchor_selector]],
-  , [[web]],
+  , [[2025-06 web]],
   , [2025-06 web](spot://202506web), [pp](spot://pp),
-  , ,
-  , ,
-  , ,
   , [prj Obsidian](spot://prjobsidian),
   DELS: ,[prj Obsidian](spot://prjobsidian),
   , ,
-  , [prj Note](spot://prjnote), 
+  , [prj Note](spot://prjnote),
+  , [PRJ Entry Obsidian](spot://prjentryobsidian), 
   DELS: [prj Note](spot://prjnote),[prj Obsidian](spot://prjobsidian),[prj Note](spot://prjnote),[prj Note](spot://prjnote),
 
   [[2016-00 FileThis]],			Automated script for downloading and viewing account statements
@@ -76,3 +73,30 @@ Code PROJ folders
 | Date          | File  | Notes         |
 | ------------- | ----- | ------------- |
 | prj2022-10-07 | [[FIN]]   | Fin-Rebalance |
+
+
+---
+
+# prj
+
+This is an auto-generated anchor file for patch 'prj'.
+
+Add your content here.
+
+
+---
+
+# prj
+
+This is an auto-generated anchor file for patch 'prj'.
+
+Add your content here.
+
+
+---
+
+# prj
+
+This is an auto-generated anchor file for patch 'prj'.
+
+Add your content here.

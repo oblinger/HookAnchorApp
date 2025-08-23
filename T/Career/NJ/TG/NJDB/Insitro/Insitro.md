@@ -7,18 +7,21 @@
   , ,
   , [Insitro Note](spot://insitronote), 
   DELS: [Insitro Note](spot://insitronote),[Insitro Obsidian](spot://insitroobsidian),[Insitro Note](spot://insitronote),[Insitro Note](spot://insitronote),
-
 # Top
 #### kind: StartAI
 #### area: Bio
 #### stance: 
 ## Sections
+### LAMP
+#### pri: 
+#### contacts: 
+#### cool: B
+#### job: 
 ### Cash
 #### cash_trend: upward
 #### cash: 
 #### cash_available: 100
 ### Coolness
-#### cool: B
 #### cool_why: 
 #### cool_mission: 
 #### cool_balance: 
@@ -34,7 +37,6 @@ AI-driven neuroscience (ALS/FTD): Five-year partnership with Bristol Myers Squib
 #### dlproj3: 
 Metabolic disease collaboration: Multi-agreement partnership with Eli Lilly leveraging insitro’s AI platform to identify targets for metabolic disorders (e.g., MASLD) and develop siRNA and antibody therapies ￼.
 ### Job Postings
-#### job: 
 #### job_why: 
 #### job_bay: (Bay Area roles are hybrid; remote option available for many insitro roles)
 #### job_remote: Staff Machine Learning Scientist, Integrative Phenotyping – Google search

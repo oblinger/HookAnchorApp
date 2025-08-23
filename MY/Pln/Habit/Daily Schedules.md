@@ -1,6 +1,36 @@
 
 # LOG
 
+### 2025-06-25 Reality Rhythm
+
+9h	Before Dinner.  8-5
+1h	Eli transport
+2h	Sports Visio
+3h	Chew/Lunch/Rest
+3h	Focused Work
+
+4h	AFTER DINNER. 7-11
+1.5	Fun Work
+
+
+07:	Wake, Read, QuickScan slack/email
+08	Block1 - Hardest (1.5)
+09:	Rest
+09:	Block2 - Easy (1.5)
+11		Eat/read(1)+personal email(:)+work email(:)
+01	Block3 (1)
+02	CV team
+02'	Run
+03:	Gap
+04	Block4 (1)
+05	Eli / Dinner
+06:	Fun
+08	Eli
+08:	Fun
+10:	Read
+11		Sleep
+
+
 ### 2025-04-17  Back From China - Interviewing Rhythm
 
 07	Wake, Read, QuickScan slack/email

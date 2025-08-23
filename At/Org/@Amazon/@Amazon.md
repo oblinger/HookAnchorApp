@@ -7,10 +7,11 @@
   , [@Amazon Obsidian](spot://@amazonobsidian),
   DELS: ,[@Amazon Obsidian](spot://@amazonobsidian),
   , ,
-  , [@Amazon Note](spot://@amazonnote), 
+  , [@Amazon Note](spot://@amazonnote),
+  , [@Amazon as Consumer Obsidian](spot://@amazonasconsumerobsidian), 
   DELS: [@Amazon Note](spot://@amazonnote),[@Amazon Obsidian](spot://@amazonobsidian),[@Amazon Note](spot://@amazonnote),[@Amazon Note](spot://@amazonnote),
 
- [[Org]] [[FAANG]]  [[Misc/AMA/AMA]] [[@Amazon as Consumer]] 
+ [[_Org]] [[FAANG]]  [[Misc/AMA/AMA]] [[@Amazon as Consumer]] 
 
 ## = LEVELS   [Levels.fyi](https://www.levels.fyi/?compare=Amazon,Google,Facebook&track=Software%20Engineer)  
 - L5 own a feature, not strategy
@@ -60,3 +61,30 @@ GETTING HIRED AT AMAZON
 	- Role Guidelines - each role has its guidelines (they are internal, but likely on the web somewhere)
 
 
+
+
+---
+
+# @Amazon
+
+This is an auto-generated anchor file for patch '@Amazon'.
+
+Add your content here.
+
+
+---
+
+# @Amazon
+
+This is an auto-generated anchor file for patch '@Amazon'.
+
+Add your content here.
+
+
+---
+
+# @Amazon
+
+This is an auto-generated anchor file for patch '@Amazon'.
+
+Add your content here.

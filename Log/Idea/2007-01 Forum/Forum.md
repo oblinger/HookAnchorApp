@@ -1,4 +1,5 @@
-.[[Forum]].l
+.[[Forum]].
+  [[Forum Log]] 
   ADDS:   [[2021-01-00 Short start with Yashin]],
   ADDS:   [[Truth]],
   ADDS:   ,
@@ -2265,3 +2266,543 @@ _
 
 
 
+
+
+---
+
+# Forum
+
+This is an auto-generated anchor file for patch 'Forum'.
+
+Add your content here.
+
+
+---
+
+# Forum
+
+This is an auto-generated anchor file for patch 'Forum'.
+
+Add your content here.
+
+
+---
+
+# Forum
+
+This is an auto-generated anchor file for patch 'Forum'.
+
+Add your content here.
+
+
+---
+
+# Forum
+
+This is an auto-generated anchor file for patch 'Forum'.
+
+Add your content here.
+
+
+---
+
+# Forum
+
+This is an auto-generated anchor file for patch 'Forum'.
+
+Add your content here.
+
+
+---
+
+# Forum
+
+This is an auto-generated anchor file for patch 'Forum'.
+
+Add your content here.
+
+
+---
+
+# Forum
+
+This is an auto-generated anchor file for patch 'Forum'.
+
+Add your content here.
+
+
+---
+
+# Forum
+
+This is an auto-generated anchor file for patch 'Forum'.
+
+Add your content here.
+
+
+---
+
+# Forum
+
+This is an auto-generated anchor file for patch 'Forum'.
+
+Add your content here.
+
+
+---
+
+# Forum
+
+This is an auto-generated anchor file for patch 'Forum'.
+
+Add your content here.
+
+
+---
+
+# Forum
+
+This is an auto-generated anchor file for patch 'Forum'.
+
+Add your content here.
+
+
+---
+
+# Forum
+
+This is an auto-generated anchor file for patch 'Forum'.
+
+Add your content here.
+
+
+---
+
+# Forum
+
+This is an auto-generated anchor file for patch 'Forum'.
+
+Add your content here.
+
+
+---
+
+# Forum
+
+This is an auto-generated anchor file for patch 'Forum'.
+
+Add your content here.
+
+
+---
+
+# Forum
+
+This is an auto-generated anchor file for patch 'Forum'.
+
+Add your content here.
+
+
+---
+
+# Forum
+
+This is an auto-generated anchor file for patch 'Forum'.
+
+Add your content here.
+
+
+---
+
+# Forum
+
+This is an auto-generated anchor file for patch 'Forum'.
+
+Add your content here.
+
+
+---
+
+# Forum
+
+This is an auto-generated anchor file for patch 'Forum'.
+
+Add your content here.
+
+
+---
+
+# Forum
+
+This is an auto-generated anchor file for patch 'Forum'.
+
+Add your content here.
+
+
+---
+
+# Forum
+
+This is an auto-generated anchor file for patch 'Forum'.
+
+Add your content here.
+
+
+---
+
+# Forum
+
+This is an auto-generated anchor file for patch 'Forum'.
+
+Add your content here.
+
+
+---
+
+# Forum
+
+This is an auto-generated anchor file for patch 'Forum'.
+
+Add your content here.
+
+
+---
+
+# Forum
+
+This is an auto-generated anchor file for patch 'Forum'.
+
+Add your content here.
+
+
+---
+
+# Forum
+
+This is an auto-generated anchor file for patch 'Forum'.
+
+Add your content here.
+
+
+---
+
+# Forum
+
+This is an auto-generated anchor file for patch 'Forum'.
+
+Add your content here.
+
+
+---
+
+# Forum
+
+This is an auto-generated anchor file for patch 'Forum'.
+
+Add your content here.
+
+
+---
+
+# Forum
+
+This is an auto-generated anchor file for patch 'Forum'.
+
+Add your content here.
+
+
+---
+
+# Forum
+
+This is an auto-generated anchor file for patch 'Forum'.
+
+Add your content here.
+
+
+---
+
+# Forum
+
+This is an auto-generated anchor file for patch 'Forum'.
+
+Add your content here.
+
+
+---
+
+# Forum
+
+This is an auto-generated anchor file for patch 'Forum'.
+
+Add your content here.
+
+
+---
+
+# Forum
+
+This is an auto-generated anchor file for patch 'Forum'.
+
+Add your content here.
+
+
+---
+
+# Forum
+
+This is an auto-generated anchor file for patch 'Forum'.
+
+Add your content here.
+
+
+---
+
+# Forum
+
+This is an auto-generated anchor file for patch 'Forum'.
+
+Add your content here.
+
+
+---
+
+# Forum
+
+This is an auto-generated anchor file for patch 'Forum'.
+
+Add your content here.
+
+
+---
+
+# Forum
+
+This is an auto-generated anchor file for patch 'Forum'.
+
+Add your content here.
+
+
+---
+
+# Forum
+
+This is an auto-generated anchor file for patch 'Forum'.
+
+Add your content here.
+
+
+---
+
+# Forum
+
+This is an auto-generated anchor file for patch 'Forum'.
+
+Add your content here.
+
+
+---
+
+# Forum
+
+This is an auto-generated anchor file for patch 'Forum'.
+
+Add your content here.
+
+
+---
+
+# Forum
+
+This is an auto-generated anchor file for patch 'Forum'.
+
+Add your content here.
+
+
+---
+
+# Forum
+
+This is an auto-generated anchor file for patch 'Forum'.
+
+Add your content here.
+
+
+---
+
+# Forum
+
+This is an auto-generated anchor file for patch 'Forum'.
+
+Add your content here.
+
+
+---
+
+# Forum
+
+This is an auto-generated anchor file for patch 'Forum'.
+
+Add your content here.
+
+
+---
+
+# Forum
+
+This is an auto-generated anchor file for patch 'Forum'.
+
+Add your content here.
+
+
+---
+
+# Forum
+
+This is an auto-generated anchor file for patch 'Forum'.
+
+Add your content here.
+
+
+---
+
+# Forum
+
+This is an auto-generated anchor file for patch 'Forum'.
+
+Add your content here.
+
+
+---
+
+# Forum
+
+This is an auto-generated anchor file for patch 'Forum'.
+
+Add your content here.
+
+
+---
+
+# Forum
+
+This is an auto-generated anchor file for patch 'Forum'.
+
+Add your content here.
+
+
+---
+
+# Forum
+
+This is an auto-generated anchor file for patch 'Forum'.
+
+Add your content here.
+
+
+---
+
+# Forum
+
+This is an auto-generated anchor file for patch 'Forum'.
+
+Add your content here.
+
+
+---
+
+# Forum
+
+This is an auto-generated anchor file for patch 'Forum'.
+
+Add your content here.
+
+
+---
+
+# Forum
+
+This is an auto-generated anchor file for patch 'Forum'.
+
+Add your content here.
+
+
+---
+
+# Forum
+
+This is an auto-generated anchor file for patch 'Forum'.
+
+Add your content here.
+
+
+---
+
+# Forum
+
+This is an auto-generated anchor file for patch 'Forum'.
+
+Add your content here.
+
+
+---
+
+# Forum
+
+This is an auto-generated anchor file for patch 'Forum'.
+
+Add your content here.
+
+
+---
+
+# Forum
+
+This is an auto-generated anchor file for patch 'Forum'.
+
+Add your content here.
+
+
+---
+
+# Forum
+
+This is an auto-generated anchor file for patch 'Forum'.
+
+Add your content here.
+
+
+---
+
+# Forum
+
+This is an auto-generated anchor file for patch 'Forum'.
+
+Add your content here.
+
+
+---
+
+# Forum
+
+This is an auto-generated anchor file for patch 'Forum'.
+
+Add your content here.
+
+
+---
+
+# Forum
+
+This is an auto-generated anchor file for patch 'Forum'.
+
+Add your content here.
+
+
+---
+
+# Forum
+
+This is an auto-generated anchor file for patch 'Forum'.
+
+Add your content here.

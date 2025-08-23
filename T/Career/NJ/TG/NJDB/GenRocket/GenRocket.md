@@ -7,17 +7,20 @@
   , ,
   , [GenRocket Note](spot://genrocketnote), 
   DELS: [GenRocket Note](spot://genrocketnote),[GenRocket Obsidian](spot://genrocketobsidian),[GenRocket Note](spot://genrocketnote),[GenRocket Note](spot://genrocketnote),
-
 # Top
 #### kind: BigAI
 #### area: CoreDL
 #### stance: 
 ## Sections
+### LAMP
+#### pri: 
+#### contacts: 
+#### cool: 
+#### job: 
 ### Cash
 #### cash: 
 #### funding: 0.05
 ### Coolness
-#### cool: 
 #### cool_why: 
 #### cool_mission: 
 #### cool_balance: 
@@ -29,7 +32,6 @@ To enable teams to fully test their applications by providing real‑time, on‑
 #### dlproj1: Real-Time Synthetic Data Generation [https://genrocket.com/]
 #### dlproj2: AI-Driven Test Data Platform [https://genrocket.com/blog/]
 ### Job Postings
-#### job: 
 #### job_why: 
 #### job_bay: None
 #### job_remote: None

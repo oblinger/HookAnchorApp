@@ -13,7 +13,8 @@
   , [QQ Obsidian](spot://qqobsidian),
   DELS: [[2024-11-01 SV Pitch Deck]],[[2024-08-25 Softbank SV Analysis]], [[2024-11-01 SV Pitch Deck]],,[QQ Obsidian](spot://qqobsidian),
   , ,
-  , [QQ Note](spot://qqnote), 
+  , [QQ Note](spot://qqnote),
+  , [Q-Q Plot Obsidian](spot://qqplotobsidian), 
   DELS: [[2024-11-01 SV Pitch Deck]],[[2024-08-25 Softbank SV Analysis]], [[2024-11-01 SV Pitch Deck]],[QQ Note](spot://qqnote),[QQ Obsidian](spot://qqobsidian),[QQ Note](spot://qqnote),[QQ Note](spot://qqnote),
 
 

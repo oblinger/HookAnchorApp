@@ -7,12 +7,16 @@
   , ,
   , [Hover Note](spot://hovernote), 
   DELS: [Hover Note](spot://hovernote),[Hover Obsidian](spot://hoverobsidian),[Hover Note](spot://hovernote),[Hover Note](spot://hovernote),
-
 # Top
 #### kind: StartAI
 #### area: PropTech
 #### stance: 
 ## Sections
+### LAMP
+#### pri: 
+#### contacts: 
+#### cool: 
+#### job: 
 ### Cash
 #### cash_trend: flat
 #### cash: 
@@ -20,7 +24,6 @@
 #### funding: 
 Raised $60M Series D led by insurance carriers (Travelers, State Farm, Nationwide) in Nov 2020 ￼ (total funding ~$127M to date)
 ### Coolness
-#### cool: 
 #### cool_why: 
 #### cool_mission: 
 #### cool_balance: 
@@ -35,7 +38,6 @@ Developed an AI-powered design visualization tool that leverages generative mode
 #### dlproj3: 
 Introduced a new blueprint-to-3D conversion solution: by applying its deep learning tech, Hover can take 2D architectural plans (blueprints) and automatically produce a detailed 3D model with full measurements. This lets builders get the same rich 3D data from plans as they would from on-site photos ￼.
 ### Job Postings
-#### job: 
 #### job_why: 
 #### job_bay: Senior Computer Vision Engineer – Google search
 #### job_remote: (No remote openings – roles require Bay Area presence)

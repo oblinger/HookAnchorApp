@@ -7,19 +7,22 @@
   , ,
   , [Tabnine Note](spot://tabninenote), 
   DELS: [Tabnine Note](spot://tabninenote),[Tabnine Obsidian](spot://tabnineobsidian),[Tabnine Note](spot://tabninenote),[Tabnine Note](spot://tabninenote),
-
 # Top
 #### kind: BigAI
 #### area: CoreNLP
 #### stance: 
 ## Sections
+### LAMP
+#### pri: 
+#### contacts: 
+#### cool: 
+#### job: 
 ### Cash
 #### cash_trend: upward
 #### cash: 
 #### cash_available: 13
 #### funding: 0.44  (raised Series B in 2023 ￼)
 ### Coolness
-#### cool: 
 #### cool_why: 
 #### cool_mission: 
 #### cool_balance: 
@@ -31,7 +34,6 @@ To accelerate and simplify the entire software development life cycle through AI
 #### dlproj1: 
 AI Code Completion (GPT-based code autocompletion tool)&#8203;:contentReference[oaicite:14]{index=14}
 ### Job Postings
-#### job: 
 #### job_why: 
 #### job_bay: —
 #### job_remote: —

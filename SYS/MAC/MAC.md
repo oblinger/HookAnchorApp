@@ -327,7 +327,10 @@
   , [MAC Apps](spot://macapps), ,
   DELS: ,[[MAC Apps]],, ,, , ,,, , , , , ,[MAC Obsidian](spot://macobsidian),[[MAC Apps]], [[MAC Apps]], , [[MAC Apps]], , [[MAC Apps]], ,
   , ,
-  , [MAC Apps Note](spot://macappsnote), [MAC Note](spot://macnote), 
+  , [MAC Apps Note](spot://macappsnote), [MAC Note](spot://macnote),
+  , [MAC How To Obsidian](spot://machowtoobsidian)
+  , [MAC Other HW Obsidian](spot://macotherhwobsidian)
+  , [MAC Setup Obsidian](spot://macsetupobsidian), 
   DELS: [[App]],[[MAC Apps]],[[App]], [[App]],[Paprika App](spot://paprikaapp), [Paprika Recipe Manager 3 App](spot://paprikarecipemanager3app), [Paprika Recipe Manager App](spot://paprikarecipemanagerapp),[MAC Note](spot://macnote),[[App]], [[App]], [[App]], [Paprika App](spot://paprikaapp), [Paprika Recipe Manager 3 App](spot://paprikarecipemanager3app), [Paprika Recipe Manager App](spot://paprikarecipemanagerapp),[MAC Obsidian](spot://macobsidian),[[MAC Apps]], [[MAC Apps]], [MAC Apps Note](spot://macappsnote), [[MAC Apps]], [MAC Note](spot://macnote), [[MAC Apps]], [MAC Note](spot://macnote),[[App]], [[App]], [[App]], [Paprika App](spot://paprikaapp), [Paprika Recipe Manager 3 App](spot://paprikarecipemanager3app), [Paprika Recipe Manager App](spot://paprikarecipemanagerapp), [[App]], [[App]], [[App]], [Paprika App](spot://paprikaapp), [Paprika Recipe Manager 3 App](spot://paprikarecipemanager3app), [Paprika Recipe Manager App](spot://paprikarecipemanagerapp),[MAC Apps Note](spot://macappsnote),[MAC Note](spot://macnote), [MAC Note](spot://macnote), [MAC Note](spot://macnote), [MAC Note](spot://macnote), [MAC Apps Note](spot://macappsnote),
 
 

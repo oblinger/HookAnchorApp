@@ -3,13 +3,17 @@
 #### area: Robotics
 #### stance: 
 ## Sections
+### LAMP
+#### pri: 
+#### contacts: 
+#### cool: 
+#### job: 
 ### Cash
 #### cash_trend: down
 #### cash: 
 #### cash_available: 8
 #### funding: $30 M funding round in Feb 2021    (last big raise in 2021)
 ### Coolness
-#### cool: 
 #### cool_why: 
 #### cool_mission: 
 #### cool_balance: 
@@ -25,7 +29,6 @@ Toyota Assembly Line AI – Toyota Motor North America collaborated with Symbio 
 #### dlproj3: 
 Ford Transmission Project – Ford deployed Symbio’s AI software on robots assembling auto transmissions (e.g. for the Bronco Sport and other models) ￼. This project addressed a pain point: installing heavy, precision-fit components like torque converters. Symbio-enabled robots at Ford use AI to “learn” from each assembly attempt — they analyze force/position data to improve the next cycle’s motion. Over time, the robots optimize how they align and insert the parts, achieving faster and smoother assembly than traditional programming. In fact, Ford observed about a 15% improvement in cycle time, and the adaptation time for new product variants dropped by more than half thanks to Symbio’s machine learning approach ￼. This collaboration not only improved production metrics but also validated Symbio’s premise that AI can make factory automation more agile and data-driven.
 ### Job Postings
-#### job: 
 #### job_why: 
 #### job_bay: 
 #### job_remote: 

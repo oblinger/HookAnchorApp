@@ -1,13 +1,18 @@
 # Top
+[LinkedIn Connections](https://www.linkedin.com/search/results/people/?currentCompany=%5B%2211193683%22%5D&network=%5B%22F%22%5D)
 #### kind: Big
 #### area: CoreNLP
 #### stance: 
 ## Sections
+### LAMP
+#### pri: 
+#### contacts: 
+#### cool: 
+#### job: 
 ### Cash
 #### cash: 
 #### funding: 12.37
 ### Coolness
-#### cool: 
 #### cool_why: 
 #### cool_mission: 
 #### cool_balance: 
@@ -32,7 +37,6 @@ Hugging Face Hub – online platform and repository hosting thousands of pretrai
 #### dlproj8: —
 #### dlproj9: —
 ### Job Postings
-#### job: 
 #### job_why: 
 #### job_bay: 
 #### job_remote: 

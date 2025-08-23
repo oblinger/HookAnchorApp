@@ -7,19 +7,22 @@
   , ,
   , [Forethought Note](spot://forethoughtnote), 
   DELS: [Forethought Note](spot://forethoughtnote),[Forethought Obsidian](spot://forethoughtobsidian),[Forethought Note](spot://forethoughtnote),[Forethought Note](spot://forethoughtnote),
-
 # Top
 #### kind: StartAI
 #### area: CoreNLP
 #### stance: 
 ## Sections
+### LAMP
+#### pri: 
+#### contacts: 
+#### cool: 
+#### job: 
 ### Cash
 #### cash_trend: flat
 #### cash: 
 #### cash_available: 16
 #### funding: 3.42
 ### Coolness
-#### cool: 
 #### cool_why: 
 #### cool_mission: 
 #### cool_balance: 
@@ -35,7 +38,6 @@ Mila Research Collaboration – Forethought partnered with the Mila AI institute
 #### dlproj3: 
 AutoChain Framework – an open-source toolkit released by Forethought for building and evaluating lightweight LLM-based agents ￼. AutoChain allows developers to experiment with generative agent behaviors and easily customize and test chain-of-thought prompting for AI agents, facilitating faster iteration and troubleshooting in the development of generative AI applications.
 ### Job Postings
-#### job: 
 #### job_why: 
 #### job_bay: Sales Engineering Manager – Google search
 #### job_remote: (No remote openings – roles require Bay Area presence)

@@ -3,13 +3,17 @@
 #### area: Robotics
 #### stance: 
 ## Sections
+### LAMP
+#### pri: 
+#### contacts: 
+#### cool: 
+#### job: 
 ### Cash
 #### cash_trend: upward
 #### cash: 
 #### cash_available: 38
 #### funding: Secured $75M later-stage funding in Sep 2023 ￼
 ### Coolness
-#### cool: 
 #### cool_why: 
 #### cool_mission: 
 #### cool_balance: 
@@ -25,7 +29,6 @@ Deep vision for trucking – Applied state-of-the-art deep neural networks to la
 #### dlproj3: 
 Automated AI training pipeline – Built an “AI flywheel” data pipeline that integrates advanced pre-labeling of sensor data with human annotation tools, automating training data generation and continuously improving Kodiak’s driving models ￼.
 ### Job Postings
-#### job: 
 #### job_why: 
 #### job_bay: Applied AI Engineer – Generative AI – Google search
 #### job_remote: (No fully remote openings – hybrid roles in Bay Area)

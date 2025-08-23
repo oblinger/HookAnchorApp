@@ -10,7 +10,8 @@
   DELS: ,,,[WP Obsidian](spot://wpobsidian),
   , ,
   DELS: ,,,[WP Obsidian](spot://wpobsidian),, ,
-  , [WP Note](spot://wpnote), 
+  , [WP Note](spot://wpnote),
+  , [WP Entry Obsidian](spot://wpentryobsidian), 
   DELS: [[WP Entry]],[WP Note](spot://wpnote),[[WP Entry]],[WP Obsidian](spot://wpobsidian),[WP Note](spot://wpnote), [WP Note](spot://wpnote),[[WP Entry]], [[WP Entry]],[WP Note](spot://wpnote), [WP Note](spot://wpnote), [WP Note](spot://wpnote), [WP Note](spot://wpnote),
 
 n:: 'wp...'	Work Product. Single documents outputs

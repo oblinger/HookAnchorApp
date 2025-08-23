@@ -7,19 +7,22 @@
   , ,
   , [Syntho Note](spot://synthonote), 
   DELS: [Syntho Note](spot://synthonote),[Syntho Obsidian](spot://synthoobsidian),[Syntho Note](spot://synthonote),[Syntho Note](spot://synthonote),
-
 # Top
 #### kind: BigAI
 #### area: CoreDL
 #### stance: 
 ## Sections
+### LAMP
+#### pri: 
+#### contacts: 
+#### cool: 
+#### job: 
 ### Cash
 #### cash_trend: down
 #### cash: 
 #### cash_available: 0
 #### funding: 0.02.  (small single round in 2021 ￼)
 ### Coolness
-#### cool: 
 #### cool_why: 
 #### cool_mission: 
 #### cool_balance: 
@@ -31,7 +34,6 @@ To solve the global privacy dilemma and enable an open data economy, where data 
 #### dlproj1: 
 Syntho Engine (generative AI platform for privacy-preserving synthetic data)&#8203;:contentReference[oaicite:13]{index=13}
 ### Job Postings
-#### job: 
 #### job_why: 
 #### job_bay: —
 #### job_remote: —

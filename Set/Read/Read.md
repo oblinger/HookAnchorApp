@@ -11,7 +11,8 @@
   , [Read Obsidian](spot://readobsidian),
   DELS: ,[Read Obsidian](spot://readobsidian),
   , ,
-  , [Read Note](spot://readnote), 
+  , [Read Note](spot://readnote),
+  , [Read Capture Obsidian](spot://readcaptureobsidian), 
   DELS: [Read Note](spot://readnote),[Read Obsidian](spot://readobsidian),[Read Note](spot://readnote),[Read Note](spot://readnote),
 
 [[Read]]: [[RR Papers]], [[RR Articles]], [Alignment Forum](https://www.alignmentforum.org/), 

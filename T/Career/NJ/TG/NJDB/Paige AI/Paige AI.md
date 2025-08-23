@@ -3,11 +3,15 @@
 #### area: Bio
 #### stance: 
 ## Sections
+### LAMP
+#### pri: 
+#### contacts: 
+#### cool: 
+#### job: 
 ### Cash
 #### cash: 
 #### funding: 4.55
 ### Coolness
-#### cool: 
 #### cool_why: 
 #### cool_mission: 
 #### cool_balance: 
@@ -17,7 +21,6 @@ To develop and deliver a new generation of clinical applications and predictive 
 ### Deep Learning Projects (DLP)
 #### dlp: 
 ### Job Postings
-#### job: 
 #### job_why: 
 #### job_bay: 
 #### job_remote: 

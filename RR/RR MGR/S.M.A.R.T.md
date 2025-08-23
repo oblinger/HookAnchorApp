@@ -6,7 +6,7 @@ S.M.A.R.T.
 - Measurable - 
 - Achievable - Capability can be achieved using existing time and resources
 - Realistic - Goal makes sense in larger context
-- Time-bounded - Goal has a well defined completion target time <!--SR:!2025-06-28,29,210-->
+- Time-bounded - Goal has a well defined completion target time <!--SR:!2025-09-14,61,210-->
 
 #card
 - https://mooncamp.com/blog/smart-goals/

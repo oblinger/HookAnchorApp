@@ -7,19 +7,22 @@
   , ,
   , [Etcembly Note](spot://etcemblynote), 
   DELS: [Etcembly Note](spot://etcemblynote),[Etcembly Obsidian](spot://etcemblyobsidian),[Etcembly Note](spot://etcemblynote),[Etcembly Note](spot://etcemblynote),
-
 # Top
 #### kind: BigAI
 #### area: Bio
 #### stance: 
 ## Sections
+### LAMP
+#### pri: 
+#### contacts: 
+#### cool: 
+#### job: 
 ### Cash
 #### cash_trend: upward
 #### cash: 
 #### cash_available: N/A
 #### funding: 0.54
 ### Coolness
-#### cool: 
 #### cool_why: 
 #### cool_mission: 
 #### cool_balance: 
@@ -33,7 +36,6 @@ EMLy (ML platform for T-cell therapy design). Immuno-Engineered TCR Platform [ht
 #### dlproj2: 
 Generative Biologics (AI-designed bispecific T-cell engagers). Generative AI for T-cell Receptor Discovery [*no direct link available*]
 ### Job Postings
-#### job: 
 #### job_why: 
 #### job_bay: None
 #### job_remote: None

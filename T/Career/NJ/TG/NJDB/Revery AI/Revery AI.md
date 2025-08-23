@@ -3,11 +3,15 @@
 #### area: Retail
 #### stance: 
 ## Sections
+### LAMP
+#### pri: 
+#### contacts: 
+#### cool: 
+#### job: 
 ### Cash
 #### cash: 
 #### funding: 0.04
 ### Coolness
-#### cool: 
 #### cool_why: 
 #### cool_mission: 
 #### cool_balance: 
@@ -21,7 +25,6 @@ Virtual Dressing Room (image-based try-on with deep learning)&#8203;:contentRefe
 #### dlproj2: 
 AI Fashion Photoshoots (generating apparel images to replace photography)&#8203;:contentReference[oaicite:7]{index=7}
 ### Job Postings
-#### job: 
 #### job_why: 
 #### job_bay: Founding Engineer, Backend & AWS Infra (San Francisco)
 #### job_remote: —

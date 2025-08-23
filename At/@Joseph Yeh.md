@@ -8,6 +8,31 @@
 
 # MEETINGS
 
+### 2025-07-15  Chat
+
+- Setting LinkedkIn Permissions
+- Books to read: 2h J srch
+- Other books?
+- Activities
+	- [[SEEK Plan]] - Cold outreach.  Contacts outreach.  
+- [[TG Summary]] 
+
+
+TODO
+- give Joe list of couple contacts we can draft.
+- Check in about meta hiring.
+- david's text message.  (followup texts)
+- portfolio companies on close VCs for me
+
+
+Nick:
+Originally I was thinking there was no future where I would stay at SportsVisio but it is possible that SV will turn out to have a better cash+equity picture than other startups I can get to.  Also my estimation of my perceived value has risen to allow this.
+
+I think I have may have inadvertently lowered by value by allowing my salary to drop to zero for so long. 
+
+
+
+
 ### 2023-10-05  Google Director's job.  & Other stuff
 
 - Quick Update. 
@@ -238,7 +263,7 @@ MRP: Eyal Amir, Dan Roth,
 ### m2022-04-06  - Resume; 
 - What am I up to:
 	- [[FAANG]] - My FAANG contacts.
-	- [[COMS|Calls]] - My list of planned calls.
+	- [[COM|Calls]] - My list of planned calls.
 	- [[DYL|DYL]] - Notes on my "homework" for Design Your Life.
 	-  [Oblio](https://publish.obsidian.md/oblio) - External site  [Joes page](https://publish.obsidian.md/oblio/AT/%40Joseph+Yeh) 
 - Linked In updates [[z2 - Linked In Module|here]].

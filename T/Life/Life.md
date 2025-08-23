@@ -14,7 +14,9 @@
   DELS: [[Diary]],, , ,,,, , , ,[Life Obsidian](spot://lifeobsidian),
   , ,
   DELS: [[Diary]],, , ,,,, , , ,[Life Obsidian](spot://lifeobsidian),, ,
-  , [Life Note](spot://lifenote), 
+  , [Life Note](spot://lifenote),
+  , [Life Projects Obsidian](spot://lifeprojectsobsidian)
+  , [Life Social Obsidian](spot://lifesocialobsidian), 
   DELS: [[Diary]],[[Mission2024]], [[_MateNote]], [[_Mates]],[[mate]],[Life Note](spot://lifenote),[[Mission2024]], [[_MateNote]], [[_Mates]], [[mate]],[Life Obsidian](spot://lifeobsidian),[Life Note](spot://lifenote), [Life Note](spot://lifenote),[[Mission2024]], [[_MateNote]], [[_Mates]], [[mate]], [[Mission2024]], [[_MateNote]], [[_Mates]], [[mate]],[Life Note](spot://lifenote), [Life Note](spot://lifenote), [Life Note](spot://lifenote), [Life Note](spot://lifenote),
 
 

@@ -7,12 +7,16 @@
   , ,
   , [Predibase Note](spot://predibasenote), 
   DELS: [Predibase Note](spot://predibasenote),[Predibase Obsidian](spot://predibaseobsidian),[Predibase Note](spot://predibasenote),[Predibase Note](spot://predibasenote),
-
 # Top
 #### kind: StartAI
 #### area: CoreDL
 #### stance: 
 ## Sections
+### LAMP
+#### pri: 
+#### contacts: 
+#### cool: 
+#### job: 
 ### Cash
 #### cash_trend: flat
 #### cash: 
@@ -20,7 +24,6 @@
 #### funding: 
 Added $12.2M in Series A-II funding (May 2023, led by Felicis) ￼ (total funding ~$28M)
 ### Coolness
-#### cool: 
 #### cool_why: 
 #### cool_mission: 
 #### cool_balance: 
@@ -36,7 +39,6 @@ Predibase Platform (GenAI) – a low-code ML platform that lets teams declarativ
 #### dlproj3: 
 “LudwigGPT” Copilot – Predibase’s custom foundation model powering its data science assistant, which provides real-time suggestions and improvements as users develop models, illustrating the platform’s use of generative AI to enhance ML workflows ￼.
 ### Job Postings
-#### job: 
 #### job_why: 
 #### job_bay: Software Engineer – ML Inference – Google Search​
 #### job_remote: None currently

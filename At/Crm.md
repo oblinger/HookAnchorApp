@@ -1,5 +1,5 @@
 
-- [[Meta Coms]], [[Coms]], [[COM Next]], [[Calls]], [[Friends]], [[Mentors]], [[BOD]], 
+- [[Meta Coms]], [[COM]], [[COM Next]], [[Calls]], [[Friends]], [[Mentors]], [[BOD]], 
 
 
 ```dataviewjs 

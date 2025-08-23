@@ -7,19 +7,22 @@
   , ,
   , [Mashgin Note](spot://mashginnote), 
   DELS: [Mashgin Note](spot://mashginnote),[Mashgin Obsidian](spot://mashginobsidian),[Mashgin Note](spot://mashginnote),[Mashgin Note](spot://mashginnote),
-
 # Top
 #### kind: StartAI
 #### area: Retail
 #### stance: 
 ## Sections
+### LAMP
+#### pri: 
+#### contacts: 
+#### cool: B-
+#### job: A-
 ### Cash
 #### cash_trend: upward
 #### cash: 
 #### cash_available: 21
 #### funding: Raised $62.5M Series B in May 2022 ￼
 ### Coolness
-#### cool: B-
 #### cool_why: It's a challenging project but a blah mission
 #### cool_mission: B-
 #### cool_balance: 
@@ -35,7 +38,6 @@ Uses a deep learning vision model that considers an item’s shape, size, color,
 #### dlproj3: 
 Continuously improves via data: the system can learn new items in seconds, and with over 800 million transactions processed, its algorithms have become highly reliable. Mashgin’s AI gets more accurate with each use, making it increasingly adept at recognizing an ever-growing catalog of products in the field ￼.
 ### Job Postings
-#### job: A-
 #### job_why: 
 #### job_bay: 
 03 Software Engineer, Computer Vision & Deep Learning - https://www.google.com/search?q=Mashgin%20Software%20Engineer%2C%20Computer%20Vision%20%26%20Deep%20Learning

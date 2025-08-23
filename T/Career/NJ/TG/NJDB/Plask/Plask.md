@@ -7,19 +7,22 @@
   , ,
   , [Plask Note](spot://plasknote), 
   DELS: [Plask Note](spot://plasknote),[Plask Obsidian](spot://plaskobsidian),[Plask Note](spot://plasknote),[Plask Note](spot://plasknote),
-
 # Top
 #### kind: BigAI
 #### area: CoreDL
 #### stance: 
 ## Sections
+### LAMP
+#### pri: 
+#### contacts: 
+#### cool: 
+#### job: 
 ### Cash
 #### cash_trend: down
 #### cash: 
 #### cash_available: 1
 #### funding: 0.08  (no funding since 2021 ￼)
 ### Coolness
-#### cool: 
 #### cool_why: 
 #### cool_mission: 
 #### cool_balance: 
@@ -31,7 +34,6 @@ Plask’s mission is to democratize animation and make it accessible to everyone
 #### dlproj1: 
 AI Motion Capture (turns 2D video into 3D animation)&#8203;:contentReference[oaicite:2]{index=2}
 ### Job Postings
-#### job: 
 #### job_why: 
 #### job_bay: —
 #### job_remote: —

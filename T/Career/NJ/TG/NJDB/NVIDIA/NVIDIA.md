@@ -1,4 +1,6 @@
 .[[NVIDIA]].
+
+[[@NVIDIA.md]]
   , ,
   , ,
   , ,
@@ -7,16 +9,19 @@
   , ,
   , [NVIDIA Note](spot://nvidianote), 
   DELS: [NVIDIA Note](spot://nvidianote),[NVIDIA Obsidian](spot://nvidiaobsidian),[NVIDIA Note](spot://nvidianote),[NVIDIA Note](spot://nvidianote),
-
 # Top
 #### kind: Top
 #### area: CoreDL
 #### stance: 
 ## Sections
+### LAMP
+#### pri: 
+#### contacts: [[@Chang Yuan.md]], [[@Chris Zankel.md]], [[@Ran El-Yaniv.md]], [[@Zoe Chao.md]]
+#### cool: 
+#### job: 
 ### Cash
 #### cash: 
 ### Coolness
-#### cool: 
 #### cool_why: 
 #### cool_mission: xxx
 #### cool_balance: 
@@ -40,7 +45,6 @@ Megatron LM – NVIDIA’s framework for training very large transformer models
 #### dlproj8: ** - **
 #### dlproj9: ** - **
 ### Job Postings
-#### job: 
 #### job_why: 
 #### job_bay: 
 #### job_remote: 

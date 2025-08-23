@@ -3,6 +3,11 @@
 #### area: CoreDL
 #### stance: 
 ## Sections
+### LAMP
+#### pri: C
+#### contacts: 
+#### cool: 
+#### job: 
 ### Cash
 #### cash_trend: flat
 #### cash: 
@@ -10,7 +15,6 @@
 #### funding: 
 Raised $38M Series B (Sept 2022) led by TCV ￼ (the largest ML observability funding to date ￼)
 ### Coolness
-#### cool: 
 #### cool_why: 
 #### cool_mission: 
 #### cool_balance: 
@@ -26,7 +30,6 @@ LLM-as-a-Judge – Arize’s approach (and tooling) for using one LLM to evaluat
 #### dlproj3: 
 Arize AX (GenAI) – a unified platform for end-to-end LLM app development and monitoring, which provides tracing of agent decision steps, prompt management, dataset slicing, and evaluation dashboards so enterprises can rapidly iterate and safely deploy generative AI agents ￼ ￼.
 ### Job Postings
-#### job: 
 #### job_why: 
 #### job_bay: 
 AI Growth Engineer (San Francisco Bay Area) – https://www.google.com/search?q=%22AI+Growth+Engineer%22+Arize+AI 

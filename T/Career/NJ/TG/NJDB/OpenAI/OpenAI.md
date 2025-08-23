@@ -1,4 +1,5 @@
 .[[OpenAI]].
+[LinkedIn Connections](https://www.linkedin.com/search/results/people/?currentCompany=%5B%2211130470%22%5D&network=%5B%22F%22%5D)
   , ,
   , ,
   , ,
@@ -7,17 +8,20 @@
   , ,
   , [OpenAI Note](spot://openainote), 
   DELS: [OpenAI Note](spot://openainote),[OpenAI Obsidian](spot://openaiobsidian),[OpenAI Note](spot://openainote),[OpenAI Note](spot://openainote),
-
 # Top
 #### kind: Big
 #### area: CoreDL
 #### stance: 
 ## Sections
+### LAMP
+#### pri: 
+#### contacts: 
+#### cool: 
+#### job: 
 ### Cash
 #### cash: 
 #### funding: 384.62
 ### Coolness
-#### cool: 
 #### cool_why: 
 #### cool_mission: 
 #### cool_balance: 
@@ -43,8 +47,11 @@ Whisper (2022) – An open-source automatic speech recognition model trained on 
 OpenAI Five (2019) – A deep reinforcement learning project that trained five neural-network agents to play the complex esports game Dota 2. OpenAI Five became the first AI to defeat the reigning world champion Dota 2 team in live matches, marking a milestone in AI teamwork and long-horizon game strategy ￼
 #### dlproj9: 
 Jukebox (2020) – A generative model for music that produces songs with vocals in various genres. Given a genre, artist style, and lyrics, Jukebox generates new music as raw audio. OpenAI open-sourced Jukebox’s code and model weights, demonstrating AI-created music with recognizable singing and instrumentation ￼
-### Job Postings
-#### job: 
+# OpenAI
+
+This is an auto-generated anchor file for patch 'OpenAI'.
+
+Add your content here.
 #### job_why: 
 #### job_bay: 
 #### job_remote: 
@@ -57,3 +64,22 @@ Jukebox (2020) – A generative model for music that produces songs with vocals 
 ### justification: 
 OpenAI is the highest-profile generative AI company, creator of ChatGPT and DALL-E, which have driven widespread adoption of AI-generated text and images [oai_citation_attribution:28‡eweek.com](https://www.eweek.com/artificial-intelligence/generative-ai-startups/#:~:text=generation%20and%20editing%2C%20audio%20transcription,tuning%20and%20embedding%20models)
 ### proj2: DALL-E 3 (Text-to-image generation model)
+
+
+---
+# OpenAI
+
+This is an auto-generated anchor file for patch 'OpenAI'.
+
+Add your content here.
+
+
+---
+# OpenAI
+
+This is an auto-generated anchor file for patch 'OpenAI'.
+
+Add your content here.
+
+
+---

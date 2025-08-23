@@ -3,6 +3,11 @@
 #### area: CoreDL
 #### stance: 
 ## Sections
+### LAMP
+#### pri: 
+#### contacts: 
+#### cool: 
+#### job: 
 ### Cash
 #### cash_trend: flat
 #### cash: 
@@ -10,7 +15,6 @@
 #### funding: 
 Raised $40M Series B led by Coatue (June 2022) to expand its PyTorch Lightning platform ￼
 ### Coolness
-#### cool: 
 #### cool_why: 
 #### cool_mission: 
 #### cool_balance: 
@@ -25,7 +29,6 @@ LitGPT – a suite of 20+ high-performance language models and training “recip
 #### dlproj3: 
 Lightning “Muse” – an open-source Stable Diffusion web app blueprint (text-to-image generator) that Lightning created to demonstrate building AI products on its platform, enabling users to clone and customize a complete generative app with ease ￼ ￼.
 ### Job Postings
-#### job: 
 #### job_why: 
 #### job_bay: Research/Compiler Engineer – Google Search​
 #### job_remote: None currently

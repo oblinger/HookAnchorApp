@@ -1,4 +1,5 @@
 .[[Intel]].
+[LinkedIn Connections](https://www.linkedin.com/search/results/people/?currentCompany=%5B%221053%22%5D&network=%5B%22F%22%5D)
   , ,
   , ,
   , ,
@@ -7,16 +8,19 @@
   , ,
   , [Intel Note](spot://intelnote), 
   DELS: [Intel Note](spot://intelnote),[Intel Obsidian](spot://intelobsidian),[Intel Note](spot://intelnote),[Intel Note](spot://intelnote),
-
 # Top
 #### kind: Big
 #### area: Hardware
 #### stance: 
 ## Sections
+### LAMP
+#### pri: 
+#### contacts: 
+#### cool: 
+#### job: 
 ### Cash
 #### cash: 
 ### Coolness
-#### cool: 
 #### cool_why: 
 #### cool_mission: 
 #### cool_balance: 
@@ -40,7 +44,6 @@ Intel DALL-E Demo – Intel showed a diffusion model generating images on its Ar
 #### dlproj8: ** - **
 #### dlproj9: ** - **
 ### Job Postings
-#### job: 
 #### job_why: 
 #### job_bay: 
 #### job_remote: 

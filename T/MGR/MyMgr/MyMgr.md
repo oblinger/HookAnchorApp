@@ -109,3 +109,30 @@ to have alot of value, so that is why we do it.
    Admin knows the number/CCV for the card but ?????
 #### Amazon account
    
+
+
+---
+
+# MyMgr
+
+This is an auto-generated anchor file for patch 'MyMgr'.
+
+Add your content here.
+
+
+---
+
+# MyMgr
+
+This is an auto-generated anchor file for patch 'MyMgr'.
+
+Add your content here.
+
+
+---
+
+# MyMgr
+
+This is an auto-generated anchor file for patch 'MyMgr'.
+
+Add your content here.

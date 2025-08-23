@@ -1,4 +1,5 @@
 .[[NJ.]].   [[NJ]]
+- [[NJ.2]]: Build Lists: BigCo & Startup: Companies, People, Filters
   [[DL proj]],
   [[NJ.1]],
 
@@ -35,7 +36,7 @@
 - L CODE:	[[@Algo Monster]] & [Leet](https://leetcode.com/studyplan/top-interview-150/) practice
 - L PAPERS:	Read top research papers & Blogs		
 - L Interview:	Practice interviewing [[@Pramp]]
-- [[Coms]]:		Calling plan; Choose my [[BOD]]. 
+- [[COM]]:		Calling plan; Choose my [[BOD]]. 
 - INTRV:		Watch linked in.
 - DOCS:		Write docs:	[[Res]], [[RES War]], [[RES Star]], [Doc](spot://resdocx), 
 - D [[RES]]: 		Get into final form.  Along with a cover letter?

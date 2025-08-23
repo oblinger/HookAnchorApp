@@ -7,19 +7,22 @@
   , ,
   , [Skydio Note](spot://skydionote), 
   DELS: [Skydio Note](spot://skydionote),[Skydio Obsidian](spot://skydioobsidian),[Skydio Note](spot://skydionote),[Skydio Note](spot://skydionote),
-
 # Top
 #### kind: StartAI
 #### area: Robotics
 #### stance: 
 ## Sections
+### LAMP
+#### pri: 
+#### contacts: 
+#### cool: B
+#### job: 
 ### Cash
 #### cash_trend: upward
 #### cash: 
 #### cash_available: 115
 #### funding: Raised $230M Series E in Feb 2023 ￼
 ### Coolness
-#### cool: B
 #### cool_why: 
 #### cool_mission: 
 #### cool_balance: 
@@ -35,7 +38,6 @@ Autonomy engine (360° vision) – Skydio’s drone uses six 4K navigation camer
 #### dlproj3: 
 3D Scan adaptive mapping – Developed Skydio 3D Scan, an AI-driven scanning software that autonomously pilots the drone to generate high-resolution 3D models of structures with full coverage, revolutionizing inspection and mapping ￼.
 ### Job Postings
-#### job: 
 #### job_why: 
 #### job_bay: Head of AI Perception | Redwood City
 #### job_remote: Principal AI Scientist | Remote

@@ -1,7 +1,16 @@
 
 # AI-Related War Stories
 
+
 ## Sports Visio
+### Ideas
+- MikeM - Game NLP
+- TopView NLP Strat Coaching
+- Train Shooter Model
+- Triton Server & NVIDIA profiler
+#### Others?
+- Claude coding of ???
+- Pytorch for ???
 ### 2024  SV GALLERY / OCR 
 - [Related CVPR paper](https://lukaszgrad.github.io/jnr/) 
 - Self-trained per-game p. ayer-detector using a DinoV2 backbone

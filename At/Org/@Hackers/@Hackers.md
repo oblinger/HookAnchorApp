@@ -42,3 +42,29 @@ PhD AI guy.  Used to give away your tax dollars for lots of cool projects while 
 >Fire Upon the Deep
 > An info manager (doesn't every nerd do this at some point?)
 > any language related session...
+
+---
+
+# @Hackers
+
+This is an auto-generated anchor file for patch '@Hackers'.
+
+Add your content here.
+
+
+---
+
+# @Hackers
+
+This is an auto-generated anchor file for patch '@Hackers'.
+
+Add your content here.
+
+
+---
+
+# @Hackers
+
+This is an auto-generated anchor file for patch '@Hackers'.
+
+Add your content here.

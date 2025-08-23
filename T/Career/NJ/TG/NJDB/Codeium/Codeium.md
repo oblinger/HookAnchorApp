@@ -1,25 +1,20 @@
 .[[Codeium]].
-  , ,
-  , ,
-  , ,
-  , [Codeium Obsidian](spot://codeiumobsidian),
-  DELS: ,[Codeium Obsidian](spot://codeiumobsidian),
-  , ,
-  , [Codeium Note](spot://codeiumnote), 
-  DELS: [Codeium Note](spot://codeiumnote),[Codeium Obsidian](spot://codeiumobsidian),[Codeium Note](spot://codeiumnote),[Codeium Note](spot://codeiumnote),
-
 # Top
 #### kind: BigAI
 #### area: CoreNLP
 #### stance: 
 ## Sections
+### LAMP
+#### pri: ?
+#### contacts: 
+#### cool: 
+#### job: 
 ### Cash
 #### cash_trend: spiking
 #### cash: 
 #### cash_available: 300
 #### funding: 0.81
 ### Coolness
-#### cool: 
 #### cool_why: 
 #### cool_mission: 
 #### cool_balance: 
@@ -31,7 +26,6 @@ Our mission at Codeium has always been to push the boundaries of what’s possib
 #### dlproj1: Hybrid code LLMs [https://codeium.com/blog]
 #### dlproj2: Windsurf Editor (AI IDE) [https://codeium.com/blog]
 ### Job Postings
-#### job: 
 #### job_why: 
 #### job_bay: Software Engineer, ML Research; Software Engineer, High Performance ML
 #### job_remote: None

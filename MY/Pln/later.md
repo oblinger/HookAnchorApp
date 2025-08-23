@@ -13,8 +13,6 @@ WAIT
  - [ ] don't forget laurette
 
 - [ ] Get investment plan
-
-
 - [ ] Finish Atomic Habits
 - [ ] Write Love Letter
 - [ ] Guy in Africa taht I need to send this slides to

@@ -7,18 +7,21 @@
   , ,
   , [Graphcore Note](spot://graphcorenote), 
   DELS: [Graphcore Note](spot://graphcorenote),[Graphcore Obsidian](spot://graphcoreobsidian),[Graphcore Note](spot://graphcorenote),[Graphcore Note](spot://graphcorenote),
-
 # Top
 #### kind: StartAI
 #### area: CoreDL
 #### stance: 
 ## Sections
+### LAMP
+#### pri: 
+#### contacts: 
+#### cool: 
+#### job: 
 ### Cash
 #### cash_trend: down
 #### cash: 
 #### cash_available: 44
 ### Coolness
-#### cool: 
 #### cool_why: 
 #### cool_mission: 
 #### cool_balance: 
@@ -34,7 +37,6 @@ Cloud IPU services for GenAI – Partnered with cloud providers (e.g. Paperspace
 #### dlproj3: 
 IPU for extreme-scale models – Developed the second-generation Bow IPU systems with greater memory and scalability, enabling training of extremely large models with efficient scaling ￼. Graphcore’s unique architecture unlocks new efficient training regimes (e.g. fine-grained parallelism) for models that are challenging for GPU clusters, targeting advanced generative AI and ML applications.
 ### Job Postings
-#### job: 
 #### job_why: 
 #### job_bay: (No active openings in SF Bay Area requiring AI leadership)
 #### job_remote: (No active openings in SF Bay or remote requiring AI leadership found)

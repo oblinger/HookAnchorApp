@@ -7,19 +7,22 @@
   , ,
   , [Gridspace Note](spot://gridspacenote), 
   DELS: [Gridspace Note](spot://gridspacenote),[Gridspace Obsidian](spot://gridspaceobsidian),[Gridspace Note](spot://gridspacenote),[Gridspace Note](spot://gridspacenote),
-
 # Top
 #### kind: BigAI
 #### area: CoreNLP
 #### stance: 
 ## Sections
+### LAMP
+#### pri: 
+#### contacts: 
+#### cool: 
+#### job: 
 ### Cash
 #### cash_trend: upward
 #### cash: 
 #### cash_available: N/A
 #### funding: 0.20
 ### Coolness
-#### cool: 
 #### cool_why: 
 #### cool_mission: 
 #### cool_balance: 
@@ -32,7 +35,6 @@ To help contact centers quickly understand customer requests, synchronize agent 
 #### dlproj2: 
 Gridspace Grace (Conversational AI) [https://www.gridspace.com/blog/introducing-grace]
 ### Job Postings
-#### job: 
 #### job_why: 
 #### job_bay: None
 #### job_remote: None

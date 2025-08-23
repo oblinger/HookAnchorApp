@@ -1,4 +1,5 @@
 .[[Matterport]].
+[LinkedIn Connections](https://www.linkedin.com/search/results/people/?currentCompany=%5B%222500599%22%5D&network=%5B%22F%22%5D)
   , ,
   , ,
   , ,
@@ -7,16 +8,19 @@
   , ,
   , [Matterport Note](spot://matterportnote), 
   DELS: [Matterport Note](spot://matterportnote),[Matterport Obsidian](spot://matterportobsidian),[Matterport Note](spot://matterportnote),[Matterport Note](spot://matterportnote),
-
 # Top
 #### kind: Big
 #### area: Spatial Computing
 #### stance: 
 ## Sections
+### LAMP
+#### pri: 
+#### contacts: 
+#### cool: 
+#### job: 
 ### Cash
 #### cash: 
 ### Coolness
-#### cool: 
 #### cool_why: 
 #### cool_mission: 
 #### cool_balance: 
@@ -38,7 +42,6 @@ Defurnishing AI (2024) – Matterport’s Vision & Learning research team (with 
 #### dlproj8: —
 #### dlproj9: —
 ### Job Postings
-#### job: 
 #### job_why: 
 #### job_bay: 
 #### job_remote: 

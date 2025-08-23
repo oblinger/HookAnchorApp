@@ -1,4 +1,6 @@
 
+- The Chief AI Officer
+- 
 
 ## TO READ. [[book]] 
 - focusing [Gendlin](https://focusing.org/sixsteps) 

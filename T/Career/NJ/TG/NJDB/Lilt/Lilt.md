@@ -7,12 +7,16 @@
   , ,
   , [Lilt Note](spot://liltnote), 
   DELS: [Lilt Note](spot://liltnote),[Lilt Obsidian](spot://liltobsidian),[Lilt Note](spot://liltnote),[Lilt Note](spot://liltnote),
-
 # Top
 #### kind: StartAI
 #### area: CoreNLP
 #### stance: 
 ## Sections
+### LAMP
+#### pri: 
+#### contacts: 
+#### cool: 
+#### job: 
 ### Cash
 #### cash_trend: flat
 #### cash: 
@@ -20,7 +24,6 @@
 #### funding: 
 Raised $55M Series C (Apr 2022) led by Four Rivers (Sequoia, Intel, Redpoint, etc. participating) ￼ – acquired by Zoom in 2023 (no further independent funding)
 ### Coolness
-#### cool: 
 #### cool_why: 
 #### cool_mission: 
 #### cool_balance: 
@@ -36,7 +39,6 @@ Lilt Create – a generative AI multilingual content generation tool introduced 
 #### dlproj3: 
 Model Builder – Lilt’s LLM hub that allows fine-tuning and deployment of custom and third-party models. It supports training domain-specific translation models and even integrating external models like Microsoft Translator or OpenAI GPT-3.5 within Lilt’s platform, all with enterprise controls. This capability lets customers bring their own models and continually improve translation quality with their proprietary data ￼ ￼.
 ### Job Postings
-#### job: 
 #### job_why: 
 #### job_bay: Senior Data Engineer – Google Search​
 #### job_remote: None currently

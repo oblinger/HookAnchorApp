@@ -540,7 +540,7 @@ Northern Kentucky University    (8/83 - 5/87)
   Nunn Drive, Highland Heights, KY 41099
   3.91; B.S. Mathematics & B.S. Computer Science 
  
-Ohio State University           (8/87 - 5/89) 
+The Ohio State University           (8/87 - 5/89) 
   2015 Neil Avenue,  Columbus, OH 43210-1277
   4.0;  M.S. Computer Science 
  

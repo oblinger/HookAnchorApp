@@ -3,13 +3,17 @@
 #### area: CoreDL
 #### stance: 
 ## Sections
+### LAMP
+#### pri: 
+#### contacts: 
+#### cool: 
+#### job: 
 ### Cash
 #### cash_trend: down
 #### cash: 
 #### cash_available: 169
 #### funding: Raised $676M led by SoftBank in Apr 2021 ￼
 ### Coolness
-#### cool: 
 #### cool_why: 
 #### cool_mission: 
 #### cool_balance: 
@@ -25,7 +29,6 @@ Multilingual BLOOMChat LLM – In collaboration with Together, SambaNova release
 #### dlproj3: 
 GPT for Banking – Developed a domain-specific Generative Pre-trained Transformer for financial services, included in SambaNova’s offerings ￼. This “GPT for Banking” model comes pre-trained on financial texts, allowing banks to deploy AI solutions (like document analysis or customer inquiry bots) with minimal fine-tuning.
 ### Job Postings
-#### job: 
 #### job_why: 
 #### job_bay: Director of AI | Redwood CitySenior Manager | AI Software (Redwood City)
 #### job_remote: 

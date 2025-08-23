@@ -1,4 +1,5 @@
 .[[Amazon]].
+[LinkedIn Connections](https://www.linkedin.com/search/results/people/?currentCompany=%5B%221586%22%5D&network=%5B%22F%22%5D)
   , ,
   , ,
   , ,
@@ -10,14 +11,18 @@
 
 //amazonnote),
 # Top
-#### kind: Big
+#### kind: Top
 #### area: Retail
 #### stance: 
 ## Sections
+### LAMP
+#### pri: B
+#### contacts: 
+#### cool: 
+#### job: 
 ### Cash
 #### cash: 
 ### Coolness
-#### cool: 
 #### cool_why: 
 #### cool_mission: 
 #### cool_balance: 
@@ -40,12 +45,26 @@ Amazon CodeGuru – AI code review and profiling service using ML to automatical
 #### dlproj7: 
 Amazon Polly – cloud service using advanced neural TTS models to convert text to natural-sounding speech in many languages, leveraging deep learning for high-quality voice synthesis【n/a】
 ### Job Postings
-#### job: 
 #### job_why: 
 #### job_bay: 
 #### job_remote: 
-### Toxicity
+# Amazon
+
+This is an auto-generated anchor file for patch 'Amazon'.
+
+Add your content here.
+
+
+---
 ## Misc Fields
+# Amazon
+
+This is an auto-generated anchor file for patch 'Amazon'.
+
+Add your content here.
+
+
+---
 #### bam:
 #### dlp_:
 ### proj1: Amazon Bedrock (managed GenAI foundation model service)
@@ -55,3 +74,11 @@ Amazon offers generative AI services on AWS, such as Bedrock to access foundatio
 Amazon CodeWhisperer (AI code generator)
   DELS: [oai_citation_attribution:10‡aboutamazon.com](https://www.aboutamazon.com/news/aws/aws-amazon-bedrock-general-availability-generative-ai-innovations#:~:text=AWS%20announces%20the%20general%20availability,and%20scale%20generative%20AI%20applications), [oai_citation_attribution:11‡aws.amazon.com](https://aws.amazon.com/blogs/aws/amazon-codewhisperer-offers-new-ai-powered-code-remediation-iac-support-and-integration-with-visual-studio/#:~:text=Amazon%20CodeWhisperer%20offers%20new%20AI,in%20security%20scanning), [oai_citation_attribution:9‡aboutamazon.com](https://www.aboutamazon.com/about-us#:~:text=Amazon%27s%20mission%20is%20to%20be,Click%20shopping),
 ### sdfsdfsfsfds: foo
+
+
+---
+# Amazon
+
+This is an auto-generated anchor file for patch 'Amazon'.
+
+Add your content here.

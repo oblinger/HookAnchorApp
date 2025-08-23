@@ -1,25 +1,20 @@
 .[[Synthetaic]].
-  , ,
-  , ,
-  , ,
-  , [Synthetaic Obsidian](spot://synthetaicobsidian),
-  DELS: ,[Synthetaic Obsidian](spot://synthetaicobsidian),
-  , ,
-  , [Synthetaic Note](spot://synthetaicnote), 
-  DELS: [Synthetaic Note](spot://synthetaicnote),[Synthetaic Obsidian](spot://synthetaicobsidian),[Synthetaic Note](spot://synthetaicnote),[Synthetaic Note](spot://synthetaicnote),
-
 # Top
 #### kind: BigAI
 #### area: CoreDL
 #### stance: 
 ## Sections
+### LAMP
+#### pri: B
+#### contacts: 
+#### cool: B Doing CV tracking
+#### job: 
 ### Cash
 #### cash_trend: upward
 #### cash: 
 #### cash_available: 15
 #### funding: 0.27.  (continued funding into 2024 ￼)
 ### Coolness
-#### cool: 
 #### cool_why: 
 #### cool_mission: 
 #### cool_balance: 
@@ -33,7 +28,6 @@ RAIC (Rapid Automatic Image Categorization for unlabeled images)&#8203;:contentR
 #### dlproj2: 
 Generative Synthetic Data Pipeline (fast AI model training with synthetic data)&#8203;:contentReference[oaicite:12]{index=12}
 ### Job Postings
-#### job: 
 #### job_why: 
 #### job_bay: —
 #### job_remote: —

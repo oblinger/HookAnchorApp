@@ -7,19 +7,22 @@
   , ,
   , [Biomatter Note](spot://biomatternote), 
   DELS: [Biomatter Note](spot://biomatternote),[Biomatter Obsidian](spot://biomatterobsidian),[Biomatter Note](spot://biomatternote),[Biomatter Note](spot://biomatternote),
-
 # Top
 #### kind: BigAI
 #### area: Bio
 #### stance: 
 ## Sections
+### LAMP
+#### pri: 
+#### contacts: 
+#### cool: 
+#### job: 
 ### Cash
 #### cash_trend: upward
 #### cash: 
 #### cash_available: 12
 #### funding: 0.05
 ### Coolness
-#### cool: 
 #### cool_why: 
 #### cool_mission: 
 #### cool_balance: 
@@ -33,7 +36,6 @@ ProteinGAN (AI-designed enzyme) [https://www.nature.com/articles/s41598-020-6364
 #### dlproj2: Intelligent Architecture™ (enzyme design) [*no direct link available*]
 #### dlproj3: AI-designed enzyme for HMO synthesis (Kirin collab) [*no direct link available*]
 ### Job Postings
-#### job: 
 #### job_why: 
 #### job_bay: None
 #### job_remote: None

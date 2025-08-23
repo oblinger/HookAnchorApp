@@ -7,16 +7,19 @@
   , ,
   , [DeepMind Note](spot://deepmindnote), 
   DELS: [DeepMind Note](spot://deepmindnote),[DeepMind Obsidian](spot://deepmindobsidian),[DeepMind Note](spot://deepmindnote),[DeepMind Note](spot://deepmindnote),
-
 # Top
 #### kind: TopHard
 #### area: CoreDL
 #### stance: 
 ## Sections
+### LAMP
+#### pri: 
+#### contacts: 
+#### cool: 
+#### job: 
 ### Cash
 #### cash: 
 ### Coolness
-#### cool: 
 #### cool_why: 
 #### cool_mission: 
 #### cool_balance: 
@@ -32,7 +35,6 @@ WaveNet, a deep generative model of raw audio, generates speech mimicking any hu
 #### dlproj3: 
 AlphaCode writes computer programs at a competitive level, solving programming problems with a Transformer-based code generation model [oai_citation_attribution:5‡deepmind.google](https://deepmind.google/discover/blog/competitive-programming-with-alphacode/#:~:text=As%20part%20of%20DeepMind%E2%80%99s%20mission,coding%2C%20and%20natural%20language%20understanding)
 ### Job Postings
-#### job: 
 #### job_why: 
 #### job_bay: 
 #### job_remote: 

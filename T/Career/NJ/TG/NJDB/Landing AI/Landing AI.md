@@ -3,6 +3,11 @@
 #### area: CoreDL
 #### stance: 
 ## Sections
+### LAMP
+#### pri: 
+#### contacts: 
+#### cool: 
+#### job: 
 ### Cash
 #### cash_trend: flat
 #### cash: 
@@ -10,7 +15,6 @@
 #### funding: 
 Secured $57M Series A (led by McRock Capital with Insight, Intel, Samsung, etc.) in Nov 2021 ￼ ￼
 ### Coolness
-#### cool: 
 #### cool_why: 
 #### cool_mission: 
 #### cool_balance: 
@@ -25,7 +29,6 @@ VisionAgent – a generative visual AI tool (introduced by Andrew Ng’s team in
 #### dlproj3: 
 Few-Shot Learning – Landing AI has pioneered few-shot learning approaches for vision tasks. In one approach, an AI is trained on thousands of tiny vision tasks (each with only, say, 10 images) so that it learns to generalize from minimal examples ￼. When that model is applied to a new inspection task with only a handful of real examples, it can recognize defects or patterns surprisingly well because it has essentially seen many analogous small-data tasks before. This data-centric technique helps manufacturers deploy AI with very little proprietary data.
 ### Job Postings
-#### job: 
 #### job_why: 
 #### job_bay: 
 #### job_remote: Senior Software Engineer (Backend) – Google Search​

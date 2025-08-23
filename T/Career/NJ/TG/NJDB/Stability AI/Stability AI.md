@@ -3,6 +3,11 @@
 #### area: CoreDL
 #### stance: 
 ## Sections
+### LAMP
+#### pri: 
+#### contacts: 
+#### cool: 
+#### job: 
 ### Cash
 #### cash_trend: down
 #### cash: 
@@ -11,7 +16,6 @@
 Struggled to raise additional funds (cash-strapped); secured ~$80M in mid-2024 with new CEO ￼ ￼ – after a $101M seed in 2022 at a $1B valuation ￼
 3.48
 ### Coolness
-#### cool: 
 #### cool_why: 
 #### cool_mission: 
 #### cool_balance: 
@@ -29,7 +33,6 @@ StableLM is an open-source suite of large language models released by Stability 
 Stable Audio – an AI system for music and sound generation. Launched in Sep 2023, Stable Audio is Stability AI’s first product for generating original audio via latent diffusion models ￼. Given a text prompt (and a desired length), Stable Audio produces a high-quality 44.1 kHz stereo track up to 90 seconds ￼. It was trained on thousands of songs paired with metadata (in partnership with AudioSparx) and allows musicians and creators to generate royalty-free music and sound effects with simple prompts.
 (Not applicable)
 ### Job Postings
-#### job: 
 #### job_why: 
 #### job_bay: 
 #### job_remote: 

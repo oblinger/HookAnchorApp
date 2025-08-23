@@ -222,3 +222,30 @@
 - [[2023-07 Backend Architect]]
 - [[2023-07 ML-CV Ops Job Post]]
 
+
+
+---
+
+# Hire Post
+
+This is an auto-generated anchor file for patch 'Hire Post'.
+
+Add your content here.
+
+
+---
+
+# Hire Post
+
+This is an auto-generated anchor file for patch 'Hire Post'.
+
+Add your content here.
+
+
+---
+
+# Hire Post
+
+This is an auto-generated anchor file for patch 'Hire Post'.
+
+Add your content here.

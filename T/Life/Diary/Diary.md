@@ -2,6 +2,7 @@
 .[[Diary]].  (See [[Meta Journaling]]) 
   [[Reflections]] 	- Weekly Reflections
    				- Daily Diary.  (currently used to track anxiety loop)
+  [[Dreams]] 
   [[Jnl]],
   , [[DD]],
   , [[test-foo]],

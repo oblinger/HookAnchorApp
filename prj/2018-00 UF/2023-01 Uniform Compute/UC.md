@@ -8,7 +8,7 @@ A simplest space of hosted compute:
 
 ## CORE SEMANTICS
 
-
+zzz
 ### UNIFORM DATA
 
 In essence computer data is symbolic information that affords structured access.

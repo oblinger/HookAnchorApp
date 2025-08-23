@@ -3,12 +3,16 @@
 #### area: Bio
 #### stance: 
 ## Sections
+### LAMP
+#### pri: 
+#### contacts: 
+#### cool: B+
+#### job: 
 ### Cash
 #### cash_trend: upward
 #### cash: 
 #### cash_available: 100
 ### Coolness
-#### cool: B+
 #### cool_why: 
 #### cool_mission: 
 #### cool_balance: 
@@ -24,7 +28,6 @@ GEMS generative AI platform: Genesis Exploration of Molecular Space (GEMS) integ
 #### dlproj3: 
 NVIDIA partnership on equivariant models: Collaboration with NVIDIA to accelerate Genesis’s AI by optimizing 3D geometry–aware neural networks, advancing generative and predictive models for structure-based design ￼ ￼.
 ### Job Postings
-#### job: 
 #### job_why: 
 #### job_bay: 
 ML Research Engineer (Senior/Staff) – Google search, ML Research Scientist (Senior/Staff) – Google search, Head of Platform Engineering – Google search

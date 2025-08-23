@@ -8,14 +8,20 @@ n:: Books I have read
   - [Atomic Habits](spot://atomichabits), [DYL](spot://dyl), [Getting_Things_Done](spot://gettingthingsdone),
   - [High Output Management](spot://highoutputmanagement), [[F90]], [[MgrPath]],
   - [[Agile Software Development]], [[Fundamentals of Workability Workshop]],
+  - 
   , ,
   , ,
   , ,
   , [Book Obsidian](spot://bookobsidian),
   DELS: ,[Book Obsidian](spot://bookobsidian),
   , ,
-  , [Book Note](spot://booknote), 
-  DELS: [Book Note](spot://booknote),[Book Obsidian](spot://bookobsidian),[Book Note](spot://booknote),[Book Note](spot://booknote),
+  , [Book Note](spot://booknote),
+  , [BOOK Favorites Obsidian](spot://bookfavoritesobsidian)
+  , [BOOK Research Obsidian](spot://bookresearchobsidian)
+  , [BOOK Suggestions Obsidian](spot://booksuggestionsobsidian)
+  , [BOOK Summaries Obsidian](spot://booksummariesobsidian)
+  , [Book To Read Obsidian](spot://booktoreadobsidian),
+  DELS: [Book Note](spot://booknote),[Book Obsidian](spot://bookobsidian),[Book Note](spot://booknote),[Book Note](spot://booknote),[[Two-Hour Job Search]], 
 
 
 
@@ -364,3 +370,30 @@ n:: Books I have read
 
 
 
+
+
+---
+
+# Book
+
+This is an auto-generated anchor file for patch 'Book'.
+
+Add your content here.
+
+
+---
+
+# Book
+
+This is an auto-generated anchor file for patch 'Book'.
+
+Add your content here.
+
+
+---
+
+# Book
+
+This is an auto-generated anchor file for patch 'Book'.
+
+Add your content here.

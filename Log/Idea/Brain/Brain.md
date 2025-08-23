@@ -24,7 +24,9 @@
   DELS: [[EOC]], ,[[2021-06-00 Brain3]], , , , [[2007-00-00 Brain DARPA Program]],,[[2015-00-00 The Sentient Weapon]], [[Brain Log]],, , , , , ,,, , , , , , , , , , ,[Brain Obsidian](spot://brainobsidian),
   , ,
   DELS: [[EOC]], ,[[2021-06-00 Brain3]], , , , [[2007-00-00 Brain DARPA Program]],,[[2015-00-00 The Sentient Weapon]], [[Brain Log]],, , , , , ,,, , , , , , , , , , ,[Brain Obsidian](spot://brainobsidian),, ,
-  , [Brain Note](spot://brainnote), 
+  , [Brain Note](spot://brainnote),
+  , [brain book outline Obsidian](spot://brainbookoutlineobsidian)
+  , [Brain Log Obsidian](spot://brainlogobsidian), 
   DELS: [[EOC]], [[The Sentient Weapon]],[[2021-06-00 Brain3]], [[Levels]], [[pppw]], [[Strong AI]], [[2007-00-00 Brain DARPA Program]],[[The Sentient Weapon]],[[2015-00-00 The Sentient Weapon]], [[Brain Log]],[[The Sentient Weapon]], [[The Sentient Weapon]], [[Levels]], [[pppw]], [[Strong AI]], [[The Sentient Weapon]],[Brain Note](spot://brainnote),[[The Sentient Weapon]], [[Levels]], [[pppw]], [[Strong AI]], [[The Sentient Weapon]], [[The Sentient Weapon]], [[The Sentient Weapon]], [[Levels]], [[pppw]], [[Strong AI]], [[The Sentient Weapon]],[Brain Obsidian](spot://brainobsidian),[Brain Note](spot://brainnote), [Brain Note](spot://brainnote),[[The Sentient Weapon]], [[Levels]], [[pppw]], [[Strong AI]], [[The Sentient Weapon]], [[The Sentient Weapon]], [[The Sentient Weapon]], [[Levels]], [[pppw]], [[Strong AI]], [[The Sentient Weapon]], [[The Sentient Weapon]], [[Levels]], [[pppw]], [[Strong AI]], [[The Sentient Weapon]], [[The Sentient Weapon]], [[The Sentient Weapon]], [[Levels]], [[pppw]], [[Strong AI]], [[The Sentient Weapon]],[Brain Note](spot://brainnote), [Brain Note](spot://brainnote), [Brain Note](spot://brainnote), [Brain Note](spot://brainnote),
 
 

@@ -1,25 +1,16 @@
 .[[UF]].
-  , [[UfApps]], [[ufPublish]],
+  , [[UfApps]], [[ufPublish]], 
   , [[_URF]],
   [[2020.03 - Uniform Whitepaper]], , [[_choices]], [[_code_core]], [[_code_uniform]], , , , ,
   [[_society]], [[_todo_OLD]], [[_vocabulary]],
   ADDS:   [[_ideas_OLD]],
-  , [[_info]],
+  , [[_info]],  
   , [[UF-OLD]],
-  DELS: , , , , , , , , , , ,, , , , ,, , , , , , , , , , ,
-  , ,
-  , , ,
-  DELS: , , , , , , , , , , ,, , , , ,, , , , , , , , , , ,,, , , , , , , , , , , , , , , , , , , , , , , , , , ,,
-  , , ,
-  DELS: , , , , , , , , , , ,, , , , ,, , , , , , , , , , ,,, , , , , , , , , , , , , , , , , , , , , , , , , , ,,, ,
-  , [_Hayes Obsidian](spot://hayesobsidian), [UF Obsidian](spot://ufobsidian),
-  DELS: , , , , , , , , , , ,, , , , ,, , , , , , , , , , ,,, , , , , , , , , , , , , , , , , , , , , , , , , , ,,, ,, , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , ,[_Hayes Obsidian](spot://hayesobsidian), [UF Obsidian](spot://ufobsidian),
-  , , ,
-  DELS: , , , , , , , , , , ,, , , , ,, , , , , , , , , , ,,, , , , , , , , , , , , , , , , , , , , , , , , , , ,,, ,, , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , ,[_Hayes Obsidian](spot://hayesobsidian), [UF Obsidian](spot://ufobsidian),, , , ,
+  , [_Hayes Obsidian](spot://hayesobsidian), [UF Obsidian](spot://ufobsidian), [_Hayes Obsidian](spot://hayesobsidian), [UF Obsidian](spot://ufobsidian),[_Hayes Obsidian](spot://hayesobsidian), [UF Obsidian](spot://ufobsidian),, , , ,
   , [[_Hayes Note]], [UF Note](spot://ufnote), 
   DELS: [[ufAgenda]], [[ufElements]], [[ufGenerality]], [[UfGui]], [[ufIntroduction]], [[ufLAL]], [[ufMarkdown]], [[essential capture]], [[_outtakes]], [[Recommender]], [[TextPuter]],[[uniform1_vocabulary]], [[uniform7_oblits]], [[uniform7_sentences]], [[UC]], [[Info]],[[ufAgenda]], [[ufElements]], [[ufGenerality]], [[UfGui]], [[ufIntroduction]], [[ufLAL]], [[ufMarkdown]], [[essential capture]], [[_outtakes]], [[Recommender]], [[TextPuter]],[[_agenda]],[[ufAgenda]], [[ufElements]], [[ufGenerality]], [[UfGui]], [[ufIntroduction]], [[ufLAL]], [[ufMarkdown]], [[essential capture]], [[_outtakes]], [[Recommender]], [[TextPuter]], [[uniform1_vocabulary]], [[uniform7_oblits]], [[uniform7_sentences]], [[UC]], [[Info]], [[ufAgenda]], [[ufElements]], [[ufGenerality]], [[UfGui]], [[ufIntroduction]], [[ufLAL]], [[ufMarkdown]], [[essential capture]], [[_outtakes]], [[Recommender]], [[TextPuter]],[[_parts]],[[_Hayes Note]], [UF Note](spot://ufnote),[[ufAgenda]], [[ufElements]], [[ufGenerality]], [[UfGui]], [[ufIntroduction]], [[ufLAL]], [[ufMarkdown]], [[essential capture]], [[_outtakes]], [[Recommender]], [[TextPuter]], [[uniform1_vocabulary]], [[uniform7_oblits]], [[uniform7_sentences]], [[UC]], [[Info]], [[ufAgenda]], [[ufElements]], [[ufGenerality]], [[UfGui]], [[ufIntroduction]], [[ufLAL]], [[ufMarkdown]], [[essential capture]], [[_outtakes]], [[Recommender]], [[TextPuter]], [[_agenda]], [[ufAgenda]], [[ufElements]], [[ufGenerality]], [[UfGui]], [[ufIntroduction]], [[ufLAL]], [[ufMarkdown]], [[essential capture]], [[_outtakes]], [[Recommender]], [[TextPuter]], [[uniform1_vocabulary]], [[uniform7_oblits]], [[uniform7_sentences]], [[UC]], [[Info]], [[ufAgenda]], [[ufElements]], [[ufGenerality]], [[UfGui]], [[ufIntroduction]], [[ufLAL]], [[ufMarkdown]], [[essential capture]], [[_outtakes]], [[Recommender]], [[TextPuter]], [[_parts]],[_Hayes Obsidian](spot://hayesobsidian), [UF Obsidian](spot://ufobsidian),[[_Hayes Note]], [UF Note](spot://ufnote), [[_Hayes Note]], [UF Note](spot://ufnote),[[ufAgenda]], [[ufElements]], [[ufGenerality]], [[UfGui]], [[ufIntroduction]], [[ufLAL]], [[ufMarkdown]], [[essential capture]], [[_outtakes]], [[Recommender]], [[TextPuter]], [[uniform1_vocabulary]], [[uniform7_oblits]], [[uniform7_sentences]], [[UC]], [[Info]], [[ufAgenda]], [[ufElements]], [[ufGenerality]], [[UfGui]], [[ufIntroduction]], [[ufLAL]], [[ufMarkdown]], [[essential capture]], [[_outtakes]], [[Recommender]], [[TextPuter]], [[_agenda]], [[ufAgenda]], [[ufElements]], [[ufGenerality]], [[UfGui]], [[ufIntroduction]], [[ufLAL]], [[ufMarkdown]], [[essential capture]], [[_outtakes]], [[Recommender]], [[TextPuter]], [[uniform1_vocabulary]], [[uniform7_oblits]], [[uniform7_sentences]], [[UC]], [[Info]], [[ufAgenda]], [[ufElements]], [[ufGenerality]], [[UfGui]], [[ufIntroduction]], [[ufLAL]], [[ufMarkdown]], [[essential capture]], [[_outtakes]], [[Recommender]], [[TextPuter]], [[_parts]], [[ufAgenda]], [[ufElements]], [[ufGenerality]], [[UfGui]], [[ufIntroduction]], [[ufLAL]], [[ufMarkdown]], [[essential capture]], [[_outtakes]], [[Recommender]], [[TextPuter]], [[uniform1_vocabulary]], [[uniform7_oblits]], [[uniform7_sentences]], [[UC]], [[Info]], [[ufAgenda]], [[ufElements]], [[ufGenerality]], [[UfGui]], [[ufIntroduction]], [[ufLAL]], [[ufMarkdown]], [[essential capture]], [[_outtakes]], [[Recommender]], [[TextPuter]], [[_agenda]], [[ufAgenda]], [[ufElements]], [[ufGenerality]], [[UfGui]], [[ufIntroduction]], [[ufLAL]], [[ufMarkdown]], [[essential capture]], [[_outtakes]], [[Recommender]], [[TextPuter]], [[uniform1_vocabulary]], [[uniform7_oblits]], [[uniform7_sentences]], [[UC]], [[Info]], [[ufAgenda]], [[ufElements]], [[ufGenerality]], [[UfGui]], [[ufIntroduction]], [[ufLAL]], [[ufMarkdown]], [[essential capture]], [[_outtakes]], [[Recommender]], [[TextPuter]], [[_parts]],[[_Hayes Note]], [UF Note](spot://ufnote), [[_Hayes Note]], [UF Note](spot://ufnote), [[_Hayes Note]], [UF Note](spot://ufnote), [[_Hayes Note]], [UF Note](spot://ufnote),
 
-
+uf
 
 
 

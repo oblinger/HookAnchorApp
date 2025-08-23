@@ -3,13 +3,17 @@
 #### area: Bio
 #### stance: 
 ## Sections
+### LAMP
+#### pri: 
+#### contacts: 
+#### cool: 
+#### job: 
 ### Cash
 #### cash_trend: spiking
 #### cash: 
 #### cash_available: 57
 #### funding: 2.27
 ### Coolness
-#### cool: 
 #### cool_why: 
 #### cool_mission: 
 #### cool_balance: 
@@ -21,7 +25,6 @@
 Hippocratic LLM (Healthcare-Focused Language Model) [https://www.hippocraticai.com/]
 #### dlproj2: Safe & Responsible Medical Generative AI [*no direct link available*]
 ### Job Postings
-#### job: 
 #### job_why: 
 #### job_bay: Senior Technical Product Manager, AI Agents (Palo Alto)
 #### job_remote: Staff Software Engineer (Remote)

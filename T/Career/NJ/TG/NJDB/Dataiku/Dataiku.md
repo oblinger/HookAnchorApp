@@ -7,12 +7,16 @@
   , ,
   , [Dataiku Note](spot://dataikunote), 
   DELS: [Dataiku Note](spot://dataikunote),[Dataiku Obsidian](spot://dataikuobsidian),[Dataiku Note](spot://dataikunote),[Dataiku Note](spot://dataikunote),
-
 # Top
 #### kind: StartAI
 #### area: CoreDL
 #### stance: 
 ## Sections
+### LAMP
+#### pri: 
+#### contacts: 
+#### cool: 
+#### job: 
 ### Cash
 #### cash_trend: down
 #### cash: 
@@ -20,7 +24,6 @@
 #### funding: 
 Raised $200M Series F at a reduced $3.7B valuation (Dec 2022), ~20% lower than its prior round ￼ ￼
 ### Coolness
-#### cool: 
 #### cool_why: 
 #### cool_mission: 
 #### cool_balance: 
@@ -36,7 +39,6 @@ Dataiku Answers – an enterprise Q&A chatbot builder introduced in 2024. It use
 #### dlproj3: 
 LLM Mesh – Dataiku’s architecture for connecting to and managing large language models. LLM Mesh allows Dataiku to route requests to various LLM providers (OpenAI, Anthropic, Azure, etc.) or even self-hosted models, and integrates a vector store for retrieval. It includes controls like PII filtering and response moderation, giving enterprises a unified and safe way to leverage generative AI across different model APIs ￼.
 ### Job Postings
-#### job: 
 #### job_why: 
 #### job_bay: 
 Enterprise Account Executive, California (San Francisco Bay Area) – https://www.google.com/search?q=%22Enterprise+Account+Executive%22+Dataiku+California

@@ -3,10 +3,14 @@
 #### area: CoreDL
 #### stance: 
 ## Sections
+### LAMP
+#### pri: 
+#### contacts: 
+#### cool: 
+#### job: 
 ### Cash
 #### cash: 
 ### Coolness
-#### cool: 
 #### cool_why: 
 #### cool_mission: 
 #### cool_balance: 
@@ -22,7 +26,6 @@ Designing a silicon-photonic AI accelerator aimed at generative AI workloads. It
 #### dlproj3: 
 Aiming to build a photonics-driven AI supercomputer. Luminous’s ultimate goal is a new class of AI system with unparalleled compute, memory, and interconnect bandwidth – “the most powerful AI accelerator on the planet” – by integrating optical computing into large-scale AI infrastructure ￼.
 ### Job Postings
-#### job: 
 #### job_why: 
 #### job_bay: None currently
 #### job_remote: None currently

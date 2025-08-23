@@ -1,5 +1,45 @@
 
 
+
+### 2025-08-11  Well I am doing better on sleep!
+
+Having this PKM app is taking up much more time than anticipated.
+
+
+### 2025-08-05  Not being disciplined about sleep & work
+
+I need to focus on process more than ouput.
+I need to build rhythm, hope, backbone.
+Need to have modest but real deliverables each week, then drive towards achieving them.
+
+
+### 2025-07-28  (1) A Plan, (2) time on task, (3) stop hacking before dinner!
+
+- Get an achievable plan for the week.
+- Put in 3 hrs per day on MIT
+- Stop hacking before dinner
+	- Very quick fixes.  Set timer for 10-15min.
+
+
+### 2025-07-24  Feel better this morning, but emotions are very shaky
+- I don't see the future for Engineering-IC AI for me, and Eng Mgr seems vacent and hard to get even when it comes back
+- Chief AI officer seems better.  and for the moment I am excited to build towards that, and can imagine a happy life while doing it.
+- It is a back flip from where I am, but I have the credentials on the Res, the context in SV to execute the backflip, and maybe the enthusiasm to learn then execute the job.
+- maybe...     
+
+### 2025-07-11  MWF 1h minimum on Contacts.  
+- My idea is that it might be in-bound looking at linkedin
+- Scanning my LAMP list and taking action, or
+- Looking at my [[ping]] list and operating from that.
+
+
+### 2025-07-08  Great sleep w/ hope; Need to lean into strengths; will find job
+
+Nick suggests I don't consider consulting as this is not leaning into what has worked for me in the past.
+He notes when I am 
+
+### 2025-07-01  Sleep seems better.  MIT time is still bad.
+
 ### 2025-06-24  Tomorrow
 I will do better tomorrow.
 
@@ -24,10 +64,10 @@ Wow am I flailing.  I have very bad patterns of daily activity.
 I am procrastinating worse than I ever can remember doing.
 I am stressed that this job market is too hard and I am too misaligned.
 
-Sometimes I feel things will be ok-e [[Reflections]]<br><br><br><br><br><br><br><br>                                                                                          have many goals, but they are parts of very large buckets.
+Sometimes I feel things will be ok-e.  I have many goals, but they are parts of very large buckets.
 
 ==> One idea is to set specific goals for each day, and push to achieve those
-maybe I will even do that for the rest of to [[Reflections]]<br><br><br><br><br><br><br>                                                                                              hole gently.
+maybe I will even do that for the rest of to hole gently.
 get some low bar wins...
 going to bed
 

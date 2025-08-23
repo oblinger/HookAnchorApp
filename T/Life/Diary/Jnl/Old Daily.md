@@ -38,7 +38,7 @@
 - [ ] 12:	[[Lunch]] 
 - [ ] 1'	[[War]]: 
 - [ ] 10	[[RES Linked In]] 
-- [ ] 11	[[COMS]] 
+- [ ] 11	[[COM]] 
 - [ ] 11	[[Lunch]],  
 - [ ] 12:	[[War]] 
 - [ ] 2	[[Gap]]  
@@ -200,7 +200,7 @@
 - [x] [[2022-09 Mom80]] - 
 - [ ] Yolo-x
 - [ ] War Stories
-- [ ] [[COMS]]
+- [ ] [[COM]]
 
 ### 2022-09-29  
 - [x] Yashin sheet
@@ -243,7 +243,7 @@
 
 ### 2022-08-03
 - [x] Ready joe
-- [ ] [[COMS]] - 
+- [ ] [[COM]] - 
 - [x] War Stories
 
 - [ ] Chew
@@ -535,7 +535,7 @@ ec- [ ] Do 4 hours on WarStories
 - [ ] DYL forum odyssey
 - [ ] +Totally Finish Fine note.  e.g. subject line
 - [ ] check airline
-- [ ] [[COMS]]
+- [ ] [[COM]]
 - [ ] exercise
 
 ### 2022-05-04
@@ -546,7 +546,7 @@ ec- [ ] Do 4 hours on WarStories
 
 ### 2022-04-27
 - [ ] Do some GAANs research.  Read Benjio stuff
-- [ ] [[COMS]] complete
+- [ ] [[COM]] complete
 - [ ] Ready for Joe
 - [ ] Odyssey plans
 - [ ] Read prototyping
@@ -556,7 +556,7 @@ ec- [ ] Do 4 hours on WarStories
 
 ### 2022-04-26
 - [x] Do some GAANs research.  
-- [x] [[COMS]] complete
+- [x] [[COM]] complete
 - [ ] Odyssey plans
 - [ ] Read prototyping
 
@@ -571,12 +571,12 @@ ec- [ ] Do 4 hours on WarStories
 ### 2022-04-22
 - [ ] Dave, Dad, Sammie gifts
 - [ ] High output management summary
-- [ ] organize and execute [[COMS]].
+- [ ] organize and execute [[COM]].
 - [ ] Coursera.  best to read.
 - [ ] call doctors
 
 ### 2022-04-21
-- [ ] organize and execute [[COMS]].
+- [ ] organize and execute [[COM]].
 - [ ] go deep on FAANG; questions; people; training; 
 - [x] Yearbook ready
 

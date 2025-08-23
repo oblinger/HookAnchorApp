@@ -7,12 +7,16 @@
   , ,
   , [Synthesia Note](spot://synthesianote), 
   DELS: [Synthesia Note](spot://synthesianote),[Synthesia Obsidian](spot://synthesiaobsidian),[Synthesia Note](spot://synthesianote),[Synthesia Note](spot://synthesianote),
-
 # Top
 #### kind: StartAI
 #### area: CoreDL
 #### stance: 
 ## Sections
+### LAMP
+#### pri: 
+#### contacts: 
+#### cool: B-
+#### job: 
 ### Cash
 #### cash_trend: spiking
 #### cash: 
@@ -21,7 +25,6 @@
 Closed a $180M Series D led by NEA (Jan 15 2025), doubling its valuation to $2.1B ￼
 2.38
 ### Coolness
-#### cool: B-
 #### cool_why: 
 #### cool_mission: 
 #### cool_balance: 
@@ -37,7 +40,6 @@ Beckham “Malaria Must Die” Video – a 2019 awareness campaign where Synthes
 #### dlproj3: 
 Expressive Avatars – a 2024 update unveiled a new range of AI-generated video avatars that convey human emotions (happiness, sadness, frustration) through prompts, eliminating the need for actors or filming ￼.
 ### Job Postings
-#### job: 
 #### job_why: 
 #### job_bay: AI Infrastructure Manager | San Francisco
 #### job_remote: Lead AI Engineer | Remote

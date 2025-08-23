@@ -1,4 +1,5 @@
 
+
 .[[CV]].   (See [[RR CV]])
   ROOTS:[CV Root](spot://cvroot), [CV Confluence](spot://cvconfluence), [CV Jira Page](spot://cvjirapage),  [CV Notion](spot://cvnotion),
   DIRS:	[CV Google Page](spot://cvgooglepage),
@@ -28,7 +29,12 @@
   , [CV Alg](spot://cvalg), ,
   DELS: ,[AI Min](spot://aimin),, ,,, , ,[CV Obsidian](spot://cvobsidian),[[CV Alg]], , , ,
   , ,
-  , [CV Alg Note](spot://cvalgnote), [CV Note](spot://cvnote), 
+  , [CV Alg Note](spot://cvalgnote), [CV Note](spot://cvnote),
+  , [CV Algs Obsidian](spot://cvalgsobsidian)
+  , [CV Annotations Obsidian](spot://cvannotationsobsidian)
+  , [CV Hack Notes Obsidian](spot://cvhacknotesobsidian)
+  , [CV HowTo Obsidian](spot://cvhowtoobsidian), [CV Log Obsidian](spot://cvlogobsidian)
+  , [CV Roadmap Obsidian](spot://cvroadmapobsidian), [CV Systems Obsidian](spot://cvsystemsobsidian), 
   DELS: [AI MIN](spot://aimin),[AI Min](spot://aimin),[AI MIN](spot://aimin), [AI MIN](spot://aimin),[CV Note](spot://cvnote),[AI MIN](spot://aimin), [AI MIN](spot://aimin), [AI MIN](spot://aimin),[CV Obsidian](spot://cvobsidian),[[CV Alg]], [CV Alg Note](spot://cvalgnote), [CV Note](spot://cvnote), [CV Note](spot://cvnote),[AI MIN](spot://aimin), [AI MIN](spot://aimin), [AI MIN](spot://aimin), [AI MIN](spot://aimin), [AI MIN](spot://aimin), [AI MIN](spot://aimin),[CV Alg Note](spot://cvalgnote),[CV Note](spot://cvnote), [CV Note](spot://cvnote), [CV Note](spot://cvnote), [CV Note](spot://cvnote), [CV Alg Note](spot://cvalgnote),
 
 :: [[Data]]
@@ -783,3 +789,30 @@ Maxim - Visualization tool.
 GRZ - 
 - PCHECK - 
 
+
+
+---
+
+# CV
+
+This is an auto-generated anchor file for patch 'CV'.
+
+Add your content here.
+
+
+---
+
+# CV
+
+This is an auto-generated anchor file for patch 'CV'.
+
+Add your content here.
+
+
+---
+
+# CV
+
+This is a TEST orphan CV content.
+
+Test data.

@@ -1,4 +1,3 @@
-
 .[[Mentors]], 
 
 [[@Nick Allen]] 		- General wisdom, committed

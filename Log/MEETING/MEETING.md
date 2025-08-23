@@ -5,7 +5,8 @@
   , [Meeting Obsidian](spot://meetingobsidian),
   DELS: ,[Meeting Obsidian](spot://meetingobsidian),
   , ,
-  , [Meeting Note](spot://meetingnote), 
+  , [Meeting Note](spot://meetingnote),
+  , [MEETING Entry Obsidian](spot://meetingentryobsidian), 
   DELS: [Meeting Note](spot://meetingnote),[Meeting Obsidian](spot://meetingobsidian),[Meeting Note](spot://meetingnote),[Meeting Note](spot://meetingnote),
 
 

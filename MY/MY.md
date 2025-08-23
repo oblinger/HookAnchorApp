@@ -16,7 +16,9 @@
   DELS: , , ,,, , ,[MY Obsidian](spot://myobsidian),[[MY Content]], [[My Stuff]], , , , ,
   , , ,
   , [MY Content Note](spot://mycontentnote), [MY Note](spot://mynote)
-  , [My Stuff Note](spot://mystuffnote), 
+  , [My Stuff Note](spot://mystuffnote),
+  , [My mgr NOTES Obsidian](spot://mymgrnotesobsidian)
+  , [My Photos Obsidian](spot://myphotosobsidian), [My Staff Obsidian](spot://mystaffobsidian), 
   DELS: [Pln Folder](spot://plnfolder), [[Closet]], [[HACK.]],[MY Note](spot://mynote),[Pln Folder](spot://plnfolder), [[Closet]], [[HACK.]],[MY Obsidian](spot://myobsidian),[[MY Content]], [[My Stuff]], [MY Content Note](spot://mycontentnote), [My Stuff Note](spot://mystuffnote), [MY Note](spot://mynote), [MY Note](spot://mynote),[Pln Folder](spot://plnfolder), [[Closet]], [[HACK.]], [Pln Folder](spot://plnfolder), [[Closet]], [[HACK.]],[MY Content Note](spot://mycontentnote), [My Stuff Note](spot://mystuffnote),[MY Note](spot://mynote), [MY Note](spot://mynote), [MY Note](spot://mynote), [MY Note](spot://mynote), [MY Content Note](spot://mycontentnote), [My Stuff Note](spot://mystuffnote),
 
 - [[Sys]], [[SYS Github Webpage]] 
@@ -238,3 +240,30 @@ fam fun help and job
 
 
 
+
+
+---
+
+# MY
+
+This is an auto-generated anchor file for patch 'MY'.
+
+Add your content here.
+
+
+---
+
+# MY
+
+This is an auto-generated anchor file for patch 'MY'.
+
+Add your content here.
+
+
+---
+
+# MY
+
+This is an auto-generated anchor file for patch 'MY'.
+
+Add your content here.

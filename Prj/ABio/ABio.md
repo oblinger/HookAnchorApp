@@ -1,48 +1,17 @@
 .[[ABio]].  [[@Github]] [ABIO Folder](spot://ABIO~Folder) 
-   [[ABIO.]]  [[ABIO Log]],
-  , [[ABIO Behavior Templates]], [[ABIO CellMetabolism5]], [[ABIO Generator]]
-  , [[ABIO Photosynthesis]], [[ABIO Prompts]], [[ABIO Queries]], [[ABIO References]]
-  , [[ABIO Systems]], [[ABIO Task Example]], [[ABIO Tasks]],
-  , [[Measuring Intelligence]],
-  , [[ABIO Log]],
-  , [[AlienBiologyWhitepaper]],
-  , ,
-  , ,
-  DELS: , [[ABIO Log]],,,
-  , ,
-  DELS: , [[ABIO Log]],,,,
-  , [ABio Obsidian](spot://abioobsidian),
-  DELS: , [[ABIO Log]],,,,, , ,[ABio Obsidian](spot://abioobsidian),
-  , ,
-  DELS: , [[ABIO Log]],,,,, , ,[ABio Obsidian](spot://abioobsidian),, ,
-  , [ABio Note](spot://abionote), 
-  DELS: [[Prj/ABio/AlienBiologyWhitepaper]], [[ABIO Log]],[[Alien Biology]],[[Prj/ABio/AlienBiologyWhitepaper]],[ABio Note](spot://abionote),[[Prj/ABio/AlienBiologyWhitepaper]], [[Alien Biology]], [[Prj/ABio/AlienBiologyWhitepaper]],[ABio Obsidian](spot://abioobsidian),[ABio Note](spot://abionote), [ABio Note](spot://abionote),[[Prj/ABio/AlienBiologyWhitepaper]], [[Alien Biology]], [[Prj/ABio/AlienBiologyWhitepaper]], [[Prj/ABio/AlienBiologyWhitepaper]], [[Alien Biology]], [[Prj/ABio/AlienBiologyWhitepaper]],[ABio Note](spot://abionote), [ABio Note](spot://abionote), [ABio Note](spot://abionote), [ABio Note](spot://abionote),
-
-   [[ABIO CellMetabolism5]], [[ABIO Generator]], [[ABIO Photosynthesis]]
-  , [[ABIO Prompts]], [[ABIO Queries]], [[ABIO References]], [[ABIO Systems]], [[ABIO Task Example]]
-  , [[ABIO Tasks]],
-  DELS: [[ABIO Behavior Templates]], 
-
-  [[ABIO Queries]],
-  [[ABIO References]]
-  [[ABIO Task Example]]		-
-  [[ABIO Tasks]]						-
-  [[ABIO Generator]] 				-
-   .
-  [[ABIO Systems]]					-  EXAMPLE SYSTEMS
-  [[ABIO Photosynthesis]]		-  Example
-  [[ABIO CellMetabolism5]]	-  Example of 5 interrelated processes
-  DELS: [[ABIO.]], [[ABIO Prompts]], 
+   TOP:	[[ABIO.]]  [[ABIO Log|Log]], [[AlienBiologyWhitepaper (do not distribute)|Whitepaper]], [[ABIO Results|Results]], 
+   EG:		[[ABIO Photosynthesis]],  [[ABIO CellMetabolism5]],
+   REF:		[[ABIO References]], [[ABIO Systems]],
+   WP:		[[ABIO Behavior Templates]], [[ABIO Generator]]
+   LISTS:	[[ABIO Prompts]], [[ABIO Queries]], [[ABIO Tasks]],
 
 
 
-# TODO
+# LOG
 
-
-
-
-
-# OUT TAKES
+### [[ABIO Task Example]]
+### [[Measuring Intelligence]]
+### OUT TAKES
 
 
 **Problem**: Because LLMs are constructed from such colossal training sets, it's hard to find tasks to assess their ability to perform truly novel reasoning as opposed to some sophisticated form copying from its training data.
@@ -52,3 +21,30 @@
 
 **Problem**: It's difficult to assess complex LLM reasoning since nearly any complex test task is tainted by likely but unknown relation to the texts used to train the LLM.
 
+
+
+---
+
+# ABio
+
+This is an auto-generated anchor file for patch 'ABio'.
+
+Add your content here.
+
+
+---
+
+# ABio
+
+This is an auto-generated anchor file for patch 'ABio'.
+
+Add your content here.
+
+
+---
+
+# ABio
+
+This is an auto-generated anchor file for patch 'ABio'.
+
+Add your content here.

@@ -1,9 +1,21 @@
 
-- [[NJ]] [[NJ.|.]]		
-- [[RES]]:	Get Resume & LinkedIn into final form.
-- [[LRN]]:	Learn leet coding from Algo Monster.
-- [[CN]]:		Meet [[BOD]]. 
 
+- [[NJ]] [[NJ.|.]]	
+- PLAN:	[[#My PLAN]], [[NJ Paths]], 
+- [[TG]]:		[[TG Summary]], 
+- [[RES]]:	Get Res & LinkedIn into final form.
+- [[LRN]]:	
+- [[CN]]:		Meet [[BOD]]. 
+- [[NJ.2|LAMP]]:	
+- [[COM]]:	
+
+
+
+- Good fire.  
+- Pick a thing, then turn it into a numbers game (for contacts)
+- Front door applications per week?
+- Side door conversations?
+ML mgr. 
 
 ## MY PLAN -- Get a job as an ML manager, preferably at a FAANG, possibly as an IC
 (Or as a PostDoc )
@@ -49,6 +61,36 @@
 
 
 # LOG
+
+## 2025-07 Strategy
+
+- Apply for >5-10 jobs per month (on website)
+	- Accept any AI job >$300K/y.  (ignore <$200K)
+- [[TG Summary]] 
+	1.	Bay Area Robotics/CV jobs
+	2.	Bay Area  ML-Eng Mgr jobs
+- "Advertising"
+	- Hidden LinkedIn Status
+	- Recruiters?
+	- [[NJ.2]] 
+
+### 2025-06-29  my plan
+
+Targets:
+- ML Eng Mgr (Big Co Preferred)
+	- Experience fine-tuning systems; Knowledge of tools
+- Startup CV/Robotics Leader
+	- Any job that delivers $300K
+- AGI Lab / AI-safety
+	- Any Job at a hyper-scaler: Anthropic, OpenAI, Google, Microsoft, Meta
+	- [[TG AI Safety]] 
+
+Activities
+- Shortlist for startup roles.  Scower
+
+
+
+
 
 ### 2025-06-11  .....
 

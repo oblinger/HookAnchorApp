@@ -4,11 +4,15 @@ Europe focused?
 #### area: CoreDL
 #### stance: 
 ## Sections
+### LAMP
+#### pri: 
+#### contacts: 
+#### cool: 
+#### job: 
 ### Cash
 #### cash: 
 #### funding: 5.38
 ### Coolness
-#### cool: 
 #### cool_why: 
 #### cool_mission: 
 #### cool_balance: 
@@ -18,7 +22,6 @@ To democratize artificial intelligence through open‑source, efficient, and inn
 ### Deep Learning Projects (DLP)
 #### dlp: 
 ### Job Postings
-#### job: 
 #### job_why: 
 #### job_bay: 
 #### job_remote: 

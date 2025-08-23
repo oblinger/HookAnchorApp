@@ -1,4 +1,4 @@
-=[[ORG]]    [Pramp](https://www.pramp.com/#/) 
+=[[_Org]]    [Pramp](https://www.pramp.com/#/) 
 Interviewing Prep
 
 

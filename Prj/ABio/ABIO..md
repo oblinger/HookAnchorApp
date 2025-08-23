@@ -3,7 +3,8 @@
 - [ ] [[ABIO Log#2025-05-12 Brainstorm behavior generators]] 
 
 
-
+SHOP ABIO AROUND
+- [[@ARC]] - Try to connect with ARC.  
 
 
 

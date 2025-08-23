@@ -9,6 +9,20 @@
   DELS: [@Vanguard Note](spot://@vanguardnote),[@Vanguard Obsidian](spot://@vanguardobsidian),[@Vanguard Note](spot://@vanguardnote),[@Vanguard Note](spot://@vanguardnote),
 
 
+Permanent Redemption Freeze
+- list account numbers.
+- Address: 
+	- Vanguard POBOX 982901, 
+	- El Paso, TX 79998
+
+
+Vanguard 0.3%.  
+- 704-306-0148 (charloette 9-6pm  Rick Cruze)
+
+
+- A Notarized Letter of Instruction 
+- 
+
 ## Dean Sprague CFP - Fiduciary
 - Dean Sprague CFP; Senior Financial Advisor
 - Vanguard Personal Advisor Services

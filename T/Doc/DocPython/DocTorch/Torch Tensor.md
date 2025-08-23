@@ -1,7 +1,7 @@
 [[DocTorch]] #dl #review 
 
 
-Tensor;;a multi-dimensional array data structure optionally with a gradient for each value <!--SR:!2025-03-26,5,244-->
+Tensor;;a multi-dimensional array data structure optionally with a gradient for each value <!--SR:!2025-07-27,12,244-->
 
 **Tensor Rank** / Tensor Order - This is the dimensions of the num Py array need to store instances of this kind of tensor.
 

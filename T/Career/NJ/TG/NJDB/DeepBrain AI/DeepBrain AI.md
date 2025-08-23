@@ -3,13 +3,17 @@
 #### area: CoreDL
 #### stance: 
 ## Sections
+### LAMP
+#### pri: 
+#### contacts: 
+#### cool: 
+#### job: 
 ### Cash
 #### cash_trend: upward
 #### cash: 
 #### cash_available: 12
 #### funding: 1.16
 ### Coolness
-#### cool: 
 #### cool_why: 
 #### cool_mission: 
 #### cool_balance: 
@@ -22,7 +26,6 @@ Our mission is to make AI more human and to bring the most innovative and costâ€
 #### dlproj2: Hyper-real AI avatar (voice & persona for ALS) [*no direct link available*]
 #### dlproj3: AI Bank Teller (virtual human bankers) [*no direct link available*]
 ### Job Postings
-#### job: 
 #### job_why: 
 #### job_bay: None
 #### job_remote: None

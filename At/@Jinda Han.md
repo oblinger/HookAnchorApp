@@ -2,3 +2,6 @@
 
 
  
+
+#pp    [ML Engineer/Scientist @ Ads](https://www.linkedin.com/in/hanjinda)  [Apple](./_Org/@Apple.md)  
+# LOG

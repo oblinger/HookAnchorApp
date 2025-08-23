@@ -1,19 +1,28 @@
 
 
 ### Big
-[[ABBYY]], [[Adobe]], [[Alibaba]], [[Amazon]], [[Aurora Innovation]], [[Automation Anywhere]], [[Baidu]], [[CrowdStrike]], [[Cruise]], [[Hugging Face]], [[IBM]], [[Intel]], [[Matterport]], [[OpenAI]], [[Palantir]], [[SRI International]], [[Salesforce]], [[SentinelOne]], [[SoundHound]], [[Upstart]], [[Waymo]], [[Zoox]]
+[[ABBYY]], [[Adobe]], [[Alibaba]], [[Aurora Innovation]], [[Automation Anywhere]], [[Baidu]], [[CrowdStrike]], [[Cruise]], [[Hugging Face]], [[IBM]], [[Intel]], [[Matterport]], [[OpenAI]], [[Palantir]], [[SRI International]], [[Salesforce]], [[SentinelOne]], [[SoundHound]], [[Upstart]], [[Waymo]], [[Zoox]]
+
+### BigAI
+[[Snowflake]]
+
+### BigCo
+[[ABB Robotics]], [[ADP]], [[AFOSR]], [[Genetech]], [[Humana]], [[Netflix]], [[SAIC]], [[Tesla]], [[Visa]]
 
 ### Far
 [[Lightricks]], [[Mistral AI]], [[Paige AI]]
 
 ### NULL
-[[Inception Labs]]
+[[Inception Labs]], [[Intuit]], [[_outputs]]
 
 ### StartAI
-[[Eightfold AI]], [[Symbio Robotics]]
+[[Allen Institute]], [[Eightfold AI]], [[Symbio Robotics]], [[Workato]]
+
+### Startup
+[[Transitive Robotics]]
 
 ### Top
-[[Anthropic]], [[Apple]], [[Google]], [[Inflection AI]], [[Meta - Facebook]], [[Microsoft]], [[NVIDIA]]
+[[Amazon]], [[Anthropic]], [[Apple]], [[Google]], [[Inflection AI]], [[Meta - Facebook]], [[Microsoft]], [[NVIDIA]], [[Perplexity]], [[Toyota Research Institute]]
 
 ### TopGen
 [[Cohere]], [[Gong]], [[Jasper]], [[Perplexity AI]], [[Stability AI]]

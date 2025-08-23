@@ -1,24 +1,19 @@
 .[[Cresta]].
-  , ,
-  , ,
-  , ,
-  , [Cresta Obsidian](spot://crestaobsidian),
-  DELS: ,[Cresta Obsidian](spot://crestaobsidian),
-  , ,
-  , [Cresta Note](spot://crestanote), 
-  DELS: [Cresta Note](spot://crestanote),[Cresta Obsidian](spot://crestaobsidian),[Cresta Note](spot://crestanote),[Cresta Note](spot://crestanote),
-
 # Top
 #### kind: StartAI
 #### area: Retail
 #### stance: 
 ## Sections
+### LAMP
+#### pri: ?
+#### contacts: 
+#### cool: C+
+#### job: 
 ### Cash
 #### cash_trend: spiking
 #### cash: 
 #### cash_available: 125
 ### Coolness
-#### cool: C+
 #### cool_why: 
 #### cool_mission: 
 #### cool_balance: 
@@ -33,7 +28,6 @@ AI Analyst – a generative AI tool that lets business leaders query customer co
 #### dlproj3: 
 Custom Conversation Summarization – Cresta developed AI models to automatically summarize customer interactions in a style tailored to each business, ensuring up-to-date, accurate call notes and saving agents time on after-call paperwork ￼.
 ### Job Postings
-#### job: 
 #### job_why: 
 #### job_bay: (Most roles are remote; HQ in Palo Alto)
 #### job_remote: 

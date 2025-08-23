@@ -7,12 +7,16 @@
   , ,
   , [Adept Note](spot://adeptnote), 
   DELS: [Adept Note](spot://adeptnote),[Adept Obsidian](spot://adeptobsidian),[Adept Note](spot://adeptnote),[Adept Note](spot://adeptnote),
-
 # Top
 #### kind: StartAI
 #### area: CoreDL
 #### stance: 
 ## Sections
+### LAMP
+#### pri: 
+#### contacts: 
+#### cool: B+
+#### job: f
 ### Cash
 #### cash_trend: spiking
 #### cash: 
@@ -20,7 +24,6 @@
 #### funding: 
 Raised $350M (part of Series B) led by General Catalyst & Spark in Mar 2023 ￼ ￼ (post-money valuation ≥ $1B ￼)
 ### Coolness
-#### cool: B+
 #### cool_why: 
 #### cool_mission: 
 #### cool_balance: 
@@ -38,7 +41,6 @@ Natural Language Tool Interface – Adept’s models let users control existing 
 Multi-App Tool Use – ACT-1 demonstrated the ability to coordinate actions across multiple applications and websites. It can compose different tools to achieve a goal (e.g. researching info online, then updating a spreadsheet) all in one workflow ￼. Adept’s research vision is a generalist AI agent that learns to use “every software tool, API, and webapp that exists,” extending automation to virtually any digital task ￼.
 Amazon-Adept Collaboration – in 2024 Amazon hired Adept’s CEO and researchers and licensed the startup’s technology, a strategic deal to incorporate Adept’s action-taking AI into Amazon’s own AI efforts (now under FTC review) [oai_citation_attribution:7‡reuters.com](https://www.reuters.com/technology/ftc-seeking-details-amazon-deal-with-ai-startup-adept-source-says-2024-07-16/#:~:text=The%20informal%20inquiry%20into%20Amazon%2C,some%20of%20the%20startup%27s%20technology)
 ### Job Postings
-#### job: f
 #### job_why: 
 #### job_bay: 
 2025-03 None found!

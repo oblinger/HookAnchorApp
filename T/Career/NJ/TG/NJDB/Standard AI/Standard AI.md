@@ -3,13 +3,17 @@
 #### area: Retail
 #### stance: 
 ## Sections
+### LAMP
+#### pri: 
+#### contacts: 
+#### cool: 
+#### job: 
 ### Cash
 #### cash_trend: down
 #### cash: 
 #### cash_available: 37
 #### funding: Raised $150M Series C in Feb 2021 ￼
 ### Coolness
-#### cool: 
 #### cool_why: 
 #### cool_mission: 
 #### cool_balance: 
@@ -25,7 +29,6 @@ Expanded the technology into computer vision retail analytics. The Standard Visi
 #### dlproj3: 
 Built an AI-powered loss prevention tool that analyzes video for shoplifting – the system’s algorithms flag likely theft events and compile video clips of those incidents for review. This automated monitoring lets staff focus only on credible theft alerts, improving security efficiency ￼.
 ### Job Postings
-#### job: 
 #### job_why: 
 #### job_bay: 
 Engineering Manager - Machine Learning - https://www.google.com/search?q=Standard%20AI%20Engineering%20Manager%20-%20Machine%20LearningSenior 

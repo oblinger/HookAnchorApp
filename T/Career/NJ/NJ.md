@@ -1,27 +1,39 @@
-.[[NJ]].		  [[NJ.]], [[Lrn]], [[RES]], 
-  PLAN:	[[NJ Plan]], [[SEEK]],
+.[[NJ]].		  [[NJ.]], [[Lrn]], [[RES]], [[TG]],  [[CRM]] 
+  PLAN:	[[NJ Plan]], [[NJ Paths]], [[SEEK]],
   TOP:	[NJ Slides](spot://njslides), [[NJ Log]],
-  NOW:
   PARTS	[[NJ Ask]], [[NJ Coaches]],
   SUB:
-  OLD:	[[NJ16]], [[NJ22]],
-  , [[NJ Questions]],
-  , [[NJ Blog]]
-  , [[TG]],
-  , [[NJ Pyramid]],
-  , , ,
-  , , ,
-  , , ,
-  , [NJ Obsidian](spot://njobsidian), [NJ Queries Obsidian](spot://njqueriesobsidian),
-  DELS: , ,[NJ Obsidian](spot://njobsidian), [NJ Queries Obsidian](spot://njqueriesobsidian),
-  , , ,
-  , [NJ Note](spot://njnote), [NJ Queries Note](spot://njqueriesnote), 
-  DELS: [NJ Note](spot://njnote), [NJ Queries Note](spot://njqueriesnote),[NJ Obsidian](spot://njobsidian), [NJ Queries Obsidian](spot://njqueriesobsidian),[NJ Note](spot://njnote), [NJ Queries Note](spot://njqueriesnote),[NJ Note](spot://njnote), [NJ Queries Note](spot://njqueriesnote),
+  OLD:	[[NJ16]], [[NJ22]], [[Meta Coms]], 
+  ...			[[NJ Questions]], [[NJ Blog]]
+  
 
-RELATED:	 [[CRM]], 
-OLD:	[[Meta Coms]], 
+[[NJ.2]] 
 
 
 
 
+---
 
+# NJ
+
+This is an auto-generated anchor file for patch 'NJ'.
+
+Add your content here.
+
+
+---
+
+# NJ
+
+This is an auto-generated anchor file for patch 'NJ'.
+
+Add your content here.
+
+
+---
+
+# NJ
+
+This is an auto-generated anchor file for patch 'NJ'.
+
+Add your content here.

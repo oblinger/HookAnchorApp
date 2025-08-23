@@ -1,5 +1,6 @@
 .[[STARTUPS]].
-  ,   [[StartMarket]], 
+  ,   [[StartMarket]],
+  , [Startups Note Obsidian](spot://startupsnoteobsidian), 
 
 
 - [[Startup Ideas]], 

@@ -7,19 +7,22 @@
   , ,
   , [Gong Note](spot://gongnote), 
   DELS: [Gong Note](spot://gongnote),[Gong Obsidian](spot://gongobsidian),[Gong Note](spot://gongnote),[Gong Note](spot://gongnote),
-
 # Top
 #### kind: TopGen
 #### area: CoreNLP
 #### stance: 
 ## Sections
+### LAMP
+#### pri: 
+#### contacts: 
+#### cool: 
+#### job: 
 ### Cash
 #### cash_trend: flat
 #### cash: 
 #### cash_available: 62
 #### funding: 5.56
 ### Coolness
-#### cool: 
 #### cool_why: 
 #### cool_mission: 
 #### cool_balance: 
@@ -34,7 +37,6 @@ AI Scorecard Suggestions – An AI feature that generates a summary and performa
 #### dlproj3: 
 Call Spotlight – A generative AI capability (part of Gong’s proprietary LLM models for revenue teams) that instantly surfaces the highlights and next steps from a sales call ￼. Call Spotlight condenses a lengthy customer call into an outline of key points (such as customer pain, objections, and agreed follow-ups), allowing reps to quickly grasp context without re-listening. Trained on Gong’s huge dataset of sales interactions, it’s tailored to recognize sales-specific signals and produce highly relevant, accurate call summaries.
 ### Job Postings
-#### job: 
 #### job_why: 
 #### job_bay: 
 #### job_remote: 

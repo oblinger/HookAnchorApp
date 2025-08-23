@@ -1,7 +1,7 @@
 n:: Research Reference pages
 
-.[[RR]].  [[LRN Todo]] 
-  AREAS:	[[AI]], [[ML]], , ,
+.[[RR]].  [[LRN Todo]] [[RR Log]] 
+  AREAS:	[[AI]], [[ML]],   [Coursera Notes](Coursera%20Notes.md) 
   TOPICS:	, ,
   [[REF]]:		[[RefMisc]], [[Refs]],
   LOGS:	 	,
@@ -45,7 +45,11 @@ n:: Research Reference pages
   , [RR Leet Note](spot://rrleetnote), [RR Med Note](spot://rrmednote)
   , [RR MGR Note](spot://rrmgrnote), [RR Note](spot://rrnote), [RR PAPERS Note](spot://rrpapersnote)
   , [RR Philosophy Note](spot://rrphilosophynote), [RR SYSTEMS Note](spot://rrsystemsnote)
-  , [RR Web Note](spot://rrwebnote), 
+  , [RR Web Note](spot://rrwebnote),
+  , [RR Business Obsidian](spot://rrbusinessobsidian), [RR CV Obsidian](spot://rrcvobsidian)
+  , [RR DEFINITIONS Obsidian](spot://rrdefinitionsobsidian)
+  , [RR OKRs Obsidian](spot://rrokrsobsidian)
+  , [RR Project Management Obsidian](spot://rrprojectmanagementobsidian), 
   DELS: [[RR CV]],[[rrCV]],[[RR Web]],[RR Blog Note](spot://rrblognote), [RR Note](spot://rrnote),[[rrCV]],[RR Blog Obsidian](spot://rrblogobsidian), [RR Obsidian](spot://rrobsidian),[[RR Philosophy]], [[RR Leet]], [[RR Med]], [[RR MGR]], [[RR PAPERS]], [[RR SYSTEMS]], [[RR Web]], [[RR Articles]], [RR Articles Note](spot://rrarticlesnote), [RR Leet Note](spot://rrleetnote), [RR Med Note](spot://rrmednote), [RR MGR Note](spot://rrmgrnote), [RR PAPERS Note](spot://rrpapersnote), [RR Philosophy Note](spot://rrphilosophynote), [RR SYSTEMS Note](spot://rrsystemsnote), [RR Web Note](spot://rrwebnote), [[RR Web]], [RR Blog Note](spot://rrblognote), [RR Note](spot://rrnote), [[RR Web]], [RR Blog Note](spot://rrblognote), [RR Note](spot://rrnote),[[rrCV]], [[rrCV]],[RR Articles Note](spot://rrarticlesnote), [RR Leet Note](spot://rrleetnote), [RR Med Note](spot://rrmednote), [RR MGR Note](spot://rrmgrnote), [RR PAPERS Note](spot://rrpapersnote), [RR Philosophy Note](spot://rrphilosophynote), [RR SYSTEMS Note](spot://rrsystemsnote), [RR Web Note](spot://rrwebnote),[RR Blog Note](spot://rrblognote), [RR Note](spot://rrnote), [RR Blog Note](spot://rrblognote), [RR Note](spot://rrnote), [RR Blog Note](spot://rrblognote), [RR Note](spot://rrnote), [RR Blog Note](spot://rrblognote), [RR Note](spot://rrnote), [RR Articles Note](spot://rrarticlesnote), [RR Leet Note](spot://rrleetnote), [RR Med Note](spot://rrmednote), [RR MGR Note](spot://rrmgrnote), [RR PAPERS Note](spot://rrpapersnote), [RR Philosophy Note](spot://rrphilosophynote), [RR SYSTEMS Note](spot://rrsystemsnote), [RR Web Note](spot://rrwebnote),
 
 

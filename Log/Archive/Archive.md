@@ -6,7 +6,8 @@
   , [Archive Obsidian](spot://archiveobsidian),
   DELS: ,[Archive Obsidian](spot://archiveobsidian),
   , ,
-  , [Archive Note](spot://archivenote), 
+  , [Archive Note](spot://archivenote),
+  , [Archive List Obsidian](spot://archivelistobsidian), 
   DELS: [Archive Note](spot://archivenote),[Archive Obsidian](spot://archiveobsidian),[Archive Note](spot://archivenote),[Archive Note](spot://archivenote),
 
 
@@ -20,3 +21,29 @@ Key Ideas:
 	2. observation of intelligent behavior in that world
 	3. experimentation in that world
 	4. instruction in that world
+
+---
+
+# Archive
+
+This is an auto-generated anchor file for patch 'Archive'.
+
+Add your content here.
+
+
+---
+
+# Archive
+
+This is an auto-generated anchor file for patch 'Archive'.
+
+Add your content here.
+
+
+---
+
+# Archive
+
+This is an auto-generated anchor file for patch 'Archive'.
+
+Add your content here.

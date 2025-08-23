@@ -1,4 +1,4 @@
-.[[Doc]].
+/.[[Doc]].
   , [[AWS Log]], [[DocAPI]], [[DocApplescript]], [[DocArduino]], [[DocAWS]], [[DocBash]]
   , [[DocCapistrano]], [[DocClojure]], [[DocCPP]], [[DocCucumber]], [[DocDelayedJob]], [[DocDocker]]
   , [[DocEmacs]], [[DocGCP]], [[DocGit]], [[DocGnome]], [[DocGolang]], [[DocGoogle]], [[DocHtml]]
@@ -9,11 +9,15 @@
   , [[DocNvim]], [[DocTmux]],
   , ,
   , ,
-  , [Doc Note](spot://docnote), 
+  , [Doc Note](spot://docnote),
+  , [Doc 1Password Obsidian](spot://doc1passwordobsidian)
+  , [Doc Keyboard Maestro Obsidian](spot://dockeyboardmaestroobsidian)
+  , [DOC SYNC COMMANDS Obsidian](spot://docsynccommandsobsidian)
+  , [DOC SYNC Obsidian](spot://docsyncobsidian), 
   DELS: [[DocSciKit]],[Doc Note](spot://docnote),[Doc Note](spot://docnote),
 
 
-
+[[DocCursor]] 
 
 
 
@@ -334,3 +338,30 @@ n:: Personal doc pages
 
 [[DocApplescript]],  [[DocEmacs]],  [[DocJavascript]],  [[DocMac]],  [[DocPython]],  [[DocR]],  [[DocRuby]],  [[Unix Command Line]]  
 
+
+
+---
+
+# Doc
+
+This is an auto-generated anchor file for patch 'Doc'.
+
+Add your content here.
+
+
+---
+
+# Doc
+
+This is an auto-generated anchor file for patch 'Doc'.
+
+Add your content here.
+
+
+---
+
+# Doc
+
+This is an auto-generated anchor file for patch 'Doc'.
+
+Add your content here.

@@ -8,7 +8,7 @@
   , [@PayByGroup Note](spot://@paybygroupnote), 
   DELS: [@PayByGroup Note](spot://@paybygroupnote),[@PayByGroup Obsidian](spot://@paybygroupobsidian),[@PayByGroup Note](spot://@paybygroupnote),[@PayByGroup Note](spot://@paybygroupnote),
 
-=[[Org]] 
+=[[_Org]] 
 
 See Legal/PayByGroup
 

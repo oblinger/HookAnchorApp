@@ -1,22 +1,20 @@
 .[[Palantir]].
-  , ,
-  , ,
-  , ,
-  , [Palantir Obsidian](spot://palantirobsidian),
-  DELS: ,[Palantir Obsidian](spot://palantirobsidian),
-  , ,
-  , [Palantir Note](spot://palantirnote), 
-  DELS: [Palantir Note](spot://palantirnote),[Palantir Obsidian](spot://palantirobsidian),[Palantir Note](spot://palantirnote),[Palantir Note](spot://palantirnote),
+[LinkedIn Connections](https://www.linkedin.com/search/results/people/?currentCompany=%5B%2220708%22%5D&network=%5B%22F%22%5D)
 
+[[@Palantir Technologies.md]]
 # Top
 #### kind: Big
 #### area: Analytics
 #### stance: 
 ## Sections
+### LAMP
+#### pri: 
+#### contacts: [[@Leo Razumovsky.md]], [[@Matt Welsh.md]]
+#### cool: 
+#### job: 
 ### Cash
 #### cash: 
 ### Coolness
-#### cool: 
 #### cool_why: 
 #### cool_mission: 
 #### cool_balance: 
@@ -37,7 +35,6 @@ Foundry & Gotham – Palantir’s flagship platforms now embed generative AI cap
 #### dlproj8: ** – **
 #### dlproj9: ** – **
 ### Job Postings
-#### job: 
 #### job_why: 
 #### job_bay: 
 #### job_remote: 

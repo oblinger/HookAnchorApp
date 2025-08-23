@@ -7,18 +7,21 @@
   , ,
   , [Deepgram Note](spot://deepgramnote), 
   DELS: [Deepgram Note](spot://deepgramnote),[Deepgram Obsidian](spot://deepgramobsidian),[Deepgram Note](spot://deepgramnote),[Deepgram Note](spot://deepgramnote),
-
 # Top
 #### kind: StartAI
 #### area: CoreNLP
 #### stance: 
 ## Sections
+### LAMP
+#### pri: 
+#### contacts: 
+#### cool: 
+#### job: 
 ### Cash
 #### cash_trend: flat
 #### cash: 
 #### cash_available: 24
 ### Coolness
-#### cool: 
 #### cool_why: 
 #### cool_mission: 
 #### cool_balance: 
@@ -34,7 +37,6 @@ End‑to‑End Speech-to-Speech Model – An experimental generative speech syst
 #### dlproj3: 
 Genesys Integration – A collaboration between Deepgram and Genesys to power next-gen contact center AI. Deepgram’s deep learning ASR was integrated into Genesys Cloud, enabling generative AI features like voicebot IVR, live agent assist, auto-diarized transcripts and call summarization ￼. This partnership allows enterprise users to benefit from Deepgram’s fast, accurate speech recognition as part of an end-to-end AI customer service solution, improving automation and analytics in call centers.
 ### Job Postings
-#### job: 
 #### job_why: 
 #### job_bay: (No SF Bay Area-specific openings – Deepgram is remote-first)
 #### job_remote: 

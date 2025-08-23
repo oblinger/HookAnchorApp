@@ -9,3 +9,7 @@
 - record entries for prior days
 - show reports (just try it)
 
+
+- [ ] tracker bug hit delete & time get screwed
+- [ ] time tracker, don't merge if text comment exists ???
+- [ ] pick new list name for 'wait' with unique first letter

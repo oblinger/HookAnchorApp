@@ -1,4 +1,7 @@
 .[[Waymo]].
+[LinkedIn Connections](https://www.linkedin.com/search/results/people/?currentCompany=%5B%2217900793%22%5D&network=%5B%22F%22%5D)
+
+[[@Waymo.md]]
   , ,
   , ,
   , ,
@@ -7,16 +10,19 @@
   , ,
   , [Waymo Note](spot://waymonote), 
   DELS: [Waymo Note](spot://waymonote),[Waymo Obsidian](spot://waymoobsidian),[Waymo Note](spot://waymonote),[Waymo Note](spot://waymonote),
-
 # Top
 #### kind: Big
 #### area: Robotics
 #### stance: 
 ## Sections
+### LAMP
+#### pri: 
+#### contacts: [[@Dan Egnor.md]], [[@Melanie Dumas Grimm.md]], [[@Nick Bridle.md]]
+#### cool: 
+#### job: 
 ### Cash
 #### cash: 
 ### Coolness
-#### cool: 
 #### cool_why: 
 #### cool_mission: 
 #### cool_balance: 
@@ -38,7 +44,6 @@ EMMA (2024) – End-to-End Multimodal Model for Autonomous Driving, a new Waymo 
 #### dlproj8: —
 #### dlproj9: —
 ### Job Postings
-#### job: 
 #### job_why: 
 #### job_bay: 
 #### job_remote: 

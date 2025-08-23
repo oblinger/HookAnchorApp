@@ -232,3 +232,30 @@ _
 
 
 
+
+
+---
+
+# 2020-07 Autonomy
+
+This is an auto-generated anchor file for patch '2020-07 Autonomy'.
+
+Add your content here.
+
+
+---
+
+# 2020-07 Autonomy
+
+This is an auto-generated anchor file for patch '2020-07 Autonomy'.
+
+Add your content here.
+
+
+---
+
+# 2020-07 Autonomy
+
+This is an auto-generated anchor file for patch '2020-07 Autonomy'.
+
+Add your content here.

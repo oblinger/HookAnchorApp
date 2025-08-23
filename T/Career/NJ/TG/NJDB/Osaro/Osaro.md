@@ -7,18 +7,21 @@
   , ,
   , [Osaro Note](spot://osaronote), 
   DELS: [Osaro Note](spot://osaronote),[Osaro Obsidian](spot://osaroobsidian),[Osaro Note](spot://osaronote),[Osaro Note](spot://osaronote),
-
 # Top
 #### kind: StartAI
 #### area: Robotics
 #### stance: 
 ## Sections
+### LAMP
+#### pri: 
+#### contacts: 
+#### cool: 
+#### job: 
 ### Cash
 #### cash_trend: flat
 #### cash: 
 #### cash_available: 8
 ### Coolness
-#### cool: 
 #### cool_why: 
 #### cool_mission: 
 #### cool_balance: 
@@ -34,7 +37,6 @@ OSARO + Geek+ Integrated Picking – OSARO partnered with AMR provider Geek+ to 
 #### dlproj3: 
 Mixed-Case Depalletizing – OSARO’s AI is also applied in inbound logistics through its Robotic Mixed-Case Depalletizer ￼. This system uses OSARO’s machine learning vision to unload pallets that contain layers of assorted products (boxes of different sizes, shapes, packaging) – a traditionally difficult task for automation. The AI vision can recognize each box, including oddly shaped or shrink-wrapped ones, and plan safe removal. The robot, equipped with a smart gripper, then autonomously lifts each box off the stack. OSARO’s depalletizer improves warehouse safety and efficiency by handling heavy repetitive unloading work and can adapt to unpredictable pallet configurations (like missing or damaged boxes) on the fly ￼. Several 3PLs and retailers have deployed this solution to address labor shortages and injury reduction in distribution centers.
 ### Job Postings
-#### job: 
 #### job_why: 
 #### job_bay: Senior Robotics Software Engineer – Google Search​
 #### job_remote: None currently

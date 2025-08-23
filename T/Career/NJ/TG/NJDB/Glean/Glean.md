@@ -7,18 +7,21 @@
   , ,
   , [Glean Note](spot://gleannote), 
   DELS: [Glean Note](spot://gleannote),[Glean Obsidian](spot://gleanobsidian),[Glean Note](spot://gleannote),[Glean Note](spot://gleannote),
-
 # Top
 #### kind: StartAI
 #### area: Retail
 #### stance: 
 ## Sections
+### LAMP
+#### pri: 
+#### contacts: 
+#### cool: B-
+#### job: 
 ### Cash
 #### cash_trend: spiking
 #### cash: 
 #### cash_available: 260
 ### Coolness
-#### cool: B-
 #### cool_why: 
 #### cool_mission: 
 #### cool_balance: 
@@ -33,7 +36,6 @@ Trusted Knowledge Fine-Tuning – To ensure accuracy and security, Glean uses a 
 #### dlproj3: 
 Retrieval-Augmented Generation – Glean’s search utilizes retrieval-augmented generation, meaning it combines vector semantic search with generative AI. When a question is asked, Glean first retrieves relevant document snippets, then its LLM composes an answer using those snippets as context ￼. Every answer it generates is accompanied by citations back to the original content to assure verifiability ￼. By using this grounded generation approach, Glean minimizes hallucinations and ensures the AI stays “in sync” with the company’s actual knowledge. (This strategy has positioned Glean as a leading example of trusted GenAI in enterprise search ￼.)
 ### Job Postings
-#### job: 
 #### job_why: 
 #### job_bay: Product Manager, AI Quality – Google search
 #### job_remote: (No remote openings – roles are on-site in Palo Alto)

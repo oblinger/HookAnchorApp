@@ -1,32 +1,21 @@
-.[[TG]].
+.[[TG]].  [[NJDB]] 
   , [[NJ Considerations]], [[NJ Queries]],
-  , [[mddb]],
-  , ,
-  , [[TG Safety]],
-  , ,
-  , ,
+  , [[MDDB]],
   , [TG Obsidian](spot://tgobsidian),
-  DELS: ,[TG Obsidian](spot://tgobsidian),
-  , ,
-  , [TG Note](spot://tgnote), 
-  DELS: [TG Note](spot://tgnote),[TG Obsidian](spot://tgobsidian),[TG Note](spot://tgnote),[TG Note](spot://tgnote),
+  , [TG Note](spot://tgnote),
+  , [TG AI Safety Obsidian](spot://tgaisafetyobsidian), [TG BigCo Obsidian](spot://tgbigcoobsidian)
+  , [TG Labs Obsidian](spot://tglabsobsidian), [TG People Obsidian](spot://tgpeopleobsidian)
+  , [TG Startups Obsidian](spot://tgstartupsobsidian)
+  , [TG Summary Obsidian](spot://tgsummaryobsidian), 
+  DELS: [[TG AI Safety]],[TG Safety Obsidian](spot://tgsafetyobsidian), [[TG Safety]],[[TG AI Safety]], 
 
 
- [[_template]],  [[NJ Queries|Queries]], [_import dir](spot://importfolder), [[_db.xlsx|_db]],  [[NJ.1]], 
+- [[TG People]] 
+- [[TG Dans]] 
+- [[TG BigCo]] 
 
-## Target Lists:   [OUT](file:///Users/oblinger/ob/kmr/T/Career/NJ/TG/NJDB/_outputs/.) [[6sense]] 
-- LIST:		[[List Kinds|Kinds]] ([[List All|All]], [[List Bare Kinds|Bare]]), 
-- BEST:		[[Rpt Best Startups|Startups]], [[Rpt Best BigCo|BigCo]], [[Rpt Top-ish Co|Top-ish]], [[Rpt Top Co|TopCo]],
-- AREAS:		[[Area Areas|Areas]], [[Area Cash|Cash]], [[Area Cool|Cool]], [[Area Jobs|Jobs]] ([[Area Jobs All|All]]), [[Area DLP|DLP]],
-- REPORTS: 	[[Rpt All|All]],  [[Test]],  
-- DL Proj:		[[DLP Top]], [[DLP Big]], [[DLP GenAI]], 
-- MISSING:	[[List Missing Area|Area]], [[List Missing Cash|Cash]], [[List Missing DLP|DLP]], [[List Missing Job|Job]],
-
-
-
-
-
-- [[TG Safety]] 
+- [[TG Summary]] 
+- [[TG AI Safety]] 
 
 
 
@@ -158,3 +147,30 @@ WHERE contains(file.path, "NJDB") AND kind = "Big"
 SORT file.name
 ``
 
+
+
+---
+
+# TG
+
+This is an auto-generated anchor file for patch 'TG'.
+
+Add your content here.
+
+
+---
+
+# TG
+
+This is an auto-generated anchor file for patch 'TG'.
+
+Add your content here.
+
+
+---
+
+# TG
+
+This is an auto-generated anchor file for patch 'TG'.
+
+Add your content here.

@@ -1,4 +1,5 @@
 .[[IBM]].
+[LinkedIn Connections](https://www.linkedin.com/search/results/people/?currentCompany=%5B%221009%22%5D&network=%5B%22F%22%5D)
   , ,
   , ,
   , ,
@@ -7,16 +8,19 @@
   , ,
   , [IBM Note](spot://ibmnote), 
   DELS: [IBM Note](spot://ibmnote),[IBM Obsidian](spot://ibmobsidian),[IBM Note](spot://ibmnote),[IBM Note](spot://ibmnote),
-
 # Top
 #### kind: Big
 #### area: CoreDL
 #### stance: 
 ## Sections
+### LAMP
+#### pri: 
+#### contacts: 
+#### cool: 
+#### job: 
 ### Cash
 #### cash: 
 ### Coolness
-#### cool: 
 #### cool_why: 
 #### cool_mission: 
 #### cool_balance: 
@@ -38,7 +42,6 @@ IBM FedML (FL) – IBM’s research in federated learning enables training gener
 #### dlproj7: ** - **
 #### dlproj8: ** - **
 ### Job Postings
-#### job: 
 #### job_why: 
 #### job_bay: 
 #### job_remote: 

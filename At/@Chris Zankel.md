@@ -5,3 +5,6 @@
 - Spoke at length in April 2024 about his hacking on deep models on the side.
 
 
+
+#pp    [Senior Product Manager](https://www.linkedin.com/in/chris-zankel)  [NVIDIA](./_Org/@NVIDIA.md)  
+# LOG

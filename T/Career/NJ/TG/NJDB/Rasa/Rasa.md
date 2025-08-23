@@ -1,14 +1,20 @@
+.[[Rasa]].
+  , [RASA Obsidian](spot://rasaobsidian),
 # Top
 #### kind: StartAI
 #### area: CoreDL
 #### stance: 
 ## Sections
+### LAMP
+#### pri: 
+#### contacts: 
+#### cool: C+
+#### job: 
 ### Cash
 #### cash_trend: upward
 #### cash: 
 #### cash_available: 30
 ### Coolness
-#### cool: C+
 #### cool_why: 
 #### cool_mission: 
 #### cool_balance: 
@@ -24,7 +30,6 @@ Intentless Dialogue Policy – Rasa introduced an intentless conversational mode
 #### dlproj3: 
 LLM-Based User Simulators – A Rasa research initiative using generative models to create simulated users for testing chatbot conversations. By prompting an LLM to behave like a user with various goals, Rasa can generate entire conversation trajectories to stress-test dialogue policies ￼. These simulators produce varied phrasing and dialogue turns (beyond the happy paths developers anticipate) ￼, helping uncover bugs or weaknesses in the assistant. This applied research accelerates development – bots can be tested against hundreds of simulated scenarios overnight, improving robustness before real users ever interact with them.
 ### Job Postings
-#### job: 
 #### job_why: 
 #### job_bay: 
 #### job_remote: 

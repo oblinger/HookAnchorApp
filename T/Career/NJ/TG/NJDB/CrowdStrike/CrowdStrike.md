@@ -1,4 +1,5 @@
 .[[CrowdStrike]].
+[LinkedIn Connections](https://www.linkedin.com/search/results/people/?currentCompany=%5B%222497653%22%5D&network=%5B%22F%22%5D)
   , ,
   , ,
   , ,
@@ -7,16 +8,19 @@
   , ,
   , [CrowdStrike Note](spot://crowdstrikenote), 
   DELS: [CrowdStrike Note](spot://crowdstrikenote),[CrowdStrike Obsidian](spot://crowdstrikeobsidian),[CrowdStrike Note](spot://crowdstrikenote),[CrowdStrike Note](spot://crowdstrikenote),
-
 # Top
 #### kind: Big
 #### area: Cybersecurity
 #### stance: 
 ## Sections
+### LAMP
+#### pri: 
+#### contacts: 
+#### cool: 
+#### job: 
 ### Cash
 #### cash: 
 ### Coolness
-#### cool: 
 #### cool_why: 
 #### cool_mission: 
 #### cool_balance: 
@@ -38,7 +42,6 @@ AI-Generated IOAs – the Falcon platform leverages AI to automatically generate
 #### dlproj8: —
 #### dlproj9: —
 ### Job Postings
-#### job: 
 #### job_why: 
 #### job_bay: 
 #### job_remote: 

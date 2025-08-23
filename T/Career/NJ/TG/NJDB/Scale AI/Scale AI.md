@@ -3,6 +3,11 @@
 #### area: CoreDL
 #### stance: 
 ## Sections
+### LAMP
+#### pri: 
+#### contacts: 
+#### cool: 
+#### job: 
 ### Cash
 #### cash_trend: down
 #### cash: 
@@ -10,7 +15,6 @@
 #### funding: 
 Peaked with a $325M Series E at $7.3B valuation (Apr 2021) ￼; market corrections have since reportedly lowered its valuation (recent estimates ~$1B)
 ### Coolness
-#### cool: 
 #### cool_why: 
 #### cool_mission: 
 #### cool_balance: 
@@ -26,7 +30,6 @@ RLHF Data & Tuning – Scale is known for supplying high-quality training data a
 #### dlproj3: 
 Model Evaluation – Scale AI offers a robust evaluation framework for generative models. This includes hosting public leaderboards and conducting adversarial testing (red-teaming) of models. Enterprises can use Scale’s evaluation platform to benchmark different LLMs or monitor an application’s accuracy and safety over time ￼. For instance, Scale can test a chatbot on domain-specific queries and edge cases, report failure modes, and then help collect additional data or safety checks to improve it.
 ### Job Postings
-#### job: 
 #### job_why: 
 #### job_bay: Director | AI Engineering (San Francisco)
 #### job_remote: 

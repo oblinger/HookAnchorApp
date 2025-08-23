@@ -3,12 +3,16 @@
 #### area: Hardware
 #### stance: 
 ## Sections
+### LAMP
+#### pri: 
+#### contacts: 
+#### cool: 
+#### job: 
 ### Cash
 #### cash_trend: down
 #### cash: 
 #### cash_available: 13
 ### Coolness
-#### cool: 
 #### cool_why: 
 #### cool_mission: Zoink
 #### cool_balance: 
@@ -24,7 +28,6 @@ Demonstrated the chip on popular deep learning models – e.g. running object de
 #### dlproj3: 
 Exploring analog hardware for large models: Mythic’s in-memory analog computing removes memory bandwidth limits, a natural fit for bandwidth-hungry tasks like large language models. The company envisions bringing LLM-scale AI to the edge by leveraging analog matrix ops to handle massive model parameters efficiently ￼.
 ### Job Postings
-#### job: 
 #### job_why: 
 #### job_bay: 
 Solutions Engineer - https://www.google.com/search?q=Mythic%20AI%20Solutions%20Engineer

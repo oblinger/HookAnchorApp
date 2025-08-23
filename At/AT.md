@@ -1,4 +1,4 @@
-[[@Thumbtack]] 
+
 .[[At]].
   , [[@Abhishek Kapatkar]], [[@Abhishek Verma]], [[@Acorn Pooley]], [[@Aetion]], [[@Agustin Polito]], ,
   , [[@Ahern Knox]], [[@Ahmad Tahir _ Graph Design]], [[@AJ Forsythe]], [[@Alexander Grosse]]
@@ -68,7 +68,7 @@
   , [[@Yannick Germain]], [[@Yann LeCun]], [[@Yashin Lin]], [[@Yiftach Eisenberg]]
   , [[@Yoshua Bengio]], [[AF ALUM]], , [[BOD]], , [[Doctor]]
   , [[Friends]], [[Mentors]], , , [[ROLODEX]], [[VC ORG]],
-  , [[Crm]], [[Org]], [[People]],
+  , [[Crm]], [[_Org]], [[People]],
   , [[@Brian Rife]],
   , [[@Adobe]], [[@Thumbtack]],
   , [[@JobRight.AI]], ,
@@ -80,90 +80,9 @@
   DELS: , , , ,,[[@Brian Rife]],,, , , , ,[At Obsidian](spot://atobsidian),
   , ,
   DELS: , , , ,,[[@Brian Rife]],,, , , , ,[At Obsidian](spot://atobsidian),, ,
-  , [At Note](spot://atnote), 
-  DELS: [AT Note](spot://atnote), [[CRM]], [[ORG]], [[PEOPLE]],[[@Dexafit]],[[@Brian Rife]],[At Note](spot://atnote),[AT Note](spot://atnote), [[CRM]], [[ORG]], [[PEOPLE]], [[@Dexafit]],[At Obsidian](spot://atobsidian),[At Note](spot://atnote), [At Note](spot://atnote),[AT Note](spot://atnote), [[CRM]], [[ORG]], [[PEOPLE]], [[@Dexafit]], [AT Note](spot://atnote), [[CRM]], [[ORG]], [[PEOPLE]], [[@Dexafit]],[At Note](spot://atnote), [At Note](spot://atnote), [At Note](spot://atnote), [At Note](spot://atnote),
-
-.[[AT]].
-  , [[@Abhishek Kapatkar]], [[@Abhishek Verma]], [[@Acorn Pooley]], [[@Aetion]], [[@Agustin Polito]]
-  , [[@Ahern Knox]], [[@AJ Forsythe]], [[@Alexander Grosse]], [[@Alexander Toshev]]
-  , [[@Alex Cutting]], [[@Alia Alaoui]], [[@Allison Binns]], [[@All Sides]], [[@Amanda Riccetti]]
-  , [[@Ami Kumar]], [[@Amy Kruse]], [[@Analytics Fire]], [[@Anastasia Kijono]], [[@Andrew Tepper]]
-  , [[@Andrew Tomkins]], [[@Aniket Kumar]], [[@Arkady Epshteyn]], [[@Ashwin Ram]], [[@Attila Aros]]
-  , [[@Audi]], [[@Avidan Ross]], [[@Ayal Amir]], [[@Azure Standard]], [[@Baji Gobburi]]
-  , [[@Balaz Gaal]], [[@Barney Pell]], [[@Ben Cutler]], [[@Ben Wild]], [[@Blaine Bowers]]
-  , [[@Bobby Allen]], [[@Bobby Liu]], [[@Brian Falkenhainer]], [[@Brian Yormak]]
-  , [[@Briggs & Riley]], [[@Bryan Richard]], [[@Byron Dom]], [[@Camilo Acosta]]
-  , [[@Carlos Guestrin]], [[@Carolyne Connor]], [[@Carolyn Oblinger]], [[@Cezary Kopacz]]
-  , [[@Charles Tyrwhitt]], [[@Chase Bank]], [[@Chris Hayden]], [[@Chris Machut]], [[@Chris Ramming]]
-  , [[@Christina Fonseca]], [[@Christopher White]], [[@Chris Welty]], [[@Chris Zankel]]
-  , [[@Chuck Morefield]], [[@Clash.TV]], [[@Colby Raley]], [[@Collette Roney]], [[@Cordial Credit]]
-  , [[@CreateThrive]], [[@Crowdar]], [[@Dan Adams]], [[@Dan Egnor]], [[@Dan Fine]]
-  , [[@Daniel Haddick]], [[@Daniel Handyman]], [[@Daniel W Oblinger]], [[@Dan Kaufman]]
-  , [[@Dan Newcome]], [[@Dan Oblinger]], [[@Dan Roth]], [[@DARPA]], [[@Dave Oblinger]]
-  , [[@Dave Whitmore]], [[@David Israel]], [[@Dav Zimak]], [[@Dean Allen]], [[@Dean Allenmang]]
-  , [[@Deep Sahini]], [[@Dennis DeCoste]], [[@Devansh]], [[@Dexafit]], [[@Dileep George]]
-  , [[@Doug Gordin]], [[@Doug Lenat]], [[@Doug Riecken]], [[@Drew Ackerman]], [[@Drew Dean]]
-  , [[@Dung Vuong]], [[@Ed H. Chi]], [[@eGenisis]], [[@Ehsan Saeedi]], [[@Eli Oblinger]]
-  , [[@Embedded Intelligence]], [[@Emily Wallach]], [[@Epsilon Oblinger]], [[@Eric Horvitz]]
-  , [[@Ernest Galbrun]], [[@Eugene Agichtein]], [[@Facet]], [[@Felipe Lavratti]]
-  , [[@Fernando Eillman]], [[@Filip Piekniewski]], [[@Foster Provost]], [[@Frank Delle]]
-  , [[@Frank Langston]], [[@Game Changer]], [[@Gaurav Rekhi]], [[@Geoffrey Hayes]]
-  , [[@George Richardson]], [[@Gill Pratt]], [[@Glydways]], [[@Google]], [[@Grant Meyer]]
-  , [[@Greg Hornby]], [[@Grzegorz Biziel]], [[@Harpreet Sawhney]], [[@Haym Hirsh]], [[@Herb Derby]]
-  , [[@Hiba Sharief]], [[@Hoka]], [[@Horizon Fitness]], [[@Ian Simon]], [[@Ignacio Diorio]]
-  , [[@Igor Shindel]], [[@Isaac Cohen]], [[@Jack Porter]], [[@Jake Wachman]], [[@James Briones]]
-  , [[@James Fang]], [[@James Miller]], [[@James Neilson]], [[@Jamie Taylor]], [[@Jared DeMott]]
-  , [[@Jason Wells]], [[@Javier Alejandro Re]], [[@Javier Martinez Rubio]], [[@JCCSF]]
-  , [[@Jeff Pratt]], [[@Jeff Provost]], [[@Jessie Bones]], [[@Jinda Han]], [[@Joe Augenbraun]]
-  , [[@Joe Hellerstein]], [[@Joel Selanikio]], [[@Johan de Kleer]], [[@John Cameron]]
-  , [[@John Davis]], [[@John Kolen]], [[@John Laird]], [[@John Langford]], [[@John Murphy]]
-  , [[@John Turek]], [[@Jonathan Abrams]], [[@Joseph Yeh]], [[@Josh Yelon]], [[@Juan Heber]]
-  , [[@Juan Huerta]], [[@Julian Cerruti]], [[@Jurg von Kanel]], [[@Justin Lin]]
-  , [[@Justin Peterman]], [[@Kalina Panayotova]], [[@Kamal Ali]], [[@Kamran Shirazi]]
-  , [[@Kartik Agaram]], [[@Kathleen Warner]], [[@Ka Wong]], [[@Krzysiek Herod]]
-  , [[@Kyle Langworthy]], [[@Kyle Seaman]], [[@Lane Campbell]], [[@Leila Brown]], [[@Liane Capiral]]
-  , [[@Looq]], [[@Luis Arrellano]], [[@Luiz Pires]], [[@Manatee County Utilities]]
-  , [[@Manish Gupta]], [[@Maria Cross]], [[@Maria Galang]], [[@Mariusz Pasek]], [[@Mark Drummond]]
-  , [[@Mark Kapij]], [[@Mark Reid]], [[@Mary Tran]], [[@Mathew Hsu]], [[@Mathew Main]], [[@Matias]]
-  , [[@Melanie Dumas]], [[@Melissa Cote]], [[@Micah Nettey]], [[@Michael Freed]]
-  , [[@Michael Witbrock]], [[@Ming-Hsuan Yang]], [[@Mirek Korzeniowski]], [[@miro Salem]]
-  , [[@Morgan Stanley]], [[@Moses Baffour Awuah]], [[@Nate Blaylock]], [[@Neil Miller]]
-  , [[@New York Times]], [[@Nick Allen]], [[@Nick Povano]], [[@Nicolas Nicolov]], [[@Nina Mishra]]
-  , [[@Oliver Andersson]], [[@Oren Etzioni]], [[@Parker Remick]], [[@Patrick Pantel]]
-  , [[@Paulo Cheque]], [[@Paul ORorke]], [[@PenFed]], [[@Peter Ashley]], [[@Peter Clarke]]
-  , [[@Peter Lee]], [[@Philipp Herget]], [[@Phillip Alvelda]], [[@Praveen Paritosh]]
-  , [[@Prem Natarajan]], [[@Preston Marshall]], [[@Qingling Oblinger]], [[@Rafah Hosn]]
-  , [[@Raghu Mann]], [[@Realplay]], [[@Richard Goodwin]], [[@Rich Caruana]], [[@Ric Szopa]]
-  , [[@Robert Leshner]], [[@Rob Farrell]], [[@Rodrigo Braz]], [[@Rogan Creswick]], [[@Rohit Prasad]]
-  , [[@Ron Brachman]], [[@Ron Keesing]], [[@Ronny Kohavi]], [[@Rzero]], [[@Sage Vet]]
-  , [[@Sahil Kejriwal]], [[@Sammie Oblinger]], [[@Sapphire Ventures]], [[@Sara Basson]]
-  , [[@Sean O'Connor]], [[@Senthil E]], [[@Shalini Ghosh]], [[@Shane Junior]], [[@Sharif Khan]]
-  , [[@Shawn Hassler]], [[@Shreshth Saxena]], [[@Siddhartha Srinivasa]], [[@Silvana Oviedo]]
-  , [[@Silvio Sangineto]], [[@Siobhan Quinn]], [[@Sofia Andrianakou]], [[@Softbank]]
-  , [[@Software Growth Partners]], [[@Sofus Macskassy]], [[@Soucindar Hoche]], [[@Steve Chien]]
-  , [[@Steve Minton]], [[@Steve QJ]], [[@Steve Singles]], [[@Steve Street]], [[@Stripe]]
-  , [[@Sunnova]], [[@System2]], [[@Szymon Stoma]], [[@Talent Cross]], [[@Teddy Lange]]
-  , [[@Tessa Lau]], [[@Theo Enns]], [[@Todd Hylton]], [[@Tomas Piaggio]], [[@Tomas Singliar]]
-  , [[@Tom Ditterich]], [[@Tom Mitchell]], [[@Tom Wagner]], [[@Tony DiLoreto]], [[@Tooploox]]
-  , [[@Traxxas]], [[@Tyler Behsman]], [[@Uri Weiss]], [[@Usama Fayyad]], [[@Vikram]]
-  , [[@Vince Colangelo]], [[@Vittorio Castelli]], [[@Wiktor Schmidt]], [[@William Cohen]]
-  , [[@Yannick Germain]], [[@Yann LeCun]], [[@Yashin Lin]], [[@Yiftach Eisenberg]]
-  , [[@Yoshua Bengio]], [[AF ALUM]], [AT Note](spot://atnote), [[BOD]], [[CRM]], [[Doctor]]
-  , [[Friends]], [[Mentors]], , , [[ROLODEX]]
-  , [[VC ORG]],
-  , , ,
-  , [[@Annafi Wahed]], [[@Julieta Barrionuevo]], [[@Shawn Coe]], [[@Sonic]], [[@Titash Rakshit]]
-  , [[ORG]], [[PEOPLE]],
-  , [[@Ahmad Tahir _ Graph Design]],
-  , [[@Chang Yuan]],
-  , [[@SpaceX]],
-  , [[@David Hayden]],
-  , [[@Ian Yuan]],
-  , [[@Anthropic]],
-  , [[@Cat S]], [[@Jackie Lee]], 
-
-  
-
+  , [At Note](spot://atnote),
+  , [AT Entry Obsidian](spot://atentryobsidian), 
+  DELS: [AT Note](spot://atnote), [[CRM]], [[_Org]], [[PEOPLE]],[[@Dexafit]],[[@Brian Rife]],[At Note](spot://atnote),[AT Note](spot://atnote), [[CRM]], [[_Org]], [[PEOPLE]], [[@Dexafit]],[At Obsidian](spot://atobsidian),[At Note](spot://atnote), [At Note](spot://atnote),[AT Note](spot://atnote), [[CRM]], [[_Org]], [[PEOPLE]], [[@Dexafit]], [AT Note](spot://atnote), [[CRM]], [[_Org]], [[PEOPLE]], [[@Dexafit]],[At Note](spot://atnote), [At Note](spot://atnote), [At Note](spot://atnote), [At Note](spot://atnote),
 
 #set 
 n:: Entity pages (typically people, organizations, or collaborations)
@@ -178,3 +97,29 @@ FORMAT FOR 'AT' ENTRIES
 
 
 [[@Credit Karma]] 
+
+---
+
+# At
+
+This is an auto-generated anchor file for patch 'At'.
+
+Add your content here.
+
+
+---
+
+# At
+
+This is an auto-generated anchor file for patch 'At'.
+
+Add your content here.
+
+
+---
+
+# At
+
+This is an auto-generated anchor file for patch 'At'.
+
+Add your content here.

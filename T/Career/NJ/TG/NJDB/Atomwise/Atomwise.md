@@ -7,18 +7,21 @@
   , ,
   , [Atomwise Note](spot://atomwisenote), 
   DELS: [Atomwise Note](spot://atomwisenote),[Atomwise Obsidian](spot://atomwiseobsidian),[Atomwise Note](spot://atomwisenote),[Atomwise Note](spot://atomwisenote),
-
 # Top
 #### kind: StartAI
 #### area: Bio
 #### stance: 
 ## Sections
+### LAMP
+#### pri: 
+#### contacts: 
+#### cool: 
+#### job: 
 ### Cash
 #### cash_trend: down
 #### cash: 
 #### cash_available: 45
 ### Coolness
-#### cool: 
 #### cool_why: 
 #### cool_mission: 
 #### cool_balance: 
@@ -34,7 +37,6 @@ AIMS program (318-target study): Atomwise’s AI Molecular Screening initiative 
 #### dlproj3: 
 Sanofi multi-target deal (2022): $1.2B collaboration where Atomwise uses its AI platform to identify and optimize lead compounds for up to five drug targets, demonstrating AI’s impact on pharmaceutical R&D ￼ ￼.
 ### Job Postings
-#### job: 
 #### job_why: 
 #### job_bay: 
 Senior/Staff Software Engineer – https://www.google.com/search?q=%22Senior%2FStaff+Software+Engineer%22+Atomwise

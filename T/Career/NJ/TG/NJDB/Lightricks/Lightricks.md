@@ -7,17 +7,20 @@
   , ,
   , [Lightricks Note](spot://lightricksnote), 
   DELS: [Lightricks Note](spot://lightricksnote),[Lightricks Obsidian](spot://lightricksobsidian),[Lightricks Note](spot://lightricksnote),[Lightricks Note](spot://lightricksnote),
-
 # Top
 #### kind: Far
 #### area: CoreDL
 #### stance: 
 ## Sections
+### LAMP
+#### pri: 
+#### contacts: 
+#### cool: 
+#### job: 
 ### Cash
 #### cash: 
 #### funding: 3.10
 ### Coolness
-#### cool: 
 #### cool_why: 
 #### cool_mission: 
 #### cool_balance: 
@@ -27,7 +30,6 @@ To create fun and powerful tools that enable users to bring their creative visio
 ### Deep Learning Projects (DLP)
 #### dlp: 
 ### Job Postings
-#### job: 
 #### job_why: 
 #### job_bay: 
 #### job_remote: 

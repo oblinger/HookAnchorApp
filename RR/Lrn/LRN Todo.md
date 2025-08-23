@@ -1,7 +1,10 @@
+- [Claude Course](https://learn.deeplearning.ai/courses/claude-code-a-highly-agentic-coding-assistant/lesson/66b35/introduction) 
 
+## Rocks
+- [[Abio]] 
+- Flashcards
 
-
-[[Lrn]]:	Run system
+[[Lrn]]:	Run system debugger NVIDIA
 [[Lrn]]:	[[RR]], Hands On, Know
 
 

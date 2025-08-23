@@ -1,3 +1,0 @@
-=[[Cmd]]   app /Applications/Visual Studio Code.app
-
-

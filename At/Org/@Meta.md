@@ -21,3 +21,6 @@ Meta’s machine learning operation is very sophisticated, and there is a wide r
 **Research Scientist, Machine Learning**—These roles typically require a PhD and are focused on a specific area of machine learning, including AI, natural language processing, and computer vision. They research and develop new models and machine learning techniques.
 
 **Research Engineer, Machine Learning** - Similar to the research scientist, these roles focus on researching new machine learning engineering solutions. Focus areas tend to include AI and computer vision.
+
+#pp    [Meta](https://www.meta.com)  
+[[Meta - Facebook.md]]

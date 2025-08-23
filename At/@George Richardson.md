@@ -1,4 +1,4 @@
-#pp    [Divorce Lawyer](https://www.linkedin.com/in/attorneygeorgerichardson/)  [Web](https://attorneygeorgerichardson.com/)  
+#pp  [Divorce Lawyer](https://www.linkedin.com/in/attorneygeorgerichardson/)  [Web](https://attorneygeorgerichardson.com/)  
 
 # LOG
 

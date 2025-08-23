@@ -20,6 +20,7 @@
 
 PRODUCTIVITY ARTICLES
 - [5 steps](https://medium.com/illumination/mastering-time-management-at-work-to-enhance-productivity-4a3103fe6add) - systems
+- [10 tiny habits](https://medium.com/beingwell/10-tiny-habits-that-recharge-you-without-quitting-your-job-or-moving-to-bali-4bbbdd57a00d) - 
 - [Systems](https://medium.com/swlh/dont-just-set-goals-build-systems-8158ac541df#ff79) - 
 - [Getting into the zone](https://medium.com/on-the-couch/when-success-feels-effortless-how-to-get-into-the-zone-37f008b93500) 
 - [Flow](https://medium.com/science-meaning/cultivating-flow-92f021dbc46d) 

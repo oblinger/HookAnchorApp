@@ -1,4 +1,12 @@
 ### BUY TEAS
+- Black (Paris), Chai, Green, 
+- Ginger (Lemon) (Turmeric)
+- Licorice, 
+- Spearmint, Pepermint,
+- Rooibos, 
+- Cinnamon, Jasmine, 
+
+
 Green???
 FAVS:		
 - HARNEY: 	Paris, 

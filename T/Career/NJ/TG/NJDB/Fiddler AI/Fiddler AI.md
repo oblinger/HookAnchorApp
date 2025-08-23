@@ -3,6 +3,11 @@
 #### area: CoreDL
 #### stance: 
 ## Sections
+### LAMP
+#### pri: 
+#### contacts: 
+#### cool: 
+#### job: 
 ### Cash
 #### cash_trend: flat
 #### cash: 
@@ -10,7 +15,6 @@
 #### funding: 
 Raised $32M Series B (June 2021) led by Insight Partners (with Lightspeed, Lux, etc.) ￼
 ### Coolness
-#### cool: 
 #### cool_why: 
 #### cool_mission: 
 #### cool_balance: 
@@ -25,7 +29,6 @@ Fiddler Trust Models & Enrichments – a proprietary framework of task-specific 
 #### dlproj3: 
 Guardrails & Safety – Fiddler’s platform provides an LLM Gateway and Trust Service that let enterprises dynamically route prompts through approved models and inject safety checks; e.g. it can intercept prompt-injection attacks or policy violations using fast trust scores before an LLM response reaches the end-user ￼ ￼.
 ### Job Postings
-#### job: 
 #### job_why: 
 #### job_bay: Head of Product – Google search, Senior Product Manager, GenAI – Google search
 #### job_remote: (No remote openings – roles are hybrid in Palo Alto)

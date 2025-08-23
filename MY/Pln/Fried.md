@@ -1,3 +1,12 @@
+- https://arxiv.org/abs/2507.21206?utm_source=alphasignal&utm_campaign=2025-07-24&asuniq=8d03a007
+
+
+
+
+- AGI guy:  https://sjbyrnes.com/agi.html
+
+- med exercise plan weights
+- med exercise plan weights
 - weights plan
 - eye glasses
 - selecting and item now shows the finder window for some reason.  e. g.  #bugs

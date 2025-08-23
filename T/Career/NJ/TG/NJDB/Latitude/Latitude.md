@@ -7,17 +7,20 @@
   , ,
   , [Latitude Note](spot://latitudenote), 
   DELS: [Latitude Note](spot://latitudenote),[Latitude Obsidian](spot://latitudeobsidian),[Latitude Note](spot://latitudenote),[Latitude Note](spot://latitudenote),
-
 # Top
 #### kind: BigAI
 #### area: CoreNLP
 #### stance: 
 ## Sections
+### LAMP
+#### pri: 
+#### contacts: 
+#### cool: 
+#### job: 
 ### Cash
 #### cash: 
 #### funding: 0.27
 ### Coolness
-#### cool: 
 #### cool_why: 
 #### cool_mission: 
 #### cool_balance: 
@@ -28,7 +31,6 @@
 #### dlproj1: AI Dungeon (GPT-Powered Text Adventure) [https://play.aidungeon.io/]
 #### dlproj2: Voyage (Next-Gen AI Storytelling) [https://latitude.io/]
 ### Job Postings
-#### job: 
 #### job_why: 
 #### job_bay: —
 #### job_remote: —

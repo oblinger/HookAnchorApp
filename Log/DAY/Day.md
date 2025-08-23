@@ -5,7 +5,8 @@
   , [Day Obsidian](spot://dayobsidian),
   DELS: ,[Day Obsidian](spot://dayobsidian),
   , ,
-  , [Day Note](spot://daynote), 
+  , [Day Note](spot://daynote),
+  , [DAY Entry Obsidian](spot://dayentryobsidian), 
   DELS: [Day Note](spot://daynote),[Day Obsidian](spot://dayobsidian),[Day Note](spot://daynote),[Day Note](spot://daynote),
 
 #log <[[Untyped]]

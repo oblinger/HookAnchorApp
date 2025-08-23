@@ -3,12 +3,16 @@
 #### area: CoreDL
 #### stance: 
 ## Sections
+### LAMP
+#### pri: ?
+#### contacts: 
+#### cool: B
+#### job: A
 ### Cash
 #### cash_trend: upward
 #### cash: 
 #### cash_available: 63
 ### Coolness
-#### cool: B
 #### cool_why: 
 #### cool_mission: 
 #### cool_balance: 
@@ -24,7 +28,6 @@ Wafer-scale 120T support – Designed a hardware-software architecture (MemoryX 
 #### dlproj3: 
 Andromeda AI supercomputer – Built the Andromeda AI supercluster with 13.5 million cores (16 CS-2 wafers). It achieved near-linear scaling on large language model training, e.g. efficiently training GPT-3 and GPT-NeoX models without the usual distributed-compute bottlenecks ￼. This enables faster experimentation and iteration in generative model research.
 ### Job Postings
-#### job: A
 #### job_why: 
 #### job_bay: 
 +++ 03 open 10mo - Principal Product Manager, ML – https://www.google.com/search?q=%22Principal+Product+Manager%22+Cerebras 

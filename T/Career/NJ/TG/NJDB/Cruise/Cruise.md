@@ -1,4 +1,6 @@
 .[[Cruise]].
+
+[[@Cruise.md]]
   , ,
   , ,
   , ,
@@ -7,16 +9,19 @@
   , ,
   , [Cruise Note](spot://cruisenote), 
   DELS: [Cruise Note](spot://cruisenote),[Cruise Obsidian](spot://cruiseobsidian),[Cruise Note](spot://cruisenote),[Cruise Note](spot://cruisenote),
-
 # Top
 #### kind: Big
 #### area: Robotics
 #### stance: 
 ## Sections
+### LAMP
+#### pri: 
+#### contacts: [[@Wolfram Arnold.md]]
+#### cool: 
+#### job: 
 ### Cash
 #### cash: 
 ### Coolness
-#### cool: 
 #### cool_why: 
 #### cool_mission: 
 #### cool_balance: 
@@ -38,7 +43,6 @@ Massive Simulation Platform – Cruise orchestrates ~200,000 hours of driving si
 #### dlproj8: —
 #### dlproj9: —
 ### Job Postings
-#### job: 
 #### job_why: 
 #### job_bay: 
 #### job_remote: 

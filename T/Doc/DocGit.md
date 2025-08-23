@@ -73,6 +73,19 @@ git remove -v
 
 GIT MAGIC http://www-cs-students.stanford.edu/~blynn/gitmagic/
 ## CREATE
+
+### Create New Github Repo From Local .git
+
+    # Assume .git locally and Empty repo created on GitHub
+    git remote add origin https://github.com/oblinger/REPO_NAME.git
+    git commit -m "Initial commit"
+    git push -u origin main
+    
+    git remote -v   # Confirms the remote URL is set properly
+    git branch      # Shows your current branch (usually 'main' or 'master')
+    git status      # Shows that your branch is tracking the remote branch
+    git remote set-url origin https://github.com/correct_username/correct_repo_name.git   # If incorrect case etc.
+
 ### Create New Branch
     $ git checkout -b experimental     # Create new branch (of current branch) & enter
     $ git push -u origin experimental  # ..setup stream, and push back git
@@ -81,10 +94,15 @@ GIT MAGIC http://www-cs-students.stanford.edu/~blynn/gitmagic/
 	// might be the same as above
     $ git branch -b experimental          # Create new branch (of current branch)
     $ git push -u origin experimental  # ..setup stream, and push back git
+    
 ### Create a new clone
  git clone git@github.com:franklangston/gpay1.git
  git clone git@github.com:oblinger/Cmd-Alfred-Extension
-### Create cloud remote for existing repo
+
+
+
+
+### OLD. Create cloud remote for existing repo
     $ open http://bitbucket.com
       {[create repo w. same name, as existing $PROJ_NAME, and copy repo URL]}
     $ cd /ob/proj/PROJ_NAME

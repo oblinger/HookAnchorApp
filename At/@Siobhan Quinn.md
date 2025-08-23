@@ -47,3 +47,5 @@ Her thinking ^comp
 - would be 50/50% that a job posting will exist.
 - Get 
 - Ex-collegue - got director.  Ilene
+
+#pp    [Director of Product Management](https://www.linkedin.com/in/siobhanquinn)  [YouTube](./_Org/@YouTube.md)  

@@ -92,7 +92,17 @@
   DELS: , , ,,, , ,[EduCorp Obsidian](spot://educorpobsidian),
   , ,
   DELS: , , ,,, , ,[EduCorp Obsidian](spot://educorpobsidian),, ,
-  , [EduCorp Note](spot://educorpnote), 
+  , [EduCorp Note](spot://educorpnote),
+  , 
+  , [EduCorp Billet Assessment Matrix -- BAM Obsidian](spot://educorpbilletassessmentmatrixbamobsidian)
+  , [EduCorp Principles Obsidian](spot://educorpprinciplesobsidian)
+  , [EduCorp Supplement Obsidian](spot://educorpsupplementobsidian)
+  , [EduCorp Supplement Source Obsidian](spot://educorpsupplementsourceobsidian)
+  , [EduCorp Talk Obsidian](spot://educorptalkobsidian)
+  , [EduCorp Todos Obsidian](spot://educorptodosobsidian)
+  , [EduCorp Tweaks Obsidian](spot://educorptweaksobsidian)
+  , [EduCorp Types Obsidian](spot://educorptypesobsidian)
+  , [EduCorp White Paper Obsidian](spot://educorpwhitepaperobsidian), 
   DELS: [[Greenhouse Farming]], [[@AugustineAntwi-Boasiako]], [[@Meredith Bates]],[EduCorp Note](spot://educorpnote),[[Greenhouse Farming]], [[@AugustineAntwi-Boasiako]], [[@Meredith Bates]],[EduCorp Obsidian](spot://educorpobsidian),[EduCorp Note](spot://educorpnote), [EduCorp Note](spot://educorpnote),[[Greenhouse Farming]], [[@AugustineAntwi-Boasiako]], [[@Meredith Bates]], [[Greenhouse Farming]], [[@AugustineAntwi-Boasiako]], [[@Meredith Bates]],[EduCorp Note](spot://educorpnote), [EduCorp Note](spot://educorpnote), [EduCorp Note](spot://educorpnote), [EduCorp Note](spot://educorpnote),
 
 

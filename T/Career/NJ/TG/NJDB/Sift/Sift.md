@@ -7,18 +7,21 @@
   , ,
   , [Sift Note](spot://siftnote), 
   DELS: [Sift Note](spot://siftnote),[Sift Obsidian](spot://siftobsidian),[Sift Note](spot://siftnote),[Sift Note](spot://siftnote),
-
 # Top
 #### kind: StartAI
 #### area: Cyber
 #### stance: 
 ## Sections
+### LAMP
+#### pri: 
+#### contacts: 
+#### cool: 
+#### job: 
 ### Cash
 #### cash_trend: flat
 #### cash: 
 #### cash_available: 12
 ### Coolness
-#### cool: 
 #### cool_why: 
 #### cool_mission: 
 #### cool_balance: 
@@ -33,7 +36,6 @@ Introduced an Account Takeover Prevention solution that uses ML-driven behaviora
 #### dlproj3: 
 Applies its ML platform to other abuse types as well – for example, spotting fake content and scam accounts – helping clients (e.g. Airbnb) keep user-generated content and interactions trustworthy ￼.
 ### Job Postings
-#### job: 
 #### job_why: 
 #### job_bay: —
 #### job_remote: 

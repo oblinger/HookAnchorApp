@@ -1,4 +1,5 @@
 .[[Alibaba]].
+[LinkedIn Connections](https://www.linkedin.com/search/results/people/?currentCompany=%5B%2214160%22%5D&network=%5B%22F%22%5D)
   , ,
   , ,
   , ,
@@ -7,16 +8,19 @@
   , ,
   , [Alibaba Note](spot://alibabanote), 
   DELS: [Alibaba Note](spot://alibabanote),[Alibaba Obsidian](spot://alibabaobsidian),[Alibaba Note](spot://alibabanote),[Alibaba Note](spot://alibabanote),
-
 # Top
 #### kind: Big
 #### area: Retail
 #### stance: 
 ## Sections
+### LAMP
+#### pri: c
+#### contacts: 
+#### cool: 
+#### job: 
 ### Cash
 #### cash: 
 ### Coolness
-#### cool: 
 #### cool_why: 
 #### cool_mission: 
 #### cool_balance: 
@@ -25,7 +29,6 @@
 ### Deep Learning Projects (DLP)
 #### dlp: 
 ### Job Postings
-#### job: 
 #### job_why: 
 #### job_bay: 
 #### job_remote: 
@@ -44,3 +47,27 @@ Alibaba’s work environment has been marked by toxicity and a lack of support. 
 Alibaba has entered generative AI with its Tongyi Qianwen large language model (a ChatGPT rival) and Tongyi Wanxiang image generator, which can create images from text prompts [oai_citation_attribution:23‡reuters.com](https://www.reuters.com/business/retail-consumer/alibaba-opens-ai-model-tongyi-qianwen-public-2023-09-13/#:~:text=Alibaba%20opens%20AI%20model%20Tongyi,has%20gained%20Chinese%20regulatory%20approval) [oai_citation_attribution:24‡investopedia.com](https://www.investopedia.com/alibaba-releases-text-to-image-ai-tool-7557869#:~:text=Alibaba%20Rolls%20Out%20AI%20Image,generate%20images%20from%20text%20prompts)
 ### proj2: Tongyi Wanxiang (text-to-image generative model)
 ### sdfsdfsfsfds: foo
+
+
+---
+# Alibaba
+
+This is an auto-generated anchor file for patch 'Alibaba'.
+
+Add your content here.
+
+
+---
+# Alibaba
+
+This is an auto-generated anchor file for patch 'Alibaba'.
+
+Add your content here.
+
+
+---
+# Alibaba
+
+This is an auto-generated anchor file for patch 'Alibaba'.
+
+Add your content here.

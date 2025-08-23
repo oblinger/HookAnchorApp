@@ -19,7 +19,8 @@
   DELS: [[Archive]], , , [[Phone]],,, , , ,,, , , , , , ,[Log Obsidian](spot://logobsidian),
   , ,
   DELS: [[Archive]], , , [[Phone]],,, , , ,,, , , , , , ,[Log Obsidian](spot://logobsidian),, ,
-  , [Log Note](spot://lognote), 
+  , [Log Note](spot://lognote),
+  , [Log Log Obsidian](spot://loglogobsidian), [Log Trash Obsidian](spot://logtrashobsidian), 
   DELS: [[Archive]], [[MEETING]], [[MEET]], [[Phone]],[[TT]],[[MEET]], [[MEETING]], [[MEETING]], [[MEET]],[Log Note](spot://lognote),[[MEETING]], [[MEET]], [[TT]], [[MEET]], [[MEETING]], [[MEETING]], [[MEET]],[Log Obsidian](spot://logobsidian),[Log Note](spot://lognote), [Log Note](spot://lognote),[[MEETING]], [[MEET]], [[TT]], [[MEET]], [[MEETING]], [[MEETING]], [[MEET]], [[MEETING]], [[MEET]], [[TT]], [[MEET]], [[MEETING]], [[MEETING]], [[MEET]],[Log Note](spot://lognote), [Log Note](spot://lognote), [Log Note](spot://lognote), [Log Note](spot://lognote),
 
 #### Personal Content Logs

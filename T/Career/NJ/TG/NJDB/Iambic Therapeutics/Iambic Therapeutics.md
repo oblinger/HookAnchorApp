@@ -3,13 +3,17 @@
 #### area: Bio
 #### stance: 
 ## Sections
+### LAMP
+#### pri: 
+#### contacts: 
+#### cool: 
+#### job: 
 ### Cash
 #### cash_trend: spiking
 #### cash: 
 #### cash_available: 214
 #### funding: 0.10
 ### Coolness
-#### cool: 
 #### cool_why: 
 #### cool_mission: 
 #### cool_balance: 
@@ -21,7 +25,6 @@ To tackle the most challenging design problems in drug discovery and address unm
 #### dlproj1: Generative Peptide Design Platform [*no direct link available*]
 #### dlproj2: AI-Driven Macrocycle Discovery [*no direct link available*]
 ### Job Postings
-#### job: 
 #### job_why: 
 #### job_bay: —
 #### job_remote: Sr. Director of Technology and Product Development (Remote)

@@ -1,25 +1,20 @@
 .[[AssemblyAI]].
-  , ,
-  , ,
-  , ,
-  , [AssemblyAI Obsidian](spot://assemblyaiobsidian),
-  DELS: ,[AssemblyAI Obsidian](spot://assemblyaiobsidian),
-  , ,
-  , [AssemblyAI Note](spot://assemblyainote), 
-  DELS: [AssemblyAI Note](spot://assemblyainote),[AssemblyAI Obsidian](spot://assemblyaiobsidian),[AssemblyAI Note](spot://assemblyainote),[AssemblyAI Note](spot://assemblyainote),
-
 # Top
 #### kind: BigAI
 #### area: CoreNLP
 #### stance: 
 ## Sections
+### LAMP
+#### pri: D
+#### contacts: 
+#### cool: 
+#### job: 
 ### Cash
 #### cash_trend: spiking
 #### cash: 
 #### cash_available: 40
 #### funding: 0.97
 ### Coolness
-#### cool: 
 #### cool_why: 
 #### cool_mission: 
 #### cool_balance: 
@@ -36,7 +31,6 @@ Conformer-2 (state-of-the-art speech recognition) [https://www.assemblyai.com/bl
 Summarization (AI transcript summarizer) [https://www.assemblyai.com/blog/introducing-conversational-ai-summarization/]
 #### dlproj4: LeMUR (LLM for voice data Q&A) [*no direct link available*]
 ### Job Postings
-#### job: 
 #### job_why: 
 #### job_bay: None
 #### job_remote: Senior Researcher, Deep Learning

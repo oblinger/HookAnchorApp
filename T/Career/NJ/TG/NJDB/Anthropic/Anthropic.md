@@ -1,18 +1,19 @@
 .[[Anthropic]].  [[@Anthropic]]. 
-  , ,
-  , ,
-  , ,
   , [Anthropic Obsidian](spot://anthropicobsidian),
-  DELS: ,[Anthropic Obsidian](spot://anthropicobsidian),
-  , ,
   , [Anthropic Note](spot://anthropicnote), 
-  DELS: [Anthropic Note](spot://anthropicnote),[Anthropic Obsidian](spot://anthropicobsidian),[Anthropic Note](spot://anthropicnote),[Anthropic Note](spot://anthropicnote),
 
+
+[[ClaudeCode]]
 # Top
 #### kind: Top
 #### area: CoreDL
 #### stance: 
 ## Sections
+### LAMP
+#### pri: B-
+#### contacts: 
+#### cool: 
+#### job: 
 ### Cash
 #### cash_trend: spiking
 #### cash: 
@@ -20,7 +21,6 @@
 #### funding: 
 Finalizing a fresh $3.5B round (Lightspeed, GC, Bessemer) ￼; reportedly raised $2B from Google in Oct 2023
 ### Coolness
-#### cool: 
 #### cool_why: 
 #### cool_mission: 
 #### cool_balance: 
@@ -41,12 +41,23 @@ Constitutional AI – an alignment method where an AI model self-critiques and i
 Claude and Alexa+ – collaboration with Amazon integrating Anthropic's Claude models into Alexa, bringing advanced AI capabilities to the voice assistant with Anthropic’s safety measures [oai_citation_attribution:1‡anthropic.com](https://www.anthropic.com/news/claude-and-alexa-plus#:~:text=Today%2C%20we%27re%20announcing%20that%20Claude,and%20consumers%20around%20the%20world)
 (Not applicable)
 ### Job Postings
-#### job: 
 #### job_why: 
 #### job_bay: 
 #### job_remote: 
-### Toxicity
+# Anthropic
+
+This is an auto-generated anchor file for patch 'Anthropic'.
+
+Add your content here.
 ## Misc Fields
+# Anthropic
+
+This is an auto-generated anchor file for patch 'Anthropic'.
+
+Add your content here.
+
+
+---
 #### bam:
 #### dlp_:
 ### proj1: Claude (Large language model chatbot)
@@ -54,3 +65,14 @@ Claude and Alexa+ – collaboration with Amazon integrating Anthropic's Claude m
 Anthropic, founded by OpenAI alumni, developed Claude, a generative AI assistant similar to ChatGPT, with a focus on AI safety and ethics in its design [oai_citation_attribution:30‡eweek.com](https://www.eweek.com/artificial-intelligence/generative-ai-startups/#:~:text=Anthropic)
 ### proj2: Constitutional AI (Techniques for safer AI alignment)
 ### sdfsdfsfsfds: foo
+
+
+---
+# Anthropic
+
+This is an auto-generated anchor file for patch 'Anthropic'.
+
+Add your content here.
+
+
+---

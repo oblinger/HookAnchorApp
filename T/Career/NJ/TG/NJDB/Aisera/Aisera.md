@@ -7,12 +7,16 @@
   , ,
   , [Aisera Note](spot://aiseranote), 
   DELS: [Aisera Note](spot://aiseranote),[Aisera Obsidian](spot://aiseraobsidian),[Aisera Note](spot://aiseranote),[Aisera Note](spot://aiseranote),
-
 # Top
 #### kind: StartAI
 #### area: Retail
 #### stance: 
 ## Sections
+### LAMP
+#### pri: 
+#### contacts: 
+#### cool: B
+#### job: 
 ### Cash
 #### cash_trend: upward
 #### cash: 
@@ -20,7 +24,6 @@
 #### funding: 
 Closed a $90M Series D led by Goldman Sachs and Thoma Bravo (Aug 2022) ￼ – ~300% YoY growth as enterprises push efficiency.
 ### Coolness
-#### cool: B
 #### cool_why: 
 #### cool_mission: 
 #### cool_balance: 
@@ -36,7 +39,6 @@ LLM Gateway – Aisera’s platform includes an AI Gateway that provides a unifi
 #### dlproj3: 
 AiseraGPT Copilot – a turnkey Generative AI solution (“where chatbots meet action bots”) that uses Aisera’s enterprise LLMs to not only converse with users in natural language but also execute actions via workflow automation. For example, AiseraGPT can understand a user’s request in context and trigger the appropriate IT or HR workflow (password reset, ticket creation, etc.), delivering end-to-end resolution in a conversational manner ￼ ￼.
 ### Job Postings
-#### job: 
 #### job_why: 
 #### job_bay: 
 Senior Prompt Engineer – https://www.google.com/search?q=Aisera+Senior+Prompt+Engineer; 

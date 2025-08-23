@@ -1,22 +1,20 @@
 .[[Salesforce]].
-  , ,
-  , ,
-  , ,
-  , [Salesforce Obsidian](spot://salesforceobsidian),
-  DELS: ,[Salesforce Obsidian](spot://salesforceobsidian),
-  , ,
-  , [Salesforce Note](spot://salesforcenote), 
-  DELS: [Salesforce Note](spot://salesforcenote),[Salesforce Obsidian](spot://salesforceobsidian),[Salesforce Note](spot://salesforcenote),[Salesforce Note](spot://salesforcenote),
+[LinkedIn Connections](https://www.linkedin.com/search/results/people/?currentCompany=%5B%223185%22%5D&network=%5B%22F%22%5D)
 
+[[@Salesforce.md]]
 # Top
 #### kind: Big
 #### area: CoreDL
 #### stance: 
 ## Sections
+### LAMP
+#### pri: C
+#### contacts: [[@Dan Morrison.md]]
+#### cool: C
+#### job: 
 ### Cash
 #### cash: 
 ### Coolness
-#### cool: 
 #### cool_why: 
 #### cool_mission: 
 #### cool_balance: 
@@ -40,7 +38,6 @@ CTRL – Salesforce’s 2019 1.6B-parameter controllable text generation model t
 #### dlproj8: ** - **
 #### dlproj9: ** - **
 ### Job Postings
-#### job: 
 #### job_why: 
 #### job_bay: 
 #### job_remote: 

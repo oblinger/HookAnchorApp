@@ -7,19 +7,22 @@
   , ,
   , [Tome Note](spot://tomenote), 
   DELS: [Tome Note](spot://tomenote),[Tome Obsidian](spot://tomeobsidian),[Tome Note](spot://tomenote),[Tome Note](spot://tomenote),
-
 # Top
 #### kind: BigAI
 #### area: CoreNLP
 #### stance: 
 ## Sections
+### LAMP
+#### pri: 
+#### contacts: 
+#### cool: 
+#### job: 
 ### Cash
 #### cash_trend: spiking
 #### cash: 
 #### cash_available: 22
 #### funding: 1.72  (large funding boost in 2023 ￼)
 ### Coolness
-#### cool: 
 #### cool_why: 
 #### cool_mission: 
 #### cool_balance: 
@@ -31,7 +34,6 @@ To help anyone tell a compelling story, bringing the power of expressive storyte
 #### dlproj1: 
 Generative Storytelling (AI-generated narratives with text & images)&#8203;:contentReference[oaicite:17]{index=17}
 ### Job Postings
-#### job: 
 #### job_why: 
 #### job_bay: 
 AI Product Engineer - https://www.google.com/search?q=Tome%20AI%20Product%20EngineerMachine Learning Engineer, Applied Research and Model Development - https://www.google.com/search?q=Tome%20Machine%20Learning%20Engineer%2C%20Applied%20Research%20and%20Model%20DevelopmentMachine Learning Engineer, GenAI Platform - https://www.google.com/search?q=Tome%20Machine%20Learning%20Engineer%2C%20GenAI%20Platform

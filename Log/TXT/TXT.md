@@ -9,7 +9,8 @@
   , [TXT Obsidian](spot://txtobsidian),
   DELS: ,[TXT Obsidian](spot://txtobsidian),
   , ,
-  , [TXT Note](spot://txtnote), 
+  , [TXT Note](spot://txtnote),
+  , [__TXT__ Aniket Recruiters Obsidian](spot://txtaniketrecruitersobsidian), 
   DELS: [TXT Note](spot://txtnote),[TXT Obsidian](spot://txtobsidian),[TXT Note](spot://txtnote),[TXT Note](spot://txtnote),
 
 
@@ -94,3 +95,29 @@ n:: 't...'		Textual messages written by me   (Meta [[TXT]])
 | t2021-00-00 | [[MED Log]]                  | Questions and topics                                                    |
 | t2019-00-00 | [[@Qingling Oblinger]]       | QL Notes                                                                |
 | t2019-00-00 | [[POL]]                      | Ryan (Baltimore school teacher)                                         |
+
+---
+
+# TXT
+
+This is an auto-generated anchor file for patch 'TXT'.
+
+Add your content here.
+
+
+---
+
+# TXT
+
+This is an auto-generated anchor file for patch 'TXT'.
+
+Add your content here.
+
+
+---
+
+# TXT
+
+This is an auto-generated anchor file for patch 'TXT'.
+
+Add your content here.

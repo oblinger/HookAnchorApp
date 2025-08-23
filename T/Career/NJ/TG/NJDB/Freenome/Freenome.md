@@ -7,18 +7,21 @@
   , ,
   , [Freenome Note](spot://freenomenote), 
   DELS: [Freenome Note](spot://freenomenote),[Freenome Obsidian](spot://freenomeobsidian),[Freenome Note](spot://freenomenote),[Freenome Note](spot://freenomenote),
-
 # Top
 #### kind: StartAI
 #### area: Bio
 #### stance: 
 ## Sections
+### LAMP
+#### pri: 
+#### contacts: 
+#### cool: B+
+#### job: 
 ### Cash
 #### cash_trend: upward
 #### cash: 
 #### cash_available: 127
 ### Coolness
-#### cool: B+
 #### cool_why: 
 #### cool_mission: 
 #### cool_balance: 
@@ -34,7 +37,6 @@ Multi-cancer screening (Sanderson Study): Combining multiomics with real-world d
 #### dlproj3: 
 AI-driven immunotherapy response prediction: Collaboration with Institut Curie to use ML on cell-free DNA biomarkers to predict patient response to immuno-oncology treatments ￼.
 ### Job Postings
-#### job: 
 #### job_why: 
 #### job_bay: Senior Computational Biologist I – Google search
 #### job_remote: Clinical Data Scientist – Google search

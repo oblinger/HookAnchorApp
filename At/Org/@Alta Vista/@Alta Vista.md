@@ -13,6 +13,45 @@
 - Share Folder:  https://drive.google.com/drive/u/0/folders/1D5NpFkVG_xF72ibAy5tR8B0kyk8axFiF
 
 
+|                    |                       |                                                 |                          |                                                  |
+| ------------------ | --------------------- | ----------------------------------------------- | ------------------------ | ------------------------------------------------ |
+| Child's First Name | Mother's Name         | Mother's Contact                                | Father's Name            | Father's Contact                                 |
+| Adrienne           | Kathryn Chen          | kchen25@gmail.com  <br>650-274-9864             | Ruben Cornel             | reuben.cornel@gmail.com<br>415-613-0878          |
+| Anaya              | Nidhi Rambhia         | nidhishah4@gmail.com  <br>415-937-4738          | Ankit Rambhia            | ankitrambhia@gmail.com<br>630-329-4447           |
+| Annie              | Jessica Greenwood     | jessgreenwood@gmail.com  <br>347-514-4330       | Mark Pytlik              | m@rkp.io<br>917-612-4481                         |
+| Aric               | Shravya Shetty        | shravya.shetty@gmail.com  <br>201-743-8897      | Arjuna Sivasithambaresan | arjunasiva@gmail.com <br>408-439-7164            |
+| Eli                | Qingling Oblinger     | qingling.ni@gmail.com  <br>408-480-0508         | Dan Oblinger             | oblinger@gmail.com  <br>415-494-9499             |
+| Jojo               | Daniela Blei          | daniela.h.blei@gmail.com  <br>415-734-6494      | Mike Altmin              | maltmin@gmail.com  <br>415-828-9848              |
+| Jules              | Erica Lively          | erica.lively@gmail.com  <br>208-310-9415        | Jim Hefner               | jim.k.hefner@gmail.com<br>650-387-8032           |
+| Lila               | Lizette Ross          | lorenzo.lizette@gmail.com  <br>415-265-2452     | Keith Ross Guillins      | keith.ross@altavistaschool.org  415-756-1631     |
+| Olivia             | Michelle Johnson      | michelle.kayoko.johnson@gmail.com  408-888-1959 | Nari Ansari              | nariman.ansari@altavistaschool.org  650-922-1060 |
+| Sarina             | Anju Khetan           | anju.khetan@gmail.com  --                       | Justin Martin            | jsm_2001@hotmail.com<br>425-785-8765             |
+| Shiv               | Prerna Gupta          | yogiprerna@gmail.com  <br>650-248-5895          | Parag Chordia            | paragchordia@gmail.com<br>--                     |
+| Sophia             | Courtney Lane-Donovan | courtney.lane-donovan@altavistaschool.org  --   | Adam Donovan             | avdonovan@gmail.com<br>781-864-1232              |
+| Soren              | Elisa Kannegaard      | elisakanne@gmail.com  <br>650-207-2330          | Kevin Wooley             | sleepykev@gmail.com<br>650-814-7671              |
+| Stella             | Miyuan Zhao           | zhaomiyuan@gmail.com  <br>949-439-8273          | Ang Li                   | laauron@gmail.com<br>949-439-2369                |
+| West               | Kristin Moyer         | kristingilliss@gmail.com  <br>727-244-0580      | Fred Moyer               | fredmoyer@gmail.com<br>415-720-2103              |
+| Aya                | Sylvie Charles        | sylvie@justdatesyrup.com  <br>321-591-4053      | Aaron Royston            | aaron.royston@gmail.com<br>858-692-0186          |
+| Calder             | Lian Eoyang           | lian.eoyang@gmail.com  <br>415-205-5026         | Randy Reddig             | randy@randyreddig.com<br>415-312-6273            |
+| Colette            | Michelle Nam          | michelle.c.nam@gmail.com  <br>917-612-9150      | Bo Nam                   | bo@bonam.com  <br>646-884-3691                   |
+| Grant              | Margaux Savee         | maviguetero@gmail.com  <br>858-220-1196         | John Savee               | jsavee@gmail.com  <br>562-413-5506               |
+| Josey              | Dina Moskowitz        | dwmmwd@gmail.com  <br>510-912-2829              | Neil Schwartz            | nschwartz@gmail.com  <br>415-867-5054            |
+| Justin             | Tiffany Pao           |                                                 |                          | Mike Pao                                         |
+| Landon             | Mallory Bridle        | mallory.bridle@gmail.com  <br>513-312-9288      | Nick Bridle              | nick.s.bridle@gmail.com  <br>650-526-2127        |
+| Louie              | Lauren Grosack        |                                                 | Michael Grosack          |                                                  |
+| Phoenix            | Bailey Rodriguez      | b.rod07@yahoo.com  <br>650-302-5899             |                          |                                                  |
+| Rishi              | Akshaya Subramanian   | aks19leo@gmail.com  <br>908-340-8422            | Natraj Mowdhgalya        | njmowdhgalya@gmail.com  <br>908-340-8277         |
+| Rosie              | Beth Wilson           | istanbul1914@gmail.com  <br>415-515-9515        | John Champlin            | johnthechamplin@gmail.com  <br>415-515-9515      |
+| Sasha              | Lauren Head           |                                                 |                          | Austen Head                                      |
+| Silas              | Maria Lozano          | --  --                                          | Mario Moreno             | --  --                                           |
+| Sophia             | Michelle Johnson      | michelle.kayoko.johnson@gmail.com  408-888-1959 | Nari Ansari              | nariman.ansari@altavistaschool.org  650-922-1060 |
+| Talia              | Tanya Dorosh          | tanyabdorosh@gmail.com  <br>925-348-1876        | Dmitriy Dorosh           | dmitriy.dorosh@applovin.com  <br>408-476-5528    |
+
+
+
+  Note: Some families (Justin Pao, Louie Grosack, Sasha Head) didn't have contact information in the provided structured text. Phoenix Cameron appears to be from a
+  single-parent household.
+
 ## Families
 - Adrienne Cornel			Ruben & Kathryn
 - Anaya Rambhia			+Ankit & Nidhi
@@ -32,15 +71,15 @@
 
 - Aya Royston				Aaron & Sylvie
 - Calder Aoyang			Randy & Lian
-- Colette (Coco) Nam		Bo & Michelle
+- Colette (Coco) Nam		Bo & Michelle.   646-884-3691.  bo@bonam.com
 - Grant Savee				>John & Margaux
 - Josey Schwartz			Neil & Dina (4th grade teacher)
 - Justin Pao				Mike & Tiffany
-- Landon Bridle			?>Nick & Mallory. obFlynn (2.5 yo).
+- Landon Bridle			?>Nick & Mallory. obFlynn (2.5 yo).  650-526-2127 nick.s.bridle@gmail.com
 - Louie Grosack			Michael & Lauren 
 - Phoenix Cameron		Bailey
 - Rishi Mowdhgalya		Raj? & Akshaya (a-ka-shya; co-chair parents assn)
-- Rosie Champlin			+John & Beth
+- Rosie Champlin			+John & Beth.    415-515-9515 johnthechamplin@gmail.com 
 - Sasha Head				>Austen & Lauren (data freelancer)
 - Silas Moreno			Mario & Maria
 - Sophia Ansari			Nari & Michelle

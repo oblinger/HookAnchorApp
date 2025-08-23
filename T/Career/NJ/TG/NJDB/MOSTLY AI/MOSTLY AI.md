@@ -3,13 +3,17 @@
 #### area: CoreDL
 #### stance: 
 ## Sections
+### LAMP
+#### pri: 
+#### contacts: 
+#### cool: 
+#### job: 
 ### Cash
 #### cash_trend: flat
 #### cash: 
 #### cash_available: 7
 #### funding: 0.66
 ### Coolness
-#### cool: 
 #### cool_why: 
 #### cool_mission: 
 #### cool_balance: 
@@ -21,7 +25,6 @@ We enable organizations to thrive in an ethical, responsible way with smart and 
 #### dlproj1: MOSTLY AI Synthetic Data Platform [https://mostly.ai/]
 #### dlproj2: Privacy-Preserving Synthetic Data for BFSI [*no direct link available*]
 ### Job Postings
-#### job: 
 #### job_why: 
 #### job_bay: —
 #### job_remote: Head of Quality Assurance (Remote)

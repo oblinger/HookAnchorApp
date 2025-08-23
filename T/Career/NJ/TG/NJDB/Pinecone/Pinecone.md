@@ -7,12 +7,16 @@
   , ,
   , [Pinecone Note](spot://pineconenote), 
   DELS: [Pinecone Note](spot://pineconenote),[Pinecone Obsidian](spot://pineconeobsidian),[Pinecone Note](spot://pineconenote),[Pinecone Note](spot://pineconenote),
-
 # Top
 #### kind: StartAI
 #### area: CoreDL
 #### stance: 
 ## Sections
+### LAMP
+#### pri: 
+#### contacts: 
+#### cool: C+
+#### job: 
 ### Cash
 #### cash_trend: upward
 #### cash: 
@@ -20,7 +24,6 @@
 #### funding: 
 Raised $100M Series B (Apr 2023) led by a16z at a $750M valuation ￼ ￼ (total funding ~$138M)
 ### Coolness
-#### cool: C+
 #### cool_why: 
 #### cool_mission: 
 #### cool_balance: 
@@ -36,7 +39,6 @@ Pinecone Rerank Model – a neural reranking model (pinecone-rerank-v0) to boost
 #### dlproj3: 
 Serverless Vector DB for GenAI – Pinecone’s fully managed serverless vector database launched to support real-time, scalable retrieval for generative AI applications, improving accuracy and reducing costs ￼ ￼.
 ### Job Postings
-#### job: 
 #### job_why: 
 #### job_bay: 
 #### job_remote: Staff Software Engineer – Database Team – Google Search​

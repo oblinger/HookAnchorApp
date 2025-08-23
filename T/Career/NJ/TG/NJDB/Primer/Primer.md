@@ -7,18 +7,21 @@
   , ,
   , [Primer Note](spot://primernote), 
   DELS: [Primer Note](spot://primernote),[Primer Obsidian](spot://primerobsidian),[Primer Note](spot://primernote),[Primer Note](spot://primernote),
-
 # Top
 #### kind: StartAI
 #### area: CoreNLP
 #### stance: 
 ## Sections
+### LAMP
+#### pri: 
+#### contacts: 
+#### cool: 
+#### job: 
 ### Cash
 #### cash_trend: flat
 #### cash: 
 #### cash_available: 28
 ### Coolness
-#### cool: 
 #### cool_why: 
 #### cool_mission: 
 #### cool_balance: 
@@ -34,7 +37,6 @@ Report generation platform – Primer’s solutions (e.g. Primer Delta) let user
 #### dlproj3: 
 Intelligence AI (Command & Delta) – Primer developed NLP platforms built on large transformers for defense and enterprise intel. Primer Command (for open-source intel) and Primer Delta (for secure internal data) enable real-time monitoring of thousands of sources and allow analysts to query and receive generated insights, all on-premises for security ￼ ￼.
 ### Job Postings
-#### job: 
 #### job_why: 
 #### job_bay: 
 #### job_remote: Staff Software Engineer – Google Search​

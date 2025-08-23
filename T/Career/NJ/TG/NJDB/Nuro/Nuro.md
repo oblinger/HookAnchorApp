@@ -7,18 +7,21 @@
   , ,
   , [Nuro Note](spot://nuronote), 
   DELS: [Nuro Note](spot://nuronote),[Nuro Obsidian](spot://nuroobsidian),[Nuro Note](spot://nuronote),[Nuro Note](spot://nuronote),
-
 # Top
 #### kind: StartAI
 #### area: Robotics
 #### stance: 
 ## Sections
+### LAMP
+#### pri: 
+#### contacts: 
+#### cool: 
+#### job: 
 ### Cash
 #### cash_trend: down
 #### cash: 
 #### cash_available: 150
 ### Coolness
-#### cool: 
 #### cool_why: 
 #### cool_mission: 
 #### cool_balance: 
@@ -33,7 +36,6 @@ Safe RL for planning – “CIMRL” framework combining imitation learning and 
 #### dlproj3: 
 Scaling laws for autonomy – Researching how model size and data scale affect self-driving performance, to determine optimal model and data sizing for Nuro’s AI driver ￼.
 ### Job Postings
-#### job: 
 #### job_why: 
 #### job_bay: 
 #### job_remote: 

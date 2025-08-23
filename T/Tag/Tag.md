@@ -232,7 +232,7 @@
 		- KIND:   [[FAANG]],   [[START]],  [[TECH]], [[VC]], [[ACADEMIC]], 
 		- WHERE:  [[Tags/HACKERS]], [[DARPA]], 
 		- AREA:  [[AI]], [[ROBOTICS]], [[ML]], [[CONSULTANT]],  
-	- [[Org]] 
+	- [[_Org]] 
 		- [[VC ORG]]   
 		- [[PE firm]] 
 

@@ -1,6 +1,15 @@
 TAXONOMY:	[[Meta]]  
 VIEWS:		[[SYS Task Lists]],  
 
+
+Reference Material - 
+Entities -
+Areas - 
+Projects - 
+Evergreen Topics - 
+Logs - 
+
+
 ## THEORY
 
 ### ASPECTS OF A TERM

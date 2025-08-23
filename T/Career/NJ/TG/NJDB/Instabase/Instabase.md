@@ -7,12 +7,16 @@
   , ,
   , [Instabase Note](spot://instabasenote), 
   DELS: [Instabase Note](spot://instabasenote),[Instabase Obsidian](spot://instabaseobsidian),[Instabase Note](spot://instabasenote),[Instabase Note](spot://instabasenote),
-
 # Top
 #### kind: StartAI
 #### area: CoreDL
 #### stance: 
 ## Sections
+### LAMP
+#### pri: 
+#### contacts: 
+#### cool: 
+#### job: 
 ### Cash
 #### cash_trend: down
 #### cash: 
@@ -20,7 +24,6 @@
 #### funding: 
 Secured $100M Series D led by QIA (Jan 2025) at a ~$1.24B valuation (down ~38% from prior $2B) ￼ ￼
 ### Coolness
-#### cool: 
 #### cool_why: 
 #### cool_mission: 
 #### cool_balance: 
@@ -35,7 +38,6 @@ OpenAI Partnership – Instabase has a partnership with OpenAI to integrate cutt
 #### dlproj3: 
 AI Hub Build – a no-code generative workflow builder within Instabase AI Hub. It allows users to create end-to-end document processing pipelines (e.g. an app that reads mortgage applications and summarizes key fields) by chaining LLM-powered steps. Businesses can customize pre-built blocks and deploy these workflows to automate document-heavy processes without writing code ￼ ￼.
 ### Job Postings
-#### job: 
 #### job_why: 
 #### job_bay: Engineering Manager, Product – Google search
 #### job_remote: (No remote-only openings – hybrid work with SF/NY hubs)

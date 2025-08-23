@@ -1,18 +1,14 @@
 .[[Lrn]]. [[LRN Todo|todo]]
-  [[Lrn Mgt]], [[LRN Read]], [[LRN Todo]],
-  , ,
-  , ,
-  , ,
-  , [Lrn Obsidian](spot://lrnobsidian),
-  DELS: ,[Lrn Obsidian](spot://lrnobsidian),
-  , ,
-  , [Lrn Note](spot://lrnnote), 
+  [[Lrn Mgt]], [[LRN Read]], [[LRN Todo]], [Lrn Obsidian](spot://lrnobsidian),
+  , [Lrn Note](spot://lrnnote),
+  , [Lrn Mgt Obsidian](spot://lrnmgtobsidian), [LRN Read Obsidian](spot://lrnreadobsidian)
+  , [LRN Todo Obsidian](spot://lrntodoobsidian), 
   DELS: [Lrn Note](spot://lrnnote),[Lrn Obsidian](spot://lrnobsidian),[Lrn Note](spot://lrnnote),[Lrn Note](spot://lrnnote),
 
 
 
 
-## Rocks - Evergreen @ top
+## Rocks - Evergreen @ top  [[Lrn Big]] 
 - ^ \ _ S  SPACED REPETITION. (Add shift for review)
 -  # R reading
 - [[Read]]: [[RR Papers]], [[RR Articles]], 

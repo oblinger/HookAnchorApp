@@ -15,6 +15,11 @@ Za
 #### score: . 110
 #### stance: 
 ## Sections
+### LAMP
+#### pri: a
+#### contacts: 
+#### cool: C+
+#### job: 
 ### Cash
 #### cash_trend: flat
 #### cash: B+
@@ -22,7 +27,6 @@ Za
 #### funding: 
 Last raised $200M Series E (Jan 2022) doubling its valuation to $5.2B ￼ ￼; added a $100M credit line in 2023 for growth...
 ### Coolness
-#### cool: C+
 #### cool_why: 
 #### cool_mission: Predicting customers is slightly yucky
 #### cool_balance: 
@@ -38,7 +42,6 @@ AI Email Writer for Sales – a generative feature inside 6sense Sales Intellige
 #### dlproj3: 
 Pipeline Intelligence – 6sense’s platform, branded “Revenue AI,” applies machine learning to identify high-potential accounts and recommend next-best actions. Recent AI advancements include Model Lifecycle Management, which continuously retrains the predictive models on new data to maintain accuracy ￼. Combining generative AI for engagement and predictive AI for targeting, 6sense aims to automate large parts of the B2B sales pipeline..
 ### Job Postings
-#### job: 
 #### job_why: 
 #### job_bay: 
 Principal Software Engineer – https://www.google.com/search?q=6sense+Principal+Software+Engineer; 

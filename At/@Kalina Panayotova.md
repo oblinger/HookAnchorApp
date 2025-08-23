@@ -2,3 +2,6 @@
 
 
  
+
+#pp    [Engineering Manager](https://www.linkedin.com/in/kpanayotova)  [Netflix](./_Org/@Netflix.md)  
+# LOG

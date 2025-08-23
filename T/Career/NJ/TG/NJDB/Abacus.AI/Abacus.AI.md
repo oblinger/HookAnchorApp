@@ -1,10 +1,6 @@
 .[[Abacus.AI]].
-  , ,
-  , ,
-  , ,
   , [Abacus.AI Obsidian](spot://abacus.aiobsidian),
   DELS: ,[Abacus.AI Obsidian](spot://abacus.aiobsidian),
-  , ,
   , [Abacus.AI Note](spot://abacus.ainote), 
   DELS: [Abacus.AI Note](spot://abacus.ainote),[Abacus.AI Obsidian](spot://abacus.aiobsidian),[Abacus.AI Note](spot://abacus.ainote),[Abacus.AI Note](spot://abacus.ainote),
 

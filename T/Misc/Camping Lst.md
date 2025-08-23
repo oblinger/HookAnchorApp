@@ -7,13 +7,13 @@ BIG:	 Tent, SleepBags, Mattress, Stove/Fuel, Cooler,
 LAMP:	 HeadLamps, Cards, Deet, Sunscreen, Binoculars, 
 .		 HandTowel, BugMesh,
 DOG:	 Leash, Food, Blanket, 
-WHITE: Ponchos, Filter,  
 
 DISH1:	 Silverware, Plates, Bags, 
 -COOK: Knife, Lighter, CanOpener, Salt/Pepper, Pen, String
 -AID:	 Bandaids, Tape, Ibuprofen/Tylenol, 
 -BATH: Tooth brush/paste, Caramex, EarPlugs, Soap, 
 
+WHITE: Ponchos, Filter,  
 LEAVE: Dry pack, 
 
 

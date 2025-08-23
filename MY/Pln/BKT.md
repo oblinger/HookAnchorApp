@@ -1,5 +1,5 @@
 
-NOW
+NOW. [[NJ.2]] 
   [[WORK]]	3h MIT & Chew
   [[Fun]]:		New, Guys, date
   [[MED]]:	Wk 4x, Wghts,HIIT
@@ -11,8 +11,6 @@ NOW
   [[Home]]:	
 
 - Jobright AI fixes
-
-
 
 
 

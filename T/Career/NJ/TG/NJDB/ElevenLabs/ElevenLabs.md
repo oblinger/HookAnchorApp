@@ -7,19 +7,22 @@
   , ,
   , [ElevenLabs Note](spot://elevenlabsnote), 
   DELS: [ElevenLabs Note](spot://elevenlabsnote),[ElevenLabs Obsidian](spot://elevenlabsobsidian),[ElevenLabs Note](spot://elevenlabsnote),[ElevenLabs Note](spot://elevenlabsnote),
-
 # Top
 #### kind: BigAI
 #### area: CoreNLP
 #### stance: 
 ## Sections
+### LAMP
+#### pri: 
+#### contacts: 
+#### cool: 
+#### job: 
 ### Cash
 #### cash_trend: spiking
 #### cash: 
 #### cash_available: 72
 #### funding: 0.73
 ### Coolness
-#### cool: 
 #### cool_why: 
 #### cool_mission: 
 #### cool_balance: 
@@ -30,7 +33,6 @@
 #### dlproj1: Eleven Multilingual v2 (30-language) [https://beta.elevenlabs.io/]
 #### dlproj2: Professional Voice Cloning (cross-language) [https://elevenlabs.io/pricing]
 ### Job Postings
-#### job: 
 #### job_why: 
 #### job_bay: None
 #### job_remote: Machine Learning Researcher

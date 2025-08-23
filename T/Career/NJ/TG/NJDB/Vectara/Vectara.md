@@ -7,18 +7,21 @@
   , ,
   , [Vectara Note](spot://vectaranote), 
   DELS: [Vectara Note](spot://vectaranote),[Vectara Obsidian](spot://vectaraobsidian),[Vectara Note](spot://vectaranote),[Vectara Note](spot://vectaranote),
-
 # Top
 #### kind: StartAI
 #### area: CoreDL
 #### stance: 
 ## Sections
+### LAMP
+#### pri: 
+#### contacts: 
+#### cool: B-
+#### job: 
 ### Cash
 #### cash_trend: upward
 #### cash: 
 #### cash_available: 25
 ### Coolness
-#### cool: B-
 #### cool_why: 
 #### cool_mission: 
 #### cool_balance: 
@@ -33,7 +36,6 @@ Zero-Shot Learning Engine – Vectara’s system employs a form of continuous ze
 #### dlproj3: 
 “Boomerang” Retrieval Model – An applied research achievement by Vectara is its Boomerang model – a state-of-the-art multilingual retrieval model integrated into its platform ￼. Boomerang is trained to produce high-quality semantic embeddings for text in many languages, improving search relevance across diverse content. In Vectara’s pipeline, better retrieval means the generative answer gets the best possible context to work from ￼. Internal benchmarks showed Boomerang outperforming other embedding models on recall and precision, which translates to more accurate answers in generative search. (This focus on strong dual encoder models is part of Vectara’s “Neural Search” DNA and a key differentiator of their GenAI service.)
 ### Job Postings
-#### job: 
 #### job_why: 
 #### job_bay: Director | ML Platform (Mountain View)
 #### job_remote: Lead AI Engineer | Remote

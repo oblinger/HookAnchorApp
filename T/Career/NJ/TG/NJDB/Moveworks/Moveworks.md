@@ -7,12 +7,16 @@
   , ,
   , [Moveworks Note](spot://moveworksnote), 
   DELS: [Moveworks Note](spot://moveworksnote),[Moveworks Obsidian](spot://moveworksobsidian),[Moveworks Note](spot://moveworksnote),[Moveworks Note](spot://moveworksnote),
-
 # Top
 #### kind: StartAI
 #### area: Retail
 #### stance: 
 ## Sections
+### LAMP
+#### pri: 
+#### contacts: 
+#### cool: B
+#### job: 
 ### Cash
 #### cash_trend: flat
 #### cash: 
@@ -20,7 +24,6 @@
 #### funding: 
 Closed a $200M Series C at a $2.1B valuation led by Tiger Global and Alkeon (July 2021) ￼ ￼
 ### Coolness
-#### cool: B
 #### cool_why: 
 #### cool_mission: 
 #### cool_balance: 
@@ -36,7 +39,6 @@ Quick GPT – a new Moveworks feature allowing users to intentionally invoke Cha
 #### dlproj3: 
 Agentic Reasoning Engine – Moveworks’ system for complex workflow automation, which leverages GPT-4o for multi-step reasoning and planning. It breaks down user requests and autonomously invokes tools (plugins) to execute actions (e.g. resetting passwords, pulling reports), effectively serving as an agent that completes tasks across apps using natural language commands ￼ ￼.
 ### Job Postings
-#### job: 
 #### job_why: 
 #### job_bay: 
 #### job_remote: PreSales Solutions Engineer – Google Search​

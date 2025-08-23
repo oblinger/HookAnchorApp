@@ -6,7 +6,8 @@
   , [Note Obsidian](spot://noteobsidian),
   DELS: ,[Note Obsidian](spot://noteobsidian),
   , ,
-  , [Note Note](spot://notenote), 
+  , [Note Note](spot://notenote),
+  , [NOTE entry Obsidian](spot://noteentryobsidian), 
   DELS: [Note Note](spot://notenote),[Note Obsidian](spot://noteobsidian),[Note Note](spot://notenote),[Note Note](spot://notenote),
 
 #log 

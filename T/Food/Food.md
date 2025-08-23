@@ -14,20 +14,7 @@
   [[Food Recipe Research]],
   [[Eat]],
   [[Bfast]],
-  ,
-  , ,
-  , , ,
-  , ,
-  DELS: , , ,, ,,,,
-  , ,
-  DELS: , , ,, ,,,,,
-  , [Food Obsidian](spot://foodobsidian), [Food Research Obsidian](spot://foodresearchobsidian),
-  DELS: , , ,, ,,,,,, , , , , , ,[Food Obsidian](spot://foodobsidian),
-  , , [Food Research](spot://foodresearch),
-  DELS: , , [[Food Research]],, ,,,,,, , , , , , ,[Food Obsidian](spot://foodobsidian),[[Food Research]], , [[Food Research]], , [[Food Research]], ,
-  , ,
-  , [Food Note](spot://foodnote), [Food Research Note](spot://foodresearchnote), 
-  DELS: [[dinner]], [[Noom Notes]], [[Food Research]],[FOOD Research Note](spot://foodresearchnote), [[FOOD Research]],[[qwd]],[[Eli Food]],[[FOOD Research]],[Food Note](spot://foodnote),[[dinner]], [[Noom Notes]], [FOOD Research Note](spot://foodresearchnote), [[FOOD Research]], [[qwd]], [[Eli Food]], [[FOOD Research]],[Food Obsidian](spot://foodobsidian),[[Food Research]], [Food Research Note](spot://foodresearchnote), [[Food Research]], [Food Note](spot://foodnote), [[Food Research]], [Food Note](spot://foodnote),[[dinner]], [[Noom Notes]], [FOOD Research Note](spot://foodresearchnote), [[FOOD Research]], [[qwd]], [[Eli Food]], [[FOOD Research]], [[dinner]], [[Noom Notes]], [FOOD Research Note](spot://foodresearchnote), [[FOOD Research]], [[qwd]], [[Eli Food]], [[FOOD Research]],[Food Research Note](spot://foodresearchnote),[Food Note](spot://foodnote), [Food Note](spot://foodnote), [Food Note](spot://foodnote), [Food Note](spot://foodnote), [Food Research Note](spot://foodresearchnote),
+  
 
 
 
@@ -382,3 +369,30 @@ World	Mediterranean, Indian, African
 
 
 
+
+
+---
+
+# Food
+
+This is an auto-generated anchor file for patch 'Food'.
+
+Add your content here.
+
+
+---
+
+# Food
+
+This is an auto-generated anchor file for patch 'Food'.
+
+Add your content here.
+
+
+---
+
+# Food
+
+This is an auto-generated anchor file for patch 'Food'.
+
+Add your content here.

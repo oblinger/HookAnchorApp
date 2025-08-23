@@ -1,1 +1,4 @@
+
 - [[Mission]] - 
+
+  [[Spirit]]: 	Gendlin

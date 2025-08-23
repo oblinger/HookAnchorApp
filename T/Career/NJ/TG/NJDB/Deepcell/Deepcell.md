@@ -7,18 +7,21 @@
   , ,
   , [Deepcell Note](spot://deepcellnote), 
   DELS: [Deepcell Note](spot://deepcellnote),[Deepcell Obsidian](spot://deepcellobsidian),[Deepcell Note](spot://deepcellnote),[Deepcell Note](spot://deepcellnote),
-
 # Top
 #### kind: StartAI
 #### area: Bio
 #### stance: 
 ## Sections
+### LAMP
+#### pri: 
+#### contacts: 
+#### cool: B+
+#### job: 
 ### Cash
 #### cash_trend: upward
 #### cash: 
 #### cash_available: 24
 ### Coolness
-#### cool: B+
 #### cool_why: 
 #### cool_mission: 
 #### cool_balance: 
@@ -34,7 +37,6 @@ REM-I platform for morpholomics: AI-powered benchtop system (launched 2023) comb
 #### dlproj3: 
 Tabula Sapiens cell atlas project: Collaboration with Stanford (Chan Zuckerberg Biohub) to generate and publicly share single-cell morphology data for a human cell atlas of 2 million cells, using Deepcell’s AI platform to identify cell types via morphology ￼ ￼.
 ### Job Postings
-#### job: 
 #### job_why: 
 #### job_bay: VP, Data Science & AI – Google search
 #### job_remote: (No remote openings found requiring AI experience & leadership)

@@ -8,10 +8,24 @@ This is the markdown filename (it is ignored and just used for display)
 #### area: !!!
 From: Automation, Bio, CoreDL,  NLP_App, Cyber, Retail, Robotics, 
 #### score:
-Overall relevancy score for DanO
+Overall relevancy score for DanO (computed I think)
 #### stance: !!!
 #### flags: 
 ## Sections
+### LAMP
+#### pri: !!!
+Dan's manually entered overall lamp priority. (Graded A thru F)
+#### contacts: !!!
+Dan's contacts
+#### cool: !!! 
+Overall grade for my enthusiasm about the company, its work-life balance, culture, projects, and more.
+#### job: !!!
+Grade indicating posted job opportunities
+
+#### basics: !!!
+- Job is hybrid or in person in the bay area
+- Job has LLM-related innovation (and obviously in ML)
+
 ### Cash
 
 #### cash_trend:  
@@ -22,8 +36,7 @@ Grade for their available cash and funding.
 #### funding:  Notes about their last raise 
 
 ### Coolness
-#### cool: !!! 
-Overall grade for my excitement about the company, its work-life balance, culture, projects, etc.
+
 #### cool_why: !!!
 Justification notes for the cool grade
 #### cool_mission: !!!
@@ -46,8 +59,6 @@ Grade for DL project work at this company
 #### dlproj8:
 #### dlproj9:
 ### Job Postings
-#### job: !!!
-Grade indicating posted job opportunities
 
 #### job_why: !!!
 Why have I assigned the job score I did
@@ -55,6 +66,10 @@ Why have I assigned the job score I did
 Job listing for the SF Bay area
 #### job_remote: !!!
 Job listing for remote work
+
+#### job_source: !!!
+Where does this company source its jobs from?  (which job site?)
+
 ### Toxicity 
 #### toxicity:   
 #### tox_summary:

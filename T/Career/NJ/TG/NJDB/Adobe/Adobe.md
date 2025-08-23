@@ -1,28 +1,26 @@
 .[[Adobe]].
-  , ,
-  , ,
-  , ,
-  , [Adobe Obsidian](spot://adobeobsidian),
-  DELS: ,[Adobe Obsidian](spot://adobeobsidian),
-  , ,
-  , [Adobe Note](spot://adobenote), 
-  DELS: [Adobe Note](spot://adobenote),[Adobe Obsidian](spot://adobeobsidian),[Adobe Note](spot://adobenote),[Adobe Note](spot://adobenote),
-
+[LinkedIn Connections](https://www.linkedin.com/search/results/people/?currentCompany=%5B%221480%22%5D&network=%5B%22F%22%5D)
 # Top
 #### kind: Big
 #### area: CoreDL
 #### stance: 
 ## Sections
+### LAMP
+#### pri: a
+#### contacts: 
+#### cool: 
+B+
+Work balance, Culture, and product
+#### job: 
 ### Cash
 #### cash: 
 ### Coolness
-#### cool: 
 #### cool_why: 
 #### cool_mission: 
 #### cool_balance: 
 #### cool_dan: 
 #### mission: 
-Changing the world through personalized digital experiences.Adobe empowers everyone, everywhere to imagine, create, and bring any digital experience to life ￼.
+Changing the world through personalized digital experiences. Adobe empowers everyone, everywhere to imagine, create, and bring any digital experience to life ￼.
 ### Deep Learning Projects (DLP)
 #### dlp: 
 #### dlproj1: 
@@ -31,7 +29,6 @@ Firefly is Adobe’s family of creative generative AI models integrated into Cre
 Project VoCo is a prototype that enables novel editing and generation of speech audio, dubbed 'Photoshop-for-voice' since its reveal in 2016 [oai_citation_attribution:25‡en.wikipedia.org](https://en.wikipedia.org/wiki/Adobe_Voco#:~:text=software%20by%20Adobe%20that%20enables,It%20was)
 #### dlproj3: (Not applicable)
 ### Job Postings
-#### job: 
 #### job_why: 
 #### job_bay: 
 #### job_remote: 

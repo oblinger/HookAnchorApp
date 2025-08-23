@@ -7,19 +7,22 @@
   , ,
   , [Tavus Note](spot://tavusnote), 
   DELS: [Tavus Note](spot://tavusnote),[Tavus Obsidian](spot://tavusobsidian),[Tavus Note](spot://tavusnote),[Tavus Note](spot://tavusnote),
-
 # Top
 #### kind: BigAI
 #### area: CoreDL
 #### stance: 
 ## Sections
+### LAMP
+#### pri: 
+#### contacts: 
+#### cool: 
+#### job: 
 ### Cash
 #### cash_trend: spiking
 #### cash: 
 #### cash_available: 18
 #### funding: 0.23.  (rapid raises in 2023–24 ￼ ￼)
 ### Coolness
-#### cool: 
 #### cool_why: 
 #### cool_mission: 
 #### cool_balance: 
@@ -32,7 +35,6 @@ Personalized Video Generation (AI lip-sync and audio-driven videos)&#8203;:conte
 #### dlproj2: 
 Phoenix Model (NeRF-based generative talking-head video)&#8203;:contentReference[oaicite:16]{index=16}
 ### Job Postings
-#### job: 
 #### job_why: 
 #### job_bay: —
 #### job_remote: 

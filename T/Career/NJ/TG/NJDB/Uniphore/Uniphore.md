@@ -7,12 +7,16 @@
   , ,
   , [Uniphore Note](spot://uniphorenote), 
   DELS: [Uniphore Note](spot://uniphorenote),[Uniphore Obsidian](spot://uniphoreobsidian),[Uniphore Note](spot://uniphorenote),[Uniphore Note](spot://uniphorenote),
-
 # Top
 #### kind: StartAI
 #### area: Retail
 #### stance: 
 ## Sections
+### LAMP
+#### pri: 
+#### contacts: 
+#### cool: B-
+#### job: 
 ### Cash
 #### cash_trend: upward
 #### cash: 
@@ -20,7 +24,6 @@
 #### funding: 
 Announced a $400M Series E led by NEA at a $2.5B valuation (Feb 2022) ￼ (total funding $610M)
 ### Coolness
-#### cool: B-
 #### cool_why: 
 #### cool_mission: 
 #### cool_balance: 
@@ -35,7 +38,6 @@ U-Analyze (Generative Edition) – an enhanced version of Uniphore’s interacti
 #### dlproj3: 
 Q for Sales – an AI-driven conversational intelligence tool for sales teams that analyzes emotional cues in virtual meetings. Q for Sales uses computer vision (facial expressions), tonal analysis (voice intonation), ASR, and NLP to gauge buyer sentiment and engagement in real time, giving sales reps live feedback and recommendations. By capturing the full emotional spectrum of sales calls and delivering real-time “EQ” insights, Q for Sales helps remote sellers build trust and close deals more effectively ￼ ￼.
 ### Job Postings
-#### job: 
 #### job_why: 
 #### job_bay: Engineering Manager | Conversational AI (Palo Alto)
 #### job_remote: Principal AI Scientist | Remote

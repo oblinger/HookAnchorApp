@@ -36,7 +36,7 @@ SECOND:
 
 REPEAT:  
 - [ ] Daily 7-min exercise
-- [x] PING: Emails, [[COMS]]
+- [x] PING: Emails, [[COM]]
 
 ### 2022-07-11  -- CRAP WEEK
 - [ ] CALLS lined up - 

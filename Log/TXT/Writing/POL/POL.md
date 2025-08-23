@@ -11,7 +11,8 @@
   , [POL Obsidian](spot://polobsidian),
   DELS: ,[POL Obsidian](spot://polobsidian),
   , ,
-  , [POL Note](spot://polnote), 
+  , [POL Note](spot://polnote),
+  , [POL refs Obsidian](spot://polrefsobsidian), 
   DELS: [POL Note](spot://polnote),[POL Obsidian](spot://polobsidian),[POL Note](spot://polnote),[POL Note](spot://polnote),
 
   DELS: [[Voting]],[[Innovation]],[[Consciousness]], 

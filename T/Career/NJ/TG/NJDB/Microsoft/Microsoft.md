@@ -7,16 +7,19 @@
   , ,
   , [Microsoft Note](spot://microsoftnote), 
   DELS: [Microsoft Note](spot://microsoftnote),[Microsoft Obsidian](spot://microsoftobsidian),[Microsoft Note](spot://microsoftnote),[Microsoft Note](spot://microsoftnote),
-
 # Top
 #### kind: Top
 #### area: CoreDL
 #### stance: 
 ## Sections
+### LAMP
+#### pri: 
+#### contacts: 
+#### cool: 
+#### job: 
 ### Cash
 #### cash: 
 ### Coolness
-#### cool: 
 #### cool_why: 
 #### cool_mission: 
 #### cool_balance: 
@@ -39,7 +42,6 @@ DeepSpeed – easy-to-use deep learning optimization library (open-sourced by Mi
 #### dlproj7: 
 BioGPT – domain-specific generative Transformer (by Microsoft Research) trained on large biomedical corpora for text generation and mining in the biomedical domain ￼
 ### Job Postings
-#### job: 
 #### job_why: 
 #### job_bay: 
 #### job_remote: 
@@ -51,9 +53,33 @@ Microsoft is widely regarded as having a very supportive and healthy workplace c
 #### tox_references: 
 [oai_citation_attribution:41‡businessinsider.com](https://www.businessinsider.com/employers-comparably-list-of-best-global-company-culture-2022-3#:~:text=For%20this%20ranking%2C%20employee%20ratings,March%202021%20through%20March%202022); [oai_citation_attribution:42‡businessinsider.com](https://www.businessinsider.com/employers-comparably-list-of-best-global-company-culture-2022-3#:~:text=Industry%3A%20Technology); [oai_citation_attribution:43‡cnbc.com](https://www.cnbc.com/2022/11/15/microsoft-will-update-sexual-harassment-policy-after-arentfox-report.html#:~:text=Microsoft%20will%20update%20sexual%20harassment,report%20showed%20shortcomings%20in)
 ## Misc Fields
+# Microsoft
+
+This is an auto-generated anchor file for patch 'Microsoft'.
+
+Add your content here.
 #### bam:
 #### dlp_:
 ### proj1: Bing Chat (GPT-4 powered AI search assistant)
 ### justification: 
 Microsoft has invested heavily in generative AI, partnering with OpenAI and embedding models like GPT-4 into Bing Chat and developer tools like GitHub Copilot [oai_citation_attribution:4‡blogs.bing.com](https://blogs.bing.com/search/march_2023/Confirmed-the-new-Bing-runs-on-OpenAI%E2%80%99s-GPT-4#:~:text=We%20are%20happy%20to%20confirm,which%20we%27ve%20customized%20for%20search) [oai_citation_attribution:5‡techtarget.com](https://www.techtarget.com/searchenterpriseai/tip/GitHub-Copilot-vs-ChatGPT-How-do-they-compare#:~:text=GitHub%20Copilot%20vs,well%20as%20alternative%20coding)
 ### proj2: GitHub Copilot (AI code generation assistant)
+
+
+---
+# Microsoft
+
+This is an auto-generated anchor file for patch 'Microsoft'.
+
+Add your content here.
+
+
+---
+# Microsoft
+
+This is an auto-generated anchor file for patch 'Microsoft'.
+
+Add your content here.
+
+
+---

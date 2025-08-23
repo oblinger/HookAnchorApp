@@ -1,7 +1,9 @@
+
 [[MED]]:	150min, strength & HIIT, coach?
  , Cortisol??, Glucose, 
  [[MED]], [[Doctor]] 
  - Get therapist, weights starter
+ - Skin cancer screening, Prostate, Bone Density, 
  - Get a backup plan for non exercise days
  - Figure out daily strategy
  - Exercise 3x this week

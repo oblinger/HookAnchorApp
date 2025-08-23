@@ -1,3 +1,0 @@
-=[[Cmd]]   app System Preferences
-
-

@@ -7,12 +7,16 @@
   , ,
   , [Replika Note](spot://replikanote), 
   DELS: [Replika Note](spot://replikanote),[Replika Obsidian](spot://replikaobsidian),[Replika Note](spot://replikanote),[Replika Note](spot://replikanote),
-
 # Top
 #### kind: StartAI
 #### area: CoreNLP
 #### stance: 
 ## Sections
+### LAMP
+#### pri: 
+#### contacts: 
+#### cool: 
+#### job: 
 ### Cash
 #### cash_trend: flat
 #### cash: 
@@ -21,7 +25,6 @@
 Raised $6.5M Series A in Nov 2017 ￼ ￼ (total ~$11M from Khosla, Sherpa, etc. ￼) – product now sustained by subscription revenue
 0.09
 ### Coolness
-#### cool: 
 #### cool_why: 
 #### cool_mission: 
 #### cool_balance: 
@@ -37,7 +40,6 @@ Blush (AI Dating Simulator) – a spin-off app by the Replika team that focuses 
 #### dlproj3: 
 Toward AI Life Coaches – Replika’s evolution is toward AI agents that are not just companions but proactive life assistants. The company envisions Replika becoming an emotionally intelligent coach integrated into users’ daily lives ￼. In the future, Replika’s AI could help schedule your day, check in on your mood, or remind you of goals – all while maintaining the empathetic, personalized touch that made it popular as a companion. (This is aligned with trends of AI moving from chat to utility while preserving emotional connection.)
 ### Job Postings
-#### job: 
 #### job_why: 
 #### job_bay: None currently
 #### job_remote: None currently

@@ -218,6 +218,60 @@ DISCUSS
 
 # LOG
 
+### 2025-07-25  Back to Half time
+
+ANSWER: We cannot add burn if it does not result in additional revenue before the A-round.
+
+Number of things best solved directly by me is growing     
+- Hyper slicing myself very effective & great learning 
+- The SW org has been running on it own momentum for six month, but I think this is starting to degrade
+Holding myself back from get deep anywhere except a bit in the CV team.
+- AWS costs
+- Pricing and alternatives for Google's on demand GPU w/ auto delete reclamation.
+- Driving AI adoption within SW team, and whole team.
+- PlayOn & Softbank projects 
+- I have my eye on a new class of algorithms to try with our data, but it would require real time from me.    **VideoMAE (Masked Autoencoders)**
+- 
+- Many todo items from last two months mgt meetings
+	- Thinking about ideal metrics:  accuracy & system performance
+	- Fernley projects locked down
+	- Beta testing - back end, mgt, getting bodies
+	- TLC w/ each dev - can't loose ANYONE
+	- The 1000 little things
+			- Why didn't Matty follow up 
+			- What happened with beta tester signup; dual release model, etc.
+
+
+Org is still small, I think 1/2 time is sufficient
+     now that we are branching out from our emergency cash saving mode.
+
+
+
+- holding myself 
+- turning bugs, driving CV team, whole team deliverin
+- fingers everywhere
+- not driving off cliff anywhere
+- everyone's aligned
+- factory DB
+
+- all great, but this is not the ideal stance 
+
+- AI in all parts of our process
+- Feature velocity
+- hyper slicing core tasks + requests &
+  plus holding myself back fully diving into proactive tasks.
+
+
+
+### 2025-07-21  chat
+
+- Thomas Dullien - https://www.linkedin.com/in/halvarflake/details/experience/
+- Brian met
+- GPU - Back off strategy
+
+
+
+
 ### 2025-06-17  Mery one-on-one
 
 - 

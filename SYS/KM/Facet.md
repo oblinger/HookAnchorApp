@@ -4,33 +4,38 @@
 ## FACETS
 
 
-|             | Type        | Name                 | Description                                                                 |
-| ----------- | ----------- | -------------------- | --------------------------------------------------------------------------- |
-|             | **DIR/DOC** |                      |                                                                             |
-| **S**       | Shared      | **XXXX Shared**      | Catch all instead of tool name.<br>External "Shared" tool, e.g. Notion, ... |
-| **F**       | Folder      | **XXXX Folder**      | Launches finder on local Folder (6)                                         |
-| **B**       | Box         | **XXXX Box**         | Drop box folder                                                             |
-| **G**       | Gdrive      | **XXXX Gdrive**      | Gdrive folder, or Gdoc, Gsheet, etc. document                               |
-| **C**       | Confluence  | **XXXX Confluence**  | Duplicates Code but maybe ok?                                               |
-| **O** **N** | Notes       | **XXXX Note**        | RENAME to "O" obsidian.  Main page if XXXX is also a prefix                 |
-|             |             |                      |                                                                             |
-|             | **SPECIAL** |                      |                                                                             |
-|             |             | **XXXX**             | No suffix overrides others as leading choice                                |
-| **1**       | 1Pass       | **XXXX 1pass**       | Launches from 1password (5)                                                 |
-| **C**       | Code        | **XXXX Code**        | Project's source                                                            |
-| **L**       | Log         | **XXXX Log**         | Log of related content                                                      |
-| **P**       | Page        | **XXXX Page**        | Launches a URL (7)                                                          |
-| **T**       | Todo        | **XXXX Todo** or "." | Todo list for XXXX.  "XXXX." can be an alias                                |
-|             |             |                      |                                                                             |
-|             | **PREFIX**  |                      |                                                                             |
-|             | Doc         | **Doc XXXX**         | Documentations about some SW thing                                          |
-|             | RR          | **RR XXXX**          | Reference material about a thing                                            |
-|             | Meta XXX    | **Meta XXXX**        | Meta info about a term (could be 'about')                                   |
-|             | @XXX        | **@ XXXX**           | Entity page for a person, org, or "actor"                                   |
-|             |             |                      |                                                                             |
-|             | **TARGET**  |                      |                                                                             |
-| **A**       | App         | **XXXX**             | Mac App. Launches it. (3)                                                   |
-|             |             |                      |                                                                             |
+|       | Type        | Name                 | Description                                                                 |
+| ----- | ----------- | -------------------- | --------------------------------------------------------------------------- |
+|       | **DIR/DOC** |                      |                                                                             |
+|       | Markdown    | **XXXX**             | Default action. (is markdown by default)                                    |
+| **A** | Anchor      | **XXXX Anchor**      | Used when anchor's name is conflicting                                      |
+| **M** | Markdown    | **XXXX Markdown**    | Local markdown files only use "Markdown" suffix when conflicting            |
+| **F** | Folder      | **XXXX Folder**      | Launches finder on local Folder                                             |
+| **B** | Box         | **XXXX Box**         | Drop box folder                                                             |
+| **G** | Gdrive      | **XXXX Gdrive**      | Gdrive folder, or Gdoc, Gsheet, etc. document                               |
+| **C** | Confluence  | **XXXX Confluence**  | Duplicates Code but maybe ok?                                               |
+| **S** | Shared      | **XXXX Shared**      | Catch all instead of tool name.<br>External "Shared" tool, e.g. Notion, ... |
+|       |             |                      |                                                                             |
+|       | **SPECIAL** |                      |                                                                             |
+| **1** | 1Pass       | **XXXX 1pass**       | Launches from 1password                                                     |
+| **A** | App         | **XXXX**             | Mac App. Launches it.                                                       |
+| **C** | Code        | **XXXX Code**        | Project's source                                                            |
+| **L** | Log         | **XXXX Log**         | Log of related content                                                      |
+| **P** | Page        | **XXXX Page**        | Launches a URL                                                              |
+| **T** | Todo        | **XXXX Todo** or "." | Todo list for XXXX.  "XXXX." can be an alias                                |
+| **W** | Web App     | **XXXX Web**         | Launches Web App                                                            |
+|       |             |                      |                                                                             |
+|       | **PREFIX**  |                      |                                                                             |
+|       | Doc         | **Doc XXXX**         | Documentations about some SW thing                                          |
+|       | RR          | **RR XXXX**          | Reference material about a thing                                            |
+|       | Meta XXX    | **Meta XXXX**        | Meta info about a term (could be 'about')                                   |
+|       | @XXX        | **@ XXXX**           | Entity page for a person, org, or "actor"                                   |
+|       |             |                      |                                                                             |
+|       | **TARGET**  |                      |                                                                             |
+|       |             |                      |                                                                             |
+
+AI
+
 a b C D E f g H I J K l M? n O p Q R S t U V W X Y Z
 
 ### KEY FACETS FOR A TERM

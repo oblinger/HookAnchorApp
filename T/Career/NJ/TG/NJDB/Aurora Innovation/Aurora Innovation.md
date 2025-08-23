@@ -1,12 +1,17 @@
 # Top
+[LinkedIn Connections](https://www.linkedin.com/search/results/people/?currentCompany=%5B%2217973173%22%5D&network=%5B%22F%22%5D)
 #### kind: Big
 #### area: Robotics
 #### stance: 
 ## Sections
+### LAMP
+#### pri: ?
+#### contacts: [Hai Nguyen](https://www.linkedin.com/in/hai-nguyen-32383814/)
+#### cool: 
+#### job: 
 ### Cash
 #### cash: 
 ### Coolness
-#### cool: 
 #### cool_why: 
 #### cool_mission: 
 #### cool_balance: 
@@ -28,7 +33,6 @@ GNN-Based Behavior Model – Aurora pioneered using graph neural networks with a
 #### dlproj8: —
 #### dlproj9: —
 ### Job Postings
-#### job: 
 #### job_why: 
 #### job_bay: 
 #### job_remote: 

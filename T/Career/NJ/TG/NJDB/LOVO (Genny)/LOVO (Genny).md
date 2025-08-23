@@ -3,11 +3,15 @@
 #### area: CoreNLP
 #### stance: 
 ## Sections
+### LAMP
+#### pri: 
+#### contacts: 
+#### cool: 
+#### job: 
 ### Cash
 #### cash: 
 #### funding: 0.13
 ### Coolness
-#### cool: 
 #### cool_why: 
 #### cool_mission: 
 #### cool_balance: 
@@ -20,7 +24,6 @@ To democratize audio content production and create brand new auditory experience
 #### dlproj2: LOVO Studio (Custom Voice Creation) [https://lovo.ai/]
 #### dlproj3: LOVO Voice Cloning [https://lovo.ai/voice-cloning]
 ### Job Postings
-#### job: 
 #### job_why: 
 #### job_bay: —
 #### job_remote: —

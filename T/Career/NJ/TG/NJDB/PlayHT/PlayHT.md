@@ -7,19 +7,22 @@
   , ,
   , [PlayHT Note](spot://playhtnote), 
   DELS: [PlayHT Note](spot://playhtnote),[PlayHT Obsidian](spot://playhtobsidian),[PlayHT Note](spot://playhtnote),[PlayHT Note](spot://playhtnote),
-
 # Top
 #### kind: BigAI
 #### area: CoreNLP
 #### stance: 
 ## Sections
+### LAMP
+#### pri: B
+#### contacts: 
+#### cool: 
+#### job: 
 ### Cash
 #### cash_trend: spiking
 #### cash: 
 #### cash_available: 21
 #### funding: 0.11  (major 2024 seed raise ￼)
 ### Coolness
-#### cool: 
 #### cool_why: 
 #### cool_mission: 
 #### cool_balance: 
@@ -31,7 +34,6 @@ To empower individuals and businesses to create the most natural speech content 
 #### dlproj1: 
 PlayHT1.0 (generative text-to-speech model with voice cloning)&#8203;:contentReference[oaicite:3]{index=3}&#8203;:contentReference[oaicite:4]{index=4}
 ### Job Postings
-#### job: 
 #### job_why: 
 #### job_bay: Machine Learning Engineer/Researcher (Palo Alto)
 #### job_remote: —

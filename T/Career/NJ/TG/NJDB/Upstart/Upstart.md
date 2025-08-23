@@ -1,4 +1,5 @@
 .[[Upstart]].
+[LinkedIn Connections](https://www.linkedin.com/search/results/people/?currentCompany=%5B%222688310%22%5D&network=%5B%22F%22%5D)
   , ,
   , ,
   , ,
@@ -7,16 +8,19 @@
   , ,
   , [Upstart Note](spot://upstartnote), 
   DELS: [Upstart Note](spot://upstartnote),[Upstart Obsidian](spot://upstartobsidian),[Upstart Note](spot://upstartnote),[Upstart Note](spot://upstartnote),
-
 # Top
 #### kind: Big
 #### area: Finance
 #### stance: 
 ## Sections
+### LAMP
+#### pri: 
+#### contacts: 
+#### cool: 
+#### job: 
 ### Cash
 #### cash: 
 ### Coolness
-#### cool: 
 #### cool_why: 
 #### cool_mission: 
 #### cool_balance: 
@@ -37,7 +41,6 @@ Fair Lending LDAs – Upstart’s AI fairness research uses Less Discriminatory 
 #### dlproj8: —
 #### dlproj9: —
 ### Job Postings
-#### job: 
 #### job_why: 
 #### job_bay: 
 #### job_remote: 

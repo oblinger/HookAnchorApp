@@ -1,5 +1,7 @@
 
 
+- [[2025-06 Alg2]] 
+
 Docs for STATE of the CV pipeline:
 
 [https://bitbucket.org/SVEngineering/algorithms2/raw/f1cf89650cd08357082f1820b15cc9a95e016060/src/synch/sctemplate.py](https://bitbucket.org/SVEngineering/algorithms2/raw/f1cf89650cd08357082f1820b15cc9a95e016060/src/synch/sctemplate.py)
@@ -7,26 +9,27 @@ Docs for STATE of the CV pipeline:
 
 
 
-#  eval EXPR             -- Adds a new row with the result of the expression EXPR.
-#  total TEXT            -- Adds a new row with the total of the column TEXT.
-#  #RULESET:ITEM     -- Transaction's item/bucket value
-# - Extend ValueExpr classes to include nary + and * and binary - and / operations.
-
-
-#  _______________
-#  RULE PROCESSING
-#  eval EXPR             -- Adds a new row with the result of the expression EXPR.
-#  total TEXT            -- Adds a new row with the total of the column TEXT.
-
-# instructions:
-# - add statement classes for output section and text name and eval statements.
-# - Extend ValueExpr classes to include nary + and * and binary - and / operations.
-#
-# - extend program parsing to include parsing of output statement sections,
-#   and program evaluation to include evaluation of output sections which will write
-#   out the specified output csv in the working directory.  The colums will come from
-#   the pivot tables columns and the rows will come from the statments in the output
-#   section.
+	
+	#  eval EXPR             -- Adds a new row with the result of the expression EXPR.
+	#  total TEXT            -- Adds a new row with the total of the column TEXT.
+	#  #RULESET:ITEM     -- Transaction's item/bucket value
+	# - Extend ValueExpr classes to include nary + and * and binary - and / operations.
+	
+	
+	#  _______________
+	#  RULE PROCESSING
+	#  eval EXPR             -- Adds a new row with the result of the expression EXPR.
+	#  total TEXT            -- Adds a new row with the total of the column TEXT.
+	
+	# instructions:
+	# - add statement classes for output section and text name and eval statements.
+	# - Extend ValueExpr classes to include nary + and * and binary - and / operations.
+	#
+	# - extend program parsing to include parsing of output statement sections,
+	#   and program evaluation to include evaluation of output sections which will write
+	#   out the specified output csv in the working directory.  The colums will come from
+	#   the pivot tables columns and the rows will come from the statments in the output
+	#   section.
 
 """
 - A budgeting program is a text file with both rulesets and output sections. 

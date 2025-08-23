@@ -1,24 +1,19 @@
 .[[Woebot]].
-  , ,
-  , ,
-  , ,
-  , [Woebot Obsidian](spot://woebotobsidian),
-  DELS: ,[Woebot Obsidian](spot://woebotobsidian),
-  , ,
-  , [Woebot Note](spot://woebotnote), 
-  DELS: [Woebot Note](spot://woebotnote),[Woebot Obsidian](spot://woebotobsidian),[Woebot Note](spot://woebotnote),[Woebot Note](spot://woebotnote),
-
 # Top
 #### kind: StartAI
 #### area: Health
 #### stance: 
 ## Sections
+### LAMP
+#### pri: ?
+#### contacts: 
+#### cool: 
+#### job: 
 ### Cash
 #### cash_trend: flat
 #### cash: 
 #### cash_available: 22
 ### Coolness
-#### cool: 
 #### cool_why: 
 #### cool_mission: 
 #### cool_balance: 
@@ -33,7 +28,6 @@ WB001 Postpartum Depression Therapeutic – An AI-driven digital therapeutic dev
 #### dlproj3: 
 Therapeutic Alliance via AI – Woebot’s design emphasizes relationship-building, and research indicates users do develop a bond with the bot. In fact, a JMIR study found Woebot was capable of establishing a level of therapeutic alliance (rapport and trust) with users that’s comparable to human-led therapy ￼. This is achieved through the bot’s natural, friendly dialogue and emotional reflections. It’s a key insight for generative AI in healthcare: despite knowing it’s an AI, people can feel heard and supported by Woebot, which is crucial for mental health outcomes.
 ### Job Postings
-#### job: 
 #### job_why: 
 #### job_bay: Lead Machine Learning Engineer | San Francisco
 #### job_remote: Director of AI | Remote

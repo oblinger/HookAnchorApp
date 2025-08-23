@@ -3,12 +3,16 @@
 #### area: Retail
 #### stance: 
 ## Sections
+### LAMP
+#### pri: 
+#### contacts: 
+#### cool: B
+#### job: 
 ### Cash
 #### cash_trend: spiking
 #### cash: 
 #### cash_available: 250
 ### Coolness
-#### cool: B
 #### cool_why: 
 #### cool_mission: 
 #### cool_balance: 
@@ -23,7 +27,6 @@ CheckGPT generative attack detection: Tool that employs large language models to
 #### dlproj3: 
 AI Security Mailbox for phishing reports: Autonomous triage system that uses AI to inspect and categorize user-reported emails as malicious, spam, or safe (including automated feedback to reporters), thus offloading and speeding up SOC email workflows ￼.
 ### Job Postings
-#### job: 
 #### job_why: 
 #### job_bay: None
 #### job_remote: 

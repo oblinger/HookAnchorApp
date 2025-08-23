@@ -24,7 +24,18 @@
   , ,
   , ,
   , [RES Examples Note](spot://resexamplesnote), [RES Job History Note](spot://resjobhistorynote)
-  , [RES Note](spot://resnote), [RES Versions Note](spot://resversionsnote), 
+  , [RES Note](spot://resnote), [RES Versions Note](spot://resversionsnote),
+  , [RES Highlights Obsidian](spot://reshighlightsobsidian)
+  , [RES Instant Design Story Obsidian](spot://resinstantdesignstoryobsidian)
+  , [RES Linked In Obsidian](spot://reslinkedinobsidian)
+  , [RES Numbers Obsidian](spot://resnumbersobsidian)
+  , [RES Papers Obsidian](spot://respapersobsidian), [RES Parts Obsidian](spot://respartsobsidian)
+  , [RES Patents Obsidian](spot://respatentsobsidian)
+  , [RES Pyramid Obsidian](spot://respyramidobsidian)
+  , [RES References Obsidian](spot://resreferencesobsidian)
+  , [RES Src Info Obsidian](spot://ressrcinfoobsidian), [RES Star Obsidian](spot://resstarobsidian)
+  , [RES Todo Obsidian](spot://restodoobsidian), [RES War AI Obsidian](spot://reswaraiobsidian)
+  , [RES War Obsidian](spot://reswarobsidian), 
   DELS: [[WarStories]],[RES Note](spot://resnote),[RES Obsidian](spot://resobsidian),[[RES Job History]], [[RES Examples]], [[RES Versions]], [RES Examples Note](spot://resexamplesnote), [RES Job History Note](spot://resjobhistorynote), [RES Versions Note](spot://resversionsnote), [RES Note](spot://resnote),[RES Note](spot://resnote), [RES Examples Note](spot://resexamplesnote), [RES Job History Note](spot://resjobhistorynote), [RES Versions Note](spot://resversionsnote),
 
 # LINKED IN PARTS
@@ -703,3 +714,30 @@ ___________________________________________________________________________
 	%I Morgan Kaufmann
 	%k book-form
 	%D 1993
+
+
+---
+
+# RES
+
+This is an auto-generated anchor file for patch 'RES'.
+
+Add your content here.
+
+
+---
+
+# RES
+
+This is an auto-generated anchor file for patch 'RES'.
+
+Add your content here.
+
+
+---
+
+# RES
+
+This is an auto-generated anchor file for patch 'RES'.
+
+Add your content here.

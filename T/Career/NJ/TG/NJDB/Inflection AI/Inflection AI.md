@@ -1,8 +1,14 @@
 # Top
+[LinkedIn Connections](https://www.linkedin.com/search/results/people/?currentCompany=%5B%2279994924%22%5D&network=%5B%22F%22%5D)
 #### kind: Top
 #### area: CoreNLP
 #### stance: 
 ## Sections
+### LAMP
+#### pri: 
+#### contacts: 
+#### cool: 
+#### job: 
 ### Cash
 #### cash_trend: spiking
 #### cash: 
@@ -11,7 +17,6 @@
 Raised a “huge” $1.3B round led by Microsoft, Reid Hoffman, Bill Gates, Eric Schmidt, and Nvidia ￼ (valued at $4B) – total funding now $1.5B+ ￼
 61.90
 ### Coolness
-#### cool: 
 #### cool_why: 
 #### cool_mission: 
 #### cool_balance: 
@@ -29,7 +34,6 @@ Massive AI Cluster – Inflection (with CoreWeave and NVIDIA) is building the wo
 Intel Collaboration – Inflection AI partnered with Intel to deliver its models to enterprises. They announced an Inflection 3.0-based appliance using Intel’s Gaudi3 AI accelerators ￼. This Inflection for Enterprise system runs Inflection’s latest model on-premises with high efficiency, offering tailored chatbot and instruction-following AI services for business use ￼.
 Inflection for Enterprise – an enterprise-grade AI system (Inflection 3.0 model) launched with Intel’s support, allowing companies to own and fine-tune a dedicated LLM appliance on Intel Gaudi hardware for secure, high-performance generative AI [oai_citation_attribution:3‡businesswire.com](https://www.businesswire.com/news/home/20241007441972/en/Introducing-Inflection-for-Enterprise#:~:text=PALO%20ALTO%2C%20Calif.,for%20the%20world%E2%80%99s%20largest%20enterprises)
 ### Job Postings
-#### job: 
 #### job_why: 
 #### job_bay: 
 #### job_remote: 

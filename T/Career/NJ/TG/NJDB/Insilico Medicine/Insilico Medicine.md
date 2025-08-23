@@ -3,13 +3,17 @@
 #### area: Bio
 #### stance: 
 ## Sections
+### LAMP
+#### pri: 
+#### contacts: 
+#### cool: 
+#### job: 
 ### Cash
 #### cash_trend: upward
 #### cash: 
 #### cash_available: 47
 #### funding: 1.33
 ### Coolness
-#### cool: 
 #### cool_why: 
 #### cool_mission: 
 #### cool_balance: 
@@ -25,7 +29,6 @@ GENTRL (Generative Reinforcement Learning) [https://www.nature.com/articles/s414
 #### dlproj4: 
 InClinico (Clinical Trial Outcome Prediction) [https://insilico.com/platform/inclinico]
 ### Job Postings
-#### job: 
 #### job_why: 
 #### job_bay: —
 #### job_remote: Senior Machine Learning Engineer (Remote)

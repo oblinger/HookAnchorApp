@@ -67,13 +67,13 @@ LEFT FOCUSED LAYOUT
 | Active |   "   |   "   | Later |
 |  Work  | Wings | Full  | Quick |
 |   "    |   "   |   "   | Other |
-
+[[Bkt]],  [[Q2]], [[Self]], 
 
 ### COMMS DASHBOARD
 
 |   col-1   |    col-2     |  col-3  |
 | :-------: | :----------: | :-----: |
-| [[COMs]]  |    [[CN]]    | [[CRM]] |
+| [[COM]]  |    [[CN]]    | [[CRM]] |
 |     "     |      "       |    "    |
 | [[Calls]] | [[External]] |    "    |
 |     "     |      "       |    "    |

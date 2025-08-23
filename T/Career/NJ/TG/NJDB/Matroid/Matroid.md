@@ -7,19 +7,22 @@
   , ,
   , [Matroid Note](spot://matroidnote), 
   DELS: [Matroid Note](spot://matroidnote),[Matroid Obsidian](spot://matroidobsidian),[Matroid Note](spot://matroidnote),[Matroid Note](spot://matroidnote),
-
 # Top
 #### kind: StartAI
 #### area: CoreDL
 #### stance: 
 ## Sections
+### LAMP
+#### pri: 
+#### contacts: 
+#### cool: 
+#### job: 
 ### Cash
 #### cash_trend: flat
 #### cash: 
 #### cash_available: 4
 #### funding: Raised $20M Series B in Oct 2020 ￼
 ### Coolness
-#### cool: 
 #### cool_why: 
 #### cool_mission: 
 #### cool_balance: 
@@ -34,7 +37,6 @@ Visual anomaly detection – Applied deep learning for industrial inspection: Ma
 #### dlproj3: 
 Activity and event recognition – Matroid’s platform extends to complex video analytics, allowing users to detect human behaviors, incidents, and events (e.g. security breaches, operational irregularities) across diverse industries via trained AI models ￼.
 ### Job Postings
-#### job: 
 #### job_why: 
 #### job_bay: Deep Learning Engineer – Google Search​
 #### job_remote: None currently

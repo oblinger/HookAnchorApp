@@ -10,61 +10,58 @@
 #### Medium Term Project Tracking
 - [[Now]]		-  Actively tracked smaller task outputs
 - [[Work]]		-  Actively tracked project outputs
-- [[Self]]			-  Active personal projects
+- [[Self]]			-  Active personal proj (& career)
+- [[MIT]]			-  
 
 #### Evergreen Toplevel Lists
-- [[EV Log]] 
+- [[EV Log]] 		-  
 
 #### Longer Term 
 #### Specialty List
 - [[Actualize]]	-  
-- [[BKT]]			-     (Taxonomy of all task tracking lists)
-- [[Dropped]]		-  
-- [[Full]]			-  
-- [[Fun]]			-  
+- [[BKT]]		-     (Taxonomy of all task tracking lists)
+- [[Dropped]]	-  
+- [[Full]]			-  (Not used) 
+- [[Fun]]			- 
 - [[Friday]]		-  Planning for date nights
 - 
-- [[HACK.]]			-  Hacking/Coding activities
-- [[Habit]]			-  Current and past habit goals
-- [[Gap]]			-  
+- [[HACK.]]		-  Hacking/Coding activities
+- [[Habit]]		-  Current and past habit goals
+- [[Gap]]		-  Ideas to do with relax time
 - [[Journal Old]]	-  
-- [[MY/Plan/L]]			-  
-- [[Per]]			-  
 - [[Quarterly]]	-  
 - [[Repeat]]		-  
-- [[SCRatch]]		-  
+- [[SCRatch]]	-  
 - [[Social]]		-  
-- [[Q2]]				- Second 
+- [[Q2]]			- Second 
 - [[Mission]]		- 
 
 #### Offload Lists
-- [[Archive List]]		-  Place to retire planning items.   [[Arc ALL]].
-- [[Later]]			-  Tasks that have been pushed to 'later' 
+- [[Archive List]]	-  Place to retire planning items.   [[Arc ALL]].
+- [[Later]]		-  Tasks that have been pushed to 'later' 
 - [[Quarterly]]	-  
 - [[External]]		- ????? 
 
 
 #### Comms Pages
-- [[COMS]]			-  
+- [[COM]]		-  
 - [[COM Now]]	-  
 - [[COM Next]]	-  
-- [[COM Waiting]]-  
-- [[Ping]]			-  	
+- [[Ping]]		-  	
 
 
 #### Unsorted Planning Pages
 - [[Journal Old]]	- 
-- [[MY/Plan/L]] 		-
-- [[Ping]] 			- 
+- [[Ping]] 		- 
 
 
-PREFIX NAMED:   [[Active]]   B   [[COMS]]   DAILY   [[Fried]]   E   F   G   [[MY/Pln/HACK/HACK]]   I   J   K   L   M   N   O   [[Prime]]   [[quick]]  [[Repeat]]   [[MY/Plan/self]]   [[todo]]   U   V   [[External]]   X   Y   Z
+PREFIX NAMED:   [[Active]]   B   [[COM]]   DAILY   [[Fried]]   E   F   G   [[MY/Pln/HACK/HACK]]   I   J   K   L   M   N   O   [[Prime]]   [[quick]]  [[Repeat]]   [[MY/Plan/self]]   [[todo]]   U   V   [[External]]   X   Y   Z
 CHANGE: [[Wings]], [[Current]], 
 
 
 
 - XXX
-  [COMS](COMS.md)
+  [COM](COM.md)
 - 
 
   [quick](quick.md)
@@ -82,7 +79,7 @@ CHANGE: [[Wings]], [[Current]],
   [External](External.md)
 
   [Fun](Fun.md)
- [[Quarterly]],  [Quarterly](Quarterly.md),   [Planning](Planning.md),   [Archive List](Archive%20List.md),   [Work](Work.md),   [Full](Full.md),   [self](MY/Plan/self.md),   [Later](Later.md),   [Repeat](Repeat.md),   [Calls](Calls.md),   [Ping](Ping.md),   [Q2](Q2.md),   [Fried](Fried.md),   [todo](todo.md),   [Habit](Habit.md),   [Social](Social.md),   [SCR Note](SCR%20Note.md),   [COMS](COMS.md),   [Prime](Prime.md),   [Watching](Watching.md),   [Current](Current.md),   [L](MY/Plan/L.md),   [quick](quick.md),   [HACK](MY/Pln/HACK/HACK.md),   [Active](Active.md)
+ [[Quarterly]],  [Quarterly](Quarterly.md),   [Planning](Planning.md),   [Archive List](Archive%20List.md),   [Work](Work.md),   [Full](Full.md),   [self](MY/Plan/self.md),   [Later](Later.md),   [Repeat](Repeat.md),   [Calls](Calls.md),   [Ping](Ping.md),   [Q2](Q2.md),   [Fried](Fried.md),   [todo](todo.md),   [Habit](Habit.md),   [Social](Social.md),   [SCR Note](SCR%20Note.md),   [COM](COM.md),   [Prime](Prime.md),   [Watching](Watching.md),   [Current](Current.md),   [L](MY/Plan/L.md),   [quick](quick.md),   [HACK](MY/Pln/HACK/HACK.md),   [Active](Active.md)
 
 
 

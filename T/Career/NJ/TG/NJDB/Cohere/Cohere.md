@@ -1,18 +1,14 @@
 .[[Cohere]].
-  , ,
-  , ,
-  , ,
-  , [Cohere Obsidian](spot://cohereobsidian),
-  DELS: ,[Cohere Obsidian](spot://cohereobsidian),
-  , ,
-  , [Cohere Note](spot://coherenote), 
-  DELS: [Cohere Note](spot://coherenote),[Cohere Obsidian](spot://cohereobsidian),[Cohere Note](spot://coherenote),[Cohere Note](spot://coherenote),
-
 # Top
 #### kind: TopGen
 #### area: CoreNLP
 #### stance: 
 ## Sections
+### LAMP
+#### pri: ?
+#### contacts: 
+#### cool: 
+#### job: 
 ### Cash
 #### cash_trend: spiking
 #### cash: 
@@ -23,7 +19,6 @@ Poised to announce a $500M Series D at $5.5B valuation ￼ (led by PSP, Cisco, F
  jobs:: - [Technical Governance & Responsible AI Researcher](https://jobs.lever.co/cohere/653e48f5-9994-413a-a377-857af9e390ff)
 - [Senior Member of Technical Staff, Machine Learning Engineering](https://jobs.lever.co/cohere/ef7dd181-1072-4b0e-9f4f-25143e33786c)
 ### Coolness
-#### cool: 
 #### cool_why: 
 #### cool_mission: 
 #### cool_balance: 
@@ -41,7 +36,6 @@ Aya Expanse (Multilingual AI) – an open science initiative to develop state-of
 Embed v3 – Cohere’s advanced text embedding model for semantic search and retrieval. Embed v3 can evaluate document relevance and meaning, ranking results by quality ￼. It uses a compression-aware training approach to produce embeddings that power more accurate search results while being cost-efficient at scale ￼ ￼.
 North for Banking (RBC & Cohere) – a secure generative AI platform co-developed with Royal Bank of Canada, integrating Cohere’s foundation models with RBC’s data to create an AI assistant tailored for financial services with industry-specific fine-tuning and privacy
 ### Job Postings
-#### job: 
 #### job_why: 
 #### job_bay: 
 #### job_remote: 

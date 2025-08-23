@@ -9,7 +9,10 @@
   , [Buy Obsidian](spot://buyobsidian),
   DELS: ,[Buy Obsidian](spot://buyobsidian),
   , ,
-  , [Buy Note](spot://buynote), 
+  , [Buy Note](spot://buynote),
+  , [BUY Clothing Obsidian](spot://buyclothingobsidian), [BUY Food Obsidian](spot://buyfoodobsidian)
+  , [BUY Home Obsidian](spot://buyhomeobsidian), [BUY Ideas Obsidian](spot://buyideasobsidian)
+  , [BUY Log Obsidian](spot://buylogobsidian), [BUY Tea Obsidian](spot://buyteaobsidian), 
   DELS: [Buy Note](spot://buynote),[Buy Obsidian](spot://buyobsidian),[Buy Note](spot://buynote),[Buy Note](spot://buynote),
 
 .[[BUY]].

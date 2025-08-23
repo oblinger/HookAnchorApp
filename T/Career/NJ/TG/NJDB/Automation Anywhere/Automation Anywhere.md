@@ -1,12 +1,17 @@
 # Top
+[LinkedIn Connections](https://www.linkedin.com/search/results/people/?currentCompany=%5B%22208639%22%5D&network=%5B%22F%22%5D)
 #### kind: Big
 #### area: Automation
 #### stance: 
 ## Sections
+### LAMP
+#### pri: ?
+#### contacts: 
+#### cool: 
+#### job: 
 ### Cash
 #### cash: 
 ### Coolness
-#### cool: 
 #### cool_why: 
 #### cool_mission: 
 #### cool_balance: 
@@ -28,7 +33,6 @@ IQ Bot (2018) – An intelligent document processing bot that applies deep learn
 #### dlproj8: —
 #### dlproj9: —
 ### Job Postings
-#### job: 
 #### job_why: 
 #### job_bay: 
 #### job_remote: 

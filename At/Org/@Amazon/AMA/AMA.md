@@ -1,14 +1,7 @@
 
 .[[AMA]].
-  ,
-  , , ,
-  , ,
   [Amazon](spot://amazon),
-  , ,
-  , ,
-  , ,
-  DELS: ,
-  , [AMA.Collections Page](spot://ama.collectionspage), [AMA.Content Page](spot://ama.contentpage)
+  , [AMA.Collections Page](spot://ama.collectionspage), [AMA.Content Page](spot://ama.contentpage)  
   , [AMA.Devices](spot://ama.devices), [AMA.Kindle Page](spot://ama.kindlepage)
   , , [AMA.Page](spot://ama.page), [AMA.Video Page](spot://ama.videopage),
   DELS: ,,,
@@ -260,3 +253,30 @@ I received what appears to be fake Taylors Of Harrogate tea that was sold and sh
 
 
 
+
+
+---
+
+# AMA
+
+This is an auto-generated anchor file for patch 'AMA'.
+
+Add your content here.
+
+
+---
+
+# AMA
+
+This is an auto-generated anchor file for patch 'AMA'.
+
+Add your content here.
+
+
+---
+
+# AMA
+
+This is an auto-generated anchor file for patch 'AMA'.
+
+Add your content here.

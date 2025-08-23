@@ -1,4 +1,5 @@
 .[[Baidu]].
+[LinkedIn Connections](https://www.linkedin.com/search/results/people/?currentCompany=%5B%2248433%22%5D&network=%5B%22F%22%5D)
   , ,
   , ,
   , ,
@@ -7,16 +8,19 @@
   , ,
   , [Baidu Note](spot://baidunote), 
   DELS: [Baidu Note](spot://baidunote),[Baidu Obsidian](spot://baiduobsidian),[Baidu Note](spot://baidunote),[Baidu Note](spot://baidunote),
-
 # Top
 #### kind: Big
 #### area: CoreDL
 #### stance: 
 ## Sections
+### LAMP
+#### pri: 
+#### contacts: 
+#### cool: 
+#### job: 
 ### Cash
 #### cash: 
 ### Coolness
-#### cool: 
 #### cool_why: 
 #### cool_mission: 
 #### cool_balance: 
@@ -27,7 +31,6 @@
 #### dlproj1: …
 #### dlproj2: ...
 ### Job Postings
-#### job: 
 #### job_why: 
 #### job_bay: 
 #### job_remote: 

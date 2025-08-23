@@ -1,25 +1,20 @@
 .[[Covariant]].
-  , ,
-  , ,
-  , ,
-  , [Covariant Obsidian](spot://covariantobsidian),
-  DELS: ,[Covariant Obsidian](spot://covariantobsidian),
-  , ,
-  , [Covariant Note](spot://covariantnote), 
-  DELS: [Covariant Note](spot://covariantnote),[Covariant Obsidian](spot://covariantobsidian),[Covariant Note](spot://covariantnote),[Covariant Note](spot://covariantnote),
-
 # Top
 #### kind: StartAI
 #### area: Robotics
 #### stance: 
 ## Sections
+### LAMP
+#### pri: B+
+#### contacts: 
+#### cool: A-
+#### job: D
 ### Cash
 #### cash_trend: upward
 #### cash: 
 #### cash_available: 38
 #### funding: Added $75M Series C extension in Apr 2023 ￼
 ### Coolness
-#### cool: A-
 #### cool_why: 
 #### cool_mission: 
 #### cool_balance: 
@@ -35,7 +30,6 @@ RFM-1 (Robotics Foundation Model) – Covariant’s Robotics Foundation Model 1 
 #### dlproj3: 
 AI-Driven Robotic Picking Deployments – Covariant has partnered with logistics automation companies (e.g. KNAPP) to deploy AI-powered picking robots in live production. One example is at McKesson, a major pharmaceutical distributor, which installed Covariant’s AI on KNAPP “Pick-it-Easy” robotic stations to handle pharmacy items. The Covariant-enabled robots can reliably pick and sort thousands of different products (from pill bottles to odd-shaped packages) with high precision, 24/7 ￼. These deployments, numbering in the hundreds of robots across retailers and 3PLs, demonstrate Covariant’s applied AI achieving less than <0.1% error rates and significant throughput gains in real warehouses ￼, validating the real-world performance of their deep learning robotics.
 ### Job Postings
-#### job: D
 #### job_why: 
 #### job_bay: 
 Software Engineer – https://www.google.com/search?q=%22Software+Engineer%22+Covariant+Emeryville

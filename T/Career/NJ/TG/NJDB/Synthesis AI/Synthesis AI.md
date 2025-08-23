@@ -3,13 +3,17 @@
 #### area: CoreDL
 #### stance: 
 ## Sections
+### LAMP
+#### pri: 
+#### contacts: 
+#### cool: 
+#### job: 
 ### Cash
 #### cash_trend: down
 #### cash: 
 #### cash_available: 6
 #### funding: 0.29.  (last raise in 2022 ￼)
 ### Coolness
-#### cool: 
 #### cool_why: 
 #### cool_mission: 
 #### cool_balance: 
@@ -21,7 +25,6 @@ To enable more capable and ethical AI by pioneering synthetic data technologies 
 #### dlproj1: 
 GAN-based Synthetic Data (generating diverse images/videos for CV)&#8203;:contentReference[oaicite:10]{index=10}
 ### Job Postings
-#### job: 
 #### job_why: 
 #### job_bay: —
 #### job_remote: 

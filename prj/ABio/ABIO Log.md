@@ -1,18 +1,54 @@
 
+[[ABIO]] 
 
 # Log
 
-### 2025-05-13  KEGG Loader
+### 2025-07-07  Plan
+
+
+**Goal**:  Build templated test problems.
+
+TEMPLATED GENERATORS:
+- TEST: Sequence of test problems, each with an objective and laboratory
+	- OBJECTIVE - Measurable outcome, success threshold, defined setup, with natural language description.
+	- LABORATORY - Repeatable MCP protocol with
+		- EQUIPMENT - Mass Spectrometer, Scalar Measurements (temperature, pressure, ph level, light level)
+		- MATERIAL - Substrates, Strains, Compounds
+- WORLD
+	- ORGANISM - One or more behaviors and some distractors
+	- BEHAVIOR - Homeostasis, Control, Sense/Act, Sense/Act Pair
+	- PROCESSES - Anabolic, Catabolic, Metabolic
+	- CHEMISTRY
+	- BIOMOLECULES
+	- ATOMS
+
+
+
+
+
+
+
+
+
+1. [1d] TEMPLATES—Define the parametric pathway, e.g., the number of cycles and shunt paths, the steps in each, and the reactions in each step. 
+2. [1d] REACTIONS - Define goal-directed parametric chem reaction generator:  num inputs, outputs, tiny molecules, catalysts, bio-molecule reuse. 
+3. [2d] CODE GENERATORS - 
+4. [1d] HACK DATA - Eyeball terrestrial data to configure generators.
+5. [2d] CODE INTERPRETER - 
+6. [1d] CODE SIMULATOR - 
+7. [??] CODE SIM TWEAKER - 
+- [ ] [??] Code: Task Generator with variable complexity (discovery only tasks)
+- [ ] [3d] Code: MCP interface & API
+- [ ] [2d] Code: Experiment #1 
+
+
+### 2025-05-13  KEGG Loader Instructions
 
 yes, please provide a caching wrapper that I can re-run to retry. formulate it as a module with a main that I can run from command line to loads all required data printing basic progress. re-running should restart from where it left off.
-
-### 2025-05-13  KEGG 3
 
 Update Instructions:  
 Please use these updated classes to produce the BioMolecule/BioReaction DAG from local KEGG data, then scan that DAG to fill in bdepth and energy terms for molecules and reactions.  The idea is to produce a huge DAG over all KEGG data.
 Please output code as a single module file
-
-### 2025-05-13  KEGG 2
 
 please use these updated classes in order to produce the BioMolecule/BioReaction DAG from local KEGG data, then scan that DAG to fill in bdepth and energy terms for molecules and reactions.  The idea is to produce a very large DAG over all KEGG data.
 

@@ -1,6 +1,21 @@
 
+- Jameson bottle
+
 - Filepe
 - Quarterly budget
+- Fin person
+- Tpst
+- Lock down identity
+
+
+
+
+
+
+
+
+
+
 
 
 

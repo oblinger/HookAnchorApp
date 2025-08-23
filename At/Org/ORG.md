@@ -1,11 +1,11 @@
-.[[Org]].
+.[[_Org]].
   , [[@Aeolus]], [[@Alta Vista]], [[@Amazon]], [[@Apple]], [[@ATT]], [[@Auto Trader]], [[@Citibank]]
   , [[@Credit Karma]], [[@Facebook]], [[@Ginza Metrics]], [[@Hackers]], [[@IBM]], [[@LinkedIn]]
   , [[@Merrill]], [[@Meta]], [[@Microsoft]], [[@Miovision]], [[@Montessori Childrens Center]]
   , [[@Netflix]], [[@Netflix 1]], [[@Nvidia]], [[@OpenAI]], [[@PARC]], [[@PayByGroup]]
   , [[@Rocket Money]], [[@Schwab]], [[@TecHunting]], [[@Tesla]], [[@Thistle]], [[@Vanguard]]
   , [[@Vmware]], [[@Wells Fargo]], [[Org Startup]], [[Service]],
-  , [[@Dexafit]],
+  , [[@Dexafit]], [[@ARC]], 
   , [[@Github]], [[@Seneca]],
   , [[@Cigna]],
   , [[@Humanoid]],
@@ -17,10 +17,11 @@
   , [Org Obsidian](spot://orgobsidian),
   DELS: [[@RoboRock]],,[Org Obsidian](spot://orgobsidian),
   , ,
-  , [Org Note](spot://orgnote), 
+  , [Org Note](spot://orgnote),
+  , [Org Startup Obsidian](spot://orgstartupobsidian), 
   DELS: [[@RoboRock]],[Org Note](spot://orgnote),[Org Obsidian](spot://orgobsidian),[Org Note](spot://orgnote),[Org Note](spot://orgnote),
 
-.[[ORG]].
+.[[_Org]].
   , [[@Amazon]], [[@Apple]], [[@Citibank]], [[@Facebook]], , [[@Ginza Metrics]]
   , [[@IBM]], [[@LinkedIn]], [[@Microsoft]], [[@Montessori Childrens Center]], [[@Netflix]]
   , [[@PARC]], [[@TecHunting]], [[@Thistle]], [[@Vmware]], [[Org Startup]], [[Service]],

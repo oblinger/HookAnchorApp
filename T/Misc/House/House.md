@@ -82,3 +82,30 @@ Black	Washer
 
 
 
+
+
+---
+
+# House
+
+This is an auto-generated anchor file for patch 'House'.
+
+Add your content here.
+
+
+---
+
+# House
+
+This is an auto-generated anchor file for patch 'House'.
+
+Add your content here.
+
+
+---
+
+# House
+
+This is an auto-generated anchor file for patch 'House'.
+
+Add your content here.

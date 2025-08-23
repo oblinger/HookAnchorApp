@@ -185,6 +185,13 @@ IDEAS:
 
 - Copy ~/Library/Application Support/BetterTouchTool
 
+## xx Daisy Disk
+
+details in 1password
+
+Name:  wef234@[gmail.com](http://gmail.com/)
+Registration Key: BXVKTVDG-B4VUAYSS-PY3MDZAH-ZJX9XFMW-QBH2ZVEJ
+
 ## xx FoldingText    <<<<<<
 
 From Tech Support    2023-05-23
@@ -537,6 +544,58 @@ import urllib2,os; pf='Package Control.sublime-package'; ipp=sublime.installed_p
 - All Autocomplete
 
 
+# APPS (Command Line)
+
+## xx restic
+
+  (See info in ~/bin/restic_backup.sh)
+
+    brew install restic
+    restic version
+    restic init --repo ~/large/__BACKUPS/restic2
+    
+    # Launch Agent
+    cp ~/bin/com.restic.10min.plist ~/Library/LaunchAgents
+    launchctl load ~/Library/LauchAgents/com.restic/10min.plist
+    launchctl start com.restic.10min
+    
+    # Can Test Script
+    ~/bin/restic_backup.sh
+    tail -f ~/Library/Logs/restic-backup.log
+    
+```
+  # Stop the job
+  launchctl unload ~/Library/LaunchAgents/com.restic.10min.plist
+
+  # Start the job
+  launchctl load ~/Library/LaunchAgents/com.restic.10min.plist
+
+  # Restart the job
+  launchctl unload ~/Library/LaunchAgents/com.restic.10min.plist
+  launchctl load ~/Library/LaunchAgents/com.restic.10min.plist
+
+  # View errors
+  tail -f ~/Library/Logs/restic-stderr.log
+
+  Verify it's working
+
+  After 10-20 minutes, check:
+  # View recent snapshots
+  restic -r /Volumes/BackupDrive/restic-repo snapshots
+
+  # Check log file
+  cat ~/Library/Logs/restic-backup.log
+
+
+    
+     restic -r /path/to/repo forget \
+    --keep-hourly 120 \
+    --keep-daily 60 \
+    --keep-weekly 26 \
+    --prune
+```
+
+
 # APPS (Free) 
 ## xx Brave
 
@@ -570,7 +629,7 @@ cat >/Users/oblinger/.emacs
      $ brew install --with-cocoa --srgb emacs
      $ brew services start emacs  # if you want it to launch at login
 
-### xx Finicky
+## xx Finicky
 
 - Install [Finicky](https://github.com/johnste/finicky) (via Homebrew: `brew install --cask finicky`).
     
@@ -666,13 +725,14 @@ cp -r ~/ob/kmr/ASIO  ~/ob/proj/oblinger.github.io/.
 
 ## xx Microsoft Remote Desktop
 
-## xx PaintBrush (from CNET)
 
 ## xx NoSleep     (Use MAC update.  select command line options)
 http://macupdate.com 
 
 
 Use Amphemetifine 
+## xx PaintBrush (from CNET)
+
 ## xx Skype
 
 ## xx Spotify 
@@ -1345,3 +1405,29 @@ MEDIA:   P:AudioHiJack, P:TuneUp, P:SizzlingKeys(4iTunes)
   CircusPoniesNotebook   Hearld  aLaunch.app
   // slate https://github.com/jigish/slate  //  uTunes (iTunes controller)
 	
+
+---
+
+# MAC Apps
+
+This is an auto-generated anchor file for patch 'MAC Apps'.
+
+Add your content here.
+
+
+---
+
+# MAC Apps
+
+This is an auto-generated anchor file for patch 'MAC Apps'.
+
+Add your content here.
+
+
+---
+
+# MAC Apps
+
+This is an auto-generated anchor file for patch 'MAC Apps'.
+
+Add your content here.

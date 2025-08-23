@@ -1,6 +1,6 @@
 
 PAGES:   	
-- [[COMS]] 		- Top page for communications
+- [[COM]] 		- Top page for communications
 - [[CN]] [[COM Next]]- Rollup planning for all comm related stuff
 - [[Mentors]] 	- Tracking and planning around mentors
 - [[CRM]]		- Generated tracking page

@@ -3,6 +3,11 @@
 #### area: CoreDL
 #### stance: 
 ## Sections
+### LAMP
+#### pri: 
+#### contacts: 
+#### cool: B-
+#### job: 
 ### Cash
 #### cash_trend: upward
 #### cash: 
@@ -10,7 +15,6 @@
 #### funding: 
 Raised $50M (strategic investment at a $1.25B valuation) in Aug 2023 ￼ (previously raised $135M in Oct 2021 at $1B valuation ￼)
 ### Coolness
-#### cool: B-
 #### cool_why: 
 #### cool_mission: 
 #### cool_balance: 
@@ -25,7 +29,6 @@ Azure + W&B for LLMs – W&B partnered with Microsoft to enable enterprise fine-
 #### dlproj3: 
 Generative AI Evaluation – W&B has been at the forefront of generative AI research support, providing tools to evaluate and visualize LLM outputs. For example, W&B’s team has hosted conversations with leaders like Stability AI’s Emad Mostaque on model advances ￼ and built instrumentation to compare LLMs’ performance on tasks, helping researchers identify strengths and weaknesses in different models.
 ### Job Postings
-#### job: 
 #### job_why: 
 #### job_bay: Head of ML Engineering | San Francisco
 #### job_remote: Engineering Manager | MLOps (Remote)Head of AI Partnerships | Remote

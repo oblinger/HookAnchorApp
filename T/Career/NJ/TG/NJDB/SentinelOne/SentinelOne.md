@@ -7,16 +7,19 @@
   , ,
   , [SentinelOne Note](spot://sentinelonenote), 
   DELS: [SentinelOne Note](spot://sentinelonenote),[SentinelOne Obsidian](spot://sentineloneobsidian),[SentinelOne Note](spot://sentinelonenote),[SentinelOne Note](spot://sentinelonenote),
-
 # Top
 #### kind: Big
 #### area: Cybersecurity
 #### stance: 
 ## Sections
+### LAMP
+#### pri: 
+#### contacts: 
+#### cool: 
+#### job: 
 ### Cash
 #### cash: 
 ### Coolness
-#### cool: 
 #### cool_why: 
 #### cool_mission: 
 #### cool_balance: 
@@ -37,7 +40,6 @@ Deep Learning Endpoint Protection – as an early mover in AI security, Sentinel
 #### dlproj8: —
 #### dlproj9: —
 ### Job Postings
-#### job: 
 #### job_why: 
 #### job_bay: 
 #### job_remote: 

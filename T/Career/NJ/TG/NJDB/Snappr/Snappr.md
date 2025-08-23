@@ -7,12 +7,16 @@
   , ,
   , [Snappr Note](spot://snapprnote), 
   DELS: [Snappr Note](spot://snapprnote),[Snappr Obsidian](spot://snapprobsidian),[Snappr Note](spot://snapprnote),[Snappr Note](spot://snapprnote),
-
 # Top
 #### kind: StartAI
 #### area: DL_App
 #### stance: 
 ## Sections
+### LAMP
+#### pri: 
+#### contacts: 
+#### cool: 
+#### job: 
 ### Cash
 #### cash_trend: flat
 #### cash: 
@@ -20,7 +24,6 @@
 #### funding: 
 Raised $10M Series A (Sep 2020) for its photographer marketplace ￼ (total funding ~$13M ￼; no major rounds since)
 ### Coolness
-#### cool: 
 #### cool_why: 
 #### cool_mission: 
 #### cool_balance: 
@@ -35,7 +38,6 @@ AI Photo Editing – Snappr’s platform leverages AI for automated photo editin
 #### dlproj3: 
 Photography Insights – Snappr applies deep learning research to real-world photography trends. For instance, it analyzed millions of professional headshots to determine what attributes make a profile photo successful. Its AI was used to find correlations (like smile intensity or dress color) with LinkedIn photo engagement ￼, providing data-driven advice for taking better photos. Snappr also uses image recognition AI in its consumer services (like matching customers with photographers based on photo style).
 ### Job Postings
-#### job: 
 #### job_why: 
 #### job_bay: Director | AI and Imaging (San Francisco)
 #### job_remote: Engineering Manager | Computer Vision (Remote)Head of AI Development | Remote

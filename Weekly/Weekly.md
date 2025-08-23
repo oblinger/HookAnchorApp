@@ -37,7 +37,8 @@
   , [Weekly Obsidian](spot://weeklyobsidian),
   DELS: ,[Weekly Obsidian](spot://weeklyobsidian),
   , ,
-  , [Weekly Note](spot://weeklynote), 
+  , [Weekly Note](spot://weeklynote),
+  , [WEEKLY template Obsidian](spot://weeklytemplateobsidian), 
   DELS: [Weekly Note](spot://weeklynote),[Weekly Obsidian](spot://weeklyobsidian),[Weekly Note](spot://weeklynote),[Weekly Note](spot://weeklynote),
 
 .[[WEEKLY]].
@@ -180,3 +181,30 @@
 :: [[2022-W30]],   [[2022-W31]],   [[2022-W40]],   [[2022-W41]],   [[2022-W42]],   [[2022-W44]],   [[2022-W45]],   [[2022-W46]],   [[2022-w43]],   [[2023-W03]],   [[2023-W04]]
 
 :: [[2022-W50]],   [[2022-W51]],   [[2022-W52]],   [[2022-W53]],   [[2023-W01]], [[2023-W02]],  
+
+
+---
+
+# Weekly
+
+This is an auto-generated anchor file for patch 'Weekly'.
+
+Add your content here.
+
+
+---
+
+# Weekly
+
+This is an auto-generated anchor file for patch 'Weekly'.
+
+Add your content here.
+
+
+---
+
+# Weekly
+
+This is an auto-generated anchor file for patch 'Weekly'.
+
+Add your content here.

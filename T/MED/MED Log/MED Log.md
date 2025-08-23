@@ -5,6 +5,21 @@ SalesForce, Nvidia,
 
 # LOG
 
+
+### 2025-07-07  Hassler Annual
+
+- Fatty Liver 
+- Lipator - 
+- Drop in VO2max & Strength - 
+- GLP-1 - 
+	- ozempic = wegovy - weekly 
+	- Monjaro = Zepbound. GIP & GLP.  (more potent)
+
+GHB
+
+
+CRP LP(a)
+
 ### 2025-05-12  Fatty Liver assessment (see folder)
 
 

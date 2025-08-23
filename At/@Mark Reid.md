@@ -2,3 +2,6 @@
 
 
  
+
+#pp    [Machine Learning Engineer](https://www.linkedin.com/in/markreid)  [Apple](./_Org/@Apple.md)  
+# LOG

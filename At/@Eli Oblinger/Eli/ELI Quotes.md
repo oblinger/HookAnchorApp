@@ -1,4 +1,36 @@
 
+### 2025-07-14  Buckle in the car
+
+Picking Eli up from Chess camp at JCC:
+
+He says, "No I can do the buckling in all by myself."
+I told him ok, and then looked away while he worked all that out for himself.  
+
+Then when he got home he unbuckled, exited the car, closed his door, closed the garage door, and put his shoes away.
+
+First time for the buckling!  
+
+Growing up!!
+
+
+### 2025-07-14  Eli Mumbles
+
+Sabine,   
+Yes, all of France celebrates my birthday with me!  (Though they seem confused about the meaning of the day ;-) )
+
+  
+
+Thanks for the wishes.  Eli is growing like a week, but a very happy weed, who really loves mom and dad.
+
+When we are playing together or I am goofing around with him sometimes he will half under his breath “I love you dad”
+
+I think he is not fully conscious of saying it, just kind of a feeling.
+
+  
+
+But that is PRETTY COOL. :-)
+
+
 ### 2025-05-13  When I grow up
 
 "I want to be a Scientist when I grow up"
@@ -8,6 +40,8 @@ Qingling asked, "What kind of scientist?"
 "I want to be a physicist." 
 
 ### 2025-04-25  Texting w/ Mom when she had covid
+
+(Eli is texting on Dan's phone)
 
 Daniel Oblinger:
 	I like I like pineapple really much

@@ -4,8 +4,7 @@ TODO:
 - Use GPT to capture dozens or hundreds of behavioral systems.
 - Create generators that capture this diversity as stochastic generators of: 
 	- biomolecules - as a DAG generator
-	- bioprocesses - a set of parametric python formulas with pdf ranges for each parameter
-	- 
+	- bioprocesses - a set of parametric python formulas with pdf ranges for each parameter.
 
 ## Building An Alien Biology
 

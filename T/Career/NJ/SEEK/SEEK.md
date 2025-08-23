@@ -1,25 +1,18 @@
-.[[SEEK]].
+.[[SEEK]].   [[CN]]  [[NJ.2]] 
+  [[SEEK Plan]] 
   [[SEEK Postings]],
   [[SEEK List]],
-  [[SEEK Search Terms]],
-  ,
+  [[SEEK Search]],
   [[SEEK Cover Letter Terms]],
-  , [[SEEK Interviews]],
-  , [[SEEK Info]],
-  , ,
-  , ,
-  DELS: [[SEEK Info]],
-  , ,
-  , [SEEK Obsidian](spot://seekobsidian),
-  DELS: [[SEEK Info]],,[SEEK Obsidian](spot://seekobsidian),
-  , ,
-  , [SEEK Note](spot://seeknote), 
-  DELS: [[SEEK Info]],[SEEK Note](spot://seeknote),[SEEK Obsidian](spot://seekobsidian),[SEEK Note](spot://seeknote),[SEEK Note](spot://seeknote),
+  [[SEEK Interview Log]], [[SEEK Interviewing Tips]], 
+  [[SEEK Info]],
 
 
 - [[NJ Questions]], 
 
 TODO
+- THESIS1 - Practice Interviews - Non-FAANG, ML manager jobs 
+- [AJS](hook://ajs): 
 - Chat Abio:    [[FAANG]], Nina, Praveen, Carlos, Langford
 - 
 [[NJ.1]]: Tier2, Short List; 3Tgts; Listening 
@@ -39,6 +32,4 @@ ADVICE
 - [Holly Lee](https://youtube.com/watch?v=HvMc-ECHTWk&themeRefresh=1) 
 - [Topics — Ask a Manager](https://www.askamanager.org/topics-2) 
 
-
-
-# LOG
+[[CHANGELOG 1]] 

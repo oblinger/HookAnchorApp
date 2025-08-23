@@ -3,10 +3,15 @@
 #### area: CoreDL
 #### stance: 
 ## Sections
+### LAMP
+#### pri: 
+#### contacts: 
+[[@Avani G Sharma.md]], [[@Jason Che Kang Liang.md]], [[@Kathleen Warner.md]], [[@Laine Campbell.md]], [[@Melissa Miranda.md]], [[@Micah Akai-Nettey.md]], [[@Patrick Pantel.md]], [[@Praful Krishna.md]], [[@Rodrigo de Salvo Braz.md]], [[@Shane Threatt.md]], [[@Yann LeCun.md]]
+#### cool: 
+#### job: 
 ### Cash
 #### cash: 
 ### Coolness
-#### cool: 
 #### cool_why: 
 #### cool_mission: 
 #### cool_balance: 
@@ -32,7 +37,6 @@ OPT-175B – Open Pre-trained Transformer (175B param) released by Meta, matchin
 #### dlproj8: 
 BlenderBot 3 – a 175B-parameter open-domain chatbot (built on OPT) that learns from conversations “in the wild” and internet access to improve its skills and safety ￼
 ### Job Postings
-#### job: 
 #### job_why: 
 #### job_bay: 
 #### job_remote: 

@@ -1,3 +1,132 @@
+### 2025-08-16  Job Search Tool
+
+
+### 2025-07-03  Bay-Area AI hiring landscape
+
+  Major AI Company Categories Hiring:
+
+####  1. Foundation Model Companies (OpenAI, Anthropic)
+
+  What they're hiring for:
+  - Research Scientists - advancing model capabilities
+  - AI Safety Engineers - alignment and safety research
+  - Infrastructure Engineers - scaling training/inference
+  - Product Engineers - integrating models into products
+  - Applied AI Engineers - fine-tuning and deployment
+
+  What they want:
+  - PhD/Masters in ML/AI or equivalent experience
+  - Publications in top-tier venues (NeurIPS, ICML, ICLR)
+  - Experience with distributed training at scale
+  - Strong systems programming (CUDA, distributed computing)
+
+####  2. AI Infrastructure Companies (Scale AI, Baseten, Rescale)
+
+  What they're hiring for:
+  - MLOps Engineers - model deployment pipelines
+  - Platform Engineers - kubernetes, cloud infrastructure
+  - Data Engineers - large-scale data processing
+  - Product Managers - developer-facing AI tools
+  - DevRel Engineers - developer experience
+
+  What they want:
+  - 3-5+ years in distributed systems
+  - Experience with AWS/GCP/Azure at scale
+  - Knowledge of ML lifecycle management
+  - Customer-facing product experience
+
+####  3. Applied AI Companies (AssemblyAI, Deepgram, MindsDB)
+
+  What they're hiring for:
+  - Applied Research Engineers - domain-specific AI (speech, vision, NLP)
+  - Backend Engineers - API development and scaling
+  - Solutions Engineers - customer integration support
+  - Product Engineers - building AI-powered features
+
+  What they want:
+  - Strong software engineering fundamentals
+  - Experience with specific AI domains (speech, vision, etc.)
+  - API design and scaling experience
+  - Ability to work with customers/partners
+
+####  Key Compensation Trends:
+
+  - Research Scientists: $300k-$800k+ total comp
+  - Senior Engineers: $250k-$500k+ total comp
+  - Meta offering $2M+/year and still losing talent to OpenAI/Anthropic
+  - Equity upside significant at early-stage AI companies
+
+  Most In-Demand Skills:
+
+  1. PyTorch/JAX for model development
+  2. CUDA programming for GPU optimization
+  3. Distributed training (multi-GPU, multi-node)
+  4. Cloud infrastructure (Kubernetes, serverless)
+  5. Model optimization (quantization, pruning, distillation)
+  6. Production ML (monitoring, A/B testing, deployment)
+
+  Top Sources for Jobs:
+
+  - Y Combinator AI Startups: https://www.ycombinator.com/companies/industry/ai/san-francisco-bay-area/hiring
+  - Built In SF AI Companies: https://www.builtinsf.com/companies/type/artificial-intelligence-companies
+  - Wellfound (AngelList): https://wellfound.com/startups/l/san-francisco/artificial-intelligence
+
+  The hiring landscape is extremely competitive - companies are offering massive compensation packages and prioritizing candidates who can ship production AI systems, not just research.
+  
+### 2025-07-03  What are Bay Area AI companies looking for
+
+
+  Technical Skills in High Demand:
+
+  Core Programming & Frameworks:
+  - Python (essential)
+  - PyTorch, TensorFlow, scikit-learn
+  - MLOps tools for automating AI lifecycle
+  - Cloud platforms: AWS (SageMaker, Glue, Lambda), GCP, Azure
+
+  Infrastructure & Scale:
+  - Kubernetes, Docker, Terraform
+  - System design for scalable AI systems
+  - Apache Arrow, Dremio, Ray for data engineering
+  - Experience with large-scale distributed systems
+
+  Experience Requirements:
+
+  For Senior Roles (Meta/Google/Amazon):
+  - 5+ years minimum experience
+  - Led cross-team projects with significant scope
+  - System design experience - independently designed complex systems
+  - Mentorship experience - code reviews, design meetings, training others
+  - Clean, well-documented code with proper test coverage
+
+  Leadership Qualities:
+  - Proactively solve problems without being told
+  - Strong communication skills for diverse audiences
+  - Strategic mindset with analytical problem-solving
+  - Experience influencing cross-functional teams
+
+  Salary Ranges (2025):
+
+  - SF ML Engineer average: $267,621 total comp ($193,919 base + $73,702 cash)
+  - Meta AI roles: $62k-$230k+ (varies by level)
+  - Top AI infrastructure roles: $1M+ total compensation
+
+  Excellent Sources to Read:
+
+  1. The Pragmatic Engineer Newsletter
+  https://newsletter.pragmaticengineer.com/p/the-reality-of-tech-interviews
+  - Great insights on current tech interview landscape
+
+  2. SignalFire State of Tech Talent Report 2025
+  https://www.signalfire.com/blog/signalfire-state-of-talent-report-2025
+  - Comprehensive hiring trends analysis
+
+  3. Built In San Francisco - AI Engineer Jobs
+  https://www.builtinsf.com/jobs/dev-engineering/search/artificial-intelligence-engineer
+  - Active job listings with requirements
+
+  The key message: Companies want proven builders who can ship AI products at scale, not just researchers.
+
 
 
 ### 2025-06-12  JOB POSTING SITES - Signing up for job posting sites.
@@ -108,7 +237,7 @@ Be patient: Training a custom GPT model takes time and experimentation. Don't ge
 Iterative improvement: Treat the model as a tool to assist you, not replace you. Review and edit its output, and use the feedback to further refine the model.
 Privacy: Be mindful of any sensitive information in your cover letters and ensure the platform you choose handles your data securely.
 By following these steps, you can leverage the power of custom GPT to create personalized cover letters that reflect your unique voice and style, saving you time and effort in the job application process.
-=================================
+   =================================
 Here's some of what I've learnt (want to write a Medium article eventually)
 (1) To get seen (recruiter, hiring mgr):
 - for recruiter, they need far less jargon except for key words/tech - de-jargon by getting someone outside your field to tell you what doesn't make sense

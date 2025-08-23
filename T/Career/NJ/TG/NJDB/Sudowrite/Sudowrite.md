@@ -7,19 +7,22 @@
   , ,
   , [Sudowrite Note](spot://sudowritenote), 
   DELS: [Sudowrite Note](spot://sudowritenote),[Sudowrite Obsidian](spot://sudowriteobsidian),[Sudowrite Note](spot://sudowritenote),[Sudowrite Note](spot://sudowritenote),
-
 # Top
 #### kind: BigAI
 #### area: CoreNLP
 #### stance: 
 ## Sections
+### LAMP
+#### pri: 
+#### contacts: 
+#### cool: 
+#### job: 
 ### Cash
 #### cash_trend: down
 #### cash: 
 #### cash_available: 1
 #### funding: 0.09  (no new funding post-2021 ￼)
 ### Coolness
-#### cool: 
 #### cool_why: 
 #### cool_mission: 
 #### cool_balance: 
@@ -33,7 +36,6 @@ Sudowrite Writing Assistant (GPT-3 powered creative writer)&#8203;:contentRefere
 #### dlproj2: 
 Story Engine (AI tool for auto-generating novel drafts)&#8203;:contentReference[oaicite:9]{index=9}
 ### Job Postings
-#### job: 
 #### job_why: 
 #### job_bay: —
 #### job_remote: AI Engineer (Remote)

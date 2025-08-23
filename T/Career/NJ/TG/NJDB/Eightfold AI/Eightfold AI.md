@@ -3,12 +3,16 @@
 #### area: NLP_App
 #### stance: 
 ## Sections
+### LAMP
+#### pri: 
+#### contacts: 
+#### cool: 
+#### job: 
 ### Cash
 #### cash_trend: down
 #### cash: 
 #### cash_available: 55
 ### Coolness
-#### cool: 
 #### cool_why: 
 #### cool_mission: 
 #### cool_balance: 
@@ -24,7 +28,6 @@ Generative Talent Copilots – Eightfold announced two generative AI copilots in
 #### dlproj3: 
 Emerging Skills Insights – Eightfold leverages generative AI to track and integrate emerging skills and roles into its talent database in real time. As the job market evolves (for example, the rise of prompts engineering or new programming languages), Eightfold’s AI identifies these trends by processing vast amounts of online data and updates its models accordingly ￼ ￼. This means recruiters can query the platform for novel skills and get candidates who have them, and organizations can foresee skill gaps. The generative AI component summarizes labor market shifts and suggests how a company’s workforce can adapt, making talent strategy more proactive.
 ### Job Postings
-#### job: 
 #### job_why: 
 #### job_bay: 
 #### job_remote: 

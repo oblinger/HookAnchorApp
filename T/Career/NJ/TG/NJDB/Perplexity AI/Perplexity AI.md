@@ -1,8 +1,14 @@
 # Top
+[LinkedIn Connections](https://www.linkedin.com/search/results/people/?currentCompany=%5B%2288007673%22%5D&network=%5B%22F%22%5D)
 #### kind: TopGen
 #### area: CoreNLP
 #### stance: 
 ## Sections
+### LAMP
+#### pri: 
+#### contacts: 
+#### cool: 
+#### job: 
 ### Cash
 #### cash_trend: spiking
 #### cash: 
@@ -10,7 +16,6 @@
 #### funding: 
 Set to raise $500M at a $9B valuation (led by IVP) ￼ – up from a $73.6M Series B at ~$520M valuation in Jan 2023 ￼
 ### Coolness
-#### cool: 
 #### cool_why: 
 #### cool_mission: 
 #### cool_balance: 
@@ -26,7 +31,6 @@ Conversational Copilot – Perplexity’s Copilot feature turns search into a di
 #### dlproj3: 
 Deep Research – an AI research analyst mode that Perplexity introduced in 2025 ￼. When a user activates Deep Research, the system autonomously performs dozens of searches, reads hundreds of sources, and then synthesizes a comprehensive report ￼. The output is a structured summary with citations, generated in minutes. On benchmarks, Perplexity’s Deep Research mode achieved ~94% factual accuracy on the OpenAI SimpleQA test, outperforming other QA models ￼.
 ### Job Postings
-#### job: 
 #### job_why: 
 #### job_bay: 
 #### job_remote: 

@@ -3,6 +3,11 @@
 #### area: CoreNLP
 #### stance: 
 ## Sections
+### LAMP
+#### pri: 
+#### contacts: 
+#### cool: 
+#### job: 
 ### Cash
 #### cash_trend: upward
 #### cash: 
@@ -11,7 +16,6 @@
 Raised $50M (Lightspeed-led round) at a ~$500M valuation (Aug 2023) ￼ – total funding now $100M+ ￼
 1.61
 ### Coolness
-#### cool: 
 #### cool_why: 
 #### cool_mission: 
 #### cool_balance: 
@@ -26,7 +30,6 @@ Xbox Partnership – a multi-year collaboration with Microsoft to build AI tools
 #### dlproj3: 
 “Neo NPC” Project – a partnership with Ubisoft and NVIDIA showcasing AI-powered game characters (“Neo NPCs”) that can speak directly with players. This demo (revealed in 2024) used Inworld’s conversational AI and Nvidia’s Audio2Face to enable realistic, unscripted NPC interactions in future games ￼.
 ### Job Postings
-#### job: 
 #### job_why: 
 #### job_bay: 
 Staff/Principal AI Researcher – Google search, Staff/Principal ML Engineer – Google search

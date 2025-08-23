@@ -6,7 +6,8 @@
   , [Biking Obsidian](spot://bikingobsidian),
   DELS: ,[Biking Obsidian](spot://bikingobsidian),
   , ,
-  , [Biking Note](spot://bikingnote), 
+  , [Biking Note](spot://bikingnote),
+  , [Biking Notes Obsidian](spot://bikingnotesobsidian), 
   DELS: [Biking Note](spot://bikingnote),[Biking Obsidian](spot://bikingobsidian),[Biking Note](spot://bikingnote),[Biking Note](spot://bikingnote),
 
 

@@ -2,10 +2,39 @@
   ADDS:   [[Task Page System]],
   ADDS:   [[PKM]],
 
+[[Hook And Anchor System]] 
+[[Hook Walk Through Outline]] 
+
+CMDS
+
+	+	Grabs the active window & creates new command using and the active input string.
+	
+	+	Grabs the active window & creates new command with a blank name ???
+	=	Creates a new command. Uses input name &
+	
 
 
-
-
+{
+    "description": "Map Caps Lock to Control-Command (and Opt-Cmd-F12 if alone)",
+    "manipulators": [
+        {
+            "from": { "key_code": "caps_lock" },
+            "to": [
+                {
+                    "key_code": "left_shift",
+                    "modifiers": ["left_command", "left_control", "left_option"]
+                }
+            ],
+            "to_if_alone": [
+                {
+                    "key_code": "f12",
+                    "modifiers": ["left_option", "left_command"]
+                }
+            ],
+            "type": "basic"
+        }
+    ]
+}
 
 
 

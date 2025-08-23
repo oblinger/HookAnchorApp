@@ -1,3 +1,0 @@
-=[[Cmd]]   shell ec
-
-

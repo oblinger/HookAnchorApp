@@ -942,3 +942,30 @@ i	Level 3
 
 
 ## 
+
+
+---
+
+# 2015-00-00 The Sentient Weapon
+
+This is an auto-generated anchor file for patch '2015-00-00 The Sentient Weapon'.
+
+Add your content here.
+
+
+---
+
+# 2015-00-00 The Sentient Weapon
+
+This is an auto-generated anchor file for patch '2015-00-00 The Sentient Weapon'.
+
+Add your content here.
+
+
+---
+
+# 2015-00-00 The Sentient Weapon
+
+This is an auto-generated anchor file for patch '2015-00-00 The Sentient Weapon'.
+
+Add your content here.

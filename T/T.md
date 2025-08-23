@@ -1,5 +1,5 @@
 .[[T]].
-  , [[Career]], [[COMS]], [[Courses]], [[Doc]], [[EduCorp]], [[FIN]], [[Food]], [[Legal]], [[Life]]
+  , [[Career]], [[COM]], [[Courses]], [[Doc]], [[EduCorp]], [[FIN]], [[Food]], [[Legal]], [[Life]]
   , [[MED]], [[MGR]], [[Misc]], [[Mus]], [[Tag]], [[Trash]], ,
   , [[MOV]],
   , ,
@@ -12,14 +12,15 @@
   DELS: ,[[T Roll]],,,[T Obsidian](spot://tobsidian),
   , ,
   DELS: ,[[T Roll]],,,[T Obsidian](spot://tobsidian),, ,
-  , [T Note](spot://tnote), 
-  DELS: [[Web]],[[T Roll]],[T Note](spot://tnote),[[Web]],[T Obsidian](spot://tobsidian),[T Note](spot://tnote), [T Note](spot://tnote),[[Web]], [[Web]],[T Note](spot://tnote), [T Note](spot://tnote), [T Note](spot://tnote), [T Note](spot://tnote),
+  , [T Note](spot://tnote),
+  , [T Roll Obsidian](spot://trollobsidian), 
+  DELS: [[2025-06 web]],[[T Roll]],[T Note](spot://tnote),[[2025-06 web]],[T Obsidian](spot://tobsidian),[T Note](spot://tnote), [T Note](spot://tnote),[[2025-06 web]], [[2025-06 web]],[T Note](spot://tnote), [T Note](spot://tnote), [T Note](spot://tnote), [T Note](spot://tnote),
 
 [[MOV]] 
 
 - [[Career]], [[Mus]], 
 
-:: [[COMS]],   [[MGR Log]],   [[Comp]],   [[EduCorp]],   [[FIN]],   [[Food]],   [[KM]],   [[Legal]],   [[Life]],   [[MED]],   [[SYS]],   [[TAG]],   [[Trash]],   [[Web]],   [[Webshare]]
+:: [[COM]],   [[MGR Log]],   [[Comp]],   [[EduCorp]],   [[FIN]],   [[Food]],   [[KM]],   [[Legal]],   [[Life]],   [[MED]],   [[SYS]],   [[TAG]],   [[Trash]],   [[2025-06 web]],   [[Webshare]]
 #top
 n:: Major topic roots
 

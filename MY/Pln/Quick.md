@@ -1,31 +1,31 @@
-- ants
-- Barry!
-- lock down identity
-- technical conferences:  ICML, CVPR, ICLR
-- stability:  upload stress test.
-- james test shotcharts
-- vulnerabilities brian
-- do we know anyone at scale
- when googling
-- barry
-- web-serch students and profs for sports analytics
-- ana anchor did not find create a session when if could not find one
-- ff at does not work right
+- email to playon
+- proof points for gen-AI
+- AWS analysis
+- playon data download
+- make copy of incoming email
+- AWS docs
+- ask thomas about results
 
-- mike mathew summary of use of LLM
+- james and matty; fireball matty tell
+- check alto pharmacy; check costco vision; dental
 
-- Test automation:  (1) Mery Impersonation; (2) All user testing.
-- document for things to try as a beta tester
-- Beta Testing tracking.
-- 3x3 planning
-- patent ready
+
+- li prem
 
 - adam brown response 
-- try lovable
-- Car title!
-aaaa
-Qingling Ni.     
 
+- ferley note to mgt channel
+- more cohesive solution system
+- sean give us a product
+- full product planning for a playon product
+- !!!  run the example game with cuts for highlights
+- darien
+- fernley talk
+- get intel box
+- onnx
+- john tool
+- WSJ
 
+- Factory ticket to speedup app
+- build a tactical plan for a couple of options
 
-Oblinger may 24th 

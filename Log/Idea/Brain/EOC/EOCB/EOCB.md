@@ -8,7 +8,13 @@
   DELS: ,[EOCB Obsidian](spot://eocbobsidian),
   , , [EOCB Web](spot://eocbweb),
   , ,
-  , [EOCB Note](spot://eocbnote), [EOCB Web Note](spot://eocbwebnote), 
+  , [EOCB Note](spot://eocbnote), [EOCB Web Note](spot://eocbwebnote),
+  , [EOCB Book Snipits Obsidian](spot://eocbbooksnipitsobsidian)
+  , [EOCB End Run -- Cyber Model Obsidian](spot://eocbendruncybermodelobsidian)
+  , [EOCB Engines Of Control Book Obsidian](spot://eocbenginesofcontrolbookobsidian)
+  , [EOCB LimitsOnAlignment Obsidian](spot://eocblimitsonalignmentobsidian)
+  , [EOCB Progression Obsidian](spot://eocbprogressionobsidian)
+  , [EOCB SandboxFutility Obsidian](spot://eocbsandboxfutilityobsidian), 
   DELS: [EOCB Note](spot://eocbnote),[EOCB Obsidian](spot://eocbobsidian),[[EOCB Web]], [EOCB Web Note](spot://eocbwebnote), [EOCB Note](spot://eocbnote),[EOCB Note](spot://eocbnote), [EOCB Web Note](spot://eocbwebnote),
 
 

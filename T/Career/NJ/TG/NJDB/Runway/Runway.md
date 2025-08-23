@@ -7,12 +7,16 @@
   , ,
   , [Runway Note](spot://runwaynote), 
   DELS: [Runway Note](spot://runwaynote),[Runway Obsidian](spot://runwayobsidian),[Runway Note](spot://runwaynote),[Runway Note](spot://runwaynote),
-
 # Top
 #### kind: StartAI
 #### area: CoreDL
 #### stance: 
 ## Sections
+### LAMP
+#### pri: 
+#### contacts: 
+#### cool: B-
+#### job: 
 ### Cash
 #### cash_trend: upward
 #### cash: 
@@ -21,7 +25,6 @@
 Raised a $141M extension to its Series C (Google, Nvidia, Salesforce Ventures, etc.), valuing the company at $1.5B ￼ ￼ (June 2023)
 1.85
 ### Coolness
-#### cool: B-
 #### cool_why: 
 #### cool_mission: 
 #### cool_balance: 
@@ -36,7 +39,6 @@ Gen-1 – Runway’s video-to-video generative model that applies the style or c
 #### dlproj3: 
 Gen-2 – Runway’s multimodal text-to-video system that generates novel videos using text, images, or video clips, achieving photorealistic results and marking a breakthrough in AI-driven video creation ￼.
 ### Job Postings
-#### job: 
 #### job_why: 
 #### job_bay: 
 #### job_remote: Director of Machine Learning, Dataset Engineering – Google Search​

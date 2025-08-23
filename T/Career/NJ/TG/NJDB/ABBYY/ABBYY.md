@@ -1,22 +1,18 @@
 .[[ABBYY]].
-  , ,
-  , ,
-  , ,
-  , [ABBYY Obsidian](spot://abbyyobsidian),
-  DELS: ,[ABBYY Obsidian](spot://abbyyobsidian),
-  , ,
-  , [ABBYY Note](spot://abbyynote), 
-  DELS: [ABBYY Note](spot://abbyynote),[ABBYY Obsidian](spot://abbyyobsidian),[ABBYY Note](spot://abbyynote),[ABBYY Note](spot://abbyynote),
-
+[LinkedIn Connections](https://www.linkedin.com/search/results/people/?currentCompany=%5B%2216372%22%5D&network=%5B%22F%22%5D)
 # Top
 #### kind: Big
 #### area: CoreNLP
 #### stance: 
 ## Sections
+### LAMP
+#### pri: 
+#### contacts: 
+#### cool: 
+#### job: 
 ### Cash
 #### cash: 
 ### Coolness
-#### cool: 
 #### cool_why: 
 #### cool_mission: 
 #### cool_balance: 
@@ -32,7 +28,6 @@ Document AI for GenAI – ABBYY’s Intelligent Document Processing platform con
 #### dlproj3: 
 NeoML Library – ABBYY’s open-source cross-platform machine learning framework (C++/Python) used internally for computer vision and NLP tasks (image pre-processing, layout analysis, OCR, etc.), released to help developers build and deploy deep learning models with high performance ￼
 ### Job Postings
-#### job: 
 #### job_why: 
 #### job_bay: 
 #### job_remote: 
