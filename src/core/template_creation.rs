@@ -6,7 +6,7 @@
 use std::collections::HashMap;
 use chrono::{Local, Datelike, Timelike};
 use serde::{Deserialize, Serialize};
-use crate::Command;
+use crate::core::Command;
 use crate::core::key_processing::Keystroke;
 
 /// A template for creating new commands
@@ -200,7 +200,7 @@ impl TemplateContext {
                 match self.eval_js_expression(expr) {
                     Ok(value) => {
                         // Check if an error was queued during JS execution
-                        if crate::error_display::has_errors() {
+                        if crate::utils::error::has_errors() {
                             // Return what we have so far - error will be displayed later
                             return result;
                         }
@@ -255,7 +255,7 @@ impl TemplateContext {
         );
         
         // Execute the JavaScript code
-        crate::js_runtime::execute_business_logic(&js_code)
+        crate::js::execute(&js_code)
     }
     
     /// Build JavaScript context with all template variables as objects
@@ -411,7 +411,7 @@ fn extract_folder_from_cd_command(arg: &str) -> Result<String, String> {
 }
 
 /// Extract and validate folder from command
-fn extract_and_validate_folder(cmd: &crate::Command) -> Result<String, String> {
+fn extract_and_validate_folder(cmd: &super::Command) -> Result<String, String> {
     use std::path::Path;
     
     let folder = match cmd.action.as_str() {
@@ -499,7 +499,7 @@ pub fn create_command_from_template(
 pub fn process_template(
     template: &Template,
     context: &TemplateContext,
-    _config: &crate::Config,
+    _config: &super::Config,
 ) -> Result<Command, Box<dyn std::error::Error>> {
     // Validate previous folder if required
     if template.validate_previous_folder {
@@ -508,7 +508,7 @@ pub fn process_template(
             
         if previous_folder.is_empty() {
             let error_msg = "Previous command has no associated folder. Cannot create sub-anchor.";
-            crate::error_display::queue_user_error(error_msg);
+            crate::utils::error::queue_user_error(error_msg);
             return Err(error_msg.into());
         }
         
@@ -526,7 +526,7 @@ pub fn process_template(
         // Check if folder exists
         if !std::path::Path::new(&expanded_folder).exists() {
             let error_msg = format!("Previous command's folder does not exist: {}", previous_folder);
-            crate::error_display::queue_user_error(&error_msg);
+            crate::utils::error::queue_user_error(&error_msg);
             return Err(error_msg.into());
         }
         
@@ -543,7 +543,7 @@ pub fn process_template(
     let mut command = create_command_from_template(template, context);
     
     // Check if any errors were queued during template expansion
-    if crate::error_display::has_errors() {
+    if crate::utils::error::has_errors() {
         // Return an error - the queued error will be displayed by the UI
         return Err("Template expansion failed due to errors".into());
     }
@@ -816,6 +816,7 @@ mod tests {
             grab: None,
             description: None,
             use_existing: false,
+            validate_previous_folder: false,
             keystroke: None,
             file_rescan: false,
         };

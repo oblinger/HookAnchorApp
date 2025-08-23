@@ -1,5 +1,7 @@
 use eframe::egui;
-use crate::{Command, delete_command, save_commands_to_file, Config};
+use crate::core::{Command};
+use crate::core::commands::{delete_command, save_commands_to_file};
+use crate::core::Config;
 use crate::core::template_creation::{Template, TemplateContext};
 
 pub struct CommandEditor {
@@ -208,25 +210,8 @@ impl CommandEditor {
                                 .selected_text(&self.action)
                                 .height(400.0) // Make dropdown tall enough to show all options
                                 .show_ui(ui, |ui| {
-                                    // Parse comma-separated actions from config or use defaults
-                                    let actions = match &config.popup_settings.listed_actions {
-                                        Some(actions_str) => {
-                                            // Split by comma and trim whitespace
-                                            actions_str
-                                                .split(',')
-                                                .map(|s| s.trim().to_string())
-                                                .filter(|s| !s.is_empty())
-                                                .collect()
-                                        },
-                                        None => vec![
-                                            "app".to_string(),
-                                            "url".to_string(),
-                                            "folder".to_string(),
-                                            "cmd".to_string(),
-                                            "chrome".to_string(),
-                                            "anchor".to_string(),
-                                        ],
-                                    };
+                                    // Get the list of available actions
+                                    let actions = super::helpers::get_listed_actions();
                                     for action in &actions {
                                         if ui.selectable_value(&mut self.action, action.clone(), action).clicked() {
                                             // Selection was made, close the combo box by losing focus
@@ -351,7 +336,7 @@ impl CommandEditor {
     
     pub fn prepare_save_command(&self) -> (Option<String>, Command) {
         // Check if this is a scanner-generated action type
-        let is_scanner_generated = crate::scanner::SCANNER_GENERATED_ACTIONS.contains(&self.action.as_str());
+        let is_scanner_generated = crate::systems::SCANNER_GENERATED_ACTIONS.contains(&self.action.as_str());
         
         // Add 'U' flag if it's a scanner-generated action type to prevent removal during rescan
         let mut flags = self.flags.clone();

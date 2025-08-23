@@ -3,7 +3,7 @@
 //! This module handles how commands are arranged for display and how navigation
 //! works within that arrangement.
 
-use crate::core::commands::Command;
+use crate::core::Command;
 use crate::core::config::Config;
 
 /// Represents how commands are arranged for display

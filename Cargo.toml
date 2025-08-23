@@ -1,27 +1,28 @@
 [package]
 name = "hookanchor"
-version = "0.10.0"
+version = "0.11.0"
 edition = "2021"
 build = "build.rs"
 
-# Dispatcher binary (main entry point)
+# HA binary (main command-line entry point)
 [[bin]]
 name = "ha"
-path = "src/dispatcher.rs"
+path = "src/ha.rs"
 
-# GUI popup binary
+# GUI popup binary (main application)
 [[bin]]
 name = "popup_server"
-path = "src/popup_main.rs"
+path = "src/main.rs"
 
 [[bin]]
 name = "popup"
 path = "src/popup_launcher.rs"
 
-# URL Handler binary (deprecated - functionality moved to dispatcher)
-[[bin]]
-name = "hook_url_handler"
-path = "src/url_handler.rs"
+# URL Handler binary (deprecated - moved to url_handler.rs.bak)
+# Functionality has been moved to ha binary with --hook flag
+# [[bin]]
+# name = "hook_url_handler"
+# path = "src/url_handler.rs.bak"
 
 
 

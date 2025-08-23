@@ -12,7 +12,7 @@ use crate::core::state::{load_state, clear_server_pid};
 static SERVER_CHECKED: AtomicBool = AtomicBool::new(false);
 
 /// Check if a process with the given PID is still running
-pub fn is_process_alive(pid: u32) -> bool {
+pub(crate) fn is_process_alive(pid: u32) -> bool {
     unsafe {
         // Use kill with signal 0 to test if process exists without actually sending a signal
         libc::kill(pid as i32, 0) == 0
@@ -20,7 +20,7 @@ pub fn is_process_alive(pid: u32) -> bool {
 }
 
 /// Start the command server if needed, with fast session-based caching
-pub fn start_server_if_needed() -> Result<(), Box<dyn std::error::Error>> {
+pub(crate) fn start_server_if_needed() -> Result<(), Box<dyn std::error::Error>> {
     // Fast path - already verified this session
     if SERVER_CHECKED.load(Ordering::Relaxed) {
         return Ok(());
@@ -76,7 +76,7 @@ pub fn start_server_if_needed() -> Result<(), Box<dyn std::error::Error>> {
 }
 
 /// Start command server via Terminal + AppleScript for proper shell environment
-pub fn start_server_via_terminal() -> Result<(), Box<dyn std::error::Error>> {
+pub(crate) fn start_server_via_terminal() -> Result<(), Box<dyn std::error::Error>> {
     // Check for server startup lock to prevent multiple simultaneous starts
     let lock_path = std::path::Path::new("/tmp/hookanchor_server_starting.lock");
     if lock_path.exists() {
@@ -98,9 +98,13 @@ pub fn start_server_via_terminal() -> Result<(), Box<dyn std::error::Error>> {
     // Create lock file
     std::fs::write(lock_path, std::process::id().to_string())?;
     
-    // Use global binary path to ensure we use the same binary that's currently running
-    let ha_path = crate::get_binary_path()
+    // Get the directory of the current binary, then use the 'ha' binary in that directory
+    // This ensures we always use 'ha' for the server, regardless of which binary is currently running
+    let current_binary = crate::utils::get_binary_path()
         .ok_or("Binary path not initialized")?;
+    let binary_dir = current_binary.parent()
+        .ok_or("Could not get binary directory")?;
+    let ha_path = binary_dir.join("ha");
     
     // AppleScript to start server in Terminal with login shell and keep alive  
     // Escape quotes in the path for proper AppleScript string handling
@@ -134,7 +138,7 @@ pub fn start_server_via_terminal() -> Result<(), Box<dyn std::error::Error>> {
 }
 
 /// Kill existing command server if running
-pub fn kill_existing_server() -> Result<(), Box<dyn std::error::Error>> {
+pub(crate) fn kill_existing_server() -> Result<(), Box<dyn std::error::Error>> {
     let state = load_state();
     if let Some(pid) = state.server_pid {
         if is_process_alive(pid) {
@@ -165,9 +169,7 @@ pub fn kill_existing_server() -> Result<(), Box<dyn std::error::Error>> {
 }
 
 /// Reset the server checked flag to force re-check on next call
-pub fn reset_server_check() {
+pub(crate) fn reset_server_check() {
     SERVER_CHECKED.store(false, Ordering::Relaxed);
 }
 
-/// Re-export state functions for convenience
-pub use crate::core::state::save_server_pid;

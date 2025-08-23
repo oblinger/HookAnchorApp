@@ -1,145 +1,39 @@
-//! Shared utility functions used across multiple modules
+//! General utility functions
 //!
-//! This module consolidates commonly used functions to avoid duplication
-//! and ensure consistency across the codebase.
+//! This module contains general-purpose utility functions that don't fit
+//! into more specific categories like logging, files, or subprocess management.
 
-use std::fs::OpenOptions;
-use std::io::Write;
 use std::process::Command;
-use chrono::Local;
+use std::path::PathBuf;
 use std::collections::HashMap;
 use std::sync::{Mutex, OnceLock};
 
 /// Cached login shell environment variables
 static LOGIN_ENV_CACHE: OnceLock<Mutex<Option<HashMap<String, String>>>> = OnceLock::new();
 
-/// Clear the debug log file
-/// 
-/// Removes the debug log file at the hardcoded path ~/.config/hookanchor/anchor.log
-/// to start fresh logging. Used before rebuilds and when log exceeds max size.
-pub fn clear_debug_log() {
-    // Use constant from sys_data
-    let debug_path = expand_tilde(crate::core::sys_data::DEFAULT_LOG_PATH);
-    
-    // Remove the file if it exists  
-    if std::path::Path::new(&debug_path).exists() {
-        let _ = std::fs::remove_file(&debug_path);
+/// Global static to store the path of the currently running binary
+/// This ensures all parts of the application use the same binary path for spawning processes
+static BINARY_PATH: OnceLock<PathBuf> = OnceLock::new();
+
+// ============================================================================
+// BINARY PATH MANAGEMENT
+// ============================================================================
+
+/// Initialize the global binary path - should be called once at application startup
+pub fn init_binary_path() {
+    if let Ok(exe_path) = std::env::current_exe() {
+        let _ = BINARY_PATH.set(exe_path);
     }
 }
 
-/// Check if debug log file exceeds max size and clear if needed
-/// 
-/// Returns true if log was cleared, false otherwise
-pub fn check_and_clear_oversized_log() -> bool {
-    // Use constant from sys_data
-    let debug_path = expand_tilde(crate::core::sys_data::DEFAULT_LOG_PATH);
-    
-    // Get max size from config if available, otherwise use default
-    let max_size = match crate::core::sys_data::CONFIG.get() {
-        Some(cfg) => cfg.popup_settings.max_log_file_size.unwrap_or(1_000_000), // 1MB default
-        None => crate::core::sys_data::DEFAULT_MAX_LOG_SIZE,
-    };
-    
-    // Log when we check (to temp file to avoid recursion)
-    if let Ok(mut file) = OpenOptions::new()
-        .create(true)
-        .append(true)
-        .open("/tmp/hookanchor_log_checks.log") {
-        let timestamp = Local::now().format("%Y-%m-%d %H:%M:%S");
-        let _ = writeln!(file, "{} Checking log size - max_size configured: {}", timestamp, max_size);
-    }
-    
-    if let Ok(metadata) = std::fs::metadata(&debug_path) {
-        let current_size = metadata.len();
-        
-        if current_size > max_size {
-            // First log the truncation event to a separate file to avoid recursion
-            if let Ok(mut file) = OpenOptions::new()
-                .create(true)
-                .append(true)
-                .open("/tmp/hookanchor_log_truncation.log") {
-                let timestamp = Local::now().format("%Y-%m-%d %H:%M:%S");
-                let _ = writeln!(file, "{} Log file exceeded {} bytes (was {} bytes), clearing log file at: {}", 
-                    timestamp, max_size, current_size, debug_path);
-            }
-            
-            clear_debug_log();
-            // Now we can safely log to the fresh file
-            log(&format!("LOG_MANAGEMENT: Log file exceeded {} bytes (was {} bytes), cleared for fresh start", max_size, current_size));
-            return true;
-        }
-    }
-    false
+/// Get the path of the currently running binary
+pub fn get_binary_path() -> Option<&'static PathBuf> {
+    BINARY_PATH.get()
 }
 
-/// Clear the log file unconditionally
-/// 
-/// This is used when we want to start fresh, such as during a rebuild
-pub fn clear_log_file() {
-    clear_debug_log();
-}
-
-/// Simple logging function that checks if logging is enabled
-/// 
-/// This is the primary logging function that should be used throughout the codebase.
-/// It checks if a debug log path is configured before writing.
-pub fn log(message: &str) {
-    // Use constant from sys_data for consistency
-    let debug_path = expand_tilde(crate::core::sys_data::DEFAULT_LOG_PATH);
-    
-    let timestamp = Local::now().format("%Y-%m-%d %H:%M:%S");
-    let log_entry = format!("{} {}\n", timestamp, message);
-    
-    if let Ok(mut file) = OpenOptions::new()
-        .create(true)
-        .append(true)
-        .open(debug_path) {
-        let _ = file.write_all(log_entry.as_bytes());
-    }
-}
-
-/// Detailed logging function that only logs when detailed_logging is enabled
-/// 
-/// This function should be used for verbose logging that would normally be too noisy,
-/// such as logging every key press or detailed execution flow.
-pub fn detailed_log(module: &str, message: &str) {
-    // Check if detailed logging is enabled
-    let verbose_enabled = match crate::core::sys_data::CONFIG.get() {
-        Some(cfg) => cfg.popup_settings.verbose_logging.unwrap_or(false),
-        None => false, // Config not loaded yet, assume verbose is off
-    };
-    
-    if verbose_enabled {
-        log(&format!("{}: {}", module, message));
-    }
-}
-
-/// Error logging function that marks errors clearly in the log
-/// 
-/// This replaces eprintln! calls for errors that should go to the log file
-/// instead of stderr. The error is always logged (not conditional on verbose mode).
-pub fn log_error(message: &str) {
-    log(&format!("❌ ERROR: {}", message));
-}
-
-/// Error logging with module context
-pub fn log_error_module(module: &str, message: &str) {
-    log(&format!("❌ ERROR [{}]: {}", module, message));
-}
-
-/// Legacy debug log function - now just calls log() with formatted message
-/// 
-/// Kept for backward compatibility. New code should use log() or detailed_log().
-pub fn debug_log(module: &str, message: &str) {
-    log(&format!("{}: {}", module, message));
-}
-
-/// Verbose debug logging function for detailed debugging
-/// 
-/// This is now an alias for detailed_log. Kept for backward compatibility.
-pub fn verbose_log(module: &str, message: &str) {
-    detailed_log(module, message);
-}
+// ============================================================================
+// PATH UTILITIES
+// ============================================================================
 
 /// Expands ~ in paths to the home directory
 /// 
@@ -156,6 +50,10 @@ pub fn expand_tilde(path: &str) -> String {
         path.to_string()
     }
 }
+
+// ============================================================================
+// APP LAUNCHING UTILITIES
+// ============================================================================
 
 /// Launch an app with optional argument using macOS `open` command
 /// 
@@ -176,7 +74,7 @@ pub fn launch_app_with_arg(app: &str, arg: Option<&str>) -> Result<std::process:
     
     // Register the process for monitoring
     let command_str = format!("open -a {} {}", app, arg.unwrap_or(""));
-    let _process_id = crate::process_monitor::register_process(child, command_str);
+    let _process_id = super::subprocess::register_process(child, command_str);
     
     
     // For non-blocking execution, we don't wait for the result
@@ -197,7 +95,7 @@ pub fn open_url(url: &str) -> Result<std::process::Output, std::io::Error> {
     
     // Register the process for monitoring
     let command_str = format!("open {}", url);
-    let _process_id = crate::process_monitor::register_process(child, command_str);
+    let _process_id = super::subprocess::register_process(child, command_str);
     
     
     // For non-blocking execution, we don't wait for the result
@@ -218,7 +116,7 @@ pub fn open_folder(path: &str) -> Result<std::process::Output, std::io::Error> {
     
     // Register the process for monitoring
     let command_str = format!("open {}", expanded_path);
-    let _process_id = crate::process_monitor::register_process(child, command_str);
+    let _process_id = super::subprocess::register_process(child, command_str);
     
     
     // For non-blocking execution, we don't wait for the result
@@ -228,22 +126,125 @@ pub fn open_folder(path: &str) -> Result<std::process::Output, std::io::Error> {
     ))
 }
 
+/// Open a file/URL with a specific app using macOS `open` command
+/// 
+/// Consolidates the open-with pattern used throughout the codebase
+/// Uses non-blocking spawn to prevent UI lockups
+pub fn open_with_app(app: &str, target: &str) -> Result<std::process::Output, std::io::Error> {
+    super::logging::log(&format!("OPEN_WITH_APP: app='{}', target='{}'", app, target));
+    
+    // Check if this is a browser and we're opening a URL
+    let is_browser = matches!(app.to_lowercase().as_str(), 
+        "google chrome" | "chrome" | "safari" | "firefox" | "brave" | "brave browser" | "microsoft edge" | "edge");
+    let is_url = target.starts_with("http://") || target.starts_with("https://");
+    
+    if is_browser && is_url {
+        // Use AppleScript for browsers to ensure they come to foreground
+        super::logging::log(&format!("OPEN_WITH_APP: Using AppleScript for browser: {}", app));
+        
+        let applescript = format!(
+            "tell application \"{}\" to activate\ntell application \"{}\" to open location \"{}\"",
+            app, app, target
+        );
+        
+        let mut cmd = Command::new("osascript");
+        cmd.arg("-e").arg(&applescript);
+        
+        // Log the command
+        super::logging::log(&format!("OPEN_WITH_APP: Executing AppleScript for browser activation"));
+        
+        // Try to spawn the command
+        let child = match cmd.spawn() {
+            Ok(child) => {
+                super::logging::log(&format!("OPEN_WITH_APP: Successfully spawned AppleScript process with PID: {:?}", child.id()));
+                child
+            },
+            Err(e) => {
+                super::logging::log_error(&format!("OPEN_WITH_APP: Failed to spawn AppleScript command: {}", e));
+                // Fall back to regular open command
+                super::logging::log(&format!("OPEN_WITH_APP: Falling back to regular open command"));
+                let mut fallback_cmd = Command::new("open");
+                fallback_cmd.arg("-F").arg("-a").arg(app).arg(target);
+                match fallback_cmd.spawn() {
+                    Ok(child) => child,
+                    Err(e) => return Err(e),
+                }
+            }
+        };
+        
+        // Register the process for monitoring
+        let command_str = format!("osascript -e 'activate {}' -e 'open location {}'", app, target);
+        let _process_id = super::subprocess::register_process(child, command_str);
+        super::logging::log(&format!("OPEN_WITH_APP: Process registered for monitoring"));
+        
+    } else {
+        // For non-browsers or non-URLs, use the regular open command
+        super::logging::log(&format!("OPEN_WITH_APP: Using regular open command"));
+        
+        let mut cmd = Command::new("open");
+        if app.is_empty() {
+            cmd.arg(target);
+        } else {
+            cmd.arg("-F"); // Bring app to foreground
+            cmd.arg("-a").arg(app).arg(target);
+        }
+        
+        // Log the full command that will be executed
+        let command_str = if app.is_empty() {
+            format!("open {}", target)
+        } else {
+            format!("open -F -a \"{}\" \"{}\"", app, target)
+        };
+        super::logging::log(&format!("OPEN_WITH_APP: Executing command: {}", command_str));
+        
+        // Try to spawn the command
+        let child = match cmd.spawn() {
+            Ok(child) => {
+                super::logging::log(&format!("OPEN_WITH_APP: Successfully spawned process with PID: {:?}", child.id()));
+                child
+            },
+            Err(e) => {
+                super::logging::log_error(&format!("OPEN_WITH_APP: Failed to spawn open command: {}", e));
+                return Err(e);
+            }
+        };
+        
+        // Register the process for monitoring
+        let _process_id = super::subprocess::register_process(child, command_str);
+        super::logging::log(&format!("OPEN_WITH_APP: Process registered for monitoring"));
+    }
+    
+    // Check if the process is actually running
+    std::thread::sleep(std::time::Duration::from_millis(100));
+    
+    // For non-blocking execution, we don't wait for the result
+    super::logging::log(&format!("OPEN_WITH_APP: Returning NON_BLOCKING_SUCCESS"));
+    Err(std::io::Error::new(
+        std::io::ErrorKind::Other, 
+        "NON_BLOCKING_SUCCESS: Open with app process spawned successfully"
+    ))
+}
+
+// ============================================================================
+// SHELL EXECUTION UTILITIES
+// ============================================================================
+
 /// Capture environment variables from a login shell (cached)
 fn get_login_environment() -> Result<HashMap<String, String>, std::io::Error> {
     let cache = LOGIN_ENV_CACHE.get_or_init(|| Mutex::new(None));
     let mut cache_guard = cache.lock().unwrap();
     
     if let Some(ref env) = *cache_guard {
-        verbose_log("SHELL", "Using cached login environment");
+        super::logging::verbose_log("SHELL", "Using cached login environment");
         return Ok(env.clone());
     }
     
-    verbose_log("SHELL", "Capturing login shell environment for first time");
+    super::logging::verbose_log("SHELL", "Capturing login shell environment for first time");
     
     // Get the user's shell
     let shell = std::env::var("SHELL").unwrap_or_else(|_| "/bin/zsh".to_string());
     
-    verbose_log("SHELL", &format!("Using shell: {}", shell));
+    super::logging::verbose_log("SHELL", &format!("Using shell: {}", shell));
     
     // Run the login shell directly to capture environment
     let output = Command::new(&shell)
@@ -269,7 +270,7 @@ fn get_login_environment() -> Result<HashMap<String, String>, std::io::Error> {
         }
     }
     
-    verbose_log("SHELL", &format!("Captured {} environment variables", env_map.len()));
+    super::logging::verbose_log("SHELL", &format!("Captured {} environment variables", env_map.len()));
     *cache_guard = Some(env_map.clone());
     
     Ok(env_map)
@@ -277,59 +278,59 @@ fn get_login_environment() -> Result<HashMap<String, String>, std::io::Error> {
 
 /// Shell execution with simple current environment (original approach)
 pub fn shell_simple(command: &str, blocking: bool) -> Result<std::process::Output, std::io::Error> {
-    verbose_log("SHELL", &format!("SIMPLE: {}", command));
+    super::logging::verbose_log("SHELL", &format!("SIMPLE: {}", command));
     
     // Detailed logging
-    detailed_log("SHELL_SIMPLE", "===========================================");
-    detailed_log("SHELL_SIMPLE", &format!("Command: '{}'", command));
-    detailed_log("SHELL_SIMPLE", &format!("Blocking: {}", blocking));
-    detailed_log("SHELL_SIMPLE", &format!("Current dir: {:?}", std::env::current_dir()));
+    super::logging::detailed_log("SHELL_SIMPLE", "===========================================");
+    super::logging::detailed_log("SHELL_SIMPLE", &format!("Command: '{}'", command));
+    super::logging::detailed_log("SHELL_SIMPLE", &format!("Blocking: {}", blocking));
+    super::logging::detailed_log("SHELL_SIMPLE", &format!("Current dir: {:?}", std::env::current_dir()));
     
     let mut cmd = Command::new("sh");
     cmd.arg("-c").arg(command);
     
-    detailed_log("SHELL_SIMPLE", "Created Command object with sh -c");
-    detailed_log("SHELL_SIMPLE", &format!("Full command: sh -c '{}'", command));
+    super::logging::detailed_log("SHELL_SIMPLE", "Created Command object with sh -c");
+    super::logging::detailed_log("SHELL_SIMPLE", &format!("Full command: sh -c '{}'", command));
     
     if blocking {
-        detailed_log("SHELL_SIMPLE", "Executing in BLOCKING mode (waiting for completion)");
+        super::logging::detailed_log("SHELL_SIMPLE", "Executing in BLOCKING mode (waiting for completion)");
         let result = cmd.output();
         
         match &result {
             Ok(output) => {
-                detailed_log("SHELL_SIMPLE", &format!("Command completed with exit status: {:?}", output.status));
-                detailed_log("SHELL_SIMPLE", &format!("Exit code: {:?}", output.status.code()));
-                detailed_log("SHELL_SIMPLE", &format!("STDOUT length: {} bytes", output.stdout.len()));
-                detailed_log("SHELL_SIMPLE", &format!("STDERR length: {} bytes", output.stderr.len()));
+                super::logging::detailed_log("SHELL_SIMPLE", &format!("Command completed with exit status: {:?}", output.status));
+                super::logging::detailed_log("SHELL_SIMPLE", &format!("Exit code: {:?}", output.status.code()));
+                super::logging::detailed_log("SHELL_SIMPLE", &format!("STDOUT length: {} bytes", output.stdout.len()));
+                super::logging::detailed_log("SHELL_SIMPLE", &format!("STDERR length: {} bytes", output.stderr.len()));
                 
                 if !output.stdout.is_empty() {
                     let stdout_str = String::from_utf8_lossy(&output.stdout);
-                    detailed_log("SHELL_SIMPLE", &format!("STDOUT content: {}", stdout_str.trim()));
+                    super::logging::detailed_log("SHELL_SIMPLE", &format!("STDOUT content: {}", stdout_str.trim()));
                 }
                 if !output.stderr.is_empty() {
                     let stderr_str = String::from_utf8_lossy(&output.stderr);
-                    detailed_log("SHELL_SIMPLE", &format!("STDERR content: {}", stderr_str.trim()));
+                    super::logging::detailed_log("SHELL_SIMPLE", &format!("STDERR content: {}", stderr_str.trim()));
                 }
             },
             Err(e) => {
-                detailed_log("SHELL_SIMPLE", &format!("Command FAILED with error: {}", e));
-                detailed_log("SHELL_SIMPLE", &format!("Error kind: {:?}", e.kind()));
+                super::logging::detailed_log("SHELL_SIMPLE", &format!("Command FAILED with error: {}", e));
+                super::logging::detailed_log("SHELL_SIMPLE", &format!("Error kind: {:?}", e.kind()));
             }
         }
         
-        detailed_log("SHELL_SIMPLE", "===========================================");
+        super::logging::detailed_log("SHELL_SIMPLE", "===========================================");
         result
     } else {
-        detailed_log("SHELL_SIMPLE", "Executing in NON-BLOCKING mode (spawn and return)");
+        super::logging::detailed_log("SHELL_SIMPLE", "Executing in NON-BLOCKING mode (spawn and return)");
         match cmd.spawn() {
             Ok(child) => {
-                detailed_log("SHELL_SIMPLE", &format!("Process spawned successfully with PID: {:?}", child.id()));
-                detailed_log("SHELL_SIMPLE", "Returning dummy success output for non-blocking call");
+                super::logging::detailed_log("SHELL_SIMPLE", &format!("Process spawned successfully with PID: {:?}", child.id()));
+                super::logging::detailed_log("SHELL_SIMPLE", "Returning dummy success output for non-blocking call");
                 
                 // Return dummy success output for non-blocking
                 // Use a command that always succeeds to get a proper ExitStatus
                 let dummy_output = Command::new("true").output()?;
-                detailed_log("SHELL_SIMPLE", "===========================================");
+                super::logging::detailed_log("SHELL_SIMPLE", "===========================================");
                 Ok(std::process::Output {
                     status: dummy_output.status,
                     stdout: Vec::new(),
@@ -337,9 +338,9 @@ pub fn shell_simple(command: &str, blocking: bool) -> Result<std::process::Outpu
                 })
             },
             Err(e) => {
-                detailed_log("SHELL_SIMPLE", &format!("Failed to spawn process: {}", e));
-                detailed_log("SHELL_SIMPLE", &format!("Error kind: {:?}", e.kind()));
-                detailed_log("SHELL_SIMPLE", "===========================================");
+                super::logging::detailed_log("SHELL_SIMPLE", &format!("Failed to spawn process: {}", e));
+                super::logging::detailed_log("SHELL_SIMPLE", &format!("Error kind: {:?}", e.kind()));
+                super::logging::detailed_log("SHELL_SIMPLE", "===========================================");
                 Err(e)
             },
         }
@@ -348,7 +349,7 @@ pub fn shell_simple(command: &str, blocking: bool) -> Result<std::process::Outpu
 
 /// Shell execution with full login shell environment (su - approach)
 pub fn shell_login(command: &str, blocking: bool) -> Result<std::process::Output, std::io::Error> {
-    verbose_log("SHELL", &format!("LOGIN: {}", command));
+    super::logging::verbose_log("SHELL", &format!("LOGIN: {}", command));
     
     let current_user = detect_current_user();
     let escaped_command = command.replace("'", "'\"'\"'");
@@ -376,11 +377,11 @@ pub fn shell_login(command: &str, blocking: bool) -> Result<std::process::Output
 
 /// Shell execution with hybrid approach: current GUI environment + login shell env vars
 pub fn shell_hybrid(command: &str, blocking: bool) -> Result<std::process::Output, std::io::Error> {
-    verbose_log("SHELL", &format!("HYBRID: {}", command));
+    super::logging::verbose_log("SHELL", &format!("HYBRID: {}", command));
     
     // Check if tmux is requested
     if command.contains("tmux") {
-        verbose_log("SHELL", "tmux command detected, checking availability");
+        super::logging::verbose_log("SHELL", "tmux command detected, checking availability");
     }
     
     let mut cmd = Command::new("sh");
@@ -389,11 +390,11 @@ pub fn shell_hybrid(command: &str, blocking: bool) -> Result<std::process::Outpu
     // Try to get login environment, but fall back to simple execution if it fails
     match get_login_environment() {
         Ok(login_env) => {
-            verbose_log("SHELL", &format!("Applying {} login environment variables", login_env.len()));
+            super::logging::verbose_log("SHELL", &format!("Applying {} login environment variables", login_env.len()));
             
             // Debug: Log PATH from login environment
             if let Some(path) = login_env.get("PATH") {
-                verbose_log("SHELL", &format!("Login PATH: {}", path));
+                super::logging::verbose_log("SHELL", &format!("Login PATH: {}", path));
             }
             
             // Apply login environment variables to current process environment
@@ -402,7 +403,7 @@ pub fn shell_hybrid(command: &str, blocking: bool) -> Result<std::process::Outpu
             }
         },
         Err(e) => {
-            verbose_log("SHELL", &format!("Failed to get login environment ({}), falling back to simple execution", e));
+            super::logging::verbose_log("SHELL", &format!("Failed to get login environment ({}), falling back to simple execution", e));
             // Continue with current environment
         }
     }
@@ -470,16 +471,16 @@ pub fn execute_shell_command_unified(command: &str, blocking: bool, detached: bo
 }
 
 pub fn execute_shell_with_options(command: &str, options: ShellOptions, detached: bool) -> Result<std::process::Output, std::io::Error> {
-    verbose_log("SHELL", &format!("Executing command with options: {:?}", options));
-    verbose_log("SHELL", &format!("Command: {}", command));
+    super::logging::verbose_log("SHELL", &format!("Executing command with options: {:?}", options));
+    super::logging::verbose_log("SHELL", &format!("Command: {}", command));
     
     // Detect current user - try multiple methods for reliability
     let current_user = detect_current_user();
-    verbose_log("SHELL", &format!("Detected user: {}", current_user));
+    super::logging::verbose_log("SHELL", &format!("Detected user: {}", current_user));
     
     // Check if this is a GUI command that needs direct execution
     let is_gui_command = is_gui_command(command);
-    verbose_log("SHELL", &format!("Is GUI command: {}", is_gui_command));
+    super::logging::verbose_log("SHELL", &format!("Is GUI command: {}", is_gui_command));
     
     // Build the command based on options
     let final_command = if options.login_shell && !is_gui_command {
@@ -492,7 +493,7 @@ pub fn execute_shell_with_options(command: &str, options: ShellOptions, detached
         command.to_string()
     };
     
-    verbose_log("SHELL", &format!("Final command: {}", final_command));
+    super::logging::verbose_log("SHELL", &format!("Final command: {}", final_command));
     
     // Execute with appropriate method
     if detached {
@@ -531,7 +532,7 @@ fn detect_current_user() -> String {
     // Method 1: USER environment variable
     if let Ok(user) = std::env::var("USER") {
         if !user.is_empty() {
-            verbose_log("SHELL", &format!("Found user via USER env var: {}", user));
+            super::logging::verbose_log("SHELL", &format!("Found user via USER env var: {}", user));
             return user;
         }
     }
@@ -539,7 +540,7 @@ fn detect_current_user() -> String {
     // Method 2: LOGNAME environment variable  
     if let Ok(user) = std::env::var("LOGNAME") {
         if !user.is_empty() {
-            verbose_log("SHELL", &format!("Found user via LOGNAME env var: {}", user));
+            super::logging::verbose_log("SHELL", &format!("Found user via LOGNAME env var: {}", user));
             return user;
         }
     }
@@ -549,7 +550,7 @@ fn detect_current_user() -> String {
         if output.status.success() {
             let user = String::from_utf8_lossy(&output.stdout).trim().to_string();
             if !user.is_empty() {
-                verbose_log("SHELL", &format!("Found user via whoami: {}", user));
+                super::logging::verbose_log("SHELL", &format!("Found user via whoami: {}", user));
                 return user;
             }
         }
@@ -559,7 +560,7 @@ fn detect_current_user() -> String {
     if let Ok(home) = std::env::var("HOME") {
         if let Some(user) = home.split('/').last() {
             if !user.is_empty() {
-                verbose_log("SHELL", &format!("Found user via HOME parsing: {}", user));
+                super::logging::verbose_log("SHELL", &format!("Found user via HOME parsing: {}", user));
                 return user.to_string();
             }
         }
@@ -570,14 +571,14 @@ fn detect_current_user() -> String {
         if output.status.success() {
             let user = String::from_utf8_lossy(&output.stdout).trim().to_string();
             if !user.is_empty() {
-                verbose_log("SHELL", &format!("Found user via id -un: {}", user));
+                super::logging::verbose_log("SHELL", &format!("Found user via id -un: {}", user));
                 return user;
             }
         }
     }
     
     // Final fallback
-    verbose_log("SHELL", "Could not detect user, using fallback 'user'");
+    super::logging::verbose_log("SHELL", "Could not detect user, using fallback 'user'");
     "user".to_string()
 }
 
@@ -622,7 +623,7 @@ fn execute_non_blocking(command: &str, options: ShellOptions) -> Result<std::pro
     // For non-blocking, we spawn and return immediately
     match cmd.spawn() {
         Ok(_) => {
-            verbose_log("SHELL", "Non-blocking command spawned successfully");
+            super::logging::verbose_log("SHELL", "Non-blocking command spawned successfully");
             // For non-blocking commands, just run a quick successful command to get a real ExitStatus
             let dummy_output = Command::new("true").output().unwrap_or_else(|_| {
                 std::process::Output {
@@ -658,7 +659,7 @@ fn execute_detached(command: &str, options: ShellOptions) -> Result<std::process
     
     match cmd.spawn() {
         Ok(_) => {
-            verbose_log("SHELL", "Detached command spawned successfully");
+            super::logging::verbose_log("SHELL", "Detached command spawned successfully");
             // For detached commands, just run a quick successful command to get a real ExitStatus
             let dummy_output = Command::new("true").output().unwrap_or_else(|_| {
                 std::process::Output {
@@ -671,103 +672,4 @@ fn execute_detached(command: &str, options: ShellOptions) -> Result<std::process
         }
         Err(e) => Err(e)
     }
-}
-
-/// Open a file/URL with a specific app using macOS `open` command
-/// 
-/// Consolidates the open-with pattern used throughout the codebase
-/// Uses non-blocking spawn to prevent UI lockups
-pub fn open_with_app(app: &str, target: &str) -> Result<std::process::Output, std::io::Error> {
-    log(&format!("OPEN_WITH_APP: app='{}', target='{}'", app, target));
-    
-    // Check if this is a browser and we're opening a URL
-    let is_browser = matches!(app.to_lowercase().as_str(), 
-        "google chrome" | "chrome" | "safari" | "firefox" | "brave" | "brave browser" | "microsoft edge" | "edge");
-    let is_url = target.starts_with("http://") || target.starts_with("https://");
-    
-    if is_browser && is_url {
-        // Use AppleScript for browsers to ensure they come to foreground
-        log(&format!("OPEN_WITH_APP: Using AppleScript for browser: {}", app));
-        
-        let applescript = format!(
-            "tell application \"{}\" to activate\ntell application \"{}\" to open location \"{}\"",
-            app, app, target
-        );
-        
-        let mut cmd = Command::new("osascript");
-        cmd.arg("-e").arg(&applescript);
-        
-        // Log the command
-        log(&format!("OPEN_WITH_APP: Executing AppleScript for browser activation"));
-        
-        // Try to spawn the command
-        let child = match cmd.spawn() {
-            Ok(child) => {
-                log(&format!("OPEN_WITH_APP: Successfully spawned AppleScript process with PID: {:?}", child.id()));
-                child
-            },
-            Err(e) => {
-                log_error(&format!("OPEN_WITH_APP: Failed to spawn AppleScript command: {}", e));
-                // Fall back to regular open command
-                log(&format!("OPEN_WITH_APP: Falling back to regular open command"));
-                let mut fallback_cmd = Command::new("open");
-                fallback_cmd.arg("-F").arg("-a").arg(app).arg(target);
-                match fallback_cmd.spawn() {
-                    Ok(child) => child,
-                    Err(e) => return Err(e),
-                }
-            }
-        };
-        
-        // Register the process for monitoring
-        let command_str = format!("osascript -e 'activate {}' -e 'open location {}'", app, target);
-        let _process_id = crate::process_monitor::register_process(child, command_str);
-        log(&format!("OPEN_WITH_APP: Process registered for monitoring"));
-        
-    } else {
-        // For non-browsers or non-URLs, use the regular open command
-        log(&format!("OPEN_WITH_APP: Using regular open command"));
-        
-        let mut cmd = Command::new("open");
-        if app.is_empty() {
-            cmd.arg(target);
-        } else {
-            cmd.arg("-F"); // Bring app to foreground
-            cmd.arg("-a").arg(app).arg(target);
-        }
-        
-        // Log the full command that will be executed
-        let command_str = if app.is_empty() {
-            format!("open {}", target)
-        } else {
-            format!("open -F -a \"{}\" \"{}\"", app, target)
-        };
-        log(&format!("OPEN_WITH_APP: Executing command: {}", command_str));
-        
-        // Try to spawn the command
-        let child = match cmd.spawn() {
-            Ok(child) => {
-                log(&format!("OPEN_WITH_APP: Successfully spawned process with PID: {:?}", child.id()));
-                child
-            },
-            Err(e) => {
-                log_error(&format!("OPEN_WITH_APP: Failed to spawn open command: {}", e));
-                return Err(e);
-            }
-        };
-        
-        // Register the process for monitoring
-        let _process_id = crate::process_monitor::register_process(child, command_str);
-        log(&format!("OPEN_WITH_APP: Process registered for monitoring"));
-    }
-    
-    // Check if the process is actually running
-    std::thread::sleep(std::time::Duration::from_millis(100));
-    
-    // For non-blocking execution, we don't wait for the result
-    log(&format!("OPEN_WITH_APP: Returning NON_BLOCKING_SUCCESS"));
-    Err(std::io::Error::new(
-        std::io::ErrorKind::Other, 
-        "NON_BLOCKING_SUCCESS: Open with app process spawned successfully"
-    ))
 }

@@ -406,7 +406,7 @@ pub trait PopupInterface {
     fn navigate_horizontal(&mut self, delta: i32);
     
     /// Trigger a rebuild of the command list
-    fn trigger_rebuild(&mut self);
+    fn trigger_rebuild(&mut self, ctx: &egui::Context);
     
     /// Start the grabber countdown
     fn start_grabber_countdown(&mut self, ctx: &egui::Context);
@@ -804,7 +804,7 @@ impl KeyHandler for ActionHandler {
             },
             // All other actions are always handled
             Action::ForceRebuild => {
-                context.popup.trigger_rebuild();
+                context.popup.trigger_rebuild(context.egui_ctx);
                 KeyHandlerResult::Handled
             },
             Action::StartGrabber => {
@@ -934,7 +934,7 @@ impl TextHandler for ShowKeysTextHandler {
 }
 
 /// Factory function to create a fully configured key registry
-pub fn create_default_key_registry(config: &crate::Config) -> KeyRegistry {
+pub fn create_default_key_registry(config: &super::Config) -> KeyRegistry {
     crate::utils::log("KEY_REGISTRY: Creating default key registry");
     crate::utils::log(&format!("KEY_REGISTRY: Config has {} actions", config.actions.as_ref().map(|a| a.len()).unwrap_or(0)));
     let mut registry = KeyRegistry::new();
@@ -977,8 +977,8 @@ pub fn create_default_key_registry(config: &crate::Config) -> KeyRegistry {
         let mut actions_with_keys = 0;
         for (action_name, action) in actions {
             // Check if this action has a key field
-            if let Some(ref key_str) = action.key {
-                crate::utils::log(&format!("KEY_REGISTRY: Action '{}' has key '{}'", action_name, key_str));
+            if let Some(key_str) = action.key() {
+                crate::utils::detailed_log("KEY_REGISTRY", &format!("Action '{}' has key '{}'", action_name, key_str));
                 // Parse the key string into a keystroke
                 if let Ok(keystroke) = Keystroke::from_key_string(key_str) {
                     actions_with_keys += 1;
@@ -987,21 +987,21 @@ pub fn create_default_key_registry(config: &crate::Config) -> KeyRegistry {
                         action_name, key_str, keystroke));
                     
                     // For template actions, use TemplateHandler
-                    if action.action_type == "template" {
+                    if action.action_type() == "template" {
                         let handler = Box::new(TemplateHandler::new(action_name.clone()));
                         registry.register_keystroke(keystroke.clone(), handler);
                         registered_count += 1;
-                        crate::utils::log(&format!("KEY_REGISTRY: Registered template '{}' to key '{}'", action_name, key_str));
+                        crate::utils::detailed_log("KEY_REGISTRY", &format!("Registered template '{}' to key '{}'", action_name, key_str));
                         // Special logging for > key
                         if key_str == ">" {
                             crate::utils::log(&format!(">>> ALIAS REGISTRATION: Template '{}' registered to '>' key", action_name));
                             crate::utils::log(&format!(">>> ALIAS REGISTRATION: Keystroke details: {:?}", keystroke));
                         }
-                    } else if action.action_type == "popup" {
+                    } else if action.action_type() == "popup" {
                         // Handle popup actions (navigation, exit, etc.)
                         if let Some(popup_action) = action.params.get("popup_action")
                             .and_then(|v| v.as_str()) {
-                            crate::utils::log(&format!("KEY_REGISTRY: Processing popup action '{}' with key '{}'", popup_action, key_str));
+                            crate::utils::detailed_log("KEY_REGISTRY", &format!("Processing popup action '{}' with key '{}'", popup_action, key_str));
                             let handler: Box<dyn KeyHandler> = match popup_action {
                                 "navigate" => {
                                     // Check dx and dy parameters to determine direction
@@ -1024,7 +1024,7 @@ pub fn create_default_key_registry(config: &crate::Config) -> KeyRegistry {
                                         continue; // No direction specified
                                     };
                                     
-                                    crate::utils::log(&format!("  Registering navigation handler: {} (dx={}, dy={})", 
+                                    crate::utils::detailed_log("KEY_REGISTRY", &format!("Registering navigation handler: {} (dx={}, dy={})", 
                                         dir_name, dx, dy));
                                     
                                     if dy < 0 {

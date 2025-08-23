@@ -1,4 +1,4 @@
-//! Error Display System
+//! Error Queue System
 //!
 //! This module provides a global error queue system that allows any part of the application
 //! to queue errors for display to the user via the GUI dialog system.
@@ -23,7 +23,7 @@ pub fn queue_user_error(error_message: &str) {
     if let Some(queue) = ERROR_QUEUE.get() {
         if let Ok(mut queue_guard) = queue.lock() {
             queue_guard.push_back(error_message.to_string());
-            crate::utils::debug_log("ERROR_QUEUE", &format!("Queued error: {}", error_message));
+            super::logging::debug_log("ERROR_QUEUE", &format!("Queued error: {}", error_message));
         }
     }
 }

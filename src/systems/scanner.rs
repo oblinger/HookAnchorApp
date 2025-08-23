@@ -8,8 +8,11 @@ use std::path::{Path, PathBuf};
 use std::process::Command as ProcessCommand;
 use std::collections::{hash_map::DefaultHasher, HashSet};
 use std::hash::{Hash, Hasher};
-use crate::{Command, Config, load_state, save_state, save_commands_to_file, utils::debug_log};
-use crate::core::get_action;
+use crate::core::Command;
+use crate::core::commands::save_commands_to_file;
+use crate::core::{Config, load_state, save_state};
+use crate::utils::debug_log;
+use crate::execute::get_action;
 use chrono::Local;
 
 /// Action types that are automatically generated and removed by the scanner
@@ -21,9 +24,10 @@ fn scanner_log(message: &str) {
     crate::utils::detailed_log("SCANNER", message);
 }
 
-/// Checks if filesystem scan should be performed and executes it if needed
+/// Main function for automatic background scanning
+/// Checks if filesystem scan should be performed and executes it if needed.
 /// This function should be called on application exit, not startup.
-pub fn file_scan_check(commands: Vec<Command>) -> Vec<Command> {
+pub fn scan_check(commands: Vec<Command>) -> Vec<Command> {
     let sys_data = crate::core::sys_data::get_sys_data();
     let mut state = load_state();
     
@@ -95,12 +99,13 @@ pub fn file_scan_check(commands: Vec<Command>) -> Vec<Command> {
     }
 }
 
-/// Top-level scan function that orchestrates all scanning operations
-pub fn scan(commands: Vec<Command>, sys_data: &crate::core::sys_data::SysData) -> Vec<Command> {
+/// Internal scan function that orchestrates all scanning operations
+fn scan(commands: Vec<Command>, sys_data: &crate::core::sys_data::SysData) -> Vec<Command> {
     scan_verbose(commands, sys_data, false)
 }
 
-/// Top-level scan function with verbose output
+/// Manual CLI rescanning with verbose output
+/// Used for the --rescan command line option
 pub fn scan_verbose(commands: Vec<Command>, sys_data: &crate::core::sys_data::SysData, verbose: bool) -> Vec<Command> {
     let empty_vec = vec![];
     let markdown_roots = sys_data.config.popup_settings.markdown_roots.as_ref().unwrap_or(&empty_vec);
@@ -140,7 +145,7 @@ pub fn scan_verbose(commands: Vec<Command>, sys_data: &crate::core::sys_data::Sy
             }
             
             // Find orphan folders that should be merged
-            let merges = crate::command_operations::find_orphan_folder_merges(orphans_path, vault_root);
+            let merges = crate::core::commands::find_orphan_folder_merges(orphans_path, vault_root);
             
             if !merges.is_empty() {
                 if verbose {
@@ -155,7 +160,7 @@ pub fn scan_verbose(commands: Vec<Command>, sys_data: &crate::core::sys_data::Sy
                             dest.display());
                     }
                     
-                    if let Err(e) = crate::command_operations::merge_folders(&source, &dest) {
+                    if let Err(e) = crate::core::commands::merge_folders(&source, &dest) {
                         crate::utils::log_error(&format!("Failed to merge orphan: {}", e));
                         if verbose {
                             println!("   ❌ Merge failed: {}", e);
@@ -206,7 +211,7 @@ pub fn scan_verbose(commands: Vec<Command>, sys_data: &crate::core::sys_data::Sy
 }
 
 /// Scans the configured markdown roots and returns an updated command list
-pub fn scan_files(mut commands: Vec<Command>, markdown_roots: &[String], config: &Config) -> Vec<Command> {
+fn scan_files(mut commands: Vec<Command>, markdown_roots: &[String], config: &Config) -> Vec<Command> {
     
     // Create a set of file paths that are already handled by existing commands
     // This allows O(1) lookup to prevent creating duplicate commands for the same file
@@ -590,7 +595,7 @@ fn calculate_commands_checksum(commands: &[Command]) -> String {
 }
 
 /// Scans macOS contacts and creates commands for contacts with phone or email
-pub fn scan_contacts(mut commands: Vec<Command>) -> Vec<Command> {
+fn scan_contacts(mut commands: Vec<Command>) -> Vec<Command> {
     // First, remove all existing contact commands
     commands.retain(|cmd| cmd.action != "contact");
     
@@ -678,7 +683,7 @@ end tell
 #[cfg(test)]
 mod tests {
     use std::path::PathBuf;
-    use crate::core::is_anchor_file;
+    use crate::utils::is_anchor_file;
 
     #[test]
     fn test_is_anchor_file() {

@@ -1,19 +1,50 @@
 //! UI modules for the anchor selector
 //! 
-//! This module contains UI-specific logic separated from business logic.
+//! This module serves as the public API for UI functionality.
+//! ALL public exports are explicitly listed here.
+//!
+//! **IMPORTANT**: All items in submodules should be declared `pub(crate)` and 
+//! re-exported here as `pub` if they need external access. This mod.rs file 
+//! is the complete specification of what this crate exports.
 
-pub mod layout;
-pub mod popup_state;
-pub mod popup;
-pub mod command_editor;
-pub mod dialog;
+// Internal module declarations (accessible within crate)
+pub(crate) mod layout;
+pub(crate) mod popup_state;
+pub(crate) mod popup;
+pub(crate) mod command_editor;
+pub(crate) mod dialog;
+mod helpers;  // Only used within UI module
 
-// Re-export commonly used types
-pub use layout::{DisplayLayout, LayoutArrangement, Selection, Direction};
-pub use popup_state::PopupState;
-pub use popup::run_gui_with_prompt;
-pub use command_editor::{CommandEditor, CommandEditorResult};
-pub use dialog::Dialog;
+// ============================================================================
+// PUBLIC API - All external access goes through these re-exports
+// ============================================================================
 
-// Re-export ApplicationState from library root
-pub use crate::ApplicationState;
+// Layout and display types
+pub use layout::{
+    DisplayLayout, LayoutArrangement, Selection, Direction, SubmenuInfo
+};
+
+// Popup state management
+pub use popup_state::{
+    PopupState
+};
+
+// Main GUI entry point
+pub use popup::{
+    run_gui_with_prompt, AnchorSelector
+};
+
+// Command editor
+pub use command_editor::{
+    CommandEditor, CommandEditorResult
+};
+
+// Dialog system
+pub use dialog::{
+    Dialog, DialogElement, DialogRow
+};
+
+// Re-export ApplicationState from core
+pub use crate::core::{
+    ApplicationState
+};

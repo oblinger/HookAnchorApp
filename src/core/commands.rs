@@ -9,7 +9,7 @@ use std::env;
 use std::collections::HashMap;
 // sync imports removed - moved to sys_data module
 use serde::{Deserialize, Serialize};
-use super::config::Config;
+use crate::core::config::Config;
 
 /// Represents a parsed command with its components
 #[derive(Debug, Clone, PartialEq, Serialize, Deserialize)]
@@ -48,7 +48,7 @@ pub fn get_patch<'a>(patch_name: &str, patches: &'a HashMap<String, Patch>) -> O
 }
 
 /// Mapping from flag letters to their word descriptions
-pub const FLAG_LETTER_MAPPING: &[(&str, &str)] = &[
+pub(crate) const FLAG_LETTER_MAPPING: &[(&str, &str)] = &[
     ("M", "merge"),
     ("U", "user edited"),
     // Add more flag mappings here as needed
@@ -254,19 +254,19 @@ impl Command {
 }
 
 /// Returns the path to the commands.txt file
-pub fn get_commands_file_path() -> PathBuf {
+pub(crate) fn get_commands_file_path() -> PathBuf {
     let home = env::var("HOME").unwrap_or_else(|_| ".".to_string());
     Path::new(&home).join(".config/hookanchor/commands.txt")
 }
 
 /// Returns the path to the backups folder
-pub fn get_backups_folder_path() -> PathBuf {
+pub(crate) fn get_backups_folder_path() -> PathBuf {
     let home = env::var("HOME").unwrap_or_else(|_| ".".to_string());
     Path::new(&home).join(".config/hookanchor/backups")
 }
 
 /// Creates a backup of the commands file before saving
-pub fn backup_commands_file() -> Result<(), Box<dyn std::error::Error>> {
+pub(crate) fn backup_commands_file() -> Result<(), Box<dyn std::error::Error>> {
     let commands_path = get_commands_file_path();
     let backups_path = get_backups_folder_path();
     
@@ -884,7 +884,7 @@ pub fn run_patch_inference(
 
 /// Creates a fast lookup map from command names to their patch references
 /// This provides O(1) lookup for finding the patch associated with a command
-pub fn create_command_to_patch_map(commands: &[Command], patches: &HashMap<String, Patch>) -> HashMap<String, String> {
+pub(crate) fn create_command_to_patch_map(commands: &[Command], patches: &HashMap<String, Patch>) -> HashMap<String, String> {
     let mut command_to_patch_map = HashMap::new();
     
     for command in commands {
@@ -900,7 +900,7 @@ pub fn create_command_to_patch_map(commands: &[Command], patches: &HashMap<Strin
 
 /// Case-insensitive patch lookup - the canonical way to check if a patch exists
 /// Returns true if a patch with the given name exists (case-insensitive)
-pub fn patch_exists(patch_name: &str, patches: &HashMap<String, Patch>) -> bool {
+pub(crate) fn patch_exists(patch_name: &str, patches: &HashMap<String, Patch>) -> bool {
     get_patch(patch_name, patches).is_some()
 }
 
@@ -919,7 +919,7 @@ pub fn get_patch_for_command<'a>(command_name: &str, patches: &'a HashMap<String
 
 /// Normalizes patch case in commands to match the case of their anchor commands
 /// Returns the number of patches that were normalized
-pub fn normalize_patch_case(commands: &mut [Command], patches: &HashMap<String, Patch>) -> usize {
+pub(crate) fn normalize_patch_case(commands: &mut [Command], patches: &HashMap<String, Patch>) -> usize {
     let mut normalized_count = 0;
     
     for command in commands {
@@ -998,7 +998,7 @@ pub fn get_patch_path(command_name: &str, patches: &HashMap<String, Patch>) -> V
 }
 
 /// Find patch names that are referenced by commands but don't have corresponding anchor commands
-pub fn find_orphan_patches(patches: &HashMap<String, Patch>, commands: &[Command]) -> Vec<String> {
+pub(crate) fn find_orphan_patches(patches: &HashMap<String, Patch>, commands: &[Command]) -> Vec<String> {
     let mut orphan_patches = Vec::new();
     
     // Starting orphan detection
@@ -1060,7 +1060,7 @@ pub fn find_orphan_patches(patches: &HashMap<String, Patch>, commands: &[Command
 
 /// Ensure the "orphans" root patch exists to prevent cycles in the patch graph
 /// This creates an "orphans" anchor with no patch (root of the graph)
-pub fn ensure_orphans_root_patch(
+pub(crate) fn ensure_orphans_root_patch(
     patches: &mut HashMap<String, Patch>,
     commands: &mut Vec<Command>,
     config: &Config
@@ -1131,7 +1131,7 @@ pub fn ensure_orphans_root_patch(
 }
 
 /// Create orphan anchor files and commands for patches without anchors
-pub fn create_orphan_anchors(
+pub(crate) fn create_orphan_anchors(
     config: &Config, 
     orphan_patches: &[String], 
     commands: &mut Vec<Command>
@@ -1201,7 +1201,7 @@ pub fn create_orphan_anchors(
 
 /// Loads commands from the commands.txt file without any processing
 /// This is the raw loading function used by sys_data::load_data()
-pub fn load_commands_raw() -> Vec<Command> {
+pub(crate) fn load_commands_raw() -> Vec<Command> {
     let path = get_commands_file_path();
     
     if !path.exists() {
@@ -1499,7 +1499,7 @@ pub fn delete_command(command_to_delete: &str, commands: &mut Vec<Command>) -> R
 }
 
 /// Filters commands based on search text with fuzzy matching and patch support
-pub fn filter_commands_with_patch_support(commands: &[Command], search_text: &str, max_results: usize, _word_separators: &str, debug: bool) -> Vec<Command> {
+pub(crate) fn filter_commands_with_patch_support(commands: &[Command], search_text: &str, max_results: usize, _word_separators: &str, debug: bool) -> Vec<Command> {
     if search_text.is_empty() {
         return Vec::new();
     }
@@ -1946,7 +1946,7 @@ pub fn split_commands(commands: &[Command], search_text: &str, separators: &str)
 }
 
 /// Gets the current submenu prefix by checking full command set for patch matches
-pub fn get_current_submenu_prefix_from_commands_full(all_commands: &[Command], filtered_commands: &[Command], search_text: &str, separators: &str) -> Option<String> {
+pub(crate) fn get_current_submenu_prefix_from_commands_full(all_commands: &[Command], filtered_commands: &[Command], search_text: &str, separators: &str) -> Option<String> {
     if search_text.is_empty() {
         return None;
     }
@@ -2087,7 +2087,7 @@ pub fn get_current_submenu_prefix(search_text: &str) -> Option<String> {
 }
 
 /// Gets commands for a submenu with the given prefix
-pub fn get_submenu_commands(commands: &[Command], prefix: &str, separators: &str) -> Vec<Command> {
+pub(crate) fn get_submenu_commands(commands: &[Command], prefix: &str, separators: &str) -> Vec<Command> {
     let mut result = Vec::new();
     let mut inside_commands = Vec::new();
     let mut outside_commands = Vec::new();
@@ -2658,3 +2658,336 @@ mod tests {
 // #[path = "commands_merge_tests.rs"]
 // #[cfg(test)]
 // mod merge_tests;
+
+// ============================================================================
+// Folder Merge Operations
+// (Previously in command_operations.rs)
+// ============================================================================
+
+/// Find orphan folders that should be merged with their non-orphan counterparts
+/// Returns pairs of (orphan_folder, target_folder) that should be merged
+pub(crate) fn find_orphan_folder_merges(
+    orphans_path: &Path,
+    vault_root: &Path,
+) -> Vec<(PathBuf, PathBuf)> {
+    let mut merges = Vec::new();
+    
+    // Read all folders in orphans directory
+    let orphan_entries = match fs::read_dir(orphans_path) {
+        Ok(entries) => entries,
+        Err(e) => {
+            crate::utils::log(&format!("MERGE: Could not read orphans directory: {}", e));
+            return merges;
+        }
+    };
+    
+    for entry in orphan_entries.filter_map(Result::ok) {
+        let orphan_folder = entry.path();
+        if !orphan_folder.is_dir() {
+            continue;
+        }
+        
+        // Check if this folder has an anchor file (folder_name.md)
+        let folder_name = match orphan_folder.file_name() {
+            Some(name) => name.to_string_lossy().to_string(),
+            None => continue,
+        };
+        
+        let orphan_anchor = orphan_folder.join(format!("{}.md", folder_name));
+        if !orphan_anchor.exists() {
+            crate::utils::detailed_log("MERGE", &format!("Skipping {} - no anchor file at {}", folder_name, orphan_anchor.display()));
+            continue;
+        }
+        
+        // Search for a matching anchor outside orphans
+        crate::utils::detailed_log("MERGE", &format!("Searching for match for orphan anchor: {}", folder_name));
+        if let Some(target_folder) = find_matching_anchor(&folder_name, vault_root, orphans_path) {
+            // Keep this as regular log since merges are important events
+            crate::utils::log(&format!("MERGE: Found merge candidate: {} -> {}", 
+                orphan_folder.display(), target_folder.display()));
+            merges.push((orphan_folder, target_folder));
+        } else {
+            crate::utils::detailed_log("MERGE", &format!("No match found for orphan anchor: {}", folder_name));
+        }
+    }
+    
+    merges
+}
+
+/// Find a matching anchor folder in the vault (excluding orphans)
+fn find_matching_anchor(
+    anchor_name: &str,
+    search_root: &Path,
+    orphans_path: &Path,
+) -> Option<PathBuf> {
+    find_matching_anchor_recursive(anchor_name, search_root, orphans_path)
+}
+
+fn find_matching_anchor_recursive(
+    anchor_name: &str,
+    current_dir: &Path,
+    orphans_path: &Path,
+) -> Option<PathBuf> {
+    // Skip if we're in the orphans directory
+    if current_dir.starts_with(orphans_path) {
+        return None;
+    }
+    
+    // First check if current directory contains the standard anchor file (folder_name/folder_name.md)
+    let potential_anchor = current_dir.join(anchor_name).join(format!("{}.md", anchor_name));
+    if potential_anchor.exists() {
+        crate::utils::log(&format!("MERGE: Found matching anchor at: {}", potential_anchor.display()));
+        return Some(current_dir.join(anchor_name));
+    }
+    
+    // NEW: Also check if any directory contains an anchor file with the target name
+    // This handles cases like HookAnchor/HA.md where HA is an alias for HookAnchor
+    if let Ok(entries) = fs::read_dir(current_dir) {
+        for entry in entries.filter_map(Result::ok) {
+            let path = entry.path();
+            if path.is_dir() {
+                // Skip hidden directories
+                if let Some(name) = path.file_name() {
+                    if name.to_string_lossy().starts_with('.') {
+                        continue;
+                    }
+                }
+                
+                // Check if this directory contains the anchor file we're looking for
+                let alias_anchor = path.join(format!("{}.md", anchor_name));
+                if alias_anchor.exists() {
+                    // Verify it's actually marked as an anchor by checking if it's in our commands
+                    // This prevents false positives from random markdown files
+                    crate::utils::log(&format!("MERGE: Found potential alias anchor at: {}", alias_anchor.display()));
+                    return Some(path);
+                }
+            }
+        }
+    }
+    
+    // Recursively search subdirectories
+    if let Ok(entries) = fs::read_dir(current_dir) {
+        for entry in entries.filter_map(Result::ok) {
+            let path = entry.path();
+            if path.is_dir() {
+                // Skip hidden directories
+                if let Some(name) = path.file_name() {
+                    if name.to_string_lossy().starts_with('.') {
+                        continue;
+                    }
+                }
+                
+                if let Some(found) = find_matching_anchor_recursive(anchor_name, &path, orphans_path) {
+                    return Some(found);
+                }
+            }
+        }
+    }
+    
+    None
+}
+
+/// Merge one folder into another (source -> destination)
+/// This will merge markdown content and move all files from source to destination
+pub(crate) fn merge_folders(
+    source_folder: &Path,
+    dest_folder: &Path,
+) -> Result<(), String> {
+    crate::utils::log(&format!("MERGE: Starting merge of {} -> {}", 
+        source_folder.display(), dest_folder.display()));
+    
+    // Get folder name for anchor file
+    let folder_name = source_folder
+        .file_name()
+        .ok_or_else(|| "Invalid source folder path".to_string())?
+        .to_string_lossy()
+        .to_string();
+    
+    // Merge markdown files
+    let source_md = source_folder.join(format!("{}.md", folder_name));
+    
+    // Check for both standard location and alias location
+    let dest_folder_name = dest_folder
+        .file_name()
+        .ok_or_else(|| "Invalid destination folder path".to_string())?
+        .to_string_lossy()
+        .to_string();
+    
+    // Try the alias location first (e.g., HookAnchor/HA.md)
+    let dest_md_alias = dest_folder.join(format!("{}.md", folder_name));
+    // Then try the standard location (e.g., HookAnchor/HookAnchor.md)
+    let dest_md_standard = dest_folder.join(format!("{}.md", dest_folder_name));
+    
+    // Use the alias location if it exists, otherwise use standard
+    let dest_md = if dest_md_alias.exists() {
+        crate::utils::log(&format!("MERGE: Using alias anchor file: {}", dest_md_alias.display()));
+        dest_md_alias.clone()
+    } else {
+        dest_md_standard
+    };
+    
+    if source_md.exists() && dest_md.exists() {
+        merge_markdown_files(&source_md, &dest_md)?;
+        
+        // Delete the source markdown file after successful merge
+        fs::remove_file(&source_md)
+            .map_err(|e| format!("Failed to remove source markdown after merge: {}", e))?;
+        crate::utils::log(&format!("MERGE: Removed source markdown: {}", source_md.display()));
+    } else if source_md.exists() && !dest_md.exists() {
+        // If destination doesn't exist, just move the source file
+        crate::utils::log(&format!("MERGE: Moving orphan anchor to destination: {} -> {}", 
+            source_md.display(), dest_md.display()));
+        fs::rename(&source_md, &dest_md)
+            .map_err(|e| format!("Failed to move orphan anchor: {}", e))?;
+    }
+    
+    // Migrate all other files
+    migrate_files(source_folder, dest_folder, &folder_name)?;
+    
+    // Remove empty source folder
+    cleanup_empty_folder(source_folder)?;
+    
+    crate::utils::log(&format!("MERGE: Completed merge successfully"));
+    Ok(())
+}
+
+/// Merge two markdown files by appending source to destination
+fn merge_markdown_files(
+    source_md: &Path,
+    dest_md: &Path,
+) -> Result<(), String> {
+    let source_content = fs::read_to_string(source_md)
+        .map_err(|e| format!("Failed to read source markdown: {}", e))?;
+    
+    let dest_content = fs::read_to_string(dest_md)
+        .map_err(|e| format!("Failed to read destination markdown: {}", e))?;
+    
+    // Check if source content is just auto-generated template
+    let is_auto_generated = source_content.contains("This is an auto-generated anchor file");
+    
+    // Check if destination already contains the auto-generated text
+    let dest_has_auto_generated = dest_content.contains("This is an auto-generated anchor file");
+    
+    // If both source and destination have auto-generated content, or if source is just
+    // auto-generated and destination already has content, skip the merge
+    if is_auto_generated && (dest_has_auto_generated || !dest_content.trim().is_empty()) {
+        crate::utils::log(&format!("MERGE: Skipping merge of auto-generated content into {}", 
+            dest_md.display()));
+        return Ok(());
+    }
+    
+    // Otherwise, merge with a separator
+    let merged_content = format!("{}\n\n---\n\n{}", dest_content, source_content);
+    
+    fs::write(dest_md, merged_content)
+        .map_err(|e| format!("Failed to write merged markdown: {}", e))?;
+    
+    crate::utils::log(&format!("MERGE: Merged markdown content ({} + {} -> {})", 
+        source_md.display(), dest_md.display(), dest_md.display()));
+    
+    Ok(())
+}
+
+/// Migrate all files from source folder to destination folder
+/// Skip the anchor markdown file itself as it's already merged
+fn migrate_files(
+    source_folder: &Path,
+    dest_folder: &Path,
+    anchor_name: &str,
+) -> Result<(), String> {
+    let anchor_filename = format!("{}.md", anchor_name);
+    
+    let entries = fs::read_dir(source_folder)
+        .map_err(|e| format!("Failed to read source folder: {}", e))?;
+    
+    for entry in entries.filter_map(Result::ok) {
+        let source_path = entry.path();
+        let filename = match source_path.file_name() {
+            Some(name) => name.to_string_lossy().to_string(),
+            None => continue,
+        };
+        
+        // Skip the anchor markdown file
+        if filename == anchor_filename {
+            continue;
+        }
+        
+        // Skip directories for now (could be enhanced to handle subdirs)
+        if source_path.is_dir() {
+            crate::utils::log(&format!("MERGE: Skipping subdirectory: {}", source_path.display()));
+            continue;
+        }
+        
+        // Generate unique filename if needed
+        let dest_path = generate_unique_path(dest_folder, &filename);
+        
+        // Move the file
+        fs::rename(&source_path, &dest_path)
+            .map_err(|e| format!("Failed to move file {}: {}", source_path.display(), e))?;
+        
+        if dest_path.file_name().unwrap().to_string_lossy() != filename {
+            crate::utils::log(&format!("MERGE: Moved file: {} -> {} (resolved naming conflict)", 
+                source_path.display(), dest_path.display()));
+        } else {
+            crate::utils::log(&format!("MERGE: Moved file: {} -> {}", 
+                source_path.display(), dest_path.display()));
+        }
+    }
+    
+    Ok(())
+}
+
+/// Generate a unique path by adding _1, _2, etc. suffix if needed
+fn generate_unique_path(folder: &Path, filename: &str) -> PathBuf {
+    let mut candidate = folder.join(filename);
+    
+    if !candidate.exists() {
+        return candidate;
+    }
+    
+    // Split filename into base and extension
+    let (base, ext) = match filename.rfind('.') {
+        Some(pos) => (&filename[..pos], &filename[pos..]),
+        None => (filename, ""),
+    };
+    
+    // Try suffixes until we find an available name
+    let mut counter = 1;
+    loop {
+        candidate = folder.join(format!("{}_{}{}", base, counter, ext));
+        if !candidate.exists() {
+            return candidate;
+        }
+        counter += 1;
+        
+        if counter > 1000 {
+            // Safety check to prevent infinite loop
+            use std::time::{SystemTime, UNIX_EPOCH};
+            let timestamp = SystemTime::now()
+                .duration_since(UNIX_EPOCH)
+                .unwrap_or_default()
+                .as_secs();
+            candidate = folder.join(format!("{}_{}_t{}{}", base, counter, timestamp, ext));
+            return candidate;
+        }
+    }
+}
+
+/// Remove an empty folder
+fn cleanup_empty_folder(folder: &Path) -> Result<(), String> {
+    // Check if folder is truly empty
+    let is_empty = fs::read_dir(folder)
+        .map_err(|e| format!("Failed to check folder contents: {}", e))?
+        .next()
+        .is_none();
+    
+    if is_empty {
+        fs::remove_dir(folder)
+            .map_err(|e| format!("Failed to remove empty folder: {}", e))?;
+        crate::utils::log(&format!("MERGE: Removed empty folder: {}", folder.display()));
+    } else {
+        crate::utils::log(&format!("MERGE: Folder not empty, keeping: {}", folder.display()));
+    }
+    
+    Ok(())
+}

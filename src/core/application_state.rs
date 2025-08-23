@@ -3,10 +3,11 @@
 //! This module contains the ApplicationState struct that manages global state
 //! spanning both GUI and CLI modes, including commands, configuration, and search state.
 
-use super::{Command, Config};
+use super::Config;
+use super::Command;
 use super::config::{load_config_with_error, ConfigResult};
 use super::state::AppState;
-use crate::{load_state, save_state, utils};
+use crate::{core::state::{load_state, save_state}, utils};
 
 /// Global application state that spans both GUI and CLI modes
 pub struct ApplicationState {
@@ -117,7 +118,7 @@ impl ApplicationState {
     /// Get display commands with submenu information
     /// Returns (commands_to_display, is_in_submenu, menu_prefix, inside_count)
     pub fn get_display_commands(&self) -> (Vec<Command>, bool, Option<String>, usize) {
-        use super::commands::get_current_submenu_prefix_from_commands;
+        use crate::core::commands::get_current_submenu_prefix_from_commands;
         
         // Check if we're in submenu mode
         if let Some(menu_prefix) = get_current_submenu_prefix_from_commands(&self.filtered_commands, &self.search_text, &self.config.popup_settings.word_separators) {
@@ -166,7 +167,7 @@ impl ApplicationState {
     
     /// Recompute filtered commands based on current search
     fn recompute_filtered_commands(&mut self) {
-        use super::commands::get_display_commands;
+        use crate::core::commands::get_display_commands;
         
         let total_limit = self.config.popup_settings.max_rows * self.config.popup_settings.max_columns;
         let sys_data = super::sys_data::SysData {

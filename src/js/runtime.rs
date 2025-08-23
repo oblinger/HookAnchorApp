@@ -63,17 +63,17 @@ use std::path::{Path, PathBuf};
 use std::fs;
 use regex::Regex;
 use std::os::unix::process::ExitStatusExt;
-use crate::Config;
+use crate::core::Config;
 use crate::utils::expand_tilde;
 
 /// Creates a JavaScript runtime with all business logic built-ins configured
-pub fn create_business_logic_runtime() -> Result<Context, Box<dyn std::error::Error>> {
+fn create_business_logic_runtime() -> Result<Context, Box<dyn std::error::Error>> {
     let config = crate::core::sys_data::get_config();
     create_business_logic_runtime_with_config(&config)
 }
 
 /// Creates a JavaScript runtime with built-ins and user-defined functions from config
-pub fn create_business_logic_runtime_with_config(config: &Config) -> Result<Context, Box<dyn std::error::Error>> {
+fn create_business_logic_runtime_with_config(config: &Config) -> Result<Context, Box<dyn std::error::Error>> {
     let rt = Runtime::new()?;
     let ctx = Context::full(&rt)?;
     
@@ -92,19 +92,25 @@ pub fn create_business_logic_runtime_with_config(config: &Config) -> Result<Cont
     Ok(ctx)
 }
 
-/// Setup all built-in functions in a JavaScript context (for use by other modules)
-pub fn setup_all_builtins(ctx: &rquickjs::Ctx<'_>) -> Result<(), Box<dyn std::error::Error>> {
+/// Setup function for creating custom runtime contexts (for use by other modules)
+/// Sets up all built-in functions and loads user functions from config.js
+pub fn setup_runtime(ctx: &rquickjs::Ctx<'_>) -> Result<(), Box<dyn std::error::Error>> {
     setup_logging(ctx)?;
     setup_file_operations(ctx)?;
     setup_path_utilities(ctx)?;
     setup_text_processing(ctx)?;
     setup_data_parsing(ctx)?;
     setup_launcher_builtins(ctx)?;
+    
+    // Also load user-defined functions from config.js
+    load_config_js_functions(ctx)?;
+    
     Ok(())
 }
 
 /// Execute JavaScript code in a configured runtime
-pub fn execute_business_logic(script: &str) -> Result<String, Box<dyn std::error::Error>> {
+/// Main function for executing JavaScript code in a sandboxed environment
+pub fn execute(script: &str) -> Result<String, Box<dyn std::error::Error>> {
     let ctx = create_business_logic_runtime()?;
     
     ctx.with(|ctx| {
@@ -360,7 +366,7 @@ fn setup_launcher_builtins(ctx: &Ctx<'_>) -> Result<(), Box<dyn std::error::Erro
     // error(message) -> displays an error to the user
     ctx.globals().set("error", Function::new(ctx.clone(), |message: String| {
         // Queue the error for display in the UI
-        crate::error_display::queue_user_error(&message);
+        crate::utils::error::queue_user_error(&message);
         crate::utils::log(&format!("JS_ERROR: {}", message));
         // Return empty string since this is a void function
         String::new()
@@ -586,7 +592,7 @@ fn setup_launcher_builtins(ctx: &Ctx<'_>) -> Result<(), Box<dyn std::error::Erro
         let config = crate::core::sys_data::get_config();
         if let Some(actions) = &config.actions {
             if let Some(action_def) = actions.get(action_name) {
-                match crate::core::actions::execute_locally(
+                match crate::execute::execute_on_server_with_parameters(
                     action_def,
                     Some(args),
                     None
@@ -666,7 +672,7 @@ fn setup_launcher_builtins(ctx: &Ctx<'_>) -> Result<(), Box<dyn std::error::Erro
 }
 
 /// Setup configuration access functions
-pub fn setup_config_access(ctx: &Ctx<'_>, config: &Config) -> Result<(), Box<dyn std::error::Error>> {
+fn setup_config_access(ctx: &Ctx<'_>, config: &Config) -> Result<(), Box<dyn std::error::Error>> {
     // Get launcher settings with defaults
     let launcher_settings = config.launcher_settings.as_ref()
         .cloned()
@@ -678,7 +684,7 @@ pub fn setup_config_access(ctx: &Ctx<'_>, config: &Config) -> Result<(), Box<dyn
     let obsidian_vault_name = launcher_settings.obsidian_vault_name
         .unwrap_or_else(|| "kmr".to_string());
     let obsidian_vault_path = launcher_settings.obsidian_vault_path
-        .map(|p| crate::utils::expand_tilde(&p))
+        .map(|ref p| crate::utils::expand_tilde(p))
         .unwrap_or_else(|| {
             let home = std::env::var("HOME").unwrap_or_else(|_| ".".to_string());
             format!("{}/Documents", home)
@@ -705,7 +711,7 @@ pub fn setup_config_access(ctx: &Ctx<'_>, config: &Config) -> Result<(), Box<dyn
 
 /// Setup user-defined functions from configuration
 /// Load JavaScript functions from config.js file
-pub fn load_config_js_functions(ctx: &Ctx<'_>) -> Result<(), Box<dyn std::error::Error>> {
+fn load_config_js_functions(ctx: &Ctx<'_>) -> Result<(), Box<dyn std::error::Error>> {
     let config_js_path = expand_tilde("~/.config/hookanchor/config.js");
     crate::utils::detailed_log("JS", &format!("Looking for config.js at: {}", config_js_path));
     if Path::new(&config_js_path).exists() {
@@ -851,7 +857,7 @@ mod tests {
 
     #[test]
     fn test_basic_js_execution() {
-        let result = execute_business_logic("2 + 2").unwrap();
+        let result = execute("2 + 2").unwrap();
         assert_eq!(result, "4");
     }
 
@@ -863,7 +869,7 @@ mod tests {
             error("Error message");
             "done"
         "#;
-        let result = execute_business_logic(script).unwrap();
+        let result = execute(script).unwrap();
         assert_eq!(result, "done");
     }
 
@@ -876,7 +882,7 @@ mod tests {
             const base = basename(joined);
             base
         "#;
-        let result = execute_business_logic(script).unwrap();
+        let result = execute(script).unwrap();
         assert_eq!(result, "documents");
     }
 }

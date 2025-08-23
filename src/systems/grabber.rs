@@ -6,8 +6,9 @@
 
 use std::process::Command as ProcessCommand;
 use serde::{Deserialize, Serialize};
-use crate::{Command, Config};
-use crate::core::{get_action, get_default_patch_for_action};
+use crate::core::Command;
+use crate::core::Config;
+use crate::execute::{get_action, get_default_patch_for_action};
 use rquickjs::{Runtime, Context, Value};
 
 /// Information captured about the active application
@@ -38,7 +39,7 @@ pub struct GrabberRule {
 }
 
 /// Captures information about the currently focused application
-pub fn capture_active_app() -> Result<AppContext, String> {
+fn capture_active_app() -> Result<AppContext, String> {
     
     // Use AppleScript to get information about the frontmost application
     let script = r#"
@@ -89,7 +90,7 @@ pub fn capture_active_app() -> Result<AppContext, String> {
 }
 
 /// Get additional browser-specific information
-pub fn get_browser_info(bundle_id: &str) -> Option<String> {
+fn get_browser_info(bundle_id: &str) -> Option<String> {
     
     let browser_script = match bundle_id {
         "com.google.Chrome" => {
@@ -157,7 +158,7 @@ pub fn get_browser_info(bundle_id: &str) -> Option<String> {
 }
 
 /// Get Obsidian active file URL by triggering copy URL shortcut
-pub fn get_obsidian_url() -> Option<String> {
+fn get_obsidian_url() -> Option<String> {
     crate::utils::debug_log("GRAB", "Getting Obsidian URL (includes 300ms clipboard delay)");
     
     let script = r#"
@@ -199,7 +200,7 @@ pub fn get_obsidian_url() -> Option<String> {
 }
 
 /// Get Notion page URL by triggering copy link shortcut
-pub fn get_notion_url() -> Option<String> {
+fn get_notion_url() -> Option<String> {
     crate::utils::debug_log("GRAB", "Getting Notion URL (includes 300ms clipboard delay)");
     
     let script = r#"
@@ -241,7 +242,7 @@ pub fn get_notion_url() -> Option<String> {
 }
 
 /// Get Finder-specific information including selection
-pub fn get_finder_info() -> Option<serde_json::Value> {
+fn get_finder_info() -> Option<serde_json::Value> {
     
     let mut finder_info = serde_json::json!({});
     
@@ -350,7 +351,7 @@ fn extract_slack_info(window_title: &str) -> Option<String> {
 }
 
 /// Enrich the app context with additional information based on the app
-pub fn enrich_context(mut context: AppContext) -> AppContext {
+fn enrich_context(mut context: AppContext) -> AppContext {
     
     // Add browser URL if applicable
     if context.bundle_id.contains("Chrome") || 
@@ -363,7 +364,8 @@ pub fn enrich_context(mut context: AppContext) -> AppContext {
     }
     
     // Add Finder path and selection info if applicable
-    if context.bundle_id == "com.apple.finder" {
+    crate::utils::debug_log("GRABBER", &format!("Bundle ID: '{}', checking for Finder...", context.bundle_id));
+    if context.bundle_id == "com.apple.finder" || context.bundle_id == "com.apple.Finder" {
         crate::utils::debug_log("GRABBER", "Enriching Finder context...");
         if let Some(finder_info) = get_finder_info() {
             crate::utils::debug_log("GRABBER", &format!("Got Finder info: {:?}", finder_info));
@@ -422,7 +424,7 @@ pub fn enrich_context(mut context: AppContext) -> AppContext {
 }
 
 /// Match the app context against grabber rules and return the first match
-pub fn match_grabber_rules(
+fn match_grabber_rules(
     context: &AppContext,
     rules: &[GrabberRule],
     _config: &Config,
@@ -481,7 +483,7 @@ pub fn match_grabber_rules(
                             // Apply patch inference if no explicit patch was set
                             if command.patch.is_empty() {
                                 // First try to get default patch for action type
-                                if let Some(default_patch) = crate::core::actions::get_default_patch_for_action(&command.action) {
+                                if let Some(default_patch) = crate::execute::get_default_patch_for_action(&command.action) {
                                     crate::utils::debug_log("GRABBER", &format!("Using default patch '{}' for action '{}'", default_patch, command.action));
                                     command.patch = default_patch.to_string();
                                 } else if let Some(inferred_patch) = crate::core::commands::infer_patch(&command, patches) {
@@ -621,7 +623,7 @@ pub enum GrabResult {
     NoRuleMatched(AppContext),
 }
 
-/// Perform a grab operation: capture context and match against rules
+/// Main function for capturing and matching context (used by UI)
 pub fn grab(config: &Config) -> Result<GrabResult, String> {
     crate::utils::debug_log("GRAB", "grabber::grab() starting - capturing active app");
     
@@ -656,4 +658,32 @@ pub fn grab(config: &Config) -> Result<GrabResult, String> {
     }
     
     Ok(GrabResult::NoRuleMatched(context))
+}
+
+/// Debug function for CLI testing and rule development
+pub fn grab_debug(config: &Config) -> Result<AppContext, String> {
+    // Capture and enrich context
+    let context = capture_active_app()?;
+    println!("📱 Captured context:");
+    println!("  App: {}", context.app_name);
+    println!("  Bundle: {}", context.bundle_id);
+    println!("  Title: {}", context.window_title);
+    
+    let context = enrich_context(context);
+    println!("🔍 Enriched properties: {}", serde_json::to_string_pretty(&context.properties).unwrap_or_default());
+    
+    // Test against rules if available
+    if let Some(rules) = config.grabber_rules.as_ref() {
+        if let Some((rule_name, command)) = match_grabber_rules(&context, rules, config) {
+            println!("✅ Rule matched: '{}' -> {}", rule_name, command.to_new_format());
+        } else {
+            println!("❌ No rules matched");
+            let template = generate_rule_template_text(&context);
+            println!("💡 Suggested rule template:\n{}", template);
+        }
+    } else {
+        println!("ℹ️  No grabber rules configured");
+    }
+    
+    Ok(context)
 }

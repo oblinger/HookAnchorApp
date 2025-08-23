@@ -4,9 +4,9 @@
 
 use eframe::egui::{self, IconData};
 use std::sync::OnceLock;
-use crate::{
-    Command, execute_via_server, 
-    Config, load_state, save_state, scanner, grabber
+use crate::core::Command;
+use crate::core::{
+    Config, load_state, save_state
 };
 use crate::core::key_processing::{PopupInterface, KeyRegistry, create_default_key_registry};
 use crate::core::commands::get_patch_path;
@@ -80,6 +80,8 @@ pub struct AnchorSelector {
     should_exit: bool,
     /// Track if window is currently hidden
     is_hidden: bool,
+    /// Flag to track if rebuild is pending (deferred to next frame)
+    pending_rebuild: bool,
 }
 
 /// Loading state for deferred initialization
@@ -285,6 +287,13 @@ impl AnchorSelector {
             self.popup_state.search_text.clear();
             self.popup_state.update_search(String::new());
             
+            // IMPORTANT: Restore focus to the previous application before hiding
+            // This ensures that text insertion and other operations work correctly
+            crate::utils::verbose_log("EXIT_OR_HIDE", "Restoring focus to previous application");
+            if let Err(e) = self.regain_focus() {
+                crate::utils::log_error(&format!("Failed to restore focus before hiding: {}", e));
+            }
+            
             // Hide the window using egui's viewport command
             crate::utils::verbose_log("EXIT_OR_HIDE", "Sending ViewportCommand::Visible(false)");
             ctx.send_viewport_cmd(egui::ViewportCommand::Visible(false));
@@ -323,7 +332,7 @@ impl AnchorSelector {
     fn perform_exit_scanner_check(&mut self) {
         if self.scanner_check_pending {
             self.scanner_check_pending = false;
-            let updated_commands = scanner::file_scan_check(self.popup_state.get_commands().to_vec());
+            let updated_commands = crate::systems::scan_check(self.popup_state.get_commands().to_vec());
             if updated_commands.len() != self.popup_state.get_commands().len() {
                 // Commands have changed, update the popup state for next time
                 self.popup_state.set_commands(updated_commands);
@@ -410,8 +419,8 @@ impl PopupInterface for AnchorSelector {
         self.navigate_horizontal(delta);
     }
     
-    fn trigger_rebuild(&mut self) {
-        self.trigger_rebuild();
+    fn trigger_rebuild(&mut self, ctx: &egui::Context) {
+        self.trigger_rebuild(ctx);
     }
     
     fn start_grabber_countdown(&mut self, ctx: &egui::Context) {
@@ -544,69 +553,50 @@ impl AnchorSelector {
     // Unified Action Execution System
     // =============================================================================
     
-    /// Main entry point for executing actions - routes based on action type
-    fn execute(&mut self, action: &crate::core::actions::Action) {
+    /// Main entry point for executing actions from the popup
+    fn execute(&mut self, action: &crate::execute::Action) {
         use crate::utils::debug_log;
         
-        debug_log("ACTION_EXEC", &format!("Executing action type: {}", action.action_type()));
+        debug_log("POPUP_EXEC", &format!("Executing action type: {}", action.action_type()));
         
+        // Execute the action - will route to server or local as appropriate
         match action.action_type() {
-            // Actions that require UI interaction stay in popup
+            // UI actions need special handling in popup
             "template" | "popup" => {
-                debug_log("ACTION_EXEC", "Executing locally (UI action)");
-                self.execute_locally(action);
+                debug_log("POPUP_EXEC", "Executing UI action in popup");
+                self.execute_in_popup(action);
             }
-            // Everything else goes to server
+            // All other actions go to server
             _ => {
-                debug_log("ACTION_EXEC", "Sending to server for execution");
-                self.send_action_to_server(action);
+                let _ = crate::execute::execute_on_server(action);
+                debug_log("POPUP_EXEC", "Action sent to server");
+                self.should_exit = true;
             }
         }
     }
     
-    /// Execute an action locally in the popup context
-    fn execute_locally(&mut self, action: &crate::core::actions::Action) {
+    /// Execute an action in the popup context (for UI-requiring actions)
+    fn execute_in_popup(&mut self, action: &crate::execute::Action) {
         use crate::utils::{debug_log, log_error};
         
-        debug_log("ACTION_LOCAL", &format!("Executing {} locally", action.action_type()));
+        debug_log("POPUP_LOCAL", &format!("Executing {} locally", action.action_type()));
         
         // For template actions, we need special UI handling
         if action.action_type() == "template" {
             // Get template name from action or use default
             let template_name = action.get_string("name").unwrap_or("default");
-            debug_log("ACTION_LOCAL", &format!("Processing template UI: {}", template_name));
+            debug_log("POPUP_LOCAL", &format!("Processing template UI: {}", template_name));
             
             // Use existing template UI handling
             self.handle_template_create_named_impl(template_name);
+        } else if action.action_type() == "popup" {
+            // Handle popup control actions
+            debug_log("POPUP_LOCAL", "Handling popup control action");
+            // TODO: Implement popup control (show/hide/etc)
+            self.should_exit = true;
         } else {
-            // All other actions go through the unified actions::execute_locally
-            match crate::core::actions::execute_locally(action, None, None) {
-                Ok(result) => {
-                    debug_log("ACTION_LOCAL", &format!("Action executed successfully: {}", result));
-                    self.should_exit = true;
-                }
-                Err(e) => {
-                    log_error(&format!("Failed to execute action locally: {}", e));
-                }
-            }
-        }
-    }
-    
-    /// Send an action to the server for execution
-    fn send_action_to_server(&mut self, action: &crate::core::actions::Action) {
-        use crate::utils::{debug_log, log_error};
-        
-        debug_log("ACTION_SERVER", &format!("Sending action to server: {:?}", action));
-        
-        // Use the new unified send_for_execution function
-        match crate::execution_server::send_for_execution(action) {
-            Ok(()) => {
-                debug_log("ACTION_SERVER", "Action sent successfully");
-                self.should_exit = true;
-            }
-            Err(e) => {
-                log_error(&format!("Failed to send action to server: {}", e));
-            }
+            // This shouldn't happen - non-UI actions should go to server
+            log_error(&format!("Unexpected action type in execute_in_popup: {}", action.action_type()));
         }
     }
     
@@ -627,7 +617,7 @@ impl AnchorSelector {
                     
                     // Convert command to action and execute through unified system
                     crate::utils::log("=== UNIFIED ACTION SYSTEM: Converting command to action ===");
-                    use crate::core::actions::command_to_action;
+                    use crate::execute::command_to_action;
                     let action = command_to_action(selected_cmd);
                     crate::utils::log(&format!("UNIFIED ACTION: Created action type='{}' from command='{}'", 
                         action.action_type(), selected_cmd.command));
@@ -667,7 +657,7 @@ impl AnchorSelector {
             let search_text = self.popup_state.search_text.clone();
             
             // Create a new command with alias action
-            let alias_command = crate::Command {
+            let alias_command = crate::core::Command {
                 patch: String::new(),
                 command: search_text.clone(),
                 action: "alias".to_string(),
@@ -710,7 +700,7 @@ impl AnchorSelector {
         
         if !input_text.is_empty() {
             // Create a new command with the input as the name
-            let new_command = crate::core::commands::Command {
+            let new_command = crate::core::Command {
                 command: input_text.clone(),
                 action: String::new(),  // Blank action for user to fill
                 arg: String::new(),     // Blank arg for user to fill
@@ -733,9 +723,9 @@ impl AnchorSelector {
                 // Don't copy link if it's a separator
                 if !PopupState::is_separator_command(selected_cmd) {
                     // Use launcher to execute the link_to_clipboard action
-                    let link_cmd = crate::execution_server::make_command("link_to_clipboard", &selected_cmd.command);
-                    // execute_via_server now returns void and handles all retries internally
-                    execute_via_server(&link_cmd);
+                    let link_action = crate::execute::make_action("link_to_clipboard", &selected_cmd.command);
+                    // Execute the action
+                    let _ = crate::execute::execute_on_server(&link_action);
                 }
             }
         }
@@ -777,14 +767,14 @@ impl AnchorSelector {
             
             // Sort actions by key for consistent display
             for (name, action) in actions {
-                if let Some(ref key) = action.key {
-                    let desc = action.description.as_ref()
-                        .map(|s| s.clone())
+                if let Some(key) = action.key() {
+                    let desc = action.description()
+                        .map(|s| s.to_string())
                         .unwrap_or_else(|| name.clone());
                     
-                    let entry = (key.clone(), desc);
+                    let entry = (key.to_string(), desc);
                     
-                    match action.action_type.as_str() {
+                    match action.action_type() {
                         "popup" => popup_actions.push(entry),
                         "template" => template_actions.push(entry),
                         _ => other_actions.push(entry),
@@ -927,8 +917,8 @@ impl AnchorSelector {
         let found_action = if let Some(ref actions) = config.actions {
             crate::utils::log(&format!("TEMPLATE: DEBUG 4 - config.actions is Some, Found {} actions in config", actions.len()));
             if let Some(action) = actions.get(template_name) {
-                crate::utils::log(&format!("TEMPLATE: DEBUG 5 - Found action '{}', type='{}'", template_name, action.action_type));
-                if action.action_type == "template" {
+                crate::utils::log(&format!("TEMPLATE: DEBUG 5 - Found action '{}', type='{}'", template_name, action.action_type()));
+                if action.action_type() == "template" {
                     crate::utils::log("TEMPLATE: DEBUG 6 - Action type is 'template'");
                     // Extract grab parameter if present
                     crate::utils::log("TEMPLATE: DEBUG 7 - About to extract grab parameter");
@@ -955,7 +945,7 @@ impl AnchorSelector {
                     // This is a temporary compatibility layer
                     true
                 } else {
-                    crate::utils::log(&format!("TEMPLATE: Action '{}' is not a template (type='{}')", template_name, action.action_type));
+                    crate::utils::log(&format!("TEMPLATE: Action '{}' is not a template (type='{}')", template_name, action.action_type()));
                     false
                 }
             } else {
@@ -1107,10 +1097,15 @@ impl AnchorSelector {
                         }
                     } else {
                         // Not a template action, execute directly
-                        match crate::core::actions::execute_locally(
+                        // Convert HashMap<String, String> to HashMap<String, JsonValue>
+                        let json_variables: std::collections::HashMap<String, serde_json::Value> = 
+                            context.variables.iter()
+                                .map(|(k, v)| (k.clone(), serde_json::Value::String(v.clone())))
+                                .collect();
+                        match crate::execute::execute_on_server_with_parameters(
                             action, 
                             None,  // No primary arg for templates
-                            Some(context.variables.clone())
+                            Some(json_variables)
                         ) {
                             Ok(result) => {
                                 crate::utils::log(&format!("Template action completed: {}", result));
@@ -1225,6 +1220,7 @@ impl AnchorSelector {
             exit_app_key: None, // Will be populated from config
             should_exit: false,
             is_hidden: false,
+            pending_rebuild: false,
         };
         
         result
@@ -1529,13 +1525,13 @@ impl AnchorSelector {
         }
         
         // Now capture from the focused application
-        crate::utils::log(&format!("GRAB: Calling grabber::grab, pending_template={:?}", 
+        crate::utils::log(&format!("GRAB: Calling crate::systems::grabber::grab, pending_template={:?}", 
             self.pending_template.as_ref().map(|(name, _)| name)));
-        match grabber::grab(&config) {
+        match crate::systems::grabber::grab(&config) {
             Ok(grab_result) => {
-                crate::utils::log(&format!("GRAB: grabber::grab returned result"));
+                crate::utils::log(&format!("GRAB: crate::systems::grabber::grab returned result"));
                 match grab_result {
-                    grabber::GrabResult::RuleMatched(rule_name, mut command) => {
+                    crate::systems::grabber::GrabResult::RuleMatched(rule_name, mut command) => {
                         crate::utils::log(&format!("GRAB: RuleMatched - rule='{}', command.action='{}', command.arg='{}'", rule_name, command.action, command.arg));
                         
                         // Check if we have a pending template
@@ -1554,7 +1550,7 @@ impl AnchorSelector {
                             let template_found = if let Some(ref actions) = config.actions {
                                 if let Some(action) = actions.get(&template_name) {
                                     crate::utils::log(&format!("GRAB: Found action '{}' in unified actions", template_name));
-                                    if action.action_type == "template" {
+                                    if action.action_type() == "template" {
                                         crate::utils::log(&format!("GRAB: Action type is 'template'"));
                                         // Convert action to Template for processing
                                         if let Some(template) = action.to_template() {
@@ -1612,7 +1608,7 @@ impl AnchorSelector {
                                             false
                                         }
                                     } else {
-                                        crate::utils::log(&format!("GRAB: Action '{}' is not a template type (type={})", template_name, action.action_type));
+                                        crate::utils::log(&format!("GRAB: Action '{}' is not a template type (type={})", template_name, action.action_type()));
                                         false
                                     }
                                 } else {
@@ -1678,7 +1674,7 @@ impl AnchorSelector {
                             self.command_editor.open_with_command(command);
                         }
                     }
-                    grabber::GrabResult::NoRuleMatched(grab_context) => {
+                    crate::systems::grabber::GrabResult::NoRuleMatched(grab_context) => {
                         // Check if we have a pending template
                         if let Some((template_name, mut context)) = self.pending_template.take() {
                             
@@ -1693,7 +1689,7 @@ impl AnchorSelector {
                             // Try to find template in unified actions first
                             let template_found = if let Some(ref actions) = config.actions {
                                 if let Some(action) = actions.get(&template_name) {
-                                    if action.action_type == "template" {
+                                    if action.action_type() == "template" {
                                         crate::utils::log(&format!("GRAB: Action type is 'template'"));
                                         // Convert action to Template for processing
                                         if let Some(template) = action.to_template() {
@@ -1751,7 +1747,7 @@ impl AnchorSelector {
                                             false
                                         }
                                     } else {
-                                        crate::utils::log(&format!("GRAB: Action '{}' is not a template type (type={})", template_name, action.action_type));
+                                        crate::utils::log(&format!("GRAB: Action '{}' is not a template type (type={})", template_name, action.action_type()));
                                         false
                                     }
                                 } else {
@@ -1803,7 +1799,7 @@ impl AnchorSelector {
                         } else {
                             // Normal grab behavior (no template)
                             // Generate the template text
-                            let template_text = grabber::generate_rule_template_text(&grab_context);
+                            let template_text = crate::systems::grabber::generate_rule_template_text(&grab_context);
                             
                             // Show template dialog using the new TextBox field type
                             let dialog_spec = vec![
@@ -1872,7 +1868,7 @@ impl AnchorSelector {
     fn regain_focus(&self) -> Result<(), String> {
         // Call the regain_focus function from config.js
         let js_code = "regain_focus({})";
-        match crate::js_runtime::execute_business_logic(js_code) {
+        match crate::js::execute(js_code) {
             Ok(_) => Ok(()),
             Err(e) => Err(format!("Failed to execute regain_focus function: {}", e))
         }
@@ -1881,10 +1877,22 @@ impl AnchorSelector {
     /// Clean up the debug log file before starting a rescan
     
     /// Trigger rebuild: restart server and rescan filesystem (full reset)
-    fn trigger_rebuild(&mut self) {
-        // Clear the log file before rebuild
-        crate::utils::clear_log_file();
+    fn trigger_rebuild(&mut self, ctx: &egui::Context) {
+        // Set the search text to show rebuilding status
+        self.popup_state.search_text = "Rebuilding...".to_string();
+        self.popup_state.update_search("Rebuilding...".to_string());
         
+        // Force immediate repaint to show the "Rebuilding..." text
+        ctx.request_repaint();
+        
+        // Schedule the actual rebuild work for the next frame
+        // This allows the UI to update with "Rebuilding..." before we block
+        self.pending_rebuild = true;
+        return;
+    }
+    
+    /// Perform the actual rebuild work (called after UI update)
+    fn perform_rebuild(&mut self) {
         // Generate a unique build identifier (timestamp-based)
         let build_timestamp = chrono::Local::now();
         let build_id = build_timestamp.format("%Y%m%d_%H%M%S").to_string();
@@ -1898,85 +1906,77 @@ impl AnchorSelector {
         println!("🏗️  HookAnchor Rebuild - Clean Server Restart");
         println!("===============================================");
         
-        // Step 1: Server teardown using clean top-level function
-        println!("\n🔄 Step 1/4: Tearing down server...");
-        match crate::execution_server_management::kill_existing_server() {
+        // Step 1 & 2: Restart the server (kill existing and start new)
+        println!("\n🔄 Step 1&2/3: Restarting server...");
+        let server_restart_success = match crate::execute::activate_command_server(true) {
             Ok(()) => {
-                crate::utils::debug_log("REBUILD", "Server teardown completed successfully");
-                println!("  ✅ Server teardown completed");
+                crate::utils::debug_log("REBUILD", "Server restart completed successfully");
+                println!("  ✅ Server restarted successfully");
+                true
             }
             Err(e) => {
-                crate::utils::debug_log("REBUILD", &format!("Server teardown warning: {}", e));
-                println!("  ⚠️  Server teardown warning: {}", e);
+                crate::utils::debug_log("REBUILD", &format!("Server restart failed: {}", e));
+                println!("  ⚠️  Server restart failed: {}", e);
+                println!("  ⚠️  Continuing with popup restart anyway...");
+                false
             }
-        }
-        
-        // Step 2: Server setup using clean top-level function  
-        println!("\n🚀 Step 2/4: Setting up new server...");
-        match crate::execution_server_management::start_server_via_terminal() {
-            Ok(()) => {
-                crate::utils::debug_log("REBUILD", "Server setup completed successfully");
-                println!("  ✅ New server started in Terminal window");
-            }
-            Err(e) => {
-                crate::utils::debug_log("REBUILD", &format!("Server setup failed: {}", e));
-                println!("  ❌ Server setup failed: {}", e);
-                return;
-            }
-        }
-        
-        // Brief wait for server to be ready
-        println!("  ⏳ Waiting for server to initialize...");
-        std::thread::sleep(std::time::Duration::from_millis(1000));
-        
-        // Step 3: Call "ha --rescan" to let the server handle the rescan
-        println!("\n📁 Step 3/4: Triggering filesystem rescan via server...");
-        let current_exe = std::env::current_exe().unwrap_or_else(|_| "popup".into());
-        match std::process::Command::new(current_exe)
-            .arg("--rescan")
-            .status() {
-            Ok(status) => {
-                if status.success() {
-                    crate::utils::debug_log("REBUILD", "Rescan via server completed successfully");
-                    println!("  ✅ Filesystem rescan completed");
-                } else {
-                    crate::utils::debug_log("REBUILD", "Rescan via server failed");
-                    println!("  ❌ Filesystem rescan failed");
-                }
-            }
-            Err(e) => {
-                crate::utils::debug_log("REBUILD", &format!("Failed to execute rescan: {}", e));
-                println!("  ❌ Failed to start rescan: {}", e);
-            }
-        }
-        
-        // Step 4: Delete popup server to force config reload
-        println!("\n🔄 Step 4/4: Restarting popup server to reload config...");
-        
-        // Get the path to the popup binary
-        let exe_dir = match std::env::current_exe() {
-            Ok(exe_path) => exe_path.parent().unwrap_or_else(|| std::path::Path::new(".")).to_path_buf(),
-            Err(_) => std::path::PathBuf::from(".")
         };
-        let popup_path = exe_dir.join("popup");
         
-        match std::process::Command::new(&popup_path)
-            .arg("delete")
-            .output() {
-            Ok(output) => {
-                if output.status.success() {
-                    crate::utils::debug_log("REBUILD", "Popup server deleted successfully");
-                    println!("  ✅ Popup server restarted to reload configuration");
-                } else {
-                    let error = String::from_utf8_lossy(&output.stderr);
-                    crate::utils::debug_log("REBUILD", &format!("Failed to delete popup server: {}", error));
-                    println!("  ⚠️  Popup server restart skipped: {}", error.trim());
+        // Only do rescan if server restart succeeded
+        if server_restart_success {
+            // Brief wait for server to be ready
+            println!("  ⏳ Waiting for server to initialize...");
+            std::thread::sleep(std::time::Duration::from_millis(1000));
+            
+            // Step 2: Call "ha --rescan" to let the server handle the rescan
+            println!("\n📁 Step 2/3: Triggering filesystem rescan via server...");
+            let current_exe = std::env::current_exe().unwrap_or_else(|_| "popup".into());
+            match std::process::Command::new(current_exe)
+                .arg("--rescan")
+                .status() {
+                Ok(status) => {
+                    if status.success() {
+                        crate::utils::debug_log("REBUILD", "Rescan via server completed successfully");
+                        println!("  ✅ Filesystem rescan completed");
+                    } else {
+                        crate::utils::debug_log("REBUILD", "Rescan via server failed");
+                        println!("  ❌ Filesystem rescan failed");
+                    }
+                }
+                Err(e) => {
+                    crate::utils::debug_log("REBUILD", &format!("Failed to execute rescan: {}", e));
+                    println!("  ❌ Failed to start rescan: {}", e);
                 }
             }
-            Err(e) => {
-                crate::utils::debug_log("REBUILD", &format!("Failed to execute popup delete: {}", e));
-                println!("  ⚠️  Failed to restart popup server: {}", e);
+        }
+        
+        // Step 3: Re-exec ourselves to pick up any new binary
+        println!("\n🔄 Step 3/3: Restarting popup with fresh binary...");
+        
+        // Get our current executable path - this will re-exec whatever is currently at this path
+        if let Ok(current_exe) = std::env::current_exe() {
+            println!("  📦 Re-executing: {}", current_exe.display());
+            crate::utils::debug_log("REBUILD", &format!("Re-executing popup at: {}", current_exe.display()));
+            
+            // Launch the new popup instance (no args - it will run as normal GUI)
+            match std::process::Command::new(&current_exe)
+                .spawn() {
+                Ok(_) => {
+                    println!("  ✅ New popup instance launched");
+                    crate::utils::debug_log("REBUILD", "Successfully spawned new popup instance");
+                    
+                    // Exit this instance completely (not just hide)
+                    println!("  👋 Exiting old popup instance...");
+                    std::process::exit(0);
+                }
+                Err(e) => {
+                    println!("  ❌ Failed to restart popup: {}", e);
+                    crate::utils::debug_log("REBUILD", &format!("Failed to re-exec popup: {}", e));
+                }
             }
+        } else {
+            println!("  ⚠️  Could not determine executable path");
+            crate::utils::debug_log("REBUILD", "Could not get current executable path");
         }
         
         println!("\n🎉 Rebuild completed successfully!");
@@ -2096,11 +2096,10 @@ impl AnchorSelector {
             utils::log(&format!("SHOW_FOLDER: Attempting to launch folder: '{}'", path));
             
             // Launch the folder (popup stays open)
-            let folder_cmd = crate::execution_server::make_command("folder", &path);
-            utils::log(&format!("SHOW_FOLDER: Created command with action='{}', arg='{}'", 
-                folder_cmd.action, folder_cmd.arg));
-            // execute_via_server now returns void and handles all retries internally
-            execute_via_server(&folder_cmd);
+            let folder_action = crate::execute::make_action("folder", &path);
+            utils::log(&format!("SHOW_FOLDER: Created action with type='folder', arg='{}'", path));
+            // Execute the action
+            let _ = crate::execute::execute_on_server(&folder_action);
             utils::log(&format!("SHOW_FOLDER: Sent folder command to server"));
         } else {
             utils::debug_log("SHOW_FOLDER", &format!("No folder found for selected command: '{}'", cmd.command));
@@ -2142,7 +2141,7 @@ impl AnchorSelector {
         
         // Execute the contact action through the command server
         // Create a command object to send to the server
-        let contact_cmd = crate::Command {
+        let contact_cmd = crate::core::Command {
             patch: String::new(),
             command: format!("Show contact: {}", contact_name),
             action: "contact".to_string(),
@@ -2153,7 +2152,8 @@ impl AnchorSelector {
         utils::log(&format!("SHOW_CONTACT: Opening contact: {}", contact_name));
         
         // Execute via server
-        crate::execute_via_server(&contact_cmd);
+        let contact_action = crate::execute::command_to_action(&contact_cmd);
+        let _ = crate::execute::execute_on_server(&contact_action);
     }
     
     /// Start tmux session for selected anchor
@@ -2188,7 +2188,7 @@ impl AnchorSelector {
         
         // Create a synthetic command to execute through the launcher
         // This will be recognized as a JavaScript action because tmux_activate is in listed_actions
-        let tmux_cmd = crate::core::commands::Command {
+        let tmux_cmd = crate::core::Command {
             command: format!("TMUX: {}", resolved_cmd.command),
             action: "tmux_activate".to_string(),
             arg: resolved_cmd.arg.clone(),
@@ -2205,8 +2205,9 @@ impl AnchorSelector {
         utils::debug_log("TMUX_ACTIVATE", &format!("Executing through launcher: {} {}", tmux_cmd.action, tmux_cmd.arg));
         
         // Use the server for consistent execution (like all other commands)
-        // execute_via_server now returns void and handles all retries internally
-        crate::execute_via_server(&tmux_cmd);
+        // Execute the action
+        let tmux_action = crate::execute::command_to_action(&tmux_cmd);
+        let _ = crate::execute::execute_on_server(&tmux_action);
         utils::debug_log("TMUX_ACTIVATE", "Executed tmux_activate via server");
         // Close the popup after successful execution
         self.should_exit = true;
@@ -2241,7 +2242,7 @@ impl AnchorSelector {
                         selected_command.command, resolved_cmd.command));
                     
                     // Create command to execute JavaScript action
-                    let js_cmd = crate::core::commands::Command {
+                    let js_cmd = crate::core::Command {
                         command: format!("JS_TMUX: {}", resolved_cmd.command),
                         action: "activate_anchor".to_string(),
                         arg: resolved_cmd.arg.clone(),
@@ -2250,7 +2251,8 @@ impl AnchorSelector {
                     };
                     
                     utils::log(&format!("🎯 ACTIVATE_ANCHOR: Executing JavaScript action with arg: {}", js_cmd.arg));
-                    crate::execute_via_server(&js_cmd);
+                    let js_action = crate::execute::command_to_action(&js_cmd);
+                    let _ = crate::execute::execute_on_server(&js_action);
                     
                     // Request exit after triggering
                     self.should_exit = true;
@@ -2513,60 +2515,60 @@ impl AnchorSelector {
     }
 }
 
-pub fn save_window_position(pos: egui::Pos2) {
-    crate::utils::log(&format!("🔵 WINDOW_POS: save_window_position called with pos: ({}, {})", pos.x, pos.y));
+fn save_window_position(pos: egui::Pos2) {
+    crate::utils::detailed_log("WINDOW_POS", &format!("save_window_position called with pos: ({}, {})", pos.x, pos.y));
     let mut state = load_state();
     let old_pos = state.window_position;
     state.window_position = Some((pos.x, pos.y));
     match save_state(&state) {
         Ok(_) => {
-            crate::utils::log(&format!("🔵 WINDOW_POS: Successfully saved position from {:?} to ({}, {})", old_pos, pos.x, pos.y));
+            crate::utils::detailed_log("WINDOW_POS", &format!("Successfully saved position from {:?} to ({}, {})", old_pos, pos.x, pos.y));
         }
         Err(e) => {
-            crate::utils::log(&format!("🔴 WINDOW_POS: Failed to save position: {}", e));
+            crate::utils::detailed_log("WINDOW_POS", &format!("Failed to save position: {}", e));
         }
     }
 }
 
-pub fn load_window_position() -> Option<egui::Pos2> {
+fn load_window_position() -> Option<egui::Pos2> {
     let state = load_state();
     let result = state.window_position.map(|(x, y)| egui::pos2(x, y));
-    crate::utils::log(&format!("🔵 WINDOW_POS: load_window_position returned {:?}", result));
+    crate::utils::detailed_log("WINDOW_POS", &format!("load_window_position returned {:?}", result));
     result
 }
 
-pub fn get_previous_window_location(ctx: &egui::Context, window_size: egui::Vec2) -> egui::Pos2 {
-    crate::utils::log(&format!("🔵 WINDOW_POS: get_previous_window_location called with window_size: {:?}", window_size));
+fn get_previous_window_location(ctx: &egui::Context, window_size: egui::Vec2) -> egui::Pos2 {
+    crate::utils::detailed_log("WINDOW_POS", &format!("get_previous_window_location called with window_size: {:?}", window_size));
     
     // First try to load the previous position
     if let Some(previous_pos) = load_window_position() {
-        crate::utils::log(&format!("🔵 WINDOW_POS: Loaded previous position: {:?}", previous_pos));
+        crate::utils::detailed_log("WINDOW_POS", &format!("Loaded previous position: {:?}", previous_pos));
         // Check if this position is visible on any current display
         if is_position_visible(previous_pos, window_size) {
-            crate::utils::log(&format!("🔵 WINDOW_POS: Position is visible, returning it"));
+            crate::utils::detailed_log("WINDOW_POS", "Position is visible, returning it");
             return previous_pos;
         } else {
-            crate::utils::log(&format!("🔴 WINDOW_POS: Position NOT visible, will center instead"));
+            crate::utils::detailed_log("WINDOW_POS", "Position NOT visible, will center instead");
         }
     } else {
-        crate::utils::log("🔴 WINDOW_POS: No previous position found in state");
+        crate::utils::detailed_log("WINDOW_POS", "No previous position found in state");
     }
     
     // If no previous position or not visible, center on main display
     let centered = center_on_main_display(ctx, window_size);
-    crate::utils::log(&format!("🔵 WINDOW_POS: Centering on main display at: {:?}", centered));
+    crate::utils::detailed_log("WINDOW_POS", &format!("Centering on main display at: {:?}", centered));
     centered
 }
 
-pub fn is_position_visible(pos: egui::Pos2, window_size: egui::Vec2) -> bool {
-    crate::utils::log(&format!("🔵 WINDOW_POS: is_position_visible checking pos: {:?}, window_size: {:?}", pos, window_size));
+fn is_position_visible(pos: egui::Pos2, window_size: egui::Vec2) -> bool {
+    crate::utils::detailed_log("WINDOW_POS", &format!("is_position_visible checking pos: {:?}, window_size: {:?}", pos, window_size));
     
     // Get all available monitors/displays
     // For now, we'll use a basic check - ensure the window isn't completely off-screen
     // This is a simplified version - in a full implementation you'd query actual display bounds
     
     let window_rect = egui::Rect::from_min_size(pos, window_size);
-    crate::utils::log(&format!("🔵 WINDOW_POS: Window rect: {:?}", window_rect));
+    crate::utils::detailed_log("WINDOW_POS", &format!("Window rect: {:?}", window_rect));
     
     // Basic bounds check - assume main display is at least 1024x768
     // In a real implementation, you'd query actual display information
@@ -2574,7 +2576,7 @@ pub fn is_position_visible(pos: egui::Pos2, window_size: egui::Vec2) -> bool {
         egui::pos2(0.0, 0.0), 
         egui::vec2(1024.0, 768.0)
     );
-    crate::utils::log(&format!("🔵 WINDOW_POS: Main display rect: {:?}", main_display_rect));
+    crate::utils::detailed_log("WINDOW_POS", &format!("Main display rect: {:?}", main_display_rect));
     
     // Check if at least part of the window is visible
     // Allow for window to be partially off-screen but require some overlap
@@ -2585,7 +2587,7 @@ pub fn is_position_visible(pos: egui::Pos2, window_size: egui::Vec2) -> bool {
 }
 
 /// Get the actual screen dimensions (not window dimensions)
-pub fn get_actual_screen_dimensions() -> (f32, f32) {
+fn get_actual_screen_dimensions() -> (f32, f32) {
     #[cfg(target_os = "macos")]
     {
         let display = CGDisplay::main();
@@ -2602,7 +2604,7 @@ pub fn get_actual_screen_dimensions() -> (f32, f32) {
     }
 }
 
-pub fn center_on_main_display(_ctx: &egui::Context, window_size: egui::Vec2) -> egui::Pos2 {
+fn center_on_main_display(_ctx: &egui::Context, window_size: egui::Vec2) -> egui::Pos2 {
     // Get actual screen dimensions
     let (screen_width, screen_height) = get_actual_screen_dimensions();
     let display_size = egui::vec2(screen_width, screen_height);
@@ -2637,6 +2639,13 @@ impl eframe::App for AnchorSelector {
     }
     
     fn update(&mut self, ctx: &egui::Context, _frame: &mut eframe::Frame) {
+        // Check if we have a pending rebuild to perform
+        if self.pending_rebuild {
+            self.pending_rebuild = false;
+            self.perform_rebuild();
+            return; // Exit after rebuild (the process will be replaced)
+        }
+        
         // Enhanced debugging for visibility issues
         if self.frame_count < 10 || self.frame_count % 60 == 0 {  // Log first 10 frames and then every second
             let viewport_info = ctx.input(|i| {
@@ -2817,8 +2826,8 @@ impl eframe::App for AnchorSelector {
         let editor_result = self.command_editor.update(ctx, &config);
         
         // Check for queued errors and display them
-        if crate::error_display::has_errors() {
-            if let Some(error_message) = crate::error_display::take_next_error() {
+        if crate::utils::error::has_errors() {
+            if let Some(error_message) = crate::utils::error::take_next_error() {
                 self.show_error_dialog(&error_message);
             }
         }
@@ -2839,7 +2848,7 @@ impl eframe::App for AnchorSelector {
                         
                         // Execute uninstall in background thread
                         std::thread::spawn(|| {
-                            match crate::setup_assistant::uninstall_hookanchor() {
+                            match crate::systems::setup_assistant::uninstall_hookanchor() {
                                 Ok(()) => {
                                     // Exit successfully - no stdout message
                                     std::process::exit(0);
@@ -2879,7 +2888,7 @@ impl eframe::App for AnchorSelector {
                 
                 // Delete original command if needed
                 if let Some(cmd_name) = command_to_delete {
-                    use crate::delete_command;
+                    use crate::core::commands::delete_command;
                     let deleted = delete_command(&cmd_name, self.commands_mut());
                     if deleted.is_err() {
                         crate::utils::log_error(&format!("Original command '{}' not found for deletion", cmd_name));
@@ -2890,7 +2899,7 @@ impl eframe::App for AnchorSelector {
                 let saved_command = new_command.clone();
                 
                 // Add the new command
-                use crate::{add_command, save_commands_to_file};
+                use crate::core::commands::{add_command, save_commands_to_file};
                 let _ = add_command(new_command, self.commands_mut());
                 
                 // Save to file
@@ -2938,7 +2947,7 @@ impl eframe::App for AnchorSelector {
             }
             CommandEditorResult::Delete(command_name) => {
                 // Delete the specified command and save to file
-                use crate::{delete_command, save_commands_to_file};
+                use crate::core::commands::{delete_command, save_commands_to_file};
                 
                 let deleted = delete_command(&command_name, self.commands_mut());
                 if deleted.is_err() {
@@ -3360,7 +3369,8 @@ impl eframe::App for AnchorSelector {
                                                 }
                                                 
                                                 // Execute command - handles all retries internally
-                                                execute_via_server(&cmd);
+                                                let action = crate::execute::command_to_action(&cmd);
+                                                let _ = crate::execute::execute_on_server(&action);
                                                 // Don't perform scanner check - it blocks
                                                 self.exit_or_hide(ctx);
                                             }
@@ -3476,7 +3486,8 @@ impl eframe::App for AnchorSelector {
                                         }
                                         
                                         // Execute command - handles all retries internally
-                                        execute_via_server(&cmd);
+                                        let action = crate::execute::command_to_action(&cmd);
+                                        let _ = crate::execute::execute_on_server(&action);
                                         // Don't perform scanner check - it blocks
                                         self.exit_or_hide(ctx);
                                     }
@@ -3519,19 +3530,19 @@ impl eframe::App for AnchorSelector {
         // Save window position immediately when it changes
         if let Some(current_pos) = ctx.input(|i| i.viewport().outer_rect.map(|r| r.min)) {
             if self.last_saved_position.is_none() {
-                crate::utils::log(&format!("🔵 WINDOW_POS: First position detection: {:?}", current_pos));
+                crate::utils::detailed_log("WINDOW_POS", &format!("First position detection: {:?}", current_pos));
                 save_window_position(current_pos);
                 self.last_saved_position = Some(current_pos);
             } else if let Some(last_pos) = self.last_saved_position {
                 let moved = (current_pos.x - last_pos.x).abs() > 1.0 || (current_pos.y - last_pos.y).abs() > 1.0;
                 if moved {
-                    crate::utils::log(&format!("🔵 WINDOW_POS: Window moved from {:?} to {:?}", last_pos, current_pos));
+                    crate::utils::detailed_log("WINDOW_POS", &format!("Window moved from {:?} to {:?}", last_pos, current_pos));
                     save_window_position(current_pos);
                     self.last_saved_position = Some(current_pos);
                 }
             }
         } else {
-            crate::utils::log("🔴 WINDOW_POS: Could not get current position from viewport");
+            crate::utils::detailed_log("WINDOW_POS", "Could not get current position from viewport");
         }
         
     }
@@ -3630,12 +3641,12 @@ fn create_fallback_icon() -> IconData {
 /// Wrapper that includes popup control socket
 struct PopupWithControl {
     popup: AnchorSelector,
-    control: crate::popup_server_control::PopupControl,
+    control: crate::systems::popup_server::PopupControl,
 }
 
 impl PopupWithControl {
     fn new(initial_prompt: &str) -> Self {
-        let control = crate::popup_server_control::PopupControl::new();
+        let control = crate::systems::popup_server::PopupControl::new();
         control.start_listener();
         
         Self {
@@ -3654,7 +3665,7 @@ impl eframe::App for PopupWithControl {
         // Process any control commands first
         if let Some(command) = self.control.process_commands(ctx) {
             match command {
-                crate::popup_server_control::PopupCommand::Show => {
+                crate::systems::popup_server::PopupCommand::Show => {
                     crate::utils::log("===== SHOW COMMAND RECEIVED =====");
                     crate::utils::log(&format!("[SHOW] Current frame: {}", self.popup.frame_count));
                     crate::utils::log(&format!("[SHOW] is_hidden={}, should_exit={}", 
@@ -3712,9 +3723,9 @@ impl eframe::App for PopupWithControl {
                         // Get actual screen dimensions using CoreGraphics on macOS
                         let (screen_width, screen_height) = get_actual_screen_dimensions();
                         
-                        crate::utils::log(&format!("🔵 WINDOW_POS [SHOW]: Actual screen dimensions: {}x{}", 
+                        crate::utils::detailed_log("WINDOW_POS", &format!("[SHOW] Actual screen dimensions: {}x{}", 
                             screen_width, screen_height));
-                        crate::utils::log(&format!("🔵 WINDOW_POS [SHOW]: Current window rect: {:?}", rect));
+                        crate::utils::detailed_log("WINDOW_POS", &format!("[SHOW] Current window rect: {:?}", rect));
                         
                         // Check if window is truly off-screen using actual screen dimensions
                         // Allow some margin (50 pixels) for window decorations
@@ -3724,7 +3735,7 @@ impl eframe::App for PopupWithControl {
                                           rect.min.x > screen_width - margin ||
                                           rect.min.y > screen_height - margin;
                         
-                        crate::utils::log(&format!("🔵 WINDOW_POS [SHOW]: Off-screen check: x={} < {} OR y={} < {} OR x={} > {} OR y={} > {} = {}", 
+                        crate::utils::detailed_log("WINDOW_POS", &format!("[SHOW] Off-screen check: x={} < {} OR y={} < {} OR x={} > {} OR y={} > {} = {}", 
                             rect.min.x, -margin, rect.min.y, -margin, 
                             rect.min.x, screen_width - margin, rect.min.y, screen_height - margin, is_offscreen));
                         
@@ -3803,13 +3814,13 @@ impl eframe::App for PopupWithControl {
                         self.popup.is_hidden, self.popup.should_exit));
                     crate::utils::log("===== SHOW COMMAND COMPLETE =====");
                 }
-                crate::popup_server_control::PopupCommand::Hide => {
+                crate::systems::popup_server::PopupCommand::Hide => {
                     crate::utils::log("===== HIDE COMMAND RECEIVED =====");
                     // Call exit_or_hide to properly hide the window
                     self.popup.exit_or_hide(ctx);
                     crate::utils::log("===== HIDE COMMAND COMPLETE =====");
                 }
-                crate::popup_server_control::PopupCommand::Ping => {
+                crate::systems::popup_server::PopupCommand::Ping => {
                     // No special handling needed
                 }
             }
@@ -3839,7 +3850,7 @@ pub fn run_gui_with_prompt(initial_prompt: &str, _app_state: super::ApplicationS
     
     // Load saved position or use centered position
     let initial_position = if let Some(saved_pos) = load_window_position() {
-        crate::utils::log(&format!("🔵 WINDOW_POS [STARTUP]: Using saved window position: {:?}", saved_pos));
+        crate::utils::detailed_log("WINDOW_POS", &format!("[STARTUP] Using saved window position: {:?}", saved_pos));
         [saved_pos.x, saved_pos.y]
     } else {
         // Center on screen
@@ -3847,7 +3858,7 @@ pub fn run_gui_with_prompt(initial_prompt: &str, _app_state: super::ApplicationS
         let screen_height = 1080.0; // Default fallback
         let x = (screen_width - width) / 2.0;
         let y = (screen_height - height) / 2.0;
-        crate::utils::log(&format!("🔴 WINDOW_POS [STARTUP]: No saved position, centering at: [{}, {}]", x, y));
+        crate::utils::detailed_log("WINDOW_POS", &format!("[STARTUP] No saved position, centering at: [{}, {}]", x, y));
         [x, y]
     };
     
@@ -3861,7 +3872,7 @@ pub fn run_gui_with_prompt(initial_prompt: &str, _app_state: super::ApplicationS
         .with_always_on_top(); // Keep on top so it's visible
         // Skip icon loading for faster startup - can be added later if needed
     
-    crate::utils::log(&format!("🔵 WINDOW_POS [VIEWPORT]: ViewportBuilder configured with position: {:?}", initial_position));
+    crate::utils::detailed_log("WINDOW_POS", &format!("[VIEWPORT] ViewportBuilder configured with position: {:?}", initial_position));
     
     let options = eframe::NativeOptions {
         viewport: viewport_builder,

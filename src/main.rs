@@ -4,7 +4,7 @@
 //! GUI mode (popup) or CLI mode (command-line processing).
 
 use std::env;
-use hookanchor::ApplicationState;
+use hookanchor::core::ApplicationState;
 use chrono::{Local, TimeZone};
 
 /// Main application entry point
@@ -12,10 +12,10 @@ use chrono::{Local, TimeZone};
 /// Determines whether to run in GUI mode (no arguments) or CLI mode (with arguments)
 fn main() -> Result<(), eframe::Error> {
     // Initialize global binary path for consistent process spawning
-    hookanchor::init_binary_path();
+    hookanchor::utils::init_binary_path();
     
     // Initialize config FIRST - this must happen before any other operations
-    match hookanchor::core::sys_data::initialize_config() {
+    match hookanchor::core::initialize_config() {
         Ok(()) => {
             // Config loaded successfully
         }
@@ -39,7 +39,7 @@ fn main() -> Result<(), eframe::Error> {
     hookanchor::utils::log(&"=".repeat(80));
     
     // Load state to get build time
-    let state = hookanchor::core::state::load_state();
+    let state = hookanchor::core::load_state();
     let build_time_str = if let Some(build_time) = state.build_time {
         let dt = Local.timestamp_opt(build_time, 0).single()
             .unwrap_or_else(|| Local::now());
@@ -53,10 +53,10 @@ fn main() -> Result<(), eframe::Error> {
     hookanchor::utils::debug_log("", &format!("HookAnchor v{} starting - Build: {}", version, build_time_str));
     
     // Initialize the global error queue for user error display
-    hookanchor::error_display::init_error_queue();
+    hookanchor::utils::init_error_queue();
     
     // Check if this is first run and run setup if needed
-    if let Ok(true) = hookanchor::setup_assistant::check_and_run_setup() {
+    if let Ok(true) = hookanchor::systems::check_and_run_setup() {
         // Setup was run, exit so user can configure Karabiner
         // They'll launch HookAnchor again after setup
         return Ok(());
@@ -77,9 +77,9 @@ fn main() -> Result<(), eframe::Error> {
     
     // If arguments are provided, run in command-line mode (no GUI)
     if args.len() > 1 {
-        // CLI mode needs server - start it here
-        if let Err(e) = hookanchor::execution_server_management::start_server_if_needed() {
-            hookanchor::utils::log_error(&format!("Failed to start command server: {}", e));
+        // CLI mode needs server - ensure it's running
+        if let Err(e) = hookanchor::execute::activate_command_server(false) {
+            hookanchor::utils::log_error(&format!("Failed to activate command server: {}", e));
             // Continue - commands will show error dialogs when server is needed
         }
         

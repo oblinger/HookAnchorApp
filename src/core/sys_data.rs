@@ -6,7 +6,7 @@
 use std::collections::HashMap;
 use std::sync::{Mutex, OnceLock};
 use super::config::Config;
-use super::commands::{Command, Patch};
+use super::{Command, Patch};
 
 // =============================================================================
 // GLOBAL CONSTANTS
@@ -34,7 +34,7 @@ pub struct SysData {
 static SYS_DATA: OnceLock<Mutex<Option<SysData>>> = OnceLock::new();
 
 // Global config - loaded once at startup
-pub(crate) static CONFIG: OnceLock<Config> = OnceLock::new();
+pub static CONFIG: OnceLock<Config> = OnceLock::new();
 
 /// Initialize the global config at application startup
 /// This MUST be called before any other operations
@@ -107,11 +107,11 @@ fn load_data_no_cache(commands_override: Vec<Command>, _verbose: bool) -> SysDat
     let commands = if !commands_override.is_empty() {
         commands_override
     } else {
-        super::commands::load_commands_raw()
+        crate::core::commands::load_commands_raw()
     };
     
     // Create basic patches hashmap
-    let patches = super::commands::create_patches_hashmap(&commands);
+    let patches = crate::core::commands::create_patches_hashmap(&commands);
     
     SysData {
         config,
@@ -164,7 +164,7 @@ pub fn load_data(commands_override: Vec<Command>, verbose: bool) -> SysData {
     let mut commands = if use_override {
         commands_override
     } else {
-        let raw_commands = super::commands::load_commands_raw();
+        let raw_commands = crate::core::commands::load_commands_raw();
         if verbose {
             println!("📋 Step 2: Loaded {} commands from disk", raw_commands.len());
             let empty_patch_count = raw_commands.iter().filter(|c| c.patch.is_empty()).count();
@@ -179,7 +179,7 @@ pub fn load_data(commands_override: Vec<Command>, verbose: bool) -> SysData {
     if verbose {
         println!("🏷️  Step 3: Creating patches hashmap...");
     }
-    let mut patches = super::commands::create_patches_hashmap(&commands);
+    let mut patches = crate::core::commands::create_patches_hashmap(&commands);
     if verbose {
         println!("   Found {} patches from anchor commands", patches.len());
     }
@@ -188,7 +188,7 @@ pub fn load_data(commands_override: Vec<Command>, verbose: bool) -> SysData {
     if verbose {
         println!("🌳 Step 3.1: Ensuring orphans root patch exists...");
     }
-    if let Err(e) = super::commands::ensure_orphans_root_patch(&mut patches, &mut commands, &config) {
+    if let Err(e) = crate::core::commands::ensure_orphans_root_patch(&mut patches, &mut commands, &config) {
         crate::utils::log_error(&format!("Failed to ensure orphans root patch: {}", e));
     }
     
@@ -197,14 +197,14 @@ pub fn load_data(commands_override: Vec<Command>, verbose: bool) -> SysData {
     if verbose {
         println!("🔍 Step 3.2: Looking for orphan patches...");
     }
-    let orphan_patches = super::commands::find_orphan_patches(&patches, &commands);
+    let orphan_patches = crate::core::commands::find_orphan_patches(&patches, &commands);
     let orphans_created = if !orphan_patches.is_empty() {
         if verbose {
             println!("   Found {} orphan patches: {:?}", orphan_patches.len(), orphan_patches);
         } else {
             eprintln!("Found {} orphan patches: {:?}", orphan_patches.len(), orphan_patches);
         }
-        match super::commands::create_orphan_anchors(&config, &orphan_patches, &mut commands) {
+        match crate::core::commands::create_orphan_anchors(&config, &orphan_patches, &mut commands) {
             Ok(count) => {
                 if verbose {
                     println!("   ✅ Created {} orphan anchor files and commands", count);
@@ -212,7 +212,7 @@ pub fn load_data(commands_override: Vec<Command>, verbose: bool) -> SysData {
                     eprintln!("Created {} orphan anchor files and commands", count);
                 }
                 // Recreate patches hashmap to include newly created anchor commands
-                patches = super::commands::create_patches_hashmap(&commands);
+                patches = crate::core::commands::create_patches_hashmap(&commands);
                 count
             }
             Err(e) => {
@@ -231,7 +231,7 @@ pub fn load_data(commands_override: Vec<Command>, verbose: bool) -> SysData {
     if verbose {
         println!("🧩 Step 4: Running patch inference for commands without patches...");
     }
-    let (patches_assigned, new_patches_to_add) = super::commands::run_patch_inference(
+    let (patches_assigned, new_patches_to_add) = crate::core::commands::run_patch_inference(
         &mut commands, 
         &patches, 
         true,  // apply_changes = true (normal operation)
@@ -263,7 +263,7 @@ pub fn load_data(commands_override: Vec<Command>, verbose: bool) -> SysData {
     if verbose {
         println!("🗺️  Step 4.5: Creating command-to-patch lookup map...");
     }
-    let command_to_patch = super::commands::create_command_to_patch_map(&commands, &patches);
+    let command_to_patch = crate::core::commands::create_command_to_patch_map(&commands, &patches);
     if verbose {
         println!("   Created fast lookup map for {} commands", command_to_patch.len());
     }
@@ -272,7 +272,7 @@ pub fn load_data(commands_override: Vec<Command>, verbose: bool) -> SysData {
     if verbose {
         println!("🔤 Step 4.6: Normalizing patch case to match anchor commands...");
     }
-    let normalized_patches = super::commands::normalize_patch_case(&mut commands, &patches);
+    let normalized_patches = crate::core::commands::normalize_patch_case(&mut commands, &patches);
     if verbose {
         if normalized_patches > 0 {
             println!("   Normalized case for {} patch references", normalized_patches);
@@ -288,7 +288,7 @@ pub fn load_data(commands_override: Vec<Command>, verbose: bool) -> SysData {
     if patches_assigned > 0 || orphans_created > 0 || normalized_patches > 0 {
         // Save commands with changes
         
-        if let Err(e) = super::commands::save_commands_to_file(&commands) {
+        if let Err(e) = crate::core::commands::save_commands_to_file(&commands) {
             crate::utils::log_error(&format!("Failed to save commands after changes: {}", e));
         } else {
             if verbose {

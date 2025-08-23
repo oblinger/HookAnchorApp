@@ -1,5 +1,8 @@
 use std::collections::HashMap;
-use crate::{load_commands_with_data, load_commands_for_inference, filter_commands, execute_via_server, utils, grabber, run_patch_inference, save_commands_to_file};
+use crate::core::{load_commands_with_data, load_commands_for_inference, filter_commands, run_patch_inference};
+use crate::core::commands::save_commands_to_file;
+use crate::utils;
+use crate::execute::{execute_on_server, make_action, command_to_action, execute_on_server_with_parameters};
 
 /// Main entry point for command-line mode
 pub fn run_command_line_mode(args: Vec<String>) {
@@ -134,9 +137,10 @@ fn handle_hook_url(url: &str) {
     // This prevents the popup from showing when handling URLs
     utils::debug_log("URL_HANDLER", &format!("Launching via launcher: {} {}", top_command_obj.action, top_command_obj.arg));
     
-    // execute_via_server now returns void and handles all retries internally
-    execute_via_server(&top_command_obj);
-    utils::debug_log("URL_HANDLER", "Command executed via server");
+    // Convert command to action and execute
+    let action = command_to_action(&top_command_obj);
+    let _ = execute_on_server(&action);
+    utils::debug_log("URL_HANDLER", "Command executed");
 }
 
 fn run_match_command(args: &[String]) {
@@ -183,9 +187,10 @@ fn run_exec_command(args: &[String]) {
         .find(|cmd| cmd.command.to_lowercase() == command.to_lowercase());
     
     if let Some(cmd) = matching_cmd {
-        // Execute the actual Command object via server
-        // execute_via_server now returns void and handles all retries internally
-        execute_via_server(&cmd);
+        // Execute the actual Command object
+        // Convert command to action and execute
+        let action = command_to_action(&cmd);
+        let _ = execute_on_server(&action);
         println!("Command completed");
     } else {
         eprintln!("Command '{}' not found", command);
@@ -227,8 +232,9 @@ fn run_execute_top_match(args: &[String]) {
     }
     
     // Use server-based execution for consistent environment
-    // execute_via_server now returns void and handles all retries internally
-    execute_via_server(&top_command_obj);
+    // Convert command to action and execute
+    let action = command_to_action(&top_command_obj);
+    let _ = execute_on_server(&action);
     println!("Command completed");
 }
 
@@ -303,24 +309,22 @@ fn run_test_action(args: &[String]) {
     let config = crate::core::sys_data::get_config();
     if let Some(actions) = &config.actions {
         if let Some(action) = actions.get(action_name) {
-            println!("Testing unified action '{}' (type: {})", action_name, action.action_type);
+            println!("Testing unified action '{}' (type: {})", action_name, action.action_type());
             
-            // Prepare variables for action execution
+            // Prepare variables for action execution (as JsonValue)
             let mut variables = HashMap::new();
             if !input_value.is_empty() {
-                variables.insert("input".to_string(), input_value);
+                variables.insert("input".to_string(), serde_json::Value::String(input_value));
             }
             
-            // Add extra parameters to variables
+            // Add extra parameters to variables (already JsonValue)
             for (key, value) in extra_params {
-                if let serde_json::Value::String(s) = value {
-                    variables.insert(key, s);
-                }
+                variables.insert(key.clone(), value.clone());
             }
             
             // Execute the action with simplified parameters
             let arg = if !arg_value.is_empty() { Some(arg_value.as_str()) } else { None };
-            match crate::core::actions::execute_locally(action, arg, Some(variables)) {
+            match execute_on_server_with_parameters(action, arg, Some(variables)) {
                 Ok(result) => {
                     println!("Action completed successfully: {}", result);
                 }
@@ -338,9 +342,9 @@ fn run_test_action(args: &[String]) {
     println!("Testing legacy action '{}' with arg '{}': {}", action_name, arg_value, command_line);
     
     // Use server-based execution for testing actions
-    let cmd_obj = crate::execution_server::make_command(&action_name, &arg_value);
-    // execute_via_server now returns void and handles all retries internally
-    execute_via_server(&cmd_obj);
+    // Create action directly and execute
+    let action = make_action(&action_name, &arg_value);
+    let _ = execute_on_server(&action);
     println!("Action completed");
 }
 
@@ -355,7 +359,7 @@ fn run_folder_command(args: &[String]) {
     let sys_data = crate::core::sys_data::get_sys_data();
     
     // Helper function to extract folder path from a command
-    let extract_folder_path = |command: &crate::Command| -> Option<String> {
+    let extract_folder_path = |command: &crate::core::Command| -> Option<String> {
         match command.action.as_str() {
             "folder" => {
                 // For folder commands, the arg is already the folder path
@@ -443,7 +447,7 @@ fn run_folder_with_commands(args: &[String]) {
     let sys_data = crate::core::sys_data::get_sys_data();
     
     // Helper function to extract folder path from a command
-    let extract_folder_path = |command: &crate::Command| -> Option<String> {
+    let extract_folder_path = |command: &crate::core::Command| -> Option<String> {
         match command.action.as_str() {
             "folder" => {
                 // For folder commands, the arg is already the folder path
@@ -568,9 +572,9 @@ fn run_test_grabber() {
     println!("Loaded config with {} grabber rules", 
         config.grabber_rules.as_ref().map(|r| r.len()).unwrap_or(0));
     
-    // Try to capture active app context
+    // Try to capture and test context
     println!("\nCapturing active application context...");
-    match grabber::capture_active_app() {
+    match crate::systems::grab_debug(&config) {
         Ok(context) => {
             println!("SUCCESS: Captured app context");
             println!("  App: '{}'", context.app_name);
@@ -585,41 +589,6 @@ fn run_test_grabber() {
                         println!("    {}: '{}'", key, value.as_str().unwrap_or("(complex value)"));
                     }
                 }
-            }
-            
-            // Enrich the context
-            println!("\nEnriching context with app-specific information...");
-            let enriched_context = grabber::enrich_context(context);
-            
-            if let Some(enriched_props) = enriched_context.properties.as_object() {
-                if enriched_props.len() > enriched_context.properties.as_object().map(|o| o.len()).unwrap_or(0) {
-                    println!("  Added enriched properties:");
-                    for (key, value) in enriched_props {
-                        println!("    {}: '{}'", key, value.as_str().unwrap_or("(complex value)"));
-                    }
-                }
-            }
-            
-            // Try to match against grabber rules
-            println!("\nMatching against grabber rules...");
-            if let Some(rules) = &config.grabber_rules {
-                match grabber::match_grabber_rules(&enriched_context, rules, &config) {
-                    Some((rule_name, command)) => {
-                        println!("SUCCESS: Matched rule '{}'", rule_name);
-                        println!("  Action: '{}'", command.action);
-                        println!("  Arg: '{}'", command.arg);
-                        println!("  Patch: '{}'", command.patch);
-                        println!("  Would create command: {} : {} {}", 
-                            "[user-provided-name]", command.action, command.arg);
-                    }
-                    None => {
-                        println!("No rules matched - would show template dialog");
-                        println!("\nGenerated rule template:");
-                        println!("{}", grabber::generate_rule_template_text(&enriched_context));
-                    }
-                }
-            } else {
-                println!("No grabber rules configured in config.yaml");
             }
         }
         Err(e) => {
@@ -657,14 +626,14 @@ fn run_grab_command(args: &[String]) {
     let config = crate::core::sys_data::get_config();
     
     // Perform the grab
-    match grabber::grab(&config) {
+    match crate::systems::grabber::grab(&config) {
         Ok(grab_result) => {
             match grab_result {
-                grabber::GrabResult::RuleMatched(_rule_name, command) => {
+                crate::systems::grabber::GrabResult::RuleMatched(_rule_name, command) => {
                     // Output the action and argument for easy testing
                     println!("{} {}", command.action, command.arg);
                 }
-                grabber::GrabResult::NoRuleMatched(context) => {
+                crate::systems::grabber::GrabResult::NoRuleMatched(context) => {
                     // No rule matched - output context information
                     eprintln!("No grabber rule matched for:");
                     eprintln!("  App: {}", context.app_name);
@@ -690,19 +659,15 @@ fn run_grab_command(args: &[String]) {
 fn run_start_server() {
     utils::log("Restarting command server...");
     
-    // Kill existing server if running
-    if let Err(e) = crate::execution_server_management::kill_existing_server() {
-        utils::log_error(&format!("Failed to kill existing server: {}", e));
-    }
-    
-    // Start new server via Terminal
-    match crate::execution_server_management::start_server_via_terminal() {
+    // Restart the server (kill existing and start new)
+    match crate::execute::activate_command_server(true) {
         Ok(()) => {
-            println!("Command server restart initiated via Terminal");
+            println!("Command server restart initiated");
             println!("The server will start with full shell environment in a few seconds");
         }
         Err(e) => {
-            utils::log_error(&format!("Failed to start server: {}", e));
+            utils::log_error(&format!("Failed to restart server: {}", e));
+            println!("Failed to restart server: {}", e);
             std::process::exit(1);
         }
     }
@@ -710,8 +675,6 @@ fn run_start_server() {
 
 /// Internal daemon mode - starts persistent server
 fn run_start_server_daemon() {
-    use crate::core::state::save_server_pid;
-    
     // Initialize config FIRST - this must happen before any other operations
     if let Err(config_error) = crate::core::sys_data::initialize_config() {
         utils::log_error(&format!("Failed to load config: {}", config_error));
@@ -734,19 +697,10 @@ fn run_start_server_daemon() {
         .join("execution_server.sock");
     let _ = std::fs::remove_file(&socket_path);
     
-    // Start the persistent server
-    match crate::execution_server::start_persistent_server() {
-        Ok(server_pid) => {
-            // Save PID to state
-            if let Err(e) = save_server_pid(server_pid) {
-                utils::log_error(&format!("Could not save server PID: {}", e));
-            }
-            
-            
-            // Keep the process alive - this is the daemon
-            loop {
-                std::thread::sleep(std::time::Duration::from_secs(3600)); // Sleep 1 hour at a time
-            }
+    // Run the command server (this never returns)
+    match crate::execute::run_command_server() {
+        Ok(_) => {
+            // Should never reach here
         }
         Err(e) => {
             utils::log_error(&format!("Failed to start persistent server: {}", e));
@@ -757,7 +711,7 @@ fn run_start_server_daemon() {
 
 /// Checks if the new_patch is associated with a parent directory of the current_patch
 #[allow(dead_code)]
-fn is_parent_directory_patch(current_patch: &str, new_patch: &str, patches: &std::collections::HashMap<String, crate::Patch>) -> bool {
+fn is_parent_directory_patch(current_patch: &str, new_patch: &str, patches: &std::collections::HashMap<String, crate::core::Patch>) -> bool {
     use std::path::Path;
     
     // Get the linked commands for both patches
@@ -880,7 +834,7 @@ fn run_infer_single_command(command_name: &str) {
             println!("Command '{}' not found.", command_name);
             
             // Show similar commands as suggestions
-            let similar_commands: Vec<&crate::Command> = commands.iter()
+            let similar_commands: Vec<&crate::core::Command> = commands.iter()
                 .filter(|cmd| cmd.command.to_lowercase().contains(&command_name.to_lowercase()))
                 .take(5)
                 .collect();
@@ -992,13 +946,13 @@ fn run_rescan_command() {
     println!("\n📋 Initial data load...");
     
     // Load existing commands from disk first (to preserve patches), then run verbose load
-    let existing_commands = crate::load_commands();
+    let existing_commands = crate::core::load_commands();
     let global_data = crate::core::sys_data::load_data(existing_commands, true);
     
     println!("\n🔍 Starting filesystem scan...");
     
     // Run scan with verbose output
-    let scanned_commands = crate::scanner::scan_verbose(
+    let scanned_commands = crate::systems::scan_verbose(
         global_data.commands.clone(),
         &global_data,
         true
@@ -1027,14 +981,14 @@ fn run_rescan_command() {
 /// Check for hung processes
 fn run_process_health() {
     println!("Checking process health...");
-    crate::process_monitor::check_system_health();
+    crate::utils::subprocess::check_system_health();
     println!("Health check complete. See debug logs for details.");
 }
 
 /// Show detailed process status
 fn run_process_status() {
     println!("Process status:");
-    crate::process_monitor::show_process_status();
+    crate::utils::subprocess::show_process_status();
 }
 
 /// Run the setup assistant (install)
@@ -1044,7 +998,7 @@ fn run_install() {
     println!();
     
     // Run the setup assistant with force flag
-    match crate::setup_assistant::SetupAssistant::new().run_setup(true) {
+    match crate::systems::setup_assistant::SetupAssistant::new().run_setup(true) {
         Ok(()) => {
             println!();
             println!("✅ Installation completed successfully!");
@@ -1145,12 +1099,8 @@ fn run_restart_server() {
         Err(e) => println!("  ⚠️  Failed to kill popup_server: {}", e),
     }
     
-    // Kill any existing command server
-    println!("  Killing existing server...");
-    match crate::execution_server_management::kill_existing_server() {
-        Ok(()) => println!("  ✅ Existing server killed"),
-        Err(e) => println!("  ⚠️  No existing server found or kill failed: {}", e),
-    }
+    // Restart the server (kill existing and start new)
+    println!("  Restarting server...");
     
     // Clear the socket file to ensure clean start
     let socket_path = std::path::Path::new("/Users/oblinger/.config/hookanchor/execution_server.sock");
@@ -1160,12 +1110,7 @@ fn run_restart_server() {
         }
     }
     
-    // Reset server check flag to force restart
-    crate::execution_server_management::reset_server_check();
-    
-    // Start new server via Terminal (same method as auto-start)
-    println!("  Starting new server in Terminal...");
-    match crate::execution_server_management::start_server_via_terminal() {
+    match crate::execute::activate_command_server(true) {
         Ok(()) => {
             println!("  ✅ Server restart initiated via Terminal");
             println!("  📱 A new Terminal window should open with the server daemon");
@@ -1185,11 +1130,9 @@ fn run_restart_server() {
                     // Give it a moment for the socket to be fully ready
                     std::thread::sleep(std::time::Duration::from_millis(300));
                     
-                    // Then check if server is available
-                    if crate::execution_server::is_server_available() {
-                        server_started = true;
-                        break;
-                    }
+                    // Server socket exists, assume it's ready
+                    server_started = true;
+                    break;
                 }
                 
                 // Show progress every second
@@ -1246,9 +1189,9 @@ fn run_execute_launcher_command(args: &[String]) {
         (launcher_command.as_str(), String::new())
     };
     
-    let cmd_obj = crate::execution_server::make_command(action, &arg);
-    // execute_via_server now returns void and handles all retries internally
-    execute_via_server(&cmd_obj);
+    // Create action directly and execute
+    let action_obj = make_action(action, &arg);
+    let _ = execute_on_server(&action_obj);
     utils::detailed_log("LAUNCHER_CMD", "Command completed");
 }
 
@@ -1304,12 +1247,6 @@ fn run_rebuild_command() {
     
     println!("\n🔄 Step 2/3: Restarting command server...");
     
-    // Kill existing server
-    match crate::execution_server_management::kill_existing_server() {
-        Ok(()) => println!("  ✅ Existing server killed"),
-        Err(e) => println!("  ⚠️  Server kill warning: {}", e),
-    }
-    
     // Clear the socket file to ensure clean start
     let socket_path = std::path::Path::new("/Users/oblinger/.config/hookanchor/execution_server.sock");
     if socket_path.exists() {
@@ -1318,18 +1255,14 @@ fn run_rebuild_command() {
         }
     }
     
-    // Reset server check flag to force restart
-    crate::execution_server_management::reset_server_check();
-    
-    // Start new server via Terminal (same method as run_restart_server)
-    println!("  Starting new server in Terminal...");
-    match crate::execution_server_management::start_server_via_terminal() {
+    // Restart the server
+    match crate::execute::activate_command_server(true) {
         Ok(()) => {
-            println!("  ✅ Server restart initiated via Terminal");
+            println!("  ✅ Server restart initiated");
             println!("  📱 A new Terminal window should open with the server daemon");
         },
         Err(e) => {
-            println!("  ❌ Failed to start server: {}", e);
+            println!("  ❌ Failed to restart server: {}", e);
             return;
         }
     }

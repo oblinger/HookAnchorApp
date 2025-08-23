@@ -13,10 +13,10 @@ use std::path::PathBuf;
 
 fn main() {
     // Initialize binary path for consistent spawning
-    hookanchor::init_binary_path();
+    hookanchor::utils::init_binary_path();
     
     // Initialize config FIRST - this must happen before any other operations
-    if let Err(config_error) = hookanchor::core::sys_data::initialize_config() {
+    if let Err(config_error) = hookanchor::core::initialize_config() {
         hookanchor::utils::log_error(&format!("Failed to load config: {}", config_error));
         // Continue with default config
     }
@@ -76,8 +76,9 @@ fn launch_popup() {
 
 /// Handle hook:// URLs by sending them to the command server
 fn handle_hook_url(url: &str) {
-    use hookanchor::{execute_via_server, utils};
-    use hookanchor::core::{sys_data, commands};
+    use hookanchor::utils;
+    use hookanchor::core::{get_sys_data, get_config};
+    use hookanchor::execute;
     
     // Extract the query from hook://query
     let query = url.strip_prefix("hook://").unwrap_or("");
@@ -102,8 +103,8 @@ fn handle_hook_url(url: &str) {
     utils::debug_log("DISPATCHER", &format!("Processing hook URL: {} -> query: '{}'", url, decoded_query));
     
     // Find the top matching command using the same logic as CLI and GUI
-    let sys_data = sys_data::get_sys_data();
-    let filtered = commands::get_display_commands(&sys_data, &decoded_query, 1);
+    let sys_data = get_sys_data();
+    let filtered = hookanchor::core::get_display_commands(&sys_data, &decoded_query, 1);
     
     if filtered.is_empty() {
         utils::debug_log("DISPATCHER", &format!("No commands found for query: '{}'", decoded_query));
@@ -117,6 +118,7 @@ fn handle_hook_url(url: &str) {
     utils::debug_log("DISPATCHER", &format!("Launching via server: {} ({})", top_command_obj.command, top_command_obj.action));
     
     // Execute command - handles all retries internally
-    execute_via_server(&top_command_obj);
+    let action = execute::command_to_action(&top_command_obj);
+    let _ = execute::execute_on_server(&action);
     utils::debug_log("DISPATCHER", "Command sent to server");
 }

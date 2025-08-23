@@ -17,13 +17,13 @@ pub struct Config {
     /// Launcher behavior settings
     pub launcher_settings: Option<LauncherSettings>,
     /// Grabber rules for capturing application context
-    pub grabber_rules: Option<Vec<crate::grabber::GrabberRule>>,
+    pub grabber_rules: Option<Vec<crate::systems::grabber::GrabberRule>>,
     /// Key bindings for all actions (legacy)
     pub keybindings: Option<HashMap<String, String>>,
     /// Templates for creating new commands (legacy - migrated to actions)
     pub templates: Option<HashMap<String, crate::core::template_creation::Template>>,
     /// Unified actions section (new)
-    pub actions: Option<HashMap<String, crate::core::actions::Action>>,
+    pub actions: Option<HashMap<String, crate::execute::Action>>,
 }
 
 /// Popup settings section of the configuration file
@@ -364,7 +364,7 @@ fn load_legacy_config(contents: &str) -> Result<Config, Box<dyn std::error::Erro
         .and_then(|v| serde_yaml::from_value(v.clone()).ok());
     
     // Extract actions if it exists (new unified system)
-    let mut actions: Option<HashMap<String, crate::core::actions::Action>> = 
+    let mut actions: Option<HashMap<String, crate::execute::Action>> = 
         yaml.get("actions")
             .and_then(|v| serde_yaml::from_value(v.clone()).ok());
     
@@ -417,7 +417,7 @@ fn parse_window_size(size_str: &str) -> Option<(u32, u32)> {
 /// Migrate templates to unified actions
 fn migrate_templates_to_actions(
     templates: &Option<HashMap<String, crate::core::template_creation::Template>>
-) -> Option<HashMap<String, crate::core::actions::Action>> {
+) -> Option<HashMap<String, crate::execute::Action>> {
     let templates = templates.as_ref()?;
     let mut actions = HashMap::new();
     
@@ -451,13 +451,16 @@ fn migrate_templates_to_actions(
             params.insert("file_rescan".to_string(), serde_json::Value::Bool(true));
         }
         
-        let action = crate::core::actions::Action {
-            action_type: "template".to_string(),
-            description: template.description.clone(),
-            key: template.key.clone(),
-            keystroke: None, // Will be computed later
-            params,
-        };
+        // Add the template-specific fields to params
+        params.insert("action_type".to_string(), serde_json::Value::String("template".to_string()));
+        if let Some(desc) = &template.description {
+            params.insert("description".to_string(), serde_json::Value::String(desc.clone()));
+        }
+        if let Some(key) = &template.key {
+            params.insert("key".to_string(), serde_json::Value::String(key.clone()));
+        }
+        
+        let action = crate::execute::Action { params };
         
         actions.insert(name.clone(), action);
     }
@@ -468,7 +471,7 @@ fn migrate_templates_to_actions(
 /// Migrate keybindings to popup actions
 fn migrate_keybindings_to_actions(
     keybindings: &HashMap<String, String>,
-    actions: &mut HashMap<String, crate::core::actions::Action>,
+    actions: &mut HashMap<String, crate::execute::Action>,
 ) {
     for (action_name, key) in keybindings {
         // Skip if this action already exists (e.g., from templates)
@@ -514,13 +517,12 @@ fn migrate_keybindings_to_actions(
             params.insert("popup_action".to_string(), serde_json::Value::String(popup_action_name.to_string()));
         }
         
-        let action = crate::core::actions::Action {
-            action_type: action_type.to_string(),
-            description: Some(format!("Keyboard action: {}", action_name)),
-            key: Some(key.clone()),
-            keystroke: None, // Will be computed later
-            params,
-        };
+        // Add the action fields to params
+        params.insert("action_type".to_string(), serde_json::Value::String(action_type.to_string()));
+        params.insert("description".to_string(), serde_json::Value::String(format!("Keyboard action: {}", action_name)));
+        params.insert("key".to_string(), serde_json::Value::String(key.clone()));
+        
+        let action = crate::execute::Action { params };
         
         actions.insert(action_name.clone(), action);
     }

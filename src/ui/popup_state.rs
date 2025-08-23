@@ -3,7 +3,7 @@
 //! This module handles the core state and business logic of the popup window,
 //! separated from egui-specific rendering code.
 
-use crate::core::commands::Command;
+use crate::core::Command;
 use crate::core::config::Config;
 use crate::core::state::AppState;
 use crate::ui::layout::{DisplayLayout, Selection, Direction};

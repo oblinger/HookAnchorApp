@@ -8,38 +8,42 @@ use std::collections::HashMap;
 use serde::{Deserialize, Serialize};
 use serde_json::Value as JsonValue;
 use rquickjs::{Context, Ctx};
-use crate::Command;
+use crate::core::Command;
 use crate::core::key_processing::Keystroke;
 use crate::utils::{debug_log, log_error};
 
 /// A unified action that can be invoked via keyboard, command, or other actions
+/// This is now simply a HashMap with accessor methods for common fields
 #[derive(Debug, Clone, Deserialize, Serialize)]
+#[serde(transparent)]
 pub struct Action {
-    /// The type of action (behavior-based: template, popup, open_url, etc.)
-    #[serde(rename = "type")]
-    pub action_type: String,
-    
-    /// Optional description of what this action does
-    #[serde(skip_serializing_if = "Option::is_none")]
-    pub description: Option<String>,
-    
-    /// Optional keyboard key that triggers this action
-    #[serde(skip_serializing_if = "Option::is_none")]
-    pub key: Option<String>,
-    
-    /// Computed keystroke for efficient keyboard matching
-    #[serde(skip)]
-    pub keystroke: Option<Keystroke>,
-    
-    /// All other parameters stored as generic JSON for flexibility
-    #[serde(flatten)]
+    /// All action data stored as JSON for maximum flexibility
     pub params: HashMap<String, JsonValue>,
 }
 
 impl Action {
-    /// Get the action type
+    /// Get the action type (looks for "action_type" key in params)
     pub fn action_type(&self) -> &str {
-        &self.action_type
+        self.params.get("action_type")
+            .and_then(|v| v.as_str())
+            .unwrap_or("app")  // Default to "app" if no type specified
+    }
+    
+    /// Get the description
+    pub fn description(&self) -> Option<&str> {
+        self.params.get("description")?.as_str()
+    }
+    
+    /// Get the key string
+    pub fn key(&self) -> Option<&str> {
+        self.params.get("key")?.as_str()
+    }
+    
+    /// Get the keystroke (computed from key on demand)
+    pub fn keystroke(&self) -> Option<Keystroke> {
+        self.key().and_then(|key_str| {
+            Keystroke::from_key_string(key_str).ok()
+        })
     }
     
     /// Get a parameter value
@@ -59,7 +63,7 @@ impl Action {
     
     /// Convert this action to a Template if it's a template action
     pub fn to_template(&self) -> Option<crate::core::template_creation::Template> {
-        if self.action_type != "template" {
+        if self.action_type() != "template" {
             return None;
         }
         
@@ -115,7 +119,7 @@ impl Action {
             arg,
             patch,
             flags,
-            key: self.key.clone(),
+            key: self.key().map(|s| s.to_string()),
             keystroke: None,  // Will be computed if needed
             grab,
             edit,
@@ -124,31 +128,25 @@ impl Action {
             contents: self.params.get("contents")
                 .and_then(|v| v.as_str())
                 .map(|s| s.to_string()),
-            description: self.description.clone(),
+            description: self.description().map(|s| s.to_string()),
             validate_previous_folder: false,  // Not used in unified actions
             file_rescan,
         })
     }
 }
 
-/// Convert a Command to an Action
-pub(crate) fn command_to_action(cmd: &Command) -> Action {
+/// Helper function to create a simple Action with just type and arg
+/// This is the most common pattern in the codebase
+pub fn make_action(action_type: &str, arg: &str) -> Action {
     let mut params = HashMap::new();
-    
-    // Add command fields as parameters
-    params.insert("arg".to_string(), JsonValue::String(cmd.arg.clone()));
-    params.insert("command_name".to_string(), JsonValue::String(cmd.command.clone()));
-    params.insert("patch".to_string(), JsonValue::String(cmd.patch.clone()));
-    params.insert("flags".to_string(), JsonValue::String(cmd.flags.clone()));
-    
-    Action {
-        action_type: cmd.action.clone(),
-        description: None,
-        key: None,
-        keystroke: None,
-        params,
+    params.insert("action_type".to_string(), JsonValue::String(action_type.to_string()));
+    if !arg.is_empty() {
+        params.insert("arg".to_string(), JsonValue::String(arg.to_string()));
     }
+    
+    Action { params }
 }
+
 
 /// Context for action execution with JavaScript variable expansion
 pub struct ActionContext {
@@ -275,7 +273,7 @@ fn expand_template_string(
                         expr, e
                     );
                     log_error(&error_msg);
-                    crate::error_display::queue_user_error(&error_msg);
+                    crate::utils::error::queue_user_error(&error_msg);
                     return Err(error_msg.into());
                 }
             }
@@ -320,8 +318,8 @@ fn create_js_context_with_params(
     let ctx = Context::full(&rt)?;
     
     ctx.with(|ctx| -> Result<(), Box<dyn std::error::Error>> {
-        // Setup all standard built-in functions
-        crate::js_runtime::setup_all_builtins(&ctx)?;
+        // Setup all standard built-in functions and user functions from config.js
+        crate::js::setup_runtime(&ctx)?;
         
         // Add all parameters as global variables
         let globals = ctx.globals();
@@ -335,9 +333,6 @@ fn create_js_context_with_params(
         for (key, value) in date_vars {
             globals.set(key.as_str(), value)?;
         }
-        
-        // Setup user-defined functions from config
-        setup_user_functions(&ctx, &config)?;
         
         Ok(())
     })?;
@@ -354,14 +349,11 @@ fn create_action_js_context(
     let ctx = Context::full(&rt)?;
     
     ctx.with(|ctx| -> Result<(), Box<dyn std::error::Error>> {
-        // Setup all standard built-in functions
-        crate::js_runtime::setup_all_builtins(&ctx)?;
+        // Setup all standard built-in functions and user functions from config.js
+        crate::js::setup_runtime(&ctx)?;
         
         // Add context variables
         setup_action_variables(&ctx, context)?;
-        
-        // Setup user-defined functions from config
-        setup_user_functions(&ctx, &config)?;
         
         Ok(())
     })?;
@@ -435,16 +427,6 @@ fn setup_action_variables(
     Ok(())
 }
 
-/// Setup user-defined functions from config.js
-fn setup_user_functions(
-    ctx: &Ctx<'_>,
-    _config: &crate::Config,
-) -> Result<(), Box<dyn std::error::Error>> {
-    // Load functions from config.js only
-    crate::js_runtime::load_config_js_functions(ctx)?;
-    
-    Ok(())
-}
 
 /// Convert JavaScript value to string
 fn js_value_to_string(value: &rquickjs::Value) -> String {
@@ -519,12 +501,12 @@ fn add_datetime_variables(variables: &mut HashMap<String, String>) {
 /// - `action`: The action definition containing type and static parameters
 /// - `arg`: Optional primary argument (typically from user input or command)
 /// - `variables`: Optional additional variables for template expansion
-pub(crate) fn execute_locally(
+pub(super) fn execute_locally(
     action: &Action,
     arg: Option<&str>,
     variables: Option<HashMap<String, String>>,
 ) -> Result<String, Box<dyn std::error::Error>> {
-    debug_log("ACTION", &format!("Executing action type: {}", action.action_type));
+    debug_log("ACTION", &format!("Executing action type: {}", action.action_type()));
     
     // Merge all parameters into a single HashMap
     let mut params = HashMap::new();
@@ -552,11 +534,17 @@ pub(crate) fn execute_locally(
         params.insert(key.clone(), value_str);
     }
     
+    // Debug log the params before expansion
+    debug_log("ACTION", &format!("Params before expansion: {:?}", params));
+    
     // Expand all parameters that contain {{...}} expressions
     let expanded_params = expand_parameters(&params)?;
     
+    // Debug log the params after expansion
+    debug_log("ACTION", &format!("Params after expansion: {:?}", expanded_params));
+    
     // Dispatch based on action type
-    match action.action_type.as_str() {
+    match action.action_type() {
         // Builtin Rust actions
         "template" => execute_template_action(action, &expanded_params),
         "popup" => execute_popup_action(action, &expanded_params),
@@ -570,7 +558,7 @@ pub(crate) fn execute_locally(
         
         // Everything else is JavaScript with action_ prefix
         _ => {
-            let function_name = format!("action_{}", action.action_type);
+            let function_name = format!("action_{}", action.action_type());
             execute_js_function_action(&function_name, &expanded_params)
         }
     }
@@ -781,7 +769,6 @@ fn execute_js_function_action(
     function_name: &str,
     params: &HashMap<String, String>,
 ) -> Result<String, Box<dyn std::error::Error>> {
-    println!("*** EXECUTING JAVASCRIPT FUNCTION: {} ***", function_name);
     debug_log("ACTION", &format!("Executing JavaScript function: {}", function_name));
     
     // Get parameters that will be passed to the JavaScript function
@@ -807,7 +794,7 @@ fn execute_js_function_action(
     
     debug_log("ACTION", &format!("Calling JavaScript: {}", js_code));
     
-    match crate::js_runtime::execute_business_logic(&js_code) {
+    match crate::js::execute(&js_code) {
         Ok(result) => {
             debug_log("ACTION", &format!("JavaScript execution succeeded: {}", result));
             Ok(result)
@@ -989,8 +976,9 @@ fn execute_alias_action(
     debug_log("ACTION", &format!("Executing aliased command: {} (action: {})", 
         target_cmd.command, target_cmd.action));
     
-    // Use execute_via_server to run the resolved command
-    crate::execute_via_server(&target_cmd);
+    // Execute the resolved command
+    let target_action = crate::execute::command_to_action(&target_cmd);
+    let _ = crate::execute::execute_on_server(&target_action);
     
     Ok(format!("Executed alias to: {}", target))
 }
@@ -1092,7 +1080,7 @@ pub fn get_action(path: &std::path::Path) -> &'static str {
         match extension.as_deref() {
             Some("md") => {
                 // Use the helper function for consistent anchor detection
-                if is_anchor_file(path) {
+                if crate::utils::is_anchor_file(path) {
                     "anchor"
                 } else {
                     "markdown"
@@ -1107,35 +1095,6 @@ pub fn get_action(path: &std::path::Path) -> &'static str {
     }
 }
 
-/// Check if a path is a markdown file (has .md extension)
-pub fn is_markdown_file(path: &std::path::Path) -> bool {
-    path.extension()
-        .and_then(|ext| ext.to_str())
-        .map(|ext| ext.eq_ignore_ascii_case("md"))
-        .unwrap_or(false)
-}
-
-/// Check if a path is an anchor file (folder_name/folder_name.md pattern)
-/// This check is case-insensitive
-pub fn is_anchor_file(path: &std::path::Path) -> bool {
-    // First check if it's a markdown file
-    if !is_markdown_file(path) {
-        return false;
-    }
-    
-    // Check if file stem matches parent folder name (case-insensitive)
-    if let Some(file_stem) = path.file_stem() {
-        if let Some(parent) = path.parent() {
-            if let Some(parent_name) = parent.file_name() {
-                // Convert both to strings and compare case-insensitively
-                if let (Some(file_str), Some(parent_str)) = (file_stem.to_str(), parent_name.to_str()) {
-                    return file_str.eq_ignore_ascii_case(parent_str);
-                }
-            }
-        }
-    }
-    false
-}
 
 /// Get the default patch for a given action type
 pub fn get_default_patch_for_action(action: &str) -> Option<&'static str> {

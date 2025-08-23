@@ -9,7 +9,8 @@
 //! we might want to move vault logic from JavaScript to Rust.
 
 use std::path::{Path, PathBuf};
-use crate::{Config, utils};
+use crate::core::Config;
+use crate::utils;
 
 /// Result of vault path analysis
 #[derive(Debug, Clone)]
@@ -148,10 +149,18 @@ mod tests {
                 scan_interval_seconds: None,
                 idle_timeout_seconds: None,
                 countdown_seconds: Some(5),
+                max_window_size: None,
+                default_window_size: None,
+                max_log_file_size: None,
+                run_in_background: None,
+                markdown_roots: None,
+                orphans_path: None,
+                skip_directory_patterns: None,
             },
             grabber_rules: None,
             keybindings: None,
             templates: None,
+            actions: None,
         }
     }
     
