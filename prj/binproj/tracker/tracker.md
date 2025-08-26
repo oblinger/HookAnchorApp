@@ -1,0 +1,69 @@
+# User Manual
+
+## Quick Start
+Run `trackR` or `python3 tracker.py` to launch the time tracker GUI.
+
+## Keyboard Shortcuts
+
+### Time Entry
+- **0-9** - Adjust time duration (two digits: hours + 10-minute increments)
+- **Letters** - Select time bucket/category (defined in tracker_info.txt)
+- **SPACE** - Accept current entry and log it
+- **RETURN** - Hide window (minimize)
+- **`** - Accept entry BEFORE the last one (replace last entry)
+
+### Time Adjustment
+- **[** + HHMM - Set BEGIN time (military format)
+- **]** + HHMM - Set END time (military format)  
+- **=** - Set start time to current time
+
+### Management
+- **-** - Delete last entry
+- **'** - Add comment/note to current entry
+- **.** - Reset Pomodoro timer (25 min)
+- **,** - Refresh screen
+
+### Reporting
+- **\\** - Open interactive report interface
+- **|** - Generate graph summary
+- **/** - Show category help/info
+- **?** - Show help screen
+
+### Interactive Report Commands
+- **d/w/m** - Change x-axis scale (Day/Week/Month)
+- **n/p** - Navigate Next/Previous time window
+- **c/g** - Toggle Categories/Groups view
+- **SPACE + key** - Filter by specific category
+- **x/ESC** - Exit report
+
+# Configuration File
+
+## Location
+`/Users/oblinger/ob/data/tracker/tracker_info.txt`
+
+## Format
+
+### Categories (prefix with `.`)
+Define time buckets with a shortcut key:
+```
+.key CategoryName
+```
+Example: `.m Mit` creates 'Mit' category accessible with 'm' key
+
+### Groups (prefix with `=`)
+Group multiple categories together:
+```
+=GroupName = Category1, Category2, Category3
+```
+Example: `=Work = Mit, AF, Chew` groups these categories under 'Work'
+
+### Documentation (prefix with `'`)
+Add descriptive text about categories:
+```
+'This text appears in help screens
+```
+
+## Data Files
+- **tracker.dat** - JSON time entry data (auto-created)
+- **tracker.csv** - Daily summary reports
+- **tracker.txt** - Text format reports

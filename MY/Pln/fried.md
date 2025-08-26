@@ -1,3 +1,5 @@
+- make copy of incoming email
+- look at fenses
 - https://arxiv.org/abs/2507.21206?utm_source=alphasignal&utm_campaign=2025-07-24&asuniq=8d03a007
 
 

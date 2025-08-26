@@ -1,6 +1,6 @@
 .[[MAC Apps]].
-  , [[gDrive Notes]], [[Git Notes]], [[Hubspot Notes]], [[Notion]], [[Timer]], 
-  DELS: [[gDrive Notes]], [[Git Notes]], [[Hubspot Notes]], [[Notion]], [[Timer]],
+  , [[gDrive Notes]], [[Git Notes]], [[Hubspot Notes]], [[Notion App]], [[Timer App]], 
+  DELS: [[gDrive Notes]], [[Git Notes]], [[Hubspot Notes]], [[Notion App]], [[Timer App]],
 
 
 yoink (drag and drop support)

@@ -350,11 +350,11 @@ IBM applied the MR tech to reading and structuring humanity's
 
 #### Funded Work
 •	Just under quarter billion, created, sold, and executed
-−	Won and defended just under a quarter of a billion dollars in program funding
+−	Won, defended, and managed 200+ million dollars in advance R&D work
 −	100% success in obtaining authorization for new, and 100% success in defense of existing efforts.  Notable given that the success rate in creating new programs, and defense of their budget over their lifetime both are about 50-50, and this 100% success is over a dozen Director office presentations
 •	Larger initiaves (> 50 million) entirely managed by self  (created, sold, and executed)
-•	Smaller or inherited efforts:
 −	Transfer Learning
+•	Smaller or inherited efforts:
 −	Information Extraction  (Singapore)
 −	Universal Self supervised induction
 −	AI & multicore
@@ -379,6 +379,19 @@ IBM applied the MR tech to reading and structuring humanity's
 #### OFFICIAL PROGRAM NAMES
 PROGRAMS:  Transfer Learning, Bootstrapped Learning, Machine Reading
 SEEDLINGS:  Never Ending Learning, Attacking Time, Enhanced Bootstrapping, Machine Learning on Multicore Architectures, Construction of Textual Corpora and Protocols for Assessments Seedling, Transfer Learning for Adaptive Information Extraction, Transfer Learning for Adaptive Relation Extraction
+
+**Larger exploratory DARPA efforts (½ to 5 million dollars)**
+- _Behavior Composer for Military Simulation_ – End-user creation of cognitive agent behavior models.
+- Attacking Time – Pervasive, OS-level variability, inoculates systems against any fixed virus/worm.
+- Möbius – Self-organizing ontology acquisition system.
+- ML on Multi-core Architectures – Develop primitives supporting algorithms in a shared-memory context.
+- Never Ending Learning – Statistical “triangulation” to uncover latent world knowledge underling web data.
+- Enhanced Bootstrapping – Precursor to BL program, developed self-extensible representations of procedural &declarative knowledge.
+- Textual Corpora Assessments Protocols – Intellectual cross fertilization in field of text processing gated byavailability of strong, quantitative, comparative measures.
+- Transfer Learning for Adaptive Information Extraction – Series of efforts to transition base TL technology to self-adapting info extractors spanning, language task and genre.
+- Game World – US lags developed world in science education. Studies show computer games retain attention, butdon’t teach. Effort enables game/scenario writers to compete on game’s teaching performance.
+- Latent Information in Folksonomies – Extracting latent structure in user content tags. (e.g. flickr / delicious)
+- Universal Self-Supervised Hierarchical Learning – Adaptive algorithms driven by spectrum of novel feedbacksignals (e.g. curiosity, drive to control, drive to mimic, etc.)
 
 SBIR:
 GameWorld       (5 Phase 1 and 2 Phase 2)

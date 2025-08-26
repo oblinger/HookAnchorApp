@@ -906,7 +906,7 @@
 [[CVP\|Sun Feb 18  2024]]  	[[CVP#2024-01-23  Design for Notion]]  
 [[Mgt\|Sun Feb 18  2024]]  	[[Mgt#2024-01-18  FEB Meeting]]  
 [[@Juan Barajas\|Sun Feb 18  2024]]  	[[@Juan Barajas#Contact]]  
-[[Notion\|Sun Feb 18  2024]]  	[[Notion#Shorcuts]]  
+[[Notion App\|Sun Feb 18  2024]]  	[[Notion App#Shorcuts]]  
 [[Palestinians\|Sun Feb 18  2024]]  	[[Palestinians#Porto Rican]]  
 [[Palestinians\|Sun Feb 18  2024]]  	[[Palestinians#2024-02-11  Andrew's response]]  
 [[Palestinians\|Sun Feb 18  2024]]  	[[Palestinians#2024-02-09  Try Number Three]]  

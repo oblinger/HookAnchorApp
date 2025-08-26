@@ -46,8 +46,8 @@
 | Silas              | Maria Lozano          | --  --                                          | Mario Moreno             | --  --                                           |
 | Sophia             | Michelle Johnson      | michelle.kayoko.johnson@gmail.com  408-888-1959 | Nari Ansari              | nariman.ansari@altavistaschool.org  650-922-1060 |
 | Talia              | Tanya Dorosh          | tanyabdorosh@gmail.com  <br>925-348-1876        | Dmitriy Dorosh           | dmitriy.dorosh@applovin.com  <br>408-476-5528    |
-
-
+k
+ln
 
   Note: Some families (Justin Pao, Louie Grosack, Sasha Head) didn't have contact information in the provided structured text. Phoenix Cameron appears to be from a
   single-parent household.

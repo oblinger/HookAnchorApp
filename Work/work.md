@@ -13,6 +13,7 @@
   [PlayOn](hook://playon): Timeline.  [[@Jason Syversen]] 
 	  - Get access to games
 	  - Get contract spec
+  [AWS Costs](https://drive.google.com/drive/folders/1Mnu6bwVw9bqxGq40uM_fBZ6x_75O3c6H) 
   MGT
     - Patent Restart
     + Refine/decide on an all-encompassing BB AI accuracy metric
@@ -55,14 +56,12 @@
 [[Journaling]] 
 
 
+Claim: AI will likely operate with a set of overlapping and conflicting agendas.
 
-  1. CLI: ha -x "2024 AI Product Choice"
-  2. cmd.rs: run_execute_top_match() → finds command with action="anchor"
-  3. execute.rs: command_to_action() → creates Action with action_type="anchor"
-  4. execute.rs: execute() → checks is_server_executed()
-  5. execute.rs: is_server_executed() → sends to server via send_for_execution()
-  6. execution_server.rs: Server receives Action, converts to Command, then back to Action
-  7. execution_server.rs: execute_command_with_env() → calls actions::execute_locally()
-  8. actions.rs: execute_locally() → matches on action_type="anchor"
-  9. actions.rs: Falls to default case → calls JavaScript action_anchor function
-  10. config.js: action_anchor opens the folder (not the markdown file)
+
+- Maximize ROI
+- Maintain healthy cash flow and cash-balance
+- Minimize risks to the business
+
+
+Claim: AI will need to balance self-serving and corp-serving

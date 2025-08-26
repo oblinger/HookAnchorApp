@@ -1,5 +1,7 @@
 
 
+### 2025-08-25  Daily Reflection on Approach, Emotions, and Outcomes
+- M:  Sunday night nose-dive watching TV. ==> edit my alarm settings, and then really follow them.  May be hard 2night I am a little off schedule.
 
 ### 2025-08-11  Well I am doing better on sleep!
 
@@ -23,8 +25,7 @@ Need to have modest but real deliverables each week, then drive towards achievin
 
 ### 2025-07-24  Feel better this morning, but emotions are very shaky
 - I don't see the future for Engineering-IC AI for me, and Eng Mgr seems vacent and hard to get even when it comes back
-- Chief AI officer seems better.  and for the moment I am excited to build towards that, and can imagine a happy life while doing it.
-- It is a back flip from where I am, but I have the credentials on the Res, the context in SV to execute the backflip, and maybe the enthusiasm to learn then execute the job.
+- Chief AI officer seems better.  and for the moment I am excited to build towards that, and can imag [[Reflections]]<br>                                                                                                                             kflip, and maybe the enthusiasm to learn then execute the job.
 - maybe...     
 
 ### 2025-07-11  MWF 1h minimum on Contacts.  

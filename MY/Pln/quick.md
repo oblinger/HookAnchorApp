@@ -1,10 +1,7 @@
-- email to playon
-- proof points for gen-AI
+
+- This Friday.
 - AWS analysis
 - playon data download
-- make copy of incoming email
-- AWS docs
-- ask thomas about results
 
 - james and matty; fireball matty tell
 - check alto pharmacy; check costco vision; dental
