@@ -2,7 +2,7 @@
 ## === DAILY PILLS/VITAMINS ===
 - 80mg Atorvastin
 - 81mg Baby Aspirin
-- 20mg Famotidine 
+- 20mg Famotidine (40mg)
 - Multi?? -- Source of life
 - Calsium/Magnesium
 - Omega 3 -- watch for toxins
