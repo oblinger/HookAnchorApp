@@ -1,4 +1,4 @@
-/.[[Doc]].
+.[[Doc]].
   , [[AWS Log]], [[DocAPI]], [[DocApplescript]], [[DocArduino]], [[DocAWS]], [[DocBash]]
   , [[DocCapistrano]], [[DocClojure]], [[DocCPP]], [[DocCucumber]], [[DocDelayedJob]], [[DocDocker]]
   , [[DocEmacs]], [[DocGCP]], [[DocGit]], [[DocGnome]], [[DocGolang]], [[DocGoogle]], [[DocHtml]]

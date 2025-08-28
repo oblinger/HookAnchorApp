@@ -29,7 +29,7 @@ DL Performance Improvement Strategies
 -?-
 Gradient Accumulation
 Mixed Precision Training
-Distributed Training <!--SR:!2025-07-16,1,166-->
+Distributed Training <!--SR:!2025-08-28,1,146-->
 
 ### Gradient Accumulation 
 
@@ -52,7 +52,7 @@ Uses lower precision for specific calculations during training, which helps redu
 .
 Half-Precision Calculation: Calculations in half-precision (FP16) significantly reduce memory usage and speed up training times, especially effective for large models with high computational demands. 
 .
-Automatic Mixed Precision (AMP): Frameworks like PyTorch and TensorFlow support AMP, which automatically selects the optimal precision for each operation. <!--SR:!2025-07-20,5,226--> 
+Automatic Mixed Precision (AMP): Frameworks like PyTorch and TensorFlow support AMP, which automatically selects the optimal precision for each operation. <!--SR:!2025-09-07,11,226--> 
 
  
 

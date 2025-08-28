@@ -1,3 +1,4 @@
+- add 'open' fn to templates
 
 
 ## __
