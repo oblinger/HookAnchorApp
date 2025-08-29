@@ -44,7 +44,7 @@ Others
 
 Car Camping
 -  [Eurika 6p](https://www.amazon.com/Eureka-Copper-Canyon-6-Person-Camping/dp/B083T9TFW8?tag=camdenxodl-20&ascsubtag=0000OL0000277799O2560129420240317041621++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++&th=1)    27.5x10x10 
-- 
+
 
 ### 2023-07-15  Coffee Table
 

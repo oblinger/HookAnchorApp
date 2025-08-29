@@ -1,5 +1,6 @@
 
 - Jameson bottle
+- This Friday.
 
 - Filepe
 - Quarterly budget
