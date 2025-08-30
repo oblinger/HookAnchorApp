@@ -1,7 +1,4 @@
 .[[Recordings]].
-  , ,
-  , ,
-  , ,
   , [Recordings Obsidian](spot://recordingsobsidian),
   DELS: ,[Recordings Obsidian](spot://recordingsobsidian),
   , ,
