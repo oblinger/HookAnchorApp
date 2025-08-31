@@ -21,6 +21,13 @@ Complete documentation for installing, configuring, and using HookAnchor.
 - JavaScript functions
 - Complete examples
 
+### [HookAnchor_Action_Types.md](HookAnchor_Action_Types.md)
+**Action types reference** for all available action behaviors:
+- Complete list of action types
+- Arguments and parameters for each type
+- Grabber support information
+- Configuration examples
+
 ### [TEMPLATES_AND_SCRIPTING.md](TEMPLATES_AND_SCRIPTING.md)
 **Advanced features** for power users:
 - Template system with variables

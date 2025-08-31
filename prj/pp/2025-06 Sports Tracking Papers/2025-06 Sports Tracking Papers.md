@@ -1,8 +1,8 @@
 .[[2025-06 Sports Tracking Papers]].
-  , [[papers]], 
+  , [[sports tracking papers]], 
 
 
-- [[./papers]]. 
+- [[sports tracking papers]]. 
 
 
 ### 2025-06-13  prompt

@@ -9,6 +9,39 @@
 mamba block
 
 
+## 2025-08-30  [VideoMAE](https://arxiv.org/abs/2203.12602) 
+
+IDEAS:
+- Video masked auto encoders are data efficient learners.
+- Video reconstruction requires high-level structure learning.
+
+### **VideoMAE (Masked Autoencoders)**
+- Self-supervised pre-training approach
+- Excellent for leveraging your 100K unlabeled videos
+- Fine-tune on labeled subset for shot detection
+- State-of-the-art on multiple benchmarks
+- Reduces annotation requirements significantly
+- **Papers**: 
+  - "VideoMAE: Masked Autoencoders are Data-Efficient Learners" (CVPR 2022) - Start here
+    - https://arxiv.org/abs/2203.12602 
+  - "VideoMAE V2: Scaling Video Masked Autoencoders" (CVPR 2023)
+    - https://arxiv.org/abs/2303.16727
+- **Code**: https://github.com/MCG-NJU/VideoMAE
+
+#### **VideoMAE V2**
+- Latest masked autoencoder approach
+- Billion-scale pre-training capability
+- Excellent for your 100K video dataset
+- Minimal labeled data required
+- State-of-the-art transfer learning
+- **Paper**: "VideoMAE V2: Scaling Video Masked Autoencoders with Dual Masking" (CVPR 2023)
+  - https://arxiv.org/abs/2303.16727
+- **Code**: https://github.com/OpenGVLab/VideoMAEv2
+
+
+
+
+
 ### 2025-06-17  [SAM 2: Segment Anything](https://arxiv.org/abs/2408.00714) 
 
   Title: "SAM 2: Segment Anything in Images and Videos"Authors: Nikhila Ravi + 17 co-authors (Meta AI)arXiv ID: 2408.00714URL:

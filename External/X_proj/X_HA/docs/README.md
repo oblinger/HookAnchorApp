@@ -14,6 +14,7 @@ HookAnchor is a universal command launcher for macOS that provides instant acces
 End-user documentation for installing, configuring, and using HookAnchor:
 - [User Guide](User%20Docs/USER_GUIDE.md) - Installation and basic usage
 - [Configuration Reference](User%20Docs/CONFIG_REFERENCE.md) - Complete config.yaml reference
+- [Action Types Reference](User%20Docs/HookAnchor_Action_Types.md) - All available action types
 - [Templates & Scripting](User%20Docs/TEMPLATES_AND_SCRIPTING.md) - Advanced customization
 
 ### [System/](System/)
